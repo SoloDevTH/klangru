@@ -88,6 +88,9 @@ export const LessonBlock = z.discriminatedUnion("type", [
   }),
 ]);
 
+/** ชื่อไฟล์ข้อมูลลำดับขีดใน content pack: ใช้รหัส Unicode (เช่น 597d.json) เพราะเครื่องมือ build ของ Android อ่านชื่อไฟล์ภาษาจีนไม่ได้ */
+export const hanziFile = (char: string) => `${char.codePointAt(0)!.toString(16)}.json`;
+
 /** URL ที่ใช้ฝังซิมูเลชัน PhET (ภาษาไทยถ้ามีคำแปล) */
 export function phetEmbedUrl(url: string): string | null {
   const slug = url.match(/phet\.colorado\.edu\/[a-z_]+\/simulations\/([a-z0-9-]+)/)?.[1];

@@ -1,0 +1,49 @@
+id: physics.electricity.charge
+subject: physics
+title: { th: ประจุไฟฟ้าและกฎของคูลอมบ์, en: Electric charge and Coulomb's law }
+summary: รู้จักประจุบวกและประจุลบ การทำให้วัตถุมีประจุด้วยการถูและการเหนี่ยวนำ คำนวณแรงระหว่างประจุด้วยกฎของคูลอมบ์ และสนามไฟฟ้าเบื้องต้น
+difficulty: 5
+minutes: 35
+prerequisites: [physics.dynamics.forces, math.number.scientific-notation]
+encompasses:
+  - { id: math.number.scientific-notation, weight: 0.4 }
+  - { id: physics.dynamics.forces, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: ลูกโป่งกับไฟฟ้าสถิต (PhET Balloons and Static Electricity)
+    url: https://phet.colorado.edu/en/simulations/balloons-and-static-electricity
+    provider: phet
+    note: ถูลูกโป่งกับเสื้อกันหนาวแล้วสังเกตว่าอิเล็กตรอน (ประจุลบ) ย้ายจากเสื้อไปที่ลูกโป่ง ประจุไม่ได้เกิดขึ้นใหม่ จากนั้นนำลูกโป่งเข้าใกล้ผนัง ดูประจุในผนังขยับเล็กน้อยจนลูกโป่งติดผนัง
+  - type: simulation
+    title: กฎของคูลอมบ์ (PhET Coulomb's Law)
+    url: https://phet.colorado.edu/en/simulations/coulombs-law
+    provider: phet
+    note: เปลี่ยนขนาดประจุและระยะห่างแล้วอ่านค่าแรง ลองเพิ่มระยะห่างเป็นสองเท่า แรงจะเหลือหนึ่งในสี่
+  - type: interactive
+    title: แรงระหว่างประจุสองตัวกับระยะห่าง
+    caption: แกนนอนคือระยะห่าง r (m) แกนตั้งคือขนาดแรง F (N) จาก F = kq₁q₂/r² เมื่อประจุมีหน่วยไมโครคูลอมบ์ (k × 10⁻¹² = 0.009) ลองดูค่าที่ r = 0.1 m แล้วเลื่อนไปที่ r = 0.2 m แรงลดลงเหลือหนึ่งในสี่ ส่วนการเพิ่มประจุตัวใดตัวหนึ่งเป็นสองเท่าทำให้แรงเพิ่มเป็นสองเท่าเท่านั้น
+    widget:
+      kind: function-plot
+      functions: ["\\frac{0.009 q Q}{x^2}"]
+      sliders:
+        - { name: q, min: 1, max: 5, step: 1, value: 2, label: ประจุตัวที่ 1 (μC) }
+        - { name: Q, min: 1, max: 5, step: 1, value: 2, label: ประจุตัวที่ 2 (μC) }
+      x: [0, 0.5]
+      y: [0, 10]
+glossary:
+  - { term: ประจุไฟฟ้า, definition: "สมบัติของอนุภาคที่ทำให้เกิดแรงไฟฟ้า มีสองชนิดคือบวกและลบ หน่วยคูลอมบ์ (C)" }
+  - { term: ประจุมูลฐาน (e), definition: "ขนาดประจุของอิเล็กตรอนหรือโปรตอนหนึ่งตัว $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$" }
+  - { term: การเหนี่ยวนำไฟฟ้า, definition: "การทำให้ประจุในวัตถุแยกตัวโดยนำวัตถุที่มีประจุเข้าใกล้ โดยไม่ต้องแตะกัน" }
+  - { term: สนามไฟฟ้า, definition: "แรงไฟฟ้าต่อประจุบวกหนึ่งหน่วย ณ ตำแหน่งหนึ่ง $E = F/q$ หน่วย $\\mathrm{N/C}$ มีทิศพุ่งออกจากประจุบวกและพุ่งเข้าหาประจุลบ" }
+flashcards:
+  - { front: "ประจุชนิดเดียวกันและต่างชนิดกันออกแรงต่อกันอย่างไร", back: "ชนิดเดียวกันผลักกัน ต่างชนิดกันดูดกัน" }
+  - { front: "กฎของคูลอมบ์", back: "$F = \\dfrac{k q_1 q_2}{r^2}$ เมื่อ $k = 9.0 \\times 10^9\\ \\mathrm{N\\,m^2/C^2}$" }
+  - { front: "ถ้าระยะห่างระหว่างประจุเพิ่มเป็น 3 เท่า แรงเปลี่ยนอย่างไร", back: "ลดลงเหลือ $\\tfrac{1}{9}$ ของเดิม เพราะแรงแปรผกผันกับ $r^2$" }
+  - { front: "ถูไม้บรรทัดพลาสติกกับผ้าแล้วไม้บรรทัดมีประจุลบ เกิดอะไรขึ้น", back: "อิเล็กตรอนย้ายจากผ้าไปที่ไม้บรรทัด ผ้าจึงมีประจุบวกเท่ากัน ประจุรวมยังเท่าเดิม" }
+  - { front: "สนามไฟฟ้าจากประจุจุด $Q$ ที่ระยะ $r$", back: "$E = \\dfrac{kQ}{r^2}$ หน่วย $\\mathrm{N/C}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

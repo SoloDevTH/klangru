@@ -1,0 +1,228 @@
+problems:
+  - id: phy.grav.p001
+    topics: [physics.dynamics.gravitation]
+    difficulty: 1
+    type: mcq
+    stem: "วัตถุสองก้อนดึงดูดกันด้วยแรงโน้มถ่วงค่าหนึ่ง ถ้าระยะห่างระหว่างจุดศูนย์กลางเพิ่มเป็น 2 เท่า โดยมวลเท่าเดิม แรงดึงดูดจะเป็นกี่เท่าของเดิม"
+    choices:
+      - { id: a, text: "$\\tfrac{1}{4}$ เท่า", correct: true }
+      - { id: b, text: "$\\tfrac{1}{2}$ เท่า", feedback: "แรงแปรผกผันกับ **กำลังสอง** ของระยะห่าง ไม่ใช่ระยะห่างยกกำลังหนึ่ง ต้องหารด้วย $2^2 = 4$" }
+      - { id: c, text: "2 เท่า", feedback: "ยิ่งห่างกัน แรงโน้มถ่วงยิ่งอ่อนลง ไม่ใช่เพิ่มขึ้น" }
+      - { id: d, text: "4 เท่า", feedback: "ได้ตัวเลข 4 ถูกแล้ว แต่ระยะอยู่ในตัวส่วนของ $F = \\dfrac{Gm_1m_2}{r^2}$ แรงจึงลดลง 4 เท่า ไม่ใช่เพิ่ม" }
+    hints:
+      - "ดูว่า $r$ อยู่ตรงไหนในสูตร $F = \\dfrac{Gm_1m_2}{r^2}$"
+      - "แทน $r$ ด้วย $2r$ แล้วเทียบกับแรงเดิม"
+    solution: "$F' = \\dfrac{Gm_1m_2}{(2r)^2} = \\dfrac{Gm_1m_2}{4r^2} = \\tfrac{1}{4}F$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p002
+    topics: [physics.dynamics.gravitation]
+    difficulty: 2
+    type: numeric
+    stem: "ดาวเทียมสองดวงดึงดูดกันด้วยแรง $36\\ \\mathrm{N}$ ถ้าระยะห่างระหว่างดาวเทียมเพิ่มเป็น 3 เท่า แรงดึงดูดจะเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 4, unit: N }
+    hints:
+      - "แรงโน้มถ่วงแปรผกผันกับกำลังสองของระยะห่าง"
+      - "ระยะเพิ่ม 3 เท่า แรงต้องหารด้วย $3^2$"
+    misconceptions:
+      - { match: 12, feedback: "ดูเหมือนหารด้วย 3 แรงแปรผกผันกับ $r^2$ ระยะเพิ่ม 3 เท่า แรงจึงต้องหารด้วย $3^2 = 9$" }
+      - { match: 324, feedback: "ดูเหมือนคูณด้วย 9 ระยะอยู่ในตัวส่วน เมื่อระยะเพิ่ม แรงต้องลดลง" }
+    solution: "$F' = \\dfrac{F}{3^2} = \\dfrac{36\\ \\mathrm{N}}{9} = 4\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p003
+    topics: [physics.dynamics.gravitation]
+    difficulty: 3
+    type: numeric
+    stem: "วัตถุสองก้อนดึงดูดกันด้วยแรง $36\\ \\mathrm{N}$ ถ้าเพิ่มมวลก้อนแรกเป็น 2 เท่า มวลก้อนที่สองเป็น 3 เท่า และระยะห่างเป็น 2 เท่า แรงดึงดูดใหม่เป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 54, unit: N }
+    hints:
+      - "แรงแปรผันตรงกับผลคูณของมวล และแปรผกผันกับกำลังสองของระยะห่าง"
+      - "คิดเป็นตัวคูณ: มวลรวมแล้วคูณ $2 \\times 3$ ส่วนระยะทำให้หารด้วย $2^2$"
+    misconceptions:
+      - { match: 108, feedback: "ดูเหมือนหารด้วย 2 แทน $2^2$ แรงแปรผกผันกับ **กำลังสอง** ของระยะห่าง" }
+      - { match: 216, feedback: "คิดผลของมวลถูกแล้ว แต่ลืมว่าระยะห่างที่เพิ่มขึ้นทำให้แรงลดลง" }
+    solution: "$F' = 36 \\times \\dfrac{2 \\times 3}{2^2} = 36 \\times \\dfrac{6}{4} = 54\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p004
+    topics: [physics.dynamics.gravitation]
+    difficulty: 3
+    type: numeric
+    stem: "ในห้องเรียน นักเรียนมวล $50\\ \\mathrm{kg}$ และ $60\\ \\mathrm{kg}$ นั่งห่างกัน $2\\ \\mathrm{m}$ (วัดระหว่างจุดศูนย์กลางมวล) แรงโน้มถ่วงระหว่างทั้งสองคนเป็นกี่ $\\times 10^{-8}\\ \\mathrm{N}$ ใช้ $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}$ (ตอบเฉพาะตัวเลขหน้า $\\times 10^{-8}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 5.0025, tolerance: 0.05, unit: "×10⁻⁸ N" }
+    hints:
+      - "ใช้ $F = \\dfrac{Gm_1m_2}{r^2}$"
+      - "คำนวณ $\\dfrac{(50)(60)}{2^2}$ ก่อน แล้วค่อยคูณ $6.67 \\times 10^{-11}$"
+      - "เขียนผลลัพธ์ให้อยู่ในรูป $\\square \\times 10^{-8}$"
+    misconceptions:
+      - { match: 10.0, feedback: "ดูเหมือนหารด้วย $r = 2$ แทน $r^2 = 4$ ระยะในสูตรต้องยกกำลังสอง" }
+    solution: "$F = \\dfrac{(6.67 \\times 10^{-11})(50)(60)}{2^2} = 6.67 \\times 10^{-11} \\times 750 \\approx 5.0 \\times 10^{-8}\\ \\mathrm{N}$ เล็กมากจนรู้สึกไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p005
+    topics: [physics.dynamics.gravitation]
+    difficulty: 3
+    type: numeric
+    stem: "โลกมีมวล $5.97 \\times 10^{24}\\ \\mathrm{kg}$ และรัศมี $6.37 \\times 10^{6}\\ \\mathrm{m}$ จงคำนวณความเร่งโน้มถ่วงที่ผิวโลกจาก $g = \\dfrac{GM}{R^2}$ ใช้ $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}$ (ตอบเป็นตัวเลขในหน่วย m/s² ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 9.813, tolerance: 0.1, unit: m/s² }
+    hints:
+      - "คูณ $G \\times M$ ก่อน: คูณตัวเลขหน้ากัน และบวกเลขชี้กำลัง"
+      - "ยกกำลังสองของรัศมี: $(6.37)^2 \\times 10^{12}$"
+      - "หารสองค่านี้ โดยลบเลขชี้กำลัง"
+    misconceptions:
+      - { match: 62511617, feedback: "ดูเหมือนหารด้วย $R$ ไม่ได้ยกกำลังสอง ค่าที่ได้ใหญ่ผิดปกติ $g$ ต้องหารด้วย $R^2$" }
+    solution: "$GM = (6.67 \\times 10^{-11})(5.97 \\times 10^{24}) \\approx 3.982 \\times 10^{14}$ และ $R^2 = (6.37 \\times 10^{6})^2 \\approx 4.058 \\times 10^{13}$ ดังนั้น $g = \\dfrac{3.982 \\times 10^{14}}{4.058 \\times 10^{13}} \\approx 9.81\\ \\mathrm{m/s^2}$ ใกล้เคียงค่า $9.8\\ \\mathrm{m/s^2}$ ที่ใช้กันทั่วไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p006
+    topics: [physics.dynamics.gravitation]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวเคราะห์ดวงหนึ่งมีมวล 2 เท่าของโลก และรัศมี 2 เท่าของโลก ค่า $g$ ที่ผิวดาวดวงนี้เป็นเท่าใด กำหนด $g$ ที่ผิวโลก $= 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 4.9, tolerance: 0.05, unit: m/s² }
+    hints:
+      - "$g = \\dfrac{GM}{R^2}$ แปรผันตรงกับ $M$ และแปรผกผันกับ $R^2$"
+      - "คูณ $g$ ของโลกด้วย $\\dfrac{2}{2^2}$"
+    misconceptions:
+      - { match: 9.8, feedback: "ดูเหมือนคิดว่า 2 กับ 2 ตัดกันพอดี แต่รัศมีอยู่ในรูป $R^2$ จึงต้องหารด้วย $2^2 = 4$" }
+      - { match: 19.6, feedback: "ดูเหมือนยกกำลังสองผิดตัว ($\\tfrac{2^2}{2}$) ที่ยกกำลังสองคือรัศมี ไม่ใช่มวล" }
+    solution: "$g_{\\text{ดาว}} = 9.8 \\times \\dfrac{2}{2^2} = 9.8 \\times \\dfrac{1}{2} = 4.9\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p007
+    topics: [physics.dynamics.gravitation]
+    difficulty: 4
+    type: numeric
+    stem: "ที่ความสูงเหนือผิวโลกเท่ากับรัศมีโลกพอดี ($h = R$) ความเร่งโน้มถ่วงเป็นเท่าใด กำหนด $g$ ที่ผิวโลก $= 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 2.45, tolerance: 0.025, unit: m/s² }
+    hints:
+      - "ระยะในสูตรวัดจาก **จุดศูนย์กลาง** ของโลก ไม่ใช่จากผิว"
+      - "ระยะถึงจุดศูนย์กลางคือ $R + h = 2R$"
+      - "$g_h = g\\left(\\dfrac{R}{R + h}\\right)^2$"
+    misconceptions:
+      - { match: 4.9, feedback: "ระยะเพิ่มเป็น 2 เท่าถูกแล้ว แต่ $g$ แปรผกผันกับ **กำลังสอง** ของระยะ จึงต้องหารด้วย 4" }
+    solution: "$r = R + h = 2R$ ดังนั้น $g_h = 9.8 \\times \\left(\\dfrac{R}{2R}\\right)^2 = \\dfrac{9.8}{4} = 2.45\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p008
+    topics: [physics.dynamics.gravitation]
+    difficulty: 4
+    type: numeric
+    stem: "สมมติดาวเทียมสำรวจโลกของไทยดวงหนึ่งโคจรที่ความสูง $630\\ \\mathrm{km}$ เหนือผิวโลก ให้รัศมีโลก $R = 6370\\ \\mathrm{km}$ และ $g$ ที่ผิวโลก $= 9.8\\ \\mathrm{m/s^2}$ ความเร่งโน้มถ่วงที่ระดับวงโคจรนี้เป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s² ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.115, tolerance: 0.08, unit: m/s² }
+    hints:
+      - "ระยะจากจุดศูนย์กลางโลกถึงดาวเทียมคือ $R + h$"
+      - "$g_h = g\\left(\\dfrac{R}{R + h}\\right)^2$ หน่วยของ $R$ กับ $R + h$ ตัดกัน จึงใช้กิโลเมตรได้เลย"
+    misconceptions:
+      - { match: 8.918, feedback: "ดูเหมือนลืมยกกำลังสองของอัตราส่วน $\\dfrac{R}{R + h}$" }
+      - { match: 1001.9, feedback: "ดูเหมือนใช้ความสูง $630\\ \\mathrm{km}$ เป็นระยะในสูตร ระยะต้องวัดจากจุดศูนย์กลางโลก คือ $R + h = 7000\\ \\mathrm{km}$" }
+    solution: "$R + h = 6370 + 630 = 7000\\ \\mathrm{km}$ ดังนั้น $g_h = 9.8 \\times \\left(\\dfrac{6370}{7000}\\right)^2 = 9.8 \\times 0.8281 \\approx 8.12\\ \\mathrm{m/s^2}$ แรงโน้มถ่วงที่ระดับนี้ยังมากกว่า 80% ของที่ผิวโลก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p009
+    topics: [physics.dynamics.gravitation]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียนไทยดูการถ่ายทอดสดจากสถานีอวกาศนานาชาติ ซึ่งโคจรสูงราว $400\\ \\mathrm{km}$ เหนือผิวโลก แล้วเห็นนักบินอวกาศลอยตัวอยู่ในสถานี เหตุผลข้อใดถูกต้องที่สุด"
+    choices:
+      - { id: a, text: "นักบินอวกาศและสถานีกำลังตกอิสระรอบโลกไปพร้อมกัน", correct: true }
+      - { id: b, text: "ที่ระดับนั้นไม่มีแรงโน้มถ่วงของโลกแล้ว", feedback: "ที่ความสูง $400\\ \\mathrm{km}$ ค่า $g$ ยังราว $8.7\\ \\mathrm{m/s^2}$ เกือบ 90% ของที่ผิวโลก ถ้าไม่มีแรงโน้มถ่วง สถานีจะพุ่งออกไปเป็นเส้นตรงแทนที่จะโคจร" }
+      - { id: c, text: "ในอวกาศไม่มีอากาศ จึงไม่มีแรงโน้มถ่วง", feedback: "แรงโน้มถ่วงไม่ต้องอาศัยอากาศ ดวงจันทร์ก็ถูกโลกดึงผ่านอวกาศที่ไม่มีอากาศ" }
+      - { id: d, text: "มวลของนักบินอวกาศลดลงเหลือศูนย์", feedback: "มวลไม่เปลี่ยนตามสถานที่ สิ่งที่หายไปคือแรงที่พื้นดันเท้า เพราะทั้งคนและพื้นตกไปพร้อมกัน" }
+    hints:
+      - "ลองคำนวณคร่าว ๆ ว่า $g$ ที่ความสูง $400\\ \\mathrm{km}$ ลดลงมากไหม"
+      - "นึกถึงคนในลิฟต์ที่ตกอิสระ ตาชั่งอ่านค่าได้เท่าใด"
+    solution: "แรงโน้มถ่วงยังมีอยู่และเป็นแรงที่ทำให้สถานีโคจร ทั้งนักบินและสถานีตกอิสระด้วยความเร่งเท่ากัน พื้นสถานีจึงไม่ต้องดันเท้านักบิน (แรงปฏิกิริยาเป็นศูนย์) นักบินจึงรู้สึกไร้น้ำหนักและลอยตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p010
+    topics: [physics.dynamics.gravitation]
+    difficulty: 2
+    type: mcq
+    stem: "โลกมีมวลประมาณ 81 เท่าของดวงจันทร์ ข้อใดเปรียบเทียบแรงที่โลกดึงดวงจันทร์กับแรงที่ดวงจันทร์ดึงโลกได้ถูกต้อง"
+    choices:
+      - { id: a, text: "สองแรงมีขนาดเท่ากัน แต่ทิศตรงข้าม", correct: true }
+      - { id: b, text: "โลกดึงดวงจันทร์แรงกว่า 81 เท่า", feedback: "ในสูตร $F = \\dfrac{Gm_1m_2}{r^2}$ มีมวลทั้งสองคูณกันอยู่ แรงจึงเป็นค่าเดียวกันสำหรับทั้งคู่ (ตรงกับกฎข้อที่ 3) ที่ต่างกันคือความเร่งของแต่ละดวง" }
+      - { id: c, text: "ดวงจันทร์ไม่ได้ดึงโลกเลย", feedback: "วัตถุทุกคู่ดึงดูดกัน ดวงจันทร์ดึงโลกจนเกิดน้ำขึ้นน้ำลงในทะเล" }
+      - { id: d, text: "ดวงจันทร์ดึงโลกแรงกว่า เพราะดวงจันทร์เล็กกว่า", feedback: "ขนาดหรือมวลของแต่ละดวงไม่ได้ทำให้แรงของคู่นี้ต่างกัน แรงที่ทั้งสองกระทำต่อกันเท่ากันเสมอ" }
+    hints:
+      - "สูตร $F = \\dfrac{Gm_1m_2}{r^2}$ ต่างกันหรือไม่ถ้าสลับ $m_1$ กับ $m_2$"
+      - "นึกถึงกฎข้อที่ 3 ของนิวตัน"
+    solution: "แรงทั้งสองเป็นคู่กิริยา–ปฏิกิริยา จาก $F = \\dfrac{GM_{\\text{โลก}}M_{\\text{ดวงจันทร์}}}{r^2}$ จึงมีขนาดเท่ากันและทิศตรงข้าม แต่ดวงจันทร์มีมวลน้อยกว่า จึงมีความเร่งมากกว่าโลก 81 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p011
+    topics: [physics.dynamics.gravitation]
+    difficulty: 5
+    type: numeric
+    stem: "โลกมีมวล $5.97 \\times 10^{24}\\ \\mathrm{kg}$ ดวงจันทร์มีมวล $7.35 \\times 10^{22}\\ \\mathrm{kg}$ และระยะระหว่างจุดศูนย์กลางเป็น $3.84 \\times 10^{8}\\ \\mathrm{m}$ แรงโน้มถ่วงระหว่างโลกกับดวงจันทร์เป็นกี่ $\\times 10^{20}\\ \\mathrm{N}$ ใช้ $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}$ (ตอบเฉพาะตัวเลขหน้า $\\times 10^{20}$ ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.985, tolerance: 0.02, unit: "×10²⁰ N" }
+    hints:
+      - "แยกคำนวณส่วนตัวเลขกับส่วนเลขชี้กำลัง"
+      - "ตัวเศษ: $6.67 \\times 5.97 \\times 7.35$ และ $10^{-11+24+22}$"
+      - "ตัวส่วน: $(3.84)^2 \\times 10^{16}$ แล้วหารโดยลบเลขชี้กำลัง"
+    misconceptions:
+      - { match: 762177773, feedback: "ดูเหมือนหารด้วย $r$ ไม่ได้ยกกำลังสอง ระยะในกฎความโน้มถ่วงต้องยกกำลังสอง" }
+    solution: "ตัวเศษ $= 6.67 \\times 5.97 \\times 7.35 \\times 10^{35} \\approx 292.7 \\times 10^{35}$ ตัวส่วน $= (3.84 \\times 10^{8})^2 \\approx 14.75 \\times 10^{16}$ ดังนั้น $F \\approx \\dfrac{292.7}{14.75} \\times 10^{19} \\approx 19.85 \\times 10^{19} = 1.98 \\times 10^{20}\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p012
+    topics: [physics.dynamics.gravitation]
+    difficulty: 5
+    type: numeric
+    stem: "ดาวอังคารมีมวล $6.42 \\times 10^{23}\\ \\mathrm{kg}$ และรัศมี $3.39 \\times 10^{6}\\ \\mathrm{m}$ นักบินอวกาศมวล $60\\ \\mathrm{kg}$ มีน้ำหนักบนผิวดาวอังคารเท่าใด ใช้ $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}$ (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 223.6, tolerance: 2.2, unit: N }
+    hints:
+      - "หาค่า $g$ บนดาวอังคารก่อนจาก $g = \\dfrac{GM}{R^2}$"
+      - "แล้วใช้ $W = mg$ หรือคำนวณตรงจาก $W = \\dfrac{GMm}{R^2}$"
+    misconceptions:
+      - { match: 588, feedback: "นั่นคือน้ำหนักบนโลก (ใช้ $g = 9.8\\ \\mathrm{m/s^2}$) บนดาวอังคารต้องคำนวณ $g$ ใหม่จากมวลและรัศมีของดาวอังคาร" }
+    solution: "$g_{\\text{อังคาร}} = \\dfrac{(6.67 \\times 10^{-11})(6.42 \\times 10^{23})}{(3.39 \\times 10^{6})^2} = \\dfrac{4.282 \\times 10^{13}}{1.149 \\times 10^{13}} \\approx 3.73\\ \\mathrm{m/s^2}$ ดังนั้น $W = (60)(3.73) \\approx 224\\ \\mathrm{N}$ (มวลยังเป็น $60\\ \\mathrm{kg}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p013
+    topics: [physics.dynamics.gravitation]
+    difficulty: 4
+    type: expression
+    stem: "วัตถุมวล $m$ อยู่ที่ผิวดาวมวล $M$ รัศมี $R$ น้ำหนักของวัตถุคือแรงโน้มถ่วง จาก $mg = \\dfrac{GMm}{R^2}$ จงเขียน $g$ ในรูปของ $G$, $M$ และ $R$"
+    prefix: "g ="
+    answer: { latex: "\\frac{GM}{R^2}", variables: [G, M, R] }
+    misconceptions:
+      - { match: "\\frac{GM}{R}", feedback: "ระยะในกฎความโน้มถ่วงยกกำลังสอง ต้องเป็น $R^2$" }
+      - { match: "\\frac{R^2}{GM}", feedback: "กลับเศษกับส่วน หารทั้งสองข้างของ $mg = \\dfrac{GMm}{R^2}$ ด้วย $m$ ได้ $GM$ อยู่ด้านบน" }
+    hints:
+      - "มี $m$ อยู่ทั้งสองข้างของสมการ"
+      - "หารทั้งสองข้างด้วย $m$"
+    solution: "$mg = \\dfrac{GMm}{R^2}$ หารทั้งสองข้างด้วย $m$ ได้ $g = \\dfrac{GM}{R^2}$ ซึ่งไม่ขึ้นกับมวลของวัตถุ วัตถุทุกชิ้นจึงตกด้วยความเร่งเท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.grav.p014
+    topics: [physics.dynamics.gravitation]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ปริมาณในเรื่องความโน้มถ่วงกับหน่วย SI"
+    pairs:
+      - { left: "ค่าคงตัวความโน้มถ่วงสากล $G$", right: "$\\mathrm{N\\cdot m^2/kg^2}$" }
+      - { left: "ความเร่งโน้มถ่วง $g$", right: "$\\mathrm{m/s^2}$" }
+      - { left: "แรงโน้มถ่วง $F$", right: "$\\mathrm{N}$" }
+      - { left: "มวลของดาว $M$", right: "$\\mathrm{kg}$" }
+    hints:
+      - "แรงทุกชนิดใช้หน่วยเดียวกัน"
+      - "หน่วยของ $G$ ได้จากการจัดรูป $F = \\dfrac{Gm_1m_2}{r^2}$ เป็น $G = \\dfrac{Fr^2}{m_1m_2}$"
+    solution: "$G$: $\\dfrac{\\mathrm{N\\cdot m^2}}{\\mathrm{kg^2}}$ · $g$: $\\mathrm{m/s^2}$ (เท่ากับ $\\mathrm{N/kg}$) · $F$: $\\mathrm{N}$ · $M$: $\\mathrm{kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,41 @@
+id: physics.energy.kinetic-potential
+subject: physics
+title: { th: พลังงานจลน์และพลังงานศักย์, en: Kinetic and potential energy }
+summary: พลังงานจลน์ของวัตถุที่เคลื่อนที่ พลังงานศักย์โน้มถ่วงจากความสูง พลังงานศักย์ยืดหยุ่นในสปริง และทฤษฎีบทงาน–พลังงาน
+difficulty: 4.5
+minutes: 35
+prerequisites: [physics.energy.work]
+encompasses:
+  - { id: physics.energy.work, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: พลังงานจลน์เพิ่มตามกำลังสองของอัตราเร็ว
+    caption: 'แกนนอนคืออัตราเร็ว v (m/s) แกนตั้งคือพลังงานจลน์ (J) กราฟเป็นพาราโบลา ไม่ใช่เส้นตรง ลองอ่านค่าที่ v = 4 และ v = 8 จะเห็นว่าพลังงานต่างกัน 4 เท่า ส่วนการเพิ่มมวล m ทำให้พลังงานเพิ่มแบบเท่าตัวเท่านั้น'
+    widget:
+      kind: function-plot
+      functions: ['\frac{1}{2} m x^2']
+      sliders:
+        - { name: m, min: 1, max: 10, step: 1, value: 2, label: มวล m (kg) }
+      x: [0, 10]
+      y: [0, 500]
+  - type: simulation
+    title: กฎของฮุกและพลังงานในสปริง (PhET Hooke's Law)
+    url: https://phet.colorado.edu/en/simulations/hookes-law
+    provider: phet
+    note: เลือกหน้าจอพลังงาน (Energy) แล้วลองยืดสปริงเป็น 2 เท่าของระยะเดิม สังเกตว่าพลังงานศักย์ยืดหยุ่นเพิ่มเป็น 4 เท่า และพื้นที่ใต้กราฟแรง–ระยะยืดคือพลังงานที่สะสมไว้
+glossary:
+  - { term: พลังงานจลน์, definition: 'พลังงานของวัตถุที่กำลังเคลื่อนที่ $E_k = \tfrac{1}{2}mv^2$ หน่วยจูล' }
+  - { term: พลังงานศักย์โน้มถ่วง, definition: 'พลังงานของวัตถุที่อยู่สูงจากระดับอ้างอิง $E_p = mgh$ ใกล้ผิวโลกใช้ $g = 9.8\ \mathrm{m/s^2}$' }
+  - { term: พลังงานศักย์ยืดหยุ่น, definition: 'พลังงานที่สะสมในสปริงที่ถูกยืดหรือกด $E_s = \tfrac{1}{2}kx^2$ เมื่อ $k$ คือค่านิจสปริง ($\mathrm{N/m}$)' }
+  - { term: ทฤษฎีบทงาน–พลังงาน, definition: 'งานของแรงลัพธ์เท่ากับพลังงานจลน์ที่เปลี่ยนไป $W_{\text{รวม}} = \tfrac{1}{2}mv^2 - \tfrac{1}{2}mu^2$' }
+flashcards:
+  - { front: 'สูตรพลังงานจลน์ พลังงานศักย์โน้มถ่วง และพลังงานศักย์ยืดหยุ่น', back: '$E_k = \tfrac{1}{2}mv^2$, $E_p = mgh$, $E_s = \tfrac{1}{2}kx^2$ ทั้งหมดมีหน่วยจูล' }
+  - { front: 'อัตราเร็วเพิ่มเป็น 3 เท่า พลังงานจลน์เพิ่มเป็นกี่เท่า', back: '9 เท่า เพราะ $E_k \propto v^2$' }
+  - { front: 'ทฤษฎีบทงาน–พลังงาน', back: 'งานรวม (งานของแรงลัพธ์) $= \Delta E_k = \tfrac{1}{2}mv^2 - \tfrac{1}{2}mu^2$' }
+  - { front: 'ยกกล่อง $2\ \mathrm{kg}$ ขึ้นสูง $3\ \mathrm{m}$ พลังงานศักย์โน้มถ่วงเพิ่มเท่าใด ($g = 9.8\ \mathrm{m/s^2}$)', back: '$mgh = (2)(9.8)(3) = 58.8\ \mathrm{J}$' }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,47 @@
+id: physics.matter.pressure-fluids
+subject: physics
+title: { th: ความดันและของไหล, en: Pressure and fluids }
+summary: คำนวณความดันจากแรงต่อพื้นที่ ความดันในของเหลวตามความลึก ใช้หลักของพาสคัลกับแม่แรงไฮดรอลิก และหาแรงลอยตัวด้วยหลักของอาร์คิมีดีส
+difficulty: 5
+minutes: 40
+prerequisites: [physics.dynamics.weight-normal, math.geometry.volume-surface]
+encompasses:
+  - { id: physics.dynamics.weight-normal, weight: 0.4 }
+  - { id: math.geometry.volume-surface, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ความดันตามความลึกในของเหลวชนิดต่าง ๆ
+    caption: แกนนอนคือความลึก (m) แกนตั้งคือความดัน (kPa) ใช้ g = 9.8 m/s² เส้นล่างคือความดันเนื่องจากของเหลว ρgh ส่วนเส้นบนรวมความดันบรรยากาศ 101.3 kPa ด้วย เลื่อน r (ความหนาแน่น) จาก 800 (น้ำมัน) ไป 1,000 (น้ำจืด) และ 1,025 (น้ำทะเล) สังเกตว่ากราฟเป็นเส้นตรง ลึกเป็นสองเท่าความดันจากของเหลวก็เป็นสองเท่า
+    widget:
+      kind: function-plot
+      functions: ["\\frac{9.8 r x}{1000}", "101.3 + \\frac{9.8 r x}{1000}"]
+      sliders:
+        - { name: r, min: 500, max: 2000, step: 25, value: 1000, label: ความหนาแน่นของของเหลว ρ (kg/m³) }
+      x: [0, 20]
+      y: [0, 400]
+  - type: simulation
+    title: ความดันในของเหลว (PhET Under Pressure)
+    url: https://phet.colorado.edu/en/simulations/under-pressure
+    provider: phet
+    note: วางเครื่องวัดความดันที่ความลึกต่าง ๆ ในสระที่มีรูปร่างต่างกัน แล้วเปลี่ยนชนิดของเหลวและค่า g ความดันที่ความลึกเท่ากันจะเท่ากันไม่ว่าสระจะเป็นรูปทรงใด
+  - type: simulation
+    title: แรงลอยตัว (PhET Buoyancy)
+    url: https://phet.colorado.edu/en/simulations/buoyancy
+    provider: phet
+    note: หย่อนก้อนวัตถุที่มีความหนาแน่นต่าง ๆ ลงในน้ำ ดูแรงลอยตัวเทียบกับน้ำหนัก และสังเกตว่าระดับน้ำที่สูงขึ้นบอกปริมาตรของน้ำที่ถูกแทนที่
+glossary:
+  - { term: ความดัน, definition: "แรงที่กระทำตั้งฉากกับผิวต่อหนึ่งหน่วยพื้นที่ $P = F/A$ หน่วยพาสคัล ($1\\ \\mathrm{Pa} = 1\\ \\mathrm{N/m^2}$)" }
+  - { term: ความดันบรรยากาศ, definition: "ความดันจากอากาศที่ระดับน้ำทะเล ประมาณ $1.013 \\times 10^5\\ \\mathrm{Pa}$" }
+  - { term: หลักของพาสคัล, definition: "ความดันที่เพิ่มให้ของเหลวในภาชนะปิดถ่ายทอดไปทุกจุดของของเหลวเท่ากัน" }
+  - { term: แรงลอยตัว, definition: "แรงที่ของไหลดันวัตถุขึ้น เท่ากับน้ำหนักของของไหลที่ถูกแทนที่ $F_B = \\rho V g$ (หลักของอาร์คิมีดีส)" }
+flashcards:
+  - { front: "สูตรความดันและหน่วย", back: "$P = F/A$ หน่วย $\\mathrm{Pa} = \\mathrm{N/m^2}$" }
+  - { front: "ความดันเนื่องจากของเหลวที่ความลึก $h$", back: "$P = \\rho g h$ ขึ้นกับความลึกและความหนาแน่น ไม่ขึ้นกับรูปร่างภาชนะ" }
+  - { front: "แม่แรงไฮดรอลิก: ความสัมพันธ์ของแรงกับพื้นที่ลูกสูบ", back: "$\\dfrac{F_1}{A_1} = \\dfrac{F_2}{A_2}$ ลูกสูบใหญ่กว่ากี่เท่า แรงมากกว่าเท่านั้น" }
+  - { front: "หลักของอาร์คิมีดีส", back: "แรงลอยตัว = น้ำหนักของของเหลวที่ถูกแทนที่ $F_B = \\rho_{\\text{ของเหลว}} V_{\\text{จม}} g$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

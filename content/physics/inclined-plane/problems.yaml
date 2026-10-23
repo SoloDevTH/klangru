@@ -1,0 +1,237 @@
+problems:
+  - id: phy.incl.p001
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 1
+    type: mcq
+    stem: "กล่องมวล $m$ วางบนพื้นเอียงที่ทำมุม $\\theta$ กับแนวระดับ องค์ประกอบของน้ำหนักในแนว **ขนาน** กับพื้นเอียงมีขนาดเท่าใด"
+    choices:
+      - { id: a, text: "$mg\\sin\\theta$", correct: true }
+      - { id: b, text: "$mg\\cos\\theta$", feedback: "นั่นคือองค์ประกอบที่ตั้งฉากกับพื้น ตรวจด้วยพื้นราบ ($\\theta = 0^\\circ$): องค์ประกอบขนานต้องเป็นศูนย์ แต่ $mg\\cos 0^\\circ = mg$" }
+      - { id: c, text: "$mg$", feedback: "$mg$ คือน้ำหนักทั้งหมดซึ่งชี้ลงตรง ๆ ไม่ได้ขนานกับพื้นเอียง ต้องแยกองค์ประกอบก่อน" }
+      - { id: d, text: "$mg\\tan\\theta$", feedback: "องค์ประกอบของเวกเตอร์ได้จาก sin หรือ cos ของมุมคูณขนาด ไม่ใช่ tan ซึ่งอาจมีค่ามากกว่า $mg$ เมื่อพื้นชัน" }
+    hints:
+      - "ลองนึกถึงกรณีสุดขั้ว พื้นราบ ($\\theta = 0^\\circ$) มีแรงดึงลงตามพื้นหรือไม่"
+      - "ฟังก์ชันตรีโกณใดมีค่า 0 ที่ $0^\\circ$ และมีค่า 1 ที่ $90^\\circ$"
+    solution: "องค์ประกอบขนานพื้นคือ $mg\\sin\\theta$ ตรวจ: ที่ $\\theta = 0^\\circ$ ได้ 0 (พื้นราบไม่ไถล) และที่ $\\theta = 90^\\circ$ ได้ $mg$ (ตกดิ่ง) ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p002
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 2
+    type: numeric
+    stem: "กล่องมวล $10\\ \\mathrm{kg}$ อยู่บนพื้นเอียงมุม $30^\\circ$ องค์ประกอบของน้ำหนักที่ขนานกับพื้นเอียงมีขนาดเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 49, unit: N }
+    hints:
+      - "น้ำหนักของกล่องคือ $mg$"
+      - "องค์ประกอบขนานพื้นเอียงคือ $mg\\sin\\theta$ และ $\\sin 30^\\circ = 0.5$"
+    misconceptions:
+      - { match: 84.87, feedback: "นั่นคือ $mg\\cos 30^\\circ$ ซึ่งเป็นองค์ประกอบตั้งฉากกับพื้น องค์ประกอบขนานใช้ $\\sin\\theta$" }
+      - { match: 98, feedback: "นั่นคือน้ำหนักทั้งหมด ยังไม่ได้แยกองค์ประกอบ ต้องคูณด้วย $\\sin 30^\\circ$" }
+    solution: "$mg\\sin 30^\\circ = (10\\ \\mathrm{kg})(9.8\\ \\mathrm{m/s^2})(0.5) = 49\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p003
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 2
+    type: numeric
+    stem: "กล่องมวล $10\\ \\mathrm{kg}$ วางบนพื้นเอียงมุม $30^\\circ$ โดยไม่มีแรงอื่นในแนวตั้งฉากกับพื้น แรงปฏิกิริยาตั้งฉากที่พื้นเอียงดันกล่องเป็นเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 84.87, tolerance: 0.85, unit: N }
+    hints:
+      - "กล่องไม่จมลงพื้นและไม่ลอยขึ้น แรงในแนวตั้งฉากกับพื้นจึงหักล้างกัน"
+      - "$N$ ต้องเท่ากับองค์ประกอบของน้ำหนักที่กดเข้าหาพื้น คือ $mg\\cos\\theta$"
+    misconceptions:
+      - { match: 98, feedback: "$N = mg$ ใช้ได้บนพื้นราบเท่านั้น บนพื้นเอียงกล่องกดพื้นแค่องค์ประกอบ $mg\\cos\\theta$" }
+      - { match: 49, feedback: "นั่นคือ $mg\\sin 30^\\circ$ ซึ่งเป็นองค์ประกอบขนานพื้น แรงปฏิกิริยาตั้งฉากต้องหักล้างองค์ประกอบตั้งฉาก $mg\\cos\\theta$" }
+    solution: "$N = mg\\cos 30^\\circ = (10)(9.8)(0.866) \\approx 84.9\\ \\mathrm{N}$ ซึ่งน้อยกว่าน้ำหนัก $98\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p004
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 3
+    type: numeric
+    stem: "กล่องไถลลงพื้นเอียงลื่น (ไม่มีแรงเสียดทาน) ที่ทำมุม $20^\\circ$ กับแนวระดับ กล่องมีความเร่งเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s² ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.352, tolerance: 0.034, unit: m/s² }
+    hints:
+      - "แรงในแนวพื้นเอียงมีแค่องค์ประกอบของน้ำหนัก $mg\\sin\\theta$"
+      - "จาก $ma = mg\\sin\\theta$ มวลตัดกันได้ $a = g\\sin\\theta$"
+      - "ตรวจว่าเครื่องคิดเลขอยู่ในโหมดองศา"
+    misconceptions:
+      - { match: 9.209, feedback: "นั่นคือ $g\\cos 20^\\circ$ องค์ประกอบที่ทำให้กล่องไถลลงคือ $g\\sin\\theta$" }
+      - { match: 8.947, feedback: "ดูเหมือนเครื่องคิดเลขอยู่ในโหมดเรเดียน (ได้ $\\sin 20$ เรเดียน) ตั้งเป็นโหมดองศา (DEG) แล้วคำนวณใหม่" }
+    solution: "$a = g\\sin 20^\\circ = 9.8 \\times 0.342 \\approx 3.35\\ \\mathrm{m/s^2}$ ลงตามพื้นเอียง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p005
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 3
+    type: mcq
+    stem: "ปล่อยกล่องมวล $2\\ \\mathrm{kg}$ และกล่องมวล $10\\ \\mathrm{kg}$ ให้ไถลลงพื้นเอียงลื่นอันเดียวกันพร้อมกันจากหยุดนิ่ง ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ทั้งสองกล่องมีความเร่งเท่ากัน", correct: true }
+      - { id: b, text: "กล่อง $10\\ \\mathrm{kg}$ มีความเร่งมากกว่า 5 เท่า", feedback: "แรงดึงลงตามพื้นของกล่องหนักมากกว่า 5 เท่าจริง แต่มวลก็มากกว่า 5 เท่าเช่นกัน ความเร่ง $a = \\dfrac{mg\\sin\\theta}{m}$ จึงเท่าเดิม" }
+      - { id: c, text: "กล่อง $2\\ \\mathrm{kg}$ มีความเร่งมากกว่า เพราะเบากว่า", feedback: "มวลน้อยทำให้ความเฉื่อยน้อยก็จริง แต่แรงดึงลงตามพื้นก็น้อยลงในสัดส่วนเดียวกัน ผลคือความเร่งเท่ากัน" }
+      - { id: d, text: "กล่อง $10\\ \\mathrm{kg}$ มีแรงลัพธ์เท่ากับกล่อง $2\\ \\mathrm{kg}$", feedback: "แรงลัพธ์ $mg\\sin\\theta$ ขึ้นกับมวล กล่องหนักจึงมีแรงลัพธ์มากกว่า สิ่งที่เท่ากันคือความเร่ง" }
+    hints:
+      - "เขียนแรงลัพธ์ตามพื้นเอียงของแต่ละกล่อง"
+      - "หารแรงลัพธ์ด้วยมวลของแต่ละกล่อง แล้วดูว่ามวลหายไปหรือไม่"
+    solution: "$a = \\dfrac{mg\\sin\\theta}{m} = g\\sin\\theta$ ไม่ขึ้นกับมวล ทั้งสองกล่องจึงมีความเร่งเท่ากันและถึงปลายพื้นเอียงพร้อมกัน (แรงลัพธ์ของกล่องหนักมากกว่า 5 เท่า แต่มวลก็มากกว่า 5 เท่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p006
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 3
+    type: numeric
+    stem: "สไลเดอร์ในสวนน้ำเป็นทางตรงยาว $20\\ \\mathrm{m}$ ทำมุม $30^\\circ$ กับแนวระดับ และมีน้ำไหลจนลื่นมาก (ไม่คิดแรงเสียดทาน) เด็กไถลลงจากหยุดนิ่งที่ด้านบน ถึงปลายสไลเดอร์ด้วยอัตราเร็วเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s)"
+    answer: { value: 14, tolerance: 0.14, unit: m/s }
+    hints:
+      - "หาความเร่งตามสไลเดอร์ก่อน $a = g\\sin\\theta$"
+      - "รู้ $u = 0$, $a$ และ $s = 20\\ \\mathrm{m}$ ไม่รู้เวลา ใช้ $v^2 = u^2 + 2as$"
+    misconceptions:
+      - { match: 18.43, feedback: "ดูเหมือนใช้ $g\\cos 30^\\circ$ เป็นความเร่ง ความเร่งตามพื้นเอียงคือ $g\\sin\\theta$" }
+      - { match: 19.8, feedback: "ดูเหมือนใช้ $a = g$ เหมือนตกดิ่ง บนพื้นเอียงมีแค่องค์ประกอบ $g\\sin\\theta$ ที่เร่งไปตามพื้น" }
+    solution: "$a = 9.8 \\times \\sin 30^\\circ = 4.9\\ \\mathrm{m/s^2}$ แล้ว $v^2 = 0 + 2(4.9)(20) = 196$ → $v = 14\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p007
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 4
+    type: numeric
+    stem: "กล่องมวล $5\\ \\mathrm{kg}$ ไถลลงพื้นเอียงมุม $30^\\circ$ โดยมีสัมประสิทธิ์ความเสียดทานจลน์ $\\mu_k = 0.2$ กล่องมีความเร่งเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s² ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.203, tolerance: 0.032, unit: m/s² }
+    hints:
+      - "กล่องไถลลง แรงเสียดทานจลน์จึงชี้ขึ้นตามพื้น"
+      - "แรงเสียดทาน $f_k = \\mu_k N$ โดย $N = mg\\cos\\theta$ ไม่ใช่ $mg$"
+      - "$a = g(\\sin\\theta - \\mu_k\\cos\\theta)$"
+    misconceptions:
+      - { match: 4.9, feedback: "นั่นคือความเร่งบนพื้นลื่น ยังไม่ได้หักแรงเสียดทานที่ต้านการไถล" }
+      - { match: 6.597, feedback: "ดูเหมือนบวกแรงเสียดทานเพิ่ม กล่องไถลลง แรงเสียดทานจึงชี้ขึ้นตามพื้นและต้องลบออก" }
+    solution: "$a = g(\\sin 30^\\circ - \\mu_k\\cos 30^\\circ) = 9.8\\,(0.5 - 0.2 \\times 0.866) = 9.8 \\times 0.3268 \\approx 3.20\\ \\mathrm{m/s^2}$ ลงตามพื้น (ไม่ขึ้นกับมวล $5\\ \\mathrm{kg}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p008
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 4
+    type: numeric
+    stem: "วางกล่องไม้บนแผ่นกระดานแล้วค่อย ๆ ยกปลายข้างหนึ่งขึ้น ถ้าสัมประสิทธิ์ความเสียดทานสถิตระหว่างกล่องกับกระดานเป็น $\\mu_s = 0.7$ กระดานต้องเอียงเป็นมุมกี่องศา กล่องจึงเริ่มไถล (ตอบเป็นตัวเลขในหน่วยองศา ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 34.99, tolerance: 0.35, unit: องศา }
+    hints:
+      - "กล่องเริ่มไถลเมื่อ $mg\\sin\\theta$ เท่ากับแรงเสียดทานสถิตสูงสุด $\\mu_s mg\\cos\\theta$"
+      - "หารทั้งสองข้างด้วย $mg\\cos\\theta$ จะได้ความสัมพันธ์ระหว่าง $\\tan\\theta$ กับ $\\mu_s$"
+      - "ใช้ $\\tan^{-1}$ ในโหมดองศา"
+    misconceptions:
+      - { match: 44.43, feedback: "ดูเหมือนใช้ $\\sin^{-1}(0.7)$ เงื่อนไขเริ่มไถลคือ $\\tan\\theta = \\mu_s$ ไม่ใช่ $\\sin\\theta = \\mu_s$" }
+      - { match: 45.57, feedback: "ดูเหมือนใช้ $\\cos^{-1}(0.7)$ เงื่อนไขเริ่มไถลคือ $\\tan\\theta = \\mu_s$" }
+    solution: "$mg\\sin\\theta = \\mu_s mg\\cos\\theta$ → $\\tan\\theta = \\mu_s = 0.7$ → $\\theta = \\tan^{-1}(0.7) \\approx 35.0^\\circ$ (ไม่ขึ้นกับมวลของกล่อง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p009
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 4
+    type: expression
+    stem: "วัตถุไถลลงพื้นเอียงมุม $\\theta$ ที่มีสัมประสิทธิ์ความเสียดทานจลน์ $\\mu$ เขียนความเร่งของวัตถุ (ทิศลงตามพื้นเป็นบวก) ในรูปของ $g$, $\\theta$ และ $\\mu$ โดยเขียนแบบไม่มีวงเล็บ (ไม่ต้องดึง $g$ ออกเป็นตัวร่วม)"
+    prefix: "a ="
+    answer: { latex: "g\\sin\\theta - \\mu g\\cos\\theta", variables: [g, theta, mu] }
+    misconceptions:
+      - { match: "g\\sin\\theta + \\mu g\\cos\\theta", feedback: "วัตถุไถลลง แรงเสียดทานจึงชี้ขึ้นตามพื้นและต้องลบ ไม่ใช่บวก" }
+      - { match: "g\\cos\\theta - \\mu g\\sin\\theta", feedback: "สลับ sin กับ cos องค์ประกอบที่ดึงลงตามพื้นคือ $g\\sin\\theta$ และ $N = mg\\cos\\theta$" }
+      - { match: "g\\sin\\theta - \\mu g", feedback: "แรงเสียดทานคือ $\\mu N$ โดย $N = mg\\cos\\theta$ บนพื้นเอียง ไม่ใช่ $mg$" }
+    hints:
+      - "เขียนแรงในแนวพื้นเอียง: องค์ประกอบของน้ำหนักลงตามพื้น และแรงเสียดทานขึ้นตามพื้น"
+      - "แรงเสียดทาน $\\mu N$ โดย $N = mg\\cos\\theta$"
+      - "ใช้ $ma = \\Sigma F$ แล้วหารด้วย $m$ ทั้งสองข้าง"
+    solution: "$ma = mg\\sin\\theta - \\mu mg\\cos\\theta$ หารด้วย $m$ ได้ $a = g\\sin\\theta - \\mu g\\cos\\theta = g(\\sin\\theta - \\mu\\cos\\theta)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p010
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 4
+    type: numeric
+    stem: "ทางลาดสำหรับรถเข็นวีลแชร์หน้าโรงพยาบาลทำมุม $10^\\circ$ กับแนวระดับ ผู้ช่วยเข็นรถเข็นกับผู้ป่วยมวลรวม $40\\ \\mathrm{kg}$ ขึ้นทางลาดด้วยความเร็วคงตัว ถ้าไม่คิดแรงเสียดทานและแรงต้านใด ๆ ต้องออกแรงขนานกับทางลาดเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 68.07, tolerance: 0.68, unit: N }
+    hints:
+      - "ความเร็วคงตัวแปลว่าแรงลัพธ์ตามทางลาดเป็นศูนย์"
+      - "แรงที่ต้องเอาชนะคือองค์ประกอบของน้ำหนักที่ดึงลงตามทางลาด"
+      - "$F = mg\\sin\\theta$"
+    misconceptions:
+      - { match: 386.04, feedback: "นั่นคือ $mg\\cos 10^\\circ$ ซึ่งเป็นองค์ประกอบที่กดเข้าหาพื้นทางลาด องค์ประกอบที่ดึงลงตามทางลาดคือ $mg\\sin\\theta$" }
+      - { match: 392, feedback: "นั่นคือน้ำหนักทั้งหมด ทางลาดช่วยรับน้ำหนักส่วนใหญ่ไว้ ผู้ช่วยต้องออกแรงแค่ $mg\\sin\\theta$" }
+    solution: "$F = mg\\sin 10^\\circ = (40)(9.8)(0.1736) \\approx 68.1\\ \\mathrm{N}$ น้อยกว่าการยกตรง ๆ ($392\\ \\mathrm{N}$) มาก ทางลาดจึงช่วยให้เข็นขึ้นได้ง่าย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p011
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 5
+    type: numeric
+    stem: "ดันกล่องมวล $20\\ \\mathrm{kg}$ ขึ้นพื้นเอียงมุม $25^\\circ$ ด้วยความเร็วคงตัว โดยออกแรงขนานกับพื้นเอียง สัมประสิทธิ์ความเสียดทานจลน์เป็น $0.3$ ต้องออกแรงเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 136.12, tolerance: 1.4, unit: N }
+    hints:
+      - "กล่องเคลื่อนที่ขึ้น แรงเสียดทานจลน์จึงชี้ลงตามพื้น"
+      - "ความเร็วคงตัว: แรงที่ดันขึ้นต้องเท่ากับผลรวมของแรงที่ดึงลงตามพื้น"
+      - "$F = mg\\sin\\theta + \\mu_k mg\\cos\\theta$"
+    misconceptions:
+      - { match: 29.54, feedback: "ดูเหมือนให้แรงเสียดทานชี้ขึ้นตามพื้น แต่กล่องเคลื่อนที่ขึ้น แรงเสียดทานต้านการเคลื่อนที่จึงชี้ลง ต้องบวกเพิ่ม" }
+      - { match: 82.83, feedback: "นั่นคือ $mg\\sin 25^\\circ$ อย่างเดียว ยังไม่ได้รวมแรงเสียดทานที่ต้านอยู่" }
+    solution: "$mg\\sin 25^\\circ = (20)(9.8)(0.4226) \\approx 82.83\\ \\mathrm{N}$ และ $\\mu_k mg\\cos 25^\\circ = 0.3(20)(9.8)(0.9063) \\approx 53.29\\ \\mathrm{N}$ รวม $F \\approx 136.1\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p012
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 5
+    type: numeric
+    stem: "ในการทดลอง กล่องไถลลงพื้นเอียงมุม $18^\\circ$ ด้วยความเร็วคงตัว สัมประสิทธิ์ความเสียดทานจลน์ระหว่างกล่องกับพื้นเป็นเท่าใด (ตอบเป็นตัวเลขทศนิยม 3 ตำแหน่ง ไม่มีหน่วย)"
+    answer: { value: 0.3249, tolerance: 0.0033 }
+    hints:
+      - "ความเร็วคงตัวแปลว่าแรงลัพธ์ตามพื้นเป็นศูนย์"
+      - "ตั้ง $mg\\sin\\theta = \\mu_k mg\\cos\\theta$"
+      - "จัดรูปให้ได้ $\\mu_k$ ในรูปฟังก์ชันตรีโกณของ $\\theta$"
+    misconceptions:
+      - { match: 0.309, feedback: "นั่นคือ $\\sin 18^\\circ$ จาก $\\sin\\theta = \\mu_k\\cos\\theta$ ได้ $\\mu_k = \\dfrac{\\sin\\theta}{\\cos\\theta} = \\tan\\theta$" }
+      - { match: 3.078, feedback: "นั่นคือ $\\dfrac{\\cos\\theta}{\\sin\\theta}$ กลับเศษกับส่วน $\\mu_k = \\dfrac{\\sin\\theta}{\\cos\\theta}$" }
+    solution: "แรงลัพธ์เป็นศูนย์: $mg\\sin\\theta = \\mu_k mg\\cos\\theta$ → $\\mu_k = \\tan 18^\\circ \\approx 0.325$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p013
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 3
+    type: numeric
+    stem: "รถยนต์มวล $1500\\ \\mathrm{kg}$ จอดนิ่งบนถนนขึ้นดอยที่ชัน $12^\\circ$ แรงเสียดทานสถิตระหว่างยางกับถนนต้องมีขนาดเท่าใดรถจึงไม่ไถลลง ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 3056.3, tolerance: 31, unit: N }
+    hints:
+      - "รถนิ่ง แรงลัพธ์ตามแนวถนนเป็นศูนย์"
+      - "แรงเสียดทานสถิตต้องหักล้างองค์ประกอบของน้ำหนักที่ดึงลงตามถนน"
+    misconceptions:
+      - { match: 14378.8, feedback: "นั่นคือ $mg\\cos 12^\\circ$ ซึ่งเป็นองค์ประกอบที่กดรถเข้าหาถนน แรงที่ดึงรถลงตามถนนคือ $mg\\sin\\theta$" }
+      - { match: 14700, feedback: "นั่นคือน้ำหนักทั้งหมด แรงเสียดทานต้านแค่องค์ประกอบของน้ำหนักตามแนวถนน $mg\\sin\\theta$" }
+    solution: "$f_s = mg\\sin 12^\\circ = (1500)(9.8)(0.2079) \\approx 3056\\ \\mathrm{N}$ ชี้ขึ้นตามถนน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.incl.p014
+    topics: [physics.dynamics.inclined-plane]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหาความเร่งของกล่องที่ไถลลงพื้นเอียงซึ่งมีแรงเสียดทานให้ถูกต้อง"
+    items:
+      - "วาดแผนภาพแรง: น้ำหนัก แรงปฏิกิริยาตั้งฉาก และแรงเสียดทาน"
+      - "ตั้งแกนขนานและตั้งฉากกับพื้นเอียง"
+      - "แยกน้ำหนักเป็น $mg\\sin\\theta$ และ $mg\\cos\\theta$"
+      - "หา $N = mg\\cos\\theta$ แล้วหาแรงเสียดทาน $\\mu_k N$"
+      - "ใช้ $\\Sigma F = ma$ ในแนวขนานพื้นเพื่อหา $a$"
+    hints:
+      - "ต้องรู้ว่ามีแรงอะไรบ้างก่อนจะเลือกแกน"
+      - "แรงเสียดทานต้องรู้ $N$ ก่อน และ $N$ ต้องรู้องค์ประกอบตั้งฉากก่อน"
+    solution: "แผนภาพแรง → เอียงแกนตามพื้น → แยกองค์ประกอบของน้ำหนัก → หา $N$ และแรงเสียดทาน → กฎข้อที่ 2 ในแนวขนานพื้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -48,6 +48,9 @@ test("mcq returns the chosen distractor's feedback", async () => {
 test("text answers ignore spaces and case", async () => {
   const p: Problem = { ...base, id: "math.a.p003", type: "text", accepted: ["3/4", "0.75"], misconceptions: [] };
   assert.equal((await check(p, { type: "text", input: " 3 / 4 " })).correct, true);
+  const py: Problem = { ...base, id: "zh.a.p002", type: "text", accepted: ["nǐ hǎo", "doesn't"], misconceptions: [] };
+  assert.equal((await check(py, { type: "text", input: "ni\u030C ha\u030Co" })).correct, true, "combining tone marks");
+  assert.equal((await check(py, { type: "text", input: "doesn\u2019t" })).correct, true, "curly apostrophe");
 });
 
 test("order and match", async () => {
@@ -77,6 +80,9 @@ test("expression answers accept equivalent forms and reject the rest", async () 
   assert.equal((await r("\\frac{A}{2b}")).feedback, "คูณ 2 ก่อน");
   assert.equal((await r("\\frac{A}{b}")).correct, false);
   assert.ok((await r("\\frac{2A}{c}")).invalid?.includes("c"));
+  // ตัวแปรตามด้วยวงเล็บหมายถึงการคูณ เช่น A(2/b) หรือ A\left(...\right)
+  assert.equal((await r("A(\\frac{2}{b})")).correct, true);
+  assert.equal((await r("A\\left(\\frac{2}{b}\\right)")).correct, true);
   const fac: Problem = { ...p, id: "math.a.p008", prefix: undefined, factored: true, answer: { latex: "(x+3)(x+4)", variables: ["x"] }, misconceptions: [] };
   assert.equal((await check(fac, { type: "expression", latex: "(x+4)\\cdot(x+3)" })).correct, true);
   assert.ok((await check(fac, { type: "expression", latex: "x^2+7x+12" })).invalid?.includes("ตัวประกอบ"));

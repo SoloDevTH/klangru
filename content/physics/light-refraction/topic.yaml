@@ -1,0 +1,48 @@
+id: physics.light.refraction
+subject: physics
+title: { th: การหักเหของแสงและเลนส์, en: Refraction of light and lenses }
+summary: ดรรชนีหักเห กฎของสเนลล์ มุมวิกฤตและการสะท้อนกลับหมด และภาพที่เกิดจากเลนส์นูนกับเลนส์เว้า
+difficulty: 5.5
+minutes: 40
+prerequisites: [physics.light.reflection, math.geometry.trig-ratios]
+encompasses:
+  - { id: physics.light.reflection, weight: 0.3 }
+  - { id: math.geometry.trig-ratios, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: มุมหักเหตามกฎของสเนลล์
+    caption: แกนนอนคือมุมตกกระทบ แกนตั้งคือมุมหักเห (องศา) a คือดรรชนีหักเหของตัวกลางที่แสงเริ่มต้นอยู่ b คือของตัวกลางที่แสงเข้าไป เส้นที่สอง (y = x) คือกรณีที่แสงไม่เบน ลองตั้ง a = 1.5 และ b = 1 กราฟจะหยุดที่มุมวิกฤต เพราะมุมที่มากกว่านั้นแสงสะท้อนกลับหมด
+    widget:
+      kind: function-plot
+      functions: ["\\frac{180}{\\pi}\\arcsin\\left(\\frac{a}{b}\\sin\\left(\\frac{\\pi x}{180}\\right)\\right)", "x"]
+      sliders:
+        - { name: a, min: 1, max: 2.5, step: 0.05, value: 1, label: ดรรชนีหักเหตัวกลางแรก }
+        - { name: b, min: 1, max: 2.5, step: 0.05, value: 1.5, label: ดรรชนีหักเหตัวกลางที่สอง }
+      x: [0, 90]
+      y: [0, 90]
+  - type: simulation
+    title: การหักเหของแสง (PhET Bending Light)
+    url: https://phet.colorado.edu/en/simulations/bending-light
+    provider: phet
+    note: ยิงเลเซอร์จากอากาศเข้าน้ำและแก้ว ใช้ไม้โปรแทรกเตอร์วัดมุมแล้วตรวจกฎของสเนลล์ จากนั้นสลับให้แสงออกจากแก้วสู่อากาศ ค่อย ๆ เพิ่มมุมจนแสงหักเหหายไปทั้งหมด นั่นคือมุมวิกฤต
+  - type: simulation
+    title: "ภาพจากเลนส์ (PhET Geometric Optics)"
+    url: https://phet.colorado.edu/en/simulations/geometric-optics
+    provider: phet
+    note: เลือกหน้าจอเลนส์ (Lens) ลากวัตถุเข้าใกล้เลนส์นูนจนผ่านจุดโฟกัส สังเกตว่าภาพเปลี่ยนจากภาพจริงหัวกลับอีกฝั่งของเลนส์เป็นภาพเสมือนหัวตั้ง แล้วลองเปลี่ยนเป็นเลนส์เว้า
+glossary:
+  - { term: ดรรชนีหักเห, definition: "อัตราส่วนระหว่างอัตราเร็วแสงในสุญญากาศกับในตัวกลาง $n = \\tfrac{c}{v}$ ไม่มีหน่วย ยิ่งมากแสงยิ่งช้า" }
+  - { term: มุมวิกฤต, definition: "มุมตกกระทบที่ทำให้มุมหักเหเป็น $90^\\circ$ เกิดเมื่อแสงไปจากตัวกลางที่ $n$ มากสู่ $n$ น้อย หาจาก $\\sin\\theta_c = \\tfrac{n_2}{n_1}$" }
+  - { term: การสะท้อนกลับหมด, definition: "การที่แสงสะท้อนกลับทั้งหมดที่รอยต่อ เมื่อแสงไปจาก $n$ มากสู่ $n$ น้อยและมุมตกกระทบมากกว่ามุมวิกฤต" }
+  - { term: เลนส์นูน และ เลนส์เว้า, definition: "เลนส์นูนตรงกลางหนา รวมแสง $f > 0$ เลนส์เว้าตรงกลางบาง กระจายแสง $f < 0$" }
+flashcards:
+  - { front: "นิยามดรรชนีหักเห", back: "$n = \\dfrac{c}{v}$ เมื่อ $c = 3.0 \\times 10^8\\ \\mathrm{m/s}$ เช่น แก้ว $n = 1.5$ แสงในแก้วเร็ว $2.0 \\times 10^8\\ \\mathrm{m/s}$" }
+  - { front: "กฎของสเนลล์", back: "$n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2$ เข้าตัวกลาง $n$ มากขึ้น แสงเบนเข้าหาเส้นปกติ" }
+  - { front: "เงื่อนไขการสะท้อนกลับหมด", back: "แสงไปจาก $n$ มากสู่ $n$ น้อย และมุมตกกระทบมากกว่ามุมวิกฤต $\\sin\\theta_c = \\tfrac{n_2}{n_1}$" }
+  - { front: "แว่นขยายใช้เลนส์อะไร วัตถุอยู่ตรงไหน", back: "เลนส์นูน วัตถุอยู่ใกล้กว่าจุดโฟกัส ได้ภาพเสมือน หัวตั้ง ขนาดใหญ่" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

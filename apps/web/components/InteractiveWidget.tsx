@@ -40,7 +40,13 @@ export function InteractiveWidget({ widget, title }: { widget: Widget; title: st
         if (fns.some((f) => !f)) return setError("วาดกราฟจากสมการนี้ไม่ได้");
         const b = jxg.JSXGraph.initBoard(id, { boundingbox: [widget.x[0], widget.y[1], widget.x[1], widget.y[0]], axis: true, showCopyright: false, showNavigation: false, keepAspectRatio: false });
         const colors = [accent, "#c0392b", "#2f5fb3", "#b4521f"];
-        fns.forEach((f, i) => b.create("functiongraph", [(x: number) => f!({ ...valuesRef.current, x })], { strokeColor: colors[i % colors.length], strokeWidth: 3 }));
+        // ค่าที่พุ่งเกินกรอบมาก (เช่น ใกล้เส้นกำกับ) ให้เป็น NaN เพื่อเว้นช่องแทนการลากเส้นตั้ง
+        const limit = 20 * (widget.y[1] - widget.y[0]);
+        const safe = (f: (v: Record<string, number>) => number) => (x: number) => {
+          const v = f({ ...valuesRef.current, x });
+          return Number.isFinite(v) && Math.abs(v) < limit ? v : Number.NaN;
+        };
+        fns.forEach((f, i) => b.create("functiongraph", [safe(f!)], { strokeColor: colors[i % colors.length], strokeWidth: 3 }));
         board.current = b;
       } else if (widget.kind === "number-line") {
         const pad = (widget.max - widget.min) * 0.05;
@@ -57,15 +63,17 @@ export function InteractiveWidget({ widget, title }: { widget: Widget; title: st
         const ext = Math.max(...widget.a.map(Math.abs), ...widget.b.map(Math.abs), Math.abs(widget.a[0] + widget.b[0]), Math.abs(widget.a[1] + widget.b[1])) + 1;
         const b = jxg.JSXGraph.initBoard(id, { boundingbox: [-ext, ext, ext, -ext], axis: true, grid: true, showCopyright: false, showNavigation: false });
         const o = b.create("point", [0, 0], { fixed: true, visible: false });
-        const A = b.create("point", widget.a, { name: "a", fixed: !widget.draggable, color: accent, snapToGrid: true });
-        const B = b.create("point", widget.b, { name: "b", fixed: !widget.draggable, color: "#2f5fb3", snapToGrid: true });
+        // ดูดเข้าจุดตารางเฉพาะตอนลากได้ เวกเตอร์ที่ตั้งค่าไว้ (เช่น 1.732) ต้องอยู่ตำแหน่งเดิม
+        const A = b.create("point", widget.a, { name: "a", fixed: !widget.draggable, color: accent, snapToGrid: widget.draggable });
+        const B = b.create("point", widget.b, { name: "b", fixed: !widget.draggable, color: "#2f5fb3", snapToGrid: widget.draggable });
         b.create("arrow", [o, A], { strokeColor: accent, strokeWidth: 3 });
         b.create("arrow", [o, B], { strokeColor: "#2f5fb3", strokeWidth: 3 });
         const S = b.create("point", [() => A.X!() + B.X!(), () => A.Y!() + B.Y!()], { name: "a+b", color: "#c0392b", fixed: true });
         b.create("arrow", [A, S], { strokeColor: "#2f5fb3", dash: 2 });
         b.create("arrow", [o, S], { strokeColor: "#c0392b", strokeWidth: 3 });
+        const f = (v: number) => String(Math.round(v * 100) / 100);
         const report = () =>
-          setVectorText(`a = (${A.X!().toFixed(0)}, ${A.Y!().toFixed(0)}) · b = (${B.X!().toFixed(0)}, ${B.Y!().toFixed(0)}) · a + b = (${S.X!().toFixed(0)}, ${S.Y!().toFixed(0)}) · ขนาด |a + b| = ${Math.hypot(S.X!(), S.Y!()).toFixed(2)}`);
+          setVectorText(`a = (${f(A.X!())}, ${f(A.Y!())}) · b = (${f(B.X!())}, ${f(B.Y!())}) · a + b = (${f(S.X!())}, ${f(S.Y!())}) · ขนาด |a + b| = ${Math.hypot(S.X!(), S.Y!()).toFixed(2)}`);
         A.on?.("drag", report);
         B.on?.("drag", report);
         report();

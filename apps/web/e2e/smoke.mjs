@@ -194,6 +194,26 @@ await step("โจทย์นิพจน์ (MathLive): พิมพ์จร�
   await shot("05-expression", false);
 });
 
+await step("เขียนอักษรจีน: โหลดข้อมูลลำดับขีดจากในแอปได้", async () => {
+  await page.goto(`${base}/`);
+  await setVariant("fixed");
+  const t = index.topics.find((x) => pack(x.id).problems.some((p) => p.type === "hanzi"));
+  expect(t, "ไม่มีหัวข้อที่มีโจทย์เขียนอักษรจีน");
+  const { problems } = pack(t.id);
+  const idx = problems.findIndex((p) => p.type === "hanzi");
+  await page.goto(`${base}/topic/${t.id}/practice/`);
+  for (let i = 0; i < idx; i++) {
+    await answerCurrent(t.id);
+    await page.getByRole("button", { name: /ข้อต่อไป/ }).click();
+  }
+  const data = page.waitForResponse((r) => r.url().includes("/content/hanzi/"));
+  await page.locator(".hanzi-box svg").first().waitFor({ timeout: 15000 });
+  const res = await data;
+  expect(res.ok() && /\/content\/hanzi\/[0-9a-f]+\.json$/.test(res.url()), `โหลด ${res.url()} ไม่ได้ (${res.status()})`);
+  // ชื่อไฟล์ต้องเป็น ASCII เพื่อให้ build แอป Android ได้
+  await page.waitForFunction(() => document.querySelectorAll(".hanzi-box svg path").length > 0, null, { timeout: 15000 });
+});
+
 await step("ค้นหาภาษาไทยเจอบทเรียน", async () => {
   await page.goto(`${base}/search/`);
   await page.locator("#search-q").fill("ความเร่ง");

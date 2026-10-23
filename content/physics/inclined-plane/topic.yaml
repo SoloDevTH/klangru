@@ -1,0 +1,42 @@
+id: physics.dynamics.inclined-plane
+subject: physics
+title: { th: วัตถุบนพื้นเอียง, en: Objects on an inclined plane }
+summary: แยกน้ำหนักเป็นองค์ประกอบขนานและตั้งฉากกับพื้นเอียง หาแรงปฏิกิริยาตั้งฉาก ความเร่งของวัตถุที่ไถลลงทั้งแบบไม่มีและมีแรงเสียดทาน และมุมที่วัตถุเริ่มไถล
+difficulty: 6
+minutes: 40
+prerequisites: [physics.dynamics.friction, physics.units.vectors]
+encompasses:
+  - { id: physics.dynamics.friction, weight: 0.5 }
+  - { id: physics.units.vectors, weight: 0.4 }
+  - { id: physics.dynamics.weight-normal, weight: 0.3 }
+  - { id: math.geometry.trig-ratios, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: แยกน้ำหนักบนพื้นเอียง 30° เป็นสององค์ประกอบ
+    caption: "พื้นเอียงทำมุม 30° ลาดลงไปทางขวา ลูกศร a คือองค์ประกอบของน้ำหนักที่ขนานกับพื้นเอียง (mg sin 30° = 2 หน่วย ชี้ลงตามพื้น) ลูกศร b คือองค์ประกอบที่ตั้งฉากกับพื้นเอียง (mg cos 30° ≈ 3.46 หน่วย ชี้เข้าหาพื้น) ผลรวมของสองลูกศรคือน้ำหนัก mg = 4 หน่วย ชี้ลงตรง ๆ สังเกตว่าลูกศร a กับ b ตั้งฉากกัน"
+    widget: { kind: vector-add, a: [1.732, -1], b: [-1.732, -3], draggable: false }
+  - type: interactive
+    title: ความเร่งตามพื้นเอียงเมื่อเปลี่ยนมุม
+    caption: แกนนอนคือมุมของพื้นเอียง (องศา) แกนตั้งคือความเร่งของวัตถุที่ไถลลง (m/s²) เส้นบนคือพื้นลื่น a = g sin θ และเส้นล่างคือพื้นที่มีสัมประสิทธิ์ความเสียดทานจลน์ μk = k คือ a = g(sin θ − μk cos θ) เมื่อ g = 9.8 m/s² ที่ 90° พื้นลื่นให้ความเร่งเท่ากับการตกอิสระ ลองเพิ่ม k แล้วดูว่าต้องเอียงพื้นชันขึ้นเท่าใดวัตถุจึงจะมีความเร่ง
+    widget:
+      kind: function-plot
+      functions: ["9.8\\sin(\\frac{\\pi x}{180})", "9.8\\sin(\\frac{\\pi x}{180}) - 9.8 k\\cos(\\frac{\\pi x}{180})"]
+      sliders:
+        - { name: k, min: 0, max: 1, step: 0.05, value: 0.3, label: μk }
+      x: [0, 90]
+      y: [0, 10]
+glossary:
+  - { term: พื้นเอียง, definition: "ผิวเรียบที่ทำมุม $\\theta$ กับแนวระดับ เช่น ทางลาด สไลเดอร์ ถนนขึ้นเขา" }
+  - { term: องค์ประกอบขนานพื้นเอียง, definition: "ส่วนของน้ำหนักในแนวพื้นเอียง มีขนาด $mg\\sin\\theta$ ชี้ลงตามพื้น เป็นตัวทำให้วัตถุไถลลง" }
+  - { term: องค์ประกอบตั้งฉากพื้นเอียง, definition: "ส่วนของน้ำหนักที่กดวัตถุเข้าหาพื้น มีขนาด $mg\\cos\\theta$ ถูกหักล้างด้วยแรงปฏิกิริยาตั้งฉาก" }
+flashcards:
+  - { front: "บนพื้นเอียงมุม $\\theta$ น้ำหนัก $mg$ แยกเป็นองค์ประกอบใดบ้าง", back: "ขนานพื้น $mg\\sin\\theta$ (ลงตามพื้น) และตั้งฉากพื้น $mg\\cos\\theta$ (เข้าหาพื้น)" }
+  - { front: "ความเร่งของวัตถุที่ไถลลงพื้นเอียงลื่น", back: "$a = g\\sin\\theta$ ไม่ขึ้นกับมวล" }
+  - { front: "ความเร่งเมื่อไถลลงพื้นเอียงที่มีแรงเสียดทานจลน์", back: "$a = g(\\sin\\theta - \\mu_k\\cos\\theta)$" }
+  - { front: "วัตถุวางนิ่งบนพื้นเอียงจะเริ่มไถลที่มุมเท่าใด", back: "เมื่อ $\\tan\\theta = \\mu_s$ ถ้าไถลลงด้วยความเร็วคงตัวจะได้ $\\tan\\theta = \\mu_k$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

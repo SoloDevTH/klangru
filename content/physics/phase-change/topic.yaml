@@ -1,0 +1,41 @@
+id: physics.thermal.phase-change
+subject: physics
+title: { th: การเปลี่ยนสถานะและความร้อนแฝง, en: Change of state and latent heat }
+summary: อธิบายว่าทำไมอุณหภูมิคงที่ขณะเปลี่ยนสถานะ คำนวณความร้อนแฝง และอ่านกราฟอุณหภูมิกับเวลาเมื่อให้ความร้อนน้ำแข็งจนกลายเป็นไอ
+difficulty: 4.5
+minutes: 35
+prerequisites: [physics.thermal.temperature-heat]
+encompasses:
+  - { id: physics.thermal.temperature-heat, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: กราฟอุณหภูมิของน้ำแข็งที่ได้รับความร้อน
+    caption: แกนนอนคือความร้อนที่ให้ (kJ) แกนตั้งคืออุณหภูมิ (°C) เริ่มจากน้ำแข็ง −20 °C ใช้ c น้ำแข็ง 2,100 J/(kg·K) c น้ำ 4,200 J/(kg·K) L_f 3.36 × 10⁵ J/kg และ L_v 2.26 × 10⁶ J/kg ช่วงราบที่ 0 °C คือการหลอมเหลว ส่วนเส้นราบที่ 100 °C คือการเดือด ซึ่งยาวกว่ามากและยาวเลยขอบกราฟ ลองเพิ่มมวล m จะเห็นทุกช่วงยืดออกตามมวล
+    widget:
+      kind: function-plot
+      functions: ["\\min(0, -20 + \\frac{x}{2.1 m}) + \\max(0, \\min(100, \\frac{x - 378 m}{4.2 m}))"]
+      sliders:
+        - { name: m, min: 0.75, max: 2, step: 0.25, value: 1, label: มวลของน้ำแข็ง m (kg) }
+      x: [0, 2000]
+      y: [-30, 120]
+  - type: simulation
+    title: สถานะของสสาร (PhET States of Matter Basics)
+    url: https://phet.colorado.edu/en/simulations/states-of-matter-basics
+    provider: phet
+    note: เลือกน้ำแล้วกดให้ความร้อน สังเกตว่าเมื่อโมเลกุลเริ่มหลุดจากโครงสร้างผลึก อุณหภูมิแทบไม่เปลี่ยน จนเปลี่ยนสถานะเสร็จจึงร้อนขึ้นต่อ
+glossary:
+  - { term: ความร้อนแฝง, definition: "ความร้อนที่สารรับหรือคายขณะเปลี่ยนสถานะ โดยอุณหภูมิไม่เปลี่ยน" }
+  - { term: ความร้อนแฝงจำเพาะ, definition: "ความร้อนที่ใช้เปลี่ยนสถานะสาร $1\\ \\mathrm{kg}$ ที่อุณหภูมิคงที่ หน่วย $\\mathrm{J/kg}$ ใช้ใน $Q = mL$" }
+  - { term: การหลอมเหลว, definition: "การเปลี่ยนจากของแข็งเป็นของเหลว เช่น น้ำแข็งละลายที่ $0\\ ^\\circ\\mathrm{C}$ ต้องรับความร้อน" }
+  - { term: การควบแน่น, definition: "การเปลี่ยนจากแก๊สเป็นของเหลว เช่น ไอน้ำกลายเป็นหยดน้ำ คายความร้อนแฝงออกมา" }
+flashcards:
+  - { front: "ทำไมอุณหภูมิไม่เพิ่มขณะน้ำแข็งละลาย", back: "ความร้อนที่ได้รับถูกใช้ทำลายแรงยึดเหนี่ยวระหว่างโมเลกุลเพื่อเปลี่ยนสถานะ ไม่ได้เพิ่มพลังงานจลน์ของโมเลกุล" }
+  - { front: "สูตรความร้อนแฝง", back: "$Q = mL$ โดย $L$ มีหน่วย $\\mathrm{J/kg}$" }
+  - { front: "$L_f$ ของน้ำแข็ง และ $L_v$ ของน้ำ (ค่าในหัวข้อนี้)", back: "$L_f = 3.36 \\times 10^5\\ \\mathrm{J/kg}$, $L_v = 2.26 \\times 10^6\\ \\mathrm{J/kg}$" }
+  - { front: "ช่วงราบบนกราฟอุณหภูมิกับเวลาหมายถึงอะไร", back: "ช่วงที่สารกำลังเปลี่ยนสถานะ ถ้าให้ความร้อนอัตราคงที่ ช่วงยิ่งยาว ความร้อนแฝงยิ่งมาก" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

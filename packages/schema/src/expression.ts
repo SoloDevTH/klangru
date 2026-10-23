@@ -141,3 +141,14 @@ export function isFactoredForm(latex: string): boolean {
   if (j[0] !== "Multiply") return false;
   return j.slice(1).some((f) => isSum(f) || (Array.isArray(f) && f[0] === "Power" && isSum(f[1])));
 }
+
+/**
+ * ผู้เรียนมักพิมพ์ g(x+1) หมายถึง g คูณ (x+1) แต่ตัวแปลงอ่านเป็นฟังก์ชัน g
+ * จึงแทรก \cdot ให้ตัวแปรที่โจทย์อนุญาต (ชื่อ 1 ตัวอักษร) ที่ตามด้วยวงเล็บ
+ */
+export function explicitProducts(latex: string, variables: string[]): string {
+  const single = variables.filter((v) => /^[A-Za-z]$/.test(v));
+  if (!single.length) return latex;
+  const re = new RegExp(`(?<![\\\\A-Za-z])([${single.join("")}])\\s*(\\\\left\\s*)?\\(`, "g");
+  return latex.replace(re, (_, v: string, left: string | undefined) => `${v}\\cdot ${left ?? ""}(`);
+}

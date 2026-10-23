@@ -1,0 +1,200 @@
+problems:
+  - id: phy.pow.p001
+    topics: [physics.energy.power]
+    difficulty: 1
+    type: numeric
+    stem: 'เครื่องจักรทำงานได้ $1200\ \mathrm{J}$ ในเวลา $4\ \mathrm{s}$ เครื่องจักรนี้มีกำลังเท่าใด (ตอบเป็นตัวเลขในหน่วย W)'
+    answer: { value: 300, unit: W }
+    hints:
+      - 'กำลังคืองานที่ทำได้ในหนึ่งหน่วยเวลา'
+      - 'ใช้ $P = \tfrac{W}{t}$ นำงานหารด้วยเวลา'
+    misconceptions:
+      - { match: 4800, feedback: 'ดูเหมือนนำงานคูณกับเวลา กำลังคืองาน **หาร** ด้วยเวลา $P = \tfrac{W}{t}$' }
+    solution: '$P = \dfrac{W}{t} = \dfrac{1200\ \mathrm{J}}{4\ \mathrm{s}} = 300\ \mathrm{J/s} = 300\ \mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p002
+    topics: [physics.energy.power]
+    difficulty: 1
+    type: mcq
+    stem: 'หน่วยวัตต์ ($\mathrm{W}$) ซึ่งเป็นหน่วยของกำลัง เท่ากับหน่วยใด'
+    choices:
+      - { id: a, text: '$\mathrm{J/s}$ (จูลต่อวินาที)', correct: true }
+      - { id: b, text: '$\mathrm{J \cdot s}$ (จูลคูณวินาที)', feedback: 'กำลังคืองาน **หาร** ด้วยเวลา หน่วยจึงเป็นจูลต่อวินาที ไม่ใช่จูลคูณวินาที' }
+      - { id: c, text: '$\mathrm{N \cdot m}$ (นิวตันคูณเมตร)', feedback: '$\mathrm{N \cdot m}$ เท่ากับจูล ซึ่งเป็นหน่วยของงาน ยังไม่ได้หารด้วยเวลา' }
+      - { id: d, text: '$\mathrm{kWh}$ (กิโลวัตต์-ชั่วโมง)', feedback: '$\mathrm{kWh}$ คือกำลังคูณเวลา จึงเป็นหน่วยของ **พลังงาน** (หน่วยในบิลค่าไฟ) ไม่ใช่หน่วยของกำลัง' }
+    hints:
+      - 'เขียนสูตรนิยามของกำลังที่มีงานและเวลา'
+      - 'นำหน่วยของงานและเวลามาดำเนินการแบบเดียวกับในสูตร'
+    solution: 'จาก $P = \tfrac{W}{t}$ หน่วยของกำลังคือหน่วยของงานหารด้วยหน่วยของเวลา $1\ \mathrm{W} = 1\ \mathrm{J/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p003
+    topics: [physics.energy.power]
+    difficulty: 2
+    type: numeric
+    stem: 'นักเรียนมวล $50\ \mathrm{kg}$ วิ่งขึ้นบันไดอาคารเรียน ได้ความสูง $6\ \mathrm{m}$ ในเวลา $12\ \mathrm{s}$ นักเรียนใช้กำลังในการยกตัวเองขึ้นเท่าใด ใช้ $g = 9.8\ \mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย W)'
+    answer: { value: 245, tolerance: 2, unit: W }
+    hints:
+      - 'หางานที่ใช้ยกตัวเองขึ้นก่อน งานเท่ากับ $mgh$'
+      - 'นำงานหารด้วยเวลาที่ใช้ $P = \tfrac{W}{t}$'
+    misconceptions:
+      - { match: 25, feedback: 'ดูเหมือนลืมคูณ $g$ แรงที่ใช้ยกตัวเองคือน้ำหนัก $mg$ ไม่ใช่มวล' }
+      - { match: 35280, feedback: 'ดูเหมือนนำงานคูณกับเวลา กำลังคืองาน **หาร** ด้วยเวลา' }
+    solution: 'งาน $W = mgh = (50\ \mathrm{kg})(9.8\ \mathrm{m/s^2})(6\ \mathrm{m}) = 2940\ \mathrm{J}$ กำลัง $P = \dfrac{2940\ \mathrm{J}}{12\ \mathrm{s}} = 245\ \mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p004
+    topics: [physics.energy.power]
+    difficulty: 2
+    type: numeric
+    stem: 'รถยนต์วิ่งบนถนนราบด้วยความเร็วคงตัว $25\ \mathrm{m/s}$ โดยเครื่องยนต์ให้แรงขับ $2000\ \mathrm{N}$ เครื่องยนต์ให้กำลังเท่าใด (ตอบเป็นตัวเลขในหน่วย kW)'
+    answer: { value: 50, unit: kW }
+    hints:
+      - 'รู้แรงและความเร็ว ใช้ $P = Fv$'
+      - 'ได้กำลังเป็นวัตต์ แล้วหารด้วย 1000 เพื่อเปลี่ยนเป็นกิโลวัตต์'
+    misconceptions:
+      - { match: 80, feedback: 'ดูเหมือนนำแรงหารด้วยความเร็ว กำลังคือแรง **คูณ** ความเร็ว $P = Fv$' }
+      - { match: 50000, feedback: 'คำนวณถูกแล้ว แต่นั่นเป็นหน่วยวัตต์ โจทย์ถามเป็นกิโลวัตต์ ต้องหารด้วย 1000' }
+    solution: '$P = Fv = (2000\ \mathrm{N})(25\ \mathrm{m/s}) = 50000\ \mathrm{W} = 50\ \mathrm{kW}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p005
+    topics: [physics.energy.power]
+    difficulty: 3
+    type: numeric
+    stem: 'ลิฟต์ในคอนโดมิเนียมพร้อมผู้โดยสารมีมวลรวม $1000\ \mathrm{kg}$ ขึ้นไปสูง $30\ \mathrm{m}$ ด้วยความเร็วคงตัวในเวลา $20\ \mathrm{s}$ มอเตอร์ต้องให้กำลังในการยกลิฟต์เท่าใด ใช้ $g = 9.8\ \mathrm{m/s^2}$ และไม่คิดแรงเสียดทาน (ตอบเป็นตัวเลขในหน่วย kW)'
+    answer: { value: 14.7, tolerance: 0.15, unit: kW }
+    hints:
+      - 'ความเร็วคงตัว แรงดึงของสายลิฟต์จึงเท่ากับน้ำหนัก $mg$'
+      - 'หางาน $W = mgh$ แล้วหารด้วยเวลา'
+      - 'เปลี่ยนวัตต์เป็นกิโลวัตต์โดยหารด้วย 1000'
+    misconceptions:
+      - { match: 1.5, feedback: 'ดูเหมือนลืมคูณ $g$ แรงที่ใช้ยกลิฟต์คือน้ำหนัก $mg$ ไม่ใช่มวล' }
+      - { match: 14700, feedback: 'คำนวณถูกแล้ว แต่นั่นเป็นหน่วยวัตต์ โจทย์ถามเป็นกิโลวัตต์ ต้องหารด้วย 1000' }
+    solution: 'งาน $W = mgh = (1000)(9.8)(30) = 294000\ \mathrm{J}$ กำลัง $P = \dfrac{294000\ \mathrm{J}}{20\ \mathrm{s}} = 14700\ \mathrm{W} = 14.7\ \mathrm{kW}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p006
+    topics: [physics.energy.power]
+    difficulty: 3
+    type: numeric
+    stem: 'ปั๊มน้ำของบ้านหลังหนึ่งใช้กำลังไฟฟ้า $800\ \mathrm{W}$ สูบน้ำมวล $300\ \mathrm{kg}$ ขึ้นไปเก็บในแท็งก์บนหลังคาสูง $10\ \mathrm{m}$ ในเวลา $60\ \mathrm{s}$ ปั๊มนี้มีประสิทธิภาพกี่เปอร์เซ็นต์ ใช้ $g = 9.8\ \mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย %)'
+    answer: { value: 61.25, tolerance: 0.6, unit: '%' }
+    hints:
+      - 'หากำลังที่ใช้ยกน้ำจริง (กำลังที่ได้ออก) จาก $\tfrac{mgh}{t}$'
+      - 'ประสิทธิภาพ = กำลังที่ได้ออก ÷ กำลังที่ใส่เข้า × 100%'
+    misconceptions:
+      - { match: 163.27, feedback: 'ประสิทธิภาพเกิน 100% ไม่ได้ ดูเหมือนสลับเศษกับส่วน ต้องเป็น $\tfrac{P_{\text{ออก}}}{P_{\text{เข้า}}}$' }
+      - { match: 6.25, feedback: 'ดูเหมือนลืมคูณ $g$ ตอนหางานยกน้ำ งานที่ใช้ยกคือ $mgh$' }
+    solution: 'กำลังที่ได้ออก $= \dfrac{mgh}{t} = \dfrac{(300)(9.8)(10)}{60}\ \mathrm{W} = \dfrac{29400}{60}\ \mathrm{W} = 490\ \mathrm{W}$ ประสิทธิภาพ $= \dfrac{490}{800} \times 100\% = 61.25\%$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p007
+    topics: [physics.energy.power]
+    difficulty: 3
+    type: mcq
+    stem: 'ต้นและฝนมีมวลเท่ากัน เดินขึ้นบันไดชุดเดียวกันจากชั้น 1 ถึงชั้น 4 ต้นใช้เวลา $30\ \mathrm{s}$ ฝนใช้เวลา $60\ \mathrm{s}$ ข้อใดถูกต้อง'
+    choices:
+      - { id: a, text: 'ทั้งสองคนทำงานเท่ากัน แต่ต้นใช้กำลังเป็น 2 เท่าของฝน', correct: true }
+      - { id: b, text: 'ต้นทำงานมากกว่าฝน เพราะขึ้นเร็วกว่า', feedback: 'งานขึ้นกับแรง (น้ำหนัก) และความสูงที่ยกตัวขึ้น ซึ่งเท่ากันทั้งสองคน ความเร็วมีผลกับกำลังเท่านั้น' }
+      - { id: c, text: 'ฝนใช้กำลังมากกว่า เพราะใช้เวลานานกว่า', feedback: 'กำลังคืองานหารด้วยเวลา ใช้เวลานานขึ้น กำลังจึง **ลดลง**' }
+      - { id: d, text: 'ทั้งสองคนใช้กำลังเท่ากัน เพราะมวลเท่ากัน', feedback: 'มวลเท่ากันทำให้งานเท่ากัน แต่เวลาต่างกัน กำลังจึงต่างกัน' }
+    hints:
+      - 'งานในการขึ้นบันไดคือ $mgh$ ปริมาณใดในสูตรนี้ต่างกันระหว่างสองคน'
+      - 'ใช้ $P = \tfrac{W}{t}$ เปรียบเทียบเมื่องานเท่ากันแต่เวลาต่างกัน'
+    solution: 'มวลและความสูงเท่ากัน งาน $mgh$ จึงเท่ากัน ต้นใช้เวลาครึ่งหนึ่งของฝน จาก $P = \tfrac{W}{t}$ ต้นจึงใช้กำลังเป็น 2 เท่า'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p008
+    topics: [physics.energy.power]
+    difficulty: 4
+    type: expression
+    stem: 'มอเตอร์ยกวัตถุมวล $m$ ขึ้นในแนวดิ่งด้วยความเร็วคงตัว $v$ ไม่คิดแรงเสียดทาน ใช้ความเร่งโน้มถ่วง $g$ จงเขียนนิพจน์ของกำลังที่มอเตอร์ต้องให้'
+    prefix: 'P ='
+    answer: { latex: 'mgv', variables: [m, g, v] }
+    misconceptions:
+      - { match: 'mv', feedback: 'แรงที่ต้องใช้ยกวัตถุด้วยความเร็วคงตัวคือน้ำหนัก $mg$ ไม่ใช่มวล $m$' }
+      - { match: '\frac{mg}{v}', feedback: 'กำลังคือแรง **คูณ** ความเร็ว $P = Fv$ ไม่ใช่แรงหารด้วยความเร็ว' }
+    hints:
+      - 'ความเร็วคงตัว แรงลัพธ์เป็นศูนย์ แรงยกจึงเท่ากับน้ำหนัก'
+      - 'ใช้ $P = Fv$ โดยแรงยก $F = mg$'
+    solution: 'แรงยก $F = mg$ (เพราะความเร็วคงตัว) และแรงมีทิศเดียวกับความเร็ว จึงได้ $P = Fv = mgv$ หน่วย $\mathrm{kg \cdot m/s^2 \cdot m/s} = \mathrm{J/s} = \mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p009
+    topics: [physics.energy.power]
+    difficulty: 4
+    type: numeric
+    stem: 'รถยนต์วิ่งบนทางหลวงด้วยความเร็วคงตัว $72\ \mathrm{km/h}$ เครื่องยนต์ให้กำลัง $30\ \mathrm{kW}$ แรงต้านรวมที่กระทำต่อรถมีขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย N)'
+    answer: { value: 1500, unit: N }
+    hints:
+      - 'ความเร็วคงตัว แรงขับเท่ากับแรงต้านรวม'
+      - 'แปลงความเร็วเป็น $\mathrm{m/s}$ และกำลังเป็นวัตต์ก่อน'
+      - 'จัดรูป $P = Fv$ เป็น $F = \tfrac{P}{v}$'
+    misconceptions:
+      - { match: 416.67, feedback: 'ดูเหมือนใช้ $72$ โดยไม่แปลงหน่วย ต้องแปลง $72\ \mathrm{km/h} = 20\ \mathrm{m/s}$ ก่อน' }
+      - { match: 600000, feedback: 'ดูเหมือนนำกำลังคูณความเร็ว จาก $P = Fv$ แรงคือ $F = \tfrac{P}{v}$' }
+    solution: '$v = \tfrac{72}{3.6} = 20\ \mathrm{m/s}$ และ $P = 30000\ \mathrm{W}$ จะได้ $F = \dfrac{P}{v} = \dfrac{30000\ \mathrm{W}}{20\ \mathrm{m/s}} = 1500\ \mathrm{N}$ ความเร็วคงตัว แรงต้านรวมจึงเท่ากับ $1500\ \mathrm{N}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p010
+    topics: [physics.energy.power]
+    difficulty: 5
+    type: numeric
+    stem: 'มอเตอร์ลิฟต์ขนของมีประสิทธิภาพ $80\%$ ใช้ยกลิฟต์พร้อมสินค้ามวลรวม $1200\ \mathrm{kg}$ ขึ้นด้วยความเร็วคงตัว $2\ \mathrm{m/s}$ มอเตอร์ต้องรับกำลังไฟฟ้าเท่าใด ใช้ $g = 9.8\ \mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย kW)'
+    answer: { value: 29.4, tolerance: 0.3, unit: kW }
+    hints:
+      - 'หากำลังที่ได้ออก (กำลังยกลิฟต์) จาก $P = mgv$ ก่อน'
+      - 'ประสิทธิภาพ 80% แปลว่ากำลังที่ได้ออกเป็น 0.8 เท่าของกำลังที่ใส่เข้า'
+      - '$P_{\text{เข้า}} = \tfrac{P_{\text{ออก}}}{0.8}$ แล้วแปลงเป็นกิโลวัตต์'
+    misconceptions:
+      - { match: 18.816, feedback: 'ดูเหมือนนำกำลังยกคูณด้วย 0.8 กำลังที่ใส่เข้าต้อง **มากกว่า** กำลังที่ได้ออก จึงต้องหารด้วย 0.8' }
+      - { match: 23.52, feedback: 'นี่คือกำลังที่ได้ออก (กำลังยกลิฟต์) ยังไม่ได้คิดประสิทธิภาพ มอเตอร์ต้องรับกำลังมากกว่านี้' }
+    solution: '$P_{\text{ออก}} = mgv = (1200)(9.8)(2) = 23520\ \mathrm{W}$ จาก $\eta = \tfrac{P_{\text{ออก}}}{P_{\text{เข้า}}}$ ได้ $P_{\text{เข้า}} = \dfrac{23520\ \mathrm{W}}{0.8} = 29400\ \mathrm{W} = 29.4\ \mathrm{kW}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p011
+    topics: [physics.energy.power]
+    difficulty: 5
+    type: numeric
+    stem: 'ต้องการสูบน้ำ $1000\ \mathrm{L}$ (มวล $1000\ \mathrm{kg}$) จากบ่อขึ้นไปเก็บในแท็งก์ที่สูงกว่าบ่อ $15\ \mathrm{m}$ ด้วยปั๊มน้ำกำลังไฟฟ้า $750\ \mathrm{W}$ ซึ่งมีประสิทธิภาพ $70\%$ ต้องใช้เวลาเท่าใด ใช้ $g = 9.8\ \mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย s)'
+    answer: { value: 280, tolerance: 3, unit: s }
+    hints:
+      - 'หางานที่ต้องใช้ยกน้ำทั้งหมด $mgh$'
+      - 'กำลังที่ใช้ยกน้ำได้จริงคือ 70% ของ 750 W'
+      - 'เวลา = งานที่ต้องการ ÷ กำลังที่ใช้ได้จริง'
+    misconceptions:
+      - { match: 196, feedback: 'ดูเหมือนใช้กำลัง $750\ \mathrm{W}$ เต็ม ๆ แต่ปั๊มเปลี่ยนเป็นงานยกน้ำได้เพียง 70% จึงต้องใช้เวลานานกว่านี้' }
+      - { match: 137.2, feedback: 'ดูเหมือนคูณงานด้วย 0.7 ประสิทธิภาพลดกำลังที่ใช้ได้ ทำให้ใช้เวลา **นานขึ้น** ไม่ใช่สั้นลง' }
+    solution: 'งานที่ต้องการ $W = mgh = (1000)(9.8)(15) = 147000\ \mathrm{J}$ กำลังที่ใช้ยกน้ำได้จริง $= 0.7 \times 750 = 525\ \mathrm{W}$ เวลา $t = \dfrac{147000\ \mathrm{J}}{525\ \mathrm{W}} = 280\ \mathrm{s}$ (ประมาณ 4 นาที 40 วินาที)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.pow.p012
+    topics: [physics.energy.power]
+    difficulty: 2
+    type: match
+    stem: 'จับคู่ปริมาณกับหน่วย SI ของปริมาณนั้น'
+    pairs:
+      - { left: 'กำลัง', right: 'วัตต์ ($\mathrm{W}$)' }
+      - { left: 'งาน', right: 'จูล ($\mathrm{J}$)' }
+      - { left: 'แรง', right: 'นิวตัน ($\mathrm{N}$)' }
+      - { left: 'เวลา', right: 'วินาที ($\mathrm{s}$)' }
+      - { left: 'ประสิทธิภาพ', right: 'ไม่มีหน่วย (บอกเป็นร้อยละ)' }
+    hints:
+      - 'กำลังคืองานต่อเวลา จึงมีหน่วยเป็นจูลต่อวินาที ซึ่งมีชื่อเฉพาะ'
+      - 'ประสิทธิภาพเป็นอัตราส่วนของปริมาณชนิดเดียวกัน หน่วยจึงตัดกันหมด'
+    solution: 'กำลัง–วัตต์ · งาน–จูล · แรง–นิวตัน · เวลา–วินาที · ประสิทธิภาพเป็นอัตราส่วนกำลังต่อกำลัง จึงไม่มีหน่วย'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

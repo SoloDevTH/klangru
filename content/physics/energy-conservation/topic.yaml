@@ -1,0 +1,47 @@
+id: physics.energy.conservation
+subject: physics
+title: { th: การอนุรักษ์พลังงานกล, en: Conservation of mechanical energy }
+summary: พลังงานจลน์และพลังงานศักย์เปลี่ยนรูปไปมาโดยผลรวมคงตัว ใช้กับลูกตุ้ม รางลื่น และสไลเดอร์ และคิดพลังงานที่สูญเสียไปเพราะแรงเสียดทาน
+difficulty: 5
+minutes: 35
+prerequisites: [physics.energy.kinetic-potential]
+encompasses:
+  - { id: physics.energy.kinetic-potential, weight: 0.5 }
+  - { id: physics.energy.work, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: พลังงานศักย์ พลังงานจลน์ และพลังงานรวมของวัตถุที่ตกลงมา
+    caption: 'ปล่อยวัตถุมวล m จากความสูง H (ใช้ g = 9.8 m/s²) แกนนอนคือความสูงขณะหนึ่ง x (m) แกนตั้งคือพลังงาน (J) เส้นที่ขึ้นตาม x คือพลังงานศักย์ mgx เส้นที่ลดลงคือพลังงานจลน์ mg(H − x) และเส้นแนวนอนคือพลังงานรวม ลองเลื่อน m และ H แล้วสังเกตว่าทุกความสูง สองเส้นแรกบวกกันได้เส้นที่สามเสมอ (ดูเฉพาะช่วง 0 ≤ x ≤ H)'
+    widget:
+      kind: function-plot
+      functions: ['9.8 m x', '9.8 m \cdot (H - x)', '9.8 m H']
+      sliders:
+        - { name: m, min: 1, max: 5, step: 0.5, value: 2, label: มวล m (kg) }
+        - { name: H, min: 2, max: 10, step: 1, value: 8, label: ความสูงที่ปล่อย H (m) }
+      x: [0, 10]
+      y: [0, 500]
+  - type: simulation
+    title: สเกตบอร์ดกับพลังงาน (PhET Energy Skate Park Basics)
+    url: https://phet.colorado.edu/en/simulations/energy-skate-park-basics
+    provider: phet
+    note: เปิดกราฟแท่งพลังงาน แล้วปล่อยนักสเกตจากความสูงต่าง ๆ สังเกตว่าพลังงานจลน์กับพลังงานศักย์สลับกันเพิ่มลด แต่พลังงานรวมคงตัว จากนั้นเปิดแรงเสียดทานในหน้าจอแรงเสียดทาน (Friction) จะเห็นพลังงานความร้อนเพิ่มขึ้นและพลังงานกลลดลง
+  - type: simulation
+    title: ห้องทดลองลูกตุ้ม (PhET Pendulum Lab)
+    url: https://phet.colorado.edu/en/simulations/pendulum-lab
+    provider: phet
+    note: ในหน้าจอพลังงาน (Energy) ลองดึงลูกตุ้มขึ้นแล้วปล่อย สังเกตว่าพลังงานจลน์มากที่สุดที่จุดต่ำสุด และพลังงานศักย์มากที่สุดที่ปลายการแกว่ง
+glossary:
+  - { term: พลังงานกล, definition: 'ผลรวมของพลังงานจลน์และพลังงานศักย์ $E = \tfrac{1}{2}mv^2 + mgh\ (+\ \tfrac{1}{2}kx^2)$' }
+  - { term: กฎการอนุรักษ์พลังงานกล, definition: 'ถ้ามีเพียงแรงโน้มถ่วงและแรงสปริงที่ทำงาน พลังงานกลของระบบจะคงตัว' }
+  - { term: พลังงานที่สูญเสีย, definition: 'พลังงานกลที่เปลี่ยนเป็นความร้อนและเสียงเพราะแรงเสียดทานหรือแรงต้าน มีค่าเท่ากับขนาดของงานที่แรงเหล่านั้นทำ' }
+flashcards:
+  - { front: 'สมการอนุรักษ์พลังงานกลระหว่างสองตำแหน่ง', back: '$\tfrac{1}{2}mu^2 + mgh_1 = \tfrac{1}{2}mv^2 + mgh_2$ ใช้ได้เมื่อไม่มีแรงเสียดทานและแรงต้าน' }
+  - { front: 'ปล่อยวัตถุจากหยุดนิ่ง ลงมาได้ความสูง $h$ โดยไม่มีแรงเสียดทาน มีอัตราเร็วเท่าใด', back: '$v = \sqrt{2gh}$ ไม่ขึ้นกับมวล' }
+  - { front: 'ลูกตุ้มมีพลังงานจลน์มากที่สุดที่ตำแหน่งใด', back: 'ที่จุดต่ำสุด ซึ่งพลังงานศักย์น้อยที่สุด' }
+  - { front: 'มีแรงเสียดทาน พลังงานกลที่หายไปไปอยู่ที่ใด', back: 'เปลี่ยนเป็นพลังงานความร้อนและเสียง พลังงานรวมทุกรูปแบบยังคงตัว' }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

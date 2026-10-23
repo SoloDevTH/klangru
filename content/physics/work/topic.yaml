@@ -1,0 +1,37 @@
+id: physics.energy.work
+subject: physics
+title: { th: งาน, en: Work }
+summary: งานที่แรงทำเมื่อวัตถุเคลื่อนที่ไปตามแนวแรง หน่วยจูล แรงที่ทำมุมกับการเคลื่อนที่ งานเป็นศูนย์ งานเป็นลบ และงานรวมของหลายแรง
+difficulty: 4
+minutes: 30
+prerequisites: [physics.dynamics.newton-second]
+encompasses:
+  - { id: physics.dynamics.newton-second, weight: 0.3 }
+  - { id: physics.dynamics.forces, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: งานเปลี่ยนไปอย่างไรเมื่อมุมของแรงเปลี่ยน
+    caption: 'แกนนอนคือมุม θ ระหว่างแรงกับการเคลื่อนที่ (องศา) แกนตั้งคืองาน W = Fs cos θ (จูล) ลองเลื่อน F และ s แล้วสังเกตว่างานเป็นบวกเมื่อมุมน้อยกว่า 90° เป็นศูนย์ที่ 90° พอดี และเป็นลบเมื่อมุมเกิน 90°'
+    widget:
+      kind: function-plot
+      functions: ['F s \cos(\frac{\pi x}{180})']
+      sliders:
+        - { name: F, min: 0, max: 50, step: 5, value: 20, label: แรง F (N) }
+        - { name: s, min: 0, max: 5, step: 0.5, value: 3, label: การกระจัด s (m) }
+      x: [0, 180]
+      y: [-260, 260]
+glossary:
+  - { term: งาน (W), definition: 'ผลคูณของแรงกับการกระจัดตามแนวแรง $W = Fs\cos\theta$ เป็นปริมาณสเกลาร์ มีหน่วยจูล' }
+  - { term: จูล (J), definition: 'หน่วยของงานและพลังงาน $1\ \mathrm{J} = 1\ \mathrm{N \cdot m}$' }
+  - { term: งานรวม, definition: 'ผลบวกของงานจากทุกแรงที่กระทำต่อวัตถุ โดยคิดเครื่องหมายบวกลบ เท่ากับงานของแรงลัพธ์' }
+flashcards:
+  - { front: 'สูตรงานเมื่อแรงทำมุม $\theta$ กับการเคลื่อนที่', back: '$W = Fs\cos\theta$ หน่วยจูล ($\mathrm{J} = \mathrm{N \cdot m}$)' }
+  - { front: 'ยืนถือถุงข้าวนิ่ง ๆ นาน 10 นาที แรงยกทำงานเท่าใด', back: 'ศูนย์ เพราะถุงข้าวไม่มีการกระจัด ($s = 0$)' }
+  - { front: 'งานของแรงเสียดทานที่ต้านการไถลเป็นบวกหรือลบ', back: 'เป็นลบ เพราะแรงสวนทางการเคลื่อนที่ ($\theta = 180^\circ$, $\cos\theta = -1$)' }
+  - { front: 'แรงตั้งฉากกับการเคลื่อนที่ทำงานเท่าใด', back: 'ศูนย์ เพราะ $\cos 90^\circ = 0$' }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

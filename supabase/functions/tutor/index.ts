@@ -3,7 +3,7 @@
 // ตั้งค่า secrets: ANTHROPIC_API_KEY, CONTENT_BASE_URL (URL ของเว็บที่ deploy เช่น https://klangru.example.org)
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@supabase/supabase-js";
-import { askTutor, DAILY_MESSAGE_LIMIT, effectiveMode, TUTOR_MODEL, type TutorMode, type TutorPack } from "../_shared/tutor.ts";
+import { askTutor, canUseTutor, DAILY_MESSAGE_LIMIT, effectiveMode, TUTOR_MODEL, type TutorMode, type TutorPack } from "../_shared/tutor.ts";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -26,6 +26,10 @@ Deno.serve(async (req) => {
   const { data: auth } = await admin.auth.getUser(token);
   const user = auth.user;
   if (!user) return json({ error: "ต้องเข้าสู่ระบบก่อนใช้ผู้ช่วย AI" }, 401);
+
+  // ข้อความถูกเก็บไว้ให้ครูตรวจ จึงใช้เงื่อนไขความยินยอมเดียวกับการซิงก์ (อายุต่ำกว่า 20 ต้องมีผู้ปกครองยินยอม)
+  const { data: profile } = await admin.from("profiles").select("age_band, guardian_consent").eq("id", user.id).maybeSingle();
+  if (!canUseTutor(profile)) return json({ error: "ต้องระบุช่วงอายุ และถ้าอายุต่ำกว่า 20 ปีต้องได้รับความยินยอมจากผู้ปกครองก่อน" }, 403);
 
   let body: { topicId?: string; problemId?: string; mode?: TutorMode; message?: string; conversationId?: string; answered?: boolean };
   try {

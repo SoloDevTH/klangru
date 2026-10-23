@@ -16,14 +16,43 @@ jobs:
           cache: npm
       - run: npm ci
       - name: ตรวจเนื้อหา
-        run: npm run validate
+        run: npm run validate -- --strict
       - name: ตรวจ type
         run: npm run typecheck && npm run typecheck -w @klangru/web
       - name: เทสต์
-        run: npm test && npm test -w @klangru/web
+        run: npm test && npm test -w @klangru/web && npm run test:db
+      - name: ตรวจ edge functions
+        run: npm run check:functions
       - name: build เว็บ
         run: npm run build
+      - name: ทดสอบในเบราว์เซอร์
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+          npm run e2e -w @klangru/web
       - uses: actions/upload-artifact@v4
         with:
           name: web-static
           path: apps/web/out
+
+  android:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - run: npm ci && npm run build
+      - name: build APK (debug)
+        run: npm run android:apk -w @klangru/web
+      - uses: actions/upload-artifact@v4
+        with:
+          name: klangru-debug-apk
+          path: apps/web/android/app/build/outputs/apk/debug/app-debug.apk

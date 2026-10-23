@@ -1,0 +1,47 @@
+id: physics.electricity.electric-power
+subject: physics
+title: { th: กำลังไฟฟ้าและค่าไฟฟ้า, en: Electric power and energy cost }
+summary: คำนวณกำลังไฟฟ้าของเครื่องใช้ไฟฟ้า พลังงานไฟฟ้าในหน่วยกิโลวัตต์-ชั่วโมง และประมาณค่าไฟฟ้าในบ้านจากจำนวนหน่วยที่ใช้
+difficulty: 4.5
+minutes: 35
+prerequisites: [physics.electricity.current-voltage, physics.energy.power]
+encompasses:
+  - { id: physics.electricity.current-voltage, weight: 0.5 }
+  - { id: physics.energy.power, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ค่าไฟต่อเดือนของเครื่องใช้ไฟฟ้าหนึ่งเครื่อง
+    caption: แกนนอนคือจำนวนชั่วโมงที่ใช้ต่อวัน แกนตั้งคือค่าไฟใน 30 วัน (บาท) คิดจาก ค่าไฟ = (p ÷ 1000) × ชั่วโมง × 30 × c โดย p คือกำลังไฟฟ้า (W) และ c คืออัตราค่าไฟสมมติ (บาทต่อหน่วย) ลองเทียบแอร์ 1000 W กับพัดลม 50 W ที่ใช้วันละ 8 ชั่วโมงเท่ากัน
+    widget:
+      kind: function-plot
+      functions: ["\\frac{30 c p x}{1000}"]
+      sliders:
+        - { name: p, min: 10, max: 2000, step: 10, value: 1000, label: กำลังไฟฟ้า (W) }
+        - { name: c, min: 3, max: 6, step: 0.5, value: 4, label: อัตราค่าไฟสมมติ (บาทต่อหน่วย) }
+      x: [0, 24]
+      y: [0, 2000]
+  - type: interactive
+    title: กำลังไฟฟ้าที่ตัวต้านทานกับกระแส
+    caption: แกนนอนคือกระแส I (A) แกนตั้งคือกำลังไฟฟ้า P (W) จาก P = I²R กราฟเป็นพาราโบลา ลองดูที่ I = 1 A แล้วเลื่อนไปที่ I = 2 A กำลังเพิ่มเป็นสี่เท่า ไม่ใช่สองเท่า สายไฟที่มีกระแสมากจึงร้อนเร็ว
+    widget:
+      kind: function-plot
+      functions: ["R x^2"]
+      sliders:
+        - { name: R, min: 1, max: 20, step: 1, value: 10, label: ความต้านทาน R (Ω) }
+      x: [0, 5]
+      y: [0, 250]
+glossary:
+  - { term: กำลังไฟฟ้า, definition: "พลังงานไฟฟ้าที่อุปกรณ์ใช้ต่อหนึ่งวินาที $P = VI$ หน่วยวัตต์ ($\\mathrm{W} = \\mathrm{J/s}$)" }
+  - { term: กิโลวัตต์-ชั่วโมง, definition: "หน่วยของพลังงานไฟฟ้าที่ใช้คิดค่าไฟ เรียกว่า 1 หน่วย คือพลังงานที่อุปกรณ์ $1\\ \\mathrm{kW}$ ใช้ใน 1 ชั่วโมง เท่ากับ $3.6 \\times 10^6\\ \\mathrm{J}$" }
+  - { term: ค่าไฟฟ้า, definition: "จำนวนหน่วย (kWh) คูณอัตราต่อหน่วย ค่าไฟจริงมีอัตราขั้นบันไดและค่าใช้จ่ายอื่นรวมอยู่ด้วย" }
+flashcards:
+  - { front: "สูตรกำลังไฟฟ้า 3 แบบ", back: "$P = VI = I^2R = \\dfrac{V^2}{R}$" }
+  - { front: "1 หน่วยไฟฟ้า เท่ากับเท่าใด", back: "$1\\ \\mathrm{kWh}$ = เครื่อง $1000\\ \\mathrm{W}$ ใช้ 1 ชั่วโมง $= 3.6 \\times 10^6\\ \\mathrm{J}$" }
+  - { front: "เตารีด $1000\\ \\mathrm{W}$ ใช้ 30 นาที กินไฟกี่หน่วย", back: "$1\\ \\mathrm{kW} \\times 0.5\\ \\mathrm{h} = 0.5\\ \\mathrm{kWh}$ = 0.5 หน่วย" }
+  - { front: "หลอด $40\\ \\mathrm{W}$ กับ $100\\ \\mathrm{W}$ (ไฟบ้านเดียวกัน) หลอดใดความต้านทานมากกว่า", back: "หลอด $40\\ \\mathrm{W}$ เพราะ $R = \\dfrac{V^2}{P}$ กำลังน้อยกว่าจึงความต้านทานมากกว่า" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

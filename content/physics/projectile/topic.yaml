@@ -1,0 +1,45 @@
+id: physics.kinematics.projectile
+subject: physics
+title: { th: การเคลื่อนที่แบบโพรเจกไทล์, en: Projectile motion }
+summary: วิเคราะห์วัตถุที่ถูกยิงหรือขว้างในแนวราบและแนวเฉียง โดยแยกการเคลื่อนที่แนวราบ (ความเร็วคงตัว) กับแนวดิ่ง (ตกอิสระ) หาเวลาลอย ระยะทางแนวราบ และความสูงสูงสุด
+difficulty: 6
+minutes: 40
+prerequisites: [physics.kinematics.free-fall, physics.units.vectors]
+encompasses:
+  - { id: physics.kinematics.free-fall, weight: 0.5 }
+  - { id: physics.units.vectors, weight: 0.4 }
+  - { id: physics.kinematics.constant-acceleration, weight: 0.2 }
+  - { id: math.geometry.trig-ratios, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: แนวการเคลื่อนที่ของโพรเจกไทล์
+    caption: "แกนนอนคือระยะทางแนวราบ (m) แกนตั้งคือความสูง (m) เมื่อยิงจากพื้นด้วยอัตราเร็ว v ทำมุม a องศากับแนวราบ และ g = 9.8 m/s² ลองตั้ง v = 20 แล้วเปลี่ยนมุม สังเกตว่ามุม 45° ไปได้ไกลที่สุด และมุม 30° กับ 60° ตกที่จุดเดียวกัน แต่มุม 60° ขึ้นสูงกว่าและลอยนานกว่า"
+    widget:
+      kind: function-plot
+      functions: ["x\\tan\\left(\\frac{\\pi a}{180}\\right) - \\frac{9.8 x^2}{2 v^2 \\cos^2\\left(\\frac{\\pi a}{180}\\right)}"]
+      sliders:
+        - { name: a, min: 5, max: 85, step: 5, value: 45, label: มุมยิง (องศา) }
+        - { name: v, min: 5, max: 20, step: 1, value: 20, label: อัตราเร็วต้น (m/s) }
+      x: [0, 45]
+      y: [0, 22]
+  - type: simulation
+    title: การเคลื่อนที่แบบโพรเจกไทล์ (PhET Projectile Motion)
+    url: https://phet.colorado.edu/en/simulations/projectile-motion
+    provider: phet
+    note: เปิดหน้าจอ Intro ตั้งความสูงของปืนใหญ่เป็นศูนย์ ยิงด้วยอัตราเร็วเท่าเดิมที่มุม 30°, 45° และ 60° ใช้เครื่องมือวัดเลื่อนไปจับจุดสูงสุดและจุดตก อ่านเวลา ระยะทาง และความสูง แล้วเทียบกับการคำนวณ (ในซิมใช้ g = 9.81 m/s² ผลจึงต่างจาก g = 9.8 m/s² เล็กน้อย)
+glossary:
+  - { term: โพรเจกไทล์, definition: "วัตถุที่ถูกยิงหรือขว้างออกไปแล้วเคลื่อนที่ภายใต้แรงโน้มถ่วงเพียงอย่างเดียว (ไม่คิดแรงต้านอากาศ) แนวการเคลื่อนที่เป็นพาราโบลา" }
+  - { term: เวลาลอย, definition: "เวลาตั้งแต่วัตถุถูกยิงจนตกถึงพื้น หาได้จากการเคลื่อนที่แนวดิ่งเท่านั้น" }
+  - { term: ระยะทางแนวราบ (พิสัย), definition: "ระยะตามแนวราบจากจุดยิงถึงจุดตก เท่ากับ $u_x \\times$ เวลาลอย" }
+  - { term: ความสูงสูงสุด, definition: "ความสูงที่จุดซึ่งความเร็วแนวดิ่งเป็นศูนย์ ถ้ายิงจากพื้น $H = \\dfrac{u_y^2}{2g}$" }
+flashcards:
+  - { front: "โพรเจกไทล์มีความเร่งแนวราบและแนวดิ่งเท่าใด", back: "แนวราบ $a_x = 0$ (ความเร็วคงตัว) แนวดิ่ง $a_y = g = 9.8\\ \\mathrm{m/s^2}$ ทิศลง" }
+  - { front: "ที่จุดสูงสุดของโพรเจกไทล์ ความเร็วเป็นเท่าใด", back: "ความเร็วแนวดิ่งเป็นศูนย์ แต่ยังมีความเร็วแนวราบ $u_x = u\\cos\\theta$ ความเร็วรวมจึงไม่เป็นศูนย์" }
+  - { front: "ยิงจากพื้นด้วยความเร็ว $u$ ทำมุม $\\theta$ เวลาลอยเท่าใด", back: "$T = \\dfrac{2u\\sin\\theta}{g}$" }
+  - { front: "ยิงด้วยอัตราเร็วเท่ากัน มุมใดไปได้ไกลที่สุดบนพื้นราบ", back: "$45^\\circ$ และมุมที่รวมกันได้ $90^\\circ$ เช่น $30^\\circ$ กับ $60^\\circ$ ให้ระยะทางแนวราบเท่ากัน" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

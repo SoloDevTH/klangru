@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// ตรงกับ hanziFile() ใน @klangru/schema (ไม่ import จาก schema เพื่อไม่ให้ดึงตัวคำนวณสัญลักษณ์มาด้วย)
+const hanziFile = (char: string) => `${char.codePointAt(0)!.toString(16)}.json`;
+
 interface HanziQuiz {
   quiz(opts: { onMistake?: () => void; onComplete?: (s: { totalMistakes: number }) => void; showHintAfterMisses?: number }): void;
   animateCharacter(opts?: { onComplete?: () => void }): void;
@@ -10,7 +13,7 @@ interface HanziQuiz {
 
 /**
  * ฝึกเขียนอักษรจีนตามลำดับขีดด้วยนิ้วหรือเมาส์ (hanzi-writer)
- * ข้อมูลลำดับขีดโหลดจาก /content/hanzi/<ตัวอักษร>.json ที่ build ใส่ไว้ในแอป จึงใช้ออฟไลน์ได้
+ * ข้อมูลลำดับขีดโหลดจาก /content/hanzi/<รหัส Unicode>.json ที่ build ใส่ไว้ในแอป จึงใช้ออฟไลน์ได้
  */
 export function HanziPad({ character, disabled, onResult }: { character: string; disabled?: boolean; onResult: (r: { mistakes: number; completed: boolean }) => void }) {
   const box = useRef<HTMLDivElement>(null);
@@ -35,7 +38,7 @@ export function HanziPad({ character, disabled, onResult }: { character: string;
           outlineColor: "#c9d3d0",
           drawingColor: "#15211e",
           charDataLoader: (char, onLoad, onError) => {
-            fetch(`/content/hanzi/${encodeURIComponent(char)}.json`)
+            fetch(`/content/hanzi/${hanziFile(char)}`)
               .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
               .then((data) => onLoad(data), onError);
           },

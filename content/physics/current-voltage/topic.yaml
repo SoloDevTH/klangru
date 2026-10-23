@@ -1,0 +1,43 @@
+id: physics.electricity.current-voltage
+subject: physics
+title: { th: กระแสไฟฟ้า ความต่างศักย์ และกฎของโอห์ม, en: "Current, voltage and Ohm's law" }
+summary: เข้าใจกระแสไฟฟ้า ความต่างศักย์ และความต้านทาน ใช้กฎของโอห์มคำนวณวงจรอย่างง่าย และต่อแอมมิเตอร์กับโวลต์มิเตอร์ให้ถูกวิธี
+difficulty: 4
+minutes: 35
+prerequisites: [physics.units.si, math.algebra.rearrange-formula]
+encompasses:
+  - { id: math.algebra.rearrange-formula, weight: 0.4 }
+  - { id: physics.units.si, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: กฎของโอห์ม (PhET Ohm's Law)
+    url: https://phet.colorado.edu/en/simulations/ohms-law
+    provider: phet
+    note: เพิ่มความต่างศักย์ V ขณะที่ความต้านทาน R คงเดิม กระแส I จะเพิ่มตาม จากนั้นเพิ่ม R ขณะที่ V คงเดิม กระแสจะลดลง ตัวอักษรในสมการ V = IR จะโตหรือเล็กลงตามค่าจริง
+  - type: interactive
+    title: กราฟกระแสกับความต่างศักย์ของตัวต้านทาน
+    caption: แกนนอนคือความต่างศักย์ V (โวลต์) แกนตั้งคือกระแส I (แอมแปร์) จาก I = V/R กราฟเป็นเส้นตรงผ่านจุดกำเนิด ลองเพิ่ม R เส้นจะลาดน้อยลง แปลว่าที่ความต่างศักย์เท่ากัน ตัวต้านทานที่มากกว่าให้กระแสน้อยกว่า
+    widget:
+      kind: function-plot
+      functions: ["\\frac{x}{R}"]
+      sliders:
+        - { name: R, min: 2, max: 20, step: 1, value: 6, label: ความต้านทาน R (Ω) }
+      x: [0, 12]
+      y: [0, 3]
+glossary:
+  - { term: กระแสไฟฟ้า, definition: "ปริมาณประจุที่เคลื่อนผ่านภาคตัดขวางของตัวนำในหนึ่งวินาที $I = Q/t$ หน่วยแอมแปร์ ($\\mathrm{A} = \\mathrm{C/s}$)" }
+  - { term: ความต่างศักย์, definition: "พลังงานที่ประจุหนึ่งคูลอมบ์ได้รับหรือเสียไประหว่างสองจุดในวงจร หน่วยโวลต์ ($\\mathrm{V} = \\mathrm{J/C}$)" }
+  - { term: ความต้านทาน, definition: "สมบัติของตัวนำที่ต้านการไหลของกระแส $R = V/I$ หน่วยโอห์ม ($\\Omega$)" }
+  - { term: แอมมิเตอร์, definition: "เครื่องวัดกระแส ต่ออนุกรมกับส่วนของวงจรที่ต้องการวัด" }
+  - { term: โวลต์มิเตอร์, definition: "เครื่องวัดความต่างศักย์ ต่อขนานคร่อมส่วนของวงจรที่ต้องการวัด" }
+flashcards:
+  - { front: "กฎของโอห์ม", back: "$V = IR$ ความต่างศักย์ (V) = กระแส (A) × ความต้านทาน (Ω)" }
+  - { front: "ต่อแอมมิเตอร์และโวลต์มิเตอร์อย่างไร", back: "แอมมิเตอร์ต่ออนุกรม (กระแสไหลผ่าน) โวลต์มิเตอร์ต่อขนานคร่อมอุปกรณ์" }
+  - { front: "กระแส $1\\ \\mathrm{A}$ หมายความว่าอย่างไร", back: "ประจุ $1\\ \\mathrm{C}$ เคลื่อนผ่านจุดหนึ่งในวงจรทุก $1\\ \\mathrm{s}$" }
+  - { front: "$250\\ \\mathrm{mA}$ เท่ากับกี่แอมแปร์", back: "$0.25\\ \\mathrm{A}$ (หารด้วย 1000)" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

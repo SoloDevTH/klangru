@@ -1,0 +1,231 @@
+problems:
+  - id: zh.num.p001
+    topics: [chinese.hanzi.numbers]
+    difficulty: 1
+    type: mcq
+    stem: "อักษร 四 (sì) หมายถึงเลขใด"
+    choices:
+      - { id: a, text: "4", correct: true, feedback: "ถูก 四 อ่านว่า sì แปลว่า สี่" }
+      - { id: b, text: "3", feedback: "เลข 3 คือ 三 ซึ่งเป็นขีดนอนสามขีด ส่วน 四 เป็นรูปกรอบ" }
+      - { id: c, text: "10", feedback: "sì (四) กับ shí (十) เสียงคล้ายกัน แต่ 十 เขียนเป็นรูปเครื่องหมายบวก ส่วน 四 เป็นรูปกรอบ" }
+    hints:
+      - "เลข 1–3 เขียนเป็นขีดนอนตามจำนวน แต่ 四 ไม่ใช่ขีดนอน"
+      - "พินอินของ 四 คือ sì ลองเทียบกับเสียงเลขไทยที่คล้ายกัน"
+    solution: "四 sì = **4** (เสียงคล้ายคำว่า สี่ ในภาษาไทย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p002
+    topics: [chinese.hanzi.numbers]
+    difficulty: 1
+    type: hanzi
+    stem: "เขียนอักษร 三 (sān) ที่แปลว่า สาม ตามลำดับขีด"
+    character: 三
+    pinyin: sān
+    meaning: สาม (3)
+    max_mistakes: 3
+    hints:
+      - "三 มีขีดนอน 3 ขีด"
+      - "เขียนจากบนลงล่าง ทุกขีดลากจากซ้ายไปขวา ขีดกลางสั้นที่สุด ขีดล่างยาวที่สุด"
+    solution: "ขีดที่ 1 横 บน · ขีดที่ 2 横 กลาง (สั้นที่สุด) · ขีดที่ 3 横 ล่าง (ยาวที่สุด) ทุกขีดลากซ้ายไปขวา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p003
+    topics: [chinese.hanzi.numbers]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อักษรจีนกับพินอิน"
+    pairs:
+      - { left: "一", right: "yī" }
+      - { left: "二", right: "èr" }
+      - { left: "四", right: "sì" }
+      - { left: "六", right: "liù" }
+      - { left: "九", right: "jiǔ" }
+      - { left: "十", right: "shí" }
+    hints:
+      - "เริ่มจากตัวที่จำง่ายก่อน: 一 และ 二 เป็นขีดนอนตามจำนวน"
+      - "sì กับ shí เสียงคล้ายกัน ตัวที่เป็นรูปกรอบคือ 4 ตัวที่เป็นรูปเครื่องหมายบวกคือ 10"
+    solution: "一 yī (1) · 二 èr (2) · 四 sì (4) · 六 liù (6) · 九 jiǔ (9) · 十 shí (10)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p004
+    topics: [chinese.hanzi.numbers]
+    difficulty: 2
+    type: hanzi
+    stem: "เขียนอักษร 五 (wǔ) ที่แปลว่า ห้า ตามลำดับขีด"
+    character: 五
+    pinyin: wǔ
+    meaning: ห้า (5)
+    max_mistakes: 3
+    hints:
+      - "五 มี 4 ขีด เริ่มจากขีดนอนด้านบน"
+      - "หลังขีดนอนบน ให้เขียนขีดตั้งตรงกลาง แล้วเขียนขีดหักมุม (横折) ด้านขวา และปิดด้วยขีดนอนล่างสุด"
+    solution: "ขีดที่ 1 横 บน · ขีดที่ 2 竖 ตรงกลาง · ขีดที่ 3 横折 ขีดนอนกลางแล้วหักลง · ขีดที่ 4 横 ล่างสุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p005
+    topics: [chinese.hanzi.numbers]
+    difficulty: 2
+    type: numeric
+    stem: "二十 คือเลขใด"
+    answer: { value: 20 }
+    hints:
+      - "ดูว่า 二 อยู่หน้าหรือหลัง 十"
+      - "ตัวเลขที่อยู่หน้า 十 หมายถึงจำนวนสิบที่คูณ"
+    misconceptions:
+      - { match: 12, feedback: "12 เขียนว่า 十二 (สิบ แล้วบวกสอง) แต่ข้อนี้ 二 อยู่หน้า 十 จึงหมายถึง 2 คูณ 10" }
+    solution: "二 อยู่หน้า 十 จึงเป็น $2 \\times 10 = 20$ อ่านว่า èrshí"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p006
+    topics: [chinese.hanzi.numbers]
+    difficulty: 2
+    type: text
+    stem: "เขียนพินอินของ 八 (แปด) (ใส่เครื่องหมาย หรือพิมพ์เลขเสียงต่อท้าย เช่น yi1)"
+    accepted: ["bā", "ba1"]
+    misconceptions:
+      - { match: "pā", feedback: "เสียงไทยใกล้ \"ปา\" แต่ในพินอิน ป เขียนด้วย b ส่วน p เป็นเสียงมีลมแบบ พ" }
+      - { match: "pa1", feedback: "เสียงไทยใกล้ \"ปา\" แต่ในพินอิน ป เขียนด้วย b ส่วน p เป็นเสียงมีลมแบบ พ" }
+      - { match: "bà", feedback: "พยัญชนะและสระถูกแล้ว แต่ 八 เป็นเสียง 1 (ระดับสูง) ไม่ใช่เสียง 4" }
+    hints:
+      - "八 ออกเสียงใกล้ \"ปา\" ในภาษาไทย และเป็นเสียง 1"
+      - "นึกว่าเสียง ป ไม่มีลมเขียนด้วยอักษรโรมันตัวใดในพินอิน"
+    solution: "八 = **bā** (ba1) b ไม่มีลม ใกล้ ป และเป็นเสียง 1 ระดับสูง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p007
+    topics: [chinese.hanzi.numbers]
+    difficulty: 3
+    type: numeric
+    stem: "ร้านขายของฝากในเยาวราชติดป้ายราคาสำหรับลูกค้าชาวจีนว่า 三十五 บาท สินค้าชิ้นนี้ราคากี่บาท"
+    answer: { value: 35, unit: บาท }
+    hints:
+      - "แยกเป็นสามส่วน: 三, 十, 五"
+      - "ตัวหน้า 十 คือจำนวนสิบ ตัวหลัง 十 คือหน่วยที่บวกเพิ่ม"
+    misconceptions:
+      - { match: 18, feedback: "ดูเหมือนนำ 3 + 10 + 5 มาบวกกัน ตัวเลขหน้า 十 ต้อง **คูณ** กับ 10" }
+      - { match: 53, feedback: "ดูเหมือนสลับหลัก ตัวที่อยู่หน้า 十 (三) คือหลักสิบ ตัวที่อยู่หลัง (五) คือหลักหน่วย" }
+    solution: "三十 $= 3 \\times 10 = 30$ แล้วบวก 五 $= 5$ ได้ $30 + 5 = 35$ บาท อ่านว่า sānshíwǔ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p008
+    topics: [chinese.hanzi.numbers]
+    difficulty: 3
+    type: hanzi
+    stem: "เขียนอักษร 九 (jiǔ) ที่แปลว่า เก้า ตามลำดับขีด"
+    character: 九
+    pinyin: jiǔ
+    meaning: เก้า (9)
+    max_mistakes: 3
+    hints:
+      - "九 มีเพียง 2 ขีด แต่ขีดที่สองยาวและหักหลายครั้ง"
+      - "เริ่มด้วย 撇 ที่ตวัดลงซ้าย แล้วเขียนขีดที่ลากนอนไปขวา หักลง และปัดหางขึ้นตอนท้ายในครั้งเดียว"
+    solution: "ขีดที่ 1 撇: ตวัดลงซ้าย · ขีดที่ 2 横折弯钩: ขีดนอนไปขวา หักลง โค้งไปขวาแล้วเกี่ยวขึ้น เขียนต่อเนื่องในขีดเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p009
+    topics: [chinese.hanzi.numbers]
+    difficulty: 3
+    type: text
+    stem: "เขียนพินอินของ 十八 (18) (ใส่เครื่องหมาย หรือพิมพ์เลขเสียงต่อท้าย เช่น er4shi2)"
+    accepted: ["shíbā", "shi2ba1", "shí bā", "shi2 ba1"]
+    misconceptions:
+      - { match: "sìbā", feedback: "sì คือ 四 (4) ส่วน 十 คือ shí ต้องมี h และเป็นเสียง 2" }
+      - { match: "si4ba1", feedback: "si4 คือ 四 (4) ส่วน 十 คือ shi2 ต้องมี h และเป็นเสียง 2" }
+      - { match: "bāshí", feedback: "นั่นคือ 八十 (80) ข้อนี้ 十 อยู่หน้า จึงอ่าน shí ก่อน" }
+    hints:
+      - "อ่านทีละตัวจากซ้ายไปขวา: 十 แล้ว 八"
+      - "十 เป็นเสียง 2 และมี sh ที่ต้องม้วนลิ้น ส่วน 八 เป็นเสียง 1"
+    solution: "十 shí + 八 bā = **shíbā** (shi2ba1)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p010
+    topics: [chinese.hanzi.numbers]
+    difficulty: 4
+    type: mcq
+    stem: "一百 (100) ออกเสียงอย่างไร"
+    choices:
+      - { id: a, text: "yìbǎi", correct: true, feedback: "ถูก 百 bǎi เป็นเสียง 3 一 ที่อยู่หน้าเสียง 3 จึงเปลี่ยนเป็นเสียง 4" }
+      - { id: b, text: "yībǎi", feedback: "yī คือเสียงเดิมเมื่อนับเลขเดี่ยว ๆ แต่เมื่ออยู่หน้าเสียง 1, 2 หรือ 3 อย่าง bǎi ต้องเปลี่ยนเป็น yì" }
+      - { id: c, text: "yíbǎi", feedback: "yí (เสียง 2) ใช้เมื่อ 一 อยู่หน้าเสียง 4 แต่ bǎi เป็นเสียง 3" }
+      - { id: d, text: "yìbái", feedback: "一 เปลี่ยนเสียงถูกแล้ว แต่ 百 ยังคงเป็นเสียง 3 คือ bǎi" }
+    hints:
+      - "百 bǎi เป็นเสียงอะไร"
+      - "一 เปลี่ยนเสียงตามพยางค์ที่ตามมา: หน้าเสียง 4 เป็น yí หน้าเสียงอื่นเป็น yì"
+    solution: "百 bǎi เป็นเสียง 3 一 ที่อยู่หน้าเสียง 1, 2, 3 เปลี่ยนเป็นเสียง 4 จึงอ่านว่า **yìbǎi**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p011
+    topics: [chinese.hanzi.numbers]
+    difficulty: 4
+    type: text
+    stem: "แม่ค้าส้มที่ตลาดในเชียงใหม่อยากเขียนป้ายราคา 98 บาท เป็นอักษรจีนให้ลูกค้าชาวจีน ต้องเขียนเลข 98 อย่างไร (พิมพ์อักษรจีน)"
+    accepted: ["九十八"]
+    misconceptions:
+      - { match: "八十九", feedback: "นั่นคือ 89 หลักสิบ (9) ต้องอยู่หน้า 十 และหลักหน่วย (8) อยู่หลัง 十" }
+      - { match: "九八", feedback: "การอ่านเลขทีละหลักใช้กับเบอร์โทรหรือเลขห้อง แต่ราคาต้องบอกเป็นจำนวน จึงต้องมี 十 คั่นกลาง" }
+    hints:
+      - "98 มีหลักสิบเป็น 9 และหลักหน่วยเป็น 8"
+      - "รูปแบบคือ (หลักสิบ) 十 (หลักหน่วย)"
+    solution: "หลักสิบ 9 → 九十 แล้วต่อด้วยหลักหน่วย 8 → 八 ได้ **九十八** (jiǔshíbā)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p012
+    topics: [chinese.hanzi.numbers]
+    difficulty: 4
+    type: hanzi
+    stem: "เขียนอักษร 四 (sì) ที่แปลว่า สี่ ตามลำดับขีด"
+    character: 四
+    pinyin: sì
+    meaning: สี่ (4)
+    max_mistakes: 3
+    hints:
+      - "四 มี 5 ขีด และเป็นอักษรแบบมีกรอบ"
+      - "เริ่มแบบ 口 (竖 แล้ว 横折) จากนั้นเขียนสองขีดข้างใน แล้วจึงปิดกรอบด้วยขีดนอนล่าง"
+    solution: "ขีดที่ 1 竖 ซ้าย · ขีดที่ 2 横折 บนหักลงขวา · ขีดที่ 3 撇 ข้างในซ้าย · ขีดที่ 4 竖弯 ข้างในขวา · ขีดที่ 5 横 ล่าง ปิดกรอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p013
+    topics: [chinese.hanzi.numbers]
+    difficulty: 5
+    type: numeric
+    stem: "นักท่องเที่ยวชาวจีนที่ตลาดน้ำอัมพวาซื้อมะม่วง 三 กิโลกรัม ป้ายเขียนราคาว่า กิโลกรัมละ 四十五 บาท ต้องจ่ายทั้งหมดกี่บาท"
+    answer: { value: 135, unit: บาท }
+    hints:
+      - "แปลงตัวเลขจีนแต่ละตัวเป็นเลขไทยก่อน"
+      - "四十五 คือ $4 \\times 10 + 5$"
+      - "นำราคาต่อกิโลกรัมคูณกับจำนวนกิโลกรัม"
+    misconceptions:
+      - { match: 162, feedback: "ดูเหมือนอ่าน 四十五 เป็น 54 ตัวที่อยู่หน้า 十 (四) คือหลักสิบ" }
+      - { match: 57, feedback: "ดูเหมือนอ่าน 四十五 เป็น $4 + 10 + 5 = 19$ ตัวเลขหน้า 十 ต้องคูณกับ 10" }
+    solution: "三 = 3 กิโลกรัม · 四十五 $= 4 \\times 10 + 5 = 45$ บาท จ่าย $3 \\times 45 = 135$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: zh.num.p014
+    topics: [chinese.hanzi.numbers]
+    difficulty: 5
+    type: text
+    stem: "เขียนเลข 92 เป็นพินอิน (ใส่เครื่องหมาย หรือพิมพ์เลขเสียงต่อท้ายแต่ละพยางค์ เช่น san1shi2)"
+    accepted: ["jiǔshí'èr", "jiǔshíèr", "jiu3shi2er4", "jiu3shi2'er4", "jiǔ shí èr", "jiu3 shi2 er4"]
+    misconceptions:
+      - { match: "èrshíjiǔ", feedback: "นั่นคือ 二十九 (29) หลักสิบ (9) ต้องมาก่อน 十" }
+      - { match: "er4shi2jiu3", feedback: "นั่นคือ 二十九 (29) หลักสิบ (9) ต้องมาก่อน 十" }
+      - { match: "jiùshí'èr", feedback: "ลำดับถูกแล้ว แต่ 九 เป็นเสียง 3 คือ jiǔ ไม่ใช่เสียง 4" }
+    hints:
+      - "เขียนเป็นอักษรจีนก่อน: หลักสิบ 9 แล้ว 十 แล้วหลักหน่วย 2"
+      - "แปลงอักษรแต่ละตัวเป็นพินอินพร้อมวรรณยุกต์ ระวังเสียงของ 九 และ iu ที่วางเครื่องหมายบนตัวหลัง"
+    solution: "92 = 九十二 = jiǔ + shí + èr เขียนติดกันว่า **jiǔshí'èr** (jiu3shi2er4) เครื่องหมาย ' คั่นหน้าพยางค์ที่ขึ้นต้นด้วยสระ เพื่อไม่ให้อ่านปนกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

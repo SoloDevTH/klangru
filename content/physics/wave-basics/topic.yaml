@@ -1,0 +1,43 @@
+id: physics.waves.wave-basics
+subject: physics
+title: { th: คลื่นกลเบื้องต้น, en: Introduction to mechanical waves }
+summary: แยกคลื่นตามขวางกับคลื่นตามยาว รู้จักแอมพลิจูด ความยาวคลื่น ความถี่ คาบ และใช้ความสัมพันธ์ของอัตราเร็วคลื่นกับความถี่และความยาวคลื่น
+difficulty: 4
+minutes: 30
+prerequisites: [physics.kinematics.speed, math.algebra.rearrange-formula]
+encompasses:
+  - { id: physics.kinematics.speed, weight: 0.3 }
+  - { id: math.algebra.rearrange-formula, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: รูปร่างของคลื่นเมื่อเปลี่ยนแอมพลิจูดและความยาวคลื่น
+    caption: แกนนอนคือตำแหน่งตามแนวเชือก (m) แกนตั้งคือการกระจัดของเชือกจากแนวสมดุล (m) แถบ a เปลี่ยนแอมพลิจูด ทำให้สันคลื่นสูงขึ้นหรือต่ำลง ส่วนแถบ L เปลี่ยนความยาวคลื่น ทำให้สันคลื่นห่างกันมากขึ้นหรือน้อยลง ลองนับว่าในช่วง 0 ถึง 12 m มีกี่ความยาวคลื่น
+    widget:
+      kind: function-plot
+      functions: ["a \\sin\\left(\\frac{2\\pi x}{L}\\right)"]
+      sliders:
+        - { name: a, min: 0.5, max: 3, step: 0.5, value: 1, label: แอมพลิจูด (m) }
+        - { name: L, min: 1, max: 6, step: 0.5, value: 4, label: ความยาวคลื่น (m) }
+      x: [0, 12]
+      y: [-4, 4]
+  - type: simulation
+    title: คลื่นในเส้นเชือก (PhET Wave on a String)
+    url: https://phet.colorado.edu/en/simulations/wave-on-a-string
+    provider: phet
+    note: เลือกโหมดสั่นต่อเนื่อง (Oscillate) และปลายเชือกแบบไม่สะท้อน (No End) เปลี่ยนความถี่แล้ววัดความยาวคลื่นด้วยไม้บรรทัด จะเห็นว่าความถี่มากขึ้นทำให้ความยาวคลื่นสั้นลง ส่วนการเปลี่ยนความตึงของเชือกจะเปลี่ยนอัตราเร็วคลื่น
+glossary:
+  - { term: คลื่นตามขวาง, definition: "คลื่นที่อนุภาคของตัวกลางสั่นในทิศตั้งฉากกับทิศการเคลื่อนที่ของคลื่น เช่น คลื่นในเส้นเชือก" }
+  - { term: คลื่นตามยาว, definition: "คลื่นที่อนุภาคของตัวกลางสั่นในทิศเดียวกับทิศการเคลื่อนที่ของคลื่น เช่น คลื่นเสียง" }
+  - { term: ความยาวคลื่น, definition: "ระยะระหว่างสันคลื่นสองสันที่อยู่ติดกัน ใช้สัญลักษณ์ $\\lambda$ หน่วยเมตร" }
+  - { term: ความถี่, definition: "จำนวนรอบของการสั่นในหนึ่งวินาที หน่วยเฮิรตซ์ ($\\mathrm{Hz}$)" }
+flashcards:
+  - { front: "สมการอัตราเร็วคลื่น", back: "$v = f\\lambda = \\dfrac{\\lambda}{T}$" }
+  - { front: "ความสัมพันธ์ของคาบกับความถี่", back: "$T = \\dfrac{1}{f}$ เช่น $f = 4\\ \\mathrm{Hz}$ ได้ $T = 0.25\\ \\mathrm{s}$" }
+  - { front: "คลื่นตามขวางต่างจากคลื่นตามยาวอย่างไร", back: "ตามขวาง: อนุภาคสั่นตั้งฉากกับทิศของคลื่น · ตามยาว: อนุภาคสั่นขนานกับทิศของคลื่น" }
+  - { front: "สะบัดเชือกเส้นเดิมให้ถี่ขึ้น อะไรเปลี่ยน", back: "อัตราเร็วคลื่นเท่าเดิม (ขึ้นกับตัวกลาง) ความยาวคลื่นสั้นลง" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

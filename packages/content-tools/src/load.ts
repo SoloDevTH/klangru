@@ -63,7 +63,8 @@ export function loadContent(root: string): RawContent {
       const dir = join(sPath, topicDir);
       if (!statSync(dir).isDirectory()) continue;
       const markdown: Record<string, string> = {};
-      for (const f of readdirSync(dir)) if (f.endsWith(".md")) markdown[f] = readFileSync(join(dir, f), "utf8");
+      // ตัด front matter ที่ว่าง/ไม่ใช้ออก (Decap CMS อาจเติม ---\n--- ไว้หัวไฟล์เมื่อบันทึก)
+      for (const f of readdirSync(dir)) if (f.endsWith(".md")) markdown[f] = readFileSync(join(dir, f), "utf8").replace(/^---\r?\n(?:[\s\S]*?\r?\n)?---\r?\n/, "");
       const topicFile = join(dir, "topic.yaml");
       const problemsFile = join(dir, "problems.yaml");
       topics.push({

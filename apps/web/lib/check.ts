@@ -33,7 +33,15 @@ export function parseNumber(input: string): number | null {
   return Number(s);
 }
 
-const normText = (s: string) => s.replace(/[−–]/g, "-").replace(/\s+/g, "").toLowerCase();
+// NFC: พินอินที่พิมพ์เป็นสระ + เครื่องหมายวรรณยุกต์แยกตัว ต้องเท่ากับตัวอักษรสำเร็จรูป (ǎ)
+// อัญประกาศโค้ง (’) จากแป้นพิมพ์มือถือ ถือเป็นอัญประกาศตรง
+const normText = (s: string) =>
+  s
+    .normalize("NFC")
+    .replace(/[−–]/g, "-")
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, "")
+    .toLowerCase();
 
 /** ตรวจคำตอบ (async เพราะโจทย์ชนิด expression โหลดตัวคำนวณสัญลักษณ์เมื่อใช้เท่านั้น) */
 export async function check(problem: Problem, response: Response): Promise<CheckResult> {
@@ -75,9 +83,9 @@ export async function check(problem: Problem, response: Response): Promise<Check
     }
     case "expression": {
       if (response.type !== "expression") break;
-      const { parseLatex, equivalentLatex, hasParentheses, isFactoredForm, stripLeadingAssignment } = await import("@klangru/schema/expression");
+      const { parseLatex, equivalentLatex, explicitProducts, hasParentheses, isFactoredForm, stripLeadingAssignment } = await import("@klangru/schema/expression");
       const target = problem.prefix?.match(/^\s*([A-Za-z])\s*=\s*$/)?.[1];
-      const latex = stripLeadingAssignment(response.latex, target);
+      const latex = explicitProducts(stripLeadingAssignment(response.latex, target), problem.answer.variables);
       const parsed = parseLatex(latex);
       if (!parsed.ok) return { correct: false, invalid: "นิพจน์ยังไม่ครบหรืออ่านไม่ได้ ลองตรวจวงเล็บและเศษส่วน" };
       const extra = parsed.unknowns.filter((u) => !problem.answer.variables.includes(u));

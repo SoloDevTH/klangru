@@ -48,3 +48,12 @@ test("askTutor returns text and handles refusals", async () => {
   assert.equal(refused.text, REFUSAL_TEXT);
   assert.equal(refused.refused, true);
 });
+
+test("tutor requires an age band, and guardian consent under 20", async () => {
+  const { canUseTutor } = await import("../functions/_shared/tutor.ts");
+  assert.equal(canUseTutor(null), false);
+  assert.equal(canUseTutor({ age_band: null, guardian_consent: true }), false);
+  assert.equal(canUseTutor({ age_band: "10to19", guardian_consent: false }), false);
+  assert.equal(canUseTutor({ age_band: "10to19", guardian_consent: true }), true);
+  assert.equal(canUseTutor({ age_band: "20plus", guardian_consent: false }), true);
+});

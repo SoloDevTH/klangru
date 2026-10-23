@@ -1,0 +1,43 @@
+id: physics.thermal.temperature-heat
+subject: physics
+title: { th: อุณหภูมิและความร้อน, en: Temperature and heat }
+summary: แยกอุณหภูมิกับความร้อน แปลงองศาเซลเซียสเป็นเคลวิน คำนวณความร้อนจากความจุความร้อนจำเพาะ และหาอุณหภูมิสุดท้ายเมื่อผสมน้ำร้อนกับน้ำเย็น
+difficulty: 4
+minutes: 35
+prerequisites: [physics.units.si, math.algebra.rearrange-formula]
+encompasses:
+  - { id: physics.units.si, weight: 0.2 }
+  - { id: math.algebra.rearrange-formula, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ให้ความร้อนเท่ากัน สารไหนร้อนเร็วกว่า
+    caption: แกนนอนคือความร้อนที่ให้ (kJ) แกนตั้งคืออุณหภูมิ (°C) เริ่มที่ 20 °C ทั้งคู่ เส้นแรกคือน้ำ (c = 4.2 kJ/(kg·K)) เส้นที่สองคือสารที่เลือก c เองได้ ลองตั้ง c = 2 (ประมาณน้ำมันพืช) จะเห็นว่าความชันมากกว่าน้ำราวสองเท่า และลองเพิ่มมวล m เส้นทั้งสองจะลาดลง เพราะต้องใช้ความร้อนมากขึ้นเพื่อให้อุณหภูมิขึ้นเท่าเดิม
+    widget:
+      kind: function-plot
+      functions: ["20 + \\frac{x}{4.2 m}", "20 + \\frac{x}{c m}"]
+      sliders:
+        - { name: m, min: 0.5, max: 5, step: 0.5, value: 1, label: มวลของสารแต่ละชนิด m (kg) }
+        - { name: c, min: 0.4, max: 4.2, step: 0.1, value: 2, label: ความจุความร้อนจำเพาะของสารที่สอง c (kJ/(kg·K)) }
+      x: [0, 400]
+      y: [0, 120]
+  - type: simulation
+    title: รูปแบบพลังงานและการเปลี่ยนรูป (PhET Energy Forms and Changes)
+    url: https://phet.colorado.edu/en/simulations/energy-forms-and-changes
+    provider: phet
+    note: วางก้อนเหล็กและก้อนอิฐบนเตาแล้วให้ความร้อนพร้อมกัน สังเกตว่าเหล็กร้อนเร็วกว่า จากนั้นนำของร้อนไปวางในน้ำ ดูพลังงานไหลจากของร้อนไปของเย็นจนอุณหภูมิเท่ากัน
+glossary:
+  - { term: อุณหภูมิ, definition: "ระดับความร้อนเย็นของวัตถุ สัมพันธ์กับพลังงานจลน์เฉลี่ยของอนุภาค หน่วย SI คือเคลวิน ($\\mathrm{K}$)" }
+  - { term: ความร้อน, definition: "พลังงานที่ถ่ายโอนจากวัตถุอุณหภูมิสูงไปยังวัตถุอุณหภูมิต่ำ มีหน่วยจูล ($\\mathrm{J}$)" }
+  - { term: ความจุความร้อนจำเพาะ, definition: "ความร้อนที่ทำให้สาร $1\\ \\mathrm{kg}$ มีอุณหภูมิเปลี่ยน $1\\ \\mathrm{K}$ หน่วย $\\mathrm{J/(kg\\cdot K)}$ น้ำมีค่าประมาณ $4{,}200$" }
+  - { term: สมดุลความร้อน, definition: "สภาวะที่วัตถุที่สัมผัสกันมีอุณหภูมิเท่ากัน จึงไม่มีความร้อนถ่ายโอนระหว่างกันอีก" }
+flashcards:
+  - { front: "แปลง $\\theta\\ ^\\circ\\mathrm{C}$ เป็นเคลวิน", back: "$T = \\theta + 273$ เช่น $27\\ ^\\circ\\mathrm{C} = 300\\ \\mathrm{K}$" }
+  - { front: "สูตรความร้อนที่ทำให้อุณหภูมิเปลี่ยน", back: "$Q = mc\\,\\Delta T$ โดย $Q$ (J), $m$ (kg), $c$ (J/(kg·K)), $\\Delta T$ (K)" }
+  - { front: "อุณหภูมิเปลี่ยน $30\\ ^\\circ\\mathrm{C}$ เท่ากับกี่เคลวิน", back: "$30\\ \\mathrm{K}$ ผลต่างอุณหภูมิในสองสเกลเท่ากัน ไม่ต้องบวก 273" }
+  - { front: "หลักการคำนวณการผสมของร้อนกับของเย็น", back: "ความร้อนที่ของร้อนให้ = ความร้อนที่ของเย็นรับ: $m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2)$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

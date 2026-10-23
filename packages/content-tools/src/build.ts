@@ -1,6 +1,6 @@
 import { copyFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import type { ContentIndex, Problem, SearchDoc, Topic, TopicPack } from "@klangru/schema";
+import { hanziFile, type ContentIndex, type Problem, type SearchDoc, type Topic, type TopicPack } from "@klangru/schema";
 import { depths, topoOrder } from "./graph.ts";
 import { hanziDataDir, type ValidContent } from "./validate.ts";
 
@@ -81,7 +81,7 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
   // ข้อมูลลำดับขีด: คัดเฉพาะตัวที่ใช้ แอปจึงทำงานออฟไลน์ได้โดยไม่ต้องโหลดจาก CDN
   const hanziDir = hanziDataDir();
   if (hanzi.size && hanziDir) {
-    for (const c of hanzi) copyFileSync(join(hanziDir, `${c}.json`), join(outDir, "hanzi", `${c}.json`));
+    for (const c of hanzi) copyFileSync(join(hanziDir, `${c}.json`), join(outDir, "hanzi", hanziFile(c)));
     const license = join(hanziDir, "ARPHICPL.TXT");
     if (existsSync(license)) copyFileSync(license, join(outDir, "hanzi", "ARPHICPL.TXT"));
   }

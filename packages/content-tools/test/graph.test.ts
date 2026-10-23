@@ -34,3 +34,16 @@ import { plainText } from "../src/build.ts";
 test("plainText strips markdown and display math", () => {
   assert.equal(plainText("## หัวข้อ\n**ตัวหนา** $x^2$ และ $$\\frac{1}{2}$$"), "หัวข้อ ตัวหนา x 2 และ");
 });
+
+test("lesson front matter added by the CMS is stripped", async () => {
+  const { mkdtempSync, mkdirSync, writeFileSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const { loadContent } = await import("../src/load.ts");
+  const dir = mkdtempSync(join(tmpdir(), "fm-"));
+  mkdirSync(join(dir, "math/x"), { recursive: true });
+  writeFileSync(join(dir, "math/x/topic.yaml"), "id: math.a.x\n");
+  writeFileSync(join(dir, "math/x/lesson.md"), "---\n---\n# หัวเรื่อง\n");
+  const t = loadContent(dir).topics.find((t) => t.rel === "math/x");
+  assert.equal((t as unknown as { markdown: Record<string, string> }).markdown["lesson.md"], "# หัวเรื่อง\n");
+});

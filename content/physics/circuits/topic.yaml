@@ -1,0 +1,41 @@
+id: physics.electricity.circuits
+subject: physics
+title: { th: วงจรอนุกรม วงจรขนาน และวงจรผสม, en: Series and parallel circuits }
+summary: หาความต้านทานรวมของตัวต้านทานที่ต่ออนุกรม ขนาน และผสม แบ่งกระแสและแรงดันในวงจร และเข้าใจว่าทำไมเครื่องใช้ไฟฟ้าในบ้านต่อแบบขนาน
+difficulty: 5
+minutes: 40
+prerequisites: [physics.electricity.current-voltage, math.number.fractions]
+encompasses:
+  - { id: physics.electricity.current-voltage, weight: 0.6 }
+  - { id: math.number.fractions, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: ชุดต่อวงจรไฟฟ้ากระแสตรง (PhET Circuit Construction Kit DC)
+    url: https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc
+    provider: phet
+    note: ต่อหลอดไฟสองดวงแบบอนุกรมแล้วถอดดวงหนึ่งออก ดวงที่เหลือจะดับ จากนั้นต่อแบบขนานแล้วถอดดวงหนึ่ง ดวงที่เหลือยังสว่างเท่าเดิม ใช้แอมมิเตอร์และโวลต์มิเตอร์ในชุดวัดค่าเปรียบเทียบกับที่คำนวณ
+  - type: interactive
+    title: ความต้านทานรวมแบบอนุกรมและแบบขนาน
+    caption: แกนนอนคือค่าของตัวต้านทานตัวที่สอง R₂ (Ω) แกนตั้งคือความต้านทานรวม (Ω) เส้นตรงคือแบบอนุกรม R₁ + R₂ เส้นโค้งคือแบบขนาน R₁R₂/(R₁ + R₂) ตั้งค่า R₁ ด้วยแถบเลื่อน a แล้วสังเกตว่าเส้นขนานอยู่ต่ำกว่า a เสมอ (น้อยกว่าตัวที่น้อยที่สุด) และเมื่อ R₂ = a ความต้านทานขนานเท่ากับครึ่งหนึ่งของ a พอดี
+    widget:
+      kind: function-plot
+      functions: ["a + x", "\\frac{a x}{a + x}"]
+      sliders:
+        - { name: a, min: 1, max: 10, step: 1, value: 6, label: ความต้านทาน R₁ (Ω) }
+      x: [0, 20]
+      y: [0, 30]
+glossary:
+  - { term: วงจรอนุกรม, definition: "วงจรที่อุปกรณ์ต่อเรียงกันเป็นทางเดียว กระแสเท่ากันทุกตัว ความต้านทานรวม $R = R_1 + R_2 + \\dots$" }
+  - { term: วงจรขนาน, definition: "วงจรที่อุปกรณ์ต่อคร่อมจุดสองจุดเดียวกัน ความต่างศักย์เท่ากันทุกตัว $\\dfrac{1}{R} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dots$" }
+  - { term: เบรกเกอร์, definition: "อุปกรณ์ตัดวงจรอัตโนมัติเมื่อกระแสรวมเกินค่าที่กำหนด ต่ออนุกรมกับสายเมนของวงจรในบ้าน" }
+flashcards:
+  - { front: "ความต้านทานรวมของ $R_1$ และ $R_2$ ที่ต่อขนาน (สองตัว)", back: "$R = \\dfrac{R_1 R_2}{R_1 + R_2}$ (ผลคูณหารด้วยผลบวก)" }
+  - { front: "ในวงจรอนุกรม ปริมาณใดเท่ากันทุกตัว และในวงจรขนาน ปริมาณใดเท่ากันทุกตัว", back: "อนุกรม: กระแสเท่ากัน · ขนาน: ความต่างศักย์เท่ากัน" }
+  - { front: "ต่อตัวต้านทาน $6\\ \\Omega$ สองตัวแบบขนาน ได้ความต้านทานรวมเท่าใด", back: "$3\\ \\Omega$ (ตัวต้านทานเท่ากัน $n$ ตัวต่อขนานได้ $\\tfrac{R}{n}$)" }
+  - { front: "ทำไมเครื่องใช้ไฟฟ้าในบ้านต่อแบบขนาน", back: "ทุกเครื่องได้ความต่างศักย์ $220\\ \\mathrm{V}$ เต็ม และเปิดปิดแยกกันได้ เครื่องหนึ่งเสียเครื่องอื่นยังใช้ได้" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

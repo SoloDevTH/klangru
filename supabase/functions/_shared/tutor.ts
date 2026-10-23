@@ -53,6 +53,10 @@ const MODE_REQUEST: Record<TutorMode, string> = {
   chat: "",
 };
 
+/** ตรงกับ canSync ในแอป: ระบุช่วงอายุแล้ว และถ้าต่ำกว่า 20 ปีต้องมีความยินยอมจากผู้ปกครอง */
+export const canUseTutor = (p?: { age_band: string | null; guardian_consent: boolean | null } | null) =>
+  !!p?.age_band && (p.age_band === "20plus" || !!p.guardian_consent);
+
 /** โหมดอธิบายเฉลยใช้ได้หลังตอบแล้วเท่านั้น */
 export const effectiveMode = (mode: TutorMode, answered: boolean): TutorMode => (mode === "explain" && !answered ? "hint" : mode);
 

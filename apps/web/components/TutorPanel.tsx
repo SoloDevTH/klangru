@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Problem } from "@klangru/schema";
 import { Markdown } from "./Markdown";
-import { supabase, useAccount } from "@/lib/account";
+import { canSync, supabase, useAccount } from "@/lib/account";
 
 type Mode = "hint" | "example" | "explain" | "chat";
 interface Turn {
@@ -76,6 +76,10 @@ export function TutorPanel({ topicId, problemId, answered, onClose }: { topicId:
       {account.status !== "signed-in" ? (
         <p className="small">
           ต้อง<Link href="/profile/#account">เข้าสู่ระบบ</Link>ก่อนใช้ผู้ช่วย AI เพื่อจำกัดการใช้งานต่อวันและให้ครูตรวจคุณภาพคำตอบได้
+        </p>
+      ) : !canSync(account.profile) ? (
+        <p className="small">
+          ข้อความที่ถามผู้ช่วย AI ถูกเก็บไว้ให้ครูตรวจคุณภาพ จึงต้อง<Link href="/profile/#account">ระบุช่วงอายุ</Link>ก่อน และถ้าอายุต่ำกว่า 20 ปีต้องได้รับความยินยอมจากผู้ปกครอง
         </p>
       ) : (
         <>

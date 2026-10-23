@@ -1,0 +1,44 @@
+id: physics.kinematics.circular
+subject: physics
+title: { th: การเคลื่อนที่แบบวงกลม, en: Circular motion }
+summary: วัตถุที่เคลื่อนที่เป็นวงกลมด้วยอัตราเร็วคงตัว คาบ ความถี่ อัตราเร็วเชิงมุม ความเร่งสู่ศูนย์กลาง และแรงสู่ศูนย์กลางที่ได้จากแรงตึง แรงเสียดทาน หรือแรงโน้มถ่วง
+difficulty: 6
+minutes: 40
+prerequisites: [physics.dynamics.newton-second, math.geometry.circles]
+encompasses:
+  - { id: physics.dynamics.newton-second, weight: 0.4 }
+  - { id: math.geometry.circles, weight: 0.3 }
+  - { id: physics.kinematics.acceleration, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ความเร่งสู่ศูนย์กลางกับอัตราเร็วและรัศมี
+    caption: "แกนนอนคืออัตราเร็ว v (m/s) แกนตั้งคือความเร่งสู่ศูนย์กลาง a = v²/r (m/s²) เลื่อนรัศมี r แล้วสังเกตว่าเมื่ออัตราเร็วเพิ่มเป็นสองเท่า ความเร่งเพิ่มเป็นสี่เท่า แต่เมื่อรัศมีเพิ่มเป็นสองเท่า ความเร่งลดลงครึ่งหนึ่ง ทางโค้งที่แคบจึงต้องขับช้ากว่า"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{x^2}{r}"]
+      sliders:
+        - { name: r, min: 1, max: 10, step: 1, value: 5, label: รัศมี (m) }
+      x: [0, 10]
+      y: [0, 50]
+  - type: simulation
+    title: แรงโน้มถ่วงและวงโคจร (PhET Gravity and Orbits)
+    url: https://phet.colorado.edu/en/simulations/gravity-and-orbits
+    provider: phet
+    note: เปิดหน้าจอ Model เลือกระบบดวงอาทิตย์กับโลก ติ๊กแสดงเวกเตอร์แรงโน้มถ่วงและความเร็ว สังเกตว่าแรงชี้เข้าหาดวงอาทิตย์ (ศูนย์กลาง) ตลอด ส่วนความเร็วสัมผัสวงโคจร ลองปิดแรงโน้มถ่วง (Gravity off) แล้วดูว่าโลกพุ่งออกไปเป็นเส้นตรงตามแนวเส้นสัมผัส
+glossary:
+  - { term: คาบ (T), definition: "เวลาที่ใช้เคลื่อนที่ครบหนึ่งรอบ หน่วยวินาที" }
+  - { term: ความถี่ (f), definition: "จำนวนรอบต่อหนึ่งวินาที $f = \\dfrac{1}{T}$ หน่วยเฮิรตซ์ ($\\mathrm{Hz}$)" }
+  - { term: อัตราเร็วเชิงมุม (ω), definition: "มุมที่กวาดได้ต่อหนึ่งวินาที $\\omega = \\dfrac{2\\pi}{T} = 2\\pi f$ หน่วย $\\mathrm{rad/s}$" }
+  - { term: ความเร่งสู่ศูนย์กลาง, definition: "ความเร่งของวัตถุที่เคลื่อนที่เป็นวงกลม ชี้เข้าหาศูนย์กลาง ขนาด $a_c = \\dfrac{v^2}{r} = \\omega^2 r$" }
+  - { term: แรงสู่ศูนย์กลาง, definition: "แรงลัพธ์ที่ชี้เข้าหาศูนย์กลาง $F_c = \\dfrac{mv^2}{r}$ ไม่ใช่แรงชนิดใหม่ แต่มาจากแรงจริง เช่น แรงตึง แรงเสียดทาน แรงโน้มถ่วง" }
+flashcards:
+  - { front: "อัตราเร็วของวัตถุที่เคลื่อนที่เป็นวงกลมรัศมี $r$ คาบ $T$", back: "$v = \\dfrac{2\\pi r}{T} = \\omega r$" }
+  - { front: "ความเร่งสู่ศูนย์กลางมีขนาดและทิศอย่างไร", back: "$a_c = \\dfrac{v^2}{r} = \\omega^2 r$ ชี้เข้าหาศูนย์กลางเสมอ" }
+  - { front: "เชือกที่แกว่งก้อนหินขาด ก้อนหินจะเคลื่อนที่ไปทางใด", back: "ตามแนวเส้นสัมผัสวงกลม ณ จุดที่เชือกขาด ไม่ใช่พุ่งออกจากศูนย์กลาง" }
+  - { front: "รถเลี้ยวโค้งบนถนนราบ แรงใดเป็นแรงสู่ศูนย์กลาง", back: "แรงเสียดทานระหว่างยางกับถนน" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

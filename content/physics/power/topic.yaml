@@ -1,0 +1,45 @@
+id: physics.energy.power
+subject: physics
+title: { th: กำลัง, en: Power }
+summary: กำลังคืองานที่ทำได้ในหนึ่งหน่วยเวลา หน่วยวัตต์ ความสัมพันธ์ระหว่างกำลัง แรง และความเร็ว ประสิทธิภาพของเครื่องจักร ตัวอย่างลิฟต์และมอเตอร์
+difficulty: 4.5
+minutes: 30
+prerequisites: [physics.energy.work]
+encompasses:
+  - { id: physics.energy.work, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: งานเท่าเดิม ใช้เวลาต่างกัน กำลังต่างกันอย่างไร
+    caption: 'แกนนอนคือเวลาที่ใช้ทำงาน t (s) แกนตั้งคือกำลัง P = W/t (วัตต์) เลื่อนแถบ W เพื่อเปลี่ยนงานที่ต้องทำ แล้วสังเกตว่าทำงานเท่าเดิมให้เสร็จในเวลาครึ่งหนึ่ง ต้องใช้กำลังเป็นสองเท่า'
+    widget:
+      kind: function-plot
+      functions: ['\frac{W}{x}']
+      sliders:
+        - { name: W, min: 500, max: 3000, step: 250, value: 1500, label: งาน W (J) }
+      x: [0, 30]
+      y: [0, 600]
+  - type: interactive
+    title: กำลังที่ต้องใช้เมื่อวิ่งเร็วขึ้น (P = Fv)
+    caption: 'แกนนอนคือความเร็วคงตัว v (m/s) แกนตั้งคือกำลัง (วัตต์) ที่ต้องใช้เพื่อเอาชนะแรงต้าน F ลองเพิ่มแรงต้าน F แล้วดูว่าเส้นชันขึ้น และที่ความเร็วเท่ากัน แรงต้านสองเท่าต้องใช้กำลังสองเท่า'
+    widget:
+      kind: function-plot
+      functions: ['F x']
+      sliders:
+        - { name: F, min: 100, max: 1000, step: 100, value: 400, label: แรงต้าน F (N) }
+      x: [0, 30]
+      y: [0, 30000]
+glossary:
+  - { term: กำลัง (P), definition: 'งานที่ทำได้ในหนึ่งหน่วยเวลา $P = \tfrac{W}{t}$ หรือ $P = Fv$ เมื่อแรงขนานกับความเร็ว' }
+  - { term: วัตต์ (W), definition: 'หน่วยของกำลัง $1\ \mathrm{W} = 1\ \mathrm{J/s}$ และ $1\ \mathrm{kW} = 1000\ \mathrm{W}$' }
+  - { term: ประสิทธิภาพ, definition: 'ร้อยละของกำลังหรืองานที่ได้ออกมาเป็นประโยชน์ เทียบกับที่ใส่เข้าไป $\eta = \tfrac{P_{\text{ออก}}}{P_{\text{เข้า}}} \times 100\%$' }
+flashcards:
+  - { front: 'สูตรของกำลังสองแบบ', back: '$P = \tfrac{W}{t}$ และ $P = Fv$ (แรงขนานกับความเร็ว) หน่วยวัตต์' }
+  - { front: 'คนสองคนมวลเท่ากันขึ้นบันไดเดียวกัน คนหนึ่งใช้เวลาครึ่งหนึ่งของอีกคน เปรียบเทียบงานและกำลัง', back: 'งานเท่ากัน แต่คนที่เร็วกว่ามีกำลังเป็น 2 เท่า' }
+  - { front: '$\mathrm{kW}$ กับ $\mathrm{kWh}$ ต่างกันอย่างไร', back: '$\mathrm{kW}$ เป็นหน่วยกำลัง ส่วน $\mathrm{kWh}$ เป็นหน่วยพลังงาน $1\ \mathrm{kWh} = 3.6 \times 10^6\ \mathrm{J}$' }
+  - { front: 'มอเตอร์รับกำลังไฟฟ้า $2000\ \mathrm{W}$ ให้กำลังกล $1500\ \mathrm{W}$ ประสิทธิภาพเท่าใด', back: '$\tfrac{1500}{2000} \times 100\% = 75\%$' }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

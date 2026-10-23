@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Subject, TopicSummary } from "@klangru/schema";
 import { AccountPanel } from "./AccountPanel";
+import { OfflinePanel } from "./OfflinePanel";
 import { LEVEL_LABEL, type Level } from "@/lib/mastery";
 import { answeredToday, levelOf, resetProgress, setSettings, streak, update, useProgress, type Progress } from "@/lib/progress";
 import { scheduleReminders, remindersSupported } from "@/lib/native";
@@ -62,6 +63,8 @@ export function ProfileStats({ topics, subjects }: { topics: TopicSummary[]; sub
       <AccountPanel />
 
       <Settings progress={progress} />
+
+      <OfflinePanel subjects={subjects} />
 
       {subjects.map((s) => {
         const list = topics.filter((t) => t.subject === s.id);

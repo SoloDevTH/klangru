@@ -1,0 +1,44 @@
+id: physics.magnetism.magnetic-field
+subject: physics
+title: { th: สนามแม่เหล็กและแรงแม่เหล็ก, en: Magnetic fields and magnetic force }
+summary: อ่านเส้นสนามแม่เหล็ก คำนวณแรงบนลวดที่มีกระแสและแรงบนประจุที่เคลื่อนที่ในสนาม หาทิศแรงด้วยกฎมือขวา และอธิบายการทำงานของมอเตอร์ไฟฟ้า
+difficulty: 6
+minutes: 40
+prerequisites: [physics.electricity.current-voltage, physics.units.vectors]
+encompasses:
+  - { id: physics.electricity.current-voltage, weight: 0.3 }
+  - { id: physics.units.vectors, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: แรงบนลวดเมื่อเปลี่ยนมุมกับสนาม
+    caption: แกนนอนคือมุม θ ระหว่างลวดกับสนาม (องศา) แกนตั้งคือแรง F = ILB sin θ (N) แรงเป็นศูนย์เมื่อลวดขนานกับสนาม (0° และ 180°) และมากที่สุดเมื่อตั้งฉาก (90°) ลองเพิ่มกระแส I หรือสนาม B เป็นสองเท่า ยอดกราฟจะสูงเป็นสองเท่า
+    widget:
+      kind: function-plot
+      functions: ["I L B \\sin(\\frac{\\pi x}{180})"]
+      sliders:
+        - { name: I, min: 0, max: 5, step: 0.5, value: 2, label: กระแส I (A) }
+        - { name: L, min: 0.1, max: 1, step: 0.1, value: 0.5, label: ความยาวลวด L (m) }
+        - { name: B, min: 0, max: 1, step: 0.1, value: 0.5, label: สนามแม่เหล็ก B (T) }
+      x: [0, 180]
+      y: [0, 5]
+  - type: simulation
+    title: แม่เหล็กและแม่เหล็กไฟฟ้า (PhET Magnets and Electromagnets)
+    url: https://phet.colorado.edu/en/simulations/magnets-and-electromagnets
+    provider: phet
+    note: ลากเข็มทิศไปรอบแท่งแม่เหล็กเพื่อดูทิศของสนาม แล้วเปลี่ยนเป็นแม่เหล็กไฟฟ้า ลองกลับทิศกระแสและเพิ่มจำนวนรอบขดลวด สังเกตทิศและความเข้มของสนามที่เปลี่ยนไป
+glossary:
+  - { term: สนามแม่เหล็ก, definition: "บริเวณที่แม่เหล็ก ลวดที่มีกระแส หรือประจุที่เคลื่อนที่ ถูกแรงแม่เหล็กกระทำ ใช้สัญลักษณ์ $B$ หน่วยเทสลา ($\\mathrm{T}$)" }
+  - { term: เส้นสนามแม่เหล็ก, definition: "เส้นที่บอกทิศของสนาม นอกแท่งแม่เหล็กมีทิศจากขั้วเหนือไปขั้วใต้ เส้นไม่ตัดกัน และชิดกันมากเมื่อสนามแรง" }
+  - { term: เทสลา, definition: "หน่วยของสนามแม่เหล็ก $1\\ \\mathrm{T} = 1\\ \\mathrm{N/(A\\cdot m)}$" }
+  - { term: คอมมิวเตเตอร์, definition: "วงแหวนผ่าซีกในมอเตอร์กระแสตรง กลับทิศกระแสในขดลวดทุกครึ่งรอบ เพื่อให้ขดลวดหมุนไปทางเดิมต่อเนื่อง" }
+flashcards:
+  - { front: "แรงบนลวดที่มีกระแสในสนามแม่เหล็ก", back: "$F = ILB\\sin\\theta$ โดย $\\theta$ คือมุมระหว่างลวดกับสนาม ขนานกันได้แรงศูนย์" }
+  - { front: "แรงบนประจุที่เคลื่อนที่ในสนามแม่เหล็ก", back: "$F = qvB\\sin\\theta$ ประจุลบได้แรงทิศตรงข้ามกับประจุบวก" }
+  - { front: "กฎมือขวาหาทิศแรงบนลวด", back: "แบมือขวา นิ้วโป้งตามกระแส นิ้วทั้งสี่ตามสนาม แรงมีทิศออกจากฝ่ามือ" }
+  - { front: "กฎกำมือขวาสำหรับลวดตรง", back: "นิ้วโป้งชี้ทิศกระแส นิ้วทั้งสี่ที่กำรอบลวดคือทิศของเส้นสนามแม่เหล็กที่วนรอบลวด" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

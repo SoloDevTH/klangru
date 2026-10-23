@@ -1,0 +1,213 @@
+problems:
+  - id: phy.epow.p001
+    topics: [physics.electricity.electric-power]
+    difficulty: 1
+    type: numeric
+    stem: "เครื่องเป่าผมต่อกับไฟบ้าน $220\\ \\mathrm{V}$ มีกระแสไหลผ่าน $5\\ \\mathrm{A}$ เครื่องเป่าผมมีกำลังไฟฟ้ากี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W)"
+    answer: { value: 1100, unit: W }
+    hints:
+      - "รู้ความต่างศักย์และกระแส ใช้สูตรกำลังไฟฟ้าที่มี $V$ และ $I$"
+      - "$P = VI$ นำความต่างศักย์คูณกับกระแส"
+    misconceptions:
+      - { match: 44, feedback: "ดูเหมือนนำ $V$ หารด้วย $I$ ซึ่งได้ความต้านทาน ($\\Omega$) ไม่ใช่กำลัง กำลังไฟฟ้าคือ $P = VI$" }
+      - { match: 0.0227, feedback: "ดูเหมือนนำ $I$ หารด้วย $V$ กำลังไฟฟ้าคือ $P = VI$ ต้องคูณกัน" }
+    solution: "$P = VI = (220\\ \\mathrm{V})(5\\ \\mathrm{A}) = 1100\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p002
+    topics: [physics.electricity.electric-power]
+    difficulty: 2
+    type: numeric
+    stem: "เตารีดกำลัง $1000\\ \\mathrm{W}$ ใช้รีดผ้านาน 2 ชั่วโมง ใช้พลังงานไฟฟ้ากี่หน่วย (กิโลวัตต์-ชั่วโมง) (ตอบเป็นตัวเลขในหน่วย kWh)"
+    answer: { value: 2, unit: kWh }
+    hints:
+      - "1 หน่วย = 1 กิโลวัตต์-ชั่วโมง ต้องใช้กำลังเป็นกิโลวัตต์และเวลาเป็นชั่วโมง"
+      - "แปลง $1000\\ \\mathrm{W}$ เป็นกิโลวัตต์ แล้วคูณด้วยจำนวนชั่วโมง"
+    misconceptions:
+      - { match: 2000, feedback: "นั่นคือวัตต์-ชั่วโมง ต้องแปลงวัตต์เป็นกิโลวัตต์ก่อน (หารด้วย 1000)" }
+      - { match: 7200000, feedback: "นั่นคือพลังงานในหน่วยจูล ($1000\\ \\mathrm{W} \\times 7200\\ \\mathrm{s}$) ซึ่งถูกต้องแต่โจทย์ถามเป็นหน่วย kWh" }
+    solution: "$E = Pt = (1\\ \\mathrm{kW})(2\\ \\mathrm{h}) = 2\\ \\mathrm{kWh}$ = 2 หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p003
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: numeric
+    stem: "ช่วงหน้าร้อน บ้านหลังหนึ่งในขอนแก่นเปิดแอร์ขนาด $1200\\ \\mathrm{W}$ วันละ 8 ชั่วโมง ติดต่อกัน 30 วัน ถ้าสมมติอัตราค่าไฟ 4 บาทต่อหน่วย (อัตราสมมติสำหรับฝึกคิด ไม่ใช่อัตราจริง) ค่าไฟของแอร์เดือนนี้เป็นกี่บาท (ตอบเป็นตัวเลขในหน่วยบาท)"
+    answer: { value: 1152, unit: บาท }
+    hints:
+      - "หาจำนวนหน่วย (kWh) ที่ใช้ทั้งเดือนก่อน"
+      - "จำนวนหน่วย = กำลัง (kW) × ชั่วโมงต่อวัน × จำนวนวัน"
+      - "นำจำนวนหน่วยคูณกับอัตราค่าไฟต่อหน่วย"
+    misconceptions:
+      - { match: 1152000, feedback: "ดูเหมือนใช้กำลังเป็นวัตต์โดยไม่แปลงเป็นกิโลวัตต์ ต้องใช้ $1.2\\ \\mathrm{kW}$" }
+      - { match: 38.4, feedback: "นั่นคือค่าไฟของวันเดียว ยังต้องคูณด้วย 30 วัน" }
+    solution: "จำนวนหน่วย $= 1.2\\ \\mathrm{kW} \\times 8\\ \\mathrm{h} \\times 30 = 288\\ \\mathrm{kWh}$ → ค่าไฟ $= 288 \\times 4 = 1152$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p004
+    topics: [physics.electricity.electric-power]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ปริมาณที่รู้กับสูตรที่ใช้หาให้ถูกต้อง"
+    pairs:
+      - { left: "หากำลัง เมื่อรู้ $V$ และ $I$", right: "$P = VI$" }
+      - { left: "หากำลัง เมื่อรู้ $I$ และ $R$", right: "$P = I^2R$" }
+      - { left: "หากำลัง เมื่อรู้ $V$ และ $R$", right: "$P = \\dfrac{V^2}{R}$" }
+      - { left: "หาพลังงาน เมื่อรู้ $P$ และ $t$", right: "$E = Pt$" }
+    hints:
+      - "สูตรพื้นฐานคือ $P = VI$ และ $V = IR$"
+      - "แทน $V = IR$ ลงใน $P = VI$ จะได้สูตรที่ไม่มี $V$ และแทน $I = \\dfrac{V}{R}$ จะได้สูตรที่ไม่มี $I$"
+    solution: "$P = VI$ · แทน $V = IR$: $P = I^2R$ · แทน $I = \\dfrac{V}{R}$: $P = \\dfrac{V^2}{R}$ · พลังงาน $E = Pt$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p005
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: numeric
+    stem: "กระแส $2\\ \\mathrm{A}$ ไหลผ่านตัวต้านทาน $10\\ \\Omega$ ตัวต้านทานใช้กำลังไฟฟ้ากี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W)"
+    answer: { value: 40, unit: W }
+    hints:
+      - "รู้กระแสและความต้านทาน เลือกสูตรที่มี $I$ และ $R$"
+      - "$P = I^2R$ ยกกำลังสองเฉพาะกระแส แล้วคูณด้วย $R$"
+    misconceptions:
+      - { match: 20, feedback: "นั่นคือ $IR$ ซึ่งเป็นความต่างศักย์ ($\\mathrm{V}$) กำลังต้องใช้ $I^2R$" }
+      - { match: 400, feedback: "ดูเหมือนยกกำลังสองทั้ง $(IR)^2$ สูตรคือ $I^2R$ ยกกำลังสองเฉพาะกระแส" }
+    solution: "$P = I^2R = (2\\ \\mathrm{A})^2(10\\ \\Omega) = 4 \\times 10\\ \\mathrm{W} = 40\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p006
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: numeric
+    stem: "หลอดไฟหน้ารถยนต์ต่อกับแบตเตอรี่ $12\\ \\mathrm{V}$ ขณะสว่างหลอดมีความต้านทาน $2.4\\ \\Omega$ หลอดใช้กำลังไฟฟ้ากี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W)"
+    answer: { value: 60, unit: W }
+    hints:
+      - "รู้ความต่างศักย์และความต้านทาน เลือกสูตรที่มี $V$ และ $R$"
+      - "$P = \\dfrac{V^2}{R}$ อย่าลืมยกกำลังสองความต่างศักย์"
+    misconceptions:
+      - { match: 5, feedback: "นั่นคือ $\\dfrac{V}{R}$ ซึ่งเป็นกระแส ($\\mathrm{A}$) กำลังต้องใช้ $\\dfrac{V^2}{R}$ หรือนำกระแสนี้คูณ $V$ อีกครั้ง" }
+      - { match: 28.8, feedback: "ดูเหมือนนำ $V$ คูณ $R$ กำลังไฟฟ้าคือ $\\dfrac{V^2}{R}$" }
+    solution: "$P = \\dfrac{V^2}{R} = \\dfrac{(12\\ \\mathrm{V})^2}{2.4\\ \\Omega} = \\dfrac{144}{2.4}\\ \\mathrm{W} = 60\\ \\mathrm{W}$ (ตรวจ: $I = \\tfrac{12}{2.4} = 5\\ \\mathrm{A}$, $P = VI = 12 \\times 5 = 60\\ \\mathrm{W}$ ✓)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p007
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: numeric
+    stem: "หลอดไฟ $60\\ \\mathrm{W}$ เปิดนาน 5 นาที ใช้พลังงานไฟฟ้ากี่จูล (ตอบเป็นตัวเลขในหน่วย J)"
+    answer: { value: 18000, unit: J }
+    hints:
+      - "พลังงาน $E = Pt$ ถ้าต้องการคำตอบเป็นจูล เวลาต้องเป็นวินาที"
+      - "แปลง 5 นาทีเป็นวินาทีก่อน แล้วคูณด้วยกำลัง"
+    misconceptions:
+      - { match: 300, feedback: "ดูเหมือนใช้เวลาเป็นนาที $1\\ \\mathrm{W} = 1\\ \\mathrm{J/s}$ จึงต้องใช้เวลาเป็นวินาที ($300\\ \\mathrm{s}$)" }
+      - { match: 12, feedback: "ดูเหมือนนำกำลังหารด้วยเวลา พลังงานคือกำลัง **คูณ** เวลา" }
+    solution: "$t = 5 \\times 60 = 300\\ \\mathrm{s}$ → $E = Pt = (60\\ \\mathrm{W})(300\\ \\mathrm{s}) = 18\\,000\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p008
+    topics: [physics.electricity.electric-power]
+    difficulty: 4
+    type: numeric
+    stem: "หม้อหุงข้าวไฟฟ้าระบุบนฉลากว่า $220\\ \\mathrm{V}$ $880\\ \\mathrm{W}$ ขณะใช้งานกับไฟบ้านในประเทศไทย ขดลวดความร้อนของหม้อหุงข้าวมีความต้านทานกี่โอห์ม (ตอบเป็นตัวเลขในหน่วย Ω)"
+    answer: { value: 55, unit: Ω }
+    hints:
+      - "รู้ $P$ และ $V$ หากระแสได้จาก $P = VI$"
+      - "เมื่อรู้กระแสแล้ว ใช้กฎของโอห์ม $R = \\dfrac{V}{I}$"
+      - "หรือจัดรูป $P = \\dfrac{V^2}{R}$ ให้ $R$ อยู่ข้างเดียว"
+    misconceptions:
+      - { match: 4, feedback: "นั่นคือกระแส $I = \\dfrac{P}{V} = 4\\ \\mathrm{A}$ ยังต้องหาความต้านทานต่อจาก $R = \\dfrac{V}{I}$" }
+      - { match: 0.0182, feedback: "ดูเหมือนจัดรูปกลับด้านเป็น $R = \\dfrac{P}{V^2}$ จาก $P = \\dfrac{V^2}{R}$ จะได้ $R = \\dfrac{V^2}{P}$" }
+    solution: "$I = \\dfrac{P}{V} = \\dfrac{880}{220} = 4\\ \\mathrm{A}$ → $R = \\dfrac{V}{I} = \\dfrac{220}{4} = 55\\ \\Omega$ (ตรวจ: $\\dfrac{V^2}{P} = \\dfrac{48\\,400}{880} = 55\\ \\Omega$ ✓)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p009
+    topics: [physics.electricity.electric-power]
+    difficulty: 4
+    type: expression
+    stem: "จากสูตร $P = \\dfrac{V^2}{R}$ จงเขียนสูตรหาความต้านทาน $R$ (ใช้ตัวแปร $V$ และ $P$)"
+    prefix: "R ="
+    answer: { latex: "\\frac{V^2}{P}", variables: [V, P] }
+    hints:
+      - "คูณทั้งสองข้างด้วย $R$ เพื่อเอา $R$ ออกจากตัวส่วน"
+      - "จะได้ $PR = V^2$ แล้วหารทั้งสองข้างด้วย $P$"
+    misconceptions:
+      - { match: "\\frac{P}{V^2}", feedback: "กลับเศษกับส่วน จาก $PR = V^2$ ต้องหารด้วย $P$ จึงได้ $R = \\dfrac{V^2}{P}$" }
+      - { match: "\\frac{V}{P}", feedback: "ลืมยกกำลังสอง $V$ ในสูตรเดิมมีกำลังสอง ตรวจด้วยหน่วย: $\\dfrac{\\mathrm{V^2}}{\\mathrm{W}} = \\Omega$" }
+    solution: "$P = \\dfrac{V^2}{R}$ → $PR = V^2$ → $R = \\dfrac{V^2}{P}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p010
+    topics: [physics.electricity.electric-power]
+    difficulty: 5
+    type: numeric
+    stem: "ร้านก๋วยเตี๋ยวแห่งหนึ่งเปลี่ยนหลอดไส้ $60\\ \\mathrm{W}$ จำนวน 10 หลอด เป็นหลอด LED $9\\ \\mathrm{W}$ จำนวน 10 หลอดที่ให้แสงสว่างใกล้เคียงกัน ร้านเปิดไฟวันละ 5 ชั่วโมง ถ้าสมมติอัตราค่าไฟ 4.5 บาทต่อหน่วย (อัตราสมมติสำหรับฝึกคิด) ใน 30 วันร้านจะประหยัดค่าไฟได้กี่บาท (ตอบเป็นตัวเลขในหน่วยบาท)"
+    answer: { value: 344.25, tolerance: 3, unit: บาท }
+    hints:
+      - "หาว่ากำลังรวมลดลงกี่วัตต์ เมื่อเปลี่ยนหลอดทั้ง 10 หลอด"
+      - "แปลงกำลังที่ลดลงเป็น kW แล้วคูณด้วยชั่วโมงต่อวันและจำนวนวัน จะได้จำนวนหน่วยที่ประหยัดได้"
+      - "นำจำนวนหน่วยที่ประหยัดได้คูณกับอัตราค่าไฟ"
+    misconceptions:
+      - { match: 34.425, feedback: "นั่นคือเงินที่ประหยัดได้จากหลอดเดียว ร้านเปลี่ยน 10 หลอด" }
+      - { match: 405, feedback: "นั่นคือค่าไฟทั้งหมดของหลอดไส้ ยังต้องหักค่าไฟของหลอด LED ที่ยังต้องจ่ายอยู่ออกก่อน" }
+    solution: "กำลังที่ลดลง $= 10 \\times (60 - 9) = 510\\ \\mathrm{W} = 0.51\\ \\mathrm{kW}$ → หน่วยที่ประหยัด $= 0.51 \\times 5 \\times 30 = 76.5\\ \\mathrm{kWh}$ → เงินที่ประหยัด $= 76.5 \\times 4.5 = 344.25$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p011
+    topics: [physics.electricity.electric-power]
+    difficulty: 2
+    type: numeric
+    stem: "เลขบนมิเตอร์ไฟฟ้าของบ้านหลังหนึ่งในนครปฐม ต้นเดือนอ่านได้ 4512 หน่วย ปลายเดือนอ่านได้ 4812 หน่วย ถ้าสมมติอัตราค่าไฟ 4.2 บาทต่อหน่วย (อัตราสมมติ ไม่รวมค่าบริการและภาษี) ค่าไฟเดือนนี้เป็นกี่บาท (ตอบเป็นตัวเลขในหน่วยบาท)"
+    answer: { value: 1260, unit: บาท }
+    hints:
+      - "เลขบนมิเตอร์เป็นยอดสะสมตั้งแต่ติดตั้ง หน่วยที่ใช้ในเดือนนี้คือผลต่างของเลขสองครั้ง"
+      - "นำจำนวนหน่วยที่ใช้คูณกับอัตราค่าไฟต่อหน่วย"
+    misconceptions:
+      - { match: 20210.4, feedback: "ดูเหมือนนำเลขปลายเดือนทั้งหมดคูณอัตรา เลขบนมิเตอร์เป็นยอดสะสม ต้องหักเลขต้นเดือนออกก่อน" }
+    solution: "หน่วยที่ใช้ $= 4812 - 4512 = 300$ หน่วย ($\\mathrm{kWh}$) → ค่าไฟ $= 300 \\times 4.2 = 1260$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p012
+    topics: [physics.electricity.electric-power]
+    difficulty: 5
+    type: numeric
+    stem: "ตัวต้านทาน $2\\ \\Omega$ และ $4\\ \\Omega$ ต่ออนุกรมกับแบตเตอรี่ $12\\ \\mathrm{V}$ ตัวต้านทาน $4\\ \\Omega$ ใช้กำลังไฟฟ้ากี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W)"
+    answer: { value: 16, unit: W }
+    hints:
+      - "หากระแสในวงจรอนุกรมก่อน จากความต้านทานรวม"
+      - "กระแสเท่ากันทุกตัวในวงจรอนุกรม ใช้ $P = I^2R$ กับตัว $4\\ \\Omega$"
+      - "ถ้าจะใช้ $\\dfrac{V^2}{R}$ ต้องใช้ความต่างศักย์คร่อมตัว $4\\ \\Omega$ เท่านั้น ไม่ใช่ $12\\ \\mathrm{V}$"
+    misconceptions:
+      - { match: 36, feedback: "ดูเหมือนใช้ $\\dfrac{V^2}{R}$ กับความต่างศักย์ $12\\ \\mathrm{V}$ ของแบตเตอรี่ทั้งหมด แต่ตัว $4\\ \\Omega$ ได้ความต่างศักย์เพียง $8\\ \\mathrm{V}$" }
+      - { match: 24, feedback: "นั่นคือกำลังรวมของทั้งวงจร ($12\\ \\mathrm{V} \\times 2\\ \\mathrm{A}$) โจทย์ถามเฉพาะตัว $4\\ \\Omega$" }
+    solution: "$R = 2 + 4 = 6\\ \\Omega$ → $I = \\dfrac{12}{6} = 2\\ \\mathrm{A}$ → $P_{4\\Omega} = I^2R = (2)^2(4) = 16\\ \\mathrm{W}$ (ตรวจ: $V_{4\\Omega} = 8\\ \\mathrm{V}$ และ $\\dfrac{8^2}{4} = 16\\ \\mathrm{W}$ ตัว $2\\ \\Omega$ ใช้ $8\\ \\mathrm{W}$ รวม $24\\ \\mathrm{W}$ ✓)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p013
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: mcq
+    stem: "หลอดไฟสองหลอดระบุว่า $220\\ \\mathrm{V}$ $40\\ \\mathrm{W}$ และ $220\\ \\mathrm{V}$ $100\\ \\mathrm{W}$ เมื่อใช้กับไฟบ้าน $220\\ \\mathrm{V}$ ตามปกติ หลอดใดมีความต้านทานมากกว่า"
+    choices:
+      - { id: a, text: "หลอด $40\\ \\mathrm{W}$", correct: true }
+      - { id: b, text: "หลอด $100\\ \\mathrm{W}$ เพราะใช้ไฟมากกว่า", feedback: "ที่ความต่างศักย์เท่ากัน $P = \\dfrac{V^2}{R}$ กำลังมากแปลว่า $R$ น้อย กระแสจึงไหลได้มากกว่า" }
+      - { id: c, text: "เท่ากัน เพราะใช้ความต่างศักย์ $220\\ \\mathrm{V}$ เท่ากัน", feedback: "ความต่างศักย์เท่ากันแต่กำลังต่างกัน ความต้านทานจึงต้องต่างกันตาม $R = \\dfrac{V^2}{P}$" }
+    hints:
+      - "ทั้งสองหลอดได้ $V$ เท่ากัน เลือกสูตรกำลังที่มี $V$ และ $R$"
+      - "จัดรูป $P = \\dfrac{V^2}{R}$ เป็น $R = \\dfrac{V^2}{P}$ แล้วดูว่า $P$ มากทำให้ $R$ มากหรือน้อย"
+    solution: "$R = \\dfrac{V^2}{P}$: หลอด $40\\ \\mathrm{W}$ มี $R = \\dfrac{220^2}{40} = 1210\\ \\Omega$ ส่วนหลอด $100\\ \\mathrm{W}$ มี $R = \\dfrac{220^2}{100} = 484\\ \\Omega$ หลอด $40\\ \\mathrm{W}$ จึงมีความต้านทานมากกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

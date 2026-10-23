@@ -1,0 +1,45 @@
+id: physics.dynamics.gravitation
+subject: physics
+title: { th: กฎความโน้มถ่วงสากล, en: "Newton's law of universal gravitation" }
+summary: วัตถุทุกคู่ในเอกภพดึงดูดกัน แรงแปรผันตรงกับผลคูณของมวลและแปรผกผันกับกำลังสองของระยะห่าง ใช้หาค่า g บนดาวต่าง ๆ และเข้าใจการโคจรของดาวเทียม
+difficulty: 5.5
+minutes: 40
+prerequisites: [physics.dynamics.newton-second, math.number.scientific-notation]
+encompasses:
+  - { id: physics.dynamics.newton-second, weight: 0.3 }
+  - { id: math.number.scientific-notation, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ค่า g ลดลงเมื่อขึ้นไปสูงจากผิวโลก
+    caption: แกนนอนคือความสูงจากผิวโลก (กิโลเมตร) แกนตั้งคือความเร่งโน้มถ่วง (m/s²) จาก g = 9.8 × (R/(R + h))² เมื่อรัศมีโลก R ≈ 6370 km ที่ความสูงราว 400 km ซึ่งสถานีอวกาศนานาชาติโคจรอยู่ g ยังมีค่าราว 8.7 m/s² หรือเกือบ 90% ของที่ผิวโลก ส่วนที่ความสูงราว 35,800 km (วงโคจรค้างฟ้า) g เหลือเพียงราว 0.22 m/s²
+    widget:
+      kind: function-plot
+      functions: ["9.8\\left(\\frac{6370}{6370 + x}\\right)^2"]
+      x: [0, 40000]
+      y: [0, 10]
+  - type: simulation
+    title: แรงดึงดูดระหว่างมวลสองก้อน (PhET Gravity Force Lab Basics)
+    url: https://phet.colorado.edu/en/simulations/gravity-force-lab-basics
+    provider: phet
+    note: ลากมวลสองก้อนให้ห่างกันเป็นสองเท่า แล้วดูว่าแรงลดลงเหลือหนึ่งในสี่ ลองเพิ่มมวลก้อนหนึ่งเป็นสองเท่า แรงจะเพิ่มเป็นสองเท่า และสังเกตว่าลูกศรแรงที่กระทำต่อทั้งสองก้อนยาวเท่ากันเสมอ
+  - type: simulation
+    title: ดาวเทียมและดาวเคราะห์โคจร (PhET Gravity and Orbits)
+    url: https://phet.colorado.edu/en/simulations/gravity-and-orbits
+    provider: phet
+    note: เลือกโลกกับดาวเทียม เปิดแสดงแรงโน้มถ่วงและความเร็ว แล้วสังเกตว่าแรงชี้เข้าหาโลกตลอดเวลา ขณะที่ความเร็วตั้งฉากกับแรง ลองปิดแรงโน้มถ่วงแล้วดูว่าดาวเทียมจะพุ่งออกไปเป็นเส้นตรง
+glossary:
+  - { term: กฎความโน้มถ่วงสากล, definition: "วัตถุสองก้อนดึงดูดกันด้วยแรง $F = \\dfrac{Gm_1m_2}{r^2}$ เมื่อ $r$ คือระยะระหว่างจุดศูนย์กลางมวล" }
+  - { term: ค่าคงตัวความโน้มถ่วงสากล (G), definition: "$G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}$ มีค่าเท่ากันทั่วเอกภพ" }
+  - { term: สนามโน้มถ่วง, definition: "แรงโน้มถ่วงต่อมวล 1 กิโลกรัม ณ ตำแหน่งหนึ่ง มีค่าเท่ากับ $g = \\dfrac{GM}{r^2}$ หน่วย $\\mathrm{N/kg}$ ซึ่งเท่ากับ $\\mathrm{m/s^2}$" }
+  - { term: ดาวเทียม, definition: "วัตถุที่โคจรรอบดาวดวงอื่น มันกำลังตกเข้าหาดาวตลอดเวลา แต่มีความเร็วในแนวข้างมากพอจึงตกเลยผิวดาวไปเรื่อย ๆ" }
+flashcards:
+  - { front: "กฎความโน้มถ่วงสากลของนิวตัน", back: "$F = \\dfrac{Gm_1m_2}{r^2}$ โดย $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\cdot m^2/kg^2}$" }
+  - { front: "ระยะห่างเพิ่มเป็น 3 เท่า แรงโน้มถ่วงเป็นกี่เท่า", back: "$\\tfrac{1}{9}$ เท่า เพราะแรงแปรผกผันกับ $r^2$" }
+  - { front: "ค่า $g$ ที่ผิวดาวมวล $M$ รัศมี $R$", back: "$g = \\dfrac{GM}{R^2}$ ไม่ขึ้นกับมวลของวัตถุที่ตก" }
+  - { front: "ทำไมนักบินอวกาศในสถานีอวกาศจึงลอยตัว", back: "ทั้งนักบินและสถานีตกอิสระรอบโลกไปพร้อมกัน ไม่ใช่เพราะไม่มีแรงโน้มถ่วง ($g$ ที่ระดับนั้นยังราว $8.7\\ \\mathrm{m/s^2}$)" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

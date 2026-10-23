@@ -1,0 +1,197 @@
+problems:
+  - id: phy.ohm.p001
+    topics: [physics.electricity.current-voltage]
+    difficulty: 1
+    type: numeric
+    stem: "กระแส $2\\ \\mathrm{A}$ ไหลผ่านตัวต้านทาน $6\\ \\Omega$ ความต่างศักย์คร่อมตัวต้านทานเป็นกี่โวลต์ (ตอบเป็นตัวเลขในหน่วย V)"
+    answer: { value: 12, unit: V }
+    hints:
+      - "ใช้กฎของโอห์มที่เชื่อม $V$, $I$ และ $R$"
+      - "$V = IR$ นำกระแสคูณกับความต้านทาน"
+    misconceptions:
+      - { match: 3, feedback: "ดูเหมือนนำ $R$ หารด้วย $I$ กฎของโอห์มคือ $V = IR$ ต้องคูณกัน" }
+      - { match: 0.333, feedback: "ดูเหมือนนำ $I$ หารด้วย $R$ กฎของโอห์มคือ $V = IR$ ต้องคูณกัน" }
+    solution: "$V = IR = (2\\ \\mathrm{A})(6\\ \\Omega) = 12\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p002
+    topics: [physics.electricity.current-voltage]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณทางไฟฟ้ากับหน่วยของมัน"
+    pairs:
+      - { left: "กระแสไฟฟ้า", right: "แอมแปร์ ($\\mathrm{A}$)" }
+      - { left: "ความต่างศักย์", right: "โวลต์ ($\\mathrm{V}$)" }
+      - { left: "ความต้านทาน", right: "โอห์ม ($\\Omega$)" }
+      - { left: "ประจุไฟฟ้า", right: "คูลอมบ์ ($\\mathrm{C}$)" }
+    hints:
+      - "หน่วยส่วนใหญ่ตั้งตามชื่อนักวิทยาศาสตร์ เช่น โอห์ม คูลอมบ์"
+      - "$1\\ \\mathrm{A} = 1\\ \\mathrm{C/s}$ และ $1\\ \\Omega = 1\\ \\mathrm{V/A}$"
+    solution: "กระแส: แอมแปร์ (A) · ความต่างศักย์: โวลต์ (V) · ความต้านทาน: โอห์ม (Ω) · ประจุ: คูลอมบ์ (C)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p003
+    topics: [physics.electricity.current-voltage]
+    difficulty: 2
+    type: numeric
+    stem: "มีประจุ $30\\ \\mathrm{C}$ เคลื่อนผ่านสายไฟในเวลา 1 นาที กระแสไฟฟ้าในสายเป็นกี่แอมแปร์ (ตอบเป็นตัวเลขในหน่วย A)"
+    answer: { value: 0.5, tolerance: 0.005, unit: A }
+    hints:
+      - "กระแสคือประจุที่ไหลผ่านต่อหนึ่งวินาที $I = \\dfrac{Q}{t}$"
+      - "เวลาต้องเป็นวินาที 1 นาทีเท่ากับกี่วินาที"
+    misconceptions:
+      - { match: 30, feedback: "ดูเหมือนใช้เวลา 1 โดยไม่แปลงหน่วย ต้องใช้ $t = 60\\ \\mathrm{s}$ เพราะ $1\\ \\mathrm{A} = 1\\ \\mathrm{C/s}$" }
+      - { match: 1800, feedback: "ดูเหมือนนำประจุคูณเวลา กระแสคือประจุ **หาร** ด้วยเวลา" }
+    solution: "$I = \\dfrac{Q}{t} = \\dfrac{30\\ \\mathrm{C}}{60\\ \\mathrm{s}} = 0.5\\ \\mathrm{A}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p004
+    topics: [physics.electricity.current-voltage]
+    difficulty: 2
+    type: mcq
+    stem: "ต้องการวัดกระแสที่ไหลผ่านหลอดไฟ และความต่างศักย์คร่อมหลอดไฟ ควรต่อมิเตอร์อย่างไร"
+    choices:
+      - { id: a, text: "แอมมิเตอร์ต่ออนุกรมกับหลอด โวลต์มิเตอร์ต่อขนานคร่อมหลอด", correct: true }
+      - { id: b, text: "แอมมิเตอร์ต่อขนานคร่อมหลอด โวลต์มิเตอร์ต่ออนุกรมกับหลอด", feedback: "สลับกัน แอมมิเตอร์ต้องให้กระแสทั้งหมดไหลผ่านจึงต่ออนุกรม ถ้าต่อขนาน กระแสจะไหลผ่านแอมมิเตอร์ซึ่งมีความต้านทานต่ำมากแทน อาจทำให้มิเตอร์เสีย" }
+      - { id: c, text: "ต่ออนุกรมกับหลอดทั้งสองตัว", feedback: "โวลต์มิเตอร์มีความต้านทานสูงมาก ถ้าต่ออนุกรมจะแทบไม่มีกระแสไหลในวงจร หลอดจะไม่ติด โวลต์มิเตอร์ต้องต่อคร่อมหลอด" }
+      - { id: d, text: "ต่อขนานคร่อมหลอดทั้งสองตัว", feedback: "แอมมิเตอร์ที่ต่อขนานจะไม่ได้วัดกระแสที่ไหลผ่านหลอด และกระแสส่วนใหญ่จะไหลผ่านแอมมิเตอร์แทน" }
+    hints:
+      - "กระแสต้องไหล **ผ่าน** แอมมิเตอร์ ส่วนความต่างศักย์วัด **คร่อม** สองปลายของอุปกรณ์"
+      - "ต่อแบบใดที่กระแสทั้งหมดผ่านทั้งสองอุปกรณ์ และต่อแบบใดที่สองปลายของอุปกรณ์ต่อถึงกัน"
+    solution: "แอมมิเตอร์ต่ออนุกรมเพื่อให้กระแสที่ผ่านหลอดไหลผ่านมิเตอร์ด้วย โวลต์มิเตอร์ต่อขนานเพื่อวัดความต่างศักย์ระหว่างสองปลายของหลอด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p005
+    topics: [physics.electricity.current-voltage]
+    difficulty: 2
+    type: numeric
+    stem: "กระติกน้ำร้อนไฟฟ้าเสียบปลั๊กไฟบ้านในประเทศไทยซึ่งมีความต่างศักย์ $220\\ \\mathrm{V}$ มีกระแสไหลผ่าน $5\\ \\mathrm{A}$ ขดลวดความร้อนของกระติกมีความต้านทานกี่โอห์ม (ตอบเป็นตัวเลขในหน่วย Ω)"
+    answer: { value: 44, unit: Ω }
+    hints:
+      - "รู้ $V$ และ $I$ ต้องการหา $R$"
+      - "จัดรูป $V = IR$ ให้ $R$ อยู่ข้างเดียว แล้วแทนค่า"
+    misconceptions:
+      - { match: 1100, feedback: "ดูเหมือนนำ $V$ คูณ $I$ ซึ่งได้กำลังไฟฟ้า (วัตต์) ไม่ใช่ความต้านทาน ใช้ $R = \\dfrac{V}{I}$" }
+      - { match: 0.0227, feedback: "ดูเหมือนนำ $I$ หารด้วย $V$ จาก $V = IR$ จะได้ $R = \\dfrac{V}{I}$" }
+    solution: "$R = \\dfrac{V}{I} = \\dfrac{220\\ \\mathrm{V}}{5\\ \\mathrm{A}} = 44\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p006
+    topics: [physics.electricity.current-voltage]
+    difficulty: 3
+    type: numeric
+    stem: "ต่อตัวต้านทานกับแบตเตอรี่ $9\\ \\mathrm{V}$ แอมมิเตอร์อ่านค่ากระแสได้ $30\\ \\mathrm{mA}$ ตัวต้านทานมีความต้านทานกี่โอห์ม (ตอบเป็นตัวเลขในหน่วย Ω)"
+    answer: { value: 300, unit: Ω }
+    hints:
+      - "ใช้ $R = \\dfrac{V}{I}$"
+      - "แปลง $\\mathrm{mA}$ เป็น $\\mathrm{A}$ ก่อนแทนค่า: $1\\ \\mathrm{mA} = 0.001\\ \\mathrm{A}$"
+    misconceptions:
+      - { match: 0.3, feedback: "ดูเหมือนแทน $I = 30$ โดยไม่แปลงหน่วย ต้องใช้ $I = 0.03\\ \\mathrm{A}$" }
+      - { match: 270, feedback: "ดูเหมือนนำ $V$ คูณ $I$ ความต้านทานคือ $R = \\dfrac{V}{I}$" }
+    solution: "$I = 30\\ \\mathrm{mA} = 0.03\\ \\mathrm{A}$ → $R = \\dfrac{V}{I} = \\dfrac{9\\ \\mathrm{V}}{0.03\\ \\mathrm{A}} = 300\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p007
+    topics: [physics.electricity.current-voltage]
+    difficulty: 3
+    type: expression
+    stem: "จัดรูปกฎของโอห์ม $V = IR$ ให้เป็นสูตรหากระแส $I$ (ใช้ตัวแปร $V$ และ $R$)"
+    prefix: "I ="
+    answer: { latex: "\\frac{V}{R}", variables: [V, R] }
+    hints:
+      - "ต้องการให้ $I$ อยู่ข้างเดียว ตอนนี้ $I$ ถูกคูณด้วยอะไร"
+      - "หารทั้งสองข้างของสมการด้วย $R$"
+    misconceptions:
+      - { match: "VR", feedback: "$I$ ถูกคูณด้วย $R$ อยู่ การย้ายข้างต้องทำตรงข้ามคือหารด้วย $R$ ไม่ใช่คูณ" }
+      - { match: "\\frac{R}{V}", feedback: "กลับเศษกับส่วน ตรวจด้วยหน่วย: $\\dfrac{\\mathrm{V}}{\\Omega} = \\mathrm{A}$ ส่วน $\\dfrac{\\Omega}{\\mathrm{V}}$ ไม่ใช่หน่วยของกระแส" }
+    solution: "$V = IR$ หารทั้งสองข้างด้วย $R$: $I = \\dfrac{V}{R}$ ตรวจหน่วย $\\dfrac{\\mathrm{V}}{\\Omega} = \\mathrm{A}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p008
+    topics: [physics.electricity.current-voltage]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียนวัดความต่างศักย์และกระแสของอุปกรณ์หลายแบบแล้วเขียนกราฟ $V$ (แกนตั้ง) กับ $I$ (แกนนอน) อุปกรณ์ที่เป็นไปตามกฎของโอห์มมีกราฟแบบใด"
+    choices:
+      - { id: a, text: "เส้นตรงผ่านจุดกำเนิด ความชันเท่ากับความต้านทาน", correct: true }
+      - { id: b, text: "เส้นตรงที่ไม่ผ่านจุดกำเนิด", feedback: "ถ้า $V = IR$ เมื่อ $I = 0$ ต้องได้ $V = 0$ กราฟจึงต้องผ่านจุดกำเนิด" }
+      - { id: c, text: "เส้นโค้งที่ชันขึ้นเรื่อย ๆ", feedback: "นี่คือลักษณะของไส้หลอดไฟที่ร้อนขึ้นจนความต้านทานเพิ่ม ความต้านทานไม่คงที่จึงไม่เป็นไปตามกฎของโอห์ม" }
+      - { id: d, text: "เส้นตรงแนวนอน", feedback: "เส้นแนวนอนแปลว่าความต่างศักย์คงที่ไม่ว่ากระแสจะเป็นเท่าใด ไม่ใช่ $V \\propto I$" }
+    hints:
+      - "กฎของโอห์มบอกว่า $V = IR$ โดย $R$ คงที่ เทียบกับสมการเส้นตรง $y = mx$"
+      - "ถ้า $I = 0$ แล้ว $V$ เป็นเท่าใด"
+    solution: "$V = IR$ เมื่อ $R$ คงที่มีรูปเดียวกับ $y = mx$ กราฟจึงเป็นเส้นตรงผ่านจุดกำเนิด และความชัน $\\dfrac{\\Delta V}{\\Delta I} = R$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p009
+    topics: [physics.electricity.current-voltage]
+    difficulty: 4
+    type: numeric
+    stem: "กระแส $0.8\\ \\mathrm{A}$ ไหลผ่านสายไฟนาน $10\\ \\mathrm{s}$ มีอิเล็กตรอนเคลื่อนผ่านภาคตัดขวางของสายกี่ตัว ใช้ $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$ (ตอบเป็นจำนวนเท่าของ $10^{19}$ ตัว เช่น ถ้าได้ $3 \\times 10^{19}$ ตัว ให้ตอบ 3)"
+    answer: { value: 5, unit: "× 10¹⁹ ตัว" }
+    hints:
+      - "หาประจุทั้งหมดที่ไหลผ่านก่อนจาก $Q = It$"
+      - "จำนวนอิเล็กตรอน $n = \\dfrac{Q}{e}$"
+    misconceptions:
+      - { match: 0.5, feedback: "ดูเหมือนนำกระแสหารด้วย $e$ เลย ซึ่งได้จำนวนอิเล็กตรอนใน **หนึ่งวินาที** ต้องคูณเวลา $10\\ \\mathrm{s}$ ก่อน" }
+    solution: "$Q = It = (0.8\\ \\mathrm{A})(10\\ \\mathrm{s}) = 8\\ \\mathrm{C}$ → $n = \\dfrac{Q}{e} = \\dfrac{8}{1.6 \\times 10^{-19}} = 5 \\times 10^{19}$ ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p010
+    topics: [physics.electricity.current-voltage]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวต้านทานตัวหนึ่งเป็นไปตามกฎของโอห์ม เมื่อต่อกับความต่างศักย์ $6\\ \\mathrm{V}$ มีกระแส $0.30\\ \\mathrm{A}$ ถ้าเปลี่ยนเป็นความต่างศักย์ $9\\ \\mathrm{V}$ กระแสจะเป็นกี่มิลลิแอมแปร์ (ตอบเป็นตัวเลขในหน่วย mA)"
+    answer: { value: 450, unit: mA }
+    hints:
+      - "ตัวต้านทานตัวเดิม ความต้านทานจึงคงที่ หา $R$ จากข้อมูลแรกก่อน"
+      - "หรือใช้ว่า $I \\propto V$ เมื่อ $R$ คงที่ ความต่างศักย์เพิ่มกี่เท่า กระแสก็เพิ่มเท่านั้น"
+      - "ได้กระแสในหน่วย A แล้วคูณ 1000 เพื่อเปลี่ยนเป็น mA"
+    misconceptions:
+      - { match: 200, feedback: "ดูเหมือนคิดว่ากระแสลดลงเมื่อความต่างศักย์เพิ่ม ($0.30 \\times \\tfrac{6}{9}$) เมื่อ $R$ คงที่ $I = \\dfrac{V}{R}$ กระแสเพิ่มตามความต่างศักย์" }
+      - { match: 300, feedback: "กระแสไม่ได้เท่าเดิม ความต้านทานต่างหากที่คงที่ เมื่อ $V$ เพิ่ม กระแสต้องเพิ่มตาม" }
+    solution: "$R = \\dfrac{6\\ \\mathrm{V}}{0.30\\ \\mathrm{A}} = 20\\ \\Omega$ → $I = \\dfrac{9\\ \\mathrm{V}}{20\\ \\Omega} = 0.45\\ \\mathrm{A} = 450\\ \\mathrm{mA}$ (ตรวจ: $V$ เพิ่ม $\\tfrac{9}{6} = 1.5$ เท่า กระแสก็เพิ่ม 1.5 เท่า $0.30 \\times 1.5 = 0.45$ ✓)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p011
+    topics: [physics.electricity.current-voltage]
+    difficulty: 4
+    type: numeric
+    stem: "หลอดไฟเลี้ยวของรถจักรยานยนต์ต่อกับแบตเตอรี่ $12\\ \\mathrm{V}$ หลอดมีความต้านทาน $8\\ \\Omega$ (ถือว่าคงที่) ถ้าเปิดไฟเลี้ยวรวมเป็นเวลา 2 นาที มีประจุไหลผ่านหลอดกี่คูลอมบ์ (ตอบเป็นตัวเลขในหน่วย C)"
+    answer: { value: 180, unit: C }
+    hints:
+      - "หากระแสจากกฎของโอห์มก่อน"
+      - "ประจุคือ $Q = It$ โดยเวลาต้องเป็นวินาที"
+    misconceptions:
+      - { match: 3, feedback: "ดูเหมือนใช้เวลา 2 โดยไม่แปลงเป็นวินาที 2 นาทีเท่ากับ $120\\ \\mathrm{s}$" }
+      - { match: 1440, feedback: "ดูเหมือนนำความต่างศักย์คูณเวลา ต้องหากระแสก่อนจาก $I = \\dfrac{V}{R}$ แล้วจึงใช้ $Q = It$" }
+    solution: "$I = \\dfrac{V}{R} = \\dfrac{12\\ \\mathrm{V}}{8\\ \\Omega} = 1.5\\ \\mathrm{A}$ → $Q = It = (1.5\\ \\mathrm{A})(120\\ \\mathrm{s}) = 180\\ \\mathrm{C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ohm.p012
+    topics: [physics.electricity.current-voltage]
+    difficulty: 5
+    type: numeric
+    stem: "ช่างซ่อมเครื่องใช้ไฟฟ้าย่านบ้านหม้อตรวจตัวต้านทานในแผงวงจร โวลต์มิเตอร์ที่คร่อมตัวต้านทานอ่านได้ $4.5\\ \\mathrm{V}$ และแอมมิเตอร์ที่ต่ออนุกรมอ่านได้ $150\\ \\mathrm{mA}$ ต่อมาเปลี่ยนแหล่งจ่ายไฟจนแอมมิเตอร์อ่านได้ $250\\ \\mathrm{mA}$ โวลต์มิเตอร์จะอ่านได้กี่โวลต์ (ตอบเป็นตัวเลขในหน่วย V)"
+    answer: { value: 7.5, tolerance: 0.075, unit: V }
+    hints:
+      - "ตัวต้านทานตัวเดิม หาความต้านทานจากค่าที่อ่านได้ครั้งแรก"
+      - "แปลง mA เป็น A แล้วใช้ $R = \\dfrac{V}{I}$"
+      - "ใช้ $V = IR$ กับกระแสใหม่"
+    misconceptions:
+      - { match: 2.7, feedback: "ดูเหมือนคิดว่าความต่างศักย์แปรผกผันกับกระแส ($4.5 \\times \\tfrac{150}{250}$) เมื่อ $R$ คงที่ $V = IR$ ความต่างศักย์เพิ่มตามกระแส" }
+      - { match: 4.5, feedback: "ความต่างศักย์ไม่ได้เท่าเดิม กระแสเพิ่มขึ้นผ่านตัวต้านทานตัวเดิม ความต่างศักย์คร่อมมันจึงต้องเพิ่มด้วย" }
+    solution: "$R = \\dfrac{4.5\\ \\mathrm{V}}{0.150\\ \\mathrm{A}} = 30\\ \\Omega$ → $V = IR = (0.250\\ \\mathrm{A})(30\\ \\Omega) = 7.5\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,50 @@
+id: physics.waves.shm
+subject: physics
+title: { th: การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย, en: Simple harmonic motion }
+summary: การแกว่งกลับไปกลับมาเมื่อแรงดึงกลับแปรผันตรงกับการกระจัด คาบของมวลติดสปริงและลูกตุ้มอย่างง่าย อัตราเร็วและความเร่งสูงสุด
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.waves.wave-basics, physics.dynamics.newton-second, math.geometry.trig-ratios]
+encompasses:
+  - { id: physics.waves.wave-basics, weight: 0.2 }
+  - { id: physics.dynamics.newton-second, weight: 0.3 }
+  - { id: math.geometry.trig-ratios, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: กราฟตำแหน่งกับเวลาของการแกว่ง
+    caption: แกนนอนคือเวลา (วินาที) แกนตั้งคือการกระจัด x = A cos(2πt/T) ลองเปลี่ยนแอมพลิจูด A แล้วสังเกตว่าเวลาครบรอบไม่เปลี่ยน จากนั้นเปลี่ยนคาบ T แล้วดูว่ากราฟยืดหรือหดในแนวนอน
+    widget:
+      kind: function-plot
+      functions: ["A\\cos\\left(\\frac{2\\pi x}{T}\\right)"]
+      sliders:
+        - { name: A, min: 0.5, max: 3, step: 0.5, value: 2, label: แอมพลิจูด }
+        - { name: T, min: 0.5, max: 4, step: 0.5, value: 2, label: คาบ (s) }
+      x: [0, 8]
+      y: [-3.5, 3.5]
+  - type: simulation
+    title: ห้องทดลองลูกตุ้ม (PhET Pendulum Lab)
+    url: https://phet.colorado.edu/en/simulations/pendulum-lab
+    provider: phet
+    note: เปิดตัวจับเวลาแล้ววัดคาบ ลองเปลี่ยนมวลลูกตุ้ม (คาบแทบไม่เปลี่ยน) แล้วลองเพิ่มความยาวเป็น 4 เท่า (คาบเพิ่มเป็น 2 เท่า) ในซิมกำหนดแรงโน้มถ่วงโลกเป็น 9.81 m/s²
+  - type: simulation
+    title: มวลและสปริง (PhET Masses and Springs)
+    url: https://phet.colorado.edu/en/simulations/masses-and-springs
+    provider: phet
+    note: แขวนมวลต่าง ๆ กับสปริงแล้วจับเวลาการสั่น 10 รอบ เปรียบเทียบกับ T = 2π√(m/k) และสังเกตว่าสปริงที่แข็งกว่าสั่นเร็วกว่า
+glossary:
+  - { term: การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย, definition: "การเคลื่อนที่กลับไปกลับมารอบตำแหน่งสมดุล โดยแรงดึงกลับแปรผันตรงกับการกระจัดและมีทิศตรงข้ามกับการกระจัด" }
+  - { term: แอมพลิจูด, definition: "การกระจัดมากที่สุดของวัตถุที่แกว่ง วัดจากตำแหน่งสมดุล" }
+  - { term: คาบ, definition: "เวลาที่ใช้ในการแกว่งครบ 1 รอบ มีหน่วยวินาที เป็นส่วนกลับของความถี่ $T = \\tfrac{1}{f}$" }
+  - { term: ค่านิจสปริง, definition: "ค่าที่บอกความแข็งของสปริง คือแรงที่ต้องใช้ต่อระยะยืด 1 เมตร มีหน่วย $\\mathrm{N/m}$" }
+flashcards:
+  - { front: "เงื่อนไขของการเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย", back: "แรงดึงกลับแปรผันตรงกับการกระจัดและมีทิศตรงข้าม เช่น $F = -kx$" }
+  - { front: "คาบของมวลติดสปริง", back: "$T = 2\\pi\\sqrt{\\dfrac{m}{k}}$ ไม่ขึ้นกับแอมพลิจูด" }
+  - { front: "คาบของลูกตุ้มอย่างง่าย (มุมเล็ก)", back: "$T = 2\\pi\\sqrt{\\dfrac{L}{g}}$ ไม่ขึ้นกับมวลและแอมพลิจูด" }
+  - { front: "ที่ตำแหน่งสมดุลและที่ปลาย อัตราเร็วและความเร่งเป็นอย่างไร", back: "ตำแหน่งสมดุล: อัตราเร็วมากสุด $\\omega A$ ความเร่งเป็นศูนย์ · ปลาย: อัตราเร็วเป็นศูนย์ ความเร่งมากสุด $\\omega^2 A$" }
+  - { front: "ลูกตุ้มยาว 1 m มีคาบเท่าใด ($g = 9.8\\ \\mathrm{m/s^2}$)", back: "$T = 2\\pi\\sqrt{\\tfrac{1}{9.8}} \\approx 2.01\\ \\mathrm{s}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,43 @@
+id: physics.rotation.torque
+subject: physics
+title: { th: โมเมนต์ของแรงและสมดุลการหมุน, en: Torque and rotational equilibrium }
+summary: หาโมเมนต์ของแรงจากแรงและแขนของโมเมนต์ ใช้หลักของโมเมนต์แก้โจทย์ไม้กระดก คานงัด และคานที่มีน้ำหนัก
+difficulty: 5
+minutes: 35
+prerequisites: [physics.dynamics.forces, physics.dynamics.newton-first]
+encompasses:
+  - { id: physics.dynamics.forces, weight: 0.4 }
+  - { id: physics.dynamics.newton-first, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ระยะที่ต้องนั่งเพื่อให้ไม้กระดกสมดุล
+    caption: คนแรกมวล a (kg) นั่งห่างจุดหมุน b (m) แกนนอนคือมวลของคนที่สอง (kg) แกนตั้งคือระยะจากจุดหมุนที่คนที่สองต้องนั่ง (m) ตามหลักของโมเมนต์ ระยะนี้เท่ากับ ab หารด้วยมวลของคนที่สอง สังเกตว่าเมื่อมวลของคนที่สองเพิ่มเป็นสองเท่า ระยะจะลดลงครึ่งหนึ่ง และเมื่อมวลเท่ากับ a ระยะจะเท่ากับ b พอดี
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a b}{x}"]
+      sliders:
+        - { name: a, min: 10, max: 60, step: 5, value: 30, label: มวลของคนแรก (kg) }
+        - { name: b, min: 0.5, max: 3, step: 0.25, value: 2, label: ระยะของคนแรกจากจุดหมุน (m) }
+      x: [5, 80]
+      y: [0, 8]
+  - type: simulation
+    title: ไม้กระดกสมดุล (PhET Balancing Act)
+    url: https://phet.colorado.edu/en/simulations/balancing-act
+    provider: phet
+    note: วางของมวลต่าง ๆ บนไม้กระดก เปิดแสดงระยะ (ruler) แล้วเอาที่ค้ำออก ลองหาตำแหน่งที่ทำให้ไม้กระดกอยู่ในแนวระดับ แล้วตรวจว่ามวล × ระยะ ของสองข้างเท่ากัน
+glossary:
+  - { term: โมเมนต์ของแรง, definition: "ผลของแรงที่ทำให้วัตถุหมุนรอบจุดหมุน $M = F \\times l$ มีหน่วย $\\mathrm{N\\,m}$" }
+  - { term: แขนของโมเมนต์, definition: "ระยะตั้งฉากจากจุดหมุนถึงแนวแรง ถ้าแนวแรงผ่านจุดหมุน แขนของโมเมนต์เป็นศูนย์" }
+  - { term: หลักของโมเมนต์, definition: "เมื่อวัตถุอยู่ในสมดุลการหมุน ผลรวมโมเมนต์ทวนเข็มนาฬิกาเท่ากับผลรวมโมเมนต์ตามเข็มนาฬิกา" }
+  - { term: จุดหมุน, definition: "จุดที่วัตถุหมุนรอบ เช่น บานพับประตู หรือจุดรองรับของไม้กระดก" }
+flashcards:
+  - { front: "สูตรโมเมนต์ของแรงและหน่วย", back: "$M = F \\times l$ โดย $l$ คือระยะตั้งฉากจากจุดหมุนถึงแนวแรง หน่วย $\\mathrm{N\\,m}$" }
+  - { front: "เงื่อนไขของสมดุลการหมุน", back: "$\\sum M_{\\text{ทวน}} = \\sum M_{\\text{ตาม}}$ (ถ้าต้องการให้นิ่งสนิท ต้องมี $\\sum F = 0$ ด้วย)" }
+  - { front: "ทำไมประแจด้ามยาวคลายน็อตง่ายกว่า", back: "แขนของโมเมนต์ยาวขึ้น แรงเท่าเดิมจึงได้โมเมนต์มากขึ้น" }
+  - { front: "น้ำหนักของคานสม่ำเสมอกระทำที่ใด", back: "ที่กึ่งกลางคาน (จุดศูนย์ถ่วง)" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

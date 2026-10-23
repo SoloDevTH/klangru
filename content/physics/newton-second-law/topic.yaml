@@ -1,0 +1,42 @@
+id: physics.dynamics.newton-second
+subject: physics
+title: { th: กฎการเคลื่อนที่ข้อที่ 2 ของนิวตัน, en: "Newton's second law" }
+summary: แรงลัพธ์ทำให้วัตถุมีความเร่งในทิศเดียวกับแรงลัพธ์ ความเร่งแปรผันตรงกับแรงลัพธ์และแปรผกผันกับมวล ใช้กับวัตถุหลายก้อนที่ผูกติดกันได้
+difficulty: 4
+minutes: 35
+prerequisites: [physics.dynamics.newton-first, physics.kinematics.acceleration, math.algebra.rearrange-formula]
+encompasses:
+  - { id: physics.dynamics.newton-first, weight: 0.3 }
+  - { id: physics.kinematics.acceleration, weight: 0.4 }
+  - { id: math.algebra.rearrange-formula, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ความเร่งเมื่อเปลี่ยนแรงลัพธ์และมวล
+    caption: แกนนอนคือแรงลัพธ์ (N) แกนตั้งคือความเร่ง (m/s²) เส้นชันคือวัตถุมวล m และเส้นที่ลาดกว่าคือวัตถุมวล 2m เลื่อนค่า m แล้วสังเกตว่าที่แรงลัพธ์เท่ากัน วัตถุที่มวลมากเป็นสองเท่ามีความเร่งเพียงครึ่งเดียว และกราฟเป็นเส้นตรงผ่านจุดกำเนิดเสมอ
+    widget:
+      kind: function-plot
+      functions: ["\\frac{x}{m}", "\\frac{x}{2m}"]
+      sliders:
+        - { name: m, min: 1, max: 10, step: 1, value: 2, label: มวล m (kg) }
+      x: [0, 20]
+      y: [0, 10]
+  - type: simulation
+    title: ออกแรงผลักแล้วดูความเร่ง (PhET Forces and Motion Basics)
+    url: https://phet.colorado.edu/en/simulations/forces-and-motion-basics
+    provider: phet
+    note: เปิดแท็บ Acceleration ปิดแรงเสียดทาน ออกแรงผลักกล่องค่าเดิมแล้ววางกล่องเพิ่มบนกล่องเดิม ความเร่งจะลดลงเมื่อมวลรวมเพิ่มขึ้น ลองเพิ่มแรงเป็นสองเท่าแล้วดูว่าความเร่งเพิ่มเป็นสองเท่าด้วย
+glossary:
+  - { term: แรงลัพธ์, definition: "ผลรวมแบบเวกเตอร์ของแรงทั้งหมดที่กระทำต่อวัตถุ เขียนแทนด้วย $\\Sigma F$ หรือ $F_{\\text{net}}$" }
+  - { term: มวล, definition: "ปริมาณที่บอกความเฉื่อยของวัตถุ ยิ่งมวลมากยิ่งเปลี่ยนความเร็วยาก หน่วยเป็นกิโลกรัม ($\\mathrm{kg}$)" }
+  - { term: นิวตัน (N), definition: "หน่วยของแรง แรง $1\\ \\mathrm{N}$ ทำให้มวล $1\\ \\mathrm{kg}$ มีความเร่ง $1\\ \\mathrm{m/s^2}$ นั่นคือ $1\\ \\mathrm{N} = 1\\ \\mathrm{kg\\cdot m/s^2}$" }
+flashcards:
+  - { front: "กฎข้อที่ 2 ของนิวตันเขียนเป็นสมการอย่างไร", back: "$\\Sigma F = ma$ แรงลัพธ์เท่ากับมวลคูณความเร่ง และความเร่งมีทิศเดียวกับแรงลัพธ์" }
+  - { front: "$1\\ \\mathrm{N}$ เท่ากับหน่วยพื้นฐานใด", back: "$1\\ \\mathrm{kg\\cdot m/s^2}$" }
+  - { front: "แรงลัพธ์เท่าเดิม แต่มวลเพิ่มเป็น 2 เท่า ความเร่งเป็นอย่างไร", back: "ลดลงเหลือครึ่งหนึ่ง เพราะ $a = \\dfrac{\\Sigma F}{m}$" }
+  - { front: "ดึงวัตถุสองก้อนที่ผูกเชือกกันบนพื้นลื่นด้วยแรง $F$ ความเร่งเป็นเท่าใด", back: "$a = \\dfrac{F}{m_1 + m_2}$ คิดทั้งสองก้อนเป็นวัตถุก้อนเดียว" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,217 @@
+problems:
+  - id: phy.n2.p001
+    topics: [physics.dynamics.newton-second]
+    difficulty: 1
+    type: numeric
+    stem: "รถเข็นมวล $20\\ \\mathrm{kg}$ มีแรงลัพธ์ $60\\ \\mathrm{N}$ กระทำ รถเข็นมีความเร่งเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 3, unit: m/s² }
+    hints:
+      - "กฎข้อที่ 2 ของนิวตันเชื่อมแรงลัพธ์ มวล และความเร่งเข้าด้วยกัน"
+      - "จัดรูป $\\Sigma F = ma$ ให้ $a$ อยู่ข้างเดียว แล้วแทนค่า"
+    misconceptions:
+      - { match: 1200, feedback: "ดูเหมือนนำแรงคูณมวล ความเร่งได้จากแรงลัพธ์ **หาร** ด้วยมวล $a = \\dfrac{\\Sigma F}{m}$" }
+      - { match: 0.33, feedback: "ดูเหมือนนำมวลหารด้วยแรง ($\\tfrac{20}{60}$) สลับกัน ต้องเป็น $a = \\dfrac{\\Sigma F}{m}$" }
+    solution: "$a = \\dfrac{\\Sigma F}{m} = \\dfrac{60\\ \\mathrm{N}}{20\\ \\mathrm{kg}} = 3\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p002
+    topics: [physics.dynamics.newton-second]
+    difficulty: 1
+    type: mcq
+    stem: "แรง $1\\ \\mathrm{N}$ เท่ากับข้อใดในหน่วยพื้นฐาน SI"
+    choices:
+      - { id: a, text: "$1\\ \\mathrm{kg\\cdot m/s^2}$", correct: true }
+      - { id: b, text: "$1\\ \\mathrm{kg\\cdot m/s}$", feedback: "นั่นคือหน่วยของมวลคูณความเร็ว (โมเมนตัม) แรงคือมวลคูณ **ความเร่ง** ซึ่งมีหน่วย $\\mathrm{m/s^2}$" }
+      - { id: c, text: "$1\\ \\mathrm{kg/(m\\cdot s^2)}$", feedback: "ดูเหมือนนำมวลหารด้วยความเร่ง จาก $F = ma$ หน่วยของแรงคือหน่วยของมวล **คูณ** หน่วยของความเร่ง" }
+      - { id: d, text: "$1\\ \\mathrm{m/s^2}$", feedback: "นั่นคือหน่วยของความเร่งอย่างเดียว ยังขาดหน่วยของมวล ($\\mathrm{kg}$)" }
+    hints:
+      - "หน่วยของแรงได้มาจากสมการ $F = ma$"
+      - "นำหน่วยของมวลคูณกับหน่วยของความเร่ง"
+    solution: "$F = ma$ จึงได้หน่วย $\\mathrm{kg} \\times \\mathrm{m/s^2} = \\mathrm{kg\\cdot m/s^2}$ ซึ่งเรียกว่านิวตัน ($\\mathrm{N}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p003
+    topics: [physics.dynamics.newton-second]
+    difficulty: 2
+    type: numeric
+    stem: "ไรเดอร์ส่งอาหารกับรถจักรยานยนต์มีมวลรวม $150\\ \\mathrm{kg}$ ออกตัวจากไฟแดงด้วยความเร่ง $2\\ \\mathrm{m/s^2}$ แรงลัพธ์ที่กระทำต่อรถและคนเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 300, unit: N }
+    hints:
+      - "รู้มวลและความเร่ง ต้องการหาแรงลัพธ์"
+      - "ใช้ $\\Sigma F = ma$ โดยตรง"
+    misconceptions:
+      - { match: 75, feedback: "ดูเหมือนนำมวลหารด้วยความเร่ง แรงลัพธ์คือมวล **คูณ** ความเร่ง" }
+      - { match: 152, feedback: "ดูเหมือนนำมวลบวกกับความเร่ง ปริมาณที่มีหน่วยต่างกันบวกกันไม่ได้ ต้องคูณกัน $\\Sigma F = ma$" }
+    solution: "$\\Sigma F = ma = (150\\ \\mathrm{kg})(2\\ \\mathrm{m/s^2}) = 300\\ \\mathrm{N}$ ในทิศที่รถออกตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p004
+    topics: [physics.dynamics.newton-second]
+    difficulty: 2
+    type: expression
+    stem: "จัดสูตร $F = ma$ ให้มวล $m$ อยู่ข้างเดียว (ตอบในรูปของ $F$ และ $a$)"
+    prefix: "m ="
+    answer: { latex: "\\frac{F}{a}", variables: [F, a] }
+    misconceptions:
+      - { match: "\\frac{a}{F}", feedback: "กลับเศษกับส่วน หารทั้งสองข้างของ $F = ma$ ด้วย $a$ จะได้ $F$ อยู่ด้านบน" }
+      - { match: "Fa", feedback: "ต้องหารด้วย $a$ เพื่อให้ $a$ ที่คูณ $m$ อยู่หายไป ไม่ใช่คูณด้วย $a$" }
+    hints:
+      - "ตอนนี้ $m$ ถูกคูณด้วย $a$ อยู่"
+      - "ทำสิ่งตรงข้ามกับการคูณด้วย $a$ ทั้งสองข้างของสมการ"
+    solution: "$F = ma$ หารทั้งสองข้างด้วย $a$ ได้ $m = \\dfrac{F}{a}$ ตรวจหน่วย: $\\dfrac{\\mathrm{kg\\cdot m/s^2}}{\\mathrm{m/s^2}} = \\mathrm{kg}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p005
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: numeric
+    stem: "ลากกล่องมวล $10\\ \\mathrm{kg}$ ไปทางขวาด้วยแรง $50\\ \\mathrm{N}$ ขณะที่พื้นมีแรงเสียดทาน $20\\ \\mathrm{N}$ ไปทางซ้าย กล่องมีความเร่งเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 3, unit: m/s² }
+    hints:
+      - "กฎข้อที่ 2 ใช้แรงลัพธ์ ไม่ใช่แรงดึงอย่างเดียว"
+      - "ให้ทางขวาเป็นบวก แรงที่ไปทางซ้ายจึงติดลบ"
+      - "หาแรงลัพธ์ก่อน แล้วหารด้วยมวล"
+    misconceptions:
+      - { match: 5, feedback: "ดูเหมือนใช้แค่แรงดึง $50\\ \\mathrm{N}$ ต้องหักแรงเสียดทานที่มีทิศตรงข้ามออกก่อน" }
+      - { match: 7, feedback: "ดูเหมือนนำแรงทั้งสองมาบวกกัน แต่แรงเสียดทานมีทิศตรงข้ามกับแรงดึง จึงต้องลบกัน" }
+    solution: "ทางขวาเป็นบวก: $\\Sigma F = 50\\ \\mathrm{N} - 20\\ \\mathrm{N} = 30\\ \\mathrm{N}$ ดังนั้น $a = \\dfrac{30\\ \\mathrm{N}}{10\\ \\mathrm{kg}} = 3\\ \\mathrm{m/s^2}$ ไปทางขวา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p006
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: mcq
+    stem: "ออกแรงลัพธ์ค่าเดิมกับรถเข็นสองคัน คันที่สองมีมวลเป็น 2 เท่าของคันแรก ความเร่งของคันที่สองเป็นอย่างไรเมื่อเทียบกับคันแรก"
+    choices:
+      - { id: a, text: "ครึ่งหนึ่งของคันแรก", correct: true }
+      - { id: b, text: "2 เท่าของคันแรก", feedback: "ความเร่งแปรผกผันกับมวล ไม่ใช่แปรผันตรง วัตถุที่หนักกว่าเปลี่ยนความเร็วได้ยากกว่า" }
+      - { id: c, text: "เท่ากับคันแรก เพราะแรงเท่ากัน", feedback: "แรงเท่ากันไม่ได้แปลว่าความเร่งเท่ากัน ความเร่งขึ้นกับทั้งแรงลัพธ์และมวล $a = \\dfrac{\\Sigma F}{m}$" }
+      - { id: d, text: "หนึ่งในสี่ของคันแรก", feedback: "มวลอยู่ในตัวส่วนแบบยกกำลังหนึ่ง ไม่ใช่ยกกำลังสอง มวลเพิ่ม 2 เท่า ความเร่งจึงลดลง 2 เท่า" }
+    hints:
+      - "เขียน $a = \\dfrac{\\Sigma F}{m}$ ของทั้งสองคัน"
+      - "แทนมวลคันที่สองเป็น $2m$ แล้วเทียบกัน"
+    solution: "$a_2 = \\dfrac{\\Sigma F}{2m} = \\tfrac{1}{2} \\cdot \\dfrac{\\Sigma F}{m} = \\tfrac{1}{2} a_1$ ความเร่งของคันที่สองจึงเป็นครึ่งหนึ่งของคันแรก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p007
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: numeric
+    stem: "เรือหางยาวที่บรรทุกนักท่องเที่ยวในแม่น้ำเจ้าพระยา มีแรงลัพธ์ $480\\ \\mathrm{N}$ ทำให้เรือมีความเร่ง $0.8\\ \\mathrm{m/s^2}$ เรือกับผู้โดยสารมีมวลรวมเท่าใด (ตอบเป็นตัวเลขในหน่วย kg)"
+    answer: { value: 600, unit: kg }
+    hints:
+      - "รู้แรงลัพธ์และความเร่ง ต้องการหามวล"
+      - "จัดรูป $\\Sigma F = ma$ ให้ $m$ อยู่ข้างเดียว"
+    misconceptions:
+      - { match: 384, feedback: "ดูเหมือนนำแรงคูณความเร่ง จาก $\\Sigma F = ma$ ได้ $m = \\dfrac{\\Sigma F}{a}$ ต้องหาร" }
+    solution: "$m = \\dfrac{\\Sigma F}{a} = \\dfrac{480\\ \\mathrm{N}}{0.8\\ \\mathrm{m/s^2}} = 600\\ \\mathrm{kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p008
+    topics: [physics.dynamics.newton-second]
+    difficulty: 4
+    type: numeric
+    stem: "รถยนต์มวล $1200\\ \\mathrm{kg}$ เร่งอย่างสม่ำเสมอจากหยุดนิ่งจนมีความเร็ว $20\\ \\mathrm{m/s}$ ในเวลา $8\\ \\mathrm{s}$ แรงลัพธ์ที่กระทำต่อรถมีขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 3000, unit: N }
+    hints:
+      - "โจทย์ไม่ได้ให้ความเร่งตรง ๆ ต้องหาจากการเปลี่ยนความเร็วก่อน"
+      - "ความเร่ง $a = \\dfrac{v - u}{t}$"
+      - "ได้ความเร่งแล้วนำไปคูณมวลตาม $\\Sigma F = ma$"
+    misconceptions:
+      - { match: 24000, feedback: "ดูเหมือนนำมวลคูณกับความเร็ว $20\\ \\mathrm{m/s}$ ตรง ๆ แต่แรงลัพธ์คือมวลคูณ **ความเร่ง** ต้องหาร $\\Delta v$ ด้วยเวลาก่อน" }
+    solution: "$a = \\dfrac{20 - 0}{8} = 2.5\\ \\mathrm{m/s^2}$ แล้ว $\\Sigma F = ma = (1200\\ \\mathrm{kg})(2.5\\ \\mathrm{m/s^2}) = 3000\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p009
+    topics: [physics.dynamics.newton-second]
+    difficulty: 4
+    type: numeric
+    stem: "กล่อง A มวล $6\\ \\mathrm{kg}$ และกล่อง B มวล $4\\ \\mathrm{kg}$ ผูกกันด้วยเชือกเบาบนพื้นลื่น (ไม่มีแรงเสียดทาน) ออกแรง $30\\ \\mathrm{N}$ ดึงกล่อง A ในแนวราบ กล่อง A ลากกล่อง B ตามมา กล่องทั้งสองมีความเร่งเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 3, unit: m/s² }
+    hints:
+      - "เชือกตึงตลอด กล่องทั้งสองจึงเคลื่อนที่ไปด้วยกันด้วยความเร่งเท่ากัน"
+      - "มองกล่องทั้งสองเป็นวัตถุก้อนเดียว แรงตึงเชือกเป็นแรงภายในจึงไม่ต้องนับ"
+      - "หารแรงภายนอกด้วยมวลรวมของทั้งสองกล่อง"
+    misconceptions:
+      - { match: 5, feedback: "ดูเหมือนหารด้วยมวลของกล่อง A อย่างเดียว แรง $30\\ \\mathrm{N}$ ต้องเร่งทั้งสองกล่อง จึงต้องใช้มวลรวม" }
+      - { match: 7.5, feedback: "ดูเหมือนหารด้วยมวลของกล่อง B อย่างเดียว แรง $30\\ \\mathrm{N}$ ต้องเร่งทั้งสองกล่อง จึงต้องใช้มวลรวม" }
+    solution: "มองทั้งระบบ: $a = \\dfrac{F}{m_A + m_B} = \\dfrac{30\\ \\mathrm{N}}{6\\ \\mathrm{kg} + 4\\ \\mathrm{kg}} = 3\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p010
+    topics: [physics.dynamics.newton-second]
+    difficulty: 5
+    type: numeric
+    stem: "จากข้อที่แล้ว (ดึงกล่อง A มวล $6\\ \\mathrm{kg}$ ด้วยแรง $30\\ \\mathrm{N}$ บนพื้นลื่น กล่อง A ลากกล่อง B มวล $4\\ \\mathrm{kg}$ ด้วยเชือก) แรงตึงเชือกระหว่างกล่องทั้งสองเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 12, unit: N }
+    hints:
+      - "หาความเร่งของทั้งระบบก่อน"
+      - "จากนั้นพิจารณากล่อง B ก้อนเดียว แรงในแนวราบที่กระทำต่อกล่อง B มีแรงเดียวคือแรงตึงเชือก"
+      - "ใช้ $T = m_B a$"
+    misconceptions:
+      - { match: 30, feedback: "แรงตึงเชือกไม่เท่ากับแรงดึง เพราะเชือกลากแค่กล่อง B ส่วนแรง $30\\ \\mathrm{N}$ ต้องเร่งทั้งสองกล่อง" }
+      - { match: 18, feedback: "นั่นคือแรงลัพธ์ที่กระทำต่อกล่อง A ($m_A a$) เชือกดึงกล่อง B จึงต้องใช้มวลของกล่อง B" }
+    solution: "ความเร่งของระบบ $a = \\dfrac{30}{6 + 4} = 3\\ \\mathrm{m/s^2}$ พิจารณากล่อง B: $T = m_B a = (4\\ \\mathrm{kg})(3\\ \\mathrm{m/s^2}) = 12\\ \\mathrm{N}$ ตรวจที่กล่อง A: $30 - 12 = 18\\ \\mathrm{N} = (6\\ \\mathrm{kg})(3\\ \\mathrm{m/s^2})$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p011
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาความเร่งของกล่องที่ถูกลากโดยมีแรงเสียดทานต้านอยู่ให้ถูกต้อง"
+    items:
+      - "วาดแผนภาพแรงของกล่อง"
+      - "ตั้งทิศบวกเป็นทิศที่กล่องถูกลาก"
+      - "รวมแรงทุกแรงพร้อมเครื่องหมายเป็นแรงลัพธ์"
+      - "หารแรงลัพธ์ด้วยมวลของกล่อง"
+      - "ตรวจหน่วยว่าได้ $\\mathrm{m/s^2}$"
+    hints:
+      - "ก่อนคำนวณต้องรู้ก่อนว่ามีแรงอะไรบ้างและชี้ทางไหน"
+      - "กฎข้อที่ 2 ใช้แรงลัพธ์ จึงต้องรวมแรงก่อนหาร"
+    solution: "วาดแผนภาพแรง → ตั้งทิศบวก → หาแรงลัพธ์ → $a = \\dfrac{\\Sigma F}{m}$ → ตรวจหน่วยและความสมเหตุสมผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p012
+    topics: [physics.dynamics.newton-second]
+    difficulty: 5
+    type: numeric
+    stem: "รถกระบะมวล $2000\\ \\mathrm{kg}$ วิ่งบนถนนมิตรภาพด้วยความเร็ว $25\\ \\mathrm{m/s}$ คนขับเบรกจนรถหยุดในระยะทาง $50\\ \\mathrm{m}$ ด้วยความเร่งคงตัว แรงลัพธ์ที่ใช้หยุดรถมีขนาดเท่าใด (ตอบเป็นตัวเลขบวกในหน่วย N)"
+    answer: { value: 12500, unit: N }
+    hints:
+      - "รู้ $u$, $v = 0$ และ $s$ แต่ไม่รู้เวลา หาความเร่งด้วยสมการที่ไม่มี $t$"
+      - "ใช้ $v^2 = u^2 + 2as$ แล้วจัดรูปหาขนาดของ $a$"
+      - "นำขนาดของความเร่งคูณมวลตาม $\\Sigma F = ma$"
+    misconceptions:
+      - { match: 25000, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ ขนาดของความเร่งคือ $\\dfrac{u^2}{2s}$" }
+      - { match: 1000, feedback: "ดูเหมือนนำ $mu$ หารด้วยระยะทาง ซึ่งไม่ใช่สูตรของความเร่ง ต้องหาความเร่งจาก $v^2 = u^2 + 2as$ ก่อน" }
+    solution: "ทิศที่รถวิ่งเป็นบวก: $0 = 25^2 + 2a(50)$ → $a = -6.25\\ \\mathrm{m/s^2}$ ขนาดแรงลัพธ์ $|\\Sigma F| = m|a| = (2000\\ \\mathrm{kg})(6.25\\ \\mathrm{m/s^2}) = 12500\\ \\mathrm{N}$ มีทิศตรงข้ามกับการเคลื่อนที่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p013
+    topics: [physics.dynamics.newton-second]
+    difficulty: 2
+    type: match
+    stem: "จับคู่แรงลัพธ์และมวลของวัตถุกับความเร่งที่ได้"
+    pairs:
+      - { left: "แรงลัพธ์ $10\\ \\mathrm{N}$ มวล $2\\ \\mathrm{kg}$", right: "$5\\ \\mathrm{m/s^2}$" }
+      - { left: "แรงลัพธ์ $12\\ \\mathrm{N}$ มวล $4\\ \\mathrm{kg}$", right: "$3\\ \\mathrm{m/s^2}$" }
+      - { left: "แรงลัพธ์ $6\\ \\mathrm{N}$ มวล $3\\ \\mathrm{kg}$", right: "$2\\ \\mathrm{m/s^2}$" }
+      - { left: "แรงลัพธ์ $20\\ \\mathrm{N}$ มวล $5\\ \\mathrm{kg}$", right: "$4\\ \\mathrm{m/s^2}$" }
+    hints:
+      - "ใช้ $a = \\dfrac{\\Sigma F}{m}$ กับแต่ละคู่"
+      - "นำแรงลัพธ์หารด้วยมวลทีละข้อ"
+    solution: "$\\tfrac{10}{2} = 5$, $\\tfrac{12}{4} = 3$, $\\tfrac{6}{3} = 2$, $\\tfrac{20}{5} = 4$ (หน่วย $\\mathrm{m/s^2}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

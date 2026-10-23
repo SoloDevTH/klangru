@@ -1,0 +1,201 @@
+problems:
+  - id: phy.ke.p001
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 1
+    type: numeric
+    stem: 'ลูกบอลมวล $2\ \mathrm{kg}$ กลิ้งด้วยอัตราเร็ว $3\ \mathrm{m/s}$ มีพลังงานจลน์เท่าใด (ตอบเป็นตัวเลขในหน่วย J)'
+    answer: { value: 9, unit: J }
+    hints:
+      - 'ใช้สูตร $E_k = \tfrac{1}{2}mv^2$'
+      - 'ยกกำลังสองอัตราเร็วก่อน แล้วคูณด้วยมวลและ $\tfrac{1}{2}$'
+    misconceptions:
+      - { match: 18, feedback: 'ดูเหมือนลืม $\tfrac{1}{2}$ ในสูตร $E_k = \tfrac{1}{2}mv^2$' }
+      - { match: 3, feedback: 'ดูเหมือนลืมยกกำลังสองอัตราเร็ว พลังงานจลน์แปรตาม $v^2$ ไม่ใช่ $v$' }
+    solution: '$E_k = \tfrac{1}{2}mv^2 = \tfrac{1}{2}(2\ \mathrm{kg})(3\ \mathrm{m/s})^2 = \tfrac{1}{2}(2)(9)\ \mathrm{J} = 9\ \mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p002
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 1
+    type: numeric
+    stem: 'ทุเรียนมวล $4\ \mathrm{kg}$ ห้อยอยู่บนกิ่งสูงจากพื้นดิน $5\ \mathrm{m}$ มีพลังงานศักย์โน้มถ่วงเท่าใดเมื่อเทียบกับพื้นดิน ใช้ $g = 9.8\ \mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย J)'
+    answer: { value: 196, tolerance: 1, unit: J }
+    hints:
+      - 'ใช้สูตร $E_p = mgh$ โดยให้พื้นดินเป็นระดับอ้างอิง ($h = 0$)'
+      - 'คูณมวล ค่า $g$ และความสูงเข้าด้วยกัน'
+    misconceptions:
+      - { match: 20, feedback: 'ดูเหมือนลืมคูณ $g$ ผลคูณ $mh$ ยังไม่ใช่พลังงาน ต้องเป็น $mgh$' }
+      - { match: 98, feedback: 'ดูเหมือนใส่ $\tfrac{1}{2}$ เข้าไปด้วย พลังงานศักย์โน้มถ่วงคือ $mgh$ ไม่มี $\tfrac{1}{2}$ (ที่มี $\tfrac{1}{2}$ คือพลังงานจลน์และพลังงานในสปริง)' }
+    solution: '$E_p = mgh = (4\ \mathrm{kg})(9.8\ \mathrm{m/s^2})(5\ \mathrm{m}) = 196\ \mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p003
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 2
+    type: mcq
+    stem: 'รถคันหนึ่งเพิ่มอัตราเร็วจาก $30\ \mathrm{km/h}$ เป็น $60\ \mathrm{km/h}$ โดยมวลเท่าเดิม พลังงานจลน์ของรถเปลี่ยนไปอย่างไร'
+    choices:
+      - { id: a, text: 'เพิ่มเป็น 4 เท่า', correct: true }
+      - { id: b, text: 'เพิ่มเป็น 2 เท่า', feedback: 'พลังงานจลน์แปรตาม **กำลังสอง** ของอัตราเร็ว อัตราเร็ว 2 เท่าจึงได้พลังงาน $2^2 = 4$ เท่า' }
+      - { id: c, text: 'เท่าเดิม เพราะมวลไม่เปลี่ยน', feedback: 'พลังงานจลน์ขึ้นกับทั้งมวลและอัตราเร็ว $E_k = \tfrac{1}{2}mv^2$ อัตราเร็วเปลี่ยนพลังงานจึงเปลี่ยน' }
+    hints:
+      - 'ดูว่าในสูตร $E_k = \tfrac{1}{2}mv^2$ อัตราเร็วมีเลขชี้กำลังเท่าใด'
+      - 'อัตราเร็วเพิ่มเป็น 2 เท่า ให้ยกกำลังสองตัวคูณนั้น'
+    solution: '$\dfrac{E_{k2}}{E_{k1}} = \dfrac{\tfrac{1}{2}m(60)^2}{\tfrac{1}{2}m(30)^2} = \left(\dfrac{60}{30}\right)^2 = 4$ พลังงานจลน์จึงเพิ่มเป็น 4 เท่า (หน่วยของอัตราเร็วตัดกันไป ไม่ต้องแปลง)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p004
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 2
+    type: numeric
+    stem: 'สปริงในของเล่นมีค่านิจสปริง $400\ \mathrm{N/m}$ ถูกกดเข้าไป $5\ \mathrm{cm}$ สปริงสะสมพลังงานศักย์ยืดหยุ่นไว้เท่าใด (ตอบเป็นตัวเลขในหน่วย J)'
+    answer: { value: 0.5, tolerance: 0.01, unit: J }
+    hints:
+      - 'แปลงระยะกดเป็นเมตรก่อน'
+      - 'ใช้ $E_s = \tfrac{1}{2}kx^2$ โดย $x$ เป็นเมตร'
+    misconceptions:
+      - { match: 1, feedback: 'ดูเหมือนลืม $\tfrac{1}{2}$ ในสูตร $E_s = \tfrac{1}{2}kx^2$' }
+      - { match: 10, feedback: 'ดูเหมือนลืมยกกำลังสองระยะกด สูตรคือ $\tfrac{1}{2}kx^2$ ไม่ใช่ $\tfrac{1}{2}kx$' }
+    solution: '$x = 5\ \mathrm{cm} = 0.05\ \mathrm{m}$ จะได้ $E_s = \tfrac{1}{2}kx^2 = \tfrac{1}{2}(400\ \mathrm{N/m})(0.05\ \mathrm{m})^2 = \tfrac{1}{2}(400)(0.0025)\ \mathrm{J} = 0.5\ \mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p005
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 3
+    type: numeric
+    stem: 'รถจักรยานยนต์รับจ้างรวมผู้ขับและผู้โดยสารมีมวล $120\ \mathrm{kg}$ วิ่งด้วยอัตราเร็ว $54\ \mathrm{km/h}$ มีพลังงานจลน์เท่าใด (ตอบเป็นตัวเลขในหน่วย J)'
+    answer: { value: 13500, unit: J }
+    hints:
+      - 'สูตรพลังงานจลน์ต้องใช้อัตราเร็วในหน่วย $\mathrm{m/s}$'
+      - 'แปลง $\mathrm{km/h}$ เป็น $\mathrm{m/s}$ โดยหารด้วย 3.6'
+      - 'แทนค่าในสูตร $E_k = \tfrac{1}{2}mv^2$'
+    misconceptions:
+      - { match: 174960, feedback: 'ดูเหมือนใช้ $54$ โดยไม่แปลงหน่วย ต้องแปลง $54\ \mathrm{km/h} = 15\ \mathrm{m/s}$ ก่อน จึงจะได้พลังงานในหน่วยจูล' }
+      - { match: 27000, feedback: 'แปลงหน่วยถูกแล้ว แต่ลืม $\tfrac{1}{2}$ ในสูตร $E_k = \tfrac{1}{2}mv^2$' }
+    solution: '$v = \dfrac{54}{3.6}\ \mathrm{m/s} = 15\ \mathrm{m/s}$ จะได้ $E_k = \tfrac{1}{2}(120\ \mathrm{kg})(15\ \mathrm{m/s})^2 = 60 \times 225\ \mathrm{J} = 13500\ \mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p006
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 3
+    type: expression
+    stem: 'วัตถุมวล $m$ มีพลังงานจลน์ $K$ จงเขียนนิพจน์ของอัตราเร็ว $v$ ของวัตถุในรูปของ $K$ และ $m$'
+    prefix: 'v ='
+    answer: { latex: '\sqrt{\frac{2K}{m}}', variables: [K, m] }
+    misconceptions:
+      - { match: '\frac{2K}{m}', feedback: 'นี่คือ $v^2$ ยังต้องถอดรากที่สองอีกขั้นหนึ่งจึงได้ $v$' }
+      - { match: '\sqrt{\frac{K}{2m}}', feedback: 'จาก $K = \tfrac{1}{2}mv^2$ ต้องคูณ 2 ทั้งสองข้าง ไม่ใช่หารด้วย 2 จะได้ $v^2 = \tfrac{2K}{m}$' }
+    hints:
+      - 'เริ่มจาก $K = \tfrac{1}{2}mv^2$ แล้วจัดรูปให้ $v$ อยู่ข้างเดียว'
+      - 'คูณ 2 ทั้งสองข้าง แล้วหารด้วย $m$ จะได้ $v^2$'
+      - 'ถอดรากที่สองทั้งสองข้างเป็นขั้นสุดท้าย'
+    solution: '$K = \tfrac{1}{2}mv^2$ → $2K = mv^2$ → $v^2 = \dfrac{2K}{m}$ → $v = \sqrt{\dfrac{2K}{m}}$ ตรวจหน่วย: $\sqrt{\mathrm{J/kg}} = \sqrt{\mathrm{m^2/s^2}} = \mathrm{m/s}$ ✓'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p007
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 2
+    type: match
+    stem: 'จับคู่ปริมาณกับสูตรที่ใช้คำนวณ'
+    pairs:
+      - { left: 'พลังงานจลน์', right: '$\tfrac{1}{2}mv^2$' }
+      - { left: 'พลังงานศักย์โน้มถ่วง', right: '$mgh$' }
+      - { left: 'พลังงานศักย์ยืดหยุ่น', right: '$\tfrac{1}{2}kx^2$' }
+      - { left: 'งานของแรงคงตัวที่ขนานกับการเคลื่อนที่', right: '$Fs$' }
+    hints:
+      - 'พลังงานจลน์เกี่ยวกับอัตราเร็ว พลังงานศักย์โน้มถ่วงเกี่ยวกับความสูง'
+      - 'พลังงานในสปริงเกี่ยวกับค่านิจสปริง $k$ และระยะยืด $x$'
+    solution: 'พลังงานจลน์ $\tfrac{1}{2}mv^2$ · พลังงานศักย์โน้มถ่วง $mgh$ · พลังงานศักย์ยืดหยุ่น $\tfrac{1}{2}kx^2$ · งาน $Fs$ ทุกปริมาณมีหน่วยจูล'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p008
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 4
+    type: numeric
+    stem: 'รถยนต์มวล $1000\ \mathrm{kg}$ ลดอัตราเร็วจาก $20\ \mathrm{m/s}$ เหลือ $10\ \mathrm{m/s}$ ด้วยการเบรก แรงเบรกทำงานต่อรถเท่าใด (ตอบเป็นตัวเลขในหน่วย kJ พร้อมเครื่องหมาย)'
+    answer: { value: -150, unit: kJ }
+    hints:
+      - 'ใช้ทฤษฎีบทงาน–พลังงาน งาน = พลังงานจลน์ปลาย − พลังงานจลน์ต้น'
+      - 'หาพลังงานจลน์ที่อัตราเร็ว $20\ \mathrm{m/s}$ และ $10\ \mathrm{m/s}$ แยกกันก่อน แล้วลบกัน'
+      - 'แปลงจูลเป็นกิโลจูลโดยหารด้วย 1000'
+    misconceptions:
+      - { match: -50, feedback: 'ดูเหมือนคิด $\tfrac{1}{2}m(v - u)^2$ ต้องหาพลังงานจลน์แต่ละค่าก่อนแล้วลบกัน คือ $\tfrac{1}{2}m(v^2 - u^2)$' }
+      - { match: 150, feedback: 'ขนาดถูกแล้ว แต่แรงเบรกทำให้รถช้าลง พลังงานจลน์ลดลง งานจึงเป็นลบ' }
+    solution: '$E_{k,\text{ต้น}} = \tfrac{1}{2}(1000)(20)^2 = 200000\ \mathrm{J}$ และ $E_{k,\text{ปลาย}} = \tfrac{1}{2}(1000)(10)^2 = 50000\ \mathrm{J}$ งานของแรงเบรก $= 50000 - 200000 = -150000\ \mathrm{J} = -150\ \mathrm{kJ}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p009
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 4
+    type: numeric
+    stem: 'ลูกบอลมวล $0.5\ \mathrm{kg}$ อยู่นิ่งบนพื้นลื่น ถูกแรงลัพธ์คงตัว $4\ \mathrm{N}$ ดันไปในแนวราบเป็นระยะ $2.5\ \mathrm{m}$ ลูกบอลมีอัตราเร็วเท่าใดเมื่อสิ้นสุดระยะนี้ (ตอบเป็นตัวเลขในหน่วย m/s ทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 6.32, tolerance: 0.06, unit: m/s }
+    hints:
+      - 'หางานรวมของแรงลัพธ์ก่อน แล้วใช้ทฤษฎีบทงาน–พลังงาน'
+      - 'เริ่มจากหยุดนิ่ง งานรวมจึงเท่ากับพลังงานจลน์ปลาย $\tfrac{1}{2}mv^2$'
+      - 'จัดรูปหา $v = \sqrt{\tfrac{2W}{m}}$'
+    misconceptions:
+      - { match: 40, feedback: 'นี่คือค่าของ $v^2$ (หน่วย $\mathrm{m^2/s^2}$) ยังต้องถอดรากที่สองอีกขั้นหนึ่ง' }
+      - { match: 4.47, feedback: 'ดูเหมือนลืม $\tfrac{1}{2}$ ใน $\tfrac{1}{2}mv^2$ ตอนจัดรูป จาก $W = \tfrac{1}{2}mv^2$ ได้ $v = \sqrt{\tfrac{2W}{m}}$' }
+    solution: 'งานรวม $W = Fs = (4\ \mathrm{N})(2.5\ \mathrm{m}) = 10\ \mathrm{J}$ จาก $W = \tfrac{1}{2}mv^2 - 0$ ได้ $v = \sqrt{\dfrac{2(10\ \mathrm{J})}{0.5\ \mathrm{kg}}} = \sqrt{40}\ \mathrm{m/s} \approx 6.32\ \mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p010
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 5
+    type: numeric
+    stem: 'รถกระบะมวล $1500\ \mathrm{kg}$ วิ่งบนถนนมิตรภาพด้วยอัตราเร็ว $72\ \mathrm{km/h}$ คนขับเบรกด้วยแรงเบรกเฉลี่ย $6000\ \mathrm{N}$ จนรถหยุด รถไถลไปได้ไกลเท่าใด (ตอบเป็นตัวเลขในหน่วย m)'
+    answer: { value: 50, unit: m }
+    hints:
+      - 'แปลงอัตราเร็วเป็น $\mathrm{m/s}$ แล้วหาพลังงานจลน์ตอนเริ่มเบรก'
+      - 'รถหยุด พลังงานจลน์ทั้งหมดหายไปเพราะงานของแรงเบรก (งานลบ)'
+      - 'ตั้งสมการ $Fs = \tfrac{1}{2}mv^2$ แล้วแก้หา $s$'
+    misconceptions:
+      - { match: 100, feedback: 'ดูเหมือนลืม $\tfrac{1}{2}$ ในพลังงานจลน์ ทำให้ได้ระยะเบรกมากเป็นสองเท่า' }
+      - { match: 648, feedback: 'ดูเหมือนใช้ $72$ โดยไม่แปลงหน่วย ต้องแปลง $72\ \mathrm{km/h} = 20\ \mathrm{m/s}$ ก่อน' }
+    solution: '$v = \tfrac{72}{3.6} = 20\ \mathrm{m/s}$ และ $E_k = \tfrac{1}{2}(1500)(20)^2 = 300000\ \mathrm{J}$ ทฤษฎีบทงาน–พลังงาน: $-(6000\ \mathrm{N})s = 0 - 300000\ \mathrm{J}$ ได้ $s = 50\ \mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p011
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 5
+    type: numeric
+    stem: 'ปืนลูกดอกของเล่นมีสปริงค่านิจ $800\ \mathrm{N/m}$ ถูกกดเข้าไป $3\ \mathrm{cm}$ เมื่อปล่อย พลังงานศักย์ยืดหยุ่นทั้งหมดเปลี่ยนเป็นพลังงานจลน์ของลูกดอกมวล $0.02\ \mathrm{kg}$ ลูกดอกออกจากปืนด้วยอัตราเร็วเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s)'
+    answer: { value: 6, tolerance: 0.06, unit: m/s }
+    hints:
+      - 'หาพลังงานในสปริงด้วย $\tfrac{1}{2}kx^2$ โดย $x$ เป็นเมตร'
+      - 'พลังงานนั้นกลายเป็นพลังงานจลน์ $\tfrac{1}{2}mv^2$ ของลูกดอก'
+      - 'ตั้ง $\tfrac{1}{2}kx^2 = \tfrac{1}{2}mv^2$ แล้วแก้หา $v$'
+    misconceptions:
+      - { match: 36, feedback: 'นี่คือค่าของ $v^2$ ยังต้องถอดรากที่สองอีกขั้นหนึ่ง' }
+      - { match: 8.49, feedback: 'ดูเหมือนลืม $\tfrac{1}{2}$ ในพลังงานของสปริง ($kx^2$ แทน $\tfrac{1}{2}kx^2$)' }
+    solution: '$x = 0.03\ \mathrm{m}$ พลังงานในสปริง $= \tfrac{1}{2}(800)(0.03)^2 = 0.36\ \mathrm{J}$ จาก $0.36 = \tfrac{1}{2}(0.02)v^2$ ได้ $v^2 = 36$ และ $v = 6\ \mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.ke.p012
+    topics: [physics.energy.kinetic-potential]
+    difficulty: 3
+    type: mcq
+    stem: 'หนังสือมวล $1\ \mathrm{kg}$ วางบนชั้นสูงจากพื้นห้อง $2\ \mathrm{m}$ ห้องนี้อยู่ชั้น 4 ของอาคาร พื้นห้องสูงจากพื้นดิน $10\ \mathrm{m}$ หนังสือมีพลังงานศักย์โน้มถ่วงเท่าใด **เมื่อเทียบกับพื้นห้อง** ใช้ $g = 9.8\ \mathrm{m/s^2}$'
+    choices:
+      - { id: a, text: '$19.6\ \mathrm{J}$', correct: true }
+      - { id: b, text: '$117.6\ \mathrm{J}$', feedback: 'นี่คือพลังงานเมื่อเทียบกับพื้นดิน ($h = 12\ \mathrm{m}$) แต่โจทย์ให้ใช้พื้นห้องเป็นระดับอ้างอิง ความสูงจึงเป็น $2\ \mathrm{m}$' }
+      - { id: c, text: '$98\ \mathrm{J}$', feedback: 'ดูเหมือนใช้ความสูง $10\ \mathrm{m}$ ซึ่งเป็นความสูงของพื้นห้อง ไม่ใช่ความสูงของหนังสือเหนือพื้นห้อง' }
+      - { id: d, text: '$2\ \mathrm{J}$', feedback: 'ดูเหมือนลืมคูณ $g$ พลังงานศักย์โน้มถ่วงคือ $mgh$' }
+    hints:
+      - 'พลังงานศักย์โน้มถ่วงขึ้นกับระดับอ้างอิงที่เลือก'
+      - 'วัดความสูง $h$ จากพื้นห้องถึงหนังสือ แล้วใช้ $E_p = mgh$'
+    solution: 'เทียบกับพื้นห้อง $h = 2\ \mathrm{m}$ จะได้ $E_p = (1\ \mathrm{kg})(9.8\ \mathrm{m/s^2})(2\ \mathrm{m}) = 19.6\ \mathrm{J}$ (ถ้าเทียบกับพื้นดินจะได้ $117.6\ \mathrm{J}$ ค่าพลังงานศักย์จึงขึ้นกับระดับอ้างอิง)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

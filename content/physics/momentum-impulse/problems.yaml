@@ -1,0 +1,196 @@
+problems:
+  - id: phy.mom.p001
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 1
+    type: numeric
+    stem: 'นักวิ่งมวล $60\ \mathrm{kg}$ วิ่งด้วยความเร็ว $5\ \mathrm{m/s}$ มีโมเมนตัมขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย kg·m/s)'
+    answer: { value: 300, unit: kg·m/s }
+    hints:
+      - 'โมเมนตัมคือมวลคูณความเร็ว'
+      - 'ใช้ $p = mv$'
+    misconceptions:
+      - { match: 750, feedback: 'นี่คือพลังงานจลน์ $\tfrac{1}{2}mv^2$ (หน่วยจูล) โมเมนตัมคือ $p = mv$ ไม่มี $\tfrac{1}{2}$ และไม่ยกกำลังสอง' }
+      - { match: 12, feedback: 'ดูเหมือนนำมวลหารด้วยความเร็ว โมเมนตัมคือมวล **คูณ** ความเร็ว' }
+    solution: '$p = mv = (60\ \mathrm{kg})(5\ \mathrm{m/s}) = 300\ \mathrm{kg \cdot m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p002
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 1
+    type: mcq
+    multiple: true
+    stem: 'หน่วยใดใช้เป็นหน่วยของโมเมนตัมได้ (เลือกได้หลายข้อ)'
+    choices:
+      - { id: a, text: '$\mathrm{kg \cdot m/s}$', correct: true, feedback: 'ถูก ได้จากหน่วยของมวลคูณหน่วยของความเร็ว' }
+      - { id: b, text: '$\mathrm{N \cdot s}$', correct: true, feedback: 'ถูก นี่คือหน่วยของการดล ซึ่งเท่ากับโมเมนตัมที่เปลี่ยนไป และ $\mathrm{N \cdot s} = \mathrm{kg \cdot m/s^2 \cdot s} = \mathrm{kg \cdot m/s}$' }
+      - { id: c, text: '$\mathrm{kg \cdot m/s^2}$', feedback: 'นี่คือหน่วยของแรง (นิวตัน) ซึ่งได้จากมวลคูณ **ความเร่ง** ไม่ใช่มวลคูณความเร็ว' }
+      - { id: d, text: '$\mathrm{J}$', feedback: 'จูลเป็นหน่วยของพลังงาน ($\mathrm{kg \cdot m^2/s^2}$) ใช้กับพลังงานจลน์ $\tfrac{1}{2}mv^2$ ไม่ใช่โมเมนตัม' }
+    hints:
+      - 'เริ่มจาก $p = mv$ แล้วคูณหน่วยของมวลกับหน่วยของความเร็ว'
+      - 'การดล $F\Delta t$ เท่ากับโมเมนตัมที่เปลี่ยนไป หน่วยของการดลจึงต้องเท่ากับหน่วยของโมเมนตัม'
+    solution: 'จาก $p = mv$ ได้หน่วย $\mathrm{kg \cdot m/s}$ และจาก $F\Delta t = \Delta p$ ได้หน่วย $\mathrm{N \cdot s}$ ซึ่งเท่ากัน เพราะ $1\ \mathrm{N} = 1\ \mathrm{kg \cdot m/s^2}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p003
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 2
+    type: numeric
+    stem: 'รถจักรยานยนต์รวมผู้ขับมีมวล $150\ \mathrm{kg}$ วิ่งด้วยความเร็ว $54\ \mathrm{km/h}$ มีโมเมนตัมขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย kg·m/s)'
+    answer: { value: 2250, unit: kg·m/s }
+    hints:
+      - 'แปลงความเร็วจาก $\mathrm{km/h}$ เป็น $\mathrm{m/s}$ ก่อน โดยหารด้วย 3.6'
+      - 'แล้วใช้ $p = mv$'
+    misconceptions:
+      - { match: 8100, feedback: 'ดูเหมือนใช้ $54$ โดยไม่แปลงหน่วย ต้องแปลง $54\ \mathrm{km/h} = 15\ \mathrm{m/s}$ ก่อน จึงได้หน่วย $\mathrm{kg \cdot m/s}$' }
+    solution: '$v = \tfrac{54}{3.6} = 15\ \mathrm{m/s}$ จะได้ $p = mv = (150\ \mathrm{kg})(15\ \mathrm{m/s}) = 2250\ \mathrm{kg \cdot m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p004
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 2
+    type: numeric
+    stem: 'ไม้ตีลูกบอลด้วยแรงเฉลี่ย $200\ \mathrm{N}$ เป็นเวลา $0.05\ \mathrm{s}$ การดลที่ลูกบอลได้รับมีขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย N·s)'
+    answer: { value: 10, unit: N·s }
+    hints:
+      - 'การดลคือแรงคูณกับเวลาที่แรงกระทำ'
+      - 'ใช้ การดล $= F\Delta t$'
+    misconceptions:
+      - { match: 4000, feedback: 'ดูเหมือนนำแรงหารด้วยเวลา การดลคือแรง **คูณ** เวลา $F\Delta t$' }
+    solution: 'การดล $= F\Delta t = (200\ \mathrm{N})(0.05\ \mathrm{s}) = 10\ \mathrm{N \cdot s}$ ซึ่งเท่ากับโมเมนตัมที่ลูกบอลเปลี่ยนไป $10\ \mathrm{kg \cdot m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p005
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 3
+    type: numeric
+    stem: 'นักตะกร้อเตะลูกตะกร้อมวล $0.17\ \mathrm{kg}$ ที่เกือบหยุดนิ่งอยู่กลางอากาศ ให้พุ่งออกไปด้วยความเร็ว $20\ \mathrm{m/s}$ เท้าสัมผัสลูกนาน $0.008\ \mathrm{s}$ เท้าออกแรงเฉลี่ยต่อลูกตะกร้อเท่าใด (ตอบเป็นตัวเลขในหน่วย N)'
+    answer: { value: 425, tolerance: 4, unit: N }
+    hints:
+      - 'หาโมเมนตัมที่เปลี่ยนไป $\Delta p = mv - mu$ โดย $u \approx 0$'
+      - 'แรงเฉลี่ยคือโมเมนตัมที่เปลี่ยนไปหารด้วยเวลาที่สัมผัส $F = \tfrac{\Delta p}{\Delta t}$'
+    misconceptions:
+      - { match: 3.4, feedback: 'นี่คือการดล (โมเมนตัมที่เปลี่ยนไป) หน่วย $\mathrm{N \cdot s}$ ยังต้องหารด้วยเวลาที่สัมผัสอีกครั้งจึงได้แรงเฉลี่ย' }
+      - { match: 0.0272, feedback: 'ดูเหมือนนำโมเมนตัมคูณกับเวลา แรงเฉลี่ยคือ $\tfrac{\Delta p}{\Delta t}$ เวลาสัมผัสสั้นมาก แรงจึงต้องมาก' }
+    solution: '$\Delta p = mv - mu = (0.17)(20) - 0 = 3.4\ \mathrm{kg \cdot m/s}$ แรงเฉลี่ย $F = \dfrac{3.4}{0.008}\ \mathrm{N} = 425\ \mathrm{N}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p006
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 3
+    type: mcq
+    stem: 'เมื่อรถชนแล้วหยุด ถุงลมนิรภัยช่วยลดแรงที่กระทำต่อคนขับได้ด้วยเหตุผลใด'
+    choices:
+      - { id: a, text: 'เพิ่มเวลาที่คนขับใช้ในการหยุด ทำให้แรงเฉลี่ยลดลงทั้งที่โมเมนตัมเปลี่ยนไปเท่าเดิม', correct: true }
+      - { id: b, text: 'ลดโมเมนตัมที่เปลี่ยนไปของคนขับ', feedback: 'คนขับต้องหยุดจากความเร็วเดิมไม่ว่ามีถุงลมหรือไม่ $\Delta p = 0 - mu$ จึงเท่าเดิม สิ่งที่เปลี่ยนคือเวลา $\Delta t$' }
+      - { id: c, text: 'ลดความเร็วของรถก่อนชน', feedback: 'ถุงลมทำงานหลังการชนเริ่มขึ้นแล้ว ไม่ได้เปลี่ยนความเร็วของรถก่อนชน' }
+      - { id: d, text: 'ทำให้การดลที่คนขับได้รับเพิ่มขึ้น', feedback: 'การดลเท่ากับโมเมนตัมที่เปลี่ยนไป ซึ่งเท่าเดิม ถุงลมเพิ่ม $\Delta t$ และลด $F$ ผลคูณ $F\Delta t$ จึงเท่าเดิม' }
+    hints:
+      - 'ไม่ว่ามีถุงลมหรือไม่ คนขับต้องหยุดจากความเร็วเดิม $\Delta p$ เปลี่ยนหรือไม่'
+      - 'ใช้ $F = \tfrac{\Delta p}{\Delta t}$ ถ้า $\Delta p$ เท่าเดิม ปริมาณใดต้องเปลี่ยนเพื่อให้ $F$ ลดลง'
+    solution: 'คนขับต้องหยุดจากความเร็วเดิมเสมอ $\Delta p$ จึงเท่าเดิม ถุงลมยืดเวลาที่ใช้หยุดให้นานขึ้น จาก $F = \tfrac{\Delta p}{\Delta t}$ แรงเฉลี่ยจึงลดลง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p007
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 4
+    type: numeric
+    stem: 'ลูกบอลมวล $0.5\ \mathrm{kg}$ พุ่งเข้าชนกำแพงตรง ๆ ด้วยความเร็ว $8\ \mathrm{m/s}$ แล้วกระดอนกลับในแนวเดิมด้วยความเร็ว $6\ \mathrm{m/s}$ โมเมนตัมของลูกบอลเปลี่ยนไปมีขนาดเท่าใด (ตอบเป็นตัวเลขบวกในหน่วย kg·m/s)'
+    answer: { value: 7, unit: kg·m/s }
+    hints:
+      - 'ตั้งทิศเข้าหากำแพงเป็นบวก ความเร็วหลังกระดอนจะมีเครื่องหมายใด'
+      - 'ใช้ $\Delta p = mv - mu$ โดย $u = +8\ \mathrm{m/s}$ และ $v = -6\ \mathrm{m/s}$'
+    misconceptions:
+      - { match: 1, feedback: 'ดูเหมือนลบขนาดของความเร็วตรง ๆ ($8 - 6$) แต่ลูกบอลกลับทิศ ความเร็วปลายต้องเป็นลบ ได้ $(-6) - 8 = -14\ \mathrm{m/s}$' }
+    solution: 'ทิศเข้าหากำแพงเป็นบวก: $\Delta p = m(v - u) = 0.5\,(-6 - 8) = -7\ \mathrm{kg \cdot m/s}$ ขนาด $7\ \mathrm{kg \cdot m/s}$ มีทิศออกจากกำแพง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p008
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 4
+    type: numeric
+    stem: 'ลูกเทนนิสมวล $0.06\ \mathrm{kg}$ พุ่งเข้าหาไม้ด้วยความเร็ว $30\ \mathrm{m/s}$ ถูกตีสวนกลับในแนวเดิมด้วยความเร็ว $20\ \mathrm{m/s}$ ลูกสัมผัสไม้นาน $0.005\ \mathrm{s}$ ไม้ออกแรงเฉลี่ยต่อลูกขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย N)'
+    answer: { value: 600, tolerance: 6, unit: N }
+    hints:
+      - 'ลูกกลับทิศ ให้ทิศที่ลูกพุ่งเข้ามาเป็นบวก ความเร็วหลังตีจึงเป็นลบ'
+      - 'หา $\Delta p = m(v - u)$ แล้วหารด้วยเวลาสัมผัส'
+    misconceptions:
+      - { match: 120, feedback: 'ดูเหมือนลบขนาดความเร็วตรง ๆ ($30 - 20$) ลูกกลับทิศ ความเร็วเปลี่ยนไป $30 + 20 = 50\ \mathrm{m/s}$' }
+      - { match: 3, feedback: 'นี่คือการดล (หน่วย $\mathrm{N \cdot s}$) ยังต้องหารด้วยเวลาสัมผัสจึงได้แรงเฉลี่ย' }
+    solution: 'ทิศที่ลูกพุ่งเข้ามาเป็นบวก: $\Delta p = 0.06\,(-20 - 30) = -3\ \mathrm{kg \cdot m/s}$ แรงเฉลี่ย $F = \dfrac{-3}{0.005} = -600\ \mathrm{N}$ ขนาด $600\ \mathrm{N}$ ทิศสวนกับที่ลูกพุ่งเข้ามา'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p009
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 4
+    type: expression
+    stem: 'วัตถุมวล $m$ เคลื่อนที่ด้วยความเร็ว $u$ แล้วถูกแรงคงตัว $F$ กระทำในทิศเดียวกับการเคลื่อนที่เป็นเวลา $t$ จงเขียนนิพจน์ของความเร็วปลาย $v$'
+    prefix: 'v ='
+    answer: { latex: 'u+\frac{Ft}{m}', variables: [u, F, t, m] }
+    misconceptions:
+      - { match: 'u+Ft', feedback: '$Ft$ คือโมเมนตัมที่เปลี่ยนไป ไม่ใช่ความเร็วที่เปลี่ยนไป ต้องหารด้วยมวล $m$ ก่อน' }
+      - { match: '\frac{Ft}{m}', feedback: 'นี่คือความเร็วที่ **เพิ่มขึ้น** เท่านั้น ยังต้องบวกความเร็วต้น $u$ ด้วย' }
+    hints:
+      - 'เริ่มจาก $Ft = mv - mu$'
+      - 'ย้าย $mu$ ไปอีกข้าง แล้วหารทั้งสองข้างด้วย $m$'
+    solution: '$Ft = mv - mu$ → $mv = mu + Ft$ → $v = u + \dfrac{Ft}{m}$ (เหมือน $v = u + at$ เมื่อ $a = \tfrac{F}{m}$)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p010
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 5
+    type: numeric
+    stem: 'รถยนต์ที่วิ่งด้วยความเร็ว $54\ \mathrm{km/h}$ บนถนนในกรุงเทพฯ ชนท้ายรถคันหน้าแล้วหยุด คนขับมวล $70\ \mathrm{kg}$ คาดเข็มขัดนิรภัยและมีถุงลมนิรภัย ทำให้ร่างกายใช้เวลาหยุด $0.15\ \mathrm{s}$ คนขับได้รับแรงเฉลี่ยขนาดเท่าใด (ตอบเป็นตัวเลขในหน่วย N)'
+    answer: { value: 7000, tolerance: 70, unit: N }
+    hints:
+      - 'แปลงความเร็วเป็น $\mathrm{m/s}$ คนขับหยุดจากความเร็วนี้'
+      - 'หาโมเมนตัมที่เปลี่ยนไป แล้วหารด้วยเวลาที่ใช้หยุด'
+    misconceptions:
+      - { match: 1050, feedback: 'นี่คือการดล (โมเมนตัมที่เปลี่ยนไป) หน่วย $\mathrm{N \cdot s}$ ยังต้องหารด้วยเวลาที่ใช้หยุด' }
+      - { match: 52500, feedback: 'ดูเหมือนใช้พลังงานจลน์ $\tfrac{1}{2}mv^2$ แทนโมเมนตัม แรงเฉลี่ยตามเวลาคือ $\tfrac{\Delta p}{\Delta t}$ และ $p = mv$' }
+    solution: '$v = \tfrac{54}{3.6} = 15\ \mathrm{m/s}$ ขนาด $\Delta p = (70)(15) = 1050\ \mathrm{kg \cdot m/s}$ แรงเฉลี่ย $F = \dfrac{1050}{0.15}\ \mathrm{N} = 7000\ \mathrm{N}$ (ถ้าศีรษะกระแทกพวงมาลัยจนหยุดใน $0.01\ \mathrm{s}$ แรงจะเป็น $105000\ \mathrm{N}$ มากกว่า 15 เท่า)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p011
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 5
+    type: numeric
+    stem: 'ลูกบอลมวล $0.3\ \mathrm{kg}$ อยู่นิ่ง ถูกเตะด้วยแรงที่เปลี่ยนตามเวลา กราฟแรงกับเวลาเป็นรูปสามเหลี่ยม แรงเพิ่มจาก $0$ ถึงค่าสูงสุด $600\ \mathrm{N}$ แล้วลดกลับเป็น $0$ รวมเวลาสัมผัส $0.02\ \mathrm{s}$ ลูกบอลพุ่งออกไปด้วยความเร็วเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s)'
+    answer: { value: 20, tolerance: 0.2, unit: m/s }
+    hints:
+      - 'การดลคือพื้นที่ใต้กราฟแรงกับเวลา'
+      - 'พื้นที่สามเหลี่ยม $= \tfrac{1}{2} \times$ ฐาน $\times$ สูง ซึ่งเท่ากับโมเมนตัมที่เปลี่ยนไป'
+      - 'เริ่มจากหยุดนิ่ง จึงได้ $mv =$ การดล แล้วหารด้วยมวล'
+    misconceptions:
+      - { match: 40, feedback: 'ดูเหมือนคิดพื้นที่เป็นสี่เหลี่ยม (ใช้แรงสูงสุดตลอดเวลา) แรงสูงสุดกระทำเพียงชั่วขณะ พื้นที่สามเหลี่ยมต้องคูณ $\tfrac{1}{2}$' }
+      - { match: 6, feedback: 'นี่คือการดล (หน่วย $\mathrm{N \cdot s}$) ยังต้องหารด้วยมวลจึงได้ความเร็ว' }
+    solution: 'การดล $= \tfrac{1}{2}(0.02\ \mathrm{s})(600\ \mathrm{N}) = 6\ \mathrm{N \cdot s}$ จาก $mv - 0 = 6$ ได้ $v = \dfrac{6}{0.3} = 20\ \mathrm{m/s}$ (แรงเฉลี่ยคือ $\tfrac{6}{0.02} = 300\ \mathrm{N}$ ครึ่งหนึ่งของแรงสูงสุด)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.mom.p012
+    topics: [physics.momentum.momentum-impulse]
+    difficulty: 2
+    type: match
+    stem: 'จับคู่ปริมาณกับสูตรที่ใช้คำนวณ ($u$ คือความเร็วต้น $v$ คือความเร็วปลาย)'
+    pairs:
+      - { left: 'โมเมนตัม', right: '$mv$' }
+      - { left: 'การดล', right: '$F\Delta t$' }
+      - { left: 'โมเมนตัมที่เปลี่ยนไป', right: '$mv - mu$' }
+      - { left: 'แรงเฉลี่ยในการชน', right: '$\dfrac{\Delta p}{\Delta t}$' }
+      - { left: 'พลังงานจลน์', right: '$\tfrac{1}{2}mv^2$' }
+    hints:
+      - 'โมเมนตัมเป็นผลคูณง่าย ๆ ของมวลกับความเร็ว ส่วนพลังงานจลน์มี $\tfrac{1}{2}$ และกำลังสอง'
+      - 'การดลเกี่ยวกับแรงและเวลา และมีค่าเท่ากับโมเมนตัมที่เปลี่ยนไป'
+    solution: 'โมเมนตัม $mv$ · การดล $F\Delta t$ · โมเมนตัมที่เปลี่ยนไป $mv - mu$ · แรงเฉลี่ย $\tfrac{\Delta p}{\Delta t}$ · พลังงานจลน์ $\tfrac{1}{2}mv^2$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

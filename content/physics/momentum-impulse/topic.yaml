@@ -1,0 +1,41 @@
+id: physics.momentum.momentum-impulse
+subject: physics
+title: { th: โมเมนตัมและการดล, en: Momentum and impulse }
+summary: โมเมนตัมเท่ากับมวลคูณความเร็ว การดลเท่ากับโมเมนตัมที่เปลี่ยนไป แรงเฉลี่ยในการชน และเหตุผลที่ถุงลมนิรภัยลดแรงกระแทก
+difficulty: 5
+minutes: 35
+prerequisites: [physics.dynamics.newton-second]
+encompasses:
+  - { id: physics.dynamics.newton-second, weight: 0.4 }
+  - { id: physics.kinematics.acceleration, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เวลาที่ใช้หยุดกับแรงเฉลี่ย (หลักการของถุงลมนิรภัย)
+    caption: 'แกนนอนคือเวลาที่ใช้หยุด Δt (s) แกนตั้งคือขนาดแรงเฉลี่ย F = Δp/Δt (N) แถบ p คือขนาดของโมเมนตัมที่เปลี่ยนไป ลองดูว่าเมื่อเวลาที่ใช้หยุดเพิ่มจาก 0.01 s เป็น 0.1 s แรงลดลงเหลือหนึ่งในสิบ ทั้งที่โมเมนตัมที่เปลี่ยนไปเท่าเดิม'
+    widget:
+      kind: function-plot
+      functions: ['\frac{p}{x}']
+      sliders:
+        - { name: p, min: 1, max: 20, step: 1, value: 6, label: Δp (kg·m/s) }
+      x: [0, 0.5]
+      y: [0, 600]
+  - type: simulation
+    title: ห้องทดลองการชน (PhET Collision Lab)
+    url: https://phet.colorado.edu/en/simulations/collision-lab
+    provider: phet
+    note: เปิดการแสดงเวกเตอร์โมเมนตัม แล้วลองให้ลูกบอลมวลต่างกันเคลื่อนที่ด้วยความเร็วต่าง ๆ สังเกตว่าลูกที่มวลมากแม้เคลื่อนที่ช้าก็มีลูกศรโมเมนตัมยาวได้ และโมเมนตัมของแต่ละลูกเปลี่ยนไปเท่าใดหลังชน
+glossary:
+  - { term: โมเมนตัม (p), definition: 'ผลคูณของมวลกับความเร็ว $p = mv$ เป็นปริมาณเวกเตอร์ หน่วย $\mathrm{kg \cdot m/s}$' }
+  - { term: การดล (impulse), definition: 'ผลคูณของแรงเฉลี่ยกับเวลาที่แรงกระทำ $F\Delta t$ เท่ากับโมเมนตัมที่เปลี่ยนไป หน่วย $\mathrm{N \cdot s}$' }
+  - { term: แรงเฉลี่ย, definition: 'แรงคงตัวที่ให้การดลเท่ากับแรงจริงในช่วงเวลาเดียวกัน $F = \tfrac{\Delta p}{\Delta t}$' }
+flashcards:
+  - { front: 'สูตรโมเมนตัมและการดล', back: '$p = mv$ และ $F\Delta t = \Delta p = mv - mu$' }
+  - { front: '$\mathrm{N \cdot s}$ กับ $\mathrm{kg \cdot m/s}$ ต่างกันหรือไม่', back: 'เท่ากัน เพราะ $1\ \mathrm{N} = 1\ \mathrm{kg \cdot m/s^2}$ คูณด้วย $\mathrm{s}$ ได้ $\mathrm{kg \cdot m/s}$' }
+  - { front: 'ถุงลมนิรภัยลดแรงกระแทกได้อย่างไร', back: 'โมเมนตัมที่เปลี่ยนไปเท่าเดิม แต่ถุงลมเพิ่มเวลาที่ใช้หยุด $\Delta t$ แรงเฉลี่ย $\tfrac{\Delta p}{\Delta t}$ จึงลดลง' }
+  - { front: 'ลูกบอลมวล $0.5\ \mathrm{kg}$ ชนกำแพงด้วย $6\ \mathrm{m/s}$ กระดอนกลับ $4\ \mathrm{m/s}$ โมเมนตัมเปลี่ยนไปเท่าใด', back: 'ขนาด $0.5 \times (6 + 4) = 5\ \mathrm{kg \cdot m/s}$ เพราะทิศกลับ ต้องรวมขนาดของความเร็วทั้งสอง' }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

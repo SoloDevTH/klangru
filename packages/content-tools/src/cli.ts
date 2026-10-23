@@ -4,6 +4,8 @@ import { parse } from "yaml";
 import { fileURLToPath } from "node:url";
 import { fetchMolecules, moleculeCids } from "./assets.ts";
 import { buildPacks } from "./build.ts";
+import { applySuggestions, MIN_LEARNERS, suggestions, type ProblemStat } from "./calibrate.ts";
+import { approveDrafts, buildDraftRequest, draftProblems, toProblems, writeDrafts } from "./draft.ts";
 import { loadContent } from "./load.ts";
 import { validate, type Issue } from "./validate.ts";
 
@@ -25,15 +27,64 @@ function report(issues: Issue[]) {
   return { errors: errors.length, warnings: warnings.length };
 }
 
-const commands = ["validate", "build", "fetch-assets"];
+const commands = ["validate", "build", "fetch-assets", "calibrate", "draft", "approve"];
 if (!commands.includes(command)) {
-  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets");
+  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b]");
   process.exit(2);
 }
 
 if (command === "fetch-assets") {
   const fetched = await fetchMolecules(moleculeCids(loadContent(contentDir)), contentDir);
   console.log(fetched.length ? `ดึงไฟล์ใหม่ ${fetched.length} ไฟล์: ${fetched.join(", ")}` : "มีไฟล์ครบแล้ว");
+  process.exit(0);
+}
+
+if (command === "draft" || command === "approve") {
+  const rel = flags.find((f) => !f.startsWith("--"));
+  const { content } = validate(loadContent(contentDir));
+  const entry = content.topics.find((t) => t.rel === rel);
+  if (!rel || !entry) {
+    console.error(`ไม่พบหัวข้อในโฟลเดอร์ "${rel ?? ""}" (ใช้รูป วิชา/โฟลเดอร์ เช่น math/fractions)`);
+    process.exit(2);
+  }
+  if (command === "approve") {
+    const ids = flags.find((f) => f.startsWith("--ids="))?.slice(6).split(",");
+    const moved = approveDrafts(contentDir, rel, ids);
+    console.log(`ย้ายเข้าคลังแล้ว ${moved.length} ข้อ: ${moved.join(", ")}\nรัน npm run validate แล้วเปิด Pull Request ให้ผู้ตรวจอีกคนดู`);
+    process.exit(0);
+  }
+  const count = Number(flags.find((f) => f.startsWith("--count="))?.slice(8) ?? 5);
+  const { default: Anthropic } = await import("@anthropic-ai/sdk");
+  const { topic, problems, markdown } = entry;
+  const lesson = topic.lessons.flatMap((b) => (b.type === "explanation" ? [markdown[b.file] ?? ""] : [])).join("\n\n");
+  const prefix = problems[0]?.id.replace(/\.p\d{3}$/, "") ?? topic.id.split(".").slice(0, 2).join(".");
+  const next = Math.max(0, ...problems.map((p) => Number(p.id.slice(-3)))) + 1;
+  console.log(`กำลังร่าง ${count} ข้อสำหรับ ${topic.title.th}…`);
+  const items = await draftProblems(new Anthropic(), buildDraftRequest(topic, lesson, problems.map((p) => p.stem), count));
+  const { problems: drafted, rejected } = toProblems(items, topic.id, prefix, next);
+  const file = writeDrafts(contentDir, rel, drafted);
+  console.log(`ได้ ${drafted.length} ข้อ บันทึกที่ ${file}`);
+  for (const r of rejected) console.log(`  ✗ ตัดทิ้ง: ${r}`);
+  console.log("ขั้นต่อไป: ตรวจและแก้ไฟล์ร่าง แล้วรัน npm run approve -- " + rel);
+  process.exit(0);
+}
+
+if (command === "calibrate") {
+  // ข้อมูลจาก: select * from problem_stats()  (ส่งออกเป็น JSON จาก Supabase SQL editor)
+  const statsFile = flags.find((f) => f.startsWith("--stats="))?.slice(8);
+  if (!statsFile) {
+    console.error("ต้องระบุ --stats=<ไฟล์ JSON ผลจาก problem_stats()>");
+    process.exit(2);
+  }
+  const min = Number(flags.find((f) => f.startsWith("--min="))?.slice(6) ?? MIN_LEARNERS);
+  const stats = JSON.parse(readFileSync(resolve(statsFile), "utf8")) as ProblemStat[];
+  const { content } = validate(loadContent(contentDir));
+  const problems = new Map(content.topics.flatMap((t) => t.problems.map((p) => [p.id, { file: `${t.rel}/problems.yaml`, difficulty: p.difficulty }] as const)));
+  const list = suggestions(stats, problems, min);
+  console.log(`โจทย์ที่มีผู้ทำอย่างน้อย ${min} คน: ${stats.filter((s) => s.learners >= min).length} ข้อ · ระดับไม่ตรงกับข้อมูล: ${list.length} ข้อ`);
+  for (const s of list) console.log(`  ${s.problemId.padEnd(22)} ${s.current} → ${s.suggested}   ถูกครั้งแรก ${(s.p * 100).toFixed(0)}%  b=${s.b.toFixed(2)}  ผู้ทำ ${s.learners}`);
+  if (flags.includes("--write")) console.log(`\nเขียนลงไฟล์แล้ว ${applySuggestions(contentDir, list)} ข้อ ตรวจด้วย git diff ก่อน commit`);
+  else if (list.length) console.log("\nใส่ --write เพื่อเขียนค่าใหม่ลงไฟล์");
   process.exit(0);
 }
 

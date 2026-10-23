@@ -1,0 +1,45 @@
+id: physics.dynamics.forces
+subject: physics
+title: { th: แรงและแผนภาพแรง, en: Forces and free-body diagrams }
+summary: รู้จักแรงในฐานะการดึงหรือผลัก หน่วยนิวตัน ชนิดของแรงที่พบบ่อย การวาดแผนภาพแรง และการหาแรงลัพธ์ของแรงที่อยู่ในแนวเดียวกัน
+difficulty: 3
+minutes: 30
+prerequisites: [physics.units.si]
+encompasses:
+  - { id: physics.units.si, weight: 0.2 }
+  - { id: math.number.integers, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: แรงลัพธ์ของการชักเย่อบนเส้นจำนวน
+    caption: "ให้ทางขวาเป็นบวก ทีมแดงดึงไปทางขวา 300 N (ลูกศร +300) ทีมขาวดึงไปทางซ้าย 250 N (ลูกศร −250) จุดที่ลูกศรสุดท้ายไปหยุดคือแรงลัพธ์ +50 N สังเกตว่าแรงทิศตรงข้ามต้องหักลบกัน ไม่ใช่บวกขนาดเข้าด้วยกัน"
+    widget:
+      kind: number-line
+      min: -100
+      max: 350
+      points:
+        - { value: 0, label: เริ่ม }
+        - { value: 50, label: แรงลัพธ์ +50 N }
+      jumps:
+        - { from: 0, to: 300, label: "ทีมแดง +300 N" }
+        - { from: 300, to: 50, label: "ทีมขาว −250 N" }
+  - type: simulation
+    title: แรงและการเคลื่อนที่ (PhET Forces and Motion Basics)
+    url: https://phet.colorado.edu/en/simulations/forces-and-motion-basics
+    provider: phet
+    note: เปิดหน้าจอ Net Force (ชักเย่อ) วางคนดึงเชือกทั้งสองฝั่ง ติ๊กแสดงผลรวมของแรง (Sum of Forces) แล้วเปรียบเทียบแรงลัพธ์กับการคำนวณแบบใส่เครื่องหมาย ลองจัดให้แรงลัพธ์เป็นศูนย์แล้วกด Go ดูว่าเกวียนขยับหรือไม่
+glossary:
+  - { term: แรง, definition: "การดึงหรือการผลักที่วัตถุหนึ่งกระทำต่ออีกวัตถุหนึ่ง เป็นปริมาณเวกเตอร์ มีหน่วยนิวตัน ($\\mathrm{N}$)" }
+  - { term: นิวตัน (N), definition: "หน่วยของแรงในระบบ SI เท่ากับ $1\\ \\mathrm{kg \\cdot m/s^2}$" }
+  - { term: แผนภาพแรง, definition: "ภาพที่แยกวัตถุชิ้นเดียวออกมาแล้ววาดลูกศรแทนทุกแรงที่กระทำต่อวัตถุนั้น (free-body diagram)" }
+  - { term: แรงลัพธ์, definition: "ผลรวมแบบเวกเตอร์ของแรงทุกแรงที่กระทำต่อวัตถุ เขียนเป็น $\\Sigma F$ หรือ $F_\\text{net}$" }
+flashcards:
+  - { front: "หน่วยของแรงในระบบ SI คืออะไร", back: "นิวตัน ($\\mathrm{N}$) โดย $1\\ \\mathrm{N} = 1\\ \\mathrm{kg \\cdot m/s^2}$ ส่วนกิโลกรัมเป็นหน่วยของมวล" }
+  - { front: "หาแรงลัพธ์ของแรงในแนวเดียวกันอย่างไร", back: "เลือกทิศบวก ใส่เครื่องหมาย $+$ หรือ $-$ ให้แต่ละแรงตามทิศ แล้วบวกกันทั้งหมด" }
+  - { front: "แผนภาพแรงของหนังสือที่วางบนโต๊ะมีแรงอะไรบ้าง", back: "น้ำหนักชี้ลง และแรงตั้งฉากจากโต๊ะชี้ขึ้น (ไม่ใส่แรงที่หนังสือกดโต๊ะ เพราะแรงนั้นกระทำต่อโต๊ะ)" }
+  - { front: "ยกตัวอย่างแรงไม่สัมผัส", back: "แรงโน้มถ่วง แรงแม่เหล็ก แรงไฟฟ้า กระทำได้แม้วัตถุไม่แตะกัน" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
