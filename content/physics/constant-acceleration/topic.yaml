@@ -1,0 +1,32 @@
+id: physics.kinematics.constant-acceleration
+subject: physics
+title: { th: การเคลื่อนที่ด้วยความเร่งคงตัว, en: Motion with constant acceleration }
+summary: ใช้สมการ 4 สมการของการเคลื่อนที่แนวตรงด้วยความเร่งคงตัว เลือกสมการจากตัวแปรที่รู้และไม่รู้ และนำไปใช้กับการตกอิสระ
+difficulty: 4.2
+minutes: 40
+prerequisites: [physics.kinematics.acceleration, math.algebra.rearrange-formula]
+encompasses:
+  - { id: physics.kinematics.acceleration, weight: 0.5 }
+  - { id: physics.kinematics.velocity, weight: 0.2 }
+  - { id: math.algebra.rearrange-formula, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: การเคลื่อนที่แบบโพรเจกไทล์ (PhET Projectile Motion)
+    url: https://phet.colorado.edu/en/simulations/projectile-motion
+    provider: phet
+    note: ยิงวัตถุในแนวระดับจากความสูงเดิมด้วยอัตราเร็วต่าง ๆ แล้ววัดเวลาที่ตกถึงพื้น เวลาจะเท่าเดิมทุกครั้ง เพราะการเคลื่อนที่แนวดิ่งเป็นการตกอิสระด้วยความเร่ง g (ในซิมกำหนด g = 9.81 m/s²)
+glossary:
+  - { term: ความเร่งคงตัว, definition: "ความเร่งที่มีขนาดและทิศเท่าเดิมตลอดการเคลื่อนที่ กราฟความเร็ว–เวลาจึงเป็นเส้นตรง" }
+  - { term: การตกอิสระ, definition: "การเคลื่อนที่ภายใต้แรงโน้มถ่วงเพียงอย่างเดียว (ไม่คิดแรงต้านอากาศ) มีความเร่ง $g \\approx 9.8\\ \\mathrm{m/s^2}$ ทิศลง" }
+  - { term: ความเร่งโน้มถ่วง (g), definition: "ความเร่งของวัตถุที่ตกอิสระใกล้ผิวโลก มีค่าประมาณ $9.8\\ \\mathrm{m/s^2}$ บางตำราปัดเป็น $10\\ \\mathrm{m/s^2}$" }
+flashcards:
+  - { front: "สมการ 4 สมการของความเร่งคงตัว", back: "$v = u + at$, $s = ut + \\tfrac{1}{2}at^2$, $v^2 = u^2 + 2as$, $s = \\tfrac{(u + v)t}{2}$" }
+  - { front: "รู้ $u$, $a$, $s$ ต้องการหา $v$ แต่ไม่รู้เวลา ใช้สมการใด", back: "$v^2 = u^2 + 2as$ เพราะเป็นสมการเดียวที่ไม่มี $t$" }
+  - { front: "ลูกบอลโยนขึ้นถึงจุดสูงสุด ความเร็วและความเร่งเป็นเท่าใด", back: "ความเร็วเป็น 0 ชั่วขณะ แต่ความเร่งยังเป็น $g \\approx 9.8\\ \\mathrm{m/s^2}$ ทิศลง" }
+  - { front: "ปล่อยวัตถุจากหยุดนิ่ง ตกได้ระยะเท่าใดใน 2 วินาที ($g = 9.8\\ \\mathrm{m/s^2}$)", back: "$s = \\tfrac{1}{2}(9.8)(2)^2 = 19.6\\ \\mathrm{m}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

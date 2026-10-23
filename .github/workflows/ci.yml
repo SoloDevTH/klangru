@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: ตรวจเนื้อหา
+        run: npm run validate
+      - name: ตรวจ type
+        run: npm run typecheck && npm run typecheck -w @klangru/web
+      - name: เทสต์
+        run: npm test && npm test -w @klangru/web
+      - name: build เว็บ
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web-static
+          path: apps/web/out

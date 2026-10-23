@@ -1,0 +1,21 @@
+{
+  "name": "klangru",
+  "private": true,
+  "description": "คลังรู้: คลังเนื้อหาและโจทย์ทุกวิชา เรียงตามความยาก (เว็บ + Android)",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "validate": "npm run validate -w @klangru/content-tools --",
+    "build:content": "npm run build -w @klangru/content-tools",
+    "test": "npm test -w @klangru/content-tools",
+    "typecheck": "tsc -p packages/schema && tsc -p packages/content-tools",
+    "dev": "npm run build:content && npm run dev -w @klangru/web",
+    "build": "npm run build:content && npm run build -w @klangru/web"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
