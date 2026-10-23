@@ -1,0 +1,37 @@
+id: math.functions.logarithms
+subject: math
+title: { th: ลอการิทึม, en: Logarithms }
+summary: ลอการิทึมตอบคำถามว่าต้องยกกำลังเท่าใด ใช้สมบัติของลอการิทึม log ฐานสิบ และ ln แก้สมการเอกซ์โพเนนเชียลอย่างง่าย เช่น ฝากเงินกี่ปีจึงได้สองเท่า
+difficulty: 6.5
+minutes: 40
+prerequisites: [math.functions.exponential]
+encompasses:
+  - { id: math.functions.exponential, weight: 0.5 }
+  - { id: math.functions.functions-intro, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: กราฟลอการิทึมเป็นภาพสะท้อนของกราฟเอกซ์โพเนนเชียล
+    caption: "เส้นโค้งที่เพิ่มเร็วคือ y = bˣ เส้นโค้งที่เพิ่มช้าคือ y = log ฐาน b ของ x และเส้นตรงคือ y = x ลองเปลี่ยนฐาน b แล้วสังเกตว่าสองกราฟสะท้อนกันข้ามเส้น y = x เสมอ และกราฟลอการิทึมผ่านจุด (1, 0) ทุกฐาน"
+    widget:
+      kind: function-plot
+      functions: ["b^{x}", "\\frac{\\ln x}{\\ln b}", "x"]
+      sliders:
+        - { name: b, min: 1.5, max: 5, step: 0.5, value: 2, label: ฐาน }
+      x: [-4, 6]
+      y: [-4, 6]
+glossary:
+  - { term: ลอการิทึม, definition: "$\\log_b x$ คือเลขชี้กำลังที่ต้องยก $b$ ขึ้นไปเพื่อให้ได้ $x$ กล่าวคือ $\\log_b x = y$ เมื่อ $b^y = x$" }
+  - { term: ลอการิทึมสามัญ, definition: "ลอการิทึมฐาน 10 เขียนย่อว่า $\\log x$" }
+  - { term: ลอการิทึมธรรมชาติ, definition: "ลอการิทึมฐาน $\\mathrm{e} \\approx 2.718$ เขียนว่า $\\ln x$" }
+flashcards:
+  - { front: "$\\log_b x = y$ เขียนในรูปเลขยกกำลังได้อย่างไร", back: "$b^y = x$" }
+  - { front: "สมบัติผลคูณและผลหารของลอการิทึม", back: "$\\log_b(MN) = \\log_b M + \\log_b N$ และ $\\log_b \\tfrac{M}{N} = \\log_b M - \\log_b N$" }
+  - { front: "สมบัติเลขยกกำลังของลอการิทึม", back: "$\\log_b M^k = k \\log_b M$" }
+  - { front: "$\\log_b 1$ และ $\\log_b b$ เท่ากับเท่าใด", back: "$\\log_b 1 = 0$ และ $\\log_b b = 1$" }
+  - { front: "แก้สมการ $a^x = c$ อย่างไร", back: "ใส่ log ทั้งสองข้าง ได้ $x = \\dfrac{\\log c}{\\log a}$ (ใช้ ln ก็ได้ผลเท่ากัน)" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

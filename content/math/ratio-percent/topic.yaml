@@ -1,0 +1,43 @@
+id: math.number.ratio-percent
+subject: math
+title: { th: อัตราส่วนและร้อยละ, en: Ratio and percentage }
+summary: ใช้อัตราส่วนและสัดส่วนเปรียบเทียบปริมาณ คิดร้อยละ ส่วนลด กำไรขาดทุน และดอกเบี้ยอย่างง่ายจากสถานการณ์ในชีวิตประจำวัน
+difficulty: 2.5
+minutes: 40
+prerequisites: [math.number.fractions, math.number.decimals]
+encompasses:
+  - { id: math.number.fractions, weight: 0.3 }
+  - { id: math.number.decimals, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ราคาเดิมกับราคาหลังลด
+    caption: แกนนอนคือราคาเดิม (บาท) เส้นแรกคือราคาเดิม เส้นที่สองคือราคาหลังลด p% ลองเลื่อน p แล้วสังเกตว่าเส้นราคาหลังลดยังผ่านจุด (0, 0) และเป็นเส้นตรงเสมอ แปลว่าราคาหลังลดเป็นสัดส่วนกับราคาเดิม
+    widget:
+      kind: function-plot
+      functions: ["x", "(1-\\frac{p}{100})x"]
+      sliders:
+        - { name: p, min: 0, max: 90, step: 5, value: 20, label: ส่วนลด (%) }
+      x: [0, 1000]
+      y: [0, 1000]
+  - type: simulation
+    title: สนามเด็กเล่นสัดส่วน (PhET Proportion Playground)
+    url: https://phet.colorado.edu/en/simulations/proportion-playground
+    provider: phet
+    note: ผสมสีด้วยจำนวนหยดสีฟ้าและสีเหลืองในอัตราส่วน 1 ต่อ 2 แล้วลอง 2 ต่อ 4 สีที่ได้จะเหมือนกัน เพราะเป็นอัตราส่วนที่เท่ากัน
+glossary:
+  - { term: อัตราส่วน, definition: "การเปรียบเทียบปริมาณสองปริมาณ เขียนเป็น a : b หรือ a/b เช่น น้ำแดงต่อน้ำเปล่าเป็น 1 : 4" }
+  - { term: สัดส่วน, definition: "ประโยคที่บอกว่าอัตราส่วนสองอัตราส่วนเท่ากัน เช่น 1 : 4 = 3 : 12" }
+  - { term: ร้อยละ, definition: "อัตราส่วนที่เทียบกับ 100 เช่น ร้อยละ 25 หรือ 25% หมายถึง 25 ใน 100" }
+  - { term: ทุน, definition: "ราคาที่ผู้ขายซื้อสินค้ามา กำไรและขาดทุนร้อยละคิดเทียบกับทุนเสมอ" }
+  - { term: ดอกเบี้ยอย่างง่าย, definition: "ดอกเบี้ยที่คิดจากเงินต้นเท่าเดิมทุกปี เท่ากับ เงินต้น × อัตราดอกเบี้ยต่อปี × จำนวนปี" }
+flashcards:
+  - { front: "หา 25% ของ 80", back: "$\\tfrac{25}{100} \\times 80 = 20$" }
+  - { front: "กำไรร้อยละคิดเทียบกับอะไร", back: "เทียบกับทุนเสมอ: กำไรร้อยละ $= \\dfrac{\\text{กำไร}}{\\text{ทุน}} \\times 100$" }
+  - { front: "ลด 20% แล้วลดอีก 10% เท่ากับลดทั้งหมดกี่ %", back: "28% ไม่ใช่ 30% เพราะราคาเหลือ $0.8 \\times 0.9 = 0.72$ ของราคาเดิม" }
+  - { front: "สูตรดอกเบี้ยอย่างง่าย", back: "$I = Prt$ เมื่อ $P$ คือเงินต้น $r$ คืออัตราดอกเบี้ยต่อปี (เป็นทศนิยม) และ $t$ คือจำนวนปี" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

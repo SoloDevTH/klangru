@@ -189,6 +189,8 @@ export const Problem = z.discriminatedUnion("type", [
     prefix: z.string().optional(),
     /** ต้องตอบในรูปที่ไม่มีวงเล็บ (โจทย์ให้กระจาย) */
     expanded: z.boolean().default(false),
+    /** ต้องตอบในรูปผลคูณของตัวประกอบ (โจทย์ให้แยกตัวประกอบ) */
+    factored: z.boolean().default(false),
     misconceptions: z.array(z.object({ match: z.string().min(1), feedback: z.string().min(1) })).default([]),
   }),
   z.object({
@@ -212,6 +214,14 @@ export type LessonBlock = z.infer<typeof LessonBlock>;
 export type Problem = z.infer<typeof Problem>;
 export type Widget = z.infer<typeof Widget>;
 
+/** แฟลชการ์ด (dist/content/flashcards.json) */
+export interface FlashcardDoc {
+  key: string;
+  topic: string;
+  front: string;
+  back: string;
+}
+
 /** เอกสารสำหรับค้นหา (dist/content/search.json) */
 export interface SearchDoc {
   id: string;
@@ -232,6 +242,8 @@ export interface TopicSummary {
   difficulty: number;
   minutes: number;
   prerequisites: string[];
+  /** หัวข้อพื้นฐานที่ได้ทบทวนทางอ้อมเมื่อฝึกหัวข้อนี้ */
+  encompasses: { id: string; weight: number }[];
   /** ลำดับในการเรียงทั้งคลัง (topological order) */
   order: number;
   /** ความลึกในกราฟ: 0 = ไม่มี prerequisite */

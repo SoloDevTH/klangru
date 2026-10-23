@@ -1,0 +1,46 @@
+id: math.functions.coordinate-plane
+subject: math
+title: { th: ระบบพิกัดฉาก, en: The coordinate plane }
+summary: บอกตำแหน่งจุดด้วยคู่อันดับ แยกจตุภาคทั้งสี่ หาระยะทางแนวนอนและแนวตั้ง และเลื่อนขนานหรือสะท้อนจุดในแกน
+difficulty: 2.5
+minutes: 30
+prerequisites: [math.number.integers]
+encompasses:
+  - { id: math.number.integers, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เลื่อนขนานจุดด้วยลูกศร
+    caption: ลูกศรแรกชี้จากจุดกำเนิดไปยังจุด P(3, −2) ลูกศรที่สองคือการเลื่อนไปทางขวา 4 และลง 5 ปลายของลูกศรผลรวมคือจุดภาพ P′(7, −7) ลากปลายลูกศรเพื่อลองจุดและการเลื่อนแบบอื่น แล้วสังเกตว่าพิกัดของจุดภาพได้จากการบวกทีละพิกัด
+    widget:
+      kind: vector-add
+      a: [3, -2]
+      b: [4, -5]
+      draggable: true
+  - type: interactive
+    title: ระยะทางแนวนอนข้ามจุดกำเนิด
+    caption: จุด A(−4, 3) และ B(5, 3) อยู่บนเส้นแนวนอนเดียวกัน ระยะห่างจึงอ่านได้จากพิกัด x บนเส้นจำนวน จาก −4 ไป 5 คือ 9 หน่วย ไม่ใช่ 1 หน่วย
+    widget:
+      kind: number-line
+      min: -6
+      max: 6
+      points:
+        - { value: -4, label: A }
+        - { value: 5, label: B }
+      jumps:
+        - { from: -4, to: 5, label: "9 หน่วย" }
+glossary:
+  - { term: คู่อันดับ, definition: "คู่ของจำนวน $(x, y)$ ที่ลำดับมีความหมาย ตัวแรกคือพิกัด $x$ ตัวหลังคือพิกัด $y$" }
+  - { term: จุดกำเนิด, definition: "จุดที่แกน $x$ ตัดกับแกน $y$ มีพิกัด $(0, 0)$" }
+  - { term: จตุภาค, definition: "หนึ่งในสี่ส่วนของระนาบที่แกนทั้งสองแบ่งไว้ นับทวนเข็มนาฬิกาจากมุมขวาบน" }
+  - { term: การเลื่อนขนาน, definition: "การย้ายทุกจุดไปในทิศเดียวกันด้วยระยะเท่ากัน โดยไม่หมุนและไม่เปลี่ยนขนาด" }
+flashcards:
+  - { front: "จุด $(-3, 2)$ อยู่ในจตุภาคใด", back: "จตุภาคที่ 2 เพราะ $x < 0$ และ $y > 0$" }
+  - { front: "สะท้อน $(x, y)$ ในแกน $x$ ได้จุดใด", back: "$(x, -y)$ พิกัด $y$ เปลี่ยนเครื่องหมาย" }
+  - { front: "สะท้อน $(x, y)$ ในแกน $y$ ได้จุดใด", back: "$(-x, y)$ พิกัด $x$ เปลี่ยนเครื่องหมาย" }
+  - { front: "ระยะห่างของ $(-4, 3)$ กับ $(5, 3)$", back: "$|5 - (-4)| = 9$ หน่วย" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

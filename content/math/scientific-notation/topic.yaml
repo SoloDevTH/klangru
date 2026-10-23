@@ -1,0 +1,45 @@
+id: math.number.scientific-notation
+subject: math
+title: { th: เลขชี้กำลังลบและสัญกรณ์วิทยาศาสตร์, en: Negative exponents and scientific notation }
+summary: เขียนจำนวนที่ใหญ่มากหรือเล็กมากให้สั้นและอ่านง่ายในรูป a คูณสิบยกกำลัง n แล้วคูณหารจำนวนเหล่านี้โดยจัดการเลขชี้กำลัง
+difficulty: 3
+minutes: 30
+prerequisites: [math.number.exponents, math.number.decimals]
+encompasses:
+  - { id: math.number.exponents, weight: 0.4 }
+  - { id: math.number.decimals, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เลขชี้กำลังของ 10 บนเส้นจำนวน
+    caption: จุดบนเส้นนี้คือเลขชี้กำลัง n ของ 10 ทุกครั้งที่ขยับไปทางซ้าย 1 ช่อง ค่าของ 10 ยกกำลัง n จะถูกหารด้วย 10 สังเกตว่าเลยศูนย์ไปทางลบแล้วค่ายังเป็นบวกเสมอ แค่เล็กลงเรื่อย ๆ
+    widget:
+      kind: number-line
+      min: -4
+      max: 4
+      points:
+        - { value: 3, label: "1000" }
+        - { value: 2, label: "100" }
+        - { value: 1, label: "10" }
+        - { value: 0, label: "1" }
+        - { value: -1, label: "0.1" }
+        - { value: -2, label: "0.01" }
+        - { value: -3, label: "0.001" }
+      jumps:
+        - { from: 1, to: 0, label: "÷10" }
+        - { from: 0, to: -1, label: "÷10" }
+        - { from: -1, to: -2, label: "÷10" }
+glossary:
+  - { term: เลขชี้กำลังลบ, definition: "เลขยกกำลังที่เลขชี้กำลังเป็นจำนวนลบ หมายถึงส่วนกลับ เช่น $10^{-2} = \\dfrac{1}{10^2} = 0.01$" }
+  - { term: สัญกรณ์วิทยาศาสตร์, definition: "การเขียนจำนวนในรูป $a \\times 10^{n}$ เมื่อ $1 \\le a < 10$ และ $n$ เป็นจำนวนเต็ม" }
+  - { term: สัมประสิทธิ์, definition: "ตัวเลข $a$ ที่อยู่หน้า $10^{n}$ ในสัญกรณ์วิทยาศาสตร์ ต้องมีค่าตั้งแต่ 1 แต่น้อยกว่า 10" }
+flashcards:
+  - { front: "$a^{-n}$ เท่ากับเท่าใด", back: "$\\dfrac{1}{a^{n}}$ (เมื่อ $a \\ne 0$) เช่น $2^{-3} = \\dfrac{1}{8}$ ค่ายังเป็นบวก ไม่ได้กลายเป็นลบ" }
+  - { front: "รูปสัญกรณ์วิทยาศาสตร์มีเงื่อนไขอะไร", back: "$a \\times 10^{n}$ โดย $1 \\le a < 10$ และ $n$ เป็นจำนวนเต็ม" }
+  - { front: "$(a \\times 10^{m})(b \\times 10^{n})$ คิดอย่างไร", back: "คูณสัมประสิทธิ์ $a \\times b$ แล้วบวกเลขชี้กำลัง $m + n$ ถ้าสัมประสิทธิ์เกิน 10 ให้ปรับรูปใหม่" }
+  - { front: "เขียน $0.004$ ในสัญกรณ์วิทยาศาสตร์", back: "$4 \\times 10^{-3}$ (เลื่อนจุดทศนิยมไปทางขวา 3 ตำแหน่ง)" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

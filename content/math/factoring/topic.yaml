@@ -1,0 +1,46 @@
+id: math.algebra.factoring
+subject: math
+title: { th: การแยกตัวประกอบของพหุนาม, en: Factoring polynomials }
+summary: เขียนพหุนามดีกรีสองให้อยู่ในรูปผลคูณ ด้วยการดึงตัวร่วม การหาคู่จำนวน ผลต่างกำลังสอง และกำลังสองสมบูรณ์
+difficulty: 4.5
+minutes: 35
+prerequisites: [math.algebra.polynomials, math.number.factors-multiples]
+encompasses:
+  - { id: math.algebra.polynomials, weight: 0.5 }
+  - { id: math.number.factors-multiples, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: หา p กับ q ที่ทำให้กราฟสองเส้นทับกัน
+    caption: เส้นแรกคือ x² + bx + c เส้นที่สองคือ (x + p)(x + q) เลื่อน p กับ q จนกราฟทับกันสนิท แล้วสังเกตว่า p + q เท่ากับ b และ pq เท่ากับ c เสมอ
+    widget:
+      kind: function-plot
+      functions: ["x^2 + b x + c", "(x + p)(x + q)"]
+      sliders:
+        - { name: b, min: -8, max: 8, step: 1, value: 5, label: สัมประสิทธิ์ของ x }
+        - { name: c, min: -12, max: 12, step: 1, value: 6, label: ค่าคงตัว }
+        - { name: p, min: -6, max: 6, step: 1, value: 1 }
+        - { name: q, min: -6, max: 6, step: 1, value: 1 }
+      x: [-8, 4]
+      y: [-6, 10]
+  - type: simulation
+    title: แบบจำลองพื้นที่กับพีชคณิต (PhET Area Model Algebra)
+    url: https://phet.colorado.edu/en/simulations/area-model-algebra
+    provider: phet
+    note: ดูว่าผลคูณของพหุนามสองตัวคือพื้นที่ของสี่เหลี่ยมผืนผ้า การแยกตัวประกอบคือการหาด้านกว้างและยาวจากพื้นที่ที่รู้
+glossary:
+  - { term: การแยกตัวประกอบ, definition: "การเขียนพหุนามให้อยู่ในรูปผลคูณของพหุนามที่มีดีกรีต่ำกว่า เช่น $x^2 + 5x + 6 = (x + 2)(x + 3)$" }
+  - { term: ตัวร่วม, definition: "นิพจน์ที่หารทุกพจน์ลงตัว ตัวร่วมที่มากที่สุดคือ ห.ร.ม. ของทุกพจน์" }
+  - { term: ผลต่างกำลังสอง, definition: "นิพจน์รูป $a^2 - b^2$ ซึ่งแยกได้เป็น $(a + b)(a - b)$" }
+  - { term: กำลังสองสมบูรณ์, definition: "พหุนามรูป $a^2 \\pm 2ab + b^2$ ซึ่งเท่ากับ $(a \\pm b)^2$" }
+flashcards:
+  - { front: "แยกตัวประกอบ $x^2 + bx + c$ อย่างไร", back: "หาจำนวน $p, q$ ที่ $pq = c$ และ $p + q = b$ แล้วเขียน $(x + p)(x + q)$" }
+  - { front: "$a^2 - b^2$ แยกตัวประกอบได้เป็น", back: "$(a + b)(a - b)$" }
+  - { front: "$x^2 + 10x + 25$ เป็นกำลังสองสมบูรณ์หรือไม่", back: "เป็น เพราะ $2 \\times x \\times 5 = 10x$ จึงเท่ากับ $(x + 5)^2$" }
+  - { front: "ขั้นแรกของการแยกตัวประกอบทุกครั้งคืออะไร", back: "ดึงตัวร่วม (ห.ร.ม. ของทุกพจน์) ออกก่อน" }
+  - { front: "ตรวจคำตอบการแยกตัวประกอบอย่างไร", back: "กระจายผลคูณกลับ ต้องได้พหุนามเดิม" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

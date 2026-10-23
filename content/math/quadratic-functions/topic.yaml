@@ -1,0 +1,44 @@
+id: math.functions.quadratic
+subject: math
+title: { th: ฟังก์ชันกำลังสอง, en: Quadratic functions }
+summary: วาดและอ่านกราฟพาราโบลาของฟังก์ชันกำลังสอง หาจุดยอด แกนสมมาตร ค่าสูงสุดหรือต่ำสุด แล้วใช้แก้โจทย์หากำไรมากที่สุดหรือพื้นที่มากที่สุด
+difficulty: 5.5
+minutes: 35
+prerequisites: [math.functions.functions-intro, math.algebra.quadratic-eq]
+encompasses:
+  - { id: math.functions.functions-intro, weight: 0.3 }
+  - { id: math.algebra.quadratic-eq, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ลองเปลี่ยน a, h, k แล้วดูพาราโบลา
+    caption: "กราฟคือ y = a(x − h)² + k สังเกตว่า a เป็นบวกพาราโบลาหงาย เป็นลบพาราโบลาคว่ำ ส่วน h และ k เลื่อนจุดยอดไปที่ (h, k) โดยรูปร่างไม่เปลี่ยน"
+    widget:
+      kind: function-plot
+      functions: ["a\\cdot(x-h)^2+k"]
+      sliders:
+        - { name: a, min: -3, max: 3, step: 0.5, value: 1, label: ความกว้างและทิศ }
+        - { name: h, min: -4, max: 4, step: 1, value: 0, label: เลื่อนซ้ายขวา }
+        - { name: k, min: -4, max: 4, step: 1, value: 0, label: เลื่อนขึ้นลง }
+      x: [-6, 6]
+      y: [-6, 6]
+  - type: simulation
+    title: กราฟฟังก์ชันกำลังสอง (PhET Graphing Quadratics)
+    url: https://phet.colorado.edu/en/simulations/graphing-quadratics
+    provider: phet
+    note: เปิดโหมด Vertex Form แล้วเลื่อนค่า a, h, k ดูว่าจุดยอดและแกนสมมาตรเปลี่ยนไปอย่างไร จากนั้นเปิดโหมด Standard Form แล้วเทียบตำแหน่งแกนสมมาตรกับสูตร x = −b/2a
+glossary:
+  - { term: ฟังก์ชันกำลังสอง, definition: "ฟังก์ชันรูป $f(x) = ax^2 + bx + c$ เมื่อ $a \\ne 0$" }
+  - { term: พาราโบลา, definition: "กราฟของฟังก์ชันกำลังสอง มีรูปโค้งคล้ายตัว U หงายหรือคว่ำ" }
+  - { term: จุดยอด, definition: "จุดต่ำสุดของพาราโบลาหงาย หรือจุดสูงสุดของพาราโบลาคว่ำ" }
+  - { term: แกนสมมาตร, definition: "เส้นตั้งที่ผ่านจุดยอด แบ่งพาราโบลาเป็นสองซีกที่เหมือนกันเหมือนภาพในกระจก" }
+flashcards:
+  - { front: "แกนสมมาตรของ $y = ax^2 + bx + c$", back: "$x = -\\dfrac{b}{2a}$" }
+  - { front: "จุดยอดของ $y = a(x - h)^2 + k$", back: "$(h, k)$ ระวังเครื่องหมาย: $(x + 2)^2$ หมายถึง $h = -2$" }
+  - { front: "รู้ได้อย่างไรว่าพาราโบลามีค่าสูงสุดหรือต่ำสุด", back: "$a > 0$ พาราโบลาหงาย มีค่าต่ำสุด, $a < 0$ พาราโบลาคว่ำ มีค่าสูงสุด" }
+  - { front: "หาค่าสูงสุดหรือต่ำสุดของ $y = ax^2 + bx + c$", back: "หา $x = -\\tfrac{b}{2a}$ แล้วแทนกลับในฟังก์ชัน ค่า $y$ ที่ได้คือคำตอบ" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

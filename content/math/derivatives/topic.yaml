@@ -1,0 +1,43 @@
+id: math.calculus.derivative
+subject: math
+title: { th: อนุพันธ์ของพหุนาม, en: Derivatives of polynomials }
+summary: ใช้กฎยกกำลังหาอนุพันธ์ของพหุนาม แล้วนำไปหาความชันเส้นสัมผัส จุดสูงสุดหรือต่ำสุด และความเร็วของวัตถุ
+difficulty: 7
+minutes: 40
+prerequisites: [math.calculus.rate-of-change, math.algebra.polynomials]
+encompasses:
+  - { id: math.calculus.rate-of-change, weight: 0.5 }
+  - { id: math.algebra.polynomials, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เส้นสัมผัสกราฟ y = x³ − 3x
+    caption: เลื่อน a เพื่อย้ายจุดสัมผัส สังเกตว่าเส้นสัมผัสนอนราบ (ความชันเป็น 0) ที่ a = −1 ซึ่งเป็นจุดสูงสุด และที่ a = 1 ซึ่งเป็นจุดต่ำสุด
+    widget:
+      kind: function-plot
+      functions: ["x^3-3x", "(3a^2-3)(x-a)+a^3-3a"]
+      sliders:
+        - { name: a, min: -2.5, max: 2.5, step: 0.1, value: 0.5, label: ตำแหน่งจุดสัมผัส a }
+      x: [-3, 3]
+      y: [-5, 5]
+  - type: simulation
+    title: วาดกราฟแล้วดูกราฟอนุพันธ์ (PhET Calculus Grapher)
+    url: https://phet.colorado.edu/en/simulations/calculus-grapher
+    provider: phet
+    note: ลองวาดกราฟที่มียอดเขาและก้นหุบ แล้วสังเกตว่ากราฟอนุพันธ์ตัดแกน x ตรงตำแหน่งยอดเขาและก้นหุบพอดี
+glossary:
+  - { term: อนุพันธ์, definition: "ฟังก์ชันที่บอกความชันของเส้นสัมผัสกราฟ $f$ ที่แต่ละจุด เขียนว่า $f'(x)$ หรือ $\\frac{dy}{dx}$" }
+  - { term: กฎยกกำลัง, definition: "อนุพันธ์ของ $x^n$ คือ $n x^{n-1}$" }
+  - { term: เส้นสัมผัส, definition: "เส้นตรงที่แตะกราฟที่จุด $(a, f(a))$ และมีความชัน $f'(a)$" }
+  - { term: จุดวิกฤต, definition: "จุดที่ $f'(x) = 0$ เส้นสัมผัสนอนราบ อาจเป็นจุดสูงสุดหรือต่ำสุดสัมพัทธ์" }
+flashcards:
+  - { front: "อนุพันธ์ของ $x^n$", back: "$n x^{n-1}$ (นำเลขชี้กำลังลงมาคูณ แล้วลดลง 1)" }
+  - { front: "อนุพันธ์ของค่าคงตัว เช่น 7", back: "0 เพราะกราฟ $y = 7$ เป็นเส้นนอน" }
+  - { front: "สมการเส้นสัมผัสที่ $x = a$", back: "$y - f(a) = f'(a)(x - a)$" }
+  - { front: "จะรู้ได้อย่างไรว่าจุดที่ $f'(x) = 0$ เป็นจุดสูงสุด", back: "$f'$ เปลี่ยนจากบวกเป็นลบเมื่อผ่านจุดนั้น (กราฟขึ้นแล้วลง)" }
+  - { front: "ความเร็วกับตำแหน่งสัมพันธ์กันอย่างไร", back: "ความเร็ว $v(t) = s'(t)$ คืออนุพันธ์ของตำแหน่งเทียบกับเวลา" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

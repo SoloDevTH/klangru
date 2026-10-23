@@ -1,0 +1,39 @@
+id: math.functions.exponential
+subject: math
+title: { th: ฟังก์ชันเอกซ์โพเนนเชียล, en: Exponential functions }
+summary: ฟังก์ชันที่ตัวแปรอยู่ที่เลขชี้กำลัง ใช้อธิบายสิ่งที่เพิ่มหรือลดเป็นเท่าตัวทุกช่วงเวลา เช่น การเพิ่มของแบคทีเรีย ค่าเสื่อมราคา และดอกเบี้ยทบต้น
+difficulty: 6
+minutes: 35
+prerequisites: [math.functions.functions-intro, math.algebra.exponent-laws]
+encompasses:
+  - { id: math.functions.functions-intro, weight: 0.3 }
+  - { id: math.algebra.exponent-laws, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ลองเปลี่ยนค่า a และ b ในกราฟ y = a·bˣ
+    caption: "เมื่อ b มากกว่า 1 กราฟเพิ่มขึ้นเร็วขึ้นเรื่อย ๆ (การเติบโต) เมื่อ b อยู่ระหว่าง 0 กับ 1 กราฟลดลงเข้าใกล้แกน x แต่ไม่แตะ (การสลาย) และกราฟตัดแกน y ที่ค่า a เสมอ"
+    widget:
+      kind: function-plot
+      functions: ["a\\cdot b^{x}"]
+      sliders:
+        - { name: a, min: 0.5, max: 3, step: 0.5, value: 1, label: ค่าเริ่มต้น }
+        - { name: b, min: 0.25, max: 3, step: 0.25, value: 2, label: ตัวคูณต่อหนึ่งหน่วย x }
+      x: [-4, 4]
+      y: [-1, 10]
+glossary:
+  - { term: ฟังก์ชันเอกซ์โพเนนเชียล, definition: "ฟังก์ชันรูป $f(x) = a \\cdot b^x$ เมื่อ $a \\ne 0$, $b > 0$ และ $b \\ne 1$" }
+  - { term: การเติบโตแบบเอกซ์โพเนนเชียล, definition: "การเพิ่มขึ้นเป็นจำนวนเท่าเดิมทุกช่วงเวลาที่เท่ากัน เกิดเมื่อ $b > 1$" }
+  - { term: การสลายแบบเอกซ์โพเนนเชียล, definition: "การลดลงเป็นสัดส่วนเท่าเดิมทุกช่วงเวลาที่เท่ากัน เกิดเมื่อ $0 < b < 1$" }
+  - { term: ดอกเบี้ยทบต้น, definition: "ดอกเบี้ยที่คิดจากเงินต้นรวมดอกเบี้ยงวดก่อน ๆ เงินรวมคือ $P(1 + r)^n$" }
+  - { term: ครึ่งชีวิต, definition: "เวลาที่ปริมาณของสารลดลงเหลือครึ่งหนึ่งของปริมาณเดิม" }
+flashcards:
+  - { front: "รูปทั่วไปของฟังก์ชันเอกซ์โพเนนเชียล", back: "$f(x) = a \\cdot b^x$ โดย $a$ คือค่าเริ่มต้น ($f(0) = a$) และ $b$ คือตัวคูณต่อหนึ่งหน่วยของ $x$" }
+  - { front: "ดูอย่างไรว่าเป็นการเติบโตหรือการสลาย", back: "$b > 1$ เติบโต, $0 < b < 1$ สลาย" }
+  - { front: "สูตรดอกเบี้ยทบต้นปีละครั้ง", back: "$A = P(1 + r)^n$ เมื่อ $P$ เงินต้น $r$ อัตราดอกเบี้ยต่อปี $n$ จำนวนปี" }
+  - { front: "เพิ่มขึ้น 15% ต่อปี และลดลง 15% ต่อปี ใช้ตัวคูณเท่าใด", back: "เพิ่ม 15% คูณ 1.15 ทุกปี ลด 15% คูณ 0.85 ทุกปี" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

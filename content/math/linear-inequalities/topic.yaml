@@ -1,0 +1,53 @@
+id: math.algebra.linear-inequalities
+subject: math
+title: { th: อสมการเชิงเส้นตัวแปรเดียว, en: Linear inequalities in one variable }
+summary: แก้อสมการแบบเดียวกับสมการ แต่ต้องกลับเครื่องหมายเมื่อคูณหรือหารด้วยจำนวนลบ เขียนคำตอบบนเส้นจำนวน และใช้กับโจทย์ "ไม่เกิน" และ "อย่างน้อย"
+difficulty: 3.5
+minutes: 30
+prerequisites: [math.algebra.linear-eq]
+encompasses:
+  - { id: math.algebra.linear-eq, weight: 0.5 }
+  - { id: math.algebra.expressions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ทำไมคูณด้วยจำนวนลบแล้วต้องกลับเครื่องหมาย
+    caption: 2 อยู่ทางซ้ายของ 5 จึงได้ 2 < 5 เมื่อคูณทั้งสองจำนวนด้วย −1 จุดทั้งสองถูกสะท้อนข้ามศูนย์ −2 กลับไปอยู่ทางขวาของ −5 ลำดับจึงสลับเป็น −2 > −5
+    widget:
+      kind: number-line
+      min: -6
+      max: 6
+      points:
+        - { value: 2, label: "2" }
+        - { value: 5, label: "5" }
+        - { value: -2, label: "−2" }
+        - { value: -5, label: "−5" }
+      jumps:
+        - { from: 2, to: -2, label: "×(−1)" }
+        - { from: 5, to: -5, label: "×(−1)" }
+  - type: interactive
+    title: อ่านคำตอบของอสมการจากกราฟ
+    caption: เส้นตรงคือ y = ax + b ส่วนเส้นแนวนอนคือ y = c ช่วงของ x ที่เส้นตรงอยู่เหนือเส้นแนวนอนคือคำตอบของ ax + b > c ลองทำให้ a เป็นลบ แล้วดูว่าคำตอบย้ายจากทางขวาไปทางซ้ายของจุดตัด
+    widget:
+      kind: function-plot
+      functions: ["a x + b", "c"]
+      sliders:
+        - { name: a, min: -3, max: 3, step: 0.5, value: -2, label: ความชัน }
+        - { name: b, min: -5, max: 5, step: 1, value: 3 }
+        - { name: c, min: -5, max: 12, step: 1, value: 11, label: ค่าทางขวาของอสมการ }
+      x: [-8, 4]
+      y: [-6, 20]
+glossary:
+  - { term: อสมการ, definition: "ประโยคที่เปรียบเทียบสองนิพจน์ด้วยเครื่องหมาย $<$, $>$, $\\le$ หรือ $\\ge$ หรือ $\\ne$" }
+  - { term: คำตอบของอสมการ, definition: "เซตของจำนวนทั้งหมดที่แทนตัวแปรแล้วทำให้อสมการเป็นจริง มักมีจำนวนมากมายไม่จำกัด" }
+  - { term: วงกลมทึบและวงกลมโปร่ง, definition: "บนเส้นจำนวน วงกลมทึบแปลว่ารวมจุดนั้น (ใช้กับ $\\le$, $\\ge$) วงกลมโปร่งแปลว่าไม่รวมจุดนั้น (ใช้กับ $<$, $>$)" }
+flashcards:
+  - { front: "เมื่อใดต้องกลับเครื่องหมายอสมการ", back: "เมื่อคูณหรือหารทั้งสองข้างด้วยจำนวนลบ การบวกหรือลบจำนวนใด ๆ (แม้เป็นจำนวนลบ) ไม่ต้องกลับ" }
+  - { front: "\"ไม่เกิน 500\" เขียนเป็นอสมการอย่างไร", back: "$\\le 500$ (น้อยกว่าหรือเท่ากับ 500)" }
+  - { front: "\"อย่างน้อย 50\" เขียนเป็นอสมการอย่างไร", back: "$\\ge 50$ (มากกว่าหรือเท่ากับ 50)" }
+  - { front: "แก้ $-3x < 12$", back: "หารด้วย $-3$ และกลับเครื่องหมาย ได้ $x > -4$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

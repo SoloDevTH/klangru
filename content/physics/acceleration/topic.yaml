@@ -15,6 +15,17 @@ lessons:
     url: https://phet.colorado.edu/en/simulations/forces-and-motion-basics
     provider: phet
     note: เปิดหน้าจอ Acceleration ติ๊กแสดง Speed และ Acceleration แล้วออกแรงผลักกล่อง สังเกตว่าเมื่อความเร่งเป็นศูนย์ ความเร็วไม่เปลี่ยน และเมื่อความเร่งมีทิศตรงข้ามกับการเคลื่อนที่ กล่องจะช้าลง
+  - type: interactive
+    title: กราฟความเร็ว–เวลา v = u + at
+    caption: แกนนอนคือเวลา t (s) แกนตั้งคือความเร็ว v (m/s) แถบ u เลื่อนจุดเริ่มของกราฟขึ้นลง ส่วนแถบ a เปลี่ยนความชัน ลองตั้ง a = 0 เส้นจะราบ (ความเร็วคงที่) และลองตั้ง u เป็นบวกแต่ a เป็นลบ จะเห็นความเร็วลดลงจนเป็นศูนย์แล้วติดลบ (วัตถุหยุดแล้วเคลื่อนที่กลับทิศ)
+    widget:
+      kind: function-plot
+      functions: ["u + a x"]
+      sliders:
+        - { name: u, min: -10, max: 20, step: 1, value: 5, label: ความเร็วต้น u (m/s) }
+        - { name: a, min: -4, max: 4, step: 0.5, value: 2, label: ความเร่ง a (m/s²) }
+      x: [0, 10]
+      y: [-20, 30]
 glossary:
   - { term: ความเร่ง, definition: "อัตราการเปลี่ยนความเร็วต่อหนึ่งหน่วยเวลา $a = \\Delta v / \\Delta t$ มีหน่วย $\\mathrm{m/s^2}$ เป็นปริมาณเวกเตอร์" }
   - { term: การหน่วง, definition: "การที่วัตถุเคลื่อนที่ช้าลง เกิดเมื่อความเร่งมีทิศตรงข้ามกับความเร็ว" }

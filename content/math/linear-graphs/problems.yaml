@@ -1,0 +1,232 @@
+problems:
+  - id: math.lgr.p001
+    topics: [math.functions.linear-graphs]
+    difficulty: 1
+    type: mcq
+    stem: "เส้นตรง $y = 3x - 4$ มีความชันและระยะตัดแกน $y$ เท่าใด"
+    choices:
+      - { id: a, text: "ความชัน $3$ ระยะตัดแกน $y$ เท่ากับ $-4$", correct: true }
+      - { id: b, text: "ความชัน $-4$ ระยะตัดแกน $y$ เท่ากับ $3$", feedback: "สลับกัน ในรูป $y = mx + c$ ความชันคือตัวเลขที่คูณ $x$ ส่วนค่าคงตัวคือระยะตัดแกน $y$" }
+      - { id: c, text: "ความชัน $3$ ระยะตัดแกน $y$ เท่ากับ $4$", feedback: "เครื่องหมายหาย $y = 3x - 4$ คือ $y = 3x + (-4)$ จึงตัดแกน $y$ ที่ $-4$" }
+      - { id: d, text: "ความชัน $3$ ระยะตัดแกน $y$ เท่ากับ $\\tfrac{4}{3}$", feedback: "$\\tfrac43$ คือจุดที่เส้นตัดแกน $x$ (ตอน $y = 0$) ระยะตัดแกน $y$ คือค่า $y$ ตอน $x = 0$" }
+    hints:
+      - "เทียบกับรูป $y = mx + c$"
+      - "ระยะตัดแกน $y$ คือค่า $y$ เมื่อแทน $x = 0$"
+    solution: "$y = 3x - 4$ อยู่ในรูป $y = mx + c$ โดย $m = 3$ และ $c = -4$ แทน $x = 0$ ได้ $y = -4$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p002
+    topics: [math.functions.linear-graphs]
+    difficulty: 1
+    type: numeric
+    stem: "ร้านเช่าจักรยานที่เกาะเกร็ดคิดค่าเช่าตามสมการ $y = 20x + 30$ เมื่อ $y$ เป็นเงิน (บาท) และ $x$ เป็นจำนวนชั่วโมง ถ้าเช่า 3 ชั่วโมง ต้องจ่ายกี่บาท (ตอบเป็นตัวเลขในหน่วยบาท)"
+    answer: { value: 90, unit: บาท }
+    hints:
+      - "แทน $x = 3$ ลงในสมการ"
+      - "คูณก่อนบวก: $20 \\times 3$ แล้วจึงบวก 30"
+    misconceptions:
+      - { match: 60, feedback: "นั่นคือค่าเช่า 3 ชั่วโมงอย่างเดียว ยังต้องบวกค่ามัดจำ 30 บาท ซึ่งเป็นระยะตัดแกน $y$" }
+      - { match: 150, feedback: "นั่นคือ $(20 + 30) \\times 3$ ค่ามัดจำ 30 บาทจ่ายครั้งเดียว ไม่ได้คูณด้วยจำนวนชั่วโมง ต้องคูณก่อนบวก" }
+    solution: "$y = 20(3) + 30 = 60 + 30 = 90$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p003
+    topics: [math.functions.linear-graphs]
+    difficulty: 2
+    type: numeric
+    stem: "หาความชันของเส้นตรงที่ผ่านจุด $(1, 2)$ และ $(4, 11)$"
+    answer: { value: 3 }
+    hints:
+      - "ความชัน = ระยะขึ้นลง ÷ ระยะตามแนวนอน"
+      - "$m = \\dfrac{y_2 - y_1}{x_2 - x_1}$"
+    misconceptions:
+      - { match: 0.333, feedback: "สลับเศษกับส่วน ความชันคือผลต่างของ $y$ หารด้วยผลต่างของ $x$ ไม่ใช่กลับกัน" }
+    solution: "$m = \\dfrac{11 - 2}{4 - 1} = \\dfrac{9}{3} = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p004
+    topics: [math.functions.linear-graphs]
+    difficulty: 2
+    type: numeric
+    stem: "หาความชันของเส้นตรงที่ผ่านจุด $(-2, 5)$ และ $(2, -3)$"
+    answer: { value: -2 }
+    hints:
+      - "ใช้ $m = \\dfrac{y_2 - y_1}{x_2 - x_1}$ และลบลำดับเดียวกันทั้งเศษและส่วน"
+      - "ระวังการลบจำนวนลบ: $2 - (-2) = 4$"
+    misconceptions:
+      - { match: 2, feedback: "เครื่องหมายผิด เส้นนี้ลาดลง ($y$ ลดจาก 5 เหลือ $-3$ ขณะที่ $x$ เพิ่ม) ความชันจึงต้องเป็นลบ ตรวจว่าลบลำดับเดียวกันทั้งเศษและส่วน" }
+      - { match: -0.5, feedback: "สลับเศษกับส่วน ผลต่างของ $y$ ต้องอยู่ข้างบน" }
+    solution: "$m = \\dfrac{-3 - 5}{2 - (-2)} = \\dfrac{-8}{4} = -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p005
+    topics: [math.functions.linear-graphs]
+    difficulty: 3
+    type: expression
+    stem: "หาสมการเส้นตรงที่มีความชัน 2 และผ่านจุด $(1, 5)$"
+    prefix: "y ="
+    answer: { latex: "2x+3", variables: [x] }
+    hints:
+      - "เริ่มจาก $y = 2x + c$"
+      - "แทนพิกัดของจุด $(1, 5)$ เพื่อหา $c$"
+    misconceptions:
+      - { match: "2x+5", feedback: "$c$ ไม่ใช่พิกัด $y$ ของจุดที่ให้มา $c$ คือค่า $y$ เมื่อ $x = 0$ ให้แทน $(1, 5)$ ใน $y = 2x + c$ แล้วแก้หา $c$" }
+      - { match: "2x+7", feedback: "ลองแทน $x = 1$ ในคำตอบ จะได้ $y = 9$ ไม่ใช่ 5 จาก $5 = 2(1) + c$ ต้องลบ 2 ทั้งสองข้าง" }
+    solution: "$5 = 2(1) + c$ → $c = 3$ จึงได้ $y = 2x + 3$ ตรวจ: $x = 1$ ได้ $y = 5$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p006
+    topics: [math.functions.linear-graphs]
+    difficulty: 3
+    type: expression
+    stem: "หาสมการเส้นตรงที่ผ่านจุด $(0, -1)$ และ $(2, 3)$"
+    prefix: "y ="
+    answer: { latex: "2x-1", variables: [x] }
+    hints:
+      - "จุด $(0, -1)$ อยู่บนแกน $y$ จึงบอกระยะตัดแกน $y$ ทันที"
+      - "หาความชันจากสองจุดด้วย $\\dfrac{y_2 - y_1}{x_2 - x_1}$"
+    misconceptions:
+      - { match: "\\frac{1}{2}x-1", feedback: "ความชันกลับเศษเป็นส่วน ต้องเป็นผลต่างของ $y$ หารด้วยผลต่างของ $x$: $\\dfrac{3 - (-1)}{2 - 0}$" }
+      - { match: "2x+1", feedback: "เครื่องหมายของระยะตัดแกน $y$ ผิด เส้นผ่าน $(0, -1)$ จึงตัดแกน $y$ ที่ $-1$" }
+    solution: "$c = -1$ เพราะผ่าน $(0, -1)$ และ $m = \\dfrac{3 - (-1)}{2 - 0} = 2$ จึงได้ $y = 2x - 1$ ตรวจ: $x = 2$ ได้ $y = 3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p007
+    topics: [math.functions.linear-graphs]
+    difficulty: 3
+    type: match
+    stem: "จับคู่สมการกับลักษณะของกราฟ"
+    pairs:
+      - { left: "$y = 4$", right: "เส้นแนวนอน ความชันเป็น 0" }
+      - { left: "$x = 4$", right: "เส้นแนวตั้ง ไม่มีความชัน" }
+      - { left: "$y = 4x$", right: "ผ่านจุดกำเนิด ความชัน 4" }
+      - { left: "$y = -x + 4$", right: "ลาดลง ตัดแกน $y$ ที่ 4" }
+    hints:
+      - "สมการที่ไม่มี $x$ ให้ค่า $y$ เท่าเดิมทุกจุด และสมการที่ไม่มี $y$ ให้ค่า $x$ เท่าเดิมทุกจุด"
+      - "เทียบสมการที่เหลือกับ $y = mx + c$ แล้วดู $m$ และ $c$"
+    solution: "$y = 4$: ทุกจุดสูง 4 เป็นเส้นแนวนอน $m = 0$ · $x = 4$: ทุกจุดมี $x = 4$ เป็นเส้นแนวตั้ง · $y = 4x$: $c = 0$ ผ่าน $(0, 0)$ และ $m = 4$ · $y = -x + 4$: $m = -1$ ลาดลง และ $c = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p008
+    topics: [math.functions.linear-graphs]
+    difficulty: 3
+    type: mcq
+    multiple: true
+    stem: "เส้นตรงใดขนานกับ $y = -3x + 2$ (เลือกได้มากกว่าหนึ่งข้อ)"
+    choices:
+      - { id: a, text: "$y = -3x - 5$", correct: true }
+      - { id: b, text: "$6x + 2y = 7$", correct: true }
+      - { id: c, text: "$y = 3x + 2$", feedback: "ความชันคือ $3$ ไม่ใช่ $-3$ เส้นขนานต้องมีความชันเท่ากันรวมทั้งเครื่องหมาย" }
+      - { id: d, text: "$y = \\tfrac{1}{3}x$", feedback: "$-3 \\times \\tfrac13 = -1$ เส้นนี้ตั้งฉาก ไม่ใช่ขนาน" }
+    hints:
+      - "เส้นขนานมีความชันเท่ากัน"
+      - "สมการที่ยังไม่อยู่ในรูป $y = mx + c$ ให้จัดรูปก่อน แล้วอ่านความชัน"
+    solution: "เส้นเดิมมีความชัน $-3$ · $y = -3x - 5$ มีความชัน $-3$ ✓ · $6x + 2y = 7$ จัดรูปได้ $y = -3x + 3.5$ มีความชัน $-3$ ✓ · $y = 3x + 2$ ความชัน 3 ✗ · $y = \\tfrac13 x$ ตั้งฉาก ✗"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p009
+    topics: [math.functions.linear-graphs]
+    difficulty: 4
+    type: numeric
+    stem: "เส้นตรงที่ตั้งฉากกับ $y = 4x - 1$ มีความชันเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: -0.25, tolerance: 0.0025 }
+    hints:
+      - "เส้นตั้งฉากมีผลคูณของความชันเป็น $-1$"
+      - "แก้ $4 \\times m = -1$"
+    misconceptions:
+      - { match: 0.25, feedback: "กลับเศษเป็นส่วนถูกแล้ว แต่ต้องเปลี่ยนเครื่องหมายด้วย เพราะ $4 \\times 0.25 = 1$ ไม่ใช่ $-1$" }
+      - { match: -4, feedback: "เปลี่ยนเครื่องหมายแล้ว แต่ต้องกลับเศษเป็นส่วนด้วย $4 \\times (-4) = -16$ ไม่ใช่ $-1$" }
+    solution: "$4 \\times m = -1$ จึงได้ $m = -\\dfrac{1}{4} = -0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p010
+    topics: [math.functions.linear-graphs]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านรถรับส่งของในจังหวัดขอนแก่นคิดค่าบริการเป็นเส้นตรงตามระยะทาง กราฟค่าบริการ (บาท) กับระยะทาง (กิโลเมตร) ผ่านจุด $(0, 35)$ และ $(10, 95)$ ความชันของกราฟซึ่งคือค่าบริการต่อกิโลเมตรเป็นกี่บาท (ตอบเป็นตัวเลขในหน่วยบาทต่อกิโลเมตร)"
+    answer: { value: 6, unit: บาท/กม. }
+    hints:
+      - "ความชัน = ผลต่างของค่าบริการ ÷ ผลต่างของระยะทาง"
+      - "ค่าบริการเพิ่มจาก 35 เป็น 95 บาท ขณะที่ระยะทางเพิ่มจาก 0 เป็น 10 กิโลเมตร"
+    misconceptions:
+      - { match: 9.5, feedback: "นั่นคือ $95 \\div 10$ ซึ่งรวมค่าเริ่มต้น 35 บาทไว้ด้วย ความชันต้องใช้ผลต่าง $95 - 35$" }
+      - { match: 0.167, feedback: "สลับเศษกับส่วน ค่าบริการ (แกนตั้ง) ต้องอยู่ข้างบน" }
+    solution: "$m = \\dfrac{95 - 35}{10 - 0} = \\dfrac{60}{10} = 6$ บาทต่อกิโลเมตร (สมการคือ $y = 6x + 35$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p011
+    topics: [math.functions.linear-graphs]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเก็บน้ำบนหลังคาบ้านมีน้ำ 500 ลิตร เปิดก๊อกให้น้ำไหลออกด้วยอัตราคงที่ กราฟปริมาณน้ำ (ลิตร) กับเวลา (นาที) เป็นเส้นตรงผ่าน $(0, 500)$ และ $(20, 300)$ น้ำจะหมดถังเมื่อเวลาผ่านไปกี่นาทีนับจากเริ่มเปิดก๊อก (ตอบเป็นตัวเลขในหน่วยนาที)"
+    answer: { value: 50, unit: นาที }
+    hints:
+      - "หาความชันก่อน ซึ่งคือปริมาณน้ำที่เปลี่ยนต่อนาที (เป็นลบเพราะน้ำลดลง)"
+      - "เขียนสมการ $y = mt + 500$"
+      - "น้ำหมดเมื่อ $y = 0$ แทนแล้วแก้หา $t$"
+    misconceptions:
+      - { match: 30, feedback: "30 นาทีคือเวลาที่เหลือหลังนาทีที่ 20 โจทย์ถามเวลานับจากเริ่มเปิดก๊อก" }
+      - { match: 25, feedback: "ดูเหมือนคิดว่าน้ำไหลออก 20 ลิตรต่อนาที แต่ใน 20 นาทีน้ำลดลง 200 ลิตร จึงไหลออก 10 ลิตรต่อนาที" }
+    solution: "$m = \\dfrac{300 - 500}{20 - 0} = -10$ ลิตรต่อนาที สมการ $y = -10t + 500$ น้ำหมดเมื่อ $0 = -10t + 500$ → $t = 50$ นาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p012
+    topics: [math.functions.linear-graphs]
+    difficulty: 4
+    type: expression
+    stem: "หาสมการเส้นตรงที่ขนานกับ $y = 2x - 7$ และผ่านจุด $(3, 1)$"
+    prefix: "y ="
+    answer: { latex: "2x-5", variables: [x] }
+    hints:
+      - "เส้นขนานมีความชันเท่ากัน ความชันจึงเป็น 2"
+      - "แทน $(3, 1)$ ใน $y = 2x + c$ เพื่อหา $c$"
+    misconceptions:
+      - { match: "-\\frac{1}{2}x+\\frac{5}{2}", feedback: "นั่นคือเส้นที่ตั้งฉาก เส้นขนานต้องใช้ความชันเท่าเดิมคือ 2" }
+      - { match: "2x+1", feedback: "$c$ ไม่ใช่พิกัด $y$ ของจุดที่ให้มา ให้แทน $(3, 1)$ แล้วแก้ $1 = 6 + c$" }
+    solution: "ความชัน 2: $1 = 2(3) + c$ → $c = -5$ จึงได้ $y = 2x - 5$ ตรวจ: $x = 3$ ได้ $y = 1$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p013
+    topics: [math.functions.linear-graphs]
+    difficulty: 5
+    type: expression
+    stem: "หาสมการเส้นตรงที่ตั้งฉากกับ $y = 2x + 1$ และผ่านจุด $(4, 3)$"
+    prefix: "y ="
+    answer: { latex: "-\\frac{1}{2}x+5", variables: [x] }
+    hints:
+      - "ความชันของเส้นตั้งฉากคือกลับเศษเป็นส่วนแล้วเปลี่ยนเครื่องหมาย"
+      - "ความชันที่ต้องการคือ $-\\dfrac12$ แทน $(4, 3)$ ใน $y = -\\dfrac12 x + c$"
+    misconceptions:
+      - { match: "2x-5", feedback: "นั่นคือเส้นที่ขนาน เส้นตั้งฉากต้องมีความชัน $-\\dfrac12$ เพื่อให้ $2 \\times \\left(-\\dfrac12\\right) = -1$" }
+      - { match: "\\frac{1}{2}x+1", feedback: "กลับเศษเป็นส่วนแล้ว แต่ลืมเปลี่ยนเครื่องหมาย ความชันต้องเป็น $-\\dfrac12$" }
+    solution: "ความชันตั้งฉาก $= -\\dfrac12$ แทน $(4, 3)$: $3 = -2 + c$ → $c = 5$ จึงได้ $y = -\\dfrac12 x + 5$ ตรวจ: $x = 4$ ได้ $y = 3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.lgr.p014
+    topics: [math.functions.linear-graphs]
+    difficulty: 5
+    type: numeric
+    stem: "เส้นตรงที่ผ่านจุด $(2, k)$ และ $(6, 11)$ ขนานกับเส้น $y = 3x + 1$ จงหาค่า $k$"
+    answer: { value: -1 }
+    hints:
+      - "เส้นขนานกัน ความชันของเส้นที่ผ่านสองจุดนี้จึงต้องเป็น 3"
+      - "ตั้งสมการ $\\dfrac{11 - k}{6 - 2} = 3$"
+      - "คูณ 4 ทั้งสองข้าง แล้วแก้หา $k$"
+    misconceptions:
+      - { match: 23, feedback: "ลบไม่เป็นลำดับเดียวกัน ถ้าเศษเป็น $11 - k$ (จุดที่สองลบจุดแรก) ส่วนต้องเป็น $6 - 2$ ตรวจ: ความชันจาก $(2, 23)$ ไป $(6, 11)$ เป็นลบ" }
+    solution: "$\\dfrac{11 - k}{4} = 3$ → $11 - k = 12$ → $k = -1$ ตรวจ: $\\dfrac{11 - (-1)}{6 - 2} = \\dfrac{12}{4} = 3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

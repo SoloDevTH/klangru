@@ -14,9 +14,14 @@
     "typecheck": "tsc -p packages/schema && tsc -p packages/content-tools",
     "dev": "npm run build:content && npm run dev -w @klangru/web",
     "build": "npm run build:content && npm run build -w @klangru/web",
-    "fetch-assets": "npm run fetch-assets -w @klangru/content-tools"
+    "fetch-assets": "npm run fetch-assets -w @klangru/content-tools",
+    "test:db": "tsx --test supabase/tests/*.test.ts",
+    "check:functions": "cd supabase/functions/tutor && npx -y deno@2.5.6 check --config deno.json index.ts && cd ../delete-account && npx -y deno@2.5.6 check --config deno.json index.ts"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.11"
   }
 }

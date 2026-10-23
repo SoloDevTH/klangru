@@ -1,0 +1,35 @@
+id: math.number.exponents
+subject: math
+title: { th: เลขยกกำลัง, en: Exponents }
+summary: เขียนการคูณซ้ำในรูปเลขยกกำลัง หาค่าเลขยกกำลังที่ฐานเป็นจำนวนลบหรือศูนย์ และคำนวณตามลำดับการดำเนินการที่มีเลขยกกำลังได้ถูกต้อง
+difficulty: 2.5
+minutes: 30
+prerequisites: [math.number.integers]
+encompasses:
+  - { id: math.number.integers, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เลขชี้กำลังคู่กับคี่ เมื่อฐานเป็นลบ
+    caption: กราฟคือ y = x ยกกำลัง n ลองเลื่อน n เป็น 2, 4, 6 แล้วดูฝั่ง x ติดลบ กราฟจะอยู่เหนือแกน x เสมอ (ผลเป็นบวก) แต่เมื่อ n เป็น 1, 3, 5 กราฟฝั่งนั้นจะอยู่ใต้แกน x (ผลเป็นลบ)
+    widget:
+      kind: function-plot
+      functions: ["x^n"]
+      sliders:
+        - { name: n, min: 1, max: 6, step: 1, value: 2, label: เลขชี้กำลัง }
+      x: [-2.5, 2.5]
+      y: [-10, 10]
+glossary:
+  - { term: เลขยกกำลัง, definition: "การเขียนการคูณจำนวนเดียวกันซ้ำ ๆ แบบย่อ เช่น $2 \\times 2 \\times 2 = 2^3$" }
+  - { term: ฐาน, definition: "จำนวนที่ถูกนำมาคูณซ้ำ เช่น ใน $2^3$ ฐานคือ 2" }
+  - { term: เลขชี้กำลัง, definition: "จำนวนที่บอกว่าฐานถูกคูณกี่ตัว เช่น ใน $2^3$ เลขชี้กำลังคือ 3" }
+flashcards:
+  - { front: "$2^3$ เท่ากับ 6 หรือไม่", back: "ไม่ $2^3 = 2 \\times 2 \\times 2 = 8$ ส่วน 6 คือ $2 \\times 3$" }
+  - { front: "$(-3)^2$ กับ $-3^2$ ต่างกันอย่างไร", back: "$(-3)^2 = (-3)(-3) = 9$ แต่ $-3^2 = -(3 \\times 3) = -9$ เพราะยกกำลังก่อนแล้วจึงใส่เครื่องหมายลบ" }
+  - { front: "ฐานเป็นลบ ผลเป็นบวกหรือลบ", back: "เลขชี้กำลังคู่ได้บวก เลขชี้กำลังคี่ได้ลบ เช่น $(-2)^4 = 16$, $(-2)^3 = -8$" }
+  - { front: "ลำดับการดำเนินการเมื่อมีเลขยกกำลัง", back: "วงเล็บ → เลขยกกำลัง → คูณหารจากซ้ายไปขวา → บวกลบจากซ้ายไปขวา" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

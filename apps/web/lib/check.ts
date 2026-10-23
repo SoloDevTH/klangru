@@ -6,7 +6,9 @@ export type Response =
   | { type: "numeric"; input: string }
   | { type: "text"; input: string }
   | { type: "order"; order: string[] }
-  | { type: "match"; mapping: Record<string, string> };
+  | { type: "match"; mapping: Record<string, string> }
+  | { type: "expression"; latex: string }
+  | { type: "hanzi"; mistakes: number; completed: boolean };
 
 export interface CheckResult {
   correct: boolean;
@@ -33,7 +35,8 @@ export function parseNumber(input: string): number | null {
 
 const normText = (s: string) => s.replace(/[−–]/g, "-").replace(/\s+/g, "").toLowerCase();
 
-export function check(problem: Problem, response: Response): CheckResult {
+/** ตรวจคำตอบ (async เพราะโจทย์ชนิด expression โหลดตัวคำนวณสัญลักษณ์เมื่อใช้เท่านั้น) */
+export async function check(problem: Problem, response: Response): Promise<CheckResult> {
   switch (problem.type) {
     case "mcq": {
       if (response.type !== "mcq") break;
@@ -69,6 +72,30 @@ export function check(problem: Problem, response: Response): CheckResult {
       if (response.type !== "match") break;
       if (problem.pairs.some((p) => !response.mapping[p.left])) return { correct: false, invalid: "จับคู่ให้ครบทุกข้อ" };
       return { correct: problem.pairs.every((p) => response.mapping[p.left] === p.right) };
+    }
+    case "expression": {
+      if (response.type !== "expression") break;
+      const { parseLatex, equivalentLatex, hasParentheses, isFactoredForm, stripLeadingAssignment } = await import("@klangru/schema/expression");
+      const target = problem.prefix?.match(/^\s*([A-Za-z])\s*=\s*$/)?.[1];
+      const latex = stripLeadingAssignment(response.latex, target);
+      const parsed = parseLatex(latex);
+      if (!parsed.ok) return { correct: false, invalid: "นิพจน์ยังไม่ครบหรืออ่านไม่ได้ ลองตรวจวงเล็บและเศษส่วน" };
+      const extra = parsed.unknowns.filter((u) => !problem.answer.variables.includes(u));
+      if (extra.length) return { correct: false, invalid: `ใช้ได้เฉพาะตัวแปร ${problem.answer.variables.join(", ") || "(ไม่มีตัวแปร)"} แต่พบ ${extra.join(", ")}` };
+      if (equivalentLatex(latex, problem.answer.latex, problem.answer.variables)) {
+        if (problem.expanded && hasParentheses(latex)) return { correct: false, invalid: "ค่าถูกแล้ว แต่โจทย์ให้กระจายวงเล็บออกให้หมด" };
+        if (problem.factored && !isFactoredForm(latex)) return { correct: false, invalid: "ค่าถูกแล้ว แต่โจทย์ให้เขียนในรูปผลคูณของตัวประกอบ" };
+        return { correct: true };
+      }
+      const m = problem.misconceptions.find((m) => equivalentLatex(latex, m.match, problem.answer.variables));
+      return { correct: false, feedback: m?.feedback };
+    }
+    case "hanzi": {
+      if (response.type !== "hanzi") break;
+      if (!response.completed) return { correct: false, invalid: "เขียนให้ครบทุกขีดก่อน" };
+      return response.mistakes <= problem.max_mistakes
+        ? { correct: true }
+        : { correct: false, feedback: `เขียนผิด ${response.mistakes} ขีด ลองดูลำดับขีดอีกครั้งแล้วเขียนใหม่` };
     }
   }
   return { correct: false, invalid: "รูปแบบคำตอบไม่ตรงกับชนิดโจทย์" };

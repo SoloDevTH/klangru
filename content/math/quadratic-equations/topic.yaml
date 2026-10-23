@@ -1,0 +1,43 @@
+id: math.algebra.quadratic-eq
+subject: math
+title: { th: สมการกำลังสองตัวแปรเดียว, en: Quadratic equations }
+summary: แก้สมการกำลังสองด้วยการแยกตัวประกอบและสูตร ใช้ดิสคริมิแนนต์บอกจำนวนคำตอบ และนำไปแก้โจทย์ปัญหาพื้นที่และการเคลื่อนที่
+difficulty: 5
+minutes: 40
+prerequisites: [math.algebra.factoring, math.number.roots]
+encompasses:
+  - { id: math.algebra.factoring, weight: 0.5 }
+  - { id: math.number.roots, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: คำตอบของสมการคือจุดที่กราฟตัดแกน x
+    caption: กราฟคือ y = ax² + bx + c ลองปรับ a, b, c แล้วดูว่ากราฟตัดแกน x กี่จุด เทียบกับค่า b² − 4ac ถ้าเป็นบวกตัดสองจุด เป็นศูนย์แตะจุดเดียว เป็นลบไม่ถึงแกน x
+    widget:
+      kind: function-plot
+      functions: ["a x^2 + b x + c"]
+      sliders:
+        - { name: a, min: -3, max: 3, step: 0.5, value: 1 }
+        - { name: b, min: -6, max: 6, step: 1, value: -2 }
+        - { name: c, min: -6, max: 6, step: 1, value: -3 }
+      x: [-6, 6]
+      y: [-8, 8]
+  - type: simulation
+    title: กราฟของสมการกำลังสอง (PhET Graphing Quadratics)
+    url: https://phet.colorado.edu/en/simulations/graphing-quadratics
+    provider: phet
+    note: เลือกหน้า Explore ปรับค่า a, b, c แล้วเปิดการแสดงรากของสมการ สังเกตว่ารากคือตำแหน่งที่พาราโบลาตัดแกน x
+glossary:
+  - { term: สมการกำลังสอง, definition: "สมการรูป $ax^2 + bx + c = 0$ เมื่อ $a \\neq 0$" }
+  - { term: สูตรสมการกำลังสอง, definition: "$x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ ใช้ได้กับสมการกำลังสองทุกสมการ" }
+  - { term: ดิสคริมิแนนต์, definition: "ค่า $D = b^2 - 4ac$ บอกจำนวนคำตอบที่เป็นจำนวนจริง: บวกมีสองคำตอบ ศูนย์มีคำตอบเดียว ลบไม่มีคำตอบจริง" }
+flashcards:
+  - { front: "ถ้า $(x - a)(x - b) = 0$ แล้ว $x$ เป็นเท่าใด", back: "$x = a$ หรือ $x = b$ เพราะผลคูณเป็นศูนย์เมื่อตัวใดตัวหนึ่งเป็นศูนย์" }
+  - { front: "สูตรสมการกำลังสอง", back: "$x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$" }
+  - { front: "$b^2 - 4ac < 0$ หมายความว่าอะไร", back: "สมการไม่มีคำตอบที่เป็นจำนวนจริง กราฟไม่ตัดแกน $x$" }
+  - { front: "แก้ $x^2 = 2x$ ด้วยการหาร $x$ ทั้งสองข้างได้ไหม", back: "ไม่ได้ จะทำคำตอบ $x = 0$ หาย ต้องย้ายข้างเป็น $x(x - 2) = 0$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

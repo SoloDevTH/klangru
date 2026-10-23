@@ -117,6 +117,9 @@ test("expression problems: valid answer, unknown variables, equivalent misconcep
   assert.ok(one(expr({ misconceptions: [{ match: "2A\\cdot\\frac{1}{b}", feedback: "x" }] })).some((m) => m.includes("เท่ากับคำตอบ")));
   assert.deepEqual(one(expr({ misconceptions: [{ match: "\\frac{A}{2b}", feedback: "x" }] })), []);
   assert.ok(one(expr({ expanded: true, answer: { latex: "2(x-3)", variables: ["x"] } })).some((m) => m.includes("วงเล็บ")));
+  assert.deepEqual(one(expr({ factored: true, answer: { latex: "(x+3)(x+4)", variables: ["x"] } })), []);
+  assert.ok(one(expr({ factored: true, answer: { latex: "x^2+7x+12", variables: ["x"] } })).some((m) => m.includes("ผลคูณ")));
+  assert.ok(one(expr({ answer: { latex: "a(x-h)^2", variables: ["a", "x", "h"] } })).some((m) => m.includes("ฟังก์ชัน")));
 });
 
 test("hanzi problems need stroke data", () => {
@@ -136,5 +139,7 @@ test("lesson blocks: video questions, molecules, widgets, phet embeds", () => {
   const plot = (functions: string[]) => ({ type: "interactive", title: "กราฟ", widget: { kind: "function-plot", functions, sliders: [{ name: "a", min: -3, max: 3, value: 1 }] } });
   assert.deepEqual(withBlocks([plot(["a x^2"])]), []);
   assert.ok(withBlocks([plot(["k x"])]).some((m) => m.includes("แถบเลื่อน")));
+  assert.ok(withBlocks([plot(["a(x-1)^2"])]).some((m) => m.includes("ฟังก์ชัน")));
+  assert.ok(withBlocks([plot(["\\sqrt{-1-x^2}"])]).some((m) => m.includes("หาค่าไม่ได้")));
   assert.ok(withBlocks([{ type: "simulation", title: "s", url: "https://example.com/sim", provider: "phet" }]).some((m) => m.includes("PhET")));
 });

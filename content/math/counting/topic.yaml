@@ -1,0 +1,26 @@
+id: math.prob.counting
+subject: math
+title: { th: หลักการนับเบื้องต้น, en: Basic counting principles }
+summary: นับจำนวนวิธีโดยไม่ต้องเขียนทุกแบบ ด้วยหลักการบวก หลักการคูณ แฟกทอเรียล การเรียงสับเปลี่ยน และการจัดหมู่
+difficulty: 4
+minutes: 30
+prerequisites: [math.number.integers]
+encompasses:
+  - { id: math.number.integers, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+glossary:
+  - { term: หลักการคูณ, definition: "ถ้างานมีหลายขั้นต่อกัน ขั้นแรกมี m วิธี และแต่ละวิธีมีขั้นถัดไป n วิธี จะมีทั้งหมด m × n วิธี" }
+  - { term: แฟกทอเรียล, definition: "ผลคูณของจำนวนเต็มบวกตั้งแต่ 1 ถึง n เขียนว่า $n!$ และกำหนดให้ $0! = 1$" }
+  - { term: การเรียงสับเปลี่ยน, definition: "การเลือกของมาเรียงโดยลำดับมีความหมาย จำนวนวิธีคือ $P(n, r) = \\frac{n!}{(n-r)!}$" }
+  - { term: การจัดหมู่, definition: "การเลือกของเป็นกลุ่มโดยไม่สนลำดับ จำนวนวิธีคือ $C(n, r) = \\frac{n!}{r!(n-r)!}$" }
+flashcards:
+  - { front: "เมื่อไรใช้หลักการบวก เมื่อไรใช้หลักการคูณ", back: "เลือกทางใดทางหนึ่ง (หรือ) ให้บวก ทำหลายขั้นต่อกัน (และ) ให้คูณ" }
+  - { front: "$5!$ เท่ากับเท่าใด", back: "$5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$" }
+  - { front: "$0!$ เท่ากับเท่าใด", back: "$0! = 1$ (ไม่ใช่ 0)" }
+  - { front: "การเรียงสับเปลี่ยนต่างจากการจัดหมู่อย่างไร", back: "การเรียงสับเปลี่ยนสนลำดับ การจัดหมู่ไม่สนลำดับ จึงหารด้วย $r!$ : $C(n, r) = \\frac{P(n, r)}{r!}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

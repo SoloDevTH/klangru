@@ -1,0 +1,213 @@
+problems:
+  - id: math.roc.p001
+    topics: [math.calculus.rate-of-change]
+    difficulty: 1
+    type: numeric
+    stem: "รถตู้เดินทางจากกรุงเทพฯ ไปหัวหินระยะทาง 200 กิโลเมตร ใช้เวลา 2.5 ชั่วโมง อัตราเร็วเฉลี่ยเป็นกี่กิโลเมตรต่อชั่วโมง"
+    answer: { value: 80, unit: km/h }
+    hints:
+      - "อัตราเร็วเฉลี่ยคือระยะทางที่เปลี่ยนไปต่อเวลาที่ใช้"
+      - "หน่วยที่ต้องการคือกิโลเมตร **ต่อ** ชั่วโมง จึงนำกิโลเมตรเป็นตัวตั้งแล้วหารด้วยชั่วโมง"
+    misconceptions:
+      - { match: 0.0125, feedback: "ดูเหมือนหารกลับด้าน ($\\tfrac{2.5}{200}$) ได้หน่วยเป็นชั่วโมงต่อกิโลเมตร ต้องนำระยะทางหารด้วยเวลา" }
+    solution: "อัตราเร็วเฉลี่ย $= \\dfrac{\\Delta s}{\\Delta t} = \\dfrac{200\\ \\mathrm{km}}{2.5\\ \\mathrm{h}} = 80\\ \\mathrm{km/h}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p002
+    topics: [math.calculus.rate-of-change]
+    difficulty: 1
+    type: numeric
+    stem: "หาอัตราการเปลี่ยนแปลงเฉลี่ยของ $f(x) = 3x + 2$ บนช่วง $[1, 5]$"
+    answer: { value: 3 }
+    hints:
+      - "หา $f(1)$ และ $f(5)$ ก่อน"
+      - "ใช้ $\\dfrac{f(5) - f(1)}{5 - 1}$"
+    misconceptions:
+      - { match: 12, feedback: "นั่นคือ $f(5) - f(1)$ ซึ่งเป็นการเปลี่ยนแปลงของ $y$ เท่านั้น ต้องหารด้วยการเปลี่ยนแปลงของ $x$ อีก" }
+    solution: "$f(1) = 5$, $f(5) = 17$ อัตราเฉลี่ย $= \\dfrac{17 - 5}{5 - 1} = \\dfrac{12}{4} = 3$ ซึ่งเท่ากับความชันของเส้นตรง $y = 3x + 2$ พอดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p003
+    topics: [math.calculus.rate-of-change]
+    difficulty: 2
+    type: numeric
+    stem: "หาอัตราการเปลี่ยนแปลงเฉลี่ยของ $f(x) = x^2$ บนช่วง $[1, 3]$"
+    answer: { value: 4 }
+    hints:
+      - "คำนวณ $f(1)$ และ $f(3)$"
+      - "นำผลต่างของค่าฟังก์ชันหารด้วยความกว้างของช่วง $3 - 1$"
+    misconceptions:
+      - { match: 8, feedback: "นั่นคือ $f(3) - f(1)$ ยังไม่ได้หารด้วย $\\Delta x = 2$" }
+      - { match: 0.25, feedback: "ดูเหมือนหารกลับด้าน ($\\tfrac{\\Delta x}{\\Delta y}$) อัตราการเปลี่ยนแปลงคือ $\\tfrac{\\Delta y}{\\Delta x}$" }
+    solution: "$f(1) = 1$, $f(3) = 9$ อัตราเฉลี่ย $= \\dfrac{9 - 1}{3 - 1} = \\dfrac{8}{2} = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p004
+    topics: [math.calculus.rate-of-change]
+    difficulty: 2
+    type: numeric
+    stem: "เช้าวันหนึ่งที่ดอยอินทนนท์ เวลา 6:00 น. อุณหภูมิ 8 °C และเวลา 10:00 น. อุณหภูมิ 18 °C อุณหภูมิเปลี่ยนแปลงโดยเฉลี่ยกี่องศาเซลเซียสต่อชั่วโมง"
+    answer: { value: 2.5, tolerance: 0.025, unit: °C/ชั่วโมง }
+    hints:
+      - "อุณหภูมิเปลี่ยนไปเท่าใด และใช้เวลากี่ชั่วโมง"
+      - "นำการเปลี่ยนแปลงของอุณหภูมิหารด้วยเวลาที่ผ่านไป"
+    misconceptions:
+      - { match: 10, feedback: "นั่นคืออุณหภูมิที่เพิ่มขึ้นทั้งหมด ยังต้องหารด้วยเวลา 4 ชั่วโมงเพื่อให้ได้อัตราต่อชั่วโมง" }
+      - { match: 0.4, feedback: "ดูเหมือนหารกลับด้าน ได้ชั่วโมงต่อองศา ต้องนำองศาหารด้วยชั่วโมง" }
+    solution: "$\\Delta T = 18 - 8 = 10$ °C, $\\Delta t = 10 - 6 = 4$ ชั่วโมง อัตราเฉลี่ย $= \\dfrac{10}{4} = 2.5$ °C ต่อชั่วโมง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p005
+    topics: [math.calculus.rate-of-change]
+    difficulty: 2
+    type: mcq
+    stem: "เมื่อ $h$ เข้าใกล้ 0 ความชันของเส้นตัดที่ผ่านจุด $(1, f(1))$ และ $(1 + h, f(1 + h))$ จะเข้าใกล้ค่าใด"
+    choices:
+      - { id: a, text: "ความชันของเส้นสัมผัสกราฟที่ $x = 1$", correct: true }
+      - { id: b, text: "ค่าของ $f(1)$", feedback: "$f(1)$ บอกความสูงของกราฟที่ $x = 1$ ไม่ใช่ความชัน ความชันของเส้นตัดคือ $\\tfrac{\\Delta y}{\\Delta x}$" }
+      - { id: c, text: "0 เสมอ เพราะ $h$ เข้าใกล้ 0", feedback: "ทั้งเศษ $f(1 + h) - f(1)$ และส่วน $h$ เข้าใกล้ 0 พร้อมกัน ผลหารจึงไม่จำเป็นต้องเป็น 0" }
+      - { id: d, text: "ความชันของเส้นตัดบนช่วง $[0, 1]$", feedback: "ช่วง $[0, 1]$ มีความกว้างคงที่ 1 ไม่ได้หดเข้าหาจุด $x = 1$" }
+    hints:
+      - "ลองนึกภาพจุดที่สองเลื่อนเข้ามาใกล้จุดแรกเรื่อย ๆ บนกราฟ"
+      - "เส้นตรงที่แตะกราฟพอดีที่จุดเดียวเรียกว่าอะไร"
+    solution: "เมื่อ $h \\to 0$ จุดที่สองเลื่อนเข้าหาจุด $(1, f(1))$ เส้นตัดจึงหมุนเข้าหาเส้นสัมผัสที่ $x = 1$ ความชันจึงเข้าใกล้ความชันของเส้นสัมผัส ซึ่งคืออัตราการเปลี่ยนแปลงขณะหนึ่ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p006
+    topics: [math.calculus.rate-of-change]
+    difficulty: 3
+    type: mcq
+    stem: "อัตราการเปลี่ยนแปลงเฉลี่ยของ $f(x) = x^2$ บนช่วง $[-3, 1]$ เท่ากับเท่าใด"
+    choices:
+      - { id: a, text: "$-2$", correct: true }
+      - { id: b, text: "$2$", feedback: "ดูเหมือนลบกลับด้านเฉพาะข้างบน ($f(-3) - f(1)$) แต่ข้างล่างใช้ $1 - (-3)$ ลำดับการลบต้องตรงกันทั้งเศษและส่วน" }
+      - { id: c, text: "$-8$", feedback: "นั่นคือ $f(1) - f(-3)$ ยังไม่ได้หารด้วยความกว้างของช่วง $1 - (-3) = 4$" }
+      - { id: d, text: "$-\\tfrac{1}{2}$", feedback: "ดูเหมือนหารกลับด้าน ($\\tfrac{\\Delta x}{\\Delta y}$) อัตราการเปลี่ยนแปลงคือ $\\tfrac{\\Delta y}{\\Delta x}$" }
+    hints:
+      - "ระวังเครื่องหมาย: $f(-3) = (-3)^2$"
+      - "ใช้ $\\dfrac{f(1) - f(-3)}{1 - (-3)}$"
+    solution: "$f(-3) = 9$, $f(1) = 1$ อัตราเฉลี่ย $= \\dfrac{1 - 9}{1 - (-3)} = \\dfrac{-8}{4} = -2$ ค่าลบแปลว่าโดยรวมกราฟลดลงจากจุดซ้ายไปจุดขวา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p007
+    topics: [math.calculus.rate-of-change]
+    difficulty: 3
+    type: numeric
+    stem: "ในการแข่งกีฬาสี นักเรียนโยนลูกบอลขึ้นไปในแนวดิ่ง ความสูงของลูกบอลคือ $h(t) = 20t - 5t^2$ เมตร เมื่อเวลา $t$ วินาที หาความเร็วเฉลี่ยในช่วง $t = 1$ ถึง $t = 2$ วินาที เป็นเมตรต่อวินาที"
+    answer: { value: 5, unit: m/s }
+    hints:
+      - "ความเร็วเฉลี่ยคืออัตราการเปลี่ยนแปลงเฉลี่ยของตำแหน่งเทียบกับเวลา"
+      - "คำนวณ $h(1)$ และ $h(2)$ แล้วใช้ $\\dfrac{h(2) - h(1)}{2 - 1}$"
+    misconceptions:
+      - { match: 10, feedback: "ดูเหมือนคิด $\\tfrac{h(2)}{2}$ ซึ่งเป็นความเร็วเฉลี่ยตั้งแต่ $t = 0$ ถึง $t = 2$ แต่โจทย์ถามช่วง $t = 1$ ถึง $t = 2$ ต้องใช้ผลต่างของตำแหน่ง" }
+    solution: "$h(1) = 20 - 5 = 15$ m, $h(2) = 40 - 20 = 20$ m ความเร็วเฉลี่ย $= \\dfrac{20 - 15}{2 - 1} = 5\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p008
+    topics: [math.calculus.rate-of-change]
+    difficulty: 3
+    type: numeric
+    stem: "หาอัตราการเปลี่ยนแปลงเฉลี่ยของ $f(x) = \\dfrac{1}{x}$ บนช่วง $[1, 2]$"
+    answer: { value: -0.5, tolerance: 0.005 }
+    hints:
+      - "$f(1) = 1$ และ $f(2) = \\tfrac{1}{2}$"
+      - "ใช้ $\\dfrac{f(2) - f(1)}{2 - 1}$ ระวังเครื่องหมาย"
+    misconceptions:
+      - { match: 0.5, feedback: "ค่าของ $f$ ลดลงจาก 1 เหลือ $\\tfrac{1}{2}$ อัตราเฉลี่ยจึงต้องเป็นลบ ตรวจลำดับการลบ: $f(2) - f(1)$" }
+      - { match: -2, feedback: "ดูเหมือนหารกลับด้าน ($\\tfrac{\\Delta x}{\\Delta y}$) อัตราการเปลี่ยนแปลงคือ $\\tfrac{\\Delta y}{\\Delta x}$" }
+    solution: "$\\dfrac{f(2) - f(1)}{2 - 1} = \\dfrac{\\tfrac{1}{2} - 1}{1} = -\\dfrac{1}{2} = -0.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p009
+    topics: [math.calculus.rate-of-change]
+    difficulty: 3
+    type: numeric
+    stem: "หาอัตราการเปลี่ยนแปลงเฉลี่ยของ $f(x) = x^2$ บนช่วง $[3, 3.1]$"
+    answer: { value: 6.1, tolerance: 0.01 }
+    hints:
+      - "คำนวณ $f(3.1)$ ก่อน"
+      - "ใช้ $\\dfrac{f(3.1) - f(3)}{0.1}$"
+    misconceptions:
+      - { match: 6, feedback: "6 คือลิมิตเมื่อช่วงหดเข้าหา 0 (อัตราขณะหนึ่ง) แต่โจทย์ให้ช่วงกว้าง 0.1 ให้คำนวณอัตราเฉลี่ยบนช่วงนี้จริง ๆ" }
+      - { match: 0.61, feedback: "นั่นคือ $f(3.1) - f(3)$ ยังไม่ได้หารด้วยความกว้างของช่วง 0.1" }
+    solution: "$f(3.1) = 9.61$, $f(3) = 9$ อัตราเฉลี่ย $= \\dfrac{9.61 - 9}{0.1} = \\dfrac{0.61}{0.1} = 6.1$ ซึ่งใกล้อัตราขณะหนึ่งที่ $x = 3$ คือ 6"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p010
+    topics: [math.calculus.rate-of-change]
+    difficulty: 4
+    type: expression
+    stem: "หาอัตราการเปลี่ยนแปลงเฉลี่ยของ $f(x) = x^2$ บนช่วง $[a, a + h]$ เมื่อ $h \\ne 0$ ตอบในรูปอย่างง่าย"
+    prefix: "อัตราเฉลี่ย ="
+    answer: { latex: "2a+h", variables: [a, h] }
+    hints:
+      - "เขียน $\\dfrac{f(a + h) - f(a)}{h}$"
+      - "กระจาย $(a + h)^2 = a^2 + 2ah + h^2$ แล้วลบ $a^2$"
+      - "แยกตัวร่วม $h$ ในเศษ แล้วตัดกับ $h$ ในส่วน"
+    misconceptions:
+      - { match: "2a", feedback: "นั่นคือลิมิตเมื่อ $h \\to 0$ แต่โจทย์ถามอัตราเฉลี่ยบนช่วงกว้าง $h$ ซึ่งยังมี $h$ เหลืออยู่" }
+      - { match: "2ah+h^2", feedback: "นั่นคือ $f(a + h) - f(a)$ ยังไม่ได้หารด้วย $h$" }
+      - { match: "2a+h^2", feedback: "ตอนหารด้วย $h$ ต้องหารทุกพจน์: $\\tfrac{h^2}{h} = h$" }
+    solution: "$\\dfrac{(a + h)^2 - a^2}{h} = \\dfrac{a^2 + 2ah + h^2 - a^2}{h} = \\dfrac{h(2a + h)}{h} = 2a + h$ ตรวจ: $a = 1$, $h = 2$ ได้ $\\tfrac{9 - 1}{2} = 4 = 2(1) + 2$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p011
+    topics: [math.calculus.rate-of-change]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการหาอัตราการเปลี่ยนแปลงขณะหนึ่งของ $f(x)$ ที่ $x = a$ ด้วยลิมิต"
+    items:
+      - "เขียน $f(a + h)$ ออกมาแล้วจัดรูป"
+      - "ลบ: หา $f(a + h) - f(a)$"
+      - "หารด้วย $h$ แล้วตัดทอนจนไม่มี $h$ อยู่ในส่วน"
+      - "ให้ $h \\to 0$ แล้วอ่านค่าที่ได้"
+    hints:
+      - "สูตรคือ $\\lim_{h \\to 0} \\dfrac{f(a + h) - f(a)}{h}$ ทำจากข้างในออกมา"
+      - "ห้ามแทน $h = 0$ ก่อนตัดทอน เพราะจะได้ $\\tfrac{0}{0}$"
+    solution: "หา $f(a + h)$ → ลบ $f(a)$ → หารด้วย $h$ และตัดทอน → ให้ $h \\to 0$ ขั้นตัดทอนต้องมาก่อนการให้ $h \\to 0$ เสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p012
+    topics: [math.calculus.rate-of-change]
+    difficulty: 4
+    type: numeric
+    stem: "หาอัตราการเปลี่ยนแปลงขณะหนึ่งของ $f(x) = x^2 + x$ ที่ $x = 2$ โดยใช้ลิมิต $\\displaystyle\\lim_{h \\to 0} \\frac{f(2 + h) - f(2)}{h}$"
+    answer: { value: 5 }
+    hints:
+      - "$f(2) = 6$ และ $f(2 + h) = (2 + h)^2 + (2 + h)$"
+      - "กระจายแล้วลบ $f(2)$ จะได้ $5h + h^2$"
+      - "หารด้วย $h$ แล้วให้ $h \\to 0$"
+    misconceptions:
+      - { match: 6, feedback: "6 คือ $f(2)$ ซึ่งเป็นค่าของฟังก์ชัน ไม่ใช่อัตราการเปลี่ยนแปลง ต้องหาลิมิตของอัตราเฉลี่ย" }
+      - { match: 4, feedback: "ดูเหมือนคิดเฉพาะพจน์ $x^2$ ลืมว่าพจน์ $x$ ก็เปลี่ยนตาม $h$ ด้วย ให้กระจาย $f(2 + h)$ ให้ครบทุกพจน์" }
+    solution: "$f(2 + h) = 4 + 4h + h^2 + 2 + h = 6 + 5h + h^2$ ลบ $f(2) = 6$ ได้ $5h + h^2$ หารด้วย $h$ ได้ $5 + h$ เมื่อ $h \\to 0$ ได้ 5 ตรวจ: ช่วง $[2, 2.01]$ ได้อัตราเฉลี่ย $5.01$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.roc.p013
+    topics: [math.calculus.rate-of-change]
+    difficulty: 5
+    type: numeric
+    stem: "รถไฟฟ้าออกจากสถานี ใน 10 วินาทีแรก ระยะที่วิ่งได้คือ $s(t) = t^2 + 2t$ เมตร เมื่อเวลา $t$ วินาที หาความเร็วขณะหนึ่งที่ $t = 4$ วินาที เป็นเมตรต่อวินาที"
+    answer: { value: 10, unit: m/s }
+    hints:
+      - "ความเร็วขณะหนึ่งคือลิมิตของความเร็วเฉลี่ยบนช่วง $[4, 4 + h]$ เมื่อ $h \\to 0$"
+      - "$s(4) = 24$ และ $s(4 + h) = (4 + h)^2 + 2(4 + h)$"
+      - "กระจาย ลบ $s(4)$ หารด้วย $h$ แล้วให้ $h \\to 0$"
+    misconceptions:
+      - { match: 6, feedback: "นั่นคือความเร็วเฉลี่ยตั้งแต่ออกจากสถานี $\\left(\\tfrac{s(4)}{4}\\right)$ รถกำลังเร่งขึ้น ความเร็วตอน $t = 4$ จึงมากกว่าค่าเฉลี่ย ต้องหาลิมิตที่ $t = 4$" }
+      - { match: 24, feedback: "24 m คือระยะทางที่ $t = 4$ ($s(4)$) ไม่ใช่ความเร็ว ต้องหาอัตราการเปลี่ยนแปลงขณะหนึ่ง" }
+    solution: "$s(4 + h) = 16 + 8h + h^2 + 8 + 2h = 24 + 10h + h^2$ ลบ $s(4) = 24$ ได้ $10h + h^2$ หารด้วย $h$ ได้ $10 + h$ เมื่อ $h \\to 0$ ได้ความเร็ว $10\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

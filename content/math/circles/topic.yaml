@@ -1,0 +1,40 @@
+id: math.geometry.circles
+subject: math
+title: { th: วงกลม ส่วนโค้ง และเซกเตอร์, en: "Circles: arcs, sectors and angles" }
+summary: รู้จักส่วนต่าง ๆ ของวงกลม หาความยาวส่วนโค้งและพื้นที่เซกเตอร์ ใช้ความสัมพันธ์ของมุมที่จุดศูนย์กลางกับมุมในส่วนโค้ง และรู้จักหน่วยเรเดียน
+difficulty: 4.5
+minutes: 40
+prerequisites: [math.geometry.area-perimeter, math.geometry.angles]
+encompasses:
+  - { id: math.geometry.area-perimeter, weight: 0.4 }
+  - { id: math.geometry.angles, weight: 0.3 }
+  - { id: math.number.fractions, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: มุมเป็นเรเดียน ความยาวส่วนโค้ง และพื้นที่เซกเตอร์
+    caption: "แกน x คือมุมที่จุดศูนย์กลางในหน่วยเรเดียน (หนึ่งรอบ ≈ 6.28) เส้นตรงคือความยาวส่วนโค้ง r·θ เส้นโค้งคือพื้นที่เซกเตอร์ ½·r²·θ ลองเลื่อนรัศมี r แล้วสังเกตว่าเมื่อ r เพิ่มสองเท่า ส่วนโค้งยาวขึ้นสองเท่า แต่พื้นที่เพิ่มสี่เท่า"
+    widget:
+      kind: function-plot
+      functions: ["r x", "\\frac{1}{2} r^2 x"]
+      sliders:
+        - { name: r, min: 1, max: 4, step: 0.5, value: 2, label: รัศมี }
+      x: [0, 6.3]
+      y: [0, 20]
+glossary:
+  - { term: คอร์ด, definition: "ส่วนของเส้นตรงที่เชื่อมจุดสองจุดบนวงกลม คอร์ดที่ผ่านจุดศูนย์กลางคือเส้นผ่านศูนย์กลาง" }
+  - { term: ส่วนโค้ง, definition: "ส่วนหนึ่งของเส้นรอบวงระหว่างจุดสองจุดบนวงกลม" }
+  - { term: เซกเตอร์, definition: "บริเวณที่ล้อมด้วยรัศมีสองเส้นกับส่วนโค้งระหว่างรัศมีทั้งสอง มีรูปเหมือนชิ้นพิซซ่า" }
+  - { term: มุมในส่วนโค้ง, definition: "มุมที่มีจุดยอดอยู่บนวงกลม และแขนทั้งสองเป็นคอร์ด" }
+  - { term: เรเดียน, definition: "หน่วยวัดมุม มุม 1 เรเดียนรองรับส่วนโค้งที่ยาวเท่ารัศมี หนึ่งรอบเท่ากับ $2\\pi$ เรเดียน" }
+flashcards:
+  - { front: "ความยาวส่วนโค้งและพื้นที่เซกเตอร์ (มุม $\\theta$ องศา)", back: "ส่วนโค้ง $= \\tfrac{\\theta}{360} \\times 2\\pi r$ พื้นที่เซกเตอร์ $= \\tfrac{\\theta}{360} \\times \\pi r^2$" }
+  - { front: "มุมในส่วนโค้งเทียบกับมุมที่จุดศูนย์กลาง (รองรับส่วนโค้งเดียวกัน)", back: "มุมในส่วนโค้งเป็นครึ่งหนึ่งของมุมที่จุดศูนย์กลาง" }
+  - { front: "มุมในครึ่งวงกลม", back: "เป็นมุมฉาก $90^\\circ$ เสมอ" }
+  - { front: "$180^\\circ$ เท่ากับกี่เรเดียน", back: "$\\pi$ เรเดียน ดังนั้น $1^\\circ = \\tfrac{\\pi}{180}$ เรเดียน" }
+  - { front: "สูตรส่วนโค้งและเซกเตอร์เมื่อมุม $\\theta$ เป็นเรเดียน", back: "ส่วนโค้ง $s = r\\theta$ พื้นที่เซกเตอร์ $A = \\tfrac{1}{2}r^2\\theta$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

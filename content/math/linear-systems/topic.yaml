@@ -1,0 +1,45 @@
+id: math.algebra.systems
+subject: math
+title: { th: ระบบสมการเชิงเส้นสองตัวแปร, en: Systems of linear equations in two variables }
+summary: หาค่าตัวแปรสองตัวที่ทำให้สมการสองสมการเป็นจริงพร้อมกัน ด้วยวิธีแทนค่าและวิธีกำจัดตัวแปร และใช้แก้โจทย์ราคาสินค้า อายุ และการผสม
+difficulty: 4
+minutes: 35
+prerequisites: [math.algebra.linear-eq]
+encompasses:
+  - { id: math.algebra.linear-eq, weight: 0.5 }
+  - { id: math.algebra.expressions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: คำตอบของระบบสมการคือจุดตัดของกราฟ
+    caption: "เส้นแรกคือ y = ax + b และเส้นที่สองคือ y = cx + d ค่าเริ่มต้นคือระบบ y = x + 1 กับ 2x + y = 7 ซึ่งตัดกันที่ (2, 3) ลองทำให้ a เท่ากับ c แล้วดูว่าเส้นขนานกันและไม่มีจุดตัด"
+    widget:
+      kind: function-plot
+      functions: ["a x + b", "c x + d"]
+      sliders:
+        - { name: a, min: -4, max: 4, step: 0.5, value: 1, label: ความชันเส้นแรก }
+        - { name: b, min: -5, max: 10, step: 1, value: 1, label: จุดตัดแกน y เส้นแรก }
+        - { name: c, min: -4, max: 4, step: 0.5, value: -2, label: ความชันเส้นที่สอง }
+        - { name: d, min: -5, max: 10, step: 1, value: 7, label: จุดตัดแกน y เส้นที่สอง }
+      x: [-3, 7]
+      y: [-4, 10]
+  - type: simulation
+    title: วาดกราฟเส้นตรง (PhET Graphing Lines)
+    url: https://phet.colorado.edu/en/simulations/graphing-lines
+    provider: phet
+    note: ในหน้าจอ Slope-Intercept วาดเส้นแรกแล้วกดบันทึกเส้น (Save Line) จากนั้นปรับความชันและจุดตัดแกน y ให้เป็นเส้นที่สอง แล้วอ่านพิกัดจุดที่สองเส้นตัดกัน
+glossary:
+  - { term: ระบบสมการเชิงเส้น, definition: "สมการเชิงเส้นตั้งแต่สองสมการขึ้นไปที่ใช้ตัวแปรชุดเดียวกัน และต้องเป็นจริงพร้อมกัน" }
+  - { term: คำตอบของระบบสมการ, definition: "คู่อันดับ $(x, y)$ ที่แทนแล้วทำให้ทุกสมการในระบบเป็นจริง ในกราฟคือจุดที่เส้นตรงตัดกัน" }
+  - { term: วิธีแทนค่า, definition: "จัดสมการหนึ่งให้ตัวแปรหนึ่งอยู่ในรูปของอีกตัวแปร แล้วแทนลงในอีกสมการ ให้เหลือตัวแปรเดียว" }
+  - { term: วิธีกำจัดตัวแปร, definition: "คูณสมการให้สัมประสิทธิ์ของตัวแปรหนึ่งเท่ากันหรือตรงข้ามกัน แล้วบวกหรือลบสมการเพื่อให้ตัวแปรนั้นหายไป" }
+flashcards:
+  - { front: "คำตอบของระบบสมการสองตัวแปรคืออะไรในกราฟ", back: "จุดตัดของเส้นตรงสองเส้น ถ้าเส้นขนานกันจะไม่มีคำตอบ ถ้าเป็นเส้นเดียวกันจะมีคำตอบมากมายไม่จำกัด" }
+  - { front: "เมื่อใดควรใช้วิธีแทนค่า", back: "เมื่อมีสมการที่ตัวแปรหนึ่งอยู่ข้างเดียวแล้ว หรือจัดรูปได้ง่าย เช่น $y = 2x - 1$" }
+  - { front: "เมื่อใดควรใช้วิธีกำจัดตัวแปร", back: "เมื่อสัมประสิทธิ์ของตัวแปรหนึ่งเท่ากันหรือเป็นจำนวนตรงข้ามกัน หรือทำให้เป็นเช่นนั้นได้ง่ายด้วยการคูณ" }
+  - { front: "แก้ $x + y = 10$ และ $x - y = 4$", back: "บวกสองสมการได้ $2x = 14$ จึงได้ $x = 7$ และ $y = 3$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

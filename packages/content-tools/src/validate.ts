@@ -4,8 +4,11 @@ import { dirname, join } from "node:path";
 import katex from "katex";
 import { z } from "zod";
 import {
+  accidentalCalls,
   compatibleTargets,
   equivalentLatex,
+  evaluateLatex,
+  isFactoredForm,
   parseLatex,
   phetEmbedUrl,
   Problem,
@@ -141,6 +144,12 @@ function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]
       const extra = a.unknowns.filter((u) => !p.answer.variables.includes(u));
       if (extra.length) err(`คำตอบใช้ตัวแปร ${extra.join(", ")} ที่ไม่ได้อยู่ใน answer.variables`);
       if (p.expanded && /\(/.test(p.answer.latex)) err("ตั้ง expanded: true แต่คำตอบยังมีวงเล็บ");
+      if (p.factored && !isFactoredForm(p.answer.latex)) err("ตั้ง factored: true แต่คำตอบไม่อยู่ในรูปผลคูณ");
+      if (p.expanded && p.factored) err("ตั้ง expanded และ factored พร้อมกันไม่ได้");
+      for (const latex of [p.answer.latex, ...p.misconceptions.map((m) => m.match)]) {
+        const calls = accidentalCalls(latex);
+        if (calls.length) err(`"${latex}": ${calls.join(", ")}(...) ถูกอ่านเป็นฟังก์ชัน ให้เขียน ${calls[0]}\\cdot(...)`);
+      }
       for (const m of p.misconceptions) {
         const mm = parseLatex(m.match);
         if (!mm.ok) err(`misconception "${m.match}" อ่านไม่ได้: ${mm.error}`);
@@ -205,10 +214,17 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
         const w = block.widget;
         if (w.kind === "function-plot") {
           const allowed = new Set(["x", ...w.sliders.map((s) => s.name)]);
+          const sliderValues = Object.fromEntries(w.sliders.map((s) => [s.name, s.value]));
           for (const f of w.functions) {
             const parsed = parseLatex(f);
+            const calls = accidentalCalls(f);
             if (!parsed.ok) err(`กราฟ "${f}" อ่านไม่ได้: ${parsed.error}`);
+            else if (calls.length) err(`กราฟ "${f}": ${calls.join(", ")}(...) ถูกอ่านเป็นฟังก์ชัน ให้เขียน ${calls[0]}\\cdot(...)`);
             else if (parsed.unknowns.some((u) => !allowed.has(u))) err(`กราฟ "${f}" ใช้ตัวแปรที่ไม่ใช่ x หรือแถบเลื่อน: ${parsed.unknowns.filter((u) => !allowed.has(u)).join(", ")}`);
+            else {
+              const xs = Array.from({ length: 9 }, (_, i) => w.x[0] + ((w.x[1] - w.x[0]) * (i + 0.5)) / 9);
+              if (xs.every((x) => evaluateLatex(f, { ...sliderValues, x }) === null)) err(`กราฟ "${f}" หาค่าไม่ได้เลยในช่วง x ที่กำหนด`);
+            }
           }
           for (const s of w.sliders) if (!(s.min < s.max && s.value >= s.min && s.value <= s.max)) err(`แถบเลื่อน ${s.name}: ต้องเป็น min < max และ min ≤ value ≤ max`);
           if (!(w.x[0] < w.x[1] && w.y[0] < w.y[1])) err("ช่วงแกน x หรือ y ไม่ถูกต้อง");

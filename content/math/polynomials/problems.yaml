@@ -1,0 +1,224 @@
+problems:
+  - id: math.poly.p001
+    topics: [math.algebra.polynomials]
+    difficulty: 1
+    type: numeric
+    stem: "พหุนาม $4x^2 - 7x^4 + x - 9$ มีดีกรีเท่าใด"
+    answer: { value: 4 }
+    hints:
+      - "ดีกรีของพหุนามคือดีกรีสูงสุดของพจน์ ไม่จำเป็นต้องเป็นพจน์แรก"
+      - "ดูเลขชี้กำลังของ $x$ ในแต่ละพจน์ แล้วเลือกค่าที่มากที่สุด"
+    misconceptions:
+      - { match: 2, feedback: "นั่นคือดีกรีของพจน์แรก แต่พหุนามนี้ไม่ได้เรียงตามดีกรี พจน์ $-7x^4$ มีดีกรีสูงกว่า" }
+      - { match: -7, feedback: "นั่นคือสัมประสิทธิ์ของพจน์ที่มีดีกรีสูงสุด ดีกรีคือเลขชี้กำลัง ไม่ใช่ตัวเลขข้างหน้า" }
+    solution: "ดีกรีของแต่ละพจน์: $4x^2$ → 2, $-7x^4$ → 4, $x$ → 1, $-9$ → 0 ดีกรีสูงสุดคือ 4 (เรียงใหม่ได้ $-7x^4 + 4x^2 + x - 9$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p002
+    topics: [math.algebra.polynomials]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นเอกนาม"
+    choices:
+      - { id: a, text: "$-4x^2y$", correct: true }
+      - { id: b, text: "$x + 3$", feedback: "นี่คือพหุนามที่มีสองพจน์ (ทวินาม) เอกนามต้องมีพจน์เดียว" }
+      - { id: c, text: "$\\dfrac{2}{x}$", feedback: "ตัวแปรอยู่ในตัวส่วน เท่ากับ $2x^{-1}$ ซึ่งมีเลขชี้กำลังเป็นลบ จึงไม่ใช่เอกนาม" }
+      - { id: d, text: "$\\sqrt{x}$", feedback: "ตัวแปรอยู่ใต้เครื่องหมายราก เลขชี้กำลังไม่ใช่จำนวนเต็ม จึงไม่ใช่เอกนาม" }
+    hints:
+      - "เอกนามคือค่าคงตัวคูณกับตัวแปร มีพจน์เดียว"
+      - "เลขชี้กำลังของตัวแปรในเอกนามต้องเป็นจำนวนเต็มบวกหรือศูนย์ ห้ามมีตัวแปรในตัวส่วนหรือใต้ราก"
+    solution: "$-4x^2y$ เป็นผลคูณของ $-4$ กับ $x^2$ และ $y$ ซึ่งเลขชี้กำลังเป็นจำนวนเต็มบวก จึงเป็นเอกนาม ข้ออื่นมีสองพจน์ หรือมีตัวแปรในตัวส่วน หรือใต้ราก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p003
+    topics: [math.algebra.polynomials]
+    difficulty: 2
+    type: numeric
+    stem: "เอกนาม $3x^2y^3$ มีดีกรีเท่าใด"
+    answer: { value: 5 }
+    hints:
+      - "ดีกรีของเอกนามนับจากเลขชี้กำลังของตัวแปรทุกตัว"
+      - "บวกเลขชี้กำลังของ $x$ กับของ $y$"
+    misconceptions:
+      - { match: 3, feedback: "นั่นคือเลขชี้กำลังที่มากที่สุดตัวเดียว ดีกรีของเอกนามต้องบวกเลขชี้กำลังของตัวแปรทุกตัว" }
+      - { match: 6, feedback: "ดูเหมือนคูณเลขชี้กำลัง $2 \\times 3$ ดีกรีหาได้จากการบวก $2 + 3$" }
+    solution: "ดีกรี $= 2 + 3 = 5$ (สัมประสิทธิ์ 3 ไม่เกี่ยวกับดีกรี)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p004
+    topics: [math.algebra.polynomials]
+    difficulty: 2
+    type: expression
+    stem: "หา $(3x^2 + 2x - 5) - (x^2 - 4x + 1)$ ให้อยู่ในรูปอย่างง่ายที่ไม่มีวงเล็บ"
+    answer: { latex: "2x^2+6x-6", variables: [x] }
+    expanded: true
+    hints:
+      - "การลบวงเล็บ ต้องเปลี่ยนเครื่องหมายทุกพจน์ในวงเล็บหลัง"
+      - "วงเล็บหลังกลายเป็น $-x^2 + 4x - 1$"
+      - "จับกลุ่มพจน์ $x^2$, พจน์ $x$ และค่าคงตัว แล้วรวมสัมประสิทธิ์"
+    misconceptions:
+      - { match: "2x^2-2x-4", feedback: "เปลี่ยนเครื่องหมายเฉพาะพจน์แรกในวงเล็บหลัง ต้องเปลี่ยนทุกพจน์: $-(-4x) = +4x$ และ $-(+1) = -1$" }
+      - { match: "4x^2-2x-4", feedback: "นั่นคือการบวกสองพหุนาม แต่โจทย์เป็นการลบ ต้องเปลี่ยนเครื่องหมายทุกพจน์ในวงเล็บหลังก่อน" }
+    solution: "$3x^2 + 2x - 5 - x^2 + 4x - 1 = (3x^2 - x^2) + (2x + 4x) + (-5 - 1) = 2x^2 + 6x - 6$ ตรวจด้วย $x = 1$: $(0) - (-2) = 2$ และ $2 + 6 - 6 = 2$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p005
+    topics: [math.algebra.polynomials]
+    difficulty: 2
+    type: mcq
+    stem: "$3x^2 \\cdot 4x^3$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$12x^5$", correct: true }
+      - { id: b, text: "$12x^6$", feedback: "ดูเหมือนคูณเลขชี้กำลัง $2 \\times 3$ เมื่อคูณเลขยกกำลังฐานเดียวกัน ให้บวกเลขชี้กำลัง: $x^2 \\cdot x^3 = x^5$" }
+      - { id: c, text: "$7x^5$", feedback: "ดูเหมือนบวกสัมประสิทธิ์ $3 + 4$ แต่นี่เป็นการคูณ สัมประสิทธิ์ต้องคูณกัน: $3 \\times 4 = 12$" }
+    hints:
+      - "คูณสัมประสิทธิ์ด้วยกัน และจัดการ $x$ ด้วยกัน"
+      - "$x^2 \\cdot x^3 = (x \\cdot x)(x \\cdot x \\cdot x)$ มี $x$ คูณกันกี่ตัว"
+    solution: "$(3 \\times 4)(x^2 \\cdot x^3) = 12x^{2+3} = 12x^5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p006
+    topics: [math.algebra.polynomials]
+    difficulty: 3
+    type: expression
+    stem: "ห้องเรียนรูปสี่เหลี่ยมผืนผ้ากว้าง $(x - 3)$ เมตร ยาว $(x + 5)$ เมตร เขียนพื้นที่ของห้อง (ตารางเมตร) เป็นพหุนามที่กระจายแล้ว"
+    answer: { latex: "x^2+2x-15", variables: [x] }
+    expanded: true
+    prefix: "พื้นที่ ="
+    hints:
+      - "พื้นที่ = กว้าง × ยาว = $(x - 3)(x + 5)$"
+      - "นำทุกพจน์ของวงเล็บแรกไปคูณทุกพจน์ของวงเล็บที่สอง (หน้า นอก ใน หลัง)"
+      - "รวมพจน์ที่มี $x$ เข้าด้วยกัน ระวังเครื่องหมายของ $-3$"
+    misconceptions:
+      - { match: "x^2-15", feedback: "คูณแค่หน้า×หน้า กับหลัง×หลัง ยังขาดพจน์นอก×นอก $5x$ และใน×ใน $-3x$" }
+      - { match: "x^2-2x-15", feedback: "ตรวจเครื่องหมายพจน์กลาง: $x \\cdot 5 = 5x$ และ $(-3) \\cdot x = -3x$ รวมได้ $+2x$" }
+    solution: "$(x - 3)(x + 5) = x^2 + 5x - 3x - 15 = x^2 + 2x - 15$ ตารางเมตร ตรวจด้วย $x = 10$: $7 \\times 15 = 105$ และ $100 + 20 - 15 = 105$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p007
+    topics: [math.algebra.polynomials]
+    difficulty: 3
+    type: expression
+    stem: "กระจาย $(x + 5)^2$"
+    answer: { latex: "x^2+10x+25", variables: [x] }
+    expanded: true
+    hints:
+      - "$(x + 5)^2 = (x + 5)(x + 5)$ ไม่ใช่ $x^2 + 5^2$"
+      - "ใช้ $(a + b)^2 = a^2 + 2ab + b^2$ โดย $a = x$ และ $b = 5$"
+    misconceptions:
+      - { match: "x^2+25", feedback: "ลืมพจน์กลาง $2ab$ ลองแทน $x = 1$: $(1 + 5)^2 = 36$ แต่ $1 + 25 = 26$" }
+      - { match: "x^2+5x+25", feedback: "พจน์กลางคือ $2ab = 2(x)(5)$ ต้องมีเลข 2 ด้วย เพราะมีสี่เหลี่ยม $5x$ สองชิ้น" }
+    solution: "$(x + 5)^2 = x^2 + 2(x)(5) + 5^2 = x^2 + 10x + 25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p008
+    topics: [math.algebra.polynomials]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ผลคูณกับผลลัพธ์ที่กระจายแล้ว"
+    pairs:
+      - { left: "$(a + b)^2$", right: "$a^2 + 2ab + b^2$" }
+      - { left: "$(a - b)^2$", right: "$a^2 - 2ab + b^2$" }
+      - { left: "$(a + b)(a - b)$", right: "$a^2 - b^2$" }
+      - { left: "$a(a + b)$", right: "$a^2 + ab$" }
+    hints:
+      - "ลองกระจายแต่ละตัวด้วยการคูณทุกพจน์กับทุกพจน์"
+      - "$(a + b)(a - b)$ พจน์กลาง $-ab$ กับ $+ab$ หักล้างกัน"
+      - "ตรวจด้วย $a = 3$, $b = 1$ แล้วเทียบค่าทั้งสองฝั่ง"
+    solution: "$(a + b)^2 = a^2 + 2ab + b^2$ · $(a - b)^2 = a^2 - 2ab + b^2$ · $(a + b)(a - b) = a^2 - b^2$ · $a(a + b) = a^2 + ab$ ตรวจด้วย $a = 3, b = 1$: ได้ 16, 4, 8, 12 ตรงกันทั้งสองฝั่ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p009
+    topics: [math.algebra.polynomials]
+    difficulty: 3
+    type: expression
+    stem: "กระจาย $(2x - 3)(2x + 3)$"
+    answer: { latex: "4x^2-9", variables: [x] }
+    expanded: true
+    hints:
+      - "รูปนี้คือ $(a - b)(a + b)$ โดย $a = 2x$ และ $b = 3$"
+      - "$(a - b)(a + b) = a^2 - b^2$ ระวังการยกกำลังสอง $a$ ต้องยกทั้งสัมประสิทธิ์และตัวแปร"
+    misconceptions:
+      - { match: "2x^2-9", feedback: "ลืมยกกำลังสองสัมประสิทธิ์ $(2x)^2 = 4x^2$ ไม่ใช่ $2x^2$" }
+      - { match: "4x^2-12x+9", feedback: "นั่นคือ $(2x - 3)^2$ แต่โจทย์เป็นผลบวกคูณผลต่าง พจน์กลาง $+6x$ และ $-6x$ หักล้างกันหมด" }
+    solution: "$(2x - 3)(2x + 3) = (2x)^2 - 3^2 = 4x^2 - 9$ ตรวจโดยกระจายเต็ม: $4x^2 + 6x - 6x - 9 = 4x^2 - 9$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p010
+    topics: [math.algebra.polynomials]
+    difficulty: 3
+    type: numeric
+    stem: "แม่ค้าขายมะม่วง 52 ลูก ลูกละ 48 บาท คิดในใจโดยใช้ $(a + b)(a - b) = a^2 - b^2$ แม่ค้าได้เงินกี่บาท"
+    answer: { value: 2496, unit: บาท }
+    hints:
+      - "เขียน 52 และ 48 ให้อยู่ในรูป $50 + 2$ และ $50 - 2$"
+      - "ได้ $a = 50$ และ $b = 2$ แล้วใช้ $a^2 - b^2$"
+    misconceptions:
+      - { match: 2500, feedback: "นั่นคือ $a^2 = 50^2$ เท่านั้น ยังต้องลบ $b^2 = 2^2$ อีก" }
+      - { match: 2504, feedback: "ตรวจเครื่องหมาย ผลบวกคูณผลต่างคือ $a^2 - b^2$ ไม่ใช่ $a^2 + b^2$" }
+    solution: "$52 \\times 48 = (50 + 2)(50 - 2) = 50^2 - 2^2 = 2500 - 4 = 2496$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p011
+    topics: [math.algebra.polynomials]
+    difficulty: 4
+    type: expression
+    stem: "แปลงผักของโรงเรียนเป็นรูปสี่เหลี่ยมจัตุรัสยาวด้านละ $x$ เมตร ถ้าขยายทุกด้านให้ยาวขึ้นด้านละ 2 เมตร (ยังเป็นสี่เหลี่ยมจัตุรัส) พื้นที่จะเพิ่มขึ้นกี่ตารางเมตร เขียนเป็นพหุนามที่กระจายแล้ว"
+    answer: { latex: "4x+4", variables: [x] }
+    expanded: true
+    prefix: "พื้นที่ที่เพิ่ม ="
+    hints:
+      - "พื้นที่ใหม่คือ $(x + 2)^2$ พื้นที่เดิมคือ $x^2$"
+      - "พื้นที่ที่เพิ่ม = พื้นที่ใหม่ − พื้นที่เดิม"
+      - "กระจาย $(x + 2)^2$ ด้วยสูตร $a^2 + 2ab + b^2$ แล้วลบ $x^2$"
+    misconceptions:
+      - { match: "4", feedback: "ดูเหมือนคิดว่า $(x + 2)^2 = x^2 + 4$ ลืมแถบยาว $2x$ สองแถบตามขอบแปลง" }
+      - { match: "2x+4", feedback: "พจน์กลางของ $(x + 2)^2$ คือ $2(x)(2) = 4x$ ไม่ใช่ $2x$ (มีแถบขนาด $2 \\times x$ สองแถบ)" }
+    solution: "$(x + 2)^2 - x^2 = x^2 + 4x + 4 - x^2 = 4x + 4$ ตารางเมตร ตรวจด้วย $x = 10$: $144 - 100 = 44$ และ $4(10) + 4 = 44$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p012
+    topics: [math.algebra.polynomials]
+    difficulty: 4
+    type: expression
+    stem: "กระจายและทำให้อยู่ในรูปอย่างง่าย $(x + 2)(x^2 - 3x + 1)$"
+    answer: { latex: "x^3-x^2-5x+2", variables: [x] }
+    expanded: true
+    hints:
+      - "นำ $x$ ไปคูณทุกพจน์ของวงเล็บหลัง แล้วนำ $2$ ไปคูณทุกพจน์ของวงเล็บหลังด้วย"
+      - "จะได้ทั้งหมด 6 พจน์ก่อนรวม"
+      - "รวมพจน์คล้าย: พจน์ $x^2$ ด้วยกัน และพจน์ $x$ ด้วยกัน"
+    misconceptions:
+      - { match: "x^3-3x^2+x+2", feedback: "คูณ $x$ เข้าวงเล็บครบแล้ว แต่ยังไม่ได้คูณ $2$ เข้าทุกพจน์ ต้องได้ $2x^2 - 6x + 2$ เพิ่มเข้ามา" }
+      - { match: "x^3-5x^2-5x+2", feedback: "ตรวจการรวมพจน์ $x^2$: $-3x^2 + 2x^2 = -x^2$ ไม่ใช่ $-5x^2$" }
+    solution: "$x(x^2 - 3x + 1) + 2(x^2 - 3x + 1) = x^3 - 3x^2 + x + 2x^2 - 6x + 2 = x^3 - x^2 - 5x + 2$ ตรวจด้วย $x = 1$: $3 \\times (-1) = -3$ และ $1 - 1 - 5 + 2 = -3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.poly.p013
+    topics: [math.algebra.polynomials]
+    difficulty: 5
+    type: numeric
+    stem: "ถ้า $a + b = 7$ และ $ab = 10$ แล้ว $a^2 + b^2$ มีค่าเท่าใด"
+    answer: { value: 29 }
+    hints:
+      - "ไม่จำเป็นต้องหา $a$ และ $b$ ทีละตัว ลองยกกำลังสอง $a + b$"
+      - "$(a + b)^2 = a^2 + 2ab + b^2$"
+      - "แทนค่า $(a + b)^2$ และ $ab$ ที่รู้ แล้วจัดรูปหา $a^2 + b^2$"
+    misconceptions:
+      - { match: 49, feedback: "นั่นคือ $(a + b)^2$ ซึ่งเท่ากับ $a^2 + 2ab + b^2$ ยังต้องหักพจน์ $2ab$ ออก" }
+      - { match: 39, feedback: "หัก $ab$ ออกไปครั้งเดียว แต่พจน์กลางคือ $2ab = 20$" }
+    solution: "$(a + b)^2 = a^2 + 2ab + b^2$ → $49 = a^2 + b^2 + 20$ → $a^2 + b^2 = 29$ ตรวจ: $a = 2, b = 5$ ทำให้ $a + b = 7$, $ab = 10$ และ $4 + 25 = 29$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

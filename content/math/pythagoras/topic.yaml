@@ -1,0 +1,37 @@
+id: math.geometry.pythagoras
+subject: math
+title: { th: ทฤษฎีบทพีทาโกรัส, en: The Pythagorean theorem }
+summary: ใช้ความสัมพันธ์ของด้านในสามเหลี่ยมมุมฉากหาความยาวด้านที่ไม่รู้ ตรวจมุมฉากด้วยบทกลับ และหาระยะทางระหว่างจุด
+difficulty: 4
+minutes: 35
+prerequisites: [math.geometry.triangles, math.number.roots]
+encompasses:
+  - { id: math.number.roots, weight: 0.5 }
+  - { id: math.geometry.triangles, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ด้านตรงข้ามมุมฉากสั้นกว่าผลบวกของขาเสมอ
+    caption: "แกน x คือความยาวขาข้างหนึ่ง แถบเลื่อน a คือขาอีกข้าง เส้นโค้งคือความยาวด้านตรงข้ามมุมฉาก ส่วนเส้นตรงคือระยะเมื่อเดินอ้อมไปตามขาทั้งสอง สังเกตว่าเส้นโค้งอยู่ต่ำกว่าเสมอ และเมื่อ a = 4 กับ x = 3 เส้นโค้งมีค่า 5 พอดี"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{x^2 + a^2}", "x + a"]
+      sliders:
+        - { name: a, min: 1, max: 8, step: 1, value: 4, label: ขาอีกข้าง }
+      x: [0, 10]
+      y: [0, 15]
+glossary:
+  - { term: ด้านตรงข้ามมุมฉาก, definition: "ด้านที่อยู่ตรงข้ามกับมุมฉากในสามเหลี่ยมมุมฉาก เป็นด้านที่ยาวที่สุด" }
+  - { term: ขา (ของสามเหลี่ยมมุมฉาก), definition: "ด้านสองด้านที่ประกอบกันเป็นมุมฉาก" }
+  - { term: บทกลับของทฤษฎีบทพีทาโกรัส, definition: "ถ้าด้านทั้งสามของสามเหลี่ยมสอดคล้องกับ $a^2 + b^2 = c^2$ สามเหลี่ยมนั้นเป็นสามเหลี่ยมมุมฉาก โดยมุมฉากอยู่ตรงข้ามด้าน $c$" }
+  - { term: สามสิ่งอันดับพีทาโกรัส, definition: "จำนวนเต็มบวกสามจำนวนที่สอดคล้องกับ $a^2 + b^2 = c^2$ เช่น 3, 4, 5 และ 5, 12, 13" }
+flashcards:
+  - { front: "ทฤษฎีบทพีทาโกรัส", back: "ในสามเหลี่ยมมุมฉาก $a^2 + b^2 = c^2$ โดย $c$ คือด้านตรงข้ามมุมฉาก" }
+  - { front: "หาขา $b$ เมื่อรู้ $a$ และ $c$", back: "$b = \\sqrt{c^2 - a^2}$ (ลบ ไม่ใช่บวก)" }
+  - { front: "ระยะทางระหว่างจุด $(x_1, y_1)$ กับ $(x_2, y_2)$", back: "$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$" }
+  - { front: "สามสิ่งอันดับพีทาโกรัสที่ควรจำ", back: "3–4–5, 5–12–13, 8–15–17, 7–24–25 และพหุคูณ เช่น 6–8–10" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

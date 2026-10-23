@@ -2,7 +2,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Markdown } from "@/components/Markdown";
 import { TopicLevel } from "@/components/TopicLevel";
+import { InteractiveWidget } from "@/components/InteractiveWidget";
+import { MoleculeViewer } from "@/components/MoleculeViewer";
+import { NotesEditor } from "@/components/NotesEditor";
+import { SimulationBlock } from "@/components/SimulationBlock";
+import { VideoBlock } from "@/components/VideoBlock";
 import { getIndex, getTopicPack } from "@/lib/content";
+import { phetEmbedUrl } from "@klangru/schema";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => getIndex().topics.map((t) => ({ id: t.id }));
@@ -51,23 +57,56 @@ export default async function TopicPage({ params }: Props) {
 
       <div className="lesson-body">
         {topic.lessons.map((block, k) => {
-          if (block.type === "explanation") {
-            return (
-              <div key={k} className="prose">
-                <Markdown>{lessonMarkdown[block.file]}</Markdown>
-              </div>
-            );
+          switch (block.type) {
+            case "explanation":
+              return (
+                <div key={k} className="prose">
+                  <Markdown>{lessonMarkdown[block.file]}</Markdown>
+                </div>
+              );
+            case "simulation":
+              return (
+                <SimulationBlock
+                  key={k}
+                  title={block.title}
+                  provider={PROVIDER[block.provider]}
+                  url={block.url}
+                  note={block.note}
+                  embedUrl={block.provider === "phet" && block.embed ? phetEmbedUrl(block.url) : null}
+                />
+              );
+            case "video":
+              return (
+                <VideoBlock
+                  key={k}
+                  title={block.title}
+                  url={block.url}
+                  minutes={block.minutes}
+                  source={block.source}
+                  license={block.license}
+                  questions={block.questions}
+                  problems={problems.filter((p) => block.questions.some((q) => q.problem === p.id))}
+                />
+              );
+            case "interactive":
+              return (
+                <aside key={k} className="media-card">
+                  <p className="eyebrow">ลองเล่น</p>
+                  <h3>{block.title}</h3>
+                  {block.caption && <p className="muted">{block.caption}</p>}
+                  <InteractiveWidget widget={block.widget} title={block.title} />
+                </aside>
+              );
+            case "molecule":
+              return (
+                <aside key={k} className="media-card">
+                  <p className="eyebrow">โมเลกุล 3 มิติ</p>
+                  <h3>{block.title}</h3>
+                  {block.caption && <p className="muted">{block.caption}</p>}
+                  <MoleculeViewer cid={block.cid} name={block.name} />
+                </aside>
+              );
           }
-          return (
-            <aside key={k} className="media-card">
-              <p className="eyebrow">{block.type === "video" ? `วิดีโอ · ${block.minutes} นาที` : `ซิมูเลชัน · ${PROVIDER[block.provider]}`}</p>
-              <h3>{block.title}</h3>
-              {block.type === "simulation" && block.note && <p className="muted">{block.note}</p>}
-              <a className="btn" href={block.url} target="_blank" rel="noopener noreferrer">
-                เปิดในแท็บใหม่
-              </a>
-            </aside>
-          );
         })}
 
         {topic.glossary.length > 0 && (
@@ -102,6 +141,7 @@ export default async function TopicPage({ params }: Props) {
             </div>
           </section>
         )}
+        <NotesEditor topicId={topic.id} />
       </div>
 
       {problems.length > 0 && (

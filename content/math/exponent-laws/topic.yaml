@@ -1,0 +1,38 @@
+id: math.algebra.exponent-laws
+subject: math
+title: { th: กฎของเลขยกกำลัง, en: Laws of exponents }
+summary: ใช้กฎการคูณ การหาร และการยกกำลังซ้อนของเลขยกกำลังที่มีตัวแปร เข้าใจเลขชี้กำลังศูนย์ ลบ และเศษส่วน และเชื่อมกับรากที่ n
+difficulty: 4.5
+minutes: 35
+prerequisites: [math.number.exponents, math.number.roots, math.algebra.polynomials]
+encompasses:
+  - { id: math.number.exponents, weight: 0.5 }
+  - { id: math.number.roots, weight: 0.3 }
+  - { id: math.algebra.polynomials, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เลขชี้กำลังเศษส่วนกับรากที่ n
+    caption: เส้นแรกคือ x ยกกำลัง p/q เส้นที่สองคือรากที่ q ของ x ยกกำลัง p เปลี่ยน p กับ q แล้วสังเกตว่ากราฟทั้งสองทับกันเสมอ ลอง p = 1, q = 2 จะได้กราฟรากที่สอง
+    widget:
+      kind: function-plot
+      functions: ["x^{\\frac{p}{q}}", "\\sqrt[q]{x^{p}}"]
+      sliders:
+        - { name: p, min: -3, max: 4, step: 1, value: 1, label: ตัวเศษ (ยกกำลัง) }
+        - { name: q, min: 1, max: 4, step: 1, value: 2, label: ตัวส่วน (ถอดราก) }
+      x: [0, 5]
+      y: [0, 5]
+glossary:
+  - { term: เลขชี้กำลัง, definition: "จำนวนที่บอกว่าฐานคูณกันกี่ตัว เช่น ใน $x^5$ เลขชี้กำลังคือ 5" }
+  - { term: เลขชี้กำลังลบ, definition: "$a^{-n}$ หมายถึง $\\dfrac{1}{a^n}$ คือกลับเป็นส่วน ไม่ได้ทำให้ผลเป็นลบ" }
+  - { term: รากที่ n, definition: "จำนวนที่ยกกำลัง $n$ แล้วได้ $a$ เขียน $\\sqrt[n]{a}$ หรือ $a^{1/n}$" }
+flashcards:
+  - { front: "$a^m \\cdot a^n = ?$", back: "$a^{m+n}$ ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง" }
+  - { front: "$(a^m)^n = ?$", back: "$a^{mn}$ ยกกำลังซ้อน ให้คูณเลขชี้กำลัง" }
+  - { front: "$a^0$ และ $a^{-n}$ มีค่าเท่าใด ($a \\neq 0$)", back: "$a^0 = 1$ และ $a^{-n} = \\dfrac{1}{a^n}$" }
+  - { front: "$a^{m/n}$ หมายถึงอะไร", back: "ถอดรากที่ $n$ แล้วยกกำลัง $m$: $\\left(\\sqrt[n]{a}\\right)^m$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

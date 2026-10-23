@@ -1,0 +1,38 @@
+id: math.geometry.volume-surface
+subject: math
+title: { th: ปริมาตรและพื้นที่ผิว, en: Volume and surface area }
+summary: หาปริมาตรและพื้นที่ผิวของปริซึม ทรงกระบอก พีระมิด กรวย และทรงกลม แล้วแปลงหน่วยปริมาตรเป็นลิตรเพื่อใช้ในชีวิตจริง
+difficulty: 3.5
+minutes: 40
+prerequisites: [math.geometry.area-perimeter, math.number.exponents]
+encompasses:
+  - { id: math.geometry.area-perimeter, weight: 0.5 }
+  - { id: math.number.exponents, weight: 0.2 }
+  - { id: math.number.decimals, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ทรงกระบอกกับกรวยที่ฐานและความสูงเท่ากัน
+    caption: "แกน x คือรัศมีฐาน เส้นบนคือปริมาตรทรงกระบอก เส้นล่างคือปริมาตรกรวยที่สูงเท่ากัน ลองเลื่อนความสูง h แล้วสังเกตว่าเส้นล่างสูงเป็นหนึ่งในสามของเส้นบนเสมอ และเมื่อรัศมีเพิ่มเป็นสองเท่า ปริมาตรเพิ่มเป็นสี่เท่า"
+    widget:
+      kind: function-plot
+      functions: ["\\pi x^2 h", "\\frac{1}{3}\\pi x^2 h"]
+      sliders:
+        - { name: h, min: 1, max: 5, step: 0.5, value: 2, label: ความสูง }
+      x: [0, 3]
+      y: [0, 60]
+glossary:
+  - { term: ปริมาตร, definition: "ขนาดของที่ว่างภายในทรงสามมิติ นับเป็นจำนวนลูกบาศก์หน่วย เช่น $\\mathrm{cm^3}$ หรือ $\\mathrm{m^3}$" }
+  - { term: พื้นที่ผิว, definition: "ผลรวมพื้นที่ของทุกหน้าที่ห่อหุ้มทรงสามมิติ มีหน่วยเป็นตารางหน่วย เช่น $\\mathrm{cm^2}$" }
+  - { term: ปริซึม, definition: "ทรงที่มีหน้าตัดหัวท้ายเป็นรูปเหมือนกันและขนานกัน หน้าตัดทุกระดับเท่ากับฐาน" }
+  - { term: สูงเอียง, definition: "ระยะจากยอดกรวยหรือยอดพีระมิดลงมาตามผิวด้านข้างถึงขอบฐาน ใช้หาพื้นที่ผิวข้าง" }
+flashcards:
+  - { front: "ปริมาตรปริซึมและทรงกระบอก", back: "พื้นที่ฐาน × สูง ทรงกระบอกจึงได้ $\\pi r^2 h$" }
+  - { front: "ปริมาตรพีระมิดและกรวย", back: "$\\tfrac{1}{3}$ × พื้นที่ฐาน × สูง กรวยจึงได้ $\\tfrac{1}{3}\\pi r^2 h$" }
+  - { front: "ปริมาตรและพื้นที่ผิวทรงกลมรัศมี $r$", back: "ปริมาตร $\\tfrac{4}{3}\\pi r^3$ พื้นที่ผิว $4\\pi r^2$" }
+  - { front: "$1\\ \\mathrm{m^3}$ เท่ากับกี่ลิตร", back: "$1{,}000$ ลิตร และ $1$ ลิตร $= 1{,}000\\ \\mathrm{cm^3}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

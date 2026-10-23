@@ -1,0 +1,32 @@
+id: math.prob.probability
+subject: math
+title: { th: ความน่าจะเป็น, en: Probability }
+summary: บอกโอกาสเป็นตัวเลขจาก 0 ถึง 1 ด้วยปริภูมิตัวอย่าง เหตุการณ์ตรงข้าม และเหตุการณ์อิสระ ผ่านลูกเต๋าและเหรียญ
+difficulty: 4
+minutes: 30
+prerequisites: [math.number.fractions, math.prob.counting]
+encompasses:
+  - { id: math.number.fractions, weight: 0.4 }
+  - { id: math.prob.counting, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: ปล่อยลูกบอลผ่านหมุด (PhET Plinko Probability)
+    url: https://phet.colorado.edu/en/simulations/plinko-probability
+    provider: phet
+    note: ปล่อยลูกบอลทีละลูกแล้วปล่อยทีละมาก ๆ สังเกตว่าผลแต่ละครั้งเดาไม่ได้ แต่เมื่อทดลองหลายครั้ง สัดส่วนของแต่ละช่องจะนิ่งขึ้น
+glossary:
+  - { term: ปริภูมิตัวอย่าง, definition: "เซตของผลลัพธ์ที่เป็นไปได้ทั้งหมดของการทดลองสุ่ม เขียนแทนด้วย $S$" }
+  - { term: เหตุการณ์, definition: "ส่วนหนึ่งของปริภูมิตัวอย่างที่เราสนใจ เช่น ได้แต้มคู่ $= \\{2, 4, 6\\}$" }
+  - { term: เหตุการณ์ตรงข้าม, definition: "เหตุการณ์ที่ $E$ ไม่เกิด เขียนว่า $E'$ และ $P(E') = 1 - P(E)$" }
+  - { term: เหตุการณ์อิสระ, definition: "เหตุการณ์ที่การเกิดของอันหนึ่งไม่เปลี่ยนโอกาสของอีกอัน จึงได้ $P(A \\text{ และ } B) = P(A) \\times P(B)$" }
+flashcards:
+  - { front: "สูตรความน่าจะเป็นเมื่อทุกผลลัพธ์มีโอกาสเท่ากัน", back: "$P(E) = \\frac{n(E)}{n(S)}$" }
+  - { front: "ความน่าจะเป็นมีค่าอยู่ในช่วงใด", back: "$0 \\le P(E) \\le 1$ โดย 0 คือเป็นไปไม่ได้ และ 1 คือแน่นอน" }
+  - { front: "ทอยลูกเต๋า 2 ลูก มีผลลัพธ์ทั้งหมดกี่แบบ", back: "$6 \\times 6 = 36$ แบบ" }
+  - { front: "โจทย์ \"อย่างน้อยหนึ่ง\" คิดอย่างไรให้ง่าย", back: "ใช้เหตุการณ์ตรงข้าม: $1 - P(\\text{ไม่เกิดเลย})$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

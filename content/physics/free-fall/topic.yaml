@@ -1,0 +1,39 @@
+id: physics.kinematics.free-fall
+subject: physics
+title: { th: การตกอิสระ, en: Free fall }
+summary: วิเคราะห์การปล่อยวัตถุให้ตก การโยนขึ้นแล้วตกลง และการโยนจากที่สูง ด้วยความเร่งโน้มถ่วงคงตัว ใช้ความสมมาตรของเวลาและความเร็วที่จุดสูงสุด
+difficulty: 4.5
+minutes: 35
+prerequisites: [physics.kinematics.constant-acceleration]
+encompasses:
+  - { id: physics.kinematics.constant-acceleration, weight: 0.5 }
+  - { id: physics.kinematics.acceleration, weight: 0.2 }
+  - { id: math.algebra.rearrange-formula, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ความสูงของลูกบอลที่โยนขึ้นตามเวลา
+    caption: แกนนอนคือเวลา (s) แกนตั้งคือความสูงเหนือพื้น (m) จากสมการ y = h + ut − 4.9t² เมื่อ g = 9.8 m/s² ตั้ง h = 0 แล้วเปลี่ยน u สังเกตว่าจุดสูงสุดอยู่กึ่งกลางเวลาลอยพอดี และถ้าเพิ่ม u เป็นสองเท่า ความสูงสูงสุดจะเพิ่มเป็นสี่เท่า
+    widget:
+      kind: function-plot
+      functions: ["h + u x - 4.9 x^2"]
+      sliders:
+        - { name: u, min: 0, max: 24.5, step: 4.9, value: 19.6, label: ความเร็วต้นทิศขึ้น (m/s) }
+        - { name: h, min: 0, max: 30, step: 5, value: 0, label: ความสูงของจุดปล่อย (m) }
+      x: [0, 6]
+      y: [0, 65]
+glossary:
+  - { term: การตกอิสระ, definition: "การเคลื่อนที่ที่มีแรงโน้มถ่วงกระทำเพียงแรงเดียว (ไม่คิดแรงต้านอากาศ) รวมทั้งการปล่อยให้ตก การโยนขึ้น และการขว้างลง" }
+  - { term: ความเร่งโน้มถ่วง (g), definition: "ความเร่งของวัตถุที่ตกอิสระใกล้ผิวโลก มีขนาด $9.8\\ \\mathrm{m/s^2}$ ทิศลงเสมอ ไม่ขึ้นกับมวลของวัตถุ" }
+  - { term: จุดสูงสุด, definition: "ตำแหน่งที่วัตถุที่โยนขึ้นหยุดชั่วขณะ ความเร็วเป็นศูนย์ แต่ความเร่งยังเป็น $g$ ทิศลง" }
+flashcards:
+  - { front: "ที่จุดสูงสุดของการโยนขึ้น ความเร็วและความเร่งเป็นเท่าใด", back: "ความเร็วเป็น 0 ชั่วขณะ ความเร่งยังเป็น $9.8\\ \\mathrm{m/s^2}$ ทิศลง" }
+  - { front: "โยนขึ้นด้วยความเร็ว $u$ ใช้เวลาขึ้นถึงจุดสูงสุดเท่าใด", back: "$t = \\dfrac{u}{g}$ และกลับถึงระดับเดิมที่เวลา $\\dfrac{2u}{g}$" }
+  - { front: "ความสูงสูงสุดเมื่อโยนขึ้นด้วยความเร็ว $u$", back: "$H = \\dfrac{u^2}{2g}$" }
+  - { front: "ปล่อยวัตถุจากความสูง $h$ ใช้เวลาตกถึงพื้นเท่าใด", back: "$t = \\sqrt{\\dfrac{2h}{g}}$ ไม่ขึ้นกับมวล" }
+  - { front: "ลูกบอลที่โยนขึ้นกลับถึงมือด้วยอัตราเร็วเท่าใด (ไม่คิดแรงต้านอากาศ)", back: "เท่ากับอัตราเร็วตอนโยน แต่มีทิศลง" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

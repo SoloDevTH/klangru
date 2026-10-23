@@ -1,0 +1,204 @@
+problems:
+  - id: math.sim.p001
+    topics: [math.geometry.similarity]
+    difficulty: 1
+    type: numeric
+    stem: "$\\triangle ABC \\sim \\triangle DEF$ โดย $AB = 4\\ \\mathrm{cm}$, $BC = 5\\ \\mathrm{cm}$ และ $DE = 12\\ \\mathrm{cm}$ ด้าน $EF$ ยาวกี่เซนติเมตร (ตอบในหน่วย cm)"
+    answer: { value: 15, unit: cm }
+    hints:
+      - "ด้าน $DE$ สมนัยกับ $AB$ และ $EF$ สมนัยกับ $BC$"
+      - "หาอัตราส่วนการขยาย $k = \\dfrac{DE}{AB}$ ก่อน"
+      - "นำ $k$ ไปคูณ $BC$"
+    misconceptions:
+      - { match: 13, feedback: "ดูเหมือนบวก $12 - 4 = 8$ เข้าไปที่ $BC$ รูปคล้ายต้องขยายด้วยการคูณ ไม่ใช่การบวก" }
+      - { match: 1.667, feedback: "ดูเหมือนตั้งสัดส่วนกลับข้าง รูป $DEF$ ใหญ่กว่า ($DE = 12 > AB = 4$) ดังนั้น $EF$ ต้องยาวกว่า $BC$" }
+    solution: "$k = \\dfrac{DE}{AB} = \\dfrac{12}{4} = 3$ ดังนั้น $EF = 3 \\times BC = 3 \\times 5 = 15\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p002
+    topics: [math.geometry.similarity]
+    difficulty: 1
+    type: mcq
+    multiple: true
+    stem: "รูปคู่ใดคล้ายกันเสมอ ไม่ว่าจะมีขนาดเท่าใด (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "สี่เหลี่ยมจัตุรัสสองรูป", correct: true }
+      - { id: b, text: "วงกลมสองวง", correct: true }
+      - { id: c, text: "สี่เหลี่ยมผืนผ้าสองรูป", feedback: "มุมเท่ากันหมดก็จริง แต่ด้านอาจไม่เป็นสัดส่วนเดียวกัน เช่น $1 \\times 2$ กับ $1 \\times 5$ รูปหนึ่งผอมยาวกว่า" }
+      - { id: d, text: "สามเหลี่ยมมุมฉากสองรูป", feedback: "มีมุมฉากเท่ากันเพียงคู่เดียว มุมอื่นอาจต่างกัน ต้องมีมุมเท่ากันสองคู่จึงคล้ายกัน" }
+      - { id: e, text: "สี่เหลี่ยมขนมเปียกปูนสองรูป", feedback: "ด้านเป็นสัดส่วนกันก็จริง แต่มุมอาจต่างกัน รูปหนึ่งอาจแบนกว่าอีกรูป" }
+    hints:
+      - "รูปคล้ายต้องมีมุมที่สมนัยเท่ากัน และด้านที่สมนัยเป็นอัตราส่วนเดียวกัน ต้องครบทั้งสองอย่าง"
+      - "ลองคิดหาตัวอย่างค้าน: มีสองรูปในชนิดนั้นที่รูปร่างต่างกันได้หรือไม่"
+    solution: "สี่เหลี่ยมจัตุรัสทุกรูปมีมุมฉากทุกมุมและด้านเท่ากันหมด จึงขยายเป็นกันได้เสมอ วงกลมทุกวงก็ขยายจากกันได้ด้วยอัตราส่วนของรัศมี ส่วนสี่เหลี่ยมผืนผ้า (สัดส่วนด้านต่างได้) สามเหลี่ยมมุมฉาก (มุมแหลมต่างได้) และสี่เหลี่ยมขนมเปียกปูน (มุมต่างได้) ไม่คล้ายกันเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p003
+    topics: [math.geometry.similarity]
+    difficulty: 2
+    type: numeric
+    stem: "แผนที่จังหวัดเชียงใหม่ใช้มาตราส่วน $1 : 50{,}000$ วัดระยะจากหมู่บ้านถึงน้ำตกบนแผนที่ได้ $6\\ \\mathrm{cm}$ ระยะจริงเป็นกี่กิโลเมตร (ตอบในหน่วย km)"
+    answer: { value: 3, unit: km }
+    hints:
+      - "$1\\ \\mathrm{cm}$ บนแผนที่แทนระยะจริง $50{,}000\\ \\mathrm{cm}$"
+      - "คูณ 6 ด้วย $50{,}000$ ได้ระยะจริงเป็นเซนติเมตร"
+      - "$1\\ \\mathrm{km} = 1{,}000\\ \\mathrm{m} = 100{,}000\\ \\mathrm{cm}$"
+    misconceptions:
+      - { match: 300000, feedback: "นั่นคือระยะจริงในหน่วยเซนติเมตร โจทย์ถามเป็นกิโลเมตร ต้องหารด้วย $100{,}000$" }
+      - { match: 30, feedback: "ดูเหมือนแปลงหน่วยไม่ครบ $1\\ \\mathrm{km} = 100{,}000\\ \\mathrm{cm}$ ไม่ใช่ $10{,}000\\ \\mathrm{cm}$" }
+    solution: "ระยะจริง $= 6 \\times 50{,}000 = 300{,}000\\ \\mathrm{cm} = 3{,}000\\ \\mathrm{m} = 3\\ \\mathrm{km}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p004
+    topics: [math.geometry.similarity]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อมูลใดเพียงพอที่จะสรุปว่าสามเหลี่ยมสองรูปคล้ายกัน"
+    choices:
+      - { id: a, text: "มีมุมเท่ากันสองคู่", correct: true }
+      - { id: b, text: "มีมุมเท่ากันหนึ่งคู่", feedback: "มุมเท่ากันคู่เดียวยังเหลือมุมอื่นที่ต่างกันได้ เช่น สามเหลี่ยมมุมฉากสองรูปที่รูปร่างต่างกัน" }
+      - { id: c, text: "มีด้านยาวเท่ากันหนึ่งคู่", feedback: "ความยาวด้านเท่ากันคู่เดียวไม่ได้บอกรูปร่าง สามเหลี่ยมที่มีด้านหนึ่งยาว 5 มีได้หลายรูปร่าง" }
+      - { id: d, text: "ด้านสองคู่เป็นอัตราส่วนเดียวกัน โดยไม่รู้มุมใดเลย", feedback: "ด้านสองคู่เป็นสัดส่วนกันยังไม่พอ ต้องรู้ว่ามุมที่อยู่ระหว่างสองด้านนั้นเท่ากันด้วย (ด้าน–มุม–ด้าน)" }
+    hints:
+      - "มุมภายในสามเหลี่ยมรวมกันได้ $180^\\circ$"
+      - "ถ้ารู้มุมสองคู่เท่ากัน มุมคู่ที่สามจะเป็นอย่างไร"
+    solution: "ถ้ามุมเท่ากันสองคู่ มุมคู่ที่สาม $= 180^\\circ -$ ผลบวกสองมุมนั้น จึงเท่ากันด้วย สามเหลี่ยมมีรูปร่างเดียวกัน (เงื่อนไข มุม–มุม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p005
+    topics: [math.geometry.similarity]
+    difficulty: 2
+    type: numeric
+    stem: "ร้านอัดรูปขยายรูปถ่ายขนาด $4 \\times 6$ นิ้ว ให้ด้านกว้างเป็น $10$ นิ้วโดยภาพไม่ผิดสัดส่วน ด้านยาวของรูปใหม่ต้องเป็นกี่นิ้ว (ตอบในหน่วยนิ้ว)"
+    answer: { value: 15, unit: นิ้ว }
+    hints:
+      - "ภาพไม่ผิดสัดส่วนแปลว่ารูปเดิมกับรูปใหม่เป็นรูปคล้าย"
+      - "หาตัวคูณการขยาย $k = \\dfrac{10}{4}$"
+      - "นำ $k$ ไปคูณด้านยาว 6 นิ้ว"
+    misconceptions:
+      - { match: 12, feedback: "ดูเหมือนบวก 6 นิ้วเพิ่มเท่ากับด้านกว้าง การบวกเท่ากันทุกด้านทำให้ภาพผิดสัดส่วน ต้องคูณด้วยตัวคูณเดียวกัน" }
+    solution: "$k = \\dfrac{10}{4} = 2.5$ ด้านยาวใหม่ $= 2.5 \\times 6 = 15$ นิ้ว รูปใหม่ขนาด $10 \\times 15$ นิ้ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p006
+    topics: [math.geometry.similarity]
+    difficulty: 3
+    type: numeric
+    stem: "ตอนบ่ายสาม เสาธงหน้าโรงเรียนมีเงายาว $6\\ \\mathrm{m}$ ในเวลาเดียวกัน นักเรียนสูง $1.5\\ \\mathrm{m}$ มีเงายาว $1.2\\ \\mathrm{m}$ เสาธงสูงกี่เมตร (ตอบในหน่วย m)"
+    answer: { value: 7.5, tolerance: 0.07, unit: m }
+    hints:
+      - "แสงแดดตกทำมุมเดียวกัน สามเหลี่ยมของเสาธงกับของนักเรียนจึงคล้ายกัน"
+      - "ตั้งสัดส่วนให้เป็น สูง : เงา ทั้งสองข้าง"
+      - "$\\dfrac{h}{6} = \\dfrac{1.5}{1.2}$"
+    misconceptions:
+      - { match: 4.8, feedback: "ดูเหมือนตั้งสัดส่วนกลับข้าง ($\\tfrac{h}{6} = \\tfrac{1.2}{1.5}$) นักเรียนสูงกว่าเงาของตัวเอง เสาธงก็ต้องสูงกว่าเงาของมันเช่นกัน" }
+      - { match: 6.3, feedback: "ดูเหมือนคิดว่าความสูงมากกว่าเงาเป็นค่าคงที่ ($1.5 - 1.2 = 0.3$) แล้วนำไปบวก ความสูงกับเงาเป็นสัดส่วนกันแบบคูณ ไม่ใช่บวก" }
+    solution: "$\\dfrac{h}{6} = \\dfrac{1.5}{1.2}$ → $h = \\dfrac{6 \\times 1.5}{1.2} = 7.5\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p007
+    topics: [math.geometry.similarity]
+    difficulty: 3
+    type: match
+    stem: "กำหนด $\\triangle ABC \\sim \\triangle PQR$ จับคู่ส่วนของ $\\triangle ABC$ กับส่วนที่สมนัยกันใน $\\triangle PQR$"
+    pairs:
+      - { left: "$AB$", right: "$PQ$" }
+      - { left: "$BC$", right: "$QR$" }
+      - { left: "$AC$", right: "$PR$" }
+      - { left: "$\\angle B$", right: "$\\angle Q$" }
+    hints:
+      - "ลำดับตัวอักษรในสัญลักษณ์ $\\sim$ บอกการจับคู่จุดยอด"
+      - "$A \\leftrightarrow P$, $B \\leftrightarrow Q$, $C \\leftrightarrow R$"
+    solution: "จากลำดับ $A \\leftrightarrow P$, $B \\leftrightarrow Q$, $C \\leftrightarrow R$ จึงได้ $AB \\leftrightarrow PQ$, $BC \\leftrightarrow QR$, $AC \\leftrightarrow PR$ และ $\\angle B \\leftrightarrow \\angle Q$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p008
+    topics: [math.geometry.similarity]
+    difficulty: 3
+    type: numeric
+    stem: "ใน $\\triangle ABC$ จุด $D$ อยู่บน $AB$ และจุด $E$ อยู่บน $AC$ โดย $DE \\parallel BC$ ถ้า $AD = 3\\ \\mathrm{cm}$, $DB = 6\\ \\mathrm{cm}$ และ $DE = 4\\ \\mathrm{cm}$ ด้าน $BC$ ยาวกี่เซนติเมตร (ตอบในหน่วย cm)"
+    answer: { value: 12, unit: cm }
+    hints:
+      - "$DE \\parallel BC$ ทำให้ $\\triangle ADE \\sim \\triangle ABC$"
+      - "ด้านที่สมนัยกับ $AD$ คือ $AB$ ทั้งเส้น ไม่ใช่ $DB$"
+      - "$\\dfrac{BC}{DE} = \\dfrac{AB}{AD}$ โดย $AB = AD + DB$"
+    misconceptions:
+      - { match: 8, feedback: "ดูเหมือนใช้ $\\tfrac{DB}{AD} = 2$ เป็นตัวคูณ ด้านที่สมนัยกับ $AD$ ในสามเหลี่ยมใหญ่คือ $AB = 9\\ \\mathrm{cm}$ ไม่ใช่ $DB$" }
+      - { match: 10, feedback: "ดูเหมือนนำ $DB = 6$ ไปบวกกับ $DE$ รูปคล้ายต้องขยายด้วยการคูณอัตราส่วน $\\tfrac{AB}{AD}$ ไม่ใช่การบวกความยาว" }
+    solution: "$AB = 3 + 6 = 9\\ \\mathrm{cm}$ อัตราส่วน $\\dfrac{AB}{AD} = \\dfrac{9}{3} = 3$ ดังนั้น $BC = 3 \\times DE = 3 \\times 4 = 12\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p009
+    topics: [math.geometry.similarity]
+    difficulty: 4
+    type: numeric
+    stem: "สามเหลี่ยมสองรูปคล้ายกัน ด้านที่สมนัยกันมีอัตราส่วน $2 : 3$ ถ้าสามเหลี่ยมรูปเล็กมีพื้นที่ $20\\ \\mathrm{cm^2}$ รูปใหญ่มีพื้นที่กี่ตารางเซนติเมตร (ตอบในหน่วย $\\mathrm{cm^2}$)"
+    answer: { value: 45, unit: cm² }
+    hints:
+      - "พื้นที่ขึ้นกับความยาวสองทิศทาง ทั้งฐานและความสูงถูกขยาย"
+      - "ถ้าด้านขยาย $k$ เท่า พื้นที่ขยาย $k^2$ เท่า"
+      - "ที่นี่ $k = \\tfrac{3}{2}$ ให้คูณ 20 ด้วย $k^2$"
+    misconceptions:
+      - { match: 30, feedback: "ดูเหมือนขยายพื้นที่ด้วยอัตราส่วนของด้าน $\\tfrac{3}{2}$ เท่านั้น ทั้งฐานและความสูงถูกขยาย พื้นที่จึงขยาย $\\left(\\tfrac{3}{2}\\right)^2$ เท่า" }
+      - { match: 13.33, feedback: "ดูเหมือนคูณด้วย $\\tfrac{2}{3}$ ทำให้รูปใหญ่มีพื้นที่น้อยกว่ารูปเล็ก ตรวจทิศของอัตราส่วนอีกครั้ง" }
+    solution: "$k = \\tfrac{3}{2}$ อัตราส่วนพื้นที่ $= k^2 = \\tfrac{9}{4}$ พื้นที่รูปใหญ่ $= 20 \\times \\tfrac{9}{4} = 45\\ \\mathrm{cm^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p010
+    topics: [math.geometry.similarity]
+    difficulty: 4
+    type: expression
+    stem: "สามเหลี่ยมสองรูปคล้ายกัน ด้าน $a$ และ $b$ ของรูปเล็กสมนัยกับด้าน $c$ และ $x$ ของรูปใหญ่ตามลำดับ เขียน $x$ ในรูปของ $a$, $b$ และ $c$"
+    prefix: "x ="
+    answer: { latex: "\\frac{bc}{a}", variables: [a, b, c] }
+    hints:
+      - "อัตราส่วนของด้านที่สมนัยกันต้องเท่ากัน: $\\dfrac{c}{a} = \\dfrac{x}{b}$"
+      - "คูณ $b$ ทั้งสองข้างเพื่อให้ $x$ อยู่ข้างเดียว"
+    misconceptions:
+      - { match: "\\frac{ac}{b}", feedback: "ดูเหมือนจับคู่ด้านสลับกัน $c$ สมนัยกับ $a$ และ $x$ สมนัยกับ $b$ จึงได้ $\\tfrac{x}{b} = \\tfrac{c}{a}$" }
+      - { match: "b+c-a", feedback: "ดูเหมือนบวกความต่าง $c - a$ เข้าไปที่ $b$ รูปคล้ายต้องขยายด้วยการคูณ ไม่ใช่การบวก" }
+    solution: "$\\dfrac{x}{b} = \\dfrac{c}{a}$ → $x = \\dfrac{bc}{a}$ ตรวจ: ถ้า $a = 2$, $b = 3$, $c = 4$ (ขยาย 2 เท่า) จะได้ $x = 6$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p011
+    topics: [math.geometry.similarity]
+    difficulty: 5
+    type: numeric
+    stem: "ที่ดินแปลงหนึ่งวาดบนแบบด้วยมาตราส่วน $1 : 1{,}000$ บนแบบมีพื้นที่ $12\\ \\mathrm{cm^2}$ ที่ดินจริงมีพื้นที่กี่ตารางเมตร (ตอบในหน่วย $\\mathrm{m^2}$)"
+    answer: { value: 1200, unit: m² }
+    hints:
+      - "ความยาวขยาย $1{,}000$ เท่า แล้วพื้นที่ขยายกี่เท่า"
+      - "พื้นที่ขยาย $1{,}000^2 = 1{,}000{,}000$ เท่า ได้พื้นที่จริงเป็น $\\mathrm{cm^2}$"
+      - "แปลง $\\mathrm{cm^2}$ เป็น $\\mathrm{m^2}$ ด้วยการหาร $10{,}000$"
+    misconceptions:
+      - { match: 1.2, feedback: "ดูเหมือนขยายพื้นที่แค่ $1{,}000$ เท่าเท่ากับความยาว พื้นที่ต้องขยาย $1{,}000^2$ เท่า" }
+      - { match: 120000, feedback: "ดูเหมือนแปลง $\\mathrm{cm^2}$ เป็น $\\mathrm{m^2}$ โดยหาร 100 ซึ่งเป็นการแปลงหน่วยความยาว $1\\ \\mathrm{m^2} = 10{,}000\\ \\mathrm{cm^2}$" }
+    solution: "พื้นที่จริง $= 12 \\times 1{,}000^2 = 12{,}000{,}000\\ \\mathrm{cm^2} = 12{,}000{,}000 \\div 10{,}000 = 1{,}200\\ \\mathrm{m^2}$ (หรือ: $1\\ \\mathrm{cm}$ บนแบบ $= 10\\ \\mathrm{m}$ จริง ดังนั้น $1\\ \\mathrm{cm^2} = 100\\ \\mathrm{m^2}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p012
+    topics: [math.geometry.similarity]
+    difficulty: 5
+    type: numeric
+    stem: "เสาไฟริมถนนสูง $4.8\\ \\mathrm{m}$ ตอนกลางคืน คนสูง $1.6\\ \\mathrm{m}$ ยืนห่างจากโคนเสา $4\\ \\mathrm{m}$ เงาของคนบนพื้นยาวกี่เมตร (ตอบในหน่วย m)"
+    answer: { value: 2, tolerance: 0.02, unit: m }
+    hints:
+      - "ให้เงายาว $s$ แสงจากหลอดไฟผ่านศีรษะคนไปถึงปลายเงา เกิดสามเหลี่ยมคล้ายสองรูปที่มีมุมที่ปลายเงาร่วมกัน"
+      - "สามเหลี่ยมใหญ่มีฐานเป็นระยะจากโคนเสาถึงปลายเงา คือ $4 + s$ ไม่ใช่ 4"
+      - "$\\dfrac{1.6}{s} = \\dfrac{4.8}{4 + s}$ แล้วคูณไขว้"
+    misconceptions:
+      - { match: 1.333, feedback: "ดูเหมือนตั้ง $\\tfrac{s}{4} = \\tfrac{1.6}{4.8}$ ฐานของสามเหลี่ยมใหญ่คือระยะจากโคนเสาถึงปลายเงา $4 + s$ ไม่ใช่ $4$" }
+    solution: "$\\dfrac{1.6}{s} = \\dfrac{4.8}{4 + s}$ → $1.6(4 + s) = 4.8s$ → $6.4 + 1.6s = 4.8s$ → $3.2s = 6.4$ → $s = 2\\ \\mathrm{m}$ ตรวจ: $\\tfrac{1.6}{2} = 0.8$ และ $\\tfrac{4.8}{6} = 0.8$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

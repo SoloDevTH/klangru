@@ -1,0 +1,33 @@
+id: math.functions.functions-intro
+subject: math
+title: { th: ความสัมพันธ์และฟังก์ชัน, en: Relations and functions }
+summary: รู้จักฟังก์ชันว่าเป็นความสัมพันธ์ที่ค่าเข้าแต่ละค่าให้ค่าออกเพียงค่าเดียว อ่านสัญลักษณ์ f(x) หาโดเมน เรนจ์ และฟังก์ชันประกอบ
+difficulty: 4.5
+minutes: 30
+prerequisites: [math.functions.linear-graphs]
+encompasses:
+  - { id: math.functions.linear-graphs, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: เครื่องสร้างฟังก์ชัน (PhET Function Builder)
+    url: https://phet.colorado.edu/en/simulations/function-builder
+    provider: phet
+    note: ลากตัวเลขเข้าเครื่องที่ทำงาน เช่น "×2" แล้ว "+3" ดูว่าค่าออกเป็นเท่าใด แล้วลองสลับลำดับเครื่อง ผลที่ได้มักไม่เท่าเดิม เหมือนฟังก์ชันประกอบที่สลับลำดับไม่ได้
+glossary:
+  - { term: ความสัมพันธ์, definition: "เซตของคู่อันดับ $(x, y)$ ที่จับคู่สมาชิกของเซตหนึ่งกับอีกเซตหนึ่ง" }
+  - { term: ฟังก์ชัน, definition: "ความสัมพันธ์ที่ค่า $x$ แต่ละค่าจับคู่กับค่า $y$ ได้เพียงค่าเดียว" }
+  - { term: โดเมน, definition: "เซตของค่า $x$ ทั้งหมดที่ใส่เข้าไปในฟังก์ชันได้" }
+  - { term: เรนจ์, definition: "เซตของค่า $y$ ทั้งหมดที่ฟังก์ชันให้ออกมา" }
+  - { term: ฟังก์ชันประกอบ, definition: "การนำผลของฟังก์ชันหนึ่งไปใส่ต่อในอีกฟังก์ชันหนึ่ง เขียนว่า $f(g(x))$" }
+flashcards:
+  - { front: "ความสัมพันธ์จะเป็นฟังก์ชันเมื่อใด", back: "เมื่อค่า $x$ แต่ละค่าจับคู่กับค่า $y$ เพียงค่าเดียว (ค่า $x$ ซ้ำกันแต่ $y$ ต่างกันไม่ได้)" }
+  - { front: "$f(3)$ หมายถึงอะไร", back: "ค่าของฟังก์ชัน $f$ เมื่อแทน $x = 3$ ไม่ใช่ $f$ คูณ 3" }
+  - { front: "ทดสอบด้วยเส้นตั้งทำอย่างไร", back: "ลากเส้นแนวตั้งผ่านกราฟ ถ้ามีเส้นใดตัดกราฟมากกว่า 1 จุด กราฟนั้นไม่ใช่ฟังก์ชัน" }
+  - { front: "โดเมนของ $f(x) = \\sqrt{x}$ คืออะไร", back: "$x \\ge 0$ เพราะรากที่สองของจำนวนลบไม่เป็นจำนวนจริง" }
+  - { front: "ถ้า $f(x) = x + 1$ และ $g(x) = 2x$ แล้ว $f(g(x))$ คืออะไร", back: "ทำ $g$ ก่อนแล้วจึงทำ $f$: $f(g(x)) = 2x + 1$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

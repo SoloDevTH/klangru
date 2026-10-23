@@ -1,0 +1,37 @@
+id: math.calculus.rate-of-change
+subject: math
+title: { th: อัตราการเปลี่ยนแปลง, en: Rates of change }
+summary: หาอัตราการเปลี่ยนแปลงเฉลี่ยจากความชันของเส้นตัด แล้วหดช่วงให้เล็กลงจนได้อัตราการเปลี่ยนแปลงขณะหนึ่งด้วยแนวคิดลิมิต
+difficulty: 6.5
+minutes: 35
+prerequisites: [math.functions.linear-graphs, math.functions.functions-intro]
+encompasses:
+  - { id: math.functions.linear-graphs, weight: 0.4 }
+  - { id: math.functions.functions-intro, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: เส้นตัดหมุนเข้าหาเส้นสัมผัส
+    caption: เส้นตรงผ่านจุด (1, 1) และ (1 + h, (1 + h)²) บนกราฟ y = x² ลองลด h เข้าหา 0 จากทั้งสองฝั่ง แล้วสังเกตว่าเส้นตัดเข้าใกล้เส้นสัมผัสที่มีความชัน 2
+    widget:
+      kind: function-plot
+      functions: ["x^2", "(2+h)(x-1)+1"]
+      sliders:
+        - { name: h, min: -2, max: 3, step: 0.1, value: 2, label: ความกว้างของช่วง h }
+      x: [-2, 4]
+      y: [-2, 12]
+glossary:
+  - { term: อัตราการเปลี่ยนแปลงเฉลี่ย, definition: "การเปลี่ยนแปลงของ $y$ หารด้วยการเปลี่ยนแปลงของ $x$ บนช่วง $[a, b]$ คือ $\\frac{f(b) - f(a)}{b - a}$" }
+  - { term: เส้นตัด, definition: เส้นตรงที่ลากผ่านสองจุดบนกราฟ ความชันของมันคืออัตราการเปลี่ยนแปลงเฉลี่ยบนช่วงนั้น }
+  - { term: ลิมิต, definition: ค่าที่ปริมาณหนึ่งเข้าใกล้มากขึ้นเรื่อย ๆ เมื่อตัวแปรเข้าใกล้ค่าที่กำหนด แม้จะแทนค่านั้นตรง ๆ ไม่ได้ }
+  - { term: อัตราการเปลี่ยนแปลงขณะหนึ่ง, definition: "ลิมิตของอัตราเฉลี่ยบนช่วง $[a, a + h]$ เมื่อ $h \\to 0$ เท่ากับความชันของเส้นสัมผัสที่ $x = a$" }
+flashcards:
+  - { front: "สูตรอัตราการเปลี่ยนแปลงเฉลี่ยบนช่วง $[a, b]$", back: "$\\frac{f(b) - f(a)}{b - a}$ เท่ากับความชันของเส้นตัด" }
+  - { front: "หน่วยของอัตราการเปลี่ยนแปลงคืออะไร", back: "หน่วยของ $y$ ต่อหน่วยของ $x$ เช่น m ต่อ s ได้ $\\mathrm{m/s}$" }
+  - { front: "อัตราการเปลี่ยนแปลงขณะหนึ่งที่ $x = a$", back: "$\\lim_{h \\to 0} \\frac{f(a + h) - f(a)}{h}$ คือความชันของเส้นสัมผัส" }
+  - { front: "อัตราเฉลี่ยของ $f(x) = mx + c$ บนช่วงใดก็ตาม", back: "เท่ากับ $m$ เสมอ เพราะกราฟเป็นเส้นตรง" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

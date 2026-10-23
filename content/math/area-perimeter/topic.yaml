@@ -1,0 +1,43 @@
+id: math.geometry.area-perimeter
+subject: math
+title: { th: พื้นที่และเส้นรอบรูป, en: Area and perimeter }
+summary: หาความยาวรอบรูปและพื้นที่ของสี่เหลี่ยม สามเหลี่ยม สี่เหลี่ยมคางหมู วงกลม และรูปประกอบ พร้อมใช้หน่วยให้ถูกต้อง
+difficulty: 2.5
+minutes: 35
+prerequisites: [math.number.fractions, math.number.decimals]
+encompasses:
+  - { id: math.number.decimals, weight: 0.3 }
+  - { id: math.number.fractions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: ต่อรูปจากตารางหน่วย (PhET Area Builder)
+    url: https://phet.colorado.edu/en/simulations/area-builder
+    provider: phet
+    note: ลองต่อรูปหลายแบบที่มีพื้นที่ 12 ตารางหน่วยเท่ากัน แล้วสังเกตว่าความยาวรอบรูปของแต่ละแบบไม่เท่ากัน
+  - type: interactive
+    title: รั้วยาวเท่าเดิม แต่พื้นที่เปลี่ยนได้
+    caption: "แกน x คือความกว้างของแปลงสี่เหลี่ยมผืนผ้า แกน y คือพื้นที่เมื่อใช้รั้วยาว p เมตรล้อมรอบ ลองเลื่อน p แล้วดูว่าความกว้างเท่าใดให้พื้นที่มากที่สุด"
+    widget:
+      kind: function-plot
+      functions: ["x\\left(\\frac{p}{2}-x\\right)"]
+      sliders:
+        - { name: p, min: 4, max: 20, step: 2, value: 12, label: ความยาวรั้ว (m) }
+      x: [0, 10]
+      y: [0, 26]
+glossary:
+  - { term: เส้นรอบรูป, definition: "ความยาวรอบขอบของรูปทั้งหมด มีหน่วยเป็นความยาว เช่น เมตร (m)" }
+  - { term: พื้นที่, definition: "ขนาดของบริเวณที่รูปครอบคลุม นับเป็นจำนวนตารางหน่วย เช่น ตารางเมตร ($\\mathrm{m^2}$)" }
+  - { term: ความสูง (ของรูป), definition: "ระยะที่วัดตั้งฉากกับฐาน ไม่ใช่ความยาวของด้านเอียง" }
+  - { term: เส้นรอบวง, definition: "เส้นรอบรูปของวงกลม มีค่า $2\\pi r$ หรือ $\\pi d$" }
+flashcards:
+  - { front: "พื้นที่สามเหลี่ยม", back: "$\\tfrac{1}{2} \\times \\text{ฐาน} \\times \\text{สูง}$ โดยความสูงต้องตั้งฉากกับฐาน" }
+  - { front: "พื้นที่สี่เหลี่ยมคางหมู", back: "$\\tfrac{1}{2} \\times (\\text{ผลบวกด้านคู่ขนาน}) \\times \\text{สูง}$" }
+  - { front: "เส้นรอบวงและพื้นที่วงกลมรัศมี $r$", back: "เส้นรอบวง $2\\pi r$ (หน่วยความยาว) พื้นที่ $\\pi r^2$ (หน่วยตาราง)" }
+  - { front: "$1\\ \\mathrm{m^2}$ เท่ากับกี่ $\\mathrm{cm^2}$", back: "$100 \\times 100 = 10{,}000\\ \\mathrm{cm^2}$ ไม่ใช่ 100" }
+  - { front: "1 ไร่ เท่ากับกี่ตารางเมตร", back: "1 ไร่ = 4 งาน = 400 ตารางวา = $1{,}600\\ \\mathrm{m^2}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

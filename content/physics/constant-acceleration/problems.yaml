@@ -1,134 +1,169 @@
-- id: phy.suvat.p001
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 1
-  type: numeric
-  stem: "รถไฟฟ้าออกจากสถานีจากหยุดนิ่ง ด้วยความเร่งคงตัว $3\\ \\mathrm{m/s^2}$ หลังผ่านไป $4\\ \\mathrm{s}$ มีความเร็วเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s)"
-  answer: { value: 12, unit: m/s }
-  hints:
-    - "รู้ $u$, $a$, $t$ และต้องการหา $v$ ไม่เกี่ยวกับการกระจัด"
-    - "ใช้ $v = u + at$ โดยเริ่มจากหยุดนิ่งแปลว่า $u = 0$"
-  misconceptions:
-    - { match: 24, feedback: "นั่นคือค่าของ $\\tfrac{1}{2}at^2$ ซึ่งเป็นระยะทาง (หน่วย m) ไม่ใช่ความเร็ว โจทย์ถามความเร็ว ใช้ $v = u + at$" }
-    - { match: 0.75, feedback: "ดูเหมือนนำความเร่งหารด้วยเวลา ความเร่ง $3\\ \\mathrm{m/s^2}$ แปลว่าความเร็วเพิ่ม $3\\ \\mathrm{m/s}$ ทุกวินาที จึงต้องคูณกับเวลา" }
-  solution: "$v = u + at = 0 + (3\\ \\mathrm{m/s^2})(4\\ \\mathrm{s}) = 12\\ \\mathrm{m/s}$"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+problems:
+  - id: phy.suvat.p001
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 1
+    type: numeric
+    stem: "รถไฟฟ้าออกจากสถานีจากหยุดนิ่ง ด้วยความเร่งคงตัว $3\\ \\mathrm{m/s^2}$ หลังผ่านไป $4\\ \\mathrm{s}$ มีความเร็วเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s)"
+    answer: { value: 12, unit: m/s }
+    hints:
+      - "รู้ $u$, $a$, $t$ และต้องการหา $v$ ไม่เกี่ยวกับการกระจัด"
+      - "ใช้ $v = u + at$ โดยเริ่มจากหยุดนิ่งแปลว่า $u = 0$"
+    misconceptions:
+      - { match: 24, feedback: "นั่นคือค่าของ $\\tfrac{1}{2}at^2$ ซึ่งเป็นระยะทาง (หน่วย m) ไม่ใช่ความเร็ว โจทย์ถามความเร็ว ใช้ $v = u + at$" }
+      - { match: 0.75, feedback: "ดูเหมือนนำความเร่งหารด้วยเวลา ความเร่ง $3\\ \\mathrm{m/s^2}$ แปลว่าความเร็วเพิ่ม $3\\ \\mathrm{m/s}$ ทุกวินาที จึงต้องคูณกับเวลา" }
+    solution: "$v = u + at = 0 + (3\\ \\mathrm{m/s^2})(4\\ \\mathrm{s}) = 12\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p002
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 2
-  type: match
-  stem: "สมการแต่ละสมการของความเร่งคงตัวไม่มีตัวแปรใดอยู่ จับคู่ให้ถูกต้อง"
-  pairs:
-    - { left: "$v = u + at$", right: "ไม่มีการกระจัด $s$" }
-    - { left: "$s = ut + \\tfrac{1}{2}at^2$", right: "ไม่มีความเร็วปลาย $v$" }
-    - { left: "$v^2 = u^2 + 2as$", right: "ไม่มีเวลา $t$" }
-    - { left: "$s = \\tfrac{(u + v)t}{2}$", right: "ไม่มีความเร่ง $a$" }
-  hints:
-    - "ตัวแปรทั้งหมดมี 5 ตัว คือ $u$, $v$, $a$, $t$, $s$"
-    - "ไล่ดูทีละสมการว่าตัวแปรใดในห้าตัวนี้ไม่ปรากฏ"
-  solution: "$v = u + at$ ไม่มี $s$ · $s = ut + \\tfrac{1}{2}at^2$ ไม่มี $v$ · $v^2 = u^2 + 2as$ ไม่มี $t$ · $s = \\tfrac{(u + v)t}{2}$ ไม่มี $a$ จึงเลือกสมการจากตัวแปรที่โจทย์ไม่ให้และไม่ถาม"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p002
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 2
+    type: match
+    stem: "สมการแต่ละสมการของความเร่งคงตัวไม่มีตัวแปรใดอยู่ จับคู่ให้ถูกต้อง"
+    pairs:
+      - { left: "$v = u + at$", right: "ไม่มีการกระจัด $s$" }
+      - { left: "$s = ut + \\tfrac{1}{2}at^2$", right: "ไม่มีความเร็วปลาย $v$" }
+      - { left: "$v^2 = u^2 + 2as$", right: "ไม่มีเวลา $t$" }
+      - { left: "$s = \\tfrac{(u + v)t}{2}$", right: "ไม่มีความเร่ง $a$" }
+    hints:
+      - "ตัวแปรทั้งหมดมี 5 ตัว คือ $u$, $v$, $a$, $t$, $s$"
+      - "ไล่ดูทีละสมการว่าตัวแปรใดในห้าตัวนี้ไม่ปรากฏ"
+    solution: "$v = u + at$ ไม่มี $s$ · $s = ut + \\tfrac{1}{2}at^2$ ไม่มี $v$ · $v^2 = u^2 + 2as$ ไม่มี $t$ · $s = \\tfrac{(u + v)t}{2}$ ไม่มี $a$ จึงเลือกสมการจากตัวแปรที่โจทย์ไม่ให้และไม่ถาม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p003
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 2
-  type: numeric
-  stem: "รถจักรยานยนต์เริ่มจากหยุดนิ่ง เร่งด้วยความเร่งคงตัว $2\\ \\mathrm{m/s^2}$ เป็นเวลา $5\\ \\mathrm{s}$ ได้ระยะทางกี่เมตร (ตอบเป็นตัวเลขในหน่วย m)"
-  answer: { value: 25, unit: m }
-  hints:
-    - "รู้ $u$, $a$, $t$ ต้องการหา $s$ โดยไม่รู้ $v$"
-    - "ใช้ $s = ut + \\tfrac{1}{2}at^2$ เมื่อ $u = 0$ พจน์แรกเป็นศูนย์"
-    - "ยกกำลังสองเวลาก่อน แล้วคูณด้วย $\\tfrac{1}{2}$ และ $a$"
-  misconceptions:
-    - { match: 50, feedback: "ดูเหมือนลืม $\\tfrac{1}{2}$ ใน $\\tfrac{1}{2}at^2$ ทำให้ได้ระยะทางมากเป็นสองเท่า" }
-    - { match: 10, feedback: "นั่นคือ $at$ ซึ่งเป็นความเร็วปลาย ($\\mathrm{m/s}$) ไม่ใช่ระยะทาง ต้องใช้ $s = ut + \\tfrac{1}{2}at^2$" }
-  solution: "$s = ut + \\tfrac{1}{2}at^2 = 0 + \\tfrac{1}{2}(2\\ \\mathrm{m/s^2})(5\\ \\mathrm{s})^2 = \\tfrac{1}{2}(2)(25)\\ \\mathrm{m} = 25\\ \\mathrm{m}$ ตรวจ: $v = 10\\ \\mathrm{m/s}$ และ $s = \\tfrac{(0 + 10)(5)}{2} = 25\\ \\mathrm{m}$ ✓"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p003
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 2
+    type: numeric
+    stem: "รถจักรยานยนต์เริ่มจากหยุดนิ่ง เร่งด้วยความเร่งคงตัว $2\\ \\mathrm{m/s^2}$ เป็นเวลา $5\\ \\mathrm{s}$ ได้ระยะทางกี่เมตร (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 25, unit: m }
+    hints:
+      - "รู้ $u$, $a$, $t$ ต้องการหา $s$ โดยไม่รู้ $v$"
+      - "ใช้ $s = ut + \\tfrac{1}{2}at^2$ เมื่อ $u = 0$ พจน์แรกเป็นศูนย์"
+      - "ยกกำลังสองเวลาก่อน แล้วคูณด้วย $\\tfrac{1}{2}$ และ $a$"
+    misconceptions:
+      - { match: 50, feedback: "ดูเหมือนลืม $\\tfrac{1}{2}$ ใน $\\tfrac{1}{2}at^2$ ทำให้ได้ระยะทางมากเป็นสองเท่า" }
+      - { match: 10, feedback: "นั่นคือ $at$ ซึ่งเป็นความเร็วปลาย ($\\mathrm{m/s}$) ไม่ใช่ระยะทาง ต้องใช้ $s = ut + \\tfrac{1}{2}at^2$" }
+    solution: "$s = ut + \\tfrac{1}{2}at^2 = 0 + \\tfrac{1}{2}(2\\ \\mathrm{m/s^2})(5\\ \\mathrm{s})^2 = \\tfrac{1}{2}(2)(25)\\ \\mathrm{m} = 25\\ \\mathrm{m}$ ตรวจ: $v = 10\\ \\mathrm{m/s}$ และ $s = \\tfrac{(0 + 10)(5)}{2} = 25\\ \\mathrm{m}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p004
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 3
-  type: numeric
-  stem: "รถยนต์วิ่งด้วยความเร็ว $20\\ \\mathrm{m/s}$ คนขับเหยียบเบรกทำให้มีความเร่ง $-5\\ \\mathrm{m/s^2}$ (ทิศที่รถวิ่งเป็นบวก) จนรถหยุด รถไถลไปได้ไกลกี่เมตร (ตอบเป็นตัวเลขในหน่วย m)"
-  answer: { value: 40, unit: m }
-  hints:
-    - "รถหยุดแปลว่า $v = 0$ โจทย์ไม่ให้และไม่ถามเวลา"
-    - "สมการที่ไม่มี $t$ คือ $v^2 = u^2 + 2as$"
-    - "แทนค่าแล้วจัดรูปหา $s$: $0 = 20^2 + 2(-5)s$"
-  misconceptions:
-    - { match: 80, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ ตรวจสมการอีกครั้ง: $v^2 = u^2 + 2as$" }
-    - { match: -40, feedback: "ระยะไถลเป็นลบไม่ได้ เพราะรถวิ่งไปข้างหน้า ดูเหมือนใช้ $a = +5$ หรือเครื่องหมายหายตอนจัดรูป ความเร่งที่ใช้เบรกต้องเป็นลบ" }
-  solution: "$v^2 = u^2 + 2as$ → $0 = (20\\ \\mathrm{m/s})^2 + 2(-5\\ \\mathrm{m/s^2})s$ → $10s = 400$ → $s = 40\\ \\mathrm{m}$ ตรวจหน่วย: $\\dfrac{\\mathrm{m^2/s^2}}{\\mathrm{m/s^2}} = \\mathrm{m}$ ✓"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p004
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 3
+    type: numeric
+    stem: "รถยนต์วิ่งด้วยความเร็ว $20\\ \\mathrm{m/s}$ คนขับเหยียบเบรกทำให้มีความเร่ง $-5\\ \\mathrm{m/s^2}$ (ทิศที่รถวิ่งเป็นบวก) จนรถหยุด รถไถลไปได้ไกลกี่เมตร (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 40, unit: m }
+    hints:
+      - "รถหยุดแปลว่า $v = 0$ โจทย์ไม่ให้และไม่ถามเวลา"
+      - "สมการที่ไม่มี $t$ คือ $v^2 = u^2 + 2as$"
+      - "แทนค่าแล้วจัดรูปหา $s$: $0 = 20^2 + 2(-5)s$"
+    misconceptions:
+      - { match: 80, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ ตรวจสมการอีกครั้ง: $v^2 = u^2 + 2as$" }
+      - { match: -40, feedback: "ระยะไถลเป็นลบไม่ได้ เพราะรถวิ่งไปข้างหน้า ดูเหมือนใช้ $a = +5$ หรือเครื่องหมายหายตอนจัดรูป ความเร่งที่ใช้เบรกต้องเป็นลบ" }
+    solution: "$v^2 = u^2 + 2as$ → $0 = (20\\ \\mathrm{m/s})^2 + 2(-5\\ \\mathrm{m/s^2})s$ → $10s = 400$ → $s = 40\\ \\mathrm{m}$ ตรวจหน่วย: $\\dfrac{\\mathrm{m^2/s^2}}{\\mathrm{m/s^2}} = \\mathrm{m}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p005
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 3
-  type: mcq
-  stem: "โจทย์บอกความเร็วต้น $u$ ความเร่ง $a$ และการกระจัด $s$ แล้วถามความเร็วปลาย $v$ โดยไม่ได้บอกเวลา ควรใช้สมการใดจึงหาคำตอบได้ในขั้นเดียว"
-  choices:
-    - { id: a, text: "$v^2 = u^2 + 2as$", correct: true }
-    - { id: b, text: "$v = u + at$", feedback: "สมการนี้ต้องรู้เวลา $t$ ซึ่งโจทย์ไม่ได้ให้ มีตัวไม่รู้สองตัวในสมการเดียวจึงแก้ไม่ได้" }
-    - { id: c, text: "$s = ut + \\tfrac{1}{2}at^2$", feedback: "สมการนี้ไม่มี $v$ อยู่เลย จึงหาความเร็วปลายจากสมการนี้โดยตรงไม่ได้" }
-    - { id: d, text: "$s = \\tfrac{(u + v)t}{2}$", feedback: "สมการนี้มี $t$ อยู่ด้วย ซึ่งโจทย์ไม่ได้ให้ จึงมีตัวไม่รู้สองตัว" }
-  hints:
-    - "ตัวแปรที่โจทย์ไม่ให้และไม่ถามคือตัวใด"
-    - "หาสมการที่ไม่มีตัวแปรนั้นอยู่เลย"
-  solution: "โจทย์ไม่ให้และไม่ถาม $t$ จึงเลือกสมการที่ไม่มี $t$ คือ $v^2 = u^2 + 2as$ ซึ่งมีตัวไม่รู้ตัวเดียวคือ $v$"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p005
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 3
+    type: mcq
+    stem: "โจทย์บอกความเร็วต้น $u$ ความเร่ง $a$ และการกระจัด $s$ แล้วถามความเร็วปลาย $v$ โดยไม่ได้บอกเวลา ควรใช้สมการใดจึงหาคำตอบได้ในขั้นเดียว"
+    choices:
+      - { id: a, text: "$v^2 = u^2 + 2as$", correct: true }
+      - { id: b, text: "$v = u + at$", feedback: "สมการนี้ต้องรู้เวลา $t$ ซึ่งโจทย์ไม่ได้ให้ มีตัวไม่รู้สองตัวในสมการเดียวจึงแก้ไม่ได้" }
+      - { id: c, text: "$s = ut + \\tfrac{1}{2}at^2$", feedback: "สมการนี้ไม่มี $v$ อยู่เลย จึงหาความเร็วปลายจากสมการนี้โดยตรงไม่ได้" }
+      - { id: d, text: "$s = \\tfrac{(u + v)t}{2}$", feedback: "สมการนี้มี $t$ อยู่ด้วย ซึ่งโจทย์ไม่ได้ให้ จึงมีตัวไม่รู้สองตัว" }
+    hints:
+      - "ตัวแปรที่โจทย์ไม่ให้และไม่ถามคือตัวใด"
+      - "หาสมการที่ไม่มีตัวแปรนั้นอยู่เลย"
+    solution: "โจทย์ไม่ให้และไม่ถาม $t$ จึงเลือกสมการที่ไม่มี $t$ คือ $v^2 = u^2 + 2as$ ซึ่งมีตัวไม่รู้ตัวเดียวคือ $v$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p006
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 4
-  type: numeric
-  stem: "ปล่อยลูกบอลจากหยุดนิ่งบนตึกสูง ลูกบอลตกอิสระนาน $3\\ \\mathrm{s}$ ก่อนถึงพื้น ตึกสูงกี่เมตร ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m)"
-  answer: { value: 44.1, tolerance: 0.05, unit: m }
-  hints:
-    - "ตั้งทิศลงเป็นบวก จะได้ $u = 0$ และ $a = +9.8\\ \\mathrm{m/s^2}$"
-    - "รู้ $u$, $a$, $t$ ต้องการหา $s$ ใช้ $s = ut + \\tfrac{1}{2}at^2$"
-    - "อย่าลืม $\\tfrac{1}{2}$ และยกกำลังสองของเวลา"
-  misconceptions:
-    - { match: 88.2, feedback: "ดูเหมือนลืม $\\tfrac{1}{2}$ ใน $\\tfrac{1}{2}at^2$ ทำให้ได้ค่ามากเป็นสองเท่า" }
-    - { match: 45, feedback: "ดูเหมือนใช้ $g = 10\\ \\mathrm{m/s^2}$ วิธีคิดถูกแล้ว แต่ข้อนี้กำหนด $g = 9.8\\ \\mathrm{m/s^2}$" }
-  solution: "ทิศลงเป็นบวก: $s = ut + \\tfrac{1}{2}gt^2 = 0 + \\tfrac{1}{2}(9.8\\ \\mathrm{m/s^2})(3\\ \\mathrm{s})^2 = 4.9 \\times 9\\ \\mathrm{m} = 44.1\\ \\mathrm{m}$"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p006
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 4
+    type: numeric
+    stem: "ปล่อยลูกบอลจากหยุดนิ่งบนตึกสูง ลูกบอลตกอิสระนาน $3\\ \\mathrm{s}$ ก่อนถึงพื้น ตึกสูงกี่เมตร ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 44.1, tolerance: 0.05, unit: m }
+    hints:
+      - "ตั้งทิศลงเป็นบวก จะได้ $u = 0$ และ $a = +9.8\\ \\mathrm{m/s^2}$"
+      - "รู้ $u$, $a$, $t$ ต้องการหา $s$ ใช้ $s = ut + \\tfrac{1}{2}at^2$"
+      - "อย่าลืม $\\tfrac{1}{2}$ และยกกำลังสองของเวลา"
+    misconceptions:
+      - { match: 88.2, feedback: "ดูเหมือนลืม $\\tfrac{1}{2}$ ใน $\\tfrac{1}{2}at^2$ ทำให้ได้ค่ามากเป็นสองเท่า" }
+      - { match: 45, feedback: "ดูเหมือนใช้ $g = 10\\ \\mathrm{m/s^2}$ วิธีคิดถูกแล้ว แต่ข้อนี้กำหนด $g = 9.8\\ \\mathrm{m/s^2}$" }
+    solution: "ทิศลงเป็นบวก: $s = ut + \\tfrac{1}{2}gt^2 = 0 + \\tfrac{1}{2}(9.8\\ \\mathrm{m/s^2})(3\\ \\mathrm{s})^2 = 4.9 \\times 9\\ \\mathrm{m} = 44.1\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p007
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 4
-  type: numeric
-  stem: "รถยนต์เร่งความเร็วอย่างสม่ำเสมอจาก $10\\ \\mathrm{m/s}$ เป็น $30\\ \\mathrm{m/s}$ ในระยะทาง $100\\ \\mathrm{m}$ ความเร่งเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s²)"
-  answer: { value: 4, unit: m/s² }
-  hints:
-    - "รู้ $u$, $v$, $s$ ไม่รู้และไม่ถามเวลา"
-    - "ใช้ $v^2 = u^2 + 2as$ แล้วจัดรูปให้ $a$ อยู่ข้างเดียว"
-    - "$a = \\dfrac{v^2 - u^2}{2s}$ ระวังต้องยกกำลังสองแต่ละตัวก่อนลบ"
-  misconceptions:
-    - { match: 8, feedback: "ดูเหมือนลืมหารด้วย 2 ตอนจัดรูป จาก $v^2 - u^2 = 2as$ ได้ $a = \\dfrac{v^2 - u^2}{2s}$" }
-    - { match: 0.2, feedback: "ดูเหมือนนำความเร็วที่เปลี่ยนไปหารด้วยระยะทาง แต่ความเร่งคือความเร็วที่เปลี่ยนไปหารด้วย **เวลา** เมื่อไม่รู้เวลาให้ใช้ $v^2 = u^2 + 2as$" }
-  solution: "$a = \\dfrac{v^2 - u^2}{2s} = \\dfrac{(30\\ \\mathrm{m/s})^2 - (10\\ \\mathrm{m/s})^2}{2(100\\ \\mathrm{m})} = \\dfrac{900 - 100}{200}\\ \\mathrm{m/s^2} = 4\\ \\mathrm{m/s^2}$ ตรวจ: $t = \\dfrac{30 - 10}{4} = 5\\ \\mathrm{s}$ และ $s = \\tfrac{(10 + 30)(5)}{2} = 100\\ \\mathrm{m}$ ✓"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p007
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 4
+    type: numeric
+    stem: "รถยนต์เร่งความเร็วอย่างสม่ำเสมอจาก $10\\ \\mathrm{m/s}$ เป็น $30\\ \\mathrm{m/s}$ ในระยะทาง $100\\ \\mathrm{m}$ ความเร่งเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 4, unit: m/s² }
+    hints:
+      - "รู้ $u$, $v$, $s$ ไม่รู้และไม่ถามเวลา"
+      - "ใช้ $v^2 = u^2 + 2as$ แล้วจัดรูปให้ $a$ อยู่ข้างเดียว"
+      - "$a = \\dfrac{v^2 - u^2}{2s}$ ระวังต้องยกกำลังสองแต่ละตัวก่อนลบ"
+    misconceptions:
+      - { match: 8, feedback: "ดูเหมือนลืมหารด้วย 2 ตอนจัดรูป จาก $v^2 - u^2 = 2as$ ได้ $a = \\dfrac{v^2 - u^2}{2s}$" }
+      - { match: 0.2, feedback: "ดูเหมือนนำความเร็วที่เปลี่ยนไปหารด้วยระยะทาง แต่ความเร่งคือความเร็วที่เปลี่ยนไปหารด้วย **เวลา** เมื่อไม่รู้เวลาให้ใช้ $v^2 = u^2 + 2as$" }
+    solution: "$a = \\dfrac{v^2 - u^2}{2s} = \\dfrac{(30\\ \\mathrm{m/s})^2 - (10\\ \\mathrm{m/s})^2}{2(100\\ \\mathrm{m})} = \\dfrac{900 - 100}{200}\\ \\mathrm{m/s^2} = 4\\ \\mathrm{m/s^2}$ ตรวจ: $t = \\dfrac{30 - 10}{4} = 5\\ \\mathrm{s}$ และ $s = \\tfrac{(10 + 30)(5)}{2} = 100\\ \\mathrm{m}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
 
-- id: phy.suvat.p008
-  topics: [physics.kinematics.constant-acceleration]
-  difficulty: 5
-  type: numeric
-  stem: "โยนลูกบอลขึ้นตรง ๆ ด้วยความเร็ว $14.7\\ \\mathrm{m/s}$ ลูกบอลขึ้นไปได้สูงสุดกี่เมตรเหนือจุดที่ปล่อย ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m ทศนิยม 2 ตำแหน่ง)"
-  answer: { value: 11.025, tolerance: 0.05, unit: m }
-  hints:
-    - "ที่จุดสูงสุด ลูกบอลหยุดชั่วขณะ ความเร็วปลายจึงเป็นเท่าใด"
-    - "ตั้งทิศขึ้นเป็นบวก จะได้ $u = +14.7\\ \\mathrm{m/s}$ และ $a = -9.8\\ \\mathrm{m/s^2}$ ไม่รู้และไม่ถามเวลา"
-    - "ใช้ $v^2 = u^2 + 2as$ โดยให้ $v = 0$ แล้วจัดรูปหา $s$"
-  misconceptions:
-    - { match: 22.05, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ จาก $0 = u^2 - 2gs$ ได้ $s = \\dfrac{u^2}{2g}$" }
-    - { match: 10.805, feedback: "ดูเหมือนใช้ $g = 10\\ \\mathrm{m/s^2}$ วิธีคิดถูกแล้ว แต่ข้อนี้กำหนด $g = 9.8\\ \\mathrm{m/s^2}$" }
-  solution: "ทิศขึ้นเป็นบวก ที่จุดสูงสุด $v = 0$: $0 = (14.7\\ \\mathrm{m/s})^2 + 2(-9.8\\ \\mathrm{m/s^2})s$ → $19.6s = 216.09$ → $s = \\dfrac{216.09}{19.6}\\ \\mathrm{m} \\approx 11.03\\ \\mathrm{m}$ (ตรวจอีกทาง: ใช้เวลาขึ้น $t = \\dfrac{14.7}{9.8} = 1.5\\ \\mathrm{s}$ และ $s = \\tfrac{(14.7 + 0)(1.5)}{2} = 11.025\\ \\mathrm{m}$ ✓)"
-  license: CC-BY-SA-4.0
-  ai_assisted: true
+  - id: phy.suvat.p008
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 5
+    type: numeric
+    stem: "โยนลูกบอลขึ้นตรง ๆ ด้วยความเร็ว $14.7\\ \\mathrm{m/s}$ ลูกบอลขึ้นไปได้สูงสุดกี่เมตรเหนือจุดที่ปล่อย ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 11.025, tolerance: 0.05, unit: m }
+    hints:
+      - "ที่จุดสูงสุด ลูกบอลหยุดชั่วขณะ ความเร็วปลายจึงเป็นเท่าใด"
+      - "ตั้งทิศขึ้นเป็นบวก จะได้ $u = +14.7\\ \\mathrm{m/s}$ และ $a = -9.8\\ \\mathrm{m/s^2}$ ไม่รู้และไม่ถามเวลา"
+      - "ใช้ $v^2 = u^2 + 2as$ โดยให้ $v = 0$ แล้วจัดรูปหา $s$"
+    misconceptions:
+      - { match: 22.05, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ จาก $0 = u^2 - 2gs$ ได้ $s = \\dfrac{u^2}{2g}$" }
+      - { match: 10.805, feedback: "ดูเหมือนใช้ $g = 10\\ \\mathrm{m/s^2}$ วิธีคิดถูกแล้ว แต่ข้อนี้กำหนด $g = 9.8\\ \\mathrm{m/s^2}$" }
+    solution: "ทิศขึ้นเป็นบวก ที่จุดสูงสุด $v = 0$: $0 = (14.7\\ \\mathrm{m/s})^2 + 2(-9.8\\ \\mathrm{m/s^2})s$ → $19.6s = 216.09$ → $s = \\dfrac{216.09}{19.6}\\ \\mathrm{m} \\approx 11.03\\ \\mathrm{m}$ (ตรวจอีกทาง: ใช้เวลาขึ้น $t = \\dfrac{14.7}{9.8} = 1.5\\ \\mathrm{s}$ และ $s = \\tfrac{(14.7 + 0)(1.5)}{2} = 11.025\\ \\mathrm{m}$ ✓)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p009
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องบินโดยสารที่สนามบินสุวรรณภูมิเริ่มวิ่งบนรันเวย์จากหยุดนิ่ง ด้วยความเร่งคงตัว $2.5\\ \\mathrm{m/s^2}$ และต้องมีความเร็ว $75\\ \\mathrm{m/s}$ จึงจะขึ้นจากพื้นได้ รันเวย์ต้องยาวอย่างน้อยกี่เมตร (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 1125, unit: m }
+    hints:
+      - "รู้ $u = 0$, $v$, $a$ ต้องการหา $s$ โดยไม่รู้เวลา"
+      - "ใช้ $v^2 = u^2 + 2as$ ซึ่งเป็นสมการที่ไม่มี $t$"
+      - "จัดรูปได้ $s = \\dfrac{v^2 - u^2}{2a}$ แล้วแทนค่า"
+    misconceptions:
+      - { match: 2250, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ จาก $v^2 = 2as$ ต้องหารด้วย $2a$ ไม่ใช่แค่ $a$" }
+      - { match: 30, feedback: "นั่นคือเวลาที่ใช้ ($t = \\tfrac{v}{a} = 30\\ \\mathrm{s}$) ไม่ใช่ความยาวรันเวย์ โจทย์ถามระยะทาง" }
+    solution: "$s = \\dfrac{v^2 - u^2}{2a} = \\dfrac{(75\\ \\mathrm{m/s})^2 - 0}{2(2.5\\ \\mathrm{m/s^2})} = \\dfrac{5625}{5}\\ \\mathrm{m} = 1125\\ \\mathrm{m}$ ตรวจ: $t = \\tfrac{75}{2.5} = 30\\ \\mathrm{s}$ และ $s = \\tfrac{(0 + 75)(30)}{2} = 1125\\ \\mathrm{m}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p010
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 4
+    type: numeric
+    stem: "คนขับรถเมล์ที่วิ่งด้วยความเร็ว $12\\ \\mathrm{m/s}$ เห็นไฟแดงและเริ่มเบรกเมื่ออยู่ห่างเส้นหยุดรถ $30\\ \\mathrm{m}$ ถ้าเบรกด้วยความเร่งคงตัว รถต้องมีความเร่ง **ขนาด** อย่างน้อยเท่าใดจึงจะหยุดได้พอดีที่เส้น (ตอบเป็นตัวเลขบวกในหน่วย m/s²)"
+    answer: { value: 2.4, tolerance: 0.02, unit: m/s² }
+    hints:
+      - "รถหยุดแปลว่า $v = 0$ และระยะเบรกคือ $s = 30\\ \\mathrm{m}$ โจทย์ไม่ให้เวลา"
+      - "ใช้ $v^2 = u^2 + 2as$ ให้ทิศที่รถวิ่งเป็นบวก จะได้ $a$ เป็นลบ"
+      - "$0 = 12^2 + 2a(30)$ แก้หา $a$ แล้วตอบเฉพาะขนาด"
+    misconceptions:
+      - { match: 4.8, feedback: "ดูเหมือนลืมเลข 2 ใน $2as$ จาก $0 = u^2 + 2as$ ได้ขนาด $a = \\dfrac{u^2}{2s}$" }
+      - { match: 0.4, feedback: "ดูเหมือนนำความเร็วหารด้วยระยะทาง ($\\tfrac{12}{30}$) ซึ่งไม่ได้ให้หน่วย $\\mathrm{m/s^2}$ เมื่อรู้ระยะทางแต่ไม่รู้เวลา ให้ใช้ $v^2 = u^2 + 2as$" }
+    solution: "$0 = (12\\ \\mathrm{m/s})^2 + 2a(30\\ \\mathrm{m})$ → $60a = -144$ → $a = -2.4\\ \\mathrm{m/s^2}$ ขนาดของความเร่งจึงเป็น $2.4\\ \\mathrm{m/s^2}$ (เครื่องหมายลบบอกว่าความเร่งมีทิศตรงข้ามกับการเคลื่อนที่) ตรวจ: ใช้เวลา $t = \\tfrac{0 - 12}{-2.4} = 5\\ \\mathrm{s}$ และ $s = \\tfrac{(12 + 0)(5)}{2} = 30\\ \\mathrm{m}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

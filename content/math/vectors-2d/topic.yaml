@@ -1,0 +1,37 @@
+id: math.geometry.vectors
+subject: math
+title: { th: เวกเตอร์ในสองมิติ, en: Vectors in two dimensions }
+summary: เขียนเวกเตอร์ด้วยองค์ประกอบ หาขนาดและทิศทาง บวก ลบ และคูณเวกเตอร์ด้วยสเกลาร์ และแยกเวกเตอร์เป็นองค์ประกอบด้วย sin cos
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.functions.coordinate-plane, math.geometry.trig-ratios]
+encompasses:
+  - { id: math.geometry.trig-ratios, weight: 0.4 }
+  - { id: math.functions.coordinate-plane, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ลากลูกศรแล้วดูผลบวกของเวกเตอร์
+    caption: ลากหัวลูกศร a และ b ไปตำแหน่งต่าง ๆ สังเกตว่าองค์ประกอบ x ของผลบวกเท่ากับองค์ประกอบ x ของ a บวกของ b เสมอ และความยาวของผลบวกไม่เท่ากับความยาวของ a บวกของ b ยกเว้นเมื่อสองลูกศรชี้ทางเดียวกัน
+    widget: { kind: vector-add, a: [3, 1], b: [1, 2], draggable: true }
+  - type: simulation
+    title: บวกเวกเตอร์แบบหางต่อหัว (PhET Vector Addition)
+    url: https://phet.colorado.edu/en/simulations/vector-addition
+    provider: phet
+    note: ลากเวกเตอร์สองตัวลงบนกริด เปิดแสดงองค์ประกอบและผลรวม แล้วลองจัดให้สองเวกเตอร์ตั้งฉากกันเพื่อดูว่าขนาดของผลรวมเป็นไปตามทฤษฎีบทพีทาโกรัส
+glossary:
+  - { term: เวกเตอร์, definition: "ปริมาณที่มีทั้งขนาดและทิศทาง เช่น การกระจัด ความเร็ว แรง" }
+  - { term: สเกลาร์, definition: "ปริมาณที่มีแต่ขนาด เช่น มวล เวลา อุณหภูมิ" }
+  - { term: องค์ประกอบ, definition: "ส่วนของเวกเตอร์ในแนวแกน x และแกน y เช่น $(3, 4)$ มีองค์ประกอบ x เป็น 3 และ y เป็น 4" }
+  - { term: เวกเตอร์ลัพธ์, definition: "เวกเตอร์ที่ได้จากการบวกเวกเตอร์หลายตัว เท่ากับลูกศรจากหางตัวแรกถึงหัวตัวสุดท้ายเมื่อวางหางต่อหัว" }
+  - { term: เวกเตอร์หนึ่งหน่วย, definition: "เวกเตอร์ที่มีขนาด 1 หาได้จาก $\\vec{a} \\div |\\vec{a}|$" }
+flashcards:
+  - { front: "ขนาดของเวกเตอร์ $(x, y)$", back: "$\\sqrt{x^2 + y^2}$ (ทฤษฎีบทพีทาโกรัส)" }
+  - { front: "บวกเวกเตอร์ $(a_1, a_2) + (b_1, b_2)$ อย่างไร", back: "บวกทีละองค์ประกอบ ได้ $(a_1 + b_1, a_2 + b_2)$" }
+  - { front: "เวกเตอร์ขนาด $r$ ทำมุม $\\theta$ กับแกน x ทางบวก มีองค์ประกอบเท่าใด", back: "$x = r\\cos\\theta$, $y = r\\sin\\theta$" }
+  - { front: "$-2\\vec{a}$ ต่างจาก $\\vec{a}$ อย่างไร", back: "ยาวเป็น 2 เท่าและชี้ไปทางตรงข้าม เพราะคูณด้วยสเกลาร์ที่เป็นลบ" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

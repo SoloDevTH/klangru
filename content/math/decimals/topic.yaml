@@ -1,0 +1,43 @@
+id: math.number.decimals
+subject: math
+title: { th: ทศนิยม, en: Decimals }
+summary: เปรียบเทียบทศนิยม บวก ลบ คูณ หารทศนิยมได้ถูกตำแหน่งจุด แปลงเศษส่วนเป็นทศนิยม และรู้จักทศนิยมซ้ำ
+difficulty: 2
+minutes: 35
+prerequisites: [math.number.place-value, math.number.fractions]
+encompasses:
+  - { id: math.number.place-value, weight: 0.4 }
+  - { id: math.number.fractions, weight: 0.2 }
+  - { id: math.number.integers, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: 0.45 กับ 0.5 อยู่ตรงไหนบนเส้นจำนวน
+    caption: เส้นจำนวนนี้แบ่งช่วง 0.4 ถึง 0.6 สังเกตว่า 0.45 อยู่กึ่งกลางระหว่าง 0.4 กับ 0.5 ส่วน 0.405 อยู่ใกล้ 0.4 มาก ทศนิยมที่มีหลักมากกว่าจึงไม่จำเป็นต้องมีค่ามากกว่า
+    widget:
+      kind: number-line
+      min: 0.4
+      max: 0.6
+      points:
+        - { value: 0.405, label: "0.405" }
+        - { value: 0.45, label: "0.45" }
+        - { value: 0.5, label: "0.5" }
+  - type: simulation
+    title: คูณทศนิยมด้วยพื้นที่สี่เหลี่ยม (PhET Area Model Decimals)
+    url: https://phet.colorado.edu/en/simulations/area-model-decimals
+    provider: phet
+    note: ลองตั้งด้านเป็น 0.3 กับ 0.2 แล้วดูว่าพื้นที่เป็นเพียงไม่กี่ช่องเล็กของตาราง 1 × 1 ผลคูณของทศนิยมที่น้อยกว่า 1 จึงเล็กกว่าตัวคูณทั้งสองตัว
+glossary:
+  - { term: ทศนิยม, definition: "จำนวนที่เขียนส่วนที่น้อยกว่า 1 ไว้หลังจุดทศนิยม เช่น 2.35 คือ 2 กับ 35 ส่วนร้อย" }
+  - { term: ตำแหน่งทศนิยม, definition: "จำนวนหลักหลังจุดทศนิยม เช่น 4.075 มีทศนิยม 3 ตำแหน่ง" }
+  - { term: ทศนิยมซ้ำ, definition: "ทศนิยมไม่รู้จบที่มีกลุ่มตัวเลขซ้ำกันไปเรื่อย ๆ เช่น $0.333\\ldots = 0.\\dot{3}$" }
+flashcards:
+  - { front: "บวกหรือลบทศนิยมต้องระวังอะไร", back: "ตั้งจุดทศนิยมให้ตรงกัน เติม 0 ให้หลักเท่ากัน แล้วบวกลบทีละหลัก" }
+  - { front: "$0.3 \\times 0.2$ เท่ากับเท่าใด", back: "$3 \\times 2 = 6$ และมีทศนิยมรวม 2 ตำแหน่ง ได้ $0.06$" }
+  - { front: "หารด้วยทศนิยม เช่น $7.2 \\div 0.3$ ทำอย่างไร", back: "คูณทั้งตัวตั้งและตัวหารด้วย 10 ให้ตัวหารเป็นจำนวนเต็ม ได้ $72 \\div 3 = 24$" }
+  - { front: "เขียน $\\tfrac{1}{3}$ เป็นทศนิยม", back: "$0.333\\ldots$ เขียนเป็นทศนิยมซ้ำว่า $0.\\dot{3}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

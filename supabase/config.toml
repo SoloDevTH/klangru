@@ -1,0 +1,18 @@
+# ตั้งค่า Supabase CLI สำหรับรันในเครื่อง (supabase start) และ deploy
+project_id = "klangru"
+
+[auth]
+site_url = "http://localhost:3000"
+# ยืนยันตัวตนด้วยรหัส 6 หลักทางอีเมล (ดู docs/setup/supabase.md เรื่องแม่แบบอีเมล)
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+otp_length = 6
+otp_expiry = 900
+
+[functions.tutor]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true

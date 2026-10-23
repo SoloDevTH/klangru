@@ -22,7 +22,7 @@ export default async function PracticePage({ params }: Props) {
         </p>
         <h1>ฝึก: {topic.title.th}</h1>
       </header>
-      <PracticeSession topicId={topic.id} topicTitle={topic.title.th} problems={problems} mode="practice" />
+      <PracticeSession topicId={topic.id} topicTitle={topic.title.th} problems={problems} mode="practice" encompasses={topic.encompasses} />
     </div>
   );
 }

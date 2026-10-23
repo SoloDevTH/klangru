@@ -1,0 +1,51 @@
+id: physics.kinematics.motion-graphs
+subject: physics
+title: { th: กราฟของการเคลื่อนที่, en: Motion graphs }
+summary: อ่านกราฟตำแหน่ง–เวลา ความเร็ว–เวลา และความเร่ง–เวลา ใช้ความชันหาความเร็วและความเร่ง และใช้พื้นที่ใต้กราฟหาการกระจัดและความเร็วที่เปลี่ยนไป
+difficulty: 4.5
+minutes: 40
+prerequisites: [physics.kinematics.constant-acceleration, math.functions.linear-graphs]
+encompasses:
+  - { id: physics.kinematics.constant-acceleration, weight: 0.4 }
+  - { id: physics.kinematics.acceleration, weight: 0.3 }
+  - { id: physics.kinematics.velocity, weight: 0.2 }
+  - { id: math.functions.linear-graphs, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: กราฟตำแหน่ง–เวลาเมื่อความเร่งคงตัว
+    caption: แกนนอนคือเวลา (s) แกนตั้งคือตำแหน่ง (m) ตั้ง a = 0 แล้วเลื่อน u จะได้เส้นตรงที่ความชันเท่ากับความเร็ว จากนั้นเพิ่ม a เส้นจะโค้งเป็นพาราโบลา เพราะความชันซึ่งคือความเร็วเปลี่ยนไปตามเวลา
+    widget:
+      kind: function-plot
+      functions: ["u x + \\frac{1}{2} a x^2"]
+      sliders:
+        - { name: u, min: -4, max: 4, step: 0.5, value: 2, label: ความเร็วต้น (m/s) }
+        - { name: a, min: -2, max: 2, step: 0.25, value: 0, label: ความเร่ง (m/s²) }
+      x: [0, 6]
+      y: [-60, 60]
+  - type: interactive
+    title: กราฟความเร็ว–เวลาเมื่อความเร่งคงตัว
+    caption: แกนนอนคือเวลา (s) แกนตั้งคือความเร็ว (m/s) ความชันของเส้นเท่ากับค่า a ลองตั้ง u เป็นบวกและ a เป็นลบ แล้วสังเกตเวลาที่เส้นตัดแกนเวลา ซึ่งคือตอนที่วัตถุหยุดชั่วขณะแล้วกลับทิศ
+    widget:
+      kind: function-plot
+      functions: ["u + a x"]
+      sliders:
+        - { name: u, min: -6, max: 6, step: 0.5, value: 4, label: ความเร็วต้น (m/s) }
+        - { name: a, min: -2, max: 2, step: 0.25, value: -1, label: ความเร่ง (m/s²) }
+      x: [0, 8]
+      y: [-10, 10]
+glossary:
+  - { term: กราฟตำแหน่ง–เวลา, definition: "กราฟที่มีเวลาบนแกนนอนและตำแหน่งบนแกนตั้ง ความชันของกราฟคือความเร็ว" }
+  - { term: กราฟความเร็ว–เวลา, definition: "กราฟที่มีเวลาบนแกนนอนและความเร็วบนแกนตั้ง ความชันคือความเร่ง พื้นที่ระหว่างกราฟกับแกนเวลาคือการกระจัด" }
+  - { term: เส้นสัมผัส, definition: "เส้นตรงที่แตะเส้นโค้งที่จุดหนึ่ง ความชันของเส้นสัมผัสบนกราฟตำแหน่ง–เวลาคือความเร็วขณะนั้น" }
+flashcards:
+  - { front: "ความชันของกราฟ $x$–$t$ บอกอะไร", back: "ความเร็ว $v = \\dfrac{\\Delta x}{\\Delta t}$" }
+  - { front: "พื้นที่ใต้กราฟ $v$–$t$ บอกอะไร", back: "การกระจัด พื้นที่ส่วนที่อยู่ใต้แกนเวลานับเป็นลบ" }
+  - { front: "ความชันของกราฟ $v$–$t$ บอกอะไร", back: "ความเร่ง $a = \\dfrac{\\Delta v}{\\Delta t}$" }
+  - { front: "พื้นที่ใต้กราฟ $a$–$t$ บอกอะไร", back: "ความเร็วที่เปลี่ยนไป $\\Delta v$ ต้องบวกความเร็วต้นจึงได้ความเร็วปลาย" }
+  - { front: "กราฟ $x$–$t$ เป็นเส้นแนวนอนหมายความว่าอะไร", back: "ตำแหน่งไม่เปลี่ยน วัตถุหยุดนิ่ง" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

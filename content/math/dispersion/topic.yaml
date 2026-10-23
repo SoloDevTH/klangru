@@ -1,0 +1,49 @@
+id: math.stats.dispersion
+subject: math
+title: { th: การวัดการกระจายของข้อมูล, en: Measures of dispersion }
+summary: วัดว่าข้อมูลกระจายมากน้อยเพียงใดด้วยพิสัย ควอร์ไทล์ แผนภาพกล่อง และส่วนเบี่ยงเบนมาตรฐาน แล้วแปลความหมายเพื่อเปรียบเทียบข้อมูลสองชุด
+difficulty: 4.5
+minutes: 40
+prerequisites: [math.stats.central-tendency, math.number.roots]
+encompasses:
+  - { id: math.stats.central-tendency, weight: 0.4 }
+  - { id: math.number.roots, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ห้าค่าของแผนภาพกล่องบนเส้นจำนวน
+    caption: ห้าค่าจากตัวอย่างที่ 1 (4, 7, 8, 10, 13, 15, 20) กล่องของแผนภาพกล่องคือช่วงจาก Q1 ถึง Q3 ยาวเท่ากับ IQR = 8 ส่วนระยะจากค่าต่ำสุดถึงค่าสูงสุดคือพิสัย 16 สังเกตว่าหนวดด้านขวายาวกว่าด้านซ้าย ข้อมูลจึงเบ้ไปทางค่ามาก
+    widget:
+      kind: number-line
+      min: 0
+      max: 22
+      points:
+        - { value: 4, label: ต่ำสุด }
+        - { value: 7, label: Q1 }
+        - { value: 10, label: มัธยฐาน }
+        - { value: 15, label: Q3 }
+        - { value: 20, label: สูงสุด }
+      jumps:
+        - { from: 7, to: 15, label: "IQR = 8" }
+  - type: simulation
+    title: ค่ากลางและการกระจายบนแผนภาพจุด (PhET Center and Variability)
+    url: https://phet.colorado.edu/en/simulations/center-and-variability
+    provider: phet
+    note: เตะลูกบอลหลาย ๆ ครั้งให้เกิดแผนภาพจุด เปิดแสดงพิสัยและ IQR แล้วลากจุดหนึ่งไปไกล ๆ สังเกตว่าพิสัยเปลี่ยนมาก แต่ IQR แทบไม่เปลี่ยน
+glossary:
+  - { term: พิสัย, definition: "ค่าสูงสุดลบค่าต่ำสุดของข้อมูล" }
+  - { term: ควอร์ไทล์, definition: "ค่าที่แบ่งข้อมูลที่เรียงแล้วออกเป็นสี่ส่วนเท่า ๆ กัน ได้แก่ $Q_1$, $Q_2$ (มัธยฐาน) และ $Q_3$" }
+  - { term: พิสัยระหว่างควอร์ไทล์ (IQR), definition: "$Q_3 - Q_1$ คือความกว้างของข้อมูลครึ่งกลาง" }
+  - { term: แผนภาพกล่อง, definition: "แผนภาพที่สรุปข้อมูลด้วยค่าต่ำสุด $Q_1$ มัธยฐาน $Q_3$ และค่าสูงสุด" }
+  - { term: ส่วนเบี่ยงเบนมาตรฐาน, definition: "ค่าที่บอกว่าโดยเฉลี่ยข้อมูลอยู่ห่างจากค่าเฉลี่ยเท่าใด $\\sigma = \\sqrt{\\tfrac{\\sum (x - \\mu)^2}{N}}$" }
+  - { term: ความแปรปรวน, definition: "กำลังสองของส่วนเบี่ยงเบนมาตรฐาน $\\sigma^2$" }
+flashcards:
+  - { front: "ตำแหน่งของ $Q_1$ และ $Q_3$ เมื่อมีข้อมูล $N$ ตัว", back: "$Q_1$ อยู่ตำแหน่ง $\\tfrac{N + 1}{4}$ และ $Q_3$ อยู่ตำแหน่ง $\\tfrac{3(N + 1)}{4}$ ของข้อมูลที่เรียงแล้ว" }
+  - { front: "สูตรส่วนเบี่ยงเบนมาตรฐานของประชากร", back: "$\\sigma = \\sqrt{\\dfrac{\\sum (x - \\mu)^2}{N}}$" }
+  - { front: "ทำไม IQR จึงทนต่อค่าผิดปกติได้ดีกว่าพิสัย", back: "IQR ใช้เฉพาะข้อมูลครึ่งกลาง ($Q_1$ ถึง $Q_3$) ส่วนพิสัยใช้ค่าต่ำสุดและสูงสุดซึ่งอาจเป็นค่าผิดปกติ" }
+  - { front: "บวก 10 เข้ากับข้อมูลทุกตัว ส่วนเบี่ยงเบนมาตรฐานเปลี่ยนอย่างไร", back: "ไม่เปลี่ยน เพราะข้อมูลเลื่อนไปทั้งชุด ระยะห่างจากค่าเฉลี่ยเท่าเดิม" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

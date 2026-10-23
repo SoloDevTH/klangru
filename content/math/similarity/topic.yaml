@@ -1,0 +1,42 @@
+id: math.geometry.similarity
+subject: math
+title: { th: รูปคล้าย, en: Similar figures }
+summary: รู้จักรูปคล้ายและสามเหลี่ยมคล้าย ใช้อัตราส่วนของด้านที่สมนัยกันหาความยาว อ่านมาตราส่วนแผนที่ และวัดความสูงด้วยเงา
+difficulty: 4
+minutes: 35
+prerequisites: [math.geometry.triangles, math.number.ratio-percent]
+encompasses:
+  - { id: math.number.ratio-percent, weight: 0.5 }
+  - { id: math.geometry.triangles, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: วัตถุสูงเท่าใดก็มีเงายาวตามสัดส่วน
+    caption: "แกน x คือความยาวเงา (m) แกน y คือความสูงของวัตถุ (m) ณ เวลาเดียวกัน วัตถุทุกชิ้นอยู่บนเส้นตรงเส้นเดียวที่ผ่านจุดกำเนิด แถบเลื่อน k คืออัตราส่วนความสูงต่อความยาวเงา ซึ่งเปลี่ยนไปตามเวลาของวัน"
+    widget:
+      kind: function-plot
+      functions: ["k x"]
+      sliders:
+        - { name: k, min: 0.25, max: 3, step: 0.25, value: 1.25, label: สูง ÷ เงา }
+      x: [0, 10]
+      y: [0, 12]
+  - type: simulation
+    title: เล่นกับอัตราส่วนที่คงที่ (PhET Ratio and Proportion)
+    url: https://phet.colorado.edu/en/simulations/ratio-and-proportion
+    provider: phet
+    note: ขยับมือทั้งสองให้รักษาอัตราส่วนเดิมไว้ เหมือนด้านที่สมนัยกันของรูปคล้ายที่ต้องขยายด้วยตัวคูณเดียวกันเสมอ
+glossary:
+  - { term: รูปคล้าย, definition: "รูปที่มีรูปร่างเหมือนกันแต่ขนาดอาจต่างกัน มุมที่สมนัยกันเท่ากัน และด้านที่สมนัยกันมีอัตราส่วนเท่ากันทุกคู่" }
+  - { term: ด้านที่สมนัยกัน, definition: "ด้านที่อยู่ในตำแหน่งเดียวกันของรูปคล้ายสองรูป เช่น ด้านที่อยู่ตรงข้ามมุมที่เท่ากัน" }
+  - { term: อัตราส่วนการขยาย (ตัวคูณมาตราส่วน), definition: "จำนวน $k$ ที่คูณความยาวของรูปเดิมแล้วได้ความยาวที่สมนัยกันของรูปใหม่" }
+  - { term: มาตราส่วน, definition: "อัตราส่วนระหว่างระยะบนแผนที่หรือแบบกับระยะจริง เช่น 1 : 50,000" }
+flashcards:
+  - { front: "สามเหลี่ยมสองรูปคล้ายกันเมื่อใด (ตรวจง่ายที่สุด)", back: "เมื่อมีมุมเท่ากันสองคู่ (มุมคู่ที่สามจะเท่ากันเอง เพราะมุมภายในรวม 180°)" }
+  - { front: "รูปคล้ายที่ด้านขยาย $k$ เท่า พื้นที่ขยายกี่เท่า", back: "$k^2$ เท่า เช่น ด้านขยาย 3 เท่า พื้นที่ขยาย 9 เท่า" }
+  - { front: "มาตราส่วน 1 : 50,000 หมายความว่าอะไร", back: "ระยะ 1 cm บนแผนที่ เท่ากับระยะจริง 50,000 cm หรือ 500 m" }
+  - { front: "วัดความสูงต้นไม้ด้วยเงาทำอย่างไร", back: "ณ เวลาเดียวกัน $\\dfrac{\\text{สูงต้นไม้}}{\\text{เงาต้นไม้}} = \\dfrac{\\text{สูงไม้วัด}}{\\text{เงาไม้วัด}}$" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

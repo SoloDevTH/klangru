@@ -1,0 +1,220 @@
+problems:
+  - id: math.der.p001
+    topics: [math.calculus.derivative]
+    difficulty: 1
+    type: expression
+    stem: "หาอนุพันธ์ของ $f(x) = x^5$"
+    prefix: "f'(x) ="
+    answer: { latex: "5x^4", variables: [x] }
+    hints:
+      - "ใช้กฎยกกำลัง $\\dfrac{d}{dx}\\, x^n = n x^{n-1}$"
+      - "นำเลขชี้กำลัง 5 ลงมาคูณข้างหน้า แล้วลดเลขชี้กำลังลง 1"
+    misconceptions:
+      - { match: "x^4", feedback: "ลดเลขชี้กำลังถูกแล้ว แต่ลืมนำเลขชี้กำลังเดิม 5 ลงมาคูณข้างหน้า" }
+      - { match: "5x^5", feedback: "นำ 5 ลงมาคูณถูกแล้ว แต่ต้องลดเลขชี้กำลังลง 1 ด้วย" }
+    solution: "$\\dfrac{d}{dx}\\, x^5 = 5x^{5-1} = 5x^4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p002
+    topics: [math.calculus.derivative]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ฟังก์ชันกับอนุพันธ์ของมัน"
+    pairs:
+      - { left: "$7$", right: "$0$" }
+      - { left: "$7x$", right: "$7$" }
+      - { left: "$x^7$", right: "$7x^6$" }
+      - { left: "$7x^2$", right: "$14x$" }
+    hints:
+      - "ค่าคงตัวมีอนุพันธ์เป็น 0 และอนุพันธ์ของ $kx$ คือ $k$"
+      - "สำหรับ $x^n$ ใช้กฎยกกำลัง ส่วนตัวคูณคงตัวให้คูณติดไว้"
+    solution: "$7 \\to 0$ · $7x \\to 7$ · $x^7 \\to 7x^6$ · $7x^2 \\to 7 \\times 2x = 14x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p003
+    topics: [math.calculus.derivative]
+    difficulty: 2
+    type: expression
+    stem: "หาอนุพันธ์ของ $f(x) = 4x^3 - 2x^2 + 5x - 9$"
+    prefix: "f'(x) ="
+    answer: { latex: "12x^2-4x+5", variables: [x] }
+    hints:
+      - "หาอนุพันธ์ทีละพจน์ แล้วนำมาบวกลบกัน"
+      - "$4x^3 \\to 12x^2$ ส่วนพจน์ $5x$ และ $-9$ ให้คิดว่าเกิดอะไรขึ้น"
+    misconceptions:
+      - { match: "12x^2-4x-4", feedback: "ดูเหมือนเก็บค่าคงตัว $-9$ ไว้ แต่อนุพันธ์ของค่าคงตัวเป็น 0 จึงหายไป" }
+      - { match: "12x^2-4x", feedback: "อนุพันธ์ของ $5x$ คือ 5 ไม่ใช่ 0 (เพราะ $x = x^1$ ได้ $1 \\cdot x^0 = 1$)" }
+      - { match: "12x^3-4x^2+5x", feedback: "นำเลขชี้กำลังลงมาคูณแล้ว แต่ยังไม่ได้ลดเลขชี้กำลังลง 1 และลืมว่าค่าคงตัวหายไป" }
+    solution: "$4x^3 \\to 12x^2$, $-2x^2 \\to -4x$, $5x \\to 5$, $-9 \\to 0$ จึงได้ $f'(x) = 12x^2 - 4x + 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p004
+    topics: [math.calculus.derivative]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $f(x) = x^2 + 3x$ หาค่าของ $f'(2)$"
+    answer: { value: 7 }
+    hints:
+      - "หา $f'(x)$ ก่อน แล้วจึงแทน $x = 2$"
+      - "$f'(x) = 2x + 3$"
+    misconceptions:
+      - { match: 10, feedback: "นั่นคือ $f(2)$ โจทย์ถาม $f'(2)$ ต้องหาอนุพันธ์ก่อนแล้วจึงแทนค่า" }
+      - { match: 5, feedback: "ดูเหมือนคิดอนุพันธ์ของ $x^2$ เป็น $x$ ต้องนำ 2 ลงมาคูณด้วย ได้ $2x$" }
+    solution: "$f'(x) = 2x + 3$ ดังนั้น $f'(2) = 2(2) + 3 = 7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p005
+    topics: [math.calculus.derivative]
+    difficulty: 3
+    type: expression
+    stem: "หาอนุพันธ์ของ $f(x) = (2x + 1)^2$ (แนะนำให้กระจายก่อน)"
+    prefix: "f'(x) ="
+    answer: { latex: "8x+4", variables: [x] }
+    hints:
+      - "กฎยกกำลังใช้กับ $x^n$ ไม่ใช่กับวงเล็บทั้งก้อน ให้กระจายก่อน"
+      - "$(2x + 1)^2 = 4x^2 + 4x + 1$"
+      - "หาอนุพันธ์ทีละพจน์"
+    misconceptions:
+      - { match: "2(2x+1)", feedback: "กฎยกกำลังใช้กับ $x^n$ ตรง ๆ ไม่ใช่กับวงเล็บ ให้กระจาย $(2x + 1)^2 = 4x^2 + 4x + 1$ ก่อน" }
+      - { match: "8x", feedback: "ดูเหมือนกระจายเป็น $4x^2 + 1$ ซึ่งลืมพจน์กลาง ที่ถูกคือ $(2x + 1)^2 = 4x^2 + 4x + 1$" }
+    solution: "$(2x + 1)^2 = 4x^2 + 4x + 1$ ดังนั้น $f'(x) = 8x + 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p006
+    topics: [math.calculus.derivative]
+    difficulty: 3
+    type: numeric
+    stem: "หาความชันของเส้นสัมผัสกราฟ $y = x^3$ ที่ $x = -2$"
+    answer: { value: 12 }
+    hints:
+      - "ความชันของเส้นสัมผัสที่ $x = a$ คือ $f'(a)$"
+      - "$f'(x) = 3x^2$ แทน $x = -2$ ระวังว่า $(-2)^2$ เป็นบวก"
+    misconceptions:
+      - { match: -12, feedback: "$(-2)^2 = 4$ เป็นบวก จึงได้ $3 \\times 4 = 12$ ไม่ใช่ $-12$" }
+      - { match: -8, feedback: "นั่นคือ $f(-2)$ ซึ่งเป็นความสูงของกราฟ ไม่ใช่ความชัน ต้องหาอนุพันธ์ก่อน" }
+    solution: "$f'(x) = 3x^2$ ดังนั้น $f'(-2) = 3(-2)^2 = 3 \\times 4 = 12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p007
+    topics: [math.calculus.derivative]
+    difficulty: 3
+    type: numeric
+    stem: "ในการแข่งขันหุ่นยนต์ของโรงเรียน หุ่นยนต์วิ่งบนรางตรง ตำแหน่งของมันคือ $s(t) = t^3 - 6t^2 + 9t$ เมตร เมื่อเวลา $t$ วินาที หาความเร็วของหุ่นยนต์ที่ $t = 2$ วินาที เป็นเมตรต่อวินาที"
+    answer: { value: -3, unit: m/s }
+    hints:
+      - "ความเร็วคืออนุพันธ์ของตำแหน่ง $v(t) = s'(t)$"
+      - "$s'(t) = 3t^2 - 12t + 9$ แล้วแทน $t = 2$"
+    misconceptions:
+      - { match: 2, feedback: "นั่นคือตำแหน่ง $s(2)$ ไม่ใช่ความเร็ว ต้องหาอนุพันธ์ $s'(t)$ ก่อน" }
+      - { match: 9, feedback: "ดูเหมือนคิดอนุพันธ์ของ $6t^2$ เป็น $6t$ ต้องนำ 2 ลงมาคูณด้วย ได้ $12t$" }
+    solution: "$v(t) = s'(t) = 3t^2 - 12t + 9$ ดังนั้น $v(2) = 12 - 24 + 9 = -3\\ \\mathrm{m/s}$ เครื่องหมายลบแปลว่าตอนนั้นหุ่นยนต์กำลังถอยกลับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p008
+    topics: [math.calculus.derivative]
+    difficulty: 4
+    type: expression
+    stem: "หาสมการเส้นสัมผัสกราฟ $y = x^2 - 4x + 1$ ที่ $x = 3$ ตอบในรูป $y = mx + c$"
+    prefix: "y ="
+    answer: { latex: "2x-8", variables: [x] }
+    hints:
+      - "หาจุดสัมผัส $(3, f(3))$ และความชัน $f'(3)$"
+      - "$f(3) = -2$ และ $f'(x) = 2x - 4$"
+      - "ใช้ $y - f(3) = f'(3)(x - 3)$ แล้วจัดรูป"
+    misconceptions:
+      - { match: "2x", feedback: "ความชัน 2 ถูกแล้ว แต่เส้นสัมผัสต้องผ่านจุด $(3, -2)$ ด้วย ใช้ $y - f(3) = f'(3)(x - 3)$" }
+      - { match: "2x-2", feedback: "ดูเหมือนใช้ $f(3) = -2$ เป็นจุดตัดแกน $y$ แต่ $-2$ คือค่า $y$ ที่ $x = 3$ ไม่ใช่ที่ $x = 0$ ใช้ $y - f(3) = f'(3)(x - 3)$" }
+    solution: "$f(3) = 9 - 12 + 1 = -2$, $f'(3) = 2(3) - 4 = 2$ สมการ $y - (-2) = 2(x - 3)$ จึงได้ $y = 2x - 8$ ตรวจ: $x = 3$ ได้ $y = -2$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p009
+    topics: [math.calculus.derivative]
+    difficulty: 4
+    type: numeric
+    stem: "กราฟ $y = x^2 - 6x + 5$ มีเส้นสัมผัสที่นอนราบ (ความชันเป็น 0) ที่ $x$ เท่าใด"
+    answer: { value: 3 }
+    hints:
+      - "เส้นสัมผัสนอนราบเมื่อ $f'(x) = 0$"
+      - "แก้สมการ $2x - 6 = 0$"
+    misconceptions:
+      - { match: -3, feedback: "ตรวจเครื่องหมายอีกครั้ง จาก $2x - 6 = 0$ บวก 6 ทั้งสองข้างได้ $2x = 6$" }
+      - { match: 6, feedback: "จาก $2x = 6$ ยังต้องหาร 2 อีก" }
+    solution: "$f'(x) = 2x - 6 = 0$ ได้ $x = 3$ (เป็นจุดต่ำสุดของพาราโบลา $f(3) = -4$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p010
+    topics: [math.calculus.derivative]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดอธิบายจุดสูงสุดและต่ำสุดสัมพัทธ์ของ $f(x) = x^3 - 3x$ ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "สูงสุดที่ $x = -1$ และต่ำสุดที่ $x = 1$", correct: true }
+      - { id: b, text: "สูงสุดที่ $x = 1$ และต่ำสุดที่ $x = -1$", feedback: "ลองดูเครื่องหมายของ $f'(x) = 3x^2 - 3$ รอบ $x = 1$: $f'(0) = -3 < 0$ และ $f'(2) = 9 > 0$ เปลี่ยนจากลบเป็นบวก จึงเป็นจุดต่ำสุด" }
+      - { id: c, text: "มีจุดเดียวที่ $x = 1$", feedback: "$3x^2 - 3 = 0$ ได้ $x^2 = 1$ ซึ่งมีคำตอบทั้ง $x = 1$ และ $x = -1$" }
+      - { id: d, text: "ที่ $x = 0$ และ $x = \\pm\\sqrt{3}$", feedback: "นั่นคือจุดที่ $f(x) = 0$ (กราฟตัดแกน $x$) แต่จุดสูงสุดต่ำสุดหาจาก $f'(x) = 0$" }
+    hints:
+      - "หา $f'(x)$ แล้วแก้ $f'(x) = 0$"
+      - "ดูเครื่องหมายของ $f'$ ทางซ้ายและขวาของแต่ละจุด: บวกเป็นลบคือสูงสุด ลบเป็นบวกคือต่ำสุด"
+    solution: "$f'(x) = 3x^2 - 3 = 0$ ได้ $x = \\pm 1$ · $f'(-2) = 9 > 0$, $f'(0) = -3 < 0$, $f'(2) = 9 > 0$ ที่ $x = -1$ เปลี่ยนจากบวกเป็นลบ จึงสูงสุด ($f(-1) = 2$) ที่ $x = 1$ เปลี่ยนจากลบเป็นบวก จึงต่ำสุด ($f(1) = -2$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p011
+    topics: [math.calculus.derivative]
+    difficulty: 4
+    type: expression
+    stem: "หาอนุพันธ์ของ $f(x) = x^2(x + 3)$"
+    prefix: "f'(x) ="
+    answer: { latex: "3x^2+6x", variables: [x] }
+    hints:
+      - "อนุพันธ์ของผลคูณไม่เท่ากับผลคูณของอนุพันธ์"
+      - "กระจายก่อน: $x^2(x + 3) = x^3 + 3x^2$"
+    misconceptions:
+      - { match: "2x", feedback: "ดูเหมือนนำอนุพันธ์ของ $x^2$ (คือ $2x$) คูณกับอนุพันธ์ของ $x + 3$ (คือ 1) วิธีนี้ใช้ไม่ได้ ให้กระจายก่อน" }
+      - { match: "2x^2+6x", feedback: "ดูเหมือนหาอนุพันธ์แค่ $x^2$ แล้วคูณ $(x + 3)$ ไว้เหมือนเดิม ให้กระจายเป็น $x^3 + 3x^2$ ก่อน" }
+    solution: "$f(x) = x^3 + 3x^2$ ดังนั้น $f'(x) = 3x^2 + 6x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p012
+    topics: [math.calculus.derivative]
+    difficulty: 5
+    type: numeric
+    stem: "ชาวสวนมีรั้วยาว 40 เมตร จะล้อมแปลงผักรูปสี่เหลี่ยมผืนผ้าริมคลอง โดยด้านที่ติดคลองไม่ต้องใช้รั้ว ถ้าด้านที่ตั้งฉากกับคลองยาวด้านละ $x$ เมตร แปลงผักมีพื้นที่มากที่สุดได้กี่ตารางเมตร"
+    answer: { value: 200, unit: m² }
+    hints:
+      - "ด้านขนานกับคลองยาว $40 - 2x$ เมตร จึงได้พื้นที่ $A(x) = x(40 - 2x)$"
+      - "กระจายเป็น $A(x) = 40x - 2x^2$ แล้วแก้ $A'(x) = 0$"
+      - "นำ $x$ ที่ได้ไปแทนใน $A(x)$ เพราะโจทย์ถามพื้นที่ ไม่ใช่ความยาว"
+    misconceptions:
+      - { match: 10, feedback: "10 เมตรคือความยาวด้าน $x$ ที่ให้พื้นที่มากที่สุด แต่โจทย์ถามพื้นที่ ให้นำไปแทนใน $A(x)$" }
+      - { match: 100, feedback: "ดูเหมือนทำเป็นสี่เหลี่ยมจัตุรัสด้านละ 10 เมตรแบบล้อมรั้วครบ 4 ด้าน แต่ด้านติดคลองไม่ใช้รั้ว จึงได้ด้านยาวมากขึ้น" }
+    solution: "$A(x) = x(40 - 2x) = 40x - 2x^2$ ได้ $A'(x) = 40 - 4x = 0$ จึง $x = 10$ m ($A'$ เปลี่ยนจากบวกเป็นลบ จึงเป็นค่าสูงสุด) ด้านขนานคลองยาว $40 - 20 = 20$ m พื้นที่ $= 10 \\times 20 = 200$ m²"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.der.p013
+    topics: [math.calculus.derivative]
+    difficulty: 5
+    type: numeric
+    stem: "นักกีฬาเซปักตะกร้อเดาะลูกขึ้นไปตรง ๆ ความสูงของลูกตะกร้อจากพื้นคือ $h(t) = 1 + 8t - 5t^2$ เมตร เมื่อเวลา $t$ วินาที ลูกตะกร้อขึ้นไปได้สูงสุดกี่เมตรจากพื้น"
+    answer: { value: 4.2, tolerance: 0.04, unit: m }
+    hints:
+      - "ที่จุดสูงสุด ลูกหยุดขึ้นชั่วขณะ ความเร็ว $v(t) = h'(t) = 0$"
+      - "$h'(t) = 8 - 10t$ แก้ได้ $t$ เท่าใด"
+      - "นำ $t$ ที่ได้ไปแทนใน $h(t)$"
+    misconceptions:
+      - { match: 0.8, feedback: "0.8 วินาทีคือเวลาที่ลูกขึ้นถึงจุดสูงสุด โจทย์ถามความสูง ให้นำไปแทนใน $h(t)$" }
+      - { match: 3.2, feedback: "ดูเหมือนลืมพจน์ 1 ใน $h(t)$ ซึ่งคือความสูงตอนเริ่มเดาะ ความสูงจากพื้นต้องรวมด้วย" }
+    solution: "$h'(t) = 8 - 10t = 0$ ได้ $t = 0.8$ วินาที ความสูงสูงสุด $h(0.8) = 1 + 6.4 - 3.2 = 4.2$ m"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

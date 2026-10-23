@@ -1,0 +1,205 @@
+problems:
+  - id: math.trig.p001
+    topics: [math.geometry.trig-ratios]
+    difficulty: 1
+    type: mcq
+    stem: "สามเหลี่ยมมุมฉากรูปหนึ่ง เมื่อมองจากมุม $\\theta$ ด้านตรงข้ามมุม $\\theta$ ยาว 3 ด้านประชิดมุม $\\theta$ ยาว 4 และด้านตรงข้ามมุมฉากยาว 5 ข้อใดคือค่าของ $\\sin\\theta$"
+    choices:
+      - { id: a, text: "$\\dfrac{3}{5}$", correct: true }
+      - { id: b, text: "$\\dfrac{4}{5}$", feedback: "นั่นคือ ชิด/ฉาก ซึ่งเป็น $\\cos\\theta$ ส่วน $\\sin\\theta$ ใช้ด้านตรงข้ามมุม" }
+      - { id: c, text: "$\\dfrac{3}{4}$", feedback: "นั่นคือ ข้าม/ชิด ซึ่งเป็น $\\tan\\theta$ ส่วน $\\sin\\theta$ ต้องหารด้วยด้านตรงข้ามมุมฉาก" }
+      - { id: d, text: "$\\dfrac{5}{3}$", feedback: "กลับเศษส่วน ค่า $\\sin$ ของมุมแหลมต้องไม่เกิน 1 เพราะด้านตรงข้ามมุมฉากยาวที่สุดและอยู่ที่ตัวส่วน" }
+    hints:
+      - "$\\sin\\theta$ ใช้ด้านคู่ไหน: ข้าม ชิด หรือ ฉาก"
+      - "$\\sin\\theta = \\dfrac{\\text{ข้าม}}{\\text{ฉาก}}$ นำความยาวด้านตรงข้ามมุมไปหารด้วยด้านตรงข้ามมุมฉาก"
+    solution: "$\\sin\\theta = \\dfrac{\\text{ข้าม}}{\\text{ฉาก}} = \\dfrac{3}{5}$ (ส่วน $\\cos\\theta = \\tfrac{4}{5}$ และ $\\tan\\theta = \\tfrac{3}{4}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p002
+    topics: [math.geometry.trig-ratios]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อัตราส่วนตรีโกณมิติของมุม $\\theta$ ในสามเหลี่ยมมุมฉากกับนิยามที่ถูกต้อง"
+    pairs:
+      - { left: "$\\sin\\theta$", right: "ด้านตรงข้ามมุม ÷ ด้านตรงข้ามมุมฉาก" }
+      - { left: "$\\cos\\theta$", right: "ด้านประชิดมุม ÷ ด้านตรงข้ามมุมฉาก" }
+      - { left: "$\\tan\\theta$", right: "ด้านตรงข้ามมุม ÷ ด้านประชิดมุม" }
+    hints:
+      - "มีเพียงอัตราส่วนเดียวที่ไม่ใช้ด้านตรงข้ามมุมฉาก"
+      - "จำแบบย่อ: sin = ข้าม/ฉาก, cos = ชิด/ฉาก แล้ว tan คือคู่ที่เหลือ"
+    solution: "$\\sin\\theta = \\tfrac{\\text{ข้าม}}{\\text{ฉาก}}$ | $\\cos\\theta = \\tfrac{\\text{ชิด}}{\\text{ฉาก}}$ | $\\tan\\theta = \\tfrac{\\text{ข้าม}}{\\text{ชิด}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p003
+    topics: [math.geometry.trig-ratios]
+    difficulty: 2
+    type: numeric
+    stem: "ในสามเหลี่ยมมุมฉาก ด้านตรงข้ามมุม $\\theta$ ยาว $5\\ \\mathrm{cm}$ ด้านประชิดมุม $\\theta$ ยาว $12\\ \\mathrm{cm}$ และด้านตรงข้ามมุมฉากยาว $13\\ \\mathrm{cm}$ จงหาค่า $\\tan\\theta$ (ตอบเป็นทศนิยม)"
+    answer: { value: 0.4167, tolerance: 0.004 }
+    hints:
+      - "$\\tan\\theta$ ไม่ใช้ด้านตรงข้ามมุมฉาก"
+      - "$\\tan\\theta = \\dfrac{\\text{ข้าม}}{\\text{ชิด}}$ แล้วหารให้เป็นทศนิยม"
+    misconceptions:
+      - { match: 2.4, feedback: "กลับเศษส่วน ได้ ชิด/ข้าม ที่ถูกคือ $\\tan\\theta = \\tfrac{\\text{ข้าม}}{\\text{ชิด}}$" }
+      - { match: 0.3846, feedback: "นั่นคือ $\\tfrac{5}{13}$ ซึ่งเป็น $\\sin\\theta$ ส่วน $\\tan\\theta$ ต้องหารด้วยด้านประชิดมุม" }
+    solution: "$\\tan\\theta = \\dfrac{\\text{ข้าม}}{\\text{ชิด}} = \\dfrac{5}{12} \\approx 0.417$ (หน่วย cm ตัดกัน อัตราส่วนจึงไม่มีหน่วย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p004
+    topics: [math.geometry.trig-ratios]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ค่าตรีโกณมิติของมุมพิเศษกับค่าที่ถูกต้อง"
+    pairs:
+      - { left: "$\\sin 30^\\circ$", right: "$\\dfrac{1}{2}$" }
+      - { left: "$\\cos 30^\\circ$", right: "$\\dfrac{\\sqrt{3}}{2}$" }
+      - { left: "$\\tan 45^\\circ$", right: "$1$" }
+      - { left: "$\\tan 60^\\circ$", right: "$\\sqrt{3}$" }
+      - { left: "$\\cos 45^\\circ$", right: "$\\dfrac{\\sqrt{2}}{2}$" }
+    hints:
+      - "วาดสามเหลี่ยมด้านเท่ายาวด้านละ 2 แล้วแบ่งครึ่ง จะได้ด้าน 1, $\\sqrt{3}$, 2 และมุม $30^\\circ$, $60^\\circ$"
+      - "สามเหลี่ยมมุมฉากหน้าจั่วมีด้าน 1, 1, $\\sqrt{2}$ และมุม $45^\\circ$"
+      - "ระบุข้าม ชิด ฉาก ของแต่ละมุมจากสองรูปนี้ แล้วหาอัตราส่วนตามนิยาม"
+    solution: "จากสามเหลี่ยม 1, $\\sqrt{3}$, 2: $\\sin 30^\\circ = \\tfrac{1}{2}$, $\\cos 30^\\circ = \\tfrac{\\sqrt{3}}{2}$, $\\tan 60^\\circ = \\tfrac{\\sqrt{3}}{1} = \\sqrt{3}$ จากสามเหลี่ยม 1, 1, $\\sqrt{2}$: $\\tan 45^\\circ = \\tfrac{1}{1} = 1$, $\\cos 45^\\circ = \\tfrac{1}{\\sqrt{2}} = \\tfrac{\\sqrt{2}}{2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p005
+    topics: [math.geometry.trig-ratios]
+    difficulty: 3
+    type: numeric
+    stem: "ช่างติดป้ายร้านกาแฟใช้บันไดยาว $6\\ \\mathrm{m}$ พาดผนัง บันไดทำมุม $60^\\circ$ กับพื้นราบ ปลายบันไดสูงจากพื้นกี่เมตร (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.196, tolerance: 0.05, unit: m }
+    hints:
+      - "บันไดเป็นด้านไหนของสามเหลี่ยมมุมฉาก และความสูงอยู่ตรงข้ามหรือประชิดมุม $60^\\circ$"
+      - "ใช้ด้านตรงข้ามมุมกับด้านตรงข้ามมุมฉาก จึงใช้ $\\sin$"
+      - "ความสูง $= 6 \\times \\sin 60^\\circ$ โดย $\\sin 60^\\circ = \\tfrac{\\sqrt{3}}{2}$"
+    misconceptions:
+      - { match: 3, feedback: "ใช้ $\\cos 60^\\circ$ ซึ่งให้ระยะจากโคนบันไดถึงผนัง ความสูงอยู่ตรงข้ามมุม $60^\\circ$ จึงต้องใช้ $\\sin$" }
+      - { match: 10.392, feedback: "ใช้ $\\tan$ ซึ่งต้องรู้ด้านประชิดมุม แต่บันไดคือด้านตรงข้ามมุมฉาก จึงต้องใช้ $\\sin$ และความสูงต้องสั้นกว่าบันได" }
+    solution: "บันได = ด้านตรงข้ามมุมฉาก, ความสูง $h$ = ด้านตรงข้ามมุม $60^\\circ$: $\\sin 60^\\circ = \\dfrac{h}{6}$ → $h = 6 \\times \\dfrac{\\sqrt{3}}{2} = 3\\sqrt{3} \\approx 5.20\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p006
+    topics: [math.geometry.trig-ratios]
+    difficulty: 3
+    type: numeric
+    stem: "นักเรียนยืนห่างโคนเสาธงของโรงเรียน $20\\ \\mathrm{m}$ มองยอดเสาด้วยมุมเงย $35^\\circ$ ระดับตาของนักเรียนสูงจากพื้น $1.5\\ \\mathrm{m}$ เสาธงสูงกี่เมตร (กำหนด $\\tan 35^\\circ \\approx 0.70$)"
+    answer: { value: 15.5, tolerance: 0.15, unit: m }
+    hints:
+      - "สามเหลี่ยมมุมฉากเกิดที่ระดับตา ไม่ใช่ที่พื้น ด้านประชิดมุมเงยคือระยะ $20\\ \\mathrm{m}$"
+      - "ใช้ $\\tan 35^\\circ = \\dfrac{x}{20}$ หาส่วนสูงจากระดับตาถึงยอดเสา"
+      - "นำ $x$ ที่ได้ไปบวกกับความสูงของระดับตา"
+    misconceptions:
+      - { match: 14, feedback: "นั่นคือความสูงจากระดับตาถึงยอดเสาเท่านั้น ยังต้องบวกความสูงของระดับตาอีก $1.5\\ \\mathrm{m}$" }
+      - { match: 30.07, feedback: "ดูเหมือนนำ 20 หารด้วย $\\tan 35^\\circ$ จาก $\\tan 35^\\circ = \\tfrac{x}{20}$ ต้องคูณ 20 ทั้งสองข้าง" }
+    solution: "$\\tan 35^\\circ = \\dfrac{x}{20}$ → $x = 20 \\times 0.70 = 14\\ \\mathrm{m}$ (จากระดับตา) เสาธงสูง $14 + 1.5 = 15.5\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p007
+    topics: [math.geometry.trig-ratios]
+    difficulty: 3
+    type: mcq
+    stem: "ผู้ดูแลประภาคารมองเรือประมงจากยอดประภาคารด้วยมุมก้ม $30^\\circ$ คนบนเรือมองยอดประภาคารด้วยมุมเงยเท่าใด"
+    choices:
+      - { id: a, text: "$30^\\circ$", correct: true }
+      - { id: b, text: "$60^\\circ$", feedback: "$60^\\circ$ คือมุมระหว่างแนวสายตากับแนวดิ่งของประภาคาร แต่มุมเงยวัดจากแนวระดับ" }
+      - { id: c, text: "$150^\\circ$", feedback: "มุมเงยเป็นมุมแหลมเสมอ $150^\\circ$ คือมุมประกอบสองมุมฉากของ $30^\\circ$ ไม่ใช่มุมแย้ง" }
+      - { id: d, text: "$90^\\circ$", feedback: "มุมเงย $90^\\circ$ หมายถึงมองตรงขึ้นฟ้า ซึ่งเกิดเมื่อเรืออยู่ที่โคนประภาคารพอดีเท่านั้น" }
+    hints:
+      - "มุมก้มและมุมเงยวัดจากแนวระดับทั้งคู่"
+      - "แนวระดับที่ยอดประภาคารขนานกับแนวระดับที่เรือ แนวสายตาเป็นเส้นตัด ลองดูว่าเกิดมุมคู่ใด"
+    solution: "แนวระดับที่ยอดประภาคารกับแนวผิวน้ำขนานกัน แนวสายตาเป็นเส้นตัด มุมก้มกับมุมเงยจึงเป็นมุมแย้งซึ่งเท่ากัน มุมเงยคือ $30^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p008
+    topics: [math.geometry.trig-ratios]
+    difficulty: 4
+    type: numeric
+    stem: "จากยอดประภาคารซึ่งสูงจากระดับน้ำทะเล $45\\ \\mathrm{m}$ มองเห็นเรือด้วยมุมก้ม $30^\\circ$ เรืออยู่ห่างจากฐานประภาคารในแนวระดับกี่เมตร (ตอบเป็นทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 77.94, tolerance: 0.78, unit: m }
+    hints:
+      - "มุมที่เรือในสามเหลี่ยมมุมฉากเท่ากับมุมก้ม $30^\\circ$ (มุมแย้ง)"
+      - "เมื่อมองจากมุมที่เรือ ความสูง 45 เป็นด้านตรงข้ามมุม ระยะที่ต้องการเป็นด้านประชิดมุม"
+      - "ใช้ $\\tan 30^\\circ = \\dfrac{45}{d}$ แล้วแก้หา $d$ โดย $\\tan 30^\\circ = \\tfrac{1}{\\sqrt{3}}$"
+    misconceptions:
+      - { match: 25.98, feedback: "นำ 45 คูณ $\\tan 30^\\circ$ ซึ่งเป็นการคิดว่า 45 เป็นด้านประชิดมุมที่เรือ แต่ 45 อยู่ตรงข้ามมุมที่เรือ จึงต้องหาร" }
+      - { match: 90, feedback: "นั่นคือความยาวแนวสายตาจากยอดประภาคารถึงเรือ (ด้านตรงข้ามมุมฉาก) โจทย์ถามระยะในแนวระดับ" }
+    solution: "ที่เรือ: $\\tan 30^\\circ = \\dfrac{45}{d}$ → $d = \\dfrac{45}{\\tan 30^\\circ} = 45\\sqrt{3} \\approx 77.9\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p009
+    topics: [math.geometry.trig-ratios]
+    difficulty: 4
+    type: numeric
+    stem: "ทางลาดสำหรับรถเข็นยาว $4\\ \\mathrm{m}$ (วัดตามพื้นเอียง) และยกสูงขึ้นจากพื้น $2\\ \\mathrm{m}$ ทางลาดทำมุมกับพื้นราบกี่องศา"
+    answer: { value: 30, unit: องศา }
+    hints:
+      - "ความยาวทางลาดคือด้านตรงข้ามมุมฉาก ความสูงคือด้านตรงข้ามมุมที่ต้องการ"
+      - "หาค่า $\\sin\\theta = \\dfrac{\\text{ข้าม}}{\\text{ฉาก}}$ ก่อน"
+      - "นำค่าที่ได้ไปเทียบกับตารางมุมพิเศษ $30^\\circ$, $45^\\circ$, $60^\\circ$"
+    misconceptions:
+      - { match: 60, feedback: "ใช้ $\\cos\\theta = \\tfrac{2}{4}$ แต่ 2 เมตรคือความสูงซึ่งอยู่ตรงข้ามมุมที่พื้น จึงต้องใช้ $\\sin$" }
+      - { match: 26.57, feedback: "ใช้ $\\tan\\theta = \\tfrac{2}{4}$ แต่ 4 เมตรคือความยาวตามพื้นเอียง (ด้านตรงข้ามมุมฉาก) ไม่ใช่ระยะตามแนวราบ" }
+    solution: "$\\sin\\theta = \\dfrac{2}{4} = \\dfrac{1}{2}$ และ $\\sin 30^\\circ = \\dfrac{1}{2}$ จึงได้ $\\theta = 30^\\circ$ (ในชีวิตจริงทางลาดรถเข็นควรชันน้อยกว่านี้มาก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p010
+    topics: [math.geometry.trig-ratios]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาความสูงของตึก เมื่อยืนห่างตึก $d$ เมตรและวัดมุมเงยถึงยอดตึกได้ $\\theta$"
+    items:
+      - "วาดรูปสามเหลี่ยมมุมฉาก กำกับระยะ $d$ มุม $\\theta$ และความสูงที่ไม่รู้ค่า $h$"
+      - "ระบุว่า $h$ เป็นด้านตรงข้ามมุม และ $d$ เป็นด้านประชิดมุม $\\theta$"
+      - "เลือกใช้ $\\tan\\theta = \\dfrac{h}{d}$"
+      - "คูณ $d$ ทั้งสองข้าง ได้ $h = d\\tan\\theta$ แล้วแทนค่า"
+      - "บวกความสูงของระดับตา (ถ้ามี) เพื่อได้ความสูงจากพื้น"
+    hints:
+      - "เริ่มจากรูปเสมอ เพราะต้องรู้ว่าด้านไหนอยู่ตรงไหนก่อนเลือกอัตราส่วน"
+      - "การเลือก sin cos หรือ tan ขึ้นกับว่ารู้ด้านไหนและต้องการด้านไหน"
+    solution: "วาดรูป → ระบุข้าม/ชิด/ฉาก → เลือกอัตราส่วน ($\\tan$ เพราะเกี่ยวกับข้ามกับชิด) → แก้สมการหา $h$ → ปรับด้วยความสูงระดับตา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p011
+    topics: [math.geometry.trig-ratios]
+    difficulty: 5
+    type: numeric
+    stem: "ยืนที่จุด A มองยอดเจดีย์ด้วยมุมเงย $30^\\circ$ แล้วเดินตรงเข้าหาเจดีย์อีก $20\\ \\mathrm{m}$ ถึงจุด B มองยอดเจดีย์ด้วยมุมเงย $60^\\circ$ เจดีย์สูงกี่เมตร (ไม่คิดความสูงของระดับตา ตอบเป็นทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 17.32, tolerance: 0.17, unit: m }
+    hints:
+      - "ให้ $h$ เป็นความสูง และ $x$ เป็นระยะจาก B ถึงฐานเจดีย์ ระยะจาก A จึงเป็น $x + 20$"
+      - "เขียนสองสมการ: $h = x\\tan 60^\\circ$ และ $h = (x + 20)\\tan 30^\\circ$"
+      - "ให้สองนิพจน์ของ $h$ เท่ากัน แก้หา $x$ ก่อน แล้วนำไปแทนหา $h$"
+    misconceptions:
+      - { match: 10, feedback: "นั่นคือระยะจากจุด B ถึงฐานเจดีย์ ($x$) ยังต้องนำไปคูณ $\\tan 60^\\circ$ เพื่อหาความสูง" }
+      - { match: 34.64, feedback: "ใช้ 20 เป็นระยะจาก B ถึงฐานเจดีย์ แต่ 20 เมตรคือระยะที่เดินระหว่าง A กับ B ระยะถึงฐานยังไม่รู้" }
+    solution: "$x\\sqrt{3} = \\dfrac{x + 20}{\\sqrt{3}}$ → คูณ $\\sqrt{3}$: $3x = x + 20$ → $x = 10\\ \\mathrm{m}$ ดังนั้น $h = 10\\tan 60^\\circ = 10\\sqrt{3} \\approx 17.3\\ \\mathrm{m}$ ตรวจ: $(10 + 20)\\tan 30^\\circ = \\tfrac{30}{\\sqrt{3}} = 10\\sqrt{3}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p012
+    topics: [math.geometry.trig-ratios]
+    difficulty: 5
+    type: numeric
+    stem: "เล่นว่าวจุฬาที่ท้องสนามหลวง สายป่านตึงเป็นเส้นตรงยาว $50\\ \\mathrm{m}$ ทำมุม $60^\\circ$ กับแนวระดับ มือที่ถือสายป่านอยู่สูงจากพื้น $1.2\\ \\mathrm{m}$ ว่าวอยู่สูงจากพื้นกี่เมตร (ตอบเป็นทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 44.5, tolerance: 0.44, unit: m }
+    hints:
+      - "สายป่านเป็นด้านตรงข้ามมุมฉาก ความสูงของว่าวจากระดับมือเป็นด้านตรงข้ามมุม $60^\\circ$"
+      - "หาความสูงจากระดับมือด้วย $\\sin 60^\\circ$"
+      - "อย่าลืมบวกความสูงของมือจากพื้น"
+    misconceptions:
+      - { match: 43.3, feedback: "นั่นคือความสูงจากระดับมือเท่านั้น ต้องบวกอีก $1.2\\ \\mathrm{m}$ เพื่อวัดจากพื้น" }
+      - { match: 26.2, feedback: "ใช้ $\\cos 60^\\circ$ ซึ่งให้ระยะในแนวระดับ ความสูงอยู่ตรงข้ามมุม $60^\\circ$ จึงต้องใช้ $\\sin$" }
+    solution: "ความสูงจากระดับมือ $= 50\\sin 60^\\circ = 50 \\times \\dfrac{\\sqrt{3}}{2} = 25\\sqrt{3} \\approx 43.3\\ \\mathrm{m}$ ว่าวสูงจากพื้น $43.3 + 1.2 = 44.5\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

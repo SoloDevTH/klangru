@@ -1,0 +1,218 @@
+problems:
+  - id: math.vol.p001
+    topics: [math.geometry.volume-surface]
+    difficulty: 1
+    type: numeric
+    stem: "กล่องทรงสี่เหลี่ยมมุมฉากยาว $5\\ \\mathrm{cm}$ กว้าง $4\\ \\mathrm{cm}$ สูง $3\\ \\mathrm{cm}$ มีปริมาตรกี่ลูกบาศก์เซนติเมตร (ตอบในหน่วย $\\mathrm{cm^3}$)"
+    answer: { value: 60, unit: cm³ }
+    hints:
+      - "ปริมาตรคือจำนวนลูกบาศก์ $1\\ \\mathrm{cm}$ ที่ใส่ในกล่องได้"
+      - "ปริมาตร = พื้นที่ฐาน × สูง = ยาว × กว้าง × สูง"
+    misconceptions:
+      - { match: 12, feedback: "ดูเหมือนนำสามด้านมาบวกกัน ปริมาตรต้องคูณกัน" }
+      - { match: 94, feedback: "นั่นคือพื้นที่ผิว $2(20 + 15 + 12)$ ซึ่งเป็นผิวที่ห่อกล่อง โจทย์ถามที่ว่างข้างใน คือ ยาว × กว้าง × สูง" }
+    solution: "$V = 5 \\times 4 \\times 3 = 60\\ \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p002
+    topics: [math.geometry.volume-surface]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นหน่วยของปริมาตร"
+    choices:
+      - { id: a, text: "$\\mathrm{cm^3}$", correct: true }
+      - { id: b, text: "$\\mathrm{cm^2}$", feedback: "$\\mathrm{cm^2}$ เป็นหน่วยพื้นที่ ใช้กับผิวแบนสองมิติ ปริมาตรมีสามมิติ จึงยกกำลังสาม" }
+      - { id: c, text: "$\\mathrm{cm}$", feedback: "$\\mathrm{cm}$ เป็นหน่วยความยาว ใช้วัดด้านหรือความสูง ไม่ได้บอกความจุ" }
+      - { id: d, text: "$\\mathrm{cm/s}$", feedback: "$\\mathrm{cm/s}$ เป็นหน่วยอัตราเร็ว บอกว่าเคลื่อนที่ได้ไกลเท่าใดในหนึ่งวินาที" }
+    hints:
+      - "ปริมาตรนับเป็นจำนวนลูกบาศก์เล็ก ๆ ที่มีกว้าง ยาว สูง"
+      - "คูณหน่วยความยาวสามครั้งได้หน่วยอะไร"
+    solution: "ปริมาตรได้จาก ยาว × กว้าง × สูง หน่วยจึงเป็น $\\mathrm{cm} \\times \\mathrm{cm} \\times \\mathrm{cm} = \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p003
+    topics: [math.geometry.volume-surface]
+    difficulty: 2
+    type: numeric
+    stem: "ลูกเต๋าทรงลูกบาศก์ยาวด้านละ $4\\ \\mathrm{cm}$ มีพื้นที่ผิวทั้งหมดกี่ตารางเซนติเมตร (ตอบในหน่วย $\\mathrm{cm^2}$)"
+    answer: { value: 96, unit: cm² }
+    hints:
+      - "ลูกบาศก์มีหน้า 6 หน้า ทุกหน้าเป็นสี่เหลี่ยมจัตุรัสเท่ากัน"
+      - "หาพื้นที่หนึ่งหน้า แล้วคูณด้วยจำนวนหน้า"
+    misconceptions:
+      - { match: 64, feedback: "นั่นคือปริมาตร $4^3$ (หน่วย $\\mathrm{cm^3}$) พื้นที่ผิวคือพื้นที่ทั้ง 6 หน้ารวมกัน" }
+      - { match: 16, feedback: "นั่นคือพื้นที่หน้าเดียว ลูกบาศก์มี 6 หน้า" }
+    solution: "หนึ่งหน้า $4^2 = 16\\ \\mathrm{cm^2}$ หกหน้า $6 \\times 16 = 96\\ \\mathrm{cm^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p004
+    topics: [math.geometry.volume-surface]
+    difficulty: 2
+    type: numeric
+    stem: "ตู้ปลาทรงสี่เหลี่ยมมุมฉากยาว $50\\ \\mathrm{cm}$ กว้าง $30\\ \\mathrm{cm}$ สูง $40\\ \\mathrm{cm}$ จุน้ำได้เต็มที่กี่ลิตร (1 ลิตร $= 1{,}000\\ \\mathrm{cm^3}$ ตอบในหน่วยลิตร)"
+    answer: { value: 60, unit: ลิตร }
+    hints:
+      - "หาปริมาตรเป็น $\\mathrm{cm^3}$ ก่อน"
+      - "แปลงเป็นลิตรโดยหารด้วย $1{,}000$"
+    misconceptions:
+      - { match: 60000, feedback: "นั่นคือปริมาตรในหน่วย $\\mathrm{cm^3}$ ยังต้องแปลงเป็นลิตร โดย 1 ลิตร $= 1{,}000\\ \\mathrm{cm^3}$" }
+      - { match: 600, feedback: "ดูเหมือนหารด้วย 100 ซึ่งเป็นการแปลงหน่วยความยาว 1 ลิตรมี $1{,}000\\ \\mathrm{cm^3}$" }
+    solution: "$V = 50 \\times 30 \\times 40 = 60{,}000\\ \\mathrm{cm^3} = 60{,}000 \\div 1{,}000 = 60$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p005
+    topics: [math.geometry.volume-surface]
+    difficulty: 3
+    type: numeric
+    stem: "กระป๋องทรงกระบอกรัศมีฐาน $4\\ \\mathrm{cm}$ สูง $10\\ \\mathrm{cm}$ มีปริมาตรกี่ลูกบาศก์เซนติเมตร (ใช้ $\\pi \\approx 3.14$ ตอบในหน่วย $\\mathrm{cm^3}$)"
+    answer: { value: 502.4, tolerance: 5, unit: cm³ }
+    hints:
+      - "ทรงกระบอกคือปริซึมที่ฐานเป็นวงกลม"
+      - "หาพื้นที่ฐาน $\\pi r^2$ ก่อน"
+      - "คูณพื้นที่ฐานด้วยความสูง"
+    misconceptions:
+      - { match: 251.2, feedback: "นั่นคือพื้นที่ผิวข้าง $2\\pi rh$ (หน่วย $\\mathrm{cm^2}$) ปริมาตรใช้ $\\pi r^2 h$" }
+      - { match: 2009.6, feedback: "ดูเหมือนใช้ $8\\ \\mathrm{cm}$ (เส้นผ่านศูนย์กลาง) เป็นรัศมี รัศมีคือ $4\\ \\mathrm{cm}$" }
+    solution: "$V = \\pi r^2 h \\approx 3.14 \\times 4^2 \\times 10 = 3.14 \\times 160 = 502.4\\ \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p006
+    topics: [math.geometry.volume-surface]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ทรงสามมิติกับสูตรปริมาตร ($A$ = พื้นที่ฐาน, $h$ = ความสูง, $r$ = รัศมี)"
+    pairs:
+      - { left: "ปริซึม", right: "$Ah$" }
+      - { left: "ทรงกระบอก", right: "$\\pi r^2 h$" }
+      - { left: "พีระมิด", right: "$\\tfrac{1}{3}Ah$" }
+      - { left: "กรวย", right: "$\\tfrac{1}{3}\\pi r^2 h$" }
+      - { left: "ทรงกลม", right: "$\\tfrac{4}{3}\\pi r^3$" }
+    hints:
+      - "ทรงที่หน้าตัดเท่ากันตลอดใช้ ฐาน × สูง"
+      - "ทรงที่เรียวเข้าหายอดมี $\\tfrac{1}{3}$ อยู่หน้าสูตร"
+    solution: "ปริซึม $Ah$ · ทรงกระบอก $\\pi r^2 h$ · พีระมิด $\\tfrac{1}{3}Ah$ · กรวย $\\tfrac{1}{3}\\pi r^2 h$ · ทรงกลม $\\tfrac{4}{3}\\pi r^3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p007
+    topics: [math.geometry.volume-surface]
+    difficulty: 3
+    type: numeric
+    stem: "พีระมิดฐานสี่เหลี่ยมจัตุรัสยาวด้านละ $6\\ \\mathrm{m}$ สูง $10\\ \\mathrm{m}$ มีปริมาตรกี่ลูกบาศก์เมตร (ตอบในหน่วย $\\mathrm{m^3}$)"
+    answer: { value: 120, unit: m³ }
+    hints:
+      - "หาพื้นที่ฐานสี่เหลี่ยมจัตุรัสก่อน"
+      - "พีระมิดมีปริมาตรหนึ่งในสามของปริซึมที่ฐานและสูงเท่ากัน"
+      - "ใช้ $\\tfrac{1}{3} \\times \\text{พื้นที่ฐาน} \\times \\text{สูง}$"
+    misconceptions:
+      - { match: 360, feedback: "ดูเหมือนลืม $\\tfrac{1}{3}$ นั่นคือปริมาตรของปริซึมที่ฐานและสูงเท่ากัน" }
+      - { match: 20, feedback: "ดูเหมือนใช้ความยาวด้าน $6$ แทนพื้นที่ฐาน ต้องยกกำลังสองก่อน ได้ $36\\ \\mathrm{m^2}$" }
+    solution: "พื้นที่ฐาน $6^2 = 36\\ \\mathrm{m^2}$ ปริมาตร $= \\tfrac{1}{3} \\times 36 \\times 10 = 120\\ \\mathrm{m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p008
+    topics: [math.geometry.volume-surface]
+    difficulty: 4
+    type: numeric
+    stem: "แท็งก์น้ำทรงกระบอกบนดาดฟ้ามีเส้นผ่านศูนย์กลาง $1.2\\ \\mathrm{m}$ สูง $1.5\\ \\mathrm{m}$ จุน้ำได้เต็มที่กี่ลิตร (ใช้ $\\pi \\approx 3.14$ และ $1\\ \\mathrm{m^3} = 1{,}000$ ลิตร ตอบในหน่วยลิตร)"
+    answer: { value: 1695.6, tolerance: 17, unit: ลิตร }
+    hints:
+      - "โจทย์ให้เส้นผ่านศูนย์กลาง ต้องหารัศมีก่อน"
+      - "หาปริมาตร $\\pi r^2 h$ ในหน่วย $\\mathrm{m^3}$"
+      - "คูณด้วย $1{,}000$ เพื่อแปลงเป็นลิตร"
+    misconceptions:
+      - { match: 6782.4, feedback: "ดูเหมือนใช้ $1.2\\ \\mathrm{m}$ เป็นรัศมี รัศมีคือครึ่งหนึ่งของเส้นผ่านศูนย์กลาง $= 0.6\\ \\mathrm{m}$" }
+      - { match: 1.6956, feedback: "นั่นคือปริมาตรในหน่วย $\\mathrm{m^3}$ ยังต้องคูณ $1{,}000$ เพื่อแปลงเป็นลิตร" }
+    solution: "$r = 0.6\\ \\mathrm{m}$ ปริมาตร $= 3.14 \\times 0.6^2 \\times 1.5 = 3.14 \\times 0.36 \\times 1.5 = 1.6956\\ \\mathrm{m^3}$ $= 1.6956 \\times 1{,}000 \\approx 1{,}696$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p009
+    topics: [math.geometry.volume-surface]
+    difficulty: 4
+    type: numeric
+    stem: "โคนไอศกรีมทรงกรวยรัศมีปาก $3\\ \\mathrm{cm}$ ลึก $12\\ \\mathrm{cm}$ ใส่ไอศกรีมให้เต็มพอดีปากโคน (ไม่พูน) ได้กี่ลูกบาศก์เซนติเมตร (ใช้ $\\pi \\approx 3.14$ ตอบในหน่วย $\\mathrm{cm^3}$)"
+    answer: { value: 113.04, tolerance: 1.1, unit: cm³ }
+    hints:
+      - "กรวยเป็นทรงที่เรียวเข้าหายอด"
+      - "ใช้ $\\tfrac{1}{3}\\pi r^2 h$"
+      - "หา $\\pi r^2 h$ แล้วหารด้วย 3"
+    misconceptions:
+      - { match: 339.12, feedback: "ดูเหมือนลืม $\\tfrac{1}{3}$ นั่นคือปริมาตรทรงกระบอกที่ฐานและสูงเท่ากัน" }
+      - { match: 452.16, feedback: "ดูเหมือนใช้เส้นผ่านศูนย์กลาง $6\\ \\mathrm{cm}$ เป็นรัศมี รัศมีคือ $3\\ \\mathrm{cm}$" }
+    solution: "$V = \\tfrac{1}{3}\\pi r^2 h \\approx \\tfrac{1}{3} \\times 3.14 \\times 3^2 \\times 12 = 3.14 \\times 36 = 113.04\\ \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p010
+    topics: [math.geometry.volume-surface]
+    difficulty: 4
+    type: numeric
+    stem: "ลูกบอลทรงกลมรัศมี $10\\ \\mathrm{cm}$ ต้องใช้หนังหุ้มผิวกี่ตารางเซนติเมตร (ใช้ $\\pi \\approx 3.14$ ตอบในหน่วย $\\mathrm{cm^2}$)"
+    answer: { value: 1256, tolerance: 12, unit: cm² }
+    hints:
+      - "หนังหุ้มผิวคือพื้นที่ผิว ไม่ใช่ปริมาตร"
+      - "พื้นที่ผิวทรงกลมคือ $4\\pi r^2$"
+    misconceptions:
+      - { match: 314, feedback: "นั่นคือ $\\pi r^2$ ซึ่งเป็นพื้นที่วงกลมแบนหนึ่งวง ผิวทรงกลมเท่ากับวงกลมแบบนี้ 4 วง" }
+      - { match: 4186.67, feedback: "นั่นคือปริมาตร $\\tfrac{4}{3}\\pi r^3$ (หน่วย $\\mathrm{cm^3}$) โจทย์ถามผิวที่หุ้ม ใช้ $4\\pi r^2$" }
+    solution: "$S = 4\\pi r^2 \\approx 4 \\times 3.14 \\times 10^2 = 1{,}256\\ \\mathrm{cm^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p011
+    topics: [math.geometry.volume-surface]
+    difficulty: 4
+    type: mcq
+    stem: "ถ้าขยายลูกบาศก์ให้ทุกด้านยาวขึ้นเป็น 2 เท่า ปริมาตรจะเปลี่ยนไปอย่างไร"
+    choices:
+      - { id: a, text: "เพิ่มเป็น 8 เท่า", correct: true }
+      - { id: b, text: "เพิ่มเป็น 2 เท่า", feedback: "ด้านยาวขึ้น 2 เท่าทั้งกว้าง ยาว และสูง ปริมาตรจึงคูณ 2 สามครั้ง ไม่ใช่ครั้งเดียว" }
+      - { id: c, text: "เพิ่มเป็น 4 เท่า", feedback: "4 เท่าคือการเปลี่ยนของพื้นที่ผิว ($2^2$) ปริมาตรมีสามมิติจึงเป็น $2^3$" }
+      - { id: d, text: "เพิ่มเป็น 6 เท่า", feedback: "ดูเหมือนคิดจาก 2 × 3 มิติ แต่การขยายแต่ละมิติเป็นการคูณ จึงเป็น $2 \\times 2 \\times 2$" }
+    hints:
+      - "ลองยกตัวอย่าง ลูกบาศก์ด้าน 1 กับด้าน 2 มีปริมาตรเท่าใด"
+      - "ปริมาตรลูกบาศก์คือ $s^3$ แทน $s$ ด้วย $2s$"
+    solution: "$V = s^3$ เมื่อด้านเป็น $2s$ จะได้ $(2s)^3 = 8s^3$ ปริมาตรจึงเพิ่มเป็น 8 เท่า (ขณะที่พื้นที่ผิวเพิ่มเป็น $2^2 = 4$ เท่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p012
+    topics: [math.geometry.volume-surface]
+    difficulty: 5
+    type: numeric
+    stem: "โรงงานทำกระป๋องนมทรงกระบอกปิดหัวท้าย รัศมีฐาน $7\\ \\mathrm{cm}$ สูง $10\\ \\mathrm{cm}$ ต้องใช้แผ่นโลหะกี่ตารางเซนติเมตรต่อกระป๋อง (ไม่คิดรอยต่อ ใช้ $\\pi \\approx 3.14$ ตอบในหน่วย $\\mathrm{cm^2}$)"
+    answer: { value: 747.32, tolerance: 7.5, unit: cm² }
+    hints:
+      - "คลี่กระป๋องออกได้วงกลม 2 แผ่น (ฝาบนและก้น) กับสี่เหลี่ยมผืนผ้า 1 แผ่น"
+      - "สี่เหลี่ยมผืนผ้ากว้างเท่าความสูง ยาวเท่าเส้นรอบวง $2\\pi r$"
+      - "รวม $2\\pi r^2 + 2\\pi rh$"
+    misconceptions:
+      - { match: 593.46, feedback: "ดูเหมือนนับฝาวงกลมแผ่นเดียว กระป๋องปิดหัวท้ายมีทั้งฝาบนและก้น" }
+      - { match: 439.6, feedback: "นั่นคือผิวข้างอย่างเดียว ($2\\pi rh$) ยังขาดฝาวงกลมสองแผ่น" }
+    solution: "ฝาสองแผ่น $2\\pi r^2 \\approx 2 \\times 3.14 \\times 49 = 307.72\\ \\mathrm{cm^2}$ ผิวข้าง $2\\pi rh \\approx 2 \\times 3.14 \\times 7 \\times 10 = 439.6\\ \\mathrm{cm^2}$ รวม $747.32\\ \\mathrm{cm^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p013
+    topics: [math.geometry.volume-surface]
+    difficulty: 5
+    type: numeric
+    stem: "สระว่ายน้ำของโรงเรียนยาว $25\\ \\mathrm{m}$ กว้าง $10\\ \\mathrm{m}$ ลึก $1.5\\ \\mathrm{m}$ เท่ากันตลอด ใช้เครื่องสูบน้ำที่สูบได้นาทีละ $500$ ลิตร ต้องใช้เวลากี่ชั่วโมงจึงเติมน้ำเต็มสระที่ว่างเปล่า (ตอบในหน่วยชั่วโมง)"
+    answer: { value: 12.5, tolerance: 0.12, unit: ชั่วโมง }
+    hints:
+      - "หาปริมาตรสระเป็น $\\mathrm{m^3}$ แล้วแปลงเป็นลิตร ($1\\ \\mathrm{m^3} = 1{,}000$ ลิตร)"
+      - "หารด้วยอัตราการสูบ จะได้เวลาเป็นนาที"
+      - "แปลงนาทีเป็นชั่วโมงโดยหารด้วย 60"
+    misconceptions:
+      - { match: 750, feedback: "นั่นคือเวลาในหน่วยนาที โจทย์ถามเป็นชั่วโมง ต้องหารด้วย 60 อีกครั้ง" }
+      - { match: 0.75, feedback: "ดูเหมือนนำ $375\\ \\mathrm{m^3}$ ไปหารด้วย 500 ลิตรต่อนาทีโดยไม่แปลงหน่วยก่อน ต้องแปลง $\\mathrm{m^3}$ เป็นลิตรให้ตรงกับอัตราการสูบ" }
+    solution: "ปริมาตร $= 25 \\times 10 \\times 1.5 = 375\\ \\mathrm{m^3} = 375{,}000$ ลิตร เวลา $= 375{,}000 \\div 500 = 750$ นาที $= 750 \\div 60 = 12.5$ ชั่วโมง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

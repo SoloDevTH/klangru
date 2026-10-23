@@ -1,0 +1,33 @@
+id: math.algebra.polynomials
+subject: math
+title: { th: พหุนามและการคูณพหุนาม, en: Polynomials and multiplying polynomials }
+summary: รู้จักเอกนาม พหุนาม และดีกรี บวก ลบ คูณพหุนามด้วยการกระจาย และใช้ผลคูณพิเศษ เช่น กำลังสองของผลบวก และผลบวกคูณผลต่าง
+difficulty: 3.5
+minutes: 35
+prerequisites: [math.algebra.expressions, math.number.exponents]
+encompasses:
+  - { id: math.algebra.expressions, weight: 0.5 }
+  - { id: math.number.exponents, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: simulation
+    title: แบบจำลองพื้นที่กับพีชคณิต (PhET Area Model Algebra)
+    url: https://phet.colorado.edu/en/simulations/area-model-algebra
+    provider: phet
+    note: ตั้งความกว้างและความยาวของสี่เหลี่ยมเป็นพหุนาม เช่น x + 3 และ x + 2 แล้วดูว่าพื้นที่แบ่งเป็นชิ้นย่อยกี่ชิ้น แต่ละชิ้นคือพจน์หนึ่งในผลคูณที่กระจายแล้ว
+glossary:
+  - { term: เอกนาม, definition: "นิพจน์ที่เป็นผลคูณของค่าคงตัวกับตัวแปรที่มีเลขชี้กำลังเป็นจำนวนเต็มบวกหรือศูนย์ เช่น $5$, $-3x^2$, $4xy^3$" }
+  - { term: พหุนาม, definition: "เอกนามหรือผลบวกของเอกนามหลายตัว เช่น $2x^2 - 3x + 7$" }
+  - { term: ดีกรี, definition: "ดีกรีของเอกนามคือผลบวกเลขชี้กำลังของตัวแปรทุกตัว ดีกรีของพหุนามคือดีกรีสูงสุดของพจน์ในพหุนามนั้น" }
+  - { term: พจน์คล้าย, definition: "เอกนามที่มีตัวแปรชุดเดียวกันและเลขชี้กำลังของแต่ละตัวแปรเท่ากัน เช่น $3x^2$ กับ $-5x^2$ บวกลบรวมกันได้" }
+flashcards:
+  - { front: "$(a + b)^2$ เท่ากับเท่าใด", back: "$a^2 + 2ab + b^2$ (ไม่ใช่ $a^2 + b^2$)" }
+  - { front: "$(a - b)^2$ เท่ากับเท่าใด", back: "$a^2 - 2ab + b^2$" }
+  - { front: "$(a + b)(a - b)$ เท่ากับเท่าใด", back: "$a^2 - b^2$ (ผลต่างกำลังสอง พจน์กลางหักล้างกันหมด)" }
+  - { front: "$x^2 \\cdot x^3$ เท่ากับเท่าใด", back: "$x^5$ คูณเลขยกกำลังฐานเดียวกันให้บวกเลขชี้กำลัง" }
+  - { front: "ดีกรีของ $3x^2y^3$ คือเท่าใด", back: "$2 + 3 = 5$ บวกเลขชี้กำลังของทุกตัวแปร" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

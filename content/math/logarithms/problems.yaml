@@ -1,0 +1,219 @@
+problems:
+  - id: math.log.p001
+    topics: [math.functions.logarithms]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาค่าของ $\\log_2 8$"
+    answer: { value: 3 }
+    hints:
+      - "$\\log_2 8$ ถามว่า 2 ยกกำลังเท่าใดจึงได้ 8"
+      - "ลองยกกำลัง 2 ไปทีละขั้น: $2^1, 2^2, 2^3, \\ldots$ จนได้ 8"
+    misconceptions:
+      - { match: 4, feedback: "นั่นคือ $8 \\div 2$ แต่ลอการิทึมถามหาเลขชี้กำลัง ไม่ใช่ผลหาร" }
+      - { match: 16, feedback: "นั่นคือ $2 \\times 8$ ลอการิทึมถามว่า 2 ยกกำลังเท่าใดได้ 8" }
+    solution: "$2^3 = 8$ ดังนั้น $\\log_2 8 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p002
+    topics: [math.functions.logarithms]
+    difficulty: 1
+    type: mcq
+    stem: "$10^3 = 1000$ เขียนในรูปลอการิทึมได้ตามข้อใด"
+    choices:
+      - { id: a, text: "$\\log_{10} 1000 = 3$", correct: true }
+      - { id: b, text: "$\\log_{3} 1000 = 10$", feedback: "ฐานของเลขยกกำลังคือ 10 ไม่ใช่ 3 ฐานต้องเป็นฐานของลอการิทึมด้วย" }
+      - { id: c, text: "$\\log_{1000} 10 = 3$", feedback: "สลับฐานกับค่า ฐานคือ 10 และค่าที่ได้จากการยกกำลังคือ 1000" }
+      - { id: d, text: "$\\log_{10} 3 = 1000$", feedback: "ลอการิทึมให้ผลเป็นเลขชี้กำลัง (3) ไม่ใช่ผลของการยกกำลัง (1000)" }
+    hints:
+      - "$b^y = x$ เขียนเป็น $\\log_b x = y$"
+      - "ระบุว่าอะไรคือฐาน อะไรคือเลขชี้กำลัง และอะไรคือผลลัพธ์"
+    solution: "ฐาน $b = 10$ เลขชี้กำลัง $y = 3$ ผลลัพธ์ $x = 1000$ จึงเขียนเป็น $\\log_{10} 1000 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p003
+    topics: [math.functions.logarithms]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่าของ $\\log 0.01$ (ลอการิทึมฐาน 10)"
+    answer: { value: -2 }
+    hints:
+      - "เขียน 0.01 เป็นเศษส่วนที่มีตัวส่วนเป็นกำลังของ 10"
+      - "$0.01 = \\tfrac{1}{100}$ และ $\\tfrac{1}{10^n} = 10^{-n}$"
+    misconceptions:
+      - { match: 2, feedback: "$10^2 = 100$ ไม่ใช่ 0.01 จำนวนที่น้อยกว่า 1 มีลอการิทึมเป็นลบ" }
+    solution: "$0.01 = \\tfrac{1}{100} = 10^{-2}$ ดังนั้น $\\log 0.01 = -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p004
+    topics: [math.functions.logarithms]
+    difficulty: 2
+    type: numeric
+    stem: "แก้สมการ $\\log_2 x = 5$"
+    answer: { value: 32 }
+    hints:
+      - "เปลี่ยนสมการลอการิทึมเป็นรูปเลขยกกำลัง"
+      - "$\\log_b x = y$ หมายถึง $x = b^y$"
+    misconceptions:
+      - { match: 10, feedback: "นั่นคือ $2 \\times 5$ แต่ $\\log_2 x = 5$ แปลว่า $x = 2^5$" }
+      - { match: 25, feedback: "นั่นคือ $5^2$ ฐานของลอการิทึมคือ 2 จึงต้องเป็น $2^5$" }
+    solution: "$\\log_2 x = 5$ → $x = 2^5 = 32$ ตรวจ: $\\log_2 32 = 5$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p005
+    topics: [math.functions.logarithms]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ลอการิทึมกับค่าของมัน"
+    pairs:
+      - { left: "$\\log_5 25$", right: "$2$" }
+      - { left: "$\\log_3 1$", right: "$0$" }
+      - { left: "$\\log_4 4$", right: "$1$" }
+      - { left: "$\\log_2 \\tfrac{1}{8}$", right: "$-3$" }
+      - { left: "$\\log_9 3$", right: "$\\tfrac{1}{2}$" }
+    hints:
+      - "ถามทุกข้อว่า ฐานยกกำลังเท่าใดได้ค่าข้างใน"
+      - "จำนวนใดยกกำลัง 0 ได้ 1 และเลขชี้กำลังลบให้เศษส่วน"
+      - "สำหรับ $\\log_9 3$ คิดว่า 3 เป็นรากที่เท่าใดของ 9"
+    solution: "$5^2 = 25$ | $3^0 = 1$ | $4^1 = 4$ | $2^{-3} = \\tfrac{1}{8}$ | $9^{1/2} = \\sqrt{9} = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p006
+    topics: [math.functions.logarithms]
+    difficulty: 3
+    type: mcq
+    multiple: true
+    stem: "ข้อใดเป็นสมบัติของลอการิทึมที่ถูกต้อง เมื่อ $M, N > 0$ (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$\\log(MN) = \\log M + \\log N$", correct: true }
+      - { id: b, text: "$\\log M^k = k \\log M$", correct: true }
+      - { id: c, text: "$\\log 1 = 0$", correct: true }
+      - { id: d, text: "$\\log(M + N) = \\log M + \\log N$", feedback: "ลองแทน $M = N = 1$: ข้างซ้าย $\\log 2 \\approx 0.301$ ข้างขวา $0 + 0 = 0$ ไม่เท่ากัน สมบัตินี้ใช้กับผลคูณ ไม่ใช่ผลบวก" }
+      - { id: e, text: "$\\log \\dfrac{M}{N} = \\dfrac{\\log M}{\\log N}$", feedback: "ลอการิทึมของผลหารคือผลต่าง $\\log M - \\log N$ ลองแทน $M = 100$, $N = 10$: $\\log 10 = 1$ แต่ $\\tfrac{2}{1} = 2$" }
+    hints:
+      - "ลอการิทึมคือเลขชี้กำลัง คิดถึงกฎ $b^m \\cdot b^n = b^{m+n}$"
+      - "ตรวจแต่ละข้อด้วยการแทนตัวเลขง่าย ๆ เช่น $M = 100$, $N = 10$"
+    solution: "ข้อ a, b, c มาจากกฎของเลขยกกำลังและ $10^0 = 1$ ส่วนข้อ d ผิดเพราะผลบวกแยกไม่ได้ และข้อ e ผิดเพราะต้องเป็น $\\log M - \\log N$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p007
+    topics: [math.functions.logarithms]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่าของ $\\log_2 12 - \\log_2 3$"
+    answer: { value: 2 }
+    hints:
+      - "ผลต่างของลอการิทึมฐานเดียวกันรวมเป็นลอการิทึมของผลหาร"
+      - "$\\log_b M - \\log_b N = \\log_b \\tfrac{M}{N}$ แล้วหาค่าลอการิทึมที่ได้"
+    misconceptions:
+      - { match: 3.17, feedback: "ดูเหมือนคิดเป็น $\\log_2(12 - 3) = \\log_2 9$ แต่ผลต่างของลอการิทึมคือลอการิทึมของ **ผลหาร** ไม่ใช่ผลต่าง" }
+      - { match: 2.262, feedback: "ดูเหมือนนำ $\\log_2 12$ หารด้วย $\\log_2 3$ แต่โจทย์ให้ลบ และผลต่างของลอการิทึมคือ $\\log_2 \\tfrac{12}{3}$" }
+    solution: "$\\log_2 12 - \\log_2 3 = \\log_2 \\tfrac{12}{3} = \\log_2 4 = 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p008
+    topics: [math.functions.logarithms]
+    difficulty: 3
+    type: numeric
+    stem: "กำหนด $\\log 2 \\approx 0.3010$ และ $\\log 3 \\approx 0.4771$ จงหาค่าประมาณของ $\\log 12$"
+    answer: { value: 1.0791, tolerance: 0.01 }
+    hints:
+      - "แยกตัวประกอบ 12 เป็นผลคูณของ 2 และ 3"
+      - "$12 = 2^2 \\times 3$ ใช้สมบัติผลคูณและสมบัติเลขยกกำลัง"
+    misconceptions:
+      - { match: 0.7781, feedback: "นั่นคือ $\\log 2 + \\log 3 = \\log 6$ แต่ $12 = 2^2 \\times 3$ จึงต้องใช้ $2\\log 2$" }
+      - { match: 1.5562, feedback: "ดูเหมือนคูณ 2 ทั้ง $\\log 2$ และ $\\log 3$ แต่มีแค่ 2 ที่ยกกำลังสอง: $\\log 12 = 2\\log 2 + \\log 3$" }
+    solution: "$\\log 12 = \\log(2^2 \\times 3) = 2\\log 2 + \\log 3 \\approx 2(0.3010) + 0.4771 = 1.0791$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p009
+    topics: [math.functions.logarithms]
+    difficulty: 4
+    type: numeric
+    stem: "แก้สมการ $2^x = 50$ (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.64, tolerance: 0.03 }
+    hints:
+      - "50 เขียนเป็นเลขยกกำลังฐาน 2 ไม่ลงตัว ให้ใส่ $\\log$ หรือ $\\ln$ ทั้งสองข้าง"
+      - "ใช้สมบัติ $\\log 2^x = x \\log 2$"
+      - "หารทั้งสองข้างด้วย $\\log 2$ แล้วใช้เครื่องคิดเลข"
+    misconceptions:
+      - { match: 25, feedback: "นั่นคือ $50 \\div 2$ แต่ $x$ เป็นเลขชี้กำลัง ไม่ได้คูณกับ 2 ลองตรวจ: $2^{25}$ มากกว่าสามสิบล้าน" }
+      - { match: 3.22, feedback: "ดูเหมือนคำนวณ $\\ln \\tfrac{50}{2}$ แต่ $x = \\tfrac{\\ln 50}{\\ln 2}$ คือผลหารของลอการิทึม ไม่ใช่ลอการิทึมของผลหาร" }
+    solution: "$x \\log 2 = \\log 50$ → $x = \\dfrac{\\log 50}{\\log 2} \\approx \\dfrac{1.6990}{0.3010} \\approx 5.64$ ตรวจ: $2^5 = 32$ และ $2^6 = 64$ ล้อม 50 ไว้ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p010
+    topics: [math.functions.logarithms]
+    difficulty: 4
+    type: expression
+    stem: "จากสมการ $5^x = y$ เมื่อ $y > 0$ จงเขียน $x$ ในรูปของ $y$"
+    prefix: "x ="
+    answer: { latex: "\\log_{5}y", variables: [y] }
+    hints:
+      - "ตัวที่ต้องการอยู่ที่เลขชี้กำลัง จึงต้องใช้ลอการิทึม"
+      - "$b^x = y$ เขียนในรูปลอการิทึมได้ว่า $x = \\log_b y$"
+    misconceptions:
+      - { match: "\\frac{y}{5}", feedback: "$x$ เป็นเลขชี้กำลัง ไม่ได้คูณกับ 5 การหาร 5 จึงไม่ได้ $x$ ต้องใช้ลอการิทึมฐาน 5" }
+      - { match: "\\log_{y}5", feedback: "สลับฐานกับค่า ฐานของเลขยกกำลังคือ 5 จึงต้องเป็นฐานของลอการิทึม: $\\log_5 y$" }
+    solution: "$5^x = y$ เขียนเป็น $x = \\log_5 y$ หรือใช้สูตรเปลี่ยนฐาน $x = \\dfrac{\\ln y}{\\ln 5}$ ซึ่งมีค่าเท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p011
+    topics: [math.functions.logarithms]
+    difficulty: 4
+    type: numeric
+    stem: "ขนาดแผ่นดินไหวตามมาตราริกเตอร์คำนวณจาก $M = \\log \\dfrac{A}{A_0}$ เมื่อ $A$ เป็นแอมพลิจูดของคลื่นที่วัดได้ ถ้าแผ่นดินไหวที่จังหวัดเชียงรายครั้งหนึ่งมีขนาด 6.3 และอีกครั้งมีขนาด 4.3 คลื่นของครั้งแรกมีแอมพลิจูดมากกว่าครั้งหลังกี่เท่า"
+    answer: { value: 100, unit: เท่า }
+    hints:
+      - "ขนาดต่างกัน $6.3 - 4.3 = 2$ ใช้สมบัติผลต่างของลอการิทึม"
+      - "$M_1 - M_2 = \\log \\dfrac{A_1}{A_2}$"
+      - "เปลี่ยนสมการลอการิทึมเป็นรูปเลขยกกำลังฐาน 10"
+    misconceptions:
+      - { match: 2, feedback: "2 คือผลต่างของขนาด ซึ่งเป็นลอการิทึมของอัตราส่วน ต้องยก 10 กำลัง 2 เพื่อหาอัตราส่วนแอมพลิจูด" }
+      - { match: 1.465, feedback: "ดูเหมือนนำ 6.3 หารด้วย 4.3 แต่มาตราริกเตอร์เป็นลอการิทึม ขนาดต่างกัน 1 แปลว่าแอมพลิจูดต่างกัน 10 เท่า" }
+    solution: "$\\log \\dfrac{A_1}{A_2} = M_1 - M_2 = 6.3 - 4.3 = 2$ ดังนั้น $\\dfrac{A_1}{A_2} = 10^2 = 100$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p012
+    topics: [math.functions.logarithms]
+    difficulty: 5
+    type: numeric
+    stem: "น้ำส้มคั้นแก้วหนึ่งมีความเข้มข้นของไอออนไฮโดรเจน $[\\mathrm{H^+}] = 3.2 \\times 10^{-4}$ โมลต่อลิตร จงหาค่า pH จากสูตร $\\mathrm{pH} = -\\log[\\mathrm{H^+}]$ (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.49, tolerance: 0.03 }
+    hints:
+      - "ใช้สมบัติผลคูณแยก $\\log(3.2 \\times 10^{-4})$ เป็นสองส่วน"
+      - "$\\log 10^{-4} = -4$ และหา $\\log 3.2$ ด้วยเครื่องคิดเลข"
+      - "อย่าลืมเครื่องหมายลบหน้าสูตร และใช้ $\\log$ ฐาน 10 ไม่ใช่ $\\ln$"
+    misconceptions:
+      - { match: -3.49, feedback: "ลืมเครื่องหมายลบหน้าสูตร $\\log[\\mathrm{H^+}]$ ติดลบอยู่แล้ว pH จึงต้องกลับเครื่องหมายให้เป็นบวก" }
+      - { match: 8.05, feedback: "ดูเหมือนใช้ $\\ln$ (ฐาน $\\mathrm{e}$) แต่ pH ใช้ลอการิทึมฐาน 10" }
+    solution: "$\\log(3.2 \\times 10^{-4}) = \\log 3.2 + \\log 10^{-4} \\approx 0.505 - 4 = -3.495$ ดังนั้น $\\mathrm{pH} \\approx 3.49$ (น้ำส้มเป็นกรดอ่อน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p013
+    topics: [math.functions.logarithms]
+    difficulty: 5
+    type: numeric
+    stem: "ฝากเงิน 50,000 บาทในบัญชีที่ได้ดอกเบี้ย 5% ต่อปี ทบต้นปีละครั้ง ต้องฝากอย่างน้อยกี่ปีเต็ม เงินรวมจึงถึง 100,000 บาท"
+    answer: { value: 15, unit: ปี }
+    hints:
+      - "ตั้งสมการ $50{,}000(1.05)^n = 100{,}000$ แล้วหารทั้งสองข้างด้วย 50,000"
+      - "ใส่ $\\log$ ทั้งสองข้างของ $(1.05)^n = 2$ แล้วแก้หา $n$"
+      - "ค่า $n$ ที่ได้ไม่ใช่จำนวนเต็ม ให้ปัดขึ้น เพราะดอกเบี้ยทบต้นเมื่อครบปี"
+    misconceptions:
+      - { match: 20, feedback: "นั่นคือการคิดแบบดอกเบี้ยไม่ทบต้น (ปีละ 2,500 บาท) แต่ดอกเบี้ยทบต้นทำให้เงินโตเร็วกว่า" }
+      - { match: 14, feedback: "ปัดลงทำให้เงินยังไม่ถึง: $50{,}000(1.05)^{14} \\approx 98{,}997$ บาท ต้องปัดขึ้น" }
+    solution: "$(1.05)^n = 2$ → $n = \\dfrac{\\log 2}{\\log 1.05} \\approx \\dfrac{0.3010}{0.0212} \\approx 14.2$ ปี ต้องฝากครบ 15 ปี ตรวจ: $50{,}000(1.05)^{15} \\approx 103{,}946$ บาท ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

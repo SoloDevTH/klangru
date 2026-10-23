@@ -1,0 +1,36 @@
+id: physics.units.vectors
+subject: physics
+title: { th: เวกเตอร์ในฟิสิกส์, en: Vectors in physics }
+summary: รวมปริมาณเวกเตอร์แบบหางต่อหัว แยกเวกเตอร์เป็นองค์ประกอบตามแกน x และ y ด้วยไซน์และโคไซน์ แล้วรวมองค์ประกอบกลับเป็นเวกเตอร์ลัพธ์
+difficulty: 5.2
+minutes: 40
+prerequisites: [physics.kinematics.velocity, math.geometry.trig-ratios]
+encompasses:
+  - { id: physics.kinematics.velocity, weight: 0.3 }
+  - { id: math.geometry.trig-ratios, weight: 0.5 }
+  - { id: math.geometry.pythagoras, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ลากเวกเตอร์แล้วดูเวกเตอร์ลัพธ์
+    caption: ลากหัวลูกศรของเวกเตอร์ a และ b สังเกตว่าเวกเตอร์ลัพธ์ยาวเท่ากับผลบวกของความยาวก็ต่อเมื่อสองเวกเตอร์ชี้ทิศเดียวกัน และสั้นที่สุดเมื่อชี้ทิศตรงข้าม ลองจัดให้ตั้งฉากกันแล้วตรวจด้วยทฤษฎีบทพีทาโกรัส
+    widget: { kind: vector-add, a: [4, 0], b: [0, 3], draggable: true }
+  - type: simulation
+    title: การบวกเวกเตอร์ (PhET Vector Addition)
+    url: https://phet.colorado.edu/en/simulations/vector-addition
+    provider: phet
+    note: เปิดหน้าจอ Explore 2D ลากเวกเตอร์สองตัวลงบนตาราง ติ๊กแสดงผลรวม (Sum) แล้วเลือกแสดงองค์ประกอบ เปรียบเทียบองค์ประกอบ x และ y ของเวกเตอร์ลัพธ์กับผลบวกขององค์ประกอบของแต่ละตัว
+glossary:
+  - { term: ปริมาณเวกเตอร์, definition: "ปริมาณที่มีทั้งขนาดและทิศทาง เช่น การกระจัด ความเร็ว ความเร่ง วาดแทนด้วยลูกศร" }
+  - { term: เวกเตอร์ลัพธ์, definition: "เวกเตอร์ที่ได้จากการรวมเวกเตอร์หลายตัว วาดแบบหางต่อหัวแล้วลากจากหางตัวแรกไปหัวตัวสุดท้าย" }
+  - { term: องค์ประกอบของเวกเตอร์, definition: "ส่วนของเวกเตอร์ตามแกน $x$ และ $y$ ที่ตั้งฉากกัน $A_x = A\\cos\\theta$ และ $A_y = A\\sin\\theta$ เมื่อ $\\theta$ วัดจากแกน $+x$" }
+flashcards:
+  - { front: "รวมสองเวกเตอร์ที่ตั้งฉากกันอย่างไร", back: "ขนาด $R = \\sqrt{A^2 + B^2}$ และทิศ $\\tan\\theta = \\dfrac{B}{A}$" }
+  - { front: "องค์ประกอบของเวกเตอร์ขนาด $A$ ที่ทำมุม $\\theta$ กับแกน $+x$", back: "$A_x = A\\cos\\theta$ และ $A_y = A\\sin\\theta$" }
+  - { front: "ขนาดของผลรวมสองเวกเตอร์เท่ากับผลบวกของขนาดเมื่อใด", back: "เมื่อสองเวกเตอร์ชี้ทิศเดียวกันเท่านั้น กรณีอื่นจะน้อยกว่าเสมอ" }
+  - { front: "$A_x < 0$ แต่เครื่องคิดเลขให้ $\\tan^{-1}$ เป็นมุมในจตุภาคที่ 1 หรือ 4 ต้องทำอย่างไร", back: "บวก $180^\\circ$ เพราะเวกเตอร์ที่มี $A_x$ เป็นลบชี้ไปทางซ้าย" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

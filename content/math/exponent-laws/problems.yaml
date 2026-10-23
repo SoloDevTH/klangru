@@ -1,0 +1,246 @@
+problems:
+  - id: math.expl.p001
+    topics: [math.algebra.exponent-laws]
+    difficulty: 1
+    type: mcq
+    stem: "$x^3 \\cdot x^4$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$x^7$", correct: true }
+      - { id: b, text: "$x^{12}$", feedback: "ฐานเดียวกันคูณกันให้ **บวก** เลขชี้กำลัง การคูณเลขชี้กำลังใช้กับการยกกำลังซ้อน เช่น $(x^3)^4$" }
+      - { id: c, text: "$2x^7$", feedback: "ไม่มีเลข 2 เกิดขึ้น $x^3 \\cdot x^4$ คือ $x$ คูณกัน 7 ตัว ไม่ใช่ $x^7$ สองชุดบวกกัน" }
+      - { id: d, text: "$x^{1}$", feedback: "นั่นคือ $4 - 3$ การลบเลขชี้กำลังใช้กับการหาร ส่วนการคูณให้บวกเลขชี้กำลัง" }
+    hints:
+      - "$x^3$ คือ $x$ คูณกัน 3 ตัว และ $x^4$ คือ $x$ คูณกัน 4 ตัว"
+      - "นับว่ารวมแล้วมี $x$ คูณกันกี่ตัว"
+    solution: "$x^3 \\cdot x^4 = x^{3+4} = x^7$ ตรวจด้วย $x = 2$: $8 \\times 16 = 128 = 2^7$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p002
+    topics: [math.algebra.exponent-laws]
+    difficulty: 1
+    type: numeric
+    stem: "$7^0$ มีค่าเท่าใด"
+    answer: { value: 1 }
+    hints:
+      - "ลองคิด $\\dfrac{7^3}{7^3}$ ด้วยกฎการหาร และด้วยการหารธรรมดา"
+      - "จำนวนใดหารตัวเอง (ที่ไม่ใช่ 0) ได้เท่าใด"
+    misconceptions:
+      - { match: 0, feedback: "เลขชี้กำลัง 0 ไม่ได้ทำให้ผลเป็น 0 เพราะ $7^0 = \\dfrac{7^3}{7^3}$ ซึ่งคือจำนวนหารตัวเอง" }
+      - { match: 7, feedback: "$7^1 = 7$ แต่ $7^0$ คือ $\\dfrac{7^1}{7^1}$ ลองคิดใหม่" }
+    solution: "$7^0 = 7^{3-3} = \\dfrac{7^3}{7^3} = 1$ จำนวนที่ไม่ใช่ 0 ยกกำลัง 0 ได้ 1 เสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p003
+    topics: [math.algebra.exponent-laws]
+    difficulty: 2
+    type: numeric
+    stem: "$2^{-3}$ มีค่าเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.125, tolerance: 0.001 }
+    hints:
+      - "เลขชี้กำลังลบหมายถึงกลับเป็นส่วน: $a^{-n} = \\dfrac{1}{a^n}$"
+      - "หา $2^3$ ก่อน แล้วเขียนเป็นเศษหนึ่งส่วนจำนวนนั้น"
+    misconceptions:
+      - { match: -8, feedback: "เลขชี้กำลังลบไม่ได้ทำให้ผลเป็นลบ แต่หมายถึงกลับเศษเป็นส่วน $2^{-3} = \\dfrac{1}{2^3}$" }
+      - { match: -6, feedback: "นั่นคือ $2 \\times (-3)$ เลขชี้กำลังไม่ใช่ตัวคูณ ต้องกลับเป็นส่วน $\\dfrac{1}{2^3}$" }
+    solution: "$2^{-3} = \\dfrac{1}{2^3} = \\dfrac{1}{8} = 0.125$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p004
+    topics: [math.algebra.exponent-laws]
+    difficulty: 2
+    type: numeric
+    stem: "$27^{1/3}$ มีค่าเท่าใด"
+    answer: { value: 3 }
+    hints:
+      - "$a^{1/n}$ คือรากที่ $n$ ของ $a$"
+      - "หาจำนวนที่ยกกำลังสามแล้วได้ 27"
+    misconceptions:
+      - { match: 9, feedback: "นั่นคือ $27 \\times \\tfrac{1}{3}$ เลขชี้กำลัง $\\tfrac{1}{3}$ หมายถึงรากที่สาม ไม่ใช่การหาร 3" }
+    solution: "$27^{1/3} = \\sqrt[3]{27} = 3$ เพราะ $3^3 = 27$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p005
+    topics: [math.algebra.exponent-laws]
+    difficulty: 3
+    type: numeric
+    stem: "เขียน $\\dfrac{x^5 \\cdot x^{-2}}{x^4}$ ในรูป $x^n$ แล้ว $n$ มีค่าเท่าใด"
+    answer: { value: -1 }
+    hints:
+      - "รวมเศษก่อนด้วยกฎการคูณ: บวกเลขชี้กำลัง"
+      - "ระวังเครื่องหมายของ $-2$ ตอนบวก"
+      - "จากนั้นใช้กฎการหาร: ลบเลขชี้กำลังของส่วน"
+    misconceptions:
+      - { match: 3, feedback: "ดูเหมือนใช้ $+2$ แทน $-2$ เศษคือ $x^{5 + (-2)} = x^3$ ไม่ใช่ $x^7$" }
+      - { match: -2.5, feedback: "นั่นคือ $5 \\times (-2) \\div 4$ การคูณฐานเดียวกันต้องบวกเลขชี้กำลัง และการหารต้องลบเลขชี้กำลัง" }
+    solution: "เศษ: $x^5 \\cdot x^{-2} = x^{3}$ แล้วหาร: $\\dfrac{x^3}{x^4} = x^{3-4} = x^{-1}$ จึงได้ $n = -1$ ตรวจด้วย $x = 2$: $\\dfrac{32 \\times \\tfrac14}{16} = \\dfrac{1}{2} = 2^{-1}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p006
+    topics: [math.algebra.exponent-laws]
+    difficulty: 3
+    type: numeric
+    stem: "$16^{3/4}$ มีค่าเท่าใด"
+    answer: { value: 8 }
+    hints:
+      - "ตัวส่วน 4 บอกให้ถอดรากที่ 4 ตัวเศษ 3 บอกให้ยกกำลัง 3"
+      - "ถอดรากก่อนจะได้ตัวเลขเล็ก: หาจำนวนที่ยกกำลังสี่แล้วได้ 16"
+    misconceptions:
+      - { match: 12, feedback: "นั่นคือ $16 \\times \\tfrac{3}{4}$ เลขชี้กำลังเศษส่วนไม่ใช่การคูณ ให้ถอดรากที่ 4 แล้วยกกำลัง 3" }
+      - { match: 2, feedback: "$\\sqrt[4]{16} = 2$ ถูกแล้ว แต่ยังต้องยกกำลัง 3 อีกขั้น" }
+    solution: "$16^{3/4} = \\left(\\sqrt[4]{16}\\right)^3 = 2^3 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p007
+    topics: [math.algebra.exponent-laws]
+    difficulty: 3
+    type: match
+    stem: "จับคู่นิพจน์ที่มีค่าเท่ากัน (ให้ $x > 0$)"
+    pairs:
+      - { left: "$x^{-2}$", right: "$\\dfrac{1}{x^2}$" }
+      - { left: "$x^{1/2}$", right: "$\\sqrt{x}$" }
+      - { left: "$x^{2/3}$", right: "$\\sqrt[3]{x^2}$" }
+      - { left: "$x^0$", right: "$1$" }
+    hints:
+      - "เลขชี้กำลังลบหมายถึงกลับเป็นส่วน"
+      - "ตัวส่วนของเลขชี้กำลังเศษส่วนบอกว่าถอดรากที่เท่าไร"
+    solution: "$x^{-2} = \\dfrac{1}{x^2}$ · $x^{1/2} = \\sqrt{x}$ · $x^{2/3} = \\sqrt[3]{x^2}$ · $x^0 = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p008
+    topics: [math.algebra.exponent-laws]
+    difficulty: 3
+    type: numeric
+    stem: "กล่องขนมเปี๊ยะรูปลูกบาศก์ใบหนึ่งมีปริมาตร 343 ลูกบาศก์เซนติเมตร ด้านของกล่องยาว $343^{1/3}$ เซนติเมตร ด้านยาวกี่เซนติเมตร (ตอบเป็นตัวเลขในหน่วยเซนติเมตร)"
+    answer: { value: 7, unit: cm }
+    hints:
+      - "ปริมาตรลูกบาศก์ = ด้าน$^3$ จึงต้องหาจำนวนที่ยกกำลังสามได้ 343"
+      - "$343^{1/3} = \\sqrt[3]{343}$ ลองยกกำลังสามจำนวนเต็มทีละตัว เริ่มจาก $5^3 = 125$ จนได้ 343"
+    misconceptions:
+      - { match: 114.333, feedback: "นั่นคือ $343 \\div 3$ เลขชี้กำลัง $\\tfrac13$ หมายถึงรากที่สาม ไม่ใช่การหาร 3" }
+    solution: "$343^{1/3} = \\sqrt[3]{343} = 7$ เพราะ $7^3 = 343$ ด้านกล่องยาว 7 เซนติเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p009
+    topics: [math.algebra.exponent-laws]
+    difficulty: 3
+    type: numeric
+    stem: "แปลงนาสาธิตรูปสี่เหลี่ยมจัตุรัสในจังหวัดสุพรรณบุรีมีพื้นที่ $3^8$ ตารางเมตร ด้านของแปลงยาวกี่เมตร (ตอบเป็นตัวเลขในหน่วยเมตร)"
+    answer: { value: 81, unit: m }
+    hints:
+      - "ด้านของสี่เหลี่ยมจัตุรัสคือรากที่สองของพื้นที่ ซึ่งเท่ากับพื้นที่ยกกำลัง $\\tfrac12$"
+      - "$(3^8)^{1/2}$ ใช้กฎยกกำลังซ้อน: คูณเลขชี้กำลัง"
+      - "ได้ $3$ ยกกำลังเท่าไรแล้ว ให้คำนวณเป็นตัวเลข"
+    misconceptions:
+      - { match: 3280.5, feedback: "นั่นคือพื้นที่หารสอง รากที่สองไม่ใช่การหาร 2 ให้หารเลขชี้กำลังด้วย 2 แทน" }
+      - { match: 4, feedback: "4 คือเลขชี้กำลัง ด้านยาวคือ $3^4$ เมตร ยังต้องคำนวณค่าออกมา" }
+    solution: "ด้าน $= (3^8)^{1/2} = 3^{8 \\times \\frac12} = 3^4 = 81$ เมตร ตรวจ: $81^2 = 6561 = 3^8$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p010
+    topics: [math.algebra.exponent-laws]
+    difficulty: 4
+    type: expression
+    stem: "ทำ $(2x^3y)^2 \\cdot 3xy^{-1}$ ให้อยู่ในรูปอย่างง่าย"
+    answer: { latex: "12x^7y", variables: [x, y] }
+    hints:
+      - "ยกกำลังสองทุกตัวในวงเล็บ รวมทั้งเลข 2"
+      - "คูณตัวเลขกับตัวเลข แล้วรวมเลขชี้กำลังของฐาน $x$ และฐาน $y$ แยกกัน"
+      - "$y^2 \\cdot y^{-1}$ ใช้กฎการคูณ: บวกเลขชี้กำลัง"
+    misconceptions:
+      - { match: "6x^7y", feedback: "ลืมยกกำลังสองเลข 2 ในวงเล็บ $(2x^3y)^2 = 4x^6y^2$" }
+      - { match: "12x^6y", feedback: "$(x^3)^2 = x^6$ ต้องคูณเลขชี้กำลัง แล้วคูณกับ $x$ อีกตัว ได้ $x^7$ ลองนับเลขชี้กำลังของ $x$ ใหม่" }
+    solution: "$(2x^3y)^2 = 4x^6y^2$ แล้ว $4x^6y^2 \\cdot 3xy^{-1} = 12x^{6+1}y^{2-1} = 12x^7y$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p011
+    topics: [math.algebra.exponent-laws]
+    difficulty: 4
+    type: numeric
+    stem: "$8^{-2/3}$ มีค่าเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.25, tolerance: 0.0025 }
+    hints:
+      - "จัดการเครื่องหมายลบก่อน: $8^{-2/3} = \\dfrac{1}{8^{2/3}}$"
+      - "หา $8^{2/3}$ โดยถอดรากที่สามแล้วยกกำลังสอง"
+    misconceptions:
+      - { match: -4, feedback: "เลขชี้กำลังลบไม่ได้ทำให้ผลเป็นลบ แต่หมายถึงกลับเป็นส่วน" }
+      - { match: 4, feedback: "$8^{2/3} = 4$ ถูกแล้ว แต่ลืมว่าเลขชี้กำลังเป็นลบ ต้องกลับเป็น $\\dfrac{1}{4}$" }
+    solution: "$8^{-2/3} = \\dfrac{1}{8^{2/3}} = \\dfrac{1}{\\left(\\sqrt[3]{8}\\right)^2} = \\dfrac{1}{2^2} = \\dfrac{1}{4} = 0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p012
+    topics: [math.algebra.exponent-laws]
+    difficulty: 4
+    type: numeric
+    stem: "แฟลชไดรฟ์ของน้องฝ้ายจุ $2^{35}$ ไบต์ รูปถ่ายงานลอยกระทงมีขนาดไฟล์ละ $2^{22}$ ไบต์ จะเก็บรูปได้ $2^n$ ไฟล์ $n$ มีค่าเท่าใด"
+    answer: { value: 13 }
+    hints:
+      - "จำนวนไฟล์ = ความจุทั้งหมด ÷ ขนาดต่อไฟล์"
+      - "ฐานเดียวกันหารกัน ให้ลบเลขชี้กำลัง"
+    misconceptions:
+      - { match: 1.591, feedback: "นั่นคือ $35 \\div 22$ การหารเลขยกกำลังฐานเดียวกันต้อง **ลบ** เลขชี้กำลัง ไม่ใช่หารเลขชี้กำลัง" }
+      - { match: 57, feedback: "นั่นคือ $35 + 22$ ซึ่งใช้กับการคูณ แต่การหาจำนวนไฟล์ต้องหาร" }
+    solution: "จำนวนไฟล์ $= \\dfrac{2^{35}}{2^{22}} = 2^{35-22} = 2^{13}$ (8192 ไฟล์) จึงได้ $n = 13$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p013
+    topics: [math.algebra.exponent-laws]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการหาค่า $32^{-3/5}$ ให้ถูกต้อง"
+    items:
+      - "เลขชี้กำลังลบ กลับเป็นส่วน: $32^{-3/5} = \\dfrac{1}{32^{3/5}}$"
+      - "ถอดรากที่ 5: $\\sqrt[5]{32} = 2$"
+      - "ยกกำลัง 3: $2^3 = 8$"
+      - "ได้คำตอบ $\\dfrac{1}{8}$"
+    hints:
+      - "จัดการเครื่องหมายลบของเลขชี้กำลังก่อน เพื่อให้เหลือเลขชี้กำลังบวก"
+      - "ตัวส่วน 5 ของเลขชี้กำลังคือรากที่ 5 ซึ่งต้องหาก่อนจะยกกำลัง 3 ได้ในขั้นนี้"
+    solution: "$32^{-3/5} = \\dfrac{1}{32^{3/5}}$ → $\\sqrt[5]{32} = 2$ → $2^3 = 8$ → $\\dfrac{1}{8}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p014
+    topics: [math.algebra.exponent-laws]
+    difficulty: 5
+    type: numeric
+    stem: "ถ้า $4^n \\cdot 8 = 2^{11}$ แล้ว $n$ มีค่าเท่าใด"
+    answer: { value: 4 }
+    hints:
+      - "เขียนทุกจำนวนให้เป็นฐาน 2: $4 = 2^2$ และ $8 = 2^3$"
+      - "$4^n = (2^2)^n = 2^{2n}$ แล้วรวมกับ $2^3$ ด้วยกฎการคูณ"
+      - "เมื่อฐานเท่ากัน เลขชี้กำลังต้องเท่ากัน ตั้งสมการแล้วแก้หา $n$"
+    misconceptions:
+      - { match: 8, feedback: "ดูเหมือนเขียน $4^n$ เป็น $2^n$ แต่ $4^n = (2^2)^n = 2^{2n}$" }
+      - { match: 2.2, feedback: "ดูเหมือนรวม $4^n \\cdot 8$ เป็น $32^n$ ซึ่งผิด เพราะ 8 ไม่ได้ยกกำลัง $n$ ให้เปลี่ยนเป็นฐาน 2 แยกกันก่อน" }
+    solution: "$4^n \\cdot 8 = 2^{2n} \\cdot 2^3 = 2^{2n+3}$ จึงได้ $2n + 3 = 11$ → $n = 4$ ตรวจ: $4^4 \\cdot 8 = 256 \\times 8 = 2048 = 2^{11}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.expl.p015
+    topics: [math.algebra.exponent-laws]
+    difficulty: 5
+    type: mcq
+    stem: "ให้ $x > 0$ นิพจน์ $\\sqrt{x^3} \\cdot x^{-1/2}$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$x$", correct: true }
+      - { id: b, text: "$x^{-3/4}$", feedback: "นั่นคือการคูณเลขชี้กำลัง $\\tfrac32 \\times (-\\tfrac12)$ ฐานเดียวกันคูณกันต้องบวกเลขชี้กำลัง" }
+      - { id: c, text: "$x^{2}$", feedback: "ดูเหมือนบวก $\\tfrac32 + \\tfrac12$ ลืมเครื่องหมายลบของ $x^{-1/2}$" }
+      - { id: d, text: "$x^{5/2}$", feedback: "ดูเหมือนใช้ $x^3$ แทน $\\sqrt{x^3}$ รากที่สองต้องเปลี่ยนเป็นเลขชี้กำลัง $\\tfrac32$ ก่อน" }
+    hints:
+      - "เขียนรากที่สองเป็นเลขชี้กำลัง: $\\sqrt{x^3} = x^{3/2}$"
+      - "ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง ระวังเครื่องหมายลบ"
+    solution: "$\\sqrt{x^3} \\cdot x^{-1/2} = x^{3/2} \\cdot x^{-1/2} = x^{3/2 - 1/2} = x^1 = x$ ตรวจด้วย $x = 4$: $\\sqrt{64} \\times \\tfrac12 = 8 \\times \\tfrac12 = 4$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -49,6 +49,7 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
         difficulty: topic.difficulty,
         minutes: topic.minutes,
         prerequisites: topic.prerequisites,
+        encompasses: topic.encompasses,
         order: position.get(topic.id)!,
         depth: depth.get(topic.id)!,
         problemCount: problems.length,
@@ -61,6 +62,9 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
   for (const d of ["topics", "molecules", "hanzi"]) mkdirSync(join(outDir, d), { recursive: true });
   writeFileSync(join(outDir, "index.json"), JSON.stringify(index, null, 2));
   writeFileSync(join(outDir, "search.json"), JSON.stringify(searchDocs(content.topics)));
+  // แฟลชการ์ดทุกใบ คีย์ <topicId>#<ลำดับ> ใช้ในคิวทบทวน
+  const flashcards = content.topics.flatMap(({ topic }) => topic.flashcards.map((c, i) => ({ key: `${topic.id}#${i}`, topic: topic.id, front: c.front, back: c.back })));
+  writeFileSync(join(outDir, "flashcards.json"), JSON.stringify(flashcards));
 
   const hanzi = new Set<string>();
   for (const { topic, problems, markdown } of content.topics) {

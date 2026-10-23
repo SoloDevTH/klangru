@@ -3,86 +3,139 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Problem } from "@klangru/schema";
-import { Markdown } from "./Markdown";
-import { check, seededShuffle, type CheckResult, type Response } from "@/lib/check";
-import { LEVEL_LABEL, nextLevel, type SessionKind } from "@/lib/mastery";
-import { levelOf, localDay, recordSession, useProgress } from "@/lib/progress";
-
-interface ProblemState {
-  response?: Response;
-  result?: CheckResult;
-  checks: number;
-  hints: number;
-  revealed: boolean;
-  /** ถูกตั้งแต่ตรวจครั้งแรกและยังไม่เปิดเฉลย */
-  firstTry?: boolean;
-}
+import { ProblemCard, type ProblemOutcome } from "./ProblemCard";
+import { TutorButton } from "./TutorPanel";
+import { bktUpdate, DEFAULT_BKT, guessFor, MAX_SESSION, selectNext, sessionDone } from "@/lib/bkt";
+import { seededShuffle } from "@/lib/check";
+import { LEVEL_LABEL, type Level, type SessionKind } from "@/lib/mastery";
+import { applySession, getProgress, levelOf, localDay, update, useProgress } from "@/lib/progress";
 
 const REVIEW_SIZE = 3;
-const blank = (): ProblemState => ({ checks: 0, hints: 0, revealed: false });
 
-export function PracticeSession({ topicId, topicTitle, problems, mode }: { topicId: string; topicTitle: string; problems: Problem[]; mode: SessionKind }) {
+interface Answered {
+  problem: Problem;
+  outcome: ProblemOutcome;
+}
+
+/**
+ * รอบฝึกของหัวข้อหนึ่ง
+ * - practice + กลุ่ม adaptive: เลือกข้อถัดไปตามความรู้ที่ประเมินด้วย BKT จบเมื่อชำนาญหรือครบ 10 ข้อ
+ * - practice + กลุ่ม fixed: ทำทุกข้อตามลำดับความยาก (กลุ่มเปรียบเทียบของการทดลอง A/B)
+ * - review: สุ่ม 3 ข้อต่อวัน
+ */
+export function PracticeSession({
+  topicId,
+  topicTitle,
+  problems,
+  mode,
+  encompasses = [],
+}: {
+  topicId: string;
+  topicTitle: string;
+  problems: Problem[];
+  mode: Exclude<SessionKind, "placement">;
+  encompasses?: { id: string; weight: number }[];
+}) {
   const progress = useProgress();
-  // รอบทบทวนสุ่ม 3 ข้อต่อวัน: เลือกหลัง mount เพื่อใช้วันที่ของเครื่องผู้เรียน
-  const [set, setSet] = useState<Problem[] | null>(mode === "practice" ? problems : null);
+  const [session, setSession] = useState(0);
+  const [answered, setAnswered] = useState<Answered[]>([]);
+  const [current, setCurrent] = useState<Problem | null>(null);
+  const [pKnown, setPKnown] = useState<number>(DEFAULT_BKT.init);
+  const [plan, setPlan] = useState<Problem[] | null>(null);
+  const [done, setDone] = useState<{ before: Level; after: Level } | null>(null);
+
+  const variant = progress?.settings.variant;
+  const adaptive = mode === "practice" && variant === "adaptive";
+  const everSeen = useMemo(() => new Set(progress?.attempts.filter((a) => a.topicId === topicId).map((a) => a.problemId) ?? []), [progress, topicId]);
+
+  // เริ่มรอบใหม่: เลือกชุดโจทย์หลังโหลดความคืบหน้าในเครื่องแล้ว
   useEffect(() => {
-    if (mode === "review") setSet(seededShuffle(problems, `${topicId}:${localDay()}`).slice(0, REVIEW_SIZE));
-  }, [mode, problems, topicId]);
+    if (!progress || plan) return;
+    const p0 = progress.topics[topicId]?.pKnown ?? DEFAULT_BKT.init;
+    setPKnown(p0);
+    if (mode === "review") {
+      const picked = seededShuffle(problems, `${topicId}:${localDay()}:${session}`).slice(0, REVIEW_SIZE);
+      setPlan(picked);
+      setCurrent(picked[0] ?? null);
+    } else if (adaptive) {
+      setPlan([]);
+      setCurrent(selectNext(problems, new Set(), everSeen, p0));
+    } else {
+      setPlan(problems);
+      setCurrent(problems[0] ?? null);
+    }
+  }, [progress, plan, mode, adaptive, problems, topicId, everSeen, session]);
 
-  const [i, setI] = useState(0);
-  const [states, setStates] = useState<ProblemState[]>(() => problems.map(blank));
-  const [done, setDone] = useState<{ before: number; after: number; due?: string } | null>(null);
-
-  if (!set) return <p className="muted">กำลังเลือกโจทย์ทบทวน…</p>;
-  if (!set.length) {
+  if (!problems.length) {
     return (
       <div className="empty">
         <h2>หัวข้อนี้ยังไม่มีโจทย์</h2>
-        <p className="muted">ทีมกำลังเขียนโจทย์ของหัวข้อนี้ ระหว่างนี้อ่านบทเรียนหรือเลือกหัวข้ออื่นก่อนได้</p>
+        <p className="muted">ระหว่างนี้อ่านบทเรียนหรือเลือกหัวข้ออื่นก่อนได้</p>
         <Link className="btn" href={`/topic/${topicId}/`}>
           กลับไปบทเรียน
         </Link>
       </div>
     );
   }
+  if (!progress || !plan) return <p className="muted">กำลังเตรียมโจทย์…</p>;
 
-  const p = set[i];
-  const st = states[i] ?? blank();
-  const update = (patch: Partial<ProblemState>) => setStates((s) => s.map((x, k) => (k === i ? { ...x, ...patch } : x)));
+  const total = adaptive ? Math.min(MAX_SESSION, problems.length) : plan.length;
 
-  const submit = () => {
-    if (!st.response) return update({ result: { correct: false, invalid: "ตอบก่อนกดตรวจ" } });
-    const result = check(p, st.response);
-    if (result.invalid) return update({ result });
-    update({ result, checks: st.checks + 1, firstTry: st.firstTry ?? (result.correct && !st.revealed) });
+  const finish = (all: Answered[], p: number) => {
+    const before = levelOf(getProgress(), topicId);
+    const result = {
+      firstTry: all.filter((a) => a.outcome.firstTry).length,
+      total: all.length,
+      hintsUsed: all.reduce((n, a) => n + a.outcome.hints, 0),
+      pKnown: adaptive ? p : undefined,
+    };
+    update((prog) =>
+      applySession(prog, {
+        topicId,
+        kind: mode,
+        result,
+        encompasses,
+        attempts: all.map((a) => ({ problemId: a.problem.id, correct: a.outcome.firstTry, hints: a.outcome.hints, ms: a.outcome.ms })),
+      }),
+    );
+    setDone({ before, after: levelOf(getProgress(), topicId) });
   };
 
-  const finish = () => {
-    const firstTry = set.filter((_, k) => states[k]?.firstTry).length;
-    const hintsUsed = states.slice(0, set.length).reduce((n, s) => n + s.hints, 0);
-    const result = { firstTry, total: set.length, hintsUsed };
-    const before = levelOf(progress, topicId);
-    recordSession(
-      topicId,
-      mode,
-      result,
-      set.map((q, k) => ({ problemId: q.id, correct: !!states[k]?.firstTry, hints: states[k]?.hints ?? 0 })),
-    );
-    setDone({ before, after: nextLevel(before as 0, result, mode) });
+  const onDone = (outcome: ProblemOutcome) => {
+    if (!current) return;
+    const all = [...answered, { problem: current, outcome }];
+    setAnswered(all);
+    if (adaptive) {
+      const p = bktUpdate(pKnown, outcome.firstTry, { ...DEFAULT_BKT, guess: guessFor(current) });
+      setPKnown(p);
+      const used = new Set(all.map((a) => a.problem.id));
+      const remaining = problems.filter((q) => !used.has(q.id)).length;
+      if (sessionDone(p, all.length, remaining)) return finish(all, p);
+      setCurrent(selectNext(problems, used, everSeen, p));
+    } else {
+      const next = plan[all.length];
+      if (!next) return finish(all, pKnown);
+      setCurrent(next);
+    }
   };
 
   if (done) {
-    const firstTry = set.filter((_, k) => states[k]?.firstTry).length;
-    const card = progress?.topics[topicId]?.card;
+    const firstTry = answered.filter((a) => a.outcome.firstTry).length;
+    const card = progress.topics[topicId]?.card;
     return (
       <section className="summary stack" aria-live="polite">
         <p className="eyebrow">{mode === "review" ? "จบรอบทบทวน" : "จบรอบฝึก"}</p>
         <h2>
-          ถูกตั้งแต่ครั้งแรก {firstTry} จาก {set.length} ข้อ
+          ถูกตั้งแต่ครั้งแรก {firstTry} จาก {answered.length} ข้อ
         </h2>
         <p>
-          ระดับของหัวข้อนี้: <strong>{LEVEL_LABEL[done.before as 0]}</strong> → <strong>{LEVEL_LABEL[done.after as 0]}</strong>
+          ระดับของหัวข้อนี้: <strong>{LEVEL_LABEL[done.before]}</strong> → <strong>{LEVEL_LABEL[done.after]}</strong>
         </p>
+        {adaptive && (
+          <p className="muted small">
+            ระบบประเมินว่าคุณเข้าใจหัวข้อนี้ประมาณ {Math.round(pKnown * 100)}%{pKnown >= 0.95 ? " จึงจบรอบให้ก่อนครบทุกข้อ" : ""}
+          </p>
+        )}
         {card && <p className="muted">ทบทวนครั้งถัดไป {new Date(card.due).toLocaleDateString("th-TH", { dateStyle: "long" })}</p>}
         <div className="row">
           <Link className="btn primary" href="/">
@@ -92,9 +145,10 @@ export function PracticeSession({ topicId, topicTitle, problems, mode }: { topic
             type="button"
             className="btn"
             onClick={() => {
-              setStates(problems.map(blank));
-              setI(0);
+              setAnswered([]);
               setDone(null);
+              setPlan(null);
+              setSession((s) => s + 1);
             }}
           >
             ฝึกอีกรอบ
@@ -107,219 +161,30 @@ export function PracticeSession({ topicId, topicTitle, problems, mode }: { topic
     );
   }
 
-  const answered = st.result?.correct || st.revealed;
+  if (!current) return <p className="muted">ไม่มีโจทย์ที่เลือกได้</p>;
+  const i = answered.length;
   return (
     <section className="stack" aria-label={`โจทย์ ${topicTitle}`}>
       <div className="progress-row">
         <span className="small muted">
-          ข้อ {i + 1} จาก {set.length}
+          ข้อ {i + 1}
+          {adaptive ? ` (ไม่เกิน ${total})` : ` จาก ${total}`}
         </span>
-        <div className="bar" role="progressbar" aria-valuemin={0} aria-valuemax={set.length} aria-valuenow={i}>
-          <span style={{ width: `${(i / set.length) * 100}%` }} />
+        <div className="bar" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={i} aria-label="ความคืบหน้าในรอบนี้">
+          <span style={{ width: `${(adaptive ? pKnown : i / total) * 100}%` }} />
         </div>
         <span className="small muted" title="ความยากของข้อ">
-          ความยาก {"●".repeat(p.difficulty)}
-          {"○".repeat(5 - p.difficulty)}
+          ความยาก {"●".repeat(current.difficulty)}
+          {"○".repeat(5 - current.difficulty)}
         </span>
       </div>
-
-      <article className="problem">
-        <div className="stem">
-          <Markdown>{p.stem}</Markdown>
-        </div>
-        <AnswerInput key={p.id} problem={p} disabled={answered} onChange={(response) => update({ response, result: st.result?.invalid ? undefined : st.result })} />
-
-        {st.result && (
-          <div className={st.result.correct ? "feedback ok" : st.result.invalid ? "feedback info" : "feedback bad"} role="status">
-            {st.result.correct ? (
-              <strong>ถูกต้อง</strong>
-            ) : st.result.invalid ? (
-              st.result.invalid
-            ) : (
-              <>
-                <strong>ยังไม่ถูก</strong>{" "}
-                {st.result.feedback ? <Markdown inline>{st.result.feedback}</Markdown> : "ลองอีกครั้ง หรือขอคำใบ้"}
-              </>
-            )}
-          </div>
-        )}
-
-        {st.hints > 0 && (
-          <ol className="hints">
-            {p.hints.slice(0, st.hints).map((h, k) => (
-              <li key={k}>
-                <span className="eyebrow">คำใบ้ {k + 1}</span>
-                <Markdown>{h}</Markdown>
-              </li>
-            ))}
-          </ol>
-        )}
-
-        {(st.revealed || st.result?.correct) && (
-          <details className="solution" open={st.revealed}>
-            <summary>วิธีทำ</summary>
-            <Markdown>{p.solution}</Markdown>
-          </details>
-        )}
-
-        <div className="row">
-          {!answered && (
-            <>
-              <button type="button" className="btn primary" onClick={submit}>
-                ตรวจคำตอบ
-              </button>
-              {st.hints < p.hints.length && (
-                <button type="button" className="btn" onClick={() => update({ hints: st.hints + 1 })}>
-                  ขอคำใบ้ ({st.hints + 1}/{p.hints.length})
-                </button>
-              )}
-              {(st.checks > 0 || st.hints === p.hints.length) && (
-                <button type="button" className="btn ghost" onClick={() => update({ revealed: true, firstTry: st.firstTry ?? false })}>
-                  ดูเฉลย
-                </button>
-              )}
-            </>
-          )}
-          {answered && (
-            <button type="button" className="btn primary" onClick={() => (i + 1 < set.length ? setI(i + 1) : finish())}>
-              {i + 1 < set.length ? "ข้อต่อไป" : "ดูสรุปผล"}
-            </button>
-          )}
-        </div>
-      </article>
+      {adaptive && <p className="small muted">แถบด้านบนคือระดับความเข้าใจที่ระบบประเมิน ข้อถัดไปจะยากหรือง่ายขึ้นตามคำตอบของคุณ</p>}
+      <ProblemCard
+        problem={current}
+        onDone={onDone}
+        doneLabel="ข้อต่อไป"
+        extra={({ answered: a, hintsShown }) => <TutorButton topicId={topicId} problem={current} answered={a} hintsShown={hintsShown} />}
+      />
     </section>
   );
-}
-
-function AnswerInput({ problem: p, disabled, onChange }: { problem: Problem; disabled: boolean; onChange: (r: Response) => void }) {
-  const [selected, setSelected] = useState<string[]>([]);
-  const shuffledOrder = useMemo(() => (p.type === "order" ? seededShuffle(p.items, p.id) : []), [p]);
-  const [order, setOrder] = useState<string[]>(shuffledOrder);
-  const rights = useMemo(() => (p.type === "match" ? seededShuffle(p.pairs.map((x) => x.right), p.id) : []), [p]);
-  const [mapping, setMapping] = useState<Record<string, string>>({});
-
-  // ให้ลำดับเริ่มต้นนับเป็นคำตอบ เผื่อผู้เรียนเห็นว่าถูกอยู่แล้ว
-  useEffect(() => {
-    if (p.type === "order") onChange({ type: "order", order: shuffledOrder });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [p.id]);
-
-  switch (p.type) {
-    case "mcq":
-      return (
-        <fieldset className="choices" disabled={disabled}>
-          <legend className="sr-only">{p.multiple ? "เลือกได้หลายข้อ" : "เลือกหนึ่งข้อ"}</legend>
-          {p.multiple && <p className="small muted">เลือกได้มากกว่าหนึ่งข้อ</p>}
-          {p.choices.map((c) => {
-            const on = selected.includes(c.id);
-            return (
-              <label key={c.id} className={on ? "choice on" : "choice"}>
-                <input
-                  type={p.multiple ? "checkbox" : "radio"}
-                  name={p.id}
-                  checked={on}
-                  onChange={() => {
-                    const next = p.multiple ? (on ? selected.filter((x) => x !== c.id) : [...selected, c.id]) : [c.id];
-                    setSelected(next);
-                    onChange({ type: "mcq", selected: next });
-                  }}
-                />
-                <span>
-                  <Markdown inline>{c.text}</Markdown>
-                </span>
-              </label>
-            );
-          })}
-        </fieldset>
-      );
-    case "numeric":
-      return (
-        <div className="answer-line">
-          <label htmlFor={`in-${p.id}`} className="sr-only">
-            คำตอบ
-          </label>
-          <input
-            id={`in-${p.id}`}
-            className="input"
-            inputMode="decimal"
-            autoComplete="off"
-            placeholder="พิมพ์ตัวเลข"
-            disabled={disabled}
-            onChange={(e) => onChange({ type: "numeric", input: e.target.value })}
-          />
-          {p.answer.unit && <span className="unit">{p.answer.unit}</span>}
-        </div>
-      );
-    case "text":
-      return (
-        <div className="answer-line">
-          <label htmlFor={`in-${p.id}`} className="sr-only">
-            คำตอบ
-          </label>
-          <input id={`in-${p.id}`} className="input wide" autoComplete="off" placeholder="พิมพ์คำตอบ" disabled={disabled} onChange={(e) => onChange({ type: "text", input: e.target.value })} />
-        </div>
-      );
-    case "order": {
-      const move = (k: number, d: -1 | 1) => {
-        const next = [...order];
-        [next[k], next[k + d]] = [next[k + d], next[k]];
-        setOrder(next);
-        onChange({ type: "order", order: next });
-      };
-      return (
-        <ol className="order-list">
-          {order.map((item, k) => (
-            <li key={item}>
-              <span className="order-text">
-                <Markdown inline>{item}</Markdown>
-              </span>
-              <span className="order-btns">
-                <button type="button" className="icon-btn" disabled={disabled || k === 0} onClick={() => move(k, -1)} aria-label="เลื่อนขึ้น">
-                  ↑
-                </button>
-                <button type="button" className="icon-btn" disabled={disabled || k === order.length - 1} onClick={() => move(k, 1)} aria-label="เลื่อนลง">
-                  ↓
-                </button>
-              </span>
-            </li>
-          ))}
-        </ol>
-      );
-    }
-    case "match":
-      return (
-        <div className="match">
-          {p.pairs.map((pair) => (
-            <div key={pair.left} className="match-row" role="radiogroup" aria-label={pair.left}>
-              <div className="match-left">
-                <Markdown inline>{pair.left}</Markdown>
-              </div>
-              <div className="chips">
-                {rights.map((r) => {
-                  const on = mapping[pair.left] === r;
-                  return (
-                    <button
-                      key={r}
-                      type="button"
-                      role="radio"
-                      aria-checked={on}
-                      className="chip"
-                      aria-pressed={on}
-                      disabled={disabled}
-                      onClick={() => {
-                        const next = { ...mapping, [pair.left]: r };
-                        setMapping(next);
-                        onChange({ type: "match", mapping: next });
-                      }}
-                    >
-                      <Markdown inline>{r}</Markdown>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-  }
 }
