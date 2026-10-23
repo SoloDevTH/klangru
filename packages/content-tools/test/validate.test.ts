@@ -39,12 +39,20 @@ function raw(topics: { rel: string; topic: unknown; problems?: unknown; markdown
   return {
     root: "/content",
     subjects,
+    assets: new Set(["molecules/962.sdf"]),
     parseErrors: [],
-    topics: topics.map((t) => ({ subjectDir: "math", dir: `/content/${t.rel}`, rel: t.rel, problems: t.problems, topic: t.topic, markdown: t.markdown ?? { "lesson.md": "# บท" } })),
+    topics: topics.map((t) => ({
+      subjectDir: "math",
+      dir: `/content/${t.rel}`,
+      rel: t.rel,
+      problems: t.problems === undefined ? undefined : { problems: t.problems },
+      topic: t.topic,
+      markdown: t.markdown ?? { "lesson.md": "# บท" },
+    })),
   };
 }
 
-const errors = (r: RawContent) => validate(r).issues.filter((i) => i.level === "error").map((i) => i.message);
+const errors = (r: RawContent) => validate(r, { hanziAvailable: (c) => c === "一" }).issues.filter((i) => i.level === "error").map((i) => i.message);
 
 test("a valid topic has no errors", () => {
   assert.deepEqual(errors(raw([{ rel: "math/a", topic: topic("math.x.a"), problems: [numeric("math.a.p001", "math.x.a")] }])), []);
@@ -93,4 +101,40 @@ test("license adaptation rules follow Creative Commons compatibility", () => {
   assert.deepEqual(compatibleTargets(["CC-BY-SA-4.0", "CC-BY-NC-SA-4.0"]), []);
   const t = topic("math.x.a", { license: "CC-BY-SA-4.0", adapted_from: [{ source: "Khan Academy", license: "CC-BY-NC-SA-4.0" }] });
   assert.ok(errors(raw([{ rel: "math/a", topic: t }])).some((m) => m.includes("CC-BY-NC-SA-4.0")));
+});
+
+const expr = (extra: Record<string, unknown> = {}) => ({
+  ...numeric("math.a.p010", "math.x.a"),
+  type: "expression",
+  answer: { latex: "\\frac{2A}{b}", variables: ["A", "b"] },
+  ...extra,
+});
+const one = (p: unknown) => errors(raw([{ rel: "math/a", topic: topic("math.x.a"), problems: [p] }]));
+
+test("expression problems: valid answer, unknown variables, equivalent misconceptions", () => {
+  assert.deepEqual(one(expr()), []);
+  assert.ok(one(expr({ answer: { latex: "\\frac{2A}{b}", variables: ["A"] } })).some((m) => m.includes("answer.variables")));
+  assert.ok(one(expr({ misconceptions: [{ match: "2A\\cdot\\frac{1}{b}", feedback: "x" }] })).some((m) => m.includes("เท่ากับคำตอบ")));
+  assert.deepEqual(one(expr({ misconceptions: [{ match: "\\frac{A}{2b}", feedback: "x" }] })), []);
+  assert.ok(one(expr({ expanded: true, answer: { latex: "2(x-3)", variables: ["x"] } })).some((m) => m.includes("วงเล็บ")));
+});
+
+test("hanzi problems need stroke data", () => {
+  const h = (character: string) => ({ ...numeric("math.a.p011", "math.x.a"), type: "hanzi", character, pinyin: "yī", meaning: "หนึ่ง" });
+  assert.deepEqual(one(h("一")), []);
+  assert.ok(one(h("二")).some((m) => m.includes("hanzi-writer-data")));
+  assert.ok(one(h("ab")).length > 0);
+});
+
+test("lesson blocks: video questions, molecules, widgets, phet embeds", () => {
+  const withBlocks = (lessons: unknown[], problems = [numeric("math.a.p001", "math.x.a")]) =>
+    errors(raw([{ rel: "math/a", topic: topic("math.x.a", { lessons: [{ type: "explanation", file: "lesson.md" }, ...lessons] }), problems }]));
+  assert.deepEqual(withBlocks([{ type: "video", title: "v", url: "https://example.com/a.mp4", minutes: 3, questions: [{ at: 30, problem: "math.a.p001" }] }]), []);
+  assert.ok(withBlocks([{ type: "video", title: "v", url: "https://example.com/a.mp4", minutes: 3, questions: [{ at: 30, problem: "math.a.p999" }] }]).some((m) => m.includes("p999")));
+  assert.deepEqual(withBlocks([{ type: "molecule", title: "น้ำ", cid: 962, name: "water" }]), []);
+  assert.ok(withBlocks([{ type: "molecule", title: "x", cid: 1, name: "x" }]).some((m) => m.includes("fetch-assets")));
+  const plot = (functions: string[]) => ({ type: "interactive", title: "กราฟ", widget: { kind: "function-plot", functions, sliders: [{ name: "a", min: -3, max: 3, value: 1 }] } });
+  assert.deepEqual(withBlocks([plot(["a x^2"])]), []);
+  assert.ok(withBlocks([plot(["k x"])]).some((m) => m.includes("แถบเลื่อน")));
+  assert.ok(withBlocks([{ type: "simulation", title: "s", url: "https://example.com/sim", provider: "phet" }]).some((m) => m.includes("PhET")));
 });

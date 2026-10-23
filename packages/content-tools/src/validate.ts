@@ -1,6 +1,19 @@
+import { existsSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
 import katex from "katex";
 import { z } from "zod";
-import { compatibleTargets, Problem, ProblemFile, Subject, Topic, type License } from "@klangru/schema";
+import {
+  compatibleTargets,
+  equivalentLatex,
+  parseLatex,
+  phetEmbedUrl,
+  Problem,
+  ProblemFile,
+  Subject,
+  Topic,
+  type License,
+} from "@klangru/schema";
 import type { RawContent } from "./load.ts";
 import { findCycle } from "./graph.ts";
 
@@ -10,13 +23,35 @@ export interface Issue {
   message: string;
 }
 
+export interface ValidateOptions {
+  /** มีข้อมูลลำดับขีดของอักษรจีนตัวนี้หรือไม่ */
+  hanziAvailable?: (char: string) => boolean;
+}
+
+let hanziDir: string | null | undefined;
+/** ตำแหน่งข้อมูล hanzi-writer-data (ใบอนุญาต Arphic Public License) */
+export function hanziDataDir(): string | null {
+  if (hanziDir === undefined) {
+    try {
+      hanziDir = dirname(createRequire(import.meta.url).resolve("hanzi-writer-data/package.json"));
+    } catch {
+      hanziDir = null;
+    }
+  }
+  return hanziDir;
+}
+const defaultHanzi = (char: string) => {
+  const dir = hanziDataDir();
+  return !!dir && existsSync(join(dir, `${char}.json`));
+};
+
 export interface ValidContent {
   subjects: Subject[];
   topics: { topic: Topic; problems: Problem[]; markdown: Record<string, string>; rel: string }[];
 }
 
-/** ขั้นต่ำของเฟสนำร่อง: ต่ำกว่านี้เป็นคำเตือน ไม่ใช่ error */
-export const MIN_PROBLEMS_PER_TOPIC = 5;
+/** ขั้นต่ำของเฟส 1: ต่ำกว่านี้เป็นคำเตือน (ใช้ --strict ให้เป็น error) */
+export const MIN_PROBLEMS_PER_TOPIC = 10;
 export const MIN_DIFFICULTY_LEVELS = 3;
 
 const MATH = /\$\$([\s\S]+?)\$\$|\$([^$\n]+?)\$/g;
@@ -44,7 +79,7 @@ function problemTexts(p: Problem): string[] {
   if (p.type === "mcq") texts.push(...p.choices.flatMap((c) => [c.text, c.feedback ?? ""]));
   if (p.type === "order") texts.push(...p.items);
   if (p.type === "match") texts.push(...p.pairs.flatMap((x) => [x.left, x.right]));
-  if (p.type === "numeric" || p.type === "text") texts.push(...p.misconceptions.map((m) => m.feedback));
+  if (p.type === "numeric" || p.type === "text" || p.type === "expression") texts.push(...p.misconceptions.map((m) => m.feedback));
   return texts;
 }
 
@@ -60,7 +95,7 @@ function checkLicense(file: string, what: string, license: License, sources: { l
   }
 }
 
-function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]) {
+function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[], opts: Required<ValidateOptions>) {
   const err = (message: string) => issues.push({ level: "error", file, message: `${p.id}: ${message}` });
 
   if (!p.topics.includes(topicId)) err(`ต้องระบุหัวข้อ ${topicId} ใน topics เพราะอยู่ในโฟลเดอร์ของหัวข้อนี้`);
@@ -97,11 +132,32 @@ function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]
       if (new Set(p.pairs.map((x) => norm(x.left))).size !== p.pairs.length) err("ฝั่งซ้ายมีรายการซ้ำ");
       if (new Set(p.pairs.map((x) => norm(x.right))).size !== p.pairs.length) err("ฝั่งขวามีรายการซ้ำ");
       break;
+    case "expression": {
+      const a = parseLatex(p.answer.latex);
+      if (!a.ok) {
+        err(`คำตอบ "${p.answer.latex}" อ่านไม่ได้: ${a.error}`);
+        break;
+      }
+      const extra = a.unknowns.filter((u) => !p.answer.variables.includes(u));
+      if (extra.length) err(`คำตอบใช้ตัวแปร ${extra.join(", ")} ที่ไม่ได้อยู่ใน answer.variables`);
+      if (p.expanded && /\(/.test(p.answer.latex)) err("ตั้ง expanded: true แต่คำตอบยังมีวงเล็บ");
+      for (const m of p.misconceptions) {
+        const mm = parseLatex(m.match);
+        if (!mm.ok) err(`misconception "${m.match}" อ่านไม่ได้: ${mm.error}`);
+        else if (equivalentLatex(m.match, p.answer.latex, p.answer.variables)) err(`misconception "${m.match}" เท่ากับคำตอบที่ถูก`);
+      }
+      for (const m of mathErrors(`$${p.answer.latex}$`)) err(m);
+      break;
+    }
+    case "hanzi":
+      if (!opts.hanziAvailable(p.character)) err(`ไม่มีข้อมูลลำดับขีดของ "${p.character}" ใน hanzi-writer-data`);
+      break;
   }
 }
 
 /** ตรวจเนื้อหาทั้งคลัง คืนรายการปัญหาและเนื้อหาที่ผ่าน schema แล้ว */
-export function validate(raw: RawContent): { issues: Issue[]; content: ValidContent } {
+export function validate(raw: RawContent, options: ValidateOptions = {}): { issues: Issue[]; content: ValidContent } {
+  const opts: Required<ValidateOptions> = { hanziAvailable: options.hanziAvailable ?? defaultHanzi };
   const issues: Issue[] = raw.parseErrors.map((e) => ({ level: "error", file: e.file, message: `YAML ผิดรูปแบบ: ${e.message}` }));
   const content: ValidContent = { subjects: [], topics: [] };
 
@@ -136,11 +192,28 @@ export function validate(raw: RawContent): { issues: Issue[]; content: ValidCont
 
     const usedMd = new Set<string>();
     for (const block of topic.lessons) {
-      if (block.type !== "explanation") continue;
-      usedMd.add(block.file);
-      const md = dir.markdown[block.file];
-      if (md === undefined) err(`ไม่พบไฟล์บทเรียน ${block.file}`);
-      else for (const m of mathErrors(md)) err(m, `${dir.rel}/${block.file}`);
+      if (block.type === "explanation") {
+        usedMd.add(block.file);
+        const md = dir.markdown[block.file];
+        if (md === undefined) err(`ไม่พบไฟล์บทเรียน ${block.file}`);
+        else for (const m of mathErrors(md)) err(m, `${dir.rel}/${block.file}`);
+      } else if (block.type === "simulation") {
+        if (block.provider === "phet" && block.embed && !phetEmbedUrl(block.url)) err(`ฝังซิมูเลชัน PhET ไม่ได้ ต้องใช้ URL รูป https://phet.colorado.edu/<ภาษา>/simulations/<ชื่อ>: ${block.url}`);
+      } else if (block.type === "molecule") {
+        if (!raw.assets.has(`molecules/${block.cid}.sdf`)) err(`ยังไม่มีไฟล์โมเลกุล CID ${block.cid} ให้รัน npm run fetch-assets`);
+      } else if (block.type === "interactive") {
+        const w = block.widget;
+        if (w.kind === "function-plot") {
+          const allowed = new Set(["x", ...w.sliders.map((s) => s.name)]);
+          for (const f of w.functions) {
+            const parsed = parseLatex(f);
+            if (!parsed.ok) err(`กราฟ "${f}" อ่านไม่ได้: ${parsed.error}`);
+            else if (parsed.unknowns.some((u) => !allowed.has(u))) err(`กราฟ "${f}" ใช้ตัวแปรที่ไม่ใช่ x หรือแถบเลื่อน: ${parsed.unknowns.filter((u) => !allowed.has(u)).join(", ")}`);
+          }
+          for (const s of w.sliders) if (!(s.min < s.max && s.value >= s.min && s.value <= s.max)) err(`แถบเลื่อน ${s.name}: ต้องเป็น min < max และ min ≤ value ≤ max`);
+          if (!(w.x[0] < w.x[1] && w.y[0] < w.y[1])) err("ช่วงแกน x หรือ y ไม่ถูกต้อง");
+        } else if (w.kind === "number-line" && !(w.min < w.max)) err("เส้นจำนวน: min ต้องน้อยกว่า max");
+      }
     }
     for (const f of Object.keys(dir.markdown)) if (!usedMd.has(f)) warn(`ไฟล์ ${f} ไม่ได้ถูกอ้างใน lessons`);
     for (const c of topic.flashcards) for (const m of [...mathErrors(c.front), ...mathErrors(c.back)]) err(`flashcard: ${m}`);
@@ -152,13 +225,18 @@ export function validate(raw: RawContent): { issues: Issue[]; content: ValidCont
     } else {
       const parsed = ProblemFile.safeParse(dir.problems);
       if (!parsed.success) issues.push(...zodIssues(problemsFile, parsed.error));
-      else problems = parsed.data;
+      else problems = parsed.data.problems;
     }
     for (const p of problems) {
       const seen = problemIds.get(p.id);
       if (seen) err(`รหัสโจทย์ ${p.id} ซ้ำกับใน ${seen}`, problemsFile);
       problemIds.set(p.id, problemsFile);
-      checkProblem(problemsFile, p, topic.id, issues);
+      checkProblem(problemsFile, p, topic.id, issues, opts);
+    }
+    const ownIds = new Set(problems.map((p) => p.id));
+    for (const block of topic.lessons) {
+      if (block.type !== "video") continue;
+      for (const q of block.questions) if (!ownIds.has(q.problem)) err(`วิดีโอ "${block.title}" อ้างโจทย์ ${q.problem} ที่ไม่มีในหัวข้อนี้`);
     }
     if (problems.length && problems.length < MIN_PROBLEMS_PER_TOPIC) warn(`มีโจทย์ ${problems.length} ข้อ (ขั้นต่ำ ${MIN_PROBLEMS_PER_TOPIC})`, problemsFile);
     const levels = new Set(problems.map((p) => p.difficulty)).size;

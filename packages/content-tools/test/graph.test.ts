@@ -29,3 +29,8 @@ test("missing prerequisites are ignored by graph helpers", () => {
   assert.deepEqual(topoOrder([n("a", 1, ["ghost"])]), ["a"]);
   assert.equal(findCycle([n("a", 1, ["ghost"])]), null);
 });
+
+import { plainText } from "../src/build.ts";
+test("plainText strips markdown and display math", () => {
+  assert.equal(plainText("## หัวข้อ\n**ตัวหนา** $x^2$ และ $$\\frac{1}{2}$$"), "หัวข้อ ตัวหนา x 2 และ");
+});

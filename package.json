@@ -9,11 +9,12 @@
   ],
   "scripts": {
     "validate": "npm run validate -w @klangru/content-tools --",
-    "build:content": "npm run build -w @klangru/content-tools",
+    "build:content": "npm run build -w @klangru/content-tools -- --print-order",
     "test": "npm test -w @klangru/content-tools",
     "typecheck": "tsc -p packages/schema && tsc -p packages/content-tools",
     "dev": "npm run build:content && npm run dev -w @klangru/web",
-    "build": "npm run build:content && npm run build -w @klangru/web"
+    "build": "npm run build:content && npm run build -w @klangru/web",
+    "fetch-assets": "npm run fetch-assets -w @klangru/content-tools"
   },
   "engines": {
     "node": ">=20"

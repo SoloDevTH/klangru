@@ -22,6 +22,8 @@ export interface RawTopicDir {
 export interface RawContent {
   root: string;
   subjects: unknown;
+  /** ไฟล์ใน content/_assets (path สัมพัทธ์ เช่น molecules/962.sdf) */
+  assets: Set<string>;
   topics: RawTopicDir[];
   /** ไฟล์ YAML ที่ parse ไม่ผ่าน */
   parseErrors: { file: string; message: string }[];
@@ -42,9 +44,21 @@ export function loadContent(root: string): RawContent {
   const subjects = existsSync(subjectsFile) ? readYaml(subjectsFile) : undefined;
   const topics: RawTopicDir[] = [];
 
+  const assets = new Set<string>();
+  const assetDir = join(root, "_assets");
+  const walk = (dir: string) => {
+    for (const f of readdirSync(dir)) {
+      const p = join(dir, f);
+      if (statSync(p).isDirectory()) walk(p);
+      else assets.add(relative(assetDir, p));
+    }
+  };
+  if (existsSync(assetDir)) walk(assetDir);
+
   for (const subjectDir of readdirSync(root).sort()) {
     const sPath = join(root, subjectDir);
-    if (!statSync(sPath).isDirectory()) continue;
+    // โฟลเดอร์ที่ขึ้นต้นด้วย _ ไม่ใช่วิชา (_assets, _drafts)
+    if (subjectDir.startsWith("_") || !statSync(sPath).isDirectory()) continue;
     for (const topicDir of readdirSync(sPath).sort()) {
       const dir = join(sPath, topicDir);
       if (!statSync(dir).isDirectory()) continue;
@@ -62,5 +76,5 @@ export function loadContent(root: string): RawContent {
       });
     }
   }
-  return { root, subjects, topics, parseErrors };
+  return { root, subjects, assets, topics, parseErrors };
 }

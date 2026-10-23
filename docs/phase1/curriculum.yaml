@@ -1,0 +1,199 @@
+# แผนหัวข้อเฟส 1 (คณิตศาสตร์ 40 + ฟิสิกส์ 40) และหัวข้อเริ่มต้นเฟส 5
+# ใช้เป็นสัญญาระหว่างผู้เขียน: id, โฟลเดอร์, prerequisite และ prefix ของรหัสโจทย์ห้ามเปลี่ยนโดยไม่แก้ไฟล์นี้
+# status: exists = มีแล้ว (ต้องเติมโจทย์ให้ครบ 10 ข้อ), new = ต้องเขียนใหม่
+# batch: กลุ่มงานสำหรับผู้เขียนแต่ละคน
+
+math:
+  # ---------- จำนวน ----------
+  - { id: math.number.place-value, folder: place-value, prefix: math.pv, difficulty: 1, prereq: [], status: new, batch: M1,
+      scope: "ค่าประจำหลัก การเขียนกระจาย การเปรียบเทียบ การปัดเศษ (หลักสิบ ร้อย พัน ทศนิยม)" }
+  - { id: math.number.integers, folder: integers, prefix: math.int, difficulty: 1.5, prereq: [], status: exists, batch: T }
+  - { id: math.number.factors-multiples, folder: factors-multiples, prefix: math.fm, difficulty: 2, prereq: [math.number.integers], status: new, batch: M1,
+      scope: "ตัวประกอบ พหุคูณ จำนวนเฉพาะ การแยกตัวประกอบเฉพาะ ห.ร.ม. ค.ร.น. และโจทย์ปัญหา" }
+  - { id: math.number.fractions, folder: fractions, prefix: math.frac, difficulty: 2, prereq: [math.number.integers, math.number.factors-multiples], status: exists, batch: T }
+  - { id: math.number.decimals, folder: decimals, prefix: math.dec, difficulty: 2, prereq: [math.number.place-value, math.number.fractions], status: new, batch: M1,
+      scope: "ทศนิยม บวก ลบ คูณ หาร ทศนิยม เปรียบเทียบ ทศนิยมซ้ำ (แนะนำ)" }
+  - { id: math.number.ratio-percent, folder: ratio-percent, prefix: math.rp, difficulty: 2.5, prereq: [math.number.fractions, math.number.decimals], status: new, batch: M1,
+      scope: "อัตราส่วน สัดส่วน ร้อยละ ส่วนลด กำไรขาดทุน ดอกเบี้ยอย่างง่าย" }
+  - { id: math.number.exponents, folder: exponents, prefix: math.exp, difficulty: 2.5, prereq: [math.number.integers], status: new, batch: M1,
+      scope: "เลขยกกำลังที่มีเลขชี้กำลังเป็นจำนวนเต็มบวก ฐานเป็นลบ ศูนย์ยกกำลัง ลำดับการดำเนินการ" }
+  - { id: math.number.scientific-notation, folder: scientific-notation, prefix: math.sci, difficulty: 3, prereq: [math.number.exponents, math.number.decimals], status: new, batch: M2,
+      scope: "เลขยกกำลังที่เลขชี้กำลังเป็นลบ สัญกรณ์วิทยาศาสตร์ คูณหารจำนวนในสัญกรณ์วิทยาศาสตร์" }
+  - { id: math.number.roots, folder: roots, prefix: math.root, difficulty: 3, prereq: [math.number.exponents], status: new, batch: M2,
+      scope: "รากที่สอง รากที่สาม การประมาณค่ารากที่สอง จำนวนอตรรกยะ จำนวนจริงบนเส้นจำนวน" }
+  # ---------- พีชคณิต ----------
+  - { id: math.algebra.expressions, folder: algebraic-expressions, prefix: math.expr, difficulty: 2.5, prereq: [math.number.integers, math.number.fractions], status: exists, batch: T }
+  - { id: math.algebra.linear-eq, folder: linear-equations, prefix: math.lineq, difficulty: 3, prereq: [math.algebra.expressions], status: exists, batch: T }
+  - { id: math.algebra.rearrange-formula, folder: rearranging-formulas, prefix: math.rearr, difficulty: 3.5, prereq: [math.algebra.linear-eq], status: exists, batch: T }
+  - { id: math.algebra.linear-inequalities, folder: linear-inequalities, prefix: math.ineq, difficulty: 3.5, prereq: [math.algebra.linear-eq], status: new, batch: M2,
+      scope: "อสมการเชิงเส้นตัวแปรเดียว การกลับเครื่องหมายเมื่อคูณ/หารด้วยจำนวนลบ เขียนคำตอบบนเส้นจำนวน โจทย์ปัญหา" }
+  - { id: math.algebra.polynomials, folder: polynomials, prefix: math.poly, difficulty: 3.5, prereq: [math.algebra.expressions, math.number.exponents], status: new, batch: M2,
+      scope: "เอกนาม พหุนาม ดีกรี บวก ลบ คูณพหุนาม (FOIL) ผลคูณพิเศษ (a+b)^2 (a-b)^2 (a+b)(a-b)" }
+  - { id: math.algebra.systems, folder: linear-systems, prefix: math.sys, difficulty: 4, prereq: [math.algebra.linear-eq], status: new, batch: M2,
+      scope: "ระบบสมการเชิงเส้นสองตัวแปร วิธีแทนค่า วิธีกำจัดตัวแปร โจทย์ปัญหา (ราคาสินค้า อายุ)" }
+  - { id: math.algebra.factoring, folder: factoring, prefix: math.fac, difficulty: 4.5, prereq: [math.algebra.polynomials, math.number.factors-multiples], status: new, batch: M3,
+      scope: "ดึงตัวร่วม แยกตัวประกอบ x^2+bx+c และ ax^2+bx+c ผลต่างกำลังสอง กำลังสองสมบูรณ์" }
+  - { id: math.algebra.exponent-laws, folder: exponent-laws, prefix: math.expl, difficulty: 4.5, prereq: [math.number.exponents, math.number.roots, math.algebra.polynomials], status: new, batch: M3,
+      scope: "กฎของเลขยกกำลังกับตัวแปร เลขชี้กำลังศูนย์ ลบ และเศษส่วน รากที่ n" }
+  - { id: math.algebra.quadratic-eq, folder: quadratic-equations, prefix: math.quad, difficulty: 5, prereq: [math.algebra.factoring, math.number.roots], status: new, batch: M3,
+      scope: "สมการกำลังสอง แก้โดยแยกตัวประกอบ สูตร (quadratic formula) ดิสคริมิแนนต์ โจทย์ปัญหาพื้นที่" }
+  # ---------- ฟังก์ชัน ----------
+  - { id: math.functions.coordinate-plane, folder: coordinate-plane, prefix: math.coord, difficulty: 2.5, prereq: [math.number.integers], status: new, batch: M3,
+      scope: "ระบบพิกัดฉาก จตุภาค ระยะทางแนวนอน/ตั้ง การเลื่อนขนาน สะท้อนจุด" }
+  - { id: math.functions.linear-graphs, folder: linear-graphs, prefix: math.lgr, difficulty: 4, prereq: [math.functions.coordinate-plane, math.algebra.linear-eq], status: new, batch: M3,
+      scope: "กราฟเส้นตรง ความชัน ระยะตัดแกน y = mx + c เส้นขนานและตั้งฉาก (ใช้ widget function-plot ได้)" }
+  - { id: math.functions.functions-intro, folder: functions-intro, prefix: math.func, difficulty: 4.5, prereq: [math.functions.linear-graphs], status: new, batch: M4,
+      scope: "ความสัมพันธ์ ฟังก์ชัน โดเมน เรนจ์ สัญลักษณ์ f(x) การหาค่าฟังก์ชัน ฟังก์ชันประกอบเบื้องต้น" }
+  - { id: math.functions.quadratic, folder: quadratic-functions, prefix: math.qf, difficulty: 5.5, prereq: [math.functions.functions-intro, math.algebra.quadratic-eq], status: new, batch: M4,
+      scope: "ฟังก์ชันกำลังสอง พาราโบลา จุดยอด แกนสมมาตร ค่าสูงสุด/ต่ำสุด (ใช้ widget function-plot)" }
+  - { id: math.functions.exponential, folder: exponential-functions, prefix: math.ef, difficulty: 6, prereq: [math.functions.functions-intro, math.algebra.exponent-laws], status: new, batch: M4,
+      scope: "ฟังก์ชันเอกซ์โพเนนเชียล การเติบโตและการสลาย ดอกเบี้ยทบต้น" }
+  - { id: math.functions.logarithms, folder: logarithms, prefix: math.log, difficulty: 6.5, prereq: [math.functions.exponential], status: new, batch: M4,
+      scope: "ลอการิทึม สมบัติของลอการิทึม log ฐาน 10 และ ln สมการเอกซ์โพเนนเชียลอย่างง่าย" }
+  # ---------- เรขาคณิต ----------
+  - { id: math.geometry.angles, folder: angles, prefix: math.ang, difficulty: 2, prereq: [math.number.integers], status: new, batch: M4,
+      scope: "ชนิดของมุม มุมประกอบฉาก/ประกอบสองมุมฉาก มุมตรงข้าม เส้นขนานกับมุมแย้ง มุมภายใน" }
+  - { id: math.geometry.triangles, folder: triangles, prefix: math.tri, difficulty: 3, prereq: [math.geometry.angles], status: new, batch: M4,
+      scope: "ชนิดของสามเหลี่ยม ผลบวกมุมภายใน มุมภายนอก ความเท่ากันทุกประการ (ด้าน-มุม-ด้าน ฯลฯ)" }
+  - { id: math.geometry.area-perimeter, folder: area-perimeter, prefix: math.area, difficulty: 2.5, prereq: [math.number.fractions, math.number.decimals], status: new, batch: M5,
+      scope: "พื้นที่และเส้นรอบรูป สี่เหลี่ยม สามเหลี่ยม สี่เหลี่ยมคางหมู วงกลม (ใช้ π) รูปประกอบ" }
+  - { id: math.geometry.volume-surface, folder: volume-surface, prefix: math.vol, difficulty: 3.5, prereq: [math.geometry.area-perimeter, math.number.exponents], status: new, batch: M5,
+      scope: "ปริมาตรและพื้นที่ผิว ปริซึม ทรงกระบอก พีระมิด กรวย ทรงกลม การแปลงหน่วยปริมาตร" }
+  - { id: math.geometry.pythagoras, folder: pythagoras, prefix: math.pyth, difficulty: 4, prereq: [math.geometry.triangles, math.number.roots], status: new, batch: M5,
+      scope: "ทฤษฎีบทพีทาโกรัสและบทกลับ ระยะทางระหว่างจุด โจทย์ปัญหา (บันได จอทีวี)" }
+  - { id: math.geometry.similarity, folder: similarity, prefix: math.sim, difficulty: 4, prereq: [math.geometry.triangles, math.number.ratio-percent], status: new, batch: M5,
+      scope: "รูปคล้าย สามเหลี่ยมคล้าย อัตราส่วนด้าน มาตราส่วน การวัดความสูงด้วยเงา" }
+  - { id: math.geometry.circles, folder: circles, prefix: math.circ, difficulty: 4.5, prereq: [math.geometry.area-perimeter, math.geometry.angles], status: new, batch: M5,
+      scope: "ส่วนต่าง ๆ ของวงกลม ความยาวส่วนโค้ง พื้นที่เซกเตอร์ มุมที่จุดศูนย์กลางและมุมในส่วนโค้ง เรเดียนเบื้องต้น" }
+  - { id: math.geometry.trig-ratios, folder: trig-ratios, prefix: math.trig, difficulty: 5, prereq: [math.geometry.pythagoras, math.geometry.similarity], status: new, batch: M6,
+      scope: "sin cos tan ในสามเหลี่ยมมุมฉาก มุม 30 45 60 องศา มุมเงย มุมก้ม โจทย์ระยะทาง/ความสูง" }
+  - { id: math.geometry.vectors, folder: vectors-2d, prefix: math.vec, difficulty: 5.5, prereq: [math.functions.coordinate-plane, math.geometry.trig-ratios], status: new, batch: M6,
+      scope: "เวกเตอร์ 2 มิติ ขนาดและทิศทาง การบวก ลบ คูณด้วยสเกลาร์ องค์ประกอบ (ใช้ widget vector-add)" }
+  # ---------- สถิติและความน่าจะเป็น ----------
+  - { id: math.stats.data-display, folder: data-display, prefix: math.data, difficulty: 2, prereq: [math.number.decimals], status: new, batch: M6,
+      scope: "ชนิดข้อมูล ตารางความถี่ แผนภูมิแท่ง วงกลม ฮิสโทแกรม การอ่านและตีความแผนภูมิ" }
+  - { id: math.stats.central-tendency, folder: central-tendency, prefix: math.ctr, difficulty: 2.5, prereq: [math.number.decimals], status: new, batch: M6,
+      scope: "ค่าเฉลี่ยเลขคณิต มัธยฐาน ฐานนิยม ค่าเฉลี่ยถ่วงน้ำหนัก เลือกค่ากลางที่เหมาะสม" }
+  - { id: math.stats.dispersion, folder: dispersion, prefix: math.disp, difficulty: 4.5, prereq: [math.stats.central-tendency, math.number.roots], status: new, batch: M6,
+      scope: "พิสัย ควอร์ไทล์ แผนภาพกล่อง ส่วนเบี่ยงเบนมาตรฐาน (ประชากร) การตีความ" }
+  - { id: math.prob.counting, folder: counting, prefix: math.cnt, difficulty: 4, prereq: [math.number.integers], status: new, batch: M7,
+      scope: "หลักการบวก หลักการคูณ แฟกทอเรียล การเรียงสับเปลี่ยน การจัดหมู่เบื้องต้น" }
+  - { id: math.prob.probability, folder: probability, prefix: math.prob, difficulty: 4, prereq: [math.number.fractions, math.prob.counting], status: new, batch: M7,
+      scope: "การทดลองสุ่ม ปริภูมิตัวอย่าง เหตุการณ์ ความน่าจะเป็น เหตุการณ์ตรงข้าม เหตุการณ์อิสระ (ลูกเต๋า เหรียญ)" }
+  # ---------- แคลคูลัสเบื้องต้น ----------
+  - { id: math.calculus.rate-of-change, folder: rate-of-change, prefix: math.roc, difficulty: 6.5, prereq: [math.functions.linear-graphs, math.functions.functions-intro], status: new, batch: M7,
+      scope: "อัตราการเปลี่ยนแปลงเฉลี่ย ความชันเส้นตัด แนวคิดลิมิตเบื้องต้น อัตราการเปลี่ยนแปลงขณะหนึ่ง" }
+  - { id: math.calculus.derivative, folder: derivatives, prefix: math.der, difficulty: 7, prereq: [math.calculus.rate-of-change, math.algebra.polynomials], status: new, batch: M7,
+      scope: "อนุพันธ์ของพหุนาม กฎยกกำลัง ความชันเส้นสัมผัส จุดสูงสุด/ต่ำสุด โจทย์ความเร็ว (ใช้ expression type)" }
+
+physics:
+  # ---------- การวัดและเวกเตอร์ ----------
+  - { id: physics.units.si, folder: si-units, prefix: phy.si, difficulty: 2, prereq: [math.number.integers], status: exists, batch: T }
+  - { id: physics.units.measurement, folder: measurement, prefix: phy.meas, difficulty: 3, prereq: [physics.units.si, math.number.scientific-notation], status: new, batch: P1,
+      scope: "เครื่องมือวัด ความละเอียด เลขนัยสำคัญ การปัด ความคลาดเคลื่อน การบันทึกผลการวัด" }
+  - { id: physics.units.vectors, folder: vectors, prefix: phy.vec, difficulty: 5.2, prereq: [physics.kinematics.velocity, math.geometry.trig-ratios], status: new, batch: P1,
+      scope: "ปริมาณเวกเตอร์ การรวมเวกเตอร์แบบหางต่อหัว แยกองค์ประกอบ x y ด้วย sin cos (ใช้ widget vector-add)" }
+  # ---------- จลนศาสตร์ ----------
+  - { id: physics.kinematics.speed, folder: speed, prefix: phy.speed, difficulty: 3, prereq: [physics.units.si, math.algebra.linear-eq], status: exists, batch: T }
+  - { id: physics.kinematics.velocity, folder: displacement-velocity, prefix: phy.vel, difficulty: 3, prereq: [physics.kinematics.speed, math.number.integers], status: exists, batch: T }
+  - { id: physics.kinematics.acceleration, folder: acceleration, prefix: phy.acc, difficulty: 3.5, prereq: [physics.kinematics.velocity], status: exists, batch: T }
+  - { id: physics.kinematics.constant-acceleration, folder: constant-acceleration, prefix: phy.suvat, difficulty: 4.2, prereq: [physics.kinematics.acceleration, math.algebra.rearrange-formula], status: exists, batch: T }
+  - { id: physics.kinematics.motion-graphs, folder: motion-graphs, prefix: phy.graph, difficulty: 4.5, prereq: [physics.kinematics.constant-acceleration, math.functions.linear-graphs], status: new, batch: P1,
+      scope: "กราฟ ตำแหน่ง–เวลา ความเร็ว–เวลา ความเร่ง–เวลา ความชันและพื้นที่ใต้กราฟ (ใช้ widget function-plot)" }
+  - { id: physics.kinematics.free-fall, folder: free-fall, prefix: phy.ff, difficulty: 4.5, prereq: [physics.kinematics.constant-acceleration], status: new, batch: P1,
+      scope: "การตกอิสระ โยนขึ้นและตกลง ความสมมาตรของเวลา ความเร็วที่จุดสูงสุด g = 9.8 m/s²" }
+  - { id: physics.kinematics.projectile, folder: projectile, prefix: phy.proj, difficulty: 6, prereq: [physics.kinematics.free-fall, physics.units.vectors], status: new, batch: P2,
+      scope: "โพรเจกไทล์แนวราบและแนวเฉียง แยกแกน x y เวลาลอย ระยะทางแนวราบ ความสูงสูงสุด" }
+  - { id: physics.kinematics.circular, folder: circular-motion, prefix: phy.circ, difficulty: 6, prereq: [physics.dynamics.newton-second, math.geometry.circles], status: new, batch: P2,
+      scope: "การเคลื่อนที่แบบวงกลม คาบ ความถี่ อัตราเร็วเชิงมุม ความเร่งและแรงสู่ศูนย์กลาง" }
+  # ---------- พลศาสตร์ ----------
+  - { id: physics.dynamics.forces, folder: forces, prefix: phy.force, difficulty: 3, prereq: [physics.units.si], status: new, batch: P2,
+      scope: "แรงคืออะไร หน่วยนิวตัน แผนภาพแรง (free-body diagram) แรงลัพธ์ในแนวเดียวกัน" }
+  - { id: physics.dynamics.newton-first, folder: newton-first-law, prefix: phy.n1, difficulty: 3, prereq: [physics.dynamics.forces], status: new, batch: P2,
+      scope: "กฎข้อที่ 1 ความเฉื่อย สมดุล แรงลัพธ์เป็นศูนย์ ตัวอย่างในชีวิตประจำวัน" }
+  - { id: physics.dynamics.newton-third, folder: newton-third-law, prefix: phy.n3, difficulty: 3.5, prereq: [physics.dynamics.forces], status: new, batch: P2,
+      scope: "กฎข้อที่ 3 แรงกิริยาและปฏิกิริยา กระทำต่อวัตถุคนละก้อน ความเข้าใจผิดที่พบบ่อย" }
+  - { id: physics.dynamics.newton-second, folder: newton-second-law, prefix: phy.n2, difficulty: 4, prereq: [physics.dynamics.newton-first, physics.kinematics.acceleration, math.algebra.rearrange-formula], status: new, batch: P3,
+      scope: "F = ma แรงลัพธ์กับความเร่ง วัตถุหลายก้อนที่ผูกกัน (แบบง่าย)" }
+  - { id: physics.dynamics.weight-normal, folder: weight-normal, prefix: phy.wn, difficulty: 4, prereq: [physics.dynamics.newton-second], status: new, batch: P3,
+      scope: "มวลกับน้ำหนัก W = mg แรงปฏิกิริยาตั้งฉาก ลิฟต์เร่งขึ้น/ลง" }
+  - { id: physics.dynamics.friction, folder: friction, prefix: phy.fric, difficulty: 4.5, prereq: [physics.dynamics.weight-normal], status: new, batch: P3,
+      scope: "แรงเสียดทานสถิตและจลน์ สัมประสิทธิ์ความเสียดทาน f = μN ดึงกล่องบนพื้นราบ" }
+  - { id: physics.dynamics.inclined-plane, folder: inclined-plane, prefix: phy.incl, difficulty: 6, prereq: [physics.dynamics.friction, physics.units.vectors], status: new, batch: P3,
+      scope: "พื้นเอียง แยกแรงโน้มถ่วงเป็นองค์ประกอบ ไถลลงทั้งมีและไม่มีแรงเสียดทาน" }
+  - { id: physics.dynamics.gravitation, folder: gravitation, prefix: phy.grav, difficulty: 5.5, prereq: [physics.dynamics.newton-second, math.number.scientific-notation], status: new, batch: P3,
+      scope: "กฎแรงโน้มถ่วงสากล G สนามโน้มถ่วง g บนดาวเคราะห์อื่น ดาวเทียม (เชิงคุณภาพ)" }
+  # ---------- งาน พลังงาน โมเมนตัม ----------
+  - { id: physics.energy.work, folder: work, prefix: phy.work, difficulty: 4, prereq: [physics.dynamics.newton-second], status: new, batch: P4,
+      scope: "งาน W = Fs cosθ (เริ่มจากแรงขนานการเคลื่อนที่) หน่วยจูล งานเป็นศูนย์และงานเป็นลบ" }
+  - { id: physics.energy.kinetic-potential, folder: kinetic-potential-energy, prefix: phy.ke, difficulty: 4.5, prereq: [physics.energy.work], status: new, batch: P4,
+      scope: "พลังงานจลน์ ½mv² พลังงานศักย์โน้มถ่วง mgh พลังงานศักย์ยืดหยุ่น ½kx² ทฤษฎีบทงาน–พลังงาน" }
+  - { id: physics.energy.conservation, folder: energy-conservation, prefix: phy.cons, difficulty: 5, prereq: [physics.energy.kinetic-potential], status: new, batch: P4,
+      scope: "การอนุรักษ์พลังงานกล ลูกตุ้ม รางลื่น การสูญเสียพลังงานจากแรงเสียดทาน" }
+  - { id: physics.energy.power, folder: power, prefix: phy.pow, difficulty: 4.5, prereq: [physics.energy.work], status: new, batch: P4,
+      scope: "กำลัง P = W/t = Fv หน่วยวัตต์ ประสิทธิภาพ ตัวอย่างลิฟต์และมอเตอร์" }
+  - { id: physics.momentum.momentum-impulse, folder: momentum-impulse, prefix: phy.mom, difficulty: 5, prereq: [physics.dynamics.newton-second], status: new, batch: P4,
+      scope: "โมเมนตัม p = mv การดล FΔt = Δp แรงเฉลี่ยในการชน ถุงลมนิรภัย" }
+  - { id: physics.momentum.collisions, folder: collisions, prefix: phy.coll, difficulty: 6, prereq: [physics.momentum.momentum-impulse, physics.energy.conservation], status: new, batch: P5,
+      scope: "การอนุรักษ์โมเมนตัม การชนแบบยืดหยุ่นและไม่ยืดหยุ่นใน 1 มิติ การระเบิดแยกตัว" }
+  - { id: physics.rotation.torque, folder: torque, prefix: phy.torq, difficulty: 5, prereq: [physics.dynamics.forces, physics.dynamics.newton-first], status: new, batch: P5,
+      scope: "โมเมนต์ของแรง แขนของโมเมนต์ สมดุลการหมุน คาน ไม้กระดก" }
+  # ---------- คลื่นและเสียง ----------
+  - { id: physics.waves.wave-basics, folder: wave-basics, prefix: phy.wave, difficulty: 4, prereq: [physics.kinematics.speed, math.algebra.rearrange-formula], status: new, batch: P5,
+      scope: "คลื่นกลตามขวาง ตามยาว แอมพลิจูด ความยาวคลื่น ความถี่ คาบ v = fλ" }
+  - { id: physics.waves.sound, folder: sound, prefix: phy.snd, difficulty: 4.5, prereq: [physics.waves.wave-basics], status: new, batch: P5,
+      scope: "เสียงเป็นคลื่นตามยาว อัตราเร็วเสียงในอากาศ เสียงสะท้อน ระดับเสียง ความดัง เดซิเบล (เชิงคุณภาพ)" }
+  - { id: physics.waves.wave-behaviour, folder: wave-behaviour, prefix: phy.wbeh, difficulty: 5, prereq: [physics.waves.wave-basics], status: new, batch: P6,
+      scope: "การสะท้อน การหักเห การแทรกสอด การเลี้ยวเบน หลักของฮอยเกนส์ (เชิงคุณภาพ + คำนวณง่าย)" }
+  - { id: physics.waves.shm, folder: simple-harmonic-motion, prefix: phy.shm, difficulty: 6.5, prereq: [physics.waves.wave-basics, physics.dynamics.newton-second, math.geometry.trig-ratios], status: new, batch: P6,
+      scope: "การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย สปริง ลูกตุ้มอย่างง่าย คาบ T = 2π√(m/k) และ 2π√(L/g)" }
+  # ---------- แสง ----------
+  - { id: physics.light.reflection, folder: light-reflection, prefix: phy.refl, difficulty: 4, prereq: [math.geometry.angles], status: new, batch: P6,
+      scope: "กฎการสะท้อน กระจกเงาราบ จำนวนภาพ กระจกเว้า กระจกนูน (เชิงคุณภาพ + สูตรกระจกเบื้องต้น)" }
+  - { id: physics.light.refraction, folder: light-refraction, prefix: phy.refr, difficulty: 5.5, prereq: [physics.light.reflection, math.geometry.trig-ratios], status: new, batch: P6,
+      scope: "ดรรชนีหักเห กฎของสเนลล์ มุมวิกฤต การสะท้อนกลับหมด เลนส์นูน เลนส์เว้า" }
+  # ---------- ไฟฟ้าและแม่เหล็ก ----------
+  - { id: physics.electricity.charge, folder: electric-charge, prefix: phy.chg, difficulty: 5, prereq: [physics.dynamics.forces, math.number.scientific-notation], status: new, batch: P7,
+      scope: "ประจุไฟฟ้า การเหนี่ยวนำ กฎของคูลอมบ์ สนามไฟฟ้าเบื้องต้น" }
+  - { id: physics.electricity.current-voltage, folder: current-voltage, prefix: phy.ohm, difficulty: 4, prereq: [physics.units.si, math.algebra.rearrange-formula], status: new, batch: P7,
+      scope: "กระแสไฟฟ้า ความต่างศักย์ ความต้านทาน กฎของโอห์ม V = IR แอมมิเตอร์ โวลต์มิเตอร์" }
+  - { id: physics.electricity.circuits, folder: circuits, prefix: phy.circuit, difficulty: 5, prereq: [physics.electricity.current-voltage, math.number.fractions], status: new, batch: P7,
+      scope: "ตัวต้านทานต่ออนุกรม ขนาน และผสม แบ่งกระแส แบ่งแรงดัน วงจรในบ้าน" }
+  - { id: physics.electricity.electric-power, folder: electric-power, prefix: phy.epow, difficulty: 4.5, prereq: [physics.electricity.current-voltage, physics.energy.power], status: new, batch: P7,
+      scope: "กำลังไฟฟ้า P = VI = I²R พลังงานไฟฟ้า กิโลวัตต์-ชั่วโมง (หน่วย) การคำนวณค่าไฟ" }
+  - { id: physics.magnetism.magnetic-field, folder: magnetic-field, prefix: phy.mag, difficulty: 6, prereq: [physics.electricity.current-voltage, physics.units.vectors], status: new, batch: P8,
+      scope: "สนามแม่เหล็ก เส้นแรงแม่เหล็ก แรงบนลวดตัวนำ F = ILB แรงบนประจุ มอเตอร์ไฟฟ้า กฎมือขวา" }
+  # ---------- ความร้อนและสสาร ----------
+  - { id: physics.thermal.temperature-heat, folder: temperature-heat, prefix: phy.heat, difficulty: 4, prereq: [physics.units.si, math.algebra.rearrange-formula], status: new, batch: P8,
+      scope: "อุณหภูมิ สเกลเซลเซียส–เคลวิน ความร้อน Q = mcΔT ความจุความร้อนจำเพาะ การผสมน้ำร้อนน้ำเย็น" }
+  - { id: physics.thermal.phase-change, folder: phase-change, prefix: phy.phase, difficulty: 4.5, prereq: [physics.thermal.temperature-heat], status: new, batch: P8,
+      scope: "การเปลี่ยนสถานะ ความร้อนแฝง Q = mL กราฟอุณหภูมิกับเวลาขณะให้ความร้อนน้ำแข็ง" }
+  - { id: physics.matter.pressure-fluids, folder: pressure-fluids, prefix: phy.press, difficulty: 5, prereq: [physics.dynamics.weight-normal, math.geometry.volume-surface], status: new, batch: P8,
+      scope: "ความดัน P = F/A ความดันในของเหลว P = ρgh หลักของพาสคัล แรงลอยตัว หลักของอาร์คิมีดีส" }
+
+# หัวข้อเริ่มต้นของวิชาถัดไป (เฟส 5) วิชาละ 3 หัวข้อ เพื่อทดสอบ pipeline และเครื่องมือเฉพาะวิชา
+starter:
+  - { id: thai.writing.consonants, folder: thai/consonants, prefix: thai.cons, difficulty: 1, prereq: [], batch: S1,
+      scope: "พยัญชนะไทย 44 ตัว อักษรสามหมู่ (กลาง สูง ต่ำ) พยัญชนะต้นและตัวสะกด" }
+  - { id: thai.writing.tone-rules, folder: thai/tone-rules, prefix: thai.tone, difficulty: 3, prereq: [thai.writing.consonants], batch: S1,
+      scope: "คำเป็นคำตาย การผันวรรณยุกต์ตามไตรยางศ์ อ่านออกเสียงวรรณยุกต์ให้ถูก" }
+  - { id: thai.grammar.word-types, folder: thai/word-types, prefix: thai.word, difficulty: 3, prereq: [thai.writing.consonants], batch: S1,
+      scope: "ชนิดของคำ 7 ชนิด (นาม สรรพนาม กริยา วิเศษณ์ บุพบท สันธาน อุทาน) หน้าที่ในประโยค" }
+  - { id: english.grammar.present-simple, folder: english/present-simple, prefix: eng.pres, difficulty: 1.5, prereq: [], batch: S1,
+      scope: "Present simple: โครงสร้าง การเติม s/es คำถามและปฏิเสธด้วย do/does อธิบายเป็นภาษาไทย" }
+  - { id: english.grammar.past-simple, folder: english/past-simple, prefix: eng.past, difficulty: 2, prereq: [english.grammar.present-simple], batch: S1,
+      scope: "Past simple: กริยาปกติ (-ed) และไม่ปกติที่ใช้บ่อย คำถามและปฏิเสธด้วย did" }
+  - { id: english.grammar.present-perfect, folder: english/present-perfect, prefix: eng.perf, difficulty: 3, prereq: [english.grammar.past-simple], batch: S1,
+      scope: "Present perfect: have/has + V3 ใช้กับ ever/never/already/yet/since/for เทียบกับ past simple" }
+  - { id: chemistry.matter.atoms, folder: chemistry/atoms, prefix: chem.atom, difficulty: 3, prereq: [math.number.integers], batch: S2,
+      scope: "โครงสร้างอะตอม โปรตอน นิวตรอน อิเล็กตรอน เลขอะตอม เลขมวล ไอโซโทป สัญลักษณ์นิวเคลียร์" }
+  - { id: chemistry.matter.periodic-table, folder: chemistry/periodic-table, prefix: chem.pt, difficulty: 3.5, prereq: [chemistry.matter.atoms], batch: S2,
+      scope: "ตารางธาตุ หมู่และคาบ การจัดเรียงอิเล็กตรอนอย่างง่าย (2,8,8) เวเลนซ์อิเล็กตรอน แนวโน้มสมบัติ" }
+  - { id: chemistry.bonding.covalent, folder: chemistry/covalent-bonds, prefix: chem.cov, difficulty: 4, prereq: [chemistry.matter.periodic-table], batch: S2,
+      scope: "พันธะโคเวเลนต์ กฎออกเตต สูตรโครงสร้าง พันธะเดี่ยว คู่ สาม รูปร่างโมเลกุลเบื้องต้น (ใช้บล็อก molecule: น้ำ 962, มีเทน 297, คาร์บอนไดออกไซด์ 280, แอมโมเนีย 222)" }
+  - { id: chinese.pinyin.tones, folder: chinese/pinyin-tones, prefix: zh.tone, difficulty: 1, prereq: [], batch: S2,
+      scope: "พินอิน พยัญชนะต้น สระ วรรณยุกต์ 4 เสียง + เสียงเบา เทียบกับเสียงวรรณยุกต์ไทย" }
+  - { id: chinese.hanzi.basic-strokes, folder: chinese/basic-strokes, prefix: zh.stroke, difficulty: 1.5, prereq: [], batch: S2,
+      scope: "ขีดพื้นฐาน (横 竖 撇 点 折 …) กฎลำดับการเขียน (บนลงล่าง ซ้ายไปขวา นอกก่อนใน) ฝึกเขียน 人 大 口 (ใช้โจทย์ชนิด hanzi)" }
+  - { id: chinese.hanzi.numbers, folder: chinese/numbers, prefix: zh.num, difficulty: 2, prereq: [chinese.hanzi.basic-strokes, chinese.pinyin.tones], batch: S2,
+      scope: "ตัวเลข 一 ถึง 十 百 การอ่านและเขียน การนับเลขสองหลัก (ใช้โจทย์ชนิด hanzi)" }

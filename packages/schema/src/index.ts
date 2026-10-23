@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export * from "./license.ts";
+export * from "./expression.ts";
 import { LICENSES } from "./license.ts";
 
 /** รหัสหัวข้อ: <วิชา>.<สาขา>.<ชื่อ> เช่น math.algebra.linear-eq */
@@ -24,14 +25,48 @@ export const Subject = z.object({
   color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
 });
 
+const Point = z.tuple([z.number(), z.number()]);
+
+/** สื่อโต้ตอบที่วาดด้วย JSXGraph ในแอป (ใช้ได้ออฟไลน์) */
+export const Widget = z.discriminatedUnion("kind", [
+  z.object({
+    kind: z.literal("function-plot"),
+    /** นิพจน์ LaTeX ของ x และชื่อแถบเลื่อน เช่น "a x^2 + c" */
+    functions: z.array(z.string().min(1)).min(1).max(4),
+    sliders: z
+      .array(z.object({ name: z.string().regex(/^[a-zA-Z]$/), min: z.number(), max: z.number(), step: z.number().positive().default(0.1), value: z.number(), label: z.string().optional() }))
+      .max(4)
+      .default([]),
+    x: Point.default([-5, 5]),
+    y: Point.default([-5, 5]),
+  }),
+  z.object({
+    kind: z.literal("number-line"),
+    min: z.number(),
+    max: z.number(),
+    points: z.array(z.object({ value: z.number(), label: z.string().optional() })).default([]),
+    jumps: z.array(z.object({ from: z.number(), to: z.number(), label: z.string().optional() })).default([]),
+  }),
+  z.object({
+    kind: z.literal("vector-add"),
+    a: Point,
+    b: Point,
+    draggable: z.boolean().default(true),
+  }),
+]);
+
 export const LessonBlock = z.discriminatedUnion("type", [
   z.object({ type: z.literal("explanation"), file: z.string().endsWith(".md"), title: z.string().optional() }),
   z.object({
     type: z.literal("video"),
     title: z.string(),
+    /** YouTube หรือไฟล์ .mp4 */
     url: z.url(),
     minutes: z.number().positive(),
-    license: License.optional(),
+    source: z.string().optional(),
+    license: z.string().optional(),
+    /** หยุดวิดีโอแล้วถามโจทย์จากคลังของหัวข้อนี้ ณ วินาทีที่กำหนด */
+    questions: z.array(z.object({ at: z.number().int().min(0), problem: z.string() })).default([]),
   }),
   z.object({
     type: z.literal("simulation"),
@@ -39,8 +74,25 @@ export const LessonBlock = z.discriminatedUnion("type", [
     url: z.url(),
     provider: z.enum(["phet", "geogebra", "jsxgraph", "other"]),
     note: z.string().optional(),
+    /** ฝังในหน้าบทเรียน (PhET รองรับ) แทนการเปิดแท็บใหม่ */
+    embed: z.boolean().default(true),
+  }),
+  z.object({ type: z.literal("interactive"), title: z.string(), caption: z.string().optional(), widget: Widget }),
+  z.object({
+    type: z.literal("molecule"),
+    title: z.string(),
+    /** รหัสสารใน PubChem: `npm run fetch-assets` ดึงพิกัด 3 มิติมาเก็บใน content/_assets/molecules */
+    cid: z.number().int().positive(),
+    name: z.string(),
+    caption: z.string().optional(),
   }),
 ]);
+
+/** URL ที่ใช้ฝังซิมูเลชัน PhET (ภาษาไทยถ้ามีคำแปล) */
+export function phetEmbedUrl(url: string): string | null {
+  const slug = url.match(/phet\.colorado\.edu\/[a-z_]+\/simulations\/([a-z0-9-]+)/)?.[1];
+  return slug ? `https://phet.colorado.edu/sims/html/${slug}/latest/${slug}_all.html?locale=th` : null;
+}
 
 export const Topic = z.object({
   id: z.string().regex(TOPIC_ID, "รหัสหัวข้อต้องเป็นรูป วิชา.สาขา.ชื่อ"),
@@ -124,14 +176,51 @@ export const Problem = z.discriminatedUnion("type", [
     type: z.literal("match"),
     pairs: z.array(z.object({ left: z.string(), right: z.string() })).min(2).max(8),
   }),
+  z.object({
+    ...ProblemBase,
+    type: z.literal("expression"),
+    answer: z.object({
+      /** นิพจน์คำตอบในรูป LaTeX เช่น "\\frac{2A}{b}" */
+      latex: z.string().min(1),
+      /** ตัวแปรที่ผู้เรียนใช้ได้ */
+      variables: z.array(z.string().min(1)).default([]),
+    }),
+    /** ข้อความหน้าช่องกรอก เช่น "h =" (ถ้าผู้เรียนพิมพ์ "h =" มาเองจะถูกตัดออก) */
+    prefix: z.string().optional(),
+    /** ต้องตอบในรูปที่ไม่มีวงเล็บ (โจทย์ให้กระจาย) */
+    expanded: z.boolean().default(false),
+    misconceptions: z.array(z.object({ match: z.string().min(1), feedback: z.string().min(1) })).default([]),
+  }),
+  z.object({
+    ...ProblemBase,
+    type: z.literal("hanzi"),
+    /** อักษรจีน 1 ตัว ผู้เรียนเขียนตามลำดับขีดบนจอ */
+    character: z.string().regex(/^\p{Script=Han}$/u, "ต้องเป็นอักษรจีน 1 ตัว"),
+    pinyin: z.string().min(1),
+    meaning: z.string().min(1),
+    /** จำนวนขีดที่เขียนผิดได้โดยยังนับว่าถูก */
+    max_mistakes: z.number().int().min(0).max(10).default(3),
+  }),
 ]);
 
-export const ProblemFile = z.array(Problem).min(1);
+/** problems.yaml มีคีย์ `problems` อยู่ที่ราก (รูปแบบที่ Decap CMS แก้ไขได้) */
+export const ProblemFile = z.object({ problems: z.array(Problem).min(1) });
 
 export type Subject = z.infer<typeof Subject>;
 export type Topic = z.infer<typeof Topic>;
 export type LessonBlock = z.infer<typeof LessonBlock>;
 export type Problem = z.infer<typeof Problem>;
+export type Widget = z.infer<typeof Widget>;
+
+/** เอกสารสำหรับค้นหา (dist/content/search.json) */
+export interface SearchDoc {
+  id: string;
+  kind: "topic" | "glossary" | "problem";
+  topic: string;
+  subject: string;
+  title: string;
+  text: string;
+}
 
 /* ---------- รูปแบบ content pack ที่ build แล้ว (แอปอ่านไฟล์เหล่านี้) ---------- */
 
