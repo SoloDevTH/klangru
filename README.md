@@ -4,7 +4,7 @@
 
 โครงการไม่หารายได้ โค้ดใช้ MIT เนื้อหาใช้ Creative Commons เป็นรายชิ้น (ดู `content/LICENSE.md`)
 
-> สถานะ: โค้ดเฟส 1–5 เสร็จ · 6 วิชา 92 หัวข้อ 1,153 โจทย์ (ฉบับร่าง รอผู้เชี่ยวชาญตรวจ) · รายละเอียดและงานที่ต้องใช้คนใน [docs/status.md](docs/status.md)
+> สถานะ: โค้ดเฟส 1–7 เสร็จ · 10 วิชา 104 หัวข้อ 2,257 โจทย์ 343 ภาพประกอบ (ฉบับร่าง รอผู้เชี่ยวชาญตรวจ) · หลักสูตรไทยและต่างประเทศ 38 ฉบับ · รายละเอียดและงานที่ต้องใช้คนใน [docs/status.md](docs/status.md)
 
 ## เริ่มใช้งาน
 
@@ -51,7 +51,7 @@ packages/schema/         schema เนื้อหา (zod) + ตัวตรว
 packages/content-tools/  validate, build, fetch-assets, draft, approve, calibrate
 apps/web/                เว็บ Next.js (static export) + แอป Android (Capacitor) + Decap CMS
 supabase/                migration, edge functions (tutor, delete-account), เทสต์
-curriculum/              หลักสูตร 16 ฉบับ (ไทย ต่างประเทศ วิศวกรรม) การจับคู่กับหัวข้อ และแหล่งอ้างอิง/สารานุกรม
+curriculum/              หลักสูตร 38 ฉบับ (ไทย ต่างประเทศ มหาวิทยาลัย การจัดการคุณภาพ) การจับคู่กับหัวข้อ และแหล่งอ้างอิง/สารานุกรม
 docs/                    ADR, คู่มือติดตั้ง, คู่มือผู้เขียน, สถานะ, แผนเฟส 6
 ```
 
