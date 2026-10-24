@@ -1,0 +1,325 @@
+# หัวข้อที่เสนอให้เขียนใหม่ เพื่อให้คลังครอบคลุมตัวชี้วัดแกนกลาง กลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี
+# (ฉบับปรับปรุง พ.ศ. 2560) ป.1–ม.6 ตาม curriculum/frameworks/th-core-2560-science.yaml
+#
+# - ณ วันที่เสนอ คลังสอนตัวชี้วัดแกนกลางครบ 16 ข้อ บางส่วน 45 ข้อ และยังไม่มีหัวข้อสอน 354 จาก 415 ข้อ
+#   (ดู curriculum/mappings/th-core-2560-science.yaml) ชีววิทยา โลกและอวกาศ และเทคโนโลยียังไม่มีหัวข้อเลย
+# - topics: 83 หัวข้อใหม่ (biology 24, chemistry 11, physics 13, earthscience 16, technology 19)
+#   รวมตัวชี้วัดที่ยังไม่มีหัวข้อสอนทุกข้อ และตัวชี้วัดที่หัวข้อเดิมสอนเพียงบางส่วนเมื่อหัวข้อใหม่สอนส่วนที่ขาด
+# - extend: ตัวชี้วัด ม.4–6 ที่เนื้อหาตรงกับหัวข้อซึ่งเสนอไว้แล้วใน docs/phase6/proposals-science-additional.yaml
+#   (รายวิชาเพิ่มเติม) ให้แนบตัวชี้วัดเหล่านี้กับหัวข้อนั้นแทนการเขียนหัวข้อซ้ำ เพราะคลังไม่แบ่งตามระดับชั้น
+#   หัวข้อในไฟล์นี้ที่เป็นพื้นฐานของหัวข้อเหล่านั้น เช่น biology.ecology.food-webs ก่อน biology.ecology.ecosystems
+#   หรือ biology.cells.cell-basics ก่อน biology.cells.cell-structure ควรเพิ่มเป็น prereq ตอนรวมไฟล์
+# - เรียงตาม prerequisite: prereq ทุกตัวเป็นหัวข้อที่มีในคลังแล้ว หัวข้อที่อยู่ก่อนหน้าในไฟล์นี้ หรือหัวข้อใน
+#   proposals-science-additional.yaml (ใช้กับ biology.animals.homeostasis เท่านั้น) วิชาเรียงเป็น ชีววิทยา เคมี ฟิสิกส์
+#   โลกและอวกาศ เทคโนโลยี เพราะโลกฯ และเทคโนโลยีอ้างหัวข้อฟิสิกส์และเคมี
+# - difficulty เทียบกับหัวข้อเดิม (math.number.place-value 1, physics.units.si 2, physics.dynamics.forces 3,
+#   chemistry.bonding.covalent 4, physics.thermal.phase-change 4.5) ประถมราว 1–2.2 มัธยมต้นราว 2.5–5
+#   และไม่ต่ำกว่า prereq ทุกตัว scope เป็นคำของเรา ไม่ใช่ข้อความจากหลักสูตร
+# - ตัวชี้วัดที่ควรเติมในหัวข้อเดิมมากกว่าแยกหัวข้อใหม่ (ยังนับเป็น "บางส่วน" อยู่):
+#   ว 3.1 ม.3/1 (การโคจรของดาวเคราะห์ด้วย F = Gm₁m₂/r²) เติมใน physics.dynamics.gravitation
+#   ว 2.3 ม.3/2 (กราฟ I–V) เติมใน physics.electricity.current-voltage
+#   ว 2.3 ม.2/6 (การเปลี่ยนและถ่ายโอนพลังงานรูปอื่น) เติมใน physics.energy.conservation
+#   ว 2.2 ม.5/2 (แรงลัพธ์ของแรงในระนาบ) เติมใน physics.units.vectors หรือ physics.rotation.static-equilibrium
+#   หัวข้อ physics.waves.sound-intro ควรเป็น prereq ของ physics.waves.sound
+topics:
+  # ---------- ชีววิทยา: ประถม (ว 1.1–1.3 ป.1–ป.6) ----------
+  - { id: biology.life.living-things, title: "สิ่งมีชีวิตและสิ่งไม่มีชีวิต", difficulty: 1, prereq: [],
+      indicators: ["th-core-2560-science:ว 1.3 ป.2/1"],
+      scope: "ลักษณะที่บอกว่าเป็นสิ่งมีชีวิต (ต้องการอาหาร หายใจ เจริญเติบโต สืบพันธุ์ ตอบสนองต่อสิ่งเร้า ขับถ่าย) เทียบกับสิ่งไม่มีชีวิตรอบตัว" }
+  - { id: biology.humans.body-parts, title: "ส่วนต่าง ๆ ของร่างกายมนุษย์ สัตว์ และพืช", difficulty: 1, prereq: [biology.life.living-things],
+      indicators: ["th-core-2560-science:ว 1.2 ป.1/1", "th-core-2560-science:ว 1.2 ป.1/2"],
+      scope: "ชื่อ ลักษณะ และหน้าที่ของอวัยวะภายนอก การทำงานร่วมกันของส่วนต่าง ๆ ในกิจกรรมประจำวัน และการดูแลร่างกายให้สะอาดปลอดภัย" }
+  - { id: biology.ecology.habitats, title: "พืชและสัตว์ในแหล่งที่อยู่", difficulty: 1.2, prereq: [biology.life.living-things],
+      indicators: ["th-core-2560-science:ว 1.1 ป.1/1", "th-core-2560-science:ว 1.1 ป.1/2"],
+      scope: "พืชและสัตว์ที่พบในบริเวณต่าง ๆ ของท้องถิ่น สภาพแวดล้อมที่เหมาะกับการดำรงชีวิต และผลเมื่อสภาพแวดล้อมเปลี่ยน" }
+  - { id: biology.plants.flowering-plants, title: "พืชดอก: ส่วนประกอบ ปัจจัยในการเจริญเติบโต และวัฏจักรชีวิต", difficulty: 1.5, prereq: [biology.humans.body-parts],
+      indicators: ["th-core-2560-science:ว 1.2 ป.2/1", "th-core-2560-science:ว 1.2 ป.2/2", "th-core-2560-science:ว 1.2 ป.2/3", "th-core-2560-science:ว 1.2 ป.4/1"],
+      scope: "พืชต้องการแสงและน้ำ หน้าที่ของราก ลำต้น ใบ และดอก วัฏจักรชีวิตของพืชดอกจากเมล็ดถึงต้นที่ออกดอกและผล" }
+  - { id: biology.animals.needs-life-cycles, title: "ปัจจัยในการดำรงชีวิตและวัฏจักรชีวิตของสัตว์", difficulty: 1.5, prereq: [biology.humans.body-parts],
+      indicators: ["th-core-2560-science:ว 1.2 ป.3/1", "th-core-2560-science:ว 1.2 ป.3/2", "th-core-2560-science:ว 1.2 ป.3/3", "th-core-2560-science:ว 1.2 ป.3/4"],
+      scope: "อาหาร น้ำ และอากาศที่มนุษย์และสัตว์ต้องการ วัฏจักรชีวิตของสัตว์ เช่น ผีเสื้อ กบ ไก่ และการเปรียบเทียบวัฏจักรชีวิตแบบต่าง ๆ" }
+  - { id: biology.diversity.classifying-organisms, title: "การจำแนกสิ่งมีชีวิต", difficulty: 2, prereq: [biology.plants.flowering-plants, biology.animals.needs-life-cycles],
+      indicators: ["th-core-2560-science:ว 1.3 ป.4/1", "th-core-2560-science:ว 1.3 ป.4/2", "th-core-2560-science:ว 1.3 ป.4/3", "th-core-2560-science:ว 1.3 ป.4/4"],
+      scope: "การจำแนกเป็นกลุ่มพืช กลุ่มสัตว์ และกลุ่มที่ไม่ใช่พืชและสัตว์ พืชดอกกับพืชไม่มีดอก สัตว์มีและไม่มีกระดูกสันหลัง และลักษณะของปลา สัตว์สะเทินน้ำสะเทินบก สัตว์เลื้อยคลาน นก และสัตว์เลี้ยงลูกด้วยน้ำนม" }
+  - { id: biology.ecology.adaptation-food-chains, title: "การปรับตัวและโซ่อาหาร", difficulty: 2, prereq: [biology.ecology.habitats, biology.diversity.classifying-organisms],
+      indicators: ["th-core-2560-science:ว 1.1 ป.5/1", "th-core-2560-science:ว 1.1 ป.5/2", "th-core-2560-science:ว 1.1 ป.5/3", "th-core-2560-science:ว 1.1 ป.5/4"],
+      scope: "โครงสร้างของสิ่งมีชีวิตที่เหมาะกับแหล่งที่อยู่ ความสัมพันธ์ระหว่างสิ่งมีชีวิตกับสิ่งมีชีวิตและกับสิ่งไม่มีชีวิต การเขียนโซ่อาหาร บทบาทผู้ผลิตและผู้บริโภค และการดูแลสิ่งแวดล้อม" }
+  - { id: biology.genetics.inherited-traits, title: "ลักษณะทางพันธุกรรม", difficulty: 2, prereq: [biology.diversity.classifying-organisms],
+      indicators: ["th-core-2560-science:ว 1.3 ป.5/1", "th-core-2560-science:ว 1.3 ป.5/2"],
+      scope: "ลักษณะที่ถ่ายทอดจากพ่อแม่สู่ลูกในพืช สัตว์ และมนุษย์ เช่น ลักษณะติ่งหู ลักยิ้ม สีดอก และการตั้งคำถามจากลักษณะของตนเองกับพ่อแม่" }
+  - { id: biology.humans.nutrition-digestion, title: "สารอาหารและระบบย่อยอาหาร", difficulty: 2.2, prereq: [biology.humans.body-parts],
+      indicators: ["th-core-2560-science:ว 1.2 ป.6/1", "th-core-2560-science:ว 1.2 ป.6/2", "th-core-2560-science:ว 1.2 ป.6/3", "th-core-2560-science:ว 1.2 ป.6/4", "th-core-2560-science:ว 1.2 ป.6/5"],
+      scope: "สารอาหาร 6 ประเภทและประโยชน์ การเลือกอาหารให้ครบและเหมาะกับเพศและวัย อวัยวะในระบบย่อยอาหาร การย่อยและการดูดซึม และการดูแลระบบย่อยอาหาร" }
+  # ---------- ชีววิทยา: มัธยมต้น (ว 1.1–1.3 ม.1–ม.3) ----------
+  - { id: biology.cells.cell-basics, title: "เซลล์และการจัดระบบของสิ่งมีชีวิต", difficulty: 2.5, prereq: [biology.humans.body-parts, biology.plants.flowering-plants],
+      indicators: ["th-core-2560-science:ว 1.2 ม.1/1", "th-core-2560-science:ว 1.2 ม.1/2", "th-core-2560-science:ว 1.2 ม.1/3", "th-core-2560-science:ว 1.2 ม.1/4"],
+      scope: "เซลล์พืชกับเซลล์สัตว์และหน้าที่ของผนังเซลล์ เยื่อหุ้มเซลล์ ไซโทพลาซึม นิวเคลียส แวคิวโอล ไมโทคอนเดรีย คลอโรพลาสต์ การใช้กล้องจุลทรรศน์ใช้แสง รูปร่างกับหน้าที่ของเซลล์ และลำดับเซลล์ เนื้อเยื่อ อวัยวะ ระบบอวัยวะ" }
+  - { id: biology.cells.diffusion-osmosis, title: "การแพร่และออสโมซิส", difficulty: 2.8, prereq: [biology.cells.cell-basics],
+      indicators: ["th-core-2560-science:ว 1.2 ม.1/5"],
+      scope: "การเคลื่อนที่ของอนุภาคจากความเข้มข้นสูงไปต่ำ การแพร่ของน้ำผ่านเยื่อเลือกผ่าน และตัวอย่างในชีวิตประจำวัน เช่น ผักเหี่ยวเมื่อแช่น้ำเกลือ" }
+  - { id: biology.plants.photosynthesis-intro, title: "การสังเคราะห์ด้วยแสงเบื้องต้น", difficulty: 3, prereq: [biology.cells.cell-basics],
+      indicators: ["th-core-2560-science:ว 1.2 ม.1/6", "th-core-2560-science:ว 1.2 ม.1/7", "th-core-2560-science:ว 1.2 ม.1/8"],
+      scope: "ปัจจัยที่จำเป็น (แสง คลอโรฟิลล์ น้ำ แก๊สคาร์บอนไดออกไซด์) ผลผลิตคือน้ำตาลและแก๊สออกซิเจน ความสำคัญต่อสิ่งมีชีวิตและสิ่งแวดล้อม และการร่วมปลูกและดูแลต้นไม้" }
+  - { id: biology.plants.transport-nutrients, title: "การลำเลียงในพืชและธาตุอาหารพืช", difficulty: 3, prereq: [biology.cells.diffusion-osmosis, biology.plants.photosynthesis-intro],
+      indicators: ["th-core-2560-science:ว 1.2 ม.1/9", "th-core-2560-science:ว 1.2 ม.1/10", "th-core-2560-science:ว 1.2 ม.1/14", "th-core-2560-science:ว 1.2 ม.1/15"],
+      scope: "ไซเล็มลำเลียงน้ำและธาตุอาหาร โฟลเอ็มลำเลียงอาหาร ทิศทางการลำเลียง ธาตุอาหารหลักและธาตุอาหารรอง และการเลือกปุ๋ยให้เหมาะกับพืช" }
+  - { id: biology.plants.reproduction-propagation, title: "การสืบพันธุ์และการขยายพันธุ์พืชดอก", difficulty: 3, prereq: [biology.plants.flowering-plants, biology.cells.cell-basics],
+      indicators: ["th-core-2560-science:ว 1.2 ม.1/11", "th-core-2560-science:ว 1.2 ม.1/12", "th-core-2560-science:ว 1.2 ม.1/13", "th-core-2560-science:ว 1.2 ม.1/16", "th-core-2560-science:ว 1.2 ม.1/17", "th-core-2560-science:ว 1.2 ม.1/18"],
+      scope: "การสืบพันธุ์แบบอาศัยเพศและไม่อาศัยเพศ โครงสร้างดอกกับการถ่ายเรณู การปฏิสนธิ การเกิดผลและเมล็ด การกระจายและการงอกของเมล็ด การขยายพันธุ์ (ตอนกิ่ง ปักชำ ติดตา) และการเพาะเลี้ยงเนื้อเยื่อพืช" }
+  - { id: biology.humans.respiration-excretion, title: "ระบบหายใจและระบบขับถ่าย", difficulty: 3, prereq: [biology.cells.cell-basics],
+      indicators: ["th-core-2560-science:ว 1.2 ม.2/1", "th-core-2560-science:ว 1.2 ม.2/2", "th-core-2560-science:ว 1.2 ม.2/3", "th-core-2560-science:ว 1.2 ม.2/4", "th-core-2560-science:ว 1.2 ม.2/5"],
+      scope: "อวัยวะในระบบหายใจ กลไกการหายใจเข้าออกด้วยกะบังลมและกระดูกซี่โครง การแลกเปลี่ยนแก๊สที่ถุงลม ไตกับการกำจัดของเสีย และการดูแลระบบหายใจและระบบขับถ่าย" }
+  - { id: biology.humans.circulatory-system, title: "ระบบหมุนเวียนเลือด", difficulty: 3, prereq: [biology.humans.respiration-excretion],
+      indicators: ["th-core-2560-science:ว 1.2 ม.2/6", "th-core-2560-science:ว 1.2 ม.2/7", "th-core-2560-science:ว 1.2 ม.2/8", "th-core-2560-science:ว 1.2 ม.2/9"],
+      scope: "โครงสร้างและหน้าที่ของหัวใจ หลอดเลือด และเลือด การหมุนเวียนเลือดผ่านปอดและทั่วร่างกาย ชีพจรและอัตราการเต้นของหัวใจขณะพักและหลังออกกำลังกาย และการดูแลระบบหมุนเวียนเลือด" }
+  - { id: biology.humans.nervous-system-intro, title: "ระบบประสาทส่วนกลาง", difficulty: 3, prereq: [biology.cells.cell-basics],
+      indicators: ["th-core-2560-science:ว 1.2 ม.2/10", "th-core-2560-science:ว 1.2 ม.2/11"],
+      scope: "สมองและไขสันหลังกับการควบคุมการทำงานของร่างกาย การตอบสนองต่อสิ่งเร้า และการป้องกันอันตรายต่อสมองและไขสันหลัง" }
+  - { id: biology.humans.reproductive-system, title: "ระบบสืบพันธุ์และการเปลี่ยนแปลงเมื่อเข้าสู่วัยหนุ่มสาว", difficulty: 3, prereq: [biology.cells.cell-basics],
+      indicators: ["th-core-2560-science:ว 1.2 ม.2/12", "th-core-2560-science:ว 1.2 ม.2/13", "th-core-2560-science:ว 1.2 ม.2/14", "th-core-2560-science:ว 1.2 ม.2/15", "th-core-2560-science:ว 1.2 ม.2/16", "th-core-2560-science:ว 1.2 ม.2/17"],
+      scope: "อวัยวะสืบพันธุ์เพศชายและเพศหญิง ฮอร์โมนเพศกับการเปลี่ยนแปลงของร่างกาย การตกไข่ ประจำเดือน การปฏิสนธิ การพัฒนาของไซโกตจนคลอด วิธีคุมกำเนิด และการตั้งครรภ์ก่อนวัยอันควร" }
+  - { id: biology.genetics.genes-heredity, title: "ยีน โครโมโซม การแบ่งเซลล์ และการถ่ายทอดลักษณะ", difficulty: 3.5, prereq: [biology.genetics.inherited-traits, biology.cells.cell-basics, math.number.ratio-percent],
+      indicators: ["th-core-2560-science:ว 1.3 ม.3/1", "th-core-2560-science:ว 1.3 ม.3/2", "th-core-2560-science:ว 1.3 ม.3/3", "th-core-2560-science:ว 1.3 ม.3/4"],
+      scope: "ความสัมพันธ์ของยีน ดีเอ็นเอ และโครโมโซม การผสมที่พิจารณาลักษณะเดียวซึ่งแอลลีลเด่นข่มแอลลีลด้อยสมบูรณ์ จีโนไทป์ ฟีโนไทป์ และอัตราส่วนในรุ่นลูก และความต่างของไมโทซิสกับไมโอซิส" }
+  - { id: biology.genetics.genetic-disorders-gmo, title: "โรคทางพันธุกรรมและสิ่งมีชีวิตดัดแปรพันธุกรรม", difficulty: 3.5, prereq: [biology.genetics.genes-heredity],
+      indicators: ["th-core-2560-science:ว 1.3 ม.3/5", "th-core-2560-science:ว 1.3 ม.3/6", "th-core-2560-science:ว 1.3 ม.3/7", "th-core-2560-science:ว 1.3 ม.3/8"],
+      scope: "โรคจากความผิดปกติของยีนหรือโครโมโซม เช่น ธาลัสซีเมีย ดาวน์ซินโดรม การปรึกษาแพทย์ก่อนแต่งงาน ประโยชน์และผลกระทบของสิ่งมีชีวิตดัดแปรพันธุกรรม และการโต้แย้งด้วยข้อมูล" }
+  - { id: biology.diversity.biodiversity, title: "ความหลากหลายทางชีวภาพ", difficulty: 3, prereq: [biology.diversity.classifying-organisms, biology.ecology.adaptation-food-chains],
+      indicators: ["th-core-2560-science:ว 1.3 ม.3/9", "th-core-2560-science:ว 1.3 ม.3/10", "th-core-2560-science:ว 1.3 ม.3/11"],
+      scope: "ความหลากหลายของชนิดสิ่งมีชีวิตในระบบนิเวศต่าง ๆ ความสำคัญต่อสมดุลของระบบนิเวศและต่อมนุษย์ และการมีส่วนร่วมดูแลรักษา" }
+  - { id: biology.ecology.food-webs, title: "ระบบนิเวศและการถ่ายทอดพลังงาน", difficulty: 3.5, prereq: [biology.ecology.adaptation-food-chains, biology.plants.photosynthesis-intro],
+      indicators: ["th-core-2560-science:ว 1.1 ม.3/1", "th-core-2560-science:ว 1.1 ม.3/2", "th-core-2560-science:ว 1.1 ม.3/3", "th-core-2560-science:ว 1.1 ม.3/4", "th-core-2560-science:ว 1.1 ม.3/5", "th-core-2560-science:ว 1.1 ม.3/6"],
+      scope: "องค์ประกอบที่มีชีวิตและไม่มีชีวิต ภาวะพึ่งพากัน อิงอาศัย ล่าเหยื่อ ปรสิต ประชากรและกลุ่มสิ่งมีชีวิต ผู้ผลิต ผู้บริโภค ผู้ย่อยสลาย สายใยอาหาร พลังงานที่ลดลงในแต่ละลำดับ และการสะสมสารพิษในโซ่อาหาร" }
+  # ---------- ชีววิทยา: มัธยมปลายรายวิชาพื้นฐาน (ว 1.2 ม.4) ที่ไม่ซ้อนกับ proposals-science-additional.yaml ----------
+  - { id: biology.animals.homeostasis, title: "การรักษาดุลยภาพของร่างกาย", difficulty: 5.5, prereq: [biology.animals.excretion, biology.humans.circulatory-system],
+      indicators: ["th-core-2560-science:ว 1.2 ม.4/2", "th-core-2560-science:ว 1.2 ม.4/3", "th-core-2560-science:ว 1.2 ม.4/4"],
+      scope: "การควบคุมน้ำและสารในเลือดโดยไต ดุลยภาพกรด-เบสของเลือดโดยไตและปอด และการควบคุมอุณหภูมิร่างกายด้วยระบบหมุนเวียนเลือด ผิวหนัง และกล้ามเนื้อโครงร่าง" }
+  - { id: biology.plants.plant-products-growth, title: "สารที่พืชสร้างและปัจจัยการเจริญเติบโตของพืช", difficulty: 4, prereq: [biology.plants.photosynthesis-intro, biology.plants.transport-nutrients],
+      indicators: ["th-core-2560-science:ว 1.2 ม.4/8", "th-core-2560-science:ว 1.2 ม.4/9", "th-core-2560-science:ว 1.2 ม.4/10"],
+      scope: "การทดสอบน้ำตาล แป้ง โปรตีน และไขมันที่พืชสร้าง การใช้ประโยชน์จากสารที่พืชบางชนิดสร้าง เช่น สารสกัดไล่แมลง ยา สีย้อม และปัจจัยภายนอก (แสง น้ำ ธาตุอาหาร อุณหภูมิ) ที่มีผลต่อการเจริญเติบโต" }
+  # ---------- เคมีและสสาร: ประถม (ว 2.1 ป.1–ป.6) ----------
+  - { id: chemistry.materials.everyday-materials, title: "วัสดุรอบตัวและการนำกลับมาใช้ใหม่", difficulty: 1, prereq: [],
+      indicators: ["th-core-2560-science:ว 2.1 ป.1/1", "th-core-2560-science:ว 2.1 ป.1/2", "th-core-2560-science:ว 2.1 ป.2/1", "th-core-2560-science:ว 2.1 ป.2/2", "th-core-2560-science:ว 2.1 ป.2/3", "th-core-2560-science:ว 2.1 ป.2/4", "th-core-2560-science:ว 2.1 ป.3/1"],
+      scope: "ชนิดและสมบัติที่สังเกตได้ของวัสดุ (ไม้ พลาสติก โลหะ ผ้า ยาง แก้ว) การดูดซับน้ำ การผสมวัสดุ การเลือกวัสดุให้เหมาะกับงาน วัตถุที่ประกอบจากชิ้นส่วนย่อย และการนำวัสดุกลับมาใช้ใหม่" }
+  - { id: chemistry.materials.material-properties, title: "สมบัติทางกายภาพของวัสดุ", difficulty: 1.8, prereq: [chemistry.materials.everyday-materials],
+      indicators: ["th-core-2560-science:ว 2.1 ป.4/1", "th-core-2560-science:ว 2.1 ป.4/2"],
+      scope: "ความแข็ง สภาพยืดหยุ่น การนำความร้อน และการนำไฟฟ้าของวัสดุ การเปรียบเทียบด้วยการทดลอง และการเลือกวัสดุเพื่อออกแบบชิ้นงาน" }
+  - { id: chemistry.matter.states-changes, title: "สถานะของสสารและการเปลี่ยนแปลงของสาร", difficulty: 1.8, prereq: [chemistry.materials.everyday-materials],
+      indicators: ["th-core-2560-science:ว 2.1 ป.3/2", "th-core-2560-science:ว 2.1 ป.4/3", "th-core-2560-science:ว 2.1 ป.4/4", "th-core-2560-science:ว 2.1 ป.5/1", "th-core-2560-science:ว 2.1 ป.5/2", "th-core-2560-science:ว 2.1 ป.5/3", "th-core-2560-science:ว 2.1 ป.5/4"],
+      scope: "ของแข็ง ของเหลว แก๊ส (มวล ที่อยู่ รูปร่าง ปริมาตร) การวัดมวลและปริมาตร การเปลี่ยนสถานะเมื่อร้อนขึ้นหรือเย็นลง การละลาย การเปลี่ยนแปลงทางเคมี และการเปลี่ยนแปลงที่ผันกลับได้และไม่ได้" }
+  - { id: chemistry.mixtures.separating-mixtures, title: "การแยกสารผสม", difficulty: 2.5, prereq: [chemistry.matter.states-changes],
+      indicators: ["th-core-2560-science:ว 2.1 ป.6/1", "th-core-2560-science:ว 2.1 ม.2/1", "th-core-2560-science:ว 2.1 ม.2/2", "th-core-2560-science:ว 2.1 ม.2/3"],
+      scope: "การหยิบออก การร่อน การใช้แม่เหล็ก การรินออก การกรอง การตกตะกอน การระเหยแห้ง การตกผลึก การกลั่นอย่างง่าย โครมาโทกราฟีแบบกระดาษ การสกัดด้วยตัวทำละลาย และการเลือกวิธีแยกสารแก้ปัญหาในชีวิตประจำวัน" }
+  # ---------- เคมีและสสาร: มัธยมต้น (ว 2.1 ม.1–ม.3) ----------
+  - { id: chemistry.matter.particle-model, title: "แบบจำลองอนุภาคของสสาร", difficulty: 2.5, prereq: [chemistry.matter.states-changes],
+      indicators: ["th-core-2560-science:ว 2.1 ม.1/9", "th-core-2560-science:ว 2.1 ม.1/10"],
+      scope: "การจัดเรียงอนุภาค แรงยึดเหนี่ยว และการเคลื่อนที่ของอนุภาคในของแข็ง ของเหลว และแก๊ส และการอธิบายการเปลี่ยนสถานะด้วยพลังงานความร้อนและแบบจำลองอนุภาค" }
+  - { id: chemistry.matter.pure-substances, title: "สารบริสุทธิ์ สารผสม และความหนาแน่น", difficulty: 2.5, prereq: [chemistry.matter.particle-model, math.number.decimals],
+      indicators: ["th-core-2560-science:ว 2.1 ม.1/4", "th-core-2560-science:ว 2.1 ม.1/5", "th-core-2560-science:ว 2.1 ม.1/6"],
+      scope: "จุดเดือดและจุดหลอมเหลวของสารบริสุทธิ์กับสารผสมจากกราฟอุณหภูมิ ความหนาแน่น ρ = m/V และการวัดมวลและปริมาตร" }
+  - { id: chemistry.matter.elements-compounds, title: "ธาตุ สารประกอบ และธาตุโลหะ อโลหะ กึ่งโลหะ", difficulty: 2.5, prereq: [chemistry.matter.pure-substances, chemistry.materials.material-properties],
+      indicators: ["th-core-2560-science:ว 2.1 ม.1/1", "th-core-2560-science:ว 2.1 ม.1/2", "th-core-2560-science:ว 2.1 ม.1/3", "th-core-2560-science:ว 2.1 ม.1/7"],
+      scope: "ความสัมพันธ์ของอะตอม ธาตุ และสารประกอบ สมบัติทางกายภาพของโลหะ อโลหะ กึ่งโลหะ ธาตุกัมมันตรังสี และผลของการใช้ธาตุต่อสิ่งมีชีวิต สิ่งแวดล้อม เศรษฐกิจ และสังคม" }
+  - { id: chemistry.solutions.solubility-percent, title: "สภาพละลายได้และความเข้มข้นร้อยละ", difficulty: 3, prereq: [chemistry.matter.states-changes, math.number.ratio-percent],
+      indicators: ["th-core-2560-science:ว 2.1 ม.2/4", "th-core-2560-science:ว 2.1 ม.2/5", "th-core-2560-science:ว 2.1 ม.2/6"],
+      scope: "ผลของชนิดตัวละลาย ตัวทำละลาย อุณหภูมิ และความดันต่อสภาพละลายได้ ความเข้มข้นร้อยละโดยปริมาตร โดยมวล และมวลต่อปริมาตร และการใช้สารละลายอย่างปลอดภัย" }
+  - { id: chemistry.materials.polymers-ceramics-composites, title: "พอลิเมอร์ เซรามิก และวัสดุผสม", difficulty: 2.8, prereq: [chemistry.matter.elements-compounds],
+      indicators: ["th-core-2560-science:ว 2.1 ม.3/1", "th-core-2560-science:ว 2.1 ม.3/2"],
+      scope: "สมบัติทางกายภาพและการใช้ประโยชน์ของพลาสติก ยาง เส้นใย เซรามิก และวัสดุผสม และการใช้วัสดุอย่างประหยัดและคุ้มค่า" }
+  - { id: chemistry.reactions.chemical-reactions-intro, title: "ปฏิกิริยาเคมีและกฎทรงมวล", difficulty: 3, prereq: [chemistry.matter.elements-compounds, chemistry.matter.atoms],
+      indicators: ["th-core-2560-science:ว 2.1 ม.3/3", "th-core-2560-science:ว 2.1 ม.3/4", "th-core-2560-science:ว 2.1 ม.3/5"],
+      scope: "การจัดเรียงตัวใหม่ของอะตอม สารตั้งต้นและผลิตภัณฑ์ สมการข้อความ กฎทรงมวล และปฏิกิริยาดูดความร้อนกับคายความร้อน" }
+  - { id: chemistry.reactions.everyday-reactions, title: "ปฏิกิริยาเคมีในชีวิตประจำวัน", difficulty: 3.2, prereq: [chemistry.reactions.chemical-reactions-intro],
+      indicators: ["th-core-2560-science:ว 2.1 ม.3/6", "th-core-2560-science:ว 2.1 ม.3/7", "th-core-2560-science:ว 2.1 ม.3/8"],
+      scope: "การเกิดสนิมเหล็ก กรดกับโลหะ กรดกับเบส เบสกับโลหะ การเผาไหม้ ฝนกรด การสังเคราะห์ด้วยแสง ประโยชน์และโทษของปฏิกิริยา และการออกแบบวิธีแก้ปัญหาด้วยความรู้เรื่องปฏิกิริยาเคมี" }
+  # ---------- ฟิสิกส์: ประถม (ว 2.2–2.3 ป.1–ป.6) ----------
+  - { id: physics.dynamics.forces-intro, title: "แรงรอบตัวและการวัดแรง", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 2.2 ป.3/1", "th-core-2560-science:ว 2.2 ป.3/2", "th-core-2560-science:ว 2.2 ป.4/1", "th-core-2560-science:ว 2.2 ป.4/2", "th-core-2560-science:ว 2.2 ป.5/3"],
+      scope: "การดึงและการผลักทำให้วัตถุเริ่มเคลื่อนที่ หยุด เปลี่ยนทิศ หรือเปลี่ยนรูปร่าง แรงสัมผัสกับแรงไม่สัมผัส แรงโน้มถ่วงกับน้ำหนัก และการใช้เครื่องชั่งสปริงวัดน้ำหนักและแรง" }
+  - { id: physics.magnetism.magnets, title: "แม่เหล็กและขั้วแม่เหล็ก", difficulty: 1.5, prereq: [physics.dynamics.forces-intro],
+      indicators: ["th-core-2560-science:ว 2.2 ป.3/3", "th-core-2560-science:ว 2.2 ป.3/4"],
+      scope: "วัตถุที่ถูกแม่เหล็กดึงดูดและไม่ถูกดึงดูด ขั้วเหนือขั้วใต้ ขั้วเหมือนกันผลัก ขั้วต่างกันดูด และการพยากรณ์ผลเมื่อนำขั้วแม่เหล็กเข้าใกล้กัน" }
+  - { id: physics.light.light-shadows, title: "แสง การมองเห็น และเงา", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 2.3 ป.2/1", "th-core-2560-science:ว 2.3 ป.2/2", "th-core-2560-science:ว 2.3 ป.4/1", "th-core-2560-science:ว 2.3 ป.6/7", "th-core-2560-science:ว 2.3 ป.6/8"],
+      scope: "แหล่งกำเนิดแสง แสงเคลื่อนที่เป็นเส้นตรง การมองเห็นเมื่อแสงสะท้อนจากวัตถุเข้าตา อันตรายจากแสงจ้า ตัวกลางโปร่งใส โปร่งแสง และวัตถุทึบแสง เงามืด เงามัว และแผนภาพรังสีของแสง" }
+  - { id: physics.energy.energy-electricity-intro, title: "พลังงานและไฟฟ้าในชีวิตประจำวัน", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 2.3 ป.3/1", "th-core-2560-science:ว 2.3 ป.3/2", "th-core-2560-science:ว 2.3 ป.3/3", "th-core-2560-science:ว 2.3 ม.3/9"],
+      scope: "การเปลี่ยนพลังงานรูปหนึ่งเป็นอีกรูปหนึ่ง เครื่องกำเนิดไฟฟ้า แหล่งพลังงานในการผลิตไฟฟ้า ประโยชน์และโทษของไฟฟ้า การเลือกและใช้เครื่องใช้ไฟฟ้าอย่างประหยัดและปลอดภัย" }
+  - { id: physics.waves.sound-intro, title: "เสียงรอบตัวและมลพิษทางเสียง", difficulty: 1.8, prereq: [],
+      indicators: ["th-core-2560-science:ว 2.3 ป.1/1", "th-core-2560-science:ว 2.3 ป.5/1", "th-core-2560-science:ว 2.3 ป.5/2", "th-core-2560-science:ว 2.3 ป.5/3", "th-core-2560-science:ว 2.3 ป.5/4", "th-core-2560-science:ว 2.3 ป.5/5"],
+      scope: "การเกิดเสียงจากการสั่น การเคลื่อนที่ของเสียงผ่านตัวกลางจนได้ยิน เสียงสูงเสียงต่ำ เสียงดังเสียงค่อย การวัดระดับเสียงเป็นเดซิเบล และการลดมลพิษทางเสียง (เป็นพื้นฐานก่อน physics.waves.sound)" }
+  - { id: physics.electricity.simple-circuits, title: "วงจรไฟฟ้าอย่างง่าย", difficulty: 2, prereq: [physics.energy.energy-electricity-intro],
+      indicators: ["th-core-2560-science:ว 2.3 ป.6/1", "th-core-2560-science:ว 2.3 ป.6/2", "th-core-2560-science:ว 2.3 ป.6/3", "th-core-2560-science:ว 2.3 ป.6/4", "th-core-2560-science:ว 2.3 ป.6/5", "th-core-2560-science:ว 2.3 ป.6/6"],
+      scope: "แหล่งกำเนิดไฟฟ้า สายไฟ สวิตช์ และหลอดไฟ การเขียนแผนภาพและต่อวงจร การต่อเซลล์ไฟฟ้าแบบอนุกรม และการต่อหลอดไฟแบบอนุกรมกับขนานพร้อมข้อดีและข้อจำกัด" }
+  # ---------- ฟิสิกส์: มัธยมต้น (ว 2.2–2.3 ม.1–ม.3) ----------
+  - { id: physics.thermal.expansion-heat-transfer, title: "การขยายตัวของสสารและการถ่ายโอนความร้อน", difficulty: 3, prereq: [chemistry.matter.particle-model],
+      indicators: ["th-core-2560-science:ว 2.3 ม.1/2", "th-core-2560-science:ว 2.3 ม.1/3", "th-core-2560-science:ว 2.3 ม.1/4", "th-core-2560-science:ว 2.3 ม.1/6", "th-core-2560-science:ว 2.3 ม.1/7"],
+      scope: "การใช้เทอร์มอมิเตอร์ การขยายตัวและหดตัวเมื่อได้รับหรือเสียความร้อน (รอยต่อสะพาน รางรถไฟ) การนำ การพา และการแผ่รังสีความร้อน และการออกแบบอุปกรณ์เก็บหรือระบายความร้อน" }
+  - { id: physics.fields.field-forces, title: "สนามแม่เหล็ก สนามไฟฟ้า และสนามโน้มถ่วง", difficulty: 3.5, prereq: [physics.magnetism.magnets, physics.dynamics.forces],
+      indicators: ["th-core-2560-science:ว 2.2 ม.2/11", "th-core-2560-science:ว 2.2 ม.2/12", "th-core-2560-science:ว 2.2 ม.2/13"],
+      scope: "แหล่งของสนามทั้งสามชนิด ทิศของแรงที่กระทำต่อวัตถุในแต่ละสนาม แผนภาพแรง และขนาดของแรงที่ลดลงเมื่อระยะห่างจากแหล่งของสนามเพิ่มขึ้น (เชิงคุณภาพ)" }
+  - { id: physics.dynamics.free-body-practice, title: "แผนภาพแรงในสถานการณ์ต่าง ๆ", difficulty: 5, prereq: [physics.dynamics.friction, physics.matter.pressure-fluids],
+      indicators: ["th-core-2560-science:ว 2.2 ป.5/5", "th-core-2560-science:ว 2.2 ม.2/5", "th-core-2560-science:ว 2.2 ม.2/8"],
+      scope: "ฝึกเขียนแผนภาพแรงเมื่อมีแรงเสียดทานร่วมกับแรงอื่น และแรงที่กระทำต่อวัตถุในของเหลว (น้ำหนัก แรงพยุง แรงดึง) แล้วใช้แผนภาพบอกแรงลัพธ์และการเคลื่อนที่" }
+  - { id: physics.waves.em-spectrum-intro, title: "คลื่นแม่เหล็กไฟฟ้าเบื้องต้น", difficulty: 4, prereq: [physics.waves.wave-basics],
+      indicators: ["th-core-2560-science:ว 2.3 ม.3/11", "th-core-2560-science:ว 2.3 ม.3/12"],
+      scope: "สเปกตรัมคลื่นแม่เหล็กไฟฟ้าจากคลื่นวิทยุถึงรังสีแกมมา ความถี่และความยาวคลื่นของแต่ละช่วง การใช้ประโยชน์ และอันตรายในชีวิตประจำวัน" }
+  - { id: physics.electricity.electronics-intro, title: "ชิ้นส่วนอิเล็กทรอนิกส์และแผนภาพวงจร", difficulty: 5, prereq: [physics.electricity.circuits],
+      indicators: ["th-core-2560-science:ว 2.3 ม.3/5", "th-core-2560-science:ว 2.3 ม.3/6", "th-core-2560-science:ว 2.3 ม.3/7"],
+      scope: "สัญลักษณ์และแผนภาพวงจรที่มีตัวต้านทานแบบอนุกรมและขนาน ตัวต้านทานปรับค่าได้ ไดโอด ทรานซิสเตอร์ ตัวเก็บประจุ แอลอีดี และการต่อวงจรอิเล็กทรอนิกส์อย่างง่าย" }
+  - { id: physics.light.optics-eye, title: "ปรากฏการณ์ของแสง ทัศนอุปกรณ์ และความสว่าง", difficulty: 5.5, prereq: [physics.light.refraction, physics.light.reflection],
+      indicators: ["th-core-2560-science:ว 2.3 ม.3/15", "th-core-2560-science:ว 2.3 ม.3/17", "th-core-2560-science:ว 2.3 ม.3/18", "th-core-2560-science:ว 2.3 ม.3/19", "th-core-2560-science:ว 2.3 ม.3/20", "th-core-2560-science:ว 2.3 ม.3/21"],
+      scope: "การกระจายแสงขาวผ่านปริซึม รุ้ง มิราจ การทำงานของแว่นขยาย กล้องถ่ายรูป กล้องจุลทรรศน์ กล้องโทรทรรศน์ ภาพที่เกิดบนจอตาและการแก้สายตา ความสว่างกับหน่วยลักซ์ การวัดความสว่าง และการจัดแสงให้เหมาะกับงาน" }
+  - { id: physics.energy.simple-machines, title: "เครื่องกลอย่างง่าย", difficulty: 5, prereq: [physics.rotation.torque, physics.energy.work],
+      indicators: ["th-core-2560-science:ว 2.3 ม.2/2", "th-core-2560-science:ว 2.3 ม.2/3"],
+      scope: "คาน รอก พื้นเอียง ล้อและเพลา ลิ่ม สกรู หลักการได้เปรียบเชิงกลจากงานและโมเมนต์ และการประยุกต์ใช้ในชีวิตประจำวัน" }
+  # ---------- โลกและอวกาศ: ประถม (ว 3.1–3.2 ป.1–ป.6) ----------
+  - { id: earthscience.astronomy.sky-day-night, title: "ท้องฟ้า กลางวันกลางคืน และทิศ", difficulty: 1.2, prereq: [],
+      indicators: ["th-core-2560-science:ว 3.1 ป.1/1", "th-core-2560-science:ว 3.1 ป.1/2", "th-core-2560-science:ว 3.1 ป.3/1", "th-core-2560-science:ว 3.1 ป.3/2", "th-core-2560-science:ว 3.1 ป.3/3"],
+      scope: "ดวงอาทิตย์ ดวงจันทร์ และดาวที่เห็นในเวลากลางวันและกลางคืน เหตุที่ไม่เห็นดาวตอนกลางวัน เส้นทางขึ้นตกของดวงอาทิตย์ การหมุนรอบตัวเองของโลกกับกลางวันกลางคืน การกำหนดทิศ และประโยชน์ของดวงอาทิตย์" }
+  - { id: earthscience.geology.rocks-soil, title: "หินและดินรอบตัว", difficulty: 1.2, prereq: [],
+      indicators: ["th-core-2560-science:ว 3.2 ป.1/1", "th-core-2560-science:ว 3.2 ป.2/1", "th-core-2560-science:ว 3.2 ป.2/2"],
+      scope: "ลักษณะภายนอกของหิน (สี เนื้อหิน ความแข็ง) ส่วนประกอบของดิน ดินร่วน ดินเหนียว ดินทราย และการใช้ประโยชน์จากดิน" }
+  - { id: earthscience.atmosphere.air-wind, title: "อากาศและลม", difficulty: 1.2, prereq: [],
+      indicators: ["th-core-2560-science:ว 3.2 ป.3/1", "th-core-2560-science:ว 3.2 ป.3/2", "th-core-2560-science:ว 3.2 ป.3/3", "th-core-2560-science:ว 3.2 ป.3/4"],
+      scope: "ส่วนประกอบและความสำคัญของอากาศ มลพิษทางอากาศ การเกิดลมจากความต่างของอุณหภูมิ และประโยชน์กับโทษของลม" }
+  - { id: earthscience.astronomy.moon-solar-system, title: "ดวงจันทร์ ระบบสุริยะ และดาวฤกษ์บนท้องฟ้า", difficulty: 1.8, prereq: [earthscience.astronomy.sky-day-night],
+      indicators: ["th-core-2560-science:ว 3.1 ป.4/1", "th-core-2560-science:ว 3.1 ป.4/2", "th-core-2560-science:ว 3.1 ป.4/3", "th-core-2560-science:ว 3.1 ป.5/1", "th-core-2560-science:ว 3.1 ป.5/2"],
+      scope: "เส้นทางขึ้นตกและรูปร่างปรากฏของดวงจันทร์ องค์ประกอบของระบบสุริยะและคาบการโคจรของดาวเคราะห์ ดาวเคราะห์กับดาวฤกษ์ และการใช้แผนที่ดาวหากลุ่มดาวในรอบปี" }
+  - { id: earthscience.hydrosphere.water-cycle, title: "น้ำ วัฏจักรน้ำ และหยาดน้ำฟ้า", difficulty: 1.8, prereq: [earthscience.atmosphere.air-wind],
+      indicators: ["th-core-2560-science:ว 3.2 ป.5/1", "th-core-2560-science:ว 3.2 ป.5/2", "th-core-2560-science:ว 3.2 ป.5/3", "th-core-2560-science:ว 3.2 ป.5/4", "th-core-2560-science:ว 3.2 ป.5/5"],
+      scope: "ปริมาณน้ำในแหล่งต่าง ๆ และน้ำจืดที่ใช้ได้ การใช้น้ำอย่างประหยัด วัฏจักรน้ำ การเกิดเมฆ หมอก น้ำค้าง น้ำค้างแข็ง ฝน หิมะ และลูกเห็บ" }
+  - { id: earthscience.astronomy.eclipses-space-tech, title: "สุริยุปราคา จันทรุปราคา และเทคโนโลยีอวกาศ", difficulty: 2.2, prereq: [earthscience.astronomy.moon-solar-system],
+      indicators: ["th-core-2560-science:ว 3.1 ป.6/1", "th-core-2560-science:ว 3.1 ป.6/2", "th-core-2560-science:ว 3.1 ม.3/4"],
+      scope: "การเกิดและการเปรียบเทียบสุริยุปราคากับจันทรุปราคาด้วยแบบจำลอง พัฒนาการของเทคโนโลยีอวกาศ ดาวเทียมในชีวิตประจำวัน และโครงการสำรวจอวกาศ" }
+  - { id: earthscience.geology.rock-cycle-fossils, title: "วัฏจักรหิน แร่ และซากดึกดำบรรพ์", difficulty: 2.2, prereq: [earthscience.geology.rocks-soil],
+      indicators: ["th-core-2560-science:ว 3.2 ป.6/1", "th-core-2560-science:ว 3.2 ป.6/2", "th-core-2560-science:ว 3.2 ป.6/3"],
+      scope: "หินอัคนี หินตะกอน หินแปร และวัฏจักรหิน การใช้ประโยชน์จากหินและแร่ การเกิดซากดึกดำบรรพ์และการคาดคะเนสภาพแวดล้อมในอดีต" }
+  - { id: earthscience.atmosphere.monsoons-thai-seasons, title: "ลมบก ลมทะเล มรสุม และฤดูของประเทศไทย", difficulty: 2.2, prereq: [earthscience.atmosphere.air-wind],
+      indicators: ["th-core-2560-science:ว 3.2 ป.6/4", "th-core-2560-science:ว 3.2 ป.6/5"],
+      scope: "การเกิดลมบก ลมทะเล และมรสุมจากแบบจำลอง ผลต่อสิ่งมีชีวิตและสิ่งแวดล้อม และมรสุมกับฤดูร้อน ฤดูฝน ฤดูหนาวของประเทศไทย" }
+  - { id: earthscience.atmosphere.greenhouse-climate-intro, title: "ปรากฏการณ์เรือนกระจกและการเปลี่ยนแปลงภูมิอากาศเบื้องต้น", difficulty: 2.8, prereq: [earthscience.atmosphere.air-wind],
+      indicators: ["th-core-2560-science:ว 3.2 ป.6/8", "th-core-2560-science:ว 3.2 ป.6/9", "th-core-2560-science:ว 3.2 ม.1/6", "th-core-2560-science:ว 3.2 ม.1/7"],
+      scope: "แก๊สเรือนกระจกกับการกักเก็บความร้อน ผลต่อสิ่งมีชีวิต สถานการณ์และผลกระทบของการเปลี่ยนแปลงภูมิอากาศโลก และการปฏิบัติตนเพื่อลดแก๊สเรือนกระจก" }
+  # ---------- โลกและอวกาศ: มัธยมต้น (ว 3.1–3.2 ม.1–ม.3) ----------
+  - { id: earthscience.atmosphere.atmosphere-layers, title: "ชั้นบรรยากาศและความดันอากาศ", difficulty: 2.5, prereq: [earthscience.atmosphere.air-wind, physics.dynamics.forces-intro],
+      indicators: ["th-core-2560-science:ว 2.2 ม.1/1", "th-core-2560-science:ว 3.2 ม.1/1"],
+      scope: "การแบ่งชั้นบรรยากาศตามอุณหภูมิ ประโยชน์ของแต่ละชั้น และความดันอากาศที่ลดลงเมื่อสูงขึ้นจากพื้นโลกด้วยแบบจำลอง" }
+  - { id: earthscience.atmosphere.weather-forecasting, title: "ลมฟ้าอากาศ พายุ และการพยากรณ์อากาศ", difficulty: 3, prereq: [earthscience.atmosphere.atmosphere-layers, earthscience.hydrosphere.water-cycle],
+      indicators: ["th-core-2560-science:ว 3.2 ม.1/2", "th-core-2560-science:ว 3.2 ม.1/3", "th-core-2560-science:ว 3.2 ม.1/4", "th-core-2560-science:ว 3.2 ม.1/5"],
+      scope: "องค์ประกอบของลมฟ้าอากาศ (อุณหภูมิ ความชื้น ความกดอากาศ ลม เมฆ หยาดน้ำฟ้า) และปัจจัยที่ทำให้เปลี่ยน พายุฝนฟ้าคะนองกับพายุหมุนเขตร้อน การพยากรณ์อากาศอย่างง่าย และการใช้คำพยากรณ์" }
+  - { id: earthscience.resources.energy-resources, title: "เชื้อเพลิงซากดึกดำบรรพ์และพลังงานทดแทน", difficulty: 3, prereq: [earthscience.geology.rock-cycle-fossils, physics.energy.energy-electricity-intro],
+      indicators: ["th-core-2560-science:ว 3.2 ม.2/1", "th-core-2560-science:ว 3.2 ม.2/2", "th-core-2560-science:ว 3.2 ม.2/3"],
+      scope: "การเกิด สมบัติ และการใช้ถ่านหิน ปิโตรเลียม และแก๊สธรรมชาติ ผลกระทบจากการใช้ และข้อดีข้อจำกัดของพลังงานแสงอาทิตย์ ลม น้ำ ความร้อนใต้พิภพ ชีวมวล เพื่อเลือกใช้ในท้องถิ่น" }
+  - { id: earthscience.geology.earth-structure-surface, title: "โครงสร้างโลก ดิน และกระบวนการเปลี่ยนแปลงผิวโลก", difficulty: 3, prereq: [earthscience.geology.rock-cycle-fossils],
+      indicators: ["th-core-2560-science:ว 3.2 ม.2/4", "th-core-2560-science:ว 3.2 ม.2/5", "th-core-2560-science:ว 3.2 ม.2/6", "th-core-2560-science:ว 3.2 ม.2/7"],
+      scope: "โครงสร้างภายในโลกตามองค์ประกอบทางเคมี การผุพังอยู่กับที่ การกร่อน การสะสมตัวของตะกอน ชั้นหน้าตัดดิน กระบวนการเกิดดิน และการตรวจวัดสมบัติดิน (เนื้อดิน ความชื้น pH ธาตุอาหาร)" }
+  - { id: earthscience.hydrosphere.water-resources, title: "แหล่งน้ำผิวดิน น้ำใต้ดิน และการใช้น้ำอย่างยั่งยืน", difficulty: 3, prereq: [earthscience.hydrosphere.water-cycle, earthscience.geology.earth-structure-surface],
+      indicators: ["th-core-2560-science:ว 3.2 ม.2/8", "th-core-2560-science:ว 3.2 ม.2/9"],
+      scope: "ปัจจัยและกระบวนการเกิดแหล่งน้ำผิวดินและน้ำใต้ดิน และการวางแผนใช้น้ำอย่างยั่งยืนในท้องถิ่น" }
+  - { id: earthscience.hazards.natural-hazards, title: "ภัยธรรมชาติและธรณีพิบัติภัย", difficulty: 3, prereq: [earthscience.geology.earth-structure-surface, earthscience.hydrosphere.water-resources],
+      indicators: ["th-core-2560-science:ว 3.2 ป.6/6", "th-core-2560-science:ว 3.2 ป.6/7", "th-core-2560-science:ว 3.2 ม.2/10"],
+      scope: "ลักษณะ กระบวนการเกิด และผลกระทบของน้ำท่วม การกัดเซาะชายฝั่ง ดินถล่ม หลุมยุบ แผ่นดินทรุด แผ่นดินไหว และสึนามิ และการเฝ้าระวังและปฏิบัติตนให้ปลอดภัย" }
+  - { id: earthscience.astronomy.seasons-moon-tides, title: "ฤดูกาล ข้างขึ้นข้างแรม และน้ำขึ้นน้ำลง", difficulty: 3.5, prereq: [earthscience.astronomy.moon-solar-system, physics.fields.field-forces],
+      indicators: ["th-core-2560-science:ว 3.1 ม.3/2", "th-core-2560-science:ว 3.1 ม.3/3"],
+      scope: "แกนโลกเอียงกับการเกิดฤดูและการเคลื่อนที่ปรากฏของดวงอาทิตย์ การเกิดข้างขึ้นข้างแรม เวลาขึ้นตกของดวงจันทร์ และน้ำขึ้นน้ำลง" }
+  # ---------- เทคโนโลยี: วิทยาการคำนวณ (ว 4.2) ----------
+  - { id: technology.computing.algorithms-intro, title: "ลำดับขั้นตอนและอัลกอริทึมอย่างง่าย", difficulty: 1, prereq: [],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/1", "th-core-2560-science:ว 4.2 ป.1/2", "th-core-2560-science:ว 4.2 ป.2/1", "th-core-2560-science:ว 4.2 ป.3/1"],
+      scope: "การแก้ปัญหาด้วยการลองผิดลองถูกและการเปรียบเทียบ การเขียนลำดับขั้นตอนการทำงานด้วยภาพ สัญลักษณ์ หรือข้อความ และอัลกอริทึมในชีวิตประจำวัน" }
+  - { id: technology.computing.digital-data-basics, title: "การสร้าง จัดเก็บ และนำเสนอข้อมูลด้วยเทคโนโลยี", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/4", "th-core-2560-science:ว 4.2 ป.2/3", "th-core-2560-science:ว 4.2 ป.3/4", "th-core-2560-science:ว 4.2 ป.4/4", "th-core-2560-science:ว 4.2 ป.5/4"],
+      scope: "การสร้างไฟล์ การตั้งชื่อ การจัดหมวดหมู่ในโฟลเดอร์ การค้นหาและเรียกใช้ไฟล์ การรวบรวม ประมวลผล ประเมิน และนำเสนอข้อมูลด้วยซอฟต์แวร์และบริการบนอินเทอร์เน็ต" }
+  - { id: technology.computing.safe-ict-primary, title: "การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย (ประถม)", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/5", "th-core-2560-science:ว 4.2 ป.2/4", "th-core-2560-science:ว 4.2 ป.3/5", "th-core-2560-science:ว 4.2 ป.4/5", "th-core-2560-science:ว 4.2 ป.5/5", "th-core-2560-science:ว 4.2 ป.6/4"],
+      scope: "ข้อตกลงในการใช้คอมพิวเตอร์ร่วมกัน การดูแลอุปกรณ์ ข้อมูลส่วนตัว รหัสผ่าน มารยาท สิทธิและหน้าที่ การเคารพสิทธิผู้อื่น และการแจ้งผู้เกี่ยวข้องเมื่อพบข้อมูลหรือบุคคลที่ไม่เหมาะสม" }
+  - { id: technology.computing.programming-intro, title: "เขียนโปรแกรมอย่างง่ายและหาข้อผิดพลาด", difficulty: 1.5, prereq: [technology.computing.algorithms-intro],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/3", "th-core-2560-science:ว 4.2 ป.2/2", "th-core-2560-science:ว 4.2 ป.3/2"],
+      scope: "การสั่งงานตัวละครหรือหุ่นยนต์ตามลำดับคำสั่งด้วยบัตรคำสั่งหรือโปรแกรมแบบบล็อก การทดลองรันและไล่หาจุดที่ผิด" }
+  - { id: technology.computing.internet-search, title: "การค้นหาข้อมูลและประเมินความน่าเชื่อถือ", difficulty: 2, prereq: [technology.computing.digital-data-basics],
+      indicators: ["th-core-2560-science:ว 4.2 ป.3/3", "th-core-2560-science:ว 4.2 ป.4/3", "th-core-2560-science:ว 4.2 ป.5/3", "th-core-2560-science:ว 4.2 ป.6/3", "th-core-2560-science:ว 4.2 ม.3/3"],
+      scope: "การใช้คำค้นและตัวดำเนินการค้นหา การติดต่อสื่อสารและทำงานร่วมกันออนไลน์ การตรวจแหล่งที่มา วันที่ และผู้เขียน ข่าวปลอม เหตุผลวิบัติ และผลกระทบจากข่าวสารที่ผิด" }
+  - { id: technology.computing.logical-reasoning, title: "เหตุผลเชิงตรรกะในการแก้ปัญหา", difficulty: 2, prereq: [technology.computing.algorithms-intro],
+      indicators: ["th-core-2560-science:ว 4.2 ป.4/1", "th-core-2560-science:ว 4.2 ป.5/1", "th-core-2560-science:ว 4.2 ป.6/1"],
+      scope: "การใช้เงื่อนไข \"ถ้า...แล้ว\" การอธิบายการทำงาน การคาดการณ์ผลลัพธ์ และการออกแบบวิธีแก้ปัญหาในชีวิตประจำวันอย่างมีเหตุผล" }
+  - { id: technology.computing.programming-logic, title: "โปรแกรมที่มีเงื่อนไข การทำซ้ำ และตัวแปร", difficulty: 2.5, prereq: [technology.computing.programming-intro, technology.computing.logical-reasoning],
+      indicators: ["th-core-2560-science:ว 4.2 ป.4/2", "th-core-2560-science:ว 4.2 ป.5/2", "th-core-2560-science:ว 4.2 ป.6/2"],
+      scope: "การออกแบบและเขียนโปรแกรมแบบบล็อกที่ใช้การวนซ้ำ เงื่อนไข และตัวแปร เพื่อแก้ปัญหาในชีวิตประจำวัน พร้อมการตรวจหาและแก้ข้อผิดพลาด" }
+  - { id: technology.computing.computational-thinking, title: "แนวคิดเชิงนามธรรมและแนวคิดเชิงคำนวณ", difficulty: 3, prereq: [technology.computing.logical-reasoning],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/1", "th-core-2560-science:ว 4.2 ม.2/1"],
+      scope: "การแยกปัญหาเป็นส่วนย่อย การหารูปแบบ การคัดเฉพาะสาระสำคัญ (แนวคิดเชิงนามธรรม) และการออกแบบอัลกอริทึมด้วยรหัสลำลองหรือผังงานเพื่อแก้ปัญหาในชีวิตจริง" }
+  - { id: technology.computing.programming-functions, title: "เขียนโปรแกรมแก้ปัญหาด้วยตรรกะและฟังก์ชัน", difficulty: 3.5, prereq: [technology.computing.programming-logic, technology.computing.computational-thinking, math.algebra.linear-eq],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/2", "th-core-2560-science:ว 4.2 ม.2/2"],
+      scope: "การเขียนโปรแกรมด้วยภาษาข้อความ (เช่น Python) แก้โจทย์คณิตศาสตร์และวิทยาศาสตร์ ตัวดำเนินการตรรกะ และการสร้างและเรียกใช้ฟังก์ชัน" }
+  - { id: technology.computing.data-processing, title: "การรวบรวม ประมวลผล และนำเสนอข้อมูล", difficulty: 3, prereq: [technology.computing.digital-data-basics, math.stats.data-display],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/3", "th-core-2560-science:ว 4.2 ม.3/2"],
+      scope: "การเก็บข้อมูลปฐมภูมิ การจัดการข้อมูลด้วยตารางคำนวณ การประมวลผล ประเมินผล และการนำเสนอข้อมูลและสารสนเทศให้ตรงวัตถุประสงค์" }
+  - { id: technology.computing.computer-systems, title: "ระบบคอมพิวเตอร์และเทคโนโลยีการสื่อสาร", difficulty: 3, prereq: [technology.computing.digital-data-basics],
+      indicators: ["th-core-2560-science:ว 4.2 ม.2/3"],
+      scope: "ฮาร์ดแวร์ ซอฟต์แวร์ และผู้ใช้ หน่วยรับเข้า ประมวลผล ความจำ และส่งออก การแทนข้อมูลด้วยเลขฐานสอง เครือข่ายคอมพิวเตอร์และอินเทอร์เน็ต" }
+  - { id: technology.computing.responsible-ict, title: "การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย มีจริยธรรม และถูกกฎหมาย", difficulty: 3, prereq: [technology.computing.safe-ict-primary],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/4", "th-core-2560-science:ว 4.2 ม.2/4", "th-core-2560-science:ว 4.2 ม.3/4", "th-core-2560-science:ว 4.2 ม.6/1"],
+      scope: "การใช้สื่อและแหล่งข้อมูลตามข้อตกลง สัญญาอนุญาตครีเอทีฟคอมมอนส์ ลิขสิทธิ์และการใช้งานโดยชอบธรรม พ.ร.บ.คอมพิวเตอร์ ความปลอดภัยในการแบ่งปันข้อมูล และผลของเทคโนโลยีสารสนเทศต่ออาชีพ สังคม และวัฒนธรรม" }
+  - { id: technology.computing.app-development, title: "การพัฒนาแอปพลิเคชันและโครงงานเชิงคำนวณ", difficulty: 4.5, prereq: [technology.computing.programming-functions, technology.computing.data-processing],
+      indicators: ["th-core-2560-science:ว 4.2 ม.3/1", "th-core-2560-science:ว 4.2 ม.4/1"],
+      scope: "การพัฒนาแอปพลิเคชันที่บูรณาการกับวิชาอื่น (วิเคราะห์ปัญหา ออกแบบ เขียนโปรแกรม ทดสอบ ปรับปรุง) และการทำโครงงานที่ใช้แนวคิดเชิงคำนวณกับปัญหาในชีวิตจริง" }
+  - { id: technology.computing.digital-innovation, title: "วิทยาการคอมพิวเตอร์และสื่อดิจิทัลเพื่อเพิ่มมูลค่า", difficulty: 5, prereq: [technology.computing.app-development],
+      indicators: ["th-core-2560-science:ว 4.2 ม.5/1"],
+      scope: "การรวบรวมและวิเคราะห์ข้อมูล และการใช้ความรู้ด้านวิทยาการคอมพิวเตอร์ สื่อดิจิทัล และเทคโนโลยีสารสนเทศ แก้ปัญหาหรือเพิ่มมูลค่าให้บริการหรือผลิตภัณฑ์" }
+  # ---------- เทคโนโลยี: การออกแบบและเทคโนโลยี (ว 4.1 ม.1–ม.5) ----------
+  - { id: technology.design.technology-concepts, title: "แนวคิดหลักของเทคโนโลยี", difficulty: 3, prereq: [],
+      indicators: ["th-core-2560-science:ว 4.1 ม.1/1", "th-core-2560-science:ว 4.1 ม.2/1", "th-core-2560-science:ว 4.1 ม.3/1", "th-core-2560-science:ว 4.1 ม.4/1"],
+      scope: "ระบบทางเทคโนโลยี (ตัวป้อน กระบวนการ ผลผลิต ข้อมูลย้อนกลับ) สาเหตุและปัจจัยที่ทำให้เทคโนโลยีเปลี่ยนแปลง การคาดการณ์แนวโน้ม ความสัมพันธ์กับวิทยาศาสตร์และคณิตศาสตร์ และผลกระทบต่อชีวิต สังคม เศรษฐกิจ และสิ่งแวดล้อม" }
+  - { id: technology.design.materials-tools, title: "วัสดุ เครื่องมือ กลไก ไฟฟ้า และอิเล็กทรอนิกส์สำหรับงานช่าง", difficulty: 3.5, prereq: [chemistry.materials.material-properties, physics.electricity.simple-circuits],
+      indicators: ["th-core-2560-science:ว 4.1 ม.1/5", "th-core-2560-science:ว 4.1 ม.2/5", "th-core-2560-science:ว 4.1 ม.3/5", "th-core-2560-science:ว 4.1 ม.4/5"],
+      scope: "การเลือกและใช้วัสดุ อุปกรณ์ และเครื่องมือช่างอย่างปลอดภัย กลไก (คาน ล้อและเพลา รอก เฟือง ลูกเบี้ยว) วงจรไฟฟ้าและอิเล็กทรอนิกส์อย่างง่ายในชิ้นงาน และเทคโนโลยีที่ซับซ้อนขึ้นเช่นไมโครคอนโทรลเลอร์" }
+  - { id: technology.design.design-process, title: "กระบวนการออกแบบเชิงวิศวกรรม", difficulty: 3, prereq: [technology.design.technology-concepts],
+      indicators: ["th-core-2560-science:ว 4.1 ม.1/2", "th-core-2560-science:ว 4.1 ม.1/3", "th-core-2560-science:ว 4.1 ม.1/4", "th-core-2560-science:ว 4.1 ม.2/2", "th-core-2560-science:ว 4.1 ม.2/3", "th-core-2560-science:ว 4.1 ม.2/4"],
+      scope: "ระบุปัญหาและสรุปกรอบของปัญหา รวบรวมข้อมูลและแนวคิด ออกแบบวิธีแก้ปัญหา วางแผนและดำเนินการ ทดสอบ ประเมินผล ปรับปรุง และนำเสนอผล" }
+  - { id: technology.design.design-process-advanced, title: "การออกแบบเชิงวิศวกรรมสำหรับปัญหาซับซ้อน", difficulty: 4.5, prereq: [technology.design.design-process, technology.design.materials-tools],
+      indicators: ["th-core-2560-science:ว 4.1 ม.3/2", "th-core-2560-science:ว 4.1 ม.3/3", "th-core-2560-science:ว 4.1 ม.3/4", "th-core-2560-science:ว 4.1 ม.4/2", "th-core-2560-science:ว 4.1 ม.4/3", "th-core-2560-science:ว 4.1 ม.4/4"],
+      scope: "ปัญหาของชุมชนและสังคมที่มีหลายเงื่อนไข ทรัพย์สินทางปัญญา การนำเสนอด้วยเทคนิคหลากหลายและซอฟต์แวร์ช่วยออกแบบ การให้เหตุผลข้อบกพร่อง และการพัฒนาต่อยอด" }
+  - { id: technology.design.technology-project, title: "โครงงานเทคโนโลยี", difficulty: 5, prereq: [technology.design.design-process-advanced],
+      indicators: ["th-core-2560-science:ว 4.1 ม.5/1"],
+      scope: "การประยุกต์ความรู้จากศาสตร์ต่าง ๆ และทรัพยากรทำโครงงานเพื่อแก้ปัญหาหรือพัฒนางาน ตั้งแต่เลือกหัวข้อ วางแผน ลงมือ ทดสอบ จนถึงนำเสนอ" }
+
+# ตัวชี้วัดแกนกลาง ม.4–6 ที่ควรแนบกับหัวข้อใน docs/phase6/proposals-science-additional.yaml (ใช้ id เดียวกัน)
+extend:
+  - { id: biology.ecology.biomes-succession, indicators: ["th-core-2560-science:ว 1.1 ม.4/1", "th-core-2560-science:ว 1.1 ม.4/2"] }
+  - { id: biology.ecology.populations, indicators: ["th-core-2560-science:ว 1.1 ม.4/3"] }
+  - { id: biology.ecology.environmental-issues, indicators: ["th-core-2560-science:ว 1.1 ม.4/4"] }
+  - { id: biology.cells.membrane-transport, indicators: ["th-core-2560-science:ว 1.2 ม.4/1"] }
+  - { id: biology.animals.immunity, indicators: ["th-core-2560-science:ว 1.2 ม.4/5", "th-core-2560-science:ว 1.2 ม.4/6", "th-core-2560-science:ว 1.2 ม.4/7"] }
+  - { id: biology.plants.hormones-responses, indicators: ["th-core-2560-science:ว 1.2 ม.4/11", "th-core-2560-science:ว 1.2 ม.4/12"] }
+  - { id: biology.genetics.chromosomes-dna, indicators: ["th-core-2560-science:ว 1.3 ม.4/1", "th-core-2560-science:ว 1.3 ม.4/2"] }
+  - { id: biology.genetics.mutation-biotechnology, indicators: ["th-core-2560-science:ว 1.3 ม.4/3", "th-core-2560-science:ว 1.3 ม.4/4", "th-core-2560-science:ว 1.3 ม.4/5"] }
+  - { id: biology.evolution.evolution, indicators: ["th-core-2560-science:ว 1.3 ม.4/6"] }
+  - { id: chemistry.matter.atomic-structure, indicators: ["th-core-2560-science:ว 2.1 ม.5/2"] }
+  - { id: chemistry.matter.periodic-trends, indicators: ["th-core-2560-science:ว 2.1 ม.5/5", "th-core-2560-science:ว 2.1 ม.5/6", "th-core-2560-science:ว 2.1 ม.5/7"] }
+  - { id: chemistry.bonding.ionic, indicators: ["th-core-2560-science:ว 2.1 ม.5/1", "th-core-2560-science:ว 2.1 ม.5/12", "th-core-2560-science:ว 2.1 ม.5/13"] }
+  - { id: chemistry.bonding.polarity-intermolecular, indicators: ["th-core-2560-science:ว 2.1 ม.5/9", "th-core-2560-science:ว 2.1 ม.5/10", "th-core-2560-science:ว 2.1 ม.5/11", "th-core-2560-science:ว 2.1 ม.5/17"] }
+  - { id: chemistry.organic.structures-naming, indicators: ["th-core-2560-science:ว 2.1 ม.5/14", "th-core-2560-science:ว 2.1 ม.5/16"] }
+  - { id: chemistry.organic.polymers, indicators: ["th-core-2560-science:ว 2.1 ม.5/15", "th-core-2560-science:ว 2.1 ม.5/18", "th-core-2560-science:ว 2.1 ม.5/19"] }
+  - { id: chemistry.stoichiometry.reactions, indicators: ["th-core-2560-science:ว 2.1 ม.5/20"] }
+  - { id: chemistry.kinetics.reaction-rates, indicators: ["th-core-2560-science:ว 2.1 ม.5/21", "th-core-2560-science:ว 2.1 ม.5/22"] }
+  - { id: chemistry.redox.redox-reactions, indicators: ["th-core-2560-science:ว 2.1 ม.5/23"] }
+  - { id: physics.nuclear.radioactivity, indicators: ["th-core-2560-science:ว 2.1 ม.5/24", "th-core-2560-science:ว 2.1 ม.5/25"] }
+  - { id: physics.nuclear.nuclear-energy-particles, indicators: ["th-core-2560-science:ว 2.2 ม.5/10", "th-core-2560-science:ว 2.3 ม.5/1"] }
+  - { id: physics.magnetism.induction-ac, indicators: ["th-core-2560-science:ว 2.2 ม.5/9"] }
+  - { id: physics.electricity.emf-sources, indicators: ["th-core-2560-science:ว 2.3 ม.5/2"] }
+  - { id: physics.waves.resonance-standing-waves, indicators: ["th-core-2560-science:ว 2.3 ม.5/4"] }
+  - { id: physics.waves.sound-properties, indicators: ["th-core-2560-science:ว 2.3 ม.5/5", "th-core-2560-science:ว 2.3 ม.5/6", "th-core-2560-science:ว 2.3 ม.5/7", "th-core-2560-science:ว 2.3 ม.5/8"] }
+  - { id: physics.light.colour-atmospheric-optics, indicators: ["th-core-2560-science:ว 2.3 ม.5/9", "th-core-2560-science:ว 2.3 ม.5/10"] }
+  - { id: physics.waves.electromagnetic-waves, indicators: ["th-core-2560-science:ว 2.3 ม.5/11", "th-core-2560-science:ว 2.3 ม.5/12"] }
+  - { id: earthscience.astronomy.universe-galaxies, indicators: ["th-core-2560-science:ว 3.1 ม.6/1", "th-core-2560-science:ว 3.1 ม.6/2", "th-core-2560-science:ว 3.1 ม.6/3"] }
+  - { id: earthscience.astronomy.star-formation-energy, indicators: ["th-core-2560-science:ว 3.1 ม.6/4"] }
+  - { id: earthscience.astronomy.stellar-properties, indicators: ["th-core-2560-science:ว 3.1 ม.6/5", "th-core-2560-science:ว 3.1 ม.6/6", "th-core-2560-science:ว 3.1 ม.6/7"] }
+  - { id: earthscience.astronomy.solar-system, indicators: ["th-core-2560-science:ว 3.1 ม.6/8", "th-core-2560-science:ว 3.1 ม.6/9"] }
+  - { id: earthscience.astronomy.space-exploration, indicators: ["th-core-2560-science:ว 3.1 ม.6/10"] }
+  - { id: earthscience.geology.plate-tectonics, indicators: ["th-core-2560-science:ว 3.2 ม.6/1", "th-core-2560-science:ว 3.2 ม.6/2", "th-core-2560-science:ว 3.2 ม.6/3"] }
+  - { id: earthscience.geology.geohazards, indicators: ["th-core-2560-science:ว 3.2 ม.6/4", "th-core-2560-science:ว 3.2 ม.6/5", "th-core-2560-science:ว 3.2 ม.6/6"] }
+  - { id: earthscience.atmosphere.energy-balance, indicators: ["th-core-2560-science:ว 3.2 ม.6/7"] }
+  - { id: earthscience.atmosphere.global-circulation, indicators: ["th-core-2560-science:ว 3.2 ม.6/8", "th-core-2560-science:ว 3.2 ม.6/9", "th-core-2560-science:ว 3.2 ม.6/10"] }
+  - { id: earthscience.ocean.ocean-circulation, indicators: ["th-core-2560-science:ว 3.2 ม.6/11", "th-core-2560-science:ว 3.2 ม.6/12"] }
+  - { id: earthscience.atmosphere.climate-change, indicators: ["th-core-2560-science:ว 3.2 ม.6/13"] }
+  - { id: earthscience.atmosphere.clouds-fronts-forecasting, indicators: ["th-core-2560-science:ว 3.2 ม.6/14"] }
