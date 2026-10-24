@@ -1,0 +1,382 @@
+# สารานุกรมและแหล่งอ้างอิงเปิดสำหรับคลังรู้
+#
+# ตรวจสัญญาอนุญาตจากหน้าของแหล่งเองทุกแหล่งเมื่อ 2026-10-24 (ดู evidence_url)
+# reuse ตัดสินตาม ADR 0001 (docs/decisions/0001-non-commercial-and-licensing.md) และใบอนุญาตเริ่มต้นของหัวข้อ CC-BY-SA-4.0
+#   adapt     = ดัดแปลงข้อความมาใส่บทเรียนที่เป็น CC-BY-SA-4.0 ได้ (ต้องใส่ adapted_from)
+#   link-only = ใช้เป็นลิงก์ "อ่านเพิ่มเติม" หรือฝัง (embed) เท่านั้น ห้ามคัดลอกหรือดัดแปลงข้อความ
+# แหล่ง NC และ NC-SA ตั้งเป็น link-only เพราะงานดัดแปลงต้องเป็น CC-BY-NC(-SA) ซึ่งเข้ากับ CC-BY-SA ไม่ได้
+# ยกเว้นหัวข้อหรือโจทย์นั้นเลือกใช้ใบอนุญาต CC-BY-NC-SA-4.0 ทั้งชิ้นและไม่มีข้อความจาก Wikipedia ปน (ดู derivative_license)
+# id ของแต่ละแหล่งใช้เป็นค่า `source` ใน references ของ topic.yaml
+
+retrieved: "2026-10-24"
+
+sources:
+  # ---------- ภาษาไทย ----------
+  - id: wikipedia-th
+    name: วิกิพีเดียภาษาไทย
+    url: https://th.wikipedia.org/
+    languages: [th]
+    subjects: [math, physics, chemistry, thai, english, chinese]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: >-
+      MediaWiki Action API https://th.wikipedia.org/w/api.php (query, search, langlinks, pageprops=disambiguation)
+      และ REST https://th.wikipedia.org/api/rest_v1/page/summary/<ชื่อบทความ>
+    notes: >-
+      ท้ายทุกหน้าระบุ "สัญญาอนุญาตครีเอทีฟคอมมอนส์ แบบแสดงที่มา-อนุญาตแบบเดียวกัน" (by-sa/4.0) ข้อกำหนดการใช้งานของวิกิมีเดียให้ข้อความเป็น CC BY-SA 4.0 และ GFDL
+      ภาพในบทความมีใบอนุญาตแยกตามไฟล์บน Commons ต้องตรวจทีละภาพ
+      คุณภาพบทความไม่สม่ำเสมอ หลายบทความเป็นโครง (stub) สั้นไม่กี่ร้อยตัวอักษร
+      API ถูกจำกัดอัตรา (HTTP 429) เมื่อเรียกจากเครือข่ายที่ใช้ IP ร่วมกัน ให้ใส่ User-Agent ที่บอกช่องทางติดต่อ เว้นช่วงระหว่างคำขอ และเก็บแคช
+    evidence_url: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+  - id: saranukromthai
+    name: สารานุกรมไทยสำหรับเยาวชนฯ (มูลนิธิโครงการสารานุกรมไทยสำหรับเยาวชน โดยพระราชประสงค์ในพระบาทสมเด็จพระเจ้าอยู่หัว)
+    url: https://www.saranukromthai.or.th/
+    languages: [th]
+    subjects: [math, physics, chemistry, thai]
+    license: All rights reserved
+    reuse: link-only
+    api: ไม่มี API สาธารณะ เนื้อหาเรียงตามเล่ม (/book) และมีฉบับ e-book (saranukromthai.or.th/ebooks)
+    notes: >-
+      หน้าเว็บระบุ "ลิขสิทธิ์เป็นของมูลนิธิโครงการสารานุกรมไทยสำหรับเยาวชนฯ ห้ามนำข้อความและรูปภาพไปเผยแพร่โดยไม่ได้รับอนุญาต"
+      เนื้อหาเขียนโดยผู้ทรงคุณวุฒิ เหมาะเป็นลิงก์อ่านเพิ่มเติมระดับเยาวชน แต่ยังไม่พบหน้าที่ตรงกับหัวข้อในคลังพอจะใส่ใน references
+    evidence_url: https://www.saranukromthai.or.th/
+
+  - id: orst
+    name: สำนักงานราชบัณฑิตยสภา (พจนานุกรมฉบับราชบัณฑิตยสถาน และคลังความรู้)
+    url: https://dictionary.orst.go.th/
+    languages: [th]
+    subjects: [thai, math, physics, chemistry]
+    license: All rights reserved
+    reuse: link-only
+    api: ไม่มี API สาธารณะ ค้นคำผ่านแบบฟอร์มบนเว็บ dictionary.orst.go.th
+    notes: >-
+      เว็บไซต์หลัก www.orst.go.th ระบุ "สงวนลิขสิทธิ์ © พ.ศ. ๒๕๖๓ สำนักงานราชบัณฑิตยสภา"
+      พจนานุกรมและศัพท์บัญญัติเป็นงานของหน่วยงานรัฐ แต่ไม่อยู่ในรายการงานที่ไม่ถือเป็นงานอันมีลิขสิทธิ์ตาม พ.ร.บ.ลิขสิทธิ์ มาตรา 7 (ซึ่งครอบคลุมกฎหมาย ระเบียบ ประกาศ คำพิพากษา)
+      ใช้อ้างอิงการสะกดและศัพท์บัญญัติได้ (ข้อเท็จจริงสั้น ๆ) แต่ห้ามคัดลอกนิยามเป็นชุด
+      เว็บไซต์หลักตอบช้าและบางครั้งหมดเวลา (timeout)
+    evidence_url: https://www.orst.go.th/
+
+  - id: scimath
+    name: คลังความรู้ SciMath (สสวท.)
+    url: https://www.scimath.org/
+    languages: [th]
+    subjects: [math, physics, chemistry]
+    license: All rights reserved (non-commercial personal/educational use only)
+    reuse: link-only
+    api: ไม่มี API สาธารณะ
+    notes: >-
+      ท้ายเว็บระบุ "IPST invites visitors to use its online resources for personal, educational and other non-commercial purpose ... All Rights Reserved"
+      หน้าข้อกำหนดระบุ "ห้ามมิให้ผู้ใช้บริการแก้ไข ดัดแปลง ทำซ้ำ ... เว้นแต่จะได้รับความยินยอมเป็นลายลักษณ์อักษรอย่างชัดแจ้งและถูกต้องจาก สสวท."
+      สอดคล้องกับ ADR 0001 ที่ไม่รับหนังสือเรียน สสวท.
+    evidence_url: https://www.scimath.org/terms-and-conditions
+
+  - id: trueplookpanya
+    name: ทรูปลูกปัญญา (TruePlookpanya)
+    url: https://www.trueplookpanya.com/
+    languages: [th]
+    subjects: [math, physics, chemistry, thai, english, chinese]
+    license: All rights reserved
+    reuse: link-only
+    api: ไม่มี API สาธารณะ
+    notes: >-
+      ท้ายเว็บระบุ "© 2026 TruePlookpanya All rights reserved" ข้อกำหนดการใช้บริการข้อ 3 ระบุว่าบริษัทในกลุ่มทรูเป็นเจ้าของลิขสิทธิ์ในเนื้อหา บทความ รูปภาพ และเสียง
+      ใช้ได้เฉพาะเป็นลิงก์ ถ้าลิงก์ควรตรวจว่าหน้านั้นไม่ใช่เนื้อหาเชิงโฆษณา
+    evidence_url: https://www.trueplookpanya.com/termsofservice
+
+  - id: thaimooc
+    name: Thai MOOC
+    url: https://thaimooc.ac.th/
+    languages: [th]
+    subjects: [math, physics, chemistry, thai, english, chinese]
+    license: All rights reserved
+    reuse: link-only
+    api: ไม่มี API สาธารณะ (หน้าเรียนอยู่ที่ learner.thaimooc.ac.th)
+    notes: >-
+      ท้ายเว็บระบุ "© 2025 Thai MOOC . สงวนลิขสิทธิ์" รายวิชาเป็นของมหาวิทยาลัยผู้สอนแต่ละแห่ง อาจมีเงื่อนไขต่างกัน
+      ลิงก์ไปยังรายวิชาได้ แต่เป็นคอร์สเต็มรูปแบบ ไม่ใช่บทความสั้น จึงไม่เหมาะเป็นลิงก์อ่านเพิ่มเติมรายหัวข้อ
+    evidence_url: https://thaimooc.ac.th/
+
+  # ---------- ภาษาอังกฤษและนานาชาติ ----------
+  - id: wikipedia-en
+    name: Wikipedia (English)
+    url: https://en.wikipedia.org/
+    languages: [en]
+    subjects: [math, physics, chemistry, thai, english, chinese]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: >-
+      MediaWiki Action API https://en.wikipedia.org/w/api.php, REST https://en.wikipedia.org/api/rest_v1/page/summary/<Title>,
+      ลิงก์ข้ามภาษา https://en.wikipedia.org/w/rest.php/v1/page/<Title>/links/language
+    notes: >-
+      ท้ายหน้าระบุ "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License" ภาพมีใบอนุญาตแยกตามไฟล์
+      ระดับภาษาสูงกว่าผู้เรียนมัธยมไทยมาก ใช้เป็นลิงก์สำหรับผู้เรียนที่อ่านภาษาอังกฤษได้
+    evidence_url: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+  - id: wikipedia-simple
+    name: Simple English Wikipedia
+    url: https://simple.wikipedia.org/
+    languages: [en]
+    subjects: [math, physics, chemistry, english]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: MediaWiki Action API https://simple.wikipedia.org/w/api.php
+    notes: >-
+      ท้ายหน้าระบุ "Text is available under the Creative Commons Attribution-ShareAlike License and the GFDL" ลิงก์ไปที่ by-sa/4.0
+      ภาษาอังกฤษอย่างง่าย เหมาะกับหัวข้อภาษาอังกฤษและผู้เรียนที่ยังอ่านภาษาอังกฤษไม่คล่อง แต่บทความสั้นและครอบคลุมน้อย
+    evidence_url: https://simple.wikipedia.org/wiki/Wikipedia:Copyrights
+
+  - id: wikibooks
+    name: Wikibooks (en, th)
+    url: https://en.wikibooks.org/
+    languages: [en, th]
+    subjects: [math, physics, chemistry, english, chinese]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: MediaWiki Action API https://en.wikibooks.org/w/api.php และ https://th.wikibooks.org/w/api.php
+    notes: >-
+      ท้ายหน้าทั้ง en และ th ระบุ CC BY-SA (ลิงก์ไปที่ by-sa/4.0) เป็นตำราที่ผู้ใช้ร่วมเขียน คุณภาพและความครบถ้วนต่างกันมาก
+      th.wikibooks มีเนื้อหาน้อย
+    evidence_url: https://en.wikibooks.org/wiki/Wikibooks:Copyrights
+
+  - id: wikiversity
+    name: Wikiversity
+    url: https://en.wikiversity.org/
+    languages: [en]
+    subjects: [math, physics, chemistry]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: MediaWiki Action API https://en.wikiversity.org/w/api.php
+    notes: >-
+      ท้ายหน้าระบุ "Text is available under the Creative Commons Attribution-ShareAlike License" (by-sa/4.0)
+      เนื้อหาเป็นโครงการเรียนรู้ที่ผู้ใช้สร้าง คุณภาพไม่สม่ำเสมอ ควรอ่านทั้งหน้าก่อนลิงก์
+    evidence_url: https://en.wikiversity.org/wiki/Wikiversity:Copyrights
+
+  - id: wikidata
+    name: Wikidata
+    url: https://www.wikidata.org/
+    languages: [th, en, zh, other]
+    subjects: [math, physics, chemistry, thai, english, chinese]
+    license: CC0-1.0 (structured data); CC-BY-SA-4.0 (text in other namespaces)
+    reuse: adapt
+    derivative_license: [CC0-1.0, CC-BY-4.0, CC-BY-SA-4.0, CC-BY-NC-4.0, CC-BY-NC-SA-4.0]
+    api: >-
+      https://www.wikidata.org/w/api.php?action=wbgetentities&sites=enwiki&titles=<Title>&props=sitelinks (จับคู่บทความ th/en/zh จาก sitelinks)
+      และ SPARQL https://query.wikidata.org/sparql (Action API ถูกจำกัดอัตราเหมือน Wikipedia)
+    notes: >-
+      หน้า Wikidata:Licensing ระบุว่าข้อมูลใน main namespace เป็น CC0 ส่วนข้อความใน namespace อื่นเป็น CC BY-SA 4.0
+      ใช้จับคู่หัวข้อกับบทความหลายภาษาและดึงค่าคงที่ (เช่น เลขอะตอม) ได้โดยไม่ติดเงื่อนไข ShareAlike
+    evidence_url: https://www.wikidata.org/wiki/Wikidata:Licensing
+
+  - id: openstax
+    name: OpenStax (Rice University)
+    url: https://openstax.org/
+    languages: [en]
+    subjects: [math, physics, chemistry]
+    license: CC-BY-NC-SA-4.0 (most current books); CC-BY-4.0 (Physics, Statistics)
+    reuse: link-only
+    derivative_license: [CC-BY-NC-SA-4.0]
+    api: >-
+      CMS API https://openstax.org/apps/cms/api/v2/pages/?type=books.Book&fields=title,license_name,license_version,license_url,book_state,cnx_id
+      (ใบอนุญาตรายเล่ม) และสารบัญรายเล่มจาก https://openstax.org/rex/release.json + https://openstax.org<archiveUrl>/contents/<cnx_id>@<version>.json
+      URL บท: https://openstax.org/books/<book-slug>/pages/<section-slug>
+    notes: >-
+      บล็อก "An update on OpenStax licensing" (2026-04-22) ระบุว่า "OpenStax has transitioned our textbook library from a mix of CC BY and CC BY-NC-SA licensing to CC BY-NC-SA licensing across the library ... with limited exceptions"
+      และ "No action is needed by anyone who has previously created derivatives of CC BY content" ข้อมูลใน ADR 0001 และรายงานเดิมที่ว่า OpenStax เป็น CC BY 4.0 จึงล้าสมัย
+      ตรวจรายเล่มจาก CMS API วันที่ 2026-10-24 ดู per_book ตรวจซ้ำทุกครั้งก่อนดัดแปลง เพราะเล่มที่ปรับปรุงจะเปลี่ยนเป็น NC-SA
+    per_book:
+      - { book: physics, title: Physics, license: CC-BY-4.0, reuse: adapt }
+      - { book: statistics, title: Statistics, license: CC-BY-4.0, reuse: adapt }
+      - { book: college-physics-2e, title: College Physics 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: university-physics-volume-1, title: University Physics Volume 1, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: chemistry-2e, title: Chemistry 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: chemistry-atoms-first-2e, title: "Chemistry: Atoms First 2e", license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: prealgebra-2e, title: Prealgebra 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: elementary-algebra-2e, title: Elementary Algebra 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: intermediate-algebra-2e, title: Intermediate Algebra 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: algebra-and-trigonometry-2e, title: Algebra and Trigonometry 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: precalculus-2e, title: Precalculus 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: calculus-volume-1, title: Calculus Volume 1, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: contemporary-mathematics, title: Contemporary Mathematics, license: CC-BY-NC-SA-4.0, reuse: link-only }
+      - { book: introductory-statistics-2e, title: Introductory Statistics 2e, license: CC-BY-NC-SA-4.0, reuse: link-only }
+    evidence_url: https://openstax.org/blog/openstax-licensing
+
+  - id: libretexts
+    name: LibreTexts
+    url: https://libretexts.org/
+    languages: [en]
+    subjects: [math, physics, chemistry]
+    license: Mixed, set per page (CC0, CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA, CC BY-NC-ND, CC BY-ND, GPL, GFDL, or undeclared)
+    reuse: link-only
+    api: ยังไม่ได้ตรวจ API ใบอนุญาตแสดงที่ท้ายแต่ละหน้า ("This page titled ... is shared under a ... license")
+    notes: >-
+      คู่มือ Construction Guide ของ LibreTexts ระบุว่าแต่ละหน้าเลือกใบอนุญาตผ่าน meta-tag "Licensing" ได้หลายแบบรวมถึง ND
+      ค่าเริ่มต้นเป็น link-only หน้าใดที่ท้ายหน้าเป็น CC0, CC BY หรือ CC BY-SA ดัดแปลงได้หลังบันทึกใบอนุญาตของหน้านั้น
+      หน้า NC/NC-SA ทำได้เฉพาะหัวข้อที่ใช้ CC-BY-NC-SA-4.0 หน้า ND และหน้าที่ไม่ระบุใบอนุญาตใช้ได้แค่ลิงก์
+    evidence_url: https://chem.libretexts.org/Courses/Remixer_University/Construction_Guide_for_LibreTexts_2e/10:_Page_Settings/10.06:_Selecting_Copyright_for_Page_(Meta-Tags)
+
+  - id: ck12
+    name: CK-12 Foundation
+    url: https://www.ck12.org/
+    languages: [en]
+    subjects: [math, physics, chemistry]
+    license: CK-12 Curriculum Materials License (custom, not Creative Commons; last updated 2021-02-16)
+    reuse: link-only
+    api: ไม่มี API สาธารณะ
+    notes: >-
+      ตั้งแต่ ก.พ. 2564 CK-12 เปลี่ยนจาก CC BY-NC เป็นใบอนุญาตของตัวเอง อนุญาตให้คัดลอกและดัดแปลง "solely for Educational Purposes"
+      ซึ่งนิยามไว้แคบ (นักเรียน ผู้ปกครอง ครู สถานศึกษาไม่แสวงกำไร ติวเตอร์รายบุคคล) งานดัดแปลงต้องใช้ใบอนุญาตเดียวกัน
+      ใบอนุญาตเพิกถอนได้ (revocable) และต้องให้สิทธิ์ CK-12 นำงานดัดแปลงไปใช้ได้ทุกวัตถุประสงค์
+      ใช้กับเนื้อหาของคลังที่เป็น CC ไม่ได้ ADR 0001 ที่เขียนว่า CK-12 เป็น CC BY-NC จึงล้าสมัย
+    evidence_url: https://www.ck12info.org/curriculum-materials-license/
+
+  - id: khan-academy
+    name: Khan Academy
+    url: https://www.khanacademy.org/
+    languages: [en, th, other]
+    subjects: [math, physics, chemistry]
+    license: CC-BY-NC-SA-4.0 (videos and exercises, per Khan Academy Help Center); platform and brand not licensed
+    reuse: link-only
+    derivative_license: [CC-BY-NC-SA-4.0]
+    api: ไม่มี API สาธารณะสำหรับเนื้อหา
+    notes: >-
+      Help Center (แก้ไขล่าสุด 2026-10-19) ให้ใช้ "Creative Commons (CC by NC SA) license (for video and exercise use)" ลิงก์ไปที่ by-nc-sa/4.0
+      ต้องใส่ข้อความ "Note: All Khan Academy content is available for free at (www.khanacademy.org)" ตาม Trademark and Brand Usage Policy
+      และถ้าบริการต้องเข้าสู่ระบบ ต้องแสดงข้อความนี้ก่อนหน้าเข้าสู่ระบบ
+      หน้า Terms of Service (khanacademy.org/about/tos) แสดงผลด้วย JavaScript อ่านจากเครื่องมือไม่ได้ ต้องเปิดอ่านด้วยเบราว์เซอร์อีกครั้งก่อนดัดแปลง
+      หน้า Help Center ตอบ 403 กับบอต จึงตรวจผ่าน Zendesk API https://support.khanacademy.org/api/v2/help_center/en-us/articles/202262954.json
+    evidence_url: https://support.khanacademy.org/hc/en-us/articles/202262954-Can-I-use-Khan-Academy-s-videos-name-materials-links-in-my-project
+
+  - id: mit-ocw
+    name: MIT OpenCourseWare
+    url: https://ocw.mit.edu/
+    languages: [en]
+    subjects: [math, physics, chemistry]
+    license: CC-BY-NC-SA-4.0
+    reuse: link-only
+    derivative_license: [CC-BY-NC-SA-4.0]
+    api: ไม่มี API สาธารณะ
+    notes: >-
+      หน้า Privacy and Terms of Use ระบุ "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)"
+      ไม่ครอบคลุมเนื้อหาของบุคคลที่สามที่ระบุแยกไว้ ระดับมหาวิทยาลัย เหมาะเป็นลิงก์ต่อยอดสำหรับ ม.ปลาย
+    evidence_url: https://ocw.mit.edu/pages/privacy-and-terms-of-use/
+
+  - id: hyperphysics
+    name: HyperPhysics (Georgia State University)
+    url: http://hyperphysics.phy-astr.gsu.edu/hbase/index.html
+    languages: [en]
+    subjects: [physics, chemistry]
+    license: All rights reserved
+    reuse: link-only
+    api: ไม่มี API
+    notes: >-
+      หน้าแรกระบุ "While the Copyright of HyperPhysics must remain with the project" และให้ขออนุญาตทาง hyperphysics@gsu.edu
+      ใช้ได้เฉพาะ http ส่วน https ของโดเมนนี้เชื่อมต่อไม่สำเร็จขณะตรวจ
+    evidence_url: http://hyperphysics.phy-astr.gsu.edu/hbase/index.html
+
+  - id: mathworld
+    name: Wolfram MathWorld
+    url: https://mathworld.wolfram.com/
+    languages: [en]
+    subjects: [math]
+    license: All rights reserved (© Wolfram Research)
+    reuse: link-only
+    api: ไม่มี API ข้อกำหนดห้ามใช้ robot ทำสำเนาและห้ามดาวน์โหลดเป็นจำนวนมาก
+    notes: >-
+      ข้อกำหนดระบุ "these pages may not be copied, mirrored, redistributed, printed, or reproduced in bulk without permission" และ "Limited use of material for academic research and teaching is permitted, providing conventional citation standards are followed"
+      ห้ามดึงข้อมูลอัตโนมัติ เว็บจะบล็อก subnet ที่ฝ่าฝืน
+    evidence_url: https://www.wolfram.com/legal/terms/mathworld.html
+
+  - id: britannica
+    name: Encyclopaedia Britannica
+    url: https://www.britannica.com/
+    languages: [en]
+    subjects: [math, physics, chemistry, thai, english, chinese]
+    license: All rights reserved
+    reuse: link-only
+    api: ไม่มี API สาธารณะ (มี syndication แบบขออนุญาต) เว็บไซต์หลักบล็อกบอตด้วย Cloudflare (HTTP 403)
+    notes: >-
+      Terms of Use (มีผล 2024-02-08) อนุญาต "only for your personal, non-commercial use" และให้ครูหรือนักเรียนคัดลอก "reasonable portions" เพื่อการศึกษาไม่แสวงกำไร
+      ห้าม "publish, distribute, retransmit" ห้าม data mining และการใช้เพื่อพัฒนาหรือฝึก AI โดยไม่ได้รับอนุญาต
+      บางบทความต้องสมัครสมาชิก ลิงก์จากแอปอาจพาไปเจอโฆษณา
+    evidence_url: https://corporate.britannica.com/termsofuse.html
+
+  - id: sep
+    name: Stanford Encyclopedia of Philosophy
+    url: https://plato.stanford.edu/
+    languages: [en]
+    subjects: [math]
+    license: All rights reserved (SEP Terms of Use)
+    reuse: link-only
+    api: ไม่มี API
+    notes: >-
+      ลิขสิทธิ์เป็นของ Metaphysics Research Lab ผู้ใช้ได้รับ "royalty-free non-exclusive limited license to read, download, make copies, print" เพื่อการใช้ไม่เชิงพาณิชย์
+      การแจกจ่ายทางอิเล็กทรอนิกส์จำกัดในกลุ่มปิดไม่เกิน 30 คน แต่ "A User may electronically distribute a link to an SEP entry"
+      เกี่ยวข้องกับคลังเฉพาะปรัชญาคณิตศาสตร์และตรรกศาสตร์ ระดับสูงเกินผู้เรียนส่วนใหญ่
+    evidence_url: https://plato.stanford.edu/info.html
+
+  - id: phet
+    name: PhET Interactive Simulations (University of Colorado Boulder)
+    url: https://phet.colorado.edu/
+    languages: [en, th, zh, other]
+    subjects: [math, physics, chemistry]
+    license: CC-BY-NC-4.0 (simulations published on or after 2026-03-29); CC-BY-4.0 (historical HTML5 versions published before 2026-03-29)
+    reuse: link-only
+    derivative_license: [CC-BY-NC-4.0, CC-BY-NC-SA-4.0]
+    api: ไม่มี API สาธารณะ ลิงก์ไปที่หน้า simulation เช่น https://phet.colorado.edu/en/simulations/fractions-intro
+    notes: >-
+      หน้า Licensing ระบุว่า "The Regular HTML Simulation Files ... are published under the Creative Commons Attribution–NonCommercial license (CC BY-NC 4.0)"
+      ข้อความเครดิตที่ต้องใช้: "Simulation by PhET Interactive Simulations, University of Colorado Boulder, licensed under CC BY-NC 4.0 (https://phet.colorado.edu)."
+      และโลโก้ PhET ในตัว simulation ต้องมองเห็นได้และห้ามดัดแปลง เวอร์ชันก่อน 2026-03-29 เป็น CC BY 4.0 (หน้า /en/licensing/html)
+      PhET-iO และ Java/Flash มีข้อตกลงแยก การฝังใน lessons (type: simulation) ทำได้เพราะคลังรู้ไม่หารายได้ ภาพหน้าจอหรือวิดีโอที่ตัดมาเป็นงานดัดแปลง NC
+    evidence_url: https://phet.colorado.edu/en/licensing
+
+  # ---------- ภาษาจีน ----------
+  - id: wikipedia-zh
+    name: 维基百科 (Chinese Wikipedia)
+    url: https://zh.wikipedia.org/
+    languages: [zh]
+    subjects: [chinese, math, physics, chemistry]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: MediaWiki Action API https://zh.wikipedia.org/w/api.php
+    notes: >-
+      ท้ายหน้าระบุ "本站的全部文字在知识共享 署名-相同方式共享 4.0协议之条款下提供" ชื่อบทความเก็บได้ทั้งอักษรตัวย่อและตัวเต็ม
+      เนื้อหาเป็นภาษาจีนล้วน เหมาะกับผู้เรียนระดับสูงหรือครู
+    evidence_url: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+
+  - id: cc-cedict
+    name: CC-CEDICT (Chinese–English dictionary, MDBG)
+    url: https://cc-cedict.org/wiki/
+    languages: [zh, en]
+    subjects: [chinese]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: >-
+      ไม่มี API แบบสอบถาม ดาวน์โหลดไฟล์ทั้งชุดจาก https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+      (cedict_1_0_ts_utf-8_mdbg.txt.gz รุ่นล่าสุดขณะตรวจ 2026-10-23 มี 125,314 รายการ) รูปแบบบรรทัด: ตัวเต็ม ตัวย่อ [pin1 yin1] /คำแปล/
+    notes: >-
+      หน้าดาวน์โหลดระบุ "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"
+      ใช้สร้างพินอินและคำแปลอังกฤษของคำศัพท์จีนได้ ต้องให้เครดิตและงานที่ปรับปรุงต้องเป็น CC BY-SA ไม่มีคำแปลภาษาไทย
+    evidence_url: https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+
+  - id: wiktionary
+    name: Wiktionary (en, zh, th)
+    url: https://en.wiktionary.org/
+    languages: [en, zh, th]
+    subjects: [chinese, english, thai]
+    license: CC-BY-SA-4.0
+    reuse: adapt
+    derivative_license: [CC-BY-SA-4.0]
+    api: MediaWiki Action API https://en.wiktionary.org/w/api.php (และ zh., th.)
+    notes: >-
+      ท้ายหน้าระบุ "Definitions and other text are available under the Creative Commons Attribution-ShareAlike License" (by-sa/4.0)
+      หน้าอักษรจีนใน en.wiktionary มีส่วน Stroke order การออกเสียง และนิรุกติศาสตร์ ภาพประกอบมีใบอนุญาตแยกตามไฟล์
+    evidence_url: https://en.wiktionary.org/wiki/Wiktionary:Copyrights
