@@ -1,0 +1,157 @@
+# หัวข้อคณิตศาสตร์ในคลังกับ Common Core State Standards for Mathematics
+# ใช้เทียบลำดับเนื้อหา จับคู่จากเนื้อหาบทเรียนและโจทย์จริง coverage ใช้กับทุกข้อในแถวเหมือน th-core-2560-math
+# มาตรฐานที่มีข้อย่อย (a, b, c) นับเป็นข้อเดียว ถ้าหัวข้อสอนเพียงบางข้อย่อยให้เป็น partial
+# math.calculus.derivative ไม่มีแถว เพราะ CCSS ไม่มีมาตรฐานแคลคูลัส
+framework: us-ccss-math
+mappings:
+  - topic: math.algebra.expressions
+    indicators: ["6.EE.2", "6.EE.3", "6.EE.4", "6.EE.6", "7.EE.1", "A-SSE.1"]
+    coverage: partial
+    note: "6.EE.2 6.EE.3 6.EE.6 ครบ (เขียนและแทนค่านิพจน์ พจน์และสัมประสิทธิ์ การกระจาย) ส่วน 6.EE.4 7.EE.1 A-SSE.1 มีบางส่วน ยังไม่มีสัมประสิทธิ์ที่เป็นเศษส่วนและการแยกตัวประกอบนิพจน์เชิงเส้น"
+  - topic: math.geometry.angles
+    indicators: ["4.MD.5", "4.MD.7", "4.G.1", "7.G.5", "8.G.5"]
+    coverage: partial
+    note: "7.G.5 ครบ (มุมประกอบฉาก ประกอบสองมุมฉาก มุมตรงข้าม แก้สมการหามุม) ชนิดของมุม มุมที่เกิดจากเส้นขนานตัดเส้นตัด ยังไม่มีการวัดมุมด้วยโพรแทรกเตอร์และนิยามมุมจากส่วนโค้ง"
+  - topic: math.geometry.area-perimeter
+    indicators: ["3.MD.7", "3.MD.8", "4.MD.3", "6.G.1", "7.G.4", "7.G.6"]
+    coverage: partial
+    note: "3.MD.8 4.MD.3 6.G.1 7.G.4 ครบ 3.MD.7 ยังไม่มีการนับตารางหน่วยและแบบจำลองพื้นที่ของสมบัติการแจกแจง 7.G.6 ครบเฉพาะส่วนพื้นที่"
+  - topic: math.stats.central-tendency
+    indicators: ["6.SP.2", "6.SP.3", "6.SP.5", "S-ID.2", "S-ID.3"]
+    coverage: partial
+    note: "ค่าเฉลี่ย มัธยฐาน ฐานนิยม ค่าเฉลี่ยถ่วงน้ำหนัก และผลของค่าผิดปกติต่อการเลือกค่ากลาง ส่วนการกระจายอยู่ในหัวข้อ dispersion"
+  - topic: math.geometry.circles
+    indicators: ["G-C.2", "G-C.5", "F-TF.1"]
+    coverage: partial
+    note: "G-C.5 ครบ (ความยาวส่วนโค้ง พื้นที่เซกเตอร์ เรเดียน) G-C.2 มีมุมที่จุดศูนย์กลาง มุมในส่วนโค้ง มุมในครึ่งวงกลม และเส้นสัมผัสตั้งฉากรัศมีในระดับนิยาม F-TF.1 มีเรเดียนแต่ยังไม่ใช้กับวงกลมหนึ่งหน่วย"
+  - topic: math.functions.coordinate-plane
+    indicators: ["5.G.1", "5.G.2", "6.NS.6", "6.NS.8", "6.G.3", "8.G.3"]
+    coverage: partial
+    note: "5.G.1 5.G.2 6.NS.8 ครบ (ระนาบพิกัด จตุภาค ระยะทางแนวนอนแนวตั้ง) 6.NS.6 6.G.3 8.G.3 มีบางส่วน (สะท้อนในแกน เลื่อนขนาน รูปบนระนาบพิกัด) ยังไม่มีการหมุนและการย่อขยาย"
+  - topic: math.prob.counting
+    indicators: ["7.SP.8", "S-CP.9"]
+    coverage: partial
+    note: "หลักการบวก หลักการคูณ แฟกทอเรียล การเรียงสับเปลี่ยน การจัดหมู่ และการนับปริภูมิตัวอย่าง ส่วนการใช้คำนวณความน่าจะเป็นอยู่ในหัวข้อ probability"
+  - topic: math.stats.data-display
+    indicators: ["3.MD.3", "6.SP.4", "6.SP.5", "S-ID.1", "S-ID.5"]
+    coverage: partial
+    note: "ชนิดข้อมูล ตารางความถี่และความถี่สัมพัทธ์ แผนภูมิแท่ง แผนภูมิวงกลม ฮิสโทแกรม และการอ่านแผนภูมิที่ชวนเข้าใจผิด ยังไม่มีแผนภาพจุด ตารางสองทาง และแผนภูมิรูปภาพ"
+  - topic: math.number.decimals
+    indicators: ["4.NF.7", "5.NBT.2", "5.NBT.7", "6.NS.3", "7.NS.2", "8.NS.1"]
+    coverage: partial
+    note: "4.NF.7 5.NBT.2 5.NBT.7 6.NS.3 ครบ (เปรียบเทียบ บวก ลบ คูณ หารทศนิยม คูณหารด้วยสิบยกกำลัง) 7.NS.2 และ 8.NS.1 มีเฉพาะการแปลงเศษส่วนเป็นทศนิยมและทศนิยมซ้ำ"
+  - topic: math.stats.dispersion
+    indicators: ["6.SP.4", "6.SP.5", "7.SP.4", "S-ID.1", "S-ID.2", "S-ID.3"]
+    coverage: partial
+    note: "พิสัย ควอร์ไทล์ IQR แผนภาพกล่อง ค่าผิดปกติ ส่วนเบี่ยงเบนมาตรฐาน และการเปรียบเทียบข้อมูลสองชุด ยังไม่มีแผนภาพจุด MAD และการใช้เทคโนโลยี"
+  - topic: math.algebra.exponent-laws
+    indicators: ["8.EE.1", "N-RN.1", "N-RN.2"]
+    coverage: full
+  - topic: math.functions.exponential
+    indicators: ["F-LE.1", "F-LE.2", "F-LE.5", "F-IF.7", "F-IF.8", "A-CED.2"]
+    coverage: partial
+    note: "การเติบโตและการสลายแบบเอกซ์โพเนนเชียล ร้อยละการเปลี่ยนแปลงเป็นตัวคูณ ดอกเบี้ยทบต้น กราฟ y = 2^x และสร้างฟังก์ชัน a·b^x จากสองจุด ยังไม่เทียบกับการเปลี่ยนแปลงเชิงเส้นอย่างเป็นระบบ"
+  - topic: math.number.exponents
+    indicators: ["6.EE.1"]
+    coverage: full
+  - topic: math.algebra.factoring
+    indicators: ["A-SSE.2", "A-SSE.3"]
+    coverage: partial
+    note: "ดึงตัวร่วม x^2 + bx + c, ax^2 + bx + c ผลต่างกำลังสอง กำลังสองสมบูรณ์ (A-SSE.2 และข้อย่อย a ของ A-SSE.3) ยังไม่ใช้เพื่ออ่านค่าสูงสุดต่ำสุดหรือฟังก์ชันเอกซ์โพเนนเชียล"
+  - topic: math.number.factors-multiples
+    indicators: ["4.OA.4", "6.NS.4"]
+    coverage: partial
+    note: "4.OA.4 ครบ (ตัวประกอบ พหุคูณ จำนวนเฉพาะ) 6.NS.4 มี ห.ร.ม. ค.ร.น. แต่ยังไม่มีการใช้สมบัติการแจกแจงดึงตัวร่วม"
+  - topic: math.number.fractions
+    indicators: ["3.NF.1", "4.NF.1", "4.NF.3", "4.NF.4", "5.NF.1", "5.NF.2", "5.NF.4", "5.NF.6", "5.NF.7", "6.NS.1"]
+    coverage: partial
+    note: "4.NF.1 4.NF.3 4.NF.4 5.NF.1 5.NF.2 5.NF.6 6.NS.1 ครบ 3.NF.1 5.NF.4 5.NF.7 มีการคำนวณแต่ยังไม่มีแบบจำลองรูปภาพและเส้นจำนวน ยังไม่มีการเปรียบเทียบเศษส่วน (3.NF.3 4.NF.2)"
+  - topic: math.functions.functions-intro
+    indicators: ["8.F.1", "F-IF.1", "F-IF.2", "F-IF.5", "F-BF.1"]
+    coverage: partial
+    note: "8.F.1 F-IF.1 F-IF.2 ครบ (นิยามฟังก์ชัน โดเมน เรนจ์ f(x)) F-IF.5 และ F-BF.1 มีโดเมนจากบริบทและฟังก์ชันประกอบ"
+  - topic: math.number.integers
+    indicators: ["6.NS.5", "6.NS.6", "6.NS.7", "7.NS.1", "7.NS.2", "7.NS.3"]
+    coverage: partial
+    note: "6.NS.5 ครบ จำนวนเต็มบนเส้นจำนวน การเรียงลำดับ บวก ลบ คูณ หาร และโจทย์ปัญหา และค่าสัมบูรณ์ ครอบคลุมเฉพาะจำนวนเต็ม ยังไม่มีเศษส่วนและทศนิยมที่เป็นลบ"
+  - topic: math.algebra.linear-eq
+    indicators: ["6.EE.5", "6.EE.7", "7.EE.4", "8.EE.7", "A-REI.1", "A-REI.3", "A-CED.1"]
+    coverage: partial
+    note: "6.EE.5 6.EE.7 ครบ แก้สมการเชิงเส้นตัวแปรเดียวที่มีวงเล็บและเศษส่วน และสร้างสมการจากโจทย์ ยังไม่มีกรณีไม่มีคำตอบหรือมีคำตอบมากมาย (8.EE.7a) และอสมการ"
+  - topic: math.functions.linear-graphs
+    indicators: ["8.EE.5", "8.EE.6", "8.F.3", "8.F.4", "F-LE.2", "G-GPE.5"]
+    coverage: partial
+    note: "8.F.3 8.F.4 G-GPE.5 ครบ (y = mx + c ความชันจากสองจุด เส้นขนานตั้งฉาก) 8.EE.5 8.EE.6 ยังไม่อธิบายความชันด้วยสามเหลี่ยมคล้าย"
+  - topic: math.algebra.linear-inequalities
+    indicators: ["6.EE.8", "7.EE.4", "A-REI.3", "A-CED.1"]
+    coverage: partial
+    note: "6.EE.8 ครบ แก้อสมการเชิงเส้นและโจทย์ปัญหา ส่วนสมการอยู่ในหัวข้อ linear-eq"
+  - topic: math.algebra.systems
+    indicators: ["8.EE.8", "A-REI.5", "A-REI.6", "A-CED.3"]
+    coverage: partial
+    note: "8.EE.8 A-REI.6 ครบ (แทนค่า กำจัดตัวแปร ระบบที่ไม่มีคำตอบ โจทย์ปัญหา) A-REI.5 ยังไม่พิสูจน์ว่าการกำจัดตัวแปรได้คำตอบเดิม A-CED.3 ยังไม่มีข้อจำกัดแบบอสมการ"
+  - topic: math.functions.logarithms
+    indicators: ["F-LE.4", "F-BF.5"]
+    coverage: partial
+    note: "F-LE.4 ครบ (แก้ ab^ct = d ด้วยลอการิทึม) F-BF.5 มีความสัมพันธ์ระหว่างเลขยกกำลังกับลอการิทึมแต่ยังไม่ใช้คำว่าฟังก์ชันผกผัน"
+  - topic: math.number.place-value
+    indicators: ["1.NBT.2", "1.NBT.3", "2.NBT.1", "2.NBT.3", "2.NBT.4", "3.NBT.1", "4.NBT.1", "4.NBT.2", "4.NBT.3", "5.NBT.1", "5.NBT.3", "5.NBT.4"]
+    coverage: partial
+    note: "อ่านเขียนจำนวน รูปกระจาย เปรียบเทียบ ปัดเศษจำนวนนับและทศนิยม ครบ (1.NBT.3 2.NBT.3 2.NBT.4 3.NBT.1 4.NBT.2 4.NBT.3 5.NBT.3 5.NBT.4) ส่วน 1.NBT.2 2.NBT.1 4.NBT.1 5.NBT.1 มีค่าประจำหลักสิบเท่าแต่ยังไม่มีการรวมกลุ่มสิบด้วยสื่อ"
+  - topic: math.algebra.polynomials
+    indicators: ["7.EE.1", "A-APR.1", "A-SSE.2"]
+    coverage: partial
+    note: "A-APR.1 ครบส่วนการบวก ลบ คูณ (ยังไม่พูดถึงสมบัติปิด) ผลคูณพิเศษช่วยคิดเลข (A-SSE.2)"
+  - topic: math.prob.probability
+    indicators: ["7.SP.5", "7.SP.7", "7.SP.8", "S-CP.1", "S-CP.2", "S-CP.9"]
+    coverage: partial
+    note: "7.SP.5 7.SP.8 ครบ ปริภูมิตัวอย่าง เหตุการณ์ตรงข้าม เหตุการณ์อิสระ และใช้การจัดหมู่หาความน่าจะเป็น ยังไม่มีความน่าจะเป็นจากการทดลองและความน่าจะเป็นแบบมีเงื่อนไข"
+  - topic: math.geometry.pythagoras
+    indicators: ["8.G.6", "8.G.7", "8.G.8"]
+    coverage: partial
+    note: "8.G.7 8.G.8 ครบ (ใช้ในสองและสามมิติ ระยะทางระหว่างจุด) 8.G.6 มีบทกลับแต่ยังไม่มีการพิสูจน์ทฤษฎีบท"
+  - topic: math.algebra.quadratic-eq
+    indicators: ["A-REI.4", "A-CED.1", "A-SSE.3"]
+    coverage: partial
+    note: "แยกตัวประกอบ สูตร และดิสคริมิแนนต์ ยังไม่มีการทำเป็นกำลังสองสมบูรณ์เพื่อพิสูจน์สูตร และคำตอบที่เป็นจำนวนเชิงซ้อน"
+  - topic: math.functions.quadratic
+    indicators: ["F-IF.4", "F-IF.7", "F-IF.8", "A-SSE.3"]
+    coverage: partial
+    note: "จุดยอด แกนสมมาตร ค่าสูงสุดต่ำสุด จุดตัดแกน x และโจทย์หาค่าสูงสุด ครอบคลุมเฉพาะฟังก์ชันกำลังสองในมาตรฐานเหล่านี้"
+  - topic: math.calculus.rate-of-change
+    indicators: ["F-IF.6"]
+    coverage: full
+  - topic: math.number.ratio-percent
+    indicators: ["6.RP.1", "6.RP.2", "6.RP.3", "7.RP.2", "7.RP.3", "7.G.1"]
+    coverage: partial
+    note: "6.RP.1 7.RP.3 ครบ (อัตราส่วน ร้อยละ ส่วนลด กำไรขาดทุน ดอกเบี้ยอย่างง่าย) อัตราต่อหน่วยและความคุ้มค่า (6.RP.2 6.RP.3) และมาตราส่วนแผนที่ (7.G.1) มีบางส่วน ยังไม่มีกราฟของความสัมพันธ์แบบสัดส่วน"
+  - topic: math.algebra.rearrange-formula
+    indicators: ["A-CED.4"]
+    coverage: full
+  - topic: math.number.roots
+    indicators: ["8.EE.2", "8.NS.1", "8.NS.2"]
+    coverage: partial
+    note: "8.EE.2 8.NS.2 ครบ (รากที่สองและรากที่สาม ประมาณค่าราก) 8.NS.1 ยังไม่แปลงทศนิยมซ้ำเป็นเศษส่วน"
+  - topic: math.number.scientific-notation
+    indicators: ["8.EE.1", "8.EE.3", "8.EE.4"]
+    coverage: partial
+    note: "8.EE.3 8.EE.4 ครบ 8.EE.1 มีเลขชี้กำลังลบของสิบ กฎของเลขยกกำลังทั่วไปอยู่ในหัวข้อ exponent-laws"
+  - topic: math.geometry.similarity
+    indicators: ["7.G.1", "8.G.4", "G-SRT.4", "G-SRT.5"]
+    coverage: partial
+    note: "7.G.1 ครบ (มาตราส่วน) สามเหลี่ยมคล้าย อัตราส่วนพื้นที่ เส้นขนานกับด้านของสามเหลี่ยม และการวัดความสูงด้วยเงา ยังไม่นิยามความคล้ายด้วยการแปลง"
+  - topic: math.geometry.triangles
+    indicators: ["4.G.2", "7.G.2", "8.G.5", "G-CO.8", "G-CO.10"]
+    coverage: partial
+    note: "ชนิดของสามเหลี่ยม ผลบวกมุมภายใน มุมภายนอก สามเหลี่ยมหน้าจั่ว และเงื่อนไขความเท่ากันทุกประการ ยังไม่มีการสร้างรูปและการพิสูจน์เต็มรูปแบบ"
+  - topic: math.geometry.trig-ratios
+    indicators: ["G-SRT.6", "G-SRT.8"]
+    coverage: full
+  - topic: math.geometry.vectors
+    indicators: ["N-VM.1", "N-VM.2", "N-VM.3", "N-VM.4", "N-VM.5"]
+    coverage: partial
+    note: "ขนาดและทิศทาง องค์ประกอบ การบวกแบบหางต่อหัว การลบ การคูณด้วยสเกลาร์ และโจทย์ความเร็ว ในสองมิติ (N-VM.1 ครบ) ข้ออื่นยังไม่ครบทุกข้อย่อย เช่น ขนาดของผลคูณสเกลาร์ในรูปเรขาคณิต"
+  - topic: math.geometry.volume-surface
+    indicators: ["5.MD.3", "5.MD.5", "6.G.2", "6.G.4", "7.G.6", "8.G.9", "G-GMD.3"]
+    coverage: partial
+    note: "5.MD.5 8.G.9 G-GMD.3 ครบ (สูตรปริมาตรทรงสี่เหลี่ยมมุมฉาก ทรงกระบอก พีระมิด กรวย ทรงกลม) ส่วนรูปคลี่ พื้นที่ผิว และความหมายของปริมาตร (5.MD.3 6.G.2 6.G.4 7.G.6) มีบางส่วน"
