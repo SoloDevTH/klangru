@@ -167,3 +167,186 @@ problems:
     solution: "$1.4\\ \\dfrac{\\mathrm{g}}{\\mathrm{cm^3}} \\times \\dfrac{1\\ \\mathrm{kg}}{1000\\ \\mathrm{g}} \\times \\dfrac{10^{6}\\ \\mathrm{cm^3}}{1\\ \\mathrm{m^3}} = 1.4 \\times 1000\\ \\mathrm{kg/m^3} = 1400\\ \\mathrm{kg/m^3}$ (เทียบกับน้ำ $1000\\ \\mathrm{kg/m^3}$ น้ำผึ้งจึงหนักกว่าน้ำปริมาตรเท่ากัน)"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: phy.si.p011
+    topics: [physics.units.si]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใด **ไม่ใช่** หน่วยฐานของระบบ SI"
+    choices:
+      - { id: a, text: "นิวตัน (N)", correct: true }
+      - { id: b, text: "เคลวิน (K)", feedback: "เคลวินเป็นหน่วยฐานของอุณหภูมิ องศาเซลเซียสต่างหากที่ไม่ใช่หน่วยฐาน" }
+      - { id: c, text: "โมล (mol)", feedback: "โมลเป็นหน่วยฐานของปริมาณสาร ใช้มากในวิชาเคมี" }
+      - { id: d, text: "แอมแปร์ (A)", feedback: "แอมแปร์เป็นหน่วยฐานของกระแสไฟฟ้า" }
+    hints:
+      - "หน่วยฐานมี 7 หน่วย คือ m, kg, s, A, K, mol และ cd"
+      - "หน่วยที่เขียนเป็นผลคูณหรือผลหารของหน่วยอื่นได้คือหน่วยอนุพันธ์"
+    solution: "นิวตันเป็นหน่วยอนุพันธ์ $1\\ \\mathrm{N} = 1\\ \\mathrm{kg \\cdot m/s^2}$ ส่วนเคลวิน โมล และแอมแปร์เป็นหน่วยฐาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p012
+    topics: [physics.units.si]
+    difficulty: 2
+    type: numeric
+    stem: "น้ำดื่มขวดใหญ่บรรจุ $1.5$ ลิตร มีปริมาตรกี่ลูกบาศก์เซนติเมตร (ตอบเป็นตัวเลขในหน่วย cm³)"
+    answer: { value: 1500, unit: cm³ }
+    hints:
+      - "$1$ ลิตรเท่ากับ $1{,}000$ มิลลิลิตร"
+      - "$1\\ \\mathrm{mL} = 1\\ \\mathrm{cm^3}$"
+    misconceptions:
+      - { match: 150, feedback: "ดูเหมือนคิดว่า $1\\ \\mathrm{L} = 100\\ \\mathrm{cm^3}$ ลิตรคือลูกบาศก์เดซิเมตร $1\\ \\mathrm{dm^3} = 10 \\times 10 \\times 10 = 1{,}000\\ \\mathrm{cm^3}$" }
+      - { match: 0.0015, feedback: "นี่คือปริมาตรในหน่วยลูกบาศก์เมตร โจทย์ถามเป็นลูกบาศก์เซนติเมตร" }
+    solution: "$1.5\\ \\mathrm{L} = 1.5 \\times 1{,}000\\ \\mathrm{mL} = 1{,}500\\ \\mathrm{mL} = 1{,}500\\ \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p013
+    topics: [physics.units.si]
+    difficulty: 2
+    type: numeric
+    stem: "ป้ายบนทางหลวงในภาพจำกัดความเร็วไว้ที่ $90$ กิโลเมตรต่อชั่วโมง ความเร็วนี้เท่ากับกี่เมตรต่อวินาที (ตอบเป็นตัวเลขในหน่วย m/s)"
+    figure:
+      src: speed-limit-90.svg
+      alt: "ป้ายจราจรวงกลมขอบสีแดง ตรงกลางเขียนเลข 90 และมีคำว่า กม./ชม. อยู่ใต้ตัวเลข"
+    answer: { value: 25, unit: m/s }
+    hints:
+      - "$1\\ \\mathrm{km} = 1{,}000\\ \\mathrm{m}$ และ $1\\ \\mathrm{h} = 3{,}600\\ \\mathrm{s}$"
+      - "คูณด้วย $\\dfrac{1000\\ \\mathrm{m}}{1\\ \\mathrm{km}}$ และ $\\dfrac{1\\ \\mathrm{h}}{3600\\ \\mathrm{s}}$ หรือหารด้วย 3.6"
+    misconceptions:
+      - { match: 324, feedback: "ดูเหมือนคูณด้วย 3.6 การแปลง km/h เป็น m/s ต้องหาร เพราะ 1 วินาทีสั้นกว่า 1 ชั่วโมงมาก ระยะทางใน 1 วินาทีจึงน้อยกว่า" }
+      - { match: 1.5, feedback: "ดูเหมือนหารด้วย 60 ซึ่งเปลี่ยนชั่วโมงเป็นนาทีเท่านั้น และยังไม่ได้เปลี่ยนกิโลเมตรเป็นเมตร" }
+    solution: "$90\\ \\dfrac{\\mathrm{km}}{\\mathrm{h}} \\times \\dfrac{1000\\ \\mathrm{m}}{1\\ \\mathrm{km}} \\times \\dfrac{1\\ \\mathrm{h}}{3600\\ \\mathrm{s}} = \\dfrac{90{,}000}{3{,}600}\\ \\mathrm{m/s} = 25\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p014
+    topics: [physics.units.si]
+    difficulty: 3
+    type: expression
+    stem: "รถคันหนึ่งวิ่งด้วยอัตราเร็ว $v$ กิโลเมตรต่อชั่วโมง ถ้าอัตราเร็วเดียวกันนี้เท่ากับ $w$ เมตรต่อวินาที เขียน $w$ ในรูปของ $v$"
+    prefix: "w ="
+    answer: { latex: "\\frac{v}{3.6}", variables: [v] }
+    hints:
+      - "เปลี่ยน $v$ กิโลเมตรเป็นเมตร แล้วเปลี่ยน 1 ชั่วโมงเป็นวินาที"
+      - "$\\dfrac{v \\times 1000}{3600}$ แล้วลดรูปเศษส่วน"
+    misconceptions:
+      - { match: "3.6v", feedback: "การคูณ 3.6 ใช้แปลง m/s เป็น km/h ส่วนกรณีนี้ตัวเลขต้องเล็กลง จึงต้องหาร" }
+      - { match: "\\frac{v}{60}", feedback: "หาร 60 เปลี่ยนชั่วโมงเป็นนาทีเท่านั้น ต้องเปลี่ยนเป็นวินาที (3,600) และเปลี่ยนกิโลเมตรเป็นเมตร (คูณ 1,000) ด้วย" }
+    solution: "$v\\ \\dfrac{\\mathrm{km}}{\\mathrm{h}} = \\dfrac{v \\times 1000\\ \\mathrm{m}}{3600\\ \\mathrm{s}} = \\dfrac{v}{3.6}\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p015
+    topics: [physics.units.si]
+    difficulty: 3
+    type: mcq
+    stem: "งานมีหน่วยจูล โดย $1\\ \\mathrm{J} = 1\\ \\mathrm{N \\cdot m}$ เมื่อเขียนจูลด้วยหน่วยฐานของ SI จะได้ข้อใด"
+    choices:
+      - { id: a, text: "$\\mathrm{kg \\cdot m^2/s^2}$", correct: true }
+      - { id: b, text: "$\\mathrm{kg \\cdot m/s^2}$", feedback: "นี่คือหน่วยของนิวตันเท่านั้น ยังต้องคูณด้วยเมตรอีกครั้ง" }
+      - { id: c, text: "$\\mathrm{kg \\cdot m^2/s}$", feedback: "นิวตันมี $\\mathrm{s^2}$ อยู่ในตัวส่วน การคูณด้วยเมตรไม่ได้ทำให้เลขชี้กำลังของวินาทีเปลี่ยน" }
+      - { id: d, text: "$\\mathrm{kg \\cdot m/s}$", feedback: "นี่คือหน่วยของโมเมนตัม (มวล × ความเร็ว) ไม่ใช่งาน" }
+    hints:
+      - "เขียนนิวตันด้วยหน่วยฐานก่อน: $1\\ \\mathrm{N} = 1\\ \\mathrm{kg \\cdot m/s^2}$"
+      - "คูณด้วยเมตรแล้วรวมเลขชี้กำลังของเมตร"
+    solution: "$1\\ \\mathrm{J} = 1\\ \\mathrm{N} \\times 1\\ \\mathrm{m} = 1\\ \\mathrm{kg \\cdot m/s^2} \\times \\mathrm{m} = 1\\ \\mathrm{kg \\cdot m^2/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p016
+    topics: [physics.units.si]
+    difficulty: 3
+    type: numeric
+    stem: "ก๊อกน้ำในห้องน้ำโรงเรียนปิดไม่สนิท น้ำหยดรั่วออกมา $0.05\\ \\mathrm{mL}$ ทุกวินาที ใน 1 วัน (24 ชั่วโมง) น้ำรั่วไปกี่ลิตร (ตอบเป็นตัวเลขในหน่วย L)"
+    answer: { value: 4.32, tolerance: 0.01, unit: L }
+    hints:
+      - "หาจำนวนวินาทีใน 1 วันก่อน: $24 \\times 60 \\times 60$"
+      - "คูณจำนวนวินาทีด้วย $0.05\\ \\mathrm{mL}$ แล้วหารด้วย 1,000 เพื่อเปลี่ยนเป็นลิตร"
+    misconceptions:
+      - { match: 0.072, feedback: "ดูเหมือนใช้จำนวนนาทีใน 1 วัน (1,440) แทนจำนวนวินาที น้ำรั่วทุกวินาที ต้องใช้ $86{,}400$ วินาที" }
+      - { match: 4320, feedback: "นี่คือคำตอบในหน่วยมิลลิลิตร ต้องหารด้วย 1,000 เพื่อเปลี่ยนเป็นลิตร" }
+    solution: "1 วัน $= 24 \\times 3{,}600 = 86{,}400\\ \\mathrm{s}$ น้ำรั่ว $0.05 \\times 86{,}400 = 4{,}320\\ \\mathrm{mL} = 4.32\\ \\mathrm{L}$ ต่อวัน หรือราว 130 ลิตรต่อเดือน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p017
+    topics: [physics.units.si]
+    difficulty: 4
+    type: numeric
+    stem: "กดเข็มหมุดด้วยแรง $2\\ \\mathrm{N}$ ปลายเข็มมีพื้นที่ $0.5\\ \\mathrm{mm^2}$ ความดันที่ปลายเข็มเท่ากับกี่เมกะพาสคัล ($1\\ \\mathrm{Pa} = 1\\ \\mathrm{N/m^2}$) (ตอบเป็นตัวเลขในหน่วย MPa)"
+    answer: { value: 4, tolerance: 0.01, unit: MPa }
+    hints:
+      - "$1\\ \\mathrm{mm} = 10^{-3}\\ \\mathrm{m}$ ดังนั้น $1\\ \\mathrm{mm^2} = (10^{-3})^2\\ \\mathrm{m^2}$"
+      - "หาความดันในหน่วย Pa จาก $P = \\dfrac{F}{A}$ แล้วหารด้วย $10^6$ เพื่อเปลี่ยนเป็น MPa"
+    misconceptions:
+      - { match: 0.004, feedback: "ดูเหมือนแปลง $\\mathrm{mm^2}$ เป็น $\\mathrm{m^2}$ โดยคูณ $10^{-3}$ ครั้งเดียว หน่วยยกกำลังสองต้องคูณ $(10^{-3})^2 = 10^{-6}$" }
+      - { match: 4000000, feedback: "นี่คือความดันในหน่วยพาสคัล โจทย์ถามเป็นเมกะพาสคัล ($1\\ \\mathrm{MPa} = 10^6\\ \\mathrm{Pa}$)" }
+    solution: "$A = 0.5\\ \\mathrm{mm^2} = 0.5 \\times 10^{-6}\\ \\mathrm{m^2}$ จึงได้ $P = \\dfrac{2}{0.5 \\times 10^{-6}} = 4 \\times 10^{6}\\ \\mathrm{Pa} = 4\\ \\mathrm{MPa}$ (สังเกตว่า $1\\ \\mathrm{N/mm^2} = 1\\ \\mathrm{MPa}$ พอดี)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p018
+    topics: [physics.units.si]
+    difficulty: 4
+    type: mcq
+    stem: "ให้ $s$ เป็นระยะทาง ($\\mathrm{m}$) $v$ และ $u$ เป็นความเร็ว ($\\mathrm{m/s}$) $a$ เป็นความเร่ง ($\\mathrm{m/s^2}$) และ $t$ เป็นเวลา ($\\mathrm{s}$) สมการใด **ผิดแน่นอน** เมื่อตรวจด้วยหน่วย"
+    choices:
+      - { id: a, text: "$v = u + at^2$", correct: true }
+      - { id: b, text: "$v^2 = u^2 + 2as$", feedback: "ทุกพจน์มีหน่วย $\\mathrm{m^2/s^2}$ เพราะ $as$ มีหน่วย $\\mathrm{m/s^2} \\times \\mathrm{m}$ สมการนี้ผ่านการตรวจหน่วย" }
+      - { id: c, text: "$s = \\dfrac{(u + v)t}{2}$", feedback: "$(u+v)t$ มีหน่วย $\\mathrm{m/s} \\times \\mathrm{s} = \\mathrm{m}$ ตรงกับข้างซ้าย สมการนี้ผ่านการตรวจหน่วย" }
+      - { id: d, text: "$s = ut + \\tfrac{1}{2}at^2$", feedback: "ทุกพจน์มีหน่วยเมตร ตัวเลข $\\tfrac{1}{2}$ ไม่มีหน่วย สมการนี้ผ่านการตรวจหน่วย" }
+    hints:
+      - "สมการที่ถูกต้องต้องมีหน่วยเหมือนกันทุกพจน์ที่บวกกันและทั้งสองข้างของเครื่องหมายเท่ากับ"
+      - "หาหน่วยของ $at^2$ แล้วเทียบกับหน่วยของ $v$"
+    solution: "$at^2$ มีหน่วย $\\mathrm{m/s^2} \\times \\mathrm{s^2} = \\mathrm{m}$ แต่ $v$ และ $u$ มีหน่วย $\\mathrm{m/s}$ บวกเมตรกับเมตรต่อวินาทีไม่ได้ สมการ $v = u + at^2$ จึงผิดแน่นอน (ที่ถูกคือ $v = u + at$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p019
+    topics: [physics.units.si]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเก็บน้ำทรงลูกบาศก์ยาวด้านละ $50\\ \\mathrm{cm}$ จุน้ำได้เต็มที่กี่ลิตร (ตอบเป็นตัวเลขในหน่วย L)"
+    answer: { value: 125, unit: L }
+    hints:
+      - "หาปริมาตรเป็นลูกบาศก์เมตรหรือลูกบาศก์เซนติเมตรก่อน"
+      - "$1\\ \\mathrm{L} = 1{,}000\\ \\mathrm{cm^3} = 10^{-3}\\ \\mathrm{m^3}$"
+    misconceptions:
+      - { match: 0.125, feedback: "นี่คือปริมาตรในหน่วยลูกบาศก์เมตร ($0.5^3$) ต้องคูณ 1,000 เพื่อเปลี่ยนเป็นลิตร" }
+      - { match: 125000, feedback: "นี่คือปริมาตรในหน่วยลูกบาศก์เซนติเมตร ต้องหารด้วย 1,000 เพื่อเปลี่ยนเป็นลิตร" }
+    solution: "$V = 50^3 = 125{,}000\\ \\mathrm{cm^3}$ และ $1\\ \\mathrm{L} = 1{,}000\\ \\mathrm{cm^3}$ จึงได้ $125\\ \\mathrm{L}$ (หรือ $0.5^3 = 0.125\\ \\mathrm{m^3} = 125\\ \\mathrm{L}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p020
+    topics: [physics.units.si]
+    difficulty: 5
+    type: numeric
+    stem: "พายุฝนในกรุงเทพฯ ทำให้วัดปริมาณน้ำฝนได้ $30\\ \\mathrm{mm}$ ในหนึ่งชั่วโมง (คือน้ำฝนสูง $30\\ \\mathrm{mm}$ ถ้าไม่ไหลไปไหน) หลังคาบ้านหลังหนึ่งรับฝนได้บนพื้นที่ราบ $120\\ \\mathrm{m^2}$ น้ำฝนที่ตกลงบนหลังคาในชั่วโมงนั้นมีปริมาตรกี่ลิตร (ตอบเป็นตัวเลขในหน่วย L)"
+    answer: { value: 3600, tolerance: 1, unit: L }
+    hints:
+      - "ปริมาตร = พื้นที่ × ความสูงของน้ำ ต้องใช้หน่วยความยาวเดียวกัน"
+      - "เปลี่ยน $30\\ \\mathrm{mm}$ เป็นเมตร หาปริมาตรเป็น $\\mathrm{m^3}$ แล้วเปลี่ยนเป็นลิตร"
+    misconceptions:
+      - { match: 3.6, feedback: "นี่คือปริมาตรในหน่วยลูกบาศก์เมตร $1\\ \\mathrm{m^3} = 1{,}000\\ \\mathrm{L}$" }
+      - { match: 3600000, feedback: "ดูเหมือนนำ $30$ (มิลลิเมตร) คูณกับพื้นที่ในหน่วยตารางเมตรโดยไม่แปลงหน่วยให้ตรงกันก่อน ต้องเปลี่ยน $30\\ \\mathrm{mm}$ เป็น $0.03\\ \\mathrm{m}$" }
+    solution: "$30\\ \\mathrm{mm} = 0.03\\ \\mathrm{m}$ ปริมาตร $= 120\\ \\mathrm{m^2} \\times 0.03\\ \\mathrm{m} = 3.6\\ \\mathrm{m^3} = 3.6 \\times 1{,}000 = 3{,}600\\ \\mathrm{L}$ ถ้ารองน้ำฝนไว้ได้ทั้งหมดจะได้น้ำราว 180 ถังขนาด 20 ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.si.p021
+    topics: [physics.units.si]
+    difficulty: 4
+    type: numeric
+    stem: "แสงเดินทางด้วยอัตราเร็ว $3.0 \\times 10^{8}\\ \\mathrm{m/s}$ ระยะทางที่แสงเดินทางได้ใน 1 ปี (365 วัน) เรียกว่า 1 ปีแสง ถ้าเขียนระยะนี้ในรูป $9.46 \\times 10^{n}\\ \\mathrm{m}$ จงหา $n$ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 15 }
+    hints:
+      - "หาจำนวนวินาทีใน 1 ปีก่อน: $365 \\times 24 \\times 3{,}600 \\approx 3.15 \\times 10^{7}\\ \\mathrm{s}$"
+      - "คูณเลขหน้ากับเลขหน้า และบวกเลขชี้กำลังของ 10 แล้วจัดให้เลขหน้าอยู่ระหว่าง 1 กับ 10"
+    misconceptions:
+      - { match: 12, feedback: "ดูเหมือนคิดเป็นกิโลเมตร โจทย์ใช้หน่วยเมตร $1\\ \\mathrm{km} = 10^{3}\\ \\mathrm{m}$" }
+      - { match: 8, feedback: "$10^8$ เป็นแค่อัตราเร็วของแสง ยังต้องคูณด้วยจำนวนวินาทีใน 1 ปี" }
+    solution: "1 ปี $= 365 \\times 86{,}400 = 31{,}536{,}000 \\approx 3.15 \\times 10^{7}\\ \\mathrm{s}$ ระยะ $= (3.0 \\times 10^{8})(3.15 \\times 10^{7}) \\approx 9.46 \\times 10^{15}\\ \\mathrm{m}$ จึงได้ $n = 15$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
