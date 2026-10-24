@@ -81,3 +81,25 @@
 - `uk-nc-mathematics:UKNC-MA-KS3-N-07 → full` `UKNC-MA-KS4-N-02 → full` `UKNC-MA-KS4-N-06 → full` `UKNC-MA-KS3-N-16 → partial` `UKNC-MA-KS4-N-04 → partial` (ยังไม่มีการทำกรณฑ์ให้อยู่ในรูปอย่างง่าย)
 - `au-ac9-mathematics:AC9M7N01 → full` `AC9M8N01 → full` `AC9M8N03 → full` `AC9M9N01 → full` `AU-M10A-N-01 → partial`
 - หัวข้อใหม่ที่ควรมี: การจัดรูปกรณฑ์และการทำส่วนให้เป็นตรรกยะ (UKNC-MA-KS4-N-04, AU-M10A-N-01) ซึ่งตรงกับ `math.algebra.radicals` ในแผนเฟส 6
+
+## scientific-notation (`math.number.scientific-notation`)
+
+- โจทย์ 12 → 20 (p013–p020) ความยาก 1:3 · 2:4 · 3:7 · 4:5 · 5:1 ชนิด numeric, mcq, match, text, order สถานการณ์ไทยใหม่: ประชากรไทยกับโลก แสงแดดถึงนาข้าว พื้นที่เก็บภาพในโทรศัพท์
+- ตัวอย่างแสดงวิธีทำ 2 (ประมาณด้วยเลขหลักเดียวแล้วเทียบกี่เท่า, บวกลบเมื่อเลขชี้กำลังต่างกัน) คำถามชวนคิด 2 (p002, p007)
+- ภาพวาดเอง 2: `powers-of-ten-ladder.svg` (บทเรียน สเกลลอการิทึมตามค่าจริง) `calculator-e-notation.svg` (p019)
+- บทเรียนเพิ่ม: การประมาณด้วยเลขหลักเดียวคูณกำลังของสิบและการเทียบกี่เท่า การบวกลบในสัญกรณ์วิทยาศาสตร์ คำนำหน้าหน่วย (กิโลถึงนาโน) และการเลือกหน่วยให้เหมาะกับขนาด
+- ตัวชี้วัด: `us-ccss-math:8.EE.3 → full` `us-ccss-math:8.EE.4 → full` (ตอนนี้มีบวกลบ การเลือกหน่วย และการอ่านผลจากเครื่องคิดเลขครบ) `us-ccss-math:8.EE.1 → partial` (กฎเลขยกกำลังทั่วไปอยู่ใน exponent-laws)
+- `uk-nc-mathematics:UKNC-MA-KS3-N-08 → full` `UKNC-MA-KS4-N-05 → full` `au-ac9-mathematics:AC9M9M02 → full` `au-ac9-mathematics:AC9M7N03 → partial`
+- หัวข้อใหม่ที่ควรมี: เลขนัยสำคัญและความแม่นของการวัด (`us-ccss-math:N-Q.3`, `uk-nc-mathematics:UKNC-MA-KS3-N-13`, `UKNC-MA-KS4-N-08`) สเกลลอการิทึมในชีวิตจริง (`au-ac9-mathematics:AC9M10M02`)
+
+## similarity (`math.geometry.similarity`)
+
+- โจทย์ 12 → 20 (p013–p020) ความยาก 1:2 · 2:5 · 3:6 · 4:4 · 5:3 ชนิด numeric, mcq, match, expression, order สถานการณ์ไทยใหม่: แจกันเซรามิกลำปาง วัดความกว้างแม่น้ำเจ้าพระยา
+- ตัวอย่างแสดงวิธีทำ 2 (ขยายสามเหลี่ยมบนระนาบพิกัด, พิสูจน์ทฤษฎีบทพีทาโกรัสด้วยสามเหลี่ยมคล้าย) คำถามชวนคิด 2 (p001, p006)
+- ภาพวาดเอง 4: `dilation-grid.svg` `altitude-hypotenuse.svg` (บทเรียน) `side-splitter.svg` (p018 ด้านเป็นสัดส่วน 4:6 และ 5:7.5 จริง) `river-width.svg` (p019 วาดตามสัดส่วน 5 px ต่อเมตร)
+- บทเรียนเพิ่ม: การย่อขยายจากจุดศูนย์กลาง (สมบัติ: ด้านขนานกับเดิม เส้นผ่านจุดศูนย์กลางคงเดิม พิกัด $(kx, ky)$) นิยามความคล้ายด้วยลำดับการแปลง ทฤษฎีบทเส้นแบ่งด้านตามสัดส่วนและบทกลับ การพิสูจน์พีทาโกรัสด้วยสามเหลี่ยมคล้ายและ $h^2 = pq$ อัตราส่วนปริมาตร $k^3$
+- ตัวชี้วัด: `us-ccss-math:7.G.1 → full` `us-ccss-math:G-SRT.4 → full` (ทั้งสองทฤษฎีบทที่มาตรฐานระบุ) `us-ccss-math:8.G.4 → full` (นิยามด้วยลำดับการแปลงและการแยกการยืดแนวเดียว) `us-ccss-math:G-SRT.5 → partial` (ยังไม่มีการพิสูจน์ด้วยความเท่ากันทุกประการ)
+- เสนอเพิ่ม: `us-ccss-math:G-SRT.1 → full` (สมบัติการย่อขยาย) `us-ccss-math:G-SRT.2 → partial` `us-ccss-math:G-SRT.3 → partial` (ใช้เกณฑ์มุม–มุม แต่ยังไม่พิสูจน์จากการแปลง) `us-ccss-math:8.G.3 → partial` (การย่อขยายบนพิกัด)
+- `uk-nc-mathematics:UKNC-MA-KS3-G-09 → partial` (สร้างรูปคล้ายด้วยการขยาย ส่วนสามเหลี่ยมเท่ากันทุกประการอยู่ triangles) `UKNC-MA-KS4-G-09 → full` (ความยาว พื้นที่ ปริมาตรของรูปคล้าย) `UKNC-MA-KS4-R-01 → full` `UKNC-MA-KS4-G-01 → partial` (มีอัตราส่วนเศษส่วน ยังไม่มีอัตราส่วนติดลบ) `UKNC-MA-KS3-R-02 → full`
+- `au-ac9-mathematics:AC9M8SP01 → partial` (ร่วมกับ triangles) `AC9M9SP02 → full` `AC9M9M03 → partial` `AC9M10M05 → partial`
+- หัวข้อใหม่ที่ควรมี: การแปลงทางเรขาคณิต (เลื่อนขนาน หมุน สะท้อน) ซึ่งตรงกับ `math.geometry.symmetry-transformations` ในแผนเฟส 6 และควรเป็น prerequisite ของหัวข้อนี้

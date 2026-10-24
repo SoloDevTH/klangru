@@ -204,3 +204,134 @@ problems:
     solution: "$(6.6 \\times 2 \\times 3.65) \\times 10^{7+2+2} = 48.18 \\times 10^{11} = 4.818 \\times 10^{12}$ ลิตร จึงได้ $n = 12$"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.sci.p013
+    topics: [math.number.scientific-notation]
+    difficulty: 3
+    type: numeric
+    stem: "ประมาณประชากรไทยเป็น $7 \\times 10^{7}$ คน และประชากรโลกเป็น $8 \\times 10^{9}$ คน ประชากรโลกมากกว่าประชากรไทยประมาณกี่เท่า (ตอบเป็นจำนวนเต็มที่ใกล้ที่สุด)"
+    answer: { value: 114, tolerance: 1, unit: เท่า }
+    hints:
+      - "หาร $\\dfrac{8 \\times 10^{9}}{7 \\times 10^{7}}$"
+      - "หารสัมประสิทธิ์ $\\tfrac{8}{7}$ และลบเลขชี้กำลัง $9 - 7$"
+    misconceptions:
+      - { match: 1.14, feedback: "นั่นคือ $\\tfrac{8}{7}$ อย่างเดียว ยังต้องคูณ $10^{9 - 7} = 100$" }
+      - { match: 0.01, feedback: "ดูเหมือนหารกลับด้าน ($\\tfrac{7 \\times 10^7}{8 \\times 10^9}$) ได้ส่วนของไทยในโลก โจทย์ถามโลกมากกว่าไทยกี่เท่า" }
+    solution: "$\\dfrac{8 \\times 10^{9}}{7 \\times 10^{7}} = \\dfrac{8}{7} \\times 10^{2} \\approx 1.14 \\times 10^{2} \\approx 114$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p014
+    topics: [math.number.scientific-notation]
+    difficulty: 3
+    type: numeric
+    stem: "$(4.2 \\times 10^{5}) + (3.5 \\times 10^{4})$ เขียนในสัญกรณ์วิทยาศาสตร์ได้ $a \\times 10^{5}$ แล้ว $a$ มีค่าเท่าใด"
+    answer: { value: 4.55, tolerance: 0.001 }
+    hints:
+      - "บวกได้เมื่อเลขชี้กำลังเท่ากัน เปลี่ยน $3.5 \\times 10^{4}$ ให้เป็นรูป $\\square \\times 10^{5}$"
+      - "$3.5 \\times 10^{4} = 0.35 \\times 10^{5}$"
+    misconceptions:
+      - { match: 7.7, feedback: "บวกสัมประสิทธิ์ $4.2 + 3.5$ ทั้งที่เลขชี้กำลังต่างกัน ต้องทำเลขชี้กำลังให้เท่ากันก่อน ($3.5 \\times 10^4 = 0.35 \\times 10^5$)" }
+      - { match: 0.77, feedback: "ดูเหมือนบวก $4.2 + 3.5$ แล้วปรับรูป ทั้งสองจำนวนมีเลขชี้กำลังต่างกัน ต้องปรับก่อนบวก" }
+    solution: "$4.2 \\times 10^{5} + 0.35 \\times 10^{5} = 4.55 \\times 10^{5}$ ตรวจ: $420{,}000 + 35{,}000 = 455{,}000$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p015
+    topics: [math.number.scientific-notation]
+    difficulty: 4
+    type: numeric
+    stem: "$(6.0 \\times 10^{-3}) - (4.5 \\times 10^{-4})$ เขียนในสัญกรณ์วิทยาศาสตร์ได้ $a \\times 10^{-3}$ แล้ว $a$ มีค่าเท่าใด"
+    answer: { value: 5.55, tolerance: 0.001 }
+    hints:
+      - "$-3$ มากกว่า $-4$ ให้เปลี่ยน $4.5 \\times 10^{-4}$ เป็นรูป $\\square \\times 10^{-3}$"
+      - "$4.5 \\times 10^{-4} = 0.45 \\times 10^{-3}$"
+    misconceptions:
+      - { match: 1.5, feedback: "ลบสัมประสิทธิ์ $6.0 - 4.5$ ทั้งที่เลขชี้กำลังต่างกัน $4.5 \\times 10^{-4}$ เล็กกว่า $6.0 \\times 10^{-3}$ มาก" }
+      - { match: -39, feedback: "ดูเหมือนเปลี่ยน $4.5 \\times 10^{-4}$ เป็น $45 \\times 10^{-3}$ ซึ่งปรับผิดทิศ เลขชี้กำลังเพิ่มขึ้น 1 สัมประสิทธิ์ต้องเล็กลง 10 เท่า: $0.45 \\times 10^{-3}$" }
+    solution: "$6.0 \\times 10^{-3} - 0.45 \\times 10^{-3} = 5.55 \\times 10^{-3}$ ตรวจ: $0.006 - 0.00045 = 0.00555$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p016
+    topics: [math.number.scientific-notation]
+    difficulty: 2
+    type: mcq
+    stem: "แบคทีเรียตัวหนึ่งยาวประมาณ $2 \\times 10^{-6}\\ \\mathrm{m}$ หน่วยใดเหมาะที่สุดในการบอกความยาวนี้ให้อ่านง่าย"
+    choices:
+      - { id: a, text: "ไมโครเมตร (ได้ 2 ไมโครเมตร)", correct: true }
+      - { id: b, text: "มิลลิเมตร", feedback: "ได้ $0.002\\ \\mathrm{mm}$ ยังมีศูนย์นำหน้าหลายตัว ไมโคร ($10^{-6}$) ตรงกับเลขชี้กำลังพอดี" }
+      - { id: c, text: "เซนติเมตร", feedback: "ได้ $0.0002\\ \\mathrm{cm}$ อ่านยากกว่าเดิม" }
+      - { id: d, text: "นาโนเมตร", feedback: "ได้ $2{,}000$ นาโนเมตร ใช้ได้แต่ตัวเลขใหญ่เกินจำเป็น ไมโครเมตรได้ตัวเลขหลักเดียว" }
+    hints:
+      - "คำนำหน้าหน่วยแต่ละตัวคือกำลังของสิบ"
+      - "ไมโคร $= 10^{-6}$ มิลลิ $= 10^{-3}$ นาโน $= 10^{-9}$"
+    solution: "$2 \\times 10^{-6}\\ \\mathrm{m} = 2\\ \\text{ไมโครเมตร}$ ($\\mu\\mathrm{m}$) เพราะไมโครหมายถึง $10^{-6}$ ได้ตัวเลขหลักเดียวที่อ่านง่าย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p017
+    topics: [math.number.scientific-notation]
+    difficulty: 1
+    type: numeric
+    stem: "เขียน $7.06 \\times 10^{5}$ เป็นจำนวนในรูปทศนิยมปกติ (ไม่มีเลขยกกำลัง)"
+    answer: { value: 706000 }
+    hints:
+      - "$10^{5}$ คือเลื่อนจุดทศนิยมไปทางขวา 5 ตำแหน่ง"
+      - "เติมศูนย์ให้ครบเมื่อตัวเลขหมด"
+    misconceptions:
+      - { match: 70600, feedback: "เลื่อนจุดไปเพียง 4 ตำแหน่ง ต้องเลื่อน 5 ตำแหน่งตามเลขชี้กำลัง" }
+      - { match: 7060000, feedback: "เลื่อนจุดไป 6 ตำแหน่ง ต้องเลื่อน 5 ตำแหน่ง ลองนับ: 7.06 → 70.6 → 706 → 7,060 → 70,600 → 706,000" }
+    solution: "$7.06 \\times 10^{5}$ เลื่อนจุดไปทางขวา 5 ตำแหน่ง: $706{,}000$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p018
+    topics: [math.number.scientific-notation]
+    difficulty: 4
+    type: numeric
+    stem: "แสงเดินทางด้วยอัตราเร็ว $3 \\times 10^{8}\\ \\mathrm{m/s}$ ระยะจากดวงอาทิตย์ถึงโลกประมาณ $1.5 \\times 10^{11}\\ \\mathrm{m}$ แสงแดดที่ตกกระทบนาข้าวเมื่อครู่นี้ออกจากดวงอาทิตย์มาแล้วกี่วินาที (ตอบในหน่วยวินาที)"
+    answer: { value: 500, unit: s }
+    hints:
+      - "เวลา = ระยะทาง ÷ อัตราเร็ว"
+      - "หารสัมประสิทธิ์ $\\tfrac{1.5}{3}$ และลบเลขชี้กำลัง $11 - 8$ แล้วปรับรูป"
+    misconceptions:
+      - { match: 0.002, feedback: "หารกลับด้าน ($\\tfrac{3 \\times 10^8}{1.5 \\times 10^{11}}$) เวลาต้องเป็นระยะทางหารด้วยอัตราเร็ว" }
+      - { match: 5000, feedback: "$0.5 \\times 10^{3} = 5 \\times 10^{2}$ ไม่ใช่ $5 \\times 10^{3}$ เมื่อสัมประสิทธิ์ใหญ่ขึ้น 10 เท่า เลขชี้กำลังต้องลดลง 1" }
+    solution: "$\\dfrac{1.5 \\times 10^{11}}{3 \\times 10^{8}} = 0.5 \\times 10^{3} = 5 \\times 10^{2} = 500$ วินาที (ประมาณ 8 นาที 20 วินาที)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p019
+    topics: [math.number.scientific-notation]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียนหารตัวเลขด้วยเครื่องคิดเลขแล้วหน้าจอแสดงดังภาพ ค่านี้เท่ากับข้อใด"
+    figure: { src: calculator-e-notation.svg, alt: "หน้าจอเครื่องคิดเลขแสดงข้อความ 4.2E-5" }
+    choices:
+      - { id: a, text: "$0.000042$", correct: true }
+      - { id: b, text: "$4.2^{-5}$", feedback: "E ไม่ได้หมายถึงยกกำลังของ 4.2 แต่หมายถึง \"คูณ 10 ยกกำลัง\"" }
+      - { id: c, text: "$-420{,}000$", feedback: "เลขชี้กำลังลบไม่ได้ทำให้จำนวนติดลบ และเลื่อนจุดผิดทิศ $10^{-5}$ ทำให้จำนวนเล็กลง" }
+      - { id: d, text: "$0.0000042$", feedback: "เลื่อนจุดไป 6 ตำแหน่ง $10^{-5}$ ต้องเลื่อนไปทางซ้าย 5 ตำแหน่ง" }
+    hints:
+      - "E บนเครื่องคิดเลขอ่านว่า \"คูณ 10 ยกกำลัง\""
+      - "$4.2 \\times 10^{-5}$ เลื่อนจุดไปทางซ้าย 5 ตำแหน่ง"
+    solution: "$4.2\\mathrm{E}{-5} = 4.2 \\times 10^{-5} = 0.000042$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sci.p020
+    topics: [math.number.scientific-notation]
+    difficulty: 4
+    type: numeric
+    stem: "โทรศัพท์ของน้องมีพื้นที่เก็บข้อมูลว่าง $1.28 \\times 10^{11}$ ไบต์ ภาพถ่ายแต่ละภาพมีขนาดประมาณ $4 \\times 10^{6}$ ไบต์ เก็บภาพได้ประมาณกี่ภาพ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 32000, unit: ภาพ }
+    hints:
+      - "จำนวนภาพ = พื้นที่ว่าง ÷ ขนาดต่อภาพ"
+      - "$\\tfrac{1.28}{4} = 0.32$ และ $10^{11 - 6} = 10^{5}$ แล้วปรับรูป"
+    misconceptions:
+      - { match: 3200, feedback: "$0.32 \\times 10^{5} = 3.2 \\times 10^{4} = 32{,}000$ ดูเหมือนปรับเลขชี้กำลังผิดไปหนึ่งขั้น" }
+      - { match: 320000, feedback: "$0.32 \\times 10^{5}$ คือ $32{,}000$ เมื่อเลื่อนสัมประสิทธิ์ให้ใหญ่ขึ้น เลขชี้กำลังต้องลดลง ไม่ใช่เพิ่ม" }
+    solution: "$\\dfrac{1.28 \\times 10^{11}}{4 \\times 10^{6}} = 0.32 \\times 10^{5} = 3.2 \\times 10^{4} = 32{,}000$ ภาพ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

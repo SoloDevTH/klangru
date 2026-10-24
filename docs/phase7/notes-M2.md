@@ -99,3 +99,33 @@
 - ยังบางส่วน: `us-ccss-math:A-CED.3` มีข้อจำกัดเป็นระบบสมการแล้ว แต่ข้อจำกัดแบบระบบอสมการต้องรอหัวข้ออสมการสองตัวแปร · เสนอจับคู่ใหม่ `us-ccss-math:A-REI.11 → partial` (เฉพาะฟังก์ชันเชิงเส้น ยังไม่มีพหุนาม ตรรกยะ หรือเอกซ์โพเนนเชียล)
 - AU/UK: `uk-nc-mathematics:UKNC-MA-KS4-A-12 → partial` (เชิงเส้นกับเชิงเส้นครบทั้งพีชคณิตและกราฟ ส่วนเชิงเส้นกับกำลังสองยังไม่มี), `uk-nc-mathematics:UKNC-MA-KS3-A-12 → partial` (ประมาณคำตอบระบบเชิงเส้นจากกราฟครบ ส่วนกราฟกำลังสองอยู่ใน math.functions.quadratic), `uk-nc-mathematics:UKNC-MA-KS4-A-14 → full` เมื่อรวมกับ linear-equations, `au-ac9-mathematics:AC9M10A02 → full` เมื่อรวมกับ linear-inequalities (ระบบสมการและอสมการตัวแปรเดียว ตีความด้วยกราฟ)
 - หัวข้อใหม่: ระบบสมการเชิงเส้นกับกำลังสอง (A-REI.7, UK KS4-A-12 ส่วนที่อยู่ใน { }) และระบบสามตัวแปรด้วยเมทริกซ์ (A-REI.8–9) ซึ่งตรงกับแผน math.linalg.matrices-elimination
+
+## logarithms (math.functions.logarithms)
+
+- โจทย์ 13 → 20 (p014–p020) ระดับ 1:3, 2:5, 3:4, 4:5, 5:3 · สถานการณ์จริง 5 ข้อ (p011 แผ่นดินไหวเชียงราย, p012, p013, p018 ยา, p019 เสียงรถตุ๊กตุ๊ก)
+- ภาพวาดเอง 2 ภาพ: `exp-log-reflect.svg` (บทเรียน กราฟสะท้อนข้าม y = x หน่วยแกนเท่ากัน), `ph-scale.svg` (บทเรียน มาตราลอการิทึม) · Commons 0
+- เพิ่มในบทเรียน: ลอการิทึมเป็นฟังก์ชันผกผันของเอกซ์โพเนนเชียล ($\log_b b^x = x$, $b^{\log_b x} = x$, กราฟสะท้อน, โดเมน), ขั้นตอนแก้ $a \cdot b^{ct} = d$ รวมฐาน e, เดซิเบล, การตรวจโดเมนของคำตอบ · ตัวอย่าง 2 ($\log_8 4$, $1200\mathrm{e}^{0.03t} = 3000$) · check 2 (p016, p017)
+- ตัวชี้วัดที่ตอนนี้สอนครบ: `us-ccss-math:F-LE.4 → full` (เดิม เพิ่มฐาน e และ $ct$), `us-ccss-math:F-BF.5 → full` (ความสัมพันธ์ผกผันและใช้แก้ปัญหา p015 p016)
+- ยังบางส่วน: `us-ccss-math:F-BF.4` (หาฟังก์ชันผกผันทั่วไป) ยังไม่จับคู่ บทนี้มีเฉพาะคู่ $b^x$ กับ $\log_b x$
+- AU/UK: `au-ac9-mathematics:AU-M10A-A-04 → full` (ความสัมพันธ์ผกผันของเอกซ์โพเนนเชียลกับลอการิทึมและการแก้สมการ) · `au-ac9-mathematics:AC9M10A03 → partial` (แก้สมการเอกซ์โพเนนเชียล ส่วนกราฟอยู่ใน math.functions.exponential) · UK national curriculum (KS1–KS4) ไม่มีลอการิทึม
+- หัวข้อใหม่: ฟังก์ชันผกผันทั่วไป (F-BF.4) ดูข้อเสนอใน functions-intro
+
+## place-value (math.number.place-value)
+
+- โจทย์ 13 → 20 (p014–p020) ระดับ 1:3, 2:6, 3:6, 4:4, 5:1 · สถานการณ์จริงในไทย 6 ข้อ (p005 p007 p009 p013 p017 p019)
+- ภาพวาดเอง 2 ภาพ: `shift-chart.svg` (ตัวอย่างแสดงวิธีทำ ตารางหลักเลื่อนเลขโดด), `blocks-regroup.svg` (โจทย์ p014 บล็อกฐานสิบ) · Commons 0
+- เพิ่มในบทเรียน: หลักทางซ้ายมีค่า 10 เท่าและทางขวา $\tfrac{1}{10}$, คูณหารด้วย 10 100 1,000 ด้วยการเลื่อนหลัก, คูณด้วยพหุคูณของ 10, รวมกลุ่มและแตกกลุ่มสิบ, บวกลบ 10 หรือ 100 ในใจ, จำนวนถึงหลักล้าน · ตัวอย่าง 2 (4 ร้อย 23 สิบ 18 หน่วย, $0.25 \times 1000$ และ $3.6 \div 100$) · check 2 (p014, p016)
+- ตัวชี้วัดที่ตอนนี้สอนครบ: `us-ccss-math:1.NBT.2 → full`, `us-ccss-math:2.NBT.1 → full`, `us-ccss-math:4.NBT.1 → full`, `us-ccss-math:5.NBT.1 → full` (ส่วนที่เดิมยังขาดคือรวมกลุ่มสิบและความสัมพันธ์สิบเท่า) · เสนอจับคู่ใหม่ `us-ccss-math:1.NBT.5 → full`, `us-ccss-math:2.NBT.8 → full` (p015), `us-ccss-math:3.NBT.3 → full`, `us-ccss-math:5.NBT.2 → partial` (คูณหารด้วยกำลังของ 10 ครบ แต่ยังไม่ใช้สัญกรณ์เลขยกกำลัง ซึ่งอยู่ใน math.number.exponents)
+- ยังบางส่วน: `us-ccss-math:K.NBT.1`, `1.NBT.1`, `2.NBT.2` (นับจำนวนและนับข้าม) อยู่ในขอบเขตหัวข้อที่เสนอ math.number.counting-numbers
+- AU/UK: `uk-nc-mathematics:UKNC-MA-Y2-NPV-02`, `Y3-NPV-02`, `Y4-NPV-04`, `Y4-NPV-07`, `Y5-NPV-01`, `Y5-NPV-04`, `Y6-NPV-01`, `Y6-NPV-02`, `KS3-N-01 → full` · `uk-nc-mathematics:UKNC-MA-Y3-NPV-01`, `UKNC-MA-Y4-NPV-02`, `UKNC-MA-Y5-NPV-02 → partial` (บวกลบ 10 100 1,000 ในใจมี แต่การนับข้ามเป็นเรื่องของ counting-numbers) · `uk-nc-mathematics:UKNC-MA-Y4-NPV-09`, `Y5-NPV-06` (เลขโรมัน) ไม่ได้สอน ควรอยู่หัวข้อตัวเลขไทยและระบบตัวเลข · `au-ac9-mathematics:AC9M2N02 → full`, `AC9M4N01 → full`, `AC9M4N05 → full`, `AC9M5N01 → full`, `AC9M6N06 → full`, `AC9M7N03 → partial` (รูปกระจายครบ ยังไม่ใช้กำลังของ 10), `AC9M1N02 → full`
+- หัวข้อใหม่: ระบบตัวเลขอื่น (เลขโรมัน ตัวเลขไทย ฐานสอง) เหมาะกับหัวข้อที่เสนอ math.number.counting-numbers
+
+## polynomials (math.algebra.polynomials)
+
+- โจทย์ 13 → 21 (p014–p021) ระดับ 1:3, 2:5, 3:7, 4:4, 5:2 · สถานการณ์จริงในไทย 5 ข้อ (p006 p010 p011 p015 p019)
+- ภาพวาดเอง 2 ภาพ: `square-of-sum.svg` (บทเรียน), `banner-area.svg` (โจทย์ p015 แบบจำลองพื้นที่ที่ไม่บอกพื้นที่ช่อง) · Commons 0
+- เพิ่มในบทเรียน: คูณทวินามสามตัว, สามเหลี่ยมปาสกาลและ $(a + b)^3$, สมบัติปิดของพหุนาม (หารไม่ปิด), เอกลักษณ์และการพิสูจน์ด้วยการกระจาย (รวมเอกลักษณ์สร้างสามสิ่งอันดับพีทาโกรัส) · ตัวอย่าง 2 (ตาราง $(x + 5)(x - 2)$, พิสูจน์ $(n + 1)^2 - n^2 = 2n + 1$) · check 2 (p014, p018)
+- ตัวชี้วัดที่ตอนนี้สอนครบ: `us-ccss-math:A-APR.1 → full` (เพิ่มสมบัติปิด p018), เสนอจับคู่ใหม่ `us-ccss-math:A-APR.4 → full` (ตัวอย่างและ p020) · `us-ccss-math:7.EE.1 → full` และ `A-SSE.2` อยู่ใน factoring ด้วย
+- ยังบางส่วน: เสนอจับคู่ `us-ccss-math:A-APR.5 → partial` (สามเหลี่ยมปาสกาลถึงกำลังสาม ยังไม่มีทฤษฎีบททวินามทั่วไป) · การหารพหุนามและทฤษฎีบทเศษเหลือ (A-APR.2, A-APR.6) อยู่ในแผน math.algebra.polynomial-equations
+- AU/UK: `uk-nc-mathematics:UKNC-MA-KS3-A-04 → full` เมื่อรวมกับ factoring (รวมพจน์คล้าย คูณพจน์เข้าวงเล็บ ดึงตัวร่วม และกระจายผลคูณของทวินามตั้งแต่สองตัว p016), `uk-nc-mathematics:UKNC-MA-KS4-A-02 → partial` (พิสูจน์เอกลักษณ์ทางพีชคณิต ร่วมกับ linear-equations), `au-ac9-mathematics:AC9M9A02 → full` เมื่อรวมกับ factoring, `au-ac9-mathematics:AC9M8A01 → partial` (เชิงเส้นอยู่ใน math.algebra.expressions)
+- หัวข้อใหม่: ทฤษฎีบททวินามและการจัดหมู่ (A-APR.5) ควรเชื่อมกับ math.prob.counting มากกว่าบทนี้

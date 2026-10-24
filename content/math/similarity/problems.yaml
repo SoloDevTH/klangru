@@ -202,3 +202,139 @@ problems:
     solution: "$\\dfrac{1.6}{s} = \\dfrac{4.8}{4 + s}$ → $1.6(4 + s) = 4.8s$ → $6.4 + 1.6s = 4.8s$ → $3.2s = 6.4$ → $s = 2\\ \\mathrm{m}$ ตรวจ: $\\tfrac{1.6}{2} = 0.8$ และ $\\tfrac{4.8}{6} = 0.8$ ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.sim.p013
+    topics: [math.geometry.similarity]
+    difficulty: 2
+    type: numeric
+    stem: "ขยายจุด $P(4, -6)$ ด้วยอัตราส่วน $1.5$ โดยมีจุดกำเนิดเป็นจุดศูนย์กลาง ได้จุด $P'$ พิกัด $y$ ของ $P'$ เท่ากับเท่าใด"
+    answer: { value: -9 }
+    hints:
+      - "การขยายจากจุดกำเนิดด้วยอัตราส่วน $k$ ส่ง $(x, y)$ ไปที่ $(kx, ky)$"
+      - "คูณพิกัด $y$ ด้วย $1.5$"
+    misconceptions:
+      - { match: -4.5, feedback: "ดูเหมือนบวก $1.5$ เข้าไป การย่อขยายต้องคูณพิกัดด้วยอัตราส่วน" }
+      - { match: 6, feedback: "นั่นคือพิกัด $x$ ของ $P'$ ($4 \\times 1.5$) โจทย์ถามพิกัด $y$" }
+    solution: "$P' = (1.5 \\times 4, 1.5 \\times (-6)) = (6, -9)$ พิกัด $y$ คือ $-9$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p014
+    topics: [math.geometry.similarity]
+    difficulty: 3
+    type: mcq
+    stem: "รูปสามเหลี่ยมถูกขยายโดยมีจุดกำเนิดเป็นจุดศูนย์กลาง จุดยอด $A(2, 1)$ ไปอยู่ที่ $A'(6, 3)$ อัตราส่วนการขยายเท่ากับเท่าใด"
+    choices:
+      - { id: a, text: "$3$", correct: true }
+      - { id: b, text: "$4$", feedback: "$4$ คือระยะที่พิกัด $x$ เพิ่มขึ้น ($6 - 2$) การย่อขยายเป็นการคูณ จึงต้องหาร $\\tfrac{6}{2}$" }
+      - { id: c, text: "$\\tfrac{1}{3}$", feedback: "หารกลับด้าน ภาพ $A'$ อยู่ไกลจาก $O$ กว่าจุดเดิม จึงเป็นการขยาย อัตราส่วนต้องมากกว่า 1" }
+      - { id: d, text: "$2$", feedback: "พิกัด $y$ เพิ่มขึ้น $2$ แต่ต้องดูการคูณ: $1 \\times 3 = 3$ และ $2 \\times 3 = 6$" }
+    hints:
+      - "จากจุดกำเนิด $(x, y) \\to (kx, ky)$"
+      - "หาร $\\tfrac{6}{2}$ และ $\\tfrac{3}{1}$ ต้องได้ค่าเดียวกัน"
+    solution: "$k = \\tfrac{6}{2} = \\tfrac{3}{1} = 3$ จุด $A'$ อยู่บนรังสี $OA$ และ $OA' = 3 \\cdot OA$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p015
+    topics: [math.geometry.similarity]
+    difficulty: 2
+    type: mcq
+    stem: "การแปลงใดต่อไปนี้ **ไม่** ทำให้ได้รูปที่คล้ายกับรูปเดิมเสมอ"
+    choices:
+      - { id: a, text: "ยืดรูปเฉพาะแนวนอนเป็น 2 เท่า แนวตั้งเท่าเดิม", correct: true }
+      - { id: b, text: "หมุนรูป $90^\\circ$ แล้วย่อลงครึ่งหนึ่ง", feedback: "การหมุนไม่เปลี่ยนรูปร่าง และการย่อด้วยอัตราส่วนเดียวกันทุกทิศยังได้รูปคล้าย" }
+      - { id: c, text: "สะท้อนรูปในแกน $y$", feedback: "การสะท้อนได้รูปที่เท่ากันทุกประการ ซึ่งคล้ายกันด้วยอัตราส่วน 1" }
+      - { id: d, text: "ขยายจากจุดศูนย์กลางด้วยอัตราส่วน 3", feedback: "การขยายทุกทิศเท่ากันคือการแปลงแบบคล้ายโดยตรง" }
+    hints:
+      - "รูปคล้ายต้องมีมุมเท่าเดิม และทุกด้านเปลี่ยนด้วยอัตราส่วนเดียวกัน"
+      - "ลองนึกถึงรูปถ่ายที่ถูกดึงแค่ด้านเดียว"
+    solution: "การยืดแนวเดียวทำให้ด้านแนวนอนยาวขึ้น 2 เท่าแต่ด้านแนวตั้งเท่าเดิม อัตราส่วนไม่เท่ากันและมุมเปลี่ยน จึงไม่คล้าย ส่วนการหมุน สะท้อน และย่อขยาย (รวมถึงทำต่อกัน) ให้รูปคล้ายเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p016
+    topics: [math.geometry.similarity]
+    difficulty: 4
+    type: numeric
+    stem: "โรงงานเซรามิกในลำปางทำแจกันทรงเดียวกันสองขนาด ใบเล็กสูง $20\\ \\mathrm{cm}$ จุน้ำได้ $0.8$ ลิตร ใบใหญ่สูง $30\\ \\mathrm{cm}$ ใบใหญ่จุน้ำได้กี่ลิตร (ตอบในหน่วยลิตร)"
+    answer: { value: 2.7, tolerance: 0.01, unit: ลิตร }
+    hints:
+      - "อัตราส่วนความยาว $k = \\tfrac{30}{20}$"
+      - "ความจุเป็นปริมาตร จึงขยาย $k^3$ เท่า"
+    misconceptions:
+      - { match: 1.2, feedback: "ดูเหมือนคูณด้วย $k = 1.5$ ครั้งเดียว ปริมาตรขยายทั้งกว้าง ยาว และสูง จึงต้องคูณ $k^3$" }
+      - { match: 1.8, feedback: "ดูเหมือนคูณด้วย $k^2$ ซึ่งใช้กับพื้นที่ ปริมาตรต้องใช้ $k^3$" }
+    solution: "$k = \\tfrac{30}{20} = 1.5$ และ $k^3 = 3.375$ ความจุใบใหญ่ $= 0.8 \\times 3.375 = 2.7$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p017
+    topics: [math.geometry.similarity]
+    difficulty: 4
+    type: numeric
+    stem: "สามเหลี่ยม $ABC$ มีมุม $C$ เป็นมุมฉาก ลากส่วนสูง $CD$ ตั้งฉากกับ $AB$ ทำให้ $AD = 4\\ \\mathrm{cm}$ และ $DB = 9\\ \\mathrm{cm}$ ส่วนสูง $CD$ ยาวกี่เซนติเมตร (ตอบในหน่วย cm)"
+    answer: { value: 6, unit: cm }
+    hints:
+      - "$\\triangle ACD \\sim \\triangle CBD$ เพราะมีมุมฉากและมุมแหลมที่เท่ากัน"
+      - "ตั้งสัดส่วน $\\dfrac{CD}{AD} = \\dfrac{DB}{CD}$"
+      - "ได้ $CD^2 = AD \\times DB$"
+    misconceptions:
+      - { match: 6.5, feedback: "นั่นคือค่าเฉลี่ยเลขคณิต $\\tfrac{4 + 9}{2}$ ส่วนสูงได้จาก $CD^2 = 4 \\times 9$" }
+      - { match: 36, feedback: "นั่นคือ $CD^2$ ยังต้องถอดรากที่สอง" }
+    solution: "$\\triangle ACD \\sim \\triangle CBD$ จึงได้ $\\dfrac{CD}{4} = \\dfrac{9}{CD}$ → $CD^2 = 36$ → $CD = 6\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p018
+    topics: [math.geometry.similarity]
+    difficulty: 3
+    type: numeric
+    stem: "ใน $\\triangle ABC$ มี $DE \\parallel BC$ โดย $AD = 4$, $DB = 6$ และ $AE = 5$ หน่วย $EC$ ยาวกี่หน่วย"
+    figure: { src: side-splitter.svg, alt: "สามเหลี่ยม ABC มีจุดยอด A อยู่บน จุด D อยู่บนด้าน AB และจุด E อยู่บนด้าน AC เส้น DE ขนานกับ BC ป้ายบอก AD = 4 DB = 6 AE = 5 และ EC เป็นเครื่องหมายคำถาม" }
+    answer: { value: 7.5, tolerance: 0.01, unit: หน่วย }
+    hints:
+      - "เส้นที่ขนานกับด้านหนึ่งแบ่งอีกสองด้านเป็นอัตราส่วนเดียวกัน"
+      - "ตั้งสัดส่วน $\\dfrac{AD}{DB} = \\dfrac{AE}{EC}$"
+    misconceptions:
+      - { match: 3.33, feedback: "ตั้งสัดส่วนกลับข้าง ส่วนบนของสองด้านต้องคู่กัน: $\\tfrac{4}{6} = \\tfrac{5}{EC}$" }
+      - { match: 12.5, feedback: "นั่นคือด้าน $AC$ ทั้งเส้น ($5 + 7.5$) โจทย์ถามเฉพาะส่วน $EC$" }
+    solution: "$\\dfrac{4}{6} = \\dfrac{5}{EC}$ → $EC = \\dfrac{5 \\times 6}{4} = 7.5$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p019
+    topics: [math.geometry.similarity]
+    difficulty: 5
+    type: numeric
+    stem: "นักเรียนวัดความกว้างแม่น้ำเจ้าพระยาช่วงหนึ่งโดยไม่ข้ามฝั่ง เลือกต้นไม้ T บนฝั่งตรงข้าม ยืนที่ B ซึ่งตรงข้ามต้นไม้พอดี เดินเลียบฝั่งไป $40\\ \\mathrm{m}$ ปักหลักที่ C เดินต่ออีก $10\\ \\mathrm{m}$ ถึง D แล้วเดินตั้งฉากออกจากแม่น้ำจนถึง E ที่มองเห็นหลัก C บังต้นไม้ T พอดี ระยะ DE วัดได้ $12\\ \\mathrm{m}$ แม่น้ำกว้าง (ระยะ TB) กี่เมตร (ตอบในหน่วย m)"
+    figure: { src: river-width.svg, alt: "แผนผังแม่น้ำ ต้นไม้ T อยู่ฝั่งตรงข้าม จุด B อยู่ฝั่งนี้ตรงข้าม T มีมุมฉากที่ B ระยะ BC ตามฝั่งยาว 40 m ระยะ CD ยาว 10 m ที่ D มีมุมฉากและเส้น DE ยาว 12 m ออกจากแม่น้ำ เส้นตรงจาก T ผ่าน C ไปถึง E ระยะ TB เป็นเครื่องหมายคำถาม" }
+    answer: { value: 48, unit: m }
+    hints:
+      - "$\\triangle TBC$ กับ $\\triangle EDC$ มีมุมฉากที่ $B$ และ $D$ และมุมตรงข้ามที่ $C$ เท่ากัน จึงคล้ายกัน"
+      - "ด้านที่สมนัยกัน: $TB \\leftrightarrow ED$ และ $BC \\leftrightarrow DC$"
+      - "ตั้งสัดส่วน $\\dfrac{TB}{BC} = \\dfrac{ED}{DC}$"
+    misconceptions:
+      - { match: 33.33, feedback: "จับคู่ด้านผิด ใช้ $\\tfrac{TB}{BC} = \\tfrac{DC}{ED}$ ด้าน $TB$ อยู่ตรงข้ามมุม $C$ เช่นเดียวกับ $ED$ จึงต้องคู่กัน" }
+      - { match: 3, feedback: "ดูเหมือนคำนวณ $\\tfrac{10 \\times 12}{40}$ ซึ่งกลับสัดส่วน แม่น้ำต้องกว้างกว่า DE เพราะสามเหลี่ยม TBC ใหญ่กว่า" }
+    solution: "$\\triangle TBC \\sim \\triangle EDC$ (มุมฉาก และมุมตรงข้ามที่ $C$) ได้ $\\dfrac{TB}{40} = \\dfrac{12}{10}$ → $TB = 48\\ \\mathrm{m}$ (อัตราส่วนการขยาย $\\tfrac{40}{10} = 4$ จึงได้ $12 \\times 4 = 48$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.sim.p020
+    topics: [math.geometry.similarity]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาความยาวด้านที่ไม่รู้ค่าโดยใช้สามเหลี่ยมคล้าย"
+    items:
+      - "หามุมที่เท่ากันสองคู่ เพื่อยืนยันว่าสามเหลี่ยมคล้ายกัน (มุม–มุม)"
+      - "จับคู่จุดยอดที่สมนัยกัน แล้วเขียนเช่น $\\triangle ABC \\sim \\triangle DEF$"
+      - "ระบุด้านที่สมนัยกัน (ด้านที่อยู่ตรงข้ามมุมที่เท่ากัน)"
+      - "ตั้งสัดส่วนโดยให้ด้านของรูปเดียวกันอยู่ข้างเดียวกัน"
+      - "คูณไขว้แก้หาด้านที่ไม่รู้ แล้วตรวจว่าคำตอบสมเหตุสมผล"
+    hints:
+      - "ต้องรู้ก่อนว่ารูปคล้ายกันจริง จึงจะใช้สัดส่วนได้"
+      - "การจับคู่จุดยอดต้องมาก่อนการตั้งสัดส่วน"
+    solution: "ยืนยันความคล้าย → จับคู่จุดยอด → ระบุด้านที่สมนัย → ตั้งสัดส่วน → แก้สมการและตรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

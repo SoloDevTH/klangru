@@ -217,3 +217,120 @@ problems:
     solution: "$(1.05)^n = 2$ → $n = \\dfrac{\\log 2}{\\log 1.05} \\approx \\dfrac{0.3010}{0.0212} \\approx 14.2$ ปี ต้องฝากครบ 15 ปี ตรวจ: $50{,}000(1.05)^{15} \\approx 103{,}946$ บาท ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.log.p014
+    topics: [math.functions.logarithms]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาค่าของ $\\log_3 81$"
+    answer: { value: 4 }
+    hints:
+      - "ถามว่า 3 ยกกำลังเท่าใดได้ 81"
+      - "ลองคูณ 3 ไปเรื่อย ๆ: 3, 9, 27, …"
+    misconceptions:
+      - { match: 27, feedback: "ดูเหมือนหาร $81 \\div 3$ ลอการิทึมไม่ใช่การหาร แต่ถามว่าต้องยกกำลังเท่าใด" }
+    solution: "$3^4 = 81$ จึงได้ $\\log_3 81 = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p015
+    topics: [math.functions.logarithms]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่าของ $10^{\\log 5} + \\log_2 2^{6}$"
+    answer: { value: 11 }
+    hints:
+      - "ลอการิทึมฐาน $b$ กับเลขยกกำลังฐาน $b$ เป็นฟังก์ชันผกผันกัน จึงหักล้างกัน"
+      - "$b^{\\log_b x} = x$ และ $\\log_b b^{x} = x$"
+    misconceptions:
+      - { match: 69, feedback: "ดูเหมือนคำนวณ $2^6 = 64$ แล้วลืมใส่ลอการิทึม $\\log_2 2^6$ คือเลขชี้กำลัง 6 ไม่ใช่ 64" }
+    solution: "$10^{\\log 5} = 5$ เพราะ $\\log 5$ คือเลขชี้กำลังที่ทำให้ 10 กลายเป็น 5 และ $\\log_2 2^6 = 6$ รวมได้ $5 + 6 = 11$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p016
+    topics: [math.functions.logarithms]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "จุดใดบ้างอยู่บนกราฟของ $y = \\log_2 x$ (เลือกได้มากกว่า 1 ข้อ)"
+    choices:
+      - { id: a, text: "$(1, 0)$", correct: true }
+      - { id: b, text: "$(8, 3)$", correct: true }
+      - { id: c, text: "$(0, 1)$", feedback: "$(0, 1)$ อยู่บนกราฟ $y = 2^x$ ส่วน $\\log_2 0$ หาค่าไม่ได้ เพราะไม่มีเลขชี้กำลังใดทำให้ 2 กลายเป็น 0" }
+      - { id: d, text: "$(3, 8)$", feedback: "สลับพิกัด $(3, 8)$ อยู่บน $y = 2^x$ บน $y = \\log_2 x$ ต้องเป็น $(8, 3)$" }
+      - { id: e, text: "$(\\tfrac{1}{2}, -1)$", correct: true }
+    hints:
+      - "จุด $(x, y)$ อยู่บนกราฟเมื่อ $2^y = x$"
+      - "ตรวจทีละจุดว่า 2 ยกกำลังพิกัด $y$ ได้พิกัด $x$ หรือไม่"
+    solution: "$2^0 = 1$ ✓ · $2^3 = 8$ ✓ · $2^{-1} = \\tfrac{1}{2}$ ✓ · $(0, 1)$: $2^1 \\ne 0$ ✗ · $(3, 8)$: $2^8 \\ne 3$ ✗"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p017
+    topics: [math.functions.logarithms]
+    difficulty: 3
+    type: numeric
+    stem: "แก้สมการ $4\\mathrm{e}^{2t} = 20$ (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.80, tolerance: 0.01 }
+    hints:
+      - "หารทั้งสองข้างด้วย 4 ก่อน ให้เหลือ $\\mathrm{e}^{2t}$ ข้างเดียว"
+      - "ใส่ $\\ln$ ทั้งสองข้าง: $\\ln \\mathrm{e}^{2t} = 2t$"
+      - "หารด้วย 2 แล้วใช้เครื่องคิดเลขหาค่า $\\ln 5$"
+    misconceptions:
+      - { match: 1.50, feedback: "ดูเหมือนใส่ $\\ln$ ก่อนหารด้วย 4 ได้ $2t = \\ln 20$ แต่ 4 ไม่ได้ถูกยกกำลัง ต้องหาร 4 ก่อน" }
+      - { match: 1.61, feedback: "$\\ln 5 \\approx 1.61$ คือค่าของ $2t$ ยังต้องหาร 2" }
+    solution: "$\\mathrm{e}^{2t} = 5$ → $2t = \\ln 5 \\approx 1.6094$ → $t \\approx 0.80$ ตรวจ: $4\\mathrm{e}^{1.609} \\approx 4 \\times 5 = 20$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p018
+    topics: [math.functions.logarithms]
+    difficulty: 4
+    type: numeric
+    stem: "ผู้ป่วยได้รับยา 400 มิลลิกรัม ยาในร่างกายลดลงครึ่งหนึ่งทุก 6 ชั่วโมง ปริมาณยาที่เหลือคือ $A = 400(0.5)^{t/6}$ มิลลิกรัม เมื่อเวลาผ่านไป $t$ ชั่วโมง ยาจะเหลือ 30 มิลลิกรัมเมื่อเวลาผ่านไปกี่ชั่วโมง (ตอบเป็นทศนิยม 1 ตำแหน่ง หน่วยชั่วโมง)"
+    answer: { value: 22.4, tolerance: 0.1, unit: ชั่วโมง }
+    hints:
+      - "ตั้ง $400(0.5)^{t/6} = 30$ แล้วหาร 400 ก่อน"
+      - "ใส่ log ทั้งสองข้าง: $\\frac{t}{6} \\log 0.5 = \\log 0.075$"
+      - "แก้หา $\\frac{t}{6}$ ก่อน แล้วคูณ 6"
+    misconceptions:
+      - { match: 3.7, feedback: "3.74 คือค่าของ $\\frac{t}{6}$ (จำนวนครั้งที่ยาลดลงครึ่งหนึ่ง) ต้องคูณ 6 เพื่อเป็นชั่วโมง" }
+      - { match: 11.1, feedback: "ดูเหมือนคิดว่ายาลดลงคงที่ 200 mg ทุก 6 ชั่วโมง (เป็นเส้นตรง) แต่ยาลดลงครึ่งหนึ่งของที่เหลือ ยิ่งเหลือน้อยยิ่งลดช้า ต้องใช้ลอการิทึม" }
+    solution: "$(0.5)^{t/6} = \\frac{30}{400} = 0.075$ → $\\frac{t}{6} = \\frac{\\log 0.075}{\\log 0.5} \\approx \\frac{-1.1249}{-0.3010} \\approx 3.737$ → $t \\approx 22.4$ ชั่วโมง ตรวจ: หลัง 18 ชั่วโมงเหลือ 50 mg และหลัง 24 ชั่วโมงเหลือ 25 mg ค่า 30 mg อยู่ระหว่างนั้น ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p019
+    topics: [math.functions.logarithms]
+    difficulty: 4
+    type: numeric
+    stem: "ระดับเสียงในหน่วยเดซิเบลคำนวณจาก $L = 10 \\log \\dfrac{I}{I_0}$ เสียงรถตุ๊กตุ๊กบนถนนดัง 90 เดซิเบล เสียงคุยกันดัง 60 เดซิเบล เสียงรถตุ๊กตุ๊กมีความเข้ม $I$ มากกว่าเสียงคุยกันกี่เท่า (ตอบเป็นจำนวนเท่า)"
+    answer: { value: 1000, unit: เท่า }
+    hints:
+      - "หา $\\log \\frac{I}{I_0}$ ของแต่ละเสียง: หาร 10"
+      - "ความต่างของ log คือ $\\log$ ของอัตราส่วนความเข้ม: $\\log \\frac{I_1}{I_2} = 9 - 6$"
+      - "ถ้า $\\log x = 3$ แล้ว $x = 10^3$"
+    misconceptions:
+      - { match: 30, feedback: "30 คือผลต่างของเดซิเบล มาตรานี้เป็นลอการิทึม ต่าง 10 เดซิเบลแปลว่าความเข้มต่างกัน 10 เท่า" }
+      - { match: 1.5, feedback: "$90 \\div 60 = 1.5$ เทียบเดซิเบลตรง ๆ ไม่ได้ เพราะเดซิเบลเป็นลอการิทึมของความเข้ม" }
+    solution: "$\\log \\frac{I_1}{I_0} = 9$ และ $\\log \\frac{I_2}{I_0} = 6$ ลบกันได้ $\\log \\frac{I_1}{I_2} = 3$ จึง $\\frac{I_1}{I_2} = 10^3 = 1000$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.log.p020
+    topics: [math.functions.logarithms]
+    difficulty: 5
+    type: numeric
+    stem: "แก้สมการ $\\log_2 x + \\log_2 (x - 2) = 3$"
+    answer: { value: 4 }
+    hints:
+      - "รวมลอการิทึมด้วยสมบัติผลคูณ: $\\log_2 [x(x - 2)] = 3$"
+      - "เปลี่ยนเป็นรูปเลขยกกำลัง $x(x - 2) = 2^3$ แล้วแก้สมการกำลังสอง"
+      - "ตรวจว่าคำตอบทำให้ทุกลอการิทึมในสมการเดิมหาค่าได้"
+    misconceptions:
+      - { match: -2, feedback: "$x = -2$ แก้สมการกำลังสองได้จริง แต่ $\\log_2(-2)$ หาค่าไม่ได้ จึงต้องตัดทิ้ง" }
+      - { match: 5, feedback: "ดูเหมือนคิดว่า $\\log_2 x + \\log_2(x - 2) = \\log_2(2x - 2)$ ผลบวกของลอการิทึมคือลอการิทึมของผลคูณ ไม่ใช่ผลบวก" }
+    solution: "$\\log_2[x(x - 2)] = 3$ → $x^2 - 2x = 8$ → $x^2 - 2x - 8 = 0$ → $(x - 4)(x + 2) = 0$ ได้ $x = 4$ หรือ $x = -2$ แต่ $x$ และ $x - 2$ ต้องเป็นบวก จึงเหลือ $x = 4$ ตรวจ: $\\log_2 4 + \\log_2 2 = 2 + 1 = 3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
