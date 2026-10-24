@@ -1,0 +1,216 @@
+# CSTA K–12 Computer Science Standards, Revised 2017 (Computer Science Teachers Association)
+#
+# ที่มาและการคัดลอก (ตรวจเมื่อ 2026-10-24)
+# - ข้อความมาตรฐานทั้ง 120 ข้อคัดจากชั้นข้อความของ PDF ทางการบน csteachers.org (8 หน้า ฉบับ "No Descriptive Statements")
+#   ด้วย pdftotext -layout แล้วตรวจว่าข้อความทุกข้อตรงกับผล pdftotext -raw ทุกตัวอักษร (ไม่นับช่องว่าง) ไม่ได้ OCR
+#   เครื่องหมายอัญประกาศเดี่ยว (’) คงตามต้นฉบับ
+# - รหัส (เช่น 1A-AP-08) ระดับ (1A, 1B, 2, 3A, 3B) แนวคิด (concept) และแนวคิดย่อย (subconcept) ตามต้นฉบับ
+#   level: 1A = Grades K-2 (Ages 5-7), 1B = Grades 3-5 (Ages 8-11), 2 = Grades 6-8 (Ages 11-14),
+#   3A = Grades 9-10 (Ages 14-16), 3B = Grades 11-12 (Ages 16-18)
+#   ต้นฉบับระบุว่า "Levels 1A, 1B, 2, and 3A are the computer science standards for ALL students" ส่วน 3B สำหรับผู้เรียนที่เลือกเรียนต่อ
+# - strand = concept (5 แนวคิด), standard = subconcept ภายในแนวคิดนั้น, indicator = มาตรฐานแต่ละข้อ
+#   note เก็บรหัส practice ตามคอลัมน์ Practice ของต้นฉบับ (เช่น 7.2 = practice 7 Communicating About Computing ข้อย่อย 2)
+# - ไม่ได้เก็บ clarification statement และ descriptive statement (อยู่ในหน้ามาตรฐานบนเว็บ ไม่อยู่ใน PDF ฉบับนี้)
+#
+# ฉบับใหม่: CSTA ประกาศ "2026 CSTA PK–12 Computer Science Standards" (PDF ลงวันที่ ก.ค. 2026, DOI 10.1145/3820482)
+#   ซึ่งเปลี่ยนโครงทั้งหมด (5 concepts: Algorithms & Design, Programming, Data & Analysis, Systems & Security,
+#   Computing & Society; ระดับ PK/K, ป.1–5 รายชั้น, Middle School, High School และ HS Specialty I/II; รหัสรูปแบบใหม่ เช่น SYS-SE-32)
+#   และใช้สัญญาอนุญาต CC BY-NC-SA 4.0 เช่นเดิม ไฟล์นี้ยังเก็บฉบับ 2017 เพราะรหัสและระดับเป็นที่ใช้อ้างอิงกันแพร่หลาย
+#   ควรเพิ่มฉบับ 2026 เป็นหลักสูตรแยก (เช่น csta-pk12-2026) เมื่อต้องการเทียบกับฉบับปัจจุบัน
+#
+# การจับคู่ใน curriculum/mappings/csta-k12-cs.yaml เป็นการเทียบภายในของคลังรู้ ไม่ใช่การรับรอง (Seal of Alignment) จาก CSTA
+id: csta-k12-cs
+title: CSTA K–12 Computer Science Standards, Revised 2017
+short: CSTA K–12 CS 2017
+kind: international-standard
+subjects: [computer]
+language: en
+sources:
+  - { title: "CSTA K–12 Computer Science Standards, Revised 2017 (PDF)", url: "https://csteachers.org/wp-content/uploads/2025/03/csta-k-12-computer-science-standards-revised.pdf", publisher: "Computer Science Teachers Association (CSTA)", retrieved: "2026-10-24", pages: "1–8" }
+  - { title: "CSTA PK–12 Standards (หน้าหลักของมาตรฐาน ระบุฉบับ 2026 และสัญญาอนุญาต)", url: "https://csteachers.org/pk12standards/", publisher: "Computer Science Teachers Association (CSTA)", retrieved: "2026-10-24" }
+copyright: "© Computer Science Teachers Association ต้นฉบับระบุว่า \"These standards are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license\" คัดข้อความเต็มได้เพราะคลังรู้ไม่แสวงหากำไร ต้องให้เครดิต CSTA และการดัดแปลงข้อความมาตรฐานต้องใช้ CC BY-NC-SA 4.0 (ห้ามคัดไปใส่เนื้อหาหัวข้อที่เป็น CC BY-SA)"
+completeness: full-text
+strands:
+  - id: CS
+    title: "Computing Systems"
+    standards:
+      - id: "CS: Devices"
+        text: "Devices"
+        indicators:
+          - { id: "1A-CS-01", level: "1A", text: "Select and operate appropriate software to perform a variety of tasks, and recognize that users have different needs and preferences for the technology they use.", note: "Practice 1.1" }
+          - { id: "1B-CS-01", level: "1B", text: "Describe how internal and external parts of computing devices function to form a system.", note: "Practice 7.2" }
+          - { id: "2-CS-01", level: "2", text: "Recommend improvements to the design of computing devices, based on an analysis of how users interact with the devices.", note: "Practice 3.3" }
+          - { id: "3A-CS-01", level: "3A", text: "Explain how abstractions hide the underlying implementation details of computing systems embedded in everyday objects.", note: "Practice 4.1" }
+      - id: "CS: Hardware & Software"
+        text: "Hardware & Software"
+        indicators:
+          - { id: "1A-CS-02", level: "1A", text: "Use appropriate terminology in identifying and describing the function of common physical components of computing systems (hardware).", note: "Practice 7.2" }
+          - { id: "1B-CS-02", level: "1B", text: "Model how computer hardware and software work together as a system to accomplish tasks.", note: "Practice 4.4" }
+          - { id: "2-CS-02", level: "2", text: "Design projects that combine hardware and software components to collect and exchange data.", note: "Practice 5.1" }
+          - { id: "3A-CS-02", level: "3A", text: "Compare levels of abstraction and interactions between application software, system software, and hardware layers.", note: "Practice 4.1" }
+          - { id: "3B-CS-01", level: "3B", text: "Categorize the roles of operating system software.", note: "Practice 7.2" }
+      - id: "CS: Troubleshooting"
+        text: "Troubleshooting"
+        indicators:
+          - { id: "1A-CS-03", level: "1A", text: "Describe basic hardware and software problems using accurate terminology.", note: "Practice 6.2, 7.2" }
+          - { id: "1B-CS-03", level: "1B", text: "Determine potential solutions to solve simple hardware and software problems using common troubleshooting strategies.", note: "Practice 6.2" }
+          - { id: "2-CS-03", level: "2", text: "Systematically identify and fix problems with computing devices and their components.", note: "Practice 6.2" }
+          - { id: "3A-CS-03", level: "3A", text: "Develop guidelines that convey systematic troubleshooting strategies that others can use to identify and fix errors.", note: "Practice 6.2" }
+          - { id: "3B-CS-02", level: "3B", text: "Illustrate ways computing systems implement logic, input, and output through hardware components.", note: "Practice 7.2" }
+  - id: NI
+    title: "Networks and the Internet"
+    standards:
+      - id: "NI: Cybersecurity"
+        text: "Cybersecurity"
+        indicators:
+          - { id: "1A-NI-04", level: "1A", text: "Explain what passwords are and why we use them, and use strong passwords to protect devices and information from unauthorized access.", note: "Practice 7.3" }
+          - { id: "1B-NI-05", level: "1B", text: "Discuss real-world cybersecurity problems and how personal information can be protected.", note: "Practice 3.1" }
+          - { id: "2-NI-05", level: "2", text: "Explain how physical and digital security measures protect electronic information.", note: "Practice 7.2" }
+          - { id: "2-NI-06", level: "2", text: "Apply multiple methods of encryption to model the secure transmission of information.", note: "Practice 4.4" }
+          - { id: "3A-NI-06", level: "3A", text: "Recommend security measures to address various scenarios based on factors such as efficiency, feasibility, and ethical impacts.", note: "Practice 3.3" }
+          - { id: "3A-NI-08", level: "3A", text: "Explain tradeoffs when selecting and implementing cybersecurity recommendations.", note: "Practice 7.2" }
+          - { id: "3B-NI-04", level: "3B", text: "Compare ways software developers protect devices and information from unauthorized access.", note: "Practice 7.2" }
+      - id: "NI: Network Communication & Organization"
+        text: "Network Communication & Organization"
+        indicators:
+          - { id: "1B-NI-04", level: "1B", text: "Model how information is broken down into smaller pieces, transmitted as packets through multiple devices over networks and the Internet, and reassembled at the destination.", note: "Practice 4.4" }
+          - { id: "2-NI-04", level: "2", text: "Model the role of protocols in transmitting data across networks and the Internet.", note: "Practice 4.4" }
+          - { id: "3A-NI-04", level: "3A", text: "Evaluate the scalability and reliability of networks, by describing the relationship between routers, switches, servers, topology, and addressing.", note: "Practice 4.1" }
+          - { id: "3A-NI-05", level: "3A", text: "Give examples to illustrate how sensitive data can be affected by malware and other attacks.", note: "Practice 7.2" }
+          - { id: "3A-NI-07", level: "3A", text: "Compare various security measures, considering tradeoffs between the usability and security of a computing system.", note: "Practice 6.3" }
+          - { id: "3B-NI-03", level: "3B", text: "Describe the issues that impact network functionality (e.g., bandwidth, load, delay, topology).", note: "Practice 7.2" }
+  - id: DA
+    title: "Data and Analysis"
+    standards:
+      - id: "DA: Storage"
+        text: "Storage"
+        indicators:
+          - { id: "1A-DA-05", level: "1A", text: "Store, copy, search, retrieve, modify, and delete information using a computing device and define the information stored as data.", note: "Practice 4.2" }
+          - { id: "2-DA-07", level: "2", text: "Represent data using multiple encoding schemes.", note: "Practice 4" }
+          - { id: "3A-DA-09", level: "3A", text: "Translate between different bit representations of real-world phenomena, such as characters, numbers, and images.", note: "Practice 4.1" }
+          - { id: "3A-DA-10", level: "3A", text: "Evaluate the tradeoffs in how data elements are organized and where data is stored.", note: "Practice 3.3" }
+      - id: "DA: Collection Visualization & Transformation"
+        text: "Collection Visualization & Transformation"
+        indicators:
+          - { id: "1A-DA-06", level: "1A", text: "Collect and present the same data in various visual formats.", note: "Practice 7.1, 4.4" }
+          - { id: "1B-DA-06", level: "1B", text: "Organize and present collected data visually to highlight relationships and support a claim.", note: "Practice 7.1" }
+          - { id: "2-DA-08", level: "2", text: "Collect data using computational tools and transform the data to make it more useful and reliable.", note: "Practice 6.3" }
+          - { id: "3A-DA-11", level: "3A", text: "Create interactive data visualizations using software tools to help others better understand real-world phenomena.", note: "Practice 4.4" }
+          - { id: "3B-DA-05", level: "3B", text: "Use data analysis tools and techniques to identify patterns in data representing complex systems.", note: "Practice 4.1" }
+          - { id: "3B-DA-06", level: "3B", text: "Select data collection tools and techniques to generate data sets that support a claim or communicate information.", note: "Practice 7.2" }
+      - id: "DA: Inference & Models"
+        text: "Inference & Models"
+        indicators:
+          - { id: "1A-DA-07", level: "1A", text: "Identify and describe patterns in data visualizations, such as charts or graphs, to make predictions.", note: "Practice 4.1" }
+          - { id: "1B-DA-07", level: "1B", text: "Use data to highlight or propose cause-and-effect relationships, predict outcomes, or communicate an idea.", note: "Practice 7.1" }
+          - { id: "2-DA-09", level: "2", text: "Refine computational models based on the data they have generated.", note: "Practice 5.3, 4.4" }
+          - { id: "3A-DA-12", level: "3A", text: "Create computational models that represent the relationships among different elements of data collected from a phenomenon or process.", note: "Practice 4.4" }
+          - { id: "3B-DA-07", level: "3B", text: "Evaluate the ability of models and simulations to test and support the refinement of hypotheses.", note: "Practice 4.4" }
+  - id: AP
+    title: "Algorithms and Programming"
+    standards:
+      - id: "AP: Algorithms"
+        text: "Algorithms"
+        indicators:
+          - { id: "1A-AP-08", level: "1A", text: "Model daily processes by creating and following algorithms (sets of step-by-step instructions) to complete tasks.", note: "Practice 4.4" }
+          - { id: "1B-AP-08", level: "1B", text: "Compare and refine multiple algorithms for the same task and determine which is the most appropriate.", note: "Practice 6.3, 3.3" }
+          - { id: "2-AP-10", level: "2", text: "Use flowcharts and/or pseudocode to address complex problems as algorithms.", note: "Practice 4.4, 4.1" }
+          - { id: "3A-AP-13", level: "3A", text: "Create prototypes that use algorithms to solve computational problems by leveraging prior student knowledge and personal interests.", note: "Practice 5.2" }
+          - { id: "3B-AP-08", level: "3B", text: "Describe how artificial intelligence drives many software and physical systems.", note: "Practice 7.2" }
+          - { id: "3B-AP-09", level: "3B", text: "Implement an artificial intelligence algorithm to play a game against a human opponent or solve a problem.", note: "Practice 5.3" }
+          - { id: "3B-AP-10", level: "3B", text: "Use and adapt classic algorithms to solve computational problems.", note: "Practice 4.2" }
+          - { id: "3B-AP-11", level: "3B", text: "Evaluate algorithms in terms of their efficiency, correctness, and clarity.", note: "Practice 4.2" }
+      - id: "AP: Variables"
+        text: "Variables"
+        indicators:
+          - { id: "1A-AP-09", level: "1A", text: "Model the way programs store and manipulate data by using numbers or other symbols to represent information.", note: "Practice 4.4" }
+          - { id: "1B-AP-09", level: "1B", text: "Create programs that use variables to store and modify data.", note: "Practice 5.2" }
+          - { id: "2-AP-11", level: "2", text: "Create clearly named variables that represent different data types and perform operations on their values.", note: "Practice 5.1, 5.2" }
+          - { id: "3A-AP-14", level: "3A", text: "Use lists to simplify solutions, generalizing computational problems instead of repeatedly using simple variables.", note: "Practice 4.1" }
+          - { id: "3B-AP-12", level: "3B", text: "Compare and contrast fundamental data structures and their uses.", note: "Practice 4.2" }
+      - id: "AP: Control"
+        text: "Control"
+        indicators:
+          - { id: "1A-AP-10", level: "1A", text: "Develop programs with sequences and simple loops, to express ideas or address a problem.", note: "Practice 5.2" }
+          - { id: "1B-AP-10", level: "1B", text: "Create programs that include sequences, events, loops, and conditionals.", note: "Practice 5.2" }
+          - { id: "2-AP-12", level: "2", text: "Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.", note: "Practice 5.1, 5.2" }
+          - { id: "3A-AP-15", level: "3A", text: "Justify the selection of specific control structures when tradeoffs involve implementation, readability, and program performance, and explain the benefits and drawbacks of choices made.", note: "Practice 5.2" }
+          - { id: "3A-AP-16", level: "3A", text: "Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue by using events to initiate instructions.", note: "Practice 5.2" }
+          - { id: "3A-AP-17", level: "3A", text: "Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects.", note: "Practice 3.2" }
+          - { id: "3B-AP-13", level: "3B", text: "Illustrate the flow of execution of a recursive algorithm.", note: "Practice 3.2" }
+      - id: "AP: Modularity"
+        text: "Modularity"
+        indicators:
+          - { id: "1A-AP-11", level: "1A", text: "Decompose (break down) the steps needed to solve a problem into a precise sequence of instructions.", note: "Practice 3.2" }
+          - { id: "1B-AP-11", level: "1B", text: "Decompose (break down) problems into smaller, manageable subproblems to facilitate the program development process.", note: "Practice 3.2" }
+          - { id: "1B-AP-12", level: "1B", text: "Modify, remix, or incorporate portions of an existing program into one's own work, to develop something new or add more advanced features.", note: "Practice 5.3" }
+          - { id: "2-AP-13", level: "2", text: "Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.", note: "Practice 3.2" }
+          - { id: "2-AP-14", level: "2", text: "Create procedures with parameters to organize code and make it easier to reuse.", note: "Practice 4.1, 4.3" }
+          - { id: "3A-AP-18", level: "3A", text: "Create artifacts by using procedures within a program, combinations of data and procedures, or independent but interrelated programs.", note: "Practice 5.2" }
+          - { id: "3A-AP-19", level: "3A", text: "Systematically design and develop programs for broad audiences by incorporating feedback from users.", note: "Practice 5.1" }
+          - { id: "3B-AP-14", level: "3B", text: "Construct solutions to problems using student-created components, such as procedures, modules and/or objects.", note: "Practice 5.2" }
+          - { id: "3B-AP-15", level: "3B", text: "Analyze a large-scale computational problem and identify generalizable patterns that can be applied to a solution.", note: "Practice 4.1" }
+          - { id: "3B-AP-16", level: "3B", text: "Demonstrate code reuse by creating programming solutions using libraries and APIs.", note: "Practice 5.3" }
+      - id: "AP: Program Development"
+        text: "Program Development"
+        indicators:
+          - { id: "1A-AP-12", level: "1A", text: "Develop plans that describe a program’s sequence of events, goals, and expected outcomes.", note: "Practice 5.1, 7.2" }
+          - { id: "1A-AP-13", level: "1A", text: "Give attribution when using the ideas and creations of others while developing programs.", note: "Practice 7.3" }
+          - { id: "1A-AP-14", level: "1A", text: "Debug (identify and fix) errors in an algorithm or program that includes sequences and simple loops.", note: "Practice 6.2" }
+          - { id: "1A-AP-15", level: "1A", text: "Using correct terminology, describe steps taken and choices made during the iterative process of program development.", note: "Practice 7.2" }
+          - { id: "1B-AP-13", level: "1B", text: "Use an iterative process to plan the development of a program by including others' perspectives and considering user preferences.", note: "Practice 1.1, 5.1" }
+          - { id: "1B-AP-14", level: "1B", text: "Observe intellectual property rights and give appropriate attribution when creating or remixing programs.", note: "Practice 5.2, 7.3" }
+          - { id: "1B-AP-15", level: "1B", text: "Test and debug (identify and fix errors) a program or algorithm to ensure it runs as intended.", note: "Practice 6.1, 6.2" }
+          - { id: "1B-AP-16", level: "1B", text: "Take on varying roles, with teacher guidance, when collaborating with peers during the design, implementation, and review stages of program development.", note: "Practice 2.2" }
+          - { id: "1B-AP-17", level: "1B", text: "Describe choices made during program development using code comments, presentations, and demonstrations.", note: "Practice 7.2" }
+          - { id: "2-AP-15", level: "2", text: "Seek and incorporate feedback from team members and users to refine a solution that meets user needs.", note: "Practice 2.3, 1.1" }
+          - { id: "2-AP-16", level: "2", text: "Incorporate existing code, media, and libraries into original programs, and give attribution.", note: "Practice 4.2, 5.2, 7.3" }
+          - { id: "2-AP-17", level: "2", text: "Systematically test and refine programs using a range of test cases.", note: "Practice 6.1" }
+          - { id: "2-AP-18", level: "2", text: "Distribute tasks and maintain a project timeline when collaboratively developing computational artifacts.", note: "Practice 2.2" }
+          - { id: "2-AP-19", level: "2", text: "Document programs in order to make them easier to follow, test, and debug.", note: "Practice 7.2" }
+          - { id: "3A-AP-20", level: "3A", text: "Evaluate licenses that limit or restrict use of computational artifacts when using resources such as libraries.", note: "Practice 7.3" }
+          - { id: "3A-AP-21", level: "3A", text: "Evaluate and refine computational artifacts to make them more usable and accessible.", note: "Practice 6.3" }
+          - { id: "3A-AP-22", level: "3A", text: "Design and develop computational artifacts working in team roles using collaborative tools.", note: "Practice 2.4" }
+          - { id: "3A-AP-23", level: "3A", text: "Document design decisions using text, graphics, presentations, and/or demonstrations in the development of complex programs.", note: "Practice 7.2" }
+          - { id: "3B-AP-17", level: "3B", text: "Plan and develop programs for broad audiences using a software life cycle process.", note: "Practice 5.1" }
+          - { id: "3B-AP-18", level: "3B", text: "Explain security issues that might lead to compromised computer programs.", note: "Practice 7.2" }
+          - { id: "3B-AP-19", level: "3B", text: "Develop programs for multiple computing platforms.", note: "Practice 5.2" }
+          - { id: "3B-AP-20", level: "3B", text: "Use version control systems, integrated development environments (IDEs), and collaborative tools and practices (code documentation) in a group software project.", note: "Practice 2.4" }
+          - { id: "3B-AP-21", level: "3B", text: "Develop and use a series of test cases to verify that a program performs according to its design specifications.", note: "Practice 6.1" }
+          - { id: "3B-AP-22", level: "3B", text: "Modify an existing program to add additional functionality and discuss intended and unintended implications (e.g., breaking other functionality).", note: "Practice 5.3" }
+          - { id: "3B-AP-23", level: "3B", text: "Evaluate key qualities of a program through a process such as a code review.", note: "Practice 6.3" }
+          - { id: "3B-AP-24", level: "3B", text: "Compare multiple programming languages and discuss how their features make them suitable for solving different types of problems.", note: "Practice 7.2" }
+  - id: IC
+    title: "Impacts of Computing"
+    standards:
+      - id: "IC: Culture"
+        text: "Culture"
+        indicators:
+          - { id: "1A-IC-16", level: "1A", text: "Compare how people live and work before and after the implementation or adoption of new computing technology.", note: "Practice 7" }
+          - { id: "1B-IC-18", level: "1B", text: "Discuss computing technologies that have changed the world, and express how those technologies influence, and are influenced by, cultural practices.", note: "Practice 3.1" }
+          - { id: "1B-IC-19", level: "1B", text: "Brainstorm ways to improve the accessibility and usability of technology products for the diverse needs and wants of users.", note: "Practice 1.2" }
+          - { id: "2-IC-20", level: "2", text: "Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.", note: "Practice 7.2" }
+          - { id: "2-IC-21", level: "2", text: "Discuss issues of bias and accessibility in the design of existing technologies.", note: "Practice 1.2" }
+          - { id: "3A-IC-24", level: "3A", text: "Evaluate the ways computing impacts personal, ethical, social, economic, and cultural practices.", note: "Practice 1.2" }
+          - { id: "3A-IC-25", level: "3A", text: "Test and refine computational artifacts to reduce bias and equity deficits.", note: "Practice 1.2" }
+          - { id: "3A-IC-26", level: "3A", text: "Demonstrate ways a given algorithm applies to problems across disciplines.", note: "Practice 3.1" }
+          - { id: "3B-IC-25", level: "3B", text: "Evaluate computational artifacts to maximize their beneficial effects and minimize harmful effects on society.", note: "Practice 6.1, 1.2" }
+          - { id: "3B-IC-26", level: "3B", text: "Evaluate the impact of equity, access, and influence on the distribution of computing resources in a global society.", note: "Practice 1.2" }
+          - { id: "3B-IC-27", level: "3B", text: "Predict how computational innovations that have revolutionized aspects of our culture might evolve.", note: "Practice 7.2" }
+      - id: "IC: Social Interactions"
+        text: "Social Interactions"
+        indicators:
+          - { id: "1A-IC-17", level: "1A", text: "Work respectfully and responsibly with others online.", note: "Practice 2.1" }
+          - { id: "1B-IC-20", level: "1B", text: "Seek diverse perspectives for the purpose of improving computational artifacts.", note: "Practice 1.1" }
+          - { id: "2-IC-22", level: "2", text: "Collaborate with many contributors through strategies such as crowdsourcing or surveys when creating a computational artifact.", note: "Practice 2.4, 5.2" }
+          - { id: "3A-IC-27", level: "3A", text: "Use tools and methods for collaboration on a project to increase connectivity of people in different cultures and career fields.", note: "Practice 2.4" }
+      - id: "IC: Safety Law & Ethics"
+        text: "Safety Law & Ethics"
+        indicators:
+          - { id: "1A-IC-18", level: "1A", text: "Keep login information private, and log off of devices appropriately.", note: "Practice 7.3" }
+          - { id: "1B-IC-21", level: "1B", text: "Use public domain or creative commons media, and refrain from copying or using material created by others without permission.", note: "Practice 7.3" }
+          - { id: "2-IC-23", level: "2", text: "Describe tradeoffs between allowing information to be public and keeping information private and secure.", note: "Practice 7.2" }
+          - { id: "3A-IC-28", level: "3A", text: "Explain the beneficial and harmful effects that intellectual property laws can have on innovation.", note: "Practice 7.3" }
+          - { id: "3A-IC-29", level: "3A", text: "Explain the privacy concerns related to the collection and generation of data through automated processes that may not be evident to users.", note: "Practice 7.2" }
+          - { id: "3A-IC-30", level: "3A", text: "Evaluate the social and economic implications of privacy in the context of safety, law, or ethics.", note: "Practice 7.3" }
+          - { id: "3B-IC-28", level: "3B", text: "Debate laws and regulations that impact the development and use of software.", note: "Practice 3.3, 7.3" }

@@ -1,0 +1,293 @@
+# Computer Science Curricula 2023 (CS2023) ของ ACM, IEEE-CS และ AAAI: Body of Knowledge (17 knowledge areas)
+#
+# ลิขสิทธิ์ (ตรวจเมื่อ 2026-10-24)
+# - หน้าลิขสิทธิ์ของรายงานฉบับเต็มระบุ "Copyright © 2024 by ACM, IEEE, AAAI ALL RIGHTS RESERVED" และ
+#   "Permission is granted to use these curriculum guidelines for the development of educational materials and programs.
+#   Other use requires specific permission." ไม่ใช่สัญญาอนุญาตแบบเปิด
+#   การใช้เป็นแนวทางพัฒนาบทเรียนทำได้ แต่การคัดข้อความไปเผยแพร่ซ้ำไม่อยู่ในสิ่งที่อนุญาต
+#   ไฟล์นี้จึงเก็บเฉพาะโครง (รหัสและชื่อของ knowledge area และ knowledge unit) กับสรุปภาษาไทยด้วยคำของคลังรู้
+#
+# โครงในไฟล์นี้
+# - strand = knowledge area (KA) มี standard เดียวต่อ KA, indicator = knowledge unit (KU) รหัสตามต้นฉบับ (เช่น SDF-Fundamentals)
+# - text ของ indicator = ชื่อ KU ภาษาอังกฤษตามต้นฉบับ ตามด้วย " — " และสรุปภาษาไทย (สรุปละเอียดเฉพาะ KU ที่ผู้เรียนเจอก่อน
+#   ส่วน KU อื่นสรุปเท่าชื่อ) ไม่ได้เก็บรายการหัวข้อย่อยและ illustrative learning outcomes
+# - level = "CS Core" เมื่อ KU มีหัวข้อที่รายงานกำหนดให้บัณฑิตวิทยาการคอมพิวเตอร์ทุกคนต้องเรียน (CS Core)
+#   และ "KA Core" เมื่อมีแต่หัวข้อแนะนำสำหรับเรียนเชิงลึกในสาขานั้น ตัดสินจากหัวข้อ "CS Core:" ในเนื้อหาของ KU นั้นใน PDF
+# - รหัสและชื่อ KU คัดจากสารบัญของรายงานฉบับ HTML และตรวจกับหัวข้อใน PDF ของ Body of Knowledge
+#   MSF-Calculus ไม่มีชื่อในสารบัญ ใช้ชื่อ "Calculus" ตามตาราง Core Hours ของ MSF
+id: acm-cs2023
+title: "Computer Science Curricula 2023 (ACM/IEEE-CS/AAAI Joint Task Force): Body of Knowledge"
+short: ACM CS2023
+kind: body-of-knowledge
+subjects: [computer]
+language: th
+sources:
+  - { title: "Computer Science Curricula 2023, The Final Report (HTML)", url: "https://csed.acm.org/wp-content/uploads/2025/11/CS2023-Report.htm", publisher: "ACM, IEEE Computer Society, AAAI", retrieved: "2026-10-24", pages: "หน้าลิขสิทธิ์ และสารบัญส่วน Body of Knowledge" }
+  - { title: "CS2023 Body of Knowledge (PDF, Version 2024-04-28)", url: "https://csed.acm.org/wp-content/uploads/2024/04/3.1-Body-of-Knowledge-1.pdf", publisher: "ACM, IEEE Computer Society, AAAI", retrieved: "2026-10-24" }
+  - { title: "CS2023 Final Report (หน้ารวมไฟล์รายงาน)", url: "https://csed.acm.org/final-report/", publisher: "ACM/IEEE-CS/AAAI Joint Task Force on Computing Curricula", retrieved: "2026-10-24" }
+copyright: "Copyright © 2024 by ACM, IEEE, AAAI สงวนสิทธิ์ทั้งหมด อนุญาตให้ใช้แนวทางหลักสูตรเพื่อพัฒนาสื่อและหลักสูตรการศึกษา การใช้อื่นต้องขออนุญาต (permissions@acm.org) ไฟล์นี้เก็บเพียงรหัสและชื่อของ knowledge area และ knowledge unit กับสรุปภาษาไทยด้วยคำของคลังรู้ ไม่ใช่ข้อความต้นฉบับ"
+completeness: structure-and-summary
+strands:
+  - id: AI
+    title: "Artificial Intelligence (AI)"
+    standards:
+      - id: AI
+        text: "ปัญญาประดิษฐ์: ปัญหาและวิธีของ AI การค้นหา การแทนความรู้ การเรียนรู้ของเครื่อง และผลต่อสังคม"
+        indicators:
+          - { id: "AI-Introduction", level: "CS Core", text: "Fundamental Issues — ประเด็นพื้นฐานของ AI: ตัวอย่างงาน AI ความหมายของพฤติกรรมฉลาด ลักษณะของปัญหาและเอเจนต์ และผลกระทบ" }
+          - { id: "AI-Search", level: "CS Core", text: "Search — การค้นหาในปริภูมิสถานะ ทั้งแบบไม่มีข้อมูลนำทางและแบบใช้ฮิวริสติก" }
+          - { id: "AI-KRR", level: "CS Core", text: "Fundamental Knowledge Representation and Reasoning — การแทนความรู้และการให้เหตุผลพื้นฐาน" }
+          - { id: "AI-ML", level: "CS Core", text: "Machine Learning — การเรียนรู้ของเครื่อง: การเรียนรู้จากข้อมูล การฝึกและประเมินแบบจำลอง" }
+          - { id: "AI-SEP", level: "CS Core", text: "Applications and Societal Impact — การประยุกต์ใช้ AI และผลกระทบต่อสังคม" }
+          - { id: "AI-LRR", level: "KA Core", text: "Logical Representation and Reasoning — การแทนความรู้และการให้เหตุผลเชิงตรรกะ" }
+          - { id: "AI-Probability", level: "KA Core", text: "Probabilistic Representation and Reasoning — การแทนความรู้และการให้เหตุผลเชิงความน่าจะเป็น" }
+          - { id: "AI-Planning", level: "KA Core", text: "Planning — การวางแผนของเอเจนต์" }
+          - { id: "AI-Agents", level: "KA Core", text: "Agents and Cognitive Systems — เอเจนต์และระบบรู้คิด" }
+          - { id: "AI-NLP", level: "KA Core", text: "Natural Language Processing — การประมวลผลภาษาธรรมชาติ" }
+          - { id: "AI-Robotics", level: "KA Core", text: "Robotics — วิทยาการหุ่นยนต์" }
+          - { id: "AI-Vision", level: "KA Core", text: "Perception and Computer Vision — การรับรู้และคอมพิวเตอร์วิทัศน์" }
+  - id: AL
+    title: "Algorithmic Foundations (AL)"
+    standards:
+      - id: AL
+        text: "รากฐานของอัลกอริทึม: โครงสร้างข้อมูลและอัลกอริทึมพื้นฐาน กลยุทธ์ ความซับซ้อน และแบบจำลองการคำนวณ"
+        indicators:
+          - { id: "AL-Foundational", level: "CS Core", text: "Foundational Data Structures and Algorithms — โครงสร้างข้อมูลและอัลกอริทึมพื้นฐาน: อาร์เรย์ ระเบียน ลิสต์ สแตก คิว ตารางแฮช กราฟ ต้นไม้ เซต การค้นหา การเรียงลำดับ และอัลกอริทึมกราฟ" }
+          - { id: "AL-Strategies", level: "CS Core", text: "Algorithmic Strategies — กลยุทธ์ของอัลกอริทึม: กระบวนทัศน์การออกแบบ (เช่น brute force แบ่งแยกและเอาชนะ) การรับมือการเติบโตแบบเลขชี้กำลัง และการวนซ้ำเทียบกับการเรียกซ้ำ" }
+          - { id: "AL-Complexity", level: "CS Core", text: "Complexity — ความซับซ้อน: การวิเคราะห์เวลาและหน่วยความจำแบบเชิงเส้นกำกับ การวัดจริง ปัญหาที่แก้ได้และแก้ได้ยาก" }
+          - { id: "AL-Models", level: "CS Core", text: "Computational Models and Formal Languages — แบบจำลองการคำนวณและภาษาฟอร์มัล" }
+          - { id: "AL-SEP", level: "CS Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในบริบทของอัลกอริทึม" }
+  - id: AR
+    title: "Architecture and Organization (AR)"
+    standards:
+      - id: AR
+        text: "สถาปัตยกรรมและการจัดระบบคอมพิวเตอร์: การแทนข้อมูลระดับเครื่อง การทำงานของหน่วยประมวลผล หน่วยความจำ และการรับส่งข้อมูล"
+        indicators:
+          - { id: "AR-Logic", level: "KA Core", text: "Digital Logic and Digital Systems — ตรรกะดิจิทัลและระบบดิจิทัล: วงจรเชิงผสมและเชิงลำดับ และเครื่องมือออกแบบฮาร์ดแวร์" }
+          - { id: "AR-Representation", level: "CS Core", text: "Machine-Level Data Representation — การแทนข้อมูลระดับเครื่อง: บิต ไบต์ เวิร์ด เลขฐาน จำนวนไม่มีเครื่องหมายและส่วนเติมเต็มสอง จุดตรึงและจุดลอยตัว และการแทนข้อมูลที่ไม่ใช่ตัวเลข" }
+          - { id: "AR-Assembly", level: "CS Core", text: "Assembly Level Machine Organization — การจัดระบบเครื่องระดับแอสเซมบลี: สถาปัตยกรรมฟอน นอยมันน์ วงรอบดึง ถอดรหัส และทำคำสั่ง และหน่วยประมวลผลหลายแกน" }
+          - { id: "AR-Memory", level: "CS Core", text: "Memory Hierarchy — ลำดับชั้นหน่วยความจำ: หน่วยความจำหลัก หน่วยเก็บถาวร แคช และหน่วยความจำเสมือน" }
+          - { id: "AR-IO", level: "CS Core", text: "Interfacing and Communication — การเชื่อมต่อและการสื่อสาร: หลักการรับส่งข้อมูล อุปกรณ์รับเข้าและส่งออก อินเทอร์รัปต์ และบัส" }
+          - { id: "AR-Organization", level: "KA Core", text: "Functional Organization — การจัดระบบเชิงหน้าที่ของหน่วยประมวลผล" }
+          - { id: "AR-Performance-Energy", level: "KA Core", text: "Performance and Energy Efficiency — สมรรถนะและประสิทธิภาพการใช้พลังงาน" }
+          - { id: "AR-Heterogeneity", level: "KA Core", text: "Heterogeneous Architectures — สถาปัตยกรรมแบบผสมหลายชนิด" }
+          - { id: "AR-Security", level: "KA Core", text: "Secure Processor Architectures — สถาปัตยกรรมหน่วยประมวลผลที่ปลอดภัย" }
+          - { id: "AR-Quantum", level: "KA Core", text: "Quantum Architectures — สถาปัตยกรรมควอนตัม" }
+          - { id: "AR-SEP", level: "KA Core", text: "Sustainability Issues — ประเด็นความยั่งยืนของฮาร์ดแวร์" }
+  - id: DM
+    title: "Data Management (DM)"
+    standards:
+      - id: DM
+        text: "การจัดการข้อมูล: วงจรชีวิตของข้อมูล ระบบฐานข้อมูล การออกแบบแบบจำลองข้อมูล การสืบค้น และความปลอดภัยของข้อมูล"
+        indicators:
+          - { id: "DM-Data", level: "CS Core", text: "The Role of Data and the Data Life Cycle — บทบาทของข้อมูลและวงจรชีวิตของข้อมูล ตั้งแต่สร้าง ประมวลผล รายงาน เก็บรักษา จนถึงทำลาย" }
+          - { id: "DM-Core", level: "CS Core", text: "Core Database System Concepts — แนวคิดหลักของระบบฐานข้อมูล: จุดประสงค์ องค์ประกอบ การแยกข้อมูลออกจากโปรแกรม ธุรกรรม และข้อมูลแบบมีโครงสร้างและไม่มีโครงสร้าง" }
+          - { id: "DM-Modeling", level: "CS Core", text: "Data Modeling — การสร้างแบบจำลองข้อมูล รวมทั้งแบบจำลองเชิงสัมพันธ์" }
+          - { id: "DM-Relational", level: "CS Core", text: "Relational Databases — ฐานข้อมูลเชิงสัมพันธ์: คีย์ ความถูกต้องของการอ้างอิง และการออกแบบตาราง" }
+          - { id: "DM-Querying", level: "CS Core", text: "Query Construction — การสร้างคำสั่งสืบค้นข้อมูล (SQL)" }
+          - { id: "DM-Processing", level: "KA Core", text: "Query Processing — การประมวลผลคำสั่งสืบค้น" }
+          - { id: "DM-Internals", level: "KA Core", text: "DBMS Internals — กลไกภายในของระบบจัดการฐานข้อมูล" }
+          - { id: "DM-NoSQL", level: "KA Core", text: "NoSQL Systems — ระบบฐานข้อมูล NoSQL" }
+          - { id: "DM-Security", level: "CS Core", text: "Data Security and Privacy — ความปลอดภัยและความเป็นส่วนตัวของข้อมูล: ความต่างของสองเรื่องนี้ การป้องกันการโจมตี และการคุ้มครองข้อมูลที่ระบุตัวบุคคล" }
+          - { id: "DM-Analytics", level: "KA Core", text: "Data Analytics — การวิเคราะห์ข้อมูล" }
+          - { id: "DM-Distributed", level: "KA Core", text: "Distributed Databases/Cloud Computing — ฐานข้อมูลแบบกระจายและการประมวลผลบนคลาวด์" }
+          - { id: "DM-Unstructured", level: "KA Core", text: "Semi-structured and Unstructured Databases — ฐานข้อมูลกึ่งมีโครงสร้างและไม่มีโครงสร้าง" }
+          - { id: "DM-SEP", level: "CS Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในการจัดการข้อมูล" }
+  - id: FPL
+    title: "Foundations of Programming Languages (FPL)"
+    standards:
+      - id: FPL
+        text: "รากฐานของภาษาโปรแกรม: กระบวนทัศน์การเขียนโปรแกรม ระบบชนิดข้อมูล และการแปลและทำงานของโปรแกรม"
+        indicators:
+          - { id: "FPL-OOP", level: "CS Core", text: "Object-Oriented Programming — การเขียนโปรแกรมเชิงวัตถุ" }
+          - { id: "FPL-Functional", level: "CS Core", text: "Functional Programming — การเขียนโปรแกรมเชิงฟังก์ชัน" }
+          - { id: "FPL-Logic", level: "KA Core", text: "Logic Programming — การเขียนโปรแกรมเชิงตรรกะ" }
+          - { id: "FPL-Scripting", level: "CS Core", text: "Shell Scripting — การเขียนสคริปต์เชลล์" }
+          - { id: "FPL-Event-Driven", level: "CS Core", text: "Event-Driven and Reactive Programming — การเขียนโปรแกรมแบบขับเคลื่อนด้วยเหตุการณ์และแบบตอบสนอง" }
+          - { id: "FPL-Parallel", level: "CS Core", text: "Parallel and Distributed Computing — การเขียนโปรแกรมแบบขนานและแบบกระจาย" }
+          - { id: "FPL-Aspect", level: "KA Core", text: "Aspect-Oriented Programming — การเขียนโปรแกรมเชิงแง่มุม" }
+          - { id: "FPL-Types", level: "CS Core", text: "Type Systems — ระบบชนิดข้อมูล" }
+          - { id: "FPL-Systems", level: "CS Core", text: "Systems Execution and Memory Model — การทำงานของระบบและแบบจำลองหน่วยความจำ" }
+          - { id: "FPL-Translation", level: "CS Core", text: "Language Translation and Execution — การแปลภาษาและการทำงานของโปรแกรม (คอมไพเลอร์และอินเทอร์พรีเตอร์)" }
+          - { id: "FPL-Abstraction", level: "KA Core", text: "Program Abstraction and Representation — การแทนและนามธรรมของโปรแกรม" }
+          - { id: "FPL-Syntax", level: "KA Core", text: "Syntax Analysis — การวิเคราะห์ไวยากรณ์" }
+          - { id: "FPL-Semantics", level: "KA Core", text: "Compiler Semantic Analysis — การวิเคราะห์ความหมายในคอมไพเลอร์" }
+          - { id: "FPL-Analysis", level: "KA Core", text: "Program Analysis and Analyzers — การวิเคราะห์โปรแกรมและเครื่องมือวิเคราะห์" }
+          - { id: "FPL-Code", level: "KA Core", text: "Code Generation — การสร้างรหัสเครื่อง" }
+          - { id: "FPL-Run-Time", level: "KA Core", text: "Run-time Behavior and Systems — พฤติกรรมและระบบขณะโปรแกรมทำงาน" }
+          - { id: "FPL-Constructs", level: "KA Core", text: "Advanced Programming Constructs — โครงสร้างภาษาขั้นสูง" }
+          - { id: "FPL-Pragmatics", level: "KA Core", text: "Language Pragmatics — แง่มุมการใช้งานจริงของภาษา" }
+          - { id: "FPL-Formalism", level: "KA Core", text: "Formal Semantics — ความหมายเชิงรูปนัย" }
+          - { id: "FPL-Methodologies", level: "KA Core", text: "Formal Development Methodologies — ระเบียบวิธีพัฒนาเชิงรูปนัย" }
+          - { id: "FPL-Design", level: "KA Core", text: "Design Principles of Programming Languages — หลักการออกแบบภาษาโปรแกรม" }
+          - { id: "FPL-SEP", level: "KA Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในบริบทของภาษาโปรแกรม" }
+  - id: GIT
+    title: "Graphics and Interactive Techniques (GIT)"
+    standards:
+      - id: GIT
+        text: "กราฟิกและเทคนิคเชิงโต้ตอบ: การแสดงผลภาพ การสร้างภาพ แอนิเมชัน การจำลอง และการประมวลผลภาพ"
+        indicators:
+          - { id: "GIT-Fundamentals", level: "CS Core", text: "Fundamental Concepts — แนวคิดพื้นฐานของกราฟิก" }
+          - { id: "GIT-Visualization", level: "KA Core", text: "Visualization — การแสดงข้อมูลด้วยภาพ" }
+          - { id: "GIT-Rendering", level: "KA Core", text: "Applied Rendering and Techniques — การเรนเดอร์และเทคนิคประยุกต์" }
+          - { id: "GIT-Modeling", level: "KA Core", text: "Geometric Modeling — การสร้างแบบจำลองเรขาคณิต" }
+          - { id: "GIT-Shading", level: "KA Core", text: "Shading and Advanced Rendering — การแรเงาและการเรนเดอร์ขั้นสูง" }
+          - { id: "GIT-Animation", level: "KA Core", text: "Computer Animation — แอนิเมชันคอมพิวเตอร์" }
+          - { id: "GIT-Simulation", level: "KA Core", text: "Simulation — การจำลอง" }
+          - { id: "GIT-Immersion", level: "KA Core", text: "Immersion — สภาพแวดล้อมเสมือนจริงแบบสมจริง" }
+          - { id: "GIT-Interaction", level: "KA Core", text: "Interaction — การโต้ตอบ" }
+          - { id: "GIT-Image", level: "KA Core", text: "Image Processing — การประมวลผลภาพ" }
+          - { id: "GIT-Physical", level: "KA Core", text: "Tangible/Physical Computing — การคำนวณแบบจับต้องได้และเชิงกายภาพ" }
+          - { id: "GIT-SEP", level: "KA Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในงานกราฟิก" }
+  - id: HCI
+    title: "Human-Computer Interaction (HCI)"
+    standards:
+      - id: HCI
+        text: "ปฏิสัมพันธ์ระหว่างมนุษย์กับคอมพิวเตอร์: การออกแบบที่ยึดผู้ใช้เป็นศูนย์กลาง การเข้าถึงได้ และการประเมินการออกแบบ"
+        indicators:
+          - { id: "HCI-User", level: "CS Core", text: "Understanding the User: Individual goals and interactions with others — การเข้าใจผู้ใช้: การออกแบบและประเมินที่ยึดผู้ใช้เป็นศูนย์กลาง" }
+          - { id: "HCI-Accountability", level: "CS Core", text: "Accountability and Responsibility in Design — ความรับผิดชอบในการออกแบบ" }
+          - { id: "HCI-Accessibility", level: "CS Core", text: "Accessibility and Inclusive Design — การเข้าถึงได้และการออกแบบที่ครอบคลุมทุกคน" }
+          - { id: "HCI-Evaluation", level: "CS Core", text: "Evaluating the Design — การประเมินการออกแบบ" }
+          - { id: "HCI-Design", level: "CS Core", text: "System Design — การออกแบบระบบ" }
+          - { id: "HCI-SEP", level: "CS Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในงานปฏิสัมพันธ์ระหว่างมนุษย์กับคอมพิวเตอร์" }
+  - id: MSF
+    title: "Mathematical and Statistical Foundations (MSF)"
+    standards:
+      - id: MSF
+        text: "รากฐานคณิตศาสตร์และสถิติ: คณิตศาสตร์ไม่ต่อเนื่อง ความน่าจะเป็น สถิติ พีชคณิตเชิงเส้น และแคลคูลัสที่วิทยาการคอมพิวเตอร์ใช้"
+        indicators:
+          - { id: "MSF-Discrete", level: "CS Core", text: "Discrete Mathematics — คณิตศาสตร์ไม่ต่อเนื่อง" }
+          - { id: "MSF-Probability", level: "CS Core", text: "Probability — ความน่าจะเป็น" }
+          - { id: "MSF-Statistics", level: "CS Core", text: "Statistics — สถิติ" }
+          - { id: "MSF-Linear", level: "CS Core", text: "Linear Algebra — พีชคณิตเชิงเส้น" }
+          - { id: "MSF-Calculus", level: "KA Core", text: "Calculus — แคลคูลัส" }
+  - id: NC
+    title: "Networking and Communication (NC)"
+    standards:
+      - id: NC
+        text: "เครือข่ายและการสื่อสาร: โครงสร้างอินเทอร์เน็ต ชั้นของโพรโทคอล แอปพลิเคชันบนเครือข่าย การส่งต่อข้อมูล และความปลอดภัยของเครือข่าย"
+        indicators:
+          - { id: "NC-Fundamentals", level: "CS Core", text: "Fundamentals — พื้นฐานเครือข่าย: ความสำคัญของเครือข่าย โครงสร้างอินเทอร์เน็ต การสลับวงจรและแพ็กเก็ต ชั้นของเครือข่าย และอุปกรณ์เครือข่าย" }
+          - { id: "NC-Applications", level: "CS Core", text: "Networked Applications — แอปพลิเคชันบนเครือข่าย: ระบบชื่อและที่อยู่ (DNS, URI) แบบลูกข่าย-แม่ข่ายและเพียร์ทูเพียร์ โพรโทคอลชั้นแอปพลิเคชัน (HTTP) และ TCP/UDP" }
+          - { id: "NC-Reliability", level: "KA Core", text: "Reliability Support — การส่งข้อมูลอย่างเชื่อถือได้" }
+          - { id: "NC-Routing", level: "KA Core", text: "Routing and Forwarding — การหาเส้นทางและการส่งต่อแพ็กเก็ต" }
+          - { id: "NC-SingleHop", level: "KA Core", text: "Single Hop Communication — การสื่อสารระหว่างอุปกรณ์ที่เชื่อมกันโดยตรง" }
+          - { id: "NC-Security", level: "KA Core", text: "Network Security — ความปลอดภัยของเครือข่าย: ภัยคุกคาม รูปแบบการโจมตี และมาตรการป้องกัน" }
+          - { id: "NC-Mobility", level: "KA Core", text: "Mobility — การรองรับอุปกรณ์เคลื่อนที่" }
+          - { id: "NC-Emerging", level: "KA Core", text: "Emerging Topics — หัวข้อใหม่ด้านเครือข่าย" }
+  - id: OS
+    title: "Operating Systems (OS)"
+    standards:
+      - id: OS
+        text: "ระบบปฏิบัติการ: บทบาทของระบบปฏิบัติการ กระบวนการ การจัดการทรัพยากร หน่วยความจำ อุปกรณ์ และระบบไฟล์"
+        indicators:
+          - { id: "OS-Purpose", level: "CS Core", text: "Role and Purpose of Operating Systems — บทบาทและจุดประสงค์ของระบบปฏิบัติการในฐานะตัวกลางระหว่างฮาร์ดแวร์กับโปรแกรมประยุกต์" }
+          - { id: "OS-Principles", level: "CS Core", text: "Principles of Operating System — หลักการของระบบปฏิบัติการ: นามธรรม กระบวนการและทรัพยากร และการเรียกใช้บริการของระบบ" }
+          - { id: "OS-Concurrency", level: "CS Core", text: "Concurrency — การทำงานพร้อมกัน" }
+          - { id: "OS-Protection", level: "CS Core", text: "Protection and Safety — การป้องกันและความปลอดภัยในระบบปฏิบัติการ" }
+          - { id: "OS-Scheduling", level: "KA Core", text: "Scheduling — การจัดลำดับงาน" }
+          - { id: "OS-Process", level: "KA Core", text: "Process Model — แบบจำลองกระบวนการ" }
+          - { id: "OS-Memory", level: "KA Core", text: "Memory Management — การจัดการหน่วยความจำ" }
+          - { id: "OS-Devices", level: "KA Core", text: "Device management — การจัดการอุปกรณ์" }
+          - { id: "OS-Files", level: "KA Core", text: "File Systems API and Implementation — ระบบไฟล์" }
+          - { id: "OS-Advanced-Files", level: "KA Core", text: "Advanced File systems — ระบบไฟล์ขั้นสูง" }
+          - { id: "OS-Virtualization", level: "KA Core", text: "Virtualization — เวอร์ชวลไลเซชัน" }
+          - { id: "OS-Real-time", level: "KA Core", text: "Real-time and Embedded Systems — ระบบเวลาจริงและระบบฝังตัว" }
+          - { id: "OS-Faults", level: "KA Core", text: "Fault tolerance — การทนต่อความผิดพร่อง" }
+          - { id: "OS-SEP", level: "KA Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในบริบทของระบบปฏิบัติการ" }
+  - id: PDC
+    title: "Parallel and Distributed Computing (PDC)"
+    standards:
+      - id: PDC
+        text: "การคำนวณแบบขนานและแบบกระจาย: โปรแกรมที่ทำงานพร้อมกัน การสื่อสารและการประสานงาน และการประเมินประสิทธิภาพ"
+        indicators:
+          - { id: "PDC-Programs", level: "CS Core", text: "Programs — โปรแกรมแบบขนานและแบบกระจาย" }
+          - { id: "PDC-Communication", level: "CS Core", text: "Communication — การสื่อสารระหว่างส่วนที่ทำงานพร้อมกัน" }
+          - { id: "PDC-Coordination", level: "CS Core", text: "Coordination — การประสานงาน" }
+          - { id: "PDC-Evaluation", level: "CS Core", text: "Evaluation — การประเมินผลของโปรแกรมแบบขนาน" }
+          - { id: "PDC-Algorithms", level: "CS Core", text: "Algorithms — อัลกอริทึมแบบขนานและแบบกระจาย" }
+  - id: SDF
+    title: "Software Development Fundamentals (SDF)"
+    standards:
+      - id: SDF
+        text: "พื้นฐานการพัฒนาซอฟต์แวร์: แนวคิดการเขียนโปรแกรม โครงสร้างข้อมูลพื้นฐาน อัลกอริทึม และแนวปฏิบัติในการพัฒนา"
+        indicators:
+          - { id: "SDF-Fundamentals", level: "CS Core", text: "Fundamental Programming Concepts and Practices — แนวคิดและแนวปฏิบัติพื้นฐานของการเขียนโปรแกรม: ตัวแปร ชนิดข้อมูล นิพจน์ การกำหนดค่า เงื่อนไข การวนซ้ำ ฟังก์ชัน ข้อมูลแบบมีโครงสร้าง ไฟล์ การเรียกซ้ำ การจัดการข้อผิดพลาด การทดสอบและหาข้อผิดพลาด และการอ่านไล่การทำงานของโปรแกรม" }
+          - { id: "SDF-Data-Structures", level: "CS Core", text: "Fundamental Data Structures — โครงสร้างข้อมูลพื้นฐาน: ลิสต์ สแตก คิว เซต และดิกชันนารี การเลือกใช้ ผลต่อสมรรถนะ และการประมวลผลสตริง" }
+          - { id: "SDF-Algorithms", level: "CS Core", text: "Algorithms — อัลกอริทึม: แนวคิดของอัลกอริทึมและประสิทธิภาพ อัลกอริทึมที่ใช้บ่อย (การค้นหา การเรียงลำดับ การท่องต้นไม้และกราฟ) และผลต่อเวลาและหน่วยความจำ" }
+          - { id: "SDF-Practices", level: "CS Core", text: "Software Development Practices — แนวปฏิบัติในการพัฒนาซอฟต์แวร์: การทดสอบและออกแบบกรณีทดสอบ การใช้ IDE และตัวดีบัก รูปแบบโค้ดที่อ่านง่าย และการเขียนข้อกำหนดของโมดูล" }
+          - { id: "SDF-SEP", level: "CS Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพของผู้เขียนโปรแกรม: ทรัพย์สินทางปัญญา การลอกงาน และความรับผิดชอบต่อโค้ด" }
+  - id: SE
+    title: "Software Engineering (SE)"
+    standards:
+      - id: SE
+        text: "วิศวกรรมซอฟต์แวร์: การทำงานเป็นทีม เครื่องมือ ความต้องการ การออกแบบ การสร้าง และการทดสอบซอฟต์แวร์"
+        indicators:
+          - { id: "SE-Teamwork", level: "CS Core", text: "Teamwork — การทำงานเป็นทีม: การสื่อสาร การแก้ความขัดแย้ง การเขียนโปรแกรมร่วมกัน บทบาท และกระบวนการของทีม" }
+          - { id: "SE-Tools", level: "CS Core", text: "Tools and Environments — เครื่องมือและสภาพแวดล้อม: การจัดการรุ่นและระบบควบคุมเวอร์ชัน" }
+          - { id: "SE-Requirements", level: "KA Core", text: "Product Requirements — ความต้องการของผลิตภัณฑ์" }
+          - { id: "SE-Design", level: "CS Core", text: "Software Design — การออกแบบซอฟต์แวร์" }
+          - { id: "SE-Construction", level: "CS Core", text: "Software Construction — การสร้างซอฟต์แวร์" }
+          - { id: "SE-Validation", level: "CS Core", text: "Software Verification and Validation — การทวนสอบและการตรวจสอบความถูกต้องของซอฟต์แวร์: เป้าหมายและชนิดของการทดสอบ" }
+          - { id: "SE-Refactoring", level: "KA Core", text: "Refactoring and Code Evolution — การปรับโครงสร้างโค้ดและวิวัฒนาการของโค้ด" }
+          - { id: "SE-Reliability", level: "KA Core", text: "Software Reliability — ความน่าเชื่อถือของซอฟต์แวร์" }
+          - { id: "SE-Formal", level: "KA Core", text: "Formal Methods — วิธีการเชิงรูปนัย" }
+  - id: SEC
+    title: "Security (SEC)"
+    standards:
+      - id: SEC
+        text: "ความมั่นคงปลอดภัย: แนวคิดพื้นฐานด้านความปลอดภัย การเขียนโค้ดอย่างปลอดภัย วิทยาการเข้ารหัสลับ และการกำกับดูแล"
+        indicators:
+          - { id: "SEC-Foundations", level: "CS Core", text: "Foundational Security — ความมั่นคงปลอดภัยพื้นฐาน: กรอบคิดด้านความปลอดภัย (การรักษาความลับ ความถูกต้องครบถ้วน ความพร้อมใช้) การยืนยันตัวตนและการกำหนดสิทธิ์ ช่องโหว่และภัยคุกคาม และหลักการป้องกัน" }
+          - { id: "SEC-SEP", level: "CS Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพด้านความมั่นคงปลอดภัย" }
+          - { id: "SEC-Coding", level: "CS Core", text: "Secure Coding — การเขียนโค้ดอย่างปลอดภัย: ช่องโหว่ที่พบบ่อย การโจมตีแบบแทรกคำสั่ง และการตรวจสอบข้อมูลรับเข้า" }
+          - { id: "SEC-Crypto", level: "CS Core", text: "Cryptography — วิทยาการเข้ารหัสลับ: รหัสลับแบบดั้งเดิม การเข้ารหัสแบบกุญแจสมมาตรและกุญแจสาธารณะ และการใช้งานจริง" }
+          - { id: "SEC-Engineering", level: "CS Core", text: "Security Analysis, Design, and Engineering — การวิเคราะห์ ออกแบบ และวิศวกรรมด้านความปลอดภัย" }
+          - { id: "SEC-Forensics", level: "KA Core", text: "Digital Forensics — นิติวิทยาศาสตร์ดิจิทัล" }
+          - { id: "SEC-Governance", level: "KA Core", text: "Security Governance — การกำกับดูแลด้านความมั่นคงปลอดภัย" }
+  - id: SEP
+    title: "Society, Ethics, and the Profession (SEP)"
+    standards:
+      - id: SEP
+        text: "สังคม จริยธรรม และวิชาชีพ: บริบททางสังคม จริยธรรม ทรัพย์สินทางปัญญา ความเป็นส่วนตัว กฎหมาย และความหลากหลาย"
+        indicators:
+          - { id: "SEP-Context", level: "CS Core", text: "Social Context — บริบททางสังคม: ผลของแอปพลิเคชันคอมพิวเตอร์ต่อบุคคลและสังคม และผลของความไม่หลากหลายและการเข้าถึงไม่ได้" }
+          - { id: "SEP-Ethical-Analysis", level: "CS Core", text: "Methods for Ethical Analysis — วิธีการวิเคราะห์เชิงจริยธรรม" }
+          - { id: "SEP-Professional-Ethics", level: "CS Core", text: "Professional Ethics — จริยธรรมวิชาชีพ" }
+          - { id: "SEP-IP", level: "CS Core", text: "Intellectual Property — ทรัพย์สินทางปัญญา: สิทธิในงานดิจิทัล พื้นฐานทางกฎหมาย สัญญาอนุญาตซอฟต์แวร์ที่ใช้บ่อย (รวมครีเอทีฟคอมมอนส์) และการลอกงาน" }
+          - { id: "SEP-Privacy", level: "CS Core", text: "Privacy and Civil Liberties — ความเป็นส่วนตัวและสิทธิพลเมือง: ผลของการเก็บข้อมูลจำนวนมาก การไม่เปิดเผยตัวตน และเทคโนโลยีปกป้องความเป็นส่วนตัว" }
+          - { id: "SEP-Communication", level: "CS Core", text: "Communication — การสื่อสารในวิชาชีพ" }
+          - { id: "SEP-Sustainability", level: "CS Core", text: "Sustainability — ความยั่งยืน" }
+          - { id: "SEP-History", level: "CS Core", text: "Computing History — ประวัติศาสตร์คอมพิวเตอร์ทั้งฮาร์ดแวร์ ซอฟต์แวร์ และองค์กร และความเกี่ยวข้องกับปัจจุบัน" }
+          - { id: "SEP-Economies", level: "KA Core", text: "Economies of Computing — เศรษฐศาสตร์ของการคำนวณ" }
+          - { id: "SEP-Security", level: "CS Core", text: "Security Policies, Laws and Computer Crimes — นโยบายความปลอดภัย กฎหมาย และอาชญากรรมคอมพิวเตอร์: การฉ้อโกง วิศวกรรมสังคม มัลแวร์ และการโจมตีโครงสร้างพื้นฐาน" }
+          - { id: "SEP-DEIA", level: "CS Core", text: "Diversity, Equity, Inclusion, and Accessibility — ความหลากหลาย ความเสมอภาค การมีส่วนร่วม และการเข้าถึงได้" }
+  - id: SF
+    title: "Systems Fundamentals (SF)"
+    standards:
+      - id: SF
+        text: "พื้นฐานของระบบ: ภาพรวมของระบบคอมพิวเตอร์ แนวคิดสถานะและตรรกะ การจัดการทรัพยากร สมรรถนะ และความน่าเชื่อถือ"
+        indicators:
+          - { id: "SF-Overview", level: "CS Core", text: "Overview of Computer Systems — ภาพรวมของระบบคอมพิวเตอร์: องค์ประกอบพื้นฐาน ฮาร์ดแวร์ในฐานะกลไกการคำนวณ นามธรรมของการเขียนโปรแกรม และความสัมพันธ์ระหว่างแอปพลิเคชันกับระบบปฏิบัติการ" }
+          - { id: "SF-Foundations", level: "CS Core", text: "Basic Concepts — แนวคิดพื้นฐานของระบบ: ดิจิทัลกับแอนะล็อก เกตตรรกะและพีชคณิตบูลีน สถานะและเครื่องสถานะจำกัด และการประมวลผลตามลำดับกับแบบขนาน" }
+          - { id: "SF-Resource", level: "CS Core", text: "Resource Management — การจัดการทรัพยากรและอัลกอริทึมจัดสรรทรัพยากรพื้นฐาน" }
+          - { id: "SF-Performance", level: "CS Core", text: "System Performance — สมรรถนะของระบบ" }
+          - { id: "SF-Evaluation", level: "CS Core", text: "Performance Evaluation — การประเมินสมรรถนะ" }
+          - { id: "SF-Reliability", level: "CS Core", text: "System Reliability — ความน่าเชื่อถือของระบบ" }
+          - { id: "SF-Security", level: "CS Core", text: "System Security — ความปลอดภัยของระบบ" }
+          - { id: "SF-Design", level: "CS Core", text: "System Design — การออกแบบระบบ" }
+          - { id: "SF-SEP", level: "KA Core", text: "Society, Ethics, and the Profession — สังคม จริยธรรม และวิชาชีพในบริบทของระบบ" }
+  - id: SPD
+    title: "Specialized Platform Development (SPD)"
+    standards:
+      - id: SPD
+        text: "การพัฒนาสำหรับแพลตฟอร์มเฉพาะ: เว็บ อุปกรณ์เคลื่อนที่ หุ่นยนต์ ระบบฝังตัว เกม และแพลตฟอร์มเชิงโต้ตอบ"
+        indicators:
+          - { id: "SPD-Common", level: "CS Core", text: "Common Aspects/Shared Concerns — ประเด็นร่วมของการพัฒนาบนทุกแพลตฟอร์ม" }
+          - { id: "SPD-Web", level: "KA Core", text: "Web Platforms — แพลตฟอร์มเว็บ" }
+          - { id: "SPD-Mobile", level: "KA Core", text: "Mobile Platforms — แพลตฟอร์มอุปกรณ์เคลื่อนที่" }
+          - { id: "SPD-Robot", level: "KA Core", text: "Robot Platforms — แพลตฟอร์มหุ่นยนต์" }
+          - { id: "SPD-Embedded", level: "KA Core", text: "Embedded Platforms — แพลตฟอร์มฝังตัว" }
+          - { id: "SPD-Game", level: "KA Core", text: "Game Platforms — แพลตฟอร์มเกม" }
+          - { id: "SPD-Interactive", level: "KA Core", text: "Interactive Computing Platforms — แพลตฟอร์มคอมพิวเตอร์เชิงโต้ตอบ" }
