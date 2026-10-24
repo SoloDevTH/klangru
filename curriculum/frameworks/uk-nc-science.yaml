@@ -1,0 +1,785 @@
+# National curriculum in England: science programmes of study (Department for Education) เฉพาะข้อกำหนดตามกฎหมาย (statutory requirements)
+# ไม่เก็บ Purpose of study, Aims, ย่อหน้านำของช่วงชั้น และ "Notes and guidance (non-statutory)"
+# ที่มา: ใช้โครง (หัวข้อและลำดับ) จากหน้า HTML ของ GOV.UK ผ่าน Content API (https://www.gov.uk/api/content/...) แต่ข้อความทุกข้อคัดจาก PDF ฉบับทางการ
+#   เพราะหน้า HTML ถูกปรับตามรูปแบบของ GOV.UK (เขียนตัวเลขแทนคำ เช่น "1 more" แทน "one more") และบางข้อต่างจาก PDF
+# ตรวจ: จับคู่ทุกข้อจาก HTML กับ bullet ใน PDF โดยอัตโนมัติ ตรวจข้อที่ไม่ตรงทีละข้อ และตรวจย้อนว่า bullet ใน PDF ที่เป็นข้อกำหนดมีครบ
+# รหัส: ต้นฉบับไม่มีรหัส รหัสทั้งหมด (UKNC-...) เป็นรหัสที่เราตั้ง รูปแบบ UKNC-<วิชา>-<ปีหรือช่วงชั้น>-<หัวข้อ>-<ลำดับ> ลำดับตามที่ปรากฏในต้นฉบับ
+#   วิชา MA = mathematics, SC = science, CO = computing; strand = ปีหรือช่วงชั้นตามหัวข้อของต้นฉบับ; standard = หัวข้อย่อยในต้นฉบับ
+# level: Y1–Y6 = Year, Y1-2 / Y3-4 / Y5-6 = ช่วงปีของ Working scientifically, KS1–KS4 = key stage
+# bullet ย่อยในต้นฉบับต่อท้ายข้อหลักด้วย " • " ข้อความในวงเล็บเหลี่ยม [ ] เป็นตัวอย่างที่ไม่บังคับตามต้นฉบับ
+# KS4: ไม่เก็บรายการ "Students should be helped to understand ..." ที่นำแต่ละสาขา เก็บเฉพาะ Working scientifically และรายการ "Students should be taught about"
+# KS3 Chemistry "the carbon cycle" มีใน PDF แต่ไม่มีในหน้า HTML ใส่ตาม PDF
+# จำนวน: 414 ข้อ
+id: uk-nc-science
+title: "National curriculum in England: science programmes of study (key stages 1 to 4)"
+short: "England National Curriculum (Science)"
+kind: national-curriculum
+subjects: [physics, chemistry, biology, earthscience]
+language: en
+sources:
+  - title: "National curriculum in England: science programmes of study - key stages 1 and 2 (PDF)"
+    url: "https://assets.publishing.service.gov.uk/media/5a806ebd40f0b62305b8b1fa/PRIMARY_national_curriculum_-_Science.pdf"
+    publisher: "Department for Education"
+    retrieved: "2026-10-24"
+  - title: "National curriculum in England: science programme of study - key stage 3 (PDF)"
+    url: "https://assets.publishing.service.gov.uk/media/5a7d563de5274a2af0ae2ffa/SECONDARY_national_curriculum_-_Science_220714.pdf"
+    publisher: "Department for Education"
+    retrieved: "2026-10-24"
+  - title: "National curriculum in England: science programme of study - key stage 4 (PDF, 7 November 2014)"
+    url: "https://assets.publishing.service.gov.uk/media/5a7efc65ed915d74e33f3ac9/Science_KS4_PoS_7_November_2014.pdf"
+    publisher: "Department for Education"
+    retrieved: "2026-10-24"
+  - title: "National curriculum in England: science programmes of study (HTML, ใช้เป็นโครง)"
+    url: "https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study"
+    publisher: "Department for Education (GOV.UK)"
+    retrieved: "2026-10-24"
+copyright: "© Crown copyright 2013–2014 (Department for Education) เอกสาร PDF ระบุ \"You may re-use this information (excluding logos) free of charge in any format or medium, under the terms of the Open Government Licence\" หน้า GOV.UK ของ programme of study ระบุ \"This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated\" (ตรวจ 2026-10-24) OGL v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) อนุญาตให้ \"copy, publish, distribute and transmit the Information; adapt the Information; exploit the Information commercially and non-commercially\" โดยต้อง \"acknowledge the source of the Information ... and, where possible, provide a link to this licence\" ถ้าผู้ให้ข้อมูลไม่กำหนดข้อความแสดงที่มา ให้ใช้ \"Contains public sector information licensed under the Open Government Licence v3.0.\" ไม่ครอบคลุมโลโก้ ตราของหน่วยงาน และสิทธิของบุคคลที่สาม ห้ามสื่อว่า DfE รับรองคลังรู้ (PDF ของ KS4 ระบุ Open Government Licence v2.0 ส่วนหน้า GOV.UK ระบุ v3.0 ทั้งสองฉบับอนุญาตให้ดัดแปลงและเผยแพร่โดยแสดงที่มา)"
+completeness: full-text
+strands:
+  - id: "Y1-2"
+    title: "Key stage 1 programme of study – years 1 and 2"
+    standards:
+      - id: "UKNC-SC-Y1-2-WS"
+        text: "Working scientifically"
+        indicators:
+          - { id: "UKNC-SC-Y1-2-WS-01", level: "Y1-2", text: "asking simple questions and recognising that they can be answered in different ways" }
+          - { id: "UKNC-SC-Y1-2-WS-02", level: "Y1-2", text: "observing closely, using simple equipment" }
+          - { id: "UKNC-SC-Y1-2-WS-03", level: "Y1-2", text: "performing simple tests" }
+          - { id: "UKNC-SC-Y1-2-WS-04", level: "Y1-2", text: "identifying and classifying" }
+          - { id: "UKNC-SC-Y1-2-WS-05", level: "Y1-2", text: "using their observations and ideas to suggest answers to questions" }
+          - { id: "UKNC-SC-Y1-2-WS-06", level: "Y1-2", text: "gathering and recording data to help in answering questions." }
+  - id: "Y1"
+    title: "Year 1 programme of study"
+    standards:
+      - id: "UKNC-SC-Y1-PLA"
+        text: "Plants"
+        indicators:
+          - { id: "UKNC-SC-Y1-PLA-01", level: "Y1", text: "identify and name a variety of common wild and garden plants, including deciduous and evergreen trees" }
+          - { id: "UKNC-SC-Y1-PLA-02", level: "Y1", text: "identify and describe the basic structure of a variety of common flowering plants, including trees." }
+      - id: "UKNC-SC-Y1-AH"
+        text: "Animals, including humans"
+        indicators:
+          - { id: "UKNC-SC-Y1-AH-01", level: "Y1", text: "identify and name a variety of common animals including fish, amphibians, reptiles, birds and mammals" }
+          - { id: "UKNC-SC-Y1-AH-02", level: "Y1", text: "identify and name a variety of common animals that are carnivores, herbivores and omnivores" }
+          - { id: "UKNC-SC-Y1-AH-03", level: "Y1", text: "describe and compare the structure of a variety of common animals (fish, amphibians, reptiles, birds and mammals, including pets)" }
+          - { id: "UKNC-SC-Y1-AH-04", level: "Y1", text: "identify, name, draw and label the basic parts of the human body and say which part of the body is associated with each sense." }
+      - id: "UKNC-SC-Y1-EM"
+        text: "Everyday materials"
+        indicators:
+          - { id: "UKNC-SC-Y1-EM-01", level: "Y1", text: "distinguish between an object and the material from which it is made" }
+          - { id: "UKNC-SC-Y1-EM-02", level: "Y1", text: "identify and name a variety of everyday materials, including wood, plastic, glass, metal, water, and rock" }
+          - { id: "UKNC-SC-Y1-EM-03", level: "Y1", text: "describe the simple physical properties of a variety of everyday materials" }
+          - { id: "UKNC-SC-Y1-EM-04", level: "Y1", text: "compare and group together a variety of everyday materials on the basis of their simple physical properties." }
+      - id: "UKNC-SC-Y1-SC"
+        text: "Seasonal changes"
+        indicators:
+          - { id: "UKNC-SC-Y1-SC-01", level: "Y1", text: "observe changes across the four seasons" }
+          - { id: "UKNC-SC-Y1-SC-02", level: "Y1", text: "observe and describe weather associated with the seasons and how day length varies." }
+  - id: "Y2"
+    title: "Year 2 programme of study"
+    standards:
+      - id: "UKNC-SC-Y2-LTH"
+        text: "Living things and their habitats"
+        indicators:
+          - { id: "UKNC-SC-Y2-LTH-01", level: "Y2", text: "explore and compare the differences between things that are living, dead, and things that have never been alive" }
+          - { id: "UKNC-SC-Y2-LTH-02", level: "Y2", text: "identify that most living things live in habitats to which they are suited and describe how different habitats provide for the basic needs of different kinds of animals and plants, and how they depend on each other" }
+          - { id: "UKNC-SC-Y2-LTH-03", level: "Y2", text: "identify and name a variety of plants and animals in their habitats, including micro-habitats" }
+          - { id: "UKNC-SC-Y2-LTH-04", level: "Y2", text: "describe how animals obtain their food from plants and other animals, using the idea of a simple food chain, and identify and name different sources of food." }
+      - id: "UKNC-SC-Y2-PLA"
+        text: "Plants"
+        indicators:
+          - { id: "UKNC-SC-Y2-PLA-01", level: "Y2", text: "observe and describe how seeds and bulbs grow into mature plants" }
+          - { id: "UKNC-SC-Y2-PLA-02", level: "Y2", text: "find out and describe how plants need water, light and a suitable temperature to grow and stay healthy." }
+      - id: "UKNC-SC-Y2-AH"
+        text: "Animals, including humans"
+        indicators:
+          - { id: "UKNC-SC-Y2-AH-01", level: "Y2", text: "notice that animals, including humans, have offspring which grow into adults" }
+          - { id: "UKNC-SC-Y2-AH-02", level: "Y2", text: "find out about and describe the basic needs of animals, including humans, for survival (water, food and air)" }
+          - { id: "UKNC-SC-Y2-AH-03", level: "Y2", text: "describe the importance for humans of exercise, eating the right amounts of different types of food, and hygiene." }
+      - id: "UKNC-SC-Y2-UEM"
+        text: "Uses of everyday materials"
+        indicators:
+          - { id: "UKNC-SC-Y2-UEM-01", level: "Y2", text: "identify and compare the suitability of a variety of everyday materials, including wood, metal, plastic, glass, brick, rock, paper and cardboard for particular uses" }
+          - { id: "UKNC-SC-Y2-UEM-02", level: "Y2", text: "find out how the shapes of solid objects made from some materials can be changed by squashing, bending, twisting and stretching." }
+  - id: "Y3-4"
+    title: "Lower key stage 2 programme of study"
+    standards:
+      - id: "UKNC-SC-Y3-4-WS"
+        text: "Working scientifically"
+        indicators:
+          - { id: "UKNC-SC-Y3-4-WS-01", level: "Y3-4", text: "asking relevant questions and using different types of scientific enquiries to answer them" }
+          - { id: "UKNC-SC-Y3-4-WS-02", level: "Y3-4", text: "setting up simple practical enquiries, comparative and fair tests" }
+          - { id: "UKNC-SC-Y3-4-WS-03", level: "Y3-4", text: "making systematic and careful observations and, where appropriate, taking accurate measurements using standard units, using a range of equipment, including thermometers and data loggers" }
+          - { id: "UKNC-SC-Y3-4-WS-04", level: "Y3-4", text: "gathering, recording, classifying and presenting data in a variety of ways to help in answering questions" }
+          - { id: "UKNC-SC-Y3-4-WS-05", level: "Y3-4", text: "recording findings using simple scientific language, drawings, labelled diagrams, keys, bar charts, and tables" }
+          - { id: "UKNC-SC-Y3-4-WS-06", level: "Y3-4", text: "reporting on findings from enquiries, including oral and written explanations, displays or presentations of results and conclusions" }
+          - { id: "UKNC-SC-Y3-4-WS-07", level: "Y3-4", text: "using results to draw simple conclusions, make predictions for new values, suggest improvements and raise further questions" }
+          - { id: "UKNC-SC-Y3-4-WS-08", level: "Y3-4", text: "identifying differences, similarities or changes related to simple scientific ideas and processes" }
+          - { id: "UKNC-SC-Y3-4-WS-09", level: "Y3-4", text: "using straightforward scientific evidence to answer questions or to support their findings." }
+  - id: "Y3"
+    title: "Year 3 programme of study"
+    standards:
+      - id: "UKNC-SC-Y3-PLA"
+        text: "Plants"
+        indicators:
+          - { id: "UKNC-SC-Y3-PLA-01", level: "Y3", text: "identify and describe the functions of different parts of flowering plants: roots, stem/trunk, leaves and flowers" }
+          - { id: "UKNC-SC-Y3-PLA-02", level: "Y3", text: "explore the requirements of plants for life and growth (air, light, water, nutrients from soil, and room to grow) and how they vary from plant to plant" }
+          - { id: "UKNC-SC-Y3-PLA-03", level: "Y3", text: "investigate the way in which water is transported within plants" }
+          - { id: "UKNC-SC-Y3-PLA-04", level: "Y3", text: "explore the part that flowers play in the life cycle of flowering plants, including pollination, seed formation and seed dispersal." }
+      - id: "UKNC-SC-Y3-AH"
+        text: "Animals, including humans"
+        indicators:
+          - { id: "UKNC-SC-Y3-AH-01", level: "Y3", text: "identify that animals, including humans, need the right types and amount of nutrition, and that they cannot make their own food; they get nutrition from what they eat" }
+          - { id: "UKNC-SC-Y3-AH-02", level: "Y3", text: "identify that humans and some other animals have skeletons and muscles for support, protection and movement." }
+      - id: "UKNC-SC-Y3-ROC"
+        text: "Rocks"
+        indicators:
+          - { id: "UKNC-SC-Y3-ROC-01", level: "Y3", text: "compare and group together different kinds of rocks on the basis of their appearance and simple physical properties" }
+          - { id: "UKNC-SC-Y3-ROC-02", level: "Y3", text: "describe in simple terms how fossils are formed when things that have lived are trapped within rock" }
+          - { id: "UKNC-SC-Y3-ROC-03", level: "Y3", text: "recognise that soils are made from rocks and organic matter." }
+      - id: "UKNC-SC-Y3-LIG"
+        text: "Light"
+        indicators:
+          - { id: "UKNC-SC-Y3-LIG-01", level: "Y3", text: "recognise that they need light in order to see things and that dark is the absence of light" }
+          - { id: "UKNC-SC-Y3-LIG-02", level: "Y3", text: "notice that light is reflected from surfaces" }
+          - { id: "UKNC-SC-Y3-LIG-03", level: "Y3", text: "recognise that light from the sun can be dangerous and that there are ways to protect their eyes" }
+          - { id: "UKNC-SC-Y3-LIG-04", level: "Y3", text: "recognise that shadows are formed when the light from a light source is blocked by an opaque object" }
+          - { id: "UKNC-SC-Y3-LIG-05", level: "Y3", text: "find patterns in the way that the size of shadows change." }
+      - id: "UKNC-SC-Y3-FM"
+        text: "Forces and magnets"
+        indicators:
+          - { id: "UKNC-SC-Y3-FM-01", level: "Y3", text: "compare how things move on different surfaces" }
+          - { id: "UKNC-SC-Y3-FM-02", level: "Y3", text: "notice that some forces need contact between two objects, but magnetic forces can act at a distance" }
+          - { id: "UKNC-SC-Y3-FM-03", level: "Y3", text: "observe how magnets attract or repel each other and attract some materials and not others" }
+          - { id: "UKNC-SC-Y3-FM-04", level: "Y3", text: "compare and group together a variety of everyday materials on the basis of whether they are attracted to a magnet, and identify some magnetic materials" }
+          - { id: "UKNC-SC-Y3-FM-05", level: "Y3", text: "describe magnets as having two poles" }
+          - { id: "UKNC-SC-Y3-FM-06", level: "Y3", text: "predict whether two magnets will attract or repel each other, depending on which poles are facing." }
+  - id: "Y4"
+    title: "Year 4 programme of study"
+    standards:
+      - id: "UKNC-SC-Y4-LTH"
+        text: "Living things and their habitats"
+        indicators:
+          - { id: "UKNC-SC-Y4-LTH-01", level: "Y4", text: "recognise that living things can be grouped in a variety of ways" }
+          - { id: "UKNC-SC-Y4-LTH-02", level: "Y4", text: "explore and use classification keys to help group, identify and name a variety of living things in their local and wider environment" }
+          - { id: "UKNC-SC-Y4-LTH-03", level: "Y4", text: "recognise that environments can change and that this can sometimes pose dangers to living things." }
+      - id: "UKNC-SC-Y4-AH"
+        text: "Animals, including humans"
+        indicators:
+          - { id: "UKNC-SC-Y4-AH-01", level: "Y4", text: "describe the simple functions of the basic parts of the digestive system in humans" }
+          - { id: "UKNC-SC-Y4-AH-02", level: "Y4", text: "identify the different types of teeth in humans and their simple functions" }
+          - { id: "UKNC-SC-Y4-AH-03", level: "Y4", text: "construct and interpret a variety of food chains, identifying producers, predators and prey." }
+      - id: "UKNC-SC-Y4-SM"
+        text: "States of matter"
+        indicators:
+          - { id: "UKNC-SC-Y4-SM-01", level: "Y4", text: "compare and group materials together, according to whether they are solids, liquids or gases" }
+          - { id: "UKNC-SC-Y4-SM-02", level: "Y4", text: "observe that some materials change state when they are heated or cooled, and measure or research the temperature at which this happens in degrees Celsius (°C)" }
+          - { id: "UKNC-SC-Y4-SM-03", level: "Y4", text: "identify the part played by evaporation and condensation in the water cycle and associate the rate of evaporation with temperature." }
+      - id: "UKNC-SC-Y4-SOU"
+        text: "Sound"
+        indicators:
+          - { id: "UKNC-SC-Y4-SOU-01", level: "Y4", text: "identify how sounds are made, associating some of them with something vibrating" }
+          - { id: "UKNC-SC-Y4-SOU-02", level: "Y4", text: "recognise that vibrations from sounds travel through a medium to the ear" }
+          - { id: "UKNC-SC-Y4-SOU-03", level: "Y4", text: "find patterns between the pitch of a sound and features of the object that produced it" }
+          - { id: "UKNC-SC-Y4-SOU-04", level: "Y4", text: "find patterns between the volume of a sound and the strength of the vibrations that produced it" }
+          - { id: "UKNC-SC-Y4-SOU-05", level: "Y4", text: "recognise that sounds get fainter as the distance from the sound source increases." }
+      - id: "UKNC-SC-Y4-ELE"
+        text: "Electricity"
+        indicators:
+          - { id: "UKNC-SC-Y4-ELE-01", level: "Y4", text: "identify common appliances that run on electricity" }
+          - { id: "UKNC-SC-Y4-ELE-02", level: "Y4", text: "construct a simple series electrical circuit, identifying and naming its basic parts, including cells, wires, bulbs, switches and buzzers" }
+          - { id: "UKNC-SC-Y4-ELE-03", level: "Y4", text: "identify whether or not a lamp will light in a simple series circuit, based on whether or not the lamp is part of a complete loop with a battery" }
+          - { id: "UKNC-SC-Y4-ELE-04", level: "Y4", text: "recognise that a switch opens and closes a circuit and associate this with whether or not a lamp lights in a simple series circuit" }
+          - { id: "UKNC-SC-Y4-ELE-05", level: "Y4", text: "recognise some common conductors and insulators, and associate metals with being good conductors." }
+  - id: "Y5-6"
+    title: "Upper key stage 2 programme of study"
+    standards:
+      - id: "UKNC-SC-Y5-6-WS"
+        text: "Working scientifically"
+        indicators:
+          - { id: "UKNC-SC-Y5-6-WS-01", level: "Y5-6", text: "planning different types of scientific enquiries to answer questions, including recognising and controlling variables where necessary" }
+          - { id: "UKNC-SC-Y5-6-WS-02", level: "Y5-6", text: "taking measurements, using a range of scientific equipment, with increasing accuracy and precision, taking repeat readings when appropriate" }
+          - { id: "UKNC-SC-Y5-6-WS-03", level: "Y5-6", text: "recording data and results of increasing complexity using scientific diagrams and labels, classification keys, tables, scatter graphs, bar and line graphs" }
+          - { id: "UKNC-SC-Y5-6-WS-04", level: "Y5-6", text: "using test results to make predictions to set up further comparative and fair tests" }
+          - { id: "UKNC-SC-Y5-6-WS-05", level: "Y5-6", text: "reporting and presenting findings from enquiries, including conclusions, causal relationships and explanations of and degree of trust in results, in oral and written forms such as displays and other presentations" }
+          - { id: "UKNC-SC-Y5-6-WS-06", level: "Y5-6", text: "identifying scientific evidence that has been used to support or refute ideas or arguments." }
+  - id: "Y5"
+    title: "Year 5 programme of study"
+    standards:
+      - id: "UKNC-SC-Y5-LTH"
+        text: "Living things and their habitats"
+        indicators:
+          - { id: "UKNC-SC-Y5-LTH-01", level: "Y5", text: "describe the differences in the life cycles of a mammal, an amphibian, an insect and a bird" }
+          - { id: "UKNC-SC-Y5-LTH-02", level: "Y5", text: "describe the life process of reproduction in some plants and animals." }
+      - id: "UKNC-SC-Y5-AH"
+        text: "Animals, including humans"
+        indicators:
+          - { id: "UKNC-SC-Y5-AH-01", level: "Y5", text: "describe the changes as humans develop to old age." }
+      - id: "UKNC-SC-Y5-PCM"
+        text: "Properties and changes of materials"
+        indicators:
+          - { id: "UKNC-SC-Y5-PCM-01", level: "Y5", text: "compare and group together everyday materials on the basis of their properties, including their hardness, solubility, transparency, conductivity (electrical and thermal), and response to magnets" }
+          - { id: "UKNC-SC-Y5-PCM-02", level: "Y5", text: "know that some materials will dissolve in liquid to form a solution, and describe how to recover a substance from a solution" }
+          - { id: "UKNC-SC-Y5-PCM-03", level: "Y5", text: "use knowledge of solids, liquids and gases to decide how mixtures might be separated, including through filtering, sieving and evaporating" }
+          - { id: "UKNC-SC-Y5-PCM-04", level: "Y5", text: "give reasons, based on evidence from comparative and fair tests, for the particular uses of everyday materials, including metals, wood and plastic" }
+          - { id: "UKNC-SC-Y5-PCM-05", level: "Y5", text: "demonstrate that dissolving, mixing and changes of state are reversible changes" }
+          - { id: "UKNC-SC-Y5-PCM-06", level: "Y5", text: "explain that some changes result in the formation of new materials, and that this kind of change is not usually reversible, including changes associated with burning and the action of acid on bicarbonate of soda." }
+      - id: "UKNC-SC-Y5-ES"
+        text: "Earth and space"
+        indicators:
+          - { id: "UKNC-SC-Y5-ES-01", level: "Y5", text: "describe the movement of the Earth, and other planets, relative to the Sun in the solar system" }
+          - { id: "UKNC-SC-Y5-ES-02", level: "Y5", text: "describe the movement of the Moon relative to the Earth" }
+          - { id: "UKNC-SC-Y5-ES-03", level: "Y5", text: "describe the Sun, Earth and Moon as approximately spherical bodies" }
+          - { id: "UKNC-SC-Y5-ES-04", level: "Y5", text: "use the idea of the Earth’s rotation to explain day and night and the apparent movement of the sun across the sky." }
+      - id: "UKNC-SC-Y5-FOR"
+        text: "Forces"
+        indicators:
+          - { id: "UKNC-SC-Y5-FOR-01", level: "Y5", text: "explain that unsupported objects fall towards the Earth because of the force of gravity acting between the Earth and the falling object" }
+          - { id: "UKNC-SC-Y5-FOR-02", level: "Y5", text: "identify the effects of air resistance, water resistance and friction, that act between moving surfaces" }
+          - { id: "UKNC-SC-Y5-FOR-03", level: "Y5", text: "recognise that some mechanisms, including levers, pulleys and gears, allow a smaller force to have a greater effect." }
+  - id: "Y6"
+    title: "Year 6 programme of study"
+    standards:
+      - id: "UKNC-SC-Y6-LTH"
+        text: "Living things and their habitats"
+        indicators:
+          - { id: "UKNC-SC-Y6-LTH-01", level: "Y6", text: "describe how living things are classified into broad groups according to common observable characteristics and based on similarities and differences, including micro-organisms, plants and animals" }
+          - { id: "UKNC-SC-Y6-LTH-02", level: "Y6", text: "give reasons for classifying plants and animals based on specific characteristics." }
+      - id: "UKNC-SC-Y6-AH"
+        text: "Animals including humans"
+        indicators:
+          - { id: "UKNC-SC-Y6-AH-01", level: "Y6", text: "identify and name the main parts of the human circulatory system, and describe the functions of the heart, blood vessels and blood" }
+          - { id: "UKNC-SC-Y6-AH-02", level: "Y6", text: "recognise the impact of diet, exercise, drugs and lifestyle on the way their bodies function" }
+          - { id: "UKNC-SC-Y6-AH-03", level: "Y6", text: "describe the ways in which nutrients and water are transported within animals, including humans." }
+      - id: "UKNC-SC-Y6-EI"
+        text: "Evolution and inheritance"
+        indicators:
+          - { id: "UKNC-SC-Y6-EI-01", level: "Y6", text: "recognise that living things have changed over time and that fossils provide information about living things that inhabited the Earth millions of years ago" }
+          - { id: "UKNC-SC-Y6-EI-02", level: "Y6", text: "recognise that living things produce offspring of the same kind, but normally offspring vary and are not identical to their parents" }
+          - { id: "UKNC-SC-Y6-EI-03", level: "Y6", text: "identify how animals and plants are adapted to suit their environment in different ways and that adaptation may lead to evolution." }
+      - id: "UKNC-SC-Y6-LIG"
+        text: "Light"
+        indicators:
+          - { id: "UKNC-SC-Y6-LIG-01", level: "Y6", text: "recognise that light appears to travel in straight lines" }
+          - { id: "UKNC-SC-Y6-LIG-02", level: "Y6", text: "use the idea that light travels in straight lines to explain that objects are seen because they give out or reflect light into the eye" }
+          - { id: "UKNC-SC-Y6-LIG-03", level: "Y6", text: "explain that we see things because light travels from light sources to our eyes or from light sources to objects and then to our eyes" }
+          - { id: "UKNC-SC-Y6-LIG-04", level: "Y6", text: "use the idea that light travels in straight lines to explain why shadows have the same shape as the objects that cast them." }
+      - id: "UKNC-SC-Y6-ELE"
+        text: "Electricity"
+        indicators:
+          - { id: "UKNC-SC-Y6-ELE-01", level: "Y6", text: "associate the brightness of a lamp or the volume of a buzzer with the number and voltage of cells used in the circuit" }
+          - { id: "UKNC-SC-Y6-ELE-02", level: "Y6", text: "compare and give reasons for variations in how components function, including the brightness of bulbs, the loudness of buzzers and the on/off position of switches" }
+          - { id: "UKNC-SC-Y6-ELE-03", level: "Y6", text: "use recognised symbols when representing a simple circuit in a diagram." }
+  - id: "KS3"
+    title: "Key stage 3"
+    standards:
+      - id: "UKNC-SC-KS3-WS-SA"
+        text: "Working scientifically – Scientific attitudes"
+        indicators:
+          - { id: "UKNC-SC-KS3-WS-SA-01", level: "KS3", text: "pay attention to objectivity and concern for accuracy, precision, repeatability and reproducibility" }
+          - { id: "UKNC-SC-KS3-WS-SA-02", level: "KS3", text: "understand that scientific methods and theories develop as earlier explanations are modified to take account of new evidence and ideas, together with the importance of publishing results and peer review" }
+          - { id: "UKNC-SC-KS3-WS-SA-03", level: "KS3", text: "evaluate risks." }
+      - id: "UKNC-SC-KS3-WS-ESI"
+        text: "Working scientifically – Experimental skills and investigations"
+        indicators:
+          - { id: "UKNC-SC-KS3-WS-ESI-01", level: "KS3", text: "ask questions and develop a line of enquiry based on observations of the real world, alongside prior knowledge and experience" }
+          - { id: "UKNC-SC-KS3-WS-ESI-02", level: "KS3", text: "make predictions using scientific knowledge and understanding" }
+          - { id: "UKNC-SC-KS3-WS-ESI-03", level: "KS3", text: "select, plan and carry out the most appropriate types of scientific enquiries to test predictions, including identifying independent, dependent and control variables, where appropriate" }
+          - { id: "UKNC-SC-KS3-WS-ESI-04", level: "KS3", text: "use appropriate techniques, apparatus, and materials during fieldwork and laboratory work, paying attention to health and safety" }
+          - { id: "UKNC-SC-KS3-WS-ESI-05", level: "KS3", text: "make and record observations and measurements using a range of methods for different investigations; and evaluate the reliability of methods and suggest possible improvements" }
+          - { id: "UKNC-SC-KS3-WS-ESI-06", level: "KS3", text: "apply sampling techniques." }
+      - id: "UKNC-SC-KS3-WS-AE"
+        text: "Working scientifically – Analysis and evaluation"
+        indicators:
+          - { id: "UKNC-SC-KS3-WS-AE-01", level: "KS3", text: "apply mathematical concepts and calculate results" }
+          - { id: "UKNC-SC-KS3-WS-AE-02", level: "KS3", text: "present observations and data using appropriate methods, including tables and graphs" }
+          - { id: "UKNC-SC-KS3-WS-AE-03", level: "KS3", text: "interpret observations and data, including identifying patterns and using observations, measurements and data to draw conclusions" }
+          - { id: "UKNC-SC-KS3-WS-AE-04", level: "KS3", text: "present reasoned explanations, including explaining data in relation to predictions and hypotheses" }
+          - { id: "UKNC-SC-KS3-WS-AE-05", level: "KS3", text: "evaluate data, showing awareness of potential sources of random and systematic error" }
+          - { id: "UKNC-SC-KS3-WS-AE-06", level: "KS3", text: "identify further questions arising from their results." }
+      - id: "UKNC-SC-KS3-WS-MEA"
+        text: "Working scientifically – Measurement"
+        indicators:
+          - { id: "UKNC-SC-KS3-WS-MEA-01", level: "KS3", text: "understand and use SI units and IUPAC (International Union of Pure and Applied Chemistry) chemical nomenclature" }
+          - { id: "UKNC-SC-KS3-WS-MEA-02", level: "KS3", text: "use and derive simple equations and carry out appropriate calculations" }
+          - { id: "UKNC-SC-KS3-WS-MEA-03", level: "KS3", text: "undertake basic data analysis including simple statistical techniques." }
+      - id: "UKNC-SC-KS3-B-CO"
+        text: "Biology: Structure and function of living organisms – Cells and organisation"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-CO-01", level: "KS3", text: "cells as the fundamental unit of living organisms, including how to observe, interpret and record cell structure using a light microscope" }
+          - { id: "UKNC-SC-KS3-B-CO-02", level: "KS3", text: "the functions of the cell wall, cell membrane, cytoplasm, nucleus, vacuole, mitochondria and chloroplasts" }
+          - { id: "UKNC-SC-KS3-B-CO-03", level: "KS3", text: "the similarities and differences between plant and animal cells" }
+          - { id: "UKNC-SC-KS3-B-CO-04", level: "KS3", text: "the role of diffusion in the movement of materials in and between cells" }
+          - { id: "UKNC-SC-KS3-B-CO-05", level: "KS3", text: "the structural adaptations of some unicellular organisms" }
+          - { id: "UKNC-SC-KS3-B-CO-06", level: "KS3", text: "the hierarchical organisation of multicellular organisms: from cells to tissues to organs to systems to organisms." }
+      - id: "UKNC-SC-KS3-B-SMS"
+        text: "Biology: Structure and function of living organisms – The skeletal and muscular systems"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-SMS-01", level: "KS3", text: "the structure and functions of the human skeleton, to include support, protection, movement and making blood cells" }
+          - { id: "UKNC-SC-KS3-B-SMS-02", level: "KS3", text: "biomechanics – the interaction between skeleton and muscles, including the measurement of force exerted by different muscles" }
+          - { id: "UKNC-SC-KS3-B-SMS-03", level: "KS3", text: "the function of muscles and examples of antagonistic muscles." }
+      - id: "UKNC-SC-KS3-B-ND"
+        text: "Biology: Structure and function of living organisms – Nutrition and digestion"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-ND-01", level: "KS3", text: "content of a healthy human diet: carbohydrates, lipids (fats and oils), proteins, vitamins, minerals, dietary fibre and water, and why each is needed" }
+          - { id: "UKNC-SC-KS3-B-ND-02", level: "KS3", text: "calculations of energy requirements in a healthy daily diet" }
+          - { id: "UKNC-SC-KS3-B-ND-03", level: "KS3", text: "the consequences of imbalances in the diet, including obesity, starvation and deficiency diseases" }
+          - { id: "UKNC-SC-KS3-B-ND-04", level: "KS3", text: "the tissues and organs of the human digestive system, including adaptations to function and how the digestive system digests food (enzymes simply as biological catalysts)" }
+          - { id: "UKNC-SC-KS3-B-ND-05", level: "KS3", text: "the importance of bacteria in the human digestive system" }
+          - { id: "UKNC-SC-KS3-B-ND-06", level: "KS3", text: "plants making carbohydrates in their leaves by photosynthesis and gaining mineral nutrients and water from the soil via their roots." }
+      - id: "UKNC-SC-KS3-B-GES"
+        text: "Biology: Structure and function of living organisms – Gas exchange systems"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-GES-01", level: "KS3", text: "the structure and functions of the gas exchange system in humans, including adaptations to function" }
+          - { id: "UKNC-SC-KS3-B-GES-02", level: "KS3", text: "the mechanism of breathing to move air in and out of the lungs, using a pressure model to explain the movement of gases, including simple measurements of lung volume" }
+          - { id: "UKNC-SC-KS3-B-GES-03", level: "KS3", text: "the impact of exercise, asthma and smoking on the human gas exchange system" }
+          - { id: "UKNC-SC-KS3-B-GES-04", level: "KS3", text: "the role of leaf stomata in gas exchange in plants." }
+      - id: "UKNC-SC-KS3-B-REP"
+        text: "Biology: Structure and function of living organisms – Reproduction"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-REP-01", level: "KS3", text: "reproduction in humans (as an example of a mammal), including the structure and function of the male and female reproductive systems, menstrual cycle (without details of hormones), gametes, fertilisation, gestation and birth, to include the effect of maternal lifestyle on the foetus through the placenta" }
+          - { id: "UKNC-SC-KS3-B-REP-02", level: "KS3", text: "reproduction in plants, including flower structure, wind and insect pollination, fertilisation, seed and fruit formation and dispersal, including quantitative investigation of some dispersal mechanisms." }
+      - id: "UKNC-SC-KS3-B-HEA"
+        text: "Biology: Structure and function of living organisms – Health"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-HEA-01", level: "KS3", text: "the effects of recreational drugs (including substance misuse) on behaviour, health and life processes." }
+      - id: "UKNC-SC-KS3-B-PHO"
+        text: "Biology: Material cycles and energy – Photosynthesis"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-PHO-01", level: "KS3", text: "the reactants in, and products of, photosynthesis, and a word summary for photosynthesis" }
+          - { id: "UKNC-SC-KS3-B-PHO-02", level: "KS3", text: "the dependence of almost all life on Earth on the ability of photosynthetic organisms, such as plants and algae, to use sunlight in photosynthesis to build organic molecules that are an essential energy store and to maintain levels of oxygen and carbon dioxide in the atmosphere" }
+          - { id: "UKNC-SC-KS3-B-PHO-03", level: "KS3", text: "the adaptations of leaves for photosynthesis." }
+      - id: "UKNC-SC-KS3-B-CR"
+        text: "Biology: Material cycles and energy – Cellular respiration"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-CR-01", level: "KS3", text: "aerobic and anaerobic respiration in living organisms, including the breakdown of organic molecules to enable all the other chemical processes necessary for life" }
+          - { id: "UKNC-SC-KS3-B-CR-02", level: "KS3", text: "a word summary for aerobic respiration" }
+          - { id: "UKNC-SC-KS3-B-CR-03", level: "KS3", text: "the process of anaerobic respiration in humans and micro-organisms, including fermentation, and a word summary for anaerobic respiration" }
+          - { id: "UKNC-SC-KS3-B-CR-04", level: "KS3", text: "the differences between aerobic and anaerobic respiration in terms of the reactants, the products formed and the implications for the organism." }
+      - id: "UKNC-SC-KS3-B-RAE"
+        text: "Biology: Interactions and interdependencies – Relationships in an ecosystem"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-RAE-01", level: "KS3", text: "the interdependence of organisms in an ecosystem, including food webs and insect pollinated crops" }
+          - { id: "UKNC-SC-KS3-B-RAE-02", level: "KS3", text: "the importance of plant reproduction through insect pollination in human food security" }
+          - { id: "UKNC-SC-KS3-B-RAE-03", level: "KS3", text: "how organisms affect, and are affected by, their environment, including the accumulation of toxic materials." }
+      - id: "UKNC-SC-KS3-B-ICDG"
+        text: "Biology: Genetics and evolution – Inheritance, chromosomes, DNA and genes"
+        indicators:
+          - { id: "UKNC-SC-KS3-B-ICDG-01", level: "KS3", text: "heredity as the process by which genetic information is transmitted from one generation to the next" }
+          - { id: "UKNC-SC-KS3-B-ICDG-02", level: "KS3", text: "a simple model of chromosomes, genes and DNA in heredity, including the part played by Watson, Crick, Wilkins and Franklin in the development of the DNA model" }
+          - { id: "UKNC-SC-KS3-B-ICDG-03", level: "KS3", text: "differences between species" }
+          - { id: "UKNC-SC-KS3-B-ICDG-04", level: "KS3", text: "the variation between individuals within a species being continuous or discontinuous, to include measurement and graphical representation of variation" }
+          - { id: "UKNC-SC-KS3-B-ICDG-05", level: "KS3", text: "the variation between species and between individuals of the same species means some organisms compete more successfully, which can drive natural selection" }
+          - { id: "UKNC-SC-KS3-B-ICDG-06", level: "KS3", text: "changes in the environment may leave individuals within a species, and some entire species, less well adapted to compete successfully and reproduce, which in turn may lead to extinction" }
+          - { id: "UKNC-SC-KS3-B-ICDG-07", level: "KS3", text: "the importance of maintaining biodiversity and the use of gene banks to preserve hereditary material." }
+      - id: "UKNC-SC-KS3-C-PNM"
+        text: "Chemistry: The particulate nature of matter"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-PNM-01", level: "KS3", text: "the properties of the different states of matter (solid, liquid and gas) in terms of the particle model, including gas pressure" }
+          - { id: "UKNC-SC-KS3-C-PNM-02", level: "KS3", text: "changes of state in terms of the particle model." }
+      - id: "UKNC-SC-KS3-C-AEC"
+        text: "Chemistry: Atoms, elements and compounds"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-AEC-01", level: "KS3", text: "a simple (Dalton) atomic model" }
+          - { id: "UKNC-SC-KS3-C-AEC-02", level: "KS3", text: "differences between atoms, elements and compounds" }
+          - { id: "UKNC-SC-KS3-C-AEC-03", level: "KS3", text: "chemical symbols and formulae for elements and compounds" }
+          - { id: "UKNC-SC-KS3-C-AEC-04", level: "KS3", text: "conservation of mass changes of state and chemical reactions." }
+      - id: "UKNC-SC-KS3-C-PIS"
+        text: "Chemistry: Pure and impure substances"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-PIS-01", level: "KS3", text: "the concept of a pure substance" }
+          - { id: "UKNC-SC-KS3-C-PIS-02", level: "KS3", text: "mixtures, including dissolving" }
+          - { id: "UKNC-SC-KS3-C-PIS-03", level: "KS3", text: "diffusion in terms of the particle model" }
+          - { id: "UKNC-SC-KS3-C-PIS-04", level: "KS3", text: "simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography" }
+          - { id: "UKNC-SC-KS3-C-PIS-05", level: "KS3", text: "the identification of pure substances." }
+      - id: "UKNC-SC-KS3-C-CR"
+        text: "Chemistry: Chemical reactions"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-CR-01", level: "KS3", text: "chemical reactions as the rearrangement of atoms" }
+          - { id: "UKNC-SC-KS3-C-CR-02", level: "KS3", text: "representing chemical reactions using formulae and using equations" }
+          - { id: "UKNC-SC-KS3-C-CR-03", level: "KS3", text: "combustion, thermal decomposition, oxidation and displacement reactions" }
+          - { id: "UKNC-SC-KS3-C-CR-04", level: "KS3", text: "defining acids and alkalis in terms of neutralisation reactions" }
+          - { id: "UKNC-SC-KS3-C-CR-05", level: "KS3", text: "the pH scale for measuring acidity/alkalinity; and indicators" }
+          - { id: "UKNC-SC-KS3-C-CR-06", level: "KS3", text: "reactions of acids with metals to produce a salt plus hydrogen" }
+          - { id: "UKNC-SC-KS3-C-CR-07", level: "KS3", text: "reactions of acids with alkalis to produce a salt plus water" }
+          - { id: "UKNC-SC-KS3-C-CR-08", level: "KS3", text: "what catalysts do." }
+      - id: "UKNC-SC-KS3-C-ENE"
+        text: "Chemistry: Energetics"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-ENE-01", level: "KS3", text: "energy changes on changes of state (qualitative)" }
+          - { id: "UKNC-SC-KS3-C-ENE-02", level: "KS3", text: "exothermic and endothermic chemical reactions (qualitative)." }
+      - id: "UKNC-SC-KS3-C-PT"
+        text: "Chemistry: The periodic table"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-PT-01", level: "KS3", text: "the varying physical and chemical properties of different elements" }
+          - { id: "UKNC-SC-KS3-C-PT-02", level: "KS3", text: "the principles underpinning the Mendeleev Periodic Table" }
+          - { id: "UKNC-SC-KS3-C-PT-03", level: "KS3", text: "the Periodic Table: periods and groups; metals and non-metals" }
+          - { id: "UKNC-SC-KS3-C-PT-04", level: "KS3", text: "how patterns in reactions can be predicted with reference to the Periodic Table" }
+          - { id: "UKNC-SC-KS3-C-PT-05", level: "KS3", text: "the properties of metals and non-metals" }
+          - { id: "UKNC-SC-KS3-C-PT-06", level: "KS3", text: "the chemical properties of metal and non-metal oxides with respect to acidity." }
+      - id: "UKNC-SC-KS3-C-MAT"
+        text: "Chemistry: Materials"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-MAT-01", level: "KS3", text: "the order of metals and carbon in the reactivity series" }
+          - { id: "UKNC-SC-KS3-C-MAT-02", level: "KS3", text: "the use of carbon in obtaining metals from metal oxides" }
+          - { id: "UKNC-SC-KS3-C-MAT-03", level: "KS3", text: "properties of ceramics, polymers and composites (qualitative)." }
+      - id: "UKNC-SC-KS3-C-EA"
+        text: "Chemistry: Earth and atmosphere"
+        indicators:
+          - { id: "UKNC-SC-KS3-C-EA-01", level: "KS3", text: "the composition of the Earth" }
+          - { id: "UKNC-SC-KS3-C-EA-02", level: "KS3", text: "the structure of the Earth" }
+          - { id: "UKNC-SC-KS3-C-EA-03", level: "KS3", text: "the rock cycle and the formation of igneous, sedimentary and metamorphic rocks" }
+          - { id: "UKNC-SC-KS3-C-EA-04", level: "KS3", text: "Earth as a source of limited resources and the efficacy of recycling" }
+          - { id: "UKNC-SC-KS3-C-EA-05", level: "KS3", text: "the carbon cycle", note: "มีใน PDF ฉบับทางการ (SECONDARY_national_curriculum_-_Science_220714.pdf) แต่ไม่มีในหน้า HTML ของ GOV.UK" }
+          - { id: "UKNC-SC-KS3-C-EA-06", level: "KS3", text: "the composition of the atmosphere" }
+          - { id: "UKNC-SC-KS3-C-EA-07", level: "KS3", text: "the production of carbon dioxide by human activity and the impact on climate." }
+      - id: "UKNC-SC-KS3-P-CFUC"
+        text: "Physics: Energy – Calculation of fuel uses and costs in the domestic context"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-CFUC-01", level: "KS3", text: "comparing energy values of different foods (from labels) (kJ)" }
+          - { id: "UKNC-SC-KS3-P-CFUC-02", level: "KS3", text: "comparing power ratings of appliances in watts (W, kW)" }
+          - { id: "UKNC-SC-KS3-P-CFUC-03", level: "KS3", text: "comparing amounts of energy transferred (J, kJ, kW hour)" }
+          - { id: "UKNC-SC-KS3-P-CFUC-04", level: "KS3", text: "domestic fuel bills, fuel use and costs" }
+          - { id: "UKNC-SC-KS3-P-CFUC-05", level: "KS3", text: "fuels and energy resources." }
+      - id: "UKNC-SC-KS3-P-ECT"
+        text: "Physics: Energy – Energy changes and transfers"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-ECT-01", level: "KS3", text: "simple machines give bigger force but at the expense of smaller movement (and vice versa): product of force and displacement unchanged" }
+          - { id: "UKNC-SC-KS3-P-ECT-02", level: "KS3", text: "heating and thermal equilibrium: temperature difference between two objects leading to energy transfer from the hotter to the cooler one, through contact (conduction) or radiation; such transfers tending to reduce the temperature difference: use of insulators" }
+          - { id: "UKNC-SC-KS3-P-ECT-03", level: "KS3", text: "other processes that involve energy transfer: changing motion, dropping an object, completing an electrical circuit, stretching a spring, metabolism of food, burning fuels." }
+      - id: "UKNC-SC-KS3-P-CS"
+        text: "Physics: Energy – Changes in systems"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-CS-01", level: "KS3", text: "energy as a quantity that can be quantified and calculated; the total energy has the same value before and after a change" }
+          - { id: "UKNC-SC-KS3-P-CS-02", level: "KS3", text: "comparing the starting with the final conditions of a system and describing increases and decreases in the amounts of energy associated with movements, temperatures, changes in positions in a field, in elastic distortions and in chemical compositions" }
+          - { id: "UKNC-SC-KS3-P-CS-03", level: "KS3", text: "using physical processes and mechanisms, rather than energy, to explain the intermediate steps that bring about such changes." }
+      - id: "UKNC-SC-KS3-P-DM"
+        text: "Physics: Motion and forces – Describing motion"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-DM-01", level: "KS3", text: "speed and the quantitative relationship between average speed, distance and time (speed = distance ÷ time)" }
+          - { id: "UKNC-SC-KS3-P-DM-02", level: "KS3", text: "the representation of a journey on a distance-time graph" }
+          - { id: "UKNC-SC-KS3-P-DM-03", level: "KS3", text: "relative motion: trains and cars passing one another." }
+      - id: "UKNC-SC-KS3-P-FOR"
+        text: "Physics: Motion and forces – Forces"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-FOR-01", level: "KS3", text: "forces as pushes or pulls, arising from the interaction between two objects" }
+          - { id: "UKNC-SC-KS3-P-FOR-02", level: "KS3", text: "using force arrows in diagrams, adding forces in one dimension, balanced and unbalanced forces" }
+          - { id: "UKNC-SC-KS3-P-FOR-03", level: "KS3", text: "moment as the turning effect of a force" }
+          - { id: "UKNC-SC-KS3-P-FOR-04", level: "KS3", text: "forces: associated with deforming objects; stretching and squashing – springs; with rubbing and friction between surfaces, with pushing things out of the way; resistance to motion of air and water" }
+          - { id: "UKNC-SC-KS3-P-FOR-05", level: "KS3", text: "forces measured in newtons, measurements of stretch or compression as force is changed" }
+          - { id: "UKNC-SC-KS3-P-FOR-06", level: "KS3", text: "force-extension linear relation; Hooke’s Law as a special case" }
+          - { id: "UKNC-SC-KS3-P-FOR-07", level: "KS3", text: "work done and energy changes on deformation" }
+          - { id: "UKNC-SC-KS3-P-FOR-08", level: "KS3", text: "non-contact forces: gravity forces acting at a distance on Earth and in space, forces between magnets and forces due to static electricity." }
+      - id: "UKNC-SC-KS3-P-PF"
+        text: "Physics: Motion and forces – Pressure in fluids"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-PF-01", level: "KS3", text: "atmospheric pressure, decreases with increase of height as weight of air above decreases with height" }
+          - { id: "UKNC-SC-KS3-P-PF-02", level: "KS3", text: "pressure in liquids, increasing with depth; upthrust effects, floating and sinking" }
+          - { id: "UKNC-SC-KS3-P-PF-03", level: "KS3", text: "pressure measured by ratio of force over area – acting normal to any surface." }
+      - id: "UKNC-SC-KS3-P-BF"
+        text: "Physics: Motion and forces – Balanced forces"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-BF-01", level: "KS3", text: "opposing forces and equilibrium: weight held by stretched spring or supported on a compressed surface." }
+      - id: "UKNC-SC-KS3-P-FM"
+        text: "Physics: Motion and forces – Forces and motion"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-FM-01", level: "KS3", text: "forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only)" }
+          - { id: "UKNC-SC-KS3-P-FM-02", level: "KS3", text: "change depending on direction of force and its size." }
+      - id: "UKNC-SC-KS3-P-OW"
+        text: "Physics: Waves – Observed waves"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-OW-01", level: "KS3", text: "waves on water as undulations which travel through water with transverse motion; these waves can be reflected, and add or cancel – superposition." }
+      - id: "UKNC-SC-KS3-P-SW"
+        text: "Physics: Waves – Sound waves"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-SW-01", level: "KS3", text: "frequencies of sound waves, measured in hertz (Hz); echoes, reflection and absorption of sound" }
+          - { id: "UKNC-SC-KS3-P-SW-02", level: "KS3", text: "sound needs a medium to travel, the speed of sound in air, in water, in solids" }
+          - { id: "UKNC-SC-KS3-P-SW-03", level: "KS3", text: "sound produced by vibrations of objects, in loud speakers, detected by their effects on microphone diaphragm and the ear drum; sound waves are longitudinal" }
+          - { id: "UKNC-SC-KS3-P-SW-04", level: "KS3", text: "auditory range of humans and animals." }
+      - id: "UKNC-SC-KS3-P-EW"
+        text: "Physics: Waves – Energy and waves"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-EW-01", level: "KS3", text: "pressure waves transferring energy; use for cleaning and physiotherapy by ultra-sound; waves transferring information for conversion to electrical signals by microphone." }
+      - id: "UKNC-SC-KS3-P-LW"
+        text: "Physics: Waves – Light waves"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-LW-01", level: "KS3", text: "the similarities and differences between light waves and waves in matter" }
+          - { id: "UKNC-SC-KS3-P-LW-02", level: "KS3", text: "light waves travelling through a vacuum; speed of light" }
+          - { id: "UKNC-SC-KS3-P-LW-03", level: "KS3", text: "the transmission of light through materials: absorption, diffuse scattering and specular reflection at a surface" }
+          - { id: "UKNC-SC-KS3-P-LW-04", level: "KS3", text: "use of ray model to explain imaging in mirrors, the pinhole camera, the refraction of light and action of convex lens in focusing (qualitative); the human eye" }
+          - { id: "UKNC-SC-KS3-P-LW-05", level: "KS3", text: "light transferring energy from source to absorber leading to chemical and electrical effects; photo-sensitive material in the retina and in cameras" }
+          - { id: "UKNC-SC-KS3-P-LW-06", level: "KS3", text: "colours and the different frequencies of light, white light and prisms (qualitative only); differential colour effects in absorption and diffuse reflection." }
+      - id: "UKNC-SC-KS3-P-CE"
+        text: "Physics: Electricity and electromagnetism – Current electricity"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-CE-01", level: "KS3", text: "electric current, measured in amperes, in circuits, series and parallel circuits, currents add where branches meet and current as flow of charge" }
+          - { id: "UKNC-SC-KS3-P-CE-02", level: "KS3", text: "potential difference, measured in volts, battery and bulb ratings; resistance, measured in ohms, as the ratio of potential difference (p.d.) to current" }
+          - { id: "UKNC-SC-KS3-P-CE-03", level: "KS3", text: "differences in resistance between conducting and insulating components (quantitative)." }
+      - id: "UKNC-SC-KS3-P-SE"
+        text: "Physics: Electricity and electromagnetism – Static electricity"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-SE-01", level: "KS3", text: "separation of positive or negative charges when objects are rubbed together: transfer of electrons, forces between charged objects" }
+          - { id: "UKNC-SC-KS3-P-SE-02", level: "KS3", text: "the idea of electric field, forces acting across the space between objects not in contact." }
+      - id: "UKNC-SC-KS3-P-MAG"
+        text: "Physics: Electricity and electromagnetism – Magnetism"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-MAG-01", level: "KS3", text: "magnetic poles, attraction and repulsion" }
+          - { id: "UKNC-SC-KS3-P-MAG-02", level: "KS3", text: "magnetic fields by plotting with compass, representation by field lines" }
+          - { id: "UKNC-SC-KS3-P-MAG-03", level: "KS3", text: "Earth’s magnetism, compass and navigation" }
+          - { id: "UKNC-SC-KS3-P-MAG-04", level: "KS3", text: "the magnetic effect of a current, electromagnets, D.C. motors (principles only)." }
+      - id: "UKNC-SC-KS3-P-PC"
+        text: "Physics: Matter – Physical changes"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-PC-01", level: "KS3", text: "conservation of material and of mass, and reversibility, in melting, freezing, evaporation, sublimation, condensation, dissolving" }
+          - { id: "UKNC-SC-KS3-P-PC-02", level: "KS3", text: "similarities and differences, including density differences, between solids, liquids and gases" }
+          - { id: "UKNC-SC-KS3-P-PC-03", level: "KS3", text: "Brownian motion in gases" }
+          - { id: "UKNC-SC-KS3-P-PC-04", level: "KS3", text: "diffusion in liquids and gases driven by differences in concentration" }
+          - { id: "UKNC-SC-KS3-P-PC-05", level: "KS3", text: "the difference between chemical and physical changes." }
+      - id: "UKNC-SC-KS3-P-PM"
+        text: "Physics: Matter – Particle model"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-PM-01", level: "KS3", text: "the differences in arrangements, in motion and in closeness of particles explaining changes of state, shape and density, the anomaly of ice-water transition" }
+          - { id: "UKNC-SC-KS3-P-PM-02", level: "KS3", text: "atoms and molecules as particles." }
+      - id: "UKNC-SC-KS3-P-EM"
+        text: "Physics: Matter – Energy in matter"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-EM-01", level: "KS3", text: "changes with temperature in motion and spacing of particles" }
+          - { id: "UKNC-SC-KS3-P-EM-02", level: "KS3", text: "internal energy stored in materials." }
+      - id: "UKNC-SC-KS3-P-SP"
+        text: "Physics: Matter – Space physics"
+        indicators:
+          - { id: "UKNC-SC-KS3-P-SP-01", level: "KS3", text: "gravity force, weight = mass x gravitational field strength (g), on Earth g=10 N/kg, different on other planets and stars; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only)" }
+          - { id: "UKNC-SC-KS3-P-SP-02", level: "KS3", text: "our Sun as a star, other stars in our galaxy, other galaxies" }
+          - { id: "UKNC-SC-KS3-P-SP-03", level: "KS3", text: "the seasons and the Earth’s tilt, day length at different times of year, in different hemispheres" }
+          - { id: "UKNC-SC-KS3-P-SP-04", level: "KS3", text: "the light year as a unit of astronomical distance." }
+  - id: "KS4"
+    title: "Key stage 4"
+    standards:
+      - id: "UKNC-SC-KS4-WS-DST"
+        text: "Working scientifically – 1. The development of scientific thinking"
+        indicators:
+          - { id: "UKNC-SC-KS4-WS-DST-01", level: "KS4", text: "the ways in which scientific methods and theories develop over time" }
+          - { id: "UKNC-SC-KS4-WS-DST-02", level: "KS4", text: "using a variety of concepts and models to develop scientific explanations and understanding" }
+          - { id: "UKNC-SC-KS4-WS-DST-03", level: "KS4", text: "appreciating the power and limitations of science and considering ethical issues which may arise" }
+          - { id: "UKNC-SC-KS4-WS-DST-04", level: "KS4", text: "explaining everyday and technological applications of science; evaluating associated personal, social, economic and environmental implications; and making decisions based on the evaluation of evidence and arguments" }
+          - { id: "UKNC-SC-KS4-WS-DST-05", level: "KS4", text: "evaluating risks both in practical science and the wider societal context, including perception of risk" }
+          - { id: "UKNC-SC-KS4-WS-DST-06", level: "KS4", text: "recognising the importance of peer review of results and of communication of results to a range of audiences." }
+      - id: "UKNC-SC-KS4-WS-ESS"
+        text: "Working scientifically – 2. Experimental skills and strategies"
+        indicators:
+          - { id: "UKNC-SC-KS4-WS-ESS-01", level: "KS4", text: "using scientific theories and explanations to develop hypotheses" }
+          - { id: "UKNC-SC-KS4-WS-ESS-02", level: "KS4", text: "planning experiments to make observations, test hypotheses or explore phenomena" }
+          - { id: "UKNC-SC-KS4-WS-ESS-03", level: "KS4", text: "applying a knowledge of a range of techniques, apparatus, and materials to select those appropriate both for fieldwork and for experiments" }
+          - { id: "UKNC-SC-KS4-WS-ESS-04", level: "KS4", text: "carrying out experiments appropriately, having due regard to the correct manipulation of apparatus, the accuracy of measurements and health and safety considerations" }
+          - { id: "UKNC-SC-KS4-WS-ESS-05", level: "KS4", text: "recognising when to apply a knowledge of sampling techniques to ensure any samples collected are representative" }
+          - { id: "UKNC-SC-KS4-WS-ESS-06", level: "KS4", text: "making and recording observations and measurements using a range of apparatus and methods" }
+          - { id: "UKNC-SC-KS4-WS-ESS-07", level: "KS4", text: "evaluating methods and suggesting possible improvements and further investigations." }
+      - id: "UKNC-SC-KS4-WS-AE"
+        text: "Working scientifically – 3. Analysis and evaluation"
+        indicators:
+          - { id: "UKNC-SC-KS4-WS-AE-01", level: "KS4", text: "applying the cycle of collecting, presenting and analysing data, including: • presenting observations and other data using appropriate methods • translating data from one form to another • carrying out and representing mathematical and statistical analysis • representing distributions of results and making estimations of uncertainty • interpreting observations and other data, including identifying patterns and trends, making inferences and drawing conclusions • presenting reasoned explanations, including relating data to hypotheses • being objective, evaluating data in terms of accuracy, precision, repeatability and reproducibility and identifying potential sources of random and systematic error" }
+          - { id: "UKNC-SC-KS4-WS-AE-02", level: "KS4", text: "communicating the scientific rationale for investigations, including the methods used, the findings and reasoned conclusions, using paper-based and electronic reports and presentations." }
+      - id: "UKNC-SC-KS4-WS-VUSN"
+        text: "Working scientifically – 4. Vocabulary, units, symbols and nomenclature"
+        indicators:
+          - { id: "UKNC-SC-KS4-WS-VUSN-01", level: "KS4", text: "developing their use of scientific vocabulary and nomenclature" }
+          - { id: "UKNC-SC-KS4-WS-VUSN-02", level: "KS4", text: "recognising the importance of scientific quantities and understanding how they are determined" }
+          - { id: "UKNC-SC-KS4-WS-VUSN-03", level: "KS4", text: "using SI units and IUPAC chemical nomenclature unless inappropriate" }
+          - { id: "UKNC-SC-KS4-WS-VUSN-04", level: "KS4", text: "using prefixes and powers of ten for orders of magnitude (e.g. tera, giga, mega, kilo, centi, milli, micro and nano)" }
+          - { id: "UKNC-SC-KS4-WS-VUSN-05", level: "KS4", text: "interconverting units" }
+          - { id: "UKNC-SC-KS4-WS-VUSN-06", level: "KS4", text: "using an appropriate number of significant figures in calculations." }
+      - id: "UKNC-SC-KS4-B-CB"
+        text: "Biology: Cell biology"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-CB-01", level: "KS4", text: "cells as the basic structural unit of all organisms; adaptations of cells related to their functions; the main sub-cellular structures of eukaryotic and prokaryotic cells" }
+          - { id: "UKNC-SC-KS4-B-CB-02", level: "KS4", text: "stem cells in animals and meristems in plants" }
+          - { id: "UKNC-SC-KS4-B-CB-03", level: "KS4", text: "enzymes" }
+          - { id: "UKNC-SC-KS4-B-CB-04", level: "KS4", text: "factors affecting the rate of enzymatic reactions" }
+          - { id: "UKNC-SC-KS4-B-CB-05", level: "KS4", text: "the importance of cellular respiration; the processes of aerobic and anaerobic respiration" }
+          - { id: "UKNC-SC-KS4-B-CB-06", level: "KS4", text: "carbohydrates, proteins, nucleic acids and lipids as key biological molecules." }
+      - id: "UKNC-SC-KS4-B-TS"
+        text: "Biology: Transport systems"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-TS-01", level: "KS4", text: "the need for transport systems in multicellular organisms, including plants" }
+          - { id: "UKNC-SC-KS4-B-TS-02", level: "KS4", text: "the relationship between the structure and functions of the human circulatory system." }
+      - id: "UKNC-SC-KS4-B-HDDM"
+        text: "Biology: Health, disease and the development of medicines"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-HDDM-01", level: "KS4", text: "the relationship between health and disease" }
+          - { id: "UKNC-SC-KS4-B-HDDM-02", level: "KS4", text: "communicable diseases including sexually transmitted infections in humans (including HIV/AIDs)" }
+          - { id: "UKNC-SC-KS4-B-HDDM-03", level: "KS4", text: "non-communicable diseases" }
+          - { id: "UKNC-SC-KS4-B-HDDM-04", level: "KS4", text: "bacteria, viruses and fungi as pathogens in animals and plants" }
+          - { id: "UKNC-SC-KS4-B-HDDM-05", level: "KS4", text: "body defences against pathogens and the role of the immune system against disease" }
+          - { id: "UKNC-SC-KS4-B-HDDM-06", level: "KS4", text: "reducing and preventing the spread of infectious diseases in animals and plants" }
+          - { id: "UKNC-SC-KS4-B-HDDM-07", level: "KS4", text: "the process of discovery and development of new medicines" }
+          - { id: "UKNC-SC-KS4-B-HDDM-08", level: "KS4", text: "the impact of lifestyle factors on the incidence of non-communicable diseases." }
+      - id: "UKNC-SC-KS4-B-CC"
+        text: "Biology: Coordination and control"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-CC-01", level: "KS4", text: "principles of nervous coordination and control in humans" }
+          - { id: "UKNC-SC-KS4-B-CC-02", level: "KS4", text: "the relationship between the structure and function of the human nervous system" }
+          - { id: "UKNC-SC-KS4-B-CC-03", level: "KS4", text: "the relationship between structure and function in a reflex arc" }
+          - { id: "UKNC-SC-KS4-B-CC-04", level: "KS4", text: "principles of hormonal coordination and control in humans" }
+          - { id: "UKNC-SC-KS4-B-CC-05", level: "KS4", text: "hormones in human reproduction, hormonal and non-hormonal methods of contraception" }
+          - { id: "UKNC-SC-KS4-B-CC-06", level: "KS4", text: "homeostasis." }
+      - id: "UKNC-SC-KS4-B-PHO"
+        text: "Biology: Photosynthesis"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-PHO-01", level: "KS4", text: "photosynthesis as the key process for food production and therefore biomass for life" }
+          - { id: "UKNC-SC-KS4-B-PHO-02", level: "KS4", text: "the process of photosynthesis" }
+          - { id: "UKNC-SC-KS4-B-PHO-03", level: "KS4", text: "factors affecting the rate of photosynthesis." }
+      - id: "UKNC-SC-KS4-B-ECO"
+        text: "Biology: Ecosystems"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-ECO-01", level: "KS4", text: "levels of organisation within an ecosystem" }
+          - { id: "UKNC-SC-KS4-B-ECO-02", level: "KS4", text: "some abiotic and biotic factors which affect communities; the importance of interactions between organisms in a community" }
+          - { id: "UKNC-SC-KS4-B-ECO-03", level: "KS4", text: "how materials cycle through abiotic and biotic components of ecosystems" }
+          - { id: "UKNC-SC-KS4-B-ECO-04", level: "KS4", text: "the role of microorganisms (decomposers) in the cycling of materials through an ecosystem" }
+          - { id: "UKNC-SC-KS4-B-ECO-05", level: "KS4", text: "organisms are interdependent and are adapted to their environment" }
+          - { id: "UKNC-SC-KS4-B-ECO-06", level: "KS4", text: "the importance of biodiversity" }
+          - { id: "UKNC-SC-KS4-B-ECO-07", level: "KS4", text: "methods of identifying species and measuring distribution, frequency and abundance of species within a habitat" }
+          - { id: "UKNC-SC-KS4-B-ECO-08", level: "KS4", text: "positive and negative human interactions with ecosystems." }
+      - id: "UKNC-SC-KS4-B-EIV"
+        text: "Biology: Evolution, inheritance and variation"
+        indicators:
+          - { id: "UKNC-SC-KS4-B-EIV-01", level: "KS4", text: "the genome as the entire genetic material of an organism" }
+          - { id: "UKNC-SC-KS4-B-EIV-02", level: "KS4", text: "how the genome, and its interaction with the environment, influence the development of the phenotype of an organism" }
+          - { id: "UKNC-SC-KS4-B-EIV-03", level: "KS4", text: "the potential impact of genomics on medicine" }
+          - { id: "UKNC-SC-KS4-B-EIV-04", level: "KS4", text: "most phenotypic features being the result of multiple, rather than single, genes" }
+          - { id: "UKNC-SC-KS4-B-EIV-05", level: "KS4", text: "single gene inheritance and single gene crosses with dominant and recessive phenotypes" }
+          - { id: "UKNC-SC-KS4-B-EIV-06", level: "KS4", text: "sex determination in humans" }
+          - { id: "UKNC-SC-KS4-B-EIV-07", level: "KS4", text: "genetic variation in populations of a species" }
+          - { id: "UKNC-SC-KS4-B-EIV-08", level: "KS4", text: "the process of natural selection leading to evolution" }
+          - { id: "UKNC-SC-KS4-B-EIV-09", level: "KS4", text: "the evidence for evolution" }
+          - { id: "UKNC-SC-KS4-B-EIV-10", level: "KS4", text: "developments in biology affecting classification" }
+          - { id: "UKNC-SC-KS4-B-EIV-11", level: "KS4", text: "the importance of selective breeding of plants and animals in agriculture" }
+          - { id: "UKNC-SC-KS4-B-EIV-12", level: "KS4", text: "the uses of modern biotechnology including gene technology; some of the practical and ethical considerations of modern biotechnology." }
+      - id: "UKNC-SC-KS4-C-ASPT"
+        text: "Chemistry: Atomic structure and the Periodic Table"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-ASPT-01", level: "KS4", text: "a simple model of the atom consisting of the nucleus and electrons, relative atomic mass, electronic charge and isotopes" }
+          - { id: "UKNC-SC-KS4-C-ASPT-02", level: "KS4", text: "the number of particles in a given mass of a substance" }
+          - { id: "UKNC-SC-KS4-C-ASPT-03", level: "KS4", text: "the modern Periodic Table, showing elements arranged in order of atomic number" }
+          - { id: "UKNC-SC-KS4-C-ASPT-04", level: "KS4", text: "position of elements in the Periodic Table in relation to their atomic structure and arrangement of outer electrons" }
+          - { id: "UKNC-SC-KS4-C-ASPT-05", level: "KS4", text: "properties and trends in properties of elements in the same group" }
+          - { id: "UKNC-SC-KS4-C-ASPT-06", level: "KS4", text: "characteristic properties of metals and non-metals" }
+          - { id: "UKNC-SC-KS4-C-ASPT-07", level: "KS4", text: "chemical reactivity of elements in relation to their position in the Periodic Table." }
+      - id: "UKNC-SC-KS4-C-SBPM"
+        text: "Chemistry: Structure, bonding and the properties of matter"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-SBPM-01", level: "KS4", text: "changes of state of matter in terms of particle kinetics, energy transfers and the relative strength of chemical bonds and intermolecular forces" }
+          - { id: "UKNC-SC-KS4-C-SBPM-02", level: "KS4", text: "types of chemical bonding: ionic, covalent, and metallic" }
+          - { id: "UKNC-SC-KS4-C-SBPM-03", level: "KS4", text: "bulk properties of materials related to bonding and intermolecular forces" }
+          - { id: "UKNC-SC-KS4-C-SBPM-04", level: "KS4", text: "bonding of carbon leading to the vast array of natural and synthetic organic compounds that occur due to the ability of carbon to form families of similar compounds, chains and rings" }
+          - { id: "UKNC-SC-KS4-C-SBPM-05", level: "KS4", text: "structures, bonding and properties of diamond, graphite, fullerenes and graphene." }
+      - id: "UKNC-SC-KS4-C-CC"
+        text: "Chemistry: Chemical changes"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-CC-01", level: "KS4", text: "determination of empirical formulae from the ratio of atoms of different kinds" }
+          - { id: "UKNC-SC-KS4-C-CC-02", level: "KS4", text: "balanced chemical equations, ionic equations and state symbols" }
+          - { id: "UKNC-SC-KS4-C-CC-03", level: "KS4", text: "identification of common gases" }
+          - { id: "UKNC-SC-KS4-C-CC-04", level: "KS4", text: "the chemistry of acids; reactions with some metals and carbonates" }
+          - { id: "UKNC-SC-KS4-C-CC-05", level: "KS4", text: "pH as a measure of hydrogen ion concentration and its numerical scale" }
+          - { id: "UKNC-SC-KS4-C-CC-06", level: "KS4", text: "electrolysis of molten ionic liquids and aqueous ionic solutions" }
+          - { id: "UKNC-SC-KS4-C-CC-07", level: "KS4", text: "reduction and oxidation in terms of loss or gain of oxygen." }
+      - id: "UKNC-SC-KS4-C-ECC"
+        text: "Chemistry: Energy changes in chemistry"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-ECC-01", level: "KS4", text: "Measurement of energy changes in chemical reactions (qualitative)" }
+          - { id: "UKNC-SC-KS4-C-ECC-02", level: "KS4", text: "Bond breaking, bond making, activation energy and reaction profiles (qualitative)." }
+      - id: "UKNC-SC-KS4-C-RECC"
+        text: "Chemistry: Rate and extent of chemical change"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-RECC-01", level: "KS4", text: "factors that influence the rate of reaction: varying temperature or concentration, changing the surface area of a solid reactant or by adding a catalyst" }
+          - { id: "UKNC-SC-KS4-C-RECC-02", level: "KS4", text: "factors affecting reversible reactions." }
+      - id: "UKNC-SC-KS4-C-CA"
+        text: "Chemistry: Chemical analysis"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-CA-01", level: "KS4", text: "distinguishing between pure and impure substances" }
+          - { id: "UKNC-SC-KS4-C-CA-02", level: "KS4", text: "separation techniques for mixtures of substances: filtration, crystallisation, chromatography, simple and fractional distillation" }
+          - { id: "UKNC-SC-KS4-C-CA-03", level: "KS4", text: "quantitative interpretation of balanced equations" }
+          - { id: "UKNC-SC-KS4-C-CA-04", level: "KS4", text: "concentrations of solutions in relation to mass of solute and volume of solvent." }
+      - id: "UKNC-SC-KS4-C-CAI"
+        text: "Chemistry: Chemical and allied industries"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-CAI-01", level: "KS4", text: "life cycle assessment and recycling to assess environmental impacts associated with all the stages of a product's life" }
+          - { id: "UKNC-SC-KS4-C-CAI-02", level: "KS4", text: "the viability of recycling of certain materials" }
+          - { id: "UKNC-SC-KS4-C-CAI-03", level: "KS4", text: "carbon compounds, both as fuels and feedstock, and the competing demands for limited resources" }
+          - { id: "UKNC-SC-KS4-C-CAI-04", level: "KS4", text: "fractional distillation of crude oil and cracking to make more useful materials" }
+          - { id: "UKNC-SC-KS4-C-CAI-05", level: "KS4", text: "extraction and purification of metals related to the position of carbon in a reactivity series." }
+      - id: "UKNC-SC-KS4-C-EAS"
+        text: "Chemistry: Earth and atmospheric science"
+        indicators:
+          - { id: "UKNC-SC-KS4-C-EAS-01", level: "KS4", text: "evidence for composition and evolution of the Earth’s atmosphere since its formation" }
+          - { id: "UKNC-SC-KS4-C-EAS-02", level: "KS4", text: "evidence, and uncertainties in evidence, for additional anthropogenic causes of climate change" }
+          - { id: "UKNC-SC-KS4-C-EAS-03", level: "KS4", text: "potential effects of, and mitigation of, increased levels of carbon dioxide and methane on the Earth’s climate" }
+          - { id: "UKNC-SC-KS4-C-EAS-04", level: "KS4", text: "common atmospheric pollutants: sulphur dioxide, oxides of nitrogen, particulates and their sources" }
+          - { id: "UKNC-SC-KS4-C-EAS-05", level: "KS4", text: "the Earth’s water resources and obtaining potable water." }
+      - id: "UKNC-SC-KS4-P-ENE"
+        text: "Physics: Energy"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-ENE-01", level: "KS4", text: "energy changes in a system involving heating, doing work using forces, or doing work using an electric current: calculating the stored energies and energy changes involved" }
+          - { id: "UKNC-SC-KS4-P-ENE-02", level: "KS4", text: "power as the rate of transfer of energy" }
+          - { id: "UKNC-SC-KS4-P-ENE-03", level: "KS4", text: "conservation of energy in a closed system, dissipation" }
+          - { id: "UKNC-SC-KS4-P-ENE-04", level: "KS4", text: "calculating energy efficiency for any energy transfers" }
+          - { id: "UKNC-SC-KS4-P-ENE-05", level: "KS4", text: "renewable and non-renewable energy sources used on Earth, changes in how these are used." }
+      - id: "UKNC-SC-KS4-P-FOR"
+        text: "Physics: Forces"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-FOR-01", level: "KS4", text: "forces and fields: electrostatic, magnetic, gravity" }
+          - { id: "UKNC-SC-KS4-P-FOR-02", level: "KS4", text: "forces as vectors" }
+          - { id: "UKNC-SC-KS4-P-FOR-03", level: "KS4", text: "calculating work done as force x distance; elastic and inelastic stretching" }
+          - { id: "UKNC-SC-KS4-P-FOR-04", level: "KS4", text: "pressure in fluids acts in all directions: variation in Earth’s atmosphere with height, with depth for liquids, up-thrust force (qualitative)." }
+      - id: "UKNC-SC-KS4-P-FM"
+        text: "Physics: Forces and motion"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-FM-01", level: "KS4", text: "speed of sound, estimating speeds and accelerations in everyday contexts" }
+          - { id: "UKNC-SC-KS4-P-FM-02", level: "KS4", text: "interpreting quantitatively graphs of distance, time, and speed" }
+          - { id: "UKNC-SC-KS4-P-FM-03", level: "KS4", text: "acceleration caused by forces; Newton’s First Law" }
+          - { id: "UKNC-SC-KS4-P-FM-04", level: "KS4", text: "weight and gravitational field strength" }
+          - { id: "UKNC-SC-KS4-P-FM-05", level: "KS4", text: "decelerations and braking distances involved on roads, safety." }
+      - id: "UKNC-SC-KS4-P-WM"
+        text: "Physics: Wave motion"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-WM-01", level: "KS4", text: "amplitude, wavelength, frequency, relating velocity to frequency and wavelength" }
+          - { id: "UKNC-SC-KS4-P-WM-02", level: "KS4", text: "transverse and longitudinal waves" }
+          - { id: "UKNC-SC-KS4-P-WM-03", level: "KS4", text: "electromagnetic waves, velocity in vacuum; waves transferring energy; wavelengths and frequencies from radio to gamma-rays" }
+          - { id: "UKNC-SC-KS4-P-WM-04", level: "KS4", text: "velocities differing between media: absorption, reflection, refraction effects" }
+          - { id: "UKNC-SC-KS4-P-WM-05", level: "KS4", text: "production and detection, by electrical circuits, or by changes in atoms and nuclei" }
+          - { id: "UKNC-SC-KS4-P-WM-06", level: "KS4", text: "uses in the radio, microwave, infra-red, visible, ultra-violet, X-ray and gamma-ray regions, hazardous effects on bodily tissues." }
+      - id: "UKNC-SC-KS4-P-ELE"
+        text: "Physics: Electricity"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-ELE-01", level: "KS4", text: "measuring resistance using p.d. and current measurements" }
+          - { id: "UKNC-SC-KS4-P-ELE-02", level: "KS4", text: "exploring current, resistance and voltage relationships for different circuit elements; including their graphical representations" }
+          - { id: "UKNC-SC-KS4-P-ELE-03", level: "KS4", text: "quantity of charge flowing as the product of current and time" }
+          - { id: "UKNC-SC-KS4-P-ELE-04", level: "KS4", text: "drawing circuit diagrams; exploring equivalent resistance for resistors in series" }
+          - { id: "UKNC-SC-KS4-P-ELE-05", level: "KS4", text: "the domestic a.c. supply; live, neutral and earth mains wires, safety measures" }
+          - { id: "UKNC-SC-KS4-P-ELE-06", level: "KS4", text: "power transfer related to p.d. and current, or current and resistance." }
+      - id: "UKNC-SC-KS4-P-ME"
+        text: "Physics: Magnetism and electromagnetism"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-ME-01", level: "KS4", text: "exploring the magnetic fields of permanent and induced magnets, and the Earth’s magnetic field, using a compass" }
+          - { id: "UKNC-SC-KS4-P-ME-02", level: "KS4", text: "magnetic effects of currents, how solenoids enhance the effect" }
+          - { id: "UKNC-SC-KS4-P-ME-03", level: "KS4", text: "how transformers are used in the national grid and the reasons for their use." }
+      - id: "UKNC-SC-KS4-P-SM"
+        text: "Physics: The structure of matter"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-SM-01", level: "KS4", text: "relating models of arrangements and motions of the molecules in solid, liquid and gas phases to their densities" }
+          - { id: "UKNC-SC-KS4-P-SM-02", level: "KS4", text: "melting, evaporation, and sublimation as reversible changes" }
+          - { id: "UKNC-SC-KS4-P-SM-03", level: "KS4", text: "calculating energy changes involved on heating, using specific heat capacity; and those involved in changes of state, using specific latent heat" }
+          - { id: "UKNC-SC-KS4-P-SM-04", level: "KS4", text: "links between pressure and temperature of a gas at constant volume, related to the motion of its particles (qualitative)." }
+      - id: "UKNC-SC-KS4-P-AS"
+        text: "Physics: Atomic structure"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-AS-01", level: "KS4", text: "the nuclear model and its development in the light of changing evidence" }
+          - { id: "UKNC-SC-KS4-P-AS-02", level: "KS4", text: "masses and sizes of nuclei, atoms and small molecules" }
+          - { id: "UKNC-SC-KS4-P-AS-03", level: "KS4", text: "differences in numbers of protons, and neutrons related to masses and identities of nuclei, isotope characteristics and equations to represent changes" }
+          - { id: "UKNC-SC-KS4-P-AS-04", level: "KS4", text: "ionisation; absorption or emission of radiation related to changes in electron orbits" }
+          - { id: "UKNC-SC-KS4-P-AS-05", level: "KS4", text: "radioactive nuclei: emission of alpha or beta particles, neutrons, or gamma-rays, related to changes in the nuclear mass and/or charge" }
+          - { id: "UKNC-SC-KS4-P-AS-06", level: "KS4", text: "radioactive materials, half-life, irradiation, contamination and their associated hazardous effects, waste disposal" }
+          - { id: "UKNC-SC-KS4-P-AS-07", level: "KS4", text: "nuclear fission, nuclear fusion and our Sun’s energy" }
+      - id: "UKNC-SC-KS4-P-SP"
+        text: "Physics: Space physics"
+        indicators:
+          - { id: "UKNC-SC-KS4-P-SP-01", level: "KS4", text: "the main features of the solar system." }

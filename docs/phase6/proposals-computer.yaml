@@ -1,0 +1,151 @@
+# ข้อเสนอหัวข้อวิชาคอมพิวเตอร์ (subject: computer) เพื่อครอบคลุม
+#   th-core-2560-science  ว 4.2 วิทยาการคำนวณ (ตัวชี้วัดแกนกลาง ป.1–ม.6)
+#   csta-k12-cs           CSTA K–12 Computer Science Standards (Revised 2017) ระดับ 1A–3A (มาตรฐานสำหรับผู้เรียนทุกคน)
+#   acm-cs2023            ACM/IEEE-CS/AAAI CS2023 เฉพาะ knowledge unit แกนที่ผู้เรียนเจอก่อน
+#                         (SDF, พื้นฐานของ AL, ระบบ AR/SF/OS, เครือข่าย NC, ความปลอดภัย SEC, ข้อมูล DM และ SEP)
+#
+# ที่มา
+# - 13 หัวข้อย้ายมาจาก docs/phase6/proposals-science-core.yaml (เดิมรหัส technology.computing.*) โดยคงตัวชี้วัด ว 4.2 เดิมไว้
+#   technology.computing.algorithms-intro ถูกตัดออก เพราะหัวข้อ computer.algorithms.intro ที่เขียนแล้วสอนครบ
+#   (ตัวชี้วัด ว 4.2 ป.1/1, ป.1/2, ป.2/1, ป.3/1 ย้ายไปอยู่ใน curriculum/mappings/th-core-2560-science.yaml)
+#   รหัสเดิม → รหัสใหม่:
+#     technology.computing.digital-data-basics    → computer.data.digital-data-basics
+#     technology.computing.safe-ict-primary       → computer.safety.safe-ict-primary
+#     technology.computing.programming-intro      → computer.programming.block-programming
+#     technology.computing.internet-search        → computer.data.internet-search
+#     technology.computing.logical-reasoning      → computer.algorithms.logical-reasoning
+#     technology.computing.programming-logic      → computer.programming.design-debug (ปรับขอบเขต เพราะตัวแปร เงื่อนไข และวงวน
+#                                                    สอนแล้วใน computer.programming.basics เหลือการออกแบบ เขียน ทดสอบ และแก้โปรแกรมเอง)
+#     technology.computing.computational-thinking → computer.algorithms.computational-thinking
+#     technology.computing.programming-functions  → computer.programming.functions
+#     technology.computing.data-processing        → computer.data.data-processing
+#     technology.computing.computer-systems       → computer.systems.computer-systems (การแทนข้อมูลด้วยเลขฐานสองย้ายไปอยู่ใน computer.data.binary)
+#     technology.computing.responsible-ict        → computer.society.responsible-ict
+#     technology.computing.app-development        → computer.projects.app-development
+#     technology.computing.digital-innovation     → computer.projects.digital-innovation
+# - 17 หัวข้อใหม่จาก CSTA ระดับ 1A–3A และ CS2023 ที่ ว 4.2 ไม่ได้แยกสอน (ฮาร์ดแวร์ ตรรกะดิจิทัล เครือข่าย ความปลอดภัย
+#   การเข้ารหัส ข้อมูลส่วนบุคคล โครงสร้างข้อมูล อัลกอริทึมค้นหาและเรียงลำดับ ฐานข้อมูล การออกแบบที่ทุกคนเข้าถึงได้ และการทำงานเป็นทีม)
+# - หัวข้อที่เขียนแล้วในคลัง: computer.data.binary, computer.algorithms.intro, computer.programming.basics
+#   มาตรฐานที่หัวข้อเหล่านี้สอนเพียงบางส่วนถูกแนบกับหัวข้อที่เสนอซึ่งจะสอนส่วนที่ขาด
+# - เรียงตาม prerequisite: prereq ทุกตัวเป็นหัวข้อที่มีในคลังแล้วหรือหัวข้อที่อยู่ก่อนหน้าในไฟล์นี้
+# - difficulty เทียบกับ computer.algorithms.intro 1.5, computer.data.binary 2.5, computer.programming.basics 3
+#   และไม่ต่ำกว่า prereq ทุกตัว scope เป็นคำของเรา ไม่ใช่ข้อความจากหลักสูตร
+# - ยังไม่ได้รวมกับ engineering.computing.programming-basics ใน proposals-advanced.yaml ซึ่งซ้อนกับ computer.programming.basics
+#   และ computer.programming.functions ควรตัดสินว่าจะรวมหรือให้เป็นหัวข้อต่อยอดสำหรับวิศวกรรมเมื่อเริ่มเขียน
+topics:
+  # ---------- ระดับต้น ----------
+  - { id: computer.data.digital-data-basics, title: "การสร้าง จัดเก็บ และนำเสนอข้อมูลด้วยเทคโนโลยี", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/4", "th-core-2560-science:ว 4.2 ป.2/3", "th-core-2560-science:ว 4.2 ป.3/4", "th-core-2560-science:ว 4.2 ป.4/4", "th-core-2560-science:ว 4.2 ป.5/4",
+                   "csta-k12-cs:1A-CS-01", "csta-k12-cs:1A-DA-05", "csta-k12-cs:1A-DA-06", "csta-k12-cs:1A-DA-07"],
+      scope: "การเลือกใช้ซอฟต์แวร์ให้เหมาะกับงาน การสร้าง ตั้งชื่อ คัดลอก ค้นหา แก้ไข และลบไฟล์ การจัดหมวดหมู่ในโฟลเดอร์ การรวบรวมข้อมูลแล้วนำเสนอเป็นแผนภูมิหลายแบบ และการอ่านแบบรูปจากแผนภูมิเพื่อคาดการณ์" }
+  - { id: computer.safety.safe-ict-primary, title: "การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย (ประถม)", difficulty: 1.5, prereq: [],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/5", "th-core-2560-science:ว 4.2 ป.2/4", "th-core-2560-science:ว 4.2 ป.3/5", "th-core-2560-science:ว 4.2 ป.4/5", "th-core-2560-science:ว 4.2 ป.5/5", "th-core-2560-science:ว 4.2 ป.6/4",
+                   "csta-k12-cs:1A-NI-04", "csta-k12-cs:1A-IC-17", "csta-k12-cs:1A-IC-18", "csta-k12-cs:1B-NI-05"],
+      scope: "ข้อตกลงในการใช้คอมพิวเตอร์ร่วมกัน การดูแลอุปกรณ์ รหัสผ่านที่ปลอดภัยและการเก็บเป็นความลับ การออกจากระบบ ข้อมูลส่วนตัว มารยาทออนไลน์ สิทธิและหน้าที่ การเคารพสิทธิผู้อื่น และการแจ้งผู้เกี่ยวข้องเมื่อพบข้อมูลหรือบุคคลที่ไม่เหมาะสม" }
+  - { id: computer.programming.block-programming, title: "เขียนโปรแกรมแบบบล็อกและหาข้อผิดพลาด", difficulty: 1.5, prereq: [computer.algorithms.intro],
+      indicators: ["th-core-2560-science:ว 4.2 ป.1/3", "th-core-2560-science:ว 4.2 ป.2/2", "th-core-2560-science:ว 4.2 ป.3/2",
+                   "csta-k12-cs:1A-AP-09", "csta-k12-cs:1A-AP-10", "csta-k12-cs:1A-AP-12", "csta-k12-cs:1A-AP-13", "csta-k12-cs:1A-AP-15"],
+      scope: "การสั่งงานตัวละครหรือหุ่นยนต์ด้วยบัตรคำสั่งหรือโปรแกรมแบบบล็อก ลำดับคำสั่งและวงวนอย่างง่าย การใช้ตัวเลขหรือสัญลักษณ์แทนข้อมูล การวางแผนว่าโปรแกรมจะทำอะไร การบอกที่มาเมื่อใช้ผลงานของผู้อื่น การทดลองรัน ไล่หาจุดที่ผิด และเล่าขั้นตอนที่ทำด้วยคำศัพท์ที่ถูกต้อง" }
+  - { id: computer.data.internet-search, title: "การค้นหาข้อมูลและประเมินความน่าเชื่อถือ", difficulty: 2, prereq: [computer.data.digital-data-basics],
+      indicators: ["th-core-2560-science:ว 4.2 ป.3/3", "th-core-2560-science:ว 4.2 ป.4/3", "th-core-2560-science:ว 4.2 ป.5/3", "th-core-2560-science:ว 4.2 ป.6/3", "th-core-2560-science:ว 4.2 ม.3/3"],
+      scope: "การใช้คำค้นและตัวดำเนินการค้นหา การติดต่อสื่อสารและทำงานร่วมกันออนไลน์ การตรวจแหล่งที่มา วันที่ และผู้เขียน ข่าวปลอม เหตุผลวิบัติ และผลกระทบจากข่าวสารที่ผิด" }
+  - { id: computer.algorithms.logical-reasoning, title: "เหตุผลเชิงตรรกะในการแก้ปัญหา", difficulty: 2, prereq: [computer.algorithms.intro],
+      indicators: ["th-core-2560-science:ว 4.2 ป.4/1", "th-core-2560-science:ว 4.2 ป.5/1", "th-core-2560-science:ว 4.2 ป.6/1",
+                   "csta-k12-cs:1B-AP-08"],
+      scope: "การใช้เงื่อนไข \"ถ้า...แล้ว\" อธิบายการทำงานและคาดการณ์ผลลัพธ์ การออกแบบวิธีแก้ปัญหาในชีวิตประจำวันอย่างมีเหตุผล และการเปรียบเทียบอัลกอริทึมหลายแบบสำหรับงานเดียวกันเพื่อเลือกแบบที่เหมาะที่สุด" }
+  - { id: computer.society.computing-impacts, title: "คอมพิวเตอร์เปลี่ยนชีวิตและสังคมอย่างไร", difficulty: 2.5, prereq: [computer.data.internet-search],
+      indicators: ["csta-k12-cs:1A-IC-16", "csta-k12-cs:1B-IC-18", "csta-k12-cs:2-IC-20", "csta-k12-cs:3A-IC-24",
+                   "acm-cs2023:SEP-Context", "acm-cs2023:SEP-History"],
+      scope: "การใช้ชีวิตและการทำงานก่อนและหลังมีเทคโนโลยีคอมพิวเตอร์ เทคโนโลยีที่เปลี่ยนโลกและความสัมพันธ์กับวัฒนธรรม ข้อดีข้อเสียของเทคโนโลยีต่อชีวิตประจำวันและอาชีพ และประวัติศาสตร์คอมพิวเตอร์โดยย่อ" }
+  # ---------- ระบบคอมพิวเตอร์ ----------
+  - { id: computer.systems.computer-systems, title: "ระบบคอมพิวเตอร์และเทคโนโลยีการสื่อสาร", difficulty: 3, prereq: [computer.data.binary, computer.data.digital-data-basics],
+      indicators: ["th-core-2560-science:ว 4.2 ม.2/3",
+                   "csta-k12-cs:1A-CS-02", "csta-k12-cs:1B-CS-01", "csta-k12-cs:1B-CS-02",
+                   "acm-cs2023:SF-Overview", "acm-cs2023:AR-Assembly", "acm-cs2023:AR-Memory", "acm-cs2023:AR-IO"],
+      scope: "ฮาร์ดแวร์ ซอฟต์แวร์ และผู้ใช้ หน่วยรับเข้า หน่วยประมวลผลกลาง หน่วยความจำหลักและหน่วยเก็บถาวร หน่วยส่งออก วงรอบดึง ถอดรหัส และทำคำสั่ง ลำดับชั้นหน่วยความจำ และภาพรวมของการสื่อสารข้อมูลระหว่างอุปกรณ์" }
+  - { id: computer.systems.troubleshooting, title: "การแก้ปัญหาฮาร์ดแวร์และซอฟต์แวร์อย่างเป็นระบบ", difficulty: 3, prereq: [computer.systems.computer-systems],
+      indicators: ["csta-k12-cs:1A-CS-03", "csta-k12-cs:1B-CS-03", "csta-k12-cs:2-CS-03", "csta-k12-cs:3A-CS-03"],
+      scope: "การบรรยายอาการเสียด้วยคำศัพท์ที่ถูกต้อง กลยุทธ์แก้ปัญหาทั่วไป (ตรวจสายและไฟ รีสตาร์ต แยกทีละส่วน เปลี่ยนทีละอย่าง) การไล่หาสาเหตุอย่างเป็นระบบ และการเขียนคู่มือแก้ปัญหาให้ผู้อื่นใช้" }
+  - { id: computer.systems.logic-gates, title: "ตรรกะบูลีนและเกตตรรกะ", difficulty: 3.5, prereq: [computer.data.binary],
+      indicators: ["csta-k12-cs:3B-CS-02", "acm-cs2023:SF-Foundations", "acm-cs2023:AR-Logic"],
+      scope: "สัญญาณดิจิทัลกับแอนะล็อก ค่าความจริง เกต AND OR NOT และ XOR ตารางค่าความจริง การต่อเกตเป็นวงจรอย่างง่าย เช่น วงจรบวกบิต และแนวคิดสถานะและเครื่องสถานะจำกัดเบื้องต้น" }
+  - { id: computer.data.number-representation, title: "จำนวนลบ เลขฐานสิบหก และทศนิยมในคอมพิวเตอร์", difficulty: 4, prereq: [computer.data.binary, math.number.integers],
+      indicators: ["acm-cs2023:AR-Representation"],
+      scope: "เลขฐานสิบหก จำนวนลบแบบเครื่องหมายและขนาดและแบบส่วนเติมเต็มสอง การล้นของจำนวนที่มีบิตจำกัด จุดตรึงและจุดลอยตัว และสาเหตุที่ 0.1 + 0.2 ไม่เท่ากับ 0.3 พอดีในคอมพิวเตอร์" }
+  - { id: computer.systems.operating-systems, title: "ระบบปฏิบัติการและชั้นของซอฟต์แวร์", difficulty: 4.5, prereq: [computer.systems.computer-systems],
+      indicators: ["csta-k12-cs:3A-CS-02", "csta-k12-cs:3B-CS-01", "acm-cs2023:OS-Purpose", "acm-cs2023:OS-Principles", "acm-cs2023:SF-Resource"],
+      scope: "ชั้นของฮาร์ดแวร์ ซอฟต์แวร์ระบบ และซอฟต์แวร์ประยุกต์ หน้าที่ของระบบปฏิบัติการ (จัดการกระบวนการ หน่วยความจำ อุปกรณ์ ไฟล์ และผู้ใช้) การเรียกใช้บริการของระบบ และการจัดสรรทรัพยากรแบบง่าย เช่น มาก่อนได้ก่อน" }
+  # ---------- เครือข่ายและความปลอดภัย ----------
+  - { id: computer.networks.internet-basics, title: "เครือข่ายคอมพิวเตอร์และอินเทอร์เน็ต", difficulty: 3.5, prereq: [computer.systems.computer-systems],
+      indicators: ["csta-k12-cs:1B-NI-04", "csta-k12-cs:2-NI-04", "csta-k12-cs:3A-NI-04", "acm-cs2023:NC-Fundamentals", "acm-cs2023:NC-Applications"],
+      scope: "การแบ่งข้อมูลเป็นแพ็กเก็ตและประกอบกลับที่ปลายทาง โพรโทคอลและชั้นของเครือข่าย ที่อยู่ IP และ DNS เราเตอร์ สวิตช์ และเซิร์ฟเวอร์ ลักษณะการเชื่อมต่อ (topology) แบบลูกข่าย-แม่ข่าย HTTP และความทนทานเมื่อบางเส้นทางเสีย" }
+  - { id: computer.society.responsible-ict, title: "การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย มีจริยธรรม และถูกกฎหมาย", difficulty: 3, prereq: [computer.safety.safe-ict-primary],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/4", "th-core-2560-science:ว 4.2 ม.2/4", "th-core-2560-science:ว 4.2 ม.3/4", "th-core-2560-science:ว 4.2 ม.6/1",
+                   "csta-k12-cs:1B-AP-14", "csta-k12-cs:1B-IC-21", "csta-k12-cs:2-AP-16", "csta-k12-cs:3A-AP-20", "csta-k12-cs:3A-IC-28",
+                   "acm-cs2023:SEP-IP", "acm-cs2023:SDF-SEP", "acm-cs2023:SEP-Security", "acm-cs2023:SEP-Professional-Ethics"],
+      scope: "การใช้สื่อและแหล่งข้อมูลตามข้อตกลง ลิขสิทธิ์ สาธารณสมบัติ สัญญาอนุญาตครีเอทีฟคอมมอนส์และสัญญาอนุญาตซอฟต์แวร์ การอ้างอิงเมื่อนำโค้ดหรือสื่อของผู้อื่นมาใช้ ผลดีผลเสียของกฎหมายทรัพย์สินทางปัญญา พ.ร.บ.คอมพิวเตอร์และอาชญากรรมคอมพิวเตอร์ และผลของเทคโนโลยีสารสนเทศต่ออาชีพ สังคม และวัฒนธรรม" }
+  - { id: computer.security.cybersecurity-basics, title: "ความมั่นคงปลอดภัยไซเบอร์เบื้องต้น", difficulty: 4, prereq: [computer.networks.internet-basics, computer.society.responsible-ict],
+      indicators: ["csta-k12-cs:2-NI-05", "csta-k12-cs:3A-NI-05", "csta-k12-cs:3A-NI-06", "csta-k12-cs:3A-NI-07", "csta-k12-cs:3A-NI-08",
+                   "acm-cs2023:SEC-Foundations", "acm-cs2023:NC-Security"],
+      scope: "การรักษาความลับ ความถูกต้องครบถ้วน และความพร้อมใช้ การยืนยันตัวตนหลายปัจจัยและสิทธิ์การเข้าถึง มัลแวร์ ฟิชชิง และวิศวกรรมสังคม มาตรการป้องกันทางกายภาพและดิจิทัล และการชั่งน้ำหนักระหว่างความปลอดภัยกับความสะดวกในการใช้งาน" }
+  - { id: computer.security.encryption, title: "การเข้ารหัสลับ", difficulty: 4.5, prereq: [computer.security.cybersecurity-basics, computer.data.binary],
+      indicators: ["csta-k12-cs:2-NI-06", "acm-cs2023:SEC-Crypto"],
+      scope: "รหัสลับแบบเลื่อนตัวอักษรและแบบแทนที่ การถอดรหัสด้วยการลองทุกกุญแจและการนับความถี่ การเข้ารหัสแบบกุญแจสมมาตรและกุญแจสาธารณะในภาพรวม และการใช้งานจริง เช่น HTTPS" }
+  # ---------- อัลกอริทึมและการเขียนโปรแกรม ----------
+  - { id: computer.algorithms.computational-thinking, title: "แนวคิดเชิงนามธรรมและแนวคิดเชิงคำนวณ", difficulty: 3, prereq: [computer.algorithms.logical-reasoning],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/1", "th-core-2560-science:ว 4.2 ม.2/1",
+                   "csta-k12-cs:1B-AP-11", "csta-k12-cs:2-AP-10", "csta-k12-cs:2-AP-13", "csta-k12-cs:3A-IC-26"],
+      scope: "การแยกปัญหาเป็นส่วนย่อย การหารูปแบบ การคัดเฉพาะสาระสำคัญ (แนวคิดเชิงนามธรรม) การออกแบบอัลกอริทึมสำหรับปัญหาที่ซับซ้อนขึ้นด้วยรหัสลำลองหรือผังงาน และการนำอัลกอริทึมเดียวกันไปใช้กับปัญหาในวิชาอื่น" }
+  - { id: computer.programming.design-debug, title: "ออกแบบ ทดสอบ และแก้ข้อผิดพลาดของโปรแกรม", difficulty: 3.5, prereq: [computer.programming.basics, computer.programming.block-programming, computer.algorithms.logical-reasoning],
+      indicators: ["th-core-2560-science:ว 4.2 ป.4/2", "th-core-2560-science:ว 4.2 ป.5/2", "th-core-2560-science:ว 4.2 ป.6/2",
+                   "csta-k12-cs:1B-AP-09", "csta-k12-cs:1B-AP-10", "csta-k12-cs:1B-AP-15", "csta-k12-cs:1B-AP-17", "csta-k12-cs:2-AP-11", "csta-k12-cs:2-AP-12", "csta-k12-cs:2-AP-17", "csta-k12-cs:2-AP-19",
+                   "acm-cs2023:SDF-Practices", "acm-cs2023:SE-Validation"],
+      scope: "ออกแบบและเขียนโปรแกรมของตัวเองเพื่อแก้ปัญหาในชีวิตประจำวันด้วยตัวแปร เงื่อนไขแบบรวม วงวนซ้อน และเหตุการณ์ (เช่น คลิกหรือกดปุ่ม) การเลือกกรณีทดสอบ (ค่าปกติ ค่าขอบ ค่าผิดรูป) การไล่และแก้ข้อผิดพลาดอย่างเป็นระบบ และการเขียนคอมเมนต์อธิบายโปรแกรม" }
+  - { id: computer.data.data-processing, title: "การรวบรวม ประมวลผล และนำเสนอข้อมูล", difficulty: 3, prereq: [computer.data.digital-data-basics, math.stats.data-display],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/3", "th-core-2560-science:ว 4.2 ม.3/2",
+                   "csta-k12-cs:1B-DA-06", "csta-k12-cs:1B-DA-07", "csta-k12-cs:2-DA-08", "csta-k12-cs:2-DA-09", "csta-k12-cs:3A-DA-11", "csta-k12-cs:3A-DA-12",
+                   "acm-cs2023:DM-Data"],
+      scope: "วงจรชีวิตของข้อมูล การเก็บข้อมูลปฐมภูมิด้วยเครื่องมือดิจิทัล การทำความสะอาดและแปลงข้อมูล การจัดการข้อมูลด้วยตารางคำนวณ การนำเสนอด้วยแผนภาพแบบโต้ตอบเพื่อสนับสนุนข้อสรุป และการสร้างและปรับแบบจำลองเชิงคำนวณจากข้อมูล" }
+  - { id: computer.society.privacy, title: "ข้อมูลส่วนบุคคลและความเป็นส่วนตัว", difficulty: 3.5, prereq: [computer.society.responsible-ict, computer.data.data-processing],
+      indicators: ["csta-k12-cs:2-IC-23", "csta-k12-cs:3A-IC-29", "csta-k12-cs:3A-IC-30", "acm-cs2023:SEP-Privacy"],
+      scope: "ข้อมูลที่ระบุตัวบุคคล การเลือกเปิดเผยหรือเก็บข้อมูลเป็นความลับ การเก็บข้อมูลอัตโนมัติที่ผู้ใช้อาจไม่รู้ตัว (คุกกี้ ตำแหน่ง ประวัติการใช้งาน) หลักการของกฎหมายคุ้มครองข้อมูลส่วนบุคคล และผลทางสังคมและเศรษฐกิจของความเป็นส่วนตัว" }
+  - { id: computer.society.inclusive-design, title: "การออกแบบเทคโนโลยีให้ทุกคนใช้ได้", difficulty: 3.5, prereq: [computer.society.computing-impacts],
+      indicators: ["csta-k12-cs:1B-IC-19", "csta-k12-cs:1B-IC-20", "csta-k12-cs:2-CS-01", "csta-k12-cs:2-IC-21", "csta-k12-cs:3A-AP-21", "csta-k12-cs:3A-IC-25",
+                   "acm-cs2023:HCI-User", "acm-cs2023:HCI-Accessibility", "acm-cs2023:SEP-DEIA"],
+      scope: "การออกแบบที่ยึดผู้ใช้เป็นศูนย์กลาง การสังเกตว่าผู้ใช้ใช้อุปกรณ์อย่างไรแล้วเสนอการปรับปรุง การเข้าถึงได้สำหรับผู้พิการและผู้สูงอายุ อคติในเทคโนโลยีและข้อมูล และการทดสอบกับผู้ใช้ที่หลากหลายเพื่อลดอคติ" }
+  - { id: computer.programming.functions, title: "เขียนโปรแกรมแก้ปัญหาด้วยตรรกะและฟังก์ชัน", difficulty: 4, prereq: [computer.programming.design-debug, computer.algorithms.computational-thinking, math.algebra.linear-eq],
+      indicators: ["th-core-2560-science:ว 4.2 ม.1/2", "th-core-2560-science:ว 4.2 ม.2/2",
+                   "csta-k12-cs:2-AP-14", "csta-k12-cs:3A-AP-17", "csta-k12-cs:3A-AP-18",
+                   "acm-cs2023:SDF-Fundamentals"],
+      scope: "การเขียนโปรแกรมด้วยภาษาข้อความ (เช่น Python) แก้โจทย์คณิตศาสตร์และวิทยาศาสตร์ การสร้างและเรียกใช้ฟังก์ชันที่มีพารามิเตอร์และค่าที่คืน ขอบเขตของตัวแปร การแยกโปรแกรมเป็นฟังก์ชันและโมดูล และการเรียกซ้ำเบื้องต้น" }
+  - { id: computer.programming.lists-strings, title: "ลิสต์ ดิกชันนารี และการประมวลผลข้อความ", difficulty: 4.5, prereq: [computer.programming.functions],
+      indicators: ["csta-k12-cs:3A-AP-14", "acm-cs2023:SDF-Data-Structures"],
+      scope: "การใช้ลิสต์แทนตัวแปรหลายตัว การเข้าถึงด้วยดัชนี การวนผ่านลิสต์ การเพิ่มและลบสมาชิก ดิกชันนารีและเซต การประมวลผลสตริง (ตัด ต่อ ค้นหา นับ) และการเลือกโครงสร้างข้อมูลให้เหมาะกับปัญหา" }
+  - { id: computer.algorithms.searching-sorting, title: "อัลกอริทึมการค้นหาและการเรียงลำดับ", difficulty: 5, prereq: [computer.programming.lists-strings],
+      indicators: ["csta-k12-cs:3A-AP-15", "acm-cs2023:SDF-Algorithms", "acm-cs2023:AL-Foundational", "acm-cs2023:AL-Strategies", "acm-cs2023:AL-Complexity"],
+      scope: "การค้นหาแบบลำดับและแบบทวิภาค การเรียงลำดับแบบเลือก แบบแทรก และแบบผสาน กลยุทธ์ brute force และแบ่งแยกและเอาชนะ การนับจำนวนขั้นและสัญกรณ์บิ๊กโอเบื้องต้น และการเลือกโครงสร้างควบคุมโดยชั่งความอ่านง่ายกับประสิทธิภาพ" }
+  - { id: computer.algorithms.data-structures, title: "โครงสร้างข้อมูล: สแตก คิว ตารางแฮช ต้นไม้ และกราฟ", difficulty: 6, prereq: [computer.algorithms.searching-sorting],
+      indicators: ["acm-cs2023:AL-Foundational", "acm-cs2023:SDF-Data-Structures"],
+      scope: "ชนิดข้อมูลนามธรรม สแตกและคิวพร้อมการใช้งาน ตารางแฮช ต้นไม้ค้นหาแบบทวิภาค กราฟและการแทนด้วยลิสต์ประชิดหรือเมทริกซ์ การท่องกราฟแบบกว้างก่อนและลึกก่อน และผลของการเลือกโครงสร้างข้อมูลต่อเวลาที่ใช้" }
+  - { id: computer.data.databases, title: "ฐานข้อมูลเชิงสัมพันธ์และ SQL เบื้องต้น", difficulty: 5, prereq: [computer.data.data-processing, computer.programming.lists-strings],
+      indicators: ["csta-k12-cs:3A-DA-10",
+                   "acm-cs2023:DM-Core", "acm-cs2023:DM-Modeling", "acm-cs2023:DM-Relational", "acm-cs2023:DM-Querying", "acm-cs2023:DM-Security", "acm-cs2023:SEC-Coding"],
+      scope: "จุดประสงค์ของระบบฐานข้อมูล ตาราง แถว คอลัมน์ คีย์หลักและคีย์นอก การออกแบบตารางเพื่อลดข้อมูลซ้ำ คำสั่ง SELECT WHERE ORDER BY และ JOIN การเลือกเก็บข้อมูลในเครื่องหรือบนคลาวด์ และการป้องกันการโจมตีแบบแทรกคำสั่ง SQL ด้วยการตรวจข้อมูลรับเข้า" }
+  - { id: computer.systems.physical-computing, title: "ระบบสมองกลฝังตัวและอุปกรณ์ที่เก็บและส่งข้อมูล", difficulty: 4.5, prereq: [computer.systems.computer-systems, computer.programming.functions],
+      indicators: ["csta-k12-cs:2-CS-02", "csta-k12-cs:3A-CS-01"],
+      scope: "ไมโครคอนโทรลเลอร์ เซนเซอร์และตัวขับเคลื่อน การเขียนโปรแกรมอ่านค่าเซนเซอร์และส่งข้อมูลผ่านเครือข่าย และนามธรรมที่ซ่อนรายละเอียดของระบบคอมพิวเตอร์ในสิ่งของรอบตัว" }
+  # ---------- การพัฒนาซอฟต์แวร์และโครงงาน ----------
+  - { id: computer.programming.development-process, title: "กระบวนการพัฒนาโปรแกรมแบบวนรอบกับผู้ใช้", difficulty: 4.5, prereq: [computer.programming.functions, computer.society.inclusive-design],
+      indicators: ["csta-k12-cs:1B-AP-12", "csta-k12-cs:1B-AP-13", "csta-k12-cs:2-AP-15", "csta-k12-cs:3A-AP-19", "csta-k12-cs:3A-AP-23"],
+      scope: "การวางแผนโดยรับฟังความเห็นและความต้องการของผู้ใช้ การดัดแปลงหรือต่อยอดโปรแกรมที่มีอยู่ การสร้างต้นแบบ ทดสอบกับผู้ใช้ และปรับปรุงเป็นรอบ ๆ และการบันทึกเหตุผลของการตัดสินใจออกแบบด้วยข้อความ แผนภาพ หรือการสาธิต" }
+  - { id: computer.programming.teamwork, title: "การพัฒนาซอฟต์แวร์เป็นทีมและเครื่องมือทำงานร่วมกัน", difficulty: 4.5, prereq: [computer.programming.development-process],
+      indicators: ["csta-k12-cs:1B-AP-16", "csta-k12-cs:2-AP-18", "csta-k12-cs:2-IC-22", "csta-k12-cs:3A-AP-22", "csta-k12-cs:3A-IC-27",
+                   "acm-cs2023:SE-Teamwork", "acm-cs2023:SE-Tools"],
+      scope: "บทบาทในทีมพัฒนา การแบ่งงานและวางกำหนดเวลา การสื่อสารและแก้ความขัดแย้ง การเขียนโปรแกรมเป็นคู่ การใช้ระบบควบคุมเวอร์ชันและเครื่องมือทำงานร่วมกันออนไลน์ และการระดมความเห็นจากผู้คนจำนวนมาก เช่น แบบสำรวจ" }
+  - { id: computer.projects.app-development, title: "การพัฒนาแอปพลิเคชันและโครงงานเชิงคำนวณ", difficulty: 5, prereq: [computer.programming.functions, computer.data.data-processing, computer.programming.development-process],
+      indicators: ["th-core-2560-science:ว 4.2 ม.3/1", "th-core-2560-science:ว 4.2 ม.4/1",
+                   "csta-k12-cs:3A-AP-13", "csta-k12-cs:3A-AP-16", "acm-cs2023:SPD-Common", "acm-cs2023:FPL-Event-Driven"],
+      scope: "การพัฒนาแอปพลิเคชันที่บูรณาการกับวิชาอื่น (วิเคราะห์ปัญหา ออกแบบ เขียนโปรแกรมที่ตอบสนองต่อเหตุการณ์ ทดสอบ ปรับปรุง) การสร้างต้นแบบจากความสนใจของตนเอง และการทำโครงงานที่ใช้แนวคิดเชิงคำนวณกับปัญหาในชีวิตจริง" }
+  - { id: computer.projects.digital-innovation, title: "วิทยาการคอมพิวเตอร์และสื่อดิจิทัลเพื่อเพิ่มมูลค่า", difficulty: 5.5, prereq: [computer.projects.app-development],
+      indicators: ["th-core-2560-science:ว 4.2 ม.5/1"],
+      scope: "การรวบรวมและวิเคราะห์ข้อมูล และการใช้ความรู้ด้านวิทยาการคอมพิวเตอร์ สื่อดิจิทัล และเทคโนโลยีสารสนเทศ แก้ปัญหาหรือเพิ่มมูลค่าให้บริการหรือผลิตภัณฑ์" }

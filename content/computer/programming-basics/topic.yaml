@@ -1,0 +1,89 @@
+id: computer.programming.basics
+subject: computer
+title: { th: ตัวแปร เงื่อนไข และการวนซ้ำ, en: "Variables, conditionals and loops" }
+summary: เขียนและอ่านโปรแกรม Python เบื้องต้น ใช้ตัวแปรและชนิดข้อมูล ตัวดำเนินการ คำสั่ง if elif else และการวนซ้ำด้วย for และ while ไล่โปรแกรมเพื่อทายผลลัพธ์และหาข้อผิดพลาด
+difficulty: 3
+minutes: 40
+prerequisites: [computer.algorithms.intro]
+encompasses:
+  - { id: computer.algorithms.intro, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: variable-boxes.svg
+    alt: "กล่อง 4 กล่องมีป้ายชื่อตัวแปร: score เก็บ 75 ชนิด int (จำนวนเต็ม), price เก็บ 12.5 ชนิด float (ทศนิยม), name เก็บ \"Mali\" ชนิด str (ข้อความ), passed เก็บ True ชนิด bool (จริง/เท็จ) ด้านล่างเขียนว่า score = 80 จะแทนค่า 75 ในกล่องด้วย 80 และค่าเดิมหายไป"
+    caption: "ตัวแปรเหมือนกล่องที่มีป้ายชื่อ เก็บค่าได้ทีละค่า ชนิดของค่าบอกว่าใช้ทำอะไรได้"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: com.prog.p001, prompt: "ลองไล่ก่อนอ่านตัวอย่าง" }
+  - type: worked-example
+    title: ตัดเกรดด้วย if elif else
+    problem: |
+      คะแนนสอบ 68 คะแนน โปรแกรมนี้แสดงอะไร
+
+      ```python
+      score = 68
+      if score >= 80:
+          grade = "A"
+      elif score >= 70:
+          grade = "B"
+      elif score >= 60:
+          grade = "C"
+      else:
+          grade = "F"
+      print(grade)
+      ```
+    steps:
+      - text: "ตรวจเงื่อนไขแรก `68 >= 80` เป็นเท็จ ข้ามไป elif ถัดไป"
+      - text: "ตรวจ `68 >= 70` เป็นเท็จ ข้ามไป elif ถัดไป"
+      - text: "ตรวจ `68 >= 60` เป็นจริง ทำ `grade = \"C\"`"
+        why: "เมื่อเจอทางแรกที่จริงแล้ว Python ข้ามทางที่เหลือทั้งหมดรวมทั้ง else"
+      - text: "ออกจากชุดเงื่อนไขแล้วทำ `print(grade)` แสดง `C`"
+    answer: "แสดง `C`"
+  - type: figure
+    src: range-diagram.svg
+    alt: "แถวของช่องตัวเลข 0 ถึง 6 ใต้คำสั่ง for i in range(1, 5) ช่อง 1, 2, 3, 4 ถูกเน้นสี ช่อง 0 และ 6 เป็นสีจาง ช่อง 5 มีกากบาท มีป้าย เริ่มที่ 1 ใต้ช่อง 1 และ หยุดก่อน 5 ใต้ช่อง 5 ด้านล่างเขียนว่า วนทั้งหมด 5 − 1 = 4 รอบ: i = 1, 2, 3, 4"
+    caption: "`range(a, b)` เริ่มที่ a และหยุดก่อน b จึงวน b − a รอบ"
+  - type: worked-example
+    title: ค่าขนมหนึ่งสัปดาห์
+    problem: |
+      แม่ให้ค่าขนมวันจันทร์ถึงศุกร์วันละ 20 บาท และวันเสาร์อาทิตย์วันละ 50 บาท (ให้ day = 6 และ 7 คือเสาร์และอาทิตย์) โปรแกรมนี้แสดงเท่าใด
+
+      ```python
+      total = 0
+      for day in range(1, 8):
+          if day >= 6:
+              total = total + 50
+          else:
+              total = total + 20
+      print(total)
+      ```
+    steps:
+      - text: "`range(1, 8)` ให้ day = 1, 2, 3, 4, 5, 6, 7 รวม 7 รอบ"
+        why: "range หยุดก่อน 8 จึงไม่มี day = 8"
+      - text: "day = 1 ถึง 5: `day >= 6` เป็นเท็จ บวก 20 ห้ารอบ total = 100"
+      - text: "day = 6 และ 7: `day >= 6` เป็นจริง บวก 50 สองรอบ total = 100 + 100 = 200"
+      - text: "จบวงวนแล้วจึงทำ `print(total)` ซึ่งไม่ได้ย่อหน้าอยู่ในวงวน แสดง 200 ครั้งเดียว"
+        why: "ถ้า print ย่อหน้าอยู่ใน for จะแสดงค่าสะสมทุกรอบ 7 บรรทัด"
+    answer: "แสดง `200`"
+  - { type: check, problem: com.prog.p006, prompt: "ใช้ภาพ range ด้านบนช่วยนับรอบ" }
+glossary:
+  - { term: ตัวแปร (variable), definition: "ชื่อที่ใช้เก็บค่าในโปรแกรม เก็บได้ทีละค่า เปลี่ยนค่าได้ด้วยการกำหนดค่า (=)" }
+  - { term: ชนิดข้อมูล (data type), definition: "ประเภทของค่า เช่น int จำนวนเต็ม float ทศนิยม str ข้อความ bool จริงหรือเท็จ" }
+  - { term: เงื่อนไข (if/elif/else), definition: "คำสั่งเลือกทำตามค่าความจริงของเงื่อนไข ทำเฉพาะทางแรกที่เป็นจริง" }
+  - { term: การวนซ้ำ (for/while), definition: "for วนตามจำนวนรอบหรือตามสมาชิกของรายการ while วนขณะที่เงื่อนไขยังเป็นจริง" }
+  - { term: ข้อผิดพลาดทางตรรกะ (logic error), definition: "ข้อผิดพลาดที่ทำให้โปรแกรมทำงานได้แต่ผลลัพธ์ไม่ถูกต้อง หาได้ด้วยการไล่โปรแกรมหรือทดสอบกับข้อมูลที่รู้คำตอบ" }
+flashcards:
+  - { front: "`range(1, 5)` ให้ค่าอะไรบ้าง", back: "1, 2, 3, 4 (ไม่รวม 5)" }
+  - { front: "`17 // 5` และ `17 % 5` ได้เท่าใด", back: "`17 // 5 = 3` (ผลหารปัดเศษทิ้ง) และ `17 % 5 = 2` (เศษ)" }
+  - { front: "`\"5\" + \"3\"` ใน Python ได้อะไร", back: "`\"53\"` เพราะเป็นการต่อข้อความ ไม่ใช่การบวกเลข" }
+  - { front: "`=` ต่างจาก `==` อย่างไร", back: "`=` กำหนดค่าให้ตัวแปร ส่วน `==` เปรียบเทียบว่าเท่ากันหรือไม่ ได้ True หรือ False" }
+  - { front: "if มีหลาย elif ที่เป็นจริง จะทำทางใด", back: "ทางแรกที่เป็นจริงเท่านั้น แล้วข้ามที่เหลือ" }
+references:
+  - { title: "ภาษาไพทอน", url: "https://th.wikipedia.org/wiki/ภาษาไพทอน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Variable (high-level programming language)", url: "https://en.wikipedia.org/wiki/Variable_(high-level_programming_language)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Conditional (computer programming)", url: "https://en.wikipedia.org/wiki/Conditional_(computer_programming)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Control flow", url: "https://en.wikipedia.org/wiki/Control_flow", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

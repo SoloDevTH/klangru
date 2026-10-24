@@ -3,7 +3,8 @@
 #
 # - ณ วันที่เสนอ คลังสอนตัวชี้วัดแกนกลางครบ 16 ข้อ บางส่วน 45 ข้อ และยังไม่มีหัวข้อสอน 354 จาก 415 ข้อ
 #   (ดู curriculum/mappings/th-core-2560-science.yaml) ชีววิทยา โลกและอวกาศ และเทคโนโลยียังไม่มีหัวข้อเลย
-# - topics: 83 หัวข้อใหม่ (biology 24, chemistry 11, physics 13, earthscience 16, technology 19)
+# - topics: 69 หัวข้อใหม่ (biology 24, chemistry 11, physics 13, earthscience 16, technology 5)
+#   หัวข้อวิทยาการคำนวณ (ว 4.2) 14 หัวข้อเดิมย้ายไปอยู่ใน docs/phase6/proposals-computer.yaml (วิชา computer) แล้ว
 #   รวมตัวชี้วัดที่ยังไม่มีหัวข้อสอนทุกข้อ และตัวชี้วัดที่หัวข้อเดิมสอนเพียงบางส่วนเมื่อหัวข้อใหม่สอนส่วนที่ขาด
 # - extend: ตัวชี้วัด ม.4–6 ที่เนื้อหาตรงกับหัวข้อซึ่งเสนอไว้แล้วใน docs/phase6/proposals-science-additional.yaml
 #   (รายวิชาเพิ่มเติม) ให้แนบตัวชี้วัดเหล่านี้กับหัวข้อนั้นแทนการเขียนหัวข้อซ้ำ เพราะคลังไม่แบ่งตามระดับชั้น
@@ -223,49 +224,6 @@ topics:
   - { id: earthscience.astronomy.seasons-moon-tides, title: "ฤดูกาล ข้างขึ้นข้างแรม และน้ำขึ้นน้ำลง", difficulty: 3.5, prereq: [earthscience.astronomy.moon-solar-system, physics.fields.field-forces],
       indicators: ["th-core-2560-science:ว 3.1 ม.3/2", "th-core-2560-science:ว 3.1 ม.3/3"],
       scope: "แกนโลกเอียงกับการเกิดฤดูและการเคลื่อนที่ปรากฏของดวงอาทิตย์ การเกิดข้างขึ้นข้างแรม เวลาขึ้นตกของดวงจันทร์ และน้ำขึ้นน้ำลง" }
-  # ---------- เทคโนโลยี: วิทยาการคำนวณ (ว 4.2) ----------
-  - { id: technology.computing.algorithms-intro, title: "ลำดับขั้นตอนและอัลกอริทึมอย่างง่าย", difficulty: 1, prereq: [],
-      indicators: ["th-core-2560-science:ว 4.2 ป.1/1", "th-core-2560-science:ว 4.2 ป.1/2", "th-core-2560-science:ว 4.2 ป.2/1", "th-core-2560-science:ว 4.2 ป.3/1"],
-      scope: "การแก้ปัญหาด้วยการลองผิดลองถูกและการเปรียบเทียบ การเขียนลำดับขั้นตอนการทำงานด้วยภาพ สัญลักษณ์ หรือข้อความ และอัลกอริทึมในชีวิตประจำวัน" }
-  - { id: technology.computing.digital-data-basics, title: "การสร้าง จัดเก็บ และนำเสนอข้อมูลด้วยเทคโนโลยี", difficulty: 1.5, prereq: [],
-      indicators: ["th-core-2560-science:ว 4.2 ป.1/4", "th-core-2560-science:ว 4.2 ป.2/3", "th-core-2560-science:ว 4.2 ป.3/4", "th-core-2560-science:ว 4.2 ป.4/4", "th-core-2560-science:ว 4.2 ป.5/4"],
-      scope: "การสร้างไฟล์ การตั้งชื่อ การจัดหมวดหมู่ในโฟลเดอร์ การค้นหาและเรียกใช้ไฟล์ การรวบรวม ประมวลผล ประเมิน และนำเสนอข้อมูลด้วยซอฟต์แวร์และบริการบนอินเทอร์เน็ต" }
-  - { id: technology.computing.safe-ict-primary, title: "การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย (ประถม)", difficulty: 1.5, prereq: [],
-      indicators: ["th-core-2560-science:ว 4.2 ป.1/5", "th-core-2560-science:ว 4.2 ป.2/4", "th-core-2560-science:ว 4.2 ป.3/5", "th-core-2560-science:ว 4.2 ป.4/5", "th-core-2560-science:ว 4.2 ป.5/5", "th-core-2560-science:ว 4.2 ป.6/4"],
-      scope: "ข้อตกลงในการใช้คอมพิวเตอร์ร่วมกัน การดูแลอุปกรณ์ ข้อมูลส่วนตัว รหัสผ่าน มารยาท สิทธิและหน้าที่ การเคารพสิทธิผู้อื่น และการแจ้งผู้เกี่ยวข้องเมื่อพบข้อมูลหรือบุคคลที่ไม่เหมาะสม" }
-  - { id: technology.computing.programming-intro, title: "เขียนโปรแกรมอย่างง่ายและหาข้อผิดพลาด", difficulty: 1.5, prereq: [technology.computing.algorithms-intro],
-      indicators: ["th-core-2560-science:ว 4.2 ป.1/3", "th-core-2560-science:ว 4.2 ป.2/2", "th-core-2560-science:ว 4.2 ป.3/2"],
-      scope: "การสั่งงานตัวละครหรือหุ่นยนต์ตามลำดับคำสั่งด้วยบัตรคำสั่งหรือโปรแกรมแบบบล็อก การทดลองรันและไล่หาจุดที่ผิด" }
-  - { id: technology.computing.internet-search, title: "การค้นหาข้อมูลและประเมินความน่าเชื่อถือ", difficulty: 2, prereq: [technology.computing.digital-data-basics],
-      indicators: ["th-core-2560-science:ว 4.2 ป.3/3", "th-core-2560-science:ว 4.2 ป.4/3", "th-core-2560-science:ว 4.2 ป.5/3", "th-core-2560-science:ว 4.2 ป.6/3", "th-core-2560-science:ว 4.2 ม.3/3"],
-      scope: "การใช้คำค้นและตัวดำเนินการค้นหา การติดต่อสื่อสารและทำงานร่วมกันออนไลน์ การตรวจแหล่งที่มา วันที่ และผู้เขียน ข่าวปลอม เหตุผลวิบัติ และผลกระทบจากข่าวสารที่ผิด" }
-  - { id: technology.computing.logical-reasoning, title: "เหตุผลเชิงตรรกะในการแก้ปัญหา", difficulty: 2, prereq: [technology.computing.algorithms-intro],
-      indicators: ["th-core-2560-science:ว 4.2 ป.4/1", "th-core-2560-science:ว 4.2 ป.5/1", "th-core-2560-science:ว 4.2 ป.6/1"],
-      scope: "การใช้เงื่อนไข \"ถ้า...แล้ว\" การอธิบายการทำงาน การคาดการณ์ผลลัพธ์ และการออกแบบวิธีแก้ปัญหาในชีวิตประจำวันอย่างมีเหตุผล" }
-  - { id: technology.computing.programming-logic, title: "โปรแกรมที่มีเงื่อนไข การทำซ้ำ และตัวแปร", difficulty: 2.5, prereq: [technology.computing.programming-intro, technology.computing.logical-reasoning],
-      indicators: ["th-core-2560-science:ว 4.2 ป.4/2", "th-core-2560-science:ว 4.2 ป.5/2", "th-core-2560-science:ว 4.2 ป.6/2"],
-      scope: "การออกแบบและเขียนโปรแกรมแบบบล็อกที่ใช้การวนซ้ำ เงื่อนไข และตัวแปร เพื่อแก้ปัญหาในชีวิตประจำวัน พร้อมการตรวจหาและแก้ข้อผิดพลาด" }
-  - { id: technology.computing.computational-thinking, title: "แนวคิดเชิงนามธรรมและแนวคิดเชิงคำนวณ", difficulty: 3, prereq: [technology.computing.logical-reasoning],
-      indicators: ["th-core-2560-science:ว 4.2 ม.1/1", "th-core-2560-science:ว 4.2 ม.2/1"],
-      scope: "การแยกปัญหาเป็นส่วนย่อย การหารูปแบบ การคัดเฉพาะสาระสำคัญ (แนวคิดเชิงนามธรรม) และการออกแบบอัลกอริทึมด้วยรหัสลำลองหรือผังงานเพื่อแก้ปัญหาในชีวิตจริง" }
-  - { id: technology.computing.programming-functions, title: "เขียนโปรแกรมแก้ปัญหาด้วยตรรกะและฟังก์ชัน", difficulty: 3.5, prereq: [technology.computing.programming-logic, technology.computing.computational-thinking, math.algebra.linear-eq],
-      indicators: ["th-core-2560-science:ว 4.2 ม.1/2", "th-core-2560-science:ว 4.2 ม.2/2"],
-      scope: "การเขียนโปรแกรมด้วยภาษาข้อความ (เช่น Python) แก้โจทย์คณิตศาสตร์และวิทยาศาสตร์ ตัวดำเนินการตรรกะ และการสร้างและเรียกใช้ฟังก์ชัน" }
-  - { id: technology.computing.data-processing, title: "การรวบรวม ประมวลผล และนำเสนอข้อมูล", difficulty: 3, prereq: [technology.computing.digital-data-basics, math.stats.data-display],
-      indicators: ["th-core-2560-science:ว 4.2 ม.1/3", "th-core-2560-science:ว 4.2 ม.3/2"],
-      scope: "การเก็บข้อมูลปฐมภูมิ การจัดการข้อมูลด้วยตารางคำนวณ การประมวลผล ประเมินผล และการนำเสนอข้อมูลและสารสนเทศให้ตรงวัตถุประสงค์" }
-  - { id: technology.computing.computer-systems, title: "ระบบคอมพิวเตอร์และเทคโนโลยีการสื่อสาร", difficulty: 3, prereq: [technology.computing.digital-data-basics],
-      indicators: ["th-core-2560-science:ว 4.2 ม.2/3"],
-      scope: "ฮาร์ดแวร์ ซอฟต์แวร์ และผู้ใช้ หน่วยรับเข้า ประมวลผล ความจำ และส่งออก การแทนข้อมูลด้วยเลขฐานสอง เครือข่ายคอมพิวเตอร์และอินเทอร์เน็ต" }
-  - { id: technology.computing.responsible-ict, title: "การใช้เทคโนโลยีสารสนเทศอย่างปลอดภัย มีจริยธรรม และถูกกฎหมาย", difficulty: 3, prereq: [technology.computing.safe-ict-primary],
-      indicators: ["th-core-2560-science:ว 4.2 ม.1/4", "th-core-2560-science:ว 4.2 ม.2/4", "th-core-2560-science:ว 4.2 ม.3/4", "th-core-2560-science:ว 4.2 ม.6/1"],
-      scope: "การใช้สื่อและแหล่งข้อมูลตามข้อตกลง สัญญาอนุญาตครีเอทีฟคอมมอนส์ ลิขสิทธิ์และการใช้งานโดยชอบธรรม พ.ร.บ.คอมพิวเตอร์ ความปลอดภัยในการแบ่งปันข้อมูล และผลของเทคโนโลยีสารสนเทศต่ออาชีพ สังคม และวัฒนธรรม" }
-  - { id: technology.computing.app-development, title: "การพัฒนาแอปพลิเคชันและโครงงานเชิงคำนวณ", difficulty: 4.5, prereq: [technology.computing.programming-functions, technology.computing.data-processing],
-      indicators: ["th-core-2560-science:ว 4.2 ม.3/1", "th-core-2560-science:ว 4.2 ม.4/1"],
-      scope: "การพัฒนาแอปพลิเคชันที่บูรณาการกับวิชาอื่น (วิเคราะห์ปัญหา ออกแบบ เขียนโปรแกรม ทดสอบ ปรับปรุง) และการทำโครงงานที่ใช้แนวคิดเชิงคำนวณกับปัญหาในชีวิตจริง" }
-  - { id: technology.computing.digital-innovation, title: "วิทยาการคอมพิวเตอร์และสื่อดิจิทัลเพื่อเพิ่มมูลค่า", difficulty: 5, prereq: [technology.computing.app-development],
-      indicators: ["th-core-2560-science:ว 4.2 ม.5/1"],
-      scope: "การรวบรวมและวิเคราะห์ข้อมูล และการใช้ความรู้ด้านวิทยาการคอมพิวเตอร์ สื่อดิจิทัล และเทคโนโลยีสารสนเทศ แก้ปัญหาหรือเพิ่มมูลค่าให้บริการหรือผลิตภัณฑ์" }
   # ---------- เทคโนโลยี: การออกแบบและเทคโนโลยี (ว 4.1 ม.1–ม.5) ----------
   - { id: technology.design.technology-concepts, title: "แนวคิดหลักของเทคโนโลยี", difficulty: 3, prereq: [],
       indicators: ["th-core-2560-science:ว 4.1 ม.1/1", "th-core-2560-science:ว 4.1 ม.2/1", "th-core-2560-science:ว 4.1 ม.3/1", "th-core-2560-science:ว 4.1 ม.4/1"],

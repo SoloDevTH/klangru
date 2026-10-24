@@ -1,0 +1,541 @@
+problems:
+  - id: com.prog.p001
+    topics: [computer.programming.basics]
+    difficulty: 1
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงค่าใด
+
+      ```python
+      x = 7
+      x = x + 2
+      print(x)
+      ```
+    answer: { value: 9 }
+    hints:
+      - "บรรทัดที่สองคำนวณค่าทางขวาก่อน แล้วเก็บลงใน x"
+      - "x เดิมคือ 7 บวก 2 แล้วเก็บกลับลงใน x"
+    misconceptions:
+      - { match: 7, feedback: "`x = x + 2` เปลี่ยนค่าของ x แล้ว ค่า 7 ถูกแทนด้วยค่าใหม่" }
+      - { match: 2, feedback: "ค่าทางขวาคือ x + 2 ไม่ใช่แค่ 2 ต้องนำค่า x เดิมมาบวกด้วย" }
+    solution: "x = 7 → x = 7 + 2 = 9 → แสดง 9"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p002
+    topics: [computer.programming.basics]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นชื่อตัวแปรที่ใช้ได้ใน Python"
+    choices:
+      - { id: a, text: "`score_1`", correct: true }
+      - { id: b, text: "`1score`", feedback: "ชื่อตัวแปรห้ามขึ้นต้นด้วยตัวเลข" }
+      - { id: c, text: "`my score`", feedback: "ชื่อตัวแปรห้ามมีช่องว่าง ใช้ `_` คั่นแทน เช่น `my_score`" }
+      - { id: d, text: "`for`", feedback: "`for` เป็นคำสงวนของ Python ใช้เป็นชื่อตัวแปรไม่ได้" }
+    hints:
+      - "ชื่อตัวแปรใช้ตัวอักษร ตัวเลข และ _ ได้ แต่มีข้อห้ามเรื่องตัวแรก ช่องว่าง และคำสงวน"
+      - "ตรวจแต่ละตัวเลือกกับข้อห้ามทั้งสามข้อ"
+    solution: "`score_1` ขึ้นต้นด้วยตัวอักษร ไม่มีช่องว่าง และไม่ใช่คำสงวน จึงใช้ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p003
+    topics: [computer.programming.basics]
+    difficulty: 2
+    type: numeric
+    stem: "`print(17 % 5)` แสดงค่าใด"
+    answer: { value: 2 }
+    hints:
+      - "`%` ให้เศษจากการหาร"
+      - "17 หารด้วย 5 ได้ผลหารเต็มเท่าใด และเหลือเศษเท่าใด"
+    misconceptions:
+      - { match: 3, feedback: "3 คือผลหารปัดเศษทิ้ง (`17 // 5`) ส่วน `%` ให้เศษ" }
+      - { match: 3.4, feedback: "3.4 คือ `17 / 5` ส่วน `%` ให้เศษที่เหลือจากการหาร" }
+    solution: "17 = 5 × 3 + 2 จึงได้ `17 % 5 = 2`"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p004
+    topics: [computer.programming.basics]
+    difficulty: 2
+    type: text
+    stem: "`print(\"5\" + \"3\")` แสดงอะไร (พิมพ์สิ่งที่ปรากฏบนจอ ไม่ต้องใส่เครื่องหมายคำพูด)"
+    accepted: ["53"]
+    hints:
+      - "\"5\" และ \"3\" อยู่ในเครื่องหมายคำพูด จึงเป็นข้อมูลชนิดใด"
+      - "`+` ระหว่างข้อความคือการนำข้อความมาต่อกัน"
+    misconceptions:
+      - { match: "8", feedback: "\"5\" และ \"3\" เป็นข้อความ (str) ไม่ใช่ตัวเลข `+` จึงต่อข้อความเข้าด้วยกัน ถ้าต้องการบวกเลขให้เขียน `5 + 3`" }
+    solution: "ข้อความ \"5\" ต่อกับ \"3\" ได้ \"53\" จอแสดง 53"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p005
+    topics: [computer.programming.basics]
+    difficulty: 2
+    type: text
+    stem: |
+      นักเรียนสอบได้ 75 คะแนน โปรแกรมตัดเกรดนี้แสดงอะไร
+
+      ```python
+      score = 75
+      if score >= 80:
+          print("A")
+      elif score >= 70:
+          print("B")
+      elif score >= 60:
+          print("C")
+      else:
+          print("F")
+      ```
+    accepted: ["B"]
+    hints:
+      - "ตรวจเงื่อนไขจากบนลงล่างทีละข้อ"
+      - "Python ทำเฉพาะทางแรกที่เงื่อนไขเป็นจริง แล้วข้ามที่เหลือ"
+    misconceptions:
+      - { match: "C", feedback: "`75 >= 60` ก็จริง แต่ Python ทำแค่ทางแรกที่จริง คือ `75 >= 70` แล้วข้ามทางที่เหลือ" }
+      - { match: "BC", feedback: "if-elif ทำเพียงทางเดียว ไม่ได้ทำทุกทางที่เงื่อนไขจริง" }
+    solution: "`75 >= 80` เท็จ → `75 >= 70` จริง แสดง B แล้วข้าม elif และ else ที่เหลือ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p006
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงค่าใด
+
+      ```python
+      total = 0
+      for i in range(1, 5):
+          total = total + i
+      print(total)
+      ```
+    answer: { value: 10 }
+    hints:
+      - "`range(1, 5)` ให้ค่า i อะไรบ้าง รวมเลข 5 หรือไม่"
+      - "บวก i ทุกค่าเข้า total ที่เริ่มจาก 0"
+    misconceptions:
+      - { match: 15, feedback: "`range(1, 5)` หยุดก่อน 5 จึงมี i = 1, 2, 3, 4 ไม่มี 5" }
+      - { match: 4, feedback: "4 คือค่า i รอบสุดท้าย แต่ที่แสดงคือ total ที่สะสมผลบวกของทุกรอบ" }
+    solution: "i = 1, 2, 3, 4 → total = 1 + 2 + 3 + 4 = 10"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p007
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงค่าใด
+
+      ```python
+      s = 1
+      for i in range(4):
+          s = s + 2
+      print(s)
+      ```
+    answer: { value: 9 }
+    hints:
+      - "`range(4)` วนกี่รอบ"
+      - "s เริ่มที่ 1 และเพิ่มรอบละ 2"
+    misconceptions:
+      - { match: 7, feedback: "`range(4)` ให้ 0, 1, 2, 3 รวม 4 รอบ ไม่ใช่ 3 รอบ" }
+      - { match: 8, feedback: "s เริ่มที่ 1 ไม่ใช่ 0 บวก 2 สี่ครั้งจึงได้ 1 + 8" }
+    solution: "วน 4 รอบ s: 1 → 3 → 5 → 7 → 9 แสดง 9"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p008
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: order
+    stem: "เรียงบรรทัดให้เป็นโปรแกรมหาผลรวม 1 ถึง 10 แล้วแสดงผลครั้งเดียว"
+    items:
+      - "`total = 0`"
+      - "`for i in range(1, 11):`"
+      - "`total = total + i` (ย่อหน้า อยู่ในวงวน)"
+      - "`print(total)` (ไม่ย่อหน้า อยู่หลังวงวน)"
+    hints:
+      - "ตัวสะสมต้องมีค่าเริ่มต้นก่อนเข้าวงวน"
+      - "แสดงผลหลังวงวนจบ จึงแสดงครั้งเดียว"
+    solution: "ตั้ง total = 0 → for i in range(1, 11): → total = total + i (ในวงวน) → print(total) หลังวงวน ได้ 55"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p009
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงค่าใด
+
+      ```python
+      n = 1
+      while n < 50:
+          n = n * 3
+      print(n)
+      ```
+    answer: { value: 81 }
+    hints:
+      - "จดค่า n ทุกรอบ: 1, 3, …"
+      - "ตรวจ `n < 50` ก่อนเริ่มทุกรอบ ค่าที่ทำให้หยุดคือค่าที่แสดง"
+    misconceptions:
+      - { match: 27, feedback: "เมื่อ n = 27 เงื่อนไข `27 < 50` ยังจริง จึงคูณ 3 อีกรอบเป็น 81 แล้วจึงหยุด" }
+      - { match: 50, feedback: "while ไม่ได้หยุดที่ 50 พอดี มันหยุดเมื่อ n ไม่น้อยกว่า 50 ซึ่ง n เพิ่มทีละ 3 เท่า" }
+    solution: "n: 1 → 3 → 9 → 27 → 81 เมื่อ n = 81 เงื่อนไข `81 < 50` เท็จจึงหยุด แสดง 81"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p010
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: numeric
+    stem: |
+      โปรแกรมนี้นับจำนวนตั้งแต่ 1 ถึง 19 ที่หารด้วย 3 หรือ 5 ลงตัว แสดงค่าใด
+
+      ```python
+      c = 0
+      for i in range(1, 20):
+          if i % 3 == 0 or i % 5 == 0:
+              c = c + 1
+      print(c)
+      ```
+    answer: { value: 8 }
+    hints:
+      - "เขียนจำนวนที่หาร 3 ลงตัว และที่หาร 5 ลงตัวในช่วง 1 ถึง 19"
+      - "`or` เป็นจริงเมื่อจริงอย่างน้อยหนึ่งเงื่อนไข จำนวนที่อยู่ในทั้งสองกลุ่มนับครั้งเดียว"
+    misconceptions:
+      - { match: 1, feedback: "นั่นคือผลของ `and` (มีแค่ 15) แต่โปรแกรมใช้ `or` นับตัวที่หาร 3 หรือ 5 ลงตัวอย่างใดอย่างหนึ่ง" }
+      - { match: 9, feedback: "15 หารลงตัวทั้ง 3 และ 5 แต่ถูกนับเพียงครั้งเดียว เพราะ if ทำงานครั้งเดียวต่อรอบ" }
+    solution: "หาร 3 ลงตัว: 3, 6, 9, 12, 15, 18 หาร 5 ลงตัว: 5, 10, 15 รวมไม่ซ้ำ 3, 5, 6, 9, 10, 12, 15, 18 = 8 ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p011
+    topics: [computer.programming.basics]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ตัวดำเนินการของ Python กับความหมาย"
+    pairs:
+      - { left: "`==`", right: "เปรียบเทียบว่าเท่ากัน" }
+      - { left: "`!=`", right: "เปรียบเทียบว่าไม่เท่ากัน" }
+      - { left: "`%`", right: "เศษจากการหาร" }
+      - { left: "`//`", right: "หารแล้วปัดเศษทิ้ง" }
+      - { left: "`**`", right: "ยกกำลัง" }
+      - { left: "`=`", right: "กำหนดค่าให้ตัวแปร" }
+    hints:
+      - "เครื่องหมายเท่ากับตัวเดียวกับสองตัวมีความหมายต่างกัน"
+      - "`17 // 5 = 3` และ `17 % 5 = 2`"
+    solution: "`==` เท่ากัน, `!=` ไม่เท่ากัน, `%` เศษ, `//` หารปัดเศษทิ้ง, `**` ยกกำลัง, `=` กำหนดค่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p012
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ร้านเครื่องเขียนลด 10% ให้สินค้าที่ราคาเกิน 100 บาท ลูกค้าซื้อของ 3 ชิ้น โปรแกรมนี้แสดงยอดรวมเท่าใด (ตอบเป็นบาท)
+
+      ```python
+      total = 0
+      for price in [120, 80, 250]:
+          if price > 100:
+              total = total + price * 0.9
+          else:
+              total = total + price
+      print(total)
+      ```
+    answer: { value: 413, tolerance: 0.01, unit: บาท }
+    hints:
+      - "ไล่ทีละราคา ราคาใดเกิน 100 บาท"
+      - "ราคาที่เกิน 100 คูณ 0.9 ราคาอื่นบวกเต็มราคา"
+    misconceptions:
+      - { match: 450, feedback: "นั่นคือราคารวมก่อนลด ราคา 120 และ 250 เกิน 100 จึงต้องคูณ 0.9" }
+      - { match: 405, feedback: "นั่นคือลด 10% ทุกชิ้น แต่ 80 บาทไม่เกิน 100 จึงไม่ได้ลด" }
+    solution: "120 × 0.9 = 108, 80 ไม่ลด, 250 × 0.9 = 225 รวม 108 + 80 + 225 = 413 (โปรแกรมแสดง 413.0)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p013
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: mcq
+    stem: |
+      โปรแกรมนี้ตั้งใจหาผลรวม 1 ถึง 10 (ซึ่งควรได้ 55) แต่แสดง 45 ควรแก้อย่างไร
+
+      ```python
+      total = 0
+      for i in range(1, 10):
+          total = total + i
+      print(total)
+      ```
+    choices:
+      - { id: a, text: "เปลี่ยนเป็น `range(1, 11)`", correct: true }
+      - { id: b, text: "เปลี่ยนเป็น `range(0, 10)`", feedback: "range(0, 10) ให้ 0 ถึง 9 ผลรวมยังเป็น 45 เพราะยังขาด 10" }
+      - { id: c, text: "เปลี่ยนค่าเริ่มต้นเป็น `total = 1`", feedback: "จะได้ 46 ซึ่งยังไม่ใช่ 55 ปัญหาอยู่ที่ไม่ได้บวก 10" }
+      - { id: d, text: "ย่อหน้า `print(total)` เข้าไปในวงวน", feedback: "จะแสดงผลรวมสะสมหลายบรรทัด แต่ยังไม่ได้บวก 10 อยู่ดี" }
+    hints:
+      - "`range(1, 10)` ให้ค่า i ใดบ้าง"
+      - "55 − 45 = 10 เลขใดที่หายไป"
+    solution: "`range(1, 10)` หยุดก่อน 10 จึงขาด 10 ไปพอดี (55 − 45 = 10) ต้องเขียน `range(1, 11)` นี่คือข้อผิดพลาดทางตรรกะ โปรแกรมทำงานได้แต่ผลผิด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p014
+    topics: [computer.programming.basics]
+    difficulty: 5
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงค่าใด
+
+      ```python
+      n = 6
+      steps = 0
+      while n != 1:
+          if n % 2 == 0:
+              n = n // 2
+          else:
+              n = 3 * n + 1
+          steps = steps + 1
+      print(steps)
+      ```
+    answer: { value: 8 }
+    hints:
+      - "ทำตารางค่า n ทีละรอบ: 6 เป็นคู่ จึงได้ 3 ต่อไป 3 เป็นคี่ …"
+      - "นับจำนวนครั้งที่ n เปลี่ยนค่า จนกว่า n จะเป็น 1"
+    misconceptions:
+      - { match: 9, feedback: "ดูเหมือนนับจำนวนตัวเลขในลำดับ (รวม 6 ตัวแรก) แต่ steps เพิ่มเมื่อ n เปลี่ยนค่าเท่านั้น" }
+      - { match: 3, feedback: "อาจคิดว่าหาร 2 ไปเรื่อย ๆ จาก 6 แต่เมื่อ n เป็นคี่ ต้องคำนวณ 3n + 1" }
+    solution: "n: 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 เปลี่ยนค่า 8 ครั้ง แสดง 8"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p015
+    topics: [computer.programming.basics]
+    difficulty: 5
+    type: numeric
+    stem: |
+      โปรแกรมที่มีวงวนซ้อนกันนี้แสดงค่าใด
+
+      ```python
+      c = 0
+      for i in range(1, 4):
+          for j in range(i):
+              c = c + 1
+      print(c)
+      ```
+    answer: { value: 6 }
+    hints:
+      - "วงวนนอกให้ i = 1, 2, 3 แต่ละค่าของ i วงวนในวนกี่รอบ"
+      - "`range(i)` วน i รอบ"
+    misconceptions:
+      - { match: 9, feedback: "วงวนในไม่ได้วน 3 รอบทุกครั้ง จำนวนรอบเท่ากับ i ซึ่งเป็น 1, 2, 3" }
+      - { match: 3, feedback: "นั่นนับเฉพาะรอบของวงวนนอก แต่ c เพิ่มทุกรอบของวงวนใน" }
+    solution: "i = 1 วน 1 รอบ, i = 2 วน 2 รอบ, i = 3 วน 3 รอบ รวม c = 1 + 2 + 3 = 6"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p016
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: text
+    stem: |
+      โปรแกรมนี้แสดงอะไร
+
+      ```python
+      x = 3
+      y = x
+      x = 10
+      print(y)
+      ```
+    accepted: ["3"]
+    hints:
+      - "`y = x` คัดลอกค่าของ x ในขณะนั้นไปเก็บใน y"
+      - "หลังจากนั้นเปลี่ยน x แล้ว y เปลี่ยนตามหรือไม่"
+    misconceptions:
+      - { match: "10", feedback: "`y = x` ไม่ได้ผูก y ไว้กับ x ตลอดไป แค่นำค่าตอนนั้น (3) ไปเก็บ เมื่อ x เปลี่ยนเป็น 10 ค่าใน y ยังเป็น 3" }
+    solution: "y รับค่า 3 จาก x ตอนบรรทัดที่สอง การเปลี่ยน x เป็น 10 ภายหลังไม่กระทบ y จึงแสดง 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p017
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: mcq
+    stem: |
+      โปรแกรมถามอายุแล้วบอกอายุปีหน้า แต่เกิดข้อผิดพลาดเมื่อรัน เพราะอะไร
+
+      ```python
+      age = input("อายุ: ")
+      print(age + 1)
+      ```
+    choices:
+      - { id: a, text: "`input()` คืนค่าเป็นข้อความ (str) ต้องแปลงด้วย `int(...)` ก่อนบวก", correct: true }
+      - { id: b, text: "ชื่อตัวแปร `age` ใช้ไม่ได้", feedback: "`age` เป็นชื่อตัวแปรที่ถูกต้อง ขึ้นต้นด้วยตัวอักษรและไม่ใช่คำสงวน" }
+      - { id: c, text: "`print` แสดงผลการบวกไม่ได้", feedback: "`print(3 + 1)` แสดง 4 ได้ปกติ ปัญหาอยู่ที่ชนิดของ age" }
+      - { id: d, text: "ต้องเขียน `age = age + 1` ก่อน", feedback: "ยังผิดเหมือนเดิม เพราะ age เป็นข้อความ บวกกับตัวเลข 1 ไม่ได้" }
+    hints:
+      - "ค่าที่ผู้ใช้พิมพ์เข้ามาผ่าน input() มีชนิดข้อมูลเป็นอะไร"
+      - "Python บวกข้อความกับตัวเลขได้หรือไม่"
+    solution: "`input()` คืนค่าเป็น str เสมอ เช่น \"12\" ข้อความบวกกับตัวเลขไม่ได้ ต้องเขียน `age = int(input(\"อายุ: \"))` ก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p018
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: numeric
+    stem: |
+      โปรแกรมคิดค่าไฟแบบง่าย: 100 หน่วยแรกหน่วยละ 3 บาท หน่วยที่เกิน 100 หน่วยละ 4 บาท บ้านหนึ่งใช้ไฟ 150 หน่วย โปรแกรมแสดงค่าใด (บาท)
+
+      ```python
+      units = 150
+      if units <= 100:
+          bill = units * 3
+      else:
+          bill = 100 * 3 + (units - 100) * 4
+      print(bill)
+      ```
+    answer: { value: 500, unit: บาท }
+    hints:
+      - "150 <= 100 จริงหรือเท็จ โปรแกรมจะทำส่วนใด"
+      - "แยกคิด 100 หน่วยแรก และส่วนที่เกิน 100 หน่วย"
+    misconceptions:
+      - { match: 600, feedback: "นั่นคิดทุกหน่วยราคา 4 บาท แต่ 100 หน่วยแรกราคาหน่วยละ 3 บาท" }
+      - { match: 450, feedback: "นั่นคิดทุกหน่วยราคา 3 บาท แต่ 150 > 100 จึงทำส่วน else ที่คิด 50 หน่วยหลังราคา 4 บาท" }
+    solution: "150 > 100 จึงทำ else: bill = 100 × 3 + 50 × 4 = 300 + 200 = 500 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p019
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: numeric
+    stem: "`print(2 ** 3 + 1)` แสดงค่าใด"
+    answer: { value: 9 }
+    hints:
+      - "`**` คือยกกำลัง และทำก่อนการบวก"
+      - "คำนวณ $2^3$ ก่อนแล้วจึงบวก 1"
+    misconceptions:
+      - { match: 7, feedback: "`**` ไม่ใช่การคูณ `2 ** 3` คือ 2 ยกกำลัง 3 = 8 ไม่ใช่ 2 × 3" }
+      - { match: 16, feedback: "นั่นคือ $2^{3+1}$ แต่ยกกำลังทำก่อนบวก จึงเป็น $2^3 + 1$" }
+    solution: "`2 ** 3 = 8` แล้ว `8 + 1 = 9`"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p020
+    topics: [computer.programming.basics]
+    difficulty: 5
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงค่าใด
+
+      ```python
+      total = 0
+      for i in range(10, 0, -3):
+          total = total + i
+      print(total)
+      ```
+    answer: { value: 22 }
+    hints:
+      - "`range(10, 0, -3)` เริ่มที่ 10 ลดทีละ 3 และหยุดก่อนถึง 0"
+      - "เขียนค่า i ทุกตัวออกมาก่อนแล้วบวก"
+    misconceptions:
+      - { match: 21, feedback: "ยังมี i = 1 อีกตัว เพราะ 1 ยังมากกว่า 0 (ค่าหยุด) ลำดับคือ 10, 7, 4, 1" }
+      - { match: 55, feedback: "นั่นคือผลรวม 1 ถึง 10 ทุกจำนวน แต่ก้าวเป็น −3 จึงข้ามทีละ 3" }
+    solution: "i = 10, 7, 4, 1 (ตัวถัดไปคือ −2 ซึ่งเลย 0 แล้ว) total = 10 + 7 + 4 + 1 = 22"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p021
+    topics: [computer.programming.basics]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นคำสั่ง Python ที่สร้างตัวแปร `age` เก็บค่า 12"
+    choices:
+      - { id: a, text: "`age = 12`", correct: true }
+      - { id: b, text: "`12 = age`", feedback: "ชื่อตัวแปรต้องอยู่ทางซ้ายของ `=` ค่าที่จะเก็บอยู่ทางขวา" }
+      - { id: c, text: "`age == 12`", feedback: "`==` คือการเปรียบเทียบ ได้ผลเป็น True หรือ False ไม่ได้เก็บค่า" }
+      - { id: d, text: "`print(age)`", feedback: "คำสั่งนี้แสดงค่าของ age แต่ไม่ได้สร้างหรือกำหนดค่า" }
+    hints:
+      - "การกำหนดค่าใช้เครื่องหมายเท่ากับกี่ตัว"
+      - "ชื่อตัวแปรอยู่ข้างใดของเครื่องหมาย"
+    solution: "`age = 12` นำค่า 12 ทางขวาไปเก็บในตัวแปร age ทางซ้าย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p022
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: expression
+    stem: |
+      ให้ n เป็นจำนวนเต็มบวก หลังโปรแกรมนี้ทำงาน total มีค่าเท่าใด (ตอบเป็นนิพจน์ในรูปของ n)
+
+      ```python
+      total = 0
+      for i in range(n):
+          total = total + 3
+      ```
+    prefix: "total ="
+    answer: { latex: "3n", variables: [n] }
+    hints:
+      - "`range(n)` วนกี่รอบ"
+      - "แต่ละรอบ total เพิ่มเท่าใด"
+    misconceptions:
+      - { match: "3n+3", feedback: "`range(n)` ให้ 0 ถึง n − 1 รวม n รอบพอดี ไม่ใช่ n + 1 รอบ" }
+      - { match: "n+3", feedback: "การบวก 3 เกิดซ้ำทุกรอบ จึงต้องคูณ 3 ด้วยจำนวนรอบ" }
+    solution: "`range(n)` วน n รอบ แต่ละรอบบวก 3 จึงได้ total = 3n เช่น n = 7 ได้ 21"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p023
+    topics: [computer.programming.basics]
+    difficulty: 2
+    type: numeric
+    stem: |
+      น้องเก็บค่าขนมวันละ 40 บาท ตั้งแต่วันจันทร์ถึงวันศุกร์ โปรแกรมนี้แสดงค่าใด (บาท)
+
+      ```python
+      money = 0
+      for day in range(5):
+          money = money + 40
+      print(money)
+      ```
+    answer: { value: 200, unit: บาท }
+    hints:
+      - "`range(5)` วนกี่รอบ"
+      - "money เพิ่มรอบละ 40"
+    misconceptions:
+      - { match: 160, feedback: "`range(5)` ให้ 0, 1, 2, 3, 4 รวม 5 รอบ ไม่ใช่ 4 รอบ" }
+      - { match: 240, feedback: "`range(5)` วน 5 รอบพอดี ไม่ได้รวมรอบที่ day = 5" }
+    solution: "วน 5 รอบ รอบละ 40 บาท money = 5 × 40 = 200 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p024
+    topics: [computer.programming.basics]
+    difficulty: 3
+    type: mcq
+    stem: |
+      โปรแกรมนี้ควรแสดง "ผ่าน" เมื่อได้ 50 คะแนนขึ้นไป ชุดคะแนนใดเหมาะที่สุดสำหรับทดสอบว่าเงื่อนไขเขียนถูก
+
+      ```python
+      if score >= 50:
+          print("ผ่าน")
+      else:
+          print("ไม่ผ่าน")
+      ```
+    choices:
+      - { id: a, text: "49, 50, 51", correct: true }
+      - { id: b, text: "10, 90", feedback: "ทั้งสองค่าอยู่ห่างจากขอบมาก ถ้าเขียนผิดเป็น `score > 50` ก็ยังได้ผลถูกทั้งคู่ จึงจับความผิดไม่ได้" }
+      - { id: c, text: "50, 50, 50", feedback: "ลองค่าเดิมซ้ำไม่ได้ข้อมูลเพิ่ม และไม่ได้ทดสอบฝั่งที่ไม่ผ่านเลย" }
+      - { id: d, text: "0, 100", feedback: "ค่าต่ำสุดและสูงสุดก็มีประโยชน์ แต่ความผิดที่พบบ่อยอยู่ที่ขอบของเงื่อนไข (50) ซึ่งชุดนี้ไม่ได้ลอง" }
+    hints:
+      - "ความผิดที่พบบ่อยคือสับสน `>` กับ `>=` ค่าใดที่ทำให้สองแบบนี้ให้ผลต่างกัน"
+      - "กรณีทดสอบที่ดีมีค่าบนขอบพอดี และค่าที่อยู่สองข้างของขอบ"
+    solution: "49 ต้องได้ \"ไม่ผ่าน\" 50 และ 51 ต้องได้ \"ผ่าน\" ถ้าเขียนผิดเป็น `score > 50` ค่า 50 จะให้ผลผิดทันที ชุด 49, 50, 51 จึงจับความผิดที่ขอบได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

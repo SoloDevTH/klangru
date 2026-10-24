@@ -1,0 +1,81 @@
+# National curriculum in England: computing programmes of study (Department for Education) เฉพาะข้อกำหนดตามกฎหมาย (statutory requirements)
+# ไม่เก็บ Purpose of study, Aims, ย่อหน้านำของช่วงชั้น และ "Notes and guidance (non-statutory)"
+# ที่มา: ใช้โครง (หัวข้อและลำดับ) จากหน้า HTML ของ GOV.UK ผ่าน Content API (https://www.gov.uk/api/content/...) แต่ข้อความทุกข้อคัดจาก PDF ฉบับทางการ
+#   เพราะหน้า HTML ถูกปรับตามรูปแบบของ GOV.UK (เขียนตัวเลขแทนคำ เช่น "1 more" แทน "one more") และบางข้อต่างจาก PDF
+# ตรวจ: จับคู่ทุกข้อจาก HTML กับ bullet ใน PDF โดยอัตโนมัติ ตรวจข้อที่ไม่ตรงทีละข้อ และตรวจย้อนว่า bullet ใน PDF ที่เป็นข้อกำหนดมีครบ
+# รหัส: ต้นฉบับไม่มีรหัส รหัสทั้งหมด (UKNC-...) เป็นรหัสที่เราตั้ง รูปแบบ UKNC-<วิชา>-<ปีหรือช่วงชั้น>-<หัวข้อ>-<ลำดับ> ลำดับตามที่ปรากฏในต้นฉบับ
+#   วิชา MA = mathematics, SC = science, CO = computing; strand = ปีหรือช่วงชั้นตามหัวข้อของต้นฉบับ; standard = หัวข้อย่อยในต้นฉบับ
+# level: Y1–Y6 = Year, Y1-2 / Y3-4 / Y5-6 = ช่วงปีของ Working scientifically, KS1–KS4 = key stage
+# bullet ย่อยในต้นฉบับต่อท้ายข้อหลักด้วย " • " ข้อความในวงเล็บเหลี่ยม [ ] เป็นตัวอย่างที่ไม่บังคับตามต้นฉบับ
+# จำนวน: 25 ข้อ (KS1 6, KS2 7, KS3 9, KS4 3)
+id: uk-nc-computing
+title: "National curriculum in England: computing programmes of study (key stages 1 to 4)"
+short: "England National Curriculum (Computing)"
+kind: national-curriculum
+subjects: [computer]
+language: en
+sources:
+  - title: "National curriculum in England: computing programmes of study - key stages 1 and 2 (PDF, DFE-00171-2013)"
+    url: "https://assets.publishing.service.gov.uk/media/5a7c576be5274a1b00423213/PRIMARY_national_curriculum_-_Computing.pdf"
+    publisher: "Department for Education"
+    retrieved: "2026-10-24"
+  - title: "National curriculum in England: computing programmes of study - key stages 3 and 4 (PDF, DFE-00191-2013)"
+    url: "https://assets.publishing.service.gov.uk/media/5a7cb981ed915d682236228d/SECONDARY_national_curriculum_-_Computing.pdf"
+    publisher: "Department for Education"
+    retrieved: "2026-10-24"
+  - title: "National curriculum in England: computing programmes of study (HTML, ใช้เป็นโครง)"
+    url: "https://www.gov.uk/government/publications/national-curriculum-in-england-computing-programmes-of-study/national-curriculum-in-england-computing-programmes-of-study"
+    publisher: "Department for Education (GOV.UK)"
+    retrieved: "2026-10-24"
+copyright: "© Crown copyright 2013–2014 (Department for Education) เอกสาร PDF ระบุ \"You may re-use this information (excluding logos) free of charge in any format or medium, under the terms of the Open Government Licence\" หน้า GOV.UK ของ programme of study ระบุ \"This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated\" (ตรวจ 2026-10-24) OGL v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) อนุญาตให้ \"copy, publish, distribute and transmit the Information; adapt the Information; exploit the Information commercially and non-commercially\" โดยต้อง \"acknowledge the source of the Information ... and, where possible, provide a link to this licence\" ถ้าผู้ให้ข้อมูลไม่กำหนดข้อความแสดงที่มา ให้ใช้ \"Contains public sector information licensed under the Open Government Licence v3.0.\" ไม่ครอบคลุมโลโก้ ตราของหน่วยงาน และสิทธิของบุคคลที่สาม ห้ามสื่อว่า DfE รับรองคลังรู้"
+completeness: full-text
+strands:
+  - id: "KS1"
+    title: "Key stage 1"
+    standards:
+      - id: "UKNC-CO-KS1"
+        text: "Pupils should be taught to"
+        indicators:
+          - { id: "UKNC-CO-KS1-01", level: "KS1", text: "understand what algorithms are; how they are implemented as programs on digital devices; and that programs execute by following precise and unambiguous instructions" }
+          - { id: "UKNC-CO-KS1-02", level: "KS1", text: "create and debug simple programs" }
+          - { id: "UKNC-CO-KS1-03", level: "KS1", text: "use logical reasoning to predict the behaviour of simple programs" }
+          - { id: "UKNC-CO-KS1-04", level: "KS1", text: "use technology purposefully to create, organise, store, manipulate and retrieve digital content" }
+          - { id: "UKNC-CO-KS1-05", level: "KS1", text: "recognise common uses of information technology beyond school" }
+          - { id: "UKNC-CO-KS1-06", level: "KS1", text: "use technology safely and respectfully, keeping personal information private; identify where to go for help and support when they have concerns about content or contact on the internet or other online technologies." }
+  - id: "KS2"
+    title: "Key stage 2"
+    standards:
+      - id: "UKNC-CO-KS2"
+        text: "Pupils should be taught to"
+        indicators:
+          - { id: "UKNC-CO-KS2-01", level: "KS2", text: "design, write and debug programs that accomplish specific goals, including controlling or simulating physical systems; solve problems by decomposing them into smaller parts" }
+          - { id: "UKNC-CO-KS2-02", level: "KS2", text: "use sequence, selection, and repetition in programs; work with variables and various forms of input and output" }
+          - { id: "UKNC-CO-KS2-03", level: "KS2", text: "use logical reasoning to explain how some simple algorithms work and to detect and correct errors in algorithms and programs" }
+          - { id: "UKNC-CO-KS2-04", level: "KS2", text: "understand computer networks including the internet; how they can provide multiple services, such as the world wide web; and the opportunities they offer for communication and collaboration" }
+          - { id: "UKNC-CO-KS2-05", level: "KS2", text: "use search technologies effectively, appreciate how results are selected and ranked, and be discerning in evaluating digital content" }
+          - { id: "UKNC-CO-KS2-06", level: "KS2", text: "select, use and combine a variety of software (including internet services) on a range of digital devices to design and create a range of programs, systems and content that accomplish given goals, including collecting, analysing, evaluating and presenting data and information" }
+          - { id: "UKNC-CO-KS2-07", level: "KS2", text: "use technology safely, respectfully and responsibly; recognise acceptable/unacceptable behaviour; identify a range of ways to report concerns about content and contact." }
+  - id: "KS3"
+    title: "Key stage 3"
+    standards:
+      - id: "UKNC-CO-KS3"
+        text: "Pupils should be taught to"
+        indicators:
+          - { id: "UKNC-CO-KS3-01", level: "KS3", text: "design, use and evaluate computational abstractions that model the state and behaviour of real-world problems and physical systems" }
+          - { id: "UKNC-CO-KS3-02", level: "KS3", text: "understand several key algorithms that reflect computational thinking [for example, ones for sorting and searching]; use logical reasoning to compare the utility of alternative algorithms for the same problem" }
+          - { id: "UKNC-CO-KS3-03", level: "KS3", text: "use two or more programming languages, at least one of which is textual, to solve a variety of computational problems; make appropriate use of data structures [for example, lists, tables or arrays]; design and develop modular programs that use procedures or functions" }
+          - { id: "UKNC-CO-KS3-04", level: "KS3", text: "understand simple Boolean logic [for example, AND, OR and NOT] and some of its uses in circuits and programming; understand how numbers can be represented in binary, and be able to carry out simple operations on binary numbers [for example, binary addition, and conversion between binary and decimal]" }
+          - { id: "UKNC-CO-KS3-05", level: "KS3", text: "understand the hardware and software components that make up computer systems, and how they communicate with one another and with other systems" }
+          - { id: "UKNC-CO-KS3-06", level: "KS3", text: "understand how instructions are stored and executed within a computer system; understand how data of various types (including text, sounds and pictures) can be represented and manipulated digitally, in the form of binary digits" }
+          - { id: "UKNC-CO-KS3-07", level: "KS3", text: "undertake creative projects that involve selecting, using, and combining multiple applications, preferably across a range of devices, to achieve challenging goals, including collecting and analysing data and meeting the needs of known users" }
+          - { id: "UKNC-CO-KS3-08", level: "KS3", text: "create, re-use, revise and re-purpose digital artefacts for a given audience, with attention to trustworthiness, design and usability" }
+          - { id: "UKNC-CO-KS3-09", level: "KS3", text: "understand a range of ways to use technology safely, respectfully, responsibly and securely, including protecting their online identity and privacy; recognise inappropriate content, contact and conduct and know how to report concerns." }
+  - id: "KS4"
+    title: "Key stage 4"
+    standards:
+      - id: "UKNC-CO-KS4"
+        text: "Pupils should be taught to"
+        indicators:
+          - { id: "UKNC-CO-KS4-01", level: "KS4", text: "develop their capability, creativity and knowledge in computer science, digital media and information technology" }
+          - { id: "UKNC-CO-KS4-02", level: "KS4", text: "develop and apply their analytic, problem-solving, design, and computational thinking skills" }
+          - { id: "UKNC-CO-KS4-03", level: "KS4", text: "understand how changes in technology affect safety, including new ways to protect their online privacy and identity, and how to identify and report a range of concerns.", note: "ข้อความตาม PDF ฉบับทางการ หน้า HTML ของ GOV.UK ไม่มีคำว่า \"identify and\"" }
