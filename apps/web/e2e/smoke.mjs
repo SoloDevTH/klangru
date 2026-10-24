@@ -100,7 +100,11 @@ async function answerCurrent(topicId, { wrongFirst = false } = {}) {
     await check();
     await page.locator(".feedback.ok").waitFor({ timeout: 10000 });
   } else {
-    while (await page.getByRole("button", { name: /ขอคำใบ้/ }).count()) await page.getByRole("button", { name: /ขอคำใบ้/ }).click();
+    // กดตามจำนวนคำใบ้ที่รู้อยู่แล้ว และรอแต่ละข้อแสดงก่อน (ถ้านับปุ่มทันทีหลังคลิก อาจเจอปุ่มสุดท้ายที่กำลังจะหายแล้วรอกดจนหมดเวลา)
+    for (let k = 1; k <= p.hints.length; k++) {
+      await page.getByRole("button", { name: `ขอคำใบ้ (${k}/${p.hints.length})` }).click();
+      await page.getByText(`คำใบ้ ${k}`, { exact: true }).waitFor();
+    }
     await page.getByRole("button", { name: "ดูเฉลย" }).click();
   }
   return p;
