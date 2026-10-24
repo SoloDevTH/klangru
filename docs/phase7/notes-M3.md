@@ -60,3 +60,13 @@
 - `uk-nc-mathematics:UKNC-MA-KS3-R-02 → full` `UKNC-MA-KS3-R-04 → full` `UKNC-MA-KS3-R-05 → full` `UKNC-MA-KS3-R-08 → full` `UKNC-MA-KS3-N-10 → full` (รวมร้อยละที่มากกว่า 100 ใน p022) `UKNC-MA-KS3-N-11 → full` `UKNC-MA-KS3-R-09 → partial` (มีแต่สัดส่วนตรง) `UKNC-MA-KS3-R-10 → partial` (ยังไม่มีความหนาแน่น) `UKNC-MA-KS3-R-01 → partial`
 - `au-ac9-mathematics:AC9M6N07 → full` `AC9M7N08 → full` `AC9M8M05 → full` `AC9M9M04 → partial` (มีร้อยละความคลาดเคลื่อน ยังไม่มีความคลาดเคลื่อนสัมบูรณ์และสัมพัทธ์ในการวัด) `AC9M9M05 → partial`
 - หัวข้อใหม่ที่ควรมี: การแปรผันตรงและผกผัน (UKNC-MA-KS3-R-09, UKNC-MA-KS4-R-03) หน่วยผสม เช่น ความหนาแน่นและความดัน (UKNC-MA-KS4-R-02) ความคลาดเคลื่อนของการวัด (AC9M9M04, AC9M10M04, N-Q.3)
+
+## rearranging-formulas (`math.algebra.rearrange-formula`)
+
+- โจทย์ 10 → 20 (p011–p020) ความยาก 1:3 · 2:4 · 3:6 · 4:5 · 5:2 ชนิด mcq, numeric, expression, order สถานการณ์ไทยใหม่: BMI ในการตรวจสุขภาพโรงเรียน ช่างซ่อมนาฬิกาลูกตุ้ม ที่นา 1 ไร่รูปคางหมู
+- ตัวอย่างแสดงวิธีทำ 2 (สูตรเส้นรอบรูป, สูตรคาบลูกตุ้มที่มีรากที่สอง) คำถามชวนคิด 2 (p001, p003)
+- ภาพวาดเอง 2: `function-machine.svg` (บทเรียน ทางไปและทางกลับของสูตรองศา) `trapezoid-field.svg` (p020)
+- บทเรียนเพิ่ม: ตัวแปรติดกำลังสองหรือราก ตัวแปรที่ต้องการอยู่สองที่ (รวมพจน์แล้วดึงตัวร่วม) และเงื่อนไขเมื่อหารด้วยนิพจน์ที่อาจเป็นศูนย์
+- ตัวชี้วัด: `us-ccss-math:A-CED.4 → full` (คงเดิม รวมกฎของโอห์มซึ่งเป็นตัวอย่างในมาตรฐาน) เสนอเพิ่ม `us-ccss-math:A-REI.3 → partial` (สมการเชิงเส้นที่สัมประสิทธิ์เป็นตัวอักษร p017)
+- `uk-nc-mathematics:UKNC-MA-KS3-A-05 → full` (ใช้สูตรมาตรฐานและเปลี่ยนตัวแปรต้นเรื่อง) `UKNC-MA-KS3-A-02 → partial` (แทนค่าในสูตรวิทยาศาสตร์) `au-ac9-mathematics:AC9M7A01 → full` `au-ac9-mathematics:AC9M8A01 → partial` (ส่วน rearrange)
+- หัวข้อใหม่ที่ควรมี: เศษส่วนพีชคณิต (UKNC-MA-KS4-A-01 ส่วนในวงเล็บปีกกา) ซึ่งจำเป็นต่อการจัดสูตรอย่าง $\tfrac1f = \tfrac1u + \tfrac1v$

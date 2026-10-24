@@ -174,3 +174,173 @@ problems:
     solution: "$n = \\dfrac{C - 38}{4} = \\dfrac{618 - 38}{4} = \\dfrac{580}{4} = 145$ หน่วย ตรวจ: $4(145) + 38 = 580 + 38 = 618$ บาท ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.rearr.p011
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 1
+    type: expression
+    stem: "เส้นรอบรูปของสี่เหลี่ยมจัตุรัสคือ $P = 4s$ เมื่อ $s$ คือความยาวด้าน จัดสูตรให้ $s$ อยู่ข้างเดียว"
+    prefix: "s ="
+    answer: { latex: "\\frac{P}{4}", variables: [P] }
+    hints:
+      - "$s$ ถูกคูณด้วย 4"
+      - "แกะการคูณด้วยการหาร 4 ทั้งสองข้าง"
+    misconceptions:
+      - { match: "4P", feedback: "$s$ ถูกคูณด้วย 4 จึงต้องหารด้วย 4 ไม่ใช่คูณ ลองตรวจ: ด้าน 5 ได้ $P = 20$ แต่ $4 \\times 20 = 80$ ไม่ใช่ 5" }
+      - { match: "P-4", feedback: "4 คูณอยู่กับ $s$ ไม่ได้บวกอยู่ จึงแกะด้วยการหาร ไม่ใช่การลบ" }
+    solution: "$P = 4s$ หาร 4 ทั้งสองข้าง ได้ $s = \\dfrac{P}{4}$ ตรวจ: ด้าน 5 ได้ $P = 20$ และ $\\tfrac{20}{4} = 5$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p012
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 1
+    type: mcq
+    stem: "กฎข้อที่สองของนิวตันคือ $F = ma$ จัดสูตรให้ความเร่ง $a$ อยู่ข้างเดียว ได้ข้อใด"
+    choices:
+      - { id: a, text: "$a = \\dfrac{F}{m}$", correct: true }
+      - { id: b, text: "$a = Fm$", feedback: "$a$ ถูกคูณด้วย $m$ จึงต้องหารด้วย $m$ ไม่ใช่คูณ" }
+      - { id: c, text: "$a = \\dfrac{m}{F}$", feedback: "กลับเศษกับส่วน หาร $m$ ทั้งสองข้างของ $F = ma$ ได้ $\\tfrac{F}{m} = a$" }
+      - { id: d, text: "$a = F - m$", feedback: "$m$ คูณอยู่กับ $a$ ไม่ได้บวกอยู่ จึงแกะด้วยการหาร" }
+    hints:
+      - "ใน $F = ma$ ตัวแปร $a$ ถูกคูณด้วยอะไร"
+      - "หารสิ่งนั้นทั้งสองข้าง"
+    solution: "หาร $m$ ทั้งสองข้าง: $\\dfrac{F}{m} = a$ ตรวจ: $m = 2$, $a = 3$ ได้ $F = 6$ และ $\\tfrac{6}{2} = 3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p013
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 2
+    type: expression
+    stem: "กฎของโอห์มคือ $V = IR$ เมื่อ $V$ คือความต่างศักย์ $I$ คือกระแสไฟฟ้า และ $R$ คือความต้านทาน จัดสูตรให้ $R$ อยู่ข้างเดียว"
+    prefix: "R ="
+    answer: { latex: "\\frac{V}{I}", variables: [V, I] }
+    hints:
+      - "$R$ ถูกคูณด้วย $I$"
+      - "หาร $I$ ทั้งสองข้าง"
+    misconceptions:
+      - { match: "VI", feedback: "$R$ ถูกคูณด้วย $I$ จึงต้องหารด้วย $I$ ไม่ใช่คูณ" }
+      - { match: "\\frac{I}{V}", feedback: "กลับเศษกับส่วน หาร $I$ ทั้งสองข้างของ $V = IR$ ได้ $\\tfrac{V}{I} = R$" }
+    solution: "หาร $I$ ทั้งสองข้าง: $R = \\dfrac{V}{I}$ ตรวจ: $I = 2\\ \\mathrm{A}$, $R = 6\\ \\Omega$ ได้ $V = 12\\ \\mathrm{V}$ และ $\\tfrac{12}{2} = 6$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p014
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 2
+    type: numeric
+    stem: "ในการตรวจสุขภาพประจำปีของโรงเรียน ดัชนีมวลกายคำนวณจาก $\\text{BMI} = \\dfrac{m}{h^2}$ เมื่อ $m$ คือมวล (kg) และ $h$ คือส่วนสูง (m) นักเรียนคนหนึ่งสูง $1.6\\ \\mathrm{m}$ และมี BMI เท่ากับ $22$ นักเรียนคนนี้มีมวลกี่กิโลกรัม (ตอบทศนิยม 2 ตำแหน่ง ในหน่วย kg)"
+    answer: { value: 56.32, tolerance: 0.05, unit: kg }
+    hints:
+      - "จัดสูตรให้ $m$ อยู่ข้างเดียว: $m$ ถูกหารด้วย $h^2$"
+      - "$m = \\text{BMI} \\times h^2$ อย่าลืมยกกำลังสองส่วนสูงก่อน"
+    misconceptions:
+      - { match: 35.2, feedback: "ดูเหมือนคูณด้วย $h = 1.6$ ครั้งเดียว สูตรหารด้วย $h^2$ จึงต้องคูณด้วย $1.6^2 = 2.56$" }
+      - { match: 8.59, feedback: "ดูเหมือนหาร $22$ ด้วย $h^2$ แต่ $m$ ถูกหารด้วย $h^2$ ต้องแกะด้วยการคูณ" }
+    solution: "$m = \\text{BMI} \\times h^2 = 22 \\times 1.6^2 = 22 \\times 2.56 = 56.32\\ \\mathrm{kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p015
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 3
+    type: expression
+    stem: "พื้นที่วงกลมคือ $A = \\pi r^2$ จัดสูตรให้รัศมี $r$ อยู่ข้างเดียว (รัศมีเป็นบวก)"
+    prefix: "r ="
+    answer: { latex: "\\sqrt{\\frac{A}{\\pi}}", variables: [A] }
+    hints:
+      - "หาร $\\pi$ ทั้งสองข้างก่อน จะได้ $r^2$ อยู่ข้างเดียว"
+      - "แกะกำลังสองด้วยการถอดรากที่สองทั้งสองข้าง"
+    misconceptions:
+      - { match: "\\frac{A}{\\pi}", feedback: "นั่นคือ $r^2$ ยังต้องถอดรากที่สองอีกครั้ง" }
+      - { match: "\\frac{\\sqrt{A}}{\\pi}", feedback: "ต้องถอดรากทั้ง $\\tfrac{A}{\\pi}$ ไม่ใช่เฉพาะ $A$ เพราะ $\\pi$ อยู่ใต้รากด้วยตอนที่หารแล้ว" }
+    solution: "$A = \\pi r^2$ → $r^2 = \\dfrac{A}{\\pi}$ → $r = \\sqrt{\\dfrac{A}{\\pi}}$ ตรวจ: $r = 2$ ได้ $A = 4\\pi$ และ $\\sqrt{\\tfrac{4\\pi}{\\pi}} = 2$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p016
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 3
+    type: expression
+    stem: "สมการเส้นตรงคือ $y = mx + c$ จัดสูตรให้ $x$ อยู่ข้างเดียว"
+    prefix: "x ="
+    answer: { latex: "\\frac{y-c}{m}", variables: [y, m, c] }
+    hints:
+      - "ชั้นนอกสุดคือการบวก $c$ แกะก่อนด้วยการลบ $c$ ทั้งสองข้าง"
+      - "จากนั้นหาร $m$ ทั้งข้าง (ทั้งก้อน $y - c$)"
+    misconceptions:
+      - { match: "\\frac{y}{m}-c", feedback: "แกะผิดลำดับ ต้องลบ $c$ ก่อนหาร $m$ ถ้าหารก่อน ต้องหาร $c$ ด้วย ได้ $\\tfrac{y}{m} - \\tfrac{c}{m}$" }
+      - { match: "\\frac{y+c}{m}", feedback: "$c$ ถูกบวกอยู่ จึงต้องลบ $c$ ทั้งสองข้าง ไม่ใช่บวก" }
+    solution: "$y = mx + c$ → $y - c = mx$ → $x = \\dfrac{y - c}{m}$ ตรวจ: $m = 2$, $c = 1$, $x = 3$ ได้ $y = 7$ และ $\\tfrac{7 - 1}{2} = 3$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p017
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 4
+    type: expression
+    stem: "จัดสมการ $kx + 3 = 2x + p$ ให้ $x$ อยู่ข้างเดียว (เมื่อ $k \\ne 2$)"
+    prefix: "x ="
+    answer: { latex: "\\frac{p-3}{k-2}", variables: [k, p] }
+    hints:
+      - "$x$ อยู่ทั้งสองข้าง ย้ายพจน์ที่มี $x$ ไปข้างซ้าย และพจน์ที่ไม่มี $x$ ไปข้างขวา"
+      - "ได้ $kx - 2x = p - 3$ แล้วดึง $x$ เป็นตัวร่วม"
+      - "หารด้วย $k - 2$ ทั้งสองข้าง"
+    misconceptions:
+      - { match: "\\frac{p-3}{k}", feedback: "ยังไม่ได้ย้าย $2x$ มารวมกัน $x$ อยู่ทั้งสองข้าง ต้องรวมพจน์ $kx - 2x = x(k - 2)$ ก่อนหาร" }
+      - { match: "\\frac{p+3}{k-2}", feedback: "ย้าย $+3$ ไปอีกข้างต้องเป็น $-3$" }
+    solution: "$kx - 2x = p - 3$ → $x(k - 2) = p - 3$ → $x = \\dfrac{p - 3}{k - 2}$ ตรวจ: $k = 5$, $p = 9$ ได้ $x = 2$ และ $5(2) + 3 = 13 = 2(2) + 9$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p018
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 5
+    type: expression
+    stem: "จัดสูตร $y = \\dfrac{x + 2}{x}$ ให้ $x$ อยู่ข้างเดียว (เมื่อ $y \\ne 1$)"
+    prefix: "x ="
+    answer: { latex: "\\frac{2}{y-1}", variables: [y] }
+    hints:
+      - "คูณ $x$ ทั้งสองข้างเพื่อกำจัดตัวส่วน"
+      - "ย้ายพจน์ที่มี $x$ ไปข้างเดียวกัน แล้วดึง $x$ เป็นตัวร่วม"
+      - "หารด้วยวงเล็บที่เหลือ"
+    misconceptions:
+      - { match: "\\frac{2}{y}", feedback: "ดูเหมือนตัด $x$ ทิ้งจาก $\\tfrac{x + 2}{x}$ ไม่ได้ ต้องคูณ $x$ ได้ $xy = x + 2$ แล้วรวมพจน์ $x(y - 1) = 2$" }
+      - { match: "\\frac{2}{y+1}", feedback: "ย้าย $x$ จากข้างขวามาข้างซ้ายต้องเป็น $xy - x$ ได้ตัวร่วม $(y - 1)$ ไม่ใช่ $(y + 1)$" }
+    solution: "$xy = x + 2$ → $xy - x = 2$ → $x(y - 1) = 2$ → $x = \\dfrac{2}{y - 1}$ ตรวจ: $x = 2$ ได้ $y = \\tfrac{4}{2} = 2$ และ $\\tfrac{2}{2 - 1} = 2$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p019
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 4
+    type: numeric
+    stem: "ช่างซ่อมนาฬิกาลูกตุ้มต้องการให้ลูกตุ้มแกว่งไปกลับหนึ่งรอบใช้เวลา $T = 2\\ \\mathrm{s}$ พอดี สูตรคาบคือ $T = 2\\pi\\sqrt{\\dfrac{L}{g}}$ เมื่อ $g = 9.8\\ \\mathrm{m/s^2}$ ก้านลูกตุ้มต้องยาวกี่เมตร (ตอบทศนิยม 2 ตำแหน่ง ในหน่วย m)"
+    answer: { value: 0.99, tolerance: 0.01, unit: m }
+    hints:
+      - "หาร $2\\pi$ ทั้งสองข้างให้รากอยู่ข้างเดียว แล้วยกกำลังสอง"
+      - "จะได้ $L = \\dfrac{gT^2}{4\\pi^2}$"
+    misconceptions:
+      - { match: 3.12, feedback: "ดูเหมือนลืมยกกำลังสอง ได้ $\\tfrac{gT}{2\\pi}$ การแกะรากที่สองต้องยกกำลังสองทั้ง $\\tfrac{T}{2\\pi}$" }
+      - { match: 3.97, feedback: "ดูเหมือนยกกำลังสองแค่ $T$ แต่ไม่ยกกำลังสอง $2$ ของ $2\\pi$ ตัวส่วนต้องเป็น $(2\\pi)^2 = 4\\pi^2$" }
+    solution: "$L = \\dfrac{gT^2}{4\\pi^2} = \\dfrac{9.8 \\times 4}{4\\pi^2} = \\dfrac{9.8}{\\pi^2} \\approx 0.99\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.rearr.p020
+    topics: [math.algebra.rearrange-formula]
+    difficulty: 3
+    type: numeric
+    stem: "ที่นาแปลงหนึ่งเป็นรูปสี่เหลี่ยมคางหมู มีพื้นที่ 1 ไร่ ($1{,}600\\ \\mathrm{m^2}$) ด้านคู่ขนานด้านหนึ่งยาว $30\\ \\mathrm{m}$ และระยะห่างระหว่างด้านคู่ขนานคือ $40\\ \\mathrm{m}$ ด้านคู่ขนานอีกด้าน $b$ ยาวกี่เมตร (สูตร $A = \\tfrac12(a + b)h$ ตอบในหน่วย m)"
+    figure: { src: trapezoid-field.svg, alt: "รูปสี่เหลี่ยมคางหมู ด้านขนานด้านบนยาว 30 m ด้านขนานด้านล่างยาว b ซึ่งไม่ทราบค่า เส้นประแสดงความสูง 40 m ตั้งฉากกับฐาน ข้างในเขียนพื้นที่ 1,600 ตารางเมตร" }
+    answer: { value: 50, unit: m }
+    hints:
+      - "จัดสูตรให้ $b$ อยู่ข้างเดียว: คูณ 2 แล้วหาร $h$ ก่อน"
+      - "ได้ $a + b = \\dfrac{2A}{h}$ แล้วลบ $a$"
+    misconceptions:
+      - { match: 80, feedback: "นั่นคือ $a + b$ ยังต้องลบด้าน $a = 30\\ \\mathrm{m}$ ออก" }
+      - { match: 10, feedback: "ดูเหมือนลืมคูณ 2 (ได้ $\\tfrac{A}{h} - a$) ต้องแกะ $\\tfrac12$ ด้วยการคูณ 2 ทั้งสองข้าง" }
+    solution: "$2A = (a + b)h$ → $a + b = \\dfrac{2A}{h}$ → $b = \\dfrac{2A}{h} - a = \\dfrac{3{,}200}{40} - 30 = 80 - 30 = 50\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

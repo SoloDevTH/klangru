@@ -167,3 +167,182 @@ problems:
     solution: "$0 = (12\\ \\mathrm{m/s})^2 + 2a(30\\ \\mathrm{m})$ → $60a = -144$ → $a = -2.4\\ \\mathrm{m/s^2}$ ขนาดของความเร่งจึงเป็น $2.4\\ \\mathrm{m/s^2}$ (เครื่องหมายลบบอกว่าความเร่งมีทิศตรงข้ามกับการเคลื่อนที่) ตรวจ: ใช้เวลา $t = \\tfrac{0 - 12}{-2.4} = 5\\ \\mathrm{s}$ และ $s = \\tfrac{(12 + 0)(5)}{2} = 30\\ \\mathrm{m}$ ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: phy.suvat.p011
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 1
+    type: numeric
+    stem: "รถยนต์เร่งอย่างสม่ำเสมอจาก $10\\ \\mathrm{m/s}$ เป็น $20\\ \\mathrm{m/s}$ ในเวลา $4\\ \\mathrm{s}$ รถเคลื่อนที่ได้ระยะทางเท่าใดในช่วงนี้ (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 60, tolerance: 0.1, unit: m }
+    hints:
+      - "รู้ $u$, $v$ และ $t$ ไม่รู้และไม่ถาม $a$"
+      - "ใช้ $s = \\dfrac{(u + v)t}{2}$"
+    misconceptions:
+      - { match: 80, feedback: "ดูเหมือนใช้ความเร็วปลาย $20\\ \\mathrm{m/s}$ ตลอดช่วง แต่รถเร็วขึ้นจาก $10$ ต้องใช้ความเร็วเฉลี่ย $15\\ \\mathrm{m/s}$" }
+      - { match: 40, feedback: "ดูเหมือนใช้ความเร็วต้น $10\\ \\mathrm{m/s}$ ตลอดช่วง ต้องใช้ความเร็วเฉลี่ย $\\tfrac{u + v}{2}$" }
+    solution: "$s = \\dfrac{(10 + 20)(4)}{2} = 60\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p012
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 1
+    type: mcq
+    stem: "กราฟความเร็ว–เวลาของวัตถุที่เคลื่อนที่ด้วยความเร่งคงตัว (ไม่เป็นศูนย์) มีลักษณะอย่างไร"
+    choices:
+      - { id: a, text: "เส้นตรงที่เอียง", correct: true }
+      - { id: b, text: "เส้นตรงแนวนอน", feedback: "เส้นแนวนอนหมายถึงความเร็วคงที่ ความเร่งเป็นศูนย์" }
+      - { id: c, text: "เส้นโค้งพาราโบลา", feedback: "พาราโบลาคือรูปของกราฟ **ตำแหน่ง**–เวลา ($s = ut + \\tfrac12 at^2$) ส่วนกราฟความเร็ว–เวลาเป็นเส้นตรงเพราะ $v = u + at$" }
+      - { id: d, text: "เส้นโค้งที่ชันขึ้นเรื่อย ๆ", feedback: "กราฟที่ชันขึ้นเรื่อย ๆ หมายถึงความเร่งเพิ่มขึ้น ไม่ใช่ความเร่งคงตัว" }
+    hints:
+      - "ความชันของกราฟ v–t คือความเร่ง"
+      - "ความชันคงที่แปลว่ากราฟเป็นรูปใด"
+    solution: "$v = u + at$ เป็นสมการเส้นตรงที่มีความชัน $a$ ความเร่งคงตัวแต่ไม่เป็นศูนย์ กราฟจึงเป็นเส้นตรงที่เอียง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p013
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 2
+    type: numeric
+    stem: "รถไฟฟ้าบีทีเอสออกจากสถานีจากหยุดนิ่ง ด้วยความเร่งคงตัว $1.0\\ \\mathrm{m/s^2}$ เป็นเวลา $12\\ \\mathrm{s}$ รถเคลื่อนที่ได้ระยะทางเท่าใด (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 72, tolerance: 0.1, unit: m }
+    hints:
+      - "รู้ $u = 0$, $a$ และ $t$ ต้องการ $s$"
+      - "ใช้ $s = ut + \\tfrac12 at^2$"
+    misconceptions:
+      - { match: 144, feedback: "ลืม $\\tfrac12$ ใน $\\tfrac12 at^2$" }
+      - { match: 12, feedback: "นั่นคือความเร็วที่ $t = 12\\ \\mathrm{s}$ ($v = at$) ไม่ใช่ระยะทาง" }
+    solution: "$s = 0 + \\tfrac12(1.0)(12)^2 = 72\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p014
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 2
+    type: expression
+    stem: "จาก $v^2 = u^2 + 2as$ เขียนการกระจัด $s$ ในรูปของ $u$, $v$ และ $a$"
+    prefix: "s ="
+    answer: { latex: "\\frac{v^2-u^2}{2a}", variables: [u, v, a] }
+    hints:
+      - "ย้าย $u^2$ ไปอีกข้างก่อน"
+      - "จากนั้นหารทั้งสองข้างด้วย $2a$"
+    misconceptions:
+      - { match: "\\frac{v^2-u^2}{a}", feedback: "ลืมหารด้วย 2 สัมประสิทธิ์ของ $s$ คือ $2a$" }
+      - { match: "\\frac{(v-u)^2}{2a}", feedback: "$v^2 - u^2 \\ne (v - u)^2$ ลองแทน $u = 1$, $v = 3$ จะได้ 8 กับ 4 ไม่เท่ากัน" }
+    solution: "$v^2 = u^2 + 2as$ → $2as = v^2 - u^2$ → $s = \\dfrac{v^2 - u^2}{2a}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p015
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 3
+    type: numeric
+    stem: "กราฟความเร็ว–เวลาของรถยนต์เป็นดังรูป รถเคลื่อนที่ได้ระยะทางทั้งหมดเท่าใดตั้งแต่ $t = 0$ ถึง $t = 13\\ \\mathrm{s}$ (ตอบเป็นตัวเลขในหน่วย m)"
+    figure: { src: p-vt-area.svg, alt: "กราฟความเร็ว–เวลา เส้นตรงขึ้นจาก (0, 0) ถึง (4 s, 12 m/s) เป็นเส้นแนวนอนที่ 12 m/s จนถึง 10 s แล้วเป็นเส้นตรงลงถึง (13 s, 0)" }
+    answer: { value: 114, tolerance: 0.5, unit: m }
+    hints:
+      - "ระยะทางคือพื้นที่ใต้กราฟความเร็ว–เวลา"
+      - "แบ่งพื้นที่เป็นสามเหลี่ยม สี่เหลี่ยมผืนผ้า และสามเหลี่ยม แล้วรวมกัน"
+    misconceptions:
+      - { match: 156, feedback: "ดูเหมือนคิดว่ารถวิ่ง $12\\ \\mathrm{m/s}$ ตลอด 13 วินาที ช่วงเร่งและช่วงเบรกเป็นสามเหลี่ยม ต้องคูณ $\\tfrac12$" }
+    solution: "ช่วงเร่ง $\\tfrac12(4)(12) = 24\\ \\mathrm{m}$ ช่วงคงที่ $(6)(12) = 72\\ \\mathrm{m}$ ช่วงเบรก $\\tfrac12(3)(12) = 18\\ \\mathrm{m}$ รวม $114\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p016
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 3
+    type: numeric
+    stem: "รถกระบะวิ่งบนถนนมิตรภาพด้วยความเร็ว $72\\ \\mathrm{km/h}$ คนขับเห็นวัวเดินข้ามถนน ใช้เวลาตอบสนอง $0.8\\ \\mathrm{s}$ แล้วเบรกด้วยความเร่ง $-5\\ \\mathrm{m/s^2}$ จนหยุด ระยะหยุดรถทั้งหมดเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 56, tolerance: 0.5, unit: m }
+    hints:
+      - "แปลง $72\\ \\mathrm{km/h}$ เป็น m/s ก่อน"
+      - "ระยะหยุดรถ = ระยะคิด (ความเร็วคงที่ระหว่างตอบสนอง) + ระยะเบรก"
+      - "ระยะเบรกใช้ $v^2 = u^2 + 2as$ โดย $v = 0$"
+    misconceptions:
+      - { match: 40, feedback: "นั่นคือระยะเบรกอย่างเดียว ลืมระยะที่รถวิ่งไปก่อนคนขับเริ่มเบรก ($20 \\times 0.8$)" }
+      - { match: 16, feedback: "นั่นคือระยะคิดอย่างเดียว ยังต้องบวกระยะเบรก" }
+    solution: "$u = 20\\ \\mathrm{m/s}$ ระยะคิด $20 \\times 0.8 = 16\\ \\mathrm{m}$ ระยะเบรก $\\dfrac{20^2}{2 \\times 5} = 40\\ \\mathrm{m}$ รวม $56\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p017
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 4
+    type: numeric
+    stem: "ผลการศึกษาพบว่าผู้ขับขี่ที่ดื่มสุรามีเวลาตอบสนองนานขึ้นจากราว $0.7\\ \\mathrm{s}$ เป็น $1.5\\ \\mathrm{s}$ ถ้าผู้ขับขี่ที่ดื่มสุราขับรถด้วยความเร็ว $90\\ \\mathrm{km/h}$ และเบรกด้วยความเร่ง $-6.25\\ \\mathrm{m/s^2}$ ระยะหยุดรถทั้งหมดเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 87.5, tolerance: 0.5, unit: m }
+    hints:
+      - "$90\\ \\mathrm{km/h} = 25\\ \\mathrm{m/s}$"
+      - "ใช้เวลาตอบสนองของผู้ที่ดื่มสุรา $1.5\\ \\mathrm{s}$ หาระยะคิด"
+      - "ระยะเบรก $= \\dfrac{u^2}{2a}$"
+    misconceptions:
+      - { match: 67.5, feedback: "นั่นคือระยะหยุดรถเมื่อเวลาตอบสนอง $0.7\\ \\mathrm{s}$ (ไม่ดื่ม) โจทย์ถามกรณีดื่มสุรา" }
+      - { match: 50, feedback: "นั่นคือระยะเบรกอย่างเดียว ต้องบวกระยะคิด $25 \\times 1.5$" }
+    solution: "ระยะคิด $25 \\times 1.5 = 37.5\\ \\mathrm{m}$ ระยะเบรก $\\dfrac{25^2}{2 \\times 6.25} = 50\\ \\mathrm{m}$ รวม $87.5\\ \\mathrm{m}$ ไกลกว่าตอนไม่ดื่ม ($17.5 + 50 = 67.5\\ \\mathrm{m}$) ถึง $20\\ \\mathrm{m}$ ซึ่งยาวกว่ารถเก๋งสี่คันต่อกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p018
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 3
+    type: numeric
+    stem: "รถเร่งอย่างสม่ำเสมอ ผ่านเสา A ด้วยความเร็ว $5\\ \\mathrm{m/s}$ และผ่านเสา B ซึ่งอยู่ห่างออกไป $60\\ \\mathrm{m}$ ด้วยความเร็ว $15\\ \\mathrm{m/s}$ รถใช้เวลาเดินทางจาก A ถึง B นานเท่าใด (ตอบเป็นตัวเลขในหน่วย s)"
+    answer: { value: 6, tolerance: 0.05, unit: s }
+    hints:
+      - "รู้ $u$, $v$, $s$ ไม่รู้และไม่ถาม $a$"
+      - "ใช้ $s = \\dfrac{(u + v)t}{2}$ แล้วจัดรูปหา $t$"
+    misconceptions:
+      - { match: 4, feedback: "ดูเหมือนใช้ความเร็วปลาย $15\\ \\mathrm{m/s}$ ตลอดทาง ต้องใช้ความเร็วเฉลี่ย $10\\ \\mathrm{m/s}$" }
+      - { match: 12, feedback: "ดูเหมือนใช้ความเร็วต้น $5\\ \\mathrm{m/s}$ ตลอดทาง ต้องใช้ความเร็วเฉลี่ย" }
+    solution: "$t = \\dfrac{2s}{u + v} = \\dfrac{2(60)}{5 + 15} = 6\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p019
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 5
+    type: numeric
+    stem: "รถจักรยานยนต์วิ่งด้วยความเร็วคงที่ $15\\ \\mathrm{m/s}$ ผ่านรถยนต์ที่จอดนิ่งอยู่ ขณะนั้นพอดีรถยนต์เริ่มออกตัวไปทางเดียวกันด้วยความเร่งคงตัว $2.5\\ \\mathrm{m/s^2}$ รถยนต์ไล่ทันรถจักรยานยนต์หลังจากออกตัวกี่วินาที (ตอบเป็นตัวเลขในหน่วย s)"
+    answer: { value: 12, tolerance: 0.05, unit: s }
+    hints:
+      - "เขียนตำแหน่งของทั้งสองคันจากจุดเดียวกัน: รถจักรยานยนต์ $15t$ รถยนต์ $\\tfrac12(2.5)t^2$"
+      - "ตามทันเมื่อตำแหน่งเท่ากัน ตั้งสมการแล้วแก้หา $t$ ที่ไม่เป็นศูนย์"
+    misconceptions:
+      - { match: 6, feedback: "นั่นคือเวลาที่รถยนต์มีความเร็วเท่ารถจักรยานยนต์ ($15 = 2.5t$) ซึ่งตอนนั้นรถยนต์ยังตามหลังอยู่ไกลที่สุด ยังไม่ทัน" }
+    solution: "$15t = 1.25t^2$ → $t(1.25t - 15) = 0$ → $t = 12\\ \\mathrm{s}$ (ไม่นับ $t = 0$) ขณะนั้นทั้งสองอยู่ห่างจุดเริ่ม $15 \\times 12 = 180\\ \\mathrm{m}$ และรถยนต์มีความเร็ว $30\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p020
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 5
+    type: numeric
+    stem: "ถนนหน้าโรงเรียนแห่งหนึ่ง ผู้ขับขี่ต้องหยุดรถให้ได้ภายใน $30\\ \\mathrm{m}$ เมื่อเห็นเด็กวิ่งตัดหน้า ถ้าเวลาตอบสนองเป็น $0.6\\ \\mathrm{s}$ และเบรกได้ด้วยความเร่งขนาด $6\\ \\mathrm{m/s^2}$ ความเร็วสูงสุดที่ขับได้อย่างปลอดภัยเป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 15.71, tolerance: 0.15, unit: m/s }
+    hints:
+      - "ระยะหยุดรถ $= 0.6u + \\dfrac{u^2}{2(6)}$ ต้องไม่เกิน $30\\ \\mathrm{m}$"
+      - "ตั้ง $0.6u + \\dfrac{u^2}{12} = 30$ คูณ 12 ตลอดได้สมการกำลังสอง $u^2 + 7.2u - 360 = 0$"
+      - "ใช้สูตรสมการกำลังสองและเลือกคำตอบที่เป็นบวก"
+    misconceptions:
+      - { match: 18.97, feedback: "นั่นคือคำตอบเมื่อไม่คิดระยะคิด ($\\sqrt{2 \\times 6 \\times 30}$) ระหว่างที่ผู้ขับขี่ตอบสนอง รถยังวิ่งด้วยความเร็วเดิม" }
+    solution: "$u^2 + 7.2u - 360 = 0$ → $u = \\dfrac{-7.2 + \\sqrt{7.2^2 + 4(360)}}{2} = \\dfrac{-7.2 + 38.62}{2} \\approx 15.7\\ \\mathrm{m/s}$ หรือประมาณ $57\\ \\mathrm{km/h}$ ตรวจ: $0.6(15.7) + \\tfrac{15.7^2}{12} \\approx 9.4 + 20.6 = 30\\ \\mathrm{m}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.suvat.p021
+    topics: [physics.kinematics.constant-acceleration]
+    difficulty: 4
+    type: numeric
+    stem: "วัตถุเริ่มจากหยุดนิ่งและเคลื่อนที่ด้วยความเร่งคงตัว $4\\ \\mathrm{m/s^2}$ ระยะทางที่วัตถุเคลื่อนที่ได้ **ในวินาทีที่ 3** (ระหว่าง $t = 2\\ \\mathrm{s}$ ถึง $t = 3\\ \\mathrm{s}$) เป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 10, tolerance: 0.05, unit: m }
+    hints:
+      - "หาระยะทางรวมเมื่อ $t = 3\\ \\mathrm{s}$ และเมื่อ $t = 2\\ \\mathrm{s}$"
+      - "ระยะทางในวินาทีที่ 3 คือผลต่างของสองค่านี้"
+    misconceptions:
+      - { match: 18, feedback: "นั่นคือระยะทางรวมตั้งแต่เริ่มจนถึง $t = 3\\ \\mathrm{s}$ โจทย์ถามเฉพาะวินาทีที่ 3" }
+      - { match: 2, feedback: "นั่นคือระยะทางในวินาทีแรก $\\tfrac12(4)(1)^2$ วัตถุเร็วขึ้นเรื่อย ๆ วินาทีหลังจึงไปได้ไกลกว่า" }
+    solution: "$s(3) = \\tfrac12(4)(3)^2 = 18\\ \\mathrm{m}$, $s(2) = \\tfrac12(4)(2)^2 = 8\\ \\mathrm{m}$ ระยะในวินาทีที่ 3 $= 18 - 8 = 10\\ \\mathrm{m}$ (ระยะในแต่ละวินาทีเป็น 2, 6, 10, 14, ... เพิ่มขึ้นทีละ $a \\times 1^2 = 4\\ \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

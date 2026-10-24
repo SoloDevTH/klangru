@@ -12,6 +12,35 @@ encompasses:
 curriculum_tags: []
 lessons:
   - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: หาระยะทางจากพื้นที่ใต้กราฟ
+    problem: "รถรางเริ่มจากหยุดนิ่งและเร่งอย่างสม่ำเสมอจนมีความเร็ว $10\\ \\mathrm{m/s}$ ในเวลา $5\\ \\mathrm{s}$ ดังกราฟ รถเคลื่อนที่ได้ระยะทางเท่าใด"
+    figure:
+      src: vt-area.svg
+      alt: "กราฟความเร็ว–เวลาเป็นเส้นตรงจากจุดกำเนิดไปถึง (5 s, 10 m/s) พื้นที่สามเหลี่ยมใต้เส้นกราฟระหว่าง t = 0 ถึง 5 s ถูกแรเงา พร้อมข้อความว่าพื้นที่เท่ากับการกระจัด"
+    steps:
+      - text: "พื้นที่ใต้กราฟเป็นสามเหลี่ยม ฐาน $5\\ \\mathrm{s}$ สูง $10\\ \\mathrm{m/s}$"
+        why: "พื้นที่ใต้กราฟ v–t มีหน่วย $\\mathrm{s} \\times \\mathrm{m/s} = \\mathrm{m}$ จึงเป็นการกระจัด"
+      - text: "$s = \\tfrac{1}{2} \\times 5 \\times 10 = 25\\ \\mathrm{m}$"
+      - text: "ตรวจด้วยสมการ: $a = \\tfrac{10}{5} = 2\\ \\mathrm{m/s^2}$ และ $s = \\tfrac{1}{2}(2)(5)^2 = 25\\ \\mathrm{m}$ ✓"
+    answer: "รถเคลื่อนที่ได้ $25\\ \\mathrm{m}$"
+  - { type: check, problem: phy.suvat.p013, prompt: "ลองใช้สมการกับรถไฟฟ้า" }
+  - type: figure
+    src: stopping-distance.svg
+    alt: "แผนภูมิแท่งแนวนอนตามมาตราส่วน แสดงระยะหยุดรถที่ความเร็ว 36, 72 และ 108 km/h เมื่อเวลาตอบสนอง 0.75 s และความเร่งของการเบรก 6 m/s² ระยะคิด 7.5, 15 และ 22.5 m ระยะเบรก 8.3, 33.3 และ 75 m รวมเป็น 15.8, 48.3 และ 97.5 m"
+    caption: "ความเร็วเพิ่มสามเท่า ระยะหยุดรถเพิ่มมากกว่าหกเท่า เพราะระยะเบรกขึ้นกับกำลังสองของความเร็ว"
+  - type: worked-example
+    title: ระยะหยุดรถที่ 72 km/h
+    problem: "คนขับรถเก๋งที่วิ่ง $72\\ \\mathrm{km/h}$ เห็นสุนัขวิ่งตัดหน้า ใช้เวลาตอบสนอง $0.75\\ \\mathrm{s}$ แล้วเบรกด้วยความเร่ง $-6\\ \\mathrm{m/s^2}$ จนหยุด ระยะหยุดรถเป็นเท่าใด"
+    steps:
+      - text: "แปลงหน่วย: $u = 72 \\div 3.6 = 20\\ \\mathrm{m/s}$"
+      - text: "ระยะคิด: รถยังวิ่ง $20\\ \\mathrm{m/s}$ ตลอด $0.75\\ \\mathrm{s}$ ได้ $20 \\times 0.75 = 15\\ \\mathrm{m}$"
+        why: "ระหว่างที่สมองสั่งเท้าให้เหยียบเบรก รถยังไม่ช้าลงเลย ช่วงนี้จึงเป็นความเร็วคงที่ ไม่ใช่ความเร่งคงตัว"
+      - text: "ระยะเบรก: $0 = 20^2 + 2(-6)s$ ได้ $s = \\dfrac{400}{12} \\approx 33.3\\ \\mathrm{m}$"
+        why: "ไม่รู้และไม่ถามเวลา จึงใช้ $v^2 = u^2 + 2as$"
+      - text: "รวม: $15 + 33.3 \\approx 48.3\\ \\mathrm{m}$"
+    answer: "ระยะหยุดรถประมาณ $48\\ \\mathrm{m}$ ถ้าขับ $108\\ \\mathrm{km/h}$ จะเพิ่มเป็น $22.5 + 75 = 97.5\\ \\mathrm{m}$ เกือบสองเท่าของที่ $72\\ \\mathrm{km/h}$"
+  - { type: check, problem: phy.suvat.p016, prompt: "คำนวณระยะหยุดรถด้วยตัวเอง" }
   - type: simulation
     title: การเคลื่อนที่แบบโพรเจกไทล์ (PhET Projectile Motion)
     url: https://phet.colorado.edu/en/simulations/projectile-motion
@@ -26,6 +55,7 @@ flashcards:
   - { front: "รู้ $u$, $a$, $s$ ต้องการหา $v$ แต่ไม่รู้เวลา ใช้สมการใด", back: "$v^2 = u^2 + 2as$ เพราะเป็นสมการเดียวที่ไม่มี $t$" }
   - { front: "ลูกบอลโยนขึ้นถึงจุดสูงสุด ความเร็วและความเร่งเป็นเท่าใด", back: "ความเร็วเป็น 0 ชั่วขณะ แต่ความเร่งยังเป็น $g \\approx 9.8\\ \\mathrm{m/s^2}$ ทิศลง" }
   - { front: "ปล่อยวัตถุจากหยุดนิ่ง ตกได้ระยะเท่าใดใน 2 วินาที ($g = 9.8\\ \\mathrm{m/s^2}$)", back: "$s = \\tfrac{1}{2}(9.8)(2)^2 = 19.6\\ \\mathrm{m}$" }
+  - { front: "ระยะหยุดรถประกอบด้วยอะไรบ้าง", back: "ระยะคิด $u\\,t_r$ (แปรผันตาม $u$) + ระยะเบรก $\\dfrac{u^2}{2a}$ (แปรผันตาม $u^2$)" }
 references:
   - { title: "สมการการเคลื่อนที่", url: "https://th.wikipedia.org/wiki/สมการการเคลื่อนที่", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
   - { title: "Equations of motion", url: "https://en.wikipedia.org/wiki/Equations_of_motion", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
