@@ -215,3 +215,135 @@ problems:
     solution: "$\\tfrac{10}{2} = 5$, $\\tfrac{12}{4} = 3$, $\\tfrac{6}{3} = 2$, $\\tfrac{20}{5} = 4$ (หน่วย $\\mathrm{m/s^2}$)"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: phy.n2.p014
+    topics: [physics.dynamics.newton-second]
+    difficulty: 1
+    type: mcq
+    stem: "รถตุ๊กตุ๊กกำลังแล่นไปข้างหน้าแล้วคนขับเบรก ขณะรถชะลอ ความเร่งของรถมีทิศใด"
+    choices:
+      - { id: a, text: "ไปข้างหลัง สวนกับทิศที่รถเคลื่อนที่", correct: true }
+      - { id: b, text: "ไปข้างหน้า ตามทิศที่รถเคลื่อนที่", feedback: "ความเร่งมีทิศเดียวกับแรงลัพธ์ ไม่จำเป็นต้องมีทิศเดียวกับความเร็ว ตอนเบรก แรงลัพธ์ชี้ไปข้างหลัง" }
+      - { id: c, text: "ไม่มีความเร่ง เพราะรถยังเคลื่อนที่ไปข้างหน้าอยู่", feedback: "ความเร็วกำลังลดลง แปลว่าความเร็วเปลี่ยน จึงมีความเร่ง" }
+    hints:
+      - "ความเร่งมีทิศเดียวกับแรงลัพธ์"
+      - "แรงเบรกจากถนนต่อล้อชี้ไปทางใด"
+    solution: "แรงลัพธ์ (ส่วนใหญ่คือแรงเบรก) ชี้ไปข้างหลัง ความเร่งจึงชี้ไปข้างหลังด้วย ความเร็วไปข้างหน้าจึงลดลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p015
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: numeric
+    stem: "ดึงรถทดลองคันหนึ่งบนรางลื่นด้วยแรงลัพธ์ต่าง ๆ แล้ววัดความเร่ง ได้กราฟดังภาพ รถทดลองมีมวลประมาณเท่าใด (ตอบเป็นตัวเลขในหน่วย kg)"
+    figure: { src: accel-force-problem.svg, alt: "กราฟความเร่ง (m/s²) กับแรงลัพธ์ (N) มีจุดข้อมูลสี่จุดที่ (2, 0.52), (4, 0.98), (6, 1.53), (8, 1.99) และเส้นตรงที่เหมาะสมที่สุดผ่านจุดกำเนิด" }
+    answer: { value: 4, tolerance: 0.15, unit: kg }
+    hints:
+      - "จาก $a = \\dfrac{\\Sigma F}{m}$ ความชันของกราฟ $a$ กับ $\\Sigma F$ คือ $\\dfrac{1}{m}$"
+      - "หาความชันจากจุดบนเส้น เช่น ที่แรง $8\\ \\mathrm{N}$ ความเร่งประมาณ $2\\ \\mathrm{m/s^2}$"
+      - "มวลคือส่วนกลับของความชัน"
+    misconceptions:
+      - { match: 0.25, feedback: "นั่นคือความชันของกราฟ ซึ่งเท่ากับ $\\tfrac{1}{m}$ ต้องกลับเศษส่วนอีกครั้งจึงได้มวล" }
+      - { match: 16, feedback: "ดูเหมือนคูณแรงกับความเร่ง มวลคือแรงหารด้วยความเร่ง $\\tfrac{8}{2}$" }
+    solution: "ความชัน $\\approx \\dfrac{2.0}{8} = 0.25\\ \\mathrm{(m/s^2)/N} = \\dfrac{1}{m}$ จึงได้ $m \\approx 4\\ \\mathrm{kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p016
+    topics: [physics.dynamics.newton-second]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้แรงลัพธ์ค่าเดียวกันดึงรถทดลองที่มีมวลต่าง ๆ แล้วเขียนกราฟความเร่งกับส่วนกลับของมวล ($\\tfrac{1}{m}$) ได้ดังภาพ แรงลัพธ์ที่ใช้มีขนาดประมาณเท่าใด (ตอบเป็นตัวเลขในหน่วย N)"
+    figure: { src: accel-inverse-mass.svg, alt: "กราฟความเร่ง (m/s²) กับ 1/มวล (1/kg) มีจุดข้อมูลสี่จุดที่ (0.5, 3.1), (1.0, 5.9), (1.5, 9.0), (2.0, 12.1) และเส้นตรงที่เหมาะสมที่สุดผ่านจุดกำเนิด" }
+    answer: { value: 6, tolerance: 0.2, unit: N }
+    hints:
+      - "จาก $a = \\Sigma F \\times \\dfrac{1}{m}$ ถ้าแกนนอนคือ $\\tfrac{1}{m}$ ความชันคืออะไร"
+      - "อ่านจุดบนเส้น เช่น ที่ $\\tfrac{1}{m} = 2.0$ ความเร่งประมาณ $12\\ \\mathrm{m/s^2}$"
+    misconceptions:
+      - { match: 0.167, feedback: "ดูเหมือนกลับเศษกับส่วน ความชันคือ $\\Delta a$ หารด้วย $\\Delta(\\tfrac{1}{m})$ ซึ่งเท่ากับแรงลัพธ์โดยตรง" }
+      - { match: 24, feedback: "ดูเหมือนอ่านค่า $\\tfrac{1}{m} = 2$ เป็นมวล $2\\ \\mathrm{kg}$ แล้วคูณกลับผิดทาง ที่ $\\tfrac{1}{m} = 2$ มวลคือ $0.5\\ \\mathrm{kg}$" }
+    solution: "ความชัน $\\approx \\dfrac{12}{2.0} = 6\\ \\mathrm{N}$ ซึ่งคือแรงลัพธ์ เส้นตรงผ่านจุดกำเนิดแสดงว่า $a \\propto \\tfrac{1}{m}$ เมื่อแรงคงที่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p017
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: numeric
+    stem: "ชายมวล $60\\ \\mathrm{kg}$ ยืนบนตาชั่งในลิฟต์ของห้างสรรพสินค้า ขณะลิฟต์ออกตัวขึ้นด้วยความเร่ง $1.5\\ \\mathrm{m/s^2}$ ตาชั่งดันเท้าเขาด้วยแรงเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 678, tolerance: 6.8, unit: N }
+    hints:
+      - "แรงที่กระทำต่อชาย: น้ำหนักลงและแรงจากตาชั่งขึ้น"
+      - "เร่งขึ้น แรงลัพธ์ชี้ขึ้น: $N - mg = ma$"
+    misconceptions:
+      - { match: 588, feedback: "นั่นคือน้ำหนักซึ่งใช้ได้เมื่อลิฟต์นิ่งหรือเคลื่อนที่ด้วยความเร็วคงตัว ขณะเร่งขึ้นตาชั่งต้องดันมากกว่าน้ำหนัก" }
+      - { match: 498, feedback: "ดูเหมือนนำ $ma$ ไปลบจากน้ำหนัก ซึ่งเป็นกรณีลิฟต์เร่งลง ลิฟต์ที่เร่งขึ้นต้องบวก" }
+    solution: "$N = m(g + a) = 60(9.8 + 1.5) = 678\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p018
+    topics: [physics.dynamics.newton-second]
+    difficulty: 4
+    type: numeric
+    stem: "ที่ไซต์ก่อสร้าง ปั้นจั่นยกถังปูนมวล $500\\ \\mathrm{kg}$ ขึ้นในแนวดิ่งด้วยความเร่ง $0.4\\ \\mathrm{m/s^2}$ ลวดสลิงมีแรงตึงเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย N)"
+    answer: { value: 5100, tolerance: 51, unit: N }
+    hints:
+      - "วาดแผนภาพแรงของถังปูน: แรงตึงขึ้น น้ำหนักลง"
+      - "$T - mg = ma$"
+    misconceptions:
+      - { match: 200, feedback: "นั่นคือแรงลัพธ์ $ma$ เท่านั้น ลวดสลิงต้องรับน้ำหนักของถังด้วย" }
+      - { match: 4900, feedback: "นั่นคือน้ำหนัก ถ้าแรงตึงเท่าน้ำหนักพอดี ถังจะไม่เร่ง" }
+    solution: "$T = m(g + a) = 500(9.8 + 0.4) = 5100\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p019
+    topics: [physics.dynamics.newton-second]
+    difficulty: 3
+    type: numeric
+    stem: "วัตถุชิ้นหนึ่งมีความเร่ง $6\\ \\mathrm{m/s^2}$ ถ้าเพิ่มแรงลัพธ์เป็น 2 เท่า และเพิ่มมวลเป็น 3 เท่า ความเร่งใหม่เป็นเท่าใด (ตอบเป็นตัวเลขในหน่วย m/s²)"
+    answer: { value: 4, tolerance: 0.04, unit: m/s² }
+    hints:
+      - "$a = \\dfrac{\\Sigma F}{m}$ แรงอยู่ด้านบน มวลอยู่ด้านล่าง"
+      - "ความเร่งใหม่ $= 6 \\times \\dfrac{2}{3}$"
+    misconceptions:
+      - { match: 9, feedback: "ดูเหมือนคูณด้วย $\\tfrac{3}{2}$ มวลที่เพิ่มขึ้นทำให้ความเร่งลดลง จึงต้องหารด้วย 3" }
+      - { match: 36, feedback: "ดูเหมือนคูณทั้ง 2 และ 3 มวลมากขึ้นต้องทำให้ความเร่งน้อยลง" }
+    solution: "$a' = \\dfrac{2F}{3m} = \\dfrac{2}{3} \\times 6 = 4\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p020
+    topics: [physics.dynamics.newton-second]
+    difficulty: 4
+    type: numeric
+    stem: "ในการแข่งขันจรวดขวดน้ำของโรงเรียน จรวดมวล $0.5\\ \\mathrm{kg}$ ได้แรงขับจากน้ำที่พุ่งออก $20\\ \\mathrm{N}$ ในแนวดิ่งขึ้น ขณะเริ่มออกตัว จรวดมีความเร่งเท่าใด ไม่คิดแรงต้านอากาศ ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s² ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 30.2, tolerance: 0.3, unit: m/s² }
+    hints:
+      - "แรงที่กระทำต่อจรวด: แรงขับขึ้น และน้ำหนักลง"
+      - "แรงลัพธ์ $= 20 - mg$ แล้วหารด้วยมวล"
+    misconceptions:
+      - { match: 40, feedback: "ดูเหมือนลืมน้ำหนักของจรวด $0.5 \\times 9.8 = 4.9\\ \\mathrm{N}$ ที่ดึงลง แรงลัพธ์จึงน้อยกว่าแรงขับ" }
+      - { match: 49.8, feedback: "ดูเหมือนบวกน้ำหนักเข้ากับแรงขับ น้ำหนักชี้ลงสวนทางกับแรงขับ ต้องลบ" }
+    solution: "$\\Sigma F = 20 - (0.5)(9.8) = 15.1\\ \\mathrm{N}$ ขึ้น $a = \\dfrac{15.1}{0.5} = 30.2\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.n2.p021
+    topics: [physics.dynamics.newton-second]
+    difficulty: 5
+    type: numeric
+    stem: "ลากกล่องมวล $10\\ \\mathrm{kg}$ บนพื้นราบด้วยเชือกที่ทำมุม $30^\\circ$ เหนือแนวราบ แรงตึงเชือก $50\\ \\mathrm{N}$ สัมประสิทธิ์ความเสียดทานจลน์เป็น $0.2$ กล่องมีความเร่งเท่าใด ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ (ตอบเป็นตัวเลขในหน่วย m/s² ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.87, tolerance: 0.03, unit: m/s² }
+    hints:
+      - "แยกแรงดึงเป็นแนวราบ $50\\cos 30^\\circ$ และแนวดิ่ง $50\\sin 30^\\circ$"
+      - "แนวดิ่งไม่มีความเร่ง: $N = mg - 50\\sin 30^\\circ$"
+      - "แนวราบ: $ma = 50\\cos 30^\\circ - \\mu_k N$"
+    misconceptions:
+      - { match: 2.37, feedback: "ดูเหมือนใช้ $N = mg$ เชือกที่เอียงขึ้นยกกล่องไว้บางส่วน แรงตั้งฉากจึงเหลือ $98 - 25 = 73\\ \\mathrm{N}$" }
+      - { match: 3.04, feedback: "ดูเหมือนใช้แรงดึงทั้ง $50\\ \\mathrm{N}$ ในแนวราบ มีเพียงองค์ประกอบ $50\\cos 30^\\circ$ ที่ลากกล่องไปข้างหน้า" }
+    solution: "$N = 98 - 25 = 73\\ \\mathrm{N}$ แรงเสียดทาน $= 0.2 \\times 73 = 14.6\\ \\mathrm{N}$ แรงลัพธ์ $= 43.30 - 14.6 = 28.70\\ \\mathrm{N}$ ได้ $a = 2.87\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
