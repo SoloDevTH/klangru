@@ -35,6 +35,8 @@ npm run fetch-assets                           # ดึงโมเลกุล 
 npm run draft -- math/fractions --count=5      # ให้ Claude ร่างโจทย์ (ต้องมี ANTHROPIC_API_KEY)
 npm run approve -- math/fractions              # ย้ายโจทย์ที่ตรวจแล้วเข้าคลัง
 npm run calibrate -- --stats=stats.json        # ปรับความยากจากข้อมูลการตอบจริง
+npm run curriculum -- --missing                # คลังครอบคลุมหลักสูตรแค่ไหน และตัวชี้วัดที่ยังไม่มีหัวข้อสอน
+npm run plan -- --order                        # แผนหัวข้อใหม่ (เฟส 6) เรียงตามลำดับที่ควรเขียน
 npm run cms -w @klangru/web                    # หน้าแก้ไขสำหรับครูที่ /admin/ (Decap CMS)
 npm run android:apk -w @klangru/web            # build แอป Android
 ```
@@ -49,7 +51,8 @@ packages/schema/         schema เนื้อหา (zod) + ตัวตรว
 packages/content-tools/  validate, build, fetch-assets, draft, approve, calibrate
 apps/web/                เว็บ Next.js (static export) + แอป Android (Capacitor) + Decap CMS
 supabase/                migration, edge functions (tutor, delete-account), เทสต์
-docs/                    ADR, คู่มือติดตั้ง, คู่มือผู้เขียน, สถานะ
+curriculum/              หลักสูตร 16 ฉบับ (ไทย ต่างประเทศ วิศวกรรม) การจับคู่กับหัวข้อ และแหล่งอ้างอิง/สารานุกรม
+docs/                    ADR, คู่มือติดตั้ง, คู่มือผู้เขียน, สถานะ, แผนเฟส 6
 ```
 
 ## หน้าจอ
@@ -72,6 +75,7 @@ docs/                    ADR, คู่มือติดตั้ง, คู่
 
 - รายงานค้นคว้าและแผนงาน: [แผนคลังความรู้ทุกวิชา](https://claude.ai/artifact/YS2tqgpFFgSgaA3619MAry)
 - [สถานะและเกณฑ์ผ่านแต่ละเฟส](docs/status.md)
+- [หลักสูตรและแหล่งอ้างอิง](curriculum/README.md) · [สารานุกรมและตำราเปิด: ใช้อะไรได้แค่ไหน](docs/research/encyclopedias.md) · [แผนเฟส 6: ขยายคลังตามหลักสูตร](docs/phase6/README.md)
 - [คู่มือผู้เขียนเนื้อหา](docs/authoring-guide.md)
 - ติดตั้ง: [Supabase](docs/setup/supabase.md) · [Android](docs/setup/android.md) · [CMS](docs/setup/cms.md) · [Claude API](docs/setup/ai.md)
 - ADR: [0001 ไม่หารายได้และใบอนุญาต](docs/decisions/0001-non-commercial-and-licensing.md) · [0002 ขอบเขตนำร่อง](docs/decisions/0002-pilot-scope.md) · [0003 เทคโนโลยีหลัก](docs/decisions/0003-tech-stack.md) · [0004 โครงข้อมูลและระดับความชำนาญ](docs/decisions/0004-content-model.md) · [0005 CMS และคิวร่างด้วย AI](docs/decisions/0005-cms-and-ai-drafting.md) · [0006 ผู้ช่วย AI](docs/decisions/0006-ai-tutor.md) · [0007 การซิงก์และ PDPA](docs/decisions/0007-sync-privacy-pdpa.md)

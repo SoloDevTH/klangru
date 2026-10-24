@@ -226,6 +226,20 @@ await step("ค้นหาภาษาไทยเจอบทเรียน",
   await shot("06-search");
 });
 
+await step("หลักสูตรและอ่านเพิ่มเติม: แสดงในบทเรียน และค้นด้วยรหัสตัวชี้วัดได้", async () => {
+  const t = index.topics.find((x) => pack(x.id).curriculum.length && pack(x.id).topic.references.length);
+  expect(t, "ไม่มีหัวข้อที่มีทั้งตัวชี้วัดและแหล่งอ้างอิง");
+  const { curriculum, topic } = pack(t.id);
+  await page.goto(`${base}/topic/${t.id}/`);
+  await page.getByRole("heading", { name: "อ่านเพิ่มเติม" }).waitFor();
+  expect((await page.locator(".references a").count()) === topic.references.length, "จำนวนลิงก์อ่านเพิ่มเติมไม่ตรง");
+  await page.locator(".curriculum summary").click();
+  await page.getByText(curriculum[0].id, { exact: true }).first().waitFor();
+  await page.goto(`${base}/search/`);
+  await page.locator("#search-q").fill(curriculum[0].text.slice(0, 30));
+  await page.locator(".search-results li", { hasText: "ตัวชี้วัด" }).first().waitFor({ timeout: 10000 });
+});
+
 await step("แบบทดสอบวัดระดับจบภายใน 8 ข้อ", async () => {
   await page.goto(`${base}/placement/`);
   await page.getByRole("button", { name: /วัดระดับ/ }).first().click();
@@ -277,7 +291,9 @@ await step("ความคืบหน้า: เปลี่ยนเป้า
 
 await step("แดชบอร์ดคุณภาพเนื้อหา", async () => {
   await page.goto(`${base}/quality/`);
-  expect((await page.locator("table.data tbody tr").count()) === index.topics.length, "จำนวนแถวไม่ตรงกับจำนวนหัวข้อ");
+  expect((await page.locator("table.data").first().locator("tbody tr").count()) === index.topics.length, "จำนวนแถวไม่ตรงกับจำนวนหัวข้อ");
+  // ตารางที่สอง: ความครอบคลุมเทียบกับหลักสูตร หนึ่งแถวต่อหนึ่งฉบับ
+  expect((await page.locator("table.data").nth(1).locator("tbody tr").count()) === index.curriculum.length, "จำนวนหลักสูตรในตารางความครอบคลุมไม่ตรง");
 });
 
 await step("ทุกหน้าเปิดได้และไม่กว้างเกินจอมือถือ", async () => {

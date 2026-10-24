@@ -8,6 +8,7 @@ import { applySuggestions, MIN_LEARNERS, suggestions, type ProblemStat } from ".
 import { approveDrafts, buildDraftRequest, draftProblems, toProblems, writeDrafts } from "./draft.ts";
 import { coverage, loadCurriculum } from "./curriculum.ts";
 import { loadContent } from "./load.ts";
+import { loadPlan, planCoverage, planOrder } from "./plan.ts";
 import { validate, type Issue } from "./validate.ts";
 
 const repoRoot = resolve(fileURLToPath(import.meta.url), "../../../..");
@@ -29,9 +30,9 @@ function report(issues: Issue[]) {
   return { errors: errors.length, warnings: warnings.length };
 }
 
-const commands = ["validate", "build", "fetch-assets", "calibrate", "draft", "approve", "curriculum"];
+const commands = ["validate", "build", "fetch-assets", "calibrate", "draft", "approve", "curriculum", "plan"];
 if (!commands.includes(command)) {
-  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b] | curriculum [--framework=<id>] [--missing]");
+  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b] | curriculum [--framework=<id>] [--missing] | plan [--order]");
   process.exit(2);
 }
 
@@ -98,6 +99,9 @@ if (command === "build" && flags.some((f) => f === "--allow-planned" || f.starts
 let { issues, content } = validate(loadContent(contentDir));
 const curriculum = loadCurriculum(curriculumDir, new Set(content.topics.map((t) => t.topic.id)));
 issues.push(...curriculum.issues);
+const graph = content.topics.map(({ topic }) => ({ id: topic.id, difficulty: topic.difficulty, prerequisites: topic.prerequisites }));
+const planned = loadPlan(resolve(repoRoot, "docs/phase6"), graph, curriculum.data);
+issues.push(...planned.issues);
 
 // --allow-planned: ไม่นับ prerequisite ที่อยู่ในแผน docs/phase1/curriculum.yaml แต่ยังไม่มีคนเขียน (ใช้ตอนเขียนหลายหัวข้อพร้อมกัน)
 if (flags.includes("--allow-planned")) {
@@ -118,6 +122,17 @@ console.log(`วิชา ${new Set(content.topics.map((t) => t.topic.subject)).
 console.log(`หลักสูตรอ้างอิง ${curriculum.data.frameworks.length} ฉบับ · ตัวชี้วัด ${curriculum.data.frameworks.reduce((n, f) => n + f.strands.reduce((m, s) => m + s.standards.reduce((k, st) => k + st.indicators.length, 0), 0), 0)}`);
 
 if (errors || (strict && warnings)) process.exit(1);
+if (command === "plan") {
+  // แผนหัวข้อใหม่ (docs/phase6): จำนวนต่อวิชา ตัวชี้วัดที่แผนยังไม่ครอบคลุม และ --order แสดงลำดับที่ควรเขียน
+  const { plan } = planned;
+  const bySubject = new Map<string, number>();
+  for (const t of plan.topics) bySubject.set(t.id.split(".")[0], (bySubject.get(t.id.split(".")[0]) ?? 0) + 1);
+  console.log(`\nหัวข้อที่เสนอ ${plan.topics.length} หัวข้อ: ${[...bySubject].map(([s, n]) => `${s} ${n}`).join(" · ")}`);
+  for (const c of planCoverage(plan, curriculum.data)) {
+    console.log(`  ${c.framework}: ตัวชี้วัด ${c.total} · หลังทำตามแผนยังไม่ครอบคลุม ${c.remaining.length}${c.remaining.length && c.remaining.length <= 12 ? ` (${c.remaining.join(", ")})` : ""}`);
+  }
+  if (flags.includes("--order")) for (const [i, t] of planOrder(plan, graph).entries()) console.log(`  ${String(i + 1).padStart(3)}. ${t.id}  ${t.title}  (ยาก ${t.difficulty})`);
+}
 if (command === "curriculum") {
   // ความครอบคลุมของคลังเทียบกับแต่ละหลักสูตร: --missing แสดงตัวชี้วัดที่ยังไม่มีหัวข้อสอน, --framework=<id> เลือกฉบับ
   const pick = flags.find((f) => f.startsWith("--framework="))?.slice(12);
