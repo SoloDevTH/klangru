@@ -212,3 +212,137 @@ problems:
     solution: "ถูก: They have already eaten lunch. · Has he finished his work yet? · We haven't met since 2019. ผิด: since three years → for three years · have seen … yesterday → saw · has went → has gone"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: eng.perf.p014
+    topics: [english.grammar.present-perfect]
+    difficulty: 2
+    type: mcq
+    stem: "เส้นเวลาใดตรงกับประโยค *I have lived in Hat Yai since 2018.*"
+    figure: { src: tense-timelines-quiz.svg, alt: "เส้นเวลา 3 เส้น จากอดีตทางซ้ายไปอนาคตทางขวา มีขีดแดงบอกตอนนี้: A มีเครื่องหมายกากบาทเว้นระยะเท่ากันตลอดเส้น ทั้งก่อนและหลังตอนนี้ B มีกากบาทจุดเดียวในอดีต C มีแถบทึบเริ่มจากจุดหนึ่งในอดีตยาวต่อเนื่องมาถึงตอนนี้" }
+    choices:
+      - { id: a, text: "C", correct: true, feedback: "ถูก เริ่มอยู่หาดใหญ่ปี 2018 (จุดเริ่มของแถบ) และยังอยู่ถึงตอนนี้ (แถบยาวมาถึงขีดแดง)" }
+      - { id: b, text: "B", feedback: "B คือเหตุการณ์ที่จบแล้ว เช่น I moved to Hat Yai in 2018. แต่ประโยคนี้บอกว่ายังอยู่ถึงตอนนี้" }
+      - { id: c, text: "A", feedback: "A คือการทำซ้ำเป็นประจำ ซึ่งใช้ present simple การอาศัยอยู่เป็นสภาพต่อเนื่อง ไม่ใช่เหตุการณ์ซ้ำ" }
+    hints:
+      - "since 2018 บอกจุดเริ่มต้น"
+      - "have lived บอกว่ายังอาศัยอยู่ถึงตอนนี้หรือไม่"
+    solution: "present perfect + since บอกสิ่งที่เริ่มในอดีต (2018) และต่อเนื่องมาถึงตอนนี้ ตรงกับเส้นเวลา **C**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p015
+    topics: [english.grammar.present-perfect]
+    difficulty: 1
+    type: mcq
+    stem: "*I have never seen snow.* แปลว่าอะไร"
+    choices:
+      - { id: a, text: "ฉันไม่เคยเห็นหิมะ", correct: true, feedback: "ถูก have never + V3 บอกว่าไม่เคยมีประสบการณ์นั้นจนถึงตอนนี้" }
+      - { id: b, text: "ฉันไม่เห็นหิมะเมื่อวานนี้", feedback: "ประโยคนี้ไม่ได้ระบุเวลา ถ้าหมายถึงเมื่อวานจะใช้ I didn't see snow yesterday." }
+      - { id: c, text: "ฉันจะไม่ไปดูหิมะ", feedback: "ประโยคนี้พูดถึงประสบการณ์จนถึงตอนนี้ ไม่ได้พูดถึงอนาคต" }
+      - { id: d, text: "ฉันไม่ชอบหิมะ", feedback: "seen มาจาก see (เห็น) ไม่ได้แปลว่าชอบ" }
+    hints:
+      - "never แปลว่า ไม่เคย"
+      - "seen เป็นกริยาช่องที่ 3 ของ see"
+    solution: "*I have never seen snow.* = **ฉันไม่เคยเห็นหิมะ** (จนถึงตอนนี้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p016
+    topics: [english.grammar.present-perfect]
+    difficulty: 2
+    type: numeric
+    stem: "ลุงสมชายบอกว่า *I have worked at this post office since 2011.* ถ้าปีนี้คือ ค.ศ. 2026 ลุงสมชายทำงานที่นี่มาแล้วกี่ปี (เติมประโยค *I have worked here for ___ years.* ตอบเป็นตัวเลข)"
+    answer: { value: 15, unit: ปี }
+    hints:
+      - "since บอกปีที่เริ่ม ส่วน for บอกความยาวของช่วงเวลา"
+      - "นับจากปีที่เริ่มถึงปีปัจจุบัน"
+    misconceptions:
+      - { match: 2011, feedback: "2011 คือจุดเริ่มต้นซึ่งใช้กับ since หลัง for ต้องเป็นความยาวของช่วงเวลา" }
+      - { match: 16, feedback: "ดูเหมือนนับทั้งปีแรกและปีปัจจุบันรวมกัน จาก 2011 ถึง 2026 เป็นเวลา 2026 − 2011 ปี" }
+    solution: "$2026 - 2011 = 15$ ปี จึงพูดได้ว่า *I have worked here **for 15 years**.* (เท่ากับ *since 2011*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p017
+    topics: [english.grammar.present-perfect]
+    difficulty: 3
+    type: text
+    stem: "ถามเพื่อนว่ารู้จักพลอยมานานเท่าไรแล้ว: *How long ___ you ___ (know) Ploy?* (พิมพ์สองคำตามลำดับ คั่นด้วยเครื่องหมายจุลภาค)"
+    accepted: ["have, known", "have,known", "have known"]
+    misconceptions:
+      - { match: "have, knew", feedback: "knew เป็นช่องที่ 2 หลัง have ต้องใช้ช่องที่ 3 คือ known" }
+      - { match: "do, know", feedback: "do you know ถามว่ารู้จักไหมตอนนี้ แต่ How long ถามช่วงเวลาจากอดีตถึงตอนนี้ ใช้ present perfect" }
+      - { match: "has, known", feedback: "ประธานคือ you ใช้ have" }
+    hints:
+      - "How long + have/has + ประธาน + V3 ถามช่วงเวลาที่ต่อเนื่องมาถึงตอนนี้"
+      - "know → knew → known"
+    solution: "*How long **have** you **known** Ploy?* — ตอบได้ เช่น *For three years.* หรือ *Since Grade 7.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p018
+    topics: [english.grammar.present-perfect]
+    difficulty: 3
+    type: mcq
+    stem: "อ่านอีเมลแล้วตอบคำถาม\n\n*Hi Tom, I have just moved to Chiang Mai for university! I've already found a part-time job at a café, but I haven't made many friends yet. Last weekend I went to Doi Suthep with my cousin. Have you ever been to the north of Thailand? — Fah*\n\nข้อใดถูกต้องตามอีเมล"
+    choices:
+      - { id: a, text: "Fah hasn't made many friends in Chiang Mai yet.", correct: true, feedback: "ถูก ตรงกับ I haven't made many friends yet." }
+      - { id: b, text: "Fah is going to look for a job.", feedback: "ฟ้าหางานได้แล้ว (I've already found a part-time job)" }
+      - { id: c, text: "Fah has never been to Doi Suthep.", feedback: "ฟ้าไปดอยสุเทพมาแล้วเมื่อสุดสัปดาห์ที่แล้ว (Last weekend I went...)" }
+      - { id: d, text: "Tom has been to the north of Thailand.", feedback: "ฟ้าถาม Tom ว่าเคยไปไหม อีเมลยังไม่ได้บอกคำตอบ" }
+    hints:
+      - "already = ทำแล้ว · yet ในประโยคปฏิเสธ = ยังไม่ได้"
+      - "ประโยคที่ลงท้ายด้วยเครื่องหมาย ? เป็นคำถาม ไม่ใช่ข้อเท็จจริง"
+    solution: "อีเมลบอกว่าฟ้าเพิ่งย้ายมา หางานได้แล้ว แต่ **ยังไม่ค่อยมีเพื่อน** (haven't made many friends yet) และไปดอยสุเทพเมื่อสุดสัปดาห์ที่แล้ว สังเกตว่าเรื่องที่ระบุเวลา (last weekend) ใช้ past simple"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p019
+    topics: [english.grammar.present-perfect]
+    difficulty: 3
+    type: mcq
+    stem: "เลือกประโยคที่วาง **just** ถูกตำแหน่ง (รถเมล์เพิ่งออกไป)"
+    choices:
+      - { id: a, text: "The bus has just left.", correct: true, feedback: "ถูก just วางระหว่าง has กับกริยาช่องที่ 3" }
+      - { id: b, text: "The bus just has left.", feedback: "just ต้องอยู่หลัง has ไม่ใช่หน้า" }
+      - { id: c, text: "The bus has left just.", feedback: "just ไม่วางท้ายประโยค วางระหว่าง has กับ V3 เหมือน already" }
+      - { id: d, text: "The bus has just leaved.", feedback: "ตำแหน่ง just ถูก แต่ leave เป็นกริยาไม่ปกติ ช่องที่ 3 คือ left" }
+    hints:
+      - "just และ already วางตำแหน่งเดียวกัน"
+      - "ตรวจรูปช่องที่ 3 ของ leave ด้วย"
+    solution: "*The bus **has just left**.* โครงสร้างคือ has/have + just + V3 และ leave → left → left"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p020
+    topics: [english.grammar.present-perfect]
+    difficulty: 4
+    type: text
+    stem: "เติม yet หรือ already ทั้งสองช่องตามลำดับ (คั่นด้วยจุลภาค): A: *Have you finished your science project ___?* B: *Yes, I've ___ sent it to the teacher.*"
+    accepted: ["yet, already", "yet,already", "yet already"]
+    misconceptions:
+      - { match: "already, yet", feedback: "คำถามใช้ yet ส่วนประโยคบอกเล่าที่บอกว่าทำแล้วใช้ already" }
+      - { match: "yet, yet", feedback: "yet ใช้ในคำถามและปฏิเสธ ประโยคบอกเล่าของ B ต้องใช้ already" }
+    hints:
+      - "yet ใช้ในคำถามและประโยคปฏิเสธ วางท้ายประโยค"
+      - "already ใช้ในประโยคบอกเล่า วางระหว่าง have กับ V3"
+    solution: "A: *Have you finished your science project **yet**?* B: *Yes, I've **already** sent it to the teacher.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.perf.p021
+    topics: [english.grammar.present-perfect]
+    difficulty: 5
+    type: text
+    stem: "รวมสองประโยคเป็นประโยคเดียวด้วย present perfect: *I started learning Chinese two years ago. I still learn it now.* → *I ___ Chinese for two years.* (ตอบเฉพาะคำในช่องว่าง)"
+    accepted: ["have learned", "have learnt", "'ve learned", "’ve learned", "have been learning", "have studied"]
+    misconceptions:
+      - { match: "learned", feedback: "past simple บอกว่าจบแล้ว แต่ยังเรียนอยู่ ต้องใช้ have + V3" }
+      - { match: "have learn", feedback: "หลัง have ต้องเป็นกริยาช่องที่ 3 (learned หรือ learnt)" }
+      - { match: "has learned", feedback: "ประธานคือ I ใช้ have" }
+    hints:
+      - "เริ่มในอดีต (two years ago) และยังทำอยู่ (still) → present perfect"
+      - "ago ใช้กับ past simple เท่านั้น จึงเปลี่ยนเป็น for + ความยาวของช่วงเวลา"
+    solution: "*I **have learned** (learnt) Chinese for two years.* เริ่มเมื่อสองปีก่อนและยังเรียนอยู่ จึงใช้ have + V3 กับ for two years (ใช้ have been learning ก็ได้เพื่อเน้นความต่อเนื่อง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

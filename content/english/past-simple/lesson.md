@@ -73,6 +73,31 @@
 1. stop ลงท้ายด้วย พยัญชนะ-สระ-พยัญชนะ (s-t-**o-p**) และเป็นพยางค์เดียว จึงเพิ่ม p อีกตัว → stopped
 2. study ลงท้ายด้วย d + y (พยัญชนะ + y) จึงเปลี่ยน y เป็น i → studied
 
+## was และ were: อดีตของ verb to be
+
+| ประธาน | บอกเล่า | ปฏิเสธ | คำถาม |
+|---|---|---|---|
+| I / he / she / it | was | wasn't | Was he...? |
+| you / we / they | were | weren't | Were they...? |
+
+verb to be สร้างปฏิเสธและคำถามเองได้ ไม่ต้องใช้ did เช่น *I **wasn't** at home.* และ ***Were** you tired?*
+
+## ออกเสียง -ed
+
+| เสียงท้ายของกริยา | -ed ออกเสียง | ตัวอย่าง |
+|---|---|---|
+| ไม่ก้อง เช่น p, k, s, sh, ch | /t/ | stopped, walked, watched |
+| ก้องและสระ เช่น b, g, l, n, สระ | /d/ | played, cleaned, cried |
+| t หรือ d | /ɪd/ เพิ่มหนึ่งพยางค์ | wanted, needed, visited |
+
+## ago และการเล่าเรื่องเป็นลำดับ
+
+ช่วงเวลา + **ago** บอกเวลาในอดีตนับย้อนจากตอนนี้ เช่น *two days ago, ten minutes ago* และนิสัยในอดีตที่จบแล้วก็ใช้ past simple ได้ เช่น *When I was a child, I **walked** to school every day.*
+
+เมื่อเล่าเรื่องที่เกิดขึ้นหลายอย่างต่อกัน (ดูเส้นเวลาด้านบน) ให้เปิดด้วยเวลาและสถานที่ แล้วใช้คำบอกลำดับ **First, Then, After that, Finally** และเชื่อมเหตุผลด้วย **because** หรือ **so** เช่น
+
+> *Last Sunday I went to Chatuchak Market with my sister. **First**, we bought some clothes. **Then** we ate coconut ice cream **because** it was very hot. **After that**, we looked at the plants. **Finally**, we took the MRT home. We were tired, **but** we were happy.*
+
 ## ข้อผิดพลาดที่พบบ่อย
 
 - **ใช้กริยาช่องที่ 2 หลัง did** เช่น ~~Did you saw it?~~ หรือ ~~I didn't went.~~ ที่ถูกคือ *Did you see it?* และ *I didn't go.*
@@ -80,3 +105,5 @@
 - **สะกดผิด** เช่น ~~studyed~~ ~~stoped~~ ที่ถูกคือ studied และ stopped
 - **ลืมเปลี่ยนรูปกริยาเพราะมีคำบอกเวลาแล้ว** เช่น ~~Yesterday she play badminton.~~ ภาษาอังกฤษต้องเปลี่ยนกริยาด้วย: *Yesterday she played badminton.*
 - **ใช้ was / were คู่กับกริยาอื่น** เช่น ~~I was go to school.~~ ที่ถูกคือ *I went to school.*
+- **ใช้ did กับ verb to be** เช่น ~~I didn't be at home.~~ ที่ถูกคือ *I wasn't at home.*
+- **ใช้ before แทน ago** เช่น ~~three years before~~ เมื่อนับย้อนจากตอนนี้ใช้ *three years ago*

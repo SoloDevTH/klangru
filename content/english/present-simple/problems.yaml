@@ -216,3 +216,155 @@ problems:
     solution: "ถูก: Water boils at 100 °C. (ความจริง) · The train to Hat Yai leaves at 8:30 tomorrow. (ตารางเวลา) · My brother watches TV every night. (กิจวัตร) ผิด: Does he works → Does he work · studys → studies · They doesn't → They don't"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: eng.pres.p014
+    topics: [english.grammar.present-simple]
+    difficulty: 2
+    type: mcq
+    stem: "เส้นเวลาใดตรงกับประโยค *I jog every morning.*"
+    figure: { src: tense-timelines-quiz.svg, alt: "เส้นเวลา 3 เส้น จากอดีตทางซ้ายไปอนาคตทางขวา มีขีดแดงบอกตอนนี้: A มีเครื่องหมายกากบาทเว้นระยะเท่ากันตลอดเส้น ทั้งก่อนและหลังตอนนี้ B มีกากบาทจุดเดียวในอดีต C มีแถบทึบเริ่มจากจุดหนึ่งในอดีตยาวต่อเนื่องมาถึงตอนนี้" }
+    choices:
+      - { id: a, text: "A", correct: true, feedback: "ถูก every morning คือทำซ้ำเป็นประจำ เกิดหลายครั้งทั้งก่อนหน้าและต่อจากนี้" }
+      - { id: b, text: "B", feedback: "B คือเหตุการณ์ครั้งเดียวที่จบไปแล้วในอดีต ซึ่งใช้ past simple เช่น I jogged yesterday." }
+      - { id: c, text: "C", feedback: "C คือสิ่งที่เริ่มในอดีตและต่อเนื่องมาถึงตอนนี้ ซึ่งมักใช้ present perfect เช่น I have lived here since 2020." }
+    hints:
+      - "every morning บอกว่าเกิดครั้งเดียวหรือหลายครั้ง"
+      - "present simple ใช้กับกิจวัตรที่ทำซ้ำ"
+    solution: "*I jog every morning.* เป็นกิจวัตรที่ทำซ้ำทุกเช้า จึงตรงกับเส้นเวลา A ที่มีเหตุการณ์ซ้ำ ๆ ตลอดเส้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p015
+    topics: [english.grammar.present-simple]
+    difficulty: 1
+    type: text
+    stem: "เติม verb to be ให้ถูกต้อง: *Pim and Joe ___ my classmates.*"
+    accepted: ["are"]
+    misconceptions:
+      - { match: "is", feedback: "Pim and Joe มีสองคน เท่ากับ they จึงใช้ are" }
+      - { match: "am", feedback: "am ใช้กับ I เท่านั้น" }
+    hints:
+      - "ประธานมีกี่คน แทนด้วยสรรพนามอะไร"
+      - "I → am · he/she/it → is · you/we/they → are"
+    solution: "Pim and Joe = they จึงใช้ **are**: *Pim and Joe are my classmates.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p016
+    topics: [english.grammar.present-simple]
+    difficulty: 2
+    type: text
+    stem: "เติมคำในช่องว่าง: *What time ___ the school bus arrive?* (รถโรงเรียนมาถึงกี่โมง)"
+    accepted: ["does"]
+    misconceptions:
+      - { match: "do", feedback: "the school bus เป็นสิ่งเดียว เท่ากับ it จึงใช้ does" }
+      - { match: "is", feedback: "ประโยคนี้มีกริยาหลัก arrive อยู่แล้ว คำถามของกริยาทั่วไปใช้ do หรือ does ไม่ใช่ is" }
+    hints:
+      - "คำถามแบบ wh- เรียงเป็น คำแสดงคำถาม + do/does + ประธาน + กริยารูปเดิม"
+      - "the school bus แทนด้วยสรรพนามใด"
+    solution: "*What time **does** the school bus arrive?* ประธานเป็นเอกพจน์ (it) จึงใช้ does และกริยา arrive อยู่ในรูปเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p017
+    topics: [english.grammar.present-simple]
+    difficulty: 2
+    type: mcq
+    stem: "ตัว -es ในคำว่า *watches* ออกเสียงอย่างไร"
+    choices:
+      - { id: a, text: "/ɪz/ (อิซ) เป็นพยางค์เพิ่ม", correct: true, feedback: "ถูก กริยาที่ลงท้ายด้วยเสียง ช ซ ส ฉ (เช่น ch, sh, s, x) เติมแล้วได้พยางค์ใหม่ /ɪz/ watch-es" }
+      - { id: b, text: "/s/ (ส)", feedback: "/s/ ใช้หลังเสียงไม่ก้อง เช่น walks, eats ถ้าออกเสียง /s/ หลัง ch จะได้เสียงที่ฟังไม่ชัด จึงต้องเพิ่มพยางค์" }
+      - { id: c, text: "/z/ (ซ) ไม่เพิ่มพยางค์", feedback: "/z/ ใช้หลังเสียงก้องและสระ เช่น plays, goes แต่หลังเสียง ch ต้องเพิ่มพยางค์" }
+      - { id: d, text: "ไม่ออกเสียง", feedback: "ตัว -s และ -es ต้องออกเสียงเสมอ ผู้ฟังใช้เสียงนี้รู้ว่าประธานเป็นเอกพจน์" }
+    hints:
+      - "ลองนับพยางค์ของ watch กับ watches"
+      - "หลังเสียงคล้าย ช ซ ส ต้องเติมสระเข้าไปจึงจะออกเสียง s ได้"
+    solution: "เสียง -s/-es มี 3 แบบ: /s/ หลังเสียงไม่ก้อง (walks) · /z/ หลังเสียงก้องและสระ (plays) · /ɪz/ หลังเสียง s, z, sh, ch, x (watches, washes, fixes) คำว่า watches จึงอ่าน **/ɪz/** เป็นสองพยางค์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p018
+    topics: [english.grammar.present-simple]
+    difficulty: 3
+    type: mcq
+    stem: "อ่านข้อความแล้วตอบคำถาม\n\n*Ploy is a student in Khon Kaen. She gets up at six every day. She usually goes to school by songthaew, but on Fridays her father drives her. She doesn't eat breakfast at home. She buys sticky rice and grilled pork near the school.*\n\nHow does Ploy go to school on Fridays?"
+    choices:
+      - { id: a, text: "Her father drives her.", correct: true, feedback: "ถูก ประโยค but on Fridays her father drives her. บอกข้อยกเว้นของวันศุกร์" }
+      - { id: b, text: "She goes by songthaew.", feedback: "usually goes by songthaew คือวันปกติ แต่คำว่า but on Fridays บอกว่าวันศุกร์ไม่เหมือนวันอื่น" }
+      - { id: c, text: "She walks to school.", feedback: "ข้อความไม่ได้บอกว่าพลอยเดินไปโรงเรียน" }
+      - { id: d, text: "She buys sticky rice.", feedback: "ข้อนี้บอกว่าซื้ออาหารเช้าอะไร ไม่ได้ตอบว่าไปโรงเรียนอย่างไร" }
+    hints:
+      - "หาประโยคที่มีคำว่า Fridays"
+      - "but ใช้บอกสิ่งที่ต่างจากประโยคก่อนหน้า"
+    solution: "ข้อความบอกว่าพลอยมักนั่งสองแถว **แต่** วันศุกร์พ่อขับรถไปส่ง คำตอบคือ *Her father drives her.* (drives เติม s เพราะประธาน her father = he)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p019
+    topics: [english.grammar.present-simple]
+    difficulty: 3
+    type: text
+    stem: "เติมคำเชื่อมหนึ่งคำให้ได้ความว่า นกไม่ดื่มกาแฟ **เพราะ** กาแฟทำให้ใจสั่น: *Nok doesn't drink coffee ___ it makes her heart beat fast.*"
+    accepted: ["because"]
+    misconceptions:
+      - { match: "but", feedback: "but ใช้เชื่อมความที่ขัดแย้งกัน แต่ประโยคนี้บอกเหตุผล" }
+      - { match: "and", feedback: "and เชื่อมความที่ไปด้วยกัน ไม่ได้บอกเหตุผล" }
+      - { match: "so", feedback: "so บอกผลลัพธ์ ถ้าใช้ so ต้องสลับลำดับความ: Coffee makes her heart beat fast, so she doesn't drink it." }
+    hints:
+      - "ข้อความหลังช่องว่างเป็นเหตุผลของข้อความแรก"
+      - "คำเชื่อมพื้นฐาน and, but, because, so มีความหมายต่างกัน"
+    solution: "*Nok doesn't drink coffee **because** it makes her heart beat fast.* because นำเหตุผล (สังเกตว่า makes เติม s เพราะประธาน it)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p020
+    topics: [english.grammar.present-simple]
+    difficulty: 4
+    type: mcq
+    stem: "ประโยคใดใช้ present simple เพื่อบอก **ตารางเวลาที่กำหนดไว้**"
+    choices:
+      - { id: a, text: "The last BTS train leaves Mo Chit at midnight.", correct: true, feedback: "ถูก เวลาออกของรถไฟฟ้าเป็นตารางที่กำหนดไว้แล้ว" }
+      - { id: b, text: "My grandmother waters her plants every evening.", feedback: "ประโยคนี้บอกกิจวัตร (every evening) ไม่ใช่ตารางเวลา" }
+      - { id: c, text: "The sun rises in the east.", feedback: "ประโยคนี้บอกความจริงทั่วไปทางธรรมชาติ" }
+      - { id: d, text: "Durian smells very strong.", feedback: "ประโยคนี้บอกลักษณะที่เป็นจริงทั่วไป ไม่ใช่ตารางเวลา" }
+    hints:
+      - "present simple ใช้ได้ 3 แบบ: กิจวัตร ความจริงทั่วไป และตารางเวลา"
+      - "ตารางเวลามักเป็นของขนส่ง โรงเรียน หรืองานที่มีกำหนดแน่นอน"
+    solution: "รถไฟฟ้าขบวนสุดท้ายออกตามตารางที่กำหนดไว้ จึงเป็นการใช้ present simple บอก **ตารางเวลา** ส่วนข้ออื่นเป็นกิจวัตรและความจริงทั่วไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p021
+    topics: [english.grammar.present-simple]
+    difficulty: 4
+    type: text
+    stem: "ตั้งคำถามที่คำตอบคือ *She studies English on Tuesdays.* โดยถามว่าเรียน **เมื่อไร**: *When ___ she ___ English?* (พิมพ์สองคำคั่นด้วยเว้นวรรค)"
+    accepted: ["does study", "does, study", "does / study"]
+    misconceptions:
+      - { match: "does studies", feedback: "มี does แล้ว กริยาหลักต้องเป็นรูปเดิม study" }
+      - { match: "do study", feedback: "she เป็นบุรุษที่ 3 เอกพจน์ ใช้ does" }
+      - { match: "is study", feedback: "study เป็นกริยาทั่วไป ใช้ does ในคำถาม ไม่ใช่ is" }
+    hints:
+      - "คำถาม wh-: When + does/do + ประธาน + กริยารูปเดิม"
+      - "studies ในคำตอบมี s เพราะประธานเป็น she ตอนเปลี่ยนเป็นคำถาม s ย้ายไปที่ does"
+    solution: "*When **does** she **study** English?* — *She studies English on Tuesdays.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.pres.p022
+    topics: [english.grammar.present-simple]
+    difficulty: 5
+    type: text
+    stem: "เปลี่ยนประโยคเป็นเรื่องของ **เพื่อนผู้หญิง** (she): *I wash my uniform and I don't watch TV.* → *She ___ her uniform and she ___ TV.* (พิมพ์คำในช่องว่างทั้งสองช่องตามลำดับ คั่นด้วยเครื่องหมายจุลภาค)"
+    accepted: ["washes, doesn't watch", "washes, doesn’t watch", "washes, does not watch", "washes doesn't watch", "washes does not watch"]
+    misconceptions:
+      - { match: "washs, doesn't watch", feedback: "wash ลงท้ายด้วย sh ต้องเติม es เป็น washes" }
+      - { match: "washes, doesn't watches", feedback: "หลัง doesn't กริยาต้องเป็นรูปเดิม watch" }
+      - { match: "washes, don't watch", feedback: "she ต้องใช้ doesn't ไม่ใช่ don't" }
+      - { match: "wash, doesn't watch", feedback: "ประโยคบอกเล่ากับ she ต้องเติม es ที่ wash" }
+    hints:
+      - "ช่องแรกเป็นประโยคบอกเล่า ช่องที่สองเป็นประโยคปฏิเสธ"
+      - "ตรวจการเติม es กับคำที่ลงท้ายด้วย sh และจำว่าหลัง doesn't ใช้กริยารูปเดิม"
+    solution: "*She **washes** her uniform and she **doesn't watch** TV.* บอกเล่าเติม es (sh + es) ส่วนปฏิเสธใช้ doesn't + กริยารูปเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

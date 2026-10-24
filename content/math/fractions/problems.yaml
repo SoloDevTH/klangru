@@ -342,3 +342,19 @@ problems:
     solution: "ต่อชั่วโมง: $\\tfrac{1}{3} + \\tfrac{1}{6} = \\tfrac{2}{6} + \\tfrac{1}{6} = \\tfrac{3}{6} = \\tfrac{1}{2}$ ของแท็งก์ จึงเต็มใน 2 ชั่วโมง ตรวจ: ใน 2 ชั่วโมง A เติม $\\tfrac{2}{3}$ B เติม $\\tfrac{1}{3}$ รวมเต็มแท็งก์พอดี ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.frac.p021
+    topics: [math.number.fractions]
+    difficulty: 2
+    type: text
+    stem: "เหลือพิซซ่า $\\tfrac{1}{3}$ ถาด พี่น้อง 2 คนแบ่งกันเท่า ๆ กัน แต่ละคนได้พิซซ่ากี่ถาด (พิมพ์ในรูป a/b)"
+    accepted: ["1/6"]
+    hints:
+      - "แบ่ง 2 คนเท่า ๆ กัน คือหาร $\\tfrac{1}{3}$ ด้วย 2"
+      - "ตัดชิ้น $\\tfrac{1}{3}$ ถาดออกเป็น 2 ชิ้นเท่ากัน ทั้งถาดจะมีชิ้นขนาดนี้กี่ชิ้น"
+    misconceptions:
+      - { match: "2/3", feedback: "$\\tfrac{2}{3}$ คือคูณ 2 แต่การแบ่งให้ 2 คนทำให้แต่ละคนได้น้อยลง ต้องหาร" }
+      - { match: "1/5", feedback: "ดูเหมือนบวก 2 เข้ากับตัวส่วน $\\tfrac{1}{3} \\div 2 = \\tfrac{1}{3} \\times \\tfrac{1}{2}$ ตัวส่วนต้องคูณ 2" }
+    solution: "$\\tfrac{1}{3} \\div 2 = \\tfrac{1}{3} \\times \\tfrac{1}{2} = \\tfrac{1}{6}$ ถาด ตรวจ: สองคนได้ $\\tfrac{1}{6} \\times 2 = \\tfrac{2}{6} = \\tfrac{1}{3}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -52,6 +52,14 @@
 
 กฎที่ห้ามลืม: **ถ้ามีคำบอกเวลาในอดีตที่จบแล้ว เช่น yesterday หรือ ago ห้ามใช้ present perfect**
 
+## ถามช่วงเวลาด้วย How long และเล่าข่าวล่าสุด
+
+ถามว่าทำมานานเท่าไรแล้วใช้ **How long + have/has + ประธาน + V3** เช่น *How long have you lived here?* — *For six years.* / *Since 2020.* คำตอบที่เป็น for กับ since แปลงกลับกันได้ด้วยการนับ: ถ้าตอนนี้คือ ค.ศ. 2026 แล้ว since 2020 เท่ากับ for 6 years (ดูเส้นเวลาด้านบน)
+
+present perfect ยังเหมาะกับการเล่า **ข่าวล่าสุด** ในข้อความหรืออีเมลถึงเพื่อน เพราะผู้เขียนสนใจผลที่ยังเกี่ยวกับตอนนี้ แต่เมื่อเล่ารายละเอียดว่าเกิดเมื่อไร ให้เปลี่ยนเป็น past simple
+
+> *Hi Ben, I **have just started** a new job at a hotel in Krabi. I **have already met** many tourists, but I **haven't learned** all the names of the islands **yet**. Yesterday I **took** a boat to Phi Phi with my manager.*
+
 ### ตัวอย่างที่ 1: since หรือ for
 
 เติมคำ: *Nid has worked at this hospital ___ 2020.*
@@ -75,3 +83,5 @@ A: *Have you ever been to Chiang Rai?* B: *Yes, I ___ (go) there in 2022.*
 - **ใช้ present perfect กับเวลาที่จบแล้ว** เช่น ~~I have seen that movie yesterday.~~ ที่ถูกคือ *I saw that movie yesterday.*
 - **สลับ since กับ for** เช่น ~~since three years~~ ที่ถูกคือ *for three years* เพราะสามปีเป็นช่วงเวลา
 - **ใช้ already ในประโยคปฏิเสธ** เช่น ~~I haven't finished already.~~ ประโยคปฏิเสธใช้ yet: *I haven't finished yet.*
+- **ใช้ ago กับ present perfect** เช่น ~~I have learned Chinese two years ago.~~ ถ้ายังเรียนอยู่ใช้ *for two years* ถ้าบอกเวลาที่เริ่มใช้ past simple *I started two years ago.*
+- **ตอบ How long ด้วยปีที่เริ่มโดยไม่มี since** เช่น ~~2020.~~ ควรตอบ *Since 2020.* หรือ *For six years.*

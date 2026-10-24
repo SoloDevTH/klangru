@@ -359,3 +359,19 @@ problems:
     solution: "มุมยอดจั่ว $= 180^\\circ - 62^\\circ - 62^\\circ = 56^\\circ$ หลังคาที่ชันมาก (มุมฐานใหญ่) จะมียอดจั่วแหลม ช่วยให้น้ำฝนไหลลงเร็ว"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.ang.p023
+    topics: [math.geometry.angles]
+    difficulty: 2
+    type: numeric
+    stem: "รังสีสี่เส้นออกจากจุด $O$ จุดเดียว แบ่งรอบจุด $O$ เป็นมุมสี่มุมที่ไม่ซ้อนกัน มีขนาด $90^\\circ$, $120^\\circ$, $x^\\circ$ และ $2x^\\circ$ จงหา $x$"
+    answer: { value: 50 }
+    hints:
+      - "มุมรอบจุดหนึ่งจุดรวมกันได้หนึ่งรอบพอดี"
+      - "เขียนสมการ $90 + 120 + x + 2x = 360$"
+    misconceptions:
+      - { match: -10, feedback: "ดูเหมือนใช้ผลรวม $180^\\circ$ ซึ่งเป็นมุมบนเส้นตรง มุมรอบจุดรวมกันได้ $360^\\circ$ (มุมติดลบไม่มีอยู่จริง)" }
+      - { match: 150, feedback: "นั่นคือ $3x$ ยังต้องหารด้วย 3" }
+    solution: "มุมรอบจุดรวมกันได้ $360^\\circ$: $90 + 120 + 3x = 360$ ได้ $3x = 150$ และ $x = 50$ มุมทั้งสี่คือ $90^\\circ$, $120^\\circ$, $50^\\circ$, $100^\\circ$ รวม $360^\\circ$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

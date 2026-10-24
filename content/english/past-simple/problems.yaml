@@ -216,3 +216,139 @@ problems:
     solution: "How much + did + she + pay: *How much **did she pay** for the bus ticket?* ใช้ pay ไม่ใช่ paid เพราะ did บอกอดีตแล้ว"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: eng.past.p014
+    topics: [english.grammar.past-simple]
+    difficulty: 2
+    type: mcq
+    stem: "เส้นเวลาใดตรงกับประโยค *I lost my wallet at the market yesterday.*"
+    figure: { src: tense-timelines-quiz.svg, alt: "เส้นเวลา 3 เส้น จากอดีตทางซ้ายไปอนาคตทางขวา มีขีดแดงบอกตอนนี้: A มีเครื่องหมายกากบาทเว้นระยะเท่ากันตลอดเส้น ทั้งก่อนและหลังตอนนี้ B มีกากบาทจุดเดียวในอดีต C มีแถบทึบเริ่มจากจุดหนึ่งในอดีตยาวต่อเนื่องมาถึงตอนนี้" }
+    choices:
+      - { id: a, text: "B", correct: true, feedback: "ถูก ทำกระเป๋าหายครั้งเดียวเมื่อวาน และเหตุการณ์จบไปแล้ว" }
+      - { id: b, text: "A", feedback: "A คือสิ่งที่ทำซ้ำเป็นประจำ ซึ่งใช้ present simple เช่น I go to the market every Sunday." }
+      - { id: c, text: "C", feedback: "C คือสิ่งที่ต่อเนื่องมาถึงตอนนี้ ประโยคนี้บอกเวลาจบที่แน่นอน (yesterday) จึงไม่ต่อเนื่องมาถึงปัจจุบัน" }
+    hints:
+      - "yesterday บอกว่าเหตุการณ์เกิดเมื่อไร"
+      - "เหตุการณ์เกิดครั้งเดียวหรือหลายครั้ง และจบแล้วหรือยังดำเนินอยู่"
+    solution: "lost เป็นกริยาช่องที่ 2 ของ lose บอกเหตุการณ์ครั้งเดียวที่จบแล้วเมื่อวาน ตรงกับเส้นเวลา **B**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p015
+    topics: [english.grammar.past-simple]
+    difficulty: 1
+    type: text
+    stem: "เติม verb to be รูปอดีต: *My parents ___ at the beach in Rayong yesterday.*"
+    accepted: ["were"]
+    misconceptions:
+      - { match: "was", feedback: "was ใช้กับ I, he, she, it แต่ my parents มีสองคน (they) ใช้ were" }
+      - { match: "are", feedback: "are เป็นรูปปัจจุบัน ประโยคนี้มี yesterday ต้องใช้รูปอดีต" }
+    hints:
+      - "รูปอดีตของ be มีสองคำ คือ was และ were"
+      - "my parents แทนด้วย they"
+    solution: "they ใช้ **were**: *My parents were at the beach in Rayong yesterday.* (I/he/she/it ใช้ was ส่วน you/we/they ใช้ were)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p016
+    topics: [english.grammar.past-simple]
+    difficulty: 2
+    type: mcq
+    stem: "ตัว -ed ในคำว่า *wanted* ออกเสียงอย่างไร"
+    choices:
+      - { id: a, text: "/ɪd/ (อิด) เพิ่มอีกพยางค์", correct: true, feedback: "ถูก กริยาที่ลงท้ายด้วยเสียง t หรือ d เติม -ed แล้วได้พยางค์ใหม่ want-ed" }
+      - { id: b, text: "/t/ ไม่เพิ่มพยางค์", feedback: "/t/ ใช้หลังเสียงไม่ก้อง เช่น walked, watched แต่หลังเสียง t ต้องเพิ่มพยางค์จึงจะได้ยิน" }
+      - { id: c, text: "/d/ ไม่เพิ่มพยางค์", feedback: "/d/ ใช้หลังเสียงก้องและสระ เช่น played, cleaned แต่ want ลงท้ายด้วยเสียง t" }
+      - { id: d, text: "ไม่ออกเสียง", feedback: "-ed ต้องออกเสียงเสมอ เพราะเป็นสิ่งเดียวที่บอกผู้ฟังว่าเป็นอดีต" }
+    hints:
+      - "want ลงท้ายด้วยเสียงอะไร"
+      - "หลังเสียง t และ d ต้องเพิ่มสระเข้าไป -ed จึงออกเสียงได้"
+    solution: "-ed ออกเสียง 3 แบบ: /t/ หลังเสียงไม่ก้อง (walked) · /d/ หลังเสียงก้อง (played) · /ɪd/ หลังเสียง t, d (wanted, needed) คำว่า wanted จึงอ่าน **/ɪd/** เป็นสองพยางค์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p017
+    topics: [english.grammar.past-simple]
+    difficulty: 3
+    type: order
+    stem: "เรียงประโยคให้เป็นเรื่องเล่าคืนลอยกระทงที่ต่อเนื่องกัน"
+    items:
+      - "Last night my family went to the river for Loy Krathong."
+      - "First, we bought a krathong made of banana leaves."
+      - "Then we lit the candle and made a wish."
+      - "After that, we put the krathong on the water."
+      - "Finally, we watched the fireworks and went home."
+    hints:
+      - "ประโยคแรกของเรื่องเล่ามักบอกว่าเกิดอะไร เมื่อไร ที่ไหน"
+      - "ใช้คำบอกลำดับ First → Then → After that → Finally"
+    solution: "เปิดเรื่องด้วยเวลาและสถานที่ (Last night... went to the river) แล้วเรียงตามคำบอกลำดับ First (ซื้อกระทง) → Then (จุดเทียนอธิษฐาน) → After that (ลอยกระทง) → Finally (ดูพลุแล้วกลับบ้าน) ทุกประโยคใช้กริยาช่องที่ 2 เพราะเป็นเรื่องที่จบแล้ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p018
+    topics: [english.grammar.past-simple]
+    difficulty: 3
+    type: mcq
+    stem: "อ่านข้อความแล้วตอบคำถาม\n\n*Last Saturday Mint visited her grandmother in Ayutthaya. She took a train from Bangkok in the morning. They cooked boat noodles together for lunch. In the afternoon they rode bicycles around the old temples. Mint didn't want to go home!*\n\nWhat did Mint and her grandmother do in the afternoon?"
+    choices:
+      - { id: a, text: "They rode bicycles around the old temples.", correct: true, feedback: "ถูก ประโยค In the afternoon they rode bicycles... ตอบคำถามโดยตรง" }
+      - { id: b, text: "They cooked boat noodles.", feedback: "ทำก๋วยเตี๋ยวเรือเป็นมื้อกลางวัน (for lunch) ไม่ใช่ช่วงบ่าย" }
+      - { id: c, text: "They took a train from Bangkok.", feedback: "มิ้นท์นั่งรถไฟตอนเช้า (in the morning) และไปคนเดียว" }
+      - { id: d, text: "They went home.", feedback: "ข้อความบอกว่ามิ้นท์ไม่อยากกลับบ้าน (didn't want to go home)" }
+    hints:
+      - "หาคำว่า afternoon ในข้อความ"
+      - "rode เป็นกริยาช่องที่ 2 ของ ride (ขี่)"
+    solution: "ข้อความบอกว่า *In the afternoon they **rode** bicycles around the old temples.* (rode = ขี่ ช่องที่ 2 ของ ride)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p019
+    topics: [english.grammar.past-simple]
+    difficulty: 3
+    type: text
+    stem: "เติมคำให้เป็นประโยคปฏิเสธ: *Sorry, I ___ (not / be) at home when you called.* (ตอบเฉพาะคำในช่องว่าง)"
+    accepted: ["wasn't", "wasn’t", "was not"]
+    misconceptions:
+      - { match: "didn't be", feedback: "verb to be ไม่ใช้ did ในประโยคปฏิเสธ ให้ใส่ not หลัง was หรือ were" }
+      - { match: "didn’t be", feedback: "verb to be ไม่ใช้ did ในประโยคปฏิเสธ ให้ใส่ not หลัง was หรือ were" }
+      - { match: "weren't", feedback: "ประธานคือ I ใช้ was ไม่ใช่ were" }
+    hints:
+      - "รูปอดีตของ be กับ I คือ was"
+      - "ปฏิเสธของ verb to be ใส่ not ตามหลังได้เลย ไม่ต้องใช้ did"
+    solution: "*Sorry, I **wasn't** (was not) at home when you called.* verb to be สร้างปฏิเสธด้วย not ไม่ใช่ didn't"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p020
+    topics: [english.grammar.past-simple]
+    difficulty: 4
+    type: text
+    stem: "เติมคำให้ได้ความว่า ฉันย้ายมาอยู่เชียงใหม่เมื่อสามปีก่อน: *I moved to Chiang Mai three years ___.*"
+    accepted: ["ago"]
+    misconceptions:
+      - { match: "before", feedback: "before ใช้เทียบกับเหตุการณ์อื่น (ก่อนหน้านั้น) เมื่อนับย้อนจากปัจจุบันใช้ ago" }
+      - { match: "last", feedback: "last วางหน้าคำบอกเวลา เช่น last year ไม่ได้วางหลังช่วงเวลา" }
+      - { match: "since", feedback: "since ใช้กับ present perfect เพื่อบอกจุดเริ่ม เช่น I have lived here since 2023." }
+    hints:
+      - "คำนี้วางหลังช่วงเวลา เช่น two days ___ / a week ___"
+      - "หมายถึง นับย้อนจากตอนนี้"
+    solution: "*I moved to Chiang Mai three years **ago**.* ใช้ ช่วงเวลา + ago บอกเวลาในอดีตนับย้อนจากปัจจุบัน และใช้คู่กับ past simple"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: eng.past.p021
+    topics: [english.grammar.past-simple]
+    difficulty: 5
+    type: text
+    stem: "ประโยคนี้ใช้กริยาผิดสองคำ: *When I was a child, I live in Songkhla and I go to the beach every weekend.* พิมพ์กริยาที่ถูกต้องทั้งสองคำตามลำดับ คั่นด้วยเครื่องหมายจุลภาค"
+    accepted: ["lived, went", "lived,went", "lived went", "lived and went"]
+    misconceptions:
+      - { match: "lived, goed", feedback: "go เป็นกริยาไม่ปกติ รูปอดีตคือ went" }
+      - { match: "lives, goes", feedback: "When I was a child บอกว่าเป็นอดีต ต้องใช้กริยาช่องที่ 2 ไม่ใช่รูปปัจจุบัน" }
+      - { match: "was live, was go", feedback: "ไม่ต้องใส่ was หน้ากริยาอื่น ใช้กริยาช่องที่ 2 ได้เลย" }
+    hints:
+      - "When I was a child บอกช่วงเวลาในอดีตที่จบแล้ว แม้จะทำเป็นประจำในตอนนั้น"
+      - "live เป็นกริยาปกติ ส่วน go เป็นกริยาไม่ปกติ"
+    solution: "*When I was a child, I **lived** in Songkhla and I **went** to the beach every weekend.* นิสัยในอดีตที่จบแล้วก็ใช้ past simple ได้ ถึงจะมี every weekend ก็ตาม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

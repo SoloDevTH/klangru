@@ -49,6 +49,35 @@ don't ย่อมาจาก do not และ doesn't ย่อมาจาก
 3. คำถาม: ย้าย Does ไปไว้หน้าประโยค และใช้กริยารูปเดิม → ***Does** Somchai **take** the BTS to work?*
 4. ตอบสั้น: *Yes, he does.* หรือ *No, he doesn't.*
 
+## ออกเสียง -s และ -es อย่างไร
+
+ตัว -s/-es ต้องออกเสียงเสมอ เพราะผู้ฟังใช้เสียงนี้รู้ว่าประธานเป็นเอกพจน์ มี 3 แบบ
+
+| เสียงท้ายของกริยา | เสียงที่เติม | ตัวอย่าง |
+|---|---|---|
+| ไม่ก้อง เช่น p, t, k, f | /s/ | walks, eats, cooks |
+| ก้องหรือสระ เช่น b, d, g, l, m, n, สระ | /z/ | plays, goes, lives |
+| s, z, sh, ch, x (เสียงคล้าย ส ซ ช) | /ɪz/ เพิ่มหนึ่งพยางค์ | misses, washes, watches, fixes |
+
+## verb to be และคำถาม wh-
+
+ประโยคที่บอกว่าเป็นอะไร อยู่ที่ไหน หรือรู้สึกอย่างไร ใช้ **verb to be** แทนกริยาทั่วไป: I **am** / he, she, it **is** / you, we, they **are** ปฏิเสธใส่ not หลัง be (*She **isn't** hungry.*) และคำถามย้าย be ขึ้นหน้า (***Is** she hungry?*) โดยไม่ต้องใช้ do
+
+คำถามที่ขึ้นต้นด้วย what, where, when, what time, how ใช้รูปเดียวกับคำถาม yes/no แค่วางคำแสดงคำถามไว้หน้า
+
+> คำแสดงคำถาม + do/does + ประธาน + กริยารูปเดิม
+
+- *Where **do** you live?* — *I live in Lampang.*
+- *What time **does** the market open?* — *It opens at 5 a.m.*
+
+## จากประโยคเดี่ยวเป็นเรื่องเล่าสั้น ๆ
+
+เมื่อเล่าเรื่องตัวเองหรือกิจวัตรของคนอื่นเป็นภาษาอังกฤษ ให้เชื่อมประโยคง่าย ๆ ด้วย **and** (และ) **but** (แต่) **because** (เพราะ) จะได้ข้อความที่ต่อเนื่อง เช่น
+
+> *My name is Ton. I live in Phitsanulok with my parents. I get up at six **and** I help my mother at her noodle shop. I like English **because** my teacher is funny, **but** I don't like maths.*
+
+ทุกประโยคใช้ present simple เพราะเล่าเรื่องที่เป็นจริงและทำเป็นประจำ ฝึกเขียนแบบนี้ 5–6 ประโยคเกี่ยวกับตัวเองเป็นประจำ จะใช้ s และ do/does ได้คล่องขึ้น
+
 ## ตำแหน่งของคำบอกความถี่
 
 คำบอกความถี่วาง **หน้าคำกริยาหลัก** แต่วาง **หลัง verb to be** (am, is, are)
@@ -63,3 +92,5 @@ don't ย่อมาจาก do not และ doesn't ย่อมาจาก
 - **เติม s ซ้ำหลัง does** เช่น ~~Does she plays?~~ หรือ ~~She doesn't plays.~~ เมื่อมี does แล้ว กริยาหลักต้องเป็นรูปเดิม
 - **สะกดผิด** เช่น ~~studys~~ ~~fixs~~ ที่ถูกคือ studies และ fixes
 - **ใส่ am, is, are ซ้อนกับกริยาอื่น** เช่น ~~I am eat rice.~~ ที่ถูกคือ *I eat rice.*
+- **ใช้ do กับ verb to be** เช่น ~~Do you are a student?~~ ที่ถูกคือ *Are you a student?*
+- **ไม่ออกเสียง -s ท้ายคำ** ต้องออกเสียง /s/ /z/ หรือ /ɪz/ ให้ได้ยิน เช่น watches อ่านสองพยางค์
