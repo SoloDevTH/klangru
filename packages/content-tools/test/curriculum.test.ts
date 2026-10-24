@@ -57,3 +57,14 @@ mappings:
   assert.deepEqual([c.total, c.full, c.partial, c.missing.map((m) => m.id)], [3, 1, 1, ["ค 1.1 ป.2/1"]]);
   assert.equal(topicCurriculum(data).get("math.a.x")?.[0].text, "นับจำนวน");
 });
+
+test("a topic may have one full and one partial row, but an indicator sits in only one", () => {
+  const dir = setup(`framework: th-core-test
+mappings:
+  - { topic: math.a.x, indicators: ["ค 1.1 ป.1/1"], coverage: full }
+  - { topic: math.a.x, indicators: ["ค 1.1 ป.1/2", "ค 1.1 ป.1/1"], coverage: partial }
+  - { topic: math.a.x, indicators: ["ค 1.1 ป.2/1"], coverage: partial }
+`);
+  const { issues } = loadCurriculum(dir, new Set(["math.a.x"]));
+  assert.deepEqual(issues.map((i) => i.message).sort(), ['math.a.x: ตัวชี้วัด "ค 1.1 ป.1/1" อยู่ทั้งแถว full และ partial', 'หัวข้อ "math.a.x" มีแถว partial ซ้ำ ให้รวมเป็นแถวเดียว'].sort());
+});

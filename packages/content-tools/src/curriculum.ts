@@ -73,11 +73,20 @@ export function loadCurriculum(root: string, topicIds: Set<string>): { data: Cur
       issues.push({ level: "error", file: rel, message: `ไม่มีหลักสูตร "${m.framework}" ใน curriculum/frameworks` });
       continue;
     }
+    // หัวข้อหนึ่งมีได้สองแถว คือแถวที่สอนครบ (full) และแถวที่สอนบางส่วน (partial) ตัวชี้วัดเดียวกันอยู่ได้แถวเดียว
     const seen = new Set<string>();
+    const topicIndicators = new Map<string, Set<string>>();
     for (const row of m.mappings) {
       if (!topicIds.has(row.topic)) issues.push({ level: "error", file: rel, message: `หัวข้อ "${row.topic}" ไม่มีอยู่ในคลัง` });
-      if (seen.has(row.topic)) issues.push({ level: "error", file: rel, message: `หัวข้อ "${row.topic}" ซ้ำ ให้รวมเป็นแถวเดียว` });
-      seen.add(row.topic);
+      const key = `${row.topic}|${row.coverage}`;
+      if (seen.has(key)) issues.push({ level: "error", file: rel, message: `หัวข้อ "${row.topic}" มีแถว ${row.coverage} ซ้ำ ให้รวมเป็นแถวเดียว` });
+      seen.add(key);
+      const prev = topicIndicators.get(row.topic) ?? new Set<string>();
+      for (const id of row.indicators) {
+        if (prev.has(id)) issues.push({ level: "error", file: rel, message: `${row.topic}: ตัวชี้วัด "${id}" อยู่ทั้งแถว full และ partial` });
+        prev.add(id);
+      }
+      topicIndicators.set(row.topic, prev);
       for (const id of row.indicators) if (!ids.has(id)) issues.push({ level: "error", file: rel, message: `${row.topic}: ไม่มีตัวชี้วัด "${id}" ใน ${m.framework}` });
     }
     data.mappings.push(m);

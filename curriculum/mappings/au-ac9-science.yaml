@@ -8,10 +8,6 @@ mappings:
     indicators: ["AC9S1U03", "AC9S4U03", "AC9S7U04"]
     coverage: partial
     note: "แรงเป็นการผลักหรือดึง ขนาดและทิศทาง แรงที่พบบ่อย แผนภาพแรง และแรงลัพธ์ที่สมดุลและไม่สมดุล ยังไม่ใช่การสืบเสาะด้วยการทดลอง"
-  - topic: physics.dynamics.friction
-    indicators: ["AC9S4U03"]
-    coverage: partial
-    note: "ผลของแรงเสียดทานต่อการเคลื่อนที่ ส่วนแรงโน้มถ่วงอยู่ใน gravitation และแรงแม่เหล็กอยู่ใน magnetic-field"
   - topic: physics.dynamics.gravitation
     indicators: ["AC9S4U03", "AC9S7U04"]
     coverage: partial
@@ -21,35 +17,35 @@ mappings:
     coverage: partial
     note: "แรงแม่เหล็กกระทำต่อวัตถุโดยไม่ต้องสัมผัส ส่วนของแรงแม่เหล็กใน AC9S4U03"
   - topic: physics.dynamics.newton-first
-    indicators: ["AC9S7U04", "AC9S10U05"]
+    indicators: [AC9S7U04]
+    coverage: full
+    note: สอนครบหลังเติมเนื้อหาเฟส 7
+  - topic: physics.dynamics.newton-first
+    indicators: ["AC9S10U05"]
     coverage: partial
     note: "แรงลัพธ์เป็นศูนย์ทำให้สภาพการเคลื่อนที่ไม่เปลี่ยน ความเฉื่อยสัมพันธ์กับมวล"
   - topic: physics.dynamics.newton-second
-    indicators: ["AC9S7U04", "AC9S10U05"]
+    indicators: [AC9S10U05]
+    coverage: full
+    note: สอนครบหลังเติมเนื้อหาเฟส 7
+  - topic: physics.dynamics.newton-second
+    indicators: ["AC9S7U04"]
     coverage: partial
     note: "AC9S10U05 ส่วนความสัมพันธ์เชิงปริมาณของแรง มวล และความเร่ง (F = ma) ครบ แต่ยังไม่ได้วิเคราะห์ข้อมูลจากการทดลองเอง"
   - topic: physics.dynamics.newton-third
     indicators: ["AC9S10U05"]
     coverage: partial
     note: "กฎข้อที่ 3 เป็นส่วนหนึ่งของกฎการเคลื่อนที่ของนิวตัน"
-  - topic: physics.energy.kinetic-potential
-    indicators: ["AC9S8U05"]
-    coverage: partial
-    note: "จำแนกพลังงานจลน์ พลังงานศักย์โน้มถ่วง และพลังงานศักย์ยืดหยุ่น และการเปลี่ยนรูประหว่างกัน"
-  - topic: physics.energy.conservation
-    indicators: ["AC9S8U05", "AC9S9U05"]
-    coverage: partial
-    note: "การอนุรักษ์พลังงานกลและพลังงานที่เปลี่ยนเป็นความร้อนเมื่อมีแรงเสียดทาน ประสิทธิภาพอยู่ใน power"
-  - topic: physics.energy.power
-    indicators: ["AC9S9U05"]
-    coverage: partial
-    note: "ประสิทธิภาพเป็นอัตราส่วนของพลังงานที่ได้ต่อพลังงานที่ใส่ ส่วนของ AC9S9U05"
   - topic: physics.waves.wave-basics
     indicators: ["AC9S9U04"]
     coverage: partial
     note: "แบบจำลองคลื่นอธิบายการถ่ายโอนพลังงานผ่านตัวกลาง ยังไม่เทียบกับแบบจำลองอนุภาค"
   - topic: physics.waves.sound
-    indicators: ["AC9S2U02", "AC9S9U04"]
+    indicators: [AC9S2U02]
+    coverage: full
+    note: สอนครบหลังเติมเนื้อหาเฟส 7
+  - topic: physics.waves.sound
+    indicators: ["AC9S9U04"]
     coverage: partial
     note: "เสียงเกิดจากการสั่นและเดินทางเป็นคลื่นตามยาวผ่านตัวกลาง"
   - topic: physics.light.reflection
@@ -72,14 +68,6 @@ mappings:
     indicators: ["AC9S6U03"]
     coverage: partial
     note: "พลังงานไฟฟ้าที่เครื่องใช้ไฟฟ้าเปลี่ยนเป็นพลังงานรูปอื่นและค่าไฟ"
-  - topic: physics.thermal.temperature-heat
-    indicators: ["AC9S3U03"]
-    coverage: partial
-    note: "ความร้อนถ่ายโอนจากวัตถุร้อนไปเย็นและอุณหภูมิผสม ยังไม่ระบุแหล่งความร้อนในชีวิตประจำวัน"
-  - topic: physics.thermal.phase-change
-    indicators: ["AC9S3U04"]
-    coverage: partial
-    note: "การเพิ่มหรือลดความร้อนทำให้เปลี่ยนสถานะ และความร้อนแฝง ยังไม่สำรวจสมบัติของของแข็งและของเหลว"
   - topic: physics.units.measurement
     indicators: ["AC9S9I03", "AC9S10I03"]
     coverage: partial
@@ -96,3 +84,27 @@ mappings:
     indicators: ["AC9S8U06"]
     coverage: partial
     note: "สูตรโมเลกุลและแบบจำลองโมเลกุลสองและสามมิติ ยังไม่จำแนกธาตุ สารประกอบ และของผสม"
+  - topic: physics.energy.conservation
+    indicators: [AC9S8U05, AC9S9U05]
+    coverage: full
+    note: การอนุรักษ์พลังงานกลและพลังงานที่เปลี่ยนเป็นความร้อนเมื่อมีแรงเสียดทาน ประสิทธิภาพอยู่ใน power
+  - topic: physics.dynamics.friction
+    indicators: [AC9S4U03]
+    coverage: full
+    note: ผลของแรงเสียดทานต่อการเคลื่อนที่ ส่วนแรงโน้มถ่วงอยู่ใน gravitation และแรงแม่เหล็กอยู่ใน magnetic-field
+  - topic: physics.energy.kinetic-potential
+    indicators: [AC9S8U05]
+    coverage: full
+    note: จำแนกพลังงานจลน์ พลังงานศักย์โน้มถ่วง และพลังงานศักย์ยืดหยุ่น และการเปลี่ยนรูประหว่างกัน
+  - topic: physics.thermal.phase-change
+    indicators: [AC9S3U04, AC9S7U05]
+    coverage: full
+    note: การเพิ่มหรือลดความร้อนทำให้เปลี่ยนสถานะ และความร้อนแฝง ยังไม่สำรวจสมบัติของของแข็งและของเหลว
+  - topic: physics.energy.power
+    indicators: [AC9S9U05]
+    coverage: full
+    note: ประสิทธิภาพเป็นอัตราส่วนของพลังงานที่ได้ต่อพลังงานที่ใส่ ส่วนของ AC9S9U05
+  - topic: physics.thermal.temperature-heat
+    indicators: [AC9S3U03]
+    coverage: full
+    note: ความร้อนถ่ายโอนจากวัตถุร้อนไปเย็นและอุณหภูมิผสม ยังไม่ระบุแหล่งความร้อนในชีวิตประจำวัน
