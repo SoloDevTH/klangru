@@ -61,6 +61,32 @@ export const MIN_DIFFICULTY_LEVELS = 3;
 const MATH = /\$\$([\s\S]+?)\$\$|\$([^$\n]+?)\$/g;
 
 /** ตรวจว่าสมการ LaTeX ทุกตัวในข้อความเรนเดอร์ด้วย KaTeX ได้ */
+/**
+ * ข้อความจาก YAML ที่มีอักขระควบคุม มักเกิดจากเขียน backslash ตัวเดียวในเครื่องหมายคำพูดคู่
+ * เช่น "\times" → tab + "imes", "\frac" → form feed + "rac", "\neq" → ขึ้นบรรทัด + "eq" (KaTeX ไม่ error แต่แสดงผิด)
+ */
+export function escapeErrors(text: string): string[] {
+  const errors: string[] = [];
+  const ctl = text.match(/[\x00-\x09\x0b-\x1f\x7f]/);
+  if (ctl) {
+    const at = text.indexOf(ctl[0]);
+    const near = JSON.stringify(text.slice(Math.max(0, at - 12), at + 12));
+    errors.push(`พบอักขระควบคุม ${JSON.stringify(ctl[0])} ใกล้ ${near} น่าจะเกิดจาก backslash ตัวเดียวในเครื่องหมายคำพูดคู่ ให้เขียน \\\\ หรือใช้เครื่องหมายคำพูดเดี่ยว`);
+  }
+  for (const m of text.matchAll(/(?<![$\\])\$(?!\$)([^$]*?)\$/g)) {
+    if (m[1].includes("\n")) errors.push(`สมการในบรรทัด "$${m[1].slice(0, 30)}…$" มีการขึ้นบรรทัด อาจเกิดจาก "\\n..." (เช่น \\neq) ในเครื่องหมายคำพูดคู่`);
+  }
+  return errors;
+}
+
+/** ตรวจทุกข้อความในโครงข้อมูลที่อ่านจาก YAML */
+export function yamlStringErrors(value: unknown, path = ""): string[] {
+  if (typeof value === "string") return escapeErrors(value).map((m) => (path ? `${path}: ${m}` : m));
+  if (Array.isArray(value)) return value.flatMap((v, i) => yamlStringErrors(v, `${path}[${i}]`));
+  if (value && typeof value === "object") return Object.entries(value).flatMap(([k, v]) => yamlStringErrors(v, path ? `${path}.${k}` : k));
+  return [];
+}
+
 export function mathErrors(text: string): string[] {
   const errors: string[] = [];
   for (const m of text.matchAll(MATH)) {
@@ -203,6 +229,8 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
       issues.push({ level: "error", file: topicFile, message: "ไม่พบไฟล์ topic.yaml" });
       continue;
     }
+    for (const m of yamlStringErrors(dir.topic)) issues.push({ level: "error", file: topicFile, message: m });
+    if (dir.problems !== undefined) for (const m of yamlStringErrors(dir.problems)) issues.push({ level: "error", file: problemsFile, message: m });
     const t = Topic.safeParse(dir.topic);
     if (!t.success) {
       issues.push(...zodIssues(topicFile, t.error));

@@ -203,3 +203,134 @@ problems:
     solution: "ความสูงจากระดับมือ $= 50\\sin 60^\\circ = 50 \\times \\dfrac{\\sqrt{3}}{2} = 25\\sqrt{3} \\approx 43.3\\ \\mathrm{m}$ ว่าวสูงจากพื้น $43.3 + 1.2 = 44.5\\ \\mathrm{m}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.trig.p013
+    topics: [math.geometry.trig-ratios]
+    difficulty: 2
+    type: numeric
+    stem: "ถ้า $\\sin 40^\\circ = \\cos x^\\circ$ และ $x$ เป็นมุมแหลม $x$ มีค่าเท่าใด"
+    answer: { value: 50, unit: องศา }
+    hints:
+      - "มุมแหลมสองมุมของสามเหลี่ยมมุมฉากรวมกันได้ $90^\\circ$"
+      - "ด้านข้ามของมุมหนึ่งคือด้านชิดของอีกมุม จึงได้ $\\sin\\theta = \\cos(90^\\circ - \\theta)$"
+    misconceptions:
+      - { match: 40, feedback: "$\\sin 40^\\circ \\approx 0.643$ แต่ $\\cos 40^\\circ \\approx 0.766$ ไม่เท่ากัน ไซน์ของมุมหนึ่งเท่ากับโคไซน์ของมุมที่รวมกันได้ $90^\\circ$" }
+      - { match: 140, feedback: "มุมที่รวมกันได้ $180^\\circ$ ใช้กับเรื่องอื่น ในสามเหลี่ยมมุมฉาก มุมแหลมสองมุมรวมกันได้ $90^\\circ$" }
+    solution: "$\\sin 40^\\circ = \\cos(90^\\circ - 40^\\circ) = \\cos 50^\\circ$ จึงได้ $x = 50$ (ตรวจ: ทั้งสองค่าประมาณ $0.643$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p014
+    topics: [math.geometry.trig-ratios]
+    difficulty: 2
+    type: numeric
+    stem: "มุมแหลม $\\theta$ มี $\\cos\\theta = 0.6$ ค่าของ $\\sin\\theta$ เท่ากับเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.8, tolerance: 0.001 }
+    hints:
+      - "ใช้ $\\sin^2\\theta + \\cos^2\\theta = 1$ หรือวาดสามเหลี่ยมที่ด้านชิด 3 ด้านฉาก 5"
+      - "$\\sin^2\\theta = 1 - 0.36$ แล้วถอดรากที่สอง"
+    misconceptions:
+      - { match: 0.4, feedback: "$\\sin\\theta + \\cos\\theta$ ไม่ได้เท่ากับ 1 กำลังสองของทั้งคู่ต่างหากที่รวมกันได้ 1" }
+      - { match: 0.64, feedback: "นั่นคือ $\\sin^2\\theta$ ยังต้องถอดรากที่สอง" }
+    solution: "$\\sin^2\\theta = 1 - 0.6^2 = 0.64$ ได้ $\\sin\\theta = 0.8$ (มุมแหลมจึงเลือกค่าบวก) ตรงกับสามเหลี่ยม 3-4-5: $\\cos\\theta = \\tfrac35$, $\\sin\\theta = \\tfrac45$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p015
+    topics: [math.geometry.trig-ratios]
+    difficulty: 3
+    type: numeric
+    stem: "บันไดเลื่อนในห้างสรรพสินค้าพาขึ้นสูง $4.5\\ \\mathrm{m}$ ในระยะแนวราบ $7.8\\ \\mathrm{m}$ บันไดเลื่อนทำมุมกับพื้นราบประมาณกี่องศา (ตอบเป็นจำนวนเต็มองศา)"
+    figure: { src: escalator.svg, alt: "สามเหลี่ยมมุมฉากของบันไดเลื่อน ด้านแนวราบยาว 7.8 m ด้านแนวตั้งยาว 4.5 m มุมฉากอยู่ใต้ปลายบน ด้านเอียงคือบันไดเลื่อน มุม θ อยู่ที่ปลายล่าง" }
+    answer: { value: 30, tolerance: 0.5, unit: องศา }
+    hints:
+      - "รู้ด้านข้าม (ความสูง) และด้านชิด (ระยะราบ) ของมุม θ"
+      - "ใช้ $\\theta = \\tan^{-1}\\dfrac{4.5}{7.8}$"
+    misconceptions:
+      - { match: 60, feedback: "นั่นคือมุมที่ปลายบน ใช้ $\\tan^{-1}\\tfrac{7.8}{4.5}$ ซึ่งกลับข้าม-ชิด มุมกับพื้นอยู่ที่ปลายล่าง" }
+      - { match: 35.2, feedback: "ดูเหมือนใช้ $\\sin^{-1}\\tfrac{4.5}{7.8}$ แต่ $7.8\\ \\mathrm{m}$ เป็นระยะราบ (ชิด) ไม่ใช่ความยาวบันไดเลื่อน (ฉาก) ต้องใช้ $\\tan^{-1}$" }
+    solution: "$\\tan\\theta = \\dfrac{4.5}{7.8} \\approx 0.577$ ได้ $\\theta = \\tan^{-1} 0.577 \\approx 30^\\circ$ (ซึ่งตรงกับ $\\tan 30^\\circ = \\tfrac{1}{\\sqrt3} \\approx 0.577$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p016
+    topics: [math.geometry.trig-ratios]
+    difficulty: 3
+    type: numeric
+    stem: "การไฟฟ้าขึงสายสลิงยึดเสาไฟฟ้า ปลายล่างยึดกับพื้นห่างจากโคนเสา $4\\ \\mathrm{m}$ สลิงทำมุม $50^\\circ$ กับพื้น สลิงยาวกี่เมตร (ตอบทศนิยม 2 ตำแหน่ง ในหน่วย m)"
+    answer: { value: 6.22, tolerance: 0.05, unit: m }
+    hints:
+      - "ระยะบนพื้นเป็นด้านชิดมุม $50^\\circ$ สลิงเป็นด้านตรงข้ามมุมฉาก"
+      - "ใช้ $\\cos 50^\\circ = \\dfrac{4}{L}$ แล้วจัดรูปหา $L$"
+    misconceptions:
+      - { match: 2.57, feedback: "ดูเหมือนคูณ $4 \\times \\cos 50^\\circ$ แต่สลิงเป็นด้านตรงข้ามมุมฉากซึ่งยาวที่สุด ต้องหาร: $L = \\tfrac{4}{\\cos 50^\\circ}$" }
+      - { match: 5.22, feedback: "ดูเหมือนใช้ $\\sin 50^\\circ$ ระยะบนพื้นแตะมุม $50^\\circ$ จึงเป็นด้านชิด ต้องใช้ $\\cos$" }
+    solution: "$\\cos 50^\\circ = \\dfrac{4}{L}$ → $L = \\dfrac{4}{\\cos 50^\\circ} \\approx \\dfrac{4}{0.6428} \\approx 6.22\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p017
+    topics: [math.geometry.trig-ratios]
+    difficulty: 4
+    type: numeric
+    stem: "เรือออกจากท่าเรือแล่นไปในทิศ $060^\\circ$ (วัดจากทิศเหนือตามเข็มนาฬิกา) เป็นระยะ $30\\ \\mathrm{km}$ ตอนนี้เรืออยู่ทางทิศตะวันออกของท่าเรือกี่กิโลเมตร (ตอบทศนิยม 1 ตำแหน่ง ในหน่วย km)"
+    answer: { value: 26.0, tolerance: 0.1, unit: km }
+    hints:
+      - "แบริ่งวัดจากทิศเหนือ มุมระหว่างเส้นทางเรือกับแนวเหนือคือ $60^\\circ$"
+      - "ระยะทางตะวันออกอยู่ตรงข้ามมุม $60^\\circ$ นั้น จึงใช้ $\\sin$"
+    misconceptions:
+      - { match: 15, feedback: "นั่นคือระยะทางทิศเหนือ ($30\\cos 60^\\circ$) แบริ่งวัดจากทิศเหนือ ระยะทางตะวันออกต้องใช้ $\\sin 60^\\circ$" }
+      - { match: 17.3, feedback: "ดูเหมือนใช้ $30\\tan 30^\\circ$ เส้นทางเรือยาว $30\\ \\mathrm{km}$ เป็นด้านตรงข้ามมุมฉาก จึงใช้ $\\sin$ หรือ $\\cos$ ไม่ใช่ $\\tan$" }
+    solution: "ระยะทางตะวันออก $= 30\\sin 60^\\circ = 30 \\times \\tfrac{\\sqrt3}{2} = 15\\sqrt3 \\approx 26.0\\ \\mathrm{km}$ (ระยะทางเหนือ $= 30\\cos 60^\\circ = 15\\ \\mathrm{km}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p018
+    topics: [math.geometry.trig-ratios]
+    difficulty: 5
+    type: numeric
+    stem: "กล่องลูกบาศก์ยาวด้านละ $10\\ \\mathrm{cm}$ เส้นทแยงมุมของลูกบาศก์ (จากมุมล่างไปมุมบนฝั่งตรงข้าม) ทำมุมกับพื้นกล่องกี่องศา (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 35.3, tolerance: 0.1, unit: องศา }
+    hints:
+      - "หาเส้นทแยงของพื้นกล่องก่อน: $\\sqrt{10^2 + 10^2}$"
+      - "เส้นทแยงพื้น ความสูง และเส้นทแยงลูกบาศก์เป็นสามเหลี่ยมมุมฉาก ความสูงเป็นด้านข้าม เส้นทแยงพื้นเป็นด้านชิด"
+      - "$\\theta = \\tan^{-1}\\dfrac{10}{10\\sqrt2}$"
+    misconceptions:
+      - { match: 45, feedback: "ดูเหมือนใช้ความยาวด้านพื้น $10$ เป็นด้านชิด เส้นทแยงลูกบาศก์ลากเหนือเส้นทแยงพื้นซึ่งยาว $10\\sqrt2$" }
+      - { match: 54.7, feedback: "นั่นคือมุมกับแนวดิ่ง (สลับข้ามกับชิด) โจทย์ถามมุมกับพื้น" }
+    solution: "เส้นทแยงพื้น $= 10\\sqrt2 \\approx 14.14\\ \\mathrm{cm}$ ได้ $\\tan\\theta = \\dfrac{10}{10\\sqrt2} = \\dfrac{1}{\\sqrt2}$ จึงได้ $\\theta = \\tan^{-1}(0.7071) \\approx 35.3^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p019
+    topics: [math.geometry.trig-ratios]
+    difficulty: 4
+    type: numeric
+    stem: "ในงานลอยกระทง โดรนถ่ายภาพลอยนิ่งสูงจากผิวน้ำ $80\\ \\mathrm{m}$ กล้องมองกระทงใบหนึ่งด้วยมุมก้ม $25^\\circ$ กระทงอยู่ห่างจากจุดใต้โดรนในแนวราบกี่เมตร (ตอบทศนิยม 1 ตำแหน่ง ในหน่วย m)"
+    answer: { value: 171.6, tolerance: 1.5, unit: m }
+    hints:
+      - "มุมก้มเท่ากับมุมเงยจากกระทงขึ้นไปหาโดรน (มุมแย้ง)"
+      - "ที่กระทง: ความสูง $80\\ \\mathrm{m}$ เป็นด้านข้าม ระยะราบเป็นด้านชิด"
+      - "$\\tan 25^\\circ = \\dfrac{80}{d}$ แล้วจัดรูปหา $d$"
+    misconceptions:
+      - { match: 37.3, feedback: "ดูเหมือนคูณ $80 \\tan 25^\\circ$ ระยะราบเป็นด้านชิดของมุม $25^\\circ$ จึงต้องหาร: $d = \\tfrac{80}{\\tan 25^\\circ}$" }
+      - { match: 189.3, feedback: "นั่นคือระยะในแนวเส้นสายตา ($\\tfrac{80}{\\sin 25^\\circ}$) โจทย์ถามระยะในแนวราบ" }
+    solution: "$\\tan 25^\\circ = \\dfrac{80}{d}$ → $d = \\dfrac{80}{\\tan 25^\\circ} \\approx \\dfrac{80}{0.4663} \\approx 171.6\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.trig.p020
+    topics: [math.geometry.trig-ratios]
+    difficulty: 2
+    type: numeric
+    stem: "สามเหลี่ยมมุมฉากมีด้านยาว $8$, $15$ และ $17$ หน่วย มุม $A$ อยู่ตรงข้ามด้านที่ยาว $8$ หน่วย จงหา $\\cos A$ (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.882, tolerance: 0.002 }
+    hints:
+      - "ด้านยาวที่สุด $17$ เป็นด้านตรงข้ามมุมฉาก"
+      - "ด้าน $8$ อยู่ตรงข้ามมุม $A$ ด้านที่เหลือ $15$ จึงเป็นด้านชิดมุม $A$"
+    misconceptions:
+      - { match: 0.471, feedback: "นั่นคือ $\\tfrac{8}{17} = \\sin A$ เพราะใช้ด้านข้าม $\\cos A$ ใช้ด้านชิด" }
+      - { match: 0.533, feedback: "นั่นคือ $\\tfrac{8}{15} = \\tan A$ $\\cos A$ ต้องหารด้วยด้านตรงข้ามมุมฉาก" }
+    solution: "$\\cos A = \\dfrac{\\text{ชิด}}{\\text{ฉาก}} = \\dfrac{15}{17} \\approx 0.882$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

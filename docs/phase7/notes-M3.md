@@ -103,3 +103,25 @@
 - `uk-nc-mathematics:UKNC-MA-KS3-G-09 → partial` (สร้างรูปคล้ายด้วยการขยาย ส่วนสามเหลี่ยมเท่ากันทุกประการอยู่ triangles) `UKNC-MA-KS4-G-09 → full` (ความยาว พื้นที่ ปริมาตรของรูปคล้าย) `UKNC-MA-KS4-R-01 → full` `UKNC-MA-KS4-G-01 → partial` (มีอัตราส่วนเศษส่วน ยังไม่มีอัตราส่วนติดลบ) `UKNC-MA-KS3-R-02 → full`
 - `au-ac9-mathematics:AC9M8SP01 → partial` (ร่วมกับ triangles) `AC9M9SP02 → full` `AC9M9M03 → partial` `AC9M10M05 → partial`
 - หัวข้อใหม่ที่ควรมี: การแปลงทางเรขาคณิต (เลื่อนขนาน หมุน สะท้อน) ซึ่งตรงกับ `math.geometry.symmetry-transformations` ในแผนเฟส 6 และควรเป็น prerequisite ของหัวข้อนี้
+
+## triangles (`math.geometry.triangles`)
+
+- โจทย์ 13 → 20 (p014–p020) ความยาก 1:2 · 2:3 · 3:7 · 4:5 · 5:3 ชนิด numeric, mcq, match, order สถานการณ์ไทยใหม่: ศาลาริมน้ำแปดเหลี่ยม โมบายแผ่นไม้อัด
+- ตัวอย่างแสดงวิธีทำ 2 (อสมการสามเหลี่ยมกับไม้สามท่อน, พิสูจน์มุมที่ฐานของสามเหลี่ยมหน้าจั่วด้วย ด.ด.ด.) คำถามชวนคิด 2 (p004, p005)
+- ภาพวาดเอง 3: `angle-sum-proof.svg` (บทเรียน) `midsegment.svg` (p016) `isosceles-36.svg` (p020 มุมยอด 36° จริง และ BD = BC จริง)
+- บทเรียนเพิ่ม: ผลบวกมุมภายในรูปหลายเหลี่ยม อสมการสามเหลี่ยมและข้อมูลที่สร้างสามเหลี่ยมได้หนึ่งรูป หลายรูป หรือไม่ได้เลย เส้นเชื่อมจุดกึ่งกลาง เส้นมัธยฐานและเซนทรอยด์ (2 : 1) การพิสูจน์มุมที่ฐานของสามเหลี่ยมหน้าจั่ว
+- ตัวชี้วัด: `us-ccss-math:4.G.2 → partial` (จำแนกสามเหลี่ยมมุมฉากได้ ส่วนเส้นขนานและเส้นตั้งฉากในรูปสองมิติอื่นอยู่หัวข้ออื่น) `us-ccss-math:8.G.5 → partial` (ส่วนสามเหลี่ยมครบ เส้นขนานอยู่ angles และ มุม–มุม อยู่ similarity) `us-ccss-math:G-CO.10 → full` (ผลบวกมุม มุมที่ฐานหน้าจั่ว เส้นเชื่อมจุดกึ่งกลาง เส้นมัธยฐานพบกันที่จุดเดียว) `us-ccss-math:G-CO.8 → partial` (ใช้เกณฑ์ ด.ม.ด. ม.ด.ม. ด.ด.ด. แต่ยังไม่อธิบายจากการแปลงแบบแข็งเกร็ง)
+- เสนอเพิ่ม: `us-ccss-math:7.G.2 → partial` (อสมการสามเหลี่ยมและเงื่อนไขที่สร้างได้หนึ่งรูป หลายรูป หรือไม่ได้ ยังไม่มีการลงมือสร้างรูป)
+- `uk-nc-mathematics:UKNC-MA-KS3-G-06 → full` `UKNC-MA-KS3-G-12 → full` `UKNC-MA-KS3-G-07 → partial` `au-ac9-mathematics:AC9M7M05 → full` `AC9M7SP02 → partial` (สี่เหลี่ยมยังไม่มี) `AC9M8SP01 → partial`
+- หัวข้อใหม่ที่ควรมี: การสร้างทางเรขาคณิตด้วยวงเวียนและไม้บรรทัด (`uk-nc-mathematics:UKNC-MA-KS3-G-04`, `us-ccss-math:G-CO.12`) ซึ่งตรงกับ `math.geometry.constructions` ในแผน รูปสี่เหลี่ยมชนิดต่าง ๆ (`math.geometry.quadrilaterals` ในแผน)
+
+## trig-ratios (`math.geometry.trig-ratios`)
+
+- โจทย์ 12 → 20 (p013–p020) ความยาก 1:2 · 2:5 · 3:6 · 4:4 · 5:3 ชนิด mcq, match, numeric, order สถานการณ์ไทยใหม่: บันไดเลื่อนในห้าง สลิงยึดเสาไฟฟ้า เรือประมงกับแบริ่ง โดรนถ่ายงานลอยกระทง
+- ตัวอย่างแสดงวิธีทำ 2 (หามุมทางลาดด้วย $\tan^{-1}$, แบริ่งสองช่วงของเรือ) คำถามชวนคิด 2 (p001, p007)
+- ภาพวาดเอง 3: `side-names.svg` (บทเรียน 3-4-5) `bearings.svg` (ในตัวอย่างแสดงวิธีทำ วาดตามมาตราส่วน 9 px ต่อ km และแบริ่งจริง) `escalator.svg` (p015)
+- บทเรียนเพิ่ม: $\sin\theta = \cos(90^\circ - \theta)$ และ $\sin^2\theta + \cos^2\theta = 1$ การหามุมด้วยฟังก์ชันผกผัน แบริ่ง โจทย์สามมิติ
+- ตัวชี้วัด: `us-ccss-math:G-SRT.6 → full` `us-ccss-math:G-SRT.8 → full` (คงเดิม) เสนอเพิ่ม `us-ccss-math:G-SRT.7 → full` (ไซน์และโคไซน์ของมุมประกอบ p013) `us-ccss-math:F-TF.8 → partial` (เอกลักษณ์ $\sin^2 + \cos^2 = 1$ สำหรับมุมแหลม ยังไม่มีจตุภาคอื่น)
+- `uk-nc-mathematics:UKNC-MA-KS4-G-11 → full` `UKNC-MA-KS4-G-06 → full` (แบริ่ง) `UKNC-MA-KS4-G-10 → partial` (สองและสามมิติครบ ยังไม่มีสามเหลี่ยมทั่วไป) `UKNC-MA-KS3-G-14 → full` (เมื่อรวมกับ pythagoras)
+- `au-ac9-mathematics:AC9M9SP01 → full` `AC9M10M03 → full` (มุมเงย มุมก้ม และทิศทาง เมื่อรวมกับ pythagoras) `AC9M9M03 → partial`
+- หัวข้อใหม่ที่ควรมี: กฎของไซน์ กฎของโคไซน์ และพื้นที่ $\tfrac12 ab\sin C$ (`us-ccss-math:G-SRT.9`–`G-SRT.11`, `uk-nc-mathematics:UKNC-MA-KS4-G-12`, `UKNC-MA-KS4-G-13`) ตรงกับ `math.geometry.law-of-sines-cosines` ในแผน

@@ -163,3 +163,12 @@ test("figures, worked examples and in-lesson checks are validated", () => {
   }
   assert.ok(!/graph\.svg/.test(msg), "ภาพที่ถูกต้องไม่ควรมีปัญหา");
 });
+
+test("single backslashes swallowed by double-quoted YAML are caught", async () => {
+  const { escapeErrors, yamlStringErrors } = await import("../src/validate.ts");
+  assert.equal(escapeErrors("$2\times 3$").length, 1, "\\t from \\times");
+  assert.equal(escapeErrors("$\frac{1}{2}$").length, 1, "\\f from \\frac");
+  assert.equal(escapeErrors("$a\neq b$").length, 1, "newline from \\neq inside inline math");
+  assert.deepEqual(escapeErrors("ถูกต้อง $\\frac{1}{2} \\times 3$\nบรรทัดใหม่นอกสมการได้"), []);
+  assert.match(yamlStringErrors({ problems: [{ stem: "x\by" }] }).join(), /problems\[0\]\.stem/);
+});

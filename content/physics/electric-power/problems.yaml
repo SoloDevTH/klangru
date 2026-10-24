@@ -211,3 +211,150 @@ problems:
     solution: "$R = \\dfrac{V^2}{P}$: หลอด $40\\ \\mathrm{W}$ มี $R = \\dfrac{220^2}{40} = 1210\\ \\Omega$ ส่วนหลอด $100\\ \\mathrm{W}$ มี $R = \\dfrac{220^2}{100} = 484\\ \\Omega$ หลอด $40\\ \\mathrm{W}$ จึงมีความต้านทานมากกว่า"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: phy.epow.p014
+    topics: [physics.electricity.electric-power]
+    difficulty: 1
+    type: numeric
+    stem: "กาต้มน้ำไฟฟ้าใช้พลังงานไฟฟ้า $360\\,000\\ \\mathrm{J}$ ในเวลา $3$ นาที กาต้มน้ำมีกำลังไฟฟ้ากี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W)"
+    answer: { value: 2000, tolerance: 1, unit: W }
+    hints:
+      - "กำลัง = พลังงาน ÷ เวลา"
+      - "แปลงเวลาเป็นวินาทีก่อน"
+    misconceptions:
+      - { match: 120000, feedback: "ดูเหมือนหารด้วย 3 (นาที) ต้องใช้เวลาเป็นวินาที $3 \\times 60 = 180\\ \\mathrm{s}$" }
+    solution: "$P = \\dfrac{E}{t} = \\dfrac{360\\,000\\ \\mathrm{J}}{180\\ \\mathrm{s}} = 2000\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p015
+    topics: [physics.electricity.electric-power]
+    difficulty: 1
+    type: mcq
+    stem: "บนบิลค่าไฟฟ้า จำนวน \"หน่วย\" ที่ใช้คิดเงินเป็นหน่วยของปริมาณใด"
+    choices:
+      - { id: a, text: "พลังงาน ($\\mathrm{kWh}$)", correct: true }
+      - { id: b, text: "กำลัง ($\\mathrm{kW}$)", feedback: "กำลังบอกว่าใช้พลังงานเร็วเพียงใด แต่การไฟฟ้าเก็บเงินตามพลังงานที่ใช้ไปทั้งหมด คือกำลังคูณเวลา" }
+      - { id: c, text: "ความต่างศักย์ ($\\mathrm{V}$)", feedback: "ไฟบ้านมีความต่างศักย์ $220\\ \\mathrm{V}$ เท่าเดิมทุกบ้าน จึงใช้คิดเงินไม่ได้" }
+      - { id: d, text: "กระแส ($\\mathrm{A}$)", feedback: "กระแสบอกปริมาณประจุที่ไหลต่อวินาที ไม่ได้รวมเวลาที่ใช้ทั้งเดือน" }
+    hints:
+      - "1 หน่วย = 1 กิโลวัตต์ × 1 ชั่วโมง"
+      - "กำลังคูณเวลาได้ปริมาณใด"
+    solution: "1 หน่วยคือ $1\\ \\mathrm{kWh}$ = กำลัง × เวลา = พลังงาน เท่ากับ $3.6 \\times 10^6\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p016
+    topics: [physics.electricity.electric-power]
+    difficulty: 2
+    type: numeric
+    stem: "ตู้เย็นฉลากประหยัดไฟเบอร์ 5 ระบุว่าใช้พลังงานเฉลี่ย $0.9\\ \\mathrm{kWh}$ ต่อวัน ถ้าสมมติอัตราค่าไฟ 4.5 บาทต่อหน่วย (อัตราสมมติสำหรับฝึกคิด) ใน 30 วันตู้เย็นนี้มีค่าไฟกี่บาท (ตอบเป็นตัวเลขในหน่วยบาท)"
+    answer: { value: 121.5, tolerance: 0.5, unit: บาท }
+    hints:
+      - "พลังงาน 30 วัน = พลังงานต่อวัน × 30"
+      - "ค่าไฟ = จำนวนหน่วย × อัตราต่อหน่วย"
+    misconceptions:
+      - { match: 4.05, feedback: "นั่นคือค่าไฟของวันเดียว ต้องคูณ 30 วัน" }
+      - { match: 27, feedback: "นั่นคือจำนวนหน่วยใน 30 วัน ยังต้องคูณอัตรา 4.5 บาทต่อหน่วย" }
+    solution: "$0.9 \\times 30 = 27$ หน่วย ค่าไฟ $= 27 \\times 4.5 = 121.5$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p017
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: numeric
+    stem: "กาต้มน้ำไฟฟ้ากำลัง $2000\\ \\mathrm{W}$ ต้มน้ำนาน $3$ นาที น้ำได้รับพลังงานความร้อน $302\\,400\\ \\mathrm{J}$ ประสิทธิภาพของกาต้มน้ำเป็นกี่เปอร์เซ็นต์ (ตอบเป็นตัวเลขในหน่วย %)"
+    answer: { value: 84, tolerance: 0.5, unit: "%" }
+    hints:
+      - "หาพลังงานไฟฟ้าที่ใส่เข้าไป $E = Pt$ โดยใช้เวลาเป็นวินาที"
+      - "ประสิทธิภาพ = พลังงานที่น้ำได้รับ ÷ พลังงานไฟฟ้าที่ใส่ × 100%"
+    misconceptions:
+      - { match: 0.84, feedback: "นั่นคือประสิทธิภาพในรูปทศนิยม ต้องคูณ 100 จึงเป็นเปอร์เซ็นต์" }
+      - { match: 151.2, feedback: "ดูเหมือนนำพลังงานที่น้ำได้หารด้วยกำลังเฉย ๆ ได้หน่วยเป็นวินาที ต้องหาพลังงานที่ใส่เข้าไปก่อน" }
+    solution: "พลังงานไฟฟ้า $= (2000)(180) = 360\\,000\\ \\mathrm{J}$ ประสิทธิภาพ $= \\dfrac{302\\,400}{360\\,000} \\times 100\\% = 84\\%$ อีก $16\\%$ กลายเป็นความร้อนที่ตัวกาและอากาศรอบ ๆ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p018
+    topics: [physics.electricity.electric-power]
+    difficulty: 4
+    type: numeric
+    stem: "โรงไฟฟ้าส่งกำลัง $1\\ \\mathrm{MW}$ ด้วยความต่างศักย์ $22\\ \\mathrm{kV}$ ผ่านสายส่งที่มีความต้านทานรวม $5\\ \\Omega$ กำลังที่สูญเสียเป็นความร้อนในสายส่งเป็นกี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W)"
+    answer: { value: 10331, tolerance: 60, unit: W }
+    hints:
+      - "หากระแสในสายส่งจาก $I = \\dfrac{P}{V}$"
+      - "กำลังที่สูญเสียในสายคือ $I^2R$ ของสาย"
+    misconceptions:
+      - { match: 96800000, feedback: "ดูเหมือนใช้ $\\dfrac{V^2}{R}$ กับ $22\\ \\mathrm{kV}$ ทั้งหมด ซึ่งมากกว่ากำลังที่ส่งเสียอีก ความต่างศักย์ $22\\ \\mathrm{kV}$ ไม่ได้ตกคร่อมสายส่ง ต้องใช้ $I^2R$" }
+      - { match: 227.3, feedback: "นั่นคือ $IR$ ซึ่งเป็นความต่างศักย์ที่ตกคร่อมสายส่ง (หน่วยโวลต์) กำลังที่สูญเสียต้องคูณกระแสอีกครั้ง" }
+    solution: "$I = \\dfrac{10^6}{22\\,000} \\approx 45.45\\ \\mathrm{A}$ กำลังสูญเสีย $= I^2R = (45.45)^2(5) \\approx 10\\,330\\ \\mathrm{W}$ ประมาณ $1\\%$ ของกำลังที่ส่ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p019
+    topics: [physics.electricity.electric-power]
+    difficulty: 5
+    type: numeric
+    stem: "นำหลอดไฟที่ระบุ $220\\ \\mathrm{V}$ $40\\ \\mathrm{W}$ และ $220\\ \\mathrm{V}$ $100\\ \\mathrm{W}$ มาต่ออนุกรมกันแล้วต่อกับไฟบ้าน $220\\ \\mathrm{V}$ ถือว่าความต้านทานของหลอดคงที่ หลอด $40\\ \\mathrm{W}$ ใช้กำลังไฟฟ้ากี่วัตต์ (ตอบเป็นตัวเลขในหน่วย W ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 20.41, tolerance: 0.2, unit: W }
+    hints:
+      - "หาความต้านทานของแต่ละหลอดจาก $R = \\dfrac{V^2}{P}$ โดยใช้ค่าบนฉลาก"
+      - "ต่ออนุกรม ความต้านทานรวมเป็นผลบวก หากระแสในวงจร"
+      - "กำลังของหลอด $40\\ \\mathrm{W}$ คือ $I^2R_{40}$"
+    misconceptions:
+      - { match: 40, feedback: "หลอดได้ $40\\ \\mathrm{W}$ เมื่อมีความต่างศักย์คร่อม $220\\ \\mathrm{V}$ เต็ม แต่ต่ออนุกรมแล้วความต่างศักย์ถูกแบ่ง" }
+      - { match: 8.16, feedback: "นั่นคือกำลังของหลอด $100\\ \\mathrm{W}$ ในวงจรนี้ ซึ่งความต้านทานน้อยกว่าจึงได้กำลังน้อยกว่า" }
+    solution: "$R_{40} = \\dfrac{220^2}{40} = 1210\\ \\Omega$, $R_{100} = \\dfrac{220^2}{100} = 484\\ \\Omega$ กระแส $I = \\dfrac{220}{1694} \\approx 0.130\\ \\mathrm{A}$ หลอด 40 W ใช้ $I^2(1210) \\approx 20.4\\ \\mathrm{W}$ ส่วนหลอด 100 W ใช้เพียง $\\approx 8.2\\ \\mathrm{W}$ หลอด 40 W จึงสว่างกว่าเมื่อต่ออนุกรม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p020
+    topics: [physics.electricity.electric-power]
+    difficulty: 4
+    type: numeric
+    stem: "ฉลากขนมปังกรอบหนึ่งห่อระบุว่าให้พลังงาน $840\\ \\mathrm{kJ}$ ถ้านำพลังงานเท่านี้มาเปิดพัดลมตั้งโต๊ะกำลัง $50\\ \\mathrm{W}$ จะเปิดได้นานกี่ชั่วโมง (ตอบเป็นตัวเลขในหน่วยชั่วโมง ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.67, tolerance: 0.02, unit: ชั่วโมง }
+    hints:
+      - "แปลง $\\mathrm{kJ}$ เป็น $\\mathrm{J}$"
+      - "เวลา = พลังงาน ÷ กำลัง ได้เป็นวินาที แล้วแปลงเป็นชั่วโมง"
+    misconceptions:
+      - { match: 0.00467, feedback: "ลืมแปลง $\\mathrm{kJ}$ เป็น $\\mathrm{J}$ ($840\\ \\mathrm{kJ} = 840\\,000\\ \\mathrm{J}$)" }
+      - { match: 280, feedback: "นั่นคือเวลาในหน่วยนาที ต้องหาร 60 อีกครั้งเป็นชั่วโมง" }
+    solution: "$t = \\dfrac{840\\,000\\ \\mathrm{J}}{50\\ \\mathrm{W}} = 16\\,800\\ \\mathrm{s} = \\dfrac{16\\,800}{3600} \\approx 4.67$ ชั่วโมง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p021
+    topics: [physics.electricity.electric-power]
+    difficulty: 3
+    type: order
+    stem: "เรียงเครื่องใช้ไฟฟ้าตามพลังงานที่ใช้ใน 1 วัน จาก **น้อยที่สุด** ไป **มากที่สุด**"
+    items:
+      - "หลอด LED $9\\ \\mathrm{W}$ เปิด 10 ชั่วโมง"
+      - "กาต้มน้ำ $2000\\ \\mathrm{W}$ ใช้ 15 นาที"
+      - "หม้อหุงข้าว $700\\ \\mathrm{W}$ ใช้ 1 ชั่วโมง"
+      - "ตู้เย็นที่ใช้พลังงานเฉลี่ย $0.9\\ \\mathrm{kWh}$ ต่อวัน"
+      - "แอร์ $1200\\ \\mathrm{W}$ เปิด 8 ชั่วโมง"
+    hints:
+      - "เปลี่ยนทุกเครื่องเป็นหน่วยเดียวกัน คือ $\\mathrm{kWh}$"
+      - "กำลัง (kW) × เวลา (ชั่วโมง) โดย 15 นาที = 0.25 ชั่วโมง"
+    solution: "LED $0.009 \\times 10 = 0.09$ · กาต้มน้ำ $2 \\times 0.25 = 0.5$ · หม้อหุงข้าว $0.7$ · ตู้เย็น $0.9$ · แอร์ $1.2 \\times 8 = 9.6\\ \\mathrm{kWh}$ เครื่องที่กำลังสูงสุด (กาต้มน้ำ) ไม่ได้ใช้พลังงานมากที่สุด เพราะใช้เวลาสั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: phy.epow.p022
+    topics: [physics.electricity.electric-power]
+    difficulty: 4
+    type: numeric
+    stem: "หลอดไส้ $60\\ \\mathrm{W}$ เปลี่ยนพลังงานไฟฟ้าเป็นแสงได้ $5\\%$ ที่เหลือเป็นความร้อน ถ้าเปิดหลอดนี้นาน 1 ชั่วโมง พลังงานที่กลายเป็นความร้อนมีกี่กิโลจูล (ตอบเป็นตัวเลขในหน่วย kJ)"
+    answer: { value: 205.2, tolerance: 0.5, unit: kJ }
+    hints:
+      - "กำลังที่กลายเป็นความร้อน = $95\\%$ ของ $60\\ \\mathrm{W}$"
+      - "พลังงาน = กำลัง × เวลา (วินาที) แล้วแปลงเป็นกิโลจูล"
+    misconceptions:
+      - { match: 216, feedback: "นั่นคือพลังงานไฟฟ้าทั้งหมด ต้องหักส่วนที่เป็นแสง $5\\%$ ออก" }
+      - { match: 10.8, feedback: "นั่นคือพลังงานแสง ($5\\%$) โจทย์ถามส่วนที่เป็นความร้อน" }
+    solution: "กำลังความร้อน $= 0.95 \\times 60 = 57\\ \\mathrm{W}$ ใน 1 ชั่วโมง $= 57 \\times 3600 = 205\\,200\\ \\mathrm{J} = 205.2\\ \\mathrm{kJ}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

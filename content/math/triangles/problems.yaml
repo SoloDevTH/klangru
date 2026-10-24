@@ -217,3 +217,121 @@ problems:
     solution: "$\\angle B = \\angle C = x$, $\\angle A = 2x$ → $2x + x + x = 180^\\circ$ → $x = 45^\\circ$ ดังนั้น $\\angle A = 90^\\circ$ เป็นสามเหลี่ยมมุมฉากหน้าจั่ว"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.tri.p014
+    topics: [math.geometry.triangles]
+    difficulty: 2
+    type: mcq
+    stem: "ความยาวด้านชุดใดประกอบเป็นรูปสามเหลี่ยมได้"
+    choices:
+      - { id: a, text: "5 cm, 6 cm, 10 cm", correct: true }
+      - { id: b, text: "3 cm, 4 cm, 8 cm", feedback: "$3 + 4 = 7$ น้อยกว่า $8$ สองด้านสั้นต่อกันแล้วไม่ถึงปลายด้านยาว" }
+      - { id: c, text: "2 cm, 3 cm, 5 cm", feedback: "$2 + 3 = 5$ เท่ากับด้านยาวพอดี ไม้จะนอนเป็นเส้นตรง ไม่เป็นสามเหลี่ยม ต้องมากกว่าอย่างแท้จริง" }
+      - { id: d, text: "4 cm, 4 cm, 9 cm", feedback: "$4 + 4 = 8$ น้อยกว่า $9$ แม้จะเป็นด้านเท่ากันสองด้านก็ยังสร้างไม่ได้" }
+    hints:
+      - "ใช้อสมการสามเหลี่ยม: ผลบวกของสองด้านที่สั้นกว่าต้องมากกว่าด้านที่ยาวที่สุด"
+      - "ถ้าเท่ากันพอดีก็ยังใช้ไม่ได้"
+    solution: "$5 + 6 = 11 > 10$ ✓ ส่วน $3 + 4 = 7 < 8$, $2 + 3 = 5 = 5$ และ $4 + 4 = 8 < 9$ ใช้ไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.tri.p015
+    topics: [math.geometry.triangles]
+    difficulty: 3
+    type: numeric
+    stem: "สามเหลี่ยมรูปหนึ่งมีด้านยาว $7$ cm และ $12$ cm ด้านที่สามยาวเป็นจำนวนเต็มเซนติเมตร ด้านที่สามมีความยาวที่เป็นไปได้กี่ค่า"
+    answer: { value: 13, unit: ค่า }
+    hints:
+      - "ด้านที่สาม $c$ ต้องสอดคล้องกับ $12 - 7 < c < 12 + 7$"
+      - "นับจำนวนเต็มที่มากกว่า 5 และน้อยกว่า 19"
+    misconceptions:
+      - { match: 14, feedback: "ดูเหมือนนับ 5 หรือ 19 ด้วย ที่ค่าขอบสามด้านจะเรียงเป็นเส้นตรง ต้องมากกว่าหรือน้อยกว่าอย่างแท้จริง" }
+      - { match: 15, feedback: "ดูเหมือนนับทั้ง 5 และ 19 ค่าขอบทั้งสองใช้ไม่ได้ เหลือ 6 ถึง 18" }
+    solution: "$5 < c < 19$ จำนวนเต็มคือ $6, 7, \\ldots, 18$ มีทั้งหมด $18 - 6 + 1 = 13$ ค่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.tri.p016
+    topics: [math.geometry.triangles]
+    difficulty: 4
+    type: numeric
+    stem: "ใน $\\triangle ABC$ จุด $D$ และ $E$ เป็นจุดกึ่งกลางของ $AB$ และ $AC$ ถ้า $DE = 2x + 1$ และ $BC = 5x - 4$ หน่วย ด้าน $BC$ ยาวกี่หน่วย"
+    figure: { src: midsegment.svg, alt: "สามเหลี่ยม ABC มีจุด D บนด้าน AB และจุด E บนด้าน AC มีขีดบอกว่า AD = DB และ AE = EC เส้น DE ระบุความยาว 2x + 1 ฐาน BC ระบุความยาว 5x − 4" }
+    answer: { value: 26, unit: หน่วย }
+    hints:
+      - "เส้นเชื่อมจุดกึ่งกลางสองด้านยาวครึ่งหนึ่งของด้านที่สาม"
+      - "ตั้งสมการ $2(2x + 1) = 5x - 4$ แล้วหา $x$"
+      - "แทน $x$ กลับใน $5x - 4$"
+    misconceptions:
+      - { match: 6, feedback: "นั่นคือค่า $x$ โจทย์ถามความยาว $BC$ ต้องแทนกลับใน $5x - 4$" }
+      - { match: 13, feedback: "นั่นคือความยาว $DE$ ส่วน $BC$ ยาวเป็นสองเท่า" }
+    solution: "$BC = 2 \\cdot DE$: $5x - 4 = 2(2x + 1) = 4x + 2$ ได้ $x = 6$ จึงได้ $BC = 5(6) - 4 = 26$ หน่วย (ตรวจ: $DE = 13 = \\tfrac{26}{2}$ ✓)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.tri.p017
+    topics: [math.geometry.triangles]
+    difficulty: 3
+    type: numeric
+    stem: "ศาลาริมน้ำหลังหนึ่งมีพื้นเป็นรูปแปดเหลี่ยมด้านเท่ามุมเท่า มุมภายในแต่ละมุมของพื้นศาลามีขนาดกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 135, unit: องศา }
+    hints:
+      - "แบ่งรูปแปดเหลี่ยมเป็นสามเหลี่ยมด้วยเส้นทแยงจากจุดยอดเดียว ได้ $8 - 2$ รูป"
+      - "ผลบวกมุมภายใน $= (8 - 2) \\times 180^\\circ$ แล้วหารด้วยจำนวนมุม"
+    misconceptions:
+      - { match: 1080, feedback: "นั่นคือผลบวกมุมภายในทั้งหมด ยังต้องหารด้วย 8 มุม" }
+      - { match: 45, feedback: "นั่นคือมุมภายนอก ($360^\\circ \\div 8$) มุมภายในคือ $180^\\circ - 45^\\circ$" }
+    solution: "ผลบวกมุมภายใน $= 6 \\times 180^\\circ = 1{,}080^\\circ$ มุมละ $1{,}080^\\circ \\div 8 = 135^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.tri.p018
+    topics: [math.geometry.triangles]
+    difficulty: 4
+    type: numeric
+    stem: "นักเรียนทำโมบายจากแผ่นไม้อัดรูปสามเหลี่ยม ต้องเจาะรูแขวนที่เซนทรอยด์เพื่อให้แผ่นไม้ทรงตัวพอดี เส้นมัธยฐานจากจุดยอด A ยาว $18\\ \\mathrm{cm}$ รูต้องห่างจากจุดยอด A กี่เซนติเมตร (ตอบในหน่วย cm)"
+    answer: { value: 12, unit: cm }
+    hints:
+      - "เซนทรอยด์คือจุดที่เส้นมัธยฐานทั้งสามตัดกัน"
+      - "เซนทรอยด์แบ่งเส้นมัธยฐานเป็นอัตราส่วน $2 : 1$ นับจากจุดยอด"
+    misconceptions:
+      - { match: 9, feedback: "เซนทรอยด์ไม่ได้อยู่กึ่งกลางเส้นมัธยฐาน แต่แบ่งเป็น $2 : 1$ โดยส่วนที่ยาวอยู่ฝั่งจุดยอด" }
+      - { match: 6, feedback: "นั่นคือระยะจากเซนทรอยด์ถึงจุดกึ่งกลางของด้านตรงข้าม โจทย์ถามระยะจากจุดยอด A" }
+    solution: "ระยะจากจุดยอด $= \\tfrac{2}{3} \\times 18 = 12\\ \\mathrm{cm}$ (อีก $6\\ \\mathrm{cm}$ อยู่ระหว่างเซนทรอยด์กับจุดกึ่งกลางของด้านตรงข้าม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.tri.p019
+    topics: [math.geometry.triangles]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อมูลชุดใดสร้างรูปสามเหลี่ยมได้เพียงรูปเดียว (ไม่นับการย้ายหรือหมุนรูป)"
+    choices:
+      - { id: a, text: "ด้านยาว 5 cm, 6 cm และ 7 cm", correct: true }
+      - { id: b, text: "มุม $50^\\circ$, $60^\\circ$ และ $70^\\circ$", feedback: "มุมรวมกันได้ $180^\\circ$ จึงสร้างได้ แต่สร้างได้ไม่จำกัดรูป เพราะขยายหรือย่อแล้วมุมยังเท่าเดิม" }
+      - { id: c, text: "ด้านยาว 3 cm, 4 cm และ 9 cm", feedback: "$3 + 4 < 9$ จึงสร้างไม่ได้เลย" }
+      - { id: d, text: "มุม $100^\\circ$ และ $90^\\circ$ กับด้านยาว 5 cm", feedback: "$100^\\circ + 90^\\circ$ เกิน $180^\\circ$ แล้ว จึงสร้างไม่ได้" }
+    hints:
+      - "ด้านสามด้านที่ผ่านอสมการสามเหลี่ยมกำหนดรูปได้แน่นอน (ด.ด.ด.)"
+      - "มุมสามมุมบอกแค่รูปร่าง ไม่บอกขนาด"
+    solution: "ด้าน 5, 6, 7 ผ่านอสมการ ($5 + 6 > 7$) และสามด้านกำหนดสามเหลี่ยมได้รูปเดียวตามเงื่อนไข ด.ด.ด. ชุดมุมอย่างเดียวได้รูปคล้ายไม่จำกัด ส่วนอีกสองชุดสร้างไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.tri.p020
+    topics: [math.geometry.triangles]
+    difficulty: 5
+    type: numeric
+    stem: "ใน $\\triangle ABC$ มี $AB = AC$ และ $\\angle A = 36^\\circ$ จุด $D$ อยู่บน $AC$ โดย $BD = BC$ จงหา $\\angle ABD$ (ตอบในหน่วยองศา)"
+    figure: { src: isosceles-36.svg, alt: "สามเหลี่ยมหน้าจั่ว ABC มี AB = AC (ขีดเดียว) มุมยอด A เท่ากับ 36 องศา จุด D อยู่บนด้าน AC เส้น BD ยาวเท่ากับ BC (ขีดสองขีด) มุม ABD ระบุด้วยเครื่องหมายคำถาม" }
+    answer: { value: 36, unit: องศา }
+    hints:
+      - "หามุมที่ฐาน $\\angle ABC = \\angle C$ ของ $\\triangle ABC$ ก่อน"
+      - "$\\triangle BCD$ เป็นสามเหลี่ยมหน้าจั่วเพราะ $BD = BC$ มุมที่ฐาน $\\angle BDC = \\angle C$"
+      - "หา $\\angle DBC$ แล้วนำไปลบออกจาก $\\angle ABC$"
+    misconceptions:
+      - { match: 72, feedback: "นั่นคือ $\\angle ABC$ ทั้งมุม ยังต้องลบ $\\angle DBC$ ออก" }
+      - { match: 54, feedback: "ดูเหมือนคิดว่า $BD$ ตั้งฉากกับ $AC$ แล้วใช้ $90^\\circ - 36^\\circ$ โจทย์ไม่ได้บอกว่าตั้งฉาก ให้ใช้ $BD = BC$ ซึ่งทำให้ $\\triangle BCD$ เป็นสามเหลี่ยมหน้าจั่วแทน" }
+    solution: "$\\angle ABC = \\angle C = \\tfrac{180^\\circ - 36^\\circ}{2} = 72^\\circ$ ใน $\\triangle BCD$ มี $BD = BC$ จึงได้ $\\angle BDC = \\angle C = 72^\\circ$ และ $\\angle DBC = 180^\\circ - 72^\\circ - 72^\\circ = 36^\\circ$ ดังนั้น $\\angle ABD = 72^\\circ - 36^\\circ = 36^\\circ$ (ทำให้ $\\triangle ABD$ เป็นสามเหลี่ยมหน้าจั่วด้วย $AD = BD$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
