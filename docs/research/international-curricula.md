@@ -209,7 +209,7 @@
 - `math.modelling.process` กระบวนการสร้างแบบจำลองทางคณิตศาสตร์: ตั้งสมมติฐาน เลือกแบบจำลองเชิงเส้น กำลังสอง หรือเอกซ์โพเนนเชียล และประเมินแบบจำลอง (AC9 "use mathematical modelling" ทุกปี, AC9M10A04, UKNC-MA-KS4-WP-04, CCSS ★ modeling)
 
 ### ฟิสิกส์
-- `physics.kinematics.relative-motion` ความเร็วสัมพัทธ์ในหนึ่งมิติ (UKNC-SC-KS3-P-DM-03)
+- `physics.kinematics.relative-motion` ความเร็วสัมพัทธ์ในหนึ่งมิติ (UKNC-SC-KS3-P-DM-03) — ตัดออกแล้ว เพราะหัวข้อ displacement-velocity สอนครบในเฟส 7
 - `physics.dynamics.stopping-distance` ระยะคิด ระยะเบรก ปัจจัยที่มีผล และความปลอดภัยบนถนน (UKNC-SC-KS4-P-FM-05)
 - `physics.electricity.mains-safety` ไฟฟ้าในบ้าน สายไฟ live neutral earth ฟิวส์ และการต่อสายดิน (UKNC-SC-KS4-P-ELE-05)
 - `physics.waves.digital-signals` สัญญาณแอนะล็อกกับดิจิทัล การเก็บและส่งข้อมูล (NGSS MS-PS4-3, HS-PS4-2) ต่อกับ `computer.data.binary`
