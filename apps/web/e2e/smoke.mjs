@@ -260,7 +260,7 @@ await step("ภาพประกอบ ตัวอย่างแสดงว�
   if (ex.answer) await box.locator(".worked-answer").waitFor();
   const check = topic.lessons.find((b) => b.type === "check");
   const q = problems.find((p) => p.id === check.problem);
-  const card = page.locator(".lesson-check");
+  const card = page.locator(".lesson-check").first();
   if (q.figure) await page.waitForFunction(() => { const i = document.querySelector(".lesson-check img"); return i && i.complete && i.naturalWidth > 0; });
   if (q.type === "mcq") for (const [i, c] of q.choices.entries()) if (c.correct) await card.locator("label.choice").nth(i).click();
   if (q.type === "numeric") await card.locator("input.input").fill(String(q.answer.value));

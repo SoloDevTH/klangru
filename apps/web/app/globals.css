@@ -175,7 +175,10 @@ a { color: var(--accent); text-underline-offset: 3px; }
 .lesson { display: grid; gap: 28px; max-width: 760px; }
 .lesson-head .lede { font-size: 18px; color: var(--muted); }
 .lesson-body { display: grid; gap: 28px; }
+/* ลูกของ grid ต้องหดได้ ไม่อย่างนั้นโค้ดหรือสูตรยาว ๆ จะดันหน้ากว้างเกินจอ */
+.lesson, .lesson-body, .prose { grid-template-columns: minmax(0, 1fr); }
 .prose { display: grid; gap: 14px; }
+.prose pre { margin: 0; padding: 12px 14px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); font-size: 14px; line-height: 1.5; }
 .prose h2 { margin-top: 12px; }
 .prose h3 { margin-top: 6px; }
 .prose ul, .prose ol { margin: 0; padding-left: 1.4em; display: grid; gap: 4px; }
