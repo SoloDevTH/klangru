@@ -132,3 +132,19 @@
   - uk-nc-mathematics:UKNC-MA-KS4-S-03 (ยังไม่มีฮิสโทแกรมที่อันตรภาคชั้นกว้างไม่เท่ากันและกราฟความถี่สะสม)
   - การ "วาด" แผนภูมิ (3.MD.3, 4.MD.4, AC9M4ST01) แอปให้วาดเองไม่ได้ มีเพียงขั้นตอนและการอ่าน
 - เรื่องที่ควรเป็นหัวข้อใหม่: **ข้อมูลสองตัวแปรและแผนภาพการกระจาย** (us-ccss-math:8.SP.1–8.SP.3, S-ID.6–S-ID.9, au-ac9-mathematics:AC9M10ST03, uk-nc-mathematics:UKNC-MA-KS3-S-03, UKNC-MA-KS4-S-06) และ **การสุ่มตัวอย่างและการอนุมานจากตัวอย่าง** (us-ccss-math:7.SP.1–7.SP.3, au-ac9-mathematics:AC9M8ST01–AC9M8ST03, uk-nc-mathematics:UKNC-MA-KS4-S-01)
+
+## math.number.decimals (`decimals`)
+
+- โจทย์ 12 → 22 (เพิ่ม p013–p022)
+- ภาพวาดเอง 4: บทเรียน `hundredths-grid.svg`, `area-model-decimal.svg` · โจทย์ `hundredths-grid-problem.svg` (p013), `number-line-hundredths.svg` (p014) · Commons 0
+- ตัวอย่างแสดงวิธีทำ: แปลง $\tfrac38$ เป็นทศนิยมด้วยการหาร, แปลง $0.1\dot{6}$ เป็นเศษส่วน · คำถามชวนคิด: p013, p016
+- เนื้อหาที่เพิ่ม: ส่วนสิบ ส่วนร้อยด้วยตารางร้อยช่อง รูปกระจายของทศนิยม แบบจำลองพื้นที่ของการคูณทศนิยม ทศนิยมรู้จบกับตัวประกอบ 2 และ 5 ของตัวส่วน แปลงทศนิยมรู้จบและทศนิยมซ้ำเป็นเศษส่วน ปัดเศษเป็นทศนิยมและเลขนัยสำคัญ ประมาณคำตอบเพื่อตรวจตำแหน่งจุด เทียบราคาต่อหน่วย
+- ตอนนี้สอนครบ:
+  - us-ccss-math:4.NF.7 → full, 5.NBT.2 → full, 5.NBT.7 → full, 6.NS.3 → full, 8.NS.1 → full
+  - us-ccss-math:4.NF.6 → full (ยังไม่ได้จับคู่ เสนอเพิ่ม)
+  - au-ac9-mathematics:AC9M4N01 → full, AC9M5N01 → full, AC9M6N04 → full, AC9M6N06 → full, AC9M7N05 → full, AC9M8N03 → full
+  - uk-nc-mathematics:UKNC-MA-Y4-NF-05 → full, UKNC-MA-Y4-NF-09 → full, UKNC-MA-Y5-NF-06 → full, UKNC-MA-Y5-NF-07 → full, UKNC-MA-Y5-NF-09 → full, UKNC-MA-Y5-NMD-07 → full, UKNC-MA-Y6-NF-06 → full, UKNC-MA-Y6-NF-07 → full, UKNC-MA-Y6-NF-10 → full, UKNC-MA-KS3-N-09 → full, UKNC-MA-KS4-N-06 → full
+- ยังเป็นบางส่วน:
+  - us-ccss-math:7.NS.2 (แปลงจำนวนตรรกยะเป็นทศนิยมและคูณหารทศนิยมที่เป็นลบได้ แต่กฎเครื่องหมายของการคูณหารจำนวนตรรกยะอยู่ในหัวข้อ integers)
+  - uk-nc-mathematics:UKNC-MA-KS3-N-13 (ทศนิยมและเลขนัยสำคัญครบ แต่การปัดเศษจำนวนนับอยู่ในหัวข้อ place-value), UKNC-MA-KS3-N-14 และ UKNC-MA-KS4-N-08 (มีการประมาณ ยังไม่มีขอบเขตบนล่างของความคลาดเคลื่อน $a < x \le b$)
+- เรื่องที่ควรเป็นหัวข้อใหม่: **ขอบเขตของความคลาดเคลื่อนจากการปัดเศษ** (upper and lower bounds) ตาม uk-nc-mathematics:UKNC-MA-KS3-N-14, UKNC-MA-KS4-N-08 และ us-ccss-math:N-Q.3
