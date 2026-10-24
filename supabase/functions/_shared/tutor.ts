@@ -10,7 +10,14 @@ export type TutorMode = "hint" | "example" | "explain" | "chat";
 
 /** ส่วนของ content pack ที่ tutor ต้องใช้ (โหลดจากเว็บที่ deploy ไม่รับจากผู้ใช้ เพื่อกันการแก้เนื้อหา) */
 export interface TutorPack {
-  topic: { id: string; title: { th: string; en: string }; summary: string; glossary?: { term: string; definition: string }[] };
+  topic: {
+    id: string;
+    title: { th: string; en: string };
+    summary: string;
+    glossary?: { term: string; definition: string }[];
+    /** ใช้เฉพาะตัวอย่างแสดงวิธีทำและคำบรรยายภาพ (บล็อกอื่นไม่มีข้อความที่ tutor ต้องใช้) */
+    lessons?: { type: string; title?: string; problem?: string; steps?: { text: string }[]; answer?: string; alt?: string; caption?: string }[];
+  };
   lessonMarkdown: Record<string, string>;
   problems: { id: string; type: string; stem: string; hints: string[]; solution: string; [k: string]: unknown }[];
 }
@@ -63,7 +70,15 @@ export const effectiveMode = (mode: TutorMode, answered: boolean): TutorMode => 
 export function topicContext(pack: TutorPack): string {
   const lesson = Object.values(pack.lessonMarkdown).join("\n\n");
   const glossary = (pack.topic.glossary ?? []).map((g) => `- ${g.term}: ${g.definition}`).join("\n");
-  return `<topic id="${pack.topic.id}">\n<title>${pack.topic.title.th} (${pack.topic.title.en})</title>\n<summary>${pack.topic.summary}</summary>\n<lesson>\n${lesson}\n</lesson>\n${glossary ? `<glossary>\n${glossary}\n</glossary>\n` : ""}</topic>`;
+  // ผู้ช่วยมองไม่เห็นภาพ จึงส่งคำบรรยายภาพไปแทน และส่งตัวอย่างแสดงวิธีทำให้ใช้วิธีเดียวกับบทเรียน
+  const blocks = (pack.topic.lessons ?? []).flatMap((b) =>
+    b.type === "worked-example"
+      ? [`<worked_example title="${b.title}">\n${b.problem}\n${(b.steps ?? []).map((s, i) => `${i + 1}. ${s.text}`).join("\n")}${b.answer ? `\nคำตอบ: ${b.answer}` : ""}\n</worked_example>`]
+      : b.type === "figure" && b.alt
+        ? [`<figure>${b.alt}${b.caption ? ` (${b.caption})` : ""}</figure>`]
+        : [],
+  );
+  return `<topic id="${pack.topic.id}">\n<title>${pack.topic.title.th} (${pack.topic.title.en})</title>\n<summary>${pack.topic.summary}</summary>\n<lesson>\n${lesson}\n</lesson>\n${blocks.length ? `${blocks.join("\n")}\n` : ""}${glossary ? `<glossary>\n${glossary}\n</glossary>\n` : ""}</topic>`;
 }
 
 export function problemContext(pack: TutorPack, problemId: string | undefined): string {
@@ -71,7 +86,8 @@ export function problemContext(pack: TutorPack, problemId: string | undefined): 
   if (!p) return "The learner is reading the lesson; no problem is open.";
   const { id, type, stem, hints, solution, ...rest } = p;
   const answerFields = Object.fromEntries(Object.entries(rest).filter(([k]) => ["answer", "choices", "accepted", "items", "pairs", "misconceptions", "prefix"].includes(k)));
-  return `<open_problem id="${id}" type="${type}">\n<stem>${stem}</stem>\n<answer_key>${JSON.stringify(answerFields)}</answer_key>\n<official_hints>${hints.map((h, i) => `\n${i + 1}. ${h}`).join("")}\n</official_hints>\n<official_solution>${solution}</official_solution>\n</open_problem>`;
+  const figure = (rest as { figure?: { alt: string } }).figure;
+  return `<open_problem id="${id}" type="${type}">\n<stem>${stem}</stem>${figure ? `\n<figure>${figure.alt}</figure>` : ""}\n<answer_key>${JSON.stringify(answerFields)}</answer_key>\n<official_hints>${hints.map((h, i) => `\n${i + 1}. ${h}`).join("")}\n</official_hints>\n<official_solution>${solution}</official_solution>\n</open_problem>`;
 }
 
 /** สร้างพารามิเตอร์ของ Messages API (ฟังก์ชันบริสุทธิ์ ใช้ทดสอบได้) */

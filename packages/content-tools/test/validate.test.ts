@@ -35,7 +35,7 @@ const numeric = (id: string, topicId: string, extra: Record<string, unknown> = {
   ...extra,
 });
 
-function raw(topics: { rel: string; topic: unknown; problems?: unknown; markdown?: Record<string, string> }[]): RawContent {
+function raw(topics: { rel: string; topic: unknown; problems?: unknown; markdown?: Record<string, string>; figures?: Record<string, number | "unsafe"> }[]): RawContent {
   return {
     root: "/content",
     subjects,
@@ -45,6 +45,7 @@ function raw(topics: { rel: string; topic: unknown; problems?: unknown; markdown
       subjectDir: "math",
       dir: `/content/${t.rel}`,
       rel: t.rel,
+      figures: new Map(Object.entries(t.figures ?? {}).map(([f, v]) => [f, { size: v === "unsafe" ? 100 : v, unsafe: v === "unsafe" }])),
       problems: t.problems === undefined ? undefined : { problems: t.problems },
       topic: t.topic,
       markdown: t.markdown ?? { "lesson.md": "# บท" },
@@ -142,4 +143,23 @@ test("lesson blocks: video questions, molecules, widgets, phet embeds", () => {
   assert.ok(withBlocks([plot(["a(x-1)^2"])]).some((m) => m.includes("ฟังก์ชัน")));
   assert.ok(withBlocks([plot(["\\sqrt{-1-x^2}"])]).some((m) => m.includes("หาค่าไม่ได้")));
   assert.ok(withBlocks([{ type: "simulation", title: "s", url: "https://example.com/sim", provider: "phet" }]).some((m) => m.includes("PhET")));
+});
+
+test("figures, worked examples and in-lesson checks are validated", () => {
+  const lessons = [
+    { type: "explanation", file: "lesson.md" },
+    { type: "figure", src: "graph.svg", alt: "กราฟเส้นตรงผ่านจุดกำเนิด" },
+    { type: "figure", src: "missing.svg", alt: "ภาพที่ไม่มีไฟล์อยู่จริง" },
+    { type: "figure", src: "photo.jpg", alt: "ภาพถ่ายจาก Wikimedia Commons", source: "https://commons.wikimedia.org/wiki/File:X.jpg", license: "CC-BY-SA-3.0" },
+    { type: "figure", src: "nc.png", alt: "ภาพที่ห้ามใช้เชิงพาณิชย์", credit: "ผู้สร้าง", source: "https://example.org/nc.png", license: "CC-BY-NC-4.0" },
+    { type: "worked-example", title: "ตัวอย่าง", problem: "หา $x$", steps: [{ text: "$x = \\frac{1}{$" }, { text: "ขั้นสอง" }] },
+    { type: "check", problem: "math.a.p009" },
+  ];
+  const figures = { "graph.svg": 2000, "photo.jpg": 900_000, "nc.png": 1000, "evil.svg": "unsafe" as const };
+  const issues = validate(raw([{ rel: "math/a", topic: topic("math.x.a", { lessons }), problems: [numeric("math.a.p001", "math.x.a", { figure: { src: "evil.svg", alt: "ภาพที่มีสคริปต์ฝังอยู่" } })], figures }]), { hanziAvailable: () => true }).issues;
+  const msg = issues.map((i) => i.message).join("\n");
+  for (const expected of [/ไม่พบไฟล์ภาพ figures\/missing\.svg/, /photo\.jpg มาจากแหล่งอื่น ต้องใส่ credit/, /photo\.jpg ขนาด 900 KB/, /nc\.png ใช้ CC-BY-NC-4.0/, /ตัวอย่าง "ตัวอย่าง"/, /อ้างโจทย์ math\.a\.p009/, /evil\.svg มีสคริปต์/]) {
+    assert.match(msg, expected);
+  }
+  assert.ok(!/graph\.svg/.test(msg), "ภาพที่ถูกต้องไม่ควรมีปัญหา");
 });

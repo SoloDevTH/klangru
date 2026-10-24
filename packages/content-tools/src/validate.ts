@@ -15,9 +15,10 @@ import {
   ProblemFile,
   Subject,
   Topic,
+  type Figure,
   type License,
 } from "@klangru/schema";
-import type { RawContent } from "./load.ts";
+import type { RawContent, RawTopicDir } from "./load.ts";
 import { findCycle } from "./graph.ts";
 
 export interface Issue {
@@ -98,13 +99,31 @@ function checkLicense(file: string, what: string, license: License, sources: { l
   }
 }
 
-function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[], opts: Required<ValidateOptions>) {
+/** ขนาดไฟล์ภาพสูงสุดก่อนเตือน: แอปต้องโหลดได้เร็วและเก็บออฟไลน์ได้ */
+export const MAX_FIGURE_BYTES = { svg: 150_000, raster: 400_000 };
+
+/** ตรวจภาพประกอบหนึ่งภาพ: มีไฟล์จริง ปลอดภัย ไม่ใหญ่เกิน และให้เครดิตครบเมื่อมาจากแหล่งอื่น */
+export function checkFigure(fig: Figure, figures: RawTopicDir["figures"], topicLicense: License, err: (m: string) => void, warn: (m: string) => void, used: Set<string>) {
+  used.add(fig.src);
+  const f = figures.get(fig.src);
+  if (!f) return err(`ไม่พบไฟล์ภาพ figures/${fig.src}`);
+  if (f.unsafe) err(`ภาพ ${fig.src} มีสคริปต์หรือโหลดไฟล์จากภายนอก ให้ฝังทุกอย่างในไฟล์`);
+  const max = fig.src.endsWith(".svg") ? MAX_FIGURE_BYTES.svg : MAX_FIGURE_BYTES.raster;
+  if (f.size > max) warn(`ภาพ ${fig.src} ขนาด ${Math.round(f.size / 1000)} KB เกิน ${max / 1000} KB ให้ย่อหรือบีบอัด`);
+  if (fig.source || fig.license) {
+    if (!fig.source || !fig.license || !fig.credit) err(`ภาพ ${fig.src} มาจากแหล่งอื่น ต้องใส่ credit, source และ license ให้ครบ`);
+    if (fig.license?.includes("NC") && !topicLicense.includes("NC")) err(`ภาพ ${fig.src} ใช้ ${fig.license} (ห้ามใช้เชิงพาณิชย์) แต่หัวข้อใช้ ${topicLicense}`);
+  }
+}
+
+function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[], opts: Required<ValidateOptions>, fig?: (f: Figure) => void) {
   const err = (message: string) => issues.push({ level: "error", file, message: `${p.id}: ${message}` });
 
   if (!p.topics.includes(topicId)) err(`ต้องระบุหัวข้อ ${topicId} ใน topics เพราะอยู่ในโฟลเดอร์ของหัวข้อนี้`);
   if (p.source === "adapted" && !p.adapted_from.length) err("source เป็น adapted แต่ไม่ได้ระบุ adapted_from");
   checkLicense(file, p.id, p.license, p.adapted_from, issues);
   for (const t of problemTexts(p)) for (const m of mathErrors(t)) err(m);
+  if (p.figure) fig?.(p.figure);
 
   switch (p.type) {
     case "mcq": {
@@ -200,12 +219,20 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
     checkLicense(topicFile, topic.id, topic.license, topic.adapted_from, issues);
 
     const usedMd = new Set<string>();
+    const usedFigures = new Set<string>();
+    const figure = (f: Figure) => checkFigure(f, dir.figures, topic.license, err, warn, usedFigures);
     for (const block of topic.lessons) {
       if (block.type === "explanation") {
         usedMd.add(block.file);
         const md = dir.markdown[block.file];
         if (md === undefined) err(`ไม่พบไฟล์บทเรียน ${block.file}`);
         else for (const m of mathErrors(md)) err(m, `${dir.rel}/${block.file}`);
+      } else if (block.type === "figure") {
+        figure(block);
+        if (block.caption) for (const m of mathErrors(block.caption)) err(`ภาพ ${block.src}: ${m}`);
+      } else if (block.type === "worked-example") {
+        if (block.figure) figure(block.figure);
+        for (const t of [block.problem, block.answer ?? "", ...block.steps.flatMap((s) => [s.text, s.why ?? ""])]) for (const m of mathErrors(t)) err(`ตัวอย่าง "${block.title}": ${m}`);
       } else if (block.type === "simulation") {
         if (block.provider === "phet" && block.embed && !phetEmbedUrl(block.url)) err(`ฝังซิมูเลชัน PhET ไม่ได้ ต้องใช้ URL รูป https://phet.colorado.edu/<ภาษา>/simulations/<ชื่อ>: ${block.url}`);
       } else if (block.type === "molecule") {
@@ -247,13 +274,15 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
       const seen = problemIds.get(p.id);
       if (seen) err(`รหัสโจทย์ ${p.id} ซ้ำกับใน ${seen}`, problemsFile);
       problemIds.set(p.id, problemsFile);
-      checkProblem(problemsFile, p, topic.id, issues, opts);
+      checkProblem(problemsFile, p, topic.id, issues, opts, (f) => checkFigure(f, dir.figures, topic.license, (m) => err(`${p.id}: ${m}`, problemsFile), (m) => warn(`${p.id}: ${m}`, problemsFile), usedFigures));
     }
     const ownIds = new Set(problems.map((p) => p.id));
     for (const block of topic.lessons) {
+      if (block.type === "check" && !ownIds.has(block.problem)) err(`คำถามในบทเรียนอ้างโจทย์ ${block.problem} ที่ไม่มีในหัวข้อนี้`);
       if (block.type !== "video") continue;
       for (const q of block.questions) if (!ownIds.has(q.problem)) err(`วิดีโอ "${block.title}" อ้างโจทย์ ${q.problem} ที่ไม่มีในหัวข้อนี้`);
     }
+    for (const f of dir.figures.keys()) if (!usedFigures.has(f)) warn(`ไฟล์ภาพ figures/${f} ไม่ได้ถูกใช้`);
     if (problems.length && problems.length < MIN_PROBLEMS_PER_TOPIC) warn(`มีโจทย์ ${problems.length} ข้อ (ขั้นต่ำ ${MIN_PROBLEMS_PER_TOPIC})`, problemsFile);
     const levels = new Set(problems.map((p) => p.difficulty)).size;
     if (problems.length && levels < MIN_DIFFICULTY_LEVELS) warn(`โจทย์มีความยากแค่ ${levels} ระดับ (ควรมี ${MIN_DIFFICULTY_LEVELS} ขึ้นไป)`, problemsFile);

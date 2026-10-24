@@ -22,7 +22,12 @@ const subjects = {};
 for (const t of index.topics) {
   const pack = JSON.parse(readFileSync(join(out, "content/topics", `${t.id}.json`), "utf8"));
   const extra = [];
-  for (const b of pack.topic.lessons) if (b.type === "molecule") extra.push(`/content/molecules/${b.cid}.sdf`);
+  for (const b of pack.topic.lessons) {
+    if (b.type === "molecule") extra.push(`/content/molecules/${b.cid}.sdf`);
+    if (b.type === "figure") extra.push(b.src);
+    if (b.type === "worked-example" && b.figure) extra.push(b.figure.src);
+  }
+  for (const p of pack.problems) if (p.figure) extra.push(p.figure.src);
   for (const p of pack.problems) if (p.type === "hanzi") extra.push(`/content/hanzi/${p.character.codePointAt(0).toString(16)}.json`); // ตรงกับ hanziFile() ใน schema
   (subjects[t.subject] ??= []).push(`/topic/${t.id}/`, `/topic/${t.id}/practice/`, `/topic/${t.id}/review/`, `/content/topics/${t.id}.json`, ...extra);
 }

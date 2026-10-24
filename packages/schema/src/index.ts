@@ -29,6 +29,23 @@ export const Subject = z.object({
 
 const Point = z.tuple([z.number(), z.number()]);
 
+/** ใบอนุญาตของภาพจากแหล่งอื่น (เช่น Wikimedia Commons ซึ่งมีรุ่น 2.0/3.0 และสาธารณสมบัติด้วย) */
+export const FIGURE_LICENSES = [...LICENSES, "CC-BY-2.0", "CC-BY-3.0", "CC-BY-SA-2.0", "CC-BY-SA-3.0", "PD"] as const;
+
+/**
+ * ภาพประกอบ: ไฟล์อยู่ในโฟลเดอร์ figures/ ของหัวข้อ (SVG สำหรับแผนภาพ, PNG/JPG/WebP สำหรับภาพถ่าย)
+ * ภาพที่ทีมวาดเองใช้ใบอนุญาตของหัวข้อ ภาพจากแหล่งอื่นต้องใส่ credit, source และ license
+ */
+export const Figure = z.object({
+  src: z.string().regex(/^[a-z0-9][a-z0-9-]*\.(svg|png|jpg|webp)$/, "ชื่อไฟล์ภาพใช้ a-z 0-9 - และนามสกุล svg/png/jpg/webp"),
+  /** คำบรรยายภาพสำหรับผู้ใช้โปรแกรมอ่านหน้าจอ: บอกสิ่งที่ภาพสื่อ ไม่ใช่แค่ชื่อภาพ */
+  alt: z.string().min(10),
+  caption: z.string().optional(),
+  credit: z.string().optional(),
+  source: z.url().optional(),
+  license: z.enum(FIGURE_LICENSES).optional(),
+});
+
 /** สื่อโต้ตอบที่วาดด้วย JSXGraph ในแอป (ใช้ได้ออฟไลน์) */
 export const Widget = z.discriminatedUnion("kind", [
   z.object({
@@ -80,6 +97,18 @@ export const LessonBlock = z.discriminatedUnion("type", [
     embed: z.boolean().default(true),
   }),
   z.object({ type: z.literal("interactive"), title: z.string(), caption: z.string().optional(), widget: Widget }),
+  z.object({ type: z.literal("figure"), title: z.string().optional(), ...Figure.shape }),
+  /** ตัวอย่างแสดงวิธีทำ: ผู้เรียนเปิดดูทีละขั้น */
+  z.object({
+    type: z.literal("worked-example"),
+    title: z.string().min(1),
+    problem: z.string().min(1),
+    steps: z.array(z.object({ text: z.string().min(1), /** เหตุผลของขั้นนี้ (แสดงเมื่อกด "ทำไม") */ why: z.string().optional() })).min(2).max(10),
+    answer: z.string().optional(),
+    figure: Figure.optional(),
+  }),
+  /** คำถามชวนคิดแทรกในบทเรียน: ดึงโจทย์จากคลังของหัวข้อนี้มาให้ตอบระหว่างอ่าน (ไม่นับในระดับความชำนาญ) */
+  z.object({ type: z.literal("check"), problem: z.string(), prompt: z.string().optional() }),
   z.object({
     type: z.literal("molecule"),
     title: z.string(),
@@ -136,6 +165,7 @@ const ProblemBase = {
   license: License,
   adapted_from: z.array(AdaptedFrom).default([]),
   ai_assisted: z.boolean().default(false),
+  figure: Figure.optional(),
 };
 
 const Misconception = z.object({
@@ -220,6 +250,7 @@ export type Topic = z.infer<typeof Topic>;
 export type LessonBlock = z.infer<typeof LessonBlock>;
 export type Problem = z.infer<typeof Problem>;
 export type Widget = z.infer<typeof Widget>;
+export type Figure = z.infer<typeof Figure>;
 
 /** แฟลชการ์ด (dist/content/flashcards.json) */
 export interface FlashcardDoc {

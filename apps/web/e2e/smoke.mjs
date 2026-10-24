@@ -240,6 +240,37 @@ await step("หลักสูตรและอ่านเพิ่มเต�
   await page.locator(".search-results li", { hasText: "ตัวชี้วัด" }).first().waitFor({ timeout: 10000 });
 });
 
+await step("ภาพประกอบ ตัวอย่างแสดงวิธีทำทีละขั้น และคำถามชวนคิดในบทเรียน", async () => {
+  const t = index.topics.find((x) => {
+    const types = pack(x.id).topic.lessons.map((b) => b.type);
+    return types.includes("figure") && types.includes("worked-example") && types.includes("check");
+  });
+  expect(t, "ไม่มีหัวข้อที่มีครบทั้งภาพ ตัวอย่าง และคำถามชวนคิด");
+  const { topic, problems } = pack(t.id);
+  await page.goto(`${base}/topic/${t.id}/`);
+  const img = page.locator(".lesson .figure img, figure.figure img").first();
+  await img.waitFor();
+  await page.waitForFunction(() => [...document.querySelectorAll("figure.figure img")].some((i) => i.complete && i.naturalWidth > 0));
+  const ex = topic.lessons.find((b) => b.type === "worked-example");
+  const box = page.locator(".worked").first();
+  await box.getByRole("button", { name: "เริ่มดูวิธีทำ" }).click();
+  expect((await box.locator(".worked-steps li").count()) === 1, "ควรเห็นขั้นแรกขั้นเดียว");
+  await box.getByRole("button", { name: "ดูทั้งหมด" }).click();
+  expect((await box.locator(".worked-steps li").count()) === ex.steps.length, "ดูทั้งหมดแล้วขั้นไม่ครบ");
+  if (ex.answer) await box.locator(".worked-answer").waitFor();
+  const check = topic.lessons.find((b) => b.type === "check");
+  const q = problems.find((p) => p.id === check.problem);
+  const card = page.locator(".lesson-check");
+  if (q.figure) await page.waitForFunction(() => { const i = document.querySelector(".lesson-check img"); return i && i.complete && i.naturalWidth > 0; });
+  if (q.type === "mcq") for (const [i, c] of q.choices.entries()) if (c.correct) await card.locator("label.choice").nth(i).click();
+  if (q.type === "numeric") await card.locator("input.input").fill(String(q.answer.value));
+  await card.getByRole("button", { name: "ตรวจคำตอบ" }).click();
+  await card.locator(".feedback.ok").waitFor();
+  await card.getByRole("button", { name: "อ่านต่อ" }).click();
+  await card.getByText("ตอบข้อนี้แล้ว").waitFor();
+  await shot("10-teaching-aids");
+});
+
 await step("แบบทดสอบวัดระดับจบภายใน 8 ข้อ", async () => {
   await page.goto(`${base}/placement/`);
   await page.getByRole("button", { name: /วัดระดับ/ }).first().click();

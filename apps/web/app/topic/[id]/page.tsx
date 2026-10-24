@@ -7,6 +7,9 @@ import { MoleculeViewer } from "@/components/MoleculeViewer";
 import { NotesEditor } from "@/components/NotesEditor";
 import { SimulationBlock } from "@/components/SimulationBlock";
 import { VideoBlock } from "@/components/VideoBlock";
+import { FigureView } from "@/components/FigureView";
+import { LessonCheck } from "@/components/LessonCheck";
+import { WorkedExample } from "@/components/WorkedExample";
 import { getIndex, getTopicPack } from "@/lib/content";
 import { phetEmbedUrl } from "@klangru/schema";
 // ชื่อแหล่งอ้างอิงที่แสดงในส่วน "อ่านเพิ่มเติม" (รหัสแหล่งดู curriculum/sources.yaml)
@@ -97,6 +100,19 @@ export default async function TopicPage({ params }: Props) {
                   problems={problems.filter((p) => block.questions.some((q) => q.problem === p.id))}
                 />
               );
+            case "figure":
+              return (
+                <div key={k} className="stack">
+                  {block.title && <h3>{block.title}</h3>}
+                  <FigureView figure={block} />
+                </div>
+              );
+            case "worked-example":
+              return <WorkedExample key={k} example={block} />;
+            case "check": {
+              const problem = problems.find((p) => p.id === block.problem);
+              return problem ? <LessonCheck key={k} problem={problem} prompt={block.prompt} /> : null;
+            }
             case "interactive":
               return (
                 <aside key={k} className="media-card">

@@ -57,3 +57,24 @@ test("tutor requires an age band, and guardian consent under 20", async () => {
   assert.equal(canUseTutor({ age_band: "10to19", guardian_consent: true }), true);
   assert.equal(canUseTutor({ age_band: "20plus", guardian_consent: false }), true);
 });
+
+test("tutor context describes figures and includes worked examples", async () => {
+  const { topicContext, problemContext } = await import("../functions/_shared/tutor.ts");
+  const pack = {
+    topic: {
+      id: "math.x.y",
+      title: { th: "ทดสอบ", en: "Test" },
+      summary: "สรุป",
+      lessons: [
+        { type: "figure", alt: "สามเหลี่ยมมุมฉากด้าน 3 4 5" },
+        { type: "worked-example", title: "ตัวอย่าง 1", problem: "หาด้านตรงข้ามมุมฉาก", steps: [{ text: "ยกกำลังสอง" }, { text: "ถอดราก" }], answer: "5" },
+      ],
+    },
+    lessonMarkdown: { "lesson.md": "บทเรียน" },
+    problems: [{ id: "math.x.p001", type: "numeric", stem: "ดูภาพ", hints: ["h"], solution: "s", figure: { src: "/a.svg", alt: "รูปวงกลมรัศมี 7" } }],
+  };
+  const t = topicContext(pack);
+  assert.match(t, /<figure>สามเหลี่ยมมุมฉากด้าน 3 4 5<\/figure>/);
+  assert.match(t, /<worked_example title="ตัวอย่าง 1">[\s\S]*2\. ถอดราก[\s\S]*คำตอบ: 5/);
+  assert.match(problemContext(pack, "math.x.p001"), /<figure>รูปวงกลมรัศมี 7<\/figure>/);
+});

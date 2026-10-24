@@ -6,6 +6,7 @@ import { Markdown } from "./Markdown";
 import { MathField } from "./MathField";
 import { HanziPad } from "./HanziPad";
 import { ReportButton } from "./ReportButton";
+import { FigureView } from "./FigureView";
 import { check, seededShuffle, type CheckResult, type Response } from "@/lib/check";
 
 export interface ProblemOutcome {
@@ -71,6 +72,7 @@ export function ProblemCard({
   return (
     <article className="problem" data-problem-id={p.id}>
       <div className="stem">
+        {p.figure && <FigureView figure={p.figure} compact />}
         <Markdown>{p.stem}</Markdown>
       </div>
       <AnswerInput key={p.id} problem={p} disabled={answered} onChange={(r) => {

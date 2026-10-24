@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { hanziFile, type ContentIndex, type CurriculumLink, type Problem, type SearchDoc, type Topic, type TopicPack } from "@klangru/schema";
 import { coverage, topicCurriculum, type CurriculumData } from "./curriculum.ts";
@@ -18,7 +18,9 @@ export function plainText(md: string): string {
 export function searchDocs(entries: { topic: Topic; problems: Problem[]; markdown: Record<string, string> }[], links = new Map<string, CurriculumLink[]>()): SearchDoc[] {
   const docs: SearchDoc[] = [];
   for (const { topic, problems, markdown } of entries) {
-    const lesson = topic.lessons.flatMap((b) => (b.type === "explanation" ? [markdown[b.file] ?? ""] : [])).join("\n");
+    const lesson = topic.lessons
+      .flatMap((b) => (b.type === "explanation" ? [markdown[b.file] ?? ""] : b.type === "worked-example" ? [b.title, b.problem] : b.type === "figure" ? [b.caption ?? ""] : []))
+      .join("\n");
     docs.push({ id: topic.id, kind: "topic", topic: topic.id, subject: topic.subject, title: topic.title.th, text: plainText(`${topic.title.en} ${topic.summary} ${lesson}`) });
     for (const g of topic.glossary) {
       docs.push({ id: `${topic.id}#${g.term}`, kind: "glossary", topic: topic.id, subject: topic.subject, title: g.term, text: plainText(g.definition) });
@@ -32,6 +34,23 @@ export function searchDocs(entries: { topic: Topic; problems: Problem[]; markdow
     }
   }
   return docs;
+}
+
+/** path ของภาพในแอป: ไฟล์ figures/<ชื่อ> ของหัวข้อถูกคัดไปไว้ที่ /content/figures/<รหัสหัวข้อ>/<ชื่อ> */
+export function figureUrl(topicId: string, src: string) {
+  return `/content/figures/${topicId}/${src}`;
+}
+
+/** เปลี่ยน src ของภาพทุกจุดในหัวข้อและโจทย์ให้เป็น path ในแอป */
+export function withFigureUrls(topic: Topic, problems: Problem[]): { topic: Topic; problems: Problem[] } {
+  const fix = <T extends { src: string }>(f: T | undefined) => (f ? { ...f, src: figureUrl(topic.id, f.src) } : f);
+  return {
+    topic: {
+      ...topic,
+      lessons: topic.lessons.map((b) => (b.type === "figure" ? fix(b)! : b.type === "worked-example" ? { ...b, figure: fix(b.figure) } : b)),
+    },
+    problems: problems.map((p) => ({ ...p, figure: fix(p.figure) })),
+  };
 }
 
 /** เขียน content pack: index.json, topics/<id>.json, search.json และไฟล์ประกอบ (โมเลกุล ข้อมูลอักษรจีน) */
@@ -69,7 +88,7 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
   };
 
   rmSync(outDir, { recursive: true, force: true });
-  for (const d of ["topics", "molecules", "hanzi"]) mkdirSync(join(outDir, d), { recursive: true });
+  for (const d of ["topics", "molecules", "hanzi", "figures"]) mkdirSync(join(outDir, d), { recursive: true });
   writeFileSync(join(outDir, "index.json"), JSON.stringify(index, null, 2));
   writeFileSync(join(outDir, "search.json"), JSON.stringify(searchDocs(content.topics, links)));
   // แฟลชการ์ดทุกใบ คีย์ <topicId>#<ลำดับ> ใช้ในคิวทบทวน
@@ -77,7 +96,14 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
   writeFileSync(join(outDir, "flashcards.json"), JSON.stringify(flashcards));
 
   const hanzi = new Set<string>();
-  for (const { topic, problems, markdown } of content.topics) {
+  for (const { topic: rawTopic, problems: rawProblems, markdown, rel } of content.topics) {
+    // ภาพประกอบของหัวข้อ: คัดทั้งโฟลเดอร์ figures/ (ตัวตรวจเตือนไฟล์ที่ไม่ได้ใช้แล้ว)
+    const figDir = join(contentDir, rel, "figures");
+    if (existsSync(figDir)) {
+      mkdirSync(join(outDir, "figures", rawTopic.id), { recursive: true });
+      for (const f of readdirSync(figDir)) copyFileSync(join(figDir, f), join(outDir, "figures", rawTopic.id, f));
+    }
+    const { topic, problems } = withFigureUrls(rawTopic, rawProblems);
     const lessonMarkdown: Record<string, string> = {};
     for (const b of topic.lessons) {
       if (b.type === "explanation") lessonMarkdown[b.file] = markdown[b.file];

@@ -17,6 +17,8 @@ export interface RawTopicDir {
   topic: unknown;
   problems: unknown;
   markdown: Record<string, string>;
+  /** ไฟล์ในโฟลเดอร์ figures/ ของหัวข้อ: ขนาด (ไบต์) และ SVG ที่มีสคริปต์หรือโหลดไฟล์ภายนอก */
+  figures: Map<string, { size: number; unsafe: boolean }>;
 }
 
 export interface RawContent {
@@ -65,6 +67,14 @@ export function loadContent(root: string): RawContent {
       const markdown: Record<string, string> = {};
       // ตัด front matter ที่ว่าง/ไม่ใช้ออก (Decap CMS อาจเติม ---\n--- ไว้หัวไฟล์เมื่อบันทึก)
       for (const f of readdirSync(dir)) if (f.endsWith(".md")) markdown[f] = readFileSync(join(dir, f), "utf8").replace(/^---\r?\n(?:[\s\S]*?\r?\n)?---\r?\n/, "");
+      const figures = new Map<string, { size: number; unsafe: boolean }>();
+      const figDir = join(dir, "figures");
+      if (existsSync(figDir))
+        for (const f of readdirSync(figDir)) {
+          const p = join(figDir, f);
+          const unsafe = f.endsWith(".svg") && /<script|\son[a-z]+\s*=|(?:href|src)\s*=\s*["']\s*(?:https?:|javascript:)/i.test(readFileSync(p, "utf8"));
+          figures.set(f, { size: statSync(p).size, unsafe });
+        }
       const topicFile = join(dir, "topic.yaml");
       const problemsFile = join(dir, "problems.yaml");
       topics.push({
@@ -74,6 +84,7 @@ export function loadContent(root: string): RawContent {
         topic: existsSync(topicFile) ? readYaml(topicFile) : undefined,
         problems: existsSync(problemsFile) ? readYaml(problemsFile) : undefined,
         markdown,
+        figures,
       });
     }
   }

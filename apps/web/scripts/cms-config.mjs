@@ -31,6 +31,18 @@ const misconceptions = (matchLabel) => ({
   fields: [str("match", matchLabel), text("feedback", "คำอธิบายเฉพาะ")],
 });
 
+// ภาพประกอบ: ไฟล์อยู่ในโฟลเดอร์ figures/ ของหัวข้อ (อัปโหลดผ่าน Git แล้วใส่ชื่อไฟล์ที่นี่)
+const FIGURE_LICENSES = [...LICENSES, "CC-BY-2.0", "CC-BY-3.0", "CC-BY-SA-2.0", "CC-BY-SA-3.0", "PD"];
+const figureFields = [
+  str("src", "ชื่อไฟล์ใน figures/ (เช่น triangle.svg)"),
+  text("alt", "คำบรรยายภาพสำหรับผู้พิการทางสายตา (บอกสิ่งที่ภาพสื่อ)"),
+  opt(text("caption", "คำอธิบายใต้ภาพ")),
+  opt(str("credit", "ผู้สร้าง (ภาพจากแหล่งอื่น)")),
+  opt(str("source", "URL ที่มา")),
+  { name: "license", label: "สัญญาอนุญาตของภาพ (เว้นว่างถ้าทีมวาดเอง)", widget: "select", options: FIGURE_LICENSES, required: false },
+];
+const figure = (name = "figure", label = "ภาพประกอบ") => ({ name, label, widget: "object", required: false, collapsed: true, fields: figureFields });
+
 const problemBase = [
   str("id", "รหัส (เช่น math.frac.p011)", { pattern: ["^[a-z]+(\\.[a-z0-9-]+)+\\.p\\d{3}$", "ต้องลงท้ายด้วย .pNNN"] }),
   strings("topics", "หัวข้อ"),
@@ -42,6 +54,7 @@ const problemBase = [
   license,
   adaptedFrom,
   bool("ai_assisted", "ใช้ AI ช่วยร่าง"),
+  figure(),
 ];
 
 const problemTypes = [
@@ -110,6 +123,19 @@ const lessonTypes = [
     // widget มีหลายแบบ (kind) และซ้อนกันลึก ให้แก้เป็น YAML ใน topic.yaml โดยตรงตามคู่มือผู้เขียน
     fields: [str("title", "ชื่อ"), opt(str("caption", "คำบรรยาย"))],
   },
+  { name: "figure", label: "ภาพประกอบ", fields: [opt(str("title", "หัวเรื่อง")), ...figureFields] },
+  {
+    name: "worked-example",
+    label: "ตัวอย่างแสดงวิธีทำ (เปิดดูทีละขั้น)",
+    fields: [
+      str("title", "ชื่อตัวอย่าง"),
+      text("problem", "โจทย์"),
+      { name: "steps", label: "ขั้นตอน", widget: "list", min: 2, max: 10, fields: [text("text", "ขั้นนี้ทำอะไร"), opt(text("why", "ทำไมทำแบบนี้"))] },
+      opt(str("answer", "คำตอบ")),
+      figure(),
+    ],
+  },
+  { name: "check", label: "คำถามชวนคิด (ดึงโจทย์จากคลังของหัวข้อ)", fields: [str("problem", "รหัสโจทย์"), opt(str("prompt", "ข้อความนำ เช่น ลองคิดก่อนอ่านต่อ"))] },
   { name: "molecule", label: "โมเลกุล 3 มิติ", fields: [str("title", "ชื่อ"), { name: "cid", label: "PubChem CID", widget: "number", value_type: "int" }, str("name", "ชื่อสาร"), opt(str("caption", "คำบรรยาย"))] },
 ];
 
