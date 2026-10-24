@@ -226,3 +226,148 @@ problems:
     solution: "วันที่ 1: $1$ บาท · วันที่ 2: $2^1$ · วันที่ 3: $2^2$ · … · วันที่ 10: $2^9 = 512$ บาท ตรวจด้วยการไล่ทีละวัน: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.exp.p015
+    topics: [math.number.exponents]
+    difficulty: 1
+    type: numeric
+    stem: "ลูกบาศก์ใหญ่ในภาพต่อจากลูกบาศก์เล็กที่เหมือนกันทุกก้อน โดยแต่ละด้านยาว 3 ก้อน ใช้ลูกบาศก์เล็กทั้งหมดกี่ก้อน"
+    figure: { src: cube-3x3x3.svg, alt: "ลูกบาศก์ใหญ่ที่ประกอบจากลูกบาศก์เล็ก ด้านกว้าง ยาว และสูง ด้านละ 3 ก้อน มองเห็นสามหน้า แต่ละหน้าเป็นตาราง 3 คูณ 3" }
+    answer: { value: 27, unit: ก้อน }
+    hints:
+      - "ชั้นบนสุดมีกี่ก้อน แล้วมีทั้งหมดกี่ชั้น"
+      - "จำนวนก้อน $= 3 \\times 3 \\times 3 = 3^3$"
+    misconceptions:
+      - { match: 9, feedback: "นั่นคือจำนวนก้อนในชั้นเดียว (หรือหน้าเดียว) ลูกบาศก์ใหญ่มี 3 ชั้น" }
+    solution: "แต่ละชั้นมี $3 \\times 3 = 9$ ก้อน มี 3 ชั้น รวม $9 \\times 3 = 27 = 3^3$ ก้อน นี่คือเหตุผลที่เรียก $3^3$ ว่า \"สามกำลังสาม\" หรือ \"สามยกกำลังสาม\" (ลูกบาศก์)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p016
+    topics: [math.number.exponents]
+    difficulty: 2
+    type: expression
+    stem: "หาค่า $\\left(\\tfrac{1}{2}\\right)^4$ ตอบเป็นเศษส่วน"
+    answer: { latex: "\\frac{1}{16}", variables: [] }
+    hints:
+      - "$\\left(\\tfrac{1}{2}\\right)^4 = \\tfrac{1}{2} \\times \\tfrac{1}{2} \\times \\tfrac{1}{2} \\times \\tfrac{1}{2}$"
+      - "คูณตัวเศษด้วยกันและตัวส่วนด้วยกัน"
+    misconceptions:
+      - { match: "2", feedback: "นำ 4 หารด้วย 2 แต่เลขชี้กำลังบอกจำนวนครั้งที่คูณ $\\tfrac{1}{2}$ กับตัวเอง" }
+      - { match: "\\frac{1}{8}", feedback: "นั่นคือ $\\left(\\tfrac12\\right)^3$ ยังขาดอีกหนึ่งตัว ต้องคูณ $\\tfrac12$ ทั้งหมด 4 ตัว" }
+      - { match: "\\frac{4}{2}", feedback: "เลขชี้กำลังไม่ได้คูณกับตัวเศษ $\\tfrac12$ คูณกันสี่ครั้งได้ตัวเศษ $1^4 = 1$ ตัวส่วน $2^4 = 16$" }
+    solution: "$\\left(\\tfrac{1}{2}\\right)^4 = \\dfrac{1^4}{2^4} = \\dfrac{1}{16}$ สังเกตว่ายกกำลังจำนวนที่น้อยกว่า 1 ผลยิ่งเล็กลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p017
+    topics: [math.number.exponents]
+    difficulty: 2
+    type: numeric
+    stem: "หาค่า $0.3^2$"
+    answer: { value: 0.09, tolerance: 0.0001 }
+    hints:
+      - "$0.3^2 = 0.3 \\times 0.3$"
+      - "$3 \\times 3 = 9$ แล้วนับตำแหน่งทศนิยมรวม"
+    misconceptions:
+      - { match: 0.9, feedback: "ทศนิยมรวมมี $1 + 1 = 2$ ตำแหน่ง จึงเป็น $0.09$" }
+      - { match: 0.6, feedback: "คูณ $0.3 \\times 2$ แต่ $0.3^2$ คือ $0.3 \\times 0.3$" }
+    solution: "$0.3^2 = 0.3 \\times 0.3 = 0.09$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p018
+    topics: [math.number.exponents]
+    difficulty: 3
+    type: numeric
+    stem: "จำนวนที่เขียนในรูปกระจายด้วยเลขยกกำลังของสิบว่า $6 \\times 10^4 + 3 \\times 10^2 + 9$ คือจำนวนใด"
+    answer: { value: 60309 }
+    hints:
+      - "$10^4 = 10{,}000$ และ $10^2 = 100$"
+      - "หลักที่ไม่ได้เขียนไว้ (หลักพันและหลักสิบ) เป็น 0"
+    misconceptions:
+      - { match: 639, feedback: "เขียนเลขโดดต่อกันโดยไม่เว้นหลักที่เป็นศูนย์ หลักพันและหลักสิบต้องเป็น 0" }
+      - { match: 6309, feedback: "$6 \\times 10^4 = 60{,}000$ (หลักหมื่น) ไม่ใช่ 6,000" }
+    solution: "$6 \\times 10{,}000 + 3 \\times 100 + 9 = 60{,}000 + 300 + 9 = 60{,}309$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p019
+    topics: [math.number.exponents]
+    difficulty: 3
+    type: numeric
+    stem: "เกษตรกรทำน้ำหมักชีวภาพ สมมติว่าจุลินทรีย์ในขวดเพิ่มเป็นสองเท่าทุก 20 นาที ถ้าเริ่มต้นมี 1 เซลล์ หลังจาก 3 ชั่วโมงจะมีกี่เซลล์"
+    answer: { value: 512, unit: เซลล์ }
+    hints:
+      - "3 ชั่วโมงมีช่วง 20 นาทีกี่ช่วง"
+      - "ทุกช่วงคูณ 2 จำนวนเซลล์จึงเป็น $2^{\\text{จำนวนช่วง}}$"
+    misconceptions:
+      - { match: 18, feedback: "นำ $2 \\times 9$ แต่การเพิ่มเป็นสองเท่าทุกช่วงคือการคูณ 2 ซ้ำ 9 ครั้ง $= 2^9$" }
+      - { match: 256, feedback: "นั่นคือ $2^8$ ลองนับช่วงอีกครั้ง 180 นาทีแบ่งเป็นช่วงละ 20 นาทีได้ 9 ช่วง" }
+    solution: "3 ชั่วโมง $= 180$ นาที $= 9$ ช่วง ช่วงละ 20 นาที จำนวนเซลล์ $= 2^9 = 512$ เซลล์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p020
+    topics: [math.number.exponents]
+    difficulty: 3
+    type: numeric
+    stem: "$2^{10}$ มากกว่า $10^3$ อยู่เท่าใด"
+    answer: { value: 24 }
+    hints:
+      - "หาค่า $2^{10}$ โดยคูณ 2 ต่อกันไปทีละครั้ง: 2, 4, 8, 16, …"
+      - "$10^3 = 1{,}000$"
+    misconceptions:
+      - { match: 0, feedback: "$2^{10}$ ใกล้ 1,000 แต่ไม่เท่ากันพอดี $2^{10} = 1{,}024$" }
+      - { match: -980, feedback: "คิด $2^{10}$ เป็น $2 \\times 10 = 20$ เลขชี้กำลังบอกจำนวนครั้งที่คูณ 2" }
+    solution: "$2^{10} = 1{,}024$ และ $10^3 = 1{,}000$ ต่างกัน 24 ความใกล้กันนี้เป็นที่มาของการใช้ \"กิโลไบต์\" ประมาณ 1,000 ไบต์ในคอมพิวเตอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p021
+    topics: [math.number.exponents]
+    difficulty: 4
+    type: numeric
+    stem: "หาค่า $\\dfrac{5^2 - 3^2}{2^3} \\times (-2)^2$"
+    answer: { value: 8 }
+    hints:
+      - "หาค่าเลขยกกำลังทุกตัวก่อน แล้วคำนวณตัวเศษให้เสร็จก่อนหาร"
+      - "$(-2)^2$ มีวงเล็บ ผลจึงเป็นบวก"
+    misconceptions:
+      - { match: -8, feedback: "ดูเหมือนคิด $(-2)^2$ เป็น $-4$ เมื่อมีวงเล็บ ฐานคือ $-2$ ทั้งตัว $(-2)(-2) = 4$" }
+      - { match: 2, feedback: "ดูเหมือนลบก่อนแล้วยกกำลัง $(5 - 3)^2 = 4$ แต่ต้องยกกำลังแต่ละตัวก่อน $5^2 - 3^2 = 16$" }
+    solution: "ตัวเศษ $25 - 9 = 16$ ตัวส่วน $2^3 = 8$ ได้ $\\tfrac{16}{8} = 2$ แล้วคูณ $(-2)^2 = 4$ ได้ $2 \\times 4 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p022
+    topics: [math.number.exponents]
+    difficulty: 2
+    type: numeric
+    stem: "ที่ดินรูปสี่เหลี่ยมจัตุรัสยาวด้านละ 20 วา มีพื้นที่กี่ตารางวา"
+    answer: { value: 400, unit: ตารางวา }
+    hints:
+      - "พื้นที่สี่เหลี่ยมจัตุรัส $=$ ด้าน$^2$"
+      - "$20^2 = 20 \\times 20$"
+    misconceptions:
+      - { match: 40, feedback: "คิด $20^2$ เป็น $20 \\times 2$ ที่ถูกคือ $20 \\times 20$" }
+      - { match: 80, feedback: "นั่นคือความยาวรอบที่ดิน ($4 \\times 20$ วา) โจทย์ถามพื้นที่" }
+    solution: "พื้นที่ $= 20^2 = 400$ ตารางวา ซึ่งเท่ากับ 1 ไร่พอดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.exp.p023
+    topics: [math.number.exponents]
+    difficulty: 5
+    type: numeric
+    stem: "เลขโดดในหลักหน่วยของ $3^{2027}$ คือเลขใด"
+    answer: { value: 7 }
+    hints:
+      - "หาหลักหน่วยของ $3^1, 3^2, 3^3, 3^4, 3^5, \\dots$ แล้วสังเกตรูปแบบที่ซ้ำ"
+      - "หลักหน่วยวนเป็นรอบ 3, 9, 7, 1 ทุก 4 ครั้ง หาเศษของ $2027 \\div 4$"
+    misconceptions:
+      - { match: 3, feedback: "ตรวจเศษอีกครั้ง $2027 = 4 \\times 506 + 3$ เศษ 3 ตรงกับตำแหน่งที่ 3 ของรอบ (3, 9, **7**, 1)" }
+      - { match: 1, feedback: "หลักหน่วยเป็น 1 เมื่อเลขชี้กำลังหารด้วย 4 ลงตัว แต่ 2027 หารด้วย 4 เหลือเศษ 3" }
+    solution: "หลักหน่วยของ $3^1, 3^2, 3^3, 3^4$ คือ 3, 9, 7, 1 แล้ววนซ้ำ เพราะหลักหน่วยของผลคูณขึ้นกับหลักหน่วยของตัวคูณเท่านั้น $2027 = 4 \\times 506 + 3$ จึงอยู่ตำแหน่งที่ 3 ของรอบ หลักหน่วยคือ 7"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

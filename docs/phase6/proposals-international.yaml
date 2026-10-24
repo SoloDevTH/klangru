@@ -1,0 +1,348 @@
+# ข้อเสนอหัวข้อจากหลักสูตรต่างประเทศ (เฟส 6): ให้กราฟความรู้รวมหลักสูตรไทยกับหลักสูตรต่างประเทศ ไม่ได้ตามหลักสูตรฉบับเดียว
+#
+# ที่มา: ตัวชี้วัดของหลักสูตรต่างประเทศที่ทั้งคลัง (curriculum/mappings) และแผนไฟล์อื่นยังไม่แตะ ณ 2026-10-24
+#   au-ac9-mathematics, au-ac9-science, au-ac9-digital-technologies   Australian Curriculum V9.0 (ACARA, CC BY 4.0)
+#   uk-nc-mathematics, uk-nc-science, uk-nc-computing                 England National Curriculum (DfE, OGL v3.0) รหัส UKNC-* เป็นรหัสที่เราตั้ง
+#   us-ccss-math, us-ngss                                             Common Core และ NGSS
+#   csta-k12-cs                                                       CSTA K–12 (รวมระดับ 3B)
+# รายละเอียดและเหตุผลของแต่ละหัวข้อดู docs/research/international-curricula.md
+#
+# หลักการ
+# - ตัวชี้วัดที่หัวข้อในแผนไฟล์อื่นสอนอยู่แล้วใช้ extend: ผูกเข้าหัวข้อนั้น ไม่สร้างหัวข้อซ้ำ (หัวข้อจากหลักสูตรไทยหลายหัวข้อจึงรับตัวชี้วัดต่างประเทศเพิ่ม)
+# - สร้างหัวข้อใหม่ใน topics: เฉพาะเนื้อหาที่ไม่มีทั้งในคลังและในแผน เรียงตาม prerequisite
+# - extend: ผูกได้เฉพาะหัวข้อที่เสนอในแผน ไม่ผูกกับหัวข้อที่เขียนแล้วในคลัง (ตัวตรวจไม่รับ) ตัวชี้วัดที่หัวข้อในคลังสอนแล้วต้องเพิ่มใน curriculum/mappings
+#   ตัวชี้วัดต่างประเทศระดับประถมที่หัวข้อในคลังสอนเพียงบางส่วน (เช่น ทศนิยมกับเศษส่วน) จึงผูกกับหัวข้อในแผนที่ใกล้ที่สุด (math.number.rationals, math.number.fraction-compare)
+# - วิชา science ใหม่ใช้กับทักษะกระบวนการทางวิทยาศาสตร์ที่ใช้ร่วมกันทุกสาขา (การออกแบบการทดลอง การวิเคราะห์ข้อมูล การประเมินหลักฐาน ธรรมชาติของวิทยาศาสตร์)
+#   หัวข้อเหล่านี้สอนการวางแผนและการคิด ส่วนการลงมือทดลองจริงอยู่นอกแอป
+# - Working mathematically (KS3–KS4) ผูกกับ math.reasoning.problem-solving, math.modelling.mathematical-modelling และหัวข้อที่ใกล้ที่สุด
+# - NGSS และ AC9 เขียนเป็นการปฏิบัติ (plan and conduct, develop a model) ผูกกับหัวข้อที่สอนแนวคิดหลัก (DCI) ของตัวชี้วัดนั้น
+#   ตัวชี้วัดที่ให้ออกแบบและสร้างอุปกรณ์ผูกกับ technology.design.design-process
+#
+# ไม่ผูก (ต้องลงมือปฏิบัติจริงในห้องปฏิบัติการหรือภาคสนาม ทำในแอปไม่ได้)
+#   au-ac9-science: AC9SFI02 AC9S1I03 AC9S2I03 AC9S3I03 AC9S4I03 AC9S5I03 AC9S6I03 AC9S7I03 AC9S8I03
+#     (engage in investigations safely และ make/record observations, use equipment to measure)
+#   uk-nc-science: UKNC-SC-Y1-2-WS-02 Y1-2-WS-03 Y3-4-WS-03 Y5-6-WS-02 KS3-WS-ESI-04 KS3-WS-ESI-05 KS4-WS-ESS-04 KS4-WS-ESS-06
+#     (observing with equipment, performing tests, taking measurements, using apparatus, carrying out experiments)
+#
+# หลังรวมแผนนี้ ตัวชี้วัดที่ยังไม่ครอบคลุม: au-ac9-science 9 และ uk-nc-science 8 (ตามรายการข้างบน) หลักสูตรอื่นในรายการเป็น 0
+topics:
+  - { id: math.geometry.position-direction, title: "ตำแหน่ง ทิศทาง และการบอกทาง", difficulty: 1, prereq: [math.geometry.shapes],
+      indicators: ["au-ac9-mathematics:AC9MFSP02", "au-ac9-mathematics:AC9M1SP02", "au-ac9-mathematics:AC9M2SP02", "au-ac9-mathematics:AC9M3SP02", "au-ac9-mathematics:AC9M4SP02", "uk-nc-mathematics:UKNC-MA-Y2-GPD-02", "uk-nc-mathematics:UKNC-MA-Y4-GPD-03", "us-ccss-math:K.G.1"],
+      scope: "บอกตำแหน่งด้วยคำบอกตำแหน่ง (ข้างบน ข้างใต้ ซ้าย ขวา) ทำตามและให้คำบอกทาง การหมุนครึ่งรอบและหนึ่งในสี่รอบ แผนผังอย่างง่าย และตารางอ้างอิงตำแหน่ง (grid reference)" }
+  - { id: math.measure.area-units, title: "แนวคิดพื้นที่: ตารางหน่วยและการนับ", difficulty: 1.5, prereq: [math.geometry.shapes, math.number.whole-mul-div],
+      indicators: ["uk-nc-mathematics:UKNC-MA-Y3-M-02", "uk-nc-mathematics:UKNC-MA-Y4-M-03", "us-ccss-math:2.G.2", "us-ccss-math:3.MD.5", "us-ccss-math:3.MD.6"],
+      scope: "พื้นที่คือจำนวนตารางหน่วยที่ปูเต็มรูป นับตารางหน่วย แบ่งสี่เหลี่ยมผืนผ้าเป็นแถวและหลัก ความยาวรอบรูปของรูปง่าย ๆ ก่อนใช้สูตรในหัวข้อ area-perimeter" }
+  - { id: math.algorithms.algorithmic-thinking, title: "อัลกอริทึมในคณิตศาสตร์", difficulty: 3, prereq: [computer.algorithms.intro, math.algebra.patterns, math.number.factors-multiples],
+      indicators: ["au-ac9-mathematics:AC9M3N07", "au-ac9-mathematics:AC9M4N09", "au-ac9-mathematics:AC9M5N10", "au-ac9-mathematics:AC9M6A03", "au-ac9-mathematics:AC9M7SP04", "au-ac9-mathematics:AC9M8SP04", "au-ac9-mathematics:AC9M9SP03", "au-ac9-mathematics:AC9M10SP03"],
+      scope: "ทำตามและสร้างอัลกอริทึมที่มีขั้นตอนและการตัดสินใจเพื่อสำรวจจำนวน แบบรูป ตัวประกอบ และการจำแนกรูปเรขาคณิต อธิบายแบบรูปที่เกิดขึ้น และปรับอัลกอริทึมให้ถูกต้อง" }
+  - { id: math.stats.statistical-investigation, title: "การทำการสำรวจทางสถิติ", difficulty: 2.5, prereq: [math.stats.data-display, math.stats.central-tendency],
+      indicators: ["au-ac9-mathematics:AC9M3ST03", "au-ac9-mathematics:AC9M4ST01", "au-ac9-mathematics:AC9M4ST02", "au-ac9-mathematics:AC9M4ST03", "au-ac9-mathematics:AC9M5ST03", "au-ac9-mathematics:AC9M6ST03", "au-ac9-mathematics:AC9M7ST03", "au-ac9-mathematics:AC9M9ST05", "au-ac9-mathematics:AC9M10ST05", "us-ccss-math:6.SP.1"],
+      scope: "วงจรการสำรวจทางสถิติ: ตั้งคำถามเชิงสถิติ เลือกวิธีเก็บข้อมูล (สำรวจ สังเกต ทดลอง) จัดระเบียบและนำเสนอ ตีความ และสื่อสารข้อค้นพบในบริบท ทำกับชุดข้อมูลที่กำหนดให้ในแอป" }
+  - { id: math.prob.experimental, title: "ความน่าจะเป็นเชิงทดลองและการจำลอง", difficulty: 3.5, prereq: [math.number.fractions, math.stats.data-display],
+      indicators: ["au-ac9-mathematics:AC9M3P01", "au-ac9-mathematics:AC9M4P01", "au-ac9-mathematics:AC9M3P02", "au-ac9-mathematics:AC9M4P02", "au-ac9-mathematics:AC9M5P02", "au-ac9-mathematics:AC9M6P02", "au-ac9-mathematics:AC9M7P02", "au-ac9-mathematics:AC9M8P03", "au-ac9-mathematics:AC9M9P02", "au-ac9-mathematics:AC9M9P03", "au-ac9-mathematics:AC9M10P02", "uk-nc-mathematics:UKNC-MA-KS3-P-01", "uk-nc-mathematics:UKNC-MA-KS4-P-02", "us-ccss-math:7.SP.6"],
+      scope: "ภาษาของโอกาส (เป็นไปได้ ไม่น่าเป็นไปได้ แน่นอน เป็นไปไม่ได้) การทดลองสุ่มซ้ำ ความถี่สัมพัทธ์ การจำลองด้วยคอมพิวเตอร์ เมื่อจำนวนครั้งมากขึ้นความถี่สัมพัทธ์เข้าใกล้ความน่าจะเป็นตามทฤษฎี และเหตุการณ์ \"และ\" \"หรือ\"" }
+  - { id: math.number.bounds-errors, title: "การปัด ขอบเขตบนล่าง และความคลาดเคลื่อนของการวัด", difficulty: 3.5, prereq: [math.number.place-value, math.algebra.linear-inequalities, physics.units.measurement],
+      indicators: ["au-ac9-mathematics:AC9M10N01", "au-ac9-mathematics:AC9M9M04", "au-ac9-mathematics:AC9M10M04", "uk-nc-mathematics:UKNC-MA-Y6-NF-10", "uk-nc-mathematics:UKNC-MA-KS3-N-14", "uk-nc-mathematics:UKNC-MA-KS4-N-08", "us-ccss-math:N-Q.3"],
+      scope: "ปัดตามระดับความแม่นยำที่กำหนด ขอบเขตบนและล่างเขียนด้วยอสมการ ความคลาดเคลื่อนสัมบูรณ์ สัมพัทธ์ และร้อยละ ผลของค่าประมาณที่ใช้ซ้ำในการคำนวณ" }
+  - { id: math.functions.comparing-representations, title: "อ่านและเปรียบเทียบฟังก์ชันจากตาราง กราฟ และสมการ", difficulty: 4.5, prereq: [math.functions.functions-intro, math.functions.linear-graphs],
+      indicators: ["au-ac9-mathematics:AC9M7A04", "au-ac9-mathematics:AC9M8A04", "uk-nc-mathematics:UKNC-MA-KS3-A-10", "uk-nc-mathematics:UKNC-MA-KS3-G-16", "uk-nc-mathematics:UKNC-MA-KS3-A-13", "uk-nc-mathematics:UKNC-MA-KS4-A-08", "uk-nc-mathematics:UKNC-MA-KS3-WF-05", "uk-nc-mathematics:UKNC-MA-KS4-WF-05", "uk-nc-mathematics:UKNC-MA-KS3-WF-06", "us-ccss-math:6.EE.9", "us-ccss-math:8.F.2", "us-ccss-math:8.F.5", "us-ccss-math:A-REI.10", "us-ccss-math:F-IF.9"],
+      scope: "ตัวแปรอิสระและตัวแปรตาม อ่านความสัมพันธ์จากกราฟข้อมูลจริง เปรียบเทียบฟังก์ชันที่แทนต่างรูปแบบ กราฟแบบเป็นช่วง ส่วนกลับ และเอกซ์โพเนนเชียลในบริบท หาคำตอบโดยประมาณจากกราฟ" }
+  - { id: math.number.direct-inverse-proportion, title: "การแปรผันตรงและการแปรผกผัน", difficulty: 4.5, prereq: [math.number.ratio-percent, math.functions.linear-graphs],
+      indicators: ["uk-nc-mathematics:UKNC-MA-KS3-R-09", "uk-nc-mathematics:UKNC-MA-KS4-R-03", "uk-nc-mathematics:UKNC-MA-KS3-WR-02", "uk-nc-mathematics:UKNC-MA-KS4-WR-01"],
+      scope: "y แปรผันตรงกับ x และแปรผกผันกับ x สร้างสมการจากข้อมูล กราฟของการแปรผัน และโจทย์อัตรา มาตราส่วน และหน่วยผสม" }
+  - { id: math.reasoning.problem-solving, title: "การให้เหตุผล การพิสูจน์ และการแก้ปัญหาทางคณิตศาสตร์", difficulty: 5, prereq: [math.algebra.linear-eq, math.logic.propositions],
+      indicators: ["uk-nc-mathematics:UKNC-MA-Y6-A-04", "uk-nc-mathematics:UKNC-MA-Y6-A-05", "uk-nc-mathematics:UKNC-MA-KS3-WR-01", "uk-nc-mathematics:UKNC-MA-KS3-WR-03", "uk-nc-mathematics:UKNC-MA-KS3-WR-04", "uk-nc-mathematics:UKNC-MA-KS3-WR-05", "uk-nc-mathematics:UKNC-MA-KS3-WR-06", "uk-nc-mathematics:UKNC-MA-KS3-WR-07", "uk-nc-mathematics:UKNC-MA-KS4-WR-02", "uk-nc-mathematics:UKNC-MA-KS4-WR-03", "uk-nc-mathematics:UKNC-MA-KS4-WR-04", "uk-nc-mathematics:UKNC-MA-KS4-WR-05", "uk-nc-mathematics:UKNC-MA-KS4-WR-06", "uk-nc-mathematics:UKNC-MA-KS4-WR-07", "uk-nc-mathematics:UKNC-MA-KS3-WP-01", "uk-nc-mathematics:UKNC-MA-KS3-WP-04", "uk-nc-mathematics:UKNC-MA-KS4-WP-01", "uk-nc-mathematics:UKNC-MA-KS4-WP-03", "uk-nc-mathematics:UKNC-MA-KS4-WP-05", "uk-nc-mathematics:UKNC-MA-KS4-A-02", "uk-nc-mathematics:UKNC-MA-KS3-WF-07", "uk-nc-mathematics:UKNC-MA-KS4-WF-06", "uk-nc-mathematics:UKNC-MA-KS3-WF-03", "uk-nc-mathematics:UKNC-MA-KS3-WF-04", "uk-nc-mathematics:UKNC-MA-KS4-WF-03", "uk-nc-mathematics:UKNC-MA-KS4-WF-04", "us-ccss-math:7.EE.2"],
+      scope: "ตั้งข้อคาดการณ์และทดสอบ หาตัวอย่างค้าน สมการกับเอกลักษณ์ พิสูจน์ด้วยพีชคณิต แจกแจงกรณีอย่างเป็นระบบ เลือกวิธีแก้ปัญหาที่ไม่คุ้นเคย และประเมินความสมเหตุสมผลของข้อโต้แย้ง" }
+  - { id: math.stats.sampling-surveys, title: "การสุ่มตัวอย่าง การสำรวจ และการอนุมานประชากร", difficulty: 4.5, prereq: [math.stats.statistical-investigation, math.stats.dispersion],
+      indicators: ["au-ac9-mathematics:AC9M8ST01", "au-ac9-mathematics:AC9M8ST02", "au-ac9-mathematics:AC9M8ST03", "au-ac9-mathematics:AC9M8ST04", "au-ac9-mathematics:AC9M9ST01", "au-ac9-mathematics:AC9M9ST02", "au-ac9-mathematics:AC9M10ST01", "uk-nc-mathematics:UKNC-MA-KS4-S-01", "uk-nc-mathematics:UKNC-MA-KS4-S-05", "us-ccss-math:7.SP.1", "us-ccss-math:7.SP.2", "us-ccss-math:7.SP.3", "us-ccss-math:S-IC.1", "us-ccss-math:S-IC.2", "us-ccss-math:S-IC.3", "us-ccss-math:S-IC.6"],
+      scope: "สำมะโนกับการสุ่มตัวอย่าง การสุ่มแบบต่าง ๆ และอคติ ความแปรผันระหว่างตัวอย่าง อนุมานประชากรอย่างไม่เป็นทางการ การสำรวจกับการทดลองกับการศึกษาเชิงสังเกต และการวิจารณ์รายงานสถิติในสื่อ" }
+  - { id: math.stats.bivariate-data, title: "ข้อมูลสองตัวแปร แผนภาพการกระจาย และตารางสองทาง", difficulty: 4.5, prereq: [math.stats.data-display, math.functions.linear-graphs],
+      indicators: ["au-ac9-mathematics:AC9M10ST03", "au-ac9-mathematics:AC9M10ST04", "uk-nc-mathematics:UKNC-MA-KS3-S-03", "uk-nc-mathematics:UKNC-MA-KS4-S-06", "us-ccss-math:8.SP.1", "us-ccss-math:8.SP.2", "us-ccss-math:8.SP.3", "us-ccss-math:8.SP.4", "us-ccss-math:S-ID.6", "us-ccss-math:S-ID.7", "us-ccss-math:S-ID.9"],
+      scope: "แผนภาพการกระจาย ทิศทางและความแรงของความสัมพันธ์ เส้นแนวโน้มโดยประมาณ ความหมายของความชันและจุดตัดในบริบท สหสัมพันธ์ไม่ใช่เหตุและผล และตารางสองทางของข้อมูลจำแนกประเภท" }
+  - { id: math.geometry.proof, title: "การพิสูจน์ทางเรขาคณิต", difficulty: 5.5, prereq: [math.geometry.triangles, math.geometry.constructions, math.geometry.quadrilaterals, math.logic.propositions],
+      indicators: ["au-ac9-mathematics:AC9M10SP01", "uk-nc-mathematics:UKNC-MA-KS3-G-07", "us-ccss-math:G-CO.7", "us-ccss-math:G-CO.9", "us-ccss-math:G-CO.11", "us-ccss-math:G-SRT.2", "us-ccss-math:G-SRT.3", "us-ccss-math:G-C.1", "us-ccss-math:G-GMD.1", "us-ccss-math:G-GMD.2", "us-ccss-math:G-GPE.4"],
+      scope: "การให้เหตุผลแบบนิรนัยกับรูปเรขาคณิต พิสูจน์สมบัติของมุม สามเหลี่ยม สี่เหลี่ยมด้านขนาน ความเท่ากันทุกประการและความคล้ายด้วยการแปลง พิสูจน์ด้วยพิกัด และเหตุผลของสูตรพื้นที่และปริมาตร" }
+  - { id: math.discrete.networks, title: "เครือข่ายและกราฟเบื้องต้น", difficulty: 5, prereq: [math.geometry.shapes, math.logic.sets],
+      indicators: ["au-ac9-mathematics:AC9M10SP02"],
+      scope: "จุดยอด เส้นเชื่อม ดีกรี ความเชื่อมโยง เส้นทางและวงจร ปัญหาสะพานเคอนิกส์แบร์ก และการใช้เครือข่ายแทนสถานการณ์จริง (เส้นทาง การเชื่อมต่อ)" }
+  - { id: math.algebra.inequality-regions, title: "อสมการสองตัวแปรและบริเวณบนระนาบ", difficulty: 5, prereq: [math.algebra.linear-inequalities, math.functions.linear-graphs],
+      indicators: ["us-ccss-math:A-REI.12"],
+      scope: "กราฟของอสมการเชิงเส้นสองตัวแปรเป็นครึ่งระนาบ บริเวณที่สอดคล้องระบบอสมการ และการตีความในบริบท" }
+  - { id: math.algebra.nonlinear-systems, title: "ระบบสมการที่มีสมการกำลังสอง", difficulty: 5.5, prereq: [math.algebra.systems, math.algebra.quadratic-eq, math.functions.quadratic],
+      indicators: ["us-ccss-math:A-REI.7", "us-ccss-math:A-REI.11"],
+      scope: "แก้ระบบสมการเชิงเส้นกับกำลังสองด้วยการแทนค่า จุดตัดของกราฟ y = f(x) และ y = g(x) เป็นคำตอบของ f(x) = g(x)" }
+  - { id: math.functions.graph-transformations, title: "การเลื่อน ยืด และสะท้อนกราฟของฟังก์ชัน", difficulty: 6, prereq: [math.functions.quadratic, math.functions.functions-intro],
+      indicators: ["au-ac9-mathematics:AC9M9A06", "au-ac9-mathematics:AC9M10A05", "uk-nc-mathematics:UKNC-MA-KS4-A-07", "us-ccss-math:F-BF.3"],
+      scope: "ผลของ f(x) + k, f(x + k), kf(x), f(kx) และการสะท้อนต่อกราฟ ทดลองเปลี่ยนพารามิเตอร์และเชื่อมรูปพีชคณิตกับกราฟ" }
+  - { id: math.functions.inverse, title: "ฟังก์ชันผกผัน", difficulty: 6, prereq: [math.functions.functions-intro, math.functions.exponential],
+      indicators: ["us-ccss-math:F-BF.4"],
+      scope: "หาฟังก์ชันผกผันของฟังก์ชันอย่างง่าย กราฟสะท้อนในเส้น y = x โดเมนที่ทำให้มีตัวผกผัน และความสัมพันธ์ระหว่างเลขยกกำลังกับลอการิทึม" }
+  - { id: math.prob.conditional, title: "ความน่าจะเป็นแบบมีเงื่อนไข แผนภาพต้นไม้ และตารางสองทาง", difficulty: 5.5, prereq: [math.prob.probability, math.logic.sets, math.stats.bivariate-data],
+      indicators: ["au-ac9-mathematics:AC9M10P01", "uk-nc-mathematics:UKNC-MA-KS4-P-04", "us-ccss-math:S-CP.3", "us-ccss-math:S-CP.4", "us-ccss-math:S-CP.5", "us-ccss-math:S-CP.6", "us-ccss-math:S-CP.7", "us-ccss-math:S-CP.8"],
+      scope: "แผนภาพต้นไม้ แผนภาพเวนน์ และตารางสองทาง กฎการบวก P(A หรือ B) ความน่าจะเป็นแบบมีเงื่อนไข P(A|B) ความเป็นอิสระ และกฎการคูณทั่วไป" }
+  - { id: math.geometry.bearings-3d, title: "แบริงและตรีโกณมิติในสามมิติ", difficulty: 5.5, prereq: [math.geometry.trig-ratios, math.geometry.pythagoras],
+      indicators: ["au-ac9-mathematics:AC9M8SP03", "uk-nc-mathematics:UKNC-MA-KS4-G-06"],
+      scope: "แบริงสามหลัก ระบบพิกัดสามมิติ และใช้พีทาโกรัสกับอัตราส่วนตรีโกณมิติในรูปสามมิติ" }
+  - { id: math.algebra.binomial-theorem, title: "ทฤษฎีบททวินาม", difficulty: 6, prereq: [math.prob.counting, math.algebra.polynomials],
+      indicators: ["us-ccss-math:A-APR.5"],
+      scope: "กระจาย (x + y)^n ด้วยสามเหลี่ยมปาสคาลและสัมประสิทธิ์ทวินาม C(n, r)" }
+  - { id: math.modelling.mathematical-modelling, title: "การสร้างแบบจำลองทางคณิตศาสตร์", difficulty: 6.5, prereq: [math.functions.exponential, math.functions.quadratic, math.number.direct-inverse-proportion],
+      indicators: ["au-ac9-mathematics:AC9M6N09", "au-ac9-mathematics:AC9M7M06", "au-ac9-mathematics:AC9M8M07", "au-ac9-mathematics:AC9M9M05", "au-ac9-mathematics:AC9M10M05", "au-ac9-mathematics:AC9M9A05", "uk-nc-mathematics:UKNC-MA-KS3-WP-02", "uk-nc-mathematics:UKNC-MA-KS3-WP-03", "uk-nc-mathematics:UKNC-MA-KS4-WP-02", "uk-nc-mathematics:UKNC-MA-KS4-WP-04", "uk-nc-mathematics:UKNC-MA-KS3-A-06", "uk-nc-mathematics:UKNC-MA-KS3-N-15", "us-ccss-math:N-Q.1", "us-ccss-math:N-Q.2", "us-ccss-math:F-LE.3", "us-ccss-math:G-MG.1", "us-ccss-math:G-MG.2", "us-ccss-math:G-MG.3"],
+      scope: "วงจรการสร้างแบบจำลอง: ตั้งสมมติฐาน เลือกปริมาณและหน่วย เลือกแบบจำลองเชิงเส้น กำลังสอง หรือเอกซ์โพเนนเชียล ตีความ ประเมิน และปรับแบบจำลอง รวมแบบจำลองทางการเงินและเรขาคณิต" }
+  - { id: science.inquiry.investigation-design, title: "การตั้งคำถาม สมมติฐาน และการออกแบบการทดลอง", difficulty: 1.5, prereq: [],
+      indicators: ["au-ac9-science:AC9SFI01", "au-ac9-science:AC9S1I01", "au-ac9-science:AC9S2I01", "au-ac9-science:AC9S3I01", "au-ac9-science:AC9S4I01", "au-ac9-science:AC9S5I01", "au-ac9-science:AC9S6I01", "au-ac9-science:AC9S7I01", "au-ac9-science:AC9S8I01", "au-ac9-science:AC9S9I01", "au-ac9-science:AC9S10I01", "au-ac9-science:AC9S1I02", "au-ac9-science:AC9S2I02", "au-ac9-science:AC9S3I02", "au-ac9-science:AC9S4I02", "au-ac9-science:AC9S5I02", "au-ac9-science:AC9S6I02", "au-ac9-science:AC9S7I02", "au-ac9-science:AC9S8I02", "au-ac9-science:AC9S9I02", "au-ac9-science:AC9S10I02", "uk-nc-science:UKNC-SC-Y1-2-WS-01", "uk-nc-science:UKNC-SC-Y3-4-WS-01", "uk-nc-science:UKNC-SC-Y3-4-WS-02", "uk-nc-science:UKNC-SC-Y5-6-WS-01", "uk-nc-science:UKNC-SC-Y5-6-WS-04", "uk-nc-science:UKNC-SC-KS3-WS-ESI-01", "uk-nc-science:UKNC-SC-KS3-WS-ESI-02", "uk-nc-science:UKNC-SC-KS3-WS-ESI-03", "uk-nc-science:UKNC-SC-KS3-WS-ESI-06", "uk-nc-science:UKNC-SC-KS4-WS-ESS-01", "uk-nc-science:UKNC-SC-KS4-WS-ESS-02", "uk-nc-science:UKNC-SC-KS4-WS-ESS-03", "uk-nc-science:UKNC-SC-KS4-WS-ESS-05"],
+      scope: "คำถามที่ตรวจสอบได้ การคาดคะเนและสมมติฐาน ตัวแปรต้น ตัวแปรตาม ตัวแปรควบคุม การทดลองที่ยุติธรรม (fair test) การสุ่มตัวอย่างภาคสนาม และความปลอดภัย ฝึกวางแผนในแอป ส่วนการลงมือทดลองจริงอยู่นอกแอป" }
+  - { id: science.inquiry.data-analysis, title: "การจัดกระทำและวิเคราะห์ข้อมูลจากการทดลอง", difficulty: 2.5, prereq: [science.inquiry.investigation-design, math.stats.data-display],
+      indicators: ["au-ac9-science:AC9SFI03", "au-ac9-science:AC9S1I04", "au-ac9-science:AC9S2I04", "au-ac9-science:AC9S3I04", "au-ac9-science:AC9S4I04", "au-ac9-science:AC9S5I04", "au-ac9-science:AC9S6I04", "au-ac9-science:AC9S7I04", "au-ac9-science:AC9S7I05", "au-ac9-science:AC9S8I04", "au-ac9-science:AC9S8I05", "au-ac9-science:AC9S9I04", "au-ac9-science:AC9S9I05", "au-ac9-science:AC9S10I04", "au-ac9-science:AC9S10I05", "uk-nc-science:UKNC-SC-Y1-2-WS-04", "uk-nc-science:UKNC-SC-Y1-2-WS-05", "uk-nc-science:UKNC-SC-Y1-2-WS-06", "uk-nc-science:UKNC-SC-Y3-4-WS-04", "uk-nc-science:UKNC-SC-Y3-4-WS-07", "uk-nc-science:UKNC-SC-Y3-4-WS-08", "uk-nc-science:UKNC-SC-Y5-6-WS-03", "uk-nc-science:UKNC-SC-KS3-WS-AE-01", "uk-nc-science:UKNC-SC-KS3-WS-AE-02", "uk-nc-science:UKNC-SC-KS3-WS-AE-03", "uk-nc-science:UKNC-SC-KS3-WS-AE-04", "uk-nc-science:UKNC-SC-KS3-WS-AE-06", "uk-nc-science:UKNC-SC-KS3-WS-MEA-02", "uk-nc-science:UKNC-SC-KS3-WS-MEA-03", "uk-nc-science:UKNC-SC-KS4-WS-AE-01"],
+      scope: "บันทึกและจัดข้อมูลเป็นตารางและกราฟ หาแบบรูป แนวโน้ม และค่าผิดปกติ ใช้สถิติเบื้องต้นและสมการง่าย ๆ คำนวณผล และสรุปผลเทียบกับการคาดคะเน" }
+  - { id: science.inquiry.communicating, title: "การเขียนรายงานและสื่อสารผลทางวิทยาศาสตร์", difficulty: 3, prereq: [science.inquiry.data-analysis],
+      indicators: ["au-ac9-science:AC9SFI05", "au-ac9-science:AC9S1I06", "au-ac9-science:AC9S2I06", "au-ac9-science:AC9S3I06", "au-ac9-science:AC9S4I06", "au-ac9-science:AC9S5I06", "au-ac9-science:AC9S6I06", "au-ac9-science:AC9S7I08", "au-ac9-science:AC9S8I08", "au-ac9-science:AC9S9I08", "au-ac9-science:AC9S10I08", "uk-nc-science:UKNC-SC-Y3-4-WS-05", "uk-nc-science:UKNC-SC-Y3-4-WS-06", "uk-nc-science:UKNC-SC-Y5-6-WS-05", "uk-nc-science:UKNC-SC-KS4-WS-AE-02", "uk-nc-science:UKNC-SC-KS4-WS-VUSN-01"],
+      scope: "เขียนรายงานการทดลองและข้อโต้แย้งทางวิทยาศาสตร์ให้เหมาะกับผู้อ่าน ใช้คำศัพท์ หน่วย และสัญลักษณ์ถูกต้อง และอ้างอิงแหล่งข้อมูล" }
+  - { id: science.inquiry.evaluating-claims, title: "การประเมินผลการทดลอง หลักฐาน และข้อกล่าวอ้าง", difficulty: 3.5, prereq: [science.inquiry.data-analysis, physics.units.measurement],
+      indicators: ["au-ac9-science:AC9SFI04", "au-ac9-science:AC9S1I05", "au-ac9-science:AC9S2I05", "au-ac9-science:AC9S3I05", "au-ac9-science:AC9S4I05", "au-ac9-science:AC9S5I05", "au-ac9-science:AC9S6I05", "au-ac9-science:AC9S7I06", "au-ac9-science:AC9S7I07", "au-ac9-science:AC9S8I06", "au-ac9-science:AC9S8I07", "au-ac9-science:AC9S9I06", "au-ac9-science:AC9S9I07", "au-ac9-science:AC9S10I06", "au-ac9-science:AC9S10I07", "uk-nc-science:UKNC-SC-Y3-4-WS-09", "uk-nc-science:UKNC-SC-Y5-6-WS-06", "uk-nc-science:UKNC-SC-KS3-WS-SA-01", "uk-nc-science:UKNC-SC-KS3-WS-SA-03", "uk-nc-science:UKNC-SC-KS4-WS-ESS-07", "uk-nc-science:UKNC-SC-KS4-WS-DST-05"],
+      scope: "ประเมินวิธีการ ความคลาดเคลื่อน ความน่าเชื่อถือและการทำซ้ำได้ เสนอการปรับปรุง ประเมินความเสี่ยง สร้างข้อโต้แย้งจากหลักฐาน และประเมินข้อกล่าวอ้างในสื่อ" }
+  - { id: science.nature.nature-of-science, title: "ธรรมชาติของวิทยาศาสตร์และพัฒนาการของความรู้", difficulty: 3, prereq: [science.inquiry.investigation-design],
+      indicators: ["au-ac9-science:AC9S3H01", "au-ac9-science:AC9S4H01", "au-ac9-science:AC9S5H01", "au-ac9-science:AC9S6H01", "au-ac9-science:AC9S7H01", "au-ac9-science:AC9S7H02", "au-ac9-science:AC9S8H01", "au-ac9-science:AC9S8H02", "au-ac9-science:AC9S9H01", "au-ac9-science:AC9S9H02", "au-ac9-science:AC9S10H01", "au-ac9-science:AC9S10H02", "uk-nc-science:UKNC-SC-KS3-WS-SA-02", "uk-nc-science:UKNC-SC-KS4-WS-DST-01", "uk-nc-science:UKNC-SC-KS4-WS-DST-02", "uk-nc-science:UKNC-SC-KS4-WS-DST-06", "uk-nc-science:UKNC-SC-KS4-WS-VUSN-02"],
+      scope: "ความรู้วิทยาศาสตร์เปลี่ยนได้ตามหลักฐานใหม่ ความร่วมมือ การตีพิมพ์และการทบทวนโดยผู้ทรงคุณวุฒิ แบบจำลองและทฤษฎี บทบาทของวัฒนธรรมและภูมิปัญญาท้องถิ่น และเทคโนโลยีที่ทำให้วิทยาศาสตร์ก้าวหน้า" }
+  - { id: science.society.science-and-society, title: "วิทยาศาสตร์ เทคโนโลยี และสังคม", difficulty: 3.5, prereq: [science.nature.nature-of-science],
+      indicators: ["au-ac9-science:AC9SFH01", "au-ac9-science:AC9S1H01", "au-ac9-science:AC9S2H01", "au-ac9-science:AC9S3H02", "au-ac9-science:AC9S4H02", "au-ac9-science:AC9S5H02", "au-ac9-science:AC9S6H02", "au-ac9-science:AC9S7H03", "au-ac9-science:AC9S7H04", "au-ac9-science:AC9S8H03", "au-ac9-science:AC9S8H04", "au-ac9-science:AC9S9H03", "au-ac9-science:AC9S9H04", "au-ac9-science:AC9S10H03", "au-ac9-science:AC9S10H04", "uk-nc-science:UKNC-SC-KS4-WS-DST-03", "uk-nc-science:UKNC-SC-KS4-WS-DST-04"],
+      scope: "การใช้ความรู้วิทยาศาสตร์แก้ปัญหาในชีวิตและชุมชน ผลกระทบทางสังคม เศรษฐกิจ สิ่งแวดล้อม และจริยธรรม การสื่อสารวิทยาศาสตร์กับนโยบาย และค่านิยมของสังคมที่กำหนดทิศทางการวิจัย" }
+  - { id: physics.kinematics.relative-motion, title: "ความเร็วสัมพัทธ์", difficulty: 3.5, prereq: [physics.kinematics.velocity],
+      indicators: ["uk-nc-science:UKNC-SC-KS3-P-DM-03"],
+      scope: "ความเร็วของวัตถุเมื่อมองจากผู้สังเกตที่เคลื่อนที่ในหนึ่งมิติ รถไฟและรถยนต์แซงกันหรือสวนกัน" }
+  - { id: physics.waves.digital-signals, title: "สัญญาณแอนะล็อกและดิจิทัล", difficulty: 4, prereq: [physics.waves.wave-basics, computer.data.binary],
+      indicators: ["us-ngss:4-PS4-3", "us-ngss:MS-PS4-3", "us-ngss:HS-PS4-2"],
+      scope: "สัญญาณแอนะล็อกกับดิจิทัล การส่งข้อมูลด้วยคลื่นและแบบรูป ข้อดีของการส่งและเก็บข้อมูลแบบดิจิทัล และสัญญาณรบกวน" }
+  - { id: chemistry.industry.life-cycle-assessment, title: "การประเมินวัฏจักรชีวิตผลิตภัณฑ์และการรีไซเคิล", difficulty: 4, prereq: [chemistry.materials.everyday-materials, chemistry.materials.polymers-ceramics-composites],
+      indicators: ["uk-nc-science:UKNC-SC-KS4-C-CAI-01", "uk-nc-science:UKNC-SC-KS4-C-CAI-02"],
+      scope: "ผลกระทบต่อสิ่งแวดล้อมในทุกขั้นของผลิตภัณฑ์ (วัตถุดิบ ผลิต ใช้ ทิ้ง) การเปรียบเทียบผลิตภัณฑ์ และความคุ้มค่าของการรีไซเคิลวัสดุแต่ละชนิด" }
+  - { id: chemistry.water.potable-water, title: "น้ำดื่มและการบำบัดน้ำ", difficulty: 4, prereq: [chemistry.mixtures.separating-mixtures, earthscience.hydrosphere.water-resources],
+      indicators: ["uk-nc-science:UKNC-SC-KS4-C-EAS-05"],
+      scope: "แหล่งน้ำดิบ การกรอง การฆ่าเชื้อ การกลั่นน้ำทะเล และการบำบัดน้ำเสีย" }
+  - { id: chemistry.analysis.gas-ion-tests, title: "การทดสอบแก๊สและไอออน", difficulty: 5, prereq: [chemistry.acids-bases.acid-base-ph, chemistry.bonding.ionic],
+      indicators: ["uk-nc-science:UKNC-SC-KS4-C-CC-03"],
+      scope: "ทดสอบแก๊สไฮโดรเจน ออกซิเจน คาร์บอนไดออกไซด์ และคลอรีน ทดสอบไอออนด้วยการเกิดตะกอนและเปลวไฟ (อธิบายผลที่สังเกตได้ ไม่ต้องทำการทดลองจริง)" }
+  - { id: biology.health.medicines-development, title: "การพัฒนายาใหม่และการทดลองทางคลินิก", difficulty: 5.5, prereq: [biology.animals.immunity, biology.genetics.mutation-biotechnology, science.inquiry.evaluating-claims],
+      indicators: ["uk-nc-science:UKNC-SC-KS4-B-HDDM-07", "uk-nc-science:UKNC-SC-KS4-B-EIV-03"],
+      scope: "การค้นพบและพัฒนายา การทดสอบความปลอดภัยและประสิทธิภาพ การทดลองแบบสุ่มและปกปิด ยาหลอก และผลของจีโนมิกส์ต่อการแพทย์" }
+  - { id: earthscience.systems.computational-models, title: "แบบจำลองคอมพิวเตอร์ของระบบโลกและความยั่งยืน", difficulty: 6, prereq: [earthscience.atmosphere.climate-change, biology.ecology.environmental-issues, computer.programming.functions],
+      indicators: ["us-ngss:HS-ESS3-3", "us-ngss:HS-ESS3-6"],
+      scope: "ใช้แบบจำลองและการจำลองด้วยคอมพิวเตอร์แสดงความสัมพันธ์ของระบบโลก การจัดการทรัพยากร ประชากร และผลกระทบจากมนุษย์" }
+  - { id: computer.design.user-centred-design, title: "ออกแบบระบบดิจิทัลจากความต้องการของผู้ใช้", difficulty: 3, prereq: [computer.algorithms.intro],
+      indicators: ["au-ac9-digital-technologies:AC9TDI2P01", "au-ac9-digital-technologies:AC9TDI4P01", "au-ac9-digital-technologies:AC9TDI6P01", "au-ac9-digital-technologies:AC9TDI8P04", "au-ac9-digital-technologies:AC9TDI10P04", "au-ac9-digital-technologies:AC9TDI4P03", "au-ac9-digital-technologies:AC9TDI6P03", "au-ac9-digital-technologies:AC9TDI6P04", "au-ac9-digital-technologies:AC9TDI8P07", "au-ac9-digital-technologies:AC9TDI8P08", "au-ac9-digital-technologies:AC9TDI10P07", "au-ac9-digital-technologies:AC9TDI10P08", "au-ac9-digital-technologies:AC9TDI2P03", "au-ac9-digital-technologies:AC9TDI4P05", "au-ac9-digital-technologies:AC9TDI6P06", "au-ac9-digital-technologies:AC9TDI8P10", "au-ac9-digital-technologies:AC9TDI10P10"],
+      scope: "นิยามปัญหาด้วยเกณฑ์การออกแบบและ user stories แตกปัญหา ออกแบบส่วนต่อประสานและประสบการณ์ผู้ใช้ (UX) สร้างและเปรียบเทียบทางเลือก และประเมินผลงานเทียบกับเกณฑ์และผลกระทบต่อชุมชน" }
+  - { id: computer.web.html-css, title: "เอกสารเว็บ: HTML และ CSS", difficulty: 4, prereq: [computer.networks.internet-basics, computer.data.digital-data-basics],
+      indicators: ["au-ac9-digital-technologies:AC9TDI10K02"],
+      scope: "แยกเนื้อหา โครงสร้าง (HTML) และการแสดงผล (CSS) แท็กพื้นฐาน ลิงก์ ภาพ และเหตุผลที่ต้องแยกเพื่อการเข้าถึงและการดูแล" }
+  - { id: computer.networks.performance, title: "ประสิทธิภาพของเครือข่าย", difficulty: 5, prereq: [computer.networks.internet-basics],
+      indicators: ["csta-k12-cs:3B-NI-03"],
+      scope: "แบนด์วิดท์ ความหน่วง ภาระของเครือข่าย โทโพโลยี และปัจจัยที่ทำให้เครือข่ายช้าหรือล่ม" }
+  - { id: computer.programming.recursion, title: "การเรียกซ้ำ", difficulty: 5.5, prereq: [computer.programming.functions],
+      indicators: ["csta-k12-cs:3B-AP-13"],
+      scope: "ฟังก์ชันที่เรียกตัวเอง กรณีฐาน การไล่ลำดับการทำงานของการเรียกซ้ำ และเทียบกับการวนซ้ำ" }
+  - { id: computer.programming.oop, title: "โปรแกรมแบบโมดูลและการเขียนโปรแกรมเชิงวัตถุ", difficulty: 5.5, prereq: [computer.programming.functions, computer.programming.lists-strings],
+      indicators: ["au-ac9-digital-technologies:AC9TDI10P09", "csta-k12-cs:3B-AP-14", "csta-k12-cs:3B-AP-16"],
+      scope: "แบ่งโปรแกรมเป็นโมดูล ใช้ไลบรารีและ API คลาส วัตถุ แอตทริบิวต์ เมทอด และการนำส่วนประกอบมาใช้ซ้ำ" }
+  - { id: computer.algorithms.efficiency, title: "ประสิทธิภาพและความถูกต้องของอัลกอริทึม", difficulty: 5.5, prereq: [computer.algorithms.searching-sorting],
+      indicators: ["csta-k12-cs:3B-AP-10", "csta-k12-cs:3B-AP-11"],
+      scope: "นับจำนวนขั้นตอน เปรียบเทียบอัลกอริทึมด้วยประสิทธิภาพ ความถูกต้อง และความชัดเจน และปรับใช้อัลกอริทึมคลาสสิกกับปัญหาใหม่" }
+  - { id: computer.ai.intro, title: "ปัญญาประดิษฐ์เบื้องต้น", difficulty: 5.5, prereq: [computer.algorithms.searching-sorting, computer.data.data-processing, computer.society.computing-impacts],
+      indicators: ["csta-k12-cs:3B-AP-08", "csta-k12-cs:3B-AP-09"],
+      scope: "AI ในระบบรอบตัว การค้นหาในเกม (เช่น minimax อย่างง่าย) การเรียนรู้จากข้อมูล ความลำเอียงของข้อมูล และผลต่อสังคม" }
+extend:
+  # biology
+  - { id: biology.animals.behaviour, indicators: ["us-ngss:1-LS1-2", "us-ngss:3-LS2-1", "us-ngss:HS-LS2-8"] }
+  - { id: biology.animals.circulation, indicators: ["uk-nc-science:UKNC-SC-KS4-B-TS-02"] }
+  - { id: biology.animals.digestion, indicators: ["uk-nc-science:UKNC-SC-KS3-B-ND-04", "uk-nc-science:UKNC-SC-KS3-B-ND-05"] }
+  - { id: biology.animals.gas-exchange, indicators: ["uk-nc-science:UKNC-SC-KS3-B-GES-03"] }
+  - { id: biology.animals.homeostasis, indicators: ["us-ngss:HS-LS1-3", "au-ac9-science:AC9S9U01", "uk-nc-science:UKNC-SC-KS4-B-CC-06"] }
+  - { id: biology.animals.hormones, indicators: ["uk-nc-science:UKNC-SC-KS4-B-CC-04"] }
+  - { id: biology.animals.immunity, indicators: ["uk-nc-science:UKNC-SC-KS4-B-HDDM-01", "uk-nc-science:UKNC-SC-KS4-B-HDDM-04", "uk-nc-science:UKNC-SC-KS4-B-HDDM-05", "uk-nc-science:UKNC-SC-KS4-B-HDDM-06"] }
+  - { id: biology.animals.movement, indicators: ["uk-nc-science:UKNC-SC-Y3-AH-02", "uk-nc-science:UKNC-SC-KS3-B-SMS-01", "uk-nc-science:UKNC-SC-KS3-B-SMS-02", "uk-nc-science:UKNC-SC-KS3-B-SMS-03"] }
+  - { id: biology.animals.needs-life-cycles, indicators: ["us-ngss:3-LS1-1", "us-ngss:K-LS1-1", "au-ac9-science:AC9S1U01", "uk-nc-science:UKNC-SC-Y2-AH-01", "uk-nc-science:UKNC-SC-Y2-AH-02", "uk-nc-science:UKNC-SC-Y5-LTH-01"] }
+  - { id: biology.animals.nervous-system, indicators: ["uk-nc-science:UKNC-SC-KS4-B-CC-01", "uk-nc-science:UKNC-SC-KS4-B-CC-02", "uk-nc-science:UKNC-SC-KS4-B-CC-03"] }
+  - { id: biology.animals.senses, indicators: ["us-ngss:4-LS1-2", "us-ngss:MS-LS1-8"] }
+  - { id: biology.cells.cell-basics, indicators: ["us-ngss:MS-LS1-1", "us-ngss:MS-LS1-3", "au-ac9-science:AC9S8U01", "au-ac9-science:AC9S8U02", "uk-nc-science:UKNC-SC-KS3-B-CO-01", "uk-nc-science:UKNC-SC-KS3-B-CO-02", "uk-nc-science:UKNC-SC-KS3-B-CO-03", "uk-nc-science:UKNC-SC-KS3-B-CO-06"] }
+  - { id: biology.cells.cell-division, indicators: ["uk-nc-science:UKNC-SC-KS4-B-CB-02"] }
+  - { id: biology.cells.cell-structure, indicators: ["us-ngss:HS-LS1-2", "uk-nc-science:UKNC-SC-KS3-B-CO-05", "uk-nc-science:UKNC-SC-KS4-B-CB-01"] }
+  - { id: biology.cells.cellular-respiration, indicators: ["us-ngss:MS-LS1-7", "uk-nc-science:UKNC-SC-KS3-B-CR-01", "uk-nc-science:UKNC-SC-KS3-B-CR-02", "uk-nc-science:UKNC-SC-KS3-B-CR-03", "uk-nc-science:UKNC-SC-KS3-B-CR-04", "uk-nc-science:UKNC-SC-KS4-B-CB-05"] }
+  - { id: biology.cells.diffusion-osmosis, indicators: ["uk-nc-science:UKNC-SC-KS3-B-CO-04"] }
+  - { id: biology.cells.enzymes, indicators: ["uk-nc-science:UKNC-SC-KS4-B-CB-03", "uk-nc-science:UKNC-SC-KS4-B-CB-04"] }
+  - { id: biology.diversity.biodiversity, indicators: ["us-ngss:MS-LS2-5", "uk-nc-science:UKNC-SC-KS3-B-ICDG-07", "uk-nc-science:UKNC-SC-KS4-B-ECO-06"] }
+  - { id: biology.diversity.biodiversity-classification, indicators: ["uk-nc-science:UKNC-SC-KS4-B-EIV-10"] }
+  - { id: biology.diversity.classifying-organisms, indicators: ["au-ac9-science:AC9SFU01", "au-ac9-science:AC9S7U01", "uk-nc-science:UKNC-SC-Y1-AH-01", "uk-nc-science:UKNC-SC-Y1-AH-02", "uk-nc-science:UKNC-SC-Y1-AH-03", "uk-nc-science:UKNC-SC-Y4-LTH-01", "uk-nc-science:UKNC-SC-Y4-LTH-02", "uk-nc-science:UKNC-SC-Y6-LTH-01", "uk-nc-science:UKNC-SC-Y6-LTH-02"] }
+  - { id: biology.ecology.adaptation-food-chains, indicators: ["us-ngss:3-LS4-3", "au-ac9-science:AC9S4U01", "au-ac9-science:AC9S5U01", "uk-nc-science:UKNC-SC-Y4-AH-03", "uk-nc-science:UKNC-SC-Y2-LTH-04", "uk-nc-science:UKNC-SC-Y6-EI-03"] }
+  - { id: biology.ecology.biomes-succession, indicators: ["us-ngss:HS-LS2-6"] }
+  - { id: biology.ecology.ecosystems, indicators: ["us-ngss:MS-LS2-3", "us-ngss:HS-LS2-5", "us-ngss:HS-ESS2-6", "au-ac9-science:AC9S9U03", "uk-nc-science:UKNC-SC-KS3-C-EA-05", "uk-nc-science:UKNC-SC-KS4-B-ECO-01", "uk-nc-science:UKNC-SC-KS4-B-ECO-02", "uk-nc-science:UKNC-SC-KS4-B-ECO-03", "uk-nc-science:UKNC-SC-KS4-B-ECO-04", "uk-nc-science:UKNC-SC-KS4-B-ECO-05"] }
+  - { id: biology.ecology.environmental-issues, indicators: ["us-ngss:3-LS4-4", "us-ngss:K-ESS3-3", "us-ngss:5-ESS3-1", "us-ngss:HS-LS2-7", "us-ngss:HS-LS4-6", "us-ngss:MS-ESS3-3", "us-ngss:MS-ESS3-4", "us-ngss:HS-ESS3-4", "uk-nc-science:UKNC-SC-Y4-LTH-03", "uk-nc-science:UKNC-SC-KS3-B-RAE-03", "uk-nc-science:UKNC-SC-KS4-B-ECO-08", "uk-nc-science:UKNC-SC-KS4-C-EAS-04"] }
+  - { id: biology.ecology.food-webs, indicators: ["us-ngss:5-LS2-1", "us-ngss:MS-LS2-2", "au-ac9-science:AC9S7U02", "uk-nc-science:UKNC-SC-KS3-B-RAE-01", "uk-nc-science:UKNC-SC-KS3-B-RAE-02"] }
+  - { id: biology.ecology.habitats, indicators: ["us-ngss:2-LS4-1", "us-ngss:K-ESS2-2", "us-ngss:K-ESS3-1", "au-ac9-science:AC9S6U01", "uk-nc-science:UKNC-SC-Y2-LTH-02", "uk-nc-science:UKNC-SC-Y2-LTH-03"] }
+  - { id: biology.ecology.populations, indicators: ["us-ngss:MS-LS2-1", "us-ngss:HS-LS2-1", "us-ngss:HS-LS2-2", "us-ngss:MS-LS2-4", "uk-nc-science:UKNC-SC-KS4-B-ECO-07"] }
+  - { id: biology.evolution.evolution, indicators: ["us-ngss:3-LS4-2", "us-ngss:MS-LS4-1", "us-ngss:MS-LS4-2", "us-ngss:MS-LS4-3", "us-ngss:HS-LS4-1", "us-ngss:MS-LS4-4", "us-ngss:HS-LS4-3", "us-ngss:MS-LS4-6", "us-ngss:HS-LS4-5", "au-ac9-science:AC9S10U02", "uk-nc-science:UKNC-SC-Y6-EI-01", "uk-nc-science:UKNC-SC-KS3-B-ICDG-05", "uk-nc-science:UKNC-SC-KS3-B-ICDG-06", "uk-nc-science:UKNC-SC-KS4-B-EIV-07", "uk-nc-science:UKNC-SC-KS4-B-EIV-08", "uk-nc-science:UKNC-SC-KS4-B-EIV-09"] }
+  - { id: biology.genetics.chromosomes-dna, indicators: ["uk-nc-science:UKNC-SC-KS4-B-EIV-01", "uk-nc-science:UKNC-SC-KS4-B-EIV-02", "uk-nc-science:UKNC-SC-KS4-B-EIV-04"] }
+  - { id: biology.genetics.genes-heredity, indicators: ["us-ngss:MS-LS3-2", "au-ac9-science:AC9S10U01", "uk-nc-science:UKNC-SC-KS3-B-ICDG-01", "uk-nc-science:UKNC-SC-KS3-B-ICDG-02"] }
+  - { id: biology.genetics.inherited-traits, indicators: ["us-ngss:1-LS3-1", "us-ngss:3-LS3-1", "us-ngss:3-LS3-2", "uk-nc-science:UKNC-SC-Y6-EI-02", "uk-nc-science:UKNC-SC-KS3-B-ICDG-03", "uk-nc-science:UKNC-SC-KS3-B-ICDG-04"] }
+  - { id: biology.genetics.mendelian, indicators: ["uk-nc-science:UKNC-SC-KS4-B-EIV-05", "uk-nc-science:UKNC-SC-KS4-B-EIV-06"] }
+  - { id: biology.genetics.mutation-biotechnology, indicators: ["us-ngss:MS-LS3-1", "us-ngss:MS-LS4-5", "uk-nc-science:UKNC-SC-KS4-B-EIV-11", "uk-nc-science:UKNC-SC-KS4-B-EIV-12"] }
+  - { id: biology.humans.body-parts, indicators: ["us-ngss:4-LS1-1", "uk-nc-science:UKNC-SC-Y1-AH-04"] }
+  - { id: biology.humans.circulatory-system, indicators: ["uk-nc-science:UKNC-SC-Y6-AH-01", "uk-nc-science:UKNC-SC-Y6-AH-03"] }
+  - { id: biology.humans.nutrition-digestion, indicators: ["us-ngss:5-PS3-1", "uk-nc-science:UKNC-SC-Y2-AH-03", "uk-nc-science:UKNC-SC-Y3-AH-01", "uk-nc-science:UKNC-SC-Y4-AH-01", "uk-nc-science:UKNC-SC-Y4-AH-02", "uk-nc-science:UKNC-SC-KS3-B-ND-01", "uk-nc-science:UKNC-SC-KS3-B-ND-02", "uk-nc-science:UKNC-SC-KS3-P-CFUC-01"] }
+  - { id: biology.humans.reproductive-system, indicators: ["au-ac9-science:AC9S9U02", "uk-nc-science:UKNC-SC-KS3-B-REP-01"] }
+  - { id: biology.humans.respiration-excretion, indicators: ["uk-nc-science:UKNC-SC-KS3-B-GES-01", "uk-nc-science:UKNC-SC-KS3-B-GES-02"] }
+  - { id: biology.life.living-things, indicators: ["au-ac9-science:AC9S3U01", "uk-nc-science:UKNC-SC-Y2-LTH-01"] }
+  - { id: biology.molecules.water-biomolecules, indicators: ["uk-nc-science:UKNC-SC-KS4-B-CB-06"] }
+  - { id: biology.plants.flowering-plants, indicators: ["us-ngss:2-LS2-1", "uk-nc-science:UKNC-SC-Y1-PLA-01", "uk-nc-science:UKNC-SC-Y1-PLA-02", "uk-nc-science:UKNC-SC-Y2-PLA-01", "uk-nc-science:UKNC-SC-Y2-PLA-02", "uk-nc-science:UKNC-SC-Y3-PLA-01", "uk-nc-science:UKNC-SC-Y3-PLA-02", "uk-nc-science:UKNC-SC-Y3-PLA-04"] }
+  - { id: biology.plants.photosynthesis, indicators: ["uk-nc-science:UKNC-SC-KS3-B-PHO-03", "uk-nc-science:UKNC-SC-KS4-B-PHO-01", "uk-nc-science:UKNC-SC-KS4-B-PHO-02", "uk-nc-science:UKNC-SC-KS4-B-PHO-03"] }
+  - { id: biology.plants.photosynthesis-intro, indicators: ["us-ngss:5-LS1-1", "us-ngss:MS-LS1-6", "uk-nc-science:UKNC-SC-KS3-B-ND-06", "uk-nc-science:UKNC-SC-KS3-B-PHO-01", "uk-nc-science:UKNC-SC-KS3-B-PHO-02"] }
+  - { id: biology.plants.plant-products-growth, indicators: ["us-ngss:MS-LS1-5"] }
+  - { id: biology.plants.plant-transport, indicators: ["uk-nc-science:UKNC-SC-KS3-B-GES-04", "uk-nc-science:UKNC-SC-KS4-B-TS-01"] }
+  - { id: biology.plants.reproduction-propagation, indicators: ["us-ngss:2-LS2-2", "us-ngss:MS-LS1-4", "uk-nc-science:UKNC-SC-Y5-LTH-02", "uk-nc-science:UKNC-SC-KS3-B-REP-02"] }
+  - { id: biology.plants.transport-nutrients, indicators: ["uk-nc-science:UKNC-SC-Y3-PLA-03"] }
+  # business
+  - { id: business.stats.forecasting, indicators: ["uk-nc-mathematics:UKNC-MA-KS4-S-02"] }
+  # chemistry
+  - { id: chemistry.acids-bases.acid-base-ph, indicators: ["uk-nc-science:UKNC-SC-KS3-C-CR-04", "uk-nc-science:UKNC-SC-KS3-C-CR-05", "uk-nc-science:UKNC-SC-KS3-C-CR-06", "uk-nc-science:UKNC-SC-KS3-C-CR-07", "uk-nc-science:UKNC-SC-KS3-C-PT-06", "uk-nc-science:UKNC-SC-KS4-C-CC-04", "uk-nc-science:UKNC-SC-KS4-C-CC-05"] }
+  - { id: chemistry.bonding.covalent-naming-energy, indicators: ["us-ngss:HS-PS1-4"] }
+  - { id: chemistry.bonding.polarity-intermolecular, indicators: ["us-ngss:HS-PS1-3", "uk-nc-science:UKNC-SC-KS4-C-SBPM-01", "uk-nc-science:UKNC-SC-KS4-C-SBPM-03"] }
+  - { id: chemistry.equilibrium.chemical-equilibrium, indicators: ["us-ngss:HS-PS1-6", "uk-nc-science:UKNC-SC-KS4-C-RECC-02"] }
+  - { id: chemistry.gases.gas-laws, indicators: ["uk-nc-science:UKNC-SC-KS4-P-SM-04"] }
+  - { id: chemistry.kinetics.reaction-rates, indicators: ["us-ngss:HS-PS1-5", "au-ac9-science:AC9S10U07", "uk-nc-science:UKNC-SC-KS3-C-CR-08", "uk-nc-science:UKNC-SC-KS4-C-ECC-01", "uk-nc-science:UKNC-SC-KS4-C-ECC-02", "uk-nc-science:UKNC-SC-KS4-C-RECC-01"] }
+  - { id: chemistry.materials.everyday-materials, indicators: ["us-ngss:2-PS1-3", "au-ac9-science:AC9S4U04", "uk-nc-science:UKNC-SC-Y1-EM-01", "uk-nc-science:UKNC-SC-Y1-EM-02", "uk-nc-science:UKNC-SC-Y1-EM-03", "uk-nc-science:UKNC-SC-Y1-EM-04", "uk-nc-science:UKNC-SC-Y2-UEM-01", "uk-nc-science:UKNC-SC-KS3-C-EA-04"] }
+  - { id: chemistry.materials.material-properties, indicators: ["us-ngss:2-PS1-1", "us-ngss:2-PS1-2", "us-ngss:5-PS1-3", "au-ac9-science:AC9SFU03", "au-ac9-science:AC9S2U03", "uk-nc-science:UKNC-SC-Y2-UEM-02", "uk-nc-science:UKNC-SC-Y5-PCM-01", "uk-nc-science:UKNC-SC-Y5-PCM-04"] }
+  - { id: chemistry.materials.polymers-ceramics-composites, indicators: ["us-ngss:MS-PS1-3", "us-ngss:HS-PS2-6", "uk-nc-science:UKNC-SC-KS3-C-MAT-03"] }
+  - { id: chemistry.matter.atomic-structure, indicators: ["uk-nc-science:UKNC-SC-KS4-P-AS-02"] }
+  - { id: chemistry.matter.elements-compounds, indicators: ["us-ngss:MS-PS1-1", "uk-nc-science:UKNC-SC-KS3-C-AEC-02"] }
+  - { id: chemistry.matter.particle-model, indicators: ["us-ngss:5-PS1-1", "us-ngss:MS-PS1-4", "au-ac9-science:AC9S5U04", "au-ac9-science:AC9S7U05", "uk-nc-science:UKNC-SC-KS3-C-PNM-01", "uk-nc-science:UKNC-SC-KS3-C-PNM-02", "uk-nc-science:UKNC-SC-KS3-C-PIS-03", "uk-nc-science:UKNC-SC-KS3-P-PC-03", "uk-nc-science:UKNC-SC-KS3-P-PC-04", "uk-nc-science:UKNC-SC-KS3-P-PM-01", "uk-nc-science:UKNC-SC-KS3-P-PM-02"] }
+  - { id: chemistry.matter.periodic-trends, indicators: ["us-ngss:HS-PS1-2", "uk-nc-science:UKNC-SC-KS3-C-PT-01", "uk-nc-science:UKNC-SC-KS3-C-PT-02"] }
+  - { id: chemistry.matter.pure-substances, indicators: ["au-ac9-science:AC9S7U06", "uk-nc-science:UKNC-SC-KS3-C-PIS-01", "uk-nc-science:UKNC-SC-KS3-C-PIS-02", "uk-nc-science:UKNC-SC-KS3-C-PIS-05", "uk-nc-science:UKNC-SC-KS3-P-PC-02", "uk-nc-science:UKNC-SC-KS4-C-CA-01"] }
+  - { id: chemistry.matter.states-changes, indicators: ["us-ngss:2-PS1-4", "au-ac9-science:AC9S6U04", "uk-nc-science:UKNC-SC-Y4-SM-01", "uk-nc-science:UKNC-SC-Y5-PCM-05", "uk-nc-science:UKNC-SC-KS3-P-PC-01", "uk-nc-science:UKNC-SC-KS3-P-PC-05"] }
+  - { id: chemistry.mixtures.separating-mixtures, indicators: ["uk-nc-science:UKNC-SC-Y5-PCM-03", "uk-nc-science:UKNC-SC-KS3-C-PIS-04", "uk-nc-science:UKNC-SC-KS4-C-CA-02"] }
+  - { id: chemistry.organic.structures-naming, indicators: ["uk-nc-science:UKNC-SC-KS4-C-SBPM-04"] }
+  - { id: chemistry.reactions.chemical-reactions-intro, indicators: ["us-ngss:5-PS1-2", "us-ngss:5-PS1-4", "us-ngss:MS-PS1-2", "us-ngss:MS-PS1-5", "au-ac9-science:AC9S8U07", "au-ac9-science:AC9S9U07", "uk-nc-science:UKNC-SC-Y5-PCM-06", "uk-nc-science:UKNC-SC-KS3-C-AEC-04", "uk-nc-science:UKNC-SC-KS3-C-CR-01", "uk-nc-science:UKNC-SC-KS3-C-CR-02", "uk-nc-science:UKNC-SC-KS3-C-ENE-02"] }
+  - { id: chemistry.reactions.everyday-reactions, indicators: ["uk-nc-science:UKNC-SC-KS3-C-CR-03"] }
+  - { id: chemistry.redox.electrochemical-cells, indicators: ["uk-nc-science:UKNC-SC-KS4-C-CC-06"] }
+  - { id: chemistry.redox.redox-reactions, indicators: ["uk-nc-science:UKNC-SC-KS3-C-MAT-01", "uk-nc-science:UKNC-SC-KS3-C-MAT-02", "uk-nc-science:UKNC-SC-KS4-C-CC-07", "uk-nc-science:UKNC-SC-KS4-C-CAI-05"] }
+  - { id: chemistry.solutions.concentration, indicators: ["uk-nc-science:UKNC-SC-KS4-C-CA-04"] }
+  - { id: chemistry.solutions.solubility-percent, indicators: ["uk-nc-science:UKNC-SC-Y5-PCM-02"] }
+  - { id: chemistry.stoichiometry.mole, indicators: ["uk-nc-science:UKNC-SC-KS4-C-ASPT-02"] }
+  - { id: chemistry.stoichiometry.reactions, indicators: ["us-ngss:HS-PS1-7", "uk-nc-science:UKNC-SC-KS4-C-CC-01", "uk-nc-science:UKNC-SC-KS4-C-CC-02", "uk-nc-science:UKNC-SC-KS4-C-CA-03"] }
+  # computer
+  - { id: computer.algorithms.computational-thinking, indicators: ["uk-nc-computing:UKNC-CO-KS3-01", "uk-nc-computing:UKNC-CO-KS4-02", "csta-k12-cs:3B-AP-15"] }
+  - { id: computer.algorithms.data-structures, indicators: ["csta-k12-cs:3B-AP-12"] }
+  - { id: computer.algorithms.searching-sorting, indicators: ["uk-nc-computing:UKNC-CO-KS3-02"] }
+  - { id: computer.data.data-processing, indicators: ["au-ac9-digital-technologies:AC9TDI8P01", "au-ac9-digital-technologies:AC9TDI8P02", "au-ac9-digital-technologies:AC9TDI10P01", "au-ac9-digital-technologies:AC9TDI10P02", "uk-nc-computing:UKNC-CO-KS2-06", "csta-k12-cs:3B-DA-05", "csta-k12-cs:3B-DA-06", "csta-k12-cs:3B-DA-07"] }
+  - { id: computer.data.databases, indicators: ["au-ac9-digital-technologies:AC9TDI8P03", "au-ac9-digital-technologies:AC9TDI10P03"] }
+  - { id: computer.data.digital-data-basics, indicators: ["au-ac9-digital-technologies:AC9TDIFK02", "au-ac9-digital-technologies:AC9TDI2K02", "au-ac9-digital-technologies:AC9TDI2P04", "au-ac9-digital-technologies:AC9TDI4P06", "au-ac9-digital-technologies:AC9TDI6P07", "au-ac9-digital-technologies:AC9TDI8P11", "au-ac9-digital-technologies:AC9TDI10P11", "uk-nc-computing:UKNC-CO-KS1-04"] }
+  - { id: computer.data.internet-search, indicators: ["uk-nc-computing:UKNC-CO-KS2-05"] }
+  - { id: computer.networks.internet-basics, indicators: ["au-ac9-digital-technologies:AC9TDI4K02", "au-ac9-digital-technologies:AC9TDI6K02", "au-ac9-digital-technologies:AC9TDI8K02", "uk-nc-computing:UKNC-CO-KS2-04"] }
+  - { id: computer.programming.block-programming, indicators: ["au-ac9-digital-technologies:AC9TDI4P04", "uk-nc-computing:UKNC-CO-KS2-01"] }
+  - { id: computer.programming.development-process, indicators: ["csta-k12-cs:3B-AP-17", "csta-k12-cs:3B-AP-19", "csta-k12-cs:3B-AP-21", "csta-k12-cs:3B-AP-22", "csta-k12-cs:3B-AP-24"] }
+  - { id: computer.programming.teamwork, indicators: ["au-ac9-digital-technologies:AC9TDI8P12", "au-ac9-digital-technologies:AC9TDI10P12", "csta-k12-cs:3B-AP-20", "csta-k12-cs:3B-AP-23"] }
+  - { id: computer.projects.app-development, indicators: ["uk-nc-computing:UKNC-CO-KS4-01"] }
+  - { id: computer.projects.digital-innovation, indicators: ["uk-nc-computing:UKNC-CO-KS3-07", "uk-nc-computing:UKNC-CO-KS3-08"] }
+  - { id: computer.safety.safe-ict-primary, indicators: ["uk-nc-computing:UKNC-CO-KS1-06", "uk-nc-computing:UKNC-CO-KS2-07"] }
+  - { id: computer.security.cybersecurity-basics, indicators: ["au-ac9-digital-technologies:AC9TDI10K01", "au-ac9-digital-technologies:AC9TDI2P06", "au-ac9-digital-technologies:AC9TDI4P08", "au-ac9-digital-technologies:AC9TDI6P09", "au-ac9-digital-technologies:AC9TDI8P13", "au-ac9-digital-technologies:AC9TDI10P13", "uk-nc-computing:UKNC-CO-KS4-03", "csta-k12-cs:3B-NI-04", "csta-k12-cs:3B-AP-18"] }
+  - { id: computer.society.computing-impacts, indicators: ["uk-nc-computing:UKNC-CO-KS1-05", "csta-k12-cs:3B-IC-25", "csta-k12-cs:3B-IC-26", "csta-k12-cs:3B-IC-27", "csta-k12-cs:3B-IC-28"] }
+  - { id: computer.society.privacy, indicators: ["au-ac9-digital-technologies:AC9TDIFP01", "au-ac9-digital-technologies:AC9TDI2P07", "au-ac9-digital-technologies:AC9TDI4P09", "au-ac9-digital-technologies:AC9TDI6P10", "au-ac9-digital-technologies:AC9TDI8P14", "au-ac9-digital-technologies:AC9TDI10P14"] }
+  - { id: computer.society.responsible-ict, indicators: ["au-ac9-digital-technologies:AC9TDI2P05", "au-ac9-digital-technologies:AC9TDI4P07", "au-ac9-digital-technologies:AC9TDI6P08", "uk-nc-computing:UKNC-CO-KS3-09"] }
+  - { id: computer.systems.computer-systems, indicators: ["au-ac9-digital-technologies:AC9TDIFK01", "au-ac9-digital-technologies:AC9TDI2K01", "au-ac9-digital-technologies:AC9TDI4K01", "au-ac9-digital-technologies:AC9TDI6K01", "au-ac9-digital-technologies:AC9TDI8K01", "uk-nc-computing:UKNC-CO-KS3-05"] }
+  # earthscience
+  - { id: earthscience.astronomy.eclipses-space-tech, indicators: ["au-ac9-science:AC9S7U03"] }
+  - { id: earthscience.astronomy.moon-solar-system, indicators: ["au-ac9-science:AC9S2U01", "uk-nc-science:UKNC-SC-Y5-ES-01", "uk-nc-science:UKNC-SC-Y5-ES-02", "uk-nc-science:UKNC-SC-Y5-ES-03"] }
+  - { id: earthscience.astronomy.seasons-moon-tides, indicators: ["us-ngss:1-ESS1-2", "us-ngss:MS-ESS1-1", "au-ac9-science:AC9S6U02", "uk-nc-science:UKNC-SC-Y1-SC-01", "uk-nc-science:UKNC-SC-Y1-SC-02", "uk-nc-science:UKNC-SC-KS3-P-SP-03"] }
+  - { id: earthscience.astronomy.sky-day-night, indicators: ["us-ngss:1-ESS1-1", "us-ngss:5-ESS1-2", "au-ac9-science:AC9S1U02", "uk-nc-science:UKNC-SC-Y5-ES-04"] }
+  - { id: earthscience.astronomy.solar-system, indicators: ["us-ngss:MS-ESS1-2", "us-ngss:MS-ESS1-3", "uk-nc-science:UKNC-SC-KS4-P-SP-01"] }
+  - { id: earthscience.astronomy.star-formation-energy, indicators: ["us-ngss:HS-ESS1-1"] }
+  - { id: earthscience.astronomy.stellar-properties, indicators: ["us-ngss:5-ESS1-1", "us-ngss:HS-ESS1-3"] }
+  - { id: earthscience.astronomy.universe-galaxies, indicators: ["us-ngss:HS-ESS1-2", "au-ac9-science:AC9S10U03", "uk-nc-science:UKNC-SC-KS3-P-SP-02", "uk-nc-science:UKNC-SC-KS3-P-SP-04"] }
+  - { id: earthscience.atmosphere.atmosphere-layers, indicators: ["uk-nc-science:UKNC-SC-KS3-C-EA-06", "uk-nc-science:UKNC-SC-KS4-C-EAS-01"] }
+  - { id: earthscience.atmosphere.climate-change, indicators: ["us-ngss:HS-ESS2-4", "us-ngss:MS-ESS3-5", "us-ngss:HS-ESS3-5", "au-ac9-science:AC9S10U04", "uk-nc-science:UKNC-SC-KS4-C-EAS-02", "uk-nc-science:UKNC-SC-KS4-C-EAS-03"] }
+  - { id: earthscience.atmosphere.clouds-fronts-forecasting, indicators: ["us-ngss:MS-ESS2-5"] }
+  - { id: earthscience.atmosphere.energy-balance, indicators: ["us-ngss:HS-ESS2-2"] }
+  - { id: earthscience.atmosphere.global-circulation, indicators: ["us-ngss:3-ESS2-2", "us-ngss:MS-ESS2-6"] }
+  - { id: earthscience.atmosphere.greenhouse-climate-intro, indicators: ["uk-nc-science:UKNC-SC-KS3-C-EA-07"] }
+  - { id: earthscience.atmosphere.weather-forecasting, indicators: ["us-ngss:K-ESS2-1", "us-ngss:3-ESS2-1", "us-ngss:K-ESS3-2"] }
+  - { id: earthscience.geology.earth-structure-surface, indicators: ["us-ngss:2-ESS1-1", "us-ngss:2-ESS2-1", "us-ngss:4-ESS2-1", "us-ngss:5-ESS2-1", "us-ngss:2-ESS2-2", "us-ngss:MS-ESS2-2", "au-ac9-science:AC9S5U02", "uk-nc-science:UKNC-SC-KS3-C-EA-01", "uk-nc-science:UKNC-SC-KS3-C-EA-02"] }
+  - { id: earthscience.geology.fossil-fuels, indicators: ["uk-nc-science:UKNC-SC-KS4-C-CAI-03", "uk-nc-science:UKNC-SC-KS4-C-CAI-04"] }
+  - { id: earthscience.geology.geohazards, indicators: ["us-ngss:MS-ESS3-2"] }
+  - { id: earthscience.geology.geologic-history-maps, indicators: ["us-ngss:4-ESS2-2", "us-ngss:MS-ESS1-4", "us-ngss:HS-ESS1-6", "us-ngss:HS-ESS2-7"] }
+  - { id: earthscience.geology.minerals-rocks, indicators: ["us-ngss:MS-ESS3-1"] }
+  - { id: earthscience.geology.plate-tectonics, indicators: ["us-ngss:HS-ESS1-5", "us-ngss:HS-ESS2-1", "us-ngss:HS-ESS2-3", "us-ngss:MS-ESS2-3", "au-ac9-science:AC9S8U03"] }
+  - { id: earthscience.geology.rock-cycle-fossils, indicators: ["us-ngss:3-LS4-1", "us-ngss:4-ESS1-1", "us-ngss:MS-ESS2-1", "au-ac9-science:AC9S8U04", "uk-nc-science:UKNC-SC-Y3-ROC-02", "uk-nc-science:UKNC-SC-KS3-C-EA-03"] }
+  - { id: earthscience.geology.rocks-soil, indicators: ["au-ac9-science:AC9S3U02", "uk-nc-science:UKNC-SC-Y3-ROC-01", "uk-nc-science:UKNC-SC-Y3-ROC-03"] }
+  - { id: earthscience.hazards.natural-hazards, indicators: ["us-ngss:3-ESS3-1", "us-ngss:4-ESS3-2", "us-ngss:HS-ESS3-1"] }
+  - { id: earthscience.hydrosphere.water-cycle, indicators: ["us-ngss:MS-ESS2-4", "au-ac9-science:AC9S4U02", "uk-nc-science:UKNC-SC-Y4-SM-03"] }
+  - { id: earthscience.hydrosphere.water-resources, indicators: ["us-ngss:2-ESS2-3", "us-ngss:5-ESS2-2", "us-ngss:HS-ESS2-5"] }
+  - { id: earthscience.resources.energy-resources, indicators: ["us-ngss:4-ESS3-1", "us-ngss:HS-ESS3-2", "uk-nc-science:UKNC-SC-KS3-P-CFUC-05", "uk-nc-science:UKNC-SC-KS4-P-ENE-05"] }
+  # health
+  - { id: health.body.life-cycle, indicators: ["uk-nc-science:UKNC-SC-Y5-AH-01"] }
+  - { id: health.body.organ-system-maintenance, indicators: ["uk-nc-science:UKNC-SC-Y6-AH-02"] }
+  - { id: health.disease.communicable, indicators: ["uk-nc-science:UKNC-SC-KS4-B-HDDM-02"] }
+  - { id: health.disease.ncd-leading-causes, indicators: ["uk-nc-science:UKNC-SC-KS4-B-HDDM-03", "uk-nc-science:UKNC-SC-KS4-B-HDDM-08"] }
+  - { id: health.family.maternal-child-family-planning, indicators: ["uk-nc-science:UKNC-SC-KS4-B-CC-05"] }
+  - { id: health.nutrition.malnutrition-meal-planning, indicators: ["uk-nc-science:UKNC-SC-KS3-B-ND-03"] }
+  - { id: health.substances.drugs-prevention, indicators: ["uk-nc-science:UKNC-SC-KS3-B-HEA-01"] }
+  # math
+  - { id: math.algebra.patterns, indicators: ["au-ac9-mathematics:AC9MFA01", "au-ac9-mathematics:AC9M1A01", "au-ac9-mathematics:AC9M1A02", "au-ac9-mathematics:AC9M2A01", "au-ac9-mathematics:AC9M6A01", "uk-nc-mathematics:UKNC-MA-Y2-GPD-01", "uk-nc-mathematics:UKNC-MA-Y6-A-02", "us-ccss-math:3.OA.9", "us-ccss-math:4.OA.5", "us-ccss-math:5.OA.3"] }
+  - { id: math.algebra.polynomial-equations, indicators: ["us-ccss-math:A-APR.2", "us-ccss-math:A-APR.3", "us-ccss-math:A-APR.4"] }
+  - { id: math.algebra.radicals, indicators: ["uk-nc-mathematics:UKNC-MA-KS4-N-04", "us-ccss-math:N-RN.3"] }
+  - { id: math.algebra.rational-abs-inequalities, indicators: ["us-ccss-math:A-APR.6", "us-ccss-math:A-APR.7", "us-ccss-math:A-REI.2"] }
+  - { id: math.algebra.sequences-series, indicators: ["uk-nc-mathematics:UKNC-MA-KS3-A-14", "uk-nc-mathematics:UKNC-MA-KS3-A-15", "uk-nc-mathematics:UKNC-MA-KS3-A-16", "uk-nc-mathematics:UKNC-MA-KS4-A-16", "uk-nc-mathematics:UKNC-MA-KS4-A-17", "us-ccss-math:A-SSE.4", "us-ccss-math:F-IF.3", "us-ccss-math:F-BF.2"] }
+  - { id: math.functions.trig-functions, indicators: ["au-ac9-mathematics:AU-M10A-A-03", "us-ccss-math:F-TF.2", "us-ccss-math:F-TF.3", "us-ccss-math:F-TF.4", "us-ccss-math:F-TF.5", "us-ccss-math:F-TF.6", "us-ccss-math:F-TF.7", "us-ccss-math:F-TF.8", "us-ccss-math:F-TF.9", "us-ccss-math:G-SRT.7"] }
+  - { id: math.geometry.angle-measure, indicators: ["au-ac9-mathematics:AC9M2M05", "uk-nc-mathematics:UKNC-MA-Y1-GPD-01", "uk-nc-mathematics:UKNC-MA-Y3-GPS-03", "us-ccss-math:4.MD.6"] }
+  - { id: math.geometry.conic-sections, indicators: ["uk-nc-mathematics:UKNC-MA-KS4-A-10", "us-ccss-math:G-GPE.1", "us-ccss-math:G-GPE.2", "us-ccss-math:G-GPE.3", "us-ccss-math:G-GPE.6", "us-ccss-math:G-GPE.7"] }
+  - { id: math.geometry.constructions, indicators: ["uk-nc-mathematics:UKNC-MA-Y6-GPS-01", "uk-nc-mathematics:UKNC-MA-KS3-G-03", "uk-nc-mathematics:UKNC-MA-KS3-G-04", "uk-nc-mathematics:UKNC-MA-KS3-G-05", "us-ccss-math:G-CO.1", "us-ccss-math:G-CO.12", "us-ccss-math:G-CO.13", "us-ccss-math:G-C.3", "us-ccss-math:G-C.4"] }
+  - { id: math.geometry.law-of-sines-cosines, indicators: ["uk-nc-mathematics:UKNC-MA-KS4-G-12", "uk-nc-mathematics:UKNC-MA-KS4-G-13", "us-ccss-math:G-SRT.9", "us-ccss-math:G-SRT.10", "us-ccss-math:G-SRT.11"] }
+  - { id: math.geometry.nets-views, indicators: ["au-ac9-mathematics:AC9M5SP01", "au-ac9-mathematics:AC9M6SP01", "au-ac9-mathematics:AC9M7SP01", "uk-nc-mathematics:UKNC-MA-Y5-GPS-01", "uk-nc-mathematics:UKNC-MA-Y6-GPS-02", "uk-nc-mathematics:UKNC-MA-KS4-G-05", "us-ccss-math:7.G.3", "us-ccss-math:G-GMD.4"] }
+  - { id: math.geometry.quadrilaterals, indicators: ["au-ac9-mathematics:AC9M8SP02", "uk-nc-mathematics:UKNC-MA-Y4-GPS-01", "us-ccss-math:3.G.1", "us-ccss-math:5.G.3", "us-ccss-math:5.G.4"] }
+  - { id: math.geometry.shapes, indicators: ["au-ac9-mathematics:AC9MFSP01", "au-ac9-mathematics:AC9M1SP01", "au-ac9-mathematics:AC9M2SP01", "au-ac9-mathematics:AC9M3SP01", "au-ac9-mathematics:AC9M4SP01", "uk-nc-mathematics:UKNC-MA-Y1-GPS-01", "uk-nc-mathematics:UKNC-MA-Y2-GPS-01", "uk-nc-mathematics:UKNC-MA-Y2-GPS-02", "uk-nc-mathematics:UKNC-MA-Y2-GPS-03", "uk-nc-mathematics:UKNC-MA-Y2-GPS-04", "uk-nc-mathematics:UKNC-MA-Y3-GPS-01", "uk-nc-mathematics:UKNC-MA-Y3-GPS-04", "us-ccss-math:K.G.2", "us-ccss-math:K.G.3", "us-ccss-math:K.G.4", "us-ccss-math:K.G.5", "us-ccss-math:K.G.6", "us-ccss-math:1.G.1", "us-ccss-math:1.G.2", "us-ccss-math:2.G.1"] }
+  - { id: math.geometry.symmetry-transformations, indicators: ["au-ac9-mathematics:AC9M4SP03", "au-ac9-mathematics:AC9M6SP03", "uk-nc-mathematics:UKNC-MA-Y4-GPS-03", "uk-nc-mathematics:UKNC-MA-Y4-GPS-04", "uk-nc-mathematics:UKNC-MA-KS4-G-01", "uk-nc-mathematics:UKNC-MA-KS4-G-02", "us-ccss-math:4.G.3", "us-ccss-math:8.G.1", "us-ccss-math:8.G.2", "us-ccss-math:G-CO.2", "us-ccss-math:G-CO.3", "us-ccss-math:G-CO.4", "us-ccss-math:G-CO.5", "us-ccss-math:G-CO.6", "us-ccss-math:G-SRT.1"] }
+  - { id: math.linalg.matrices-elimination, indicators: ["us-ccss-math:N-VM.6", "us-ccss-math:N-VM.7", "us-ccss-math:N-VM.8", "us-ccss-math:N-VM.9", "us-ccss-math:N-VM.10", "us-ccss-math:N-VM.11", "us-ccss-math:N-VM.12", "us-ccss-math:A-REI.8", "us-ccss-math:A-REI.9"] }
+  - { id: math.logic.sets, indicators: ["uk-nc-mathematics:UKNC-MA-KS3-N-16", "uk-nc-mathematics:UKNC-MA-KS3-P-03"] }
+  - { id: math.measure.length, indicators: ["au-ac9-mathematics:AC9MFM01", "au-ac9-mathematics:AC9M1M01", "au-ac9-mathematics:AC9M1M02", "au-ac9-mathematics:AC9M2M01", "au-ac9-mathematics:AC9M3M01", "au-ac9-mathematics:AC9M3M02", "au-ac9-mathematics:AC9M4M01", "au-ac9-mathematics:AC9M5M01", "uk-nc-mathematics:UKNC-MA-Y1-M-01", "uk-nc-mathematics:UKNC-MA-Y1-M-02", "uk-nc-mathematics:UKNC-MA-Y2-M-01", "uk-nc-mathematics:UKNC-MA-Y2-M-02", "uk-nc-mathematics:UKNC-MA-Y3-M-01", "us-ccss-math:K.MD.1", "us-ccss-math:K.MD.2", "us-ccss-math:1.MD.1", "us-ccss-math:1.MD.2", "us-ccss-math:2.MD.1", "us-ccss-math:2.MD.2", "us-ccss-math:2.MD.3", "us-ccss-math:2.MD.4", "us-ccss-math:2.MD.5", "us-ccss-math:2.MD.6"] }
+  - { id: math.measure.money, indicators: ["au-ac9-mathematics:AC9M3M06", "uk-nc-mathematics:UKNC-MA-Y2-M-03", "uk-nc-mathematics:UKNC-MA-Y2-M-04", "uk-nc-mathematics:UKNC-MA-Y2-M-05", "uk-nc-mathematics:UKNC-MA-Y3-M-03", "uk-nc-mathematics:UKNC-MA-Y4-M-04", "us-ccss-math:2.MD.8"] }
+  - { id: math.measure.time, indicators: ["au-ac9-mathematics:AC9MFM02", "au-ac9-mathematics:AC9M1M03", "au-ac9-mathematics:AC9M2M03", "au-ac9-mathematics:AC9M2M04", "au-ac9-mathematics:AC9M3M03", "au-ac9-mathematics:AC9M3M04", "au-ac9-mathematics:AC9M4M03", "au-ac9-mathematics:AC9M5M03", "au-ac9-mathematics:AC9M6M03", "au-ac9-mathematics:AC9M8M04", "uk-nc-mathematics:UKNC-MA-Y1-M-03", "uk-nc-mathematics:UKNC-MA-Y1-M-04", "uk-nc-mathematics:UKNC-MA-Y2-M-06", "uk-nc-mathematics:UKNC-MA-Y2-M-07", "uk-nc-mathematics:UKNC-MA-Y2-M-08", "uk-nc-mathematics:UKNC-MA-Y3-M-04", "uk-nc-mathematics:UKNC-MA-Y3-M-05", "uk-nc-mathematics:UKNC-MA-Y3-M-06", "uk-nc-mathematics:UKNC-MA-Y3-M-07", "uk-nc-mathematics:UKNC-MA-Y4-M-05", "uk-nc-mathematics:UKNC-MA-Y4-M-06", "uk-nc-mathematics:UKNC-MA-Y5-M-06", "us-ccss-math:1.MD.3", "us-ccss-math:2.MD.7", "us-ccss-math:3.MD.1"] }
+  - { id: math.measure.unit-conversion, indicators: ["au-ac9-mathematics:AC9M6M01", "uk-nc-mathematics:UKNC-MA-Y4-NF-07", "uk-nc-mathematics:UKNC-MA-Y4-NF-10", "uk-nc-mathematics:UKNC-MA-Y4-M-01", "uk-nc-mathematics:UKNC-MA-Y5-M-01", "uk-nc-mathematics:UKNC-MA-Y5-M-02", "uk-nc-mathematics:UKNC-MA-Y5-M-07", "uk-nc-mathematics:UKNC-MA-Y6-M-01", "uk-nc-mathematics:UKNC-MA-Y6-M-02", "uk-nc-mathematics:UKNC-MA-Y6-M-03", "uk-nc-mathematics:UKNC-MA-KS3-R-01", "uk-nc-mathematics:UKNC-MA-KS3-N-12", "us-ccss-math:4.MD.1", "us-ccss-math:4.MD.2", "us-ccss-math:5.MD.1"] }
+  - { id: math.measure.volume-capacity, indicators: ["uk-nc-mathematics:UKNC-MA-Y5-M-05", "uk-nc-mathematics:UKNC-MA-Y6-M-05", "us-ccss-math:5.MD.4"] }
+  - { id: math.measure.weight, indicators: ["us-ccss-math:3.MD.2"] }
+  - { id: math.number.complex-numbers, indicators: ["us-ccss-math:N-CN.1", "us-ccss-math:N-CN.2", "us-ccss-math:N-CN.3", "us-ccss-math:N-CN.4", "us-ccss-math:N-CN.5", "us-ccss-math:N-CN.6", "us-ccss-math:N-CN.7", "us-ccss-math:N-CN.8", "us-ccss-math:N-CN.9"] }
+  - { id: math.number.counting-numbers, indicators: ["au-ac9-mathematics:AC9MFN01", "au-ac9-mathematics:AC9MFN02", "au-ac9-mathematics:AC9MFN03", "au-ac9-mathematics:AC9M1N01", "au-ac9-mathematics:AC9M1N03", "au-ac9-mathematics:AC9M2N01", "au-ac9-mathematics:AC9M2N02", "au-ac9-mathematics:AC9M4N02", "uk-nc-mathematics:UKNC-MA-Y1-NPV-01", "uk-nc-mathematics:UKNC-MA-Y1-NPV-02", "uk-nc-mathematics:UKNC-MA-Y1-NPV-03", "uk-nc-mathematics:UKNC-MA-Y1-NPV-04", "uk-nc-mathematics:UKNC-MA-Y1-NPV-05", "uk-nc-mathematics:UKNC-MA-Y2-NPV-01", "uk-nc-mathematics:UKNC-MA-Y2-NPV-02", "uk-nc-mathematics:UKNC-MA-Y2-NPV-03", "uk-nc-mathematics:UKNC-MA-Y2-NPV-04", "uk-nc-mathematics:UKNC-MA-Y2-NPV-05", "uk-nc-mathematics:UKNC-MA-Y2-NPV-06", "uk-nc-mathematics:UKNC-MA-Y3-NPV-01", "uk-nc-mathematics:UKNC-MA-Y3-NPV-04", "uk-nc-mathematics:UKNC-MA-Y3-NPV-05", "uk-nc-mathematics:UKNC-MA-Y3-NPV-06", "uk-nc-mathematics:UKNC-MA-Y4-NPV-01", "uk-nc-mathematics:UKNC-MA-Y4-NPV-02", "uk-nc-mathematics:UKNC-MA-Y4-NPV-06", "uk-nc-mathematics:UKNC-MA-Y4-NPV-08", "uk-nc-mathematics:UKNC-MA-Y4-NPV-09", "uk-nc-mathematics:UKNC-MA-Y5-NPV-02", "uk-nc-mathematics:UKNC-MA-Y5-NPV-05", "uk-nc-mathematics:UKNC-MA-Y5-NPV-06", "us-ccss-math:K.CC.1", "us-ccss-math:K.CC.2", "us-ccss-math:K.CC.3", "us-ccss-math:K.CC.4", "us-ccss-math:K.CC.5", "us-ccss-math:K.CC.6", "us-ccss-math:K.CC.7", "us-ccss-math:K.NBT.1", "us-ccss-math:1.NBT.1", "us-ccss-math:2.NBT.2", "us-ccss-math:2.OA.3"] }
+  - { id: math.number.financial-math, indicators: ["uk-nc-mathematics:UKNC-MA-KS3-N-11"] }
+  - { id: math.number.fraction-compare, indicators: ["au-ac9-mathematics:AC9M2N03", "au-ac9-mathematics:AC9M2M02", "uk-nc-mathematics:UKNC-MA-Y1-NF-01", "uk-nc-mathematics:UKNC-MA-Y1-NF-02", "uk-nc-mathematics:UKNC-MA-Y2-NF-01", "uk-nc-mathematics:UKNC-MA-Y2-NF-02", "uk-nc-mathematics:UKNC-MA-Y3-NF-02", "uk-nc-mathematics:UKNC-MA-Y3-NF-03", "uk-nc-mathematics:UKNC-MA-Y3-NF-07", "uk-nc-mathematics:UKNC-MA-Y4-NF-03", "us-ccss-math:1.G.3", "us-ccss-math:2.G.3", "us-ccss-math:3.G.2", "us-ccss-math:3.NF.2", "us-ccss-math:3.NF.3", "us-ccss-math:4.NF.2"] }
+  - { id: math.number.rationals, indicators: ["uk-nc-mathematics:UKNC-MA-Y3-NF-01", "uk-nc-mathematics:UKNC-MA-Y4-NF-02", "uk-nc-mathematics:UKNC-MA-Y4-NF-05", "uk-nc-mathematics:UKNC-MA-Y4-NF-06", "uk-nc-mathematics:UKNC-MA-Y5-NF-06", "uk-nc-mathematics:UKNC-MA-Y5-NF-07", "uk-nc-mathematics:UKNC-MA-Y5-NF-10", "uk-nc-mathematics:UKNC-MA-Y5-NF-12", "uk-nc-mathematics:UKNC-MA-KS3-N-01", "uk-nc-mathematics:UKNC-MA-KS3-N-06", "uk-nc-mathematics:UKNC-MA-KS3-WF-01", "uk-nc-mathematics:UKNC-MA-KS4-WF-01", "us-ccss-math:4.NF.5", "us-ccss-math:4.NF.6", "us-ccss-math:5.NF.3", "us-ccss-math:7.EE.3"] }
+  - { id: math.number.unit-rate, indicators: ["uk-nc-mathematics:UKNC-MA-Y5-NMD-11", "uk-nc-mathematics:UKNC-MA-Y6-RP-04", "uk-nc-mathematics:UKNC-MA-KS3-R-03", "uk-nc-mathematics:UKNC-MA-KS3-R-06", "uk-nc-mathematics:UKNC-MA-KS3-R-07", "uk-nc-mathematics:UKNC-MA-KS4-N-07", "uk-nc-mathematics:UKNC-MA-KS4-R-02", "us-ccss-math:5.NF.5", "us-ccss-math:7.RP.1"] }
+  - { id: math.number.whole-add-sub, indicators: ["au-ac9-mathematics:AC9MFN04", "au-ac9-mathematics:AC9MFN05", "au-ac9-mathematics:AC9M1N02", "au-ac9-mathematics:AC9M1N04", "au-ac9-mathematics:AC9M1N05", "au-ac9-mathematics:AC9M2N04", "au-ac9-mathematics:AC9M3N03", "au-ac9-mathematics:AC9M2A02", "au-ac9-mathematics:AC9M3A01", "au-ac9-mathematics:AC9M3A02", "au-ac9-mathematics:AC9M4A01", "au-ac9-mathematics:AC9M4N06", "uk-nc-mathematics:UKNC-MA-Y1-NAS-01", "uk-nc-mathematics:UKNC-MA-Y1-NAS-02", "uk-nc-mathematics:UKNC-MA-Y1-NAS-03", "uk-nc-mathematics:UKNC-MA-Y1-NAS-04", "uk-nc-mathematics:UKNC-MA-Y2-NAS-01", "uk-nc-mathematics:UKNC-MA-Y2-NAS-02", "uk-nc-mathematics:UKNC-MA-Y2-NAS-03", "uk-nc-mathematics:UKNC-MA-Y2-NAS-04", "uk-nc-mathematics:UKNC-MA-Y2-NAS-05", "uk-nc-mathematics:UKNC-MA-Y3-NAS-01", "uk-nc-mathematics:UKNC-MA-Y3-NAS-02", "uk-nc-mathematics:UKNC-MA-Y3-NAS-03", "uk-nc-mathematics:UKNC-MA-Y3-NAS-04", "uk-nc-mathematics:UKNC-MA-Y4-NAS-01", "uk-nc-mathematics:UKNC-MA-Y4-NAS-02", "uk-nc-mathematics:UKNC-MA-Y4-NAS-03", "uk-nc-mathematics:UKNC-MA-Y5-NAS-01", "uk-nc-mathematics:UKNC-MA-Y5-NAS-02", "uk-nc-mathematics:UKNC-MA-Y5-NAS-04", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-07", "us-ccss-math:K.OA.1", "us-ccss-math:K.OA.2", "us-ccss-math:K.OA.3", "us-ccss-math:K.OA.4", "us-ccss-math:K.OA.5", "us-ccss-math:1.OA.1", "us-ccss-math:1.OA.2", "us-ccss-math:1.OA.3", "us-ccss-math:1.OA.4", "us-ccss-math:1.OA.5", "us-ccss-math:1.OA.6", "us-ccss-math:1.OA.7", "us-ccss-math:1.OA.8", "us-ccss-math:1.NBT.4", "us-ccss-math:1.NBT.5", "us-ccss-math:1.NBT.6", "us-ccss-math:2.OA.1", "us-ccss-math:2.OA.2", "us-ccss-math:2.NBT.5", "us-ccss-math:2.NBT.6", "us-ccss-math:2.NBT.7", "us-ccss-math:2.NBT.8", "us-ccss-math:2.NBT.9", "us-ccss-math:3.NBT.2", "us-ccss-math:4.NBT.4"] }
+  - { id: math.number.whole-mixed-operations, indicators: ["au-ac9-mathematics:AC9M2N06", "au-ac9-mathematics:AC9M3N05", "au-ac9-mathematics:AC9M3N06", "au-ac9-mathematics:AC9M4N08", "au-ac9-mathematics:AC9M5N08", "au-ac9-mathematics:AC9M5N09", "au-ac9-mathematics:AC9M6A02", "au-ac9-mathematics:AC9M6N08", "uk-nc-mathematics:UKNC-MA-Y5-NAS-03", "uk-nc-mathematics:UKNC-MA-Y5-NMD-10", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-04", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-08", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-09", "uk-nc-mathematics:UKNC-MA-Y6-NPV-04", "uk-nc-mathematics:UKNC-MA-KS3-WF-02", "uk-nc-mathematics:UKNC-MA-KS4-WF-02", "us-ccss-math:3.OA.8", "us-ccss-math:4.OA.3", "us-ccss-math:5.OA.1", "us-ccss-math:5.OA.2"] }
+  - { id: math.number.whole-mul-div, indicators: ["au-ac9-mathematics:AC9MFN06", "au-ac9-mathematics:AC9M1N06", "au-ac9-mathematics:AC9M2N05", "au-ac9-mathematics:AC9M3N04", "au-ac9-mathematics:AC9M2A03", "au-ac9-mathematics:AC9M3A03", "au-ac9-mathematics:AC9M4A02", "au-ac9-mathematics:AC9M5A01", "au-ac9-mathematics:AC9M5A02", "au-ac9-mathematics:AC9M4N05", "au-ac9-mathematics:AC9M5N06", "au-ac9-mathematics:AC9M5N07", "uk-nc-mathematics:UKNC-MA-Y1-NMD-01", "uk-nc-mathematics:UKNC-MA-Y2-NMD-01", "uk-nc-mathematics:UKNC-MA-Y2-NMD-02", "uk-nc-mathematics:UKNC-MA-Y2-NMD-03", "uk-nc-mathematics:UKNC-MA-Y2-NMD-04", "uk-nc-mathematics:UKNC-MA-Y3-NMD-01", "uk-nc-mathematics:UKNC-MA-Y3-NMD-02", "uk-nc-mathematics:UKNC-MA-Y3-NMD-03", "uk-nc-mathematics:UKNC-MA-Y4-NMD-01", "uk-nc-mathematics:UKNC-MA-Y4-NMD-02", "uk-nc-mathematics:UKNC-MA-Y4-NMD-03", "uk-nc-mathematics:UKNC-MA-Y4-NMD-04", "uk-nc-mathematics:UKNC-MA-Y4-NMD-05", "uk-nc-mathematics:UKNC-MA-Y5-NMD-04", "uk-nc-mathematics:UKNC-MA-Y5-NMD-05", "uk-nc-mathematics:UKNC-MA-Y5-NMD-06", "uk-nc-mathematics:UKNC-MA-Y5-NMD-09", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-01", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-02", "uk-nc-mathematics:UKNC-MA-Y6-NASMD-03", "us-ccss-math:2.OA.4", "us-ccss-math:3.OA.1", "us-ccss-math:3.OA.2", "us-ccss-math:3.OA.3", "us-ccss-math:3.OA.4", "us-ccss-math:3.OA.5", "us-ccss-math:3.OA.6", "us-ccss-math:3.OA.7", "us-ccss-math:3.NBT.3", "us-ccss-math:4.OA.1", "us-ccss-math:4.OA.2", "us-ccss-math:4.NBT.5", "us-ccss-math:4.NBT.6", "us-ccss-math:5.NBT.5", "us-ccss-math:5.NBT.6", "us-ccss-math:6.NS.2"] }
+  - { id: math.numerical.basic-methods, indicators: ["uk-nc-mathematics:UKNC-MA-KS4-A-13"] }
+  - { id: math.stats.data-analysis, indicators: ["au-ac9-mathematics:AC9M6ST01", "us-ccss-math:3.MD.4", "us-ccss-math:4.MD.4", "us-ccss-math:5.MD.2"] }
+  - { id: math.stats.inference, indicators: ["us-ccss-math:S-IC.4", "us-ccss-math:S-IC.5"] }
+  - { id: math.stats.normal-distribution, indicators: ["us-ccss-math:S-ID.4"] }
+  - { id: math.stats.pictographs-tables, indicators: ["au-ac9-mathematics:AC9MFST01", "au-ac9-mathematics:AC9M1ST01", "au-ac9-mathematics:AC9M1ST02", "au-ac9-mathematics:AC9M2ST01", "au-ac9-mathematics:AC9M2ST02", "au-ac9-mathematics:AC9M5ST02", "uk-nc-mathematics:UKNC-MA-Y2-S-01", "uk-nc-mathematics:UKNC-MA-Y2-S-02", "uk-nc-mathematics:UKNC-MA-Y2-S-03", "uk-nc-mathematics:UKNC-MA-Y3-S-02", "uk-nc-mathematics:UKNC-MA-Y4-S-02", "uk-nc-mathematics:UKNC-MA-Y5-S-01", "uk-nc-mathematics:UKNC-MA-Y5-S-02", "us-ccss-math:K.MD.3", "us-ccss-math:1.MD.4", "us-ccss-math:2.MD.9", "us-ccss-math:2.MD.10"] }
+  - { id: math.stats.random-variables, indicators: ["us-ccss-math:S-MD.1", "us-ccss-math:S-MD.2", "us-ccss-math:S-MD.3", "us-ccss-math:S-MD.4", "us-ccss-math:S-MD.5", "us-ccss-math:S-MD.6", "us-ccss-math:S-MD.7"] }
+  - { id: math.stats.regression, indicators: ["us-ccss-math:S-ID.8"] }
+  # physics
+  - { id: physics.dynamics.forces-intro, indicators: ["us-ngss:K-PS2-1", "us-ngss:3-PS2-1", "us-ngss:3-PS2-2", "au-ac9-science:AC9SFU02"] }
+  - { id: physics.dynamics.free-body-practice, indicators: ["us-ngss:MS-PS2-1", "us-ngss:MS-PS2-2"] }
+  - { id: physics.dynamics.satellite-motion, indicators: ["us-ngss:HS-ESS1-4"] }
+  - { id: physics.electricity.resistivity-drift, indicators: ["uk-nc-science:UKNC-SC-KS3-P-CE-03"] }
+  - { id: physics.electricity.simple-circuits, indicators: ["uk-nc-science:UKNC-SC-Y4-ELE-01", "uk-nc-science:UKNC-SC-Y4-ELE-04", "uk-nc-science:UKNC-SC-Y6-ELE-02"] }
+  - { id: physics.energy.energy-electricity-intro, indicators: ["us-ngss:4-PS3-1", "us-ngss:4-PS3-2", "us-ngss:4-PS3-3", "us-ngss:MS-PS3-1", "us-ngss:MS-PS3-5", "uk-nc-science:UKNC-SC-KS3-P-ECT-03", "uk-nc-science:UKNC-SC-KS3-P-CS-03"] }
+  - { id: physics.energy.simple-machines, indicators: ["uk-nc-science:UKNC-SC-KS3-P-ECT-01"] }
+  - { id: physics.fields.field-forces, indicators: ["us-ngss:5-PS2-1", "us-ngss:MS-PS2-3", "us-ngss:MS-PS2-4", "us-ngss:MS-PS2-5", "us-ngss:MS-PS3-2"] }
+  - { id: physics.light.colour-atmospheric-optics, indicators: ["us-ngss:MS-PS4-2"] }
+  - { id: physics.light.light-shadows, indicators: ["us-ngss:1-PS4-2", "us-ngss:1-PS4-3", "uk-nc-science:UKNC-SC-Y3-LIG-01", "uk-nc-science:UKNC-SC-Y3-LIG-03", "uk-nc-science:UKNC-SC-Y3-LIG-04", "uk-nc-science:UKNC-SC-Y3-LIG-05", "uk-nc-science:UKNC-SC-Y6-LIG-01", "uk-nc-science:UKNC-SC-Y6-LIG-04"] }
+  - { id: physics.light.optics-eye, indicators: ["us-ngss:4-PS4-2", "uk-nc-science:UKNC-SC-Y6-LIG-02", "uk-nc-science:UKNC-SC-Y6-LIG-03", "uk-nc-science:UKNC-SC-KS3-P-LW-05"] }
+  - { id: physics.magnetism.induction-ac, indicators: ["uk-nc-science:UKNC-SC-KS4-P-ME-03"] }
+  - { id: physics.magnetism.magnets, indicators: ["us-ngss:3-PS2-3", "us-ngss:3-PS2-4", "uk-nc-science:UKNC-SC-Y3-FM-03", "uk-nc-science:UKNC-SC-Y3-FM-04", "uk-nc-science:UKNC-SC-Y3-FM-06"] }
+  - { id: physics.modern.quantum-atom, indicators: ["us-ngss:HS-PS4-3", "uk-nc-science:UKNC-SC-KS4-P-AS-04"] }
+  - { id: physics.nuclear.nuclear-energy-particles, indicators: ["uk-nc-science:UKNC-SC-KS4-P-AS-07"] }
+  - { id: physics.nuclear.radioactivity, indicators: ["us-ngss:HS-PS1-8", "uk-nc-science:UKNC-SC-KS4-P-AS-05", "uk-nc-science:UKNC-SC-KS4-P-AS-06"] }
+  - { id: physics.thermal.expansion-heat-transfer, indicators: ["us-ngss:K-PS3-1", "us-ngss:MS-PS3-4", "uk-nc-science:UKNC-SC-KS3-P-EM-01"] }
+  - { id: physics.thermal.kinetic-theory-thermodynamics, indicators: ["uk-nc-science:UKNC-SC-KS3-P-EM-02", "uk-nc-science:UKNC-SC-KS4-P-SM-01"] }
+  - { id: physics.waves.electromagnetic-waves, indicators: ["us-ngss:HS-PS4-4", "us-ngss:HS-PS4-5", "uk-nc-science:UKNC-SC-KS4-P-WM-03", "uk-nc-science:UKNC-SC-KS4-P-WM-05", "uk-nc-science:UKNC-SC-KS4-P-WM-06"] }
+  - { id: physics.waves.em-spectrum-intro, indicators: ["uk-nc-science:UKNC-SC-KS3-P-LW-01", "uk-nc-science:UKNC-SC-KS3-P-LW-02"] }
+  - { id: physics.waves.sound-intro, indicators: ["us-ngss:1-PS4-1", "us-ngss:4-PS4-1", "uk-nc-science:UKNC-SC-Y4-SOU-03", "uk-nc-science:UKNC-SC-Y4-SOU-04", "uk-nc-science:UKNC-SC-Y4-SOU-05", "uk-nc-science:UKNC-SC-KS3-P-SW-04"] }
+  - { id: physics.waves.sound-properties, indicators: ["us-ngss:MS-PS4-1", "uk-nc-science:UKNC-SC-KS3-P-EW-01"] }
+  # technology
+  - { id: technology.design.design-process, indicators: ["us-ngss:K-PS2-2", "us-ngss:K-PS3-2", "us-ngss:4-PS3-4", "us-ngss:1-PS4-4", "us-ngss:1-LS1-1", "us-ngss:MS-PS1-6", "us-ngss:MS-PS3-3", "us-ngss:HS-PS3-3", "us-ngss:HS-PS2-3", "us-ngss:K-2-ETS1-1", "us-ngss:K-2-ETS1-2", "us-ngss:K-2-ETS1-3", "us-ngss:3-5-ETS1-1", "us-ngss:3-5-ETS1-2", "us-ngss:3-5-ETS1-3", "us-ngss:MS-ETS1-1", "us-ngss:MS-ETS1-2", "us-ngss:MS-ETS1-3", "us-ngss:MS-ETS1-4"] }

@@ -216,3 +216,121 @@ problems:
     solution: "ปริมาตร $= 25 \\times 10 \\times 1.5 = 375\\ \\mathrm{m^3} = 375{,}000$ ลิตร เวลา $= 375{,}000 \\div 500 = 750$ นาที $= 750 \\div 60 = 12.5$ ชั่วโมง"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: math.vol.p014
+    topics: [math.geometry.volume-surface]
+    difficulty: 2
+    type: numeric
+    stem: "กล่องใส่ยางลบยาว $2\\tfrac12\\ \\mathrm{cm}$ กว้าง $1\\tfrac12\\ \\mathrm{cm}$ สูง $2\\ \\mathrm{cm}$ ใส่ลูกบาศก์เล็กที่ยาวด้านละ $\\tfrac12\\ \\mathrm{cm}$ ได้เต็มพอดีกี่ก้อน"
+    answer: { value: 60, unit: ก้อน }
+    hints:
+      - "นับว่าแต่ละด้านเรียงลูกบาศก์ด้าน $\\tfrac12$ ได้กี่ก้อน"
+      - "ด้านยาว $2\\tfrac12 \\div \\tfrac12 = 5$ ก้อน ทำแบบเดียวกันกับด้านกว้างและด้านสูง แล้วคูณกัน"
+    misconceptions:
+      - { match: 7.5, feedback: "นั่นคือปริมาตรของกล่องเป็น $\\mathrm{cm^3}$ แต่ลูกบาศก์แต่ละก้อนมีปริมาตรเพียง $\\tfrac18\\ \\mathrm{cm^3}$ จำนวนก้อนจึงมากกว่านั้น" }
+      - { match: 15, feedback: "ดูเหมือนหาร $7.5$ ด้วย $\\tfrac12$ แต่ลูกบาศก์ด้าน $\\tfrac12$ มีปริมาตร $\\tfrac12 \\times \\tfrac12 \\times \\tfrac12 = \\tfrac18$ ไม่ใช่ $\\tfrac12$" }
+    solution: "เรียงได้ $5 \\times 3 \\times 4 = 60$ ก้อน ตรวจ: $60 \\times \\tfrac18 = 7.5\\ \\mathrm{cm^3} = 2.5 \\times 1.5 \\times 2$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p015
+    topics: [math.geometry.volume-surface]
+    difficulty: 3
+    type: numeric
+    stem: "เต็นท์ลูกเสือเป็นปริซึมสามเหลี่ยม หน้าเต็นท์เป็นสามเหลี่ยมหน้าจั่วฐานกว้าง $2\\ \\mathrm{m}$ สูง $1.5\\ \\mathrm{m}$ เต็นท์ยาว $3\\ \\mathrm{m}$ ภายในเต็นท์มีปริมาตรกี่ลูกบาศก์เมตร (ตอบในหน่วย $\\mathrm{m^3}$)"
+    figure: { src: tent-prism.svg, alt: "เต็นท์ทรงปริซึมสามเหลี่ยม หน้าเต็นท์เป็นสามเหลี่ยมฐาน 2 m สูง 1.5 m (เส้นประจากยอดตั้งฉากกับฐาน) เต็นท์ยาวไปด้านหลัง 3 m" }
+    answer: { value: 4.5, tolerance: 0.01, unit: m³ }
+    hints:
+      - "ปริมาตรปริซึม = พื้นที่ฐาน × ความยาว โดยฐานคือหน้าสามเหลี่ยม"
+      - "พื้นที่สามเหลี่ยม $= \\tfrac12 \\times 2 \\times 1.5$"
+    misconceptions:
+      - { match: 9, feedback: "ลืม $\\tfrac12$ ในพื้นที่สามเหลี่ยม $2 \\times 1.5 \\times 3$ คือปริมาตรของกล่องสี่เหลี่ยมที่ครอบเต็นท์" }
+      - { match: 3, feedback: "ดูเหมือนคิด $\\tfrac13 \\times 2 \\times 1.5 \\times 3$ แต่ $\\tfrac13$ ใช้กับพีระมิด เต็นท์นี้เป็นปริซึม" }
+    solution: "พื้นที่หน้าเต็นท์ $= \\tfrac12 \\times 2 \\times 1.5 = 1.5\\ \\mathrm{m^2}$ ปริมาตร $= 1.5 \\times 3 = 4.5\\ \\mathrm{m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p016
+    topics: [math.geometry.volume-surface]
+    difficulty: 4
+    type: numeric
+    stem: "เต็นท์ในข้อก่อน (หน้าเต็นท์ฐาน $2\\ \\mathrm{m}$ สูง $1.5\\ \\mathrm{m}$ ยาว $3\\ \\mathrm{m}$) ทำจากผ้าใบทั้งหมด รวมผ้าปูพื้นด้วย ต้องใช้ผ้าใบกี่ตารางเมตร (ไม่คิดรอยต่อ ตอบทศนิยม 2 ตำแหน่ง ในหน่วย $\\mathrm{m^2}$)"
+    figure: { src: tent-prism.svg, alt: "เต็นท์ทรงปริซึมสามเหลี่ยม หน้าเต็นท์เป็นสามเหลี่ยมฐาน 2 m สูง 1.5 m (เส้นประจากยอดตั้งฉากกับฐาน) เต็นท์ยาวไปด้านหลัง 3 m" }
+    answer: { value: 19.82, tolerance: 0.05, unit: m² }
+    hints:
+      - "ผ้าใบมี 5 ชิ้น: สามเหลี่ยมหน้าและหลัง ผนังเอียงสองแผ่น และพื้น"
+      - "ความกว้างของผนังเอียงคือด้านเอียงของสามเหลี่ยม $\\sqrt{1^2 + 1.5^2}$ ไม่ใช่ความสูง $1.5$"
+      - "รวม $2 \\times (\\tfrac12 \\times 2 \\times 1.5) + 2 \\times (\\text{ด้านเอียง} \\times 3) + 2 \\times 3$"
+    misconceptions:
+      - { match: 18, feedback: "ดูเหมือนใช้ความสูง $1.5\\ \\mathrm{m}$ เป็นความกว้างของผนังเอียง ผนังเอียงกว้างเท่าด้านเอียง $\\sqrt{1^2 + 1.5^2} \\approx 1.80\\ \\mathrm{m}$" }
+      - { match: 13.82, feedback: "ลืมผ้าปูพื้น $2 \\times 3 = 6\\ \\mathrm{m^2}$" }
+    solution: "ด้านเอียง $= \\sqrt{1^2 + 1.5^2} = \\sqrt{3.25} \\approx 1.803\\ \\mathrm{m}$ หน้าและหลัง $= 2 \\times 1.5 = 3$ ผนังเอียง $= 2 \\times 1.803 \\times 3 \\approx 10.82$ พื้น $= 6$ รวม $\\approx 19.82\\ \\mathrm{m^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p017
+    topics: [math.geometry.volume-surface]
+    difficulty: 3
+    type: expression
+    stem: "กรวยรัศมีฐาน $r$ มีความสูงเท่ากับเส้นผ่านศูนย์กลางของฐาน เขียนปริมาตรของกรวยในรูปของ $r$"
+    prefix: "V ="
+    answer: { latex: "\\frac{2}{3}\\pi r^3", variables: [r] }
+    hints:
+      - "ความสูงเท่ากับเส้นผ่านศูนย์กลาง จึงได้ $h = 2r$"
+      - "แทนใน $V = \\tfrac13 \\pi r^2 h$"
+    misconceptions:
+      - { match: "2\\pi r^3", feedback: "ลืม $\\tfrac13$ ของกรวย นั่นคือปริมาตรทรงกระบอกที่สูง $2r$" }
+      - { match: "\\frac{1}{3}\\pi r^3", feedback: "ใช้ $h = r$ แต่ความสูงเท่ากับเส้นผ่านศูนย์กลาง คือ $2r$" }
+    solution: "$h = 2r$ จึงได้ $V = \\tfrac13 \\pi r^2 (2r) = \\tfrac23 \\pi r^3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p018
+    topics: [math.geometry.volume-surface]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเก็บก๊าซหุงต้มขนาดใหญ่เป็นทรงกระบอกที่หัวท้ายเป็นครึ่งทรงกลม รัศมี $0.5\\ \\mathrm{m}$ ส่วนทรงกระบอกยาว $2\\ \\mathrm{m}$ ถังมีปริมาตรกี่ลูกบาศก์เมตร (ใช้ $\\pi \\approx 3.14$ ตอบทศนิยม 2 ตำแหน่ง ในหน่วย $\\mathrm{m^3}$)"
+    answer: { value: 2.09, tolerance: 0.01, unit: m³ }
+    hints:
+      - "ครึ่งทรงกลมสองข้างรวมกันเป็นทรงกลมหนึ่งลูก"
+      - "ปริมาตร $= \\pi r^2 h + \\tfrac43 \\pi r^3$ โดย $h$ คือความยาวส่วนทรงกระบอก"
+    misconceptions:
+      - { match: 1.83, feedback: "นับครึ่งทรงกลมเพียงข้างเดียว ถังมีหัวท้ายสองข้าง รวมเป็นทรงกลมหนึ่งลูก" }
+      - { match: 2.62, feedback: "นับทรงกลมเต็มลูกทั้งสองข้าง แต่ละข้างเป็นเพียงครึ่งทรงกลม" }
+    solution: "ทรงกระบอก $= 3.14 \\times 0.5^2 \\times 2 = 1.57\\ \\mathrm{m^3}$ ทรงกลม $= \\tfrac43 \\times 3.14 \\times 0.5^3 \\approx 0.523\\ \\mathrm{m^3}$ รวม $\\approx 2.09\\ \\mathrm{m^3}$ (ประมาณ $2{,}093$ ลิตร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p019
+    topics: [math.geometry.volume-surface]
+    difficulty: 2
+    type: mcq
+    stem: "ตัดทรงกระบอกตามแนวตั้ง โดยให้ระนาบที่ตัดผ่านแกนกลางของทรงกระบอก หน้าตัดที่ได้เป็นรูปใด"
+    choices:
+      - { id: a, text: "รูปสี่เหลี่ยมผืนผ้า", correct: true }
+      - { id: b, text: "รูปวงกลม", feedback: "วงกลมได้จากการตัดขนานกับฐาน (ตัดตามแนวนอน)" }
+      - { id: c, text: "รูปวงรี", feedback: "วงรีได้จากการตัดเฉียง ไม่ขนานและไม่ตั้งฉากกับฐาน" }
+      - { id: d, text: "รูปสามเหลี่ยม", feedback: "สามเหลี่ยมได้จากการตัดกรวยผ่านยอด ทรงกระบอกมีด้านข้างตั้งตรง" }
+    hints:
+      - "นึกถึงการผ่าท่อนอ้อยหรือขวดน้ำตามยาวผ่านตรงกลาง"
+      - "หน้าตัดกว้างเท่าเส้นผ่านศูนย์กลาง และสูงเท่าทรงกระบอก"
+    solution: "ระนาบที่ผ่านแกนตัดฐานบนและฐานล่างเป็นเส้นผ่านศูนย์กลาง และตัดผิวข้างเป็นเส้นตั้งสองเส้น หน้าตัดจึงเป็นสี่เหลี่ยมผืนผ้ากว้าง $2r$ สูง $h$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.vol.p020
+    topics: [math.geometry.volume-surface]
+    difficulty: 5
+    type: numeric
+    stem: "วงบ่อซีเมนต์ (ท่อกลมสำหรับทำบ่อ) มีรัศมีนอก $0.5\\ \\mathrm{m}$ รัศมีใน $0.4\\ \\mathrm{m}$ สูง $0.4\\ \\mathrm{m}$ ถ้าคอนกรีตมีความหนาแน่น $2{,}400\\ \\mathrm{kg/m^3}$ วงบ่อหนึ่งวงมีมวลประมาณกี่กิโลกรัม (ใช้ $\\pi \\approx 3.14$ ตอบในหน่วย kg)"
+    answer: { value: 271.3, tolerance: 1, unit: kg }
+    hints:
+      - "ปริมาตรคอนกรีต = ทรงกระบอกนอก − ทรงกระบอกใน (รูตรงกลาง)"
+      - "$V = \\pi(R^2 - r^2)h$"
+      - "มวล = ความหนาแน่น × ปริมาตร"
+    misconceptions:
+      - { match: 753.6, feedback: "ลืมหักรูตรงกลาง นั่นคือมวลของทรงกระบอกตันรัศมี $0.5\\ \\mathrm{m}$" }
+      - { match: 30.1, feedback: "ดูเหมือนใช้ $\\pi(R - r)^2h$ ต้องลบกำลังสองแยกกัน $R^2 - r^2 = 0.25 - 0.16 = 0.09$ ไม่ใช่ $(0.1)^2$" }
+    solution: "$V = 3.14 \\times (0.5^2 - 0.4^2) \\times 0.4 = 3.14 \\times 0.09 \\times 0.4 \\approx 0.113\\ \\mathrm{m^3}$ มวล $= 2{,}400 \\times 0.113 \\approx 271\\ \\mathrm{kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
