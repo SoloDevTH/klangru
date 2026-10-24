@@ -6,7 +6,7 @@ import type MiniSearch from "minisearch";
 import type { SearchDoc, Subject } from "@klangru/schema";
 import { buildIndex, search } from "@/lib/search";
 
-const KIND: Record<SearchDoc["kind"], string> = { topic: "บทเรียน", glossary: "คำสำคัญ", problem: "โจทย์" };
+const KIND: Record<SearchDoc["kind"], string> = { topic: "บทเรียน", glossary: "คำสำคัญ", problem: "โจทย์", indicator: "ตัวชี้วัด" };
 
 export function SearchBox({ subjects, titles }: { subjects: Subject[]; titles: Record<string, string> }) {
   const [ms, setMs] = useState<MiniSearch<SearchDoc> | null>(null);

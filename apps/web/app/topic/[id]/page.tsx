@@ -9,7 +9,16 @@ import { SimulationBlock } from "@/components/SimulationBlock";
 import { VideoBlock } from "@/components/VideoBlock";
 import { getIndex, getTopicPack } from "@/lib/content";
 import { phetEmbedUrl } from "@klangru/schema";
-
+// ชื่อแหล่งอ้างอิงที่แสดงในส่วน "อ่านเพิ่มเติม" (รหัสแหล่งดู curriculum/sources.yaml)
+const SOURCE_LABEL: Record<string, string> = {
+  "wikipedia-th": "วิกิพีเดียภาษาไทย",
+  "wikipedia-en": "Wikipedia (อังกฤษ)",
+  "wikipedia-zh": "维基百科 (จีน)",
+  wiktionary: "Wiktionary",
+  openstax: "OpenStax",
+  wikibooks: "Wikibooks",
+  saranukromthai: "สารานุกรมไทยสำหรับเยาวชนฯ",
+};
 export const dynamicParams = false;
 export const generateStaticParams = () => getIndex().topics.map((t) => ({ id: t.id }));
 
@@ -24,7 +33,7 @@ const PROVIDER: Record<string, string> = { phet: "PhET", geogebra: "GeoGebra", j
 
 export default async function TopicPage({ params }: Props) {
   const { id } = await params;
-  const { topic, lessonMarkdown, problems } = getTopicPack(id);
+  const { topic, lessonMarkdown, problems, curriculum } = getTopicPack(id);
   const index = getIndex();
   const byId = new Map(index.topics.map((t) => [t.id, t]));
   const subject = index.subjects.find((s) => s.id === topic.subject)!;
@@ -141,6 +150,44 @@ export default async function TopicPage({ params }: Props) {
             </div>
           </section>
         )}
+        {topic.references.length > 0 && (
+          <section className="stack">
+            <h2>อ่านเพิ่มเติม</h2>
+            <ul className="references">
+              {topic.references.map((r) => (
+                <li key={r.url}>
+                  <a href={r.url} target="_blank" rel="noopener noreferrer" lang={r.lang === "other" ? undefined : r.lang}>
+                    {r.title}
+                  </a>{" "}
+                  <span className="small muted">
+                    {SOURCE_LABEL[r.source] ?? r.source} · {r.license}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {curriculum.length > 0 && (
+          <details className="curriculum">
+            <summary>
+              ตรงกับหลักสูตร <span className="small muted">({curriculum.length} ตัวชี้วัด)</span>
+            </summary>
+            <ul>
+              {curriculum.map((c) => (
+                <li key={`${c.framework}:${c.id}`}>
+                  <span className="mono small">{c.id}</span> {c.text}
+                  <span className="small muted">
+                    {" "}
+                    · {c.short}
+                    {c.coverage === "partial" ? " · สอนบางส่วน" : ""}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+
         <NotesEditor topicId={topic.id} />
       </div>
 

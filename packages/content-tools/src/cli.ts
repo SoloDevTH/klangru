@@ -6,12 +6,14 @@ import { fetchMolecules, moleculeCids } from "./assets.ts";
 import { buildPacks } from "./build.ts";
 import { applySuggestions, MIN_LEARNERS, suggestions, type ProblemStat } from "./calibrate.ts";
 import { approveDrafts, buildDraftRequest, draftProblems, toProblems, writeDrafts } from "./draft.ts";
+import { coverage, loadCurriculum } from "./curriculum.ts";
 import { loadContent } from "./load.ts";
 import { validate, type Issue } from "./validate.ts";
 
 const repoRoot = resolve(fileURLToPath(import.meta.url), "../../../..");
 const contentDir = resolve(repoRoot, "content");
 const outDir = resolve(repoRoot, "dist/content");
+const curriculumDir = resolve(repoRoot, "curriculum");
 
 const [command, ...flags] = process.argv.slice(2);
 const strict = flags.includes("--strict");
@@ -27,9 +29,9 @@ function report(issues: Issue[]) {
   return { errors: errors.length, warnings: warnings.length };
 }
 
-const commands = ["validate", "build", "fetch-assets", "calibrate", "draft", "approve"];
+const commands = ["validate", "build", "fetch-assets", "calibrate", "draft", "approve", "curriculum"];
 if (!commands.includes(command)) {
-  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b]");
+  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b] | curriculum [--framework=<id>] [--missing]");
   process.exit(2);
 }
 
@@ -94,6 +96,8 @@ if (command === "build" && flags.some((f) => f === "--allow-planned" || f.starts
 }
 
 let { issues, content } = validate(loadContent(contentDir));
+const curriculum = loadCurriculum(curriculumDir, new Set(content.topics.map((t) => t.topic.id)));
+issues.push(...curriculum.issues);
 
 // --allow-planned: ไม่นับ prerequisite ที่อยู่ในแผน docs/phase1/curriculum.yaml แต่ยังไม่มีคนเขียน (ใช้ตอนเขียนหลายหัวข้อพร้อมกัน)
 if (flags.includes("--allow-planned")) {
@@ -111,9 +115,20 @@ const { errors, warnings } = report(issues);
 const problemTotal = content.topics.reduce((n, t) => n + t.problems.length, 0);
 console.log(`วิชา ${new Set(content.topics.map((t) => t.topic.subject)).size} · หัวข้อ ${content.topics.length} · โจทย์ ${problemTotal}`);
 
+console.log(`หลักสูตรอ้างอิง ${curriculum.data.frameworks.length} ฉบับ · ตัวชี้วัด ${curriculum.data.frameworks.reduce((n, f) => n + f.strands.reduce((m, s) => m + s.standards.reduce((k, st) => k + st.indicators.length, 0), 0), 0)}`);
+
 if (errors || (strict && warnings)) process.exit(1);
+if (command === "curriculum") {
+  // ความครอบคลุมของคลังเทียบกับแต่ละหลักสูตร: --missing แสดงตัวชี้วัดที่ยังไม่มีหัวข้อสอน, --framework=<id> เลือกฉบับ
+  const pick = flags.find((f) => f.startsWith("--framework="))?.slice(12);
+  for (const c of coverage(curriculum.data).filter((c) => !pick || c.framework === pick)) {
+    const pct = (n: number) => (c.total ? Math.round((n / c.total) * 100) : 0);
+    console.log(`\n${c.title} (${c.framework})\n  ตัวชี้วัด ${c.total} · สอนครบ ${c.full} (${pct(c.full)}%) · บางส่วน ${c.partial} (${pct(c.partial)}%) · ยังไม่มี ${c.missing.length}`);
+    if (flags.includes("--missing")) for (const m of c.missing) console.log(`    - ${m.id}${m.level ? ` [${m.level}]` : ""} ${m.text}`);
+  }
+}
 if (command === "build") {
-  const index = buildPacks(content, outDir, contentDir);
+  const index = buildPacks(content, outDir, contentDir, curriculum.data);
   console.log(`\nbuild เสร็จ → ${outDir}`);
   if (flags.includes("--print-order")) {
     console.log("ลำดับการเรียน:");

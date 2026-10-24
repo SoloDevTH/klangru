@@ -89,6 +89,41 @@ export default function QualityPage() {
           </tbody>
         </table>
       </div>
+      {index.curriculum.length > 0 && (
+        <section className="stack">
+          <h2>ความครอบคลุมเทียบกับหลักสูตร</h2>
+          <p className="small muted">นับจาก curriculum/mappings · ดูตัวชี้วัดที่ยังไม่มีหัวข้อสอนด้วย npm run curriculum -- --missing</p>
+          <div className="table-scroll">
+            <table className="data">
+              <thead>
+                <tr>
+                  <th>หลักสูตร</th>
+                  <th className="num">ตัวชี้วัด</th>
+                  <th className="num">สอนครบ</th>
+                  <th className="num">บางส่วน</th>
+                  <th className="num">ยังไม่มี</th>
+                </tr>
+              </thead>
+              <tbody>
+                {index.curriculum.map((c) => (
+                  <tr key={c.id}>
+                    <td>
+                      {c.title}
+                      <div className="small muted mono">{c.id}</div>
+                    </td>
+                    <td className="num">{c.total}</td>
+                    <td className="num">
+                      {c.full} <small className="muted">({c.total ? Math.round((c.full / c.total) * 100) : 0}%)</small>
+                    </td>
+                    <td className="num">{c.partial}</td>
+                    <td className={`num ${c.total - c.full - c.partial === 0 ? "ok" : "warn"}`}>{c.total - c.full - c.partial}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
       <QualityLive titles={Object.fromEntries(index.topics.map((t) => [t.id, t.title.th]))} />
     </div>
   );

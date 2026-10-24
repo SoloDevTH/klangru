@@ -2,6 +2,8 @@ import { z } from "zod";
 
 export * from "./license.ts";
 export * from "./expression.ts";
+export * from "./curriculum.ts";
+import { Reference } from "./curriculum.ts";
 import { LICENSES } from "./license.ts";
 
 /** รหัสหัวข้อ: <วิชา>.<สาขา>.<ชื่อ> เช่น math.algebra.linear-eq */
@@ -109,6 +111,8 @@ export const Topic = z.object({
   /** ฝึกหัวข้อนี้ถือเป็นการทบทวนหัวข้อย่อยบางส่วน (weight 0–1) */
   encompasses: z.array(z.object({ id: z.string(), weight: z.number().gt(0).max(1) })).default([]),
   curriculum_tags: z.array(z.string()).default([]),
+  /** สารานุกรมและตำราเปิดสำหรับอ่านเพิ่มเติม (ดู curriculum/sources.yaml) */
+  references: z.array(Reference).default([]),
   lessons: z.array(LessonBlock).min(1),
   glossary: z.array(z.object({ term: z.string(), definition: z.string() })).default([]),
   flashcards: z.array(z.object({ front: z.string(), back: z.string() })).default([]),
@@ -228,7 +232,7 @@ export interface FlashcardDoc {
 /** เอกสารสำหรับค้นหา (dist/content/search.json) */
 export interface SearchDoc {
   id: string;
-  kind: "topic" | "glossary" | "problem";
+  kind: "topic" | "glossary" | "problem" | "indicator";
   topic: string;
   subject: string;
   title: string;
@@ -255,11 +259,34 @@ export interface TopicSummary {
   status: Topic["status"];
 }
 
+/** ตัวชี้วัดของหลักสูตรที่หัวข้อหนึ่งสอน (จาก curriculum/mappings) */
+export interface CurriculumLink {
+  framework: string;
+  /** ชื่อสั้นของหลักสูตร เช่น "หลักสูตรแกนกลาง 2560" */
+  short: string;
+  id: string;
+  text: string;
+  coverage: "full" | "partial";
+}
+
+/** ความครอบคลุมของคลังเทียบกับหลักสูตรหนึ่งฉบับ */
+export interface CurriculumSummary {
+  id: string;
+  title: string;
+  short: string;
+  kind: string;
+  subjects: string[];
+  total: number;
+  full: number;
+  partial: number;
+}
+
 export interface ContentIndex {
   version: 1;
   builtAt: string;
   subjects: Subject[];
   topics: TopicSummary[];
+  curriculum: CurriculumSummary[];
 }
 
 export interface TopicPack {
@@ -267,4 +294,5 @@ export interface TopicPack {
   /** markdown ของบล็อก explanation เรียงตาม lessons */
   lessonMarkdown: Record<string, string>;
   problems: Problem[];
+  curriculum: CurriculumLink[];
 }

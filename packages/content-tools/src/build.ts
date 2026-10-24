@@ -1,6 +1,7 @@
 import { copyFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { hanziFile, type ContentIndex, type Problem, type SearchDoc, type Topic, type TopicPack } from "@klangru/schema";
+import { hanziFile, type ContentIndex, type CurriculumLink, type Problem, type SearchDoc, type Topic, type TopicPack } from "@klangru/schema";
+import { coverage, topicCurriculum, type CurriculumData } from "./curriculum.ts";
 import { depths, topoOrder } from "./graph.ts";
 import { hanziDataDir, type ValidContent } from "./validate.ts";
 
@@ -14,13 +15,17 @@ export function plainText(md: string): string {
     .trim();
 }
 
-export function searchDocs(entries: { topic: Topic; problems: Problem[]; markdown: Record<string, string> }[]): SearchDoc[] {
+export function searchDocs(entries: { topic: Topic; problems: Problem[]; markdown: Record<string, string> }[], links = new Map<string, CurriculumLink[]>()): SearchDoc[] {
   const docs: SearchDoc[] = [];
   for (const { topic, problems, markdown } of entries) {
     const lesson = topic.lessons.flatMap((b) => (b.type === "explanation" ? [markdown[b.file] ?? ""] : [])).join("\n");
     docs.push({ id: topic.id, kind: "topic", topic: topic.id, subject: topic.subject, title: topic.title.th, text: plainText(`${topic.title.en} ${topic.summary} ${lesson}`) });
     for (const g of topic.glossary) {
       docs.push({ id: `${topic.id}#${g.term}`, kind: "glossary", topic: topic.id, subject: topic.subject, title: g.term, text: plainText(g.definition) });
+    }
+    // ครูค้นด้วยรหัสหรือข้อความตัวชี้วัดแล้วเจอหัวข้อที่สอน
+    for (const l of links.get(topic.id) ?? []) {
+      docs.push({ id: `${topic.id}@${l.framework}:${l.id}`, kind: "indicator", topic: topic.id, subject: topic.subject, title: `${l.id} · ${topic.title.th}`, text: `${l.id} ${l.short} ${l.text}` });
     }
     for (const p of problems) {
       docs.push({ id: p.id, kind: "problem", topic: topic.id, subject: topic.subject, title: plainText(p.stem).slice(0, 90), text: plainText(p.stem) });
@@ -30,7 +35,8 @@ export function searchDocs(entries: { topic: Topic; problems: Problem[]; markdow
 }
 
 /** เขียน content pack: index.json, topics/<id>.json, search.json และไฟล์ประกอบ (โมเลกุล ข้อมูลอักษรจีน) */
-export function buildPacks(content: ValidContent, outDir: string, contentDir: string): ContentIndex {
+export function buildPacks(content: ValidContent, outDir: string, contentDir: string, curriculum: CurriculumData = { frameworks: [], mappings: [] }): ContentIndex {
+  const links = topicCurriculum(curriculum);
   const nodes = content.topics.map(({ topic }) => topic);
   const order = topoOrder(nodes);
   const depth = depths(nodes);
@@ -56,12 +62,16 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
         status: topic.status,
       }))
       .sort((a, b) => a.order - b.order),
+    curriculum: coverage(curriculum).map(({ framework, title, total, full, partial }) => {
+      const fw = curriculum.frameworks.find((f) => f.id === framework)!;
+      return { id: framework, title, short: fw.short, kind: fw.kind, subjects: fw.subjects, total, full, partial };
+    }),
   };
 
   rmSync(outDir, { recursive: true, force: true });
   for (const d of ["topics", "molecules", "hanzi"]) mkdirSync(join(outDir, d), { recursive: true });
   writeFileSync(join(outDir, "index.json"), JSON.stringify(index, null, 2));
-  writeFileSync(join(outDir, "search.json"), JSON.stringify(searchDocs(content.topics)));
+  writeFileSync(join(outDir, "search.json"), JSON.stringify(searchDocs(content.topics, links)));
   // แฟลชการ์ดทุกใบ คีย์ <topicId>#<ลำดับ> ใช้ในคิวทบทวน
   const flashcards = content.topics.flatMap(({ topic }) => topic.flashcards.map((c, i) => ({ key: `${topic.id}#${i}`, topic: topic.id, front: c.front, back: c.back })));
   writeFileSync(join(outDir, "flashcards.json"), JSON.stringify(flashcards));
@@ -74,7 +84,7 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
       if (b.type === "molecule") copyFileSync(join(contentDir, "_assets/molecules", `${b.cid}.sdf`), join(outDir, "molecules", `${b.cid}.sdf`));
     }
     for (const p of problems) if (p.type === "hanzi") hanzi.add(p.character);
-    const pack: TopicPack = { topic, lessonMarkdown, problems: [...problems].sort((a, b) => a.difficulty - b.difficulty) };
+    const pack: TopicPack = { topic, lessonMarkdown, problems: [...problems].sort((a, b) => a.difficulty - b.difficulty), curriculum: links.get(topic.id) ?? [] };
     writeFileSync(join(outDir, "topics", `${topic.id}.json`), JSON.stringify(pack));
   }
 
