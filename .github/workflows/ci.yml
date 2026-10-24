@@ -44,11 +44,16 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
-      - uses: android-actions/setup-android@v3
+      # runner มี Android SDK อยู่แล้ว (ANDROID_HOME) ติดตั้งเฉพาะ platform และ build-tools ที่แอปใช้
+      - name: ติดตั้ง Android SDK ที่ต้องใช้
+        run: |
+          SDKMANAGER=$(ls -d "$ANDROID_HOME"/cmdline-tools/*/bin/sdkmanager | sort -V | tail -1)
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" "platforms;android-36" "build-tools;35.0.0" "platform-tools"
       - run: npm ci && npm run build
       - name: build APK (debug)
         run: npm run android:apk -w @klangru/web
