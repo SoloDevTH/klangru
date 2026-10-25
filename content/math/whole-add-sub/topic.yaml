@@ -1,0 +1,77 @@
+id: math.number.whole-add-sub
+subject: math
+title: { th: การบวกและการลบจำนวนนับ, en: Adding and subtracting whole numbers }
+summary: เข้าใจความหมายของการบวกและการลบ ใช้วิธีคิดในใจ บวกลบแบบมีการทดและการกระจาย หาตัวไม่ทราบค่าในประโยคสัญลักษณ์ และแก้โจทย์ปัญหาหลายขั้น
+difficulty: 1
+minutes: 35
+prerequisites: [math.number.counting-numbers, math.number.place-value]
+encompasses:
+  - { id: math.number.place-value, weight: 0.3 }
+  - { id: math.number.counting-numbers, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bar-models.svg
+    alt: "แบบจำลองแท่งสองแบบ แบบแรกส่วนย่อยและทั้งหมด แท่งบนยาวเขียนว่าทั้งหมด 13 แท่งล่างแบ่งเป็นส่วน 8 และส่วน 5 ข้างกันเขียนว่า 8 + 5 = 13, 13 − 8 = 5 และ 13 − 5 = 8 แบบที่สองการเปรียบเทียบ แท่งมะม่วงยาว 12 แท่งส้มยาว 7 ส่วนที่ต่างกันเป็นกรอบเส้นประเขียนว่าต่างกันกี่ผล ข้างกันเขียนว่า 12 − 7 = 5"
+    caption: "รู้ส่วนย่อยทั้งสองให้บวก รู้ทั้งหมดกับส่วนย่อยหนึ่งส่วนให้ลบ การเปรียบเทียบก็ใช้การลบ"
+  - { type: check, problem: math.number.whole-add-sub.p003, prompt: "หาครอบครัวของประโยคนี้" }
+  - type: interactive
+    title: บวกเป็นส่วน ๆ บนเส้นจำนวน
+    caption: "38 + 25: กระโดด 20 ไปที่ 58 แล้วกระโดดอีก 5 ไปที่ 63"
+    widget:
+      kind: number-line
+      min: 30
+      max: 70
+      points:
+        - { value: 38, label: "38" }
+        - { value: 58, label: "58" }
+        - { value: 63, label: "63" }
+      jumps:
+        - { from: 38, to: 58, label: "+20" }
+        - { from: 58, to: 63, label: "+5" }
+  - type: figure
+    src: column-methods.svg
+    alt: "การตั้งหลักสองแบบ ซ้ายคือการบวก 2,486 + 1,357 = 3,843 มีเลข 1 ตัวเล็กที่ทดไว้เหนือหลักสิบและหลักร้อย คำอธิบาย 6 + 7 = 13 เขียน 3 ทด 1 และ 8 + 5 + 1 = 14 เขียน 4 ทด 1 ขวาคือการลบ 4,003 − 1,256 = 2,747 ตัวตั้งถูกขีดฆ่าและเขียนใหม่เป็น 3, 9, 9, 13 คำอธิบาย 4,003 = 3 พัน 9 ร้อย 9 สิบ 13 หน่วย แล้วลบทีละหลัก"
+    caption: "ทำจากหลักหน่วยไปทางซ้ายเสมอ"
+  - type: worked-example
+    title: หาตัวไม่ทราบค่าด้วยส่วนย่อยและทั้งหมด
+    problem: "หาจำนวนที่แทน $\\square$ ใน $\\square - 2{,}648 = 3{,}975$"
+    steps:
+      - text: "$\\square$ เป็นจำนวนที่ถูกลบ จึงเป็น **ทั้งหมด** ส่วน 2,648 กับ 3,975 เป็นส่วนย่อย"
+        why: "เอาทั้งหมดลบส่วนหนึ่ง จะเหลืออีกส่วนหนึ่ง"
+      - text: "ทั้งหมด = ส่วนย่อยบวกกัน: $\\square = 3{,}975 + 2{,}648$"
+      - text: "บวกตั้งหลัก: หน่วย $5 + 8 = 13$ เขียน 3 ทด 1, สิบ $7 + 4 + 1 = 12$ เขียน 2 ทด 1, ร้อย $9 + 6 + 1 = 16$ เขียน 6 ทด 1, พัน $3 + 2 + 1 = 6$"
+      - text: "ได้ $\\square = 6{,}623$ ตรวจ: $6{,}623 - 2{,}648 = 3{,}975$ ✓"
+    answer: "$\\square = 6{,}623$"
+  - { type: check, problem: math.number.whole-add-sub.p012, prompt: "$\\square$ เป็นทั้งหมดหรือส่วนย่อย" }
+  - type: worked-example
+    title: โจทย์ปัญหาสองขั้น
+    problem: "สหกรณ์โรงเรียนมีสมุด 520 เล่ม ขายไปในสัปดาห์แรก 186 เล่ม และสัปดาห์ที่สอง 147 เล่ม เหลือสมุดกี่เล่ม"
+    steps:
+      - text: "โจทย์ถามจำนวนที่เหลือ ใช้การลบ ขายสองครั้งจึงต้องหักออกทั้งสองครั้ง"
+      - text: "ขายรวม $186 + 147 = 333$ เล่ม"
+        why: "จะลบทีละครั้งก็ได้ $520 - 186 - 147$ ผลเท่ากัน"
+      - text: "เหลือ $520 - 333 = 187$ เล่ม"
+      - text: "ประมาณตรวจ: $500 - 200 - 150 = 150$ ใกล้ 187 พอสมควร คำตอบสมเหตุสมผล"
+    answer: "เหลือสมุด 187 เล่ม"
+glossary:
+  - { term: ตัวตั้ง, definition: "จำนวนแรกในการลบ เป็นจำนวนที่ถูกลบออก เช่น 12 ใน 12 − 5" }
+  - { term: ผลต่าง, definition: "คำตอบของการลบ" }
+  - { term: การทด, definition: "เมื่อผลบวกในหลักหนึ่งถึง 10 ให้เขียนหลักหน่วยไว้แล้วนำ 1 ไปบวกในหลักถัดไปทางซ้าย" }
+  - { term: การกระจาย, definition: "ในการลบ เมื่อตัวตั้งในหลักหนึ่งน้อยกว่าตัวลบ ให้แลก 1 จากหลักทางซ้ายมาเป็น 10 ในหลักนั้น" }
+  - { term: ประโยคสัญลักษณ์, definition: "ประโยคที่เขียนด้วยตัวเลขและเครื่องหมาย เช่น □ + 25 = 63" }
+flashcards:
+  - { front: "รู้ทั้งหมดกับส่วนย่อยหนึ่งส่วน หาอีกส่วนอย่างไร", back: "ลบ: ทั้งหมด − ส่วนที่รู้" }
+  - { front: "เครื่องหมาย = แปลว่าอะไร", back: "สองข้างมีค่าเท่ากัน ไม่ได้แปลว่า \"คำตอบคือ\"" }
+  - { front: "8 + 6 ด้วยวิธีทำให้เป็นสิบ", back: "8 + 2 + 4 = 10 + 4 = 14" }
+  - { front: "ตรวจคำตอบของ 73 − 28 = 45 อย่างไร", back: "บวกกลับ 45 + 28 = 73" }
+references:
+  - { title: "การบวก", url: "https://th.wikipedia.org/wiki/การบวก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "การลบ", url: "https://th.wikipedia.org/wiki/การลบ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "1.3 Add Whole Numbers (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/1-3-add-whole-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "1.4 Subtract Whole Numbers (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/1-4-subtract-whole-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

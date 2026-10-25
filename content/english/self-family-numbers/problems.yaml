@@ -1,0 +1,336 @@
+problems:
+  - id: english.vocabulary.self-family-numbers.p001
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำบอกส่วนของร่างกายกับความหมาย"
+    pairs:
+      - { left: "head", right: "หัว" }
+      - { left: "eye", right: "ตา" }
+      - { left: "ear", right: "หู" }
+      - { left: "nose", right: "จมูก" }
+      - { left: "mouth", right: "ปาก" }
+    hints:
+      - "เริ่มจากคำที่รู้แน่ เช่น head"
+      - "ear กับ eye สะกดคล้ายกัน ear มีตัว r เหมือนคำว่า hear (ได้ยิน)"
+    solution: "head → หัว · eye → ตา · ear → หู · nose → จมูก · mouth → ปาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p002
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 1
+    type: mcq
+    stem: "ครูพูดว่า *a big red ball* ภาพไหนตรงกับคำนี้"
+    figure: { src: picture-choice.svg, alt: "ภาพสี่ภาพ ภาพ A ลูกบอลสีแดงลูกเล็ก ภาพ B ลูกบอลสีน้ำเงินลูกใหญ่ ภาพ C ลูกบอลสีแดงลูกใหญ่ ภาพ D กล่องสีแดงใบใหญ่" }
+    choices:
+      - { id: a, text: "A", feedback: "ลูกบอลสีแดงจริง แต่เป็นลูกเล็ก (small) ไม่ใช่ big" }
+      - { id: b, text: "B", feedback: "ลูกบอลใหญ่จริง แต่เป็นสีน้ำเงิน (blue) ไม่ใช่ red" }
+      - { id: c, text: "C", correct: true, feedback: "ถูก ลูกบอล สีแดง ลูกใหญ่" }
+      - { id: d, text: "D", feedback: "ใหญ่และสีแดงจริง แต่เป็นกล่อง (box) ไม่ใช่ลูกบอล (ball)" }
+    hints:
+      - "ดูทีละคำ ball คืออะไร red คือสีอะไร big คืออะไร"
+      - "ตัดภาพที่ไม่ใช่ลูกบอล ไม่ใช่สีแดง และไม่ใหญ่ออก"
+    solution: "*ball* = ลูกบอล, *red* = สีแดง, *big* = ใหญ่ ภาพที่ตรงทั้งสามคำคือ **C**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p003
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 1
+    type: text
+    stem: "ดูภาพแล้วตอบเป็นภาษาอังกฤษหนึ่งคำ: *What colour is the star?*"
+    figure: { src: shapes-colours.svg, alt: "แถวบนมีวงกลมสีแดง 2 วง สี่เหลี่ยมจัตุรัสสีน้ำเงิน 1 รูป และสามเหลี่ยมสีเหลือง 3 รูป แถวล่างมีดาวสีเขียว 1 ดวง" }
+    accepted: ["green", "green.", "It is green.", "It's green.", "It is green", "It's green"]
+    misconceptions:
+      - { match: "เขียว", feedback: "ถูกความหมาย แต่ให้ตอบเป็นภาษาอังกฤษ: green" }
+      - { match: "yellow", feedback: "yellow คือสีของสามเหลี่ยม ดาวคือรูปห้าแฉกด้านล่าง" }
+      - { match: "blue", feedback: "blue เป็นสีของสี่เหลี่ยม ดาวคือรูปห้าแฉกด้านล่าง" }
+    hints:
+      - "star คือรูปดาวห้าแฉก"
+      - "ดาวในภาพเป็นสีอะไร แล้วสีนั้นภาษาอังกฤษว่าอย่างไร"
+    solution: "ดาว (star) ในภาพเป็นสีเขียว ตอบ **green** (*It is green.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p004
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 1
+    type: numeric
+    stem: "ดูภาพเดิม แล้วตอบเป็นตัวเลข: *How many circles are there?*"
+    figure: { src: shapes-colours.svg, alt: "แถวบนมีวงกลมสีแดง 2 วง สี่เหลี่ยมจัตุรัสสีน้ำเงิน 1 รูป และสามเหลี่ยมสีเหลือง 3 รูป แถวล่างมีดาวสีเขียว 1 ดวง" }
+    answer: { value: 2 }
+    misconceptions:
+      - { match: 3, feedback: "3 คือจำนวนสามเหลี่ยม (triangle) คำถามถามวงกลม (circle)" }
+      - { match: 1, feedback: "1 คือจำนวนสี่เหลี่ยมหรือดาว คำถามถามวงกลม (circle)" }
+    hints:
+      - "circle คือรูปทรงอะไร"
+      - "นับเฉพาะวงกลม"
+    solution: "circle คือวงกลม ในภาพมีวงกลมสีแดง **2** วง (*There are two circles.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p005
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 2
+    type: text
+    stem: "เขียนตัวเลข 15 เป็นคำภาษาอังกฤษ"
+    accepted: ["fifteen"]
+    misconceptions:
+      - { match: "fiveteen", feedback: "five เปลี่ยนเป็น fif- เมื่อเติม -teen: fifteen" }
+      - { match: "fifty", feedback: "fifty คือ 50 ตัวเลข 13–19 ลงท้ายด้วย -teen" }
+      - { match: "fivety", feedback: "13–19 ลงท้ายด้วย -teen และ five เปลี่ยนเป็น fif-: fifteen" }
+    hints:
+      - "ตัวเลข 13–19 ลงท้ายด้วย -teen"
+      - "five เปลี่ยนรูปเมื่อเติม -teen เหมือน fifty"
+    solution: "15 = **fifteen** (ไม่ใช่ fiveteen)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p006
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 2
+    type: numeric
+    stem: "เขียน *forty-seven* เป็นตัวเลข"
+    answer: { value: 47 }
+    misconceptions:
+      - { match: 407, feedback: "forty = 40 แล้วบวก seven = 7 ได้ 47 ไม่ใช่เขียน 40 ต่อกับ 7" }
+      - { match: 74, feedback: "คำแรก forty คือหลักสิบ คำหลัง seven คือหลักหน่วย" }
+      - { match: 17, feedback: "forty (40) ไม่ใช่ fourteen หรือ seventeen คำนี้คือ 40 + 7" }
+    hints:
+      - "forty คือเท่าไร seven คือเท่าไร"
+      - "นำสองค่ามาบวกกัน"
+    solution: "*forty* = 40, *seven* = 7 รวมกันได้ **47**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p007
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 2
+    type: match
+    stem: "ดูแผนผังครอบครัวของน้ำในบทเรียน แล้วจับคู่คำกับความหมาย"
+    pairs:
+      - { left: "grandmother", right: "ย่าหรือยาย" }
+      - { left: "uncle", right: "ลุง น้า อา ที่เป็นผู้ชาย" }
+      - { left: "aunt", right: "ป้า น้า อา ที่เป็นผู้หญิง" }
+      - { left: "cousin", right: "ลูกพี่ลูกน้อง" }
+      - { left: "sister", right: "พี่สาวหรือน้องสาว" }
+    hints:
+      - "grand- อยู่หน้าคำ แปลว่ารุ่นปู่ย่าตายาย"
+      - "uncle เป็นผู้ชาย aunt เป็นผู้หญิง"
+    solution: "grandmother → ย่าหรือยาย · uncle → ลุง น้า อา (ชาย) · aunt → ป้า น้า อา (หญิง) · cousin → ลูกพี่ลูกน้อง · sister → พี่สาวหรือน้องสาว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p008
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 2
+    type: mcq
+    stem: "เติมสีของธนบัตรไทย: *The 100-baht note is ___.*"
+    choices:
+      - { id: a, text: "red", correct: true, feedback: "ถูก ธนบัตร 100 บาทเป็นสีแดง" }
+      - { id: b, text: "green", feedback: "สีเขียว (green) คือธนบัตร 20 บาท" }
+      - { id: c, text: "blue", feedback: "สีน้ำเงิน (blue) คือธนบัตร 50 บาท" }
+      - { id: d, text: "purple", feedback: "สีม่วง (purple) คือธนบัตร 500 บาท" }
+    hints:
+      - "นึกถึงแบงก์ร้อยในกระเป๋าเงิน"
+      - "red แดง · green เขียว · blue น้ำเงิน · purple ม่วง"
+    solution: "ธนบัตร 100 บาทเป็นสีแดง: *The 100-baht note is **red**.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p009
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 2
+    type: text
+    stem: "\"ปู่\" (พ่อของพ่อ) ภาษาอังกฤษใช้คำว่าอะไร (หนึ่งคำ)"
+    accepted: ["grandfather", "grandpa", "granddad", "grandad"]
+    misconceptions:
+      - { match: "uncle", feedback: "uncle คือพี่ชายหรือน้องชายของพ่อแม่ (ลุง น้า อา) พ่อของพ่อคือ grandfather" }
+      - { match: "father", feedback: "father คือพ่อ พ่อของพ่อต้องเติม grand- ข้างหน้า" }
+      - { match: "grandmother", feedback: "grandmother คือย่าหรือยาย ปู่เป็นผู้ชาย" }
+    hints:
+      - "รุ่นปู่ย่าตายายใช้คำที่ขึ้นต้นด้วย grand-"
+      - "ปู่เป็นผู้ชาย ใช้ grand- + father"
+    solution: "**grandfather** (พูดเป็นกันเองว่า grandpa) ภาษาอังกฤษใช้คำนี้ทั้งปู่และตา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p010
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 3
+    type: order
+    stem: "เรียงคำเป็นประโยค \"ฉันมีแมวสีดำตัวเล็ก\""
+    items: ["I", "have", "a", "small", "black", "cat."]
+    hints:
+      - "ประโยคขึ้นต้นด้วย I have"
+      - "เรียง ขนาด → สี → คำนาม"
+    solution: "*I have a small black cat.* ขนาด (small) มาก่อนสี (black) และทั้งสองคำอยู่หน้าคำนาม cat"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p011
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 3
+    type: text
+    stem: "ข้าวเหนียวมะม่วงเป็นขนมไทย มะม่วงสุกมีสีอะไร เติมหนึ่งคำ: *The ripe mango is ___.*"
+    accepted: ["yellow", "yellow."]
+    misconceptions:
+      - { match: "green", feedback: "มะม่วงดิบมักเป็นสีเขียว มะม่วงสุก (ripe) ที่กินกับข้าวเหนียวเป็นสีเหลือง" }
+      - { match: "orange", feedback: "orange คือสีส้ม มะม่วงสุกในข้าวเหนียวมะม่วงเรียกว่าสีเหลือง" }
+      - { match: "white", feedback: "white (ขาว) เป็นสีของข้าวเหนียว คำถามถามสีของมะม่วง" }
+    hints:
+      - "ripe แปลว่าสุก"
+      - "สีเหลืองภาษาอังกฤษว่าอะไร"
+    solution: "*The ripe mango is **yellow**.* ส่วนข้าวเหนียว (sticky rice) เป็นสีขาว (white)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p012
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 3
+    type: mcq
+    stem: "อ่านแล้วตอบ: *My name is Nam. I am eight years old. I have one brother and one sister.* — ในบ้านของน้ำมีเด็กกี่คน"
+    choices:
+      - { id: a, text: "three", correct: true, feedback: "ถูก น้ำ พี่ชายหรือน้องชาย และพี่สาวหรือน้องสาว รวม 3 คน" }
+      - { id: b, text: "two", feedback: "อย่าลืมนับน้ำเองด้วย one brother + one sister + Nam" }
+      - { id: c, text: "eight", feedback: "eight คืออายุของน้ำ ไม่ใช่จำนวนเด็ก" }
+      - { id: d, text: "one", feedback: "one ใช้กับ brother และ sister แยกกัน รวมกันกับน้ำได้มากกว่านี้" }
+    hints:
+      - "หาว่าน้ำมี brother กี่คน sister กี่คน"
+      - "อย่าลืมนับน้ำ"
+    solution: "brother 1 + sister 1 + น้ำ 1 = **three** (3 คน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p013
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 3
+    type: text
+    stem: "เขียนตัวเลข 90 เป็นคำภาษาอังกฤษ"
+    accepted: ["ninety"]
+    misconceptions:
+      - { match: "ninty", feedback: "nine + -ty ยังคงตัว e ไว้: ninety" }
+      - { match: "nineteen", feedback: "nineteen คือ 19 ส่วน 90 ลงท้ายด้วย -ty" }
+      - { match: "nine ten", feedback: "หลักสิบใช้ -ty ไม่ใช่ nine ten: ninety" }
+    hints:
+      - "หลักสิบลงท้ายด้วย -ty"
+      - "nine + ty โดยไม่ตัดตัวอักษรใด"
+    solution: "90 = **ninety** (ต่างจาก forty ที่ตัด u ออก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p014
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 4
+    type: text
+    stem: "ลูกสาวของลุงเรา ภาษาอังกฤษเรียกว่าอะไร (หนึ่งคำ)"
+    accepted: ["cousin"]
+    misconceptions:
+      - { match: "sister", feedback: "sister คือลูกของพ่อแม่เรา ลูกของลุงคือ cousin" }
+      - { match: "niece", feedback: "niece คือหลานสาว (ลูกของพี่หรือน้องเรา) ลูกของลุงคือ cousin" }
+      - { match: "aunt", feedback: "aunt อยู่รุ่นเดียวกับพ่อแม่ ลูกของลุงอยู่รุ่นเดียวกับเรา" }
+    hints:
+      - "ลูกของลุงอยู่รุ่นเดียวกับเรา ภาษาไทยเรียกว่าลูกพี่ลูกน้อง"
+      - "ดูแผนผังครอบครัวในบทเรียน คนที่อยู่ใต้ uncle"
+    solution: "**cousin** ใช้ได้ทั้งชายและหญิง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p015
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดแปลว่า \"กระเป๋าของฉันสีชมพู\" ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "My bag is pink.", correct: true, feedback: "ถูก บอกสีหลัง is ได้เลย ไม่ต้องมีคำว่า colour" }
+      - { id: b, text: "My bag pink.", feedback: "ภาษาอังกฤษต้องมี is ระหว่างประธานกับสี" }
+      - { id: c, text: "My bag is colour pink.", feedback: "แปลคำว่า สี ตรง ๆ ไม่ได้ พูดแค่ My bag is pink." }
+      - { id: d, text: "My pink is bag.", feedback: "ประธานคือ my bag ต้องอยู่หน้า is" }
+    hints:
+      - "ประธาน + is + สี"
+      - "ภาษาอังกฤษไม่ต้องใส่คำว่า colour หลัง is"
+    solution: "**My bag is pink.** (หรือ *I have a pink bag.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p016
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "คิดเลขแล้วตอบเป็นตัวเลข: *fourteen + forty = ?*"
+    answer: { value: 54 }
+    misconceptions:
+      - { match: 28, feedback: "forty คือ 40 ไม่ใช่ fourteen (14) ดูท้ายคำ -ty กับ -teen" }
+      - { match: 80, feedback: "fourteen คือ 14 ไม่ใช่ forty (40) ดูท้ายคำ -teen" }
+    hints:
+      - "-teen คือ 13–19 ส่วน -ty คือหลักสิบ"
+      - "fourteen = 14 และ forty = 40"
+    solution: "fourteen = 14, forty = 40 ดังนั้น 14 + 40 = **54** (fifty-four)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p017
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 4
+    type: text
+    stem: "เขียนประโยคภาษาอังกฤษ \"ฉันมีพี่ชายสองคน\" (เขียนเต็มประโยค)"
+    accepted:
+      - "I have two older brothers."
+      - "I have two older brothers"
+      - "I have two brothers."
+      - "I have two brothers"
+      - "I've got two older brothers."
+      - "I've got two older brothers"
+      - "I've got two brothers."
+      - "I've got two brothers"
+    misconceptions:
+      - { match: "I have two brother.", feedback: "มีสองคนต้องเติม s: two brothers" }
+      - { match: "I have two brother", feedback: "มีสองคนต้องเติม s: two brothers" }
+      - { match: "I have two older brother.", feedback: "มีสองคนต้องเติม s: two older brothers" }
+      - { match: "I have two older brother", feedback: "มีสองคนต้องเติม s: two older brothers" }
+      - { match: "I have two younger brothers.", feedback: "younger brother คือน้องชาย พี่ชายคือ older brother" }
+      - { match: "I am two brothers.", feedback: "บอกว่ามีพี่น้องใช้ have ไม่ใช่ am" }
+    hints:
+      - "ใช้ I have + จำนวน + คำนาม"
+      - "พี่ชายคือ older brother และสองคนต้องเติม s"
+    solution: "*I have two **older brothers**.* (ถ้าไม่ต้องบอกว่าเป็นพี่ ใช้ *I have two brothers.* ก็ได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p018
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกวลีที่ **ถูกต้อง** ทั้งหมด"
+    choices:
+      - { id: a, text: "a big red ball", correct: true, feedback: "ถูก ขนาด → สี → คำนาม" }
+      - { id: b, text: "a small green star", correct: true, feedback: "ถูก ขนาด → สี → คำนาม" }
+      - { id: c, text: "two blue squares", correct: true, feedback: "ถูก สองรูปเติม s ที่ squares" }
+      - { id: d, text: "a red big ball", feedback: "ขนาดต้องมาก่อนสี: a big red ball" }
+      - { id: e, text: "a ball red", feedback: "สีต้องอยู่หน้าคำนาม ไม่ได้อยู่หลังเหมือนภาษาไทย" }
+      - { id: f, text: "two blue square", feedback: "สองรูปต้องเติม s: two blue squares" }
+    hints:
+      - "สีและขนาดอยู่หน้าคำนาม"
+      - "เรียงขนาดก่อนสี และจำนวนมากกว่าหนึ่งต้องเติม s"
+    solution: "ถูกคือ *a big red ball*, *a small green star*, *two blue squares* ข้ออื่นผิดเพราะเรียงสีก่อนขนาด วางสีหลังคำนาม หรือไม่เติม s"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.vocabulary.self-family-numbers.p019
+    topics: [english.vocabulary.self-family-numbers]
+    difficulty: 5
+    type: numeric
+    stem: "อ่านแล้วตอบเป็นตัวเลข: *There are five people in my family: my father, my mother, my older brother, my younger sister and me. I am a girl.* — ครอบครัวนี้มีผู้หญิงกี่คน"
+    answer: { value: 3 }
+    misconceptions:
+      - { match: 2, feedback: "ผู้เขียนบอกว่า I am a girl อย่าลืมนับผู้เขียนด้วย" }
+      - { match: 1, feedback: "mother ก็เป็นผู้หญิง และผู้เขียนเองก็เป็น girl" }
+      - { match: 4, feedback: "brother และ father เป็นผู้ชาย นับเฉพาะ mother, sister และ me" }
+    hints:
+      - "แยกคำที่เป็นผู้หญิง: mother, sister ... แล้ว me ล่ะ"
+      - "ประโยคสุดท้ายบอกว่าผู้เขียนเป็นอะไร"
+    solution: "ผู้หญิงคือ mother, younger sister และ me (I am a girl) รวม **3** คน ส่วน father และ older brother เป็นผู้ชาย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

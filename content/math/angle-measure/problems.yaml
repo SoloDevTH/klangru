@@ -1,0 +1,281 @@
+problems:
+  - id: math.geometry.angle-measure.p001
+    topics: [math.geometry.angle-measure]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ชื่อกับลักษณะ"
+    pairs:
+      - { left: "จุด", right: "บอกตำแหน่ง ไม่มีความยาว" }
+      - { left: "เส้นตรง", right: "ยาวไม่สิ้นสุดทั้งสองทาง" }
+      - { left: "รังสี", right: "มีจุดเริ่มต้นหนึ่งจุด ยาวไม่สิ้นสุดทางเดียว" }
+      - { left: "ส่วนของเส้นตรง", right: "มีจุดปลายสองจุด วัดความยาวได้" }
+    hints:
+      - "ดูว่าแต่ละแบบมีจุดปลายกี่จุด"
+      - "เส้นตรงไม่มีจุดปลาย รังสีมีหนึ่งจุด ส่วนของเส้นตรงมีสองจุด"
+    solution: "จุดบอกตำแหน่ง เส้นตรงไม่มีจุดปลาย รังสีมีจุดเริ่มต้นหนึ่งจุด ส่วนของเส้นตรงมีจุดปลายสองจุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p002
+    topics: [math.geometry.angle-measure]
+    difficulty: 1
+    type: mcq
+    stem: "จุดที่แขนทั้งสองของมุมเริ่มต้นร่วมกัน เรียกว่าอะไร"
+    choices:
+      - { id: a, text: "จุดยอดมุม", correct: true }
+      - { id: b, text: "แขนของมุม", feedback: "แขนของมุมคือรังสีสองเส้น ไม่ใช่จุด" }
+      - { id: c, text: "จุดศูนย์กลางของโพรแทรกเตอร์", feedback: "เป็นจุดบนเครื่องมือที่ต้องวางให้ตรงกับจุดนี้ แต่ไม่ใช่ชื่อส่วนของมุม" }
+    hints:
+      - "มุมมีส่วนประกอบสองอย่าง คือ แขน และจุดที่แขนมาพบกัน"
+      - "จุดนี้อยู่ตรงกลางเวลาเรียกชื่อมุม"
+    solution: "จุดเริ่มต้นร่วมของแขนทั้งสองคือจุดยอดมุม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p003
+    topics: [math.geometry.angle-measure]
+    difficulty: 1
+    type: mcq
+    stem: "ช่างตัดเสื้อกางกรรไกรตัดผ้าเป็นมุม $30^\\circ$ มุมนี้เป็นมุมชนิดใด"
+    choices:
+      - { id: a, text: "มุมแหลม", correct: true }
+      - { id: b, text: "มุมฉาก", feedback: "มุมฉากเท่ากับ $90^\\circ$ พอดี $30^\\circ$ เล็กกว่านั้นมาก" }
+      - { id: c, text: "มุมป้าน", feedback: "มุมป้านต้องมากกว่า $90^\\circ$" }
+    hints:
+      - "เทียบกับมุมฉาก $90^\\circ$"
+      - "มุมที่เล็กกว่ามุมฉากเรียกว่าอะไร"
+    solution: "$30^\\circ < 90^\\circ$ จึงเป็นมุมแหลม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p004
+    topics: [math.geometry.angle-measure]
+    difficulty: 2
+    type: numeric
+    stem: "ชิงช้าสวรรค์ในงานวัดหมุนไปครึ่งรอบ ชิงช้าหมุนไปกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 180, unit: องศา }
+    hints:
+      - "หนึ่งรอบเท่ากับ $360^\\circ$"
+      - "ครึ่งรอบคือครึ่งหนึ่งของ $360^\\circ$ หรือมุมฉาก 2 มุม"
+    misconceptions:
+      - { match: 90, feedback: "$90^\\circ$ คือหนึ่งในสี่รอบ ครึ่งรอบคือมุมฉาก 2 มุม" }
+      - { match: 360, feedback: "$360^\\circ$ คือหนึ่งรอบเต็ม ข้อนี้หมุนแค่ครึ่งรอบ" }
+    solution: "ครึ่งรอบ $= 360^\\circ \\div 2 = 180^\\circ$ (มุมฉาก 2 มุม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p005
+    topics: [math.geometry.angle-measure]
+    difficulty: 2
+    type: mcq
+    stem: "มุมที่แรเงาในภาพคือมุมใด"
+    figure: { src: name-angle.svg, alt: "รังสีสามเส้นเริ่มจากจุด Q ผ่านจุด P (ซ้ายบน) จุด S (ขึ้นไปทางขวา) และจุด R (ทางขวาเกือบแนวนอน) มุมที่แรเงาอยู่ระหว่างรังสี QS กับรังสี QR" }
+    choices:
+      - { id: a, text: "$\\angle SQR$", correct: true }
+      - { id: b, text: "$\\angle QSR$", feedback: "ตัวอักษรตรงกลางต้องเป็นจุดยอดมุม จุดยอดของมุมที่แรเงาคือ $Q$" }
+      - { id: c, text: "$\\angle PQR$", feedback: "$\\angle PQR$ มีแขน $QP$ กับ $QR$ เป็นมุมที่ใหญ่กว่า มุมที่แรเงามีแขน $QS$" }
+      - { id: d, text: "$\\angle Q$", feedback: "ที่จุด $Q$ มีหลายมุม เขียน $\\angle Q$ แล้วไม่รู้ว่าหมายถึงมุมใด ต้องใช้สามตัวอักษร" }
+    hints:
+      - "จุดยอดมุมของมุมที่แรเงาคือจุดใด"
+      - "แขนของมุมที่แรเงาผ่านจุดใดบ้าง เขียนจุดยอดไว้ตรงกลาง"
+    solution: "มุมที่แรเงามีจุดยอด $Q$ และแขน $QS$ กับ $QR$ จึงชื่อ $\\angle SQR$ (หรือ $\\angle RQS$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p006
+    topics: [math.geometry.angle-measure]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ขนาดมุมกับชนิดของมุม"
+    pairs:
+      - { left: "$35^\\circ$", right: "มุมแหลม" }
+      - { left: "$90^\\circ$", right: "มุมฉาก" }
+      - { left: "$120^\\circ$", right: "มุมป้าน" }
+      - { left: "$180^\\circ$", right: "มุมตรง" }
+      - { left: "$250^\\circ$", right: "มุมกลับ" }
+    hints:
+      - "เทียบแต่ละมุมกับ $90^\\circ$ และ $180^\\circ$"
+      - "มุมที่มากกว่า $180^\\circ$ เรียกว่ามุมกลับ"
+    solution: "$35^\\circ$ แหลม, $90^\\circ$ ฉาก, $120^\\circ$ ป้าน (ระหว่าง 90 กับ 180), $180^\\circ$ ตรง, $250^\\circ$ กลับ (ระหว่าง 180 กับ 360)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p007
+    topics: [math.geometry.angle-measure]
+    difficulty: 2
+    type: numeric
+    stem: "มุมฉากกี่มุมรวมกันเท่ากับการหมุนสามในสี่รอบ (ตอบเป็นจำนวนมุม)"
+    answer: { value: 3, unit: มุม }
+    hints:
+      - "หนึ่งในสี่รอบเท่ากับมุมฉากหนึ่งมุม"
+      - "สามในสี่รอบคือหนึ่งในสี่รอบสามครั้ง"
+    misconceptions:
+      - { match: 4, feedback: "มุมฉาก 4 มุมคือหนึ่งรอบเต็ม สามในสี่รอบยังไม่ครบรอบ" }
+      - { match: 270, feedback: "$270^\\circ$ คือขนาดของการหมุนเป็นองศา ข้อนี้ถามจำนวนมุมฉาก" }
+    solution: "สามในสี่รอบ $= 3 \\times 90^\\circ = 270^\\circ$ คือมุมฉาก 3 มุม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p008
+    topics: [math.geometry.angle-measure]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "มุมใดใหญ่กว่ามุมฉาก (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$95^\\circ$", correct: true }
+      - { id: b, text: "$180^\\circ$", correct: true }
+      - { id: c, text: "$200^\\circ$", correct: true }
+      - { id: d, text: "$89^\\circ$", feedback: "$89^\\circ$ น้อยกว่า $90^\\circ$ อยู่ $1^\\circ$ เป็นมุมแหลม" }
+      - { id: e, text: "$45^\\circ$", feedback: "$45^\\circ$ เป็นครึ่งหนึ่งของมุมฉาก" }
+    hints:
+      - "มุมฉากเท่ากับ $90^\\circ$"
+      - "เลือกทุกมุมที่มากกว่า 90"
+    solution: "$95^\\circ$, $180^\\circ$ และ $200^\\circ$ มากกว่า $90^\\circ$ ส่วน $89^\\circ$ และ $45^\\circ$ น้อยกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p009
+    topics: [math.geometry.angle-measure]
+    difficulty: 3
+    type: numeric
+    stem: "มุมที่ทำเครื่องหมายบนโพรแทรกเตอร์ในภาพมีขนาดกี่องศา (ตอบในหน่วยองศา)"
+    figure: { src: protractor-q.svg, alt: "โพรแทรกเตอร์ครึ่งวงกลมมีสองสเกล สเกลนอกสีดำเริ่ม 0 ทางซ้ายไปถึง 180 ทางขวา สเกลในสีแดงเริ่ม 0 ทางขวาไปถึง 180 ทางซ้าย แขนข้างหนึ่งของมุมทับเส้นฐานไปทางซ้าย ตรงกับ 0 ของสเกลนอก แขนอีกข้างผ่านขีดที่สเกลในอ่านได้ 35 และสเกลนอกอ่านได้ 145 มีส่วนโค้งทำเครื่องหมายมุมระหว่างแขนทั้งสองซึ่งเป็นมุมป้าน" }
+    answer: { value: 145, unit: องศา }
+    hints:
+      - "กะด้วยตาก่อน มุมนี้เป็นมุมแหลมหรือมุมป้าน"
+      - "แขนที่อยู่บนเส้นฐานชี้ไปทางซ้าย ใช้สเกลที่เริ่ม 0 ทางซ้าย"
+    misconceptions:
+      - { match: 35, feedback: "อ่านผิดสเกล มุมในภาพเป็นมุมป้าน แต่ $35^\\circ$ เป็นมุมแหลม ต้องอ่านสเกลที่มี 0 อยู่บนแขนข้างซ้าย" }
+    solution: "แขนแรกชี้ไปทางซ้าย ตรงกับ 0 ของสเกลนอก อ่านสเกลนอกตรงแขนที่สองได้ $145^\\circ$ ตรงกับที่กะไว้ว่าเป็นมุมป้าน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p010
+    topics: [math.geometry.angle-measure]
+    difficulty: 3
+    type: numeric
+    stem: "เข็มยาวของหอนาฬิกาเดินไป 20 นาที เข็มยาวหมุนไปกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 120, unit: องศา }
+    hints:
+      - "เข็มยาวเดิน 60 นาทีครบหนึ่งรอบ คือ $360^\\circ$"
+      - "1 นาทีหมุนไป $360^\\circ \\div 60$ องศา"
+    misconceptions:
+      - { match: 20, feedback: "20 คือจำนวนนาที ต้องเปลี่ยนเป็นองศา 1 นาทีเท่ากับ $6^\\circ$" }
+      - { match: 100, feedback: "ไม่ใช่ $5^\\circ$ ต่อนาที หนึ่งรอบ 60 นาทีคือ $360^\\circ$ จึงได้ $6^\\circ$ ต่อนาที" }
+    solution: "1 นาทีเท่ากับ $360^\\circ \\div 60 = 6^\\circ$ เดิน 20 นาทีได้ $20 \\times 6^\\circ = 120^\\circ$ (หรือ 20 นาทีเป็นหนึ่งในสามรอบ $360^\\circ \\div 3 = 120^\\circ$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p011
+    topics: [math.geometry.angle-measure]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อใดถูกต้องเกี่ยวกับรังสี $AB$ และรังสี $BA$"
+    choices:
+      - { id: a, text: "เป็นรังสีคนละเส้น เพราะเริ่มต้นที่จุดต่างกัน", correct: true }
+      - { id: b, text: "เป็นรังสีเส้นเดียวกัน เพราะผ่านจุด A และ B เหมือนกัน", feedback: "ข้อนี้จริงสำหรับเส้นตรงและส่วนของเส้นตรง แต่รังสีมีจุดเริ่มต้น รังสี $AB$ เริ่มที่ $A$ รังสี $BA$ เริ่มที่ $B$" }
+      - { id: c, text: "ยาวเท่ากัน เพราะวัดจาก A ถึง B", feedback: "รังสียาวไม่สิ้นสุด วัดความยาวไม่ได้ สิ่งที่วัดได้คือส่วนของเส้นตรง" }
+    hints:
+      - "ตัวอักษรตัวแรกของชื่อรังสีบอกอะไร"
+      - "ลองวาดรังสีทั้งสองบนกระดาษ ดูว่าพุ่งไปทางเดียวกันหรือไม่"
+    solution: "ตัวอักษรตัวแรกคือจุดเริ่มต้น รังสี $AB$ เริ่มที่ $A$ พุ่งผ่าน $B$ ออกไป รังสี $BA$ เริ่มที่ $B$ พุ่งผ่าน $A$ ไปอีกทาง จึงเป็นคนละรังสี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p012
+    topics: [math.geometry.angle-measure]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการสร้าง $\\angle PQR = 65^\\circ$ ด้วยโพรแทรกเตอร์"
+    items:
+      - "ลากรังสี $QR$"
+      - "วางจุดศูนย์กลางของโพรแทรกเตอร์ที่ $Q$ ให้เส้นฐานทับ $QR$"
+      - "นับจาก 0 ของสเกลที่อยู่บน $QR$ ไปถึง 65 แล้วทำจุด $P$"
+      - "ยกโพรแทรกเตอร์ออกแล้วลากรังสี $QP$"
+    hints:
+      - "ต้องมีแขนแรกก่อนจึงจะวางโพรแทรกเตอร์ได้"
+      - "จุด $P$ ต้องทำไว้ก่อนลากแขนที่สอง"
+    solution: "ลากแขนแรก $QR$ → วางโพรแทรกเตอร์ที่จุดยอด $Q$ → นับ 65 จากสเกลที่ถูกแล้วทำจุด $P$ → ลากแขน $QP$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p013
+    topics: [math.geometry.angle-measure]
+    difficulty: 4
+    type: numeric
+    stem: "ฝ้ายวัดมุมด้านในที่จุด $O$ ได้ $125^\\circ$ มุมกลับที่จุด $O$ ซึ่งมีแขนคู่เดียวกันมีขนาดกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 235, unit: องศา }
+    hints:
+      - "มุมด้านในกับมุมกลับรวมกันได้หนึ่งรอบ"
+      - "มุมกลับ $= 360^\\circ -$ มุมด้านใน"
+    misconceptions:
+      - { match: 55, feedback: "ลบออกจาก $180^\\circ$ มุมด้านในกับมุมกลับรวมกันเป็นหนึ่งรอบ $360^\\circ$" }
+      - { match: 485, feedback: "มุมกลับต้องน้อยกว่า $360^\\circ$ ต้องลบ ไม่ใช่บวก" }
+    solution: "มุมกลับ $= 360^\\circ - 125^\\circ = 235^\\circ$ (อยู่ระหว่าง $180^\\circ$ กับ $360^\\circ$ ตามที่ควรเป็น)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p014
+    topics: [math.geometry.angle-measure]
+    difficulty: 4
+    type: numeric
+    stem: "$\\angle AOC = 110^\\circ$ รังสี $OB$ อยู่ระหว่างรังสี $OA$ กับ $OC$ และ $\\angle AOB = 45^\\circ$ จงหาขนาดของ $\\angle BOC$ (ตอบในหน่วยองศา)"
+    answer: { value: 65, unit: องศา }
+    hints:
+      - "รังสี $OB$ แบ่ง $\\angle AOC$ ออกเป็นสองมุม"
+      - "$\\angle AOB + \\angle BOC = \\angle AOC$"
+    misconceptions:
+      - { match: 155, feedback: "บวกสองมุม แต่ $\\angle AOB$ เป็นส่วนหนึ่งของ $\\angle AOC$ ต้องลบ" }
+      - { match: 135, feedback: "ใช้ $180^\\circ$ แทน $110^\\circ$ มุมใหญ่คือ $\\angle AOC = 110^\\circ$ ไม่ใช่มุมตรง" }
+    solution: "$\\angle BOC = \\angle AOC - \\angle AOB = 110^\\circ - 45^\\circ = 65^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p015
+    topics: [math.geometry.angle-measure]
+    difficulty: 4
+    type: mcq
+    stem: "นนท์วัดมุมแหลมมุมหนึ่งได้ $140^\\circ$ ขนาดที่แท้จริงของมุมนี้น่าจะเป็นเท่าใด"
+    choices:
+      - { id: a, text: "$40^\\circ$", correct: true }
+      - { id: b, text: "$140^\\circ$", feedback: "มุมแหลมต้องเล็กกว่า $90^\\circ$ ค่า $140^\\circ$ จึงเป็นไปไม่ได้" }
+      - { id: c, text: "$220^\\circ$", feedback: "นั่นคือ $360^\\circ - 140^\\circ$ ซึ่งเป็นมุมกลับ ไม่ใช่มุมแหลม" }
+      - { id: d, text: "$50^\\circ$", feedback: "นั่นคือ $140^\\circ - 90^\\circ$ แต่การอ่านผิดสเกลให้ค่า $180^\\circ$ ลบค่าจริง" }
+    hints:
+      - "มุมแหลมเล็กกว่า $90^\\circ$ แสดงว่านนท์อ่านผิดสเกล"
+      - "สองสเกลของโพรแทรกเตอร์ที่ขีดเดียวกันรวมกันได้ $180^\\circ$"
+    solution: "อ่านผิดสเกลจะได้ $180^\\circ$ ลบค่าจริง ค่าจริง $= 180^\\circ - 140^\\circ = 40^\\circ$ ซึ่งเป็นมุมแหลม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p016
+    topics: [math.geometry.angle-measure]
+    difficulty: 5
+    type: numeric
+    stem: "เวลา 3:30 น. เข็มสั้นและเข็มยาวของนาฬิกาทำมุมที่เล็กกว่ากันกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 75, unit: องศา }
+    hints:
+      - "เข็มยาวชี้เลข 6 คือ $180^\\circ$ จากเลข 12 ส่วนเข็มสั้นไม่ได้ชี้ที่เลข 3 พอดี"
+      - "เข็มสั้นเดินชั่วโมงละ $30^\\circ$ ครึ่งชั่วโมงเดินเพิ่ม $15^\\circ$ จากเลข 3"
+    misconceptions:
+      - { match: 90, feedback: "คิดว่าเข็มสั้นชี้เลข 3 พอดี แต่ผ่านไปครึ่งชั่วโมงแล้ว เข็มสั้นเลื่อนไปทางเลข 4 อีก $15^\\circ$" }
+      - { match: 105, feedback: "นั่นคือมุมจากเลข 12 ถึงเข็มสั้น ข้อนี้ถามมุมระหว่างเข็มทั้งสอง" }
+    solution: "จากเลข 12 เข็มยาวอยู่ที่ $30 \\times 6 = 180^\\circ$ เข็มสั้นอยู่ที่ $3 \\times 30^\\circ + 15^\\circ = 105^\\circ$ มุมระหว่างเข็ม $= 180^\\circ - 105^\\circ = 75^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.angle-measure.p017
+    topics: [math.geometry.angle-measure]
+    difficulty: 5
+    type: numeric
+    stem: "รังสี $OA$, $OB$, $OC$, $OD$ เรียงกันรอบจุด $O$ ตามเข็มนาฬิกา $\\angle AOB = 90^\\circ$, $\\angle BOC = 75^\\circ$, $\\angle COD = 110^\\circ$ มุม $DOA$ ที่เหลือจนครบรอบมีขนาดกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 85, unit: องศา }
+    hints:
+      - "มุมรอบจุดรวมกันได้ $360^\\circ$"
+      - "รวมสามมุมที่รู้ แล้วลบออกจาก $360^\\circ$"
+    misconceptions:
+      - { match: 275, feedback: "นั่นคือผลรวมของสามมุมที่รู้ ยังต้องลบออกจาก $360^\\circ$" }
+    solution: "$90^\\circ + 75^\\circ + 110^\\circ = 275^\\circ$ มุมที่เหลือ $= 360^\\circ - 275^\\circ = 85^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

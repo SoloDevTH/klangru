@@ -1,0 +1,63 @@
+id: math.geometry.angle-measure
+subject: math
+title: { th: การวัดและเรียกชื่อมุม, en: Measuring and naming angles }
+summary: รู้จักจุด เส้นตรง รังสี ส่วนของเส้นตรง ส่วนประกอบของมุม เรียกชื่อมุมด้วยสัญลักษณ์ เชื่อมการหมุนกับองศา แล้ววัดและสร้างมุมด้วยโพรแทรกเตอร์
+difficulty: 2
+minutes: 30
+prerequisites: [math.geometry.shapes]
+encompasses: []
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: lines-rays.svg
+    alt: "สี่ภาพเรียงกัน จุด A เป็นจุดเดียว เส้นตรง AB มีหัวลูกศรทั้งสองปลาย รังสี AB เริ่มที่จุด A ผ่านจุด B แล้วมีหัวลูกศรปลายเดียว ส่วนของเส้นตรง AB มีจุดปลาย A และ B ไม่มีหัวลูกศร"
+    caption: "หัวลูกศรแปลว่ายาวต่อไปไม่สิ้นสุด"
+  - type: figure
+    src: angle-parts.svg
+    alt: "มุม ABC มีจุดยอดมุมที่ B แขนของมุมสองเส้นคือรังสี BA ซึ่งเอียงขึ้นไปทางขวา และรังสี BC ซึ่งอยู่ในแนวนอน มีส่วนโค้งสีส้มที่มุมเขียนว่ามุม ABC"
+    caption: "เรียกชื่อมุมโดยให้จุดยอดมุมอยู่ตรงกลาง: $\\angle ABC$ หรือ $\\angle CBA$"
+  - { type: check, problem: math.geometry.angle-measure.p005, prompt: "จุดยอดมุมต้องอยู่ตรงไหนของชื่อ" }
+  - type: figure
+    src: protractor-50.svg
+    alt: "โพรแทรกเตอร์ครึ่งวงกลมมีสองสเกล สเกลนอกสีดำเริ่ม 0 ทางซ้าย สเกลในสีแดงเริ่ม 0 ทางขวา มุมหนึ่งมีจุดยอดที่จุดศูนย์กลาง แขนหนึ่งทับเส้นฐานไปทางขวา อีกแขนผ่านขีดที่สเกลในอ่านได้ 50 และสเกลนอกอ่านได้ 130 ส่วนโค้งที่มุมเขียนว่า 50 องศา"
+    caption: "แขนบนเส้นฐานชี้ไปทางขวา ตรงกับ 0 ของสเกลใน (สีแดง) จึงอ่านสเกลในได้ $50^\\circ$ ไม่ใช่ $130^\\circ$"
+  - type: worked-example
+    title: วัดมุมให้ถูกสเกล
+    problem: "แขนข้างหนึ่งของมุมทับเส้นฐานของโพรแทรกเตอร์ไปทางซ้าย แขนอีกข้างผ่านขีดที่สเกลนอกอ่านได้ 62 และสเกลในอ่านได้ 118 มุมนี้มีขนาดเท่าใด ถ้าสเกลนอกเริ่ม 0 ทางซ้าย"
+    steps:
+      - text: "แขนบนเส้นฐานชี้ไปทางซ้าย ตรงกับ 0 ของสเกลนอก"
+      - text: "จึงอ่านสเกลนอกตรงแขนที่สอง ได้ $62^\\circ$"
+        why: "ต้องอ่านสเกลเดียวกับที่นับ 0 จากแขนแรก"
+      - text: "ตรวจด้วยตา: แขนที่สองอยู่ใกล้แขนแรกมากกว่าเส้นตั้งฉาก มุมจึงเป็นมุมแหลม สอดคล้องกับ $62^\\circ$"
+      - text: "ถ้าอ่านสเกลในจะได้ $118^\\circ = 180^\\circ - 62^\\circ$ ซึ่งเป็นคำตอบของการอ่านผิดสเกล"
+    answer: "$62^\\circ$"
+  - { type: check, problem: math.geometry.angle-measure.p009, prompt: "กะด้วยตาก่อนว่าเป็นมุมแหลมหรือมุมป้าน" }
+  - type: worked-example
+    title: วัดมุมกลับ
+    problem: "ต้องการวัดมุมกลับ $\\angle XYZ$ แต่โพรแทรกเตอร์วัดได้ถึง $180^\\circ$ เท่านั้น"
+    steps:
+      - text: "วัดมุมด้านในซึ่งมีแขนคู่เดียวกัน วัดได้ $78^\\circ$"
+      - text: "มุมด้านในกับมุมกลับรวมกันเป็นหนึ่งรอบ $360^\\circ$"
+        why: "ทั้งสองมุมรวมกันพอดีรอบจุดยอด Y โดยไม่ซ้อนกัน"
+      - text: "มุมกลับ $= 360^\\circ - 78^\\circ = 282^\\circ$"
+    answer: "$282^\\circ$"
+glossary:
+  - { term: รังสี, definition: "ส่วนของเส้นตรงที่มีจุดเริ่มต้นหนึ่งจุด แล้วยาวต่อไปไม่สิ้นสุดทางเดียว" }
+  - { term: แขนของมุม, definition: "รังสีสองเส้นที่ประกอบเป็นมุม" }
+  - { term: จุดยอดมุม, definition: "จุดเริ่มต้นร่วมของแขนทั้งสองของมุม" }
+  - { term: โพรแทรกเตอร์, definition: "เครื่องมือวัดและสร้างมุม มีสเกลองศาสองสเกลที่นับสวนทางกัน" }
+  - { term: มุมกลับ, definition: "มุมที่มากกว่า 180 องศาแต่น้อยกว่า 360 องศา" }
+flashcards:
+  - { front: "$\\angle ABC$ มีจุดยอดมุมที่จุดใด", back: "จุด $B$ (ตัวอักษรตรงกลาง)" }
+  - { front: "หนึ่งในสี่รอบ ครึ่งรอบ สามในสี่รอบ เท่ากับกี่องศา", back: "$90^\\circ$, $180^\\circ$, $270^\\circ$" }
+  - { front: "อ่านโพรแทรกเตอร์ผิดสเกลได้ค่าอะไร", back: "$180^\\circ$ ลบค่าจริง เช่น $50^\\circ$ อ่านผิดเป็น $130^\\circ$" }
+  - { front: "วัดมุมกลับด้วยโพรแทรกเตอร์ครึ่งวงกลม", back: "วัดมุมด้านใน แล้วนำไปลบจาก $360^\\circ$" }
+references:
+  - { title: "มุม", url: "https://th.wikipedia.org/wiki/มุม", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Protractor", url: "https://en.wikipedia.org/wiki/Protractor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.2 Angles (Contemporary Mathematics, OpenStax)", url: "https://openstax.org/books/contemporary-mathematics/pages/10-2-angles", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

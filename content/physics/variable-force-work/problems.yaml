@@ -1,0 +1,294 @@
+problems:
+  - id: physics.energy.variable-force-work.p001
+    topics: [physics.energy.variable-force-work]
+    difficulty: 1
+    type: mcq
+    stem: "พื้นที่ใต้กราฟแรง ($F$) กับตำแหน่ง ($x$) บอกปริมาณใด"
+    choices:
+      - { id: a, text: "งานที่แรงนั้นทำ", correct: true }
+      - { id: b, text: "ความเร่งของวัตถุ", feedback: "ความเร่งหาจากแรงลัพธ์หารด้วยมวล ไม่ใช่พื้นที่ใต้กราฟ $F$ กับ $x$" }
+      - { id: c, text: "ค่าคงตัวของสปริง", feedback: "ค่าคงตัวของสปริงคือความชันของกราฟแรงดึงสปริงกับระยะยืด ไม่ใช่พื้นที่" }
+      - { id: d, text: "กำลัง", feedback: "กำลังคืองานต่อเวลา กราฟ $F$ กับ $x$ ไม่มีเวลาอยู่เลย" }
+    hints:
+      - "หน่วยของพื้นที่คือหน่วยแกนตั้งคูณหน่วยแกนนอน"
+      - "$\\mathrm{N} \\times \\mathrm{m}$ คือหน่วยของปริมาณใด"
+    solution: "พื้นที่ใต้กราฟมีหน่วย $\\mathrm{N \\cdot m} = \\mathrm{J}$ และเท่ากับผลรวมของแรงคูณระยะทีละช่วงสั้น ๆ จึงเป็นงานที่แรงนั้นทำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p002
+    topics: [physics.energy.variable-force-work]
+    difficulty: 1
+    type: text
+    stem: "พื้นที่ใต้กราฟแรง (หน่วย N) กับตำแหน่ง (หน่วย m) มีหน่วยเป็นอะไร (ตอบชื่อหน่วยหรือสัญลักษณ์)"
+    accepted: ["J", "จูล", "joule", "joules", "N m", "N·m", "นิวตันเมตร", "นิวตัน เมตร"]
+    misconceptions:
+      - { match: "W", feedback: "วัตต์เป็นหน่วยของกำลัง (จูลต่อวินาที) แต่พื้นที่ใต้กราฟนี้ไม่มีเวลา" }
+      - { match: "N/m", feedback: "นิวตันต่อเมตรเป็นหน่วยของความชัน (ค่าคงตัวสปริง) พื้นที่ต้องคูณหน่วยของสองแกน" }
+    hints:
+      - "พื้นที่ = แกนตั้ง × แกนนอน หน่วยจึงคูณกันด้วย"
+      - "$\\mathrm{N} \\times \\mathrm{m}$ มีชื่อเรียกพิเศษ"
+    solution: "หน่วยของพื้นที่คือ $\\mathrm{N} \\times \\mathrm{m} = \\mathrm{J}$ (จูล) ซึ่งเป็นหน่วยของงาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p003
+    topics: [physics.energy.variable-force-work]
+    difficulty: 2
+    type: numeric
+    stem: "แขวนตุ้มที่หนัก $6\\ \\mathrm{N}$ กับสปริง สปริงยืดออก $4.0\\ \\mathrm{cm}$ ค่าคงตัวของสปริงเป็นเท่าใด (ตอบในหน่วย N/m)"
+    answer: { value: 150, tolerance: 1.5, unit: N/m }
+    misconceptions:
+      - { match: 1.5, feedback: "ใช้ระยะยืดเป็นเซนติเมตร ได้หน่วย N/cm ต้องแปลง $4.0\\ \\mathrm{cm} = 0.040\\ \\mathrm{m}$ ก่อน" }
+      - { match: 0.24, feedback: "นำแรงคูณระยะยืด ค่าคงตัวสปริงคือแรงหารด้วยระยะยืด $k = F/x$" }
+    hints:
+      - "กฎของฮุก $F = kx$"
+      - "แปลงระยะยืดเป็นเมตรก่อน แล้วหาร $F$ ด้วย $x$"
+    solution: "$k = \\dfrac{F}{x} = \\dfrac{6\\ \\mathrm{N}}{0.040\\ \\mathrm{m}} = 150\\ \\mathrm{N/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p004
+    topics: [physics.energy.variable-force-work]
+    difficulty: 2
+    type: mcq
+    stem: "นักเรียนเขียนกราฟแรงดึงสปริง ($F$ แกนตั้ง) กับระยะยืด ($x$ แกนนอน) ของสปริงสองขด กราฟของสปริง A ชันกว่ากราฟของสปริง B ข้อใดถูก"
+    choices:
+      - { id: a, text: "สปริง A แข็งกว่า มีค่าคงตัวสปริงมากกว่า", correct: true }
+      - { id: b, text: "สปริง B แข็งกว่า เพราะยืดได้ไกลกว่าเมื่อออกแรงเท่ากัน", feedback: "ยืดได้ไกลกว่าเมื่อออกแรงเท่ากันแปลว่าอ่อนกว่า ไม่ใช่แข็งกว่า" }
+      - { id: c, text: "สปริงทั้งสองแข็งเท่ากัน เพราะกราฟเป็นเส้นตรงทั้งคู่", feedback: "กราฟเป็นเส้นตรงบอกว่าเป็นไปตามกฎของฮุก แต่ความชันที่ต่างกันบอกว่าค่า $k$ ต่างกัน" }
+    hints:
+      - "ความชันของกราฟ $F$ กับ $x$ คือปริมาณใด"
+      - "ยืดเท่ากัน สปริงที่แข็งกว่าต้องใช้แรงมากกว่าหรือน้อยกว่า"
+    solution: "ความชัน $= \\dfrac{F}{x} = k$ กราฟชันกว่าแปลว่ายืดเท่ากันต้องใช้แรงมากกว่า สปริง A จึงแข็งกว่าและมีค่า $k$ มากกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p005
+    topics: [physics.energy.variable-force-work]
+    difficulty: 2
+    type: mcq
+    stem: "ดึงสปริงจนเลยขีดจำกัดสภาพยืดหยุ่นแล้วปล่อย จะสังเกตเห็นอะไร"
+    choices:
+      - { id: a, text: "สปริงไม่หดกลับยาวเท่าเดิม และกราฟ $F$ กับ $x$ ช่วงนั้นไม่เป็นเส้นตรง", correct: true }
+      - { id: b, text: "สปริงหดกลับยาวเท่าเดิมทุกครั้ง", feedback: "กลับยาวเท่าเดิมเฉพาะเมื่อยังไม่เกินขีดจำกัดสภาพยืดหยุ่น เกินแล้วสปริงยืดค้าง" }
+      - { id: c, text: "ค่าคงตัวสปริงเพิ่มขึ้นเป็นสองเท่าทันที", feedback: "เกินขีดจำกัดแล้ว แรงกับระยะยืดไม่แปรผันตรงกันอีก กฎของฮุกใช้ไม่ได้ ไม่ได้มีค่า $k$ ใหม่ที่คงตัว" }
+    hints:
+      - "ขีดจำกัดสภาพยืดหยุ่นคือจุดที่เกินแล้ววัสดุไม่กลับคืนรูป"
+      - "กฎของฮุกใช้ได้ในช่วงใด"
+    solution: "เกินขีดจำกัดสภาพยืดหยุ่น สปริงเสียรูปถาวร ปล่อยแล้วยืดค้าง และแรงไม่แปรผันตรงกับระยะยืดอีก กราฟจึงโค้งออกจากเส้นตรง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p006
+    topics: [physics.energy.variable-force-work]
+    difficulty: 3
+    type: numeric
+    stem: "ช่างดึงสายรัดยางของเครื่องออกกำลังกาย แรงดึงเพิ่มสม่ำเสมอจาก $0$ เป็น $40\\ \\mathrm{N}$ ตลอดระยะ $0.50\\ \\mathrm{m}$ งานที่ใช้ดึงเป็นเท่าใด (ตอบในหน่วย J)"
+    answer: { value: 10, tolerance: 0.1, unit: J }
+    misconceptions:
+      - { match: 20, feedback: "นำแรงสุดท้าย $40\\ \\mathrm{N}$ คูณระยะ แต่แรงไม่ได้เป็น $40\\ \\mathrm{N}$ ตลอดทาง พื้นที่ใต้กราฟเป็นสามเหลี่ยม ต้องคูณ ½" }
+      - { match: 80, feedback: "หารแรงด้วยระยะได้ความชัน ไม่ใช่งาน งานคือพื้นที่ใต้กราฟ" }
+    hints:
+      - "เขียนกราฟ $F$ กับ $x$ จะได้รูปอะไร"
+      - "พื้นที่สามเหลี่ยม = ½ × ฐาน × สูง"
+    solution: "กราฟเป็นเส้นตรงจาก $(0, 0)$ ถึง $(0.50, 40)$ พื้นที่ใต้กราฟเป็นสามเหลี่ยม $W = \\tfrac12 (0.50)(40) = 10\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p007
+    topics: [physics.energy.variable-force-work]
+    difficulty: 3
+    type: numeric
+    stem: "แม่ค้าเข็นรถเข็นผลไม้ไปตามทางในตลาด แรงดันในแนวการเคลื่อนที่เปลี่ยนตามตำแหน่งดังกราฟ งานที่แม่ค้าทำในช่วง $x = 0$ ถึง $x = 4\\ \\mathrm{m}$ เป็นเท่าใด (ตอบในหน่วย J)"
+    figure: { src: p-trapezoid.svg, alt: "กราฟแรง F (N) แกนตั้ง 0 ถึง 30 กับตำแหน่ง x (m) แกนนอน 0 ถึง 5 เส้นตรงสีน้ำเงินเริ่มที่ x = 0, F = 10 N และเพิ่มสม่ำเสมอถึง x = 4 m, F = 30 N แล้วสิ้นสุด" }
+    answer: { value: 80, tolerance: 0.8, unit: J }
+    misconceptions:
+      - { match: 120, feedback: "ใช้แรงสุดท้าย $30\\ \\mathrm{N}$ ตลอดระยะ แต่แรงเริ่มที่ $10\\ \\mathrm{N}$ พื้นที่เป็นสี่เหลี่ยมคางหมู" }
+      - { match: 60, feedback: "คิดเป็นสามเหลี่ยมที่เริ่มจากศูนย์ แต่กราฟเริ่มที่ $10\\ \\mathrm{N}$ ยังมีสี่เหลี่ยมผืนผ้าอยู่ด้านล่าง" }
+    hints:
+      - "พื้นที่ใต้กราฟมีรูปร่างแบบใด"
+      - "สี่เหลี่ยมคางหมู = ½ × (ผลบวกด้านคู่ขนาน) × ความสูง ด้านคู่ขนานคือแรงที่ $x = 0$ และ $x = 4$"
+    solution: "พื้นที่เป็นสี่เหลี่ยมคางหมู ด้านคู่ขนาน $10$ และ $30\\ \\mathrm{N}$ กว้าง $4\\ \\mathrm{m}$ $W = \\tfrac12(10 + 30)(4) = 80\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p008
+    topics: [physics.energy.variable-force-work]
+    difficulty: 3
+    type: numeric
+    stem: "สปริงในเบาะเก้าอี้มีค่าคงตัว $200\\ \\mathrm{N/m}$ ถูกกดลง $15\\ \\mathrm{cm}$ สปริงสะสมพลังงานศักย์ยืดหยุ่นเท่าใด (ตอบในหน่วย J)"
+    answer: { value: 2.25, tolerance: 0.03, unit: J }
+    misconceptions:
+      - { match: 4.5, feedback: "ลืม ½ งานที่ใช้กดสปริงคือพื้นที่สามเหลี่ยม $\\tfrac12 kx^2$ ไม่ใช่ $kx^2$" }
+      - { match: 30, feedback: "$kx = 30\\ \\mathrm{N}$ คือแรงที่ใช้กด ไม่ใช่พลังงาน ต้องใช้ $\\tfrac12 kx^2$" }
+    hints:
+      - "แปลง $15\\ \\mathrm{cm}$ เป็นเมตร"
+      - "ใช้ $E_s = \\tfrac12 kx^2$"
+    solution: "$E_s = \\tfrac12 kx^2 = \\tfrac12 (200)(0.15)^2 = 2.25\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p009
+    topics: [physics.energy.variable-force-work]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ลักษณะบนกราฟแรงกับตำแหน่งกับความหมาย"
+    pairs:
+      - { left: "เส้นแนวนอนเหนือแกน x", right: "แรงคงตัวทำงานเป็นบวก" }
+      - { left: "เส้นตรงผ่านจุดกำเนิดของกราฟแรงดึงสปริงกับระยะยืด", right: "สปริงเป็นไปตามกฎของฮุก" }
+      - { left: "พื้นที่ส่วนที่อยู่ใต้แกน x", right: "งานเป็นลบ แรงมีทิศตรงข้ามการเคลื่อนที่" }
+      - { left: "ความชันของกราฟแรงดึงสปริงกับระยะยืด", right: "ค่าคงตัวของสปริง" }
+    hints:
+      - "พื้นที่บอกงาน ความชันของกราฟสปริงบอกความแข็ง"
+      - "แรงที่เป็นลบหมายถึงแรงมีทิศอย่างไรเทียบกับการเคลื่อนที่"
+    solution: "เส้นแนวนอนเหนือแกนคือแรงคงตัวที่ทำงานบวก เส้นตรงผ่านจุดกำเนิดคือกฎของฮุก พื้นที่ใต้แกน x คืองานลบ และความชันของกราฟสปริงคือค่า $k$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p010
+    topics: [physics.energy.variable-force-work]
+    difficulty: 4
+    type: expression
+    stem: "สปริงค่าคงตัว $k$ ยืดอยู่แล้วเป็นระยะ $a$ แล้วถูกดึงต่อจนยืดเป็นระยะ $b$ ($b > a$) เขียนงานที่ใช้ดึงเพิ่มในรูปของ $k$, $a$ และ $b$"
+    prefix: "W ="
+    answer: { latex: "\\frac{1}{2}kb^2-\\frac{1}{2}ka^2", variables: [k, a, b] }
+    misconceptions:
+      - { match: "\\frac{1}{2}k\\cdot(b-a)^2", feedback: "นี่คืองานยืดสปริงที่เริ่มจากความยาวปกติเป็นระยะ $b - a$ แต่สปริงตึงอยู่แล้วตั้งแต่ต้น ช่วงนี้ต้องใช้แรงมากกว่า ใช้ผลต่างของ $\\tfrac12 kx^2$" }
+      - { match: "\\frac{1}{2}kb^2", feedback: "นี่คืองานตั้งแต่สปริงยังไม่ยืด ต้องหักงานช่วงแรก $\\tfrac12 ka^2$ ที่ทำไปแล้วออก" }
+    hints:
+      - "งานคือพื้นที่ใต้กราฟ $F = kx$ จาก $x = a$ ถึง $x = b$"
+      - "พื้นที่นั้นคือสามเหลี่ยมใหญ่ (ถึง $b$) ลบสามเหลี่ยมเล็ก (ถึง $a$)"
+    solution: "พื้นที่ใต้กราฟจาก $a$ ถึง $b$ คือสี่เหลี่ยมคางหมู $= \\tfrac12 kb^2 - \\tfrac12 ka^2 = \\tfrac12 k(b^2 - a^2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p011
+    topics: [physics.energy.variable-force-work]
+    difficulty: 4
+    type: numeric
+    stem: "สปริงค่าคงตัว $400\\ \\mathrm{N/m}$ ยืดอยู่ $10\\ \\mathrm{cm}$ ถูกดึงต่อจนยืด $20\\ \\mathrm{cm}$ งานที่ใช้ดึงเพิ่มเป็นเท่าใด (ตอบในหน่วย J)"
+    answer: { value: 6, tolerance: 0.06, unit: J }
+    misconceptions:
+      - { match: 2, feedback: "ใช้ $\\tfrac12 k(\\Delta x)^2$ กับระยะ $10\\ \\mathrm{cm}$ ที่ดึงเพิ่ม แต่สปริงตึงอยู่แล้ว ช่วงนี้ใช้แรงมากกว่าช่วงแรก" }
+      - { match: 8, feedback: "$\\tfrac12 k (0.20)^2 = 8\\ \\mathrm{J}$ คืองานตั้งแต่ยังไม่ยืด ต้องหักงานช่วงแรก $2\\ \\mathrm{J}$ ออก" }
+    hints:
+      - "งานช่วงนี้เท่ากับพลังงานศักย์ยืดหยุ่นที่เพิ่มขึ้น"
+      - "หา $\\tfrac12 kx^2$ ที่ $x = 0.20$ และ $x = 0.10\\ \\mathrm{m}$ แล้วลบกัน"
+    solution: "$W = \\tfrac12 k(x_2^2 - x_1^2) = \\tfrac12(400)(0.20^2 - 0.10^2) = 200 \\times 0.03 = 6\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p012
+    topics: [physics.energy.variable-force-work]
+    difficulty: 4
+    type: numeric
+    stem: "ในห้องปฏิบัติการ สปริงยาว $12.0\\ \\mathrm{cm}$ เมื่อแขวนมวล $300\\ \\mathrm{g}$ สปริงยาว $15.0\\ \\mathrm{cm}$ ค่าคงตัวของสปริงเป็นเท่าใด (ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ ตอบในหน่วย N/m)"
+    answer: { value: 98, tolerance: 1, unit: N/m }
+    misconceptions:
+      - { match: 19.6, feedback: "ใช้ความยาวทั้งหมด $15.0\\ \\mathrm{cm}$ แทนระยะยืด ระยะยืดคือความยาวที่เพิ่มขึ้น $15.0 - 12.0 = 3.0\\ \\mathrm{cm}$" }
+      - { match: 0.98, feedback: "ใช้ระยะยืดเป็นเซนติเมตร ต้องแปลง $3.0\\ \\mathrm{cm} = 0.030\\ \\mathrm{m}$" }
+    hints:
+      - "แรงดึงสปริงเท่ากับน้ำหนักของมวลที่แขวน $mg$"
+      - "ระยะยืดคือความยาวใหม่ลบความยาวเดิม แล้วใช้ $k = F/x$"
+    solution: "$F = mg = (0.300)(9.8) = 2.94\\ \\mathrm{N}$ ระยะยืด $x = 15.0 - 12.0 = 3.0\\ \\mathrm{cm} = 0.030\\ \\mathrm{m}$ จึงได้ $k = \\dfrac{2.94}{0.030} = 98\\ \\mathrm{N/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p013
+    topics: [physics.energy.variable-force-work]
+    difficulty: 4
+    type: numeric
+    stem: "ปืนของเล่นยิงลูกบอลด้วยสปริงค่าคงตัว $500\\ \\mathrm{N/m}$ ถูกกด $4.0\\ \\mathrm{cm}$ ลูกบอลมวล $20\\ \\mathrm{g}$ ถ้าไม่คิดแรงเสียดทานและยิงในแนวระดับ ลูกบอลหลุดจากสปริงด้วยอัตราเร็วเท่าใด (ตอบในหน่วย m/s)"
+    answer: { value: 6.32, tolerance: 0.07, unit: m/s }
+    misconceptions:
+      - { match: 4.47, feedback: "เขียน $\\tfrac12 kx^2 = mv^2$ ลืม ½ ในพลังงานจลน์ พลังงานจลน์คือ $\\tfrac12 mv^2$" }
+      - { match: 632, feedback: "ใช้ระยะกดเป็นเซนติเมตร ต้องแปลง $4.0\\ \\mathrm{cm} = 0.040\\ \\mathrm{m}$ และมวลเป็น $0.020\\ \\mathrm{kg}$" }
+    hints:
+      - "พลังงานศักย์ยืดหยุ่นในสปริงเปลี่ยนเป็นพลังงานจลน์ของลูกบอล"
+      - "$\\tfrac12 kx^2 = \\tfrac12 mv^2$ แก้หา $v$ โดยใช้หน่วย SI"
+    solution: "$\\tfrac12 kx^2 = \\tfrac12 mv^2$ จึงได้ $v = x\\sqrt{\\dfrac{k}{m}} = 0.040\\sqrt{\\dfrac{500}{0.020}} = 0.040 \\times 158.1 \\approx 6.32\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p014
+    topics: [physics.energy.variable-force-work]
+    difficulty: 4
+    type: numeric
+    stem: "รถเข็นมวล $2.5\\ \\mathrm{kg}$ เริ่มจากหยุดนิ่ง แรงลัพธ์ที่กระทำในแนวการเคลื่อนที่เปลี่ยนตามตำแหน่งดังกราฟ เมื่อถึง $x = 6\\ \\mathrm{m}$ รถเข็นมีอัตราเร็วเท่าใด (ตอบในหน่วย m/s)"
+    figure: { src: p-net-force.svg, alt: "กราฟแรงลัพธ์ F (N) แกนตั้ง 0 ถึง 20 กับตำแหน่ง x (m) แกนนอน 0 ถึง 7 แรงเพิ่มเป็นเส้นตรงจาก 0 ที่ x = 0 ถึง 20 N ที่ x = 2 m คงที่ 20 N จาก x = 2 ถึง 4 m แล้วลดเป็นเส้นตรงถึง 0 ที่ x = 6 m" }
+    answer: { value: 8, tolerance: 0.08, unit: m/s }
+    misconceptions:
+      - { match: 5.66, feedback: "ใช้ $W = mv^2$ ลืม ½ ในพลังงานจลน์ ต้องใช้ $W = \\tfrac12 mv^2$" }
+      - { match: 32, feedback: "หารงานด้วยมวลแล้วหยุด ยังไม่ได้แก้หา $v$ จาก $\\tfrac12 mv^2$" }
+    hints:
+      - "หางานรวมจากพื้นที่ใต้กราฟ แบ่งเป็นสามเหลี่ยม สี่เหลี่ยม และสามเหลี่ยม"
+      - "งานของแรงลัพธ์เท่ากับพลังงานจลน์ที่เพิ่มขึ้น เริ่มจากหยุดนิ่ง $W = \\tfrac12 mv^2$"
+    solution: "พื้นที่ $= \\tfrac12(2)(20) + (2)(20) + \\tfrac12(2)(20) = 20 + 40 + 20 = 80\\ \\mathrm{J}$ เริ่มจากหยุดนิ่ง $80 = \\tfrac12(2.5)v^2$ ได้ $v^2 = 64$ และ $v = 8\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p015
+    topics: [physics.energy.variable-force-work]
+    difficulty: 4
+    type: mcq
+    stem: "ยืดสปริงออก $x$ สปริงเก็บพลังงานศักย์ยืดหยุ่น $E$ ถ้ายืดสปริงเดิมออก $3x$ (ยังไม่เกินขีดจำกัดสภาพยืดหยุ่น) จะเก็บพลังงานเท่าใด"
+    choices:
+      - { id: a, text: "$9E$", correct: true }
+      - { id: b, text: "$3E$", feedback: "แรงเพิ่มเป็น 3 เท่า ระยะก็เพิ่มเป็น 3 เท่า พื้นที่สามเหลี่ยมใต้กราฟจึงเพิ่ม $3 \\times 3$ เท่า" }
+      - { id: c, text: "$6E$", feedback: "พลังงานแปรผันตาม $x^2$ ไม่ใช่ $2x$" }
+    hints:
+      - "$E_s = \\tfrac12 kx^2$ ขึ้นกับ $x$ อย่างไร"
+      - "แทน $3x$ ลงใน $x^2$"
+    solution: "$E_s \\propto x^2$ ยืดเป็น $3x$ พลังงานเป็น $3^2 = 9$ เท่า คือ $9E$ ดูจากกราฟก็ได้ ฐานและความสูงของสามเหลี่ยมเพิ่มอย่างละ 3 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p016
+    topics: [physics.energy.variable-force-work]
+    difficulty: 5
+    type: numeric
+    stem: "กล่องมวล $4.0\\ \\mathrm{kg}$ เคลื่อนที่บนพื้นด้วยอัตราเร็ว $3.0\\ \\mathrm{m/s}$ แรงลัพธ์ในทิศการเคลื่อนที่เป็น $+12\\ \\mathrm{N}$ ตลอดช่วง $x = 0$ ถึง $3\\ \\mathrm{m}$ แล้วเป็น $-8\\ \\mathrm{N}$ ตลอดช่วง $x = 3$ ถึง $6\\ \\mathrm{m}$ ที่ $x = 6\\ \\mathrm{m}$ กล่องมีอัตราเร็วเท่าใด (ตอบในหน่วย m/s)"
+    answer: { value: 3.87, tolerance: 0.04, unit: m/s }
+    misconceptions:
+      - { match: 6.24, feedback: "นับพื้นที่ช่วงแรงลบเป็นบวก งานของแรงในทิศตรงข้ามการเคลื่อนที่ต้องเป็นลบ" }
+      - { match: 2.45, feedback: "ลืมพลังงานจลน์ตอนเริ่ม งานรวมเท่ากับพลังงานจลน์ที่เปลี่ยนไป ต้องบวกกับพลังงานจลน์เดิม $18\\ \\mathrm{J}$" }
+    hints:
+      - "งานรวม = พื้นที่บวกช่วงแรก + พื้นที่ลบช่วงหลัง"
+      - "$E_{k,\\text{ปลาย}} = E_{k,\\text{ต้น}} + W_{\\text{รวม}}$ แล้วแก้หา $v$"
+    solution: "$W = (12)(3) + (-8)(3) = 36 - 24 = 12\\ \\mathrm{J}$ พลังงานจลน์ต้น $\\tfrac12(4.0)(3.0)^2 = 18\\ \\mathrm{J}$ ปลาย $18 + 12 = 30\\ \\mathrm{J}$ จึงได้ $v = \\sqrt{\\dfrac{2(30)}{4.0}} = \\sqrt{15} \\approx 3.87\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p017
+    topics: [physics.energy.variable-force-work]
+    difficulty: 5
+    type: numeric
+    stem: "นักกีฬายกน้ำหนักทีมชาติไทยอบอุ่นร่างกายด้วยสปริงออกกำลังกาย ค่าคงตัวรวม $300\\ \\mathrm{N/m}$ ดึงจากความยาวปกติให้ยืด $0.40\\ \\mathrm{m}$ ภายในเวลา $0.80\\ \\mathrm{s}$ กำลังเฉลี่ยที่ใช้ดึงเป็นเท่าใด (ตอบในหน่วย W)"
+    answer: { value: 30, tolerance: 0.3, unit: W }
+    misconceptions:
+      - { match: 60, feedback: "คิดงานเป็น $kx^2$ ลืม ½ งานยืดสปริงคือพื้นที่สามเหลี่ยม $\\tfrac12 kx^2$" }
+      - { match: 19.2, feedback: "นำงานคูณเวลา กำลังคืองานหารด้วยเวลา" }
+    hints:
+      - "หางานที่ใช้ยืดสปริงก่อน"
+      - "กำลังเฉลี่ย $= W/t$"
+    solution: "$W = \\tfrac12(300)(0.40)^2 = 24\\ \\mathrm{J}$ กำลังเฉลี่ย $P = \\dfrac{24}{0.80} = 30\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.variable-force-work.p018
+    topics: [physics.energy.variable-force-work]
+    difficulty: 5
+    type: numeric
+    stem: "กราฟแสดงแรงดึงยางยืดกับระยะยืด ช่องตารางแต่ละช่องกว้าง $0.05\\ \\mathrm{m}$ สูง $2\\ \\mathrm{N}$ นักเรียนนับช่องใต้เส้นโค้งตั้งแต่ $x = 0$ ถึง $x = 0.40\\ \\mathrm{m}$ ได้ประมาณ 48 ช่อง งานที่ใช้ดึงยางยืดช่วงนี้ประมาณเท่าใด (ตอบในหน่วย J)"
+    figure: { src: p-curve.svg, alt: "กราฟแรง F (N) แกนตั้ง 0 ถึง 16 ขีดทุก 2 N กับระยะยืด x (m) แกนนอน 0 ถึง 0.45 เส้นตารางทุก 0.05 m เส้นโค้งสีน้ำเงินเริ่มที่จุดกำเนิด ชันมากตอนต้นแล้วค่อย ๆ ราบลง ผ่านประมาณ 10 N ที่ x = 0.1 m ประมาณ 14 N ที่ x = 0.2 m และเกือบ 16 N ที่ x = 0.4 m พื้นที่ใต้เส้นโค้งถึง x = 0.4 m ระบายสีฟ้า" }
+    answer: { value: 4.8, tolerance: 0.1, unit: J }
+    misconceptions:
+      - { match: 48, feedback: "นับช่องได้ 48 ช่อง แต่หนึ่งช่องไม่ใช่ 1 J ต้องคูณด้วยงานของหนึ่งช่อง $2 \\times 0.05 = 0.1\\ \\mathrm{J}$" }
+      - { match: 96, feedback: "คูณด้วย $2\\ \\mathrm{N}$ แต่ลืมคูณความกว้างของช่อง $0.05\\ \\mathrm{m}$" }
+    hints:
+      - "หนึ่งช่องมีพื้นที่เท่าใด หน่วยอะไร"
+      - "งาน ≈ จำนวนช่อง × พื้นที่หนึ่งช่อง"
+    solution: "หนึ่งช่องมีพื้นที่ $(2\\ \\mathrm{N})(0.05\\ \\mathrm{m}) = 0.1\\ \\mathrm{J}$ งาน $\\approx 48 \\times 0.1 = 4.8\\ \\mathrm{J}$ (เป็นค่าประมาณ ยางยืดไม่เป็นไปตามกฎของฮุก จึงใช้สูตร $\\tfrac12 kx^2$ ไม่ได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

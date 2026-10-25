@@ -1,0 +1,364 @@
+problems:
+  - id: english.speaking.everyday-conversations.p001
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ประโยคกับคำตอบที่เหมาะสม"
+    pairs:
+      - { left: "How much is this?", right: "It's 40 baht." }
+      - { left: "Can I borrow your pen?", right: "Sure. Here you are." }
+      - { left: "What do you do on Sundays?", right: "I usually play badminton." }
+      - { left: "Would you like some water?", right: "Yes, please." }
+    hints:
+      - "How much ถามราคา"
+      - "Can I borrow ...? คือขอยืม Would you like ...? คือเสนอให้"
+    solution: "How much is this? → It's 40 baht. · Can I borrow your pen? → Sure. Here you are. · What do you do on Sundays? → I usually play badminton. · Would you like some water? → Yes, please."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p002
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 1
+    type: mcq
+    stem: "ครูต่างชาติพูดเร็วจนฟังไม่ทัน ควรพูดว่าอะไร"
+    choices:
+      - { id: a, text: "Sorry? Could you say that again, please?", correct: true, feedback: "ถูก สุภาพและบอกชัดว่าต้องการอะไร" }
+      - { id: b, text: "What?", feedback: "What? คำเดียวฟังห้วนและไม่สุภาพกับครู" }
+      - { id: c, text: "Say again!", feedback: "เป็นคำสั่งห้วน ๆ ควรใช้ Could you ..., please?" }
+      - { id: d, text: "I don't know.", feedback: "ประโยคนี้บอกว่าไม่รู้คำตอบ ไม่ได้ขอให้ครูพูดซ้ำ" }
+    hints:
+      - "ต้องการให้ครูพูดอีกครั้ง"
+      - "ขอร้องสุภาพใช้ Could you ..., please?"
+    solution: "***Sorry? Could you say that again, please?*** (หรือ *Could you speak more slowly, please?*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p003
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 1
+    type: mcq
+    stem: "ที่ตลาดนัด อยากถามราคาเสื้อยืดตัวนี้ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "How much is this T-shirt?", correct: true, feedback: "ถูก ถามราคาใช้ How much" }
+      - { id: b, text: "How many is this T-shirt?", feedback: "How many ถามจำนวนที่นับได้ ถามราคาใช้ How much" }
+      - { id: c, text: "How much this T-shirt?", feedback: "ขาด is: How much is this T-shirt?" }
+      - { id: d, text: "What price you?", feedback: "ประโยคนี้ไม่ถูกไวยากรณ์ ใช้ How much is ...?" }
+    hints:
+      - "ถามราคาใช้ How much"
+      - "How much + is + this + คำนาม?"
+    solution: "***How much is this T-shirt?***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p004
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 2
+    type: numeric
+    stem: "ดูเมนูร้านป้าน้อย ลูกค้าพูดว่า *I'd like fried rice with chicken, mango sticky rice and a bottle of water, please.* ผู้ขายควรตอบว่า *That's ___ baht.*"
+    figure: { src: menu.svg, alt: "เมนูร้าน Auntie Noi's Kitchen (ร้านป้าน้อย) Pad Thai 60 baht, Fried rice with chicken 50 baht, Green curry with rice 70 baht, Mango sticky rice 60 baht, Thai iced tea 25 baht, Water 10 baht" }
+    answer: { value: 120, unit: "บาท" }
+    misconceptions:
+      - { match: 110, feedback: "ลืมบวกค่าน้ำ (water) 10 บาท" }
+      - { match: 130, feedback: "fried rice ราคา 50 บาท ไม่ใช่ 60 บาท ดูเมนูอีกครั้ง" }
+    hints:
+      - "หาราคา fried rice with chicken, mango sticky rice และ water"
+      - "บวกสามราคาเข้าด้วยกัน"
+    solution: "50 + 60 + 10 = **120** บาท: *That's 120 baht.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p005
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 2
+    type: text
+    stem: "ยื่นปากกาให้เพื่อนที่ขอยืม เติมคำเดียว: *Sure. ___ you are.*"
+    accepted: ["Here"]
+    misconceptions:
+      - { match: "There", feedback: "สำนวนตอนยื่นของให้คือ Here you are." }
+      - { match: "This", feedback: "สำนวนตอนยื่นของให้คือ Here you are." }
+      - { match: "Thank", feedback: "Thank you ใช้ตอนได้รับของ ตอนยื่นให้ใช้ Here you are." }
+    hints:
+      - "สำนวนนี้แปลว่า นี่ไง เอาไปเลย"
+      - "ขึ้นต้นด้วยคำที่แปลว่า ที่นี่"
+    solution: "*Sure. **Here** you are.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p006
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 2
+    type: order
+    stem: "เรียงบทสนทนาซื้อมะม่วงที่ตลาดให้ถูกลำดับ"
+    items:
+      - "Excuse me. How much are these mangoes?"
+      - "They're 50 baht a kilo."
+      - "Can I have two kilos, please?"
+      - "Sure. That's 100 baht."
+      - "Here you are. Thank you."
+    hints:
+      - "ลูกค้าเปิดบทสนทนาด้วยการถามราคา"
+      - "ถามราคา → บอกราคา → ขอซื้อ → คิดเงิน → จ่ายเงิน"
+    solution: "ถามราคา (*How much are these mangoes?*) → บอกราคา (*They're 50 baht a kilo.*) → ขอซื้อ (*Can I have two kilos, please?*) → คิดเงิน 2 × 50 = 100 บาท → จ่ายเงิน (*Here you are.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p007
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 2
+    type: mcq
+    stem: "สั่งข้าวผัดไก่ที่ร้านอาหาร ข้อใดสุภาพและถูกต้องที่สุด"
+    choices:
+      - { id: a, text: "I'd like fried rice with chicken, please.", correct: true, feedback: "ถูก I'd like ... please. เป็นวิธีสั่งอาหารที่สุภาพ" }
+      - { id: b, text: "I like fried rice with chicken, please.", feedback: "I like แปลว่า ฉันชอบ ไม่ได้แปลว่า ขอสั่ง ต้องเป็น I'd like" }
+      - { id: c, text: "Give me fried rice with chicken.", feedback: "เป็นคำสั่งห้วน ๆ ฟังไม่สุภาพ" }
+      - { id: d, text: "I want fried rice with chicken now.", feedback: "I want ... now ฟังเร่งและไม่สุภาพในร้านอาหาร" }
+    hints:
+      - "I like กับ I'd like ต่างกันอย่างไร"
+      - "การสั่งอาหารสุภาพใช้ I'd like ... please."
+    solution: "***I'd like fried rice with chicken, please.*** (I'd like = I would like)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p008
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 3
+    type: numeric
+    stem: "ดูเมนูร้านป้าน้อย ครอบครัวหนึ่งสั่ง *three green curries with rice and two Thai iced teas* แล้วยื่นแบงก์ 500 บาท ผู้ขายต้องพูดว่า *Here's your change, ___ baht.*"
+    figure: { src: menu.svg, alt: "เมนูร้าน Auntie Noi's Kitchen (ร้านป้าน้อย) Pad Thai 60 baht, Fried rice with chicken 50 baht, Green curry with rice 70 baht, Mango sticky rice 60 baht, Thai iced tea 25 baht, Water 10 baht" }
+    answer: { value: 240, unit: "บาท" }
+    misconceptions:
+      - { match: 260, feedback: "260 บาทคือราคาอาหารทั้งหมด change คือเงินทอน ต้องนำ 500 ลบ 260" }
+      - { match: 265, feedback: "ชาเย็นสั่งสองแก้ว (two) ต้องคิด 2 × 25 = 50 บาท" }
+      - { match: 380, feedback: "แกงเขียวหวานสั่งสามจาน (three) ต้องคิด 3 × 70 = 210 บาท" }
+    hints:
+      - "change คือเงินทอน หาราคารวมก่อน"
+      - "3 × 70 + 2 × 25 แล้วนำ 500 ลบผลรวม"
+    solution: "ราคารวม 3 × 70 + 2 × 25 = 210 + 50 = 260 บาท เงินทอน 500 − 260 = **240** บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p009
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 3
+    type: text
+    stem: "ตอบแล้วถามกลับเพื่อให้คุยต่อ เติมคำเดียว: *I play badminton every Sunday. What ___ you?*"
+    accepted: ["about"]
+    misconceptions:
+      - { match: "of", feedback: "สำนวนถามกลับคือ What about you?" }
+      - { match: "for", feedback: "What for you? ไม่ได้แปลว่า แล้วเธอล่ะ ใช้ What about you?" }
+      - { match: "do", feedback: "What do you? ไม่ครบประโยค สำนวนถามกลับคือ What about you?" }
+    hints:
+      - "สำนวนถามกลับแปลว่า แล้วเธอล่ะ"
+      - "What ___ you? = How about you?"
+    solution: "*What **about** you?* (หรือ *How about you?*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p010
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 3
+    type: mcq
+    stem: "ที่สถานีรถไฟ อยากถามว่ารถไฟขบวนถัดไปไปอยุธยาออกกี่โมง ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "What time does the next train to Ayutthaya leave?", correct: true, feedback: "ถูก What time + does + ประธาน + กริยารูปเดิม" }
+      - { id: b, text: "What time the next train to Ayutthaya leaves?", feedback: "ขาด does ในคำถาม" }
+      - { id: c, text: "What time does the next train to Ayutthaya leaves?", feedback: "หลัง does ใช้กริยารูปเดิม leave" }
+      - { id: d, text: "What time is the next train to Ayutthaya leave?", feedback: "leave เป็นกริยาทั่วไป ใช้ does ไม่ใช่ is" }
+    hints:
+      - "the next train = it ใช้ does"
+      - "หลัง does ใช้กริยารูปเดิม"
+    solution: "***What time does the next train to Ayutthaya leave?***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p011
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 3
+    type: text
+    stem: "อยากรู้ว่าเพื่อนใหม่สะกดชื่ออย่างไร เติมคำเดียว: *___ do you spell your name?*"
+    accepted: ["How"]
+    misconceptions:
+      - { match: "What", feedback: "ถามวิธีสะกดใช้ How do you spell ...?" }
+      - { match: "Can", feedback: "Can you spell your name? ก็ใช้ได้ แต่รูปประโยคนี้มี do จึงต้องขึ้นต้นด้วย How" }
+    hints:
+      - "ถามวิธีทำอะไรบางอย่าง"
+      - "คำแสดงคำถามที่แปลว่า อย่างไร"
+    solution: "***How** do you spell your name?*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p012
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 3
+    type: mcq
+    stem: "คุยกับเพื่อนมานานแล้ว ต้องกลับบ้าน ปิดบทสนทนาอย่างไรดี: *Well, I have to go now. ___*"
+    choices:
+      - { id: a, text: "See you tomorrow!", correct: true, feedback: "ถูก ใช้บอกลาเมื่อจะเจอกันอีก" }
+      - { id: b, text: "Nice to meet you.", feedback: "ใช้ตอนพบกันครั้งแรก ไม่ใช่ตอนลากับเพื่อนที่รู้จักแล้ว" }
+      - { id: c, text: "How do you do?", feedback: "เป็นคำทักทายแบบทางการตอนพบกันครั้งแรก" }
+      - { id: d, text: "Excuse me.", feedback: "ใช้เรียกความสนใจหรือขอทาง ไม่ใช่บอกลา" }
+    hints:
+      - "เป็นขั้นปิดบทสนทนา"
+      - "เลือกประโยคบอกลา"
+    solution: "*Well, I have to go now. **See you tomorrow!***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p013
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 3
+    type: mcq
+    stem: "อ่านบทสนทนาที่ห้องสมุด *Student: Excuse me. Can I borrow this book? / Librarian: Sure. Can I see your library card, please? / Student: Here you are. / Librarian: Thank you. Please bring it back in two weeks.* — บรรณารักษ์ขออะไรจากนักเรียน"
+    choices:
+      - { id: a, text: "บัตรห้องสมุด", correct: true, feedback: "ถูก Can I see your library card? คือขอดูบัตรห้องสมุด" }
+      - { id: b, text: "หนังสือเล่มที่ยืม", feedback: "นักเรียนเป็นคนขอยืมหนังสือ บรรณารักษ์ขอดูบัตร" }
+      - { id: c, text: "ค่ายืมหนังสือ", feedback: "บทสนทนาไม่ได้พูดถึงเงิน" }
+      - { id: d, text: "ให้คืนหนังสือทันที", feedback: "บรรณารักษ์บอกให้คืนในสองสัปดาห์ (in two weeks)" }
+    hints:
+      - "หาประโยคที่บรรณารักษ์ขอ Can I ...?"
+      - "library card แปลว่าอะไร"
+    solution: "บรรณารักษ์ขอดู **บัตรห้องสมุด** (*Can I see your library card, please?*) และให้คืนหนังสือในสองสัปดาห์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p014
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 4
+    type: text
+    stem: "ขอให้เพื่อนต่างชาติช่วยเปิดหน้าต่างอย่างสุภาพ เติมคำเดียว: *___ you open the window, please?*"
+    accepted: ["Could", "Can", "Would", "Will"]
+    misconceptions:
+      - { match: "Do", feedback: "Do you open the window? ถามว่าปกติเปิดไหม ไม่ได้ขอร้อง ใช้ Could you ...?" }
+      - { match: "Are", feedback: "ขอร้องใช้ Could you / Can you + กริยารูปเดิม" }
+    hints:
+      - "ขอให้คนอื่นทำอะไรให้"
+      - "Could you + กริยารูปเดิม + please?"
+    solution: "***Could** you open the window, please?* (Can you, Would you, Will you ก็ใช้ได้ Could และ Would สุภาพที่สุด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p015
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 4
+    type: mcq
+    stem: "บ้านเพื่อน แม่ของเพื่อนถามว่า *Would you like some more rice?* แต่เราอิ่มแล้ว ตอบอย่างไรดี"
+    choices:
+      - { id: a, text: "No, thank you. I'm full.", correct: true, feedback: "ถูก ปฏิเสธสุภาพพร้อมบอกเหตุผล" }
+      - { id: b, text: "No, I don't.", feedback: "คำถามใช้ Would you like ไม่ใช่ Do you ตอบ No, thank you." }
+      - { id: c, text: "No.", feedback: "ตอบคำเดียวฟังห้วน ควรมี thank you" }
+      - { id: d, text: "Yes, I'm full.", feedback: "Yes แปลว่ารับข้าวเพิ่ม ขัดกับ I'm full" }
+    hints:
+      - "Would you like ...? คือการเสนอให้"
+      - "ปฏิเสธการเสนออย่างสุภาพใช้ No, thank you."
+    solution: "***No, thank you. I'm full.*** (ถ้ารับ: *Yes, please.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p016
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 5
+    type: numeric
+    stem: "ดูเมนูร้านป้าน้อย เพื่อน 4 คนสั่ง *two Pad Thai, two green curries with rice and four bottles of water* แล้วหารค่าอาหารเท่ากัน คนหนึ่งถามว่า *How much do I pay?* ตอบเป็นบาท"
+    figure: { src: menu.svg, alt: "เมนูร้าน Auntie Noi's Kitchen (ร้านป้าน้อย) Pad Thai 60 baht, Fried rice with chicken 50 baht, Green curry with rice 70 baht, Mango sticky rice 60 baht, Thai iced tea 25 baht, Water 10 baht" }
+    answer: { value: 75, unit: "บาท" }
+    misconceptions:
+      - { match: 300, feedback: "300 บาทคือราคารวม แต่หารกัน 4 คน" }
+      - { match: 65, feedback: "ลืมรวมค่าน้ำ 4 ขวด (4 × 10 บาท)" }
+    hints:
+      - "หาราคารวมก่อน: 2 × 60 + 2 × 70 + 4 × 10"
+      - "แล้วหารด้วยจำนวนคน"
+    solution: "ราคารวม 2 × 60 + 2 × 70 + 4 × 10 = 120 + 140 + 40 = 300 บาท หาร 4 คน = **75** บาท: *You pay 75 baht.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p017
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 4
+    type: text
+    stem: "ร้านเสื้อผ้า อยากลองใส่เสื้อก่อนซื้อ เติมคำเดียว: *Can I ___ it on?*"
+    accepted: ["try"]
+    misconceptions:
+      - { match: "wear", feedback: "wear แปลว่าสวมใส่โดยทั่วไป ลองใส่ในร้านใช้ try on" }
+      - { match: "put", feedback: "put on แปลว่าสวม แต่ขออนุญาตลองใส่ใช้ Can I try it on?" }
+      - { match: "test", feedback: "ลองเสื้อผ้าใช้ try on ไม่ใช่ test" }
+    hints:
+      - "วลีกริยาที่แปลว่า ลองใส่"
+      - "___ on = ลองสวม"
+    solution: "*Can I **try** it on?* — *Of course. The fitting room is over there.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p018
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 4
+    type: mcq
+    stem: "เพื่อนใหม่บอกว่า *I'm from Nan.* คำตอบใดช่วยให้คุยต่อได้ดีที่สุด"
+    choices:
+      - { id: a, text: "Oh, really? What is Nan famous for?", correct: true, feedback: "ถูก แสดงความสนใจและถามต่อ" }
+      - { id: b, text: "OK.", feedback: "ตอบคำเดียวทำให้บทสนทนาจบ ควรถามต่อ" }
+      - { id: c, text: "I'm not from Nan.", feedback: "บอกข้อมูลแต่ไม่ได้ต่อเรื่อง ลองบอกว่ามาจากไหนแล้วถามกลับ" }
+      - { id: d, text: "Goodbye.", feedback: "เป็นการปิดบทสนทนาทันที" }
+    hints:
+      - "ขั้นที่ 3 ของบทสนทนาคือแสดงความสนใจและถามต่อ"
+      - "เลือกคำตอบที่มีคำถามตามมา"
+    solution: "***Oh, really? What is Nan famous for?*** แสดงความสนใจ (Really?) แล้วถามต่อ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p019
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 5
+    type: text
+    stem: "กินอาหารเสร็จแล้ว อยากขอใบเสร็จเพื่อจ่ายเงินอย่างสุภาพ (ที่คนไทยพูดว่า เช็คบิล) เขียนเต็มประโยค ขึ้นต้นด้วย Can I หรือ Could I"
+    accepted:
+      - "Can I have the bill, please?"
+      - "Can I have the bill, please"
+      - "Can I have the bill please?"
+      - "Can I have the bill please"
+      - "Could I have the bill, please?"
+      - "Could I have the bill, please"
+      - "Could I have the bill please?"
+      - "Could I have the bill please"
+      - "Can I have the check, please?"
+      - "Can I have the check, please"
+      - "Can I have the check please"
+      - "Can I have the check please?"
+      - "Could I have the check, please?"
+      - "Could I have the check, please"
+      - "Could I have the check please?"
+      - "Can I get the bill, please?"
+      - "Could I get the bill, please?"
+      - "Can I get the check, please?"
+      - "Could I get the check, please?"
+    misconceptions:
+      - { match: "Can I check bill, please?", feedback: "เช็คบิล เป็นคำที่คนไทยพูด ภาษาอังกฤษใช้ Can I have the bill, please?" }
+      - { match: "Can I check bill please?", feedback: "เช็คบิล เป็นคำที่คนไทยพูด ภาษาอังกฤษใช้ Can I have the bill, please?" }
+      - { match: "Can I check the bill, please?", feedback: "check the bill แปลว่าตรวจใบเสร็จ ถ้าขอใบเสร็จใช้ have the bill" }
+      - { match: "Can I have bill, please?", feedback: "ต้องมี the หน้า bill เพราะหมายถึงใบเสร็จของโต๊ะนี้" }
+      - { match: "Can I pay bill, please?", feedback: "ใช้ Can I have the bill, please? หรือ Can I pay, please?" }
+    hints:
+      - "ใบเสร็จค่าอาหารภาษาอังกฤษ (บริติช) คือ the bill อเมริกันใช้ the check"
+      - "Can I have + สิ่งที่ขอ + please?"
+    solution: "***Can I have the bill, please?*** (อเมริกันใช้ the check)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.speaking.everyday-conversations.p020
+    topics: [english.speaking.everyday-conversations]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "นักท่องเที่ยวถามว่า *Excuse me, where is the nearest MRT station?* แต่เราไม่รู้ เลือกคำตอบที่ **สุภาพและเหมาะสม** ทั้งหมด"
+    choices:
+      - { id: a, text: "Sorry, I don't know. You could ask at the information desk.", correct: true, feedback: "ถูก ขอโทษและแนะนำทางเลือก" }
+      - { id: b, text: "I'm not sure. Let me check on my phone.", correct: true, feedback: "ถูก บอกตรง ๆ และเสนอช่วย" }
+      - { id: c, text: "Sorry, I'm not from around here.", correct: true, feedback: "ถูก สุภาพและบอกเหตุผล" }
+      - { id: d, text: "I don't know. Go away.", feedback: "Go away เป็นคำไล่ ไม่สุภาพ" }
+      - { id: e, text: "Why you ask me?", feedback: "ไม่สุภาพและผิดไวยากรณ์" }
+      - { id: f, text: "No.", feedback: "ตอบคำเดียวห้วน ไม่ได้ตอบคำถาม" }
+    hints:
+      - "คำตอบที่ดีควรมี Sorry หรือ I'm not sure"
+      - "ถ้าเสนอทางช่วยได้ยิ่งดี"
+    solution: "สามข้อแรกสุภาพและเหมาะสม: ขอโทษ บอกว่าไม่แน่ใจ และเสนอทางช่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

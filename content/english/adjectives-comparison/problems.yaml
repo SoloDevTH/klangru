@@ -1,0 +1,351 @@
+problems:
+  - id: english.grammar.adjectives-comparison.p001
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 1
+    type: text
+    stem: "เขียนขั้นกว่าของ *tall*"
+    accepted: ["taller"]
+    misconceptions:
+      - { match: "more tall", feedback: "tall มีพยางค์เดียว เติม -er ไม่ใช้ more" }
+      - { match: "tallest", feedback: "tallest เป็นขั้นสุด ขั้นกว่าเติม -er" }
+      - { match: "taller than", feedback: "ถูกครึ่งหนึ่ง โจทย์ถามเฉพาะรูปขั้นกว่า taller" }
+    hints:
+      - "tall มีกี่พยางค์"
+      - "คำพยางค์เดียวเติม -er"
+    solution: "*tall → **taller***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p002
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 1
+    type: mcq
+    stem: "ขั้นสุดของ *big* คือข้อใด"
+    choices:
+      - { id: a, text: "the biggest", correct: true, feedback: "ถูก สระเดียว + พยัญชนะเดียว ซ้ำ g แล้วเติม -est และมี the" }
+      - { id: b, text: "the bigest", feedback: "big ลงท้ายด้วยสระเดียว + พยัญชนะเดียว ต้องซ้ำ g" }
+      - { id: c, text: "the most big", feedback: "big พยางค์เดียว เติม -est ไม่ใช้ most" }
+      - { id: d, text: "bigger", feedback: "bigger เป็นขั้นกว่า ขั้นสุดคือ the biggest" }
+    hints:
+      - "คำพยางค์เดียวเติม -est"
+      - "b-i-g สระเดียวตามด้วยพยัญชนะเดียว ต้องทำอย่างไรก่อนเติม"
+    solution: "*big → bigger → **the biggest***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p003
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำคุณศัพท์กับขั้นกว่า"
+    pairs:
+      - { left: "good", right: "better" }
+      - { left: "bad", right: "worse" }
+      - { left: "happy", right: "happier" }
+      - { left: "big", right: "bigger" }
+      - { left: "beautiful", right: "more beautiful" }
+    hints:
+      - "good กับ bad เป็นรูปไม่ตามกฎ"
+      - "คำยาวใช้ more คำลงท้าย y เปลี่ยนเป็น -ier"
+    solution: "good → better · bad → worse · happy → happier · big → bigger · beautiful → more beautiful"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p004
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 2
+    type: text
+    stem: "เติมขั้นกว่าของ hot: *Today is ___ than yesterday.*"
+    accepted: ["hotter"]
+    misconceptions:
+      - { match: "hoter", feedback: "hot สระเดียว + พยัญชนะเดียว ต้องซ้ำ t: hotter" }
+      - { match: "more hot", feedback: "hot พยางค์เดียว เติม -er" }
+      - { match: "hottest", feedback: "มี than จึงต้องใช้ขั้นกว่า ไม่ใช่ขั้นสุด" }
+    hints:
+      - "มีคำว่า than จึงใช้ขั้นกว่า"
+      - "h-o-t สระเดียว + พยัญชนะเดียว ซ้ำตัวท้ายก่อนเติม -er"
+    solution: "*Today is **hotter** than yesterday.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p005
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 2
+    type: mcq
+    stem: "ดูภาพความสูงของเด็กสามคน แล้วตอบ *Who is the tallest?*"
+    figure: { src: heights-quiz.svg, alt: "เด็กสามคนยืนข้างไม้วัดความสูงหน่วยเซนติเมตร Ploy สูง 140 cm, Mali สูง 147 cm, Ken สูง 152 cm" }
+    choices:
+      - { id: a, text: "Ken", correct: true, feedback: "ถูก Ken สูง 152 cm มากที่สุด" }
+      - { id: b, text: "Mali", feedback: "Mali สูง 147 cm สูงกว่า Ploy แต่เตี้ยกว่า Ken" }
+      - { id: c, text: "Ploy", feedback: "Ploy สูง 140 cm เตี้ยที่สุด (the shortest)" }
+    hints:
+      - "the tallest คือสูงที่สุด"
+      - "อ่านตัวเลขความสูงของแต่ละคน"
+    solution: "Ken 152 cm > Mali 147 cm > Ploy 140 cm: ***Ken** is the tallest.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p006
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 2
+    type: text
+    stem: "เติมขั้นกว่าของ expensive (สองคำ): *This bag is ___ than that one.*"
+    accepted: ["more expensive"]
+    misconceptions:
+      - { match: "expensiver", feedback: "expensive มีสามพยางค์ ใช้ more + expensive" }
+      - { match: "more expensiver", feedback: "ใช้ more แล้วไม่ต้องเติม -er" }
+      - { match: "most expensive", feedback: "มี than จึงใช้ขั้นกว่า more ไม่ใช่ most" }
+    hints:
+      - "นับพยางค์ ex-pen-sive"
+      - "คำยาวใช้ more นำหน้า"
+    solution: "*This bag is **more expensive** than that one.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p007
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 2
+    type: order
+    stem: "เรียงคำเป็นประโยค \"เธอมีหมาสีดำตัวใหญ่\""
+    items: ["She", "has", "a", "big", "black", "dog."]
+    hints:
+      - "คำคุณศัพท์อยู่หน้าคำนาม"
+      - "ขนาดมาก่อนสี"
+    solution: "*She has a big black dog.* ขนาด (big) → สี (black) → คำนาม (dog)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p008
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 3
+    type: numeric
+    stem: "ดูกราฟราคาผลไม้ (บาทต่อกิโลกรัม) แล้วตอบ: *How much more expensive is durian than mango?* (ตอบเป็นบาท)"
+    figure: { src: fruit-prices.svg, alt: "กราฟแท่งราคาผลไม้ต่อกิโลกรัม (ราคาสมมุติ) durian 160 บาท mango 50 บาท watermelon 25 บาท rambutan 40 บาท" }
+    answer: { value: 110, unit: "บาท" }
+    misconceptions:
+      - { match: 210, feedback: "more expensive than ถามว่าแพงกว่ากันเท่าไร ต้องลบ ไม่ใช่บวก" }
+      - { match: 135, feedback: "135 คือผลต่างของทุเรียนกับแตงโม คำถามเทียบกับมะม่วง" }
+    hints:
+      - "more expensive than = แพงกว่า"
+      - "นำราคาทุเรียนลบราคามะม่วง"
+    solution: "160 − 50 = **110** บาท: *Durian is 110 baht more expensive than mango.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p009
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 3
+    type: text
+    stem: "ดูกราฟราคาผลไม้ เติมขั้นกว่าของ cheap: *Watermelon is ___ than mango.*"
+    figure: { src: fruit-prices.svg, alt: "กราฟแท่งราคาผลไม้ต่อกิโลกรัม (ราคาสมมุติ) durian 160 บาท mango 50 บาท watermelon 25 บาท rambutan 40 บาท" }
+    accepted: ["cheaper"]
+    misconceptions:
+      - { match: "more cheap", feedback: "cheap พยางค์เดียว เติม -er" }
+      - { match: "cheapest", feedback: "มี than และเทียบสองอย่าง ใช้ขั้นกว่า" }
+      - { match: "more expensive", feedback: "แตงโม 25 บาท มะม่วง 50 บาท แตงโมถูกกว่า และโจทย์ให้ใช้ cheap" }
+    hints:
+      - "แตงโมกับมะม่วง อย่างไหนราคาต่ำกว่า"
+      - "cheap พยางค์เดียว"
+    solution: "แตงโม 25 บาท < มะม่วง 50 บาท: *Watermelon is **cheaper** than mango.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p010
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 3
+    type: mcq
+    stem: "เลือกข้อที่ถูก: *Ken is ___ Mali.* (เคนสูงกว่ามะลิ)"
+    choices:
+      - { id: a, text: "taller than", correct: true, feedback: "ถูก ขั้นกว่า + than" }
+      - { id: b, text: "more tall than", feedback: "tall พยางค์เดียว เติม -er ไม่ใช้ more" }
+      - { id: c, text: "taller then", feedback: "then แปลว่า แล้วก็ ต้องใช้ than" }
+      - { id: d, text: "the tallest than", feedback: "ขั้นสุดไม่ใช้กับ than ใช้ขั้นกว่า taller than" }
+    hints:
+      - "เทียบสองคน ใช้ขั้นกว่า"
+      - "ขั้นกว่าตามด้วยคำว่าอะไร"
+    solution: "*Ken is **taller than** Mali.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p011
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 3
+    type: text
+    stem: "เติมขั้นสุดของ high (สองคำ): *Doi Inthanon is ___ mountain in Thailand.*"
+    accepted: ["the highest"]
+    misconceptions:
+      - { match: "highest", feedback: "ขั้นสุดต้องมี the: the highest" }
+      - { match: "the most high", feedback: "high พยางค์เดียว ใช้ -est ไม่ใช้ most" }
+      - { match: "the higher", feedback: "เทียบทุกภูเขาในประเทศ ใช้ขั้นสุด -est" }
+      - { match: "higher", feedback: "เทียบทุกภูเขาในประเทศ ใช้ขั้นสุด the highest" }
+    hints:
+      - "in Thailand บอกว่าเทียบกับทุกภูเขาในประเทศ"
+      - "ขั้นสุด = the + -est"
+    solution: "*Doi Inthanon is **the highest** mountain in Thailand.* (ดอยอินทนนท์เป็นยอดเขาสูงที่สุดในประเทศไทย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p012
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 3
+    type: text
+    stem: "เติมคำเดียว: *Ploy is not as tall ___ Mali.*"
+    accepted: ["as"]
+    misconceptions:
+      - { match: "than", feedback: "โครงสร้างนี้คือ as ... as ไม่ใช้ than" }
+      - { match: "like", feedback: "โครงสร้างนี้คือ as ... as" }
+    hints:
+      - "หน้า tall มีคำว่า as"
+      - "not as + คำคุณศัพท์ + ?"
+    solution: "*Ploy is not as tall **as** Mali.* (มะลิสูงกว่าปลอย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p013
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 4
+    type: text
+    stem: "เติมขั้นกว่าของ good: *My English is ___ than last year.*"
+    accepted: ["better"]
+    misconceptions:
+      - { match: "gooder", feedback: "good เป็นรูปไม่ตามกฎ ขั้นกว่าคือ better" }
+      - { match: "more good", feedback: "good เป็นรูปไม่ตามกฎ ขั้นกว่าคือ better" }
+      - { match: "more better", feedback: "better เป็นขั้นกว่าอยู่แล้ว ไม่ต้องมี more" }
+      - { match: "best", feedback: "best เป็นขั้นสุด มี than จึงใช้ better" }
+    hints:
+      - "good เปลี่ยนรูปไม่ตามกฎ"
+      - "good → ? → the best"
+    solution: "*good → **better** → the best*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p014
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 4
+    type: mcq
+    stem: "ประโยคใดมีความหมาย **เหมือน** *Ken is taller than Ploy.*"
+    choices:
+      - { id: a, text: "Ploy is shorter than Ken.", correct: true, feedback: "ถูก ถ้าเคนสูงกว่า ปลอยก็เตี้ยกว่า" }
+      - { id: b, text: "Ploy is taller than Ken.", feedback: "สลับคนแล้วต้องเปลี่ยนคำคุณศัพท์เป็นคำตรงข้ามด้วย" }
+      - { id: c, text: "Ken is shorter than Ploy.", feedback: "ประโยคนี้บอกว่าเคนเตี้ยกว่า ตรงข้ามกับโจทย์" }
+      - { id: d, text: "Ploy is as tall as Ken.", feedback: "as tall as แปลว่าสูงเท่ากัน แต่โจทย์บอกว่าเคนสูงกว่า" }
+    hints:
+      - "ถ้าสลับคนในประโยค ต้องใช้คำคุณศัพท์อะไร"
+      - "คำตรงข้ามของ tall คือ short"
+    solution: "*Ken is taller than Ploy.* = ***Ploy is shorter than Ken.*** (= *Ploy is not as tall as Ken.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p015
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 4
+    type: text
+    stem: "เขียนขั้นกว่าของ *happy*"
+    accepted: ["happier"]
+    misconceptions:
+      - { match: "happyer", feedback: "พยัญชนะ + y เปลี่ยน y เป็น i ก่อนเติม -er" }
+      - { match: "more happy", feedback: "คำสองพยางค์ที่ลงท้าย y ส่วนใหญ่ใช้ -ier" }
+      - { match: "happiest", feedback: "happiest เป็นขั้นสุด ขั้นกว่าคือ happier" }
+    hints:
+      - "happy ลงท้ายด้วย พยัญชนะ + y"
+      - "เปลี่ยน y เป็น i แล้วเติม -er"
+    solution: "*happy → **happier** → the happiest*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p016
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 4
+    type: mcq
+    stem: "เลือกข้อที่ถูก: *Nida is the ___ student in our class.* (careful)"
+    choices:
+      - { id: a, text: "most careful", correct: true, feedback: "ถูก careful สองพยางค์ไม่ได้ลงท้าย y ใช้ most" }
+      - { id: b, text: "carefulest", feedback: "careful ไม่เติม -est ใช้ the most careful" }
+      - { id: c, text: "more careful", feedback: "มี the และ in our class จึงเป็นขั้นสุด ใช้ most" }
+      - { id: d, text: "most carefullest", feedback: "ใช้ most แล้วไม่ต้องเติม -est" }
+    hints:
+      - "the + ... + in our class คือขั้นสุด"
+      - "careful เติม -est ได้หรือไม่"
+    solution: "*Nida is the **most careful** student in our class.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p017
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 5
+    type: text
+    stem: "ดูกราฟราคาผลไม้ เขียนประโยคเปรียบเทียบราคาทุเรียนกับมะม่วงโดยใช้คำว่า expensive (เขียนเต็มประโยค ขึ้นต้นด้วย Durian)"
+    figure: { src: fruit-prices.svg, alt: "กราฟแท่งราคาผลไม้ต่อกิโลกรัม (ราคาสมมุติ) durian 160 บาท mango 50 บาท watermelon 25 บาท rambutan 40 บาท" }
+    accepted:
+      - "Durian is more expensive than mango."
+      - "Durian is more expensive than mango"
+      - "Durian is more expensive than mangoes."
+      - "Durian is more expensive than mangoes"
+      - "Durian is more expensive than the mango."
+      - "Durian is more expensive than the mango"
+    misconceptions:
+      - { match: "Durian is expensiver than mango.", feedback: "expensive มีสามพยางค์ ใช้ more expensive" }
+      - { match: "Durian is more expensive then mango.", feedback: "กว่า สะกดว่า than ไม่ใช่ then" }
+      - { match: "Durian more expensive than mango.", feedback: "ขาด is: Durian is more expensive than mango." }
+      - { match: "Durian is the most expensive than mango.", feedback: "เทียบสองอย่างใช้ขั้นกว่า more ... than" }
+    hints:
+      - "ทุเรียน 160 บาท มะม่วง 50 บาท อย่างไหนแพงกว่า"
+      - "ประธาน + is + more expensive + than + สิ่งที่เทียบ"
+    solution: "***Durian is more expensive than mango.*** (160 บาท > 50 บาท)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p018
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกประโยคที่ **ถูกต้อง** ทั้งหมด"
+    choices:
+      - { id: a, text: "Bangkok is bigger than Chiang Mai.", correct: true, feedback: "ถูก big → bigger + than" }
+      - { id: b, text: "My bag is as heavy as yours.", correct: true, feedback: "ถูก as + รูปเดิม + as" }
+      - { id: c, text: "This is the best mango in the market.", correct: true, feedback: "ถูก good → the best + in" }
+      - { id: d, text: "She is more taller than me.", feedback: "ใช้ more กับ -er ซ้อนกันไม่ได้: taller than me" }
+      - { id: e, text: "He is the most fast runner.", feedback: "fast พยางค์เดียว: the fastest runner" }
+      - { id: f, text: "My bag is as heavier as yours.", feedback: "ระหว่าง as ... as ใช้รูปเดิม heavy" }
+    hints:
+      - "ตรวจ -er/-est กับ more/most ตามจำนวนพยางค์"
+      - "as ... as ใช้คำคุณศัพท์รูปเดิม"
+    solution: "ถูกคือ *Bangkok is bigger than Chiang Mai.*, *My bag is as heavy as yours.*, *This is the best mango in the market.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p019
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 5
+    type: text
+    stem: "รถติดเย็นวันศุกร์หนักที่สุดในปี เติมขั้นสุดของ bad (สองคำ): *This is ___ traffic jam of the year.*"
+    accepted: ["the worst"]
+    misconceptions:
+      - { match: "the baddest", feedback: "bad เป็นรูปไม่ตามกฎ ขั้นสุดคือ the worst" }
+      - { match: "the most bad", feedback: "bad เป็นรูปไม่ตามกฎ ขั้นสุดคือ the worst" }
+      - { match: "worse", feedback: "worse เป็นขั้นกว่า ประโยคมี of the year จึงใช้ขั้นสุด the worst" }
+      - { match: "worst", feedback: "ขั้นสุดต้องมี the: the worst" }
+    hints:
+      - "of the year บอกว่าเทียบทั้งปี ใช้ขั้นสุด"
+      - "bad → worse → ?"
+    solution: "*This is **the worst** traffic jam of the year.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.adjectives-comparison.p020
+    topics: [english.grammar.adjectives-comparison]
+    difficulty: 3
+    type: numeric
+    stem: "ดูภาพความสูงของเด็กสามคน แล้วตอบ: *How much taller is Ken than Ploy?* (ตอบเป็นเซนติเมตร)"
+    figure: { src: heights-quiz.svg, alt: "เด็กสามคนยืนข้างไม้วัดความสูงหน่วยเซนติเมตร Ploy สูง 140 cm, Mali สูง 147 cm, Ken สูง 152 cm" }
+    answer: { value: 12, unit: "cm" }
+    misconceptions:
+      - { match: 5, feedback: "5 cm คือผลต่างของ Ken กับ Mali คำถามเทียบ Ken กับ Ploy" }
+      - { match: 292, feedback: "taller than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
+    hints:
+      - "Ken สูงเท่าไร Ploy สูงเท่าไร"
+      - "นำความสูงมาลบกัน"
+    solution: "152 − 140 = **12** cm: *Ken is 12 cm taller than Ploy.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

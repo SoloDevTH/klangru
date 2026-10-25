@@ -1,0 +1,74 @@
+id: math.functions.comparing-representations
+subject: math
+title: { th: อ่านและเปรียบเทียบฟังก์ชันจากตาราง กราฟ และสมการ, en: "Reading and comparing functions in tables, graphs and equations" }
+summary: แยกตัวแปรอิสระกับตัวแปรตาม ย้ายระหว่างตาราง กราฟ สมการ และคำพูด เปรียบเทียบอัตราการเปลี่ยนแปลง อ่านกราฟเป็นช่วง กราฟส่วนกลับ และกราฟเอกซ์โพเนนเชียล แล้วหาคำตอบโดยประมาณจากกราฟ
+difficulty: 4.5
+minutes: 40
+prerequisites: [math.functions.functions-intro, math.functions.linear-graphs]
+encompasses:
+  - { id: math.functions.linear-graphs, weight: 0.4 }
+  - { id: math.functions.functions-intro, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: distance-time.svg
+    alt: "กราฟระยะทางจากบ้าน (เมตร) กับเวลา (นาที) เป็นเส้นตรงจาก (0, 0) ขึ้นไปถึง (10, 800) จากนั้นราบที่ 800 เมตรจนถึงนาทีที่ 25 แล้วลงเป็นเส้นตรงถึง (33, 0)"
+    caption: "เดินไปตลาด 10 นาที อยู่ที่ตลาด 15 นาที แล้วเดินกลับ 8 นาที ส่วนที่ชันกว่าคือเดินเร็วกว่า"
+  - { type: check, problem: math.functions.comparing-representations.p005, prompt: "ส่วนที่ราบหมายถึงอะไร" }
+  - type: worked-example
+    title: เปรียบเทียบแผนค่าโทรศัพท์จากตารางกับสมการ
+    problem: "แผน A: ตาราง นาทีที่โทร $x = 0, 50, 100, 150$ ค่าบริการ $y = 99, 149, 199, 249$ บาท แผน B: $y = 0.8x + 129$ แผนใดเพิ่มเร็วกว่า และโทรกี่นาทีสองแผนจึงเท่ากัน"
+    steps:
+      - text: "อัตราของ A $= \\dfrac{149 - 99}{50 - 0} = \\dfrac{50}{50} = 1$ บาทต่อนาที ค่าเริ่มต้น 99 บาท"
+        why: "$x$ เพิ่มทีละ 50 จึงต้องหารผลต่างของ $y$ ด้วย 50"
+      - text: "แผน B: อัตรา 0.8 บาทต่อนาที ค่าเริ่มต้น 129 บาท"
+      - text: "A เพิ่มเร็วกว่า แต่เริ่มถูกกว่า ตั้งสมการ $x + 99 = 0.8x + 129$"
+      - text: "$0.2x = 30$ ได้ $x = 150$ นาที ทั้งสองแผนคิด 249 บาท"
+        why: "แทน $x = 150$ ในแผน B: $0.8(150) + 129 = 249$ ตรงกับตารางของ A"
+    answer: "แผน A เพิ่มเร็วกว่า สองแผนเท่ากันที่ 150 นาที (249 บาท) ถ้าโทรน้อยกว่า 150 นาที แผน A ถูกกว่า"
+  - type: figure
+    src: reciprocal-exponential.svg
+    alt: "กราฟสองภาพ ซ้ายคือ t = 120 หาร v เวลา (ชั่วโมง) กับอัตราเร็ว (km/h) เส้นโค้งลดลงจาก 6 ชั่วโมงที่ 20 km/h เหลือ 1 ชั่วโมงที่ 120 km/h ขวาคือ N = 100 คูณ 2 ยกกำลัง t จำนวนแบคทีเรียกับเวลา (ชั่วโมง) เส้นโค้งเพิ่มจาก 100 ที่เวลา 0 ช้า ๆ แล้วชันขึ้นจนถึง 3,200 ที่ 5 ชั่วโมง"
+    caption: "กราฟส่วนกลับเข้าใกล้แกนแต่ไม่แตะ กราฟเอกซ์โพเนนเชียลชันขึ้นเรื่อย ๆ"
+  - { type: check, problem: math.functions.comparing-representations.p006, prompt: "$x$ เพิ่มทีละเท่าไร" }
+  - type: worked-example
+    title: แก้สมการโดยประมาณจากกราฟ
+    problem: "ใช้กราฟของ $y = 100 \\times 2^x$ และ $y = 1{,}000$ ประมาณค่า $x$ ที่ทำให้ $100 \\times 2^x = 1{,}000$"
+    steps:
+      - text: "คำตอบคือค่า $x$ ของจุดตัดระหว่างเส้นโค้งกับเส้นแนวนอน $y = 1{,}000$"
+      - text: "จากกราฟ $x = 3$ ได้ 800 และ $x = 4$ ได้ 1,600 จุดตัดจึงอยู่ระหว่าง 3 กับ 4 ค่อนไปทาง 3"
+      - text: "ลองแทน $x = 3.3$: $100 \\times 2^{3.3} \\approx 985$ และ $x = 3.4$: $\\approx 1{,}056$"
+        why: "ค่าที่อ่านจากกราฟเป็นค่าประมาณ ควรแทนค่ากลับเพื่อตรวจและขยับให้แม่นขึ้น"
+      - text: "คำตอบอยู่ระหว่าง 3.3 กับ 3.4 ประมาณ $x \\approx 3.3$"
+    answer: "$x \\approx 3.3$ (ค่าที่แม่นกว่าคือประมาณ 3.32)"
+  - type: interactive
+    title: ทดลองเปลี่ยนความชันและค่าเริ่มต้น
+    caption: "เส้นสีแรกคือ y = mx + c เส้นที่สองคือ y = 2x + 1 ลองหาค่า m และ c ที่ทำให้สองเส้นขนานกัน ทับกัน และตัดกันที่ x = 3 แล้วตั้งข้อคาดการณ์จากสิ่งที่เห็น"
+    widget:
+      kind: function-plot
+      functions: ["m x + c", "2 x + 1"]
+      sliders:
+        - { name: m, min: -3, max: 3, step: 0.5, value: 1, label: ความชัน }
+        - { name: c, min: -5, max: 5, step: 1, value: 0, label: ค่าเริ่มต้น }
+      x: [-5, 5]
+      y: [-6, 10]
+glossary:
+  - { term: ตัวแปรอิสระ, definition: "ตัวแปรที่เราเลือกหรือเปลี่ยนเอง มักอยู่บนแกนนอน เรียกอีกชื่อว่าตัวแปรต้น" }
+  - { term: ตัวแปรตาม, definition: "ตัวแปรที่เปลี่ยนตามตัวแปรอิสระ มักอยู่บนแกนตั้ง" }
+  - { term: อัตราการเปลี่ยนแปลง, definition: "ผลต่างของตัวแปรตามหารด้วยผลต่างของตัวแปรอิสระ ในกราฟเส้นตรงคือความชัน" }
+  - { term: กราฟเป็นช่วง, definition: "กราฟที่ประกอบด้วยส่วนของเส้นตรงหลายส่วน แต่ละช่วงมีอัตราการเปลี่ยนแปลงต่างกัน" }
+  - { term: กราฟส่วนกลับ, definition: "กราฟของ y = k/x ผลคูณของ x กับ y คงที่ เส้นโค้งเข้าใกล้แกนแต่ไม่แตะ" }
+flashcards:
+  - { front: "อัตราการเปลี่ยนแปลงจากตาราง", back: "$\\dfrac{\\Delta y}{\\Delta x}$ ระวัง $x$ ที่เพิ่มทีละมากกว่า 1" }
+  - { front: "จุดอยู่บนกราฟของสมการเมื่อใด", back: "เมื่อแทนพิกัดแล้วสมการเป็นจริง" }
+  - { front: "แก้ $f(x) = g(x)$ ด้วยกราฟ", back: "หาค่า $x$ ของจุดตัดของกราฟ $y = f(x)$ และ $y = g(x)$" }
+  - { front: "กราฟระยะทางกับเวลา ส่วนที่ราบ", back: "อยู่กับที่ (อัตราเร็วเป็นศูนย์)" }
+references:
+  - { title: "Graph of a function", url: "https://en.wikipedia.org/wiki/Graph_of_a_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Piecewise linear function", url: "https://en.wikipedia.org/wiki/Piecewise_linear_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Dependent and independent variables", url: "https://en.wikipedia.org/wiki/Dependent_and_independent_variables", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
