@@ -1,0 +1,312 @@
+problems:
+  - id: math.number.fraction-compare.p001
+    topics: [math.number.fraction-compare]
+    difficulty: 1
+    type: numeric
+    stem: "แม่ซื้อไข่ไก่มา 6 ฟอง ใช้ทำไข่เจียวไป $\\tfrac12$ ของทั้งหมด ใช้ไข่ไปกี่ฟอง (ตอบเป็นจำนวนฟอง)"
+    answer: { value: 3, unit: ฟอง }
+    hints:
+      - "ครึ่งหนึ่งคือแบ่งเป็น 2 กองเท่า ๆ กัน แล้วเอามา 1 กอง"
+      - "หาร 6 ด้วย 2"
+    misconceptions:
+      - { match: 12, feedback: "นั่นคือสองเท่าของ 6 ครึ่งหนึ่งต้องน้อยกว่าเดิม" }
+      - { match: 2, feedback: "2 คือตัวส่วน ข้อนี้ต้องแบ่งไข่ 6 ฟองเป็น 2 กอง แล้วดูว่ากองหนึ่งมีกี่ฟอง" }
+    solution: "$\\tfrac12$ ของ 6 คือ $6 \\div 2 = 3$ ฟอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p002
+    topics: [math.number.fraction-compare]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำอ่านกับเศษส่วน"
+    pairs:
+      - { left: "ครึ่งหนึ่ง", right: "$\\tfrac12$" }
+      - { left: "หนึ่งในสาม", right: "$\\tfrac13$" }
+      - { left: "หนึ่งในสี่", right: "$\\tfrac14$" }
+      - { left: "สามในสี่", right: "$\\tfrac34$" }
+    hints:
+      - "\"ในสี่\" บอกว่าแบ่งเป็น 4 ส่วน คือตัวส่วน"
+      - "ตัวเลขข้างหน้าคำว่า \"ใน\" บอกว่าเอามากี่ส่วน คือตัวเศษ"
+    solution: "ครึ่งหนึ่ง = $\\tfrac12$ หนึ่งในสาม = $\\tfrac13$ หนึ่งในสี่ = $\\tfrac14$ สามในสี่ = $\\tfrac34$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p003
+    topics: [math.number.fraction-compare]
+    difficulty: 1
+    type: mcq
+    stem: "เติมเครื่องหมาย: $\\tfrac38 \\ \\square\\ \\tfrac58$"
+    choices:
+      - { id: a, text: "$<$", correct: true }
+      - { id: b, text: "$>$", feedback: "ตัวส่วนเท่ากัน ชิ้นขนาดเท่ากัน 3 ชิ้นน้อยกว่า 5 ชิ้น" }
+      - { id: c, text: "$=$", feedback: "ตัวส่วนเท่ากันแต่ตัวเศษต่างกัน จำนวนชิ้นจึงไม่เท่ากัน" }
+    hints:
+      - "ตัวส่วนเท่ากัน แปลว่าแต่ละชิ้นมีขนาดเท่ากัน"
+      - "เทียบจำนวนชิ้น คือตัวเศษ"
+    solution: "ทั้งสองแบ่งเป็น 8 ชิ้นเท่ากัน 3 ชิ้นน้อยกว่า 5 ชิ้น จึงได้ $\\tfrac38 < \\tfrac58$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p004
+    topics: [math.number.fraction-compare]
+    difficulty: 1
+    type: numeric
+    stem: "พับกระดาษแผ่นหนึ่งครึ่ง แล้วพับครึ่งอีกครั้ง เมื่อคลี่ออก กระดาษถูกแบ่งเป็นกี่ส่วนเท่า ๆ กัน"
+    answer: { value: 4, unit: ส่วน }
+    hints:
+      - "พับครั้งแรกได้ 2 ส่วน"
+      - "พับครั้งที่สอง แต่ละส่วนถูกแบ่งครึ่งอีก"
+    misconceptions:
+      - { match: 3, feedback: "พับครึ่งครั้งที่สองแบ่งทั้ง 2 ส่วนเดิมพร้อมกัน ไม่ได้เพิ่มแค่ 1 ส่วน" }
+      - { match: 2, feedback: "นั่นคือหลังพับครั้งแรก ยังมีการพับครั้งที่สองอีก" }
+    solution: "พับครั้งแรกได้ 2 ส่วน พับครั้งที่สองแบ่งแต่ละส่วนเป็นครึ่ง ได้ $2 \\times 2 = 4$ ส่วน แต่ละส่วนคือ $\\tfrac14$ ของกระดาษ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p005
+    topics: [math.number.fraction-compare]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "รูปใดระบายสี $\\tfrac14$ ของรูป (เลือกทุกข้อที่ถูก)"
+    figure: { src: equal-parts.svg, alt: "รูป A สี่เหลี่ยมจัตุรัสแบ่งเป็นแถบแนวตั้ง 4 แถบกว้างเท่ากัน ระบายสี 1 แถบ รูป B วงกลมแบ่งเป็น 4 ชิ้นที่มีขนาดไม่เท่ากัน ระบายสีชิ้นเล็กที่สุด 1 ชิ้น รูป C สี่เหลี่ยมผืนผ้าลากเส้นทแยงมุมทั้งสองเส้น ได้สามเหลี่ยม 4 ชิ้น ระบายสีสามเหลี่ยมด้านขวา 1 ชิ้น รูป D สี่เหลี่ยมจัตุรัสแบ่งเป็นแถบแนวตั้ง 3 แถบเท่ากัน ระบายสี 1 แถบ" }
+    choices:
+      - { id: a, text: "A", correct: true }
+      - { id: b, text: "B", feedback: "B แบ่งเป็น 4 ชิ้นก็จริง แต่ชิ้นมีขนาดไม่เท่ากัน จึงไม่ใช่หนึ่งในสี่" }
+      - { id: c, text: "C", correct: true }
+      - { id: d, text: "D", feedback: "D แบ่งเป็น 3 ส่วนเท่ากัน ส่วนที่ระบายคือ $\\tfrac13$" }
+    hints:
+      - "$\\tfrac14$ ต้องแบ่งเป็น 4 ส่วนที่มีขนาดเท่ากัน"
+      - "ชิ้นที่ขนาดเท่ากันไม่จำเป็นต้องมีรูปร่างเหมือนกัน ลองคิดพื้นที่ของสามเหลี่ยมใน C"
+    solution: "A แบ่งเป็น 4 แถบเท่ากัน ✓ C เส้นทแยงมุมตัดกันตรงกลาง สามเหลี่ยมทุกชิ้นมีพื้นที่เท่ากันคือ $\\tfrac14$ ของสี่เหลี่ยม (แม้รูปร่างต่างกันสองแบบ) ✓ B ชิ้นไม่เท่ากัน ✗ D เป็น $\\tfrac13$ ✗"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p006
+    topics: [math.number.fraction-compare]
+    difficulty: 2
+    type: mcq
+    stem: "เติมเครื่องหมาย: $\\tfrac35 \\ \\square\\ \\tfrac38$"
+    choices:
+      - { id: a, text: "$>$", correct: true }
+      - { id: b, text: "$<$", feedback: "ตัวส่วนมากกว่าไม่ได้แปลว่ามากกว่า แบ่งเป็น 8 ชิ้น ชิ้นเล็กกว่าแบ่งเป็น 5 ชิ้น" }
+      - { id: c, text: "$=$", feedback: "ตัวเศษเท่ากันคือมีจำนวนชิ้นเท่ากัน แต่ชิ้นมีขนาดต่างกัน" }
+    hints:
+      - "ตัวเศษเท่ากัน แปลว่ามีจำนวนชิ้นเท่ากัน"
+      - "ชิ้นแบบไหนใหญ่กว่า: แบ่งเป็น 5 ชิ้น หรือแบ่งเป็น 8 ชิ้น"
+    solution: "ทั้งสองมี 3 ชิ้น แต่ชิ้นละ $\\tfrac15$ ใหญ่กว่าชิ้นละ $\\tfrac18$ จึงได้ $\\tfrac35 > \\tfrac38$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p007
+    topics: [math.number.fraction-compare]
+    difficulty: 2
+    type: numeric
+    stem: "ป้าขายส้มโอ มีส้มโอ 12 ลูก ขายไปได้ $\\tfrac23$ ของทั้งหมด ขายไปกี่ลูก (ตอบเป็นจำนวนลูก)"
+    answer: { value: 8, unit: ลูก }
+    hints:
+      - "หา $\\tfrac13$ ของ 12 ก่อน โดยแบ่งเป็น 3 กองเท่า ๆ กัน"
+      - "$\\tfrac23$ คือ 2 กอง"
+    misconceptions:
+      - { match: 4, feedback: "นั่นคือ $\\tfrac13$ ของ 12 ข้อนี้ต้องการ 2 ส่วนใน 3 ส่วน" }
+      - { match: 18, feedback: "คูณด้วย 3 แล้วหารด้วย 2 กลับกัน ต้องหารด้วยตัวส่วน 3 แล้วคูณด้วยตัวเศษ 2" }
+    solution: "$\\tfrac13$ ของ 12 คือ $12 \\div 3 = 4$ ลูก ดังนั้น $\\tfrac23$ ของ 12 คือ $2 \\times 4 = 8$ ลูก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p008
+    topics: [math.number.fraction-compare]
+    difficulty: 2
+    type: mcq
+    stem: "จุด $P$ บนเส้นจำนวนแทนเศษส่วนใด"
+    figure: { src: number-line-p.svg, alt: "เส้นจำนวนจาก 0 ถึง 1 มีขีดแบ่ง 7 ขีด รวมขีดที่ 0 และ 1 แบ่งช่วงจาก 0 ถึง 1 เป็น 6 ช่วงเท่ากัน จุด P อยู่ที่ขีดที่ 5 นับจาก 0 คือก่อนถึง 1 หนึ่งช่วง" }
+    choices:
+      - { id: a, text: "$\\tfrac56$", correct: true }
+      - { id: b, text: "$\\tfrac57$", feedback: "เส้นนี้มี 7 ขีด แต่มีแค่ 6 ช่วง ตัวส่วนคือจำนวนช่วงจาก 0 ถึง 1 ไม่ใช่จำนวนขีด" }
+      - { id: c, text: "$\\tfrac65$", feedback: "สลับตัวเศษกับตัวส่วน $\\tfrac65$ มากกว่า 1 แต่ $P$ อยู่ก่อนถึง 1" }
+      - { id: d, text: "$\\tfrac16$", feedback: "$P$ อยู่ห่างจาก 1 หนึ่งช่วง แต่ต้องนับจาก 0 ซึ่งห่าง 5 ช่วง" }
+    hints:
+      - "นับจำนวน ช่วง (ไม่ใช่ขีด) จาก 0 ถึง 1 ได้ตัวส่วน"
+      - "นับว่าจาก 0 ไปถึง $P$ มีกี่ช่วง ได้ตัวเศษ"
+    solution: "0 ถึง 1 แบ่งเป็น 6 ช่วงเท่ากัน ช่วงละ $\\tfrac16$ จาก 0 ถึง $P$ มี 5 ช่วง $P$ จึงแทน $\\tfrac56$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p009
+    topics: [math.number.fraction-compare]
+    difficulty: 2
+    type: expression
+    stem: "เขียนจำนวนคละ $2\\tfrac13$ เป็นเศษเกิน"
+    answer: { latex: "\\frac{7}{3}", variables: [] }
+    hints:
+      - "1 เต็มเท่ากับ $\\tfrac33$ ดังนั้น 2 เต็มเท่ากับกี่ส่วนสาม"
+      - "นำส่วนสามของจำนวนเต็มมาบวกกับ $\\tfrac13$"
+    misconceptions:
+      - { match: "\\frac{6}{3}", feedback: "$\\tfrac63$ คือ 2 เต็มพอดี ยังต้องบวก $\\tfrac13$ อีก" }
+      - { match: "\\frac{5}{3}", feedback: "นำ $2 + 3$ มาเป็นตัวเศษ ต้องคูณ $2 \\times 3$ ก่อน แล้วบวกตัวเศษ 1" }
+    solution: "$2\\tfrac13 = \\tfrac63 + \\tfrac13 = \\tfrac{2 \\times 3 + 1}{3} = \\tfrac73$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p010
+    topics: [math.number.fraction-compare]
+    difficulty: 3
+    type: mcq
+    stem: "เติมเครื่องหมาย: $\\tfrac34 \\ \\square\\ \\tfrac58$"
+    choices:
+      - { id: a, text: "$>$", correct: true }
+      - { id: b, text: "$<$", feedback: "ตัวเศษ 5 มากกว่า 3 แต่ตัวส่วนต่างกัน ต้องทำให้ตัวส่วนเท่ากันก่อน: $\\tfrac34 = \\tfrac68$" }
+      - { id: c, text: "$=$", feedback: "$\\tfrac34 = \\tfrac68$ ซึ่งไม่เท่ากับ $\\tfrac58$" }
+    hints:
+      - "8 เป็นพหุคูณของ 4 ขยาย $\\tfrac34$ ให้มีตัวส่วนเป็น 8"
+      - "คูณทั้งตัวเศษและตัวส่วนด้วย 2"
+    solution: "$\\tfrac34 = \\tfrac{3 \\times 2}{4 \\times 2} = \\tfrac68$ และ $\\tfrac68 > \\tfrac58$ จึงได้ $\\tfrac34 > \\tfrac58$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p011
+    topics: [math.number.fraction-compare]
+    difficulty: 3
+    type: order
+    stem: "เรียงเศษส่วนจากน้อยไปมาก"
+    items:
+      - "$\\tfrac13$"
+      - "$\\tfrac12$"
+      - "$\\tfrac23$"
+      - "$\\tfrac56$"
+    hints:
+      - "6 เป็นพหุคูณของทั้ง 2 และ 3 ทำทุกจำนวนให้มีตัวส่วนเป็น 6"
+      - "แล้วเทียบตัวเศษ"
+    solution: "$\\tfrac13 = \\tfrac26$, $\\tfrac12 = \\tfrac36$, $\\tfrac23 = \\tfrac46$, $\\tfrac56$ เรียงได้ $\\tfrac13 < \\tfrac12 < \\tfrac23 < \\tfrac56$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p012
+    topics: [math.number.fraction-compare]
+    difficulty: 3
+    type: numeric
+    stem: "ต้องการเปรียบเทียบ $\\tfrac56$ กับ $\\tfrac34$ โดยทำให้ตัวส่วนเท่ากัน ตัวส่วนที่น้อยที่สุดที่ใช้ได้คือเท่าใด"
+    answer: { value: 12 }
+    hints:
+      - "ตัวส่วนร่วมต้องเป็นพหุคูณของทั้ง 6 และ 4"
+      - "ไล่พหุคูณของ 6: 6, 12, 18, ... ตัวแรกที่ 4 หารลงตัวคือคำตอบ"
+    misconceptions:
+      - { match: 24, feedback: "$6 \\times 4 = 24$ ใช้ได้ แต่ไม่ใช่ตัวที่น้อยที่สุด 12 ก็หารด้วยทั้ง 6 และ 4 ลงตัว" }
+      - { match: 10, feedback: "นำ $6 + 4$ ตัวส่วนร่วมต้องเป็นพหุคูณร่วม ไม่ใช่ผลบวก" }
+    solution: "ค.ร.น. ของ 6 กับ 4 คือ 12 ได้ $\\tfrac56 = \\tfrac{10}{12}$ และ $\\tfrac34 = \\tfrac{9}{12}$ จึงได้ $\\tfrac56 > \\tfrac34$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p013
+    topics: [math.number.fraction-compare]
+    difficulty: 3
+    type: mcq
+    stem: "นิดกินพิซซ่าถาดใหญ่ไป $\\tfrac12$ ถาด หน่อยกินพิซซ่าถาดเล็กไป $\\tfrac34$ ถาด สรุปได้หรือไม่ว่าหน่อยกินพิซซ่ามากกว่านิด"
+    choices:
+      - { id: a, text: "สรุปไม่ได้ เพราะพิซซ่าสองถาดมีขนาดไม่เท่ากัน", correct: true }
+      - { id: b, text: "สรุปได้ เพราะ $\\tfrac34 > \\tfrac12$", feedback: "$\\tfrac34 > \\tfrac12$ จริงเมื่อเป็นเศษส่วนของสิ่งที่ขนาดเท่ากัน ครึ่งถาดใหญ่อาจมากกว่าสามในสี่ถาดเล็ก" }
+      - { id: c, text: "สรุปได้ว่านิดกินมากกว่า เพราะถาดใหญ่กว่า", feedback: "ถ้าไม่รู้ว่าถาดใหญ่ใหญ่กว่าเท่าใด ก็สรุปทางนี้ไม่ได้เช่นกัน" }
+    hints:
+      - "การเทียบเศษส่วนใช้ได้เมื่อเป็นส่วนของ \"ทั้งหมด\" ที่ขนาดเท่ากัน"
+      - "ลองนึกว่าถาดใหญ่ใหญ่กว่าถาดเล็กมาก ๆ"
+    solution: "เศษส่วนบอกส่วนของทั้งหมด ถ้าทั้งหมดไม่เท่ากัน เทียบเศษส่วนตรง ๆ ไม่ได้ เช่น ถ้าถาดใหญ่หนัก 1,000 กรัม ถาดเล็กหนัก 400 กรัม นิดกิน 500 กรัม หน่อยกิน 300 กรัม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p014
+    topics: [math.number.fraction-compare]
+    difficulty: 3
+    type: numeric
+    stem: "ห้องเรียนมีนักเรียน 35 คน เป็นนักเรียนหญิง $\\tfrac35$ ของห้อง มีนักเรียนหญิงกี่คน (ตอบเป็นจำนวนคน)"
+    answer: { value: 21, unit: คน }
+    hints:
+      - "หา $\\tfrac15$ ของ 35 ก่อน"
+      - "แล้วคูณด้วย 3"
+    misconceptions:
+      - { match: 7, feedback: "นั่นคือ $\\tfrac15$ ของห้อง ข้อนี้ต้องการ 3 ส่วนใน 5 ส่วน" }
+      - { match: 14, feedback: "นั่นคือนักเรียนชาย ($\\tfrac25$ ของห้อง)" }
+    solution: "$\\tfrac15$ ของ 35 คือ $35 \\div 5 = 7$ คน นักเรียนหญิง $\\tfrac35$ คือ $3 \\times 7 = 21$ คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p015
+    topics: [math.number.fraction-compare]
+    difficulty: 4
+    type: mcq
+    stem: "เติมเครื่องหมาย: $\\tfrac78 \\ \\square\\ \\tfrac67$"
+    choices:
+      - { id: a, text: "$>$", correct: true }
+      - { id: b, text: "$<$", feedback: "ลองดูส่วนที่ขาดไปจาก 1: $\\tfrac78$ ขาด $\\tfrac18$ ส่วน $\\tfrac67$ ขาด $\\tfrac17$ ซึ่งมากกว่า" }
+      - { id: c, text: "$=$", feedback: "ทั้งสองขาดจาก 1 อยู่หนึ่งชิ้น แต่ชิ้นมีขนาดไม่เท่ากัน" }
+    hints:
+      - "ทั้งสองจำนวนขาดไปจาก 1 อยู่หนึ่งชิ้น"
+      - "ชิ้นใดใหญ่กว่า: $\\tfrac18$ หรือ $\\tfrac17$ จำนวนที่ขาดน้อยกว่าจะมากกว่า"
+    solution: "$1 - \\tfrac78 = \\tfrac18$ และ $1 - \\tfrac67 = \\tfrac17$ เพราะ $\\tfrac18 < \\tfrac17$ จำนวน $\\tfrac78$ จึงใกล้ 1 มากกว่า ได้ $\\tfrac78 > \\tfrac67$ (ตรวจด้วยตัวส่วน 56: $\\tfrac{49}{56} > \\tfrac{48}{56}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p016
+    topics: [math.number.fraction-compare]
+    difficulty: 4
+    type: order
+    stem: "เรียงจากน้อยไปมาก"
+    items:
+      - "$\\tfrac{17}{8}$"
+      - "$2\\tfrac14$"
+      - "$\\tfrac73$"
+      - "$2\\tfrac25$"
+    hints:
+      - "แปลงเศษเกินเป็นจำนวนคละ: ทุกจำนวนมีจำนวนเต็มเป็น 2"
+      - "เทียบเฉพาะส่วนที่เป็นเศษส่วน: $\\tfrac18, \\tfrac14, \\tfrac13, \\tfrac25$"
+    solution: "$\\tfrac{17}{8} = 2\\tfrac18$ และ $\\tfrac73 = 2\\tfrac13$ ทุกจำนวนมี 2 เต็ม เทียบส่วนที่เหลือด้วยตัวส่วน 120: $\\tfrac18 = \\tfrac{15}{120}$, $\\tfrac14 = \\tfrac{30}{120}$, $\\tfrac13 = \\tfrac{40}{120}$, $\\tfrac25 = \\tfrac{48}{120}$ จึงเรียงได้ $\\tfrac{17}{8} < 2\\tfrac14 < \\tfrac73 < 2\\tfrac25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p017
+    topics: [math.number.fraction-compare]
+    difficulty: 4
+    type: expression
+    stem: "เศษส่วนใดอยู่กึ่งกลางระหว่าง $\\tfrac14$ กับ $\\tfrac12$ บนเส้นจำนวนพอดี"
+    answer: { latex: "\\frac{3}{8}", variables: [] }
+    hints:
+      - "เขียน $\\tfrac14$ และ $\\tfrac12$ ให้มีตัวส่วนเท่ากัน แล้วแบ่งช่วงระหว่างกันให้ละเอียดขึ้น"
+      - "$\\tfrac14 = \\tfrac28$ และ $\\tfrac12 = \\tfrac48$ จำนวนใดอยู่ตรงกลาง"
+    misconceptions:
+      - { match: "\\frac{2}{6}", feedback: "บวกตัวเศษกับตัวเศษ ตัวส่วนกับตัวส่วน ($\\tfrac{1+1}{4+2}$) ไม่ได้ให้จุดกึ่งกลาง $\\tfrac26 = \\tfrac13$ ไม่ได้ห่างจากสองข้างเท่ากัน" }
+      - { match: "\\frac{3}{4}", feedback: "$\\tfrac34 = \\tfrac68$ มากกว่า $\\tfrac12$ จึงไม่ได้อยู่ระหว่าง" }
+    solution: "$\\tfrac14 = \\tfrac28$ และ $\\tfrac12 = \\tfrac48$ จำนวนที่อยู่ตรงกลางคือ $\\tfrac38$ (ห่างจากทั้งสองข้าง $\\tfrac18$ เท่ากัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p018
+    topics: [math.number.fraction-compare]
+    difficulty: 5
+    type: mcq
+    stem: "สามพี่น้องออมเงินซื้อจักรยานคันเดียวกันคนละคัน ราคาเท่ากัน ตอนนี้ ต้นออมได้ $\\tfrac35$ ของราคา ตาลออมได้ $\\tfrac58$ และตูนออมได้ $\\tfrac{7}{12}$ ใครออมได้ใกล้ราคาจักรยานมากที่สุด"
+    choices:
+      - { id: a, text: "ตาล", correct: true }
+      - { id: b, text: "ตูน", feedback: "ตัวเศษ 7 และตัวส่วน 12 มากที่สุด แต่ไม่ได้แปลว่าเศษส่วนมากที่สุด $\\tfrac{7}{12} = \\tfrac{70}{120}$ น้อยที่สุด" }
+      - { id: c, text: "ต้น", feedback: "$\\tfrac35 = \\tfrac{72}{120}$ ยังน้อยกว่า $\\tfrac58 = \\tfrac{75}{120}$" }
+    hints:
+      - "จักรยานราคาเท่ากัน จึงเทียบเศษส่วนได้ตรง ๆ"
+      - "ใช้ตัวส่วนร่วม 120 (ค.ร.น. ของ 5, 8, 12)"
+    solution: "$\\tfrac35 = \\tfrac{72}{120}$, $\\tfrac58 = \\tfrac{75}{120}$, $\\tfrac{7}{12} = \\tfrac{70}{120}$ ตาลออมได้มากที่สุด จึงใกล้ราคาจักรยานที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.fraction-compare.p019
+    topics: [math.number.fraction-compare]
+    difficulty: 5
+    type: numeric
+    stem: "จำนวนนับ $n$ ที่ทำให้ $\\tfrac25 < \\tfrac{n}{12} < \\tfrac34$ มีทั้งหมดกี่จำนวน"
+    answer: { value: 4 }
+    hints:
+      - "เขียน $\\tfrac34$ ให้มีตัวส่วน 12 ได้ทันที ส่วน $\\tfrac25$ ลองทำให้เป็นตัวส่วน 60 ทั้งหมด"
+      - "$\\tfrac25 = \\tfrac{24}{60}$, $\\tfrac{n}{12} = \\tfrac{5n}{60}$, $\\tfrac34 = \\tfrac{45}{60}$ หา $n$ ที่ $24 < 5n < 45$"
+    misconceptions:
+      - { match: 5, feedback: "นับ $n = 9$ ด้วย แต่ $\\tfrac{9}{12} = \\tfrac34$ พอดี ซึ่งไม่ได้น้อยกว่า $\\tfrac34$" }
+      - { match: 3, feedback: "ลองตรวจ $n = 5$: $\\tfrac{5}{12} = \\tfrac{25}{60}$ มากกว่า $\\tfrac{24}{60}$ จึงนับด้วย" }
+    solution: "ใช้ตัวส่วน 60: $24 < 5n < 45$ ได้ $n = 5, 6, 7, 8$ ($5n = 25, 30, 35, 40$) มี 4 จำนวน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

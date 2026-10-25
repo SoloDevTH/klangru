@@ -1,0 +1,74 @@
+id: physics.units.experiments-graphs
+subject: physics
+title: { th: ธรรมชาติของฟิสิกส์และการวิเคราะห์ผลการทดลองด้วยกราฟ, en: The nature of physics and analysing experimental results with graphs }
+summary: ฟิสิกส์หาความรู้ด้วยการสังเกต การทดลอง และแบบจำลอง ประวัติแนวคิดที่นำไปสู่เทคโนโลยี การรายงานผลพร้อมความไม่แน่นอน และการอ่านความชันกับจุดตัดแกนของกราฟเส้นตรง
+difficulty: 3.5
+minutes: 35
+prerequisites: [physics.units.measurement, math.functions.linear-graphs]
+encompasses:
+  - { id: physics.units.measurement, weight: 0.4 }
+  - { id: math.functions.linear-graphs, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กราฟความยาวสปริงกับแรงดึง
+    src: spring-graph.svg
+    alt: "กราฟความยาวสปริง L (cm) บนแกนตั้ง กับแรงดึง F (N) บนแกนนอน จุดข้อมูลหกจุดที่แรง 0 ถึง 5 N ความยาว 10.0, 12.1, 13.9, 16.1, 18.0, 20.0 cm มีแถบความคลาดเคลื่อนสั้น ๆ เส้นตรงที่เหมาะสมตัดแกนตั้งที่ 10 cm มีป้ายว่าความยาวเดิม สามเหลี่ยมเส้นประจากจุด (1, 12) ถึง (4.5, 19) บนเส้น ระยะแนวนอน ΔF = 3.5 N ระยะแนวตั้ง ΔL = 7 cm"
+    caption: "ความชัน $= \\dfrac{7\\ \\mathrm{cm}}{3.5\\ \\mathrm{N}} = 2.0\\ \\mathrm{cm/N}$ จุดตัดแกนคือความยาวเดิมของสปริง $10\\ \\mathrm{cm}$"
+  - type: worked-example
+    title: วิเคราะห์กราฟสปริง
+    problem: "จากกราฟความยาวสปริงกับแรงดึงด้านบน หาความชันพร้อมหน่วย จุดตัดแกน สมการของเส้น และค่าคงที่สปริง $k$ ในหน่วย N/m"
+    steps:
+      - text: "เลือกสองจุดบนเส้นที่อยู่ห่างกัน: $(1\\ \\mathrm{N}, 12\\ \\mathrm{cm})$ และ $(4.5\\ \\mathrm{N}, 19\\ \\mathrm{cm})$"
+        why: "จุดบนเส้นเฉลี่ยความคลาดเคลื่อนของทุกจุดแล้ว ส่วนจุดข้อมูลแต่ละจุดมีความคลาดเคลื่อนของตัวเอง"
+      - text: "ความชัน $= \\dfrac{19 - 12}{4.5 - 1} = \\dfrac{7}{3.5} = 2.0\\ \\mathrm{cm/N}$"
+      - text: "จุดตัดแกนตั้งอ่านได้ $10\\ \\mathrm{cm}$ คือความยาวเดิมเมื่อไม่มีแรงดึง สมการคือ $L = 2.0F + 10$"
+      - text: "ค่าคงที่สปริงคือแรงต่อระยะยืด เป็นส่วนกลับของความชัน: $k = \\dfrac{1}{2.0\\ \\mathrm{cm/N}} = 0.50\\ \\mathrm{N/cm} = 50\\ \\mathrm{N/m}$"
+        why: "1 m = 100 cm แรง 0.50 N ต่อ 1 cm จึงเป็น 50 N ต่อ 100 cm"
+    answer: "ความชัน $2.0\\ \\mathrm{cm/N}$ จุดตัดแกน $10\\ \\mathrm{cm}$ สมการ $L = 2.0F + 10$ และ $k = 50\\ \\mathrm{N/m}$"
+  - { type: check, problem: physics.units.experiments-graphs.p008, prompt: "ลองตอบก่อนอ่านต่อ" }
+  - type: figure
+    title: ทำกราฟลูกตุ้มให้เป็นเส้นตรง
+    src: pendulum-linearize.svg
+    alt: "สองกราฟเคียงกัน กราฟซ้ายคือคาบ T (s) กับความยาวเชือก L (m) จุดข้อมูลห้าจุดที่ L = 0.2, 0.4, 0.6, 0.8, 1.0 m คาบ 0.90, 1.27, 1.55, 1.80, 2.01 s เรียงเป็นเส้นโค้งที่ชันน้อยลงเรื่อย ๆ กราฟขวาคือ T² (s²) กับ L จุดเดียวกันเมื่อยกกำลังสองคาบ ได้ 0.81, 1.61, 2.40, 3.24, 4.04 s² เรียงเป็นเส้นตรงผ่านจุดกำเนิด ความชันประมาณ 4.04 s²/m"
+    caption: "ยกกำลังสองคาบแล้วกราฟกลายเป็นเส้นตรง จึงหาความชันได้แม่นยำ"
+  - type: worked-example
+    title: หาความเร่งโน้มถ่วงจากกราฟลูกตุ้ม
+    problem: "จากข้อมูลลูกตุ้มด้านบน ($L$ = 0.20–1.00 m, $T$ = 0.90–2.01 s) หาค่า $g$"
+    steps:
+      - text: "จาก $T = 2\\pi\\sqrt{\\tfrac{L}{g}}$ ยกกำลังสองได้ $T^2 = \\left(\\dfrac{4\\pi^2}{g}\\right)L$ จึงเขียนกราฟ $T^2$ กับ $L$"
+        why: "กราฟ $T$ กับ $L$ เป็นเส้นโค้ง หาความชันเดียวไม่ได้ แต่ $T^2$ แปรผันตรงกับ $L$"
+      - text: "คำนวณ $T^2$: 0.81, 1.61, 2.40, 3.24, 4.04 s² แล้วลงจุดกับ $L$ ได้เส้นตรงผ่านจุดกำเนิด"
+      - text: "ความชันของเส้นที่เหมาะสม $\\approx \\dfrac{4.04 - 0}{1.00 - 0} = 4.04\\ \\mathrm{s^2/m}$"
+      - text: "$g = \\dfrac{4\\pi^2}{\\text{ความชัน}} = \\dfrac{39.48}{4.04} \\approx 9.8\\ \\mathrm{m/s^2}$"
+        why: "ความชันเท่ากับ $\\tfrac{4\\pi^2}{g}$ จัดรูปใหม่ให้ $g$ อยู่ข้างเดียว"
+    answer: "$g \\approx 9.8\\ \\mathrm{m/s^2}$"
+  - { type: check, problem: physics.units.experiments-graphs.p006, prompt: "ใช้วิธีหาความชันจากสองจุดบนเส้น" }
+  - type: simulation
+    title: ลากเส้นที่เหมาะสมกับข้อมูล (PhET Curve Fitting)
+    url: https://phet.colorado.edu/en/simulations/curve-fitting
+    provider: phet
+    note: "ลากจุดข้อมูลลงบนกราฟ เลือกเส้นตรง (Linear) แล้วดูว่าเส้นที่เหมาะสมผ่านกลางกลุ่มจุดอย่างไร ลองเพิ่มแถบความคลาดเคลื่อนของจุด (ลากขีดบนจุด) และดูว่าเส้นเปลี่ยนไปอย่างไร"
+glossary:
+  - { term: สมมติฐาน, definition: "คำตอบที่คาดไว้ล่วงหน้าของคำถามทางวิทยาศาสตร์ ซึ่งทดสอบได้ด้วยการทดลอง" }
+  - { term: ทฤษฎี, definition: "คำอธิบายที่ผ่านการทดสอบด้วยหลักฐานจำนวนมาก ใช้อธิบายและทำนายปรากฏการณ์ได้กว้าง และปรับได้เมื่อมีหลักฐานใหม่" }
+  - { term: ความไม่แน่นอน, definition: "ช่วงที่ค่าจริงน่าจะอยู่ เขียนเป็น ค่า ± ความไม่แน่นอน ประมาณจากครึ่งหนึ่งของช่วงข้อมูลที่วัดซ้ำ" }
+  - { term: เส้นตรงที่เหมาะสมที่สุด, definition: "เส้นตรงเส้นเดียวที่ลากให้จุดข้อมูลอยู่สองข้างเส้นพอ ๆ กัน ใช้แทนความสัมพันธ์ของข้อมูล" }
+  - { term: ความชัน, definition: "อัตราส่วน $\\tfrac{\\Delta y}{\\Delta x}$ ของเส้นตรง มีหน่วยเป็นหน่วยแกนตั้งต่อหน่วยแกนนอน" }
+  - { term: การทำให้เป็นเส้นตรง, definition: "การเลือกปริมาณที่ใช้เขียนกราฟ เช่น $T^2$ แทน $T$ ให้ความสัมพันธ์ที่โค้งกลายเป็นเส้นตรง" }
+flashcards:
+  - { front: "ขั้นตอนหาความรู้ทางวิทยาศาสตร์", back: "สังเกตและตั้งคำถาม → ตั้งสมมติฐาน → ทดลอง → วิเคราะห์ข้อมูล → สรุปผลและสร้างแบบจำลอง" }
+  - { front: "หาความชันของกราฟจากผลการทดลองอย่างไร", back: "ใช้สองจุดบนเส้นที่เหมาะสมที่อยู่ห่างกัน ความชัน = Δy/Δx พร้อมหน่วยแกนตั้งต่อหน่วยแกนนอน" }
+  - { front: "ประมาณความไม่แน่นอนจากการวัดซ้ำ", back: "ครึ่งหนึ่งของช่วงข้อมูล: (ค่ามากสุด − ค่าน้อยสุด) ÷ 2" }
+  - { front: "ลูกตุ้ม: เขียนกราฟอะไรให้เป็นเส้นตรง", back: "$T^2$ กับ $L$ ความชัน $\\tfrac{4\\pi^2}{g}$" }
+  - { front: "การค้นพบของฟาราเดย์ (ค.ศ. 1831) นำไปสู่อะไร", back: "เครื่องกำเนิดไฟฟ้าและหม้อแปลง" }
+references:
+  - { title: "ฟิสิกส์", url: "https://th.wikipedia.org/wiki/ฟิสิกส์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Scientific method", url: "https://en.wikipedia.org/wiki/Scientific_method", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Error bar", url: "https://en.wikipedia.org/wiki/Error_bar", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "1.1 Physics: Definitions and Applications (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/1-1-physics-definitions-and-applications", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

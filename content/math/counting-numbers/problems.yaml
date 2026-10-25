@@ -1,0 +1,346 @@
+problems:
+  - id: math.number.counting-numbers.p001
+    topics: [math.number.counting-numbers]
+    difficulty: 1
+    type: numeric
+    stem: "ในภาพมีลูกปัดทั้งหมดกี่เม็ด (ตอบเป็นจำนวนเม็ด)"
+    figure: { src: ten-frames.svg, alt: "กรอบสิบช่องสองกรอบ กรอบซ้ายมีลูกปัดเต็มทั้งสิบช่อง กรอบขวามีลูกปัดเต็มแถวบน 5 ช่องและแถวล่าง 2 ช่อง อีก 3 ช่องว่าง" }
+    answer: { value: 17, unit: เม็ด }
+    hints:
+      - "กรอบซ้ายเต็มทุกช่อง กรอบหนึ่งมี 10 ช่อง"
+      - "นับต่อจาก 10 ไปตามลูกปัดในกรอบขวา"
+    misconceptions:
+      - { match: 7, feedback: "นับเฉพาะกรอบขวา อย่าลืมกรอบซ้ายที่มีลูกปัด 10 เม็ด" }
+      - { match: 20, feedback: "นับช่องทั้งหมด แต่กรอบขวามีช่องว่าง 3 ช่องที่ไม่มีลูกปัด" }
+    solution: "กรอบซ้ายมี 10 เม็ด กรอบขวามี 5 + 2 = 7 เม็ด รวม 10 กับ 7 เป็น 17 เม็ด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p002
+    topics: [math.number.counting-numbers]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ตัวเลขไทยกับตัวเลขฮินดูอารบิก"
+    pairs:
+      - { left: "๓", right: "3" }
+      - { left: "๔", right: "4" }
+      - { left: "๕", right: "5" }
+      - { left: "๗", right: "7" }
+      - { left: "๙", right: "9" }
+    hints:
+      - "ท่อง ๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ไปพร้อมกับ 0 ถึง 9"
+      - "๔ กับ ๕ หน้าตาคล้ายกัน ๕ มีหางยาวกว่า"
+    solution: "๓ = 3, ๔ = 4, ๕ = 5, ๗ = 7, ๙ = 9"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p003
+    topics: [math.number.counting-numbers]
+    difficulty: 1
+    type: text
+    stem: "เขียน 25 เป็นตัวหนังสือ"
+    accepted: ["ยี่สิบห้า"]
+    hints:
+      - "25 คือ 2 สิบ กับ 5 หน่วย"
+      - "เลข 2 ในหลักสิบอ่านพิเศษ ไม่ใช่ \"สอง\""
+    misconceptions:
+      - { match: "สองสิบห้า", feedback: "เลข 2 ในหลักสิบอ่านว่า \"ยี่\" จึงเป็น ยี่สิบห้า" }
+      - { match: "ห้าสิบสอง", feedback: "นั่นคือ 52 ต้องอ่านหลักสิบก่อนหลักหน่วย" }
+    solution: "25 = 2 สิบ 5 หน่วย หลักสิบที่เป็น 2 อ่านว่า ยี่สิบ จึงเขียนว่า ยี่สิบห้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p004
+    topics: [math.number.counting-numbers]
+    difficulty: 1
+    type: mcq
+    multiple: true
+    stem: "เลือกจำนวนคู่ทุกจำนวน"
+    choices:
+      - { id: a, text: "14", correct: true }
+      - { id: b, text: "23", feedback: "หลักหน่วยเป็น 3 จับคู่แล้วเหลือ 1 จึงเป็นจำนวนคี่" }
+      - { id: c, text: "30", correct: true }
+      - { id: d, text: "58", correct: true }
+      - { id: e, text: "71", feedback: "ดูที่หลักหน่วย ไม่ใช่หลักสิบ หลักหน่วยเป็น 1 จึงเป็นจำนวนคี่" }
+    hints:
+      - "ดูเฉพาะเลขโดดในหลักหน่วย"
+      - "จำนวนคู่มีหลักหน่วยเป็น 0, 2, 4, 6 หรือ 8"
+    solution: "14 (หลักหน่วย 4), 30 (หลักหน่วย 0) และ 58 (หลักหน่วย 8) เป็นจำนวนคู่ ส่วน 23 และ 71 มีหลักหน่วย 3 และ 1 จึงเป็นจำนวนคี่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p005
+    topics: [math.number.counting-numbers]
+    difficulty: 2
+    type: numeric
+    stem: "นับถอยหลังทีละ 10: 93, 83, 73, ___ จำนวนถัดไปคือเท่าไร"
+    answer: { value: 63 }
+    hints:
+      - "นับถอยหลังทีละ 10 คือลดลงครั้งละ 10"
+      - "หลักหน่วยไม่เปลี่ยน หลักสิบลดลงทีละ 1"
+    misconceptions:
+      - { match: 72, feedback: "นั่นคือลดลง 1 ข้อนี้ลดลงทีละ 10 หลักหน่วยต้องเป็น 3 เหมือนเดิม" }
+      - { match: 83, feedback: "ต้องนับถอยหลังต่อจาก 73 ไม่ใช่ย้อนกลับไปขึ้น" }
+    solution: "93 → 83 → 73 → 63 หลักหน่วยเป็น 3 ตลอด หลักสิบลดลง 9, 8, 7, 6"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p006
+    topics: [math.number.counting-numbers]
+    difficulty: 2
+    type: text
+    stem: "ปฏิทินในห้องเรียนเขียนปี พ.ศ. 2568 เป็นตัวเลขไทย จะเขียนอย่างไร"
+    accepted: ["๒๕๖๘", "๒,๕๖๘"]
+    hints:
+      - "เปลี่ยนเลขโดดทีละตัว ตำแหน่งเหมือนเดิม"
+      - "2 = ๒, 5 = ๕, 6 = ๖, 8 = ๘"
+    misconceptions:
+      - { match: "๒๔๖๘", feedback: "๔ คือ 4 ตัวเลข 5 ในตัวเลขไทยคือ ๕ (มีหาง)" }
+    solution: "เปลี่ยนเลขโดดทีละตัว 2 → ๒, 5 → ๕, 6 → ๖, 8 → ๘ ได้ ๒๕๖๘"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p007
+    topics: [math.number.counting-numbers]
+    difficulty: 2
+    type: mcq
+    stem: "เติมเครื่องหมายให้ถูก: $406 \\ \\square\\ 460$"
+    choices:
+      - { id: a, text: "$<$", correct: true }
+      - { id: b, text: "$>$", feedback: "ทั้งสองจำนวนมีเลขโดด 4, 0, 6 เหมือนกัน แต่ต้องเทียบทีละหลัก หลักสิบ 0 น้อยกว่า 6" }
+      - { id: c, text: "$=$", feedback: "ใช้เลขโดดชุดเดียวกัน แต่อยู่คนละหลัก ค่าจึงไม่เท่ากัน" }
+    hints:
+      - "ทั้งสองจำนวนมีสามหลัก จึงเทียบทีละหลักจากซ้าย"
+      - "หลักร้อยเท่ากัน ให้เทียบหลักสิบ"
+    solution: "หลักร้อยเป็น 4 เท่ากัน หลักสิบ $0 < 6$ จึงได้ $406 < 460$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p008
+    topics: [math.number.counting-numbers]
+    difficulty: 2
+    type: numeric
+    stem: "จำนวนที่มากกว่า 395 อยู่ 10 คือจำนวนใด"
+    answer: { value: 405 }
+    hints:
+      - "มากกว่าอยู่ 10 คือบวก 10 ดูที่หลักสิบ"
+      - "หลักสิบเป็น 9 เพิ่มอีก 1 สิบจะเป็น 10 สิบ ต้องทดไปหลักร้อย"
+    misconceptions:
+      - { match: 396, feedback: "นั่นคือมากกว่าอยู่ 1 ข้อนี้ถามมากกว่าอยู่ 10" }
+      - { match: 495, feedback: "นั่นคือมากกว่าอยู่ 100 ข้อนี้เพิ่มที่หลักสิบ ไม่ใช่หลักร้อย" }
+    solution: "395 = 3 ร้อย 9 สิบ 5 หน่วย เพิ่ม 1 สิบ ได้ 3 ร้อย 10 สิบ 5 หน่วย = 4 ร้อย 0 สิบ 5 หน่วย = 405"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p009
+    topics: [math.number.counting-numbers]
+    difficulty: 3
+    type: text
+    stem: "เขียน 105,320 เป็นตัวหนังสือ"
+    accepted: ["หนึ่งแสนห้าพันสามร้อยยี่สิบ"]
+    hints:
+      - "แยกเป็นหลัก: 1 แสน 0 หมื่น 5 พัน 3 ร้อย 2 สิบ 0 หน่วย"
+      - "หลักที่เป็น 0 ไม่ต้องอ่าน และเลข 2 ในหลักสิบอ่านว่า ยี่"
+    misconceptions:
+      - { match: "หนึ่งแสนห้าหมื่นสามร้อยยี่สิบ", feedback: "เลข 5 อยู่หลักพัน ไม่ใช่หลักหมื่น หลักหมื่นเป็น 0 จึงไม่อ่าน" }
+      - { match: "หนึ่งแสนห้าพันสามร้อยสองสิบ", feedback: "เลข 2 ในหลักสิบอ่านว่า ยี่สิบ" }
+    solution: "105,320 = 100,000 + 5,000 + 300 + 20 อ่านว่า หนึ่งแสน ห้าพัน สามร้อย ยี่สิบ รวมเป็น หนึ่งแสนห้าพันสามร้อยยี่สิบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p010
+    topics: [math.number.counting-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "เขียน \"สามหมื่นสี่สิบเจ็ด\" เป็นตัวเลขฮินดูอารบิก"
+    answer: { value: 30047 }
+    hints:
+      - "หมื่นเป็นหลักที่ห้าจากขวา จำนวนนี้จึงมีห้าหลัก"
+      - "หลักพันและหลักร้อยไม่ได้อ่าน ต้องใส่ 0"
+    misconceptions:
+      - { match: 3047, feedback: "มีแค่สี่หลัก ตัว 3 จึงอยู่หลักพัน ต้องมี 0 สองตัวในหลักพันและหลักร้อย" }
+      - { match: 347, feedback: "ลืมใส่ 0 ในหลักที่ไม่ได้อ่าน สามหมื่นต้องมีห้าหลัก" }
+    solution: "3 หมื่น 0 พัน 0 ร้อย 4 สิบ 7 หน่วย เขียนเป็น 30,047"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p011
+    topics: [math.number.counting-numbers]
+    difficulty: 3
+    type: order
+    stem: "เรียงจำนวนจากน้อยไปมาก"
+    items:
+      - "1,099"
+      - "๑,๙๐๙"
+      - "1,990"
+      - "๙,๐๑๑"
+      - "10,001"
+    hints:
+      - "เปลี่ยนตัวเลขไทยเป็นตัวเลขฮินดูอารบิกก่อน: ๑,๙๐๙ = 1,909 และ ๙,๐๑๑ = 9,011"
+      - "จำนวนที่มีหลักมากกว่ามีค่ามากกว่า ถ้าหลักเท่ากันให้เทียบทีละหลักจากซ้าย"
+    solution: "10,001 มีห้าหลักจึงมากที่สุด ที่เหลือมีสี่หลัก เทียบหลักพัน: 9,011 มากที่สุด จากนั้น 1,099 < 1,909 < 1,990 (เทียบหลักร้อย 0 < 9 แล้วเทียบหลักสิบ 0 < 9) จึงได้ 1,099, ๑,๙๐๙, 1,990, ๙,๐๑๑, 10,001"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p012
+    topics: [math.number.counting-numbers]
+    difficulty: 3
+    type: mcq
+    stem: "หน้าปัดนาฬิกาและชื่อบทในหนังสือบางเล่มใช้ตัวเลขโรมัน XIV มีค่าเท่าใด"
+    choices:
+      - { id: a, text: "14", correct: true }
+      - { id: b, text: "16", feedback: "นำ X + I + V มาบวกกันทั้งหมด แต่ I อยู่หน้า V ต้องลบ คือ IV = 4" }
+      - { id: c, text: "4", feedback: "IV = 4 แต่ยังมี X = 10 อยู่ข้างหน้าอีก" }
+    hints:
+      - "X = 10, I = 1, V = 5"
+      - "ตัวเล็กอยู่หน้าตัวใหญ่ให้ลบ ดู IV เป็นกลุ่มเดียวกัน"
+    solution: "XIV = X + IV = 10 + 4 = 14"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p013
+    topics: [math.number.counting-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "ในกระปุกออมสินมีธนบัตรร้อยบาท 4 ใบ เหรียญสิบบาท 6 เหรียญ และเหรียญห้าบาท 3 เหรียญ รวมเป็นเงินกี่บาท (ตอบในหน่วยบาท)"
+    answer: { value: 475, unit: บาท }
+    hints:
+      - "นับเงินแต่ละชนิดแยกกัน: นับทีละ 100, ทีละ 10 และทีละ 5"
+      - "แล้วนำทั้งสามจำนวนมารวมกัน"
+    misconceptions:
+      - { match: 13, feedback: "นั่นคือจำนวนชิ้นของเงิน ไม่ใช่จำนวนบาท ต้องนับตามค่าของแต่ละชิ้น" }
+      - { match: 463, feedback: "นับเหรียญห้าบาทเป็นเหรียญละ 1 บาท ต้องนับทีละ 5: 5, 10, 15" }
+    solution: "ธนบัตรร้อยบาท: 100, 200, 300, 400 บาท เหรียญสิบบาท: 10, 20, ..., 60 บาท เหรียญห้าบาท: 5, 10, 15 บาท รวม 400 + 60 + 15 = 475 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p014
+    topics: [math.number.counting-numbers]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "ข้อใดจริงเสมอ (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "จำนวนคี่ + จำนวนคี่ = จำนวนคู่", correct: true }
+      - { id: b, text: "จำนวนคู่ + จำนวนคี่ = จำนวนคู่", feedback: "ลอง 4 + 3 = 7 เป็นจำนวนคี่ จำนวนคี่มีของเหลือ 1 ชิ้นที่ไม่มีคู่" }
+      - { id: c, text: "จำนวนคู่ + จำนวนคู่ = จำนวนคู่", correct: true }
+      - { id: d, text: "จำนวนคี่ + จำนวนคี่ + จำนวนคี่ = จำนวนคู่", feedback: "ลอง 1 + 3 + 5 = 9 เป็นจำนวนคี่ เหลือ 3 ชิ้น จับคู่ได้ 1 คู่ ยังเหลือ 1" }
+    hints:
+      - "ลองแทนด้วยจำนวนเล็ก ๆ หลายแบบ"
+      - "จำนวนคี่แต่ละจำนวนเหลือ 1 ชิ้นเมื่อจับคู่ นับว่ามีชิ้นที่เหลือกี่ชิ้น"
+    solution: "คี่ + คี่: ชิ้นที่เหลือ 2 ชิ้นจับคู่กันได้ จึงเป็นคู่ (เช่น 3 + 5 = 8) คู่ + คู่ ไม่มีชิ้นเหลือ จึงเป็นคู่ คู่ + คี่ เหลือ 1 ชิ้นจึงเป็นคี่ และคี่สามจำนวนเหลือ 3 ชิ้น จับคู่ได้ 1 คู่ยังเหลือ 1 จึงเป็นคี่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p015
+    topics: [math.number.counting-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "จำนวนคี่ที่มากกว่า 20 แต่น้อยกว่า 40 มีทั้งหมดกี่จำนวน"
+    answer: { value: 10 }
+    hints:
+      - "จำนวนคี่ตัวแรกที่มากกว่า 20 คือ 21 ตัวสุดท้ายที่น้อยกว่า 40 คือ 39"
+      - "นับทีละ 2 จาก 21 ไปถึง 39 แล้วนับว่ามีกี่ตัว"
+    misconceptions:
+      - { match: 19, feedback: "นั่นคือจำนวนทั้งหมดตั้งแต่ 21 ถึง 39 ข้อนี้ถามเฉพาะจำนวนคี่" }
+      - { match: 9, feedback: "คิด $(39 - 21) \\div 2 = 9$ แล้วลืมนับตัวแรก ลองเขียนออกมาให้ครบ: 21, 23, 25, ..., 39" }
+    solution: "จำนวนคี่คือ 21, 23, 25, 27, 29, 31, 33, 35, 37, 39 มีทั้งหมด 10 จำนวน (ในแต่ละช่วงสิบมีจำนวนคี่ 5 จำนวน สองช่วงจึงมี 10)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p016
+    topics: [math.number.counting-numbers]
+    difficulty: 4
+    type: text
+    stem: "เขียนปี ค.ศ. 2019 เป็นตัวเลขโรมัน"
+    accepted: ["MMXIX"]
+    hints:
+      - "แยกเป็น 2000 + 10 + 9"
+      - "M = 1000, X = 10 และ 9 เขียนเป็น IX"
+    misconceptions:
+      - { match: "MMXVIIII", feedback: "ตัวเลขโรมันไม่เขียน I ซ้ำสี่ตัว 9 ต้องเขียนเป็น IX (10 ลบ 1)" }
+      - { match: "MMIXX", feedback: "เขียนจากค่ามากไปน้อย 10 (X) ต้องมาก่อน 9 (IX)" }
+    solution: "2019 = 2000 + 10 + 9 = MM + X + IX = MMXIX"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p017
+    topics: [math.number.counting-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "ป้ายหน้าอุทยานแห่งชาติบอกว่า ปีที่แล้วมีผู้เข้าชม \"หนึ่งล้านสองหมื่นห้าร้อย\" คน เขียนจำนวนนี้เป็นตัวเลขฮินดูอารบิก (ไม่ต้องใส่จุลภาค)"
+    answer: { value: 1020500, unit: คน }
+    hints:
+      - "หนึ่งล้านมีเจ็ดหลัก: ล้าน แสน หมื่น พัน ร้อย สิบ หน่วย"
+      - "ใส่เลขโดดทีละหลัก หลักที่ไม่ได้อ่านใส่ 0"
+    misconceptions:
+      - { match: 1200500, feedback: "เลข 2 อยู่หลักหมื่น ไม่ใช่หลักแสน หลักแสนต้องเป็น 0" }
+      - { match: 120500, feedback: "ลืม 0 ในหลักแสน จำนวนที่มีหลักล้านต้องมีเจ็ดหลัก" }
+    solution: "1 ล้าน 0 แสน 2 หมื่น 0 พัน 5 ร้อย 0 สิบ 0 หน่วย = 1,020,500 คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p018
+    topics: [math.number.counting-numbers]
+    difficulty: 5
+    type: numeric
+    stem: "ใช้เลขโดด 3, 0, 8, 5 ตัวละหนึ่งครั้ง สร้างเลขที่บ้านที่เป็นจำนวนคี่สี่หลักให้มีค่ามากที่สุด"
+    answer: { value: 8503 }
+    hints:
+      - "จำนวนคี่ต้องมีหลักหน่วยเป็นเลขคี่ คือ 3 หรือ 5"
+      - "ลองทั้งสองแบบ แล้วเรียงเลขโดดที่เหลือจากมากไปน้อย"
+    misconceptions:
+      - { match: 8530, feedback: "นี่เป็นจำนวนมากที่สุด แต่หลักหน่วยเป็น 0 จึงเป็นจำนวนคู่" }
+      - { match: 8305, feedback: "ใช้ 5 เป็นหลักหน่วยแล้วเหลือ 8, 3, 0 แต่ถ้าใช้ 3 เป็นหลักหน่วย จะเหลือ 8, 5, 0 ซึ่งให้จำนวนที่มากกว่า" }
+    solution: "หลักหน่วยต้องเป็น 3 หรือ 5 ถ้าเป็น 5 เรียงที่เหลือได้ 8305 ถ้าเป็น 3 เรียงที่เหลือได้ 8503 ซึ่งมากกว่า คำตอบคือ 8,503"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p019
+    topics: [math.number.counting-numbers]
+    difficulty: 5
+    type: numeric
+    stem: "ครูให้นักเรียนเขียนเลขหน้าสมุดเป็นตัวเลขไทยตั้งแต่ ๑ ถึง ๑๐๐ ต้องเขียนเลขโดด ๕ ทั้งหมดกี่ตัว"
+    answer: { value: 20, unit: ตัว }
+    hints:
+      - "นับแยกสองแบบ: ๕ ในหลักหน่วย และ ๕ ในหลักสิบ"
+      - "๕ ในหลักหน่วย: ๕, ๑๕, ๒๕, ... ส่วน ๕ ในหลักสิบ: ๕๐ ถึง ๕๙"
+    misconceptions:
+      - { match: 19, feedback: "นั่นคือจำนวนหน้าที่มี ๕ อยู่ แต่หน้า ๕๕ มีเลข ๕ สองตัว ต้องนับทั้งสองตัว" }
+      - { match: 10, feedback: "นับแค่ ๕ ในหลักหน่วย ยังมี ๕ ในหลักสิบของ ๕๐ ถึง ๕๙ อีก" }
+    solution: "๕ ในหลักหน่วย: 5, 15, 25, ..., 95 มี 10 ตัว ๕ ในหลักสิบ: 50 ถึง 59 มี 10 ตัว รวม 20 ตัว (หน้า ๕๕ นับสองครั้งเพราะเขียนเลข ๕ สองตัว)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p020
+    topics: [math.number.counting-numbers]
+    difficulty: 1
+    type: mcq
+    stem: "แม่ค้าวางมะม่วงและส้มไว้สองแถวตามภาพ ผลไม้ชนิดใดมีจำนวนมากกว่า"
+    figure: { src: compare-groups.svg, alt: "แถวบนเป็นมะม่วง 7 ผลวางห่างกัน แถวล่างเป็นส้ม 9 ผลวางชิดกัน ทั้งสองแถวยาวเกือบเท่ากัน" }
+    choices:
+      - { id: a, text: "ส้ม", correct: true }
+      - { id: b, text: "มะม่วง", feedback: "มะม่วงวางห่างกันจึงดูเหมือนมาก ลองนับหรือจับคู่ทีละผลดู" }
+      - { id: c, text: "เท่ากัน", feedback: "สองแถวยาวพอ ๆ กัน แต่ความยาวของแถวไม่ได้บอกจำนวน ต้องนับหรือจับคู่ทีละผล" }
+    hints:
+      - "อย่าดูแค่ความยาวของแถว"
+      - "นับแต่ละแถว หรือจับคู่มะม่วงกับส้มทีละผล แล้วดูว่าแถวไหนมีผลเหลือ"
+    solution: "นับได้มะม่วง 7 ผล ส้ม 9 ผล จับคู่กันได้ 7 คู่ ส้มเหลือ 2 ผล ส้มจึงมากกว่า ($9 > 7$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.counting-numbers.p021
+    topics: [math.number.counting-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "นับถอยหลังทีละ 50: 1,000, 950, 900, ___ จำนวนถัดไปคือเท่าไร"
+    answer: { value: 850 }
+    hints:
+      - "นับถอยหลังทีละ 50 คือลดลงครั้งละ 50"
+      - "ลด 50 สองครั้งเท่ากับลด 100 ดูจาก 1,000 กับ 900"
+    misconceptions:
+      - { match: 800, feedback: "นั่นคือลดลง 100 จาก 900 ข้อนี้ลดทีละ 50" }
+      - { match: 890, feedback: "นั่นคือลดลง 10 ข้อนี้ลดทีละ 50" }
+    solution: "1,000 → 950 → 900 → 850 (ลดลงครั้งละ 50)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

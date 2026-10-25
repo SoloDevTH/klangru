@@ -1,0 +1,328 @@
+problems:
+  - id: computer.data.number-representation.p001
+    topics: [computer.data.number-representation]
+    difficulty: 1
+    type: numeric
+    stem: "เลขโดด B ในฐานสิบหกมีค่าเท่าใดในฐานสิบ"
+    answer: { value: 11 }
+    hints:
+      - "ฐานสิบหกใช้ 0–9 แล้วต่อด้วยตัวอักษร"
+      - "A = 10 แล้ว B เป็นเลขถัดไป"
+    misconceptions:
+      - { match: 2, feedback: "B เป็นตัวอักษรตัวที่ 2 แต่ในฐานสิบหกตัวอักษรเริ่มต่อจาก 9 คือ A = 10, B = 11" }
+    solution: "A = 10, B = 11, C = 12, D = 13, E = 14, F = 15 จึงได้ B = 11"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p002
+    topics: [computer.data.number-representation]
+    difficulty: 2
+    type: numeric
+    stem: "แปลง $2\\mathrm{F}_{16}$ เป็นเลขฐานสิบ"
+    answer: { value: 47 }
+    hints:
+      - "ค่าประจำหลักของฐานสิบหกจากขวาคือ 1 และ 16"
+      - "F มีค่า 15"
+    misconceptions:
+      - { match: 35, feedback: "ดูเหมือนใช้ค่าประจำหลักของฐานสิบ (2 × 10 + 15) หลักที่สองของฐานสิบหกมีค่า 16" }
+      - { match: 17, feedback: "2 + 15 = 17 คือบวกเลขโดดเฉย ๆ ต้องคูณเลขโดดด้วยค่าประจำหลักก่อน" }
+    solution: "$2 \\times 16 + 15 \\times 1 = 32 + 15 = 47$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p003
+    topics: [computer.data.number-representation]
+    difficulty: 2
+    type: text
+    stem: "เขียน $1101\\,0110_2$ เป็นเลขฐานสิบหก (พิมพ์ 2 หลัก เช่น 3A)"
+    accepted: ["D6", "0xD6", "D6₁₆"]
+    hints:
+      - "แบ่งเป็นกลุ่มละ 4 บิต: 1101 กับ 0110"
+      - "แปลงแต่ละกลุ่มด้วยค่าประจำหลัก 8 4 2 1 แล้วเปลี่ยน 10–15 เป็น A–F"
+    misconceptions:
+      - { match: "6D", feedback: "เรียงหลักสลับ กลุ่มซ้าย (1101) ต้องเป็นหลักซ้ายของเลขฐานสิบหก" }
+      - { match: "136", feedback: "ดูเหมือนเขียน 13 กับ 6 ต่อกัน แต่ 13 ต้องเขียนเป็นเลขโดดตัวเดียวคือ D" }
+    solution: "$1101 = 8 + 4 + 1 = 13 = \\mathrm{D}$ และ $0110 = 4 + 2 = 6$ จึงได้ $\\mathrm{D6}_{16}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p004
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: text
+    stem: "เขียน $200_{10}$ เป็นเลขฐานสิบหก (พิมพ์ 2 หลัก)"
+    accepted: ["C8", "0xC8", "C8₁₆"]
+    hints:
+      - "200 หารด้วย 16 ได้เท่าใด เหลือเศษเท่าใด"
+      - "ผลหารเป็นหลักซ้าย เศษเป็นหลักขวา และ 12 เขียนเป็น C"
+    misconceptions:
+      - { match: "8C", feedback: "เรียงหลักสลับ ผลหาร (12 = C) เป็นหลักซ้าย เศษ (8) เป็นหลักขวา $8\\mathrm{C}_{16}$ คือ 140" }
+      - { match: "128", feedback: "ดูเหมือนเขียน 12 กับ 8 ต่อกัน 12 ต้องเขียนเป็นเลขโดดเดียวคือ C" }
+    solution: "$200 \\div 16 = 12$ เศษ $8$ จึงได้ $\\mathrm{C8}_{16}$ ตรวจ: $12 \\times 16 + 8 = 200$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p005
+    topics: [computer.data.number-representation]
+    difficulty: 2
+    type: numeric
+    stem: "จำนวนขนาด 32 บิตเขียนเป็นเลขฐานสิบหกได้กี่หลัก"
+    answer: { value: 8, unit: หลัก }
+    hints:
+      - "เลขฐานสิบหก 1 หลักแทนกี่บิต"
+      - "หาร 32 ด้วยจำนวนบิตต่อหลัก"
+    misconceptions:
+      - { match: 4, feedback: "4 คือจำนวนบิตต่อหลัก หรือจำนวนไบต์ ต้องหาจำนวนหลัก 32 ÷ 4" }
+      - { match: 2, feedback: "2 หลักแทนได้แค่ 1 ไบต์ (8 บิต) แต่ 32 บิตคือ 4 ไบต์" }
+    solution: "1 หลักแทน 4 บิต: $32 \\div 4 = 8$ หลัก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p006
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: numeric
+    stem: "รูปบิต 8 บิต $1000\\,0101$ เก็บแบบ **เครื่องหมายและขนาด** มีค่าเท่าใด"
+    answer: { value: -5 }
+    hints:
+      - "บิตซ้ายสุดบอกเครื่องหมาย 1 คือลบ"
+      - "อีก 7 บิต (000 0101) คือขนาด"
+    misconceptions:
+      - { match: 133, feedback: "133 คือการอ่านแบบไม่มีเครื่องหมาย ในแบบเครื่องหมายและขนาด บิตซ้ายสุดเป็นเครื่องหมาย ไม่ใช่ค่า 128" }
+      - { match: -123, feedback: "−123 คือการอ่านแบบส่วนเติมเต็มสอง (−128 + 5) แต่โจทย์กำหนดแบบเครื่องหมายและขนาด" }
+    solution: "บิตเครื่องหมาย 1 = ลบ ขนาด $000\\,0101 = 5$ จึงได้ $-5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p007
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: numeric
+    stem: "รูปบิต 8 บิต $1111\\,1011$ เก็บแบบ **ส่วนเติมเต็มสอง** มีค่าเท่าใด"
+    answer: { value: -5 }
+    hints:
+      - "บิตซ้ายสุดมีค่าประจำหลัก −128"
+      - "รวม −128 กับค่าประจำหลักของบิตอื่นที่เป็น 1"
+    misconceptions:
+      - { match: 251, feedback: "251 คือการอ่านแบบไม่มีเครื่องหมาย ในส่วนเติมเต็มสองบิตซ้ายสุดมีค่า −128 ไม่ใช่ +128" }
+      - { match: -123, feedback: "−123 คือการอ่านแบบเครื่องหมายและขนาด (ขนาด 111 1011 = 123)" }
+    solution: "$-128 + 64 + 32 + 16 + 8 + 2 + 1 = -5$ หรือกลับบิตได้ $0000\\,0100$ บวก 1 ได้ $0000\\,0101 = 5$ จึงเป็น $-5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p008
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: text
+    stem: "ตู้แช่แข็งในร้านสะดวกซื้อเก็บอุณหภูมิ $-20$ °C เป็นจำนวนเต็มแบบส่วนเติมเต็มสอง 8 บิต เขียนรูปบิต (พิมพ์ 8 หลัก ไม่ต้องเว้นวรรค)"
+    accepted: ["11101100", "1110 1100"]
+    hints:
+      - "เริ่มจาก +20 = 0001 0100"
+      - "กลับทุกบิต แล้วบวก 1"
+    misconceptions:
+      - { match: "11101011", feedback: "กลับบิตแล้วแต่ลืมบวก 1 รูปนี้คือ −21" }
+      - { match: "10010100", feedback: "นี่คือแบบเครื่องหมายและขนาด (บิตเครื่องหมาย 1 ตามด้วย 20) ไม่ใช่ส่วนเติมเต็มสอง" }
+    solution: "$+20 = 0001\\,0100$ → กลับบิต $1110\\,1011$ → บวก 1 ได้ $1110\\,1100$ ตรวจ: $-128 + 64 + 32 + 8 + 4 = -20$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p009
+    topics: [computer.data.number-representation]
+    difficulty: 2
+    type: numeric
+    stem: "จำนวนเต็มแบบส่วนเติมเต็มสอง 8 บิต มีค่าน้อยที่สุดเท่าใด"
+    answer: { value: -128 }
+    hints:
+      - "ค่าน้อยที่สุดเกิดเมื่อบิตค่าลบเป็น 1 และบิตค่าบวกเป็น 0 ทั้งหมด"
+      - "บิตซ้ายสุดมีค่า −128"
+    misconceptions:
+      - { match: -127, feedback: "−127 คือค่าน้อยสุดของแบบเครื่องหมายและขนาด ส่วนเติมเต็มสองไปได้ถึง −128 ($1000\\,0000$)" }
+      - { match: -255, feedback: "8 บิตมีแค่ 256 แบบ ถ้าแบ่งให้จำนวนลบประมาณครึ่งหนึ่งจะลงไปได้ราว −128 ไม่ถึง −255" }
+    solution: "$1000\\,0000 = -128$ ช่วงทั้งหมดคือ $-128$ ถึง $127$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p010
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: mcq
+    stem: "ใช้วงล้อจำนวน 4 บิตในภาพ ถ้าคำนวณ $6 + 3$ ด้วยจำนวนเต็มแบบส่วนเติมเต็มสอง 4 บิต จะได้รูปบิตใดและอ่านเป็นค่าใด"
+    figure:
+      src: twos-wheel.svg
+      alt: "วงล้อ 16 ตำแหน่งของจำนวน 4 บิต เรียงตามเข็มนาฬิกาจาก 0000 ถึง 1111 วงกลางเป็นค่าไม่มีเครื่องหมาย 0 ถึง 15 วงในเป็นค่าแบบส่วนเติมเต็มสอง 0 ถึง 7 แล้วต่อด้วย −8 ถึง −1 มีเส้นประคั่นระหว่าง 0111 (7) กับ 1000 (−8) แสดงจุดที่เกิดการล้น"
+    choices:
+      - { id: a, text: "1001 อ่านได้ −7", correct: true }
+      - { id: b, text: "1001 อ่านได้ 9", feedback: "9 คือค่าแบบไม่มีเครื่องหมาย แต่โจทย์ใช้ส่วนเติมเต็มสอง 4 บิตซึ่งเก็บได้มากสุดแค่ 7" }
+      - { id: c, text: "0111 อ่านได้ 7", feedback: "7 คือค่าที่มากที่สุดที่เก็บได้ แต่วงจรไม่ได้หยุดที่ค่ามากสุด มันหมุนข้ามเส้นต่อไป" }
+      - { id: d, text: "1001 อ่านได้ −1", feedback: "−1 คือ 1111 ส่วน 1001 อยู่ถัดจาก −8 ไปหนึ่งช่อง" }
+    hints:
+      - "เริ่มที่ 0110 (6) แล้วหมุนตามเข็ม 3 ช่อง"
+      - "ข้ามเส้นประระหว่าง 7 กับ −8 แล้วอ่านค่าจากวงใน"
+    solution: "จาก 0110 หมุน 3 ช่องได้ 0111, 1000, 1001 รูปบิต 1001 ในวงในคือ −7 เพราะผลจริง 9 เกินช่วง −8 ถึง 7 จึงเกิดการล้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p011
+    topics: [computer.data.number-representation]
+    difficulty: 4
+    type: numeric
+    stem: "เกมมือถือเก็บคะแนนเป็นจำนวนเต็มแบบส่วนเติมเต็มสอง 8 บิต ผู้เล่นมี 100 คะแนน แล้วได้โบนัสอีก 50 คะแนน ตัวแปรคะแนนจะมีค่าเท่าใด"
+    answer: { value: -106 }
+    hints:
+      - "150 อยู่ในช่วง −128 ถึง 127 หรือไม่"
+      - "ถ้าเกินช่วง ผลที่เก็บได้คือ ผลจริง − 256 เพราะ 8 บิตวนครบรอบทุก 256"
+    misconceptions:
+      - { match: 150, feedback: "150 เกินค่ามากสุด 127 ของจำนวน 8 บิตแบบมีเครื่องหมาย จึงเกิดการล้น" }
+      - { match: 127, feedback: "วงจรบวกไม่ได้หยุดที่ค่ามากสุด มันวนต่อไปทางค่าลบ" }
+    solution: "100 + 50 = 150 เกิน 127 จึงล้น รูปบิตคือ $1001\\,0110$ อ่านแบบส่วนเติมเต็มสองได้ $-128 + 16 + 4 + 2 = -106$ (หรือ 150 − 256 = −106)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p012
+    topics: [computer.data.number-representation]
+    difficulty: 4
+    type: numeric
+    stem: "เลขฐานสองแบบจุดตรึง $0.101_2$ มีค่าเท่าใดในฐานสิบ"
+    answer: { value: 0.625, tolerance: 0.001 }
+    hints:
+      - "หลักหลังจุดของฐานสองมีค่า 1/2, 1/4, 1/8, …"
+      - "รวมค่าของหลักที่เป็น 1"
+    misconceptions:
+      - { match: 0.101, feedback: "อ่านตัวเลขเหมือนฐานสิบ แต่หลักหลังจุดของฐานสองมีค่า 1/2, 1/4, 1/8" }
+      - { match: 5, feedback: "101₂ = 5 คือการอ่านเป็นจำนวนเต็ม แต่ตัวเลขนี้อยู่หลังจุด ต้องใช้ค่า 1/2, 1/4, 1/8" }
+    solution: "$0.101_2 = \\tfrac12 + 0 + \\tfrac18 = 0.5 + 0.125 = 0.625$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p013
+    topics: [computer.data.number-representation]
+    difficulty: 4
+    type: numeric
+    stem: "เซนเซอร์ใช้จำนวนจุดตรึง 8 บิต โดย 4 บิตแรกเป็นส่วนจำนวนเต็ม และ 4 บิตหลังเป็นส่วนหลังจุด รูปบิต $0011\\,1000$ มีค่าเท่าใด"
+    answer: { value: 3.5, tolerance: 0.01 }
+    hints:
+      - "อ่านเป็น $0011.1000_2$"
+      - "หรือคิดเป็นจำนวนเต็ม 8 บิตแล้วหารด้วย $2^4 = 16$"
+    misconceptions:
+      - { match: 56, feedback: "56 คือการอ่านทั้ง 8 บิตเป็นจำนวนเต็ม ต้องหารด้วย 16 เพราะมี 4 บิตอยู่หลังจุด" }
+      - { match: 3.8, feedback: "ดูเหมือนอ่านส่วนหลังจุด 1000 เป็นเลข 8 ในฐานสิบ แต่ $0.1000_2 = \\tfrac12 = 0.5$" }
+    solution: "$0011.1000_2 = 3 + \\tfrac12 = 3.5$ ตรวจ: $0011\\,1000_2 = 56$ และ $56 \\div 16 = 3.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p014
+    topics: [computer.data.number-representation]
+    difficulty: 4
+    type: mcq
+    stem: "ในภาษา Python คำสั่ง `0.1 + 0.2 == 0.3` ให้ผล `False` เหตุผลใดถูกต้องที่สุด"
+    choices:
+      - { id: a, text: "0.1 และ 0.2 เป็นทศนิยมไม่รู้จบในฐานสอง จึงเก็บได้แค่ค่าประมาณ ผลรวมจึงคลาดจาก 0.3 เล็กน้อย", correct: true }
+      - { id: b, text: "Python บวกเลขผิด", feedback: "การบวกถูกต้องตามค่าที่เก็บไว้ ปัญหาอยู่ที่ 0.1 และ 0.2 ถูกเก็บเป็นค่าประมาณตั้งแต่แรก" }
+      - { id: c, text: "เกิดการล้น เพราะจำนวนใหญ่เกินไป", feedback: "0.3 เป็นจำนวนเล็ก ไม่ได้เกินช่วง ปัญหาคือความละเอียด ไม่ใช่ขนาด" }
+      - { id: d, text: "ต้องใช้ = ตัวเดียวแทน ==", feedback: "= ตัวเดียวคือการกำหนดค่า ไม่ใช่การเปรียบเทียบ และไม่แก้ปัญหาความคลาดเคลื่อน" }
+    hints:
+      - "เขียน 1/10 เป็นเลขฐานสองได้ลงตัวหรือไม่"
+      - "นึกถึง 1/3 = 0.333… ในฐานสิบ"
+    solution: "$\\tfrac{1}{10} = 0.000110011\\ldots_2$ ไม่รู้จบ เมื่อตัดให้เหลือจำนวนบิตจำกัดจึงคลาดเคลื่อน ผลรวมจึงเป็น 0.30000000000000004 ควรเทียบว่าผลต่างน้อยมาก แทนการเทียบว่าเท่ากันพอดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p015
+    topics: [computer.data.number-representation]
+    difficulty: 4
+    type: mcq
+    stem: "แอปร้านค้าออนไลน์ต้องรวมราคาสินค้าหลายพันรายการ เช่น 12.75 บาท 0.50 บาท ให้ถูกทุกสตางค์ ควรเก็บราคาอย่างไร"
+    choices:
+      - { id: a, text: "เก็บเป็นจำนวนเต็มหน่วยสตางค์ เช่น 12.75 บาทเก็บเป็น 1275", correct: true }
+      - { id: b, text: "เก็บเป็นจำนวนจุดลอยตัว เพราะรองรับทศนิยม", feedback: "จุดลอยตัวเก็บค่าอย่าง 0.1 ได้แค่ค่าประมาณ รวมหลายพันรายการความคลาดเคลื่อนอาจสะสมจนเห็นผล" }
+      - { id: c, text: "เก็บเป็นจำนวนเต็มบาท ปัดสตางค์ทิ้ง", feedback: "ทำให้ยอดรวมผิดไปจริง ๆ ลูกค้าหรือร้านเสียเงิน" }
+      - { id: d, text: "เก็บเป็นจำนวนเต็ม 8 บิตแบบมีเครื่องหมาย", feedback: "เก็บได้แค่ −128 ถึง 127 ราคาส่วนใหญ่จะล้น" }
+    hints:
+      - "ชนิดข้อมูลใดเก็บค่าได้ตรงทุกหลักโดยไม่ประมาณ"
+      - "ถ้าเปลี่ยนหน่วยเป็นสตางค์ ราคาทุกตัวเป็นจำนวนเต็มหรือไม่"
+    solution: "จำนวนเต็มเก็บค่าได้ตรงพอดี เมื่อใช้หน่วยสตางค์ทุกราคาเป็นจำนวนเต็ม บวกกี่ครั้งก็ไม่คลาดเคลื่อน (ใช้จำนวนเต็มที่มีบิตมากพอ เช่น 64 บิต)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p016
+    topics: [computer.data.number-representation]
+    difficulty: 4
+    type: numeric
+    stem: "จำนวนเต็มแบบมีเครื่องหมาย (ส่วนเติมเต็มสอง) 32 บิต เก็บค่ามากที่สุดได้เท่าใด"
+    answer: { value: 2147483647 }
+    hints:
+      - "จำนวน $n$ บิตแบบส่วนเติมเต็มสองเก็บได้ถึง $2^{n-1} - 1$"
+      - "คำนวณ $2^{31} - 1$"
+    misconceptions:
+      - { match: 4294967295, feedback: "นี่คือ $2^{32} - 1$ ค่ามากสุดแบบไม่มีเครื่องหมาย แบบมีเครื่องหมายต้องแบ่งครึ่งให้จำนวนลบ" }
+      - { match: 2147483648, feedback: "นี่คือ $2^{31}$ ต้องลบ 1 เพราะนับ 0 เป็นหนึ่งในค่าที่ไม่ติดลบด้วย" }
+    solution: "$2^{31} - 1 = 2{,}147{,}483{,}647$ ระบบที่นับวินาทีตั้งแต่ปี 1970 ด้วยตัวแปรนี้จะล้นในวันที่ 19 ม.ค. 2038"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p017
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: match
+    stem: "จับคู่วิธีแทนข้อมูลกับตัวอย่างการใช้งาน"
+    pairs:
+      - { left: "เลขฐานสิบหก", right: "รหัสสีบนเว็บ #FF8800" }
+      - { left: "ส่วนเติมเต็มสอง", right: "เก็บอุณหภูมิ −5 °C เป็น 1111 1011" }
+      - { left: "จุดลอยตัว", right: "เก็บระยะทางระหว่างดาวที่มีขนาดใหญ่มาก" }
+      - { left: "จำนวนเต็มหน่วยย่อย", right: "เก็บเงิน 12.75 บาทเป็น 1275 สตางค์" }
+      - { left: "เครื่องหมายและขนาด", right: "บิตซ้ายสุดบอกบวกลบ บิตที่เหลือบอกขนาด" }
+    hints:
+      - "วิธีใดเหมาะกับจำนวนที่ใหญ่หรือเล็กมาก วิธีใดเหมาะกับเงิน"
+      - "รหัสสีบนเว็บเขียนด้วยตัวอักษร A–F ปนตัวเลข"
+    solution: "ฐานสิบหก = รหัสสี, ส่วนเติมเต็มสอง = จำนวนลบในวงจร, จุดลอยตัว = จำนวนใหญ่หรือเล็กมาก, จำนวนเต็มหน่วยย่อย = เงิน, เครื่องหมายและขนาด = บิตซ้ายสุดเป็นเครื่องหมาย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p018
+    topics: [computer.data.number-representation]
+    difficulty: 3
+    type: numeric
+    stem: "สีของเสื้อทีมกีฬาสีเขียนเป็นรหัส `#FF8800` (แดง เขียว น้ำเงิน อย่างละ 2 หลักฐานสิบหก) ค่าสีเขียวมีค่าเท่าใดในฐานสิบ (0–255)"
+    answer: { value: 136 }
+    hints:
+      - "สองหลักกลางคือสีเขียว: 88"
+      - "$88_{16} = 8 \\times 16 + 8$"
+    misconceptions:
+      - { match: 88, feedback: "88 คือเลขฐานสิบหก ต้องแปลงเป็นฐานสิบด้วยค่าประจำหลัก 16 และ 1" }
+      - { match: 255, feedback: "255 คือค่าสีแดง (FF) สีเขียวคือสองหลักกลาง" }
+    solution: "สีเขียวคือ $88_{16} = 8 \\times 16 + 8 = 136$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p019
+    topics: [computer.data.number-representation]
+    difficulty: 5
+    type: numeric
+    stem: "เก็บ $10.0$ แบบจุดลอยตัว 32 บิต (IEEE 754) ซึ่งเก็บเลขชี้กำลังโดยบวก 127 ช่องเลขชี้กำลัง 8 บิตมีค่าเท่าใดในฐานสิบ"
+    answer: { value: 130 }
+    hints:
+      - "เขียน 10 เป็นฐานสองแล้วจัดให้อยู่ในรูป $1.\\text{xxx}_2 \\times 2^e$"
+      - "$10 = 1010_2 = 1.010_2 \\times 2^3$ แล้วบวก 127 กับเลขชี้กำลัง"
+    misconceptions:
+      - { match: 3, feedback: "3 คือเลขชี้กำลังจริง แต่ช่องเลขชี้กำลังเก็บ $e + 127$" }
+      - { match: 137, feedback: "ดูเหมือนใช้ 10 เป็นเลขชี้กำลัง ต้องเขียน 10 ในรูป $1.\\text{xxx} \\times 2^e$ ก่อน ซึ่ง $e = 3$" }
+    solution: "$10 = 1010_2 = 1.01_2 \\times 2^3$ เลขชี้กำลัง $e = 3$ ช่องเลขชี้กำลังเก็บ $3 + 127 = 130 = 1000\\,0010_2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.number-representation.p020
+    topics: [computer.data.number-representation]
+    difficulty: 5
+    type: mcq
+    stem: "จำนวนจุดลอยตัว 32 บิตมี บิตเครื่องหมาย = 1, ช่องเลขชี้กำลัง = $1000\\,0000_2$ (128) และส่วนเศษขึ้นต้นด้วย 1 แล้วตามด้วย 0 ทั้งหมด จำนวนนี้คือเท่าใด"
+    choices:
+      - { id: a, text: "−3", correct: true }
+      - { id: b, text: "3", feedback: "บิตเครื่องหมายเป็น 1 แปลว่าเป็นจำนวนลบ" }
+      - { id: c, text: "−1.5", feedback: "$-1.1_2 = -1.5$ ยังต้องคูณ $2^{128 - 127} = 2$" }
+      - { id: d, text: "−6", feedback: "เลขชี้กำลังจริงคือ $128 - 127 = 1$ ไม่ใช่ 2 จึงคูณ 2 ไม่ใช่ 4" }
+    hints:
+      - "เลขชี้กำลังจริง = ค่าในช่อง − 127"
+      - "ส่วนเศษ 1000… แปลว่า $1.1_2 = 1.5$"
+    solution: "เครื่องหมายลบ เลขชี้กำลัง $128 - 127 = 1$ ส่วนเศษ $1.1_2 = 1.5$ จึงได้ $-1.5 \\times 2^1 = -3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

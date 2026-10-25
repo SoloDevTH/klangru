@@ -1,0 +1,314 @@
+problems:
+  - id: english.grammar.connectors.p001
+    topics: [english.grammar.connectors]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำเชื่อมกับความหมาย"
+    pairs:
+      - { left: "and", right: "และ" }
+      - { left: "but", right: "แต่" }
+      - { left: "or", right: "หรือ" }
+      - { left: "because", right: "เพราะ" }
+      - { left: "so", right: "ดังนั้น จึง" }
+    hints:
+      - "because นำเหตุ ส่วน so นำผล"
+      - "or ใช้ให้เลือก"
+    solution: "and = และ · but = แต่ · or = หรือ · because = เพราะ · so = ดังนั้น จึง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p002
+    topics: [english.grammar.connectors]
+    difficulty: 1
+    type: mcq
+    stem: "เลือกคำเชื่อม: *I have a cat ___ a dog.* (ฉันมีแมวและสุนัข)"
+    choices:
+      - { id: a, text: "and", correct: true, feedback: "ถูก and = และ เพิ่มของที่มีด้วยกัน" }
+      - { id: b, text: "but", feedback: "but ใช้กับความที่ขัดกัน แมวกับสุนัขไม่ได้ขัดกัน" }
+      - { id: c, text: "because", feedback: "because นำเหตุผล แต่ a dog ไม่ใช่เหตุผล" }
+      - { id: d, text: "so", feedback: "so นำผล แต่ a dog ไม่ใช่ผลของการมีแมว" }
+    hints:
+      - "ภาษาไทยใช้คำว่า และ"
+      - "เพิ่มของสองอย่างที่ไปด้วยกัน"
+    solution: "*I have a cat **and** a dog.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p003
+    topics: [english.grammar.connectors]
+    difficulty: 2
+    type: text
+    stem: "เติมคำเชื่อม: *Do you want tea ___ coffee?* (ให้เลือกอย่างใดอย่างหนึ่ง)"
+    accepted: ["or"]
+    misconceptions:
+      - { match: "and", feedback: "and แปลว่าและ คือเอาทั้งสองอย่าง แต่คำถามนี้ให้เลือกหนึ่งอย่าง ใช้ or" }
+      - { match: "but", feedback: "but ใช้กับความที่ขัดกัน" }
+    hints:
+      - "ผู้ถามอยากให้เลือก"
+      - "คำเชื่อมที่แปลว่า หรือ"
+    solution: "*Do you want tea **or** coffee?* — Tea, please."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p004
+    topics: [english.grammar.connectors]
+    difficulty: 2
+    type: text
+    stem: "เติมคำเชื่อม: *It's raining, ___ I take an umbrella.* (ฝนตก จึงเอาร่มไป)"
+    accepted: ["so"]
+    misconceptions:
+      - { match: "because", feedback: "because นำเหตุ แต่ I take an umbrella เป็นผล ใช้ so" }
+      - { match: "but", feedback: "ฝนตกกับเอาร่มไปไม่ได้ขัดกัน" }
+      - { match: "and", feedback: "and เชื่อมได้แต่ไม่ได้บอกว่าเป็นผล ประโยคนี้บอกผล ใช้ so" }
+    hints:
+      - "ความหลังช่องว่างเป็นเหตุหรือผล"
+      - "คำเชื่อมที่นำผลคือคำใด"
+    solution: "ฝนตก (เหตุ) → เอาร่มไป (ผล): *It's raining, **so** I take an umbrella.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p005
+    topics: [english.grammar.connectors]
+    difficulty: 2
+    type: text
+    stem: "เติมคำเชื่อม: *I'm thirsty ___ it is very hot today.* (หิวน้ำเพราะวันนี้ร้อนมาก)"
+    accepted: ["because"]
+    misconceptions:
+      - { match: "so", feedback: "so นำผล แต่ it is very hot เป็นเหตุ ใช้ because" }
+      - { match: "and", feedback: "and ไม่ได้บอกเหตุผล ประโยคนี้บอกว่าทำไมหิวน้ำ" }
+      - { match: "becuase", feedback: "สะกดผิด: b-e-c-a-u-s-e" }
+    hints:
+      - "ความหลังช่องว่างอธิบายว่า ทำไม"
+      - "คำเชื่อมที่นำเหตุผล"
+    solution: "*I'm thirsty **because** it is very hot today.* because นำเหตุ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p006
+    topics: [english.grammar.connectors]
+    difficulty: 2
+    type: mcq
+    stem: "เลือกคำเชื่อม: *Mali is small, ___ she is very strong.*"
+    choices:
+      - { id: a, text: "but", correct: true, feedback: "ถูก ตัวเล็กกับแข็งแรงมากเป็นความที่ขัดกับที่คาดไว้" }
+      - { id: b, text: "and", feedback: "and ใช้กับความที่ไปด้วยกัน แต่ตัวเล็กกับแข็งแรงขัดกับที่คนคาด" }
+      - { id: c, text: "so", feedback: "ตัวเล็กไม่ได้เป็นเหตุให้แข็งแรง" }
+      - { id: d, text: "because", feedback: "แข็งแรงไม่ใช่เหตุผลที่ตัวเล็ก" }
+    hints:
+      - "คนตัวเล็กมักคิดว่าไม่ค่อยแข็งแรง"
+      - "ความที่ขัดกับที่คาดใช้ but"
+    solution: "*Mali is small, **but** she is very strong.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p007
+    topics: [english.grammar.connectors]
+    difficulty: 3
+    type: mcq
+    stem: "ประโยค \"เพราะพี่ชายชอบฟุตบอล เขาจึงเล่นทุกวัน\" ข้อใดเขียน **ผิด**"
+    choices:
+      - { id: a, text: "Because my brother likes football, so he plays every day.", correct: true, feedback: "ถูก ข้อนี้ผิด เพราะใช้ because กับ so ในประโยคเดียวตามภาษาไทย (เพราะ...จึง)" }
+      - { id: b, text: "My brother likes football, so he plays every day.", feedback: "ข้อนี้ถูกต้อง ใช้ so คำเดียว" }
+      - { id: c, text: "My brother plays football every day because he likes it.", feedback: "ข้อนี้ถูกต้อง ใช้ because คำเดียว" }
+      - { id: d, text: "Because my brother likes football, he plays every day.", feedback: "ข้อนี้ถูกต้อง because อยู่ต้นประโยคได้ ใส่จุลภาคคั่น" }
+    hints:
+      - "ภาษาไทยใช้ เพราะ...จึง สองคำ"
+      - "ภาษาอังกฤษใช้ because หรือ so อย่างใดอย่างหนึ่ง"
+    solution: "ข้อที่ผิดคือ ~~Because my brother likes football, so he plays every day.~~ ภาษาอังกฤษใช้ because หรือ so เพียงคำเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p008
+    topics: [english.grammar.connectors]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนต้มบะหมี่กึ่งสำเร็จรูปให้ถูกลำดับ"
+    items:
+      - "First, boil the water."
+      - "Next, put the noodles in a bowl."
+      - "Then, pour the hot water on the noodles."
+      - "Finally, wait three minutes and eat."
+    hints:
+      - "ดูตัวเชื่อมลำดับหน้าประโยค"
+      - "First → Next → Then → Finally"
+    solution: "First (ต้มน้ำ) → Next (ใส่เส้นในชาม) → Then (เทน้ำร้อน) → Finally (รอ 3 นาทีแล้วกิน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p009
+    topics: [english.grammar.connectors]
+    difficulty: 3
+    type: text
+    stem: "เติมคำเชื่อม: *Wash your hands ___ you eat.* (ล้างมือก่อนกินข้าว)"
+    accepted: ["before"]
+    misconceptions:
+      - { match: "after", feedback: "after แปลว่าหลัง ล้างมือหลังกินไม่ได้ป้องกันเชื้อโรคเข้าปาก โจทย์บอกว่าก่อน" }
+      - { match: "so", feedback: "so นำผล ประโยคนี้บอกลำดับเวลา" }
+      - { match: "because", feedback: "because นำเหตุ ประโยคนี้บอกว่าทำอะไรก่อน" }
+    hints:
+      - "ประโยคนี้บอกลำดับเวลา"
+      - "ก่อน = before หลัง = after"
+    solution: "*Wash your hands **before** you eat.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p010
+    topics: [english.grammar.connectors]
+    difficulty: 3
+    type: mcq
+    stem: "เลือกคำเชื่อม: *___ school, I play football with my friends.* (หลังเลิกเรียน)"
+    choices:
+      - { id: a, text: "After", correct: true, feedback: "ถูก after school = หลังเลิกเรียน" }
+      - { id: b, text: "Before", feedback: "before school = ก่อนเข้าเรียน โจทย์บอกว่าหลังเลิกเรียน" }
+      - { id: c, text: "Because", feedback: "because นำเหตุผล ไม่ใช่เวลา" }
+      - { id: d, text: "So", feedback: "so นำผล และไม่วางหน้าคำนาม school แบบนี้" }
+    hints:
+      - "โจทย์บอกเวลา หลังเลิกเรียน"
+      - "หลัง = after"
+    solution: "***After** school, I play football with my friends.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p011
+    topics: [english.grammar.connectors]
+    difficulty: 3
+    type: text
+    stem: "ให้เหตุผลประกอบความคิดเห็น: *I think English is useful ___ I can talk to tourists in Phuket.*"
+    accepted: ["because"]
+    misconceptions:
+      - { match: "so", feedback: "ความหลังช่องว่างเป็นเหตุผลที่คิดว่าภาษาอังกฤษมีประโยชน์ ใช้ because" }
+      - { match: "but", feedback: "สองความไม่ได้ขัดกัน ความหลังสนับสนุนความแรก" }
+    hints:
+      - "ความหลังช่องว่างตอบคำถาม ทำไมคิดว่ามีประโยชน์"
+      - "แสดงความคิดเห็นพร้อมเหตุผล: I think ... because ..."
+    solution: "*I think English is useful **because** I can talk to tourists in Phuket.* เหตุผลเป็นรายละเอียดที่สนับสนุนความคิดเห็น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p012
+    topics: [english.grammar.connectors]
+    difficulty: 4
+    type: text
+    stem: "รวมสองประโยคเป็นประโยคเดียวด้วย **so**: *It is Sunday.* / *The bank is closed.* (พิมพ์ประโยคเต็ม)"
+    accepted:
+      - "It is Sunday, so the bank is closed."
+      - "It is Sunday, so the bank is closed"
+      - "It is Sunday so the bank is closed."
+      - "It is Sunday so the bank is closed"
+      - "It's Sunday, so the bank is closed."
+      - "It's Sunday, so the bank is closed"
+      - "It's Sunday so the bank is closed."
+      - "It's Sunday so the bank is closed"
+      - "It's Sunday, so the bank's closed."
+      - "It's Sunday, so the bank's closed"
+    misconceptions:
+      - { match: "The bank is closed, so it is Sunday.", feedback: "สลับเหตุกับผล ธนาคารปิดไม่ได้ทำให้เป็นวันอาทิตย์ so ต้องนำผล" }
+      - { match: "It is Sunday because the bank is closed.", feedback: "because นำเหตุ แต่ธนาคารปิดเป็นผล และโจทย์ให้ใช้ so" }
+      - { match: "Because it is Sunday, so the bank is closed.", feedback: "ห้ามใช้ because กับ so คู่กัน" }
+    hints:
+      - "เหตุคือวันอาทิตย์ ผลคือธนาคารปิด"
+      - "เรียง: เหตุ + , so + ผล"
+    solution: "***It is Sunday, so the bank is closed.*** (so นำผล ใส่จุลภาคหน้า so)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p013
+    topics: [english.grammar.connectors]
+    difficulty: 4
+    type: mcq
+    stem: "อ่านข้อความแล้วตอบคำถาม\n\n*Songkran is my favourite festival because I can play with water. First, my family goes to the temple and gives food to the monks. Then, we pour water on my grandparents' hands. After that, my cousins and I play with water in the street. It is very hot in April, so the cold water feels great.*\n\nใจความสำคัญของข้อความคืออะไร"
+    choices:
+      - { id: a, text: "ผู้เขียนชอบสงกรานต์และเล่าว่าครอบครัวทำอะไรบ้างในวันนั้น", correct: true, feedback: "ถูก ประโยคแรกบอกความชอบ ประโยคที่เหลือเล่ากิจกรรมตามลำดับ" }
+      - { id: b, text: "เดือนเมษายนอากาศร้อนมาก", feedback: "เป็นรายละเอียดที่อธิบายว่าทำไมน้ำเย็นรู้สึกดี ไม่ใช่ใจความหลัก" }
+      - { id: c, text: "วิธีตักบาตรที่วัด", feedback: "การไปวัดเป็นขั้นตอนหนึ่ง ข้อความไม่ได้อธิบายวิธีตักบาตร" }
+      - { id: d, text: "ญาติของผู้เขียนเล่นน้ำบนถนน", feedback: "เป็นรายละเอียดของขั้นตอนหนึ่ง ไม่ใช่ใจความของทั้งข้อความ" }
+    hints:
+      - "ประโยคแรกมักบอกใจความสำคัญ"
+      - "ประโยคที่ขึ้นต้นด้วย First, Then, After that เป็นรายละเอียด"
+    solution: "ประโยคแรกบอกว่าผู้เขียน **ชอบสงกรานต์** (พร้อมเหตุผลหลัง because) และประโยคที่ตามมาเล่ากิจกรรมของครอบครัวตามลำดับ ซึ่งเป็นรายละเอียดสนับสนุน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p014
+    topics: [english.grammar.connectors]
+    difficulty: 4
+    type: mcq
+    stem: "จากข้อความเรื่องสงกรานต์ในข้อก่อน ครอบครัวทำอะไร **ทันทีหลังจาก** ไปวัด"
+    choices:
+      - { id: a, text: "รดน้ำที่มือของปู่ย่าตายาย", correct: true, feedback: "ถูก ประโยค Then, we pour water on my grandparents' hands. ตามหลังการไปวัด" }
+      - { id: b, text: "เล่นน้ำบนถนน", feedback: "เล่นน้ำบนถนนมาหลัง After that ซึ่งเป็นขั้นที่สาม" }
+      - { id: c, text: "ให้อาหารพระ", feedback: "ให้อาหารพระทำที่วัด เป็นส่วนหนึ่งของขั้นแรก" }
+      - { id: d, text: "กลับบ้านนอนพัก", feedback: "ข้อความไม่ได้พูดถึงการนอนพัก" }
+    hints:
+      - "หาประโยคที่ขึ้นต้นด้วย First, แล้วดูประโยคถัดไป"
+      - "Then บอกขั้นที่ต่อจาก First"
+    solution: "First = ไปวัดและตักบาตร → **Then = รดน้ำที่มือปู่ย่าตายาย** → After that = เล่นน้ำบนถนน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p015
+    topics: [english.grammar.connectors]
+    difficulty: 5
+    type: text
+    stem: "เติมคำเชื่อมสองช่อง: *My brother is good at maths, ___ he is bad at English, ___ I help him with his homework.* (พิมพ์สองคำตามลำดับ คั่นด้วยเครื่องหมายจุลภาค)"
+    accepted: ["but, so", "but so", "but; so"]
+    misconceptions:
+      - { match: "so, but", feedback: "เก่งเลขกับอ่อนภาษาอังกฤษขัดกัน ช่องแรกใช้ but ส่วนช่องที่สองเป็นผล ใช้ so" }
+      - { match: "and, so", feedback: "เก่งเลขกับอ่อนภาษาอังกฤษขัดกัน ใช้ but ดีกว่า and" }
+      - { match: "but, because", feedback: "ช่วยทำการบ้านเป็นผลของการอ่อนภาษาอังกฤษ ใช้ so ไม่ใช่ because" }
+      - { match: "because, so", feedback: "อ่อนภาษาอังกฤษไม่ใช่เหตุที่ทำให้เก่งเลข ช่องแรกใช้ but" }
+    hints:
+      - "ความแรกกับความที่สองขัดกันหรือไปด้วยกัน"
+      - "ความที่สามเป็นเหตุหรือผลของความที่สอง"
+    solution: "*My brother is good at maths, **but** he is bad at English, **so** I help him with his homework.* (เก่ง ขัดกับ อ่อน → but และ ช่วยการบ้าน เป็นผล → so)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p016
+    topics: [english.grammar.connectors]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกประโยคที่ **ถูกต้อง** ทั้งหมด"
+    choices:
+      - { id: a, text: "I am tired, so I want to go to bed.", correct: true }
+      - { id: b, text: "Do you want to go to the beach or the mountains?", correct: true }
+      - { id: c, text: "After I finish my homework, I watch TV.", correct: true }
+      - { id: d, text: "Although she is tired, but she works hard.", feedback: "ห้ามใช้ although กับ but คู่กัน: Although she is tired, she works hard. หรือ She is tired, but she works hard." }
+      - { id: e, text: "I like durian because of it smells good.", feedback: "because of ตามด้วยคำนาม ถ้าตามด้วยประโยคใช้ because: because it smells good." }
+      - { id: f, text: "It is cold because I wear a jacket.", feedback: "สลับเหตุกับผล การใส่แจ็กเก็ตไม่ได้ทำให้หนาว: It is cold, so I wear a jacket." }
+    hints:
+      - "ตรวจว่าใช้คำเชื่อมคู่กันซ้ำซ้อนหรือไม่"
+      - "ตรวจว่าเหตุกับผลอยู่ถูกที่หรือไม่"
+    solution: "ถูก: I am tired, so I want to go to bed. · ... the beach or the mountains? · After I finish my homework, I watch TV. ผิด: Although ... but · because of + ประโยค · It is cold because I wear a jacket (สลับเหตุผล)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.connectors.p017
+    topics: [english.grammar.connectors]
+    difficulty: 5
+    type: text
+    stem: "เขียนประโยคใหม่โดยใช้ **because** แทน so: *It is very hot, so we stay inside.* (พิมพ์ประโยคเต็ม)"
+    accepted:
+      - "We stay inside because it is very hot."
+      - "We stay inside because it is very hot"
+      - "We stay inside because it's very hot."
+      - "We stay inside because it's very hot"
+      - "Because it is very hot, we stay inside."
+      - "Because it is very hot, we stay inside"
+      - "Because it's very hot, we stay inside."
+      - "Because it's very hot, we stay inside"
+      - "Because it is very hot we stay inside."
+      - "Because it is very hot we stay inside"
+      - "Because it's very hot we stay inside."
+      - "Because it's very hot we stay inside"
+    misconceptions:
+      - { match: "Because it is very hot, so we stay inside.", feedback: "ใช้ because แล้วต้องตัด so ออก" }
+      - { match: "It is very hot because we stay inside.", feedback: "because นำเหตุ แต่การอยู่ในบ้านไม่ได้ทำให้ร้อน ต้องสลับลำดับ" }
+      - { match: "We stay inside, so it is very hot.", feedback: "โจทย์ให้ใช้ because และ so นำผล ไม่ใช่เหตุ" }
+    hints:
+      - "หาเหตุ (ร้อนมาก) และผล (อยู่ในบ้าน)"
+      - "เรียง: ผล + because + เหตุ"
+    solution: "***We stay inside because it is very hot.*** (หรือ Because it is very hot, we stay inside.)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,312 @@
+problems:
+  - id: math.number.rationals.p001
+    topics: [math.number.rationals]
+    difficulty: 1
+    type: mcq
+    multiple: true
+    stem: "จำนวนใดเป็นจำนวนตรรกยะ (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$-5$", correct: true }
+      - { id: b, text: "$0.75$", correct: true }
+      - { id: c, text: "$-\\tfrac23$", correct: true }
+      - { id: d, text: "$\\sqrt2$", feedback: "$\\sqrt2 = 1.41421\\ldots$ เป็นทศนิยมไม่รู้จบและไม่ซ้ำ เขียนเป็นเศษส่วนของจำนวนเต็มไม่ได้ จึงเป็นจำนวนอตรรกยะ" }
+      - { id: e, text: "$0.333\\ldots$", correct: true }
+      - { id: f, text: "$\\pi$", feedback: "$\\pi$ เป็นทศนิยมไม่รู้จบและไม่ซ้ำ ($\\tfrac{22}{7}$ เป็นแค่ค่าประมาณ) จึงเป็นจำนวนอตรรกยะ" }
+    hints:
+      - "จำนวนตรรกยะเขียนได้ในรูป $\\tfrac{a}{b}$ เมื่อ $a, b$ เป็นจำนวนเต็มและ $b \\ne 0$"
+      - "จำนวนเต็ม ทศนิยมรู้จบ และทศนิยมซ้ำ เป็นจำนวนตรรกยะทั้งหมด"
+    solution: "$-5 = \\tfrac{-5}{1}$, $0.75 = \\tfrac34$, $-\\tfrac23$, $0.333\\ldots = \\tfrac13$ เป็นจำนวนตรรกยะ ส่วน $\\sqrt2$ และ $\\pi$ เป็นทศนิยมไม่รู้จบไม่ซ้ำ จึงไม่ใช่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p002
+    topics: [math.number.rationals]
+    difficulty: 1
+    type: numeric
+    stem: "เติมจำนวนในช่องว่าง: $0.71 = \\dfrac{\\square}{100}$"
+    answer: { value: 71 }
+    hints:
+      - "0.71 มีทศนิยมสองตำแหน่ง คือ 71 ส่วนร้อย"
+      - "หลักส่วนสิบเป็น 7 (= 70 ส่วนร้อย) หลักส่วนร้อยเป็น 1"
+    misconceptions:
+      - { match: 7.1, feedback: "ตัวเศษต้องเป็นจำนวนเต็ม 0.71 คือ 71 ส่วนร้อย" }
+      - { match: 710, feedback: "นั่นคือ 710 ส่วนพัน ซึ่งเท่ากัน แต่ตัวส่วนในข้อนี้คือ 100" }
+    solution: "$0.71 = \\tfrac{7}{10} + \\tfrac{1}{100} = \\tfrac{70}{100} + \\tfrac{1}{100} = \\tfrac{71}{100}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p003
+    topics: [math.number.rationals]
+    difficulty: 1
+    type: match
+    stem: "จับคู่เศษส่วนกับทศนิยมที่เท่ากัน"
+    pairs:
+      - { left: "$\\tfrac14$", right: "$0.25$" }
+      - { left: "$\\tfrac34$", right: "$0.75$" }
+      - { left: "$\\tfrac25$", right: "$0.4$" }
+      - { left: "$\\tfrac{7}{20}$", right: "$0.35$" }
+      - { left: "$\\tfrac18$", right: "$0.125$" }
+    hints:
+      - "ขยายเศษส่วนให้ตัวส่วนเป็น 10, 100 หรือ 1,000"
+      - "เช่น $\\tfrac{7}{20} = \\tfrac{35}{100}$"
+    solution: "$\\tfrac14 = \\tfrac{25}{100} = 0.25$, $\\tfrac34 = 0.75$, $\\tfrac25 = \\tfrac{4}{10} = 0.4$, $\\tfrac{7}{20} = \\tfrac{35}{100} = 0.35$, $\\tfrac18 = \\tfrac{125}{1000} = 0.125$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p004
+    topics: [math.number.rationals]
+    difficulty: 2
+    type: numeric
+    stem: "จุด $Q$ บนเส้นจำนวนแทนจำนวนใด (ตอบเป็นทศนิยม)"
+    figure: { src: number-line-q.svg, alt: "เส้นจำนวนจาก −1 ถึง 1 แต่ละช่วงหนึ่งหน่วยแบ่งเป็น 5 ช่วงเท่ากัน จุด Q อยู่ระหว่าง −1 กับ 0 ที่ขีดที่ 2 นับจาก −1 หรือขีดที่ 3 นับจาก 0 ไปทางซ้าย" }
+    answer: { value: -0.6 }
+    hints:
+      - "ช่วงจาก −1 ถึง 0 แบ่งเป็น 5 ช่วง แต่ละช่วงยาวเท่าใด"
+      - "นับจาก 0 ไปทางซ้ายกี่ช่วงจึงถึง $Q$"
+    misconceptions:
+      - { match: -0.4, feedback: "นับจาก −1 ไปทางขวา 2 ช่วงได้ $-1 + 0.4 = -0.6$ ไม่ใช่ $-0.4$" }
+      - { match: 0.6, feedback: "$Q$ อยู่ทางซ้ายของ 0 จึงเป็นจำนวนลบ" }
+    solution: "แต่ละช่วงยาว $1 \\div 5 = 0.2$ จาก 0 ไปทางซ้าย 3 ช่วงถึง $Q$ ได้ $Q = -0.6 = -\\tfrac35$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p005
+    topics: [math.number.rationals]
+    difficulty: 2
+    type: expression
+    stem: "หาผลบวก $-\\tfrac23 + \\tfrac56$ (ตอบเป็นเศษส่วนอย่างต่ำ)"
+    answer: { latex: "\\frac{1}{6}", variables: [] }
+    hints:
+      - "ทำตัวส่วนให้เท่ากันเป็น 6"
+      - "$-\\tfrac23 = -\\tfrac46$ แล้วบวกตัวเศษ"
+    misconceptions:
+      - { match: "\\frac{1}{3}", feedback: "บวกตัวเศษกับตัวเศษและตัวส่วนกับตัวส่วน ($\\tfrac{-2+5}{3+6}$) ต้องทำตัวส่วนให้เท่ากันก่อน" }
+      - { match: "\\frac{3}{2}", feedback: "ลืมเครื่องหมายลบของ $\\tfrac23$ ทำให้กลายเป็นบวกกันสองจำนวน" }
+    solution: "$-\\tfrac23 + \\tfrac56 = -\\tfrac46 + \\tfrac56 = \\tfrac{-4 + 5}{6} = \\tfrac16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p006
+    topics: [math.number.rationals]
+    difficulty: 2
+    type: mcq
+    stem: "จำนวนใดมีค่ามากที่สุด: $-\\tfrac34$, $-0.8$, $-\\tfrac12$"
+    choices:
+      - { id: a, text: "$-\\tfrac12$", correct: true }
+      - { id: b, text: "$-0.8$", feedback: "0.8 มากกว่าตัวอื่น แต่เมื่อเป็นจำนวนลบ ยิ่งไกลจากศูนย์ยิ่งน้อย $-0.8$ จึงน้อยที่สุด" }
+      - { id: c, text: "$-\\tfrac34$", feedback: "$-\\tfrac34 = -0.75$ อยู่ทางซ้ายของ $-0.5$ จึงน้อยกว่า" }
+    hints:
+      - "เขียนทุกจำนวนเป็นทศนิยม"
+      - "บนเส้นจำนวน จำนวนที่อยู่ทางขวาสุด (ใกล้ศูนย์ที่สุดในกรณีนี้) มากที่สุด"
+    solution: "$-\\tfrac34 = -0.75$, $-0.8$, $-\\tfrac12 = -0.5$ เรียงได้ $-0.8 < -0.75 < -0.5$ จำนวนที่มากที่สุดคือ $-\\tfrac12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p007
+    topics: [math.number.rationals]
+    difficulty: 2
+    type: numeric
+    stem: "เติมจำนวนในช่องว่าง: $\\dfrac{3}{10} + \\dfrac{4}{100} = \\dfrac{\\square}{100}$"
+    answer: { value: 34 }
+    hints:
+      - "เขียน $\\tfrac{3}{10}$ เป็นส่วนร้อยก่อน"
+      - "$\\tfrac{3}{10} = \\tfrac{30}{100}$"
+    misconceptions:
+      - { match: 7, feedback: "บวก 3 กับ 4 ตรง ๆ แต่ 3 ส่วนสิบใหญ่กว่า 3 ส่วนร้อย 10 เท่า ต้องทำตัวส่วนให้เท่ากันก่อน" }
+    solution: "$\\tfrac{3}{10} = \\tfrac{30}{100}$ จึงได้ $\\tfrac{30}{100} + \\tfrac{4}{100} = \\tfrac{34}{100}$ (= 0.34)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p008
+    topics: [math.number.rationals]
+    difficulty: 2
+    type: numeric
+    stem: "หาค่าของ $(-2.5) \\times (-0.4)$"
+    answer: { value: 1 }
+    hints:
+      - "จำนวนลบคูณจำนวนลบได้จำนวนบวก"
+      - "$2.5 \\times 0.4$ คือ $\\tfrac52 \\times \\tfrac25$"
+    misconceptions:
+      - { match: -1, feedback: "ลบคูณลบได้บวก ไม่ใช่ลบ" }
+      - { match: 10, feedback: "ตำแหน่งทศนิยมผิด ผลคูณมีทศนิยม 2 ตำแหน่ง: $25 \\times 4 = 100$ จึงได้ $1.00$" }
+    solution: "$(-2.5) \\times (-0.4) = 2.5 \\times 0.4 = \\tfrac52 \\times \\tfrac25 = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p009
+    topics: [math.number.rationals]
+    difficulty: 3
+    type: numeric
+    stem: "หาค่าของ $\\left(-\\tfrac34\\right) \\div \\left(-\\tfrac12\\right)$ (ตอบเป็นทศนิยม)"
+    answer: { value: 1.5, tolerance: 0.01 }
+    hints:
+      - "การหารด้วยเศษส่วนคือการคูณด้วยส่วนกลับของตัวหาร"
+      - "ส่วนกลับของ $-\\tfrac12$ คือ $-2$ และลบคูณลบได้บวก"
+    misconceptions:
+      - { match: 0.375, feedback: "นั่นคือผลคูณ $\\tfrac34 \\times \\tfrac12$ ต้องกลับตัวหารก่อนคูณ" }
+      - { match: -1.5, feedback: "ลบหารลบได้บวก" }
+    solution: "$\\left(-\\tfrac34\\right) \\div \\left(-\\tfrac12\\right) = -\\tfrac34 \\times (-2) = \\tfrac32 = 1.5$ ตรวจ: $1.5 \\times \\left(-\\tfrac12\\right) = -\\tfrac34$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p010
+    topics: [math.number.rationals]
+    difficulty: 3
+    type: numeric
+    stem: "วัดแห่งหนึ่งได้รับบริจาคข้าวสาร 50 กิโลกรัม แบ่งให้ 9 ครอบครัวเท่า ๆ กัน แต่ละครอบครัวได้ข้าวสารกี่กิโลกรัม (ตอบเป็นทศนิยม 2 ตำแหน่ง ในหน่วยกิโลกรัม)"
+    answer: { value: 5.56, tolerance: 0.01, unit: กิโลกรัม }
+    hints:
+      - "แบ่งเท่า ๆ กันคือการหาร $50 \\div 9$ ซึ่งเท่ากับ $\\tfrac{50}{9}$"
+      - "$9 \\times 5 = 45$ เหลือ 5 จึงได้ $5\\tfrac59$ แล้วแปลงเป็นทศนิยม"
+    misconceptions:
+      - { match: 0.18, feedback: "หาร 9 ด้วย 50 กลับกัน ข้าวสาร 50 กิโลกรัมเป็นตัวตั้ง" }
+      - { match: 5, feedback: "ยังเหลือข้าวสารอีก 5 กิโลกรัมที่ต้องแบ่ง $5\\tfrac59$ อยู่ระหว่าง 5 กับ 6" }
+    solution: "$50 \\div 9 = \\tfrac{50}{9} = 5\\tfrac59 \\approx 5.56$ กิโลกรัม (อยู่ระหว่าง 5 กับ 6) ตรวจ: $\\tfrac{50}{9} \\times 9 = 50$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p011
+    topics: [math.number.rationals]
+    difficulty: 3
+    type: mcq
+    stem: "$\\left(-\\tfrac23\\right) \\times \\left(\\tfrac35 + \\tfrac15\\right) = \\left(-\\tfrac23\\right) \\times \\tfrac35 + \\left(-\\tfrac23\\right) \\times \\tfrac15$ เป็นจริงเพราะสมบัติใด"
+    choices:
+      - { id: a, text: "สมบัติการแจกแจง", correct: true }
+      - { id: b, text: "สมบัติการสลับที่ของการคูณ", feedback: "การสลับที่คือ $ab = ba$ ข้อนี้กระจายการคูณเข้าไปในวงเล็บ" }
+      - { id: c, text: "สมบัติการเปลี่ยนหมู่ของการบวก", feedback: "การเปลี่ยนหมู่คือ $(a + b) + c = a + (b + c)$ ไม่มีการคูณกระจาย" }
+      - { id: d, text: "สมบัติการมีอินเวอร์สการคูณ", feedback: "อินเวอร์สการคูณคือ $a \\times \\tfrac1a = 1$ ไม่เกี่ยวกับข้อนี้" }
+    hints:
+      - "ดูว่าตัวคูณ $-\\tfrac23$ ถูกนำไปคูณกับอะไรบ้าง"
+      - "$a(b + c) = ab + ac$ ชื่อว่าอะไร"
+    solution: "รูป $a(b + c) = ab + ac$ คือสมบัติการแจกแจง ทั้งสองข้างได้ $-\\tfrac{8}{15}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p012
+    topics: [math.number.rationals]
+    difficulty: 3
+    type: expression
+    stem: "เขียนทศนิยมซ้ำ $0.\\dot{3}\\dot{6}$ (คือ $0.363636\\ldots$) เป็นเศษส่วนอย่างต่ำ"
+    answer: { latex: "\\frac{4}{11}", variables: [] }
+    hints:
+      - "ให้ $x = 0.3636\\ldots$ มีหลักที่ซ้ำ 2 หลัก จึงคูณด้วย 100"
+      - "$100x - x = 36$ แล้วทอนเป็นเศษส่วนอย่างต่ำ"
+    misconceptions:
+      - { match: "\\frac{9}{25}", feedback: "นั่นคือ $\\tfrac{36}{100} = 0.36$ ซึ่งเป็นทศนิยมรู้จบ ทศนิยมซ้ำต้องใช้ตัวส่วน 99" }
+      - { match: "\\frac{36}{90}", feedback: "ทั้งสองหลักซ้ำกัน จึงต้องใช้ $100x - x = 99x$ ไม่ใช่ $90x$" }
+    solution: "$x = 0.3636\\ldots$, $100x = 36.3636\\ldots$ ลบกันได้ $99x = 36$ จึงได้ $x = \\tfrac{36}{99} = \\tfrac{4}{11}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p013
+    topics: [math.number.rationals]
+    difficulty: 3
+    type: numeric
+    stem: "$\\tfrac{3}{25}$ คิดเป็นร้อยละเท่าใด (ตอบเป็นร้อยละ)"
+    answer: { value: 12, unit: "%" }
+    hints:
+      - "ขยายเศษส่วนให้ตัวส่วนเป็น 100"
+      - "$25 \\times 4 = 100$"
+    misconceptions:
+      - { match: 0.12, feedback: "นั่นคือทศนิยม ร้อยละต้องคูณ 100" }
+      - { match: 75, feedback: "นำ $3 \\times 25$ ต้องคูณทั้งตัวเศษและตัวส่วนด้วย 4" }
+    solution: "$\\tfrac{3}{25} = \\tfrac{3 \\times 4}{25 \\times 4} = \\tfrac{12}{100} = 12\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p014
+    topics: [math.number.rationals]
+    difficulty: 4
+    type: numeric
+    stem: "เช้าวันหนึ่งบนยอดดอยอินทนนท์ อุณหภูมิ $-1.5\\ ^\\circ\\mathrm{C}$ ถึงบ่ายอุณหภูมิสูงขึ้น $12\\tfrac34\\ ^\\circ\\mathrm{C}$ ตอนบ่ายอุณหภูมิเท่าไร (ตอบในหน่วย °C)"
+    answer: { value: 11.25, tolerance: 0.01, unit: "°C" }
+    hints:
+      - "สูงขึ้นคือบวก: $-1.5 + 12\\tfrac34$"
+      - "เขียน $12\\tfrac34 = 12.75$"
+    misconceptions:
+      - { match: 14.25, feedback: "บวก 1.5 กับ 12.75 เหมือนเป็นบวกทั้งคู่ เริ่มต้นที่ $-1.5$ ต่ำกว่าศูนย์" }
+      - { match: -14.25, feedback: "อุณหภูมิสูงขึ้น ต้องบวก ไม่ใช่ลบ" }
+    solution: "$-1.5 + 12.75 = 11.25\\ ^\\circ\\mathrm{C}$ (ขึ้นไป 1.5 ถึงศูนย์ แล้วขึ้นต่ออีก 11.25)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p015
+    topics: [math.number.rationals]
+    difficulty: 4
+    type: numeric
+    stem: "แม่ซื้อผ้าไหม $2\\tfrac34$ เมตร ราคาเมตรละ 120 บาท ร้านลดให้ $\\tfrac{1}{10}$ ของราคารวม แม่ต้องจ่ายเงินกี่บาท (ตอบในหน่วยบาท)"
+    answer: { value: 297, unit: บาท }
+    hints:
+      - "ประมาณก่อน: ประมาณ 3 เมตร ราคาราว 360 บาท แล้วลดลงเล็กน้อย"
+      - "ราคารวม $= 2\\tfrac34 \\times 120$ แล้วลบส่วนลด $\\tfrac{1}{10}$ ของราคารวม"
+    misconceptions:
+      - { match: 330, feedback: "นั่นคือราคาก่อนลด ยังต้องลบส่วนลด $\\tfrac{1}{10}$" }
+      - { match: 33, feedback: "นั่นคือส่วนลด ข้อนี้ถามเงินที่ต้องจ่าย" }
+    solution: "ราคารวม $= \\tfrac{11}{4} \\times 120 = 330$ บาท ส่วนลด $= \\tfrac{1}{10} \\times 330 = 33$ บาท จ่าย $330 - 33 = 297$ บาท (ใกล้ค่าประมาณ 360 ลดลงเล็กน้อย จึงสมเหตุสมผล)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p016
+    topics: [math.number.rationals]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อความใด ไม่ จริงเสมอ เมื่อ $a$ และ $b$ เป็นจำนวนตรรกยะ"
+    choices:
+      - { id: a, text: "$a \\div b$ เป็นจำนวนตรรกยะ", correct: true }
+      - { id: b, text: "$a + b$ เป็นจำนวนตรรกยะ", feedback: "จริงเสมอ ผลบวกของ $\\tfrac{p}{q} + \\tfrac{r}{s} = \\tfrac{ps + rq}{qs}$ เป็นเศษส่วนของจำนวนเต็ม" }
+      - { id: c, text: "$a \\times b$ เป็นจำนวนตรรกยะ", feedback: "จริงเสมอ $\\tfrac{p}{q} \\times \\tfrac{r}{s} = \\tfrac{pr}{qs}$" }
+      - { id: d, text: "$a - b$ เป็นจำนวนตรรกยะ", feedback: "จริงเสมอ เหมือนการบวก" }
+    hints:
+      - "ลองหาค่า $a, b$ ที่ทำให้ข้อความไม่มีความหมาย"
+      - "มีการดำเนินการใดที่ทำไม่ได้กับจำนวนบางจำนวน"
+    solution: "ถ้า $b = 0$ จะหาร $a \\div 0$ ไม่ได้ ข้อนี้จึงไม่จริงเสมอ (ปิดภายใต้การหารเฉพาะเมื่อตัวหารไม่ใช่ 0) การบวก ลบ คูณ ปิดเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p017
+    topics: [math.number.rationals]
+    difficulty: 5
+    type: expression
+    stem: "เขียน $0.1\\dot{6}$ (คือ $0.1666\\ldots$) เป็นเศษส่วนอย่างต่ำ"
+    answer: { latex: "\\frac{1}{6}", variables: [] }
+    hints:
+      - "มีหลักที่ไม่ซ้ำ 1 หลัก (เลข 1) และหลักที่ซ้ำ 1 หลัก (เลข 6)"
+      - "ให้ $x = 0.1666\\ldots$ แล้วหา $100x - 10x$"
+    misconceptions:
+      - { match: "\\frac{16}{99}", feedback: "$\\tfrac{16}{99} = 0.1616\\ldots$ ซ้ำ 16 ทั้งคู่ แต่ข้อนี้ซ้ำเฉพาะเลข 6" }
+      - { match: "\\frac{16}{90}", feedback: "ตัวส่วน 90 ถูกแล้ว แต่ตัวเศษต้องลบส่วนที่ไม่ซ้ำออก: $100x - 10x = 16.66\\ldots - 1.66\\ldots = 15$ ไม่ใช่ 16" }
+    solution: "$10x = 1.666\\ldots$, $100x = 16.666\\ldots$ ลบกันได้ $90x = 15$ จึงได้ $x = \\tfrac{15}{90} = \\tfrac16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p018
+    topics: [math.number.rationals]
+    difficulty: 5
+    type: numeric
+    stem: "จำนวนใดเมื่อคูณด้วย $-\\tfrac25$ แล้วได้ $\\tfrac{3}{10}$ (ตอบเป็นทศนิยม)"
+    answer: { value: -0.75, tolerance: 0.01 }
+    hints:
+      - "ใช้การดำเนินการผกผัน: ถ้า $x \\times \\left(-\\tfrac25\\right) = \\tfrac{3}{10}$ แล้ว $x = \\tfrac{3}{10} \\div \\left(-\\tfrac25\\right)$"
+      - "หารด้วย $-\\tfrac25$ คือคูณด้วย $-\\tfrac52$"
+    misconceptions:
+      - { match: -0.12, feedback: "นั่นคือ $\\tfrac{3}{10} \\times \\left(-\\tfrac25\\right)$ ต้องหาร ไม่ใช่คูณ" }
+      - { match: 0.75, feedback: "บวกหารด้วยลบได้ลบ ตรวจ: $0.75 \\times \\left(-\\tfrac25\\right) = -0.3$ ไม่ใช่ $0.3$" }
+    solution: "$x = \\tfrac{3}{10} \\div \\left(-\\tfrac25\\right) = \\tfrac{3}{10} \\times \\left(-\\tfrac52\\right) = -\\tfrac{15}{20} = -\\tfrac34 = -0.75$ ตรวจ: $-\\tfrac34 \\times \\left(-\\tfrac25\\right) = \\tfrac{6}{20} = \\tfrac{3}{10}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.rationals.p019
+    topics: [math.number.rationals]
+    difficulty: 5
+    type: numeric
+    stem: "ประตูห้องน้ำกว้าง $82\\tfrac12\\ \\mathrm{cm}$ ต้องการติดราวแขวนผ้ายาว $37\\tfrac34\\ \\mathrm{cm}$ ไว้ตรงกลางประตู ปลายราวแต่ละข้างห่างจากขอบประตูกี่เซนติเมตร (ตอบในหน่วย cm)"
+    answer: { value: 22.375, tolerance: 0.01, unit: cm }
+    hints:
+      - "ประมาณก่อน: $(82 - 38) \\div 2 \\approx 22$"
+      - "หาที่ว่างทั้งหมด $82\\tfrac12 - 37\\tfrac34$ แล้วแบ่งให้สองข้างเท่ากัน"
+    misconceptions:
+      - { match: 44.75, feedback: "นั่นคือที่ว่างรวมสองข้าง ราวอยู่ตรงกลาง จึงต้องแบ่งครึ่ง" }
+      - { match: 22.625, feedback: "ลบผิด $82.5 - 37.75 = 44.75$ ไม่ใช่ $45.25$ ระวังการยืมในหลักทศนิยม" }
+    solution: "ที่ว่าง $= 82.5 - 37.75 = 44.75\\ \\mathrm{cm}$ แต่ละข้าง $= 44.75 \\div 2 = 22.375\\ \\mathrm{cm}$ (หรือ $22\\tfrac38$) ใกล้ค่าประมาณ 22 จึงสมเหตุสมผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

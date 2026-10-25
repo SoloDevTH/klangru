@@ -1,0 +1,76 @@
+id: math.number.rationals
+subject: math
+title: { th: จำนวนตรรกยะ, en: Rational numbers }
+summary: รู้จักจำนวนตรรกยะทั้งเศษส่วนและทศนิยมที่เป็นบวกและลบ บวก ลบ คูณ หาร ใช้สมบัติของจำนวน และเขียนทศนิยมซ้ำเป็นเศษส่วน
+difficulty: 3
+minutes: 40
+prerequisites: [math.number.integers, math.number.fractions, math.number.decimals]
+encompasses:
+  - { id: math.number.fractions, weight: 0.4 }
+  - { id: math.number.integers, weight: 0.3 }
+  - { id: math.number.decimals, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: number-system.svg
+    alt: "แผนภาพกล่องซ้อนกัน กล่องใหญ่สุดคือจำนวนจริง ข้างในแบ่งเป็นสองส่วน ส่วนซ้ายคือจำนวนตรรกยะ (เขียนเป็น a/b ได้) มีตัวอย่าง 2/3, −3/4, −1.5, 0.125, 0.333... และมีกล่องจำนวนเต็มอยู่ข้างใน (0, −4, −27) ซึ่งมีกล่องจำนวนนับอยู่ข้างในอีกชั้น (1, 2, 3, 100) ส่วนขวาคือจำนวนอตรรกยะ มีตัวอย่าง √2, √5, π เป็นทศนิยมไม่รู้จบและไม่ซ้ำ"
+    caption: "จำนวนนับอยู่ในจำนวนเต็ม จำนวนเต็มอยู่ในจำนวนตรรกยะ และจำนวนตรรกยะกับจำนวนอตรรกยะรวมกันเป็นจำนวนจริง"
+  - { type: check, problem: math.number.rationals.p006, prompt: "จำนวนลบ ยิ่งไกลศูนย์ยิ่งน้อย" }
+  - type: worked-example
+    title: คำนวณหลายขั้นกับจำนวนตรรกยะ
+    problem: "หาค่าของ $\\left(-\\tfrac12 + 0.75\\right) \\times \\left(-\\tfrac83\\right)$"
+    steps:
+      - text: "ทำในวงเล็บก่อน เขียนเป็นแบบเดียวกัน: $0.75 = \\tfrac34$ และ $-\\tfrac12 = -\\tfrac24$"
+        why: "เศษส่วนกับทศนิยมปนกัน ให้แปลงเป็นแบบเดียวกันก่อน"
+      - text: "$-\\tfrac24 + \\tfrac34 = \\tfrac14$"
+      - text: "$\\tfrac14 \\times \\left(-\\tfrac83\\right) = -\\tfrac{8}{12}$"
+        why: "บวกคูณลบได้ลบ"
+      - text: "ทอนเป็นเศษส่วนอย่างต่ำ: $-\\tfrac{8}{12} = -\\tfrac23$"
+    answer: "$-\\tfrac23$"
+  - type: worked-example
+    title: ทศนิยมซ้ำที่มีหลักไม่ซ้ำนำหน้า
+    problem: "เขียน $1.2\\dot{3}$ (คือ $1.2333\\ldots$) เป็นเศษส่วนอย่างต่ำ"
+    steps:
+      - text: "ให้ $x = 1.2333\\ldots$"
+      - text: "เลื่อนจุดให้ส่วนซ้ำเริ่มหลังจุดทศนิยม: $10x = 12.333\\ldots$"
+      - text: "เลื่อนอีกหนึ่งรอบของส่วนที่ซ้ำ: $100x = 123.333\\ldots$"
+        why: "ส่วนที่ซ้ำมี 1 หลัก จึงเลื่อนเพิ่ม 1 หลัก ทำให้หลังจุดทศนิยมของ $10x$ และ $100x$ ตรงกันทุกหลัก"
+      - text: "ลบกัน: $100x - 10x = 123.333\\ldots - 12.333\\ldots = 111$ จึงได้ $90x = 111$"
+      - text: "$x = \\tfrac{111}{90} = \\tfrac{37}{30}$"
+        why: "หารทั้งตัวเศษและตัวส่วนด้วย 3"
+    answer: "$1.2\\dot{3} = \\tfrac{37}{30}$ ตรวจ: $37 \\div 30 = 1.2333\\ldots$"
+  - { type: check, problem: math.number.rationals.p012, prompt: "ทศนิยมซ้ำสองหลัก ใช้ตัวส่วนเท่าใด" }
+  - type: interactive
+    title: จำนวนตรรกยะบนเส้นจำนวน
+    caption: "จุดคือ $-1.5$, $-\\tfrac34$, $\\tfrac13$ และ $1.25$ สังเกตว่า $-1.5$ อยู่ซ้ายสุดจึงน้อยที่สุด แม้ $1.5$ จะดูเป็นตัวเลขที่ใหญ่"
+    widget:
+      kind: number-line
+      min: -2
+      max: 2
+      points:
+        - { value: -1.5, label: "-1.5" }
+        - { value: -0.75, label: "-3/4" }
+        - { value: 0.3333, label: "1/3" }
+        - { value: 1.25, label: "1.25" }
+glossary:
+  - { term: จำนวนตรรกยะ, definition: "จำนวนที่เขียนได้ในรูป $\\tfrac{a}{b}$ เมื่อ $a, b$ เป็นจำนวนเต็มและ $b \\ne 0$" }
+  - { term: จำนวนอตรรกยะ, definition: "จำนวนจริงที่เขียนเป็นเศษส่วนของจำนวนเต็มไม่ได้ เป็นทศนิยมไม่รู้จบและไม่ซ้ำ เช่น $\\sqrt2$, $\\pi$" }
+  - { term: ทศนิยมซ้ำ, definition: "ทศนิยมไม่รู้จบที่มีกลุ่มของเลขโดดซ้ำกันไปเรื่อย ๆ เช่น $0.\\dot{3}\\dot{6} = 0.3636\\ldots$" }
+  - { term: ส่วนกลับ, definition: "จำนวนที่คูณกับจำนวนเดิมแล้วได้ 1 เช่น ส่วนกลับของ $-\\tfrac25$ คือ $-\\tfrac52$" }
+  - { term: สมบัติการแจกแจง, definition: "$a(b + c) = ab + ac$" }
+flashcards:
+  - { front: "จำนวนตรรกยะคืออะไร", back: "จำนวนที่เขียนเป็น $\\tfrac{a}{b}$ ได้ เมื่อ $a, b$ เป็นจำนวนเต็มและ $b \\ne 0$" }
+  - { front: "หารด้วยเศษส่วนทำอย่างไร", back: "คูณด้วยส่วนกลับของตัวหาร เช่น $\\div \\left(-\\tfrac12\\right) = \\times (-2)$" }
+  - { front: "$0.\\dot{3}\\dot{6}$ เป็นเศษส่วน", back: "$\\tfrac{36}{99} = \\tfrac{4}{11}$" }
+  - { front: "$\\tfrac14$, $\\tfrac25$, $\\tfrac34$ เป็นทศนิยมและร้อยละ", back: "$0.25 = 25\\%$, $0.4 = 40\\%$, $0.75 = 75\\%$" }
+  - { front: "สมบัติปิดของจำนวนตรรกยะ", back: "บวก ลบ คูณ ได้จำนวนตรรกยะเสมอ หารได้จำนวนตรรกยะเมื่อตัวหารไม่ใช่ 0" }
+references:
+  - { title: "จำนวนตรรกยะ", url: "https://th.wikipedia.org/wiki/จำนวนตรรกยะ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "ทศนิยมซ้ำ", url: "https://th.wikipedia.org/wiki/ทศนิยมซ้ำ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Rational number", url: "https://en.wikipedia.org/wiki/Rational_number", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "7.1 Rational and Irrational Numbers (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/7-1-rational-and-irrational-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

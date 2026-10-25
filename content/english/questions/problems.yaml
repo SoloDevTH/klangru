@@ -1,0 +1,330 @@
+problems:
+  - id: english.grammar.questions.p001
+    topics: [english.grammar.questions]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำแสดงคำถามกับความหมาย"
+    pairs:
+      - { left: "What", right: "อะไร" }
+      - { left: "Who", right: "ใคร" }
+      - { left: "Where", right: "ที่ไหน" }
+      - { left: "When", right: "เมื่อไร" }
+      - { left: "Why", right: "ทำไม" }
+    hints:
+      - "where มีคำว่า here (ที่นี่) อยู่ข้างใน"
+      - "why ใช้ถามเหตุผล ตอบด้วย because"
+    solution: "What = อะไร · Who = ใคร · Where = ที่ไหน · When = เมื่อไร · Why = ทำไม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p002
+    topics: [english.grammar.questions]
+    difficulty: 1
+    type: mcq
+    stem: "เลือกคำแสดงคำถาม: *___ is your English teacher?* — *Mr. Somsak.*"
+    choices:
+      - { id: a, text: "Who", correct: true, feedback: "ถูก คำตอบเป็นคน ใช้ who" }
+      - { id: b, text: "What", feedback: "what ถามสิ่งของ แต่คำตอบเป็นชื่อคน" }
+      - { id: c, text: "Where", feedback: "where ถามสถานที่" }
+      - { id: d, text: "When", feedback: "when ถามเวลา" }
+    hints:
+      - "คำตอบ Mr. Somsak เป็นคน สถานที่ หรือเวลา"
+      - "คำแสดงคำถามที่ถามถึงคนคือคำใด"
+    solution: "คำตอบเป็นคน จึงใช้ ***Who** is your English teacher?*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p003
+    topics: [english.grammar.questions]
+    difficulty: 1
+    type: mcq
+    stem: "ดูบัตรนักเรียน แล้วตอบ *How old is Mint?*"
+    figure: { src: student-card.svg, alt: "บัตรนักเรียน STUDENT CARD มีรูปหน้าเด็กยิ้ม และข้อมูล Name: Mint, Age: 11, From: Nakhon Ratchasima, Lives in: Bangkok, Likes: badminton, Pets: two cats" }
+    choices:
+      - { id: a, text: "She is eleven.", correct: true, feedback: "ถูก ช่อง Age เขียนว่า 11" }
+      - { id: b, text: "She is from Nakhon Ratchasima.", feedback: "ประโยคนี้ตอบ Where is she from? ส่วน How old ถามอายุ" }
+      - { id: c, text: "She has two cats.", feedback: "ประโยคนี้บอกสัตว์เลี้ยง ไม่ใช่อายุ" }
+      - { id: d, text: "She is fine.", feedback: "She is fine. ตอบ How is she? ส่วน How old ถามอายุ" }
+    hints:
+      - "How old ถามอายุ"
+      - "ดูช่อง Age ในบัตร"
+    solution: "How old ถามอายุ ช่อง Age เขียนว่า 11 จึงตอบ **She is eleven.** (She is eleven years old.)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p004
+    topics: [english.grammar.questions]
+    difficulty: 2
+    type: text
+    stem: "เติมคำแสดงคำถาม: *___ do you live?* — *I live in Udon Thani.*"
+    accepted: ["Where", "where"]
+    misconceptions:
+      - { match: "what", feedback: "what ถามสิ่งของ คำตอบ Udon Thani เป็นสถานที่" }
+      - { match: "when", feedback: "when ถามเวลา คำตอบเป็นสถานที่" }
+      - { match: "who", feedback: "who ถามคน คำตอบเป็นสถานที่" }
+    hints:
+      - "คำตอบ in Udon Thani บอกอะไร"
+      - "คำแสดงคำถามที่ถามสถานที่"
+    solution: "คำตอบเป็นสถานที่ จึงใช้ ***Where** do you live?*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p005
+    topics: [english.grammar.questions]
+    difficulty: 2
+    type: text
+    stem: "เติมคำขึ้นต้นคำถาม: *___ you like mango with sticky rice?*"
+    accepted: ["Do", "do"]
+    misconceptions:
+      - { match: "are", feedback: "like เป็นกริยาทั่วไป คำถามใช้ Do ไม่ใช่ Are" }
+      - { match: "does", feedback: "ประธานคือ you ใช้ Do" }
+      - { match: "is", feedback: "like เป็นกริยาทั่วไป คำถามใช้ Do" }
+    hints:
+      - "ประโยคมีกริยาหลัก like"
+      - "กริยาทั่วไปสร้างคำถามด้วย Do หรือ Does เลือกตามประธาน you"
+    solution: "***Do** you like mango with sticky rice?* — Yes, I do. / No, I don't."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p006
+    topics: [english.grammar.questions]
+    difficulty: 2
+    type: mcq
+    stem: "เลือกคำที่ถูกต้อง: *How ___ pencils do you have?*"
+    choices:
+      - { id: a, text: "many", correct: true, feedback: "ถูก pencils นับได้ ใช้ how many" }
+      - { id: b, text: "much", feedback: "how much ใช้กับของนับไม่ได้หรือราคา pencils นับได้" }
+      - { id: c, text: "old", feedback: "how old ถามอายุ" }
+      - { id: d, text: "long", feedback: "how long ถามความยาวหรือระยะเวลา" }
+    hints:
+      - "pencils มี s แสดงว่านับได้และมีหลายแท่ง"
+      - "ถามจำนวนของที่นับได้ใช้คำใด"
+    solution: "*How **many** pencils do you have?* pencils เป็นคำนามนับได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p007
+    topics: [english.grammar.questions]
+    difficulty: 2
+    type: text
+    stem: "ที่ตลาดนัด ลูกค้าต่างชาติถามราคาเสื้อ เติมคำ: *How ___ is this shirt?* — *It's 199 baht.*"
+    accepted: ["much"]
+    misconceptions:
+      - { match: "many", feedback: "how many ถามจำนวนของที่นับได้ ส่วนถามราคาใช้ how much" }
+      - { match: "price", feedback: "ไม่พูดว่า How price ถ้าจะใช้ price พูดว่า What is the price?" }
+    hints:
+      - "คำตอบบอกราคา"
+      - "ถามราคาใช้ How ... is it?"
+    solution: "ถามราคาใช้ ***How much** is this shirt?*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p008
+    topics: [english.grammar.questions]
+    difficulty: 3
+    type: order
+    stem: "เรียงคำให้เป็นคำถาม \"ตลาดเปิดกี่โมง\""
+    items: ["What time", "does", "the market", "open?"]
+    hints:
+      - "คำแสดงคำถามวางหน้าสุด"
+      - "ตามด้วย does + ประธาน + กริยารูปเดิม"
+    solution: "*What time does the market open?* (คำแสดงคำถาม + does + ประธาน + กริยารูปเดิม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p009
+    topics: [english.grammar.questions]
+    difficulty: 3
+    type: text
+    stem: "ตอบสั้นแบบปฏิเสธ: *Do your parents speak English?* — *No, ___ ___.* (พิมพ์สองคำ)"
+    accepted: ["they don't", "they do not", "they don't.", "they do not."]
+    misconceptions:
+      - { match: "they doesn't", feedback: "they ใช้ don't ส่วน doesn't ใช้กับ he, she, it" }
+      - { match: "they aren't", feedback: "คำถามขึ้นต้นด้วย Do คำตอบสั้นจึงใช้ do ไม่ใช่ are" }
+      - { match: "they not", feedback: "ต้องมีกริยาช่วย do: they don't" }
+      - { match: "he doesn't", feedback: "your parents มีสองคน แทนด้วย they" }
+    hints:
+      - "your parents แทนด้วยสรรพนามอะไร"
+      - "คำตอบสั้นใช้กริยาช่วยตัวเดียวกับคำถาม"
+    solution: "your parents = they และคำถามใช้ Do: *No, **they don't**.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p010
+    topics: [english.grammar.questions]
+    difficulty: 3
+    type: mcq
+    stem: "ที่ร้านอาหาร พนักงานถามว่า *Do you want rice or noodles?* คำตอบใดเหมาะที่สุด"
+    choices:
+      - { id: a, text: "Noodles, please.", correct: true, feedback: "ถูก or-question ให้เลือกหนึ่งอย่าง" }
+      - { id: b, text: "Yes, I do.", feedback: "คำถามมี or ให้เลือก ตอบ Yes ไม่ได้บอกว่าเลือกอะไร" }
+      - { id: c, text: "Yes, please.", feedback: "ยังไม่ได้บอกว่าจะเอาข้าวหรือก๋วยเตี๋ยว" }
+      - { id: d, text: "No, I don't.", feedback: "คำถามแบบให้เลือกไม่ตอบด้วย Yes/No" }
+    hints:
+      - "สังเกตคำว่า or ในคำถาม"
+      - "ผู้ถามอยากรู้ว่าเราเลือกอย่างไหน"
+    solution: "*Do you want rice **or** noodles?* เป็นคำถามให้เลือก ตอบด้วยสิ่งที่เลือก: **Noodles, please.**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p011
+    topics: [english.grammar.questions]
+    difficulty: 3
+    type: mcq
+    stem: "ดูบัตรนักเรียน แล้วตอบ *Where is Mint from?*"
+    figure: { src: student-card.svg, alt: "บัตรนักเรียน STUDENT CARD มีรูปหน้าเด็กยิ้ม และข้อมูล Name: Mint, Age: 11, From: Nakhon Ratchasima, Lives in: Bangkok, Likes: badminton, Pets: two cats" }
+    choices:
+      - { id: a, text: "She is from Nakhon Ratchasima.", correct: true, feedback: "ถูก ช่อง From บอกว่ามาจากนครราชสีมา" }
+      - { id: b, text: "She lives in Bangkok.", feedback: "ประโยคนี้ตอบ Where does she live? (อยู่ที่ไหนตอนนี้) แต่คำถามถามว่ามาจากไหน" }
+      - { id: c, text: "Yes, she is.", feedback: "คำถามขึ้นต้นด้วย Where ต้องตอบเป็นสถานที่ ไม่ใช่ Yes/No" }
+      - { id: d, text: "She likes badminton.", feedback: "ประโยคนี้บอกสิ่งที่ชอบ ไม่ใช่สถานที่" }
+    hints:
+      - "be from = มาจาก"
+      - "ดูช่อง From ไม่ใช่ช่อง Lives in"
+    solution: "Where is she from? ถามบ้านเกิด ช่อง From เขียนว่า Nakhon Ratchasima จึงตอบ **She is from Nakhon Ratchasima.**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p012
+    topics: [english.grammar.questions]
+    difficulty: 3
+    type: mcq
+    stem: "อ่านนิทานแล้วตอบคำถาม\n\n*A hare and a tortoise have a race. The hare runs very fast, so he stops and sleeps under a tree. The tortoise walks slowly, but he does not stop. When the hare wakes up, the tortoise is at the finish line.*\n\nWho wins the race?"
+    choices:
+      - { id: a, text: "The tortoise.", correct: true, feedback: "ถูก เต่าไปถึงเส้นชัยตอนที่กระต่ายตื่น" }
+      - { id: b, text: "The hare.", feedback: "กระต่ายวิ่งเร็วแต่หยุดนอนหลับ ตื่นมาเต่าก็ถึงเส้นชัยแล้ว" }
+      - { id: c, text: "Under a tree.", feedback: "คำตอบนี้บอกสถานที่ ใช้ตอบ Where does the hare sleep?" }
+      - { id: d, text: "Because he sleeps.", feedback: "คำตอบนี้บอกเหตุผล ใช้ตอบคำถาม Why ส่วน Who ถามถึงตัวละคร" }
+    hints:
+      - "who ถามถึงคนหรือตัวละคร"
+      - "อ่านประโยคสุดท้าย ใครอยู่ที่เส้นชัย (finish line)"
+    solution: "ประโยคสุดท้ายบอกว่าเมื่อกระต่ายตื่น เต่าอยู่ที่เส้นชัยแล้ว ผู้ชนะคือ **the tortoise** (เต่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p013
+    topics: [english.grammar.questions]
+    difficulty: 4
+    type: text
+    stem: "ตั้งคำถามถามส่วนที่เป็นตัวหนา: *Somchai goes to work **by bus**.* → *___ does Somchai go to work?*"
+    accepted: ["How", "how"]
+    misconceptions:
+      - { match: "what", feedback: "by bus บอกวิธีเดินทาง ถามวิธีใช้ How" }
+      - { match: "where", feedback: "where ถามสถานที่ แต่ by bus บอกวิธีเดินทาง" }
+      - { match: "when", feedback: "when ถามเวลา แต่ by bus บอกวิธีเดินทาง" }
+    hints:
+      - "by bus บอกเวลา สถานที่ หรือวิธีการ"
+      - "คำแสดงคำถามที่ถามวิธีการ"
+    solution: "by bus บอกวิธีเดินทาง จึงใช้ ***How** does Somchai go to work?*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p014
+    topics: [english.grammar.questions]
+    difficulty: 4
+    type: text
+    stem: "เติมคำ: *Why ___ she sad?* — *Because she lost her phone.*"
+    accepted: ["is"]
+    misconceptions:
+      - { match: "does", feedback: "sad เป็นคำคุณศัพท์ ใช้กับ be ไม่ใช้ does" }
+      - { match: "do", feedback: "sad เป็นคำคุณศัพท์ ใช้กับ be และ she ใช้ is" }
+      - { match: "are", feedback: "she ใช้ is" }
+    hints:
+      - "บอกเล่าคือ She is sad."
+      - "คำถามของ be ย้าย be ไว้หลังคำแสดงคำถาม"
+    solution: "*She is sad.* → *Why **is** she sad?*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p015
+    topics: [english.grammar.questions]
+    difficulty: 4
+    type: mcq
+    stem: "ประโยค *Where does your sister works?* ผิดตรงไหน"
+    choices:
+      - { id: a, text: "works ต้องเป็น work", correct: true, feedback: "ถูก หลัง does ใช้กริยารูปเดิม" }
+      - { id: b, text: "does ต้องเป็น do", feedback: "your sister = she ใช้ does ถูกแล้ว" }
+      - { id: c, text: "Where ต้องเป็น What", feedback: "ถามสถานที่ทำงาน ใช้ Where ถูกแล้ว" }
+      - { id: d, text: "ไม่มีส่วนใดผิด", feedback: "ลองดูกริยาหลังประธานอีกครั้ง" }
+    hints:
+      - "ดูกริยาหลังประธาน your sister"
+      - "เมื่อมี does แล้ว s ที่กริยาหายไปไหน"
+    solution: "*Where does your sister **work**?* หลัง does ใช้กริยารูปเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p016
+    topics: [english.grammar.questions]
+    difficulty: 4
+    type: mcq
+    stem: "อ่านบทสนทนาที่ตลาดนัดจตุจักร แล้วตอบคำถาม\n\n*Tourist: Excuse me. Where is the bus stop?*\n\n*Nok: It's next to the bank.*\n\n*Tourist: How much is the ticket to Victory Monument?*\n\n*Nok: It's about 15 baht.*\n\n*Tourist: Thank you!*\n\nนักท่องเที่ยวอยากรู้อะไรบ้าง"
+    choices:
+      - { id: a, text: "ป้ายรถเมล์อยู่ที่ไหน และค่ารถไปอนุสาวรีย์ชัยฯ เท่าไร", correct: true, feedback: "ถูก Where ถามที่ตั้งป้ายรถเมล์ How much ถามค่าตั๋ว" }
+      - { id: b, text: "ธนาคารเปิดกี่โมง", feedback: "bank เป็นจุดสังเกตที่นกใช้บอกทาง นักท่องเที่ยวไม่ได้ถามเวลาเปิด" }
+      - { id: c, text: "นกชื่ออะไร และมาจากไหน", feedback: "บทสนทนาไม่มีคำถาม What's your name? หรือ Where are you from?" }
+      - { id: d, text: "รถเมล์มาถึงกี่โมง", feedback: "ไม่มีคำถาม What time ในบทสนทนา" }
+    hints:
+      - "หาประโยคที่ขึ้นต้นด้วยคำแสดงคำถาม"
+      - "มีสองคำถาม: Where ... ? และ How much ... ?"
+    solution: "นักท่องเที่ยวถาม *Where is the bus stop?* (ป้ายรถเมล์อยู่ไหน) และ *How much is the ticket ...?* (ค่าตั๋วเท่าไร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p017
+    topics: [english.grammar.questions]
+    difficulty: 5
+    type: text
+    stem: "ตั้งคำถามที่ได้คำตอบนี้ โดยถามเรื่อง **เวลา**: *She gets up at six o'clock.* (พิมพ์คำถามเต็มประโยค)"
+    accepted:
+      - "What time does she get up?"
+      - "What time does she get up"
+      - "When does she get up?"
+      - "When does she get up"
+    misconceptions:
+      - { match: "What time she gets up?", feedback: "ขาดกริยาช่วย does: What time does she get up?" }
+      - { match: "What time does she gets up?", feedback: "หลัง does ใช้กริยารูปเดิม get" }
+      - { match: "What time is she get up?", feedback: "get up เป็นกริยาทั่วไป ใช้ does ไม่ใช่ is" }
+      - { match: "What time do she get up?", feedback: "she ใช้ does" }
+    hints:
+      - "ถามเวลาใช้ What time หรือ When"
+      - "ประธาน she กริยา gets จึงใช้ does + get"
+    solution: "***What time does she get up?*** (หรือ When does she get up?) — She gets up at six o'clock."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p018
+    topics: [english.grammar.questions]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกคำถามที่ **ถูกต้อง** ทั้งหมด"
+    choices:
+      - { id: a, text: "Are you hungry?", correct: true }
+      - { id: b, text: "Does he play football?", correct: true }
+      - { id: c, text: "How many brothers do you have?", correct: true }
+      - { id: d, text: "Do you are a student?", feedback: "be ไม่ใช้กับ do: Are you a student?" }
+      - { id: e, text: "Where you live?", feedback: "ขาดกริยาช่วย: Where do you live?" }
+      - { id: f, text: "How much apples do you want?", feedback: "apples นับได้ ใช้ How many apples ...?" }
+    hints:
+      - "ตรวจว่าประโยคมี be หรือกริยาทั่วไป แล้วดูว่าใช้ do/does ถูกหรือไม่"
+      - "ตรวจ how many กับ how much ด้วย"
+    solution: "ถูก: Are you hungry? · Does he play football? · How many brothers do you have? ผิด: Do you are → Are you · Where you live → Where do you live · How much apples → How many apples"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.grammar.questions.p019
+    topics: [english.grammar.questions]
+    difficulty: 5
+    type: text
+    stem: "เติมกริยา live ในรูปที่ถูกต้อง: *Who ___ next door?* (ใครอยู่บ้านข้าง ๆ)"
+    accepted: ["lives"]
+    misconceptions:
+      - { match: "does live", feedback: "who เป็นประธานของประโยค (ถามว่าใครเป็นคนอยู่) จึงไม่ต้องใช้ does ใช้กริยาเติม s เหมือนประโยคบอกเล่า" }
+      - { match: "live", feedback: "who เป็นประธานเอกพจน์ กริยาต้องเติม s: Who lives ...?" }
+      - { match: "do live", feedback: "who เป็นประธาน ไม่ต้องใช้ do และกริยาต้องเติม s" }
+    hints:
+      - "คำตอบคือ Mr. Lee lives next door. ส่วนที่ถามคือประธาน"
+      - "เมื่อ who เป็นประธาน ไม่ใช้ do/does และกริยาเติม s เหมือน he"
+    solution: "who เป็นประธาน จึงใช้รูปเดียวกับประโยคบอกเล่า: ***Who lives next door?*** — Mr. Lee lives next door."
+    license: CC-BY-SA-4.0
+    ai_assisted: true

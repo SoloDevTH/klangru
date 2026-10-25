@@ -1,0 +1,76 @@
+id: math.number.fraction-compare
+subject: math
+title: { th: การเปรียบเทียบและเรียงลำดับเศษส่วน, en: Comparing and ordering fractions }
+summary: แสดงเศษส่วนด้วยรูป กลุ่มสิ่งของ และเส้นจำนวน เขียนเศษเกินเป็นจำนวนคละ แล้วเปรียบเทียบและเรียงลำดับเศษส่วนและจำนวนคละ
+difficulty: 2
+minutes: 30
+prerequisites: [math.number.fractions]
+encompasses:
+  - { id: math.number.fractions, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: fraction-wall.svg
+    alt: "แถบเศษส่วนสี่แถวยาวเท่ากัน แถวบนเป็น 1 เต็ม แถวที่สองแบ่งเป็นครึ่งสองชิ้น แถวที่สามแบ่งเป็นสี่ชิ้นชิ้นละหนึ่งในสี่ แถวล่างแบ่งเป็นแปดชิ้นชิ้นละหนึ่งในแปด ชิ้นแรกของทุกแถวระบายสี ทำให้เห็นว่าชิ้นหนึ่งในแปดเล็กที่สุด และสองในสี่ยาวเท่าหนึ่งในสอง"
+    caption: "แบ่งครึ่งซ้ำ ๆ ได้ $\\tfrac12$, $\\tfrac14$, $\\tfrac18$ ยิ่งแบ่งมาก ชิ้นยิ่งเล็ก"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: number-line-quarters.svg
+    alt: "เส้นจำนวนจาก 0 ถึง 2 แบ่งเป็นช่วงละหนึ่งในสี่ ใต้ขีดเขียน 0/4 ถึง 8/4 จุดสีส้มอยู่ที่ 3/4 จุดสีเขียวอยู่ที่ 7/4 ซึ่งเท่ากับ 1 กับ 3/4 ขีด 4/4 ตรงกับ 1 และขีด 8/4 ตรงกับ 2"
+    caption: "$\\tfrac44 = 1$ และ $\\tfrac74 = 1\\tfrac34$ นับช่วง ไม่ใช่นับขีด"
+  - { type: check, problem: math.number.fraction-compare.p008, prompt: "นับช่วงหรือนับขีด" }
+  - type: worked-example
+    title: เปรียบเทียบเศษส่วนที่ตัวส่วนต่างกัน
+    problem: "เปรียบเทียบ $\\tfrac23$ กับ $\\tfrac35$"
+    steps:
+      - text: "ตัวเศษและตัวส่วนต่างกันทั้งคู่ จึงต้องทำให้ตัวส่วนเท่ากัน"
+      - text: "ตัวส่วนร่วมที่น้อยที่สุดของ 3 และ 5 คือ 15"
+        why: "15 เป็นจำนวนแรกที่ทั้ง 3 และ 5 หารลงตัว"
+      - text: "$\\tfrac23 = \\tfrac{2 \\times 5}{3 \\times 5} = \\tfrac{10}{15}$ และ $\\tfrac35 = \\tfrac{3 \\times 3}{5 \\times 3} = \\tfrac{9}{15}$"
+        why: "คูณตัวเศษและตัวส่วนด้วยจำนวนเดียวกัน ได้เศษส่วนที่เท่ากับตัวเดิม"
+      - text: "ตัวส่วนเท่ากันแล้ว เทียบตัวเศษ: $10 > 9$"
+    answer: "$\\tfrac23 > \\tfrac35$"
+  - { type: check, problem: math.number.fraction-compare.p006, prompt: "ตัวเศษเท่ากัน ดูอะไรต่อ" }
+  - type: worked-example
+    title: เรียงความยาวผ้าที่เป็นจำนวนคละ
+    problem: "ร้านผ้าที่ตลาดตัดผ้าไทยให้ลูกค้าสามคน ยาว $1\\tfrac34$ เมตร, $\\tfrac{11}{6}$ เมตร และ $1\\tfrac23$ เมตร เรียงจากสั้นไปยาว"
+    steps:
+      - text: "แปลงเศษเกินเป็นจำนวนคละ: $\\tfrac{11}{6} = 1\\tfrac56$"
+        why: "$11 \\div 6 = 1$ เศษ 5 ทุกจำนวนจะมีจำนวนเต็มเป็น 1 เทียบง่ายขึ้น"
+      - text: "จำนวนเต็มเท่ากันหมด จึงเทียบส่วนที่เป็นเศษส่วน: $\\tfrac34$, $\\tfrac56$, $\\tfrac23$"
+      - text: "ใช้ตัวส่วนร่วม 12: $\\tfrac34 = \\tfrac{9}{12}$, $\\tfrac56 = \\tfrac{10}{12}$, $\\tfrac23 = \\tfrac{8}{12}$"
+      - text: "เรียงตัวเศษ $8 < 9 < 10$"
+    answer: "$1\\tfrac23 < 1\\tfrac34 < \\tfrac{11}{6}$ เมตร"
+  - type: interactive
+    title: เศษส่วนบนเส้นจำนวน
+    caption: "จุดเหล่านี้คือ $\\tfrac14$, $\\tfrac12$, $\\tfrac23$, $\\tfrac34$ และ $\\tfrac54$ สังเกตว่า $\\tfrac23$ อยู่ระหว่าง $\\tfrac12$ กับ $\\tfrac34$ และ $\\tfrac54$ อยู่เลย 1 ไป"
+    widget:
+      kind: number-line
+      min: 0
+      max: 1.5
+      points:
+        - { value: 0.25, label: "1/4" }
+        - { value: 0.5, label: "1/2" }
+        - { value: 0.6667, label: "2/3" }
+        - { value: 0.75, label: "3/4" }
+        - { value: 1.25, label: "5/4" }
+glossary:
+  - { term: ตัวเศษ, definition: "ตัวบนของเศษส่วน บอกว่าเอามากี่ส่วน" }
+  - { term: ตัวส่วน, definition: "ตัวล่างของเศษส่วน บอกว่าแบ่งทั้งหมดเป็นกี่ส่วนเท่า ๆ กัน" }
+  - { term: เศษเกิน, definition: "เศษส่วนที่ตัวเศษมากกว่าหรือเท่ากับตัวส่วน เช่น $\\tfrac74$" }
+  - { term: จำนวนคละ, definition: "จำนวนนับกับเศษส่วนแท้เขียนรวมกัน เช่น $1\\tfrac34$" }
+  - { term: เศษส่วนที่เท่ากัน, definition: "เศษส่วนที่แทนปริมาณเดียวกัน อยู่ที่จุดเดียวกันบนเส้นจำนวน เช่น $\\tfrac12 = \\tfrac24$" }
+flashcards:
+  - { front: "ตัวส่วนเท่ากัน เทียบอย่างไร", back: "เทียบตัวเศษ ตัวเศษมากกว่ามีค่ามากกว่า" }
+  - { front: "ตัวเศษเท่ากัน เทียบอย่างไร", back: "ตัวส่วนน้อยกว่ามีค่ามากกว่า เพราะชิ้นใหญ่กว่า" }
+  - { front: "ตัวส่วนต่างกัน เทียบอย่างไร", back: "ทำให้ตัวส่วนเท่ากันด้วย ค.ร.น. ของตัวส่วน แล้วเทียบตัวเศษ" }
+  - { front: "แปลง $2\\tfrac13$ เป็นเศษเกิน", back: "$\\tfrac{2 \\times 3 + 1}{3} = \\tfrac73$" }
+  - { front: "$\\tfrac23$ ของ 12", back: "$12 \\div 3 \\times 2 = 8$" }
+references:
+  - { title: "เศษส่วน", url: "https://th.wikipedia.org/wiki/เศษส่วน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Fraction", url: "https://en.wikipedia.org/wiki/Fraction", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.1 Visualize Fractions (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/4-1-visualize-fractions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

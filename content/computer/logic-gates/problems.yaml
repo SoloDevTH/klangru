@@ -1,0 +1,324 @@
+problems:
+  - id: computer.systems.logic-gates.p001
+    topics: [computer.systems.logic-gates]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นสัญญาณ **ดิจิทัล**"
+    choices:
+      - { id: a, text: "สวิตช์ไฟที่มีแค่สถานะเปิดกับปิด", correct: true }
+      - { id: b, text: "เสียงพูดที่ดังค่อยเปลี่ยนไปเรื่อย ๆ", feedback: "เสียงพูดเปลี่ยนค่าได้ต่อเนื่องทุกระดับ จึงเป็นแอนะล็อก" }
+      - { id: c, text: "เข็มวัดความเร็วที่ชี้ได้ทุกตำแหน่ง", feedback: "เข็มชี้ค่าได้ต่อเนื่อง ไม่ได้มีแค่ไม่กี่ระดับ จึงเป็นแอนะล็อก" }
+      - { id: d, text: "ระดับน้ำในแก้วที่ค่อย ๆ เพิ่มขึ้น", feedback: "ระดับน้ำเพิ่มขึ้นต่อเนื่อง เป็นปริมาณแอนะล็อก" }
+    hints:
+      - "สัญญาณดิจิทัลมีค่าเป็นขั้น ไม่ต่อเนื่อง"
+      - "ข้อใดมีค่าได้แค่สองแบบ"
+    solution: "สวิตช์ที่มีแค่เปิดกับปิดแทนด้วย 1 กับ 0 ได้ จึงเป็นสัญญาณดิจิทัล ส่วนข้ออื่นเปลี่ยนค่าต่อเนื่อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p002
+    topics: [computer.systems.logic-gates]
+    difficulty: 1
+    type: numeric
+    stem: "ถ้า $A = 1$ และ $B = 0$ เอาต์พุตของ $A$ OR $B$ เป็นเท่าใด (ตอบ 0 หรือ 1)"
+    answer: { value: 1 }
+    hints:
+      - "OR เป็น 1 เมื่ออินพุตอย่างน้อยหนึ่งตัวเป็น 1"
+      - "ในอินพุตสองตัวนี้มีตัวใดเป็น 1 หรือไม่"
+    misconceptions:
+      - { match: 0, feedback: "0 คือคำตอบของ AND ซึ่งต้องเป็น 1 ทั้งคู่ แต่ OR ขอแค่ตัวเดียวเป็น 1" }
+    solution: "$A = 1$ จึงมีอินพุตอย่างน้อยหนึ่งตัวเป็น 1 ผลของ OR คือ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p003
+    topics: [computer.systems.logic-gates]
+    difficulty: 2
+    type: match
+    stem: "จับคู่เกตกับกฎที่ทำให้เอาต์พุตเป็น 1"
+    pairs:
+      - { left: "AND", right: "อินพุตทุกตัวเป็น 1" }
+      - { left: "OR", right: "อินพุตอย่างน้อยหนึ่งตัวเป็น 1" }
+      - { left: "NOT", right: "อินพุตเป็น 0" }
+      - { left: "XOR", right: "อินพุตสองตัวมีค่าต่างกัน" }
+    hints:
+      - "NOT มีอินพุตตัวเดียวและกลับค่า"
+      - "XOR ย่อมาจาก exclusive OR คือ หรือ แบบเลือกอย่างเดียว"
+    solution: "AND = ทุกตัวเป็น 1, OR = อย่างน้อยหนึ่งตัวเป็น 1, NOT = อินพุตเป็น 0 (กลับค่า), XOR = อินพุตต่างกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p004
+    topics: [computer.systems.logic-gates]
+    difficulty: 2
+    type: numeric
+    stem: "ถ้า $A = 1$ และ $B = 1$ เอาต์พุตของ $A$ XOR $B$ เป็นเท่าใด (ตอบ 0 หรือ 1)"
+    answer: { value: 0 }
+    hints:
+      - "XOR เป็น 1 เมื่ออินพุตต่างกัน"
+      - "1 กับ 1 ต่างกันหรือเหมือนกัน"
+    misconceptions:
+      - { match: 1, feedback: "1 คือคำตอบของ OR แต่ XOR ให้ 0 เมื่ออินพุตเหมือนกัน แม้จะเป็น 1 ทั้งคู่" }
+    solution: "อินพุตเหมือนกัน (1 กับ 1) XOR จึงให้ 0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p005
+    topics: [computer.systems.logic-gates]
+    difficulty: 2
+    type: numeric
+    stem: "หาค่าของ $\\overline{A \\cdot B}$ (NOT ของ A AND B) เมื่อ $A = 1$ และ $B = 1$ (ตอบ 0 หรือ 1)"
+    answer: { value: 0 }
+    hints:
+      - "หาค่าในขีดบนก่อน: $A \\cdot B$"
+      - "แล้วกลับค่าด้วย NOT"
+    misconceptions:
+      - { match: 1, feedback: "1 คือค่าของ $A \\cdot B$ ก่อนกลับค่า ขีดบนคือ NOT ต้องกลับเป็น 0" }
+    solution: "$A \\cdot B = 1 \\cdot 1 = 1$ แล้ว NOT ได้ 0 (วงจรนี้คือเกต NAND)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p006
+    topics: [computer.systems.logic-gates]
+    difficulty: 2
+    type: order
+    stem: "เรียงแถวของตารางค่าความจริงที่มีอินพุต A B C ตามลำดับการนับเลขฐานสอง (A เป็นหลักซ้ายสุด)"
+    items:
+      - "000"
+      - "001"
+      - "010"
+      - "011"
+      - "100"
+      - "101"
+      - "110"
+      - "111"
+    hints:
+      - "นับ 0 ถึง 7 แล้วเขียนแต่ละจำนวนเป็นเลขฐานสอง 3 หลัก"
+      - "หลักขวาสุด (C) สลับ 0, 1 ทุกแถว หลักซ้ายสุด (A) เปลี่ยนทุก 4 แถว"
+    solution: "000, 001, 010, 011, 100, 101, 110, 111 คือ 0 ถึง 7 ในฐานสอง เขียนแบบนี้จะได้ครบ 8 แถวไม่ซ้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p007
+    topics: [computer.systems.logic-gates]
+    difficulty: 3
+    type: numeric
+    stem: "วงจรในภาพมีอินพุต $A = 1$, $B = 0$, $C = 1$ เอาต์พุต Q เป็นเท่าใด (ตอบ 0 หรือ 1)"
+    figure:
+      src: circuit-abc.svg
+      alt: "วงจรมีอินพุต A B C อินพุต A และ B ต่อเข้าเกต AND อินพุต C ต่อเข้าเกต NOT เอาต์พุตของเกต AND และเกต NOT ต่อเข้าเกต OR ซึ่งให้เอาต์พุต Q"
+    answer: { value: 0 }
+    hints:
+      - "หาเอาต์พุตของ AND และ NOT ก่อน"
+      - "นำสองค่านั้นเข้าเกต OR"
+    misconceptions:
+      - { match: 1, feedback: "ตรวจอีกครั้ง $A \\cdot B = 1 \\cdot 0 = 0$ และ NOT C = NOT 1 = 0 เมื่อ OR ของ 0 กับ 0 ได้ 0 อาจลืมกลับค่าของ C" }
+    solution: "AND: $1 \\cdot 0 = 0$ / NOT: $\\overline{1} = 0$ / OR: $0 + 0 = 0$ จึงได้ $Q = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p008
+    topics: [computer.systems.logic-gates]
+    difficulty: 3
+    type: numeric
+    stem: "ตารางค่าความจริงของวงจรที่มีอินพุต 3 ตัวมีกี่แถว"
+    answer: { value: 8, unit: แถว }
+    hints:
+      - "แต่ละอินพุตเป็นได้ 2 ค่า"
+      - "จำนวนแถว = $2^n$ เมื่อมีอินพุต $n$ ตัว"
+    misconceptions:
+      - { match: 6, feedback: "6 ได้จาก 3 × 2 แต่ต้องคูณ 2 สามครั้ง: 2 × 2 × 2" }
+      - { match: 9, feedback: "9 คือ $3^2$ แต่ฐานคือจำนวนค่าที่เป็นไปได้ (2) และเลขชี้กำลังคือจำนวนอินพุต (3)" }
+    solution: "$2^3 = 8$ แถว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p009
+    topics: [computer.systems.logic-gates]
+    difficulty: 3
+    type: mcq
+    stem: "ไฟบันไดบ้านมีสวิตช์สองตัว อยู่ชั้นล่างและชั้นบน กดสวิตช์ตัวใดตัวหนึ่งเมื่อไรไฟจะเปลี่ยนสถานะ (ติดเป็นดับ ดับเป็นติด) ถ้าให้สวิตช์แต่ละตัวมีค่า 0 หรือ 1 และเริ่มที่ 0 ทั้งคู่ไฟดับ การทำงานของไฟเหมือนเกตใด"
+    choices:
+      - { id: a, text: "XOR", correct: true }
+      - { id: b, text: "AND", feedback: "AND ทำให้ไฟติดเฉพาะเมื่อสวิตช์เป็น 1 ทั้งคู่ แต่ถ้าเริ่ม 0,0 แล้วกดตัวเดียว ไฟบันไดต้องติด" }
+      - { id: c, text: "OR", feedback: "OR ให้ 1 เมื่อเป็น 1 ทั้งคู่ด้วย แต่ถ้าสวิตช์ทั้งสองถูกกดจาก 0,0 เป็น 1,1 ไฟบันไดจะเปลี่ยนสองครั้งกลับมาดับ" }
+      - { id: d, text: "NOT", feedback: "NOT มีอินพุตเดียว แต่ไฟบันไดมีสวิตช์สองตัว" }
+    hints:
+      - "ลองเขียนตาราง: 0,0 ดับ แล้วกดตัวหนึ่งเป็น 1,0 ไฟเป็นอย่างไร"
+      - "ถ้ากดทั้งสองตัวเป็น 1,1 ไฟเปลี่ยนสองครั้งกลับไปเป็นอะไร"
+    solution: "0,0 ดับ / 1,0 ติด / 0,1 ติด / 1,1 ดับ ไฟติดเมื่อสวิตช์ต่างกัน จึงเป็น XOR"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p010
+    topics: [computer.systems.logic-gates]
+    difficulty: 3
+    type: mcq
+    stem: "วงจรบวกครึ่งรับ $A = 1$ และ $B = 1$ ได้ผลบวก S และตัวทด C เท่าใด"
+    choices:
+      - { id: a, text: "S = 0, C = 1", correct: true }
+      - { id: b, text: "S = 1, C = 0", feedback: "นี่คือผลของ 1 + 0 สำหรับ 1 + 1 = $10_2$ หลักผลบวกเป็น 0 และทด 1" }
+      - { id: c, text: "S = 1, C = 1", feedback: "S ได้จาก XOR ซึ่ง 1 XOR 1 = 0 ไม่ใช่ 1" }
+      - { id: d, text: "S = 2, C = 0", feedback: "หนึ่งบิตเก็บค่า 2 ไม่ได้ ต้องเขียนเป็น $10_2$ คือ S = 0 ทด 1" }
+    hints:
+      - "S มาจากเกต XOR ส่วน C มาจากเกต AND"
+      - "$1 + 1$ ในฐานสองเท่ากับ $10_2$"
+    solution: "S = 1 XOR 1 = 0 และ C = 1 AND 1 = 1 ตรงกับ $1 + 1 = 10_2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p011
+    topics: [computer.systems.logic-gates]
+    difficulty: 3
+    type: mcq
+    stem: "โรงเรียนต่อสวิตช์สองตัวกับหลอดไฟ ให้ไฟติดเมื่อเปิดสวิตช์ตัวใดตัวหนึ่งหรือทั้งสองตัว ควรต่อสวิตช์แบบใด และเหมือนเกตใด"
+    figure:
+      src: switch-circuits.svg
+      alt: "วงจรสองวงจร ซ้ายมือสวิตช์ A และ B ต่ออนุกรมเรียงบนเส้นเดียวกับแบตเตอรี่และหลอดไฟ ขวามือสวิตช์ A และ B ต่อขนานเป็นสองทางแยกก่อนไปหลอดไฟ"
+    choices:
+      - { id: a, text: "ต่อขนาน เหมือนเกต OR", correct: true }
+      - { id: b, text: "ต่ออนุกรม เหมือนเกต AND", feedback: "ต่ออนุกรมไฟจะติดเมื่อเปิดทั้งสองตัวเท่านั้น ไม่ตรงกับที่ต้องการ" }
+      - { id: c, text: "ต่ออนุกรม เหมือนเกต OR", feedback: "ในวงจรอนุกรม กระแสต้องผ่านสวิตช์ทุกตัว ถ้าตัวใดตัวหนึ่งไม่เปิดไฟก็ดับ จึงเป็น AND" }
+      - { id: d, text: "ต่อขนาน เหมือนเกต AND", feedback: "ในวงจรขนาน กระแสผ่านทางใดทางหนึ่งก็พอ ไฟจึงติดเมื่อเปิดตัวเดียว ซึ่งเป็น OR" }
+    hints:
+      - "กระแสไฟต้องผ่านสวิตช์ทุกตัว หรือผ่านทางใดทางหนึ่งก็พอ"
+      - "เงื่อนไข ตัวใดตัวหนึ่ง ตรงกับเกตใด"
+    solution: "ต่อขนานทำให้มีสองทางให้กระแสผ่าน เปิดตัวใดตัวหนึ่งไฟก็ติด จึงทำงานเหมือน OR"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p012
+    topics: [computer.systems.logic-gates]
+    difficulty: 3
+    type: numeric
+    stem: "วงจรดิจิทัลหนึ่งใช้ 0 โวลต์แทนบิต 0 และ 5 โวลต์แทนบิต 1 โดยอ่านแรงดันต่ำกว่า 1.5 โวลต์เป็น 0 และสูงกว่า 3.5 โวลต์เป็น 1 สายส่งมีสัญญาณรบกวนจนวัดได้ 4.2 โวลต์ วงจรอ่านเป็นบิตใด (ตอบ 0 หรือ 1)"
+    answer: { value: 1 }
+    hints:
+      - "เทียบ 4.2 โวลต์กับเกณฑ์ทั้งสอง"
+      - "4.2 สูงกว่า 3.5 หรือไม่"
+    misconceptions:
+      - { match: 0, feedback: "4.2 โวลต์ไม่ใช่ 5 โวลต์พอดี แต่สูงกว่าเกณฑ์ 3.5 โวลต์ วงจรดิจิทัลจึงยังอ่านเป็น 1 ได้ นี่คือข้อดีของสัญญาณดิจิทัล" }
+    solution: "4.2 > 3.5 จึงอ่านเป็น 1 แม้แรงดันลดลงจากสัญญาณรบกวน วงจรก็ยังแยกออกว่าเป็นระดับสูง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p013
+    topics: [computer.systems.logic-gates]
+    difficulty: 4
+    type: numeric
+    stem: "วงจรในภาพให้ $Q = (A \\cdot B) + \\overline{C}$ ในตารางค่าความจริงทั้ง 8 แถว มีกี่แถวที่ $Q = 1$"
+    figure:
+      src: circuit-abc.svg
+      alt: "วงจรมีอินพุต A B C อินพุต A และ B ต่อเข้าเกต AND อินพุต C ต่อเข้าเกต NOT เอาต์พุตของเกต AND และเกต NOT ต่อเข้าเกต OR ซึ่งให้เอาต์พุต Q"
+    answer: { value: 5, unit: แถว }
+    hints:
+      - "แยกกรณี C = 0 กับ C = 1"
+      - "ถ้า C = 0 แล้ว NOT C = 1 ผลของ OR เป็นอะไรเสมอ ถ้า C = 1 ผลขึ้นกับ A AND B"
+    misconceptions:
+      - { match: 4, feedback: "นับแค่แถวที่ C = 0 (4 แถว) ยังขาดแถว A = 1, B = 1, C = 1 ที่ AND ให้ 1" }
+      - { match: 1, feedback: "นับแค่แถวที่ A AND B เป็น 1 แต่เมื่อ C = 0 เกต NOT ให้ 1 จึงทำให้ Q = 1 ได้อีก 4 แถว" }
+    solution: "C = 0 ทั้ง 4 แถว: NOT C = 1 จึงได้ Q = 1 ทุกแถว / C = 1: Q = A AND B เป็น 1 แถวเดียว (A = 1, B = 1) รวม 4 + 1 = 5 แถว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p014
+    topics: [computer.systems.logic-gates]
+    difficulty: 4
+    type: mcq
+    stem: "สัญญาณกันขโมยต้องดังเมื่อ (ประตูเปิด **หรือ** หน้าต่างเปิด) **และ** เจ้าของเปิดระบบไว้ ให้ D = ประตูเปิด, W = หน้าต่างเปิด, S = เปิดระบบ นิพจน์ใดถูกต้อง"
+    choices:
+      - { id: a, text: "$Q = (D + W) \\cdot S$", correct: true }
+      - { id: b, text: "$Q = D + W \\cdot S$", feedback: "ไม่มีวงเล็บ AND จะทำก่อน ได้ $D + (W \\cdot S)$ ประตูเปิดจะทำให้ดังแม้ปิดระบบอยู่" }
+      - { id: c, text: "$Q = D \\cdot W \\cdot S$", feedback: "ต้องเปิดทั้งประตูและหน้าต่างพร้อมกันจึงดัง แต่โจทย์บอกว่าเปิดอย่างใดอย่างหนึ่งก็พอ" }
+      - { id: d, text: "$Q = (D + W) + S$", feedback: "แค่เปิดระบบไว้ก็ดังทันทีแม้ไม่มีอะไรเปิด เพราะใช้ OR กับ S" }
+    hints:
+      - "เงื่อนไขในวงเล็บของโจทย์ใช้ หรือ ส่วนที่เชื่อมกับ S ใช้ และ"
+      - "AND มาก่อน OR เหมือนการคูณมาก่อนการบวก จึงต้องใส่วงเล็บ"
+    solution: "ประตูเปิด หรือ หน้าต่างเปิด คือ $D + W$ แล้ว และ กับ S จึงได้ $(D + W) \\cdot S$ ต้องมีวงเล็บเพราะ AND ทำก่อน OR"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p015
+    topics: [computer.systems.logic-gates]
+    difficulty: 4
+    type: numeric
+    stem: "ประตูหมุนสถานีรถไฟฟ้าทำงานตามเครื่องสถานะในภาพ เริ่มที่สถานะ ล็อก มีเหตุการณ์ตามลำดับ: หยอดเหรียญ, หยอดเหรียญ, ดัน, ดัน มีคนเดินผ่านกี่คน"
+    figure:
+      src: turnstile-fsm.svg
+      alt: "แผนภาพเครื่องสถานะจำกัด วงกลมสองวง ล็อก และ ปลดล็อก ลูกศรเริ่มชี้เข้าวง ล็อก จาก ล็อก ไป ปลดล็อก เมื่อหยอดเหรียญ จาก ปลดล็อก กลับ ล็อก เมื่อดันและคนเดินผ่าน 1 คน ล็อก มีลูกศรวนกลับตัวเองเมื่อดัน ปลดล็อก มีลูกศรวนกลับตัวเองเมื่อหยอดเหรียญ"
+    answer: { value: 1, unit: คน }
+    hints:
+      - "ไล่ทีละเหตุการณ์ และจดสถานะหลังแต่ละเหตุการณ์"
+      - "หยอดเหรียญซ้ำตอนปลดล็อกอยู่แล้วทำให้เกิดอะไร"
+    misconceptions:
+      - { match: 2, feedback: "หยอด 2 เหรียญแต่เหรียญที่สองหยอดตอนปลดล็อกอยู่แล้ว สถานะไม่เปลี่ยน เครื่องไม่ได้จำว่าได้เหรียญ 2 เหรียญ" }
+      - { match: 0, feedback: "การดันครั้งแรกเกิดตอนปลดล็อก จึงมีคนผ่าน 1 คน" }
+    solution: "ล็อก →(เหรียญ) ปลดล็อก →(เหรียญ) ปลดล็อก →(ดัน) ผ่าน 1 คน กลับเป็นล็อก →(ดัน) ล็อก ไม่มีใครผ่าน รวม 1 คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p016
+    topics: [computer.systems.logic-gates]
+    difficulty: 4
+    type: mcq
+    stem: "ระบบใดต้องใช้ **วงจรเชิงลำดับ** ที่จำสถานะได้ ไม่สามารถใช้วงจรเชิงผสมอย่างเดียว"
+    choices:
+      - { id: a, text: "ไฟจราจรที่เปลี่ยนจากเขียว เป็นเหลือง เป็นแดง วนตามลำดับ", correct: true }
+      - { id: b, text: "วงจรบวกครึ่งที่บวกบิตสองบิต", feedback: "ผลบวกขึ้นกับอินพุตตอนนี้เท่านั้น จึงเป็นวงจรเชิงผสม" }
+      - { id: c, text: "ไฟทางเดินที่ติดเมื่อมืดและมีคนเดินผ่าน", feedback: "ผลขึ้นกับเซนเซอร์ตอนนี้เท่านั้น ไม่ต้องจำอดีต" }
+      - { id: d, text: "สัญญาณกันขโมย $(D + W) \\cdot S$", feedback: "เอาต์พุตคำนวณจากอินพุตปัจจุบันทั้งหมด จึงเป็นวงจรเชิงผสม" }
+    hints:
+      - "ระบบใดต้องรู้ว่าตอนนี้อยู่ขั้นไหน จึงจะรู้ว่าขั้นต่อไปคืออะไร"
+      - "วงจรเชิงผสมดูแค่อินพุตตอนนี้"
+    solution: "ไฟจราจรต้องจำว่าตอนนี้เป็นสีอะไร จึงจะเปลี่ยนเป็นสีถัดไปได้ถูก จึงต้องมีสถานะ ส่วนข้ออื่นคำนวณจากอินพุตปัจจุบันอย่างเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p017
+    topics: [computer.systems.logic-gates]
+    difficulty: 5
+    type: numeric
+    stem: "ต่อวงจรบวกครึ่งกับวงจรบวกเต็มเป็นวงจรบวก 2 บิต แล้วบวก $11_2 + 01_2$ ผลลัพธ์ทั้งหมด (รวมตัวทดสุดท้าย) มีค่าเท่าใดในฐานสิบ"
+    answer: { value: 4 }
+    hints:
+      - "หลักขวา: $1 + 1$ ได้ผลบวกเท่าใด ทดเท่าใด"
+      - "หลักซ้าย: $1 + 0 +$ ตัวทดจากหลักขวา แล้วอ่านผลรวมเป็นเลขฐานสอง 3 หลัก"
+    misconceptions:
+      - { match: 0, feedback: "ดูเหมือนอ่านเฉพาะสองหลักขวา ($00_2$) แล้วทิ้งตัวทดสุดท้าย ตัวทดคือหลักที่สามของผลลัพธ์" }
+      - { match: 3, feedback: "ดูเหมือนลืมตัวทดจากหลักขวา หรือใช้ OR แทนการบวก $11_2 = 3$ และ $01_2 = 1$ รวมกันต้องได้มากกว่า 3" }
+    solution: "หลักขวา: 1 + 1 = 0 ทด 1 / หลักซ้าย: 1 + 0 + 1 = 0 ทด 1 / ผลลัพธ์ $100_2 = 4$ ตรวจ: 3 + 1 = 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p018
+    topics: [computer.systems.logic-gates]
+    difficulty: 5
+    type: mcq
+    stem: "เกต NAND ให้ผล $\\overline{A \\cdot B}$ ถ้าต่ออินพุตทั้งสองของ NAND เข้ากับสัญญาณเดียวกัน $X$ จะได้เกตใด"
+    choices:
+      - { id: a, text: "NOT เพราะ $\\overline{X \\cdot X} = \\overline{X}$", correct: true }
+      - { id: b, text: "AND เพราะยังมีอินพุตสองขา", feedback: "ลองแทนค่า X = 1: $\\overline{1 \\cdot 1} = 0$ ซึ่งกลับค่าของ X จึงไม่ใช่ AND" }
+      - { id: c, text: "ได้ X เดิม", feedback: "X AND X = X แต่ NAND กลับค่าอีกครั้ง ผลจึงเป็น NOT X" }
+      - { id: d, text: "XOR", feedback: "X XOR X = 0 เสมอ แต่ NAND ของ X กับ X ให้ 1 เมื่อ X = 0" }
+    hints:
+      - "แทน X = 0 และ X = 1 แล้วหาผล"
+      - "$X \\cdot X$ เท่ากับอะไร"
+    solution: "X = 0: $\\overline{0 \\cdot 0} = 1$ / X = 1: $\\overline{1 \\cdot 1} = 0$ ได้ผลกลับค่าของ X จึงเป็น NOT เกต NAND จึงใช้สร้างเกตอื่นได้ทั้งหมด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.systems.logic-gates.p019
+    topics: [computer.systems.logic-gates]
+    difficulty: 5
+    type: numeric
+    stem: "ประตูหมุนทำงานตามเครื่องสถานะที่มีสถานะ ล็อก และ ปลดล็อก (ล็อก + เหรียญ → ปลดล็อก, ปลดล็อก + ดัน → คนผ่านแล้วล็อก, ล็อก + ดัน → ล็อก, ปลดล็อก + เหรียญ → ปลดล็อก) เริ่มที่ ล็อก มีเหตุการณ์: เหรียญ, ดัน, ดัน, เหรียญ, เหรียญ, ดัน, เหรียญ มีเหรียญที่ **เสียเปล่า** (หยอดแล้วไม่ทำให้มีคนผ่านเพิ่ม) กี่เหรียญ"
+    answer: { value: 2, unit: เหรียญ }
+    hints:
+      - "ไล่สถานะทีละเหตุการณ์ จดว่าแต่ละเหรียญถูกใช้ให้มีคนผ่านหรือไม่"
+      - "เหรียญที่หยอดตอนปลดล็อกอยู่แล้ว และเหรียญสุดท้ายที่ไม่มีใครดันตามมา ทำให้มีคนผ่านเพิ่มหรือไม่"
+    misconceptions:
+      - { match: 1, feedback: "นับแค่เหรียญที่หยอดซ้ำตอนปลดล็อก ยังมีเหรียญสุดท้ายที่หยอดแล้วไม่มีใครดันผ่าน" }
+      - { match: 4, feedback: "4 คือจำนวนเหรียญทั้งหมด แต่มี 2 เหรียญที่ทำให้มีคนผ่าน" }
+    solution: "ล็อก →เหรียญ ปลดล็อก →ดัน ผ่านคนที่ 1 ล็อก →ดัน ล็อก →เหรียญ ปลดล็อก →เหรียญ ปลดล็อก (เสียเปล่า) →ดัน ผ่านคนที่ 2 ล็อก →เหรียญ ปลดล็อก (ยังไม่มีใครผ่าน) หยอด 4 เหรียญ มีคนผ่าน 2 คน จึงเสียเปล่า 4 − 2 = 2 เหรียญ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
