@@ -35,30 +35,8 @@
 topics:
   # ---------- ระดับต้น ----------
   # ---------- ระบบคอมพิวเตอร์ ----------
-  - { id: computer.systems.operating-systems, title: "ระบบปฏิบัติการและชั้นของซอฟต์แวร์", difficulty: 4.5, prereq: [computer.systems.computer-systems],
-      indicators: ["csta-k12-cs:3A-CS-02", "csta-k12-cs:3B-CS-01", "acm-cs2023:OS-Purpose", "acm-cs2023:OS-Principles", "acm-cs2023:SF-Resource"],
-      scope: "ชั้นของฮาร์ดแวร์ ซอฟต์แวร์ระบบ และซอฟต์แวร์ประยุกต์ หน้าที่ของระบบปฏิบัติการ (จัดการกระบวนการ หน่วยความจำ อุปกรณ์ ไฟล์ และผู้ใช้) การเรียกใช้บริการของระบบ และการจัดสรรทรัพยากรแบบง่าย เช่น มาก่อนได้ก่อน" }
   # ---------- เครือข่ายและความปลอดภัย ----------
-  - { id: computer.security.cybersecurity-basics, title: "ความมั่นคงปลอดภัยไซเบอร์เบื้องต้น", difficulty: 4, prereq: [computer.networks.internet-basics, computer.society.responsible-ict],
-      indicators: ["csta-k12-cs:2-NI-05", "csta-k12-cs:3A-NI-05", "csta-k12-cs:3A-NI-06", "csta-k12-cs:3A-NI-07", "csta-k12-cs:3A-NI-08",
-                   "acm-cs2023:SEC-Foundations", "acm-cs2023:NC-Security"],
-      scope: "การรักษาความลับ ความถูกต้องครบถ้วน และความพร้อมใช้ การยืนยันตัวตนหลายปัจจัยและสิทธิ์การเข้าถึง มัลแวร์ ฟิชชิง และวิศวกรรมสังคม มาตรการป้องกันทางกายภาพและดิจิทัล และการชั่งน้ำหนักระหว่างความปลอดภัยกับความสะดวกในการใช้งาน" }
-  - { id: computer.security.encryption, title: "การเข้ารหัสลับ", difficulty: 4.5, prereq: [computer.security.cybersecurity-basics, computer.data.binary],
-      indicators: ["csta-k12-cs:2-NI-06", "acm-cs2023:SEC-Crypto"],
-      scope: "รหัสลับแบบเลื่อนตัวอักษรและแบบแทนที่ การถอดรหัสด้วยการลองทุกกุญแจและการนับความถี่ การเข้ารหัสแบบกุญแจสมมาตรและกุญแจสาธารณะในภาพรวม และการใช้งานจริง เช่น HTTPS" }
   # ---------- อัลกอริทึมและการเขียนโปรแกรม ----------
-  - { id: computer.society.privacy, title: "ข้อมูลส่วนบุคคลและความเป็นส่วนตัว", difficulty: 3.5, prereq: [computer.society.responsible-ict, computer.data.data-processing],
-      indicators: ["csta-k12-cs:2-IC-23", "csta-k12-cs:3A-IC-29", "csta-k12-cs:3A-IC-30", "acm-cs2023:SEP-Privacy"],
-      scope: "ข้อมูลที่ระบุตัวบุคคล การเลือกเปิดเผยหรือเก็บข้อมูลเป็นความลับ การเก็บข้อมูลอัตโนมัติที่ผู้ใช้อาจไม่รู้ตัว (คุกกี้ ตำแหน่ง ประวัติการใช้งาน) หลักการของกฎหมายคุ้มครองข้อมูลส่วนบุคคล และผลทางสังคมและเศรษฐกิจของความเป็นส่วนตัว" }
-  - { id: computer.society.inclusive-design, title: "การออกแบบเทคโนโลยีให้ทุกคนใช้ได้", difficulty: 3.5, prereq: [computer.society.computing-impacts],
-      indicators: ["csta-k12-cs:1B-IC-19", "csta-k12-cs:1B-IC-20", "csta-k12-cs:2-CS-01", "csta-k12-cs:2-IC-21", "csta-k12-cs:3A-AP-21", "csta-k12-cs:3A-IC-25",
-                   "acm-cs2023:HCI-User", "acm-cs2023:HCI-Accessibility", "acm-cs2023:SEP-DEIA"],
-      scope: "การออกแบบที่ยึดผู้ใช้เป็นศูนย์กลาง การสังเกตว่าผู้ใช้ใช้อุปกรณ์อย่างไรแล้วเสนอการปรับปรุง การเข้าถึงได้สำหรับผู้พิการและผู้สูงอายุ อคติในเทคโนโลยีและข้อมูล และการทดสอบกับผู้ใช้ที่หลากหลายเพื่อลดอคติ" }
-  - { id: computer.programming.functions, title: "เขียนโปรแกรมแก้ปัญหาด้วยตรรกะและฟังก์ชัน", difficulty: 4, prereq: [computer.programming.design-debug, computer.algorithms.computational-thinking, math.algebra.linear-eq],
-      indicators: ["th-core-2560-science:ว 4.2 ม.1/2", "th-core-2560-science:ว 4.2 ม.2/2",
-                   "csta-k12-cs:2-AP-14", "csta-k12-cs:3A-AP-17", "csta-k12-cs:3A-AP-18",
-                   "acm-cs2023:SDF-Fundamentals"],
-      scope: "การเขียนโปรแกรมด้วยภาษาข้อความ (เช่น Python) แก้โจทย์คณิตศาสตร์และวิทยาศาสตร์ การสร้างและเรียกใช้ฟังก์ชันที่มีพารามิเตอร์และค่าที่คืน ขอบเขตของตัวแปร การแยกโปรแกรมเป็นฟังก์ชันและโมดูล และการเรียกซ้ำเบื้องต้น" }
   - { id: computer.programming.lists-strings, title: "ลิสต์ ดิกชันนารี และการประมวลผลข้อความ", difficulty: 4.5, prereq: [computer.programming.functions],
       indicators: ["csta-k12-cs:3A-AP-14", "acm-cs2023:SDF-Data-Structures"],
       scope: "การใช้ลิสต์แทนตัวแปรหลายตัว การเข้าถึงด้วยดัชนี การวนผ่านลิสต์ การเพิ่มและลบสมาชิก ดิกชันนารีและเซต การประมวลผลสตริง (ตัด ต่อ ค้นหา นับ) และการเลือกโครงสร้างข้อมูลให้เหมาะกับปัญหา" }
