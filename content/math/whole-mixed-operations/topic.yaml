@@ -1,0 +1,75 @@
+id: math.number.whole-mixed-operations
+subject: math
+title: { th: การบวก ลบ คูณ หารระคน และการประมาณผลลัพธ์, en: "Mixed operations and estimation with whole numbers" }
+summary: ลำดับการคำนวณ วงเล็บ เขียนและอ่านประโยคสัญลักษณ์ ประมาณผลลัพธ์เพื่อตรวจคำตอบ แก้และสร้างโจทย์ปัญหาสองขั้นตอนของจำนวนนับ
+difficulty: 2
+minutes: 35
+prerequisites: [math.number.whole-mul-div]
+encompasses:
+  - { id: math.number.whole-mul-div, weight: 0.4 }
+  - { id: math.number.whole-add-sub, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: order-steps.svg
+    alt: "การคำนวณ 48 − (6 + 2) × 5 ทีละขั้นในกรอบสี่กรอบเรียงลงมา ขั้นที่ 1 ทำในวงเล็บก่อน 6 + 2 = 8 ได้ 48 − 8 × 5 ขั้นที่ 2 คูณหารจากซ้ายไปขวา 8 × 5 = 40 ได้ 48 − 40 ขั้นที่ 3 บวกลบจากซ้ายไปขวา 48 − 40 = 8 คำตอบคือ 8"
+    caption: "วงเล็บ → คูณหาร (ซ้ายไปขวา) → บวกลบ (ซ้ายไปขวา)"
+  - { type: check, problem: math.number.whole-mixed-operations.p003, prompt: "ต้องทำการหารหรือการลบก่อน" }
+  - type: figure
+    src: bar-model.svg
+    alt: "แบบจำลองบาร์ยาวแทนเงิน 100 บาท แบ่งเป็นช่อง 15 สามช่องกับช่องเงินทอนที่ยังไม่รู้ ใต้บาร์เขียนว่า ขั้นที่ 1: 3 × 15 = 45 และ ขั้นที่ 2: 100 − 45 = 55 และประโยคสัญลักษณ์ 100 − 3 × 15 = □"
+    caption: "แบบจำลองบาร์ช่วยเห็นว่าต้องคูณก่อน แล้วจึงลบ"
+  - type: worked-example
+    title: โจทย์สองขั้นตอนพร้อมตรวจด้วยการประมาณ
+    problem: "แม่ค้าส้มตำขายได้ 36 จาน จานละ 45 บาท วันนั้นซื้อวัตถุดิบไป 800 บาท แม่ค้าได้กำไรกี่บาท"
+    steps:
+      - text: "โจทย์ถามกำไร ต้องรู้รายได้ทั้งหมดก่อน แล้วลบค่าวัตถุดิบ"
+        why: "กำไร = รายได้ − ต้นทุน"
+      - text: "เขียนประโยคสัญลักษณ์: $36 \\times 45 - 800 = \\square$"
+      - text: "คูณก่อน: $36 \\times 45 = 1{,}620$ บาท"
+      - text: "แล้วลบ: $1{,}620 - 800 = 820$ บาท"
+      - text: "ประมาณ: $40 \\times 45 = 1{,}800$ ลบ 800 ได้ราว 1,000 คำตอบ 820 อยู่ในหลักร้อยเหมือนกัน จึงสมเหตุสมผล"
+        why: "ปัด 36 เป็น 40 ทำให้ค่าประมาณสูงกว่าจริงเล็กน้อย"
+    answer: "กำไร 820 บาท"
+  - type: interactive
+    title: ประมาณ 398 + 512 บนเส้นจำนวน
+    caption: "398 อยู่ใกล้ 400 และ 512 อยู่ใกล้ 500 ผลบวกจึงประมาณ 900"
+    widget:
+      kind: number-line
+      min: 300
+      max: 600
+      points:
+        - { value: 398, label: "398" }
+        - { value: 400, label: "≈ 400" }
+        - { value: 500, label: "≈ 500" }
+        - { value: 512, label: "512" }
+  - type: worked-example
+    title: หาตัวไม่ทราบค่าในประโยคที่มีวงเล็บ
+    problem: "หาค่า $n$ ที่ทำให้ $(n + 7) \\times 4 = 48$"
+    steps:
+      - text: "มองวงเล็บเป็นก้อนเดียว: ก้อนนี้คูณ 4 ได้ 48 ก้อนนี้จึงเท่ากับ $48 \\div 4 = 12$"
+        why: "การหารเป็นการกระทำย้อนกลับของการคูณ"
+      - text: "$n + 7 = 12$ จึงได้ $n = 12 - 7 = 5$"
+      - text: "ตรวจ: $(5 + 7) \\times 4 = 12 \\times 4 = 48$ ✓"
+    answer: "$n = 5$"
+  - { type: check, problem: math.number.whole-mixed-operations.p011, prompt: "เศษ 5 คนต้องมีที่นั่งไหม" }
+glossary:
+  - { term: การคำนวณระคน, definition: "การคำนวณที่มีหลายการดำเนินการในประโยคเดียว เช่น บวกกับคูณ" }
+  - { term: ลำดับการคำนวณ, definition: "ทำในวงเล็บก่อน แล้วคูณหารจากซ้ายไปขวา จึงบวกลบจากซ้ายไปขวา" }
+  - { term: ประโยคสัญลักษณ์, definition: "ประโยคที่เขียนด้วยจำนวนและเครื่องหมาย เช่น 100 − 3 × 15 = □" }
+  - { term: การประมาณ, definition: "หาค่าคร่าว ๆ ด้วยการปัดจำนวน ใช้ตรวจความสมเหตุสมผลของคำตอบ" }
+  - { term: แบบจำลองบาร์, definition: "แผนภาพแท่งสี่เหลี่ยมที่แสดงส่วนย่อยและทั้งหมดของโจทย์" }
+flashcards:
+  - { front: "ลำดับการคำนวณ", back: "วงเล็บ → คูณหารจากซ้ายไปขวา → บวกลบจากซ้ายไปขวา" }
+  - { front: "5 + 3 × 2 = ?", back: "11 (คูณก่อน: 5 + 6)" }
+  - { front: "36 ÷ 4 × 3 = ?", back: "27 (ทำจากซ้ายไปขวา: 9 × 3)" }
+  - { front: "นักเรียน 245 คน รถคันละ 40 คน ต้องใช้กี่คัน", back: "7 คัน (6 คันยังเหลือ 5 คน)" }
+references:
+  - { title: "ลำดับการดำเนินการ", url: "https://th.wikipedia.org/wiki/ลำดับการดำเนินการ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Order of operations", url: "https://en.wikipedia.org/wiki/Order_of_operations", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Estimation", url: "https://en.wikipedia.org/wiki/Estimation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,339 @@
+problems:
+  - id: math.number.whole-mixed-operations.p001
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 1
+    type: numeric
+    stem: "หาผลลัพธ์ของ $5 + 3 \\times 2$"
+    answer: { value: 11 }
+    hints:
+      - "มีทั้งการบวกและการคูณ ทำอะไรก่อน"
+      - "คูณก่อน $3 \\times 2$ แล้วจึงบวก 5"
+    misconceptions:
+      - { match: 16, feedback: "ทำจากซ้ายไปขวา ($5 + 3 = 8$ แล้ว $\\times 2$) แต่ต้องคูณก่อนบวก" }
+    solution: "$5 + 3 \\times 2 = 5 + 6 = 11$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p002
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 1
+    type: numeric
+    stem: "หาผลลัพธ์ของ $(5 + 3) \\times 2$"
+    answer: { value: 16 }
+    hints:
+      - "มีวงเล็บ ทำในวงเล็บก่อน"
+      - "$5 + 3$ แล้วจึงคูณ 2"
+    misconceptions:
+      - { match: 11, feedback: "คูณ $3 \\times 2$ ก่อน แต่วงเล็บบอกให้บวก $5 + 3$ ก่อน" }
+    solution: "$(5 + 3) \\times 2 = 8 \\times 2 = 16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p003
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 2
+    type: numeric
+    stem: "หาผลลัพธ์ของ $20 - 12 \\div 4$"
+    answer: { value: 17 }
+    hints:
+      - "หารก่อนลบ"
+      - "$12 \\div 4$ แล้วนำไปลบออกจาก 20"
+    misconceptions:
+      - { match: 2, feedback: "ลบก่อน ($20 - 12 = 8$ แล้ว $\\div 4$) แต่ต้องหารก่อนลบ" }
+    solution: "$20 - 12 \\div 4 = 20 - 3 = 17$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p004
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 2
+    type: numeric
+    stem: "หาผลลัพธ์ของ $36 \\div 4 \\times 3$"
+    answer: { value: 27 }
+    hints:
+      - "คูณกับหารสำคัญเท่ากัน"
+      - "ทำจากซ้ายไปขวา: $36 \\div 4$ ก่อน"
+    misconceptions:
+      - { match: 3, feedback: "คูณ $4 \\times 3$ ก่อน แต่คูณกับหารต้องทำจากซ้ายไปขวา" }
+    solution: "ทำจากซ้ายไปขวา $36 \\div 4 = 9$ แล้ว $9 \\times 3 = 27$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p005
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดเป็นค่าประมาณของ $398 + 512$ ที่ดีที่สุด"
+    choices:
+      - { id: a, text: "900", correct: true }
+      - { id: b, text: "800", feedback: "ปัด 512 ลงเป็น 400 ผิด 512 ใกล้ 500 มากกว่า" }
+      - { id: c, text: "1,000", feedback: "ปัดทั้งสองจำนวนขึ้นมากเกินไป 398 ใกล้ 400 และ 512 ใกล้ 500" }
+      - { id: d, text: "9,000", feedback: "ค่าประมาณใหญ่เกินไปสิบเท่า ตรวจหลักของจำนวนอีกครั้ง" }
+    hints:
+      - "ปัดแต่ละจำนวนเป็นจำนวนเต็มร้อย"
+      - "398 ใกล้ 400 และ 512 ใกล้ 500"
+    solution: "$398 + 512 \\approx 400 + 500 = 900$ (ค่าจริงคือ 910)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p006
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 2
+    type: numeric
+    stem: "ต้นซื้อขนมครก 4 กล่อง กล่องละ 20 บาท จ่ายเงิน 100 บาท ได้เงินทอนกี่บาท"
+    answer: { value: 20, unit: บาท }
+    hints:
+      - "หาราคาขนมทั้งหมดก่อน"
+      - "$100 - 4 \\times 20$"
+    misconceptions:
+      - { match: 80, feedback: "80 คือราคาขนมทั้งหมด โจทย์ถามเงินทอน ต้องลบออกจาก 100" }
+      - { match: 1920, feedback: "คิดจากซ้ายไปขวา $(100 - 4) \\times 20$ แต่ต้องหาราคาขนม $4 \\times 20$ ก่อนแล้วจึงลบ" }
+    solution: "ราคาขนม $4 \\times 20 = 80$ บาท เงินทอน $100 - 80 = 20$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p007
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: numeric
+    stem: "หาผลลัพธ์ของ $48 - (6 + 2) \\times 5$"
+    answer: { value: 8 }
+    hints:
+      - "ทำในวงเล็บก่อน แล้วคูณ แล้วจึงลบ"
+      - "$6 + 2 = 8$ แล้ว $8 \\times 5$"
+    misconceptions:
+      - { match: 220, feedback: "ลบ $48 - 8 = 40$ ก่อนแล้วจึงคูณ 5 แต่ต้องคูณก่อนลบ" }
+      - { match: 52, feedback: "ไม่ได้ทำในวงเล็บก่อน ($48 - 6 + 2 \\times 5$) วงเล็บต้องทำก่อน" }
+    solution: "$48 - (6 + 2) \\times 5 = 48 - 8 \\times 5 = 48 - 40 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p008
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อใดเขียนคำพูด \"บวก 8 กับ 7 แล้วคูณด้วย 2\" เป็นประโยคสัญลักษณ์ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "$2 \\times (8 + 7)$", correct: true }
+      - { id: b, text: "$8 + 7 \\times 2$", feedback: "ไม่มีวงเล็บ จะคูณ $7 \\times 2$ ก่อน ได้ 22 ไม่ใช่บวกก่อน" }
+      - { id: c, text: "$2 \\times 8 + 7$", feedback: "จะคูณ $2 \\times 8$ ก่อน แล้วบวก 7 ได้ 23 ลำดับไม่ตรงคำพูด" }
+      - { id: d, text: "$(2 + 8) \\times 7$", feedback: "บวก 2 กับ 8 แต่คำพูดบอกให้บวก 8 กับ 7" }
+    hints:
+      - "คำพูดบอกให้บวกก่อน"
+      - "ต้องใส่วงเล็บรอบการบวก เพื่อไม่ให้คูณก่อน"
+    solution: "ต้องบวก $8 + 7$ ก่อนจึงต้องอยู่ในวงเล็บ แล้วคูณด้วย 2: $2 \\times (8 + 7) = 2 \\times 15 = 30$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p009
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: mcq
+    stem: "$3 \\times (18{,}932 + 921)$ เมื่อเทียบกับ $18{,}932 + 921$ เป็นอย่างไร (ไม่ต้องคำนวณ)"
+    choices:
+      - { id: a, text: "เป็นสามเท่า", correct: true }
+      - { id: b, text: "มากกว่าอยู่ 3", feedback: "คูณ 3 ไม่ใช่บวก 3 ผลลัพธ์จึงเป็นสามเท่า" }
+      - { id: c, text: "เท่ากัน", feedback: "มีการคูณด้วย 3 ค่าจึงเปลี่ยน" }
+      - { id: d, text: "เป็นหนึ่งในสาม", feedback: "คูณด้วย 3 ทำให้มากขึ้น ไม่ใช่ลดลงเหลือหนึ่งในสาม" }
+    hints:
+      - "มองวงเล็บเป็นก้อนเดียว"
+      - "ก้อนนั้นถูกคูณด้วยอะไร"
+    solution: "ในวงเล็บคือ $18{,}932 + 921$ ทั้งก้อน ถูกคูณด้วย 3 จึงเป็นสามเท่าของ $18{,}932 + 921$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p010
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: numeric
+    stem: "หาจำนวนที่แทน □ แล้วทำให้ประโยคเป็นจริง $(\\square + 7) \\times 4 = 48$"
+    answer: { value: 5 }
+    hints:
+      - "อะไรคูณ 4 ได้ 48"
+      - "ในวงเล็บต้องเท่ากับ $48 \\div 4 = 12$ แล้วหาว่าอะไรบวก 7 ได้ 12"
+    misconceptions:
+      - { match: 12, feedback: "12 คือค่าในวงเล็บทั้งก้อน ยังต้องลบ 7 ออก" }
+      - { match: 10.25, feedback: "ลบ 7 ออกจาก 48 ก่อนแล้วหาร 4 แต่ 7 อยู่ในวงเล็บที่ถูกคูณ 4 ต้องหาร 4 ก่อนแล้วจึงลบ 7" }
+    solution: "$\\square + 7 = 48 \\div 4 = 12$ ดังนั้น $\\square = 12 - 7 = 5$ ตรวจ: $(5 + 7) \\times 4 = 48$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p011
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 4
+    type: numeric
+    stem: "โรงเรียนพานักเรียน 245 คนไปทัศนศึกษาที่อยุธยา รถบัสนั่งได้คันละ 40 คน ต้องใช้รถบัสอย่างน้อยกี่คัน"
+    answer: { value: 7, unit: คัน }
+    hints:
+      - "$245 \\div 40$ ได้เท่าไร เหลือเศษเท่าไร"
+      - "นักเรียนที่เหลือต้องมีที่นั่งด้วย"
+    misconceptions:
+      - { match: 6, feedback: "6 คันนั่งได้แค่ 240 คน ยังเหลือ 5 คนที่ไม่มีที่นั่ง ต้องเพิ่มอีก 1 คัน" }
+      - { match: 5, feedback: "5 คือเศษ (จำนวนคนที่เหลือ) ไม่ใช่จำนวนรถ" }
+    solution: "$245 \\div 40 = 6$ เศษ 5 รถ 6 คันนั่งได้ 240 คน ยังเหลือ 5 คน จึงต้องใช้ $6 + 1 = 7$ คัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p012
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: mcq
+    stem: "ข้าวสารถุงละ 189 บาท แม่ซื้อ 4 ถุง พี่กดเครื่องคิดเลขได้หลายค่า ค่าใดสมเหตุสมผลที่สุด"
+    choices:
+      - { id: a, text: "756 บาท", correct: true }
+      - { id: b, text: "75.6 บาท", feedback: "4 ถุงต้องแพงกว่า 1 ถุง (189 บาท) แต่ 75.6 น้อยกว่าราคาถุงเดียว" }
+      - { id: c, text: "7,560 บาท", feedback: "ประมาณ $200 \\times 4 = 800$ แต่ 7,560 มากเกินไปราวสิบเท่า" }
+      - { id: d, text: "193 บาท", feedback: "เป็นผลบวก $189 + 4$ แต่ซื้อ 4 ถุงต้องคูณ" }
+    hints:
+      - "ประมาณ 189 เป็น 200"
+      - "$200 \\times 4$ ได้ประมาณเท่าไร"
+    solution: "ประมาณ $200 \\times 4 = 800$ บาท ค่าที่ใกล้ที่สุดคือ 756 บาท (ค่าจริง $189 \\times 4 = 756$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p013
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 4
+    type: numeric
+    stem: "คิดในใจ: $299 \\times 4$ เท่ากับเท่าไร"
+    answer: { value: 1196 }
+    hints:
+      - "299 คือ $300 - 1$"
+      - "$300 \\times 4$ แล้วลบ $1 \\times 4$"
+    misconceptions:
+      - { match: 1199, feedback: "ลบแค่ 1 แต่ต้องลบ $1 \\times 4 = 4$ เพราะ 1 ถูกนับเกินไป 4 ครั้ง" }
+      - { match: 1200, feedback: "1,200 คือ $300 \\times 4$ ต้องลบส่วนที่เกินออก 4" }
+    solution: "$299 \\times 4 = 300 \\times 4 - 1 \\times 4 = 1{,}200 - 4 = 1{,}196$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p014
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการหาผลลัพธ์ของ $50 - 2 \\times (3 + 4) \\div 7$ ให้ถูกลำดับ"
+    items:
+      - "$3 + 4 = 7$"
+      - "$2 \\times 7 = 14$"
+      - "$14 \\div 7 = 2$"
+      - "$50 - 2 = 48$"
+    hints:
+      - "วงเล็บก่อน แล้วคูณหารจากซ้ายไปขวา"
+      - "หลังวงเล็บ คูณ 2 ก่อนเพราะอยู่ซ้ายของการหาร แล้วจึงลบเป็นขั้นสุดท้าย"
+    solution: "ในวงเล็บ $3 + 4 = 7$ → คูณหารจากซ้ายไปขวา $2 \\times 7 = 14$ → $14 \\div 7 = 2$ → ลบเป็นขั้นสุดท้าย $50 - 2 = 48$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p015
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 4
+    type: numeric
+    stem: "แม่ค้าส้มตำขายได้ 42 จาน จานละ 45 บาท วันนั้นซื้อวัตถุดิบ 950 บาท แม่ค้าได้กำไรกี่บาท"
+    answer: { value: 940, unit: บาท }
+    hints:
+      - "หารายได้ก่อน: $42 \\times 45$"
+      - "กำไร = รายได้ − ค่าวัตถุดิบ"
+    misconceptions:
+      - { match: 1890, feedback: "1,890 คือรายได้ ยังไม่ได้หักค่าวัตถุดิบ" }
+      - { match: 2840, feedback: "บวกค่าวัตถุดิบเข้าไป แต่กำไรต้องลบค่าวัตถุดิบออก" }
+    solution: "รายได้ $42 \\times 45 = 1{,}890$ บาท กำไร $1{,}890 - 950 = 940$ บาท (ประมาณ $40 \\times 50 - 1{,}000 = 1{,}000$ ใกล้เคียง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p016
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 5
+    type: numeric
+    stem: "หาผลลัพธ์ของ $2 \\times \\{[18 - (4 + 2)] \\div 3\\}$"
+    answer: { value: 8 }
+    hints:
+      - "ทำวงเล็บชั้นในสุดก่อน แล้วออกมาทีละชั้น"
+      - "$(4 + 2)$ → $[18 - 6]$ → $\\{12 \\div 3\\}$ → คูณ 2"
+    misconceptions:
+      - { match: 12, feedback: "12 คือค่าในวงเล็บเหลี่ยม ยังต้องหาร 3 และคูณ 2" }
+      - { match: 4, feedback: "4 คือค่าในวงเล็บปีกกา อย่าลืมคูณ 2 ด้านนอก" }
+    solution: "$(4 + 2) = 6$ → $[18 - 6] = 12$ → $\\{12 \\div 3\\} = 4$ → $2 \\times 4 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p017
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 4
+    type: mcq
+    stem: "เรื่องใดเป็นโจทย์ปัญหาของประโยคสัญลักษณ์ $(250 - 40) \\div 3 = \\square$"
+    choices:
+      - { id: a, text: "แม่มีเงิน 250 บาท ซื้อผัก 40 บาท แบ่งเงินที่เหลือให้ลูก 3 คนเท่า ๆ กัน ลูกได้คนละกี่บาท", correct: true }
+      - { id: b, text: "แม่มีเงิน 250 บาท แบ่งให้ลูก 3 คนเท่า ๆ กัน แล้วลูกแต่ละคนซื้อขนม 40 บาท ลูกแต่ละคนเหลือเงินกี่บาท", feedback: "เรื่องนี้หารก่อนแล้วจึงลบ คือ $250 \\div 3 - 40$ ซึ่งหารไม่ลงตัวและลำดับไม่ตรง" }
+      - { id: c, text: "แม่มีเงิน 250 บาท ซื้อผัก 3 กำ กำละ 40 บาท เหลือเงินกี่บาท", feedback: "เรื่องนี้คือ $250 - 3 \\times 40$ มีการคูณ ไม่ใช่การหาร" }
+    hints:
+      - "วงเล็บบอกว่าทำอะไรก่อน"
+      - "ต้องลบ 40 ออกจาก 250 ก่อน แล้วจึงแบ่ง 3 ส่วน"
+    solution: "$(250 - 40) \\div 3$ คือ ลบ 40 จาก 250 ก่อน (เหลือ 210) แล้วแบ่งเป็น 3 ส่วนเท่ากัน (ส่วนละ 70) ตรงกับเรื่องแรก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p018
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 5
+    type: numeric
+    stem: "ใส่วงเล็บหนึ่งคู่ในประโยค $6 + 4 \\times 5 - 2$ ให้ได้ผลลัพธ์มากที่สุด ผลลัพธ์นั้นเท่ากับเท่าไร"
+    answer: { value: 48 }
+    hints:
+      - "ลองใส่วงเล็บหลายแบบ แล้วคำนวณแต่ละแบบ"
+      - "การคูณจำนวนที่ใหญ่ขึ้นทำให้ผลมาก ลองให้ $6 + 4$ ทำก่อน"
+    misconceptions:
+      - { match: 24, feedback: "24 คือค่าเมื่อไม่ใส่วงเล็บ (คูณก่อน) ลองใส่วงเล็บที่ทำให้บวกก่อนคูณ" }
+      - { match: 30, feedback: "$(6 + 4) \\times (5 - 2) = 30$ ใช้วงเล็บสองคู่ และยังไม่มากที่สุด" }
+    solution: "$(6 + 4) \\times 5 - 2 = 50 - 2 = 48$ ส่วน $6 + 4 \\times (5 - 2) = 18$ และไม่ใส่วงเล็บได้ 24 ค่ามากที่สุดคือ 48"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p019
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 4
+    type: numeric
+    stem: "โรงงานน้ำดื่มผลิตได้วันละ 125,400 ขวด ผลิต 6 วัน แล้วส่งให้ร้านค้าไปแล้ว 600,000 ขวด เหลือน้ำดื่มกี่ขวด"
+    answer: { value: 152400, unit: ขวด }
+    hints:
+      - "หาจำนวนที่ผลิตได้ใน 6 วันก่อน"
+      - "$125{,}400 \\times 6 - 600{,}000$"
+    misconceptions:
+      - { match: 752400, feedback: "752,400 คือจำนวนที่ผลิตทั้งหมด ยังไม่ได้ลบจำนวนที่ส่งไป" }
+      - { match: 1352400, feedback: "บวกจำนวนที่ส่งไป แต่ของที่ส่งออกไปต้องลบ" }
+    solution: "ผลิต $125{,}400 \\times 6 = 752{,}400$ ขวด เหลือ $752{,}400 - 600{,}000 = 152{,}400$ ขวด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p020
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: mcq
+    stem: "นิดคำนวณ $4{,}812 \\times 19$ ได้ $9{,}428$ ใช้การประมาณตรวจคำตอบ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ผิด เพราะคำตอบควรประมาณ $5{,}000 \\times 20 = 100{,}000$", correct: true }
+      - { id: b, text: "ถูก เพราะ $4{,}812 + 19$ ใกล้ 5,000", feedback: "นี่คือการบวก แต่โจทย์เป็นการคูณ" }
+      - { id: c, text: "ถูก เพราะคำตอบมี 4 หลักเหมือน 4,812", feedback: "คูณด้วย 19 ทำให้ผลลัพธ์ใหญ่ขึ้นเกือบ 20 เท่า จำนวนหลักต้องเพิ่ม" }
+      - { id: d, text: "ผิด เพราะคำตอบควรประมาณ 10,000", feedback: "$5{,}000 \\times 20 = 100{,}000$ ไม่ใช่ 10,000 ระวังนับเลข 0" }
+    hints:
+      - "ปัด 4,812 เป็น 5,000 และ 19 เป็น 20"
+      - "$5{,}000 \\times 20$ มีเลข 0 กี่ตัว"
+    solution: "$4{,}812 \\times 19 \\approx 5{,}000 \\times 20 = 100{,}000$ แต่ 9,428 เล็กกว่ามาก คำตอบของนิดจึงผิด (ค่าจริงคือ 91,428 นิดอาจตกเลข 1 ไปหนึ่งหลัก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mixed-operations.p021
+    topics: [math.number.whole-mixed-operations]
+    difficulty: 3
+    type: numeric
+    stem: "ร้านค้ามีไข่ไก่ 12 แผง แผงละ 30 ฟอง ขายไป 250 ฟอง เหลือไข่ไก่กี่ฟอง"
+    figure: { src: eggs-problem.svg, alt: "แบบจำลองบาร์ยาวแบ่งเป็น 12 ช่อง ช่องละ 30 แทนไข่ 12 แผง แผงละ 30 ฟอง ใต้บาร์ส่วนด้านซ้ายยาวกว่าแปดช่องเล็กน้อยเขียนว่า ขายไป 250 ฟอง ส่วนที่เหลือทางขวาเขียนว่า เหลือ ?" }
+    answer: { value: 110, unit: ฟอง }
+    hints:
+      - "หาจำนวนไข่ทั้งหมดก่อน: $12 \\times 30$"
+      - "แล้วลบจำนวนที่ขายไป"
+    misconceptions:
+      - { match: 360, feedback: "360 คือไข่ทั้งหมด ยังไม่ได้ลบ 250 ฟองที่ขายไป" }
+      - { match: 610, feedback: "บวกจำนวนที่ขาย แต่ของที่ขายไปต้องลบออก" }
+    solution: "ไข่ทั้งหมด $12 \\times 30 = 360$ ฟอง เหลือ $360 - 250 = 110$ ฟอง ประโยคสัญลักษณ์ $12 \\times 30 - 250 = 110$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
