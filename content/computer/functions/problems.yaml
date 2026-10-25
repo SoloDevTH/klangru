@@ -1,0 +1,429 @@
+problems:
+  - id: computer.programming.functions.p001
+    topics: [computer.programming.functions]
+    difficulty: 1
+    type: mcq
+    stem: "ในภาษา Python คำใดใช้ขึ้นต้นการสร้างฟังก์ชันใหม่"
+    choices:
+      - { id: a, text: "def", correct: true }
+      - { id: b, text: "return", feedback: "return ใช้ส่งค่ากลับจากข้างในฟังก์ชัน ไม่ได้ใช้สร้างฟังก์ชัน" }
+      - { id: c, text: "print", feedback: "print เป็นฟังก์ชันที่มีอยู่แล้วสำหรับแสดงผล ไม่ได้ใช้สร้างฟังก์ชันใหม่" }
+      - { id: d, text: "for", feedback: "for ใช้สร้างวงวน" }
+    hints:
+      - "คำนี้ย่อมาจาก define (นิยาม)"
+      - "ดูบรรทัดแรกของฟังก์ชัน rect_area ในบทเรียน"
+    solution: "def (define) ใช้สร้างฟังก์ชัน ตามด้วยชื่อ วงเล็บที่มีพารามิเตอร์ และเครื่องหมาย : เช่น def rect_area(width, height):"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p002
+    topics: [computer.programming.functions]
+    difficulty: 1
+    type: match
+    stem: |
+      จากโปรแกรมนี้ จับคู่ส่วนของโค้ดกับชื่อเรียก
+
+      ```python
+      def circle_area(r):
+          return 3.14 * r * r
+
+      print(circle_area(5))
+      ```
+    pairs:
+      - { left: "circle_area", right: "ชื่อฟังก์ชัน" }
+      - { left: "r ในบรรทัด def", right: "พารามิเตอร์" }
+      - { left: "5 ในบรรทัด print", right: "อาร์กิวเมนต์" }
+      - { left: "3.14 * r * r", right: "ค่าที่คืน" }
+    hints:
+      - "พารามิเตอร์อยู่ในบรรทัด def ส่วนอาร์กิวเมนต์อยู่ตอนเรียก"
+      - "ค่าที่คืนคือสิ่งที่อยู่หลัง return"
+    solution: "circle_area คือชื่อฟังก์ชัน r ใน def คือพารามิเตอร์ที่รอรับค่า 5 คือค่าจริงที่ส่งตอนเรียก (อาร์กิวเมนต์) และ 3.14 * r * r คือค่าที่ฟังก์ชันคืน (ในที่นี้ 78.5)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p003
+    topics: [computer.programming.functions]
+    difficulty: 2
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      def triple(n):
+          return n * 3
+
+      print(triple(4) + triple(2))
+      ```
+    answer: { value: 18 }
+    hints:
+      - "หาค่าของ triple(4) และ triple(2) แยกกันก่อน"
+      - "ค่าที่ฟังก์ชันคืนนำมาบวกกันได้เหมือนตัวเลข"
+    misconceptions:
+      - { match: 12, feedback: "12 คือค่าของ triple(4) อย่างเดียว ต้องบวก triple(2) ด้วย" }
+      - { match: 6, feedback: "6 คือค่าของ triple(2) อย่างเดียว" }
+    solution: "triple(4) = 12 และ triple(2) = 6 ผลรวม 12 + 6 = 18"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p004
+    topics: [computer.programming.functions]
+    difficulty: 2
+    type: mcq
+    stem: |
+      รันโปรแกรมนี้แล้วบนจอแสดงสองบรรทัด **บรรทัดที่สอง** คืออะไร
+
+      ```python
+      def double(n):
+          print(n * 2)
+
+      x = double(5)
+      print(x)
+      ```
+    choices:
+      - { id: a, text: "None", correct: true }
+      - { id: b, text: "10", feedback: "10 คือบรรทัดแรก ซึ่งมาจาก print ในฟังก์ชัน แต่ฟังก์ชันไม่ได้ return ค่า x จึงไม่ได้ 10" }
+      - { id: c, text: "5", feedback: "x ไม่ได้รับค่าของอาร์กิวเมนต์ x รับค่าที่ฟังก์ชันคืน" }
+      - { id: d, text: "โปรแกรมหยุดพร้อมข้อผิดพลาด", feedback: "ฟังก์ชันที่ไม่มี return ใช้ได้ปกติ เพียงแต่คืนค่า None" }
+    hints:
+      - "ฟังก์ชัน double มีคำสั่ง return หรือไม่"
+      - "ฟังก์ชันที่ไม่มี return คืนค่าอะไร"
+    solution: "double(5) แสดง 10 ด้วย print ในฟังก์ชัน (บรรทัดแรก) แต่ไม่มี return จึงคืน None ทำให้ x = None และบรรทัดที่สองแสดง None ถ้าต้องการนำผลไปใช้ต่อ ต้องเขียน return n * 2"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p005
+    topics: [computer.programming.functions]
+    difficulty: 2
+    type: order
+    stem: "เรียงบรรทัดให้เป็นโปรแกรมที่สร้างฟังก์ชันหาค่าเฉลี่ยของเลขสามจำนวน แล้วแสดงค่าเฉลี่ยของ 4, 5 และ 9 (ได้ 6.0)"
+    items:
+      - "def avg(a, b, c):"
+      - "    total = a + b + c"
+      - "    return total / 3"
+      - "print(avg(4, 5, 9))"
+    hints:
+      - "ต้องสร้างฟังก์ชันก่อนจึงเรียกใช้ได้"
+      - "คำนวณผลรวมก่อนจึงหารได้ และ return ทำให้ฟังก์ชันจบ"
+    solution: "def avg(a, b, c): → total = a + b + c → return total / 3 → print(avg(4, 5, 9)) ได้ (4 + 5 + 9) ÷ 3 = 6.0 บรรทัด print อยู่นอกฟังก์ชันและอยู่หลัง def"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p006
+    topics: [computer.programming.functions]
+    difficulty: 2
+    type: numeric
+    stem: |
+      อากาศกรุงเทพฯ วันหนึ่ง 30 °C ฟังก์ชันนี้คืนค่าเท่าใด (หน่วย °F)
+
+      ```python
+      def c_to_f(c):
+          return 9 / 5 * c + 32
+
+      print(c_to_f(30))
+      ```
+    answer: { value: 86, unit: "°F" }
+    hints:
+      - "แทน c = 30 ในนิพจน์หลัง return"
+      - "คำนวณ 9 / 5 * 30 ก่อน แล้วบวก 32"
+    misconceptions:
+      - { match: 54, feedback: "ลืมบวก 32 ท้ายสูตร" }
+      - { match: 48.67, feedback: "ใช้ 5/9 แทน 9/5 ซึ่งเป็นสูตรแปลงกลับทาง" }
+    solution: "9 / 5 × 30 = 54 แล้ว 54 + 32 = 86 โปรแกรมแสดง 86.0 (เป็นทศนิยมเพราะใช้ / หาร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p007
+    topics: [computer.programming.functions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      x = 5
+
+      def change(x):
+          x = x + 10
+          return x
+
+      y = change(x)
+      print(x + y)
+      ```
+    answer: { value: 20 }
+    hints:
+      - "x ในฟังก์ชันเป็นพารามิเตอร์ ซึ่งเป็นตัวแปรเฉพาะที่"
+      - "หลังเรียก change ค่า x ข้างนอกยังเป็นเท่าใด และ y เป็นเท่าใด"
+    misconceptions:
+      - { match: 30, feedback: "คิดว่า x ข้างนอกเปลี่ยนเป็น 15 ด้วย แต่ x ในฟังก์ชันเป็นตัวแปรเฉพาะที่ คนละตัวกับ x ข้างนอก" }
+      - { match: 15, feedback: "15 คือค่าของ y อย่างเดียว ต้องบวก x ข้างนอก (5) ด้วย" }
+    solution: "change(5) ได้ x ในฟังก์ชัน = 15 แล้วคืน 15 ให้ y แต่ x ข้างนอกยังเป็น 5 ผลจึงเป็น 5 + 15 = 20"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p008
+    topics: [computer.programming.functions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      นักเรียนเขียนฟังก์ชันหาผลรวมของลิสต์ แต่ผลไม่ถูก โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      def total(nums):
+          s = 0
+          for n in nums:
+              s = s + n
+              return s
+
+      print(total([4, 7, 2]))
+      ```
+    answer: { value: 4 }
+    hints:
+      - "ดูการย่อหน้าของ return ว่าอยู่ในวงวนหรือไม่"
+      - "return ทำให้ฟังก์ชันจบทันทีในรอบที่มันทำงาน"
+    misconceptions:
+      - { match: 13, feedback: "13 คือผลรวมที่ตั้งใจ แต่ return อยู่ในวงวน ฟังก์ชันจึงจบตั้งแต่รอบแรก" }
+      - { match: 2, feedback: "ฟังก์ชันไม่ได้วนจนจบลิสต์ มันจบในรอบแรกหลังบวก 4" }
+    solution: "รอบแรก n = 4 ได้ s = 4 แล้วเจอ return ซึ่งอยู่ในวงวน ฟังก์ชันจึงคืน 4 ทันที แก้โดยลดการย่อหน้าของ return ให้อยู่ระดับเดียวกับ for จะได้ 13"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p009
+    topics: [computer.programming.functions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ฟังก์ชันนี้หาคำตอบของสมการ $ax + b = c$ ค่าที่แสดงคือเท่าใด
+
+      ```python
+      def solve_linear(a, b, c):
+          return (c - b) / a
+
+      print(solve_linear(4, -6, 10))
+      ```
+    answer: { value: 4 }
+    hints:
+      - "อาร์กิวเมนต์จับคู่ตามลำดับ a = 4, b = −6, c = 10"
+      - "ระวังการลบจำนวนลบ 10 − (−6)"
+    misconceptions:
+      - { match: 1, feedback: "คิด 10 − 6 แต่ b = −6 จึงต้องเป็น 10 − (−6) = 16" }
+      - { match: 0.25, feedback: "สลับลำดับ คิดเป็น a หารด้วย (c − b) หรือสลับอาร์กิวเมนต์ ต้องเป็น (c − b) ÷ a" }
+    solution: "(10 − (−6)) ÷ 4 = 16 ÷ 4 = 4 โปรแกรมแสดง 4.0 ตรวจ: 4 × 4 + (−6) = 10 ถูกต้อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p010
+    topics: [computer.programming.functions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ฝากเงิน 100 บาท ได้ดอกเบี้ยทบต้นปีละ 7% ฟังก์ชันนี้คืนจำนวนปีที่เงินถึง 200 บาทเป็นครั้งแรก `years_to_double(7)` คืนค่าเท่าใด (ใช้ python หรือเครื่องคิดเลขไล่ได้)
+
+      ```python
+      def years_to_double(rate):
+          money = 100
+          years = 0
+          while money < 200:
+              money = money * (1 + rate / 100)
+              years = years + 1
+          return years
+      ```
+    answer: { value: 11, unit: ปี }
+    hints:
+      - "แต่ละรอบเงินคูณ 1.07 และนับปีเพิ่ม 1 วงวนหยุดเมื่อเงินไม่น้อยกว่า 200"
+      - "ไล่ 100 × 1.07 ไปเรื่อย ๆ: 107, 114.49, 122.50, ... นับจนถึงหรือเกิน 200"
+    misconceptions:
+      - { match: 15, feedback: "คิดแบบดอกเบี้ยไม่ทบต้น (ปีละ 7 บาท ต้อง 100 ÷ 7 ≈ 14.3 จึงปัดเป็น 15 ปี) แต่ฟังก์ชันคูณยอดเงินใหม่ทุกปี" }
+      - { match: 10, feedback: "หลังปีที่ 10 เงินราว 196.72 บาท ยังน้อยกว่า 200 วงวนจึงทำต่ออีกหนึ่งรอบ" }
+    solution: "ไล่ค่า: หลังปี 10 ได้ 100 × 1.07^10 ≈ 196.72 ยังน้อยกว่า 200 หลังปี 11 ได้ ≈ 210.49 วงวนหยุด ฟังก์ชันคืน 11"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p011
+    topics: [computer.programming.functions]
+    difficulty: 2
+    type: text
+    stem: "ฟังก์ชันที่เรียกตัวเองต้องมีกรณีที่ตอบได้ทันทีโดยไม่เรียกตัวเองอีก เพื่อให้การเรียกซ้ำหยุด กรณีนี้เรียกว่าอะไร"
+    accepted: ["กรณีฐาน", "base case", "เบสเคส"]
+    misconceptions:
+      - { match: "return", feedback: "return เป็นคำสั่งส่งค่ากลับ ส่วนกรณีที่ทำให้หยุดเรียกซ้ำมีชื่อเฉพาะ" }
+      - { match: "วงวน", feedback: "วงวนเป็นอีกวิธีทำซ้ำ ไม่ใช่ชื่อกรณีที่ทำให้การเรียกซ้ำหยุด" }
+    hints:
+      - "ใน fact(n) คือกรณี n == 0 ที่คืน 1 ทันที"
+      - "ภาษาอังกฤษเรียกว่า base case"
+    solution: "กรณีฐาน (base case) เช่น if n == 0: return 1 ในฟังก์ชันแฟกทอเรียล ถ้าไม่มี ฟังก์ชันจะเรียกตัวเองไม่สิ้นสุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p012
+    topics: [computer.programming.functions]
+    difficulty: 4
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      def s(n):
+          if n == 1:
+              return 1
+          return n + s(n - 1)
+
+      print(s(5))
+      ```
+    answer: { value: 15 }
+    hints:
+      - "s(5) = 5 + s(4) แล้ว s(4) = 4 + s(3) ไล่ลงไปจนถึงกรณีฐาน"
+      - "กรณีฐานคือ s(1) = 1 จากนั้นบวกย้อนขึ้นมา"
+    misconceptions:
+      - { match: 120, feedback: "นี่คือผลของการคูณ (5!) แต่ฟังก์ชันนี้ใช้การบวก n + s(n − 1)" }
+      - { match: 14, feedback: "ลืมบวกค่าของกรณีฐาน s(1) = 1" }
+    solution: "s(1) = 1, s(2) = 2 + 1 = 3, s(3) = 3 + 3 = 6, s(4) = 4 + 6 = 10, s(5) = 5 + 10 = 15 คือผลบวก 1 ถึง 5"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p013
+    topics: [computer.programming.functions]
+    difficulty: 4
+    type: mcq
+    stem: |
+      เกิดอะไรขึ้นเมื่อเรียก `countdown(3)`
+
+      ```python
+      def countdown(n):
+          print(n)
+          countdown(n - 1)
+      ```
+    choices:
+      - { id: a, text: "แสดง 3, 2, 1, 0, −1, ... ต่อไปเรื่อย ๆ จน Python หยุดพร้อมข้อผิดพลาด RecursionError", correct: true }
+      - { id: b, text: "แสดง 3, 2, 1 แล้วหยุดเอง", feedback: "ไม่มีเงื่อนไขใดสั่งให้หยุดที่ 1 ฟังก์ชันเรียกตัวเองต่อด้วย 0, −1, ..." }
+      - { id: c, text: "แสดง 3 ครั้งเดียว", feedback: "ฟังก์ชันเรียกตัวเองทุกครั้งหลัง print จึงแสดงต่อไปเรื่อย ๆ" }
+      - { id: d, text: "ไม่แสดงอะไร เพราะฟังก์ชันไม่มี return", feedback: "ฟังก์ชันไม่จำเป็นต้องมี return ก็ทำงานได้ print ในฟังก์ชันจึงแสดงผล" }
+    hints:
+      - "ฟังก์ชันนี้มีกรณีฐานหรือไม่"
+      - "ไม่มี if ที่ทำให้หยุด การเรียกตัวเองจะเกิดทุกครั้ง"
+    solution: "ไม่มีกรณีฐาน ฟังก์ชันจึงเรียกตัวเองไม่สิ้นสุด แสดงตัวเลขลดลงเรื่อย ๆ จนจำนวนการเรียกซ้อนกันเกินที่ Python กำหนด (ค่าเริ่มต้นราว 1,000 ชั้น) แล้วหยุดด้วย RecursionError แก้โดยเพิ่ม if n == 0: return ไว้ก่อน print"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p014
+    topics: [computer.programming.functions]
+    difficulty: 4
+    type: match
+    stem: "นักเรียนเขียนโปรแกรมวิเคราะห์การทดลองรถของเล่น โดยวัดระยะทาง (m) และเวลา (s) หลายครั้ง แล้วแยกเป็นฟังก์ชัน จับคู่ฟังก์ชันกับหน้าที่"
+    pairs:
+      - { left: "speed(d, t)", right: "คืนระยะทางหารด้วยเวลาของการวัดหนึ่งครั้ง" }
+      - { left: "mean(values)", right: "คืนค่าเฉลี่ยของตัวเลขในลิสต์" }
+      - { left: "to_kmh(v)", right: "คืนอัตราเร็วที่แปลงจาก m/s เป็น km/h (คูณ 3.6)" }
+      - { left: "show_table(rows)", right: "แสดงผลทุกครั้งที่วัดเป็นตารางบนจอ" }
+    hints:
+      - "ชื่อฟังก์ชันที่ดีบอกหน้าที่ของมัน"
+      - "พารามิเตอร์บอกว่าฟังก์ชันต้องใช้ข้อมูลอะไร"
+    solution: "speed(d, t) ใช้ระยะทางกับเวลา mean(values) ใช้ลิสต์ to_kmh(v) แปลงหน่วยค่าเดียว show_table(rows) แสดงผล การแยกแบบนี้ทำให้ทดสอบแต่ละส่วนได้ และ mean นำไปใช้กับการทดลองอื่นได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p015
+    topics: [computer.programming.functions]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ครูเพิ่มคะแนนให้นักเรียนที่ได้ต่ำกว่า 50 คนละ 5 คะแนน โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      def bonus(scores):
+          for i in range(len(scores)):
+              if scores[i] < 50:
+                  scores[i] = scores[i] + 5
+          return scores
+
+      s = bonus([48, 60, 45, 50])
+      print(sum(s))
+      ```
+    answer: { value: 213 }
+    hints:
+      - "ไล่ทีละสมาชิก ตัวใดน้อยกว่า 50 จึงเพิ่ม 5"
+      - "50 น้อยกว่า 50 หรือไม่"
+    misconceptions:
+      - { match: 203, feedback: "203 คือผลรวมเดิม ฟังก์ชันแก้ค่าในลิสต์แล้ว 48 กลายเป็น 53 และ 45 กลายเป็น 50" }
+      - { match: 218, feedback: "เพิ่ม 5 ให้ 50 ด้วย แต่เงื่อนไขคือ < 50 ซึ่ง 50 ไม่เข้าเงื่อนไข" }
+    solution: "48 → 53, 60 คงเดิม, 45 → 50, 50 คงเดิม (50 < 50 เป็นเท็จ) ลิสต์ใหม่ [53, 60, 50, 50] ผลรวม 213"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p016
+    topics: [computer.programming.functions]
+    difficulty: 4
+    type: mcq
+    stem: |
+      ฟังก์ชันคำนวณค่าส่งพัสดุสองแบบนี้ แบบใด **นำไปใช้ซ้ำในโปรแกรมอื่นได้ดีกว่า** เพราะอะไร
+
+      ```python
+      # แบบ ก
+      weight = 3
+      def shipping_a():
+          print(30 + 10 * weight)
+
+      # แบบ ข
+      def shipping_b(weight):
+          return 30 + 10 * weight
+      ```
+    choices:
+      - { id: a, text: "แบบ ข เพราะรับน้ำหนักทางพารามิเตอร์และคืนค่า จึงใช้กับน้ำหนักใดก็ได้และนำผลไปคำนวณต่อได้", correct: true }
+      - { id: b, text: "แบบ ก เพราะสั้นกว่าและไม่ต้องส่งอาร์กิวเมนต์", feedback: "แบบ ก ผูกกับตัวแปร weight ข้างนอก และแค่แสดงผล นำผลไปรวมกับค่าอื่นไม่ได้" }
+      - { id: c, text: "เหมือนกัน เพราะได้ผล 60 ทั้งคู่เมื่อน้ำหนัก 3 kg", feedback: "ผลเท่ากันกรณีนี้ แต่แบบ ก ใช้ซ้ำยาก และคืนค่า None" }
+      - { id: d, text: "แบบ ก เพราะ print ทำให้เห็นผลทันที", feedback: "การแสดงผลควรแยกไปไว้ที่ผู้เรียก ฟังก์ชันคำนวณควร return ค่า" }
+    hints:
+      - "ถ้าต้องคำนวณค่าส่งของพัสดุ 10 ชิ้นแล้วรวมกัน แบบไหนทำได้ง่ายกว่า"
+      - "ฟังก์ชันที่ดีรับข้อมูลทางพารามิเตอร์และส่งผลทาง return"
+    solution: "แบบ ข เรียก shipping_b(2) + shipping_b(5) ได้ทันที ส่วนแบบ ก ต้องแก้ตัวแปร weight ข้างนอกก่อนเรียกทุกครั้ง และคืน None จึงนำผลไปคำนวณต่อไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p017
+    topics: [computer.programming.functions]
+    difficulty: 5
+    type: numeric
+    stem: |
+      ฟังก์ชันนี้หาค่าประมาณของ $\sqrt{2}$ โดยแบ่งช่วงครึ่งไปเรื่อย ๆ `count_steps(1, 2)` คืนค่าเท่าใด
+
+      ```python
+      def f(x):
+          return x * x - 2
+
+      def count_steps(lo, hi):
+          steps = 0
+          while hi - lo > 0.1:
+              mid = (lo + hi) / 2
+              if f(mid) > 0:
+                  hi = mid
+              else:
+                  lo = mid
+              steps = steps + 1
+          return steps
+      ```
+    answer: { value: 4, unit: รอบ }
+    hints:
+      - "ทุกรอบความกว้างของช่วง hi − lo ลดลงครึ่งหนึ่ง ไม่ว่าจะเลือกครึ่งไหน"
+      - "เริ่มกว้าง 1 แล้วไล่ 0.5, 0.25, ... วงวนหยุดเมื่อกว้างไม่เกิน 0.1"
+    misconceptions:
+      - { match: 10, feedback: "คิดว่าช่วงลดทีละ 0.1 แต่แต่ละรอบช่วงลดลงครึ่งหนึ่ง" }
+      - { match: 3, feedback: "หลัง 3 รอบช่วงกว้าง 0.125 ซึ่งยังมากกว่า 0.1 วงวนจึงทำต่ออีกหนึ่งรอบ" }
+    solution: "ความกว้าง 1 → 0.5 → 0.25 → 0.125 → 0.0625 หลังรอบที่ 4 ความกว้างไม่เกิน 0.1 จึงหยุด คืน 4 (ช่วงสุดท้ายคือ 1.375 ถึง 1.4375 ซึ่งคร่อม √2 ≈ 1.414)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p018
+    topics: [computer.programming.functions]
+    difficulty: 5
+    type: mcq
+    stem: "นักเรียนย้ายฟังก์ชัน `circle_area(r)` ไปไว้ในไฟล์ `geometry.py` ซึ่งอยู่โฟลเดอร์เดียวกับ `main.py` ในไฟล์ `main.py` ควรเขียนอย่างไรจึงเรียกใช้ฟังก์ชันนี้ได้"
+    choices:
+      - { id: a, text: "import geometry แล้วเรียก geometry.circle_area(2)", correct: true }
+      - { id: b, text: "import geometry.py แล้วเรียก circle_area(2)", feedback: "ชื่อโมดูลไม่ใส่นามสกุล .py และเมื่อใช้ import ชื่อโมดูล ต้องเรียกผ่าน geometry." }
+      - { id: c, text: "เรียก circle_area(2) ได้เลยโดยไม่ต้อง import", feedback: "ฟังก์ชันอยู่คนละไฟล์ ต้อง import ก่อน ไม่เช่นนั้นจะเกิด NameError" }
+      - { id: d, text: "include geometry แล้วเรียก circle_area(2)", feedback: "Python ไม่มีคำสั่ง include ใช้ import" }
+    hints:
+      - "ทำแบบเดียวกับการใช้ math.sqrt"
+      - "ชื่อโมดูลคือชื่อไฟล์ที่ไม่มี .py"
+    solution: "import geometry ทำให้ใช้ทุกฟังก์ชันในไฟล์ได้ผ่านชื่อ geometry. เช่น geometry.circle_area(2) (หรือเขียน from geometry import circle_area แล้วเรียก circle_area(2) ก็ได้) การแยกโมดูลช่วยให้นำฟังก์ชันไปใช้ในหลายโปรแกรม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

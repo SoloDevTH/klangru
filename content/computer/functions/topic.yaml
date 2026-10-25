@@ -1,0 +1,81 @@
+id: computer.programming.functions
+subject: computer
+title: { th: เขียนโปรแกรมแก้ปัญหาด้วยตรรกะและฟังก์ชัน, en: "Solving problems with logic and functions" }
+summary: สร้างและเรียกใช้ฟังก์ชันที่มีพารามิเตอร์และค่าที่คืนใน Python แก้โจทย์คณิตศาสตร์และวิทยาศาสตร์ ขอบเขตของตัวแปร การแยกโปรแกรมเป็นฟังก์ชันและโมดูล และการเรียกซ้ำเบื้องต้น
+difficulty: 4
+minutes: 45
+prerequisites: [computer.programming.design-debug, computer.algorithms.computational-thinking, math.algebra.linear-eq]
+encompasses:
+  - { id: computer.programming.design-debug, weight: 0.3 }
+  - { id: computer.programming.basics, weight: 0.4 }
+  - { id: computer.algorithms.computational-thinking, weight: 0.2 }
+  - { id: math.algebra.linear-eq, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: call.svg
+    alt: "ด้านซ้ายเป็นจุดเรียก มีโค้ด x = rect_area(3, 4) และ print(x) ได้ 12 ด้านขวาเป็นกรอบฟังก์ชัน มีโค้ด def rect_area(width, height): area = width * height และ return area ใต้โค้ดมีกล่อง width = 3 และ height = 4 ป้ายว่าพารามิเตอร์ และกล่อง area = 12 ป้ายว่าตัวแปรเฉพาะที่ ลูกศรสีดำจากจุดเรียกไปที่พารามิเตอร์ ป้ายว่าอาร์กิวเมนต์ 3, 4 จับคู่ตามลำดับ ลูกศรสีส้มจาก area กลับไปที่จุดเรียก ป้ายว่า return ส่งค่า 12 กลับไปแทนที่ rect_area(3, 4) ที่จุดเรียก"
+    caption: "อาร์กิวเมนต์ส่งเข้าพารามิเตอร์ และ return ส่งค่ากลับ"
+  - type: figure
+    src: scope.svg
+    alt: "กรอบใหญ่คือขอบเขตหลักของโปรแกรม มี count = 0 ซึ่งไม่เปลี่ยนตลอดโปรแกรม ข้างในมีกรอบเส้นประ ขณะ add_one() ทำงาน มีลำดับ count = 10 ในบรรทัดแรก แล้ว count = 11 จาก count = count + 1 แล้ว return 11 ข้อความใต้กรอบบอกว่าเมื่อฟังก์ชันจบ count ตัวในกรอบเส้นประหายไป print(count) ข้างนอกจึงได้ 0 ไม่ใช่ 11"
+    caption: "ตัวแปรเฉพาะที่กับตัวแปรข้างนอกเป็นคนละตัวกัน แม้ชื่อเหมือนกัน"
+  - type: worked-example
+    title: เขียนฟังก์ชันพลังงานจลน์แล้วใช้ซ้ำ
+    problem: "เขียนฟังก์ชัน Python คำนวณพลังงานจลน์ $E_k = \\frac{1}{2}mv^2$ (หน่วยจูล) เมื่อรู้มวล $m$ (kg) และอัตราเร็ว $v$ (m/s) แล้วใช้หาพลังงานของรถของเล่นมวล 2 kg ที่อัตราเร็ว 1, 2 และ 4 m/s"
+    steps:
+      - text: "ระบุข้อมูลเข้าและผลลัพธ์: รับ m และ v ส่งกลับพลังงาน 1 ค่า จึงมีพารามิเตอร์ 2 ตัวและ return 1 ค่า"
+        why: "ข้อมูลเข้ากลายเป็นพารามิเตอร์ ผลลัพธ์กลายเป็นค่าที่คืน ถ้าแยกสองอย่างนี้ชัด ฟังก์ชันจะใช้ซ้ำได้"
+      - text: "เขียนบรรทัดหัว: `def kinetic_energy(m, v):`"
+      - text: "เขียนตัวฟังก์ชัน: `return 0.5 * m * v ** 2` (ใน Python ยกกำลังใช้ `**`)"
+      - text: "ทดสอบกับค่าที่รู้คำตอบ: `kinetic_energy(2, 3)` ควรได้ $\\frac{1}{2} \\times 2 \\times 3^2 = 9$ รันได้ 9.0 ตรงกัน"
+        why: "ทดสอบฟังก์ชันทีละตัวก่อนนำไปใช้ในโปรแกรมใหญ่ ถ้าผิดจะรู้ทันทีว่าผิดที่ฟังก์ชันนี้"
+      - text: "ใช้ซ้ำในวงวน: `for v in [1, 2, 4]:` แล้ว `print(v, kinetic_energy(2, v))` ได้ 1.0, 4.0 และ 16.0"
+    answer: "def kinetic_energy(m, v): return 0.5 * m * v ** 2 ได้พลังงาน 1, 4 และ 16 J เมื่ออัตราเร็วเพิ่มเป็นสองเท่า พลังงานเพิ่มเป็นสี่เท่า"
+  - { type: check, problem: computer.programming.functions.p006, prompt: "ทำนายผลของฟังก์ชันแปลงหน่วยอุณหภูมิ" }
+  - type: figure
+    src: decompose.svg
+    alt: "ผังแยกงาน ฟังก์ชันหลัก report(name, scores) อยู่ด้านบน มีลูกศรลงไปที่ฟังก์ชันย่อยสามตัว total(scores) รวมคะแนนในลิสต์ คืนจำนวน เช่น 78 to_grade(points) แปลงคะแนนเป็นเกรด คืน 3.5 เมื่อ 75 ถึง 79 และ show(name, grade) แสดงผลบนจอ ไม่ต้องคืนค่า มีลูกศรส่ง 78 จาก total ไป to_grade และส่ง 3.5 จาก to_grade ไป show"
+    caption: "แยกโปรแกรมตัดเกรดเป็นฟังก์ชันย่อย"
+  - type: worked-example
+    title: แยกโปรแกรมตัดเกรดเป็นฟังก์ชัน
+    problem: "เขียนโปรแกรมรับชื่อและลิสต์คะแนนเก็บ แล้วแสดงเกรดตามเกณฑ์ 80 ขึ้นไปได้ 4, 75–79 ได้ 3.5, 70–74 ได้ 3 ลงไปทีละ 5 คะแนนจนต่ำกว่า 50 ได้ 0 โดยแยกเป็นฟังก์ชันตามผัง"
+    steps:
+      - text: "แยกงาน: รวมคะแนน แปลงเป็นเกรด และแสดงผล งานละหนึ่งฟังก์ชัน"
+        why: "ฟังก์ชันที่ทำงานเดียวตั้งชื่อง่าย ทดสอบง่าย และนำไปใช้ที่อื่นได้ เช่น to_grade ใช้กับวิชาอื่นได้ทันที"
+      - text: "total: เริ่ม `s = 0` วน `for x in scores:` บวก `s = s + x` แล้ว `return s`"
+      - text: "to_grade: ใช้ `if points >= 80: return 4` ต่อด้วย `elif points >= 75: return 3.5` ไล่ลงทีละ 5 คะแนน จนถึง `else: return 0`"
+        why: "elif ตรวจจากบนลงล่างและทำเฉพาะทางแรกที่จริง จึงเรียงจากเกณฑ์สูงไปต่ำ"
+      - text: "show: `print(name, \"ได้เกรด\", grade)` ไม่ต้อง return เพราะหน้าที่คือแสดงผลเท่านั้น"
+      - text: "report เรียกต่อกัน: `show(name, to_grade(total(scores)))` ทดสอบ `report(\"ต้นกล้า\", [20, 18, 25, 15])` รวมได้ 78 จึงแสดง ต้นกล้า ได้เกรด 3.5"
+    answer: "แยกเป็น total, to_grade และ show แล้วให้ report เรียกต่อกัน ทดสอบด้วยคะแนนรวม 78 ได้เกรด 3.5"
+  - { type: check, problem: computer.programming.functions.p007, prompt: "ไล่ดูว่าตัวแปรในฟังก์ชันกระทบตัวแปรข้างนอกหรือไม่" }
+  - type: figure
+    src: recursion.svg
+    alt: "ภาพการทำงานของ fact(4) ด้านซ้ายเป็นขาลง fact(4) เรียก fact(3) เรียก fact(2) เรียก fact(1) เรียก fact(0) ด้านขวาเป็นขาขึ้น fact(0) เป็นกรณีฐาน คืน 1 จากนั้น 1 × 1 = 1, 2 × 1 = 2, 3 × 2 = 6 และ 4 × 6 = 24 ลูกศรสีส้มชี้ขึ้นจากล่างไปบน"
+    caption: "การเรียกซ้ำลงไปจนถึงกรณีฐาน แล้วคืนค่าย้อนกลับขึ้นมา"
+glossary:
+  - { term: ฟังก์ชัน (function), definition: "กลุ่มคำสั่งที่ตั้งชื่อไว้ เรียกใช้ซ้ำได้ รับค่าทางพารามิเตอร์และส่งผลกลับด้วย return" }
+  - { term: พารามิเตอร์ (parameter), definition: "ตัวแปรในวงเล็บของ def ที่รอรับค่าเมื่อฟังก์ชันถูกเรียก" }
+  - { term: อาร์กิวเมนต์ (argument), definition: "ค่าจริงที่ส่งให้ฟังก์ชันตอนเรียก จับคู่กับพารามิเตอร์ตามลำดับ" }
+  - { term: ค่าที่คืน (return value), definition: "ค่าที่ฟังก์ชันส่งกลับไปยังจุดที่เรียกด้วยคำสั่ง return ถ้าไม่มี return จะได้ None" }
+  - { term: ตัวแปรเฉพาะที่ (local variable), definition: "ตัวแปรที่สร้างในฟังก์ชัน มีอยู่ระหว่างฟังก์ชันทำงานและไม่ปนกับตัวแปรข้างนอก" }
+  - { term: โมดูล (module), definition: "ไฟล์ที่รวมฟังก์ชันที่เกี่ยวข้องกัน นำมาใช้ด้วย import เช่น math" }
+  - { term: การเรียกซ้ำ (recursion), definition: "การที่ฟังก์ชันเรียกตัวเองกับปัญหาที่เล็กลง จนถึงกรณีฐาน" }
+  - { term: กรณีฐาน (base case), definition: "กรณีที่ฟังก์ชันเรียกซ้ำตอบได้ทันทีโดยไม่เรียกตัวเองอีก ทำให้การเรียกซ้ำหยุด" }
+flashcards:
+  - { front: "print ต่างจาก return อย่างไร", back: "print แสดงบนจอ return ส่งค่ากลับให้ผู้เรียกนำไปใช้ต่อ ไม่มี return ได้ None" }
+  - { front: "พารามิเตอร์กับอาร์กิวเมนต์", back: "พารามิเตอร์คือชื่อที่รอรับใน def อาร์กิวเมนต์คือค่าจริงที่ส่งตอนเรียก" }
+  - { front: "ตัวแปรในฟังก์ชันชื่อซ้ำกับข้างนอก จะเปลี่ยนค่าข้างนอกไหม", back: "ไม่เปลี่ยน ตัวแปรในฟังก์ชันเป็นตัวแปรเฉพาะที่ คนละตัวกัน" }
+  - { front: "ฟังก์ชันเรียกซ้ำต้องมีอะไรสองอย่าง", back: "กรณีฐานที่หยุดเรียก และการเรียกตัวเองกับปัญหาที่เล็กลง" }
+  - { front: "ใช้ฟังก์ชัน sqrt ของโมดูล math อย่างไร", back: "import math แล้วเรียก math.sqrt(16) ได้ 4.0" }
+references:
+  - { title: "ฟังก์ชัน (การเขียนโปรแกรม)", url: "https://th.wikipedia.org/wiki/ฟังก์ชัน_(การเขียนโปรแกรม)", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Function (computer programming)", url: "https://en.wikipedia.org/wiki/Function_(computer_programming)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Scope (computer science)", url: "https://en.wikipedia.org/wiki/Scope_(computer_science)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Recursion (computer science)", url: "https://en.wikipedia.org/wiki/Recursion_(computer_science)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

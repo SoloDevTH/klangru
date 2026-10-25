@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="860" height="300" font-family="sans-serif" font-size="14">
+  <title>ขอบเขตของตัวแปร count ข้างนอกฟังก์ชันมีค่า 0 ส่วน count ในฟังก์ชัน add_one เป็นตัวแปรเฉพาะที่อีกตัวหนึ่ง มีค่า 10 แล้วเป็น 11 และหายไปเมื่อฟังก์ชันจบ</title>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2937"/></marker></defs>
+  <rect x="0" y="0" width="860" height="300" fill="#ffffff"/>
+  <rect x="20.0" y="20.0" width="820.0" height="260.0" rx="6" fill="#f3f4f6" stroke="#4b5563" stroke-width="1.5"/>
+  <text x="36.0" y="46.0" font-size="15" text-anchor="start" fill="#1f2937" font-weight="bold" xml:space="preserve">ขอบเขตหลักของโปรแกรม (global)</text>
+  <rect x="40.0" y="64.0" width="200.0" height="60.0" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="140.0" y="90.3" font-size="16" text-anchor="middle" fill="#1f2937" font-weight="bold" xml:space="preserve">count = 0</text>
+  <text x="140.0" y="114.9" font-size="12" text-anchor="middle" fill="#1f2937" xml:space="preserve">ไม่เปลี่ยนตลอดโปรแกรม</text>
+  <rect x="280.0" y="64.0" width="540.0" height="196.0" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="296.0" y="90.0" font-size="15" text-anchor="start" fill="#1f2937" font-weight="bold" xml:space="preserve">ขณะ add_one() ทำงาน (local)</text>
+  <rect x="300.0" y="108.0" width="170.0" height="62.0" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="385.0" y="135.3" font-size="16" text-anchor="middle" fill="#1f2937" font-weight="bold" xml:space="preserve">count = 10</text>
+  <text x="385.0" y="159.9" font-size="12" text-anchor="middle" fill="#1f2937" xml:space="preserve">บรรทัดแรก</text>
+  <line x1="472.0" y1="139.0" x2="512.0" y2="139.0" stroke="#1f2937" stroke-width="1.5" marker-end="url(#ah)"/>
+  <rect x="515.0" y="108.0" width="170.0" height="62.0" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="600.0" y="135.3" font-size="16" text-anchor="middle" fill="#1f2937" font-weight="bold" xml:space="preserve">count = 11</text>
+  <text x="600.0" y="159.9" font-size="12" text-anchor="middle" fill="#1f2937" xml:space="preserve">count = count + 1</text>
+  <line x1="687.0" y1="139.0" x2="727.0" y2="139.0" stroke="#1f2937" stroke-width="1.5" marker-end="url(#ah)"/>
+  <rect x="730.0" y="108.0" width="80.0" height="62.0" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="770.0" y="133.4" font-size="14" text-anchor="middle" fill="#1f2937" font-weight="bold" xml:space="preserve">return</text>
+  <text x="770.0" y="159.3" font-size="14" text-anchor="middle" fill="#1f2937" xml:space="preserve">11</text>
+  <text x="550.0" y="205.0" font-size="13" text-anchor="middle" fill="#6b7280" xml:space="preserve">เมื่อฟังก์ชันจบ count ตัวในกรอบเส้นประหายไป</text>
+  <text x="550.0" y="228.0" font-size="13" text-anchor="middle" fill="#6b7280" xml:space="preserve">print(count) ข้างนอกจึงได้ 0 ไม่ใช่ 11</text>
+</svg>

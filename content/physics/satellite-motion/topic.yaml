@@ -1,0 +1,70 @@
+id: physics.dynamics.satellite-motion
+subject: physics
+title: { th: การโคจรของดาวเทียม, en: Satellite motion }
+summary: แรงโน้มถ่วงทำหน้าที่เป็นแรงสู่ศูนย์กลาง อัตราเร็วและคาบของดาวเทียม กฎข้อที่สามของเคปเลอร์ วงโคจรค้างฟ้าของดาวเทียมสื่อสาร และสภาพไร้น้ำหนัก
+difficulty: 6
+minutes: 35
+prerequisites: [physics.kinematics.circular, physics.dynamics.gravitation]
+encompasses:
+  - { id: physics.kinematics.circular, weight: 0.5 }
+  - { id: physics.dynamics.gravitation, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ดาวเทียมในวงโคจรวงกลม
+    src: orbits.svg
+    alt: "สองภาพ ก. โลกอยู่ตรงกลาง ดาวเทียมอยู่บนวงโคจรวงกลมเส้นประรัศมี r = R + h ลูกศร F แรงโน้มถ่วงชี้จากดาวเทียมเข้าหาศูนย์กลางโลก ลูกศร v ความเร็วสัมผัสกับวงโคจร ใต้ภาพเขียน GMm/r² = mv²/r จึงได้ v = รากที่สองของ GM/r ข. วงโคจรวาดตามมาตราส่วน วงโคจรของสถานีอวกาศสูงราว 400 km คาบราว 92 นาทีแทบชิดผิวโลก ส่วนวงโคจรค้างฟ้าสูงราว 35,800 km คาบ 1 วันมีรัศมีราว 6.6 เท่าของรัศมีโลก"
+  - type: worked-example
+    title: หาความสูงของวงโคจรค้างฟ้า
+    problem: "ดาวเทียมค้างฟ้าต้องมีคาบ $24\\ \\mathrm{h}$ ใช้ $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\,m^2/kg^2}$ มวลโลก $M = 6.0 \\times 10^{24}\\ \\mathrm{kg}$ และรัศมีโลก $R = 6.4 \\times 10^{6}\\ \\mathrm{m}$ หารัศมีวงโคจรและความสูงจากผิวโลก"
+    steps:
+      - text: "แปลงคาบเป็นวินาที $T = 24 \\times 3600 = 86400\\ \\mathrm{s}$"
+      - text: "จัดสูตร $T = 2\\pi\\sqrt{\\dfrac{r^3}{GM}}$ ให้ได้ $r^3 = \\dfrac{GMT^2}{4\\pi^2}$"
+        why: "ยกกำลังสองทั้งสองข้างก่อน แล้วคูณ $GM$ และหาร $4\\pi^2$"
+      - text: "$r^3 = \\dfrac{(6.67 \\times 10^{-11})(6.0 \\times 10^{24})(86400)^2}{4\\pi^2} = 7.57 \\times 10^{22}\\ \\mathrm{m^3}$ ได้ $r = 4.23 \\times 10^{7}\\ \\mathrm{m}$"
+      - text: "ความสูง $h = r - R = 4.23 \\times 10^{7} - 0.64 \\times 10^{7} = 3.59 \\times 10^{7}\\ \\mathrm{m}$ หรือราว $35{,}900\\ \\mathrm{km}$"
+        why: "สูตรให้ระยะจากศูนย์กลางโลก ต้องลบรัศมีโลกออกจึงได้ความสูงจากผิว"
+    answer: "รัศมีวงโคจรประมาณ 4.23 × 10⁷ m สูงจากผิวโลกราว 35,900 km"
+  - { type: check, problem: physics.dynamics.satellite-motion.p011, prompt: "ดาวเทียมค้างฟ้าต้องมีเงื่อนไขอะไรบ้าง" }
+  - type: worked-example
+    title: ทำนายคาบของดาวอังคารด้วยกฎของเคปเลอร์
+    problem: "ดาวอังคารอยู่ห่างดวงอาทิตย์เฉลี่ย $1.52\\ \\mathrm{AU}$ ดาวอังคารโคจรรอบดวงอาทิตย์หนึ่งรอบใช้เวลากี่ปี"
+    steps:
+      - text: "ทั้งโลกและดาวอังคารโคจรรอบดวงอาทิตย์ดวงเดียวกัน จึงมี $\\dfrac{T^2}{r^3}$ เท่ากัน"
+      - text: "ใช้หน่วย AU และปี โลกมี $r = 1$, $T = 1$ จึงได้ $T^2 = r^3$"
+        why: "เลือกหน่วยที่ทำให้ค่าคงตัวเท่ากับ 1 คำนวณได้โดยไม่ต้องใช้มวลดวงอาทิตย์"
+      - text: "$T = \\sqrt{1.52^3} = \\sqrt{3.51} \\approx 1.87$ ปี"
+    answer: "ประมาณ 1.87 ปี หรือราว 685 วัน (ค่าที่สังเกตได้จริงคือ 687 วัน)"
+  - { type: check, problem: physics.dynamics.satellite-motion.p004, prompt: "อย่าลืมบวกรัศมีโลก" }
+  - type: interactive
+    title: อัตราเร็วและคาบของดาวเทียมรอบโลก
+    caption: "แกนนอนคือรัศมีวงโคจรวัดจากศูนย์กลางโลก (หน่วยพันกิโลเมตร ผิวโลกอยู่ที่ราว 6.4) เส้นแรกคืออัตราเร็ว (km/s) เส้นที่สองคือคาบ (ชั่วโมง) คำนวณจาก GM ของโลก 3.986 × 10¹⁴ m³/s² ลองหาว่าคาบเท่ากับ 24 ชั่วโมงที่รัศมีเท่าใด และอัตราเร็วที่นั่นเป็นเท่าใด"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{\\frac{398.6}{x}}", "0.0874 x \\sqrt{x}"]
+      x: [6, 45]
+      y: [0, 26]
+  - type: simulation
+    title: "แรงโน้มถ่วงและวงโคจร (PhET Gravity and Orbits)"
+    url: https://phet.colorado.edu/en/simulations/gravity-and-orbits
+    provider: phet
+    note: "หน้า Model เลือกโลกกับดาวเทียม เปิดลูกศรแรงและความเร็ว สังเกตว่าแรงโน้มถ่วงตั้งฉากกับความเร็วตลอด แล้วลองลดความเร็วต้นให้น้อยลงหรือเพิ่มขึ้น วงโคจรจะไม่เป็นวงกลมอีก"
+glossary:
+  - { term: ดาวเทียม, definition: "วัตถุที่โคจรรอบดาวเคราะห์ ดาวเทียมทำโดยมนุษย์ใช้สื่อสาร นำทาง และสำรวจโลก" }
+  - { term: วงโคจรค้างฟ้า, definition: "วงโคจรในระนาบเส้นศูนย์สูตร ทิศเดียวกับการหมุนของโลก คาบประมาณ 24 ชั่วโมง ดาวเทียมจึงอยู่เหนือจุดเดิมบนพื้นโลก" }
+  - { term: กฎข้อที่สามของเคปเลอร์, definition: "กำลังสองของคาบแปรผันตรงกับกำลังสามของรัศมีวงโคจร สำหรับวัตถุที่โคจรรอบดาวดวงเดียวกัน" }
+  - { term: สภาพไร้น้ำหนัก, definition: "สภาพที่วัตถุตกอิสระไปพร้อมกับสิ่งรอบตัว ไม่มีแรงปฏิกิริยาจากพื้น แม้ยังมีแรงโน้มถ่วงกระทำ" }
+flashcards:
+  - { front: "อัตราเร็วของดาวเทียมวงโคจรวงกลม", back: "$v = \\sqrt{GM/r}$ โดย $r = R + h$" }
+  - { front: "คาบของดาวเทียม", back: "$T = 2\\pi\\sqrt{r^3/GM}$" }
+  - { front: "เงื่อนไขของวงโคจรค้างฟ้า", back: "คาบ 24 ชั่วโมง ระนาบเส้นศูนย์สูตร ทิศเดียวกับการหมุนของโลก สูงราว 36,000 km" }
+  - { front: "นักบินอวกาศลอยในสถานีอวกาศเพราะอะไร", back: "ทั้งคนและสถานีตกอิสระรอบโลกด้วยความเร่งเท่ากัน ไม่ใช่เพราะไม่มีแรงโน้มถ่วง" }
+references:
+  - { title: "วงโคจรค้างฟ้า", url: "https://th.wikipedia.org/wiki/วงโคจรค้างฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Kepler's laws of planetary motion", url: "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.4 Satellite Orbits and Energy (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

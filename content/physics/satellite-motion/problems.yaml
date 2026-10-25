@@ -1,0 +1,276 @@
+problems:
+  - id: physics.dynamics.satellite-motion.p001
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 1
+    type: mcq
+    stem: "แรงใดทำหน้าที่เป็นแรงสู่ศูนย์กลางที่ทำให้ดาวเทียมโคจรรอบโลกเป็นวงกลม"
+    choices:
+      - { id: a, text: "แรงโน้มถ่วงที่โลกดึงดาวเทียม", correct: true }
+      - { id: b, text: "แรงขับจากเครื่องยนต์จรวดที่จุดตลอดเวลา", feedback: "ดาวเทียมส่วนใหญ่ไม่ได้จุดเครื่องยนต์ขณะโคจร จุดเฉพาะเวลาปรับวงโคจร การโคจรอาศัยแรงโน้มถ่วงอย่างเดียว" }
+      - { id: c, text: "แรงหนีศูนย์กลางที่ดันดาวเทียมออก", feedback: "ในกรอบที่มองจากโลก มีเพียงแรงโน้มถ่วงชี้เข้าหาศูนย์กลาง ไม่มีแรงจริงที่ดันออก" }
+    hints:
+      - "แรงสู่ศูนย์กลางต้องชี้เข้าหาศูนย์กลางของวงกลม"
+      - "แรงอะไรจากโลกดึงทุกอย่างเข้าหาศูนย์กลางโลก"
+    solution: "แรงโน้มถ่วงที่โลกกระทำต่อดาวเทียมชี้เข้าหาศูนย์กลางโลกซึ่งเป็นศูนย์กลางของวงโคจร จึงทำหน้าที่เป็นแรงสู่ศูนย์กลาง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p002
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 2
+    type: mcq
+    stem: "ดาวเทียม A มวล $500\\ \\mathrm{kg}$ และดาวเทียม B มวล $2000\\ \\mathrm{kg}$ โคจรเป็นวงกลมที่ความสูงเดียวกัน ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ทั้งสองมีอัตราเร็วและคาบเท่ากัน", correct: true }
+      - { id: b, text: "B ต้องโคจรเร็วกว่า เพราะถูกแรงโน้มถ่วงมากกว่า", feedback: "B ถูกแรงมากกว่าจริง แต่ก็มีมวลมากกว่าในอัตราเดียวกัน มวลดาวเทียมตัดกันหายไปใน $v = \\sqrt{GM/r}$" }
+      - { id: c, text: "A ต้องโคจรเร็วกว่า เพราะเบากว่า", feedback: "อัตราเร็วในวงโคจรขึ้นกับมวลของโลกและรัศมีวงโคจรเท่านั้น ไม่ขึ้นกับมวลดาวเทียม" }
+    hints:
+      - "เขียน $\\dfrac{GMm}{r^2} = \\dfrac{mv^2}{r}$ แล้วดูว่า $m$ เหลืออยู่หรือไม่"
+      - "$M$ คือมวลโลก $m$ คือมวลดาวเทียม"
+    solution: "จาก $\\dfrac{GMm}{r^2} = \\dfrac{mv^2}{r}$ มวล $m$ ตัดกัน ได้ $v = \\sqrt{GM/r}$ ซึ่งขึ้นกับ $r$ เท่านั้น ดาวเทียมทั้งสองที่ $r$ เท่ากันจึงมีอัตราเร็วและคาบเท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p003
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 2
+    type: numeric
+    stem: "คืนหนึ่งนักเรียนในเชียงใหม่เห็นสถานีอวกาศนานาชาติเคลื่อนผ่านท้องฟ้า สถานีอยู่สูงจากผิวโลก $400\\ \\mathrm{km}$ ถ้ารัศมีโลกเท่ากับ $6400\\ \\mathrm{km}$ รัศมีวงโคจรที่ต้องใช้ในสูตร $v = \\sqrt{GM/r}$ เป็นกี่กิโลเมตร"
+    answer: { value: 6800, tolerance: 1, unit: km }
+    misconceptions:
+      - { match: 400, feedback: "400 km คือความสูงจากผิวโลก แรงโน้มถ่วงขึ้นกับระยะจากศูนย์กลางโลก ต้องบวกรัศมีโลก" }
+      - { match: 6000, feedback: "ลบความสูงออกจากรัศมีโลก สถานีอยู่นอกโลก ระยะจากศูนย์กลางต้องมากกว่ารัศมีโลก" }
+    hints:
+      - "$r$ ในสูตรวัดจากจุดใด"
+      - "$r = R + h$"
+    solution: "$r = R + h = 6400 + 400 = 6800\\ \\mathrm{km}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p004
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 3
+    type: numeric
+    stem: "ดาวเทียมโคจรเป็นวงกลมสูงจากผิวโลก $1600\\ \\mathrm{km}$ ใช้ $G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\,m^2/kg^2}$ มวลโลก $6.0 \\times 10^{24}\\ \\mathrm{kg}$ รัศมีโลก $6.4 \\times 10^{6}\\ \\mathrm{m}$ อัตราเร็วของดาวเทียมเป็นกี่กิโลเมตรต่อวินาที (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 7.07, tolerance: 0.05, unit: km/s }
+    misconceptions:
+      - { match: 15.82, feedback: "ใช้ความสูง $1.6 \\times 10^{6}\\ \\mathrm{m}$ เป็น $r$ ต้องใช้ระยะจากศูนย์กลางโลก $r = 6.4 \\times 10^6 + 1.6 \\times 10^6$" }
+      - { match: 7073, feedback: "ค่านี้เป็นเมตรต่อวินาที โจทย์ถามเป็นกิโลเมตรต่อวินาที หารด้วย 1000" }
+    hints:
+      - "$r = 6.4 \\times 10^{6} + 1.6 \\times 10^{6} = 8.0 \\times 10^{6}\\ \\mathrm{m}$"
+      - "$v = \\sqrt{\\dfrac{GM}{r}}$ แล้วแปลงเป็น km/s"
+    solution: "$v = \\sqrt{\\dfrac{(6.67 \\times 10^{-11})(6.0 \\times 10^{24})}{8.0 \\times 10^{6}}} = \\sqrt{5.0 \\times 10^{7}} \\approx 7.07 \\times 10^{3}\\ \\mathrm{m/s} = 7.07\\ \\mathrm{km/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p005
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 3
+    type: numeric
+    stem: "ดาวเทียมดวงหนึ่งโคจรเป็นวงกลมที่รัศมี $8.0 \\times 10^{6}\\ \\mathrm{m}$ ด้วยอัตราเร็ว $7.07 \\times 10^{3}\\ \\mathrm{m/s}$ คาบของดาวเทียมเป็นประมาณกี่นาที"
+    answer: { value: 118.5, tolerance: 1, unit: นาที }
+    misconceptions:
+      - { match: 18.9, feedback: "หารรัศมีด้วยอัตราเร็ว ระยะทางหนึ่งรอบคือเส้นรอบวง $2\\pi r$" }
+      - { match: 7110, feedback: "ค่านี้เป็นวินาที โจทย์ถามเป็นนาที หารด้วย 60" }
+    hints:
+      - "หนึ่งรอบดาวเทียมเคลื่อนที่ได้ระยะเท่าใด"
+      - "$T = \\dfrac{2\\pi r}{v}$ แล้วแปลงวินาทีเป็นนาที"
+    solution: "$T = \\dfrac{2\\pi(8.0 \\times 10^{6})}{7.07 \\times 10^{3}} \\approx 7.11 \\times 10^{3}\\ \\mathrm{s} \\approx 118\\ \\mathrm{min}$ (ราว 2 ชั่วโมง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p006
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 2
+    type: mcq
+    stem: "นักบินอวกาศในสถานีอวกาศที่สูง $400\\ \\mathrm{km}$ ลอยตัวได้ เพราะเหตุใด"
+    choices:
+      - { id: a, text: "นักบินและสถานีกำลังตกอิสระรอบโลกด้วยความเร่งเท่ากัน พื้นสถานีจึงไม่ดันนักบิน", correct: true }
+      - { id: b, text: "ที่ความสูงนั้นไม่มีแรงโน้มถ่วงแล้ว", feedback: "ที่ 400 km ค่า $g$ ยังเหลือราว 90% ของที่ผิวโลก ถ้าไม่มีแรงโน้มถ่วง สถานีจะพุ่งออกไปเป็นเส้นตรง" }
+      - { id: c, text: "ในอวกาศไม่มีอากาศ จึงไม่มีอะไรดึงนักบินลง", feedback: "แรงโน้มถ่วงไม่ต้องอาศัยอากาศ อากาศเกี่ยวกับแรงต้าน ไม่ใช่แรงโน้มถ่วง" }
+    hints:
+      - "แรงอะไรทำให้สถานีอวกาศโคจรอยู่ได้"
+      - "นึกถึงคนในลิฟต์ที่ตกลงพร้อมกับลิฟต์"
+    solution: "แรงโน้มถ่วงยังกระทำต่อทั้งนักบินและสถานี และทำหน้าที่เป็นแรงสู่ศูนย์กลาง ทั้งสองจึงตกอิสระรอบโลกด้วยความเร่งเท่ากัน พื้นไม่ต้องออกแรงต่อเท้า นักบินจึงรู้สึกไร้น้ำหนัก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p007
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 3
+    type: match
+    stem: "จับคู่วัตถุที่โคจรรอบโลกกับลักษณะของวงโคจร"
+    pairs:
+      - { left: "ดาวเทียมไทยคม (ดาวเทียมสื่อสาร)", right: "คาบราว 1 วัน อยู่เหนือจุดเดิมบนเส้นศูนย์สูตร" }
+      - { left: "สถานีอวกาศนานาชาติ", right: "วงโคจรต่ำ คาบราว 90 นาที" }
+      - { left: "ดาวเทียมไทยโชต (สำรวจทรัพยากร)", right: "โคจรต่ำผ่านใกล้ขั้วโลก ถ่ายภาพได้ทั่วโลก" }
+      - { left: "ดวงจันทร์", right: "คาบราว 27 วัน ห่างโลกราว 384,000 km" }
+    hints:
+      - "ดาวเทียมสื่อสารต้องให้จานรับสัญญาณบนพื้นหันไปทางเดิมตลอด"
+      - "ยิ่งไกลจากโลก คาบยิ่งยาว"
+    solution: "ไทยคมอยู่ในวงโคจรค้างฟ้า สถานีอวกาศอยู่วงโคจรต่ำ ไทยโชตโคจรผ่านใกล้ขั้วโลกเพื่อถ่ายภาพได้ทุกพื้นที่ และดวงจันทร์ซึ่งอยู่ไกลที่สุดมีคาบยาวที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p008
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 4
+    type: numeric
+    stem: "ถ้าจะส่งดาวเทียม \"ค้างฟ้า\" ไปโคจรรอบดาวอังคาร ดาวอังคารมีมวล $6.42 \\times 10^{23}\\ \\mathrm{kg}$ รัศมี $3.39 \\times 10^{6}\\ \\mathrm{m}$ และหมุนรอบตัวเองหนึ่งรอบใช้เวลา $24.6\\ \\mathrm{h}$ ดาวเทียมต้องอยู่สูงจากผิวดาวอังคารกี่กิโลเมตร ($G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\,m^2/kg^2}$)"
+    answer: { value: 17020, tolerance: 200, unit: km }
+    misconceptions:
+      - { match: 20410, feedback: "นี่คือรัศมีวงโคจรวัดจากศูนย์กลางดาวอังคาร ต้องลบรัศมีดาวอังคารเพื่อให้ได้ความสูงจากผิว" }
+      - { match: 35900, feedback: "นี่คือความสูงของวงโคจรค้างฟ้าของโลก ดาวอังคารมีมวลน้อยกว่าและหมุนช้ากว่าเล็กน้อย ต้องคำนวณใหม่" }
+    hints:
+      - "คาบของวงโคจรต้องเท่ากับเวลาหมุนรอบตัวเอง $T = 24.6 \\times 3600\\ \\mathrm{s}$"
+      - "$r^3 = \\dfrac{GMT^2}{4\\pi^2}$ แล้ว $h = r - R$"
+    solution: "$T = 88560\\ \\mathrm{s}$, $r^3 = \\dfrac{(6.67 \\times 10^{-11})(6.42 \\times 10^{23})(88560)^2}{4\\pi^2} \\approx 8.51 \\times 10^{21}\\ \\mathrm{m^3}$ ได้ $r \\approx 2.04 \\times 10^{7}\\ \\mathrm{m}$ ความสูง $h = 2.04 \\times 10^{7} - 0.339 \\times 10^{7} \\approx 1.70 \\times 10^{7}\\ \\mathrm{m} \\approx 17{,}000\\ \\mathrm{km}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p009
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวเทียม A โคจรรอบโลกที่รัศมี $r$ ดาวเทียม B โคจรที่รัศมี $4r$ คาบของ B เป็นกี่เท่าของคาบของ A"
+    answer: { value: 8, tolerance: 0.05 }
+    misconceptions:
+      - { match: 4, feedback: "คิดว่าคาบแปรผันตรงกับรัศมี แต่ $T^2 \\propto r^3$ คาบจึงแปรผันตาม $r^{3/2}$" }
+      - { match: 16, feedback: "ใช้ $T \\propto r^2$ กฎของเคปเลอร์คือ $T^2 \\propto r^3$" }
+      - { match: 2, feedback: "นี่คืออัตราส่วนอัตราเร็ว $v_A/v_B$ ไม่ใช่อัตราส่วนคาบ" }
+    hints:
+      - "กฎข้อที่สามของเคปเลอร์ $T^2 \\propto r^3$"
+      - "$\\dfrac{T_B}{T_A} = \\left(\\dfrac{4r}{r}\\right)^{3/2}$"
+    solution: "$\\dfrac{T_B}{T_A} = 4^{3/2} = (\\sqrt{4})^3 = 2^3 = 8$ เท่า (B ยังมีอัตราเร็วเหลือครึ่งหนึ่งของ A และต้องเดินทางรอบที่ยาวเป็น 4 เท่า $4 \\div \\tfrac12 = 8$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p010
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวศุกร์โคจรรอบดวงอาทิตย์หนึ่งรอบใช้เวลา $0.615$ ปี ใช้กฎข้อที่สามของเคปเลอร์หาระยะเฉลี่ยจากดาวศุกร์ถึงดวงอาทิตย์ในหน่วยดาราศาสตร์ (AU) (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.72, tolerance: 0.01, unit: AU }
+    misconceptions:
+      - { match: 0.38, feedback: "ยกกำลังสองคาบแล้วหยุด ต้องถอดรากที่สามด้วย $r = T^{2/3}$" }
+      - { match: 0.48, feedback: "ใช้ $r = T^{3/2}$ ซึ่งกลับด้าน เมื่อรู้คาบแล้วหารัศมี $r^3 = T^2$ จึงได้ $r = T^{2/3}$" }
+    hints:
+      - "ใช้หน่วยปีและ AU จะได้ $T^2 = r^3$"
+      - "$r = \\sqrt[3]{T^2}$"
+    solution: "$r^3 = T^2 = 0.615^2 = 0.378$ ได้ $r = \\sqrt[3]{0.378} \\approx 0.72\\ \\mathrm{AU}$ ตรงกับค่าที่วัดได้ของดาวศุกร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p011
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 3
+    type: mcq
+    multiple: true
+    stem: "ดาวเทียมสื่อสารที่ให้บริการโทรทัศน์ในไทยอยู่ในวงโคจรค้างฟ้า วงโคจรนี้ต้องมีลักษณะใดบ้าง (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "คาบประมาณ 24 ชั่วโมง", correct: true }
+      - { id: b, text: "อยู่ในระนาบเส้นศูนย์สูตร", correct: true }
+      - { id: c, text: "โคจรในทิศเดียวกับที่โลกหมุน", correct: true }
+      - { id: d, text: "อยู่เหนือประเทศไทยพอดี", feedback: "ไทยอยู่เหนือเส้นศูนย์สูตร ดาวเทียมค้างฟ้าต้องอยู่เหนือเส้นศูนย์สูตร จานในไทยจึงหันไปทางทิศใต้เล็กน้อย" }
+      - { id: e, text: "อัตราเร็วเป็นศูนย์ เพราะค้างอยู่กับที่", feedback: "ดาวเทียมเคลื่อนที่ราว 3 km/s แต่หมุนไปพร้อมกับโลก เมื่อมองจากพื้นจึงดูเหมือนอยู่นิ่ง ถ้าอัตราเร็วเป็นศูนย์ดาวเทียมจะตกลงมา" }
+    hints:
+      - "ดาวเทียมต้องหมุนตามโลกทันพอดี"
+      - "ถ้าระนาบวงโคจรเอียง ดาวเทียมจะส่ายขึ้นลงเหนือและใต้"
+    solution: "วงโคจรค้างฟ้าต้องมีคาบเท่ากับการหมุนของโลก อยู่ในระนาบเส้นศูนย์สูตร และโคจรทิศเดียวกับการหมุนของโลก ดาวเทียมจึงอยู่เหนือจุดเดิมบนเส้นศูนย์สูตร ไม่ได้อยู่นิ่งจริงและไม่ได้อยู่เหนือไทย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p012
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวเทียมโคจรเป็นวงกลมที่ความสูงเท่ากับรัศมีโลก ($h = R$) ถ้า $g$ ที่ผิวโลกเท่ากับ $9.8\\ \\mathrm{m/s^2}$ และ $R = 6.4 \\times 10^{6}\\ \\mathrm{m}$ อัตราเร็วของดาวเทียมเป็นกี่กิโลเมตรต่อวินาที"
+    answer: { value: 5.6, tolerance: 0.05, unit: km/s }
+    misconceptions:
+      - { match: 11.2, feedback: "ใช้ $v = \\sqrt{gr}$ กับ $g$ ที่ผิวโลก แต่ที่ระยะ $2R$ ค่า $g$ เหลือ $\\tfrac14$ ต้องใช้ $v = \\sqrt{gR^2/r}$" }
+      - { match: 7.92, feedback: "ใช้ $r = R$ ซึ่งเป็นอัตราเร็วของวงโคจรที่ผิวโลก ดาวเทียมนี้อยู่ที่ $r = 2R$" }
+    hints:
+      - "$GM = gR^2$ จึงได้ $v = \\sqrt{\\dfrac{gR^2}{r}}$"
+      - "$r = R + h = 2R$"
+    solution: "$v = \\sqrt{\\dfrac{gR^2}{2R}} = \\sqrt{\\dfrac{gR}{2}} = \\sqrt{\\dfrac{(9.8)(6.4 \\times 10^{6})}{2}} = 5.6 \\times 10^{3}\\ \\mathrm{m/s} = 5.6\\ \\mathrm{km/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p013
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 5
+    type: numeric
+    stem: "ดวงจันทร์โคจรรอบโลกที่รัศมีเฉลี่ย $3.84 \\times 10^{8}\\ \\mathrm{m}$ ด้วยคาบ $27.3$ วัน ใช้ข้อมูลนี้หามวลของโลก ตอบเป็นกี่เท่าของ $10^{24}\\ \\mathrm{kg}$ ($G = 6.67 \\times 10^{-11}\\ \\mathrm{N\\,m^2/kg^2}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 6.0, tolerance: 0.1 }
+    misconceptions:
+      - { match: 0.96, feedback: "ใช้ $2\\pi$ แทน $4\\pi^2$ เมื่อยกกำลังสองสูตรคาบ $2\\pi$ ต้องกลายเป็น $4\\pi^2$ จาก $T = 2\\pi\\sqrt{r^3/GM}$ ได้ $M = \\dfrac{4\\pi^2 r^3}{GT^2}$" }
+    hints:
+      - "จัดสูตรคาบให้ได้ $M = \\dfrac{4\\pi^2 r^3}{GT^2}$"
+      - "แปลงคาบเป็นวินาที $T = 27.3 \\times 86400\\ \\mathrm{s}$"
+    solution: "$T = 2.36 \\times 10^{6}\\ \\mathrm{s}$, $M = \\dfrac{4\\pi^2(3.84 \\times 10^{8})^3}{(6.67 \\times 10^{-11})(2.36 \\times 10^{6})^2} \\approx 6.0 \\times 10^{24}\\ \\mathrm{kg}$ วิธีนี้ใช้ \"ชั่ง\" มวลของดาวเคราะห์ทุกดวงที่มีดวงจันทร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p014
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 4
+    type: numeric
+    stem: "สถานีอวกาศโคจรที่รัศมี $6.8 \\times 10^{6}\\ \\mathrm{m}$ ถ้า $g$ ที่ผิวโลก (รัศมี $6.4 \\times 10^{6}\\ \\mathrm{m}$) เท่ากับ $9.8\\ \\mathrm{m/s^2}$ ความเร่งสู่ศูนย์กลางของสถานีอวกาศเป็นเท่าใด (ตอบในหน่วย $\\mathrm{m/s^2}$ ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.68, tolerance: 0.05, unit: m/s² }
+    misconceptions:
+      - { match: 0, feedback: "นักบินรู้สึกไร้น้ำหนัก แต่สถานีมีความเร่งสู่ศูนย์กลางเท่ากับ $g$ ที่ความสูงนั้น ถ้าความเร่งเป็นศูนย์สถานีจะเคลื่อนที่เป็นเส้นตรง" }
+      - { match: 9.22, feedback: "ลดค่า $g$ ตามอัตราส่วนระยะครั้งเดียว ต้องใช้กำลังสองของอัตราส่วน" }
+    hints:
+      - "ความเร่งสู่ศูนย์กลางของดาวเทียมเท่ากับ $g$ ที่ระดับวงโคจร"
+      - "$g_r = g\\left(\\dfrac{R}{r}\\right)^2$"
+    solution: "$a_c = g\\left(\\dfrac{R}{r}\\right)^2 = 9.8\\left(\\dfrac{6.4}{6.8}\\right)^2 \\approx 8.68\\ \\mathrm{m/s^2}$ ราวร้อยละ 89 ของที่ผิวโลก ทั้งสถานีและนักบินตกด้วยความเร่งนี้พร้อมกัน จึงลอยตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p015
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 5
+    type: mcq
+    stem: "ศูนย์ควบคุมย้ายดาวเทียมจากวงโคจรวงกลมรัศมี $r$ ไปยังวงโคจรวงกลมใหม่รัศมี $2r$ เมื่ออยู่ในวงโคจรใหม่แล้ว ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "อัตราเร็วลดลงเหลือ $\\tfrac{1}{\\sqrt 2}$ เท่า และคาบยาวขึ้น $2\\sqrt 2$ เท่า", correct: true }
+      - { id: b, text: "อัตราเร็วเพิ่มขึ้น $\\sqrt 2$ เท่า เพราะวงโคจรใหญ่ขึ้นต้องเร็วขึ้นจึงครบรอบทัน", feedback: "จาก $v = \\sqrt{GM/r}$ เมื่อ $r$ เพิ่ม $v$ ลดลง ดาวเทียมในวงโคจรสูงจึงช้ากว่าและใช้เวลามากกว่า" }
+      - { id: c, text: "อัตราเร็วลดลงครึ่งหนึ่ง และคาบยาวขึ้น 4 เท่า", feedback: "$v \\propto r^{-1/2}$ ไม่ใช่ $r^{-1}$ และ $T \\propto r^{3/2}$ ไม่ใช่ $r^2$" }
+    hints:
+      - "$v = \\sqrt{GM/r}$ และ $T^2 \\propto r^3$"
+      - "แทน $r$ ด้วย $2r$ แล้วดูว่าแต่ละปริมาณเปลี่ยนกี่เท่า"
+    solution: "$\\dfrac{v_2}{v_1} = \\sqrt{\\dfrac{r}{2r}} = \\dfrac{1}{\\sqrt 2} \\approx 0.71$ และ $\\dfrac{T_2}{T_1} = 2^{3/2} = 2\\sqrt 2 \\approx 2.83$ (การย้ายวงโคจรต้องจุดจรวดเพิ่มความเร็วชั่วคราว แต่เมื่อขึ้นไปถึงวงโคจรสูงแล้ว อัตราเร็วจะน้อยกว่าเดิม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p016
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 2
+    type: text
+    stem: "จานรับสัญญาณดาวเทียมไทยคมบนหลังคาบ้านหันไปทางเดิมตลอดทั้งปี เพราะดาวเทียมอยู่ในวงโคจรที่เรียกว่าวงโคจร ... (เติมคำ)"
+    accepted: ["ค้างฟ้า", "วงโคจรค้างฟ้า", "geostationary", "geostationary orbit", "ค้างฟ้า (geostationary)"]
+    misconceptions:
+      - { match: "ต่ำ", feedback: "ดาวเทียมวงโคจรต่ำเคลื่อนผ่านท้องฟ้าเร็ว จานต้องหมุนตาม ไทยคมอยู่ในวงโคจรที่คาบเท่ากับการหมุนของโลก" }
+      - { match: "ขั้วโลก", feedback: "ดาวเทียมวงโคจรขั้วโลกผ่านเหนือแต่ละจุดเป็นช่วง ๆ ไม่ได้อยู่ที่เดิม" }
+    hints:
+      - "ดาวเทียมดูเหมือนค้างอยู่กับที่บนฟ้า"
+      - "ชื่อวงโคจรมีคำว่า \"ฟ้า\""
+    solution: "วงโคจรค้างฟ้า ดาวเทียมมีคาบเท่ากับการหมุนของโลกและโคจรในระนาบเส้นศูนย์สูตร จึงอยู่เหนือจุดเดิมเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.satellite-motion.p017
+    topics: [physics.dynamics.satellite-motion]
+    difficulty: 5
+    type: numeric
+    stem: "ดาวเทียมนำทาง GPS โคจรรอบโลกวันละ 2 รอบพอดี (คาบครึ่งหนึ่งของดาวเทียมค้างฟ้า) ถ้าดาวเทียมค้างฟ้ามีรัศมีวงโคจร $42{,}200\\ \\mathrm{km}$ ดาวเทียม GPS มีรัศมีวงโคจรกี่กิโลเมตร"
+    answer: { value: 26600, tolerance: 150, unit: km }
+    misconceptions:
+      - { match: 21100, feedback: "คาบครึ่งหนึ่งไม่ได้แปลว่ารัศมีครึ่งหนึ่ง เพราะ $T^2 \\propto r^3$" }
+      - { match: 29840, feedback: "ใช้ $r \\propto T^2$ ผิดทาง ($r \\propto \\sqrt{T}$) จากกฎของเคปเลอร์ได้ $r \\propto T^{2/3}$" }
+    hints:
+      - "เทียบกับดาวเทียมค้างฟ้าด้วยกฎของเคปเลอร์ $\\left(\\dfrac{r_2}{r_1}\\right)^3 = \\left(\\dfrac{T_2}{T_1}\\right)^2$"
+      - "$\\dfrac{r_2}{r_1} = \\left(\\dfrac12\\right)^{2/3}$"
+    solution: "$\\dfrac{r_2}{r_1} = \\left(\\tfrac12\\right)^{2/3} = 0.630$ ได้ $r_2 = 0.630 \\times 42{,}200 \\approx 26{,}600\\ \\mathrm{km}$ (สูงจากผิวโลกราว 20,000 km)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

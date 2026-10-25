@@ -1,0 +1,65 @@
+id: math.stats.sampling-surveys
+subject: math
+title: { th: การสุ่มตัวอย่าง การสำรวจ และการอนุมานประชากร, en: Sampling, surveys and inference }
+summary: แยกสำมะโนกับการสุ่มตัวอย่าง เลือกวิธีสุ่มและระวังอคติ เห็นความแปรผันระหว่างตัวอย่าง อนุมานประชากรอย่างไม่เป็นทางการ และวิจารณ์รายงานสถิติในสื่อ
+difficulty: 4.5
+minutes: 40
+prerequisites: [math.stats.statistical-investigation, math.stats.dispersion]
+encompasses:
+  - { id: math.stats.statistical-investigation, weight: 0.4 }
+  - { id: math.stats.dispersion, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: sampling-methods.svg
+    alt: "สี่ภาพย่อย แต่ละภาพมีวงกลม 40 วงเรียง 4 แถว แถวละ 10 แทนประชากร วงที่ระบายสีส้มคือคนที่ถูกเลือก ภาพสุ่มอย่างง่าย จับฉลาก 8 คนกระจายไม่เป็นระเบียบ ภาพสุ่มแบบมีระบบ เลือกทุกคนที่ 5 เริ่มที่คนที่ 3 จึงได้สองคอลัมน์เว้นระยะเท่ากัน ภาพสุ่มแบบแบ่งชั้นภูมิ แต่ละแถวคือหนึ่งห้องและสุ่มห้องละ 2 คน ภาพสุ่มแบบกลุ่ม มีกรอบเส้นประรอบสองคอลัมน์ที่ถูกสุ่ม และเลือกทุกคนในคอลัมน์นั้น"
+    caption: "วิธีสุ่มต่างกันให้กลุ่มตัวอย่างหน้าตาต่างกัน"
+  - { type: check, problem: math.stats.sampling-surveys.p003, prompt: "ดูว่าแต่ละวิธีเลือกคนอย่างไร" }
+  - type: worked-example
+    title: สุ่มแบบแบ่งชั้นภูมิตามสัดส่วน
+    problem: "โรงเรียนมีนักเรียน ม.4 240 คน ม.5 200 คน ม.6 160 คน ต้องการตัวอย่าง 45 คน แบ่งชั้นภูมิตามสัดส่วน ควรสุ่มจากแต่ละชั้นกี่คน"
+    steps:
+      - text: "นักเรียนทั้งหมด $240 + 200 + 160 = 600$ คน"
+      - text: "สัดส่วนการสุ่ม $\\tfrac{45}{600} = \\tfrac{3}{40}$ ของแต่ละชั้น"
+        why: "ทุกชั้นต้องถูกสุ่มในสัดส่วนเดียวกัน ตัวอย่างจึงมีโครงสร้างเหมือนประชากร"
+      - text: "ม.4: $240 \\times \\tfrac{3}{40} = 18$ คน, ม.5: $200 \\times \\tfrac{3}{40} = 15$ คน, ม.6: $160 \\times \\tfrac{3}{40} = 12$ คน"
+      - text: "ตรวจ: $18 + 15 + 12 = 45$ ✓ แล้วสุ่มอย่างง่ายภายในแต่ละชั้น"
+    answer: "ม.4 18 คน ม.5 15 คน ม.6 12 คน"
+  - type: figure
+    src: sampling-variability.svg
+    alt: "แผนภาพจุดสองแผนภาพ ใช้สเกล 0.0 ถึง 0.9 เดียวกัน มีเส้นประสีแดงที่ 0.4 คือสัดส่วนจริงของประชากร แผนภาพบนเป็นสัดส่วนจากตัวอย่างสุ่มขนาด 10 คน 40 ชุด จุดกระจายตั้งแต่ 0.1 ถึง 0.8 กองสูงสุดที่ 0.3 แผนภาพล่างเป็นตัวอย่างขนาด 50 คน 40 ชุด จุดกระจุกอยู่ระหว่าง 0.28 ถึง 0.56 ใกล้ 0.4"
+    caption: "จำลองด้วยคอมพิวเตอร์ ตัวอย่างใหญ่ขึ้น ค่าประมาณแปรผันน้อยลง"
+  - { type: check, problem: math.stats.sampling-surveys.p008, prompt: "ดูความกว้างของแผนภาพจุดทั้งสอง" }
+  - type: worked-example
+    title: จับ ทำเครื่องหมาย และจับซ้ำ
+    problem: "จับนกในป่าชุมชนได้ 40 ตัว ใส่ห่วงที่ขาแล้วปล่อย หนึ่งสัปดาห์ต่อมาจับได้ 35 ตัว มีห่วง 7 ตัว ประมาณจำนวนนกทั้งหมดในป่า"
+    steps:
+      - text: "ให้นกทั้งหมด $N$ ตัว สัดส่วนนกที่มีห่วงในป่าคือ $\\tfrac{40}{N}$"
+      - text: "สัดส่วนในการจับครั้งที่สองคือ $\\tfrac{7}{35}$ ควรใกล้เคียงกัน: $\\tfrac{40}{N} \\approx \\tfrac{7}{35}$"
+        why: "ถ้านกที่มีห่วงกระจายปะปนทั่วป่า การจับครั้งที่สองเป็นเหมือนตัวอย่างสุ่ม"
+      - text: "$N \\approx \\tfrac{40 \\times 35}{7} = 200$ ตัว"
+      - text: "เป็นค่าประมาณ ถ้าจับซ้ำอีกครั้งอาจได้ค่าต่างไปบ้าง"
+    answer: "ประมาณ 200 ตัว"
+glossary:
+  - { term: ประชากร, definition: "หน่วยทั้งหมดที่ต้องการศึกษา" }
+  - { term: กลุ่มตัวอย่าง, definition: "ส่วนหนึ่งของประชากรที่เลือกมาศึกษาจริง" }
+  - { term: สำมะโน, definition: "การเก็บข้อมูลจากทุกหน่วยของประชากร" }
+  - { term: ค่าพารามิเตอร์, definition: "ค่าที่บรรยายประชากร เช่น สัดส่วนจริง มักไม่รู้" }
+  - { term: ค่าสถิติ, definition: "ค่าที่คำนวณจากกลุ่มตัวอย่าง ใช้ประมาณค่าพารามิเตอร์" }
+  - { term: อคติ, definition: "ความคลาดเคลื่อนที่ดึงผลไปทางเดียวเสมอ เช่น จากการเลือกตัวอย่างหรือคำถามชี้นำ" }
+  - { term: การสุ่มแบบแบ่งชั้นภูมิ, definition: "แบ่งประชากรเป็นกลุ่มย่อย แล้วสุ่มจากทุกกลุ่มตามสัดส่วน" }
+flashcards:
+  - { front: "ตัวอย่างใหญ่ขึ้นแก้อคติได้หรือไม่", back: "ไม่ได้ ช่วยแค่ลดความแปรผัน ต้องแก้ที่วิธีเลือก" }
+  - { front: "ค่าประมาณจากตัวอย่างสุ่มขนาด n คลาดจากค่าจริงราวเท่าไร (คร่าว ๆ)", back: "ราว 1/√n เช่น n = 400 คลาดราว 5%" }
+  - { front: "จับซ้ำ: ทำเครื่องหมาย M ตัว จับใหม่ n ตัว มีเครื่องหมาย m ตัว", back: "ประชากร ≈ M × n ÷ m" }
+  - { front: "อะไรทำให้การทดลองบอกสาเหตุได้", back: "การสุ่มแบ่งกลุ่ม ทำให้กลุ่มคล้ายกันยกเว้นสิ่งที่ทดลอง" }
+references:
+  - { title: "การชักตัวอย่าง", url: "https://th.wikipedia.org/wiki/การชักตัวอย่าง", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Sampling bias", url: "https://en.wikipedia.org/wiki/Sampling_bias", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Mark and recapture", url: "https://en.wikipedia.org/wiki/Mark_and_recapture", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "1.2 Data, Sampling, and Variation in Data and Sampling (Statistics, OpenStax)", url: "https://openstax.org/books/statistics/pages/1-2-data-sampling-and-variation-in-data-and-sampling", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
