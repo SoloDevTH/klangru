@@ -1,0 +1,68 @@
+id: math.number.direct-inverse-proportion
+subject: math
+title: { th: การแปรผันตรงและการแปรผกผัน, en: Direct and inverse proportion }
+summary: แยกการแปรผันตรงกับการแปรผกผันจากตาราง กราฟ และสถานการณ์ หาค่าคงตัวของการแปรผัน สร้างสมการ ใช้การแปรผันกับกำลังสอง หน่วยผสม และมาตราส่วน
+difficulty: 4.5
+minutes: 40
+prerequisites: [math.number.ratio-percent, math.functions.linear-graphs]
+encompasses:
+  - { id: math.number.ratio-percent, weight: 0.4 }
+  - { id: math.functions.linear-graphs, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: direct-inverse.svg
+    alt: "กราฟสองภาพ ซ้ายคือการแปรผันตรง y = 3x เป็นเส้นตรงผ่านจุดกำเนิด มีจุด (1, 3), (2, 6), (4, 12) ขวาคือการแปรผกผัน y = 12 หาร x เป็นเส้นโค้งลดลง ผ่านจุด (1, 12), (2, 6), (3, 4), (4, 3), (6, 2), (12, 1)"
+    caption: "แปรผันตรง: อัตราส่วน y/x คงที่ กราฟเป็นเส้นตรงผ่านจุดกำเนิด แปรผกผัน: ผลคูณ xy คงที่ กราฟเป็นเส้นโค้ง"
+  - { type: check, problem: math.number.direct-inverse-proportion.p004, prompt: "หาอัตราส่วนและผลคูณของแต่ละตาราง" }
+  - type: worked-example
+    title: สร้างสมการการแปรผันจากข้อมูล
+    problem: "เวลา $t$ (นาที) ที่ใช้เติมน้ำเต็มถังแปรผกผันกับอัตราการไหล $r$ (ลิตรต่อนาที) ถ้าไหล 12 ลิตรต่อนาทีใช้ 25 นาที ถ้าไหล 20 ลิตรต่อนาทีจะใช้กี่นาที"
+    steps:
+      - text: "แปรผกผัน: $t = \\dfrac{k}{r}$"
+        why: "น้ำไหลเร็วขึ้น เวลาต้องสั้นลง และ $r \\times t$ คือปริมาตรถังซึ่งคงที่"
+      - text: "แทนข้อมูล: $25 = \\dfrac{k}{12}$ ได้ $k = 300$ (ถังจุ 300 ลิตร)"
+      - text: "สมการคือ $t = \\dfrac{300}{r}$"
+      - text: "เมื่อ $r = 20$: $t = \\dfrac{300}{20} = 15$ นาที"
+    answer: "15 นาที"
+  - { type: check, problem: math.number.direct-inverse-proportion.p006, prompt: "คนน้อยลง วันมากขึ้นหรือน้อยลง" }
+  - type: worked-example
+    title: การแปรผันกับกำลังสอง
+    problem: "ร้านพิซซ่าตั้งราคาพิซซ่าถาดกลมให้แปรผันตรงกับพื้นที่ ถาดเส้นผ่านศูนย์กลาง 20 cm ราคา 160 บาท ถาด 30 cm ควรราคาเท่าใด"
+    steps:
+      - text: "พื้นที่วงกลมแปรผันตรงกับกำลังสองของเส้นผ่านศูนย์กลาง ราคาจึงเป็น $P = kd^2$"
+      - text: "เส้นผ่านศูนย์กลางเพิ่มเป็น $\\tfrac{30}{20} = 1.5$ เท่า"
+      - text: "ราคาเพิ่มเป็น $1.5^2 = 2.25$ เท่า"
+        why: "ทั้งความกว้างและความยาวเพิ่ม 1.5 เท่า พื้นที่จึงเพิ่ม $1.5 \\times 1.5$ เท่า"
+      - text: "ราคา $= 160 \\times 2.25 = 360$ บาท"
+    answer: "360 บาท (ไม่ใช่ 240 บาท ซึ่งได้จากการคิดแบบแปรผันตรงกับเส้นผ่านศูนย์กลาง)"
+  - type: interactive
+    title: เปรียบเทียบ y = kx กับ y = k/x
+    caption: "เลื่อนค่า k แล้วสังเกตว่ากราฟแปรผันตรงผ่านจุดกำเนิดเสมอ ส่วนกราฟแปรผกผันไม่แตะแกนเลย"
+    widget:
+      kind: function-plot
+      functions: ["k x", "\\frac{k}{x}"]
+      sliders:
+        - { name: k, min: 0.5, max: 6, step: 0.5, value: 2, label: ค่าคงตัว k }
+      x: [-6, 6]
+      y: [-6, 6]
+glossary:
+  - { term: การแปรผันตรง, definition: "ความสัมพันธ์ y = kx อัตราส่วน y/x คงที่ กราฟเป็นเส้นตรงผ่านจุดกำเนิด" }
+  - { term: การแปรผกผัน, definition: "ความสัมพันธ์ y = k/x ผลคูณ xy คงที่ ตัวหนึ่งเพิ่มอีกตัวลดด้วยอัตราส่วนเดียวกัน" }
+  - { term: ค่าคงตัวของการแปรผัน, definition: "ค่า k ในสมการการแปรผัน มักมีหน่วยผสม เช่น บาทต่อกิโลกรัม" }
+  - { term: หน่วยผสม, definition: "หน่วยที่ประกอบจากหน่วยสองหน่วยขึ้นไป เช่น km/h, g/cm³, บาท/kWh" }
+  - { term: มาตราส่วน, definition: "อัตราส่วนของระยะบนแผนที่หรือแบบต่อระยะจริง เช่น 1 : 50,000" }
+flashcards:
+  - { front: "$y \\propto x$ เขียนเป็นสมการ", back: "$y = kx$ และ $\\tfrac{y}{x} = k$" }
+  - { front: "$y \\propto \\tfrac1x$ เขียนเป็นสมการ", back: "$y = \\tfrac{k}{x}$ และ $xy = k$" }
+  - { front: "$y \\propto x^2$ เมื่อ $x$ เป็น 3 เท่า", back: "$y$ เป็น 9 เท่า" }
+  - { front: "km/h เป็น m/s", back: "หารด้วย 3.6" }
+references:
+  - { title: "Proportionality (mathematics)", url: "https://en.wikipedia.org/wiki/Proportionality_(mathematics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "อัตราส่วน", url: "https://th.wikipedia.org/wiki/อัตราส่วน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Inverse-square law", url: "https://en.wikipedia.org/wiki/Inverse-square_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

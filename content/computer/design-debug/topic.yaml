@@ -1,0 +1,88 @@
+id: computer.programming.design-debug
+subject: computer
+title: { th: ออกแบบ ทดสอบ และแก้ข้อผิดพลาดของโปรแกรม, en: "Designing, testing and debugging programs" }
+summary: ออกแบบและเขียนโปรแกรมของตัวเองด้วยตัวแปรที่ตั้งชื่อชัด เงื่อนไขแบบรวม วงวนซ้อน และเหตุการณ์ เลือกกรณีทดสอบค่าปกติ ค่าขอบ ค่าผิดรูป ไล่บั๊กอย่างเป็นระบบ และเขียนคอมเมนต์
+difficulty: 3.5
+minutes: 40
+prerequisites: [computer.programming.basics, computer.programming.block-programming, computer.algorithms.logical-reasoning]
+encompasses:
+  - { id: computer.programming.basics, weight: 0.4 }
+  - { id: computer.programming.block-programming, weight: 0.3 }
+  - { id: computer.algorithms.logical-reasoning, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: vending-blocks.svg
+    alt: "โปรแกรมบล็อก บล็อกเหตุการณ์ เมื่อกดปุ่มซื้อ ต่อด้วยบล็อก ถ้า เงิน มากกว่าหรือเท่ากับ ราคา และ น้ำในตู้ มากกว่า 0 แล้ว ข้างในมี ปล่อยน้ำ 1 ขวด เปลี่ยน เงิน ทีละ 0 ลบ ราคา และ เปลี่ยน น้ำในตู้ ทีละ ลบ 1 ส่วน ไม่เช่นนั้น มีบล็อก พูด เงินไม่พอหรือน้ำหมด"
+    caption: "เหตุการณ์ เงื่อนไขแบบรวม และตัวแปรในโปรแกรมตู้กดน้ำ"
+  - type: figure
+    src: test-points.svg
+    alt: "เส้นจำนวนยอดซื้อ 0 ถึง 700 บาท แบ่งเป็นสามช่วง 0 ถึงน้อยกว่า 100 ไม่ลด 100 ถึงน้อยกว่า 500 ลด 5 เปอร์เซ็นต์ 500 ขึ้นไป ลด 10 เปอร์เซ็นต์ จุดสีเขียวคือค่าปกติ 20, 200 และ 650 จุดสีส้มคือค่าขอบ 99, 100, 499 และ 500 คือทดสอบทั้งสองข้างของทุกรอยต่อ ด้านบนเขียนว่า ค่าผิดรูปที่ต้องแจ้งเตือนและไม่คิดส่วนลด คือ ลบ 20 ตัวอักษร abc และช่องว่าง"
+    caption: "เลือกกรณีทดสอบให้ครบค่าปกติ ค่าขอบ และค่าผิดรูป"
+  - type: worked-example
+    title: ใช้ตารางทดสอบหาบั๊กที่ค่าขอบ
+    problem: |
+      ร้านสหกรณ์ให้ส่วนลด 5% เมื่อซื้อ 100 บาทขึ้นไป และ 10% เมื่อซื้อ 500 บาทขึ้นไป นักเรียนเขียนฟังก์ชันนี้ ให้ทดสอบและแก้
+
+      ```python
+      def discount(total):
+          if total > 500:
+              return total * 0.10
+          elif total >= 100:
+              return total * 0.05
+          else:
+              return 0
+      ```
+    steps:
+      - text: "เลือกกรณีทดสอบ: ค่าปกติ 50, 300, 650 และค่าขอบ 99, 100, 499, 500"
+        why: "รอยต่อมี 2 จุด คือ 100 และ 500 ต้องลองค่าบนรอยต่อและค่าที่อยู่ติดกัน"
+      - text: "ผลที่คาด: 50 → 0, 300 → 15, 650 → 65, 99 → 0, 100 → 5, 499 → 24.95, 500 → 50"
+      - text: "รันจริง: ทุกค่าตรง ยกเว้น 500 ได้ 25 (คิด 5%) แทนที่จะได้ 50"
+      - text: "จำกัดวง: ค่า 500 ไม่ผ่านเงื่อนไข total > 500 จึงตกไปทาง elif บั๊กอยู่ที่บรรทัด if แรก"
+        why: "กติกาบอกว่า 500 บาทขึ้นไป ซึ่งรวม 500 ด้วย ต้องใช้ >= ไม่ใช่ >"
+      - text: "แก้เป็น if total >= 500 แล้วรันกรณีทดสอบทั้ง 7 ค่าซ้ำ ผ่านทั้งหมด"
+    answer: "บั๊กคือใช้ > แทน >= ที่รอยต่อ 500 บาท พบได้เพราะทดสอบค่าขอบ ค่าปกติอย่างเดียวจะไม่เจอ"
+  - { type: check, problem: computer.programming.design-debug.p008, prompt: "เลือกชุดค่าทดสอบด้วยหลักเดียวกัน" }
+  - type: worked-example
+    title: ดีบักตารางสูตรคูณที่ขาดหนึ่งแม่
+    problem: |
+      โปรแกรมนี้ควรพิมพ์สูตรคูณแม่ 1 ถึงแม่ 12 แม่ละ 12 บรรทัด แต่เมื่อรันกลับไม่มีแม่ 12 ให้หาและแก้บั๊ก
+
+      ```python
+      for i in range(1, 12):
+          for j in range(1, 13):
+              print(i, "x", j, "=", i * j)
+      ```
+    steps:
+      - text: "ทำให้เกิดซ้ำ: รันแล้วนับบรรทัด ได้ 132 บรรทัด แต่ควรได้ 12 × 12 = 144 บรรทัด ขาดไป 12 บรรทัด คือหนึ่งแม่พอดี"
+        why: "การนับผลลัพธ์บอกได้ว่าวงวนใดทำรอบไม่ครบ ขาด 12 บรรทัดตรงกับรอบของวงนอกหนึ่งรอบ"
+      - text: "จำกัดวง: บรรทัดสุดท้ายที่พิมพ์คือ 11 x 12 = 132 แสดงว่าวงในครบ 12 รอบ แต่วงนอกหยุดที่ i = 11"
+      - text: "หาสาเหตุ: range(1, 12) ให้ค่า 1 ถึง 11 เพราะไม่รวมตัวสุดท้าย"
+      - text: "แก้ทีละอย่าง: เปลี่ยนเป็น range(1, 13) รันใหม่ได้ 144 บรรทัด บรรทัดสุดท้ายคือ 12 x 12 = 144"
+      - text: "เขียนคอมเมนต์กันพลาด: # range ไม่รวมตัวสุดท้าย จึงใช้ 13 เพื่อให้ได้ถึงแม่ 12"
+    answer: "บั๊กอยู่ที่วงนอก range(1, 12) ต้องแก้เป็น range(1, 13)"
+  - { type: check, problem: computer.programming.design-debug.p007, prompt: "ไล่วงวนซ้อนด้วยตัวเอง" }
+glossary:
+  - { term: กรณีทดสอบ (test case), definition: "ชุดข้อมูลเข้าพร้อมผลที่คาด ใช้ตรวจว่าโปรแกรมทำงานถูกต้อง" }
+  - { term: ค่าขอบ (boundary value), definition: "ค่าที่อยู่บนรอยต่อของเงื่อนไขพอดีและค่าที่ติดกันสองข้าง เช่น 99 100 สำหรับเงื่อนไข 100 ขึ้นไป" }
+  - { term: ค่าผิดรูป (invalid input), definition: "ข้อมูลเข้าที่ไม่ควรเกิด เช่น ตัวเลขติดลบ ตัวอักษร ช่องว่าง โปรแกรมต้องรับมือได้" }
+  - { term: เงื่อนไขแบบรวม (compound condition), definition: "เงื่อนไขหลายข้อที่เชื่อมด้วย and, or หรือ not" }
+  - { term: วงวนซ้อน (nested loop), definition: "วงวนที่อยู่ข้างในวงวนอีกชั้น วงในทำครบทุกรอบก่อนวงนอกขยับหนึ่งรอบ" }
+  - { term: เหตุการณ์ (event), definition: "สิ่งที่เกิดขึ้นแล้วทำให้ส่วนหนึ่งของโปรแกรมเริ่มทำงาน เช่น กดปุ่ม แตะจอ ชนวัตถุ" }
+  - { term: คอมเมนต์ (comment), definition: "ข้อความในโค้ดที่โปรแกรมไม่ทำ มีไว้อธิบายเหตุผลให้คนอ่าน ในภาษา Python ขึ้นต้นด้วย #" }
+flashcards:
+  - { front: "กรณีทดสอบสามแบบ", back: "ค่าปกติ ค่าขอบ (บนรอยต่อและติดกันสองข้าง) และค่าผิดรูป" }
+  - { front: "วงนอก 3 รอบ วงใน 4 รอบ คำสั่งในวงในทำกี่ครั้ง", back: "3 × 4 = 12 ครั้ง" }
+  - { front: "ขั้นตอนดีบักอย่างเป็นระบบ", back: "ทำให้เกิดซ้ำ → เทียบผลที่คาดกับผลจริง → จำกัดวง → แก้ทีละอย่าง → ทดสอบซ้ำทั้งหมด" }
+  - { front: "คอมเมนต์ที่ดีอธิบายอะไร", back: "เหตุผลหรือเจตนาของโค้ด ไม่ใช่แปลโค้ดซ้ำ" }
+  - { front: "เงินพอ และ น้ำยังไม่หมด ใช้ and หรือ or", back: "and เพราะต้องจริงทั้งสองข้อจึงปล่อยน้ำ" }
+references:
+  - { title: "Software testing", url: "https://en.wikipedia.org/wiki/Software_testing", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Boundary-value analysis", url: "https://en.wikipedia.org/wiki/Boundary-value_analysis", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Debugging", url: "https://en.wikipedia.org/wiki/Debugging", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Comment (computer programming)", url: "https://en.wikipedia.org/wiki/Comment_(computer_programming)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

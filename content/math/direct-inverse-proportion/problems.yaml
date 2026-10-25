@@ -1,0 +1,291 @@
+problems:
+  - id: math.number.direct-inverse-proportion.p001
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 1
+    type: mcq
+    stem: "สถานการณ์ใดเป็นการแปรผันตรง"
+    choices:
+      - { id: a, text: "จำนวนไข่ไก่ที่ซื้อกับราคาที่จ่าย เมื่อไข่ราคาฟองละ 5 บาท", correct: true }
+      - { id: b, text: "จำนวนคนงานกับจำนวนวันที่ใช้สร้างบ้านหลังหนึ่ง", feedback: "คนงานมากขึ้น วันลดลง จึงเป็นการแปรผกผัน" }
+      - { id: c, text: "ระยะทางกับค่าแท็กซี่ที่มีค่าเริ่มต้น 35 บาท", feedback: "มีค่าเริ่มต้น ไปสองเท่าไม่ได้จ่ายสองเท่า กราฟไม่ผ่านจุดกำเนิด จึงไม่ใช่การแปรผันตรง" }
+      - { id: d, text: "อายุกับส่วนสูงของเด็ก", feedback: "อายุเป็นสองเท่า ส่วนสูงไม่ได้เป็นสองเท่า อัตราส่วนไม่คงที่" }
+    hints:
+      - "แปรผันตรง: ตัวหนึ่งเป็นสองเท่า อีกตัวก็เป็นสองเท่า"
+      - "ตรวจว่าอัตราส่วนคงที่ และเมื่อตัวหนึ่งเป็น 0 อีกตัวก็เป็น 0"
+    solution: "ราคา $= 5 \\times$ จำนวนไข่ อัตราส่วนคงที่ 5 บาท/ฟอง และซื้อ 0 ฟองจ่าย 0 บาท จึงแปรผันตรง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p002
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 2
+    type: numeric
+    stem: "$y$ แปรผันตรงกับ $x$ และ $y = 12$ เมื่อ $x = 4$ จงหา $y$ เมื่อ $x = 10$"
+    answer: { value: 30 }
+    hints:
+      - "เขียน $y = kx$ แล้วแทน $12 = k \\times 4$"
+      - "ได้ $k$ แล้วแทน $x = 10$"
+    misconceptions:
+      - { match: 18, feedback: "บวกเพิ่ม 6 ตาม $x$ ที่เพิ่ม 6 การแปรผันใช้การคูณ: $x$ เป็น 2.5 เท่า $y$ ก็เป็น 2.5 เท่า" }
+      - { match: 4.8, feedback: "ใช้การแปรผกผัน แต่ข้อนี้แปรผันตรง $x$ มากขึ้น $y$ ต้องมากขึ้น" }
+    solution: "$k = \\tfrac{12}{4} = 3$ จึงได้ $y = 3x$ เมื่อ $x = 10$ ได้ $y = 30$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p003
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 2
+    type: numeric
+    stem: "$y$ แปรผกผันกับ $x$ และ $y = 6$ เมื่อ $x = 4$ จงหา $y$ เมื่อ $x = 8$"
+    answer: { value: 3 }
+    hints:
+      - "แปรผกผัน: $xy = k$ คงที่"
+      - "$k = 4 \\times 6$ แล้วหาร $k$ ด้วย 8"
+    misconceptions:
+      - { match: 12, feedback: "ใช้การแปรผันตรง แต่ข้อนี้แปรผกผัน $x$ เป็นสองเท่า $y$ ต้องเหลือครึ่งหนึ่ง" }
+      - { match: 2, feedback: "ลบ 4 ตาม $x$ ที่เพิ่ม 4 การแปรผกผันใช้การหาร ไม่ใช่การลบ" }
+    solution: "$k = xy = 4 \\times 6 = 24$ จึงได้ $y = \\tfrac{24}{x}$ เมื่อ $x = 8$ ได้ $y = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p004
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ตารางกับชนิดของความสัมพันธ์"
+    pairs:
+      - { left: "$x$: 1, 2, 4 และ $y$: 5, 10, 20", right: "$y$ แปรผันตรงกับ $x$" }
+      - { left: "$x$: 1, 2, 4 และ $y$: 12, 6, 3", right: "$y$ แปรผกผันกับ $x$" }
+      - { left: "$x$: 1, 2, 3 และ $y$: 2, 8, 18", right: "$y$ แปรผันตรงกับ $x^2$" }
+      - { left: "$x$: 1, 2, 3 และ $y$: 3, 5, 7", right: "ไม่ใช่การแปรผัน (เส้นตรงที่ไม่ผ่านจุดกำเนิด)" }
+    hints:
+      - "หา $\\tfrac{y}{x}$, $xy$ และ $\\tfrac{y}{x^2}$ ของแต่ละตาราง ดูว่าค่าใดคงที่"
+      - "ถ้าไม่มีค่าใดคงที่ ก็ไม่ใช่การแปรผัน"
+    solution: "ตารางแรก $\\tfrac{y}{x} = 5$ ตารางที่สอง $xy = 12$ ตารางที่สาม $\\tfrac{y}{x^2} = 2$ ตารางสุดท้ายคือ $y = 2x + 1$ ไม่มีค่าใดคงที่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p005
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 2
+    type: numeric
+    stem: "ร้านข้าวเหนียวมะม่วงใช้กะทิ 300 มิลลิลิตรต่อข้าวเหนียวมะม่วง 4 ที่ ถ้าจะทำ 10 ที่ ต้องใช้กะทิกี่มิลลิลิตร (ตอบในหน่วย mL)"
+    answer: { value: 750, unit: mL }
+    hints:
+      - "จำนวนกะทิแปรผันตรงกับจำนวนที่"
+      - "หากะทิต่อ 1 ที่ก่อน แล้วคูณด้วย 10"
+    misconceptions:
+      - { match: 306, feedback: "บวก 6 ตามจำนวนที่ที่เพิ่ม ต้องคิดกะทิต่อที่แล้วคูณ" }
+      - { match: 120, feedback: "ใช้การแปรผกผัน ทำมากขึ้นต้องใช้กะทิมากขึ้น" }
+    solution: "กะทิต่อที่ $= 300 \\div 4 = 75$ mL ทำ 10 ที่ใช้ $75 \\times 10 = 750$ mL"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p006
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 3
+    type: numeric
+    stem: "ชาวบ้าน 5 คนช่วยกันซ่อมหลังคาศาลาวัดเสร็จใน 12 วัน ถ้ามีชาวบ้านมาช่วยเพียง 4 คน (ทุกคนทำงานเร็วเท่ากัน) จะใช้เวลากี่วัน (ตอบในหน่วยวัน)"
+    answer: { value: 15, unit: วัน }
+    hints:
+      - "คนน้อยลง วันต้องมากขึ้น จึงเป็นการแปรผกผัน"
+      - "งานทั้งหมด $= 5 \\times 12$ คน-วัน แล้วแบ่งให้ 4 คน"
+    misconceptions:
+      - { match: 9.6, feedback: "ใช้การแปรผันตรง แต่คนน้อยลงต้องใช้เวลานานขึ้น ไม่ใช่สั้นลง" }
+    solution: "งานทั้งหมด $= 5 \\times 12 = 60$ คน-วัน มี 4 คน ใช้ $60 \\div 4 = 15$ วัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p007
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 3
+    type: expression
+    stem: "$y$ แปรผันตรงกับ $x$ และ $y = 21$ เมื่อ $x = 3$ เขียนสมการของ $y$ ในรูปของ $x$"
+    prefix: "y ="
+    answer: { latex: "7x", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{63}{x}", feedback: "นั่นคือการแปรผกผัน ($xy = 63$) ข้อนี้แปรผันตรง $y = kx$" }
+      - { match: "\\frac{1}{7}x", feedback: "หาร $x$ ด้วย $y$ กลับด้าน $k = \\tfrac{y}{x} = \\tfrac{21}{3}$" }
+    hints:
+      - "แปรผันตรง: $y = kx$"
+      - "แทน $21 = k \\times 3$ หา $k$"
+    solution: "$k = \\tfrac{21}{3} = 7$ สมการคือ $y = 7x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p008
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 3
+    type: expression
+    stem: "$y$ แปรผกผันกับ $x$ และ $y = 5$ เมื่อ $x = 4$ เขียนสมการของ $y$ ในรูปของ $x$"
+    prefix: "y ="
+    answer: { latex: "\\frac{20}{x}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{5}{4}x", feedback: "นั่นคือการแปรผันตรง ข้อนี้แปรผกผัน $y = \\tfrac{k}{x}$" }
+      - { match: "\\frac{x}{20}", feedback: "กลับเศษกับส่วน แปรผกผันคือ $k$ หารด้วย $x$" }
+    hints:
+      - "แปรผกผัน: $y = \\tfrac{k}{x}$ หรือ $xy = k$"
+      - "$k = 4 \\times 5$"
+    solution: "$k = xy = 4 \\times 5 = 20$ สมการคือ $y = \\tfrac{20}{x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p009
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 3
+    type: numeric
+    stem: "กราฟแสดงจำนวนวันที่ใช้ทาสีรั้วโรงเรียนกับจำนวนคนงาน (ทุกคนทำงานเร็วเท่ากัน) ถ้ามีคนงาน 8 คนจะใช้กี่วัน (ตอบในหน่วยวัน)"
+    figure: { src: workers-days.svg, alt: "กราฟจุดจำนวนวันกับจำนวนคนงาน มีจุด (2, 12), (3, 8), (4, 6), (6, 4) และ (12, 2) เมื่อคนงานมากขึ้น จำนวนวันลดลง" }
+    answer: { value: 3, unit: วัน }
+    hints:
+      - "หาผลคูณของจำนวนคนงานกับจำนวนวันจากจุดในกราฟ"
+      - "ผลคูณคงที่ หารผลคูณด้วย 8"
+    misconceptions:
+      - { match: 24, feedback: "24 คือผลคูณคงที่ (งานทั้งหมดเป็นคน-วัน) ยังต้องหารด้วยจำนวนคนงาน 8 คน" }
+    solution: "ทุกจุดมีผลคูณ $2 \\times 12 = 3 \\times 8 = 4 \\times 6 = 24$ คน-วัน มีคนงาน 8 คน ใช้ $24 \\div 8 = 3$ วัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p010
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 3
+    type: numeric
+    stem: "รถไฟแล่นด้วยอัตราเร็ว 72 km/h อัตราเร็วนี้เท่ากับกี่เมตรต่อวินาที (ตอบในหน่วย m/s)"
+    answer: { value: 20, unit: m/s }
+    hints:
+      - "1 km = 1,000 m และ 1 ชั่วโมง = 3,600 วินาที"
+      - "$\\dfrac{72 \\times 1{,}000}{3{,}600}$"
+    misconceptions:
+      - { match: 259.2, feedback: "คูณด้วย 3.6 กลับทิศ เปลี่ยน km/h เป็น m/s ต้องหารด้วย 3.6" }
+      - { match: 1.2, feedback: "หารด้วย 60 เปลี่ยนชั่วโมงเป็นนาทีแต่ยังไม่ได้เปลี่ยนกิโลเมตรเป็นเมตรและนาทีเป็นวินาที" }
+    solution: "$72\\ \\mathrm{km/h} = \\dfrac{72{,}000\\ \\mathrm{m}}{3{,}600\\ \\mathrm{s}} = 20\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p011
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องปรับอากาศใช้กำลังไฟฟ้า 1.2 kW เปิดวันละ 8 ชั่วโมง เป็นเวลา 30 วัน ถ้าค่าไฟหน่วยละ 4.20 บาท (สมมติ คิดเฉพาะค่าพลังงาน) ต้องจ่ายค่าไฟสำหรับเครื่องนี้กี่บาท (1 หน่วย = 1 kWh ตอบในหน่วยบาท)"
+    answer: { value: 1209.6, tolerance: 0.5, unit: บาท }
+    hints:
+      - "จำนวนหน่วย = กำลังไฟฟ้า (kW) × เวลา (ชั่วโมง)"
+      - "ค่าไฟแปรผันตรงกับจำนวนหน่วย คูณด้วย 4.20 บาท/หน่วย"
+    misconceptions:
+      - { match: 40.32, feedback: "คิดแค่วันเดียว ($1.2 \\times 8 \\times 4.2$) ยังต้องคูณ 30 วัน" }
+      - { match: 288, feedback: "288 คือจำนวนหน่วย (kWh) ยังต้องคูณราคาต่อหน่วย" }
+    solution: "จำนวนหน่วย $= 1.2 \\times 8 \\times 30 = 288$ kWh ค่าไฟ $= 288 \\times 4.20 = 1{,}209.60$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p012
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 4
+    type: numeric
+    stem: "ระยะเบรกของรถคันหนึ่งแปรผันตรงกับกำลังสองของอัตราเร็ว ที่อัตราเร็ว 40 km/h ระยะเบรก 12 m (ข้อมูลสมมติ) ที่อัตราเร็ว 80 km/h ระยะเบรกเท่าใด (ตอบในหน่วย m)"
+    answer: { value: 48, unit: m }
+    hints:
+      - "$d = kv^2$ อัตราเร็วเป็นกี่เท่า"
+      - "อัตราเร็วเป็น 2 เท่า ระยะเบรกเป็น $2^2$ เท่า"
+    misconceptions:
+      - { match: 24, feedback: "ใช้การแปรผันตรงกับ $v$ แต่ระยะเบรกแปรผันกับ $v^2$ อัตราเร็ว 2 เท่าจึงได้ระยะ 4 เท่า" }
+    solution: "อัตราเร็วเพิ่มเป็น $\\tfrac{80}{40} = 2$ เท่า ระยะเบรกเพิ่มเป็น $2^2 = 4$ เท่า ได้ $12 \\times 4 = 48$ m"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p013
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 4
+    type: numeric
+    stem: "ความสว่างจากหลอดไฟแปรผกผันกับกำลังสองของระยะห่าง ที่ระยะ 2 m วัดความสว่างได้ 900 ลักซ์ ที่ระยะ 3 m จะวัดได้กี่ลักซ์ (ตอบในหน่วยลักซ์)"
+    answer: { value: 400, unit: ลักซ์ }
+    hints:
+      - "$I = \\dfrac{k}{d^2}$ หา $k = 900 \\times 2^2$"
+      - "แทน $d = 3$"
+    misconceptions:
+      - { match: 600, feedback: "ใช้การแปรผกผันกับ $d$ ต้องแปรผกผันกับ $d^2$" }
+      - { match: 2025, feedback: "ใช้การแปรผันตรงกับ $d^2$ ยิ่งห่างแสงต้องยิ่งน้อย" }
+    solution: "$k = 900 \\times 2^2 = 3{,}600$ ที่ระยะ 3 m ได้ $I = \\dfrac{3{,}600}{3^2} = 400$ ลักซ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p014
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 4
+    type: mcq
+    stem: "$y$ แปรผกผันกับ $x$ ถ้าเขียนกราฟของ $y$ กับ $\\dfrac{1}{x}$ (ให้ $\\tfrac1x$ อยู่บนแกนนอน) จะได้กราฟแบบใด"
+    choices:
+      - { id: a, text: "เส้นตรงผ่านจุดกำเนิด", correct: true }
+      - { id: b, text: "เส้นโค้งไฮเพอร์โบลา", feedback: "ไฮเพอร์โบลาคือกราฟของ $y$ กับ $x$ ถ้าใช้ $\\tfrac1x$ บนแกนนอน $y = k \\cdot \\tfrac1x$ เป็นการแปรผันตรง" }
+      - { id: c, text: "เส้นตรงที่ไม่ผ่านจุดกำเนิด", feedback: "$y = k \\cdot \\tfrac1x$ ไม่มีค่าคงที่บวกเพิ่ม เส้นจึงผ่านจุดกำเนิด" }
+      - { id: d, text: "เส้นแนวนอน", feedback: "$y$ เปลี่ยนตาม $\\tfrac1x$ จึงไม่คงที่" }
+    hints:
+      - "เขียน $y = \\dfrac{k}{x} = k \\times \\dfrac{1}{x}$"
+      - "ถ้าให้ $u = \\tfrac1x$ จะได้ $y = ku$ ซึ่งเป็นการแปรผันแบบใด"
+    solution: "$y = k \\cdot \\tfrac1x$ คือ $y$ แปรผันตรงกับ $\\tfrac1x$ กราฟของ $y$ กับ $\\tfrac1x$ จึงเป็นเส้นตรงผ่านจุดกำเนิดที่มีความชัน $k$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p015
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 5
+    type: numeric
+    stem: "$y$ แปรผกผันกับ $x$ ถ้า $x$ เพิ่มขึ้นร้อยละ 25 แล้ว $y$ จะลดลงร้อยละเท่าใด (ตอบเป็นร้อยละ)"
+    answer: { value: 20, unit: "%" }
+    hints:
+      - "$x$ ใหม่ $= 1.25x$ และ $xy$ คงที่"
+      - "$y$ ใหม่ $= \\dfrac{y}{1.25}$ เป็นกี่เท่าของ $y$ เดิม"
+    misconceptions:
+      - { match: 25, feedback: "คิดว่าลดเท่ากับที่เพิ่ม แต่ $y$ ใหม่ $= \\tfrac{y}{1.25} = 0.8y$ ลดลงร้อยละ 20" }
+    solution: "$y$ ใหม่ $= \\dfrac{k}{1.25x} = \\dfrac{1}{1.25} \\cdot y = 0.8y$ จึงลดลง $1 - 0.8 = 0.2$ คือร้อยละ 20"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p016
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 5
+    type: numeric
+    stem: "แผนที่อำเภอหนึ่งใช้มาตราส่วน $1 : 50{,}000$ ระยะบนแผนที่จากโรงเรียนถึงที่ว่าการอำเภอวัดได้ 7 cm ระยะจริงเป็นกี่กิโลเมตร (ตอบในหน่วย km)"
+    answer: { value: 3.5, tolerance: 0.01, unit: km }
+    hints:
+      - "ระยะจริงแปรผันตรงกับระยะบนแผนที่ 1 cm แทน 50,000 cm"
+      - "เปลี่ยนเซนติเมตรเป็นกิโลเมตร: 1 km = 100,000 cm"
+    misconceptions:
+      - { match: 350, feedback: "แปลงหน่วยไม่ครบ 350,000 cm เท่ากับ 3,500 m หรือ 3.5 km" }
+      - { match: 35, feedback: "หารด้วย 10,000 แทน 100,000 ลองนับศูนย์อีกครั้ง 1 km = 100,000 cm" }
+    solution: "ระยะจริง $= 7 \\times 50{,}000 = 350{,}000$ cm $= 3{,}500$ m $= 3.5$ km"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p017
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 5
+    type: numeric
+    stem: "รถทัวร์แล่นด้วยอัตราเร็ว 90 km/h ใช้เวลา 2 ชั่วโมง 40 นาทีจึงถึงปลายทาง ถ้าต้องการให้ถึงภายใน 2 ชั่วโมงบนเส้นทางเดิม ต้องแล่นด้วยอัตราเร็วเฉลี่ยกี่ km/h (ตอบในหน่วย km/h)"
+    answer: { value: 120, unit: km/h }
+    hints:
+      - "ระยะทางคงที่ เวลาจึงแปรผกผันกับอัตราเร็ว"
+      - "เปลี่ยน 2 ชั่วโมง 40 นาทีเป็น $2\\tfrac{2}{3}$ ชั่วโมง แล้วหาระยะทาง"
+    misconceptions:
+      - { match: 67.5, feedback: "ใช้การแปรผันตรง ต้องการเวลาสั้นลงต้องขับเร็วขึ้น" }
+      - { match: 108, feedback: "ใช้ 2.4 ชั่วโมงแทน 2 ชั่วโมง 40 นาที แต่ 40 นาทีคือ $\\tfrac{40}{60} \\approx 0.67$ ชั่วโมง ไม่ใช่ 0.4" }
+    solution: "ระยะทาง $= 90 \\times 2\\tfrac23 = 240$ km ต้องการเวลา 2 ชั่วโมง อัตราเร็ว $= 240 \\div 2 = 120$ km/h"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.direct-inverse-proportion.p018
+    topics: [math.number.direct-inverse-proportion]
+    difficulty: 5
+    type: mcq
+    stem: "$y$ แปรผกผันกับ $x$ และ $x$ แปรผันตรงกับ $z$ (ทุกค่าเป็นบวก) ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$y$ แปรผกผันกับ $z$", correct: true }
+      - { id: b, text: "$y$ แปรผันตรงกับ $z$", feedback: "$z$ เพิ่ม ทำให้ $x$ เพิ่ม แล้ว $y$ ลด $y$ จึงลดเมื่อ $z$ เพิ่ม" }
+      - { id: c, text: "$y$ แปรผกผันกับ $z^2$", feedback: "แทน $x = cz$ ใน $y = \\tfrac{k}{x}$ ได้ $y = \\tfrac{k}{cz}$ ไม่มีกำลังสอง" }
+      - { id: d, text: "$y$ กับ $z$ ไม่มีความสัมพันธ์แบบแปรผัน", feedback: "แทนสมการหนึ่งลงในอีกสมการได้ความสัมพันธ์ที่มีค่าคงตัวใหม่" }
+    hints:
+      - "เขียน $y = \\dfrac{k}{x}$ และ $x = cz$"
+      - "แทน $x$ ลงในสมการแรก"
+    solution: "$y = \\dfrac{k}{x} = \\dfrac{k}{cz} = \\dfrac{k/c}{z}$ มีค่าคงตัวใหม่ $\\tfrac{k}{c}$ จึงเป็น $y$ แปรผกผันกับ $z$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
