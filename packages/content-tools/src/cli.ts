@@ -128,6 +128,7 @@ if (command === "plan") {
   const bySubject = new Map<string, number>();
   for (const t of plan.topics) bySubject.set(t.id.split(".")[0], (bySubject.get(t.id.split(".")[0]) ?? 0) + 1);
   console.log(`\nหัวข้อที่เสนอ ${plan.topics.length} หัวข้อ: ${[...bySubject].map(([s, n]) => `${s} ${n}`).join(" · ")}`);
+  if (plan.done.length) console.log(`เขียนลงคลังแล้วแต่ยังมีแถวในแผน ${plan.done.length} หัวข้อ (ลบแถวออกได้): ${plan.done.join(", ")}`);
   for (const c of planCoverage(plan, curriculum.data)) {
     console.log(`  ${c.framework}: ตัวชี้วัด ${c.total} · หลังทำตามแผนยังไม่ครอบคลุม ${c.remaining.length}${c.remaining.length && c.remaining.length <= 12 ? ` (${c.remaining.join(", ")})` : ""}`);
   }

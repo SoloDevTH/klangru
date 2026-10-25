@@ -48,7 +48,18 @@ test("duplicates, unknown prerequisites, bad indicator codes and cycles are erro
     "proposals-b.yaml": `topics:\n  - { id: math.x.p, title: p2, difficulty: 2, scope: s }\nextend:\n  - { id: math.x.none, indicators: ["fw:a"] }\n`,
   });
   const messages = loadPlan(d, existing, curriculum).issues.map((i) => i.message);
-  for (const expected of [/มีอยู่ในคลังแล้ว/, /ซ้ำกับที่เสนอใน/, /ไม่มีตัวชี้วัด "zz"/, /ต้องเป็นรูป/, /"math.x.ghost" ไม่มีทั้งในคลังและในแผน/, /วนลูป/, /extend: ไม่มีหัวข้อ/]) {
+  for (const expected of [/ซ้ำกับที่เสนอใน/, /ไม่มีตัวชี้วัด "zz"/, /ต้องเป็นรูป/, /"math.x.ghost" ไม่มีทั้งในคลังและในแผน/, /วนลูป/, /extend: ไม่มีหัวข้อ/]) {
     assert.ok(messages.some((m) => expected.test(m)), `ไม่พบ ${expected}`);
   }
+});
+
+test("a planned topic that has been written is counted as done, with its extend rows", () => {
+  const d = dir({
+    "proposals-a.yaml": `topics:\n  - { id: math.x.old, title: เขียนแล้ว, difficulty: 2, scope: s }\n  - { id: math.x.new, title: ใหม่, difficulty: 2, prereq: [math.x.old], scope: s }\n`,
+    "proposals-b.yaml": `extend:\n  - { id: math.x.old, indicators: ["fw:a"] }\n`,
+  });
+  const { plan, issues } = loadPlan(d, existing, curriculum);
+  assert.deepEqual(issues, []);
+  assert.deepEqual(plan.done, ["math.x.old"]);
+  assert.deepEqual(plan.topics.map((t) => t.id), ["math.x.new"]);
 });

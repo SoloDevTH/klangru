@@ -32,11 +32,13 @@ export interface Plan {
   topics: ProposedTopic[];
   /** หัวข้อที่เสนอ → ตัวชี้วัดทั้งหมด (รวม extend) */
   indicators: Map<string, string[]>;
+  /** หัวข้อในแผนที่เขียนลงคลังแล้ว (ไม่นับในแผน ควรลบแถวออกและเพิ่มการจับคู่ใน curriculum/mappings) */
+  done: string[];
 }
 
 export function loadPlan(dir: string, existing: GraphNode[], curriculum: CurriculumData): { plan: Plan; issues: Issue[] } {
   const issues: Issue[] = [];
-  const plan: Plan = { topics: [], indicators: new Map() };
+  const plan: Plan = { topics: [], indicators: new Map(), done: [] };
   if (!existsSync(dir)) return { plan, issues };
   const extend: { file: string; id: string; indicators: string[] }[] = [];
 
@@ -58,10 +60,13 @@ export function loadPlan(dir: string, existing: GraphNode[], curriculum: Curricu
     extend.push(...parsed.data.extend.map((e) => ({ ...e, file })));
   }
 
+  // หัวข้อที่เขียนลงคลังแล้วถือว่าเสร็จ ตัดออกจากแผน (รวม extend ที่ผูกกับหัวข้อนั้น)
   const existingIds = new Set(existing.map((n) => n.id));
+  plan.done = [...new Set(plan.topics.filter((t) => existingIds.has(t.id)).map((t) => t.id))];
+  plan.topics = plan.topics.filter((t) => !existingIds.has(t.id));
+  const doneExtend = new Set(plan.done);
   const proposedIds = new Map<string, string>();
   for (const t of plan.topics) {
-    if (existingIds.has(t.id)) issues.push({ level: "error", file: t.file, message: `"${t.id}" มีอยู่ในคลังแล้ว` });
     const other = proposedIds.get(t.id);
     if (other) issues.push({ level: "error", file: t.file, message: `"${t.id}" ซ้ำกับที่เสนอใน ${other}` });
     if (other) continue;
@@ -69,6 +74,7 @@ export function loadPlan(dir: string, existing: GraphNode[], curriculum: Curricu
     plan.indicators.set(t.id, [...t.indicators]);
   }
   for (const e of extend) {
+    if (doneExtend.has(e.id) || existingIds.has(e.id)) continue;
     if (!plan.indicators.has(e.id)) issues.push({ level: "error", file: e.file, message: `extend: ไม่มีหัวข้อที่เสนอชื่อ "${e.id}"` });
     else plan.indicators.get(e.id)!.push(...e.indicators);
   }
