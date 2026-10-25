@@ -1,0 +1,75 @@
+id: math.measure.length
+subject: math
+title: { th: การวัดความยาว, en: Measuring length }
+summary: เปรียบเทียบความยาว วัดด้วยหน่วยที่ไม่ใช่มาตรฐานและเป็นมิลลิเมตร เซนติเมตร เมตร กิโลเมตร เลือกเครื่องวัด คาดคะเน เปลี่ยนหน่วย และแก้โจทย์ปัญหา
+difficulty: 1.5
+minutes: 35
+prerequisites: [math.number.whole-add-sub]
+encompasses:
+  - { id: math.number.whole-add-sub, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: clips-ribbon.svg
+    alt: "ริบบิ้นสีชมพูหนึ่งเส้น ใต้ริบบิ้นมีคลิปหนีบกระดาษขนาดเท่ากัน 6 อันวางต่อกันพอดีกับความยาวริบบิ้น ไม่เว้นช่องและไม่ซ้อน ด้านล่างมีดินสอสี 1 แท่ง เขียนว่าดินสอสี 1 แท่ง ยาวเท่าคลิป 2 อัน"
+    caption: "วัดด้วยหน่วยที่ไม่ใช่มาตรฐาน วางต่อกันพอดี ไม่เว้นช่อง ไม่ซ้อน"
+  - { type: check, problem: math.measure.length.p003, prompt: "หน่วยยาวขึ้น นับได้มากขึ้นหรือน้อยลง" }
+  - type: figure
+    src: ruler-not-zero.svg
+    alt: "ไม้บรรทัด 0 ถึง 11 เซนติเมตร มีขีดมิลลิเมตร วัตถุวางเริ่มที่ขีด 3 และสิ้นสุดที่ขีด 9 มีเส้นประชี้และเขียนว่าเริ่มที่ 3 และสิ้นสุดที่ 9 ด้านบนเขียนว่า ยาว 9 − 3 = 6 เซนติเมตร"
+    caption: "ของไม่ได้เริ่มที่ 0 ให้เอาเลขปลายลบเลขต้น"
+  - type: worked-example
+    title: อ่านไม้บรรทัดที่มีมิลลิเมตร
+    problem: "ยางลบวางบนไม้บรรทัด ปลายซ้ายตรงขีด 2 เซนติเมตร ปลายขวาตรงขีดมิลลิเมตรที่ 6 หลังเลข 5 ยางลบยาวกี่มิลลิเมตร"
+    steps:
+      - text: "ปลายขวาอยู่ที่ 5 เซนติเมตร 6 มิลลิเมตร $= 50 + 6 = 56$ มิลลิเมตร นับจากขีด 0"
+        why: "1 เซนติเมตรมี 10 มิลลิเมตร 5 เซนติเมตรจึงเป็น 50 มิลลิเมตร"
+      - text: "ปลายซ้ายอยู่ที่ 2 เซนติเมตร $= 20$ มิลลิเมตร"
+      - text: "ความยาว $= 56 - 20 = 36$ มิลลิเมตร"
+    answer: "36 มิลลิเมตร (3 เซนติเมตร 6 มิลลิเมตร)"
+  - { type: check, problem: math.measure.length.p006, prompt: "ดินสอเริ่มที่ขีดไหน" }
+  - type: worked-example
+    title: ลบความยาวที่มีสองหน่วย
+    problem: "ไม้ยาว 5 เมตร 20 เซนติเมตร เลื่อยออก 2 เมตร 65 เซนติเมตร เหลือไม้ยาวเท่าไร"
+    steps:
+      - text: "เซนติเมตร 20 น้อยกว่า 65 ลบไม่ได้ ให้กระจาย 1 เมตรเป็น 100 เซนติเมตร: 5 เมตร 20 เซนติเมตร = 4 เมตร 120 เซนติเมตร"
+        why: "1 เมตร = 100 เซนติเมตร"
+      - text: "ลบเซนติเมตร: $120 - 65 = 55$"
+      - text: "ลบเมตร: $4 - 2 = 2$"
+      - text: "ตรวจด้วยหน่วยเดียว: $520 - 265 = 255$ เซนติเมตร = 2 เมตร 55 เซนติเมตร ✓"
+    answer: "2 เมตร 55 เซนติเมตร"
+  - type: interactive
+    title: ต่อเชือกบนเส้นจำนวน
+    caption: "เชือก 45 เซนติเมตร ต่อเพิ่มอีก 27 เซนติเมตร ยาวรวม 72 เซนติเมตร"
+    widget:
+      kind: number-line
+      min: 0
+      max: 80
+      points:
+        - { value: 45, label: "45" }
+        - { value: 72, label: "72" }
+      jumps:
+        - { from: 0, to: 45, label: "45 ซม." }
+        - { from: 45, to: 72, label: "+27 ซม." }
+glossary:
+  - { term: หน่วยที่ไม่ใช่มาตรฐาน, definition: "สิ่งที่ใช้วัดแต่ขนาดไม่เท่ากันทุกที่ เช่น คืบ ศอก คลิปหนีบกระดาษ" }
+  - { term: หน่วยมาตรฐาน, definition: "หน่วยที่ตกลงใช้ให้เท่ากันทุกที่ เช่น มิลลิเมตร เซนติเมตร เมตร กิโลเมตร" }
+  - { term: เซนติเมตร, definition: "หน่วยความยาว 1 เซนติเมตร = 10 มิลลิเมตร และ 100 เซนติเมตร = 1 เมตร" }
+  - { term: กิโลเมตร, definition: "หน่วยความยาวสำหรับระยะทางไกล 1 กิโลเมตร = 1,000 เมตร" }
+  - { term: การคาดคะเน, definition: "การบอกความยาวโดยประมาณก่อนวัดจริง โดยเทียบกับสิ่งที่รู้ขนาดแล้ว" }
+flashcards:
+  - { front: "1 เมตร เท่ากับกี่เซนติเมตร", back: "100 เซนติเมตร" }
+  - { front: "1 กิโลเมตร เท่ากับกี่เมตร", back: "1,000 เมตร" }
+  - { front: "1 เซนติเมตร เท่ากับกี่มิลลิเมตร", back: "10 มิลลิเมตร" }
+  - { front: "ของเริ่มที่ขีด 3 สิ้นสุดที่ขีด 9 ยาวเท่าไร", back: "9 − 3 = 6 เซนติเมตร" }
+  - { front: "วัดด้วยหน่วยที่ยาวกว่า จำนวนที่นับได้เป็นอย่างไร", back: "น้อยลง" }
+references:
+  - { title: "ความยาว", url: "https://th.wikipedia.org/wiki/ความยาว", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "ไม้บรรทัด", url: "https://th.wikipedia.org/wiki/ไม้บรรทัด", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Thai units of measurement", url: "https://en.wikipedia.org/wiki/Thai_units_of_measurement", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "7.5 Systems of Measurement (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/7-5-systems-of-measurement", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
