@@ -1,0 +1,354 @@
+problems:
+  - id: math.number.whole-mul-div.p001
+    topics: [math.number.whole-mul-div]
+    difficulty: 1
+    type: mcq
+    stem: "ประโยคสัญลักษณ์ใดบอกจำนวนจุดทั้งหมดในภาพได้ถูกต้อง"
+    figure: { src: array-4x6.svg, alt: "จุดสีฟ้าเรียงเป็นแถวลำดับ 4 แถว แถวละ 6 จุด" }
+    choices:
+      - { id: a, text: "$4 \\times 6 = 24$", correct: true }
+      - { id: b, text: "$4 + 6 = 10$", feedback: "บวกจำนวนแถวกับจำนวนจุดในแถว แต่ต้องรวมจุดทุกแถว คือ 6 สี่ครั้ง" }
+      - { id: c, text: "$6 + 6 + 6 = 18$", feedback: "นับแค่ 3 แถว ในภาพมี 4 แถว" }
+    hints:
+      - "มีกี่แถว แถวละกี่จุด"
+      - "4 แถว แถวละ 6 คือ $6 + 6 + 6 + 6$"
+    solution: "4 แถว แถวละ 6 จุด $= 6 + 6 + 6 + 6 = 4 \\times 6 = 24$ จุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p002
+    topics: [math.number.whole-mul-div]
+    difficulty: 1
+    type: numeric
+    stem: "แบ่งส้ม 12 ผล ให้เด็ก 3 คนเท่า ๆ กัน ได้คนละกี่ผล (ตอบเป็นจำนวนผล)"
+    answer: { value: 4, unit: ผล }
+    hints:
+      - "แจกให้ทีละคน คนละผล วนไปจนหมด"
+      - "3 คูณอะไรได้ 12"
+    misconceptions:
+      - { match: 36, feedback: "คูณ 12 กับ 3 แต่การแบ่งให้หลายคนต้องหาร แต่ละคนได้น้อยกว่า 12" }
+      - { match: 9, feedback: "ลบ 3 ครั้งเดียว ต้องแบ่ง 12 ผลออกเป็น 3 ส่วนเท่ากัน" }
+    solution: "$12 \\div 3 = 4$ ผล เพราะ $3 \\times 4 = 12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p003
+    topics: [math.number.whole-mul-div]
+    difficulty: 1
+    type: numeric
+    stem: "มีถุงขนม 5 ถุง ถุงละ 2 ชิ้น มีขนมทั้งหมดกี่ชิ้น (ตอบเป็นจำนวนชิ้น)"
+    answer: { value: 10, unit: ชิ้น }
+    hints:
+      - "นับเพิ่มทีละ 2"
+      - "$2 + 2 + 2 + 2 + 2$"
+    misconceptions:
+      - { match: 7, feedback: "บวก 5 กับ 2 แต่มี 2 ชิ้นอยู่ 5 ถุง ต้องบวก 2 ห้าครั้ง" }
+    solution: "$5 \\times 2 = 2 + 2 + 2 + 2 + 2 = 10$ ชิ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p004
+    topics: [math.number.whole-mul-div]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "รู้ว่า $6 \\times 7 = 42$ ข้อใดเป็นจริงด้วย (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$7 \\times 6 = 42$", correct: true }
+      - { id: b, text: "$42 \\div 7 = 6$", correct: true }
+      - { id: c, text: "$42 \\div 6 = 7$", correct: true }
+      - { id: d, text: "$6 \\div 42 = 7$", feedback: "การหารสลับที่ไม่ได้ ตัวตั้งต้องเป็นผลคูณ 42" }
+      - { id: e, text: "$7 \\div 6 = 42$", feedback: "หาร 7 ด้วย 6 ได้ผลน้อยกว่า 7 ไม่ใช่ 42" }
+    hints:
+      - "การคูณสลับที่ได้"
+      - "ผลคูณหารด้วยตัวหนึ่ง ได้อีกตัวหนึ่ง"
+    solution: "ครอบครัวของ $6 \\times 7 = 42$ คือ $7 \\times 6 = 42$, $42 \\div 7 = 6$ และ $42 \\div 6 = 7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p005
+    topics: [math.number.whole-mul-div]
+    difficulty: 2
+    type: numeric
+    stem: "หาจำนวนที่แทน $\\square$ ใน $\\square \\times 8 = 48$"
+    answer: { value: 6 }
+    hints:
+      - "จำนวนใดคูณ 8 ได้ 48"
+      - "หาจาก $48 \\div 8$"
+    misconceptions:
+      - { match: 40, feedback: "ลบ 8 ออกจาก 48 แต่ประโยคนี้เป็นการคูณ ลองแทนค่ากลับ $40 \\times 8$ ไม่ได้ 48" }
+      - { match: 384, feedback: "คูณ 48 กับ 8 ต้องหาร" }
+    solution: "$\\square = 48 \\div 8 = 6$ ตรวจ: $6 \\times 8 = 48$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p006
+    topics: [math.number.whole-mul-div]
+    difficulty: 2
+    type: numeric
+    stem: "หาจำนวนที่แทน $\\square$ ใน $56 \\div \\square = 7$"
+    answer: { value: 8 }
+    hints:
+      - "56 แบ่งเป็นกี่ส่วน จึงได้ส่วนละ 7"
+      - "7 คูณอะไรได้ 56"
+    misconceptions:
+      - { match: 392, feedback: "คูณ 56 กับ 7 ลองแทนค่ากลับ $56 \\div 392$ ไม่ได้ 7" }
+      - { match: 49, feedback: "ลบ 7 ออกจาก 56 แต่ประโยคนี้เป็นการหาร" }
+    solution: "$7 \\times 8 = 56$ จึงได้ $\\square = 8$ ตรวจ: $56 \\div 8 = 7$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p007
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ประโยคกับสมบัติที่ใช้"
+    pairs:
+      - { left: "$4 \\times 9 = 9 \\times 4$", right: "การสลับที่" }
+      - { left: "$(3 \\times 5) \\times 2 = 3 \\times (5 \\times 2)$", right: "การจัดหมู่" }
+      - { left: "$8 \\times 7 = 8 \\times 5 + 8 \\times 2$", right: "การแจกแจง" }
+      - { left: "$125 \\times 0 = 0$", right: "คูณด้วยศูนย์ได้ศูนย์" }
+      - { left: "$125 \\times 1 = 125$", right: "คูณด้วยหนึ่งได้จำนวนเดิม" }
+    hints:
+      - "สลับที่คือเปลี่ยนลำดับ จัดหมู่คือเปลี่ยนว่าคูณคู่ไหนก่อน"
+      - "แจกแจงคือแยกจำนวนหนึ่งเป็นส่วน ๆ แล้วคูณทีละส่วน"
+    solution: "$4 \\times 9 = 9 \\times 4$ สลับที่ วงเล็บเปลี่ยนตำแหน่งคือจัดหมู่ แยก 7 เป็น 5 + 2 คือแจกแจง คูณ 0 ได้ 0 คูณ 1 ได้จำนวนเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p008
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: numeric
+    stem: "หาผลคูณ $9 \\times 80$ (คิดในใจ)"
+    answer: { value: 720 }
+    hints:
+      - "$80 = 8 \\times 10$"
+      - "คิด $9 \\times 8$ ก่อน แล้วคูณด้วย 10"
+    misconceptions:
+      - { match: 72, feedback: "คิด $9 \\times 8 = 72$ แล้วลืมคูณ 10" }
+      - { match: 7200, feedback: "เติม 0 สองตัว แต่ 80 มี 0 ตัวเดียว" }
+    solution: "$9 \\times 80 = 9 \\times 8 \\times 10 = 72 \\times 10 = 720$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p009
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: numeric
+    stem: "ร้านก๋วยเตี๋ยวมีเส้น 3 แบบ (เส้นเล็ก เส้นใหญ่ บะหมี่) และน้ำซุป 4 แบบ ถ้าสั่งเส้น 1 แบบกับน้ำซุป 1 แบบ สั่งได้ต่างกันกี่แบบ"
+    answer: { value: 12, unit: แบบ }
+    hints:
+      - "เส้นเล็กจับคู่กับน้ำซุปได้ 4 แบบ"
+      - "เส้นแต่ละแบบจับคู่ได้ 4 แบบเท่ากัน มีเส้น 3 แบบ"
+    misconceptions:
+      - { match: 7, feedback: "บวก 3 กับ 4 แต่เส้นทุกแบบจับคู่กับน้ำซุปได้ทุกแบบ ต้องคูณ" }
+    solution: "เส้นแต่ละแบบเลือกน้ำซุปได้ 4 แบบ มีเส้น 3 แบบ จึงได้ $3 \\times 4 = 12$ แบบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p010
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: numeric
+    stem: "พี่มีเงิน 45 บาท ซึ่งมากเป็น 3 เท่าของเงินของน้อง น้องมีเงินกี่บาท (ตอบในหน่วยบาท)"
+    answer: { value: 15, unit: บาท }
+    hints:
+      - "เงินของพี่ = 3 เท่าของเงินน้อง"
+      - "$3 \\times \\square = 45$"
+    misconceptions:
+      - { match: 135, feedback: "คูณ 45 กับ 3 แต่พี่เป็นคนที่มีมากกว่า น้องต้องมีน้อยกว่า 45" }
+      - { match: 42, feedback: "ลบ 3 แต่ \"มากเป็น 3 เท่า\" ไม่ใช่ \"มากกว่า 3\" ต้องหารด้วย 3" }
+    solution: "$3 \\times \\square = 45$ ได้ $\\square = 45 \\div 3 = 15$ บาท ตรวจ: $15 \\times 3 = 45$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p011
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: numeric
+    stem: "โรงเรียนมี 8 ห้องเรียน ห้องละ 37 คน มีนักเรียนทั้งหมดกี่คน (ตอบเป็นจำนวนคน)"
+    answer: { value: 296, unit: คน }
+    hints:
+      - "ตั้งคูณ $37 \\times 8$ เริ่มจากหลักหน่วย"
+      - "$7 \\times 8 = 56$ เขียน 6 ทด 5 ไปบวกกับผลคูณหลักสิบ"
+    misconceptions:
+      - { match: 246, feedback: "ลืมบวกตัวทด 5 ในหลักสิบ $3 \\times 8 + 5 = 29$" }
+      - { match: 45, feedback: "บวก 37 กับ 8 แต่มี 37 คนอยู่ 8 ห้อง ต้องคูณ" }
+    solution: "$7 \\times 8 = 56$ เขียน 6 ทด 5, $3 \\times 8 = 24$ บวก 5 ได้ 29 ผลคูณ 296 คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p012
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: numeric
+    stem: "นักเรียน 47 คนไปทัศนศึกษาที่อยุธยา รถตู้นั่งได้คันละ 9 คน ต้องใช้รถตู้อย่างน้อยกี่คัน (ตอบเป็นจำนวนคัน)"
+    answer: { value: 6, unit: คัน }
+    hints:
+      - "$47 \\div 9$ ได้เท่าไร เศษเท่าไร"
+      - "นักเรียนที่เป็นเศษก็ต้องมีที่นั่ง"
+    misconceptions:
+      - { match: 5, feedback: "$47 \\div 9 = 5$ เศษ 2 รถ 5 คันพาได้ 45 คน อีก 2 คนต้องใช้รถอีก 1 คัน" }
+      - { match: 2, feedback: "2 คือเศษ (นักเรียนที่เหลือ) ไม่ใช่จำนวนรถ" }
+    solution: "$47 \\div 9 = 5$ เศษ 2 รถ 5 คันยังไม่พอ ต้องใช้ 6 คัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p013
+    topics: [math.number.whole-mul-div]
+    difficulty: 4
+    type: numeric
+    stem: "หาผลคูณ $46 \\times 23$"
+    answer: { value: 1058 }
+    hints:
+      - "$46 \\times 3$ และ $46 \\times 20$"
+      - "เลข 2 ใน 23 อยู่หลักสิบ จึงมีค่า 20"
+    misconceptions:
+      - { match: 230, feedback: "คูณด้วย 2 แทน 20 จึงลืมเลื่อนหลัก ที่ถูกคือ $138 + 920$" }
+      - { match: 818, feedback: "คูณแค่หลักหน่วยกับหลักหน่วย ($6 \\times 3$) และหลักสิบกับหลักสิบ ($40 \\times 20$) ลืม $40 \\times 3$ และ $6 \\times 20$" }
+    solution: "$46 \\times 3 = 138$, $46 \\times 20 = 920$ รวม $138 + 920 = 1{,}058$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p014
+    topics: [math.number.whole-mul-div]
+    difficulty: 4
+    type: numeric
+    stem: "สหกรณ์การเกษตรมีข้าวเปลือก 3,045 กิโลกรัม แบ่งบรรทุกรถ 5 คันเท่า ๆ กัน คันละกี่กิโลกรัม (ตอบในหน่วยกิโลกรัม)"
+    answer: { value: 609, unit: kg }
+    hints:
+      - "หารสั้น: 30 ÷ 5 ก่อน"
+      - "หลักสิบเหลือ 4 ซึ่งหารด้วย 5 ไม่ได้ ต้องเขียน 0 ในผลหาร แล้วนำ 45 ไปหาร"
+    misconceptions:
+      - { match: 69, feedback: "ลืมเขียน 0 ในหลักสิบของผลหาร ตรวจ $69 \\times 5 = 345$ ไม่ใช่ 3,045" }
+      - { match: 15225, feedback: "คูณ 3,045 กับ 5 แต่การแบ่งต้องหาร" }
+    solution: "$30 \\div 5 = 6$, $4 \\div 5$ ได้ 0 (เขียน 0) เหลือ 4, $45 \\div 5 = 9$ ได้ 609 กิโลกรัม ตรวจ: $609 \\times 5 = 3{,}045$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p015
+    topics: [math.number.whole-mul-div]
+    difficulty: 4
+    type: numeric
+    stem: "หาจำนวนที่แทน $\\square$ ใน $\\square \\div 6 = 125$"
+    answer: { value: 750 }
+    hints:
+      - "$\\square$ คือตัวตั้ง แบ่งเป็น 6 ส่วน ได้ส่วนละ 125"
+      - "ตัวตั้ง = ผลหาร × ตัวหาร"
+    misconceptions:
+      - { match: 20.83, feedback: "หาร 125 ด้วย 6 แต่ $\\square$ ถูกหารแล้วได้ 125 จึงต้องมากกว่า 125 ต้องคูณ" }
+      - { match: 131, feedback: "บวก 6 แต่ประโยคนี้เป็นการหาร ต้องคูณกลับ" }
+    solution: "$\\square = 125 \\times 6 = 750$ ตรวจ: $750 \\div 6 = 125$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p016
+    topics: [math.number.whole-mul-div]
+    difficulty: 4
+    type: mcq
+    stem: "แบ่งขนมชั้น 7 ถาด ให้เด็ก 4 คนเท่า ๆ กัน โดยตัดแบ่งถาดได้ และแบ่งให้หมด ได้คนละเท่าไร"
+    choices:
+      - { id: a, text: "$1\\tfrac34$ ถาด", correct: true }
+      - { id: b, text: "1 ถาด", feedback: "ยังเหลือขนมอีก 3 ถาดที่ตัดแบ่งได้ โจทย์ให้แบ่งให้หมด" }
+      - { id: c, text: "2 ถาด", feedback: "ถ้าคนละ 2 ถาดต้องใช้ 8 ถาด แต่มีแค่ 7 ถาด" }
+      - { id: d, text: "$\\tfrac47$ ถาด", feedback: "หารกลับด้าน ต้องเป็นขนม 7 ถาด แบ่ง 4 คน คือ $7 \\div 4$" }
+    hints:
+      - "$7 \\div 4 = 1$ เศษ 3"
+      - "เศษ 3 ถาดแบ่ง 4 คน ได้คนละ $\\tfrac34$ ถาด"
+    solution: "แจกคนละ 1 ถาดก่อน เหลือ 3 ถาด ตัดแต่ละถาดเป็น 4 ส่วน ได้คนละ $\\tfrac34$ ถาด รวมคนละ $1\\tfrac34$ ถาด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p017
+    topics: [math.number.whole-mul-div]
+    difficulty: 5
+    type: numeric
+    stem: "โรงงานมีลูกอม 9,875 เม็ด บรรจุถุงละ 24 เม็ด ได้ถุงที่บรรจุเต็มกี่ถุง (ตอบเป็นจำนวนถุง)"
+    answer: { value: 411, unit: ถุง }
+    hints:
+      - "หารยาว $9{,}875 \\div 24$ เริ่มจาก $98 \\div 24$"
+      - "ถุงที่ไม่เต็มไม่นับ ตัดเศษทิ้ง"
+    misconceptions:
+      - { match: 412, feedback: "ปัดขึ้น แต่ถุงที่ 412 มีลูกอมแค่ 11 เม็ด ไม่เต็มถุง" }
+      - { match: 41, feedback: "ลืมเขียนผลหารของหลักสุดท้าย ตรวจ $41 \\times 24 = 984$ ห่างจาก 9,875 มาก" }
+    solution: "$98 \\div 24 = 4$ เหลือ 2, ดึง 7 ได้ 27 ÷ 24 = 1 เหลือ 3, ดึง 5 ได้ 35 ÷ 24 = 1 เหลือ 11 ผลหาร 411 เศษ 11 ได้ถุงเต็ม 411 ถุง ตรวจ: $24 \\times 411 + 11 = 9{,}875$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p018
+    topics: [math.number.whole-mul-div]
+    difficulty: 5
+    type: numeric
+    stem: "หาจำนวนที่แทน $\\square$ ใน $\\square \\times 36 = 25{,}452$"
+    answer: { value: 707 }
+    hints:
+      - "$\\square = 25{,}452 \\div 36$ ใช้การหารยาว"
+      - "$254 \\div 36 = 7$ เหลือ 2, ดึง 5 ได้ 25 ซึ่งน้อยกว่า 36 ต้องเขียน 0"
+    misconceptions:
+      - { match: 77, feedback: "ลืมเขียน 0 ในผลหาร ตรวจ $77 \\times 36 = 2{,}772$ ไม่ใช่ 25,452" }
+      - { match: 916272, feedback: "คูณ 25,452 กับ 36 ต้องหาร" }
+    solution: "$254 \\div 36 = 7$ ($36 \\times 7 = 252$) เหลือ 2, ดึง 5 ได้ 25 หารไม่ได้ เขียน 0, ดึง 2 ได้ 252 ÷ 36 = 7 ได้ $\\square = 707$ ตรวจ: $707 \\times 36 = 25{,}452$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p019
+    topics: [math.number.whole-mul-div]
+    difficulty: 5
+    type: numeric
+    stem: "ร้านค้าขายเสื้อตัวละ 125 บาท ได้ 18 ตัว และกางเกงตัวละ 240 บาท ได้ 15 ตัว ร้านได้เงินทั้งหมดกี่บาท (ตอบในหน่วยบาท)"
+    answer: { value: 5850, unit: บาท }
+    hints:
+      - "หาเงินค่าเสื้อและค่ากางเกงแยกกัน"
+      - "$125 \\times 18$ และ $240 \\times 15$ แล้วนำมาบวกกัน"
+    misconceptions:
+      - { match: 12045, feedback: "บวกราคาและบวกจำนวนก่อนแล้วคูณ $(125 + 240) \\times (18 + 15)$ ต้องคูณแยกแต่ละชนิด" }
+      - { match: 398, feedback: "บวกทุกจำนวนเข้าด้วยกัน แต่ขายหลายตัว ต้องคูณราคากับจำนวน" }
+    solution: "เสื้อ $125 \\times 18 = 2{,}250$ บาท กางเกง $240 \\times 15 = 3{,}600$ บาท รวม $5{,}850$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p020
+    topics: [math.number.whole-mul-div]
+    difficulty: 2
+    type: numeric
+    stem: "มีลูกปิงปอง 340 ลูก ใส่ถุงละ 10 ลูก ได้กี่ถุง (ตอบเป็นจำนวนถุง)"
+    answer: { value: 34, unit: ถุง }
+    hints:
+      - "จัดกลุ่มละ 10 ใช้การหาร $340 \\div 10$"
+      - "หารด้วย 10 คือตัด 0 ท้ายออกหนึ่งตัว"
+    misconceptions:
+      - { match: 3400, feedback: "คูณด้วย 10 แต่การใส่ถุงละ 10 ต้องหาร" }
+    solution: "$340 \\div 10 = 34$ ถุง ตรวจ: $34 \\times 10 = 340$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p021
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: mcq
+    stem: "ผลคูณ $389 \\times 21$ ประมาณเท่าใด"
+    choices:
+      - { id: a, text: "ประมาณ 8,000", correct: true }
+      - { id: b, text: "ประมาณ 800", feedback: "ปัด 21 เป็น 2 แทน 20 ทำให้ผลเล็กไป 10 เท่า" }
+      - { id: c, text: "ประมาณ 80,000", feedback: "ปัด 21 เป็น 200 ผลจึงใหญ่ไป 10 เท่า" }
+      - { id: d, text: "ประมาณ 400", feedback: "บวก 389 กับ 21 แต่โจทย์เป็นการคูณ" }
+    hints:
+      - "ปัด 389 เป็น 400 และปัด 21 เป็น 20"
+      - "$400 \\times 20 = 4 \\times 2 \\times 1{,}000$"
+    solution: "$400 \\times 20 = 8{,}000$ (ค่าจริง $389 \\times 21 = 8{,}169$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.whole-mul-div.p022
+    topics: [math.number.whole-mul-div]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหารยาวในแต่ละรอบให้ถูกต้อง"
+    items: ["หาร: ดูว่าตัวหารหารจำนวนที่กำลังพิจารณาได้กี่ครั้ง", "คูณ: นำผลที่ได้คูณกับตัวหาร", "ลบ: นำผลคูณไปลบ", "ดึง: ดึงหลักถัดไปของตัวตั้งลงมา"]
+    hints:
+      - "ต้องรู้ผลหารก่อนจึงคูณได้"
+      - "ลบแล้วจึงดึงหลักถัดไปมาต่อท้ายเศษ"
+    solution: "หาร → คูณ → ลบ → ดึงหลักถัดไปลงมา แล้วทำซ้ำจนครบทุกหลัก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

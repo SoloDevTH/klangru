@@ -1,0 +1,76 @@
+id: physics.matter.elasticity
+subject: physics
+title: { th: สภาพยืดหยุ่นของวัสดุ, en: Elasticity of materials }
+summary: สภาพยืดหยุ่นและสภาพพลาสติก ขีดจำกัดสภาพยืดหยุ่น ความเค้นตามยาว ความเครียดตามยาว มอดุลัสของยัง และการเลือกใช้วัสดุในงานก่อสร้าง
+difficulty: 5.5
+minutes: 35
+prerequisites: [physics.dynamics.forces, physics.matter.pressure-fluids]
+encompasses:
+  - { id: physics.matter.pressure-fluids, weight: 0.2 }
+  - { id: physics.dynamics.forces, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กราฟความเค้นกับความเครียดของโลหะ
+    src: stress-strain.svg
+    alt: "กราฟความเค้นแกนตั้งกับความเครียดแกนนอน เริ่มจากจุด O เป็นเส้นตรงชันขึ้นไปถึงจุด A ขีดจำกัดการแปรผันตรง โค้งเล็กน้อยถึงจุด B ขีดจำกัดสภาพยืดหยุ่น ช่วง O ถึง B คือช่วงสภาพยืดหยุ่น หลังจากนั้นกราฟลาดน้อยลงขึ้นไปถึงยอดแล้วลดลงจนถึงจุด C จุดแตกหัก ช่วงหลัง B คือช่วงสภาพพลาสติก มีเส้นประจากจุดหนึ่งในช่วงพลาสติกลากลงมาขนานกับเส้น OA ไปถึงแกนนอน ห่างจาก O เป็นความเครียดถาวร มีข้อความว่าความชันช่วง OA เท่ากับมอดุลัสของยัง"
+    caption: "ปล่อยแรงในช่วงพลาสติก ลวดหดกลับตามเส้นประ และยาวกว่าเดิมอย่างถาวร"
+  - type: figure
+    title: ความเค้นและความเครียดของแท่งที่ถูกดึง
+    src: rod-tension.svg
+    alt: "แท่งทรงกระบอกพื้นที่หน้าตัด A ถูกแรง F ดึงที่ปลายซ้ายและขวาในทิศออกจากกัน ด้านล่างเป็นแท่งเดียวกันหลังยืด ความยาวเดิม L₀ และส่วนที่ยาวเพิ่ม ΔL ทางขวา มีสูตร σ = F/A และ ε = ΔL/L₀"
+  - type: worked-example
+    title: หามอดุลัสของยังจากการทดลอง
+    problem: "แขวนตุ้มน้ำหนักให้แรงดึง $100\\ \\mathrm{N}$ กับลวดโลหะยาว $1.5\\ \\mathrm{m}$ พื้นที่หน้าตัด $1.0 \\times 10^{-6}\\ \\mathrm{m^2}$ ลวดยืดออก $0.75\\ \\mathrm{mm}$ หาความเค้น ความเครียด และมอดุลัสของยัง"
+    steps:
+      - text: "ความเค้น $\\sigma = \\dfrac{F}{A} = \\dfrac{100}{1.0 \\times 10^{-6}} = 1.0 \\times 10^{8}\\ \\mathrm{N/m^2}$"
+      - text: "แปลงระยะยืดเป็นเมตร $\\Delta L = 0.75\\ \\mathrm{mm} = 7.5 \\times 10^{-4}\\ \\mathrm{m}$"
+        why: "$\\Delta L$ กับ $L_0$ ต้องใช้หน่วยเดียวกันจึงหารกันได้"
+      - text: "ความเครียด $\\varepsilon = \\dfrac{7.5 \\times 10^{-4}}{1.5} = 5.0 \\times 10^{-4}$ (ไม่มีหน่วย)"
+      - text: "มอดุลัสของยัง $Y = \\dfrac{\\sigma}{\\varepsilon} = \\dfrac{1.0 \\times 10^{8}}{5.0 \\times 10^{-4}} = 2.0 \\times 10^{11}\\ \\mathrm{N/m^2}$"
+        why: "ค่านี้ตรงกับเหล็กกล้าในตาราง ลวดเส้นนี้จึงน่าจะเป็นเหล็กกล้า"
+    answer: "ความเค้น 1.0 × 10⁸ N/m² ความเครียด 5.0 × 10⁻⁴ และ Y = 2.0 × 10¹¹ N/m²"
+  - { type: check, problem: physics.matter.elasticity.p003, prompt: "แปลงพื้นที่เป็นตารางเมตรก่อน" }
+  - type: worked-example
+    title: ลวดสลิงลิฟต์ยืดเท่าใด
+    problem: "ลวดสลิงเหล็กกล้า ($Y = 2.0 \\times 10^{11}\\ \\mathrm{N/m^2}$) ยาว $10\\ \\mathrm{m}$ พื้นที่หน้าตัด $2.0 \\times 10^{-4}\\ \\mathrm{m^2}$ รับน้ำหนักลิฟต์และผู้โดยสาร $40\\ \\mathrm{kN}$ ลวดยืดออกเท่าใด"
+    steps:
+      - text: "จัดสูตร $Y = \\dfrac{F L_0}{A\\,\\Delta L}$ ให้ได้ $\\Delta L = \\dfrac{F L_0}{A Y}$"
+      - text: "แทนค่า $\\Delta L = \\dfrac{(4.0 \\times 10^{4})(10)}{(2.0 \\times 10^{-4})(2.0 \\times 10^{11})} = \\dfrac{4.0 \\times 10^{5}}{4.0 \\times 10^{7}} = 0.010\\ \\mathrm{m}$"
+        why: "$40\\ \\mathrm{kN} = 4.0 \\times 10^{4}\\ \\mathrm{N}$"
+      - text: "ตรวจความเค้น $\\sigma = \\dfrac{4.0 \\times 10^4}{2.0 \\times 10^{-4}} = 2.0 \\times 10^{8}\\ \\mathrm{N/m^2}$ ต้องต่ำกว่าขีดจำกัดสภาพยืดหยุ่นของลวด สูตรนี้จึงใช้ได้"
+    answer: "ลวดยืดออก 0.010 m หรือ 1.0 cm"
+  - { type: check, problem: physics.matter.elasticity.p005, prompt: "กฎของฮุกใช้ได้ในช่วงใดของกราฟ" }
+  - type: interactive
+    title: ระยะยืดของลวดกลมกับแรงดึง
+    caption: "เส้นตรงแสดงระยะยืด ΔL (มิลลิเมตร) ของลวดกลมเมื่อแรงดึงเพิ่มจาก 0 ถึง 200 N (ในช่วงสภาพยืดหยุ่น) L คือความยาวลวด (m) d คือเส้นผ่านศูนย์กลาง (mm) Y คือมอดุลัสของยังในหน่วย 10¹⁰ N/m² (เหล็กกล้า 20 อะลูมิเนียม 7) ลองเพิ่ม d เป็นสองเท่าแล้วดูว่าความชันลดลงกี่เท่า"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{0.4 x L}{\\pi d^2 Y}"]
+      sliders:
+        - { name: L, min: 0.5, max: 3, step: 0.5, value: 2, label: ความยาว L (m) }
+        - { name: d, min: 0.5, max: 2, step: 0.25, value: 1, label: เส้นผ่านศูนย์กลาง d (mm) }
+        - { name: Y, min: 1, max: 20, step: 1, value: 20, label: มอดุลัสของยัง (10¹⁰ N/m²) }
+      x: [0, 200]
+      y: [0, 10]
+glossary:
+  - { term: สภาพยืดหยุ่น, definition: "สมบัติที่วัสดุกลับคืนรูปเดิมเมื่อเอาแรงที่ทำให้เปลี่ยนรูปออก" }
+  - { term: ขีดจำกัดสภาพยืดหยุ่น, definition: "ความเค้นสูงสุดที่วัสดุยังกลับคืนรูปเดิมได้ เกินจากนี้จะเหลือความเครียดถาวร" }
+  - { term: สภาพพลาสติก, definition: "สภาพที่วัสดุเปลี่ยนรูปแล้วไม่กลับคืนรูปเดิมทั้งหมดเมื่อเอาแรงออก" }
+  - { term: ความเค้นตามยาว, definition: "แรงที่กระทำตั้งฉากต่อพื้นที่หน้าตัดหนึ่งหน่วย σ = F/A หน่วย N/m²" }
+  - { term: ความเครียดตามยาว, definition: "ความยาวที่เปลี่ยนไปต่อความยาวเดิม ε = ΔL/L₀ ไม่มีหน่วย" }
+  - { term: มอดุลัสของยัง, definition: "อัตราส่วนความเค้นต่อความเครียดในช่วงที่แปรผันตรงกัน บอกความแข็งตึงของวัสดุ" }
+flashcards:
+  - { front: "ความเค้นตามยาว", back: "$\\sigma = F/A$ หน่วย $\\mathrm{N/m^2}$ (Pa)" }
+  - { front: "ความเครียดตามยาว", back: "$\\varepsilon = \\Delta L / L_0$ ไม่มีหน่วย" }
+  - { front: "มอดุลัสของยัง", back: "$Y = \\sigma/\\varepsilon = \\dfrac{F L_0}{A\\,\\Delta L}$ เท่ากับความชันช่วงเส้นตรงของกราฟความเค้นกับความเครียด" }
+  - { front: "ทำไมคานคอนกรีตต้องมีเหล็กเส้นด้านล่าง", back: "คอนกรีตรับแรงดึงได้น้อย ด้านล่างของคานถูกดึง เหล็กเส้นจึงรับแรงดึงแทน" }
+references:
+  - { title: "มอดุลัสของยัง", url: "https://th.wikipedia.org/wiki/มอดุลัสของยัง", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Stress–strain curve", url: "https://en.wikipedia.org/wiki/Stress%E2%80%93strain_curve", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.3 Stress, Strain, and Elastic Modulus (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

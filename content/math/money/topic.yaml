@@ -1,0 +1,55 @@
+id: math.measure.money
+subject: math
+title: { th: เงินและการคิดเงิน, en: Money }
+summary: รู้จักเหรียญและธนบัตรไทย นับเงิน แลกเงิน เขียนจำนวนเงินด้วยจุด เปรียบเทียบ คิดเงินทอน และบันทึกรายรับรายจ่าย
+difficulty: 1.5
+minutes: 35
+prerequisites: [math.number.whole-add-sub]
+encompasses:
+  - { id: math.number.whole-add-sub, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: coins-notes.svg
+    alt: "เหรียญหกชนิดเรียงจากค่าน้อยไปมาก 25 สตางค์และ 50 สตางค์สีทองแดง 1 บาทสีเงิน 2 บาทสีทอง 5 บาทสีเงิน 10 บาทมีวงในสีทองและวงนอกสีเงิน ด้านล่างเป็นธนบัตรห้าชนิด 20 บาทสีเขียว 50 บาทสีน้ำเงิน 100 บาทสีแดง 500 บาทสีม่วง 1,000 บาทสีเทาน้ำตาล ใต้ภาพเขียนว่า 100 สตางค์ = 1 บาท"
+    caption: "ภาพวาดอย่างง่ายเพื่อบอกค่า ไม่ได้แสดงลวดลายจริงของเหรียญและธนบัตร"
+  - { type: check, problem: math.measure.money.p007, prompt: "ลองรวมเงินแต่ละแบบ" }
+  - type: worked-example
+    title: นับเงินทอนแบบแม่ค้า
+    problem: "ซื้อน้ำเต้าหู้ 27.50 บาท จ่ายธนบัตร 50 บาท ได้เงินทอนเท่าไร"
+    steps:
+      - text: "นับต่อจาก 27.50 ให้ถึงบาทเต็ม: 27.50 → 28.00 ใช้เหรียญ 50 สตางค์"
+      - text: "28 → 30 ใช้เหรียญ 2 บาท"
+      - text: "30 → 50 ใช้ธนบัตร 20 บาท"
+        why: "นับขึ้นไปถึงจำนวนที่จ่ายพอดี"
+      - text: "รวมเงินทอน $0.50 + 2 + 20 = 22.50$ บาท ตรวจ: $50.00 - 27.50 = 22.50$ ✓"
+    answer: "22.50 บาท"
+  - { type: check, problem: math.measure.money.p011, prompt: "เทียบบาทก่อน แล้วเทียบสตางค์" }
+  - type: worked-example
+    title: หาเงินคงเหลือจากบันทึกรายรับรายจ่าย
+    problem: "สัปดาห์นี้มีรายรับ 100 บาท และ 50 บาท มีรายจ่าย 25 บาท 18.50 บาท และ 12 บาท เหลือเงินเท่าไร"
+    steps:
+      - text: "รวมรายรับ: $100 + 50 = 150$ บาท"
+      - text: "รวมรายจ่าย: $25.00 + 18.50 + 12.00 = 55.50$ บาท"
+        why: "ตั้งจุดให้ตรงกันก่อนบวก"
+      - text: "คงเหลือ: $150.00 - 55.50$ สตางค์ไม่พอลบ กระจาย 1 บาทเป็น 100 สตางค์ ได้ $94.50$ บาท"
+    answer: "94.50 บาท"
+glossary:
+  - { term: สตางค์, definition: "หน่วยย่อยของเงินไทย 100 สตางค์ = 1 บาท" }
+  - { term: เงินทอน, definition: "เงินที่ได้คืนเมื่อจ่ายเงินมากกว่าราคาของ = เงินที่จ่าย − ราคา" }
+  - { term: รายรับ, definition: "เงินที่ได้รับเข้ามา เช่น ค่าขนม เงินที่ญาติให้" }
+  - { term: รายจ่าย, definition: "เงินที่จ่ายออกไป เช่น ค่าขนม ค่าสมุด" }
+flashcards:
+  - { front: "1 บาท มีกี่สตางค์", back: "100 สตางค์" }
+  - { front: "40 บาท 5 สตางค์ เขียนด้วยจุดอย่างไร", back: "40.05 บาท" }
+  - { front: "45.50 บาท กับ 45.05 บาท อะไรมากกว่า", back: "45.50 บาท (50 สตางค์ > 5 สตางค์)" }
+  - { front: "หาเงินทอนอย่างไร", back: "เงินที่จ่าย − ราคา หรือนับต่อจากราคาขึ้นไปถึงเงินที่จ่าย" }
+references:
+  - { title: "บาท (สกุลเงิน)", url: "https://th.wikipedia.org/wiki/เงินบาท", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Thai baht", url: "https://en.wikipedia.org/wiki/Thai_baht", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Banknotes of the Thai baht", url: "https://en.wikipedia.org/wiki/Banknotes_of_the_Thai_baht", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

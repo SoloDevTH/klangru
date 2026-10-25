@@ -1,0 +1,83 @@
+id: math.number.whole-mul-div
+subject: math
+title: { th: การคูณและการหารจำนวนนับ, en: Multiplying and dividing whole numbers }
+summary: เข้าใจความหมายของการคูณและการหาร ใช้สูตรคูณและสมบัติ หาตัวไม่ทราบค่า คูณจำนวนหลายหลัก หารสั้นและหารยาว และตีความเศษตามสถานการณ์
+difficulty: 1.5
+minutes: 40
+prerequisites: [math.number.whole-add-sub]
+encompasses:
+  - { id: math.number.whole-add-sub, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: array-3x5.svg
+    alt: "จุดสีส้มเรียงเป็นแถวลำดับ 3 แถว แถวละ 5 จุด ใต้ภาพเขียนว่า 3 แถว แถวละ 5 ข้างภาพเขียนว่า 5 + 5 + 5 = 15, 3 × 5 = 15, 15 ÷ 3 = 5 (แบ่ง 3 แถว ได้แถวละ 5) และ 15 ÷ 5 = 3 (จัดกลุ่มละ 5 ได้ 3 กลุ่ม)"
+    caption: "แถวลำดับเดียวกันแสดงได้ทั้งการคูณและการหารสองความหมาย"
+  - type: interactive
+    title: คูณคือการบวกซ้ำ
+    caption: "4 × 5: กระโดดทีละ 5 สี่ครั้ง จาก 0 ไป 20"
+    widget:
+      kind: number-line
+      min: 0
+      max: 25
+      points:
+        - { value: 5, label: "5" }
+        - { value: 10, label: "10" }
+        - { value: 15, label: "15" }
+        - { value: 20, label: "20" }
+      jumps:
+        - { from: 0, to: 5, label: "+5" }
+        - { from: 5, to: 10, label: "+5" }
+        - { from: 10, to: 15, label: "+5" }
+        - { from: 15, to: 20, label: "+5" }
+  - { type: check, problem: math.number.whole-mul-div.p004, prompt: "หาครอบครัวของ 6 × 7 = 42" }
+  - type: figure
+    src: area-model.svg
+    alt: "แบบจำลองพื้นที่ของ 23 × 14 รูปสี่เหลี่ยมผืนผ้าแบ่งเป็นสี่ส่วน ด้านบนแบ่งเป็น 20 กับ 3 ด้านซ้ายแบ่งเป็น 10 กับ 4 ส่วนต่าง ๆ เขียนว่า 20 × 10 = 200, 30, 20 × 4 = 80 และ 12 ข้างภาพเขียนว่า 23 × 14 = 200 + 30 + 80 + 12 = 322 และตั้งคูณ 23 × 4 = 92, 23 × 10 = 230, 92 + 230 = 322"
+    caption: "แยกตามหลักแล้วคูณทีละส่วน ส่วนย่อยรวมกันได้ผลคูณ"
+  - type: worked-example
+    title: คูณสองหลักกับสองหลัก
+    problem: "หาผลคูณ $46 \\times 23$"
+    steps:
+      - text: "คูณด้วยหลักหน่วย 3: $46 \\times 3 = 138$"
+      - text: "คูณด้วยหลักสิบ 2 ซึ่งมีค่า 20: $46 \\times 20 = 920$"
+        why: "เลข 2 อยู่หลักสิบ จึงมีค่า 20 ไม่ใช่ 2 ผลคูณจึงต้องเลื่อนไปหนึ่งหลัก"
+      - text: "บวกกัน: $138 + 920 = 1{,}058$"
+      - text: "ประมาณตรวจ: $50 \\times 20 = 1{,}000$ ใกล้ 1,058 สมเหตุสมผล"
+    answer: "$46 \\times 23 = 1{,}058$"
+  - type: figure
+    src: long-division.svg
+    alt: "การหารยาว 1,358 หารด้วย 12 ผลหาร 113 เขียนอยู่เหนือหลักร้อย หลักสิบ และหลักหน่วย ใต้ตัวตั้งมีขั้นลบสามครั้ง 13 − 12 = 1 ดึง 5 ลงมาเป็น 15, 15 − 12 = 3 ดึง 8 ลงมาเป็น 38, 38 − 36 = 2 เศษ 2 ข้างภาพอธิบายแต่ละขั้น และสรุปว่า ตอบ 113 เศษ 2 ตรวจ 12 × 113 + 2 = 1,358"
+    caption: "หาร คูณ ลบ ดึงหลักถัดไปลงมา ทำซ้ำจนครบทุกหลัก"
+  - type: worked-example
+    title: หารและตีความเศษ
+    problem: "นักเรียน 47 คนไปทัศนศึกษา รถตู้นั่งได้คันละ 9 คน ต้องใช้รถตู้อย่างน้อยกี่คัน"
+    steps:
+      - text: "จัดกลุ่มละ 9 คน ใช้การหาร $47 \\div 9$"
+      - text: "$9 \\times 5 = 45$ และ $9 \\times 6 = 54$ เกิน 47 จึงได้ 5 เศษ $47 - 45 = 2$"
+      - text: "รถ 5 คันพานักเรียนได้ 45 คน ยังเหลือ 2 คน ต้องมีรถอีก 1 คัน"
+        why: "เศษในสถานการณ์นี้คือคนจริง ๆ ทิ้งไม่ได้ จึงต้องปัดขึ้น"
+    answer: "6 คัน"
+  - { type: check, problem: math.number.whole-mul-div.p012, prompt: "เศษ 2 คนต้องทำอย่างไร" }
+glossary:
+  - { term: แถวลำดับ, definition: "การจัดของเป็นแถว แถวละเท่า ๆ กัน ใช้แสดงการคูณ เช่น 3 แถว แถวละ 5" }
+  - { term: ตัวตั้ง ตัวหาร ผลหาร, definition: "ใน 15 ÷ 3 = 5 ตัวตั้งคือ 15 ตัวหารคือ 3 และผลหารคือ 5" }
+  - { term: เศษ, definition: "จำนวนที่เหลือเมื่อหารไม่ลงตัว ต้องน้อยกว่าตัวหาร เช่น 47 ÷ 9 = 5 เศษ 2" }
+  - { term: การหารยาว, definition: "วิธีหารทีละหลักโดยทำซ้ำ หาร คูณ ลบ ดึงหลักถัดไปลงมา" }
+  - { term: สมบัติการแจกแจง, definition: "แยกจำนวนหนึ่งเป็นส่วน ๆ แล้วคูณทีละส่วน เช่น 8 × 7 = 8 × 5 + 8 × 2" }
+flashcards:
+  - { front: "รู้ 6 × 7 = 42 รู้อะไรอีกบ้าง", back: "7 × 6 = 42, 42 ÷ 7 = 6, 42 ÷ 6 = 7" }
+  - { front: "จำนวนใดคูณด้วย 0", back: "ได้ 0 เสมอ" }
+  - { front: "ขั้นของการหารยาว", back: "หาร → คูณ → ลบ → ดึงหลักถัดไปลงมา" }
+  - { front: "ตรวจ 47 ÷ 9 = 5 เศษ 2 อย่างไร", back: "9 × 5 + 2 = 47" }
+  - { front: "\"มากเป็น 3 เท่า\" กับ \"มากกว่า 3\" ต่างกันอย่างไร", back: "เป็น 3 เท่าใช้คูณ 3 มากกว่า 3 ใช้บวก 3" }
+references:
+  - { title: "การคูณ", url: "https://th.wikipedia.org/wiki/การคูณ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "การหารยาว", url: "https://th.wikipedia.org/wiki/การหารยาว", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "1.4 Multiply Whole Numbers (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/1-4-multiply-whole-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "1.5 Divide Whole Numbers (Prealgebra 2e, OpenStax)", url: "https://openstax.org/books/prealgebra-2e/pages/1-5-divide-whole-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

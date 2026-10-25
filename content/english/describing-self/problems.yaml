@@ -1,0 +1,307 @@
+problems:
+  - id: english.writing.describing-self.p001
+    topics: [english.writing.describing-self]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ช่องในแบบฟอร์มกับความหมาย"
+    pairs:
+      - { left: "First name", right: "ชื่อ" }
+      - { left: "Surname", right: "นามสกุล" }
+      - { left: "Date of birth", right: "วันเดือนปีเกิด" }
+      - { left: "Nationality", right: "สัญชาติ" }
+    hints:
+      - "birth = การเกิด"
+      - "Surname มีความหมายเดียวกับ Last name"
+    solution: "First name → ชื่อ · Surname → นามสกุล · Date of birth → วันเดือนปีเกิด · Nationality → สัญชาติ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p002
+    topics: [english.writing.describing-self]
+    difficulty: 1
+    type: text
+    stem: "คนไทยกรอกช่อง *Nationality* ว่าอะไร (คำเดียว)"
+    accepted: ["Thai"]
+    misconceptions:
+      - { match: "Thailand", feedback: "Thailand คือชื่อประเทศ สัญชาติเขียนว่า Thai" }
+      - { match: "Thais", feedback: "สัญชาติของคนคนเดียวเขียนว่า Thai" }
+    hints:
+      - "สัญชาติไม่ใช่ชื่อประเทศ"
+      - "คำเดียวกับชื่อภาษาไทยในภาษาอังกฤษ"
+    solution: "Nationality: **Thai** (ประเทศคือ Thailand)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p003
+    topics: [english.writing.describing-self]
+    difficulty: 1
+    type: mcq
+    multiple: true
+    stem: "คำใดต้องขึ้นต้นด้วยตัวพิมพ์ใหญ่เสมอ ไม่ว่าจะอยู่ตรงไหนของประโยค (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "monday", correct: true, feedback: "ถูก ชื่อวันขึ้นต้นด้วยตัวใหญ่: Monday" }
+      - { id: b, text: "march", correct: true, feedback: "ถูก ชื่อเดือนขึ้นต้นด้วยตัวใหญ่: March" }
+      - { id: c, text: "thai", correct: true, feedback: "ถูก สัญชาติและภาษาขึ้นต้นด้วยตัวใหญ่: Thai" }
+      - { id: d, text: "school", feedback: "school เป็นคำนามทั่วไป ใช้ตัวเล็กเมื่อไม่อยู่ต้นประโยค" }
+      - { id: e, text: "football", feedback: "ชื่อกีฬาเป็นคำนามทั่วไป ใช้ตัวเล็กเมื่อไม่อยู่ต้นประโยค" }
+    hints:
+      - "ชื่อเฉพาะ วัน เดือน สัญชาติ และภาษา ใช้ตัวใหญ่"
+      - "มีคำตอบถูกสามข้อ"
+    solution: "ต้องขึ้นต้นด้วยตัวใหญ่: **Monday, March, Thai** ส่วน school และ football เป็นคำนามทั่วไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p004
+    topics: [english.writing.describing-self]
+    difficulty: 2
+    type: text
+    stem: "ชื่อภาษาอังกฤษของนายสมชาย ใจดี คือ *Somchai Jaidee* ช่อง *Surname* ต้องเขียนว่าอะไร"
+    accepted: ["Jaidee"]
+    misconceptions:
+      - { match: "Somchai", feedback: "Somchai คือชื่อตัว (First name) Surname คือนามสกุล" }
+      - { match: "Mr", feedback: "Mr คือคำนำหน้า (Title) Surname คือนามสกุล" }
+      - { match: "Somchai Jaidee", feedback: "ช่อง Surname ใส่เฉพาะนามสกุล" }
+    hints:
+      - "Surname = Last name = Family name"
+      - "ภาษาอังกฤษเรียงชื่อก่อนนามสกุลเหมือนไทย"
+    solution: "Surname: **Jaidee** (First name: Somchai, Title: Mr)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p005
+    topics: [english.writing.describing-self]
+    difficulty: 2
+    type: mcq
+    stem: "แบบฟอร์มของค่ายในอังกฤษเขียนว่า *Date of birth (DD/MM/YYYY)* ถ้าเกิดวันที่ 5 ธันวาคม ค.ศ. 2013 ต้องเขียนอย่างไร"
+    choices:
+      - { id: a, text: "05/12/2013", correct: true, feedback: "ถูก วัน (05) / เดือน (12) / ปี (2013)" }
+      - { id: b, text: "12/05/2013", feedback: "นี่คือรูป MM/DD/YYYY แบบสหรัฐฯ ในแบบฟอร์มนี้จะอ่านเป็น 12 พฤษภาคม" }
+      - { id: c, text: "05/12/2556", feedback: "ปีต้องเป็น ค.ศ. 2013 ไม่ใช่ พ.ศ." }
+      - { id: d, text: "2013/05/12", feedback: "แบบฟอร์มกำหนดให้วันมาก่อน: DD/MM/YYYY" }
+    hints:
+      - "DD = วัน, MM = เดือน, YYYY = ปี ค.ศ. สี่หลัก"
+      - "ธันวาคมเป็นเดือนที่ 12"
+    solution: "DD/MM/YYYY → **05/12/2013**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p006
+    topics: [english.writing.describing-self]
+    difficulty: 2
+    type: order
+    stem: "เรียงประโยคให้เป็นย่อหน้าเรื่องตนเอง (เริ่มด้วยประโยคใจความ จบด้วยประโยคปิด)"
+    items:
+      - "My name is Ton and I am twelve years old."
+      - "I live in Khon Kaen with my parents and my two sisters."
+      - "My father is a teacher and my mother sells noodles at the market."
+      - "After school, I play football because I want to be a footballer."
+      - "I am happy with my family."
+    hints:
+      - "ประโยคแรกบอกว่าเป็นใคร ประโยคสุดท้ายบอกความรู้สึก"
+      - "เรียงรายละเอียดจากที่อยู่ ครอบครัว แล้วจึงกิจกรรม"
+    solution: "แนะนำตัว → ที่อยู่และคนในบ้าน → อาชีพพ่อแม่ → กิจกรรมหลังเลิกเรียน → ประโยคปิด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p007
+    topics: [english.writing.describing-self]
+    difficulty: 2
+    type: text
+    stem: "เติมคำเชื่อม: *I like football, ___ I don't like basketball.*"
+    accepted: ["but"]
+    misconceptions:
+      - { match: "and", feedback: "สองส่วนขัดกัน (ชอบ / ไม่ชอบ) ใช้ but" }
+      - { match: "because", feedback: "ไม่ชอบบาสเกตบอลไม่ใช่เหตุผลของการชอบฟุตบอล ใช้ but" }
+      - { match: "so", feedback: "so บอกผล แต่สองส่วนนี้ขัดกัน ใช้ but" }
+    hints:
+      - "ชอบอย่างหนึ่ง ไม่ชอบอีกอย่าง"
+      - "คำเชื่อมที่แปลว่า แต่"
+    solution: "*I like football, **but** I don't like basketball.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p008
+    topics: [english.writing.describing-self]
+    difficulty: 3
+    type: numeric
+    stem: "กรอกใบสมัครค่ายวันที่ 25/10/2026 (DD/MM/YYYY) ผู้สมัครเกิดวันที่ 20/11/2012 ช่อง *Age* ต้องเขียนกี่ปี"
+    answer: { value: 13, unit: "ปี" }
+    misconceptions:
+      - { match: 14, feedback: "2026 − 2012 = 14 แต่ยังไม่ถึงวันเกิด (20 พ.ย.) ของปี 2026 จึงยังอายุ 13" }
+    hints:
+      - "เดือนที่ 11 คือพฤศจิกายน เดือนที่ 10 คือตุลาคม"
+      - "ลบปีก่อน แล้วดูว่าปีนี้ผ่านวันเกิดแล้วหรือยัง ถ้ายังให้ลบ 1"
+    solution: "2026 − 2012 = 14 แต่ 25 ต.ค. ยังไม่ถึง 20 พ.ย. จึงอายุ **13** ปี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p009
+    topics: [english.writing.describing-self]
+    difficulty: 3
+    type: mcq
+    stem: "ดูข้อมูลของ Liam ประโยคใดถูกต้องตามข้อมูล"
+    figure: { src: penpal-profile.svg, alt: "ข้อมูลเพื่อนทางจดหมาย Name: Liam Walker, Age: 13, From: Auckland, New Zealand, Lives with: mum, dad, younger sister, Likes: rugby, drawing, Doesn't like: spiders, cold weather, Gets up: 7:00 a.m., School: 8:45 a.m. – 3:00 p.m., After school: rugby practice (Tue, Thu)" }
+    choices:
+      - { id: a, text: "He lives with his parents and his younger sister.", correct: true, feedback: "ถูก mum และ dad คือ parents" }
+      - { id: b, text: "He lives with his parents and his older brother.", feedback: "Liam มีน้องสาว (younger sister) ไม่ใช่พี่ชาย" }
+      - { id: c, text: "He likes spiders and cold weather.", feedback: "สองอย่างนี้อยู่ในช่อง Doesn't like" }
+      - { id: d, text: "He has rugby practice every day.", feedback: "ฝึกรักบี้เฉพาะวันอังคารและพฤหัสบดี" }
+    hints:
+      - "อ่านช่อง Lives with"
+      - "parents = พ่อและแม่"
+    solution: "***He lives with his parents and his younger sister.***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p010
+    topics: [english.writing.describing-self]
+    difficulty: 3
+    type: text
+    stem: "ดูข้อมูลของ Liam เติมกริยาคำเดียว: *Liam ___ up at seven o'clock.*"
+    figure: { src: penpal-profile.svg, alt: "ข้อมูลเพื่อนทางจดหมาย Name: Liam Walker, Age: 13, From: Auckland, New Zealand, Lives with: mum, dad, younger sister, Likes: rugby, drawing, Doesn't like: spiders, cold weather, Gets up: 7:00 a.m., School: 8:45 a.m. – 3:00 p.m., After school: rugby practice (Tue, Thu)" }
+    accepted: ["gets", "wakes"]
+    misconceptions:
+      - { match: "get", feedback: "ประธาน Liam เป็นบุรุษที่ 3 เอกพจน์ ต้องเติม s: gets" }
+      - { match: "getting", feedback: "เรื่องที่ทำเป็นประจำใช้ present simple: gets" }
+    hints:
+      - "ตื่นนอน = get up"
+      - "Liam = he ต้องเติม s"
+    solution: "*Liam **gets** up at seven o'clock.* (*wakes up* ก็ใช้ได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p011
+    topics: [english.writing.describing-self]
+    difficulty: 3
+    type: mcq
+    stem: "น้ำไปทำการบ้านที่บ้านพลอยหลังเลิกเรียน แม่ยังไม่กลับบ้าน โน้ตใดเหมาะที่สุดที่จะติดไว้ที่ตู้เย็น"
+    choices:
+      - { id: a, text: "Mum, I'm at Ploy's house. We're doing our homework. Back at 6. Nam", correct: true, feedback: "ถูก บอกว่าอยู่ไหน ทำอะไร กลับกี่โมง และลงชื่อ" }
+      - { id: b, text: "Mum, I'm at Ploy's house.", feedback: "ไม่บอกว่ากลับกี่โมงและไม่ลงชื่อ แม่อาจเป็นห่วง" }
+      - { id: c, text: "Dear Mum, my name is Nam and I am twelve years old.", feedback: "แม่รู้จักน้ำอยู่แล้ว โน้ตต้องบอกเรื่องเฉพาะหน้า" }
+      - { id: d, text: "Back at 6.", feedback: "ไม่บอกว่าใครเขียนและไปที่ไหน" }
+    hints:
+      - "โน้ตต้องตอบ: อยู่ที่ไหน ทำอะไร กลับเมื่อไร ใครเขียน"
+      - "โน้ตสั้นได้ แต่ข้อมูลต้องครบ"
+    solution: "***Mum, I'm at Ploy's house. We're doing our homework. Back at 6. Nam***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p012
+    topics: [english.writing.describing-self]
+    difficulty: 4
+    type: mcq
+    stem: "ครูต่างชาติช่วยกรอกแบบฟอร์มและอยากรู้สัญชาติของเรา ครูควรถามว่าอะไร"
+    choices:
+      - { id: a, text: "What nationality are you?", correct: true, feedback: "ถูก What nationality + are you?" }
+      - { id: b, text: "What is your nation?", feedback: "nation แปลว่า ชาติ ประเทศ ประโยคนี้ไม่ได้ถามสัญชาติของบุคคล" }
+      - { id: c, text: "Where nationality you?", feedback: "ขาดกริยา are และเรียงคำผิด" }
+      - { id: d, text: "Are you nationality?", feedback: "เป็นคำถาม Yes/No ที่ไม่มีความหมาย" }
+    hints:
+      - "What + คำนาม + are you?"
+      - "คำตอบคือ I'm Thai."
+    solution: "***What nationality are you?*** — *I'm Thai.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p013
+    topics: [english.writing.describing-self]
+    difficulty: 4
+    type: order
+    stem: "เรียงประโยคให้เป็นย่อหน้าเรื่อง *My neighbourhood*"
+    items:
+      - "I live in a quiet neighbourhood near the Chao Phraya River."
+      - "There is a small temple and a market near my house."
+      - "Every morning, people buy food at the market before work."
+      - "I like my neighbourhood because the people are friendly."
+    hints:
+      - "เริ่มด้วยประโยคใจความ: อยู่ที่ไหน"
+      - "บอกสิ่งที่มี → สิ่งที่คนทำ → ความรู้สึกพร้อมเหตุผล"
+    solution: "ที่ตั้ง (ประโยคใจความ) → สิ่งที่มีในละแวกบ้าน → กิจวัตรของคนในละแวก → ความรู้สึกพร้อมเหตุผล (ประโยคปิด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p014
+    topics: [english.writing.describing-self]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดเชื่อมประโยคได้ถูกต้องและสมเหตุสมผลที่สุด"
+    choices:
+      - { id: a, text: "My school is far from my house, so I get up early.", correct: true, feedback: "ถูก โรงเรียนไกลเป็นเหตุ ตื่นเช้าเป็นผล ใช้ so" }
+      - { id: b, text: "My school is far from my house because I get up early.", feedback: "สลับเหตุและผล การตื่นเช้าไม่ได้ทำให้โรงเรียนไกล" }
+      - { id: c, text: "My school is far from my house, but I get up early.", feedback: "but ใช้กับสิ่งที่ขัดกัน แต่ทั้งสองส่วนนี้ไปทางเดียวกัน" }
+      - { id: d, text: "My school is far from my house, so because I get up early.", feedback: "ใช้ so กับ because พร้อมกันไม่ได้" }
+    hints:
+      - "อะไรเป็นเหตุ อะไรเป็นผล"
+      - "เหตุ + so + ผล / ผล + because + เหตุ"
+    solution: "***My school is far from my house, so I get up early.*** (หรือ *I get up early because my school is far from my house.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p015
+    topics: [english.writing.describing-self]
+    difficulty: 5
+    type: text
+    stem: "ประโยคนี้ผิดสองจุด แก้แล้วพิมพ์ทั้งประโยค: *My sister don't likes spicy food.*"
+    accepted: ["My sister doesn't like spicy food.", "My sister doesn't like spicy food", "My sister does not like spicy food.", "My sister does not like spicy food"]
+    misconceptions:
+      - { match: "My sister doesn't likes spicy food.", feedback: "หลัง doesn't ใช้กริยารูปเดิม: like" }
+      - { match: "My sister don't like spicy food.", feedback: "ประธาน My sister (she) ใช้ doesn't ไม่ใช่ don't" }
+      - { match: "My sister not like spicy food.", feedback: "ปฏิเสธใน present simple ต้องมี doesn't (does not)" }
+    hints:
+      - "My sister = she ใช้ does/doesn't"
+      - "หลัง doesn't กริยาไม่เติม s"
+    solution: "***My sister doesn't like spicy food.*** (don't → doesn't · likes → like)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p016
+    topics: [english.writing.describing-self]
+    difficulty: 5
+    type: mcq
+    stem: "Liam เขียนอีเมลมาถามว่า *What do your parents do? Do you have any brothers or sisters? What do you do at weekends?* คำตอบใดตอบครบทุกคำถาม"
+    choices:
+      - { id: a, text: "My mum is a nurse and my dad is a taxi driver. I have one younger brother. At weekends, I help at my aunt's shop.", correct: true, feedback: "ถูก ตอบอาชีพพ่อแม่ พี่น้อง และกิจกรรมวันหยุดครบ" }
+      - { id: b, text: "My mum is a nurse and my dad is a taxi driver. I have one younger brother.", feedback: "ยังไม่ได้ตอบว่าทำอะไรในวันหยุด" }
+      - { id: c, text: "I have one younger brother. At weekends, I help at my aunt's shop. I like rugby too!", feedback: "ยังไม่ได้ตอบว่าพ่อแม่ทำอาชีพอะไร" }
+      - { id: d, text: "My parents are nice. I like weekends.", feedback: "ไม่ได้ให้ข้อมูลที่ถาม (อาชีพ พี่น้อง กิจกรรม)" }
+    hints:
+      - "คำถามมีสามข้อ นับดูว่าคำตอบแต่ละข้อตอบกี่ข้อ"
+      - "do ในคำถามแรกถามอาชีพ"
+    solution: "ข้อ a ตอบครบทั้งสามคำถาม: อาชีพพ่อแม่ (nurse, taxi driver) พี่น้อง (one younger brother) และวันหยุด (help at my aunt's shop)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p017
+    topics: [english.writing.describing-self]
+    difficulty: 4
+    type: text
+    stem: "เขียนเป็นภาษาอังกฤษหนึ่งประโยค: ฉันมีพี่ชายหนึ่งคน"
+    accepted: ["I have an older brother.", "I have an older brother", "I have one older brother.", "I have one older brother", "I've got an older brother.", "I've got an older brother", "I've got one older brother.", "I've got one older brother", "I have got an older brother.", "I have got an older brother", "I have got one older brother.", "I have got one older brother", "I have a big brother.", "I have a big brother", "I have one big brother.", "I have one big brother", "I've got a big brother.", "I've got a big brother", "I've got one big brother.", "I've got one big brother", "I have an elder brother.", "I have an elder brother", "I have one elder brother.", "I have one elder brother"]
+    misconceptions:
+      - { match: "I have one brother older.", feedback: "คำคุณศัพท์วางหน้าคำนาม: one older brother" }
+      - { match: "I have a younger brother.", feedback: "younger brother คือน้องชาย พี่ชายคือ older brother" }
+      - { match: "I has an older brother.", feedback: "ประธาน I ใช้ have ไม่ใช่ has" }
+    hints:
+      - "พี่ชาย = older brother (หรือ big brother)"
+      - "I + have + an/one + older brother"
+    solution: "***I have an older brother.*** (หรือ *I have one older brother.* / *I've got a big brother.*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.writing.describing-self.p018
+    topics: [english.writing.describing-self]
+    difficulty: 3
+    type: mcq
+    stem: "ที่อยู่ภาษาไทย: 25 หมู่ 3 ต.ริมใต้ อ.แม่ริม จ.เชียงใหม่ 50180 เขียนในแบบฟอร์มภาษาอังกฤษอย่างไรจึงถูกต้อง"
+    choices:
+      - { id: a, text: "25 Moo 3, Rim Tai, Mae Rim, Chiang Mai 50180", correct: true, feedback: "ถูก เรียงจากหน่วยเล็กไปใหญ่ รหัสไปรษณีย์ท้ายสุด" }
+      - { id: b, text: "Chiang Mai, Mae Rim, Rim Tai, 25 Moo 3 50180", feedback: "เรียงกลับด้าน ที่อยู่เรียงจากบ้านเลขที่ไปจังหวัด" }
+      - { id: c, text: "50180 Chiang Mai Mae Rim Rim Tai Moo 3 25", feedback: "เรียงกลับด้านและรหัสไปรษณีย์อยู่ผิดที่" }
+      - { id: d, text: "25 Moo 3, Mae Rim, Rim Tai, 50180 Chiang Mai", feedback: "อำเภอ (Mae Rim) ใหญ่กว่าตำบล (Rim Tai) ต้องมาทีหลัง" }
+    hints:
+      - "ที่อยู่ภาษาอังกฤษเรียงจากเล็กไปใหญ่เหมือนภาษาไทย"
+      - "บ้านเลขที่ → ตำบล → อำเภอ → จังหวัด → รหัสไปรษณีย์"
+    solution: "***25 Moo 3, Rim Tai, Mae Rim, Chiang Mai 50180***"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

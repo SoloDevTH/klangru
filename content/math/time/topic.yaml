@@ -1,0 +1,74 @@
+id: math.measure.time
+subject: math
+title: { th: เวลาและระยะเวลา, en: Time and duration }
+summary: อ่านปฏิทินและนาฬิกา เขียนบอกเวลาด้วยจุดแบบ 24 ชั่วโมง เปลี่ยนหน่วยเวลา หาระยะเวลา อ่านตารางเวลา และคิดเขตเวลา
+difficulty: 1.5
+minutes: 40
+prerequisites: [math.number.whole-add-sub]
+encompasses:
+  - { id: math.number.whole-add-sub, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: clocks.svg
+    alt: "นาฬิกาเข็มสี่เรือน เรือนแรกเข็มสั้นชี้ 3 เข็มยาวชี้ 12 เขียนว่า 3 นาฬิกาตรง เรือนที่สองเข็มสั้นอยู่กลางระหว่าง 6 กับ 7 เข็มยาวชี้ 6 เขียนว่า 6 นาฬิกา 30 นาที เรือนที่สามเข็มสั้นเลย 9 ไปเล็กน้อย เข็มยาวชี้ 3 เขียนว่า 9 นาฬิกา 15 นาที เรือนที่สี่ใช้เลขโรมัน เข็มสั้นอยู่ระหว่าง X กับ XI เข็มยาวชี้ VIII เขียนว่า 10 นาฬิกา 40 นาที ใต้ภาพเขียนว่าเข็มสั้นบอกชั่วโมง เข็มยาวบอกนาที"
+    caption: "ตัวเลขที่เข็มยาวชี้คูณ 5 ได้จำนวนนาที"
+  - { type: check, problem: math.measure.time.p007, prompt: "เข็มยาวชี้เลข 5 คือกี่นาที" }
+  - type: worked-example
+    title: หาระยะเวลาโดยนับต่อ
+    problem: "ละครเริ่ม 18.45 น. จบ 20.10 น. ละครยาวกี่นาที"
+    steps:
+      - text: "นับจาก 18.45 ไปถึงชั่วโมงเต็ม 19.00 ได้ 15 นาที"
+        why: "1 ชั่วโมงมี 60 นาที จาก 45 ถึง 60 คือ 15 นาที"
+      - text: "จาก 19.00 ถึง 20.00 ได้ 1 ชั่วโมง = 60 นาที"
+      - text: "จาก 20.00 ถึง 20.10 ได้ 10 นาที"
+      - text: "รวม $15 + 60 + 10 = 85$ นาที (1 ชั่วโมง 25 นาที)"
+    answer: "85 นาที"
+  - type: interactive
+    title: นับต่อบนเส้นเวลา
+    caption: "8.45 น. ถึง 10.20 น. (ตัวเลขบนเส้นคือนาทีหลัง 8.00 น.) รวม 15 + 60 + 20 = 95 นาที"
+    widget:
+      kind: number-line
+      min: 30
+      max: 150
+      points:
+        - { value: 45, label: "8.45" }
+        - { value: 60, label: "9.00" }
+        - { value: 120, label: "10.00" }
+        - { value: 140, label: "10.20" }
+      jumps:
+        - { from: 45, to: 60, label: "+15 นาที" }
+        - { from: 60, to: 120, label: "+1 ชั่วโมง" }
+        - { from: 120, to: 140, label: "+20 นาที" }
+  - { type: check, problem: math.measure.time.p009, prompt: "ลองนับต่อจาก 18.45 น." }
+  - type: worked-example
+    title: บินข้ามเขตเวลา
+    problem: "เครื่องบินออกจากกรุงเทพฯ 8.40 น. (เวลาไทย) บินนาน 5 ชั่วโมง 50 นาที ถึงโซลเวลาใดตามเวลาท้องถิ่น (โซลเร็วกว่าไทย 2 ชั่วโมง)"
+    steps:
+      - text: "บวกชั่วโมง: 8.40 + 5 ชั่วโมง = 13.40 น."
+      - text: "บวกนาที: 40 + 50 = 90 นาที = 1 ชั่วโมง 30 นาที จึงได้ 14.30 น. ตามเวลาไทย"
+        why: "นาทีถึง 60 ต้องทดเป็น 1 ชั่วโมง"
+      - text: "ปรับเป็นเวลาโซล: 14.30 + 2 ชั่วโมง = 16.30 น."
+    answer: "16.30 น. ตามเวลาโซล"
+glossary:
+  - { term: เวลา, definition: "ช่วงขณะที่บอกว่าเมื่อไร เช่น 8.30 น." }
+  - { term: ระยะเวลา, definition: "ความนานตั้งแต่เวลาเริ่มถึงเวลาสิ้นสุด เช่น 50 นาที" }
+  - { term: ปีอธิกสุรทิน, definition: "ปีที่มี 366 วัน เดือนกุมภาพันธ์มี 29 วัน มีทุก 4 ปี" }
+  - { term: ระบบ 24 ชั่วโมง, definition: "การบอกเวลาตั้งแต่ 0.00 ถึง 24.00 น. เวลาหลังเที่ยงบวก 12 เช่น บ่ายสามโมงเป็น 15.00 น." }
+  - { term: เขตเวลา, definition: "บริเวณของโลกที่ใช้เวลาเดียวกัน เช่น ญี่ปุ่นเร็วกว่าไทย 2 ชั่วโมง" }
+flashcards:
+  - { front: "1 ชั่วโมงมีกี่นาที 1 นาทีมีกี่วินาที", back: "60 นาที และ 60 วินาที" }
+  - { front: "เดือนที่ลงท้ายด้วย \"ยน\" มีกี่วัน", back: "30 วัน (เมษายน มิถุนายน กันยายน พฤศจิกายน)" }
+  - { front: "บ่าย 4 โมง 25 นาที เขียนแบบ 24 ชั่วโมงอย่างไร", back: "16.25 น." }
+  - { front: "หนึ่งทุ่ม คือกี่นาฬิกา", back: "19.00 น." }
+  - { front: "หาระยะเวลา 8.45 น. ถึง 10.20 น. อย่างไร", back: "นับต่อ 15 นาที + 1 ชั่วโมง + 20 นาที = 1 ชั่วโมง 35 นาที" }
+references:
+  - { title: "นาฬิกา", url: "https://th.wikipedia.org/wiki/นาฬิกา", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "ปีอธิกสุรทิน", url: "https://th.wikipedia.org/wiki/ปีอธิกสุรทิน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Thai six-hour clock", url: "https://en.wikipedia.org/wiki/Thai_six-hour_clock", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "24-hour clock", url: "https://en.wikipedia.org/wiki/24-hour_clock", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

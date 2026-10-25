@@ -1,0 +1,313 @@
+problems:
+  - id: english.reading.non-text-information.p001
+    topics: [english.reading.non-text-information]
+    difficulty: 1
+    type: mcq
+    stem: "ดูป้าย A ประโยคใดตรงกับป้ายนี้"
+    figure: { src: signs-quiz.svg, alt: "ป้ายสี่ป้ายไม่มีตัวหนังสือ A บุหรี่มีควันอยู่ในวงกลมแดงที่มีเส้นขีดทับ B พื้นสีน้ำเงินมีรูปผู้ชายและผู้หญิงคั่นด้วยเส้น C โทรศัพท์มือถืออยู่ในวงกลมแดงที่มีเส้นขีดทับ D พื้นสีเขียวมีรูปคนวิ่งไปทางประตูและลูกศรชี้ไปที่ประตู" }
+    choices:
+      - { id: a, text: "You can't smoke here.", correct: true, feedback: "ถูก วงกลมแดงขีดทับบุหรี่ = ห้ามสูบบุหรี่" }
+      - { id: b, text: "You can smoke here.", feedback: "เส้นแดงขีดทับแปลว่าห้าม ไม่ใช่อนุญาต" }
+      - { id: c, text: "Don't use your phone here.", feedback: "ป้ายห้ามใช้โทรศัพท์คือป้าย C" }
+      - { id: d, text: "This is the way out.", feedback: "ป้ายทางออกคือป้าย D สีเขียว" }
+    hints:
+      - "วงกลมแดงมีเส้นขีดทับแปลว่าห้าม"
+      - "ในวงกลมเป็นรูปอะไร"
+    solution: "***You can't smoke here.*** (No smoking.)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p002
+    topics: [english.reading.non-text-information]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ป้ายกับประโยคที่ตรงความหมาย"
+    figure: { src: signs-quiz.svg, alt: "ป้ายสี่ป้ายไม่มีตัวหนังสือ A บุหรี่มีควันอยู่ในวงกลมแดงที่มีเส้นขีดทับ B พื้นสีน้ำเงินมีรูปผู้ชายและผู้หญิงคั่นด้วยเส้น C โทรศัพท์มือถืออยู่ในวงกลมแดงที่มีเส้นขีดทับ D พื้นสีเขียวมีรูปคนวิ่งไปทางประตูและลูกศรชี้ไปที่ประตู" }
+    pairs:
+      - { left: "A", right: "No smoking." }
+      - { left: "B", right: "Toilets" }
+      - { left: "C", right: "Please switch off your mobile phone." }
+      - { left: "D", right: "Emergency exit" }
+    hints:
+      - "ป้ายวงกลมแดงขีดทับคือห้าม ป้ายสีเขียวมีคนวิ่งคือทางออก"
+      - "รูปผู้ชายกับผู้หญิงบนพื้นสีน้ำเงินคือห้องน้ำ"
+    solution: "A → No smoking. · B → Toilets · C → Please switch off your mobile phone. · D → Emergency exit"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p003
+    topics: [english.reading.non-text-information]
+    difficulty: 1
+    type: numeric
+    stem: "ดูแผนภูมิ *How many students like mango?*"
+    figure: { src: fruit-chart.svg, alt: "แผนภูมิแท่งชื่อ Our Favourite Fruit (Class P.5/2) แกนตั้ง Number of students 0 ถึง 14 แกนนอนเป็นผลไม้ mango 12 คน banana 8 คน rambutan 6 คน durian 5 คน watermelon 3 คน" }
+    answer: { value: 12, unit: "คน" }
+    misconceptions:
+      - { match: 14, feedback: "14 คือค่าสูงสุดของแกน ไม่ใช่ความสูงของแท่ง mango" }
+    hints:
+      - "หาแท่งที่เขียนว่า mango"
+      - "มองจากยอดแท่งไปทางซ้ายถึงตัวเลขบนแกนตั้ง"
+    solution: "แท่ง mango สูงถึง 12 → *Twelve students like mango.* (**12** คน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p004
+    topics: [english.reading.non-text-information]
+    difficulty: 2
+    type: mcq
+    stem: "ดูแผนภูมิ *Which fruit is the least popular?*"
+    figure: { src: fruit-chart.svg, alt: "แผนภูมิแท่งชื่อ Our Favourite Fruit (Class P.5/2) แกนตั้ง Number of students 0 ถึง 14 แกนนอนเป็นผลไม้ mango 12 คน banana 8 คน rambutan 6 คน durian 5 คน watermelon 3 คน" }
+    choices:
+      - { id: a, text: "watermelon", correct: true, feedback: "ถูก แท่งต่ำที่สุด (3 คน)" }
+      - { id: b, text: "mango", feedback: "mango เป็นผลไม้ที่ชอบมากที่สุด (the most popular)" }
+      - { id: c, text: "durian", feedback: "durian มี 5 คน มากกว่า watermelon" }
+      - { id: d, text: "banana", feedback: "banana มี 8 คน" }
+    hints:
+      - "the least = น้อยที่สุด"
+      - "หาแท่งที่ต่ำที่สุด"
+    solution: "***Watermelon*** is the least popular fruit. (3 คน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p005
+    topics: [english.reading.non-text-information]
+    difficulty: 2
+    type: numeric
+    stem: "ดูแผนภูมิ เติมตัวเลข: *___ more students like mango than banana.*"
+    figure: { src: fruit-chart.svg, alt: "แผนภูมิแท่งชื่อ Our Favourite Fruit (Class P.5/2) แกนตั้ง Number of students 0 ถึง 14 แกนนอนเป็นผลไม้ mango 12 คน banana 8 คน rambutan 6 คน durian 5 คน watermelon 3 คน" }
+    answer: { value: 4, unit: "คน" }
+    misconceptions:
+      - { match: 20, feedback: "more ... than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
+      - { match: 12, feedback: "12 คือจำนวนที่ชอบ mango ทั้งหมด ต้องลบจำนวนที่ชอบ banana ด้วย" }
+    hints:
+      - "อ่านค่าของ mango และ banana"
+      - "more ... than = มากกว่ากี่คน ใช้การลบ"
+    solution: "mango 12, banana 8 → 12 − 8 = **4** → *Four more students like mango than banana.*"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p006
+    topics: [english.reading.non-text-information]
+    difficulty: 2
+    type: text
+    stem: "แผนภูมิรูปวงกลมที่แบ่งเป็นชิ้น ๆ ภาษาอังกฤษเรียกว่า *a ___ chart* (คำเดียว)"
+    accepted: ["pie"]
+    misconceptions:
+      - { match: "bar", feedback: "bar chart คือแผนภูมิแท่ง" }
+      - { match: "circle", feedback: "ชื่อที่ใช้คือ pie chart เพราะดูเหมือนพายที่ตัดเป็นชิ้น" }
+    hints:
+      - "ดูเหมือนขนมอบที่ตัดเป็นชิ้นสามเหลี่ยม"
+      - "คำสามตัวอักษร ขึ้นต้นด้วย p"
+    solution: "a **pie** chart (แผนภูมิวงกลม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p007
+    topics: [english.reading.non-text-information]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ดูแผนภูมิ ประโยคใดถูกต้องตามข้อมูล (เลือกทุกข้อที่ถูก)"
+    figure: { src: fruit-chart.svg, alt: "แผนภูมิแท่งชื่อ Our Favourite Fruit (Class P.5/2) แกนตั้ง Number of students 0 ถึง 14 แกนนอนเป็นผลไม้ mango 12 คน banana 8 คน rambutan 6 คน durian 5 คน watermelon 3 คน" }
+    choices:
+      - { id: a, text: "Mango is the most popular fruit.", correct: true, feedback: "ถูก แท่ง mango สูงที่สุด" }
+      - { id: b, text: "Banana is more popular than durian.", correct: true, feedback: "ถูก banana 8 คน durian 5 คน" }
+      - { id: c, text: "Durian is more popular than rambutan.", feedback: "durian 5 คน น้อยกว่า rambutan 6 คน" }
+      - { id: d, text: "Three students like watermelon.", correct: true, feedback: "ถูก แท่ง watermelon สูง 3" }
+      - { id: e, text: "Eight students like rambutan.", feedback: "8 คนคือ banana ส่วน rambutan มี 6 คน" }
+    hints:
+      - "อ่านค่าทุกแท่งก่อน"
+      - "more ... than เปรียบเทียบสองแท่ง"
+    solution: "ถูก: **Mango is the most popular fruit.**, **Banana is more popular than durian.**, **Three students like watermelon.**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p008
+    topics: [english.reading.non-text-information]
+    difficulty: 3
+    type: numeric
+    stem: "ดูแผนภูมิ นักเรียนทุกคนในชั้น ป.5/2 เลือกผลไม้คนละหนึ่งอย่าง *How many students are there in the class?*"
+    figure: { src: fruit-chart.svg, alt: "แผนภูมิแท่งชื่อ Our Favourite Fruit (Class P.5/2) แกนตั้ง Number of students 0 ถึง 14 แกนนอนเป็นผลไม้ mango 12 คน banana 8 คน rambutan 6 คน durian 5 คน watermelon 3 คน" }
+    answer: { value: 34, unit: "คน" }
+    misconceptions:
+      - { match: 5, feedback: "5 คือจำนวนชนิดผลไม้ ต้องบวกจำนวนนักเรียนของทุกแท่ง" }
+      - { match: 14, feedback: "14 คือค่าสูงสุดบนแกน ต้องบวกความสูงของทุกแท่ง" }
+    hints:
+      - "อ่านค่าของทั้งห้าแท่ง"
+      - "บวกทุกค่าเข้าด้วยกัน"
+    solution: "12 + 8 + 6 + 5 + 3 = **34** คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p009
+    topics: [english.reading.non-text-information]
+    difficulty: 3
+    type: numeric
+    stem: "ดูตารางเวลารถจากหมอชิตไปเชียงใหม่ รถคันที่ 1 ใช้เวลาเดินทางกี่ชั่วโมง (ตอบเป็นทศนิยม)"
+    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 18:30 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
+    answer: { value: 10.5, tolerance: 0.01, unit: "ชั่วโมง" }
+    misconceptions:
+      - { match: 10.3, feedback: "30 นาทีคือครึ่งชั่วโมง = 0.5 ชั่วโมง ไม่ใช่ 0.3" }
+      - { match: 26.5, feedback: "ต้องลบเวลาออกจากเวลาถึง ไม่ใช่บวก" }
+    hints:
+      - "Departs 08:00, Arrives 18:30"
+      - "หาผลต่างของเวลา แล้วเปลี่ยน 30 นาทีเป็นชั่วโมง"
+    solution: "18:30 − 08:00 = 10 ชั่วโมง 30 นาที = **10.5** ชั่วโมง (*ten and a half hours*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p010
+    topics: [english.reading.non-text-information]
+    difficulty: 3
+    type: mcq
+    stem: "ดูตารางเวลารถ *I want to take a night bus and sleep on it. I have a meeting in Chiang Mai at 7 a.m. Which bus should I take?*"
+    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 18:30 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
+    choices:
+      - { id: a, text: "Bus 4", correct: true, feedback: "ถูก ออก 20:00 ถึง 06:30 วันรุ่งขึ้น ทันก่อน 7 โมง" }
+      - { id: b, text: "Bus 5", feedback: "ถึง 08:00 สายเกินไป" }
+      - { id: c, text: "Bus 1", feedback: "รถคันที่ 1 ออกตอนเช้า ไม่ใช่รถกลางคืน (night bus)" }
+      - { id: d, text: "Bus 3", feedback: "ถึง 23:30 ตอนดึก ไม่ใช่ตอนเช้า" }
+    hints:
+      - "night bus = รถที่ออกตอนกลางคืน ดูคอลัมน์ Arrives ที่มีคำว่า next day"
+      - "หาเวลาถึงที่ก่อน 07:00 แต่ใกล้ที่สุด"
+    solution: "**Bus 4** ถึง 06:30 (next day) ก่อนประชุม 7 โมง ส่วน Bus 5 ถึง 08:00 สายไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p011
+    topics: [english.reading.non-text-information]
+    difficulty: 3
+    type: mcq
+    stem: "ดูกราฟเส้น *In which month was the rainfall the highest?*"
+    figure: { src: rainfall-graph.svg, alt: "กราฟเส้นชื่อ Rainfall at Our School Weather Station แกนตั้ง Rainfall (mm) 0 ถึง 300 ค่ารายเดือน May 150, Jun 120, Jul 140, Aug 180, Sep 260, Oct 200 เป็นข้อมูลตัวอย่าง" }
+    choices:
+      - { id: a, text: "September", correct: true, feedback: "ถูก 260 mm สูงที่สุด" }
+      - { id: b, text: "October", feedback: "October 200 mm ลดลงจากเดือนก่อน" }
+      - { id: c, text: "June", feedback: "June ต่ำที่สุด (120 mm)" }
+      - { id: d, text: "May", feedback: "May 150 mm" }
+    hints:
+      - "the highest = สูงที่สุด"
+      - "หาจุดที่อยู่สูงที่สุดบนกราฟ"
+    solution: "***September*** (260 mm) The rainfall reached a peak in September."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p012
+    topics: [english.reading.non-text-information]
+    difficulty: 3
+    type: text
+    stem: "ดูกราฟเส้น เติมกริยาช่องที่ 2 หนึ่งคำ: *From August to September, the rainfall ___.*"
+    figure: { src: rainfall-graph.svg, alt: "กราฟเส้นชื่อ Rainfall at Our School Weather Station แกนตั้ง Rainfall (mm) 0 ถึง 300 ค่ารายเดือน May 150, Jun 120, Jul 140, Aug 180, Sep 260, Oct 200 เป็นข้อมูลตัวอย่าง" }
+    accepted: ["increased", "rose", "grew"]
+    misconceptions:
+      - { match: "decreased", feedback: "เส้นจาก Aug (180) ไป Sep (260) ขึ้น ไม่ใช่ลง" }
+      - { match: "fell", feedback: "fell แปลว่า ลดลง แต่เส้นขึ้น" }
+      - { match: "increase", feedback: "เล่าข้อมูลที่ผ่านมาแล้วใช้ past simple: increased" }
+    hints:
+      - "Aug 180 → Sep 260 ขึ้นหรือลง"
+      - "กริยาที่แปลว่า เพิ่มขึ้น ในรูปอดีต"
+    solution: "*From August to September, the rainfall **increased**.* (หรือ *rose* / *went up*)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p013
+    topics: [english.reading.non-text-information]
+    difficulty: 4
+    type: numeric
+    stem: "ดูกราฟเส้น *How much more rain fell in September than in July?* (ตอบเป็น mm)"
+    figure: { src: rainfall-graph.svg, alt: "กราฟเส้นชื่อ Rainfall at Our School Weather Station แกนตั้ง Rainfall (mm) 0 ถึง 300 ค่ารายเดือน May 150, Jun 120, Jul 140, Aug 180, Sep 260, Oct 200 เป็นข้อมูลตัวอย่าง" }
+    answer: { value: 120, unit: "mm" }
+    misconceptions:
+      - { match: 400, feedback: "more ... than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
+      - { match: 80, feedback: "80 คือผลต่างของ September กับ August ต้องเทียบกับ July" }
+    hints:
+      - "อ่านค่า September และ July"
+      - "ลบค่าที่น้อยออกจากค่าที่มาก"
+    solution: "September 260 mm, July 140 mm → 260 − 140 = **120** mm"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p014
+    topics: [english.reading.non-text-information]
+    difficulty: 3
+    type: order
+    stem: "อ่านข้อความแล้วเรียงแท่งของแผนภูมิจากสูงที่สุดไปต่ำที่สุด: *In our class, 10 students walk to school, 15 come by bus and 5 come by bike. Our teacher drives, but we don't count teachers.*"
+    items:
+      - "bus"
+      - "walk"
+      - "bike"
+    hints:
+      - "หาตัวเลขของแต่ละวิธีเดินทาง"
+      - "ไม่นับครู เรียงจากมากไปน้อย"
+    solution: "bus (15) → walk (10) → bike (5) ครูไม่นับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p015
+    topics: [english.reading.non-text-information]
+    difficulty: 4
+    type: match
+    stem: "จับคู่ส่วนของแผนภูมิหรือตารางกับคำอธิบาย"
+    pairs:
+      - { left: "title", right: "tells you what the chart is about" }
+      - { left: "key", right: "explains the colours or symbols" }
+      - { left: "row", right: "goes across a table from left to right" }
+      - { left: "column", right: "goes down a table from top to bottom" }
+    hints:
+      - "title = ชื่อเรื่อง, key = คำอธิบายสัญลักษณ์"
+      - "row เป็นแนวนอน column เป็นแนวตั้ง"
+    solution: "title → บอกว่าแผนภูมิเรื่องอะไร · key → อธิบายสีหรือสัญลักษณ์ · row → แนวนอน · column → แนวตั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p016
+    topics: [english.reading.non-text-information]
+    difficulty: 5
+    type: mcq
+    stem: "ดูแผนภูมิ ข้อใดบรรยายข้อมูลได้ถูกต้อง"
+    figure: { src: fruit-chart.svg, alt: "แผนภูมิแท่งชื่อ Our Favourite Fruit (Class P.5/2) แกนตั้ง Number of students 0 ถึง 14 แกนนอนเป็นผลไม้ mango 12 คน banana 8 คน rambutan 6 คน durian 5 คน watermelon 3 คน" }
+    choices:
+      - { id: a, text: "Twice as many students like mango as rambutan.", correct: true, feedback: "ถูก mango 12 เป็นสองเท่าของ rambutan 6" }
+      - { id: b, text: "Half of the class likes mango.", feedback: "ครึ่งหนึ่งของ 34 คือ 17 แต่ mango มี 12 คน" }
+      - { id: c, text: "The same number of students like banana and rambutan.", feedback: "banana 8 คน rambutan 6 คน ไม่เท่ากัน" }
+      - { id: d, text: "Durian is more popular than banana.", feedback: "durian 5 คน น้อยกว่า banana 8 คน" }
+    hints:
+      - "twice as many ... as = มากเป็นสองเท่าของ"
+      - "ตรวจแต่ละประโยคด้วยตัวเลขจากแผนภูมิ"
+    solution: "***Twice as many students like mango as rambutan.*** (12 = 2 × 6)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p017
+    topics: [english.reading.non-text-information]
+    difficulty: 5
+    type: numeric
+    stem: "แผนภูมิวงกลมแสดงกีฬาที่นักเรียน 40 คนชอบ คำบรรยายเขียนว่า *A quarter of the students like football.* มีนักเรียนกี่คนที่ชอบฟุตบอล"
+    answer: { value: 10, unit: "คน" }
+    misconceptions:
+      - { match: 20, feedback: "20 คือครึ่งหนึ่ง (half) a quarter คือหนึ่งในสี่" }
+      - { match: 4, feedback: "a quarter คือ 1/4 ต้องหาร 40 ด้วย 4 ไม่ใช่ 10" }
+    hints:
+      - "a quarter = หนึ่งในสี่"
+      - "40 ÷ 4"
+    solution: "a quarter = 1/4 → 40 ÷ 4 = **10** คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: english.reading.non-text-information.p018
+    topics: [english.reading.non-text-information]
+    difficulty: 4
+    type: mcq
+    stem: "ดูตารางเวลารถ ป้าของพลอยบอกว่า *I want to leave Bangkok after lunch and arrive in Chiang Mai before midnight.* ป้าควรขึ้นรถคันใด"
+    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 18:30 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
+    choices:
+      - { id: a, text: "Bus 3", correct: true, feedback: "ถูก ออก 13:00 (หลังอาหารกลางวัน) ถึง 23:30 (ก่อนเที่ยงคืน)" }
+      - { id: b, text: "Bus 2", feedback: "ออก 10:30 ก่อนอาหารกลางวัน" }
+      - { id: c, text: "Bus 4", feedback: "ถึง 06:30 วันรุ่งขึ้น หลังเที่ยงคืนแล้ว" }
+      - { id: d, text: "Bus 1", feedback: "ออก 08:00 ตอนเช้า" }
+    hints:
+      - "after lunch = หลังเที่ยงวัน, before midnight = ก่อน 24:00"
+      - "ตรวจทั้งเวลาออกและเวลาถึง"
+    solution: "**Bus 3** ออก 13:00 ถึง 23:30"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
