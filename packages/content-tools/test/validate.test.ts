@@ -172,3 +172,12 @@ test("single backslashes swallowed by double-quoted YAML are caught", async () =
   assert.deepEqual(escapeErrors("ถูกต้อง $\\frac{1}{2} \\times 3$\nบรรทัดใหม่นอกสมการได้"), []);
   assert.match(yamlStringErrors({ problems: [{ stem: "x\by" }] }).join(), /problems\[0\]\.stem/);
 });
+
+test("links to other topics in a lesson must point at real topics", () => {
+  const md = { "lesson.md": "ดู [เรื่องเก่า](/topic/math.x.b/) และ [เรื่องที่ไม่มี](/topic/math.x.ghost/)" };
+  const msgs = errors(raw([
+    { rel: "math/a", topic: topic("math.x.a"), markdown: md },
+    { rel: "math/b", topic: topic("math.x.b") },
+  ]));
+  assert.deepEqual(msgs, ['ลิงก์ไปหัวข้อ "math.x.ghost" ที่ไม่มีอยู่ในคลัง']);
+});

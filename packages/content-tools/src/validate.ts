@@ -325,7 +325,7 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
     if (byId.has(entry.topic.id)) issues.push({ level: "error", file, message: `รหัสหัวข้อ ${entry.topic.id} ซ้ำกับ ${byId.get(entry.topic.id)!.rel}` });
     byId.set(entry.topic.id, entry);
   }
-  for (const { topic, rel, problems } of content.topics) {
+  for (const { topic, rel, problems, markdown } of content.topics) {
     const file = `${rel}/topic.yaml`;
     for (const p of topic.prerequisites) {
       if (p === topic.id) issues.push({ level: "error", file, message: "อ้างตัวเองเป็น prerequisite" });
@@ -339,6 +339,11 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
     for (const p of problems) {
       for (const t of p.topics) {
         if (!byId.has(t)) issues.push({ level: "error", file: `${rel}/problems.yaml`, message: `${p.id}: หัวข้อ "${t}" ไม่มีอยู่ในคลัง` });
+      }
+    }    // ลิงก์ไปหัวข้ออื่นในบทเรียน [ข้อความ](/topic/<id>/) ต้องชี้หัวข้อที่มีจริง
+    for (const [f, md] of Object.entries(markdown)) {
+      for (const m of md.matchAll(/\]\(\/topic\/([^/)\s]+)\/?\)/g)) {
+        if (!byId.has(m[1])) issues.push({ level: "error", file: `${rel}/${f}`, message: `ลิงก์ไปหัวข้อ "${m[1]}" ที่ไม่มีอยู่ในคลัง` });
       }
     }
   }
