@@ -1,0 +1,309 @@
+problems:
+  - id: math.measure.unit-conversion.p001
+    topics: [math.measure.unit-conversion]
+    difficulty: 1
+    type: numeric
+    stem: "3 เมตร เท่ากับกี่เซนติเมตร"
+    answer: { value: 300, unit: cm }
+    hints:
+      - "1 เมตร = 100 เซนติเมตร"
+      - "เปลี่ยนเป็นหน่วยเล็กให้คูณ"
+    misconceptions:
+      - { match: 30, feedback: "ใช้ 1 เมตร = 10 เซนติเมตร ที่ถูกคือ 100 เซนติเมตร" }
+      - { match: 0.03, feedback: "หารแทนคูณ เปลี่ยนเป็นหน่วยเล็กตัวเลขต้องมากขึ้น" }
+    solution: "$3 \\times 100 = 300$ เซนติเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p002
+    topics: [math.measure.unit-conversion]
+    difficulty: 2
+    type: numeric
+    stem: "1 เมตร 25 เซนติเมตร เขียนเป็นทศนิยมได้กี่เมตร"
+    answer: { value: 1.25, tolerance: 0.001, unit: m }
+    hints:
+      - "25 เซนติเมตร เป็นกี่ส่วนร้อยของเมตร"
+      - "$25 \\div 100 = 0.25$"
+    misconceptions:
+      - { match: 125, feedback: "125 คือจำนวนเซนติเมตร โจทย์ให้ตอบเป็นเมตร" }
+      - { match: 1.025, feedback: "ใช้ 1,000 เซนติเมตร = 1 เมตร ที่ถูกคือ 100 เซนติเมตร จึงมีทศนิยมสองตำแหน่ง" }
+    solution: "25 เซนติเมตร $= 25 \\div 100 = 0.25$ เมตร รวม $1 + 0.25 = 1.25$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p003
+    topics: [math.measure.unit-conversion]
+    difficulty: 2
+    type: numeric
+    stem: "2 กิโลกรัม 300 กรัม เขียนเป็นทศนิยมได้กี่กิโลกรัม"
+    answer: { value: 2.3, tolerance: 0.001, unit: kg }
+    hints:
+      - "1,000 กรัม = 1 กิโลกรัม"
+      - "$300 \\div 1{,}000$"
+    misconceptions:
+      - { match: 2.03, feedback: "ใช้ 300 ÷ 10,000 หรือเลื่อนผิดหลัก 300 กรัมคือ 0.300 กิโลกรัม" }
+      - { match: 2300, feedback: "2,300 คือจำนวนกรัม โจทย์ให้ตอบเป็นกิโลกรัม" }
+    solution: "300 กรัม $= 300 \\div 1{,}000 = 0.3$ กิโลกรัม รวม $2 + 0.3 = 2.3$ กิโลกรัม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p004
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: numeric
+    stem: "3 กิโลกรัม 50 กรัม เขียนเป็นทศนิยมได้กี่กิโลกรัม"
+    answer: { value: 3.05, tolerance: 0.001, unit: kg }
+    hints:
+      - "50 กรัม เป็นกี่ส่วนพันของกิโลกรัม"
+      - "$50 \\div 1{,}000 = 0.050$"
+    misconceptions:
+      - { match: 3.5, feedback: "เขียน 50 ต่อท้ายจุดเลย แต่ 1 กิโลกรัมมี 1,000 กรัม 50 กรัมจึงเป็น 0.050 ไม่ใช่ 0.5" }
+      - { match: 3.005, feedback: "เลื่อนเกินไปหนึ่งหลัก 50 กรัม = 0.050 กิโลกรัม (5 อยู่ในหลักส่วนร้อย)" }
+    solution: "50 กรัม $= 50 \\div 1{,}000 = 0.050$ กิโลกรัม รวม $3.050 = 3.05$ กิโลกรัม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p005
+    topics: [math.measure.unit-conversion]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ความยาวที่เท่ากัน"
+    pairs:
+      - { left: "0.5 เมตร", right: "50 เซนติเมตร" }
+      - { left: "0.05 เมตร", right: "5 เซนติเมตร" }
+      - { left: "5 เมตร", right: "500 เซนติเมตร" }
+      - { left: "0.005 เมตร", right: "5 มิลลิเมตร" }
+    hints:
+      - "1 เมตร = 100 เซนติเมตร = 1,000 มิลลิเมตร"
+      - "คูณเมตรด้วย 100 ได้เซนติเมตร"
+    solution: "$0.5 \\times 100 = 50$ ซม. $0.05 \\times 100 = 5$ ซม. $5 \\times 100 = 500$ ซม. และ $0.005 \\times 1{,}000 = 5$ มม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p006
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: numeric
+    stem: "4,750 เมตร เท่ากับกี่กิโลเมตร (ตอบเป็นทศนิยม)"
+    answer: { value: 4.75, tolerance: 0.001, unit: km }
+    hints:
+      - "1,000 เมตร = 1 กิโลเมตร"
+      - "เปลี่ยนเป็นหน่วยใหญ่ให้หารด้วย 1,000"
+    misconceptions:
+      - { match: 4750000, feedback: "คูณแทนหาร เปลี่ยนเป็นหน่วยใหญ่ ตัวเลขต้องน้อยลง" }
+      - { match: 47.5, feedback: "หารด้วย 100 แต่ 1 กิโลเมตร = 1,000 เมตร ต้องหารด้วย 1,000" }
+    solution: "$4{,}750 \\div 1{,}000 = 4.75$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p007
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: numeric
+    stem: "ภาพยนตร์ยาว 1.5 ชั่วโมง เท่ากับกี่นาที"
+    answer: { value: 90, unit: นาที }
+    hints:
+      - "1.5 ชั่วโมง คือ 1 ชั่วโมงกับครึ่งชั่วโมง"
+      - "1 ชั่วโมง = 60 นาที ครึ่งชั่วโมงจึงเป็น 30 นาที"
+    misconceptions:
+      - { match: 110, feedback: "อ่าน 1.5 ชั่วโมงเป็น 1 ชั่วโมง 50 นาที แต่ 0.5 ชั่วโมงคือครึ่งชั่วโมง = 30 นาที" }
+      - { match: 150, feedback: "ใช้ 1 ชั่วโมง = 100 นาที เวลาไม่ใช่ระบบสิบ 1 ชั่วโมง = 60 นาที" }
+    solution: "$1.5 \\times 60 = 90$ นาที (60 นาทีกับอีก 30 นาที)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p008
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: numeric
+    stem: "ป้ายริมถนนเขียนว่า \"หาดใหญ่ 12.5 กม.\" ระยะทางนี้เท่ากับกี่เมตร"
+    answer: { value: 12500, unit: m }
+    hints:
+      - "1 กิโลเมตร = 1,000 เมตร"
+      - "เปลี่ยนเป็นหน่วยเล็กให้คูณด้วย 1,000"
+    misconceptions:
+      - { match: 1250, feedback: "คูณด้วย 100 แต่ 1 กิโลเมตร = 1,000 เมตร" }
+      - { match: 12005, feedback: "อ่าน 12.5 กม. เป็น 12 กิโลเมตร 5 เมตร แต่ .5 กิโลเมตรคือ 500 เมตร" }
+    solution: "$12.5 \\times 1{,}000 = 12{,}500$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p009
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: order
+    stem: "เรียงความยาวจากสั้นที่สุดไปยาวที่สุด"
+    items:
+      - "1 เมตร 5 เซนติเมตร"
+      - "1,150 มิลลิเมตร"
+      - "1.2 เมตร"
+      - "125 เซนติเมตร"
+    hints:
+      - "เปลี่ยนทุกความยาวเป็นเซนติเมตร"
+      - "1 เมตร 5 ซม. = 105 ซม. 1,150 มม. = 115 ซม. 1.2 ม. = 120 ซม."
+    solution: "เป็นเซนติเมตร: 105, 115, 120, 125 จึงเรียงได้ 1 เมตร 5 ซม. < 1,150 มม. < 1.2 ม. < 125 ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p010
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: numeric
+    stem: "ลูกศรบนสายวัดชี้ที่ความยาวกี่เมตร (ตอบเป็นทศนิยม)"
+    figure: { src: tape-problem.svg, alt: "สายวัดตั้งแต่ 0 ถึง 3 เมตร ระหว่างเมตรติดกันแบ่งเป็น 10 ช่องเท่ากัน มีขีดยาวกว่าที่ช่องที่ 5 ลูกศรสีแดงชี้ที่ขีดที่ 4 ถัดจาก 2 เมตร" }
+    answer: { value: 2.4, tolerance: 0.001, unit: m }
+    hints:
+      - "1 เมตรแบ่งเป็น 10 ช่อง ช่องละกี่เมตร"
+      - "ช่องละ 0.1 เมตร (10 เซนติเมตร) ลูกศรเลย 2 เมตรไปกี่ช่อง"
+    misconceptions:
+      - { match: 2.04, feedback: "นับช่องละ 1 เซนติเมตร แต่ 1 ช่องคือ 10 เซนติเมตร = 0.1 เมตร" }
+      - { match: 24, feedback: "24 คือจำนวนช่องทั้งหมดจาก 0 โจทย์ให้ตอบเป็นเมตร" }
+    solution: "1 เมตรแบ่ง 10 ช่อง ช่องละ 0.1 เมตร ลูกศรเลย 2 เมตรไป 4 ช่อง ได้ $2 + 0.4 = 2.4$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p011
+    topics: [math.measure.unit-conversion]
+    difficulty: 4
+    type: numeric
+    stem: "แม่ซื้อหมู 1.25 กิโลกรัม และกุ้ง 750 กรัม แม่ซื้อของรวมกี่กิโลกรัม"
+    answer: { value: 2, tolerance: 0.001, unit: kg }
+    hints:
+      - "เปลี่ยนให้เป็นหน่วยเดียวกันก่อน"
+      - "750 กรัม = 0.75 กิโลกรัม แล้วบวก 1.25"
+    misconceptions:
+      - { match: 751.25, feedback: "บวก 1.25 กับ 750 โดยไม่เปลี่ยนหน่วย กิโลกรัมกับกรัมบวกกันตรง ๆ ไม่ได้" }
+      - { match: 8.75, feedback: "เปลี่ยน 750 กรัมเป็น 7.5 กิโลกรัม (หารด้วย 100) ต้องหารด้วย 1,000 ได้ 0.75" }
+    solution: "750 กรัม $= 0.75$ กิโลกรัม รวม $1.25 + 0.75 = 2$ กิโลกรัม (หรือ $1{,}250 + 750 = 2{,}000$ กรัม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p012
+    topics: [math.measure.unit-conversion]
+    difficulty: 4
+    type: numeric
+    stem: "ริบบิ้นยาว 3 เมตร ตัดเป็นเส้นยาวเส้นละ 35 เซนติเมตร 8 เส้น เหลือริบบิ้นยาวกี่เมตร (ตอบเป็นทศนิยม)"
+    answer: { value: 0.2, tolerance: 0.001, unit: m }
+    hints:
+      - "หาความยาวที่ใช้ไปเป็นเซนติเมตรก่อน"
+      - "$8 \\times 35 = 280$ เซนติเมตร แล้วเปลี่ยนเป็นเมตร"
+    misconceptions:
+      - { match: 20, feedback: "20 คือจำนวนเซนติเมตร โจทย์ให้ตอบเป็นเมตร" }
+      - { match: 2.8, feedback: "2.8 เมตรคือความยาวที่ใช้ไป ต้องนำไปลบจาก 3 เมตร" }
+    solution: "ใช้ไป $8 \\times 35 = 280$ เซนติเมตร $= 2.8$ เมตร เหลือ $3 - 2.8 = 0.2$ เมตร (20 เซนติเมตร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p013
+    topics: [math.measure.unit-conversion]
+    difficulty: 4
+    type: numeric
+    stem: "1 ฟุต = 12 นิ้ว งูตัวหนึ่งยาว 4 ฟุต งูยาวกี่นิ้ว"
+    answer: { value: 48, unit: นิ้ว }
+    hints:
+      - "ฟุตเป็นหน่วยใหญ่กว่านิ้ว เปลี่ยนเป็นนิ้วให้คูณ"
+      - "ทำตาราง: 1 ฟุต 12 นิ้ว 2 ฟุต 24 นิ้ว ..."
+    misconceptions:
+      - { match: 16, feedback: "บวก 4 กับ 12 ต้องคูณ เพราะทุกฟุตมี 12 นิ้ว" }
+      - { match: 3, feedback: "หาร 12 ด้วย 4 แต่เปลี่ยนเป็นหน่วยเล็กต้องคูณ" }
+    solution: "$4 \\times 12 = 48$ นิ้ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p014
+    topics: [math.measure.unit-conversion]
+    difficulty: 4
+    type: mcq
+    stem: "5 ไมล์ประมาณ 8 กิโลเมตร ระยะทาง 40 ไมล์ประมาณกี่กิโลเมตร"
+    choices:
+      - { id: a, text: "64 กิโลเมตร", correct: true }
+      - { id: b, text: "25 กิโลเมตร", feedback: "หารแทนคูณ กิโลเมตรสั้นกว่าไมล์ ระยะทางเดียวกันต้องมีจำนวนกิโลเมตรมากกว่า" }
+      - { id: c, text: "43 กิโลเมตร", feedback: "บวก 3 เข้าไป แต่ความสัมพันธ์เป็นแบบเท่า (5 ต่อ 8) ไม่ใช่บวกเพิ่มคงที่" }
+      - { id: d, text: "320 กิโลเมตร", feedback: "คูณ 40 กับ 8 โดยตรง แต่ 8 กิโลเมตรคู่กับ 5 ไมล์ ไม่ใช่ 1 ไมล์" }
+    hints:
+      - "40 ไมล์ มี 5 ไมล์อยู่กี่ชุด"
+      - "$40 \\div 5 = 8$ ชุด ชุดละ 8 กิโลเมตร"
+    solution: "40 ไมล์ $= 8$ ชุดของ 5 ไมล์ แต่ละชุดประมาณ 8 กิโลเมตร จึงประมาณ $8 \\times 8 = 64$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p015
+    topics: [math.measure.unit-conversion]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำผลไม้ 2.5 ลิตร รินใส่แก้วแก้วละ 250 มิลลิลิตร ได้กี่แก้ว"
+    answer: { value: 10, unit: แก้ว }
+    hints:
+      - "เปลี่ยน 2.5 ลิตรเป็นมิลลิลิตร"
+      - "$2{,}500 \\div 250$"
+    misconceptions:
+      - { match: 0.01, feedback: "หาร 2.5 ด้วย 250 โดยไม่เปลี่ยนหน่วย ต้องเปลี่ยนลิตรเป็นมิลลิลิตรก่อน" }
+      - { match: 1, feedback: "ใช้ 2.5 ลิตร = 250 มิลลิลิตร ที่ถูกคือ 2,500 มิลลิลิตร" }
+    solution: "2.5 ลิตร $= 2{,}500$ มิลลิลิตร ได้ $2{,}500 \\div 250 = 10$ แก้ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p016
+    topics: [math.measure.unit-conversion]
+    difficulty: 5
+    type: numeric
+    stem: "สนามวิ่งรอบละ 400 เมตร น้องวิ่งวันละ 6 รอบ ทุกวันจันทร์ถึงเสาร์ (6 วัน) และวันอาทิตย์วิ่งเพิ่มอีก 2.6 กิโลเมตร สัปดาห์นี้น้องวิ่งรวมกี่กิโลเมตร"
+    answer: { value: 17, tolerance: 0.001, unit: km }
+    hints:
+      - "หาระยะทางจันทร์ถึงเสาร์เป็นเมตรก่อน แล้วเปลี่ยนเป็นกิโลเมตร"
+      - "$400 \\times 6 \\times 6$ เมตร แล้วหารด้วย 1,000 จึงบวก 2.6"
+    misconceptions:
+      - { match: 14.4, feedback: "14.4 กิโลเมตรคือจันทร์ถึงเสาร์ ยังไม่ได้บวกวันอาทิตย์" }
+      - { match: 14402.6, feedback: "บวก 2.6 เข้ากับ 14,400 เมตรโดยไม่เปลี่ยนหน่วย ต้องเปลี่ยนให้เป็นกิโลเมตรก่อน" }
+    solution: "จันทร์ถึงเสาร์ $400 \\times 6 \\times 6 = 14{,}400$ เมตร $= 14.4$ กิโลเมตร รวมวันอาทิตย์ $14.4 + 2.6 = 17$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p017
+    topics: [math.measure.unit-conversion]
+    difficulty: 5
+    type: numeric
+    stem: "1 ตารางเมตร เท่ากับกี่ตารางเซนติเมตร"
+    answer: { value: 10000, unit: ตร.ซม. }
+    hints:
+      - "1 ตารางเมตรคือจัตุรัสยาวด้านละ 1 เมตร = 100 เซนติเมตร"
+      - "พื้นที่ = $100 \\times 100$ ตารางเซนติเมตร"
+    misconceptions:
+      - { match: 100, feedback: "ใช้อัตราส่วนของความยาว (1 ม. = 100 ซม.) แต่พื้นที่คิดสองด้าน ต้องเป็น $100 \\times 100$" }
+      - { match: 200, feedback: "บวก 100 กับ 100 พื้นที่ต้องคูณกว้างกับยาว" }
+    solution: "จัตุรัสด้านละ 100 เซนติเมตร มีพื้นที่ $100 \\times 100 = 10{,}000$ ตารางเซนติเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p018
+    topics: [math.measure.unit-conversion]
+    difficulty: 5
+    type: numeric
+    stem: "รถกระบะเปล่าหนัก 1.8 เมตริกตัน บรรทุกข้าวสาร 24 กระสอบ กระสอบละ 50 กิโลกรัม รถกับข้าวสารหนักรวมกี่เมตริกตัน (ตอบเป็นทศนิยม)"
+    answer: { value: 3, tolerance: 0.001, unit: t }
+    hints:
+      - "หาน้ำหนักข้าวสารเป็นกิโลกรัม แล้วเปลี่ยนเป็นเมตริกตัน"
+      - "$24 \\times 50 = 1{,}200$ กิโลกรัม $= 1.2$ เมตริกตัน"
+    misconceptions:
+      - { match: 1201.8, feedback: "บวก 1.8 เมตริกตันกับ 1,200 กิโลกรัมโดยตรง ต้องเปลี่ยนเป็นหน่วยเดียวกันก่อน" }
+      - { match: 13.8, feedback: "เปลี่ยน 1,200 กิโลกรัมเป็น 12 เมตริกตัน (หาร 100) ที่ถูกคือหาร 1,000 ได้ 1.2" }
+    solution: "ข้าวสาร $24 \\times 50 = 1{,}200$ กิโลกรัม $= 1.2$ เมตริกตัน รวม $1.8 + 1.2 = 3$ เมตริกตัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.measure.unit-conversion.p019
+    topics: [math.measure.unit-conversion]
+    difficulty: 3
+    type: mcq
+    stem: "$35 \\div 100 = 0.35$ เลข 5 ในคำตอบอยู่ในหลักใด"
+    choices:
+      - { id: a, text: "หลักส่วนร้อย", correct: true }
+      - { id: b, text: "หลักส่วนสิบ", feedback: "หลักส่วนสิบคือตำแหน่งแรกหลังจุด ซึ่งเป็นเลข 3" }
+      - { id: c, text: "หลักหน่วย", feedback: "เดิม 5 อยู่หลักหน่วย แต่หารด้วย 100 แล้วเลื่อนไปทางขวา 2 หลัก" }
+      - { id: d, text: "หลักส่วนพัน", feedback: "0.35 มีทศนิยมสองตำแหน่ง เลข 5 อยู่ตำแหน่งที่สอง ไม่ใช่ที่สาม" }
+    hints:
+      - "หารด้วย 100 ทุกหลักเลื่อนไปทางขวา 2 หลัก"
+      - "หลักหน่วย → หลักส่วนสิบ → หลักส่วนร้อย"
+    solution: "เลข 5 เดิมอยู่หลักหน่วย หารด้วย 100 เลื่อนไปทางขวา 2 หลักถึงหลักส่วนร้อย (0.35 = 3 ส่วนสิบ 5 ส่วนร้อย) เช่น 35 ซม. = 0.35 ม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true

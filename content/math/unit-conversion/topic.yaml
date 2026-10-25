@@ -1,0 +1,75 @@
+id: math.measure.unit-conversion
+subject: math
+title: { th: การเปลี่ยนหน่วยและหน่วยในรูปทศนิยม, en: "Converting units and decimal measurements" }
+summary: ความสัมพันธ์ของหน่วยความยาว น้ำหนัก ปริมาตร เปลี่ยนหน่วยด้วยการคูณหาร เขียนหน่วยผสมเป็นทศนิยม เช่น 1 เมตร 25 เซนติเมตร = 1.25 เมตร และแก้โจทย์ที่ต้องเปลี่ยนหน่วย
+difficulty: 2.5
+minutes: 35
+prerequisites: [math.measure.length, math.measure.weight, math.number.decimals]
+encompasses:
+  - { id: math.number.decimals, weight: 0.3 }
+  - { id: math.measure.length, weight: 0.2 }
+  - { id: math.measure.weight, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: unit-ladder.svg
+    alt: "บันไดหน่วยสามชุด ความยาว: กิโลเมตร เมตร เซนติเมตร มิลลิเมตร ลงล่างคูณ 1,000 คูณ 100 คูณ 10 ขึ้นบนหารด้วยจำนวนเดียวกัน น้ำหนัก: เมตริกตัน กิโลกรัม กรัม ลงล่างคูณ 1,000 ทั้งสองขั้น ปริมาตร: ลิตร มิลลิลิตร ลงล่างคูณ 1,000 ข้างภาพเขียนว่า ลงล่างหน่วยเล็กลงให้คูณ ตัวเลขมากขึ้น ขึ้นบนหน่วยใหญ่ขึ้นให้หาร ตัวเลขน้อยลง"
+    caption: "เปลี่ยนเป็นหน่วยเล็กให้คูณ เปลี่ยนเป็นหน่วยใหญ่ให้หาร"
+  - { type: check, problem: math.measure.unit-conversion.p006, prompt: "เปลี่ยนเป็นหน่วยใหญ่ ต้องคูณหรือหาร" }
+  - type: figure
+    src: decimal-chart.svg
+    alt: "ตารางหลัก ร้อย สิบ หน่วย ส่วนสิบ ส่วนร้อย แถวบนเขียน 125 เซนติเมตร เลข 1 2 5 อยู่หลักร้อย สิบ หน่วย ลูกศรแสดงการหารด้วย 100 เลื่อน 2 หลัก แถวล่างเขียน 1.25 เมตร เลข 1 อยู่หลักหน่วย 2 อยู่หลักส่วนสิบ 5 อยู่หลักส่วนร้อย ใต้ภาพเขียนว่า 125 เซนติเมตร = 1 เมตร 25 เซนติเมตร = 1.25 เมตร"
+    caption: "หารด้วย 100 ทุกหลักเลื่อนไปทางขวา 2 หลัก"
+  - type: interactive
+    title: 1.25 เมตรบนเส้นจำนวน
+    caption: "1.25 เมตรอยู่เลย 1 เมตรไป 25 เซนติเมตร คือหนึ่งในสี่ของทางจาก 1 ไป 2"
+    widget:
+      kind: number-line
+      min: 0
+      max: 2
+      points:
+        - { value: 1, label: "1 ม." }
+        - { value: 1.25, label: "1.25 ม." }
+      jumps:
+        - { from: 1, to: 1.25, label: "+25 ซม." }
+  - type: worked-example
+    title: บวกน้ำหนักต่างหน่วยแล้วตอบเป็นทศนิยม
+    problem: "แม่ซื้อหมู 1.25 กิโลกรัม และกุ้ง 750 กรัม รวมกี่กิโลกรัม"
+    steps:
+      - text: "เปลี่ยนเป็นกรัมทั้งคู่: $1.25 \\times 1{,}000 = 1{,}250$ กรัม"
+        why: "บวกได้เมื่อหน่วยเดียวกันเท่านั้น"
+      - text: "รวม: $1{,}250 + 750 = 2{,}000$ กรัม"
+      - text: "เปลี่ยนกลับเป็นกิโลกรัม: $2{,}000 \\div 1{,}000 = 2$ กิโลกรัม"
+    answer: "2 กิโลกรัม"
+  - type: worked-example
+    title: โจทย์หลายขั้นที่ต้องเปลี่ยนหน่วย
+    problem: "สนามวิ่งรอบละ 400 เมตร พี่วิ่งวันละ 12 รอบ ทุกวันจันทร์ถึงศุกร์ สัปดาห์นี้พี่วิ่งรวมกี่กิโลเมตร"
+    steps:
+      - text: "วันละ $400 \\times 12 = 4{,}800$ เมตร"
+      - text: "5 วัน: $4{,}800 \\times 5 = 24{,}000$ เมตร"
+      - text: "เปลี่ยนเป็นกิโลเมตร: $24{,}000 \\div 1{,}000 = 24$ กิโลเมตร"
+        why: "เปลี่ยนเป็นหน่วยใหญ่จึงหาร"
+      - text: "ตรวจ: วันละ 4.8 กิโลเมตร 5 วันได้ประมาณ $5 \\times 5 = 25$ ใกล้ 24 ✓"
+    answer: "24 กิโลเมตร"
+  - { type: check, problem: math.measure.unit-conversion.p007, prompt: "1 ชั่วโมงมี 60 นาที ไม่ใช่ 100" }
+glossary:
+  - { term: หน่วยผสม, definition: "การบอกปริมาณด้วยสองหน่วย เช่น 1 เมตร 25 เซนติเมตร" }
+  - { term: กิโล, definition: "คำนำหน้าหน่วย แปลว่าหนึ่งพัน เช่น 1 กิโลกรัม = 1,000 กรัม" }
+  - { term: เซนติ, definition: "คำนำหน้าหน่วย แปลว่าหนึ่งในร้อย เช่น 1 เซนติเมตร = 0.01 เมตร" }
+  - { term: มิลลิ, definition: "คำนำหน้าหน่วย แปลว่าหนึ่งในพัน เช่น 1 มิลลิลิตร = 0.001 ลิตร" }
+  - { term: หน่วยอังกฤษ, definition: "ระบบหน่วยที่ใช้นิ้ว ฟุต ไมล์ ปอนด์ ไพนต์" }
+flashcards:
+  - { front: "เปลี่ยนเป็นหน่วยเล็กต้องคูณหรือหาร", back: "คูณ (ตัวเลขมากขึ้น)" }
+  - { front: "1 เมตร 5 เซนติเมตร เป็นกี่เมตร", back: "1.05 เมตร" }
+  - { front: "3 กิโลกรัม 50 กรัม เป็นกี่กิโลกรัม", back: "3.05 กิโลกรัม (3.050)" }
+  - { front: "1.5 ชั่วโมง เป็นกี่นาที", back: "90 นาที" }
+  - { front: "5 ไมล์ ประมาณกี่กิโลเมตร", back: "ประมาณ 8 กิโลเมตร" }
+references:
+  - { title: "ระบบเมตริก", url: "https://th.wikipedia.org/wiki/ระบบเมตริก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Conversion of units", url: "https://en.wikipedia.org/wiki/Conversion_of_units", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Metric prefix", url: "https://en.wikipedia.org/wiki/Metric_prefix", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
