@@ -1,0 +1,72 @@
+id: computer.web.html-css
+subject: computer
+title: { th: "เอกสารเว็บ: HTML และ CSS", en: "Web documents: HTML and CSS" }
+summary: แยกเอกสารเว็บเป็นเนื้อหา โครงสร้าง และการแสดงผล แท็ก HTML พื้นฐาน ลิงก์และภาพ กฎ CSS ตัวเลือก แบบจำลองกล่อง และเหตุผลที่ต้องแยกเพื่อการเข้าถึงและการดูแล
+difficulty: 4
+minutes: 40
+prerequisites: [computer.networks.internet-basics, computer.data.digital-data-basics]
+encompasses:
+  - { id: computer.networks.internet-basics, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: three-layers.svg
+    alt: "สามกรอบเรียงจากซ้ายไปขวาพร้อมลูกศร กรอบ 1 เนื้อหา ข้อความล้วน กีฬาสีโรงเรียน แข่งวันที่ 15 ธันวาคม ที่สนามกลาง วิ่งผลัด ชักเย่อ ดูตารางแข่งขัน กรอบ 2 โครงสร้าง HTML บอกว่าแต่ละส่วนคืออะไร เป็นโค้ด h1 กีฬาสีโรงเรียน, p ที่มี strong 15 ธันวาคม, ul ที่มี li วิ่งผลัด และ li ชักเย่อ และ a href schedule.html ดูตารางแข่งขัน กรอบ 3 การแสดงผล CSS บอกว่าแต่ละส่วนหน้าตาอย่างไร เป็นหน้าต่างเบราว์เซอร์ หัวเรื่องตัวใหญ่สีเขียวเข้ม วันที่ตัวหนา รายการมีจุดนำหน้า ลิงก์สีน้ำเงินขีดเส้นใต้ และกฎ h1 color darkgreen"
+    caption: "เนื้อหา โครงสร้าง และการแสดงผลของหน้าเว็บเดียวกัน"
+  - type: figure
+    src: dom-tree.svg
+    alt: "แผนภาพต้นไม้ html อยู่บนสุด มีลูกสองตัวคือ head และ body head มีลูก meta title link body มีลูก h1 p ul img a โดย p มีลูก strong และ ul มีลูก li สองตัว ข้อความกำกับว่า head คือข้อมูลเกี่ยวกับหน้าซึ่งไม่แสดงในเนื้อหา และ body คือสิ่งที่แสดงบนจอ อิลิเมนต์ซ้อนกันเป็นพ่อแม่และลูก"
+    caption: "อิลิเมนต์ที่ซ้อนกันถูกต้องเป็นแผนภาพต้นไม้"
+  - type: worked-example
+    title: เลือกแท็กตามความหมายให้ประกาศรับสมัครชมรม
+    problem: "ชมรมหุ่นยนต์อยากทำหน้าเว็บที่มีหัวเรื่อง \"รับสมัครสมาชิกใหม่\" ย่อหน้าบอกว่ารับถึง 30 มิถุนายน ขั้นตอนสมัคร 3 ขั้นที่ต้องทำตามลำดับ ภาพหุ่นยนต์ของชมรม และลิงก์ไปแบบฟอร์ม form.html จงเขียนส่วน body"
+    steps:
+      - text: "แยกเนื้อหาเป็นชิ้น แล้วถามว่าแต่ละชิ้นคืออะไร: หัวเรื่อง ย่อหน้า รายการที่มีลำดับ ภาพ ลิงก์"
+        why: "เลือกแท็กตามความหมาย ไม่ใช่ตามหน้าตา หน้าตาค่อยกำหนดด้วย CSS"
+      - text: "หัวเรื่อง → `<h1>รับสมัครสมาชิกใหม่</h1>` ย่อหน้า → `<p>รับสมัครถึง <strong>30 มิถุนายน</strong></p>`"
+      - text: "ขั้นตอนที่ต้องทำตามลำดับ → `<ol>` ที่มี `<li>` สามข้อ เพราะลำดับมีความหมาย"
+        why: "ถ้าลำดับไม่สำคัญ เช่น รายชื่ออุปกรณ์ จึงใช้ `<ul>`"
+      - text: "ภาพ → `<img src=\"robot.jpg\" alt=\"หุ่นยนต์สี่ล้อของชมรมกำลังเก็บลูกบอลสีแดง\">` บอกสิ่งที่ภาพสื่อใน alt"
+      - text: "ลิงก์ → `<a href=\"form.html\">กรอกใบสมัคร</a>` ข้อความลิงก์บอกว่ากดแล้วไปไหน ไม่ใช่ \"คลิกที่นี่\""
+      - text: "ตรวจว่าทุกแท็กที่เปิดมีแท็กปิด (ยกเว้น img) และปิดในลำดับย้อนกลับของการเปิด"
+    answer: "body มี h1, p ที่มี strong, ol ที่มี li 3 ข้อ, img ที่มี alt และ a href=\"form.html\" ตามลำดับ"
+  - { type: check, problem: computer.web.html-css.p004, prompt: "ดูหน้าเว็บแล้วบอกว่าใช้รายการแบบใด" }
+  - type: figure
+    src: box-model.svg
+    alt: "แบบจำลองกล่อง สี่ชั้นจากนอกเข้าใน margin 20px ระยะห่างภายนอกเป็นพื้นใส เส้นประ ถัดเข้าไปคือ border 2px เส้นขอบสีดำ padding 10px ระยะห่างภายใน และตรงกลางคือเนื้อหา width 200px ลูกศรด้านล่างบอกความกว้างรวมเท่ากับ 200 บวก 2 คูณ (10 + 2 + 20) เท่ากับ 264 px"
+    caption: "width วัดแค่เนื้อหา ความกว้างรวมต้องบวก padding border และ margin ทั้งสองข้าง"
+  - type: worked-example
+    title: การ์ดสองใบวางข้างกันได้หรือไม่
+    problem: "หน้าเว็บกว้าง 700 px ต้องการวางการ์ดสองใบข้างกัน การ์ดแต่ละใบมี `width: 300px; padding: 15px; border: 1px solid; margin: 10px;` วางได้หรือไม่ ถ้าไม่ได้ ควรลด margin เหลือเท่าใด"
+    steps:
+      - text: "ความกว้างรวมของการ์ดหนึ่งใบ = 300 + 2 × (15 + 1 + 10) = 352 px"
+        why: "padding border และ margin มีทั้งด้านซ้ายและขวา จึงคูณ 2"
+      - text: "สองใบ = 2 × 352 = 704 px เกิน 700 px เบราว์เซอร์จึงต้องดันใบที่สองลงไปบรรทัดใหม่"
+      - text: "เกินไป 4 px การ์ดสองใบมี margin รวม 4 ด้าน จึงลด margin ด้านละ 1 px เหลือ 9 px ได้ 2 × (300 + 2 × 25) = 700 px พอดี"
+      - text: "ถ้าใช้ margin 8 px: 2 × (300 + 2 × 24) = 696 px มีที่เหลือ 4 px กันพลาดได้"
+    answer: "วางไม่ได้ เพราะรวม 704 px ลด margin เหลือ 9 px จะพอดี 700 px (หรือ 8 px ได้ 696 px)"
+  - { type: check, problem: computer.web.html-css.p007, prompt: "คำนวณความกว้างรวมของกล่องอีกแบบ" }
+glossary:
+  - { term: HTML, definition: "ภาษามาร์กอัปที่ใช้บอกโครงสร้างของเอกสารเว็บ ว่าแต่ละส่วนคือหัวเรื่อง ย่อหน้า รายการ ลิงก์ หรือภาพ" }
+  - { term: CSS, definition: "ภาษาที่กำหนดการแสดงผลของเอกสารเว็บ เช่น สี ขนาดตัวอักษร ระยะห่าง และการจัดวาง" }
+  - { term: อิลิเมนต์ (element), definition: "ส่วนหนึ่งของเอกสาร HTML ประกอบด้วยแท็กเปิด เนื้อหา และแท็กปิด เช่น แท็กเปิด p คำว่าสวัสดี และแท็กปิด /p" }
+  - { term: แอตทริบิวต์ (attribute), definition: "ข้อมูลเพิ่มเติมในแท็กเปิด เช่น href ของลิงก์ src และ alt ของภาพ class และ id" }
+  - { term: ตัวเลือก (selector), definition: "ส่วนของกฎ CSS ที่บอกว่าจะตกแต่งอิลิเมนต์ใด เช่น p, .note, #menu" }
+  - { term: แบบจำลองกล่อง (box model), definition: "อิลิเมนต์ทุกตัวเป็นกล่องสี่ชั้น เนื้อหา padding border และ margin" }
+  - { term: ที่อยู่สัมพัทธ์ (relative URL), definition: "ที่อยู่ที่อ้างจากตำแหน่งของหน้าปัจจุบัน เช่น photos/day1.html" }
+flashcards:
+  - { front: "สามชั้นของเอกสารเว็บ", back: "เนื้อหา (ข้อความ) โครงสร้าง (HTML) การแสดงผล (CSS)" }
+  - { front: "ul กับ ol ต่างกันอย่างไร", back: "ul รายการไม่มีลำดับ (มีจุด) ol รายการมีลำดับ (มีหมายเลข) ทั้งคู่ใช้ li เป็นแต่ละข้อ" }
+  - { front: "ตัวเลือก .note กับ #note", back: ".note เลือกทุกอิลิเมนต์ที่มี class=\"note\" ส่วน #note เลือกอิลิเมนต์เดียวที่มี id=\"note\"" }
+  - { front: "ความกว้างรวมของกล่อง", back: "width + 2 × (padding + border + margin)" }
+  - { front: "ทำไมต้องแยก HTML กับ CSS", back: "แก้หน้าตาทั้งเว็บที่เดียว โปรแกรมอ่านหน้าจอใช้โครงสร้างได้ ใช้ได้หลายอุปกรณ์" }
+references:
+  - { title: "เอชทีเอ็มแอล", url: "https://th.wikipedia.org/wiki/เอชทีเอ็มแอล", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "แคสเคดดิงสไตล์ชีตส์", url: "https://th.wikipedia.org/wiki/แคสเคดดิงสไตล์ชีตส์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Separation of content and presentation", url: "https://en.wikipedia.org/wiki/Separation_of_content_and_presentation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "CSS box model", url: "https://en.wikipedia.org/wiki/CSS_box_model", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
