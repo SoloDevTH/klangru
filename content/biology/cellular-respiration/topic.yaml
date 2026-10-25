@@ -1,0 +1,65 @@
+id: biology.cells.cellular-respiration
+subject: biology
+title: { th: การหายใจระดับเซลล์, en: "Cellular respiration" }
+summary: ATP และสมการการหายใจ ไกลโคลิซิส การสร้างแอซิทิล CoA วัฏจักรเครบส์ การถ่ายทอดอิเล็กตรอน จำนวน ATP ที่ได้ และการหมักเมื่อออกซิเจนไม่เพียงพอ
+difficulty: 6
+minutes: 45
+prerequisites: [biology.cells.enzymes, biology.cells.cell-structure]
+encompasses:
+  - { id: biology.cells.enzymes, weight: 0.2 }
+  - { id: biology.cells.cell-structure, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ภาพรวมการหายใจระดับเซลล์
+    src: respiration-overview.svg
+    alt: "แผนผังในไซโทซอล: กลูโคส (6C) → ไกลโคลิซิส ได้สุทธิ 2 ATP และ 2 NADH → ไพรูเวต 2 โมเลกุล (3C) จากนั้นแยกสองทาง ถ้ามีออกซิเจนพอ ไพรูเวตเข้าไมโทคอนเดรีย: สร้างแอซิทิล CoA ได้ 2 CO₂ และ 2 NADH → วัฏจักรเครบส์ ได้ 2 ATP 6 NADH 2 FADH₂ และ 4 CO₂ → การถ่ายทอดอิเล็กตรอน ได้ราว 26–28 ATP โดย O₂ รับอิเล็กตรอนเป็น H₂O รวมราว 30–32 ATP ต่อกลูโคส ถ้าออกซิเจนไม่พอ ไพรูเวตเข้าสู่การหมักแอลกอฮอล์ (ยีสต์ ได้เอทานอลและ CO₂) หรือการหมักกรดแลกติก (กล้ามเนื้อและแบคทีเรีย ได้กรดแลกติก) ได้ ATP จากไกลโคลิซิสเท่านั้น 2 ATP ต่อกลูโคส และ NAD⁺ ถูกสร้างกลับให้ไกลโคลิซิสทำต่อได้"
+    caption: "ATP ส่วนใหญ่มาจากการถ่ายทอดอิเล็กตรอน ซึ่งต้องใช้ออกซิเจน (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: นับคาร์บอนและตัวพาอิเล็กตรอน
+    problem: "ติดตามกลูโคส 1 โมเลกุลเมื่อมีออกซิเจนเพียงพอ นับ CO₂ NADH FADH₂ และ ATP ที่ได้โดยตรงจนจบวัฏจักรเครบส์"
+    steps:
+      - text: "ไกลโคลิซิส: กลูโคส → ไพรูเวต 2 โมเลกุล ได้ ATP สุทธิ 2 NADH 2 ยังไม่มี CO₂"
+      - text: "สร้างแอซิทิล CoA: ไพรูเวต 2 โมเลกุล เสียโมเลกุลละ 1 CO₂ ได้ CO₂ 2 NADH 2"
+      - text: "วัฏจักรเครบส์หมุน 2 รอบ (แอซิทิล CoA 2 โมเลกุล) ได้ CO₂ 4 ATP 2 NADH 6 FADH₂ 2"
+        why: "แต่ละรอบรับแอซิทิล CoA 1 โมเลกุล จึงต้องคูณผลต่อรอบด้วย 2"
+      - text: "รวม: CO₂ 6 NADH 10 FADH₂ 2 ATP โดยตรง 4"
+    answer: "CO₂ 6 โมเลกุล NADH 10 FADH₂ 2 และ ATP โดยตรง 4 โมเลกุล"
+  - { type: check, problem: biology.cells.cellular-respiration.p006, prompt: "ทบทวน ATP สุทธิจากไกลโคลิซิส" }
+  - type: figure
+    title: ไมโทคอนเดรียและการถ่ายทอดอิเล็กตรอน
+    src: mitochondrion-etc.svg
+    alt: "ซ้ายคือไมโทคอนเดรียรูปรี มีเยื่อชั้นนอก เยื่อชั้นในพับเป็นคริสตีซึ่งเป็นที่ถ่ายทอดอิเล็กตรอน ช่องระหว่างเยื่อ และเมทริกซ์ซึ่งเป็นที่สร้างแอซิทิล CoA และวัฏจักรเครบส์ ขวาคือภาพขยายเยื่อชั้นใน มีโปรตีน I III IV ฝังในเยื่อ อิเล็กตรอนจาก NADH ส่งต่อจาก I ไป III ไป IV แล้วไปที่ ½O₂ + 2H⁺ เป็น H₂O โปรตีนทั้งสามปั๊ม H⁺ ไปยังช่องระหว่างเยื่อซึ่งมี H⁺ มาก เมทริกซ์มี H⁺ น้อย H⁺ ไหลกลับผ่าน ATP ซินเทส ทำให้เกิด ADP + Pi → ATP"
+    caption: "พลังงานจากอิเล็กตรอนใช้ปั๊ม H⁺ แล้ว H⁺ ไหลกลับผ่าน ATP ซินเทสเพื่อสร้าง ATP (วาดโดยทีมคลังรู้ แสดงเพียงบางโปรตีน)"
+  - type: worked-example
+    title: เปรียบเทียบการหายใจเมื่อมีและไม่มีออกซิเจนในยีสต์
+    problem: "ยีสต์ในโหลหมักที่ปิดสนิทใช้กลูโคส 10 โมเลกุลในการหมัก ถ้ายีสต์มีออกซิเจนเพียงพอ ต้องใช้กลูโคสกี่โมเลกุลจึงได้ ATP เท่ากัน (ใช้ 32 ATP ต่อกลูโคสเมื่อมีออกซิเจน)"
+    steps:
+      - text: "การหมักให้ 2 ATP ต่อกลูโคส: $10 \\times 2 = 20$ ATP"
+      - text: "เมื่อมีออกซิเจนได้ 32 ATP ต่อกลูโคส ต้องใช้ $\\frac{20}{32} = 0.625$ โมเลกุล"
+        why: "ใช้จำนวน ATP ที่ต้องการหารด้วย ATP ต่อกลูโคสของวิธีใหม่"
+      - text: "แสดงว่าการหมักใช้กลูโคสมากกว่า $\\frac{10}{0.625} = 16$ เท่า เพื่อให้ได้ ATP เท่ากัน และพลังงานที่เหลือค้างอยู่ในเอทานอล"
+    answer: "ประมาณ 0.625 โมเลกุล (น้อยกว่า 16 เท่า)"
+  - { type: check, problem: biology.cells.cellular-respiration.p009, prompt: "ใช้ความรู้เรื่องการหมักอธิบายอาการหลังวิ่ง" }
+glossary:
+  - { term: ATP, definition: "อะดีโนซีนไตรฟอสเฟต โมเลกุลที่เซลล์ใช้เป็นพลังงานโดยตรง สลายเป็น ADP + Pi แล้วปล่อยพลังงาน" }
+  - { term: ไกลโคลิซิส, definition: "การสลายกลูโคสเป็นไพรูเวต 2 โมเลกุลในไซโทซอล ได้ ATP สุทธิ 2 และ NADH 2" }
+  - { term: วัฏจักรเครบส์, definition: "ชุดปฏิกิริยาในเมทริกซ์ที่สลายแอซิทิล CoA เป็น CO₂ ได้ ATP NADH และ FADH₂" }
+  - { term: NADH, definition: "ตัวพาอิเล็กตรอนพลังงานสูง นำอิเล็กตรอนไปยังลูกโซ่ถ่ายทอดอิเล็กตรอน" }
+  - { term: เคมิออสโมซิส, definition: "การสร้าง ATP โดยใช้พลังงานจาก H⁺ ที่ไหลกลับผ่าน ATP ซินเทสตามเกรเดียนต์" }
+  - { term: การหมัก, definition: "การสลายกลูโคสเมื่อออกซิเจนไม่พอ ได้กรดแลกติก หรือเอทานอลกับ CO₂ และ 2 ATP ต่อกลูโคส" }
+flashcards:
+  - { front: "สมการการหายใจระดับเซลล์", back: "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + พลังงาน" }
+  - { front: "ขั้นตอนและตำแหน่ง", back: "ไกลโคลิซิส (ไซโทซอล) → แอซิทิล CoA และวัฏจักรเครบส์ (เมทริกซ์) → ถ่ายทอดอิเล็กตรอน (เยื่อชั้นใน)" }
+  - { front: "ATP ต่อกลูโคส", back: "มีออกซิเจนพอ ราว 30–32 / การหมัก 2" }
+  - { front: "บทบาทของออกซิเจน", back: "ตัวรับอิเล็กตรอนตัวสุดท้ายของลูกโซ่ถ่ายทอดอิเล็กตรอน รวมกับ H⁺ เป็นน้ำ" }
+  - { front: "การหมัก 2 แบบ", back: "กรดแลกติก (กล้ามเนื้อ แบคทีเรีย) และแอลกอฮอล์ (ยีสต์ ได้เอทานอล + CO₂)" }
+references:
+  - { title: "7.2 Glycolysis (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/7-2-glycolysis", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "7.4 Oxidative Phosphorylation (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/7-4-oxidative-phosphorylation", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "7.5 Metabolism without Oxygen (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/7-5-metabolism-without-oxygen", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
