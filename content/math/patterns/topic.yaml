@@ -1,0 +1,84 @@
+id: math.algebra.patterns
+subject: math
+title: { th: แบบรูป, en: Patterns }
+summary: หาชุดที่ซ้ำในแบบรูปซ้ำ หาจำนวนที่หายไปในแบบรูปที่เพิ่มหรือลดทีละเท่า ๆ กัน สังเกตแบบรูปจากการคูณ เขียนกฎของแบบรูปที่โตขึ้น และแก้ปัญหา
+difficulty: 1.5
+minutes: 30
+prerequisites: [math.number.whole-add-sub, math.geometry.shapes]
+encompasses:
+  - { id: math.number.whole-add-sub, weight: 0.3 }
+  - { id: math.geometry.shapes, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: repeating-unit.svg
+    alt: "แบบรูปซ้ำเก้ารูปเรียงเป็นแถว วงกลม สามเหลี่ยม สี่เหลี่ยม วงกลม สามเหลี่ยม สี่เหลี่ยม วงกลม สามเหลี่ยม สี่เหลี่ยม แล้วตามด้วยจุดสามจุด มีวงเล็บเหนือรูปทุกสามรูปเขียนว่าชุดที่ 1 ชุดที่ 2 ชุดที่ 3 ใต้ภาพเขียนว่าชุดที่ซ้ำคือ วงกลม สามเหลี่ยม สี่เหลี่ยม (3 รูป)"
+    caption: "ชุดที่ซ้ำวนกลับมาเหมือนเดิมทุก 3 รูป"
+  - { type: check, problem: math.algebra.patterns.p002, prompt: "ชุดที่ซ้ำมีกี่รูป" }
+  - type: worked-example
+    title: หาจำนวนที่หายไป
+    problem: "เติมจำนวนในช่องว่าง: 87, $\\square$, 73, 66, $\\square$"
+    steps:
+      - text: "หาคู่ที่อยู่ติดกันและรู้ทั้งสองจำนวน: 73 กับ 66 ต่างกัน $73 - 66 = 7$ และลดลง"
+        why: "ช่องแรกยังไม่รู้ จึงเริ่มจากคู่ที่รู้ครบ"
+      - text: "ช่องแรกอยู่ระหว่าง 87 กับ 73: $87 - 7 = 80$"
+      - text: "ตรวจ: $80 - 7 = 73$ ✓ ใช้กฎลดทีละ 7 ได้จริง"
+      - text: "ช่องสุดท้าย: $66 - 7 = 59$"
+    answer: "87, 80, 73, 66, 59"
+  - type: figure
+    src: matchstick-squares.svg
+    alt: "แบบรูปสี่เหลี่ยมจากไม้ขีดเรียงต่อกันเป็นแถว รูปที่ 1 เป็นสี่เหลี่ยม 1 ช่องใช้ 4 ก้าน รูปที่ 2 เป็นสี่เหลี่ยม 2 ช่องติดกันใช้ 7 ก้าน รูปที่ 3 เป็นสี่เหลี่ยม 3 ช่องติดกันใช้ 10 ก้าน ทางขวาเขียนว่ารูปที่ 4 ? ใต้ภาพเขียนว่าเพิ่มสี่เหลี่ยม 1 ช่อง ใช้ไม้เพิ่ม 3 ก้าน"
+    caption: "ช่องใหม่ใช้ผนังร่วมกับช่องเดิม จึงเพิ่มแค่ 3 ก้าน"
+  - type: worked-example
+    title: แบบรูปที่โตขึ้น
+    problem: "แบบรูปสี่เหลี่ยมจากไม้ขีดในภาพ รูปที่ 10 ใช้ไม้ขีดกี่ก้าน"
+    steps:
+      - text: "เขียนตาราง: รูปที่ 1, 2, 3 ใช้ 4, 7, 10 ก้าน"
+      - text: "จำนวนเพิ่มทีละ 3 เพราะเพิ่มช่องละ 3 ก้าน"
+      - text: "รูปที่ 1 มีไม้ 1 ก้านตั้งไว้ทางซ้าย แล้วทุกช่องเพิ่ม 3 ก้าน จึงได้กฎ จำนวนไม้ = รูปที่ × 3 + 1"
+        why: "ตรวจกับรูปที่ 3: $3 \\times 3 + 1 = 10$ ✓"
+      - text: "รูปที่ 10: $10 \\times 3 + 1 = 31$ ก้าน"
+    answer: "31 ก้าน"
+  - { type: check, problem: math.algebra.patterns.p009, prompt: "ใช้วิธีเดียวกันกับแบบรูปบ้าน" }
+  - type: interactive
+    title: แบบรูปเริ่ม 1 บวกทีละ 3
+    caption: "1, 4, 7, 10, 13 สังเกตว่าจำนวนเป็นคี่ คู่ สลับกัน"
+    widget:
+      kind: number-line
+      min: 0
+      max: 15
+      points:
+        - { value: 1, label: "1" }
+        - { value: 4, label: "4" }
+        - { value: 7, label: "7" }
+        - { value: 10, label: "10" }
+        - { value: 13, label: "13" }
+      jumps:
+        - { from: 1, to: 4, label: "+3" }
+        - { from: 4, to: 7, label: "+3" }
+        - { from: 7, to: 10, label: "+3" }
+        - { from: 10, to: 13, label: "+3" }
+  - type: figure
+    src: two-rules-graph.svg
+    alt: "ระนาบพิกัด แกนนอนเป็นแบบรูป ก (บวก 3) มีค่า 0 ถึง 12 แกนตั้งเป็นแบบรูป ข (บวก 6) มีค่า 0 ถึง 18 มีจุดสี่จุด (0, 0), (3, 6), (6, 12) และ (9, 18) เรียงเป็นแนวเส้นตรง"
+    caption: "จำนวนในแบบรูป ข เป็นสองเท่าของแบบรูป ก ที่ลำดับเดียวกัน"
+glossary:
+  - { term: แบบรูป, definition: "สิ่งของ รูป หรือจำนวนที่เรียงกันตามกฎ ทำให้บอกสิ่งถัดไปได้" }
+  - { term: แบบรูปซ้ำ, definition: "แบบรูปที่มีกลุ่มเดิมวนกลับมาซ้ำไปเรื่อย ๆ" }
+  - { term: ชุดที่ซ้ำ, definition: "กลุ่มที่สั้นที่สุดที่วนซ้ำในแบบรูปซ้ำ เช่น ○ △ ใน ○ △ ○ △" }
+  - { term: การนับข้าม, definition: "การนับเพิ่มทีละเท่า ๆ กันที่มากกว่า 1 เช่น นับทีละ 2 ทีละ 5 ทีละ 10" }
+  - { term: กฎของแบบรูป, definition: "ข้อความที่บอกวิธีหาสิ่งถัดไปหรือสิ่งในลำดับใดก็ได้ เช่น จำนวนไม้ = รูปที่ × 3 + 1" }
+flashcards:
+  - { front: "หาจำนวนที่หายไปในแบบรูปจำนวนอย่างไร", back: "หาว่าจำนวนที่ติดกันเพิ่มหรือลดทีละเท่าไร แล้วตรวจทุกคู่" }
+  - { front: "ชุดที่ซ้ำของ แดง เหลือง เหลือง แดง เหลือง เหลือง", back: "แดง เหลือง เหลือง (3 สี)" }
+  - { front: "รูปที่ 20 ของแบบรูปที่มีชุดซ้ำ 3 รูป", back: "20 = 6 ชุด (18 รูป) เหลือ 2 จึงเป็นรูปที่สองของชุด" }
+  - { front: "1, 2, 4, 8, 16 มีกฎอะไร", back: "คูณ 2 ทุกครั้ง (ไม่ได้บวกเท่ากัน)" }
+references:
+  - { title: "ลำดับเลขคณิต", url: "https://th.wikipedia.org/wiki/ลำดับเลขคณิต", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Skip counting", url: "https://en.wikipedia.org/wiki/Skip_counting", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Arithmetic progression", url: "https://en.wikipedia.org/wiki/Arithmetic_progression", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
