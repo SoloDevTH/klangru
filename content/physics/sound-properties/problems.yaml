@@ -1,0 +1,292 @@
+problems:
+  - id: physics.waves.sound-properties.p001
+    topics: [physics.waves.sound-properties]
+    difficulty: 1
+    type: mcq
+    stem: "รถกู้ภัยเปิดไซเรนวิ่งเข้าหานักเรียนที่ยืนรอรถเมล์ เทียบกับตอนที่รถจอดนิ่ง นักเรียนได้ยินเสียงไซเรนเป็นอย่างไร"
+    choices:
+      - { id: a, text: "เสียงสูงขึ้น", correct: true }
+      - { id: b, text: "เสียงต่ำลง", feedback: "เสียงต่ำลงเกิดเมื่อรถวิ่งออกห่าง ขณะเข้าหา หน้าคลื่นด้านหน้ารถอัดชิดกัน ความถี่ที่ได้ยินจึงสูงขึ้น" }
+      - { id: c, text: "เสียงสูงเท่าเดิม แค่ดังขึ้น", feedback: "เสียงดังขึ้นจริงเพราะใกล้ขึ้น แต่ระดับเสียงก็สูงขึ้นด้วยเพราะความถี่ที่ได้ยินเพิ่มขึ้น" }
+    hints:
+      - "นึกถึงหน้าคลื่นที่อยู่ด้านหน้ารถที่กำลังวิ่ง"
+      - "หน้าคลื่นชิดกัน ความยาวคลื่นสั้น ความถี่เป็นอย่างไร"
+    solution: "แหล่งกำเนิดเคลื่อนที่เข้าหาผู้ฟัง หน้าคลื่นด้านหน้าอัดชิดกัน ผู้ฟังรับหน้าคลื่นถี่ขึ้น จึงได้ยินความถี่สูงขึ้น นี่คือปรากฏการณ์ดอปเพลอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p002
+    topics: [physics.waves.sound-properties]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปรากฏการณ์ของเสียงกับตัวอย่าง"
+    pairs:
+      - { left: "บีต", right: "เสียงดังค่อยสลับเมื่อดีดกีตาร์สองสายที่ตั้งเสียงยังไม่ตรงกัน" }
+      - { left: "ปรากฏการณ์ดอปเพลอร์", right: "เสียงหวูดรถไฟสูงขึ้นขณะวิ่งเข้ามา และต่ำลงเมื่อผ่านไป" }
+      - { left: "คลื่นกระแทก", right: "เสียงดังสนั่นจากเครื่องบินที่บินเร็วกว่าเสียง" }
+      - { left: "การเลี้ยวเบน", right: "ได้ยินเสียงคนคุยกันในห้องข้าง ๆ ผ่านประตูที่แง้มไว้" }
+    hints:
+      - "ปรากฏการณ์ใดเกิดจากการเคลื่อนที่ของแหล่งกำเนิด"
+      - "ปรากฏการณ์ใดเกิดจากเสียงสองเสียงความถี่ใกล้กัน"
+    solution: "บีตเกิดจากสองความถี่ใกล้กัน ดอปเพลอร์เกิดจากแหล่งกำเนิดเคลื่อนที่ คลื่นกระแทกเกิดเมื่อเร็วกว่าเสียง และการเลี้ยวเบนทำให้เสียงอ้อมผ่านช่องประตูได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p003
+    topics: [physics.waves.sound-properties]
+    difficulty: 2
+    type: numeric
+    stem: "เคาะส้อมเสียงความถี่ $440\\ \\mathrm{Hz}$ และ $444\\ \\mathrm{Hz}$ พร้อมกัน จะได้ยินเสียงดังค่อยสลับกันกี่ครั้งต่อวินาที"
+    answer: { value: 4, tolerance: 0, unit: Hz }
+    misconceptions:
+      - { match: 884, feedback: "บวกความถี่ ความถี่บีตคือผลต่างของความถี่ ไม่ใช่ผลรวม" }
+      - { match: 442, feedback: "442 Hz คือค่าเฉลี่ยซึ่งเป็นระดับเสียงที่ได้ยิน ส่วนจังหวะดังค่อยเท่ากับผลต่าง" }
+    hints:
+      - "ความถี่บีตหาจากความถี่ทั้งสองอย่างไร"
+      - "$f_B = |f_1 - f_2|$"
+    solution: "$f_B = |444 - 440| = 4\\ \\mathrm{Hz}$ ได้ยินเสียงดังสลับค่อย 4 ครั้งต่อวินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p004
+    topics: [physics.waves.sound-properties]
+    difficulty: 2
+    type: mcq
+    stem: "ถ้าแอมพลิจูดของคลื่นเสียงเพิ่มเป็น 2 เท่าโดยความถี่เท่าเดิม ความเข้มเสียงเปลี่ยนไปอย่างไร"
+    choices:
+      - { id: a, text: "เพิ่มเป็น 4 เท่า", correct: true }
+      - { id: b, text: "เพิ่มเป็น 2 เท่า", feedback: "พลังงานของคลื่นแปรผันตามกำลังสองของแอมพลิจูด ไม่ใช่แปรผันตรง" }
+      - { id: c, text: "เท่าเดิม เพราะความถี่เท่าเดิม", feedback: "ความถี่กำหนดระดับเสียงสูงต่ำ แต่พลังงานและความเข้มขึ้นกับแอมพลิจูด" }
+    hints:
+      - "ความเข้มเสียงสัมพันธ์กับแอมพลิจูดอย่างไร"
+      - "$I \\propto A^2$"
+    solution: "$I \\propto A^2$ แอมพลิจูด 2 เท่า ความเข้ม $2^2 = 4$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p005
+    topics: [physics.waves.sound-properties]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ข้อใดเป็นการใช้คลื่นอัลตราซาวด์ (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "เครื่องล้างแว่นตาในร้านแว่น", correct: true }
+      - { id: b, text: "เครื่องกายภาพบำบัดที่ทำให้กล้ามเนื้อส่วนลึกอุ่นขึ้น", correct: true }
+      - { id: c, text: "ตรวจดูทารกในครรภ์", correct: true }
+      - { id: d, text: "ถ่ายภาพกระดูกที่หักด้วยเครื่องเอกซเรย์", feedback: "รังสีเอกซ์เป็นคลื่นแม่เหล็กไฟฟ้า ไม่ใช่คลื่นเสียง" }
+    hints:
+      - "อัลตราซาวด์คือคลื่นเสียงความถี่สูงกว่าที่หูได้ยิน"
+      - "คลื่นความดันถ่ายโอนพลังงานไปยังน้ำและเนื้อเยื่อได้"
+    solution: "อัลตราซาวด์ใช้ทำความสะอาดด้วยฟองที่แตกตัวในน้ำ ใช้ทำให้เนื้อเยื่อส่วนลึกอุ่นในกายภาพบำบัด และใช้ถ่ายภาพทารกในครรภ์ ส่วนเอกซเรย์ใช้คลื่นแม่เหล็กไฟฟ้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p006
+    topics: [physics.waves.sound-properties]
+    difficulty: 3
+    type: numeric
+    stem: "นักเรียนตั้งเสียงสายกีตาร์โดยดีดพร้อมกับเคาะส้อมเสียง $330\\ \\mathrm{Hz}$ ได้ยินบีต 3 ครั้งต่อวินาที เมื่อขันสายให้ตึงขึ้นเล็กน้อย บีตเพิ่มเป็น 5 ครั้งต่อวินาที ก่อนขันสาย สายมีความถี่กี่เฮิรตซ์"
+    answer: { value: 333, tolerance: 0, unit: Hz }
+    misconceptions:
+      - { match: 327, feedback: "ถ้าสายเดิม 327 Hz การขันให้ตึงขึ้นจะทำให้ความถี่เข้าใกล้ 330 Hz บีตต้องช้าลง แต่โจทย์บอกว่าบีตเร็วขึ้น" }
+      - { match: 335, feedback: "335 Hz คือความถี่หลังขันสาย (บีต 5 ครั้ง) โจทย์ถามความถี่ก่อนขัน" }
+    hints:
+      - "บีต 3 ครั้งต่อวินาที สายอาจเป็น 327 หรือ 333 Hz"
+      - "ขันสายให้ตึง ความถี่สูงขึ้น ถ้าบีตเร็วขึ้นแปลว่าความถี่ห่างจาก 330 Hz มากขึ้น"
+    solution: "สายเดิมเป็น $327$ หรือ $333\\ \\mathrm{Hz}$ ขันให้ตึงทำให้ความถี่สูงขึ้น ถ้าเดิม $327\\ \\mathrm{Hz}$ บีตจะช้าลง แต่บีตเร็วขึ้น สายเดิมจึงเป็น $333\\ \\mathrm{Hz}$ (ต้องคลายสายลงจึงจะตรง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p007
+    topics: [physics.waves.sound-properties]
+    difficulty: 3
+    type: numeric
+    stem: "รถขายไอศกรีมเปิดเพลงความถี่ $600\\ \\mathrm{Hz}$ วิ่งเข้าหาเด็กที่ยืนอยู่หน้าบ้านด้วยอัตราเร็ว $20\\ \\mathrm{m/s}$ อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ เด็กได้ยินความถี่กี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 637.5, tolerance: 0.5, unit: Hz }
+    misconceptions:
+      - { match: 566.7, feedback: "ใช้เครื่องหมายของการออกห่าง เข้าหากันความถี่ต้องสูงขึ้น ตัวส่วนคือ $v - v_S$" }
+      - { match: 635.3, feedback: "ใช้สูตรของผู้ฟังที่เคลื่อนที่ $(v + v_L)/v$ แต่ข้อนี้แหล่งกำเนิดเคลื่อนที่ ต้องใส่ $v_S$ ที่ตัวส่วน" }
+    hints:
+      - "ใครเคลื่อนที่ แหล่งกำเนิดหรือผู้ฟัง"
+      - "$f_L = f_S\\dfrac{v}{v - v_S}$ เมื่อแหล่งกำเนิดเคลื่อนที่เข้าหาผู้ฟังที่อยู่นิ่ง"
+    solution: "$f_L = 600 \\times \\dfrac{340}{340 - 20} = 600 \\times \\dfrac{340}{320} = 637.5\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p008
+    topics: [physics.waves.sound-properties]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องบินขับไล่บินด้วยเลขมัค 2 (เร็วเป็น 2 เท่าของเสียง) มุมครึ่งหนึ่งของกรวยคลื่นกระแทกเป็นกี่องศา"
+    answer: { value: 30, tolerance: 0.3, unit: องศา }
+    misconceptions:
+      - { match: 60, feedback: "ได้มุมที่ตั้งฉากกับคำตอบ $\\sin\\theta = v/v_S$ ให้มุมระหว่างผิวกรวยกับแนวการบิน" }
+      - { match: 63.4, feedback: "ใช้ $\\tan\\theta = 2$ ความสัมพันธ์ที่ถูกคือ $\\sin\\theta = \\dfrac{v}{v_S}$" }
+    hints:
+      - "$\\sin\\theta = \\dfrac{v}{v_S}$"
+      - "เลขมัค 2 แปลว่า $\\dfrac{v}{v_S} = \\tfrac12$"
+    solution: "$\\sin\\theta = \\dfrac{1}{2}$ จึงได้ $\\theta = 30^\\circ$ ยิ่งบินเร็ว กรวยยิ่งแคบลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p009
+    topics: [physics.waves.sound-properties]
+    difficulty: 3
+    type: numeric
+    stem: "ลำโพงสองตัวต่อกับเครื่องเสียงเดียวกัน ส่งเสียงความถี่ $680\\ \\mathrm{Hz}$ เฟสตรงกัน อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ จุด P อยู่ห่างลำโพงทั้งสองตามภาพ ผลต่างของระยะทางเป็นกี่เท่าของความยาวคลื่น"
+    figure: { src: p-speakers.svg, alt: "ลำโพง S₁ และ S₂ วางห่างกัน 1.0 m ในแนวตั้ง จุด P อยู่ทางขวาล่าง เส้นประจาก S₁ ถึง P ยาว 4.00 m และจาก S₂ ถึง P ยาว 4.75 m" }
+    answer: { value: 1.5, tolerance: 0.01 }
+    misconceptions:
+      - { match: 0.75, feedback: "0.75 คือผลต่างระยะทางในหน่วยเมตร ต้องหารด้วยความยาวคลื่น $0.50\\ \\mathrm{m}$" }
+      - { match: 0.375, feedback: "ใช้ความยาวคลื่น $2\\ \\mathrm{m}$ จาก $f/v$ ที่กลับด้าน $\\lambda = v/f$" }
+    hints:
+      - "หาความยาวคลื่นก่อน $\\lambda = v/f$"
+      - "ผลต่างระยะทาง $= 4.75 - 4.00$ แล้วหารด้วย $\\lambda$"
+    solution: "$\\lambda = \\tfrac{340}{680} = 0.50\\ \\mathrm{m}$ ผลต่าง $= 0.75\\ \\mathrm{m} = 1.5\\lambda = \\left(2 - \\tfrac12\\right)\\lambda$ ที่ P จึงได้ยินเสียงค่อย (แนวบัพที่ 2)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p010
+    topics: [physics.waves.sound-properties]
+    difficulty: 3
+    type: mcq
+    stem: "เปิดเสียงความถี่ $50\\ \\mathrm{Hz}$ และ $3000\\ \\mathrm{Hz}$ ให้มีความเข้มเท่ากันพอดี คนที่หูปกติจะรู้สึกว่าเสียงใดดังกว่า"
+    choices:
+      - { id: a, text: "เสียง 3000 Hz", correct: true }
+      - { id: b, text: "เสียง 50 Hz", feedback: "หูไม่ไวต่อเสียงความถี่ต่ำ เสียง 50 Hz ต้องมีความเข้มสูงกว่ามากจึงฟังดังเท่าเสียง 3000 Hz" }
+      - { id: c, text: "ดังเท่ากัน เพราะความเข้มเท่ากัน", feedback: "ความเข้มเท่ากันไม่ได้แปลว่าหูรับรู้ว่าดังเท่ากัน ความไวของหูขึ้นกับความถี่" }
+    hints:
+      - "หูไวต่อเสียงช่วงความถี่ใดมากที่สุด"
+      - "ช่วงที่หูไวที่สุดอยู่ราว 2000–5000 Hz"
+    solution: "หูคนไวที่สุดในช่วงราว 2000–5000 Hz ที่ความเข้มเท่ากัน เสียง 3000 Hz จึงฟังดังกว่าเสียง 50 Hz มาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p011
+    topics: [physics.waves.sound-properties]
+    difficulty: 4
+    type: numeric
+    stem: "รถไฟเปิดหวูดความถี่ $500\\ \\mathrm{Hz}$ ขณะวิ่งออกห่างจากชานชาลาด้วยอัตราเร็ว $25\\ \\mathrm{m/s}$ คนที่ยืนบนชานชาลาได้ยินความถี่กี่เฮิรตซ์ (อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 465.8, tolerance: 0.5, unit: Hz }
+    misconceptions:
+      - { match: 539.7, feedback: "ใช้เครื่องหมายของการเข้าหา รถไฟออกห่าง ความถี่ต้องต่ำลง ตัวส่วนคือ $v + v_S$" }
+      - { match: 463.2, feedback: "ใช้สูตรของผู้ฟังเคลื่อนที่ $(v - v_L)/v$ ข้อนี้แหล่งกำเนิดเคลื่อนที่" }
+    hints:
+      - "รถไฟออกห่าง ความถี่ที่ได้ยินต่ำลง"
+      - "$f_L = f_S\\dfrac{v}{v + v_S}$"
+    solution: "$f_L = 500 \\times \\dfrac{340}{340 + 25} = 500 \\times \\dfrac{340}{365} \\approx 465.8\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p012
+    topics: [physics.waves.sound-properties]
+    difficulty: 4
+    type: numeric
+    stem: "สัญญาณเตือนภัยที่เสาสูงในโรงงานดังความถี่ $700\\ \\mathrm{Hz}$ คนขี่จักรยานยนต์วิ่งตรงเข้าหาเสาด้วยอัตราเร็ว $20\\ \\mathrm{m/s}$ ในวันที่ไม่มีลม เขาได้ยินความถี่กี่เฮิรตซ์ (อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 741.2, tolerance: 0.5, unit: Hz }
+    misconceptions:
+      - { match: 743.8, feedback: "ใช้สูตรของแหล่งกำเนิดเคลื่อนที่ $v/(v - v_S)$ ข้อนี้ผู้ฟังเคลื่อนที่ ต้องใส่ $v_L$ ที่ตัวเศษ" }
+      - { match: 658.8, feedback: "ใช้เครื่องหมายของการออกห่าง ผู้ฟังเคลื่อนที่เข้าหาแหล่งกำเนิด ความถี่ต้องสูงขึ้น" }
+    hints:
+      - "แหล่งกำเนิดอยู่นิ่ง ผู้ฟังเคลื่อนที่เข้าหา"
+      - "$f_L = f_S\\dfrac{v + v_L}{v}$"
+    solution: "$f_L = 700 \\times \\dfrac{340 + 20}{340} = 700 \\times \\dfrac{360}{340} \\approx 741.2\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p013
+    topics: [physics.waves.sound-properties]
+    difficulty: 4
+    type: numeric
+    stem: "เพิ่มแอมพลิจูดของเสียงจากลำโพงเป็น 3 เท่า ระดับความเข้มเสียงเพิ่มขึ้นกี่เดซิเบล (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 9.5, tolerance: 0.1, unit: dB }
+    misconceptions:
+      - { match: 4.8, feedback: "ใช้ $10\\log 3$ ซึ่งถือว่าความเข้มเพิ่ม 3 เท่า แต่ความเข้มแปรผันตามกำลังสองของแอมพลิจูด จึงเพิ่ม 9 เท่า" }
+      - { match: 30, feedback: "คูณ 10 กับ 3 ตรง ๆ เดซิเบลใช้ลอการิทึมของอัตราส่วนความเข้ม" }
+    hints:
+      - "แอมพลิจูด 3 เท่า ความเข้มเพิ่มกี่เท่า"
+      - "$\\Delta\\beta = 10\\log\\dfrac{I_2}{I_1}$"
+    solution: "$\\dfrac{I_2}{I_1} = 3^2 = 9$ ดังนั้น $\\Delta\\beta = 10\\log 9 \\approx 9.5\\ \\mathrm{dB}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p014
+    topics: [physics.waves.sound-properties]
+    difficulty: 4
+    type: numeric
+    stem: "บ่ายวันหนึ่งในเดือนเมษายน อากาศร้อน $35\\ ^\\circ\\mathrm{C}$ นักดนตรีเล่นโน้ตความถี่ $440\\ \\mathrm{Hz}$ ความยาวคลื่นของเสียงในอากาศเป็นกี่เมตร (ใช้ $v = 331 + 0.6T$)"
+    answer: { value: 0.8, tolerance: 0.005, unit: m }
+    misconceptions:
+      - { match: 0.752, feedback: "ใช้อัตราเร็ว $331\\ \\mathrm{m/s}$ ซึ่งเป็นค่าที่ $0\\ ^\\circ\\mathrm{C}$ ลืมบวกผลของอุณหภูมิ" }
+      - { match: 0.773, feedback: "ใช้ $340\\ \\mathrm{m/s}$ ซึ่งเป็นค่าประมาณที่อุณหภูมิราว $15\\ ^\\circ\\mathrm{C}$ โจทย์ให้ $35\\ ^\\circ\\mathrm{C}$" }
+    hints:
+      - "หาอัตราเร็วเสียงที่ $35\\ ^\\circ\\mathrm{C}$ ก่อน"
+      - "$\\lambda = \\dfrac{v}{f}$"
+    solution: "$v = 331 + 0.6(35) = 352\\ \\mathrm{m/s}$ และ $\\lambda = \\dfrac{352}{440} = 0.80\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p015
+    topics: [physics.waves.sound-properties]
+    difficulty: 4
+    type: numeric
+    stem: "ลำโพงสองตัวส่งเสียงความถี่เดียวกัน เฟสตรงกัน จุด Q ห่างลำโพงทั้งสองต่างกัน $0.17\\ \\mathrm{m}$ และเป็นจุดเสียงค่อยจุดแรก (แนวบัพที่ 1) ความถี่ของเสียงเป็นกี่เฮิรตซ์ (อัตราเร็วเสียง $340\\ \\mathrm{m/s}$)"
+    answer: { value: 1000, tolerance: 5, unit: Hz }
+    misconceptions:
+      - { match: 2000, feedback: "ใช้ผลต่าง $0.17\\ \\mathrm{m}$ เป็นความยาวคลื่น แต่แนวบัพที่ 1 มีผลต่างระยะทางเท่ากับครึ่งความยาวคลื่น" }
+      - { match: 500, feedback: "คิดว่าผลต่างระยะทางเท่ากับ $\\lambda/4$ แนวบัพที่ 1 มีผลต่าง $\\lambda/2$" }
+    hints:
+      - "แนวบัพที่ $n$ มีผลต่างระยะทาง $\\left(n - \\tfrac12\\right)\\lambda$"
+      - "$\\tfrac{\\lambda}{2} = 0.17\\ \\mathrm{m}$ แล้ว $f = v/\\lambda$"
+    solution: "แนวบัพที่ 1: $\\tfrac{\\lambda}{2} = 0.17\\ \\mathrm{m}$ จึงได้ $\\lambda = 0.34\\ \\mathrm{m}$ และ $f = \\dfrac{340}{0.34} = 1000\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p016
+    topics: [physics.waves.sound-properties]
+    difficulty: 5
+    type: numeric
+    stem: "รถตำรวจทางหลวงเปิดไซเรนความถี่ $800\\ \\mathrm{Hz}$ วิ่งด้วยอัตราเร็ว $30\\ \\mathrm{m/s}$ สวนทางเข้าหารถเก๋งที่วิ่งด้วยอัตราเร็ว $20\\ \\mathrm{m/s}$ คนขับรถเก๋งได้ยินความถี่กี่เฮิรตซ์ ขณะที่รถทั้งสองยังไม่ผ่านกัน (อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 929, tolerance: 1, unit: Hz }
+    misconceptions:
+      - { match: 925, feedback: "สลับอัตราเร็วของผู้ฟังกับแหล่งกำเนิด อัตราเร็วของรถตำรวจ (แหล่งกำเนิด) อยู่ที่ตัวส่วน อัตราเร็วของรถเก๋ง (ผู้ฟัง) อยู่ที่ตัวเศษ" }
+      - { match: 877, feedback: "คิดเฉพาะแหล่งกำเนิดที่เคลื่อนที่ ลืมว่าผู้ฟังก็เคลื่อนที่เข้าหาด้วย" }
+    hints:
+      - "ทั้งคู่เคลื่อนที่เข้าหากัน ใช้เครื่องหมายบนทั้งตัวเศษและตัวส่วน"
+      - "$f_L = f_S\\dfrac{v + v_L}{v - v_S}$"
+    solution: "$f_L = 800 \\times \\dfrac{340 + 20}{340 - 30} = 800 \\times \\dfrac{360}{310} \\approx 929\\ \\mathrm{Hz}$ หลังรถผ่านกันแล้วจะได้ยินต่ำกว่า 800 Hz"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p017
+    topics: [physics.waves.sound-properties]
+    difficulty: 5
+    type: numeric
+    stem: "เครื่องบินบินในแนวราบที่ความสูง $3000\\ \\mathrm{m}$ ด้วยเลขมัค 1.5 ผ่านเหนือศีรษะคนที่ยืนอยู่บนพื้น เมื่อคนนั้นได้ยินเสียงซอนิกบูม เครื่องบินอยู่ห่างจากจุดเหนือศีรษะไปแล้วในแนวราบประมาณกี่เมตร"
+    answer: { value: 3354, tolerance: 50, unit: m }
+    misconceptions:
+      - { match: 2683, feedback: "ใช้ $x = h\\tan\\theta$ ระยะแนวราบหาจาก $\\tan\\theta = \\dfrac{h}{x}$ จึงได้ $x = \\dfrac{h}{\\tan\\theta}$" }
+      - { match: 4500, feedback: "ใช้ $h/\\sin\\theta$ ซึ่งเป็นระยะตามผิวกรวยจากเครื่องบินถึงผู้ฟัง ไม่ใช่ระยะแนวราบ" }
+    hints:
+      - "หามุมครึ่งกรวยจาก $\\sin\\theta = \\dfrac{1}{1.5}$"
+      - "ผิวกรวยลากจากเครื่องบินลงมาถึงผู้ฟังทำมุม $\\theta$ กับแนวการบิน $\\tan\\theta = \\dfrac{h}{x}$"
+    solution: "$\\sin\\theta = \\tfrac{1}{1.5}$ ได้ $\\theta \\approx 41.8^\\circ$ ผิวกรวยเพิ่งกวาดถึงผู้ฟัง จึง $\\tan\\theta = \\dfrac{3000}{x}$ และ $x = \\dfrac{3000}{\\tan 41.8^\\circ} \\approx 3.35 \\times 10^{3}\\ \\mathrm{m}$ เครื่องบินผ่านไปแล้วราว 3.4 km จึงได้ยินเสียง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.sound-properties.p018
+    topics: [physics.waves.sound-properties]
+    difficulty: 5
+    type: numeric
+    stem: "ค้างคาวบินตรงเข้าหาผนังถ้ำด้วยอัตราเร็ว $5.0\\ \\mathrm{m/s}$ ส่งเสียงอัลตราโซนิก $40.0\\ \\mathrm{kHz}$ ค้างคาวได้ยินเสียงสะท้อนจากผนังที่ความถี่กี่กิโลเฮิรตซ์ (อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 41.19, tolerance: 0.05, unit: kHz }
+    misconceptions:
+      - { match: 40.6, feedback: "คิดดอปเพลอร์เพียงทางเดียว ผนังรับความถี่ที่สูงขึ้นแล้วสะท้อนกลับเหมือนเป็นแหล่งกำเนิดใหม่ และค้างคาวยังบินเข้าหาเสียงสะท้อนด้วย ต้องคิดสองขั้น" }
+      - { match: 38.84, feedback: "ใช้เครื่องหมายของการออกห่าง ค้างคาวบินเข้าหาผนัง ความถี่ที่ได้ยินต้องสูงขึ้น" }
+    hints:
+      - "ขั้นแรก ผนังเป็นผู้ฟังที่อยู่นิ่ง ค้างคาวเป็นแหล่งกำเนิดที่เข้าหา"
+      - "ขั้นที่สอง ผนังเป็นแหล่งกำเนิดที่อยู่นิ่ง ค้างคาวเป็นผู้ฟังที่เข้าหา รวมได้ $f = f_0\\dfrac{v + v_b}{v - v_b}$"
+    solution: "ผนังรับ $f_1 = 40.0 \\times \\dfrac{340}{335}$ แล้วสะท้อนกลับ ค้างคาวรับ $f_2 = f_1 \\times \\dfrac{345}{340} = 40.0 \\times \\dfrac{345}{335} \\approx 41.19\\ \\mathrm{kHz}$ ค้างคาวใช้ความต่างนี้รู้ว่ากำลังเข้าใกล้สิ่งกีดขวางเร็วเท่าใด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,81 @@
+id: physics.waves.sound-properties
+subject: physics
+title: { th: สมบัติของคลื่นเสียงและปรากฏการณ์ดอปเพลอร์, en: Properties of sound waves and the Doppler effect }
+summary: แอมพลิจูดกับพลังงาน การแทรกสอด การเลี้ยวเบน และการหักเหของเสียง บีต ปรากฏการณ์ดอปเพลอร์ คลื่นกระแทก การได้ยินกับความถี่ และการใช้อัลตราซาวด์
+difficulty: 6
+minutes: 40
+prerequisites: [physics.waves.sound, physics.waves.wave-behaviour, math.functions.logarithms]
+encompasses:
+  - { id: physics.waves.sound, weight: 0.4 }
+  - { id: physics.waves.wave-behaviour, weight: 0.3 }
+  - { id: math.functions.logarithms, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: บีต
+    src: beats.svg
+    alt: "กราฟสามเส้นในช่วงเวลา 0 ถึง 1 วินาที เส้นบนเป็นคลื่น f₁ ความถี่ 10 Hz เส้นกลางเป็นคลื่น f₂ ความถี่ 12 Hz เส้นล่างเป็นผลรวมของสองคลื่น แอมพลิจูดใหญ่ที่เวลา 0, 0.5 และ 1 วินาที (ดัง) และเกือบเป็นศูนย์ที่ 0.25 และ 0.75 วินาที (เบา) มีเส้นห่อหุ้มสีเทาแสดงแอมพลิจูดที่เปลี่ยนไป จึงดัง 2 ครั้งต่อวินาที"
+    caption: "ความถี่บีต = 12 − 10 = 2 ครั้งต่อวินาที"
+  - type: interactive
+    title: ฟังบีตด้วยตา
+    caption: "กราฟคือผลรวมของคลื่นความถี่ a และ b (เฮิรตซ์) ในช่วงเวลา 0 ถึง 2 วินาที ปรับให้ a กับ b ต่างกัน 1, 2 และ 3 Hz แล้วนับว่าแอมพลิจูดพองขึ้นกี่ครั้งใน 1 วินาที ลองปรับให้เท่ากันพอดีแล้วสังเกตว่าบีตหายไป"
+    widget:
+      kind: function-plot
+      functions: ["\\sin(2\\pi a x) + \\sin(2\\pi b x)"]
+      sliders:
+        - { name: a, min: 5, max: 20, step: 1, value: 10, label: ความถี่ a (Hz) }
+        - { name: b, min: 5, max: 20, step: 1, value: 12, label: ความถี่ b (Hz) }
+      x: [0, 2]
+      y: [-2.5, 2.5]
+  - { type: check, problem: physics.waves.sound-properties.p003, prompt: "ความถี่บีตคือผลต่างหรือผลรวม" }
+  - type: figure
+    title: ปรากฏการณ์ดอปเพลอร์และคลื่นกระแทก
+    src: doppler-shock.svg
+    alt: "สองภาพ ก. แหล่งกำเนิดเคลื่อนที่ไปทางขวาด้วยอัตราเร็วครึ่งหนึ่งของเสียง หน้าคลื่นวงกลมหกวงมีศูนย์กลางเลื่อนตามแหล่งกำเนิด ด้านหน้าทางขวาหน้าคลื่นชิดกัน ความยาวคลื่นสั้น ความถี่สูง ด้านหลังทางซ้ายหน้าคลื่นห่างกัน ความยาวคลื่นยาว ความถี่ต่ำ ข. แหล่งกำเนิดเคลื่อนที่เร็วกว่าเสียง 2 เท่า อยู่หน้าหน้าคลื่นทุกวง หน้าคลื่นซ้อนกันเป็นกรวย เส้นสัมผัสสองเส้นทำมุมครึ่งกรวย θ = 30 องศา sin θ = v/vₛ = 1/2"
+  - type: worked-example
+    title: เสียงไซเรนรถพยาบาล
+    problem: "รถพยาบาลเปิดไซเรนความถี่ $700\\ \\mathrm{Hz}$ วิ่งด้วยอัตราเร็ว $25\\ \\mathrm{m/s}$ ผ่านคนที่ยืนอยู่ริมถนน อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ คนนั้นได้ยินความถี่เท่าใดขณะรถวิ่งเข้าหาและขณะวิ่งออกห่าง"
+    steps:
+      - text: "ผู้ฟังอยู่นิ่ง $v_L = 0$ แหล่งกำเนิดเคลื่อนที่ $v_S = 25\\ \\mathrm{m/s}$"
+      - text: "เข้าหากัน ใช้เครื่องหมายลบที่ตัวส่วน: $f_L = 700 \\times \\dfrac{340}{340 - 25} = 700 \\times \\dfrac{340}{315} \\approx 756\\ \\mathrm{Hz}$"
+        why: "ตัวส่วนเล็กลง ความถี่ที่ได้ยินจึงสูงขึ้น ตรงกับที่หน้าคลื่นด้านหน้าอัดชิดกัน"
+      - text: "ออกห่างกัน: $f_L = 700 \\times \\dfrac{340}{340 + 25} = 700 \\times \\dfrac{340}{365} \\approx 652\\ \\mathrm{Hz}$"
+      - text: "ตรวจ: ขณะเข้าหาได้ยินสูงกว่า $700\\ \\mathrm{Hz}$ ขณะออกห่างได้ยินต่ำกว่า ถูกต้องตามที่สังเกตได้จริง"
+    answer: "ขณะเข้าหาได้ยินราว 756 Hz ขณะออกห่างได้ยินราว 652 Hz"
+  - { type: check, problem: physics.waves.sound-properties.p007, prompt: "เข้าหากันความถี่ต้องสูงขึ้น" }
+  - type: worked-example
+    title: จุดที่เสียงค่อยหน้าลำโพงสองตัว
+    problem: "ลำโพงสองตัวต่อกับเครื่องกำเนิดเสียงเดียวกันความถี่ $850\\ \\mathrm{Hz}$ อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ จุด P อยู่ห่างลำโพงตัวหนึ่ง $5.0\\ \\mathrm{m}$ และอีกตัวหนึ่ง $6.0\\ \\mathrm{m}$ ที่จุด P ได้ยินเสียงดังหรือค่อย"
+    steps:
+      - text: "ความยาวคลื่น $\\lambda = \\dfrac{v}{f} = \\dfrac{340}{850} = 0.40\\ \\mathrm{m}$"
+      - text: "ผลต่างระยะทาง $= 6.0 - 5.0 = 1.0\\ \\mathrm{m} = \\dfrac{1.0}{0.40}\\lambda = 2.5\\lambda$"
+        why: "เทียบผลต่างระยะทางเป็นจำนวนเท่าของความยาวคลื่นจะบอกได้ทันทีว่าเสริมหรือหักล้าง"
+      - text: "$2.5\\lambda = \\left(3 - \\tfrac12\\right)\\lambda$ สันคลื่นจากลำโพงหนึ่งมาพบท้องคลื่นจากอีกลำโพงหนึ่ง จึงหักล้างกัน"
+    answer: "ได้ยินเสียงค่อย (อยู่บนแนวบัพที่ 3)"
+  - type: simulation
+    title: "คลื่นเสียง (PhET Sound Waves)"
+    url: https://phet.colorado.edu/en/simulations/sound-waves
+    provider: phet
+    note: "หน้า Interference เปิดลำโพงสองตัว แล้วเลื่อนผู้ฟังไปตามแนวต่าง ๆ หาตำแหน่งที่เสียงดังและค่อย จากนั้นวัดระยะจากลำโพงทั้งสองแล้วเทียบผลต่างกับความยาวคลื่น"
+glossary:
+  - { term: บีต, definition: "เสียงดังค่อยสลับเป็นจังหวะเมื่อเสียงสองเสียงที่มีความถี่ต่างกันเล็กน้อยรวมกัน ความถี่บีตเท่ากับผลต่างของความถี่" }
+  - { term: ปรากฏการณ์ดอปเพลอร์, definition: "การที่ผู้ฟังได้ยินความถี่ต่างจากความถี่ของแหล่งกำเนิด เมื่อแหล่งกำเนิดหรือผู้ฟังเคลื่อนที่เข้าหาหรือออกห่างกัน" }
+  - { term: คลื่นกระแทก, definition: "หน้าคลื่นรูปกรวยที่เกิดเมื่อแหล่งกำเนิดเคลื่อนที่เร็วกว่าคลื่น ทำให้เกิดซอนิกบูม" }
+  - { term: เลขมัค, definition: "อัตราส่วนของอัตราเร็วของวัตถุต่ออัตราเร็วเสียง" }
+  - { term: อัลตราซาวด์, definition: "เสียงที่มีความถี่สูงกว่า 20 kHz ใช้ทำความสะอาด กายภาพบำบัด และถ่ายภาพทางการแพทย์" }
+flashcards:
+  - { front: "ความถี่บีต", back: "$f_B = |f_1 - f_2|$" }
+  - { front: "สูตรดอปเพลอร์", back: "$f_L = f_S\\,\\dfrac{v \\pm v_L}{v \\mp v_S}$ เครื่องหมายบนเมื่อเข้าหากัน" }
+  - { front: "มุมครึ่งกรวยของคลื่นกระแทก", back: "$\\sin\\theta = v / v_S$" }
+  - { front: "แอมพลิจูด 2 เท่า ความเข้มเสียงเป็นกี่เท่า", back: "4 เท่า เพิ่มขึ้นราว 6 dB" }
+  - { front: "หูคนไวต่อเสียงช่วงความถี่ใดที่สุด", back: "ราว 2000–5000 Hz" }
+references:
+  - { title: "ปรากฏการณ์ด็อพเพลอร์", url: "https://th.wikipedia.org/wiki/ปรากฏการณ์ด็อพเพลอร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Beat (acoustics)", url: "https://en.wikipedia.org/wiki/Beat_(acoustics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "17.7 The Doppler Effect (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "17.8 Shock Waves (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/17-8-shock-waves", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

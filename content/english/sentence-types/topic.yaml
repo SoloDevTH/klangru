@@ -1,0 +1,50 @@
+id: english.grammar.sentence-types
+subject: english
+title: { th: "ประโยคความเดียว ความรวม และความซ้อน", en: "Simple, compound and complex sentences" }
+summary: แยกประโยค simple, compound และ complex เชื่อมอนุประโยคด้วย and, but, so, because, although, when และขยายคำนามด้วย who, which, that
+difficulty: 4
+minutes: 40
+prerequisites: [english.grammar.connectors]
+encompasses:
+  - { id: english.grammar.connectors, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: sentence-types.svg
+    alt: "กล่องอนุประโยคสี่แถว แถว simple (ความเดียว): กล่องอนุประโยคหลักกล่องเดียว Nok plays the khim. แถว compound (ความรวม): กล่องหลัก Nok plays the khim คำเชื่อม , but สีแดง กล่องหลัก her brother plays the guitar. แถว complex (ความซ้อน): กล่องหลัก Nok practises the khim ตามด้วยกล่องเส้นประ when she gets home. แถว relative clause (ขยายคำนาม): กล่องหลัก The woman กล่องเส้นประ who sells som tam กล่องหลัก is very friendly. คำอธิบายสัญลักษณ์: กล่องเส้นทึบสีฟ้าคืออนุประโยคหลักที่ยืนเดี่ยวได้ กล่องเส้นประสีส้มคืออนุประโยคย่อยที่ยืนเดี่ยวไม่ได้ ตัวอักษรสีแดงคือคำเชื่อม"
+    caption: "อนุประโยคหลัก อนุประโยคย่อย และคำเชื่อมในประโยคแต่ละชนิด"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: english.grammar.sentence-types.p003, prompt: "คนใช้ who หรือ which" }
+  - type: worked-example
+    title: รวมสามประโยคสั้นเป็นประโยคเดียว
+    problem: "รวมเป็นประโยค complex ประโยคเดียว: *We went to a restaurant. It sells khao soi. We were hungry.*"
+    steps:
+      - text: "หาความสัมพันธ์: It หมายถึง a restaurant (ขยายคำนาม) และ We were hungry เป็นเหตุผลที่ไป"
+      - text: "ขยาย a restaurant ด้วย which: *We went to a restaurant which sells khao soi*"
+        why: "restaurant เป็นสิ่ง ใช้ which หรือ that และตัด It ออกเพราะ which แทนแล้ว"
+      - text: "เติมเหตุผลด้วย because ต่อท้าย: *... because we were hungry.*"
+      - text: "ตรวจ: มีอนุประโยคหลัก 1 (We went to a restaurant) อนุประโยคย่อย 2 (which ... / because ...) จึงเป็น complex"
+    answer: "*We went to a restaurant which sells khao soi because we were hungry.* (หรือ *Because we were hungry, we went to a restaurant which sells khao soi.*)"
+  - { type: check, problem: english.grammar.sentence-types.p012, prompt: "แม้ว่า ภาษาอังกฤษใช้คำใด" }
+glossary:
+  - { term: clause, definition: "อนุประโยค กลุ่มคำที่มีประธานและกริยาของตัวเอง" }
+  - { term: independent clause, definition: "อนุประโยคหลัก ยืนเป็นประโยคเดี่ยวได้" }
+  - { term: dependent clause, definition: "อนุประโยคย่อย ขึ้นต้นด้วยคำเชื่อม เช่น because, although, when ยืนเดี่ยวไม่ได้" }
+  - { term: compound sentence, definition: "ประโยคความรวม อนุประโยคหลักสองอนุประโยคเชื่อมด้วย and, but, or, so" }
+  - { term: complex sentence, definition: "ประโยคความซ้อน อนุประโยคหลักกับอนุประโยคย่อยอย่างน้อยหนึ่ง" }
+  - { term: relative clause, definition: "อนุประโยคที่ขยายคำนาม ขึ้นต้นด้วย who, which หรือ that" }
+  - { term: comma splice, definition: "การเชื่อมสองอนุประโยคหลักด้วยจุลภาคอย่างเดียว ซึ่งผิดหลัก" }
+flashcards:
+  - { front: "simple / compound / complex", back: "ความเดียว / ความรวม (and, but, or, so) / ความซ้อน (because, although, when, if, who ...)" }
+  - { front: "คนใช้ ... · สิ่งของใช้ ... · ทั้งสองใช้ ...", back: "who · which · that" }
+  - { front: "แม้ว่าฝนตก แต่เราก็เล่นฟุตบอล", back: "Although it was raining, we played football. (ไม่ใส่ but)" }
+  - { front: "จุลภาคในประโยค compound อยู่ตรงไหน", back: "หน้าคำเชื่อม: It was hot, so we went swimming." }
+  - { front: "the temple which we visited it — ผิดตรงไหน", back: "ใส่ it ซ้ำ ที่ถูก: the temple which we visited" }
+references:
+  - { title: "Sentence clause structure", url: "https://en.wikipedia.org/wiki/Sentence_clause_structure", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "English relative clauses", url: "https://en.wikipedia.org/wiki/English_relative_clauses", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Conjunction (grammar)", url: "https://en.wikipedia.org/wiki/Conjunction_(grammar)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

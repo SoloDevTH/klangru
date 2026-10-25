@@ -1,0 +1,276 @@
+problems:
+  - id: physics.waves.resonance-standing-waves.p001
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 1
+    type: mcq
+    stem: "พี่ผลักชิงช้าให้น้องในสนามเด็กเล่น ผลักอย่างไรชิงช้าจึงแกว่งสูงขึ้นเรื่อย ๆ ด้วยแรงน้อยที่สุด"
+    choices:
+      - { id: a, text: "ผลักเบา ๆ ทุกครั้งที่ชิงช้ากลับมาถึงมือพอดี", correct: true }
+      - { id: b, text: "ผลักเร็ว ๆ ถี่ ๆ หลายครั้งในการแกว่งหนึ่งรอบ", feedback: "ผลักถี่กว่าจังหวะของชิงช้า บางครั้งจะผลักสวนทางกับการเคลื่อนที่และหักล้างการแกว่ง" }
+      - { id: c, text: "ผลักแรง ๆ เพียงครั้งเดียว", feedback: "ผลักครั้งเดียวได้ความสูงจำกัด และชิงช้าจะค่อย ๆ หยุดเพราะแรงต้าน การผลักถูกจังหวะซ้ำ ๆ สะสมพลังงานได้มากกว่า" }
+    hints:
+      - "ชิงช้ามีจังหวะการแกว่งของมันเอง"
+      - "แรงกระตุ้นที่ความถี่เท่ากับความถี่ธรรมชาติทำให้เกิดอะไร"
+    solution: "ผลักด้วยความถี่เท่ากับความถี่ธรรมชาติของชิงช้า แรงจะเสริมการแกว่งทุกรอบ แอมพลิจูดเพิ่มขึ้นเรื่อย ๆ นี่คือการสั่นพ้อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p002
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำกับความหมาย"
+    pairs:
+      - { left: "บัพ", right: "ตำแหน่งในคลื่นนิ่งที่ตัวกลางไม่สั่น" }
+      - { left: "ปฏิบัพ", right: "ตำแหน่งในคลื่นนิ่งที่ตัวกลางสั่นแรงที่สุด" }
+      - { left: "ความถี่ธรรมชาติ", right: "ความถี่ที่วัตถุสั่นเองเมื่อถูกรบกวนแล้วปล่อย" }
+      - { left: "การสั่นพ้อง", right: "การสั่นแอมพลิจูดมากเมื่อความถี่ของแรงกระตุ้นเท่ากับความถี่ธรรมชาติ" }
+    hints:
+      - "\"ปฏิ\" แปลว่าตรงข้าม ปฏิบัพจึงตรงข้ามกับบัพ"
+      - "ความถี่ธรรมชาติเป็นสมบัติของวัตถุเอง"
+    solution: "บัพไม่สั่น ปฏิบัพสั่นแรงที่สุด ความถี่ธรรมชาติคือความถี่ที่วัตถุสั่นเอง และการสั่นพ้องเกิดเมื่อกระตุ้นด้วยความถี่ธรรมชาตินั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p003
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 2
+    type: numeric
+    stem: "คลื่นนิ่งในเส้นเชือกมีความยาวคลื่น $0.80\\ \\mathrm{m}$ บัพสองจุดที่อยู่ติดกันห่างกันกี่เมตร"
+    answer: { value: 0.4, tolerance: 0.005, unit: m }
+    misconceptions:
+      - { match: 0.8, feedback: "บัพที่ติดกันห่างกันครึ่งความยาวคลื่น ไม่ใช่หนึ่งความยาวคลื่น" }
+      - { match: 0.2, feedback: "$\\lambda/4$ คือระยะจากบัพถึงปฏิบัพที่ติดกัน ไม่ใช่บัพถึงบัพ" }
+    hints:
+      - "หนึ่งลูปของคลื่นนิ่งเริ่มที่บัพและจบที่บัพ"
+      - "หนึ่งลูปยาวเท่าไรของความยาวคลื่น"
+    solution: "บัพที่ติดกันห่างกัน $\\tfrac{\\lambda}{2} = \\tfrac{0.80}{2} = 0.40\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p004
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 2
+    type: mcq
+    stem: "เมื่อหมุนปุ่มเลือกสถานีวิทยุ FM ในรถจากคลื่น 95.0 MHz ไป 105.5 MHz วิทยุใช้หลักการใดเลือกรับเฉพาะสถานีที่ต้องการ"
+    choices:
+      - { id: a, text: "ปรับความถี่ธรรมชาติของวงจรรับสัญญาณให้เท่ากับความถี่ของสถานี วงจรจึงสั่นพ้องกับสถานีนั้น", correct: true }
+      - { id: b, text: "เพิ่มความดังของลำโพงให้ได้ยินสถานีที่ต้องการ", feedback: "ความดังเพิ่มทุกสถานีพร้อมกัน ไม่ได้แยกสถานี ต้องให้วงจรตอบสนองเฉพาะความถี่เดียว" }
+      - { id: c, text: "ปิดกั้นคลื่นจากสถานีอื่นไม่ให้มาถึงเสาอากาศ", feedback: "คลื่นทุกสถานีมาถึงเสาอากาศพร้อมกัน วงจรเลือกรับเฉพาะคลื่นที่มีความถี่ตรงกับความถี่ธรรมชาติของมัน" }
+    hints:
+      - "วงจรรับสัญญาณมีความถี่ธรรมชาติที่ปรับได้"
+      - "วงจรจะตอบสนองแรงที่สุดต่อคลื่นความถี่ใด"
+    solution: "การหมุนปุ่มเปลี่ยนความถี่ธรรมชาติของวงจร เมื่อเท่ากับความถี่ของสถานีใด วงจรจะสั่นพ้องกับคลื่นของสถานีนั้น สัญญาณจึงแรงกว่าสถานีอื่นมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p005
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 3
+    type: numeric
+    stem: "เชือกยาว $1.2\\ \\mathrm{m}$ ตรึงปลายทั้งสองสั่นเป็นคลื่นนิ่งดังภาพ ความยาวคลื่นเป็นกี่เมตร"
+    figure: { src: p-string.svg, alt: "เชือกยาว 1.2 m ตรึงที่ปลายซ้ายและขวา สั่นเป็นคลื่นนิ่ง มีลูปสี่ลูปเรียงกัน เส้นทึบและเส้นประแสดงตำแหน่งสูงสุดและต่ำสุดของเชือก" }
+    answer: { value: 0.6, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 0.3, feedback: "ถือว่าหนึ่งลูปคือหนึ่งความยาวคลื่น หนึ่งลูปยาวเพียง $\\lambda/2$" }
+      - { match: 1.2, feedback: "ความยาวเชือกไม่ใช่ความยาวคลื่น ต้องนับว่ามีกี่ลูปในเชือก" }
+    hints:
+      - "นับจำนวนลูปในภาพ"
+      - "แต่ละลูปยาว $\\lambda/2$ จึงได้ $L = n\\tfrac{\\lambda}{2}$"
+    solution: "ภาพมี 4 ลูป $1.2 = 4 \\times \\tfrac{\\lambda}{2}$ จึงได้ $\\lambda = \\tfrac{2(1.2)}{4} = 0.60\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p006
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 3
+    type: numeric
+    stem: "เชือกยาว $1.2\\ \\mathrm{m}$ ตรึงปลายทั้งสองสั่นเป็นคลื่นนิ่ง 4 ลูป ถ้าคลื่นในเชือกมีอัตราเร็ว $30\\ \\mathrm{m/s}$ ความถี่ของการสั่นเป็นกี่เฮิรตซ์"
+    answer: { value: 50, tolerance: 0.5, unit: Hz }
+    misconceptions:
+      - { match: 100, feedback: "ใช้ความยาวลูป $0.30\\ \\mathrm{m}$ เป็นความยาวคลื่น ความยาวคลื่นต้องเป็นสองเท่าของลูป" }
+      - { match: 12.5, feedback: "นี่คือความถี่มูลฐาน (หนึ่งลูป) เชือกที่สั่น 4 ลูปมีความถี่เป็น 4 เท่าของความถี่มูลฐาน" }
+    hints:
+      - "หาความยาวคลื่นจากจำนวนลูปก่อน"
+      - "$f = \\dfrac{v}{\\lambda}$ หรือ $f_n = \\dfrac{nv}{2L}$"
+    solution: "$\\lambda = \\tfrac{2(1.2)}{4} = 0.60\\ \\mathrm{m}$ ดังนั้น $f = \\dfrac{30}{0.60} = 50\\ \\mathrm{Hz}$ (ตรงกับ $f_4 = \\dfrac{4(30)}{2(1.2)} = 50\\ \\mathrm{Hz}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p007
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 3
+    type: numeric
+    stem: "สายกีตาร์เส้นหนึ่งยาว $0.65\\ \\mathrm{m}$ (ส่วนที่สั่น) คลื่นในสายมีอัตราเร็ว $429\\ \\mathrm{m/s}$ ความถี่มูลฐานของสายเป็นกี่เฮิรตซ์"
+    answer: { value: 330, tolerance: 2, unit: Hz }
+    misconceptions:
+      - { match: 660, feedback: "ใช้ $\\lambda = L$ แต่ความถี่มูลฐานสายสั่นหนึ่งลูป $\\lambda = 2L$" }
+      - { match: 165, feedback: "ใช้ $\\lambda = 4L$ ซึ่งเป็นสูตรของท่อปลายเปิดหนึ่งด้าน สายที่ตรึงสองปลายใช้ $\\lambda = 2L$" }
+    hints:
+      - "ความถี่มูลฐานคือการสั่นแบบหนึ่งลูป"
+      - "$f_1 = \\dfrac{v}{2L}$"
+    solution: "$f_1 = \\dfrac{429}{2(0.65)} = 330\\ \\mathrm{Hz}$ (ใกล้โน้ต E ของสายเส้นเล็กที่สุดบนกีตาร์)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p008
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 4
+    type: numeric
+    stem: "ลวดยาว $0.50\\ \\mathrm{m}$ มวลต่อความยาว $5.0 \\times 10^{-4}\\ \\mathrm{kg/m}$ ขึงด้วยแรงตึง $80\\ \\mathrm{N}$ ตรึงปลายทั้งสอง ความถี่มูลฐานของลวดเป็นกี่เฮิรตซ์"
+    answer: { value: 400, tolerance: 2, unit: Hz }
+    misconceptions:
+      - { match: 160000, feedback: "ลืมถอดรากที่สอง $v = \\sqrt{T/\\mu}$ ไม่ใช่ $T/\\mu$" }
+      - { match: 800, feedback: "ใช้ $f = v/L$ ความถี่มูลฐานของสายที่ตรึงสองปลายคือ $v/2L$" }
+    hints:
+      - "หาอัตราเร็วคลื่นก่อน $v = \\sqrt{T/\\mu}$"
+      - "$f_1 = \\dfrac{v}{2L}$"
+    solution: "$v = \\sqrt{\\dfrac{80}{5.0 \\times 10^{-4}}} = \\sqrt{160000} = 400\\ \\mathrm{m/s}$ และ $f_1 = \\dfrac{400}{2(0.50)} = 400\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p009
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 4
+    type: numeric
+    stem: "สายเครื่องดนตรีให้ความถี่มูลฐาน $196\\ \\mathrm{Hz}$ นักดนตรีต้องการตั้งให้เป็น $220\\ \\mathrm{Hz}$ โดยไม่เปลี่ยนความยาวสาย ต้องเพิ่มแรงตึงเป็นกี่เท่าของเดิม (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.26, tolerance: 0.01 }
+    misconceptions:
+      - { match: 1.12, feedback: "คิดว่าความถี่แปรผันตรงกับแรงตึง แต่ $f \\propto v = \\sqrt{T/\\mu}$ ความถี่จึงแปรผันตาม $\\sqrt{T}$" }
+      - { match: 0.79, feedback: "หารกลับด้าน ต้องการเสียงสูงขึ้นจึงต้องเพิ่มแรงตึง อัตราส่วนต้องมากกว่า 1" }
+    hints:
+      - "$f_1 = \\dfrac{1}{2L}\\sqrt{\\dfrac{T}{\\mu}}$ เมื่อ $L$ และ $\\mu$ คงเดิม $f \\propto \\sqrt{T}$"
+      - "$\\dfrac{T_2}{T_1} = \\left(\\dfrac{f_2}{f_1}\\right)^2$"
+    solution: "$\\dfrac{T_2}{T_1} = \\left(\\dfrac{220}{196}\\right)^2 = (1.122)^2 \\approx 1.26$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p010
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 3
+    type: numeric
+    stem: "ท่อยาว $0.25\\ \\mathrm{m}$ ปลายหนึ่งปิด อีกปลายเปิด ถ้าอัตราเร็วเสียงในอากาศเท่ากับ $340\\ \\mathrm{m/s}$ ความถี่มูลฐานของอากาศในท่อเป็นกี่เฮิรตซ์"
+    answer: { value: 340, tolerance: 2, unit: Hz }
+    misconceptions:
+      - { match: 680, feedback: "ใช้ $\\lambda = 2L$ แบบเชือกตรึงสองปลาย ท่อปลายเปิดหนึ่งด้านมีบัพหนึ่งปลายและปฏิบัพหนึ่งปลาย ความยาวมูลฐานคือ $\\lambda/4$" }
+      - { match: 1360, feedback: "ใช้ $\\lambda = L$ ความถี่มูลฐานของท่อปลายเปิดหนึ่งด้านมี $L = \\lambda/4$" }
+    hints:
+      - "ปลายปิดเป็นบัพ ปลายเปิดเป็นปฏิบัพ"
+      - "ความถี่มูลฐาน $L = \\tfrac{\\lambda}{4}$ จึงได้ $f_1 = \\dfrac{v}{4L}$"
+    solution: "$\\lambda = 4L = 1.00\\ \\mathrm{m}$ ดังนั้น $f_1 = \\dfrac{340}{1.00} = 340\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p011
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 4
+    type: numeric
+    stem: "ทดลองด้วยส้อมเสียง $440\\ \\mathrm{Hz}$ และหลอดเรโซแนนซ์ ได้ยินเสียงดังที่สุดครั้งแรกเมื่อลำอากาศยาว $18.5\\ \\mathrm{cm}$ และครั้งที่สองเมื่อยาว $57.5\\ \\mathrm{cm}$ อัตราเร็วเสียงในห้องทดลองเป็นกี่เมตรต่อวินาที"
+    answer: { value: 343, tolerance: 2, unit: m/s }
+    misconceptions:
+      - { match: 325.6, feedback: "ใช้ $\\lambda = 4L_1$ ตรง ๆ ซึ่งคลาดเคลื่อนเพราะปฏิบัพอยู่เลยปากหลอด ควรใช้ผลต่าง $L_2 - L_1 = \\lambda/2$" }
+      - { match: 171.6, feedback: "ใช้ $L_2 - L_1$ เป็นความยาวคลื่น ผลต่างของความยาวที่สั่นพ้องถัดกันเท่ากับครึ่งความยาวคลื่น" }
+    hints:
+      - "ความยาวที่สั่นพ้องถัดกันต่างกันเท่าใด"
+      - "$\\lambda = 2(L_2 - L_1)$ แล้ว $v = f\\lambda$"
+    solution: "$\\tfrac{\\lambda}{2} = 57.5 - 18.5 = 39.0\\ \\mathrm{cm}$ ได้ $\\lambda = 0.780\\ \\mathrm{m}$ และ $v = 440 \\times 0.780 \\approx 343\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p012
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 4
+    type: mcq
+    stem: "ท่อปลายเปิดหนึ่งด้านมีความถี่มูลฐาน $200\\ \\mathrm{Hz}$ ความถี่ใดที่ท่อนี้ **ไม่** สั่นพ้อง"
+    choices:
+      - { id: a, text: "400 Hz", correct: true }
+      - { id: b, text: "600 Hz", feedback: "600 Hz = 3 × 200 Hz เป็นฮาร์มอนิกคี่ ท่อสั่นพ้องได้ (ความยาว 3λ/4)" }
+      - { id: c, text: "1000 Hz", feedback: "1000 Hz = 5 × 200 Hz เป็นฮาร์มอนิกคี่ ท่อสั่นพ้องได้ (ความยาว 5λ/4)" }
+    hints:
+      - "ท่อปลายเปิดหนึ่งด้านต้องมีบัพที่ปลายปิดและปฏิบัพที่ปลายเปิด"
+      - "ความยาวที่ทำได้คือ $\\lambda/4, 3\\lambda/4, 5\\lambda/4$ ความถี่จึงเป็นจำนวนเท่าคี่"
+    solution: "ท่อปลายเปิดหนึ่งด้านมีเฉพาะฮาร์มอนิกคี่ $f_1, 3f_1, 5f_1, \\dots$ คือ 200, 600, 1000 Hz ส่วน 400 Hz เป็นจำนวนเท่าคู่ จึงไม่เกิดการสั่นพ้อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p013
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการทดลองหาอัตราเร็วเสียงด้วยหลอดเรโซแนนซ์และส้อมเสียง"
+    items:
+      - "เติมน้ำให้ลำอากาศในหลอดสั้นมาก แล้วเคาะส้อมเสียงที่รู้ความถี่ถือไว้เหนือปากหลอด"
+      - "ค่อย ๆ ลดระดับน้ำลงจนได้ยินเสียงดังที่สุดครั้งแรก บันทึกความยาวลำอากาศ L₁"
+      - "ลดระดับน้ำต่อไปจนได้ยินเสียงดังที่สุดครั้งที่สอง บันทึกความยาว L₂"
+      - "คำนวณความยาวคลื่น λ = 2(L₂ − L₁)"
+      - "คำนวณอัตราเร็วเสียง v = fλ แล้วเทียบกับค่าจากอุณหภูมิห้อง"
+    hints:
+      - "เริ่มจากลำอากาศสั้นแล้วยาวขึ้นเรื่อย ๆ"
+      - "ต้องได้ความยาวสองค่าก่อนจึงคำนวณความยาวคลื่นได้"
+    solution: "เริ่มจากลำอากาศสั้น → หา L₁ → หา L₂ → λ = 2(L₂ − L₁) → v = fλ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p014
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 4
+    type: numeric
+    stem: "ชิงช้าในงานวัดเป็นลูกตุ้มอย่างง่าย คนผลักออกแรงเป็นจังหวะทุก $3.0\\ \\mathrm{s}$ และชิงช้าสั่นพ้องพอดี เชือกชิงช้ายาวประมาณกี่เมตร ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 2.23, tolerance: 0.03, unit: m }
+    misconceptions:
+      - { match: 0.745, feedback: "ลืมยกกำลังสองคาบ จาก $T = 2\\pi\\sqrt{L/g}$ ได้ $L = \\dfrac{gT^2}{4\\pi^2}$" }
+      - { match: 7.02, feedback: "ใช้ $L = gT^2/4\\pi$ ลืมยกกำลังสอง $\\pi$ ด้วย ต้องเป็น $4\\pi^2$" }
+    hints:
+      - "สั่นพ้องเมื่อคาบของแรงกระตุ้นเท่ากับคาบธรรมชาติของชิงช้า"
+      - "$T = 2\\pi\\sqrt{\\dfrac{L}{g}}$ จัดให้ได้ $L = \\dfrac{gT^2}{4\\pi^2}$"
+    solution: "คาบธรรมชาติ $T = 3.0\\ \\mathrm{s}$ ดังนั้น $L = \\dfrac{9.8(3.0)^2}{4\\pi^2} = \\dfrac{88.2}{39.5} \\approx 2.23\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p015
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 2
+    type: mcq
+    stem: "นักเรียนเป่าลมผ่านปากขวดน้ำดื่มพลาสติกที่มีน้ำอยู่ครึ่งขวดจนได้ยินเสียงหวีด ถ้าเติมน้ำเพิ่มแล้วเป่าใหม่ เสียงจะเปลี่ยนไปอย่างไร"
+    choices:
+      - { id: a, text: "เสียงสูงขึ้น เพราะลำอากาศสั้นลง", correct: true }
+      - { id: b, text: "เสียงต่ำลง เพราะขวดหนักขึ้น", feedback: "เสียงมาจากการสั่นของลำอากาศในขวด ไม่ใช่ตัวขวด ลำอากาศที่สั้นลงสั่นพ้องที่ความถี่สูงขึ้น" }
+      - { id: c, text: "เสียงเท่าเดิม เพราะเป่าแรงเท่าเดิม", feedback: "แรงเป่าเปลี่ยนความดัง แต่ความถี่ที่สั่นพ้องขึ้นกับความยาวลำอากาศ" }
+    hints:
+      - "ส่วนใดของขวดสั่นจนเกิดเสียง"
+      - "ลำอากาศเป็นท่อปลายเปิดหนึ่งด้าน $f_1 = \\dfrac{v}{4L}$"
+    solution: "ลำอากาศเหนือน้ำเป็นท่อปลายเปิดหนึ่งด้าน (ผิวน้ำเป็นปลายปิด) เติมน้ำแล้ว $L$ สั้นลง ความถี่ $f_1 = \\dfrac{v}{4L}$ จึงสูงขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p016
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 5
+    type: numeric
+    stem: "หลอดเรโซแนนซ์ยาว $1.00\\ \\mathrm{m}$ เริ่มเต็มด้วยน้ำ ถือส้อมเสียง $680\\ \\mathrm{Hz}$ ไว้เหนือปากหลอดแล้วค่อย ๆ ปล่อยน้ำออกจนหมด อัตราเร็วเสียง $340\\ \\mathrm{m/s}$ (ไม่คิดผลของปลายหลอด) จะได้ยินเสียงดังที่สุดกี่ครั้ง"
+    answer: { value: 4, tolerance: 0, unit: ครั้ง }
+    misconceptions:
+      - { match: 8, feedback: "นับทุกความยาวที่เป็นจำนวนเท่าของ $\\lambda/4$ แต่ท่อปลายเปิดหนึ่งด้านสั่นพ้องเฉพาะ $\\lambda/4, 3\\lambda/4, 5\\lambda/4, \\dots$" }
+      - { match: 2, feedback: "นับเฉพาะ $\\lambda/4$ กับ $3\\lambda/4$ แต่ความยาวคลื่นสั้น ($0.50\\ \\mathrm{m}$) ลำอากาศยาว $1.00\\ \\mathrm{m}$ จึงมีตำแหน่งสั่นพ้องมากกว่านั้น" }
+    hints:
+      - "หาความยาวคลื่นก่อน $\\lambda = v/f$"
+      - "นับความยาว $\\tfrac{(2n-1)\\lambda}{4}$ ที่ไม่เกิน $1.00\\ \\mathrm{m}$"
+    solution: "$\\lambda = \\tfrac{340}{680} = 0.50\\ \\mathrm{m}$ ความยาวที่สั่นพ้องคือ $0.125, 0.375, 0.625, 0.875\\ \\mathrm{m}$ (ค่าถัดไป $1.125\\ \\mathrm{m}$ ยาวเกินหลอด) จึงได้ยินเสียงดังที่สุด 4 ครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.resonance-standing-waves.p017
+    topics: [physics.waves.resonance-standing-waves]
+    difficulty: 5
+    type: numeric
+    stem: "เชือกตรึงปลายทั้งสองถูกเครื่องสั่นด้วยความถี่คงที่ เห็นคลื่นนิ่ง 4 ลูป ถ้าเพิ่มแรงตึงเชือกเป็น 4 เท่าโดยความถี่ของเครื่องสั่นเท่าเดิม จะเห็นคลื่นนิ่งกี่ลูป"
+    answer: { value: 2, tolerance: 0, unit: ลูป }
+    misconceptions:
+      - { match: 1, feedback: "คิดว่าอัตราเร็วเพิ่ม 4 เท่าตามแรงตึง แต่ $v = \\sqrt{T/\\mu}$ อัตราเร็วเพิ่มเพียง 2 เท่า" }
+      - { match: 8, feedback: "แรงตึงมากขึ้นทำให้คลื่นเร็วขึ้น ความยาวคลื่นที่ความถี่เดิมยาวขึ้น ลูปจึงต้องน้อยลง ไม่ใช่มากขึ้น" }
+    hints:
+      - "แรงตึง 4 เท่า อัตราเร็วคลื่นเปลี่ยนกี่เท่า"
+      - "ความถี่เท่าเดิม $\\lambda = v/f$ ยาวขึ้นกี่เท่า แล้วเชือกบรรจุลูปที่ยาว $\\lambda/2$ ได้กี่ลูป"
+    solution: "$v \\propto \\sqrt{T}$ แรงตึง 4 เท่า อัตราเร็ว 2 เท่า ความถี่เท่าเดิม ความยาวคลื่นจึงยาว 2 เท่า ลูปแต่ละลูปยาว 2 เท่า เชือกยาวเท่าเดิมจึงมีลูป $\\tfrac{4}{2} = 2$ ลูป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,506 @@
+problems:
+- id: english.reading.main-idea.p001
+  topics:
+  - english.reading.main-idea
+  difficulty: 1
+  type: mcq
+  stem: 'อ่านแล้วตอบ *What is the topic?*
+
+
+    *Cats sleep for about 12 to 16 hours a day. Kittens and old cats sleep even more. Cats usually choose warm, quiet places for their naps.*'
+  choices:
+  - id: a
+    text: cats and sleep
+    correct: true
+    feedback: ถูก ทุกประโยคพูดถึงการนอนของแมว
+  - id: b
+    text: kittens
+    feedback: ลูกแมวถูกพูดถึงในประโยคเดียว เป็นรายละเอียด
+  - id: c
+    text: warm places
+    feedback: ที่อุ่น ๆ เป็นรายละเอียดของประโยคสุดท้าย
+  - id: d
+    text: old cats
+    feedback: แมวแก่ถูกพูดถึงในประโยคเดียว
+  hints:
+  - topic คือเรื่องที่ทุกประโยคพูดถึง
+  - หาคำที่ซ้ำในหลายประโยค (cats, sleep)
+  solution: topic คือ **cats and sleep** ทุกประโยคพูดถึงเวลาและที่นอนของแมว
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p002
+  topics:
+  - english.reading.main-idea
+  difficulty: 1
+  type: mcq
+  stem: ดูจดหมายข่าว *Where will the book fair be held?*
+  figure: &id001
+    src: school-newsletter.svg
+    alt: 'จดหมายข่าวสมมุติ BAN NONG BUA SCHOOL NEWS ฉบับ November 2026 มีสามข่าว ข่าวที่ 1 Book Fair Is Coming!: Our book fair will be held in the school library from Monday 16 November to Friday 20 November, 8:30 a.m. – 4:00 p.m. Every student will get a 50-baht coupon. Don''t miss it! ข่าวที่ 2 600 New Trees at Bang Pu: On Saturday 7 November, 45 students from M.2 and 38 students from M.3 planted 600 mangrove trees at Bang Pu, Samut Prakan. "My feet were covered in mud, but it was fun," said Ploy (M.2). ข่าวที่ 3 Sports Day Winners: Congratulations to the Green Team! They won 12 gold medals. The Red Team came second with 9 gold medals, and the Blue Team came third with 7. The day ended with a picnic.'
+  choices:
+  - id: a
+    text: in the school library
+    correct: true
+    feedback: ถูก ข่าวเขียนว่า will be held in the school library
+  - id: b
+    text: at Bang Pu
+    feedback: Bang Pu คือที่ปลูกป่าชายเลน เป็นข่าวอื่น
+  - id: c
+    text: in the school field
+    feedback: ข่าวไม่ได้พูดถึงสนาม ลองหาคำว่า held
+  - id: d
+    text: at a bookshop
+    feedback: ข่าวไม่ได้พูดถึงร้านหนังสือ
+  hints:
+  - ใช้ scanning หาข่าว Book Fair
+  - มองหาคำบอกสถานที่หลัง held in
+  solution: '*Our book fair will be held **in the school library** ...*'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p003
+  topics:
+  - english.reading.main-idea
+  difficulty: 1
+  type: mcq
+  stem: 'ประโยคใดคือ **ใจความสำคัญ**
+
+
+    *(1) Som tam is popular all over Thailand. (2) You can buy it at markets, street stalls and restaurants. (3) Many families also make it at home.*'
+  choices:
+  - id: a
+    text: ประโยค (1)
+    correct: true
+    feedback: ถูก ประโยค (1) บอกสิ่งที่ผู้เขียนต้องการบอก อีกสองประโยคเป็นหลักฐานว่าส้มตำเป็นที่นิยม
+  - id: b
+    text: ประโยค (2)
+    feedback: ประโยค (2) บอกที่ซื้อ เป็นรายละเอียดสนับสนุนว่าส้มตำหาได้ทั่วไป
+  - id: c
+    text: ประโยค (3)
+    feedback: ประโยค (3) เป็นรายละเอียดสนับสนุนอีกข้อ
+  hints:
+  - ใจความสำคัญมักอยู่ประโยคแรก
+  - ประโยคไหนที่ประโยคอื่นช่วยพิสูจน์
+  solution: ใจความคือ ***Som tam is popular all over Thailand.*** ประโยค (2) และ (3) สนับสนุน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p004
+  topics:
+  - english.reading.main-idea
+  difficulty: 2
+  type: numeric
+  stem: ดูจดหมายข่าว งาน book fair จัดทั้งหมดกี่วัน (นับวันแรกและวันสุดท้ายด้วย)
+  figure: *id001
+  answer:
+    value: 5
+    tolerance: 0
+    unit: วัน
+  misconceptions:
+  - match: 4
+    feedback: 20 − 16 = 4 ยังไม่ได้นับวันแรก นับ 16, 17, 18, 19, 20 ได้ 5 วัน
+  hints:
+  - scan หาวันที่ในข่าว Book Fair
+  - นับตั้งแต่ Monday 16 ถึง Friday 20 รวมวันแรก
+  solution: งานจัด Monday 16 ถึง Friday 20 November นับ 16, 17, 18, 19, 20 = **5 วัน** (จันทร์ถึงศุกร์)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p005
+  topics:
+  - english.reading.main-idea
+  difficulty: 2
+  type: numeric
+  stem: ดูจดหมายข่าว มีนักเรียนไปปลูกป่าชายเลนที่บางปูทั้งหมดกี่คน
+  figure: *id001
+  answer:
+    value: 83
+    tolerance: 0
+    unit: คน
+  misconceptions:
+  - match: 7
+    feedback: 45 − 38 คือผลต่าง โจทย์ถามจำนวนรวม ให้บวก
+  - match: 600
+    feedback: 600 คือจำนวนต้นไม้ ไม่ใช่จำนวนนักเรียน
+  hints:
+  - scan หาตัวเลขที่ตามด้วย students
+  - รวมนักเรียน ม.2 และ ม.3
+  solution: 45 (M.2) + 38 (M.3) = **83 คน**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p006
+  topics:
+  - english.reading.main-idea
+  difficulty: 2
+  type: mcq
+  stem: '*Nid was **exhausted** after the long walk, but her little brother still had lots of energy.* คำว่า exhausted น่าจะแปลว่าอะไร'
+  choices:
+  - id: a
+    text: เหนื่อยมาก
+    correct: true
+    feedback: ถูก but บอกว่าตรงข้ามกับ had lots of energy (มีแรงเหลือเยอะ)
+  - id: b
+    text: มีแรงมาก
+    feedback: but แสดงว่า Nid ตรงข้ามกับน้องที่มีแรงเยอะ
+  - id: c
+    text: ตื่นเต้น
+    feedback: ไม่มีเบาะแสเรื่องความตื่นเต้น และ but บอกความตรงข้ามกับการมีแรง
+  - id: d
+    text: หิวมาก
+    feedback: ประโยคไม่ได้พูดถึงอาหาร เบาะแสคือ energy
+  hints:
+  - มองหาคำเชื่อมที่บอกความตรงข้าม
+  - ตรงข้ามกับ had lots of energy คืออะไร
+  solution: but บอกความขัดแย้ง น้องยัง *had lots of energy* แสดงว่า Nid **เหนื่อยมาก** (exhausted = very tired)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p007
+  topics:
+  - english.reading.main-idea
+  difficulty: 2
+  type: match
+  stem: 'จับคู่ประโยคในย่อหน้ากับหน้าที่ของประโยค
+
+
+    *Our school canteen should sell more fruit. Fruit has vitamins that keep us healthy. For example, one guava has more vitamin C than an orange. So, more fruit means healthier students.*'
+  pairs:
+  - left: Our school canteen should sell more fruit.
+    right: ใจความสำคัญ (topic sentence)
+  - left: Fruit has vitamins that keep us healthy.
+    right: 'รายละเอียดสนับสนุน: เหตุผล'
+  - left: For example, one guava has more vitamin C than an orange.
+    right: 'รายละเอียดสนับสนุน: ตัวอย่าง'
+  - left: So, more fruit means healthier students.
+    right: ประโยคสรุป
+  hints:
+  - ประโยคแรกบอกสิ่งที่ผู้เขียนต้องการ
+  - For example นำตัวอย่าง So นำข้อสรุป
+  solution: ใจความ → เหตุผล → ตัวอย่าง (For example) → สรุป (So)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p008
+  topics:
+  - english.reading.main-idea
+  difficulty: 2
+  type: mcq
+  stem: ดูจดหมายข่าว ถ้าต้องการรู้แค่ว่า **ทีมไหนได้ที่สอง** ควรอ่านแบบใด
+  figure: *id001
+  choices:
+  - id: a
+    text: 'scanning: กวาดตาหาคำว่า second'
+    correct: true
+    feedback: ถูก ต้องการข้อมูลเฉพาะจุด กวาดตาหาคำสำคัญ
+  - id: b
+    text: 'skimming: อ่านประโยคแรกของทุกข่าว'
+    feedback: skimming ใช้หาว่าเรื่องว่าด้วยอะไร ประโยคแรกของข่าวกีฬาบอกแค่ทีมที่ชนะ
+  - id: c
+    text: อ่านทุกคำตั้งแต่ข่าวแรกและแปลทุกประโยค
+    feedback: เสียเวลา ข้อมูลที่ต้องการอยู่จุดเดียว
+  - id: d
+    text: อ่านแค่หัวข่าว
+    feedback: หัวข่าว Sports Day Winners ไม่บอกว่าใครได้ที่สอง
+  hints:
+  - ต้องการภาพรวมหรือข้อมูลเฉพาะ
+  - ข้อมูลเฉพาะ เช่น ชื่อ ตัวเลข ลำดับ ใช้ scanning
+  solution: ใช้ **scanning** หาคำว่า *second* แล้วจะพบ *The Red Team came second*
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p009
+  topics:
+  - english.reading.main-idea
+  difficulty: 3
+  type: mcq
+  stem: 'อ่านนิทานแล้วเลือก **theme** (แก่นเรื่อง)
+
+
+    *In summer, an ant worked hard every day. It carried grain to its nest and stored food for the winter. A grasshopper sang and played in the sun. "Why do you work so hard?" it laughed. When winter came, the grasshopper had nothing to eat. Hungry and cold, it went to the ant and asked for food.*'
+  choices:
+  - id: a
+    text: It is wise to prepare for the future.
+    correct: true
+    feedback: ถูก มดเตรียมอาหารไว้จึงรอด ตั๊กแตนไม่เตรียมจึงลำบาก เป็นข้อคิดที่ใช้ได้กับชีวิตจริง
+  - id: b
+    text: Ants carry grain to their nests.
+    feedback: เป็นรายละเอียดในเรื่อง ไม่ใช่ข้อคิด
+  - id: c
+    text: Grasshoppers like to sing in summer.
+    feedback: เป็นรายละเอียดในเรื่อง ไม่ใช่ข้อคิด
+  - id: d
+    text: Winter is colder than summer.
+    feedback: เป็นความรู้ทั่วไป ไม่ใช่ข้อคิดที่เรื่องต้องการสอน
+  hints:
+  - theme เป็นข้อคิดที่ใช้ได้นอกเรื่อง ไม่ใช่เหตุการณ์ในเรื่อง
+  - ถามตัวเองว่าทำไมตัวหนึ่งรอดอีกตัวลำบาก
+  solution: theme คือ ***It is wise to prepare for the future.*** มดเตรียมไว้ตั้งแต่ฤดูร้อนจึงมีอาหารในฤดูหนาว
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p010
+  topics:
+  - english.reading.main-idea
+  difficulty: 3
+  type: order
+  stem: 'อ่านนิทานแล้วเรียงข้อสรุปตามลำดับเหตุการณ์
+
+
+    *In summer, an ant worked hard every day. It carried grain to its nest and stored food for the winter. A grasshopper sang and played in the sun. "Why do you work so hard?" it laughed. When winter came, the grasshopper had nothing to eat. Hungry and cold, it went to the ant and asked for food.*'
+  items:
+  - The ant worked hard and stored food in summer.
+  - The grasshopper played and laughed at the ant.
+  - Winter came, and the grasshopper had no food.
+  - The hungry grasshopper asked the ant for help.
+  hints:
+  - เรื่องเริ่มในฤดูร้อนและจบในฤดูหนาว
+  - การขออาหารเกิดหลังจากไม่มีอาหาร
+  solution: ฤดูร้อน มดทำงาน → ตั๊กแตนเล่นและหัวเราะเยาะ → ฤดูหนาวตั๊กแตนไม่มีอาหาร → ไปขอมด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p011
+  topics:
+  - english.reading.main-idea
+  difficulty: 3
+  type: mcq
+  stem: 'อ่านแล้วเลือก **ข้อสรุปที่ดีที่สุด**
+
+
+    *Mangrove forests grow along the coast in many parts of Thailand, such as Trat, Chanthaburi and Krabi. They protect the coast in several ways. Their thick roots slow down big waves during storms. The roots also hold the mud together, so the land does not wash away. Many tourists enjoy boat trips through the forests, and local people catch crabs there.*'
+  choices:
+  - id: a
+    text: Mangrove forests along Thailand's coast protect the land because their roots slow waves and hold the mud.
+    correct: true
+    feedback: ถูก มีใจความและประเด็นหลักทั้งสองข้อ สั้นและใช้คำของตัวเอง
+  - id: b
+    text: Mangrove roots slow down big waves.
+    feedback: แคบเกินไป พูดถึงรายละเอียดข้อเดียว
+  - id: c
+    text: Mangrove forests protect the coast and are the most beautiful forests in Thailand.
+    feedback: ใส่ความเห็น (most beautiful) ซึ่งไม่อยู่ในเรื่อง
+  - id: d
+    text: Forests around the world are important for animals and people.
+    feedback: กว้างเกินไป เรื่องพูดถึงป่าชายเลนในไทย
+  hints:
+  - ข้อสรุปต้องมีใจความสำคัญและประเด็นหลัก
+  - ตัดตัวเลือกที่แคบไป กว้างไป หรือมีความเห็นที่ไม่อยู่ในเรื่อง
+  solution: 'ข้อสรุปที่ดี: ***Mangrove forests along Thailand''s coast protect the land because their roots slow waves and hold the mud.***'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p012
+  topics:
+  - english.reading.main-idea
+  difficulty: 3
+  type: mcq
+  stem: 'อ่านบทสนทนาแล้วตอบ *What is the conversation mainly about?*
+
+
+    *A: Are you free on Saturday?*
+
+    *B: Not in the morning. I have a piano lesson. Why?*
+
+    *A: The new aquarium opens this weekend. Do you want to go?*
+
+    *B: Sure! How about Saturday afternoon?*
+
+    *A: Great. Let''s meet at the BTS station at two.*'
+  choices:
+  - id: a
+    text: making a plan to visit the aquarium
+    correct: true
+    feedback: ถูก ทั้งบทสนทนาชวนกันไปและนัดเวลาที่นัดพบ
+  - id: b
+    text: B's piano lesson
+    feedback: เรียนเปียโนเป็นเหตุผลที่ไปตอนเช้าไม่ได้ เป็นรายละเอียด
+  - id: c
+    text: how to get to the BTS station
+    feedback: BTS เป็นแค่จุดนัดพบ ไม่มีใครถามทาง
+  - id: d
+    text: the opening hours of the aquarium
+    feedback: ไม่มีใครถามเวลาเปิดปิด
+  hints:
+  - 'สรุปบทสนทนา: ใครคุยเรื่องอะไร และตกลงอะไร'
+  - ดูตอนจบว่าทั้งสองตกลงอะไรกัน
+  solution: A ชวน B ไปพิพิธภัณฑ์สัตว์น้ำ ตกลงไปบ่ายวันเสาร์ นัดที่สถานี BTS เวลาบ่ายสอง ใจความคือ **การนัดไปพิพิธภัณฑ์สัตว์น้ำ**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p013
+  topics:
+  - english.reading.main-idea
+  difficulty: 3
+  type: text
+  stem: 'อ่านแล้วพิมพ์คำในข้อความที่แปลว่า *very tired*: *After climbing the long staircase to Wat Phra That Doi Suthep, Ben was exhausted. He sat down under a tree and drank two bottles of water.*'
+  accepted:
+  - exhausted
+  misconceptions:
+  - match: tired
+    feedback: tired ไม่อยู่ในข้อความ ให้หาคำที่อยู่ในข้อความ
+  - match: sat
+    feedback: sat down เป็นสิ่งที่ Ben ทำเพราะเหนื่อย ไม่ใช่คำที่แปลว่าเหนื่อย
+  hints:
+  - 'เบาะแส: ปีนบันไดยาว แล้วนั่งพักและดื่มน้ำสองขวด'
+  - หาคำคุณศัพท์ที่บอกสภาพของ Ben หลัง was
+  solution: '**exhausted** (เหนื่อยมาก) เบาะแสคือปีนบันไดยาว แล้วต้องนั่งพักและดื่มน้ำ'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p014
+  topics:
+  - english.reading.main-idea
+  difficulty: 4
+  type: mcq
+  stem: ข้อใดเป็น **opinion** (ความคิดเห็น) ไม่ใช่ fact
+  choices:
+  - id: a
+    text: The book fair is the best event of the year.
+    correct: true
+    feedback: ถูก best เป็นการตัดสินของผู้พูด ตรวจสอบไม่ได้
+  - id: b
+    text: The Green Team won 12 gold medals.
+    feedback: ตรวจสอบได้จากผลการแข่ง เป็น fact
+  - id: c
+    text: Students planted 600 mangrove trees at Bang Pu.
+    feedback: นับได้ เป็น fact
+  - id: d
+    text: The book fair opens at 8:30 a.m.
+    feedback: ตรวจสอบได้ เป็น fact
+  hints:
+  - fact ตรวจสอบได้ว่าจริงหรือไม่
+  - opinion มักมีคำตัดสิน เช่น best, should, beautiful
+  solution: '***The book fair is the best event of the year.*** เป็นความคิดเห็น ข้ออื่นตรวจสอบได้'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p015
+  topics:
+  - english.reading.main-idea
+  difficulty: 4
+  type: mcq
+  stem: 'อ่านแล้วตอบ *How did Grandma most likely feel?*
+
+
+    *Mali had practised the khim every evening for three months. When the judges read out the winner''s name, Mali covered her mouth with both hands. In the front row, her grandmother wiped her eyes and smiled.*'
+  choices:
+  - id: a
+    text: proud and happy
+    correct: true
+    feedback: ถูก ยิ้มขณะเช็ดน้ำตา และ Mali ตกใจดีใจ แสดงว่าน่าจะชนะ คุณยายจึงภูมิใจจนน้ำตาไหล
+  - id: b
+    text: sad because Mali lost
+    feedback: ถ้าแพ้คงไม่ยิ้ม การเช็ดน้ำตาพร้อมยิ้มบอกว่าเป็นน้ำตาแห่งความดีใจ
+  - id: c
+    text: angry with the judges
+    feedback: ไม่มีเบาะแสของความโกรธ คุณยายยิ้ม
+  - id: d
+    text: bored after a long day
+    feedback: ไม่มีเบาะแส คนเบื่อไม่เช็ดน้ำตาแล้วยิ้ม
+  hints:
+  - คำตอบไม่ได้เขียนตรง ๆ ต้องตีความจากการกระทำ
+  - wiped her eyes AND smiled พร้อมกันบอกอะไร
+  solution: Mali ฝึกมาสามเดือนและตกใจเมื่อได้ยินชื่อผู้ชนะ คุณยายเช็ดน้ำตาและยิ้ม จึงน่าจะ **ภูมิใจและดีใจ** (inference)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p016
+  topics:
+  - english.reading.main-idea
+  difficulty: 4
+  type: mcq
+  stem: 'ใจความของข้อความคือ *Mangrove forests protect the coast.* ประโยคใด **สนับสนุน** ใจความนี้ (เลือกทุกข้อที่ถูก)
+
+
+    *Mangrove forests grow along the coast in many parts of Thailand, such as Trat, Chanthaburi and Krabi. They protect the coast in several ways. Their thick roots slow down big waves during storms. The roots also hold the mud together, so the land does not wash away. Many tourists enjoy boat trips through the forests, and local people catch crabs there.*'
+  multiple: true
+  choices:
+  - id: a
+    text: Their thick roots slow down big waves during storms.
+    correct: true
+    feedback: ถูก อธิบายวิธีที่ป่าชายเลนป้องกันชายฝั่ง
+  - id: b
+    text: The roots also hold the mud together, so the land does not wash away.
+    correct: true
+    feedback: ถูก อธิบายวิธีป้องกันอีกทางหนึ่ง
+  - id: c
+    text: Many tourists enjoy boat trips through the forests, and local people catch crabs there.
+    feedback: เป็นเรื่องจริงในข้อความ แต่ไม่ได้บอกว่าป่าป้องกันชายฝั่งอย่างไร
+  - id: d
+    text: Mangrove forests grow along the coast in many parts of Thailand, such as Trat, Chanthaburi and Krabi.
+    feedback: บอกว่าป่าอยู่ที่ไหน ไม่ได้สนับสนุนเรื่องการป้องกัน
+  hints:
+  - รายละเอียดสนับสนุนต้องตอบว่า ป้องกันอย่างไร
+  - ประโยคที่จริงแต่พูดเรื่องอื่นไม่นับ
+  solution: 'สองประโยคที่อธิบาย **วิธี** ป้องกันชายฝั่ง: รากชะลอคลื่น และรากยึดโคลนไว้'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p017
+  topics:
+  - english.reading.main-idea
+  difficulty: 4
+  type: numeric
+  stem: ดูจดหมายข่าว ทีมที่ชนะได้เหรียญทองมากกว่าทีมที่ได้ที่สามกี่เหรียญ
+  figure: *id001
+  answer:
+    value: 5
+    tolerance: 0
+    unit: เหรียญ
+  misconceptions:
+  - match: 3
+    feedback: 12 − 9 = 3 เป็นการเทียบกับทีมที่ได้ที่สอง (Red) ไม่ใช่ที่สาม
+  - match: 28
+    feedback: 28 คือผลรวมของทุกทีม โจทย์ถามผลต่าง
+  - match: 2
+    feedback: 9 − 7 = 2 เป็นผลต่างของที่สองกับที่สาม
+  hints:
+  - scan หาคำว่า won, second, third
+  - ทีมที่ชนะคือ Green ทีมที่สามคือ Blue แล้วลบกัน
+  solution: Green Team ชนะ 12 เหรียญ Blue Team ได้ที่สาม 7 เหรียญ 12 − 7 = **5 เหรียญ**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p018
+  topics:
+  - english.reading.main-idea
+  difficulty: 5
+  type: mcq
+  stem: 'อ่านเรื่องสั้นแล้วเลือก **theme** ที่ตีความได้ดีที่สุด
+
+
+    *Every morning, Arthit walked past an old man who sold brooms at the market. Nobody seemed to buy them. One rainy day, Arthit bought a broom, although his family already had two. The old man''s face lit up. On the way home, Arthit realised that he felt happier than when he had won a new phone in a lucky draw.*'
+  choices:
+  - id: a
+    text: Small acts of kindness can make both the giver and the receiver happy.
+    correct: true
+    feedback: ถูก ทั้งชายชราและ Arthit มีความสุข และ Arthit สุขกว่าตอนได้โทรศัพท์ เป็นข้อคิดที่ตีความจากเรื่อง
+  - id: b
+    text: Brooms are useful on rainy days.
+    feedback: เรื่องไม่ได้บอกว่าซื้อเพราะฝนตก และไม่ใช่ข้อคิด
+  - id: c
+    text: Old people should not sell things at markets.
+    feedback: เป็นความเห็นที่ไม่มีในเรื่อง
+  - id: d
+    text: Winning a phone is the best way to feel happy.
+    feedback: ขัดกับเรื่อง Arthit สุขกว่าตอนได้โทรศัพท์
+  hints:
+  - theme ไม่ได้เขียนตรง ๆ ต้องดูว่าตัวละครเปลี่ยนความรู้สึกอย่างไร
+  - เทียบความสุขของ Arthit ตอนได้โทรศัพท์กับตอนช่วยชายชรา
+  solution: ชายชรายิ้ม (face lit up) Arthit ก็มีความสุขกว่าตอนได้โทรศัพท์ theme คือ ***Small acts of kindness can make both the giver and the receiver happy.***
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: english.reading.main-idea.p019
+  topics:
+  - english.reading.main-idea
+  difficulty: 5
+  type: mcq
+  stem: 'อ่านข่าวแล้วเลือกคำตอบที่ **แสดงความคิดเห็นพร้อมเหตุผลและตัวอย่างจากข่าว** ได้ดีที่สุด
+
+
+    *Since 2020, most big shops in Thailand have stopped giving free plastic bags. However, many fresh markets still use them. Students at our school counted the bags at one food stall and found that it gave out about 200 bags in one day.*'
+  choices:
+  - id: a
+    text: I think fresh markets should also stop giving free plastic bags because they create a lot of waste. For example, one stall gave out about 200 bags in one day.
+    correct: true
+    feedback: ถูก มีความเห็น (I think ... should) เหตุผล (because ...) และตัวอย่างจากข่าว (200 bags)
+  - id: b
+    text: Fresh markets still use plastic bags. One stall gave out about 200 bags in one day.
+    feedback: มีแต่ข้อเท็จจริงจากข่าว ไม่มีความเห็น
+  - id: c
+    text: I think plastic bags are bad.
+    feedback: มีความเห็น แต่ไม่มีเหตุผลและตัวอย่าง
+  - id: d
+    text: I think fresh markets should stop plastic bags because big shops stopped in 2010.
+    feedback: ข้อมูลผิด ข่าวบอกว่าเริ่มปี 2020
+  hints:
+  - 'ต้องมีครบสามส่วน: ความเห็น เหตุผล ตัวอย่าง'
+  - ตัวอย่างต้องตรงกับข้อมูลในข่าว
+  solution: คำตอบที่ดีที่สุดมีความเห็น เหตุผล และตัวอย่างที่ตรงกับข่าว (about 200 bags in one day)
+  license: CC-BY-SA-4.0
+  ai_assisted: true

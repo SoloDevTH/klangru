@@ -1,0 +1,74 @@
+id: physics.waves.resonance-standing-waves
+subject: physics
+title: { th: การสั่นพ้องและคลื่นนิ่ง, en: Resonance and standing waves }
+summary: ความถี่ธรรมชาติ การสั่นพ้องและผลที่เกิดขึ้น คลื่นนิ่งในเส้นเชือก บัพและปฏิบัพ ฮาร์มอนิก และการสั่นพ้องของอากาศในท่อปลายเปิดหนึ่งด้าน
+difficulty: 6
+minutes: 40
+prerequisites: [physics.waves.shm, physics.waves.sound, physics.waves.wave-behaviour]
+encompasses:
+  - { id: physics.waves.wave-behaviour, weight: 0.4 }
+  - { id: physics.waves.shm, weight: 0.2 }
+  - { id: physics.waves.sound, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กราฟการสั่นพ้อง
+    src: resonance-curve.svg
+    alt: "กราฟแอมพลิจูดกับความถี่ของแรงกระตุ้น เส้นสีแดงคือระบบที่มีการหน่วงน้อย ยอดสูงและแคบที่ความถี่ธรรมชาติ f₀ เส้นสีน้ำเงินคือระบบที่มีการหน่วงมาก ยอดต่ำและกว้างที่ความถี่ใกล้เคียงกัน ห่างจาก f₀ ทั้งสองเส้นมีแอมพลิจูดน้อย"
+  - type: figure
+    title: คลื่นนิ่งในเส้นเชือก
+    src: standing-string.svg
+    alt: "เชือกตรึงปลายทั้งสองสามเส้น เส้นบนสั่นเป็นหนึ่งลูป L = λ/2 ความถี่ f₁ = v/2L มีบัพ N ที่ปลายทั้งสองและปฏิบัพ A ตรงกลาง เส้นกลางสั่นสองลูป L = 2 × λ/2 ความถี่ f₂ = 2v/2L มีบัพสามจุด เส้นล่างสั่นสามลูป L = 3 × λ/2 ความถี่ f₃ = 3v/2L มีบัพสี่จุดและปฏิบัพสามจุด ระยะระหว่างบัพที่ติดกันเท่ากับ λ/2"
+  - type: worked-example
+    title: ความถี่ของสายจะเข้
+    problem: "สายจะเข้เส้นหนึ่งยาว $0.80\\ \\mathrm{m}$ มวลต่อความยาว $5.0 \\times 10^{-4}\\ \\mathrm{kg/m}$ ขึงด้วยแรงตึง $15.5\\ \\mathrm{N}$ หาความถี่มูลฐานและความถี่ฮาร์มอนิกที่ 2"
+    steps:
+      - text: "อัตราเร็วคลื่นในสาย $v = \\sqrt{\\dfrac{T}{\\mu}} = \\sqrt{\\dfrac{15.5}{5.0 \\times 10^{-4}}} = \\sqrt{31000} \\approx 176\\ \\mathrm{m/s}$"
+      - text: "ความถี่มูลฐาน: สายสั่นหนึ่งลูป $L = \\tfrac{\\lambda}{2}$ จึงได้ $\\lambda = 1.60\\ \\mathrm{m}$ และ $f_1 = \\dfrac{v}{2L} = \\dfrac{176}{1.60} = 110\\ \\mathrm{Hz}$"
+        why: "ปลายทั้งสองถูกตรึงจึงเป็นบัพ ความยาวที่สั้นที่สุดที่มีบัพสองปลายคือครึ่งความยาวคลื่น"
+      - text: "ฮาร์มอนิกที่ 2 $f_2 = 2f_1 = 220\\ \\mathrm{Hz}$ (สองลูป)"
+    answer: "ความถี่มูลฐานประมาณ 110 Hz และฮาร์มอนิกที่ 2 ประมาณ 220 Hz"
+  - { type: check, problem: physics.waves.resonance-standing-waves.p005, prompt: "นับจำนวนลูปก่อน" }
+  - type: figure
+    title: ท่อปลายเปิดหนึ่งด้าน
+    src: closed-pipe.svg
+    alt: "ท่อสามท่อ ปลายซ้ายปิด ปลายขวาเปิด เส้นโค้งแสดงการกระจัดของอากาศ เป็นบัพ N ที่ปลายปิดและปฏิบัพ A ที่ปลายเปิด ท่อแรกยาว λ/4 ความถี่มูลฐาน f₁ ท่อที่สองยาว 3λ/4 ความถี่ 3f₁ ท่อที่สามยาว 5λ/4 ความถี่ 5f₁"
+    caption: "ความยาวที่สั่นพ้องถัดกันต่างกัน λ/2 จึงใช้หาความยาวคลื่นของเสียงได้"
+  - type: worked-example
+    title: หาอัตราเร็วเสียงด้วยหลอดเรโซแนนซ์
+    problem: "ถือส้อมเสียง $512\\ \\mathrm{Hz}$ เหนือหลอดเรโซแนนซ์ ลดระดับน้ำลง ได้ยินเสียงดังที่สุดครั้งแรกเมื่อลำอากาศยาว $16.0\\ \\mathrm{cm}$ และครั้งที่สองที่ $49.5\\ \\mathrm{cm}$ หาอัตราเร็วเสียง"
+    steps:
+      - text: "ความยาวที่สั่นพ้องถัดกันต่างกัน $\\tfrac{\\lambda}{2}$: $\\tfrac{\\lambda}{2} = 49.5 - 16.0 = 33.5\\ \\mathrm{cm}$"
+        why: "ใช้ผลต่างเพื่อตัดผลของปฏิบัพที่อยู่เลยปากหลอดออกไปเล็กน้อย"
+      - text: "$\\lambda = 67.0\\ \\mathrm{cm} = 0.670\\ \\mathrm{m}$"
+      - text: "$v = f\\lambda = 512 \\times 0.670 \\approx 343\\ \\mathrm{m/s}$"
+      - text: "ตรวจ: $\\tfrac{\\lambda}{4} = 16.75\\ \\mathrm{cm}$ ยาวกว่า $16.0\\ \\mathrm{cm}$ ที่วัดได้เล็กน้อย ส่วนต่าง $0.75\\ \\mathrm{cm}$ คือระยะที่ปฏิบัพอยู่เลยปากหลอด"
+    answer: "อัตราเร็วเสียงประมาณ 343 m/s"
+  - { type: check, problem: physics.waves.resonance-standing-waves.p010, prompt: "ท่อปลายเปิดหนึ่งด้าน ความถี่มูลฐานใช้ L = λ/4" }
+  - type: simulation
+    title: "คลื่นในเส้นเชือก (PhET Wave on a String)"
+    url: https://phet.colorado.edu/en/simulations/wave-on-a-string
+    provider: phet
+    note: "เลือกโหมด Oscillate ปลายตรึง (Fixed End) ลดการหน่วงเป็นศูนย์ แล้วค่อย ๆ ปรับความถี่จนเชือกสั่นเป็นหนึ่ง สอง และสามลูป จดความถี่ทั้งสามค่า แล้วตรวจว่าเป็นจำนวนเต็มเท่าของความถี่แรกหรือไม่"
+glossary:
+  - { term: ความถี่ธรรมชาติ, definition: "ความถี่ที่วัตถุสั่นเองเมื่อถูกรบกวนแล้วปล่อย ขึ้นกับมวล รูปร่าง และความแข็งของวัตถุ" }
+  - { term: การสั่นพ้อง, definition: "การที่วัตถุสั่นด้วยแอมพลิจูดมากเมื่อถูกกระตุ้นด้วยความถี่เท่ากับความถี่ธรรมชาติ" }
+  - { term: คลื่นนิ่ง, definition: "รูปคลื่นที่ไม่เคลื่อนที่ เกิดจากคลื่นสองขบวนที่เหมือนกันเคลื่อนที่สวนทางกัน" }
+  - { term: บัพ, definition: "ตำแหน่งในคลื่นนิ่งที่ตัวกลางไม่สั่น" }
+  - { term: ปฏิบัพ, definition: "ตำแหน่งในคลื่นนิ่งที่ตัวกลางสั่นด้วยแอมพลิจูดมากที่สุด" }
+  - { term: ความถี่มูลฐาน, definition: "ความถี่ต่ำสุดที่ระบบสั่นพ้องได้ หรือฮาร์มอนิกที่ 1" }
+flashcards:
+  - { front: "ระยะระหว่างบัพที่ติดกัน", back: "$\\lambda / 2$" }
+  - { front: "ความถี่ของเชือกตรึงปลายทั้งสอง", back: "$f_n = \\dfrac{nv}{2L}$ เมื่อ $n = 1, 2, 3, \\dots$" }
+  - { front: "อัตราเร็วคลื่นในเส้นเชือก", back: "$v = \\sqrt{T/\\mu}$" }
+  - { front: "ท่อปลายเปิดหนึ่งด้านสั่นพ้องที่ความยาวใด", back: "$L = \\lambda/4,\\ 3\\lambda/4,\\ 5\\lambda/4, \\dots$ มีเฉพาะฮาร์มอนิกคี่" }
+references:
+  - { title: "การสั่นพ้อง", url: "https://th.wikipedia.org/wiki/การสั่นพ้อง", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Standing wave", url: "https://en.wikipedia.org/wiki/Standing_wave", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "16.6 Standing Waves and Resonance (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "17.4 Normal Modes of a Standing Sound Wave (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/17-4-normal-modes-of-a-standing-sound-wave", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

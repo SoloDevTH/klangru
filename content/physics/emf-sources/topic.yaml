@@ -1,0 +1,77 @@
+id: physics.electricity.emf-sources
+subject: physics
+title: { th: อีเอ็มเอฟและแหล่งกำเนิดไฟฟ้า, en: EMF and sources of electricity }
+summary: อีเอ็มเอฟและความต้านทานภายใน ความต่างศักย์ขั้ว การต่อแบตเตอรี่แบบอนุกรม ขนาน และกลับขั้ว การเปลี่ยนพลังงานทดแทนเป็นไฟฟ้า ประสิทธิภาพ และความคุ้มค่า
+difficulty: 6
+minutes: 40
+prerequisites: [physics.electricity.circuits, physics.electricity.electric-power]
+encompasses:
+  - { id: physics.electricity.circuits, weight: 0.4 }
+  - { id: physics.electricity.electric-power, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: อีเอ็มเอฟ ความต้านทานภายใน และกราฟ V กับ I
+    src: emf-circuit.svg
+    alt: "ภาพ ก. วงจร แบตเตอรี่ในกรอบเส้นประประกอบด้วยเซลล์อีเอ็มเอฟ E ต่ออนุกรมกับความต้านทานภายใน r โวลต์มิเตอร์ V ต่อคร่อมขั้วแบตเตอรี่ แอมมิเตอร์ A ต่ออนุกรมในวงจร และตัวต้านทานภายนอก R กระแส I ไหลรอบวงจร ใต้ภาพเขียน V = E − Ir และ I = E/(R + r) ภาพ ข. กราฟความต่างศักย์ขั้ว V แกนตั้งกับกระแส I แกนนอน เป็นเส้นตรงลาดลง จุดตัดแกน V คือ E เมื่อ I = 0 และความชันเท่ากับ −r"
+  - type: worked-example
+    title: แรงดันขั้วและกำลังของแบตเตอรี่
+    problem: "แบตเตอรี่อีเอ็มเอฟ $6.0\\ \\mathrm{V}$ ความต้านทานภายใน $0.40\\ \\Omega$ ต่อกับตัวต้านทาน $2.6\\ \\Omega$ หากระแส ความต่างศักย์ขั้ว กำลังที่ตัวต้านทานได้รับ และกำลังที่สูญเสียในแบตเตอรี่"
+    steps:
+      - text: "$I = \\dfrac{E}{R + r} = \\dfrac{6.0}{2.6 + 0.40} = \\dfrac{6.0}{3.0} = 2.0\\ \\mathrm{A}$"
+        why: "กระแสต้องผ่านทั้งตัวต้านทานภายนอกและความต้านทานภายในซึ่งต่ออนุกรมกัน"
+      - text: "$V = E - Ir = 6.0 - (2.0)(0.40) = 5.2\\ \\mathrm{V}$ (ตรวจ: $IR = 2.0 \\times 2.6 = 5.2\\ \\mathrm{V}$)"
+      - text: "กำลังที่ตัวต้านทาน $I^2R = (2.0)^2(2.6) = 10.4\\ \\mathrm{W}$ กำลังสูญเสียภายใน $I^2r = (2.0)^2(0.40) = 1.6\\ \\mathrm{W}$"
+      - text: "รวมกัน $12\\ \\mathrm{W}$ เท่ากับ $IE = 2.0 \\times 6.0 = 12\\ \\mathrm{W}$ ประสิทธิภาพ $\\dfrac{10.4}{12} \\approx 87\\%$"
+    answer: "I = 2.0 A, V = 5.2 V, ตัวต้านทานได้ 10.4 W และสูญเสียในแบตเตอรี่ 1.6 W"
+  - { type: check, problem: physics.electricity.emf-sources.p003, prompt: "อย่าลืม r ในตัวส่วน" }
+  - type: figure
+    title: การต่อแบตเตอรี่หลายก้อน
+    src: cells-combo.svg
+    alt: "สามภาพ ก. เซลล์สามก้อนต่ออนุกรม ขั้วบวกของก้อนหนึ่งต่อขั้วลบของก้อนถัดไป E รวม = E₁ + E₂ + E₃ และ r รวม = r₁ + r₂ + r₃ ข. เซลล์เหมือนกันสามก้อนต่อขนาน ขั้วบวกต่อรวมกัน ขั้วลบต่อรวมกัน E รวม = E และ r รวม = r/n ค. เซลล์สองก้อนต่อกลับขั้ว ขั้วลบหันเข้าหากัน E รวม = E₁ − E₂ กระแสไหลตามเซลล์ที่มีอีเอ็มเอฟมากกว่า"
+  - type: worked-example
+    title: ถ่านสี่ก้อนต่ออนุกรมกับหลอดไฟ
+    problem: "ต่อถ่านไฟฉาย 4 ก้อน แต่ละก้อนมีอีเอ็มเอฟ $1.5\\ \\mathrm{V}$ และความต้านทานภายใน $0.50\\ \\Omega$ แบบอนุกรมกับหลอดไฟ $4.0\\ \\Omega$ หากระแสและความต่างศักย์คร่อมหลอด"
+    steps:
+      - text: "อนุกรม: $E_\\text{รวม} = 4 \\times 1.5 = 6.0\\ \\mathrm{V}$ และ $r_\\text{รวม} = 4 \\times 0.50 = 2.0\\ \\Omega$"
+      - text: "$I = \\dfrac{6.0}{4.0 + 2.0} = 1.0\\ \\mathrm{A}$"
+      - text: "ความต่างศักย์คร่อมหลอด $IR = 1.0 \\times 4.0 = 4.0\\ \\mathrm{V}$ หายไปในถ่าน $2.0\\ \\mathrm{V}$"
+        why: "ความต้านทานภายในของถ่านหลายก้อนรวมกันมีค่ามาก เมื่อเทียบกับหลอด จึงเสียแรงดันไปถึงหนึ่งในสาม"
+    answer: "กระแส 1.0 A และความต่างศักย์คร่อมหลอด 4.0 V"
+  - { type: check, problem: physics.electricity.emf-sources.p006, prompt: "หาอีเอ็มเอฟรวมและความต้านทานภายในรวมก่อน" }
+  - type: interactive
+    title: กำลังที่ส่งให้ตัวต้านทานภายนอก
+    caption: "แกนนอนคือความต้านทานภายนอก R (โอห์ม) แกนตั้งคือกำลังที่ R ได้รับ (วัตต์) จาก P = E²R/(R + r)² ปรับ r แล้วสังเกตว่ากำลังสูงสุดเกิดเมื่อ R เท่ากับ r เสมอ แต่ที่จุดนั้นพลังงานครึ่งหนึ่งสูญเสียในแบตเตอรี่"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{E^2 x}{(x + r)^2}"]
+      sliders:
+        - { name: E, min: 1.5, max: 12, step: 1.5, value: 6, label: อีเอ็มเอฟ E (V) }
+        - { name: r, min: 0.5, max: 4, step: 0.5, value: 1, label: ความต้านทานภายใน r (Ω) }
+      x: [0, 10]
+      y: [0, 20]
+  - type: simulation
+    title: "ชุดต่อวงจรไฟฟ้า (PhET Circuit Construction Kit: DC)"
+    url: https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc
+    provider: phet
+    note: "หน้า Lab ต่อแบตเตอรี่กับตัวต้านทาน แล้วเพิ่มความต้านทานของแบตเตอรี่ (battery resistance) วัดความต่างศักย์คร่อมขั้วแบตเตอรี่ขณะเปลี่ยนตัวต้านทานภายนอกหลายค่า บันทึก V กับ I แล้วหา E และ r จากกราฟ"
+glossary:
+  - { term: อีเอ็มเอฟ, definition: "พลังงานไฟฟ้าที่แหล่งกำเนิดให้แก่ประจุหนึ่งคูลอมบ์ หน่วยโวลต์ เท่ากับความต่างศักย์ขั้วเมื่อไม่มีกระแส" }
+  - { term: ความต้านทานภายใน, definition: "ความต้านทานภายในแหล่งกำเนิดไฟฟ้า ทำให้แรงดันขั้วลดลงเมื่อมีกระแส" }
+  - { term: ความต่างศักย์ขั้ว, definition: "ความต่างศักย์ระหว่างขั้วของแหล่งกำเนิดที่ส่งให้วงจรภายนอก V = E − Ir" }
+  - { term: เซลล์สุริยะ, definition: "อุปกรณ์สารกึ่งตัวนำที่เปลี่ยนพลังงานแสงเป็นพลังงานไฟฟ้ากระแสตรงโดยตรง" }
+  - { term: ระยะเวลาคืนทุน, definition: "ต้นทุนติดตั้งหารด้วยเงินที่ประหยัดได้ต่อปี ใช้เปรียบเทียบความคุ้มค่าของเทคโนโลยีพลังงาน" }
+flashcards:
+  - { front: "กระแสในวงจรที่มีความต้านทานภายใน", back: "$I = \\dfrac{E}{R + r}$" }
+  - { front: "ความต่างศักย์ขั้วขณะจ่ายกระแส", back: "$V = E - Ir$ (ขณะอัดประจุ $V = E + Ir$)" }
+  - { front: "เซลล์เหมือนกัน n ก้อนต่อขนาน", back: "อีเอ็มเอฟเท่าเดิม ความต้านทานภายในเหลือ r/n" }
+  - { front: "จากกราฟ V กับ I ของแบตเตอรี่ หา E และ r อย่างไร", back: "จุดตัดแกน V คือ E ความชันคือ −r" }
+references:
+  - { title: "แรงเคลื่อนไฟฟ้า", url: "https://th.wikipedia.org/wiki/แรงเคลื่อนไฟฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Internal resistance", url: "https://en.wikipedia.org/wiki/Internal_resistance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.1 Electromotive Force (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/10-1-electromotive-force", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
