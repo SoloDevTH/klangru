@@ -1,0 +1,79 @@
+id: physics.thermal.kinetic-theory
+subject: physics
+title: { th: ทฤษฎีจลน์ของแก๊สและกฎแก๊สอุดมคติ, en: Kinetic theory of gases and the ideal gas law }
+summary: กฎของบอยล์ ชาร์ล และเกย์-ลูสแซก กฎของแก๊สอุดมคติ ความดันจากการชนของโมเลกุล อุณหภูมิกับพลังงานจลน์เฉลี่ย อัตราเร็วอาร์เอ็มเอส และพลังงานภายใน
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.thermal.temperature-heat, physics.matter.pressure-fluids, physics.energy.kinetic-potential]
+encompasses:
+  - { id: physics.thermal.temperature-heat, weight: 0.3 }
+  - { id: physics.matter.pressure-fluids, weight: 0.2 }
+  - { id: physics.energy.kinetic-potential, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กราฟความดันกับปริมาตร
+    src: pv-isotherms.svg
+    alt: "กราฟความดัน (กิโลพาสคัล) กับปริมาตร (ลิตร) ของแก๊สปริมาณคงตัวสองเส้น เส้นสีน้ำเงินที่ 300 K ผ่านจุด 1 ลิตร 300 kPa, 2 ลิตร 150 kPa และ 3 ลิตร 100 kPa เป็นเส้นโค้งที่ PV คงตัว เส้นสีแดงที่ 450 K อยู่สูงกว่าเส้นสีน้ำเงินทุกปริมาตร (ความดันเป็น 1.5 เท่าที่ปริมาตรเดียวกัน)"
+  - { type: check, problem: physics.thermal.kinetic-theory.p003, prompt: "อัดให้ปริมาตรเล็กลง ความดันต้องมากขึ้น" }
+  - type: worked-example
+    title: ลมยางเปลี่ยนตามอุณหภูมิ
+    problem: "ยางจักรยานยนต์มีความดันเกจ $200\\ \\mathrm{kPa}$ ที่ $25\\,^\\circ\\mathrm{C}$ ถ้าวางรถตากแดดจนลมในยางร้อนถึง $50\\,^\\circ\\mathrm{C}$ และปริมาตรยางแทบไม่เปลี่ยน ความดันเกจใหม่เป็นเท่าใด (ความดันบรรยากาศ $101\\ \\mathrm{kPa}$)"
+    steps:
+      - text: "เปลี่ยนเป็นความดันสัมบูรณ์: $P_1 = 200 + 101 = 301\\ \\mathrm{kPa}$"
+        why: "กฎของแก๊สมาจากการชนของโมเลกุลทั้งหมด จึงต้องใช้ความดันจริงทั้งหมด ไม่ใช่ส่วนที่เกินบรรยากาศ"
+      - text: "เปลี่ยนเป็นเคลวิน: $T_1 = 298\\ \\mathrm{K}$, $T_2 = 323\\ \\mathrm{K}$"
+      - text: "ปริมาตรคงตัว: $P_2 = P_1\\dfrac{T_2}{T_1} = 301 \\times \\dfrac{323}{298} = 326\\ \\mathrm{kPa}$"
+      - text: "ความดันเกจใหม่ $= 326 - 101 = 225\\ \\mathrm{kPa}$"
+    answer: "ประมาณ $225\\ \\mathrm{kPa}$ (เพิ่มขึ้นราว 12%)"
+  - type: figure
+    title: ความดันเกิดจากการชน
+    src: molecule-wall.svg
+    alt: "ซ้าย: ภาชนะสี่เหลี่ยมมีโมเลกุลแก๊สหลายตัว แต่ละตัวมีลูกศรชี้คนละทิศ แสดงการเคลื่อนที่แบบสุ่ม ขวา: ภาพขยายโมเลกุลวิ่งชนผนังด้วยความเร็ว +v แล้วกระดอนกลับด้วย −v โมเมนตัมเปลี่ยนไป 2mv ต่อการชนหนึ่งครั้ง"
+  - type: worked-example
+    title: อัตราเร็วของโมเลกุลฮีเลียม
+    problem: "จงหาพลังงานจลน์เฉลี่ยต่อโมเลกุลและอัตราเร็วอาร์เอ็มเอสของฮีเลียม ($M = 4.0\\ \\mathrm{g/mol}$) ที่ $27\\,^\\circ\\mathrm{C}$ แล้วเทียบกับไนโตรเจนที่ $517\\ \\mathrm{m/s}$ ($k_B = 1.38 \\times 10^{-23}\\ \\mathrm{J/K}$, $R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    steps:
+      - text: "$T = 300\\ \\mathrm{K}$ ดังนั้น $\\overline{E_k} = \\tfrac32 k_BT = \\tfrac32(1.38 \\times 10^{-23})(300) = 6.21 \\times 10^{-21}\\ \\mathrm{J}$"
+        why: "พลังงานจลน์เฉลี่ยไม่ขึ้นกับชนิดแก๊ส ไนโตรเจนที่อุณหภูมินี้ก็มีค่าเท่ากัน"
+      - text: "แปลงมวลโมเลกุล: $M = 0.0040\\ \\mathrm{kg/mol}$"
+      - text: "$v_{\\text{rms}} = \\sqrt{\\dfrac{3RT}{M}} = \\sqrt{\\dfrac{3(8.31)(300)}{0.0040}} \\approx 1.37 \\times 10^{3}\\ \\mathrm{m/s}$"
+      - text: "เทียบ: $\\dfrac{1367}{517} \\approx 2.6 = \\sqrt{\\dfrac{28}{4}}$"
+        why: "อัตราเร็วแปรผกผันกับรากที่สองของมวลโมเลกุล"
+    answer: "$\\overline{E_k} = 6.21 \\times 10^{-21}\\ \\mathrm{J}$ และ $v_{\\text{rms}} \\approx 1{,}370\\ \\mathrm{m/s}$ เร็วกว่าไนโตรเจนราว 2.6 เท่า"
+  - type: interactive
+    title: อัตราเร็วอาร์เอ็มเอสกับอุณหภูมิ
+    caption: "กราฟคือ $v_{\\text{rms}} = \\sqrt{3RT/M}$ (เมตรต่อวินาที) เมื่อ $x$ คืออุณหภูมิ (เคลวิน) และ $M$ คือมวลโมเลกุล (กรัมต่อโมล) ลองตั้ง $M = 2$ (ไฮโดรเจน) 4 (ฮีเลียม) 28 (ไนโตรเจน) และ 32 (ออกซิเจน) สังเกตว่าเพิ่มอุณหภูมิ 4 เท่า อัตราเร็วเพิ่มกี่เท่า"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{\\frac{24930 x}{M}}"]
+      sliders:
+        - { name: M, min: 2, max: 44, step: 1, value: 28, label: มวลโมเลกุล (g/mol) }
+      x: [0, 1200]
+      y: [0, 4000]
+  - { type: check, problem: physics.thermal.kinetic-theory.p008, prompt: "พลังงานจลน์แปรผันตาม v กำลังสอง" }
+  - type: simulation
+    title: "สมบัติของแก๊ส (PhET Gas Properties)"
+    url: https://phet.colorado.edu/en/simulations/gas-properties
+    provider: phet
+    note: "หน้า Ideal ใส่โมเลกุลหนักและเบาจำนวนเท่ากัน แล้วเปิดดูกราฟอัตราเร็ว ลองเพิ่มความร้อนแล้วดูความดัน จากนั้นตรึงอุณหภูมิไว้แล้วดันผนังให้ปริมาตรเล็กลงครึ่งหนึ่ง ความดันเปลี่ยนตามกฎของบอยล์หรือไม่"
+glossary:
+  - { term: แก๊สอุดมคติ, definition: "แบบจำลองแก๊สที่โมเลกุลเล็กมาก เคลื่อนที่แบบสุ่ม ไม่มีแรงต่อกันยกเว้นขณะชน และชนแบบยืดหยุ่น เป็นไปตาม PV = nRT" }
+  - { term: ค่าคงตัวโบลซ์มันน์, definition: "ค่าคงตัว 1.38 × 10⁻²³ J/K เท่ากับค่าคงตัวของแก๊สหารด้วยเลขอาโวกาโดร" }
+  - { term: อัตราเร็วอาร์เอ็มเอส, definition: "รากที่สองของค่าเฉลี่ยของกำลังสองของอัตราเร็วโมเลกุล ใช้บอกอัตราเร็วโดยรวมของโมเลกุลแก๊ส" }
+  - { term: พลังงานภายใน, definition: "ผลรวมของพลังงานจลน์และพลังงานศักย์ของอนุภาคทั้งหมดในระบบ สำหรับแก๊สอุดมคติมีแต่พลังงานจลน์" }
+flashcards:
+  - { front: "กฎของแก๊สอุดมคติ", back: "$PV = nRT = Nk_BT$ ใช้ความดันสัมบูรณ์และเคลวิน" }
+  - { front: "ความดันจากทฤษฎีจลน์", back: "$P = \\tfrac13\\,\\dfrac{N}{V}\\,m\\overline{v^2}$" }
+  - { front: "พลังงานจลน์เฉลี่ยของโมเลกุล", back: "$\\overline{E_k} = \\tfrac32 k_BT$ ขึ้นกับอุณหภูมิเท่านั้น" }
+  - { front: "อัตราเร็วอาร์เอ็มเอส", back: "$v_{\\text{rms}} = \\sqrt{3k_BT/m} = \\sqrt{3RT/M}$ ($M$ เป็น kg/mol)" }
+  - { front: "พลังงานภายในของแก๊สอะตอมเดี่ยว", back: "$U = \\tfrac32 nRT$" }
+references:
+  - { title: "ทฤษฎีจลน์ของแก๊ส", url: "https://th.wikipedia.org/wiki/ทฤษฎีจลน์ของแก๊ส", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Kinetic theory of gases", url: "https://en.wikipedia.org/wiki/Kinetic_theory_of_gases", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.2 Pressure, Temperature, and RMS Speed (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/2-2-pressure-temperature-and-rms-speed", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

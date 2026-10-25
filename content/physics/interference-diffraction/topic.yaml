@@ -1,0 +1,78 @@
+id: physics.light.interference-diffraction
+subject: physics
+title: { th: การแทรกสอดและการเลี้ยวเบนของแสง, en: Interference and diffraction of light }
+summary: การทดลองสลิตคู่ของยัง ตำแหน่งแถบสว่างและแถบมืด เกรตติงและสเปกตรัม การเลี้ยวเบนผ่านสลิตเดี่ยว และการหาความยาวคลื่นของแสง
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.waves.wave-behaviour, math.geometry.trig-ratios]
+encompasses:
+  - { id: physics.waves.wave-behaviour, weight: 0.4 }
+  - { id: math.geometry.trig-ratios, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ผลต่างระยะทางของสลิตคู่
+    src: double-slit.svg
+    alt: "แผ่นกั้นทางซ้ายมีสลิต S₁ อยู่บนและ S₂ อยู่ล่าง ห่างกัน d ฉากอยู่ทางขวาห่าง L เส้นประแนวกลางลากจากกึ่งกลางสลิตไปฉาก จุด P บนฉากอยู่สูงกว่าแนวกลางเป็นระยะ x และทำมุม θ กับแนวกลาง เส้นจาก S₁ และ S₂ ไป P ยาวไม่เท่ากัน ลากเส้นตั้งฉากจาก S₁ ไปยังเส้น S₂P ส่วนที่เหลือบนเส้น S₂P (สีแดง) คือผลต่างระยะทาง d sin θ ภาพไม่ตามมาตราส่วน"
+  - { type: check, problem: physics.light.interference-diffraction.p004, prompt: "ระยะห่างของแถบแปรผันกับ L อย่างไร" }
+  - type: worked-example
+    title: หาความยาวคลื่นจากแถบของสลิตคู่
+    problem: "ฉายเลเซอร์ผ่านสลิตคู่ที่ห่างกัน $0.50\\ \\mathrm{mm}$ ฉากอยู่ห่าง $2.0\\ \\mathrm{m}$ วัดระยะจากแถบสว่างกลางถึงแถบสว่างลำดับที่ 4 ได้ $10.1\\ \\mathrm{mm}$ เลเซอร์มีความยาวคลื่นเท่าใด"
+    steps:
+      - text: "ระยะห่างระหว่างแถบที่ติดกัน: $\\Delta x = \\dfrac{10.1}{4} = 2.53\\ \\mathrm{mm}$"
+        why: "จากแถบกลาง ($n = 0$) ถึงแถบที่ 4 มี 4 ช่อง การวัดหลายช่องแล้วหารช่วยลดความคลาดเคลื่อน"
+      - text: "ตรวจว่ามุมเล็ก: $x \\ll L$ ($10\\ \\mathrm{mm}$ เทียบกับ $2\\ \\mathrm{m}$) จึงใช้ $\\Delta x = \\dfrac{\\lambda L}{d}$ ได้"
+      - text: "$\\lambda = \\dfrac{d\\,\\Delta x}{L} = \\dfrac{(0.50 \\times 10^{-3})(2.53 \\times 10^{-3})}{2.0} = 6.3 \\times 10^{-7}\\ \\mathrm{m}$"
+    answer: "ประมาณ $630\\ \\mathrm{nm}$ (แสงสีแดง)"
+  - type: figure
+    title: รูปแบบความเข้มแสง
+    src: patterns.svg
+    alt: "กราฟความเข้มแสงตามตำแหน่งบนฉากสามแบบ ก. สลิตคู่ ยอดสว่างหลายยอดห่างเท่ากัน ยอดกลางสูงที่สุดและยอดข้าง ๆ ค่อย ๆ เตี้ยลง ข. สลิตเดี่ยว ยอดกลางกว้างมากและสูงที่สุด ยอดข้างเตี้ยมาก ค. เกรตติง ยอดสว่างแคบและคมมากที่ตำแหน่งเดียวกับสลิตคู่ ระหว่างยอดเกือบมืดสนิท"
+  - type: worked-example
+    title: เกรตติงกับแสงเลเซอร์สีเขียว
+    problem: "ส่องเลเซอร์ $532\\ \\mathrm{nm}$ ผ่านเกรตติง $300$ ช่องต่อมิลลิเมตร ฉากอยู่ห่าง $1.0\\ \\mathrm{m}$ จงหามุมและตำแหน่งบนฉากของแถบสว่างลำดับที่ 1 และ 2"
+    steps:
+      - text: "$d = \\dfrac{1}{300}\\ \\mathrm{mm} = 3.33 \\times 10^{-6}\\ \\mathrm{m}$"
+        why: "จำนวนช่องต่อความยาวต้องกลับเป็นระยะห่างระหว่างช่อง"
+      - text: "ลำดับ 1: $\\sin\\theta_1 = \\dfrac{532 \\times 10^{-9}}{3.33 \\times 10^{-6}} = 0.160$ ได้ $\\theta_1 = 9.2^\\circ$ และ $x_1 = 1.0\\tan 9.2^\\circ = 0.16\\ \\mathrm{m}$"
+      - text: "ลำดับ 2: $\\sin\\theta_2 = 0.319$ ได้ $\\theta_2 = 18.6^\\circ$ และ $x_2 = 1.0\\tan 18.6^\\circ = 0.34\\ \\mathrm{m}$"
+        why: "$x_2$ ไม่ใช่ 2 เท่าของ $x_1$ พอดี เพราะมุมไม่เล็ก จึงใช้ $\\tan\\theta$ แทนการประมาณ"
+    answer: "ลำดับ 1 ที่ $9.2^\\circ$ ห่างแถบกลาง $0.16\\ \\mathrm{m}$ ลำดับ 2 ที่ $18.6^\\circ$ ห่าง $0.34\\ \\mathrm{m}$"
+  - type: interactive
+    title: ปรับความยาวคลื่นและระยะห่างสลิต
+    caption: "กราฟคือความเข้มของแถบสลิตคู่ (ไม่คิดการเลี้ยวเบนของแต่ละช่อง) บนฉากที่ห่าง 1 เมตร แกน $x$ เป็นมิลลิเมตร แถบเลื่อน $w$ คือความยาวคลื่น (นาโนเมตร) และ $d$ คือระยะห่างสลิต (มิลลิเมตร) เทียบแสงแดง 650 nm กับแสงม่วง 400 nm แล้วลองเพิ่ม $d$ เป็น 2 เท่า"
+    widget:
+      kind: function-plot
+      functions: ["\\left(\\cos\\left(\\frac{1000\\pi d x}{w}\\right)\\right)^2"]
+      sliders:
+        - { name: w, min: 400, max: 700, step: 10, value: 600, label: ความยาวคลื่น (nm) }
+        - { name: d, min: 0.1, max: 0.6, step: 0.05, value: 0.2, label: ระยะห่างสลิต (mm) }
+      x: [-10, 10]
+      y: [0, 1.2]
+  - { type: check, problem: physics.light.interference-diffraction.p008, prompt: "แถบสว่างกลางของสลิตเดี่ยวกว้างจากแถบมืดแรกถึงแถบมืดแรกอีกข้าง" }
+  - type: simulation
+    title: "การแทรกสอดของคลื่น (PhET Wave Interference)"
+    url: https://phet.colorado.edu/en/simulations/wave-interference
+    provider: phet
+    note: "หน้า Slits เลือกแสง เปิดสลิตคู่ แล้วเปิดฉากดูแถบสว่าง ลองเปลี่ยนสีของแสงและระยะห่างระหว่างสลิต แล้วดูว่าแถบห่างขึ้นหรือชิดลงตามสูตร $\\Delta x = \\lambda L/d$ หรือไม่ จากนั้นเปลี่ยนเป็นสลิตเดี่ยวแล้วปรับความกว้างของช่อง"
+glossary:
+  - { term: แหล่งกำเนิดอาพันธ์, definition: "แหล่งกำเนิดคลื่นที่มีความถี่เท่ากันและเฟสสัมพันธ์คงตัว จึงแทรกสอดกันได้รูปแบบที่คงที่" }
+  - { term: สลิตคู่, definition: "ช่องแคบสองช่องที่อยู่ใกล้กัน ใช้ทำให้แสงจากแหล่งเดียวแยกเป็นสองแหล่งอาพันธ์" }
+  - { term: เกรตติง, definition: "แผ่นที่มีช่องแคบจำนวนมากห่างเท่ากัน ให้แถบสว่างคมชัดและแยกแสงขาวเป็นสเปกตรัม" }
+  - { term: การเลี้ยวเบน, definition: "การที่คลื่นแผ่อ้อมขอบสิ่งกีดขวางหรือช่องแคบ เห็นชัดเมื่อช่องมีขนาดใกล้เคียงความยาวคลื่น" }
+flashcards:
+  - { front: "แถบสว่างของสลิตคู่และเกรตติง", back: "$d\\sin\\theta = n\\lambda$" }
+  - { front: "ระยะห่างของแถบสว่างของสลิตคู่ (มุมเล็ก)", back: "$\\Delta x = \\dfrac{\\lambda L}{d}$" }
+  - { front: "แถบมืดของสลิตเดี่ยว", back: "$a\\sin\\theta = n\\lambda$ แถบสว่างกลางกว้าง $\\dfrac{2\\lambda L}{a}$" }
+  - { front: "เกรตติง $N$ ช่องต่อมิลลิเมตร มี $d$ เท่าใด", back: "$d = \\dfrac{1}{N}\\ \\mathrm{mm}$" }
+  - { front: "สีใดเบนมากที่สุดในสเปกตรัมของเกรตติง", back: "แสงแดง เพราะความยาวคลื่นยาวที่สุด" }
+references:
+  - { title: "การทดลองช่องคู่", url: "https://th.wikipedia.org/wiki/การทดลองช่องคู่", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Diffraction grating", url: "https://en.wikipedia.org/wiki/Diffraction_grating", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "17.1 Understanding Diffraction and Interference (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/17-1-understanding-diffraction-and-interference", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "17.2 Applications of Diffraction, Interference, and Coherence (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/17-2-applications-of-diffraction-interference-and-coherence", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

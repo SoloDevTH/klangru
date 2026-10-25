@@ -1,0 +1,317 @@
+problems:
+  - id: math.logic.sets.p001
+    topics: [math.logic.sets]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นเซต (บอกได้แน่นอนว่าสิ่งใดเป็นสมาชิกหรือไม่)"
+    choices:
+      - { id: a, text: "จำนวนนับที่น้อยกว่า 5", correct: true }
+      - { id: b, text: "นักเรียนที่เก่งคณิตศาสตร์ในห้อง", feedback: "คำว่า เก่ง แต่ละคนตัดสินต่างกัน จึงบอกสมาชิกไม่ได้แน่นอน" }
+      - { id: c, text: "อาหารไทยที่อร่อย", feedback: "อร่อยขึ้นกับความชอบของแต่ละคน จึงไม่ใช่เซต" }
+      - { id: d, text: "ภูเขาที่สูงมากในโลก", feedback: "สูงมากแค่ไหนไม่ได้กำหนด จึงบอกสมาชิกไม่ได้แน่นอน" }
+    hints:
+      - "ลองถามว่า ทุกคนจะตัดสินเหมือนกันไหม"
+      - "คำว่า เก่ง อร่อย สูงมาก ไม่มีเกณฑ์แน่นอน"
+    solution: "จำนวนนับที่น้อยกว่า 5 คือ $\\{1, 2, 3, 4\\}$ บอกได้แน่นอน จึงเป็นเซต ส่วนข้ออื่นใช้คำที่ตัดสินต่างกันได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p002
+    topics: [math.logic.sets]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $A = \\{x \\mid x \\in I \\text{ และ } -3 \\le x < 4\\}$ เมื่อ $I$ คือเซตของจำนวนเต็ม จงหา $n(A)$"
+    answer: { value: 7 }
+    hints:
+      - "เขียนแจกแจงสมาชิก: เริ่มที่ −3"
+      - "$x < 4$ ไม่รวม 4 ส่วน $-3 \\le x$ รวม −3"
+    misconceptions:
+      - { match: 8, feedback: "นับ 4 เข้าไปด้วย แต่ $x < 4$ ไม่รวม 4" }
+      - { match: 6, feedback: "ลืมนับ −3 หรือ 0 สมาชิกคือ −3, −2, −1, 0, 1, 2, 3" }
+    solution: "$A = \\{-3, -2, -1, 0, 1, 2, 3\\}$ จึงได้ $n(A) = 7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p003
+    topics: [math.logic.sets]
+    difficulty: 2
+    type: match
+    stem: "จับคู่เซตกับชนิดของเซต"
+    pairs:
+      - { left: "เซตของจำนวนนับที่น้อยกว่า 1", right: "เซตว่าง" }
+      - { left: "เซตของจังหวัดในประเทศไทย", right: "เซตจำกัดที่ไม่ว่าง" }
+      - { left: "เซตของจำนวนคู่บวก", right: "เซตอนันต์" }
+      - { left: "$\\{\\varnothing\\}$", right: "เซตที่มีสมาชิก 1 ตัว" }
+    hints:
+      - "จำนวนนับเริ่มที่ 1"
+      - "$\\{\\varnothing\\}$ มีอะไรอยู่ในวงเล็บปีกกา"
+    solution: "ไม่มีจำนวนนับที่น้อยกว่า 1 จึงเป็นเซตว่าง จังหวัดมีจำนวนจำกัด จำนวนคู่บวกมีไม่สิ้นสุด และ $\\{\\varnothing\\}$ มีสมาชิก 1 ตัวคือ $\\varnothing$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p004
+    topics: [math.logic.sets]
+    difficulty: 2
+    type: numeric
+    stem: "เซต $\\{a, b, c, d\\}$ มีสับเซตทั้งหมดกี่สับเซต"
+    answer: { value: 16, unit: สับเซต }
+    hints:
+      - "สมาชิกแต่ละตัวเลือกได้สองทาง: อยู่ หรือไม่อยู่ในสับเซต"
+      - "$2 \\times 2 \\times 2 \\times 2$"
+    misconceptions:
+      - { match: 14, feedback: "ลืมนับเซตว่างและตัวเซตเอง ทั้งสองเป็นสับเซตเสมอ" }
+      - { match: 8, feedback: "ใช้ $2^3$ แต่เซตนี้มีสมาชิก 4 ตัว" }
+    solution: "$n = 4$ จำนวนสับเซต $= 2^4 = 16$ (รวม $\\varnothing$ และ $\\{a, b, c, d\\}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p005
+    topics: [math.logic.sets]
+    difficulty: 2
+    type: match
+    stem: "จับคู่สัญลักษณ์กับความหมาย"
+    pairs:
+      - { left: "$A \\cup B$", right: "อยู่ใน A หรือ B" }
+      - { left: "$A \\cap B$", right: "อยู่ทั้งใน A และ B" }
+      - { left: "$A'$", right: "อยู่ใน U แต่ไม่อยู่ใน A" }
+      - { left: "$A - B$", right: "อยู่ใน A แต่ไม่อยู่ใน B" }
+    hints:
+      - "∪ คล้ายถ้วยที่รวมทุกอย่างไว้ (หรือ)"
+      - "∩ คือส่วนที่ซ้อนกัน (และ)"
+    solution: "ยูเนียน = หรือ อินเตอร์เซกชัน = และ คอมพลีเมนต์ = ไม่อยู่ใน A (เทียบกับ U) ผลต่าง A − B = อยู่ใน A แต่ไม่อยู่ใน B"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p006
+    topics: [math.logic.sets]
+    difficulty: 3
+    type: numeric
+    stem: "ถ้า $n(A) = 12$, $n(B) = 9$ และ $n(A \\cap B) = 4$ จงหา $n(A \\cup B)$"
+    answer: { value: 17 }
+    hints:
+      - "$n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$"
+      - "ลบส่วนที่ซ้อนเพราะถูกนับสองครั้ง"
+    misconceptions:
+      - { match: 21, feedback: "บวก $12 + 9$ แต่ลืมลบส่วนที่ซ้อน 4 ตัวที่ถูกนับสองครั้ง" }
+      - { match: 25, feedback: "บวกส่วนที่ซ้อนเพิ่ม ต้องลบออก" }
+    solution: "$n(A \\cup B) = 12 + 9 - 4 = 17$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p007
+    topics: [math.logic.sets]
+    difficulty: 3
+    type: mcq
+    stem: "ให้ $A = \\{1, 2, 3, 4, 6\\}$ และ $B = \\{2, 4, 6, 8\\}$ จงหา $A \\cap B$"
+    choices:
+      - { id: a, text: "$\\{2, 4, 6\\}$", correct: true }
+      - { id: b, text: "$\\{1, 2, 3, 4, 6, 8\\}$", feedback: "นี่คือ $A \\cup B$ (อยู่ในเซตใดเซตหนึ่ง) อินเตอร์เซกชันต้องอยู่ในทั้งสองเซต" }
+      - { id: c, text: "$\\{1, 3\\}$", feedback: "นี่คือ $A - B$ (อยู่ใน A แต่ไม่อยู่ใน B)" }
+      - { id: d, text: "$\\{1, 3, 8\\}$", feedback: "นี่คือสมาชิกที่อยู่ในเซตเดียว ไม่ใช่ส่วนที่ซ้อนกัน" }
+    hints:
+      - "อินเตอร์เซกชัน = และ"
+      - "ไล่สมาชิกของ A ทีละตัว ดูว่าอยู่ใน B ด้วยไหม"
+    solution: "สมาชิกที่อยู่ทั้งใน A และ B คือ 2, 4, 6 จึงได้ $A \\cap B = \\{2, 4, 6\\}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p008
+    topics: [math.logic.sets]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $U = \\{1, 2, 3, \\dots, 10\\}$ และ $A$ เป็นเซตของจำนวนคู่ใน $U$ จงหา $n(A')$"
+    answer: { value: 5 }
+    hints:
+      - "$A' $ คือสมาชิกของ $U$ ที่ไม่อยู่ใน $A$"
+      - "$A = \\{2, 4, 6, 8, 10\\}$ แล้ว $A'$ คือจำนวนคี่ใน U"
+    misconceptions:
+      - { match: 10, feedback: "10 คือ $n(U)$ ต้องเอาเฉพาะสมาชิกที่ไม่อยู่ใน A" }
+      - { match: 0, feedback: "คอมพลีเมนต์ไม่ใช่เซตว่าง มีจำนวนคี่ 1, 3, 5, 7, 9 อยู่ใน U" }
+    solution: "$A = \\{2, 4, 6, 8, 10\\}$ ดังนั้น $A' = \\{1, 3, 5, 7, 9\\}$ และ $n(A') = 10 - 5 = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p009
+    topics: [math.logic.sets]
+    difficulty: 3
+    type: mcq
+    stem: "ส่วนที่ระบายสีในแผนภาพเวนน์แทนเซตใด"
+    figure: { src: venn-shade-problem.svg, alt: "แผนภาพเวนน์ สี่เหลี่ยม U มีวงกลม A ทางซ้ายและ B ทางขวาซ้อนกัน ระบายสีเฉพาะส่วนของวงกลม A ที่ไม่ซ้อนกับ B ส่วนที่ซ้อนกันและส่วนอื่นไม่ระบาย" }
+    choices:
+      - { id: a, text: "$A - B$", correct: true }
+      - { id: b, text: "$A$", feedback: "$A$ ต้องรวมส่วนที่ซ้อนกับ B ด้วย แต่ส่วนนั้นไม่ได้ระบาย" }
+      - { id: c, text: "$A \\cap B$", feedback: "$A \\cap B$ คือส่วนที่ซ้อนกัน ซึ่งไม่ได้ระบาย" }
+      - { id: d, text: "$B'$", feedback: "$B'$ รวมพื้นที่นอกวงกลมทั้งสองด้วย แต่ส่วนนั้นไม่ได้ระบาย" }
+    hints:
+      - "ส่วนที่ระบายอยู่ในวงกลมใด และอยู่นอกวงกลมใด"
+      - "อยู่ใน A แต่ไม่อยู่ใน B"
+    solution: "ส่วนที่ระบายอยู่ใน A แต่ไม่อยู่ใน B คือ $A - B$ (เท่ากับ $A \\cap B'$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p010
+    topics: [math.logic.sets]
+    difficulty: 3
+    type: numeric
+    stem: "ห้องเรียนมีนักเรียน 40 คน ชอบส้มตำ 25 คน ชอบต้มยำ 22 คน ชอบทั้งสองอย่าง 12 คน มีนักเรียนที่ไม่ชอบทั้งสองอย่างกี่คน"
+    answer: { value: 5, unit: คน }
+    hints:
+      - "หาจำนวนที่ชอบอย่างน้อยหนึ่งอย่างก่อน: $25 + 22 - 12$"
+      - "นำ 40 ลบจำนวนนั้น"
+    misconceptions:
+      - { match: 35, feedback: "35 คือจำนวนที่ชอบอย่างน้อยหนึ่งอย่าง ต้องนำ 40 มาลบ" }
+      - { match: -7, feedback: "ลืมลบส่วนที่ซ้อน ($25 + 22 = 47$ เกิน 40) คนที่ชอบทั้งสองอย่างถูกนับสองครั้ง" }
+    solution: "ชอบอย่างน้อยหนึ่งอย่าง $25 + 22 - 12 = 35$ คน ไม่ชอบทั้งสองอย่าง $40 - 35 = 5$ คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p011
+    topics: [math.logic.sets]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $A = \\{\\varnothing, 1, 2\\}$ จงหา $n(P(A))$"
+    answer: { value: 8 }
+    hints:
+      - "$\\varnothing$ ที่อยู่ในวงเล็บเป็นสมาชิกหนึ่งตัว"
+      - "$n(A) = 3$ แล้วใช้ $2^{n(A)}$"
+    misconceptions:
+      - { match: 4, feedback: "ไม่นับ $\\varnothing$ เป็นสมาชิก แต่ในเซตนี้ $\\varnothing$ ถูกเขียนเป็นสมาชิกตัวหนึ่ง จึงมี 3 ตัว" }
+      - { match: 3, feedback: "3 คือ $n(A)$ เพาเวอร์เซตมีสมาชิก $2^3$ ตัว" }
+    solution: "$A$ มีสมาชิก 3 ตัว คือ $\\varnothing$, 1, 2 ดังนั้น $n(P(A)) = 2^3 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p012
+    topics: [math.logic.sets]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "ให้ $A = \\{1, 2, 3\\}$ ข้อใดถูกต้อง (เลือกได้หลายข้อ ใช้ $\\subset$ แบบตำราไทย คือรวมกรณีเท่ากัน)"
+    choices:
+      - { id: a, text: "$\\varnothing \\subset A$", correct: true, feedback: "ถูก เซตว่างเป็นสับเซตของทุกเซต" }
+      - { id: b, text: "$A \\subset A$", correct: true, feedback: "ถูก ทุกเซตเป็นสับเซตของตัวเอง" }
+      - { id: c, text: "$\\{1\\} \\in A$", feedback: "สมาชิกของ A คือ 1 ไม่ใช่ $\\{1\\}$ ที่ถูกคือ $\\{1\\} \\subset A$" }
+      - { id: d, text: "$2 \\subset A$", feedback: "2 เป็นสมาชิก ไม่ใช่เซต ที่ถูกคือ $2 \\in A$" }
+      - { id: e, text: "$\\{1, 3\\} \\subset A$", correct: true, feedback: "ถูก 1 และ 3 อยู่ใน A ทั้งคู่" }
+    hints:
+      - "$\\in$ ใช้กับสมาชิก $\\subset$ ใช้กับเซต"
+      - "เซตว่างและตัวเซตเองเป็นสับเซตเสมอ"
+    solution: "ถูก: $\\varnothing \\subset A$, $A \\subset A$, $\\{1, 3\\} \\subset A$ ผิด: $\\{1\\} \\in A$ (ควรเป็น $\\subset$) และ $2 \\subset A$ (ควรเป็น $\\in$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p013
+    topics: [math.logic.sets]
+    difficulty: 4
+    type: numeric
+    stem: "แผนภาพเวนน์แสดงจำนวนนักเรียนที่เลี้ยงสุนัข (A) และแมว (B) จงหา $n(A)$"
+    figure: { src: venn-problem.svg, alt: "แผนภาพเวนน์ U มีวงกลมสุนัข (A) และแมว (B) ซ้อนกัน ส่วนสุนัขอย่างเดียวเขียน 12 ส่วนที่ซ้อนกันเขียน 7 ส่วนแมวอย่างเดียวเขียน 9 และนอกวงกลมทั้งสองเขียน 4" }
+    answer: { value: 19, unit: คน }
+    hints:
+      - "วงกลม A มีสองส่วน: สุนัขอย่างเดียว และส่วนที่ซ้อน"
+      - "$12 + 7$"
+    misconceptions:
+      - { match: 12, feedback: "12 คือคนที่เลี้ยงสุนัขอย่างเดียว คนที่เลี้ยงทั้งสุนัขและแมวก็อยู่ใน A ด้วย" }
+      - { match: 28, feedback: "28 คือ $n(A \\cup B)$ โจทย์ถามเฉพาะ A" }
+    solution: "$n(A) = 12 + 7 = 19$ คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p014
+    topics: [math.logic.sets]
+    difficulty: 4
+    type: numeric
+    stem: "ทอยลูกเต๋าสองลูก (แดงและน้ำเงิน) ให้ $A$ = เซตของผลที่ผลรวมเป็นจำนวนคู่ และ $B$ = เซตของผลที่มีลูกเต๋าอย่างน้อยหนึ่งลูกขึ้น 6 จงหา $n(A \\cap B)$ (ใช้ตาราง 6 × 6 ช่วยแจกแจง)"
+    answer: { value: 5 }
+    hints:
+      - "แจกแจง B ก่อน: แถวที่ลูกแดงเป็น 6 และหลักที่ลูกน้ำเงินเป็น 6"
+      - "ใน B เลือกเฉพาะคู่ที่ผลรวมเป็นจำนวนคู่ ระวังนับ (6, 6) ซ้ำ"
+    misconceptions:
+      - { match: 6, feedback: "นับ (6, 6) สองครั้ง คู่นี้อยู่ทั้งแถวและหลักของ 6 แต่เป็นผลเดียว" }
+      - { match: 11, feedback: "11 คือ $n(B)$ ทั้งหมด ต้องเลือกเฉพาะคู่ที่ผลรวมเป็นจำนวนคู่" }
+    solution: "คู่ที่มี 6 และผลรวมเป็นคู่ อีกลูกต้องเป็นจำนวนคู่: (6, 2), (6, 4), (6, 6), (2, 6), (4, 6) รวม 5 ผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p015
+    topics: [math.logic.sets]
+    difficulty: 5
+    type: numeric
+    stem: "สำรวจนักเรียนที่เข้าชมรม ชมรมดนตรี 20 คน กีฬา 18 คน ศิลปะ 15 คน ดนตรีและกีฬา 7 คน ดนตรีและศิลปะ 5 คน กีฬาและศิลปะ 6 คน ทั้งสามชมรม 3 คน มีนักเรียนที่เข้าอย่างน้อยหนึ่งชมรมกี่คน"
+    answer: { value: 38, unit: คน }
+    hints:
+      - "ใช้สูตรสามเซต: บวกทีละเซต ลบส่วนที่ซ้อนทีละคู่ แล้วบวกส่วนที่ซ้อนทั้งสาม"
+      - "$20 + 18 + 15 - 7 - 5 - 6 + 3$"
+    misconceptions:
+      - { match: 35, feedback: "ลืมบวกส่วนที่ซ้อนทั้งสามกลับ คนกลุ่มนี้ถูกลบออกไปสามครั้งในขั้นลบคู่ ต้องบวกคืน 3" }
+      - { match: 53, feedback: "บวกทุกชมรมโดยไม่ลบส่วนที่ซ้อน คนที่อยู่หลายชมรมจึงถูกนับซ้ำ" }
+    solution: "$n(A \\cup B \\cup C) = 20 + 18 + 15 - 7 - 5 - 6 + 3 = 38$ คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p016
+    topics: [math.logic.sets]
+    difficulty: 5
+    type: numeric
+    stem: "โรงเรียนมีนักเรียน ม.4 จำนวน 50 คน เรียนภาษาจีน 28 คน เรียนภาษาญี่ปุ่น 20 คน ไม่ได้เรียนทั้งสองภาษา 10 คน มีนักเรียนที่เรียนทั้งสองภาษากี่คน"
+    answer: { value: 8, unit: คน }
+    hints:
+      - "เรียนอย่างน้อยหนึ่งภาษา $= 50 - 10$"
+      - "ใช้ $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$ แล้วแก้หา $n(A \\cap B)$"
+    misconceptions:
+      - { match: -2, feedback: "ใช้ 50 เป็น $n(A \\cup B)$ แต่มี 10 คนที่ไม่เรียนเลย ต้องใช้ $50 - 10 = 40$" }
+      - { match: 48, feedback: "48 คือ $28 + 20$ ซึ่งนับคนที่เรียนทั้งสองภาษาสองครั้ง ต้องลบจำนวนคนที่เรียนอย่างน้อยหนึ่งภาษา (40) ออก" }
+    solution: "$n(A \\cup B) = 50 - 10 = 40$ ดังนั้น $40 = 28 + 20 - n(A \\cap B)$ ได้ $n(A \\cap B) = 48 - 40 = 8$ คน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p017
+    topics: [math.logic.sets]
+    difficulty: 5
+    type: mcq
+    stem: "เซต $\\{\\dots, -4, -2, 0, 2, 4, \\dots\\}$ เขียนแบบบอกเงื่อนไขได้ตรงกับข้อใด ($I$ คือเซตของจำนวนเต็ม)"
+    choices:
+      - { id: a, text: "$\\{2n \\mid n \\in I\\}$", correct: true }
+      - { id: b, text: "$\\{2n \\mid n \\in I^+\\}$", feedback: "$I^+$ คือจำนวนเต็มบวก จะได้แค่ 2, 4, 6, ... ไม่มี 0 และจำนวนลบ" }
+      - { id: c, text: "$\\{2n + 1 \\mid n \\in I\\}$", feedback: "$2n + 1$ ให้จำนวนคี่ เช่น 1, 3, −1" }
+      - { id: d, text: "$\\{n^2 \\mid n \\in I\\}$", feedback: "$n^2$ ให้ 0, 1, 4, 9, ... ไม่มีจำนวนลบ และมีจำนวนคี่ด้วย" }
+    hints:
+      - "สมาชิกคือจำนวนคู่ทั้งบวก ลบ และศูนย์"
+      - "จำนวนคู่ทุกตัวเขียนเป็น 2 คูณจำนวนเต็มได้"
+    solution: "จำนวนคู่ทุกตัว (รวมศูนย์และจำนวนลบ) เขียนเป็น $2n$ เมื่อ $n$ เป็นจำนวนเต็ม จึงได้ $\\{2n \\mid n \\in I\\}$ ซึ่งเป็นเซตอนันต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p018
+    topics: [math.logic.sets]
+    difficulty: 4
+    type: mcq
+    stem: "เซตของจำนวนตรรกยะที่มากกว่า 0 แต่น้อยกว่า 1 มีสมาชิกกี่ตัว"
+    choices:
+      - { id: a, text: "มีไม่สิ้นสุด (เป็นเซตอนันต์)", correct: true }
+      - { id: b, text: "0 ตัว เพราะไม่มีจำนวนเต็มระหว่าง 0 กับ 1", feedback: "จำนวนตรรกยะไม่จำเป็นต้องเป็นจำนวนเต็ม เช่น $\\tfrac12$ อยู่ระหว่าง 0 กับ 1" }
+      - { id: c, text: "9 ตัว คือ 0.1 ถึง 0.9", feedback: "ยังมี 0.01, 0.15, $\\tfrac13$ และอื่น ๆ อีกมาก" }
+      - { id: d, text: "99 ตัว", feedback: "ไม่ว่าจะนับกี่ตัว ก็หาจำนวนใหม่ระหว่างสองจำนวนได้เสมอ เช่น ค่าเฉลี่ยของทั้งสอง" }
+    hints:
+      - "ลองเขียน $\\tfrac12, \\tfrac13, \\tfrac14, \\dots$"
+      - "ระหว่างสองจำนวนตรรกยะใด ๆ มีจำนวนตรรกยะอยู่ตรงกลางเสมอ"
+    solution: "$\\tfrac12, \\tfrac13, \\tfrac14, \\dots$ ล้วนอยู่ระหว่าง 0 กับ 1 และไม่มีวันหมด เซตนี้จึงเป็นเซตอนันต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.sets.p019
+    topics: [math.logic.sets]
+    difficulty: 3
+    type: numeric
+    stem: "จากแผนภาพเวนน์จำนวนนักเรียนที่เลี้ยงสุนัข (A) และแมว (B) จงหา $n(A \\cup B)$"
+    figure: { src: venn-problem.svg, alt: "แผนภาพเวนน์ U มีวงกลมสุนัข (A) และแมว (B) ซ้อนกัน ส่วนสุนัขอย่างเดียวเขียน 12 ส่วนที่ซ้อนกันเขียน 7 ส่วนแมวอย่างเดียวเขียน 9 และนอกวงกลมทั้งสองเขียน 4" }
+    answer: { value: 28, unit: คน }
+    hints:
+      - "$A \\cup B$ คือทุกส่วนที่อยู่ในวงกลมใดวงกลมหนึ่ง"
+      - "บวกสามส่วนในวงกลม ไม่รวมส่วนนอกวงกลม"
+    misconceptions:
+      - { match: 35, feedback: "บวก $n(A) + n(B) = 19 + 16$ แต่ส่วนที่ซ้อน 7 คนถูกนับสองครั้ง" }
+      - { match: 32, feedback: "32 คือ $n(U)$ รวม 4 คนที่ไม่เลี้ยงทั้งสองอย่างเข้าไปด้วย" }
+    solution: "$n(A \\cup B) = 12 + 7 + 9 = 28$ คน (หรือ $19 + 16 - 7 = 28$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

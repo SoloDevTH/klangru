@@ -1,0 +1,68 @@
+id: math.algorithms.algorithmic-thinking
+subject: math
+title: { th: อัลกอริทึมในคณิตศาสตร์, en: Algorithmic thinking in mathematics }
+summary: ทำตามและสร้างอัลกอริทึมที่มีลำดับขั้น การตัดสินใจ และการทำซ้ำ เพื่อสำรวจจำนวน แบบรูป ตัวประกอบ ห.ร.ม. จำนวนเฉพาะ และจำแนกรูปเรขาคณิต แล้วทดสอบและปรับให้ถูก
+difficulty: 3
+minutes: 40
+prerequisites: [computer.algorithms.intro, math.algebra.patterns, math.number.factors-multiples, math.geometry.quadrilaterals]
+encompasses:
+  - { id: math.number.factors-multiples, weight: 0.3 }
+  - { id: math.algebra.patterns, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: flowchart-collatz.svg
+    alt: "ผังงานเครื่องจักรจำนวน เริ่ม รับจำนวน n แล้วถามว่า n = 1 ไหม ถ้าใช่ไปแสดงว่าถึง 1 แล้วและจบ ถ้าไม่ใช่ถามว่า n เป็นจำนวนคู่ไหม ถ้าใช่ให้ n = n ÷ 2 ถ้าไม่ใช่ให้ n = 3n + 1 จากนั้นวนกลับไปถามว่า n = 1 ไหมอีกครั้ง"
+    caption: "มีครบทั้งลำดับขั้น การตัดสินใจ และการทำซ้ำ"
+  - type: worked-example
+    title: ไล่เครื่องจักรจำนวนเมื่อเริ่มที่ 6
+    problem: "ทำตามผังงานเมื่อรับ n = 6 ต้องคำนวณกี่ครั้งจึงถึง 1"
+    steps:
+      - text: "6 เป็นจำนวนคู่ → $6 \\div 2 = 3$ (ครั้งที่ 1)"
+      - text: "3 เป็นจำนวนคี่ → $3 \\times 3 + 1 = 10$ (ครั้งที่ 2)"
+        why: "ทุกครั้งต้องตรวจเงื่อนไขใหม่ ไม่ได้สลับคู่คี่กันไปเรื่อย ๆ"
+      - text: "10 → 5 → 16 → 8 → 4 → 2 → 1 (ครั้งที่ 3 ถึง 8)"
+      - text: "ได้ 1 แล้ว เงื่อนไข n = 1 เป็นจริง จึงหยุด"
+    answer: "8 ครั้ง ลำดับคือ 6, 3, 10, 5, 16, 8, 4, 2, 1"
+  - { type: check, problem: math.algorithms.algorithmic-thinking.p003, prompt: "จดค่า n ทุกรอบ และตรวจเงื่อนไขหลังทุกการคำนวณ" }
+  - type: figure
+    src: sieve.svg
+    alt: "ตาราง 1 ถึง 50 เรียงแถวละ 10 จำนวน จำนวนเฉพาะ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ถูกวงกลมและระบายสี จำนวนอื่นตั้งแต่ 4 ขึ้นไปถูกขีดฆ่าเพราะเป็นพหุคูณของ 2, 3, 5 หรือ 7 เลข 1 ไม่ถูกวงและไม่ถูกขีด"
+    caption: "ตะแกรงของเอราทอสเทนีส: วงจำนวนที่เหลือตัวแรก แล้วขีดพหุคูณของมัน ทำซ้ำ"
+  - type: worked-example
+    title: อัลกอริทึมของยุคลิด
+    problem: "หา ห.ร.ม. ของ 48 กับ 18 ด้วยอัลกอริทึมของยุคลิด"
+    steps:
+      - text: "$48 \\div 18 = 2$ เศษ 12 เขียนเป็น $48 = 2 \\times 18 + 12$"
+      - text: "นำตัวหารเดิม (18) หารด้วยเศษ (12): $18 = 1 \\times 12 + 6$"
+        why: "ตัวหารร่วมของ 48 กับ 18 เป็นตัวหารร่วมของ 18 กับ 12 ด้วย ปัญหาจึงเล็กลงแต่คำตอบเท่าเดิม"
+      - text: "$12 = 2 \\times 6 + 0$ เศษเป็น 0 แล้ว หยุด"
+      - text: "ตัวหารสุดท้ายคือ 6"
+    answer: "ห.ร.ม. ของ 48 กับ 18 คือ 6"
+  - type: figure
+    src: tree-quads.svg
+    alt: "แผนภาพต้นไม้จำแนกรูปสี่เหลี่ยม คำถามแรก มีด้านขนานกันกี่คู่ 0 คู่ได้สี่เหลี่ยมทั่วไป 1 คู่ได้สี่เหลี่ยมคางหมู 2 คู่ไปถามว่ามีมุมฉากไหม ถ้ามีถามว่าด้านยาวเท่ากันทุกด้านไหม ใช่ได้จัตุรัส ไม่ใช่ได้ผืนผ้า ถ้าไม่มีมุมฉากถามว่าด้านยาวเท่ากันทุกด้านไหม ใช่ได้ขนมเปียกปูน ไม่ใช่ได้ด้านขนาน"
+    caption: "ทุกคำถามตอบได้แน่นอน และทุกรูปสี่เหลี่ยมไปถึงปลายทางเพียงที่เดียว"
+  - { type: check, problem: math.algorithms.algorithmic-thinking.p009, prompt: "ตอบคำถามในแผนภาพต้นไม้ทีละข้อจากบนลงล่าง" }
+glossary:
+  - { term: อัลกอริทึม, definition: "ลำดับขั้นที่ชัดเจนและมีจุดจบ ใช้แก้ปัญหาหรือทำงานให้สำเร็จ" }
+  - { term: การตัดสินใจ, definition: "ขั้นที่ตรวจเงื่อนไข แล้วเลือกทำอย่างใดอย่างหนึ่ง" }
+  - { term: การทำซ้ำ, definition: "การวนทำชุดคำสั่งเดิมตามจำนวนรอบหรือจนกว่าเงื่อนไขจะเป็นจริง" }
+  - { term: ตะแกรงของเอราทอสเทนีส, definition: "อัลกอริทึมหาจำนวนเฉพาะด้วยการขีดฆ่าพหุคูณ" }
+  - { term: อัลกอริทึมของยุคลิด, definition: "อัลกอริทึมหา ห.ร.ม. ด้วยการหารซ้ำจนเศษเป็น 0" }
+  - { term: กรณีขอบ, definition: "ข้อมูลเข้าที่อยู่ที่ขอบของเงื่อนไข เช่น 0 หรือ 1 มักทำให้อัลกอริทึมผิด" }
+flashcards:
+  - { front: "อัลกอริทึมประกอบด้วยอะไรบ้าง", back: "ลำดับขั้น การตัดสินใจ และการทำซ้ำ" }
+  - { front: "อัลกอริทึมของยุคลิดหยุดเมื่อใด", back: "เมื่อเศษเป็น 0 ตัวหารสุดท้ายคือ ห.ร.ม." }
+  - { front: "วาดหกเหลี่ยมด้านเท่าด้วยเต่าต้องหมุนครั้งละกี่องศา", back: "360 ÷ 6 = 60 องศา" }
+  - { front: "บวกจำนวนคี่ 1 + 3 + 5 + ... ได้แบบรูปอะไร", back: "จำนวนกำลังสอง 1, 4, 9, 16, ..." }
+references:
+  - { title: "ขั้นตอนวิธีแบบยุคลิด", url: "https://th.wikipedia.org/wiki/ขั้นตอนวิธีแบบยุคลิด", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "ตะแกรงของเอราทอสเทนีส", url: "https://th.wikipedia.org/wiki/ตะแกรงของเอราทอสเทนีส", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Collatz conjecture", url: "https://en.wikipedia.org/wiki/Collatz_conjecture", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Algorithm", url: "https://en.wikipedia.org/wiki/Algorithm", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

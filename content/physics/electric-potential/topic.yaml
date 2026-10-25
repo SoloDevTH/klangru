@@ -1,0 +1,82 @@
+id: physics.electricity.electric-potential
+subject: physics
+title: { th: สนามไฟฟ้าและศักย์ไฟฟ้า, en: Electric field and electric potential }
+summary: รวมสนามไฟฟ้าจากหลายจุดประจุแบบเวกเตอร์ สนามสม่ำเสมอระหว่างแผ่นขนาน การเคลื่อนที่ของประจุในสนาม พลังงานศักย์ไฟฟ้า ศักย์ไฟฟ้า และความต่างศักย์
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.electricity.charge, physics.energy.work, physics.units.vectors]
+encompasses:
+  - { id: physics.electricity.charge, weight: 0.4 }
+  - { id: physics.energy.work, weight: 0.2 }
+  - { id: physics.units.vectors, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: สนามไฟฟ้าลัพธ์แบบเวกเตอร์
+    src: superposition.svg
+    alt: "ประจุ A +3.0 nC และประจุ B −3.0 nC วางห่างกัน 0.30 m ในแนวนอน จุด P อยู่เหนือจุดกึ่งกลาง ห่างประจุแต่ละตัว 0.25 m สนาม E_A ขนาด 432 N/C ชี้ออกจาก A ไปทางขวาบน สนาม E_B ขนาด 432 N/C ชี้เข้าหา B ไปทางขวาล่าง เส้นประต่อเป็นสี่เหลี่ยมด้านขนาน สนามลัพธ์ E ขนาด 518 N/C ชี้ไปทางขวาในแนวขนานกับ AB องค์ประกอบแนวตั้งหักล้างกัน"
+  - type: worked-example
+    title: สนามลัพธ์และศักย์จากประจุคู่
+    problem: "ประจุ $+3.0\\ \\mathrm{nC}$ ที่ A และ $-3.0\\ \\mathrm{nC}$ ที่ B ห่างกัน $0.30\\ \\mathrm{m}$ จุด P อยู่บนเส้นแบ่งครึ่งตั้งฉากของ AB สูงจากจุดกึ่งกลาง $0.20\\ \\mathrm{m}$ จงหาสนามไฟฟ้าลัพธ์และศักย์ไฟฟ้าที่ P"
+    steps:
+      - text: "ระยะจากแต่ละประจุถึง P: $r = \\sqrt{0.15^2 + 0.20^2} = 0.25\\ \\mathrm{m}$"
+      - text: "ขนาดสนามจากแต่ละประจุ: $E = \\dfrac{(9.0 \\times 10^{9})(3.0 \\times 10^{-9})}{0.25^2} = 432\\ \\mathrm{N/C}$ $E_A$ ชี้ออกจาก A $E_B$ ชี้เข้าหา B"
+        why: "ใส่เฉพาะขนาดของประจุในสูตร แล้วกำหนดทิศจากชนิดของประจุ"
+      - text: "แยกองค์ประกอบ: แนวนอนของแต่ละสนาม $= 432 \\times \\dfrac{0.15}{0.25} = 259.2\\ \\mathrm{N/C}$ ทั้งคู่ชี้ไปทางขวา แนวตั้ง $432 \\times \\dfrac{0.20}{0.25} = 345.6$ ชี้ขึ้นและลงจึงหักล้างกัน"
+      - text: "สนามลัพธ์ $E = 2 \\times 259.2 = 518\\ \\mathrm{N/C}$ ชี้ขนานกับ AB จาก A ไป B"
+      - text: "ศักย์: $V = \\dfrac{k(+3.0 \\times 10^{-9})}{0.25} + \\dfrac{k(-3.0 \\times 10^{-9})}{0.25} = 0$"
+        why: "ศักย์เป็นสเกลาร์ ใส่เครื่องหมายของประจุแล้วบวกกันได้เลย"
+    answer: "$E \\approx 518\\ \\mathrm{N/C}$ ทิศขนานกับ AB จาก A ไป B และ $V = 0$ (สนามไม่เป็นศูนย์แม้ศักย์เป็นศูนย์)"
+  - { type: check, problem: physics.electricity.electric-potential.p004, prompt: "สนามรวมแบบเวกเตอร์ ศักย์รวมแบบสเกลาร์" }
+  - type: figure
+    title: แผ่นขนานและผิวสมศักย์
+    src: parallel-plates.svg
+    alt: "แผ่นโลหะบนมีประจุบวก ศักย์ 100 V แผ่นล่างมีประจุลบ ศักย์ 0 V ห่างกัน d เส้นสนามเป็นเส้นตรงขนานกันชี้จากแผ่นบนลงแผ่นล่างห่างเท่ากันทุกเส้น แสดงสนามสม่ำเสมอ เส้นประสีเขียวแนวนอนสามเส้นเป็นผิวสมศักย์ 75 V, 50 V และ 25 V ห่างเท่ากัน ศักย์ลดลงตามทิศของสนาม"
+  - type: worked-example
+    title: อิเล็กตรอนระหว่างแผ่นขนาน
+    problem: "แผ่นขนานห่างกัน $2.0\\ \\mathrm{cm}$ ต่อความต่างศักย์ $500\\ \\mathrm{V}$ อิเล็กตรอนเริ่มจากหยุดนิ่งที่แผ่นลบ จงหาสนามไฟฟ้า แรงต่ออิเล็กตรอน และอัตราเร็วเมื่อถึงแผ่นบวก ($e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$, $m_e = 9.1 \\times 10^{-31}\\ \\mathrm{kg}$)"
+    steps:
+      - text: "$E = \\dfrac{V}{d} = \\dfrac{500}{0.020} = 2.5 \\times 10^{4}\\ \\mathrm{V/m}$"
+      - text: "$F = eE = (1.6 \\times 10^{-19})(2.5 \\times 10^{4}) = 4.0 \\times 10^{-15}\\ \\mathrm{N}$ ทิศเข้าหาแผ่นบวก"
+        why: "แรงนี้มากกว่าน้ำหนักของอิเล็กตรอน ($\\approx 9 \\times 10^{-30}\\ \\mathrm{N}$) หลายล้านล้านเท่า จึงไม่ต้องคิดแรงโน้มถ่วง"
+      - text: "พลังงานจลน์ที่ได้ $= eV = (1.6 \\times 10^{-19})(500) = 8.0 \\times 10^{-17}\\ \\mathrm{J}$ หรือ $500\\ \\mathrm{eV}$"
+      - text: "$v = \\sqrt{\\dfrac{2(8.0 \\times 10^{-17})}{9.1 \\times 10^{-31}}} \\approx 1.3 \\times 10^{7}\\ \\mathrm{m/s}$"
+        why: "อัตราเร็วสุดท้ายไม่ขึ้นกับระยะห่างของแผ่น ขึ้นกับความต่างศักย์เท่านั้น"
+    answer: "$E = 2.5 \\times 10^{4}\\ \\mathrm{V/m}$, $F = 4.0 \\times 10^{-15}\\ \\mathrm{N}$, $v \\approx 1.3 \\times 10^{7}\\ \\mathrm{m/s}$"
+  - type: interactive
+    title: ศักย์และสนามรอบจุดประจุ
+    caption: "เส้นแรกคือศักย์ $V = kQ/r$ (โวลต์) เส้นที่สองคือขนาดสนาม $E = kQ/r^2$ (นิวตันต่อคูลอมบ์) เมื่อ $x$ คือระยะ (เมตร) และ $Q$ เป็นนาโนคูลอมบ์ ($k = 9 \\times 10^{9}$) สังเกตว่าเมื่อระยะเพิ่มเป็น 2 เท่า ศักย์เหลือครึ่งหนึ่งแต่สนามเหลือหนึ่งในสี่ แล้วลองตั้ง $Q$ เป็นลบ"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{9Q}{x}", "\\frac{9Q}{x^2}"]
+      sliders:
+        - { name: Q, min: -10, max: 10, step: 1, value: 5, label: ประจุ (nC) }
+      x: [0.1, 1.5]
+      y: [-600, 600]
+  - { type: check, problem: physics.electricity.electric-potential.p007, prompt: "งานจาก A ไป B ใช้ V_B ลบ V_A" }
+  - type: simulation
+    title: "ประจุและสนาม (PhET Charges and Fields)"
+    url: https://phet.colorado.edu/en/simulations/charges-and-fields
+    provider: phet
+    note: "วางประจุบวกและลบ เปิดเวกเตอร์สนามและเครื่องวัดศักย์ (voltage) ลากเครื่องวัดไปรอบ ๆ ประจุแล้วกดวาดเส้นสมศักย์ สังเกตว่าเส้นสมศักย์ตั้งฉากกับทิศของสนามทุกจุด และลองหาจุดที่สนามเป็นศูนย์ระหว่างประจุบวกสองตัว"
+glossary:
+  - { term: สนามไฟฟ้าสม่ำเสมอ, definition: "สนามไฟฟ้าที่มีขนาดและทิศเท่ากันทุกจุด เช่น ระหว่างแผ่นโลหะคู่ขนาน มีขนาด E = V/d" }
+  - { term: พลังงานศักย์ไฟฟ้า, definition: "พลังงานที่ประจุมีเพราะตำแหน่งในสนามไฟฟ้า เท่ากับงานที่ใช้นำประจุมาวางที่ตำแหน่งนั้น" }
+  - { term: ศักย์ไฟฟ้า, definition: "พลังงานศักย์ไฟฟ้าต่อประจุหนึ่งคูลอมบ์ ณ ตำแหน่งหนึ่ง เป็นปริมาณสเกลาร์ หน่วยโวลต์" }
+  - { term: ผิวสมศักย์, definition: "ผิวหรือเส้นที่ศักย์ไฟฟ้าเท่ากันทุกจุด ตั้งฉากกับเส้นสนามเสมอ เลื่อนประจุไปตามผิวนี้ไม่ต้องทำงาน" }
+  - { term: อิเล็กตรอนโวลต์, definition: "พลังงานที่อิเล็กตรอนได้เมื่อถูกเร่งด้วยความต่างศักย์ 1 โวลต์ เท่ากับ 1.6 × 10⁻¹⁹ จูล" }
+flashcards:
+  - { front: "สนามและศักย์ของจุดประจุ", back: "$E = \\dfrac{kQ}{r^2}$ (เวกเตอร์) · $V = \\dfrac{kQ}{r}$ (สเกลาร์)" }
+  - { front: "สนามระหว่างแผ่นขนาน", back: "$E = \\dfrac{V}{d}$ ทิศจากแผ่นบวกไปแผ่นลบ" }
+  - { front: "งานในการเลื่อนประจุจาก A ไป B", back: "$W_{A \\to B} = q(V_B - V_A)$" }
+  - { front: "พลังงานศักย์ของประจุสองตัว", back: "$E_p = \\dfrac{kQq}{r}$" }
+  - { front: "อิเล็กตรอนเร่งจากหยุดนิ่งด้วยความต่างศักย์ V", back: "$\\tfrac12 m_ev^2 = eV$" }
+references:
+  - { title: "ศักย์ไฟฟ้า", url: "https://th.wikipedia.org/wiki/ศักย์ไฟฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Electric potential", url: "https://en.wikipedia.org/wiki/Electric_potential", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "18.4 Electric Potential (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/18-4-electric-potential", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,393 @@
+problems:
+  - id: computer.programming.lists-strings.p001
+    topics: [computer.programming.lists-strings]
+    difficulty: 1
+    type: mcq
+    stem: |
+      โปรแกรมนี้แสดงคำใด
+
+      ```python
+      fruits = ["มะม่วง", "ทุเรียน", "มังคุด"]
+      print(fruits[1])
+      ```
+    choices:
+      - { id: a, text: "ทุเรียน", correct: true }
+      - { id: b, text: "มะม่วง", feedback: "มะม่วงอยู่ที่ดัชนี 0 ดัชนีของลิสต์เริ่มนับจาก 0 ไม่ใช่ 1" }
+      - { id: c, text: "มังคุด", feedback: "มังคุดอยู่ที่ดัชนี 2 ซึ่งเป็นตัวสุดท้าย" }
+      - { id: d, text: "เกิด IndexError", feedback: "ลิสต์มี 3 ตัว ดัชนีที่ใช้ได้คือ 0, 1, 2 ดัชนี 1 จึงมีอยู่" }
+    hints:
+      - "สมาชิกตัวแรกของลิสต์มีดัชนีเท่าไร"
+      - "นับ 0, 1, 2 ไปตามลำดับในวงเล็บเหลี่ยม"
+    solution: "ดัชนีเริ่มที่ 0 fruits[0] คือมะม่วง fruits[1] คือทุเรียน และ fruits[2] คือมังคุด โปรแกรมจึงแสดง ทุเรียน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p002
+    topics: [computer.programming.lists-strings]
+    difficulty: 1
+    type: match
+    stem: "จับคู่โครงสร้างข้อมูลของ Python กับลักษณะเด่น"
+    pairs:
+      - { left: "ลิสต์ [ ]", right: "สมาชิกเรียงลำดับ เข้าถึงด้วยดัชนี ซ้ำกันได้" }
+      - { left: "ดิกชันนารี { คีย์: ค่า }", right: "เก็บเป็นคู่ ค้นค่าด้วยคีย์" }
+      - { left: "เซต { }", right: "สมาชิกไม่ซ้ำกันและไม่สนลำดับ" }
+      - { left: "สตริง \" \"", right: "ลำดับของอักขระ แก้ทีละตัวไม่ได้" }
+    hints:
+      - "โครงสร้างใดตัดตัวซ้ำทิ้งให้อัตโนมัติ"
+      - "โครงสร้างใดใช้ชื่อเมนูหาราคาได้ทันที"
+    solution: "ลิสต์เก็บข้อมูลเรียงเป็นแถวและซ้ำได้ ดิกชันนารีเก็บคู่คีย์กับค่า เซตเก็บสมาชิกไม่ซ้ำ ส่วนสตริงเป็นลำดับอักขระที่แก้ทีละตัวไม่ได้ ต้องสร้างสตริงใหม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p003
+    topics: [computer.programming.lists-strings]
+    difficulty: 2
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      scores = [12, 15, 9, 18, 11]
+      print(len(scores) + scores[-1])
+      ```
+    answer: { value: 16 }
+    hints:
+      - "len(scores) คือจำนวนสมาชิก"
+      - "ดัชนี -1 คือสมาชิกตัวสุดท้าย"
+    misconceptions:
+      - { match: 17, feedback: "scores[-1] ไม่ใช่ตัวแรก ดัชนีลบนับจากท้าย -1 คือตัวสุดท้าย" }
+      - { match: 15, feedback: "len(scores) คือจำนวนสมาชิก 5 ไม่ใช่ดัชนีสุดท้าย 4" }
+    solution: "len(scores) = 5 และ scores[-1] คือตัวสุดท้าย = 11 ผลรวม 5 + 11 = 16"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p004
+    topics: [computer.programming.lists-strings]
+    difficulty: 2
+    type: mcq
+    stem: |
+      วันที่ถูกเก็บเป็นสตริง (ดูภาพที่แสดงอักขระทีละช่อง) คำสั่งนี้ได้สตริงใด
+
+      ```python
+      date = "25/12/2568"
+      print(date[3:5])
+      ```
+    figure:
+      src: date-string.svg
+      alt: "สตริง 25/12/2568 แยกเป็นช่องละหนึ่งอักขระ 10 ช่อง จากซ้ายไปขวาคือ 2, 5, /, 1, 2, /, 2, 5, 6, 8 ใต้ช่องมีดัชนี 0 ถึง 9 ตามลำดับ"
+    choices:
+      - { id: a, text: "12", correct: true }
+      - { id: b, text: "12/", feedback: "การตัดช่วงไม่รวมดัชนีท้าย [3:5] ได้ดัชนี 3 และ 4 เท่านั้น ไม่รวมดัชนี 5" }
+      - { id: c, text: "/1", feedback: "นี่คือดัชนี 2 ถึง 3 เกิดจากนับดัชนีเริ่มที่ 1 ดัชนีเริ่มที่ 0" }
+      - { id: d, text: "2/", feedback: "นี่คือดัชนี 4 และ 5 ช่วงเริ่มที่ดัชนี 3" }
+    hints:
+      - "date[3:5] เริ่มที่ดัชนี 3 และหยุดก่อนถึงดัชนี 5"
+      - "อ่านอักขระที่ดัชนี 3 และ 4 จากภาพ"
+    solution: "date[3:5] ได้ดัชนี 3 และ 4 คือ 1 และ 2 จึงได้ \"12\" ซึ่งเป็นเดือน ถ้าต้องการแยกทุกส่วนใช้ date.split(\"/\") ได้ ['25', '12', '2568']"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p005
+    topics: [computer.programming.lists-strings]
+    difficulty: 2
+    type: text
+    stem: "ลิสต์ `queue = [\"ฟ้า\", \"ต้น\"]` ต้องการเพิ่ม \"มด\" ต่อท้ายลิสต์ด้วยคำสั่ง `queue.____(\"มด\")` ช่องว่างคือเมทอดใด"
+    accepted: ["append", "append()"]
+    misconceptions:
+      - { match: "add", feedback: "add ใช้กับเซต ลิสต์ใช้อีกเมทอดหนึ่ง" }
+      - { match: "insert", feedback: "insert ต้องบอกตำแหน่งด้วย เช่น insert(2, \"มด\") เมทอดที่เพิ่มต่อท้ายโดยไม่ต้องบอกตำแหน่งมีชื่อเฉพาะ" }
+    hints:
+      - "คำภาษาอังกฤษที่แปลว่าต่อท้าย"
+      - "ดูตารางคำสั่งในบทเรียน"
+    solution: "queue.append(\"มด\") ได้ [\"ฟ้า\", \"ต้น\", \"มด\"] เมทอด append เพิ่มสมาชิกต่อท้ายเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p006
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: mcq
+    stem: |
+      โปรแกรมนี้แสดงอะไร
+
+      ```python
+      nums = [4, 7, 4, 9]
+      nums.append(2)
+      nums.remove(4)
+      nums[0] = 10
+      print(nums)
+      ```
+    choices:
+      - { id: a, text: "[10, 4, 9, 2]", correct: true }
+      - { id: b, text: "[10, 9, 2]", feedback: "remove(4) ลบเฉพาะ 4 ตัวแรกที่พบ ไม่ได้ลบทุกตัว" }
+      - { id: c, text: "[10, 7, 4, 9]", feedback: "remove(4) ลบค่า 4 ไม่ใช่ลบสมาชิกที่ดัชนี 4" }
+      - { id: d, text: "[10, 7, 4, 9, 2]", feedback: "ลืมว่า remove ลบ 4 ตัวแรกออกไปแล้ว" }
+    hints:
+      - "เขียนลิสต์ใหม่ทุกครั้งที่ทำแต่ละบรรทัด"
+      - "remove(x) ลบค่า x ตัวแรกที่พบเท่านั้น"
+    solution: "append(2) ได้ [4, 7, 4, 9, 2] → remove(4) ลบ 4 ตัวแรก ได้ [7, 4, 9, 2] → nums[0] = 10 แทนตัวแรก ได้ [10, 4, 9, 2]"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p007
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ร้านส้มตำใช้โปรแกรมนี้คิดเงิน ลูกค้าโต๊ะนี้ต้องจ่ายกี่บาท
+
+      ```python
+      price = {"ส้มตำ": 50, "ไก่ย่าง": 120, "ข้าวเหนียว": 10}
+      order = ["ส้มตำ", "ข้าวเหนียว", "ข้าวเหนียว", "ไก่ย่าง"]
+      total = 0
+      for food in order:
+          total = total + price[food]
+      print(total)
+      ```
+    answer: { value: 190, unit: "บาท" }
+    hints:
+      - "วงวนไล่รายการใน order ทีละรายการ แล้วใช้ชื่อเป็นคีย์ไปหาราคา"
+      - "ข้าวเหนียวอยู่ใน order สองครั้ง"
+    misconceptions:
+      - { match: 180, feedback: "นับข้าวเหนียวครั้งเดียว แต่ order มีข้าวเหนียวสองรายการ วงวนจึงบวกสองครั้ง" }
+      - { match: 4, feedback: "4 คือจำนวนรายการ แต่ total บวกราคาของแต่ละรายการ" }
+    solution: "50 (ส้มตำ) + 10 + 10 (ข้าวเหนียว 2 รายการ) + 120 (ไก่ย่าง) = 190 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p008
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนับคำนี้แสดงตัวเลขใด
+
+      ```python
+      text = "แมว หมา แมว ปลา แมว หมา"
+      count = {}
+      for w in text.split():
+          count[w] = count.get(w, 0) + 1
+      print(len(count))
+      ```
+    answer: { value: 3 }
+    hints:
+      - "count เป็นดิกชันนารี คำเดิมใช้คีย์เดิม"
+      - "len ของดิกชันนารีคือจำนวนคีย์ ไม่ใช่ผลรวมของค่า"
+    misconceptions:
+      - { match: 6, feedback: "6 คือจำนวนคำทั้งหมด แต่คำที่ซ้ำใช้คีย์เดิม แค่เพิ่มค่าที่นับ" }
+    solution: "หลังวงวน count = {\"แมว\": 3, \"หมา\": 2, \"ปลา\": 1} มีคีย์ 3 ตัว len(count) จึงได้ 3 (ผลรวมของค่าคือ 6 เท่ากับจำนวนคำทั้งหมด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p009
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียนบันทึกชื่อจังหวัดทุกครั้งที่ไปเที่ยว บางจังหวัดไปหลายครั้ง ต้องการรู้ว่าเคยไปมาแล้วกี่จังหวัด และตรวจได้เร็วว่าเคยไปจังหวัดหนึ่งหรือยัง ควรเก็บชื่อจังหวัดในโครงสร้างใด"
+    choices:
+      - { id: a, text: "เซต", correct: true, feedback: "เซตตัดชื่อซ้ำให้ len จึงได้จำนวนจังหวัด และตรวจด้วย in ได้เร็ว" }
+      - { id: b, text: "ลิสต์", feedback: "ลิสต์เก็บชื่อซ้ำ len จะนับจังหวัดที่ไปหลายครั้งซ้ำ และ in ต้องเทียบทีละตัว" }
+      - { id: c, text: "ดิกชันนารีที่มีคีย์เป็นตัวเลข 0, 1, 2, ...", feedback: "ใช้ดัชนีเป็นคีย์ก็เหมือนลิสต์ ไม่ได้ตัดชื่อซ้ำ" }
+      - { id: d, text: "สตริงที่ต่อชื่อจังหวัดด้วยเครื่องหมายจุลภาค", feedback: "สตริงต้องแยกด้วย split ก่อนจึงนับได้ และยังมีชื่อซ้ำ" }
+    hints:
+      - "คำถามสนใจลำดับหรือจำนวนครั้งหรือไม่"
+      - "โครงสร้างใดเก็บสมาชิกไม่ซ้ำ"
+    solution: "คำถามสนใจเพียงว่ามีหรือไม่และมีกี่แบบ จึงเหมาะกับเซต เช่น visited.add(\"น่าน\") ชื่อที่เพิ่มซ้ำถูกตัดทิ้ง len(visited) ได้จำนวนจังหวัด และ \"น่าน\" in visited ตรวจได้เร็ว (ถ้าต้องการนับว่าไปแต่ละจังหวัดกี่ครั้ง จึงค่อยใช้ดิกชันนารี)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p010
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      s = "banana"
+      print(s.count("a") + s.find("n"))
+      ```
+    answer: { value: 5 }
+    hints:
+      - "count นับจำนวนครั้งที่พบ find คืนดัชนีแรกที่พบ"
+      - "ดัชนีของ b, a, n, a, n, a คือ 0 ถึง 5"
+    misconceptions:
+      - { match: 6, feedback: "find คืนดัชนีซึ่งเริ่มที่ 0 n ตัวแรกอยู่ที่ดัชนี 2 ไม่ใช่ตำแหน่งที่ 3" }
+      - { match: 4, feedback: "find คืนดัชนีของ n ตัวแรกเท่านั้น ไม่ได้นับจำนวน n" }
+    solution: "s.count(\"a\") = 3 และ s.find(\"n\") = 2 (n ตัวแรกอยู่ที่ดัชนี 2) ผลรวม 3 + 2 = 5"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p011
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: order
+    stem: "เรียงบรรทัดให้เป็นโปรแกรมที่นับว่าในลิสต์คะแนนมีกี่คนที่ได้ 50 ขึ้นไป แล้วแสดงจำนวนนั้น (ย่อหน้าถูกต้องแล้ว)"
+    items:
+      - "`scores = [45, 72, 50, 38, 91]`"
+      - "`passed = 0`"
+      - "`for s in scores:`"
+      - "`    if s >= 50:`"
+      - "`        passed = passed + 1`"
+      - "`print(passed)`"
+    hints:
+      - "ตั้งตัวนับเป็น 0 ก่อนเริ่มวงวน"
+      - "print อยู่นอกวงวน จึงทำครั้งเดียวหลังวนครบ"
+    solution: "สร้างลิสต์ → ตั้ง passed = 0 → วนทุกคะแนน → ถ้าได้ 50 ขึ้นไปบวกตัวนับ → แสดงผลหลังวงวน ได้ 3 (72, 50 และ 91) ถ้าตั้ง passed = 0 ในวงวน ตัวนับจะถูกล้างทุกรอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p012
+    topics: [computer.programming.lists-strings]
+    difficulty: 4
+    type: numeric
+    stem: |
+      เลขประจำตัวประชาชนไทยมี 13 หลัก หลักสุดท้ายเป็นเลขตรวจสอบที่คำนวณจาก 12 หลักแรก ฟังก์ชันนี้คำนวณเลขตรวจสอบของเลขสมมติ `"123456789012"` ได้เท่าใด
+
+      ```python
+      def check_digit(first12):
+          total = 0
+          for i in range(12):
+              total = total + int(first12[i]) * (13 - i)
+          return (11 - total % 11) % 10
+
+      print(check_digit("123456789012"))
+      ```
+    answer: { value: 1 }
+    hints:
+      - "หลักที่ดัชนี 0 คูณ 13 หลักที่ดัชนี 1 คูณ 12 ลดลงไปจนหลักที่ดัชนี 11 คูณ 2 แล้วรวมกัน"
+      - "หาเศษจากการหารผลรวมด้วย 11 ลบออกจาก 11 แล้วหาเศษจากการหารด้วย 10"
+    misconceptions:
+      - { match: 11, feedback: "ลืม % 10 ท้ายสูตร เลขตรวจสอบต้องเป็นเลขหลักเดียว" }
+      - { match: 6, feedback: "ใช้ตัวคูณกลับทาง (2 ถึง 13) ตัวคูณของหลักแรกคือ 13 - 0 = 13" }
+    solution: "ผลรวม = 1×13 + 2×12 + 3×11 + 4×10 + 5×9 + 6×8 + 7×7 + 8×6 + 9×5 + 0×4 + 1×3 + 2×2 = 352 ซึ่งหาร 11 ลงตัว (352 % 11 = 0) จึงได้ (11 − 0) % 10 = 1 เลขเต็มคือ 1234567890121 สังเกตว่า int(first12[i]) แปลงอักขระตัวเลขเป็นจำนวนก่อนคูณ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p013
+    topics: [computer.programming.lists-strings]
+    difficulty: 4
+    type: mcq
+    stem: |
+      นักเรียนต้องการลบจำนวนลบออกจากลิสต์ ได้โปรแกรมนี้ ผลที่แสดงคืออะไร
+
+      ```python
+      nums = [3, -1, -2, 5]
+      for x in nums:
+          if x < 0:
+              nums.remove(x)
+      print(nums)
+      ```
+    choices:
+      - { id: a, text: "[3, -2, 5]", correct: true }
+      - { id: b, text: "[3, 5]", feedback: "นี่คือผลที่ตั้งใจ แต่การลบขณะวนทำให้ -2 เลื่อนมาแทนที่ตำแหน่งที่เพิ่งตรวจไปแล้ว วงวนจึงข้าม -2" }
+      - { id: c, text: "[3, -1, -2, 5]", feedback: "remove ทำงานจริงตอนพบ -1 ลิสต์จึงเปลี่ยน" }
+      - { id: d, text: "เกิด IndexError", feedback: "for x in nums ไม่ใช้ดัชนีเอง จึงไม่เกิด IndexError แต่ให้ผลผิด" }
+    hints:
+      - "วงวน for เดินไปตามดัชนี 0, 1, 2, ... ของลิสต์ที่กำลังเปลี่ยน"
+      - "หลังลบ -1 ที่ดัชนี 1 สมาชิกตัวใดเลื่อนมาอยู่ที่ดัชนี 1 และรอบถัดไปตรวจดัชนีใด"
+    solution: "รอบแรกตรวจ 3 รอบสองตรวจ -1 แล้วลบ ลิสต์เป็น [3, -2, 5] -2 เลื่อนมาอยู่ดัชนี 1 แต่รอบสามไปตรวจดัชนี 2 คือ 5 จึงข้าม -2 ผลคือ [3, -2, 5] แก้โดยสร้างลิสต์ใหม่: result = [] แล้ววน for x in nums: if x >= 0: result.append(x)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p014
+    topics: [computer.programming.lists-strings]
+    difficulty: 4
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      a = [1, 2, 3]
+      b = a
+      b.append(4)
+      print(len(a))
+      ```
+    answer: { value: 4 }
+    hints:
+      - "b = a ทำสำเนาลิสต์หรือแค่ให้อีกชื่อชี้ลิสต์เดิม"
+      - "ถ้าสองชื่อชี้ลิสต์เดียวกัน การเพิ่มผ่านชื่อใดก็เห็นจากอีกชื่อ"
+    misconceptions:
+      - { match: 3, feedback: "b = a ไม่ได้คัดลอก a และ b เป็นลิสต์เดียวกัน ถ้าต้องการสำเนาต้องใช้ a.copy()" }
+    solution: "b = a ทำให้ b ชี้ลิสต์เดียวกับ a เมื่อ b.append(4) ลิสต์นั้นจึงเป็น [1, 2, 3, 4] len(a) ได้ 4 ถ้าเขียน b = a.copy() จะได้ 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p015
+    topics: [computer.programming.lists-strings]
+    difficulty: 4
+    type: numeric
+    stem: |
+      สตริงภาษาไทยนี้มีความยาวเท่าใดตาม Python
+
+      ```python
+      word = "น้ำแข็ง"
+      print(len(word))
+      ```
+    answer: { value: 7 }
+    hints:
+      - "วรรณยุกต์และสระที่อยู่บนหรือล่างพยัญชนะนับเป็นอักขระแยก"
+      - "แยกเป็น น, ไม้โท, สระอำ, สระแอ, ข, ไม้ไต่คู้, ง แล้วนับ"
+    misconceptions:
+      - { match: 5, feedback: "ไม้โทและไม้ไต่คู้ก็เป็นอักขระหนึ่งตัวในสตริง" }
+      - { match: 2, feedback: "Python นับอักขระ ไม่ได้นับพยางค์หรือคำ" }
+    solution: "น้ำแข็ง ประกอบด้วย น ไม้โท สระอำ สระแอ ข ไม้ไต่คู้ ง รวม 7 อักขระ len(word) จึงได้ 7 ถ้าโปรแกรมตัดข้อความตามความยาว อาจตัดวรรณยุกต์แยกจากพยัญชนะได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p016
+    topics: [computer.programming.lists-strings]
+    difficulty: 5
+    type: numeric
+    stem: |
+      สหกรณ์โรงเรียนใช้โปรแกรมนี้ตัดสต็อกหลังขายของ แล้วหาสินค้าที่ต้องสั่งเพิ่ม (เหลือ 0 หรือติดลบ) โปรแกรมแสดงตัวเลขใด
+
+      ```python
+      stock = {"ปากกา": 10, "ดินสอ": 5}
+      sold = [("ปากกา", 3), ("ยางลบ", 2), ("ดินสอ", 5), ("ปากกา", 4)]
+      for item, n in sold:
+          stock[item] = stock.get(item, 0) - n
+      low = []
+      for item in stock:
+          if stock[item] <= 0:
+              low.append(item)
+      print(len(low))
+      ```
+    answer: { value: 2 }
+    hints:
+      - "ไล่ค่าใน stock หลังแต่ละรายการขาย ยางลบไม่มีในสต็อกตอนแรก get จะให้ค่าใด"
+      - "หลังวงวนแรก ดูว่าสินค้าใดมีค่าน้อยกว่าหรือเท่ากับ 0"
+    misconceptions:
+      - { match: 1, feedback: "ยางลบไม่มีในสต็อกตอนแรก stock.get(\"ยางลบ\", 0) - 2 จึงสร้างคีย์ใหม่ค่า -2 ซึ่งต้องนับด้วย" }
+      - { match: 3, feedback: "ปากกาเหลือ 10 − 3 − 4 = 3 ยังไม่ต้องสั่ง" }
+    solution: "ปากกา 10 − 3 − 4 = 3, ยางลบ 0 − 2 = −2 (เพิ่มคีย์ใหม่), ดินสอ 5 − 5 = 0 สินค้าที่ ≤ 0 คือยางลบและดินสอ len(low) = 2 ค่าติดลบของยางลบยังบอกด้วยว่าข้อมูลสต็อกไม่ตรงกับของจริง ควรตรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p017
+    topics: [computer.programming.lists-strings]
+    difficulty: 5
+    type: numeric
+    stem: |
+      ดิกชันนารีเก็บลิสต์คะแนนของนักเรียนแต่ละคน (จำนวนครั้งที่สอบไม่เท่ากัน) โปรแกรมนี้แสดงค่าเฉลี่ยของคะแนน **ทุกครั้ง** รวมกันเท่าใด
+
+      ```python
+      students = {"ฟ้า": [80, 90], "ต้น": [50, 60, 70]}
+      total = 0
+      n = 0
+      for name in students:
+          for s in students[name]:
+              total = total + s
+              n = n + 1
+      print(total / n)
+      ```
+    answer: { value: 70 }
+    hints:
+      - "วงวนนอกไล่ชื่อ วงวนในไล่คะแนนในลิสต์ของชื่อนั้น"
+      - "total คือผลรวมคะแนนทั้ง 5 ครั้ง n คือจำนวนครั้ง"
+    misconceptions:
+      - { match: 72.5, feedback: "นี่คือค่าเฉลี่ยของค่าเฉลี่ยรายคน (85 และ 60) แต่โปรแกรมรวมทุกคะแนนแล้วหารด้วยจำนวนครั้งทั้งหมด" }
+      - { match: 175, feedback: "หารด้วยจำนวนนักเรียน 2 คน แต่ n นับทุกคะแนน ได้ 5" }
+    solution: "total = 80 + 90 + 50 + 60 + 70 = 350 และ n = 5 ได้ 350 / 5 = 70.0 ต่างจากค่าเฉลี่ยของค่าเฉลี่ยรายคน (85 + 60) / 2 = 72.5 เพราะต้นสอบมากครั้งกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

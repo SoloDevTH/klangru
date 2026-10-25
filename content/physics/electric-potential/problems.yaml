@@ -1,0 +1,268 @@
+problems:
+  - id: physics.electricity.electric-potential.p001
+    topics: [physics.electricity.electric-potential]
+    difficulty: 1
+    type: mcq
+    stem: "จุด P อยู่ทางขวาของประจุบวก $+Q$ ถ้านำอิเล็กตรอนไปวางที่จุด P อิเล็กตรอนจะถูกแรงไฟฟ้าในทิศใด"
+    choices:
+      - { id: a, text: "ไปทางซ้าย เข้าหาประจุ $+Q$", correct: true }
+      - { id: b, text: "ไปทางขวา ออกจากประจุ $+Q$", feedback: "ทางขวาคือทิศของสนามที่ P ประจุบวกถูกแรงตามทิศนี้ แต่อิเล็กตรอนเป็นประจุลบจึงถูกแรงสวนทิศสนาม" }
+      - { id: c, text: "ไม่ถูกแรง เพราะอิเล็กตรอนมีมวลน้อยมาก", feedback: "แรงไฟฟ้าขึ้นกับประจุ ไม่ขึ้นกับมวล $F = qE$" }
+    hints:
+      - "สนามไฟฟ้ารอบประจุบวกมีทิศพุ่งออกจากประจุ"
+      - "ประจุลบถูกแรงตามทิศสนามหรือสวนทิศสนาม"
+    solution: "สนามที่ P ชี้ไปทางขวา (ออกจาก $+Q$) อิเล็กตรอนมีประจุลบจึงถูกแรงสวนทิศสนาม คือไปทางซ้ายเข้าหา $+Q$ ตรงกับที่ประจุต่างชนิดดูดกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p002
+    topics: [physics.electricity.electric-potential]
+    difficulty: 2
+    type: numeric
+    stem: "แผ่นโลหะคู่ขนานห่างกัน $4.0\\ \\mathrm{mm}$ ต่อกับแบตเตอรี่ $12\\ \\mathrm{V}$ สนามไฟฟ้าระหว่างแผ่นมีขนาดกี่โวลต์ต่อเมตร"
+    answer: { value: 3000, tolerance: 30, unit: V/m }
+    misconceptions:
+      - { match: 3, feedback: "ใช้ระยะเป็นมิลลิเมตร ต้องแปลงเป็นเมตร $4.0 \\times 10^{-3}\\ \\mathrm{m}$" }
+      - { match: 0.048, feedback: "คูณแทนการหาร สนามสม่ำเสมอคือ $E = V/d$" }
+    hints:
+      - "$E = \\dfrac{V}{d}$"
+      - "แปลง $d$ เป็นเมตร"
+    solution: "$E = \\dfrac{12}{4.0 \\times 10^{-3}} = 3.0 \\times 10^{3}\\ \\mathrm{V/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p003
+    topics: [physics.electricity.electric-potential]
+    difficulty: 2
+    type: numeric
+    stem: "ศักย์ไฟฟ้าที่ระยะ $0.30\\ \\mathrm{m}$ จากจุดประจุ $+2.0\\ \\mathrm{nC}$ เป็นกี่โวลต์ ($k = 9.0 \\times 10^{9}\\ \\mathrm{N\\,m^2/C^2}$)"
+    answer: { value: 60, tolerance: 0.6, unit: V }
+    misconceptions:
+      - { match: 200, feedback: "ใช้ $r^2$ ซึ่งเป็นสูตรของสนามไฟฟ้า ศักย์ไฟฟ้าใช้ $V = kQ/r$" }
+    hints:
+      - "$V = \\dfrac{kQ}{r}$"
+      - "$1\\ \\mathrm{nC} = 10^{-9}\\ \\mathrm{C}$"
+    solution: "$V = \\dfrac{(9.0 \\times 10^{9})(2.0 \\times 10^{-9})}{0.30} = \\dfrac{18}{0.30} = 60\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p004
+    topics: [physics.electricity.electric-potential]
+    difficulty: 2
+    type: mcq
+    stem: "ประจุ $+Q$ สองประจุที่เท่ากันวางห่างกันจำนวนหนึ่ง ที่จุดกึ่งกลางระหว่างประจุทั้งสอง ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "สนามไฟฟ้าเป็นศูนย์ แต่ศักย์ไฟฟ้าไม่เป็นศูนย์", correct: true }
+      - { id: b, text: "สนามไฟฟ้าและศักย์ไฟฟ้าเป็นศูนย์ทั้งคู่", feedback: "ศักย์เป็นสเกลาร์ ศักย์บวกสองค่ารวมกันได้ค่าบวก ไม่หักล้างกัน" }
+      - { id: c, text: "สนามไฟฟ้ามีค่าเป็นสองเท่าของสนามจากประจุเดียว", feedback: "สนามเป็นเวกเตอร์ สนามจากสองประจุที่จุดกึ่งกลางมีทิศตรงข้ามกัน จึงหักล้างกัน" }
+    hints:
+      - "สนามจากแต่ละประจุที่จุดกึ่งกลางชี้ไปทางใด"
+      - "ศักย์ไฟฟ้ารวมกันแบบเวกเตอร์หรือสเกลาร์"
+    solution: "สนามจากประจุซ้ายชี้ไปทางขวา สนามจากประจุขวาชี้ไปทางซ้าย ขนาดเท่ากันจึงหักล้างเป็นศูนย์ ส่วนศักย์ $V = \\dfrac{kQ}{r} + \\dfrac{kQ}{r} = \\dfrac{2kQ}{r}$ ไม่เป็นศูนย์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p005
+    topics: [physics.electricity.electric-potential]
+    difficulty: 3
+    type: numeric
+    stem: "ประจุ $+4.0\\ \\mu\\mathrm{C}$ อยู่ที่ $x = 0$ และประจุ $-2.0\\ \\mu\\mathrm{C}$ อยู่ที่ $x = 0.30\\ \\mathrm{m}$ สนามไฟฟ้าลัพธ์ที่จุดกึ่งกลาง $x = 0.15\\ \\mathrm{m}$ มีขนาดกี่เท่าของ $10^{6}\\ \\mathrm{N/C}$"
+    answer: { value: 2.4, tolerance: 0.03 }
+    misconceptions:
+      - { match: 0.8, feedback: "ลบสนามทั้งสองกัน แต่สนามจากประจุบวกชี้ออก (ไปทางขวา) และสนามจากประจุลบชี้เข้าหาประจุลบ (ไปทางขวาเช่นกัน) จึงต้องบวกกัน" }
+    hints:
+      - "หาสนามจากแต่ละประจุที่ระยะ $0.15\\ \\mathrm{m}$"
+      - "ที่จุดกึ่งกลาง สนามจากประจุบวกชี้ไปทางขวา สนามจากประจุลบชี้ไปทางใด"
+    solution: "$E_1 = \\dfrac{(9 \\times 10^{9})(4.0 \\times 10^{-6})}{0.15^2} = 1.6 \\times 10^{6}\\ \\mathrm{N/C}$ ไปทางขวา $E_2 = \\dfrac{(9 \\times 10^{9})(2.0 \\times 10^{-6})}{0.15^2} = 0.8 \\times 10^{6}\\ \\mathrm{N/C}$ ชี้เข้าหาประจุลบ คือไปทางขวาเช่นกัน รวม $2.4 \\times 10^{6}\\ \\mathrm{N/C}$ ทางขวา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p006
+    topics: [physics.electricity.electric-potential]
+    difficulty: 3
+    type: numeric
+    stem: "ประจุ $+3.0\\ \\mathrm{nC}$ และ $+4.0\\ \\mathrm{nC}$ วางตามภาพ แต่ละประจุห่างจุด P เป็นระยะ $0.30\\ \\mathrm{m}$ และแนวจากประจุทั้งสองถึง P ตั้งฉากกัน สนามไฟฟ้าลัพธ์ที่ P มีขนาดกี่นิวตันต่อคูลอมบ์"
+    figure: { src: p-two-charges.svg, alt: "ประจุ +3.0 nC อยู่ทางซ้ายของจุด P ห่าง 0.30 m ในแนวนอน ประจุ +4.0 nC อยู่ใต้จุด P ห่าง 0.30 m ในแนวตั้ง แนวทั้งสองตั้งฉากกันที่ P" }
+    answer: { value: 500, tolerance: 5, unit: N/C }
+    misconceptions:
+      - { match: 700, feedback: "บวกขนาดของสนามตรง ๆ แต่สนามทั้งสองตั้งฉากกัน ต้องรวมแบบเวกเตอร์" }
+      - { match: 100, feedback: "ลบขนาดของสนาม สนามที่ตั้งฉากกันรวมด้วยทฤษฎีบทพีทาโกรัส" }
+    hints:
+      - "สนามจาก $+3.0\\ \\mathrm{nC}$ ที่ P ชี้ไปทางขวา สนามจาก $+4.0\\ \\mathrm{nC}$ ชี้ขึ้น"
+      - "$E = \\sqrt{E_1^2 + E_2^2}$"
+    solution: "$E_1 = \\dfrac{(9 \\times 10^{9})(3.0 \\times 10^{-9})}{0.09} = 300\\ \\mathrm{N/C}$ (ขวา) $E_2 = 400\\ \\mathrm{N/C}$ (ขึ้น) $E = \\sqrt{300^2 + 400^2} = 500\\ \\mathrm{N/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p007
+    topics: [physics.electricity.electric-potential]
+    difficulty: 3
+    type: numeric
+    stem: "จุด A มีศักย์ไฟฟ้า $10\\ \\mathrm{V}$ จุด B มีศักย์ไฟฟ้า $50\\ \\mathrm{V}$ ต้องทำงานกี่ไมโครจูลในการเลื่อนประจุ $+2.0\\ \\mu\\mathrm{C}$ อย่างช้า ๆ จาก A ไป B"
+    answer: { value: 80, tolerance: 0.8, unit: "μJ" }
+    misconceptions:
+      - { match: -80, feedback: "ใช้ $V_A - V_B$ งานในการเลื่อนประจุจาก A ไป B คือ $q(V_B - V_A)$ ประจุบวกไปยังที่ศักย์สูงขึ้นต้องทำงานเป็นบวก" }
+      - { match: 120, feedback: "บวกศักย์ทั้งสองจุด ต้องใช้ความต่างศักย์ $V_B - V_A$" }
+    hints:
+      - "$W_{A \\to B} = q(V_B - V_A)$"
+      - "$V_B - V_A = 40\\ \\mathrm{V}$"
+    solution: "$W = (2.0 \\times 10^{-6})(50 - 10) = 8.0 \\times 10^{-5}\\ \\mathrm{J} = 80\\ \\mu\\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p008
+    topics: [physics.electricity.electric-potential]
+    difficulty: 3
+    type: numeric
+    stem: "อิเล็กตรอนเริ่มจากหยุดนิ่งถูกเร่งด้วยความต่างศักย์ $1000\\ \\mathrm{V}$ จะมีอัตราเร็วกี่เท่าของ $10^{7}\\ \\mathrm{m/s}$ ($e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$, $m_e = 9.1 \\times 10^{-31}\\ \\mathrm{kg}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.88, tolerance: 0.02 }
+    misconceptions:
+      - { match: 1.33, feedback: "ลืมเลข 2 จาก $\\tfrac12 mv^2 = eV$ ได้ $v = \\sqrt{2eV/m}$" }
+    hints:
+      - "พลังงานศักย์ที่ลดลง $eV$ กลายเป็นพลังงานจลน์"
+      - "$\\tfrac12 m_ev^2 = eV$"
+    solution: "$v = \\sqrt{\\dfrac{2eV}{m_e}} = \\sqrt{\\dfrac{2(1.6 \\times 10^{-19})(1000)}{9.1 \\times 10^{-31}}} = 1.88 \\times 10^{7}\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p009
+    topics: [physics.electricity.electric-potential]
+    difficulty: 4
+    type: numeric
+    stem: "ในการทดลองแบบมิลลิแกน แผ่นขนานห่างกัน $2.0\\ \\mathrm{cm}$ ต่อความต่างศักย์ $400\\ \\mathrm{V}$ หยดน้ำมันมวล $6.53 \\times 10^{-16}\\ \\mathrm{kg}$ ลอยนิ่งพอดี หยดน้ำมันมีประจุกี่เท่าของ $e$ ($g = 9.8\\ \\mathrm{m/s^2}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$)"
+    answer: { value: 2, tolerance: 0.05 }
+    misconceptions:
+      - { match: 0.02, feedback: "ใช้ระยะเป็นเซนติเมตร ทำให้สนามน้อยไป 100 เท่า ต้องใช้ $d = 0.020\\ \\mathrm{m}$" }
+    hints:
+      - "ลอยนิ่ง: $qE = mg$"
+      - "$E = V/d$ แล้ว $q = mg/E$ หารด้วย $e$"
+    solution: "$E = \\dfrac{400}{0.020} = 2.0 \\times 10^{4}\\ \\mathrm{V/m}$ $q = \\dfrac{mg}{E} = \\dfrac{(6.53 \\times 10^{-16})(9.8)}{2.0 \\times 10^{4}} = 3.2 \\times 10^{-19}\\ \\mathrm{C} = 2e$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p010
+    topics: [physics.electricity.electric-potential]
+    difficulty: 4
+    type: numeric
+    stem: "อิเล็กตรอนวิ่งด้วยอัตราเร็ว $2.0 \\times 10^{7}\\ \\mathrm{m/s}$ ในแนวขนานกับแผ่นโลหะคู่ขนานยาว $5.0\\ \\mathrm{cm}$ ระหว่างแผ่นมีสนามสม่ำเสมอ $1.0 \\times 10^{4}\\ \\mathrm{V/m}$ ตั้งฉากกับแนวการเคลื่อนที่ เมื่อพ้นแผ่น อิเล็กตรอนเบนออกจากแนวเดิมกี่มิลลิเมตร ($e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$, $m_e = 9.1 \\times 10^{-31}\\ \\mathrm{kg}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 5.5, tolerance: 0.06, unit: mm }
+    misconceptions:
+      - { match: 11.0, feedback: "ลืม $\\tfrac12$ ใน $y = \\tfrac12 at^2$" }
+    hints:
+      - "เวลาที่อยู่ระหว่างแผ่น $t = \\dfrac{L}{v}$ (แนวขนานไม่มีความเร่ง)"
+      - "ความเร่งตั้งฉาก $a = \\dfrac{eE}{m_e}$ และ $y = \\tfrac12 at^2$"
+    solution: "$t = \\dfrac{0.050}{2.0 \\times 10^{7}} = 2.5 \\times 10^{-9}\\ \\mathrm{s}$ $a = \\dfrac{(1.6 \\times 10^{-19})(1.0 \\times 10^{4})}{9.1 \\times 10^{-31}} = 1.76 \\times 10^{15}\\ \\mathrm{m/s^2}$ $y = \\tfrac12 at^2 = 5.5 \\times 10^{-3}\\ \\mathrm{m} = 5.5\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p011
+    topics: [physics.electricity.electric-potential]
+    difficulty: 4
+    type: numeric
+    stem: "ประจุ $+2.0\\ \\mathrm{nC}$ และ $-3.0\\ \\mathrm{nC}$ อยู่ห่างจากจุด P เท่ากัน คือ $0.20\\ \\mathrm{m}$ ศักย์ไฟฟ้าที่ P เป็นกี่โวลต์ ($k = 9.0 \\times 10^{9}\\ \\mathrm{N\\,m^2/C^2}$)"
+    answer: { value: -45, tolerance: 0.5, unit: V }
+    misconceptions:
+      - { match: 225, feedback: "ใช้ขนาดของประจุโดยไม่ใส่เครื่องหมาย ศักย์จากประจุลบต้องเป็นลบ" }
+      - { match: 45, feedback: "ได้ขนาดถูกแต่เครื่องหมายผิด ประจุลบมีขนาดมากกว่า ศักย์รวมจึงเป็นลบ" }
+    hints:
+      - "ศักย์เป็นสเกลาร์ รวมกันโดยใส่เครื่องหมายของประจุ"
+      - "$V = \\dfrac{k(Q_1 + Q_2)}{r}$ เมื่อระยะเท่ากัน"
+    solution: "$V = \\dfrac{(9.0 \\times 10^{9})(2.0 \\times 10^{-9} - 3.0 \\times 10^{-9})}{0.20} = \\dfrac{-9}{0.20} = -45\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p012
+    topics: [physics.electricity.electric-potential]
+    difficulty: 4
+    type: numeric
+    stem: "ต้องทำงานกี่จูลในการนำประจุ $+3.0\\ \\mu\\mathrm{C}$ จากที่ไกลมาก (ระยะอนันต์) มาวางห่างจากประจุ $+2.0\\ \\mu\\mathrm{C}$ ที่ตรึงไว้ เป็นระยะ $0.10\\ \\mathrm{m}$ ($k = 9.0 \\times 10^{9}\\ \\mathrm{N\\,m^2/C^2}$)"
+    answer: { value: 0.54, tolerance: 0.006, unit: J }
+    misconceptions:
+      - { match: 5.4, feedback: "ใช้ $r^2$ ซึ่งให้แรง ไม่ใช่พลังงาน พลังงานศักย์ใช้ $E_p = kQq/r$" }
+    hints:
+      - "งานที่ทำเท่ากับพลังงานศักย์ไฟฟ้าที่เพิ่มขึ้น"
+      - "$E_p = \\dfrac{kQq}{r}$ และที่ระยะอนันต์ $E_p = 0$"
+    solution: "$W = E_p = \\dfrac{(9.0 \\times 10^{9})(2.0 \\times 10^{-6})(3.0 \\times 10^{-6})}{0.10} = 0.54\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p013
+    topics: [physics.electricity.electric-potential]
+    difficulty: 5
+    type: numeric
+    stem: "ประจุ $+4.0\\ \\mu\\mathrm{C}$ อยู่ที่ $x = 0$ และประจุ $+1.0\\ \\mu\\mathrm{C}$ อยู่ที่ $x = 0.60\\ \\mathrm{m}$ บนแกน $x$ ระหว่างประจุทั้งสอง จุดที่สนามไฟฟ้าลัพธ์เป็นศูนย์อยู่ที่ $x$ เท่าใด (หน่วยเมตร)"
+    answer: { value: 0.4, tolerance: 0.004, unit: m }
+    misconceptions:
+      - { match: 0.2, feedback: "ได้ระยะจากประจุตัวเล็ก จุดสนามศูนย์ต้องอยู่ใกล้ประจุที่เล็กกว่า คือห่างจาก $x = 0$ เป็น $0.40\\ \\mathrm{m}$" }
+      - { match: 0.48, feedback: "ใช้ $4/x = 1/(0.6 - x)$ (ไม่ยกกำลังสอง) สนามแปรผกผันกับ $r^2$" }
+    hints:
+      - "ที่จุดนั้นสนามจากสองประจุเท่ากันและสวนทางกัน: $\\dfrac{4}{x^2} = \\dfrac{1}{(0.60 - x)^2}$"
+      - "ถอดรากที่สองทั้งสองข้าง: $\\dfrac{2}{x} = \\dfrac{1}{0.60 - x}$"
+    solution: "$2(0.60 - x) = x$ ได้ $x = 0.40\\ \\mathrm{m}$ ตรวจ: $\\dfrac{4}{0.16} = 25$ และ $\\dfrac{1}{0.04} = 25$ เท่ากัน จุดนี้อยู่ใกล้ประจุที่เล็กกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p014
+    topics: [physics.electricity.electric-potential]
+    difficulty: 5
+    type: numeric
+    stem: "โปรตอนถูกปล่อยจากหยุดนิ่งที่ระยะ $0.10\\ \\mathrm{m}$ จากประจุ $+5.0\\ \\mu\\mathrm{C}$ ที่ตรึงไว้ เมื่อโปรตอนถูกผลักออกไปถึงระยะ $0.50\\ \\mathrm{m}$ จะมีอัตราเร็วกี่เท่าของ $10^{6}\\ \\mathrm{m/s}$ ($m_p = 1.67 \\times 10^{-27}\\ \\mathrm{kg}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$, $k = 9.0 \\times 10^{9}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 8.3, tolerance: 0.08 }
+    misconceptions:
+      - { match: 9.3, feedback: "ใช้พลังงานศักย์ที่ $0.10\\ \\mathrm{m}$ ทั้งหมด แต่ที่ $0.50\\ \\mathrm{m}$ ยังเหลือพลังงานศักย์อยู่ ต้องใช้ผลต่าง" }
+    hints:
+      - "พลังงานจลน์ที่ได้ = พลังงานศักย์ที่ลดลง $= kQe\\left(\\dfrac{1}{0.10} - \\dfrac{1}{0.50}\\right)$"
+      - "$v = \\sqrt{2E_k/m_p}$"
+    solution: "$\\Delta E_p = (9 \\times 10^{9})(5.0 \\times 10^{-6})(1.6 \\times 10^{-19})(10 - 2) = 5.76 \\times 10^{-14}\\ \\mathrm{J}$ $v = \\sqrt{\\dfrac{2(5.76 \\times 10^{-14})}{1.67 \\times 10^{-27}}} = 8.3 \\times 10^{6}\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p015
+    topics: [physics.electricity.electric-potential]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ปริมาณกับหน่วย"
+    pairs:
+      - { left: "สนามไฟฟ้า", right: "$\\mathrm{N/C}$ หรือ $\\mathrm{V/m}$" }
+      - { left: "ศักย์ไฟฟ้า", right: "$\\mathrm{V}$ หรือ $\\mathrm{J/C}$" }
+      - { left: "พลังงานศักย์ไฟฟ้า", right: "$\\mathrm{J}$" }
+      - { left: "พลังงานของอิเล็กตรอนที่ถูกเร่งด้วย 1 โวลต์", right: "$1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$" }
+    hints:
+      - "ศักย์ไฟฟ้าคือพลังงานต่อประจุ"
+      - "สนามไฟฟ้าคือแรงต่อประจุ หรือความต่างศักย์ต่อระยะ"
+    solution: "สนามไฟฟ้า $\\mathrm{N/C} = \\mathrm{V/m}$ ศักย์ไฟฟ้า $\\mathrm{V} = \\mathrm{J/C}$ พลังงานศักย์เป็นจูล และ $1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p016
+    topics: [physics.electricity.electric-potential]
+    difficulty: 3
+    type: mcq
+    stem: "ระหว่างแผ่นขนานที่มีสนามสม่ำเสมอชี้ลง เลื่อนประจุบวกในแนวราบ (ตั้งฉากกับสนาม) ไป $5\\ \\mathrm{cm}$ งานที่ต้องทำเป็นเท่าใด"
+    choices:
+      - { id: a, text: "ศูนย์ เพราะเลื่อนไปตามผิวสมศักย์", correct: true }
+      - { id: b, text: "$qE \\times 0.05$ เพราะแรงคือ $qE$", feedback: "งานคิดจากแรงคูณระยะในแนวของแรง แรงชี้ลงแต่การเลื่อนเป็นแนวราบ จึงไม่มีงาน" }
+      - { id: c, text: "ติดลบ เพราะประจุบวกเคลื่อนที่ในสนาม", feedback: "เส้นตั้งฉากกับสนามมีศักย์เท่ากันทุกจุด $V_B - V_A = 0$ งานจึงเป็นศูนย์" }
+    hints:
+      - "เส้นที่ตั้งฉากกับเส้นสนามคืออะไร"
+      - "$W = q(V_B - V_A)$"
+    solution: "แนวราบตั้งฉากกับสนามเป็นผิวสมศักย์ $V_B = V_A$ ดังนั้น $W = q(V_B - V_A) = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-potential.p017
+    topics: [physics.electricity.electric-potential]
+    difficulty: 4
+    type: expression
+    stem: "อนุภาคประจุ $q$ มวล $m$ เริ่มจากหยุดนิ่งในสนามไฟฟ้าสม่ำเสมอ $E$ เคลื่อนที่ไปตามแนวสนามได้ระยะ $d$ จงเขียนอัตราเร็วของอนุภาค $v$ ในรูปของ $q$, $E$, $d$ และ $m$"
+    prefix: "v ="
+    answer: { latex: "\\sqrt{\\frac{2qEd}{m}}", variables: [q, E, d, m] }
+    misconceptions:
+      - { match: "\\sqrt{\\frac{qEd}{m}}", feedback: "ลืมเลข 2 จาก $\\tfrac12 mv^2 = qEd$" }
+      - { match: "\\frac{2qEd}{m}", feedback: "นี่คือ $v^2$ ต้องถอดรากที่สอง" }
+    hints:
+      - "งานของแรงไฟฟ้า $= Fd = qEd$"
+      - "งานนี้กลายเป็นพลังงานจลน์ $\\tfrac12 mv^2$"
+    solution: "$\\tfrac12 mv^2 = qEd$ → $v = \\sqrt{\\dfrac{2qEd}{m}}$ (หรือใช้ $v^2 = 2ad$ กับ $a = qE/m$ ก็ได้ผลเดียวกัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

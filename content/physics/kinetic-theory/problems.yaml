@@ -1,0 +1,287 @@
+problems:
+  - id: physics.thermal.kinetic-theory.p001
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใด **ไม่ใช่** สมมติฐานของแบบจำลองแก๊สอุดมคติ"
+    choices:
+      - { id: a, text: "โมเลกุลดึงดูดกันตลอดเวลาด้วยแรงมาก", correct: true }
+      - { id: b, text: "โมเลกุลเคลื่อนที่แบบสุ่มทุกทิศทาง", feedback: "ข้อนี้เป็นสมมติฐานของแบบจำลอง" }
+      - { id: c, text: "โมเลกุลมีขนาดเล็กมากเมื่อเทียบกับระยะห่างระหว่างกัน", feedback: "ข้อนี้เป็นสมมติฐานของแบบจำลอง" }
+      - { id: d, text: "การชนเป็นการชนแบบยืดหยุ่น", feedback: "ข้อนี้เป็นสมมติฐานของแบบจำลอง พลังงานจลน์รวมไม่หายไปในการชน" }
+    hints:
+      - "แก๊สอุดมคติมีแรงระหว่างโมเลกุลหรือไม่"
+      - "ถ้ามีแรงดึงดูดมาก แก๊สจะกลายเป็นอะไร"
+    solution: "แบบจำลองแก๊สอุดมคติถือว่าไม่มีแรงระหว่างโมเลกุลยกเว้นขณะชน ถ้าโมเลกุลดึงดูดกันมาก แก๊สจะควบแน่นเป็นของเหลว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p002
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณกับหน่วยที่ใช้ในกฎของแก๊สอุดมคติ"
+    pairs:
+      - { left: "ความดัน $P$", right: "พาสคัล ($\\mathrm{Pa}$)" }
+      - { left: "ปริมาตร $V$", right: "ลูกบาศก์เมตร ($\\mathrm{m^3}$)" }
+      - { left: "อุณหภูมิ $T$", right: "เคลวิน ($\\mathrm{K}$)" }
+      - { left: "ค่าคงตัวของแก๊ส $R$", right: "$\\mathrm{J/(mol\\,K)}$" }
+    hints:
+      - "อุณหภูมิในกฎของแก๊สต้องเป็นอุณหภูมิสัมบูรณ์"
+      - "$R = 8.31$ มีหน่วยเป็นพลังงานต่อโมลต่อเคลวิน"
+    solution: "$P$ เป็นพาสคัล $V$ เป็นลูกบาศก์เมตร $T$ เป็นเคลวิน และ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p003
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 2
+    type: numeric
+    stem: "อุดปลายกระบอกฉีดยาที่มีอากาศ $60\\ \\mathrm{mL}$ ความดัน $100\\ \\mathrm{kPa}$ แล้วดันลูกสูบช้า ๆ จนอากาศเหลือ $20\\ \\mathrm{mL}$ โดยอุณหภูมิคงตัว ความดันของอากาศเป็นกี่กิโลพาสคัล"
+    answer: { value: 300, tolerance: 1, unit: kPa }
+    misconceptions:
+      - { match: 33.3, feedback: "ปริมาตรลดลง ความดันต้องเพิ่มขึ้น ตามกฎของบอยล์ $P_1V_1 = P_2V_2$" }
+    hints:
+      - "อุณหภูมิคงตัว ใช้กฎของบอยล์"
+      - "$P_2 = P_1\\dfrac{V_1}{V_2}$"
+    solution: "$P_2 = 100 \\times \\dfrac{60}{20} = 300\\ \\mathrm{kPa}$ ปริมาตรเหลือ $\\tfrac13$ ความดันจึงเพิ่มเป็น 3 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p004
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊ส $2.0\\ \\mathrm{mol}$ อยู่ในถังปริมาตร $0.050\\ \\mathrm{m^3}$ ที่อุณหภูมิ $27\\,^\\circ\\mathrm{C}$ ความดันในถังเป็นกี่กิโลพาสคัล (ใช้ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 99.7, tolerance: 1, unit: kPa }
+    misconceptions:
+      - { match: 8.97, feedback: "ใช้อุณหภูมิ 27 แทน 300 K ต้องบวก 273 ก่อนเสมอ" }
+    hints:
+      - "แปลงอุณหภูมิเป็นเคลวิน"
+      - "$P = \\dfrac{nRT}{V}$"
+    solution: "$T = 300\\ \\mathrm{K}$ $P = \\dfrac{(2.0)(8.31)(300)}{0.050} = 99{,}720\\ \\mathrm{Pa} \\approx 99.7\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p005
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 3
+    type: numeric
+    stem: "ตอนเช้า $27\\,^\\circ\\mathrm{C}$ เครื่องวัดลมยางรถกระบะอ่านความดันเกจได้ $200\\ \\mathrm{kPa}$ หลังขับบนถนนตอนเที่ยง ลมในยางร้อนขึ้นเป็น $57\\,^\\circ\\mathrm{C}$ ถ้าปริมาตรยางคงตัว เครื่องวัดจะอ่านได้กี่กิโลพาสคัล (ความดันบรรยากาศ $101.3\\ \\mathrm{kPa}$)"
+    answer: { value: 230, tolerance: 1.5, unit: kPa }
+    misconceptions:
+      - { match: 220, feedback: "ใช้ความดันเกจในกฎของแก๊สโดยตรง ต้องเปลี่ยนเป็นความดันสัมบูรณ์ก่อน แล้วค่อยลบความดันบรรยากาศกลับ" }
+      - { match: 422, feedback: "ใช้องศาเซลเซียส ($57/27$) ต้องใช้อุณหภูมิเคลวิน $330/300$" }
+    hints:
+      - "ความดันสัมบูรณ์ตอนเช้า $= 200 + 101.3$"
+      - "ปริมาตรคงตัว $\\dfrac{P_1}{T_1} = \\dfrac{P_2}{T_2}$ ใช้เคลวิน แล้วลบ $101.3$ เพื่อให้เป็นความดันเกจ"
+    solution: "$P_1 = 301.3\\ \\mathrm{kPa}$ $P_2 = 301.3 \\times \\dfrac{330}{300} = 331.4\\ \\mathrm{kPa}$ ความดันเกจ $= 331.4 - 101.3 \\approx 230\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p006
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาอัตราเร็วอาร์เอ็มเอสของโมเลกุลไนโตรเจน ($M = 28\\ \\mathrm{g/mol}$) ที่ $300\\ \\mathrm{K}$ ในหน่วยเมตรต่อวินาที (ใช้ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 517, tolerance: 5, unit: m/s }
+    misconceptions:
+      - { match: 16.3, feedback: "ใช้มวลโมเลกุลเป็นกรัมต่อโมล ต้องแปลงเป็น $0.028\\ \\mathrm{kg/mol}$" }
+      - { match: 298, feedback: "ลืมเลข 3 ในสูตร $v_{\\text{rms}} = \\sqrt{3RT/M}$" }
+    hints:
+      - "$v_{\\text{rms}} = \\sqrt{\\dfrac{3RT}{M}}$"
+      - "$M$ ต้องเป็นกิโลกรัมต่อโมล"
+    solution: "$v_{\\text{rms}} = \\sqrt{\\dfrac{3(8.31)(300)}{0.028}} = \\sqrt{2.67 \\times 10^{5}} \\approx 517\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p007
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 3
+    type: numeric
+    stem: "พลังงานจลน์เฉลี่ยของโมเลกุลแก๊สที่ $27\\,^\\circ\\mathrm{C}$ เป็นกี่เท่าของ $10^{-21}\\ \\mathrm{J}$ ($k_B = 1.38 \\times 10^{-23}\\ \\mathrm{J/K}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.21, tolerance: 0.06 }
+    misconceptions:
+      - { match: 0.559, feedback: "ใช้อุณหภูมิ 27 ต้องแปลงเป็น 300 K" }
+      - { match: 4.14, feedback: "ลืม $\\tfrac32$ ในสูตร $\\overline{E_k} = \\tfrac32 k_BT$" }
+    hints:
+      - "$\\overline{E_k} = \\tfrac32 k_BT$"
+      - "$T = 27 + 273$"
+    solution: "$\\overline{E_k} = \\tfrac32 (1.38 \\times 10^{-23})(300) = 6.21 \\times 10^{-21}\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p008
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 3
+    type: mcq
+    stem: "ถ้าอุณหภูมิสัมบูรณ์ของแก๊สเพิ่มเป็น 2 เท่า อัตราเร็วอาร์เอ็มเอสของโมเลกุลเป็นกี่เท่าของเดิม"
+    choices:
+      - { id: a, text: "$\\sqrt2$ เท่า", correct: true }
+      - { id: b, text: "2 เท่า", feedback: "พลังงานจลน์เฉลี่ยเพิ่ม 2 เท่า แต่พลังงานจลน์แปรผันตาม $v^2$ อัตราเร็วจึงเพิ่มแค่ $\\sqrt2$ เท่า" }
+      - { id: c, text: "4 เท่า", feedback: "$v_{\\text{rms}} \\propto \\sqrt{T}$ ไม่ใช่ $T^2$" }
+    hints:
+      - "$v_{\\text{rms}} = \\sqrt{3k_BT/m}$"
+      - "$v$ แปรผันตามรากที่สองของ $T$"
+    solution: "$v_{\\text{rms}} \\propto \\sqrt{T}$ อุณหภูมิ 2 เท่า อัตราเร็วเป็น $\\sqrt2 \\approx 1.41$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p009
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 4
+    type: numeric
+    stem: "ห้องเรียนขนาด $4\\ \\mathrm{m} \\times 5\\ \\mathrm{m} \\times 3\\ \\mathrm{m}$ มีอากาศความดัน $1.01 \\times 10^{5}\\ \\mathrm{Pa}$ อุณหภูมิ $27\\,^\\circ\\mathrm{C}$ ในห้องมีโมเลกุลอากาศกี่เท่าของ $10^{27}$ โมเลกุล ($k_B = 1.38 \\times 10^{-23}\\ \\mathrm{J/K}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.46, tolerance: 0.02 }
+    misconceptions:
+      - { match: 16.3, feedback: "ใช้อุณหภูมิ 27 ต้องใช้ 300 K" }
+    hints:
+      - "$PV = Nk_BT$ แก้หา $N$"
+      - "ปริมาตรห้อง $= 4 \\times 5 \\times 3\\ \\mathrm{m^3}$"
+    solution: "$V = 60\\ \\mathrm{m^3}$ $N = \\dfrac{PV}{k_BT} = \\dfrac{(1.01 \\times 10^{5})(60)}{(1.38 \\times 10^{-23})(300)} = 1.46 \\times 10^{27}$ โมเลกุล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p010
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 4
+    type: numeric
+    stem: "ที่อุณหภูมิเดียวกัน อัตราเร็วอาร์เอ็มเอสของโมเลกุลไฮโดรเจน ($M = 2\\ \\mathrm{g/mol}$) เป็นกี่เท่าของโมเลกุลออกซิเจน ($M = 32\\ \\mathrm{g/mol}$)"
+    answer: { value: 4, tolerance: 0.04 }
+    misconceptions:
+      - { match: 16, feedback: "16 คืออัตราส่วนของมวล อัตราเร็วแปรผกผันกับรากที่สองของมวล" }
+      - { match: 0.25, feedback: "กลับอัตราส่วน โมเลกุลที่เบากว่าวิ่งเร็วกว่า" }
+    hints:
+      - "ที่อุณหภูมิเดียวกัน พลังงานจลน์เฉลี่ยเท่ากัน"
+      - "$\\dfrac{v_{H_2}}{v_{O_2}} = \\sqrt{\\dfrac{M_{O_2}}{M_{H_2}}}$"
+    solution: "$\\dfrac{v_{H_2}}{v_{O_2}} = \\sqrt{\\dfrac{32}{2}} = \\sqrt{16} = 4$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p011
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 4
+    type: numeric
+    stem: "ลูกโป่งมีอากาศ $5.0\\ \\mathrm{L}$ ที่ชายหาดบางแสน ความดัน $101\\ \\mathrm{kPa}$ อุณหภูมิ $30\\,^\\circ\\mathrm{C}$ นำขึ้นไปบนยอดดอยอินทนนท์ที่ความดัน $75\\ \\mathrm{kPa}$ อุณหภูมิ $10\\,^\\circ\\mathrm{C}$ ลูกโป่งจะมีปริมาตรกี่ลิตร (ถือว่าเปลือกลูกโป่งไม่ดันอากาศเพิ่ม ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.29, tolerance: 0.06, unit: L }
+    misconceptions:
+      - { match: 6.73, feedback: "คิดเฉพาะความดัน ลืมว่าอุณหภูมิที่ลดลงทำให้ปริมาตรลดลงด้วย" }
+      - { match: 2.24, feedback: "ใช้อุณหภูมิองศาเซลเซียส ($10/30$) ต้องใช้เคลวิน $283/303$" }
+    hints:
+      - "$\\dfrac{P_1V_1}{T_1} = \\dfrac{P_2V_2}{T_2}$"
+      - "$V_2 = V_1 \\times \\dfrac{P_1}{P_2} \\times \\dfrac{T_2}{T_1}$ ใช้เคลวิน"
+    solution: "$V_2 = 5.0 \\times \\dfrac{101}{75} \\times \\dfrac{283}{303} = 6.29\\ \\mathrm{L}$ ความดันที่ลดลงทำให้พองมาก ส่วนความเย็นทำให้หดเล็กน้อย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p012
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 4
+    type: expression
+    stem: "จาก $\\tfrac12 m\\overline{v^2} = \\tfrac32 k_BT$ จงเขียนอัตราเร็วอาร์เอ็มเอส $v_{\\text{rms}} = \\sqrt{\\overline{v^2}}$ ในรูปของ $k_B$, $T$ และ $m$ (พิมพ์ $k_B$ เป็น k_B)"
+    prefix: "v_{rms} ="
+    answer: { latex: "\\sqrt{\\frac{3k_B T}{m}}", variables: [k_B, T, m] }
+    misconceptions:
+      - { match: "\\sqrt{\\frac{3k_B T}{2m}}", feedback: "คูณ 2 ทั้งสองข้างก่อน จะได้ $m\\overline{v^2} = 3k_BT$" }
+      - { match: "\\frac{3k_B T}{m}", feedback: "นี่คือ $\\overline{v^2}$ ต้องถอดรากที่สองอีกครั้ง" }
+    hints:
+      - "คูณ 2 ทั้งสองข้างแล้วหารด้วย $m$ ได้ $\\overline{v^2}$"
+      - "ถอดรากที่สองทั้งสองข้าง"
+    solution: "$m\\overline{v^2} = 3k_BT$ → $\\overline{v^2} = \\dfrac{3k_BT}{m}$ → $v_{\\text{rms}} = \\sqrt{\\dfrac{3k_BT}{m}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p013
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 4
+    type: numeric
+    stem: "แก๊สฮีเลียม (แก๊สอะตอมเดี่ยว) $2.0\\ \\mathrm{mol}$ ที่ $300\\ \\mathrm{K}$ มีพลังงานภายในกี่จูล (ใช้ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 7479, tolerance: 75, unit: J }
+    misconceptions:
+      - { match: 3740, feedback: "คิดแค่ 1 โมล ต้องคูณจำนวนโมล $n = 2.0$" }
+      - { match: 4986, feedback: "ลืม $\\tfrac32$ ใช้ $U = \\tfrac32 nRT$" }
+    hints:
+      - "แก๊สอุดมคติอะตอมเดี่ยวมีแต่พลังงานจลน์"
+      - "$U = \\tfrac32 nRT$"
+    solution: "$U = \\tfrac32 (2.0)(8.31)(300) = 7{,}479\\ \\mathrm{J} \\approx 7.5\\ \\mathrm{kJ}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p014
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 5
+    type: numeric
+    stem: "ถังออกซิเจนทางการแพทย์ในโรงพยาบาลจุ $40\\ \\mathrm{L}$ มีความดันสัมบูรณ์ $15\\ \\mathrm{MPa}$ ที่ $27\\,^\\circ\\mathrm{C}$ ถังมีออกซิเจน ($M = 32\\ \\mathrm{g/mol}$) กี่กิโลกรัม (ประมาณว่าเป็นแก๊สอุดมคติ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 7.7, tolerance: 0.08, unit: kg }
+    misconceptions:
+      - { match: 7702, feedback: "ใช้ปริมาตรเป็นลิตรโดยตรง ต้องแปลง $40\\ \\mathrm{L} = 0.040\\ \\mathrm{m^3}$" }
+      - { match: 3.9, feedback: "ใช้มวลของอะตอมออกซิเจน 16 g/mol แต่แก๊สออกซิเจนเป็นโมเลกุล $O_2$ มวล 32 g/mol" }
+    hints:
+      - "หาจำนวนโมล $n = \\dfrac{PV}{RT}$ ใช้หน่วย SI"
+      - "มวล $= n \\times 0.032\\ \\mathrm{kg/mol}$"
+    solution: "$n = \\dfrac{(15 \\times 10^{6})(0.040)}{(8.31)(300)} = 241\\ \\mathrm{mol}$ มวล $= 241 \\times 0.032 \\approx 7.7\\ \\mathrm{kg}$ (แก๊สจริงที่ความดันสูงขนาดนี้เบี่ยงจากแก๊สอุดมคติเล็กน้อย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p015
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 5
+    type: numeric
+    stem: "อากาศมีความหนาแน่น $1.2\\ \\mathrm{kg/m^3}$ ที่ความดัน $1.0 \\times 10^{5}\\ \\mathrm{Pa}$ จาก $P = \\tfrac13 \\dfrac{N}{V}m\\overline{v^2}$ อัตราเร็วอาร์เอ็มเอสของโมเลกุลอากาศเป็นกี่เมตรต่อวินาที"
+    answer: { value: 500, tolerance: 5, unit: m/s }
+    misconceptions:
+      - { match: 289, feedback: "ลืมเลข 3 จาก $\\tfrac13$ ในสูตรความดัน" }
+    hints:
+      - "$\\dfrac{N}{V}m$ คือมวลต่อปริมาตร หรือความหนาแน่น $\\rho$"
+      - "$P = \\tfrac13 \\rho \\overline{v^2}$ จึงได้ $v_{\\text{rms}} = \\sqrt{3P/\\rho}$"
+    solution: "$\\dfrac{N}{V}m = \\rho$ ดังนั้น $P = \\tfrac13\\rho\\overline{v^2}$ และ $v_{\\text{rms}} = \\sqrt{\\dfrac{3(1.0 \\times 10^{5})}{1.2}} = \\sqrt{2.5 \\times 10^{5}} = 500\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p016
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 5
+    type: numeric
+    stem: "ห้องเก็บของปิดหน้าต่างแต่มีช่องระบายอากาศ ความดันในห้องจึงเท่ากับข้างนอกเสมอ ถ้าอุณหภูมิในห้องเพิ่มจาก $27\\,^\\circ\\mathrm{C}$ เป็น $127\\,^\\circ\\mathrm{C}$ ระหว่างไฟไหม้ โมเลกุลอากาศในห้องจะออกไปทางช่องระบายกี่เปอร์เซ็นต์ของที่มีตอนแรก"
+    answer: { value: 25, tolerance: 0.3, unit: "%" }
+    misconceptions:
+      - { match: 78.7, feedback: "ใช้องศาเซลเซียส ($27/127$) ต้องใช้เคลวิน $300/400$" }
+      - { match: 33.3, feedback: "33.3% คือการเพิ่มของปริมาตรถ้าแก๊สขยายตัวได้อิสระ แต่สัดส่วนที่ออกไปคิดเทียบกับจำนวนตอนแรก $1 - N_2/N_1$" }
+    hints:
+      - "$P$ และ $V$ คงตัว จาก $PV = Nk_BT$ ได้ $NT$ คงตัว"
+      - "$\\dfrac{N_2}{N_1} = \\dfrac{T_1}{T_2}$ ใช้เคลวิน"
+    solution: "$\\dfrac{N_2}{N_1} = \\dfrac{300}{400} = 0.75$ เหลือ 75% จึงออกไป $25\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p017
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 2
+    type: mcq
+    stem: "แม่ค้าต้มน้ำแข็งให้ละลายในหม้อ ระหว่างที่น้ำแข็งกำลังละลาย อุณหภูมิคงที่ $0\\,^\\circ\\mathrm{C}$ พลังงานความร้อนที่ได้รับไปอยู่ในรูปใดเป็นส่วนใหญ่"
+    choices:
+      - { id: a, text: "พลังงานศักย์ระหว่างโมเลกุลที่ถูกแยกห่างจากกัน", correct: true }
+      - { id: b, text: "พลังงานจลน์ของโมเลกุลที่เคลื่อนที่เร็วขึ้น", feedback: "ถ้าพลังงานจลน์เฉลี่ยเพิ่ม อุณหภูมิต้องสูงขึ้น แต่อุณหภูมิคงที่" }
+      - { id: c, text: "หายไป เพราะอุณหภูมิไม่เปลี่ยน", feedback: "พลังงานไม่หายไป อุณหภูมิบอกเฉพาะพลังงานจลน์เฉลี่ย พลังงานยังเก็บในรูปพลังงานศักย์ได้" }
+    hints:
+      - "อุณหภูมิบอกพลังงานจลน์เฉลี่ยของโมเลกุล"
+      - "พลังงานภายในมีทั้งพลังงานจลน์และพลังงานศักย์"
+    solution: "อุณหภูมิคงที่แปลว่าพลังงานจลน์เฉลี่ยคงที่ พลังงานที่ได้รับจึงใช้แยกโมเลกุลที่ยึดกันอยู่ในผลึกน้ำแข็ง กลายเป็นพลังงานศักย์ระหว่างโมเลกุล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory.p018
+    topics: [physics.thermal.kinetic-theory]
+    difficulty: 3
+    type: mcq
+    stem: "ภาชนะหนึ่งมีแก๊สไฮโดรเจนและแก๊สออกซิเจนผสมกันที่อุณหภูมิเดียวกัน ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "โมเลกุลทั้งสองชนิดมีพลังงานจลน์เฉลี่ยเท่ากัน แต่ไฮโดรเจนมีอัตราเร็วอาร์เอ็มเอสมากกว่า", correct: true }
+      - { id: b, text: "ออกซิเจนมีพลังงานจลน์เฉลี่ยมากกว่าเพราะหนักกว่า", feedback: "พลังงานจลน์เฉลี่ยขึ้นกับอุณหภูมิเท่านั้น $\\overline{E_k} = \\tfrac32 k_BT$" }
+      - { id: c, text: "ทั้งสองชนิดมีอัตราเร็วอาร์เอ็มเอสเท่ากัน", feedback: "พลังงานจลน์เท่ากัน โมเลกุลที่มวลน้อยต้องวิ่งเร็วกว่า" }
+    hints:
+      - "พลังงานจลน์เฉลี่ยขึ้นกับอะไร"
+      - "$\\tfrac12 mv^2$ เท่ากัน มวลน้อยต้องมี $v$ มาก"
+    solution: "ที่อุณหภูมิเดียวกัน $\\overline{E_k} = \\tfrac32 k_BT$ เท่ากัน ไฮโดรเจนเบากว่าจึงวิ่งเร็วกว่า (เร็วกว่าออกซิเจน 4 เท่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

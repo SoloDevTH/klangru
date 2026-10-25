@@ -1,0 +1,69 @@
+id: math.logic.sets
+subject: math
+title: { th: เซต, en: Sets }
+summary: เซตและสมาชิก เขียนแบบแจกแจงและบอกเงื่อนไข เซตว่าง เซตจำกัด เซตอนันต์ สับเซต เพาเวอร์เซต ยูเนียน อินเตอร์เซกชัน คอมพลีเมนต์ แผนภาพเวนน์ และจำนวนสมาชิก
+difficulty: 4.5
+minutes: 40
+prerequisites: [math.number.integers]
+encompasses:
+  - { id: math.number.integers, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: venn-two.svg
+    alt: "แผนภาพเวนน์ สี่เหลี่ยม U มีวงกลม A และ B ซ้อนกัน ในส่วนของ A อย่างเดียวมี 1 และ 3 ส่วนที่ซ้อนกันมี 2, 4 และ 6 ส่วนของ B อย่างเดียวมี 8 นอกวงกลมทั้งสองแต่อยู่ใน U มี 5, 7, 9 และ 10 ใต้ภาพเขียนว่า U = {1, 2, ..., 10} A = {1, 2, 3, 4, 6} B = {2, 4, 6, 8}"
+    caption: "ส่วนที่ซ้อนกันคือ A ∩ B ทุกส่วนในวงกลมรวมกันคือ A ∪ B"
+  - { type: check, problem: math.logic.sets.p007, prompt: "อินเตอร์เซกชันคือสมาชิกที่อยู่ในทั้งสองเซต" }
+  - type: worked-example
+    title: หาจำนวนสมาชิกด้วยแผนภาพเวนน์
+    problem: "ห้องเรียนมีนักเรียน 40 คน ชอบส้มตำ 25 คน ชอบต้มยำ 22 คน ชอบทั้งสองอย่าง 12 คน มีนักเรียนที่ไม่ชอบทั้งสองอย่างกี่คน"
+    steps:
+      - text: "เริ่มจากส่วนที่ซ้อน: ชอบทั้งสองอย่าง 12 คน"
+        why: "เติมจากส่วนในสุดก่อน จะไม่นับซ้ำ"
+      - text: "ชอบส้มตำอย่างเดียว $25 - 12 = 13$ คน ชอบต้มยำอย่างเดียว $22 - 12 = 10$ คน"
+      - text: "ชอบอย่างน้อยหนึ่งอย่าง $n(A \\cup B) = 25 + 22 - 12 = 35$ คน (ตรวจ: $13 + 12 + 10 = 35$)"
+      - text: "ไม่ชอบทั้งสองอย่าง $= 40 - 35 = 5$ คน"
+        why: "นี่คือ $n((A \\cup B)')$ ส่วนที่อยู่ใน U แต่นอกวงกลมทั้งสอง"
+    answer: "5 คน"
+  - type: worked-example
+    title: นับสับเซตและเพาเวอร์เซต
+    problem: "ให้ $A = \\{1, 2, 3\\}$ เขียน $P(A)$ และหา $n(P(A))$"
+    steps:
+      - text: "สับเซตที่มีสมาชิก 0 ตัว: $\\varnothing$"
+        why: "เซตว่างเป็นสับเซตของทุกเซต"
+      - text: "สมาชิก 1 ตัว: $\\{1\\}, \\{2\\}, \\{3\\}$ สมาชิก 2 ตัว: $\\{1, 2\\}, \\{1, 3\\}, \\{2, 3\\}$"
+      - text: "สมาชิก 3 ตัว: $\\{1, 2, 3\\}$"
+        why: "เซตทุกเซตเป็นสับเซตของตัวเอง"
+      - text: "รวม $1 + 3 + 3 + 1 = 8 = 2^3$ สับเซต"
+    answer: "$n(P(A)) = 8$"
+  - type: figure
+    src: venn-problem.svg
+    alt: "แผนภาพเวนน์ U มีวงกลมสุนัข (A) และแมว (B) ซ้อนกัน ส่วนสุนัขอย่างเดียวเขียน 12 ส่วนที่ซ้อนกันเขียน 7 ส่วนแมวอย่างเดียวเขียน 9 และนอกวงกลมทั้งสองเขียน 4"
+    caption: "ตัวเลขในแต่ละส่วนคือจำนวนสมาชิกของส่วนนั้น ไม่ใช่ตัวสมาชิก"
+  - { type: check, problem: math.logic.sets.p019, prompt: "A ∪ B คือทุกส่วนที่อยู่ในวงกลมใดวงกลมหนึ่ง" }
+glossary:
+  - { term: เซต, definition: "กลุ่มของสิ่งต่าง ๆ ที่บอกได้แน่นอนว่าสิ่งใดอยู่หรือไม่อยู่ในกลุ่ม" }
+  - { term: สมาชิก, definition: "สิ่งที่อยู่ในเซต ใช้สัญลักษณ์ ∈" }
+  - { term: เซตว่าง, definition: "เซตที่ไม่มีสมาชิก เขียน ∅ หรือ { }" }
+  - { term: เอกภพสัมพัทธ์, definition: "เซตของสิ่งทั้งหมดที่กำลังพิจารณา เขียน U" }
+  - { term: สับเซต, definition: "A ⊂ B เมื่อสมาชิกทุกตัวของ A เป็นสมาชิกของ B" }
+  - { term: เพาเวอร์เซต, definition: "เซตของสับเซตทั้งหมดของ A เขียน P(A) มีสมาชิก 2 ยกกำลัง n(A) ตัว" }
+  - { term: ยูเนียน, definition: "A ∪ B คือสมาชิกที่อยู่ใน A หรือ B" }
+  - { term: อินเตอร์เซกชัน, definition: "A ∩ B คือสมาชิกที่อยู่ทั้งใน A และ B" }
+  - { term: คอมพลีเมนต์, definition: "A′ คือสมาชิกของ U ที่ไม่อยู่ใน A" }
+flashcards:
+  - { front: "n(A ∪ B) = ?", back: "n(A) + n(B) − n(A ∩ B)" }
+  - { front: "เซตที่มีสมาชิก 4 ตัวมีสับเซตกี่สับเซต", back: "2⁴ = 16" }
+  - { front: "{∅} เป็นเซตว่างไหม", back: "ไม่ใช่ มีสมาชิก 1 ตัว คือ ∅" }
+  - { front: "A − B คืออะไร", back: "สมาชิกที่อยู่ใน A แต่ไม่อยู่ใน B" }
+  - { front: "เซตของจำนวนเต็มเป็นเซตจำกัดหรืออนันต์", back: "เซตอนันต์" }
+references:
+  - { title: "เซต (คณิตศาสตร์)", url: "https://th.wikipedia.org/wiki/เซต_(คณิตศาสตร์)", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "แผนภาพเวนน์", url: "https://th.wikipedia.org/wiki/แผนภาพเวนน์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Set (mathematics)", url: "https://en.wikipedia.org/wiki/Set_(mathematics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Power set", url: "https://en.wikipedia.org/wiki/Power_set", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

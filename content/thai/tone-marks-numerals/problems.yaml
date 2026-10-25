@@ -1,0 +1,378 @@
+problems:
+- id: thai.writing.tone-marks-numerals.p001
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 1
+  type: match
+  stem: จับคู่รูปวรรณยุกต์กับชื่อ
+  pairs:
+  - left: ◌่
+    right: ไม้เอก
+  - left: ◌้
+    right: ไม้โท
+  - left: ◌๊
+    right: ไม้ตรี
+  - left: ◌๋
+    right: ไม้จัตวา
+  hints:
+  - ไม้เอกเป็นขีดเดียว ไม้โทมีหางม้วน
+  - ไม้ตรีคล้ายเลข ๗ เล็ก ๆ ไม้จัตวาคล้ายเครื่องหมายบวก
+  solution: ◌่ ไม้เอก · ◌้ ไม้โท · ◌๊ ไม้ตรี · ◌๋ ไม้จัตวา
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p002
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 1
+  type: numeric
+  stem: รูปวรรณยุกต์ในภาษาไทยมีกี่รูป
+  answer:
+    value: 4
+    tolerance: 0
+    unit: รูป
+  misconceptions:
+  - match: 5
+    feedback: 5 คือจำนวนเสียงวรรณยุกต์ (สามัญ เอก โท ตรี จัตวา) เสียงสามัญไม่มีรูป
+  hints:
+  - นับเครื่องหมายที่เขียนบนพยัญชนะ
+  - ไม้เอก ไม้โท ไม้ตรี ไม้จัตวา
+  solution: รูปวรรณยุกต์มี **4 รูป** ส่วนเสียงวรรณยุกต์มี 5 เสียง เพราะเสียงสามัญไม่มีรูป
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p003
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 1
+  type: numeric
+  stem: เลขไทย **๗** คือเลขอารบิกอะไร
+  answer:
+    value: 7
+    tolerance: 0
+  misconceptions:
+  - match: 3
+    feedback: ๓ (สาม) ไม่มีหาง ส่วน ๗ (เจ็ด) มีหางตวัดขึ้นสูง
+  - match: 9
+    feedback: ๙ (เก้า) มีหางตวัดขึ้นเหมือนกัน แต่ตัวล่างเป็นวงกลมคล้าย ๘
+  hints:
+  - ดูตารางเลขไทย ๐–๙
+  - ตัวนี้คล้าย ๓ แต่มีหางตวัดขึ้นสูง
+  solution: ๗ อ่านว่า เจ็ด = **7**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p004
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 1
+  type: mcq
+  stem: คำใดมี **ไม้จัตวา**
+  choices:
+  - id: a
+    text: ก๋วยเตี๋ยว
+    correct: true
+    feedback: ถูก ก๋ และ เตี๋ มีไม้จัตวา
+  - id: b
+    text: โต๊ะ
+    feedback: โต๊ะ มีไม้ตรี
+  - id: c
+    text: บ้าน
+    feedback: บ้าน มีไม้โท
+  - id: d
+    text: ไก่
+    feedback: ไก่ มีไม้เอก
+  hints:
+  - ไม้จัตวาหน้าตาคล้ายเครื่องหมายบวก
+  - หาคำที่มี ◌๋
+  solution: '**ก๋วยเตี๋ยว** มีไม้จัตวาสองที่ โต๊ะ มีไม้ตรี บ้าน มีไม้โท ไก่ มีไม้เอก'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p005
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 2
+  type: numeric
+  stem: ปฏิทินเขียนว่า วันจันทร์ที่ **๑๓** เมษายน วันนี้คือวันที่เท่าใด (ตอบเป็นเลขอารบิก)
+  answer:
+    value: 13
+    tolerance: 0
+  misconceptions:
+  - match: 31
+    feedback: อ่านกลับหลัง ๑ อยู่หลักสิบ ๓ อยู่หลักหน่วย
+  - match: 17
+    feedback: ๓ คือสาม ไม่ใช่ ๗ (เจ็ด) ที่มีหางตวัดขึ้น
+  hints:
+  - อ่านทีละตัวจากซ้ายไปขวา
+  - ๑ = 1 และ ๓ = 3
+  solution: ๑๓ = **13** คือวันที่ 13 เมษายน วันสงกรานต์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p006
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 2
+  type: mcq
+  stem: คำว่า **กล้า** วางไม้โทบนตัวใด
+  choices:
+  - id: a
+    text: บน ล
+    correct: true
+    feedback: ถูก กล เป็นคำควบกล้ำ วางวรรณยุกต์บนพยัญชนะตัวที่สอง
+  - id: b
+    text: บน ก
+    feedback: ก เป็นพยัญชนะตัวแรกของคำควบ วรรณยุกต์ต้องอยู่บนตัวที่สอง
+  - id: c
+    text: บน า
+    feedback: วรรณยุกต์ไม่วางบนสระข้างหลัง
+  hints:
+  - กล อ่านควบกันเป็นเสียงเดียว
+  - คำควบกล้ำและอักษรนำ วางวรรณยุกต์บนพยัญชนะตัวที่สอง
+  solution: กล้า วางไม้โท **บน ล** เหมือน ปล่อย หน้า อย่า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p007
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 2
+  type: text
+  stem: เขียนเลข **2026** เป็นเลขไทย
+  accepted:
+  - ๒๐๒๖
+  misconceptions:
+  - match: '2026'
+    feedback: นี่คือเลขอารบิก ให้เปลี่ยนทีละหลักเป็น ๒ ๐ ๒ ๖
+  - match: ๒๖
+    feedback: ลืมหลักร้อยและหลักพัน 2026 มีสี่หลัก
+  - match: ๒๒๖
+    feedback: ลืม ๐ ในหลักร้อย
+  hints:
+  - เปลี่ยนทีละหลัก 2 → ๒, 0 → ๐, 6 → ๖
+  - ต้องได้เลขไทย 4 ตัว
+  solution: 2026 = **๒๐๒๖** (๒ ๐ ๒ ๖)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p008
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 2
+  type: order
+  stem: เรียงเลขไทยจาก **น้อยไปมาก** (บนสุดน้อยที่สุด)
+  items:
+  - ๙
+  - ๑๒
+  - ๓๐
+  - ๑๐๕
+  - ๒๐๐
+  hints:
+  - 'เปลี่ยนเป็นเลขอารบิกก่อน: 9, 12, 30, 105, 200'
+  - เลขที่มีหลักมากกว่ามีค่ามากกว่า
+  solution: ๙ (9) < ๑๒ (12) < ๓๐ (30) < ๑๐๕ (105) < ๒๐๐ (200)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p009
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 3
+  type: mcq
+  stem: คำใดวางรูปวรรณยุกต์ **ผิดตำแหน่ง** ตามคำบรรยาย
+  choices:
+  - id: a
+    text: 'แม่: วางไม้เอกบน แ'
+    correct: true
+    feedback: ถูกที่ว่าผิด สระหน้าไม่รับวรรณยุกต์ ไม้เอกต้องอยู่บน ม
+  - id: b
+    text: 'ที่: วางไม้เอกเหนือสระ ◌ี'
+    feedback: ถูกต้องแล้ว เมื่อมีสระข้างบน วรรณยุกต์อยู่สูงกว่าสระ
+  - id: c
+    text: 'หน้า: วางไม้โทบน น'
+    feedback: ถูกต้องแล้ว ห นำ น วางวรรณยุกต์บนตัวที่สอง
+  - id: d
+    text: 'น้ำ: วางไม้โทบน น'
+    feedback: ถูกต้องแล้ว วรรณยุกต์อยู่บนพยัญชนะ ไม่ใช่บนสระอำ
+  hints:
+  - ทบทวนกฎ 4 ข้อของตำแหน่งวรรณยุกต์
+  - สระข้างหน้า (เ แ โ ใ ไ) รับวรรณยุกต์ได้ไหม
+  solution: ข้อที่ผิดคือ **วางไม้เอกบน แ** วรรณยุกต์ต้องอยู่บนพยัญชนะ ม เสมอ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p010
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 3
+  type: numeric
+  stem: ประโยค "แม่ซื้อน้ำปลาให้พี่" มีรูปวรรณยุกต์ทั้งหมดกี่รูป
+  answer:
+    value: 5
+    tolerance: 0
+    unit: รูป
+  misconceptions:
+  - match: 4
+    feedback: อาจลืมไม้โทใน น้ำ ที่อยู่ใกล้สระอำ ลองนับทีละคำอีกครั้ง
+  - match: 6
+    feedback: ปลา ไม่มีรูปวรรณยุกต์ ลองนับใหม่
+  hints:
+  - 'นับทีละคำ: แม่ ซื้อ น้ำ ปลา ให้ พี่'
+  - บางคำไม่มีรูปวรรณยุกต์
+  solution: แม่ (◌่) ซื้อ (◌้) น้ำ (◌้) ปลา (ไม่มี) ให้ (◌้) พี่ (◌่) รวม **5 รูป**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p011
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 3
+  type: numeric
+  stem: ดูป้ายราคา ซื้อส้มตำไทย 1 จาน ข้าวเหนียว 2 ห่อ และไก่ย่างครึ่งตัว 1 ชิ้น รวมกี่บาท (ตอบเป็นเลขอารบิก)
+  figure: &id001
+    src: price-board.svg
+    alt: 'ป้ายราคากระดานดำ หัวป้ายเขียนว่า ร้านส้มตำยายแดง ราคาเขียนด้วยเลขไทย: ส้มตำไทย ๔๕ บาท, ข้าวเหนียว ๑๐ บาท, ไก่ย่าง (ครึ่งตัว) ๙๐ บาท, น้ำเปล่า ๑๕ บาท'
+  answer:
+    value: 155
+    tolerance: 0
+    unit: บาท
+  misconceptions:
+  - match: 145
+    feedback: ข้าวเหนียวซื้อ 2 ห่อ ต้องคิด ๑๐ × 2 = 20 บาท
+  - match: 160
+    feedback: นี่คือราคาของทุกอย่างอย่างละหนึ่ง (รวมน้ำ) แต่โจทย์ไม่ได้ซื้อน้ำ
+  hints:
+  - แปลงราคาเป็นเลขอารบิก ๔๕ = 45, ๑๐ = 10, ๙๐ = 90
+  - 45 + 10 × 2 + 90
+  solution: 45 + (10 × 2) + 90 = **155 บาท**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p012
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 3
+  type: mcq
+  stem: พ่อเห็นป้ายหน้าบ้านเขียนว่า **บ้านเลขที่ ๑๐๕** ข้อใดอ่านถูก
+  choices:
+  - id: a
+    text: หนึ่งร้อยห้า
+    correct: true
+    feedback: ถูก ๑๐๕ = 105
+  - id: b
+    text: สิบห้า
+    feedback: ลืม ๐ ในหลักสิบ ๑๐๕ มีสามหลัก
+  - id: c
+    text: หนึ่งร้อยห้าสิบ
+    feedback: นั่นคือ ๑๕๐ ตัว ๐ อยู่หลักสิบ ไม่ใช่หลักหน่วย
+  - id: d
+    text: หนึ่งศูนย์ห้า
+    feedback: อ่านแบบเลขที่ทีละตัวก็ได้ในบางกรณี แต่จำนวนนี้คือหนึ่งร้อยห้า โจทย์ให้อ่านเป็นจำนวน
+  hints:
+  - ๑ = 1, ๐ = 0, ๕ = 5
+  - 1 อยู่หลักร้อย 0 อยู่หลักสิบ 5 อยู่หลักหน่วย
+  solution: ๑๐๕ = 105 อ่านว่า **หนึ่งร้อยห้า**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p013
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 4
+  type: mcq
+  stem: คำว่า **ค่ะ** เขียนด้วยไม้เอก ออกเสียงวรรณยุกต์อะไร
+  choices:
+  - id: a
+    text: เสียงโท
+    correct: true
+    feedback: ถูก ค เป็นอักษรต่ำ อักษรต่ำ + ไม้เอก = เสียงโท
+  - id: b
+    text: เสียงเอก
+    feedback: รูปไม้เอกไม่ได้อ่านเสียงเอกเสมอ ขึ้นกับหมู่ของพยัญชนะ
+  - id: c
+    text: เสียงตรี
+    feedback: คะ (ไม่มีรูป) เป็นเสียงตรี แต่ ค่ะ มีไม้เอก
+  hints:
+  - รูปกับเสียงไม่ตรงกันเสมอ
+  - ค เป็นอักษรต่ำ ลองเทียบกับ พ่อ แม่
+  solution: ค่ะ ออกเสียง **โท** เหมือน พ่อ เพราะ ค เป็นอักษรต่ำ (ดูบทการผันวรรณยุกต์)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p014
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 4
+  type: match
+  stem: จับคู่คำกับตำแหน่งที่วางรูปวรรณยุกต์
+  pairs:
+  - left: ป้า
+    right: บนพยัญชนะต้น
+  - left: ปั้น
+    right: เหนือสระข้างบน
+  - left: ปล่อย
+    right: บนพยัญชนะตัวที่สองของคำควบ
+  - left: ค่ำ
+    right: บนพยัญชนะก่อนสระอำ
+  hints:
+  - ดูว่าแต่ละคำมีสระข้างบน คำควบ หรือสระอำไหม
+  - ปั้น มีไม้หันอากาศ ปล่อย มี ปล ควบกัน
+  solution: ป้า (บน ป) · ปั้น (เหนือ ◌ั) · ปล่อย (บน ล) · ค่ำ (บน ค ก่อน ◌ำ)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p015
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 5
+  type: numeric
+  stem: หนังสือราชการลงวันที่ปี **พ.ศ. ๒๕๖๙** ตรงกับปี ค.ศ. ใด (พ.ศ. − 543 = ค.ศ.)
+  answer:
+    value: 2026
+    tolerance: 0
+  misconceptions:
+  - match: 3112
+    feedback: บวก 543 แทนที่จะลบ ค.ศ. น้อยกว่า พ.ศ.
+  - match: 2569
+    feedback: นี่คือ พ.ศ. ที่แปลงเป็นเลขอารบิกแล้ว ยังต้องลบ 543
+  hints:
+  - แปลง ๒๕๖๙ เป็นเลขอารบิกก่อน
+  - 2569 − 543
+  solution: ๒๕๖๙ = 2569 → 2569 − 543 = **ค.ศ. 2026**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p016
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 5
+  type: text
+  stem: ดูป้ายราคา ลูกค้าซื้อ ส้มตำไทย 1 จาน ข้าวเหนียว 2 ห่อ ไก่ย่าง 1 ชิ้น แล้วจ่ายธนบัตร ๒๐๐ บาท จะได้เงินทอนเท่าใด **เขียนคำตอบเป็นเลขไทย**
+  figure: *id001
+  accepted:
+  - ๔๕
+  misconceptions:
+  - match: '45'
+    feedback: คำนวณถูกแล้ว แต่โจทย์ให้เขียนเป็นเลขไทย
+  - match: ๕๕
+    feedback: อาจคิดข้าวเหนียวห่อเดียว ต้องคิด 2 ห่อ
+  - match: ๑๕๕
+    feedback: นี่คือราคารวม ยังต้องหักจาก 200
+  hints:
+  - ราคารวม 45 + 10 × 2 + 90
+  - 200 − ราคารวม แล้วเปลี่ยนเป็นเลขไทย
+  solution: ราคารวม 45 + 20 + 90 = 155 บาท เงินทอน 200 − 155 = 45 บาท เขียนเป็นเลขไทย **๔๕**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.writing.tone-marks-numerals.p017
+  topics:
+  - thai.writing.tone-marks-numerals
+  difficulty: 5
+  type: mcq
+  stem: ข้อใด **ถูกทุกส่วน**
+  choices:
+  - id: a
+    text: ใบเสร็จเขียน ๓๕๐ บาท อ่านว่า สามร้อยห้าสิบบาท และคำว่า เสื้อ วางไม้โทเหนือสระ ◌ื
+    correct: true
+    feedback: ถูก ๓๕๐ = 350 และวรรณยุกต์อยู่สูงกว่าสระข้างบน
+  - id: b
+    text: ใบเสร็จเขียน ๓๕๐ บาท อ่านว่า เจ็ดร้อยห้าสิบบาท และคำว่า เสื้อ วางไม้โทเหนือสระ ◌ื
+    feedback: ๓ คือสาม ไม่ใช่ ๗ (เจ็ด) ที่มีหางตวัดขึ้น
+  - id: c
+    text: ใบเสร็จเขียน ๓๕๐ บาท อ่านว่า สามร้อยห้าสิบบาท และคำว่า เสื้อ วางไม้โทบน เ
+    feedback: สระหน้าไม่รับวรรณยุกต์
+  - id: d
+    text: ใบเสร็จเขียน ๓๕๐ บาท อ่านว่า สามร้อยสี่สิบบาท และคำว่า เสื้อ วางไม้โทเหนือสระ ◌ื
+    feedback: ๕ คือห้า ต่างจาก ๔ (สี่) ที่ไม่มีหางตวัด
+  hints:
+  - 'ตรวจสองเรื่อง: อ่านเลขไทย และตำแหน่งวรรณยุกต์'
+  - ๓ = 3, ๕ = 5, ๐ = 0 · เสื้อ มีสระ ◌ื อยู่ข้างบน
+  solution: ๓๕๐ = 350 อ่านว่า **สามร้อยห้าสิบ** และ เสื้อ วางไม้โท **เหนือสระ ◌ื**
+  license: CC-BY-SA-4.0
+  ai_assisted: true

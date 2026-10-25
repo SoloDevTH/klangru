@@ -1,0 +1,270 @@
+problems:
+  - id: physics.light.interference-diffraction.p001
+    topics: [physics.light.interference-diffraction]
+    difficulty: 1
+    type: mcq
+    stem: "ผลของการทดลองสลิตคู่ของยังที่ได้แถบสว่างและแถบมืดสลับกันหลายแถบบนฉาก เป็นหลักฐานสนับสนุนข้อใด"
+    choices:
+      - { id: a, text: "แสงมีสมบัติเป็นคลื่น", correct: true }
+      - { id: b, text: "แสงเป็นอนุภาคที่เคลื่อนที่เป็นเส้นตรง", feedback: "ถ้าแสงเป็นอนุภาคที่วิ่งเป็นเส้นตรง จะเห็นแถบสว่างแค่สองแถบตรงหน้าสลิต ไม่มีแถบมืดสลับ" }
+      - { id: c, text: "แสงเดินทางเร็วกว่าเสียง", feedback: "เป็นข้อเท็จจริง แต่การทดลองนี้ไม่ได้วัดอัตราเร็ว" }
+    hints:
+      - "แถบมืดเกิดจากอะไรหักล้างกัน"
+      - "ปรากฏการณ์ใดที่เกิดกับคลื่นเท่านั้น"
+    solution: "แถบมืดเกิดเมื่อแสงจากสองสลิตหักล้างกัน การแทรกสอดเป็นสมบัติของคลื่น จึงเป็นหลักฐานว่าแสงเป็นคลื่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p002
+    topics: [physics.light.interference-diffraction]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อุปกรณ์กับลักษณะของแถบที่เห็นบนฉากเมื่อใช้แสงเลเซอร์"
+    pairs:
+      - { left: "สลิตคู่", right: "แถบสว่างกว้างเท่า ๆ กัน ห่างเท่ากันสลับกับแถบมืด" }
+      - { left: "สลิตเดี่ยว", right: "แถบสว่างกลางกว้างเป็นสองเท่าของแถบอื่นและสว่างที่สุด" }
+      - { left: "เกรตติง", right: "จุดสว่างคมชัด อยู่ห่างกันมาก ระหว่างจุดมืดเกือบหมด" }
+    hints:
+      - "ช่องจำนวนมากทำให้แถบสว่างคมหรือกว้าง"
+      - "แถบใดกว้างกว่าแถบอื่นเป็นพิเศษ"
+    solution: "สลิตคู่ให้แถบห่างเท่ากัน สลิตเดี่ยวให้แถบกลางกว้างสองเท่า เกรตติงให้แถบสว่างคม สว่าง และห่างกันมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p003
+    topics: [physics.light.interference-diffraction]
+    difficulty: 2
+    type: numeric
+    stem: "แสงความยาวคลื่น $600\\ \\mathrm{nm}$ ผ่านสลิตคู่ที่ห่างกัน $0.20\\ \\mathrm{mm}$ ฉากอยู่ห่าง $1.0\\ \\mathrm{m}$ แถบสว่างที่อยู่ติดกันห่างกันกี่มิลลิเมตร"
+    answer: { value: 3, tolerance: 0.03, unit: mm }
+    misconceptions:
+      - { match: 333, feedback: "กลับสูตร ระยะห่างของแถบคือ $\\lambda L/d$ ไม่ใช่ $d/(\\lambda L)$" }
+      - { match: 1.5, feedback: "นี่คือระยะจากแถบสว่างถึงแถบมืดที่อยู่ติดกัน ซึ่งเป็นครึ่งหนึ่งของระยะระหว่างแถบสว่าง" }
+    hints:
+      - "$\\Delta x = \\dfrac{\\lambda L}{d}$"
+      - "แปลง $\\lambda$ และ $d$ เป็นเมตรก่อน"
+    solution: "$\\Delta x = \\dfrac{(600 \\times 10^{-9})(1.0)}{0.20 \\times 10^{-3}} = 3.0 \\times 10^{-3}\\ \\mathrm{m} = 3.0\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p004
+    topics: [physics.light.interference-diffraction]
+    difficulty: 2
+    type: mcq
+    stem: "ในการทดลองสลิตคู่ ถ้าเลื่อนฉากออกไปให้ห่างจากสลิตเป็น 2 เท่า แถบสว่างบนฉากจะเป็นอย่างไร"
+    choices:
+      - { id: a, text: "ห่างกันมากขึ้นเป็น 2 เท่า", correct: true }
+      - { id: b, text: "ชิดกันมากขึ้นเหลือครึ่งหนึ่ง", feedback: "$\\Delta x = \\lambda L/d$ แปรผันตรงกับ $L$ ฉากไกลขึ้นแถบยิ่งห่าง" }
+      - { id: c, text: "ห่างเท่าเดิม เพราะความยาวคลื่นไม่เปลี่ยน", feedback: "มุมของแถบเท่าเดิมจริง แต่เมื่อฉากไกลขึ้น ระยะบนฉากที่มุมเดียวกันจะมากขึ้น" }
+    hints:
+      - "เขียนสูตรระยะห่างของแถบสว่าง"
+      - "$\\Delta x$ แปรผันกับ $L$ อย่างไร"
+    solution: "$\\Delta x = \\dfrac{\\lambda L}{d}$ แปรผันตรงกับ $L$ ฉากไกลขึ้น 2 เท่า แถบจึงห่างกันขึ้น 2 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p005
+    topics: [physics.light.interference-diffraction]
+    difficulty: 3
+    type: numeric
+    stem: "นักเรียนฉายเลเซอร์ผ่านสลิตคู่ที่ห่างกัน $0.25\\ \\mathrm{mm}$ ไปบนฉากที่อยู่ห่าง $1.5\\ \\mathrm{m}$ ได้แถบดังภาพ ระยะจากกึ่งกลางแถบสว่างแถบแรกถึงแถบสุดท้ายในช่วงที่วัดยาว $15.0\\ \\mathrm{mm}$ แสงเลเซอร์มีความยาวคลื่นกี่นาโนเมตร"
+    figure: { src: p-fringes.svg, alt: "แถบสว่างสลับแถบมืดในแนวนอนบนฉาก มีวงเล็บวัดระยะจากกึ่งกลางแถบสว่างแถบหนึ่งไปถึงกึ่งกลางแถบสว่างอีกแถบหนึ่ง ยาว 15.0 mm ภายในวงเล็บนับแถบสว่างได้ 6 แถบ รวมแถบที่ปลายทั้งสองข้าง" }
+    answer: { value: 500, tolerance: 5, unit: nm }
+    misconceptions:
+      - { match: 417, feedback: "หาร 15.0 mm ด้วย 6 (จำนวนแถบ) แต่แถบสว่าง 6 แถบมีช่องว่างระหว่างกันเพียง 5 ช่อง" }
+      - { match: 2500, feedback: "ใช้ 15.0 mm เป็นระยะห่างของแถบที่อยู่ติดกัน ต้องหารด้วยจำนวนช่องก่อน" }
+    hints:
+      - "นับแถบสว่างในวงเล็บ แล้วนับช่องว่างระหว่างแถบ"
+      - "$\\Delta x = \\dfrac{15.0}{5}\\ \\mathrm{mm}$ แล้วใช้ $\\lambda = \\dfrac{d\\,\\Delta x}{L}$"
+    solution: "แถบสว่าง 6 แถบมีช่องว่าง 5 ช่อง $\\Delta x = 3.0\\ \\mathrm{mm}$ $\\lambda = \\dfrac{(0.25 \\times 10^{-3})(3.0 \\times 10^{-3})}{1.5} = 5.0 \\times 10^{-7}\\ \\mathrm{m} = 500\\ \\mathrm{nm}$ (แสงสีเขียว)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p006
+    topics: [physics.light.interference-diffraction]
+    difficulty: 3
+    type: numeric
+    stem: "เลเซอร์พอยน์เตอร์สีแดงความยาวคลื่น $650\\ \\mathrm{nm}$ ส่องผ่านเกรตติง $500$ ช่องต่อมิลลิเมตร แถบสว่างลำดับที่ 1 เบนจากแนวกลางกี่องศา (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 19.0, tolerance: 0.2, unit: องศา }
+    misconceptions:
+      - { match: 18.0, feedback: "ใช้ $\\tan\\theta = \\lambda/d$ สูตรของเกรตติงคือ $d\\sin\\theta = n\\lambda$" }
+    hints:
+      - "$d = \\dfrac{1}{500}\\ \\mathrm{mm} = 2.0 \\times 10^{-6}\\ \\mathrm{m}$"
+      - "$\\sin\\theta = \\dfrac{\\lambda}{d}$ สำหรับ $n = 1$"
+    solution: "$d = 2.0 \\times 10^{-6}\\ \\mathrm{m}$ $\\sin\\theta = \\dfrac{650 \\times 10^{-9}}{2.0 \\times 10^{-6}} = 0.325$ $\\theta \\approx 19.0^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p007
+    topics: [physics.light.interference-diffraction]
+    difficulty: 3
+    type: numeric
+    stem: "ส่องเลเซอร์สีเขียวความยาวคลื่น $532\\ \\mathrm{nm}$ ผ่านเกรตติง $600$ ช่องต่อมิลลิเมตร จะเห็นแถบสว่างลำดับสูงสุดเป็นลำดับที่เท่าใด (นับข้างเดียว)"
+    answer: { value: 3, tolerance: 0 }
+    misconceptions:
+      - { match: 3.13, feedback: "ลำดับต้องเป็นจำนวนเต็ม และต้องไม่เกิน $d/\\lambda$ จึงปัดลง" }
+      - { match: 4, feedback: "ลำดับที่ 4 ต้องมี $\\sin\\theta = 4\\lambda/d > 1$ ซึ่งเป็นไปไม่ได้" }
+    hints:
+      - "$\\sin\\theta$ มีค่าไม่เกิน 1 ดังนั้น $n \\le d/\\lambda$"
+      - "$d = 1/600\\ \\mathrm{mm}$"
+    solution: "$d = \\dfrac{10^{-3}}{600} = 1.667 \\times 10^{-6}\\ \\mathrm{m}$ $\\dfrac{d}{\\lambda} = \\dfrac{1.667 \\times 10^{-6}}{532 \\times 10^{-9}} = 3.13$ ลำดับสูงสุดจึงเป็น $n = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p008
+    topics: [physics.light.interference-diffraction]
+    difficulty: 3
+    type: numeric
+    stem: "แสงความยาวคลื่น $650\\ \\mathrm{nm}$ ผ่านสลิตเดี่ยวกว้าง $0.10\\ \\mathrm{mm}$ ไปบนฉากที่อยู่ห่าง $2.0\\ \\mathrm{m}$ แถบสว่างกลางกว้างกี่มิลลิเมตร"
+    answer: { value: 26, tolerance: 0.3, unit: mm }
+    misconceptions:
+      - { match: 13, feedback: "13 mm คือระยะจากกลางถึงแถบมืดแรกด้านเดียว แถบสว่างกลางกว้างจากแถบมืดแรกด้านหนึ่งถึงอีกด้านหนึ่ง" }
+    hints:
+      - "แถบมืดแรกอยู่ที่ $a\\sin\\theta = \\lambda$ หรือ $x \\approx \\lambda L/a$"
+      - "แถบสว่างกลางอยู่ระหว่างแถบมืดแรกทั้งสองข้าง"
+    solution: "แถบมืดแรกอยู่ห่างจากกลาง $\\dfrac{\\lambda L}{a} = \\dfrac{(650 \\times 10^{-9})(2.0)}{0.10 \\times 10^{-3}} = 13\\ \\mathrm{mm}$ แถบสว่างกลางกว้าง $2 \\times 13 = 26\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p009
+    topics: [physics.light.interference-diffraction]
+    difficulty: 4
+    type: numeric
+    stem: "แสง $500\\ \\mathrm{nm}$ ผ่านสลิตคู่ที่ห่างกัน $0.30\\ \\mathrm{mm}$ ฉากอยู่ห่าง $1.2\\ \\mathrm{m}$ แถบมืดแถบที่ 2 (นับจากแถบสว่างกลาง) อยู่ห่างจากกึ่งกลางแถบสว่างกลางกี่มิลลิเมตร"
+    answer: { value: 3, tolerance: 0.03, unit: mm }
+    misconceptions:
+      - { match: 4, feedback: "ใช้สูตรแถบสว่าง $n\\lambda$ แถบมืดใช้ $(n - \\tfrac12)\\lambda$" }
+      - { match: 5, feedback: "ใช้ $(n + \\tfrac12)\\lambda$ ซึ่งให้แถบมืดแถบที่ 3 แถบมืดแถบแรกอยู่ที่ $\\tfrac12\\Delta x$" }
+    hints:
+      - "หา $\\Delta x = \\lambda L/d$ ก่อน"
+      - "แถบมืดแถบที่ $n$ อยู่ที่ $(n - \\tfrac12)\\Delta x$"
+    solution: "$\\Delta x = \\dfrac{(500 \\times 10^{-9})(1.2)}{0.30 \\times 10^{-3}} = 2.0\\ \\mathrm{mm}$ แถบมืดที่ 2 อยู่ที่ $(2 - \\tfrac12)(2.0) = 3.0\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p010
+    topics: [physics.light.interference-diffraction]
+    difficulty: 4
+    type: numeric
+    stem: "นักเรียนชมรมวิทยาศาสตร์ส่องเลเซอร์ $650\\ \\mathrm{nm}$ ตั้งฉากกับแผ่นซีดี แสงสะท้อนลำดับที่ 1 ทำมุม $24^\\circ$ กับแนวลำแสงที่สะท้อนกลับตรง ๆ ร่องบนแผ่นซีดีห่างกันกี่ไมโครเมตร (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.6, tolerance: 0.02, unit: "μm" }
+    misconceptions:
+      - { match: 1.46, feedback: "ใช้ $\\tan 24^\\circ$ สูตรของเกรตติงใช้ $\\sin\\theta$" }
+      - { match: 0.71, feedback: "ใช้ $\\cos 24^\\circ$ มุมวัดจากแนวกลาง จึงใช้ $\\sin\\theta$" }
+    hints:
+      - "ร่องบนซีดีทำหน้าที่เหมือนเกรตติง ใช้ $d\\sin\\theta = n\\lambda$"
+      - "$d = \\dfrac{\\lambda}{\\sin 24^\\circ}$"
+    solution: "$d = \\dfrac{650 \\times 10^{-9}}{\\sin 24^\\circ} = \\dfrac{650 \\times 10^{-9}}{0.407} = 1.60 \\times 10^{-6}\\ \\mathrm{m} = 1.60\\ \\mu\\mathrm{m}$ ตรงกับระยะร่องจริงของแผ่นซีดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p011
+    topics: [physics.light.interference-diffraction]
+    difficulty: 4
+    type: mcq
+    stem: "ถ้านำชุดการทดลองสลิตคู่ทั้งชุดไปจุ่มในน้ำ (ดรรชนีหักเห 1.33) โดยใช้แหล่งแสงเดิม แถบสว่างบนฉากจะเป็นอย่างไร"
+    choices:
+      - { id: a, text: "ชิดกันมากขึ้น เพราะความยาวคลื่นในน้ำสั้นลง", correct: true }
+      - { id: b, text: "ห่างกันมากขึ้น เพราะแสงหักเหในน้ำ", feedback: "ความยาวคลื่นในน้ำสั้นลงเป็น $\\lambda/n$ และ $\\Delta x \\propto \\lambda$ แถบจึงชิดกันขึ้น" }
+      - { id: c, text: "เหมือนเดิม เพราะความถี่ของแสงไม่เปลี่ยน", feedback: "ความถี่ไม่เปลี่ยนจริง แต่อัตราเร็วลดลง ความยาวคลื่นจึงสั้นลง ระยะห่างของแถบขึ้นกับความยาวคลื่น" }
+    hints:
+      - "เมื่อแสงเข้าตัวกลางที่มีดรรชนีหักเหมากขึ้น อะไรเปลี่ยน"
+      - "$\\lambda_{\\text{น้ำ}} = \\lambda / 1.33$"
+    solution: "ในน้ำ $\\lambda$ ลดลงเหลือ $\\lambda/1.33$ เพราะ $\\Delta x = \\lambda L/d$ แถบจึงชิดกันขึ้นเหลือ $1/1.33$ ของเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p012
+    topics: [physics.light.interference-diffraction]
+    difficulty: 4
+    type: numeric
+    stem: "แสงขาวที่มีความยาวคลื่น $400$ ถึง $700\\ \\mathrm{nm}$ ผ่านเกรตติง $300$ ช่องต่อมิลลิเมตร สเปกตรัมลำดับที่ 1 กางออกเป็นมุมกี่องศา (มุมระหว่างแสงม่วงกับแสงแดง ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 5.2, tolerance: 0.1, unit: องศา }
+    misconceptions:
+      - { match: 12.1, feedback: "12.1° คือมุมของแสงแดงอย่างเดียว ต้องลบมุมของแสงม่วงออก" }
+    hints:
+      - "$d = 1/300\\ \\mathrm{mm}$ หามุมของ 400 nm และ 700 nm แยกกัน"
+      - "ความกว้างของสเปกตรัม $= \\theta_{\\text{แดง}} - \\theta_{\\text{ม่วง}}$"
+    solution: "$d = 3.33 \\times 10^{-6}\\ \\mathrm{m}$ $\\sin\\theta_{แดง} = 0.21$ ได้ $12.1^\\circ$ $\\sin\\theta_{ม่วง} = 0.12$ ได้ $6.9^\\circ$ สเปกตรัมกาง $12.1^\\circ - 6.9^\\circ \\approx 5.2^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p013
+    topics: [physics.light.interference-diffraction]
+    difficulty: 5
+    type: numeric
+    stem: "แสงสองสีผ่านเกรตติงเดียวกัน แถบสว่างลำดับที่ 2 ของแสง $600\\ \\mathrm{nm}$ ซ้อนทับกับแถบสว่างลำดับที่ 3 ของแสงอีกสีหนึ่งพอดี แสงอีกสีมีความยาวคลื่นกี่นาโนเมตร"
+    answer: { value: 400, tolerance: 2, unit: nm }
+    misconceptions:
+      - { match: 900, feedback: "กลับอัตราส่วน ลำดับสูงกว่าที่มุมเดียวกันต้องเป็นความยาวคลื่นสั้นกว่า" }
+    hints:
+      - "ซ้อนทับกันแปลว่ามุมเท่ากัน $d\\sin\\theta$ เท่ากัน"
+      - "$2 \\times 600 = 3\\lambda$"
+    solution: "มุมเท่ากัน $n_1\\lambda_1 = n_2\\lambda_2$ ดังนั้น $2(600) = 3\\lambda$ ได้ $\\lambda = 400\\ \\mathrm{nm}$ (แสงม่วง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p014
+    topics: [physics.light.interference-diffraction]
+    difficulty: 5
+    type: numeric
+    stem: "สลิตคู่ที่ช่องทั้งสองห่างกัน $d = 0.30\\ \\mathrm{mm}$ แต่ละช่องกว้าง $a = 0.10\\ \\mathrm{mm}$ ภายในแถบสว่างกลางของการเลี้ยวเบน (ระหว่างแถบมืดแรกของสลิตเดี่ยวทั้งสองข้าง) จะเห็นแถบสว่างของสลิตคู่กี่แถบ"
+    answer: { value: 5, tolerance: 0 }
+    misconceptions:
+      - { match: 7, feedback: "แถบลำดับที่ ±3 ของสลิตคู่ตกตรงแถบมืดแรกของสลิตเดี่ยวพอดี จึงหายไป ไม่นับ" }
+      - { match: 3, feedback: "นับเฉพาะ $n = 0$ และ $\\pm1$ แต่ $n = \\pm2$ ยังอยู่ภายในแถบสว่างกลางของการเลี้ยวเบน" }
+    hints:
+      - "แถบมืดแรกของสลิตเดี่ยวอยู่ที่ $\\sin\\theta = \\lambda/a$ แถบสว่างลำดับ $n$ ของสลิตคู่อยู่ที่ $\\sin\\theta = n\\lambda/d$"
+      - "หา $n$ ที่ $n\\lambda/d = \\lambda/a$ คือ $n = d/a$"
+    solution: "$d/a = 3$ แถบสว่างลำดับ $\\pm3$ ตรงกับแถบมืดแรกของสลิตเดี่ยวจึงหายไป ภายในเหลือ $n = 0, \\pm1, \\pm2$ รวม $5$ แถบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p015
+    topics: [physics.light.interference-diffraction]
+    difficulty: 2
+    type: text
+    stem: "แสงที่ผ่านช่องแคบมากแผ่ออกไปด้านข้างจนเข้าไปในบริเวณที่ควรเป็นเงา ปรากฏการณ์นี้เรียกว่าอะไร"
+    accepted: ["การเลี้ยวเบน", "เลี้ยวเบน", "การเลี้ยวเบนของแสง", "diffraction"]
+    misconceptions:
+      - { match: "การหักเห", feedback: "การหักเหเกิดเมื่อแสงผ่านรอยต่อระหว่างตัวกลางสองชนิด ที่นี่แสงอยู่ในตัวกลางเดิมแต่อ้อมขอบช่อง" }
+      - { match: "การแทรกสอด", feedback: "การแทรกสอดคือการรวมกันของคลื่นจากสองแหล่ง การที่คลื่นแผ่อ้อมขอบช่องมีชื่อเฉพาะ" }
+    hints:
+      - "คลื่นน้ำก็แผ่อ้อมขอบช่องเปิดได้"
+      - "เห็นชัดเมื่อช่องแคบใกล้เคียงความยาวคลื่น"
+    solution: "การเลี้ยวเบน คือการที่คลื่นแผ่อ้อมขอบสิ่งกีดขวางหรือช่องแคบ เห็นชัดเมื่อช่องมีขนาดใกล้เคียงความยาวคลื่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p016
+    topics: [physics.light.interference-diffraction]
+    difficulty: 5
+    type: numeric
+    stem: "แสง $450\\ \\mathrm{nm}$ ผ่านเกรตติง $1000$ ช่องต่อมิลลิเมตร ฉากอยู่ห่าง $0.50\\ \\mathrm{m}$ แถบสว่างลำดับที่ 2 อยู่ห่างจากแถบสว่างกลางบนฉากกี่เมตร (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.03, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 0.45, feedback: "ใช้ $x = n\\lambda L/d$ ซึ่งใช้ได้เฉพาะมุมเล็ก ที่นี่ $\\sin\\theta = 0.9$ มุมใหญ่มาก ต้องใช้ $x = L\\tan\\theta$" }
+    hints:
+      - "หา $\\sin\\theta = n\\lambda/d$ แล้วหามุม"
+      - "ตำแหน่งบนฉาก $x = L\\tan\\theta$"
+    solution: "$d = 1.0 \\times 10^{-6}\\ \\mathrm{m}$ $\\sin\\theta = \\dfrac{2(450 \\times 10^{-9})}{1.0 \\times 10^{-6}} = 0.90$ $\\theta = 64.2^\\circ$ $x = 0.50\\tan 64.2^\\circ \\approx 1.03\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.light.interference-diffraction.p017
+    topics: [physics.light.interference-diffraction]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาความยาวคลื่นของแสงเลเซอร์ด้วยเกรตติง"
+    items:
+      - "อ่านจำนวนช่องต่อมิลลิเมตรของเกรตติงแล้วคำนวณ $d$"
+      - "ฉายเลเซอร์ผ่านเกรตติงให้ตั้งฉากกับฉาก"
+      - "วัดระยะ $L$ จากเกรตติงถึงฉาก และระยะ $x$ จากแถบกลางถึงแถบลำดับที่ 1"
+      - "คำนวณมุมจาก $\\tan\\theta = x/L$"
+      - "คำนวณ $\\lambda = d\\sin\\theta$"
+    hints:
+      - "ต้องรู้ $d$ ก่อนจึงจะคำนวณ $\\lambda$ ได้ แต่ต้องวัดระยะก่อนจึงจะหามุมได้"
+      - "มุมหาได้จากระยะที่วัด แล้วจึงใช้สูตรของเกรตติง"
+    solution: "หา $d$ → จัดชุดทดลอง → วัด $L$ และ $x$ → $\\tan\\theta = x/L$ → $\\lambda = d\\sin\\theta$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

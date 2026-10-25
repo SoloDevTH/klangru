@@ -1,0 +1,81 @@
+id: physics.nuclear.radioactivity
+subject: physics
+title: { th: กัมมันตภาพรังสีและครึ่งชีวิต, en: Radioactivity and half-life }
+summary: รังสีแอลฟา บีตา และแกมมา สมการการสลาย กัมมันตภาพ ครึ่งชีวิตและการหาอายุด้วยคาร์บอน-14 ประโยชน์ของรังสี อันตราย และการป้องกัน
+difficulty: 6
+minutes: 40
+prerequisites: [chemistry.matter.atoms, math.functions.exponential]
+encompasses:
+  - { id: chemistry.matter.atoms, weight: 0.3 }
+  - { id: math.functions.exponential, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: อำนาจทะลุผ่านของรังสี
+    src: penetration.svg
+    alt: "แหล่งรังสีทางซ้ายปล่อยรังสีสามลำไปทางขวา ผ่านแผ่นกั้นสามแผ่นเรียงจากซ้ายไปขวา คือ กระดาษ แผ่นอะลูมิเนียม และตะกั่วหนา รังสีแอลฟาหยุดที่กระดาษ รังสีบีตาผ่านกระดาษแต่หยุดที่อะลูมิเนียม รังสีแกมมาผ่านทุกแผ่น หลังตะกั่วเส้นบางลงแสดงว่าอ่อนลงแต่ไม่หมด"
+  - type: figure
+    title: ครึ่งชีวิต
+    src: decay-curve.svg
+    alt: "กราฟจำนวนนิวเคลียสที่เหลือเป็นร้อยละของจำนวนเริ่มต้นกับเวลาในหน่วยครึ่งชีวิต 0 ถึง 5 เส้นโค้งลดลงแบบเลขชี้กำลัง จุดที่ทำเครื่องหมาย 50% ที่ 1 ครึ่งชีวิต 25% ที่ 2 ครึ่งชีวิต และ 12.5% ที่ 3 ครึ่งชีวิต ลดลงครึ่งหนึ่งทุกช่วงเท่ากัน"
+  - type: interactive
+    title: ปรับครึ่งชีวิตแล้วดูการสลาย
+    caption: "กราฟคือร้อยละของนิวเคลียสที่เหลือ $N = 100\\left(\\tfrac12\\right)^{x/T}$ เมื่อ $x$ เป็นเวลา (วัน) และ $T$ เป็นครึ่งชีวิต ลองตั้ง $T = 8$ (ไอโอดีน-131) แล้วอ่านค่าที่ 8, 16 และ 24 วัน จากนั้นลดครึ่งชีวิตลงแล้วดูว่ากราฟลดลงเร็วขึ้นเพียงใด"
+    widget:
+      kind: function-plot
+      functions: ["100\\cdot 0.5^{x/T}"]
+      sliders:
+        - { name: T, min: 1, max: 20, step: 1, value: 8, label: ครึ่งชีวิต (วัน) }
+      x: [0, 40]
+      y: [0, 110]
+  - { type: check, problem: physics.nuclear.radioactivity.p003, prompt: "ทุกครึ่งชีวิตเหลือครึ่งหนึ่งของที่มีอยู่ ไม่ใช่ของตอนเริ่มต้น" }
+  - type: worked-example
+    title: สมการการสลายและนิวเคลียสลูก
+    problem: "เรดอน-222 ($^{222}_{86}\\mathrm{Rn}$) สลายให้รังสีแอลฟา จากนั้นนิวเคลียสลูกสลายให้รังสีแอลฟาอีกครั้ง นิวเคลียสสุดท้ายมีเลขมวลและเลขอะตอมเท่าใด และเป็นธาตุอะไร"
+    steps:
+      - text: "แอลฟาคือ $^{4}_{2}\\mathrm{He}$ แต่ละครั้งเลขมวลลด 4 และเลขอะตอมลด 2"
+        why: "ผลรวมเลขมวลและผลรวมเลขอะตอมทั้งสองข้างของสมการต้องเท่ากัน"
+      - text: "ครั้งแรก: $^{222}_{86}\\mathrm{Rn} \\rightarrow\\ ^{218}_{84}\\mathrm{Po} +\\ ^{4}_{2}\\mathrm{He}$"
+      - text: "ครั้งที่สอง: $^{218}_{84}\\mathrm{Po} \\rightarrow\\ ^{214}_{82}\\mathrm{Pb} +\\ ^{4}_{2}\\mathrm{He}$"
+        why: "ชื่อธาตุดูจากเลขอะตอมในตารางธาตุ เลขอะตอม 84 คือพอโลเนียม 82 คือตะกั่ว"
+      - text: "ตรวจ: เลขมวล $222 = 214 + 4 + 4$ และเลขอะตอม $86 = 82 + 2 + 2$"
+    answer: "ได้ $^{214}_{82}\\mathrm{Pb}$ คือตะกั่ว-214 เลขมวล 214 เลขอะตอม 82"
+  - type: worked-example
+    title: กัมมันตภาพของไอโอดีน-131
+    problem: "ไอโอดีน-131 มีครึ่งชีวิต $8.03$ วัน แคปซูลหนึ่งมีกัมมันตภาพ $1.2\\ \\mathrm{GBq}$ ($1.2 \\times 10^{9}\\ \\mathrm{Bq}$) จงหา (ก) จำนวนนิวเคลียสไอโอดีน-131 ในแคปซูล (ข) กัมมันตภาพเมื่อผ่านไป 20 วัน"
+    steps:
+      - text: "แปลงครึ่งชีวิตเป็นวินาที: $T_{1/2} = 8.03 \\times 24 \\times 3600 = 6.94 \\times 10^{5}\\ \\mathrm{s}$"
+        why: "เบกเคอเรลคือจำนวนครั้งต่อวินาที $\\lambda$ จึงต้องเป็นต่อวินาที"
+      - text: "$\\lambda = \\dfrac{0.693}{6.94 \\times 10^{5}} = 9.99 \\times 10^{-7}\\ \\mathrm{s^{-1}}$"
+      - text: "$N = \\dfrac{A}{\\lambda} = \\dfrac{1.2 \\times 10^{9}}{9.99 \\times 10^{-7}} \\approx 1.2 \\times 10^{15}$ นิวเคลียส"
+      - text: "(ข) $A = 1.2 \\times \\left(\\tfrac12\\right)^{20/8.03} = 1.2 \\times 0.178 \\approx 0.21\\ \\mathrm{GBq}$"
+        why: "20 วันเป็น 2.49 ครึ่งชีวิต คำตอบจึงอยู่ระหว่าง $\\tfrac14$ กับ $\\tfrac18$ ของค่าเริ่มต้น"
+    answer: "(ก) ประมาณ $1.2 \\times 10^{15}$ นิวเคลียส (ข) ประมาณ $0.21\\ \\mathrm{GBq}$"
+  - { type: check, problem: physics.nuclear.radioactivity.p009, prompt: "การฉายรังสีกับการเปรอะเปื้อนต่างกันอย่างไร" }
+  - type: simulation
+    title: "สร้างนิวเคลียส (PhET Build a Nucleus)"
+    url: https://phet.colorado.edu/en/simulations/build-a-nucleus
+    provider: phet
+    note: "หน้า Decay เพิ่มโปรตอนและนิวตรอนสร้างนิวเคลียสที่ไม่เสถียร แล้วดูว่ามันสลายแบบใด สังเกตว่าเลขมวลและเลขอะตอมเปลี่ยนอย่างไรในการสลายแอลฟาและบีตา และดูกราฟครึ่งชีวิตที่บอกว่านิวเคลียสนั้นอยู่ได้นานเพียงใด"
+glossary:
+  - { term: กัมมันตภาพรังสี, definition: "ปรากฏการณ์ที่นิวเคลียสไม่เสถียรสลายเองและปล่อยรังสีออกมา" }
+  - { term: ครึ่งชีวิต, definition: "เวลาที่จำนวนนิวเคลียสกัมมันตรังสี (หรือกัมมันตภาพ) ลดลงเหลือครึ่งหนึ่งของเดิม" }
+  - { term: กัมมันตภาพ, definition: "จำนวนนิวเคลียสที่สลายต่อหน่วยเวลา หน่วยเบกเคอเรล (Bq) เท่ากับ 1 ครั้งต่อวินาที" }
+  - { term: การเปรอะเปื้อนสารกัมมันตรังสี, definition: "การที่สารกัมมันตรังสีติดอยู่ที่ผิว เสื้อผ้า สิ่งของ หรือเข้าสู่ร่างกาย ทำให้ได้รับรังสีต่อเนื่อง" }
+  - { term: ซีเวิร์ต, definition: "หน่วยของปริมาณรังสีที่บอกผลต่อร่างกาย (Sv) ค่าที่พบทั่วไปมักเป็นมิลลิซีเวิร์ตหรือไมโครซีเวิร์ต" }
+flashcards:
+  - { front: "เรียงอำนาจทะลุผ่านจากน้อยไปมาก", back: "แอลฟา < บีตา < แกมมา (กระดาษ / อะลูมิเนียม / ตะกั่วหนา)" }
+  - { front: "การสลายแอลฟาและบีตาลบเปลี่ยน A และ Z อย่างไร", back: "แอลฟา: $A - 4$, $Z - 2$ · บีตาลบ: $A$ เท่าเดิม, $Z + 1$" }
+  - { front: "สูตรจำนวนที่เหลือ", back: "$N = N_0\\left(\\tfrac12\\right)^{t/T_{1/2}}$" }
+  - { front: "กัมมันตภาพกับค่าคงตัวการสลาย", back: "$A = \\lambda N$ และ $\\lambda = 0.693/T_{1/2}$" }
+  - { front: "หลักป้องกันรังสีสามข้อ", back: "เวลาน้อย ระยะทางมาก และมีเครื่องกำบัง" }
+references:
+  - { title: "กัมมันตภาพรังสี", url: "https://th.wikipedia.org/wiki/กัมมันตภาพรังสี", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Half-life", url: "https://en.wikipedia.org/wiki/Half-life", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Samut Prakan radiation accident", url: "https://en.wikipedia.org/wiki/Samut_Prakan_radiation_accident", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "22.3 Half Life and Radiometric Dating (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/22-3-half-life-and-radiometric-dating", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
