@@ -1,0 +1,287 @@
+problems:
+  - id: physics.electricity.resistivity-drift.p001
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 1
+    type: mcq
+    stem: "วัสดุใดมีสภาพต้านทานน้อยที่สุด จึงนิยมใช้ทำสายไฟในบ้าน"
+    choices:
+      - { id: a, text: "ทองแดง", correct: true }
+      - { id: b, text: "นิโครม", feedback: "นิโครมเป็นโลหะผสมที่มีสภาพต้านทานสูงราว 65 เท่าของทองแดง ใช้ทำขดลวดความร้อน ไม่ใช่สายไฟ" }
+      - { id: c, text: "ยาง", feedback: "ยางเป็นฉนวน สภาพต้านทานสูงมาก จึงใช้หุ้มสายไฟ ไม่ใช่เป็นตัวนำ" }
+    hints:
+      - "สายไฟต้องให้กระแสผ่านง่ายและไม่ร้อนมาก"
+      - "เปรียบเทียบค่าสภาพต้านทานในตาราง"
+    solution: "ทองแดงมีสภาพต้านทานราว $1.7 \\times 10^{-8}\\ \\Omega \\cdot \\mathrm{m}$ ต่ำมาก ราคาไม่แพงเกินไป จึงใช้ทำสายไฟ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p002
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 2
+    type: text
+    stem: "อนุภาคที่เคลื่อนที่ได้อย่างอิสระทั่วชิ้นโลหะ และเป็นตัวพาประจุเมื่อมีกระแสในลวดโลหะ เรียกว่าอะไร"
+    accepted: ["อิเล็กตรอนอิสระ", "อิเล็กตรอน", "free electron", "free electrons", "electron"]
+    misconceptions:
+      - { match: "โปรตอน", feedback: "โปรตอนอยู่ในนิวเคลียสของไอออนโลหะซึ่งสั่นอยู่กับที่ ไม่ได้เคลื่อนที่ไปตามลวด" }
+      - { match: "ไอออนบวก", feedback: "ไอออนบวกในโลหะสั่นอยู่กับที่ ตัวที่เคลื่อนที่ได้คืออิเล็กตรอนวงนอก" }
+    hints:
+      - "อะตอมโลหะปล่อยอนุภาคประจุลบวงนอกออกมา"
+      - "อนุภาคนี้มีประจุ $-1.6 \\times 10^{-19}\\ \\mathrm{C}$"
+    solution: "อิเล็กตรอนอิสระ คืออิเล็กตรอนวงนอกที่อะตอมโลหะปล่อยออกมา เคลื่อนที่ได้ทั่วชิ้นโลหะ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p003
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 2
+    type: mcq
+    stem: "ลวดทองแดงสองเส้นขนาดเท่ากัน เส้นหนึ่งยาวเป็นสองเท่าของอีกเส้น ที่อุณหภูมิเดียวกัน ความต้านทานของเส้นยาวเป็นอย่างไร"
+    choices:
+      - { id: a, text: "เป็นสองเท่าของเส้นสั้น", correct: true }
+      - { id: b, text: "เท่ากัน เพราะเป็นทองแดงเหมือนกัน", feedback: "วัสดุเดียวกันมีสภาพต้านทานเท่ากัน แต่ความต้านทานขึ้นกับความยาวด้วย" }
+      - { id: c, text: "เป็นครึ่งหนึ่งของเส้นสั้น", feedback: "ลวดยาวขึ้น อิเล็กตรอนต้องผ่านไอออนมากขึ้น ความต้านทานจึงมากขึ้น ไม่ใช่น้อยลง" }
+    hints:
+      - "$R = \\rho L / A$"
+      - "$\\rho$ และ $A$ เท่าเดิม $L$ เพิ่ม 2 เท่า"
+    solution: "$R$ แปรผันตรงกับ $L$ เมื่อวัสดุและพื้นที่หน้าตัดเท่าเดิม ยาวขึ้น 2 เท่า ความต้านทานจึงเพิ่มเป็น 2 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p004
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 2
+    type: numeric
+    stem: "สายทองแดงยาว $100\\ \\mathrm{m}$ พื้นที่หน้าตัด $1.0\\ \\mathrm{mm^2}$ สภาพต้านทาน $1.7 \\times 10^{-8}\\ \\Omega \\cdot \\mathrm{m}$ มีความต้านทานเท่าใด (ตอบในหน่วย Ω)"
+    answer: { value: 1.7, tolerance: 0.02, unit: Ω }
+    misconceptions:
+      - { match: 0.0017, feedback: "แปลง $\\mathrm{mm^2}$ เป็น $\\mathrm{m^2}$ ด้วย $10^{-3}$ แต่ $1\\ \\mathrm{mm^2} = (10^{-3}\\ \\mathrm{m})^2 = 10^{-6}\\ \\mathrm{m^2}$" }
+    hints:
+      - "แปลงพื้นที่หน้าตัดเป็นตารางเมตรก่อน"
+      - "$R = \\rho L / A$"
+    solution: "$A = 1.0 \\times 10^{-6}\\ \\mathrm{m^2}$ ได้ $R = \\dfrac{(1.7 \\times 10^{-8})(100)}{1.0 \\times 10^{-6}} = 1.7\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p005
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 3
+    type: numeric
+    stem: "ลวดเส้นหนึ่งมีความต้านทาน $8.0\\ \\Omega$ ลวดอีกเส้นเป็นวัสดุเดียวกัน ยาวเท่ากัน แต่เส้นผ่านศูนย์กลางเป็นสองเท่า มีความต้านทานเท่าใด (ตอบในหน่วย Ω)"
+    answer: { value: 2, tolerance: 0.02, unit: Ω }
+    misconceptions:
+      - { match: 4, feedback: "เส้นผ่านศูนย์กลาง 2 เท่า พื้นที่หน้าตัดเพิ่มเป็น $2^2 = 4$ เท่า ไม่ใช่ 2 เท่า" }
+      - { match: 16, feedback: "ลวดหนาขึ้นมีความต้านทานน้อยลง ต้องหาร ไม่ใช่คูณ" }
+    hints:
+      - "พื้นที่หน้าตัดขึ้นกับเส้นผ่านศูนย์กลางยกกำลังสอง"
+      - "$R$ แปรผกผันกับ $A$"
+    solution: "$A \\propto d^2$ เพิ่มเป็น 4 เท่า $R$ จึงเหลือ $\\dfrac{8.0}{4} = 2.0\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p006
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 3
+    type: numeric
+    stem: "ลวดทองแดงพื้นที่หน้าตัด $1.5\\ \\mathrm{mm^2}$ มีกระแส $3.0\\ \\mathrm{A}$ ทองแดงมีอิเล็กตรอนอิสระ $8.5 \\times 10^{28}$ ตัวต่อลูกบาศก์เมตร ความเร็วลอยเลื่อนเป็นเท่าใด (ใช้ $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$ ตอบในหน่วย mm/s)"
+    answer: { value: 0.147, tolerance: 0.0015, unit: mm/s }
+    misconceptions:
+      - { match: 0.000147, feedback: "ค่านี้คือคำตอบในหน่วย m/s (หรือได้จากการลืมแปลง $\\mathrm{mm^2}$ ซึ่งให้ค่าใกล้ศูนย์) โจทย์ถามเป็น mm/s ต้องคูณ 1000 และใช้ $A = 1.5 \\times 10^{-6}\\ \\mathrm{m^2}$" }
+    hints:
+      - "$I = n e v_d A$ แก้หา $v_d$"
+      - "ใช้ $A$ เป็น $\\mathrm{m^2}$ ได้ $v_d$ เป็น m/s แล้วคูณ 1000 เป็น mm/s"
+    solution: "$v_d = \\dfrac{I}{neA} = \\dfrac{3.0}{(8.5 \\times 10^{28})(1.6 \\times 10^{-19})(1.5 \\times 10^{-6})} = 1.47 \\times 10^{-4}\\ \\mathrm{m/s} = 0.147\\ \\mathrm{mm/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p007
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 3
+    type: match
+    stem: "จับคู่วัสดุกับสมบัติทางไฟฟ้าและการใช้งาน"
+    pairs:
+      - { left: "เงิน", right: "สภาพต้านทานต่ำที่สุดในโลหะทั่วไป ราว 1.6 × 10⁻⁸ Ω·m" }
+      - { left: "นิโครม", right: "สภาพต้านทานราว 10⁻⁶ Ω·m ใช้ทำขดลวดความร้อน" }
+      - { left: "ซิลิคอนบริสุทธิ์", right: "สารกึ่งตัวนำ ใช้ทำชิปและทรานซิสเตอร์" }
+      - { left: "แก้ว", right: "ฉนวน สภาพต้านทานสูงกว่า 10¹⁰ Ω·m" }
+    hints:
+      - "เรียงจากตัวนำดีที่สุดไปฉนวน"
+      - "ขดลวดความร้อนต้องการความต้านทานสูงพอให้ร้อน แต่ยังเป็นโลหะ"
+    solution: "เงินนำไฟดีที่สุด นิโครมมีสภาพต้านทานสูงสำหรับโลหะจึงใช้ทำขดลวดความร้อน ซิลิคอนเป็นสารกึ่งตัวนำ และแก้วเป็นฉนวน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p008
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 3
+    type: mcq
+    stem: "อิเล็กตรอนในสายไฟลอยเลื่อนเพียงราว $0.1\\ \\mathrm{mm/s}$ แต่กดสวิตช์แล้วหลอดไฟที่อยู่ห่าง $5\\ \\mathrm{m}$ สว่างแทบทันที เพราะอะไร"
+    choices:
+      - { id: a, text: "สนามไฟฟ้าแผ่ไปตลอดลวดเร็วเกือบเท่าแสง อิเล็กตรอนทุกตัวตลอดเส้นลวดเริ่มลอยเลื่อนพร้อมกัน", correct: true }
+      - { id: b, text: "อิเล็กตรอนจากสวิตช์วิ่งไปถึงหลอดไฟด้วยความเร็วเกือบเท่าแสง", feedback: "อิเล็กตรอนแต่ละตัวไม่ได้วิ่งจากสวิตช์ไปถึงหลอด ตัวที่อยู่ในไส้หลอดอยู่แล้วเริ่มเคลื่อนที่ทันที" }
+      - { id: c, text: "หลอดไฟเก็บไฟฟ้าไว้ก่อนแล้ว กดสวิตช์จึงปล่อยออกมา", feedback: "หลอดไฟไม่ได้เก็บพลังงานไฟฟ้า มันใช้พลังงานจากแหล่งจ่ายขณะมีกระแส" }
+    hints:
+      - "ลวดมีอิเล็กตรอนอิสระอยู่เต็มตลอดเส้นตั้งแต่แรก"
+      - "สิ่งใดที่ต้องเดินทางจากสวิตช์ไปถึงหลอดไฟ"
+    solution: "ลวดเต็มไปด้วยอิเล็กตรอนอิสระ เมื่อปิดวงจร สนามไฟฟ้าแผ่ไปตลอดวงจรด้วยอัตราเร็วใกล้แสง อิเล็กตรอนในไส้หลอดเริ่มลอยเลื่อนแทบทันที เหมือนท่อที่มีน้ำเต็ม เปิดก๊อกแล้วน้ำไหลออกปลายท่อทันที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p009
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 4
+    type: numeric
+    stem: "ลวดเส้นหนึ่งมีความต้านทาน $5.0\\ \\Omega$ ถูกรีดดึงให้ยาวขึ้นเป็นสองเท่าโดยปริมาตรเท่าเดิม ที่อุณหภูมิเดิม ความต้านทานใหม่เป็นเท่าใด (ตอบในหน่วย Ω)"
+    answer: { value: 20, tolerance: 0.2, unit: Ω }
+    misconceptions:
+      - { match: 10, feedback: "คิดเฉพาะความยาวที่เพิ่ม 2 เท่า แต่ปริมาตรเท่าเดิม พื้นที่หน้าตัดจึงลดเหลือครึ่งหนึ่งด้วย" }
+      - { match: 5, feedback: "สภาพต้านทานไม่เปลี่ยนก็จริง แต่ความต้านทานขึ้นกับรูปร่างของลวด" }
+    hints:
+      - "ปริมาตร $= AL$ คงที่ ถ้า $L$ เพิ่ม 2 เท่า $A$ เป็นอย่างไร"
+      - "$R = \\rho L / A$ แทน $2L$ และ $A/2$"
+    solution: "$AL$ คงที่ ยาว $2L$ พื้นที่เหลือ $A/2$ ได้ $R' = \\rho \\dfrac{2L}{A/2} = 4\\rho\\dfrac{L}{A} = 4 \\times 5.0 = 20\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p010
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 4
+    type: numeric
+    stem: "นักเรียนวัดลวดโลหะชนิดหนึ่งยาว $2.0\\ \\mathrm{m}$ เส้นผ่านศูนย์กลาง $0.50\\ \\mathrm{mm}$ ได้ความต้านทาน $10.2\\ \\Omega$ ที่อุณหภูมิห้อง สภาพต้านทานของลวดเป็นกี่เท่าของ $10^{-6}\\ \\Omega \\cdot \\mathrm{m}$ (ตอบเป็นตัวเลขหน้า $10^{-6}$)"
+    answer: { value: 1.0, tolerance: 0.02 }
+    misconceptions:
+      - { match: 4.0, feedback: "ใช้เส้นผ่านศูนย์กลางแทนรัศมีในสูตร $\\pi r^2$ ต้องใช้ $r = 0.25\\ \\mathrm{mm}$" }
+    hints:
+      - "$A = \\pi r^2$ โดย $r = 0.25 \\times 10^{-3}\\ \\mathrm{m}$"
+      - "$\\rho = \\dfrac{RA}{L}$"
+    solution: "$A = \\pi (0.25 \\times 10^{-3})^2 = 1.96 \\times 10^{-7}\\ \\mathrm{m^2}$ ได้ $\\rho = \\dfrac{(10.2)(1.96 \\times 10^{-7})}{2.0} \\approx 1.0 \\times 10^{-6}\\ \\Omega \\cdot \\mathrm{m}$ ตรงกับนิโครม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p011
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 4
+    type: numeric
+    stem: "ลวดทองแดงเส้นหนึ่งมีกระแสคงที่ ส่วนหนึ่งของลวดถูกรีดจนเส้นผ่านศูนย์กลางเหลือครึ่งหนึ่ง ความเร็วลอยเลื่อนในส่วนที่เล็กลงเป็นกี่เท่าของส่วนเดิม"
+    answer: { value: 4, tolerance: 0.04 }
+    misconceptions:
+      - { match: 2, feedback: "เส้นผ่านศูนย์กลางครึ่งหนึ่ง พื้นที่หน้าตัดเหลือ $\\tfrac14$ ไม่ใช่ $\\tfrac12$" }
+      - { match: 0.25, feedback: "กลับอัตราส่วน กระแสเท่าเดิมผ่านหน้าตัดที่เล็กลง อิเล็กตรอนต้องเคลื่อนที่เร็วขึ้น" }
+    hints:
+      - "$I = nev_d A$ โดย $I$, $n$, $e$ เท่าเดิม"
+      - "$v_d \\propto \\dfrac{1}{A}$ และ $A \\propto d^2$"
+    solution: "กระแสเท่ากันทุกหน้าตัด $v_d = \\dfrac{I}{neA}$ พื้นที่เหลือ $\\tfrac14$ ความเร็วลอยเลื่อนจึงเพิ่มเป็น 4 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p012
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 4
+    type: mcq
+    stem: "นักเรียนวัดความต้านทานของลวดชนิดเดียวกันหลายเส้นที่ความยาวและพื้นที่หน้าตัดต่างกัน ควรเขียนกราฟแบบใดจึงหาสภาพต้านทานได้จากความชัน"
+    choices:
+      - { id: a, text: "กราฟ $R$ กับ $L/A$ ความชันคือ $\\rho$", correct: true }
+      - { id: b, text: "กราฟ $R$ กับ $A$ ความชันคือ $\\rho$", feedback: "$R$ แปรผกผันกับ $A$ กราฟจะโค้ง ไม่ใช่เส้นตรงที่ความชันเป็น $\\rho$" }
+      - { id: c, text: "กราฟ $R$ กับ $L$ ความชันคือ $\\rho$ เสมอ", feedback: "ถ้าพื้นที่หน้าตัดไม่เท่ากัน จุดจะไม่อยู่บนเส้นเดียว และแม้ $A$ เท่ากัน ความชันก็เป็น $\\rho/A$ ไม่ใช่ $\\rho$" }
+    hints:
+      - "จัดรูป $R = \\rho \\times (\\text{อะไร})$ ให้เป็นเส้นตรงผ่านจุดกำเนิด"
+      - "ถ้าแกนนอนคือ $L/A$ สมการเป็น $y = mx$ แบบใด"
+    solution: "$R = \\rho \\cdot \\dfrac{L}{A}$ ถ้าแกนนอนเป็น $L/A$ กราฟเป็นเส้นตรงผ่านจุดกำเนิด ความชันเท่ากับ $\\rho$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p013
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 4
+    type: numeric
+    stem: "การไฟฟ้าต้องการสายส่งอะลูมิเนียม ($\\rho = 2.65 \\times 10^{-8}\\ \\Omega \\cdot \\mathrm{m}$) ที่มีความต้านทานเท่ากับสายทองแดง ($\\rho = 1.68 \\times 10^{-8}\\ \\Omega \\cdot \\mathrm{m}$) ความยาวเท่ากัน สายอะลูมิเนียมต้องมีพื้นที่หน้าตัดกี่เท่าของสายทองแดง"
+    answer: { value: 1.58, tolerance: 0.02 }
+    misconceptions:
+      - { match: 0.63, feedback: "กลับอัตราส่วน อะลูมิเนียมนำไฟได้แย่กว่า จึงต้องหนากว่า ไม่ใช่บางกว่า" }
+    hints:
+      - "$R$ เท่ากันและ $L$ เท่ากัน ดังนั้น $\\rho / A$ ต้องเท่ากัน"
+      - "$\\dfrac{A_{\\text{Al}}}{A_{\\text{Cu}}} = \\dfrac{\\rho_{\\text{Al}}}{\\rho_{\\text{Cu}}}$"
+    solution: "$\\dfrac{A_{\\text{Al}}}{A_{\\text{Cu}}} = \\dfrac{2.65}{1.68} \\approx 1.58$ เท่า แม้หนากว่า แต่อะลูมิเนียมเบากว่าทองแดงมาก (ความหนาแน่นราว 1/3) สายส่งจึงเบากว่าและถูกกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p014
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 5
+    type: numeric
+    stem: "กาต้มน้ำไฟฟ้า $2000\\ \\mathrm{W}$ ใช้กับไฟบ้าน $220\\ \\mathrm{V}$ ขดลวดความร้อนทำจากนิโครม ($\\rho = 1.1 \\times 10^{-6}\\ \\Omega \\cdot \\mathrm{m}$) เส้นผ่านศูนย์กลาง $0.40\\ \\mathrm{mm}$ ขดลวดต้องยาวเท่าใด (ไม่คิดการเปลี่ยนแปลงตามอุณหภูมิ ตอบในหน่วย m)"
+    answer: { value: 2.76, tolerance: 0.03, unit: m }
+    misconceptions:
+      - { match: 11.06, feedback: "ใช้เส้นผ่านศูนย์กลางเป็นรัศมี พื้นที่หน้าตัดจึงใหญ่เกินไป 4 เท่า ต้องใช้ $r = 0.20\\ \\mathrm{mm}$" }
+    hints:
+      - "หาความต้านทานก่อนจาก $P = \\dfrac{V^2}{R}$"
+      - "$L = \\dfrac{RA}{\\rho}$ โดย $A = \\pi r^2$"
+    solution: "$R = \\dfrac{220^2}{2000} = 24.2\\ \\Omega$, $A = \\pi(0.20 \\times 10^{-3})^2 = 1.26 \\times 10^{-7}\\ \\mathrm{m^2}$ ได้ $L = \\dfrac{(24.2)(1.26 \\times 10^{-7})}{1.1 \\times 10^{-6}} \\approx 2.76\\ \\mathrm{m}$ (จริง ๆ นิโครมร้อนแล้ว $\\rho$ เพิ่มเล็กน้อย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p015
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 5
+    type: numeric
+    stem: "สายไฟทองแดงหน้าตัด $2.5\\ \\mathrm{mm^2}$ มีกระแสตรง $5.0\\ \\mathrm{A}$ ($n = 8.5 \\times 10^{28}\\ \\mathrm{m^{-3}}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$) อิเล็กตรอนหนึ่งตัวใช้เวลาลอยเลื่อนไปตามสายยาว $2.0\\ \\mathrm{m}$ นานเท่าใด (ตอบในหน่วยชั่วโมง)"
+    answer: { value: 3.78, tolerance: 0.04, unit: ชั่วโมง }
+    misconceptions:
+      - { match: 226.7, feedback: "ได้เวลาเป็นนาทีแล้ว ต้องหารด้วย 60 อีกครั้งจึงเป็นชั่วโมง" }
+      - { match: 13600, feedback: "ค่านี้เป็นวินาที ต้องหารด้วย 3600 เป็นชั่วโมง" }
+    hints:
+      - "หา $v_d = \\dfrac{I}{neA}$ ก่อน"
+      - "เวลา = ระยะทาง ÷ $v_d$ แล้วแปลงวินาทีเป็นชั่วโมง"
+    solution: "$v_d = \\dfrac{5.0}{(8.5 \\times 10^{28})(1.6 \\times 10^{-19})(2.5 \\times 10^{-6})} = 1.47 \\times 10^{-4}\\ \\mathrm{m/s}$ เวลา $= \\dfrac{2.0}{1.47 \\times 10^{-4}} = 1.36 \\times 10^4\\ \\mathrm{s} \\approx 3.78$ ชั่วโมง ทั้งที่ไฟติดทันทีที่กดสวิตช์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p016
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 5
+    type: mcq
+    stem: "วัดความต้านทานของหลอดไส้ทังสเตนขณะเย็นได้ $40\\ \\Omega$ แต่ขณะหลอดสว่างคำนวณจาก $R = V/I$ ได้ราว $480\\ \\Omega$ ข้อใดอธิบายได้ถูกต้อง"
+    choices:
+      - { id: a, text: "ไส้หลอดร้อนขึ้นมาก ไอออนสั่นแรงขึ้นและชนอิเล็กตรอนบ่อยขึ้น สภาพต้านทานจึงเพิ่มขึ้น", correct: true }
+      - { id: b, text: "ไส้หลอดยาวขึ้นเป็น 12 เท่าเมื่อร้อน", feedback: "โลหะขยายตัวเพียงเล็กน้อยเมื่อร้อน ไม่ถึงหลายเท่า ที่เปลี่ยนมากคือสภาพต้านทาน" }
+      - { id: c, text: "จำนวนอิเล็กตรอนอิสระในไส้หลอดลดลงเพราะอิเล็กตรอนถูกใช้หมดไป", feedback: "อิเล็กตรอนไม่ได้ถูกใช้หมด จำนวนอิเล็กตรอนที่ไหลเข้าเท่ากับที่ไหลออก ที่ถูกใช้คือพลังงาน" }
+    hints:
+      - "อุณหภูมิของไส้หลอดเปลี่ยนจากอุณหภูมิห้องเป็นหลายพันองศาเซลเซียส"
+      - "อุณหภูมิมีผลต่อการชนระหว่างอิเล็กตรอนกับไอออนอย่างไร"
+    solution: "สภาพต้านทานของโลหะเพิ่มเมื่ออุณหภูมิสูงขึ้น ไส้หลอดที่ร้อนจัดจึงมีความต้านทานมากกว่าตอนเย็นหลายเท่า สูตร $R = \\rho L/A$ ด้วย $\\rho$ ค่าเดียวจึงใช้ได้เฉพาะที่อุณหภูมิคงตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p017
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 5
+    type: expression
+    stem: "ลวดสภาพต้านทาน $\\rho$ ยาว $L$ มีเส้นผ่านศูนย์กลาง $d$ เขียนความต้านทานของลวดในรูปของ $\\rho$, $L$ และ $d$"
+    prefix: "R ="
+    answer: { latex: "\\frac{4\\rho L}{\\pi d^2}", variables: [rho, L, d] }
+    misconceptions:
+      - { match: "\\frac{\\rho L}{\\pi d^2}", feedback: "ใช้ $d$ เป็นรัศมี พื้นที่หน้าตัดคือ $\\pi (d/2)^2 = \\tfrac{\\pi d^2}{4}$" }
+      - { match: "\\frac{\\rho L}{d^2}", feedback: "พื้นที่หน้าตัดวงกลมต้องมี $\\pi$ และต้องใช้รัศมี $d/2$" }
+    hints:
+      - "พื้นที่หน้าตัด $A = \\pi r^2$ และ $r = d/2$"
+      - "แทน $A$ ใน $R = \\rho L/A$"
+    solution: "$A = \\pi\\left(\\tfrac{d}{2}\\right)^2 = \\tfrac{\\pi d^2}{4}$ จึงได้ $R = \\dfrac{\\rho L}{\\pi d^2/4} = \\dfrac{4\\rho L}{\\pi d^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.resistivity-drift.p018
+    topics: [physics.electricity.resistivity-drift]
+    difficulty: 3
+    type: order
+    stem: "เรียงวัสดุจากสภาพต้านทานน้อยที่สุดไปมากที่สุด (ที่อุณหภูมิห้อง)"
+    items:
+      - "ทองแดง"
+      - "อะลูมิเนียม"
+      - "นิโครม"
+      - "ซิลิคอนบริสุทธิ์"
+      - "ยาง"
+    hints:
+      - "โลหะนำไฟดีกว่าสารกึ่งตัวนำ สารกึ่งตัวนำนำไฟดีกว่าฉนวน"
+      - "ในกลุ่มโลหะ โลหะผสมสำหรับขดลวดความร้อนมีสภาพต้านทานสูงที่สุด"
+    solution: "ทองแดง ($1.7 \\times 10^{-8}$) → อะลูมิเนียม ($2.7 \\times 10^{-8}$) → นิโครม ($1.1 \\times 10^{-6}$) → ซิลิคอนบริสุทธิ์ (ราว $10^{3}$) → ยาง (ราว $10^{13}\\ \\Omega \\cdot \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

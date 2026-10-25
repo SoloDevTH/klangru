@@ -1,0 +1,66 @@
+id: physics.electricity.resistivity-drift
+subject: physics
+title: { th: สภาพต้านทานและความเร็วลอยเลื่อน, en: Resistivity and drift velocity }
+summary: การเคลื่อนที่ของอิเล็กตรอนอิสระในลวดโลหะ ความเร็วลอยเลื่อนกับกระแส I = nevA สภาพต้านทาน R = ρL/A และผลของความยาว พื้นที่หน้าตัด วัสดุ และอุณหภูมิ
+difficulty: 5.5
+minutes: 35
+prerequisites: [physics.electricity.current-voltage, physics.electricity.circuits]
+encompasses:
+  - { id: physics.electricity.current-voltage, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: อิเล็กตรอนอิสระลอยเลื่อนในลวด
+    src: drift.svg
+    alt: "ภาพขยายในลวดโลหะ มีไอออนบวกเรียงเป็นแถว อิเล็กตรอนหนึ่งตัวมีทางเดินเป็นเส้นหักไปมาแบบสุ่มเพราะชนไอออน จากจุดเริ่มทางขวาไปถึงจุดต่อมาทางซ้าย ลูกศรสีน้ำเงินด้านล่างบอกการกระจัดสุทธิไปทางซ้ายคือความเร็วลอยเลื่อน ลูกศรสีส้มบอกว่าสนามไฟฟ้าและกระแสสมมติชี้ไปทางขวา"
+    caption: "อิเล็กตรอนวิ่งสุ่มเร็วมาก แต่เลื่อนสุทธิสวนทิศสนามไฟฟ้าอย่างช้า ๆ"
+  - type: worked-example
+    title: ความเร็วลอยเลื่อนในสายไฟบ้าน
+    problem: "สายไฟทองแดงหน้าตัด 4.0 mm² ของเครื่องทำน้ำอุ่นมีกระแส 16 A ความเร็วลอยเลื่อนเป็นเท่าใด (n = 8.5 × 10²⁸ m⁻³)"
+    steps:
+      - text: "แปลงหน่วย $A = 4.0\\ \\mathrm{mm^2} = 4.0 \\times 10^{-6}\\ \\mathrm{m^2}$"
+        why: "$1\\ \\mathrm{mm} = 10^{-3}\\ \\mathrm{m}$ จึงได้ $1\\ \\mathrm{mm^2} = 10^{-6}\\ \\mathrm{m^2}$"
+      - text: "จัดรูป $I = nev_dA$ เป็น $v_d = \\dfrac{I}{neA}$"
+      - text: "$v_d = \\dfrac{16}{(8.5 \\times 10^{28})(1.6 \\times 10^{-19})(4.0 \\times 10^{-6})} \\approx 2.9 \\times 10^{-4}\\ \\mathrm{m/s}$"
+    answer: "ราว 0.29 mm/s เท่านั้น"
+  - { type: check, problem: physics.electricity.resistivity-drift.p008, prompt: "ถ้าอิเล็กตรอนช้าขนาดนี้ ทำไมไฟจึงติดทันที" }
+  - type: figure
+    title: ความต้านทานกับรูปร่างของลวด
+    src: geometry.svg
+    alt: "แท่งลวดสามแท่ง แท่งแรกยาว L พื้นที่ A ความต้านทาน R แท่งที่สองยาว 2L พื้นที่ A ความต้านทาน 2R แท่งที่สามยาว L พื้นที่ 2A ความต้านทาน R/2 ด้านขวาเขียนสูตร R = ρL / A ยาวขึ้น R มากขึ้น หนาขึ้น R น้อยลง ρ ขึ้นกับชนิดวัสดุและอุณหภูมิ"
+  - type: worked-example
+    title: เลือกขนาดสายไฟ
+    problem: "สายทองแดงยาว 20 m (ไปและกลับรวม) ต้องมีความต้านทานไม่เกิน 0.10 Ω พื้นที่หน้าตัดต้องอย่างน้อยเท่าใด (ρ = 1.7 × 10⁻⁸ Ω·m)"
+    steps:
+      - text: "จัดรูป $R = \\rho L/A$ เป็น $A = \\dfrac{\\rho L}{R}$"
+      - text: "$A = \\dfrac{(1.7 \\times 10^{-8})(20)}{0.10} = 3.4 \\times 10^{-6}\\ \\mathrm{m^2}$"
+      - text: "แปลงเป็น $\\mathrm{mm^2}$ ได้ $3.4\\ \\mathrm{mm^2}$ จึงเลือกสายขนาดมาตรฐาน $4\\ \\mathrm{mm^2}$"
+        why: "สายใหญ่กว่าความต้องการ ความต้านทานยิ่งน้อย สายร้อนน้อยลง ปลอดภัยกว่า"
+    answer: "อย่างน้อย 3.4 mm² เลือกสาย 4 mm²"
+  - { type: check, problem: physics.electricity.resistivity-drift.p005, prompt: "เส้นผ่านศูนย์กลางเพิ่ม พื้นที่เพิ่มกี่เท่า" }
+  - type: simulation
+    title: "ความต้านทานของลวด (PhET Resistance in a Wire)"
+    url: https://phet.colorado.edu/en/simulations/resistance-in-a-wire
+    provider: phet
+    note: "เลื่อนแถบ ρ, L และ A ทีละตัว สังเกตว่าตัวอักษรในสูตร R = ρL/A ใหญ่หรือเล็กลงอย่างไร ลองเพิ่ม L เป็นสองเท่าแล้วดูค่า R จากนั้นเพิ่ม A เป็นสองเท่า"
+glossary:
+  - { term: อิเล็กตรอนอิสระ, definition: "อิเล็กตรอนวงนอกของอะตอมโลหะที่เคลื่อนที่ได้ทั่วชิ้นโลหะ เป็นตัวพาประจุในลวดโลหะ" }
+  - { term: ความเร็วลอยเลื่อน, definition: "ความเร็วเฉลี่ยที่อิเล็กตรอนอิสระเลื่อนไปตามลวดเมื่อมีสนามไฟฟ้า มีขนาดเพียงเศษส่วนของมิลลิเมตรต่อวินาที" }
+  - { term: สภาพต้านทาน, definition: "สมบัติของวัสดุที่บอกว่าต้านกระแสมากเพียงใด สัญลักษณ์ ρ หน่วยโอห์มเมตร" }
+  - { term: สภาพนำไฟฟ้า, definition: "ส่วนกลับของสภาพต้านทาน σ = 1/ρ" }
+  - { term: ความหนาแน่นอิเล็กตรอนอิสระ, definition: "จำนวนอิเล็กตรอนอิสระต่อปริมาตร n หน่วยต่อลูกบาศก์เมตร ทองแดงมีราว 8.5 × 10²⁸" }
+flashcards:
+  - { front: "กระแสกับความเร็วลอยเลื่อนสัมพันธ์กันอย่างไร", back: "$I = nev_dA$" }
+  - { front: "ความต้านทานของลวดขึ้นกับอะไร", back: "$R = \\rho L/A$ ความยาว พื้นที่หน้าตัด ชนิดวัสดุ และอุณหภูมิ" }
+  - { front: "เส้นผ่านศูนย์กลางเพิ่ม 2 เท่า R เป็นอย่างไร", back: "เหลือ 1/4 เพราะพื้นที่หน้าตัดเพิ่ม 4 เท่า" }
+  - { front: "ดึงลวดให้ยาว 2 เท่า (ปริมาตรเท่าเดิม) R เป็นอย่างไร", back: "เพิ่ม 4 เท่า (ยาวขึ้น 2 เท่า และหน้าตัดลดลงครึ่งหนึ่ง)" }
+  - { front: "อุณหภูมิสูงขึ้น สภาพต้านทานของโลหะเป็นอย่างไร", back: "เพิ่มขึ้น เพราะไอออนสั่นแรงและชนอิเล็กตรอนบ่อยขึ้น" }
+references:
+  - { title: "สภาพต้านทานและสภาพนำไฟฟ้า", url: "https://th.wikipedia.org/wiki/สภาพต้านทานและสภาพนำไฟฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Electrical resistivity and conductivity", url: "https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Drift velocity", url: "https://en.wikipedia.org/wiki/Drift_velocity", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
