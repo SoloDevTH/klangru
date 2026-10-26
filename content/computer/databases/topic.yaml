@@ -1,0 +1,72 @@
+id: computer.data.databases
+subject: computer
+title: { th: ฐานข้อมูลเชิงสัมพันธ์และ SQL เบื้องต้น, en: "Relational databases and introductory SQL" }
+summary: จุดประสงค์ของระบบฐานข้อมูลและธุรกรรม ตาราง แถว คอลัมน์ คีย์หลักและคีย์นอก ออกแบบตารางลดข้อมูลซ้ำ SELECT WHERE ORDER BY JOIN เก็บในเครื่องหรือคลาวด์ การป้องกัน SQL injection และการเก็บรหัสผ่าน
+difficulty: 5
+minutes: 50
+prerequisites: [computer.data.data-processing, computer.programming.lists-strings]
+encompasses:
+  - { id: computer.data.data-processing, weight: 0.3 }
+  - { id: computer.programming.lists-strings, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: schema.svg
+    alt: "แผนภาพสามตาราง students มีคอลัมน์ student_id (คีย์หลัก) name class ตาราง books มี book_id (คีย์หลัก) title category year ตาราง loans อยู่ตรงกลาง มี loan_id (คีย์หลัก) student_id (คีย์นอก) book_id (คีย์นอก) loan_date returned ลูกศรจาก student_id ของ loans ชี้ไป students ป้ายฝั่ง loans ว่าหลาย ฝั่ง students ว่า 1 และลูกศรจาก book_id ชี้ไป books แบบเดียวกัน ใต้ภาพเขียนว่าชั้นของนักเรียนเก็บที่ students ที่เดียว ตาราง loans อ้างด้วยรหัส"
+    caption: "แยกตารางและเชื่อมด้วยคีย์ ข้อมูลแต่ละเรื่องอยู่ที่เดียว"
+  - type: worked-example
+    title: แยกตารางคำนวณแผ่นเดียวเป็นฐานข้อมูล
+    problem: "ตารางยืมหนังสือเดิมมีคอลัมน์ ชื่อนักเรียน, ชั้น, ชื่อหนังสือ, หมวด, ปีที่พิมพ์, วันที่ยืม, คืนแล้วหรือยัง นักเรียนคนหนึ่งยืมได้หลายครั้ง และหนังสือเล่มหนึ่งถูกยืมได้หลายครั้ง ให้ออกแบบตารางใหม่"
+    steps:
+      - text: "หาสิ่งที่ข้อมูลพูดถึง: นักเรียน หนังสือ และการยืม (เหตุการณ์) แต่ละเรื่องเป็นหนึ่งตาราง"
+        why: "คุณสมบัติของนักเรียน (ชั้น) ไม่ได้ขึ้นกับการยืม ถ้าเก็บรวมกันจะซ้ำทุกครั้งที่ยืม"
+      - text: "students: student_id (คีย์หลัก), name, class และ books: book_id (คีย์หลัก), title, category, year"
+      - text: "loans: loan_id (คีย์หลัก), student_id (คีย์นอก), book_id (คีย์นอก), loan_date, returned"
+        why: "การยืมเป็นตัวเชื่อมความสัมพันธ์หลายต่อหลายระหว่างนักเรียนกับหนังสือ จึงเก็บแค่รหัสของทั้งสองฝั่ง"
+      - text: "ตรวจ: เมื่อฟ้าย้ายชั้น แก้แถวเดียวใน students ทุกการยืมของฟ้าก็เห็นชั้นใหม่ทันที"
+      - text: "ต้นทุนของการแยก: เวลาอยากเห็นชื่อนักเรียนคู่กับชื่อหนังสือต้องใช้ JOIN สามตาราง"
+    answer: "ได้สามตาราง students, books และ loans เชื่อมด้วย student_id และ book_id ข้อมูลไม่ซ้ำ แลกกับการต้อง JOIN ตอนอ่าน"
+  - { type: check, problem: computer.data.databases.p003, prompt: "ลองนับแถวที่ผ่านเงื่อนไข WHERE" }
+  - type: worked-example
+    title: เขียนคำสั่งหาหนังสือที่ยังไม่คืนของชั้นหนึ่ง
+    problem: "จากตารางห้องสมุดในโจทย์ (ภาพตาราง students, books, loans) เขียนคำสั่ง SQL หาชื่อนักเรียน ชื่อหนังสือ และวันที่ยืม ของการยืมที่ยังไม่คืนของชั้นที่ผู้ใช้เลือก (เช่น ม.4/1) เรียงตามวันที่ยืม และส่งค่าชั้นอย่างปลอดภัย"
+    steps:
+      - text: "เลือกคอลัมน์: `SELECT students.name, books.title, loans.loan_date`"
+      - text: "เริ่มจากตารางเหตุการณ์แล้วเชื่อม: `FROM loans JOIN students ON loans.student_id = students.student_id JOIN books ON loans.book_id = books.book_id`"
+        why: "ข้อมูลที่ต้องการกระจายอยู่สามตาราง ON บอกว่าแถวใดคู่กัน ถ้าลืม ON จะได้ทุกคู่ของแถว"
+      - text: "กรอง: `WHERE students.class = ? AND loans.returned = 0` ใช้ `?` แทนค่าชั้น"
+        why: "ค่าชั้นมาจากผู้ใช้ จึงส่งแยกเป็นพารามิเตอร์ ป้องกันการแทรกคำสั่ง SQL"
+      - text: "เรียง: `ORDER BY loans.loan_date` วันที่เก็บเป็นข้อความรูป ปปปป-ดด-วว จึงเรียงตามตัวอักษรได้ถูกลำดับเวลา"
+      - text: "รันด้วย `con.execute(sql, (\"ม.4/1\",))` ได้ 3 แถว: (มด, นิทานดวงดาว, 2568-11-04), (ฟ้า, อัลกอริทึมสนุก, 2568-11-05), (มด, จดหมายถึงยาย, 2568-11-07)"
+    answer: "SELECT students.name, books.title, loans.loan_date FROM loans JOIN students ON ... JOIN books ON ... WHERE students.class = ? AND loans.returned = 0 ORDER BY loans.loan_date ได้ 3 แถว"
+  - { type: check, problem: computer.data.databases.p007, prompt: "ไล่ JOIN แล้วนับแถวที่ผ่านทั้งสองเงื่อนไข" }
+  - type: figure
+    src: hash.svg
+    alt: "ฟ้าและต้นใช้รหัสผ่านเดียวกัน sunflower22 แต่ฟ้าได้ซอลต์ 9f2c และต้นได้ซอลต์ 4b80 รหัสผ่านกับซอลต์เข้าฟังก์ชันแฮชที่ช้า เช่น bcrypt หรือ Argon2 แล้วฐานข้อมูลเก็บซอลต์กับค่าแฮช ฟ้าได้ค่าแฮช a71e ต้นได้ 0d93 ใต้ภาพเขียนว่ารหัสผ่านเหมือนกันแต่ค่าแฮชต่างกัน และย้อนจากค่าแฮชกลับเป็นรหัสผ่านไม่ได้"
+    caption: "เก็บรหัสผ่านเป็นค่าแฮชที่เติมซอลต์ ไม่เก็บรหัสผ่านเอง"
+glossary:
+  - { term: ระบบจัดการฐานข้อมูล (DBMS), definition: "ซอฟต์แวร์ที่เก็บข้อมูลแยกจากโปรแกรม ให้หลายคนใช้ร่วมกัน ตรวจความถูกต้อง และทำธุรกรรม" }
+  - { term: ธุรกรรม (transaction), definition: "ชุดคำสั่งที่ต้องสำเร็จทั้งหมดหรือไม่เกิดเลย" }
+  - { term: คีย์หลัก (primary key), definition: "คอลัมน์ที่ค่าไม่ซ้ำและไม่ว่าง ใช้ระบุแต่ละแถว" }
+  - { term: คีย์นอก (foreign key), definition: "คอลัมน์ที่อ้างคีย์หลักของอีกตาราง ใช้เชื่อมตาราง" }
+  - { term: ความถูกต้องของการอ้างอิง (referential integrity), definition: "กฎที่ไม่ยอมให้คีย์นอกอ้างแถวที่ไม่มีอยู่จริง" }
+  - { term: SQL, definition: "ภาษาสำหรับสร้างตารางและสืบค้นข้อมูลในฐานข้อมูลเชิงสัมพันธ์" }
+  - { term: JOIN, definition: "คำสั่ง SQL ที่รวมแถวจากหลายตารางที่คีย์ตรงกันตามเงื่อนไข ON" }
+  - { term: การแทรกคำสั่ง SQL (SQL injection), definition: "ช่องโหว่ที่ข้อความจากผู้ใช้กลายเป็นส่วนของคำสั่ง SQL ป้องกันด้วยตัวยึดตำแหน่ง" }
+  - { term: ซอลต์ (salt), definition: "ค่าสุ่มที่เติมให้รหัสผ่านแต่ละบัญชีก่อนแฮช ทำให้รหัสเหมือนกันได้ค่าแฮชต่างกัน" }
+flashcards:
+  - { front: "ทำไมไม่ใช้ชื่อเป็นคีย์หลัก", back: "ชื่อซ้ำกันได้และเปลี่ยนได้ ควรใช้รหัสที่ไม่ซ้ำ" }
+  - { front: "WHERE กับ ORDER BY ต่างกันอย่างไร", back: "WHERE กรองแถว ORDER BY เรียงผลลัพธ์" }
+  - { front: "ความสัมพันธ์หลายต่อหลายเก็บอย่างไร", back: "ใช้ตารางกลางที่มีคีย์นอกสองตัว เช่น loans" }
+  - { front: "ป้องกัน SQL injection อย่างไร", back: "ใช้ตัวยึดตำแหน่ง ? ส่งข้อมูลแยกจากคำสั่ง และตรวจข้อมูลรับเข้า" }
+  - { front: "เก็บรหัสผ่านอย่างไร", back: "เก็บค่าแฮชจากฟังก์ชันที่ช้า (bcrypt, Argon2) พร้อมซอลต์ต่างกันแต่ละบัญชี" }
+references:
+  - { title: "ฐานข้อมูลเชิงสัมพันธ์", url: "https://th.wikipedia.org/wiki/ฐานข้อมูลเชิงสัมพันธ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "SQL", url: "https://en.wikipedia.org/wiki/SQL", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "SQL injection", url: "https://en.wikipedia.org/wiki/SQL_injection", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Salt (cryptography)", url: "https://en.wikipedia.org/wiki/Salt_(cryptography)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

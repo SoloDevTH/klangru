@@ -1,0 +1,324 @@
+problems:
+  - id: math.algebra.inequality-regions.p001
+    topics: [math.algebra.inequality-regions]
+    difficulty: 1
+    type: mcq
+    stem: "จุดใดบ้างเป็นคำตอบของอสมการ $2x + y \\le 6$ (เลือกทุกข้อที่ถูก)"
+    multiple: true
+    choices:
+      - { id: a, text: "$(1, 2)$", correct: true }
+      - { id: b, text: "$(3, 0)$", correct: true }
+      - { id: c, text: "$(2, 3)$", feedback: "$2(2) + 3 = 7$ มากกว่า 6 จึงไม่เป็นคำตอบ" }
+      - { id: d, text: "$(0, 7)$", feedback: "$2(0) + 7 = 7$ มากกว่า 6" }
+      - { id: e, text: "$(-1, 5)$", correct: true }
+    hints:
+      - "แทนค่า $x$ และ $y$ ของแต่ละจุดลงในอสมการ"
+      - "เครื่องหมาย $\\le$ ยอมให้เท่ากับ 6 ได้"
+    solution: "$(1, 2)$: $4 \\le 6$ จริง $(3, 0)$: $6 \\le 6$ จริง (อยู่บนเส้นขอบ) $(2, 3)$: $7$ เท็จ $(0, 7)$: $7$ เท็จ $(-1, 5)$: $3 \\le 6$ จริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p002
+    topics: [math.algebra.inequality-regions]
+    difficulty: 1
+    type: mcq
+    stem: "เมื่อวาดกราฟของ $y < 3x + 1$ เส้นขอบ $y = 3x + 1$ ต้องเป็นเส้นแบบใด"
+    choices:
+      - { id: a, text: "เส้นประ เพราะจุดบนเส้นไม่ทำให้อสมการเป็นจริง", correct: true }
+      - { id: b, text: "เส้นทึบ เพราะต้องวาดเส้นขอบให้เห็นชัด", feedback: "เส้นทึบหมายถึงจุดบนเส้นเป็นคำตอบ แต่ $<$ ไม่รวมกรณีเท่ากับ" }
+      - { id: c, text: "เส้นทึบ เพราะความชันเป็นบวก", feedback: "ความชันไม่เกี่ยวกับชนิดของเส้น ดูที่เครื่องหมายอสมการ" }
+      - { id: d, text: "ไม่ต้องวาดเส้นขอบ", feedback: "ต้องวาดเส้นขอบเพื่อแบ่งซีก แต่วาดเป็นเส้นประ" }
+    hints:
+      - "จุดบนเส้นขอบทำให้ $y = 3x + 1$ พอดี"
+      - "เครื่องหมาย $<$ ยอมให้เท่ากันไหม"
+    solution: "จุดบนเส้นให้ $y = 3x + 1$ ซึ่งไม่ทำให้ $y < 3x + 1$ เป็นจริง จึงวาดเส้นประ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p003
+    topics: [math.algebra.inequality-regions]
+    difficulty: 2
+    type: numeric
+    stem: "ถ้า $x = 2$ จำนวนเต็ม $y$ ที่มากที่สุดที่ทำให้ $3x + 2y \\le 12$ เป็นจริงคือเท่าใด"
+    answer: { value: 3 }
+    hints:
+      - "แทน $x = 2$ แล้วแก้อสมการตัวแปรเดียว"
+      - "$6 + 2y \\le 12$"
+    misconceptions:
+      - { match: 6, feedback: "หาร 12 ด้วย 2 โดยไม่ได้ลบ $3x = 6$ ออกก่อน" }
+      - { match: 4.5, feedback: "ลบ 3 แทนที่จะลบ $3 \\times 2 = 6$ และ $y$ ต้องเป็นจำนวนเต็ม" }
+    solution: "$6 + 2y \\le 12$ ได้ $2y \\le 6$ จึง $y \\le 3$ จำนวนเต็มที่มากที่สุดคือ 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p004
+    topics: [math.algebra.inequality-regions]
+    difficulty: 2
+    type: mcq
+    stem: "วาดกราฟของ $2x - y > 4$ โดยใช้จุดทดสอบ $(0, 0)$ ต้องระบายซีกใด"
+    choices:
+      - { id: a, text: "ซีกที่ไม่มีจุด $(0, 0)$ เพราะ $0 > 4$ เป็นเท็จ", correct: true }
+      - { id: b, text: "ซีกที่มีจุด $(0, 0)$ เพราะเป็นจุดทดสอบ", feedback: "จุดทดสอบไม่ได้อยู่ในคำตอบเสมอ แทนค่าได้ $0 > 4$ ซึ่งเป็นเท็จ" }
+      - { id: c, text: "ซีกเหนือเส้น เพราะเครื่องหมายเป็น $>$", feedback: "สัมประสิทธิ์ของ $y$ เป็นลบ จัดรูปได้ $y < 2x - 4$ คือใต้เส้น" }
+      - { id: d, text: "ระบายเฉพาะบนเส้น", feedback: "คำตอบของอสมการสองตัวแปรเป็นครึ่งระนาบ และเส้นขอบเป็นเส้นประ" }
+    hints:
+      - "แทน $x = 0, y = 0$ ในอสมการ"
+      - "ถ้าจุดทดสอบให้ค่าเท็จ ให้ระบายอีกซีก"
+    solution: "$2(0) - 0 = 0 > 4$ เป็นเท็จ จึงระบายซีกที่ไม่มีจุดกำเนิด ซึ่งคือใต้เส้น ($y < 2x - 4$) เส้นขอบเป็นเส้นประ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p005
+    topics: [math.algebra.inequality-regions]
+    difficulty: 2
+    type: match
+    stem: "จับคู่อสมการกับบริเวณบนระนาบ"
+    pairs:
+      - { left: "$y > 2$", right: "เหนือเส้นนอน $y = 2$ เส้นประ" }
+      - { left: "$x \\le -1$", right: "ซ้ายของเส้นตั้ง $x = -1$ รวมเส้น (เส้นทึบ)" }
+      - { left: "$y \\ge x$", right: "บนและเหนือเส้น $y = x$" }
+      - { left: "$y < -x$", right: "ใต้เส้น $y = -x$ เส้นประ" }
+    hints:
+      - "$y > \\dots$ คือเหนือเส้น $y < \\dots$ คือใต้เส้น"
+      - "$x \\le \\dots$ คือซ้ายของเส้นตั้ง"
+    solution: "$y > 2$ เหนือเส้นนอน (ประ) $x \\le -1$ ซ้ายของเส้นตั้ง (ทึบ) $y \\ge x$ บนและเหนือเส้น $y = x$ $y < -x$ ใต้เส้น $y = -x$ (ประ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p006
+    topics: [math.algebra.inequality-regions]
+    difficulty: 3
+    type: mcq
+    stem: "บริเวณที่แรเงาในภาพเป็นกราฟของอสมการใด"
+    figure:
+      src: p-shaded.svg
+      alt: "ระนาบพิกัด เส้นประผ่านจุด (0, 2) และ (3, 0) บริเวณใต้เส้นซึ่งมีจุดกำเนิดถูกแรเงา"
+    choices:
+      - { id: a, text: "$2x + 3y < 6$", correct: true }
+      - { id: b, text: "$2x + 3y \\le 6$", feedback: "เส้นขอบเป็นเส้นประ จึงไม่รวมเครื่องหมายเท่ากับ" }
+      - { id: c, text: "$2x + 3y > 6$", feedback: "ลองแทน $(0, 0)$ ซึ่งอยู่ในบริเวณแรเงา ได้ $0 > 6$ เป็นเท็จ จึงไม่ใช่" }
+      - { id: d, text: "$3x + 2y < 6$", feedback: "เส้น $3x + 2y = 6$ ตัดแกน $x$ ที่ 2 และแกน $y$ ที่ 3 สลับกับในภาพ" }
+    hints:
+      - "หาสมการเส้นขอบจากจุดตัดแกน $(3, 0)$ และ $(0, 2)$"
+      - "ดูชนิดของเส้น และทดสอบด้วยจุด $(0, 0)$ ที่อยู่ในบริเวณแรเงา"
+    solution: "เส้นผ่าน $(3, 0)$ และ $(0, 2)$ คือ $2x + 3y = 6$ เส้นประจึงใช้ $<$ หรือ $>$ จุด $(0, 0)$ อยู่ในบริเวณและ $0 < 6$ จริง จึงเป็น $2x + 3y < 6$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p007
+    topics: [math.algebra.inequality-regions]
+    difficulty: 3
+    type: numeric
+    stem: "มีจุด $(x, y)$ ที่ $x$ และ $y$ เป็นจำนวนเต็มที่ไม่เป็นลบ และ $x + y \\le 3$ ทั้งหมดกี่จุด"
+    answer: { value: 10, unit: จุด }
+    hints:
+      - "แยกกรณีตามค่า $x = 0, 1, 2, 3$"
+      - "เมื่อ $x = 0$ ค่า $y$ เป็น 0 ถึง 3 ได้ 4 ค่า"
+    misconceptions:
+      - { match: 16, feedback: "นับทุกจุดในสี่เหลี่ยม $0 \\le x, y \\le 3$ แต่จุดอย่าง $(3, 3)$ ให้ $x + y = 6 > 3$" }
+      - { match: 6, feedback: "ไม่ได้นับจุดบนเส้นขอบ $x + y = 3$ แต่ $\\le$ รวมเส้นขอบด้วย" }
+    solution: "$x = 0$: 4 จุด $x = 1$: 3 จุด $x = 2$: 2 จุด $x = 3$: 1 จุด รวม $4 + 3 + 2 + 1 = 10$ จุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p008
+    topics: [math.algebra.inequality-regions]
+    difficulty: 3
+    type: expression
+    stem: "มีเงิน 300 บาท ซื้อปากกาด้ามละ 20 บาท $x$ ด้าม และสมุดเล่มละ 15 บาท $y$ เล่ม เงื่อนไขคือ $20x + 15y \\le 300$ จงเขียนสมการเส้นขอบในรูป $y$ เป็นนิพจน์ของ $x$"
+    prefix: "y ="
+    answer: { latex: "\\frac{300-20x}{15}", variables: [x] }
+    hints:
+      - "เส้นขอบได้จากการเปลี่ยน $\\le$ เป็น $=$"
+      - "ย้าย $20x$ ไปอีกข้าง แล้วหารด้วย 15"
+    misconceptions:
+      - { match: "\\frac{300+20x}{15}", feedback: "ย้าย $20x$ ข้ามข้างต้องเปลี่ยนเป็นลบ" }
+      - { match: "300-\\frac{20x}{15}", feedback: "ต้องหาร 300 ด้วย 15 ด้วย ไม่ใช่หารเฉพาะ $20x$" }
+    solution: "$20x + 15y = 300$ ได้ $15y = 300 - 20x$ จึง $y = \\dfrac{300 - 20x}{15} = 20 - \\tfrac43 x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p009
+    topics: [math.algebra.inequality-regions]
+    difficulty: 3
+    type: mcq
+    stem: "จุดใดอยู่ในบริเวณที่สอดคล้องระบบอสมการ $y \\ge x$ และ $x + y < 4$"
+    choices:
+      - { id: a, text: "$(1, 2)$", correct: true }
+      - { id: b, text: "$(2, 2)$", feedback: "$2 \\ge 2$ จริง แต่ $2 + 2 = 4 < 4$ เป็นเท็จ จุดนี้อยู่บนเส้นประ" }
+      - { id: c, text: "$(3, 0)$", feedback: "$x + y = 3 < 4$ จริง แต่ $0 \\ge 3$ เป็นเท็จ" }
+      - { id: d, text: "$(0, 5)$", feedback: "$5 \\ge 0$ จริง แต่ $0 + 5 = 5 < 4$ เป็นเท็จ" }
+    hints:
+      - "จุดต้องทำให้ทั้งสองอสมการเป็นจริง"
+      - "ตรวจทีละอสมการ ถ้าเท็จข้อเดียวก็ตัดทิ้ง"
+    solution: "$(1, 2)$: $2 \\ge 1$ จริง และ $1 + 2 = 3 < 4$ จริง จึงอยู่ในบริเวณ จุดอื่นทำให้อสมการใดอสมการหนึ่งเป็นเท็จ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p010
+    topics: [math.algebra.inequality-regions]
+    difficulty: 4
+    type: mcq
+    stem: "บริเวณที่แรเงาในภาพเป็นคำตอบของระบบอสมการใด"
+    figure:
+      src: p-system.svg
+      alt: "ระนาบพิกัด มีเส้นทึบผ่าน (−2, 0) และ (0, 2) เส้นทึบตั้งฉากแกน x ที่ x = 3 และเส้นประแนวนอน y = −2 บริเวณที่แรเงาอยู่ใต้เส้นทแยง ซ้ายของเส้นตั้ง และเหนือเส้นประ"
+    choices:
+      - { id: a, text: "$y \\le x + 2$, $x \\le 3$, $y > -2$", correct: true }
+      - { id: b, text: "$y \\ge x + 2$, $x \\le 3$, $y > -2$", feedback: "บริเวณอยู่ใต้เส้นทแยง จึงเป็น $y \\le x + 2$" }
+      - { id: c, text: "$y \\le x + 2$, $x < 3$, $y \\ge -2$", feedback: "สลับชนิดเส้น เส้น $x = 3$ เป็นเส้นทึบ ($\\le$) ส่วน $y = -2$ เป็นเส้นประ ($>$)" }
+      - { id: d, text: "$y \\le x + 2$, $x \\ge 3$, $y > -2$", feedback: "บริเวณอยู่ทางซ้ายของเส้น $x = 3$ จึงเป็น $x \\le 3$" }
+    hints:
+      - "หาสมการของเส้นทั้งสาม แล้วดูว่าบริเวณอยู่ซีกใดของแต่ละเส้น"
+      - "เส้นประใช้ $<$ หรือ $>$ เส้นทึบใช้ $\\le$ หรือ $\\ge$"
+    solution: "เส้นทแยงผ่าน $(-2, 0)$ และ $(0, 2)$ คือ $y = x + 2$ บริเวณอยู่ใต้เส้น (ทึบ) จึง $y \\le x + 2$ ซ้ายของเส้นทึบ $x = 3$ จึง $x \\le 3$ และเหนือเส้นประ $y = -2$ จึง $y > -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p011
+    topics: [math.algebra.inequality-regions]
+    difficulty: 4
+    type: mcq
+    stem: "จากโจทย์ซื้อปากกา $x$ ด้าม (ด้ามละ 20 บาท) และสมุด $y$ เล่ม (เล่มละ 15 บาท) ด้วยเงินไม่เกิน 300 บาท จุด $(7.5, 10)$ อยู่ในบริเวณ $20x + 15y \\le 300$ จุดนี้เป็นคำตอบของโจทย์หรือไม่"
+    choices:
+      - { id: a, text: "ไม่เป็น เพราะจำนวนปากกาต้องเป็นจำนวนเต็ม", correct: true }
+      - { id: b, text: "เป็น เพราะ $20(7.5) + 15(10) = 300 \\le 300$", feedback: "อสมการเป็นจริง แต่ในบริบท ซื้อปากกา 7.5 ด้ามไม่ได้" }
+      - { id: c, text: "ไม่เป็น เพราะอยู่บนเส้นขอบ", feedback: "เส้นขอบเป็นเส้นทึบ ($\\le$) จุดบนเส้นจึงเป็นคำตอบได้ ปัญหาคือ 7.5 ไม่ใช่จำนวนเต็ม" }
+      - { id: d, text: "เป็น เพราะทุกจุดในบริเวณเป็นคำตอบ", feedback: "ในโจทย์จริงต้องเพิ่มเงื่อนไขที่บริบทกำหนด เช่น จำนวนชิ้นเป็นจำนวนเต็มที่ไม่เป็นลบ" }
+    hints:
+      - "นอกจากอสมการแล้ว บริบทมีเงื่อนไขอะไรอีก"
+      - "ซื้อปากกาเป็นด้าม"
+    solution: "ค่า $(7.5, 10)$ ทำให้ $300 \\le 300$ จริง แต่ $x$ เป็นจำนวนปากกา ต้องเป็นจำนวนเต็มที่ไม่เป็นลบ คำตอบของโจทย์จึงเป็นจุดที่มีพิกัดเป็นจำนวนเต็มในบริเวณเท่านั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p012
+    topics: [math.algebra.inequality-regions]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการวาดกราฟของอสมการ $3x + 4y \\ge 12$"
+    items:
+      - "เปลี่ยนเป็นสมการเส้นขอบ $3x + 4y = 12$"
+      - "หาจุดตัดแกน $(4, 0)$ และ $(0, 3)$ แล้วลากเส้นทึบ"
+      - "แทนจุดทดสอบ $(0, 0)$ ได้ $0 \\ge 12$ เป็นเท็จ"
+      - "ระบายซีกที่ไม่มีจุดกำเนิด"
+    hints:
+      - "เริ่มจากเส้นขอบ"
+      - "จุดทดสอบใช้หลังจากวาดเส้นแล้ว"
+    solution: "เส้นขอบ → จุดตัดแกนและเลือกเส้นทึบ (เพราะ $\\ge$) → ทดสอบ $(0, 0)$ → ระบายซีกตรงข้ามกับจุดกำเนิด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p013
+    topics: [math.algebra.inequality-regions]
+    difficulty: 4
+    type: numeric
+    stem: "บริเวณของระบบอสมการ $x + 2y \\le 10$, $3x + y \\le 15$, $x \\ge 0$, $y \\ge 0$ มีจุดมุมจุดหนึ่งที่เส้น $x + 2y = 10$ ตัดกับ $3x + y = 15$ พิกัด $x$ ของจุดนี้คือเท่าใด"
+    answer: { value: 4 }
+    hints:
+      - "แก้ระบบสมการของเส้นขอบสองเส้น"
+      - "จาก $3x + y = 15$ ได้ $y = 15 - 3x$ แทนในสมการแรก"
+    misconceptions:
+      - { match: 3, feedback: "นี่คือพิกัด $y$ ของจุดมุม โจทย์ถามพิกัด $x$" }
+      - { match: 10, feedback: "นี่คือจุดตัดแกน $x$ ของเส้น $x + 2y = 10$ ซึ่งไม่สอดคล้อง $3x + y \\le 15$" }
+    solution: "$x + 2(15 - 3x) = 10$ ได้ $30 - 5x = 10$ จึง $x = 4$ และ $y = 3$ จุดมุมคือ $(4, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p014
+    topics: [math.algebra.inequality-regions]
+    difficulty: 4
+    type: numeric
+    stem: "มีจุด $(x, y)$ ที่ $x$ และ $y$ เป็นจำนวนเต็ม และสอดคล้องระบบ $x > 0$, $y > 0$, $x + y < 6$ ทั้งหมดกี่จุด"
+    answer: { value: 10, unit: จุด }
+    hints:
+      - "ทุกเส้นขอบเป็นเส้นประ จุดบนแกนและบนเส้น $x + y = 6$ ไม่นับ"
+      - "$x$ เริ่มที่ 1 และ $x + y \\le 5$"
+    misconceptions:
+      - { match: 15, feedback: "นับจุดบนเส้น $x + y = 6$ ด้วย แต่ $<$ ไม่รวมเส้นขอบ" }
+      - { match: 21, feedback: "นับจุดบนแกน $x = 0$ หรือ $y = 0$ ด้วย แต่ $x > 0$ และ $y > 0$" }
+    solution: "$x = 1$: $y = 1$ ถึง 4 (4 จุด) $x = 2$: 3 จุด $x = 3$: 2 จุด $x = 4$: 1 จุด รวม 10 จุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p015
+    topics: [math.algebra.inequality-regions]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาพื้นที่ของบริเวณที่สอดคล้องระบบ $x \\ge 0$, $y \\ge 0$, $x + y \\le 6$, $2x + y \\le 8$ (หน่วยเป็นตารางหน่วย)"
+    answer: { value: 14, unit: ตารางหน่วย }
+    hints:
+      - "หาจุดมุมทั้งหมดก่อน มีจุดหนึ่งที่เส้นขอบสองเส้นตัดกัน"
+      - "จุดมุมคือ $(0, 0)$, $(4, 0)$, $(2, 4)$, $(0, 6)$ แบ่งรูปเป็นรูปสามเหลี่ยมหรือสี่เหลี่ยมคางหมู"
+    misconceptions:
+      - { match: 24, feedback: "คิดเป็นสี่เหลี่ยมผืนผ้า $4 \\times 6$ แต่บริเวณถูกตัดด้วยเส้นขอบเฉียงสองเส้น" }
+      - { match: 12, feedback: "ใช้สามเหลี่ยม $(0, 0), (4, 0), (0, 6)$ ซึ่งขาดส่วนที่ยื่นออกไปถึงจุด $(2, 4)$" }
+    solution: "จุดมุม $(0, 0)$, $(4, 0)$, $(2, 4)$, $(0, 6)$ แบ่งด้วยเส้นนอน $y = 4$: ส่วนล่างเป็นสี่เหลี่ยมคางหมู ด้านขนานยาว 4 และ 2 สูง 4 พื้นที่ $\\tfrac12(4 + 2)(4) = 12$ ส่วนบนเป็นสามเหลี่ยม $(0, 4), (2, 4), (0, 6)$ พื้นที่ $\\tfrac12(2)(2) = 2$ รวม 14 ตารางหน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p016
+    topics: [math.algebra.inequality-regions]
+    difficulty: 5
+    type: numeric
+    stem: "ร้านขนมทำขนมเปี๊ยะ $x$ ถาด และขนมหม้อแกง $y$ ถาด มีข้อจำกัด $x + y \\le 6$ (ชั่วโมงเตาอบ) $2x + y \\le 8$ (กิโลกรัมแป้ง) $x \\ge 0$, $y \\ge 0$ กำไร $P = 300x + 200y$ บาท กำไรมากที่สุดกี่บาท"
+    answer: { value: 1400, unit: บาท }
+    hints:
+      - "กำไรมากที่สุดเกิดที่จุดมุมของบริเวณ"
+      - "จุดมุมคือ $(0, 0)$, $(4, 0)$, $(2, 4)$, $(0, 6)$ แทนค่าใน $P$ ทุกจุด"
+    misconceptions:
+      - { match: 1200, feedback: "ตรวจแค่จุดบนแกน $(4, 0)$ หรือ $(0, 6)$ ลืมจุดมุม $(2, 4)$ ที่เส้นขอบสองเส้นตัดกัน" }
+      - { match: 2400, feedback: "ใช้ $x = 4$ และ $y = 6$ พร้อมกัน แต่จุด $(4, 6)$ ไม่อยู่ในบริเวณ ($4 + 6 = 10 > 6$)" }
+    solution: "$P(0, 0) = 0$, $P(4, 0) = 1{,}200$, $P(2, 4) = 600 + 800 = 1{,}400$, $P(0, 6) = 1{,}200$ กำไรมากที่สุด 1,400 บาท เมื่อทำขนมเปี๊ยะ 2 ถาดและขนมหม้อแกง 4 ถาด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p017
+    topics: [math.algebra.inequality-regions]
+    difficulty: 5
+    type: mcq
+    stem: "ระบบอสมการ $y > x + 2$ และ $y < x - 1$ มีคำตอบเป็นอย่างไร"
+    choices:
+      - { id: a, text: "ไม่มีคำตอบ เพราะเส้นขอบขนานกันและสองซีกไม่ซ้อนกัน", correct: true }
+      - { id: b, text: "เป็นแถบระหว่างเส้นทั้งสอง", feedback: "แถบระหว่างเส้นคือ $x - 1 < y < x + 2$ แต่โจทย์ต้องการ $y$ ที่มากกว่า $x + 2$ และน้อยกว่า $x - 1$ พร้อมกัน" }
+      - { id: c, text: "มีคำตอบเดียวที่จุดตัดของเส้นขอบ", feedback: "เส้นขอบมีความชันเท่ากัน (1) จึงขนานกัน ไม่มีจุดตัด" }
+      - { id: d, text: "เป็นทั้งระนาบ", feedback: "ไม่มีจุดใดทำให้ $y$ มากกว่า $x + 2$ และน้อยกว่า $x - 1$ พร้อมกัน เพราะ $x + 2 > x - 1$ เสมอ" }
+    hints:
+      - "เปรียบเทียบความชันของเส้นขอบทั้งสอง"
+      - "ถ้า $y > x + 2$ แล้ว $y$ จะน้อยกว่า $x - 1$ ได้ไหม"
+    solution: "ทั้งสองเส้นมีความชัน 1 จึงขนานกัน ซีกแรกอยู่เหนือเส้นบน ซีกที่สองอยู่ใต้เส้นล่าง ไม่ซ้อนกัน ถ้า $y > x + 2$ แล้ว $y > x - 1$ เสมอ จึงไม่มีคำตอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p018
+    topics: [math.algebra.inequality-regions]
+    difficulty: 5
+    type: expression
+    stem: "เส้นขอบของบริเวณหนึ่งผ่านจุด $(0, 4)$ และ $(6, 0)$ จงเขียนสมการเส้นขอบในรูป $y$ เป็นนิพจน์ของ $x$"
+    prefix: "y ="
+    answer: { latex: "4-\\frac{2}{3}x", variables: [x] }
+    hints:
+      - "ความชัน = การเปลี่ยนแปลงของ $y$ ÷ การเปลี่ยนแปลงของ $x$"
+      - "จุดตัดแกน $y$ คือ 4 ความชัน $\\frac{0 - 4}{6 - 0}$"
+    misconceptions:
+      - { match: "4-\\frac{3}{2}x", feedback: "ความชันกลับเศษกลับส่วน ต้องเป็น $\\frac{\\Delta y}{\\Delta x} = \\frac{-4}{6}$" }
+      - { match: "4+\\frac{2}{3}x", feedback: "เส้นลาดลงจาก $(0, 4)$ ไป $(6, 0)$ ความชันจึงเป็นลบ" }
+    solution: "ความชัน $= \\dfrac{0 - 4}{6 - 0} = -\\tfrac23$ จุดตัดแกน $y$ คือ 4 จึง $y = 4 - \\tfrac23 x$ (หรือ $2x + 3y = 12$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.inequality-regions.p019
+    topics: [math.algebra.inequality-regions]
+    difficulty: 2
+    type: numeric
+    stem: "ถ้า $x = 4$ ค่า $y$ ที่น้อยที่สุดที่ทำให้ $y \\ge 2x - 3$ เป็นจริงคือเท่าใด"
+    answer: { value: 5 }
+    hints:
+      - "แทน $x = 4$"
+      - "$y \\ge 2(4) - 3$"
+    misconceptions:
+      - { match: 11, feedback: "คิด $2(4) + 3$ แต่ในอสมการเป็นลบ 3" }
+      - { match: 6, feedback: "คิดว่า $\\ge$ ไม่รวมกรณีเท่ากับ แต่ $y = 5$ ทำให้ $5 \\ge 5$ เป็นจริง" }
+    solution: "$y \\ge 8 - 3 = 5$ ค่าน้อยที่สุดคือ $y = 5$ (จุด $(4, 5)$ อยู่บนเส้นขอบที่เป็นเส้นทึบ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

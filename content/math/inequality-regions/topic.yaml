@@ -1,0 +1,64 @@
+id: math.algebra.inequality-regions
+subject: math
+title: { th: อสมการสองตัวแปรและบริเวณบนระนาบ, en: Linear inequalities in two variables and regions }
+summary: วาดกราฟอสมการเชิงเส้นสองตัวแปรเป็นครึ่งระนาบ เลือกเส้นทึบหรือเส้นประ ใช้จุดทดสอบ หาบริเวณของระบบอสมการ และตีความในโจทย์งบประมาณและกำไร
+difficulty: 5
+minutes: 40
+prerequisites: [math.algebra.linear-inequalities, math.functions.linear-graphs]
+encompasses:
+  - { id: math.algebra.linear-inequalities, weight: 0.3 }
+  - { id: math.functions.linear-graphs, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: half-plane.svg
+    alt: "ระนาบพิกัด เส้นทึบ 2x + y = 6 ผ่านจุด (0, 6) และ (3, 0) ซีกซ้ายล่างของเส้นซึ่งมีจุดกำเนิดถูกระบายสีฟ้า มีจุดทดสอบ (0, 0) สีเขียว และข้อความ 2(0) + 0 = 0 ≤ 6 จริง ระบายฝั่งที่มี (0, 0)"
+    caption: "กราฟของ 2x + y ≤ 6 เส้นทึบเพราะมีเครื่องหมายเท่ากับ"
+  - type: worked-example
+    title: ใช้จุดทดสอบเลือกซีก
+    problem: "วาดกราฟของ $x - 2y < 4$"
+    steps:
+      - text: "เส้นขอบ $x - 2y = 4$ ตัดแกน $x$ ที่ $(4, 0)$ ตัดแกน $y$ ที่ $(0, -2)$"
+        why: "แทน $y = 0$ ได้ $x = 4$ และแทน $x = 0$ ได้ $y = -2$"
+      - text: "เครื่องหมาย $<$ ไม่มีเท่ากับ จึงใช้เส้นประ"
+      - text: "จุดทดสอบ $(0, 0)$: $0 - 0 = 0 < 4$ จริง"
+      - text: "ระบายซีกที่มีจุดกำเนิด ซึ่งคือซีก **เหนือ** เส้น"
+        why: "จัดรูปได้ $-2y < 4 - x$ หารด้วย $-2$ ต้องกลับเครื่องหมาย ได้ $y > \\tfrac{x}{2} - 2$ ตรงกับจุดทดสอบ"
+    answer: "ครึ่งระนาบเหนือเส้นประ $x - 2y = 4$"
+  - { type: check, problem: math.algebra.inequality-regions.p004, prompt: "แทนจุด (0, 0) แล้วดูว่าจริงหรือเท็จ" }
+  - type: figure
+    src: system-region.svg
+    alt: "ระนาบพิกัด เส้น x + y = 6 และ 2x + y = 8 บริเวณที่ระบายสีฟ้าอยู่ในจตุภาคที่หนึ่ง ใต้ทั้งสองเส้น เป็นรูปสี่เหลี่ยมมีจุดมุม (0, 0), (4, 0), (2, 4) และ (0, 6)"
+    caption: "บริเวณของระบบ x ≥ 0, y ≥ 0, x + y ≤ 6, 2x + y ≤ 8"
+  - type: worked-example
+    title: หาจุดมุมของบริเวณ
+    problem: "หาจุดมุมของบริเวณที่สอดคล้องระบบ $x \\ge 0$, $y \\ge 0$, $x + y \\le 6$, $2x + y \\le 8$"
+    steps:
+      - text: "จุดมุมบนแกน: $x + y = 6$ ตัดแกน $y$ ที่ $(0, 6)$ และ $2x + y = 8$ ตัดแกน $x$ ที่ $(4, 0)$ รวมกับจุดกำเนิด $(0, 0)$"
+        why: "จุด $(6, 0)$ และ $(0, 8)$ ใช้ไม่ได้ เพราะไม่สอดคล้องอีกอสมการหนึ่ง เช่น $(6, 0)$ ให้ $2(6) + 0 = 12 > 8$"
+      - text: "จุดที่เส้นขอบสองเส้นตัดกัน: นำ $2x + y = 8$ ลบ $x + y = 6$ ได้ $x = 2$ แล้ว $y = 4$"
+      - text: "ตรวจ $(2, 4)$: $2 + 4 = 6 \\le 6$ และ $4 + 4 = 8 \\le 8$ จริงทั้งคู่"
+    answer: "$(0, 0)$, $(4, 0)$, $(2, 4)$, $(0, 6)$"
+  - { type: check, problem: math.algebra.inequality-regions.p009, prompt: "จุดต้องทำให้ทุกอสมการเป็นจริง และระวังเส้นประ" }
+glossary:
+  - { term: อสมการเชิงเส้นสองตัวแปร, definition: "อสมการรูป ax + by < c (หรือ ≤ > ≥) คำตอบคือคู่อันดับ (x, y) ที่ทำให้อสมการจริง" }
+  - { term: เส้นขอบ, definition: "เส้นตรงที่ได้จากการเปลี่ยนเครื่องหมายอสมการเป็นเครื่องหมายเท่ากับ" }
+  - { term: ครึ่งระนาบ, definition: "ซีกหนึ่งของระนาบที่ถูกเส้นตรงแบ่ง" }
+  - { term: จุดทดสอบ, definition: "จุดที่ไม่อยู่บนเส้นขอบ ใช้แทนค่าเพื่อเลือกว่าจะระบายซีกใด" }
+  - { term: ระบบอสมการ, definition: "อสมการหลายอสมการที่ต้องเป็นจริงพร้อมกัน คำตอบคือส่วนที่ซ้อนกันของครึ่งระนาบ" }
+  - { term: จุดมุม, definition: "จุดที่เส้นขอบสองเส้นตัดกันบนขอบของบริเวณ ใช้หาค่ามากที่สุดหรือน้อยที่สุด" }
+flashcards:
+  - { front: "อสมการที่มี < หรือ > ใช้เส้นขอบแบบใด", back: "เส้นประ เพราะจุดบนเส้นไม่เป็นคำตอบ" }
+  - { front: "ใช้จุดใดเป็นจุดทดสอบได้สะดวกที่สุด", back: "(0, 0) ถ้าเส้นขอบไม่ผ่านจุดกำเนิด" }
+  - { front: "คำตอบของระบบอสมการคืออะไร", back: "บริเวณที่ครึ่งระนาบทุกอันซ้อนกัน" }
+  - { front: "y > 2x − 1 คือบริเวณใด", back: "เหนือเส้น y = 2x − 1 (เส้นประ)" }
+  - { front: "ค่ามากที่สุดของ ax + by บนบริเวณรูปหลายเหลี่ยมเกิดที่ไหน", back: "ที่จุดมุมจุดใดจุดหนึ่ง" }
+references:
+  - { title: "อสมการ", url: "https://th.wikipedia.org/wiki/อสมการ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Linear inequality", url: "https://en.wikipedia.org/wiki/Linear_inequality", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Half-space (geometry)", url: "https://en.wikipedia.org/wiki/Half-space_(geometry)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

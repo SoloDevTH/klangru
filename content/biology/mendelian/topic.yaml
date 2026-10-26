@@ -1,0 +1,72 @@
+id: biology.genetics.mendelian
+subject: biology
+title: { th: พันธุศาสตร์เมนเดลและส่วนขยาย, en: "Mendelian genetics and its extensions" }
+summary: การทดลองของเมนเดล กฎแห่งการแยกและการรวมกลุ่มอย่างอิสระ ตารางพันเนตต์และความน่าจะเป็น ธาลัสซีเมีย การข่มไม่สมบูรณ์ หมู่เลือด พอลิยีน ยีนบนโครโมโซม X การกำหนดเพศ และการแปรผัน
+difficulty: 5.5
+minutes: 50
+prerequisites: [biology.cells.cell-division, math.prob.probability]
+encompasses:
+  - { id: math.prob.probability, weight: 0.3 }
+  - { id: biology.cells.cell-division, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ตารางพันเนตต์ของลักษณะเดียว
+    src: punnett-monohybrid.svg
+    alt: "ตารางพันเนตต์ 2 × 2 ของการผสมถั่วลันเตารุ่น F1 ต้นสูง Tt กับต้นสูง Tt ด้านบนเป็นเซลล์สืบพันธุ์จากต้นที่ 1 คือ T และ t ด้านซ้ายเป็นเซลล์สืบพันธุ์จากต้นที่ 2 คือ T และ t ช่องในตารางได้ TT สูง Tt สูง Tt สูง และ tt เตี้ย กล่องสรุปด้านขวา T คือยีนต้นสูง (เด่น) t คือยีนต้นเตี้ย (ด้อย) จีโนไทป์ TT : Tt : tt = 1 : 2 : 1 ฟีโนไทป์ สูง : เตี้ย = 3 : 1 แต่ละช่องมีโอกาส 1/4"
+    caption: "แต่ละช่องคือการรวมกันของเซลล์สืบพันธุ์หนึ่งคู่ที่มีโอกาสเท่ากัน (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: ใช้กฎการคูณแทนตารางใหญ่
+    problem: "ผสมถั่วเมล็ดกลมสีเหลือง RrYy กับเมล็ดขรุขระสีเหลือง rrYy โอกาสที่ลูกจะเป็นเมล็ดขรุขระสีเขียวเท่ากับเท่าใด"
+    steps:
+      - text: "แยกคิดทีละยีน รูปร่าง: Rr × rr ได้ Rr : rr = 1 : 1 จึง $P(\\text{rr}) = \\frac12$"
+      - text: "สี: Yy × Yy ได้ YY : Yy : yy = 1 : 2 : 1 จึง $P(\\text{yy}) = \\frac14$"
+      - text: "ยีนสองคู่รวมกลุ่มอย่างอิสระ ใช้กฎการคูณ $\\frac12 \\times \\frac14 = \\frac18$"
+        why: "เหตุการณ์อิสระที่ต้องเกิดร่วมกัน โอกาสคือผลคูณ"
+    answer: "โอกาส $\\frac18$ หรือ 0.125"
+  - { type: check, problem: biology.genetics.mendelian.p005, prompt: "ใช้กฎการคูณกับยีนเพียงคู่เดียว" }
+  - type: figure
+    title: พ่อแม่ที่เป็นพาหะธาลัสซีเมียทั้งคู่
+    src: punnett-thalassemia.svg
+    alt: "ตารางพันเนตต์ 2 × 2 พ่อเป็นพาหะ Aa แม่เป็นพาหะ Aa ทั้งคู่สุขภาพปกติ เซลล์สืบพันธุ์จากพ่อคือ A และ a เซลล์สืบพันธุ์จากแม่คือ A และ a ช่อง AA ไม่มียีนธาลัสซีเมีย ช่อง Aa สองช่อง เป็นพาหะ สุขภาพปกติ ช่อง aa เป็นโรคธาลัสซีเมีย กล่องสรุป A คือยีนปกติ (เด่น) a คือยีนธาลัสซีเมีย (ด้อย) โอกาสของลูกแต่ละคน ไม่มียีนธาลัสซีเมีย 1/4 เป็นพาหะ สุขภาพปกติ 1/2 เป็นโรค 1/4 โอกาสนี้เท่าเดิมทุกครั้งที่ตั้งครรภ์ ไม่ขึ้นกับว่าลูกคนก่อนเป็นอย่างไร"
+    caption: "แผนภาพอย่างง่ายของเบตาธาลัสซีเมียชนิดหนึ่ง ธาลัสซีเมียมีหลายชนิด การตรวจคัดกรองและการแปลผลควรทำกับแพทย์ (วาดโดยทีมคลังรู้)"
+  - type: figure
+    title: ตารางพันเนตต์ของสองลักษณะ
+    src: punnett-dihybrid.svg
+    alt: "ตารางพันเนตต์ 4 × 4 ของ RrYy × RrYy เซลล์สืบพันธุ์จากแต่ละต้นคือ RY Ry rY ry ช่องสีเหลือง กลม เหลือง 9 ช่อง ช่องสีเขียว กลม เขียว 3 ช่อง (RRyy Rryy Rryy) ช่องสีส้ม ขรุขระ เหลือง 3 ช่อง (rrYY rrYy rrYy) ช่องสีเทา ขรุขระ เขียว 1 ช่อง (rryy) กล่องสรุป R กลม เด่นต่อ r ขรุขระ Y เหลือง เด่นต่อ y เขียว อัตราส่วนฟีโนไทป์ 9 : 3 : 3 : 1 เมล็ด 3 กลม : 1 ขรุขระ สี 3 เหลือง : 1 เขียว"
+    caption: "แต่ละลักษณะยังคงอัตราส่วน 3 : 1 เพราะยีนสองคู่รวมกลุ่มอย่างอิสระ (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: ยีนบนโครโมโซม X
+    problem: "ชายที่ตาบอดสีแดงเขียว (XᵇY) แต่งงานกับหญิงที่ตาปกติและไม่มียีนตาบอดสี (XᴮXᴮ) ลูกชายและลูกสาวจะเป็นอย่างไร (Xᴮ ยีนปกติ เด่น Xᵇ ยีนตาบอดสี ด้อย)"
+    steps:
+      - text: "แม่ให้ Xᴮ ทุกครั้ง ส่วนพ่อให้ Xᵇ แก่ลูกสาว และให้ Y แก่ลูกชาย"
+        why: "ลูกชายได้โครโมโซม X จากแม่เท่านั้น"
+      - text: "ลูกสาวทุกคนเป็น XᴮXᵇ ตาปกติแต่เป็นพาหะ"
+      - text: "ลูกชายทุกคนเป็น XᴮY ตาปกติ และไม่มียีนตาบอดสี"
+    answer: "ลูกทุกคนตาปกติ ลูกสาวทุกคนเป็นพาหะ ลูกชายไม่มียีนตาบอดสี"
+  - { type: check, problem: biology.genetics.mendelian.p009, prompt: "ใช้ตารางพันเนตต์ของพ่อแม่ที่เป็นพาหะทั้งคู่" }
+glossary:
+  - { term: แอลลีล, definition: "รูปแบบต่าง ๆ ของยีนเดียวกัน เช่น T และ t" }
+  - { term: จีโนไทป์, definition: "คู่ของแอลลีลที่สิ่งมีชีวิตมี เช่น TT Tt tt" }
+  - { term: ฟีโนไทป์, definition: "ลักษณะที่ปรากฏ ซึ่งเป็นผลของจีโนไทป์ร่วมกับสิ่งแวดล้อม" }
+  - { term: พาหะ, definition: "ผู้ที่มียีนด้อยของโรคหนึ่งแอลลีลร่วมกับยีนปกติ จึงไม่แสดงอาการแต่ถ่ายทอดยีนได้" }
+  - { term: การผสมทดสอบ, definition: "การผสมกับฮอมอไซกัสด้อยเพื่อหาจีโนไทป์ของสิ่งมีชีวิตที่แสดงลักษณะเด่น" }
+  - { term: การข่มไม่สมบูรณ์, definition: "การที่เฮเทอโรไซกัสมีฟีโนไทป์กึ่งกลางระหว่างฮอมอไซกัสทั้งสองแบบ" }
+  - { term: การข่มร่วมกัน, definition: "การที่แอลลีลทั้งสองแสดงออกเต็มที่ในเฮเทอโรไซกัส เช่น หมู่เลือด AB" }
+  - { term: พอลิยีน, definition: "ยีนหลายคู่ที่ควบคุมลักษณะเดียวแบบบวกสะสม ทำให้เกิดการแปรผันแบบต่อเนื่อง" }
+flashcards:
+  - { front: "F2 ของการผสมลักษณะเดียว Tt × Tt", back: "จีโนไทป์ 1 : 2 : 1 ฟีโนไทป์ 3 : 1" }
+  - { front: "F2 ของการผสมสองลักษณะ RrYy × RrYy", back: "ฟีโนไทป์ 9 : 3 : 3 : 1" }
+  - { front: "พาหะ × พาหะ ของโรคยีนด้อย", back: "ลูกแต่ละคน ไม่มียีน 1/4 พาหะ 1/2 เป็นโรค 1/4" }
+  - { front: "หมู่เลือด ABO มีกี่จีโนไทป์ กี่ฟีโนไทป์", back: "6 จีโนไทป์ 4 ฟีโนไทป์" }
+  - { front: "ทำไมโรคยีนด้อยบน X พบในชายมากกว่า", back: "ชายมี X แท่งเดียว ยีนด้อยแท่งเดียวก็แสดงออก" }
+references:
+  - { title: "Mendelian inheritance", url: "https://en.wikipedia.org/wiki/Mendelian_inheritance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Thalassemia", url: "https://en.wikipedia.org/wiki/Thalassemia", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.1 Mendel's Experiments and the Laws of Probability (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-probability", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "12.3 Laws of Inheritance (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/12-3-laws-of-inheritance", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

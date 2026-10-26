@@ -1,0 +1,76 @@
+id: physics.rotation.rotational-dynamics
+subject: physics
+title: { th: พลศาสตร์การหมุนและโมเมนตัมเชิงมุม, en: Rotational dynamics and angular momentum }
+summary: โมเมนต์ความเฉื่อย กฎข้อที่สองของนิวตันสำหรับการหมุน รอกที่มีมวล พลังงานจลน์การหมุน การกลิ้งโดยไม่ไถล และการอนุรักษ์โมเมนตัมเชิงมุม
+difficulty: 7.5
+minutes: 40
+prerequisites: [physics.rotation.torque, physics.kinematics.circular, physics.dynamics.newton-second, physics.energy.kinetic-potential]
+encompasses:
+  - { id: physics.rotation.torque, weight: 0.4 }
+  - { id: physics.kinematics.circular, weight: 0.3 }
+  - { id: physics.dynamics.newton-second, weight: 0.3 }
+  - { id: physics.energy.kinetic-potential, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: โมเมนต์ความเฉื่อยของวัตถุทรงต่าง ๆ
+    src: inertia-shapes.svg
+    alt: "ห้ารูปเรียงกัน ห่วงบาง I = MR² จานหรือทรงกระบอกตัน I = ½MR² ทรงกลมตัน I = ⅖MR² ทั้งสามมีแกนหมุนผ่านศูนย์กลาง (จุดแดง) แท่งบางที่หมุนรอบแกนผ่านกึ่งกลาง I = (1/12)ML² และแท่งบางที่หมุนรอบแกนผ่านปลาย I = ⅓ML² (เส้นประแดงคือแกน)"
+  - { type: check, problem: physics.rotation.rotational-dynamics.p001, prompt: "มวลที่อยู่ไกลแกนนับมากกว่า" }
+  - type: worked-example
+    title: ตักน้ำด้วยรอกหนัก
+    problem: "ถังน้ำมวล $5.0\\ \\mathrm{kg}$ ห้อยจากเชือกที่พันรอบรอกจานกลมตันมวล $6.0\\ \\mathrm{kg}$ รัศมี $0.15\\ \\mathrm{m}$ ปล่อยถังจากหยุดนิ่ง จงหาความเร่งของถังและแรงตึงเชือก ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    steps:
+      - text: "ถัง (ทิศลงเป็นบวก): $mg - T = ma$"
+      - text: "รอก: $TR = I\\alpha = \\tfrac12 MR^2 \\cdot \\dfrac{a}{R}$ จึงได้ $T = \\tfrac12 Ma$"
+        why: "เชือกไม่ไถล จุดบนขอบรอกเคลื่อนที่ไปพร้อมเชือก $a = \\alpha R$ รัศมีจึงตัดกันหมด"
+      - text: "แทนกัน: $mg = (m + \\tfrac12 M)a$ ได้ $a = \\dfrac{(5.0)(9.8)}{5.0 + 3.0} = 6.1\\ \\mathrm{m/s^2}$"
+      - text: "$T = \\tfrac12(6.0)(6.125) = 18.4\\ \\mathrm{N}$"
+        why: "แรงตึงน้อยกว่าน้ำหนักถัง ($49\\ \\mathrm{N}$) เพราะถังกำลังเร่งลง"
+    answer: "$a \\approx 6.1\\ \\mathrm{m/s^2}$ และ $T \\approx 18\\ \\mathrm{N}$"
+  - type: figure
+    title: การแข่งกลิ้งลงพื้นเอียง
+    src: rolling-race.svg
+    alt: "พื้นเอียงมีวัตถุสามชิ้นที่ปล่อยพร้อมกันจากยอด ภาพ ณ ขณะเดียวกัน ทรงกลมตัน (I = 0.4MR²) ใกล้ถึงปลายล่างที่สุด ทรงกระบอกตัน (I = 0.5MR²) ตามมาติด ๆ ห่วงบาง (I = 1MR²) อยู่ไกลขึ้นไปบนพื้นเอียง ระยะที่กลิ้งได้แปรผกผันกับ 1 + I/(MR²)"
+  - type: worked-example
+    title: ทรงกระบอกกลิ้งลงพื้นเอียง
+    problem: "ท่อนซุงทรงกระบอกตันมวล $40\\ \\mathrm{kg}$ กลิ้งโดยไม่ไถลจากหยุดนิ่งลงทางลาดสูง $2.0\\ \\mathrm{m}$ ที่ปลายทางลาดมีอัตราเร็วเท่าใด และพลังงานจลน์แบ่งเป็นการเคลื่อนที่แนวตรงกับการหมุนอย่างไร ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    steps:
+      - text: "พลังงานศักย์ที่ลดลง: $Mgh = (40)(9.8)(2.0) = 784\\ \\mathrm{J}$"
+      - text: "พลังงานจลน์รวม: $\\tfrac12 Mv^2 + \\tfrac12\\left(\\tfrac12 MR^2\\right)\\dfrac{v^2}{R^2} = \\tfrac34 Mv^2$"
+        why: "กลิ้งโดยไม่ไถล $\\omega = v/R$ แรงเสียดทานสถิตไม่ทำงานเพราะจุดสัมผัสอยู่นิ่ง"
+      - text: "$\\tfrac34(40)v^2 = 784$ ได้ $v = \\sqrt{26.1} = 5.1\\ \\mathrm{m/s}$"
+      - text: "แบ่งพลังงาน: เคลื่อนที่แนวตรง $\\tfrac12 Mv^2 = 523\\ \\mathrm{J}$ (สองในสาม) หมุน $261\\ \\mathrm{J}$ (หนึ่งในสาม)"
+    answer: "$v \\approx 5.1\\ \\mathrm{m/s}$ พลังงานสองในสามเป็นการเคลื่อนที่แนวตรง หนึ่งในสามเป็นการหมุน"
+  - type: interactive
+    title: รูปทรงกับอัตราเร็วที่ปลายพื้นเอียง
+    caption: "กราฟคืออัตราเร็วที่ปลายพื้นเอียง $v = \\sqrt{2gh/(1 + c)}$ (เมตรต่อวินาที) เมื่อ $x$ คือความสูง (เมตร) และ $c = I/(MR^2)$ ตั้ง $c = 0$ (ไถลไม่หมุน) $0.4$ (ทรงกลมตัน) $0.5$ (ทรงกระบอกตัน) และ $1$ (ห่วง) แล้วเทียบกันที่ความสูงเดียวกัน"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{\\frac{19.6x}{1+c}}"]
+      sliders:
+        - { name: c, min: 0, max: 1, step: 0.1, value: 0.4, label: "I/(MR²)" }
+      x: [0, 5]
+      y: [0, 10]
+  - { type: check, problem: physics.rotation.rotational-dynamics.p010, prompt: "I ลดลง โอเมกาต้องเพิ่มขึ้น" }
+glossary:
+  - { term: โมเมนต์ความเฉื่อย, definition: "ปริมาณที่บอกว่าวัตถุต้านการเปลี่ยนสภาพการหมุนมากเพียงใด เท่ากับผลรวมของมวลคูณกำลังสองของระยะจากแกน" }
+  - { term: ความเร่งเชิงมุม, definition: "อัตราการเปลี่ยนอัตราเร็วเชิงมุมต่อเวลา หน่วยเรเดียนต่อวินาทีกำลังสอง" }
+  - { term: การกลิ้งโดยไม่ไถล, definition: "การเคลื่อนที่ที่วัตถุกลมหมุนไปพร้อมกับเคลื่อนที่ไปข้างหน้า โดยจุดที่แตะพื้นอยู่นิ่งชั่วขณะ จึงได้ v = ωR" }
+  - { term: โมเมนตัมเชิงมุม, definition: "ผลคูณของโมเมนต์ความเฉื่อยกับอัตราเร็วเชิงมุม คงตัวเมื่อไม่มีโมเมนต์ของแรงภายนอก" }
+flashcards:
+  - { front: "กฎข้อที่สองของนิวตันสำหรับการหมุน", back: "$\\sum\\tau = I\\alpha$" }
+  - { front: "พลังงานจลน์ของวัตถุที่กลิ้ง", back: "$\\tfrac12 Mv^2 + \\tfrac12 I\\omega^2$ และ $v = \\omega R$" }
+  - { front: "อัตราเร็วที่ปลายพื้นเอียงเมื่อกลิ้ง", back: "$v = \\sqrt{\\dfrac{2gh}{1 + I/(MR^2)}}$" }
+  - { front: "การอนุรักษ์โมเมนตัมเชิงมุม", back: "$I_1\\omega_1 = I_2\\omega_2$ เมื่อโมเมนต์ภายนอกเป็นศูนย์" }
+  - { front: "I ของห่วง จาน ทรงกลมตัน", back: "$MR^2$ · $\\tfrac12 MR^2$ · $\\tfrac25 MR^2$" }
+references:
+  - { title: "โมเมนต์ความเฉื่อย", url: "https://th.wikipedia.org/wiki/โมเมนต์ความเฉื่อย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Angular momentum", url: "https://en.wikipedia.org/wiki/Angular_momentum", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "11.1 Rolling Motion (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/11-1-rolling-motion", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "10.7 Newton's Second Law for Rotation (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/10-7-newtons-second-law-for-rotation", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

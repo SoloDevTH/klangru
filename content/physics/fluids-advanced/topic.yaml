@@ -1,0 +1,82 @@
+id: physics.matter.fluids-advanced
+subject: physics
+title: { th: เครื่องวัดความดัน ความตึงผิว และของไหลที่เคลื่อนที่, en: "Pressure gauges, surface tension and moving fluids" }
+summary: ความดันเกจกับความดันสัมบูรณ์ แมนอมิเตอร์ บารอมิเตอร์ ความตึงผิว แรงหนืด ของไหลอุดมคติ และบทนำสมการความต่อเนื่องกับสมการแบร์นูลลี
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.matter.pressure-fluids, physics.energy.conservation]
+encompasses:
+  - { id: physics.matter.pressure-fluids, weight: 0.5 }
+  - { id: physics.energy.conservation, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: แมนอมิเตอร์และบารอมิเตอร์
+    src: manometer-barometer.svg
+    alt: "ก. แมนอมิเตอร์ปรอทรูปตัว U ปลายซ้ายต่อกับกระเปาะแก๊ส ปลายขวาเปิดสู่อากาศที่ความดัน P₀ ระดับปรอทฝั่งขวาสูงกว่าฝั่งซ้ายเป็นระยะ h แสดงว่าแก๊สมีความดัน P₀ + ρgh ข. บารอมิเตอร์ปรอท หลอดแก้วคว่ำในอ่างปรอท เหนือลำปรอทเป็นสุญญากาศ ลำปรอทสูงกว่าผิวปรอทในอ่าง h ประมาณ 760 mm ความดันบรรยากาศ P₀ กดผิวปรอทในอ่าง"
+  - { type: check, problem: physics.matter.fluids-advanced.p002, prompt: "เกจอ่านส่วนที่เกินความดันบรรยากาศ" }
+  - type: worked-example
+    title: แมนอมิเตอร์สองของเหลว
+    problem: "หลอดตัว U มีปรอทอยู่ด้านล่าง ฝั่งซ้ายเทน้ำทับปรอทสูง $40.8\\ \\mathrm{cm}$ ฝั่งขวาเทน้ำมัน (ความหนาแน่น $800\\ \\mathrm{kg/m^3}$) ทับปรอท ถ้าผิวปรอทสองฝั่งอยู่ระดับเดียวกันพอดี ลำน้ำมันสูงเท่าใด"
+    steps:
+      - text: "ผิวปรอทสองฝั่งอยู่ระดับเดียวกัน และเป็นของเหลวเดียวกันที่ต่อถึงกัน ความดันที่ระดับนี้จึงเท่ากันทั้งสองฝั่ง"
+        why: "เลือกระดับอ้างอิงที่ผิวปรอท เพราะต่ำกว่านั้นมีแต่ปรอทซึ่งต่อถึงกัน"
+      - text: "$P_0 + \\rho_{\\text{น้ำ}}gh_{\\text{น้ำ}} = P_0 + \\rho_{\\text{น้ำมัน}}gh_{\\text{น้ำมัน}}$"
+      - text: "$h_{\\text{น้ำมัน}} = \\dfrac{1000 \\times 40.8}{800} = 51.0\\ \\mathrm{cm}$"
+        why: "ทั้งสองฝั่งเปิดสู่อากาศ $P_0$ จึงตัดกันได้ และ $g$ ก็ตัดกัน"
+    answer: "ลำน้ำมันสูง $51.0\\ \\mathrm{cm}$ (น้ำมันเบากว่าจึงต้องสูงกว่า)"
+  - type: figure
+    title: ความตึงผิวบนโครงลวด
+    src: surface-tension.svg
+    alt: "โครงลวดรูปตัว U ด้านขวามีลวดเลื่อนได้ยาว l (สีแดง) ระหว่างโครงกับลวดเลื่อนมีฟิล์มสบู่ซึ่งมีสองผิว ฟิล์มดึงลวดเลื่อนไปทางซ้ายด้วยแรงตึงผิว 2γl ต้องออกแรง F ไปทางขวาเท่ากับ 2γl ลวดจึงอยู่นิ่ง"
+  - type: figure
+    title: ท่อตีบ ความเร็ว และความดัน
+    src: continuity-bernoulli.svg
+    alt: "ท่อแนวราบที่ตรงกลางตีบลง เส้นผ่านศูนย์กลางส่วนแคบเป็นครึ่งหนึ่ง พื้นที่จึงเป็นหนึ่งในสี่ของส่วนกว้าง เส้นกระแสชิดกันในส่วนแคบ ลูกศรความเร็วส่วนกว้าง v₁ ส่วนแคบ v₂ = 4v₁ หลอดแนวตั้งที่ต่อจากส่วนกว้างมีน้ำสูงกว่าหลอดที่ต่อจากส่วนแคบ แสดงว่าความดันในส่วนแคบซึ่งไหลเร็วต่ำกว่า"
+  - type: worked-example
+    title: น้ำในท่อประปาที่ตีบ
+    problem: "น้ำไหลในท่อแนวราบเส้นผ่านศูนย์กลาง $4.0\\ \\mathrm{cm}$ ด้วยอัตราเร็ว $1.0\\ \\mathrm{m/s}$ ความดัน $150\\ \\mathrm{kPa}$ แล้วผ่านส่วนที่ตีบเหลือ $2.0\\ \\mathrm{cm}$ จงหาอัตราเร็วและความดันในส่วนที่ตีบ"
+    steps:
+      - text: "สมการความต่อเนื่อง: $v_2 = v_1\\dfrac{A_1}{A_2} = 1.0 \\times \\left(\\dfrac{4.0}{2.0}\\right)^2 = 4.0\\ \\mathrm{m/s}$"
+        why: "พื้นที่แปรผันตามกำลังสองของเส้นผ่านศูนย์กลาง"
+      - text: "แบร์นูลลี (ท่อแนวราบ): $P_2 = P_1 - \\tfrac12\\rho(v_2^2 - v_1^2) = 150{,}000 - \\tfrac12(1000)(16 - 1)$"
+      - text: "$P_2 = 150{,}000 - 7{,}500 = 142{,}500\\ \\mathrm{Pa}$"
+    answer: "ในส่วนที่ตีบน้ำไหล $4.0\\ \\mathrm{m/s}$ ความดันลดลงเหลือราว $143\\ \\mathrm{kPa}$"
+  - type: interactive
+    title: บีบปลายสายยาง
+    caption: "กราฟคืออัตราเร็วที่ปลายสายยาง $v_2 = v\\,D^2/x^2$ (เมตรต่อวินาที) เมื่อ $x$ คือเส้นผ่านศูนย์กลางของรูที่ปลาย (เซนติเมตร) $D$ คือเส้นผ่านศูนย์กลางของสายยาง และ $v$ คืออัตราเร็วในสายยาง ลองลด $x$ เหลือครึ่งหนึ่งของ $D$ แล้วดูว่าอัตราเร็วเพิ่มกี่เท่า"
+    widget:
+      kind: function-plot
+      functions: ["v\\cdot\\frac{D^2}{x^2}"]
+      sliders:
+        - { name: v, min: 0.5, max: 3, step: 0.5, value: 1.5, label: อัตราเร็วในสายยาง (m/s) }
+        - { name: D, min: 1, max: 3, step: 0.5, value: 2, label: เส้นผ่านศูนย์กลางสายยาง (cm) }
+      x: [0.3, 3]
+      y: [0, 40]
+  - { type: check, problem: physics.matter.fluids-advanced.p009, prompt: "พื้นที่เป็นกำลังสองของเส้นผ่านศูนย์กลาง" }
+  - type: simulation
+    title: "ความดันใต้น้ำ (PhET Under Pressure)"
+    url: https://phet.colorado.edu/en/simulations/under-pressure
+    provider: phet
+    note: "วางเกจวัดความดันที่ความลึกต่าง ๆ ลองปิดและเปิดบรรยากาศ เทียบค่าที่อ่านได้ว่าส่วนใดเป็นความดันบรรยากาศและส่วนใดเป็น ρgh แล้วลองเปลี่ยนความหนาแน่นของของเหลวและค่า g"
+glossary:
+  - { term: ความดันเกจ, definition: "ความดันส่วนที่มากกว่าความดันบรรยากาศ เป็นค่าที่เกจวัดลมยางและเกจถังแก๊สอ่านได้" }
+  - { term: แมนอมิเตอร์, definition: "หลอดรูปตัว U บรรจุของเหลว ใช้วัดความดันของแก๊สจากผลต่างระดับของเหลวสองฝั่ง" }
+  - { term: ความตึงผิว, definition: "แรงตึงที่ผิวของเหลวต่อความยาวของขอบผิว หน่วยนิวตันต่อเมตร" }
+  - { term: ความหนืด, definition: "แรงเสียดทานภายในของไหลที่ต้านการไหลและการเคลื่อนที่ของวัตถุในของไหล ของเหลวหนืดน้อยลงเมื่อร้อนขึ้น" }
+  - { term: ของไหลอุดมคติ, definition: "ของไหลที่อัดตัวไม่ได้ ไม่มีความหนืด ไหลแบบคงตัว และไม่หมุนวน" }
+flashcards:
+  - { front: "ความดันสัมบูรณ์", back: "$P = P_0 + P_{\\text{เกจ}}$ และ $P_0 \\approx 101.3\\ \\mathrm{kPa} = 760\\ \\mathrm{mmHg}$" }
+  - { front: "แรงจากฟิล์มสบู่บนลวดยาว l", back: "$F = 2\\gamma l$ (ฟิล์มมีสองผิว)" }
+  - { front: "สมการความต่อเนื่อง", back: "$A_1v_1 = A_2v_2$" }
+  - { front: "สมการแบร์นูลลี", back: "$P + \\tfrac12\\rho v^2 + \\rho gh$ คงตัวตามแนวการไหล" }
+  - { front: "สมบัติของของไหลอุดมคติ", back: "อัดตัวไม่ได้ ไม่หนืด ไหลคงตัว ไม่หมุนวน" }
+references:
+  - { title: "แรงตึงผิว", url: "https://th.wikipedia.org/wiki/แรงตึงผิว", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Pressure measurement", url: "https://en.wikipedia.org/wiki/Pressure_measurement", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Bernoulli's principle", url: "https://en.wikipedia.org/wiki/Bernoulli%27s_principle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

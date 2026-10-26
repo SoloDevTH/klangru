@@ -1,0 +1,288 @@
+problems:
+  - id: physics.rotation.rotational-dynamics.p001
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 1
+    type: mcq
+    stem: "ห่วงกับจานกลมมีมวลและรัศมีเท่ากัน หมุนรอบแกนผ่านศูนย์กลางตั้งฉากกับระนาบ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ห่วงมีโมเมนต์ความเฉื่อยมากกว่า เพราะมวลทั้งหมดอยู่ไกลแกน", correct: true }
+      - { id: b, text: "เท่ากัน เพราะมวลและรัศมีเท่ากัน", feedback: "โมเมนต์ความเฉื่อยขึ้นกับการกระจายของมวลด้วย ไม่ใช่แค่มวลรวมและรัศมี" }
+      - { id: c, text: "จานกลมมีมากกว่า เพราะมีเนื้อวัสดุเต็มทั้งแผ่น", feedback: "มวลเท่ากัน แต่มวลของจานส่วนหนึ่งอยู่ใกล้แกน ซึ่งนับน้อยเพราะ $r^2$ เล็ก" }
+    hints:
+      - "$I = \\sum mr^2$"
+      - "มวลของวัตถุใดอยู่ห่างแกนมากกว่าโดยเฉลี่ย"
+    solution: "ห่วงมี $I = MR^2$ จานมี $I = \\tfrac12 MR^2$ ห่วงจึงมีโมเมนต์ความเฉื่อยมากกว่า 2 เท่า เพราะมวลทุกส่วนอยู่ที่ระยะ $R$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p002
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "จานกลมตันมวล $2.0\\ \\mathrm{kg}$ รัศมี $0.10\\ \\mathrm{m}$ หมุนรอบแกนกลาง มีโมเมนต์ความเฉื่อยกี่ $\\mathrm{kg\\,m^2}$"
+    answer: { value: 0.01, tolerance: 0.0002, unit: "kg m^2" }
+    misconceptions:
+      - { match: 0.02, feedback: "ใช้สูตรของห่วง $MR^2$ จานกลมตันมี $I = \\tfrac12 MR^2$" }
+    hints:
+      - "จานกลมตัน $I = \\tfrac12 MR^2$"
+      - "$\\tfrac12(2.0)(0.10)^2$"
+    solution: "$I = \\tfrac12(2.0)(0.10)^2 = 0.010\\ \\mathrm{kg\\,m^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p003
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "ล้อตุนกำลังมีโมเมนต์ความเฉื่อย $0.50\\ \\mathrm{kg\\,m^2}$ หมุนด้วยอัตราเร็วเชิงมุม $20\\ \\mathrm{rad/s}$ มีพลังงานจลน์การหมุนกี่จูล"
+    answer: { value: 100, tolerance: 1, unit: J }
+    misconceptions:
+      - { match: 200, feedback: "ลืม $\\tfrac12$ ใน $E_k = \\tfrac12 I\\omega^2$" }
+      - { match: 5, feedback: "ไม่ได้ยกกำลังสอง $\\omega$" }
+    hints:
+      - "$E_k = \\tfrac12 I\\omega^2$"
+      - "$\\omega^2 = 400$"
+    solution: "$E_k = \\tfrac12(0.50)(20)^2 = 100\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p004
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 2
+    type: mcq
+    stem: "นักกีฬากระโดดน้ำทีมชาติไทยกำลังตีลังกากลางอากาศ แล้วกอดเข่าม้วนตัวให้แน่นขึ้น อัตราเร็วเชิงมุมของการหมุนเปลี่ยนอย่างไร"
+    choices:
+      - { id: a, text: "เพิ่มขึ้น เพราะโมเมนต์ความเฉื่อยลดลง แต่โมเมนตัมเชิงมุมคงตัว", correct: true }
+      - { id: b, text: "ลดลง เพราะร่างกายเล็กลง", feedback: "เมื่อมวลเข้าใกล้แกน $I$ ลดลง $L = I\\omega$ คงตัว $\\omega$ จึงต้องเพิ่ม" }
+      - { id: c, text: "เท่าเดิม เพราะไม่มีอะไรมาผลัก", feedback: "ไม่มีโมเมนต์จากภายนอกจริง ทำให้ $L$ คงตัว แต่ไม่ได้ทำให้ $\\omega$ คงตัว" }
+    hints:
+      - "กลางอากาศไม่มีโมเมนต์ของแรงภายนอกรอบศูนย์กลางมวล"
+      - "$I_1\\omega_1 = I_2\\omega_2$"
+    solution: "โมเมนตัมเชิงมุม $L = I\\omega$ คงตัว การม้วนตัวทำให้ $I$ ลดลง $\\omega$ จึงเพิ่มขึ้น นักกีฬาจึงตีลังกาได้หลายรอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p005
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ใบหินเจียของเครื่องเจียมีโมเมนต์ความเฉื่อย $0.020\\ \\mathrm{kg\\,m^2}$ มอเตอร์ให้โมเมนต์ของแรงลัพธ์ $0.50\\ \\mathrm{N\\,m}$ ความเร่งเชิงมุมเป็นกี่ $\\mathrm{rad/s^2}$"
+    answer: { value: 25, tolerance: 0.25, unit: rad/s^2 }
+    misconceptions:
+      - { match: 0.04, feedback: "กลับเศษส่วน $\\alpha = \\tau/I$" }
+      - { match: 0.01, feedback: "คูณ $\\tau$ กับ $I$ ต้องหาร" }
+    hints:
+      - "$\\sum\\tau = I\\alpha$"
+      - "$\\alpha = \\dfrac{\\tau}{I}$"
+    solution: "$\\alpha = \\dfrac{0.50}{0.020} = 25\\ \\mathrm{rad/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p006
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "พัดลมเพดานมีโมเมนต์ความเฉื่อยของใบพัดรวม $0.30\\ \\mathrm{kg\\,m^2}$ หมุน $300$ รอบต่อนาที มีพลังงานจลน์การหมุนกี่จูล (ตอบจำนวนเต็ม)"
+    answer: { value: 148, tolerance: 1.5, unit: J }
+    misconceptions:
+      - { match: 13500, feedback: "ใช้ 300 รอบต่อนาทีเป็น $\\omega$ โดยตรง ต้องแปลงเป็นเรเดียนต่อวินาที" }
+      - { match: 3.75, feedback: "แปลงเป็นรอบต่อวินาที (5) แต่ลืมคูณ $2\\pi$ ให้เป็นเรเดียนต่อวินาที" }
+    hints:
+      - "$\\omega = \\dfrac{2\\pi \\times 300}{60}\\ \\mathrm{rad/s}$"
+      - "$E_k = \\tfrac12 I\\omega^2$"
+    solution: "$\\omega = 10\\pi = 31.4\\ \\mathrm{rad/s}$ $E_k = \\tfrac12(0.30)(31.4)^2 \\approx 148\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p007
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ลูกบอลทรงกลมตันกลิ้งโดยไม่ไถลจากหยุดนิ่งลงพื้นเอียงสูง $1.4\\ \\mathrm{m}$ เมื่อถึงล่างมีอัตราเร็วกี่เมตรต่อวินาที ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.43, tolerance: 0.04, unit: m/s }
+    misconceptions:
+      - { match: 5.24, feedback: "ใช้ $v = \\sqrt{2gh}$ ซึ่งเป็นของวัตถุที่ไถลลงโดยไม่หมุน ลูกบอลที่กลิ้งต้องแบ่งพลังงานไปหมุนด้วย" }
+      - { match: 4.28, feedback: "ใช้ $I$ ของทรงกระบอก ($\\tfrac12 MR^2$) ทรงกลมตันมี $I = \\tfrac25 MR^2$" }
+    hints:
+      - "$Mgh = \\tfrac12 Mv^2 + \\tfrac12 I\\omega^2$ และ $\\omega = v/R$"
+      - "ทรงกลมตัน $c = \\tfrac25$ ได้ $v = \\sqrt{\\dfrac{2gh}{1.4}}$"
+    solution: "$gh = \\tfrac12 v^2(1 + 0.4)$ ได้ $v = \\sqrt{\\dfrac{2(9.8)(1.4)}{1.4}} = \\sqrt{19.6} \\approx 4.43\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p008
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 3
+    type: order
+    stem: "ปล่อยวัตถุสามชิ้นให้กลิ้งโดยไม่ไถลจากหยุดนิ่งที่ความสูงเดียวกันบนพื้นเอียงเดียวกัน เรียงลำดับการถึงปลายพื้นเอียงจากก่อนไปหลัง"
+    items:
+      - "ลูกบอลทรงกลมตัน"
+      - "ทรงกระบอกตัน"
+      - "ห่วงบาง"
+    hints:
+      - "$v = \\sqrt{\\dfrac{2gh}{1 + c}}$ เมื่อ $I = cMR^2$"
+      - "$c$ น้อย อัตราเร็วมาก"
+    solution: "ทรงกลมตัน ($c = 0.4$) เร็วที่สุด ทรงกระบอกตัน ($c = 0.5$) ถัดมา ห่วงบาง ($c = 1$) ช้าที่สุด ไม่ขึ้นกับมวลและรัศมี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p009
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ถังน้ำมวล $2.0\\ \\mathrm{kg}$ ห้อยจากเชือกที่พันรอบรอกบ่อน้ำ รอกเป็นจานกลมตันมวล $4.0\\ \\mathrm{kg}$ รัศมี $0.10\\ \\mathrm{m}$ หมุนคล่อง ดังภาพ ปล่อยถังให้ตกลงในบ่อ ถังมีความเร่งกี่ $\\mathrm{m/s^2}$ (เชือกไม่ไถลบนรอก $g = 9.8\\ \\mathrm{m/s^2}$)"
+    figure: { src: p-pulley.svg, alt: "รอกเป็นจานกลมตันมวล 4.0 kg รัศมี 0.10 m ยึดแกนไว้กับคานเหนือบ่อ เชือกพันรอบรอกแล้วห้อยลงด้านหนึ่ง ปลายเชือกผูกถังน้ำมวล 2.0 kg ที่ห้อยอยู่เหนือบ่อ" }
+    answer: { value: 4.9, tolerance: 0.05, unit: m/s^2 }
+    misconceptions:
+      - { match: 9.8, feedback: "ไม่ได้คิดรอก แรงตึงเชือกต้านถังไว้เพราะต้องหมุนรอกด้วย" }
+      - { match: 3.27, feedback: "ใช้ $I$ ของห่วง ($MR^2$) รอกจานกลมตันมี $I = \\tfrac12 MR^2$" }
+    hints:
+      - "ถัง: $mg - T = ma$ รอก: $TR = I\\alpha = \\tfrac12 MR^2 \\cdot \\dfrac{a}{R}$ จึงได้ $T = \\tfrac12 Ma$"
+      - "รวมกัน: $a = \\dfrac{mg}{m + M/2}$"
+    solution: "$T = \\tfrac12 Ma$ แทนใน $mg - T = ma$ ได้ $a = \\dfrac{mg}{m + M/2} = \\dfrac{(2.0)(9.8)}{2.0 + 2.0} = 4.9\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p010
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "นักเรียนนั่งบนเก้าอี้หมุนถือดัมเบลกางแขนออก โมเมนต์ความเฉื่อยรวม $4.0\\ \\mathrm{kg\\,m^2}$ หมุน $1.5$ รอบต่อวินาที เมื่อดึงดัมเบลเข้าชิดอก โมเมนต์ความเฉื่อยเหลือ $1.6\\ \\mathrm{kg\\,m^2}$ จะหมุนกี่รอบต่อวินาที (ไม่คิดแรงเสียดทาน)"
+    answer: { value: 3.75, tolerance: 0.04, unit: รอบต่อวินาที }
+    misconceptions:
+      - { match: 0.6, feedback: "กลับอัตราส่วน $I$ ลดลง $\\omega$ ต้องเพิ่มขึ้น" }
+    hints:
+      - "โมเมนตัมเชิงมุมคงตัว $I_1\\omega_1 = I_2\\omega_2$"
+      - "ใช้รอบต่อวินาทีทั้งสองข้างได้ เพราะเป็นอัตราส่วน"
+    solution: "$\\omega_2 = \\dfrac{4.0 \\times 1.5}{1.6} = 3.75$ รอบต่อวินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p011
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "จากโจทย์เก้าอี้หมุน ($I$ ลดจาก $4.0$ เป็น $1.6\\ \\mathrm{kg\\,m^2}$ โดยโมเมนตัมเชิงมุมคงตัว) พลังงานจลน์การหมุนหลังดึงแขนเข้าเป็นกี่เท่าของก่อนดึง"
+    answer: { value: 2.5, tolerance: 0.03 }
+    misconceptions:
+      - { match: 1, feedback: "โมเมนตัมเชิงมุมคงตัว แต่พลังงานจลน์ไม่คงตัว $E_k = L^2/2I$ เพิ่มขึ้นเมื่อ $I$ ลด" }
+      - { match: 0.4, feedback: "กลับอัตราส่วน $E_k = L^2/2I$ แปรผกผันกับ $I$" }
+    hints:
+      - "$E_k = \\tfrac12 I\\omega^2 = \\dfrac{L^2}{2I}$"
+      - "$L$ คงตัว อัตราส่วนพลังงาน $= I_1/I_2$"
+    solution: "$\\dfrac{E_2}{E_1} = \\dfrac{I_1}{I_2} = \\dfrac{4.0}{1.6} = 2.5$ เท่า พลังงานที่เพิ่มมาจากงานที่กล้ามแขนทำในการดึงดัมเบลเข้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p012
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ไม้พลองยาว $1.2\\ \\mathrm{m}$ มวล $0.50\\ \\mathrm{kg}$ (ถือเป็นแท่งบางสม่ำเสมอ) หมุนรอบแกนที่ปลายข้างหนึ่ง มีโมเมนต์ความเฉื่อยกี่ $\\mathrm{kg\\,m^2}$"
+    answer: { value: 0.24, tolerance: 0.003, unit: "kg m^2" }
+    misconceptions:
+      - { match: 0.06, feedback: "ใช้สูตรของแกนผ่านกึ่งกลาง $\\tfrac{1}{12}ML^2$ แกนผ่านปลายใช้ $\\tfrac13 ML^2$" }
+      - { match: 0.72, feedback: "ใช้ $ML^2$ เหมือนมวลทั้งหมดอยู่ที่ปลาย แต่มวลกระจายตลอดแท่ง" }
+    hints:
+      - "แท่งบางรอบแกนผ่านปลาย $I = \\tfrac13 ML^2$"
+      - "$\\tfrac13(0.50)(1.2)^2$"
+    solution: "$I = \\tfrac13(0.50)(1.44) = 0.24\\ \\mathrm{kg\\,m^2}$ มากกว่าหมุนรอบกึ่งกลาง ($0.06$) 4 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p013
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ล้อตุนกำลังโมเมนต์ความเฉื่อย $2.0\\ \\mathrm{kg\\,m^2}$ หมุนด้วย $30\\ \\mathrm{rad/s}$ ถูกเบรกจนหยุดในเวลา $10\\ \\mathrm{s}$ ด้วยความเร่งเชิงมุมคงตัว โมเมนต์ของแรงเบรกมีขนาดกี่นิวตันเมตร"
+    answer: { value: 6, tolerance: 0.06, unit: "N m" }
+    misconceptions:
+      - { match: 3, feedback: "นี่คือความเร่งเชิงมุม ต้องคูณด้วย $I$ อีก" }
+    hints:
+      - "$\\alpha = \\dfrac{\\Delta\\omega}{\\Delta t}$"
+      - "$\\tau = I\\alpha$"
+    solution: "$\\alpha = \\dfrac{0 - 30}{10} = -3.0\\ \\mathrm{rad/s^2}$ $|\\tau| = (2.0)(3.0) = 6.0\\ \\mathrm{N\\,m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p014
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "เครื่องของแอดวูดมีมวล $3.0\\ \\mathrm{kg}$ และ $2.0\\ \\mathrm{kg}$ ห้อยปลายเชือกที่คล้องรอกจานกลมตันมวล $2.0\\ \\mathrm{kg}$ เชือกไม่ไถล รอกหมุนคล่อง มวลมีความเร่งกี่ $\\mathrm{m/s^2}$ ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.63, tolerance: 0.02, unit: m/s^2 }
+    misconceptions:
+      - { match: 1.96, feedback: "ไม่ได้คิดมวลของรอก ต้องเพิ่ม $I/R^2 = M/2$ ในตัวส่วน" }
+      - { match: 1.4, feedback: "ใช้ $I = MR^2$ ของห่วง รอกจานกลมตันเพิ่ม $M/2$ ในตัวส่วน" }
+    hints:
+      - "เขียน $\\sum F = ma$ ของแต่ละมวล และ $(T_1 - T_2)R = I\\alpha$ ของรอก"
+      - "รวมได้ $a = \\dfrac{(m_1 - m_2)g}{m_1 + m_2 + M/2}$"
+    solution: "$a = \\dfrac{(3.0 - 2.0)(9.8)}{3.0 + 2.0 + 1.0} = \\dfrac{9.8}{6.0} \\approx 1.63\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p015
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "จานหมุนโมเมนต์ความเฉื่อย $0.020\\ \\mathrm{kg\\,m^2}$ หมุนด้วย $30\\ \\mathrm{rad/s}$ ทิ้งจานอีกใบที่โมเมนต์ความเฉื่อย $0.010\\ \\mathrm{kg\\,m^2}$ ซึ่งไม่หมุน ลงซ้อนบนแกนเดียวกันจนหมุนไปด้วยกัน อัตราเร็วเชิงมุมสุดท้ายเป็นกี่ $\\mathrm{rad/s}$"
+    answer: { value: 20, tolerance: 0.2, unit: rad/s }
+    misconceptions:
+      - { match: 60, feedback: "หารด้วย $I$ ของจานใบที่สองอย่างเดียว ต้องหารด้วยโมเมนต์ความเฉื่อยรวม" }
+      - { match: 24.5, feedback: "ใช้การอนุรักษ์พลังงานจลน์ แต่การชนที่ติดกันไปสูญเสียพลังงาน ต้องใช้การอนุรักษ์โมเมนตัมเชิงมุม" }
+    hints:
+      - "ไม่มีโมเมนต์ภายนอก $L$ คงตัว"
+      - "$I_1\\omega_1 = (I_1 + I_2)\\omega$"
+    solution: "$\\omega = \\dfrac{(0.020)(30)}{0.030} = 20\\ \\mathrm{rad/s}$ พลังงานจลน์ลดจาก $9.0\\ \\mathrm{J}$ เหลือ $6.0\\ \\mathrm{J}$ ส่วนที่หายไปเป็นความร้อนจากการเสียดสี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p016
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "โยโย่ทำจากทรงกระบอกตัน เชือกพันรอบทรงกระบอก ถือปลายเชือกนิ่งแล้วปล่อยให้โยโย่ตกลงพร้อมหมุนคลายเชือก ศูนย์กลางของโยโย่มีความเร่งกี่ $\\mathrm{m/s^2}$ ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.53, tolerance: 0.07, unit: m/s^2 }
+    misconceptions:
+      - { match: 9.8, feedback: "โยโย่ไม่ได้ตกอิสระ แรงตึงเชือกดึงขึ้นและทำให้หมุน" }
+      - { match: 4.9, feedback: "ใช้ $I = MR^2$ ของห่วง ทรงกระบอกตันมี $I = \\tfrac12 MR^2$ ได้ $a = \\tfrac23 g$" }
+    hints:
+      - "$Mg - T = Ma$ และ $TR = I\\alpha = \\tfrac12 MR^2(a/R)$"
+      - "$a = \\dfrac{g}{1 + I/(MR^2)}$"
+    solution: "$T = \\tfrac12 Ma$ ดังนั้น $Mg = \\tfrac32 Ma$ ได้ $a = \\tfrac23 g = 6.53\\ \\mathrm{m/s^2}$ ไม่ขึ้นกับมวลและรัศมี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p017
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 3
+    type: expression
+    stem: "ทรงกระบอกตัน ($I = \\tfrac12 MR^2$) กลิ้งโดยไม่ไถลจากหยุดนิ่งลงพื้นเอียงสูง $h$ จงเขียนอัตราเร็วที่ปลายพื้นเอียง $v$ ในรูปของ $g$ และ $h$"
+    prefix: "v ="
+    answer: { latex: "\\sqrt{\\frac{4gh}{3}}", variables: [g, h] }
+    misconceptions:
+      - { match: "\\sqrt{2gh}", feedback: "นี่คือวัตถุที่ไถลโดยไม่หมุน ต้องรวมพลังงานจลน์การหมุน $\\tfrac12 I\\omega^2$" }
+      - { match: "\\sqrt{gh}", feedback: "นี่คือคำตอบของห่วงบาง ($I = MR^2$)" }
+    hints:
+      - "$Mgh = \\tfrac12 Mv^2 + \\tfrac12\\left(\\tfrac12 MR^2\\right)\\left(\\dfrac{v}{R}\\right)^2$"
+      - "รวมได้ $gh = \\tfrac34 v^2$"
+    solution: "$Mgh = \\tfrac12 Mv^2 + \\tfrac14 Mv^2 = \\tfrac34 Mv^2$ → $v = \\sqrt{\\dfrac{4gh}{3}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.rotation.rotational-dynamics.p018
+    topics: [physics.rotation.rotational-dynamics]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ปริมาณในการเคลื่อนที่แนวตรงกับปริมาณที่ทำหน้าที่เดียวกันในการหมุน"
+    pairs:
+      - { left: "มวล $m$", right: "โมเมนต์ความเฉื่อย $I$" }
+      - { left: "แรง $F$", right: "โมเมนต์ของแรง $\\tau$" }
+      - { left: "โมเมนตัม $mv$", right: "โมเมนตัมเชิงมุม $I\\omega$" }
+      - { left: "พลังงานจลน์ $\\tfrac12 mv^2$", right: "พลังงานจลน์การหมุน $\\tfrac12 I\\omega^2$" }
+    hints:
+      - "ในการหมุน แทน $v$ ด้วย $\\omega$"
+      - "อะไรต้านการเปลี่ยนการหมุน"
+    solution: "$m \\leftrightarrow I$, $F \\leftrightarrow \\tau$, $mv \\leftrightarrow I\\omega$, $\\tfrac12 mv^2 \\leftrightarrow \\tfrac12 I\\omega^2$ ดังนั้น $F = ma$ จึงคู่กับ $\\tau = I\\alpha$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,75 @@
+id: physics.fluids.fluid-dynamics
+subject: physics
+title: { th: พลศาสตร์ของไหล, en: Fluid dynamics }
+summary: อัตราการไหล ที่มาของสมการแบร์นูลลี ทฤษฎีบทของทอร์ริเชลลี มาตรเวนจูรี ท่อพิโท กำลังของปั๊ม ความหนืด กฎของปัวเซย์ และการไหลแบบราบเรียบกับแบบปั่นป่วน
+difficulty: 7
+minutes: 40
+prerequisites: [physics.matter.pressure-fluids, physics.energy.conservation, physics.matter.fluids-advanced]
+encompasses:
+  - { id: physics.matter.fluids-advanced, weight: 0.5 }
+  - { id: physics.energy.conservation, weight: 0.3 }
+  - { id: physics.matter.pressure-fluids, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: สมการแบร์นูลลีในท่อที่ขึ้นที่สูง
+    src: bernoulli-pipe.svg
+    alt: "ท่อที่จุด 1 อยู่ต่ำ พื้นที่หน้าตัด A₁ กว้าง น้ำไหลไปทางขวา ขึ้นเนินไปยังจุด 2 ที่สูงกว่าและท่อแคบกว่า A₂ ความสูง h₁ และ h₂ วัดจากระดับอ้างอิงเดียวกัน ด้านบนเขียนสมการ P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂"
+  - type: worked-example
+    title: มาตรเวนจูรีวัดอัตราการไหล
+    problem: "มาตรเวนจูรีในท่อน้ำมีหน้าตัดส่วนกว้าง $8.0\\ \\mathrm{cm^2}$ ส่วนตีบ $2.0\\ \\mathrm{cm^2}$ เกจวัดผลต่างความดันระหว่างสองส่วนได้ $6.0\\ \\mathrm{kPa}$ จงหาอัตราเร็วของน้ำในส่วนกว้างและอัตราการไหล (น้ำ $1000\\ \\mathrm{kg/m^3}$)"
+    steps:
+      - text: "ความต่อเนื่อง: $v_2 = v_1\\dfrac{A_1}{A_2} = 4v_1$"
+      - text: "แบร์นูลลีแนวราบ: $P_1 - P_2 = \\tfrac12\\rho(v_2^2 - v_1^2) = \\tfrac12\\rho v_1^2(16 - 1)$"
+        why: "แทน $v_2$ ด้วย $4v_1$ เพื่อให้เหลือตัวแปรที่ไม่รู้ค่าตัวเดียว"
+      - text: "$6000 = \\tfrac12(1000)(15)v_1^2$ ได้ $v_1 = \\sqrt{0.80} = 0.894\\ \\mathrm{m/s}$"
+      - text: "$Q = A_1v_1 = (8.0 \\times 10^{-4})(0.894) = 7.2 \\times 10^{-4}\\ \\mathrm{m^3/s}$"
+    answer: "$v_1 \\approx 0.89\\ \\mathrm{m/s}$ และ $Q \\approx 0.72\\ \\mathrm{L/s}$"
+  - { type: check, problem: physics.fluids.fluid-dynamics.p005, prompt: "ขึ้นที่สูง ความดันต้องลดลง" }
+  - type: figure
+    title: น้ำพุ่งจากรูข้างถัง
+    src: torricelli.svg
+    alt: "ถังน้ำสูง 1.00 m วางบนพื้น มีรูที่ความลึก 0.25 m, 0.50 m และ 0.75 m ใต้ผิวน้ำ ลำน้ำจากแต่ละรูเป็นเส้นโค้งพาราโบลา รูบน (0.25 m) พุ่งเร็วน้อยแต่ตกนาน รูล่าง (0.75 m) พุ่งเร็วแต่ตกเร็ว ทั้งสองตกห่างถัง 0.87 m เท่ากัน รูกลาง (0.50 m) พุ่งไกลที่สุด 1.00 m"
+  - type: worked-example
+    title: รูข้างถังกับระยะที่น้ำพุ่ง
+    problem: "ถังน้ำสูง $1.00\\ \\mathrm{m}$ วางบนพื้น เจาะรูที่ความลึก $0.25\\ \\mathrm{m}$ ใต้ผิวน้ำ น้ำพุ่งออกด้วยอัตราเร็วเท่าใด และตกห่างถังเท่าใด ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    steps:
+      - text: "ทอร์ริเชลลี: $v = \\sqrt{2gh} = \\sqrt{2(9.8)(0.25)} = 2.21\\ \\mathrm{m/s}$"
+        why: "$h$ คือความลึกจากผิวน้ำถึงรู ไม่ใช่ความสูงของรูจากพื้น"
+      - text: "รูสูงจากพื้น $y = 1.00 - 0.25 = 0.75\\ \\mathrm{m}$ เวลาตก $t = \\sqrt{2y/g} = \\sqrt{2(0.75)/9.8} = 0.391\\ \\mathrm{s}$"
+      - text: "ระยะ $x = vt = 2.21 \\times 0.391 = 0.87\\ \\mathrm{m}$ (หรือ $x = 2\\sqrt{hy} = 2\\sqrt{0.25 \\times 0.75}$)"
+        why: "สูตร $2\\sqrt{hy}$ สมมาตร รูที่ลึก 0.75 m (สูงจากพื้น 0.25 m) จึงพุ่งไกลเท่ากัน"
+    answer: "น้ำพุ่ง $2.21\\ \\mathrm{m/s}$ ตกห่างถังราว $0.87\\ \\mathrm{m}$"
+  - type: interactive
+    title: รูที่ความลึกเท่าใดน้ำพุ่งไกลที่สุด
+    caption: "กราฟคือระยะที่น้ำตกห่างถัง $2\\sqrt{x(H - x)}$ (เมตร) เมื่อ $x$ คือความลึกของรูใต้ผิวน้ำ และ $H$ คือระดับน้ำเหนือพื้น ลองเปลี่ยน $H$ แล้วดูว่าจุดสูงสุดอยู่ที่ความลึกเท่าใดเสมอ"
+    widget:
+      kind: function-plot
+      functions: ["2\\sqrt{x\\cdot(H-x)}"]
+      sliders:
+        - { name: H, min: 0.5, max: 3, step: 0.1, value: 1, label: ระดับน้ำเหนือพื้น (m) }
+      x: [0, 3]
+      y: [0, 3.2]
+  - { type: check, problem: physics.fluids.fluid-dynamics.p009, prompt: "อัตราการไหลแบบหนืดแปรผันตาม r กำลังสี่" }
+glossary:
+  - { term: อัตราการไหล, definition: "ปริมาตรของไหลที่ผ่านหน้าตัดหนึ่งต่อหน่วยเวลา เท่ากับพื้นที่หน้าตัดคูณอัตราเร็ว" }
+  - { term: มาตรเวนจูรี, definition: "ท่อที่มีช่วงตีบสำหรับวัดอัตราการไหล โดยวัดผลต่างความดันระหว่างส่วนกว้างกับส่วนตีบ" }
+  - { term: ท่อพิโท, definition: "อุปกรณ์วัดอัตราเร็วของของไหลหรือของเครื่องบินจากผลต่างความดันระหว่างรูที่หันรับลมกับรูด้านข้าง" }
+  - { term: เลขเรย์โนลด์ส, definition: "ตัวเลขไม่มีหน่วย ρvD/η ใช้บอกว่าการไหลน่าจะเป็นแบบราบเรียบหรือแบบปั่นป่วน" }
+  - { term: กฎของปัวเซย์, definition: "อัตราการไหลแบบราบเรียบของของไหลหนืดในท่อแปรผันตามรัศมีกำลังสี่และผลต่างความดัน" }
+flashcards:
+  - { front: "อัตราการไหล", back: "$Q = Av$ (หน่วย $\\mathrm{m^3/s}$)" }
+  - { front: "ทฤษฎีบทของทอร์ริเชลลี", back: "$v = \\sqrt{2gh}$ เมื่อ $h$ คือความลึกจากผิวน้ำถึงรู" }
+  - { front: "มาตรเวนจูรี", back: "$P_1 - P_2 = \\tfrac12\\rho v_1^2\\left[(A_1/A_2)^2 - 1\\right]$" }
+  - { front: "กำลังของปั๊มที่ยกน้ำสูง h", back: "$P = \\rho ghQ$ (ไม่คิดการสูญเสีย)" }
+  - { front: "กฎของปัวเซย์และเลขเรย์โนลด์ส", back: "$Q = \\dfrac{\\pi r^4\\Delta P}{8\\eta l}$ · $N_R = \\dfrac{\\rho vD}{\\eta}$" }
+references:
+  - { title: "Bernoulli's principle", url: "https://en.wikipedia.org/wiki/Bernoulli%27s_principle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Torricelli's law", url: "https://en.wikipedia.org/wiki/Torricelli%27s_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "14.6 Bernoulli's Equation (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/14-6-bernoullis-equation", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "14.7 Viscosity and Turbulence (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/14-7-viscosity-and-turbulence", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

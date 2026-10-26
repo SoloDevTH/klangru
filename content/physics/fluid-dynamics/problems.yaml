@@ -1,0 +1,285 @@
+problems:
+  - id: physics.fluids.fluid-dynamics.p001
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 1
+    type: numeric
+    stem: "เปิดก๊อกน้ำรองน้ำใส่ถัง $10\\ \\mathrm{L}$ เต็มในเวลา $40\\ \\mathrm{s}$ อัตราการไหลของน้ำเป็นกี่ลิตรต่อวินาที"
+    answer: { value: 0.25, tolerance: 0.003, unit: L/s }
+    misconceptions:
+      - { match: 4, feedback: "กลับเศษส่วน อัตราการไหลคือปริมาตรหารด้วยเวลา" }
+    hints:
+      - "$Q = \\dfrac{V}{t}$"
+      - "$\\dfrac{10\\ \\mathrm{L}}{40\\ \\mathrm{s}}$"
+    solution: "$Q = \\dfrac{10}{40} = 0.25\\ \\mathrm{L/s} = 2.5 \\times 10^{-4}\\ \\mathrm{m^3/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p002
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "น้ำไหล $0.25\\ \\mathrm{L/s}$ ในท่อประปาขนาดครึ่งนิ้ว (เส้นผ่านศูนย์กลางภายใน $1.27\\ \\mathrm{cm}$) น้ำในท่อไหลด้วยอัตราเร็วกี่เมตรต่อวินาที (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.97, tolerance: 0.02, unit: m/s }
+    misconceptions:
+      - { match: 0.49, feedback: "ใช้เส้นผ่านศูนย์กลางเป็นรัศมี พื้นที่หน้าตัดคือ $\\pi r^2$ เมื่อ $r = 0.635\\ \\mathrm{cm}$" }
+      - { match: 1.55, feedback: "ใช้พื้นที่ $d^2$ โดยไม่มี $\\pi$ หน้าตัดกลมมีพื้นที่ $\\pi d^2/4$" }
+    hints:
+      - "$v = \\dfrac{Q}{A}$ เมื่อ $A = \\pi r^2$"
+      - "$Q = 2.5 \\times 10^{-4}\\ \\mathrm{m^3/s}$, $r = 6.35 \\times 10^{-3}\\ \\mathrm{m}$"
+    solution: "$A = \\pi(6.35 \\times 10^{-3})^2 = 1.27 \\times 10^{-4}\\ \\mathrm{m^2}$ $v = \\dfrac{2.5 \\times 10^{-4}}{1.27 \\times 10^{-4}} \\approx 1.97\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p003
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 2
+    type: mcq
+    stem: "น้ำไหลในท่อด้วยเลขเรย์โนลด์ส $N_R = 500$ การไหลน่าจะเป็นแบบใด"
+    choices:
+      - { id: a, text: "แบบราบเรียบ ชั้นของน้ำเลื่อนขนานกันเป็นระเบียบ", correct: true }
+      - { id: b, text: "แบบปั่นป่วน หมุนวนไม่เป็นระเบียบ", feedback: "การไหลในท่อกลมมักปั่นป่วนเมื่อ $N_R$ มากกว่าราว 3000 ค่า 500 น้อยกว่ามาก" }
+      - { id: c, text: "บอกไม่ได้ ต้องรู้ความดันด้วย", feedback: "เลขเรย์โนลด์สรวมอัตราเร็ว ขนาดท่อ ความหนาแน่น และความหนืดไว้แล้ว ใช้ตัดสินได้เลย" }
+    hints:
+      - "$N_R$ น้อย แรงหนืดมีผลมากเมื่อเทียบกับความเฉื่อย"
+      - "ค่าวิกฤตในท่อกลมราว 2000"
+    solution: "$N_R = 500$ น้อยกว่าราว 2000 การไหลจึงเป็นแบบราบเรียบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p004
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "โอ่งน้ำใบใหญ่มีรูรั่วเล็ก ๆ อยู่ต่ำกว่าผิวน้ำ $1.8\\ \\mathrm{m}$ น้ำพุ่งออกจากรูด้วยอัตราเร็วกี่เมตรต่อวินาที ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.94, tolerance: 0.06, unit: m/s }
+    misconceptions:
+      - { match: 35.28, feedback: "ลืมถอดรากที่สอง $v^2 = 2gh$" }
+      - { match: 4.2, feedback: "ลืมเลข 2 ในสูตร $v = \\sqrt{2gh}$" }
+    hints:
+      - "ทฤษฎีบทของทอร์ริเชลลี"
+      - "$v = \\sqrt{2gh}$ เมื่อ $h$ วัดจากผิวน้ำถึงรู"
+    solution: "$v = \\sqrt{2(9.8)(1.8)} = \\sqrt{35.28} \\approx 5.94\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p005
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ท่อประปาที่ชั้นล่างของอาคารมีความดัน $300\\ \\mathrm{kPa}$ ท่อขนาดเดิมต่อขึ้นไปถึงชั้นที่สูงกว่า $6.0\\ \\mathrm{m}$ ขณะน้ำไหลด้วยอัตราเร็วเท่าเดิม ความดันที่ชั้นบนเป็นกี่กิโลพาสคัล (น้ำ $1000\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 241.2, tolerance: 1, unit: kPa }
+    misconceptions:
+      - { match: 358.8, feedback: "บวกแทนลบ ขึ้นที่สูง ความดันต้องลดลง" }
+      - { match: 300, feedback: "ท่อขนาดเดิมความเร็วเท่าเดิมจริง แต่ความสูงเปลี่ยน เทอม $\\rho gh$ จึงทำให้ความดันลดลง" }
+    hints:
+      - "ท่อขนาดเท่าเดิม $v_1 = v_2$ เทอมพลังงานจลน์ตัดกัน"
+      - "$P_2 = P_1 - \\rho g(h_2 - h_1)$"
+    solution: "$P_2 = 300{,}000 - (1000)(9.8)(6.0) = 241{,}200\\ \\mathrm{Pa} \\approx 241.2\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p006
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "มาตรเวนจูรีมีหน้าตัดส่วนกว้าง $20\\ \\mathrm{cm^2}$ ส่วนตีบ $5.0\\ \\mathrm{cm^2}$ น้ำในหลอดวัดความดันสองหลอดสูงต่างกัน $15\\ \\mathrm{cm}$ ดังภาพ อัตราการไหลของน้ำเป็นกี่ลิตรต่อวินาที ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-venturi.svg, alt: "ท่อแนวราบมีส่วนกว้างทางซ้ายพื้นที่ 20 cm² ตีบเป็นส่วนแคบพื้นที่ 5.0 cm² หลอดแนวตั้งต่อจากส่วนกว้างและส่วนแคบ ระดับน้ำในหลอดของส่วนกว้างสูงกว่าหลอดของส่วนแคบ 15 cm" }
+    answer: { value: 0.89, tolerance: 0.01, unit: L/s }
+    misconceptions:
+      - { match: 3.43, feedback: "ใช้ $v = \\sqrt{2gh}$ กับส่วนกว้างโดยตรง ต้องใช้สูตรมาตรเวนจูรีที่มี $(A_1/A_2)^2 - 1$" }
+      - { match: 0.857, feedback: "ลืม $-1$ ในตัวส่วน $(A_1/A_2)^2 - 1 = 15$ ไม่ใช่ 16" }
+    hints:
+      - "$P_1 - P_2 = \\rho gh$ และ $v_1 = \\sqrt{\\dfrac{2(P_1 - P_2)}{\\rho[(A_1/A_2)^2 - 1]}} = \\sqrt{\\dfrac{2gh}{(A_1/A_2)^2 - 1}}$"
+      - "$Q = A_1v_1$ แปลงพื้นที่เป็นตารางเมตร"
+    solution: "$(A_1/A_2)^2 - 1 = 16 - 1 = 15$ $v_1 = \\sqrt{\\dfrac{2(9.8)(0.15)}{15}} = 0.443\\ \\mathrm{m/s}$ $Q = (20 \\times 10^{-4})(0.443) = 8.85 \\times 10^{-4}\\ \\mathrm{m^3/s} \\approx 0.89\\ \\mathrm{L/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p007
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ถังน้ำบนขาตั้งมีรูเล็ก ๆ ที่ข้างถัง รูอยู่ต่ำกว่าผิวน้ำ $0.80\\ \\mathrm{m}$ และสูงจากพื้น $1.25\\ \\mathrm{m}$ น้ำที่พุ่งออกตกถึงพื้นห่างจากข้างถังกี่เมตร ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 2, tolerance: 0.02, unit: m }
+    misconceptions:
+      - { match: 3.2, feedback: "ใช้ความสูงจากพื้นถึงผิวน้ำ ($2.05\\ \\mathrm{m}$) หาความเร็วที่รู ความเร็วที่รูขึ้นกับความลึกจากผิวน้ำถึงรูเท่านั้น" }
+    hints:
+      - "ความเร็วที่รู $v = \\sqrt{2gh}$ เมื่อ $h = 0.80\\ \\mathrm{m}$"
+      - "น้ำเคลื่อนที่แบบโพรเจกไทล์แนวราบ เวลาตก $t = \\sqrt{2y/g}$ เมื่อ $y = 1.25\\ \\mathrm{m}$"
+    solution: "$v = \\sqrt{2(9.8)(0.80)} = 3.96\\ \\mathrm{m/s}$ $t = \\sqrt{\\dfrac{2(1.25)}{9.8}} = 0.505\\ \\mathrm{s}$ $x = vt = 2.0\\ \\mathrm{m}$ (ตรงกับ $x = 2\\sqrt{hy} = 2\\sqrt{0.80 \\times 1.25}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p008
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ท่อพิโทของเครื่องบินเล็กวัดผลต่างความดันได้ $1250\\ \\mathrm{Pa}$ ความหนาแน่นของอากาศ $1.2\\ \\mathrm{kg/m^3}$ เครื่องบินมีอัตราเร็วเทียบกับอากาศกี่เมตรต่อวินาที (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 45.6, tolerance: 0.5, unit: m/s }
+    misconceptions:
+      - { match: 32.3, feedback: "ลืมเลข 2 จาก $\\Delta P = \\tfrac12\\rho v^2$" }
+    hints:
+      - "$\\Delta P = \\tfrac12\\rho v^2$"
+      - "$v = \\sqrt{2\\Delta P/\\rho}$"
+    solution: "$v = \\sqrt{\\dfrac{2(1250)}{1.2}} = \\sqrt{2083} \\approx 45.6\\ \\mathrm{m/s}$ (ราว $164\\ \\mathrm{km/h}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p009
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "หลอดเลือดแดงเส้นหนึ่งตีบจนรัศมีลดลงเหลือร้อยละ 80 ของเดิม ถ้าผลต่างความดันและความยาวเท่าเดิม และเลือดไหลแบบราบเรียบตามกฎของปัวเซย์ อัตราการไหลของเลือดเหลือร้อยละเท่าใดของเดิม (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 41, tolerance: 0.4, unit: "%" }
+    misconceptions:
+      - { match: 64, feedback: "ใช้ $r^2$ (พื้นที่) แต่การไหลแบบหนืดตามกฎของปัวเซย์แปรผันตาม $r^4$" }
+      - { match: 80, feedback: "คิดว่าแปรผันตรงกับรัศมี ตามกฎของปัวเซย์ $Q \\propto r^4$" }
+    hints:
+      - "$Q = \\dfrac{\\pi r^4\\Delta P}{8\\eta l}$"
+      - "$Q_2/Q_1 = (0.80)^4$"
+    solution: "$\\dfrac{Q_2}{Q_1} = 0.80^4 = 0.4096$ เหลือราว $41.0\\%$ หัวใจต้องเพิ่มความดันมากเพื่อให้เลือดไหลเท่าเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p010
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำ (ความหนาแน่น $1000\\ \\mathrm{kg/m^3}$ ความหนืด $1.0 \\times 10^{-3}\\ \\mathrm{Pa\\,s}$) ไหลในท่อเส้นผ่านศูนย์กลาง $2.0\\ \\mathrm{cm}$ ด้วยอัตราเร็ว $0.50\\ \\mathrm{m/s}$ เลขเรย์โนลด์สเป็นเท่าใด"
+    answer: { value: 10000, tolerance: 100 }
+    misconceptions:
+      - { match: 5000, feedback: "ใช้รัศมี สูตร $N_R = \\rho vD/\\eta$ ใช้เส้นผ่านศูนย์กลาง" }
+    hints:
+      - "$N_R = \\dfrac{\\rho vD}{\\eta}$"
+      - "$D = 0.020\\ \\mathrm{m}$"
+    solution: "$N_R = \\dfrac{(1000)(0.50)(0.020)}{1.0 \\times 10^{-3}} = 10{,}000$ มากกว่า 3000 การไหลจึงปั่นป่วน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p011
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ปั๊มน้ำของหอพักสูบน้ำขึ้นแท็งก์บนดาดฟ้าสูง $20\\ \\mathrm{m}$ ด้วยอัตรา $2.0\\ \\mathrm{L/s}$ ถ้าไม่คิดพลังงานจลน์และการสูญเสีย ปั๊มต้องให้กำลังอย่างน้อยกี่วัตต์ ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 392, tolerance: 4, unit: W }
+    misconceptions:
+      - { match: 392000, feedback: "ใช้อัตราการไหลเป็นลิตรต่อวินาที ต้องแปลงเป็น $2.0 \\times 10^{-3}\\ \\mathrm{m^3/s}$" }
+    hints:
+      - "กำลัง $= \\rho ghQ$"
+      - "$Q = 2.0 \\times 10^{-3}\\ \\mathrm{m^3/s}$"
+    solution: "$P = (1000)(9.8)(20)(2.0 \\times 10^{-3}) = 392\\ \\mathrm{W}$ ปั๊มจริงต้องใช้มากกว่านี้เพราะมีการสูญเสียในท่อและในมอเตอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p012
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "ท่อน้ำที่พื้นดินรัศมี $2.0\\ \\mathrm{cm}$ น้ำไหล $1.5\\ \\mathrm{m/s}$ ความดัน $2.5 \\times 10^{5}\\ \\mathrm{Pa}$ ต่อขึ้นไปถึงชั้นสามซึ่งสูงกว่า $8.0\\ \\mathrm{m}$ ท่อที่ชั้นสามรัศมี $1.0\\ \\mathrm{cm}$ ความดันในท่อที่ชั้นสามเป็นกี่กิโลพาสคัล (น้ำ $1000\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 154.7, tolerance: 1.5, unit: kPa }
+    misconceptions:
+      - { match: 171.6, feedback: "ลืมเทอมพลังงานจลน์ ท่อเล็กลง น้ำไหลเร็วขึ้น ความดันลดลงอีก" }
+      - { match: 168.2, feedback: "ใช้อัตราส่วนรัศมีแทนอัตราส่วนพื้นที่ ความเร็วในท่อชั้นสามต้องเป็น $1.5 \\times 4 = 6.0\\ \\mathrm{m/s}$" }
+    hints:
+      - "หา $v_2$ จากความต่อเนื่อง $v_2 = v_1(r_1/r_2)^2$"
+      - "$P_2 = P_1 + \\tfrac12\\rho(v_1^2 - v_2^2) - \\rho g(h_2 - h_1)$"
+    solution: "$v_2 = 1.5 \\times 4 = 6.0\\ \\mathrm{m/s}$ $P_2 = 250{,}000 + \\tfrac12(1000)(2.25 - 36) - (1000)(9.8)(8.0) = 250{,}000 - 16{,}875 - 78{,}400 = 154{,}725\\ \\mathrm{Pa} \\approx 154.7\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p013
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "ลูกเหล็กรัศมี $1.0\\ \\mathrm{mm}$ (ความหนาแน่น $7800\\ \\mathrm{kg/m^3}$) ตกในกลีเซอรีน (ความหนาแน่น $1260\\ \\mathrm{kg/m^3}$ ความหนืด $1.4\\ \\mathrm{Pa\\,s}$) ความเร็วปลายเป็นกี่เซนติเมตรต่อวินาที ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.02, tolerance: 0.015, unit: cm/s }
+    misconceptions:
+      - { match: 1.21, feedback: "ลืมแรงพยุง ต้องใช้ผลต่างความหนาแน่น $\\rho_s - \\rho_f$" }
+    hints:
+      - "ที่ความเร็วปลาย น้ำหนัก = แรงพยุง + แรงหนืด $6\\pi\\eta rv$"
+      - "$v_t = \\dfrac{2r^2(\\rho_s - \\rho_f)g}{9\\eta}$"
+    solution: "$v_t = \\dfrac{2(1.0 \\times 10^{-3})^2(7800 - 1260)(9.8)}{9(1.4)} = 0.0102\\ \\mathrm{m/s} = 1.02\\ \\mathrm{cm/s}$ ตรวจ: $N_R = \\dfrac{(1260)(0.0102)(0.002)}{1.4} \\approx 0.02$ น้อยมาก กฎของสโตกส์จึงใช้ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p014
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้สายยางเส้นผ่านศูนย์กลางภายใน $1.0\\ \\mathrm{cm}$ ดูดน้ำออกจากตู้ปลา (กาลักน้ำ) ปลายสายที่น้ำไหลออกอยู่ต่ำกว่าผิวน้ำในตู้ $0.60\\ \\mathrm{m}$ ถ้าประมาณว่าระดับน้ำในตู้แทบไม่ลดและไม่คิดความหนืด ต้องใช้เวลากี่วินาทีจึงจะได้น้ำ $20\\ \\mathrm{L}$ ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 74.3, tolerance: 0.8, unit: s }
+    misconceptions:
+      - { match: 18.6, feedback: "ใช้เส้นผ่านศูนย์กลางเป็นรัศมี รัศมีของสายคือ $0.50\\ \\mathrm{cm}$" }
+    hints:
+      - "อัตราเร็วที่ปลายสาย $v = \\sqrt{2gh}$ เมื่อ $h$ คือระยะจากผิวน้ำถึงปลายสาย"
+      - "$Q = \\pi r^2 v$ แล้ว $t = V/Q$"
+    solution: "$v = \\sqrt{2(9.8)(0.60)} = 3.43\\ \\mathrm{m/s}$ $Q = \\pi(0.005)^2(3.43) = 2.69 \\times 10^{-4}\\ \\mathrm{m^3/s}$ $t = \\dfrac{0.020}{2.69 \\times 10^{-4}} \\approx 74.3\\ \\mathrm{s}$ (จริงนานกว่านี้เพราะความหนืดและระดับน้ำที่ลดลง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p015
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 3
+    type: expression
+    stem: "ท่อเส้นผ่านศูนย์กลาง $a$ มีน้ำไหลด้วยอัตราเร็ว $v$ ต่อกับท่อเส้นผ่านศูนย์กลาง $b$ จงเขียนอัตราเร็วในท่อที่สอง $v_2$ ในรูปของ $v$, $a$ และ $b$"
+    prefix: "v_2 ="
+    answer: { latex: "\\frac{v a^2}{b^2}", variables: [v, a, b] }
+    misconceptions:
+      - { match: "\\frac{v a}{b}", feedback: "ใช้อัตราส่วนเส้นผ่านศูนย์กลาง ความต่อเนื่องใช้พื้นที่ซึ่งแปรผันตามกำลังสองของเส้นผ่านศูนย์กลาง" }
+      - { match: "\\frac{v b^2}{a^2}", feedback: "กลับอัตราส่วน ท่อเล็กลงน้ำต้องไหลเร็วขึ้น" }
+    hints:
+      - "$A_1v_1 = A_2v_2$ และ $A = \\pi d^2/4$"
+      - "$\\pi/4$ ตัดกันได้"
+    solution: "$\\dfrac{\\pi a^2}{4}v = \\dfrac{\\pi b^2}{4}v_2$ → $v_2 = \\dfrac{va^2}{b^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p016
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 3
+    type: mcq
+    stem: "เมื่อเอานิ้วบีบปลายสายยาง น้ำพุ่งไกลขึ้น ข้อใดอธิบายถูกต้อง"
+    choices:
+      - { id: a, text: "ปริมาตรน้ำต่อวินาทีต้องผ่านรูที่เล็กลง น้ำจึงต้องพุ่งเร็วขึ้น", correct: true }
+      - { id: b, text: "ความดันของน้ำที่พุ่งออกจากรูสูงขึ้นมาก", feedback: "น้ำที่พุ่งออกสู่อากาศแล้วมีความดันเท่ากับบรรยากาศ ที่เร็วขึ้นเพราะพื้นที่เล็กลง" }
+      - { id: c, text: "นิ้วออกแรงดันน้ำเพิ่มพลังงานให้น้ำ", feedback: "นิ้วอยู่นิ่ง ไม่ได้ทำงานให้น้ำ ความเร็วเพิ่มเพราะความต่อเนื่อง (และพลังงานมาจากแรงดันในท่อ)" }
+    hints:
+      - "สมการความต่อเนื่อง $A_1v_1 = A_2v_2$"
+      - "ความดันของลำน้ำในอากาศเท่ากับเท่าใด"
+    solution: "ตามความต่อเนื่อง เมื่อพื้นที่ทางออกเล็กลง น้ำต้องไหลเร็วขึ้น ความดันในสายยางก่อนถึงรูสูงกว่าบรรยากาศ แล้วเปลี่ยนเป็นพลังงานจลน์ที่ทางออก (ถ้าบีบมาก อัตราการไหลก็ลดลงบ้าง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p017
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อุปกรณ์หรือกฎกับสิ่งที่ใช้คำนวณ"
+    pairs:
+      - { left: "มาตรเวนจูรี", right: "อัตราการไหลในท่อจากผลต่างความดันที่ส่วนตีบ" }
+      - { left: "ท่อพิโท", right: "อัตราเร็วของเครื่องบินเทียบกับอากาศ" }
+      - { left: "ทฤษฎีบทของทอร์ริเชลลี", right: "อัตราเร็วของน้ำที่พุ่งออกจากรูข้างถัง" }
+      - { left: "กฎของปัวเซย์", right: "อัตราการไหลของของไหลหนืดในท่อเล็ก" }
+    hints:
+      - "อุปกรณ์ใดติดอยู่กับเครื่องบิน"
+      - "กฎใดมีความหนืดอยู่ในสูตร"
+    solution: "เวนจูรีวัดอัตราการไหลในท่อ พิโทวัดอัตราเร็วอากาศ ทอร์ริเชลลีให้ $v = \\sqrt{2gh}$ และปัวเซย์ให้อัตราการไหลแบบหนืด $Q \\propto r^4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.fluids.fluid-dynamics.p018
+    topics: [physics.fluids.fluid-dynamics]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใด **ไม่ใช่** เงื่อนไขที่สมการแบร์นูลลีในรูปพื้นฐานต้องการ"
+    choices:
+      - { id: a, text: "ท่อต้องอยู่ในแนวราบ", correct: true }
+      - { id: b, text: "ของไหลไม่มีความหนืด", feedback: "เป็นเงื่อนไขจริง สมการแบร์นูลลีไม่คิดพลังงานที่สูญเสียไปกับความหนืด" }
+      - { id: c, text: "ของไหลอัดตัวไม่ได้", feedback: "เป็นเงื่อนไขจริง ความหนาแน่น $\\rho$ ต้องคงตัว" }
+      - { id: d, text: "การไหลคงตัว", feedback: "เป็นเงื่อนไขจริง ความเร็ว ณ จุดหนึ่งต้องไม่เปลี่ยนตามเวลา" }
+    hints:
+      - "สมการแบร์นูลลีมีเทอม $\\rho gh$ หรือไม่"
+      - "ถ้ามีเทอมความสูง ท่อจำเป็นต้องราบหรือไม่"
+    solution: "สมการแบร์นูลลีมีเทอม $\\rho gh$ จึงใช้กับท่อที่ขึ้นลงได้ เงื่อนไขคือของไหลอุดมคติ: อัดตัวไม่ได้ ไม่หนืด ไหลคงตัว ตามแนวการไหลเดียวกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

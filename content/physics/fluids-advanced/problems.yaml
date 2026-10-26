@@ -1,0 +1,283 @@
+problems:
+  - id: physics.matter.fluids-advanced.p001
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 1
+    type: mcq
+    stem: "เครื่องมือใดใช้วัดความดันบรรยากาศ"
+    choices:
+      - { id: a, text: "บารอมิเตอร์", correct: true }
+      - { id: b, text: "แมนอมิเตอร์แบบปลายเปิด", feedback: "แมนอมิเตอร์ปลายเปิดวัดความดันของแก๊สเทียบกับบรรยากาศ คือวัดความดันเกจ" }
+      - { id: c, text: "ไฮโดรมิเตอร์", feedback: "ไฮโดรมิเตอร์วัดความหนาแน่นของของเหลว" }
+    hints:
+      - "บาโร (baro) หมายถึงความดันอากาศ"
+      - "เครื่องมือนี้ใช้ลำปรอทที่ด้านบนเป็นสุญญากาศ"
+    solution: "บารอมิเตอร์วัดความดันบรรยากาศ เช่น บารอมิเตอร์ปรอทที่ลำปรอทสูงราว $760\\ \\mathrm{mm}$ ที่ระดับน้ำทะเล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p002
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 2
+    type: numeric
+    stem: "เกจวัดลมยางที่ปั๊มน้ำมันอ่านความดันลมยางรถเก๋งได้ $220\\ \\mathrm{kPa}$ ความดันสัมบูรณ์ในยางเป็นกี่กิโลพาสคัล (ความดันบรรยากาศ $101.3\\ \\mathrm{kPa}$)"
+    answer: { value: 321.3, tolerance: 1, unit: kPa }
+    misconceptions:
+      - { match: 118.7, feedback: "ลบความดันบรรยากาศ แต่เกจอ่านส่วนที่เกินบรรยากาศ ความดันสัมบูรณ์ต้องบวกบรรยากาศเข้าไป" }
+    hints:
+      - "เกจอ่านความดันเกจ"
+      - "$P_{\\text{สัมบูรณ์}} = P_0 + P_{\\text{เกจ}}$"
+    solution: "$P = 101.3 + 220 = 321.3\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p003
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 2
+    type: numeric
+    stem: "แมนอมิเตอร์บรรจุน้ำ ($\\rho = 1000\\ \\mathrm{kg/m^3}$) ต่อกับท่อแก๊สหุงต้มในห้องครัว ระดับน้ำฝั่งเปิดสู่อากาศสูงกว่าฝั่งต่อท่อแก๊ส $15\\ \\mathrm{cm}$ ความดันเกจของแก๊สเป็นกี่พาสคัล ($g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 1470, tolerance: 15, unit: Pa }
+    misconceptions:
+      - { match: 147000, feedback: "ใช้ความสูงเป็นเซนติเมตร ต้องแปลงเป็น $0.15\\ \\mathrm{m}$" }
+    hints:
+      - "ความดันเกจของแก๊ส $= \\rho g h$"
+      - "$h = 0.15\\ \\mathrm{m}$"
+    solution: "$P_{\\text{เกจ}} = (1000)(9.8)(0.15) = 1470\\ \\mathrm{Pa}$ ราว $1.5\\ \\mathrm{kPa}$ ซึ่งเป็นช่วงความดันแก๊สหลังหัวปรับความดัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p004
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 3
+    type: numeric
+    stem: "หลอดรูปตัว U มีน้ำอยู่ เทน้ำมันพืชลงฝั่งหนึ่ง น้ำมันไม่ผสมกับน้ำ เมื่อนิ่งแล้วได้ดังภาพ น้ำมันมีความหนาแน่นกี่กิโลกรัมต่อลูกบาศก์เมตร (น้ำ $1000\\ \\mathrm{kg/m^3}$)"
+    figure: { src: p-utube.svg, alt: "หลอดรูปตัว U ฝั่งซ้ายมีน้ำมันสีเหลืองอยู่ด้านบน สูง 12 cm จากรอยต่อน้ำมันกับน้ำ ฝั่งขวามีแต่น้ำ ผิวน้ำฝั่งขวาสูงกว่าระดับรอยต่อ 10 cm เส้นประแนวนอนลากผ่านรอยต่อไปถึงฝั่งขวา" }
+    answer: { value: 833, tolerance: 8, unit: kg/m^3 }
+    misconceptions:
+      - { match: 1200, feedback: "กลับอัตราส่วน น้ำมันลอยบนน้ำและต้องใช้ลำที่สูงกว่า จึงต้องเบากว่าน้ำ" }
+    hints:
+      - "ที่ระดับรอยต่อ ความดันสองฝั่งเท่ากัน"
+      - "$\\rho_{\\text{น้ำมัน}}(0.12) = (1000)(0.10)$"
+    solution: "$\\rho_{\\text{น้ำมัน}}gh_1 = \\rho_{\\text{น้ำ}}gh_2$ ได้ $\\rho_{\\text{น้ำมัน}} = 1000 \\times \\dfrac{10}{12} \\approx 833\\ \\mathrm{kg/m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p005
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 3
+    type: numeric
+    stem: "พยาบาลที่ รพ.สต. วัดความดันเลือดขณะหัวใจบีบตัวของผู้ป่วยได้ $120\\ \\mathrm{mmHg}$ ความดันนี้เป็นกี่กิโลพาสคัล (ปรอท $13{,}600\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 16.0, tolerance: 0.15, unit: kPa }
+    misconceptions:
+      - { match: 16000, feedback: "ได้คำตอบเป็นพาสคัล โจทย์ถามเป็นกิโลพาสคัล" }
+      - { match: 117.3, feedback: "บวกความดันบรรยากาศ แต่ค่าความดันเลือดเป็นความดันเกจ" }
+    hints:
+      - "$P = \\rho g h$ เมื่อ $h = 0.120\\ \\mathrm{m}$"
+      - "หาร 1000 ให้เป็นกิโลพาสคัล"
+    solution: "$P = (13{,}600)(9.8)(0.120) = 15{,}994\\ \\mathrm{Pa} \\approx 16.0\\ \\mathrm{kPa}$ (ความดันเกจ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p006
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 2
+    type: mcq
+    stem: "วางเข็มเย็บผ้าเบา ๆ บนผิวน้ำในแก้ว เข็มลอยอยู่ได้ ถ้าหยดน้ำยาล้างจานลงไป จะเกิดอะไรขึ้น"
+    choices:
+      - { id: a, text: "เข็มจม เพราะน้ำยาล้างจานลดความตึงผิว", correct: true }
+      - { id: b, text: "เข็มลอยสูงขึ้น เพราะน้ำยาทำให้น้ำหนาแน่นขึ้น", feedback: "เข็มไม่ได้ลอยเพราะแรงพยุง (เหล็กหนาแน่นกว่าน้ำมาก) แต่ลอยเพราะความตึงผิว" }
+      - { id: c, text: "ไม่เปลี่ยน เพราะน้ำหนักของเข็มเท่าเดิม", feedback: "น้ำหนักเท่าเดิมจริง แต่แรงตึงผิวที่รองรับเข็มลดลง" }
+    hints:
+      - "อะไรทำให้เหล็กซึ่งหนาแน่นกว่าน้ำลอยได้"
+      - "ผงซักฟอกและน้ำยาล้างจานมีผลต่อความตึงผิวอย่างไร"
+    solution: "เข็มลอยได้เพราะความตึงผิวของน้ำรองรับไว้ น้ำยาล้างจานลดความตึงผิวมาก ผิวน้ำรับน้ำหนักเข็มไม่ไหว เข็มจึงจม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p007
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 3
+    type: numeric
+    stem: "โครงลวดรูปตัว U มีลวดเลื่อนได้ยาว $5.0\\ \\mathrm{cm}$ จุ่มในน้ำสบู่ที่มีความตึงผิว $0.025\\ \\mathrm{N/m}$ ได้ฟิล์มสบู่ ต้องออกแรงกี่มิลลินิวตันเพื่อดึงลวดเลื่อนไว้ไม่ให้เลื่อนเข้า"
+    answer: { value: 2.5, tolerance: 0.03, unit: mN }
+    misconceptions:
+      - { match: 1.25, feedback: "คิดผิวเดียว ฟิล์มสบู่มีสองผิว (หน้าและหลัง) แรงจึงเป็น $2\\gamma l$" }
+    hints:
+      - "ฟิล์มสบู่มีกี่ผิว"
+      - "$F = 2\\gamma l$"
+    solution: "$F = 2\\gamma l = 2(0.025)(0.050) = 2.5 \\times 10^{-3}\\ \\mathrm{N} = 2.5\\ \\mathrm{mN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p008
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 3
+    type: numeric
+    stem: "นักเรียนวัดความตึงผิวของน้ำด้วยลวดตรงยาว $4.0\\ \\mathrm{cm}$ ดึงขึ้นจากผิวน้ำ ฟิล์มน้ำเกาะลวดทั้งสองด้าน แรงที่ต้องใช้เพิ่มขึ้นจากน้ำหนักลวด $5.8\\ \\mathrm{mN}$ ความตึงผิวของน้ำเป็นกี่นิวตันต่อเมตร (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.0725, tolerance: 0.0008, unit: N/m }
+    misconceptions:
+      - { match: 0.145, feedback: "หารด้วยความยาวลวดครั้งเดียว ต้องหารด้วย $2l$ เพราะฟิล์มดึงลวดทั้งสองด้าน" }
+    hints:
+      - "$F = 2\\gamma l$"
+      - "$\\gamma = \\dfrac{F}{2l}$"
+    solution: "$\\gamma = \\dfrac{5.8 \\times 10^{-3}}{2(0.040)} = 0.0725\\ \\mathrm{N/m}$ ใกล้ค่าของน้ำที่อุณหภูมิห้อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p009
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 3
+    type: numeric
+    stem: "สายยางรดน้ำต้นไม้เส้นผ่านศูนย์กลาง $2.0\\ \\mathrm{cm}$ น้ำไหลด้วยอัตราเร็ว $1.5\\ \\mathrm{m/s}$ ต่อหัวฉีดที่ปลายมีรูเส้นผ่านศูนย์กลาง $0.50\\ \\mathrm{cm}$ น้ำพุ่งออกจากหัวฉีดด้วยอัตราเร็วกี่เมตรต่อวินาที"
+    answer: { value: 24, tolerance: 0.25, unit: m/s }
+    misconceptions:
+      - { match: 6, feedback: "ใช้อัตราส่วนเส้นผ่านศูนย์กลาง ต้องใช้อัตราส่วนพื้นที่ ซึ่งเป็นกำลังสองของอัตราส่วนเส้นผ่านศูนย์กลาง" }
+      - { match: 0.094, feedback: "กลับอัตราส่วน ท่อตีบลง น้ำต้องไหลเร็วขึ้น" }
+    hints:
+      - "$A_1v_1 = A_2v_2$"
+      - "$\\dfrac{A_1}{A_2} = \\left(\\dfrac{2.0}{0.50}\\right)^2$"
+    solution: "$v_2 = v_1\\left(\\dfrac{d_1}{d_2}\\right)^2 = 1.5 \\times 4^2 = 24\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p010
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำไหลในท่อแนวราบ ตรงส่วนกว้างมีความดัน $2.0 \\times 10^{5}\\ \\mathrm{Pa}$ และอัตราเร็ว $2.0\\ \\mathrm{m/s}$ ตรงส่วนแคบน้ำไหลเร็ว $6.0\\ \\mathrm{m/s}$ ความดันตรงส่วนแคบเป็นกี่กิโลพาสคัล (น้ำ $1000\\ \\mathrm{kg/m^3}$)"
+    answer: { value: 184, tolerance: 1, unit: kPa }
+    misconceptions:
+      - { match: 192, feedback: "ใช้ $(v_2 - v_1)^2$ ต้องใช้ผลต่างของกำลังสอง $v_2^2 - v_1^2$" }
+      - { match: 216, feedback: "บวกแทนลบ ตรงที่ไหลเร็วความดันต้องต่ำกว่า" }
+    hints:
+      - "ท่อแนวราบ: $P_1 + \\tfrac12\\rho v_1^2 = P_2 + \\tfrac12\\rho v_2^2$"
+      - "$P_2 = P_1 - \\tfrac12\\rho(v_2^2 - v_1^2)$"
+    solution: "$P_2 = 2.0 \\times 10^{5} - \\tfrac12(1000)(36 - 4) = 200{,}000 - 16{,}000 = 184{,}000\\ \\mathrm{Pa} = 184\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p011
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 4
+    type: mcq
+    stem: "จับกระดาษสองแผ่นห้อยขนานกันห่างกันเล็กน้อย แล้วเป่าลมผ่านช่องระหว่างกระดาษ กระดาษจะเป็นอย่างไร และเพราะอะไร"
+    choices:
+      - { id: a, text: "เข้ามาชิดกัน เพราะอากาศที่ไหลเร็วระหว่างกระดาษมีความดันต่ำกว่าอากาศนิ่งด้านนอก", correct: true }
+      - { id: b, text: "แยกออกจากกัน เพราะลมดันกระดาษออก", feedback: "ลมไหลขนานกับกระดาษ ไม่ได้พุ่งชนกระดาษ ความดันของอากาศที่ไหลเร็วกลับต่ำลง" }
+      - { id: c, text: "อยู่นิ่ง เพราะลมผ่านไปทั้งสองแผ่นเท่ากัน", feedback: "ความดันด้านในกับด้านนอกของแต่ละแผ่นไม่เท่ากัน ด้านในอากาศไหลเร็ว" }
+    hints:
+      - "สมการแบร์นูลลีบอกอะไรเกี่ยวกับความดันตรงที่ไหลเร็ว"
+      - "ด้านนอกกระดาษอากาศไหลหรือนิ่ง"
+    solution: "อากาศระหว่างกระดาษไหลเร็ว ความดันจึงต่ำกว่าอากาศนิ่งด้านนอก ความดันด้านนอกที่มากกว่าดันกระดาษเข้าหากัน หลักเดียวกับรถบรรทุกสองคันที่วิ่งสวนกันเร็ว ๆ แล้วเซเข้าหากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p012
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 4
+    type: numeric
+    stem: "พายุฤดูร้อนพัดลมเร็ว $30\\ \\mathrm{m/s}$ ผ่านเหนือหลังคาบ้านหลังหนึ่งในจังหวัดขอนแก่น อากาศในบ้านนิ่ง หลังคามีพื้นที่ $100\\ \\mathrm{m^2}$ แรงยกหลังคาเนื่องจากผลต่างความดันเป็นกี่กิโลนิวตัน (อากาศ $1.2\\ \\mathrm{kg/m^3}$ ไม่คิดผลจากความสูง)"
+    answer: { value: 54, tolerance: 0.5, unit: kN }
+    misconceptions:
+      - { match: 108, feedback: "ลืม $\\tfrac12$ ในเทอม $\\tfrac12\\rho v^2$" }
+      - { match: 1.8, feedback: "ใช้ $v$ แทน $v^2$" }
+    hints:
+      - "ผลต่างความดัน $\\Delta P = \\tfrac12\\rho v^2$"
+      - "แรง $= \\Delta P \\times A$"
+    solution: "$\\Delta P = \\tfrac12(1.2)(30^2) = 540\\ \\mathrm{Pa}$ $F = 540 \\times 100 = 54{,}000\\ \\mathrm{N} = 54\\ \\mathrm{kN}$ มากกว่าน้ำหนักหลังคาสังกะสีมาก จึงต้องยึดหลังคาให้แน่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p013
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 4
+    type: numeric
+    stem: "แมนอมิเตอร์ปรอทต่อกับถังแก๊ส ระดับปรอทฝั่งเปิดสู่อากาศสูงกว่าฝั่งต่อถัง $25\\ \\mathrm{cm}$ ขณะที่บารอมิเตอร์อ่านได้ $75\\ \\mathrm{cmHg}$ ความดันสัมบูรณ์ของแก๊สเป็นกี่กิโลพาสคัล (ปรอท $13{,}600\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 133.3, tolerance: 1.3, unit: kPa }
+    misconceptions:
+      - { match: 33.3, feedback: "นี่คือความดันเกจ ($25\\ \\mathrm{cmHg}$) ต้องบวกความดันบรรยากาศ $75\\ \\mathrm{cmHg}$" }
+      - { match: 66.6, feedback: "ลบความดันบรรยากาศ ระดับฝั่งเปิดสูงกว่าแปลว่าแก๊สดันแรงกว่าอากาศ ต้องบวก" }
+    hints:
+      - "ความดันแก๊ส $= 75 + 25\\ \\mathrm{cmHg}$"
+      - "แปลง $\\mathrm{cmHg}$ เป็นพาสคัลด้วย $\\rho g h$"
+    solution: "$P = 100\\ \\mathrm{cmHg} = (13{,}600)(9.8)(1.00) = 133{,}280\\ \\mathrm{Pa} \\approx 133.3\\ \\mathrm{kPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p014
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 5
+    type: numeric
+    stem: "หลอดแก้วสะอาดรัศมี $0.25\\ \\mathrm{mm}$ จุ่มตั้งฉากในน้ำ (ความตึงผิว $0.073\\ \\mathrm{N/m}$ มุมสัมผัส $0^\\circ$) น้ำไต่ขึ้นในหลอดสูงกี่เซนติเมตร ($g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 6.0, tolerance: 0.06, unit: cm }
+    misconceptions:
+      - { match: 2.98, feedback: "ได้ครึ่งหนึ่งของคำตอบ อาจใช้เส้นผ่านศูนย์กลางแทนรัศมี หรือลืมเลข 2 ในสูตร $h = 2\\gamma\\cos\\theta/(\\rho g r)$" }
+    hints:
+      - "$h = \\dfrac{2\\gamma\\cos\\theta}{\\rho g r}$"
+      - "$r = 0.25 \\times 10^{-3}\\ \\mathrm{m}$, $\\cos 0^\\circ = 1$"
+    solution: "$h = \\dfrac{2(0.073)(1)}{(1000)(9.8)(0.25 \\times 10^{-3})} = 0.0596\\ \\mathrm{m} \\approx 6.0\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p015
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 5
+    type: numeric
+    stem: "หลอดรูปตัว U หน้าตัดเท่ากันทั้งสองข้าง มีปรอทอยู่ระดับเดียวกัน เทน้ำลงฝั่งซ้ายจนน้ำสูง $27.2\\ \\mathrm{cm}$ เหนือผิวปรอทฝั่งซ้าย ผิวปรอทฝั่งขวาสูงขึ้นจากระดับเดิมกี่เซนติเมตร (ปรอทหนาแน่นกว่าน้ำ $13.6$ เท่า)"
+    answer: { value: 1, tolerance: 0.02, unit: cm }
+    misconceptions:
+      - { match: 2, feedback: "2.0 cm คือผลต่างระดับปรอทสองฝั่ง ฝั่งซ้ายลด 1.0 cm และฝั่งขวาเพิ่ม 1.0 cm เพราะปรอทย้ายจากฝั่งหนึ่งไปอีกฝั่ง" }
+      - { match: 27.2, feedback: "ไม่ได้คิดความหนาแน่น ลำน้ำ 27.2 cm สมดุลกับลำปรอทที่สั้นกว่า 13.6 เท่า" }
+    hints:
+      - "ที่ระดับผิวปรอทฝั่งซ้าย: ลำน้ำ 27.2 cm สมดุลกับลำปรอทฝั่งขวาที่สูงกว่า $h$"
+      - "ผลต่างระดับ $h = 27.2/13.6$ แบ่งเป็นฝั่งซ้ายลงครึ่งหนึ่งและฝั่งขวาขึ้นครึ่งหนึ่ง"
+    solution: "ผลต่างระดับปรอท $h = \\dfrac{27.2}{13.6} = 2.0\\ \\mathrm{cm}$ หน้าตัดเท่ากัน ปรอทฝั่งซ้ายลด $1.0\\ \\mathrm{cm}$ ฝั่งขวาสูงขึ้น $1.0\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p016
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 2
+    type: order
+    stem: "เรียงของเหลวที่อุณหภูมิห้องจากหนืดน้อยไปหนืดมาก"
+    items:
+      - "น้ำ"
+      - "น้ำมันพืช"
+      - "กลีเซอรีน"
+      - "น้ำผึ้ง"
+    hints:
+      - "เทของเหลวแต่ละชนิดออกจากขวด ชนิดใดไหลเร็วที่สุด"
+      - "น้ำผึ้งไหลช้าที่สุด"
+    solution: "น้ำ (ประมาณ $0.001\\ \\mathrm{Pa\\,s}$) < น้ำมันพืช (ราว $0.05$) < กลีเซอรีน (ราว $1$) < น้ำผึ้ง (ราว $2$–$10\\ \\mathrm{Pa\\,s}$ ขึ้นกับชนิดและอุณหภูมิ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p017
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 3
+    type: mcq
+    stem: "ปล่อยลูกเหล็กเล็ก ๆ ลงในหลอดสูงที่บรรจุน้ำมันเครื่อง ข้อใดอธิบายการเคลื่อนที่ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "เร่งในตอนแรก แล้วตกด้วยความเร็วคงตัวเมื่อแรงหนืดรวมกับแรงพยุงเท่ากับน้ำหนัก", correct: true }
+      - { id: b, text: "ตกด้วยความเร่ง $g$ ตลอด เหมือนตกในอากาศ", feedback: "น้ำมันเครื่องหนืดมาก แรงหนืดเพิ่มตามความเร็วจนหักล้างแรงลัพธ์" }
+      - { id: c, text: "ช้าลงเรื่อย ๆ จนหยุดกลางหลอด", feedback: "แรงหนืดเกิดเมื่อเคลื่อนที่ ถ้าลูกเหล็กหยุด แรงหนืดหายไป น้ำหนักจะดึงให้ตกต่อ จึงไม่หยุด" }
+    hints:
+      - "แรงหนืดขึ้นกับความเร็วอย่างไร"
+      - "เมื่อแรงลัพธ์เป็นศูนย์ ความเร็วเป็นอย่างไร"
+    solution: "ตอนแรกความเร็วน้อย แรงหนืดน้อย ลูกเหล็กเร่ง เมื่อเร็วขึ้นแรงหนืดเพิ่ม จนแรงหนืดกับแรงพยุงรวมกันเท่ากับน้ำหนัก แรงลัพธ์เป็นศูนย์ จึงตกด้วยความเร็วปลายคงตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.matter.fluids-advanced.p018
+    topics: [physics.matter.fluids-advanced]
+    difficulty: 2
+    type: numeric
+    stem: "แม่แรงไฮดรอลิกในอู่ซ่อมรถมีลูกสูบเล็กพื้นที่ $2.0\\ \\mathrm{cm^2}$ ลูกสูบใหญ่ $200\\ \\mathrm{cm^2}$ ออกแรงกดลูกสูบเล็ก $50\\ \\mathrm{N}$ ลูกสูบใหญ่ยกน้ำหนักได้กี่นิวตัน"
+    answer: { value: 5000, tolerance: 50, unit: N }
+    misconceptions:
+      - { match: 0.5, feedback: "กลับอัตราส่วน ลูกสูบใหญ่ได้แรงมากกว่าตามอัตราส่วนพื้นที่" }
+    hints:
+      - "หลักของพาสคัล: ความดันเท่ากันทั้งสองลูกสูบ"
+      - "$F_2 = F_1\\dfrac{A_2}{A_1}$"
+    solution: "$F_2 = 50 \\times \\dfrac{200}{2.0} = 5000\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
