@@ -1,0 +1,294 @@
+problems:
+  - id: physics.waves.electromagnetic-waves.p001
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 1
+    type: mcq
+    stem: "คลื่นแม่เหล็กไฟฟ้าเกิดจากสิ่งใด"
+    choices:
+      - { id: a, text: "ประจุไฟฟ้าที่เคลื่อนที่ด้วยความเร่ง เช่น อิเล็กตรอนที่สั่นในเสาอากาศ", correct: true }
+      - { id: b, text: "ประจุไฟฟ้าที่อยู่นิ่ง", feedback: "ประจุนิ่งสร้างสนามไฟฟ้าคงตัว ไม่มีสนามที่เปลี่ยนแปลงจึงไม่เกิดคลื่น" }
+      - { id: c, text: "อนุภาคของอากาศที่สั่นส่งต่อกัน", feedback: "นั่นคือคลื่นเสียง คลื่นแม่เหล็กไฟฟ้าไม่ต้องอาศัยตัวกลาง" }
+      - { id: d, text: "แม่เหล็กถาวรที่วางนิ่ง", feedback: "สนามแม่เหล็กที่ไม่เปลี่ยนแปลงไม่ทำให้เกิดคลื่น" }
+    hints:
+      - "คลื่นเกิดจากสนามที่เปลี่ยนแปลงเหนี่ยวนำกันและกัน"
+      - "สนามของประจุจะเปลี่ยนแปลงเมื่อประจุทำอะไร"
+    solution: "ประจุที่มีความเร่งทำให้สนามไฟฟ้าและสนามแม่เหล็กรอบตัวเปลี่ยนแปลง แล้วแผ่ออกไปเป็นคลื่นแม่เหล็กไฟฟ้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p002
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อุปกรณ์กับวิธีเกิดหรือรับคลื่นแม่เหล็กไฟฟ้า"
+    pairs:
+      - { left: "เสาส่งวิทยุ FM", right: "กระแสสลับความถี่สูงทำให้อิเล็กตรอนในเสาสั่น" }
+      - { left: "หลอดรังสีเอกซ์", right: "อิเล็กตรอนความเร็วสูงถูกหน่วงเมื่อชนเป้าโลหะ" }
+      - { left: "หลอดแอลอีดี", right: "อิเล็กตรอนเปลี่ยนระดับพลังงานแล้วปล่อยแสง" }
+      - { left: "เสาอากาศรับทีวี", right: "สนามไฟฟ้าของคลื่นทำให้อิเล็กตรอนในเสาสั่นตาม" }
+    hints:
+      - "ทุกข้อเกี่ยวกับประจุที่มีความเร่ง"
+      - "การรับคือกระบวนการกลับกันของการส่ง"
+    solution: "เสาส่งใช้กระแสสลับ หลอดรังสีเอกซ์ใช้การหน่วงอิเล็กตรอน แอลอีดีใช้การเปลี่ยนระดับพลังงานของอิเล็กตรอน และเสาอากาศรับใช้สนามของคลื่นทำให้อิเล็กตรอนสั่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p003
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 2
+    type: numeric
+    stem: "สถานีวิทยุ FM แห่งหนึ่งในกรุงเทพฯ ส่งที่ความถี่ $100.5\\ \\mathrm{MHz}$ คลื่นมีความยาวคลื่นกี่เมตร ($c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$)"
+    answer: { value: 2.99, tolerance: 0.03, unit: m }
+    misconceptions:
+      - { match: 0.335, feedback: "หารกลับด้าน $\\lambda = c/f$ ไม่ใช่ $f/c$" }
+      - { match: 2985075, feedback: "ไม่ได้แปลงเมกะเฮิรตซ์เป็นเฮิรตซ์ ($1\\ \\mathrm{MHz} = 10^{6}\\ \\mathrm{Hz}$)" }
+    hints:
+      - "$c = f\\lambda$"
+      - "$f = 100.5 \\times 10^{6}\\ \\mathrm{Hz}$"
+    solution: "$\\lambda = \\dfrac{3.0 \\times 10^{8}}{100.5 \\times 10^{6}} = 2.99\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p004
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 2
+    type: numeric
+    stem: "แสงไม่โพลาไรส์ความเข้ม $800\\ \\mathrm{W/m^2}$ ผ่านแผ่นโพลารอยด์หนึ่งแผ่น แสงที่ผ่านมีความเข้มกี่วัตต์ต่อตารางเมตร"
+    answer: { value: 400, tolerance: 2, unit: W/m² }
+    misconceptions:
+      - { match: 800, feedback: "แผ่นโพลารอยด์กั้นองค์ประกอบของสนามในแนวตั้งฉากกับแนวผ่าน แสงไม่โพลาไรส์จึงผ่านได้เพียงครึ่งหนึ่ง" }
+      - { match: 0, feedback: "แสงไม่โพลาไรส์มีองค์ประกอบในทุกแนว จึงผ่านได้บางส่วนเสมอ" }
+    hints:
+      - "สนามของแสงไม่โพลาไรส์กระจายอยู่ทุกแนวเท่า ๆ กัน"
+      - "ค่าเฉลี่ยของ $\\cos^2\\theta$ ทุกมุมเท่ากับ $\\tfrac12$"
+    solution: "แสงไม่โพลาไรส์ผ่านโพลารอยด์เหลือครึ่งหนึ่ง $I = \\tfrac12(800) = 400\\ \\mathrm{W/m^2}$ และกลายเป็นแสงโพลาไรส์เชิงเส้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p005
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดบอกความสัมพันธ์ของสนามไฟฟ้า สนามแม่เหล็ก และทิศการเคลื่อนที่ของคลื่นแม่เหล็กไฟฟ้าได้ถูกต้อง"
+    choices:
+      - { id: a, text: "ทั้งสามตั้งฉากกันหมด และสนามทั้งสองถึงค่าสูงสุดพร้อมกัน", correct: true }
+      - { id: b, text: "สนามไฟฟ้าและสนามแม่เหล็กขนานกัน", feedback: "สนามทั้งสองตั้งฉากกันเสมอในคลื่นแม่เหล็กไฟฟ้า" }
+      - { id: c, text: "สนามไฟฟ้าขนานกับทิศการเคลื่อนที่ จึงเป็นคลื่นตามยาว", feedback: "คลื่นแม่เหล็กไฟฟ้าเป็นคลื่นตามขวาง จึงโพลาไรส์ได้" }
+      - { id: d, text: "สนามไฟฟ้าสูงสุดเมื่อสนามแม่เหล็กเป็นศูนย์", feedback: "ในคลื่นที่เคลื่อนที่ไป $E = cB$ ทุกขณะ สนามทั้งสองจึงสูงสุดพร้อมกัน" }
+    hints:
+      - "คลื่นแม่เหล็กไฟฟ้าโพลาไรส์ได้ แปลว่าเป็นคลื่นชนิดใด"
+      - "$E = cB$ ทุกจุดและทุกเวลา"
+    solution: "สนามไฟฟ้า สนามแม่เหล็ก และทิศการเคลื่อนที่ตั้งฉากกันทั้งหมด และ $E = cB$ จึงเพิ่มลดพร้อมกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p006
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 3
+    type: numeric
+    stem: "สถานีภาคพื้นดินส่งสัญญาณขึ้นไปยังดาวเทียมไทยคมซึ่งเป็นดาวเทียมค้างฟ้าสูง $3.58 \\times 10^{7}\\ \\mathrm{m}$ ดาวเทียมส่งกลับลงมาที่จานรับที่อยู่ใต้ดาวเทียม สัญญาณใช้เวลาทั้งหมดกี่วินาที"
+    answer: { value: 0.239, tolerance: 0.003, unit: s }
+    misconceptions:
+      - { match: 0.119, feedback: "คิดแค่ขาขึ้น สัญญาณต้องเดินทางขึ้นและลง" }
+    hints:
+      - "ระยะทาง $= 2 \\times 3.58 \\times 10^{7}\\ \\mathrm{m}$"
+      - "$t = \\dfrac{\\text{ระยะทาง}}{c}$"
+    solution: "$t = \\dfrac{2(3.58 \\times 10^{7})}{3.0 \\times 10^{8}} = 0.239\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p007
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 3
+    type: numeric
+    stem: "เรดาร์ตรวจอากาศของกรมอุตุนิยมวิทยาส่งพัลส์ไมโครเวฟออกไป แล้วรับสัญญาณสะท้อนจากกลุ่มฝนได้หลังจากนั้น $0.20\\ \\mathrm{ms}$ กลุ่มฝนอยู่ห่างกี่กิโลเมตร"
+    answer: { value: 30, tolerance: 0.3, unit: km }
+    misconceptions:
+      - { match: 60, feedback: "ลืมหารสอง เวลาที่วัดคือเวลาไปและกลับ" }
+    hints:
+      - "ระยะไปกลับ $= ct$"
+      - "ระยะถึงกลุ่มฝน $= \\dfrac{ct}{2}$ และ $0.20\\ \\mathrm{ms} = 2.0 \\times 10^{-4}\\ \\mathrm{s}$"
+    solution: "$d = \\dfrac{(3.0 \\times 10^{8})(2.0 \\times 10^{-4})}{2} = 3.0 \\times 10^{4}\\ \\mathrm{m} = 30\\ \\mathrm{km}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p008
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 3
+    type: mcq
+    stem: "ทำไมสถานีโทรทัศน์และเครือข่ายโทรศัพท์มือถือต้องมีเสาสูงและมีสถานีทวนสัญญาณเป็นระยะ ขณะที่วิทยุคลื่นสั้นบางสถานีรับฟังได้ข้ามประเทศ"
+    choices:
+      - { id: a, text: "คลื่นความถี่สูงกว่าราว 30 MHz ทะลุไอโอโนสเฟียร์ จึงเดินทางได้เฉพาะในแนวสายตา ส่วนคลื่นสั้นสะท้อนที่ไอโอโนสเฟียร์ได้", correct: true }
+      - { id: b, text: "คลื่นทีวีและโทรศัพท์เคลื่อนที่ช้ากว่าคลื่นวิทยุ", feedback: "คลื่นแม่เหล็กไฟฟ้าทุกความถี่เคลื่อนที่ด้วยอัตราเร็วเท่ากันในอากาศ" }
+      - { id: c, text: "คลื่นความถี่สูงต้องมีตัวกลางจึงเดินทางได้", feedback: "คลื่นแม่เหล็กไฟฟ้าทุกชนิดไม่ต้องมีตัวกลาง" }
+      - { id: d, text: "คลื่นความถี่สูงเลี้ยวเบนรอบโลกได้ดีกว่า", feedback: "กลับกัน คลื่นความยาวคลื่นยาว (ความถี่ต่ำ) เลี้ยวเบนเลียบผิวโลกได้ดีกว่า" }
+    hints:
+      - "ไอโอโนสเฟียร์สะท้อนคลื่นช่วงความถี่ใด"
+      - "ผิวโลกโค้ง เส้นตรงจากเสาเตี้ยจะชนขอบฟ้าเร็ว"
+    solution: "คลื่น VHF UHF และไมโครเวฟทะลุไอโอโนสเฟียร์ จึงเป็นคลื่นตรงที่ต้องอยู่ในแนวสายตา เสาสูงช่วยให้มองเห็นไกลขึ้น ส่วนคลื่นสั้น (HF) สะท้อนที่ไอโอโนสเฟียร์เป็นคลื่นฟ้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p009
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 3
+    type: numeric
+    stem: "ณ ตำแหน่งหนึ่งในคลื่นแม่เหล็กไฟฟ้า สนามไฟฟ้ามีขนาด $600\\ \\mathrm{V/m}$ สนามแม่เหล็กขณะนั้นมีขนาดกี่ไมโครเทสลา ($c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$)"
+    answer: { value: 2.0, tolerance: 0.02, unit: μT }
+    misconceptions:
+      - { match: 0.000002, feedback: "ได้คำตอบเป็นเทสลา ต้องแปลงเป็นไมโครเทสลา" }
+    hints:
+      - "$E = cB$"
+      - "$B = E/c$ แล้วแปลง $1\\ \\mu\\mathrm{T} = 10^{-6}\\ \\mathrm{T}$"
+    solution: "$B = \\dfrac{600}{3.0 \\times 10^{8}} = 2.0 \\times 10^{-6}\\ \\mathrm{T} = 2.0\\ \\mu\\mathrm{T}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p010
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 2
+    type: mcq
+    stem: "วางแผ่นโพลารอยด์สองแผ่นซ้อนกัน แล้วหมุนแผ่นหลังช้า ๆ ขณะมองหลอดไฟผ่านทั้งสองแผ่น จะเห็นอย่างไร"
+    choices:
+      - { id: a, text: "แสงสว่างที่สุดเมื่อแนวผ่านของสองแผ่นขนานกัน และมืดเมื่อตั้งฉากกัน", correct: true }
+      - { id: b, text: "ความสว่างเท่าเดิมทุกมุม", feedback: "แสงที่ผ่านแผ่นแรกโพลาไรส์แล้ว แผ่นที่สองจึงให้ผ่านมากน้อยตามมุม" }
+      - { id: c, text: "มืดเมื่อแนวผ่านขนานกัน และสว่างเมื่อตั้งฉาก", feedback: "กลับกัน ถ้าแนวผ่านขนานกัน แสงจากแผ่นแรกผ่านแผ่นที่สองได้ทั้งหมด" }
+      - { id: d, text: "สีของแสงเปลี่ยนไปตามมุม", feedback: "โพลารอยด์ทั่วไปลดความเข้มของทุกสีพอ ๆ กัน ไม่ได้เปลี่ยนสี" }
+    hints:
+      - "แผ่นแรกทำให้แสงเป็นโพลาไรส์เชิงเส้น"
+      - "$I = I_1\\cos^2\\theta$ ที่ $\\theta = 0^\\circ$ และ $90^\\circ$"
+    solution: "แสงจากแผ่นแรกโพลาไรส์ในแนวหนึ่ง แผ่นที่สองให้ผ่าน $I_1\\cos^2\\theta$ สว่างสุดที่ $0^\\circ$ และมืดที่ $90^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p011
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 4
+    type: numeric
+    stem: "แสงไม่โพลาไรส์ความเข้ม $800\\ \\mathrm{W/m^2}$ ผ่านโพลารอยด์แผ่นแรก แล้วผ่านแผ่นที่สองซึ่งแนวผ่านทำมุม $60^\\circ$ กับแผ่นแรก แสงที่ออกมามีความเข้มกี่วัตต์ต่อตารางเมตร"
+    answer: { value: 100, tolerance: 1, unit: W/m² }
+    misconceptions:
+      - { match: 200, feedback: "ใช้ $\\cos\\theta$ แทน $\\cos^2\\theta$ หรือลืมว่าแผ่นแรกลดความเข้มเหลือครึ่งหนึ่ง" }
+      - { match: 400, feedback: "ไม่ได้คิดผลของแผ่นที่สอง" }
+    hints:
+      - "ผ่านแผ่นแรกเหลือ $400\\ \\mathrm{W/m^2}$"
+      - "ผ่านแผ่นที่สอง $I = 400\\cos^2 60^\\circ$"
+    solution: "$I_1 = 400\\ \\mathrm{W/m^2}$ $I_2 = 400 \\times (0.5)^2 = 100\\ \\mathrm{W/m^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p012
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 4
+    type: numeric
+    stem: "เสาอากาศแบบหนึ่งในสี่ความยาวคลื่นสำหรับคลื่น 5G ย่าน $700\\ \\mathrm{MHz}$ ที่ใช้ในประเทศไทย ต้องยาวกี่เซนติเมตร"
+    answer: { value: 10.7, tolerance: 0.11, unit: cm }
+    misconceptions:
+      - { match: 42.9, feedback: "นี่คือความยาวคลื่นเต็ม เสาอากาศนี้ยาวหนึ่งในสี่ของความยาวคลื่น" }
+      - { match: 21.4, feedback: "นี่คือครึ่งความยาวคลื่น โจทย์ถามหนึ่งในสี่" }
+    hints:
+      - "$\\lambda = c/f$"
+      - "ความยาวเสา $= \\lambda/4$ แล้วแปลงเป็นเซนติเมตร"
+    solution: "$\\lambda = \\dfrac{3.0 \\times 10^{8}}{700 \\times 10^{6}} = 0.429\\ \\mathrm{m}$ $\\lambda/4 = 0.107\\ \\mathrm{m} = 10.7\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p013
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "มีข้อความแชร์ในโซเชียลว่า \"เสาสัญญาณ 5G ปล่อยรังสีทำให้เป็นมะเร็งเหมือนรังสีเอกซ์\" เหตุผลใดใช้ประเมินข้อความนี้ได้อย่างมีหลักการ (เลือกได้มากกว่า 1 ข้อ)"
+    choices:
+      - { id: a, text: "คลื่น 5G มีความถี่ต่ำกว่ารังสีเอกซ์หลายล้านเท่า พลังงานต่อหน่วยไม่พอทำให้อะตอมแตกตัวเป็นไอออน", correct: true }
+      - { id: b, text: "ต้องดูความเข้มที่ได้รับจริง ซึ่งลดลงเร็วเมื่ออยู่ห่างจากเสา", correct: true }
+      - { id: c, text: "ควรตรวจว่ามีงานวิจัยที่ตีพิมพ์หรือข้อสรุปจากหน่วยงานด้านสุขภาพรองรับหรือไม่", correct: true }
+      - { id: d, text: "ข้อความถูกแชร์จำนวนมากจึงน่าจะเป็นความจริง", feedback: "จำนวนการแชร์ไม่ใช่หลักฐานทางวิทยาศาสตร์" }
+      - { id: e, text: "คลื่นแม่เหล็กไฟฟ้าทุกความถี่อันตรายเท่ากัน", feedback: "ผลต่อร่างกายขึ้นกับความถี่และความเข้ม รังสีที่แตกตัวเป็นไอออนได้คือ UV พลังงานสูง รังสีเอกซ์ และแกมมา" }
+    hints:
+      - "เทียบความถี่ของคลื่น 5G กับรังสีเอกซ์"
+      - "ข้อกล่าวอ้างที่ดีต้องมีหลักฐานที่ตรวจสอบได้"
+    solution: "ข้อ a, b และ c เป็นวิธีประเมินที่ดี คลื่น 5G (ไม่เกินหลายสิบกิกะเฮิรตซ์) ไม่ทำให้อะตอมแตกตัว ผลหลักที่ความเข้มสูงคือความร้อน ซึ่งมีเกณฑ์จำกัดการได้รับ และควรอ้างอิงงานวิจัยหรือหน่วยงานด้านสุขภาพ ไม่ใช่จำนวนการแชร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p014
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 4
+    type: numeric
+    stem: "จงคำนวณอัตราเร็วของคลื่นแม่เหล็กไฟฟ้าในสุญญากาศจาก $\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{T\\,m/A}$ และ $\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$ ตอบเป็นกี่เท่าของ $10^{8}\\ \\mathrm{m/s}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.00, tolerance: 0.02 }
+    misconceptions:
+      - { match: 8.99, feedback: "ลืมถอดรากที่สอง $\\dfrac{1}{\\mu_0\\varepsilon_0}$ คือ $c^2$" }
+    hints:
+      - "$c = \\dfrac{1}{\\sqrt{\\mu_0\\varepsilon_0}}$"
+      - "$\\mu_0\\varepsilon_0 = (1.257 \\times 10^{-6})(8.85 \\times 10^{-12})$"
+    solution: "$\\mu_0\\varepsilon_0 = 1.112 \\times 10^{-17}$ $c = \\dfrac{1}{\\sqrt{1.112 \\times 10^{-17}}} = 3.00 \\times 10^{8}\\ \\mathrm{m/s}$ ตรงกับอัตราเร็วแสงที่วัดได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p015
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 5
+    type: numeric
+    stem: "นักเรียนเอาจานหมุนออกจากเตาไมโครเวฟ วางแผ่นช็อกโกแลตแล้วอุ่นสั้น ๆ พบจุดที่ละลายห่างกัน $6.0\\ \\mathrm{cm}$ ซึ่งเท่ากับครึ่งความยาวคลื่นของคลื่นนิ่งในเตา ฉลากบอกความถี่ $2.45\\ \\mathrm{GHz}$ อัตราเร็วแสงที่คำนวณได้เป็นกี่เท่าของ $10^{8}\\ \\mathrm{m/s}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.94, tolerance: 0.03 }
+    misconceptions:
+      - { match: 1.47, feedback: "ใช้ระยะระหว่างจุดละลายเป็นความยาวคลื่น ระยะนี้คือครึ่งความยาวคลื่น" }
+    hints:
+      - "จุดละลายคือปฏิบัพ ซึ่งห่างกันครึ่งความยาวคลื่น"
+      - "$\\lambda = 2 \\times 0.060\\ \\mathrm{m}$ แล้ว $c = f\\lambda$"
+    solution: "$\\lambda = 0.12\\ \\mathrm{m}$ $c = (2.45 \\times 10^{9})(0.12) = 2.94 \\times 10^{8}\\ \\mathrm{m/s}$ คลาดจากค่าจริงราว 2% เพราะวัดระยะได้ไม่ละเอียด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p016
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 5
+    type: numeric
+    stem: "สถานีวิทยุกำลังส่ง $50\\ \\mathrm{kW}$ แผ่คลื่นออกไปทุกทิศเท่ากัน (สมมติ) ที่ระยะ $10\\ \\mathrm{km}$ ความเข้มของคลื่นเป็นกี่ไมโครวัตต์ต่อตารางเมตร"
+    answer: { value: 39.8, tolerance: 0.4, unit: μW/m² }
+    misconceptions:
+      - { match: 159, feedback: "ใช้พื้นที่วงกลม $\\pi r^2$ คลื่นแผ่ทุกทิศกระจายบนผิวทรงกลม $4\\pi r^2$" }
+    hints:
+      - "$I = \\dfrac{P}{4\\pi r^2}$"
+      - "$r = 1.0 \\times 10^{4}\\ \\mathrm{m}$ แล้วแปลงเป็นไมโครวัตต์"
+    solution: "$I = \\dfrac{5.0 \\times 10^{4}}{4\\pi(1.0 \\times 10^{4})^2} = 3.98 \\times 10^{-5}\\ \\mathrm{W/m^2} = 39.8\\ \\mu\\mathrm{W/m^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p017
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการส่งเสียงผู้ประกาศจากสถานีวิทยุไปถึงลำโพงของวิทยุในรถ"
+    items:
+      - "ไมโครโฟนเปลี่ยนเสียงเป็นสัญญาณไฟฟ้า"
+      - "มอดูเลตสัญญาณเสียงลงบนคลื่นพาห์ความถี่สูง"
+      - "เสาอากาศส่งแผ่คลื่นแม่เหล็กไฟฟ้าออกไป"
+      - "เสาอากาศรับและวงจรเลือกรับความถี่ของสถานี"
+      - "แยกสัญญาณเสียงออกจากคลื่นพาห์"
+      - "ลำโพงเปลี่ยนสัญญาณไฟฟ้าเป็นเสียง"
+    hints:
+      - "สัญญาณเสียงต้องอยู่บนคลื่นพาห์ก่อนส่ง"
+      - "ฝั่งรับทำกระบวนการย้อนกลับ"
+    solution: "ไมโครโฟน → มอดูเลต → เสาส่ง → เสารับและวงจรเลือกความถี่ → แยกสัญญาณ (ดีมอดูเลต) → ลำโพง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.electromagnetic-waves.p018
+    topics: [physics.waves.electromagnetic-waves]
+    difficulty: 3
+    type: mcq
+    stem: "ขับรถผ่านใต้สายไฟฟ้าแรงสูงหรือขณะฝนฟ้าคะนอง วิทยุ AM มีเสียงซ่ามากกว่าวิทยุ FM เพราะเหตุใด"
+    choices:
+      - { id: a, text: "AM เก็บข้อมูลไว้ในแอมพลิจูด ซึ่งสัญญาณรบกวนเปลี่ยนได้ง่าย ส่วน FM เก็บข้อมูลไว้ในความถี่", correct: true }
+      - { id: b, text: "คลื่น AM เคลื่อนที่ช้ากว่าคลื่น FM", feedback: "ทั้งสองเป็นคลื่นแม่เหล็กไฟฟ้า เร็วเท่ากัน" }
+      - { id: c, text: "คลื่น FM ไม่ใช่คลื่นแม่เหล็กไฟฟ้า จึงไม่ถูกรบกวน", feedback: "FM เป็นคลื่นวิทยุซึ่งเป็นคลื่นแม่เหล็กไฟฟ้าเช่นกัน" }
+      - { id: d, text: "วิทยุ AM ใช้สัญญาณดิจิทัล", feedback: "วิทยุ AM แบบดั้งเดิมเป็นแอนะล็อก" }
+    hints:
+      - "สัญญาณรบกวนทางไฟฟ้าส่วนใหญ่ไปเพิ่มหรือลดขนาดของคลื่น"
+      - "AM และ FM เก็บข้อมูลไว้ในสมบัติใดของคลื่นพาห์"
+    solution: "สัญญาณรบกวนส่วนใหญ่เปลี่ยนแอมพลิจูด AM เก็บเสียงไว้ในแอมพลิจูดจึงได้ยินเสียงซ่า FM เก็บเสียงไว้ในความถี่ เครื่องรับตัดการเปลี่ยนแอมพลิจูดทิ้งได้ จึงทนสัญญาณรบกวนกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

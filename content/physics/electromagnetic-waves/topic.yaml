@@ -1,0 +1,77 @@
+id: physics.waves.electromagnetic-waves
+subject: physics
+title: { th: คลื่นแม่เหล็กไฟฟ้าและการสื่อสาร, en: Electromagnetic waves and communication }
+summary: การเกิดและการรับคลื่นแม่เหล็กไฟฟ้า อัตราเร็วแสง แสงโพลาไรส์และแผ่นโพลารอยด์ การมอดูเลต การเดินทางของคลื่นวิทยุ ดาวเทียม เส้นใยนำแสง และการสื่อสารแบบแอนะล็อกกับดิจิทัล
+difficulty: 5
+minutes: 35
+prerequisites: [physics.waves.wave-basics, physics.magnetism.induction-ac]
+encompasses:
+  - { id: physics.waves.wave-basics, weight: 0.3 }
+  - { id: physics.magnetism.induction-ac, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: สนามไฟฟ้าและสนามแม่เหล็กในคลื่น
+    src: em-wave.svg
+    alt: "ภาพสามมิติของคลื่นแม่เหล็กไฟฟ้าเคลื่อนที่ไปทางขวา สนามไฟฟ้า E สีแดงสั่นขึ้นลงในระนาบตั้ง สนามแม่เหล็ก B สีน้ำเงินสั่นในระนาบนอนที่ตั้งฉากกับ E ทั้งสองเป็นรูปไซน์ที่ถึงค่าสูงสุดและเป็นศูนย์ที่ตำแหน่งเดียวกัน ลูกศรบอกความยาวคลื่น λ ข้อความ E ตั้งฉาก B ตั้งฉากทิศการเคลื่อนที่ และ E = cB"
+  - type: worked-example
+    title: ความยาวคลื่นและเสาอากาศ FM
+    problem: "สถานีวิทยุ FM ในกรุงเทพฯ ส่งที่ความถี่ $95.0\\ \\mathrm{MHz}$ จงหาความยาวคลื่น และความยาวของเสาอากาศแบบครึ่งความยาวคลื่น"
+    steps:
+      - text: "แปลงหน่วย $f = 95.0 \\times 10^{6}\\ \\mathrm{Hz}$"
+      - text: "$\\lambda = \\dfrac{c}{f} = \\dfrac{3.0 \\times 10^{8}}{95.0 \\times 10^{6}} = 3.16\\ \\mathrm{m}$"
+      - text: "เสาอากาศครึ่งความยาวคลื่น $= \\dfrac{3.16}{2} = 1.58\\ \\mathrm{m}$"
+        why: "อิเล็กตรอนในเสาอากาศที่ยาวพอดีกับครึ่งความยาวคลื่นสั่นพ้องกับคลื่น จึงรับหรือส่งได้ดีที่สุด"
+    answer: "$\\lambda \\approx 3.2\\ \\mathrm{m}$ และเสาอากาศยาวราว $1.6\\ \\mathrm{m}$"
+  - { type: check, problem: physics.waves.electromagnetic-waves.p003, prompt: "ใช้ c = fλ อย่าลืมแปลงเมกะเฮิรตซ์" }
+  - type: figure
+    title: แผ่นโพลารอยด์สองแผ่น
+    src: polaroid.svg
+    alt: "แสงไม่โพลาไรส์ความเข้ม I₀ มีสนามไฟฟ้าสั่นหลายแนวผ่านโพลารอยด์แผ่นที่ 1 ซึ่งมีแนวผ่านตั้ง ได้แสงโพลาไรส์เชิงเส้นในแนวตั้งความเข้ม I₀/2 จากนั้นผ่านโพลารอยด์แผ่นที่ 2 ที่เอียงทำมุม θ แสงที่ออกมาสั่นตามแนวของแผ่นที่ 2 และมีความเข้ม (I₀/2)cos²θ"
+  - type: interactive
+    title: กฎของมาลุส
+    caption: "แสงโพลาไรส์ความเข้ม $I$ ผ่านโพลารอยด์ที่ทำมุม $x$ องศากับแนวโพลาไรส์ ความเข้มที่ผ่านเป็น $I\\cos^2 x$ สังเกตว่าที่ $45^\\circ$ เหลือครึ่งหนึ่ง และที่ $90^\\circ$ เป็นศูนย์"
+    widget:
+      kind: function-plot
+      functions: ["I\\cos^2(0.01745x)"]
+      sliders:
+        - { name: I, min: 100, max: 800, step: 50, value: 400, label: ความเข้มก่อนเข้าแผ่น }
+      x: [0, 180]
+      y: [0, 800]
+  - { type: check, problem: physics.waves.electromagnetic-waves.p010, prompt: "แผ่นที่ตั้งฉากกันกั้นแสงได้หมด" }
+  - type: figure
+    title: เส้นทางของคลื่นวิทยุ
+    src: propagation.svg
+    alt: "ภาพผิวโลกโค้งและชั้นไอโอโนสเฟียร์ด้านบน (ไม่ตามมาตราส่วน) จากเสาสถานีส่ง คลื่นดินเคลื่อนเลียบผิวโลก คลื่นตรงเดินเป็นเส้นตรงไปยังเสารับในแนวสายตา คลื่นฟ้าขึ้นไปสะท้อนที่ไอโอโนสเฟียร์แล้วลงมายังเครื่องรับที่อยู่ไกลเลยขอบฟ้า และเส้นประไปยังดาวเทียมซึ่งส่งต่อลงมายังเครื่องรับไกล"
+  - type: worked-example
+    title: เวลาหน่วงผ่านดาวเทียมค้างฟ้า
+    problem: "สัญญาณถ่ายทอดสดจากสถานีภาคพื้นดินขึ้นไปยังดาวเทียมค้างฟ้าที่สูงประมาณ $3.58 \\times 10^{7}\\ \\mathrm{m}$ แล้วส่งกลับลงมายังจานรับที่อยู่ใต้ดาวเทียมพอดี สัญญาณใช้เวลาเท่าใด"
+    steps:
+      - text: "ระยะทางขึ้นและลง $= 2 \\times 3.58 \\times 10^{7} = 7.16 \\times 10^{7}\\ \\mathrm{m}$"
+      - text: "$t = \\dfrac{7.16 \\times 10^{7}}{3.0 \\times 10^{8}} = 0.24\\ \\mathrm{s}$"
+        why: "คลื่นแม่เหล็กไฟฟ้าในอวกาศและอากาศเคลื่อนที่ด้วยอัตราเร็วประมาณ $c$"
+      - text: "ถ้าคุยโต้ตอบกัน คำตอบต้องเดินทางกลับอีกรอบ รวมราวครึ่งวินาที"
+    answer: "ประมาณ $0.24\\ \\mathrm{s}$ ผู้ประกาศในรายการถ่ายทอดผ่านดาวเทียมจึงดูเหมือนตอบช้า"
+glossary:
+  - { term: คลื่นพาห์, definition: "คลื่นความถี่สูงที่ใช้บรรทุกสัญญาณข้อมูลในการสื่อสาร" }
+  - { term: การมอดูเลต, definition: "การผสมสัญญาณข้อมูลเข้ากับคลื่นพาห์โดยเปลี่ยนแอมพลิจูด (AM) ความถี่ (FM) หรือสมบัติอื่นของคลื่นพาห์" }
+  - { term: แสงโพลาไรส์เชิงเส้น, definition: "แสงที่สนามไฟฟ้าสั่นอยู่ในแนวเดียว" }
+  - { term: แผ่นโพลารอยด์, definition: "แผ่นที่ยอมให้แสงผ่านเฉพาะองค์ประกอบของสนามไฟฟ้าในแนวหนึ่ง" }
+  - { term: ไอโอโนสเฟียร์, definition: "ชั้นบรรยากาศสูงที่มีไอออนและอิเล็กตรอนอิสระ สะท้อนคลื่นวิทยุความถี่ต่ำกว่าราว 30 MHz" }
+  - { term: ดาวเทียมค้างฟ้า, definition: "ดาวเทียมที่โคจรรอบโลกพร้อมกับการหมุนของโลก จึงอยู่เหนือตำแหน่งเดิมบนพื้นโลกตลอดเวลา สูงราว 36,000 กิโลเมตร" }
+flashcards:
+  - { front: "แหล่งกำเนิดคลื่นแม่เหล็กไฟฟ้า", back: "ประจุไฟฟ้าที่มีความเร่ง เช่น อิเล็กตรอนที่สั่นในเสาอากาศ" }
+  - { front: "อัตราเร็วของคลื่นแม่เหล็กไฟฟ้าในสุญญากาศ", back: "$c = \\dfrac{1}{\\sqrt{\\mu_0\\varepsilon_0}} = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$" }
+  - { front: "แสงไม่โพลาไรส์ผ่านโพลารอยด์ แล้วผ่านแผ่นที่สองที่ทำมุม θ", back: "$I = \\dfrac{I_0}{2}\\cos^2\\theta$" }
+  - { front: "AM กับ FM", back: "AM เปลี่ยนแอมพลิจูดของคลื่นพาห์ · FM เปลี่ยนความถี่ ทนสัญญาณรบกวนกว่า" }
+  - { front: "คลื่นดิน คลื่นฟ้า คลื่นตรง", back: "เลียบผิวโลก · สะท้อนไอโอโนสเฟียร์ · เป็นเส้นตรงในแนวสายตาและทะลุไปถึงดาวเทียม" }
+references:
+  - { title: "คลื่นแม่เหล็กไฟฟ้า", url: "https://th.wikipedia.org/wiki/คลื่นแม่เหล็กไฟฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Polarization (waves)", url: "https://en.wikipedia.org/wiki/Polarization_(waves)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "15.1 The Electromagnetic Spectrum (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/15-1-the-electromagnetic-spectrum", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Radio propagation", url: "https://en.wikipedia.org/wiki/Radio_propagation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

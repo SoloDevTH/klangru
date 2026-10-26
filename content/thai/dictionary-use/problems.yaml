@@ -1,0 +1,394 @@
+problems:
+- id: thai.grammar.dictionary-use.p001
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 1
+  type: mcq
+  stem: คำว่า **เงิน** อยู่ในหมวดอักษรใดของพจนานุกรม
+  choices:
+  - id: a
+    text: ง
+    correct: true
+    feedback: ถูก สระหน้า เ ไม่นับ ให้ดูพยัญชนะต้น ง
+  - id: b
+    text: เ
+    feedback: สระหน้าไม่ได้เป็นหมวดในพจนานุกรม ให้ดูพยัญชนะที่ตามมา
+  - id: c
+    text: น
+    feedback: น เป็นตัวสะกด ไม่ใช่พยัญชนะต้น
+  - id: d
+    text: อ
+    feedback: เงิน ไม่มี อ
+  hints:
+  - พจนานุกรมเรียงตามพยัญชนะต้น
+  - ข้ามสระหน้า เ แ โ ใ ไ ไปดูพยัญชนะ
+  solution: '**เงิน** อยู่ในหมวด **ง**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p002
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 1
+  type: mcq
+  stem: คำใดอยู่ **ก่อน** คำอื่นในพจนานุกรม
+  choices:
+  - id: a
+    text: ไก่
+    correct: true
+    feedback: ถูก พยัญชนะต้นคือ ก ซึ่งอยู่ก่อน ข ง จ
+  - id: b
+    text: ขนม
+    feedback: ข อยู่หลัง ก
+  - id: c
+    text: งู
+    feedback: ง อยู่หลัง ก ข
+  - id: d
+    text: จาน
+    feedback: จ อยู่หลัง ก ข ง
+  hints:
+  - ดูพยัญชนะต้นของแต่ละคำ
+  - ไก่ ขึ้นต้นด้วยพยัญชนะตัวใด (อย่าดูสระ ไ)
+  solution: '**ไก่** (หมวด ก) → ขนม → งู → จาน'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p003
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 2
+  type: order
+  stem: 'เรียงคำตามลำดับในพจนานุกรม: **เนย / นิ้ว / นา / นอน / นก / น้ำ**'
+  items:
+  - นก
+  - นอน
+  - นา
+  - น้ำ
+  - นิ้ว
+  - เนย
+  hints:
+  - ทุกคำขึ้นต้นด้วย น ให้ดูตัวถัดไป
+  - พยัญชนะ (ก อ) มาก่อนสระ และสระเรียง ะ ั า ำ ิ ี ... เ แ โ ใ ไ
+  solution: นก → นอน → นา → น้ำ → นิ้ว → เนย (นก นอน มีพยัญชนะตามหลัง น จึงมาก่อน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p004
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 2
+  type: order
+  stem: 'เรียงคำตามลำดับในพจนานุกรม: **ไป / เปิด / ปู / ปาก / ป้า / ปลา**'
+  items:
+  - ปลา
+  - ป้า
+  - ปาก
+  - ปู
+  - เปิด
+  - ไป
+  hints:
+  - ปลา มี ล ตามหลัง ป จึงมาก่อนคำที่มีสระ
+  - 'ป้า กับ ปาก: ดูตัวอักษรก่อน วรรณยุกต์ใช้ตัดสินเมื่อตัวอื่นเหมือนกันหมด'
+  solution: ปลา → ป้า → ปาก → ปู → เปิด → ไป (ป้า สั้นกว่า ปาก จึงมาก่อน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p005
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 2
+  type: match
+  stem: จับคู่อักษรย่อในพจนานุกรมกับชนิดของคำ
+  pairs:
+  - left: น.
+    right: คำนาม
+  - left: ก.
+    right: คำกริยา
+  - left: ว.
+    right: คำวิเศษณ์
+  - left: ส.
+    right: คำสรรพนาม
+  - left: สัน.
+    right: คำสันธาน
+  hints:
+  - อักษรย่อมาจากพยัญชนะตัวแรกของชื่อชนิดคำ
+  - ส. (ไม่มีวงเล็บ) คือสรรพนาม สัน. คือสันธาน
+  solution: น. นาม · ก. กริยา · ว. วิเศษณ์ · ส. สรรพนาม · สัน. สันธาน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p006
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 2
+  type: mcq
+  stem: ดูหน้าพจนานุกรมจำลอง คำนำทางคือ **ขนม … ขยัน** คำใด **อยู่ในหน้านี้**
+  figure:
+    src: dictionary-page.svg
+    alt: 'หน้าพจนานุกรมจำลอง หัวกระดาษมีคำนำทาง ขนม (มุมซ้าย) และ ขยัน (มุมขวา) ในหน้ามีคำตั้ง ขนม ขนาด ขนุน ขม ขยัน แต่ละคำมีคำอ่านในวงเล็บเหลี่ยม ชนิดของคำ และความหมาย ด้านขวามีคำอธิบายส่วนต่าง ๆ: คำนำทาง คำตั้ง คำอ่าน ชนิดของคำ ความหมาย'
+  choices:
+  - id: a
+    text: ขนาน
+    correct: true
+    feedback: ถูก ขนาน อยู่หลัง ขนม (ม มาก่อน า) และอยู่ก่อน ขยัน (น มาก่อน ย)
+  - id: b
+    text: ขอบ
+    feedback: อ อยู่หลัง ย ในลำดับพยัญชนะ ขอบ จึงอยู่หลัง ขยัน
+  - id: c
+    text: ขา
+    feedback: า เป็นสระ อยู่หลังพยัญชนะทุกตัว ขา จึงอยู่หลัง ขยัน
+  - id: d
+    text: ขด
+    feedback: ด อยู่ก่อน น ขด จึงอยู่ก่อน ขนม
+  hints:
+  - คำที่อยู่ในหน้านี้ต้องอยู่ระหว่างคำนำทางทั้งสอง
+  - เทียบตัวที่สองของแต่ละคำกับ น (ขนม) และ ย (ขยัน)
+  solution: '**ขนาน** อยู่ระหว่าง ขนม กับ ขยัน'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p007
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 3
+  type: mcq
+  stem: ดูคำอธิบายคำว่า ขัน ในประโยค "**ไก่ขันเสียงดังทุกเช้า**" ใช้ความหมายข้อใด
+  figure: &id001
+    src: entry-khan.svg
+    alt: 'คำอธิบายศัพท์ในพจนานุกรมจำลอง 4 บรรทัด: ขัน ๑ น. ภาชนะสำหรับตักหรือใส่น้ำ เช่น ใช้ขันตักน้ำ / ขัน ๒ ก. ร้องอย่างไก่ตัวผู้ เช่น ไก่ขันตอนเช้ามืด / ขัน ๓ ก. หมุนให้แน่น เช่น ขันน็อต ขันฝาขวด / ขัน ๔ ว. น่าหัวเราะ เช่น เรื่องนี้ขันดี'
+  choices:
+  - id: a
+    text: ขัน ๒
+    correct: true
+    feedback: ถูก ไก่ทำเสียงร้อง เป็นกริยา ตรงกับ ร้องอย่างไก่ตัวผู้
+  - id: b
+    text: ขัน ๑
+    feedback: ขัน ๑ เป็นนาม หมายถึงภาชนะ ไก่ไม่ได้ทำภาชนะ
+  - id: c
+    text: ขัน ๓
+    feedback: ขัน ๓ คือหมุนให้แน่น ไม่เข้ากับไก่
+  - id: d
+    text: ขัน ๔
+    feedback: ขัน ๔ เป็นวิเศษณ์ แปลว่าน่าหัวเราะ ในประโยคนี้ ขัน เป็นการกระทำของไก่
+  hints:
+  - ขัน ในประโยคนี้เป็นการกระทำหรือสิ่งของ
+  - ลองนำความหมายแต่ละข้อไปแทนในประโยค
+  solution: '**ขัน ๒** (ก.) ร้องอย่างไก่ตัวผู้'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p008
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 3
+  type: match
+  stem: ดูคำอธิบายคำว่า ขัน แล้วจับคู่ประโยคกับความหมาย
+  figure: *id001
+  pairs:
+  - left: ยายใช้ขันตักน้ำรดต้นไม้
+    right: ขัน ๑
+  - left: พ่อขันน็อตล้อจักรยานให้แน่น
+    right: ขัน ๓
+  - left: ตัวตลกเล่ามุกขันจนทุกคนหัวเราะ
+    right: ขัน ๔
+  hints:
+  - ดูว่า ขัน เป็นสิ่งของ การกระทำ หรือคำขยาย
+  - แทนความหมายลงในประโยคแล้วอ่านดู
+  solution: ตักน้ำ → ขัน ๑ (ภาชนะ) · ขันน็อต → ขัน ๓ (หมุนให้แน่น) · มุกขัน → ขัน ๔ (น่าหัวเราะ)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p009
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 3
+  type: mcq
+  stem: '**นอน** กับ **นา** คำใดอยู่ก่อนในพจนานุกรม เพราะอะไร'
+  choices:
+  - id: a
+    text: นอน เพราะ อ เป็นพยัญชนะ จึงมาก่อนสระ า
+    correct: true
+    feedback: ถูก ตัวถัดจาก น ของ นอน คือ อ ซึ่งเป็นพยัญชนะ
+  - id: b
+    text: นา เพราะสั้นกว่า
+    feedback: ความยาวไม่ได้ตัดสิน ต้องเทียบตัวที่สองก่อน
+  - id: c
+    text: นา เพราะสระ า มาก่อนทุกตัว
+    feedback: สระมาหลังพยัญชนะ
+  - id: d
+    text: อยู่หน้าเดียวกัน ลำดับใดก็ได้
+    feedback: พจนานุกรมเรียงแน่นอน ไม่สลับได้
+  hints:
+  - เทียบตัวที่สองของแต่ละคำ
+  - อ ในคำว่า นอน เป็นพยัญชนะหรือสระ
+  solution: '**นอน** มาก่อน **นา** เพราะ อ เป็นพยัญชนะ'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p010
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 3
+  type: text
+  stem: ในพจนานุกรม อักษรย่อ **ว.** หมายถึงคำชนิดใด (พิมพ์ชื่อชนิดของคำ)
+  accepted:
+  - วิเศษณ์
+  - คำวิเศษณ์
+  misconceptions:
+  - match: วิสามานยนาม
+    feedback: วิสามานยนามเป็นคำนามชนิดหนึ่ง ใช้อักษรย่อ น.
+  - match: กริยา
+    feedback: กริยาใช้อักษรย่อ ก.
+  hints:
+  - นึกถึงคำว่า ขม ขยัน ซึ่งมีอักษรย่อนี้
+  - คำชนิดนี้ใช้ขยายคำอื่น
+  solution: '**ว.** = **วิเศษณ์**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p011
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 4
+  type: order
+  stem: 'เรียงคำตามลำดับในพจนานุกรม: **ลม / ฤดู / เรือ / รอง**'
+  items:
+  - รอง
+  - เรือ
+  - ฤดู
+  - ลม
+  hints:
+  - ฤ เรียงต่อจากหมวด ร ก่อนหมวด ล
+  - 'ในหมวด ร: รอง มี อ (พยัญชนะ) จึงมาก่อน เรือ'
+  solution: รอง → เรือ → ฤดู → ลม (ฤ อยู่ระหว่างหมวด ร กับ ล)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p012
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 4
+  type: mcq
+  stem: คำตั้ง **ขนม [ขะ-หนม]** วงเล็บเหลี่ยมบอกอะไร
+  choices:
+  - id: a
+    text: 'วิธีอ่านออกเสียง: อ่านว่า ขะ-หนม'
+    correct: true
+    feedback: ถูก คำอ่านช่วยให้อ่านคำที่อ่านไม่ตรงรูปได้ถูก
+  - id: b
+    text: วิธีเขียนอีกแบบหนึ่ง
+    feedback: ขะหนม ไม่ใช่การเขียนที่ถูก วงเล็บบอกวิธีอ่าน
+  - id: c
+    text: ความหมายของคำ
+    feedback: ความหมายอยู่หลังอักษรย่อชนิดของคำ
+  - id: d
+    text: ที่มาของคำจากภาษาอื่น
+    feedback: ที่มาใช้วงเล็บธรรมดา เช่น (ป.) (ส.) (อ.)
+  hints:
+  - ลองอ่าน ขนม ตามตัวเขียนดู
+  - ส่วนนี้อยู่ระหว่างคำตั้งกับชนิดของคำ
+  solution: วงเล็บเหลี่ยมคือ **คำอ่าน** ขนม อ่านว่า **ขะ-หนม** ไม่ใช่ ขน-ม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p013
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 4
+  type: mcq
+  stem: พจนานุกรมจำลองเขียนคำอธิบายว่า "**กรรม** น. การกระทำ. (ส.; ป. กมฺม)" วงเล็บท้ายบอกอะไร
+  choices:
+  - id: a
+    text: 'ที่มาของคำ: มาจากภาษาสันสกฤต ภาษาบาลีเป็น กมฺม'
+    correct: true
+    feedback: ถูก (ส.) ในวงเล็บคือสันสกฤต (ป.) คือบาลี
+  - id: b
+    text: กรรม เป็นคำสรรพนาม
+    feedback: ส. ที่บอกชนิดของคำไม่มีวงเล็บ ชนิดของคำนี้คือ น. (นาม)
+  - id: c
+    text: วิธีอ่านออกเสียง
+    feedback: คำอ่านใช้วงเล็บเหลี่ยม [ ]
+  - id: d
+    text: กรรม มีสองความหมาย
+    feedback: ความหมายหลายข้อใช้เลข ๑ ๒ ไม่ใช่วงเล็บนี้
+  hints:
+  - ชนิดของคำอยู่หลังคำตั้งทันที (น.)
+  - ตัวย่อในวงเล็บท้ายคำอธิบายบอกภาษาต้นทาง
+  solution: '**(ส.; ป. กมฺม)** บอกว่ามาจาก**ภาษาสันสกฤต** และภาษาบาลีเขียนว่า กมฺม'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p014
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 4
+  type: order
+  stem: เรียงขั้นการค้นหาความหมายของคำในพจนานุกรม
+  items:
+  - ดูพยัญชนะต้นของคำ (ข้ามสระหน้า)
+  - เปิดไปที่หมวดอักษรนั้น
+  - ดูคำนำทางที่หัวกระดาษ
+  - หาคำตั้งในหน้านั้น
+  - อ่านคำอ่านและความหมาย
+  - เลือกความหมายที่ตรงกับประโยค
+  hints:
+  - เริ่มจากหมวดใหญ่ แล้วแคบลงทีละขั้น
+  - ขั้นสุดท้ายต้องกลับไปดูประโยคที่พบคำ
+  solution: พยัญชนะต้น → หมวด → คำนำทาง → คำตั้ง → คำอ่านและความหมาย → เลือกความหมายตามบริบท
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p015
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 5
+  type: mcq
+  stem: รายการใดเรียงตามลำดับพจนานุกรม **ถูกต้อง**
+  choices:
+  - id: a
+    text: มด มอง มะม่วง มา มี เมฆ
+    correct: true
+    feedback: ถูก พยัญชนะ (ด อ) มาก่อน แล้วเรียงสระ ะ า ี เ
+  - id: b
+    text: มะม่วง มด มอง มา มี เมฆ
+    feedback: มด มอง มีพยัญชนะตามหลัง ม จึงต้องมาก่อน มะม่วง
+  - id: c
+    text: มา มด มอง มะม่วง มี เมฆ
+    feedback: สระ า มาหลังพยัญชนะและหลังสระ ะ
+  - id: d
+    text: เมฆ มด มอง มะม่วง มา มี
+    feedback: สระหน้า เ ไม่นับเป็นตัวแรก และอยู่ท้ายลำดับสระ
+  hints:
+  - ทุกคำขึ้นต้นด้วย ม ให้ดูตัวที่สอง
+  - พยัญชนะก่อนสระ สระเรียง ะ ั า ำ ิ ี ึ ื ุ ู เ แ โ ใ ไ
+  solution: '**มด มอง มะม่วง มา มี เมฆ**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p016
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 5
+  type: order
+  stem: 'เรียงคำตามลำดับในพจนานุกรม: **ไก่ / กา / เก็บ / ใกล้ / โกง / แก้ว**'
+  items:
+  - กา
+  - เก็บ
+  - แก้ว
+  - โกง
+  - ใกล้
+  - ไก่
+  hints:
+  - ทุกคำอยู่หมวด ก สระหน้าให้นับเป็นสระตัวถัดจาก ก
+  - 'ลำดับสระหน้า: เ แ โ ใ ไ และ า มาก่อนสระหน้าทุกตัว'
+  solution: กา → เก็บ → แก้ว → โกง → ใกล้ → ไก่ (สระหน้าเรียง เ แ โ ใ ไ)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.dictionary-use.p017
+  topics:
+  - thai.grammar.dictionary-use
+  difficulty: 5
+  type: mcq
+  stem: 'พจนานุกรมจำลองให้ความหมายคำว่า **ฝาก** ไว้ 3 ข้อ: ๑ มอบของไว้ให้ผู้อื่นดูแลชั่วคราว ๒ นำเงินเข้าบัญชีธนาคาร ๓ ส่งของไปกับผู้อื่นเพื่อให้ถึงอีกคน ประโยค "**ป้าฝากขนมมากับพี่ให้แม่**" ใช้ความหมายข้อใด'
+  choices:
+  - id: a
+    text: ข้อ ๓
+    correct: true
+    feedback: ถูก ป้าส่งขนมผ่านพี่เพื่อให้ถึงแม่
+  - id: b
+    text: ข้อ ๑
+    feedback: พี่ไม่ได้ดูแลขนมไว้ชั่วคราวให้ป้า แต่นำไปให้คนอื่น
+  - id: c
+    text: ข้อ ๒
+    feedback: ไม่มีเงินหรือธนาคารในประโยค
+  hints:
+  - 'มีคนสามคน: ป้า พี่ แม่'
+  - ของเดินทางจากใครไปถึงใคร
+  solution: '**ข้อ ๓** ส่งของไปกับผู้อื่นเพื่อให้ถึงอีกคน (ป้า → พี่ → แม่)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
