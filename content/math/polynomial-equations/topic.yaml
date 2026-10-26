@@ -1,0 +1,80 @@
+id: math.algebra.polynomial-equations
+subject: math
+title: { th: การหารพหุนามและสมการพหุนาม, en: Polynomial division and polynomial equations }
+summary: หารพหุนามด้วยเอกนามและพหุนาม หารสังเคราะห์ ใช้ทฤษฎีบทเศษเหลือและทฤษฎีบทตัวประกอบ แยกผลบวกและผลต่างกำลังสาม แก้สมการและอสมการพหุนามดีกรีไม่เกินสี่ และร่างกราฟจากราก
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.algebra.factoring, math.algebra.quadratic-eq]
+encompasses:
+  - { id: math.algebra.factoring, weight: 0.4 }
+  - { id: math.algebra.quadratic-eq, weight: 0.3 }
+  - { id: math.algebra.polynomials, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ใช้ทฤษฎีบทเศษเหลือหาสัมประสิทธิ์
+    problem: "$P(x) = x^3 + ax^2 + bx - 6$ มี $x - 2$ เป็นตัวประกอบ และเมื่อหารด้วย $x + 1$ เหลือเศษ 6 จงหา $a$ และ $b$"
+    steps:
+      - text: "$x - 2$ เป็นตัวประกอบ จึง $P(2) = 0$: $8 + 4a + 2b - 6 = 0$ ได้ $2a + b = -1$"
+        why: "ทฤษฎีบทตัวประกอบ: $x - c$ เป็นตัวประกอบก็ต่อเมื่อ $P(c) = 0$"
+      - text: "หารด้วย $x + 1$ เศษ 6 จึง $P(-1) = 6$: $-1 + a - b - 6 = 6$ ได้ $a - b = 13$"
+        why: "$x + 1 = x - (-1)$ จึงแทน $c = -1$"
+      - text: "บวกสองสมการ: $3a = 12$ ได้ $a = 4$ แล้ว $b = 4 - 13 = -9$"
+      - text: "ตรวจ: $P(x) = x^3 + 4x^2 - 9x - 6$, $P(2) = 8 + 16 - 18 - 6 = 0$ และ $P(-1) = -1 + 4 + 9 - 6 = 6$"
+    answer: "$a = 4$, $b = -9$"
+  - { type: check, problem: math.algebra.polynomial-equations.p002, prompt: "ไม่ต้องหารจริง ใช้ทฤษฎีบทเศษเหลือ" }
+  - type: worked-example
+    title: แก้สมการกำลังสามด้วยทฤษฎีบทตัวประกอบ
+    problem: "จงแก้สมการ $2x^3 + x^2 - 7x - 6 = 0$"
+    steps:
+      - text: "ค่าที่ควรลอง: $\\pm\\frac{\\text{ตัวประกอบของ } 6}{\\text{ตัวประกอบของ } 2}$ คือ $\\pm1, \\pm2, \\pm3, \\pm6, \\pm\\tfrac12, \\pm\\tfrac32$"
+        why: "สัมประสิทธิ์เป็นจำนวนเต็ม รากที่เป็นจำนวนตรรกยะจึงอยู่ในรายการนี้"
+      - text: "$P(1) = -10$, $P(-1) = 0$ จึงมี $x + 1$ เป็นตัวประกอบ (หรือใช้ $P(2) = 0$ ก็ได้)"
+      - text: "หารสังเคราะห์ด้วย $c = -1$: สัมประสิทธิ์ 2, 1, −7, −6 ได้ 2, −1, −6 เศษ 0 ผลหารคือ $2x^2 - x - 6$"
+      - text: "แยกตัวประกอบ $2x^2 - x - 6 = (2x + 3)(x - 2)$"
+      - text: "$(x + 1)(2x + 3)(x - 2) = 0$ ได้ $x = -1, -\\tfrac32, 2$"
+        why: "ผลคูณเป็นศูนย์เมื่อตัวประกอบตัวใดตัวหนึ่งเป็นศูนย์"
+    answer: "$x = -\\tfrac32, -1, 2$"
+  - type: figure
+    src: cubic-sign.svg
+    alt: "กราฟของ y = (x + 1)(x − 2)(x − 4) ตัดแกน x ที่ −1, 2 และ 4 ด้านล่างมีเส้นจำนวนวงกลมเปิดที่ −1, 2, 4 เครื่องหมายของ y ในแต่ละช่วงจากซ้ายไปขวาเป็น ลบ บวก ลบ บวก"
+    caption: "y > 0 เมื่อกราฟอยู่เหนือแกน x คือ −1 < x < 2 หรือ x > 4"
+  - type: figure
+    src: touch-cross.svg
+    alt: "กราฟของ y = (x − 1)²(x + 2) ตัดผ่านแกน x ที่ x = −2 แต่แตะแกน x แล้วกลับขึ้นที่ x = 1 ตัดแกน y ที่ 2"
+    caption: "ตัวประกอบ (x + 2) กำลังหนึ่ง กราฟตัดผ่าน ตัวประกอบ (x − 1)² กำลังสอง กราฟแตะแล้วกลับ"
+  - type: interactive
+    title: ลองเลื่อนรากของพหุนามดีกรีสาม
+    caption: "y = (x − a)(x − b)(x − c) ตัดแกน x ที่ a, b, c ลองให้สองรากเท่ากันแล้วดูว่ากราฟแตะแกน"
+    widget:
+      kind: function-plot
+      functions: ["(x-a)(x-b)(x-c)"]
+      sliders:
+        - { name: a, min: -4, max: 4, step: 0.5, value: -2, label: รากที่ 1 }
+        - { name: b, min: -4, max: 4, step: 0.5, value: 1, label: รากที่ 2 }
+        - { name: c, min: -4, max: 4, step: 0.5, value: 3, label: รากที่ 3 }
+      x: [-5, 5]
+      y: [-12, 12]
+  - { type: check, problem: math.algebra.polynomial-equations.p003, prompt: "หารด้วย x − 2 ใช้ค่า c เท่าใด" }
+glossary:
+  - { term: ผลหารและเศษ, definition: "P(x) = D(x)Q(x) + R(x) โดยเศษ R มีดีกรีน้อยกว่าตัวหาร D" }
+  - { term: การหารสังเคราะห์, definition: "วิธีลัดหารพหุนามด้วย x − c โดยเขียนเฉพาะสัมประสิทธิ์" }
+  - { term: ทฤษฎีบทเศษเหลือ, definition: "เศษจากการหาร P(x) ด้วย x − c เท่ากับ P(c)" }
+  - { term: ทฤษฎีบทตัวประกอบ, definition: "x − c เป็นตัวประกอบของ P(x) ก็ต่อเมื่อ P(c) = 0" }
+  - { term: รากซ้ำ, definition: "รากที่มาจากตัวประกอบยกกำลังมากกว่าหนึ่ง เช่น (x − 1)² กราฟแตะแกน x ที่รากนี้" }
+flashcards:
+  - { front: "เศษจากการหาร P(x) ด้วย x + 4", back: "P(−4)" }
+  - { front: "a³ − b³ = ?", back: "(a − b)(a² + ab + b²)" }
+  - { front: "a³ + b³ = ?", back: "(a + b)(a² − ab + b²)" }
+  - { front: "ค่าที่ควรลองหารากของ 3x³ + … − 4 = 0", back: "± ตัวประกอบของ 4 หารด้วย ตัวประกอบของ 3" }
+  - { front: "ที่รากซ้ำ (x − c)² กราฟทำอย่างไร", back: "แตะแกน x แล้วกลับ เครื่องหมายไม่เปลี่ยน" }
+references:
+  - { title: "ทฤษฎีบทเศษเหลือ", url: "https://th.wikipedia.org/wiki/ทฤษฎีบทเศษเหลือ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Synthetic division", url: "https://en.wikipedia.org/wiki/Synthetic_division", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Factor theorem", url: "https://en.wikipedia.org/wiki/Factor_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "5.4 Dividing Polynomials (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/5-4-dividing-polynomials", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

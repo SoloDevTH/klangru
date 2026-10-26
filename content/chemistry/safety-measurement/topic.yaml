@@ -1,0 +1,67 @@
+id: chemistry.lab.safety-measurement
+subject: chemistry
+title: { th: ความปลอดภัยและการวัดในปฏิบัติการเคมี, en: Lab safety and measurement in chemistry }
+summary: อ่านฉลากและสัญลักษณ์ GHS ปฏิบัติตนอย่างปลอดภัยและจัดการอุบัติเหตุ เลือกและอ่านเครื่องมือวัดปริมาตร มวล อุณหภูมิ เปลี่ยนหน่วยด้วยแฟกเตอร์ และเขียนแผนกับรายงานการทดลอง
+difficulty: 3
+minutes: 35
+prerequisites: [physics.units.si, physics.units.measurement]
+encompasses:
+  - { id: physics.units.si, weight: 0.3 }
+  - { id: physics.units.measurement, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: ghs-pictograms.svg
+    alt: "สัญลักษณ์แสดงความเป็นอันตรายของสารเคมีตามระบบ GHS 9 รูป ทุกรูปเป็นภาพสีดำในกรอบสี่เหลี่ยมขนมเปียกปูนขอบแดง แถวบน: ลูกระเบิดแตกกระจาย (วัตถุระเบิด), เปลวไฟเหนือเส้น (สารไวไฟ), เปลวไฟเหนือวงกลม (สารออกซิไดซ์ ช่วยให้ไฟลุกแรงขึ้น) แถวกลาง: ถังแก๊ส (แก๊สภายใต้ความดัน), ของเหลวหยดกัดโลหะและมือ (สารกัดกร่อน), หัวกะโหลกไขว้ (พิษเฉียบพลัน) แถวล่าง: เครื่องหมายตกใจ (ระคายเคืองหรืออันตรายไม่รุนแรง), คนมีรอยแตกที่อก (อันตรายต่อสุขภาพ เช่น ก่อมะเร็ง), ต้นไม้และปลาตาย (อันตรายต่อสิ่งแวดล้อม)"
+    caption: "สัญลักษณ์ GHS 9 รูป ใช้บนฉลากสารเคมีทั่วโลก"
+    credit: "สัญลักษณ์ GHS จาก Wikimedia Commons (สาธารณสมบัติ) จัดวางและใส่คำอธิบายโดยทีมคลังรู้"
+    source: "https://commons.wikimedia.org/wiki/Category:GHS_pictograms"
+    license: PD
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chemistry.lab.safety-measurement.p001, prompt: "ถ้าเกิดเหตุนี้ คุณจะทำอะไรก่อน" }
+  - type: figure
+    src: glassware.svg
+    alt: "เครื่องแก้ว 6 ชนิดเรียงจากซ้ายไปขวา: บีกเกอร์ (ถ้วยทรงกระบอกปากกว้างมีจะงอย ขีด 50 และ 100 ใช้กะปริมาตรคร่าว ๆ), ขวดรูปกรวย (ก้นกว้างคอแคบ ใช้ผสมและหมุนเขย่า), กระบอกตวง (ทรงกระบอกสูงมีฐาน ขีดละเอียด ตวงได้ละเอียดกว่าบีกเกอร์), ปิเปตต์ (หลอดยาวมีกระเปาะตรงกลางและขีดบอกปริมาตรขีดเดียว ดูดสารปริมาตรเดียวแม่นยำ), บิวเรตต์ (หลอดยาวมีสเกลและก๊อกด้านล่าง ปล่อยสารทีละน้อย อ่านได้ 0.01 mL), ขวดกำหนดปริมาตร (ก้นกลมคอยาวมีขีดขีดเดียว เตรียมสารละลายปริมาตรแน่นอน)"
+    caption: "เครื่องแก้ววัดปริมาตร เรียงจากละเอียดน้อยไปละเอียดมาก"
+  - type: worked-example
+    title: เปลี่ยนความหนาแน่นของเอทานอลเป็นหน่วยเอสไอ
+    problem: "เอทานอลมีความหนาแน่น 0.789 g/cm³ จงเปลี่ยนเป็นหน่วยเอสไอ kg/m³ ด้วยแฟกเตอร์เปลี่ยนหน่วย"
+    steps:
+      - text: "เขียนแฟกเตอร์ที่ต้องใช้: $\\dfrac{1\\ \\mathrm{kg}}{1{,}000\\ \\mathrm{g}}$ และ $\\dfrac{10^6\\ \\mathrm{cm^3}}{1\\ \\mathrm{m^3}}$"
+        why: "$1\\ \\mathrm{m} = 100\\ \\mathrm{cm}$ ยกกำลังสามได้ $1\\ \\mathrm{m^3} = 100^3 = 10^6\\ \\mathrm{cm^3}$"
+      - text: "วางแฟกเตอร์ให้หน่วยเดิมตัดกัน: g อยู่ตัวเศษ จึงวาง g ไว้ตัวส่วนของแฟกเตอร์มวล cm³ อยู่ตัวส่วน จึงวาง cm³ ไว้ตัวเศษของแฟกเตอร์ปริมาตร"
+      - text: "คูณ: $0.789\\ \\dfrac{\\mathrm{g}}{\\mathrm{cm^3}} \\times \\dfrac{1\\ \\mathrm{kg}}{1{,}000\\ \\mathrm{g}} \\times \\dfrac{10^6\\ \\mathrm{cm^3}}{1\\ \\mathrm{m^3}} = 789\\ \\mathrm{kg/m^3}$"
+      - text: "ตรวจความสมเหตุสมผล: น้ำ 1.00 g/cm³ คือ 1,000 kg/m³ เอทานอลเบากว่าน้ำเล็กน้อย 789 kg/m³ จึงสมเหตุสมผล"
+    answer: "$789\\ \\mathrm{kg/m^3}$"
+  - { type: check, problem: chemistry.lab.safety-measurement.p009, prompt: "อ่านค่าบิวเรตต์สองครั้งแล้วหาปริมาตรที่ใช้" }
+  - type: worked-example
+    title: คลอรีนในน้ำประปา mg/L เป็น g/m³
+    problem: "น้ำประปาที่ปลายท่อมีคลอรีนอิสระ 0.5 mg/L (ค่าตัวอย่าง) เท่ากับกี่ g/m³"
+    steps:
+      - text: "ต้องเปลี่ยน mg เป็น g ($1\\ \\mathrm{g} = 1{,}000\\ \\mathrm{mg}$) และ L เป็น m³ ($1\\ \\mathrm{m^3} = 1{,}000\\ \\mathrm{L}$)"
+      - text: "แฟกเตอร์มวล $\\dfrac{1\\ \\mathrm{g}}{1{,}000\\ \\mathrm{mg}}$ ทำให้ค่าเล็กลง 1,000 เท่า"
+      - text: "แฟกเตอร์ปริมาตร $\\dfrac{1{,}000\\ \\mathrm{L}}{1\\ \\mathrm{m^3}}$ ทำให้ค่าใหญ่ขึ้น 1,000 เท่า"
+        why: "L อยู่ตัวส่วนของปริมาณเดิม จึงต้องวาง L ไว้ตัวเศษของแฟกเตอร์ให้ตัดกัน"
+      - text: "รวม: $0.5 \\times \\dfrac{1}{1{,}000} \\times 1{,}000 = 0.5\\ \\mathrm{g/m^3}$ สองแฟกเตอร์หักล้างกันพอดี"
+    answer: "$0.5\\ \\mathrm{g/m^3}$ (mg/L มีค่าเท่ากับ g/m³ เสมอ)"
+glossary:
+  - { term: GHS, definition: "ระบบการจำแนกประเภทและการติดฉลากสารเคมีที่เป็นมาตรฐานเดียวกันทั่วโลก ใช้สัญลักษณ์ 9 รูปในกรอบขอบแดง" }
+  - { term: SDS, definition: "เอกสารข้อมูลความปลอดภัยของสารเคมี บอกอันตราย การเก็บ การกำจัด และการปฐมพยาบาล" }
+  - { term: ผิวโค้งเว้า (เมนิสคัส), definition: ผิวของเหลวในหลอดแคบที่โค้ง น้ำโค้งเว้าลง จึงอ่านปริมาตรที่จุดต่ำสุด }
+  - { term: แฟกเตอร์เปลี่ยนหน่วย, definition: "เศษส่วนที่ตัวเศษกับตัวส่วนเท่ากันแต่ต่างหน่วย มีค่าเท่ากับ 1 ใช้คูณเพื่อเปลี่ยนหน่วย" }
+  - { term: ตัวแปรควบคุม, definition: สิ่งที่ต้องทำให้เหมือนกันทุกการทดลอง เพื่อให้ผลต่างเกิดจากตัวแปรต้นเท่านั้น }
+flashcards:
+  - { front: "สารเคมีเข้าตาหรือหกโดนผิว ทำอย่างไร", back: "ล้างด้วยน้ำไหลปริมาณมากอย่างน้อย 15 นาที ถอดเสื้อผ้าที่เปื้อน แจ้งครู ห้ามใช้สารอื่นสะเทิน" }
+  - { front: "เจือจางกรดเข้มข้นอย่างไร", back: "เทกรดลงในน้ำช้า ๆ พร้อมคน ห้ามเทน้ำลงในกรด" }
+  - { front: "เปลวไฟเหนือเส้นตรง กับ เปลวไฟเหนือวงกลม ต่างกันอย่างไร", back: "เหนือเส้นตรง = สารไวไฟ · เหนือวงกลม = สารออกซิไดซ์ (ช่วยให้สารอื่นลุกไหม้)" }
+  - { front: "อ่านปริมาตรของน้ำในกระบอกตวงอย่างไร", back: "ตาอยู่ระดับผิวของเหลว อ่านที่จุดต่ำสุดของส่วนโค้งเว้า ประมาณทศนิยมเพิ่มอีก 1 ตำแหน่ง" }
+  - { front: "$1\\ \\mathrm{dm^3}$ = ? $\\mathrm{cm^3}$ และ $1\\ \\mathrm{atm}$ = ? Pa", back: "$1\\ \\mathrm{dm^3} = 1{,}000\\ \\mathrm{cm^3}$ · $1\\ \\mathrm{atm} = 101{,}325\\ \\mathrm{Pa} = 760\\ \\mathrm{mmHg}$" }
+references:
+  - { title: "ระบบการจำแนกประเภทและการติดฉลากสารเคมีที่เป็นระบบเดียวกันทั่วโลก", url: "https://th.wikipedia.org/wiki/ระบบการจำแนกประเภทและการติดฉลากสารเคมีที่เป็นระบบเดียวกันทั่วโลก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "GHS hazard pictograms", url: "https://en.wikipedia.org/wiki/GHS_hazard_pictograms", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Laboratory glassware", url: "https://en.wikipedia.org/wiki/Laboratory_glassware", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "1.6 Mathematical Treatment of Measurement Results (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/1-6-mathematical-treatment-of-measurement-results", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,318 @@
+problems:
+  - id: math.algebra.polynomial-equations.p001
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 1
+    type: expression
+    expanded: true
+    stem: "จงหาผลหาร $(6x^3 - 9x^2 + 3x) \\div 3x$"
+    answer: { latex: "2x^2-3x+1", variables: [x] }
+    hints:
+      - "หารทีละพจน์ด้วย $3x$"
+      - "$\\tfrac{3x}{3x} = 1$"
+    misconceptions:
+      - { match: "2x^2-3x", feedback: "พจน์สุดท้าย $\\tfrac{3x}{3x} = 1$ ไม่ใช่ 0" }
+      - { match: "2x^3-3x^2+x", feedback: "หารแค่สัมประสิทธิ์ด้วย 3 แต่ลืมหาร $x$ ด้วย" }
+    solution: "$\\dfrac{6x^3}{3x} - \\dfrac{9x^2}{3x} + \\dfrac{3x}{3x} = 2x^2 - 3x + 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p002
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาเศษเมื่อหาร $x^3 - 2x + 5$ ด้วย $x - 2$"
+    answer: { value: 9 }
+    hints:
+      - "ใช้ทฤษฎีบทเศษเหลือ: เศษคือ $P(c)$ เมื่อหารด้วย $x - c$"
+      - "แทน $x = 2$"
+    misconceptions:
+      - { match: 1, feedback: "แทน $x = -2$ แต่ตัวหาร $x - 2$ ให้ $c = 2$" }
+    solution: "$P(2) = 2^3 - 2(2) + 5 = 8 - 4 + 5 = 9$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p003
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 2
+    type: expression
+    expanded: true
+    stem: "จงหาผลหารเมื่อหาร $x^3 + 2x^2 - 5x - 6$ ด้วย $x - 2$ (ใช้การหารสังเคราะห์)"
+    answer: { latex: "x^2+4x+3", variables: [x] }
+    hints:
+      - "เขียนสัมประสิทธิ์ 1, 2, −5, −6 และใช้ $c = 2$"
+      - "ดึง 1 ลงมา คูณด้วย 2 แล้วบวกกับช่องถัดไป ทำซ้ำ"
+    misconceptions:
+      - { match: "x^2-5", feedback: "ใช้ $c = -2$ ซึ่งเป็นการหารด้วย $x + 2$ (และจะเหลือเศษ 4)" }
+      - { match: "x^3+4x^2+3x", feedback: "ผลหารมีดีกรีน้อยกว่าตัวตั้งหนึ่ง ตัวเลขแถวล่าง 1, 4, 3 คือสัมประสิทธิ์ของ $x^2, x, 1$" }
+    solution: "แถวล่างของการหารสังเคราะห์: 1, 4, 3 และเศษ 0 จึงได้ผลหาร $x^2 + 4x + 3$ (ตรวจ: $(x - 2)(x^2 + 4x + 3) = x^3 + 2x^2 - 5x - 6$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p004
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดเป็นตัวประกอบของ $x^3 - 7x + 6$"
+    choices:
+      - { id: a, text: "$x - 2$", correct: true }
+      - { id: b, text: "$x + 2$", feedback: "$P(-2) = -8 + 14 + 6 = 12 \\ne 0$ จึงไม่ใช่ตัวประกอบ" }
+      - { id: c, text: "$x - 3$", feedback: "$P(3) = 27 - 21 + 6 = 12 \\ne 0$" }
+      - { id: d, text: "$x + 1$", feedback: "$P(-1) = -1 + 7 + 6 = 12 \\ne 0$" }
+    hints:
+      - "$x - c$ เป็นตัวประกอบเมื่อ $P(c) = 0$"
+      - "แทนค่า $c$ ของแต่ละตัวเลือก ระวังเครื่องหมาย"
+    solution: "$P(2) = 8 - 14 + 6 = 0$ จึง $x - 2$ เป็นตัวประกอบ (ตัวประกอบอื่นคือ $x - 1$ และ $x + 3$: $x^3 - 7x + 6 = (x - 1)(x - 2)(x + 3)$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p005
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 2
+    type: expression
+    factored: true
+    stem: "จงแยกตัวประกอบ $x^3 - 27$"
+    answer: { latex: "(x-3)(x^2+3x+9)", variables: [x] }
+    hints:
+      - "$27 = 3^3$ ใช้สูตรผลต่างกำลังสาม"
+      - "$a^3 - b^3 = (a - b)(a^2 + ab + b^2)$"
+    misconceptions:
+      - { match: "(x-3)(x^2-3x+9)", feedback: "เครื่องหมายกลางของวงเล็บที่สองต้องตรงข้ามกับวงเล็บแรก: $a^3 - b^3$ ได้ $+ab$" }
+      - { match: "(x-3)^3", feedback: "$(x - 3)^3 = x^3 - 9x^2 + 27x - 27$ ไม่ใช่ $x^3 - 27$" }
+    solution: "$x^3 - 27 = x^3 - 3^3 = (x - 3)(x^2 + 3x + 9)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p006
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการแก้สมการ $x^3 - 4x^2 + x + 6 = 0$"
+    items:
+      - "ค่าที่ควรลองคือตัวประกอบของ 6: $\\pm1, \\pm2, \\pm3, \\pm6$"
+      - "$P(-1) = -1 - 4 - 1 + 6 = 0$ จึงมี $x + 1$ เป็นตัวประกอบ"
+      - "หารสังเคราะห์ด้วย $c = -1$ ได้ผลหาร $x^2 - 5x + 6$"
+      - "แยกตัวประกอบ $(x + 1)(x - 2)(x - 3) = 0$"
+      - "คำตอบคือ $x = -1, 2, 3$"
+    hints:
+      - "ต้องรู้ว่าจะลองค่าอะไรก่อนจึงจะแทนค่าได้"
+      - "หาตัวประกอบหนึ่งตัว → หารออก → แยกส่วนที่เหลือ"
+    solution: "รายการค่าที่ควรลอง → พบ $P(-1) = 0$ → หารออกได้กำลังสอง → แยกตัวประกอบ → อ่านคำตอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p007
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 3
+    type: numeric
+    stem: "ถ้า $x - 2$ เป็นตัวประกอบของ $2x^3 + kx^2 - 5x + 6$ จงหา $k$"
+    answer: { value: -3 }
+    hints:
+      - "$x - 2$ เป็นตัวประกอบ แปลว่า $P(2) = 0$"
+      - "$2(8) + 4k - 10 + 6 = 0$"
+    misconceptions:
+      - { match: 0, feedback: "แทน $x = -2$ แต่ตัวประกอบ $x - 2$ ให้ $c = 2$" }
+      - { match: 3, feedback: "แก้สมการ $4k + 12 = 0$ แล้วเครื่องหมายผิด" }
+    solution: "$P(2) = 16 + 4k - 10 + 6 = 4k + 12 = 0$ ได้ $k = -3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p008
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาเศษเมื่อหาร $4x^3 - 2x^2 + 3x - 1$ ด้วย $2x - 1$ (ตอบเป็นทศนิยม)"
+    answer: { value: 0.5, tolerance: 0.01 }
+    hints:
+      - "หารด้วย $ax - b$ เศษคือ $P\\!\\left(\\tfrac ba\\right)$"
+      - "$2x - 1 = 0$ เมื่อ $x = \\tfrac12$"
+    misconceptions:
+      - { match: 29, feedback: "แทน $x = 2$ แต่ตัวหาร $2x - 1$ เป็นศูนย์เมื่อ $x = \\tfrac12$" }
+      - { match: 4, feedback: "แทน $x = 1$ ต้องหาค่าที่ทำให้ $2x - 1 = 0$" }
+    solution: "$P\\!\\left(\\tfrac12\\right) = 4\\left(\\tfrac18\\right) - 2\\left(\\tfrac14\\right) + \\tfrac32 - 1 = \\tfrac12 - \\tfrac12 + \\tfrac32 - 1 = \\tfrac12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p009
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 3
+    type: mcq
+    stem: "เซตคำตอบของสมการ $x^3 = 9x$ คือข้อใด"
+    choices:
+      - { id: a, text: "$\\{-3, 0, 3\\}$", correct: true }
+      - { id: b, text: "$\\{-3, 3\\}$", feedback: "หารทั้งสองข้างด้วย $x$ ทำให้คำตอบ $x = 0$ หายไป ให้ย้ายข้างแล้วดึงตัวร่วมแทน" }
+      - { id: c, text: "$\\{3\\}$", feedback: "ลืมรากที่เป็นลบ $(-3)^3 = -27 = 9(-3)$ ก็เป็นจริง" }
+      - { id: d, text: "$\\{0, 9\\}$", feedback: "แยกเป็น $x(x^2 - 9)$ แล้วได้ $x^2 = 9$ ต้องถอดรากได้ $\\pm3$ ไม่ใช่ 9" }
+    hints:
+      - "ย้ายทุกพจน์ไปข้างเดียว $x^3 - 9x = 0$"
+      - "ดึงตัวร่วม $x$ แล้วใช้ผลต่างกำลังสอง"
+    solution: "$x^3 - 9x = x(x^2 - 9) = x(x - 3)(x + 3) = 0$ ได้ $x = 0, 3, -3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p010
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 4
+    type: numeric
+    stem: "กล่องใส่ขนมเปี๊ยะทรงสี่เหลี่ยมมุมฉาก กว้าง $x$ ซม. ยาว $x + 1$ ซม. สูง $x + 3$ ซม. มีปริมาตร 140 ลูกบาศก์เซนติเมตร กล่องกว้างกี่เซนติเมตร"
+    answer: { value: 4, unit: ซม. }
+    hints:
+      - "$x(x + 1)(x + 3) = 140$ กระจายแล้วย้ายข้างได้ $x^3 + 4x^2 + 3x - 140 = 0$"
+      - "ลองแทนตัวประกอบบวกของ 140 ที่สมเหตุสมผล เช่น 2, 4, 5 แล้วหารออกเพื่อตรวจว่ามีคำตอบอื่นหรือไม่"
+    misconceptions:
+      - { match: 5, feedback: "5 คือความยาว $x + 1$ โจทย์ถามความกว้าง $x$" }
+      - { match: 7, feedback: "7 คือความสูง $x + 3$ โจทย์ถามความกว้าง $x$" }
+    solution: "$P(4) = 64 + 64 + 12 - 140 = 0$ จึง $x = 4$ หารออกได้ $x^2 + 8x + 35$ ซึ่งดิสคริมิแนนต์ $64 - 140 < 0$ ไม่มีคำตอบจริงอื่น กล่องกว้าง 4 ซม. (ตรวจ: $4 \\times 5 \\times 7 = 140$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p011
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 4
+    type: mcq
+    stem: "เซตคำตอบของอสมการ $(x + 2)(x - 1)(x - 3) < 0$ คือข้อใด"
+    choices:
+      - { id: a, text: "$(-\\infty, -2) \\cup (1, 3)$", correct: true }
+      - { id: b, text: "$(-2, 1) \\cup (3, \\infty)$", feedback: "เป็นช่วงที่ผลคูณเป็นบวก (คำตอบของ $> 0$) ลองแทน $x = 0$: $(2)(-1)(-3) = 6 > 0$" }
+      - { id: c, text: "$(1, 3)$", feedback: "ลืมช่วงซ้ายสุด ลองแทน $x = -3$: $(-1)(-4)(-6) = -24 < 0$" }
+      - { id: d, text: "$[-2, 1] \\cup [3, \\infty)$", feedback: "เครื่องหมาย $<$ ไม่รวมรากที่ทำให้เป็นศูนย์ และช่วงที่เลือกเป็นช่วงบวก" }
+    hints:
+      - "วางราก $-2, 1, 3$ บนเส้นจำนวน แบ่งเป็นสี่ช่วง"
+      - "ทดสอบเครื่องหมายด้วยค่าหนึ่งในแต่ละช่วง หรือเริ่มจากช่วงขวาสุดเป็นบวกแล้วสลับ"
+    solution: "ช่วง $x > 3$: บวก, $1 < x < 3$: ลบ, $-2 < x < 1$: บวก, $x < -2$: ลบ จึงได้ $(-\\infty, -2) \\cup (1, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p012
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาผลบวกของคำตอบที่เป็นจำนวนบวกของสมการ $x^4 - 13x^2 + 36 = 0$"
+    answer: { value: 5 }
+    hints:
+      - "ให้ $u = x^2$ ได้ $u^2 - 13u + 36 = 0$"
+      - "แก้หา $u$ แล้วถอดกลับ $x^2 = u$"
+    misconceptions:
+      - { match: 13, feedback: "13 คือ $4 + 9$ ซึ่งเป็นค่าของ $u = x^2$ ยังไม่ได้ถอดรากกลับเป็น $x$" }
+      - { match: 0, feedback: "รวมคำตอบที่เป็นลบด้วย โจทย์ถามเฉพาะคำตอบที่เป็นบวก" }
+    solution: "$(u - 4)(u - 9) = 0$ ได้ $x^2 = 4$ หรือ $x^2 = 9$ คำตอบคือ $\\pm2, \\pm3$ คำตอบที่เป็นบวกรวมกันได้ $2 + 3 = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p013
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 4
+    type: mcq
+    stem: "ภาพเป็นกราฟของพหุนามดีกรีสามที่มีสัมประสิทธิ์นำเป็น 1 ข้อใดเป็นสมการของกราฟ"
+    figure:
+      src: mystery-cubic.svg
+      alt: "กราฟพหุนามดีกรีสาม ด้านซ้ายมาจากล่าง แตะแกน x ที่ x = −1 แล้วกลับลง ผ่านแกน y ที่ −2 ต่ำสุดใกล้ x = 1 แล้วตัดแกน x ที่ x = 2 ขึ้นไปทางขวาบน"
+    choices:
+      - { id: a, text: "$y = (x + 1)^2(x - 2)$", correct: true }
+      - { id: b, text: "$y = (x - 1)^2(x + 2)$", feedback: "เครื่องหมายสลับ รากที่ $x = -1$ ให้ตัวประกอบ $x + 1$ และรากที่ $x = 2$ ให้ $x - 2$" }
+      - { id: c, text: "$y = (x + 1)(x - 2)$", feedback: "เป็นพหุนามดีกรีสอง (พาราโบลา) และที่ $x = -1$ จะตัดผ่าน ไม่ใช่แตะ" }
+      - { id: d, text: "$y = (x + 1)(x - 2)^2$", feedback: "ตัวนี้แตะแกนที่ $x = 2$ แต่ในกราฟแตะที่ $x = -1$ และตัดผ่านที่ $x = 2$" }
+    hints:
+      - "ที่จุดที่กราฟแตะแกนแล้วกลับ ตัวประกอบยกกำลังสอง"
+      - "ตรวจด้วยจุดตัดแกน $y$: แทน $x = 0$ ต้องได้ $-2$"
+    solution: "แตะที่ $x = -1$ → $(x + 1)^2$ ตัดผ่านที่ $x = 2$ → $(x - 2)$ ได้ $y = (x + 1)^2(x - 2)$ ตรวจ $x = 0$: $(1)(-2) = -2$ ตรงกับกราฟ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p014
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 4
+    type: expression
+    factored: true
+    stem: "จงแยกตัวประกอบ $x^3 - 3x^2 - 4x + 12$ ให้เป็นผลคูณของตัวประกอบเชิงเส้นทั้งหมด"
+    answer: { latex: "(x-3)(x-2)(x+2)", variables: [x] }
+    hints:
+      - "จับกลุ่ม $x^2(x - 3) - 4(x - 3)$"
+      - "แล้วแยก $x^2 - 4$ ต่อด้วยผลต่างกำลังสอง"
+    misconceptions:
+      - { match: "(x+3)(x-2)(x+2)", feedback: "จับกลุ่มแล้วเครื่องหมายผิด $x^3 - 3x^2 = x^2(x - 3)$" }
+      - { match: "(x-3)(x-4)", feedback: "ดึง $x - 3$ ออกแล้วเหลือ $x^2 - 4$ ไม่ใช่ $x - 4$" }
+    solution: "$x^3 - 3x^2 - 4x + 12 = x^2(x - 3) - 4(x - 3) = (x - 3)(x^2 - 4) = (x - 3)(x - 2)(x + 2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p015
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 4
+    type: numeric
+    stem: "ช่างไม้ใช้เอกลักษณ์ $(x^2 + y^2)^2 = (x^2 - y^2)^2 + (2xy)^2$ สร้างสามเหลี่ยมมุมฉากที่ด้านยาวเป็นจำนวนเต็ม ถ้าเลือก $x = 5$, $y = 2$ ด้านที่ยาวที่สุด (ด้านตรงข้ามมุมฉาก) ยาวกี่หน่วย"
+    answer: { value: 29, unit: หน่วย }
+    hints:
+      - "เอกลักษณ์อยู่ในรูป $c^2 = a^2 + b^2$ ด้านตรงข้ามมุมฉากคือพจน์ที่อยู่ข้างซ้าย"
+      - "$c = x^2 + y^2$"
+    misconceptions:
+      - { match: 21, feedback: "21 คือ $x^2 - y^2$ ซึ่งเป็นด้านประกอบมุมฉาก ด้านที่ยาวที่สุดคือ $x^2 + y^2$" }
+      - { match: 20, feedback: "20 คือ $2xy$ ซึ่งเป็นด้านประกอบมุมฉาก" }
+    solution: "ด้านทั้งสามคือ $x^2 - y^2 = 21$, $2xy = 20$, $x^2 + y^2 = 29$ ตรวจ: $21^2 + 20^2 = 441 + 400 = 841 = 29^2$ ด้านที่ยาวที่สุดคือ 29"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p016
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 5
+    type: mcq
+    stem: "เซตคำตอบของอสมการ $x^3 - x^2 - 4x + 4 \\ge 0$ คือข้อใด"
+    choices:
+      - { id: a, text: "$[-2, 1] \\cup [2, \\infty)$", correct: true }
+      - { id: b, text: "$(-2, 1) \\cup (2, \\infty)$", feedback: "เครื่องหมาย $\\ge$ ต้องรวมรากที่ทำให้เป็นศูนย์ด้วย" }
+      - { id: c, text: "$(-\\infty, -2] \\cup [1, 2]$", feedback: "เป็นช่วงที่พหุนามไม่เป็นบวก ลองแทน $x = 0$: ได้ 4 ซึ่ง $\\ge 0$" }
+      - { id: d, text: "$[1, \\infty)$", feedback: "ที่ $x = 1.5$ ได้ $(0.5)(-0.5)(3.5) < 0$ และพลาดช่วง $[-2, 1]$" }
+    hints:
+      - "แยกตัวประกอบด้วยการจับกลุ่ม $x^2(x - 1) - 4(x - 1)$"
+      - "รากคือ $-2, 1, 2$ แล้วใช้เส้นจำนวนบอกเครื่องหมาย"
+    solution: "$x^3 - x^2 - 4x + 4 = (x - 1)(x - 2)(x + 2)$ เครื่องหมาย: $x < -2$ ลบ, $-2 < x < 1$ บวก, $1 < x < 2$ ลบ, $x > 2$ บวก รวมรากด้วยเพราะ $\\ge$ ได้ $[-2, 1] \\cup [2, \\infty)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p017
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 5
+    type: expression
+    stem: "พหุนาม $P(x)$ หารด้วย $x - 1$ เหลือเศษ 3 และหารด้วย $x + 2$ เหลือเศษ $-6$ จงหาเศษเมื่อหาร $P(x)$ ด้วย $(x - 1)(x + 2)$"
+    prefix: "เศษ ="
+    answer: { latex: "3x", variables: [x] }
+    hints:
+      - "ตัวหารดีกรีสอง เศษจึงอยู่ในรูป $ax + b$: $P(x) = (x - 1)(x + 2)Q(x) + ax + b$"
+      - "แทน $x = 1$ และ $x = -2$ ได้ $a + b = 3$ และ $-2a + b = -6$"
+    misconceptions:
+      - { match: "-9x+12", feedback: "ใช้ $P(2) = -6$ แต่ตัวหาร $x + 2$ ให้ $P(-2) = -6$" }
+      - { match: "-3", feedback: "เศษจากตัวหารดีกรีสองเป็นพหุนามดีกรีไม่เกินหนึ่ง $ax + b$ ไม่ใช่การนำเศษสองตัวมาคูณหรือบวกกัน" }
+    solution: "$P(1) = a + b = 3$ และ $P(-2) = -2a + b = -6$ ลบกันได้ $3a = 9$, $a = 3$, $b = 0$ เศษคือ $3x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p018
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 5
+    type: numeric
+    stem: "แท็งก์น้ำทรงลูกบาศก์ยาวด้านละ $x$ เมตร ถ้าเพิ่มความยาวทุกด้านอีก 1 เมตร จะจุน้ำได้เพิ่มขึ้น 19 ลูกบาศก์เมตร แท็งก์เดิมยาวด้านละกี่เมตร"
+    answer: { value: 2, unit: เมตร }
+    hints:
+      - "$(x + 1)^3 - x^3 = 19$"
+      - "กระจาย $(x + 1)^3 = x^3 + 3x^2 + 3x + 1$ แล้วจะเหลือสมการกำลังสอง"
+    misconceptions:
+      - { match: 3, feedback: "3 คือความยาวด้านของแท็งก์ใหม่ $x + 1$ โจทย์ถามแท็งก์เดิม" }
+      - { match: -3, feedback: "$x = -3$ เป็นคำตอบของสมการ แต่ความยาวด้านต้องเป็นจำนวนบวก" }
+    solution: "$(x + 1)^3 - x^3 = 3x^2 + 3x + 1 = 19$ ได้ $x^2 + x - 6 = 0$, $(x + 3)(x - 2) = 0$ ความยาวต้องเป็นบวก $x = 2$ (ตรวจ: $27 - 8 = 19$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.polynomial-equations.p019
+    topics: [math.algebra.polynomial-equations]
+    difficulty: 3
+    type: numeric
+    stem: "แปลงนาข้าวรูปสี่เหลี่ยมผืนผ้ามีพื้นที่ $x^3 + 2x^2 - x - 2$ ตารางเมตร และกว้าง $x + 2$ เมตร เมื่อ $x = 5$ แปลงนายาวกี่เมตร"
+    answer: { value: 24, unit: เมตร }
+    hints:
+      - "ความยาว = พื้นที่ ÷ ความกว้าง หารพหุนามด้วย $x + 2$ ($c = -2$)"
+      - "ได้ผลหารแล้วแทน $x = 5$"
+    misconceptions:
+      - { match: 26, feedback: "ผลหารคือ $x^2 - 1$ ไม่ใช่ $x^2 + 1$ ตรวจเครื่องหมายในการหารสังเคราะห์" }
+      - { match: 168, feedback: "168 คือพื้นที่เมื่อ $x = 5$ ยังไม่ได้หารด้วยความกว้าง 7 เมตร" }
+    solution: "หารสังเคราะห์ 1, 2, −1, −2 ด้วย $c = -2$: ได้ 1, 0, −1 เศษ 0 ผลหาร $x^2 - 1$ เมื่อ $x = 5$ ยาว $25 - 1 = 24$ เมตร (ตรวจ: พื้นที่ $= 168$, กว้าง $7$, $168 \\div 7 = 24$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
