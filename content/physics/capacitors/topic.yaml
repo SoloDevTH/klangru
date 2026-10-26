@@ -1,0 +1,84 @@
+id: physics.electricity.capacitors
+subject: physics
+title: { th: ตัวเก็บประจุและการใช้ไฟฟ้าสถิต, en: Capacitors and applications of electrostatics }
+summary: ส่วนประกอบของตัวเก็บประจุ ความจุไฟฟ้า Q = CV พลังงานสะสม ความจุสมมูลแบบอนุกรมและขนาน และหลักการของเครื่องถ่ายเอกสาร เครื่องกำจัดฝุ่น และสายล่อฟ้า
+difficulty: 6.5
+minutes: 35
+prerequisites: [physics.electricity.electric-potential]
+encompasses:
+  - { id: physics.electricity.electric-potential, weight: 0.3 }
+  - { id: physics.electricity.charge, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ตัวเก็บประจุแผ่นขนานขณะต่อกับแบตเตอรี่
+    src: capacitor-parts.svg
+    alt: "แผ่นโลหะสองแผ่นวางขนานกัน มีฉนวน (ไดอิเล็กทริก) คั่นกลาง แผ่นซ้ายต่อกับขั้วบวกของแบตเตอรี่มีประจุ +Q แผ่นขวาต่อกับขั้วลบมีประจุ −Q ลูกศรบอกว่าอิเล็กตรอนเคลื่อนที่จากแผ่นซ้ายผ่านสายไฟไปยังขั้วบวก และจากขั้วลบไปยังแผ่นขวา ระหว่างแผ่นมีเส้นสนามไฟฟ้าขนานกันชี้จากแผ่นบวกไปแผ่นลบ มุมขวาล่างแสดงสัญลักษณ์ตัวเก็บประจุเป็นเส้นขนานสั้นสองเส้น"
+  - type: worked-example
+    title: ประจุและพลังงานในตัวเก็บประจุ
+    problem: "ตัวเก็บประจุ $470\\ \\mu\\mathrm{F}$ ต่อกับแบตเตอรี่ $12\\ \\mathrm{V}$ จนอัดประจุเต็ม จงหาประจุและพลังงานที่สะสม"
+    steps:
+      - text: "แปลงหน่วย $C = 470 \\times 10^{-6}\\ \\mathrm{F}$"
+      - text: "$Q = CV = (470 \\times 10^{-6})(12) = 5.64 \\times 10^{-3}\\ \\mathrm{C}$"
+      - text: "$U = \\tfrac12 CV^2 = \\tfrac12 (470 \\times 10^{-6})(12)^2 = 3.38 \\times 10^{-2}\\ \\mathrm{J}$"
+        why: "ตรวจด้วยสูตรอื่นได้ $U = \\tfrac12 QV = \\tfrac12 (5.64 \\times 10^{-3})(12)$ ได้ค่าเดียวกัน"
+    answer: "$Q = 5.64\\ \\mathrm{mC}$ และ $U \\approx 0.034\\ \\mathrm{J}$"
+  - type: figure
+    title: กราฟประจุกับความต่างศักย์
+    src: qv-graph.svg
+    alt: "กราฟเส้นตรงผ่านจุดกำเนิด แกนนอนเป็นความต่างศักย์ V หน่วยโวลต์ แกนตั้งเป็นประจุ Q หน่วยไมโครคูลอมบ์ ความชันของเส้นคือความจุ C ที่ V = 10 V ประจุเป็น 50 μC พื้นที่สามเหลี่ยมใต้เส้นตั้งแต่ 0 ถึง 10 V แรเงาไว้ แทนพลังงานสะสม ½QV"
+  - { type: check, problem: physics.electricity.capacitors.p004, prompt: "พลังงานคือพื้นที่สามเหลี่ยมใต้กราฟ Q กับ V" }
+  - type: figure
+    title: การต่อแบบอนุกรมและแบบขนาน
+    src: series-parallel.svg
+    alt: "ซ้าย: ตัวเก็บประจุ C₁ C₂ C₃ ต่อเรียงกันในสายเส้นเดียวกับแบตเตอรี่ (อนุกรม) ทุกตัวมีประจุ Q เท่ากัน V = V₁ + V₂ + V₃ และ 1/C = 1/C₁ + 1/C₂ + 1/C₃ ขวา: ตัวเก็บประจุสามตัวต่อคร่อมจุดเดียวกันกับแบตเตอรี่ (ขนาน) ทุกตัวมีความต่างศักย์ V เท่ากัน Q = Q₁ + Q₂ + Q₃ และ C = C₁ + C₂ + C₃"
+  - type: worked-example
+    title: วงจรผสมอนุกรมและขนาน
+    problem: "ตัวเก็บประจุ $C_1 = 2\\ \\mu\\mathrm{F}$ ต่ออนุกรมกับชุดที่มี $C_2 = 3\\ \\mu\\mathrm{F}$ ต่อขนานกับ $C_3 = 1\\ \\mu\\mathrm{F}$ แล้วต่อทั้งหมดกับแบตเตอรี่ $12\\ \\mathrm{V}$ จงหาความต่างศักย์และประจุของแต่ละตัว"
+    steps:
+      - text: "ชุดขนาน: $C_{23} = 3 + 1 = 4\\ \\mu\\mathrm{F}$"
+      - text: "อนุกรมกับ $C_1$: $C = \\dfrac{(2)(4)}{2 + 4} = \\dfrac43\\ \\mu\\mathrm{F}$"
+        why: "สองตัวต่ออนุกรมใช้ผลคูณหารด้วยผลบวกได้ ซึ่งมาจาก $1/C = 1/C_1 + 1/C_{23}$"
+      - text: "ประจุรวม $Q = CV = \\tfrac43 \\times 12 = 16\\ \\mu\\mathrm{C}$ ซึ่งเป็นประจุของ $C_1$ และของชุดขนานด้วย"
+      - text: "$V_1 = \\dfrac{16}{2} = 8\\ \\mathrm{V}$ และ $V_{23} = \\dfrac{16}{4} = 4\\ \\mathrm{V}$ รวมได้ $12\\ \\mathrm{V}$ พอดี"
+      - text: "ในชุดขนาน: $Q_2 = 3 \\times 4 = 12\\ \\mu\\mathrm{C}$ และ $Q_3 = 1 \\times 4 = 4\\ \\mu\\mathrm{C}$"
+        why: "ตรวจ: $12 + 4 = 16\\ \\mu\\mathrm{C}$ เท่ากับประจุที่เข้าชุดขนาน"
+    answer: "$C_1$: $8\\ \\mathrm{V}$, $16\\ \\mu\\mathrm{C}$ · $C_2$: $4\\ \\mathrm{V}$, $12\\ \\mu\\mathrm{C}$ · $C_3$: $4\\ \\mathrm{V}$, $4\\ \\mu\\mathrm{C}$"
+  - { type: check, problem: physics.electricity.capacitors.p007, prompt: "ต่ออนุกรม ประจุเท่ากัน ตัวที่ความจุน้อยได้ความต่างศักย์มาก" }
+  - type: interactive
+    title: พลังงานสะสมกับความต่างศักย์
+    caption: "กราฟคือ $U = \\tfrac12 CV^2$ เมื่อ $x$ คือความต่างศักย์ (โวลต์) และ $C$ เป็นมิลลิฟารัด แกนตั้งเป็นจูล ลองเพิ่มความต่างศักย์เป็น 2 เท่าแล้วดูว่าพลังงานเพิ่มกี่เท่า และเทียบกับการเพิ่มความจุเป็น 2 เท่า"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{2}\\cdot\\frac{C}{1000}x^2"]
+      sliders:
+        - { name: C, min: 0.5, max: 5, step: 0.5, value: 1, label: ความจุ (mF) }
+      x: [0, 30]
+      y: [0, 2.5]
+  - type: simulation
+    title: "ห้องทดลองตัวเก็บประจุ (PhET Capacitor Lab: Basics)"
+    url: https://phet.colorado.edu/en/simulations/capacitor-lab-basics
+    provider: phet
+    note: "ในหน้า Capacitance เปลี่ยนพื้นที่แผ่นและระยะห่าง ดูว่าความจุเปลี่ยนอย่างไร แล้วปรับแบตเตอรี่ดูประจุบนแผ่นและพลังงานสะสม ลองตัดแบตเตอรี่ออกแล้วดึงแผ่นให้ห่างขึ้น สังเกตว่าปริมาณใดคงตัวและปริมาณใดเปลี่ยน"
+glossary:
+  - { term: ตัวเก็บประจุ, definition: "อุปกรณ์ที่มีตัวนำสองชิ้นคั่นด้วยฉนวน ใช้สะสมประจุและพลังงานไฟฟ้า" }
+  - { term: ความจุไฟฟ้า, definition: "อัตราส่วนของประจุบนแผ่นหนึ่งต่อความต่างศักย์ระหว่างแผ่น C = Q/V หน่วยฟารัด" }
+  - { term: ไดอิเล็กทริก, definition: "ฉนวนที่คั่นระหว่างแผ่นของตัวเก็บประจุ ทำให้ความจุเพิ่มขึ้นเมื่อเทียบกับอากาศ" }
+  - { term: ความจุสมมูล, definition: "ความจุของตัวเก็บประจุตัวเดียวที่ใช้แทนตัวเก็บประจุหลายตัวที่ต่อกัน โดยให้ผลต่อวงจรเหมือนเดิม" }
+  - { term: เครื่องกำจัดฝุ่นด้วยไฟฟ้าสถิต, definition: "เครื่องที่ทำให้ฝุ่นในควันมีประจุแล้วใช้แผ่นที่มีประจุตรงข้ามดูดไว้ ใช้ในปล่องโรงไฟฟ้าและโรงงาน" }
+flashcards:
+  - { front: "ความจุไฟฟ้า", back: "$C = \\dfrac{Q}{V}$ หน่วยฟารัด ($\\mathrm{F}$)" }
+  - { front: "พลังงานสะสมในตัวเก็บประจุ", back: "$U = \\tfrac12 QV = \\tfrac12 CV^2 = \\dfrac{Q^2}{2C}$" }
+  - { front: "ความจุสมมูลแบบขนาน", back: "$C = C_1 + C_2 + \\cdots$ ความต่างศักย์เท่ากันทุกตัว" }
+  - { front: "ความจุสมมูลแบบอนุกรม", back: "$\\dfrac1C = \\dfrac1{C_1} + \\dfrac1{C_2} + \\cdots$ ประจุเท่ากันทุกตัว" }
+  - { front: "ทำให้ตัวเก็บประจุแผ่นขนานมีความจุมากขึ้น", back: "เพิ่มพื้นที่แผ่น ลดระยะห่าง หรือใส่ไดอิเล็กทริก" }
+references:
+  - { title: "ตัวเก็บประจุ", url: "https://th.wikipedia.org/wiki/ตัวเก็บประจุ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Capacitor", url: "https://en.wikipedia.org/wiki/Capacitor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "18.5 Capacitors and Dielectrics (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/18-5-capacitors-and-dielectrics", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Electrostatic precipitator", url: "https://en.wikipedia.org/wiki/Electrostatic_precipitator", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

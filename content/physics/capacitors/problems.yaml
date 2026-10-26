@@ -1,0 +1,299 @@
+problems:
+  - id: physics.electricity.capacitors.p001
+    topics: [physics.electricity.capacitors]
+    difficulty: 1
+    type: mcq
+    stem: "ระหว่างแผ่นตัวนำสองแผ่นของตัวเก็บประจุมีสิ่งใดคั่นอยู่"
+    choices:
+      - { id: a, text: "ฉนวน เช่น อากาศ กระดาษ หรือเซรามิก", correct: true }
+      - { id: b, text: "ลวดตัวนำที่เชื่อมสองแผ่นเข้าด้วยกัน", feedback: "ถ้าสองแผ่นต่อกันด้วยตัวนำ ประจุจะไหลถึงกันจนหมด เก็บประจุไม่ได้" }
+      - { id: c, text: "แบตเตอรี่ขนาดเล็ก", feedback: "แบตเตอรี่อยู่นอกตัวเก็บประจุ ใช้อัดประจุ ไม่ได้อยู่ระหว่างแผ่น" }
+      - { id: d, text: "ตัวต้านทาน", feedback: "ตัวต้านทานยอมให้กระแสไหลผ่าน ระหว่างแผ่นต้องเป็นฉนวน" }
+    hints:
+      - "ประจุบนสองแผ่นต้องแยกจากกันได้"
+      - "วัสดุชนิดใดที่ประจุไหลผ่านไม่ได้"
+    solution: "ตัวเก็บประจุมีตัวนำสองชิ้นคั่นด้วยฉนวน (ไดอิเล็กทริก) ประจุบวกและลบจึงอยู่บนคนละแผ่นได้โดยไม่ไหลถึงกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p002
+    topics: [physics.electricity.capacitors]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณกับหน่วย SI"
+    pairs:
+      - { left: "ความจุไฟฟ้า $C$", right: "ฟารัด ($\\mathrm{F}$)" }
+      - { left: "ประจุ $Q$", right: "คูลอมบ์ ($\\mathrm{C}$)" }
+      - { left: "ความต่างศักย์ $V$", right: "โวลต์ ($\\mathrm{V}$)" }
+      - { left: "พลังงานสะสม $U$", right: "จูล ($\\mathrm{J}$)" }
+    hints:
+      - "$C = Q/V$ หน่วยของความจุจึงเท่ากับคูลอมบ์ต่อโวลต์"
+      - "หน่วยนี้ตั้งชื่อตามไมเคิล ฟาราเดย์"
+    solution: "$C$ เป็นฟารัด $Q$ เป็นคูลอมบ์ $V$ เป็นโวลต์ และ $U$ เป็นจูล โดย $1\\ \\mathrm{F} = 1\\ \\mathrm{C/V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p003
+    topics: [physics.electricity.capacitors]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเก็บประจุ $100\\ \\mu\\mathrm{F}$ ต่อกับแบตเตอรี่ $9\\ \\mathrm{V}$ จนอัดประจุเต็ม ประจุบนแผ่นหนึ่งเป็นกี่ไมโครคูลอมบ์"
+    answer: { value: 900, tolerance: 1, unit: μC }
+    misconceptions:
+      - { match: 11.1, feedback: "หารความจุด้วยความต่างศักย์ ที่ถูกคือ $Q = CV$ ต้องคูณกัน" }
+      - { match: 1800, feedback: "ประจุบนแผ่นหนึ่งคือ $CV$ ไม่ต้องคูณ 2 แผ่นอีกแผ่นมีประจุ $-Q$" }
+    hints:
+      - "$Q = CV$"
+      - "ถ้าใช้ $C$ เป็นไมโครฟารัด จะได้ $Q$ เป็นไมโครคูลอมบ์"
+    solution: "$Q = CV = 100\\ \\mu\\mathrm{F} \\times 9\\ \\mathrm{V} = 900\\ \\mu\\mathrm{C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p004
+    topics: [physics.electricity.capacitors]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเก็บประจุ $1000\\ \\mu\\mathrm{F}$ อัดประจุจนมีความต่างศักย์ $12\\ \\mathrm{V}$ เก็บพลังงานไว้กี่จูล"
+    answer: { value: 0.072, tolerance: 0.001, unit: J }
+    misconceptions:
+      - { match: 0.144, feedback: "ลืม $\\tfrac12$ พลังงานคือพื้นที่สามเหลี่ยมใต้กราฟ $Q$ กับ $V$" }
+      - { match: 0.006, feedback: "ลืมยกกำลังสองความต่างศักย์ $U = \\tfrac12 CV^2$" }
+    hints:
+      - "$U = \\tfrac12 CV^2$"
+      - "แปลง $1000\\ \\mu\\mathrm{F} = 1.0 \\times 10^{-3}\\ \\mathrm{F}$"
+    solution: "$U = \\tfrac12 (1.0 \\times 10^{-3})(12)^2 = 0.072\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p005
+    topics: [physics.electricity.capacitors]
+    difficulty: 2
+    type: mcq
+    stem: "ตัวเก็บประจุสองตัวมีความจุ $C$ เท่ากัน นำมาต่ออนุกรมกัน ความจุสมมูลเป็นเท่าใด"
+    choices:
+      - { id: a, text: "$\\dfrac{C}{2}$", correct: true }
+      - { id: b, text: "$2C$", feedback: "$2C$ เป็นค่าของการต่อขนาน ตัวเก็บประจุต่ออนุกรมความจุลดลง" }
+      - { id: c, text: "$C$", feedback: "ความจุเปลี่ยน $\\tfrac1C + \\tfrac1C = \\tfrac2C$" }
+      - { id: d, text: "$C^2$", feedback: "ผลคูณหารด้วยผลบวกได้ $\\dfrac{C^2}{2C}$ อย่าลืมหาร" }
+    hints:
+      - "อนุกรม: $\\dfrac{1}{C_{\\text{รวม}}} = \\dfrac1{C_1} + \\dfrac1{C_2}$"
+      - "สูตรนี้กลับกันกับตัวต้านทาน"
+    solution: "$\\dfrac1{C_{\\text{รวม}}} = \\dfrac1C + \\dfrac1C = \\dfrac2C$ จึงได้ $C_{\\text{รวม}} = \\dfrac C2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p006
+    topics: [physics.electricity.capacitors]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเก็บประจุ $2.2\\ \\mu\\mathrm{F}$ และ $4.7\\ \\mu\\mathrm{F}$ ต่อขนานกัน ความจุสมมูลเป็นกี่ไมโครฟารัด"
+    answer: { value: 6.9, tolerance: 0.05, unit: μF }
+    misconceptions:
+      - { match: 1.5, feedback: "ใช้สูตรอนุกรม ตัวเก็บประจุต่อขนานให้บวกกันตรง ๆ" }
+    hints:
+      - "ต่อขนาน ความต่างศักย์เท่ากัน ประจุรวมเป็นผลบวก"
+      - "$C = C_1 + C_2$"
+    solution: "$C = 2.2 + 4.7 = 6.9\\ \\mu\\mathrm{F}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p007
+    topics: [physics.electricity.capacitors]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวเก็บประจุ $3\\ \\mu\\mathrm{F}$ และ $6\\ \\mu\\mathrm{F}$ ต่ออนุกรมกับแบตเตอรี่ $12\\ \\mathrm{V}$ ความต่างศักย์คร่อมตัวเก็บประจุ $3\\ \\mu\\mathrm{F}$ เป็นกี่โวลต์"
+    answer: { value: 8, tolerance: 0.05, unit: V }
+    misconceptions:
+      - { match: 4, feedback: "สลับกัน ต่ออนุกรมประจุเท่ากัน $V = Q/C$ ตัวที่ความจุน้อยได้ความต่างศักย์มากกว่า" }
+      - { match: 6, feedback: "ความต่างศักย์ไม่ได้แบ่งเท่ากัน ต้องหาประจุก่อนแล้วใช้ $V = Q/C$" }
+    hints:
+      - "หาความจุสมมูลแล้วหาประจุ $Q = CV$"
+      - "ประจุนี้อยู่บนทุกตัวที่ต่ออนุกรม ใช้ $V_1 = Q/C_1$"
+    solution: "$C = \\dfrac{(3)(6)}{9} = 2\\ \\mu\\mathrm{F}$ $Q = 2 \\times 12 = 24\\ \\mu\\mathrm{C}$ $V_1 = \\dfrac{24}{3} = 8\\ \\mathrm{V}$ (อีกตัวได้ $4\\ \\mathrm{V}$ รวม $12\\ \\mathrm{V}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p008
+    topics: [physics.electricity.capacitors]
+    difficulty: 3
+    type: mcq
+    stem: "ตัวเก็บประจุแผ่นขนานที่มีอากาศคั่น ถ้าเพิ่มพื้นที่แผ่นเป็น 2 เท่า และลดระยะห่างระหว่างแผ่นเหลือครึ่งหนึ่ง ความจุจะเป็นกี่เท่าของเดิม"
+    choices:
+      - { id: a, text: "4 เท่า", correct: true }
+      - { id: b, text: "เท่าเดิม", feedback: "ทั้งสองการเปลี่ยนแปลงทำให้ความจุเพิ่ม ไม่ได้หักล้างกัน ระยะห่างลดลงความจุเพิ่มขึ้น" }
+      - { id: c, text: "2 เท่า", feedback: "นับผลของการเปลี่ยนเพียงอย่างเดียว ต้องคูณผลของทั้งสองอย่าง" }
+      - { id: d, text: "$\\tfrac14$ เท่า", feedback: "ความจุแปรผันตรงกับพื้นที่และแปรผกผันกับระยะห่าง ไม่ใช่กลับกัน" }
+    hints:
+      - "ความจุแปรผันตรงกับพื้นที่ และแปรผกผันกับระยะห่าง"
+      - "คูณผลของการเปลี่ยนทั้งสองอย่าง"
+    solution: "พื้นที่ 2 เท่า ความจุเป็น 2 เท่า ระยะห่างเหลือครึ่งหนึ่ง ความจุเป็น 2 เท่าอีก รวมเป็น $2 \\times 2 = 4$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p009
+    topics: [physics.electricity.capacitors]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องกระตุกหัวใจไฟฟ้าอัตโนมัติ (AED) ที่ติดไว้ในสถานีรถไฟฟ้าเครื่องหนึ่ง (ค่าสมมติ) อัดประจุตัวเก็บประจุจนมีความต่างศักย์ $2000\\ \\mathrm{V}$ และเก็บพลังงาน $200\\ \\mathrm{J}$ ตัวเก็บประจุมีความจุกี่ไมโครฟารัด"
+    answer: { value: 100, tolerance: 1, unit: μF }
+    misconceptions:
+      - { match: 50, feedback: "ลืม $\\tfrac12$ ในสูตร จัดรูป $U = \\tfrac12 CV^2$ ได้ $C = 2U/V^2$" }
+      - { match: 0.1, feedback: "ใช้ $C = U/V$ ซึ่งไม่ใช่สูตรพลังงาน และหน่วยไม่ตรงกัน" }
+    hints:
+      - "$U = \\tfrac12 CV^2$ จัดรูปหา $C$"
+      - "$C = \\dfrac{2U}{V^2}$ แล้วแปลงฟารัดเป็นไมโครฟารัด"
+    solution: "$C = \\dfrac{2(200)}{(2000)^2} = 1.0 \\times 10^{-4}\\ \\mathrm{F} = 100\\ \\mu\\mathrm{F}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p010
+    topics: [physics.electricity.capacitors]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการทำงานของเครื่องถ่ายเอกสารในห้องธุรการของโรงเรียน"
+    items:
+      - "ทำให้ผิวดรัมที่ไวแสงมีประจุทั่วทั้งผิว"
+      - "ฉายแสงจากต้นฉบับลงบนดรัม บริเวณที่ถูกแสงเสียประจุ"
+      - "ผงหมึกที่มีประจุตรงข้ามติดเฉพาะบริเวณที่ยังมีประจุ"
+      - "กระดาษที่มีประจุดึงผงหมึกจากดรัมมาติด"
+      - "ลูกกลิ้งร้อนหลอมผงหมึกให้ติดแน่นบนกระดาษ"
+    hints:
+      - "ต้องมีประจุบนดรัมก่อน แสงจึงลบประจุบางส่วนออกได้"
+      - "ภาพประจุบนดรัมต้องเกิดก่อนผงหมึกจะมาติด และหลอมเป็นขั้นสุดท้าย"
+    solution: "ดรัมมีประจุ → แสงจากส่วนขาวของต้นฉบับลบประจุออก เหลือประจุเป็นรูปตัวหนังสือ → ผงหมึกที่มีประจุตรงข้ามติดตามรูปนั้น → กระดาษที่มีประจุแรงกว่าดึงผงหมึกมา → ความร้อนหลอมผงหมึกให้ติด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p011
+    topics: [physics.electricity.capacitors]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวเก็บประจุแผ่นขนาน $10\\ \\mu\\mathrm{F}$ อัดประจุจนมีความต่างศักย์ $50\\ \\mathrm{V}$ แล้วถอดแบตเตอรี่ออก จากนั้นดึงแผ่นให้ห่างกันเป็น 2 เท่า (ไม่มีประจุรั่ว) ความต่างศักย์ระหว่างแผ่นเป็นกี่โวลต์"
+    answer: { value: 100, tolerance: 0.5, unit: V }
+    misconceptions:
+      - { match: 50, feedback: "ถอดแบตเตอรี่แล้ว สิ่งที่คงตัวคือประจุ ไม่ใช่ความต่างศักย์" }
+      - { match: 25, feedback: "ระยะห่างเพิ่มขึ้น ความจุลดลงครึ่งหนึ่ง ไม่ได้เพิ่มขึ้น" }
+    hints:
+      - "ถอดแบตเตอรี่แล้ว $Q$ คงตัว"
+      - "ระยะห่าง 2 เท่า ความจุเหลือครึ่งหนึ่ง แล้วใช้ $V = Q/C$"
+    solution: "$Q = (10)(50) = 500\\ \\mu\\mathrm{C}$ คงตัว ความจุใหม่ $= 5\\ \\mu\\mathrm{F}$ จึงได้ $V = \\dfrac{500}{5} = 100\\ \\mathrm{V}$ พลังงานเพิ่มจาก $12.5\\ \\mathrm{mJ}$ เป็น $25\\ \\mathrm{mJ}$ จากงานที่ใช้ดึงแผ่นซึ่งดูดกันอยู่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p012
+    topics: [physics.electricity.capacitors]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวเก็บประจุ $4\\ \\mu\\mathrm{F}$ อัดประจุด้วย $10\\ \\mathrm{V}$ แล้วถอดออกมาต่อขนานกับตัวเก็บประจุ $6\\ \\mu\\mathrm{F}$ ที่ไม่มีประจุ (ขั้วบวกต่อกัน) เมื่อประจุหยุดไหล ความต่างศักย์คร่อมทั้งสองตัวเป็นกี่โวลต์"
+    answer: { value: 4, tolerance: 0.05, unit: V }
+    misconceptions:
+      - { match: 10, feedback: "ประจุจากตัวแรกแบ่งไปอยู่ในตัวที่สองด้วย ความต่างศักย์จึงลดลง" }
+      - { match: 5, feedback: "ไม่ได้แบ่งความต่างศักย์ครึ่งต่อครึ่ง ใช้ประจุรวมหารด้วยความจุรวม" }
+    hints:
+      - "ประจุรวมคงตัว $Q = (4)(10)\\ \\mu\\mathrm{C}$"
+      - "หลังต่อขนาน ความต่างศักย์เท่ากัน $V = \\dfrac{Q}{C_1 + C_2}$"
+    solution: "$Q = 40\\ \\mu\\mathrm{C}$ ความจุรวม $= 10\\ \\mu\\mathrm{F}$ จึงได้ $V = \\dfrac{40}{10} = 4\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p013
+    topics: [physics.electricity.capacitors]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "อุปกรณ์หรือการกระทำใดอาศัยหลักการของไฟฟ้าสถิต (เลือกได้มากกว่า 1 ข้อ)"
+    choices:
+      - { id: a, text: "เครื่องกำจัดฝุ่นในปล่องโรงงานปูนซีเมนต์", correct: true }
+      - { id: b, text: "การพ่นสีรถยนต์โดยให้ละอองสีมีประจุ", correct: true }
+      - { id: c, text: "สายล่อฟ้าบนยอดอาคาร", correct: true }
+      - { id: d, text: "หม้อแปลงไฟฟ้าที่เสาไฟ", feedback: "หม้อแปลงอาศัยการเหนี่ยวนำแม่เหล็กไฟฟ้า ไม่ใช่แรงระหว่างประจุที่อยู่นิ่ง" }
+      - { id: e, text: "เตาไมโครเวฟ", feedback: "เตาไมโครเวฟใช้คลื่นแม่เหล็กไฟฟ้าทำให้โมเลกุลน้ำสั่น" }
+    hints:
+      - "ไฟฟ้าสถิตเกี่ยวกับประจุที่สะสมและแรงดูดผลักระหว่างประจุ"
+      - "สายล่อฟ้าอาศัยการสะสมประจุที่ปลายแหลม"
+    solution: "เครื่องกำจัดฝุ่นและการพ่นสีใช้แรงดูดระหว่างอนุภาคที่มีประจุกับแผ่นหรือชิ้นงาน สายล่อฟ้าใช้การสะสมประจุที่ปลายแหลม ส่วนหม้อแปลงใช้การเหนี่ยวนำ และเตาไมโครเวฟใช้คลื่นแม่เหล็กไฟฟ้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p014
+    topics: [physics.electricity.capacitors]
+    difficulty: 4
+    type: numeric
+    stem: "วงจรในภาพมีตัวเก็บประจุ $C_1 = 6\\ \\mu\\mathrm{F}$ ต่ออนุกรมกับชุดที่ $C_2 = 4\\ \\mu\\mathrm{F}$ ต่อขนานกับ $C_3 = 8\\ \\mu\\mathrm{F}$ และแบตเตอรี่ $24\\ \\mathrm{V}$ ประจุบน $C_3$ เป็นกี่ไมโครคูลอมบ์"
+    figure: { src: p-network.svg, alt: "แบตเตอรี่ 24 V ต่อกับตัวเก็บประจุ C₁ = 6 μF แล้วต่อไปยังชุดที่มี C₂ = 4 μF และ C₃ = 8 μF ต่อขนานกัน ชุดขนานต่อกลับไปที่แบตเตอรี่ C₁ จึงอนุกรมกับชุดขนาน" }
+    answer: { value: 64, tolerance: 0.5, unit: μC }
+    misconceptions:
+      - { match: 96, feedback: "นี่คือประจุรวมที่ไหลผ่าน $C_1$ ประจุนี้แบ่งกันใน $C_2$ และ $C_3$" }
+      - { match: 32, feedback: "นี่คือประจุบน $C_2$ ตัวที่ความจุมากกว่าในชุดขนานได้ประจุมากกว่า" }
+    hints:
+      - "รวมชุดขนานก่อน $4 + 8 = 12\\ \\mu\\mathrm{F}$ แล้วรวมอนุกรมกับ $6\\ \\mu\\mathrm{F}$"
+      - "หาประจุรวม แล้วหาความต่างศักย์คร่อมชุดขนาน ใช้ $Q_3 = C_3V_{23}$"
+    solution: "$C = \\dfrac{(6)(12)}{18} = 4\\ \\mu\\mathrm{F}$ $Q = 4 \\times 24 = 96\\ \\mu\\mathrm{C}$ $V_{23} = \\dfrac{96}{12} = 8\\ \\mathrm{V}$ $Q_3 = 8 \\times 8 = 64\\ \\mu\\mathrm{C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p015
+    topics: [physics.electricity.capacitors]
+    difficulty: 5
+    type: numeric
+    stem: "จากข้อที่ตัวเก็บประจุ $4\\ \\mu\\mathrm{F}$ ที่มีความต่างศักย์ $10\\ \\mathrm{V}$ ต่อขนานกับตัวเก็บประจุ $6\\ \\mu\\mathrm{F}$ ที่ไม่มีประจุ พลังงานสะสมรวมลดลงกี่ไมโครจูล"
+    answer: { value: 120, tolerance: 1, unit: μJ }
+    misconceptions:
+      - { match: 0, feedback: "ประจุคงตัว แต่พลังงานสะสมไม่คงตัว ส่วนหนึ่งเปลี่ยนเป็นความร้อนในสายไฟขณะประจุไหล" }
+      - { match: 80, feedback: "$80\\ \\mu\\mathrm{J}$ คือพลังงานที่เหลือ โจทย์ถามพลังงานที่ลดลง" }
+    hints:
+      - "พลังงานก่อนต่อ $\\tfrac12 (4 \\times 10^{-6})(10)^2$"
+      - "หลังต่อ ความต่างศักย์เป็น $4\\ \\mathrm{V}$ ความจุรวม $10\\ \\mu\\mathrm{F}$ แล้วหาผลต่าง"
+    solution: "ก่อนต่อ $U_1 = \\tfrac12 (4)(10)^2 = 200\\ \\mu\\mathrm{J}$ หลังต่อ $U_2 = \\tfrac12 (10)(4)^2 = 80\\ \\mu\\mathrm{J}$ ลดลง $120\\ \\mu\\mathrm{J}$ กลายเป็นความร้อนและคลื่นแม่เหล็กไฟฟ้าขณะประจุไหล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p016
+    topics: [physics.electricity.capacitors]
+    difficulty: 5
+    type: numeric
+    stem: "ตัวเก็บประจุ $2\\ \\mu\\mathrm{F}$ อัดประจุด้วย $100\\ \\mathrm{V}$ และตัวเก็บประจุ $3\\ \\mu\\mathrm{F}$ อัดประจุด้วย $50\\ \\mathrm{V}$ นำมาต่อขนานกันโดยให้ขั้วบวกของตัวหนึ่งต่อกับขั้วลบของอีกตัว เมื่อประจุหยุดไหล ความต่างศักย์คร่อมทั้งสองตัวเป็นกี่โวลต์"
+    answer: { value: 10, tolerance: 0.1, unit: V }
+    misconceptions:
+      - { match: 70, feedback: "นี่คือกรณีต่อขั้วเดียวกันเข้าด้วยกัน เมื่อต่อสลับขั้ว ประจุบวกกับลบหักล้างกันบางส่วน ต้องลบประจุ" }
+      - { match: 75, feedback: "เฉลี่ยความต่างศักย์ตรง ๆ ไม่ได้ ต้องใช้ประจุรวมหารด้วยความจุรวม" }
+    hints:
+      - "ประจุของแต่ละตัว $200\\ \\mu\\mathrm{C}$ และ $150\\ \\mu\\mathrm{C}$"
+      - "ต่อสลับขั้ว ประจุสุทธิ $= 200 - 150$ แล้วหารด้วยความจุรวม"
+    solution: "$Q_1 = 200\\ \\mu\\mathrm{C}$ $Q_2 = 150\\ \\mu\\mathrm{C}$ ต่อสลับขั้ว ประจุสุทธิ $= 50\\ \\mu\\mathrm{C}$ ความจุรวม $5\\ \\mu\\mathrm{F}$ จึงได้ $V = \\dfrac{50}{5} = 10\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p017
+    topics: [physics.electricity.capacitors]
+    difficulty: 3
+    type: mcq
+    stem: "มีตัวเก็บประจุ $6\\ \\mu\\mathrm{F}$ อยู่ 3 ตัว ต้องการความจุสมมูล $9\\ \\mu\\mathrm{F}$ ควรต่ออย่างไร"
+    choices:
+      - { id: a, text: "ต่ออนุกรมสองตัว แล้วต่อขนานกับตัวที่สาม", correct: true }
+      - { id: b, text: "ต่อขนานทั้งสามตัว", feedback: "ต่อขนานทั้งหมดได้ $18\\ \\mu\\mathrm{F}$" }
+      - { id: c, text: "ต่ออนุกรมทั้งสามตัว", feedback: "ต่ออนุกรมทั้งหมดได้ $2\\ \\mu\\mathrm{F}$" }
+      - { id: d, text: "ต่อขนานสองตัว แล้วต่ออนุกรมกับตัวที่สาม", feedback: "ได้ $\\dfrac{(12)(6)}{18} = 4\\ \\mu\\mathrm{F}$" }
+    hints:
+      - "สองตัวเท่ากันต่ออนุกรมได้ครึ่งหนึ่ง สองตัวต่อขนานได้ 2 เท่า"
+      - "ลองคำนวณความจุสมมูลของแต่ละแบบ"
+    solution: "สองตัวต่ออนุกรมได้ $3\\ \\mu\\mathrm{F}$ ต่อขนานกับตัวที่สามได้ $3 + 6 = 9\\ \\mu\\mathrm{F}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.capacitors.p018
+    topics: [physics.electricity.capacitors]
+    difficulty: 2
+    type: mcq
+    stem: "ที่คลังน้ำมัน พนักงานต้องต่อสายดินกับรถบรรทุกน้ำมันก่อนถ่ายน้ำมันทุกครั้ง เพราะเหตุใด"
+    choices:
+      - { id: a, text: "ให้ประจุที่เกิดจากการไหลและเสียดสีของน้ำมันรั่วลงดิน ไม่สะสมจนเกิดประกายไฟ", correct: true }
+      - { id: b, text: "ให้น้ำมันไหลเร็วขึ้น", feedback: "สายดินไม่ได้ช่วยให้ของเหลวไหลเร็วขึ้น หน้าที่ของมันเกี่ยวกับประจุ" }
+      - { id: c, text: "ป้องกันไม่ให้รถถูกฟ้าผ่าเท่านั้น", feedback: "อันตรายหลักขณะถ่ายน้ำมันคือประจุที่เกิดจากการไหลของน้ำมันเอง" }
+      - { id: d, text: "ให้กระแสไฟฟ้าจากดินไปช่วยสูบน้ำมัน", feedback: "สายดินไม่ได้จ่ายพลังงานให้ปั๊ม มีไว้ระบายประจุ" }
+    hints:
+      - "ของเหลวที่ไหลและเสียดสีกับท่อทำให้เกิดประจุได้"
+      - "ประจุที่สะสมมาก ๆ ทำให้เกิดประกายไฟ ไอน้ำมันติดไฟง่าย"
+    solution: "การไหลและการเสียดสีของน้ำมันทำให้เกิดประจุสะสมบนตัวรถ สายดินเป็นทางให้ประจุไหลลงดินอย่างต่อเนื่อง จึงไม่เกิดประกายไฟใกล้ไอน้ำมัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

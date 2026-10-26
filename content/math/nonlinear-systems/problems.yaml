@@ -1,0 +1,330 @@
+problems:
+  - id: math.algebra.nonlinear-systems.p001
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 1
+    type: mcq
+    stem: "คำตอบของระบบสมการ $y = x^2$ และ $y = x + 2$ ดูจากกราฟได้อย่างไร"
+    choices:
+      - { id: a, text: "พิกัดของจุดที่พาราโบลากับเส้นตรงตัดกัน", correct: true }
+      - { id: b, text: "จุดที่พาราโบลาตัดแกน $x$", feedback: "จุดนั้นทำให้ $y = 0$ ของพาราโบลาอย่างเดียว ไม่เกี่ยวกับเส้นตรง" }
+      - { id: c, text: "จุดยอดของพาราโบลา", feedback: "จุดยอดเป็นจุดต่ำสุดของพาราโบลา ไม่จำเป็นต้องอยู่บนเส้นตรง" }
+      - { id: d, text: "จุดที่เส้นตรงตัดแกน $y$", feedback: "จุด $(0, 2)$ อยู่บนเส้นตรงแต่ไม่อยู่บนพาราโบลา ($0^2 \\ne 2$)" }
+    hints:
+      - "คำตอบของระบบต้องทำให้ทั้งสองสมการเป็นจริง"
+      - "จุดใดอยู่บนกราฟทั้งสองพร้อมกัน"
+    solution: "คำตอบต้องอยู่บนกราฟทั้งสอง จึงเป็นจุดตัด ในที่นี้คือ $(-1, 1)$ และ $(2, 4)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p002
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 2
+    type: numeric
+    stem: "กราฟของ $y = x^2$ กับเส้นตรง $y = 9$ ตัดกันกี่จุด"
+    answer: { value: 2, unit: จุด }
+    hints:
+      - "แก้สมการ $x^2 = 9$"
+      - "จำนวนที่ยกกำลังสองได้ 9 มีกี่จำนวน"
+    misconceptions:
+      - { match: 1, feedback: "ลืมคำตอบที่เป็นลบ $(-3)^2 = 9$ ด้วย" }
+      - { match: 0, feedback: "เส้น $y = 9$ อยู่เหนือจุดต่ำสุดของพาราโบลา จึงตัดกัน" }
+    solution: "$x^2 = 9$ ได้ $x = 3$ หรือ $x = -3$ จุดตัดคือ $(3, 9)$ และ $(-3, 9)$ รวม 2 จุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p003
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 2
+    type: mcq
+    stem: "กราฟ $y = f(x)$ และ $y = g(x)$ ตัดกันที่จุด $(-1, 0)$ และ $(4, 5)$ คำตอบของสมการ $f(x) = g(x)$ คือข้อใด"
+    choices:
+      - { id: a, text: "$x = -1$ หรือ $x = 4$", correct: true }
+      - { id: b, text: "$x = 0$ หรือ $x = 5$", feedback: "0 และ 5 เป็นพิกัด $y$ (ค่าของฟังก์ชันที่จุดตัด) คำตอบของสมการในตัวแปร $x$ คือพิกัด $x$" }
+      - { id: c, text: "$x = -1$ เท่านั้น", feedback: "จุดตัดทั้งสองจุดทำให้ $f(x) = g(x)$ จึงมีสองคำตอบ" }
+      - { id: d, text: "$x = 3$", feedback: "3 คือผลบวก $-1 + 4$ ไม่ใช่คำตอบของสมการ" }
+    hints:
+      - "ที่จุดตัด $f(a)$ และ $g(a)$ มีค่าเท่ากัน"
+      - "ตัวแปรของสมการคือ $x$"
+    solution: "ที่ $x = -1$ ได้ $f(-1) = g(-1) = 0$ และที่ $x = 4$ ได้ $f(4) = g(4) = 5$ คำตอบจึงเป็น $x = -1$ หรือ $x = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p004
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 2
+    type: numeric
+    stem: "เส้นตรง $y = 2x$ สัมผัสพาราโบลา $y = x^2 + 1$ ที่จุดเดียว พิกัด $y$ ของจุดสัมผัสคือเท่าใด"
+    answer: { value: 2 }
+    hints:
+      - "ให้ $x^2 + 1 = 2x$ แล้วแก้หา $x$"
+      - "$x^2 - 2x + 1 = (x - 1)^2 = 0$ แล้วแทน $x$ ใน $y = 2x$"
+    misconceptions:
+      - { match: 1, feedback: "นี่คือพิกัด $x$ โจทย์ถามพิกัด $y$ แทน $x = 1$ ใน $y = 2x$" }
+    solution: "$x^2 + 1 = 2x$ ได้ $(x - 1)^2 = 0$ จึง $x = 1$ และ $y = 2(1) = 2$ จุดสัมผัสคือ $(1, 2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p005
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 3
+    type: mcq
+    stem: "จงแก้ระบบสมการ $y = x^2 - 4$ และ $y = 3x$"
+    choices:
+      - { id: a, text: "$(4, 12)$ และ $(-1, -3)$", correct: true }
+      - { id: b, text: "$(4, -3)$ และ $(-1, 12)$", feedback: "จับคู่ $x$ กับ $y$ สลับกัน แทน $x = 4$ ใน $y = 3x$ ได้ $y = 12$" }
+      - { id: c, text: "$x = 4$ และ $x = -1$", feedback: "ยังไม่ครบ คำตอบของระบบสองตัวแปรต้องเป็นคู่อันดับ $(x, y)$" }
+      - { id: d, text: "$(-4, -12)$ และ $(1, 3)$", feedback: "แยกตัวประกอบผิดเครื่องหมาย $x^2 - 3x - 4 = (x - 4)(x + 1)$" }
+    hints:
+      - "ให้ $x^2 - 4 = 3x$ แล้วจัดรูปเป็นสมการกำลังสอง"
+      - "$x^2 - 3x - 4 = 0$ แยกตัวประกอบ แล้วแทนค่ากลับใน $y = 3x$"
+    solution: "$x^2 - 3x - 4 = 0$ ได้ $(x - 4)(x + 1) = 0$ $x = 4$ ได้ $y = 12$ และ $x = -1$ ได้ $y = -3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p006
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 3
+    type: numeric
+    stem: "พาราโบลา $y = x^2$ และเส้นตรง $y = 3x + 10$ ตัดกันสองจุด ผลบวกของพิกัด $x$ ของจุดตัดทั้งสองเท่ากับเท่าใด"
+    answer: { value: 3 }
+    hints:
+      - "ให้ $x^2 = 3x + 10$"
+      - "$x^2 - 3x - 10 = 0$ แยกตัวประกอบได้ $(x - 5)(x + 2)$"
+    misconceptions:
+      - { match: 7, feedback: "ใช้ $x = 5$ กับ $x = 2$ แต่ $(x + 2) = 0$ ให้ $x = -2$" }
+      - { match: -3, feedback: "เครื่องหมายผิด คำตอบคือ $5$ กับ $-2$" }
+    solution: "$x^2 - 3x - 10 = (x - 5)(x + 2) = 0$ ได้ $x = 5$ หรือ $-2$ ผลบวก $= 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p007
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 3
+    type: numeric
+    stem: "ระบบสมการ $y = x^2 + 3$ และ $y = 2x + 1$ มีคำตอบที่เป็นจำนวนจริงกี่คู่"
+    answer: { value: 0, unit: คู่ }
+    hints:
+      - "ให้ $x^2 + 3 = 2x + 1$ แล้วจัดรูป"
+      - "หาดิสคริมิแนนต์ของ $x^2 - 2x + 2 = 0$"
+    misconceptions:
+      - { match: 2, feedback: "สมการกำลังสองไม่ได้มี 2 คำตอบเสมอ ตรวจ $D = (-2)^2 - 4(1)(2) = -4 < 0$" }
+      - { match: 1, feedback: "มี 1 คำตอบเมื่อ $D = 0$ แต่ที่นี่ $D = -4$" }
+    solution: "$x^2 - 2x + 2 = 0$ มี $D = 4 - 8 = -4 < 0$ จึงไม่มีคำตอบที่เป็นจำนวนจริง เส้นตรงอยู่ใต้พาราโบลาทั้งเส้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p008
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ระบบสมการกับจำนวนคำตอบที่เป็นจำนวนจริง"
+    pairs:
+      - { left: "$y = x^2$ และ $y = -1$", right: "ไม่มีคำตอบ" }
+      - { left: "$y = x^2$ และ $y = 0$", right: "1 คู่" }
+      - { left: "$y = x^2$ และ $y = x$", right: "2 คู่" }
+    hints:
+      - "แทนค่าแล้วแก้สมการตัวแปรเดียว"
+      - "$x^2$ ไม่เป็นลบ"
+    solution: "$x^2 = -1$ ไม่มีคำตอบ $x^2 = 0$ ได้ $x = 0$ (สัมผัส) $x^2 = x$ ได้ $x = 0$ หรือ $1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p009
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 3
+    type: numeric
+    stem: "ลุงต้องการล้อมรั้วแปลงผักรูปสี่เหลี่ยมผืนผ้า ยาวรอบรูป 40 เมตร และมีพื้นที่ 96 ตารางเมตร ด้านยาวของแปลงยาวกี่เมตร"
+    answer: { value: 12, unit: เมตร }
+    hints:
+      - "ให้ด้านยาว $x$ ด้านกว้าง $y$ ได้ $2x + 2y = 40$ และ $xy = 96$"
+      - "จาก $y = 20 - x$ แทนใน $xy = 96$"
+    misconceptions:
+      - { match: 8, feedback: "นี่คือด้านกว้าง โจทย์ถามด้านยาว (ด้านที่ยาวกว่า)" }
+      - { match: 20, feedback: "20 คือผลบวกของด้านยาวกับด้านกว้าง (ครึ่งหนึ่งของความยาวรอบรูป)" }
+    solution: "$x + y = 20$ และ $xy = 96$ แทน $y = 20 - x$ ได้ $x^2 - 20x + 96 = 0$ $(x - 12)(x - 8) = 0$ ด้านยาว 12 เมตร ด้านกว้าง 8 เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p010
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: mcq
+    stem: "จุดตัดของวงกลม $x^2 + y^2 = 13$ กับเส้นตรง $y = x + 1$ คือข้อใด"
+    choices:
+      - { id: a, text: "$(2, 3)$ และ $(-3, -2)$", correct: true }
+      - { id: b, text: "$(2, 3)$ และ $(-2, -3)$", feedback: "$(-2, -3)$ อยู่บนวงกลม แต่ไม่อยู่บนเส้นตรง ($-2 + 1 = -1 \\ne -3$) ต้องแทนกลับในสมการเชิงเส้น" }
+      - { id: c, text: "$(\\sqrt6, \\sqrt6 + 1)$ และ $(-\\sqrt6, 1 - \\sqrt6)$", feedback: "กระจาย $(x + 1)^2$ เป็น $x^2 + 1$ ซึ่งผิด ที่ถูกคือ $x^2 + 2x + 1$" }
+      - { id: d, text: "$(3, 2)$ และ $(-2, -3)$", feedback: "สลับ $x$ กับ $y$ ตรวจ $(3, 2)$: $y = x + 1$ ให้ $4 \\ne 2$" }
+    hints:
+      - "แทน $y = x + 1$ ลงในสมการวงกลม"
+      - "$x^2 + (x + 1)^2 = 13$ ได้ $x^2 + x - 6 = 0$"
+    solution: "$x^2 + x^2 + 2x + 1 = 13$ ได้ $2x^2 + 2x - 12 = 0$ หรือ $x^2 + x - 6 = (x + 3)(x - 2) = 0$ $x = 2$ ได้ $y = 3$ และ $x = -3$ ได้ $y = -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p011
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: numeric
+    stem: "เส้นตรง $y = -3x$ ตัดวงกลม $x^2 + y^2 = 3$ สองจุด พิกัด $x$ ของจุดตัดที่เป็นบวกเท่ากับเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.55, tolerance: 0.01 }
+    hints:
+      - "แทน $y = -3x$ ได้ $x^2 + (-3x)^2 = 3$"
+      - "$(-3x)^2 = 9x^2$ ได้ $10x^2 = 3$"
+    misconceptions:
+      - { match: 0.3, feedback: "ได้ $x^2 = 0.3$ แล้วลืมถอดรากที่สอง" }
+      - { match: 0.87, feedback: "ใช้ $(-3x)^2 = 3x^2$ แต่ต้องยกกำลังสองทั้ง $-3$ ด้วย ได้ $9x^2$" }
+    solution: "$x^2 + 9x^2 = 3$ ได้ $x^2 = 0.3$ จึง $x = \\sqrt{0.3} \\approx 0.55$ (จุดตัดคือ $(0.55, -1.64)$ และ $(-0.55, 1.64)$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p012
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาค่า $c$ ที่ทำให้เส้นตรง $y = 2x + c$ สัมผัสพาราโบลา $y = x^2$ พอดี"
+    answer: { value: -1 }
+    hints:
+      - "ให้ $x^2 = 2x + c$ ได้ $x^2 - 2x - c = 0$"
+      - "สัมผัสพอดีเมื่อดิสคริมิแนนต์เป็นศูนย์"
+    misconceptions:
+      - { match: 1, feedback: "เครื่องหมายผิด $D = (-2)^2 - 4(1)(-c) = 4 + 4c$" }
+      - { match: 0, feedback: "เมื่อ $c = 0$ เส้น $y = 2x$ ตัดพาราโบลาที่ $x = 0$ และ $x = 2$ สองจุด" }
+    solution: "$D = 4 + 4c = 0$ ได้ $c = -1$ ตรวจ: $x^2 - 2x + 1 = (x - 1)^2$ จุดสัมผัสคือ $(1, 1)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p013
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการแก้ระบบ $y = x^2 - 5$ และ $x + y = 1$ ด้วยวิธีแทนค่า"
+    items:
+      - "จากสมการเชิงเส้น เขียน $y = 1 - x$"
+      - "แทนลงในสมการกำลังสอง ได้ $1 - x = x^2 - 5$"
+      - "จัดรูปเป็น $x^2 + x - 6 = 0$ แล้วแก้ได้ $x = 2$ หรือ $x = -3$"
+      - "แทนแต่ละค่ากลับใน $y = 1 - x$ ได้ $y = -1$ และ $y = 4$"
+      - "เขียนคำตอบเป็นคู่อันดับ $(2, -1)$ และ $(-3, 4)$"
+    hints:
+      - "เริ่มจากสมการเชิงเส้น"
+      - "คำตอบสุดท้ายต้องเป็นคู่อันดับ"
+    solution: "เขียน $y$ จากสมการเชิงเส้น → แทนค่า → แก้สมการกำลังสอง → แทนกลับหา $y$ → เขียนคู่อันดับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p014
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: expression
+    stem: "เส้นตรง $y = mx$ ตัดพาราโบลา $y = x^2 - 4x$ ที่จุดกำเนิดและอีกจุดหนึ่ง จงเขียนพิกัด $x$ ของอีกจุดหนึ่งในรูปของ $m$"
+    prefix: "x ="
+    answer: { latex: "m+4", variables: [m] }
+    hints:
+      - "ให้ $x^2 - 4x = mx$"
+      - "ย้ายข้างแล้วดึงตัวร่วม $x$: $x(x - 4 - m) = 0$"
+    misconceptions:
+      - { match: "m-4", feedback: "เครื่องหมายผิด จาก $x - 4 - m = 0$ ได้ $x = m + 4$" }
+      - { match: "4-m", feedback: "ย้าย $mx$ ข้ามข้างแล้วต้องเปลี่ยนเครื่องหมาย ได้ $x^2 - (4 + m)x = 0$" }
+    solution: "$x^2 - 4x - mx = 0$ ได้ $x(x - (m + 4)) = 0$ จึง $x = 0$ หรือ $x = m + 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p015
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: numeric
+    stem: "จากกราฟ $y = 2^x$ และ $y = x + 3$ ในภาพ คำตอบที่เป็นบวกของสมการ $2^x = x + 3$ มีค่าประมาณเท่าใด (ตอบทศนิยม 1 ตำแหน่ง)"
+    figure:
+      src: p-exp-line.svg
+      alt: "ระนาบพิกัด x จาก −4 ถึง 4 y จาก −2 ถึง 8 เส้นโค้ง y = 2ˣ สีน้ำเงินผ่าน (0, 1), (1, 2), (2, 4), (3, 8) และเส้นตรง y = x + 3 สีแดงผ่าน (−3, 0) และ (0, 3) กราฟทั้งสองตัดกันสองจุด จุดหนึ่งใกล้ x = −3 อีกจุดอยู่ระหว่าง x = 2 กับ x = 3 สูงประมาณ 5.4"
+    answer: { value: 2.4, tolerance: 0.1 }
+    hints:
+      - "คำตอบของ $2^x = x + 3$ คือพิกัด $x$ ของจุดตัด"
+      - "ดูจุดตัดทางขวา อยู่ระหว่าง $x = 2$ กับ $x = 3$ ตรวจด้วยการแทนค่า $x = 2.4$ และ $2.5$"
+    misconceptions:
+      - { match: 5.4, feedback: "นี่คือพิกัด $y$ ของจุดตัด คำตอบของสมการคือพิกัด $x$" }
+      - { match: -2.9, feedback: "นี่คือคำตอบที่เป็นลบ โจทย์ถามคำตอบที่เป็นบวก" }
+    solution: "จุดตัดทางขวาอยู่ที่ $x \\approx 2.4$ ตรวจ: $2^{2.4} \\approx 5.28$ กับ $2.4 + 3 = 5.4$ ใกล้กัน (คำตอบละเอียดกว่าคือ $x \\approx 2.44$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p016
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาคำตอบที่น้อยที่สุดของสมการ $|x - 1| = \\tfrac12 x + 1$ (หาจากจุดตัดของกราฟ $y = |x - 1|$ กับ $y = \\tfrac12 x + 1$)"
+    answer: { value: 0 }
+    hints:
+      - "แยกกรณี $x \\ge 1$ ($|x - 1| = x - 1$) และ $x < 1$ ($|x - 1| = 1 - x$)"
+      - "กรณี $x < 1$: $1 - x = \\tfrac12 x + 1$"
+    misconceptions:
+      - { match: 4, feedback: "นี่คือคำตอบของกรณี $x \\ge 1$ ซึ่งเป็นคำตอบที่มากกว่า ยังมีอีกคำตอบจากกรณี $x < 1$" }
+      - { match: -1.333, feedback: "เขียน $-(x - 1)$ เป็น $-x - 1$ ต้องเป็น $-x + 1$" }
+    solution: "กรณี $x \\ge 1$: $x - 1 = \\tfrac12 x + 1$ ได้ $x = 4$ กรณี $x < 1$: $1 - x = \\tfrac12 x + 1$ ได้ $x = 0$ คำตอบคือ 0 และ 4 ค่าน้อยที่สุดคือ 0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p017
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 5
+    type: mcq
+    stem: "ต้องการประมาณคำตอบของ $x^3 = 5 - x$ จึงคำนวณ $h(x) = x^3 + x - 5$ ได้ $h(1.4) = -0.856$, $h(1.5) = -0.125$, $h(1.6) = 0.696$ คำตอบอยู่ในช่วงใด"
+    choices:
+      - { id: a, text: "ระหว่าง 1.5 กับ 1.6", correct: true }
+      - { id: b, text: "ระหว่าง 1.4 กับ 1.5", feedback: "$h(1.4)$ และ $h(1.5)$ เป็นลบทั้งคู่ ยังไม่เปลี่ยนเครื่องหมาย" }
+      - { id: c, text: "ที่ $x = 1.5$ พอดี", feedback: "$h(1.5) = -0.125$ ไม่เท่ากับ 0 แม้จะใกล้" }
+      - { id: d, text: "มากกว่า 1.6", feedback: "$h(1.6)$ เป็นบวกแล้ว คำตอบจึงอยู่ก่อน 1.6" }
+    hints:
+      - "คำตอบคือค่าที่ทำให้ $h(x) = 0$"
+      - "หาช่วงที่ $h$ เปลี่ยนจากลบเป็นบวก"
+    solution: "$h(1.5) < 0$ และ $h(1.6) > 0$ คำตอบจึงอยู่ระหว่าง 1.5 กับ 1.6 (ค่าจริงประมาณ 1.516)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p018
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 5
+    type: numeric
+    stem: "ลูกบอลถูกโยนจากเชิงเนินในสนามเด็กเล่น เคลื่อนที่ตามเส้นโค้ง $y = -0.1x^2 + 2x$ ส่วนพื้นเนินเป็นทางลาดตามเส้นตรง $y = 0.5x$ ($x$ และ $y$ เป็นเมตร เริ่มที่จุดกำเนิด) ลูกบอลตกกระทบเนินที่ระยะ $x$ กี่เมตร"
+    answer: { value: 15, unit: เมตร }
+    hints:
+      - "หาจุดตัดของเส้นโค้งกับเส้นตรงที่ไม่ใช่จุดเริ่มต้น"
+      - "$-0.1x^2 + 2x = 0.5x$ ดึงตัวร่วม $x$"
+    misconceptions:
+      - { match: 20, feedback: "นี่คือจุดที่ลูกบอลตกถึงพื้นราบ ($y = 0$) แต่พื้นเป็นเนินลาด ต้องหาจุดตัดกับ $y = 0.5x$" }
+      - { match: 0, feedback: "$x = 0$ คือจุดที่โยน โจทย์ถามจุดตกกระทบ" }
+    solution: "$-0.1x^2 + 1.5x = 0$ ได้ $x(-0.1x + 1.5) = 0$ จึง $x = 0$ หรือ $x = 15$ ลูกบอลตกกระทบเนินที่ $x = 15$ เมตร สูง $y = 7.5$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p019
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 5
+    type: numeric
+    stem: "พาราโบลา $y = x^2$ และ $y = 8 - x^2$ ตัดกันสองจุด ระยะห่างระหว่างจุดตัดทั้งสองเท่ากับกี่หน่วย"
+    answer: { value: 4, unit: หน่วย }
+    hints:
+      - "ให้ $x^2 = 8 - x^2$"
+      - "จุดตัดมีพิกัด $y$ เท่ากัน ระยะห่างจึงเป็นผลต่างของพิกัด $x$"
+    misconceptions:
+      - { match: 2, feedback: "นี่คือพิกัด $x$ ของจุดหนึ่ง อีกจุดอยู่ที่ $x = -2$ ระยะห่างคือ $2 - (-2)$" }
+      - { match: 0, feedback: "จุดตัดมีสองจุดคนละฝั่งของแกน $y$ ไม่ใช่จุดเดียวกัน" }
+    solution: "$2x^2 = 8$ ได้ $x = \\pm 2$ และ $y = 4$ จุดตัด $(2, 4)$ และ $(-2, 4)$ ห่างกัน $2 - (-2) = 4$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.nonlinear-systems.p020
+    topics: [math.algebra.nonlinear-systems]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านข้าวมันไก่ขายวันละ $x$ จาน รายได้ $R = 70x$ บาท ต้นทุนรวม $C = 0.5x^2 + 650$ บาท (ขายมากขึ้นต้นทุนต่อจานสูงขึ้นเพราะต้องจ้างคนเพิ่ม) ต้องขายอย่างน้อยกี่จานจึงคุ้มทุน (รายได้เท่ากับต้นทุนพอดี)"
+    answer: { value: 10, unit: จาน }
+    hints:
+      - "จุดคุ้มทุนคือจุดตัดของกราฟรายได้กับกราฟต้นทุน ให้ $70x = 0.5x^2 + 650$"
+      - "คูณด้วย 2 แล้วจัดรูป ได้ $x^2 - 140x + 1300 = 0$ แยกตัวประกอบ"
+    misconceptions:
+      - { match: 130, feedback: "130 จานเป็นจุดคุ้มทุนอีกจุด หลังจากนั้นต้นทุนจะสูงกว่ารายได้ โจทย์ถามจำนวนน้อยที่สุด" }
+      - { match: 9, feedback: "ลองแทน $x = 9$: รายได้ 630 บาท ต้นทุน 690.5 บาท ยังขาดทุน" }
+    solution: "$x^2 - 140x + 1300 = (x - 10)(x - 130) = 0$ ได้ $x = 10$ หรือ $130$ ขายอย่างน้อย 10 จานจึงคุ้มทุน (ตรวจ: รายได้ 700 บาท ต้นทุน $50 + 650 = 700$ บาท)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

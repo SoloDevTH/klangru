@@ -1,0 +1,80 @@
+id: math.algebra.nonlinear-systems
+subject: math
+title: { th: ระบบสมการที่มีสมการกำลังสอง, en: Systems with a quadratic equation }
+summary: แก้ระบบสมการเชิงเส้นกับกำลังสองหรือวงกลมด้วยการแทนค่า บอกจำนวนจุดตัดด้วยดิสคริมิแนนต์ และใช้จุดตัดของกราฟประมาณคำตอบของ f(x) = g(x)
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.algebra.systems, math.algebra.quadratic-eq, math.functions.quadratic]
+encompasses:
+  - { id: math.algebra.quadratic-eq, weight: 0.4 }
+  - { id: math.algebra.systems, weight: 0.3 }
+  - { id: math.functions.quadratic, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: parabola-line.svg
+    alt: "ระนาบพิกัด พาราโบลา y = x² − 2x − 3 มีจุดต่ำสุดที่ (1, −4) และเส้นตรง y = x + 1 ตัดพาราโบลาที่จุด (−1, 0) และ (4, 5)"
+    caption: "จุดตัดทั้งสองคือคำตอบของระบบ"
+  - type: worked-example
+    title: แก้ระบบวงกลมกับเส้นตรง
+    problem: "จงแก้ระบบสมการ $x^2 + y^2 = 10$ และ $x + y = 4$"
+    steps:
+      - text: "จากสมการเชิงเส้น $y = 4 - x$"
+      - text: "แทนในสมการวงกลม: $x^2 + (4 - x)^2 = 10$ กระจายได้ $2x^2 - 8x + 16 = 10$"
+        why: "$(4 - x)^2 = 16 - 8x + x^2$ อย่าลืมพจน์กลาง $-8x$"
+      - text: "จัดรูป $2x^2 - 8x + 6 = 0$ หารด้วย 2 ได้ $x^2 - 4x + 3 = 0$ ได้ $(x - 1)(x - 3) = 0$"
+      - text: "$x = 1$ ได้ $y = 3$ และ $x = 3$ ได้ $y = 1$"
+        why: "แทนกลับใน $y = 4 - x$ จะได้ $y$ ค่าเดียวที่คู่กับแต่ละ $x$"
+    answer: "$(1, 3)$ และ $(3, 1)$"
+  - type: figure
+    src: circle-line.svg
+    alt: "ระนาบพิกัด วงกลม x² + y² = 25 จุดศูนย์กลางที่จุดกำเนิด รัศมี 5 และเส้นตรง y = x + 1 ตัดวงกลมที่จุด (3, 4) และ (−4, −3)"
+    caption: "เส้นตรงตัดวงกลมได้ไม่เกิน 2 จุด"
+  - { type: check, problem: math.algebra.nonlinear-systems.p003, prompt: "คำตอบของ f(x) = g(x) คือพิกัดใดของจุดตัด" }
+  - type: figure
+    src: three-cases.svg
+    alt: "สามภาพ พาราโบลาหงายรูปเดียวกันกับเส้นนอนสีแดง ภาพแรกเส้นอยู่เหนือจุดต่ำสุดและตัดพาราโบลา 2 จุด เขียนว่า ตัดกัน 2 จุด D > 0 ภาพสองเส้นแตะจุดต่ำสุดพอดี เขียนว่า สัมผัส 1 จุด D = 0 ภาพสามเส้นอยู่ใต้พาราโบลา เขียนว่า ไม่ตัดกัน D < 0"
+    caption: "ดิสคริมิแนนต์ของสมการที่ได้หลังแทนค่าบอกจำนวนจุดตัด"
+  - type: interactive
+    title: เลื่อนเส้นตรงแล้วดูจำนวนจุดตัด
+    caption: "ลองหาค่า c ที่ทำให้เส้นตรง y = mx + c สัมผัสพาราโบลา y = x² พอดี เมื่อ m = 2 ค่า c คือเท่าไร"
+    widget:
+      kind: function-plot
+      functions: ["x^2", "m x + c"]
+      sliders:
+        - { name: m, min: -4, max: 4, step: 0.5, value: 2, label: ความชัน }
+        - { name: c, min: -4, max: 4, step: 0.5, value: 1, label: จุดตัดแกน y }
+      x: [-4, 4]
+      y: [-3, 8]
+  - type: worked-example
+    title: หาค่าที่ทำให้เส้นตรงสัมผัสพาราโบลา
+    problem: "จงหาค่า $k$ ที่ทำให้เส้นตรง $y = x + k$ สัมผัสพาราโบลา $y = x^2 - 3x$"
+    steps:
+      - text: "ให้ $x^2 - 3x = x + k$ ได้ $x^2 - 4x - k = 0$"
+      - text: "สัมผัสกันพอดีแปลว่ามีจุดตัดจุดเดียว จึงต้องมี $D = 0$"
+        why: "D > 0 ตัด 2 จุด D < 0 ไม่ตัด"
+      - text: "$D = (-4)^2 - 4(1)(-k) = 16 + 4k = 0$ ได้ $k = -4$"
+      - text: "ตรวจ: $x^2 - 4x + 4 = (x - 2)^2 = 0$ ได้ $x = 2$ จุดเดียว จุดสัมผัสคือ $(2, -2)$"
+    answer: "$k = -4$"
+  - { type: check, problem: math.algebra.nonlinear-systems.p007, prompt: "แทนค่าแล้วดูดิสคริมิแนนต์" }
+glossary:
+  - { term: ระบบสมการที่ไม่เป็นเชิงเส้น, definition: "ระบบสมการที่มีอย่างน้อยหนึ่งสมการไม่เป็นเส้นตรง เช่น มีพจน์ x² หรือ y²" }
+  - { term: วิธีแทนค่า, definition: "เขียนตัวแปรหนึ่งในรูปของอีกตัวจากสมการเชิงเส้น แล้วแทนลงในอีกสมการ" }
+  - { term: จุดตัด, definition: "จุดที่อยู่บนกราฟทั้งสองพร้อมกัน พิกัดของจุดนี้เป็นคำตอบของระบบ" }
+  - { term: สัมผัส, definition: "เส้นตรงแตะเส้นโค้งที่จุดเดียวโดยไม่ตัดผ่าน เกิดเมื่อดิสคริมิแนนต์เป็นศูนย์" }
+  - { term: ดิสคริมิแนนต์, definition: "D = b² − 4ac ของสมการ ax² + bx + c = 0 บอกจำนวนคำตอบที่เป็นจำนวนจริง" }
+flashcards:
+  - { front: "ระบบเส้นตรงกับพาราโบลามีคำตอบได้กี่คู่", back: "0, 1 หรือ 2 คู่" }
+  - { front: "จุดตัดของ y = f(x) กับ y = g(x) บอกอะไร", back: "พิกัด x ของจุดตัดเป็นคำตอบของ f(x) = g(x)" }
+  - { front: "D = 0 หลังแทนค่าหมายความว่าอะไร", back: "เส้นตรงสัมผัสเส้นโค้งที่จุดเดียว" }
+  - { front: "แทนค่ากลับในสมการใดเพื่อหา y", back: "สมการเชิงเส้น จะได้ y ค่าเดียวต่อ x หนึ่งค่า" }
+  - { front: "ถ้าแก้สมการด้วยพีชคณิตไม่ได้ ทำอย่างไร", back: "วาดกราฟ ทำตาราง หรือประมาณซ้ำหาช่วงที่ค่าเปลี่ยนเครื่องหมาย" }
+references:
+  - { title: "ดิสคริมิแนนต์", url: "https://th.wikipedia.org/wiki/ดิสคริมิแนนต์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "System of polynomial equations", url: "https://en.wikipedia.org/wiki/System_of_polynomial_equations", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Bisection method", url: "https://en.wikipedia.org/wiki/Bisection_method", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
