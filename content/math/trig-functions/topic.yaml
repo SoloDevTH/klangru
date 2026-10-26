@@ -1,0 +1,88 @@
+id: math.functions.trig-functions
+subject: math
+title: { th: ฟังก์ชันตรีโกณมิติและเรเดียน, en: Trigonometric functions and radians }
+summary: นิยามไซน์ โคไซน์ แทนเจนต์ บนวงกลมหนึ่งหน่วยด้วยมุมเรเดียน กราฟ คาบ แอมพลิจูด เอกลักษณ์พื้นฐาน สูตรผลบวกของมุม ฟังก์ชันผกผัน การแก้สมการ และแบบจำลองของสิ่งที่เกิดซ้ำเป็นรอบ
+difficulty: 6
+minutes: 45
+prerequisites: [math.geometry.trig-ratios, math.geometry.circles, math.functions.functions-intro]
+encompasses:
+  - { id: math.geometry.trig-ratios, weight: 0.4 }
+  - { id: math.geometry.circles, weight: 0.2 }
+  - { id: math.functions.functions-intro, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: unit-circle.svg
+    alt: "วงกลมรัศมี 1 มีจุดศูนย์กลางที่จุดกำเนิด รังสีจากจุดกำเนิดทำมุม θ กับแกน x บวก ตัดวงกลมที่ P(cos θ, sin θ) ระยะตามแนวนอนคือ cos θ ระยะตามแนวตั้งคือ sin θ มุมทั้งสี่ของภาพบอกเครื่องหมาย ควอดรันต์ I sin บวก cos บวก ควอดรันต์ II sin บวก cos ลบ ควอดรันต์ III sin ลบ cos ลบ ควอดรันต์ IV sin ลบ cos บวก"
+    caption: "cos θ คือพิกัด x และ sin θ คือพิกัด y ของจุดบนวงกลมหนึ่งหน่วย"
+  - type: worked-example
+    title: หาค่าด้วยมุมอ้างอิง
+    problem: "จงหาค่า $\\cos\\frac{4\\pi}{3}$ และ $\\tan\\frac{4\\pi}{3}$"
+    steps:
+      - text: "$\\frac{4\\pi}{3} = \\pi + \\frac{\\pi}{3}$ อยู่ในควอดรันต์ III มีมุมอ้างอิง $\\frac{\\pi}{3}$"
+        why: "เกินครึ่งรอบ ($\\pi$) ไปอีก $\\frac{\\pi}{3}$"
+      - text: "ในควอดรันต์ III ทั้ง sin และ cos เป็นลบ: $\\cos\\frac{4\\pi}{3} = -\\cos\\frac{\\pi}{3} = -\\frac12$ และ $\\sin\\frac{4\\pi}{3} = -\\frac{\\sqrt3}{2}$"
+      - text: "$\\tan\\frac{4\\pi}{3} = \\dfrac{-\\sqrt3/2}{-1/2} = \\sqrt3$"
+        why: "ลบหารลบได้บวก แทนเจนต์จึงเป็นบวกในควอดรันต์ III"
+    answer: "$\\cos\\frac{4\\pi}{3} = -\\frac12$, $\\tan\\frac{4\\pi}{3} = \\sqrt3$"
+  - { type: check, problem: math.functions.trig-functions.p001, prompt: "คูณด้วย π/180" }
+  - type: figure
+    src: sin-cos.svg
+    alt: "กราฟ y = sin x เส้นทึบสีน้ำเงิน และ y = cos x เส้นประสีแดง ตั้งแต่ x = −2π ถึง 2π ทั้งสองแกว่งระหว่าง −1 ถึง 1 sin x ผ่านจุดกำเนิด cos x ผ่าน (0, 1) กราฟ cos x คือกราฟ sin x ที่เลื่อนไปทางซ้าย π/2"
+    caption: "ทั้งสองกราฟซ้ำทุก 2π กราฟ sin สมมาตรรอบจุดกำเนิด (ฟังก์ชันคี่) กราฟ cos สมมาตรรอบแกน y (ฟังก์ชันคู่)"
+  - type: interactive
+    title: เปลี่ยนแอมพลิจูด คาบ การเลื่อน และเส้นกึ่งกลาง
+    caption: "y = a sin(b(x − c)) + d ลองเปลี่ยน b แล้วดูว่าคาบ 2π/b สั้นลงหรือยาวขึ้น และเปลี่ยน d แล้วดูเส้นกึ่งกลาง"
+    widget:
+      kind: function-plot
+      functions: ["a\\sin(b\\cdot(x-c))+d"]
+      sliders:
+        - { name: a, min: -3, max: 3, step: 0.5, value: 1, label: แอมพลิจูด }
+        - { name: b, min: 0.5, max: 4, step: 0.5, value: 1, label: ตัวคูณในวงเล็บ }
+        - { name: c, min: -3.14, max: 3.14, step: 0.0785, value: 0, label: เลื่อนทางนอน }
+        - { name: d, min: -2, max: 2, step: 0.5, value: 0, label: เส้นกึ่งกลาง }
+      x: [-7, 7]
+      y: [-5, 5]
+  - type: interactive
+    title: เลื่อนกราฟโคไซน์ให้ทับกราฟไซน์
+    caption: "เลื่อน c จนกราฟ cos(x − c) ทับ sin x พอดี จะได้ c ≈ 1.57 = π/2 นั่นคือ sin x = cos(x − π/2)"
+    widget:
+      kind: function-plot
+      functions: ["\\sin(x)", "\\cos(x-c)"]
+      sliders:
+        - { name: c, min: 0, max: 6.28, step: 0.0785, value: 0, label: เลื่อนไปทางขวา }
+      x: [-7, 7]
+      y: [-2, 2]
+  - type: worked-example
+    title: สร้างแบบจำลองอุณหภูมิในหนึ่งวัน
+    problem: "วันหนึ่งที่จังหวัดนครราชสีมา อุณหภูมิสูงสุด 34 °C เวลา 15:00 น. และต่ำสุด 24 °C เวลา 03:00 น. จงเขียนแบบจำลอง $T(t) = a\\cos\\big(b(t - c)\\big) + d$ เมื่อ $t$ เป็นชั่วโมงหลังเที่ยงคืน (ตัวเลขสมมติ)"
+    steps:
+      - text: "เส้นกึ่งกลาง $d = \\frac{34 + 24}{2} = 29$ และแอมพลิจูด $a = \\frac{34 - 24}{2} = 5$"
+      - text: "หนึ่งรอบคือ 24 ชั่วโมง จึง $b = \\frac{2\\pi}{24} = \\frac{\\pi}{12}$"
+        why: "คาบ $= \\frac{2\\pi}{b}$"
+      - text: "โคไซน์มีค่าสูงสุดเมื่อมุมเป็น 0 ให้ค่าสูงสุดอยู่ที่ $t = 15$ จึง $c = 15$"
+      - text: "$T(t) = 5\\cos\\left(\\frac{\\pi}{12}(t - 15)\\right) + 29$ ตรวจ: $T(3) = 5\\cos(-\\pi) + 29 = 24$ ตรงกับค่าต่ำสุด"
+    answer: "$T(t) = 5\\cos\\left(\\frac{\\pi}{12}(t - 15)\\right) + 29$"
+  - { type: check, problem: math.functions.trig-functions.p005, prompt: "เลือกเครื่องหมายตามควอดรันต์" }
+glossary:
+  - { term: เรเดียน, definition: "หน่วยวัดมุม มุม 1 เรเดียนรองรับส่วนโค้งยาวเท่ารัศมี π เรเดียน = 180°" }
+  - { term: วงกลมหนึ่งหน่วย, definition: "วงกลมรัศมี 1 ที่จุดศูนย์กลางอยู่ที่จุดกำเนิด ใช้นิยาม cos θ และ sin θ เป็นพิกัดของจุดบนวงกลม" }
+  - { term: คาบ, definition: "ระยะที่สั้นที่สุดที่ฟังก์ชันกลับมาซ้ำค่าเดิม เช่น sin x มีคาบ 2π" }
+  - { term: แอมพลิจูด, definition: "ครึ่งหนึ่งของผลต่างระหว่างค่าสูงสุดกับค่าต่ำสุดของฟังก์ชันรูปคลื่น" }
+  - { term: มุมอ้างอิง, definition: "มุมแหลมระหว่างรังสีของมุมกับแกน x ใช้หาค่าตรีโกณมิติของมุมในควอดรันต์อื่น" }
+flashcards:
+  - { front: "π เรเดียนเท่ากับกี่องศา", back: "180°" }
+  - { front: "คาบของ y = sin(bx)", back: "2π/|b|" }
+  - { front: "เอกลักษณ์พีทาโกรัส", back: "sin²θ + cos²θ = 1" }
+  - { front: "sin(A + B) = ?", back: "sin A cos B + cos A sin B" }
+  - { front: "arcsin ให้ค่าในช่วงใด", back: "[−π/2, π/2]" }
+references:
+  - { title: "ฟังก์ชันตรีโกณมิติ", url: "https://th.wikipedia.org/wiki/ฟังก์ชันตรีโกณมิติ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Unit circle", url: "https://en.wikipedia.org/wiki/Unit_circle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "List of trigonometric identities", url: "https://en.wikipedia.org/wiki/List_of_trigonometric_identities", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "7.3 Unit Circle (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/7-3-unit-circle", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

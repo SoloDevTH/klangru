@@ -1,0 +1,332 @@
+problems:
+  - id: math.functions.trig-functions.p001
+    topics: [math.functions.trig-functions]
+    difficulty: 1
+    type: expression
+    stem: "จงเปลี่ยนมุม 150° เป็นเรเดียน (ตอบในรูปที่มี $\\pi$)"
+    answer: { latex: "\\frac{5\\pi}{6}", variables: [] }
+    hints:
+      - "$180° = \\pi$ เรเดียน"
+      - "$150 \\times \\dfrac{\\pi}{180}$ แล้วทำเศษส่วนให้อย่างต่ำ"
+    misconceptions:
+      - { match: "\\frac{6\\pi}{5}", feedback: "กลับเศษส่วน ต้องคูณด้วย $\\tfrac{\\pi}{180}$ ได้ $\\tfrac{150}{180}\\pi$" }
+      - { match: "\\frac{5}{6}", feedback: "ลืม $\\pi$ มุม 150° เท่ากับ $\\tfrac56$ ของ $\\pi$ เรเดียน" }
+    solution: "$150 \\times \\dfrac{\\pi}{180} = \\dfrac{5\\pi}{6}$ เรเดียน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p002
+    topics: [math.functions.trig-functions]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดถูกต้องเกี่ยวกับเครื่องหมายของ $\\sin 150°$ และ $\\cos 150°$"
+    choices:
+      - { id: a, text: "$\\sin 150° > 0$ และ $\\cos 150° < 0$", correct: true }
+      - { id: b, text: "ทั้งสองค่าเป็นบวก", feedback: "150° อยู่ในควอดรันต์ II พิกัด $x$ เป็นลบ $\\cos$ จึงเป็นลบ" }
+      - { id: c, text: "$\\sin 150° < 0$ และ $\\cos 150° > 0$", feedback: "สลับกัน ในควอดรันต์ II จุดอยู่เหนือแกน $x$ (sin บวก) และอยู่ซ้ายแกน $y$ (cos ลบ)" }
+      - { id: d, text: "ทั้งสองค่าเป็นลบ", feedback: "ทั้งสองเป็นลบในควอดรันต์ III (180° ถึง 270°) แต่ 150° อยู่ในควอดรันต์ II" }
+    hints:
+      - "150° อยู่ระหว่าง 90° กับ 180° คือควอดรันต์ใด"
+      - "sin คือพิกัด $y$ cos คือพิกัด $x$ ของจุดบนวงกลมหนึ่งหน่วย"
+    solution: "150° อยู่ในควอดรันต์ II จุดบนวงกลมอยู่ด้านบนซ้าย $\\sin 150° = \\tfrac12 > 0$ และ $\\cos 150° = -\\tfrac{\\sqrt3}{2} < 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p003
+    topics: [math.functions.trig-functions]
+    difficulty: 2
+    type: mcq
+    stem: "ฟังก์ชัน $y = 3\\sin 2x$ มีแอมพลิจูดและคาบเท่าใด"
+    choices:
+      - { id: a, text: "แอมพลิจูด 3 คาบ $\\pi$", correct: true }
+      - { id: b, text: "แอมพลิจูด 3 คาบ $4\\pi$", feedback: "คูณ $2\\pi \\times 2$ แต่คาบคือ $\\tfrac{2\\pi}{b} = \\tfrac{2\\pi}{2}$ ตัวคูณ 2 ทำให้ซ้ำเร็วขึ้น" }
+      - { id: c, text: "แอมพลิจูด 6 คาบ $\\pi$", feedback: "แอมพลิจูดคือ $|a| = 3$ (ค่าสูงสุด 3 ต่ำสุด −3) ส่วน 6 คือระยะจากต่ำสุดถึงสูงสุด" }
+      - { id: d, text: "แอมพลิจูด 2 คาบ $3\\pi$", feedback: "สลับบทบาทของ 3 กับ 2 ตัวหน้าบอกแอมพลิจูด ตัวในวงเล็บบอกคาบ" }
+    hints:
+      - "รูป $y = a\\sin bx$ มีแอมพลิจูด $|a|$"
+      - "คาบ $= \\dfrac{2\\pi}{|b|}$"
+    solution: "$a = 3$ จึงแอมพลิจูด 3 และ $b = 2$ จึงคาบ $\\tfrac{2\\pi}{2} = \\pi$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p004
+    topics: [math.functions.trig-functions]
+    difficulty: 2
+    type: expression
+    stem: "จงหาค่าที่แท้จริงของ $\\cos\\dfrac{5\\pi}{4}$"
+    answer: { latex: "-\\frac{\\sqrt{2}}{2}", variables: [] }
+    hints:
+      - "$\\dfrac{5\\pi}{4} = \\pi + \\dfrac{\\pi}{4}$ อยู่ในควอดรันต์ III มุมอ้างอิง $\\dfrac{\\pi}{4}$"
+      - "ในควอดรันต์ III โคไซน์เป็นลบ"
+    misconceptions:
+      - { match: "\\frac{\\sqrt{2}}{2}", feedback: "ค่าถูกแต่เครื่องหมายผิด ในควอดรันต์ III โคไซน์เป็นลบ" }
+      - { match: "-\\frac{1}{2}", feedback: "ใช้มุมอ้างอิง $\\tfrac{\\pi}{3}$ แต่ $\\tfrac{5\\pi}{4} - \\pi = \\tfrac{\\pi}{4}$" }
+    solution: "$\\cos\\dfrac{5\\pi}{4} = -\\cos\\dfrac{\\pi}{4} = -\\dfrac{\\sqrt2}{2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p005
+    topics: [math.functions.trig-functions]
+    difficulty: 2
+    type: numeric
+    stem: "ถ้า $\\sin\\theta = \\dfrac35$ และ $\\theta$ อยู่ในควอดรันต์ II จงหา $\\cos\\theta$ (ตอบเป็นทศนิยม)"
+    answer: { value: -0.8, tolerance: 0.001 }
+    hints:
+      - "$\\sin^2\\theta + \\cos^2\\theta = 1$"
+      - "$\\cos^2\\theta = 1 - \\tfrac{9}{25}$ แล้วเลือกเครื่องหมายตามควอดรันต์ II"
+    misconceptions:
+      - { match: 0.8, feedback: "ค่าถูกแต่เครื่องหมายผิด ในควอดรันต์ II โคไซน์เป็นลบ" }
+      - { match: 0.4, feedback: "ใช้ $\\cos\\theta = 1 - \\sin\\theta$ แต่เอกลักษณ์คือ $\\sin^2\\theta + \\cos^2\\theta = 1$" }
+    solution: "$\\cos^2\\theta = 1 - \\tfrac{9}{25} = \\tfrac{16}{25}$ ได้ $\\cos\\theta = \\pm\\tfrac45$ ในควอดรันต์ II โคไซน์เป็นลบ จึง $\\cos\\theta = -0.8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p006
+    topics: [math.functions.trig-functions]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ฟังก์ชันกับสมบัติของฟังก์ชันนั้น"
+    pairs:
+      - { left: "$y = \\sin x$", right: "ฟังก์ชันคี่ คาบ $2\\pi$" }
+      - { left: "$y = \\cos x$", right: "ฟังก์ชันคู่ คาบ $2\\pi$" }
+      - { left: "$y = \\tan x$", right: "คาบ $\\pi$ และมีเส้นกำกับแนวดิ่ง" }
+      - { left: "$y = 2\\cos x + 1$", right: "เรนจ์คือ $[-1, 3]$" }
+    hints:
+      - "ฟังก์ชันคู่สมมาตรรอบแกน $y$ ฟังก์ชันคี่สมมาตรรอบจุดกำเนิด"
+      - "$2\\cos x$ มีค่าตั้งแต่ $-2$ ถึง $2$ แล้วบวก 1"
+    solution: "sin คี่ คาบ $2\\pi$; cos คู่ คาบ $2\\pi$; tan คาบ $\\pi$ ไม่นิยามที่ $\\tfrac{\\pi}{2} + k\\pi$; $2\\cos x + 1$ มีค่าตั้งแต่ $-2 + 1 = -1$ ถึง $2 + 1 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p007
+    topics: [math.functions.trig-functions]
+    difficulty: 3
+    type: mcq
+    stem: "ภาพเป็นกราฟของฟังก์ชันใด"
+    figure:
+      src: mystery-wave.svg
+      alt: "กราฟรูปคลื่นตั้งแต่ประมาณ x = −1 ถึง x = 4π ผ่านจุด (0, 1) ขึ้นไปสูงสุด y = 3 ที่ x = π ลงมาผ่าน y = 1 ที่ x = 2π ต่ำสุด y = −1 ที่ x = 3π และกลับมาที่ y = 1 เมื่อ x = 4π"
+    choices:
+      - { id: a, text: "$y = 2\\sin\\dfrac{x}{2} + 1$", correct: true }
+      - { id: b, text: "$y = 2\\sin 2x + 1$", feedback: "$\\sin 2x$ มีคาบ $\\pi$ แต่กราฟใช้เวลา $4\\pi$ จึงครบหนึ่งรอบ" }
+      - { id: c, text: "$y = \\sin\\dfrac{x}{2} + 2$", feedback: "เส้นกึ่งกลางอยู่ที่ $y = 1$ (กลางระหว่าง 3 กับ −1) และแอมพลิจูดคือ 2" }
+      - { id: d, text: "$y = 2\\cos\\dfrac{x}{2} + 1$", feedback: "โคไซน์จะเริ่มที่ค่าสูงสุดเมื่อ $x = 0$ แต่กราฟเริ่มที่เส้นกึ่งกลางแล้วขึ้น ซึ่งเป็นลักษณะของไซน์" }
+    hints:
+      - "อ่านค่าสูงสุดและต่ำสุด แล้วหาเส้นกึ่งกลางและแอมพลิจูด"
+      - "กราฟครบหนึ่งรอบเมื่อ $x$ เพิ่มเท่าไร คาบ $= \\tfrac{2\\pi}{b}$"
+    solution: "สูงสุด 3 ต่ำสุด −1 → $d = 1$, $a = 2$ คาบ $4\\pi$ → $b = \\tfrac{2\\pi}{4\\pi} = \\tfrac12$ เริ่มที่เส้นกึ่งกลางแล้วขึ้น → ไซน์ จึงได้ $y = 2\\sin\\tfrac{x}{2} + 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p008
+    topics: [math.functions.trig-functions]
+    difficulty: 3
+    type: expression
+    stem: "จงหาคำตอบที่น้อยที่สุดในช่วง $[0, 2\\pi)$ ของสมการ $\\sin x = -\\dfrac12$ (ตอบในรูปที่มี $\\pi$)"
+    prefix: "x ="
+    answer: { latex: "\\frac{7\\pi}{6}", variables: [] }
+    hints:
+      - "มุมอ้างอิงคือ $\\tfrac{\\pi}{6}$ ไซน์เป็นลบในควอดรันต์ III และ IV"
+      - "คำตอบในควอดรันต์ III คือ $\\pi + \\tfrac{\\pi}{6}$"
+    misconceptions:
+      - { match: "-\\frac{\\pi}{6}", feedback: "$-\\tfrac{\\pi}{6}$ ทำให้สมการเป็นจริง แต่ไม่อยู่ในช่วง $[0, 2\\pi)$" }
+      - { match: "\\frac{5\\pi}{6}", feedback: "ในควอดรันต์ II ไซน์เป็นบวก $\\sin\\tfrac{5\\pi}{6} = +\\tfrac12$" }
+    solution: "ไซน์เป็นลบในควอดรันต์ III และ IV ได้ $x = \\pi + \\tfrac{\\pi}{6} = \\tfrac{7\\pi}{6}$ และ $x = 2\\pi - \\tfrac{\\pi}{6} = \\tfrac{11\\pi}{6}$ ค่าที่น้อยที่สุดคือ $\\tfrac{7\\pi}{6}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p009
+    topics: [math.functions.trig-functions]
+    difficulty: 4
+    type: expression
+    stem: "ใช้สูตรผลบวกของมุมหาค่าที่แท้จริงของ $\\sin 75°$"
+    answer: { latex: "\\frac{\\sqrt{6}+\\sqrt{2}}{4}", variables: [] }
+    hints:
+      - "$75° = 45° + 30°$"
+      - "$\\sin(A + B) = \\sin A\\cos B + \\cos A\\sin B$"
+    misconceptions:
+      - { match: "\\frac{\\sqrt{6}-\\sqrt{2}}{4}", feedback: "ได้ $\\sin 15°$ (ใช้ $45° - 30°$ หรือเครื่องหมายผิด) $\\sin 75°$ ต้องใกล้ 1" }
+      - { match: "\\frac{\\sqrt{2}}{2}+\\frac{1}{2}", feedback: "บวก $\\sin 45° + \\sin 30°$ ตรง ๆ แต่ $\\sin(A + B) \\ne \\sin A + \\sin B$ (ผลมากกว่า 1 ซึ่งไซน์เป็นไม่ได้)" }
+    solution: "$\\sin 75° = \\sin 45°\\cos 30° + \\cos 45°\\sin 30° = \\tfrac{\\sqrt2}{2} \\cdot \\tfrac{\\sqrt3}{2} + \\tfrac{\\sqrt2}{2} \\cdot \\tfrac12 = \\dfrac{\\sqrt6 + \\sqrt2}{4} \\approx 0.9659$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p010
+    topics: [math.functions.trig-functions]
+    difficulty: 3
+    type: numeric
+    stem: "ชิงช้าสวรรค์ในงานวัดมีความสูงของที่นั่งเป็น $h(t) = 12 - 10\\cos\\left(\\dfrac{\\pi t}{4}\\right)$ เมตร เมื่อ $t$ เป็นนาทีหลังขึ้นนั่งที่จุดต่ำสุด เมื่อเวลาผ่านไป 3 นาที ที่นั่งสูงกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 19.07, tolerance: 0.05, unit: เมตร }
+    hints:
+      - "แทน $t = 3$: มุมคือ $\\tfrac{3\\pi}{4}$ เรเดียน"
+      - "$\\cos\\tfrac{3\\pi}{4} = -\\tfrac{\\sqrt2}{2}$ ถ้าใช้เครื่องคิดเลข ต้องตั้งโหมดเรเดียน"
+    misconceptions:
+      - { match: 2.01, feedback: "เครื่องคิดเลขอยู่ในโหมดองศา จึงคิด $\\cos(2.356°)$ ต้องตั้งโหมดเรเดียน (RAD)" }
+      - { match: 4.93, feedback: "ใช้ $\\cos\\tfrac{3\\pi}{4} = +\\tfrac{\\sqrt2}{2}$ แต่มุมนี้อยู่ในควอดรันต์ II โคไซน์เป็นลบ" }
+    solution: "$h(3) = 12 - 10\\cos\\tfrac{3\\pi}{4} = 12 - 10\\left(-\\tfrac{\\sqrt2}{2}\\right) = 12 + 5\\sqrt2 \\approx 19.07$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p011
+    topics: [math.functions.trig-functions]
+    difficulty: 4
+    type: mcq
+    stem: "ระดับน้ำที่ท่าเรือแห่งหนึ่ง (ค่าสมมติ) ขึ้นสูงสุด 3.2 เมตรเวลา $t = 0$ ลงต่ำสุด 0.8 เมตร และครบหนึ่งรอบทุก 12 ชั่วโมง ข้อใดเป็นแบบจำลองระดับน้ำ $y$ (เมตร) เมื่อ $t$ เป็นชั่วโมง"
+    choices:
+      - { id: a, text: "$y = 1.2\\cos\\dfrac{\\pi t}{6} + 2$", correct: true }
+      - { id: b, text: "$y = 2.4\\cos\\dfrac{\\pi t}{6} + 2$", feedback: "2.4 คือระยะจากต่ำสุดถึงสูงสุด แอมพลิจูดคือครึ่งหนึ่ง 1.2" }
+      - { id: c, text: "$y = 1.2\\cos 12t + 2$", feedback: "12 คือคาบ ไม่ใช่ $b$ ต้องใช้ $b = \\tfrac{2\\pi}{12} = \\tfrac{\\pi}{6}$" }
+      - { id: d, text: "$y = 1.2\\sin\\dfrac{\\pi t}{6} + 2$", feedback: "ไซน์ให้ค่า 2 (เส้นกึ่งกลาง) ที่ $t = 0$ แต่ระดับน้ำสูงสุดที่ $t = 0$ จึงใช้โคไซน์" }
+    hints:
+      - "เส้นกึ่งกลาง = ค่าเฉลี่ยของสูงสุดกับต่ำสุด แอมพลิจูด = ครึ่งหนึ่งของผลต่าง"
+      - "คาบ 12 ชั่วโมง ได้ $b = \\tfrac{2\\pi}{12}$ และโคไซน์เริ่มที่ค่าสูงสุด"
+    solution: "$d = \\tfrac{3.2 + 0.8}{2} = 2$, $a = \\tfrac{3.2 - 0.8}{2} = 1.2$, $b = \\tfrac{2\\pi}{12} = \\tfrac{\\pi}{6}$ สูงสุดที่ $t = 0$ ใช้โคไซน์ ได้ $y = 1.2\\cos\\tfrac{\\pi t}{6} + 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p012
+    topics: [math.functions.trig-functions]
+    difficulty: 5
+    type: numeric
+    stem: "ชิงช้าสวรรค์ในโจทย์ก่อนมีความสูง $h(t) = 12 - 10\\cos\\left(\\dfrac{\\pi t}{4}\\right)$ เมตร ($t$ เป็นนาที) ที่นั่งขึ้นถึงความสูง 17 เมตรครั้งแรกเมื่อเวลาผ่านไปกี่นาที (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.67, tolerance: 0.02, unit: นาที }
+    hints:
+      - "$12 - 10\\cos\\tfrac{\\pi t}{4} = 17$ ได้ $\\cos\\tfrac{\\pi t}{4} = -\\tfrac12$"
+      - "ใช้ $\\arccos\\left(-\\tfrac12\\right) = \\tfrac{2\\pi}{3}$ ซึ่งเป็นคำตอบแรกในรอบแรก แล้วแก้หา $t$"
+    misconceptions:
+      - { match: 1.33, feedback: "ใช้ $\\cos\\tfrac{\\pi t}{4} = +\\tfrac12$ (ย้ายข้างผิดเครื่องหมาย) ที่ $t = 1.33$ ความสูงเพียง 7 เมตร" }
+      - { match: 5.33, feedback: "5.33 นาทีคือครั้งที่สองที่ความสูงเท่ากับ 17 เมตร (ขาลง) โจทย์ถามครั้งแรก" }
+    solution: "$\\cos\\tfrac{\\pi t}{4} = -\\tfrac12 \\Rightarrow \\tfrac{\\pi t}{4} = \\tfrac{2\\pi}{3} \\Rightarrow t = \\tfrac83 \\approx 2.67$ นาที (ตรวจ: $h = 12 - 10(-0.5) = 17$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p013
+    topics: [math.functions.trig-functions]
+    difficulty: 3
+    type: mcq
+    stem: "เอกลักษณ์ $\\sin(-x) = -\\sin x$ บอกอะไรเกี่ยวกับกราฟของ $y = \\sin x$"
+    choices:
+      - { id: a, text: "กราฟสมมาตรรอบจุดกำเนิด (เป็นฟังก์ชันคี่)", correct: true }
+      - { id: b, text: "กราฟสมมาตรรอบแกน $y$ (เป็นฟังก์ชันคู่)", feedback: "สมมาตรรอบแกน $y$ ต้องมี $f(-x) = f(x)$ ซึ่งเป็นสมบัติของ $\\cos x$" }
+      - { id: c, text: "กราฟซ้ำทุก $2\\pi$", feedback: "การซ้ำเป็นรอบมาจาก $\\sin(x + 2\\pi) = \\sin x$ ไม่ใช่เอกลักษณ์นี้" }
+      - { id: d, text: "กราฟไม่มีค่าเป็นลบ", feedback: "ไซน์มีค่าลบได้ เช่น $\\sin\\left(-\\tfrac{\\pi}{2}\\right) = -1$" }
+    hints:
+      - "ถ้าจุด $(a, b)$ อยู่บนกราฟ จุด $(-a, -b)$ อยู่บนกราฟด้วยหรือไม่"
+      - "บนวงกลมหนึ่งหน่วย มุม $-x$ คือการสะท้อนจุดของมุม $x$ ในแกน $x$"
+    solution: "$\\sin(-x) = -\\sin x$ แปลว่าถ้า $(a, b)$ อยู่บนกราฟ $(-a, -b)$ ก็อยู่ด้วย กราฟจึงสมมาตรรอบจุดกำเนิด ไซน์เป็นฟังก์ชันคี่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p014
+    topics: [math.functions.trig-functions]
+    difficulty: 4
+    type: expression
+    stem: "ถ้า $\\cos\\theta = -\\dfrac{5}{13}$ และ $\\theta$ อยู่ในควอดรันต์ III จงหา $\\tan\\theta$ (ตอบเป็นเศษส่วน)"
+    answer: { latex: "\\frac{12}{5}", variables: [] }
+    hints:
+      - "หา $\\sin\\theta$ จาก $\\sin^2\\theta + \\cos^2\\theta = 1$ แล้วเลือกเครื่องหมายตามควอดรันต์ III"
+      - "$\\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta}$"
+    misconceptions:
+      - { match: "-\\frac{12}{5}", feedback: "ในควอดรันต์ III ทั้ง sin และ cos เป็นลบ ลบหารลบได้บวก" }
+      - { match: "\\frac{5}{12}", feedback: "กลับเศษส่วน $\\tan\\theta = \\tfrac{\\sin\\theta}{\\cos\\theta}$ ไม่ใช่ $\\tfrac{\\cos\\theta}{\\sin\\theta}$" }
+    solution: "$\\sin^2\\theta = 1 - \\tfrac{25}{169} = \\tfrac{144}{169}$ ในควอดรันต์ III $\\sin\\theta = -\\tfrac{12}{13}$ จึง $\\tan\\theta = \\dfrac{-12/13}{-5/13} = \\dfrac{12}{5}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p015
+    topics: [math.functions.trig-functions]
+    difficulty: 5
+    type: numeric
+    stem: "สมการ $2\\sin^2 x - \\sin x - 1 = 0$ มีคำตอบในช่วง $[0, 2\\pi)$ กี่คำตอบ"
+    answer: { value: 3, unit: คำตอบ }
+    hints:
+      - "ให้ $u = \\sin x$ ได้ $2u^2 - u - 1 = 0$ แยกตัวประกอบ"
+      - "$(2u + 1)(u - 1) = 0$ แล้วนับมุมใน $[0, 2\\pi)$ ที่ให้แต่ละค่าของไซน์"
+    misconceptions:
+      - { match: 2, feedback: "2 คือจำนวนค่าของ $\\sin x$ แต่ $\\sin x = -\\tfrac12$ ให้มุมสองมุมในหนึ่งรอบ" }
+      - { match: 4, feedback: "$\\sin x = 1$ ให้มุมเดียวในหนึ่งรอบ คือ $\\tfrac{\\pi}{2}$ ไม่ใช่สองมุม" }
+    solution: "$(2\\sin x + 1)(\\sin x - 1) = 0$ ได้ $\\sin x = 1$ → $x = \\tfrac{\\pi}{2}$ และ $\\sin x = -\\tfrac12$ → $x = \\tfrac{7\\pi}{6}, \\tfrac{11\\pi}{6}$ รวม 3 คำตอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p016
+    topics: [math.functions.trig-functions]
+    difficulty: 3
+    type: order
+    stem: "เรียงค่าต่อไปนี้จากน้อยไปมาก"
+    items:
+      - "$\\sin\\dfrac{7\\pi}{6}$"
+      - "$\\cos\\dfrac{\\pi}{2}$"
+      - "$\\sin\\dfrac{\\pi}{4}$"
+      - "$\\cos\\dfrac{\\pi}{6}$"
+      - "$\\tan\\dfrac{\\pi}{3}$"
+    hints:
+      - "หาค่าแต่ละตัวจากตารางมุมพิเศษและเครื่องหมายตามควอดรันต์"
+      - "$\\sin\\tfrac{7\\pi}{6}$ อยู่ในควอดรันต์ III จึงเป็นลบ"
+    solution: "$\\sin\\tfrac{7\\pi}{6} = -0.5$, $\\cos\\tfrac{\\pi}{2} = 0$, $\\sin\\tfrac{\\pi}{4} \\approx 0.707$, $\\cos\\tfrac{\\pi}{6} \\approx 0.866$, $\\tan\\tfrac{\\pi}{3} \\approx 1.732$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p017
+    topics: [math.functions.trig-functions]
+    difficulty: 5
+    type: mcq
+    stem: "ถ้าจำกัดโดเมนของ $y = \\sin x$ ให้เหลือช่วงใดต่อไปนี้ ฟังก์ชันจะมีฟังก์ชันผกผัน"
+    choices:
+      - { id: a, text: "$\\left[\\dfrac{\\pi}{2}, \\dfrac{3\\pi}{2}\\right]$", correct: true }
+      - { id: b, text: "$[0, \\pi]$", feedback: "ในช่วงนี้ไซน์เพิ่มจาก 0 ถึง 1 แล้วลดกลับเป็น 0 เช่น $\\sin\\tfrac{\\pi}{6} = \\sin\\tfrac{5\\pi}{6}$ จึงไม่เป็นหนึ่งต่อหนึ่ง (ช่วงนี้ใช้กับโคไซน์)" }
+      - { id: c, text: "$[-\\pi, 0]$", feedback: "ไซน์ลดจาก 0 ถึง −1 แล้วเพิ่มกลับเป็น 0 ค่าซ้ำกัน จึงไม่เป็นหนึ่งต่อหนึ่ง" }
+      - { id: d, text: "$[0, 2\\pi]$", feedback: "หนึ่งรอบเต็ม ทุกค่าใน $(-1, 1)$ เกิดซ้ำสองครั้ง" }
+    hints:
+      - "ฟังก์ชันมีตัวผกผันเมื่อเป็นหนึ่งต่อหนึ่ง เช่น เพิ่มขึ้นตลอดหรือลดลงตลอดในช่วงนั้น"
+      - "ดูกราฟ $\\sin x$ ว่าช่วงใดลดลงตลอด"
+    solution: "ในช่วง $\\left[\\tfrac{\\pi}{2}, \\tfrac{3\\pi}{2}\\right]$ ไซน์ลดลงตลอดจาก 1 ถึง −1 จึงเป็นหนึ่งต่อหนึ่งและมีตัวผกผัน (ฟังก์ชัน arcsin มาตรฐานเลือกช่วง $\\left[-\\tfrac{\\pi}{2}, \\tfrac{\\pi}{2}\\right]$ ซึ่งไซน์เพิ่มขึ้นตลอด) ช่วงอื่นมีค่าซ้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p018
+    topics: [math.functions.trig-functions]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $A$ และ $B$ เป็นมุมแหลม $\\sin A = \\dfrac35$ และ $\\cos B = \\dfrac{5}{13}$ จงหา $\\sin(A + B)$ (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.9692, tolerance: 0.001 }
+    hints:
+      - "หา $\\cos A$ และ $\\sin B$ ด้วยเอกลักษณ์พีทาโกรัส (มุมแหลมจึงเป็นบวก)"
+      - "$\\sin(A + B) = \\sin A\\cos B + \\cos A\\sin B$"
+    misconceptions:
+      - { match: 1.5231, feedback: "บวก $\\sin A + \\sin B$ ตรง ๆ ได้ค่ามากกว่า 1 ซึ่งไซน์เป็นไม่ได้ ต้องใช้สูตรผลบวกของมุม" }
+      - { match: -0.5077, feedback: "ใช้เครื่องหมายลบ ซึ่งเป็นสูตรของ $\\sin(A - B)$" }
+    solution: "$\\cos A = \\tfrac45$, $\\sin B = \\tfrac{12}{13}$ ได้ $\\sin(A + B) = \\tfrac35 \\cdot \\tfrac{5}{13} + \\tfrac45 \\cdot \\tfrac{12}{13} = \\tfrac{15 + 48}{65} = \\tfrac{63}{65} \\approx 0.9692$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p019
+    topics: [math.functions.trig-functions]
+    difficulty: 2
+    type: numeric
+    stem: "มุม 2 เรเดียนเท่ากับกี่องศา (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 114.59, tolerance: 0.05, unit: องศา }
+    hints:
+      - "$\\pi$ เรเดียน $= 180°$"
+      - "$2 \\times \\dfrac{180}{\\pi}$"
+    misconceptions:
+      - { match: 0.03, feedback: "คูณด้วย $\\tfrac{\\pi}{180}$ ซึ่งเป็นการเปลี่ยนองศาเป็นเรเดียน ต้องคูณด้วย $\\tfrac{180}{\\pi}$" }
+      - { match: 360, feedback: "คิดว่า 2 เรเดียนคือ $2\\pi$ แต่ $2\\pi$ เรเดียนเท่านั้นที่เป็น 360°" }
+    solution: "$2 \\times \\dfrac{180°}{\\pi} \\approx 114.59°$ (มุม 1 เรเดียนประมาณ 57.3°)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.trig-functions.p020
+    topics: [math.functions.trig-functions]
+    difficulty: 2
+    type: numeric
+    stem: "กำหนด $\\sin 25° \\approx 0.4226$ จงหาค่าโดยประมาณของ $\\cos 65°$ โดยไม่ใช้เครื่องคิดเลข"
+    answer: { value: 0.4226, tolerance: 0.0005 }
+    hints:
+      - "$25° + 65° = 90°$ เป็นมุมที่ประกอบกันเป็นมุมฉาก"
+      - "$\\cos(90° - x) = \\sin x$"
+    misconceptions:
+      - { match: 0.5774, feedback: "คิดว่า $\\cos 65° = 1 - \\sin 25°$ แต่ความสัมพันธ์ที่ถูกคือ $\\cos(90° - x) = \\sin x$" }
+    solution: "$\\cos 65° = \\cos(90° - 25°) = \\sin 25° \\approx 0.4226$ เพราะในสามเหลี่ยมมุมฉาก ด้านตรงข้ามมุม 25° คือด้านประชิดมุม 65°"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
