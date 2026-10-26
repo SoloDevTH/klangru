@@ -1,0 +1,82 @@
+id: biology.genetics.chromosomes-dna
+subject: biology
+title: { th: โครโมโซมและสารพันธุกรรม, en: "Chromosomes and genetic material" }
+summary: หลักฐานว่า DNA เป็นสารพันธุกรรม โครงสร้างและการจำลอง DNA ยีนบนออโตโซมและโครโมโซมเพศ การถอดรหัสและการแปลรหัส หน้าที่ของ RNA ความสัมพันธ์ของยีน โปรตีน และลักษณะ และมิวเทชัน
+difficulty: 6
+minutes: 55
+prerequisites: [biology.genetics.mendelian, biology.molecules.water-biomolecules]
+encompasses:
+  - { id: biology.genetics.mendelian, weight: 0.3 }
+  - { id: biology.molecules.water-biomolecules, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: โครงสร้างของ DNA
+    src: dna-structure.svg
+    alt: "DNA สายคู่ที่คลายเกลียวให้เห็นเป็นบันได สายซ้ายเริ่มที่ปลาย 5′ ด้านบนไปปลาย 3′ ด้านล่าง สายขวาเริ่มที่ปลาย 3′ ด้านบนไปปลาย 5′ ด้านล่าง แต่ละสายมีหมู่ฟอสเฟตกับน้ำตาลดีออกซีไรโบสต่อสลับกันเป็นแกน คู่เบสจากบนลงล่างคือ A–T, C–G, G–C, T–A, G–C, C–G ระหว่างคู่ A–T มีเส้นประพันธะไฮโดรเจน 2 เส้น ระหว่างคู่ C–G มี 3 เส้น กล่องสรุประบุว่าระยะระหว่างคู่เบสประมาณ 0.34 nm"
+    caption: "สองสายวางสวนทางกัน A คู่กับ T และ C คู่กับ G (วาดโดยทีมคลังรู้)"
+  - type: figure
+    title: การจำลอง DNA แบบกึ่งอนุรักษ์
+    src: meselson-stahl.svg
+    alt: "หลอดปั่นเหวี่ยง 3 หลอด แสดงตำแหน่งแถบ DNA ที่ระดับเบา (¹⁴N/¹⁴N) กึ่งกลาง (¹⁵N/¹⁴N) และหนัก (¹⁵N/¹⁵N) รุ่น 0 ที่เลี้ยงใน ¹⁵N มีแถบหนักแถบเดียว รุ่น 1 หลังย้ายไปเลี้ยงใน ¹⁴N มีแถบกึ่งกลางแถบเดียว รุ่น 2 มีแถบกึ่งกลางและแถบเบาอย่างละครึ่ง"
+    caption: "ผลการทดลองของเมเซลสันและสตาห์ล (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: ถอดรหัสและแปลรหัส
+    problem: "DNA สายแม่แบบมีลำดับเบส 3′-TAC CGA AAA ATT-5′ จงหาลำดับ mRNA และพอลิเพปไทด์ที่ได้"
+    steps:
+      - text: "เขียนเบสที่เข้าคู่กับแม่แบบ โดยใช้ U แทน T ได้ mRNA 5′-AUG GCU UUU UAA-3′"
+        why: "mRNA วางสวนทางกับแม่แบบ ปลาย 5′ ของ mRNA จึงอยู่ตรงข้ามปลาย 3′ ของแม่แบบ"
+      - text: "แบ่งทีละ 3 เบสจาก AUG แล้วเทียบตาราง AUG = Met, GCU = Ala, UUU = Phe"
+      - text: "UAA เป็นรหัสหยุด การแปลรหัสจึงสิ้นสุด"
+    answer: "mRNA 5′-AUG GCU UUU UAA-3′ ได้พอลิเพปไทด์ Met-Ala-Phe"
+  - type: figure
+    title: จาก DNA สู่โปรตีน
+    src: central-dogma.svg
+    alt: "DNA สายแม่แบบ 3′-TAC GGT CTT ACT-5′ ถูกถอดรหัสในนิวเคลียสโดย RNA พอลิเมอเรสเป็น mRNA 5′-AUG CCA GAA UGA-3′ แบ่งเป็นโคดอน 1 ถึง 4 จากนั้นที่ไรโบโซม tRNA ที่มีแอนติโคดอน UAC GGU CUU นำกรดอะมิโน Met Pro Glu มาต่อกันเป็นพอลิเพปไทด์ และหยุดที่โคดอน UGA ซึ่งเป็นรหัสหยุด"
+    caption: "การถอดรหัสในนิวเคลียสและการแปลรหัสที่ไรโบโซม (วาดโดยทีมคลังรู้)"
+  - type: figure
+    title: ตารางรหัสพันธุกรรม
+    src: genetic-code.svg
+    alt: "ตารางรหัสพันธุกรรมมาตรฐานของโคดอนบน mRNA 64 โคดอน แถวคือเบสตัวที่ 1 คอลัมน์คือเบสตัวที่ 2 ภายในแต่ละช่องเรียงตามเบสตัวที่ 3 U C A G ตัวอย่าง UUU และ UUC เป็น Phe GGU GGC GGA GGG เป็น Gly AAA AAG เป็น Lys UGG เป็น Trp GAA GAG เป็น Glu GUU GUC GUA GUG เป็น Val AUG เป็น Met และเป็นรหัสเริ่ม UAA UAG UGA เป็นรหัสหยุด (ตารางครบทุกโคดอนตามรหัสพันธุกรรมมาตรฐาน)"
+    caption: "ใช้ตารางนี้ในโจทย์ของหัวข้อ (วาดโดยทีมคลังรู้ จากรหัสพันธุกรรมมาตรฐาน)"
+  - { type: check, problem: biology.genetics.chromosomes-dna.p005, prompt: "เขียนเบสที่เข้าคู่ทีละตัว อย่าลืมใช้ U แทน T" }
+  - type: worked-example
+    title: ผลของมิวเทชันแต่ละแบบ
+    problem: "mRNA ปกติ 5′-AUG GAA UUU UAA-3′ ได้ Met-Glu-Phe เทียบผลของ (ก) GAA เปลี่ยนเป็น GAG (ข) GAA เปลี่ยนเป็น UAA"
+    steps:
+      - text: "(ก) GAG ยังแทน Glu เหมือนเดิม โปรตีนไม่เปลี่ยน"
+        why: "รหัสพันธุกรรมมีหลายโคดอนต่อกรดอะมิโนหนึ่งชนิด การแทนที่เบสตัวที่ 3 จึงมักไม่เปลี่ยนกรดอะมิโน"
+      - text: "(ข) UAA เป็นรหัสหยุด พอลิเพปไทด์เหลือเพียง Met"
+    answer: "(ก) ไม่เปลี่ยนกรดอะมิโน (ข) โปรตีนสั้นลงจนเหลือกรดอะมิโนหน่วยเดียว"
+  - { type: check, problem: biology.genetics.chromosomes-dna.p012, prompt: "หากรดอะมิโนของ GAG และ GUG ในตาราง" }
+  - type: simulation
+    title: การแสดงออกของยีน (PhET Gene Expression Essentials)
+    url: https://phet.colorado.edu/en/simulations/gene-expression-essentials
+    provider: phet
+    note: ลากโปรตีนถอดรหัสไปที่ยีนให้สร้าง mRNA แล้วนำ mRNA ไปที่ไรโบโซม สังเกตว่าโปรตีนแต่ละชนิดมาจากยีนคนละยีน
+glossary:
+  - { term: นิวคลีโอไทด์, definition: "หน่วยย่อยของ DNA และ RNA ประกอบด้วยน้ำตาล หมู่ฟอสเฟต และเบส" }
+  - { term: จีโนม, definition: "สารพันธุกรรมทั้งหมดของสิ่งมีชีวิต" }
+  - { term: การจำลองแบบกึ่งอนุรักษ์, definition: "การจำลอง DNA ที่ได้โมเลกุลใหม่ซึ่งมีสายเดิม 1 สายและสายใหม่ 1 สาย" }
+  - { term: การถอดรหัส, definition: "การสร้าง mRNA จาก DNA สายแม่แบบโดย RNA พอลิเมอเรส" }
+  - { term: การแปลรหัส, definition: "การสร้างพอลิเพปไทด์ตามลำดับโคดอนของ mRNA ที่ไรโบโซม" }
+  - { term: โคดอน, definition: "ลำดับเบส 3 เบสบน mRNA ที่แทนกรดอะมิโนหนึ่งชนิดหรือรหัสหยุด" }
+  - { term: แอนติโคดอน, definition: "ลำดับเบส 3 เบสบน tRNA ที่เข้าคู่กับโคดอน" }
+  - { term: มิวเทชัน, definition: "การเปลี่ยนแปลงของสารพันธุกรรม เช่น การแทนที่ การเพิ่ม หรือการขาดหายของเบส" }
+  - { term: กรอบการอ่านเลื่อน, definition: "ผลของการเพิ่มหรือขาดเบสที่ไม่ใช่ทีละ 3 ทำให้โคดอนหลังจุดนั้นเปลี่ยนทั้งหมด" }
+flashcards:
+  - { front: "การจับคู่เบสและพันธะไฮโดรเจน", back: "A–T 2 พันธะ C–G 3 พันธะ ใน RNA ใช้ U แทน T" }
+  - { front: "การจำลอง DNA แบบกึ่งอนุรักษ์ หลักฐานจากใคร", back: "เมเซลสันและสตาห์ล ใช้ ¹⁵N และ ¹⁴N" }
+  - { front: "mRNA tRNA rRNA ทำหน้าที่อะไร", back: "นำรหัส นำกรดอะมิโน เป็นส่วนของไรโบโซม" }
+  - { front: "รหัสเริ่มและรหัสหยุด", back: "AUG (Met) และ UAA UAG UGA" }
+  - { front: "ทำไมพ่อไม่ส่งยีนบน X ให้ลูกชาย", back: "พ่อส่ง Y ให้ลูกชาย และส่ง X ให้ลูกสาวทุกคน" }
+references:
+  - { title: "DNA replication", url: "https://en.wikipedia.org/wiki/DNA_replication", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Genetic code", url: "https://en.wikipedia.org/wiki/Genetic_code", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "14.2 DNA Structure and Sequencing (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "15.5 Ribosomes and Protein Synthesis (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/15-5-ribosomes-and-protein-synthesis", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
