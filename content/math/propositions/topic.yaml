@@ -1,0 +1,62 @@
+id: math.logic.propositions
+subject: math
+title: { th: ตรรกศาสตร์เบื้องต้น, en: Introduction to logic }
+summary: ประพจน์ ตัวเชื่อม และ หรือ ถ้า...แล้ว ก็ต่อเมื่อ นิเสธ ตารางค่าความจริง รูปแบบที่สมมูลกัน สัจนิรันดร์ ประโยคเปิด ตัวบ่งปริมาณ และการอ้างเหตุผล
+difficulty: 5
+minutes: 45
+prerequisites: [math.logic.sets]
+encompasses:
+  - { id: math.logic.sets, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: venn-connectives.svg
+    alt: "แผนภาพเวนน์สามรูป วงกลม p และ q ซ้อนกันในสี่เหลี่ยม รูปแรก p ∧ q ระบายเฉพาะส่วนที่วงกลมซ้อนกัน รูปสอง p ∨ q ระบายทั้งสองวงกลม รูปสาม p → q ระบายทุกส่วนยกเว้นส่วนที่อยู่ในวงกลม p แต่ไม่อยู่ในวงกลม q ใต้รูปเขียนว่า เหมือน ~p ∨ q"
+    caption: "ให้วงกลม p แทนกรณีที่ p เป็นจริง ส่วนที่ระบายคือกรณีที่รูปแบบนั้นเป็นจริง"
+  - type: worked-example
+    title: หาค่าความจริงจากในวงเล็บออกมา
+    problem: "ถ้า $p$ มีค่าความจริงเป็นจริง $q$ เป็นเท็จ และ $r$ เป็นจริง จงหาค่าความจริงของ $(p \\lor q) \\to (\\sim q \\land r)$"
+    steps:
+      - text: "$p \\lor q$: $\\mathrm{T} \\lor \\mathrm{F} = \\mathrm{T}$"
+      - text: "$\\sim q$: $q$ เป็น F จึง $\\sim q$ เป็น T"
+      - text: "$\\sim q \\land r$: $\\mathrm{T} \\land \\mathrm{T} = \\mathrm{T}$"
+      - text: "$\\mathrm{T} \\to \\mathrm{T} = \\mathrm{T}$"
+        why: "ถ้า...แล้ว เป็นเท็จเฉพาะกรณี T → F"
+    answer: "จริง"
+  - { type: check, problem: math.logic.propositions.p004, prompt: "ถ้า...แล้ว เป็นเท็จกรณีเดียว" }
+  - type: worked-example
+    title: ตรวจการอ้างเหตุผลด้วยการสมมติให้ผลเป็นเท็จ
+    problem: "เหตุ 1) $p \\to q$ 2) $q \\to r$ 3) $\\sim r$ ผล $\\sim p$ การอ้างเหตุผลนี้สมเหตุสมผลหรือไม่"
+    steps:
+      - text: "สมมติให้เหตุทุกข้อจริง แต่ผล $\\sim p$ เท็จ ดังนั้น $p$ เป็น T"
+        why: "ถ้าหากรณีแบบนี้ได้ แสดงว่าไม่สมเหตุสมผล"
+      - text: "จากเหตุ 3) $\\sim r$ จริง ดังนั้น $r$ เป็น F"
+      - text: "จากเหตุ 2) $q \\to r$ จริงและ $r$ เป็น F ดังนั้น $q$ ต้องเป็น F"
+      - text: "จากเหตุ 1) $p \\to q$ คือ $\\mathrm{T} \\to \\mathrm{F}$ เป็นเท็จ ขัดแย้งกับที่สมมติว่าเหตุ 1) จริง"
+    answer: "สมเหตุสมผล เพราะหากรณีที่เหตุจริงทั้งหมดแต่ผลเท็จไม่ได้"
+  - { type: check, problem: math.logic.propositions.p005, prompt: "นิเสธของ ทุก คือ มีบาง...ไม่" }
+glossary:
+  - { term: ประพจน์, definition: "ประโยคบอกเล่าหรือปฏิเสธที่มีค่าความจริงเป็นจริงหรือเท็จอย่างใดอย่างหนึ่ง" }
+  - { term: ค่าความจริง, definition: "จริง (T) หรือเท็จ (F)" }
+  - { term: ตัวเชื่อม, definition: "คำที่เชื่อมประพจน์ ได้แก่ และ (∧) หรือ (∨) ถ้า...แล้ว (→) ก็ต่อเมื่อ (↔) และนิเสธ (~)" }
+  - { term: สมมูล, definition: "รูปแบบสองรูปแบบที่มีค่าความจริงตรงกันทุกกรณี" }
+  - { term: สัจนิรันดร์, definition: "รูปแบบของประพจน์ที่เป็นจริงทุกกรณี" }
+  - { term: ประโยคเปิด, definition: "ประโยคที่มีตัวแปร ยังบอกค่าความจริงไม่ได้จนกว่าจะแทนค่าหรือเติมตัวบ่งปริมาณ" }
+  - { term: ตัวบ่งปริมาณ, definition: "∀ (สำหรับทุก) และ ∃ (มีบาง) ใช้กับประโยคเปิดเพื่อให้เป็นประพจน์" }
+  - { term: การอ้างเหตุผลที่สมเหตุสมผล, definition: "การอ้างเหตุผลที่เมื่อเหตุทุกข้อเป็นจริง ผลต้องเป็นจริงเสมอ" }
+flashcards:
+  - { front: "p → q เป็นเท็จเมื่อใด", back: "เมื่อ p จริงและ q เท็จ เท่านั้น" }
+  - { front: "p → q สมมูลกับอะไร", back: "~p ∨ q และ ~q → ~p" }
+  - { front: "~(p ∧ q) ≡ ?", back: "~p ∨ ~q" }
+  - { front: "นิเสธของ ∀x[P(x)]", back: "∃x[~P(x)]" }
+  - { front: "ตารางค่าความจริงของประพจน์ 3 ตัวมีกี่แถว", back: "2³ = 8 แถว" }
+references:
+  - { title: "ตารางค่าความจริง", url: "https://th.wikipedia.org/wiki/ตารางค่าความจริง", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Truth table", url: "https://en.wikipedia.org/wiki/Truth_table", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Material conditional", url: "https://en.wikipedia.org/wiki/Material_conditional", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Quantifier (logic)", url: "https://en.wikipedia.org/wiki/Quantifier_(logic)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,320 @@
+problems:
+  - id: math.logic.propositions.p001
+    topics: [math.logic.propositions]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นประพจน์"
+    choices:
+      - { id: a, text: "$2 + 3 = 6$", correct: true }
+      - { id: b, text: "$x + 1 = 5$", feedback: "เป็นประโยคเปิด ยังไม่รู้ค่า $x$ จึงบอกไม่ได้ว่าจริงหรือเท็จ" }
+      - { id: c, text: "กรุณาปิดประตูด้วย", feedback: "เป็นประโยคขอร้อง ไม่มีค่าความจริง" }
+      - { id: d, text: "วันนี้อากาศดีจังเลย", feedback: "เป็นความรู้สึก แต่ละคนตัดสินต่างกัน จึงไม่ใช่ประพจน์" }
+    hints:
+      - "ประพจน์ต้องบอกได้แน่นอนว่าจริงหรือเท็จ"
+      - "ประโยคที่เป็นเท็จก็เป็นประพจน์ได้"
+    solution: "$2 + 3 = 6$ เป็นประโยคบอกเล่าที่เป็นเท็จแน่นอน จึงเป็นประพจน์ ข้ออื่นเป็นประโยคเปิด คำขอร้อง และความรู้สึก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p002
+    topics: [math.logic.propositions]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สัญลักษณ์กับคำอ่าน"
+    pairs:
+      - { left: "$p \\land q$", right: "p และ q" }
+      - { left: "$p \\lor q$", right: "p หรือ q" }
+      - { left: "$p \\to q$", right: "ถ้า p แล้ว q" }
+      - { left: "$p \\leftrightarrow q$", right: "p ก็ต่อเมื่อ q" }
+      - { left: "$\\sim p$", right: "นิเสธของ p" }
+    hints:
+      - "$\\land$ หน้าตาคล้าย ∩ ของเซต (และ) $\\lor$ คล้าย ∪ (หรือ)"
+      - "ลูกศรสองหัวคือ ก็ต่อเมื่อ"
+    solution: "$\\land$ และ $\\lor$ หรือ $\\to$ ถ้า...แล้ว $\\leftrightarrow$ ก็ต่อเมื่อ $\\sim$ นิเสธ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p003
+    topics: [math.logic.propositions]
+    difficulty: 2
+    type: mcq
+    stem: "ให้ $p$ แทน \"2 เป็นจำนวนเฉพาะ\" และ $q$ แทน \"9 เป็นจำนวนเฉพาะ\" ประพจน์ $p \\land q$ มีค่าความจริงเป็นอย่างไร"
+    choices:
+      - { id: a, text: "เท็จ", correct: true }
+      - { id: b, text: "จริง", feedback: "$p$ จริงก็จริง แต่ $\\land$ ต้องจริงทั้งสองตัว และ 9 = 3 × 3 ไม่เป็นจำนวนเฉพาะ" }
+      - { id: c, text: "บอกไม่ได้", feedback: "ทั้ง $p$ และ $q$ เป็นประพจน์ที่รู้ค่าความจริง จึงบอกได้" }
+    hints:
+      - "หาค่าความจริงของ $p$ และ $q$ ก่อน"
+      - "$p \\land q$ จริงเมื่อทั้งสองจริงเท่านั้น"
+    solution: "$p$ จริง $q$ เท็จ (9 หารด้วย 3 ลงตัว) $\\mathrm{T} \\land \\mathrm{F} = \\mathrm{F}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p004
+    topics: [math.logic.propositions]
+    difficulty: 2
+    type: mcq
+    stem: "ประพจน์ \"ถ้า $2 > 5$ แล้ว $3 > 7$\" มีค่าความจริงเป็นอย่างไร"
+    choices:
+      - { id: a, text: "จริง", correct: true }
+      - { id: b, text: "เท็จ เพราะ $3 > 7$ เป็นเท็จ", feedback: "ถ้า...แล้ว เป็นเท็จเฉพาะเมื่อเหตุจริงแต่ผลเท็จ ที่นี่เหตุ $2 > 5$ ก็เท็จ" }
+      - { id: c, text: "เท็จ เพราะทั้งสองส่วนเป็นเท็จ", feedback: "$\\mathrm{F} \\to \\mathrm{F}$ เป็นจริง เหมือนสัญญาที่เงื่อนไขไม่เกิด จึงไม่ผิดสัญญา" }
+      - { id: d, text: "ไม่เป็นประพจน์", feedback: "ทั้งสองส่วนเป็นประพจน์ เมื่อเชื่อมด้วย ถ้า...แล้ว ก็ยังเป็นประพจน์" }
+    hints:
+      - "หาค่าความจริงของ $2 > 5$ และ $3 > 7$"
+      - "$p \\to q$ เป็นเท็จกรณีเดียวคือ T → F"
+    solution: "$2 > 5$ เป็น F และ $3 > 7$ เป็น F ได้ $\\mathrm{F} \\to \\mathrm{F} = \\mathrm{T}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p005
+    topics: [math.logic.propositions]
+    difficulty: 2
+    type: mcq
+    stem: "นิเสธของประโยค \"นักเรียนทุกคนในห้องชอบคณิตศาสตร์\" คือข้อใด"
+    choices:
+      - { id: a, text: "มีนักเรียนบางคนในห้องไม่ชอบคณิตศาสตร์", correct: true }
+      - { id: b, text: "นักเรียนทุกคนในห้องไม่ชอบคณิตศาสตร์", feedback: "ประโยคนี้แรงเกินไป ถ้ามีแค่คนเดียวที่ไม่ชอบ ประโยคเดิมก็เท็จแล้ว นิเสธของ ทุก คือ มีบาง...ไม่" }
+      - { id: c, text: "มีนักเรียนบางคนในห้องชอบคณิตศาสตร์", feedback: "ประโยคนี้เป็นจริงได้พร้อมกับประโยคเดิม จึงไม่ใช่นิเสธ" }
+      - { id: d, text: "ไม่มีนักเรียนคนใดชอบคณิตศาสตร์", feedback: "เหมือนข้อ ทุกคนไม่ชอบ ซึ่งไม่ใช่นิเสธ" }
+    hints:
+      - "นิเสธต้องเป็นจริงพอดีเมื่อประโยคเดิมเป็นเท็จ"
+      - "$\\sim \\forall x[P(x)] \\equiv \\exists x[\\sim P(x)]$"
+    solution: "ประโยคเดิมเท็จเมื่อมีอย่างน้อยหนึ่งคนไม่ชอบ นิเสธจึงเป็น \"มีนักเรียนบางคนในห้องไม่ชอบคณิตศาสตร์\""
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p006
+    topics: [math.logic.propositions]
+    difficulty: 3
+    type: numeric
+    stem: "ตารางค่าความจริงของรูปแบบที่มีประพจน์ย่อย $p$, $q$ และ $r$ มีทั้งหมดกี่แถว (ไม่นับแถวหัวตาราง)"
+    answer: { value: 8, unit: แถว }
+    hints:
+      - "ประพจน์แต่ละตัวมีค่าได้ 2 แบบ"
+      - "$2 \\times 2 \\times 2$"
+    misconceptions:
+      - { match: 6, feedback: "คิด $2 \\times 3$ แต่ต้องคูณ 2 ครั้งละหนึ่งประพจน์ ได้ $2^3$" }
+      - { match: 9, feedback: "คิด $3^2$ สลับฐานกับเลขชี้กำลัง ที่ถูกคือ $2^3$" }
+    solution: "แต่ละประพจน์เป็น T หรือ F ได้ 2 แบบ ประพจน์ 3 ตัวจึงมี $2^3 = 8$ กรณี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p007
+    topics: [math.logic.propositions]
+    difficulty: 3
+    type: mcq
+    stem: "ถ้า $p$ เป็นจริง $q$ เป็นเท็จ และ $r$ เป็นจริง ประพจน์ $(p \\lor q) \\to (q \\land r)$ มีค่าความจริงเป็นอย่างไร"
+    choices:
+      - { id: a, text: "เท็จ", correct: true }
+      - { id: b, text: "จริง", feedback: "$p \\lor q$ เป็น T แต่ $q \\land r$ เป็น F ได้ $\\mathrm{T} \\to \\mathrm{F}$ ซึ่งเป็นเท็จ" }
+    hints:
+      - "หาค่าในวงเล็บแต่ละวงก่อน"
+      - "$q \\land r$ ต้องจริงทั้งสองตัว"
+    solution: "$p \\lor q = \\mathrm{T} \\lor \\mathrm{F} = \\mathrm{T}$ และ $q \\land r = \\mathrm{F} \\land \\mathrm{T} = \\mathrm{F}$ ได้ $\\mathrm{T} \\to \\mathrm{F} = \\mathrm{F}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p008
+    topics: [math.logic.propositions]
+    difficulty: 3
+    type: mcq
+    stem: "$\\sim(p \\land q)$ สมมูลกับข้อใด"
+    choices:
+      - { id: a, text: "$\\sim p \\lor \\sim q$", correct: true }
+      - { id: b, text: "$\\sim p \\land \\sim q$", feedback: "เมื่อนิเสธเข้าไปในวงเล็บ ต้องเปลี่ยน $\\land$ เป็น $\\lor$ ด้วย (กฎของเดอมอร์แกน)" }
+      - { id: c, text: "$p \\lor q$", feedback: "ลืมเติมนิเสธที่ $p$ และ $q$" }
+      - { id: d, text: "$\\sim p \\to \\sim q$", feedback: "ลองกรณี $p$ จริง $q$ เท็จ: $\\sim(p \\land q)$ เป็น T แต่ $\\mathrm{F} \\to \\mathrm{T}$ ก็เป็น T ลองกรณี $p$ เท็จ $q$ จริง: $\\sim(p \\land q)$ เป็น T แต่ $\\mathrm{T} \\to \\mathrm{F}$ เป็น F จึงไม่สมมูล" }
+    hints:
+      - "\"ไม่จริงที่ทั้งสองจริง\" หมายความว่าอย่างไร"
+      - "กฎของเดอมอร์แกนเหมือนคอมพลีเมนต์ของอินเตอร์เซกชันในเรื่องเซต"
+    solution: "\"ไม่จริงที่ทั้ง $p$ และ $q$ จริง\" คือ อย่างน้อยหนึ่งตัวเท็จ ได้ $\\sim p \\lor \\sim q$ (เทียบกับ $(A \\cap B)' = A' \\cup B'$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p009
+    topics: [math.logic.propositions]
+    difficulty: 3
+    type: mcq
+    stem: "ให้เอกภพสัมพัทธ์เป็นเซตของจำนวนจริง ประพจน์ใดเป็นจริง (เลือกทุกข้อที่ถูก)"
+    multiple: true
+    choices:
+      - { id: a, text: "$\\forall x[x^2 \\ge 0]$", correct: true }
+      - { id: b, text: "$\\exists x[x + 3 = 1]$", correct: true }
+      - { id: c, text: "$\\exists x[x^2 < 0]$", feedback: "จำนวนจริงยกกำลังสองไม่เป็นลบเลย จึงไม่มี $x$ ที่ทำให้จริง" }
+      - { id: d, text: "$\\forall x[x + 1 > x^2]$", feedback: "ลอง $x = 3$: $4 > 9$ เป็นเท็จ ตัวอย่างค้านตัวเดียวก็ทำให้ \"ทุก\" เป็นเท็จ" }
+    hints:
+      - "$\\forall$ ต้องจริงทุกตัว หาตัวอย่างค้านตัวเดียวก็พอให้เท็จ"
+      - "$\\exists$ หาตัวอย่างตัวเดียวที่ทำให้จริงก็พอ"
+    solution: "$x^2 \\ge 0$ จริงทุกจำนวนจริง $x = -2$ ทำให้ $x + 3 = 1$ จึงมีอยู่จริง ส่วน $x^2 < 0$ ไม่มีทาง และ $x = 3$ เป็นตัวอย่างค้านของข้อ d"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p010
+    topics: [math.logic.propositions]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $U = \\{1, 2, 3, \\dots, 10\\}$ มีสมาชิก $x$ ใน $U$ กี่ตัวที่ทำให้ประโยคเปิด \"$x$ เป็นจำนวนคู่ $\\land$ $x > 4$\" เป็นจริง"
+    answer: { value: 3, unit: ตัว }
+    hints:
+      - "$\\land$ ต้องจริงทั้งสองเงื่อนไข"
+      - "จำนวนคู่ใน $U$ คือ 2, 4, 6, 8, 10 เลือกตัวที่มากกว่า 4"
+    misconceptions:
+      - { match: 4, feedback: "นับ 4 เข้าไปด้วย แต่ $4 > 4$ เป็นเท็จ" }
+      - { match: 8, feedback: "นับแบบ \"หรือ\" (เป็นจำนวนคู่ หรือ มากกว่า 4) แต่ $\\land$ ต้องเป็นจริงทั้งสองเงื่อนไข" }
+    solution: "จำนวนคู่ที่มากกว่า 4 ใน $U$ คือ 6, 8, 10 รวม 3 ตัว (เทียบกับเซต: อินเตอร์เซกชันของสองเซตคำตอบ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p011
+    topics: [math.logic.propositions]
+    difficulty: 3
+    type: mcq
+    stem: "แม่สัญญาว่า \"ถ้าลูกสอบได้เกรด 4 แล้วแม่จะพาไปเที่ยวเชียงใหม่\" กรณีใดที่แม่ **ผิดสัญญา**"
+    choices:
+      - { id: a, text: "ลูกได้เกรด 4 แต่แม่ไม่ได้พาไปเที่ยว", correct: true }
+      - { id: b, text: "ลูกไม่ได้เกรด 4 แต่แม่ก็พาไปเที่ยว", feedback: "สัญญาไม่ได้ห้ามพาไปเมื่อไม่ได้เกรด 4 กรณี F → T จึงเป็นจริง" }
+      - { id: c, text: "ลูกไม่ได้เกรด 4 และแม่ไม่ได้พาไปเที่ยว", feedback: "เงื่อนไขไม่เกิด จึงไม่ผิดสัญญา F → F เป็นจริง" }
+      - { id: d, text: "ลูกได้เกรด 4 และแม่พาไปเที่ยว", feedback: "แม่ทำตามสัญญา T → T เป็นจริง" }
+    hints:
+      - "ให้ $p$: ลูกได้เกรด 4 และ $q$: แม่พาไปเที่ยว"
+      - "$p \\to q$ เป็นเท็จกรณีเดียว"
+    solution: "สัญญาคือ $p \\to q$ ซึ่งเป็นเท็จเฉพาะเมื่อ $p$ จริงและ $q$ เท็จ คือ ได้เกรด 4 แต่ไม่ได้ไปเที่ยว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p012
+    topics: [math.logic.propositions]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดสมมูลกับ $p \\to q$"
+    choices:
+      - { id: a, text: "$\\sim q \\to \\sim p$", correct: true }
+      - { id: b, text: "$q \\to p$", feedback: "นี่คือบทกลับ ซึ่งไม่สมมูล เช่น ถ้าเป็นแมวแล้วมีสี่ขา (จริง) แต่ ถ้ามีสี่ขาแล้วเป็นแมว (เท็จ)" }
+      - { id: c, text: "$\\sim p \\to \\sim q$", feedback: "สมมูลกับบทกลับ $q \\to p$ ไม่ใช่ $p \\to q$ ลองกรณี $p$ เท็จ $q$ จริง" }
+      - { id: d, text: "$\\sim p \\land q$", feedback: "$p \\to q \\equiv \\sim p \\lor q$ ใช้ \"หรือ\" ไม่ใช่ \"และ\"" }
+    hints:
+      - "หาว่ากรณีใดที่ $p \\to q$ เป็นเท็จ แล้วตรวจแต่ละตัวเลือกในกรณีนั้น"
+      - "$p \\to q$ เท็จเมื่อ $p$ = T, $q$ = F ตัวเลือกที่สมมูลต้องเท็จเฉพาะกรณีนี้"
+    solution: "$\\sim q \\to \\sim p$ เป็นเท็จเมื่อ $\\sim q$ จริงและ $\\sim p$ เท็จ คือ $q$ = F และ $p$ = T ตรงกับกรณีเดียวที่ $p \\to q$ เท็จ จึงสมมูลกัน (แย้งสลับที่)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p013
+    topics: [math.logic.propositions]
+    difficulty: 4
+    type: mcq
+    stem: "ถ้า $p \\to q$ มีค่าความจริงเป็นเท็จ แล้ว $(p \\lor r) \\leftrightarrow q$ มีค่าความจริงเป็นอย่างไร (ไม่รู้ค่าของ $r$)"
+    choices:
+      - { id: a, text: "เท็จ", correct: true }
+      - { id: b, text: "จริง", feedback: "จาก $p \\to q$ เท็จ ได้ $q$ = F และ $p$ = T ดังนั้น $p \\lor r$ = T แล้ว $\\mathrm{T} \\leftrightarrow \\mathrm{F}$ เป็นเท็จ" }
+      - { id: c, text: "บอกไม่ได้ เพราะไม่รู้ค่าของ $r$", feedback: "$p$ เป็น T จึงทำให้ $p \\lor r$ เป็น T ไม่ว่า $r$ เป็นอะไร" }
+    hints:
+      - "$p \\to q$ เท็จได้กรณีเดียว ได้ค่าของ $p$ และ $q$"
+      - "$p \\lor r$ เป็นจริงถ้ามีตัวใดตัวหนึ่งจริง"
+    solution: "$p \\to q$ เท็จ ดังนั้น $p$ = T, $q$ = F ได้ $p \\lor r$ = T ทุกกรณี และ $\\mathrm{T} \\leftrightarrow \\mathrm{F} = \\mathrm{F}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p014
+    topics: [math.logic.propositions]
+    difficulty: 4
+    type: mcq
+    stem: "รูปแบบใดเป็นสัจนิรันดร์ (เลือกทุกข้อที่ถูก)"
+    multiple: true
+    choices:
+      - { id: a, text: "$p \\lor \\sim p$", correct: true }
+      - { id: b, text: "$[(p \\to q) \\land p] \\to q$", correct: true }
+      - { id: c, text: "$p \\land \\sim p$", feedback: "เป็นเท็จทุกกรณี (ขัดแย้งในตัวเอง) ตรงข้ามกับสัจนิรันดร์" }
+      - { id: d, text: "$p \\to (p \\land q)$", feedback: "เมื่อ $p$ = T, $q$ = F ได้ $\\mathrm{T} \\to \\mathrm{F}$ เป็นเท็จ" }
+      - { id: e, text: "$(p \\to q) \\to p$", feedback: "เมื่อ $p$ = F ได้ $(p \\to q)$ = T แล้ว $\\mathrm{T} \\to \\mathrm{F}$ เป็นเท็จ" }
+    hints:
+      - "สัจนิรันดร์ต้องเป็นจริงทุกกรณี ถ้าหากรณีที่เท็จได้ก็ไม่ใช่"
+      - "สมมติให้รูปแบบเป็นเท็จ แล้วดูว่าขัดแย้งหรือไม่"
+    solution: "$p \\lor \\sim p$ จริงเสมอ ข้อ b ถ้าเท็จต้องมี $q$ = F และ $(p \\to q) \\land p$ = T ซึ่งทำให้ $p$ = T และ $p \\to q$ = F ขัดแย้ง จึงเป็นสัจนิรันดร์ ข้ออื่นหากรณีที่เท็จได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p015
+    topics: [math.logic.propositions]
+    difficulty: 4
+    type: mcq
+    stem: "พิจารณาการอ้างเหตุผล เหตุ 1) ถ้าฝนตกแล้วถนนเปียก 2) ถนนเปียก ผล ฝนตก การอ้างเหตุผลนี้เป็นอย่างไร"
+    choices:
+      - { id: a, text: "ไม่สมเหตุสมผล เพราะเหตุจริงทั้งสองข้อแต่ผลอาจเป็นเท็จได้", correct: true }
+      - { id: b, text: "สมเหตุสมผล เพราะฝนทำให้ถนนเปียก", feedback: "ถนนอาจเปียกเพราะเหตุอื่น เช่น รดน้ำต้นไม้ ขณะที่ฝนไม่ตก" }
+      - { id: c, text: "สมเหตุสมผล เพราะเป็นรูปแบบ $p \\to q$, $p$ ดังนั้น $q$", feedback: "เหตุข้อ 2 คือ $q$ (ถนนเปียก) ไม่ใช่ $p$ รูปแบบนี้คือ $p \\to q$, $q$ ดังนั้น $p$ ซึ่งไม่สมเหตุสมผล" }
+      - { id: d, text: "ตัดสินไม่ได้จนกว่าจะรู้ว่าฝนตกจริงไหม", feedback: "ความสมเหตุสมผลดูจากรูปแบบ ไม่ใช่จากข้อเท็จจริงวันนั้น" }
+    hints:
+      - "ให้ $p$: ฝนตก $q$: ถนนเปียก เขียนรูปแบบของการอ้างเหตุผล"
+      - "หากรณีที่ $p \\to q$ จริง $q$ จริง แต่ $p$ เท็จ"
+    solution: "รูปแบบ $[(p \\to q) \\land q] \\to p$ เมื่อ $p$ = F, $q$ = T เหตุทั้งสองจริงแต่ผลเท็จ จึงไม่เป็นสัจนิรันดร์ การอ้างเหตุผลไม่สมเหตุสมผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p016
+    topics: [math.logic.propositions]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการตรวจว่าการอ้างเหตุผลสมเหตุสมผลหรือไม่ ด้วยวิธีสมมติให้ผลเป็นเท็จ"
+    items:
+      - "เขียนเหตุและผลเป็นรูปแบบด้วยสัญลักษณ์"
+      - "สมมติให้ผลเป็นเท็จ และเหตุทุกข้อเป็นจริง"
+      - "หาค่าความจริงของประพจน์ย่อยทีละตัวจากเงื่อนไขที่บังคับ"
+      - "ถ้าเกิดข้อขัดแย้ง สรุปว่าสมเหตุสมผล ถ้าไม่ขัดแย้ง สรุปว่าไม่สมเหตุสมผล"
+    hints:
+      - "เริ่มจากแปลงภาษาเป็นสัญลักษณ์"
+      - "ข้อสรุปมาหลังสุด"
+    solution: "แปลงเป็นสัญลักษณ์ → สมมติเหตุจริง ผลเท็จ → หาค่าประพจน์ย่อย → ดูว่าขัดแย้งหรือไม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p017
+    topics: [math.logic.propositions]
+    difficulty: 5
+    type: mcq
+    stem: "การอ้างเหตุผลใด **สมเหตุสมผล**"
+    choices:
+      - { id: a, text: "เหตุ $p \\to q$, $q \\to r$, $\\sim r$ ผล $\\sim p$", correct: true }
+      - { id: b, text: "เหตุ $p \\to q$, $\\sim p$ ผล $\\sim q$", feedback: "กรณี $p$ = F, $q$ = T เหตุจริงทั้งสองแต่ผล $\\sim q$ เท็จ" }
+      - { id: c, text: "เหตุ $p \\lor q$, $p$ ผล $\\sim q$", feedback: "กรณี $p$ = T, $q$ = T เหตุจริงทั้งสองแต่ผลเท็จ \"หรือ\" ในคณิตศาสตร์ยอมให้จริงทั้งคู่" }
+      - { id: d, text: "เหตุ $p \\to q$, $q \\to r$ ผล $r$", feedback: "กรณี $p$, $q$, $r$ เป็น F ทั้งหมด เหตุจริงทั้งสองแต่ผลเท็จ" }
+    hints:
+      - "ในแต่ละข้อ ลองหากรณีที่เหตุทุกข้อจริงแต่ผลเท็จ"
+      - "ข้อที่หากรณีแบบนั้นไม่ได้คือข้อที่สมเหตุสมผล"
+    solution: "ข้อ a: สมมติ $\\sim p$ เท็จ ($p$ = T) และ $\\sim r$ จริง ($r$ = F) จาก $q \\to r$ จริง ได้ $q$ = F แล้ว $p \\to q$ คือ T → F เท็จ ขัดแย้ง จึงสมเหตุสมผล ข้ออื่นมีกรณีค้าน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p018
+    topics: [math.logic.propositions]
+    difficulty: 5
+    type: numeric
+    stem: "ในตารางค่าความจริงของ $(p \\lor q) \\to r$ ซึ่งมี 8 แถว มีกี่แถวที่รูปแบบนี้เป็นจริง"
+    answer: { value: 5, unit: แถว }
+    hints:
+      - "รูปแบบเป็นเท็จเมื่อ $p \\lor q$ เป็น T และ $r$ เป็น F"
+      - "นับแถวที่เป็นเท็จ แล้วลบออกจาก 8"
+    misconceptions:
+      - { match: 3, feedback: "นับเฉพาะแถวที่ $p \\lor q$ และ $r$ จริงทั้งคู่ ลืมว่า F → T และ F → F ก็เป็นจริง" }
+      - { match: 4, feedback: "นับเฉพาะแถวที่ $r$ จริง ลืมแถวที่ $p$, $q$, $r$ เป็น F ทั้งหมด ซึ่ง F → F เป็นจริง" }
+    solution: "$p \\lor q$ เป็น T ใน 3 กรณีของ $(p, q)$ เมื่อจับคู่กับ $r$ = F ได้ 3 แถวที่เท็จ จึงจริง $8 - 3 = 5$ แถว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.logic.propositions.p019
+    topics: [math.logic.propositions]
+    difficulty: 5
+    type: mcq
+    stem: "นิเสธของ $\\forall x[x > 0 \\to x^2 > 0]$ คือข้อใด"
+    choices:
+      - { id: a, text: "$\\exists x[x > 0 \\land x^2 \\le 0]$", correct: true }
+      - { id: b, text: "$\\forall x[x > 0 \\to x^2 \\le 0]$", feedback: "นิเสธของ $\\forall$ ต้องเปลี่ยนเป็น $\\exists$ และนิเสธของ ถ้า...แล้ว ไม่ใช่ ถ้า...แล้ว" }
+      - { id: c, text: "$\\exists x[x > 0 \\to x^2 \\le 0]$", feedback: "เปลี่ยนตัวบ่งปริมาณถูกแล้ว แต่ $\\sim(p \\to q) \\equiv p \\land \\sim q$ ไม่ใช่ $p \\to \\sim q$" }
+      - { id: d, text: "$\\exists x[x \\le 0 \\land x^2 \\le 0]$", feedback: "ไม่ต้องนิเสธ $x > 0$ เพราะ $\\sim(p \\to q) \\equiv p \\land \\sim q$ คง $p$ ไว้" }
+    hints:
+      - "$\\sim \\forall x[P(x)] \\equiv \\exists x[\\sim P(x)]$"
+      - "$\\sim(p \\to q) \\equiv p \\land \\sim q$"
+    solution: "$\\sim \\forall x[x > 0 \\to x^2 > 0] \\equiv \\exists x[\\sim(x > 0 \\to x^2 > 0)] \\equiv \\exists x[x > 0 \\land x^2 \\le 0]$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
