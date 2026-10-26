@@ -88,3 +88,27 @@ mappings:
     indicators: [OS-Principles]
     coverage: partial
     note: นามธรรม กระบวนการและสถานะ โหมดผู้ใช้กับโหมดเคอร์เนล และ system call ยังไม่มีอินเทอร์รัปต์และการทำงานพร้อมกันของเธรด
+  - topic: computer.algorithms.searching-sorting
+    indicators: [SDF-Algorithms, AL-Foundational, AL-Strategies, AL-Complexity]
+    coverage: partial
+    note: แนวคิดของประสิทธิภาพ การค้นหาและการเรียงลำดับ และผลต่อเวลา ยังไม่มีการท่องต้นไม้และกราฟ ซึ่งอยู่ใน computer.algorithms.data-structures
+  - topic: computer.data.databases
+    indicators: [DM-Core, DM-Modeling, DM-Relational, DM-Security]
+    coverage: full
+    note: จุดประสงค์ของ DBMS การแยกข้อมูลออกจากโปรแกรม การใช้ร่วมกัน ธุรกรรมที่สำเร็จทั้งหมดหรือไม่เกิดเลย และข้อมูลมีโครงสร้างกับไม่มีโครงสร้าง
+  - topic: computer.data.databases
+    indicators: [DM-Querying, SEC-Coding]
+    coverage: partial
+    note: SELECT WHERE ORDER BY COUNT และ JOIN สามตาราง ทุกคำสั่งตรวจด้วย sqlite3 ของ Python ยังไม่มี GROUP BY และคำสั่ง UPDATE DELETE และผู้เรียนไม่ได้รันคำสั่งเองในแอป
+  - topic: computer.programming.lists-strings
+    indicators: [SDF-Data-Structures]
+    coverage: partial
+    note: ลิสต์ ดิกชันนารี เซต การประมวลผลสตริง การเลือกโครงสร้างให้เหมาะกับปัญหา และผลต่อความเร็วของ in (ลิสต์เทียบทีละตัว ดิกชันนารีและเซตใช้ตารางแฮช) ยังไม่มีสแตกและคิว ซึ่งอยู่ใน computer.algorithms.data-structures
+  - topic: computer.programming.teamwork
+    indicators: [SE-Teamwork, SE-Tools]
+    coverage: full
+    note: บทบาทในทีม กระบวนการแบบ agile (รอบสั้น บอร์ดงาน คุยสั้นทุกวัน ทบทวนท้ายรอบ) การสื่อสาร กติกาทีม การแก้ความขัดแย้งด้วยข้อมูลจากผู้ใช้ และการเขียนโปรแกรมเป็นคู่
+  - topic: computer.projects.app-development
+    indicators: [FPL-Event-Driven, SPD-Common]
+    coverage: partial
+    note: เหตุการณ์ ตัวจัดการ วงวนเหตุการณ์ (จำลองด้วยดิกชันนารีของฟังก์ชัน) ตัวจับเวลา ตัวจัดการที่ต้องทำงานเร็ว และเหตุการณ์ซ้ำหรือผิดลำดับ ยังไม่มีการเขียนโปรแกรมแบบตอบสนอง (reactive) และการทำงานพร้อมกัน

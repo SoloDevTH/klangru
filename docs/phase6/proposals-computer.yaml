@@ -37,34 +37,10 @@ topics:
   # ---------- ระบบคอมพิวเตอร์ ----------
   # ---------- เครือข่ายและความปลอดภัย ----------
   # ---------- อัลกอริทึมและการเขียนโปรแกรม ----------
-  - { id: computer.programming.lists-strings, title: "ลิสต์ ดิกชันนารี และการประมวลผลข้อความ", difficulty: 4.5, prereq: [computer.programming.functions],
-      indicators: ["csta-k12-cs:3A-AP-14", "acm-cs2023:SDF-Data-Structures"],
-      scope: "การใช้ลิสต์แทนตัวแปรหลายตัว การเข้าถึงด้วยดัชนี การวนผ่านลิสต์ การเพิ่มและลบสมาชิก ดิกชันนารีและเซต การประมวลผลสตริง (ตัด ต่อ ค้นหา นับ) และการเลือกโครงสร้างข้อมูลให้เหมาะกับปัญหา" }
-  - { id: computer.algorithms.searching-sorting, title: "อัลกอริทึมการค้นหาและการเรียงลำดับ", difficulty: 5, prereq: [computer.programming.lists-strings],
-      indicators: ["csta-k12-cs:3A-AP-15", "acm-cs2023:SDF-Algorithms", "acm-cs2023:AL-Foundational", "acm-cs2023:AL-Strategies", "acm-cs2023:AL-Complexity"],
-      scope: "การค้นหาแบบลำดับและแบบทวิภาค การเรียงลำดับแบบเลือก แบบแทรก และแบบผสาน กลยุทธ์ brute force และแบ่งแยกและเอาชนะ การนับจำนวนขั้นและสัญกรณ์บิ๊กโอเบื้องต้น และการเลือกโครงสร้างควบคุมโดยชั่งความอ่านง่ายกับประสิทธิภาพ" }
   - { id: computer.algorithms.data-structures, title: "โครงสร้างข้อมูล: สแตก คิว ตารางแฮช ต้นไม้ และกราฟ", difficulty: 6, prereq: [computer.algorithms.searching-sorting],
       indicators: ["acm-cs2023:AL-Foundational", "acm-cs2023:SDF-Data-Structures"],
       scope: "ชนิดข้อมูลนามธรรม สแตกและคิวพร้อมการใช้งาน ตารางแฮช ต้นไม้ค้นหาแบบทวิภาค กราฟและการแทนด้วยลิสต์ประชิดหรือเมทริกซ์ การท่องกราฟแบบกว้างก่อนและลึกก่อน และผลของการเลือกโครงสร้างข้อมูลต่อเวลาที่ใช้" }
-  - { id: computer.data.databases, title: "ฐานข้อมูลเชิงสัมพันธ์และ SQL เบื้องต้น", difficulty: 5, prereq: [computer.data.data-processing, computer.programming.lists-strings],
-      indicators: ["csta-k12-cs:3A-DA-10",
-                   "acm-cs2023:DM-Core", "acm-cs2023:DM-Modeling", "acm-cs2023:DM-Relational", "acm-cs2023:DM-Querying", "acm-cs2023:DM-Security", "acm-cs2023:SEC-Coding"],
-      scope: "จุดประสงค์ของระบบฐานข้อมูล ตาราง แถว คอลัมน์ คีย์หลักและคีย์นอก การออกแบบตารางเพื่อลดข้อมูลซ้ำ คำสั่ง SELECT WHERE ORDER BY และ JOIN การเลือกเก็บข้อมูลในเครื่องหรือบนคลาวด์ และการป้องกันการโจมตีแบบแทรกคำสั่ง SQL ด้วยการตรวจข้อมูลรับเข้า" }
-  - { id: computer.systems.physical-computing, title: "ระบบสมองกลฝังตัวและอุปกรณ์ที่เก็บและส่งข้อมูล", difficulty: 4.5, prereq: [computer.systems.computer-systems, computer.programming.functions],
-      indicators: ["csta-k12-cs:2-CS-02", "csta-k12-cs:3A-CS-01"],
-      scope: "ไมโครคอนโทรลเลอร์ เซนเซอร์และตัวขับเคลื่อน การเขียนโปรแกรมอ่านค่าเซนเซอร์และส่งข้อมูลผ่านเครือข่าย และนามธรรมที่ซ่อนรายละเอียดของระบบคอมพิวเตอร์ในสิ่งของรอบตัว" }
   # ---------- การพัฒนาซอฟต์แวร์และโครงงาน ----------
-  - { id: computer.programming.development-process, title: "กระบวนการพัฒนาโปรแกรมแบบวนรอบกับผู้ใช้", difficulty: 4.5, prereq: [computer.programming.functions, computer.society.inclusive-design],
-      indicators: ["csta-k12-cs:1B-AP-12", "csta-k12-cs:1B-AP-13", "csta-k12-cs:2-AP-15", "csta-k12-cs:3A-AP-19", "csta-k12-cs:3A-AP-23"],
-      scope: "การวางแผนโดยรับฟังความเห็นและความต้องการของผู้ใช้ การดัดแปลงหรือต่อยอดโปรแกรมที่มีอยู่ การสร้างต้นแบบ ทดสอบกับผู้ใช้ และปรับปรุงเป็นรอบ ๆ และการบันทึกเหตุผลของการตัดสินใจออกแบบด้วยข้อความ แผนภาพ หรือการสาธิต" }
-  - { id: computer.programming.teamwork, title: "การพัฒนาซอฟต์แวร์เป็นทีมและเครื่องมือทำงานร่วมกัน", difficulty: 4.5, prereq: [computer.programming.development-process],
-      indicators: ["csta-k12-cs:1B-AP-16", "csta-k12-cs:2-AP-18", "csta-k12-cs:2-IC-22", "csta-k12-cs:3A-AP-22", "csta-k12-cs:3A-IC-27",
-                   "acm-cs2023:SE-Teamwork", "acm-cs2023:SE-Tools"],
-      scope: "บทบาทในทีมพัฒนา การแบ่งงานและวางกำหนดเวลา การสื่อสารและแก้ความขัดแย้ง การเขียนโปรแกรมเป็นคู่ การใช้ระบบควบคุมเวอร์ชันและเครื่องมือทำงานร่วมกันออนไลน์ และการระดมความเห็นจากผู้คนจำนวนมาก เช่น แบบสำรวจ" }
-  - { id: computer.projects.app-development, title: "การพัฒนาแอปพลิเคชันและโครงงานเชิงคำนวณ", difficulty: 5, prereq: [computer.programming.functions, computer.data.data-processing, computer.programming.development-process],
-      indicators: ["th-core-2560-science:ว 4.2 ม.3/1", "th-core-2560-science:ว 4.2 ม.4/1",
-                   "csta-k12-cs:3A-AP-13", "csta-k12-cs:3A-AP-16", "acm-cs2023:SPD-Common", "acm-cs2023:FPL-Event-Driven"],
-      scope: "การพัฒนาแอปพลิเคชันที่บูรณาการกับวิชาอื่น (วิเคราะห์ปัญหา ออกแบบ เขียนโปรแกรมที่ตอบสนองต่อเหตุการณ์ ทดสอบ ปรับปรุง) การสร้างต้นแบบจากความสนใจของตนเอง และการทำโครงงานที่ใช้แนวคิดเชิงคำนวณกับปัญหาในชีวิตจริง" }
   - { id: computer.projects.digital-innovation, title: "วิทยาการคอมพิวเตอร์และสื่อดิจิทัลเพื่อเพิ่มมูลค่า", difficulty: 5.5, prereq: [computer.projects.app-development],
       indicators: ["th-core-2560-science:ว 4.2 ม.5/1"],
       scope: "การรวบรวมและวิเคราะห์ข้อมูล และการใช้ความรู้ด้านวิทยาการคอมพิวเตอร์ สื่อดิจิทัล และเทคโนโลยีสารสนเทศ แก้ปัญหาหรือเพิ่มมูลค่าให้บริการหรือผลิตภัณฑ์" }
