@@ -21,9 +21,10 @@ const ProposedTopic = z.object({
   scope: z.string().min(1),
 });
 const PlanFile = z.object({
-  topics: z.array(ProposedTopic).default([]),
+  // ไฟล์ที่เขียนหัวข้อครบแล้วจะเหลือ topics: ที่ว่าง (YAML อ่านเป็น null)
+  topics: z.array(ProposedTopic).nullish().transform((v) => v ?? []),
   /** ผูกตัวชี้วัดเพิ่มให้หัวข้อที่เสนอไว้ในไฟล์อื่น (ไม่สร้างหัวข้อซ้ำ) */
-  extend: z.array(z.object({ id: z.string(), indicators: z.array(z.string()).min(1) })).default([]),
+  extend: z.array(z.object({ id: z.string(), indicators: z.array(z.string()).min(1) })).nullish().transform((v) => v ?? []),
 });
 
 export type ProposedTopic = z.infer<typeof ProposedTopic> & { file: string };
