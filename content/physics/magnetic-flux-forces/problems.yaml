@@ -1,0 +1,266 @@
+problems:
+  - id: physics.magnetism.magnetic-flux-forces.p001
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 1
+    type: mcq
+    stem: "ฟลักซ์แม่เหล็กมีหน่วยใด"
+    choices:
+      - { id: a, text: "เวเบอร์ ($\\mathrm{Wb}$)", correct: true }
+      - { id: b, text: "เทสลา ($\\mathrm{T}$)", feedback: "เทสลาเป็นหน่วยของสนามแม่เหล็กหรือความหนาแน่นฟลักซ์ $1\\ \\mathrm{T} = 1\\ \\mathrm{Wb/m^2}$" }
+      - { id: c, text: "นิวตันต่อคูลอมบ์ ($\\mathrm{N/C}$)", feedback: "เป็นหน่วยของสนามไฟฟ้า" }
+    hints:
+      - "ฟลักซ์คือสนามคูณพื้นที่"
+      - "เทสลาคูณตารางเมตรมีชื่อเฉพาะ"
+    solution: "$\\Phi_B = BA$ มีหน่วย $\\mathrm{T\\,m^2}$ ซึ่งเรียกว่าเวเบอร์ ($\\mathrm{Wb}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p002
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 2
+    type: numeric
+    stem: "ขดลวดสี่เหลี่ยมขนาด $5.0\\ \\mathrm{cm} \\times 4.0\\ \\mathrm{cm}$ วางตั้งฉากกับสนามแม่เหล็กสม่ำเสมอ $0.40\\ \\mathrm{T}$ ฟลักซ์แม่เหล็กผ่านขดลวดเป็นกี่เท่าของ $10^{-4}\\ \\mathrm{Wb}$"
+    answer: { value: 8, tolerance: 0.08 }
+    misconceptions:
+      - { match: 80000, feedback: "ใช้พื้นที่เป็นตารางเซนติเมตร (20) ต้องแปลงเป็นตารางเมตร $2.0 \\times 10^{-3}\\ \\mathrm{m^2}$" }
+    hints:
+      - "สนามตั้งฉากกับพื้นที่ $\\Phi_B = BA$"
+      - "$A = 0.050 \\times 0.040\\ \\mathrm{m^2}$"
+    solution: "$A = 0.050 \\times 0.040 = 2.0 \\times 10^{-3}\\ \\mathrm{m^2}$ $\\Phi_B = (0.40)(2.0 \\times 10^{-3}) = 8.0 \\times 10^{-4}\\ \\mathrm{Wb}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p003
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 2
+    type: numeric
+    stem: "ลวดตรงยาวมีกระแส $10\\ \\mathrm{A}$ สนามแม่เหล็กที่ระยะ $5.0\\ \\mathrm{cm}$ จากลวดมีขนาดกี่ไมโครเทสลา ($\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{T\\,m/A}$)"
+    answer: { value: 40, tolerance: 0.4, unit: "μT" }
+    misconceptions:
+      - { match: 251, feedback: "ลืมหารด้วย $2\\pi$ สูตรคือ $B = \\dfrac{\\mu_0 I}{2\\pi r}$" }
+      - { match: 800, feedback: "ใช้ $r^2$ สนามของลวดตรงแปรผกผันกับ $r$ ไม่ใช่ $r^2$" }
+    hints:
+      - "$B = \\dfrac{\\mu_0 I}{2\\pi r} = \\dfrac{(2 \\times 10^{-7})I}{r}$"
+      - "$r = 0.050\\ \\mathrm{m}$"
+    solution: "$B = \\dfrac{(2 \\times 10^{-7})(10)}{0.050} = 4.0 \\times 10^{-5}\\ \\mathrm{T} = 40\\ \\mu\\mathrm{T}$ ใกล้เคียงสนามแม่เหล็กโลก จึงทำให้เข็มทิศที่อยู่ใกล้สายไฟเบนได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p004
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 2
+    type: mcq
+    stem: "ลวดตรงยาวสองเส้นวางขนานกัน มีกระแสไหลทิศเดียวกัน ลวดทั้งสองจะเป็นอย่างไร"
+    choices:
+      - { id: a, text: "ดูดกัน", correct: true }
+      - { id: b, text: "ผลักกัน", feedback: "จำสลับกับประจุไฟฟ้า สำหรับกระแส ทิศเดียวกันดูดกัน ทิศสวนกันผลักกัน" }
+      - { id: c, text: "ไม่ออกแรงต่อกัน เพราะลวดไม่มีประจุสุทธิ", feedback: "แรงนี้เป็นแรงแม่เหล็ก ลวดแต่ละเส้นอยู่ในสนามแม่เหล็กของอีกเส้นหนึ่ง จึงถูกแรง $F = ILB$" }
+    hints:
+      - "หาทิศสนามของลวดเส้นที่ 1 ที่ตำแหน่งลวดเส้นที่ 2 ด้วยกฎมือขวา"
+      - "แล้วหาทิศแรงบนลวดเส้นที่ 2"
+    solution: "สนามจากลวดเส้นหนึ่งทำให้ลวดอีกเส้นถูกแรงที่ชี้เข้าหาลวดเส้นแรก ลวดที่มีกระแสทิศเดียวกันจึงดูดกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p005
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 3
+    type: numeric
+    stem: "ขดลวดพื้นที่ $0.020\\ \\mathrm{m^2}$ วางในสนามแม่เหล็กสม่ำเสมอ $0.50\\ \\mathrm{T}$ โดยเส้นตั้งฉากกับระนาบขดลวดทำมุม $60^\\circ$ กับสนาม ฟลักซ์แม่เหล็กผ่านขดลวดเป็นกี่มิลลิเวเบอร์"
+    answer: { value: 5, tolerance: 0.05, unit: mWb }
+    misconceptions:
+      - { match: 8.66, feedback: "ใช้ $\\sin 60^\\circ$ แต่มุมที่ให้คือมุมกับเส้นตั้งฉาก จึงใช้ $\\cos 60^\\circ$" }
+      - { match: 10, feedback: "ลืมคิดมุม ฟลักซ์มากที่สุดเมื่อสนามตั้งฉากกับระนาบเท่านั้น" }
+    hints:
+      - "$\\Phi_B = BA\\cos\\theta$ เมื่อ $\\theta$ เป็นมุมระหว่างสนามกับเส้นตั้งฉาก"
+      - "$\\cos 60^\\circ = 0.5$"
+    solution: "$\\Phi_B = (0.50)(0.020)\\cos 60^\\circ = 5.0 \\times 10^{-3}\\ \\mathrm{Wb} = 5.0\\ \\mathrm{mWb}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p006
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 3
+    type: numeric
+    stem: "กลอนประตูไฟฟ้าของหอพักแห่งหนึ่งใช้โซเลนอยด์ยาว $25\\ \\mathrm{cm}$ พันลวด $500$ รอบ มีกระแส $2.0\\ \\mathrm{A}$ สนามแม่เหล็กภายในเป็นกี่มิลลิเทสลา ($\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{T\\,m/A}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.03, tolerance: 0.05, unit: mT }
+    misconceptions:
+      - { match: 1.26, feedback: "ใช้จำนวนรอบทั้งหมด 500 เป็น $n$ แต่ $n$ คือจำนวนรอบต่อเมตร $= 500/0.25$" }
+    hints:
+      - "$n = \\dfrac{N}{L} = \\dfrac{500}{0.25}$ รอบต่อเมตร"
+      - "$B = \\mu_0 nI$"
+    solution: "$n = 2000\\ \\mathrm{m^{-1}}$ $B = (4\\pi \\times 10^{-7})(2000)(2.0) = 5.03 \\times 10^{-3}\\ \\mathrm{T} = 5.03\\ \\mathrm{mT}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p007
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 3
+    type: numeric
+    stem: "โปรตอนวิ่งด้วยอัตราเร็ว $2.0 \\times 10^{6}\\ \\mathrm{m/s}$ ตั้งฉากกับสนามแม่เหล็ก $0.50\\ \\mathrm{T}$ วงกลมที่โปรตอนวิ่งมีรัศมีกี่เซนติเมตร ($m_p = 1.67 \\times 10^{-27}\\ \\mathrm{kg}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.18, tolerance: 0.04, unit: cm }
+    misconceptions:
+      - { match: 0.0418, feedback: "ได้คำตอบเป็นเมตร โจทย์ถามเป็นเซนติเมตร" }
+    hints:
+      - "แรงแม่เหล็กเป็นแรงสู่ศูนย์กลาง $qvB = \\dfrac{mv^2}{r}$"
+      - "$r = \\dfrac{mv}{qB}$"
+    solution: "$r = \\dfrac{(1.67 \\times 10^{-27})(2.0 \\times 10^{6})}{(1.6 \\times 10^{-19})(0.50)} = 0.0418\\ \\mathrm{m} = 4.18\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p008
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 3
+    type: numeric
+    stem: "อิเล็กตรอนเคลื่อนที่เป็นวงกลมในสนามแม่เหล็ก $1.0 \\times 10^{-3}\\ \\mathrm{T}$ ใช้เวลาครบรอบกี่นาโนวินาที ($m_e = 9.1 \\times 10^{-31}\\ \\mathrm{kg}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 35.7, tolerance: 0.4, unit: ns }
+    misconceptions:
+      - { match: 5.69, feedback: "ลืม $2\\pi$ คาบคือ $T = \\dfrac{2\\pi m}{qB}$" }
+    hints:
+      - "$T = \\dfrac{2\\pi r}{v}$ และ $r = \\dfrac{mv}{qB}$"
+      - "$T = \\dfrac{2\\pi m}{qB}$ ไม่ต้องรู้อัตราเร็ว"
+    solution: "$T = \\dfrac{2\\pi(9.1 \\times 10^{-31})}{(1.6 \\times 10^{-19})(1.0 \\times 10^{-3})} = 3.57 \\times 10^{-8}\\ \\mathrm{s} = 35.7\\ \\mathrm{ns}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p009
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 4
+    type: numeric
+    stem: "สายไฟสองเส้นในรางเดินสายของโรงงานวางขนานกันห่าง $1.0\\ \\mathrm{cm}$ มีกระแสเส้นละ $20\\ \\mathrm{A}$ สวนทางกัน สายแต่ละเส้นยาว $2.0\\ \\mathrm{m}$ ถูกแรงแม่เหล็กกี่นิวตัน ($\\mu_0/2\\pi = 2 \\times 10^{-7}\\ \\mathrm{T\\,m/A}$ ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.016, tolerance: 0.0002, unit: N }
+    misconceptions:
+      - { match: 0.008, feedback: "นี่คือแรงต่อความยาว 1 เมตร ต้องคูณความยาวสาย 2.0 m" }
+      - { match: 1.6, feedback: "ใช้ $a^2$ แรงระหว่างลวดคู่ขนานแปรผกผันกับ $a$" }
+    hints:
+      - "$\\dfrac{F}{L} = \\dfrac{\\mu_0 I_1I_2}{2\\pi a}$"
+      - "คูณด้วยความยาว $L = 2.0\\ \\mathrm{m}$"
+    solution: "$\\dfrac{F}{L} = \\dfrac{(2 \\times 10^{-7})(20)(20)}{0.010} = 8.0 \\times 10^{-3}\\ \\mathrm{N/m}$ $F = 0.016\\ \\mathrm{N}$ เป็นแรงผลักเพราะกระแสสวนทาง แรงน้อยมากในกรณีปกติ แต่ขณะลัดวงจรกระแสสูงมากจนสายสะบัดได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p010
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องคัดเลือกความเร็วมีสนามไฟฟ้า $3.0 \\times 10^{4}\\ \\mathrm{V/m}$ ตั้งฉากกับสนามแม่เหล็ก $0.15\\ \\mathrm{T}$ ไอออนที่วิ่งตรงผ่านได้มีอัตราเร็วกี่เท่าของ $10^{5}\\ \\mathrm{m/s}$"
+    answer: { value: 2, tolerance: 0.02 }
+    misconceptions:
+      - { match: 0.045, feedback: "คูณ $E$ กับ $B$ จาก $qE = qvB$ ได้ $v = E/B$" }
+    hints:
+      - "วิ่งตรงได้เมื่อแรงไฟฟ้าเท่ากับแรงแม่เหล็ก"
+      - "$qE = qvB$"
+    solution: "$v = \\dfrac{E}{B} = \\dfrac{3.0 \\times 10^{4}}{0.15} = 2.0 \\times 10^{5}\\ \\mathrm{m/s}$ ไม่ขึ้นกับประจุและมวลของไอออน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p011
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 4
+    type: numeric
+    stem: "ในแมสสเปกโทรมิเตอร์ ไอออน $^{12}\\mathrm{C}^{+}$ และ $^{14}\\mathrm{C}^{+}$ (ประจุ $+e$) วิ่งด้วยอัตราเร็ว $1.0 \\times 10^{5}\\ \\mathrm{m/s}$ เท่ากัน เข้าสู่สนาม $0.20\\ \\mathrm{T}$ ตั้งฉาก แล้ววิ่งครึ่งวงกลมไปกระทบแผ่นตรวจจับ ดังภาพ จุดกระทบของไอออนทั้งสองห่างกันกี่เซนติเมตร ($1\\ \\mathrm{u} = 1.66 \\times 10^{-27}\\ \\mathrm{kg}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-mass-spec.svg, alt: "ไอออนสองชนิดเข้าทางช่องเดียวกันที่ขอบล่างของบริเวณสนามแม่เหล็กซึ่งพุ่งออกจากหน้ากระดาษ วิ่งเป็นครึ่งวงกลมสองวงที่มีรัศมีต่างกันเล็กน้อย แล้วกระทบแผ่นตรวจจับที่อยู่แนวเดียวกับช่องเข้า ณ จุดสองจุดที่ห่างกัน ไม่ได้บอกระยะ" }
+    answer: { value: 2.08, tolerance: 0.03, unit: cm }
+    misconceptions:
+      - { match: 1.04, feedback: "นี่คือผลต่างของรัศมี จุดกระทบอยู่ห่างจากช่องเข้าเป็นระยะเส้นผ่านศูนย์กลาง จึงต้องคูณ 2" }
+    hints:
+      - "หารัศมีของแต่ละไอออน $r = \\dfrac{mv}{qB}$"
+      - "จุดกระทบอยู่ห่างจากช่องเข้า $2r$ ผลต่างคือ $2(r_{14} - r_{12})$"
+    solution: "$r_{12} = \\dfrac{(12)(1.66 \\times 10^{-27})(1.0 \\times 10^{5})}{(1.6 \\times 10^{-19})(0.20)} = 6.23\\ \\mathrm{cm}$ $r_{14} = 7.26\\ \\mathrm{cm}$ จุดกระทบห่างกัน $2(7.26 - 6.23) = 2.08\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p012
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 4
+    type: numeric
+    stem: "ในการทดลองสร้างมอเตอร์ของชมรมวิทยาศาสตร์ ขดลวด $100$ รอบ ขนาด $4.0\\ \\mathrm{cm} \\times 5.0\\ \\mathrm{cm}$ มีกระแส $0.50\\ \\mathrm{A}$ อยู่ในสนามแม่เหล็ก $0.20\\ \\mathrm{T}$ โดยระนาบขดลวดทำมุม $60^\\circ$ กับสนาม โมเมนต์ของแรงคู่ควบเป็นกี่นิวตันเมตร (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.01, tolerance: 0.0002, unit: "N m" }
+    misconceptions:
+      - { match: 0.0173, feedback: "ใช้ $\\sin 60^\\circ$ สูตร $M = NIAB\\cos\\theta$ ใช้มุมระหว่างระนาบขดลวดกับสนาม" }
+      - { match: 0.02, feedback: "ลืมคิดมุม $0.020$ เป็นโมเมนต์สูงสุดเมื่อระนาบขนานกับสนาม" }
+    hints:
+      - "$M = NIAB\\cos\\theta$ เมื่อ $\\theta$ เป็นมุมระหว่างระนาบขดลวดกับสนาม"
+      - "$A = 2.0 \\times 10^{-3}\\ \\mathrm{m^2}$"
+    solution: "$M = (100)(0.50)(2.0 \\times 10^{-3})(0.20)\\cos 60^\\circ = 0.020 \\times 0.5 = 0.010\\ \\mathrm{N\\,m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p013
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 5
+    type: numeric
+    stem: "แกลแวนอมิเตอร์มีความต้านทาน $50\\ \\Omega$ เข็มเบนเต็มสเกลเมื่อกระแส $1.0\\ \\mathrm{mA}$ ต้องต่อตัวต้านทานกี่โอห์มแบบใด เพื่อให้เป็นโวลต์มิเตอร์ที่วัดได้สูงสุด $10\\ \\mathrm{V}$ (ตอบค่าความต้านทาน)"
+    answer: { value: 9950, tolerance: 5, unit: "Ω" }
+    misconceptions:
+      - { match: 10000, feedback: "นี่คือความต้านทานรวมของโวลต์มิเตอร์ ต้องลบความต้านทานของแกลแวนอมิเตอร์ $50\\ \\Omega$ ออก" }
+    hints:
+      - "ต่ออนุกรม กระแสเต็มสเกล $1.0\\ \\mathrm{mA}$ ผ่านทั้งแกลแวนอมิเตอร์และตัวต้านทาน"
+      - "$R + R_G = \\dfrac{V}{I_G}$"
+    solution: "ต่ออนุกรม $R = \\dfrac{10}{1.0 \\times 10^{-3}} - 50 = 10{,}000 - 50 = 9{,}950\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p014
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 5
+    type: numeric
+    stem: "ลวดตรงยาวสองเส้นวางขนานห่างกัน $10\\ \\mathrm{cm}$ มีกระแส $10\\ \\mathrm{A}$ และ $6.0\\ \\mathrm{A}$ สวนทางกัน สนามแม่เหล็กที่จุดกึ่งกลางระหว่างลวดเป็นกี่ไมโครเทสลา ($\\mu_0/2\\pi = 2 \\times 10^{-7}\\ \\mathrm{T\\,m/A}$)"
+    answer: { value: 64, tolerance: 0.6, unit: "μT" }
+    misconceptions:
+      - { match: 16, feedback: "ลบสนามกัน แต่เมื่อกระแสสวนทาง สนามของลวดทั้งสองที่จุดกึ่งกลางมีทิศเดียวกัน จึงต้องบวก" }
+      - { match: 32, feedback: "ใช้ระยะ $10\\ \\mathrm{cm}$ ระยะจากจุดกึ่งกลางถึงลวดแต่ละเส้นคือ $5.0\\ \\mathrm{cm}$" }
+    hints:
+      - "ใช้กฎมือขวาหาทิศสนามของลวดแต่ละเส้นที่จุดกึ่งกลาง"
+      - "กระแสสวนทาง สนามที่จุดกึ่งกลางชี้ทางเดียวกัน $B = B_1 + B_2$ ที่ $r = 0.050\\ \\mathrm{m}$"
+    solution: "$B_1 = \\dfrac{(2 \\times 10^{-7})(10)}{0.050} = 40\\ \\mu\\mathrm{T}$ $B_2 = \\dfrac{(2 \\times 10^{-7})(6.0)}{0.050} = 24\\ \\mu\\mathrm{T}$ กระแสสวนทางกัน สนามที่จุดกึ่งกลางทิศเดียวกัน $B = 64\\ \\mu\\mathrm{T}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p015
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 5
+    type: numeric
+    stem: "โปรตอนเข้าสู่สนามแม่เหล็กสม่ำเสมอ $0.50\\ \\mathrm{T}$ ในแนวตั้งฉาก แล้ววิ่งครึ่งวงกลมออกมา โปรตอนอยู่ในสนามนานกี่นาโนวินาที ($m_p = 1.67 \\times 10^{-27}\\ \\mathrm{kg}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 65.6, tolerance: 0.7, unit: ns }
+    misconceptions:
+      - { match: 131.2, feedback: "นี่คือเวลาครบหนึ่งรอบ ครึ่งวงกลมใช้เวลาครึ่งคาบ" }
+    hints:
+      - "คาบ $T = \\dfrac{2\\pi m}{qB}$ ไม่ขึ้นกับอัตราเร็ว"
+      - "ครึ่งวงกลมใช้เวลา $T/2$"
+    solution: "$\\dfrac{T}{2} = \\dfrac{\\pi m}{qB} = \\dfrac{\\pi(1.67 \\times 10^{-27})}{(1.6 \\times 10^{-19})(0.50)} = 6.56 \\times 10^{-8}\\ \\mathrm{s} = 65.6\\ \\mathrm{ns}$ โจทย์ไม่ต้องบอกอัตราเร็ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p016
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 2
+    type: match
+    stem: "จับคู่อุปกรณ์กับหลักการ"
+    pairs:
+      - { left: "แกลแวนอมิเตอร์", right: "ขดลวดหมุนต้านสปริงเป็นมุมที่แปรผันตรงกับกระแส" }
+      - { left: "มอเตอร์ไฟฟ้ากระแสตรง", right: "คอมมิวเตเตอร์กลับทิศกระแสทุกครึ่งรอบให้ขดลวดหมุนต่อเนื่อง" }
+      - { left: "แมสสเปกโทรมิเตอร์", right: "ไอออนมวลต่างกันวิ่งเป็นวงกลมรัศมีต่างกันในสนามแม่เหล็ก" }
+      - { left: "แม่เหล็กไฟฟ้า", right: "โซเลนอยด์มีแกนเหล็กอ่อนทำให้สนามแรงขึ้นมาก" }
+    hints:
+      - "อุปกรณ์ใดหมุนต่อเนื่อง อุปกรณ์ใดหมุนไปแค่มุมหนึ่ง"
+      - "อุปกรณ์ใดใช้รัศมี $r = mv/qB$"
+    solution: "แกลแวนอมิเตอร์หมุนต้านสปริง มอเตอร์ใช้คอมมิวเตเตอร์ แมสสเปกโทรมิเตอร์แยกมวลด้วยรัศมี แม่เหล็กไฟฟ้าใช้โซเลนอยด์กับแกนเหล็กอ่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-flux-forces.p017
+    topics: [physics.magnetism.magnetic-flux-forces]
+    difficulty: 3
+    type: mcq
+    stem: "อิเล็กตรอนวิ่งเป็นวงกลมในสนามแม่เหล็กสม่ำเสมอเป็นเวลานาน ทำไมอัตราเร็วของอิเล็กตรอนจึงไม่เปลี่ยน"
+    choices:
+      - { id: a, text: "แรงแม่เหล็กตั้งฉากกับความเร็วเสมอ จึงไม่ทำงาน", correct: true }
+      - { id: b, text: "แรงแม่เหล็กเป็นศูนย์เมื่อเคลื่อนที่เป็นวงกลม", feedback: "ถ้าแรงเป็นศูนย์ อิเล็กตรอนจะวิ่งเป็นเส้นตรง การเคลื่อนที่เป็นวงกลมต้องมีแรงสู่ศูนย์กลาง" }
+      - { id: c, text: "แรงแม่เหล็กสมดุลกับแรงไฟฟ้าของอิเล็กตรอน", feedback: "ไม่มีสนามไฟฟ้าในข้อนี้ แรงแม่เหล็กเป็นแรงลัพธ์และเป็นแรงสู่ศูนย์กลาง" }
+    hints:
+      - "งานของแรงที่ตั้งฉากกับการเคลื่อนที่เป็นเท่าใด"
+      - "ถ้าไม่มีงาน พลังงานจลน์เปลี่ยนหรือไม่"
+    solution: "แรงแม่เหล็ก $qvB$ ตั้งฉากกับความเร็วตลอด จึงเปลี่ยนเฉพาะทิศ ไม่ทำงาน พลังงานจลน์และอัตราเร็วจึงคงตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

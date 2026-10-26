@@ -1,0 +1,77 @@
+id: physics.magnetism.magnetic-flux-forces
+subject: physics
+title: { th: ฟลักซ์แม่เหล็กและแรงแม่เหล็ก, en: Magnetic flux and magnetic forces }
+summary: ฟลักซ์แม่เหล็ก สนามแม่เหล็กของลวดตรงและโซเลนอยด์ คาบของประจุในสนาม แมสสเปกโทรมิเตอร์ แรงระหว่างลวดคู่ขนาน แกลแวนอมิเตอร์ และมอเตอร์กระแสตรง
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.magnetism.magnetic-field, physics.kinematics.circular]
+encompasses:
+  - { id: physics.magnetism.magnetic-field, weight: 0.5 }
+  - { id: physics.kinematics.circular, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: สนามแม่เหล็กจากกระแสไฟฟ้า
+    src: wire-solenoid.svg
+    alt: "ก. ภาพตัดขวางของลวดตรงที่มีกระแสพุ่งเข้ากระดาษ เส้นสนามเป็นวงกลมซ้อนกันสามวงรอบลวด ลูกศรวนตามเข็มนาฬิกา วงนอกอยู่ห่างกันมากขึ้นแสดงว่าสนามอ่อนลงเมื่อห่างลวด ข. ภาพตัดตามแกนของโซเลนอยด์ ลวดแถวบนมีกระแสออกจากกระดาษ แถวล่างเข้ากระดาษ ภายในมีเส้นสนามตรงขนานกันชี้ไปทางขวา ปลายขวาเป็นขั้วเหนือ ปลายซ้ายเป็นขั้วใต้ เส้นประด้านนอกวนกลับจากขั้วเหนือไปขั้วใต้"
+  - type: worked-example
+    title: สนามของลวดตรงกับเข็มทิศ
+    problem: "สายไฟตรงยาวในแนวเหนือ–ใต้มีกระแส $15\\ \\mathrm{A}$ ไหลไปทางทิศเหนือ เข็มทิศวางอยู่ใต้สายไฟ ห่าง $6.0\\ \\mathrm{cm}$ สนามจากสายไฟที่เข็มทิศมีขนาดเท่าใด ชี้ทางใด และเทียบกับสนามแม่เหล็กโลกในแนวราบที่ประเทศไทยซึ่งประมาณ $40\\ \\mu\\mathrm{T}$ อย่างไร"
+    steps:
+      - text: "$B = \\dfrac{\\mu_0 I}{2\\pi r} = \\dfrac{(2 \\times 10^{-7})(15)}{0.060} = 5.0 \\times 10^{-5}\\ \\mathrm{T} = 50\\ \\mu\\mathrm{T}$"
+      - text: "กฎมือขวา: นิ้วโป้งชี้ไปทางเหนือ นิ้วทั้งสี่ที่วนผ่านใต้สายไฟชี้ไปทาง **ตะวันตก**"
+        why: "นิ้วที่อยู่เหนือสายชี้ไปทางหนึ่ง นิ้วที่อ้อมไปใต้สายชี้ทางตรงข้าม"
+      - text: "สนามจากสายไฟ $50\\ \\mu\\mathrm{T}$ มากกว่าสนามโลกแนวราบ จึงทำให้เข็มทิศเบนไปทางตะวันตกได้มาก (มุมราว $\\tan^{-1}(50/40) \\approx 51^\\circ$ จากทิศเหนือ)"
+    answer: "สนามจากสายไฟ $50\\ \\mu\\mathrm{T}$ ชี้ไปทางตะวันตก แรงพอจะทำให้เข็มทิศเบนไปประมาณ $51^\\circ$"
+  - { type: check, problem: physics.magnetism.magnetic-flux-forces.p005, prompt: "มุมในฟลักซ์วัดจากเส้นตั้งฉากกับพื้นที่" }
+  - type: figure
+    title: แรงระหว่างลวดคู่ขนาน
+    src: parallel-wires.svg
+    alt: "ภาพตัดขวางของลวดคู่ขนานสองกรณี ก. ลวดทั้งสองมีกระแสออกจากกระดาษ สนาม B₁ จากลวด 1 ที่ตำแหน่งลวด 2 ชี้ขึ้น แรงบนลวดแต่ละเส้นชี้เข้าหากัน จึงดูดกัน ข. ลวด 1 กระแสออกจากกระดาษ ลวด 2 กระแสเข้ากระดาษ แรงบนลวดแต่ละเส้นชี้ออกจากกัน จึงผลักกัน"
+  - type: worked-example
+    title: มอเตอร์ของพัดลม
+    problem: "ขดลวดในมอเตอร์กระแสตรงขนาดเล็กมี $200$ รอบ ขนาด $5.0\\ \\mathrm{cm} \\times 4.0\\ \\mathrm{cm}$ มีกระแส $1.5\\ \\mathrm{A}$ อยู่ในสนาม $0.25\\ \\mathrm{T}$ จงหาโมเมนต์ของแรงคู่ควบสูงสุด และโมเมนต์เมื่อระนาบขดลวดทำมุม $60^\\circ$ กับสนาม"
+    steps:
+      - text: "พื้นที่ขดลวด $A = 0.050 \\times 0.040 = 2.0 \\times 10^{-3}\\ \\mathrm{m^2}$"
+      - text: "โมเมนต์สูงสุดเมื่อระนาบขนานกับสนาม: $M = NIAB = (200)(1.5)(2.0 \\times 10^{-3})(0.25) = 0.15\\ \\mathrm{N\\,m}$"
+      - text: "ที่มุม $60^\\circ$: $M = 0.15\\cos 60^\\circ = 0.075\\ \\mathrm{N\\,m}$"
+        why: "มุมในสูตรวัดระหว่างระนาบขดลวดกับสนาม เมื่อระนาบเกือบตั้งฉากกับสนาม โมเมนต์เกือบเป็นศูนย์ มอเตอร์จริงจึงมีขดลวดหลายชุด"
+    answer: "โมเมนต์สูงสุด $0.15\\ \\mathrm{N\\,m}$ ที่ $60^\\circ$ เหลือ $0.075\\ \\mathrm{N\\,m}$"
+  - type: interactive
+    title: สนามของลวดตรงกับระยะ
+    caption: "กราฟคือ $B = \\dfrac{\\mu_0 I}{2\\pi r}$ เป็นไมโครเทสลา เมื่อ $x$ คือระยะจากลวด (เมตร) และ $I$ คือกระแส (แอมแปร์) อ่านค่าที่ 0.05 m และ 0.10 m เทียบกัน แล้วเพิ่มกระแสเป็น 2 เท่าดูว่ากราฟเปลี่ยนอย่างไร"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{0.2 I}{x}"]
+      sliders:
+        - { name: I, min: 1, max: 20, step: 1, value: 10, label: กระแส (A) }
+      x: [0.01, 0.3]
+      y: [0, 200]
+  - { type: check, problem: physics.magnetism.magnetic-flux-forces.p004, prompt: "กระแสทิศเดียวกันดูดกัน" }
+  - type: simulation
+    title: "ห้องทดลองแม่เหล็กไฟฟ้าของฟาราเดย์ (PhET Faraday's Electromagnetic Lab)"
+    url: https://phet.colorado.edu/en/simulations/faradays-electromagnetic-lab
+    provider: phet
+    note: "หน้า Electromagnet ใช้แบตเตอรี่กับขดลวด เปิดเครื่องวัดสนาม ลองเพิ่มจำนวนรอบและความต่างศักย์แล้วดูว่าสนามแรงขึ้นตาม $B = \\mu_0 nI$ หรือไม่ และกลับขั้วแบตเตอรี่แล้วดูว่าขั้วเหนือย้ายไปอีกปลายหรือไม่"
+glossary:
+  - { term: ฟลักซ์แม่เหล็ก, definition: "ปริมาณเส้นสนามแม่เหล็กที่ผ่านพื้นที่หนึ่ง เท่ากับ BA cos θ หน่วยเวเบอร์" }
+  - { term: โซเลนอยด์, definition: "ขดลวดที่พันเป็นเกลียวยาว เมื่อมีกระแสจะมีสนามภายในเกือบสม่ำเสมอเหมือนแท่งแม่เหล็ก" }
+  - { term: แมสสเปกโทรมิเตอร์, definition: "เครื่องแยกไอออนตามมวล โดยให้ไอออนที่เร็วเท่ากันวิ่งเป็นวงกลมในสนามแม่เหล็ก ไอออนมวลมากวิ่งวงกว้างกว่า" }
+  - { term: แกลแวนอมิเตอร์, definition: "เครื่องวัดกระแสน้อย ๆ ที่ขดลวดหมุนต้านสปริงเป็นมุมที่แปรผันตรงกับกระแส ดัดแปลงเป็นแอมมิเตอร์และโวลต์มิเตอร์ได้" }
+  - { term: ชันต์, definition: "ตัวต้านทานค่าน้อยที่ต่อขนานกับแกลแวนอมิเตอร์ ให้กระแสส่วนใหญ่ไหลผ่าน เพื่อใช้วัดกระแสที่มากขึ้น" }
+flashcards:
+  - { front: "ฟลักซ์แม่เหล็ก", back: "$\\Phi_B = BA\\cos\\theta$ ($\\theta$ วัดจากเส้นตั้งฉากกับพื้นที่)" }
+  - { front: "สนามของลวดตรงยาวและโซเลนอยด์", back: "$B = \\dfrac{\\mu_0 I}{2\\pi r}$ · $B = \\mu_0 nI$" }
+  - { front: "คาบของประจุในสนามแม่เหล็ก", back: "$T = \\dfrac{2\\pi m}{qB}$ ไม่ขึ้นกับอัตราเร็ว" }
+  - { front: "แรงต่อความยาวระหว่างลวดคู่ขนาน", back: "$\\dfrac{F}{L} = \\dfrac{\\mu_0 I_1I_2}{2\\pi a}$ ทิศเดียวกันดูด สวนทางผลัก" }
+  - { front: "โมเมนต์บนขดลวดในสนามแม่เหล็ก", back: "$M = NIAB\\cos\\theta$ ($\\theta$ วัดจากระนาบขดลวดถึงสนาม)" }
+references:
+  - { title: "ฟลักซ์แม่เหล็ก", url: "https://th.wikipedia.org/wiki/ฟลักซ์แม่เหล็ก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Mass spectrometry", url: "https://en.wikipedia.org/wiki/Mass_spectrometry", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "20.2 Motors, Generators, and Transformers (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/20-2-motors-generators-and-transformers", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "20.1 Magnetic Fields, Field Lines, and Force (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/20-1-magnetic-fields-field-lines-and-force", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,409 @@
+problems:
+  - id: computer.programming.recursion.p001
+    topics: [computer.programming.recursion]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ในฟังก์ชันนี้ บรรทัดใดคือ **กรณีฐาน**
+
+      ```python
+      def stairs(n):
+          if n == 1:
+              return 1
+          return n + stairs(n - 1)
+      ```
+    choices:
+      - { id: a, text: "if n == 1: return 1", correct: true }
+      - { id: b, text: "return n + stairs(n - 1)", feedback: "บรรทัดนี้เรียกตัวเองกับปัญหาที่เล็กลง จึงเป็นกรณีเรียกซ้ำ" }
+      - { id: c, text: "def stairs(n):", feedback: "บรรทัดนี้แค่ประกาศชื่อฟังก์ชันและพารามิเตอร์" }
+      - { id: d, text: "ฟังก์ชันนี้ไม่มีกรณีฐาน", feedback: "มีกรณีที่ตอบได้ทันทีโดยไม่เรียกตัวเอง ลองหาดู" }
+    hints:
+      - "กรณีฐานตอบได้ทันทีโดยไม่เรียกตัวเอง"
+      - "บรรทัดใดมี return แต่ไม่มีคำว่า stairs"
+    solution: "if n == 1: return 1 เป็นกรณีฐาน เพราะคืนค่าทันทีโดยไม่เรียก stairs อีก ส่วน return n + stairs(n - 1) เป็นกรณีเรียกซ้ำที่ลด n ลงทีละ 1 จนถึงฐาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p002
+    topics: [computer.programming.recursion]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นโครงสร้างที่ **ซ้อนตัวเอง** และเหมาะกับการแก้ด้วยการเรียกซ้ำมากที่สุด"
+    choices:
+      - { id: a, text: "โฟลเดอร์ที่มีโฟลเดอร์ย่อย ซึ่งก็มีโฟลเดอร์ย่อยซ้อนลงไปได้อีก", correct: true }
+      - { id: b, text: "รายชื่อนักเรียน 40 คนเรียงตามเลขที่", feedback: "รายชื่อเรียงต่อกันเป็นแถวธรรมดา วนซ้ำด้วย for ก็พอ" }
+      - { id: c, text: "ตัวแปรเก็บอายุของนักเรียนหนึ่งคน", feedback: "ค่าเดียวไม่มีส่วนย่อยที่เป็นแบบเดียวกัน" }
+      - { id: d, text: "ปุ่มกดหนึ่งปุ่มบนหน้าจอ", feedback: "ปุ่มเดียวไม่มีโครงสร้างซ้อน" }
+    hints:
+      - "มองหาสิ่งที่ส่วนย่อยมีลักษณะเหมือนทั้งก้อน"
+      - "นึกถึงตุ๊กตาที่ซ้อนกันหลายชั้น"
+    solution: "โฟลเดอร์ย่อยเป็นโฟลเดอร์แบบเดียวกับโฟลเดอร์ใหญ่ การนับไฟล์จึงเป็น นับไฟล์ตรงนี้ บวกผลนับของแต่ละโฟลเดอร์ย่อย ซึ่งก็คือปัญหาเดิมที่เล็กลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p003
+    topics: [computer.programming.recursion]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ชมรมก่อสร้างเรียงอิฐบล็อกเป็นขั้นบันไดหน้าศาลาวัด ขั้นบนสุดใช้ 1 ก้อน ขั้นถัดลงมาใช้เพิ่มขึ้นขั้นละ 1 ก้อน ฟังก์ชันนี้นับอิฐทั้งหมดของบันได 5 ขั้น โปรแกรมแสดงตัวเลขใด
+
+      ```python
+      def stairs(n):
+          if n == 1:
+              return 1
+          return n + stairs(n - 1)
+
+      print(stairs(5))
+      ```
+    answer: { value: 15 }
+    hints:
+      - "stairs(5) = 5 + stairs(4) และ stairs(4) = 4 + stairs(3)"
+      - "ไล่ลงไปจนถึง stairs(1) = 1 แล้วบวกย้อนขึ้นมา"
+    misconceptions:
+      - { match: 14, feedback: "ลืมบวกค่าจากกรณีฐาน stairs(1) = 1" }
+      - { match: 5, feedback: "ฟังก์ชันไม่ได้คืน n ตรง ๆ แต่บวกกับผลของ stairs(n - 1)" }
+    solution: "stairs(1) = 1 → stairs(2) = 2 + 1 = 3 → stairs(3) = 3 + 3 = 6 → stairs(4) = 4 + 6 = 10 → stairs(5) = 5 + 10 = 15"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p004
+    topics: [computer.programming.recursion]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ฟังก์ชันยกกำลังแบบเรียกซ้ำนี้คืนค่าใด
+
+      ```python
+      def power(b, e):
+          if e == 0:
+              return 1
+          return b * power(b, e - 1)
+
+      print(power(2, 5))
+      ```
+    answer: { value: 32 }
+    hints:
+      - "power(2, 5) = 2 × power(2, 4) ไล่ไปจน e = 0"
+      - "power(2, 0) คืน 1 แล้วคูณ 2 ย้อนขึ้นมา 5 ครั้ง"
+    misconceptions:
+      - { match: 10, feedback: "คิดเป็น 2 × 5 แต่ฟังก์ชันคูณ b ซ้ำ e ครั้ง" }
+      - { match: 0, feedback: "กรณีฐานคืน 1 ไม่ใช่ 0 จึงคูณต่อได้" }
+    solution: "power(2, 0) = 1 → 2 → 4 → 8 → 16 → power(2, 5) = 32 คือ 2⁵"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p005
+    topics: [computer.programming.recursion]
+    difficulty: 2
+    type: numeric
+    stem: |
+      เมื่อเรียก `sum_to(4)` ฟังก์ชัน `sum_to` ถูกเรียกทั้งหมดกี่ครั้ง (นับครั้งแรกด้วย)
+
+      ```python
+      def sum_to(n):
+          if n == 0:
+              return 0
+          return n + sum_to(n - 1)
+      ```
+    answer: { value: 5, unit: "ครั้ง" }
+    hints:
+      - "เขียนลำดับการเรียก sum_to(4), sum_to(3), ... จนถึงกรณีฐาน"
+      - "กรณีฐานคือ n == 0 นับ sum_to(0) ด้วย"
+    misconceptions:
+      - { match: 4, feedback: "ลืมนับ sum_to(0) ซึ่งเป็นกรณีฐาน ก็ถูกเรียกเหมือนกัน" }
+      - { match: 10, feedback: "10 คือค่าที่คืน ไม่ใช่จำนวนครั้งที่เรียก" }
+    solution: "sum_to(4) → sum_to(3) → sum_to(2) → sum_to(1) → sum_to(0) รวม 5 ครั้ง (ค่าที่คืนคือ 10)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p006
+    topics: [computer.programming.recursion]
+    difficulty: 3
+    type: order
+    stem: |
+      เรียงข้อความตามลำดับที่โปรแกรมนี้แสดงบนจอ
+
+      ```python
+      def f(n):
+          if n == 0:
+              print("ฐาน")
+              return
+          print("ลง", n)
+          f(n - 1)
+          print("ขึ้น", n)
+
+      f(2)
+      ```
+    items:
+      - "ลง 2"
+      - "ลง 1"
+      - "ฐาน"
+      - "ขึ้น 1"
+      - "ขึ้น 2"
+    hints:
+      - "print ก่อนการเรียกซ้ำทำในขาลง print หลังการเรียกซ้ำทำเมื่อชั้นล่างทำเสร็จแล้ว"
+      - "กรอบของ f(1) ทำเสร็จก่อนกรอบของ f(2)"
+    solution: "f(2) แสดง ลง 2 แล้วเรียก f(1) ซึ่งแสดง ลง 1 แล้วเรียก f(0) แสดง ฐาน แล้วกลับ f(1) ทำต่อแสดง ขึ้น 1 แล้วกลับ f(2) แสดง ขึ้น 2 คำสั่งหลังการเรียกซ้ำจึงย้อนลำดับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p007
+    topics: [computer.programming.recursion]
+    difficulty: 3
+    type: mcq
+    stem: |
+      เรียก `half(5)` แล้วเกิดอะไรขึ้น
+
+      ```python
+      def half(n):
+          if n == 0:
+              return 0
+          return 1 + half(n - 2)
+      ```
+    choices:
+      - { id: a, text: "เกิด RecursionError เพราะ n เป็น 5, 3, 1, -1, -3, ... ไม่มีวันเท่ากับ 0", correct: true }
+      - { id: b, text: "คืน 2", feedback: "ลองไล่ค่า n ทีละครั้ง จาก 5 ลดทีละ 2 จะผ่าน 0 หรือไม่" }
+      - { id: c, text: "คืน 3", feedback: "n ไม่มีวันเป็น 0 กรณีฐานจึงไม่ทำงาน ไม่ได้คืนค่าใด" }
+      - { id: d, text: "คืน 0 ทันที", feedback: "n = 5 ไม่เท่ากับ 0 จึงไม่เข้ากรณีฐาน" }
+    hints:
+      - "เขียนค่า n ของแต่ละการเรียก 5, 3, ..."
+      - "กรณีฐานตรวจ n == 0 เท่านั้น"
+    solution: "n ลดทีละ 2 จาก 5 ได้ 5, 3, 1, -1, -3, ... ข้าม 0 ไป กรณีฐานจึงไม่มีวันถึง ฟังก์ชันเรียกตัวเองจนเกินขีดจำกัดความลึกราว 1,000 ชั้น เกิด RecursionError แก้โดยให้กรณีฐานเป็น if n <= 0 (ถ้า n เป็นคี่ ผลจะเป็น 3 สำหรับ half(5))"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p008
+    topics: [computer.programming.recursion]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ฟังก์ชันนี้รวมเลขโดดของปี พ.ศ. ได้เท่าใด
+
+      ```python
+      def digit_sum(n):
+          if n == 0:
+              return 0
+          return n % 10 + digit_sum(n // 10)
+
+      print(digit_sum(2568))
+      ```
+    answer: { value: 21 }
+    hints:
+      - "n % 10 คือเลขหลักหน่วย และ n // 10 คือตัดหลักหน่วยทิ้ง"
+      - "ไล่ 2568 → 256 → 25 → 2 → 0"
+    misconceptions:
+      - { match: 8, feedback: "8 คือหลักหน่วยของการเรียกครั้งแรกเท่านั้น ต้องบวกผลของ digit_sum(256) ด้วย" }
+      - { match: 2568, feedback: "ฟังก์ชันไม่ได้คืนตัวเลขเดิม แต่รวมเลขโดดทีละหลัก" }
+    solution: "digit_sum(2568) = 8 + digit_sum(256) = 8 + 6 + digit_sum(25) = 8 + 6 + 5 + digit_sum(2) = 8 + 6 + 5 + 2 + digit_sum(0) = 21"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p009
+    topics: [computer.programming.recursion]
+    difficulty: 3
+    type: match
+    stem: |
+      จับคู่ส่วนของฟังก์ชันรวมลิสต์แบบเรียกซ้ำกับหน้าที่
+
+      ```python
+      def total(a):
+          if len(a) == 0:
+              return 0
+          return a[0] + total(a[1:])
+
+      print(total([3, 5, 2]))
+      ```
+    pairs:
+      - { left: "if len(a) == 0: return 0", right: "กรณีฐาน: ลิสต์ว่างมีผลรวม 0" }
+      - { left: "a[1:]", right: "ทำให้ปัญหาเล็กลง: ส่วนที่เหลือสั้นลงหนึ่งตัว" }
+      - { left: "a[0] + ...", right: "นำผลของปัญหาเล็กมารวมเป็นคำตอบ" }
+      - { left: "total([3, 5, 2])", right: "การเรียกครั้งแรกจากนอกฟังก์ชัน" }
+    hints:
+      - "ส่วนใดคืนค่าได้โดยไม่เรียกตัวเอง"
+      - "a[1:] คือลิสต์ที่ตัดตัวแรกออก"
+    solution: "ลิสต์ว่างเป็นกรณีฐาน a[1:] ทำให้ลิสต์สั้นลงทุกครั้ง a[0] + ... รวมตัวแรกกับผลรวมของส่วนที่เหลือ และ total([3, 5, 2]) เริ่มการทำงาน ได้ 3 + 5 + 2 + 0 = 10"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p010
+    topics: [computer.programming.recursion]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ใช้ฟังก์ชันฟีโบนัชชีในบทเรียน โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      def fib(n):
+          if n < 2:
+              return n
+          return fib(n - 1) + fib(n - 2)
+
+      print(fib(7))
+      ```
+    answer: { value: 13 }
+    hints:
+      - "fib(0) = 0, fib(1) = 1 แต่ละตัวถัดไปคือผลบวกของสองตัวก่อนหน้า"
+      - "เขียนลำดับ 0, 1, 1, 2, 3, 5, 8, ... แล้วนับว่าตัวที่ n = 7 คือเท่าใด"
+    misconceptions:
+      - { match: 8, feedback: "8 คือ fib(6) นับตำแหน่งเริ่มที่ fib(0) = 0" }
+      - { match: 21, feedback: "21 คือ fib(8) เลื่อนไปหนึ่งตำแหน่ง" }
+    solution: "fib(0..7) = 0, 1, 1, 2, 3, 5, 8, 13 ดังนั้น fib(7) = 13"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p011
+    topics: [computer.programming.recursion]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้ฟังก์ชัน fib ในบทเรียน เมื่อเรียก `fib(5)` ฟังก์ชัน fib ถูกเรียกทั้งหมดกี่ครั้ง (นับครั้งแรกด้วย) ใช้ภาพต้นไม้การเรียกของ fib(4) ในบทเรียนช่วยคิด"
+    answer: { value: 15, unit: "ครั้ง" }
+    hints:
+      - "fib(5) เรียก fib(4) หนึ่งครั้งและ fib(3) หนึ่งครั้ง"
+      - "จำนวนครั้งของ fib(5) = 1 + จำนวนครั้งของ fib(4) + จำนวนครั้งของ fib(3) โดย fib(4) เรียก 9 ครั้ง และ fib(3) เรียก 5 ครั้ง"
+    misconceptions:
+      - { match: 5, feedback: "นับเฉพาะสายที่ลึกที่สุด แต่แต่ละการเรียกแตกเป็นสองกิ่ง" }
+      - { match: 6, feedback: "นับเฉพาะ fib(5), fib(4), ..., fib(0) อย่างละครั้ง แต่ค่าเดิมถูกคำนวณซ้ำหลายรอบ" }
+      - { match: 14, feedback: "ลืมนับการเรียก fib(5) ครั้งแรก" }
+    solution: "ให้ C(n) คือจำนวนการเรียก C(0) = C(1) = 1 และ C(n) = 1 + C(n − 1) + C(n − 2) ได้ C(2) = 3, C(3) = 5, C(4) = 9, C(5) = 1 + 9 + 5 = 15 ครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p012
+    topics: [computer.programming.recursion]
+    difficulty: 4
+    type: numeric
+    stem: |
+      เกมหอคอยฮานอยย้ายจาน n ใบด้วยวิธีเรียกซ้ำ: ย้าย n − 1 ใบบนไปหลักพัก ย้ายใบล่างสุด 1 ครั้ง แล้วย้าย n − 1 ใบกลับมาทับ ฟังก์ชันนี้นับจำนวนครั้งที่ย้าย ถ้ามีจาน 5 ใบต้องย้ายกี่ครั้ง
+
+      ```python
+      def moves(n):
+          if n == 0:
+              return 0
+          return moves(n - 1) + 1 + moves(n - 1)
+
+      print(moves(5))
+      ```
+    answer: { value: 31, unit: "ครั้ง" }
+    hints:
+      - "moves(1) = 0 + 1 + 0 = 1 แล้วไล่ขึ้นไป"
+      - "แต่ละขั้นได้ 2 × ค่าก่อนหน้า + 1"
+    misconceptions:
+      - { match: 32, feedback: "32 คือ 2⁵ แต่ผลจริงน้อยกว่านั้น 1 เพราะ moves(0) = 0" }
+      - { match: 5, feedback: "คิดว่าย้าย n − 1 ใบรอบเดียว (moves(n − 1) + 1) แต่ต้องย้ายออกไปพักและย้ายกลับมาทับ รวมสองรอบ" }
+    solution: "moves(1) = 1, moves(2) = 3, moves(3) = 7, moves(4) = 15, moves(5) = 2 × 15 + 1 = 31 ครั้ง ตรงกับสูตร 2ⁿ − 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p013
+    topics: [computer.programming.recursion]
+    difficulty: 4
+    type: numeric
+    stem: |
+      โฟลเดอร์โครงงานมีโครงสร้างตามภาพ ฟังก์ชันนี้นับไฟล์ในโฟลเดอร์และทุกโฟลเดอร์ย่อย ผลของ `count_files(โฟลเดอร์โครงงาน)` คือเท่าใด
+
+      ```python
+      def count_files(folder):
+          n = len(folder["files"])
+          for sub in folder["subs"]:
+              n = n + count_files(sub)
+          return n
+      ```
+    figure:
+      src: folder-tree.svg
+      alt: "ต้นไม้โฟลเดอร์ โฟลเดอร์ โครงงาน มีไฟล์ 2 ไฟล์ คือ รายงาน.docx และ ปก.png และมีโฟลเดอร์ย่อย 2 โฟลเดอร์ โฟลเดอร์ ข้อมูล มีไฟล์ 3 ไฟล์ คือ ผล1.csv ผล2.csv ผล3.csv และมีโฟลเดอร์ย่อย ดิบ ซึ่งมีไฟล์ 4 ไฟล์ คือ ก.txt ข.txt ค.txt ง.txt โฟลเดอร์ ภาพ มีไฟล์ 2 ไฟล์ คือ กราฟ.png และ แปลง.jpg และมีโฟลเดอร์ย่อย ร่าง ซึ่งมีไฟล์ 1 ไฟล์ คือ ร่าง1.png"
+    answer: { value: 12, unit: "ไฟล์" }
+    hints:
+      - "แต่ละโฟลเดอร์นับไฟล์ของตัวเอง แล้วบวกผลจากโฟลเดอร์ย่อย"
+      - "เริ่มจากโฟลเดอร์ที่ไม่มีโฟลเดอร์ย่อย (ดิบ และ ร่าง) แล้วรวมขึ้นไป"
+    misconceptions:
+      - { match: 2, feedback: "นับเฉพาะไฟล์ในโฟลเดอร์บนสุด แต่ฟังก์ชันเรียกตัวเองกับทุกโฟลเดอร์ย่อย" }
+      - { match: 7, feedback: "นับลงไปแค่ชั้นเดียว ลืมไฟล์ในโฟลเดอร์ ดิบ และ ร่าง ที่ซ้อนลงไปอีกชั้น" }
+      - { match: 5, feedback: "5 คือจำนวนโฟลเดอร์ (เท่ากับจำนวนครั้งที่เรียกฟังก์ชัน) ไม่ใช่จำนวนไฟล์" }
+    solution: "ดิบ = 4, ข้อมูล = 3 + 4 = 7, ร่าง = 1, ภาพ = 2 + 1 = 3, โครงงาน = 2 + 7 + 3 = 12 ไฟล์ ฟังก์ชันถูกเรียก 5 ครั้ง (หนึ่งครั้งต่อโฟลเดอร์)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p014
+    topics: [computer.programming.recursion]
+    difficulty: 5
+    type: numeric
+    stem: "เมื่อเรียก `fib(5)` ด้วยฟังก์ชันในบทเรียน ในขณะที่กองการเรียก **ลึกที่สุด** มีกรอบของ fib ซ้อนกันอยู่พร้อมกันกี่กรอบ"
+    answer: { value: 5, unit: "กรอบ" }
+    hints:
+      - "ความลึกคือจำนวนการเรียกที่ยังค้างรออยู่พร้อมกัน ไม่ใช่จำนวนการเรียกทั้งหมด"
+      - "ไล่สายที่ลึกที่สุด fib(5) → fib(4) → ... จนถึงกรณีฐาน"
+    misconceptions:
+      - { match: 15, feedback: "15 คือจำนวนการเรียกทั้งหมด แต่กรอบที่ทำเสร็จแล้วถูกยกออกจากกอง ไม่ได้ค้างพร้อมกัน" }
+      - { match: 6, feedback: "fib(1) เป็นกรณีฐาน สายที่ลึกที่สุดคือ fib(5), fib(4), fib(3), fib(2), fib(1) ไม่ได้ลงไปถึง fib(0) ต่อจาก fib(1)" }
+    solution: "สายที่ลึกที่สุดคือ fib(5) → fib(4) → fib(3) → fib(2) → fib(1) มี 5 กรอบซ้อนกัน เมื่อ fib(1) คืนค่า กรอบนั้นถูกยกออกก่อน fib(2) จะเรียก fib(0) ซึ่งยังลึก 5 กรอบเท่าเดิม ความลึกจึงโตเป็นเส้นตรงตาม n แม้จำนวนการเรียกทั้งหมด (15) จะโตเร็วกว่ามาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p015
+    topics: [computer.programming.recursion]
+    difficulty: 5
+    type: mcq
+    stem: "ต้องการหาผลรวม 1 + 2 + ... + 100,000 ใน Python ด้วยฟังก์ชัน sum_to แบบเรียกซ้ำในบทเรียน หรือแบบวนซ้ำ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ควรใช้แบบวนซ้ำ เพราะแบบเรียกซ้ำต้องซ้อนกรอบราว 100,000 ชั้น เกินขีดจำกัดราว 1,000 ชั้น จะเกิด RecursionError", correct: true }
+      - { id: b, text: "แบบเรียกซ้ำเร็วกว่าเสมอ เพราะโค้ดสั้นกว่า", feedback: "โค้ดสั้นไม่ได้แปลว่าเร็ว และแบบเรียกซ้ำในกรณีนี้หยุดด้วยข้อผิดพลาดก่อนจะได้คำตอบ" }
+      - { id: c, text: "ทั้งสองแบบได้คำตอบเหมือนกันทุกกรณี ไม่มีข้อแตกต่าง", feedback: "ผลในทางคณิตศาสตร์เท่ากัน แต่ Python จำกัดความลึกของการเรียกซ้ำ" }
+      - { id: d, text: "ต้องใช้แบบเรียกซ้ำ เพราะปัญหานี้ซ้อนตัวเอง", feedback: "ปัญหาเรียงลำดับธรรมดาเขียนแบบวนซ้ำได้ง่ายและไม่มีข้อจำกัดความลึก" }
+    hints:
+      - "sum_to(100000) ต้องเรียก sum_to(99999), ... ค้างไว้พร้อมกันกี่ชั้น"
+      - "ค่าเริ่มต้นของขีดจำกัดใน Python คือเท่าใด (ดูตารางในบทเรียน)"
+    solution: "sum_to(100000) ต้องค้างกรอบพร้อมกันราว 100,000 กรอบ เกินขีดจำกัดค่าเริ่มต้น 1,000 จึงเกิด RecursionError แบบวนซ้ำใช้ตัวแปรชุดเดียวและได้ 5,000,050,000 การเรียกซ้ำเหมาะกับปัญหาที่ซ้อนตัวเองและไม่ลึกมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p016
+    topics: [computer.programming.recursion]
+    difficulty: 5
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด (ไล่ค่าจากกรณีเล็กขึ้นไป)
+
+      ```python
+      def g(n):
+          if n <= 1:
+              return 1
+          return g(n - 1) + g(n - 2) + 1
+
+      print(g(4))
+      ```
+    answer: { value: 9 }
+    hints:
+      - "g(0) = 1 และ g(1) = 1 จากกรณีฐาน"
+      - "g(2) = g(1) + g(0) + 1 แล้วหา g(3) และ g(4) ต่อ"
+    misconceptions:
+      - { match: 5, feedback: "5 คือ g(3) ยังต้องคำนวณ g(4) = g(3) + g(2) + 1" }
+      - { match: 7, feedback: "ใช้ g(0) = 0 แต่กรณีฐาน n <= 1 คืน 1 ทั้ง g(0) และ g(1)" }
+    solution: "g(0) = g(1) = 1, g(2) = 1 + 1 + 1 = 3, g(3) = 3 + 1 + 1 = 5, g(4) = 5 + 3 + 1 = 9 สังเกตว่า g(n) เท่ากับจำนวนครั้งที่ fib(n) ถูกเรียก (fib(4) เรียก 9 ครั้ง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p017
+    topics: [computer.programming.recursion]
+    difficulty: 4
+    type: mcq
+    stem: |
+      นักเรียนลืมคำว่า `return` หน้าการเรียกซ้ำ เรียก `broken(3)` แล้วเกิดอะไรขึ้น
+
+      ```python
+      def broken(n):
+          if n == 0:
+              return 0
+          n + broken(n - 1)
+      ```
+    choices:
+      - { id: a, text: "เกิด TypeError เพราะ broken(1) คืน None แล้ว broken(2) นำ None ไปบวกกับ 2", correct: true }
+      - { id: b, text: "คืน 6 ตามปกติ", feedback: "บรรทัดสุดท้ายคำนวณแต่ไม่ได้ return ฟังก์ชันที่ไม่มี return คืน None" }
+      - { id: c, text: "เกิด RecursionError", feedback: "n ลดลงจนถึง 0 ได้ กรณีฐานทำงาน ปัญหาอยู่ที่ค่าที่คืนกลับขึ้นมา" }
+      - { id: d, text: "คืน 0", feedback: "broken(0) คืน 0 จริง แต่ชั้นบน ๆ ไม่ได้ส่งค่านั้นต่อ" }
+    hints:
+      - "broken(0) คืน 0 แล้ว broken(1) ทำ 1 + 0 แต่ไม่ return ค่านั้น broken(1) จึงคืนอะไร"
+      - "broken(2) คำนวณ 2 + ค่าที่ broken(1) คืน"
+    solution: "broken(0) คืน 0 → broken(1) คำนวณ 1 + 0 แต่ไม่ return จึงคืน None → broken(2) คำนวณ 2 + None เกิด TypeError ทันที แก้โดยเขียน return n + broken(n - 1)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
