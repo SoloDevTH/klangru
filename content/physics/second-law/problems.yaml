@@ -1,0 +1,292 @@
+problems:
+  - id: physics.thermal.second-law.p001
+    topics: [physics.thermal.second-law]
+    difficulty: 1
+    type: mcq
+    stem: "นักประดิษฐ์อ้างว่าสร้างเครื่องยนต์ที่ทำงานเป็นวัฏจักร รับความร้อนจากน้ำทะเลแล้วเปลี่ยนเป็นงานได้ทั้งหมดโดยไม่ทิ้งความร้อนเลย ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "เป็นไปไม่ได้ เพราะขัดกับกฎข้อที่สองของอุณหพลศาสตร์", correct: true }
+      - { id: b, text: "เป็นไปไม่ได้ เพราะขัดกับกฎข้อที่หนึ่ง", feedback: "งานเท่ากับความร้อนที่รับ พลังงานจึงอนุรักษ์ กฎข้อที่หนึ่งไม่ได้ห้าม แต่กฎข้อที่สองห้าม" }
+      - { id: c, text: "เป็นไปได้ ถ้าใช้วัสดุที่ดีพอ", feedback: "ข้อจำกัดนี้เป็นกฎธรรมชาติ ไม่ใช่ปัญหาทางวัสดุ" }
+      - { id: d, text: "เป็นไปได้ เพราะน้ำทะเลมีพลังงานภายในมหาศาล", feedback: "พลังงานมีมาก แต่ถ้าไม่มีแหล่งเย็นให้ทิ้งความร้อน ก็เปลี่ยนเป็นงานแบบวัฏจักรไม่ได้" }
+    hints:
+      - "เครื่องยนต์ความร้อนต้องมีแหล่งร้อนและแหล่งเย็น"
+      - "นึกถึงข้อความแบบเคลวิน–พลังค์"
+    solution: "ข้อความแบบเคลวิน–พลังค์บอกว่าไม่มีเครื่องยนต์ใดเปลี่ยนความร้อนจากแหล่งเดียวเป็นงานได้ทั้งหมดในวัฏจักร ต้องทิ้งความร้อนบางส่วนให้แหล่งเย็นเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p002
+    topics: [physics.thermal.second-law]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อุปกรณ์กับปริมาณที่ใช้บอกความคุ้มค่า"
+    pairs:
+      - { left: "เครื่องยนต์รถยนต์", right: "ประสิทธิภาพ $e = W/Q_H$" }
+      - { left: "เครื่องปรับอากาศ", right: "สัมประสิทธิ์สมรรถนะ $K = Q_C/W$" }
+      - { left: "เครื่องทำน้ำร้อนแบบปั๊มความร้อน", right: "สัมประสิทธิ์สมรรถนะ $K_P = Q_H/W$" }
+    hints:
+      - "สิ่งที่ต้องการหารด้วยสิ่งที่ต้องจ่าย"
+      - "เครื่องปรับอากาศต้องการดึงความร้อนออก ปั๊มความร้อนต้องการให้ความร้อน"
+    solution: "เครื่องยนต์ต้องการงานจากความร้อน $e = W/Q_H$ เครื่องปรับอากาศต้องการดึงความร้อน $K = Q_C/W$ ปั๊มความร้อนต้องการให้ความร้อน $K_P = Q_H/W$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p003
+    topics: [physics.thermal.second-law]
+    difficulty: 2
+    type: numeric
+    stem: "เครื่องยนต์รับความร้อน $2000\\ \\mathrm{J}$ ต่อรอบและทำงาน $500\\ \\mathrm{J}$ ต่อรอบ ประสิทธิภาพเป็นกี่เปอร์เซ็นต์"
+    answer: { value: 25, tolerance: 0.25, unit: "%" }
+    misconceptions:
+      - { match: 75, feedback: "นี่คือสัดส่วนของความร้อนที่ทิ้ง ประสิทธิภาพคืองานหารความร้อนที่รับ" }
+      - { match: 400, feedback: "หารกลับด้าน ประสิทธิภาพต้องไม่เกิน 100%" }
+    hints:
+      - "$e = W/Q_H$"
+      - "คูณ 100 ให้เป็นเปอร์เซ็นต์"
+    solution: "$e = \\dfrac{500}{2000} = 0.25 = 25\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p004
+    topics: [physics.thermal.second-law]
+    difficulty: 2
+    type: numeric
+    stem: "จากเครื่องยนต์ข้อที่แล้ว (รับความร้อน $2000\\ \\mathrm{J}$ ทำงาน $500\\ \\mathrm{J}$ ต่อรอบ) เครื่องทิ้งความร้อนให้แหล่งเย็นกี่จูลต่อรอบ"
+    answer: { value: 1500, tolerance: 1, unit: J }
+    misconceptions:
+      - { match: 2500, feedback: "บวกงานเข้าไป ความร้อนที่ทิ้งคือส่วนที่ไม่ได้เปลี่ยนเป็นงาน $Q_C = Q_H - W$" }
+    hints:
+      - "ครบรอบ $\\Delta U = 0$"
+      - "$Q_C = Q_H - W$"
+    solution: "$Q_C = 2000 - 500 = 1500\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p005
+    topics: [physics.thermal.second-law]
+    difficulty: 2
+    type: numeric
+    stem: "เครื่องยนต์คาร์โนต์ทำงานระหว่างแหล่งร้อน $227\\,^\\circ\\mathrm{C}$ และแหล่งเย็น $27\\,^\\circ\\mathrm{C}$ มีประสิทธิภาพกี่เปอร์เซ็นต์"
+    answer: { value: 40, tolerance: 0.4, unit: "%" }
+    misconceptions:
+      - { match: 88.1, feedback: "ใช้องศาเซลเซียส ต้องแปลงเป็นเคลวิน $500\\ \\mathrm{K}$ และ $300\\ \\mathrm{K}$" }
+      - { match: 60, feedback: "นี่คือ $T_C/T_H$ ประสิทธิภาพคือ $1 - T_C/T_H$" }
+    hints:
+      - "$e = 1 - \\dfrac{T_C}{T_H}$ ใช้เคลวิน"
+      - "$T_H = 500\\ \\mathrm{K}$, $T_C = 300\\ \\mathrm{K}$"
+    solution: "$e = 1 - \\dfrac{300}{500} = 0.40 = 40\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p006
+    topics: [physics.thermal.second-law]
+    difficulty: 3
+    type: numeric
+    stem: "ตู้เย็นใช้งาน $100\\ \\mathrm{J}$ ดึงความร้อน $300\\ \\mathrm{J}$ ออกจากช่องเก็บอาหาร ตู้เย็นปล่อยความร้อนออกทางแผงด้านหลังกี่จูล"
+    answer: { value: 400, tolerance: 1, unit: J }
+    misconceptions:
+      - { match: 200, feedback: "ลบงานออก แต่งานที่ใส่เข้าไปก็กลายเป็นความร้อนที่ต้องทิ้งด้วย $Q_H = Q_C + W$" }
+      - { match: 300, feedback: "ความร้อนที่ทิ้งมากกว่าที่ดึงออก เพราะรวมงานที่ใส่เข้าไปด้วย" }
+    hints:
+      - "ครบรอบ พลังงานเข้าเท่ากับพลังงานออก"
+      - "$Q_H = Q_C + W$"
+    solution: "$Q_H = 300 + 100 = 400\\ \\mathrm{J}$ และ $K = 300/100 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p007
+    topics: [physics.thermal.second-law]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องปรับอากาศในห้องที่ตั้งอุณหภูมิ $25\\,^\\circ\\mathrm{C}$ ระบายความร้อนออกไปสู่อากาศนอกบ้าน $35\\,^\\circ\\mathrm{C}$ ในฤดูร้อน สัมประสิทธิ์สมรรถนะสูงสุดตามทฤษฎีคาร์โนต์เป็นเท่าใด"
+    answer: { value: 29.8, tolerance: 0.3 }
+    misconceptions:
+      - { match: 30.8, feedback: "ใช้ $T_H$ ในตัวเศษ นั่นคือของปั๊มความร้อน เครื่องปรับอากาศใช้ $T_C/(T_H - T_C)$" }
+      - { match: 2.5, feedback: "ใช้องศาเซลเซียส $25/(35-25)$ ต้องใช้เคลวิน" }
+    hints:
+      - "$K_{\\text{คาร์โนต์}} = \\dfrac{T_C}{T_H - T_C}$"
+      - "$T_C = 298\\ \\mathrm{K}$, $T_H = 308\\ \\mathrm{K}$"
+    solution: "$K = \\dfrac{298}{308 - 298} = 29.8$ เครื่องจริงได้ราว 3–4 เพราะต้องมีผลต่างอุณหภูมิมากที่คอยล์และมีการสูญเสียอื่น ๆ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p008
+    topics: [physics.thermal.second-law]
+    difficulty: 3
+    type: numeric
+    stem: "น้ำแข็ง $1.0\\ \\mathrm{kg}$ หลอมเหลวที่ $0\\,^\\circ\\mathrm{C}$ (ความร้อนแฝง $3.34 \\times 10^{5}\\ \\mathrm{J/kg}$) เอนโทรปีของน้ำเปลี่ยนไปกี่จูลต่อเคลวิน"
+    answer: { value: 1223, tolerance: 12, unit: J/K }
+    misconceptions:
+      - { match: -1223, feedback: "น้ำแข็งได้รับความร้อน เอนโทรปีจึงเพิ่ม ไม่ใช่ลด" }
+    hints:
+      - "อุณหภูมิคงตัว $\\Delta S = Q/T$"
+      - "$Q = mL$ และ $T = 273\\ \\mathrm{K}$"
+    solution: "$\\Delta S = \\dfrac{(1.0)(3.34 \\times 10^{5})}{273} = 1223\\ \\mathrm{J/K}$ โมเลกุลในของเหลวจัดเรียงได้หลายแบบกว่าในผลึก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p009
+    topics: [physics.thermal.second-law]
+    difficulty: 2
+    type: mcq
+    stem: "เทนมเย็นลงในกาแฟร้อนในแก้วเก็บความร้อนที่ปิดฝา เมื่ออุณหภูมิเท่ากันทั้งแก้ว ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "พลังงานรวมคงเดิม แต่เอนโทรปีรวมเพิ่มขึ้น", correct: true }
+      - { id: b, text: "พลังงานรวมลดลง เพราะกาแฟเย็นลง", feedback: "ความร้อนที่กาแฟเสียไปนมได้รับ ในแก้วที่ไม่แลกเปลี่ยนความร้อนกับภายนอก พลังงานรวมคงตัว" }
+      - { id: c, text: "เอนโทรปีรวมคงเดิม เพราะไม่มีความร้อนเข้าออกแก้ว", feedback: "การไหลของความร้อนภายในจากร้อนไปเย็นเป็นกระบวนการผันกลับไม่ได้ ทำให้เอนโทรปีรวมเพิ่ม" }
+      - { id: d, text: "ถ้ารอนานพอ กาแฟกับนมจะแยกกลับเป็นส่วนร้อนและส่วนเย็นเอง", feedback: "นั่นคือการลดเอนโทรปีของระบบโดดเดี่ยว ซึ่งกฎข้อที่สองบอกว่าไม่เกิดขึ้นเอง" }
+    hints:
+      - "กฎข้อที่หนึ่งพูดถึงพลังงาน กฎข้อที่สองพูดถึงทิศทาง"
+      - "วัตถุเย็นได้รับความร้อน $Q$ ที่อุณหภูมิต่ำ $Q/T$ จึงมากกว่าที่วัตถุร้อนเสียไป"
+    solution: "พลังงานอนุรักษ์ตามกฎข้อที่หนึ่ง ความร้อนไหลจากกาแฟไปนมจนพลังงานกระจายสม่ำเสมอ เอนโทรปีที่นมได้มากกว่าที่กาแฟเสีย เอนโทรปีรวมจึงเพิ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p010
+    topics: [physics.thermal.second-law]
+    difficulty: 4
+    type: numeric
+    stem: "ผสมน้ำ $1.0\\ \\mathrm{kg}$ ที่ $80\\,^\\circ\\mathrm{C}$ กับน้ำ $1.0\\ \\mathrm{kg}$ ที่ $20\\,^\\circ\\mathrm{C}$ ในภาชนะที่ไม่แลกเปลี่ยนความร้อนกับภายนอก เอนโทรปีรวมเปลี่ยนไปกี่จูลต่อเคลวิน ($c = 4200\\ \\mathrm{J/(kg\\,K)}$)"
+    answer: { value: 36.4, tolerance: 0.5, unit: J/K }
+    misconceptions:
+      - { match: 0, feedback: "ความร้อนที่ส่วนร้อนเสียเท่ากับที่ส่วนเย็นได้ แต่ได้รับที่อุณหภูมิต่างกัน เอนโทรปีจึงไม่หักล้างกันพอดี" }
+    hints:
+      - "อุณหภูมิสุดท้าย $50\\,^\\circ\\mathrm{C} = 323\\ \\mathrm{K}$"
+      - "$\\Delta S = mc\\ln\\dfrac{T_2}{T_1}$ ของแต่ละส่วนแล้วรวมกัน"
+    solution: "$\\Delta S = 4200\\left(\\ln\\dfrac{323}{353} + \\ln\\dfrac{323}{293}\\right) = 4200(-0.0888 + 0.0975) \\approx 36.4\\ \\mathrm{J/K}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p011
+    topics: [physics.thermal.second-law]
+    difficulty: 4
+    type: numeric
+    stem: "รถกระบะคันหนึ่งใช้เครื่องยนต์ที่มีประสิทธิภาพ 30% ขณะเครื่องให้กำลัง $60\\ \\mathrm{kW}$ เครื่องยนต์ทิ้งความร้อนกี่กิโลวัตต์"
+    answer: { value: 140, tolerance: 1, unit: kW }
+    misconceptions:
+      - { match: 200, feedback: "นี่คืออัตราที่เครื่องรับพลังงานจากเชื้อเพลิง ความร้อนที่ทิ้งคือส่วนที่ไม่ได้เป็นงาน" }
+      - { match: 42, feedback: "คิด 70% ของกำลังที่ได้ ต้องคิดจากพลังงานที่รับเข้าไป" }
+    hints:
+      - "อัตราการรับพลังงาน $= W/e = 60/0.30$"
+      - "ความร้อนที่ทิ้ง $=$ อัตราที่รับ $-$ กำลังที่ได้"
+    solution: "อัตราที่รับ $= \\dfrac{60}{0.30} = 200\\ \\mathrm{kW}$ ทิ้ง $= 200 - 60 = 140\\ \\mathrm{kW}$ ผ่านหม้อน้ำและท่อไอเสีย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p012
+    topics: [physics.thermal.second-law]
+    difficulty: 3
+    type: numeric
+    stem: "โรงแรมแห่งหนึ่งใช้เครื่องทำน้ำร้อนแบบปั๊มความร้อนที่มี $K_P = 3.5$ ให้ความร้อนแก่น้ำ $7.0\\ \\mathrm{kW}$ เครื่องใช้กำลังไฟฟ้ากี่กิโลวัตต์"
+    answer: { value: 2.0, tolerance: 0.02, unit: kW }
+    misconceptions:
+      - { match: 24.5, feedback: "คูณแทนการหาร $W = Q_H/K_P$" }
+      - { match: 7.0, feedback: "ปั๊มความร้อนย้ายความร้อนจากอากาศ จึงใช้ไฟฟ้าน้อยกว่าความร้อนที่ให้" }
+    hints:
+      - "$K_P = Q_H/W$"
+      - "$W = \\dfrac{7.0}{3.5}$"
+    solution: "$W = \\dfrac{7.0}{3.5} = 2.0\\ \\mathrm{kW}$ อีก $5.0\\ \\mathrm{kW}$ ดึงมาจากอากาศรอบเครื่อง เครื่องทำน้ำร้อนแบบขดลวดความร้อนต้องใช้ไฟฟ้า $7.0\\ \\mathrm{kW}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p013
+    topics: [physics.thermal.second-law]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "ข้อใดสอดคล้องกับกฎข้อที่สองของอุณหพลศาสตร์ (เลือกได้มากกว่า 1 ข้อ)"
+    choices:
+      - { id: a, text: "ตู้เย็นทำให้ภายในเย็นลงได้ เพราะใช้งานจากไฟฟ้า", correct: true }
+      - { id: b, text: "น้ำในช่องแช่แข็งมีเอนโทรปีลดลง แต่เอนโทรปีของห้องครัวเพิ่มมากกว่า", correct: true }
+      - { id: c, text: "เครื่องยนต์จริงทุกเครื่องมีประสิทธิภาพต่ำกว่าเครื่องคาร์โนต์ที่ทำงานระหว่างอุณหภูมิเดียวกัน", correct: true }
+      - { id: d, text: "ความร้อนไหลจากน้ำแข็งไปยังน้ำร้อนได้เองถ้ารอนานพอ", feedback: "ความร้อนไหลเองจากร้อนไปเย็นเท่านั้น" }
+      - { id: e, text: "เอนโทรปีของทุกวัตถุเพิ่มขึ้นเสมอ", feedback: "เอนโทรปีของบางส่วนลดลงได้ กฎข้อที่สองกล่าวถึงเอนโทรปีรวมของระบบโดดเดี่ยว" }
+    hints:
+      - "ความร้อนไหลจากเย็นไปร้อนได้ถ้ามีงานจากภายนอก"
+      - "พิจารณาเอนโทรปีรวม ไม่ใช่ของส่วนเดียว"
+    solution: "ข้อ a, b และ c ถูก ตู้เย็นใช้งานย้ายความร้อน เอนโทรปีของน้ำที่แข็งตัวลดแต่ของห้องเพิ่มมากกว่า และไม่มีเครื่องใดดีกว่าคาร์โนต์ ส่วนข้อ d และ e ขัดกับกฎข้อที่สอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p014
+    topics: [physics.thermal.second-law]
+    difficulty: 5
+    type: numeric
+    stem: "เครื่องยนต์คาร์โนต์ใช้แก๊สอุดมคติ $1.0\\ \\mathrm{mol}$ ทำงานระหว่าง $600\\ \\mathrm{K}$ และ $300\\ \\mathrm{K}$ ในขั้นขยายตัวที่อุณหภูมิคงตัว $600\\ \\mathrm{K}$ ปริมาตรเพิ่มเป็น 2 เท่า เครื่องทำงานสุทธิกี่จูลต่อรอบ ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 1728, tolerance: 17, unit: J }
+    misconceptions:
+      - { match: 3456, feedback: "นี่คือความร้อนที่รับในขั้นอุณหภูมิคงตัว ต้องคูณด้วยประสิทธิภาพ" }
+      - { match: 2493, feedback: "ลืม $\\ln 2$ ความร้อนที่รับคือ $nRT_H\\ln(V_b/V_a)$" }
+    hints:
+      - "$Q_H = nRT_H\\ln\\dfrac{V_b}{V_a}$"
+      - "$W = e\\,Q_H$ โดย $e = 1 - \\dfrac{300}{600}$"
+    solution: "$Q_H = (1.0)(8.31)(600)\\ln 2 = 3456\\ \\mathrm{J}$ $e = 0.50$ จึงได้ $W = 1728\\ \\mathrm{J}$ (ทิ้งความร้อน $1728\\ \\mathrm{J}$ ที่ $300\\ \\mathrm{K}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p015
+    topics: [physics.thermal.second-law]
+    difficulty: 5
+    type: numeric
+    stem: "แก๊สอุดมคติ $2.0\\ \\mathrm{mol}$ อยู่ในครึ่งหนึ่งของกล่องฉนวน อีกครึ่งเป็นสุญญากาศ เมื่อเจาะผนังกั้น แก๊สขยายตัวอย่างอิสระจนเต็มกล่อง เอนโทรปีของแก๊สเปลี่ยนไปกี่จูลต่อเคลวิน ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 11.5, tolerance: 0.12, unit: J/K }
+    misconceptions:
+      - { match: 0, feedback: "$Q = 0$ แต่กระบวนการนี้ผันกลับไม่ได้ ต้องหา $\\Delta S$ จากเส้นทางผันกลับได้ที่จุดต้นและจุดปลายเดียวกัน (อุณหภูมิคงตัว)" }
+      - { match: 5.76, feedback: "ลืมคูณจำนวนโมล 2" }
+    hints:
+      - "แก๊สอุดมคติขยายตัวอิสระ ไม่ทำงานและไม่รับความร้อน อุณหภูมิจึงคงเดิม"
+      - "ใช้เส้นทางอุณหภูมิคงตัวแทน $\\Delta S = nR\\ln\\dfrac{V_2}{V_1}$"
+    solution: "$\\Delta S = (2.0)(8.31)\\ln 2 = 11.5\\ \\mathrm{J/K}$ เป็นบวก สอดคล้องกับที่แก๊สไม่หดกลับไปอยู่ครึ่งกล่องเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p016
+    topics: [physics.thermal.second-law]
+    difficulty: 5
+    type: numeric
+    stem: "ช่องแช่แข็งทำน้ำ $1.0\\ \\mathrm{kg}$ ที่ $0\\,^\\circ\\mathrm{C}$ ให้เป็นน้ำแข็ง ขณะที่ห้องครัวมีอุณหภูมิ $30\\,^\\circ\\mathrm{C}$ ถ้าเป็นตู้เย็นคาร์โนต์ ต้องใช้งานอย่างน้อยกี่กิโลจูล (ความร้อนแฝง $3.34 \\times 10^{5}\\ \\mathrm{J/kg}$)"
+    answer: { value: 36.7, tolerance: 0.4, unit: kJ }
+    misconceptions:
+      - { match: 334, feedback: "นี่คือความร้อนที่ต้องดึงออก งานที่ใช้คือความร้อนนี้หารด้วย $K$" }
+      - { match: 33.1, feedback: "ใช้ $T_H$ ในตัวส่วน สัมประสิทธิ์ของตู้เย็นคือ $T_C/(T_H - T_C)$" }
+    hints:
+      - "$Q_C = mL$ และ $K = \\dfrac{T_C}{T_H - T_C} = \\dfrac{273}{30}$"
+      - "$W = Q_C/K$"
+    solution: "$Q_C = 3.34 \\times 10^{5}\\ \\mathrm{J}$ $K = \\dfrac{273}{30} = 9.1$ $W = \\dfrac{3.34 \\times 10^{5}}{9.1} = 3.67 \\times 10^{4}\\ \\mathrm{J} \\approx 36.7\\ \\mathrm{kJ}$ ตู้เย็นจริงใช้มากกว่านี้หลายเท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p017
+    topics: [physics.thermal.second-law]
+    difficulty: 2
+    type: mcq
+    stem: "ทำไมคอยล์ร้อนนอกบ้านของเครื่องปรับอากาศจึงเป่าลมที่ร้อนกว่าอากาศรอบ ๆ"
+    choices:
+      - { id: a, text: "ทิ้งความร้อนที่ดึงจากห้องรวมกับพลังงานจากงานของคอมเพรสเซอร์", correct: true }
+      - { id: b, text: "เครื่องปรับอากาศสร้างความเย็นแล้วความร้อนเกิดเป็นผลข้างเคียงเล็กน้อย", feedback: "เครื่องปรับอากาศไม่ได้สร้างความเย็น มันย้ายความร้อนออกจากห้อง" }
+      - { id: c, text: "คอมเพรสเซอร์ขัดข้อง", feedback: "ลมร้อนเป็นการทำงานปกติ ความร้อนต้องถูกทิ้งที่ไหนสักแห่ง" }
+      - { id: d, text: "แดดส่องคอยล์ร้อนเท่านั้น", feedback: "แม้ตอนกลางคืนก็มีลมร้อนออกมา เพราะเป็นความร้อนที่ดึงจากห้อง" }
+    hints:
+      - "ความร้อนไหลจากห้องเย็นไปข้างนอกที่ร้อนกว่าเองไม่ได้"
+      - "$Q_H = Q_C + W$"
+    solution: "เครื่องปรับอากาศใช้งาน $W$ ย้ายความร้อน $Q_C$ ออกจากห้อง แล้วทิ้ง $Q_H = Q_C + W$ ที่คอยล์ร้อน ลมที่ออกมาจึงร้อนกว่าอากาศรอบ ๆ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.second-law.p018
+    topics: [physics.thermal.second-law]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นของวัฏจักรคาร์โนต์ของเครื่องยนต์ โดยเริ่มจากสถานะที่แก๊สมีปริมาตรน้อยที่สุดและอุณหภูมิ $T_H$"
+    items:
+      - "ขยายตัวที่อุณหภูมิคงตัว $T_H$ รับความร้อน $Q_H$"
+      - "ขยายตัวแบบอะเดียบาติก อุณหภูมิลดจาก $T_H$ เป็น $T_C$"
+      - "ถูกอัดที่อุณหภูมิคงตัว $T_C$ ทิ้งความร้อน $Q_C$"
+      - "ถูกอัดแบบอะเดียบาติก อุณหภูมิเพิ่มกลับเป็น $T_H$"
+    hints:
+      - "ความร้อนเข้าที่อุณหภูมิสูง และออกที่อุณหภูมิต่ำ"
+      - "ขั้นอะเดียบาติกใช้เปลี่ยนอุณหภูมิระหว่างสองแหล่ง"
+    solution: "ขยายตัวที่ $T_H$ → ขยายตัวอะเดียบาติกจนเย็นลงเป็น $T_C$ → อัดที่ $T_C$ → อัดอะเดียบาติกจนร้อนกลับเป็น $T_H$ วัฏจักรนี้วนตามเข็มนาฬิกาบนแผนภาพ P–V"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

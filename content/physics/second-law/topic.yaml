@@ -1,0 +1,77 @@
+id: physics.thermal.second-law
+subject: physics
+title: { th: กฎข้อที่สองของอุณหพลศาสตร์และเครื่องยนต์ความร้อน, en: The second law of thermodynamics and heat engines }
+summary: ระดับมหาวิทยาลัย ทิศทางของกระบวนการ เครื่องยนต์ความร้อนและประสิทธิภาพ ตู้เย็น เครื่องปรับอากาศ ปั๊มความร้อน วัฏจักรคาร์โนต์ และเอนโทรปี
+difficulty: 8
+minutes: 40
+prerequisites: [physics.thermal.first-law]
+encompasses:
+  - { id: physics.thermal.first-law, weight: 0.4 }
+  - { id: physics.thermal.temperature-heat, weight: 0.2 }
+  - { id: physics.thermal.phase-change, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: การไหลของพลังงาน
+    src: engine-fridge.svg
+    alt: "ซ้าย เครื่องยนต์ความร้อน: ความร้อน QH ไหลจากแหล่งร้อนอุณหภูมิ TH เข้าเครื่อง เครื่องให้งาน W ออกไปทางขวา และทิ้งความร้อน QC ลงแหล่งเย็นอุณหภูมิ TC ประสิทธิภาพ e = W/QH = 1 − QC/QH ขวา ตู้เย็นหรือเครื่องปรับอากาศ: งาน W เข้าปั๊ม ความร้อน QC ถูกดึงจากแหล่งเย็นขึ้นมา และความร้อน QH = QC + W ถูกทิ้งให้แหล่งร้อน สัมประสิทธิ์สมรรถนะ K = QC/W"
+  - type: worked-example
+    title: โรงไฟฟ้าเทียบกับขีดจำกัดของคาร์โนต์
+    problem: "กังหันไอน้ำในโรงไฟฟ้ารับไอน้ำที่ $550\\,^\\circ\\mathrm{C}$ และควบแน่นไอน้ำด้วยน้ำหล่อเย็นที่ $30\\,^\\circ\\mathrm{C}$ ประสิทธิภาพสูงสุดตามทฤษฎีเป็นเท่าใด ถ้าโรงไฟฟ้าจริงมีประสิทธิภาพ 40% และผลิตไฟฟ้า $500\\ \\mathrm{MW}$ ต้องทิ้งความร้อนกี่เมกะวัตต์"
+    steps:
+      - text: "แปลงเป็นเคลวิน $T_H = 823\\ \\mathrm{K}$, $T_C = 303\\ \\mathrm{K}$"
+      - text: "$e_{\\text{คาร์โนต์}} = 1 - \\dfrac{303}{823} = 0.632$ หรือ 63%"
+        why: "นี่คือเพดานที่ไม่มีเครื่องจริงใดทำได้เกิน เพราะทุกเครื่องจริงมีกระบวนการผันกลับไม่ได้ เช่น แรงเสียดทานและการถ่ายโอนความร้อนข้ามผลต่างอุณหภูมิ"
+      - text: "เครื่องจริง $Q_H = \\dfrac{W}{e} = \\dfrac{500}{0.40} = 1250\\ \\mathrm{MW}$"
+      - text: "$Q_C = Q_H - W = 1250 - 500 = 750\\ \\mathrm{MW}$"
+    answer: "ประสิทธิภาพสูงสุดราว 63% โรงไฟฟ้าจริงทิ้งความร้อน $750\\ \\mathrm{MW}$ ลงน้ำหล่อเย็นหรือหอหล่อเย็น"
+  - { type: check, problem: physics.thermal.second-law.p005, prompt: "ใช้อุณหภูมิเคลวินเสมอ" }
+  - type: figure
+    title: วัฏจักรคาร์โนต์บนแผนภาพ P–V
+    src: carnot-cycle.svg
+    alt: "แผนภาพ P–V ของแก๊สอุดมคติอะตอมเดี่ยว 1 โมล จาก a (10 L) ขยายตัวที่อุณหภูมิคงตัว 600 K ไป b (20 L) เส้นสีแดง จาก b ขยายตัวแบบอะเดียบาติกไป c (ราว 57 L) เส้นสีเขียว จาก c ถูกอัดที่อุณหภูมิคงตัว 300 K ไป d (ราว 28 L) เส้นสีน้ำเงิน แล้วถูกอัดแบบอะเดียบาติกกลับ a พื้นที่ที่ล้อมไว้แรเงาคืองานสุทธิ วัฏจักรวนตามเข็มนาฬิกา"
+  - type: worked-example
+    title: เอนโทรปีเมื่อผสมน้ำร้อนกับน้ำเย็น
+    problem: "ผสมน้ำ $1.0\\ \\mathrm{kg}$ ที่ $80\\,^\\circ\\mathrm{C}$ กับน้ำ $1.0\\ \\mathrm{kg}$ ที่ $20\\,^\\circ\\mathrm{C}$ ในภาชนะที่ไม่แลกเปลี่ยนความร้อนกับภายนอก จงหาการเปลี่ยนเอนโทรปีรวม ($c = 4200\\ \\mathrm{J/(kg\\,K)}$)"
+    steps:
+      - text: "อุณหภูมิสุดท้าย $50\\,^\\circ\\mathrm{C} = 323\\ \\mathrm{K}$ (มวลเท่ากัน)"
+      - text: "น้ำร้อน: $\\Delta S_1 = mc\\ln\\dfrac{323}{353} = 4200 \\times (-0.0888) = -373\\ \\mathrm{J/K}$"
+        why: "น้ำร้อนเสียความร้อน เอนโทรปีจึงลดลง สูตร $mc\\ln(T_2/T_1)$ มาจากการอินทิเกรต $dQ/T = mc\\,dT/T$"
+      - text: "น้ำเย็น: $\\Delta S_2 = 4200\\ln\\dfrac{323}{293} = 4200 \\times 0.0975 = +409\\ \\mathrm{J/K}$"
+      - text: "รวม $\\Delta S = -373 + 409 \\approx +36\\ \\mathrm{J/K}$"
+        why: "ความร้อนเท่ากันแต่น้ำเย็นรับความร้อนที่อุณหภูมิต่ำกว่า $Q/T$ จึงมากกว่า เอนโทรปีรวมเพิ่มขึ้นตามกฎข้อที่สอง"
+    answer: "เอนโทรปีรวมเพิ่มขึ้นราว $36\\ \\mathrm{J/K}$ น้ำจะไม่แยกกลับเป็นน้ำร้อนกับน้ำเย็นเอง"
+  - { type: check, problem: physics.thermal.second-law.p009, prompt: "พลังงานอนุรักษ์ แต่เอนโทรปีรวมเพิ่ม" }
+  - type: interactive
+    title: ประสิทธิภาพของเครื่องยนต์คาร์โนต์
+    caption: "กราฟคือ $e = 1 - T_C/T_H$ เมื่อ $x$ คืออุณหภูมิแหล่งร้อน (เคลวิน) และ $c$ คืออุณหภูมิแหล่งเย็น ลองเพิ่ม $T_H$ หรือลด $T_C$ ดูว่าเพิ่มประสิทธิภาพได้มากเท่าใด และสังเกตว่ากราฟไม่ถึง 1"
+    widget:
+      kind: function-plot
+      functions: ["1-\\frac{c}{x}"]
+      sliders:
+        - { name: c, min: 250, max: 400, step: 10, value: 300, label: อุณหภูมิแหล่งเย็น (K) }
+      x: [300, 2000]
+      y: [0, 1]
+glossary:
+  - { term: เครื่องยนต์ความร้อน, definition: "อุปกรณ์ที่ทำงานเป็นวัฏจักร รับความร้อนจากแหล่งร้อน เปลี่ยนบางส่วนเป็นงาน และทิ้งส่วนที่เหลือให้แหล่งเย็น" }
+  - { term: ประสิทธิภาพ, definition: "อัตราส่วนของงานที่ได้ต่อความร้อนที่รับจากแหล่งร้อน e = W/Q_H" }
+  - { term: สัมประสิทธิ์สมรรถนะ, definition: "อัตราส่วนของความร้อนที่ย้ายได้ต่องานที่ใช้ ใช้บอกความคุ้มค่าของตู้เย็น เครื่องปรับอากาศ และปั๊มความร้อน" }
+  - { term: วัฏจักรคาร์โนต์, definition: "วัฏจักรผันกลับได้ที่มีกระบวนการอุณหภูมิคงตัวสองขั้นและอะเดียบาติกสองขั้น ให้ประสิทธิภาพสูงสุดระหว่างสองอุณหภูมิ" }
+  - { term: เอนโทรปี, definition: "ฟังก์ชันสถานะที่บอกการกระจายตัวของพลังงาน การเปลี่ยนแปลงหาได้จาก ΔS = ∫dQ/T ตามเส้นทางผันกลับได้" }
+  - { term: กระบวนการผันกลับไม่ได้, definition: "กระบวนการที่ย้อนกลับเองไม่ได้โดยไม่ทิ้งการเปลี่ยนแปลงไว้ในสิ่งแวดล้อม เช่น ความร้อนไหลจากร้อนไปเย็น แรงเสียดทาน" }
+flashcards:
+  - { front: "ประสิทธิภาพของเครื่องยนต์ความร้อน", back: "$e = \\dfrac{W}{Q_H} = 1 - \\dfrac{Q_C}{Q_H}$" }
+  - { front: "ประสิทธิภาพคาร์โนต์", back: "$e = 1 - \\dfrac{T_C}{T_H}$ (เคลวิน)" }
+  - { front: "สัมประสิทธิ์สมรรถนะของตู้เย็น", back: "$K = \\dfrac{Q_C}{W}$ คาร์โนต์ $K = \\dfrac{T_C}{T_H - T_C}$" }
+  - { front: "การเปลี่ยนเอนโทรปี", back: "$\\Delta S = \\int \\dfrac{dQ_{\\text{rev}}}{T}$ ที่ $T$ คงตัว $\\Delta S = Q/T$" }
+  - { front: "กฎข้อที่สองในรูปเอนโทรปี", back: "ระบบโดดเดี่ยว $\\Delta S_{\\text{รวม}} \\ge 0$" }
+references:
+  - { title: "กฎข้อที่สองของอุณหพลศาสตร์", url: "https://th.wikipedia.org/wiki/กฎข้อที่สองของอุณหพลศาสตร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Carnot cycle", url: "https://en.wikipedia.org/wiki/Carnot_cycle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.5 The Carnot Cycle (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/4-5-the-carnot-cycle", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "4.6 Entropy (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
