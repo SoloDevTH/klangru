@@ -1,0 +1,327 @@
+problems:
+  - id: math.algebra.radicals.p001
+    topics: [math.algebra.radicals]
+    difficulty: 1
+    type: mcq
+    stem: "$\\sqrt{12}$ ในรูปอย่างง่ายคือข้อใด"
+    choices:
+      - { id: a, text: "$2\\sqrt3$", correct: true }
+      - { id: b, text: "$4\\sqrt3$", feedback: "ดึง 4 ออกมาจากรากแต่ลืมถอดราก $\\sqrt4 = 2$" }
+      - { id: c, text: "$3\\sqrt2$", feedback: "$3\\sqrt2 = \\sqrt{18}$ ไม่ใช่ $\\sqrt{12}$ ต้องแยก $12 = 4 \\times 3$" }
+      - { id: d, text: "$6\\sqrt2$", feedback: "แยก $12 = 6 \\times 2$ แต่ 6 ไม่ใช่กำลังสองสมบูรณ์ จึงดึงออกจากรากไม่ได้" }
+    hints:
+      - "หากำลังสองสมบูรณ์ที่ใหญ่ที่สุดที่หาร 12 ลงตัว"
+      - "$12 = 4 \\times 3$ แล้วใช้ $\\sqrt{ab} = \\sqrt a\\sqrt b$"
+    solution: "$\\sqrt{12} = \\sqrt{4 \\times 3} = \\sqrt4 \\times \\sqrt3 = 2\\sqrt3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p002
+    topics: [math.algebra.radicals]
+    difficulty: 2
+    type: expression
+    stem: "จงเขียน $\\sqrt{75}$ ในรูปอย่างง่าย"
+    answer: { latex: "5\\sqrt{3}", variables: [] }
+    hints:
+      - "75 หารด้วยกำลังสองสมบูรณ์ใดลงตัว"
+      - "$75 = 25 \\times 3$"
+    misconceptions:
+      - { match: "25\\sqrt{3}", feedback: "ดึง 25 ออกจากรากแต่ลืมถอดราก $\\sqrt{25} = 5$" }
+      - { match: "3\\sqrt{5}", feedback: "สลับตัวเลข $3\\sqrt5 = \\sqrt{45}$ ไม่ใช่ $\\sqrt{75}$" }
+    solution: "$\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p003
+    topics: [math.algebra.radicals]
+    difficulty: 2
+    type: expression
+    stem: "จงหาค่า $3\\sqrt2 + 5\\sqrt2$ ในรูปอย่างง่าย"
+    answer: { latex: "8\\sqrt{2}", variables: [] }
+    hints:
+      - "$\\sqrt2$ เป็นพจน์คล้ายเหมือน $x$"
+      - "$3x + 5x = 8x$"
+    misconceptions:
+      - { match: "8\\sqrt{4}", feedback: "บวกจำนวนใต้รากด้วย แต่ $\\sqrt2$ เป็นตัวร่วม ไม่ต้องบวก (เหมือน $3x + 5x = 8x$ ไม่ใช่ $8x^2$)" }
+      - { match: "15\\sqrt{2}", feedback: "คูณสัมประสิทธิ์ $3 \\times 5$ แต่โจทย์ให้บวก" }
+    solution: "$3\\sqrt2 + 5\\sqrt2 = (3 + 5)\\sqrt2 = 8\\sqrt2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p004
+    topics: [math.algebra.radicals]
+    difficulty: 2
+    type: expression
+    stem: "จงหาค่า $\\sqrt8 + \\sqrt{18}$ ในรูปอย่างง่าย"
+    answer: { latex: "5\\sqrt{2}", variables: [] }
+    hints:
+      - "ทำแต่ละรากให้อยู่ในรูปอย่างง่ายก่อน"
+      - "$\\sqrt8 = 2\\sqrt2$ และ $\\sqrt{18} = 3\\sqrt2$"
+    misconceptions:
+      - { match: "\\sqrt{26}", feedback: "บวกใต้รากเลย แต่ $\\sqrt a + \\sqrt b \\ne \\sqrt{a + b}$" }
+      - { match: "6\\sqrt{2}", feedback: "ตรวจ $\\sqrt8$ อีกครั้ง $8 = 4 \\times 2$ ได้ $2\\sqrt2$ ไม่ใช่ $3\\sqrt2$" }
+    solution: "$\\sqrt8 + \\sqrt{18} = 2\\sqrt2 + 3\\sqrt2 = 5\\sqrt2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p005
+    topics: [math.algebra.radicals]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่าของ $|-7| + |3 - 5|$"
+    answer: { value: 9 }
+    hints:
+      - "ค่าสัมบูรณ์คือระยะจาก 0 จึงไม่เป็นลบ"
+      - "หาค่าในเครื่องหมายค่าสัมบูรณ์ก่อน $3 - 5 = -2$"
+    misconceptions:
+      - { match: 5, feedback: "ใช้ $|3 - 5| = -2$ แต่ค่าสัมบูรณ์ไม่เป็นลบ $|-2| = 2$" }
+      - { match: -9, feedback: "ค่าสัมบูรณ์ไม่เป็นลบ $|-7| = 7$" }
+    solution: "$|-7| + |3 - 5| = 7 + |-2| = 7 + 2 = 9$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p006
+    topics: [math.algebra.radicals]
+    difficulty: 2
+    type: numeric
+    stem: "อุณหภูมิบนยอดดอยอินทนนท์ตอนเช้ามืดวันหนึ่งเป็น $-2$ องศาเซลเซียส ตอนบ่ายเป็น $15$ องศาเซลเซียส อุณหภูมิต่างกันกี่องศาเซลเซียส"
+    answer: { value: 17, unit: °C }
+    hints:
+      - "ผลต่างคือระยะระหว่างสองจำนวนบนเส้นจำนวน $|a - b|$"
+      - "$|15 - (-2)|$"
+    misconceptions:
+      - { match: 13, feedback: "ลบ $15 - 2$ แต่อุณหภูมิตอนเช้าติดลบ ต้องเป็น $15 - (-2)$" }
+      - { match: -17, feedback: "คิด $-2 - 15$ แต่ผลต่างเป็นระยะทางจึงไม่เป็นลบ ใช้ค่าสัมบูรณ์" }
+    solution: "$|15 - (-2)| = |17| = 17$ องศาเซลเซียส (จาก $-2$ ขึ้นไป 0 ได้ 2 องศา แล้วขึ้นต่อถึง 15 อีก 15 องศา)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p007
+    topics: [math.algebra.radicals]
+    difficulty: 3
+    type: expression
+    stem: "จงหาค่า $\\sqrt6 \\times \\sqrt{15}$ ในรูปอย่างง่าย"
+    answer: { latex: "3\\sqrt{10}", variables: [] }
+    hints:
+      - "$\\sqrt a \\times \\sqrt b = \\sqrt{ab}$"
+      - "$\\sqrt{90}$ แล้วแยก $90 = 9 \\times 10$"
+    misconceptions:
+      - { match: "9\\sqrt{10}", feedback: "ดึง 9 ออกจากรากแต่ลืมถอดราก $\\sqrt9 = 3$" }
+      - { match: "\\sqrt{21}", feedback: "บวกจำนวนใต้รากแทนการคูณ" }
+    solution: "$\\sqrt6 \\times \\sqrt{15} = \\sqrt{90} = \\sqrt{9 \\times 10} = 3\\sqrt{10}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p008
+    topics: [math.algebra.radicals]
+    difficulty: 3
+    type: expression
+    stem: "จงทำ $\\dfrac{6}{\\sqrt3}$ ให้ตัวส่วนไม่ติดกรณฑ์และอยู่ในรูปอย่างง่าย"
+    answer: { latex: "2\\sqrt{3}", variables: [] }
+    hints:
+      - "คูณทั้งเศษและส่วนด้วย $\\sqrt3$"
+      - "$\\sqrt3 \\times \\sqrt3 = 3$ แล้วตัดทอนเศษส่วน"
+    misconceptions:
+      - { match: "6\\sqrt{3}", feedback: "คูณเศษด้วย $\\sqrt3$ แล้วลืมว่าส่วนกลายเป็น 3 ต้องหารด้วย 3" }
+      - { match: "2", feedback: "หาร 6 ด้วย 3 แต่ลืม $\\sqrt3$ ที่เศษ" }
+    solution: "$\\dfrac{6}{\\sqrt3} \\times \\dfrac{\\sqrt3}{\\sqrt3} = \\dfrac{6\\sqrt3}{3} = 2\\sqrt3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p009
+    topics: [math.algebra.radicals]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่าของ $(2 + \\sqrt3)(2 - \\sqrt3)$"
+    answer: { value: 1 }
+    hints:
+      - "ใช้ $(a + b)(a - b) = a^2 - b^2$"
+      - "$(\\sqrt3)^2 = 3$"
+    misconceptions:
+      - { match: 7, feedback: "บวก $4 + 3$ แต่ผลต่างกำลังสองต้องลบ $a^2 - b^2$" }
+      - { match: -5, feedback: "ใช้ $(\\sqrt3)^2 = 9$ แต่ $(\\sqrt3)^2 = 3$" }
+    solution: "$(2 + \\sqrt3)(2 - \\sqrt3) = 2^2 - (\\sqrt3)^2 = 4 - 3 = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p010
+    topics: [math.algebra.radicals]
+    difficulty: 3
+    type: mcq
+    stem: "จำนวนใดเป็นจำนวนอตรรกยะ"
+    choices:
+      - { id: a, text: "$2 + \\sqrt3$", correct: true }
+      - { id: b, text: "$\\sqrt2 \\times \\sqrt8$", feedback: "$\\sqrt2 \\times \\sqrt8 = \\sqrt{16} = 4$ เป็นจำนวนตรรกยะ ผลคูณของอตรรกยะสองจำนวนอาจเป็นตรรกยะได้" }
+      - { id: c, text: "$(\\sqrt5)^2$", feedback: "$(\\sqrt5)^2 = 5$ เป็นจำนวนตรรกยะ" }
+      - { id: d, text: "$\\dfrac{\\sqrt{12}}{\\sqrt3}$", feedback: "$\\sqrt{\\tfrac{12}{3}} = \\sqrt4 = 2$ เป็นจำนวนตรรกยะ" }
+    hints:
+      - "หาค่าของแต่ละข้อให้อยู่ในรูปอย่างง่ายก่อน"
+      - "ตรรกยะบวกอตรรกยะได้อตรรกยะเสมอ"
+    solution: "2 เป็นตรรกยะ $\\sqrt3$ เป็นอตรรกยะ ผลบวกจึงเป็นอตรรกยะ ข้ออื่นได้ 4, 5, 2 ซึ่งเป็นตรรกยะ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p011
+    topics: [math.algebra.radicals]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ตัวอย่างกับสมบัติของจำนวนจริง"
+    pairs:
+      - { left: "$\\sqrt2 + \\sqrt5 = \\sqrt5 + \\sqrt2$", right: "การสลับที่ของการบวก" }
+      - { left: "$\\sqrt3(2 + \\sqrt3) = 2\\sqrt3 + 3$", right: "การแจกแจง" }
+      - { left: "$\\sqrt7 + (-\\sqrt7) = 0$", right: "ตัวผกผันการบวก" }
+      - { left: "$\\sqrt2 \\times \\tfrac{1}{\\sqrt2} = 1$", right: "ตัวผกผันการคูณ" }
+      - { left: "$(\\sqrt2 \\times 3) \\times 5 = \\sqrt2 \\times (3 \\times 5)$", right: "การเปลี่ยนกลุ่มของการคูณ" }
+    hints:
+      - "ตัวผกผันทำให้ได้เอกลักษณ์ (0 สำหรับการบวก 1 สำหรับการคูณ)"
+      - "การแจกแจงคือคูณเข้าไปในวงเล็บ"
+    solution: "สลับที่คือเปลี่ยนลำดับ แจกแจงคือคูณเข้าวงเล็บ ตัวผกผันการบวกได้ 0 ตัวผกผันการคูณได้ 1 เปลี่ยนกลุ่มคือย้ายวงเล็บ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p012
+    topics: [math.algebra.radicals]
+    difficulty: 4
+    type: expression
+    stem: "จงทำ $\\dfrac{4}{\\sqrt5 - 1}$ ให้ตัวส่วนไม่ติดกรณฑ์และอยู่ในรูปอย่างง่าย"
+    answer: { latex: "\\sqrt{5}+1", variables: [] }
+    hints:
+      - "คูณทั้งเศษและส่วนด้วยสังยุค $\\sqrt5 + 1$"
+      - "ส่วนกลายเป็น $(\\sqrt5)^2 - 1^2$"
+    misconceptions:
+      - { match: "\\sqrt{5}-1", feedback: "เครื่องหมายผิด คูณด้วยสังยุค $\\sqrt5 + 1$ เศษจึงเป็น $4(\\sqrt5 + 1)$" }
+      - { match: "4\\sqrt{5}+4", feedback: "ลืมหารด้วยส่วน $5 - 1 = 4$" }
+    solution: "$\\dfrac{4}{\\sqrt5 - 1} \\times \\dfrac{\\sqrt5 + 1}{\\sqrt5 + 1} = \\dfrac{4(\\sqrt5 + 1)}{5 - 1} = \\sqrt5 + 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p013
+    topics: [math.algebra.radicals]
+    difficulty: 4
+    type: order
+    stem: "เรียงจำนวนจากน้อยไปมาก"
+    items:
+      - "$\\sqrt[6]{7}$"
+      - "$\\sqrt2$"
+      - "$\\sqrt[3]{3}$"
+      - "$\\sqrt[4]{5}$"
+    hints:
+      - "ทำให้เป็นรากอันดับเดียวกัน ค.ร.น. ของ 6, 2, 3, 4 คือ 12"
+      - "ยกกำลัง 12 ทุกจำนวน: $7^2$, $2^6$, $3^4$, $5^3$"
+    solution: "ยกกำลัง 12: $(\\sqrt[6]7)^{12} = 49$, $(\\sqrt2)^{12} = 64$, $(\\sqrt[3]3)^{12} = 81$, $(\\sqrt[4]5)^{12} = 125$ จึงเรียงได้ $\\sqrt[6]7 < \\sqrt2 < \\sqrt[3]3 < \\sqrt[4]5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p014
+    topics: [math.algebra.radicals]
+    difficulty: 4
+    type: expression
+    stem: "ให้ $x > 0$ จงเขียน $\\sqrt{12x^3}$ ในรูปอย่างง่าย"
+    answer: { latex: "2x\\sqrt{3x}", variables: [x] }
+    hints:
+      - "แยกตัวที่เป็นกำลังสอง: $12x^3 = 4x^2 \\times 3x$"
+      - "$\\sqrt{4x^2} = 2x$ เมื่อ $x > 0$"
+    misconceptions:
+      - { match: "2x^2\\sqrt{3x}", feedback: "$\\sqrt{x^2} = x$ ไม่ใช่ $x^2$" }
+      - { match: "4x\\sqrt{3x}", feedback: "ลืมถอดราก $\\sqrt4 = 2$" }
+    solution: "$\\sqrt{12x^3} = \\sqrt{4x^2 \\cdot 3x} = 2x\\sqrt{3x}$ (ใช้ได้เพราะ $x > 0$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p015
+    topics: [math.algebra.radicals]
+    difficulty: 4
+    type: numeric
+    stem: "ถนนสายหนึ่งเป็นเส้นตรง ให้ตลาดอยู่ที่ตำแหน่ง 0 บ้านของต้นอยู่ที่ตำแหน่ง $-4$ กิโลเมตร (ทางตะวันตกของตลาด) และโรงเรียนอยู่ที่ตำแหน่ง $7$ กิโลเมตร บ้านกับโรงเรียนห่างกันกี่กิโลเมตร"
+    answer: { value: 11, unit: กม. }
+    hints:
+      - "ระยะระหว่าง $a$ กับ $b$ คือ $|a - b|$"
+      - "$|7 - (-4)|$"
+    misconceptions:
+      - { match: 3, feedback: "คิด $7 - 4$ แต่จุดหนึ่งอยู่ที่ $-4$ ต้องเป็น $7 - (-4)$" }
+      - { match: -11, feedback: "ระยะทางไม่เป็นลบ ใช้ค่าสัมบูรณ์ $|-4 - 7| = 11$" }
+    solution: "$|7 - (-4)| = |11| = 11$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p016
+    topics: [math.algebra.radicals]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดเป็นจริงสำหรับจำนวนจริง $a$ และ $b$ ทุกจำนวน"
+    choices:
+      - { id: a, text: "$|ab| = |a||b|$", correct: true }
+      - { id: b, text: "$|a + b| = |a| + |b|$", feedback: "ไม่จริงเมื่อเครื่องหมายต่างกัน เช่น $|3 + (-5)| = 2$ แต่ $|3| + |-5| = 8$" }
+      - { id: c, text: "$\\sqrt{a^2} = a$", feedback: "ไม่จริงเมื่อ $a < 0$ เช่น $\\sqrt{(-5)^2} = 5 \\ne -5$ ที่ถูกคือ $\\sqrt{a^2} = |a|$" }
+      - { id: d, text: "$|a - b| = |a| - |b|$", feedback: "ไม่จริง เช่น $a = 1, b = 4$: $|1 - 4| = 3$ แต่ $|1| - |4| = -3$" }
+    hints:
+      - "ลองแทนตัวอย่างที่ $a$ หรือ $b$ เป็นลบ"
+      - "หาตัวอย่างค้านของแต่ละข้อ"
+    solution: "$|ab| = |a||b|$ จริงเสมอ เพราะขนาดของผลคูณเท่ากับผลคูณของขนาด ข้ออื่นมีตัวอย่างค้าน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p017
+    topics: [math.algebra.radicals]
+    difficulty: 4
+    type: expression
+    stem: "ที่ดินรูปสี่เหลี่ยมจัตุรัสมีพื้นที่ 72 ตารางวา ด้านยาวกี่วา (ตอบในรูปกรณฑ์อย่างง่าย)"
+    answer: { latex: "6\\sqrt{2}", variables: [] }
+    hints:
+      - "ด้านยาว $= \\sqrt{\\text{พื้นที่}}$"
+      - "$72 = 36 \\times 2$"
+    misconceptions:
+      - { match: "36\\sqrt{2}", feedback: "ลืมถอดราก $\\sqrt{36} = 6$" }
+      - { match: "18", feedback: "หารพื้นที่ด้วย 4 (คิดว่าเป็นความยาวรอบรูป) แต่ด้านของสี่เหลี่ยมจัตุรัสคือรากที่สองของพื้นที่" }
+    solution: "ด้านยาว $\\sqrt{72} = \\sqrt{36 \\times 2} = 6\\sqrt2 \\approx 8.49$ วา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p018
+    topics: [math.algebra.radicals]
+    difficulty: 5
+    type: expression
+    stem: "จงกระจาย $(\\sqrt3 + \\sqrt2)^2$ ให้อยู่ในรูปอย่างง่าย"
+    answer: { latex: "5+2\\sqrt{6}", variables: [] }
+    hints:
+      - "$(a + b)^2 = a^2 + 2ab + b^2$"
+      - "$2\\sqrt3\\sqrt2 = 2\\sqrt6$"
+    misconceptions:
+      - { match: "5", feedback: "ลืมพจน์กลาง $2ab$ $(a + b)^2 \\ne a^2 + b^2$" }
+      - { match: "5+\\sqrt{6}", feedback: "พจน์กลางต้องเป็น $2ab = 2\\sqrt6$ ไม่ใช่ $\\sqrt6$" }
+    solution: "$(\\sqrt3 + \\sqrt2)^2 = 3 + 2\\sqrt3\\sqrt2 + 2 = 5 + 2\\sqrt6$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p019
+    topics: [math.algebra.radicals]
+    difficulty: 5
+    type: expression
+    stem: "จงทำ $\\dfrac{\\sqrt3 + 1}{\\sqrt3 - 1}$ ให้ตัวส่วนไม่ติดกรณฑ์และอยู่ในรูปอย่างง่าย"
+    answer: { latex: "2+\\sqrt{3}", variables: [] }
+    hints:
+      - "คูณทั้งเศษและส่วนด้วย $\\sqrt3 + 1$"
+      - "เศษเป็น $(\\sqrt3 + 1)^2 = 4 + 2\\sqrt3$ ส่วนเป็น $3 - 1$"
+    misconceptions:
+      - { match: "1+\\frac{\\sqrt{3}}{2}", feedback: "ส่วนคือ $(\\sqrt3)^2 - 1^2 = 2$ ไม่ใช่ $3 + 1 = 4$" }
+      - { match: "4+2\\sqrt{3}", feedback: "ลืมหารด้วยส่วน $3 - 1 = 2$" }
+    solution: "$\\dfrac{(\\sqrt3 + 1)^2}{(\\sqrt3)^2 - 1} = \\dfrac{4 + 2\\sqrt3}{2} = 2 + \\sqrt3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.radicals.p020
+    topics: [math.algebra.radicals]
+    difficulty: 5
+    type: mcq
+    stem: "ให้ $r$ เป็นจำนวนตรรกยะ และ $x$ เป็นจำนวนอตรรกยะ เหตุผลใดแสดงได้ถูกต้องว่า $r + x$ เป็นจำนวนอตรรกยะ"
+    choices:
+      - { id: a, text: "สมมติว่า $r + x = s$ เป็นตรรกยะ จะได้ $x = s - r$ เป็นตรรกยะ ขัดแย้งกับที่ $x$ เป็นอตรรกยะ", correct: true }
+      - { id: b, text: "ลองแทน $r = 1$, $x = \\sqrt2$ ได้ $1 + \\sqrt2$ เป็นอตรรกยะ จึงจริงเสมอ", feedback: "ตัวอย่างเดียวพิสูจน์ข้อความที่ต้องจริงทุกกรณีไม่ได้" }
+      - { id: c, text: "เพราะผลบวกของสองจำนวนใดก็ตามเป็นอตรรกยะเสมอ", feedback: "ไม่จริง เช่น $\\sqrt2 + (-\\sqrt2) = 0$ เป็นตรรกยะ" }
+      - { id: d, text: "เพราะเครื่องคิดเลขแสดงทศนิยมไม่รู้จบ", feedback: "เครื่องคิดเลขแสดงได้ไม่กี่หลัก และ $\\tfrac13$ ก็แสดงทศนิยมไม่รู้จบแต่เป็นตรรกยะ" }
+    hints:
+      - "ลองพิสูจน์โดยข้อขัดแย้ง: สมมติตรงข้ามกับสิ่งที่ต้องการ"
+      - "ผลต่างของจำนวนตรรกยะสองจำนวนเป็นจำนวนประเภทใด"
+    solution: "ถ้า $r + x = s$ เป็นตรรกยะ แล้ว $x = s - r$ เป็นผลต่างของตรรกยะ ซึ่งเป็นตรรกยะ ขัดแย้งกับสมมติฐาน จึงสรุปว่า $r + x$ เป็นอตรรกยะ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

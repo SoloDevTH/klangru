@@ -1,0 +1,66 @@
+id: math.algebra.radicals
+subject: math
+title: { th: จำนวนจริงในรูปกรณฑ์และค่าสัมบูรณ์, en: Surds and absolute value }
+summary: สมบัติของจำนวนจริง ทำรากให้อยู่ในรูปอย่างง่าย บวก ลบ คูณ หารจำนวนในรูปกรณฑ์ ทำตัวส่วนไม่ให้ติดกรณฑ์ เปรียบเทียบกรณฑ์กับเลขยกกำลัง และค่าสัมบูรณ์
+difficulty: 5
+minutes: 40
+prerequisites: [math.number.roots, math.algebra.exponent-laws]
+encompasses:
+  - { id: math.number.roots, weight: 0.4 }
+  - { id: math.algebra.exponent-laws, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: root8-grid.svg
+    alt: "ตาราง 2 × 2 ช่อง ช่องละ 1 หน่วย เส้นทแยงมุมของตารางทั้งหมดแบ่งเป็นสองท่อน ท่อนล่างสีน้ำเงินยาว √2 ท่อนบนสีแดงยาว √2 ข้างตารางเขียนว่า ทั้งเส้น √(2² + 2²) = √8 = √2 + √2 = 2√2"
+    caption: "√8 = 2√2 เพราะเส้นทแยงมุมยาวเป็นสองเท่าของเส้นทแยงมุมของช่องเดียว"
+  - type: worked-example
+    title: บวกจำนวนในรูปกรณฑ์ที่ต่างกัน
+    problem: "จงทำ $\\sqrt{12} + \\sqrt{27} - \\sqrt{48}$ ให้อยู่ในรูปอย่างง่าย"
+    steps:
+      - text: "$\\sqrt{12} = \\sqrt{4 \\times 3} = 2\\sqrt3$"
+        why: "4 เป็นกำลังสองสมบูรณ์ที่ใหญ่ที่สุดที่หาร 12 ลงตัว"
+      - text: "$\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt3$ และ $\\sqrt{48} = \\sqrt{16 \\times 3} = 4\\sqrt3$"
+      - text: "ทุกพจน์มี $\\sqrt3$ จึงรวมได้: $2\\sqrt3 + 3\\sqrt3 - 4\\sqrt3 = \\sqrt3$"
+        why: "เหมือนรวมพจน์คล้าย $2x + 3x - 4x = x$"
+    answer: "$\\sqrt3$"
+  - { type: check, problem: math.algebra.radicals.p003, prompt: "รวมได้เมื่อกรณฑ์เหมือนกัน" }
+  - type: worked-example
+    title: ทำตัวส่วนไม่ให้ติดกรณฑ์ด้วยสังยุค
+    problem: "จงทำ $\\dfrac{2}{3 + \\sqrt7}$ ให้ตัวส่วนไม่ติดกรณฑ์"
+    steps:
+      - text: "สังยุคของ $3 + \\sqrt7$ คือ $3 - \\sqrt7$ คูณทั้งเศษและส่วน"
+        why: "คูณด้วย $\\tfrac{3 - \\sqrt7}{3 - \\sqrt7} = 1$ ค่าจึงไม่เปลี่ยน"
+      - text: "ส่วน: $(3 + \\sqrt7)(3 - \\sqrt7) = 9 - 7 = 2$"
+      - text: "เศษ: $2(3 - \\sqrt7)$ หารด้วย 2 ได้ $3 - \\sqrt7$"
+    answer: "$3 - \\sqrt7$"
+  - type: figure
+    src: abs-distance.svg
+    alt: "เส้นจำนวนตั้งแต่ −6 ถึง 6 ลูกศรสีน้ำเงินจาก −3 ไป 0 เขียนว่า |−3| = 3 และแถบสีแดงจาก −2 ถึง 5 เขียนว่า |5 − (−2)| = 7"
+    caption: "ค่าสัมบูรณ์คือระยะทาง จึงไม่เป็นลบ"
+  - type: interactive
+    title: ระยะระหว่างสองจำนวนบนเส้นจำนวน
+    caption: "ระยะจาก −2 ไป 5 คือ 7 หน่วย เท่ากับ |5 − (−2)| และเท่ากับ |−2 − 5|"
+    widget: { kind: number-line, min: -6, max: 6, points: [{ value: -2, label: a }, { value: 5, label: b }], jumps: [{ from: -2, to: 5, label: "7" }] }
+  - { type: check, problem: math.algebra.radicals.p005, prompt: "ค่าสัมบูรณ์ไม่เป็นลบ" }
+glossary:
+  - { term: กรณฑ์, definition: "เครื่องหมายราก เช่น √ และจำนวนที่เขียนด้วยราก เช่น √2 หรือ ∛5" }
+  - { term: รูปอย่างง่าย, definition: "จำนวนใต้รากไม่มีตัวประกอบที่เป็นกำลังสองสมบูรณ์ (นอกจาก 1) เช่น 2√3" }
+  - { term: สังยุค, definition: "a + √b กับ a − √b เป็นสังยุคกัน ผลคูณคือ a² − b ซึ่งไม่ติดกรณฑ์" }
+  - { term: จำนวนอตรรกยะ, definition: "จำนวนจริงที่เขียนเป็นเศษส่วนของจำนวนเต็มไม่ได้ เช่น √2 และ π" }
+  - { term: ค่าสัมบูรณ์, definition: "ระยะจากจำนวนนั้นถึง 0 บนเส้นจำนวน เขียน |a| มีค่าไม่เป็นลบ" }
+flashcards:
+  - { front: "√72 ในรูปอย่างง่าย", back: "6√2" }
+  - { front: "√a × √b = ?", back: "√(ab) เมื่อ a, b ≥ 0" }
+  - { front: "ทำ 1/(a − √b) ให้ส่วนไม่ติดกรณฑ์ ต้องคูณด้วยอะไร", back: "(a + √b)/(a + √b) ซึ่งคือสังยุค" }
+  - { front: "√(a²) = ?", back: "|a|" }
+  - { front: "ตรรกยะ + อตรรกยะ ได้อะไร", back: "อตรรกยะเสมอ" }
+references:
+  - { title: "ค่าสัมบูรณ์", url: "https://th.wikipedia.org/wiki/ค่าสัมบูรณ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Nth root (Simplified form of a radical expression)", url: "https://en.wikipedia.org/wiki/Nth_root", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Rationalisation (mathematics)", url: "https://en.wikipedia.org/wiki/Rationalisation_(mathematics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
