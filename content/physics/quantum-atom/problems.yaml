@@ -1,0 +1,300 @@
+problems:
+  - id: physics.modern.quantum-atom.p001
+    topics: [physics.modern.quantum-atom]
+    difficulty: 1
+    type: mcq
+    stem: "พลังงานของโฟตอนหนึ่งตัวขึ้นกับปริมาณใด"
+    choices:
+      - { id: a, text: "ความถี่ของแสง", correct: true }
+      - { id: b, text: "ความสว่างของแสง", feedback: "ความสว่างบอกจำนวนโฟตอน ไม่ใช่พลังงานของแต่ละตัว" }
+      - { id: c, text: "ระยะทางจากแหล่งกำเนิด", feedback: "โฟตอนไม่ได้เสียพลังงานไปเพราะเดินทางไกลในสุญญากาศ ที่ลดลงคือจำนวนโฟตอนต่อพื้นที่" }
+      - { id: d, text: "อัตราเร็วของแสง ซึ่งต่างกันในแต่ละสี", feedback: "แสงทุกสีเร็วเท่ากันในสุญญากาศ" }
+    hints:
+      - "$E = hf$"
+      - "$h$ เป็นค่าคงตัว"
+    solution: "$E = hf$ พลังงานโฟตอนขึ้นกับความถี่เท่านั้น แสงสีม่วงจึงมีโฟตอนพลังงานมากกว่าแสงสีแดง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p002
+    topics: [physics.modern.quantum-atom]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ผลการทดลองกับแนวคิดที่ผลนั้นสนับสนุน"
+    pairs:
+      - { left: "แสงผ่านสลิตคู่แล้วเกิดแถบมืดแถบสว่าง", right: "แสงเป็นคลื่น" }
+      - { left: "แสงความถี่ต่ำกว่าค่าหนึ่งไม่ทำให้อิเล็กตรอนหลุดแม้จะสว่างมาก", right: "แสงเป็นก้อนพลังงาน (โฟตอน)" }
+      - { left: "อิเล็กตรอนเลี้ยวเบนเมื่อผ่านผลึก", right: "อนุภาคมีสมบัติของคลื่น" }
+      - { left: "ไฮโดรเจนให้สเปกตรัมเป็นเส้นเฉพาะบางความยาวคลื่น", right: "ระดับพลังงานในอะตอมมีค่าเฉพาะ" }
+    hints:
+      - "การแทรกสอดและการเลี้ยวเบนเป็นสมบัติของคลื่น"
+      - "ผลที่ขึ้นกับความถี่แต่ไม่ขึ้นกับความสว่างชี้ว่าพลังงานมาเป็นก้อน"
+    solution: "สลิตคู่ → แสงเป็นคลื่น · โฟโตอิเล็กทริก → โฟตอน · อิเล็กตรอนเลี้ยวเบน → อนุภาคเป็นคลื่นได้ · สเปกตรัมเส้น → ระดับพลังงานไม่ต่อเนื่อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p003
+    topics: [physics.modern.quantum-atom]
+    difficulty: 2
+    type: numeric
+    stem: "ไฟจราจรสีเขียวแบบแอลอีดีให้แสงความยาวคลื่นประมาณ $500\\ \\mathrm{nm}$ โฟตอนแต่ละตัวมีพลังงานกี่อิเล็กตรอนโวลต์ ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, $1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$)"
+    answer: { value: 2.49, tolerance: 0.03, unit: eV }
+    misconceptions:
+      - { match: 3.98, feedback: "นี่คือพลังงานเป็นหน่วย $10^{-19}\\ \\mathrm{J}$ ต้องหารด้วย $1.6 \\times 10^{-19}$ เพื่อแปลงเป็น eV" }
+    hints:
+      - "$E = \\dfrac{hc}{\\lambda}$ ใช้ $\\lambda$ เป็นเมตร"
+      - "แปลงจูลเป็น eV โดยหารด้วย $1.6 \\times 10^{-19}$"
+    solution: "$E = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{500 \\times 10^{-9}} = 3.98 \\times 10^{-19}\\ \\mathrm{J} = 2.49\\ \\mathrm{eV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p004
+    topics: [physics.modern.quantum-atom]
+    difficulty: 2
+    type: numeric
+    stem: "โฟตอนพลังงาน $4.0\\ \\mathrm{eV}$ ตกกระทบโลหะที่มีฟังก์ชันงาน $2.3\\ \\mathrm{eV}$ โฟโตอิเล็กตรอนมีพลังงานจลน์สูงสุดกี่อิเล็กตรอนโวลต์"
+    answer: { value: 1.7, tolerance: 0.02, unit: eV }
+    misconceptions:
+      - { match: 6.3, feedback: "บวกฟังก์ชันงาน อิเล็กตรอนต้องใช้พลังงานส่วนนี้หลุดออกจากผิว จึงต้องลบ" }
+      - { match: 4.0, feedback: "พลังงานโฟตอนทั้งหมดไม่ได้เป็นพลังงานจลน์ ต้องหักฟังก์ชันงาน" }
+    hints:
+      - "$E_{k,\\max} = hf - W$"
+      - "$= 4.0 - 2.3$"
+    solution: "$E_{k,\\max} = 4.0 - 2.3 = 1.7\\ \\mathrm{eV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p005
+    topics: [physics.modern.quantum-atom]
+    difficulty: 2
+    type: mcq
+    stem: "ฉายแสงสีแดงลงบนโลหะชนิดหนึ่งแล้วไม่มีอิเล็กตรอนหลุดออกมา ถ้าเพิ่มความสว่างของแสงสีแดงเป็น 10 เท่า จะเกิดอะไรขึ้น"
+    choices:
+      - { id: a, text: "ยังไม่มีอิเล็กตรอนหลุด เพราะโฟตอนแต่ละตัวยังมีพลังงานน้อยกว่าฟังก์ชันงาน", correct: true }
+      - { id: b, text: "อิเล็กตรอนหลุดออกมา เพราะได้รับพลังงานรวมมากขึ้น", feedback: "นี่คือคำทำนายของแบบจำลองคลื่นซึ่งไม่ตรงกับการทดลอง โฟตอนหนึ่งตัวให้พลังงานแก่อิเล็กตรอนหนึ่งตัว" }
+      - { id: c, text: "อิเล็กตรอนหลุดหลังจากฉายนานพอสะสมพลังงาน", feedback: "การทดลองไม่พบการหน่วงเวลาแบบนี้ ถ้าความถี่ต่ำกว่าขีดเริ่มก็ไม่หลุดเลย" }
+      - { id: d, text: "อิเล็กตรอนหลุดออกมาด้วยพลังงานจลน์มากขึ้น 10 เท่า", feedback: "ความสว่างไม่ได้เพิ่มพลังงานต่อโฟตอน" }
+    hints:
+      - "ความสว่างเพิ่มจำนวนโฟตอนหรือพลังงานต่อโฟตอน"
+      - "อิเล็กตรอนหนึ่งตัวรับพลังงานจากโฟตอนหนึ่งตัว"
+    solution: "แสงสีแดงมีความถี่ต่ำกว่าความถี่ขีดเริ่มของโลหะนี้ โฟตอนแต่ละตัวมีพลังงานไม่พอ เพิ่มความสว่างก็แค่เพิ่มจำนวนโฟตอนที่พลังงานไม่พอ จึงไม่มีอิเล็กตรอนหลุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p006
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: numeric
+    stem: "อิเล็กตรอนในอะตอมไฮโดรเจนเปลี่ยนระดับจาก $n = 3$ ลงมา $n = 2$ โฟตอนที่ปล่อยออกมามีความยาวคลื่นกี่นาโนเมตร ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, $1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$)"
+    answer: { value: 658, tolerance: 3, unit: nm }
+    misconceptions:
+      - { match: 366, feedback: "ใช้พลังงานของระดับ $n = 2$ ($3.40\\ \\mathrm{eV}$) ทั้งหมด ต้องใช้ผลต่างระหว่างระดับ $n = 3$ กับ $n = 2$" }
+      - { match: 548, feedback: "ใช้ $1/n$ แทน $1/n^2$ ในสูตรระดับพลังงาน" }
+    hints:
+      - "$\\Delta E = 13.6\\left(\\dfrac{1}{2^2} - \\dfrac{1}{3^2}\\right)\\ \\mathrm{eV}$"
+      - "แปลงเป็นจูลแล้วใช้ $\\lambda = hc/\\Delta E$"
+    solution: "$\\Delta E = 13.6\\left(\\tfrac14 - \\tfrac19\\right) = 1.89\\ \\mathrm{eV} = 3.02 \\times 10^{-19}\\ \\mathrm{J}$ $\\lambda = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{3.02 \\times 10^{-19}} \\approx 658\\ \\mathrm{nm}$ สีแดง (ค่าที่วัดได้จริง $656\\ \\mathrm{nm}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p007
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: numeric
+    stem: "แสงอัลตราไวโอเลตความยาวคลื่น $250\\ \\mathrm{nm}$ ตกกระทบทังสเตนซึ่งมีฟังก์ชันงาน $4.5\\ \\mathrm{eV}$ ความต่างศักย์หยุดยั้งเป็นกี่โวลต์ ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$)"
+    answer: { value: 0.47, tolerance: 0.02, unit: V }
+    misconceptions:
+      - { match: 4.97, feedback: "นี่คือพลังงานโฟตอน ต้องหักฟังก์ชันงานก่อน" }
+    hints:
+      - "พลังงานโฟตอน $hc/\\lambda$ เป็น eV"
+      - "$eV_s = hf - W$"
+    solution: "$E = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{250 \\times 10^{-9}} = 7.96 \\times 10^{-19}\\ \\mathrm{J} = 4.97\\ \\mathrm{eV}$ $E_{k,\\max} = 4.97 - 4.5 = 0.47\\ \\mathrm{eV}$ จึงได้ $V_s = 0.47\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p008
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: numeric
+    stem: "โลหะชนิดหนึ่งมีฟังก์ชันงาน $2.3\\ \\mathrm{eV}$ แสงที่มีความยาวคลื่นยาวที่สุดที่ทำให้อิเล็กตรอนหลุดได้มีความยาวคลื่นกี่นาโนเมตร ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, $1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$)"
+    answer: { value: 540, tolerance: 5, unit: nm }
+    misconceptions:
+      - { match: 0.54, feedback: "ได้คำตอบเป็นไมโครเมตร ต้องแปลงเป็นนาโนเมตร ($1\\ \\mu\\mathrm{m} = 1000\\ \\mathrm{nm}$)" }
+    hints:
+      - "ที่ความยาวคลื่นขีดเริ่ม $\\dfrac{hc}{\\lambda_0} = W$"
+      - "$\\lambda_0 = \\dfrac{hc}{W}$ ใช้ $W$ เป็นจูล"
+    solution: "$\\lambda_0 = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{2.3 \\times 1.6 \\times 10^{-19}} = 5.40 \\times 10^{-7}\\ \\mathrm{m} = 540\\ \\mathrm{nm}$ แสงสีเขียวหรือสั้นกว่าจึงทำให้อิเล็กตรอนหลุดได้ แสงสีแดงไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p009
+    topics: [physics.modern.quantum-atom]
+    difficulty: 4
+    type: numeric
+    stem: "อิเล็กตรอนถูกเร่งจากหยุดนิ่งด้วยความต่างศักย์ $100\\ \\mathrm{V}$ ความยาวคลื่นเดอบรอยล์เป็นกี่นาโนเมตร ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $m_e = 9.1 \\times 10^{-31}\\ \\mathrm{kg}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$)"
+    answer: { value: 0.123, tolerance: 0.002, unit: nm }
+    misconceptions:
+      - { match: 0.174, feedback: "ลืมเลข 2 ใน $p = \\sqrt{2meV}$ ที่มาจาก $\\tfrac12 mv^2 = eV$" }
+    hints:
+      - "$\\tfrac12 mv^2 = eV$ จึงได้ $p = \\sqrt{2meV}$"
+      - "$\\lambda = \\dfrac{h}{\\sqrt{2meV}}$"
+    solution: "$p = \\sqrt{2(9.1 \\times 10^{-31})(1.6 \\times 10^{-19})(100)} = 5.40 \\times 10^{-24}\\ \\mathrm{kg\\,m/s}$ $\\lambda = \\dfrac{6.63 \\times 10^{-34}}{5.40 \\times 10^{-24}} = 1.23 \\times 10^{-10}\\ \\mathrm{m} = 0.123\\ \\mathrm{nm}$ ใกล้ระยะห่างระหว่างอะตอมในผลึก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p010
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: numeric
+    stem: "ตามแบบจำลองของโบร์ วงโคจร $n = 3$ ของอิเล็กตรอนในอะตอมไฮโดรเจนมีรัศมีกี่นาโนเมตร (รัศมีวงโคจร $n = 1$ เท่ากับ $0.053\\ \\mathrm{nm}$)"
+    answer: { value: 0.477, tolerance: 0.005, unit: nm }
+    misconceptions:
+      - { match: 0.159, feedback: "รัศมีแปรผันตาม $n^2$ ไม่ใช่ $n$" }
+    hints:
+      - "$r_n = n^2 r_1$"
+      - "$r_3 = 9 \\times 0.053$"
+    solution: "$r_3 = 3^2 \\times 0.053 = 0.477\\ \\mathrm{nm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p011
+    topics: [physics.modern.quantum-atom]
+    difficulty: 4
+    type: numeric
+    stem: "ครูใช้เลเซอร์ชี้ตำแหน่งสีแดงกำลัง $5.0\\ \\mathrm{mW}$ ความยาวคลื่น $650\\ \\mathrm{nm}$ ในห้องเรียน เลเซอร์ปล่อยโฟตอนกี่เท่าของ $10^{16}$ ตัวต่อวินาที ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.63, tolerance: 0.02 }
+    misconceptions:
+      - { match: 1630, feedback: "ไม่ได้แปลงมิลลิวัตต์เป็นวัตต์" }
+    hints:
+      - "พลังงานต่อโฟตอน $= hc/\\lambda$"
+      - "จำนวนโฟตอนต่อวินาที $= \\dfrac{P}{hc/\\lambda}$"
+    solution: "$E = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{650 \\times 10^{-9}} = 3.06 \\times 10^{-19}\\ \\mathrm{J}$ $N = \\dfrac{5.0 \\times 10^{-3}}{3.06 \\times 10^{-19}} = 1.63 \\times 10^{16}$ ตัวต่อวินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p012
+    topics: [physics.modern.quantum-atom]
+    difficulty: 4
+    type: numeric
+    stem: "อะตอมไฮโดรเจนจำนวนมากถูกกระตุ้นจนอิเล็กตรอนอยู่ที่ระดับ $n = 4$ เมื่ออิเล็กตรอนลดระดับลงมาสถานะพื้นได้ทุกเส้นทาง จะเห็นเส้นสเปกตรัมต่างกันได้มากที่สุดกี่เส้น"
+    answer: { value: 6, tolerance: 0 }
+    misconceptions:
+      - { match: 3, feedback: "นับเฉพาะการลงทีละระดับ แต่อิเล็กตรอนกระโดดข้ามระดับได้ เช่น จาก 4 ลง 1 หรือ 4 ลง 2" }
+      - { match: 4, feedback: "นับเฉพาะการลงจาก $n = 4$ ไปยังระดับอื่น ต้องรวมการลงจาก $n = 3$ และ $n = 2$ ด้วย" }
+    hints:
+      - "นับทุกคู่ของระดับ 1, 2, 3, 4 ที่อิเล็กตรอนลงได้"
+      - "จำนวนคู่ $= \\dfrac{n(n-1)}{2}$"
+    solution: "คู่ของระดับ: 4→3, 4→2, 4→1, 3→2, 3→1, 2→1 รวม $\\dfrac{4 \\times 3}{2} = 6$ เส้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p013
+    topics: [physics.modern.quantum-atom]
+    difficulty: 4
+    type: numeric
+    stem: "ในการทดลองโฟโตอิเล็กทริก แสงความถี่ $6.0 \\times 10^{14}\\ \\mathrm{Hz}$ ให้ความต่างศักย์หยุดยั้ง $0.50\\ \\mathrm{V}$ และแสงความถี่ $8.0 \\times 10^{14}\\ \\mathrm{Hz}$ ให้ $1.33\\ \\mathrm{V}$ ค่าคงตัวของพลังค์จากการทดลองนี้เป็นกี่เท่าของ $10^{-34}\\ \\mathrm{J\\,s}$ ($e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$, ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.64, tolerance: 0.07 }
+    misconceptions:
+      - { match: 2.66, feedback: "ใช้จุดเดียว $eV_s/f$ ซึ่งยังไม่ได้หักฟังก์ชันงาน ต้องใช้ความชันจากสองจุด" }
+    hints:
+      - "$eV_s = hf - W$ เป็นเส้นตรง ความชันของ $eV_s$ กับ $f$ คือ $h$"
+      - "$h = \\dfrac{e\\,\\Delta V_s}{\\Delta f}$"
+    solution: "$h = \\dfrac{(1.6 \\times 10^{-19})(1.33 - 0.50)}{(8.0 - 6.0) \\times 10^{14}} = 6.64 \\times 10^{-34}\\ \\mathrm{J\\,s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p014
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: mcq
+    stem: "ลูกเบสบอลมวล $0.145\\ \\mathrm{kg}$ ถูกขว้างด้วยอัตราเร็ว $40\\ \\mathrm{m/s}$ มีความยาวคลื่นเดอบรอยล์ราว $1 \\times 10^{-34}\\ \\mathrm{m}$ เหตุใดเราจึงไม่เห็นลูกเบสบอลเลี้ยวเบนเหมือนคลื่น"
+    choices:
+      - { id: a, text: "ความยาวคลื่นเล็กกว่าช่องหรือสิ่งกีดขวางใด ๆ มากมาย การเลี้ยวเบนจึงน้อยจนวัดไม่ได้", correct: true }
+      - { id: b, text: "วัตถุขนาดใหญ่ไม่มีความยาวคลื่นเลย", feedback: "สูตร $\\lambda = h/mv$ ใช้ได้กับทุกวัตถุ แต่ค่าเล็กมาก" }
+      - { id: c, text: "ลูกเบสบอลเคลื่อนที่ช้าเกินไป", feedback: "ถ้าช้าลง ความยาวคลื่นจะยาวขึ้น แต่ก็ยังเล็กมากเพราะมวลมาก" }
+      - { id: d, text: "ทวิภาวะใช้ได้กับแสงเท่านั้น", feedback: "อิเล็กตรอนและอนุภาคอื่นก็เลี้ยวเบนได้ ซึ่งยืนยันด้วยการทดลองแล้ว" }
+    hints:
+      - "การเลี้ยวเบนเห็นชัดเมื่อความยาวคลื่นใกล้เคียงกับขนาดช่อง"
+      - "เทียบ $10^{-34}\\ \\mathrm{m}$ กับขนาดของนิวเคลียสราว $10^{-15}\\ \\mathrm{m}$"
+    solution: "$\\lambda = \\dfrac{6.63 \\times 10^{-34}}{(0.145)(40)} = 1.1 \\times 10^{-34}\\ \\mathrm{m}$ เล็กกว่าขนาดนิวเคลียสหลายล้านล้านล้านเท่า ไม่มีช่องใดเล็กพอให้เห็นการเลี้ยวเบน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p015
+    topics: [physics.modern.quantum-atom]
+    difficulty: 5
+    type: numeric
+    stem: "ใช้เงื่อนไขของโบร์ $mvr = \\dfrac{nh}{2\\pi}$ หาอัตราเร็วของอิเล็กตรอนในวงโคจร $n = 1$ ของไฮโดรเจน ($r = 0.053\\ \\mathrm{nm}$, $m_e = 9.1 \\times 10^{-31}\\ \\mathrm{kg}$, $h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$) ตอบเป็นกี่เท่าของ $10^{6}\\ \\mathrm{m/s}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.19, tolerance: 0.03 }
+    misconceptions:
+      - { match: 13.75, feedback: "ลืมหารด้วย $2\\pi$" }
+    hints:
+      - "$v = \\dfrac{h}{2\\pi m r}$ เมื่อ $n = 1$"
+      - "แปลง $0.053\\ \\mathrm{nm} = 5.3 \\times 10^{-11}\\ \\mathrm{m}$"
+    solution: "$v = \\dfrac{6.63 \\times 10^{-34}}{2\\pi(9.1 \\times 10^{-31})(5.3 \\times 10^{-11})} = 2.19 \\times 10^{6}\\ \\mathrm{m/s}$ ราว 1% ของอัตราเร็วแสง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p016
+    topics: [physics.modern.quantum-atom]
+    difficulty: 5
+    type: numeric
+    stem: "โฟตอนที่ไฮโดรเจนปล่อยออกมาเมื่ออิเล็กตรอนเปลี่ยนจาก $n = 4$ ลงมา $n = 2$ ตกกระทบโลหะที่มีฟังก์ชันงาน $2.3\\ \\mathrm{eV}$ โฟโตอิเล็กตรอนมีพลังงานจลน์สูงสุดกี่อิเล็กตรอนโวลต์"
+    answer: { value: 0.25, tolerance: 0.01, unit: eV }
+    misconceptions:
+      - { match: 2.55, feedback: "นี่คือพลังงานโฟตอน ยังไม่ได้หักฟังก์ชันงาน" }
+      - { match: 1.1, feedback: "ใช้พลังงานของระดับ $n = 2$ ($3.40\\ \\mathrm{eV}$) แทนผลต่างระหว่างระดับ $n = 4$ กับ $n = 2$" }
+    hints:
+      - "พลังงานโฟตอน $= 13.6\\left(\\tfrac14 - \\tfrac1{16}\\right)\\ \\mathrm{eV}$"
+      - "$E_{k,\\max} = E_{\\text{โฟตอน}} - W$"
+    solution: "$E_{\\text{โฟตอน}} = 13.6 \\times \\tfrac{3}{16} = 2.55\\ \\mathrm{eV}$ $E_{k,\\max} = 2.55 - 2.3 = 0.25\\ \\mathrm{eV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p017
+    topics: [physics.modern.quantum-atom]
+    difficulty: 2
+    type: text
+    stem: "อนุกรมเส้นสเปกตรัมของไฮโดรเจนที่อยู่ในช่วงแสงที่มองเห็น เกิดจากอิเล็กตรอนลดระดับลงมาที่ $n = 2$ มีชื่อว่าอนุกรมอะไร"
+    accepted: ["บัลเมอร์", "อนุกรมบัลเมอร์", "Balmer", "Balmer series"]
+    misconceptions:
+      - { match: "ไลแมน", feedback: "อนุกรมไลแมนลงมาที่ $n = 1$ อยู่ในช่วงอัลตราไวโอเลต" }
+      - { match: "พาเชน", feedback: "อนุกรมพาเชนลงมาที่ $n = 3$ อยู่ในช่วงอินฟราเรด" }
+    hints:
+      - "อนุกรมนี้ตั้งชื่อตามครูชาวสวิสที่หาสูตรของเส้นเหล่านี้"
+      - "ไลแมนลงมา $n = 1$ พาเชนลงมา $n = 3$"
+    solution: "อนุกรมบัลเมอร์ (Balmer) มีเส้นที่มองเห็นได้ 4 เส้น ได้แก่ สีแดง $656\\ \\mathrm{nm}$ สีน้ำเงินเขียว $486\\ \\mathrm{nm}$ และสีม่วงอีกสองเส้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p018
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียนสองคนเถียงกันว่าแสงเป็นคลื่นหรืออนุภาค ข้อสรุปใดสอดคล้องกับหลักฐานมากที่สุด"
+    choices:
+      - { id: a, text: "แบบจำลองคลื่นอธิบายการแทรกสอดได้ดี แบบจำลองอนุภาคอธิบายโฟโตอิเล็กทริกได้ดี ต้องเลือกใช้ตามสถานการณ์", correct: true }
+      - { id: b, text: "แสงเป็นคลื่นเท่านั้น โฟโตอิเล็กทริกเป็นข้อยกเว้นที่ยังไม่มีคำอธิบาย", feedback: "แบบจำลองโฟตอนอธิบายโฟโตอิเล็กทริกได้ครบทุกข้อสังเกต และได้รับการยืนยันซ้ำหลายครั้ง" }
+      - { id: c, text: "แสงเป็นอนุภาคเท่านั้น การแทรกสอดเกิดจากอนุภาคชนกัน", feedback: "แถบแทรกสอดยังเกิดแม้ส่งโฟตอนผ่านทีละตัว การชนกันอธิบายไม่ได้" }
+      - { id: d, text: "แสงเปลี่ยนจากคลื่นเป็นอนุภาคเมื่อเดินทางนานพอ", feedback: "ทวิภาวะไม่ได้ขึ้นกับเวลา ขึ้นกับว่าเราสังเกตปรากฏการณ์แบบใด" }
+    hints:
+      - "นึกถึงการทดลองสลิตคู่และโฟโตอิเล็กทริก"
+      - "แบบจำลองเป็นเครื่องมืออธิบาย แต่ละแบบเหมาะกับปรากฏการณ์ต่างกัน"
+    solution: "แสงแสดงทั้งสมบัติคลื่นและอนุภาค (ทวิภาวะ) แบบจำลองคลื่นเหมาะกับการแทรกสอดและการเลี้ยวเบน แบบจำลองโฟตอนเหมาะกับการแลกเปลี่ยนพลังงานกับอะตอมและอิเล็กตรอน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.modern.quantum-atom.p019
+    topics: [physics.modern.quantum-atom]
+    difficulty: 3
+    type: numeric
+    stem: "เซลล์สุริยะซิลิคอนบนหลังคาบ้านในประเทศไทยต้องการโฟตอนที่มีพลังงานอย่างน้อย $1.1\\ \\mathrm{eV}$ จึงจะทำให้อิเล็กตรอนเคลื่อนที่เป็นกระแสได้ แสงที่ใช้ได้มีความยาวคลื่นยาวที่สุดกี่นาโนเมตร ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, $1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$)"
+    answer: { value: 1130, tolerance: 12, unit: nm }
+    misconceptions:
+      - { match: 0.00000113, feedback: "ได้คำตอบเป็นเมตร ต้องแปลงเป็นนาโนเมตร" }
+    hints:
+      - "$\\lambda_{\\max} = \\dfrac{hc}{E_{\\min}}$"
+      - "แปลง $1.1\\ \\mathrm{eV}$ เป็นจูลก่อน"
+    solution: "$\\lambda = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{1.1 \\times 1.6 \\times 10^{-19}} = 1.13 \\times 10^{-6}\\ \\mathrm{m} = 1130\\ \\mathrm{nm}$ แสงที่มองเห็นทั้งหมดและอินฟราเรดใกล้จึงใช้ผลิตไฟฟ้าได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

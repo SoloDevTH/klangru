@@ -1,0 +1,83 @@
+id: physics.modern.quantum-atom
+subject: physics
+title: { th: อะตอมของโบร์ โฟโตอิเล็กทริก และทวิภาวะ, en: The Bohr atom, the photoelectric effect and wave–particle duality }
+summary: สมมติฐานของพลังค์และพลังงานโฟตอน ปรากฏการณ์โฟโตอิเล็กทริกและฟังก์ชันงาน อะตอมของโบร์กับสเปกตรัมไฮโดรเจน ทวิภาวะของคลื่นและอนุภาค และความยาวคลื่นเดอบรอยล์
+difficulty: 7
+minutes: 40
+prerequisites: [physics.waves.electromagnetic-waves, physics.electricity.electric-potential, chemistry.matter.atoms, physics.momentum.momentum-impulse]
+encompasses:
+  - { id: physics.waves.electromagnetic-waves, weight: 0.3 }
+  - { id: physics.electricity.electric-potential, weight: 0.2 }
+  - { id: chemistry.matter.atoms, weight: 0.2 }
+  - { id: physics.momentum.momentum-impulse, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กราฟของปรากฏการณ์โฟโตอิเล็กทริก
+    src: photoelectric-graph.svg
+    alt: "กราฟพลังงานจลน์สูงสุดของโฟโตอิเล็กตรอน (eV) กับความถี่ของแสง (×10¹⁴ Hz) สำหรับโลหะสองชนิด เส้นทึบสีน้ำเงินของโลหะ A (W = 2.3 eV) เริ่มที่ความถี่ขีดเริ่มประมาณ 5.6 × 10¹⁴ Hz เส้นทึบสีแดงของโลหะ B (W = 4.5 eV) เริ่มที่ประมาณ 10.9 × 10¹⁴ Hz ทั้งสองเส้นขนานกันมีความชันเท่ากับ h เส้นประต่อลงไปตัดแกนตั้งที่ −W"
+  - type: worked-example
+    title: โฟโตอิเล็กตรอนจากโซเดียม
+    problem: "ฉายแสงความยาวคลื่น $400\\ \\mathrm{nm}$ บนโลหะโซเดียมซึ่งมีฟังก์ชันงาน $2.3\\ \\mathrm{eV}$ จงหาพลังงานโฟตอน พลังงานจลน์สูงสุดของโฟโตอิเล็กตรอน และความต่างศักย์หยุดยั้ง ($h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$, $c = 3.0 \\times 10^{8}\\ \\mathrm{m/s}$, $e = 1.6 \\times 10^{-19}\\ \\mathrm{C}$)"
+    steps:
+      - text: "$E = \\dfrac{hc}{\\lambda} = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{400 \\times 10^{-9}} = 4.97 \\times 10^{-19}\\ \\mathrm{J}$"
+      - text: "แปลงเป็น eV: $\\dfrac{4.97 \\times 10^{-19}}{1.6 \\times 10^{-19}} = 3.11\\ \\mathrm{eV}$"
+      - text: "$E_{k,\\max} = 3.11 - 2.3 = 0.81\\ \\mathrm{eV}$"
+        why: "อิเล็กตรอนที่อยู่ลึกกว่าผิวเสียพลังงานมากกว่า $W$ จึงมีพลังงานจลน์น้อยกว่านี้ ค่านี้คือค่าสูงสุด"
+      - text: "$eV_s = E_{k,\\max}$ จึงได้ $V_s = 0.81\\ \\mathrm{V}$"
+        why: "พลังงาน $0.81\\ \\mathrm{eV}$ คือพลังงานที่อิเล็กตรอนเสียไปเมื่อเคลื่อนที่สวนความต่างศักย์ $0.81\\ \\mathrm{V}$"
+    answer: "$E = 3.11\\ \\mathrm{eV}$, $E_{k,\\max} = 0.81\\ \\mathrm{eV}$, $V_s = 0.81\\ \\mathrm{V}$"
+  - { type: check, problem: physics.modern.quantum-atom.p005, prompt: "ความสว่างเพิ่มจำนวนโฟตอน ไม่เพิ่มพลังงานต่อโฟตอน" }
+  - type: interactive
+    title: พลังงานจลน์สูงสุดกับความถี่
+    caption: "กราฟคือ $E_{k,\\max} = hf - W$ (หน่วย eV) เมื่อ $x$ คือความถี่หน่วย $10^{14}\\ \\mathrm{Hz}$ ($h = 0.414\\ \\mathrm{eV}$ ต่อ $10^{14}\\ \\mathrm{Hz}$) เลื่อนค่าฟังก์ชันงาน $W$ แล้วดูว่าเส้นเลื่อนขนานกันและความถี่ขีดเริ่มเปลี่ยนไป ส่วนที่อยู่ใต้แกนนอนไม่มีความหมายทางฟิสิกส์ เพราะไม่มีอิเล็กตรอนหลุด"
+    widget:
+      kind: function-plot
+      functions: ["0.414x-W"]
+      sliders:
+        - { name: W, min: 1, max: 6, step: 0.1, value: 2.3, label: ฟังก์ชันงาน (eV) }
+      x: [0, 20]
+      y: [-2, 6]
+  - type: figure
+    title: ระดับพลังงานของอะตอมไฮโดรเจน
+    src: hydrogen-levels.svg
+    alt: "แผนภาพระดับพลังงานของไฮโดรเจน n = 1 ที่ −13.60 eV, n = 2 ที่ −3.40 eV, n = 3 ที่ −1.51 eV, n = 4 ที่ −0.85 eV และ n = ∞ ที่ 0 eV ลูกศรสีม่วงจาก n = 2, 3, 4 ลงมา n = 1 คืออนุกรมไลแมน (อัลตราไวโอเลต) ลูกศรหลายสีจาก n = 3, 4, 5, 6 ลงมา n = 2 คืออนุกรมบัลเมอร์ (แสงที่มองเห็น) ลูกศรสีส้มจาก n = 4, 5 ลงมา n = 3 คืออนุกรมพาเชน (อินฟราเรด)"
+  - type: worked-example
+    title: เส้นสเปกตรัมสีน้ำเงินเขียวของไฮโดรเจน
+    problem: "อิเล็กตรอนในอะตอมไฮโดรเจนเปลี่ยนระดับจาก $n = 4$ ลงมา $n = 2$ จงหาพลังงานและความยาวคลื่นของโฟตอนที่ปล่อยออกมา"
+    steps:
+      - text: "$E_4 = -\\dfrac{13.6}{16} = -0.85\\ \\mathrm{eV}$ และ $E_2 = -\\dfrac{13.6}{4} = -3.40\\ \\mathrm{eV}$"
+      - text: "พลังงานโฟตอน $= E_4 - E_2 = -0.85 - (-3.40) = 2.55\\ \\mathrm{eV}$"
+        why: "โฟตอนมีพลังงานเป็นบวกเท่ากับผลต่างของระดับ"
+      - text: "แปลงเป็นจูล $2.55 \\times 1.6 \\times 10^{-19} = 4.08 \\times 10^{-19}\\ \\mathrm{J}$"
+      - text: "$\\lambda = \\dfrac{hc}{E} = \\dfrac{(6.63 \\times 10^{-34})(3.0 \\times 10^{8})}{4.08 \\times 10^{-19}} = 4.88 \\times 10^{-7}\\ \\mathrm{m}$"
+    answer: "$2.55\\ \\mathrm{eV}$ และ $\\lambda \\approx 488\\ \\mathrm{nm}$ (สีน้ำเงินเขียว เป็นเส้นหนึ่งของอนุกรมบัลเมอร์ ค่าที่วัดได้จริงคือ $486\\ \\mathrm{nm}$)"
+  - { type: check, problem: physics.modern.quantum-atom.p006, prompt: "ใช้ผลต่างของระดับพลังงาน แล้วเปลี่ยนเป็นความยาวคลื่น" }
+  - type: simulation
+    title: "แบบจำลองอะตอมไฮโดรเจน (PhET Models of the Hydrogen Atom)"
+    url: https://phet.colorado.edu/en/simulations/models-of-the-hydrogen-atom
+    provider: phet
+    note: "ยิงแสงเข้าหาอะตอมแล้วเลือกแบบจำลองต่าง ๆ เทียบแบบจำลองลูกบิลเลียด พุดดิงลูกเกด และของโบร์ สังเกตว่าแบบจำลองของโบร์ดูดกลืนเฉพาะโฟตอนบางความยาวคลื่น และปล่อยโฟตอนตรงกับเส้นสเปกตรัม"
+glossary:
+  - { term: โฟตอน, definition: "ก้อนพลังงานของคลื่นแม่เหล็กไฟฟ้า มีพลังงาน E = hf" }
+  - { term: ฟังก์ชันงาน, definition: "พลังงานน้อยที่สุดที่ต้องใช้ทำให้อิเล็กตรอนหลุดออกจากผิวโลหะ" }
+  - { term: ความต่างศักย์หยุดยั้ง, definition: "ความต่างศักย์ที่หยุดโฟโตอิเล็กตรอนที่มีพลังงานจลน์สูงสุดได้พอดี eV_s = E_k,max" }
+  - { term: สถานะพื้น, definition: "ระดับพลังงานต่ำที่สุดของอะตอม สำหรับไฮโดรเจนคือ n = 1 ที่ −13.6 eV" }
+  - { term: พลังงานไอออไนเซชัน, definition: "พลังงานที่ต้องใช้ดึงอิเล็กตรอนออกจากอะตอมจนเป็นไอออน ไฮโดรเจนในสถานะพื้นใช้ 13.6 eV" }
+  - { term: ความยาวคลื่นเดอบรอยล์, definition: "ความยาวคลื่นของอนุภาคที่มีโมเมนตัม p เท่ากับ h/p" }
+flashcards:
+  - { front: "พลังงานโฟตอน", back: "$E = hf = \\dfrac{hc}{\\lambda}$, $h = 6.63 \\times 10^{-34}\\ \\mathrm{J\\,s}$" }
+  - { front: "สมการโฟโตอิเล็กทริกของไอน์สไตน์", back: "$E_{k,\\max} = hf - W = eV_s$" }
+  - { front: "ระดับพลังงานของไฮโดรเจน", back: "$E_n = -\\dfrac{13.6}{n^2}\\ \\mathrm{eV}$, $r_n = n^2(0.053\\ \\mathrm{nm})$" }
+  - { front: "โฟตอนจากการเปลี่ยนระดับ", back: "$hf = E_{\\text{บน}} - E_{\\text{ล่าง}}$" }
+  - { front: "ความยาวคลื่นเดอบรอยล์", back: "$\\lambda = \\dfrac{h}{mv}$ อิเล็กตรอนที่ถูกเร่งด้วย $V$: $\\lambda = \\dfrac{h}{\\sqrt{2meV}}$" }
+references:
+  - { title: "ปรากฏการณ์โฟโตอิเล็กทริก", url: "https://th.wikipedia.org/wiki/ปรากฏการณ์โฟโตอิเล็กทริก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Bohr model", url: "https://en.wikipedia.org/wiki/Bohr_model", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "21.2 Einstein and the Photoelectric Effect (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/21-2-einstein-and-the-photoelectric-effect", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "21.3 The Dual Nature of Light (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/21-3-the-dual-nature-of-light", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
