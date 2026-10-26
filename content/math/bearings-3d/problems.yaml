@@ -1,0 +1,328 @@
+problems:
+  - id: math.geometry.bearings-3d.p001
+    topics: [math.geometry.bearings-3d]
+    difficulty: 1
+    type: mcq
+    stem: "ทิศตะวันออกเขียนเป็นแบริงสามหลักได้อย่างไร"
+    choices:
+      - { id: a, text: "$090^\\circ$", correct: true }
+      - { id: b, text: "$90^\\circ$", feedback: "ค่ามุมถูก แต่แบริงต้องเขียนสามหลักเสมอ" }
+      - { id: c, text: "$270^\\circ$", feedback: "$270^\\circ$ คือทิศตะวันตก ซึ่งได้จากการวัดทวนเข็มนาฬิกา แบริงวัดตามเข็มนาฬิกา" }
+      - { id: d, text: "$000^\\circ$", feedback: "$000^\\circ$ คือทิศเหนือ" }
+    hints:
+      - "เริ่มจากทิศเหนือ หมุนตามเข็มนาฬิกา"
+      - "หมุนหนึ่งในสี่รอบถึงทิศตะวันออก"
+    solution: "จากทิศเหนือหมุนตามเข็มนาฬิกา $90^\\circ$ ถึงทิศตะวันออก เขียนสามหลักเป็น $090^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p002
+    topics: [math.geometry.bearings-3d]
+    difficulty: 1
+    type: numeric
+    stem: "ให้มุมห้องที่พื้นเป็นจุดกำเนิด แกน $x$ และ $y$ อยู่บนพื้น แกน $z$ ชี้ขึ้น หลอดไฟอยู่ที่จุด $(2, 3, 2.8)$ (หน่วยเป็นเมตร) หลอดไฟสูงจากพื้นกี่เมตร"
+    answer: { value: 2.8, tolerance: 0.01, unit: เมตร }
+    hints:
+      - "พิกัดใดบอกความสูง"
+      - "แกน $z$ ชี้ขึ้นจากพื้น"
+    misconceptions:
+      - { match: 3, feedback: "3 คือพิกัด $y$ (ระยะตามพื้น) ความสูงคือพิกัด $z$" }
+      - { match: 2, feedback: "2 คือพิกัด $x$ ความสูงคือพิกัดตัวที่สาม" }
+    solution: "พิกัด $z = 2.8$ คือความสูงจากพื้น หลอดไฟสูง 2.8 เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p003
+    topics: [math.geometry.bearings-3d]
+    difficulty: 2
+    type: numeric
+    stem: "แบริงของ B จาก A คือ $110^\\circ$ แบริงของ A จาก B เป็นกี่องศา"
+    answer: { value: 290, unit: องศา }
+    hints:
+      - "A อยู่ในทิศตรงข้ามกับ B"
+      - "ทิศตรงข้ามต่างกันครึ่งรอบ"
+    misconceptions:
+      - { match: 250, feedback: "ใช้ $360^\\circ - 110^\\circ$ ซึ่งเป็นการสะท้อน ไม่ใช่ทิศตรงข้าม ต้องบวก $180^\\circ$" }
+      - { match: 70, feedback: "ใช้ $180^\\circ - 110^\\circ$ ต้องบวก $180^\\circ$ เพราะแบริงเดิมน้อยกว่า $180^\\circ$" }
+    solution: "แบริงย้อนกลับ $= 110^\\circ + 180^\\circ = 290^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p004
+    topics: [math.geometry.bearings-3d]
+    difficulty: 2
+    type: numeric
+    stem: "เมืองหนึ่งอยู่ในทิศที่ทำมุม $40^\\circ$ จากทิศใต้ไปทางทิศตะวันออก แบริงของเมืองนี้เป็นกี่องศา"
+    answer: { value: 140, unit: องศา }
+    hints:
+      - "วาดรูป ทิศใต้คือ $180^\\circ$ ทิศตะวันออกคือ $090^\\circ$"
+      - "จากทิศใต้หันไปทางตะวันออกคือหมุนทวนเข็มนาฬิกา แบริงจึงน้อยกว่า $180^\\circ$"
+    misconceptions:
+      - { match: 220, feedback: "บวก $180^\\circ + 40^\\circ$ ซึ่งหันไปทางตะวันตก แต่เมืองอยู่ทางตะวันออกของทิศใต้" }
+      - { match: 130, feedback: "บวก $90^\\circ + 40^\\circ$ ซึ่งวัดจากทิศตะวันออก แต่มุม $40^\\circ$ วัดจากทิศใต้" }
+    solution: "ทิศใต้คือ $180^\\circ$ หมุนกลับไปทางตะวันออก $40^\\circ$ ได้ $180^\\circ - 40^\\circ = 140^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p005
+    topics: [math.geometry.bearings-3d]
+    difficulty: 2
+    type: match
+    stem: "จับคู่คำบอกทิศกับแบริง"
+    pairs:
+      - { left: "ทำมุม 30° จากทิศเหนือไปทางตะวันออก", right: "$030^\\circ$" }
+      - { left: "ตะวันออกเฉียงใต้", right: "$135^\\circ$" }
+      - { left: "ทำมุม 20° จากทิศใต้ไปทางตะวันตก", right: "$200^\\circ$" }
+      - { left: "ตะวันตกเฉียงเหนือ", right: "$315^\\circ$" }
+    hints:
+      - "เหนือ 000 ตะวันออก 090 ใต้ 180 ตะวันตก 270"
+      - "ทิศเฉียงอยู่กึ่งกลางระหว่างทิศหลัก"
+    solution: "30° จากเหนือไปตะวันออกคือ 030 ตะวันออกเฉียงใต้ 135 20° จากใต้ไปตะวันตกคือ $180 + 20 = 200$ ตะวันตกเฉียงเหนือ 315"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p006
+    topics: [math.geometry.bearings-3d]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาระยะจากจุดกำเนิดถึงจุด $(2, 6, 9)$"
+    answer: { value: 11, unit: หน่วย }
+    hints:
+      - "$d = \\sqrt{x^2 + y^2 + z^2}$"
+      - "$\\sqrt{4 + 36 + 81}$"
+    misconceptions:
+      - { match: 17, feedback: "บวกพิกัด $2 + 6 + 9$ ตรง ๆ ต้องยกกำลังสองก่อนแล้วถอดราก" }
+      - { match: 6.32, feedback: "ใช้แค่ $x$ กับ $y$ ($\\sqrt{40}$) ลืมพิกัด $z$" }
+    solution: "$\\sqrt{2^2 + 6^2 + 9^2} = \\sqrt{121} = 11$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p007
+    topics: [math.geometry.bearings-3d]
+    difficulty: 3
+    type: numeric
+    stem: "เรือออกจากท่าเรือแล่นไปทางตะวันออก 24 กิโลเมตร แล้วแล่นไปทางใต้ 7 กิโลเมตร เรืออยู่ห่างจากท่าเรือกี่กิโลเมตร"
+    answer: { value: 25, unit: กม. }
+    hints:
+      - "สองช่วงตั้งฉากกัน เป็นขาของสามเหลี่ยมมุมฉาก"
+      - "$\\sqrt{24^2 + 7^2}$"
+    misconceptions:
+      - { match: 31, feedback: "นี่คือระยะทางที่แล่นทั้งหมด โจทย์ถามระยะตรงจากท่าเรือ" }
+      - { match: 17, feedback: "ลบ $24 - 7$ แต่สองช่วงตั้งฉากกัน ต้องใช้พีทาโกรัส" }
+    solution: "$\\sqrt{24^2 + 7^2} = \\sqrt{576 + 49} = \\sqrt{625} = 25$ กม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p008
+    topics: [math.geometry.bearings-3d]
+    difficulty: 3
+    type: numeric
+    stem: "กล่องรูปทรงสี่เหลี่ยมมุมฉากกว้าง 3 ซม. ยาว 4 ซม. สูง 12 ซม. เส้นทแยงมุมของกล่อง (จากมุมล่างถึงมุมบนที่อยู่ตรงข้าม) ยาวกี่เซนติเมตร"
+    answer: { value: 13, unit: ซม. }
+    hints:
+      - "หาเส้นทแยงมุมของพื้นก่อน $\\sqrt{3^2 + 4^2}$"
+      - "เส้นทแยงมุมของพื้นกับความสูงเป็นขาของสามเหลี่ยมมุมฉาก"
+    misconceptions:
+      - { match: 5, feedback: "นี่คือเส้นทแยงมุมของพื้นเท่านั้น ยังต้องรวมความสูง 12 ซม." }
+      - { match: 19, feedback: "บวกด้านทั้งสาม ต้องใช้ $\\sqrt{a^2 + b^2 + c^2}$" }
+    solution: "$\\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{169} = 13$ ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p009
+    topics: [math.geometry.bearings-3d]
+    difficulty: 3
+    type: mcq
+    stem: "บนพื้นห้องซึ่งเป็นระนาบ $xy$ มีจุด $(4, 1, 0)$ จุดที่อยู่ตรงขึ้นไปจากจุดนี้สูง 3 หน่วยคือข้อใด"
+    choices:
+      - { id: a, text: "$(4, 1, 3)$", correct: true }
+      - { id: b, text: "$(4, 4, 0)$", feedback: "บวก 3 ที่พิกัด $y$ ซึ่งเป็นการเลื่อนไปตามพื้น ไม่ใช่ขึ้นไป" }
+      - { id: c, text: "$(7, 1, 0)$", feedback: "บวก 3 ที่พิกัด $x$ ซึ่งยังอยู่บนพื้น" }
+      - { id: d, text: "$(3, 4, 1)$", feedback: "ความสูงใส่ที่พิกัดตัวที่สาม และพิกัด $x$, $y$ ต้องไม่เปลี่ยน" }
+    hints:
+      - "ขึ้นไปตรง ๆ เปลี่ยนเฉพาะความสูง"
+      - "ความสูงคือพิกัด $z$"
+    solution: "ตรงขึ้นไปทำให้ $x$ และ $y$ คงเดิม เปลี่ยน $z$ จาก 0 เป็น 3 ได้ $(4, 1, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p010
+    topics: [math.geometry.bearings-3d]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องบินบินออกจากสนามบินสุวรรณภูมิเป็นระยะ 80 กิโลเมตรด้วยแบริง $050^\\circ$ เครื่องบินอยู่ทางเหนือของสนามบินกี่กิโลเมตร (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 51.4, tolerance: 0.2, unit: กม. }
+    hints:
+      - "วาดรูป มุม $50^\\circ$ วัดจากทิศเหนือ"
+      - "ส่วนที่ไปทางเหนืออยู่ติดกับมุม จึงใช้ $\\cos 50^\\circ$"
+    misconceptions:
+      - { match: 61.3, feedback: "ใช้ $\\sin 50^\\circ$ ซึ่งให้ส่วนที่ไปทางตะวันออก ส่วนที่ไปทางเหนือติดกับมุมจึงใช้ $\\cos$" }
+      - { match: 80, feedback: "80 กม. คือระยะที่บินตามแนวเฉียง ส่วนที่ไปทางเหนือสั้นกว่านั้น" }
+    solution: "ไปทางเหนือ $= 80\\cos 50^\\circ \\approx 80 \\times 0.643 = 51.4$ กม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p011
+    topics: [math.geometry.bearings-3d]
+    difficulty: 4
+    type: numeric
+    stem: "เรือออกจากท่าเรือแล่นไปทางตะวันออก 24 กิโลเมตร แล้วไปทางใต้ 7 กิโลเมตร แบริงของเรือจากท่าเรือเป็นกี่องศา (ปัดเป็นจำนวนเต็ม)"
+    answer: { value: 106, tolerance: 0.6, unit: องศา }
+    hints:
+      - "หามุมที่เส้นจากท่าเรือถึงเรือทำกับทิศตะวันออกก่อน: $\\tan^{-1}\\tfrac{7}{24}$"
+      - "เรืออยู่ใต้ทิศตะวันออก แบริงจึงเท่ากับ $090^\\circ$ บวกมุมนั้น"
+    misconceptions:
+      - { match: 16, feedback: "$16^\\circ$ คือมุมจากทิศตะวันออก ยังต้องบวก $90^\\circ$ เพราะแบริงวัดจากทิศเหนือ" }
+      - { match: 74, feedback: "บวก $16^\\circ$ ทางทิศเหนือของตะวันออก แต่เรืออยู่ใต้ จึงต้องเป็น $90^\\circ + 16^\\circ$" }
+    solution: "$\\tan^{-1}\\tfrac{7}{24} \\approx 16.3^\\circ$ ใต้ทิศตะวันออก แบริง $= 90^\\circ + 16.3^\\circ \\approx 106^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p012
+    topics: [math.geometry.bearings-3d]
+    difficulty: 4
+    type: numeric
+    stem: "กล่องพัสดุไปรษณีย์ขนาด $60 \\times 40 \\times 30$ เซนติเมตร ไม้ตรงที่ยาวที่สุดที่ใส่ในกล่องได้พอดี (วางตามเส้นทแยงมุมของกล่อง) ยาวกี่เซนติเมตร (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 78.1, tolerance: 0.2, unit: ซม. }
+    hints:
+      - "ไม้ที่ยาวที่สุดวางตามเส้นทแยงมุมของกล่อง"
+      - "$\\sqrt{60^2 + 40^2 + 30^2}$"
+    misconceptions:
+      - { match: 72.1, feedback: "นี่คือเส้นทแยงมุมของพื้นกล่อง ถ้าเอียงไม้ขึ้นไปถึงมุมบนจะยาวได้มากกว่า" }
+      - { match: 130, feedback: "บวกด้านทั้งสาม ต้องใช้ $\\sqrt{a^2 + b^2 + c^2}$" }
+    solution: "$\\sqrt{3{,}600 + 1{,}600 + 900} = \\sqrt{6{,}100} \\approx 78.1$ ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p013
+    topics: [math.geometry.bearings-3d]
+    difficulty: 4
+    type: numeric
+    stem: "กล่องกว้าง 3 ซม. ยาว 4 ซม. สูง 12 ซม. เส้นทแยงมุมของกล่องทำมุมกับพื้นกล่องกี่องศา (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 67.4, tolerance: 0.2, unit: องศา }
+    hints:
+      - "มุมกับพื้นวัดเทียบกับเส้นทแยงมุมของพื้น ซึ่งยาว 5 ซม."
+      - "$\\tan\\theta = \\dfrac{\\text{ความสูง}}{\\text{เส้นทแยงมุมของพื้น}}$"
+    misconceptions:
+      - { match: 71.6, feedback: "ใช้ด้านพื้น 4 ซม. แทนเส้นทแยงมุมของพื้น เงาของเส้นทแยงมุมบนพื้นคือเส้นทแยงมุมของพื้น" }
+      - { match: 22.6, feedback: "นี่คือมุมกับแนวตั้ง ใช้ $\\tan\\theta = \\tfrac{5}{12}$ กลับด้าน" }
+    solution: "เส้นทแยงมุมของพื้น $= 5$ ซม. $\\tan\\theta = \\tfrac{12}{5}$ ได้ $\\theta \\approx 67.4^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p014
+    topics: [math.geometry.bearings-3d]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาระยะระหว่างจุด $(-1, 2, 0)$ กับจุด $(3, -2, 7)$"
+    answer: { value: 9, unit: หน่วย }
+    hints:
+      - "หาผลต่างของพิกัดแต่ละแกน: $4$, $-4$, $7$"
+      - "$\\sqrt{4^2 + (-4)^2 + 7^2}$"
+    misconceptions:
+      - { match: 7, feedback: "ผลต่างของ $y$ คือ $-2 - 2 = -4$ ไม่ใช่ 0 ตรวจการลบจำนวนลบ" }
+      - { match: 15, feedback: "บวกผลต่างตรง ๆ ต้องยกกำลังสองแล้วถอดราก" }
+    solution: "$\\sqrt{(3 - (-1))^2 + (-2 - 2)^2 + (7 - 0)^2} = \\sqrt{16 + 16 + 49} = \\sqrt{81} = 9$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p015
+    topics: [math.geometry.bearings-3d]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการหาแบริงของเรือจากท่าเรือ เมื่อรู้ว่าเรือแล่นไปตะวันออกแล้วไปใต้"
+    items:
+      - "วาดรูป เขียนเส้นทิศเหนือที่ท่าเรือ"
+      - "ลากเส้นจากท่าเรือถึงตำแหน่งเรือ ได้สามเหลี่ยมมุมฉาก"
+      - "หามุมระหว่างเส้นนี้กับทิศตะวันออกด้วย $\\tan^{-1}$"
+      - "บวกมุมนั้นกับ $090^\\circ$ แล้วเขียนเป็นตัวเลขสามหลัก"
+    hints:
+      - "เริ่มจากวาดรูป"
+      - "แบริงวัดจากทิศเหนือ จึงต้องแปลงมุมในขั้นสุดท้าย"
+    solution: "วาดรูปและเส้นเหนือ → สามเหลี่ยมมุมฉาก → หามุมด้วย $\\tan^{-1}$ → แปลงเป็นแบริงสามหลัก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p016
+    topics: [math.geometry.bearings-3d]
+    difficulty: 4
+    type: mcq
+    stem: "แบริงของ B จาก A คือ $300^\\circ$ ข้อใดบอกตำแหน่งของ B ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "B อยู่ทางตะวันตกเฉียงเหนือของ A ทำมุม $60^\\circ$ กับทิศเหนือ", correct: true }
+      - { id: b, text: "B อยู่ทางตะวันออกเฉียงเหนือของ A ทำมุม $60^\\circ$ กับทิศเหนือ", feedback: "วัดทวนเข็มนาฬิกา $300^\\circ$ ตามเข็มนาฬิกาเลยทิศตะวันตก ($270^\\circ$) ไปแล้ว จึงอยู่ทางตะวันตก" }
+      - { id: c, text: "B อยู่ทางตะวันตกเฉียงใต้ของ A", feedback: "ตะวันตกเฉียงใต้อยู่ระหว่าง $180^\\circ$ กับ $270^\\circ$ แต่ $300^\\circ$ เลย $270^\\circ$ ไปแล้ว" }
+      - { id: d, text: "แบริงของ A จาก B คือ $060^\\circ$", feedback: "แบริงย้อนกลับคือ $300^\\circ - 180^\\circ = 120^\\circ$" }
+    hints:
+      - "$270^\\circ$ คือทิศตะวันตก $360^\\circ$ คือทิศเหนือ"
+      - "$300^\\circ$ ห่างจากทิศเหนือ $360^\\circ - 300^\\circ$"
+    solution: "$300^\\circ$ อยู่ระหว่างตะวันตก ($270^\\circ$) กับเหนือ ($360^\\circ$) ห่างจากทิศเหนือ $60^\\circ$ B จึงอยู่ทางตะวันตกเฉียงเหนือ และแบริงย้อนกลับคือ $120^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p017
+    topics: [math.geometry.bearings-3d]
+    difficulty: 5
+    type: numeric
+    stem: "พีระมิดฐานสี่เหลี่ยมจัตุรัสยาวด้านละ 10 เมตร สันข้าง (จากมุมฐานถึงยอด) ยาว 13 เมตร ดังภาพ พีระมิดสูงกี่เมตร (ตอบทศนิยม 2 ตำแหน่ง)"
+    figure:
+      src: p-pyramid.svg
+      alt: "พีระมิดฐานสี่เหลี่ยมจัตุรัส ด้านฐานยาว 10 เมตร สันข้างที่ลากจากมุมฐานถึงยอดยาว 13 เมตร ยอดอยู่ตรงเหนือจุดกึ่งกลางของฐาน"
+    answer: { value: 10.91, tolerance: 0.02, unit: เมตร }
+    hints:
+      - "ยอดอยู่ตรงเหนือจุดกึ่งกลางฐาน ระยะจากมุมฐานถึงจุดกึ่งกลางคือครึ่งหนึ่งของเส้นทแยงมุมฐาน"
+      - "ครึ่งเส้นทแยงมุม $= \\tfrac12\\sqrt{10^2 + 10^2}$ แล้วใช้พีทาโกรัสกับสันข้าง 13 เมตร"
+    misconceptions:
+      - { match: 12, feedback: "ใช้ครึ่งด้านฐาน 5 เมตร ซึ่งเป็นแนวไปกึ่งกลางด้าน แต่สันข้างลากจากมุมฐาน ต้องใช้ครึ่งเส้นทแยงมุม" }
+      - { match: 5.93, feedback: "ลบความยาว $13 - 7.07$ ตรง ๆ ต้องใช้พีทาโกรัส $\\sqrt{13^2 - 7.07^2}$" }
+    solution: "ครึ่งเส้นทแยงมุมฐาน $= \\tfrac12\\sqrt{200} = \\sqrt{50} \\approx 7.07$ ม. ความสูง $= \\sqrt{13^2 - 50} = \\sqrt{119} \\approx 10.91$ ม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p018
+    topics: [math.geometry.bearings-3d]
+    difficulty: 5
+    type: numeric
+    stem: "สนามรูปสี่เหลี่ยมผืนผ้า ABCD กว้าง 30 เมตร ยาว 40 เมตร มีเสาธงสูง 15 เมตรตั้งอยู่ที่มุม A นักเรียนยืนที่มุม C ซึ่งอยู่ตรงข้าม มองยอดเสาธงด้วยมุมเงยกี่องศา (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 16.7, tolerance: 0.2, unit: องศา }
+    hints:
+      - "ระยะตามพื้นจาก C ถึงโคนเสา คือเส้นทแยงมุมของสนาม"
+      - "$AC = \\sqrt{30^2 + 40^2}$ แล้ว $\\tan\\theta = \\dfrac{15}{AC}$"
+    misconceptions:
+      - { match: 20.6, feedback: "ใช้ด้านยาว 40 เมตรแทนเส้นทแยงมุม แต่ C อยู่มุมตรงข้ามกับ A" }
+      - { match: 73.3, feedback: "ใช้ $\\tan\\theta = \\tfrac{50}{15}$ กลับด้าน มุมเงย: ข้าม/ชิด = ความสูง/ระยะตามพื้น" }
+    solution: "$AC = \\sqrt{900 + 1{,}600} = 50$ ม. $\\tan\\theta = \\tfrac{15}{50} = 0.3$ ได้ $\\theta \\approx 16.7^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p019
+    topics: [math.geometry.bearings-3d]
+    difficulty: 5
+    type: numeric
+    stem: "เรือแล่นจากท่าเรือ 10 กิโลเมตรด้วยแบริง $030^\\circ$ แล้วเลี้ยวแล่นต่ออีก 10 กิโลเมตรด้วยแบริง $120^\\circ$ แบริงของเรือจากท่าเรือเป็นกี่องศา"
+    answer: { value: 75, tolerance: 0.6, unit: องศา }
+    hints:
+      - "สองช่วงต่างกัน $120^\\circ - 30^\\circ = 90^\\circ$ จึงตั้งฉากกัน และยาวเท่ากัน"
+      - "สามเหลี่ยมมุมฉากหน้าจั่ว มุมที่ท่าเรือคือ $45^\\circ$ วัดจากแนว $030^\\circ$ ไปทางตามเข็มนาฬิกา"
+    misconceptions:
+      - { match: 45, feedback: "$45^\\circ$ คือมุมภายในสามเหลี่ยมที่ท่าเรือ ต้องบวกกับแบริงของช่วงแรก $030^\\circ$" }
+      - { match: 120, feedback: "120° เป็นแบริงของช่วงที่สองเท่านั้น โจทย์ถามทิศของเรือเมื่อมองจากท่าเรือ" }
+    solution: "ช่วงทั้งสองตั้งฉากและยาวเท่ากัน มุมที่ท่าเรือ $= 45^\\circ$ แบริง $= 030^\\circ + 45^\\circ = 075^\\circ$ ตรวจ: ไปตะวันออก $10\\sin30^\\circ + 10\\sin120^\\circ \\approx 13.66$ ไปเหนือ $10\\cos30^\\circ + 10\\cos120^\\circ \\approx 3.66$ $\\tan^{-1}\\tfrac{13.66}{3.66} \\approx 75^\\circ$ ระยะ $10\\sqrt2 \\approx 14.1$ กม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.bearings-3d.p020
+    topics: [math.geometry.bearings-3d]
+    difficulty: 3
+    type: expression
+    stem: "ลูกบาศก์ยาวด้านละ $s$ หน่วย เส้นทแยงมุมของลูกบาศก์ (จากมุมล่างถึงมุมบนที่อยู่ตรงข้าม) ยาวเท่าใด เขียนในรูปของ $s$"
+    answer: { latex: "s\\sqrt{3}", variables: [s] }
+    hints:
+      - "ใช้สูตร $\\sqrt{a^2 + b^2 + c^2}$ โดยทุกด้านยาว $s$"
+      - "$\\sqrt{3s^2}$ แล้วดึง $s^2$ ออกจากราก"
+    misconceptions:
+      - { match: "s\\sqrt{2}", feedback: "นี่คือเส้นทแยงมุมของหน้าลูกบาศก์ ยังต้องรวมความสูงอีกด้าน" }
+      - { match: "3s", feedback: "บวกด้านทั้งสาม ต้องใช้ $\\sqrt{s^2 + s^2 + s^2}$" }
+    solution: "$\\sqrt{s^2 + s^2 + s^2} = \\sqrt{3s^2} = s\\sqrt3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

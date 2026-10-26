@@ -181,3 +181,8 @@ test("links to other topics in a lesson must point at real topics", () => {
   ]));
   assert.deepEqual(msgs, ['ลิงก์ไปหัวข้อ "math.x.ghost" ที่ไม่มีอยู่ในคลัง']);
 });
+
+test("simplified radicals: flag needs a simplified answer, and simplify-stems should set the flag", async () => {
+  const { isSimplifiedRadical } = await import("@klangru/schema");
+  assert.deepEqual(["5\\sqrt{3}", "\\sqrt{75}", "\\frac{\\sqrt{2}}{2}", "\\frac{1}{\\sqrt{2}}", "3\\sqrt{2}+\\sqrt{3}", "\\sqrt{2}+\\sqrt{2}", "2\\sqrt{3x}", "\\sqrt{12x}"].map((l) => isSimplifiedRadical(l)), [true, false, true, false, true, false, true, false]);
+});

@@ -1,0 +1,84 @@
+id: physics.magnetism.induction-ac
+subject: physics
+title: { th: การเหนี่ยวนำแม่เหล็กไฟฟ้าและไฟฟ้ากระแสสลับ, en: Electromagnetic induction and alternating current }
+summary: อีเอ็มเอฟเหนี่ยวนำ กฎของฟาราเดย์และเลนซ์ เครื่องกำเนิดไฟฟ้า ค่าอาร์เอ็มเอส ไฟฟ้าสามเฟส หม้อแปลงกับการส่งกำลังไฟฟ้า และเครื่องใช้ที่อาศัยการเหนี่ยวนำ
+difficulty: 7
+minutes: 40
+prerequisites: [physics.magnetism.magnetic-flux-forces, math.geometry.trig-ratios]
+encompasses:
+  - { id: physics.magnetism.magnetic-flux-forces, weight: 0.4 }
+  - { id: physics.magnetism.magnetic-field, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: อีเอ็มเอฟจากฟลักซ์ที่เปลี่ยน
+    problem: "ขดลวด $500$ รอบ พื้นที่หน้าตัด $4.0 \\times 10^{-3}\\ \\mathrm{m^2}$ วางตั้งฉากกับสนามแม่เหล็ก สนามเพิ่มจาก $0$ เป็น $0.30\\ \\mathrm{T}$ ในเวลา $0.050\\ \\mathrm{s}$ จงหาขนาดอีเอ็มเอฟเหนี่ยวนำ ถ้าขดลวดต่อกับตัวต้านทานรวม $6.0\\ \\Omega$ จะมีกระแสเท่าใด"
+    steps:
+      - text: "ฟลักซ์ต่อรอบที่เปลี่ยน $\\Delta\\Phi_B = (0.30)(4.0 \\times 10^{-3}) = 1.2 \\times 10^{-3}\\ \\mathrm{Wb}$"
+        why: "สนามตั้งฉากกับพื้นที่ $\\theta = 0^\\circ$ จึงได้ $\\Phi_B = BA$"
+      - text: "$|\\varepsilon| = N\\dfrac{\\Delta\\Phi_B}{\\Delta t} = 500 \\times \\dfrac{1.2 \\times 10^{-3}}{0.050} = 12\\ \\mathrm{V}$"
+      - text: "$I = \\dfrac{\\varepsilon}{R} = \\dfrac{12}{6.0} = 2.0\\ \\mathrm{A}$"
+      - text: "ทิศของกระแสสร้างสนามสวนทางกับสนามที่กำลังเพิ่ม"
+        why: "กฎของเลนซ์: กระแสเหนี่ยวนำต้านการเปลี่ยนแปลงฟลักซ์ ไม่ได้ต้านสนาม"
+    answer: "$\\varepsilon = 12\\ \\mathrm{V}$ และ $I = 2.0\\ \\mathrm{A}$ (เฉพาะช่วง $0.050\\ \\mathrm{s}$ ที่สนามเปลี่ยน)"
+  - { type: check, problem: physics.magnetism.induction-ac.p007, prompt: "กระแสเหนี่ยวนำต้านการเปลี่ยนแปลง" }
+  - type: figure
+    title: ความต่างศักย์ของไฟบ้าน
+    src: ac-voltage.svg
+    alt: "กราฟรูปไซน์ของความต่างศักย์ไฟฟ้ากระแสสลับกับเวลา 0 ถึง 40 มิลลิวินาที ค่าสูงสุด 311 V และต่ำสุด −311 V เส้นประสีแดงที่ 311 V คือค่าสูงสุด เส้นประสีเขียวที่ 220 V คือค่าอาร์เอ็มเอส ลูกศรระหว่างยอดสองยอดแสดงคาบ 20 ms (ความถี่ 50 Hz)"
+  - type: interactive
+    title: ค่าสูงสุดกับค่าอาร์เอ็มเอส
+    caption: "เส้นแรกคือ $v = V_m\\sin(2\\pi ft)$ ที่ $f = 50\\ \\mathrm{Hz}$ เมื่อ $x$ คือเวลาเป็นมิลลิวินาที เส้นที่สองคือ $V_m/\\sqrt2$ ลองตั้ง $V$ เป็น 311 แล้วดูว่าค่าอาร์เอ็มเอสเป็นเท่าใด"
+    widget:
+      kind: function-plot
+      functions: ["V\\sin(0.31416x)", "\\frac{V}{\\sqrt{2}}"]
+      sliders:
+        - { name: V, min: 50, max: 400, step: 1, value: 311, label: ค่าสูงสุด (V) }
+      x: [0, 40]
+      y: [-400, 400]
+  - type: figure
+    title: ไฟฟ้าสามเฟส
+    src: three-phase.svg
+    alt: "กราฟรูปไซน์สามเส้นสีแดง น้ำเงิน และเขียว แทนเฟส 1 เฟส 2 และเฟส 3 ในหนึ่งคาบ 20 มิลลิวินาที ยอดของแต่ละเฟสอยู่ที่ประมาณ 5, 11.7 และ 18.3 ms ห่างกันหนึ่งในสามคาบหรือ 120 องศา"
+  - type: figure
+    title: หม้อแปลงไฟฟ้า
+    src: transformer.svg
+    alt: "แกนเหล็กอ่อนรูปสี่เหลี่ยม ด้านซ้ายพันขดลวดปฐมภูมิ Np รอบต่อกับแหล่งไฟฟ้ากระแสสลับ Vp ด้านขวาพันขดลวดทุติยภูมิ Ns รอบ (มากกว่า) ต่อกับโหลด Vs ข้อความกลางภาพ Vs/Vp = Ns/Np และบอกว่าฟลักซ์ในแกนเปลี่ยนตามกระแสสลับ"
+  - type: worked-example
+    title: อะแดปเตอร์ที่ใช้หม้อแปลง
+    problem: "หม้อแปลงอุดมคติในอะแดปเตอร์รุ่นเก่าแปลงไฟบ้าน $220\\ \\mathrm{V}$ เป็น $12\\ \\mathrm{V}$ (ค่าอาร์เอ็มเอส) ขดปฐมภูมิมี $1650$ รอบ ขดทุติยภูมิต้องมีกี่รอบ ค่าสูงสุดของความต่างศักย์ด้านทุติยภูมิเป็นเท่าใด และถ้าด้านทุติยภูมิจ่ายกระแส $2.0\\ \\mathrm{A}$ ด้านปฐมภูมิมีกระแสเท่าใด"
+    steps:
+      - text: "$N_s = N_p\\dfrac{V_s}{V_p} = 1650 \\times \\dfrac{12}{220} = 90$ รอบ"
+      - text: "ค่าสูงสุด $V_m = 12\\sqrt2 \\approx 17\\ \\mathrm{V}$"
+        why: "ค่าที่บอกเป็นค่าอาร์เอ็มเอส ค่าสูงสุดมากกว่า $\\sqrt2$ เท่า"
+      - text: "อุดมคติ $V_pI_p = V_sI_s$ จึงได้ $I_p = \\dfrac{(12)(2.0)}{220} = 0.11\\ \\mathrm{A}$"
+        why: "แปลงลงความต่างศักย์ กระแสด้านปฐมภูมิจึงน้อยกว่าด้านทุติยภูมิ"
+    answer: "$N_s = 90$ รอบ ค่าสูงสุด $\\approx 17\\ \\mathrm{V}$ และ $I_p \\approx 0.11\\ \\mathrm{A}$"
+  - { type: check, problem: physics.magnetism.induction-ac.p005, prompt: "ขดที่มีรอบน้อยกว่ามีความต่างศักย์น้อยกว่า" }
+  - type: simulation
+    title: "กฎของฟาราเดย์ (PhET Faraday's Law)"
+    url: https://phet.colorado.edu/en/simulations/faradays-law
+    provider: phet
+    note: "เลื่อนแม่เหล็กเข้าออกขดลวด สังเกตว่าหลอดไฟสว่างเฉพาะตอนแม่เหล็กเคลื่อนที่ ลองเลื่อนเร็วขึ้น เปลี่ยนเป็นขดลวดสองขด และกลับขั้วแม่เหล็ก ดูว่าความสว่างและทิศการเบนของโวลต์มิเตอร์เปลี่ยนอย่างไร"
+glossary:
+  - { term: อีเอ็มเอฟเหนี่ยวนำ, definition: "อีเอ็มเอฟที่เกิดในขดลวดหรือตัวนำเมื่อฟลักซ์แม่เหล็กที่ผ่านเปลี่ยนแปลง" }
+  - { term: กฎของเลนซ์, definition: "กระแสเหนี่ยวนำมีทิศที่ทำให้เกิดสนามแม่เหล็กต้านการเปลี่ยนแปลงฟลักซ์ที่ทำให้เกิดมัน" }
+  - { term: ค่าอาร์เอ็มเอส, definition: "ค่ายังผลของปริมาณกระแสสลับ เท่ากับค่ากระแสตรงที่ให้ความร้อนในตัวต้านทานเท่ากัน สำหรับรูปไซน์เท่ากับค่าสูงสุดหาร √2" }
+  - { term: หม้อแปลง, definition: "อุปกรณ์ที่มีขดลวดสองขดบนแกนเหล็กเดียวกัน ใช้เพิ่มหรือลดความต่างศักย์ของไฟฟ้ากระแสสลับ" }
+  - { term: กระแสวน, definition: "กระแสเหนี่ยวนำที่วนอยู่ในแผ่นหรือก้อนโลหะเมื่อฟลักซ์ที่ผ่านเปลี่ยน ทำให้โลหะร้อนหรือเกิดแรงต้าน" }
+flashcards:
+  - { front: "กฎของฟาราเดย์", back: "$\\varepsilon = -N\\dfrac{\\Delta\\Phi_B}{\\Delta t}$" }
+  - { front: "อีเอ็มเอฟของลวดที่เคลื่อนที่ตัดสนาม", back: "$\\varepsilon = BLv$" }
+  - { front: "อีเอ็มเอฟสูงสุดของเครื่องกำเนิดไฟฟ้า", back: "$\\varepsilon_m = NBA\\omega$, $\\omega = 2\\pi f$" }
+  - { front: "ค่าอาร์เอ็มเอส", back: "$V_{\\text{rms}} = V_m/\\sqrt2$, $I_{\\text{rms}} = I_m/\\sqrt2$" }
+  - { front: "หม้อแปลงอุดมคติ", back: "$\\dfrac{V_s}{V_p} = \\dfrac{N_s}{N_p}$ และ $V_pI_p = V_sI_s$" }
+references:
+  - { title: "การเหนี่ยวนำแม่เหล็กไฟฟ้า", url: "https://th.wikipedia.org/wiki/การเหนี่ยวนำแม่เหล็กไฟฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Faraday's law of induction", url: "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "20.3 Electromagnetic Induction (Physics, OpenStax)", url: "https://openstax.org/books/physics/pages/20-3-electromagnetic-induction", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Three-phase electric power", url: "https://en.wikipedia.org/wiki/Three-phase_electric_power", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

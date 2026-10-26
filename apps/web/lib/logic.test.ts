@@ -70,6 +70,7 @@ test("expression answers accept equivalent forms and reject the rest", async () 
     prefix: "h =",
     expanded: false,
     factored: false,
+    simplified: false,
     answer: { latex: "\\frac{2A}{b}", variables: ["A", "b"] },
     misconceptions: [{ match: "\\frac{A}{2b}", feedback: "คูณ 2 ก่อน" }],
   };
@@ -89,6 +90,9 @@ test("expression answers accept equivalent forms and reject the rest", async () 
   const ex: Problem = { ...p, id: "math.a.p007", prefix: undefined, expanded: true, answer: { latex: "-6x+10", variables: ["x"] }, misconceptions: [] };
   assert.equal((await check(ex, { type: "expression", latex: "10-6x" })).correct, true);
   assert.ok((await check(ex, { type: "expression", latex: "-2(3x-5)" })).invalid);
+  const rad: Problem = { ...p, id: "math.a.p009", prefix: undefined, simplified: true, answer: { latex: "5\\sqrt{3}", variables: [] }, misconceptions: [] };
+  assert.equal((await check(rad, { type: "expression", latex: "5\\sqrt{3}" })).correct, true);
+  assert.ok((await check(rad, { type: "expression", latex: "\\sqrt{75}" })).invalid?.includes("รูปอย่างง่าย"));
 });
 
 test("hanzi passes within the allowed number of mistakes", async () => {

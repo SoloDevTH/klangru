@@ -1,0 +1,81 @@
+id: physics.thermal.first-law
+subject: physics
+title: { th: กฎข้อที่หนึ่งของอุณหพลศาสตร์, en: The first law of thermodynamics }
+summary: ระดับมหาวิทยาลัย งานของแก๊สเป็นปริพันธ์และพื้นที่บนแผนภาพ P–V พลังงานภายใน กฎข้อที่หนึ่ง กระบวนการความดัน ปริมาตร อุณหภูมิคงตัว อะเดียบาติก และวัฏจักร
+difficulty: 7
+minutes: 40
+prerequisites: [physics.thermal.kinetic-theory, physics.energy.work, physics.thermal.phase-change]
+encompasses:
+  - { id: physics.thermal.kinetic-theory, weight: 0.4 }
+  - { id: physics.energy.work, weight: 0.2 }
+  - { id: physics.thermal.phase-change, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กระบวนการต่าง ๆ เริ่มจากสถานะเดียวกัน
+    src: pv-processes.svg
+    alt: "แผนภาพ P–V แกนนอนปริมาตรเป็นลิตร แกนตั้งความดันเป็นกิโลพาสคัล จุด A อยู่ที่ 10 L, 200 kPa จาก A มีสี่เส้นทาง: เส้นแนวนอนสีแดง (ความดันคงตัว) ไปทางขวาถึง 20 L, ลูกศรแนวดิ่งสีม่วง (ปริมาตรคงตัว) ลงไปถึง 100 kPa, เส้นโค้งสีน้ำเงิน (อุณหภูมิคงตัว) ลดลงเป็น P = 2000/V และเส้นโค้งสีเขียว (อะเดียบาติก γ = 5/3) ซึ่งชันกว่าเส้นอุณหภูมิคงตัวและอยู่ใต้เส้นนั้นเมื่อปริมาตรเพิ่ม"
+  - type: worked-example
+    title: แก๊สขยายตัวที่ความดันคงตัว
+    problem: "แก๊สอุดมคติอะตอมเดี่ยว $2.0\\ \\mathrm{mol}$ ขยายตัวที่ความดันคงตัว $1.0 \\times 10^{5}\\ \\mathrm{Pa}$ จาก $0.040\\ \\mathrm{m^3}$ เป็น $0.060\\ \\mathrm{m^3}$ จงหางานที่แก๊สทำ พลังงานภายในที่เพิ่ม และความร้อนที่แก๊สได้รับ"
+    steps:
+      - text: "งาน $W = P\\,\\Delta V = (1.0 \\times 10^{5})(0.020) = 2000\\ \\mathrm{J}$"
+      - text: "ที่ความดันคงตัว $nR\\,\\Delta T = P\\,\\Delta V = 2000\\ \\mathrm{J}$"
+        why: "จาก $PV = nRT$ เมื่อ $P$ คงตัว การเปลี่ยน $PV$ เท่ากับการเปลี่ยน $nRT$ จึงไม่ต้องหาอุณหภูมิก่อน"
+      - text: "$\\Delta U = nC_V\\Delta T = \\tfrac32 nR\\Delta T = \\tfrac32 (2000) = 3000\\ \\mathrm{J}$"
+      - text: "กฎข้อที่หนึ่ง $Q = \\Delta U + W = 3000 + 2000 = 5000\\ \\mathrm{J}$"
+        why: "ตรวจด้วย $Q = nC_P\\Delta T = \\tfrac52 nR\\Delta T = \\tfrac52(2000)$ ได้ค่าเดียวกัน"
+    answer: "$W = 2.0\\ \\mathrm{kJ}$, $\\Delta U = 3.0\\ \\mathrm{kJ}$, $Q = 5.0\\ \\mathrm{kJ}$ ความร้อนที่ได้รับ 40% กลายเป็นงาน"
+  - { type: check, problem: physics.thermal.first-law.p004, prompt: "ความร้อนที่ได้รับแบ่งเป็นพลังงานภายในกับงาน" }
+  - type: figure
+    title: งานเป็นพื้นที่บนแผนภาพ P–V
+    src: work-area.svg
+    alt: "ซ้าย: เส้นโค้งจากจุด 1 ลงไปจุด 2 ขณะแก๊สขยายตัว พื้นที่ใต้เส้นโค้งถึงแกน V แรเงาสีฟ้าและเขียนว่า W = ∫P dV ขวา: วัฏจักรรูปสี่เหลี่ยมคางหมูวนตามเข็มนาฬิกา พื้นที่ภายในแรเงาสีส้มเขียนว่างานสุทธิเท่ากับพื้นที่ที่ล้อม และวัฏจักรตามเข็มนาฬิกาให้งานสุทธิมากกว่าศูนย์"
+  - type: worked-example
+    title: อัดอากาศอย่างรวดเร็ว
+    problem: "แก๊สอุดมคติอะตอมเดี่ยว $1.0\\ \\mathrm{mol}$ อุณหภูมิ $300\\ \\mathrm{K}$ ถูกอัดแบบอะเดียบาติกจนปริมาตรเหลือครึ่งหนึ่ง จงหาอุณหภูมิสุดท้ายและงานที่แก๊สทำ ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    steps:
+      - text: "อะเดียบาติก: $T_1V_1^{\\gamma - 1} = T_2V_2^{\\gamma - 1}$ และ $\\gamma - 1 = \\tfrac53 - 1 = \\tfrac23$"
+      - text: "$T_2 = T_1\\left(\\dfrac{V_1}{V_2}\\right)^{2/3} = 300 \\times 2^{2/3} = 476\\ \\mathrm{K}$"
+      - text: "$\\Delta U = \\tfrac32 nR\\Delta T = \\tfrac32 (1.0)(8.31)(176) = 2.20 \\times 10^{3}\\ \\mathrm{J}$"
+      - text: "$Q = 0$ จึงได้ $W = -\\Delta U = -2.20 \\times 10^{3}\\ \\mathrm{J}$"
+        why: "งานติดลบเพราะแก๊สถูกอัด สิ่งแวดล้อมทำงานต่อแก๊ส $2.20\\ \\mathrm{kJ}$ งานนี้ทั้งหมดไปเพิ่มพลังงานภายใน"
+    answer: "$T_2 \\approx 476\\ \\mathrm{K}$ ($203\\,^\\circ\\mathrm{C}$) และ $W \\approx -2.2\\ \\mathrm{kJ}$"
+  - { type: check, problem: physics.thermal.first-law.p009, prompt: "งานสุทธิของวัฏจักรคือพื้นที่ที่ล้อมไว้" }
+  - type: interactive
+    title: เส้นอุณหภูมิคงตัวกับเส้นอะเดียบาติก
+    caption: "เส้นแรกคือ $P = 100/V$ (อุณหภูมิคงตัว) เส้นที่สองคือ $P = 100V^{-\\gamma}$ (อะเดียบาติก) ผ่านจุด $V = 1$, $P = 100$ เหมือนกัน แกนนอนคือปริมาตร ลองเลื่อน $k$ (แทน $\\gamma$) จาก 1 ไป 1.67 ดูว่าเส้นอะเดียบาติกชันขึ้นอย่างไร"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{100}{x}", "100\\cdot x^{-k}"]
+      sliders:
+        - { name: k, min: 1, max: 1.7, step: 0.05, value: 1.4, label: แกมมา }
+      x: [0.5, 4]
+      y: [0, 220]
+  - type: simulation
+    title: "สมบัติของแก๊ส (PhET Gas Properties)"
+    url: https://phet.colorado.edu/en/simulations/gas-properties
+    provider: phet
+    note: "ในหน้า Ideal ใส่แก๊สแล้วตั้งให้ความดันคงตัว จากนั้นใส่ความร้อนแล้วสังเกตว่าฝาภาชนะเลื่อน (แก๊สทำงาน) ลองเทียบกับตั้งให้ปริมาตรคงตัวแล้วใส่ความร้อนเท่ากัน อุณหภูมิขึ้นมากกว่าเพราะไม่มีพลังงานเสียไปเป็นงาน"
+glossary:
+  - { term: ระบบ, definition: "ส่วนที่เลือกศึกษา เช่น แก๊สในกระบอกสูบ ส่วนที่เหลือเรียกว่าสิ่งแวดล้อม" }
+  - { term: พลังงานภายใน, definition: "ผลรวมพลังงานจลน์และพลังงานศักย์ของอนุภาคในระบบ เป็นฟังก์ชันสถานะ ของแก๊สอุดมคติขึ้นกับอุณหภูมิอย่างเดียว" }
+  - { term: ฟังก์ชันสถานะ, definition: "ปริมาณที่ขึ้นกับสถานะของระบบเท่านั้น ไม่ขึ้นกับเส้นทาง เช่น P, V, T, U" }
+  - { term: กระบวนการอะเดียบาติก, definition: "กระบวนการที่ไม่มีความร้อนถ่ายโอนเข้าหรือออกจากระบบ Q = 0" }
+  - { term: กระบวนการกึ่งสถิต, definition: "กระบวนการที่เกิดช้ามากจนระบบอยู่ในสมดุลตลอดทาง จึงเขียนเป็นเส้นบนแผนภาพ P–V ได้" }
+flashcards:
+  - { front: "กฎข้อที่หนึ่งของอุณหพลศาสตร์", back: "$\\Delta U = Q - W$ ($Q$ ได้รับ, $W$ งานที่ระบบทำ)" }
+  - { front: "งานของแก๊ส", back: "$W = \\displaystyle\\int_{V_1}^{V_2} P\\,dV$ = พื้นที่ใต้เส้นทางบนแผนภาพ P–V" }
+  - { front: "งานของแก๊สอุดมคติที่อุณหภูมิคงตัว", back: "$W = nRT\\ln\\dfrac{V_2}{V_1}$ และ $Q = W$" }
+  - { front: "กระบวนการอะเดียบาติก", back: "$Q = 0$, $\\Delta U = -W$, $PV^{\\gamma}$ คงตัว" }
+  - { front: "วัฏจักร", back: "$\\Delta U = 0$ งานสุทธิ = ความร้อนสุทธิ = พื้นที่ที่ล้อม" }
+references:
+  - { title: "กฎข้อที่หนึ่งของอุณหพลศาสตร์", url: "https://th.wikipedia.org/wiki/กฎข้อที่หนึ่งของอุณหพลศาสตร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "First law of thermodynamics", url: "https://en.wikipedia.org/wiki/First_law_of_thermodynamics", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "3.4 Thermodynamic Processes (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/3-4-thermodynamic-processes", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "3.6 Adiabatic Processes for an Ideal Gas (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/3-6-adiabatic-processes-for-an-ideal-gas", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

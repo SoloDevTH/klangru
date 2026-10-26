@@ -1,0 +1,63 @@
+id: math.prob.conditional
+subject: math
+title: { th: ความน่าจะเป็นแบบมีเงื่อนไข แผนภาพต้นไม้ และตารางสองทาง, en: "Conditional probability, tree diagrams and two-way tables" }
+summary: หาความน่าจะเป็นเมื่อรู้ข้อมูลบางอย่างแล้ว จากตารางสองทาง แผนภาพเวนน์ และแผนภาพต้นไม้ ใช้กฎการบวกและกฎการคูณ ตรวจความเป็นอิสระ และระวังการสลับเงื่อนไข
+difficulty: 5.5
+minutes: 45
+prerequisites: [math.prob.probability, math.logic.sets, math.stats.bivariate-data]
+encompasses:
+  - { id: math.prob.probability, weight: 0.4 }
+  - { id: math.logic.sets, weight: 0.2 }
+  - { id: math.stats.bivariate-data, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ปริภูมิตัวอย่างหดลงเมื่อรู้เงื่อนไข
+    problem: "ทอยลูกเต๋า 1 ลูก มีคนบอกว่าได้แต้มมากกว่า 3 ความน่าจะเป็นที่ได้แต้มคู่เป็นเท่าใด"
+    steps:
+      - text: "เงื่อนไข \"มากกว่า 3\" ทำให้เหลือผลที่เป็นไปได้ $\\{4, 5, 6\\}$ 3 แบบ"
+        why: "ผลที่ขัดกับข้อมูลที่รู้แล้วตัดทิ้งได้"
+      - text: "ในกลุ่มนี้ แต้มคู่คือ $\\{4, 6\\}$ 2 แบบ"
+      - text: "$P(\\text{คู่} \\mid {>}3) = \\tfrac23$ ตรวจด้วยสูตร: $\\dfrac{P(\\text{คู่} \\cap {>}3)}{P({>}3)} = \\dfrac{2/6}{3/6} = \\dfrac23$"
+    answer: "$\\tfrac23$ (มากกว่า $P(\\text{คู่}) = \\tfrac12$ เมื่อไม่รู้เงื่อนไข)"
+  - { type: check, problem: math.prob.conditional.p002, prompt: "ดูเฉพาะแถวของนักเรียนชาย" }
+  - type: figure
+    src: tree-marbles.svg
+    alt: "แผนภาพต้นไม้ หยิบลูกแก้วสองลูกโดยไม่ใส่คืนจากถุงที่มีแดง 5 น้ำเงิน 3 ลูกแรก แดง 5/8 น้ำเงิน 3/8 ถ้าลูกแรกแดง ลูกที่สอง แดง 4/7 น้ำเงิน 3/7 ถ้าลูกแรกน้ำเงิน ลูกที่สอง แดง 5/7 น้ำเงิน 2/7 ผลลัพธ์ แดงแดง 20/56 แดงน้ำเงิน 15/56 น้ำเงินแดง 15/56 น้ำเงินน้ำเงิน 6/56"
+    caption: "กิ่งชั้นที่สองเป็นความน่าจะเป็นแบบมีเงื่อนไข คูณตามกิ่งแล้วบวกเส้นทางที่ต้องการ"
+  - type: worked-example
+    title: แผนภาพต้นไม้สองขั้นและการสลับเงื่อนไข
+    problem: "โรงงานมีเครื่องจักร A ผลิตสินค้า 60% และเครื่อง B ผลิต 40% สินค้าจากเครื่อง A เสีย 2% จากเครื่อง B เสีย 5% สุ่มสินค้ามา 1 ชิ้นพบว่าเสีย ความน่าจะเป็นที่มาจากเครื่อง A เป็นเท่าใด"
+    steps:
+      - text: "กิ่ง A แล้วเสีย: $0.6 \\times 0.02 = 0.012$"
+        why: "กฎการคูณ $P(A \\cap \\text{เสีย}) = P(A)\\,P(\\text{เสีย} \\mid A)$"
+      - text: "กิ่ง B แล้วเสีย: $0.4 \\times 0.05 = 0.020$"
+      - text: "$P(\\text{เสีย}) = 0.012 + 0.020 = 0.032$"
+        why: "สินค้าเสียมาได้สองเส้นทาง จึงบวกกัน"
+      - text: "$P(A \\mid \\text{เสีย}) = \\dfrac{0.012}{0.032} = 0.375$"
+    answer: "$0.375$ (แม้เครื่อง A ผลิตมากกว่า แต่ของเสียส่วนใหญ่มาจากเครื่อง B)"
+  - { type: check, problem: math.prob.conditional.p008, prompt: "เทียบ P(ใส่แว่น | ชาย) กับ P(ใส่แว่น)" }
+glossary:
+  - { term: ความน่าจะเป็นแบบมีเงื่อนไข, definition: "P(A | B) คือความน่าจะเป็นของ A เมื่อรู้ว่า B เกิดแล้ว เท่ากับ P(A ∩ B) ÷ P(B)" }
+  - { term: ตารางสองทาง, definition: "ตารางที่แจกแจงความถี่ตามตัวแปรเชิงกลุ่มสองตัว แถวเป็นตัวแปรหนึ่ง หลักเป็นอีกตัว" }
+  - { term: แผนภาพต้นไม้, definition: "แผนภาพแสดงผลที่เกิดเป็นขั้น ๆ กิ่งหลังเป็นความน่าจะเป็นแบบมีเงื่อนไข" }
+  - { term: กฎการบวก, definition: "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)" }
+  - { term: กฎการคูณ, definition: "P(A ∩ B) = P(A) × P(B | A)" }
+  - { term: เหตุการณ์อิสระ, definition: "A และ B อิสระต่อกันเมื่อ P(A | B) = P(A) หรือ P(A ∩ B) = P(A)P(B)" }
+  - { term: ความถี่ที่คาดหวัง, definition: "จำนวนครั้งที่คาดว่าจะเกิด เท่ากับความน่าจะเป็นคูณจำนวนทั้งหมด" }
+flashcards:
+  - { front: "P(A | B) = ?", back: "P(A ∩ B) ÷ P(B)" }
+  - { front: "P(A | B) เท่ากับ P(B | A) ไหม", back: "โดยทั่วไปไม่เท่า เพราะตัวส่วนเป็นคนละกลุ่ม" }
+  - { front: "A กับ B อิสระต่อกันเมื่อใด", back: "P(A ∩ B) = P(A)P(B) หรือ P(A | B) = P(A)" }
+  - { front: "หยิบสองครั้งโดยไม่ใส่คืน ต้องระวังอะไร", back: "ครั้งที่สองจำนวนทั้งหมดและจำนวนที่สนใจอาจลดลง" }
+  - { front: "P(A ∪ B) = ?", back: "P(A) + P(B) − P(A ∩ B)" }
+references:
+  - { title: "ความน่าจะเป็นมีเงื่อนไข", url: "https://th.wikipedia.org/wiki/ความน่าจะเป็นมีเงื่อนไข", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Conditional probability", url: "https://en.wikipedia.org/wiki/Conditional_probability", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Independence (probability theory)", url: "https://en.wikipedia.org/wiki/Independence_(probability_theory)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Tree diagram (probability theory)", url: "https://en.wikipedia.org/wiki/Tree_diagram_(probability_theory)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

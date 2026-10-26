@@ -142,6 +142,51 @@ export function isFactoredForm(latex: string): boolean {
   return j.slice(1).some((f) => isSum(f) || (Array.isArray(f) && f[0] === "Power" && isSum(f[1])));
 }
 
+const rawJson = (latex: string): unknown => scoped((engine) => engine.parse(latex, { form: "raw" }).json);
+
+const hasSquareFactor = (n: number) => {
+  for (let k = 2; k * k <= n; k++) if (n % (k * k) === 0) return true;
+  return false;
+};
+
+/**
+ * รูปอย่างง่ายของจำนวนในรูปกรณฑ์ (โจทย์ให้ "ทำให้อยู่ในรูปอย่างง่าย"):
+ * ในราก √ ต้องไม่มีตัวประกอบที่เป็นกำลังสอง, ตัวส่วนไม่มีราก และไม่มีรากเดียวกันที่ยังไม่ได้รวมกัน
+ * ตัวตรวจแทนค่าตัวเลขจึงยอมรับ √75 แทน 5√3 ถ้าไม่ตรวจรูปแบบนี้
+ */
+export function isSimplifiedRadical(latex: string): boolean {
+  let ok = true;
+  const key = (n: unknown) => JSON.stringify(n);
+  const visit = (n: unknown, inDenominator: boolean): void => {
+    if (!Array.isArray(n)) return;
+    const [head, ...args] = n as [unknown, ...unknown[]];
+    if (head === "Sqrt") {
+      if (inDenominator) ok = false;
+      const r = args[0];
+      const nums: number[] = typeof r === "number" ? [r] : Array.isArray(r) && (r[0] === "InvisibleOperator" || r[0] === "Multiply") ? r.slice(1).filter((x): x is number => typeof x === "number") : [];
+      if (nums.some((x) => Number.isInteger(x) && x > 1 && hasSquareFactor(x))) ok = false;
+    }
+    if (head === "Add" || head === "Subtract") {
+      const radicands = args.flatMap((t) => {
+        const found: string[] = [];
+        walk(t, (x) => {
+          if (Array.isArray(x) && x[0] === "Sqrt") found.push(key(x[1]));
+        });
+        return [...new Set(found)];
+      });
+      if (new Set(radicands).size < radicands.length) ok = false;
+    }
+    if (head === "Divide") {
+      visit(args[0], inDenominator);
+      visit(args[1], true);
+      return;
+    }
+    for (const a of args) visit(a, inDenominator);
+  };
+  visit(rawJson(latex), false);
+  return ok;
+}
+
 /**
  * ผู้เรียนมักพิมพ์ g(x+1) หมายถึง g คูณ (x+1) แต่ตัวแปลงอ่านเป็นฟังก์ชัน g
  * จึงแทรก \cdot ให้ตัวแปรที่โจทย์อนุญาต (ชื่อ 1 ตัวอักษร) ที่ตามด้วยวงเล็บ

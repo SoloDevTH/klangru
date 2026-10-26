@@ -1,0 +1,297 @@
+problems:
+  - id: physics.magnetism.induction-ac.p001
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 1
+    type: mcq
+    stem: "สถานการณ์ใดทำให้เกิดอีเอ็มเอฟเหนี่ยวนำในขดลวด"
+    choices:
+      - { id: a, text: "เลื่อนแท่งแม่เหล็กเข้าไปในขดลวด", correct: true }
+      - { id: b, text: "วางแท่งแม่เหล็กแรงสูงนิ่งอยู่ในขดลวด", feedback: "สนามแรงแต่ไม่เปลี่ยน ฟลักซ์คงตัวจึงไม่เกิดอีเอ็มเอฟ" }
+      - { id: c, text: "ต่อขดลวดข้างเคียงกับแบตเตอรี่แล้วทิ้งไว้นาน ๆ", feedback: "กระแสตรงที่คงตัวให้ฟลักซ์คงตัว อีเอ็มเอฟเกิดเฉพาะตอนเปิดหรือปิดสวิตช์" }
+      - { id: d, text: "วางขดลวดไว้ห่างจากแม่เหล็กใด ๆ", feedback: "ไม่มีฟลักซ์เปลี่ยน จึงไม่มีอีเอ็มเอฟ" }
+    hints:
+      - "สิ่งที่ต้องมีคือการเปลี่ยนแปลงของฟลักซ์"
+      - "ขนาดของสนามไม่สำคัญเท่าการเปลี่ยนแปลงของมัน"
+    solution: "อีเอ็มเอฟเหนี่ยวนำเกิดเมื่อฟลักซ์ที่ผ่านขดลวดเปลี่ยน การเลื่อนแม่เหล็กเข้าไปทำให้ฟลักซ์เพิ่มขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p002
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 1
+    type: match
+    stem: "จับคู่เครื่องใช้กับหลักการทำงาน"
+    pairs:
+      - { left: "เครื่องกำเนิดไฟฟ้าที่เขื่อน", right: "หมุนขดลวดในสนามแม่เหล็กให้ฟลักซ์เปลี่ยน" }
+      - { left: "หม้อแปลงบนเสาไฟฟ้า", right: "กระแสสลับในขดหนึ่งเหนี่ยวนำอีเอ็มเอฟในอีกขดบนแกนเดียวกัน" }
+      - { left: "เตาแม่เหล็กไฟฟ้า", right: "กระแสวนในก้นหม้อเหล็กทำให้หม้อร้อน" }
+      - { left: "มอเตอร์ไฟฟ้ากระแสตรง", right: "แรงบนลวดที่มีกระแสในสนามแม่เหล็กทำให้ขดลวดหมุน" }
+    hints:
+      - "เครื่องกำเนิดไฟฟ้าเปลี่ยนพลังงานกลเป็นพลังงานไฟฟ้า มอเตอร์ทำกลับกัน"
+      - "เตาแม่เหล็กไฟฟ้าไม่ได้ร้อนเองที่แผ่นเซรามิก"
+    solution: "เครื่องกำเนิดไฟฟ้าหมุนขดลวดให้ฟลักซ์เปลี่ยน หม้อแปลงใช้การเหนี่ยวนำระหว่างสองขด เตาแม่เหล็กไฟฟ้าเหนี่ยวนำกระแสวนในหม้อ และมอเตอร์ใช้แรงบนลวดที่มีกระแส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p003
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 2
+    type: numeric
+    stem: "ขดลวด $200$ รอบ มีฟลักซ์แม่เหล็กผ่านแต่ละรอบเปลี่ยนไป $0.030\\ \\mathrm{Wb}$ ในเวลา $0.10\\ \\mathrm{s}$ อีเอ็มเอฟเหนี่ยวนำมีขนาดกี่โวลต์"
+    answer: { value: 60, tolerance: 0.5, unit: V }
+    misconceptions:
+      - { match: 0.3, feedback: "ลืมคูณจำนวนรอบ แต่ละรอบเกิดอีเอ็มเอฟและต่ออนุกรมกัน" }
+      - { match: 0.6, feedback: "คูณฟลักซ์กับจำนวนรอบแล้วไม่ได้หารด้วยเวลา ต้องใช้อัตราการเปลี่ยนฟลักซ์" }
+    hints:
+      - "$|\\varepsilon| = N\\dfrac{\\Delta\\Phi_B}{\\Delta t}$"
+      - "$= 200 \\times \\dfrac{0.030}{0.10}$"
+    solution: "$|\\varepsilon| = 200 \\times \\dfrac{0.030}{0.10} = 60\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p004
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 2
+    type: numeric
+    stem: "ไฟบ้านในประเทศไทยมีความต่างศักย์ $220\\ \\mathrm{V}$ (ค่าอาร์เอ็มเอส) ค่าสูงสุดของความต่างศักย์เป็นกี่โวลต์"
+    answer: { value: 311, tolerance: 2, unit: V }
+    misconceptions:
+      - { match: 156, feedback: "หารด้วย $\\sqrt2$ ค่าสูงสุดต้องมากกว่าค่าอาร์เอ็มเอส จึงต้องคูณ" }
+      - { match: 440, feedback: "คูณ 2 แทน $\\sqrt2$" }
+    hints:
+      - "$V_{\\text{rms}} = V_m/\\sqrt2$"
+      - "$V_m = 220\\sqrt2$"
+    solution: "$V_m = 220 \\times \\sqrt2 \\approx 311\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p005
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 2
+    type: numeric
+    stem: "หม้อแปลงอุดมคติมีขดปฐมภูมิ $1100$ รอบต่อกับไฟ $220\\ \\mathrm{V}$ ขดทุติยภูมิมี $60$ รอบ ความต่างศักย์ด้านทุติยภูมิเป็นกี่โวลต์"
+    answer: { value: 12, tolerance: 0.1, unit: V }
+    misconceptions:
+      - { match: 4033, feedback: "กลับอัตราส่วน ขดทุติยภูมิมีรอบน้อยกว่า ความต่างศักย์ต้องน้อยกว่า" }
+    hints:
+      - "$\\dfrac{V_s}{V_p} = \\dfrac{N_s}{N_p}$"
+      - "$V_s = 220 \\times \\dfrac{60}{1100}$"
+    solution: "$V_s = 220 \\times \\dfrac{60}{1100} = 12\\ \\mathrm{V}$ เป็นหม้อแปลงลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p006
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 3
+    type: numeric
+    stem: "ลวดตัวนำยาว $L = 0.40\\ \\mathrm{m}$ เลื่อนบนรางโลหะด้วยความเร็ว $5.0\\ \\mathrm{m/s}$ ในสนามแม่เหล็ก $0.50\\ \\mathrm{T}$ ที่ตั้งฉากกับระนาบของราง ตามภาพ อีเอ็มเอฟเหนี่ยวนำในลวดเป็นกี่โวลต์"
+    figure: { src: p-rod-rails.svg, alt: "รางโลหะขนานสองเส้นแนวนอน ปลายซ้ายต่อกันผ่านตัวต้านทาน R ลวดตัวนำแนวตั้งยาว L วางพาดบนรางและเลื่อนไปทางขวาด้วยความเร็ว v สนามแม่เหล็ก B มีทิศพุ่งเข้าไปในกระดาษทั่วบริเวณ" }
+    answer: { value: 1.0, tolerance: 0.01, unit: V }
+    misconceptions:
+      - { match: 2.5, feedback: "ลืมคูณความยาวของลวด $\\varepsilon = BLv$" }
+      - { match: 4.0, feedback: "หารด้วย $B$ แทนการคูณ" }
+    hints:
+      - "ลวดกวาดพื้นที่เพิ่มขึ้น $Lv$ ทุกวินาที"
+      - "$\\varepsilon = BLv$"
+    solution: "$\\varepsilon = BLv = (0.50)(0.40)(5.0) = 1.0\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p007
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 3
+    type: mcq
+    stem: "ดันขั้วเหนือของแท่งแม่เหล็กเข้าหาปลายด้านหนึ่งของขดลวดที่ต่อเป็นวงจรปิด ปลายของขดลวดด้านที่หันเข้าหาแม่เหล็กจะเป็นขั้วใด และแม่เหล็กถูกแรงอย่างไร"
+    choices:
+      - { id: a, text: "ขั้วเหนือ แม่เหล็กถูกผลัก", correct: true }
+      - { id: b, text: "ขั้วใต้ แม่เหล็กถูกดูดเข้าไป", feedback: "ถ้าขดลวดดูดแม่เหล็กเข้าไปเอง จะได้พลังงานไฟฟ้าโดยไม่ต้องทำงาน ขัดกับการอนุรักษ์พลังงาน" }
+      - { id: c, text: "ไม่เป็นขั้วใด เพราะขดลวดไม่ใช่แม่เหล็ก", feedback: "ขดลวดที่มีกระแสเหนี่ยวนำเป็นแม่เหล็กไฟฟ้า มีขั้วได้" }
+      - { id: d, text: "ขั้วเหนือ แม่เหล็กถูกดูด", feedback: "ขั้วเหนือกับขั้วเหนือผลักกัน ไม่ใช่ดูดกัน" }
+    hints:
+      - "กฎของเลนซ์: กระแสเหนี่ยวนำต้านการเปลี่ยนแปลง"
+      - "ฟลักซ์กำลังเพิ่มเพราะแม่เหล็กเข้าใกล้ ขดลวดจะต้านการเข้าใกล้อย่างไร"
+    solution: "ขดลวดต้านการเข้าใกล้ของแม่เหล็กโดยทำให้ด้านนั้นเป็นขั้วเหนือ ผลักแม่เหล็กไว้ ผู้ดันจึงต้องทำงาน และงานนั้นกลายเป็นพลังงานไฟฟ้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p008
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องกำเนิดไฟฟ้าขนาดเล็กมีขดลวด $100$ รอบ พื้นที่ $0.020\\ \\mathrm{m^2}$ หมุนในสนามแม่เหล็ก $0.50\\ \\mathrm{T}$ ด้วยความถี่ $50\\ \\mathrm{Hz}$ อีเอ็มเอฟสูงสุดเป็นกี่โวลต์"
+    answer: { value: 314, tolerance: 3, unit: V }
+    misconceptions:
+      - { match: 50, feedback: "ใช้ความถี่ $f$ แทนอัตราเร็วเชิงมุม $\\omega = 2\\pi f$" }
+      - { match: 222, feedback: "นี่คือค่าอาร์เอ็มเอส โจทย์ถามค่าสูงสุด" }
+    hints:
+      - "$\\varepsilon_m = NBA\\omega$"
+      - "$\\omega = 2\\pi f = 2\\pi(50)\\ \\mathrm{rad/s}$"
+    solution: "$\\omega = 100\\pi \\approx 314\\ \\mathrm{rad/s}$ $\\varepsilon_m = (100)(0.50)(0.020)(314) \\approx 314\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p009
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 3
+    type: numeric
+    stem: "กาต้มน้ำไฟฟ้า $2000\\ \\mathrm{W}$ ใช้กับไฟบ้าน $220\\ \\mathrm{V}$ (ค่าอาร์เอ็มเอส) กระแสสูงสุดที่ไหลผ่านขดลวดความร้อนเป็นกี่แอมแปร์"
+    answer: { value: 12.9, tolerance: 0.13, unit: A }
+    misconceptions:
+      - { match: 9.09, feedback: "นี่คือกระแสอาร์เอ็มเอส ค่าสูงสุดมากกว่า $\\sqrt2$ เท่า" }
+      - { match: 6.43, feedback: "หารด้วย $\\sqrt2$ ค่าสูงสุดต้องมากกว่าค่าอาร์เอ็มเอส" }
+    hints:
+      - "$P = V_{\\text{rms}}I_{\\text{rms}}$"
+      - "หา $I_{\\text{rms}}$ แล้วคูณ $\\sqrt2$"
+    solution: "$I_{\\text{rms}} = \\dfrac{2000}{220} = 9.09\\ \\mathrm{A}$ $I_m = 9.09\\sqrt2 \\approx 12.9\\ \\mathrm{A}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p010
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 4
+    type: numeric
+    stem: "สายส่งไฟฟ้าแรงสูงเส้นหนึ่ง (ค่าสมมติ) มีความต้านทานรวม $5.0\\ \\Omega$ ส่งกำลัง $50\\ \\mathrm{MW}$ ด้วยความต่างศักย์ $115\\ \\mathrm{kV}$ กำลังสูญเสียในสายส่งเป็นกี่เมกะวัตต์"
+    answer: { value: 0.945, tolerance: 0.01, unit: MW }
+    misconceptions:
+      - { match: 2645, feedback: "ใช้ $V^2/R$ ด้วยความต่างศักย์ของระบบ แต่ $115\\ \\mathrm{kV}$ ไม่ได้ตกคร่อมสายส่ง ต้องหากระแสก่อนแล้วใช้ $I^2R$" }
+    hints:
+      - "กระแสในสาย $I = P/V$"
+      - "กำลังสูญเสีย $= I^2R$"
+    solution: "$I = \\dfrac{50 \\times 10^{6}}{115 \\times 10^{3}} = 435\\ \\mathrm{A}$ $P_{\\text{loss}} = (435)^2(5.0) = 9.45 \\times 10^{5}\\ \\mathrm{W} \\approx 0.945\\ \\mathrm{MW}$ (ราว 1.9% ของกำลังที่ส่ง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p011
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 3
+    type: mcq
+    stem: "จากข้อที่แล้ว ถ้าการไฟฟ้าฝ่ายผลิตแห่งประเทศไทยส่งกำลังเท่าเดิมด้วยความต่างศักย์ $230\\ \\mathrm{kV}$ แทน $115\\ \\mathrm{kV}$ กำลังสูญเสียในสายเดิมจะเป็นกี่เท่าของเดิม"
+    choices:
+      - { id: a, text: "$\\tfrac14$ เท่า", correct: true }
+      - { id: b, text: "$\\tfrac12$ เท่า", feedback: "กระแสลดลงครึ่งหนึ่ง แต่กำลังสูญเสียแปรผันตาม $I^2$" }
+      - { id: c, text: "2 เท่า", feedback: "ความต่างศักย์สูงขึ้นทำให้กระแสลดลง การสูญเสียจึงลดลง" }
+      - { id: d, text: "4 เท่า", feedback: "นี่คือผลถ้าคิดจาก $V^2/R$ ด้วยความต่างศักย์ของระบบ ซึ่งไม่ใช่ความต่างศักย์ที่ตกคร่อมสาย" }
+    hints:
+      - "กำลังเท่าเดิม $I = P/V$"
+      - "$P_{\\text{loss}} = I^2R$"
+    solution: "ความต่างศักย์ 2 เท่า กระแสเหลือครึ่งหนึ่ง กำลังสูญเสีย $I^2R$ เหลือ $\\tfrac14$ (จาก $0.945$ เหลือ $0.236\\ \\mathrm{MW}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p012
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 4
+    type: numeric
+    stem: "หม้อแปลงอุดมคติบนเสาไฟฟ้าแปลง $22\\ \\mathrm{kV}$ เป็น $220\\ \\mathrm{V}$ ถ้าด้านทุติยภูมิจ่ายกระแส $100\\ \\mathrm{A}$ ด้านปฐมภูมิมีกระแสกี่แอมแปร์"
+    answer: { value: 1.0, tolerance: 0.01, unit: A }
+    misconceptions:
+      - { match: 10000, feedback: "กลับอัตราส่วน ด้านความต่างศักย์สูงมีกระแสน้อยกว่า" }
+      - { match: 100, feedback: "กระแสไม่เท่ากันทั้งสองด้าน กำลังต่างหากที่เท่ากัน" }
+    hints:
+      - "หม้อแปลงอุดมคติ $V_pI_p = V_sI_s$"
+      - "$I_p = \\dfrac{V_sI_s}{V_p}$"
+    solution: "$I_p = \\dfrac{(220)(100)}{22000} = 1.0\\ \\mathrm{A}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p013
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "ข้อใดถูกต้องเกี่ยวกับไฟฟ้ากระแสสลับสามเฟส (เลือกได้มากกว่า 1 ข้อ)"
+    choices:
+      - { id: a, text: "อีเอ็มเอฟทั้งสามเฟสมียอดห่างกันหนึ่งในสามคาบ หรือ 120°", correct: true }
+      - { id: b, text: "บ้านทั่วไปใช้เพียงหนึ่งเฟสกับสายนิวทรัล", correct: true }
+      - { id: c, text: "มอเตอร์ในโรงงานใช้สามเฟสเพราะหมุนได้เรียบและสตาร์ตเองได้", correct: true }
+      - { id: d, text: "ทั้งสามเฟสถึงค่าสูงสุดพร้อมกัน", feedback: "ถ้าถึงยอดพร้อมกันก็เท่ากับเป็นเฟสเดียว ยอดของแต่ละเฟสห่างกัน 120°" }
+      - { id: e, text: "ความต่างศักย์ระหว่างสองเฟสเท่ากับ 440 V", feedback: "ความต่างศักย์ระหว่างสองเฟสคือ $\\sqrt3 \\times 220 \\approx 380\\ \\mathrm{V}$ ไม่ใช่ $2 \\times 220$" }
+    hints:
+      - "ขดลวดสามชุดวางทำมุม 120° กันในเครื่องกำเนิดไฟฟ้า"
+      - "ความต่างศักย์ระหว่างสองเฟสหาได้จากผลต่างของรูปไซน์สองรูปที่ห่างกัน 120°"
+    solution: "ข้อ a, b, c ถูก ยอดของแต่ละเฟสห่างกัน 120° บ้านใช้หนึ่งเฟส มอเตอร์สามเฟสหมุนเรียบ ส่วนความต่างศักย์ระหว่างเฟสคือ $\\sqrt3 \\times 220 \\approx 380\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p014
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 3
+    type: order
+    stem: "เรียงเส้นทางของไฟฟ้าจากโรงไฟฟ้าถึงบ้าน"
+    items:
+      - "เครื่องกำเนิดไฟฟ้าในโรงไฟฟ้า"
+      - "หม้อแปลงแปลงขึ้นเป็นไฟฟ้าแรงสูงหลายแสนโวลต์"
+      - "สายส่งไฟฟ้าแรงสูงระยะไกล"
+      - "สถานีไฟฟ้าแปลงลงเป็นระดับหลายหมื่นโวลต์ในระบบจำหน่าย"
+      - "หม้อแปลงบนเสาไฟฟ้าแปลงลงเป็น 220/380 V"
+      - "เต้ารับในบ้าน"
+    hints:
+      - "ส่งระยะไกลด้วยความต่างศักย์สูงเพื่อลดกระแสและการสูญเสีย"
+      - "ความต่างศักย์ค่อย ๆ ลดลงเป็นขั้นก่อนถึงบ้าน"
+    solution: "เครื่องกำเนิดไฟฟ้า → แปลงขึ้น → สายส่งแรงสูง → สถานีไฟฟ้าแปลงลงเข้าสู่ระบบจำหน่าย → หม้อแปลงบนเสา → บ้าน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p015
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 5
+    type: numeric
+    stem: "ขดลวดสี่เหลี่ยมจัตุรัส $50$ รอบ ยาวด้านละ $0.10\\ \\mathrm{m}$ ความต้านทาน $2.0\\ \\Omega$ วางตั้งฉากกับสนามแม่เหล็ก สนามลดลงสม่ำเสมอจาก $0.80\\ \\mathrm{T}$ เป็นศูนย์ในเวลา $0.20\\ \\mathrm{s}$ ประจุที่ไหลผ่านขดลวดทั้งหมดเป็นกี่คูลอมบ์"
+    answer: { value: 0.20, tolerance: 0.002, unit: C }
+    misconceptions:
+      - { match: 1.0, feedback: "นี่คือกระแส โจทย์ถามประจุ ต้องคูณด้วยเวลา" }
+      - { match: 0.004, feedback: "ลืมคูณจำนวนรอบ" }
+    hints:
+      - "$\\varepsilon = N\\dfrac{\\Delta(BA)}{\\Delta t}$ แล้ว $I = \\varepsilon / R$"
+      - "ประจุ $Q = I\\,\\Delta t$ ซึ่งเท่ากับ $\\dfrac{N\\Delta\\Phi_B}{R}$"
+    solution: "$A = 0.010\\ \\mathrm{m^2}$ $\\Delta\\Phi_B = 0.0080\\ \\mathrm{Wb}$ $\\varepsilon = \\dfrac{50 \\times 0.0080}{0.20} = 2.0\\ \\mathrm{V}$ $I = 1.0\\ \\mathrm{A}$ $Q = 1.0 \\times 0.20 = 0.20\\ \\mathrm{C}$ (ไม่ขึ้นกับว่าสนามลดเร็วหรือช้า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p016
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 5
+    type: numeric
+    stem: "หม้อแปลงจริงตัวหนึ่ง ด้านปฐมภูมิใช้ไฟ $220\\ \\mathrm{V}$, $2.0\\ \\mathrm{A}$ ด้านทุติยภูมิจ่าย $12\\ \\mathrm{V}$, $33\\ \\mathrm{A}$ (ค่าอาร์เอ็มเอสทั้งหมด และถือว่ากระแสกับความต่างศักย์มีเฟสตรงกัน) ประสิทธิภาพของหม้อแปลงเป็นกี่เปอร์เซ็นต์"
+    answer: { value: 90, tolerance: 0.5, unit: "%" }
+    misconceptions:
+      - { match: 111, feedback: "กลับเศษกับส่วน ประสิทธิภาพ = กำลังออก ÷ กำลังเข้า ต้องไม่เกิน 100%" }
+    hints:
+      - "กำลังเข้า $= V_pI_p$ กำลังออก $= V_sI_s$"
+      - "ประสิทธิภาพ $= \\dfrac{\\text{กำลังออก}}{\\text{กำลังเข้า}} \\times 100\\%$"
+    solution: "กำลังเข้า $= 440\\ \\mathrm{W}$ กำลังออก $= 396\\ \\mathrm{W}$ ประสิทธิภาพ $= \\dfrac{396}{440} \\times 100 = 90\\%$ ส่วนที่หายไปเป็นความร้อนในขดลวดและกระแสวนในแกน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p017
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 2
+    type: mcq
+    stem: "เตาแม่เหล็กไฟฟ้าในคอนโดใช้กับภาชนะชนิดใดได้ดีที่สุด"
+    choices:
+      - { id: a, text: "หม้อเหล็กหรือสแตนเลสที่แม่เหล็กดูดติด", correct: true }
+      - { id: b, text: "หม้อดินเผา", feedback: "ดินเผาไม่นำไฟฟ้า จึงไม่เกิดกระแสวน" }
+      - { id: c, text: "ชามแก้วทนไฟ", feedback: "แก้วไม่นำไฟฟ้า ฟลักซ์ที่เปลี่ยนจึงไม่ทำให้แก้วร้อน" }
+      - { id: d, text: "ภาชนะใดก็ได้ เพราะแผ่นเซรามิกร้อนเอง", feedback: "แผ่นเซรามิกไม่ได้ร้อนเอง ความร้อนเกิดในก้นหม้อจากกระแสวน" }
+    hints:
+      - "ความร้อนเกิดจากกระแสวนในก้นหม้อ"
+      - "วัสดุต้องนำไฟฟ้า และวัสดุแม่เหล็กช่วยให้ฟลักซ์ผ่านมาก"
+    solution: "ฟลักซ์ที่เปลี่ยนเร็วเหนี่ยวนำกระแสวนในก้นหม้อที่นำไฟฟ้า หม้อเหล็กเป็นวัสดุแม่เหล็กและมีความต้านทานพอเหมาะ จึงร้อนได้ดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction-ac.p018
+    topics: [physics.magnetism.induction-ac]
+    difficulty: 4
+    type: numeric
+    stem: "ความต่างศักย์กระแสสลับที่มีค่าสูงสุด $100\\ \\mathrm{V}$ ต่อคร่อมตัวต้านทาน $50\\ \\Omega$ กำลังเฉลี่ยในตัวต้านทานเป็นกี่วัตต์"
+    answer: { value: 100, tolerance: 1, unit: W }
+    misconceptions:
+      - { match: 200, feedback: "ใช้ค่าสูงสุดในสูตร $V^2/R$ ต้องใช้ค่าอาร์เอ็มเอส $V_m/\\sqrt2$" }
+      - { match: 141, feedback: "ใช้ $V_mI_{\\text{rms}}$ หรือคูณ $\\sqrt2$ ผิดที่ ต้องใช้ค่าอาร์เอ็มเอสทั้งสองตัว" }
+    hints:
+      - "$V_{\\text{rms}} = 100/\\sqrt2$"
+      - "$P = \\dfrac{V_{\\text{rms}}^2}{R}$"
+    solution: "$V_{\\text{rms}} = 70.7\\ \\mathrm{V}$ $P = \\dfrac{(70.7)^2}{50} = \\dfrac{5000}{50} = 100\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

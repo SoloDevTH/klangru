@@ -1,0 +1,79 @@
+id: physics.electricity.potential-capacitance
+subject: physics
+title: { th: ศักย์ไฟฟ้าและตัวเก็บประจุ, en: Electric potential and capacitance }
+summary: ระดับมหาวิทยาลัย หาศักย์จากสนามด้วยการอินทิเกรต คำนวณความจุจากรูปร่าง พลังงานและความหนาแน่นพลังงานในสนาม และผลของไดอิเล็กทริก
+difficulty: 7.5
+minutes: 40
+prerequisites: [physics.electricity.charge, physics.electricity.current-voltage, physics.energy.kinetic-potential, physics.electricity.capacitors]
+encompasses:
+  - { id: physics.electricity.capacitors, weight: 0.4 }
+  - { id: physics.electricity.electric-potential, weight: 0.3 }
+  - { id: physics.electricity.charge, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ความต่างศักย์เป็นพื้นที่ใต้กราฟสนาม
+    src: field-area.svg
+    alt: "กราฟองค์ประกอบสนาม E_x ที่ลดลงเมื่อตำแหน่ง x เพิ่ม พื้นที่ใต้เส้นกราฟระหว่างตำแหน่ง A กับ B แรเงาและเขียนว่าพื้นที่เท่ากับ V_A − V_B แสดงว่าศักย์ลดลงตามทิศของสนาม"
+  - type: worked-example
+    title: ตัวเก็บประจุแผ่นขนานและพลังงานในสนาม
+    problem: "แผ่นโลหะพื้นที่ $0.020\\ \\mathrm{m^2}$ ห่างกัน $1.0\\ \\mathrm{mm}$ มีอากาศคั่น ต่อกับความต่างศักย์ $100\\ \\mathrm{V}$ จงหาความจุ ประจุ พลังงานสะสม และแสดงว่าพลังงานเท่ากับความหนาแน่นพลังงานคูณปริมาตร ($\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$)"
+    steps:
+      - text: "$C = \\dfrac{\\varepsilon_0A}{d} = \\dfrac{(8.85 \\times 10^{-12})(0.020)}{1.0 \\times 10^{-3}} = 1.77 \\times 10^{-10}\\ \\mathrm{F} = 177\\ \\mathrm{pF}$"
+      - text: "$Q = CV = 1.77 \\times 10^{-8}\\ \\mathrm{C}$ และ $U = \\tfrac12 CV^2 = 8.85 \\times 10^{-7}\\ \\mathrm{J}$"
+      - text: "สนาม $E = V/d = 1.0 \\times 10^{5}\\ \\mathrm{V/m}$ ความหนาแน่นพลังงาน $u = \\tfrac12\\varepsilon_0E^2 = 0.0443\\ \\mathrm{J/m^3}$"
+      - text: "ปริมาตร $Ad = 2.0 \\times 10^{-5}\\ \\mathrm{m^3}$ จึงได้ $uAd = 8.85 \\times 10^{-7}\\ \\mathrm{J}$ เท่ากับ $U$"
+        why: "สองวิธีให้ค่าเดียวกันเพราะ $\\tfrac12 CV^2 = \\tfrac12 \\dfrac{\\varepsilon_0A}{d}(Ed)^2 = \\tfrac12\\varepsilon_0E^2(Ad)$"
+    answer: "$C = 177\\ \\mathrm{pF}$, $Q = 17.7\\ \\mathrm{nC}$, $U = 0.885\\ \\mu\\mathrm{J}$"
+  - { type: check, problem: physics.electricity.potential-capacitance.p003, prompt: "ความหนาแน่นพลังงานแปรผันตาม E กำลังสอง" }
+  - type: figure
+    title: สายโคแอกเชียลเป็นตัวเก็บประจุทรงกระบอก
+    src: coax.svg
+    alt: "ภาคตัดขวางวงกลมซ้อนกัน ตัวนำในรัศมี a มีประจุ +λ ต่อหน่วยความยาว ตัวนำนอกรัศมี b มีประจุ −λ ระหว่างกันเป็นฉนวน ลูกศรสนามไฟฟ้าชี้ออกในแนวรัศมีจากตัวนำในไปยังตัวนำนอก"
+  - type: worked-example
+    title: ความจุต่อเมตรของสายโคแอกเชียล
+    problem: "สายโคแอกเชียลมีตัวนำในรัศมี $0.50\\ \\mathrm{mm}$ ตัวนำนอกรัศมี $2.0\\ \\mathrm{mm}$ คั่นด้วยพอลิเอทิลีน $\\kappa = 2.3$ จงหาความจุต่อความยาวหนึ่งเมตร"
+    steps:
+      - text: "สมมติประจุ $+Q$ บนตัวนำในยาว $L$ กฎของเกาส์ให้ $E = \\dfrac{Q}{2\\pi\\kappa\\varepsilon_0 Lr}$ ระหว่างตัวนำ"
+        why: "ไดอิเล็กทริกลดสนามลง $\\kappa$ เท่าเมื่อเทียบกับสุญญากาศ"
+      - text: "$V = \\displaystyle\\int_a^b E\\,dr = \\dfrac{Q}{2\\pi\\kappa\\varepsilon_0 L}\\ln\\dfrac{b}{a}$"
+      - text: "$\\dfrac{C}{L} = \\dfrac{2\\pi\\kappa\\varepsilon_0}{\\ln(b/a)} = \\dfrac{2\\pi(2.3)(8.85 \\times 10^{-12})}{\\ln 4}$"
+      - text: "$\\ln 4 = 1.386$ จึงได้ $\\dfrac{C}{L} \\approx 9.2 \\times 10^{-11}\\ \\mathrm{F/m}$"
+    answer: "ประมาณ $92\\ \\mathrm{pF}$ ต่อเมตร สายยาว $20\\ \\mathrm{m}$ มีความจุราว $1.8\\ \\mathrm{nF}$"
+  - type: figure
+    title: ไดอิเล็กทริกเกิดขั้ว
+    src: dielectric.svg
+    alt: "ซ้าย: แผ่นขนานในสุญญากาศ แผ่นซ้ายมีประจุบวก แผ่นขวามีประจุลบ เส้นสนามหนาแน่น 6 เส้น ขวา: ประจุบนแผ่นเท่าเดิม แต่มีฉนวนอยู่ระหว่างแผ่น โมเลกุลของฉนวนกลายเป็นขั้วคู่ ผิวฉนวนด้านแผ่นบวกมีประจุเหนี่ยวนำลบ ด้านแผ่นลบมีประจุเหนี่ยวนำบวก เส้นสนามในฉนวนเหลือ 2 เส้น แสดงว่าสนามลดลงเป็น E₀/κ"
+  - { type: check, problem: physics.electricity.potential-capacitance.p008, prompt: "ตัดแบตเตอรี่แล้ว ประจุคงตัว" }
+  - type: interactive
+    title: ความจุของแผ่นขนานกับระยะห่าง
+    caption: "กราฟคือ $C = \\kappa\\varepsilon_0A/d$ สำหรับแผ่นพื้นที่ $0.010\\ \\mathrm{m^2}$ เมื่อ $x$ คือระยะห่างเป็นมิลลิเมตร แกนตั้งเป็นพิโกฟารัด เลื่อน $k$ (แทน $\\kappa$) แล้วสังเกตว่าลดระยะห่างครึ่งหนึ่งหรือเพิ่ม $\\kappa$ เป็น 2 เท่าให้ผลเหมือนกัน"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{88.5k}{x}"]
+      sliders:
+        - { name: k, min: 1, max: 10, step: 0.5, value: 1, label: ค่าคงตัวไดอิเล็กทริก }
+      x: [0.2, 3]
+      y: [0, 1000]
+glossary:
+  - { term: สภาพยอมของสุญญากาศ, definition: "ค่าคงตัว ε₀ = 8.85 × 10⁻¹² F/m สัมพันธ์กับค่าคงตัวของคูลอมบ์โดย k = 1/(4πε₀)" }
+  - { term: ความหนาแน่นพลังงาน, definition: "พลังงานต่อหน่วยปริมาตรที่เก็บในสนามไฟฟ้า u = ½ε₀E² หน่วยจูลต่อลูกบาศก์เมตร" }
+  - { term: ค่าคงตัวไดอิเล็กทริก, definition: "อัตราส่วนความจุเมื่อมีฉนวนเต็มช่องว่างต่อความจุเมื่อเป็นสุญญากาศ κ = C/C₀" }
+  - { term: การเกิดขั้วของไดอิเล็กทริก, definition: "การที่สนามไฟฟ้าทำให้โมเลกุลของฉนวนจัดตัวเป็นขั้วคู่ เกิดประจุเหนี่ยวนำที่ผิวซึ่งลดสนามสุทธิ" }
+  - { term: ความคงทนไดอิเล็กทริก, definition: "ขนาดสนามไฟฟ้าสูงสุดที่ฉนวนทนได้ก่อนเสียสภาพและนำไฟฟ้า อากาศแห้งประมาณ 3 × 10⁶ V/m" }
+flashcards:
+  - { front: "ความต่างศักย์จากสนาม", back: "$V_B - V_A = -\\displaystyle\\int_A^B \\vec{E}\\cdot d\\vec{l}$" }
+  - { front: "ความจุของแผ่นขนาน", back: "$C = \\dfrac{\\kappa\\varepsilon_0A}{d}$" }
+  - { front: "ความจุของทรงกระบอกซ้อน ยาว L", back: "$C = \\dfrac{2\\pi\\varepsilon_0L}{\\ln(b/a)}$" }
+  - { front: "ความหนาแน่นพลังงานในสนามไฟฟ้า", back: "$u = \\tfrac12\\varepsilon_0E^2$" }
+  - { front: "ใส่ไดอิเล็กทริกหลังตัดแบตเตอรี่", back: "$Q$ คงตัว $V$, $E$ และ $U$ ลดลง $\\kappa$ เท่า" }
+references:
+  - { title: "Capacitance", url: "https://en.wikipedia.org/wiki/Capacitance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ความจุไฟฟ้า", url: "https://th.wikipedia.org/wiki/ความจุไฟฟ้า", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "8.3 Energy Stored in a Capacitor (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/8-3-energy-stored-in-a-capacitor", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "8.4 Capacitor with a Dielectric (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/8-4-capacitor-with-a-dielectric", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

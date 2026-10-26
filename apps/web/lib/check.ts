@@ -83,7 +83,7 @@ export async function check(problem: Problem, response: Response): Promise<Check
     }
     case "expression": {
       if (response.type !== "expression") break;
-      const { parseLatex, equivalentLatex, explicitProducts, hasParentheses, isFactoredForm, stripLeadingAssignment } = await import("@klangru/schema/expression");
+      const { parseLatex, equivalentLatex, explicitProducts, hasParentheses, isFactoredForm, isSimplifiedRadical, stripLeadingAssignment } = await import("@klangru/schema/expression");
       const target = problem.prefix?.match(/^\s*([A-Za-z])\s*=\s*$/)?.[1];
       const latex = explicitProducts(stripLeadingAssignment(response.latex, target), problem.answer.variables);
       const parsed = parseLatex(latex);
@@ -93,6 +93,7 @@ export async function check(problem: Problem, response: Response): Promise<Check
       if (equivalentLatex(latex, problem.answer.latex, problem.answer.variables)) {
         if (problem.expanded && hasParentheses(latex)) return { correct: false, invalid: "ค่าถูกแล้ว แต่โจทย์ให้กระจายวงเล็บออกให้หมด" };
         if (problem.factored && !isFactoredForm(latex)) return { correct: false, invalid: "ค่าถูกแล้ว แต่โจทย์ให้เขียนในรูปผลคูณของตัวประกอบ" };
+        if (problem.simplified && !isSimplifiedRadical(latex)) return { correct: false, invalid: "ค่าถูกแล้ว แต่ยังไม่ใช่รูปอย่างง่าย ดึงกำลังสองออกจากราก รวมพจน์ที่มีรากเดียวกัน และทำตัวส่วนไม่ให้มีราก" };
         return { correct: true };
       }
       const m = problem.misconceptions.find((m) => equivalentLatex(latex, m.match, problem.answer.variables));

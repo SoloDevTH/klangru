@@ -1,0 +1,67 @@
+id: biology.diversity.biodiversity
+subject: biology
+title: { th: ความหลากหลายทางชีวภาพ, en: "Biodiversity" }
+summary: ความหลากหลายทางพันธุกรรม ชนิด และระบบนิเวศ การเปรียบเทียบความหลากหลายระดับชนิด ลำดับขั้นอนุกรมวิธานและชื่อวิทยาศาสตร์ ความสำคัญต่อระบบนิเวศและมนุษย์ และการดูแลรักษา
+difficulty: 3
+minutes: 40
+prerequisites: [biology.diversity.classifying-organisms, biology.ecology.adaptation-food-chains]
+encompasses:
+  - { id: biology.diversity.classifying-organisms, weight: 0.3 }
+  - { id: biology.ecology.adaptation-food-chains, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ลำดับขั้นอนุกรมวิธาน
+    src: taxonomy-ranks.svg
+    alt: "ตารางลำดับขั้นอนุกรมวิธาน 7 ขั้นของเสือโคร่ง แมวบ้าน และสุนัข ขั้นอาณาจักร Animalia ไฟลัม Chordata ชั้น Mammalia และอันดับ Carnivora เป็นช่องสีเขียวที่รวมทั้งสามชนิด ขั้นวงศ์ เสือโคร่งกับแมวบ้านอยู่ในช่องสีเหลืองเดียวกันคือ Felidae ส่วนสุนัขอยู่ Canidae ขั้นสกุล Panthera Felis และ Canis แยกกัน ขั้นชนิด Panthera tigris, Felis catus และ Canis familiaris เขียนเป็นตัวเอียง"
+    caption: "ยิ่งอยู่ร่วมกันถึงขั้นล่าง ยิ่งมีความใกล้ชิดกันมาก เสือโคร่งจึงใกล้ชิดกับแมวมากกว่าสุนัข (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: เทียบความหลากหลายด้วยดัชนีซิมป์สัน
+    problem: "ทุ่งหญ้าแห่งหนึ่งพบพืช 3 ชนิด จำนวน 5, 3 และ 2 ต้น จงหาดัชนีความหลากหลายของซิมป์สัน $D = 1 - \\sum p_i^2$"
+    steps:
+      - text: "จำนวนทั้งหมด $5 + 3 + 2 = 10$ ต้น จึงได้ $p_1 = 0.5$ $p_2 = 0.3$ $p_3 = 0.2$"
+      - text: "$\\sum p_i^2 = 0.5^2 + 0.3^2 + 0.2^2 = 0.25 + 0.09 + 0.04 = 0.38$"
+        why: "ชนิดที่มีมากมีผลต่อผลรวมมาก ถ้าชนิดเดียวครองพื้นที่ ผลรวมจะเข้าใกล้ 1"
+      - text: "$D = 1 - 0.38 = 0.62$"
+      - text: "แปลผล ถ้าสุ่มต้นไม้มาสองต้น มีโอกาสราว 62% ที่จะได้คนละชนิด"
+    answer: "$D = 0.62$"
+  - { type: check, problem: biology.diversity.biodiversity.p008, prompt: "ดูทั้งจำนวนชนิดและความสม่ำเสมอ" }
+  - type: worked-example
+    title: อ่านความใกล้ชิดจากลำดับขั้น
+    problem: "เสือดาว (Panthera pardus) ใกล้ชิดกับเสือโคร่ง (Panthera tigris) หรือแมวบ้าน (Felis catus) มากกว่ากัน"
+    steps:
+      - text: "ทั้งสามชนิดอยู่ในวงศ์ Felidae เหมือนกัน"
+      - text: "เสือดาวกับเสือโคร่งมีชื่อสกุลเดียวกันคือ Panthera ส่วนแมวบ้านอยู่สกุล Felis"
+        why: "คำแรกของชื่อวิทยาศาสตร์คือชื่อสกุล อ่านได้ทันทีโดยไม่ต้องเปิดตาราง"
+      - text: "อยู่ร่วมกันถึงขั้นที่ต่ำกว่า (สกุล) แปลว่าใกล้ชิดกันมากกว่า"
+    answer: "เสือดาวใกล้ชิดกับเสือโคร่งมากกว่า เพราะอยู่สกุลเดียวกัน"
+  - type: figure
+    title: ข้อมูลจากแปลงสำรวจป่าชายเลน
+    src: mangrove-survey.svg
+    alt: "แผนภูมิแท่งสองแผง แปลง ก ป่าชายเลนธรรมชาติ มีโกงกาง 12 ต้น แสม 8 ต้น ลำพู 6 ต้น ตะบูน 4 ต้น แปลง ข ป่าชายเลนที่ปลูกใหม่ มีโกงกาง 27 ต้น แสม 3 ต้น ลำพู 0 ต้น ตะบูน 0 ต้น แปลงทั้งสองมีขนาดเท่ากัน เป็นข้อมูลสมมติ"
+    caption: "ข้อมูลสมมติ ใช้ในโจทย์ของหัวข้อนี้ (วาดโดยทีมคลังรู้)"
+  - { type: check, problem: biology.diversity.biodiversity.p009, prompt: "เทียบชื่อทีละขั้นจนกว่าจะต่างกัน" }
+glossary:
+  - { term: ความหลากหลายทางชีวภาพ, definition: "ความแตกต่างของสิ่งมีชีวิตในระดับพันธุกรรม ชนิด และระบบนิเวศ" }
+  - { term: ชนิด (สปีชีส์), definition: "กลุ่มสิ่งมีชีวิตที่ผสมพันธุ์กันได้ตามธรรมชาติและได้ลูกที่ไม่เป็นหมัน" }
+  - { term: ลำดับขั้นอนุกรมวิธาน, definition: "ขั้นของการจัดหมวดหมู่สิ่งมีชีวิต อาณาจักร ไฟลัม ชั้น อันดับ วงศ์ สกุล ชนิด" }
+  - { term: ระบบทวินาม, definition: "การตั้งชื่อวิทยาศาสตร์ด้วยชื่อสกุลและคำระบุชนิด เป็นภาษาละตินสองคำ" }
+  - { term: ดัชนีความหลากหลายของซิมป์สัน, definition: "ค่า 1 ลบผลรวมของกำลังสองของสัดส่วนแต่ละชนิด ใกล้ 1 แปลว่าหลากหลายมาก" }
+  - { term: สิ่งมีชีวิตต่างถิ่นที่รุกราน, definition: "สิ่งมีชีวิตที่ถูกนำเข้ามาจากถิ่นอื่น แพร่พันธุ์เร็วและทำให้ชนิดพื้นถิ่นลดลง" }
+  - { term: ธนาคารเชื้อพันธุ์, definition: "สถานที่เก็บเมล็ด เนื้อเยื่อ หรือสารพันธุกรรมไว้ที่อุณหภูมิต่ำเพื่อใช้ในอนาคต" }
+flashcards:
+  - { front: "ความหลากหลายทางชีวภาพ 3 ระดับ", back: "พันธุกรรม ชนิด ระบบนิเวศ" }
+  - { front: "ลำดับขั้นอนุกรมวิธานจากกว้างไปแคบ", back: "อาณาจักร ไฟลัม ชั้น อันดับ วงศ์ สกุล ชนิด" }
+  - { front: "หลักการเขียนชื่อวิทยาศาสตร์", back: "สกุลขึ้นต้นตัวใหญ่ ชนิดตัวเล็ก พิมพ์ตัวเอียงหรือขีดเส้นใต้แยกคำ" }
+  - { front: "เปรียบเทียบความหลากหลายระดับชนิดดูอะไร", back: "จำนวนชนิดและความสม่ำเสมอของจำนวนแต่ละชนิด" }
+  - { front: "อนุรักษ์ในถิ่นที่อยู่กับนอกถิ่นที่อยู่", back: "ในถิ่น: อุทยาน เขตรักษาพันธุ์ นอกถิ่น: สวนสัตว์ ธนาคารเชื้อพันธุ์" }
+references:
+  - { title: "ความหลากหลายทางชีวภาพ", url: "https://th.wikipedia.org/wiki/ความหลากหลายทางชีวภาพ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Binomial nomenclature", url: "https://en.wikipedia.org/wiki/Binomial_nomenclature", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "47.2 The Importance of Biodiversity to Human Life (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/47-2-the-importance-of-biodiversity-to-human-life", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "20.1 Organizing Life on Earth (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/20-1-organizing-life-on-earth", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

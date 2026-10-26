@@ -9,6 +9,7 @@ import {
   equivalentLatex,
   evaluateLatex,
   isFactoredForm,
+  isSimplifiedRadical,
   parseLatex,
   phetEmbedUrl,
   Problem,
@@ -144,6 +145,7 @@ export function checkFigure(fig: Figure, figures: RawTopicDir["figures"], topicL
 
 function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[], opts: Required<ValidateOptions>, fig?: (f: Figure) => void) {
   const err = (message: string) => issues.push({ level: "error", file, message: `${p.id}: ${message}` });
+  const warn = (message: string) => issues.push({ level: "warning", file, message });
 
   if (!p.topics.includes(topicId)) err(`ต้องระบุหัวข้อ ${topicId} ใน topics เพราะอยู่ในโฟลเดอร์ของหัวข้อนี้`);
   if (p.source === "adapted" && !p.adapted_from.length) err("source เป็น adapted แต่ไม่ได้ระบุ adapted_from");
@@ -191,6 +193,9 @@ function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]
       if (p.expanded && /\(/.test(p.answer.latex)) err("ตั้ง expanded: true แต่คำตอบยังมีวงเล็บ");
       if (p.factored && !isFactoredForm(p.answer.latex)) err("ตั้ง factored: true แต่คำตอบไม่อยู่ในรูปผลคูณ");
       if (p.expanded && p.factored) err("ตั้ง expanded และ factored พร้อมกันไม่ได้");
+      if (p.simplified && !isSimplifiedRadical(p.answer.latex)) err("ตั้ง simplified: true แต่คำตอบยังไม่อยู่ในรูปอย่างง่าย");
+      // โจทย์ให้ทำรากให้อยู่ในรูปอย่างง่ายแต่ไม่ได้ตั้ง simplified ผู้เรียนตอบรูปเดิมก็ถูก
+      if (!p.simplified && /\\sqrt/.test(p.answer.latex) && /อย่างง่าย/.test(p.stem)) warn(`${p.id}: โจทย์ให้ทำให้อยู่ในรูปอย่างง่าย ควรตั้ง simplified: true`);
       for (const latex of [p.answer.latex, ...p.misconceptions.map((m) => m.match)]) {
         const calls = accidentalCalls(latex);
         if (calls.length) err(`"${latex}": ${calls.join(", ")}(...) ถูกอ่านเป็นฟังก์ชัน ให้เขียน ${calls[0]}\\cdot(...)`);

@@ -1,0 +1,289 @@
+problems:
+  - id: physics.electricity.potential-capacitance.p001
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 1
+    type: mcq
+    stem: "ถ้าเดินตามทิศของสนามไฟฟ้า ศักย์ไฟฟ้าจะเป็นอย่างไร"
+    choices:
+      - { id: a, text: "ลดลง", correct: true }
+      - { id: b, text: "เพิ่มขึ้น", feedback: "จาก $\\Delta V = -\\int \\vec E \\cdot d\\vec l$ ถ้า $d\\vec l$ ไปทางเดียวกับ $\\vec E$ ผลคูณเป็นบวก $\\Delta V$ จึงเป็นลบ" }
+      - { id: c, text: "คงตัวเสมอ", feedback: "ศักย์คงตัวเมื่อเดินตั้งฉากกับสนาม (บนผิวสมศักย์) ไม่ใช่ตามทิศสนาม" }
+      - { id: d, text: "ขึ้นกับว่าประจุทดสอบเป็นบวกหรือลบ", feedback: "ศักย์เป็นสมบัติของตำแหน่งในสนาม ไม่ขึ้นกับประจุทดสอบ ที่ขึ้นกับประจุคือพลังงานศักย์" }
+    hints:
+      - "$\\Delta V = -\\int \\vec{E}\\cdot d\\vec{l}$"
+      - "สนามชี้จากแผ่นบวกไปแผ่นลบ แผ่นใดศักย์สูงกว่า"
+    solution: "ศักย์ลดลงตามทิศของสนาม เช่น สนามชี้จากแผ่นบวก (ศักย์สูง) ไปแผ่นลบ (ศักย์ต่ำ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p002
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเก็บประจุแผ่นขนานมีพื้นที่แผ่น $0.010\\ \\mathrm{m^2}$ ห่างกัน $0.50\\ \\mathrm{mm}$ มีอากาศคั่น ความจุเป็นกี่พิโกฟารัด ($\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$)"
+    answer: { value: 177, tolerance: 2, unit: pF }
+    misconceptions:
+      - { match: 0.177, feedback: "ใช้ระยะเป็นมิลลิเมตร ต้องแปลงเป็น $5.0 \\times 10^{-4}\\ \\mathrm{m}$" }
+    hints:
+      - "$C = \\dfrac{\\varepsilon_0A}{d}$"
+      - "แปลง $0.50\\ \\mathrm{mm} = 5.0 \\times 10^{-4}\\ \\mathrm{m}$ แล้วแปลงคำตอบเป็นพิโกฟารัด ($10^{-12}\\ \\mathrm{F}$)"
+    solution: "$C = \\dfrac{(8.85 \\times 10^{-12})(0.010)}{5.0 \\times 10^{-4}} = 1.77 \\times 10^{-10}\\ \\mathrm{F} = 177\\ \\mathrm{pF}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p003
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 2
+    type: numeric
+    stem: "ช่วงพายุฝนฟ้าคะนองในฤดูฝน สนามไฟฟ้าใต้ฐานเมฆอาจสูงจนเกือบถึงค่าที่อากาศเสียสภาพ $3.0 \\times 10^{6}\\ \\mathrm{V/m}$ ความหนาแน่นพลังงานของสนามขนาดนี้เป็นกี่จูลต่อลูกบาศก์เมตร ($\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$)"
+    answer: { value: 39.8, tolerance: 0.4, unit: J/m³ }
+    misconceptions:
+      - { match: 79.7, feedback: "ลืม $\\tfrac12$ ใน $u = \\tfrac12\\varepsilon_0E^2$" }
+      - { match: 0.0000133, feedback: "ลืมยกกำลังสองของสนาม" }
+    hints:
+      - "$u = \\tfrac12\\varepsilon_0E^2$"
+      - "$E^2 = 9.0 \\times 10^{12}\\ \\mathrm{V^2/m^2}$"
+    solution: "$u = \\tfrac12 (8.85 \\times 10^{-12})(3.0 \\times 10^{6})^2 = 39.8\\ \\mathrm{J/m^3}$ อากาศในเมฆหลายลูกบาศก์กิโลเมตรจึงเก็บพลังงานได้มหาศาล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p004
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สัญลักษณ์กับความหมาย"
+    pairs:
+      - { left: "$\\varepsilon_0$", right: "สภาพยอมของสุญญากาศ $8.85 \\times 10^{-12}\\ \\mathrm{F/m}$" }
+      - { left: "$\\kappa$", right: "ค่าคงตัวไดอิเล็กทริก ไม่มีหน่วย" }
+      - { left: "$u$", right: "ความหนาแน่นพลังงานในสนาม $\\mathrm{J/m^3}$" }
+      - { left: "$C$", right: "ความจุ $\\mathrm{F}$" }
+    hints:
+      - "$\\kappa$ เป็นอัตราส่วนของความจุสองค่า"
+      - "$u$ คือพลังงานต่อปริมาตร"
+    solution: "$\\varepsilon_0$ สภาพยอมของสุญญากาศ, $\\kappa = C/C_0$ ไม่มีหน่วย, $u = \\tfrac12\\varepsilon_0E^2$ หน่วย $\\mathrm{J/m^3}$, $C$ หน่วยฟารัด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p005
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 3
+    type: numeric
+    stem: "ในบริเวณหนึ่งสนามไฟฟ้ามีทิศ $+x$ และขนาด $E_x = 200x$ (หน่วย $\\mathrm{V/m}$ เมื่อ $x$ เป็นเมตร) ความต่างศักย์ $V(0) - V(0.50\\ \\mathrm{m})$ เป็นกี่โวลต์"
+    answer: { value: 25, tolerance: 0.25, unit: V }
+    misconceptions:
+      - { match: 50, feedback: "ใช้สนามที่ปลายทาง $E(0.50) = 100\\ \\mathrm{V/m}$ คูณระยะ ราวกับเป็นสนามสม่ำเสมอ สนามนี้ไม่สม่ำเสมอ ต้องอินทิเกรต" }
+      - { match: -25, feedback: "เครื่องหมายกลับ ศักย์ลดลงตามทิศสนาม $V(0)$ จึงสูงกว่า $V(0.50)$" }
+    hints:
+      - "$V(0) - V(0.50) = \\displaystyle\\int_0^{0.50} E_x\\,dx$"
+      - "$\\int 200x\\,dx = 100x^2$"
+    solution: "$V(0) - V(0.50) = \\displaystyle\\int_0^{0.50} 200x\\,dx = 100(0.50)^2 = 25\\ \\mathrm{V}$ (คือพื้นที่สามเหลี่ยมใต้กราฟ $E_x$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p006
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 3
+    type: numeric
+    stem: "ทรงกลมโลหะโดดเดี่ยวรัศมี $0.10\\ \\mathrm{m}$ มีความจุกี่พิโกฟารัด ($\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$)"
+    answer: { value: 11.1, tolerance: 0.12, unit: pF }
+    misconceptions:
+      - { match: 0.885, feedback: "ลืม $4\\pi$ $C = 4\\pi\\varepsilon_0R$" }
+    hints:
+      - "ศักย์ของทรงกลมที่มีประจุ $Q$ คือ $V = \\dfrac{Q}{4\\pi\\varepsilon_0R}$"
+      - "$C = Q/V = 4\\pi\\varepsilon_0R$"
+    solution: "$C = 4\\pi(8.85 \\times 10^{-12})(0.10) = 1.11 \\times 10^{-11}\\ \\mathrm{F} = 11.1\\ \\mathrm{pF}$ แม้โลกทั้งใบ (รัศมี $6.4 \\times 10^{6}\\ \\mathrm{m}$) ก็มีความจุเพียงราว $0.7\\ \\mathrm{mF}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p007
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวเก็บประจุอากาศ $10\\ \\mathrm{pF}$ ต่อกับแบตเตอรี่ $50\\ \\mathrm{V}$ ตลอดเวลา แล้วสอดฉนวน $\\kappa = 4.0$ ให้เต็มช่องว่าง ประจุบนแผ่นกลายเป็นกี่นาโนคูลอมบ์"
+    answer: { value: 2.0, tolerance: 0.02, unit: nC }
+    misconceptions:
+      - { match: 0.5, feedback: "นี่คือประจุก่อนใส่ฉนวน ต่อแบตเตอรี่ไว้ ความต่างศักย์คงตัว ความจุเพิ่ม ประจุจึงเพิ่ม" }
+      - { match: 0.125, feedback: "หารด้วย $\\kappa$ ไดอิเล็กทริกทำให้ความจุเพิ่ม ไม่ใช่ลด" }
+    hints:
+      - "$C = \\kappa C_0$"
+      - "ความต่างศักย์คงตัว $Q = CV$"
+    solution: "$C = 4.0 \\times 10 = 40\\ \\mathrm{pF}$ $Q = (40 \\times 10^{-12})(50) = 2.0 \\times 10^{-9}\\ \\mathrm{C} = 2.0\\ \\mathrm{nC}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p008
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 3
+    type: mcq
+    stem: "ตัวเก็บประจุอัดประจุแล้วตัดแบตเตอรี่ออก จากนั้นสอดฉนวนค่าคงตัวไดอิเล็กทริก $\\kappa$ ให้เต็มช่องว่าง ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ความต่างศักย์และพลังงานสะสมลดลงเหลือ $\\tfrac{1}{\\kappa}$ เท่า", correct: true }
+      - { id: b, text: "ประจุเพิ่มเป็น $\\kappa$ เท่า", feedback: "ตัดแบตเตอรี่แล้ว ไม่มีทางให้ประจุเข้ามาเพิ่ม ประจุคงตัว" }
+      - { id: c, text: "พลังงานสะสมเพิ่มเป็น $\\kappa$ เท่า", feedback: "นั่นคือกรณีต่อแบตเตอรี่ไว้ เมื่อประจุคงตัว $U = Q^2/2C$ ลดลงเพราะ $C$ เพิ่ม" }
+      - { id: d, text: "สนามไฟฟ้าระหว่างแผ่นเพิ่มเป็น $\\kappa$ เท่า", feedback: "การเกิดขั้วของฉนวนสร้างสนามสวนทาง สนามสุทธิลดลง" }
+    hints:
+      - "ตัดแบตเตอรี่แล้วปริมาณใดคงตัว"
+      - "ใช้ $V = Q/C$ และ $U = Q^2/2C$ กับ $C = \\kappa C_0$"
+    solution: "$Q$ คงตัว $C$ เพิ่มเป็น $\\kappa C_0$ จึงได้ $V = V_0/\\kappa$ และ $U = U_0/\\kappa$ พลังงานที่หายไปคืองานที่สนามทำในการดูดฉนวนเข้าไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p009
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 4
+    type: numeric
+    stem: "สายนำสัญญาณกล้องวงจรปิดแบบโคแอกเชียลมีตัวนำในรัศมี $0.50\\ \\mathrm{mm}$ ตัวนำนอกรัศมี $2.0\\ \\mathrm{mm}$ คั่นด้วยพอลิเอทิลีน $\\kappa = 2.3$ ความจุต่อความยาวเป็นกี่พิโกฟารัดต่อเมตร ($\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$)"
+    answer: { value: 92.3, tolerance: 1, unit: pF/m }
+    misconceptions:
+      - { match: 40.1, feedback: "ลืมคูณ $\\kappa$ ของฉนวน" }
+    hints:
+      - "$\\dfrac{C}{L} = \\dfrac{2\\pi\\kappa\\varepsilon_0}{\\ln(b/a)}$"
+      - "$b/a = 4$ และ $\\ln 4 = 1.386$"
+    solution: "$\\dfrac{C}{L} = \\dfrac{2\\pi(2.3)(8.85 \\times 10^{-12})}{1.386} = 9.23 \\times 10^{-11}\\ \\mathrm{F/m} \\approx 92.3\\ \\mathrm{pF/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p010
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวเก็บประจุแผ่นขนาน $200\\ \\mathrm{pF}$ ต่อกับแบตเตอรี่ $100\\ \\mathrm{V}$ ตลอดเวลา แล้วดึงแผ่นให้ห่างกันเป็น 2 เท่า พลังงานสะสมใหม่เป็นกี่ไมโครจูล"
+    answer: { value: 0.5, tolerance: 0.005, unit: μJ }
+    misconceptions:
+      - { match: 2.0, feedback: "นั่นคือกรณีตัดแบตเตอรี่ (ประจุคงตัว) ในข้อนี้ความต่างศักย์คงตัว" }
+      - { match: 1.0, feedback: "นี่คือพลังงานเดิม ความจุลดลงครึ่งหนึ่ง พลังงานจึงเปลี่ยน" }
+    hints:
+      - "ระยะห่าง 2 เท่า $C$ เหลือ $100\\ \\mathrm{pF}$"
+      - "ความต่างศักย์คงตัว ใช้ $U = \\tfrac12 CV^2$"
+    solution: "เดิม $U = \\tfrac12 (200 \\times 10^{-12})(100)^2 = 1.0\\ \\mu\\mathrm{J}$ ใหม่ $U = \\tfrac12 (100 \\times 10^{-12})(100)^2 = 0.5\\ \\mu\\mathrm{J}$ ประจุบางส่วนไหลกลับเข้าแบตเตอรี่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p011
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 5
+    type: numeric
+    stem: "ตัวเก็บประจุแผ่นขนานพื้นที่แผ่น $0.020\\ \\mathrm{m^2}$ มีประจุ $1.77 \\times 10^{-8}\\ \\mathrm{C}$ (ไม่ได้ต่อแบตเตอรี่) แผ่นทั้งสองดูดกันด้วยแรงกี่มิลลินิวตัน ($\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$)"
+    answer: { value: 0.885, tolerance: 0.01, unit: mN }
+    misconceptions:
+      - { match: 1.77, feedback: "ใช้สนามทั้งหมดระหว่างแผ่น $Q/\\varepsilon_0A$ คูณประจุ แต่แผ่นหนึ่งถูกแรงจากสนามของอีกแผ่นซึ่งมีขนาดครึ่งหนึ่ง" }
+    hints:
+      - "ประจุคงตัว $U = \\dfrac{Q^2x}{2\\varepsilon_0A}$ เมื่อ $x$ คือระยะห่าง แรง $F = \\dfrac{dU}{dx}$"
+      - "$F = \\dfrac{Q^2}{2\\varepsilon_0A}$"
+    solution: "$F = \\dfrac{(1.77 \\times 10^{-8})^2}{2(8.85 \\times 10^{-12})(0.020)} = 8.85 \\times 10^{-4}\\ \\mathrm{N} = 0.885\\ \\mathrm{mN}$ แรงนี้ไม่ขึ้นกับระยะห่าง เพราะความหนาแน่นพลังงานคงตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p012
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวเก็บประจุแผ่นขนานมีอากาศคั่น ระยะห่าง $0.50\\ \\mathrm{mm}$ ถ้าอากาศเสียสภาพที่สนาม $3.0 \\times 10^{6}\\ \\mathrm{V/m}$ จะใช้ความต่างศักย์ได้สูงสุดกี่โวลต์"
+    answer: { value: 1500, tolerance: 15, unit: V }
+    misconceptions:
+      - { match: 6000000000, feedback: "หารด้วยระยะแทนการคูณ ในสนามสม่ำเสมอ $V = Ed$" }
+      - { match: 1500000, feedback: "ไม่ได้แปลงมิลลิเมตรเป็นเมตร" }
+    hints:
+      - "สนามระหว่างแผ่นสม่ำเสมอ $V = Ed$"
+      - "$d = 5.0 \\times 10^{-4}\\ \\mathrm{m}$"
+    solution: "$V_{\\max} = (3.0 \\times 10^{6})(5.0 \\times 10^{-4}) = 1500\\ \\mathrm{V}$ ใส่ฉนวนที่มีความคงทนไดอิเล็กทริกสูงกว่าอากาศจะรับความต่างศักย์ได้มากขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p013
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 5
+    type: numeric
+    stem: "ตัวเก็บประจุแผ่นขนานอากาศมีความจุ $C_0 = 10\\ \\mathrm{pF}$ สอดแผ่นฉนวน $\\kappa = 3$ หนาครึ่งหนึ่งของระยะห่างระหว่างแผ่น และกว้างเต็มพื้นที่แผ่น ตามภาพ ความจุใหม่เป็นกี่พิโกฟารัด"
+    figure: { src: p-slab.svg, alt: "แผ่นโลหะขนานสองแผ่นห่างกัน d แผ่นฉนวน κ = 3 หนา d/2 วางติดแผ่นล่างและกว้างเต็มพื้นที่แผ่น ครึ่งบนของช่องว่างเป็นอากาศ" }
+    answer: { value: 15, tolerance: 0.15, unit: pF }
+    misconceptions:
+      - { match: 20, feedback: "คิดเป็นการต่อขนานแล้วเฉลี่ย $\\kappa$ แต่ฉนวนกับอากาศซ้อนกันในแนวสนาม จึงต่ออนุกรมกัน" }
+      - { match: 30, feedback: "ฉนวนเต็มเพียงครึ่งหนึ่งของช่องว่าง ไม่ใช่ทั้งหมด" }
+    hints:
+      - "มองเป็นตัวเก็บประจุสองตัวต่ออนุกรม ช่องอากาศหนา $d/2$ และช่องฉนวนหนา $d/2$"
+      - "ช่องอากาศ $C_1 = 2C_0$ ช่องฉนวน $C_2 = 2\\kappa C_0$"
+    solution: "$C_1 = 20\\ \\mathrm{pF}$ $C_2 = 60\\ \\mathrm{pF}$ อนุกรมกันได้ $C = \\dfrac{(20)(60)}{80} = 15\\ \\mathrm{pF}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p014
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 5
+    type: numeric
+    stem: "ตัวเก็บประจุอากาศ $C_0 = 10\\ \\mathrm{pF}$ มีฉนวน $\\kappa = 5$ อยู่เต็มช่องว่างและมีประจุ $1.0\\ \\mathrm{nC}$ โดยไม่ได้ต่อแบตเตอรี่ ต้องทำงานกี่นาโนจูลเพื่อดึงฉนวนออกจนหมด"
+    answer: { value: 40, tolerance: 0.4, unit: nJ }
+    misconceptions:
+      - { match: -40, feedback: "พลังงานสะสมเพิ่มขึ้นเมื่อดึงฉนวนออก ผู้ดึงต้องทำงานเป็นบวกต้านแรงดูด" }
+      - { match: 50, feedback: "นี่คือพลังงานหลังดึงออก งานที่ทำคือผลต่างของพลังงาน" }
+    hints:
+      - "ประจุคงตัว $U = \\dfrac{Q^2}{2C}$"
+      - "ก่อน $C = 50\\ \\mathrm{pF}$ หลัง $C = 10\\ \\mathrm{pF}$ งาน $= U_{\\text{หลัง}} - U_{\\text{ก่อน}}$"
+    solution: "ก่อน $U = \\dfrac{(1.0 \\times 10^{-9})^2}{2(50 \\times 10^{-12})} = 10\\ \\mathrm{nJ}$ หลัง $U = \\dfrac{(1.0 \\times 10^{-9})^2}{2(10 \\times 10^{-12})} = 50\\ \\mathrm{nJ}$ งาน $= 40\\ \\mathrm{nJ}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p015
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 2
+    type: text
+    stem: "หน่วย SI ของสภาพยอมของสุญญากาศ $\\varepsilon_0$ ที่เขียนด้วยหน่วยของความจุคืออะไร (ตอบเป็นสัญลักษณ์ เช่น A/m)"
+    accepted: ["F/m", "F m^-1", "F·m^-1", "ฟารัดต่อเมตร", "F/m."]
+    misconceptions:
+      - { match: "F", feedback: "จาก $C = \\varepsilon_0A/d$ ได้ $\\varepsilon_0 = Cd/A$ หน่วยจึงเป็นฟารัดคูณเมตรหารตารางเมตร" }
+      - { match: "F m", feedback: "หาร $\\mathrm{m^2}$ ด้วย เหลือฟารัดต่อเมตร" }
+    hints:
+      - "จัดรูป $C = \\varepsilon_0A/d$ ให้ $\\varepsilon_0$ อยู่ข้างเดียว"
+      - "$\\varepsilon_0 = \\dfrac{Cd}{A}$ หน่วย $\\dfrac{\\mathrm{F}\\cdot\\mathrm{m}}{\\mathrm{m^2}}$"
+    solution: "$\\varepsilon_0 = Cd/A$ หน่วย $\\mathrm{F \\cdot m/m^2} = \\mathrm{F/m}$ จึงเขียน $\\varepsilon_0 = 8.85 \\times 10^{-12}\\ \\mathrm{F/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p016
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวเก็บประจุ $4.0\\ \\mu\\mathrm{F}$ และ $12\\ \\mu\\mathrm{F}$ ต่ออนุกรมกับแบตเตอรี่ $400\\ \\mathrm{V}$ จนอัดประจุเต็ม แล้วถอดออกมาต่อขนานกันโดยให้ขั้วบวกต่อกับขั้วบวก ความต่างศักย์สุดท้ายเป็นกี่โวลต์"
+    answer: { value: 150, tolerance: 1.5, unit: V }
+    misconceptions:
+      - { match: 400, feedback: "ความต่างศักย์ไม่ได้คงเดิม ต้องหาประจุรวมแล้วหารด้วยความจุรวมของการต่อขนาน" }
+      - { match: 75, feedback: "นับประจุแค่ตัวเดียว ทั้งสองตัวมีประจุ $1200\\ \\mu\\mathrm{C}$ เท่ากัน" }
+    hints:
+      - "ต่ออนุกรม ประจุเท่ากันทั้งสองตัว $Q = C_{\\text{อนุกรม}} \\times 400$"
+      - "ต่อขนานใหม่ ประจุรวม $2Q$ ความจุรวม $16\\ \\mu\\mathrm{F}$"
+    solution: "อนุกรม $C = \\dfrac{(4)(12)}{16} = 3\\ \\mu\\mathrm{F}$ $Q = 1200\\ \\mu\\mathrm{C}$ บนแต่ละตัว ต่อขนาน ประจุรวม $2400\\ \\mu\\mathrm{C}$ $V = \\dfrac{2400}{16} = 150\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p017
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 3
+    type: mcq
+    stem: "ถ้าสนามไฟฟ้าในบริเวณหนึ่งเพิ่มเป็น 2 เท่า ความหนาแน่นพลังงานในบริเวณนั้นเป็นกี่เท่าของเดิม"
+    choices:
+      - { id: a, text: "4 เท่า", correct: true }
+      - { id: b, text: "2 เท่า", feedback: "$u$ แปรผันตาม $E^2$ ไม่ใช่ $E$" }
+      - { id: c, text: "$\\sqrt2$ เท่า", feedback: "$u$ เพิ่มเร็วกว่า $E$ ไม่ใช่ช้ากว่า" }
+      - { id: d, text: "เท่าเดิม", feedback: "พลังงานในสนามขึ้นกับขนาดของสนาม" }
+    hints:
+      - "$u = \\tfrac12\\varepsilon_0E^2$"
+      - "แทน $E$ ด้วย $2E$"
+    solution: "$u \\propto E^2$ สนาม 2 เท่า ความหนาแน่นพลังงาน $2^2 = 4$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.potential-capacitance.p018
+    topics: [physics.electricity.potential-capacitance]
+    difficulty: 4
+    type: numeric
+    stem: "เซนเซอร์วัดระดับน้ำในถังเก็บน้ำบนหลังคาบ้านเป็นท่อโลหะสองท่อสวมซ้อนกันในแนวตั้ง เมื่อถังว่าง (มีแต่อากาศ) ความจุ $50\\ \\mathrm{pF}$ ถ้าน้ำ ($\\kappa = 80$) อยู่สูง 30% ของความสูงท่อ ความจุเป็นกี่พิโกฟารัด"
+    answer: { value: 1235, tolerance: 12, unit: pF }
+    misconceptions:
+      - { match: 1200, feedback: "คิดแค่ส่วนที่จมน้ำ ส่วนที่เป็นอากาศอีก 70% ยังมีความจุต่อขนานอยู่" }
+      - { match: 4000, feedback: "นี่คือกรณีน้ำเต็มท่อ" }
+    hints:
+      - "ส่วนที่จมน้ำกับส่วนที่เป็นอากาศอยู่เคียงกันในแนวตั้ง จึงต่อขนาน"
+      - "ส่วนอากาศ $0.7 \\times 50$ ส่วนน้ำ $0.3 \\times 80 \\times 50$"
+    solution: "$C = 0.7(50) + 0.3(80)(50) = 35 + 1200 = 1235\\ \\mathrm{pF}$ ความจุเพิ่มตามระดับน้ำเป็นเส้นตรง เครื่องวัดจึงแปลงความจุเป็นระดับน้ำได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

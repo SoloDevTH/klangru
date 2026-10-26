@@ -1,0 +1,387 @@
+problems:
+  - id: computer.programming.oop.p001
+    topics: [computer.programming.oop]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำกับความหมาย"
+    pairs:
+      - { left: "คลาส", right: "แม่แบบที่บอกว่าวัตถุมีข้อมูลอะไรและทำอะไรได้" }
+      - { left: "วัตถุ", right: "สิ่งที่สร้างจากคลาส มีค่าของตัวเอง" }
+      - { left: "แอตทริบิวต์", right: "ข้อมูลที่วัตถุเก็บไว้ เช่น self.balance" }
+      - { left: "เมทอด", right: "ฟังก์ชันที่อยู่ในคลาส" }
+      - { left: "โมดูล", right: "ไฟล์ .py ที่นำไปใช้ในไฟล์อื่นด้วย import" }
+    hints:
+      - "คลาสเหมือนแบบพิมพ์ขนม วัตถุเหมือนขนมแต่ละชิ้น"
+      - "แอตทริบิวต์คือข้อมูล เมทอดคือการกระทำ"
+    solution: "คลาสเป็นแม่แบบ วัตถุสร้างจากคลาส แอตทริบิวต์เป็นข้อมูลในวัตถุ เมทอดเป็นฟังก์ชันในคลาส และโมดูลเป็นไฟล์ที่ import ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p002
+    topics: [computer.programming.oop]
+    difficulty: 1
+    type: mcq
+    stem: "ต้องการใช้ฟังก์ชัน `sqrt` จากโมดูล `math` โดยเรียก `sqrt(25)` ได้ตรง ๆ ไม่ต้องเขียน `math.` นำหน้า ต้องเขียนคำสั่งใด"
+    choices:
+      - { id: a, text: "from math import sqrt", correct: true }
+      - { id: b, text: "import math", feedback: "import math ต้องเรียกผ่านชื่อโมดูล คือ math.sqrt(25)" }
+      - { id: c, text: "import sqrt from math", feedback: "Python ไม่มีรูปคำสั่งนี้ จะเกิด SyntaxError" }
+      - { id: d, text: "include math.sqrt", feedback: "include ไม่ใช่คำสั่งของ Python" }
+    hints:
+      - "มีสองแบบ คือ import ทั้งโมดูล กับ from ... import ชื่อที่ต้องการ"
+      - "แบบใดทำให้ชื่อ sqrt ใช้ได้ทันที"
+    solution: "from math import sqrt นำชื่อ sqrt เข้ามาโดยตรง จึงเรียก sqrt(25) ได้ ส่วน import math ต้องเรียก math.sqrt(25)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p003
+    topics: [computer.programming.oop]
+    difficulty: 2
+    type: numeric
+    stem: |
+      กระปุกออมสินนี้แสดงตัวเลขใด
+
+      ```python
+      class PiggyBank:
+          def __init__(self):
+              self.coins = 0
+
+          def put(self, n):
+              self.coins = self.coins + n
+
+          def take(self, n):
+              if n <= self.coins:
+                  self.coins = self.coins - n
+
+      p = PiggyBank()
+      p.put(10)
+      p.put(5)
+      p.take(20)
+      p.take(4)
+      print(p.coins)
+      ```
+    answer: { value: 11, unit: "เหรียญ" }
+    hints:
+      - "ไล่ค่า self.coins ทีละบรรทัด เริ่มที่ 0"
+      - "take ลดเหรียญเฉพาะเมื่อ n ไม่เกินจำนวนที่มี"
+    misconceptions:
+      - { match: -9, feedback: "take(20) ไม่ทำงาน เพราะ 20 มากกว่า 15 ที่มีอยู่ เงื่อนไขกันไม่ให้ติดลบ" }
+      - { match: 15, feedback: "take(4) ทำงานได้ เพราะ 4 ไม่เกิน 15 เหรียญจึงลดลง" }
+    solution: "0 → put(10) = 10 → put(5) = 15 → take(20) ไม่ทำ เพราะ 20 > 15 → take(4) = 11 แสดง 11"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p004
+    topics: [computer.programming.oop]
+    difficulty: 2
+    type: text
+    stem: "ในเมทอดของคลาส Python พารามิเตอร์ตัวแรกที่หมายถึงวัตถุตัวที่ถูกเรียก นิยมตั้งชื่อว่าอะไร"
+    accepted: ["self"]
+    misconceptions:
+      - { match: "this", feedback: "this ใช้ในภาษาอื่น เช่น Java และ JavaScript ใน Python ใช้ self" }
+      - { match: "__init__", feedback: "__init__ เป็นชื่อเมทอดที่ถูกเรียกตอนสร้างวัตถุ ไม่ใช่ชื่อพารามิเตอร์" }
+    hints:
+      - "ดูบรรทัด def deposit(..., amount) ในบทเรียน"
+      - "a.deposit(50) ส่ง a ไปเป็นพารามิเตอร์นี้"
+    solution: "self ใช้เข้าถึงแอตทริบิวต์ของวัตถุนั้น เช่น self.balance"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p005
+    topics: [computer.programming.oop]
+    difficulty: 2
+    type: mcq
+    stem: "เมื่อเขียน `a = Account(\"มานี\", 100)` เมทอด `__init__` ทำอะไร"
+    choices:
+      - { id: a, text: "ถูกเรียกอัตโนมัติเพื่อตั้งค่าเริ่มต้น self.owner = \"มานี\" และ self.balance = 100 ให้วัตถุใหม่", correct: true }
+      - { id: b, text: "ลบวัตถุเก่าที่ชื่อ a ทุกตัวในโปรแกรม", feedback: "__init__ ตั้งค่าเริ่มต้นของวัตถุใหม่ ไม่ได้ลบอะไร" }
+      - { id: c, text: "ต้องเรียก a.__init__() เองทุกครั้งหลังสร้างวัตถุ", feedback: "Python เรียก __init__ ให้อัตโนมัติเมื่อเรียกชื่อคลาส" }
+      - { id: d, text: "สร้างคลาส Account ใหม่ขึ้นมาอีกคลาส", feedback: "คลาสมีอยู่แล้ว การเรียก Account(...) สร้างวัตถุ ไม่ได้สร้างคลาส" }
+    hints:
+      - "init ย่อมาจาก initialize แปลว่ากำหนดค่าเริ่มต้น"
+      - "ค่า มานี และ 100 ถูกส่งเข้าไปเป็นพารามิเตอร์ owner และ balance"
+    solution: "การเรียก Account(\"มานี\", 100) สร้างวัตถุใหม่แล้วเรียก __init__(self, \"มานี\", 100) ให้อัตโนมัติ ซึ่งเก็บค่าเริ่มต้นลงแอตทริบิวต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p006
+    topics: [computer.programming.oop]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ครูบันทึกเวลาที่นักเรียน 4 คนใช้ทำแบบฝึกหัด (นาที) แล้วใช้ไลบรารีมาตรฐาน โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      import statistics
+      minutes = [7, 3, 9, 4]
+      print(statistics.median(minutes))
+      ```
+    answer: { value: 5.5, tolerance: 0.01, unit: "นาที" }
+    hints:
+      - "มัธยฐานคือค่ากลางเมื่อเรียงข้อมูลแล้ว ฟังก์ชันเรียงให้เอง"
+      - "ข้อมูลมีจำนวนคู่ ค่ากลางคือค่าเฉลี่ยของสองตัวกลาง"
+    misconceptions:
+      - { match: 5.75, feedback: "5.75 คือค่าเฉลี่ย (mean) ไม่ใช่มัธยฐาน" }
+      - { match: 6, feedback: "ใช้ตัวกลางของลิสต์ที่ยังไม่เรียง (3 กับ 9) median เรียงข้อมูลก่อนเสมอ" }
+    solution: "เรียงได้ [3, 4, 7, 9] สองตัวกลางคือ 4 และ 7 มัธยฐาน (4 + 7) ÷ 2 = 5.5 การอ่าน API บอกว่า median เรียงข้อมูลและจัดการจำนวนคู่ให้ เราจึงไม่ต้องเขียนเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p007
+    topics: [computer.programming.oop]
+    difficulty: 3
+    type: order
+    stem: "เรียงบรรทัดให้เป็นคลาสสินค้าที่ใช้ได้ โดย `Item(\"สมุด\", 15, 3).subtotal()` ได้ 45 (การย่อหน้าจะถูกจัดให้เอง)"
+    items:
+      - "class Item:"
+      - "def __init__(self, name, price, qty):"
+      - "self.name = name"
+      - "self.price = price"
+      - "self.qty = qty"
+      - "def subtotal(self):"
+      - "return self.price * self.qty"
+    hints:
+      - "บรรทัด class อยู่บนสุด แล้วตามด้วย __init__"
+      - "ตั้งค่าแอตทริบิวต์ใน __init__ ให้ครบก่อนเขียนเมทอดอื่น"
+    solution: "class Item: → def __init__(self, name, price, qty): → กำหนด self.name self.price self.qty → def subtotal(self): → return self.price * self.qty"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p008
+    topics: [computer.programming.oop]
+    difficulty: 3
+    type: mcq
+    stem: |
+      รันโปรแกรมนี้แล้วได้ `TypeError: Lamp.switch() takes 0 positional arguments but 1 was given` ต้องแก้อย่างไร
+
+      ```python
+      class Lamp:
+          def __init__(self):
+              self.on = False
+
+          def switch():
+              self.on = not self.on
+
+      x = Lamp()
+      x.switch()
+      ```
+    choices:
+      - { id: a, text: "เปลี่ยนเป็น def switch(self):", correct: true }
+      - { id: b, text: "เปลี่ยนการเรียกเป็น x.switch(x)", feedback: "Python ส่ง x ไปเป็นอาร์กิวเมนต์แรกให้อัตโนมัติแล้ว ส่งซ้ำจะยิ่งเกินจำนวนพารามิเตอร์" }
+      - { id: c, text: "ลบ self ใน self.on ออก ให้เหลือ on = not on", feedback: "เมทอดยังไม่มีพารามิเตอร์รับวัตถุ จึงยังเกิด TypeError เดิม และ on จะกลายเป็นตัวแปรเฉพาะที่ ไม่ใช่ค่าในวัตถุ" }
+      - { id: d, text: "เปลี่ยน x = Lamp() เป็น x = Lamp", feedback: "x จะเป็นตัวคลาสแทนวัตถุ ไม่ได้แก้ปัญหาพารามิเตอร์" }
+    hints:
+      - "ข้อความบอกว่าเมทอดรับ 0 อาร์กิวเมนต์ แต่ได้รับ 1 ตัว ตัวนั้นคืออะไร"
+      - "x.switch() ส่ง x ไปเป็นอาร์กิวเมนต์แรกเสมอ"
+    solution: "x.switch() ส่งวัตถุ x ไปเป็นอาร์กิวเมนต์แรก แต่ def switch() ไม่มีพารามิเตอร์รับ ต้องเขียน def switch(self): และใช้ self.on ข้างในได้ตามเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p009
+    topics: [computer.programming.oop]
+    difficulty: 4
+    type: numeric
+    stem: |
+      เครื่องนับคนเข้างานกีฬาสี โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      class Counter:
+          def __init__(self):
+              self.n = 0
+
+          def click(self):
+              self.n = self.n + 1
+
+      a = Counter()
+      b = a
+      c = Counter()
+      a.click()
+      b.click()
+      c.click()
+      print(a.n)
+      ```
+    answer: { value: 2, unit: "" }
+    hints:
+      - "นับว่ามีวัตถุ Counter ถูกสร้างจริงกี่ตัว (เรียก Counter() กี่ครั้ง)"
+      - "b = a ไม่ได้สร้างวัตถุใหม่ a และ b ชี้วัตถุเดียวกัน"
+    misconceptions:
+      - { match: 1, feedback: "คิดว่า b เป็นวัตถุใหม่ แต่ b = a ทำให้สองชื่อชี้วัตถุเดียวกัน การคลิกผ่าน b จึงนับใน a ด้วย" }
+      - { match: 3, feedback: "c = Counter() สร้างวัตถุใหม่แยกต่างหาก การคลิก c ไม่กระทบ a" }
+    solution: "มีวัตถุสองตัว ตัวแรกชื่อ a และ b ตัวที่สองชื่อ c a.click() และ b.click() เพิ่มวัตถุตัวแรกสองครั้ง a.n จึงเป็น 2 ส่วน c.n เป็น 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p010
+    topics: [computer.programming.oop]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ร้านอาหารเช้าหน้าโรงเรียนใช้คลาส `Item` และ `Cart` แบบในบทเรียน โปรแกรมนี้แสดงยอดรวมกี่บาท
+
+      ```python
+      cart = Cart()
+      cart.add(Item("ข้าวเหนียว", 10, 3))
+      cart.add(Item("หมูปิ้ง", 12, 4))
+      cart.add(Item("น้ำเต้าหู้", 15, 2))
+      cart.items[1].qty = 2
+      print(cart.total())
+      ```
+
+      (`subtotal()` คืน `price * qty` และ `total()` รวม `subtotal()` ของทุกชิ้นใน `self.items`)
+    answer: { value: 84, unit: "บาท" }
+    hints:
+      - "cart.items[1] คือชิ้นที่สองที่เพิ่มเข้าไป (ดัชนีเริ่มที่ 0)"
+      - "หลังแก้จำนวน คำนวณ subtotal ของแต่ละชิ้นใหม่แล้วรวม"
+    misconceptions:
+      - { match: 108, feedback: "ยังใช้จำนวนหมูปิ้ง 4 ไม้ แต่ cart.items[1].qty = 2 แก้ค่าในวัตถุนั้นแล้ว" }
+      - { match: 98, feedback: "แก้จำนวนของข้าวเหนียว (ชิ้นแรก) ดัชนี 1 คือชิ้นที่สอง" }
+    solution: "ข้าวเหนียว 10 × 3 = 30 หมูปิ้งแก้เป็น 12 × 2 = 24 น้ำเต้าหู้ 15 × 2 = 30 รวม 84 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p011
+    topics: [computer.programming.oop]
+    difficulty: 4
+    type: numeric
+    stem: |
+      บริการข้อมูลฝนส่งข้อความ JSON กลับมาตามเอกสาร API ของบริการ โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      import json
+      reply = '{"station": "หาดใหญ่", "days": [{"date": "2026-10-27", "rain_mm": 12.5}, {"date": "2026-10-28", "rain_mm": 40.0}]}'
+      data = json.loads(reply)
+      print(data["days"][1]["rain_mm"])
+      ```
+    answer: { value: 40, tolerance: 0.01, unit: "มิลลิเมตร" }
+    hints:
+      - "json.loads แปลงข้อความเป็นดิกชันนารี data[\"days\"] เป็นลิสต์ของดิกชันนารี"
+      - "ดัชนี 1 คือวันที่สองในลิสต์"
+    misconceptions:
+      - { match: 12.5, feedback: "12.5 คือฝนของวันแรก (ดัชนี 0) ดัชนี 1 คือวันที่สอง" }
+      - { match: 52.5, feedback: "โปรแกรมไม่ได้รวมฝนสองวัน แค่อ่านค่าของวันเดียว" }
+    solution: "data[\"days\"] = ลิสต์สองวัน ดัชนี 1 คือ {\"date\": \"2026-10-28\", \"rain_mm\": 40.0} จึงแสดง 40.0 การรู้โครงสร้างข้อมูลจากเอกสาร API ทำให้เลือกคีย์และดัชนีได้ถูก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p012
+    topics: [computer.programming.oop]
+    difficulty: 4
+    type: numeric
+    stem: |
+      เอกสาร API ของโมดูลค่าส่งพัสดุเขียนว่า
+
+      > `shipping_cost(weight_kg, express=False)` คืนค่าส่งเป็นบาท กิโลกรัมแรก 40 บาท กิโลกรัมต่อไปกิโลกรัมละ 15 บาท (น้ำหนักปัดขึ้นเป็นกิโลกรัมเต็ม) ถ้า `express=True` บวกเพิ่ม 30 บาท
+
+      `shipping_cost(2.3, express=True)` คืนค่ากี่บาท
+    answer: { value: 100, unit: "บาท" }
+    hints:
+      - "ปัดน้ำหนัก 2.3 กิโลกรัมขึ้นเป็นกิโลกรัมเต็มก่อน"
+      - "กิโลกรัมแรก 40 บาท กิโลกรัมที่เหลือกิโลกรัมละ 15 บาท แล้วบวกค่าส่งด่วน"
+    misconceptions:
+      - { match: 70, feedback: "ลืมบวก 30 บาทของ express=True" }
+      - { match: 89.5, feedback: "ไม่ได้ปัดน้ำหนักขึ้น เอกสารบอกให้ปัด 2.3 เป็น 3 กิโลกรัม" }
+    solution: "ปัด 2.3 เป็น 3 กิโลกรัม → 40 + 15 × 2 = 70 บาท บวกส่งด่วน 30 = 100 บาท เราตอบได้จากเอกสาร API โดยไม่ต้องเห็นโค้ดข้างใน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p013
+    topics: [computer.programming.oop]
+    difficulty: 4
+    type: mcq
+    stem: "โปรแกรมห้องสมุดโรงเรียนมีโค้ดยืมหนังสือ คืนหนังสือ คำนวณค่าปรับ และแสดงหน้าจอ อยู่ในไฟล์เดียว 600 บรรทัด การแบ่งโมดูลแบบใดดีที่สุด"
+    choices:
+      - { id: a, text: "แยกตามหน้าที่: books.py (คลาส Book และการยืมคืน) fines.py (คำนวณค่าปรับ) screen.py (แสดงผล) แล้ว main.py นำมาใช้", correct: true }
+      - { id: b, text: "ตัดไฟล์ทุก 100 บรรทัดเป็น part1.py ถึง part6.py", feedback: "แบ่งตามจำนวนบรรทัดทำให้งานเดียวกันกระจายหลายไฟล์ แก้เรื่องเดียวต้องเปิดหลายไฟล์" }
+      - { id: c, text: "ไม่ต้องแบ่ง เพราะไฟล์เดียวหาง่ายกว่า", feedback: "ไฟล์ยาวมากหายากและแก้แล้วกระทบส่วนอื่นง่าย ทดสอบทีละส่วนก็ยาก" }
+      - { id: d, text: "แยกทุกฟังก์ชันเป็นไฟล์ละฟังก์ชัน", feedback: "แยกละเอียดเกินไปจนต้อง import หลายสิบไฟล์ ฟังก์ชันที่ทำงานเรื่องเดียวกันควรอยู่ด้วยกัน" }
+    hints:
+      - "โมดูลที่ดีรวมสิ่งที่ทำงานเรื่องเดียวกันไว้ด้วยกัน"
+      - "ถามว่าถ้ากฎค่าปรับเปลี่ยน ต้องแก้กี่ไฟล์"
+    solution: "แบ่งตามหน้าที่ทำให้แต่ละโมดูลทำเรื่องเดียว ถ้ากฎค่าปรับเปลี่ยนก็แก้ fines.py ไฟล์เดียว และทดสอบโมดูลค่าปรับแยกได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p014
+    topics: [computer.programming.oop]
+    difficulty: 5
+    type: numeric
+    stem: |
+      บัญชีนักเรียนของธนาคารโรงเรียนสืบทอดจาก `Account` ในบทเรียน (ถอนเกินยอดเงินไม่ได้) และถอนได้ครั้งละไม่เกิน 100 บาท โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      class StudentAccount(Account):
+          def withdraw(self, amount):
+              if amount > 100:
+                  return False
+              return super().withdraw(amount)
+
+      s = StudentAccount("ชูใจ", 250)
+      s.withdraw(120)
+      s.withdraw(100)
+      s.deposit(30)
+      s.withdraw(90)
+      s.withdraw(100)
+      print(s.balance)
+      ```
+    answer: { value: 90, unit: "บาท" }
+    hints:
+      - "ไล่ยอดเงินทีละบรรทัด ทุกครั้งที่ถอนต้องผ่านสองเงื่อนไข คือไม่เกิน 100 และไม่เกินยอดเงิน"
+      - "super().withdraw(amount) คือ withdraw ของ Account ซึ่งตรวจยอดเงินก่อนหัก"
+    misconceptions:
+      - { match: 60, feedback: "ลืมว่า StudentAccount เขียน withdraw ใหม่ การถอน 120 จึงไม่ผ่าน" }
+      - { match: -10, feedback: "การถอน 100 ครั้งสุดท้ายไม่ผ่าน เพราะ Account.withdraw ไม่ยอมให้ถอนเกินยอด 90 บาท" }
+    solution: "250 → ถอน 120 ไม่ได้ (เกิน 100) → ถอน 100 เหลือ 150 → ฝาก 30 เป็น 180 → ถอน 90 เหลือ 90 → ถอน 100 ผ่านเงื่อนไขแรก แต่ Account.withdraw พบว่า 100 > 90 จึงไม่ถอน ยอดสุดท้าย 90 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p015
+    topics: [computer.programming.oop]
+    difficulty: 5
+    type: numeric
+    stem: |
+      โปรแกรมจัดทีมกีฬาสีนี้แสดงตัวเลขใด
+
+      ```python
+      class Team:
+          members = []
+
+          def __init__(self, name):
+              self.name = name
+
+          def add(self, person):
+              self.members.append(person)
+
+      red = Team("แดง")
+      blue = Team("น้ำเงิน")
+      red.add("ก้อง")
+      red.add("ฝน")
+      blue.add("ต้น")
+      print(len(blue.members))
+      ```
+    answer: { value: 3, unit: "คน" }
+    hints:
+      - "members ประกาศไว้ที่ใด ใน __init__ หรือใต้ class โดยตรง"
+      - "ตัวแปรที่ประกาศใต้ class โดยตรงเป็นของคลาส ทุกวัตถุใช้ร่วมกัน"
+    misconceptions:
+      - { match: 1, feedback: "คิดว่าแต่ละทีมมีลิสต์ของตัวเอง แต่ members อยู่ระดับคลาส ทุกทีมจึงใช้ลิสต์เดียวกัน" }
+      - { match: 0, feedback: "blue.add(\"ต้น\") เพิ่มสมาชิกแล้ว และลิสต์นี้ยังมีสมาชิกที่ red เพิ่มด้วย" }
+    solution: "members = [] อยู่ใต้ class จึงเป็นลิสต์เดียวที่ทุกวัตถุใช้ร่วมกัน ทั้งสามคนถูกเพิ่มเข้าลิสต์เดียวกัน len เป็น 3 วิธีแก้คือย้ายไปเป็น self.members = [] ใน __init__ แต่ละทีมจะมีลิสต์ของตัวเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p016
+    topics: [computer.programming.oop]
+    difficulty: 5
+    type: mcq
+    stem: "คลาส `Account` ในบทเรียนมีเมทอด `deposit` ที่ไม่ยอมรับเงินติดลบ เพื่อนในทีมเขียนโค้ดส่วนอื่นว่า `a.balance = a.balance - 500` เพื่อหักค่าธรรมเนียม ข้อใดอธิบายปัญหาและวิธีแก้ได้ดีที่สุด"
+    choices:
+      - { id: a, text: "แก้แอตทริบิวต์ตรง ๆ ข้ามการตรวจเงื่อนไข ยอดอาจติดลบได้ ควรเพิ่มเมทอด charge_fee(amount) ที่ตรวจยอดก่อนหัก แล้วให้ทุกส่วนเรียกเมทอดนี้", correct: true }
+      - { id: b, text: "ไม่มีปัญหา เพราะ Python ยอมให้แก้แอตทริบิวต์ได้", feedback: "ภาษายอมให้ทำ แต่ทำให้กฎที่เขียนไว้ในเมทอดถูกข้าม ยอดเงินจึงผิดได้" }
+      - { id: c, text: "แก้เป็น a.deposit(-500)", feedback: "deposit ไม่ยอมรับจำนวนติดลบ จะเกิด ValueError ตามที่ออกแบบไว้" }
+      - { id: d, text: "ลบการตรวจเงื่อนไขใน deposit ออก เพื่อให้หักเงินผ่าน deposit ได้", feedback: "ทำให้กฎความถูกต้องหายไปทั้งหมด ใครก็ฝากเงินติดลบได้" }
+    hints:
+      - "นึกถึงหลักการห่อหุ้ม ข้อมูลของวัตถุควรเปลี่ยนผ่านทางใด"
+      - "ถ้ามีหลายจุดในโปรแกรมแก้ balance เอง กฎจะถูกบังคับใช้ที่ไหน"
+    solution: "การห่อหุ้มต้องการให้ข้อมูลเปลี่ยนผ่านเมทอดที่ตรวจเงื่อนไข การแก้ balance ตรง ๆ ข้ามกฎ จึงควรเพิ่มเมทอดหักค่าธรรมเนียมที่ตรวจยอดก่อน ทุกส่วนของโปรแกรมใช้เมทอดเดียวกันและกฎอยู่ที่เดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

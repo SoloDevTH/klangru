@@ -1,0 +1,349 @@
+problems:
+  - id: math.prob.conditional.p001
+    topics: [math.prob.conditional]
+    difficulty: 1
+    type: mcq
+    stem: "สัญลักษณ์ $P(A \\mid B)$ อ่านว่าอย่างไร"
+    choices:
+      - { id: a, text: "ความน่าจะเป็นของ $A$ เมื่อรู้ว่า $B$ เกิดแล้ว", correct: true }
+      - { id: b, text: "ความน่าจะเป็นของ $B$ เมื่อรู้ว่า $A$ เกิดแล้ว", feedback: "สลับกัน เหตุการณ์ที่อยู่หลังเส้น $\\mid$ คือเงื่อนไขที่รู้แล้ว" }
+      - { id: c, text: "ความน่าจะเป็นที่ $A$ หรือ $B$ เกิด", feedback: "นั่นคือ $P(A \\cup B)$" }
+      - { id: d, text: "ความน่าจะเป็นของ $A$ หารด้วย $B$", feedback: "เส้น $\\mid$ ไม่ใช่เครื่องหมายหาร และ $B$ เป็นเหตุการณ์ ไม่ใช่ตัวเลข" }
+    hints:
+      - "เส้นตั้ง $\\mid$ อ่านว่า เมื่อกำหนด"
+      - "สิ่งที่อยู่หลังเส้นคือสิ่งที่รู้แล้ว"
+    solution: "$P(A \\mid B)$ คือความน่าจะเป็นของ $A$ เมื่อกำหนด (รู้ว่าเกิด) $B$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p002
+    topics: [math.prob.conditional]
+    difficulty: 2
+    type: numeric
+    stem: "นักเรียน 200 คนของโรงเรียนแห่งหนึ่ง: ชายขี่จักรยานมาโรงเรียน 36 คน มาวิธีอื่น 54 คน (ชาย 90 คน) หญิงขี่จักรยาน 24 คน มาวิธีอื่น 86 คน (หญิง 110 คน) รวมขี่จักรยาน 60 คน สุ่มนักเรียนชายมา 1 คน ความน่าจะเป็นที่เขาขี่จักรยานมาโรงเรียนเป็นเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.4, tolerance: 0.005 }
+    hints:
+      - "รู้แล้วว่าเป็นชาย จึงดูเฉพาะนักเรียนชาย 90 คน"
+      - "ในนักเรียนชาย มีกี่คนที่ขี่จักรยาน"
+    misconceptions:
+      - { match: 0.18, feedback: "หารด้วยนักเรียนทั้งหมด 200 คน แต่เงื่อนไข \"เป็นชาย\" ทำให้ตัวส่วนเหลือ 90 คน" }
+      - { match: 0.6, feedback: "หารด้วยจำนวนคนขี่จักรยาน 60 คน นั่นคือ $P(\\text{ชาย} \\mid \\text{จักรยาน})$" }
+    solution: "$P(\\text{จักรยาน} \\mid \\text{ชาย}) = \\tfrac{36}{90} = 0.4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p003
+    topics: [math.prob.conditional]
+    difficulty: 2
+    type: numeric
+    stem: "นักเรียน 200 คนของโรงเรียนแห่งหนึ่ง: ชายขี่จักรยานมาโรงเรียน 36 คน มาวิธีอื่น 54 คน (ชาย 90 คน) หญิงขี่จักรยาน 24 คน มาวิธีอื่น 86 คน (หญิง 110 คน) รวมขี่จักรยาน 60 คน ในบรรดานักเรียนที่ขี่จักรยาน ความน่าจะเป็นที่สุ่มได้นักเรียนชายเป็นเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.6, tolerance: 0.005 }
+    hints:
+      - "\"ในบรรดานักเรียนที่ขี่จักรยาน\" คือเงื่อนไข ตัวส่วนคือจำนวนคนขี่จักรยาน"
+      - "$\\tfrac{\\text{ชายที่ขี่จักรยาน}}{\\text{คนขี่จักรยานทั้งหมด}}$"
+    misconceptions:
+      - { match: 0.4, feedback: "นี่คือ $P(\\text{จักรยาน} \\mid \\text{ชาย})$ ซึ่งสลับเงื่อนไข" }
+      - { match: 0.45, feedback: "นี่คือสัดส่วนชายในโรงเรียนทั้งหมด (90/200) ไม่ได้ใช้เงื่อนไข" }
+    solution: "$P(\\text{ชาย} \\mid \\text{จักรยาน}) = \\tfrac{36}{60} = 0.6$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p004
+    topics: [math.prob.conditional]
+    difficulty: 2
+    type: numeric
+    stem: "ในหมู่บ้านหนึ่ง ความน่าจะเป็นที่ผู้ใหญ่คนหนึ่งปลูกมะม่วงคือ 0.45 ปลูกมะนาวคือ 0.35 และปลูกทั้งสองอย่างคือ 0.15 ความน่าจะเป็นที่ปลูกอย่างน้อยหนึ่งอย่างเป็นเท่าใด"
+    answer: { value: 0.65, tolerance: 0.005 }
+    hints:
+      - "ใช้กฎการบวก $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$"
+      - "คนที่ปลูกทั้งสองอย่างถูกนับไปสองครั้ง"
+    misconceptions:
+      - { match: 0.8, feedback: "บวก $0.45 + 0.35$ แต่ลืมลบส่วนที่ปลูกทั้งสองอย่างซึ่งถูกนับสองครั้ง" }
+      - { match: 0.95, feedback: "บวกส่วนที่ซ้อนเพิ่ม ต้องลบออก" }
+    solution: "$P = 0.45 + 0.35 - 0.15 = 0.65$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p005
+    topics: [math.prob.conditional]
+    difficulty: 2
+    type: match
+    stem: "ใช้ข้อมูลนักเรียนกับการขี่จักรยาน จับคู่ข้อความกับสัญลักษณ์"
+    pairs:
+      - { left: "ความน่าจะเป็นที่เป็นชาย เมื่อรู้ว่าขี่จักรยาน", right: "$P(\\text{ชาย} \\mid \\text{จักรยาน})$" }
+      - { left: "ในบรรดานักเรียนชาย สัดส่วนที่ขี่จักรยาน", right: "$P(\\text{จักรยาน} \\mid \\text{ชาย})$" }
+      - { left: "เป็นชายและขี่จักรยาน", right: "$P(\\text{ชาย} \\cap \\text{จักรยาน})$" }
+      - { left: "เป็นชายหรือขี่จักรยาน", right: "$P(\\text{ชาย} \\cup \\text{จักรยาน})$" }
+    hints:
+      - "คำว่า \"เมื่อรู้ว่า\" และ \"ในบรรดา\" บอกเงื่อนไขซึ่งไปอยู่หลังเส้น $\\mid$"
+      - "และ คือ $\\cap$ หรือ คือ $\\cup$"
+    solution: "สิ่งที่รู้แล้ว (หลัง \"เมื่อรู้ว่า\" หรือ \"ในบรรดา\") อยู่หลังเส้น $\\mid$ และ ใช้ $\\cap$ หรือ ใช้ $\\cup$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p006
+    topics: [math.prob.conditional]
+    difficulty: 3
+    type: numeric
+    stem: "ถ้า $P(A \\cap B) = 0.12$ และ $P(B) = 0.4$ จงหา $P(A \\mid B)$"
+    answer: { value: 0.3, tolerance: 0.005 }
+    hints:
+      - "$P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)}$"
+      - "หาร 0.12 ด้วย 0.4"
+    misconceptions:
+      - { match: 0.048, feedback: "คูณแทนการหาร" }
+      - { match: 3.333, feedback: "หารกลับด้าน ความน่าจะเป็นต้องไม่เกิน 1" }
+    solution: "$P(A \\mid B) = \\tfrac{0.12}{0.4} = 0.3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p007
+    topics: [math.prob.conditional]
+    difficulty: 3
+    type: numeric
+    stem: "กล่องมีลูกบอลสีเขียว 4 ลูก สีเหลือง 6 ลูก หยิบ 2 ลูกทีละลูกโดยไม่ใส่คืน ความน่าจะเป็นที่ได้สีเหลืองทั้งสองลูกเป็นเท่าใด (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.333, tolerance: 0.005 }
+    hints:
+      - "ลูกแรกเหลือง $\\tfrac{6}{10}$ ถ้าลูกแรกเหลือง ในกล่องเหลืออะไรบ้าง"
+      - "ลูกที่สองเหลือง เมื่อรู้ว่าลูกแรกเหลือง $= \\tfrac59$"
+    misconceptions:
+      - { match: 0.36, feedback: "คิดแบบใส่คืน $\\tfrac{6}{10} \\times \\tfrac{6}{10}$ แต่ไม่ใส่คืน ลูกที่สองเหลือสีเหลือง 5 จาก 9" }
+      - { match: 0.3, feedback: "ลดจำนวนสีเหลืองแล้ว แต่ลืมลดจำนวนทั้งหมดจาก 10 เป็น 9" }
+    solution: "$\\tfrac{6}{10} \\times \\tfrac{5}{9} = \\tfrac{30}{90} = \\tfrac13 \\approx 0.333$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p008
+    topics: [math.prob.conditional]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียน 100 คน: ชาย 40 คน ใส่แว่น 12 คน ไม่ใส่ 28 คน หญิง 60 คน ใส่แว่น 18 คน ไม่ใส่ 42 คน เหตุการณ์ \"ใส่แว่น\" กับ \"เป็นชาย\" เป็นอิสระต่อกันหรือไม่"
+    choices:
+      - { id: a, text: "อิสระต่อกัน เพราะ $P(\\text{แว่น} \\mid \\text{ชาย}) = P(\\text{แว่น}) = 0.3$", correct: true }
+      - { id: b, text: "ไม่อิสระ เพราะหญิงใส่แว่นมากกว่าชาย (18 กับ 12 คน)", feedback: "ต้องเทียบสัดส่วน ไม่ใช่จำนวน หญิงมีมากกว่าชาย สัดส่วนที่ใส่แว่นคือ 12/40 = 0.3 และ 18/60 = 0.3 เท่ากัน" }
+      - { id: c, text: "ไม่อิสระ เพราะมีคนที่เป็นชายและใส่แว่นด้วย", feedback: "นั่นแปลว่าเกิดร่วมกันได้ ซึ่งไม่ใช่เกณฑ์ของความเป็นอิสระ" }
+      - { id: d, text: "บอกไม่ได้ ต้องรู้ว่าแว่นเป็นของใคร", feedback: "ตารางสองทางให้ข้อมูลพอแล้ว เทียบ $P(\\text{แว่น} \\mid \\text{ชาย})$ กับ $P(\\text{แว่น})$" }
+    hints:
+      - "หา $P(\\text{แว่น})$ จากทั้งหมด และ $P(\\text{แว่น} \\mid \\text{ชาย})$ จากแถวชาย"
+      - "อิสระเมื่อสองค่านี้เท่ากัน"
+    solution: "$P(\\text{แว่น}) = \\tfrac{30}{100} = 0.3$ และ $P(\\text{แว่น} \\mid \\text{ชาย}) = \\tfrac{12}{40} = 0.3$ เท่ากัน จึงอิสระต่อกัน (ตรวจ: $P(\\text{ชาย} \\cap \\text{แว่น}) = 0.12 = 0.4 \\times 0.3$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p009
+    topics: [math.prob.conditional]
+    difficulty: 3
+    type: numeric
+    stem: "จากแผนภาพเวนน์ของนักเรียน 40 คน สุ่มนักเรียนที่เล่นฟุตบอลมา 1 คน ความน่าจะเป็นที่เขาเล่นบาสเกตบอลด้วยเป็นเท่าใด (ตอบทศนิยม 3 ตำแหน่ง)"
+    figure:
+      src: p-venn-sports.svg
+      alt: "แผนภาพเวนน์ U มีนักเรียน 40 คน วงกลมฟุตบอล F กับบาสเกตบอล B ซ้อนกัน ฟุตบอลอย่างเดียว 15 คน ทั้งสองอย่าง 7 คน บาสเกตบอลอย่างเดียว 8 คน ไม่เล่นทั้งสองอย่าง 10 คน"
+    answer: { value: 0.318, tolerance: 0.005 }
+    hints:
+      - "เงื่อนไขคือ \"เล่นฟุตบอล\" นับทุกส่วนในวงกลม F"
+      - "$P(B \\mid F) = \\dfrac{n(B \\cap F)}{n(F)}$"
+    misconceptions:
+      - { match: 0.467, feedback: "หารด้วยจำนวนคนเล่นบาสเกตบอล (15 คน) นั่นคือ $P(F \\mid B)$" }
+      - { match: 0.175, feedback: "หารด้วยนักเรียนทั้งหมด 40 คน นั่นคือ $P(F \\cap B)$" }
+    solution: "$n(F) = 15 + 7 = 22$ และ $n(F \\cap B) = 7$ จึง $P(B \\mid F) = \\tfrac{7}{22} \\approx 0.318$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p010
+    topics: [math.prob.conditional]
+    difficulty: 4
+    type: numeric
+    stem: "ในฤดูฝน ความน่าจะเป็นที่ฝนตกตอนเช้าคือ 0.3 ถ้าฝนตก ความน่าจะเป็นที่รถติดบนถนนหน้าโรงเรียนคือ 0.8 ความน่าจะเป็นที่ฝนตก **และ** รถติดเป็นเท่าใด"
+    answer: { value: 0.24, tolerance: 0.005 }
+    hints:
+      - "ใช้กฎการคูณ $P(A \\cap B) = P(A)\\,P(B \\mid A)$"
+      - "$0.3 \\times 0.8$"
+    misconceptions:
+      - { match: 0.8, feedback: "0.8 คือ $P(\\text{รถติด} \\mid \\text{ฝนตก})$ ยังต้องคูณด้วยโอกาสที่ฝนตก" }
+      - { match: 1.1, feedback: "บวกกันแทนการคูณ ความน่าจะเป็นเกิน 1 ไม่ได้" }
+    solution: "$P(\\text{ฝน} \\cap \\text{ติด}) = 0.3 \\times 0.8 = 0.24$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p011
+    topics: [math.prob.conditional]
+    difficulty: 4
+    type: numeric
+    stem: "ความน่าจะเป็นที่ฝนตกตอนเช้าคือ 0.3 ถ้าฝนตก รถติดด้วยความน่าจะเป็น 0.8 ถ้าฝนไม่ตก รถติดด้วยความน่าจะเป็น 0.4 ความน่าจะเป็นที่รถติดในเช้าวันหนึ่งเป็นเท่าใด"
+    answer: { value: 0.52, tolerance: 0.005 }
+    hints:
+      - "วาดแผนภาพต้นไม้ รถติดเกิดได้สองเส้นทาง"
+      - "$0.3 \\times 0.8 + 0.7 \\times 0.4$"
+    misconceptions:
+      - { match: 1.2, feedback: "บวก $0.8 + 0.4$ โดยไม่คูณกับโอกาสของแต่ละกิ่ง" }
+      - { match: 0.24, feedback: "คิดเฉพาะเส้นทางที่ฝนตก ลืมเส้นทางที่ฝนไม่ตกแต่รถติด" }
+    solution: "$P(\\text{ติด}) = 0.3(0.8) + 0.7(0.4) = 0.24 + 0.28 = 0.52$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p012
+    topics: [math.prob.conditional]
+    difficulty: 4
+    type: mcq
+    stem: "งานวิจัยหนึ่งพบว่าผู้ป่วยมะเร็งปอดส่วนใหญ่เคยสูบบุหรี่ ข้อสรุปใดถูกต้อง"
+    choices:
+      - { id: a, text: "ข้อมูลนี้บอก $P(\\text{สูบบุหรี่} \\mid \\text{มะเร็งปอด})$ ซึ่งไม่เท่ากับ $P(\\text{มะเร็งปอด} \\mid \\text{สูบบุหรี่})$", correct: true }
+      - { id: b, text: "คนที่สูบบุหรี่ส่วนใหญ่จะเป็นมะเร็งปอด", feedback: "นี่คือการสลับเงื่อนไข ข้อมูลบอกสัดส่วนในกลุ่มผู้ป่วย ไม่ใช่สัดส่วนในกลุ่มคนสูบบุหรี่" }
+      - { id: c, text: "$P(\\text{มะเร็งปอด} \\mid \\text{สูบบุหรี่})$ มากกว่า 0.5 แน่นอน", feedback: "ตัวส่วนคือคนสูบบุหรี่ทั้งหมดซึ่งมีมาก ค่านี้อาจน้อยกว่า 0.5 มาก แม้ผู้ป่วยส่วนใหญ่จะเคยสูบ" }
+      - { id: d, text: "การสูบบุหรี่กับมะเร็งปอดเป็นอิสระต่อกัน", feedback: "ถ้าผู้ป่วยสูบบุหรี่ในสัดส่วนที่สูงกว่าคนทั่วไป แสดงว่าไม่อิสระ" }
+    hints:
+      - "\"ในบรรดาผู้ป่วยมะเร็งปอด\" คือเงื่อนไขของข้อมูลนี้"
+      - "$P(A \\mid B)$ กับ $P(B \\mid A)$ ใช้ตัวส่วนคนละกลุ่ม"
+    solution: "ข้อมูลเทียบกับกลุ่มผู้ป่วย จึงเป็น $P(\\text{สูบ} \\mid \\text{มะเร็ง})$ ส่วนโอกาสที่คนสูบบุหรี่จะป่วยคือ $P(\\text{มะเร็ง} \\mid \\text{สูบ})$ ซึ่งใช้ตัวส่วนเป็นคนสูบบุหรี่ทั้งหมด สองค่านี้ต่างกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p013
+    topics: [math.prob.conditional]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการหา $P(\\text{ม.4} \\mid \\text{ชอบฟุตบอล})$ จากตารางสองทาง"
+    items:
+      - "ระบุเงื่อนไข: รู้แล้วว่านักเรียนชอบฟุตบอล"
+      - "ดูเฉพาะหลัก \"ชอบฟุตบอล\" และอ่านจำนวนรวมของหลักนั้นเป็นตัวส่วน"
+      - "อ่านจำนวนในช่องที่เป็นทั้ง ม.4 และชอบฟุตบอล เป็นตัวเศษ"
+      - "หารตัวเศษด้วยตัวส่วน แล้วตรวจว่าได้ค่าระหว่าง 0 ถึง 1"
+    hints:
+      - "เริ่มจากหาว่าอะไรคือสิ่งที่รู้แล้ว"
+      - "ตัวส่วนมาจากกลุ่มเงื่อนไข"
+    solution: "ระบุเงื่อนไข → ตัวส่วนคือจำนวนรวมของกลุ่มเงื่อนไข → ตัวเศษคือช่องที่ซ้อนกัน → หารและตรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p014
+    topics: [math.prob.conditional]
+    difficulty: 4
+    type: numeric
+    stem: "โรงเรียนมีนักเรียน 800 คน 30% ขี่จักรยานมาโรงเรียน ในกลุ่มที่ขี่จักรยาน $\\tfrac14$ สวมหมวกกันน็อก คาดว่ามีนักเรียนที่ขี่จักรยานและสวมหมวกกันน็อกกี่คน"
+    answer: { value: 60, unit: คน }
+    hints:
+      - "หาจำนวนคนขี่จักรยานก่อน"
+      - "$\\tfrac14$ ของคนขี่จักรยาน ไม่ใช่ของทั้งโรงเรียน"
+    misconceptions:
+      - { match: 200, feedback: "คิด $\\tfrac14$ ของนักเรียนทั้งหมด 800 คน แต่ $\\tfrac14$ เป็นสัดส่วนในกลุ่มที่ขี่จักรยาน" }
+      - { match: 240, feedback: "นี่คือจำนวนคนขี่จักรยานทั้งหมด ยังต้องคูณ $\\tfrac14$" }
+    solution: "ขี่จักรยาน $800 \\times 0.3 = 240$ คน สวมหมวก $240 \\times \\tfrac14 = 60$ คน (ความถี่ที่คาดหวัง $= 800 \\times 0.3 \\times \\tfrac14$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p015
+    topics: [math.prob.conditional]
+    difficulty: 4
+    type: mcq
+    stem: "ถ้า $P(A) = 0.5$, $P(B) = 0.4$ และ $P(A \\cap B) = 0.2$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$A$ กับ $B$ เป็นอิสระต่อกัน", correct: true }
+      - { id: b, text: "$A$ กับ $B$ ไม่เกิดร่วมกัน", feedback: "ไม่เกิดร่วมกันหมายถึง $P(A \\cap B) = 0$ แต่ที่นี่เป็น 0.2" }
+      - { id: c, text: "$P(A \\mid B) = 0.2$", feedback: "$P(A \\mid B) = \\tfrac{0.2}{0.4} = 0.5$ ไม่ใช่ 0.2" }
+      - { id: d, text: "$P(A \\cup B) = 0.9$", feedback: "ลืมลบส่วนซ้อน $P(A \\cup B) = 0.5 + 0.4 - 0.2 = 0.7$" }
+    hints:
+      - "ตรวจว่า $P(A)P(B)$ เท่ากับ $P(A \\cap B)$ หรือไม่"
+      - "หรือหา $P(A \\mid B)$ แล้วเทียบกับ $P(A)$"
+    solution: "$P(A)P(B) = 0.5 \\times 0.4 = 0.2 = P(A \\cap B)$ จึงอิสระต่อกัน และ $P(A \\mid B) = 0.5 = P(A)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p016
+    topics: [math.prob.conditional]
+    difficulty: 5
+    type: numeric
+    stem: "การตรวจคัดกรองโรคหนึ่ง (ตัวเลขสมมติ) ใช้กับคน 1,000 คนตามแผนภาพ โรคพบ 2% ผู้ป่วยตรวจได้ผลบวก 90% คนไม่ป่วยตรวจได้ผลบวกผิด 5% ถ้าคนหนึ่งได้ผลบวก ความน่าจะเป็นที่เขาป่วยจริงเป็นเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)"
+    figure:
+      src: p-test-tree.svg
+      alt: "แผนภาพต้นไม้เริ่มจาก 1,000 คน แยกเป็นป่วย 2% และไม่ป่วย 98% กิ่งป่วยแยกเป็นผลบวก 90% และผลลบ 10% กิ่งไม่ป่วยแยกเป็นผลบวก 5% และผลลบ 95% ปลายกิ่งทุกกิ่งเขียนว่า ? คน"
+    answer: { value: 0.27, tolerance: 0.01 }
+    hints:
+      - "เปลี่ยนเป็นจำนวนคน: ป่วย 20 คน ไม่ป่วย 980 คน"
+      - "นับคนที่ได้ผลบวกทั้งหมด (ทั้งป่วยและไม่ป่วย) เป็นตัวส่วน"
+    misconceptions:
+      - { match: 0.9, feedback: "0.9 คือ $P(\\text{บวก} \\mid \\text{ป่วย})$ โจทย์ถาม $P(\\text{ป่วย} \\mid \\text{บวก})$ ซึ่งสลับเงื่อนไข" }
+      - { match: 0.018, feedback: "นี่คือ $P(\\text{ป่วย} \\cap \\text{บวก})$ จากทั้ง 1,000 คน ต้องหารด้วยจำนวนคนที่ได้ผลบวก" }
+    solution: "ป่วย 20 คน ผลบวก $20 \\times 0.9 = 18$ คน ไม่ป่วย 980 คน ผลบวกผิด $980 \\times 0.05 = 49$ คน ผลบวกทั้งหมด 67 คน $P(\\text{ป่วย} \\mid \\text{บวก}) = \\tfrac{18}{67} \\approx 0.27$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p017
+    topics: [math.prob.conditional]
+    difficulty: 5
+    type: numeric
+    stem: "ความน่าจะเป็นที่ฝนตกตอนเช้าคือ 0.3 ถ้าฝนตก รถติดด้วยความน่าจะเป็น 0.8 ถ้าฝนไม่ตก รถติดด้วยความน่าจะเป็น 0.4 เช้าวันหนึ่งรถติด ความน่าจะเป็นที่ฝนตกในเช้านั้นเป็นเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.46, tolerance: 0.01 }
+    hints:
+      - "หา $P(\\text{ฝน} \\cap \\text{ติด})$ และ $P(\\text{ติด})$ จากแผนภาพต้นไม้"
+      - "$P(\\text{ฝน} \\mid \\text{ติด}) = \\dfrac{P(\\text{ฝน} \\cap \\text{ติด})}{P(\\text{ติด})}$"
+    misconceptions:
+      - { match: 0.8, feedback: "0.8 คือ $P(\\text{ติด} \\mid \\text{ฝน})$ ซึ่งสลับเงื่อนไข" }
+      - { match: 0.24, feedback: "นี่คือ $P(\\text{ฝน} \\cap \\text{ติด})$ ต้องหารด้วย $P(\\text{ติด}) = 0.52$" }
+    solution: "$P(\\text{ฝน} \\cap \\text{ติด}) = 0.24$ และ $P(\\text{ติด}) = 0.24 + 0.28 = 0.52$ จึงได้ $\\tfrac{0.24}{0.52} \\approx 0.46$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p018
+    topics: [math.prob.conditional]
+    difficulty: 5
+    type: numeric
+    stem: "ทอยลูกเต๋าสองลูก (ลูกแรกและลูกที่สอง) รู้ว่าลูกแรกได้แต้มคู่ ความน่าจะเป็นที่ผลรวมเป็น 8 เป็นเท่าใด (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.167, tolerance: 0.005 }
+    hints:
+      - "เงื่อนไข: ลูกแรกเป็น 2, 4 หรือ 6 ปริภูมิตัวอย่างเหลือ $3 \\times 6 = 18$ แบบ"
+      - "ในนั้น คู่ใดรวมได้ 8"
+    misconceptions:
+      - { match: 0.139, feedback: "นี่คือ $P(\\text{ผลรวม } 8) = \\tfrac{5}{36}$ โดยไม่ใช้เงื่อนไข" }
+      - { match: 0.083, feedback: "นับคู่ที่ถูกต้อง 3 คู่ แต่หารด้วย 36 ทั้งหมด ต้องหารด้วย 18" }
+    solution: "ลูกแรกคู่มี 18 แบบ ผลรวม 8 ได้ $(2, 6), (4, 4), (6, 2)$ 3 แบบ จึงได้ $\\tfrac{3}{18} = \\tfrac16 \\approx 0.167$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p019
+    topics: [math.prob.conditional]
+    difficulty: 5
+    type: mcq
+    stem: "ถ้า $P(A \\mid B) = P(A)$ โดย $P(A) > 0$ และ $P(B) > 0$ ข้อใดสรุปได้"
+    choices:
+      - { id: a, text: "$P(B \\mid A) = P(B)$ ด้วย และ $P(A \\cap B) = P(A)P(B)$", correct: true }
+      - { id: b, text: "$A$ กับ $B$ ไม่เกิดร่วมกัน", feedback: "ถ้าไม่เกิดร่วมกัน $P(A \\mid B) = 0 \\ne P(A)$ ซึ่งขัดกับที่กำหนด" }
+      - { id: c, text: "$A$ ต้องเป็นสาเหตุของ $B$", feedback: "ตรงข้ามกัน การรู้ $B$ ไม่เปลี่ยนโอกาสของ $A$ แสดงว่าไม่มีความสัมพันธ์ทางความน่าจะเป็น" }
+      - { id: d, text: "$P(A) = P(B)$", feedback: "ความเป็นอิสระไม่ได้บอกว่าสองเหตุการณ์มีโอกาสเท่ากัน" }
+    hints:
+      - "ใช้กฎการคูณ $P(A \\cap B) = P(B)\\,P(A \\mid B)$"
+      - "แทน $P(A \\mid B) = P(A)$ แล้วหา $P(B \\mid A)$"
+    solution: "$P(A \\cap B) = P(B)P(A \\mid B) = P(B)P(A)$ แล้ว $P(B \\mid A) = \\tfrac{P(A \\cap B)}{P(A)} = P(B)$ ความเป็นอิสระจึงเป็นสมบัติที่สลับกันได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p020
+    topics: [math.prob.conditional]
+    difficulty: 1
+    type: numeric
+    stem: "บัตรหมายเลข 1 ถึง 10 สุ่มหยิบ 1 ใบ เพื่อนแอบดูแล้วบอกว่าเป็นเลขคู่ ความน่าจะเป็นที่เป็นบัตรหมายเลข 8 เป็นเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.2, tolerance: 0.005 }
+    hints:
+      - "รู้แล้วว่าเป็นเลขคู่ บัตรที่เป็นไปได้เหลือกี่ใบ"
+      - "เลขคู่คือ 2, 4, 6, 8, 10"
+    misconceptions:
+      - { match: 0.1, feedback: "ใช้บัตรทั้ง 10 ใบ แต่เพื่อนบอกแล้วว่าเป็นเลขคู่ จึงเหลือ 5 ใบ" }
+    solution: "เลขคู่มี 5 ใบ หนึ่งในนั้นคือ 8 จึงได้ $\\tfrac15 = 0.2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.prob.conditional.p021
+    topics: [math.prob.conditional]
+    difficulty: 5
+    type: expression
+    stem: "เหตุการณ์ $A$ และ $B$ เป็นอิสระต่อกัน โดย $P(A) = a$ และ $P(B) = b$ จงเขียน $P(A \\cup B)$ ในรูปของ $a$ และ $b$"
+    prefix: "P(A ∪ B) ="
+    answer: { latex: "a+b-ab", variables: [a, b] }
+    hints:
+      - "ใช้กฎการบวก $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$"
+      - "เหตุการณ์อิสระมี $P(A \\cap B) = P(A)P(B)$"
+    misconceptions:
+      - { match: "a+b", feedback: "ลืมลบ $P(A \\cap B)$ ซึ่งไม่เป็นศูนย์ เพราะอิสระไม่ได้แปลว่าไม่เกิดร่วมกัน" }
+      - { match: "ab", feedback: "นี่คือ $P(A \\cap B)$ (และ) ไม่ใช่ $P(A \\cup B)$ (หรือ)" }
+    solution: "$P(A \\cup B) = a + b - P(A \\cap B) = a + b - ab$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

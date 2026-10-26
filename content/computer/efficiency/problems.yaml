@@ -1,0 +1,357 @@
+problems:
+  - id: computer.algorithms.efficiency.p001
+    topics: [computer.algorithms.efficiency]
+    difficulty: 1
+    type: mcq
+    stem: "โปรแกรมผ่านกรณีทดสอบ 20 ข้อที่ครูเตรียมไว้ทั้งหมด ข้อสรุปใดถูกต้อง"
+    choices:
+      - { id: a, text: "ยังบอกไม่ได้ว่าถูกทุกกรณี การทดสอบแสดงได้ว่ามีบั๊ก แต่แสดงไม่ได้ว่าไม่มีบั๊ก", correct: true }
+      - { id: b, text: "โปรแกรมถูกต้องทุกกรณีแน่นอน", feedback: "20 ข้อเป็นเพียงส่วนน้อยของข้อมูลที่เป็นไปได้ อาจมีกรณีขอบที่ไม่ได้ทดสอบ" }
+      - { id: c, text: "โปรแกรมเร็วที่สุดเท่าที่เป็นไปได้", feedback: "การผ่านกรณีทดสอบบอกเรื่องผลลัพธ์ ไม่ได้บอกเรื่องความเร็ว" }
+      - { id: d, text: "ไม่ต้องอ่านโค้ดอีกแล้ว เพราะผลถูก", feedback: "ความชัดเจนของโค้ดยังสำคัญต่อการตรวจและแก้ไขในอนาคต" }
+    hints:
+      - "ทดสอบข้อมูลทุกแบบที่เป็นไปได้ไหวหรือไม่"
+      - "ทบทวนส่วนความถูกต้องในบทเรียน"
+    solution: "การทดสอบตรวจได้เฉพาะข้อมูลที่ลอง ถ้ามีข้อมูลแบบที่ไม่ได้ลอง เช่น ลิสต์ว่างหรือค่าติดลบ โปรแกรมอาจผิดได้ การพิสูจน์ด้วยค่าคงตัวของวงวนช่วยยืนยันความถูกต้องได้ทุกกรณี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p002
+    topics: [computer.algorithms.efficiency]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ลักษณะของโค้ดกับบิ๊กโอในกรณีแย่ที่สุด"
+    pairs:
+      - { left: "วงวนเดียววนครบ n ตัว", right: "O(n)" }
+      - { left: "วงวนซ้อนสองชั้น แต่ละชั้นวน n รอบ", right: "O(n²)" }
+      - { left: "วงวนที่แบ่งช่วงครึ่งหนึ่งทุกรอบ", right: "O(log n)" }
+      - { left: "อ่านค่า a[0] ครั้งเดียว ไม่มีวงวน", right: "O(1)" }
+    hints:
+      - "วงวนซ้อนให้คูณจำนวนรอบ"
+      - "แบ่งครึ่งทุกรอบ จำนวนรอบคือจำนวนครั้งที่หาร 2 ได้"
+    solution: "วงวนเดียว O(n) วงวนซ้อน n × n เป็น O(n²) แบ่งครึ่งทุกรอบ O(log n) และงานที่ไม่ขึ้นกับ n เป็น O(1)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p003
+    topics: [computer.algorithms.efficiency]
+    difficulty: 2
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      count = 0
+      for i in range(5):
+          for j in range(i):
+              count = count + 1
+      print(count)
+      ```
+    answer: { value: 10, unit: "" }
+    hints:
+      - "รอบ i = 0 วงในทำ 0 ครั้ง รอบ i = 1 ทำ 1 ครั้ง ..."
+      - "รวม 0 + 1 + 2 + 3 + 4"
+    misconceptions:
+      - { match: 25, feedback: "วงในไม่ได้วน 5 รอบทุกครั้ง range(i) วน i รอบ ซึ่งเปลี่ยนตามวงนอก" }
+      - { match: 15, feedback: "15 คือ 1 + 2 + 3 + 4 + 5 แต่ range(5) ให้ i เป็น 0 ถึง 4" }
+    solution: "0 + 1 + 2 + 3 + 4 = 10 โดยทั่วไปได้ n(n − 1)/2 ซึ่งเป็น O(n²)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p004
+    topics: [computer.algorithms.efficiency]
+    difficulty: 2
+    type: numeric
+    stem: "เพื่อแสดงว่า $f(n) = 3n + 5$ เป็น $O(n)$ เลือก $c = 4$ ค่า $n_0$ ที่เล็กที่สุดที่ทำให้ $3n + 5 \\le 4n$ ทุก $n \\ge n_0$ คือเท่าใด (n เป็นจำนวนเต็มบวก)"
+    answer: { value: 5, unit: "" }
+    hints:
+      - "แก้อสมการ 3n + 5 ≤ 4n"
+      - "ย้าย 3n ไปอีกข้าง"
+    misconceptions:
+      - { match: 6, feedback: "ที่ n = 5 ได้ 20 ≤ 20 ซึ่งเป็นจริงแล้ว (เครื่องหมาย ≤ รวมการเท่ากัน)" }
+      - { match: 1, feedback: "ที่ n = 1 ได้ 8 ≤ 4 ซึ่งไม่จริง" }
+    solution: "3n + 5 ≤ 4n ⇔ 5 ≤ n จึงได้ n0 = 5 ตรวจ: n = 5 ได้ 20 ≤ 20 จริง n = 4 ได้ 17 ≤ 16 ไม่จริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p005
+    topics: [computer.algorithms.efficiency]
+    difficulty: 2
+    type: mcq
+    stem: "อัลกอริทึมหนึ่งใช้ $5n^2 + 100n + 7$ ขั้น เขียนเป็นบิ๊กโอที่แนบที่สุดได้ว่าอย่างไร"
+    choices:
+      - { id: a, text: "O(n²)", correct: true }
+      - { id: b, text: "O(5n² + 100n + 7)", feedback: "ไม่ผิดตามนิยาม แต่บิ๊กโอตัดตัวคูณคงที่และพจน์ที่โตช้ากว่าทิ้ง เหลือรูปที่ง่ายที่สุด" }
+      - { id: c, text: "O(n)", feedback: "เมื่อ n ใหญ่ พจน์ 5n² โตเร็วกว่า 100n มาก และไม่มี c ใดที่ทำให้ 5n² ≤ c·n ได้ทุก n ที่ใหญ่" }
+      - { id: d, text: "O(100n)", feedback: "100n ไม่ใช่พจน์ที่โตเร็วที่สุด และบิ๊กโอไม่เขียนตัวคูณคงที่" }
+    hints:
+      - "พจน์ใดโตเร็วที่สุดเมื่อ n ใหญ่มาก"
+      - "ตัดตัวคูณคงที่ออก"
+    solution: "พจน์ที่โตเร็วที่สุดคือ 5n² ตัดตัวคูณ 5 ได้ O(n²) ตรวจด้วยนิยาม 5n² + 100n + 7 ≤ 112n² ทุก n ≥ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p006
+    topics: [computer.algorithms.efficiency]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      n = 1000
+      count = 0
+      while n > 1:
+          n = n // 2
+          count = count + 1
+      print(count)
+      ```
+    answer: { value: 9, unit: "" }
+    hints:
+      - "ไล่ค่า n: 1000 → 500 → 250 → ..."
+      - "หยุดเมื่อ n ไม่มากกว่า 1 ระวังการปัดเศษลงของ //"
+    misconceptions:
+      - { match: 10, feedback: "log₂ 1000 ≈ 9.97 ปัดขึ้นได้ 10 แต่ // ปัดเศษทิ้งทุกรอบ n จึงถึง 1 หลังรอบที่ 9" }
+      - { match: 500, feedback: "500 คือค่า n หลังรอบแรก ไม่ใช่จำนวนรอบ" }
+    solution: "1000 → 500 → 250 → 125 → 62 → 31 → 15 → 7 → 3 → 1 ลดลง 9 ครั้ง วงวนแบบนี้ใช้ราว log₂ n รอบ เป็น O(log n)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p007
+    topics: [computer.algorithms.efficiency]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ข้อความใดเป็นค่าคงตัวของวงวนที่ใช้พิสูจน์ว่าฟังก์ชันนี้คืนค่าผลรวมของลิสต์ (จริงทุกครั้งก่อนเริ่มรอบที่ i)
+
+      ```python
+      def total(a):
+          s = 0
+          for i in range(len(a)):
+              s = s + a[i]
+          return s
+      ```
+    choices:
+      - { id: a, text: "s เท่ากับผลรวมของ a[0] ถึง a[i−1] (ถ้า i = 0 คือผลรวมว่าง = 0)", correct: true }
+      - { id: b, text: "s เท่ากับผลรวมของทั้งลิสต์", feedback: "ข้อความนี้จริงเฉพาะตอนจบ ก่อนรอบแรก s = 0 ซึ่งไม่ใช่ผลรวมของทั้งลิสต์" }
+      - { id: c, text: "s มากกว่า 0", feedback: "ไม่จริงตั้งแต่ก่อนรอบแรก (s = 0) และไม่จริงถ้ามีค่าติดลบ" }
+      - { id: d, text: "s เท่ากับผลรวมของ a[0] ถึง a[i]", feedback: "ก่อนรอบ i ยังไม่ได้บวก a[i] ข้อความนี้จึงไม่จริง เช่น ก่อนรอบแรก s = 0 แต่ a[0] อาจไม่เป็น 0" }
+    hints:
+      - "ค่าคงตัวต้องจริงตั้งแต่ก่อนรอบแรก ตอนนั้น i = 0 และ s = 0"
+      - "และเมื่อวงวนจบ (i = len(a)) ต้องบอกได้ว่า s คือผลรวมทั้งหมด"
+    solution: "ก่อนรอบ i วงวนบวก a[0] ถึง a[i−1] ไปแล้ว ข้อความ a จริงตอนเริ่ม (ผลรวมว่าง = 0) คงอยู่ (บวก a[i] แล้วเป็นผลรวมถึง a[i]) และตอนจบ i = len(a) ได้ผลรวมทั้งลิสต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p008
+    topics: [computer.algorithms.efficiency]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นการพิสูจน์ว่า find_max ในบทเรียนถูกต้องด้วยค่าคงตัวของวงวน"
+    items:
+      - "เขียนค่าคงตัว: ก่อนรอบ i ค่า best คือค่ามากที่สุดของ a[0] ถึง a[i−1]"
+      - "เริ่มต้น: ก่อนรอบแรก i = 1 และ best = a[0] ค่าคงตัวจริง"
+      - "คงอยู่: เทียบ a[i] กับ best แล้ว best เป็นค่ามากที่สุดของ a[0] ถึง a[i]"
+      - "จบได้: จำนวนตัวที่ยังไม่ตรวจลดลง 1 ทุกรอบ วงวนจึงหยุด"
+      - "สรุป: เมื่อ i = len(a) ค่าคงตัวบอกว่า best คือค่ามากที่สุดของทั้งลิสต์"
+    hints:
+      - "ต้องรู้ก่อนว่าจะพิสูจน์ข้อความใด"
+      - "ขั้นสุดท้ายนำค่าคงตัวมาใช้ตอนวงวนหยุดแล้ว"
+    solution: "ตั้งค่าคงตัว → แสดงว่าจริงตอนเริ่ม → แสดงว่ารอบหนึ่งรักษาไว้ได้ → แสดงว่าวงวนหยุด → ใช้ค่าคงตัวตอนหยุดสรุปผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p009
+    topics: [computer.algorithms.efficiency]
+    difficulty: 3
+    type: text
+    stem: "ข้อความที่จริงทุกครั้งก่อนเริ่มแต่ละรอบของวงวน และใช้พิสูจน์ว่าวงวนให้ผลถูกต้อง เรียกว่าอะไร (ภาษาไทยหรืออังกฤษ)"
+    accepted: ["ค่าคงตัวของวงวน", "loop invariant", "ค่าคงตัวของลูป", "ค่าคงตัว", "invariant", "ตัวไม่แปรเปลี่ยนของวงวน"]
+    misconceptions:
+      - { match: "กรณีทดสอบ", feedback: "กรณีทดสอบตรวจเฉพาะข้อมูลที่ลอง ไม่ใช่ข้อความที่จริงทุกรอบ" }
+      - { match: "บิ๊กโอ", feedback: "บิ๊กโอบอกอัตราการโตของจำนวนขั้น ไม่ได้บอกความถูกต้อง" }
+    hints:
+      - "เป็นสิ่งที่ไม่เปลี่ยน (คงตัว) แม้ตัวแปรจะเปลี่ยนทุกรอบ"
+      - "ภาษาอังกฤษขึ้นต้นด้วย loop"
+    solution: "ค่าคงตัวของวงวน (loop invariant) พิสูจน์ด้วยสามขั้น เริ่มต้น คงอยู่ และจบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p010
+    topics: [computer.algorithms.efficiency]
+    difficulty: 4
+    type: mcq
+    stem: |
+      ร้านค้าเปิดใหม่บันทึกกำไรรายวันซึ่งติดลบทุกวัน (ยังขาดทุน) เพื่อนเขียนฟังก์ชันหากำไรสูงสุดดังนี้ ข้อใดอธิบายได้ถูกต้อง
+
+      ```python
+      def best_day(profits):
+          best = 0
+          for p in profits:
+              if p > best:
+                  best = p
+          return best
+      ```
+    choices:
+      - { id: a, text: "ผิดเมื่อทุกค่าติดลบ เช่น [−500, −200, −900] คืน 0 แทน −200 เพราะค่าเริ่มต้นไม่ได้มาจากลิสต์ ค่าคงตัวจึงไม่จริงตั้งแต่ขั้นเริ่มต้น", correct: true }
+      - { id: b, text: "ถูกทุกกรณี เพราะผ่านการทดสอบกับ [3, 8, 5]", feedback: "การผ่านกรณีที่มีค่าบวกไม่ได้รับประกันกรณีที่ทุกค่าติดลบ" }
+      - { id: c, text: "ผิดเพราะใช้ > แทน >=", feedback: "> หรือ >= ให้ค่ามากที่สุดเท่ากัน ปัญหาอยู่ที่ค่าเริ่มต้น" }
+      - { id: d, text: "ผิดเพราะเป็น O(n²)", feedback: "วงวนเดียวเป็น O(n) และเรื่องความเร็วไม่เกี่ยวกับการคืนค่าผิด" }
+    hints:
+      - "ลองไล่ด้วยลิสต์ที่ทุกค่าติดลบ"
+      - "ค่าเริ่มต้นของ best ควรมาจากที่ใด"
+    solution: "best = 0 มากกว่าทุกค่าที่ติดลบ จึงไม่ถูกแทนเลยและคืน 0 ซึ่งไม่ใช่กำไรของวันใด แก้โดยเริ่ม best = profits[0] (และกำหนดว่าลิสต์ต้องไม่ว่าง) ค่าคงตัว best คือค่ามากที่สุดของส่วนที่ตรวจแล้ว จึงจริงตั้งแต่เริ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p011
+    topics: [computer.algorithms.efficiency]
+    difficulty: 4
+    type: numeric
+    stem: "ครูใช้ `first_at_least(scores, 50)` ในบทเรียนกับลิสต์คะแนนที่เรียงแล้วตามภาพ แล้วคำนวณ `len(scores) - first_at_least(scores, 50)` เพื่อนับจำนวนคนที่ได้ 50 ขึ้นไป ได้ค่าเท่าใด"
+    figure:
+      src: sorted-scores.svg
+      alt: "ลิสต์คะแนนที่เรียงแล้ว 10 ช่อง ดัชนี 0 ถึง 9 ค่าจากซ้ายไปขวาคือ 28, 35, 41, 49, 50, 50, 56, 63, 72, 88"
+    answer: { value: 6, unit: "คน" }
+    hints:
+      - "first_at_least คืนดัชนีแรกที่ค่าไม่น้อยกว่า 50"
+      - "จำนวนคนที่ผ่าน = ความยาวลิสต์ − ดัชนีนั้น"
+    misconceptions:
+      - { match: 4, feedback: "4 คือดัชนีแรกที่ได้ 50 (หรือจำนวนคนที่ได้มากกว่า 50) แต่โจทย์ถามจำนวนคนที่ได้ 50 ขึ้นไป รวมคนที่ได้ 50 พอดีด้วย" }
+      - { match: 5, feedback: "ลืมนับคะแนน 50 ที่ซ้ำกันสองคน ฟังก์ชันคืนดัชนีแรกของ 50 จึงนับครบทั้งสองคน" }
+    solution: "ดัชนีแรกที่ค่า ≥ 50 คือ 4 (ค่า 50) จำนวนคนที่ผ่าน 10 − 4 = 6 คน (50, 50, 56, 63, 72, 88)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p012
+    topics: [computer.algorithms.efficiency]
+    difficulty: 4
+    type: mcq
+    stem: "ฝ่ายทะเบียนต้องตรวจรหัสซ้ำในรายชื่อ 30,000 คนบนเครื่องที่หน่วยความจำเหลือน้อยมาก และไม่ต้องคืนรายชื่อตามลำดับเดิม ทางเลือกใดเหมาะที่สุด"
+    choices:
+      - { id: a, text: "เรียงรายชื่อแล้วตรวจตัวที่ติดกัน ใช้เวลา O(n log n) และใช้หน่วยความจำเพิ่มน้อย", correct: true }
+      - { id: b, text: "เทียบทุกคู่ O(n²) เพราะไม่ใช้หน่วยความจำเพิ่ม", feedback: "ราว 4.5 × 10⁸ คู่ ช้ามากเมื่อเทียบกับการเรียง ทั้งที่การเรียงก็ใช้หน่วยความจำเพิ่มน้อย" }
+      - { id: c, text: "เก็บรหัสที่เคยเห็นในเซต O(n) เพราะเร็วที่สุดเสมอ", feedback: "เร็ว แต่ใช้หน่วยความจำเพิ่ม O(n) ซึ่งโจทย์บอกว่ามีน้อยมาก" }
+      - { id: d, text: "ค้นหาแบบทวิภาคหารหัสแต่ละตัวในรายชื่อที่ยังไม่เรียง", feedback: "ทวิภาคใช้กับข้อมูลที่ยังไม่เรียงไม่ได้" }
+    hints:
+      - "ชั่งทั้งเวลาและหน่วยความจำ ตามเงื่อนไขในโจทย์"
+      - "โจทย์บอกว่าลำดับเดิมไม่สำคัญ จึงเรียงได้"
+    solution: "เทียบทุกคู่ช้าเกิน เซตเร็วแต่ใช้หน่วยความจำเพิ่มมาก การเรียงแล้วตรวจตัวติดกันใช้ O(n log n) และหน่วยความจำเพิ่มน้อย จึงสมดุลที่สุดตามเงื่อนไข ถ้าหน่วยความจำมีพอ เซตจะเป็นทางเลือกที่ดีกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p013
+    topics: [computer.algorithms.efficiency]
+    difficulty: 4
+    type: numeric
+    stem: "ต้องการแสดงว่า $T(n) = 2n^2 + 3n$ เป็น $O(n^2)$ โดยใช้ $n_0 = 1$ ค่าคงที่ $c$ ที่เป็นจำนวนเต็มเล็กที่สุดที่ทำให้ $2n^2 + 3n \\le c \\cdot n^2$ ทุก $n \\ge 1$ คือเท่าใด"
+    answer: { value: 5, unit: "" }
+    hints:
+      - "หารทั้งสองข้างด้วย n² ได้ 2 + 3/n ≤ c"
+      - "2 + 3/n มีค่ามากที่สุดเมื่อ n เล็กที่สุดในช่วง คือ n = 1"
+    misconceptions:
+      - { match: 2, feedback: "c = 2 ไม่พอ เพราะ 2n² + 3n มากกว่า 2n² เสมอเมื่อ n ≥ 1" }
+      - { match: 3, feedback: "c = 3 ใช้ได้ตั้งแต่ n ≥ 3 แต่โจทย์กำหนด n0 = 1 ที่ n = 1 ได้ 5 ≤ 3 ไม่จริง" }
+    solution: "2n² + 3n ≤ c·n² ⇔ 2 + 3/n ≤ c ค่ามากที่สุดของ 2 + 3/n เมื่อ n ≥ 1 คือ 5 ที่ n = 1 จึงต้อง c ≥ 5 เลือก c = 5"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p014
+    topics: [computer.algorithms.efficiency]
+    difficulty: 5
+    type: mcq
+    stem: |
+      นักเรียนดัดแปลงทวิภาคหาดัชนีแรกที่ค่าไม่น้อยกว่า target แต่บางครั้งโปรแกรมค้าง เช่น `search([10, 20], 20)` สาเหตุคืออะไร
+
+      ```python
+      def search(a, target):
+          low, high = 0, len(a) - 1
+          while low < high:
+              mid = (low + high) // 2
+              if a[mid] < target:
+                  low = mid
+              else:
+                  high = mid
+          return low
+      ```
+    choices:
+      - { id: a, text: "เมื่อ high = low + 1 จะได้ mid = low ถ้า a[mid] < target แล้ว low = mid ช่วงไม่หด วงวนจึงไม่จบ ต้องแก้เป็น low = mid + 1", correct: true }
+      - { id: b, text: "ลิสต์ [10, 20] ยังไม่เรียง", feedback: "ลิสต์เรียงจากน้อยไปมากแล้ว ปัญหาอยู่ที่ช่วงไม่หด" }
+      - { id: c, text: "ต้องเปลี่ยน while low < high เป็น while low <= high", feedback: "ทำให้แย่ลง เมื่อ low = high วงวนยังทำต่อและ high = mid ไม่เปลี่ยนค่า จึงค้างได้อีก" }
+      - { id: d, text: "(low + high) // 2 ให้ค่าทศนิยม", feedback: "// เป็นการหารปัดเศษทิ้ง ได้จำนวนเต็มเสมอ" }
+    hints:
+      - "ไล่ค่า low, high, mid ของ search([10, 20], 20) สองสามรอบ"
+      - "การพิสูจน์ว่าวงวนจบต้องมีปริมาณที่ลดลงทุกรอบ ในโค้ดนี้ high − low ลดลงทุกรอบหรือไม่"
+    solution: "รอบแรก low = 0, high = 1, mid = 0 a[0] = 10 < 20 จึง low = 0 เหมือนเดิม ทุกรอบต่อไปก็เหมือนเดิม วงวนไม่จบ แก้เป็น low = mid + 1 แล้ว high − low ลดลงทุกรอบ (ได้คำตอบ 1)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p015
+    topics: [computer.algorithms.efficiency]
+    difficulty: 5
+    type: numeric
+    stem: "ระบบลงทะเบียนเรียนมีอัลกอริทึมสองแบบ แบบ A ใช้ $100n$ ขั้น แบบ B ใช้ $\\frac{n^2}{2}$ ขั้น ค่า $n$ ที่เป็นจำนวนเต็มเล็กที่สุดที่ทำให้แบบ A ใช้ขั้น **น้อยกว่า** แบบ B คือเท่าใด"
+    answer: { value: 201, unit: "" }
+    hints:
+      - "แก้อสมการ 100n < n²/2"
+      - "หารด้วย n (ที่เป็นบวก) แล้วระวังเครื่องหมายน้อยกว่าแท้"
+    misconceptions:
+      - { match: 200, feedback: "ที่ n = 200 ทั้งสองแบบใช้ 20,000 ขั้นเท่ากัน ยังไม่น้อยกว่า" }
+      - { match: 100, feedback: "ลืมตัวหาร 2 ใน n²/2 (100n < n² ได้ n > 100)" }
+    solution: "100n < n²/2 ⇔ 200 < n จึงต้อง n ≥ 201 ตรวจ n = 201: A = 20,100 B = 20,200.5 แบบ A (O(n)) จึงชนะเมื่อข้อมูลใหญ่พอ แต่ข้อมูลไม่ถึง 200 ตัว แบบ B (O(n²)) ใช้ขั้นน้อยกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p016
+    topics: [computer.algorithms.efficiency]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ฟังก์ชันนี้ตั้งใจหาผลรวมของลิสต์แต่มีบั๊ก โปรแกรมแสดงตัวเลขใด
+
+      ```python
+      def total(a):
+          s = 0
+          for i in range(1, len(a)):
+              s = s + a[i]
+          return s
+
+      print(total([4, 7, 1]))
+      ```
+    answer: { value: 8, unit: "" }
+    hints:
+      - "range(1, len(a)) เริ่มที่ดัชนีใด"
+      - "ค่าคงตัว s = ผลรวมของ a[0] ถึง a[i−1] จริงก่อนรอบแรก (i = 1) หรือไม่"
+    misconceptions:
+      - { match: 12, feedback: "12 คือผลรวมที่ถูกต้อง แต่วงวนเริ่มที่ดัชนี 1 จึงข้าม a[0] = 4" }
+      - { match: 11, feedback: "วงวนไม่ได้ข้ามตัวสุดท้าย range(1, 3) ให้ i = 1 และ 2" }
+    solution: "i = 1 บวก 7 และ i = 2 บวก 1 ได้ s = 8 ข้าม a[0] = 4 ค่าคงตัวไม่จริงตั้งแต่ขั้นเริ่มต้น (ก่อนรอบ i = 1 ต้องมี s = a[0] = 4 แต่ s = 0) แก้โดยใช้ range(len(a)) หรือเริ่ม s = a[0]"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.efficiency.p017
+    topics: [computer.algorithms.efficiency]
+    difficulty: 3
+    type: numeric
+    stem: |
+      เมื่อ `n = 10` โปรแกรมนี้แสดงตัวเลขใด
+
+      ```python
+      steps = 0
+      for i in range(n):
+          steps = steps + 1
+      for i in range(n):
+          for j in range(n):
+              steps = steps + 1
+      print(steps)
+      ```
+    answer: { value: 110, unit: "" }
+    hints:
+      - "วงวนแรกกับวงวนซ้อนทำต่อกัน ให้บวกกัน"
+      - "วงวนซ้อน n × n"
+    misconceptions:
+      - { match: 1000, feedback: "คูณทุกวงเข้าด้วยกัน แต่วงวนแรกไม่ได้ซ้อนกับวงวนที่สอง งานที่ทำต่อกันให้บวก" }
+      - { match: 100, feedback: "ลืมนับวงวนแรกที่ทำ 10 ครั้ง" }
+    solution: "วงวนแรก 10 ครั้ง วงวนซ้อน 10 × 10 = 100 ครั้ง รวม 110 = n + n² ซึ่งเป็น O(n²)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

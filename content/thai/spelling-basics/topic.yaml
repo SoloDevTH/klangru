@@ -1,0 +1,59 @@
+id: thai.writing.spelling-basics
+subject: thai
+title: { th: การสะกดคำ แจกลูก และมาตราตัวสะกด, en: "Spelling, syllable building and final consonants" }
+summary: แจกลูกพยัญชนะกับสระ สะกดคำแล้วอ่านเป็นคำ แยกคำแม่ ก กา กับคำที่มีตัวสะกด เลือกตัวสะกดที่ตรงและไม่ตรงมาตราให้ถูกความหมาย
+difficulty: 2
+minutes: 25
+prerequisites: [thai.writing.consonants, thai.writing.vowels]
+encompasses:
+  - { id: thai.writing.consonants, weight: 0.3 }
+  - { id: thai.writing.vowels, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: jaek-luuk.svg
+    alt: "ตารางแจกลูก แถวเป็นพยัญชนะต้น ก ม ป คอลัมน์เป็นสระอา อี อู โอ ช่องในตารางคือ กา กี กู โก / มา มี มู โม / ปา ปี ปู โป ใต้ตารางเขียนว่า มอ + อา = มา, ปอ + อู = ปู, กอ + โอ = โก"
+    caption: "แจกลูก: นำพยัญชนะต้นประสมกับสระทีละตัว"
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: สะกดคำที่มีตัวสะกดและวรรณยุกต์
+    problem: "สะกดคำว่า \"บ้าน\" แบบที่ครูสอน"
+    steps:
+      - text: "แยกส่วน: พยัญชนะต้น บ · สระ อา · ตัวสะกด น · วรรณยุกต์ ไม้โท"
+      - text: "สะกดทีละส่วน: บอ – อา – นอ"
+      - text: "อ่านรวมก่อนเติมวรรณยุกต์: บาน"
+        why: "อ่านคำพื้นก่อน แล้วเติมวรรณยุกต์ทีหลัง จะไม่สับสนเสียง"
+      - text: "เติมวรรณยุกต์: ไม้โท – บ้าน"
+    answer: "บอ – อา – นอ – บาน – ไม้โท – บ้าน"
+  - { type: check, problem: thai.writing.spelling-basics.p005, prompt: "ลองเรียงขั้นการสะกดด้วยตัวเอง" }
+  - type: worked-example
+    title: เลือกตัวสะกดจากความหมาย
+    problem: "ได้ยินประโยคว่า \"ยายไหว้ สาน-พระ-พูม\" คำแรกที่อ่านว่า สาน ต้องเขียนอย่างไร"
+    steps:
+      - text: "คำที่อ่านว่า สาน มีหลายแบบ: สาร สาน ศาล"
+      - text: "ดูความหมายในประโยค: ที่ที่ยายไหว้ คือที่ตั้งพระภูมิ"
+      - text: "ที่ตั้งพระภูมิเขียนว่า ศาล (ศ ต้น ล สะกด)"
+        why: "สาร ใช้ในคำว่า ข้าวสาร ส่วน สาน ใช้ในคำว่า จักสาน ความหมายไม่เข้ากับประโยค"
+    answer: "ศาลพระภูมิ"
+  - { type: check, problem: thai.writing.spelling-basics.p011, prompt: "ดูตัวที่เขียนกับเสียงที่อ่าน" }
+glossary:
+  - { term: การสะกดคำ, definition: "การแยกคำเป็นพยัญชนะต้น สระ ตัวสะกด และวรรณยุกต์ แล้วอ่านรวมเป็นคำ" }
+  - { term: แจกลูก, definition: "การนำพยัญชนะต้นประสมกับสระหรือวรรณยุกต์ทีละตัว เช่น กา กี กู โก" }
+  - { term: แม่ ก กา, definition: "คำที่ไม่มีตัวสะกด เช่น ตา ปู เสือ" }
+  - { term: ตัวสะกด, definition: "พยัญชนะที่อยู่ท้ายพยางค์หลังสระ เช่น ด ในคำว่า มด" }
+  - { term: ตรงมาตรา, definition: "ใช้ตัวสะกดตรงกับเสียง เช่น นก (ก) มด (ด)" }
+  - { term: ไม่ตรงมาตรา, definition: "ใช้ตัวสะกดอื่นที่ออกเสียงเหมือนกัน เช่น สุข (ข ออกเสียง ก) รถ (ถ ออกเสียง ด)" }
+flashcards:
+  - { front: "สะกดคำว่า กาง", back: "กอ – อา – งอ – กาง" }
+  - { front: "คำแม่ ก กา คืออะไร", back: "คำที่ไม่มีตัวสะกด เช่น ตา ปู เสือ" }
+  - { front: "ม + โอะ + ด เขียนว่า", back: "มด (สระโอะลดรูปเมื่อมีตัวสะกด)" }
+  - { front: "อ่านว่า รด แต่หมายถึงยานพาหนะ เขียนว่า", back: "รถ" }
+  - { front: "ข้าวที่สีแล้ว เขียน ข้าวสาน หรือ ข้าวสาร", back: "ข้าวสาร (ร สะกด)" }
+references:
+  - { title: "อักษรไทย", url: "https://th.wikipedia.org/wiki/อักษรไทย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Thai script", url: "https://en.wikipedia.org/wiki/Thai_script", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Phonics", url: "https://en.wikipedia.org/wiki/Phonics", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

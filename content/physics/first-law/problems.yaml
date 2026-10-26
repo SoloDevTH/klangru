@@ -1,0 +1,282 @@
+problems:
+  - id: physics.thermal.first-law.p001
+    topics: [physics.thermal.first-law]
+    difficulty: 1
+    type: mcq
+    stem: "ในกฎข้อที่หนึ่ง $\\Delta U = Q - W$ ที่ใช้ในบทนี้ ข้อใดถูกต้องเรื่องเครื่องหมาย"
+    choices:
+      - { id: a, text: "แก๊สได้รับความร้อน $Q$ เป็นบวก แก๊สขยายตัวดันลูกสูบ $W$ เป็นบวก", correct: true }
+      - { id: b, text: "แก๊สได้รับความร้อน $Q$ เป็นลบ", feedback: "ความร้อนที่ระบบได้รับเป็นบวก ความร้อนที่ระบบคายออกเป็นลบ" }
+      - { id: c, text: "แก๊สถูกอัด $W$ เป็นบวก", feedback: "ในบทนี้ $W$ คืองานที่แก๊สทำ แก๊สถูกอัดจึงทำงานติดลบ" }
+      - { id: d, text: "$W$ เป็นบวกเสมอไม่ว่าแก๊สจะขยายหรือหดตัว", feedback: "เครื่องหมายของ $W$ ขึ้นกับว่าปริมาตรเพิ่มหรือลด" }
+    hints:
+      - "$W$ ในสูตรนี้คืองานที่ระบบทำต่อสิ่งแวดล้อม"
+      - "งานของแก๊ส $= \\int P\\,dV$ เครื่องหมายเป็นไปตาม $dV$"
+    solution: "$Q > 0$ เมื่อระบบได้รับความร้อน และ $W > 0$ เมื่อระบบขยายตัวทำงานต่อสิ่งแวดล้อม จึงได้ $\\Delta U = Q - W$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p002
+    topics: [physics.thermal.first-law]
+    difficulty: 1
+    type: match
+    stem: "จับคู่กระบวนการกับเงื่อนไข"
+    pairs:
+      - { left: "ไอโซบาริก", right: "ความดันคงตัว" }
+      - { left: "ไอโซคอริก", right: "ปริมาตรคงตัว ไม่มีงาน" }
+      - { left: "ไอโซเทอร์มอล", right: "อุณหภูมิคงตัว พลังงานภายในของแก๊สอุดมคติไม่เปลี่ยน" }
+      - { left: "อะเดียบาติก", right: "ไม่มีความร้อนเข้าออก" }
+    hints:
+      - "บาร์ (bar) เกี่ยวกับความดัน เทอร์มอล (thermal) เกี่ยวกับอุณหภูมิ"
+      - "ปริมาตรคงตัวแปลว่า $\\Delta V = 0$"
+    solution: "ไอโซบาริก: $P$ คงตัว · ไอโซคอริก: $V$ คงตัว $W = 0$ · ไอโซเทอร์มอล: $T$ คงตัว $\\Delta U = 0$ · อะเดียบาติก: $Q = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p003
+    topics: [physics.thermal.first-law]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สในกระบอกสูบขยายตัวที่ความดันคงตัว $2.0 \\times 10^{5}\\ \\mathrm{Pa}$ จากปริมาตร $0.010\\ \\mathrm{m^3}$ เป็น $0.025\\ \\mathrm{m^3}$ แก๊สทำงานกี่จูล"
+    answer: { value: 3000, tolerance: 10, unit: J }
+    misconceptions:
+      - { match: 5000, feedback: "ใช้ปริมาตรสุดท้ายคูณความดัน งานใช้การเปลี่ยนแปลงของปริมาตร $\\Delta V$" }
+      - { match: -3000, feedback: "แก๊สขยายตัว งานที่แก๊สทำเป็นบวก" }
+    hints:
+      - "ความดันคงตัว $W = P\\,\\Delta V$"
+      - "$\\Delta V = 0.025 - 0.010$"
+    solution: "$W = (2.0 \\times 10^{5})(0.015) = 3000\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p004
+    topics: [physics.thermal.first-law]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สได้รับความร้อน $500\\ \\mathrm{J}$ และขยายตัวทำงาน $200\\ \\mathrm{J}$ พลังงานภายในของแก๊สเปลี่ยนไปกี่จูล (ตอบเป็นบวกถ้าเพิ่ม)"
+    answer: { value: 300, tolerance: 0.5, unit: J }
+    misconceptions:
+      - { match: 700, feedback: "บวกงานเข้าไป แต่แก๊สทำงาน พลังงานส่วนนั้นออกจากระบบ ต้องลบ" }
+      - { match: -300, feedback: "ความร้อนที่ได้รับมากกว่างานที่ทำ พลังงานภายในจึงเพิ่มขึ้น" }
+    hints:
+      - "$\\Delta U = Q - W$"
+      - "$Q = +500\\ \\mathrm{J}$ และ $W = +200\\ \\mathrm{J}$"
+    solution: "$\\Delta U = 500 - 200 = 300\\ \\mathrm{J}$ พลังงานภายในเพิ่มขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p005
+    topics: [physics.thermal.first-law]
+    difficulty: 2
+    type: mcq
+    stem: "ให้ความร้อนแก่แก๊สในถังเหล็กปิดสนิทที่ปริมาตรไม่เปลี่ยน ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$W = 0$ ความร้อนทั้งหมดไปเพิ่มพลังงานภายใน", correct: true }
+      - { id: b, text: "$\\Delta U = 0$ ความร้อนทั้งหมดกลายเป็นงาน", feedback: "นั่นคือกระบวนการอุณหภูมิคงตัว ถังปิดไม่ขยายตัวจึงทำงานไม่ได้" }
+      - { id: c, text: "$Q = 0$ เพราะถังปิด", feedback: "ถังปิดกันแก๊สรั่ว แต่ความร้อนยังผ่านผนังเหล็กได้" }
+      - { id: d, text: "อุณหภูมิคงตัวแต่ความดันเพิ่ม", feedback: "พลังงานภายในเพิ่ม อุณหภูมิของแก๊สจึงสูงขึ้น ความดันจึงเพิ่ม" }
+    hints:
+      - "ปริมาตรไม่เปลี่ยน แก๊สทำงานได้หรือไม่"
+      - "ใช้ $\\Delta U = Q - W$"
+    solution: "$\\Delta V = 0$ จึงได้ $W = 0$ และ $\\Delta U = Q$ อุณหภูมิและความดันสูงขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p006
+    topics: [physics.thermal.first-law]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สอุดมคติ $1.0\\ \\mathrm{mol}$ ขยายตัวอย่างช้า ๆ ที่อุณหภูมิคงตัว $300\\ \\mathrm{K}$ จนปริมาตรเป็น 2 เท่า แก๊สทำงานกี่จูล ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 1728, tolerance: 17, unit: J }
+    misconceptions:
+      - { match: 2493, feedback: "ใช้ $nRT$ โดยไม่มี $\\ln$ ความดันลดลงขณะขยายตัว ต้องอินทิเกรตได้ $nRT\\ln(V_2/V_1)$" }
+      - { match: 4986, feedback: "คูณด้วยอัตราส่วนปริมาตร 2 ต้องใช้ $\\ln 2 \\approx 0.693$" }
+    hints:
+      - "$W = \\int P\\,dV$ และ $P = nRT/V$"
+      - "$W = nRT\\ln\\dfrac{V_2}{V_1}$"
+    solution: "$W = (1.0)(8.31)(300)\\ln 2 = 2493 \\times 0.693 \\approx 1728\\ \\mathrm{J}$ เนื่องจาก $\\Delta U = 0$ แก๊สจึงรับความร้อน $1728\\ \\mathrm{J}$ ด้วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p007
+    topics: [physics.thermal.first-law]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สฮีเลียม (อะตอมเดี่ยว) $2.0\\ \\mathrm{mol}$ อุณหภูมิเพิ่มขึ้น $100\\ \\mathrm{K}$ พลังงานภายในเพิ่มขึ้นกี่จูล ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 2493, tolerance: 25, unit: J }
+    misconceptions:
+      - { match: 4155, feedback: "ใช้ $C_V = \\tfrac52 R$ ซึ่งเป็นของแก๊สอะตอมคู่ ฮีเลียมเป็นแก๊สอะตอมเดี่ยว $C_V = \\tfrac32 R$" }
+      - { match: 1662, feedback: "ลืม $\\tfrac32$ $\\Delta U = nC_V\\Delta T$" }
+    hints:
+      - "$\\Delta U = nC_V\\Delta T$"
+      - "แก๊สอะตอมเดี่ยว $C_V = \\tfrac32 R$"
+    solution: "$\\Delta U = (2.0)(\\tfrac32)(8.31)(100) = 2493\\ \\mathrm{J}$ ไม่ว่าจะให้ความร้อนแบบใด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p008
+    topics: [physics.thermal.first-law]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สอะตอมเดี่ยว $2.0\\ \\mathrm{mol}$ ได้รับความร้อนที่ความดันคงตัวจนอุณหภูมิสูงขึ้น $50\\ \\mathrm{K}$ แก๊สได้รับความร้อนกี่จูล ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 2078, tolerance: 21, unit: J }
+    misconceptions:
+      - { match: 1246, feedback: "ใช้ $C_V$ ซึ่งได้แค่ $\\Delta U$ ที่ความดันคงตัวแก๊สทำงานด้วย ต้องใช้ $C_P = \\tfrac52 R$" }
+      - { match: 831, feedback: "นี่คืองาน $nR\\Delta T$ เท่านั้น ยังไม่รวมพลังงานภายในที่เพิ่ม" }
+    hints:
+      - "$Q = nC_P\\Delta T$ และ $C_P = C_V + R$"
+      - "แก๊สอะตอมเดี่ยว $C_P = \\tfrac52 R$"
+    solution: "$Q = (2.0)(\\tfrac52)(8.31)(50) \\approx 2078\\ \\mathrm{J}$ แบ่งเป็น $\\Delta U = 1246\\ \\mathrm{J}$ และงาน $831\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p009
+    topics: [physics.thermal.first-law]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สทำวัฏจักร A → B → C → D → A ตามภาพ งานสุทธิที่แก๊สทำในหนึ่งรอบเป็นกี่จูล"
+    figure: { src: p-cycle.svg, alt: "แผนภาพ P–V เป็นสี่เหลี่ยมผืนผ้า A อยู่ที่ 2 L, 300 kPa B อยู่ที่ 5 L, 300 kPa C อยู่ที่ 5 L, 100 kPa D อยู่ที่ 2 L, 100 kPa ลูกศรวนตามเข็มนาฬิกา A ไป B ไป C ไป D แล้วกลับ A" }
+    answer: { value: 600, tolerance: 5, unit: J }
+    misconceptions:
+      - { match: 900, feedback: "คิดแค่งานในช่วง A → B ต้องหักงานที่ใช้อัดแก๊สในช่วง C → D ด้วย" }
+      - { match: 600000, feedback: "ใช้ลิตรคูณพาสคัลโดยไม่แปลงหน่วย $1\\ \\mathrm{kPa} \\times 1\\ \\mathrm{L} = 1\\ \\mathrm{J}$" }
+    hints:
+      - "งานสุทธิเท่ากับพื้นที่ที่วัฏจักรล้อมไว้"
+      - "พื้นที่ $= (300 - 100)\\ \\mathrm{kPa} \\times (5 - 2)\\ \\mathrm{L}$"
+    solution: "A → B แก๊สทำงาน $300 \\times 3 = 900\\ \\mathrm{J}$ C → D แก๊สถูกอัด $-100 \\times 3 = -300\\ \\mathrm{J}$ ช่วงแนวดิ่งไม่มีงาน งานสุทธิ $= 600\\ \\mathrm{J}$ (วนตามเข็มนาฬิกาจึงเป็นบวก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p010
+    topics: [physics.thermal.first-law]
+    difficulty: 4
+    type: numeric
+    stem: "ต้มน้ำ $1.0\\ \\mathrm{kg}$ ในกาต้มน้ำจนเดือดกลายเป็นไอหมดที่ความดัน $1.01 \\times 10^{5}\\ \\mathrm{Pa}$ ความร้อนแฝงของการกลายเป็นไอ $2.26 \\times 10^{6}\\ \\mathrm{J/kg}$ ปริมาตรเปลี่ยนจาก $1.00 \\times 10^{-3}\\ \\mathrm{m^3}$ เป็น $1.67\\ \\mathrm{m^3}$ พลังงานภายในเพิ่มขึ้นกี่เมกะจูล"
+    answer: { value: 2.09, tolerance: 0.02, unit: MJ }
+    misconceptions:
+      - { match: 2.26, feedback: "ความร้อนแฝงทั้งหมดไม่ได้เป็นพลังงานภายใน ไอน้ำขยายตัวทำงานดันบรรยากาศด้วย" }
+      - { match: 2.43, feedback: "บวกงานเข้าไป ต้องลบ $\\Delta U = Q - W$" }
+    hints:
+      - "$Q = mL$ และ $W = P\\,\\Delta V$"
+      - "$\\Delta U = Q - W$"
+    solution: "$Q = 2.26 \\times 10^{6}\\ \\mathrm{J}$ $W = (1.01 \\times 10^{5})(1.669) = 1.69 \\times 10^{5}\\ \\mathrm{J}$ $\\Delta U = 2.26 \\times 10^{6} - 0.169 \\times 10^{6} \\approx 2.09 \\times 10^{6}\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p011
+    topics: [physics.thermal.first-law]
+    difficulty: 4
+    type: numeric
+    stem: "สูบลมยางจักรยานเร็ว ๆ จนอากาศในกระบอกสูบถูกอัดแบบอะเดียบาติกจากปริมาตร $V$ เหลือ $V/2$ ถ้าเริ่มที่ $300\\ \\mathrm{K}$ อากาศมีอุณหภูมิกี่เคลวิน (อากาศ $\\gamma = 1.4$)"
+    answer: { value: 396, tolerance: 4, unit: K }
+    misconceptions:
+      - { match: 300, feedback: "นั่นคือกรณีอุณหภูมิคงตัว การอัดเร็ว ๆ ความร้อนออกไม่ทัน อุณหภูมิจึงสูงขึ้น" }
+      - { match: 600, feedback: "อุณหภูมิไม่ได้แปรผกผันกับปริมาตรตรง ๆ ใช้ $TV^{\\gamma - 1}$ คงตัว" }
+    hints:
+      - "อะเดียบาติก: $T_1V_1^{\\gamma - 1} = T_2V_2^{\\gamma - 1}$"
+      - "$T_2 = 300 \\times 2^{0.4}$"
+    solution: "$T_2 = 300 \\times 2^{0.4} = 300 \\times 1.32 \\approx 396\\ \\mathrm{K}$ (ราว $123\\,^\\circ\\mathrm{C}$) ในความเป็นจริงความร้อนรั่วออกบ้าง ปลายกระบอกสูบจึงอุ่นแต่ไม่ร้อนขนาดนั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p012
+    topics: [physics.thermal.first-law]
+    difficulty: 3
+    type: mcq
+    stem: "กดวาล์วปล่อยลมยางรถจักรยานยนต์ออกเร็ว ๆ ลมที่พุ่งออกมารู้สึกเย็น เหตุผลใดถูกต้องที่สุด"
+    choices:
+      - { id: a, text: "อากาศขยายตัวเร็วจนแทบไม่มีความร้อนเข้า ($Q \\approx 0$) อากาศทำงานดันบรรยากาศ พลังงานภายในจึงลดลง", correct: true }
+      - { id: b, text: "ลมในยางเย็นอยู่แล้วตั้งแต่แรก", feedback: "ลมในยางมีอุณหภูมิเท่ากับหรือสูงกว่าอากาศรอบ ๆ ความเย็นเกิดขณะขยายตัว" }
+      - { id: c, text: "อากาศได้รับความร้อนจากยางจนอุณหภูมิลดลง", feedback: "ได้รับความร้อนจะทำให้พลังงานภายในเพิ่ม ไม่ใช่ลดลง" }
+      - { id: d, text: "กระบวนการนี้เป็นอุณหภูมิคงตัว", feedback: "ถ้าอุณหภูมิคงตัว ลมที่ออกมาจะไม่เย็นลง" }
+    hints:
+      - "กระบวนการที่เกิดเร็วมากมีเวลาให้ความร้อนถ่ายโอนน้อย"
+      - "ใช้ $\\Delta U = Q - W$ โดย $Q \\approx 0$ และ $W > 0$"
+    solution: "การขยายตัวเร็ว ๆ ใกล้เคียงอะเดียบาติก $Q \\approx 0$ อากาศทำงาน $W > 0$ จึงได้ $\\Delta U = -W < 0$ อุณหภูมิลดลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p013
+    topics: [physics.thermal.first-law]
+    difficulty: 4
+    type: expression
+    stem: "แก๊สอุดมคติอะตอมเดี่ยวขยายตัวที่ความดันคงตัวและทำงาน $W$ ความร้อนที่แก๊สได้รับเท่ากับเท่าใด เขียนในรูปของ $W$"
+    prefix: "Q ="
+    answer: { latex: "\\frac{5}{2}W", variables: [W] }
+    misconceptions:
+      - { match: "W", feedback: "ความร้อนเท่ากับงานเฉพาะกรณีอุณหภูมิคงตัว ที่ความดันคงตัวพลังงานภายในเพิ่มด้วย" }
+      - { match: "\\frac{3}{2}W", feedback: "นี่คือ $\\Delta U$ เท่านั้น ต้องบวกงาน $W$ เข้าไปด้วย" }
+    hints:
+      - "ที่ความดันคงตัว $W = P\\,\\Delta V = nR\\,\\Delta T$"
+      - "$\\Delta U = \\tfrac32 nR\\Delta T$ แล้วใช้ $Q = \\Delta U + W$"
+    solution: "$W = nR\\Delta T$ และ $\\Delta U = \\tfrac32 nR\\Delta T = \\tfrac32 W$ จึงได้ $Q = \\tfrac32 W + W = \\tfrac52 W$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p014
+    topics: [physics.thermal.first-law]
+    difficulty: 5
+    type: numeric
+    stem: "แก๊สอุดมคติอะตอมเดี่ยวขยายตัวที่ความดันคงตัว $200\\ \\mathrm{kPa}$ จาก $1.0\\ \\mathrm{L}$ เป็น $3.0\\ \\mathrm{L}$ แล้วลดความดันที่ปริมาตรคงตัวลงเหลือ $100\\ \\mathrm{kPa}$ จากนั้นกลับสู่สถานะเริ่มต้นตามเส้นตรงบนแผนภาพ P–V ความร้อนที่แก๊สได้รับในช่วงความดันคงตัวเป็นกี่จูล"
+    answer: { value: 1000, tolerance: 10, unit: J }
+    misconceptions:
+      - { match: 600, feedback: "นี่คือ $\\Delta U$ ในช่วงนี้ ความร้อนต้องรวมงานที่แก๊สทำด้วย" }
+      - { match: 400, feedback: "นี่คืองานในช่วงความดันคงตัว ความร้อนมากกว่านี้" }
+      - { match: 100, feedback: "นี่คืองานสุทธิของทั้งวัฏจักร โจทย์ถามความร้อนในช่วงความดันคงตัว" }
+    hints:
+      - "ช่วงความดันคงตัว $W = P\\,\\Delta V = 200\\ \\mathrm{kPa} \\times 2.0\\ \\mathrm{L}$"
+      - "แก๊สอะตอมเดี่ยวที่ความดันคงตัว $Q = \\tfrac52 P\\,\\Delta V$"
+    solution: "$P\\,\\Delta V = 200 \\times 2.0 = 400\\ \\mathrm{J}$ $\\Delta U = \\tfrac32 (400) = 600\\ \\mathrm{J}$ $Q = 600 + 400 = 1000\\ \\mathrm{J}$ (งานสุทธิของวัฏจักรเป็นพื้นที่สามเหลี่ยม $= \\tfrac12 (2.0)(100) = 100\\ \\mathrm{J}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p015
+    topics: [physics.thermal.first-law]
+    difficulty: 5
+    type: numeric
+    stem: "แก๊สอุดมคติอะตอมเดี่ยว $0.50\\ \\mathrm{mol}$ ขยายตัวแบบอะเดียบาติก อุณหภูมิลดจาก $400\\ \\mathrm{K}$ เป็น $300\\ \\mathrm{K}$ แก๊สทำงานกี่จูล ($R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 623, tolerance: 6, unit: J }
+    misconceptions:
+      - { match: 0, feedback: "อะเดียบาติกคือ $Q = 0$ ไม่ใช่ $W = 0$ แก๊สทำงานโดยใช้พลังงานภายในของตัวเอง" }
+      - { match: 1039, feedback: "ใช้ $C_V = \\tfrac52 R$ แก๊สอะตอมเดี่ยวใช้ $\\tfrac32 R$" }
+    hints:
+      - "$Q = 0$ จึงได้ $W = -\\Delta U$"
+      - "$\\Delta U = nC_V\\Delta T = \\tfrac32 nR(300 - 400)$"
+    solution: "$\\Delta U = \\tfrac32 (0.50)(8.31)(-100) = -623\\ \\mathrm{J}$ จึงได้ $W = -\\Delta U = 623\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p016
+    topics: [physics.thermal.first-law]
+    difficulty: 3
+    type: mcq
+    multiple: true
+    stem: "แก๊สเปลี่ยนจากสถานะ 1 ไปสถานะ 2 ได้สองเส้นทางบนแผนภาพ P–V ปริมาณใดที่ **อาจต่างกัน** ระหว่างสองเส้นทาง (เลือกได้มากกว่า 1 ข้อ)"
+    choices:
+      - { id: a, text: "งานที่แก๊สทำ $W$", correct: true }
+      - { id: b, text: "ความร้อนที่แก๊สได้รับ $Q$", correct: true }
+      - { id: c, text: "การเปลี่ยนพลังงานภายใน $\\Delta U$", feedback: "$U$ เป็นฟังก์ชันสถานะ จุดเริ่มต้นและจุดสุดท้ายเหมือนกัน $\\Delta U$ จึงเท่ากัน" }
+      - { id: d, text: "การเปลี่ยนอุณหภูมิ $\\Delta T$", feedback: "อุณหภูมิเป็นสมบัติของสถานะ ปลายทางเดียวกันจึงได้ $\\Delta T$ เท่ากัน" }
+    hints:
+      - "พื้นที่ใต้สองเส้นทางต่างกันได้"
+      - "ปริมาณใดขึ้นกับสถานะเท่านั้น"
+    solution: "$W$ คือพื้นที่ใต้เส้นทาง จึงต่างกันได้ และ $Q = \\Delta U + W$ ก็ต่างกันตาม ส่วน $\\Delta U$ และ $\\Delta T$ ขึ้นกับสถานะต้นและปลายเท่านั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.first-law.p017
+    topics: [physics.thermal.first-law]
+    difficulty: 2
+    type: mcq
+    stem: "แก๊สทำวัฏจักรที่วนทวนเข็มนาฬิกาบนแผนภาพ P–V (แกนนอน $V$ แกนตั้ง $P$) ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "งานสุทธิที่แก๊สทำเป็นลบ สิ่งแวดล้อมทำงานต่อแก๊ส", correct: true }
+      - { id: b, text: "งานสุทธิเป็นศูนย์ เพราะกลับมาที่เดิม", feedback: "ที่เป็นศูนย์คือ $\\Delta U$ งานสุทธิเท่ากับพื้นที่ที่ล้อมไว้ ไม่เป็นศูนย์" }
+      - { id: c, text: "งานสุทธิที่แก๊สทำเป็นบวก", feedback: "งานสุทธิเป็นบวกเมื่อวนตามเข็มนาฬิกา เพราะช่วงขยายตัวอยู่ที่ความดันสูงกว่าช่วงถูกอัด" }
+      - { id: d, text: "พลังงานภายในเพิ่มขึ้นทุกรอบ", feedback: "กลับมาสถานะเดิม พลังงานภายในต้องเท่าเดิม" }
+    hints:
+      - "ทวนเข็มนาฬิกา ช่วงที่แก๊สถูกอัดอยู่ด้านบน (ความดันสูง)"
+      - "งานสุทธิ = งานขยายตัว − งานที่ใช้อัด"
+    solution: "วนทวนเข็มนาฬิกา แก๊สถูกอัดที่ความดันสูงและขยายตัวที่ความดันต่ำ งานสุทธิจึงเป็นลบ ซึ่งเป็นหลักของตู้เย็นและเครื่องปรับอากาศ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

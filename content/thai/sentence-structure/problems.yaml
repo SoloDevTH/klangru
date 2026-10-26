@@ -1,0 +1,410 @@
+problems:
+- id: thai.grammar.sentence-structure.p001
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 1
+  type: mcq
+  stem: ประโยค "แมวสีดำของป้านอนบนหลังคา" **ภาคประธาน** คือข้อใด
+  choices:
+  - id: a
+    text: แมวสีดำของป้า
+    correct: true
+    feedback: ถูก ภาคประธาน = ประธาน (แมว) + ส่วนขยาย (สีดำของป้า)
+  - id: b
+    text: แมว
+    feedback: นี่คือตัวประธานเท่านั้น ภาคประธานต้องรวมส่วนขยายด้วย
+  - id: c
+    text: นอนบนหลังคา
+    feedback: นี่คือภาคแสดง
+  - id: d
+    text: แมวสีดำของป้านอน
+    feedback: นอน เป็นกริยา อยู่ในภาคแสดง
+  hints:
+  - หากริยาก่อน คือ นอน
+  - ส่วนหน้ากริยาทั้งหมดที่บอกว่าใครนอน คือภาคประธาน
+  solution: 'ภาคประธาน: **แมวสีดำของป้า** · ภาคแสดง: นอนบนหลังคา'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p002
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 2
+  type: mcq
+  stem: ประโยคใดเป็น **ประโยค 2 ส่วน** (ประธาน + กริยา ไม่มีกรรม)
+  choices:
+  - id: a
+    text: น้องหัวเราะ
+    correct: true
+    feedback: ถูก หัวเราะ ไม่ต้องมีกรรม
+  - id: b
+    text: แมวจับหนู
+    feedback: จับ ต้องมีกรรม (หนู) เป็นประโยค 3 ส่วน
+  - id: c
+    text: ครูตรวจการบ้าน
+    feedback: มีกรรม (การบ้าน) เป็นประโยค 3 ส่วน
+  - id: d
+    text: พี่ซื้อขนม
+    feedback: มีกรรม (ขนม) เป็นประโยค 3 ส่วน
+  hints:
+  - ประโยค 2 ส่วนใช้กริยาที่ไม่ต้องมีกรรม
+  - ลองถามว่า ...อะไร หลังกริยา ถ้าไม่ต้องถาม แสดงว่าไม่มีกรรม
+  solution: '**น้องหัวเราะ** = ประธาน + อกรรมกริยา'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p003
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 2
+  type: match
+  stem: จับคู่ประโยคกับชนิดตามโครงสร้าง
+  pairs:
+  - left: ฉันกินข้าวเหนียวมะม่วง
+    right: ประโยคสามัญ
+  - left: ฉันกินข้าว และน้องดื่มนม
+    right: ประโยครวม
+  - left: ฉันกินข้าวที่แม่ทำ
+    right: ประโยคซ้อน
+  hints:
+  - หาคำสันธาน (และ แต่ หรือ จึง) และคำเชื่อมประโยคย่อย (ที่ ซึ่ง ว่า)
+  - ประโยคที่ไม่มีคำเชื่อมเลยคือประโยคสามัญ
+  solution: ไม่มีคำเชื่อม → สามัญ · และ เชื่อมสองประโยค → รวม · ที่แม่ทำ ขยาย ข้าว → ซ้อน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p004
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 2
+  type: mcq
+  stem: ข้อใดเป็น **วลี** ไม่ใช่ประโยค
+  choices:
+  - id: a
+    text: บ้านหลังใหญ่ริมคลอง
+    correct: true
+    feedback: ถูก เป็นนามวลี ยังไม่รู้ว่าบ้านเป็นอย่างไรหรือเกิดอะไรขึ้น
+  - id: b
+    text: บ้านหลังใหญ่ตั้งอยู่ริมคลอง
+    feedback: มีกริยา ตั้ง จึงเป็นประโยค
+  - id: c
+    text: นกบิน
+    feedback: สั้น แต่ครบประธานและกริยา จึงเป็นประโยค
+  - id: d
+    text: ฝนตก
+    feedback: ครบประธานและกริยา จึงเป็นประโยค
+  hints:
+  - ประโยคต้องมีทั้งภาคประธานและภาคแสดง
+  - หาตัวเลือกที่ไม่มีกริยา
+  solution: '**บ้านหลังใหญ่ริมคลอง** เป็นนามวลี'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p005
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 3
+  type: mcq
+  stem: ประโยค "เขาตื่นสาย จึงไปโรงเรียนไม่ทัน" เป็นประโยครวมแบบใด
+  choices:
+  - id: a
+    text: เป็นเหตุเป็นผล
+    correct: true
+    feedback: ถูก จึง บอกว่าส่วนหลังเป็นผลของส่วนหน้า
+  - id: b
+    text: คล้อยตามกัน
+    feedback: คล้อยตามใช้ และ แล้ว...ก็
+  - id: c
+    text: ขัดแย้งกัน
+    feedback: ขัดแย้งใช้ แต่ ถึง...ก็
+  - id: d
+    text: ให้เลือก
+    feedback: ให้เลือกใช้ หรือ มิฉะนั้น
+  hints:
+  - ดูคำสันธานที่เชื่อมสองส่วน
+  - จึง บอกความสัมพันธ์แบบใด
+  solution: '**เป็นเหตุเป็นผล** (ตื่นสาย → ไปไม่ทัน)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p006
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 3
+  type: text
+  stem: 'เติมคำสันธานหนึ่งคำให้เป็นประโยครวมแบบ **ขัดแย้งกัน**: "พี่ขยันอ่านหนังสือ ___ น้องชอบเล่นเกม"'
+  accepted:
+  - แต่
+  - ส่วน
+  misconceptions:
+  - match: และ
+    feedback: และ ทำให้เป็นประโยครวมแบบคล้อยตาม
+  - match: จึง
+    feedback: จึง ทำให้เป็นแบบเหตุผล ซึ่งไม่เข้ากับความหมาย
+  - match: หรือ
+    feedback: หรือ ทำให้เป็นแบบให้เลือก
+  hints:
+  - สองส่วนนี้มีพฤติกรรมตรงข้ามกัน
+  - สันธานแบบขัดแย้ง เช่น แต่ ส่วน
+  solution: พี่ขยันอ่านหนังสือ **แต่** (หรือ **ส่วน**) น้องชอบเล่นเกม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p007
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 3
+  type: mcq
+  stem: ประโยค "ครูชมนักเรียนที่ช่วยเก็บขยะ" ส่วนใดเป็น **ประโยคย่อย**
+  choices:
+  - id: a
+    text: ที่ช่วยเก็บขยะ
+    correct: true
+    feedback: ถูก ขึ้นต้นด้วย ที่ ขยายคำว่า นักเรียน
+  - id: b
+    text: ครูชมนักเรียน
+    feedback: นี่คือประโยคหลัก
+  - id: c
+    text: ครูชม
+    feedback: เป็นประธานกับกริยาของประโยคหลัก
+  - id: d
+    text: เก็บขยะ
+    feedback: ยังขาดคำเชื่อม ที่ ซึ่งบอกว่าขยายคำใด
+  hints:
+  - หาคำเชื่อม ที่ ซึ่ง อัน ว่า
+  - ประโยคย่อยแยกออกมาเองแล้วยังไม่ครบความ
+  solution: 'ประโยคย่อย: **ที่ช่วยเก็บขยะ** ขยาย นักเรียน · ประโยคหลัก: ครูชมนักเรียน'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p008
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 3
+  type: match
+  stem: จับคู่คำเชื่อมประโยคย่อยกับหน้าที่ของประโยคย่อย
+  pairs:
+  - left: ที่ ซึ่ง อัน
+    right: ขยายคำนามข้างหน้า
+  - left: ว่า
+    right: เป็นกรรมของกริยา เช่น บอก คิด
+  - left: เมื่อ ขณะที่
+    right: ขยายกริยาบอกเวลา
+  hints:
+  - ลองแต่งประโยคด้วยคำเชื่อมแต่ละคำ
+  - แม่บอกว่า... · บ้านที่... · ...เมื่อฝนหยุด
+  solution: ที่ ซึ่ง อัน → ขยายนาม · ว่า → เป็นนาม (กรรม) · เมื่อ ขณะที่ → ขยายกริยาบอกเวลา
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p009
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 3
+  type: mcq
+  stem: ประโยคใด **ถูกต้องตามหลักภาษา** และครบความ
+  choices:
+  - id: a
+    text: ผู้ที่ชนะการแข่งขันได้รับถ้วยรางวัล
+    correct: true
+    feedback: ถูก มีประโยคหลัก ผู้...ได้รับถ้วยรางวัล ครบ
+  - id: b
+    text: ผู้ที่ชนะการแข่งขัน
+    feedback: มีแต่ภาคประธานกับประโยคย่อย ยังขาดกริยาหลัก
+  - id: c
+    text: เพื่อการแข่งขันที่ยุติธรรม
+    feedback: เป็นกลุ่มคำ ไม่มีประธานและกริยาหลัก
+  - id: d
+    text: ที่ได้รับถ้วยรางวัลในวันนี้
+    feedback: เป็นประโยคย่อยลอย ๆ ไม่มีคำที่ถูกขยาย
+  hints:
+  - ประโยคต้องมีประธานและกริยาหลัก
+  - ประโยคย่อยที่ขึ้นด้วย ที่ ยืนเดี่ยว ๆ ไม่ได้
+  solution: '**ผู้ที่ชนะการแข่งขันได้รับถ้วยรางวัล** ครบทั้งภาคประธานและภาคแสดง'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p010
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 4
+  type: order
+  stem: 'เรียงกลุ่มคำเป็นประโยครวมแบบเหตุผล: **จึง / ฝนตกหนัก / การแข่งขัน / ยกเลิก / ครู**'
+  items:
+  - ฝนตกหนัก
+  - ครู
+  - จึง
+  - ยกเลิก
+  - การแข่งขัน
+  hints:
+  - ส่วนที่เป็นเหตุมาก่อน ส่วนที่เป็นผลตามหลัง
+  - จึง วางหน้ากริยาของประโยคที่เป็นผล หรือหลังประธาน
+  solution: '**ฝนตกหนัก ครูจึงยกเลิกการแข่งขัน**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p011
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 4
+  type: mcq
+  stem: ประโยคใดเป็น **ประโยคซ้อน**
+  choices:
+  - id: a
+    text: แม่บอกว่าพรุ่งนี้ฝนจะตก
+    correct: true
+    feedback: ถูก ว่าพรุ่งนี้ฝนจะตก เป็นประโยคย่อยทำหน้าที่กรรมของ บอก
+  - id: b
+    text: แม่ทำกับข้าว และพ่อล้างจาน
+    feedback: สองประโยคเชื่อมด้วย และ เป็นประโยครวม
+  - id: c
+    text: พรุ่งนี้ฝนจะตกหนักทั้งวัน
+    feedback: มีภาคประธานและภาคแสดงชุดเดียว เป็นประโยคสามัญ
+  - id: d
+    text: ฝนตกหนัก แต่พ่อยังไปทำงาน
+    feedback: เชื่อมด้วย แต่ เป็นประโยครวม
+  hints:
+  - หาคำเชื่อมประโยคย่อย ที่ ซึ่ง ว่า
+  - ประโยครวมเชื่อมด้วย และ แต่ หรือ จึง
+  solution: '**แม่บอกว่าพรุ่งนี้ฝนจะตก** (ประโยคหลัก: แม่บอก · ประโยคย่อย: ว่าพรุ่งนี้ฝนจะตก)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p012
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 4
+  type: match
+  stem: คำว่า **ที่** ในแต่ละประโยคเป็นคำชนิดใด
+  pairs:
+  - left: เขาอยู่ที่บ้าน
+    right: บุพบท
+  - left: บ้านที่อยู่ริมน้ำสวยมาก
+    right: ประพันธสรรพนาม
+  - left: ที่นี่เงียบสงบ
+    right: สรรพนาม
+  hints:
+  - ดูคำที่ตามหลัง ที่ เป็นคำนามหรือกริยา
+  - ที่ ที่ตามด้วยกริยาและแทนคำนามข้างหน้าเชื่อมประโยคย่อย
+  solution: ที่บ้าน → บุพบท (นำหน้านาม) · บ้านที่อยู่... → ประพันธสรรพนาม (เชื่อมประโยคย่อย) · ที่นี่ → สรรพนาม (เป็นประธาน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p013
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 4
+  type: mcq
+  stem: ประโยค "เด็ก ๆ เล่นฟุตบอลที่สนามหลังโรงเรียนทุกเย็น" เป็นประโยคชนิดใด
+  choices:
+  - id: a
+    text: ประโยคสามัญ
+    correct: true
+    feedback: ถูก มีกริยาหลัก (เล่น) ชุดเดียว ส่วนที่เหลือเป็นส่วนขยาย
+  - id: b
+    text: ประโยครวม
+    feedback: ไม่มีสันธานเชื่อมสองประโยค
+  - id: c
+    text: ประโยคซ้อน
+    feedback: ที่ ในที่นี้เป็นบุพบทนำหน้าคำว่า สนาม ไม่ได้เชื่อมประโยคย่อย
+  - id: d
+    text: ประโยคซับซ้อน
+    feedback: ยาวเพราะมีส่วนขยาย แต่มีโครงสร้างชั้นเดียว
+  hints:
+  - นับกริยาหลัก
+  - ที่ ตามด้วยคำนาม (สนาม) หรือกริยา
+  solution: '**ประโยคสามัญ** ยาวเพราะส่วนขยาย แต่มีประธานกับกริยาชุดเดียว'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p014
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 5
+  type: mcq
+  stem: รวมสองประโยค "ฉันรักตุ๊กตาตัวนี้" กับ "แม่ซื้อตุ๊กตาตัวนี้ให้ฉัน" เป็น **ประโยคซ้อน** ข้อใดถูกต้อง
+  choices:
+  - id: a
+    text: ฉันรักตุ๊กตาตัวนี้ที่แม่ซื้อให้
+    correct: true
+    feedback: ถูก ที่แม่ซื้อให้ เป็นประโยคย่อยขยาย ตุ๊กตา
+  - id: b
+    text: ฉันรักตุ๊กตาตัวนี้ และแม่ซื้อตุ๊กตาตัวนี้ให้ฉัน
+    feedback: เป็นประโยครวม และพูดคำซ้ำ
+  - id: c
+    text: แม่ซื้อตุ๊กตาตัวนี้ให้ฉัน ฉันจึงรักมัน
+    feedback: เป็นประโยครวมแบบเหตุผล
+  - id: d
+    text: ตุ๊กตาตัวนี้ที่แม่ซื้อให้ฉัน
+    feedback: ขาดกริยาหลัก ยังไม่เป็นประโยค
+  hints:
+  - คำที่ซ้ำกันในสองประโยคคือ ตุ๊กตาตัวนี้
+  - ใช้ ที่ แทนคำที่ซ้ำ แล้วนำประโยคหนึ่งไปขยาย
+  solution: '**ฉันรักตุ๊กตาตัวนี้ที่แม่ซื้อให้**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p015
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 5
+  type: mcq
+  stem: '"ชาวบ้านที่อาศัยอยู่ริมแม่น้ำซึ่งไหลผ่านหมู่บ้านช่วยกันเก็บขยะทุกวันอาทิตย์" **ประโยคหลัก** คือข้อใด'
+  choices:
+  - id: a
+    text: ชาวบ้านช่วยกันเก็บขยะ (ทุกวันอาทิตย์)
+    correct: true
+    feedback: ถูก ตัดประโยคย่อย ที่... และ ซึ่ง... ออกแล้วเหลือแกนนี้
+  - id: b
+    text: ชาวบ้านอาศัยอยู่ริมแม่น้ำ
+    feedback: มาจากประโยคย่อย ที่อาศัยอยู่ริมแม่น้ำ
+  - id: c
+    text: แม่น้ำไหลผ่านหมู่บ้าน
+    feedback: มาจากประโยคย่อย ซึ่งไหลผ่านหมู่บ้าน
+  - id: d
+    text: ชาวบ้านอาศัยอยู่ริมแม่น้ำและช่วยกันเก็บขยะ
+    feedback: รวมประโยคย่อยเข้ามาด้วย ไม่ใช่ประโยคหลัก
+  hints:
+  - กันส่วนที่ขึ้นต้นด้วย ที่ และ ซึ่ง ออกทีละชั้น
+  - ส่วนที่เหลือต้องมีประธานและกริยาหลัก
+  solution: 'ประโยคหลัก: **ชาวบ้านช่วยกันเก็บขยะทุกวันอาทิตย์** (ประโยคย่อย 2 ชั้น: ที่อาศัยอยู่ริมแม่น้ำ · ซึ่งไหลผ่านหมู่บ้าน)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p016
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 5
+  type: mcq
+  stem: '"นักเรียนที่ชนะการประกวดบอกว่าจะนำเงินรางวัลไปซื้อหนังสือ แต่แม่อยากให้เก็บไว้" ทำไมจึงจัดเป็น **ประโยคซับซ้อน**'
+  choices:
+  - id: a
+    text: เป็นประโยครวม (เชื่อมด้วย แต่) ที่มีประโยคย่อยซ้อนอยู่ในแต่ละส่วน
+    correct: true
+    feedback: ถูก มีทั้งโครงสร้างรวมและซ้อนในประโยคเดียว
+  - id: b
+    text: เพราะประโยคยาวเกินสองบรรทัด
+    feedback: ความยาวไม่ได้ตัดสินชนิดของประโยค
+  - id: c
+    text: เพราะมีคำว่า แต่ คำเดียว
+    feedback: ถ้ามีแค่ แต่ จะเป็นประโยครวมธรรมดา
+  - id: d
+    text: เพราะไม่มีประธาน
+    feedback: มีประธาน คือ นักเรียน และ แม่
+  hints:
+  - แยกประโยคด้วย แต่ ก่อน
+  - ในแต่ละส่วนหา ที่ ว่า ให้
+  solution: แต่ แยกเป็นสองส่วน (ประโยครวม) และแต่ละส่วนมีประโยคย่อย (ที่ชนะ... · ว่าจะนำ... · ให้เก็บไว้) จึงเป็น**ประโยคซับซ้อน**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: thai.grammar.sentence-structure.p017
+  topics:
+  - thai.grammar.sentence-structure
+  difficulty: 5
+  type: mcq
+  stem: นักเรียนต้องการเขียนประโยคเดียวที่ **เน้นว่าการซ้อมทุกวันเป็นเหตุให้ทีมชนะ** ประโยคใดตรงวัตถุประสงค์ที่สุด
+  choices:
+  - id: a
+    text: ทีมเราซ้อมทุกวัน จึงชนะการแข่งขัน
+    correct: true
+    feedback: ถูก จึง เชื่อมเหตุกับผลชัดเจน
+  - id: b
+    text: ทีมเราซ้อมทุกวัน และชนะการแข่งขัน
+    feedback: และ บอกแค่ว่าเกิดสองเรื่อง ไม่ได้บอกว่าเป็นเหตุเป็นผล
+  - id: c
+    text: ทีมเราซ้อมทุกวัน แต่ชนะการแข่งขัน
+    feedback: แต่ บอกความขัดแย้ง ความหมายผิด
+  - id: d
+    text: ทีมที่ซ้อมทุกวัน
+    feedback: เป็นวลี ไม่ครบประโยค
+  hints:
+  - วัตถุประสงค์คือบอกเหตุและผล
+  - เลือกสันธานที่บอกความเป็นเหตุเป็นผล
+  solution: '**ทีมเราซ้อมทุกวัน จึงชนะการแข่งขัน**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true

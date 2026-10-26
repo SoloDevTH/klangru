@@ -1,0 +1,76 @@
+id: computer.programming.oop
+subject: computer
+title: { th: โปรแกรมแบบโมดูลและการเขียนโปรแกรมเชิงวัตถุ, en: "Modular and object-oriented programming" }
+summary: แบ่งโปรแกรมเป็นโมดูล ใช้ไลบรารีและอ่าน API สร้างคลาสที่มีแอตทริบิวต์และเมทอด สร้างวัตถุ ห่อหุ้มข้อมูล และนำส่วนประกอบมาใช้ซ้ำด้วยการประกอบและการสืบทอด
+difficulty: 5.5
+minutes: 50
+prerequisites: [computer.programming.functions, computer.programming.lists-strings]
+encompasses:
+  - { id: computer.programming.functions, weight: 0.4 }
+  - { id: computer.programming.lists-strings, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: modules.svg
+    alt: "ไฟล์ main.py (โปรแกรมหลัก) อยู่ตรงกลาง ลูกศรจากกล่องซ้าย shop_utils.py โมดูลที่เขียนเอง มี VAT_RATE, add_vat(price), discount(price, percent) และลูกศรจากกล่องขวา ไลบรารีมาตรฐานที่มากับ Python มี statistics.mean(), statistics.median(), json.loads() ด้านล่างเขียนคำสั่ง import shop_utils และ from statistics import median และข้อความว่าใช้ฟังก์ชันได้โดยอ่านแค่ชื่อ พารามิเตอร์ และค่าที่คืน (API) ไม่ต้องรู้โค้ดข้างใน"
+    caption: "โปรแกรมหลักนำโมดูลที่เขียนเองและไลบรารีมาตรฐานมาใช้ร่วมกัน"
+  - type: figure
+    src: class-objects.svg
+    alt: "ด้านซ้ายคือคลาส Account (แม่แบบ) มีแอตทริบิวต์ owner และ balance และเมทอด deposit(amount) และ withdraw(amount) ลูกศรสองเส้นไปยังวัตถุด้านขวา วัตถุ a = Account(...) มี owner = มานี balance = 150 และวัตถุ b = Account(...) มี owner = ปิติ balance = 0 ข้อความล่างบอกว่าวัตถุแต่ละตัวมีค่าแอตทริบิวต์ของตัวเอง แต่ใช้เมทอดชุดเดียวกัน"
+    caption: "คลาสเดียวสร้างวัตถุได้หลายตัว แต่ละตัวเก็บค่าของตัวเอง"
+  - type: worked-example
+    title: แยกโปรแกรมตัดเกรดเป็นโมดูลและใช้ไลบรารี
+    problem: "ครูมีคะแนนสอบของห้องเป็นลิสต์ ต้องการค่าเฉลี่ย มัธยฐาน และจำนวนคนที่ได้ต่ำกว่า 50 ให้ออกแบบว่าจะแยกโค้ดเป็นโมดูลอย่างไร และใช้ไลบรารีใดแทนการเขียนเอง"
+    steps:
+      - text: "แยกหน้าที่: โมดูล grading.py เก็บฟังก์ชันคำนวณ ไฟล์ main.py อ่านคะแนนและแสดงผล"
+        why: "แยกส่วนคำนวณออกจากส่วนรับและแสดงผล ทำให้ทดสอบส่วนคำนวณได้โดยไม่ต้องพิมพ์ข้อมูลทุกครั้ง"
+      - text: "ใช้ไลบรารีมาตรฐาน: statistics.mean(scores) และ statistics.median(scores) แทนการเขียนสูตรเอง"
+        why: "โค้ดในไลบรารีมาตรฐานผ่านการทดสอบมาแล้ว เช่น median จัดการทั้งกรณีจำนวนคู่และคี่ให้"
+      - text: "เขียนเองเฉพาะส่วนที่ไม่มีในไลบรารี: def count_below(scores, limit): return len([s for s in scores if s < limit])"
+      - text: "ใน main.py เขียน from grading import count_below แล้วเรียก count_below(scores, 50)"
+      - text: "ใส่โค้ดทดสอบใต้ if __name__ == \"__main__\": ใน grading.py เช่น ตรวจว่า count_below([40, 60, 49], 50) ได้ 2"
+    answer: "grading.py เก็บ count_below และฟังก์ชันคำนวณอื่น main.py import มาใช้ ค่าเฉลี่ยและมัธยฐานใช้ statistics จากไลบรารีมาตรฐาน"
+  - { type: check, problem: computer.programming.oop.p006, prompt: "ลองคิดว่า statistics.median คืนค่าอะไร" }
+  - type: figure
+    src: composition.svg
+    alt: "วัตถุ cart ของคลาส Cart มีแอตทริบิวต์ items เป็นลิสต์ และเมทอด total() ได้ 75 ลูกศรสองเส้นชี้ไปวัตถุ Item สองตัว ตัวแรก name ดินสอ price 6 qty 5 subtotal() ได้ 30 ตัวที่สอง name สมุด price 15 qty 3 subtotal() ได้ 45 ข้อความล่างบอกว่า total() เรียก subtotal() ของทุก Item แล้วรวม 30 + 45 = 75"
+    caption: "วัตถุหนึ่งประกอบจากวัตถุอื่น แล้วเรียกเมทอดของวัตถุเหล่านั้น"
+  - type: worked-example
+    title: ออกแบบคลาสเครื่องกดบัตรคิว
+    problem: "ร้านก๋วยเตี๋ยวอยากได้โปรแกรมเครื่องกดบัตรคิว กดแล้วได้เลขถัดไป และพนักงานเรียกคิวถัดไปได้ ให้ออกแบบคลาส QueueMachine และไล่ผลเมื่อกดบัตร 3 ครั้งแล้วเรียกคิว 1 ครั้ง"
+    steps:
+      - text: "เลือกแอตทริบิวต์: self.last_ticket = 0 (เลขบัตรล่าสุดที่จ่ายไป) และ self.now_serving = 0 (เลขที่กำลังเรียก)"
+        why: "เก็บเฉพาะข้อมูลที่ต้องใช้ตัดสินใจ ไม่ต้องเก็บรายชื่อลูกค้า"
+      - text: "เมทอด take(): เพิ่ม self.last_ticket ขึ้น 1 แล้ว return self.last_ticket"
+      - text: "เมทอด call_next(): ถ้า self.now_serving < self.last_ticket ให้เพิ่ม self.now_serving ขึ้น 1 แล้ว return ค่า ถ้าไม่มีคิวรอ return None"
+        why: "ตรวจเงื่อนไขในเมทอด จึงไม่มีทางเรียกคิวที่ยังไม่มีคนกดบัตร (การห่อหุ้ม)"
+      - text: "ไล่ผล: m = QueueMachine() กด take() สามครั้งได้ 1, 2, 3 แล้ว call_next() ได้ 1"
+      - text: "ถ้าร้านเปิดสองสาขา สร้าง QueueMachine() สองวัตถุ คิวของสองสาขาแยกกันโดยไม่ต้องแก้คลาส"
+    answer: "คลาส QueueMachine มีแอตทริบิวต์ last_ticket และ now_serving เมทอด take และ call_next หลังกด 3 ครั้งแล้วเรียก 1 ครั้ง ได้ last_ticket = 3 และ now_serving = 1"
+  - { type: check, problem: computer.programming.oop.p003, prompt: "ไล่ค่าแอตทริบิวต์ทีละบรรทัด" }
+glossary:
+  - { term: โมดูล (module), definition: "ไฟล์ .py ที่รวมฟังก์ชัน ค่าคงที่ และคลาสที่เกี่ยวข้องกัน นำไปใช้ในไฟล์อื่นด้วย import" }
+  - { term: ไลบรารี (library), definition: "ชุดโมดูลที่เขียนและทดสอบไว้แล้วให้นำมาใช้ซ้ำ เช่น ไลบรารีมาตรฐานของ Python" }
+  - { term: API, definition: "ข้อตกลงว่าส่วนประกอบหนึ่งให้เรียกอะไรได้ ต้องส่งอะไร และได้อะไรกลับ อ่านจากเอกสารโดยไม่ต้องรู้โค้ดข้างใน" }
+  - { term: คลาส (class), definition: "แม่แบบที่บอกว่าวัตถุชนิดหนึ่งมีข้อมูลอะไรและทำอะไรได้" }
+  - { term: วัตถุ (object), definition: "สิ่งที่สร้างจากคลาส มีค่าแอตทริบิวต์ของตัวเอง" }
+  - { term: แอตทริบิวต์ (attribute), definition: "ข้อมูลที่วัตถุเก็บไว้ เข้าถึงด้วย self.ชื่อ ในเมทอด" }
+  - { term: เมทอด (method), definition: "ฟังก์ชันที่อยู่ในคลาส พารามิเตอร์แรกคือ self หมายถึงวัตถุที่ถูกเรียก" }
+  - { term: การห่อหุ้ม (encapsulation), definition: "การให้ข้อมูลของวัตถุเปลี่ยนผ่านเมทอดที่ตรวจเงื่อนไขเท่านั้น ข้อมูลจึงถูกต้องเสมอ" }
+  - { term: การสืบทอด (inheritance), definition: "การสร้างคลาสใหม่จากคลาสเดิม ได้แอตทริบิวต์และเมทอดเดิมมา แล้วเปลี่ยนเฉพาะส่วนที่ต่าง" }
+flashcards:
+  - { front: "import shop_utils กับ from shop_utils import discount ต่างกันอย่างไร", back: "แบบแรกเรียกผ่านชื่อโมดูล shop_utils.discount(...) แบบหลังเรียก discount(...) ได้ตรง ๆ" }
+  - { front: "__init__ ทำอะไร", back: "ถูกเรียกอัตโนมัติเมื่อสร้างวัตถุ ใช้กำหนดค่าเริ่มต้นของแอตทริบิวต์" }
+  - { front: "self คืออะไร", back: "วัตถุตัวที่เมทอดถูกเรียก a.deposit(50) ส่ง a ไปเป็น self" }
+  - { front: "b = a ทำให้มีวัตถุสองตัวหรือไม่", back: "ไม่ ทั้งสองชื่อชี้วัตถุเดียวกัน แก้ผ่านชื่อใดก็เห็นทั้งคู่" }
+  - { front: "บรรทัด if __name__ == \"__main__\": มีไว้ทำอะไร", back: "ให้โค้ดข้างใต้ทำงานเฉพาะตอนรันไฟล์นั้นโดยตรง ไม่ทำงานตอนไฟล์อื่น import" }
+references:
+  - { title: "การเขียนโปรแกรมเชิงวัตถุ", url: "https://th.wikipedia.org/wiki/การเขียนโปรแกรมเชิงวัตถุ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Modular programming", url: "https://en.wikipedia.org/wiki/Modular_programming", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "API", url: "https://en.wikipedia.org/wiki/API", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Class (computer programming)", url: "https://en.wikipedia.org/wiki/Class_(computer_programming)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

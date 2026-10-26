@@ -228,6 +228,8 @@ export const Problem = z.discriminatedUnion("type", [
     expanded: z.boolean().default(false),
     /** ต้องตอบในรูปผลคูณของตัวประกอบ (โจทย์ให้แยกตัวประกอบ) */
     factored: z.boolean().default(false),
+    /** ต้องตอบในรูปอย่างง่ายของกรณฑ์ (ไม่มีกำลังสองในราก ไม่มีรากที่ตัวส่วน) */
+    simplified: z.boolean().default(false),
     misconceptions: z.array(z.object({ match: z.string().min(1), feedback: z.string().min(1) })).default([]),
   }),
   z.object({

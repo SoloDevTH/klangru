@@ -1,0 +1,69 @@
+id: math.geometry.bearings-3d
+subject: math
+title: { th: แบริงและตรีโกณมิติในสามมิติ, en: Bearings and 3D trigonometry }
+summary: บอกทิศด้วยแบริงสามหลัก หาแบริงย้อนกลับ คำนวณระยะและทิศด้วยสามเหลี่ยมมุมฉาก ใช้ระบบพิกัดสามมิติ และใช้พีทาโกรัสกับตรีโกณมิติในกล่องและพีระมิด
+difficulty: 5.5
+minutes: 45
+prerequisites: [math.geometry.trig-ratios, math.geometry.pythagoras]
+encompasses:
+  - { id: math.geometry.trig-ratios, weight: 0.4 }
+  - { id: math.geometry.pythagoras, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bearings.svg
+    alt: "จุด A และ B มีเส้นทิศเหนือที่แต่ละจุด B อยู่ทางตะวันออกเฉียงเหนือของ A ส่วนโค้งสีแดงจากทิศเหนือที่ A หมุนตามเข็มนาฬิกาถึงเส้น AB เขียนว่า 060° ส่วนโค้งสีเขียวจากทิศเหนือที่ B หมุนตามเข็มนาฬิกาเกือบสามในสี่รอบถึงเส้น BA เขียนว่า 240°"
+    caption: "แบริงของ B จาก A คือ 060° และแบริงของ A จาก B คือ 060° + 180° = 240°"
+  - { type: check, problem: math.geometry.bearings-3d.p003, prompt: "แบริงย้อนกลับต่างกัน 180°" }
+  - type: worked-example
+    title: แยกการเดินเรือเป็นส่วนเหนือใต้และตะวันออกตะวันตก
+    problem: "เรือประมงออกจากท่าเรือแล่นไป 12 กิโลเมตรด้วยแบริง $150^\\circ$ เรืออยู่ทางใต้และทางตะวันออกของท่าเรือเท่าใด"
+    steps:
+      - text: "วาดรูป: $150^\\circ$ อยู่ระหว่างตะวันออก ($090^\\circ$) กับใต้ ($180^\\circ$) ห่างจากทิศใต้ $180^\\circ - 150^\\circ = 30^\\circ$"
+        why: "การวาดรูปช่วยให้รู้ว่าแต่ละส่วนเป็นทิศใด ไม่ต้องกังวลเรื่องเครื่องหมาย"
+      - text: "ไปทางใต้ $= 12\\cos 30^\\circ \\approx 10.39$ กม."
+        why: "ด้านที่ติดกับมุม $30^\\circ$ (วัดจากทิศใต้) ใช้ $\\cos$"
+      - text: "ไปทางตะวันออก $= 12\\sin 30^\\circ = 6$ กม."
+      - text: "ตรวจ: $\\sqrt{10.39^2 + 6^2} \\approx 12$ กม."
+    answer: "ทางใต้ประมาณ 10.39 กม. และทางตะวันออก 6 กม."
+  - type: figure
+    src: axes-3d.svg
+    alt: "แกนพิกัดสามมิติ แกน x ชี้ออกมาทางซ้ายล่าง แกน y ชี้ไปทางขวา แกน z ชี้ขึ้น จุด P(3, 4, 2) สีแดงเป็นมุมของกล่องเส้นประที่มีขอบตามแกน x ยาว 3 แกน y ยาว 4 และแกน z ยาว 2"
+    caption: "จุด (x, y, z) คือมุมของกล่องที่มีขนาด x × y × z นับจากจุดกำเนิด"
+  - type: figure
+    src: cuboid-diagonal.svg
+    alt: "ทรงสี่เหลี่ยมมุมฉาก ABCDEFGH พื้นคือ ABCD ด้าน AB ยาว a ด้าน BC ยาว b ความสูง BF ยาว c เส้นประสีเขียว AC เป็นเส้นทแยงมุมของพื้น เส้นสีแดง AG เป็นเส้นทแยงมุมของทรงสามมิติ เส้นสีน้ำเงิน CG ตั้งฉากกับพื้น มุม θ อยู่ที่ A ระหว่าง AC กับ AG"
+    caption: "สามเหลี่ยม ACG มีมุมฉากที่ C จึงใช้พีทาโกรัสและแทนเจนต์ได้"
+  - type: worked-example
+    title: เส้นทแยงมุมของห้องและมุมกับพื้น
+    problem: "ห้องเรียนกว้าง 4 เมตร ยาว 5 เมตร สูง 3 เมตร จงหาระยะจากมุมห้องที่พื้นถึงมุมเพดานที่อยู่ตรงข้าม และมุมที่เส้นนี้ทำกับพื้น"
+    steps:
+      - text: "เส้นทแยงมุมของพื้น $= \\sqrt{5^2 + 4^2} = \\sqrt{41} \\approx 6.40$ เมตร"
+      - text: "เส้นทแยงมุมของห้อง $= \\sqrt{41 + 3^2} = \\sqrt{50} \\approx 7.07$ เมตร"
+        why: "เส้นทแยงมุมของพื้นกับความสูงตั้งฉากกัน จึงเป็นสองขาของสามเหลี่ยมมุมฉาก"
+      - text: "$\\tan\\theta = \\dfrac{3}{\\sqrt{41}}$ ได้ $\\theta \\approx 25.1^\\circ$"
+        why: "มุมกับพื้นวัดเทียบกับเงาบนพื้น คือเส้นทแยงมุมของพื้น ไม่ใช่ด้าน 5 เมตร"
+    answer: "ประมาณ 7.07 เมตร ทำมุมประมาณ $25.1^\\circ$ กับพื้น"
+  - { type: check, problem: math.geometry.bearings-3d.p008, prompt: "ใช้พีทาโกรัสสองครั้ง หรือ √(a² + b² + c²)" }
+glossary:
+  - { term: แบริง, definition: "มุมที่วัดจากทิศเหนือตามเข็มนาฬิกา เขียนเป็นตัวเลขสามหลัก เช่น 045°" }
+  - { term: แบริงย้อนกลับ, definition: "แบริงของจุดเริ่มเมื่อมองจากจุดปลาย ต่างจากแบริงเดิม 180°" }
+  - { term: ระบบพิกัดสามมิติ, definition: "ระบบที่มีแกน x, y, z ตั้งฉากกันทั้งหมด จุดหนึ่งเขียนเป็น (x, y, z)" }
+  - { term: เส้นทแยงมุมของทรงสี่เหลี่ยมมุมฉาก, definition: "ส่วนของเส้นตรงที่เชื่อมมุมตรงข้ามผ่านภายในกล่อง ยาว √(a² + b² + c²)" }
+  - { term: มุมระหว่างเส้นตรงกับระนาบ, definition: "มุมระหว่างเส้นตรงกับเงา (ภาพฉาย) ของเส้นนั้นบนระนาบ" }
+flashcards:
+  - { front: "แบริงวัดจากทิศใด ไปทางไหน", back: "จากทิศเหนือ ตามเข็มนาฬิกา" }
+  - { front: "ทิศตะวันตกเฉียงใต้มีแบริงเท่าไร", back: "225°" }
+  - { front: "แบริงของ B จาก A คือ 300° แบริงของ A จาก B คือ", back: "120°" }
+  - { front: "เส้นทแยงมุมของกล่อง a × b × c", back: "√(a² + b² + c²)" }
+  - { front: "ระยะระหว่าง (x₁, y₁, z₁) กับ (x₂, y₂, z₂)", back: "√((x₂ − x₁)² + (y₂ − y₁)² + (z₂ − z₁)²)" }
+references:
+  - { title: "Bearing (navigation)", url: "https://en.wikipedia.org/wiki/Bearing_(navigation)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Three-dimensional space", url: "https://en.wikipedia.org/wiki/Three-dimensional_space", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Space diagonal", url: "https://en.wikipedia.org/wiki/Space_diagonal", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "จุดทิศหลัก", url: "https://th.wikipedia.org/wiki/จุดทิศหลัก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
