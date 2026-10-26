@@ -1,0 +1,77 @@
+id: chemistry.bonding.covalent-naming-energy
+subject: chemistry
+title: { th: การเรียกชื่อสารโคเวเลนต์และพลังงานพันธะ, en: Naming covalent compounds and bond energy }
+summary: ลำดับธาตุในสูตร ชื่อสามัญ และการเขียนสูตรจากชื่อ ความยาวพันธะกับรัศมีโคเวเลนต์ พลังงานพันธะ และการคำนวณพลังงานของปฏิกิริยาจากพันธะที่สลายและพันธะที่สร้าง
+difficulty: 5
+minutes: 40
+prerequisites: [chemistry.bonding.covalent]
+encompasses:
+  - { id: chemistry.bonding.covalent, weight: 0.4 }
+  - { id: chemistry.matter.periodic-table, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bond-energy-steps.svg
+    alt: "แผนภาพพลังงานของ H2 + Cl2 → 2HCl แกนตั้งคือพลังงาน ระดับเริ่มต้น H2 + Cl2 ลูกศรสีแดงชี้ขึ้นไปยังระดับอะตอมอิสระ 2H + 2Cl เขียนว่า สลายพันธะ ดูดพลังงาน 436 + 242 = 678 kJ จากนั้นลูกศรสีน้ำเงินชี้ลงยาวกว่าไปยังระดับ 2HCl ซึ่งต่ำกว่าระดับเริ่มต้น เขียนว่า สร้างพันธะ คายพลังงาน 2 × 431 = 862 kJ ลูกศรสีเขียวสั้นจากระดับเริ่มต้นลงไปยัง 2HCl เขียนว่า ΔH = 678 − 862 = −184 kJ คายพลังงานสุทธิ"
+    caption: "สลายพันธะต้องดูดพลังงาน สร้างพันธะคายพลังงาน ผลต่างคือพลังงานของปฏิกิริยา"
+  - { type: check, problem: chemistry.bonding.covalent-naming-energy.p010, prompt: "ใช้แผนภาพพลังงานตอบ" }
+  - type: worked-example
+    title: เรียกชื่อและเขียนสูตรสารโคเวเลนต์
+    problem: "(ก) เรียกชื่อ $\\mathrm{N_2O}$ และ $\\mathrm{BF_3}$ (ข) เขียนสูตรของ ซัลเฟอร์ไตรออกไซด์ และ ไดไฮโดรเจนมอนอกไซด์ (ชื่อตามระบบของน้ำ)"
+    steps:
+      - text: "$\\mathrm{N_2O}$: N 2 อะตอม → ไดไนโตรเจน · O 1 อะตอม → มอนอ + ออกไซด์ รวบเป็น มอนอกไซด์ ได้ ไดไนโตรเจนมอนอกไซด์"
+        why: "ธาตุตัวหลังใส่คำนำหน้าเสมอแม้มีอะตอมเดียว"
+      - text: "$\\mathrm{BF_3}$: B 1 อะตอม ไม่ใส่ มอนอ · F 3 อะตอม → ไตรฟลูออไรด์ ได้ โบรอนไตรฟลูออไรด์"
+      - text: "ซัลเฟอร์ไตรออกไซด์: ไม่มีคำนำหน้าหน้าซัลเฟอร์ → S 1 อะตอม · ไตร → O 3 อะตอม ได้ $\\mathrm{SO_3}$"
+      - text: "ไดไฮโดรเจนมอนอกไซด์: H 2 อะตอม O 1 อะตอม ได้ $\\mathrm{H_2O}$ ซึ่งใช้ชื่อสามัญว่า น้ำ"
+        why: "ชื่อสามัญที่ IUPAC ยอมรับใช้แทนชื่อตามระบบได้ เช่น น้ำ แอมโมเนีย มีเทน"
+    answer: "ไดไนโตรเจนมอนอกไซด์ · โบรอนไตรฟลูออไรด์ · $\\mathrm{SO_3}$ · $\\mathrm{H_2O}$"
+  - type: worked-example
+    title: พลังงานจากการเผามีเทนในแก๊สชีวภาพ
+    problem: "คำนวณ $\\Delta H$ ของ $\\mathrm{CH_4 + 2O_2 \\rightarrow CO_2 + 2H_2O}$ (ทุกสารเป็นแก๊ส) จากพลังงานพันธะ C–H 413, O=O 495, C=O 799, O–H 463 kJ/mol"
+    steps:
+      - text: "วาดโครงสร้างเพื่อนับพันธะ: $\\mathrm{CH_4}$ มี C–H 4 พันธะ · $\\mathrm{O_2}$ มี O=O 1 พันธะ · $\\mathrm{CO_2}$ เป็น O=C=O มี C=O 2 พันธะ · $\\mathrm{H_2O}$ มี O–H 2 พันธะ"
+      - text: "พันธะที่สลาย: $4(413) + 2(495) = 1{,}652 + 990 = 2{,}642$ kJ"
+        why: "ใช้ O₂ 2 โมเลกุลตามสัมประสิทธิ์ จึงคูณ 495 ด้วย 2"
+      - text: "พันธะที่สร้าง: $2(799) + 2 \\times 2(463) = 1{,}598 + 1{,}852 = 3{,}450$ kJ"
+        why: "H₂O มี 2 โมเลกุล โมเลกุลละ 2 พันธะ จึงเป็น O–H 4 พันธะ"
+      - text: "$\\Delta H = 2{,}642 - 3{,}450 = -808$ kJ เป็นลบ จึงคายความร้อน"
+      - text: "เทียบค่าจริงราว −802 kJ ใกล้กัน ส่วนต่างมาจากการใช้พลังงานพันธะเฉลี่ย"
+    answer: "$\\Delta H \\approx -808$ kJ ต่อมีเทน 1 โมล (คายความร้อน)"
+  - { type: check, problem: chemistry.bonding.covalent-naming-energy.p008, prompt: "ใช้รัศมีโคเวเลนต์ประมาณความยาวพันธะ" }
+  - type: molecule
+    title: อีเทน (C₂H₆) พันธะเดี่ยว C–C
+    cid: 6324
+    name: ethane
+    caption: คาร์บอนสองอะตอมต่อกันด้วยพันธะเดี่ยว ยาวราว 154 pm พลังงานพันธะเฉลี่ย 348 kJ/mol
+  - type: molecule
+    title: เอทีน (C₂H₄) พันธะคู่ C=C
+    cid: 6325
+    name: ethylene
+    caption: พันธะคู่ C=C สั้นกว่าพันธะเดี่ยว (ราว 134 pm) และแข็งแรงกว่า (614 kJ/mol) แต่ไม่ถึงสองเท่าของพันธะเดี่ยว
+  - type: molecule
+    title: เอไทน์ (C₂H₂) พันธะสาม C≡C
+    cid: 6326
+    name: acetylene
+    caption: พันธะสามสั้นที่สุด (ราว 120 pm) และแข็งแรงที่สุด (839 kJ/mol) เทียบระยะระหว่างคาร์บอนสองอะตอมกับสองโมเลกุลก่อนหน้า
+glossary:
+  - { term: ความยาวพันธะ, definition: ระยะระหว่างนิวเคลียสของสองอะตอมที่สร้างพันธะกัน }
+  - { term: รัศมีโคเวเลนต์, definition: ครึ่งหนึ่งของความยาวพันธะโคเวเลนต์ระหว่างอะตอมชนิดเดียวกัน }
+  - { term: พลังงานพันธะ, definition: "พลังงานที่ต้องใช้สลายพันธะชนิดหนึ่ง 1 โมลในสถานะแก๊สให้เป็นอะตอมอิสระ หน่วย kJ/mol" }
+  - { term: ปฏิกิริยาคายความร้อน, definition: "ปฏิกิริยาที่ปล่อยพลังงานออกสู่สิ่งแวดล้อม ΔH เป็นลบ" }
+  - { term: ปฏิกิริยาดูดความร้อน, definition: "ปฏิกิริยาที่รับพลังงานจากสิ่งแวดล้อม ΔH เป็นบวก" }
+flashcards:
+  - { front: "สูตรคำนวณ ΔH จากพลังงานพันธะ", back: "$\\Delta H = \\sum E_{\\text{สลาย}} - \\sum E_{\\text{สร้าง}}$ ลบ = คายความร้อน บวก = ดูดความร้อน" }
+  - { front: "ธาตุใดเขียนก่อนในสูตรสารโคเวเลนต์สองธาตุ", back: "ธาตุที่อิเล็กโทรเนกาติวิตีต่ำกว่า ลำดับ B Si C P N H S I Br Cl O F เช่น $\\mathrm{OF_2}$, $\\mathrm{Cl_2O}$" }
+  - { front: "พันธะเดี่ยว คู่ สาม: ความยาวและพลังงานเปลี่ยนอย่างไร", back: "ยิ่งใช้อิเล็กตรอนร่วมหลายคู่ พันธะยิ่งสั้นและแข็งแรง เช่น C–C 348, C=C 614, C≡C 839 kJ/mol" }
+  - { front: "ชื่อสามัญของ $\\mathrm{H_2O}$, $\\mathrm{NH_3}$, $\\mathrm{CH_4}$, $\\mathrm{N_2H_4}$", back: "น้ำ · แอมโมเนีย · มีเทน · ไฮดราซีน" }
+references:
+  - { title: "พลังงานพันธะ", url: "https://th.wikipedia.org/wiki/พลังงานพันธะ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Bond energy", url: "https://en.wikipedia.org/wiki/Bond_energy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "7.5 Strengths of Ionic and Covalent Bonds (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/7-5-strengths-of-ionic-and-covalent-bonds", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "2.7 Chemical Nomenclature (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/2-7-chemical-nomenclature", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

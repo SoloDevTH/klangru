@@ -1,0 +1,72 @@
+id: chemistry.matter.atomic-structure
+subject: chemistry
+title: { th: แบบจำลองอะตอมและการจัดเรียงอิเล็กตรอน, en: Atomic models and electron configuration }
+summary: หลักฐานของระดับพลังงาน เปรียบเทียบแบบจำลองของโบร์กับแบบกลุ่มหมอก ระดับพลังงานย่อย s p d f ออร์บิทัล และการจัดเรียงอิเล็กตรอนตามหลักเอาฟ์บาว เพาลี และฮุนด์
+difficulty: 5
+minutes: 40
+prerequisites: [chemistry.matter.periodic-table]
+encompasses:
+  - { id: chemistry.matter.periodic-table, weight: 0.4 }
+  - { id: chemistry.matter.atoms, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: bohr-vs-cloud.svg
+    alt: "ซ้าย: แบบจำลองของโบร์ของโซเดียม นิวเคลียสสีแดงตรงกลาง วงโคจรวงกลม 3 วง มีอิเล็กตรอน 2, 8 และ 1 ตัว กลาง: แบบกลุ่มหมอก จุดอิเล็กตรอนหนาแน่นใกล้นิวเคลียสและบางลงเมื่อห่างออกไป หมอกหนาคือบริเวณที่มีโอกาสพบอิเล็กตรอนมาก ขวา: รูปร่างออร์บิทัล s เป็นทรงกลม และออร์บิทัล p เป็นสองพูอยู่สองข้างนิวเคลียส มี 3 ออร์บิทัลชี้ตามแกน x y z"
+    caption: "แบบจำลองของโบร์ แบบกลุ่มหมอก และรูปร่างออร์บิทัล s กับ p"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: aufbau-order.svg
+    alt: "แผนภาพลูกศรทแยงของหลักเอาฟ์บาว ระดับย่อยเรียงเป็นแถว 1s; 2s 2p; 3s 3p 3d; 4s 4p 4d 4f; 5s 5p 5d 5f; 6s 6p 6d; 7s 7p ลูกศรสีแดงลากทแยงจากขวาบนลงซ้ายล่าง อ่านทีละเส้นจากบนลงล่าง ได้ลำดับ 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 7s2 5f14 6d10 7p6 เลขยกกำลังคืออิเล็กตรอนสูงสุด s 2, p 6, d 10, f 14"
+    caption: "ลำดับการเติมอิเล็กตรอน: อ่านลูกศรทแยงจากบนลงล่าง"
+  - { type: check, problem: chemistry.matter.atomic-structure.p003, prompt: "ใช้แผนภาพลูกศรทแยงด้านบน" }
+  - type: worked-example
+    title: จัดเรียงอิเล็กตรอนของกำมะถัน
+    problem: "กำมะถัน ($Z = 16$) จงเขียนการจัดเรียงอิเล็กตรอนแบบเต็มรูป แบบย่อ และตามระดับหลัก แล้วบอกคาบ หมู่ และจำนวนอิเล็กตรอนเดี่ยว"
+    steps:
+      - text: "เติมตามลำดับ: 1s (2) → 2s (2) → 2p (6) → 3s (2) ใช้ไป 12 ตัว เหลือ 4 ตัวเข้า 3p ได้ $\\mathrm{1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^4}$"
+      - text: "ย่อ: 10 ตัวแรกเท่ากับนีออน จึงเขียน $\\mathrm{[Ne]\\,3s^2\\,3p^4}$"
+      - text: "รวมตามระดับหลัก: $n=1$: 2 · $n=2$: 8 · $n=3$: $2 + 4 = 6$ ได้ 2, 8, 6"
+      - text: "ระดับหลักสูงสุด 3 → คาบ 3 เวเลนซ์อิเล็กตรอน 6 ตัวในบล็อก p → หมู่ 16"
+        why: "ธาตุหมู่ 13–18 มีเลขหมู่ = เวเลนซ์อิเล็กตรอน + 10"
+      - text: "วาด 3p⁴ ตามกฎของฮุนด์: ใส่ 3 ตัวแรกคนละกล่อง ตัวที่ 4 จับคู่ ได้ [↑↓] [↑] [↑] มีอิเล็กตรอนเดี่ยว 2 ตัว"
+        why: "อิเล็กตรอนกระจายก่อนจับคู่เพราะผลักกันน้อยกว่า"
+    answer: "$\\mathrm{1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^4}$ = $\\mathrm{[Ne]\\,3s^2\\,3p^4}$ = 2, 8, 6 · คาบ 3 หมู่ 16 · อิเล็กตรอนเดี่ยว 2 ตัว"
+  - type: worked-example
+    title: เหล็กกับไอออนของเหล็ก
+    problem: "จงเขียนการจัดเรียงอิเล็กตรอนแบบย่อของ Fe ($Z = 26$), $\\mathrm{Fe^{2+}}$ และ $\\mathrm{Fe^{3+}}$ แล้วบอกว่าไอออนใดมีอิเล็กตรอนเดี่ยวมากกว่า"
+    steps:
+      - text: "Fe: หลัง [Ar] (18 ตัว) เหลือ 8 ตัว เติม 4s ก่อน 2 ตัว แล้ว 3d อีก 6 ตัว ได้ $\\mathrm{[Ar]\\,3d^6\\,4s^2}$"
+      - text: "$\\mathrm{Fe^{2+}}$ เสีย 2 ตัว เอาออกจาก 4s ทั้งคู่: $\\mathrm{[Ar]\\,3d^6}$"
+        why: "เมื่อมีอิเล็กตรอนใน 3d แล้ว ระดับ 4s อยู่ไกลนิวเคลียสกว่าและหลุดง่ายกว่า"
+      - text: "$\\mathrm{Fe^{3+}}$ เสียอีก 1 ตัวจาก 3d: $\\mathrm{[Ar]\\,3d^5}$"
+      - text: "นับอิเล็กตรอนเดี่ยว: $\\mathrm{3d^6}$ เป็น [↑↓][↑][↑][↑][↑] มี 4 ตัว ส่วน $\\mathrm{3d^5}$ เป็น [↑][↑][↑][↑][↑] มี 5 ตัว"
+    answer: "Fe $\\mathrm{[Ar]\\,3d^6\\,4s^2}$ · $\\mathrm{Fe^{2+}}$ $\\mathrm{[Ar]\\,3d^6}$ (เดี่ยว 4) · $\\mathrm{Fe^{3+}}$ $\\mathrm{[Ar]\\,3d^5}$ (เดี่ยว 5 มากกว่า)"
+  - { type: check, problem: chemistry.matter.atomic-structure.p006, prompt: "นับลูกศรในแผนภาพออร์บิทัล" }
+  - type: simulation
+    title: แบบจำลองอะตอมไฮโดรเจน (PhET Models of the Hydrogen Atom)
+    url: https://phet.colorado.edu/en/simulations/models-of-the-hydrogen-atom
+    provider: phet
+    note: ยิงแสงเข้าหาอะตอมไฮโดรเจนตามแบบจำลองต่าง ๆ แล้วเทียบว่าแบบใดให้สเปกตรัมตรงกับการทดลอง สังเกตว่าแบบของโบร์อธิบายเส้นสเปกตรัมได้
+glossary:
+  - { term: ระดับพลังงานหลัก, definition: "ระดับพลังงานของอิเล็กตรอนที่ระบุด้วย n = 1, 2, 3, ... จุอิเล็กตรอนได้สูงสุด 2n² ตัว" }
+  - { term: ระดับพลังงานย่อย, definition: "ระดับย่อย s p d f ภายในระดับหลัก จุได้ 2, 6, 10, 14 ตัว" }
+  - { term: ออร์บิทัล, definition: บริเวณรอบนิวเคลียสที่มีโอกาสพบอิเล็กตรอนสูง จุอิเล็กตรอนได้ 2 ตัวที่มีสปินตรงข้าม }
+  - { term: หลักเอาฟ์บาว, definition: อิเล็กตรอนเติมในระดับย่อยที่มีพลังงานต่ำก่อน แล้วจึงเติมระดับที่สูงขึ้น }
+  - { term: กฎของฮุนด์, definition: ในระดับย่อยเดียวกัน อิเล็กตรอนเข้าทุกออร์บิทัลทีละตัวก่อนแล้วจึงจับคู่ }
+  - { term: เส้นสเปกตรัม, definition: แสงเฉพาะบางความยาวคลื่นที่อะตอมคายออกมา เป็นหลักฐานว่าอิเล็กตรอนอยู่เป็นระดับพลังงาน }
+flashcards:
+  - { front: "ระดับย่อย s p d f มีกี่ออร์บิทัลและจุอิเล็กตรอนได้กี่ตัว", back: "s 1 ออร์บิทัล 2 ตัว · p 3 ออร์บิทัล 6 ตัว · d 5 ออร์บิทัล 10 ตัว · f 7 ออร์บิทัล 14 ตัว" }
+  - { front: "ลำดับการเติมอิเล็กตรอนช่วงแรก", back: "1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p" }
+  - { front: "ข้อยกเว้นของ Cr และ Cu", back: "Cr $\\mathrm{[Ar]\\,3d^5\\,4s^1}$ · Cu $\\mathrm{[Ar]\\,3d^{10}\\,4s^1}$ เพราะ d ครึ่งหนึ่งหรือเต็มเสถียรเป็นพิเศษ" }
+  - { front: "ไอออนบวกของโลหะแทรนซิชันเสียอิเล็กตรอนจากระดับย่อยใดก่อน", back: "4s ก่อน 3d เช่น $\\mathrm{Fe^{2+}}$ = $\\mathrm{[Ar]\\,3d^6}$" }
+  - { front: "แบบของโบร์กับแบบกลุ่มหมอกต่างกันอย่างไร", back: "โบร์: อิเล็กตรอนวิ่งเป็นวงที่ระยะแน่นอน · กลุ่มหมอก: บอกได้เพียงโอกาสที่จะพบ และมีระดับย่อยกับออร์บิทัล" }
+references:
+  - { title: "การจัดเรียงอิเล็กตรอน", url: "https://th.wikipedia.org/wiki/การจัดเรียงอิเล็กตรอน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Electron configuration", url: "https://en.wikipedia.org/wiki/Electron_configuration", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Bohr model", url: "https://en.wikipedia.org/wiki/Bohr_model", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.4 Electronic Structure of Atoms (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

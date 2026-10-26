@@ -1,0 +1,65 @@
+id: math.algebra.sequences-series
+subject: math
+title: { th: ลำดับและอนุกรม, en: Sequences and series }
+summary: ลำดับเลขคณิตและเรขาคณิต พจน์ทั่วไปและสูตรเวียนเกิด ลำดับกำลังสอง ผลบวก n พจน์แรกของอนุกรม ลิมิตของลำดับ ลำดับลู่เข้าและลู่ออก และผลบวกของอนุกรมอนันต์
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.algebra.patterns, math.functions.functions-intro, math.algebra.exponent-laws]
+encompasses:
+  - { id: math.algebra.patterns, weight: 0.3 }
+  - { id: math.algebra.exponent-laws, weight: 0.2 }
+  - { id: math.functions.functions-intro, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: triangular.svg
+    alt: "จำนวนสามเหลี่ยมสี่รูป เรียงจุดเป็นสามเหลี่ยม T₁ = 1 จุด T₂ = 3 จุด T₃ = 6 จุด T₄ = 10 จุด แถวล่างของแต่ละรูประบายสีส้มแสดงจุดที่เพิ่มขึ้น 2, 3, 4 จุด"
+    caption: "จำนวนสามเหลี่ยมเพิ่มขึ้น 2, 3, 4, … ผลต่างครั้งแรกไม่คงที่ แต่ผลต่างครั้งที่สองคงที่เท่ากับ 1"
+  - type: worked-example
+    title: หาพจน์และผลบวกของลำดับเลขคณิต
+    problem: "ลำดับเลขคณิตมี $a_4 = 14$ และ $a_{10} = 32$ จงหา $a_{20}$ และ $S_{20}$"
+    steps:
+      - text: "จาก $a_4$ ไป $a_{10}$ บวก $d$ ไป 6 ครั้ง: $6d = 32 - 14 = 18$ ได้ $d = 3$"
+        why: "ระยะห่างของตำแหน่งคือ $10 - 4 = 6$ ไม่ใช่ 10"
+      - text: "$a_1 = a_4 - 3d = 14 - 9 = 5$"
+      - text: "$a_{20} = a_1 + 19d = 5 + 57 = 62$"
+      - text: "$S_{20} = \\frac{20}{2}(a_1 + a_{20}) = 10(5 + 62) = 670$"
+        why: "จับคู่พจน์แรกกับพจน์สุดท้าย ได้ 10 คู่ คู่ละ 67"
+    answer: "$a_{20} = 62$, $S_{20} = 670$"
+  - { type: check, problem: math.algebra.sequences-series.p001, prompt: "จากพจน์แรกไปพจน์ที่ 5 บวกผลต่างร่วมกี่ครั้ง" }
+  - type: worked-example
+    title: ผลบวกของอนุกรมเรขาคณิต
+    problem: "จงหาผลบวก $5 + 10 + 20 + \\dots$ จำนวน 8 พจน์"
+    steps:
+      - text: "$a_1 = 5$, $r = \\frac{10}{5} = 2$, $n = 8$"
+      - text: "$S_8 = \\dfrac{a_1(1 - r^n)}{1 - r} = \\dfrac{5(1 - 2^8)}{1 - 2}$"
+        why: "เมื่อ $r > 1$ จะเขียน $\\dfrac{a_1(r^n - 1)}{r - 1}$ ก็ได้ค่าเดียวกัน"
+      - text: "$= \\dfrac{5(1 - 256)}{-1} = 5 \\times 255 = 1{,}275$"
+    answer: "$1{,}275$"
+  - type: figure
+    src: halves.svg
+    alt: "สี่เหลี่ยมจัตุรัสพื้นที่ 1 แบ่งครึ่งซ้ายเป็นช่อง 1/2 ส่วนที่เหลือแบ่งเป็น 1/4 แล้ว 1/8 แล้ว 1/16 และ 1/32 เล็กลงเรื่อย ๆ ไปทางมุมขวาล่าง ข้างภาพเขียนว่า 1/2 + 1/4 + 1/8 + … = 1"
+    caption: "เติมครึ่งหนึ่งของส่วนที่เหลือทุกครั้ง ผลบวกเข้าใกล้ 1 แต่ไม่เกิน 1"
+  - { type: check, problem: math.algebra.sequences-series.p005, prompt: "แปลงสูตรเวียนเกิดเป็นสูตรพจน์ทั่วไป" }
+glossary:
+  - { term: ลำดับเลขคณิต, definition: "ลำดับที่พจน์ถัดไปได้จากการบวกผลต่างร่วม d เท่ากันทุกครั้ง" }
+  - { term: ลำดับเรขาคณิต, definition: "ลำดับที่พจน์ถัดไปได้จากการคูณอัตราส่วนร่วม r เท่ากันทุกครั้ง" }
+  - { term: สูตรเวียนเกิด, definition: "การบอกลำดับด้วยพจน์แรกและกฎหาพจน์ถัดไปจากพจน์ก่อนหน้า" }
+  - { term: อนุกรม, definition: "ผลบวกของพจน์ในลำดับ เช่น Sₙ คือผลบวก n พจน์แรก" }
+  - { term: ลำดับลู่เข้า, definition: "ลำดับที่พจน์เข้าใกล้จำนวนจริงค่าเดียวเมื่อ n มากขึ้นไม่สิ้นสุด ถ้าไม่เป็นเช่นนั้นเรียกลู่ออก" }
+flashcards:
+  - { front: "พจน์ทั่วไปของลำดับเลขคณิต", back: "aₙ = a₁ + (n − 1)d" }
+  - { front: "พจน์ทั่วไปของลำดับเรขาคณิต", back: "aₙ = a₁rⁿ⁻¹" }
+  - { front: "ผลบวก n พจน์แรกของอนุกรมเลขคณิต", back: "Sₙ = (n/2)(a₁ + aₙ)" }
+  - { front: "ผลบวก n พจน์แรกของอนุกรมเรขาคณิต", back: "Sₙ = a₁(1 − rⁿ)/(1 − r) เมื่อ r ≠ 1" }
+  - { front: "อนุกรมเรขาคณิตอนันต์มีผลบวกเมื่อใด เท่าไร", back: "เมื่อ |r| < 1 ผลบวก = a₁/(1 − r)" }
+references:
+  - { title: "ลำดับเลขคณิต", url: "https://th.wikipedia.org/wiki/ลำดับเลขคณิต", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Geometric series", url: "https://en.wikipedia.org/wiki/Geometric_series", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Limit of a sequence", url: "https://en.wikipedia.org/wiki/Limit_of_a_sequence", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.4 Series and Their Notations (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/13-4-series-and-their-notations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

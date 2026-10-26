@@ -1,0 +1,64 @@
+id: math.geometry.law-of-sines-cosines
+subject: math
+title: { th: กฎของไซน์และกฎของโคไซน์, en: The law of sines and the law of cosines }
+summary: แก้สามเหลี่ยมใด ๆ ด้วยกฎของไซน์และกฎของโคไซน์ หาพื้นที่จากด้านสองด้านกับมุมระหว่าง และหาระยะทาง ความสูง และแรงลัพธ์ที่วัดตรงไม่ได้
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.geometry.trig-ratios]
+encompasses:
+  - { id: math.geometry.trig-ratios, weight: 0.5 }
+  - { id: math.geometry.pythagoras, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: altitude.svg
+    alt: "สามเหลี่ยม ABC มีจุด A อยู่ด้านบน B ล่างซ้าย C ล่างขวา ด้าน a คือ BC ด้าน b คือ CA ด้าน c คือ AB ลากส่วนสูง h เป็นเส้นประจาก A ตั้งฉากกับ BC ที่จุด D"
+    caption: "ส่วนสูง h = b sin C (จากสามเหลี่ยม ADC) = c sin B (จากสามเหลี่ยม ABD)"
+  - type: worked-example
+    title: กฎของไซน์เมื่อรู้มุมสองมุมกับด้านหนึ่งด้าน
+    problem: "สามเหลี่ยม ABC มี $A = 35°$, $B = 80°$ และ $c = 12$ ซม. จงหา $a$ และ $b$ (ทศนิยม 2 ตำแหน่ง)"
+    steps:
+      - text: "$C = 180° - 35° - 80° = 65°$"
+        why: "ต้องรู้มุมที่อยู่ตรงข้ามกับด้าน $c$ ที่รู้ความยาว จึงจะใช้คู่ $\\tfrac{c}{\\sin C}$ ได้"
+      - text: "$\\dfrac{a}{\\sin 35°} = \\dfrac{12}{\\sin 65°}$ ได้ $a = \\dfrac{12\\sin 35°}{\\sin 65°} \\approx \\dfrac{12(0.5736)}{0.9063} \\approx 7.59$ ซม."
+      - text: "$b = \\dfrac{12\\sin 80°}{\\sin 65°} \\approx \\dfrac{12(0.9848)}{0.9063} \\approx 13.04$ ซม."
+      - text: "ตรวจ: มุมใหญ่ที่สุด $B = 80°$ อยู่ตรงข้ามด้านยาวที่สุด $b$ และมุมเล็กที่สุด $A$ อยู่ตรงข้ามด้านสั้นที่สุด $a$ สมเหตุสมผล"
+    answer: "$a \\approx 7.59$ ซม., $b \\approx 13.04$ ซม."
+  - { type: check, problem: math.geometry.law-of-sines-cosines.p002, prompt: "มุม 30° อยู่ระหว่างด้านทั้งสองหรือไม่" }
+  - type: worked-example
+    title: กฎของโคไซน์เมื่อรู้ด้านทั้งสาม
+    problem: "สามเหลี่ยมมีด้านยาว 9, 10 และ 11 ซม. จงหามุมที่ใหญ่ที่สุดและพื้นที่ของสามเหลี่ยม"
+    steps:
+      - text: "มุมที่ใหญ่ที่สุดอยู่ตรงข้ามด้านที่ยาวที่สุด 11 ซม. ให้เป็นมุม C"
+      - text: "$\\cos C = \\dfrac{9^2 + 10^2 - 11^2}{2(9)(10)} = \\dfrac{60}{180} = \\dfrac13$"
+        why: "จัดรูปจาก $c^2 = a^2 + b^2 - 2ab\\cos C$ ด้านที่อยู่ตรงข้ามมุมที่ต้องการต้องเป็นตัวที่ถูกลบ"
+      - text: "$C = \\cos^{-1}\\left(\\tfrac13\\right) \\approx 70.53°$ (โคไซน์เป็นบวก มุมนี้จึงเป็นมุมแหลม สามเหลี่ยมนี้จึงเป็นสามเหลี่ยมมุมแหลม)"
+      - text: "พื้นที่ $= \\tfrac12(9)(10)\\sin 70.53° \\approx 45 \\times 0.9428 \\approx 42.43$ ตร.ซม."
+        why: "ใช้ด้าน 9 และ 10 ซึ่งมีมุม C อยู่ระหว่างกลาง"
+    answer: "มุมที่ใหญ่ที่สุด $\\approx 70.53°$ พื้นที่ $\\approx 42.43$ ตร.ซม."
+  - type: figure
+    src: river.svg
+    alt: "แม่น้ำแถบสีฟ้า บนฝั่งใกล้มีจุด A และ B ห่างกัน 100 เมตร ต้นไม้ C อยู่ฝั่งตรงข้าม ลากเส้น AC และ BC เป็นสามเหลี่ยม มุมที่ A เท่ากับ 70 องศา มุมที่ B เท่ากับ 60 องศา"
+    caption: "รู้มุมสองมุมกับด้านหนึ่งด้าน ใช้กฎของไซน์หาระยะข้ามแม่น้ำได้ (ดูโจทย์ในคลัง)"
+  - { type: check, problem: math.geometry.law-of-sines-cosines.p004, prompt: "รู้ด้านสองด้านกับมุมระหว่าง ใช้กฎใด" }
+glossary:
+  - { term: กฎของไซน์, definition: "a/sin A = b/sin B = c/sin C ในสามเหลี่ยมใด ๆ" }
+  - { term: กฎของโคไซน์, definition: "c² = a² + b² − 2ab cos C ในสามเหลี่ยมใด ๆ" }
+  - { term: มุมระหว่างด้าน, definition: "มุมที่เกิดจากด้านสองด้านที่กำหนดมาบรรจบกัน เช่น มุม C อยู่ระหว่างด้าน a และ b" }
+  - { term: กรณีกำกวม, definition: "เมื่อรู้ด้านสองด้านกับมุมที่ไม่อยู่ระหว่าง อาจสร้างสามเหลี่ยมได้ 0, 1 หรือ 2 รูป" }
+  - { term: แรงลัพธ์, definition: "แรงเดียวที่ให้ผลเท่ากับแรงหลายแรงรวมกัน หาได้จากเส้นทแยงมุมของรูปสี่เหลี่ยมด้านขนาน" }
+flashcards:
+  - { front: "พื้นที่สามเหลี่ยมเมื่อรู้ a, b และมุม C ระหว่างด้าน", back: "½ab sin C" }
+  - { front: "รู้ด้านสามด้าน จะหามุมด้วยกฎใด", back: "กฎของโคไซน์: cos C = (a² + b² − c²)/(2ab)" }
+  - { front: "รู้มุมสองมุมกับด้านหนึ่งด้าน ใช้กฎใด", back: "กฎของไซน์ (หามุมที่สามจาก 180° ก่อน)" }
+  - { front: "sin 150° และ cos 150° เท่ากับเท่าไร", back: "sin 150° = sin 30° = 1/2, cos 150° = −cos 30° = −√3/2" }
+  - { front: "กฎของโคไซน์เมื่อ C = 90°", back: "c² = a² + b² (ทฤษฎีบทพีทาโกรัส)" }
+references:
+  - { title: "กฎของไซน์", url: "https://th.wikipedia.org/wiki/กฎของไซน์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Law of cosines", url: "https://en.wikipedia.org/wiki/Law_of_cosines", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.1 Non-right Triangles: Law of Sines (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/10-1-non-right-triangles-law-of-sines", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,317 @@
+problems:
+  - id: math.algebra.sequences-series.p001
+    topics: [math.algebra.sequences-series]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาพจน์ที่ 5 ของลำดับเลขคณิต $3, 7, 11, \\dots$"
+    answer: { value: 19 }
+    hints:
+      - "ผลต่างร่วม $d = 7 - 3$"
+      - "$a_5 = a_1 + 4d$"
+    misconceptions:
+      - { match: 23, feedback: "ใช้ $a_1 + 5d$ แต่จากพจน์ที่ 1 ไปพจน์ที่ 5 บวก $d$ เพียง 4 ครั้ง" }
+      - { match: 15, feedback: "15 คือพจน์ที่ 4 ต้องบวกอีก 4" }
+    solution: "$d = 4$, $a_5 = 3 + 4 \\times 4 = 19$ (ไล่ดู: 3, 7, 11, 15, 19)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p002
+    topics: [math.algebra.sequences-series]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นลำดับเรขาคณิต"
+    choices:
+      - { id: a, text: "$2, 6, 18, 54$", correct: true }
+      - { id: b, text: "$2, 6, 10, 14$", feedback: "ผลต่างคงที่ (บวก 4) เป็นลำดับเลขคณิต" }
+      - { id: c, text: "$1, 4, 9, 16$", feedback: "เป็นจำนวนกำลังสอง อัตราส่วน $\\tfrac41 \\ne \\tfrac94$ จึงไม่ใช่ลำดับเรขาคณิต" }
+      - { id: d, text: "$1, 1, 2, 3, 5$", feedback: "เป็นลำดับฟีโบนัชชี พจน์ถัดไปได้จากการบวกสองพจน์ก่อนหน้า ไม่ใช่การคูณจำนวนเดิม" }
+    hints:
+      - "ลำดับเรขาคณิตมีอัตราส่วนของพจน์ที่อยู่ติดกันคงที่"
+      - "หาร พจน์ถัดไป ÷ พจน์ก่อน ทุกคู่"
+    solution: "$\\tfrac62 = \\tfrac{18}{6} = \\tfrac{54}{18} = 3$ อัตราส่วนร่วมคงที่ จึงเป็นลำดับเรขาคณิต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p003
+    topics: [math.algebra.sequences-series]
+    difficulty: 2
+    type: expression
+    stem: "จงหาพจน์ทั่วไป $a_n$ ของลำดับเลขคณิต $5, 8, 11, 14, \\dots$"
+    prefix: "a_n ="
+    answer: { latex: "3n+2", variables: [n] }
+    hints:
+      - "$a_1 = 5$, $d = 3$"
+      - "$a_n = a_1 + (n - 1)d$ แล้วจัดรูป"
+    misconceptions:
+      - { match: "3n+5", feedback: "ใช้ $a_1 + nd$ ลองแทน $n = 1$ จะได้ 8 ไม่ใช่ 5" }
+      - { match: "5n+3", feedback: "สลับบทบาท ผลต่างร่วม 3 ต้องเป็นสัมประสิทธิ์ของ $n$" }
+    solution: "$a_n = 5 + (n - 1)3 = 3n + 2$ ตรวจ: $n = 1, 2, 3$ ได้ 5, 8, 11"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p004
+    topics: [math.algebra.sequences-series]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาพจน์ที่ 8 ของลำดับเรขาคณิต $3, 6, 12, \\dots$"
+    answer: { value: 384 }
+    hints:
+      - "$a_1 = 3$, $r = 2$"
+      - "$a_8 = a_1 r^{7}$"
+    misconceptions:
+      - { match: 768, feedback: "ใช้ $r^8$ แต่จากพจน์ที่ 1 ไปพจน์ที่ 8 คูณ $r$ เพียง 7 ครั้ง" }
+      - { match: 17, feedback: "คิดแบบลำดับเลขคณิต (บวก 2) แต่ลำดับนี้คูณด้วย 2" }
+    solution: "$a_8 = 3 \\times 2^7 = 3 \\times 128 = 384$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p005
+    topics: [math.algebra.sequences-series]
+    difficulty: 2
+    type: match
+    stem: "จับคู่สูตรเวียนเกิดกับสูตรพจน์ทั่วไปของลำดับเดียวกัน"
+    pairs:
+      - { left: "$a_1 = 2$, $a_{n+1} = a_n + 3$", right: "$a_n = 3n - 1$" }
+      - { left: "$a_1 = 2$, $a_{n+1} = 3a_n$", right: "$a_n = 2 \\cdot 3^{n-1}$" }
+      - { left: "$a_1 = 5$, $a_{n+1} = a_n - 2$", right: "$a_n = 7 - 2n$" }
+      - { left: "$a_1 = 1$, $a_{n+1} = a_n + 2n + 1$", right: "$a_n = n^2$" }
+    hints:
+      - "เขียนพจน์แรก ๆ ของสูตรเวียนเกิดออกมาสามสี่พจน์"
+      - "แทน $n = 1, 2, 3$ ในสูตรพจน์ทั่วไปแล้วเทียบ"
+    solution: "2, 5, 8 → $3n - 1$; 2, 6, 18 → $2 \\cdot 3^{n-1}$; 5, 3, 1 → $7 - 2n$; 1, 4, 9, 16 → $n^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p006
+    topics: [math.algebra.sequences-series]
+    difficulty: 3
+    type: numeric
+    stem: "ต้นข้าวออมเงินวันแรก 10 บาท แล้วออมเพิ่มขึ้นวันละ 5 บาท (วันที่สอง 15 บาท วันที่สาม 20 บาท …) ครบ 30 วัน ต้นข้าวออมเงินได้ทั้งหมดกี่บาท"
+    answer: { value: 2475, unit: บาท }
+    hints:
+      - "เป็นอนุกรมเลขคณิต $a_1 = 10$, $d = 5$, $n = 30$"
+      - "$S_{30} = \\frac{30}{2}\\big(2(10) + 29(5)\\big)$"
+    misconceptions:
+      - { match: 2550, feedback: "ใช้วันสุดท้าย $10 + 30 \\times 5 = 160$ แต่วันที่ 30 คือ $10 + 29 \\times 5 = 155$" }
+      - { match: 155, feedback: "155 คือเงินที่ออมในวันที่ 30 วันเดียว โจทย์ถามผลรวมทั้ง 30 วัน" }
+    solution: "วันที่ 30 ออม $10 + 29 \\times 5 = 155$ บาท ผลรวม $S_{30} = \\frac{30}{2}(10 + 155) = 15 \\times 165 = 2{,}475$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p007
+    topics: [math.algebra.sequences-series]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาผลบวก 6 พจน์แรกของอนุกรมเรขาคณิต $2 + 6 + 18 + \\dots$"
+    answer: { value: 728 }
+    hints:
+      - "$a_1 = 2$, $r = 3$, $n = 6$"
+      - "$S_n = \\dfrac{a_1(r^n - 1)}{r - 1}$"
+    misconceptions:
+      - { match: 242, feedback: "ใช้ $3^5$ ในสูตรผลบวก แต่ผลบวก 6 พจน์ใช้ $r^6$" }
+      - { match: 486, feedback: "486 คือพจน์ที่ 6 ($2 \\times 3^5$) โจทย์ถามผลบวก" }
+    solution: "$S_6 = \\dfrac{2(3^6 - 1)}{3 - 1} = 3^6 - 1 = 728$ (ตรวจ: 2 + 6 + 18 + 54 + 162 + 486 = 728)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p008
+    topics: [math.algebra.sequences-series]
+    difficulty: 3
+    type: mcq
+    stem: "ลำดับใดเป็นลำดับลู่เข้า"
+    choices:
+      - { id: a, text: "$a_n = \\dfrac{n + 1}{n}$", correct: true }
+      - { id: b, text: "$a_n = (-1)^n$", feedback: "พจน์สลับ $-1, 1, -1, 1, \\dots$ ไม่เข้าใกล้ค่าเดียว จึงลู่ออก แม้จะมีขอบเขต" }
+      - { id: c, text: "$a_n = 2n - 1$", feedback: "พจน์โตขึ้นไม่มีขอบเขต จึงลู่ออก" }
+      - { id: d, text: "$a_n = (1.5)^n$", feedback: "$|r| = 1.5 > 1$ พจน์โตขึ้นไม่มีขอบเขต จึงลู่ออก" }
+    hints:
+      - "ลำดับลู่เข้าเมื่อพจน์เข้าใกล้จำนวนเดียวเมื่อ $n$ มากขึ้น"
+      - "$\\dfrac{n + 1}{n} = 1 + \\dfrac1n$"
+    solution: "$\\dfrac{n + 1}{n} = 1 + \\dfrac1n \\to 1$ จึงลู่เข้าสู่ 1 ลำดับอื่นลู่ออก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p009
+    topics: [math.algebra.sequences-series]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาผลบวกของอนุกรมอนันต์ $12 + 6 + 3 + \\tfrac32 + \\dots$"
+    answer: { value: 24 }
+    hints:
+      - "$a_1 = 12$, $r = \\tfrac12$ ซึ่ง $|r| < 1$"
+      - "$S_\\infty = \\dfrac{a_1}{1 - r}$"
+    misconceptions:
+      - { match: 8, feedback: "ใช้ $\\dfrac{a_1}{1 + r}$ ตัวส่วนต้องเป็น $1 - r$" }
+      - { match: 6, feedback: "คูณ $a_1 \\times r$ แต่สูตรคือหารด้วย $1 - r$" }
+    solution: "$S_\\infty = \\dfrac{12}{1 - \\tfrac12} = \\dfrac{12}{\\tfrac12} = 24$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p010
+    topics: [math.algebra.sequences-series]
+    difficulty: 3
+    type: numeric
+    stem: "ลำดับ $f$ นิยามแบบเวียนเกิดว่า $f(0) = f(1) = 1$ และ $f(n + 1) = f(n) + f(n - 1)$ เมื่อ $n \\ge 1$ จงหา $f(5)$"
+    answer: { value: 8 }
+    hints:
+      - "ลำดับนี้เริ่มที่ $f(0)$ ไม่ใช่ $f(1)$"
+      - "$f(2) = f(1) + f(0)$, $f(3) = f(2) + f(1)$ ไล่ไปทีละพจน์"
+    misconceptions:
+      - { match: 5, feedback: "นับพจน์แรกเป็นตำแหน่งที่ 1 แต่ลำดับนี้มีโดเมนเริ่มที่ 0 ค่า 5 คือ $f(4)$" }
+      - { match: 13, feedback: "13 คือ $f(6)$ นับเกินไปหนึ่งพจน์" }
+    solution: "$f(0) = 1, f(1) = 1, f(2) = 2, f(3) = 3, f(4) = 5, f(5) = 8$ ลำดับเป็นฟังก์ชันที่มีโดเมนเป็นจำนวนเต็ม $0, 1, 2, \\dots$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p011
+    topics: [math.algebra.sequences-series]
+    difficulty: 4
+    type: expression
+    stem: "จงหาพจน์ทั่วไป $a_n$ ของลำดับ $3, 8, 15, 24, 35, \\dots$"
+    prefix: "a_n ="
+    answer: { latex: "n^2+2n", variables: [n] }
+    hints:
+      - "ผลต่างครั้งแรก 5, 7, 9, 11 ไม่คงที่ ผลต่างครั้งที่สองคือ 2"
+      - "ผลต่างครั้งที่สอง 2 ทำให้สัมประสิทธิ์ของ $n^2$ เป็น 1 ลบ $n^2$ ออกจากแต่ละพจน์แล้วดูสิ่งที่เหลือ"
+    misconceptions:
+      - { match: "5n-2", feedback: "ใช้ผลต่างครั้งแรก 5 เป็นผลต่างร่วม แต่ลำดับนี้ไม่ใช่ลำดับเลขคณิต ($a_3$ จะได้ 13 ไม่ใช่ 15)" }
+      - { match: "2n^2+1", feedback: "สัมประสิทธิ์ของ $n^2$ เท่ากับครึ่งหนึ่งของผลต่างครั้งที่สอง ไม่ใช่เท่ากับผลต่างครั้งที่สอง" }
+    solution: "ผลต่างครั้งที่สอง 2 จึง $a = 1$ ลบ $n^2$: $3 - 1, 8 - 4, 15 - 9, 24 - 16 = 2, 4, 6, 8$ คือ $2n$ จึงได้ $a_n = n^2 + 2n = n(n + 2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p012
+    topics: [math.algebra.sequences-series]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านขายของชำซ้อนกระป๋องนมเป็นกองสามเหลี่ยม แถวบนสุด 1 กระป๋อง แถวถัดลงมามากกว่าแถวบนหนึ่งกระป๋องทุกแถว (ภาพแสดง 5 แถวบน) ถ้าใช้กระป๋องทั้งหมด 120 กระป๋องพอดี กองนี้มีกี่แถว"
+    figure:
+      src: cans.svg
+      alt: "กระป๋องนมซ้อนเป็นกองสามเหลี่ยม 5 แถว แถวบนสุด 1 กระป๋อง แถวถัดลงมา 2, 3, 4, 5 กระป๋อง"
+    answer: { value: 15, unit: แถว }
+    hints:
+      - "จำนวนกระป๋อง $n$ แถวคือ $1 + 2 + \\dots + n = \\dfrac{n(n + 1)}{2}$"
+      - "แก้ $\\dfrac{n(n + 1)}{2} = 120$ หรือ $n^2 + n - 240 = 0$"
+    misconceptions:
+      - { match: 16, feedback: "$\\tfrac{16 \\times 17}{2} = 136$ เกิน 120 ตรวจคำตอบด้วยการแทนกลับ" }
+      - { match: 24, feedback: "หาร $120 \\div 5$ แต่จำนวนกระป๋องต่อแถวไม่เท่ากัน" }
+    solution: "$\\dfrac{n(n + 1)}{2} = 120 \\Rightarrow n^2 + n - 240 = 0 \\Rightarrow (n + 16)(n - 15) = 0$ ได้ $n = 15$ แถว (ตรวจ: $\\tfrac{15 \\times 16}{2} = 120$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p013
+    topics: [math.algebra.sequences-series]
+    difficulty: 5
+    type: numeric
+    stem: "ปล่อยลูกบอลจากความสูง 10 เมตร ทุกครั้งที่ตกถึงพื้นจะกระดอนขึ้นสูง $\\tfrac35$ ของความสูงก่อนหน้า (ดูภาพ) ถ้ากระดอนไปเรื่อย ๆ จนหยุด ลูกบอลเคลื่อนที่ขึ้นลงเป็นระยะทางรวมกี่เมตร"
+    figure:
+      src: bounce.svg
+      alt: "ลูกบอลตกจากความสูง 10 เมตรถึงพื้น แล้วกระดอนเป็นโค้งสูง 6 เมตร 3.6 เมตร และต่ำลงเรื่อย ๆ เส้นประบอกความสูงสูงสุดของแต่ละครั้ง"
+    answer: { value: 40, unit: เมตร }
+    hints:
+      - "ขาลงครั้งแรก 10 เมตร หลังจากนั้นแต่ละการกระดอนมีทั้งขาขึ้นและขาลง"
+      - "ความสูงที่กระดอน $6 + 3.6 + 2.16 + \\dots$ เป็นอนุกรมเรขาคณิตอนันต์ ต้องคูณ 2"
+    misconceptions:
+      - { match: 25, feedback: "$\\tfrac{10}{1 - 0.6} = 25$ นับระยะลงอย่างเดียว ลืมว่าทุกการกระดอนต้องขึ้นแล้วลง" }
+      - { match: 50, feedback: "คูณ 2 ทั้งอนุกรมรวมครั้งแรกด้วย แต่ครั้งแรกมีแต่ขาลง 10 เมตร" }
+    solution: "ระยะ $= 10 + 2(6 + 3.6 + 2.16 + \\dots) = 10 + 2 \\cdot \\dfrac{6}{1 - 0.6} = 10 + 2(15) = 40$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p014
+    topics: [math.algebra.sequences-series]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{n\\to\\infty} \\frac{2n^2 + 1}{n^2 + 3n}$"
+    answer: { value: 2 }
+    hints:
+      - "หารทั้งเศษและส่วนด้วย $n^2$"
+      - "$\\dfrac{1}{n^2} \\to 0$ และ $\\dfrac{3}{n} \\to 0$"
+    misconceptions:
+      - { match: 0.75, feedback: "แทน $n = 1$ ได้ $\\tfrac34$ แต่ลิมิตต้องดูเมื่อ $n$ มากขึ้นไม่สิ้นสุด" }
+      - { match: 0, feedback: "เศษและส่วนมีดีกรีเท่ากัน ลิมิตคืออัตราส่วนของสัมประสิทธิ์นำ ไม่ใช่ 0" }
+    solution: "$\\dfrac{2n^2 + 1}{n^2 + 3n} = \\dfrac{2 + \\frac{1}{n^2}}{1 + \\frac{3}{n}} \\to \\dfrac{2 + 0}{1 + 0} = 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p015
+    topics: [math.algebra.sequences-series]
+    difficulty: 5
+    type: numeric
+    stem: "นิดฝากเงินต้นเดือนทุกเดือน เดือนละ 1,000 บาท ในบัญชีที่ให้ดอกเบี้ยทบต้นเดือนละ 1% เมื่อสิ้นเดือนที่ 12 จะมีเงินในบัญชีกี่บาท (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 12809.33, tolerance: 1, unit: บาท }
+    hints:
+      - "เงินงวดแรกอยู่ครบ 12 เดือน กลายเป็น $1000(1.01)^{12}$ งวดสุดท้ายอยู่ 1 เดือน กลายเป็น $1000(1.01)$"
+      - "ผลรวม $1000(1.01) + 1000(1.01)^2 + \\dots + 1000(1.01)^{12}$ เป็นอนุกรมเรขาคณิต $a_1 = 1010$, $r = 1.01$, $n = 12$"
+    misconceptions:
+      - { match: 12682.50, feedback: "คิดเป็นฝากปลายเดือน (งวดสุดท้ายไม่ได้ดอกเบี้ย) แต่โจทย์ฝากต้นเดือน ทุกงวดได้ดอกเบี้ยอย่างน้อย 1 เดือน" }
+      - { match: 12120, feedback: "คิดดอกเบี้ยให้ทุกงวดเพียงเดือนเดียว ($12{,}000 \\times 1.01$) แต่เงินงวดแรก ๆ อยู่ในบัญชีหลายเดือน ต้องทบต้นตามจำนวนเดือน" }
+    solution: "$S_{12} = \\dfrac{1010\\big((1.01)^{12} - 1\\big)}{1.01 - 1} \\approx 1010 \\times 12.6825 \\approx 12{,}809.33$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p016
+    topics: [math.algebra.sequences-series]
+    difficulty: 4
+    type: expression
+    stem: "จงเขียนทศนิยมซ้ำ $0.\\dot3\\dot6 = 0.363636\\dots$ เป็นเศษส่วนอย่างต่ำ"
+    answer: { latex: "\\frac{4}{11}", variables: [] }
+    hints:
+      - "$0.3636\\ldots = 0.36 + 0.0036 + 0.000036 + \\dots$ เป็นอนุกรมเรขาคณิต $r = 0.01$"
+      - "$S_\\infty = \\dfrac{0.36}{1 - 0.01}$ แล้วทำให้เป็นเศษส่วนอย่างต่ำ"
+    misconceptions:
+      - { match: "\\frac{9}{25}", feedback: "$\\tfrac{9}{25} = 0.36$ คือทศนิยมไม่ซ้ำ ส่วนที่ซ้ำไม่สิ้นสุดทำให้ค่ามากกว่า 0.36" }
+      - { match: "\\frac{2}{5}", feedback: "ใช้ $r = 0.1$ ได้ $\\tfrac{0.36}{0.9}$ แต่กลุ่มที่ซ้ำมีสองหลัก จึง $r = 0.01$" }
+    solution: "$S_\\infty = \\dfrac{0.36}{0.99} = \\dfrac{36}{99} = \\dfrac{4}{11}$ (ตรวจ: $4 \\div 11 = 0.3636\\ldots$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p017
+    topics: [math.algebra.sequences-series]
+    difficulty: 4
+    type: numeric
+    stem: "ลำดับเลขคณิตมี $a_3 = 11$ และ $a_8 = 31$ จงหาผลบวก 10 พจน์แรก"
+    answer: { value: 210 }
+    hints:
+      - "$a_8 - a_3 = 5d$"
+      - "หา $a_1$ แล้วใช้ $S_{10} = \\frac{10}{2}(2a_1 + 9d)$"
+    misconceptions:
+      - { match: 39, feedback: "39 คือพจน์ที่ 10 ($a_{10}$) โจทย์ถามผลบวก 10 พจน์แรก" }
+      - { match: 290, feedback: "ใช้ $a_1 = 11$ แต่ 11 คือพจน์ที่ 3 ต้องย้อนกลับ $a_1 = 11 - 2d$" }
+    solution: "$5d = 20$ ได้ $d = 4$, $a_1 = 11 - 2(4) = 3$, $S_{10} = 5(2 \\times 3 + 9 \\times 4) = 5 \\times 42 = 210$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p018
+    topics: [math.algebra.sequences-series]
+    difficulty: 5
+    type: numeric
+    stem: "อนุกรม $1 + 2x + 4x^2 + 8x^3 + \\dots$ มีผลบวกเท่ากับ 4 จงหา $x$ (ตอบเป็นทศนิยม)"
+    answer: { value: 0.375, tolerance: 0.001 }
+    hints:
+      - "เป็นอนุกรมเรขาคณิต $a_1 = 1$, $r = 2x$ มีผลบวกเมื่อ $|2x| < 1$"
+      - "$\\dfrac{1}{1 - 2x} = 4$"
+    misconceptions:
+      - { match: 0.75, feedback: "แก้ได้ $1 - r = \\tfrac14$ จึง $r = \\tfrac34$ แต่ $r = 2x$ ต้องหารด้วย 2 อีก" }
+      - { match: -1.5, feedback: "จัดสมการผิดเป็น $1 - 2x = 4$ ต้องได้ $1 - 2x = \\tfrac14$" }
+    solution: "$\\dfrac{1}{1 - 2x} = 4 \\Rightarrow 1 - 2x = \\tfrac14 \\Rightarrow x = \\tfrac38 = 0.375$ ตรวจเงื่อนไข $|2x| = 0.75 < 1$ จึงใช้สูตรได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.sequences-series.p019
+    topics: [math.algebra.sequences-series]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นการพิสูจน์สูตรผลบวก $n$ พจน์แรกของอนุกรมเรขาคณิต ($r \\ne 1$)"
+    items:
+      - "$S_n = a_1 + a_1r + a_1r^2 + \\dots + a_1r^{n-1}$"
+      - "$rS_n = a_1r + a_1r^2 + \\dots + a_1r^{n-1} + a_1r^n$"
+      - "นำมาลบกัน พจน์ตรงกลางหักล้างกันหมด: $S_n - rS_n = a_1 - a_1r^n$"
+      - "$S_n(1 - r) = a_1(1 - r^n)$"
+      - "$S_n = \\dfrac{a_1(1 - r^n)}{1 - r}$ เพราะ $r \\ne 1$ จึงหารด้วย $1 - r$ ได้"
+    hints:
+      - "เริ่มจากการเขียน $S_n$ ให้ครบ แล้วคูณทั้งสองข้างด้วย $r$"
+      - "ขั้นสุดท้ายต้องหาร จึงต้องดึงตัวร่วมก่อน"
+    solution: "เขียน $S_n$ → คูณด้วย $r$ → ลบกัน → ดึงตัวร่วม $S_n$ และ $a_1$ → หารด้วย $1 - r$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

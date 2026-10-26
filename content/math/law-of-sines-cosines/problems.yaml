@@ -1,0 +1,319 @@
+problems:
+  - id: math.geometry.law-of-sines-cosines.p001
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 1
+    type: mcq
+    stem: "ในสามเหลี่ยม ABC ข้อใดเป็นกฎของโคไซน์สำหรับหาด้าน $a$"
+    choices:
+      - { id: a, text: "$a^2 = b^2 + c^2 - 2bc\\cos A$", correct: true }
+      - { id: b, text: "$a^2 = b^2 + c^2 + 2bc\\cos A$", feedback: "เครื่องหมายต้องเป็นลบ เมื่อ $A$ เป็นมุมแหลม $a$ ต้องสั้นกว่าด้านตรงข้ามมุมฉาก" }
+      - { id: c, text: "$a^2 = b^2 + c^2 - 2bc\\cos B$", feedback: "มุมในสูตรต้องเป็นมุม $A$ ที่อยู่ตรงข้ามด้าน $a$ และอยู่ระหว่างด้าน $b$ กับ $c$" }
+      - { id: d, text: "$a^2 = b^2 + c^2 - bc\\cos A$", feedback: "ขาดเลข 2 สูตรคือ $-2bc\\cos A$" }
+    hints:
+      - "ด้านที่อยู่ข้างซ้ายของสมการต้องอยู่ตรงข้ามมุมในสูตร"
+      - "เมื่อ $A = 90°$ สูตรต้องกลายเป็นทฤษฎีบทพีทาโกรัส"
+    solution: "$a^2 = b^2 + c^2 - 2bc\\cos A$ มุม $A$ อยู่ตรงข้ามด้าน $a$ และอยู่ระหว่างด้าน $b$ กับ $c$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p002
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 1
+    type: numeric
+    stem: "สามเหลี่ยมมีด้านยาว 8 ซม. และ 5 ซม. มุมระหว่างด้านทั้งสองเท่ากับ 30° จงหาพื้นที่ของสามเหลี่ยมเป็นตารางเซนติเมตร"
+    answer: { value: 10, unit: ตร.ซม. }
+    hints:
+      - "พื้นที่ $= \\tfrac12 ab\\sin C$"
+      - "$\\sin 30° = \\tfrac12$"
+    misconceptions:
+      - { match: 20, feedback: "ลืม $\\tfrac12$ ในสูตรพื้นที่" }
+      - { match: 17.32, feedback: "ใช้ $\\cos 30°$ แต่สูตรพื้นที่ใช้ $\\sin$ ของมุมระหว่างด้าน" }
+    solution: "พื้นที่ $= \\tfrac12(8)(5)\\sin 30° = 20 \\times \\tfrac12 = 10$ ตร.ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p003
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 2
+    type: numeric
+    stem: "สามเหลี่ยม ABC มี $A = 40°$, $B = 75°$ และ $a = 10$ ซม. จงหา $b$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 15.03, tolerance: 0.1, unit: ซม. }
+    hints:
+      - "รู้มุม $A$ กับด้านตรงข้าม $a$ เป็นคู่ ใช้กฎของไซน์"
+      - "$\\dfrac{b}{\\sin 75°} = \\dfrac{10}{\\sin 40°}$"
+    misconceptions:
+      - { match: 6.65, feedback: "สลับไซน์ ได้ $\\dfrac{10\\sin 40°}{\\sin 75°}$ ด้าน $b$ อยู่ตรงข้ามมุมที่ใหญ่กว่า จึงต้องยาวกว่า 10" }
+    solution: "$b = \\dfrac{10\\sin 75°}{\\sin 40°} \\approx \\dfrac{10(0.9659)}{0.6428} \\approx 15.03$ ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p004
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 2
+    type: numeric
+    stem: "สามเหลี่ยม ABC มี $b = 7$ ซม., $c = 5$ ซม. และ $A = 60°$ จงหา $a$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.24, tolerance: 0.05, unit: ซม. }
+    hints:
+      - "รู้ด้านสองด้านกับมุมระหว่าง ใช้กฎของโคไซน์"
+      - "$a^2 = 7^2 + 5^2 - 2(7)(5)\\cos 60°$"
+    misconceptions:
+      - { match: 8.60, feedback: "ลืมพจน์ $-2bc\\cos A$ ได้ $\\sqrt{74}$ ซึ่งใช้ได้เฉพาะเมื่อ $A = 90°$" }
+      - { match: 10.44, feedback: "ใช้เครื่องหมายบวก ได้ $\\sqrt{109}$ แต่กฎของโคไซน์ลบ $2bc\\cos A$" }
+    solution: "$a^2 = 49 + 25 - 70 \\times \\tfrac12 = 39$ ได้ $a = \\sqrt{39} \\approx 6.24$ ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p005
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 3
+    type: numeric
+    stem: "สามเหลี่ยมมีด้านยาว 5, 7 และ 8 หน่วย จงหาขนาดของมุมที่อยู่ตรงข้ามด้านยาว 7 หน่วยเป็นองศา"
+    answer: { value: 60, tolerance: 0.5, unit: องศา }
+    hints:
+      - "ให้ด้านที่อยู่ตรงข้ามมุมที่ต้องการเป็นตัวที่ถูกลบในสูตร"
+      - "$\\cos\\theta = \\dfrac{5^2 + 8^2 - 7^2}{2(5)(8)}$"
+    misconceptions:
+      - { match: 81.79, feedback: "หามุมที่อยู่ตรงข้ามด้าน 8 แต่โจทย์ถามมุมตรงข้ามด้าน 7" }
+      - { match: 38.21, feedback: "หามุมที่อยู่ตรงข้ามด้าน 5 แต่โจทย์ถามมุมตรงข้ามด้าน 7" }
+    solution: "$\\cos\\theta = \\dfrac{25 + 64 - 49}{80} = \\dfrac{40}{80} = \\dfrac12$ ได้ $\\theta = 60°$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p006
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 3
+    type: expression
+    simplified: true
+    stem: "สามเหลี่ยม ABC มี $b = 4$, $c = 6$ และ $A = 120°$ จงหา $a$ ในรูปอย่างง่ายของจำนวนในรูปกรณฑ์"
+    prefix: "a ="
+    answer: { latex: "2\\sqrt{19}", variables: [] }
+    hints:
+      - "$a^2 = b^2 + c^2 - 2bc\\cos A$ และ $\\cos 120° = -\\tfrac12$"
+      - "ลบด้วยจำนวนลบกลายเป็นบวก แล้วทำ $\\sqrt{76}$ ให้อยู่ในรูปอย่างง่าย"
+    misconceptions:
+      - { match: "2\\sqrt{7}", feedback: "ใช้ $\\cos 120° = +\\tfrac12$ ได้ $\\sqrt{28}$ แต่โคไซน์ของมุมป้านเป็นลบ" }
+      - { match: "4\\sqrt{19}", feedback: "$76 = 4 \\times 19$ ดึงออกมาได้ $\\sqrt4 = 2$ ไม่ใช่ 4" }
+    solution: "$a^2 = 16 + 36 - 2(4)(6)\\left(-\\tfrac12\\right) = 52 + 24 = 76$ ได้ $a = \\sqrt{76} = 2\\sqrt{19}$ (ยาวกว่าด้านอื่น สมเหตุสมผลเพราะอยู่ตรงข้ามมุมป้าน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p007
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ข้อมูลที่รู้กับวิธีเริ่มแก้สามเหลี่ยม"
+    pairs:
+      - { left: "มุมสองมุมกับด้านหนึ่งด้าน", right: "หามุมที่สามจาก 180° แล้วใช้กฎของไซน์" }
+      - { left: "ด้านสองด้านกับมุมที่อยู่ระหว่าง", right: "ใช้กฎของโคไซน์หาด้านที่สาม" }
+      - { left: "ด้านทั้งสาม", right: "ใช้กฎของโคไซน์หามุม" }
+      - { left: "ด้านสองด้านกับมุมที่ไม่อยู่ระหว่าง", right: "ใช้กฎของไซน์หามุม แล้วตรวจว่ามีสองคำตอบหรือไม่" }
+    hints:
+      - "กฎของไซน์ต้องมีมุมกับด้านที่อยู่ตรงข้ามกันครบหนึ่งคู่"
+      - "กฎของโคไซน์เชื่อมด้านทั้งสามกับมุมหนึ่งมุม"
+    solution: "ม.ม.ด. → ไซน์; ด.ม.ด. → โคไซน์หาด้าน; ด.ด.ด. → โคไซน์หามุม; ด.ด.ม. → ไซน์หามุม ระวังกรณีกำกวม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p008
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 3
+    type: numeric
+    stem: "ช่างสำรวจยืนริมแม่น้ำเจ้าพระยา ปักหมุด A และ B ห่างกัน 100 เมตร แล้ววัดมุมไปยังต้นไม้ C ฝั่งตรงข้ามได้ ∠CAB = 70° และ ∠CBA = 60° (ดูภาพ) ระยะ AC ยาวกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    figure:
+      src: river.svg
+      alt: "แม่น้ำ ฝั่งใกล้มีจุด A และ B ห่างกัน 100 เมตร ต้นไม้ C อยู่ฝั่งตรงข้าม มุมที่ A เท่ากับ 70 องศา มุมที่ B เท่ากับ 60 องศา"
+    answer: { value: 113.05, tolerance: 0.5, unit: เมตร }
+    hints:
+      - "มุมที่ C เท่ากับ $180° - 70° - 60°$"
+      - "AC อยู่ตรงข้ามมุม B ใช้ $\\dfrac{AC}{\\sin B} = \\dfrac{AB}{\\sin C}$"
+    misconceptions:
+      - { match: 122.67, feedback: "ได้ความยาว BC (ตรงข้ามมุม 70°) ด้าน AC อยู่ตรงข้ามมุม B = 60°" }
+      - { match: 92.16, feedback: "คำนวณ $\\tfrac{100\\sin 60°}{\\sin 70°}$ แต่ด้าน AB = 100 อยู่ตรงข้ามมุม C ต้องหามุม C = 50° แล้วใช้ $\\sin 50°$ เป็นตัวหาร" }
+    solution: "$C = 50°$ และ $AC = \\dfrac{100\\sin 60°}{\\sin 50°} \\approx \\dfrac{100(0.8660)}{0.7660} \\approx 113.05$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p009
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 4
+    type: numeric
+    stem: "ที่ดินรูปสามเหลี่ยมในอำเภอแห่งหนึ่งมีด้านยาว 40 เมตรและ 30 เมตร มุมระหว่างด้านทั้งสองเท่ากับ 110° ที่ดินนี้มีพื้นที่กี่ตารางวา (1 ตารางวา = 4 ตารางเมตร ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 140.95, tolerance: 0.5, unit: ตร.วา }
+    hints:
+      - "หาพื้นที่เป็นตารางเมตรด้วย $\\tfrac12 ab\\sin C$ ก่อน"
+      - "$\\sin 110° = \\sin 70°$ แล้วหารด้วย 4 เพื่อเปลี่ยนเป็นตารางวา"
+    misconceptions:
+      - { match: 563.82, feedback: "563.82 คือพื้นที่เป็นตารางเมตร ต้องหารด้วย 4 เพื่อเปลี่ยนเป็นตารางวา" }
+      - { match: 281.91, feedback: "ลืม $\\tfrac12$ ในสูตรพื้นที่ (และได้เป็นตารางวาแล้ว)" }
+    solution: "พื้นที่ $= \\tfrac12(40)(30)\\sin 110° = 600 \\times 0.9397 \\approx 563.82$ ตร.ม. $= 563.82 \\div 4 \\approx 140.95$ ตร.วา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p010
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 4
+    type: numeric
+    stem: "แรง 40 นิวตันและ 30 นิวตันกระทำที่จุดเดียวกัน ทำมุม 60° ต่อกัน (ดูภาพ) แรงลัพธ์มีขนาดกี่นิวตัน (ทศนิยม 2 ตำแหน่ง)"
+    figure:
+      src: forces.svg
+      alt: "จุด O มีลูกศรแรง 40 นิวตันชี้ไปทางขวา และลูกศรแรง 30 นิวตันทำมุม 60 องศากับแรงแรก เส้นประต่อเป็นรูปสี่เหลี่ยมด้านขนาน และลูกศร R จาก O ไปยังมุมตรงข้ามของสี่เหลี่ยมด้านขนาน"
+    answer: { value: 60.83, tolerance: 0.2, unit: N }
+    hints:
+      - "R เป็นเส้นทแยงมุมของรูปสี่เหลี่ยมด้านขนาน ในสามเหลี่ยมที่มีด้าน 40, 30 และ R มุมระหว่างด้าน 40 กับ 30 คือ $180° - 60° = 120°$"
+      - "$R^2 = 40^2 + 30^2 - 2(40)(30)\\cos 120°$"
+    misconceptions:
+      - { match: 36.06, feedback: "ใช้มุม 60° ในกฎของโคไซน์ แต่มุมภายในของสามเหลี่ยมแรงคือ 120° (ผลที่ได้เป็นผลต่างของแรง ไม่ใช่ผลรวม)" }
+      - { match: 70, feedback: "บวกขนาดตรง ๆ ใช้ได้เฉพาะเมื่อแรงทั้งสองชี้ไปทางเดียวกัน" }
+    solution: "$R^2 = 1600 + 900 - 2400\\cos 120° = 2500 + 1200 = 3700$ ได้ $R = \\sqrt{3700} \\approx 60.83$ นิวตัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p011
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 4
+    type: mcq
+    stem: "กำหนด $A = 30°$, $a = 6$ และ $b = 10$ สร้างสามเหลี่ยม ABC ได้กี่รูป"
+    choices:
+      - { id: a, text: "2 รูป", correct: true }
+      - { id: b, text: "1 รูป", feedback: "$\\sin B = \\tfrac{10\\sin 30°}{6} = \\tfrac56$ ให้ทั้งมุมแหลมและมุมป้าน และมุมป้าน (ประมาณ 123.6°) รวมกับ 30° ยังน้อยกว่า 180°" }
+      - { id: c, text: "ไม่มีเลย", feedback: "ไม่มีเมื่อ $a$ สั้นกว่าระยะ $b\\sin A = 5$ แต่ $a = 6 > 5$" }
+      - { id: d, text: "ได้ไม่จำกัด", feedback: "รู้ด้านสองด้านกับมุมหนึ่งมุม รูปจึงมีได้จำกัด (มากที่สุด 2 รูป)" }
+    hints:
+      - "ใช้กฎของไซน์หา $\\sin B$"
+      - "ตรวจทั้ง $B$ ที่เป็นมุมแหลมและ $180° - B$ ว่ารวมกับ $A$ แล้วน้อยกว่า 180° หรือไม่"
+    solution: "$\\sin B = \\dfrac{10 \\times 0.5}{6} = \\dfrac56$ ได้ $B \\approx 56.4°$ หรือ $B \\approx 123.6°$ ทั้งสองกรณีรวมกับ $A = 30°$ ได้น้อยกว่า 180° จึงสร้างได้ 2 รูป (เพราะ $b\\sin A = 5 < a = 6 < b = 10$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p012
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 5
+    type: numeric
+    stem: "นักเรียนวัดมุมเงยยอดเจดีย์จากจุด A ได้ 30° เดินตรงเข้าหาเจดีย์ 50 เมตรถึงจุด B วัดมุมเงยได้ 45° (ดูภาพ) เจดีย์สูงกี่เมตร (ทศนิยม 2 ตำแหน่ง ไม่คิดความสูงของผู้วัด)"
+    figure:
+      src: chedi.svg
+      alt: "พื้นราบ มีจุด A และ B ห่างกัน 50 เมตร เจดีย์อยู่ทางขวา สูง h เส้นประจาก A ไปยอดเจดีย์ทำมุมเงย 30 องศา เส้นประจาก B ไปยอดเจดีย์ทำมุมเงย 45 องศา"
+    answer: { value: 68.30, tolerance: 0.5, unit: เมตร }
+    hints:
+      - "ในสามเหลี่ยม A-B-ยอดเจดีย์ มุมที่ B คือ $180° - 45° = 135°$ มุมที่ยอดคือ $45° - 30° = 15°$"
+      - "ใช้กฎของไซน์หาระยะจาก B ถึงยอด แล้วความสูง $= (\\text{ระยะนั้น})\\sin 45°$"
+    misconceptions:
+      - { match: 96.59, feedback: "96.59 คือระยะเอียงจาก B ถึงยอดเจดีย์ ต้องคูณ $\\sin 45°$ อีกครั้งเพื่อหาความสูงตามแนวดิ่ง" }
+      - { match: 28.87, feedback: "คิดว่าระยะ 50 เมตรคือระยะจาก A ถึงฐานเจดีย์ ($50\\tan 30°$) แต่ 50 เมตรคือระยะระหว่าง A กับ B" }
+    solution: "ในสามเหลี่ยม ABT (T = ยอด): $\\angle T = 15°$, $BT = \\dfrac{50\\sin 30°}{\\sin 15°} \\approx 96.59$ ม. ความสูง $h = BT\\sin 45° \\approx 68.30$ ม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p013
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นการพิสูจน์กฎของไซน์จากสูตรพื้นที่"
+    items:
+      - "พื้นที่ของสามเหลี่ยม ABC เขียนได้สามแบบ: $\\tfrac12 bc\\sin A = \\tfrac12 ac\\sin B = \\tfrac12 ab\\sin C$"
+      - "คูณทุกข้างด้วย 2: $bc\\sin A = ac\\sin B = ab\\sin C$"
+      - "หารทุกข้างด้วย $abc$: $\\dfrac{\\sin A}{a} = \\dfrac{\\sin B}{b} = \\dfrac{\\sin C}{c}$"
+      - "กลับเศษเป็นส่วน: $\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B} = \\dfrac{c}{\\sin C}$"
+    hints:
+      - "เริ่มจากความจริงที่ว่าสามเหลี่ยมหนึ่งรูปมีพื้นที่ค่าเดียว"
+      - "หารด้วย $abc$ ทำให้แต่ละพจน์เหลือไซน์ของมุมหารด้วยด้านตรงข้าม"
+    solution: "พื้นที่ค่าเดียวเขียนได้สามแบบ → คูณ 2 → หารด้วย $abc$ → กลับเศษส่วน ได้กฎของไซน์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p014
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 3
+    type: mcq
+    stem: "สามเหลี่ยมมีด้านยาว 5, 6 และ 8 หน่วย เป็นสามเหลี่ยมชนิดใด"
+    choices:
+      - { id: a, text: "สามเหลี่ยมมุมป้าน", correct: true }
+      - { id: b, text: "สามเหลี่ยมมุมฉาก", feedback: "$5^2 + 6^2 = 61 \\ne 64 = 8^2$ จึงไม่ใช่มุมฉาก" }
+      - { id: c, text: "สามเหลี่ยมมุมแหลม", feedback: "มุมที่ใหญ่ที่สุดมี $\\cos = \\tfrac{25 + 36 - 64}{60} = -0.05 < 0$ จึงเป็นมุมป้าน" }
+      - { id: d, text: "สร้างสามเหลี่ยมไม่ได้", feedback: "$5 + 6 = 11 > 8$ จึงสร้างได้" }
+    hints:
+      - "ตรวจมุมที่ใหญ่ที่สุด ซึ่งอยู่ตรงข้ามด้านยาว 8"
+      - "หา $\\cos$ ของมุมนั้นด้วยกฎของโคไซน์ แล้วดูเครื่องหมาย"
+    solution: "$\\cos C = \\dfrac{5^2 + 6^2 - 8^2}{2(5)(6)} = \\dfrac{-3}{60} = -0.05$ โคไซน์เป็นลบ มุม $C \\approx 92.9°$ เป็นมุมป้าน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p015
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 5
+    type: numeric
+    stem: "เรือประมงออกจากท่าเรือสัตหีบ แล่นไป 12 กม. ในทิศแบริง 040° แล้วเปลี่ยนไปแล่นในทิศแบริง 100° อีก 9 กม. ตอนนี้เรืออยู่ห่างจากท่าเรือกี่กิโลเมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 18.25, tolerance: 0.1, unit: กม. }
+    hints:
+      - "เรือเลี้ยวขวา $100° - 40° = 60°$ มุมภายในของสามเหลี่ยมที่จุดเลี้ยวจึงเป็น $180° - 60° = 120°$"
+      - "$d^2 = 12^2 + 9^2 - 2(12)(9)\\cos 120°$"
+    misconceptions:
+      - { match: 10.82, feedback: "ใช้มุม 60° (มุมที่เลี้ยว) เป็นมุมภายใน มุมภายในที่จุดเลี้ยวคือ 120°" }
+      - { match: 21, feedback: "บวกระยะทาง 12 + 9 ได้ระยะที่เรือแล่น ไม่ใช่ระยะห่างจากท่าเรือ" }
+    solution: "มุมภายในที่จุดเลี้ยว $= 120°$ $d^2 = 144 + 81 - 216\\left(-\\tfrac12\\right) = 333$ ได้ $d \\approx 18.25$ กม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p016
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 3
+    type: numeric
+    stem: "สามเหลี่ยม ABC มีพื้นที่ 30 ตร.ซม. ด้าน $a = 10$ ซม. และ $C = 30°$ จงหาความยาวด้าน $b$"
+    answer: { value: 12, unit: ซม. }
+    hints:
+      - "พื้นที่ $= \\tfrac12 ab\\sin C$"
+      - "$30 = \\tfrac12(10)(b)\\left(\\tfrac12\\right)$"
+    misconceptions:
+      - { match: 6, feedback: "ลืม $\\tfrac12$ หน้าสูตร (หรือลืมคูณ $\\sin 30°$) ได้ $30 = 5b$" }
+    solution: "$30 = \\tfrac12 \\times 10 \\times b \\times \\tfrac12 = 2.5b$ ได้ $b = 12$ ซม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p017
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 4
+    type: numeric
+    stem: "สามเหลี่ยมมีด้านยาว 7, 8 และ 13 หน่วย มุมที่ใหญ่ที่สุดมีขนาดกี่องศา"
+    answer: { value: 120, tolerance: 0.5, unit: องศา }
+    hints:
+      - "มุมที่ใหญ่ที่สุดอยู่ตรงข้ามด้านที่ยาวที่สุด 13"
+      - "$\\cos C = \\dfrac{7^2 + 8^2 - 13^2}{2(7)(8)}$"
+    misconceptions:
+      - { match: 60, feedback: "ได้ $\\cos C = -\\tfrac12$ แล้วทิ้งเครื่องหมายลบ โคไซน์ลบแปลว่ามุมป้าน" }
+    solution: "$\\cos C = \\dfrac{49 + 64 - 169}{112} = \\dfrac{-56}{112} = -\\dfrac12$ ได้ $C = 120°$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p018
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 5
+    type: mcq
+    stem: "สามเหลี่ยม ABC มี $A = 40°$, $a = 8$ และ $b = 10$ มุม $B$ มีขนาดเท่าใด (ประมาณเป็นทศนิยม 1 ตำแหน่ง)"
+    choices:
+      - { id: a, text: "$53.5°$ หรือ $126.5°$", correct: true }
+      - { id: b, text: "$53.5°$ เท่านั้น", feedback: "ลืมมุมป้าน $180° - 53.5° = 126.5°$ ที่มีไซน์เท่ากัน และ $126.5° + 40° < 180°$ จึงใช้ได้" }
+      - { id: c, text: "$126.5°$ เท่านั้น", feedback: "มุมแหลม $53.5°$ ก็ใช้ได้เช่นกัน" }
+      - { id: d, text: "ไม่มีสามเหลี่ยม เพราะ $\\sin B > 1$", feedback: "$\\sin B = \\tfrac{10\\sin 40°}{8} \\approx 0.80 < 1$ จึงมีสามเหลี่ยม" }
+    hints:
+      - "$\\dfrac{\\sin B}{10} = \\dfrac{\\sin 40°}{8}$"
+      - "$\\sin B \\approx 0.80$ มุมที่มีไซน์เท่านี้มีทั้งมุมแหลมและมุมป้าน ตรวจทั้งสอง"
+    solution: "$\\sin B = \\dfrac{10\\sin 40°}{8} \\approx 0.8035$ ได้ $B \\approx 53.5°$ หรือ $B \\approx 126.5°$ ทั้งสองค่ารวมกับ $40°$ ได้น้อยกว่า $180°$ จึงเป็นไปได้ทั้งคู่ (กรณีกำกวม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.law-of-sines-cosines.p019
+    topics: [math.geometry.law-of-sines-cosines]
+    difficulty: 2
+    type: mcq
+    stem: "ในสามเหลี่ยม ABC ลากส่วนสูง $h$ จากจุด B ตั้งฉากกับด้าน AC ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$h = a\\sin C$", correct: true }
+      - { id: b, text: "$h = b\\sin C$", feedback: "$b$ คือด้าน AC ซึ่งเป็นฐาน ส่วนสูงจาก B ต้องคิดจากด้านที่ออกจาก B คือ $a$ (BC) หรือ $c$ (AB)" }
+      - { id: c, text: "$h = a\\cos C$", feedback: "$a\\cos C$ คือระยะตามฐานจาก C ถึงเท้าของส่วนสูง ส่วนสูงใช้ไซน์ (ด้านตรงข้ามมุม)" }
+      - { id: d, text: "$h = c\\sin C$", feedback: "ในสามเหลี่ยมมุมฉากที่มีด้าน $c$ เป็นด้านตรงข้ามมุมฉาก มุมที่ใช้คือ $A$ ไม่ใช่ $C$ ($h = c\\sin A$)" }
+    hints:
+      - "ส่วนสูงจาก B แบ่งรูปเป็นสามเหลี่ยมมุมฉากสองรูป รูปหนึ่งมีด้าน BC = $a$ เป็นด้านตรงข้ามมุมฉาก"
+      - "ในสามเหลี่ยมมุมฉากนั้น $h$ อยู่ตรงข้ามมุม $C$"
+    solution: "ในสามเหลี่ยมมุมฉากที่มี BC เป็นด้านตรงข้ามมุมฉาก $\\sin C = \\dfrac{h}{a}$ จึง $h = a\\sin C$ แล้วพื้นที่ $= \\tfrac12 \\times b \\times a\\sin C = \\tfrac12 ab\\sin C$ ได้สูตรเดียวกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
