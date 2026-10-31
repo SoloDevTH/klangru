@@ -1,0 +1,73 @@
+id: math.functions.inverse
+subject: math
+title: { th: ฟังก์ชันผกผัน, en: Inverse functions }
+summary: ฟังก์ชันหนึ่งต่อหนึ่ง หาฟังก์ชันผกผันด้วยการแก้สมการ ตรวจด้วยการประกอบฟังก์ชัน อ่านค่าจากตารางและกราฟ กราฟสะท้อนในเส้น y = x จำกัดโดเมนให้มีตัวผกผัน และเลขยกกำลังกับลอการิทึม
+difficulty: 6
+minutes: 35
+prerequisites: [math.functions.functions-intro, math.functions.exponential]
+encompasses:
+  - { id: math.functions.functions-intro, weight: 0.4 }
+  - { id: math.functions.exponential, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: horizontal-line.svg
+    alt: "สองกราฟ ซ้ายคือ y = x² เส้นประแนวนอน y = 4 ตัดกราฟสองจุดที่ x = −2 และ x = 2 เขียนว่าไม่เป็นหนึ่งต่อหนึ่ง ขวาคือ y = x³ เส้น y = 4 ตัดกราฟจุดเดียว เขียนว่าเป็นหนึ่งต่อหนึ่ง"
+    caption: "การทดสอบเส้นแนวนอน: ตัดกราฟได้ไม่เกินหนึ่งจุดทุกเส้น จึงมีฟังก์ชันผกผัน"
+  - type: worked-example
+    title: หาตัวผกผันและตรวจด้วยการประกอบ
+    problem: "จงหาฟังก์ชันผกผันของ $f(x) = 2x^3$ แล้วตรวจคำตอบ"
+    steps:
+      - text: "เขียน $y = 2x^3$"
+      - text: "แก้หา $x$: $x^3 = \\dfrac{y}{2}$ จึง $x = \\sqrt[3]{\\dfrac{y}{2}}$"
+        why: "ย้อนขั้นสุดท้ายก่อน: หารด้วย 2 แล้วถอดรากที่สาม"
+      - text: "สลับชื่อตัวแปร: $f^{-1}(x) = \\sqrt[3]{\\dfrac{x}{2}}$"
+      - text: "ตรวจ: $f\\big(f^{-1}(x)\\big) = 2\\left(\\sqrt[3]{\\tfrac{x}{2}}\\right)^3 = 2 \\cdot \\tfrac{x}{2} = x$ และ $f^{-1}\\big(f(x)\\big) = \\sqrt[3]{\\tfrac{2x^3}{2}} = x$"
+        why: "ต้องได้ $x$ กลับมาทั้งสองทาง"
+    answer: "$f^{-1}(x) = \\sqrt[3]{\\dfrac{x}{2}}$"
+  - { type: check, problem: math.functions.inverse.p001, prompt: "ค่าเข้าใดให้ผลลัพธ์ 10" }
+  - type: figure
+    src: exp-log.svg
+    alt: "กราฟ y = 2^x สีน้ำเงินและ y = log₂x สีแดง กับเส้นประ y = x จุด (0, 1), (1, 2), (2, 4) บนกราฟสีน้ำเงินคู่กับจุด (1, 0), (2, 1), (4, 2) บนกราฟสีแดง เชื่อมด้วยเส้นประบางที่ตั้งฉากกับ y = x"
+    caption: "สลับพิกัด (a, b) → (b, a) คือสะท้อนในเส้น y = x"
+  - type: interactive
+    title: ฟังก์ชันเชิงเส้นกับตัวผกผัน
+    caption: "เส้นแรกคือ y = ax + b เส้นที่สองคือตัวผกผัน y = (x − b)/a และเส้นที่สามคือ y = x ลองเปลี่ยน a และ b แล้วดูว่าสองเส้นแรกสมมาตรรอบ y = x เสมอ"
+    widget:
+      kind: function-plot
+      functions: ["a x + b", "\\frac{x-b}{a}", "x"]
+      sliders:
+        - { name: a, min: 0.5, max: 3, step: 0.5, value: 2, label: ความชัน a }
+        - { name: b, min: -3, max: 3, step: 0.5, value: 1, label: ระยะตัดแกน b }
+      x: [-6, 6]
+      y: [-6, 6]
+  - type: worked-example
+    title: จำกัดโดเมนให้มีตัวผกผัน
+    problem: "$f(x) = x^2 + 1$ ไม่มีตัวผกผันบนจำนวนจริงทั้งหมด จงจำกัดโดเมนเป็น $x \\ge 0$ แล้วหา $f^{-1}$ พร้อมโดเมนของมัน"
+    steps:
+      - text: "บน $x \\ge 0$ กราฟเพิ่มขึ้นตลอด จึงเป็นหนึ่งต่อหนึ่ง เรนจ์คือ $y \\ge 1$"
+      - text: "$y = x^2 + 1 \\Rightarrow x^2 = y - 1 \\Rightarrow x = \\sqrt{y - 1}$ (เลือกรากบวกเพราะ $x \\ge 0$)"
+        why: "ถ้าเลือกโดเมน $x \\le 0$ ต้องใช้ $-\\sqrt{y - 1}$"
+      - text: "$f^{-1}(x) = \\sqrt{x - 1}$ มีโดเมน $x \\ge 1$ ซึ่งคือเรนจ์ของ $f$"
+    answer: "$f^{-1}(x) = \\sqrt{x - 1}$, $x \\ge 1$"
+  - { type: check, problem: math.functions.inverse.p003, prompt: "ย้อนขั้นสุดท้ายก่อน" }
+glossary:
+  - { term: ฟังก์ชันผกผัน, definition: "ฟังก์ชัน f⁻¹ ที่ส่งผลลัพธ์ของ f กลับไปที่ค่าเข้าเดิม f(a) = b ก็ต่อเมื่อ f⁻¹(b) = a" }
+  - { term: ฟังก์ชันหนึ่งต่อหนึ่ง, definition: "ฟังก์ชันที่ค่าเข้าต่างกันให้ผลลัพธ์ต่างกันเสมอ จึงมีตัวผกผัน" }
+  - { term: การทดสอบเส้นแนวนอน, definition: "ถ้าทุกเส้นแนวนอนตัดกราฟไม่เกินหนึ่งจุด ฟังก์ชันเป็นหนึ่งต่อหนึ่ง" }
+  - { term: การจำกัดโดเมน, definition: "เลือกใช้ฟังก์ชันเพียงบางช่วงของโดเมน เพื่อให้เป็นหนึ่งต่อหนึ่ง" }
+flashcards:
+  - { front: "f⁻¹(x) เท่ากับ 1/f(x) หรือไม่", back: "ไม่ f⁻¹ คือฟังก์ชันที่ทำย้อนกลับ" }
+  - { front: "กราฟของ f กับ f⁻¹ สมมาตรรอบอะไร", back: "เส้น y = x" }
+  - { front: "ตัวผกผันของ y = 10ˣ", back: "y = log x (ลอการิทึมฐาน 10)" }
+  - { front: "โดเมนของ f⁻¹ คืออะไร", back: "เรนจ์ของ f" }
+  - { front: "ตรวจว่า g เป็นตัวผกผันของ f อย่างไร", back: "f(g(x)) = x และ g(f(x)) = x" }
+references:
+  - { title: "ฟังก์ชันผกผัน", url: "https://th.wikipedia.org/wiki/ฟังก์ชันผกผัน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Inverse function", url: "https://en.wikipedia.org/wiki/Inverse_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "1.7 Inverse Functions (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/1-7-inverse-functions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

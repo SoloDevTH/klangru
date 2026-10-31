@@ -1,0 +1,336 @@
+problems:
+  - id: math.functions.inverse.p001
+    topics: [math.functions.inverse]
+    difficulty: 1
+    type: numeric
+    stem: "ให้ $f(x) = x + 7$ จงหา $f^{-1}(10)$"
+    answer: { value: 3 }
+    hints:
+      - "$f^{-1}(10)$ คือค่าเข้าที่ทำให้ $f$ ได้ผลลัพธ์ 10"
+      - "แก้สมการ $x + 7 = 10$"
+    misconceptions:
+      - { match: 17, feedback: "17 คือ $f(10)$ ฟังก์ชันผกผันต้องทำย้อน คือลบ 7" }
+      - { match: 0.06, feedback: "คิดว่า $f^{-1}(10) = \\tfrac{1}{f(10)} = \\tfrac{1}{17}$ แต่ $f^{-1}$ ไม่ใช่ส่วนกลับ" }
+    solution: "$f(3) = 3 + 7 = 10$ จึง $f^{-1}(10) = 3$ (ตัวผกผันคือ $f^{-1}(x) = x - 7$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p002
+    topics: [math.functions.inverse]
+    difficulty: 1
+    type: mcq
+    stem: "ฟังก์ชัน $f$ มีค่าตามตาราง: $f(1) = 4$, $f(2) = 7$, $f(3) = 10$ จงหา $f^{-1}(7)$"
+    choices:
+      - { id: a, text: "2", correct: true }
+      - { id: b, text: "22", feedback: "22 คือการต่อแบบรูปไปหา $f(7)$ แต่ $f^{-1}(7)$ ถามว่าค่าเข้าใดให้ผลลัพธ์ 7" }
+      - { id: c, text: "$\\tfrac17$", feedback: "$f^{-1}(7)$ ไม่ใช่ $\\tfrac17$ เลข $-1$ หมายถึงฟังก์ชันผกผัน" }
+      - { id: d, text: "$\\tfrac{1}{f(7)}$", feedback: "$f^{-1}$ ไม่ใช่ส่วนกลับของ $f$" }
+    hints:
+      - "หาค่า 7 ในแถวผลลัพธ์ของตาราง"
+      - "อ่านค่าเข้าที่คู่กับผลลัพธ์นั้น"
+    solution: "$f(2) = 7$ จึง $f^{-1}(7) = 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p003
+    topics: [math.functions.inverse]
+    difficulty: 2
+    type: expression
+    stem: "จงหาฟังก์ชันผกผันของ $f(x) = 3x - 5$"
+    prefix: "f^{-1}(x) ="
+    answer: { latex: "\\frac{x+5}{3}", variables: [x] }
+    hints:
+      - "$f$ คือ คูณ 3 แล้วลบ 5 ตัวผกผันต้องย้อนจากขั้นสุดท้าย"
+      - "เขียน $y = 3x - 5$ แล้วแก้หา $x$"
+    misconceptions:
+      - { match: "\\frac{x-5}{3}", feedback: "ย้อนการลบ 5 ต้องบวก 5" }
+      - { match: "\\frac{x}{3}+5", feedback: "ย้อนผิดลำดับ ต้องบวก 5 ก่อนแล้วจึงหารด้วย 3" }
+      - { match: "\\frac{1}{3x-5}", feedback: "นี่คือ $\\tfrac{1}{f(x)}$ ไม่ใช่ $f^{-1}(x)$" }
+    solution: "$y = 3x - 5 \\Rightarrow x = \\dfrac{y + 5}{3}$ จึง $f^{-1}(x) = \\dfrac{x + 5}{3}$ ตรวจ: $f\\left(\\tfrac{x + 5}{3}\\right) = x + 5 - 5 = x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p004
+    topics: [math.functions.inverse]
+    difficulty: 2
+    type: mcq
+    stem: "ฟังก์ชันใดมีฟังก์ชันผกผันเมื่อโดเมนเป็นจำนวนจริงทั้งหมด"
+    choices:
+      - { id: a, text: "$f(x) = x^3$", correct: true }
+      - { id: b, text: "$f(x) = x^2$", feedback: "$f(2) = f(-2) = 4$ ไม่เป็นหนึ่งต่อหนึ่ง" }
+      - { id: c, text: "$f(x) = |x|$", feedback: "$|3| = |-3|$ เส้นแนวนอนตัดกราฟสองจุด" }
+      - { id: d, text: "$f(x) = \\cos x$", feedback: "โคไซน์ซ้ำเป็นรอบ ทุกค่าใน $(-1, 1)$ เกิดซ้ำไม่จำกัด" }
+    hints:
+      - "ฟังก์ชันต้องเป็นหนึ่งต่อหนึ่ง"
+      - "ใช้การทดสอบเส้นแนวนอน"
+    solution: "$x^3$ เพิ่มขึ้นตลอด ค่า $x$ ต่างกันให้ $x^3$ ต่างกันเสมอ จึงมีตัวผกผัน $\\sqrt[3]{x}$ ฟังก์ชันอื่นมีค่าซ้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p005
+    topics: [math.functions.inverse]
+    difficulty: 2
+    type: numeric
+    stem: "จากกราฟของฟังก์ชันเพิ่ม $f$ ในภาพ จงหา $f^{-1}(3)$"
+    figure:
+      src: read-inverse.svg
+      alt: "กราฟของฟังก์ชันเพิ่ม f เป็นเส้นโค้งผ่านจุด (0, 1), (1, 3), (3, 5) และ (6, 7) ซึ่งทำเครื่องหมายไว้"
+    answer: { value: 1 }
+    hints:
+      - "$f^{-1}(3)$ คือค่า $x$ ที่ทำให้ $f(x) = 3$"
+      - "ลากเส้นแนวนอนที่ $y = 3$ ไปถึงกราฟ แล้วอ่านค่า $x$"
+    misconceptions:
+      - { match: 5, feedback: "5 คือ $f(3)$ (อ่านกราฟที่ $x = 3$) แต่โจทย์ถามค่า $x$ ที่ให้ $y = 3$" }
+    solution: "กราฟผ่าน $(1, 3)$ จึง $f(1) = 3$ และ $f^{-1}(3) = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p006
+    topics: [math.functions.inverse]
+    difficulty: 3
+    type: expression
+    stem: "จงหาฟังก์ชันผกผันของ $f(x) = x^3 + 2$"
+    prefix: "f^{-1}(x) ="
+    answer: { latex: "\\sqrt[3]{x-2}", variables: [x] }
+    hints:
+      - "$f$ คือ ยกกำลังสามแล้วบวก 2"
+      - "ย้อน: ลบ 2 ก่อน แล้วถอดรากที่สาม"
+    misconceptions:
+      - { match: "\\sqrt[3]{x}-2", feedback: "ย้อนผิดลำดับ ต้องลบ 2 ก่อนแล้วจึงถอดรากที่สาม" }
+      - { match: "(x-2)^3", feedback: "ย้อนการยกกำลังสามต้องถอดรากที่สาม ไม่ใช่ยกกำลังสามอีก" }
+    solution: "$y = x^3 + 2 \\Rightarrow x^3 = y - 2 \\Rightarrow x = \\sqrt[3]{y - 2}$ จึง $f^{-1}(x) = \\sqrt[3]{x - 2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p007
+    topics: [math.functions.inverse]
+    difficulty: 3
+    type: mcq
+    stem: "ฟังก์ชันใดเป็นฟังก์ชันผกผันของ $f(x) = 2x + 6$ (ตรวจด้วยการประกอบฟังก์ชัน)"
+    choices:
+      - { id: a, text: "$g(x) = \\dfrac{x}{2} - 3$", correct: true }
+      - { id: b, text: "$g(x) = \\dfrac{x}{2} - 6$", feedback: "$f(g(x)) = 2\\left(\\tfrac{x}{2} - 6\\right) + 6 = x - 6 \\ne x$" }
+      - { id: c, text: "$g(x) = 2x - 6$", feedback: "$f(g(x)) = 2(2x - 6) + 6 = 4x - 6 \\ne x$ การคูณ 2 ต้องย้อนด้วยการหาร 2" }
+      - { id: d, text: "$g(x) = \\dfrac{1}{2x + 6}$", feedback: "เป็นส่วนกลับของ $f$ ไม่ใช่ตัวผกผัน" }
+    hints:
+      - "$g$ เป็นตัวผกผันเมื่อ $f(g(x)) = x$"
+      - "ลองแทนแต่ละตัวเลือกใน $f$"
+    solution: "$f\\left(\\tfrac{x}{2} - 3\\right) = 2\\left(\\tfrac{x}{2} - 3\\right) + 6 = x$ และ $g(f(x)) = \\tfrac{2x + 6}{2} - 3 = x$ จึงเป็นตัวผกผัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p008
+    topics: [math.functions.inverse]
+    difficulty: 3
+    type: numeric
+    stem: "แท็กซี่ (อัตราสมมติ) คิดค่าโดยสาร $f(d) = 6d + 35$ บาท เมื่อนั่งไป $d$ กิโลเมตร ถ้าจ่ายค่าโดยสาร 125 บาท นั่งไปกี่กิโลเมตร"
+    answer: { value: 15, unit: กม. }
+    hints:
+      - "ต้องการ $f^{-1}(125)$"
+      - "$f^{-1}(x) = \\dfrac{x - 35}{6}$"
+    misconceptions:
+      - { match: 785, feedback: "785 คือ $f(125)$ (ค่าโดยสารของ 125 กม.) โจทย์ให้ค่าโดยสารแล้วถามระยะทาง" }
+      - { match: -14.17, feedback: "ย้อนผิดลำดับ หาร 6 ก่อนแล้วจึงลบ ต้องลบ 35 ก่อนแล้วจึงหาร 6" }
+    solution: "$6d + 35 = 125 \\Rightarrow d = \\dfrac{125 - 35}{6} = 15$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p009
+    topics: [math.functions.inverse]
+    difficulty: 3
+    type: mcq
+    stem: "จุด $(2, 5)$ อยู่บนกราฟของฟังก์ชันหนึ่งต่อหนึ่ง $f$ จุดใดต้องอยู่บนกราฟของ $f^{-1}$"
+    choices:
+      - { id: a, text: "$(5, 2)$", correct: true }
+      - { id: b, text: "$(-2, -5)$", feedback: "เป็นการสะท้อนรอบจุดกำเนิด ตัวผกผันสะท้อนในเส้น $y = x$ คือสลับพิกัด" }
+      - { id: c, text: "$(2, -5)$", feedback: "เป็นการสะท้อนในแกน $x$" }
+      - { id: d, text: "$\\left(\\tfrac12, \\tfrac15\\right)$", feedback: "ใช้ส่วนกลับ แต่ฟังก์ชันผกผันไม่ใช่ส่วนกลับ" }
+    hints:
+      - "$f(2) = 5$ แปลว่า $f^{-1}(5) = ?$"
+      - "กราฟของตัวผกผันได้จากการสลับพิกัด"
+    solution: "$f(2) = 5$ จึง $f^{-1}(5) = 2$ จุด $(5, 2)$ อยู่บนกราฟของ $f^{-1}$ ซึ่งเป็นภาพสะท้อนของ $(2, 5)$ ในเส้น $y = x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p010
+    topics: [math.functions.inverse]
+    difficulty: 4
+    type: expression
+    stem: "จงหาฟังก์ชันผกผันของ $f(x) = \\dfrac{x + 2}{x - 3}$ เมื่อ $x \\ne 3$"
+    prefix: "f^{-1}(x) ="
+    answer: { latex: "\\frac{3x+2}{x-1}", variables: [x] }
+    hints:
+      - "เขียน $y(x - 3) = x + 2$ แล้วกระจาย"
+      - "ย้ายพจน์ที่มี $x$ ไว้ข้างเดียว ดึงตัวร่วม $x$"
+    misconceptions:
+      - { match: "\\frac{x-3}{x+2}", feedback: "นี่คือส่วนกลับ $\\tfrac{1}{f(x)}$ ไม่ใช่ฟังก์ชันผกผัน" }
+      - { match: "\\frac{3x-2}{x-1}", feedback: "เครื่องหมายผิดตอนย้ายข้าง: $xy - 3y = x + 2$ ได้ $xy - x = 3y + 2$" }
+    solution: "$xy - 3y = x + 2 \\Rightarrow x(y - 1) = 3y + 2 \\Rightarrow x = \\dfrac{3y + 2}{y - 1}$ จึง $f^{-1}(x) = \\dfrac{3x + 2}{x - 1}$, $x \\ne 1$ ตรวจ: $f(4) = 6$ และ $f^{-1}(6) = \\tfrac{20}{5} = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p011
+    topics: [math.functions.inverse]
+    difficulty: 4
+    type: mcq
+    stem: "ต้องจำกัดโดเมนของ $f(x) = (x - 2)^2$ อย่างไร จึงจะได้ฟังก์ชันผกผัน $f^{-1}(x) = 2 + \\sqrt x$"
+    choices:
+      - { id: a, text: "$x \\ge 2$", correct: true }
+      - { id: b, text: "$x \\ge 0$", feedback: "บน $x \\ge 0$ ยังมีค่าซ้ำ เช่น $f(1) = f(3) = 1$ จุดยอดอยู่ที่ $x = 2$" }
+      - { id: c, text: "$x \\le 2$", feedback: "บน $x \\le 2$ มีตัวผกผัน แต่เป็น $2 - \\sqrt x$ เพราะค่าเข้าน้อยกว่า 2" }
+      - { id: d, text: "ไม่ต้องจำกัด", feedback: "$f(1) = f(3)$ ฟังก์ชันไม่เป็นหนึ่งต่อหนึ่งบนจำนวนจริงทั้งหมด" }
+    hints:
+      - "เรนจ์ของ $f^{-1}$ ต้องเท่ากับโดเมนที่จำกัดของ $f$"
+      - "$2 + \\sqrt x$ มีค่าเท่าใดบ้าง"
+    solution: "$2 + \\sqrt x \\ge 2$ เสมอ โดเมนของ $f$ จึงต้องเป็น $x \\ge 2$ ซึ่งเป็นด้านขวาของจุดยอด กราฟเพิ่มขึ้นตลอด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p012
+    topics: [math.functions.inverse]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $f(x) = 2^{x - 1} + 3$ จงหา $f^{-1}(19)$"
+    answer: { value: 5 }
+    hints:
+      - "แก้ $2^{x - 1} + 3 = 19$"
+      - "$2^{x - 1} = 16 = 2^4$"
+    misconceptions:
+      - { match: 4, feedback: "ได้ $x - 1 = 4$ แล้วลืมบวก 1" }
+      - { match: 262147, feedback: "262147 คือ $f(19)$ โจทย์ถามค่าเข้าที่ให้ผลลัพธ์ 19" }
+    solution: "$2^{x - 1} = 16 \\Rightarrow x - 1 = \\log_2 16 = 4 \\Rightarrow x = 5$ (ตัวผกผันคือ $f^{-1}(x) = \\log_2(x - 3) + 1$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p013
+    topics: [math.functions.inverse]
+    difficulty: 5
+    type: expression
+    stem: "จงหาฟังก์ชันผกผันของ $f(x) = 5 \\cdot 2^x$ (เขียนด้วยลอการิทึมฐาน 2)"
+    prefix: "f^{-1}(x) ="
+    answer: { latex: "\\log_2\\left(\\frac{x}{5}\\right)", variables: [x] }
+    hints:
+      - "$y = 5 \\cdot 2^x \\Rightarrow 2^x = \\dfrac{y}{5}$"
+      - "ใช้ $2^x = c \\iff x = \\log_2 c$"
+    misconceptions:
+      - { match: "\\frac{\\log_2(x)}{5}", feedback: "ต้องหารด้วย 5 ก่อนแล้วจึงใส่ลอการิทึม ไม่ใช่ใส่ลอการิทึมก่อนแล้วหาร" }
+      - { match: "\\log_2(5x)", feedback: "ย้อนการคูณ 5 ต้องหารด้วย 5" }
+    solution: "$2^x = \\dfrac{y}{5} \\Rightarrow x = \\log_2\\dfrac{y}{5}$ จึง $f^{-1}(x) = \\log_2\\dfrac{x}{5} = \\log_2 x - \\log_2 5$ มีโดเมน $x > 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p014
+    topics: [math.functions.inverse]
+    difficulty: 4
+    type: numeric
+    stem: "$f(x) = \\sqrt{x - 4} + 1$ มีโดเมน $x \\ge 4$ จงหาค่าที่น้อยที่สุดในโดเมนของ $f^{-1}$"
+    answer: { value: 1 }
+    hints:
+      - "โดเมนของ $f^{-1}$ คือเรนจ์ของ $f$"
+      - "$\\sqrt{x - 4} \\ge 0$"
+    misconceptions:
+      - { match: 4, feedback: "4 คือค่าน้อยสุดในโดเมนของ $f$ แต่โดเมนของ $f^{-1}$ คือเรนจ์ของ $f$" }
+    solution: "$\\sqrt{x - 4} \\ge 0$ จึง $f(x) \\ge 1$ เรนจ์ของ $f$ คือ $[1, \\infty)$ ซึ่งเป็นโดเมนของ $f^{-1}(x) = (x - 1)^2 + 4$ ค่าน้อยสุดคือ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p015
+    topics: [math.functions.inverse]
+    difficulty: 5
+    type: mcq
+    stem: "ให้ $f(x) = \\dfrac{2x + 1}{x - 2}$ เมื่อ $x \\ne 2$ ข้อใดคือ $f^{-1}(x)$"
+    choices:
+      - { id: a, text: "$\\dfrac{2x + 1}{x - 2}$ (เท่ากับ $f$ เอง)", correct: true }
+      - { id: b, text: "$\\dfrac{x - 2}{2x + 1}$", feedback: "เป็นส่วนกลับของ $f$ ไม่ใช่ตัวผกผัน" }
+      - { id: c, text: "$\\dfrac{2x - 1}{x + 2}$", feedback: "เครื่องหมายผิดตอนย้ายข้าง ลองตรวจ: $f(3) = 7$ แต่สูตรนี้ให้ค่าที่ 7 เป็น $\\tfrac{13}{9}$ ไม่ใช่ 3" }
+      - { id: d, text: "ไม่มีฟังก์ชันผกผัน", feedback: "$f$ เป็นหนึ่งต่อหนึ่งบนโดเมน จึงมีตัวผกผัน" }
+    hints:
+      - "เขียน $y(x - 2) = 2x + 1$ แล้วแก้หา $x$"
+      - "ตรวจด้วยตัวเลข: $f(3) = 7$ ดังนั้น $f^{-1}(7)$ ต้องเป็น 3"
+    solution: "$xy - 2y = 2x + 1 \\Rightarrow x(y - 2) = 2y + 1 \\Rightarrow x = \\dfrac{2y + 1}{y - 2}$ ได้สูตรเดิม $f$ เป็นตัวผกผันของตัวเอง กราฟจึงสมมาตรรอบเส้น $y = x$ ตรวจ: $f(3) = 7$ และ $f(7) = \\tfrac{15}{5} = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p016
+    topics: [math.functions.inverse]
+    difficulty: 5
+    type: numeric
+    stem: "ฝากเงิน 10,000 บาทในบัญชีที่ให้ดอกเบี้ยทบต้นปีละ 2% เงินรวมเป็น $A(t) = 10000(1.02)^t$ บาท ใช้ฟังก์ชันผกผันหาว่ากี่ปีเงินจึงเป็น 15,000 บาท (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 20.48, tolerance: 0.05, unit: ปี }
+    hints:
+      - "แก้ $A = 10000(1.02)^t$ หา $t$: $t = \\dfrac{\\log(A/10000)}{\\log 1.02}$"
+      - "แทน $A = 15000$"
+    misconceptions:
+      - { match: 25, feedback: "คิดแบบดอกเบี้ยคงต้น (ปีละ 200 บาท) แต่ดอกเบี้ยทบต้นทำให้เพิ่มเร็วขึ้น" }
+    solution: "$t = \\dfrac{\\log 1.5}{\\log 1.02} \\approx \\dfrac{0.17609}{0.0086} \\approx 20.48$ ปี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p017
+    topics: [math.functions.inverse]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ฟังก์ชันกับฟังก์ชันผกผัน"
+    pairs:
+      - { left: "$y = 2x$", right: "$y = \\dfrac{x}{2}$" }
+      - { left: "$y = x + 3$", right: "$y = x - 3$" }
+      - { left: "$y = x^3$", right: "$y = \\sqrt[3]{x}$" }
+      - { left: "$y = 10^x$", right: "$y = \\log x$" }
+      - { left: "$y = \\dfrac{1}{x}$", right: "$y = \\dfrac{1}{x}$ (ตัวเอง)" }
+    hints:
+      - "ตัวผกผันใช้การดำเนินการตรงข้าม"
+      - "$\\tfrac{1}{\\tfrac{1}{x}} = x$"
+    solution: "คูณ 2 ↔ หาร 2, บวก 3 ↔ ลบ 3, ยกกำลังสาม ↔ รากที่สาม, $10^x$ ↔ $\\log x$, $\\tfrac1x$ เป็นตัวผกผันของตัวเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p018
+    topics: [math.functions.inverse]
+    difficulty: 2
+    type: mcq
+    stem: "ให้ $f(x) = x + 2$ ค่าของ $f^{-1}(5)$ คือข้อใด"
+    choices:
+      - { id: a, text: "3", correct: true }
+      - { id: b, text: "$\\tfrac17$", feedback: "$\\tfrac{1}{f(5)} = \\tfrac17$ คือส่วนกลับ ไม่ใช่ $f^{-1}(5)$" }
+      - { id: c, text: "7", feedback: "7 คือ $f(5)$" }
+      - { id: d, text: "$\\tfrac13$", feedback: "ได้ 3 แล้วกลับเศษส่วนอีก ไม่ต้องกลับ" }
+    hints:
+      - "$f^{-1}(5)$ ถามว่าค่าเข้าใดให้ผลลัพธ์ 5"
+      - "แก้ $x + 2 = 5$"
+    solution: "$f(3) = 5$ จึง $f^{-1}(5) = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p019
+    topics: [math.functions.inverse]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการหาฟังก์ชันผกผันของ $f(x) = \\dfrac{x - 1}{x + 2}$"
+    items:
+      - "เขียน $y = \\dfrac{x - 1}{x + 2}$"
+      - "คูณไขว้: $y(x + 2) = x - 1$"
+      - "จัดพจน์ที่มี $x$ ไว้ข้างเดียว: $xy - x = -1 - 2y$"
+      - "ดึงตัวร่วม: $x(y - 1) = -(1 + 2y)$ จึง $x = \\dfrac{1 + 2y}{1 - y}$"
+      - "สลับชื่อตัวแปร: $f^{-1}(x) = \\dfrac{1 + 2x}{1 - x}$"
+    hints:
+      - "เริ่มจากการกำจัดตัวส่วน"
+      - "ดึงตัวร่วม $x$ ได้เมื่อพจน์ที่มี $x$ อยู่ข้างเดียวกันแล้ว"
+    solution: "เขียนเป็น $y$ → คูณไขว้ → รวมพจน์ $x$ → ดึงตัวร่วมแล้วหาร → สลับตัวแปร ตรวจ: $f(0) = -\\tfrac12$ และ $f^{-1}\\left(-\\tfrac12\\right) = \\tfrac{0}{1.5} = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.inverse.p020
+    topics: [math.functions.inverse]
+    difficulty: 3
+    type: numeric
+    stem: "ร้านแลกเงินแห่งหนึ่ง (อัตราสมมติ) ให้เงินเยน $y = 4.5b - 50$ เมื่อแลกเงิน $b$ บาท (หักค่าธรรมเนียม 50 เยน) ถ้าต้องการเงิน 4,000 เยน ต้องใช้เงินกี่บาท"
+    answer: { value: 900, unit: บาท }
+    hints:
+      - "ต้องการ $b$ ที่ทำให้ $y = 4000$"
+      - "ย้อน: บวก 50 แล้วหาร 4.5"
+    misconceptions:
+      - { match: 877.78, feedback: "ลบค่าธรรมเนียม 50 แทนที่จะบวก ย้อนการลบ 50 ต้องบวก 50" }
+      - { match: 17950, feedback: "17,950 คือเยนที่ได้จากการแลก 4,000 บาท โจทย์ให้จำนวนเยนแล้วถามจำนวนบาท" }
+    solution: "$b = \\dfrac{y + 50}{4.5} = \\dfrac{4050}{4.5} = 900$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
