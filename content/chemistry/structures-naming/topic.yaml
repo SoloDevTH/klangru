@@ -1,0 +1,76 @@
+id: chemistry.organic.structures-naming
+subject: chemistry
+title: { th: โครงสร้างและการเรียกชื่อสารประกอบอินทรีย์, en: Structures and naming of organic compounds }
+summary: สารอินทรีย์ในชีวิตประจำวัน สูตรโครงสร้างลิวอิส แบบย่อ และแบบเส้น ไฮโดรคาร์บอนอิ่มตัวและไม่อิ่มตัว หมู่ฟังก์ชัน การเรียกชื่อ IUPAC ไอโซเมอร์ จุดเดือด การละลาย และความเป็นกรด-เบส
+difficulty: 6
+minutes: 45
+prerequisites: [chemistry.bonding.polarity-intermolecular]
+encompasses:
+  - { id: chemistry.bonding.polarity-intermolecular, weight: 0.3 }
+  - { id: chemistry.bonding.covalent, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: structure-formats.svg
+    alt: "สูตรโครงสร้างของโพรแพน-1-ออล 3 แบบ แบบลิวอิส: H–C–C–C–O–H เรียงเป็นแถว คาร์บอนแต่ละตัวมี H ต่อด้านบนและด้านล่าง ออกซิเจนสีแดงมีจุดคู่ด้านบนและด้านล่างแทนอิเล็กตรอนคู่โดดเดี่ยว แบบย่อ: CH₃CH₂CH₂OH แบบเส้น: เส้นซิกแซก 2 ช่วงต่อด้วยเส้นสั้นไปยังคำว่า OH สีแดง คำอธิบายว่าปลายเส้นและมุมแต่ละมุมคือ C และไม่เขียน H ที่ต่อกับ C"
+    caption: "สารเดียวกันเขียนได้ 3 แบบ แบบเส้นเร็วที่สุดเมื่อโมเลกุลใหญ่"
+  - { type: check, problem: chemistry.organic.structures-naming.p001, prompt: "ไฮโดรคาร์บอนอิ่มตัวมีพันธะแบบใดเท่านั้น" }
+  - type: worked-example
+    title: เรียกชื่อแอลเคนที่มีกิ่ง
+    problem: "เรียกชื่อ IUPAC ของ $\\mathrm{CH_3CH(CH_3)CH_2CH(CH_3)CH_3}$"
+    steps:
+      - text: "หาโซ่หลักที่ยาวที่สุด: นับจากปลายซ้ายถึงปลายขวาได้ 5 C ชื่อหลักคือ เพนเทน"
+      - text: "มีกิ่งเมทิล 2 กิ่ง ให้เลขจากซ้าย: กิ่งอยู่ที่ C-2 และ C-4 · ให้เลขจากขวา: ก็ได้ C-2 และ C-4 เท่ากัน"
+        why: "ไม่ว่าเริ่มฝั่งไหน เลขตำแหน่งกิ่งต้องน้อยที่สุด ในข้อนี้ได้เท่ากันทั้งสองทาง"
+      - text: "กิ่งชนิดเดียวกัน 2 กิ่งใช้ ได- และคั่นตำแหน่งด้วยจุลภาค"
+      - text: "รวมชื่อ: 2,4-ไดเมทิลเพนเทน"
+    answer: "2,4-ไดเมทิลเพนเทน (2,4-dimethylpentane)"
+  - type: worked-example
+    title: หาไอโซเมอร์ทั้งหมดของ C₅H₁₂
+    problem: "เขียนสูตรโครงสร้างแบบย่อและเรียกชื่อไอโซเมอร์โครงสร้างทั้งหมดของ $\\mathrm{C_5H_{12}}$"
+    steps:
+      - text: "โซ่หลัก 5 C ไม่มีกิ่ง: $\\mathrm{CH_3CH_2CH_2CH_2CH_3}$ เพนเทน"
+      - text: "โซ่หลัก 4 C กิ่งเมทิล 1 กิ่ง: กิ่งต้องอยู่ที่ C-2 ได้ $\\mathrm{CH_3CH(CH_3)CH_2CH_3}$ 2-เมทิลบิวเทน"
+        why: "ถ้ากิ่งอยู่ที่ C-1 โซ่หลักจะยาวเป็น 5 C ซึ่งคือเพนเทน ส่วน C-3 นับจากอีกฝั่งก็คือ C-2"
+      - text: "โซ่หลัก 3 C กิ่งเมทิล 2 กิ่งที่ C-2: $\\mathrm{C(CH_3)_4}$ 2,2-ไดเมทิลโพรเพน"
+      - text: "โซ่หลัก 2 C เป็นไปไม่ได้ เพราะไม่มีตำแหน่งให้กิ่งโดยไม่ทำให้โซ่ยาวขึ้น"
+    answer: "3 ไอโซเมอร์ จุดเดือดลดลงเมื่อกิ่งมากขึ้น (36, 28 และ 10 °C)"
+  - type: molecule
+    title: บิวเทน
+    cid: 7843
+    name: butane
+    caption: "โซ่ตรง 4 C หมุนดูว่าโซ่เป็นซิกแซก ไม่ใช่เส้นตรงจริง"
+  - type: molecule
+    title: 2-เมทิลโพรเพน
+    cid: 6360
+    name: 2-methylpropane
+    caption: "ไอโซเมอร์ของบิวเทน สูตร C₄H₁₀ เหมือนกัน แต่โมเลกุลกลมกว่า จุดเดือดจึงต่ำกว่า (−12 °C เทียบกับ −0.5 °C)"
+  - type: molecule
+    title: กรดเอทาโนอิก (กรดแอซีติก)
+    cid: 176
+    name: acetic acid
+    caption: "หมู่คาร์บอกซิล –COOH มีทั้ง C=O และ O–H ทำให้เป็นกรดและเกิดพันธะไฮโดรเจนได้"
+  - { type: check, problem: chemistry.organic.structures-naming.p013, prompt: "หาหมู่ที่เกิดพันธะไฮโดรเจนกับน้ำ และดูความยาวของโซ่" }
+glossary:
+  - { term: สารประกอบอินทรีย์, definition: "สารประกอบของคาร์บอนที่มักมีไฮโดรเจน (ไม่รวม CO₂ คาร์บอเนต และสารบางกลุ่ม)" }
+  - { term: ไฮโดรคาร์บอนอิ่มตัว, definition: ไฮโดรคาร์บอนที่มีแต่พันธะเดี่ยวระหว่างคาร์บอนกับคาร์บอน }
+  - { term: หมู่ฟังก์ชัน, definition: กลุ่มอะตอมที่กำหนดสมบัติและปฏิกิริยาของสารอินทรีย์ }
+  - { term: ไอโซเมอร์โครงสร้าง, definition: สารที่มีสูตรโมเลกุลเหมือนกันแต่อะตอมต่อกันต่างกัน }
+  - { term: สูตรโครงสร้างแบบเส้น, definition: สูตรที่ปลายเส้นและมุมแทนคาร์บอน และไม่เขียนไฮโดรเจนที่ต่อกับคาร์บอน }
+  - { term: โซ่หลัก, definition: โซ่คาร์บอนที่ยาวที่สุดที่มีหมู่ฟังก์ชัน ใช้ตั้งชื่อหลักของสาร }
+flashcards:
+  - { front: "ชื่อหลักของโซ่ 1–6 C", back: "มีท- อีท- โพรพ- บิวท- เพนท- เฮกซ์-" }
+  - { front: "–OH, –CHO, –CO–, –COOH ลงท้ายชื่อว่า", back: "-ออล, -อาล, -โอน, กรด...-โออิก" }
+  - { front: "C₄H₁₀ และ C₅H₁₂ มีไอโซเมอร์โครงสร้างกี่ไอโซเมอร์", back: "2 และ 3" }
+  - { front: "สารอินทรีย์ใดเป็นกรด ใดเป็นเบส", back: "กรดคาร์บอกซิลิก (–COOH) เป็นกรด เอมีน (–NH₂) เป็นเบส แอลกอฮอล์เป็นกลาง" }
+  - { front: "ทำไมกิ่งมากจุดเดือดต่ำลง", back: "โมเลกุลกลม พื้นที่ผิวสัมผัสน้อย แรงลอนดอนน้อยลง" }
+references:
+  - { title: "สารประกอบอินทรีย์", url: "https://th.wikipedia.org/wiki/สารประกอบอินทรีย์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "IUPAC nomenclature of organic chemistry", url: "https://en.wikipedia.org/wiki/IUPAC_nomenclature_of_organic_chemistry", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Functional group", url: "https://en.wikipedia.org/wiki/Functional_group", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "20.1 Hydrocarbons (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/20-1-hydrocarbons", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

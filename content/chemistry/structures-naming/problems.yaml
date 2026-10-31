@@ -1,0 +1,375 @@
+problems:
+  - id: chemistry.organic.structures-naming.p001
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 1
+    type: mcq
+    stem: "สารใดเป็นไฮโดรคาร์บอนอิ่มตัว"
+    choices:
+      - { id: a, text: "โพรเพน $\\mathrm{CH_3CH_2CH_3}$", correct: true, feedback: "ถูก มีแต่พันธะเดี่ยวระหว่าง C กับ C เป็นแอลเคน" }
+      - { id: b, text: "โพรพีน $\\mathrm{CH_2{=}CHCH_3}$", feedback: "มีพันธะคู่ C=C จึงไม่อิ่มตัว" }
+      - { id: c, text: "เอไทน์ $\\mathrm{HC{\\equiv}CH}$", feedback: "มีพันธะสาม จึงไม่อิ่มตัว" }
+      - { id: d, text: "เบนซีน $\\mathrm{C_6H_6}$", feedback: "เบนซีนเป็นอะโรมาติก ไม่ได้มีแต่พันธะเดี่ยว จึงจัดเป็นไม่อิ่มตัว" }
+    hints:
+      - "อิ่มตัว หมายถึงมีแต่พันธะชนิดใด"
+      - "หาสารที่ไม่มี = หรือ ≡ ระหว่างคาร์บอน"
+    solution: "โพรเพนมีแต่พันธะเดี่ยว C–C จึงเป็น **ไฮโดรคาร์บอนอิ่มตัว** สารอื่นมีพันธะคู่หรือพันธะสาม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p002
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 2
+    type: match
+    stem: "จับคู่หมู่ฟังก์ชันกับประเภทของสารอินทรีย์"
+    pairs:
+      - { left: "$\\mathrm{-OH}$ ต่อกับคาร์บอน", right: "แอลกอฮอล์" }
+      - { left: "$\\mathrm{-COOH}$", right: "กรดคาร์บอกซิลิก" }
+      - { left: "$\\mathrm{-CHO}$ ที่ปลายโซ่", right: "แอลดีไฮด์" }
+      - { left: "$\\mathrm{-CO-}$ กลางโซ่", right: "คีโตน" }
+      - { left: "$\\mathrm{-COO-}$ เชื่อมสองโซ่", right: "เอสเทอร์" }
+      - { left: "$\\mathrm{-NH_2}$", right: "เอมีน" }
+    hints:
+      - "หมู่ที่มี C=O มีหลายประเภท ดูว่าอยู่ปลายโซ่หรือกลางโซ่ และต่อกับอะไร"
+      - "–COOH มีทั้ง C=O และ O–H บนคาร์บอนเดียวกัน"
+    solution: "–OH แอลกอฮอล์ · –COOH กรดคาร์บอกซิลิก · –CHO แอลดีไฮด์ · –CO– คีโตน · –COO– เอสเทอร์ · –NH₂ เอมีน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p003
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 2
+    type: text
+    stem: "แก๊สหุงต้มมีสาร $\\mathrm{CH_3CH_2CH_2CH_3}$ อยู่มาก สารนี้มีชื่อ IUPAC ว่าอะไร"
+    accepted: ["บิวเทน", "butane", "n-บิวเทน", "n-butane"]
+    misconceptions:
+      - { match: "โพรเพน", feedback: "นับ C อีกครั้ง โซ่นี้มี C 4 อะตอม ส่วนโพรเพนมี 3" }
+      - { match: "บิวทีน", feedback: "ลงท้าย -อีน ใช้กับสารที่มีพันธะคู่ สารนี้มีแต่พันธะเดี่ยว" }
+    hints:
+      - "นับจำนวน C ในโซ่"
+      - "แอลเคนลงท้ายด้วย -เอน 4 C ใช้ชื่อหลัก บิวท-"
+    solution: "มี C 4 อะตอม พันธะเดี่ยวทั้งหมด จึงเป็น **บิวเทน**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p004
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 2
+    type: numeric
+    stem: "ออกเทนเป็นแอลเคนโซ่ตรงที่มีคาร์บอน 8 อะตอม (เลขออกเทนบนตู้น้ำมันมาจากชื่อสารกลุ่มนี้) ออกเทน 1 โมเลกุลมีไฮโดรเจนกี่อะตอม"
+    answer: { value: 18, unit: อะตอม }
+    misconceptions:
+      - { match: 16, feedback: "$\\mathrm{C_nH_{2n}}$ เป็นสูตรของแอลคีน แอลเคนใช้ $\\mathrm{C_nH_{2n+2}}$" }
+      - { match: 32, feedback: "คาร์บอนแต่ละตัวสร้างพันธะได้ 4 พันธะ แต่บางพันธะใช้ต่อกับคาร์บอนข้างเคียง H จึงไม่ใช่ $4 \\times 8$" }
+    hints:
+      - "สูตรทั่วไปของแอลเคนคือ $\\mathrm{C_nH_{2n+2}}$"
+      - "แทน $n = 8$"
+    solution: "$\\mathrm{C_8H_{2(8)+2}} = \\mathrm{C_8H_{18}}$ มีไฮโดรเจน **18 อะตอม**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p005
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: text
+    stem: "เรียกชื่อ IUPAC ของ $\\mathrm{CH_3CH(CH_3)CH_3}$"
+    accepted: ["2-เมทิลโพรเพน", "2-methylpropane", "เมทิลโพรเพน", "methylpropane"]
+    misconceptions:
+      - { match: "บิวเทน", feedback: "มี C 4 อะตอมก็จริง แต่ไม่ได้ต่อเป็นโซ่ตรง โซ่ที่ยาวที่สุดมีเพียง 3 C" }
+      - { match: "ไอโซบิวเทน", feedback: "ไอโซบิวเทนเป็นชื่อสามัญ ชื่อ IUPAC ต้องบอกโซ่หลักและกิ่ง" }
+      - { match: "1-เมทิลโพรเพน", feedback: "ถ้ากิ่งอยู่ที่ C-1 โซ่หลักจะยาวเป็น 4 C กิ่งของสารนี้อยู่ที่ C-2" }
+    hints:
+      - "โซ่ที่ยาวที่สุดมีกี่ C และกิ่ง $\\mathrm{CH_3}$ อยู่ที่ C ตัวที่เท่าใด"
+      - "ชื่อ = ตำแหน่ง-ชื่อกิ่ง + ชื่อโซ่หลัก"
+    solution: "โซ่หลัก 3 C (โพรเพน) มีกิ่งเมทิลที่ C-2 ชื่อ **2-เมทิลโพรเพน** (ตำแหน่งนี้เป็นไปได้ตำแหน่งเดียว ตำราบางเล่มจึงละเลข 2)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p006
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: text
+    stem: "เรียกชื่อ IUPAC ของสารที่มีสูตรโครงสร้างแบบเส้นดังภาพ"
+    figure:
+      src: p-line-branched.svg
+      alt: "สูตรโครงสร้างแบบเส้น: เส้นซิกแซก 4 ช่วง มีมุมและปลายรวม 5 จุด จุดที่สามนับจากปลายใดปลายหนึ่ง (จุดกึ่งกลาง) มีเส้นสั้นลากลงไปอีกหนึ่งเส้น"
+    accepted: ["3-เมทิลเพนเทน", "3-methylpentane"]
+    misconceptions:
+      - { match: "2-เอทิลบิวเทน", feedback: "เลือกโซ่หลักผิด เมื่อรวมกิ่งเข้าไปจะได้โซ่ 5 C ซึ่งยาวกว่า 4 C" }
+      - { match: "เฮกเซน", feedback: "มี C 6 อะตอมก็จริง แต่ไม่ได้ต่อเป็นโซ่ตรง จึงต้องบอกกิ่ง" }
+      - { match: "3-เมทิลบิวเทน", feedback: "โซ่ที่ยาวที่สุดมี 5 C ไม่ใช่ 4 C" }
+    hints:
+      - "ปลายเส้นและมุมทุกจุดคือ C นับให้ครบรวมกิ่งด้วย"
+      - "หาโซ่ที่ยาวที่สุด แล้วนับว่ากิ่งอยู่ที่ C ตัวที่เท่าใด"
+    solution: "โซ่ซิกแซกมี 5 C (เพนเทน) กิ่ง 1 C (เมทิล) อยู่ที่ C-3 ไม่ว่าจะนับจากปลายใด ชื่อ **3-เมทิลเพนเทน** สูตร $\\mathrm{C_6H_{14}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p007
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: text
+    stem: "เจลล้างมือส่วนใหญ่มีแอลกอฮอล์ $\\mathrm{CH_3CH_2OH}$ ประมาณร้อยละ 70 สารนี้มีชื่อ IUPAC ว่าอะไร"
+    accepted: ["เอทานอล", "ethanol"]
+    misconceptions:
+      - { match: "เมทานอล", feedback: "เมทานอลมี C 1 อะตอม ($\\mathrm{CH_3OH}$) และเป็นพิษ ห้ามใช้ทำเจลล้างมือ สารนี้มี C 2 อะตอม" }
+      - { match: "อีเทน", feedback: "มีหมู่ –OH จึงเป็นแอลกอฮอล์ ต้องลงท้าย -ออล" }
+      - { match: "เอทิลแอลกอฮอล์", feedback: "เป็นชื่อสามัญที่ถูกต้อง แต่โจทย์ถามชื่อ IUPAC" }
+    hints:
+      - "นับ C และดูหมู่ฟังก์ชัน"
+      - "แอลกอฮอล์ลงท้ายด้วย -ออล"
+    solution: "C 2 อะตอม (อีท-) มีหมู่ –OH ชื่อ **เอทานอล**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p008
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: mcq
+    stem: "ชื่อ IUPAC ของ $\\mathrm{CH_3COOH}$ คือข้อใด"
+    choices:
+      - { id: a, text: "กรดเอทาโนอิก", correct: true, feedback: "ถูก C ใน –COOH นับรวมในโซ่หลัก จึงมี 2 C" }
+      - { id: b, text: "กรดเมทาโนอิก", feedback: "นับเฉพาะ $\\mathrm{CH_3}$ แต่ C ของหมู่ –COOH ต้องนับด้วย กรดเมทาโนอิกคือ HCOOH" }
+      - { id: c, text: "เอทานอล", feedback: "เอทานอลคือ $\\mathrm{CH_3CH_2OH}$ มีแค่ –OH ไม่มี C=O" }
+      - { id: d, text: "เอทานาล", feedback: "เอทานาลคือ $\\mathrm{CH_3CHO}$ เป็นแอลดีไฮด์ ไม่มี –OH ที่คาร์บอนเดียวกับ C=O" }
+    hints:
+      - "หมู่ –COOH เป็นของกรดคาร์บอกซิลิก"
+      - "นับ C ทั้งหมดรวมคาร์บอนในหมู่ –COOH"
+    solution: "$\\mathrm{CH_3COOH}$ มี C 2 อะตอม และหมู่ –COOH ชื่อ **กรดเอทาโนอิก** (ชื่อสามัญ กรดแอซีติก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p009
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: text
+    stem: "เรียกชื่อ IUPAC ของ $\\mathrm{CH_3CH_2COCH_3}$ (หมู่ $\\mathrm{-CO-}$ คือ C=O ที่อยู่กลางโซ่)"
+    accepted: ["บิวทาโนน", "บิวแทน-2-โอน", "2-บิวทาโนน", "butanone", "butan-2-one", "2-butanone"]
+    misconceptions:
+      - { match: "บิวทานาล", feedback: "-อาล ใช้กับ –CHO ที่ปลายโซ่ สารนี้มี C=O อยู่กลางโซ่ จึงเป็นคีโตน" }
+      - { match: "บิวแทน-3-โอน", feedback: "ต้องนับจากปลายที่ใกล้หมู่ฟังก์ชัน C=O จึงอยู่ที่ C-2" }
+      - { match: "โพรพาโนน", feedback: "นับ C ให้ครบ โซ่นี้มี 4 C" }
+    hints:
+      - "C=O กลางโซ่เป็นคีโตน ลงท้าย -โอน"
+      - "นับ C ทั้งโซ่ และให้เลขตำแหน่ง C=O น้อยที่สุด"
+    solution: "โซ่ 4 C มี C=O ที่ C-2 ชื่อ **บิวแทน-2-โอน** (หรือ บิวทาโนน เพราะคีโตน 4 C มีตำแหน่งได้แบบเดียว)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p010
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: numeric
+    stem: "$\\mathrm{C_5H_{12}}$ มีไอโซเมอร์โครงสร้างกี่ไอโซเมอร์"
+    answer: { value: 3, unit: ไอโซเมอร์ }
+    misconceptions:
+      - { match: 4, feedback: "อาจนับ 3-เมทิลบิวเทน แยกจาก 2-เมทิลบิวเทน แต่เป็นสารเดียวกันเมื่อนับจากอีกปลาย" }
+      - { match: 2, feedback: "อย่าลืม 2,2-ไดเมทิลโพรเพน ซึ่งมีโซ่หลัก 3 C และกิ่ง 2 กิ่ง" }
+    hints:
+      - "เริ่มจากโซ่ตรง 5 C แล้วลดความยาวโซ่หลักทีละ 1"
+      - "ตรวจว่าโครงสร้างที่ได้ซ้ำกันหรือไม่ โดยหาโซ่ที่ยาวที่สุดใหม่"
+    solution: "เพนเทน · 2-เมทิลบิวเทน · 2,2-ไดเมทิลโพรเพน รวม **3 ไอโซเมอร์**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p011
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: numeric
+    stem: "เฮกเซน ($\\mathrm{C_6H_{14}}$) และไอโซเมอร์ของมันเป็นส่วนประกอบของน้ำมัน $\\mathrm{C_6H_{14}}$ มีไอโซเมอร์โครงสร้างทั้งหมดกี่ไอโซเมอร์ (นับเฮกเซนด้วย)"
+    answer: { value: 5, unit: ไอโซเมอร์ }
+    misconceptions:
+      - { match: 4, feedback: "ตรวจโซ่หลัก 4 C ที่มีกิ่งเมทิล 2 กิ่ง มีได้ 2 แบบ (2,2- และ 2,3-)" }
+      - { match: 6, feedback: "อาจนับ 3-เมทิลเพนเทน กับ 2-เอทิลบิวเทนเป็นคนละสาร แต่ทั้งสองเป็นสารเดียวกัน" }
+    hints:
+      - "โซ่หลัก 6 C, 5 C (กิ่งเมทิลที่ C-2 หรือ C-3), 4 C (กิ่งเมทิล 2 กิ่ง)"
+      - "กิ่งเอทิลที่ C-2 ของบิวเทนทำให้โซ่หลักยาวขึ้น ไม่ใช่สารใหม่"
+    solution: "เฮกเซน · 2-เมทิลเพนเทน · 3-เมทิลเพนเทน · 2,2-ไดเมทิลบิวเทน · 2,3-ไดเมทิลบิวเทน รวม **5 ไอโซเมอร์**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p012
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: order
+    stem: "สารต่อไปนี้มีมวลโมเลกุลใกล้กัน (58–60 g/mol) เรียงตามจุดเดือดจาก **ต่ำไปสูง**"
+    items:
+      - "บิวเทน $\\mathrm{CH_3CH_2CH_2CH_3}$"
+      - "โพรพานาล $\\mathrm{CH_3CH_2CHO}$"
+      - "โพรแพน-1-ออล $\\mathrm{CH_3CH_2CH_2OH}$"
+      - "กรดเอทาโนอิก $\\mathrm{CH_3COOH}$"
+    hints:
+      - "มวลใกล้กัน จุดเดือดจึงขึ้นกับชนิดของแรงระหว่างโมเลกุล"
+      - "ไม่มีขั้ว < มีขั้ว < พันธะไฮโดรเจน และกรดเกิดพันธะไฮโดรเจนได้แรงที่สุด"
+    solution: "บิวเทน (−0.5 °C แรงลอนดอน) < โพรพานาล (48 °C มีขั้ว) < โพรแพน-1-ออล (97 °C พันธะไฮโดรเจน) < กรดเอทาโนอิก (118 °C พันธะไฮโดรเจนจากทั้ง C=O และ O–H)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p013
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: mcq
+    stem: "สารใดละลายน้ำได้ดีที่สุด"
+    choices:
+      - { id: a, text: "เอทานอล $\\mathrm{CH_3CH_2OH}$", correct: true, feedback: "ถูก มีหมู่ –OH เกิดพันธะไฮโดรเจนกับน้ำ และโซ่สั้น ผสมกับน้ำได้ทุกอัตราส่วน" }
+      - { id: b, text: "เฮกแซน-1-ออล $\\mathrm{CH_3(CH_2)_5OH}$", feedback: "มี –OH ก็จริง แต่โซ่ 6 C ส่วนไม่มีขั้วยาว ละลายน้ำได้น้อยมาก" }
+      - { id: c, text: "เฮกเซน $\\mathrm{C_6H_{14}}$", feedback: "ไฮโดรคาร์บอนไม่มีขั้ว ไม่ละลายน้ำ" }
+      - { id: d, text: "อีเทน $\\mathrm{C_2H_6}$", feedback: "โซ่สั้นแต่ไม่มีหมู่ที่เกิดพันธะไฮโดรเจน แทบไม่ละลายน้ำ" }
+    hints:
+      - "หาสารที่เกิดพันธะไฮโดรเจนกับน้ำได้"
+      - "ถ้ามีหมู่ –OH เหมือนกัน โซ่สั้นหรือยาวละลายดีกว่า"
+    solution: "เอทานอลมีหมู่ –OH และโซ่สั้น จึง **ละลายน้ำได้ดีที่สุด** เฮกแซน-1-ออลมีโซ่ยาวจึงละลายน้อย ไฮโดรคาร์บอนไม่ละลาย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p014
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: mcq
+    stem: "น้ำส้มสายชูที่ขายในไทยมีกรดแอซีติกร้อยละ 4–5 สารละลายของสารอินทรีย์ใดเปลี่ยนกระดาษลิตมัสสีน้ำเงินเป็นสีแดงได้เหมือนน้ำส้มสายชู"
+    choices:
+      - { id: a, text: "กรดโพรพาโนอิก $\\mathrm{CH_3CH_2COOH}$", correct: true, feedback: "ถูก มีหมู่ –COOH แตกตัวให้ $\\mathrm{H^+}$ ได้ จึงเป็นกรด" }
+      - { id: b, text: "โพรแพน-1-ออล $\\mathrm{CH_3CH_2CH_2OH}$", feedback: "แอลกอฮอล์มี –OH แต่ไม่แตกตัวเป็นกรดหรือเบส สารละลายเป็นกลาง" }
+      - { id: c, text: "เมทานามีน $\\mathrm{CH_3NH_2}$", feedback: "เอมีนรับ $\\mathrm{H^+}$ ได้ จึงเป็นเบส เปลี่ยนลิตมัสแดงเป็นน้ำเงิน" }
+      - { id: d, text: "โพรพาโนน $\\mathrm{CH_3COCH_3}$", feedback: "คีโตนเป็นกลาง ไม่มีหมู่ที่ให้ $\\mathrm{H^+}$" }
+    hints:
+      - "ลิตมัสน้ำเงินเป็นแดงแปลว่าสารเป็นกรด"
+      - "หมู่ฟังก์ชันใดในน้ำส้มสายชูทำให้เปรี้ยว"
+    solution: "สารที่มีหมู่ **–COOH** เป็นกรด จึงเป็นกรดโพรพาโนอิก แอลกอฮอล์และคีโตนเป็นกลาง เอมีนเป็นเบส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p015
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: mcq
+    stem: "สารคู่ใดเป็นไอโซเมอร์ที่มี **หมู่ฟังก์ชันต่างกัน**"
+    choices:
+      - { id: a, text: "เอทานอล $\\mathrm{CH_3CH_2OH}$ กับ เมทอกซีมีเทน $\\mathrm{CH_3OCH_3}$", correct: true, feedback: "ถูก ทั้งคู่เป็น $\\mathrm{C_2H_6O}$ แต่เป็นแอลกอฮอล์กับอีเทอร์" }
+      - { id: b, text: "บิวเทน กับ 2-เมทิลโพรเพน", feedback: "เป็นไอโซเมอร์จริง แต่ต่างกันที่โซ่คาร์บอน ไม่ได้ต่างที่หมู่ฟังก์ชัน" }
+      - { id: c, text: "โพรแพน-1-ออล กับ โพรแพน-2-ออล", feedback: "เป็นไอโซเมอร์ที่หมู่ –OH อยู่คนละตำแหน่ง หมู่ฟังก์ชันชนิดเดียวกัน" }
+      - { id: d, text: "เอทานอล กับ กรดเอทาโนอิก", feedback: "สูตรโมเลกุลต่างกัน ($\\mathrm{C_2H_6O}$ กับ $\\mathrm{C_2H_4O_2}$) จึงไม่ใช่ไอโซเมอร์" }
+    hints:
+      - "ไอโซเมอร์ต้องมีสูตรโมเลกุลเหมือนกันก่อน"
+      - "แล้วดูว่าหมู่ฟังก์ชันเป็นชนิดเดียวกันหรือไม่"
+    solution: "เอทานอลกับเมทอกซีมีเทนมีสูตร $\\mathrm{C_2H_6O}$ เหมือนกัน แต่เป็น **แอลกอฮอล์กับอีเทอร์** จึงเป็นไอโซเมอร์หมู่ฟังก์ชัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p016
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: text
+    stem: "เรียกชื่อ IUPAC ของ $\\mathrm{CH_2{=}CHCH_2CH_3}$"
+    accepted: ["บิวต์-1-อีน", "บิวท์-1-อีน", "1-บิวทีน", "but-1-ene", "1-butene"]
+    misconceptions:
+      - { match: "บิวต์-3-อีน", feedback: "นับจากปลายที่ไกลพันธะคู่ ต้องนับจากปลายที่ทำให้พันธะคู่ได้เลขน้อยที่สุด" }
+      - { match: "3-บิวทีน", feedback: "นับจากปลายที่ไกลพันธะคู่ ต้องนับจากปลายที่ทำให้พันธะคู่ได้เลขน้อยที่สุด" }
+      - { match: "บิวเทน", feedback: "มีพันธะคู่ จึงเป็นแอลคีน ลงท้าย -อีน" }
+    hints:
+      - "พันธะคู่ C=C ทำให้ลงท้ายด้วย -อีน"
+      - "ให้เลขจากปลายที่ใกล้พันธะคู่ และบอกตำแหน่งด้วยเลขของคาร์บอนตัวแรกของพันธะคู่"
+    solution: "โซ่ 4 C พันธะคู่เริ่มที่ C-1 ชื่อ **บิวต์-1-อีน** (รูปเก่า 1-บิวทีน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p017
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 5
+    type: text
+    stem: "เรียกชื่อ IUPAC ของ $\\mathrm{CH_3CH(CH_3)CH(CH_3)CH_2CH_3}$"
+    accepted: ["2,3-ไดเมทิลเพนเทน", "2,3-dimethylpentane"]
+    misconceptions:
+      - { match: "3,4-ไดเมทิลเพนเทน", feedback: "นับจากปลายผิด นับจากซ้ายได้ 2,3 ซึ่งน้อยกว่า 3,4" }
+      - { match: "2,3-เมทิลเพนเทน", feedback: "กิ่งเมทิล 2 กิ่งต้องใช้คำบอกจำนวน ได-" }
+      - { match: "ไดเมทิลเพนเทน", feedback: "ต้องบอกตำแหน่งของกิ่งทั้งสอง" }
+      - { match: "2-เมทิลเฮกเซน", feedback: "โซ่ที่ยาวที่สุดมี 5 C กิ่งที่ C-3 เป็นเมทิล ไม่ได้ต่อโซ่หลักให้ยาวขึ้น" }
+    hints:
+      - "เขียนโครงสร้างให้เห็นกิ่ง แล้วหาโซ่ที่ยาวที่สุด"
+      - "เลือกปลายที่ให้เลขตำแหน่งกิ่งรวมน้อยที่สุด และใช้ ได- กับกิ่งที่เหมือนกัน"
+    solution: "โซ่หลัก 5 C มีกิ่งเมทิลที่ C-2 และ C-3 (นับจากซ้าย) ชื่อ **2,3-ไดเมทิลเพนเทน** สูตร $\\mathrm{C_7H_{16}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p018
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 5
+    type: numeric
+    stem: "$\\mathrm{C_4H_8}$ ที่เป็นแอลคีนโซ่เปิด มีไอโซเมอร์โครงสร้างกี่ไอโซเมอร์ (ไม่นับไอโซเมอร์เรขาคณิต cis–trans และไม่นับสารที่เป็นวง)"
+    answer: { value: 3, unit: ไอโซเมอร์ }
+    misconceptions:
+      - { match: 2, feedback: "อย่าลืมแอลคีนที่มีกิ่ง: 2-เมทิลโพรพีน $\\mathrm{CH_2{=}C(CH_3)_2}$" }
+      - { match: 4, feedback: "บิวต์-3-อีนคือบิวต์-1-อีนที่นับจากอีกปลาย ไม่ใช่สารใหม่ (หรืออาจนับ cis/trans ซึ่งโจทย์ไม่ให้นับ)" }
+    hints:
+      - "โซ่ตรง 4 C: พันธะคู่อยู่ได้กี่ตำแหน่งที่ไม่ซ้ำกัน"
+      - "โซ่หลัก 3 C ที่มีกิ่งเมทิล 1 กิ่งก็เป็นไปได้"
+    solution: "บิวต์-1-อีน · บิวต์-2-อีน · 2-เมทิลโพรพีน รวม **3 ไอโซเมอร์**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p019
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 3
+    type: mcq
+    stem: "แม่ครัวบีบมะนาวลงบนปลาเพื่อลดกลิ่นคาว กลิ่นคาวปลามาจากเอมีน เช่น ไตรเมทิลเอมีน $\\mathrm{(CH_3)_3N}$ ข้อใดอธิบายได้ถูกต้อง"
+    choices:
+      - { id: a, text: "เอมีนเป็นเบส ทำปฏิกิริยากับกรดในน้ำมะนาวได้เกลือที่ไม่ระเหย กลิ่นจึงลดลง", correct: true, feedback: "ถูก การรู้หมู่ฟังก์ชันช่วยทำนายสมบัติกรด-เบสได้" }
+      - { id: b, text: "เอมีนเป็นกรด น้ำมะนาวเจือจางให้อ่อนลง", feedback: "เอมีนมีไนโตรเจนที่รับ $\\mathrm{H^+}$ ได้ จึงเป็นเบส ไม่ใช่กรด" }
+      - { id: c, text: "กลิ่นมะนาวกลบกลิ่นคาวเท่านั้น ไม่มีปฏิกิริยาเกิดขึ้น", feedback: "กลิ่นมะนาวช่วยได้บ้าง แต่สาเหตุหลักคือกรดทำปฏิกิริยากับเอมีนซึ่งเป็นเบส" }
+      - { id: d, text: "เอมีนเป็นแอลกอฮอล์ ละลายในน้ำมะนาวแล้วหายไป", feedback: "เอมีนไม่ใช่แอลกอฮอล์ หมู่ฟังก์ชันมีไนโตรเจน" }
+    hints:
+      - "น้ำมะนาวมีกรดซิทริก"
+      - "เอมีนเป็นกรดหรือเบส"
+    solution: "เอมีน **เป็นเบส** ทำปฏิกิริยากับกรดซิทริกในน้ำมะนาวเป็นเกลือแอมโมเนียมซึ่งไม่ระเหย กลิ่นคาวจึงลดลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p020
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 2
+    type: mcq
+    stem: "ในสูตรโครงสร้างแบบเส้น ปลายเส้นและมุมแต่ละมุมที่ไม่ได้เขียนสัญลักษณ์ธาตุแทนอะไร"
+    choices:
+      - { id: a, text: "อะตอมคาร์บอนพร้อมไฮโดรเจนที่ต่ออยู่จนครบ 4 พันธะ", correct: true, feedback: "ถูก H ที่ต่อกับ C ไม่ต้องเขียน" }
+      - { id: b, text: "อะตอมไฮโดรเจน", feedback: "H ที่ต่อกับ C ไม่ได้แสดงเป็นมุมหรือปลายเส้น" }
+      - { id: c, text: "พันธะคู่", feedback: "พันธะคู่แสดงด้วยเส้นคู่ ไม่ใช่มุม" }
+      - { id: d, text: "อะตอมออกซิเจน", feedback: "อะตอมอื่นนอกจาก C ต้องเขียนสัญลักษณ์เสมอ" }
+    hints:
+      - "สูตรแบบเส้นละอะตอมชนิดที่พบมากที่สุดในโครงโมเลกุล"
+      - "คาร์บอนแต่ละตัวต้องมีพันธะครบ 4"
+    solution: "ปลายเส้นและมุมแต่ละมุมคือ **คาร์บอน** ซึ่งมีไฮโดรเจนต่ออยู่จนครบ 4 พันธะ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p021
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 4
+    type: mcq
+    stem: "กรดอะคริลิก $\\mathrm{CH_2{=}CHCOOH}$ ใช้ผลิตพอลิเมอร์ดูดซับน้ำในผ้าอ้อม ข้อใดถูกต้องเกี่ยวกับสารนี้"
+    choices:
+      - { id: a, text: "เป็นสารไม่อิ่มตัว และสารละลายเป็นกรด", correct: true, feedback: "ถูก มีพันธะคู่ C=C และหมู่ –COOH" }
+      - { id: b, text: "เป็นสารอิ่มตัว และสารละลายเป็นกรด", feedback: "พันธะคู่ C=C ทำให้ไม่อิ่มตัว (C=O ในหมู่ –COOH ไม่นับในการบอกความอิ่มตัวของโซ่คาร์บอน)" }
+      - { id: c, text: "เป็นสารไม่อิ่มตัว และสารละลายเป็นเบส", feedback: "หมู่ –COOH ให้ $\\mathrm{H^+}$ จึงเป็นกรด ไม่ใช่เบส" }
+      - { id: d, text: "เป็นแอลกอฮอล์ เพราะมีหมู่ –OH", feedback: "–OH อยู่บนคาร์บอนเดียวกับ C=O จึงเป็นส่วนของหมู่ –COOH ไม่ใช่แอลกอฮอล์" }
+    hints:
+      - "หาพันธะคู่ระหว่างคาร์บอนกับคาร์บอน"
+      - "หาหมู่ฟังก์ชันที่บอกสมบัติกรด-เบส"
+    solution: "$\\mathrm{CH_2{=}CH-}$ มีพันธะคู่ C=C จึง **ไม่อิ่มตัว** และหมู่ –COOH ทำให้ **เป็นกรด**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.organic.structures-naming.p022
+    topics: [chemistry.organic.structures-naming]
+    difficulty: 5
+    type: mcq
+    stem: "เอทานอลและเมทอกซีมีเทนมีสูตร $\\mathrm{C_2H_6O}$ เหมือนกัน แต่เอทานอลเดือดที่ 78 °C ส่วนเมทอกซีมีเทนเดือดที่ −24 °C เหตุผลใดถูกต้องที่สุด"
+    choices:
+      - { id: a, text: "เอทานอลมี H ต่อกับ O จึงเกิดพันธะไฮโดรเจนระหว่างโมเลกุล ส่วนเมทอกซีมีเทนมี H ต่อกับ C ทั้งหมด จึงเกิดพันธะไฮโดรเจนระหว่างโมเลกุลกันเองไม่ได้", correct: true, feedback: "ถูก พันธะไฮโดรเจนต้องมี H ที่ต่อกับ N, O หรือ F" }
+      - { id: b, text: "เอทานอลมีมวลโมเลกุลมากกว่า", feedback: "สูตรเหมือนกัน มวลโมเลกุลจึงเท่ากัน (46.07 g/mol)" }
+      - { id: c, text: "เมทอกซีมีเทนไม่มีขั้วเลย", feedback: "เมทอกซีมีเทนมีขั้วเล็กน้อยเพราะ C–O–C เป็นมุมงอ แต่ไม่มีพันธะไฮโดรเจน" }
+      - { id: d, text: "พันธะโคเวเลนต์ในเอทานอลแข็งแรงกว่า จึงต้องใช้พลังงานมากกว่าจะเดือด", feedback: "การเดือดไม่ได้สลายพันธะโคเวเลนต์ภายในโมเลกุล แต่เอาชนะแรงระหว่างโมเลกุล" }
+    hints:
+      - "การเดือดต้องเอาชนะแรงชนิดใด"
+      - "พันธะไฮโดรเจนเกิดเมื่อ H ต่อกับอะตอมใด"
+    solution: "เอทานอลมีหมู่ –OH เกิด **พันธะไฮโดรเจน** ระหว่างโมเลกุล ซึ่งแรงกว่าแรงระหว่างขั้วในเมทอกซีมีเทนมาก จุดเดือดจึงสูงกว่าถึงราว 100 °C"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
