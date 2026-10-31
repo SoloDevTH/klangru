@@ -1,0 +1,65 @@
+id: biology.genetics.mutation-biotechnology
+subject: biology
+title: { th: มิวเทชันและเทคโนโลยีทางดีเอ็นเอ, en: "Mutation and DNA technology" }
+summary: มิวเทชันระดับยีนและโครโมโซม สาเหตุ โรคและกลุ่มอาการ การใช้ประโยชน์จากมิวเทชันและการคัดเลือกพันธุ์ ดีเอ็นเอรีคอมบิแนนท์ PCR ลายพิมพ์ดีเอ็นเอ การประยุกต์ และชีวจริยธรรม
+difficulty: 6
+minutes: 50
+prerequisites: [biology.genetics.chromosomes-dna]
+encompasses:
+  - { id: biology.genetics.chromosomes-dna, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: มิวเทชันระดับโครโมโซมแบบเปลี่ยนโครงสร้าง
+    src: chromosome-mutations.svg
+    alt: "โครโมโซมแทนด้วยแถบช่องตัวอักษร A ถึง F แต่ละแถวแสดงก่อนและหลังมิวเทชัน การขาดหาย ABCDEF กลายเป็น ABDEF ส่วน C หายไป การเพิ่มซ้ำ ABCDEF กลายเป็น ABCBCDEF ส่วน BC ซ้ำ การกลับทิศ ABCDEF กลายเป็น ADCBEF ส่วน BCD กลับหัว การย้ายตำแหน่ง โครโมโซม ABCDEF และโครโมโซมอีกแท่ง MNO ที่ไม่ได้เป็นคู่กัน กลายเป็น ABCNO และ MDEF คือส่วน DEF กับส่วน NO สลับกัน"
+    caption: "ตัวอักษรแทนช่วงยีนบนโครโมโซม (วาดโดยทีมคลังรู้)"
+  - type: figure
+    title: การตัดด้วย EcoRI และปลายเหนียว
+    src: ecori-sticky-ends.svg
+    alt: "ขั้นที่ 1 DNA สายคู่ สายบน 5′-...CG|AATTCG...-3′ สายล่าง 3′-...GCTTAA|GC...-5′ เครื่องหมาย | คือตำแหน่งที่ EcoRI ตัด ซึ่งอยู่ระหว่าง G กับ A ของลำดับจดจำ GAATTC บนทั้งสองสาย ขั้นที่ 2 ได้สองชิ้น ชิ้นซ้ายสายบนจบที่ CG สายล่างยื่นเป็นสายเดี่ยว TTAA ชิ้นขวาสายบนยื่นเป็นสายเดี่ยว AATT สายล่างเริ่มที่ GC สายเดี่ยวที่ยื่นออกมาเข้าคู่กันได้พอดี ขั้นที่ 3 ตัดยีนที่ต้องการออกจาก DNA และตัดพลาสมิดวงกลมให้เปิดด้วย EcoRI ตัวเดียวกัน ขั้นที่ 4 ปลายเหนียวของยีนและพลาสมิดจับคู่เบสกัน แล้วไลเกสเชื่อมพันธะ ได้ DNA รีคอมบิแนนท์"
+    caption: "เอนไซม์ตัวเดียวกันให้ปลายเหนียวที่เข้าคู่กันได้ (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: เพิ่มจำนวน DNA ด้วย PCR
+    problem: "ตัวอย่างจากที่เกิดเหตุมี DNA ช่วงที่ต้องการ 50 โมเลกุล ทำ PCR 20 รอบ ถ้าแต่ละรอบเพิ่มเป็น 2 เท่าพอดี จะได้ DNA ช่วงนี้กี่โมเลกุล"
+    steps:
+      - text: "แต่ละรอบ DNA สายคู่แยกเป็นสายเดี่ยว แต่ละสายเป็นแม่แบบสร้างสายใหม่ จำนวนจึงเพิ่มเป็น 2 เท่า"
+      - text: "20 รอบเพิ่มเป็น $2^{20} = 1{,}048{,}576$ เท่า"
+        why: "เพิ่มเป็น 2 เท่าซ้ำกัน 20 ครั้ง จึงเป็นการคูณ 2 ยี่สิบครั้ง ไม่ใช่การบวก"
+      - text: "$50 \\times 1{,}048{,}576 = 52{,}428{,}800$ โมเลกุล"
+    answer: "ประมาณ $5.2 \\times 10^{7}$ โมเลกุล พอสำหรับตรวจด้วยเจลอิเล็กโทรโฟรีซิส"
+  - { type: check, problem: biology.genetics.mutation-biotechnology.p004, prompt: "จำนวนเพิ่มเป็น 2 เท่าทุกรอบ" }
+  - type: worked-example
+    title: ใครเป็นแม่ที่แท้จริง
+    problem: "เด็กมีแอลลีล STR ตำแหน่งหนึ่งเป็น 9 กับ 12 พ่อที่แท้จริงมี 12 กับ 15 ผู้หญิงสองคนอ้างเป็นแม่ คนที่หนึ่งมี 9 กับ 14 คนที่สองมี 11 กับ 13 ใครมีโอกาสเป็นแม่"
+    steps:
+      - text: "เด็กได้แอลลีลหนึ่งจากพ่อและอีกหนึ่งจากแม่ พ่อมี 12 จึงให้ 12"
+      - text: "แอลลีล 9 ที่เหลือต้องมาจากแม่"
+        why: "พ่อไม่มีแอลลีล 9 จึงให้ 9 ไม่ได้"
+      - text: "คนที่หนึ่งมี 9 คนที่สองไม่มี 9"
+    answer: "คนที่หนึ่งเข้ากันได้ ส่วนคนที่สองเป็นแม่ไม่ได้ ในงานจริงต้องตรวจหลายตำแหน่งจึงสรุปได้"
+glossary:
+  - { term: มิวเทชัน, definition: "การเปลี่ยนแปลงของสารพันธุกรรมระดับยีนหรือระดับโครโมโซม" }
+  - { term: สิ่งก่อกลายพันธุ์, definition: "สิ่งที่ทำให้เกิดมิวเทชันได้มากขึ้น เช่น รังสี สารเคมีบางชนิด ไวรัสบางชนิด" }
+  - { term: พอลิพลอยดี, definition: "ภาวะที่มีโครโมโซมเพิ่มเป็นชุด เช่น 3n 4n" }
+  - { term: เอนไซม์ตัดจำเพาะ, definition: "เอนไซม์ที่ตัด DNA ตรงลำดับเบสจำเพาะ เช่น EcoRI ตัดที่ GAATTC" }
+  - { term: DNA รีคอมบิแนนท์, definition: "DNA ที่เกิดจากการต่อ DNA จากต่างแหล่งเข้าด้วยกัน" }
+  - { term: PCR, definition: "ปฏิกิริยาลูกโซ่พอลิเมอเรส เพิ่มจำนวน DNA ช่วงที่ต้องการเป็น 2 เท่าทุกรอบ" }
+  - { term: ลายพิมพ์ DNA, definition: "แบบแผนของชิ้น DNA (เช่น STR หลายตำแหน่ง) ที่ต่างกันในแต่ละคน ใช้พิสูจน์ตัวบุคคล" }
+  - { term: ชีวจริยธรรม, definition: "หลักคิดเรื่องความถูกต้องดีงามในการใช้ความรู้และเทคโนโลยีทางชีววิทยา" }
+flashcards:
+  - { front: "มิวเทชันระดับโครโมโซมแบบเปลี่ยนโครงสร้าง 4 แบบ", back: "ขาดหาย เพิ่มซ้ำ กลับทิศ ย้ายตำแหน่ง" }
+  - { front: "ข้าว กข6 และ กข15 ได้มาอย่างไร", back: "ฉายรังสีแกมมาให้ข้าวขาวดอกมะลิ 105 กลายพันธุ์แล้วคัดเลือก" }
+  - { front: "เครื่องมือสร้าง DNA รีคอมบิแนนท์", back: "เอนไซม์ตัดจำเพาะ เวกเตอร์ DNA ไลเกส เซลล์เจ้าบ้าน" }
+  - { front: "PCR n รอบเพิ่มกี่เท่า", back: "2ⁿ เท่า" }
+  - { front: "ชิ้น DNA ใดเคลื่อนที่ในเจลได้ไกลกว่า", back: "ชิ้นเล็ก" }
+references:
+  - { title: "Mutation", url: "https://en.wikipedia.org/wiki/Mutation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Recombinant DNA", url: "https://en.wikipedia.org/wiki/Recombinant_DNA", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "17.1 Biotechnology (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/17-1-biotechnology", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "DNA profiling", url: "https://en.wikipedia.org/wiki/DNA_profiling", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
