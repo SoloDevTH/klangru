@@ -1,0 +1,87 @@
+id: math.functions.graph-transformations
+subject: math
+title: { th: การเลื่อน ยืด และสะท้อนกราฟของฟังก์ชัน, en: "Translating, stretching and reflecting graphs" }
+summary: ผลของการบวก คูณ และเปลี่ยนเครื่องหมายทั้งข้างในและข้างนอกฟังก์ชันต่อกราฟ ฟังก์ชันคู่และคี่ การแปลงหลายขั้น และการหาค่าพารามิเตอร์จากกราฟ ทดลองด้วยกราฟโต้ตอบ
+difficulty: 6
+minutes: 40
+prerequisites: [math.functions.quadratic, math.functions.functions-intro]
+encompasses:
+  - { id: math.functions.quadratic, weight: 0.4 }
+  - { id: math.functions.functions-intro, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: shifts.svg
+    alt: "กราฟพาราโบลาสามเส้น y = x² สีดำมีจุดต่ำสุดที่ (0, 0) y = x² + 2 สีน้ำเงินมีจุดต่ำสุดที่ (0, 2) มีลูกศรขึ้น 2 หน่วย และ y = (x − 3)² สีแดงมีจุดต่ำสุดที่ (3, 0) มีลูกศรไปทางขวา 3 หน่วย"
+    caption: "บวกข้างนอกเลื่อนขึ้น ลบ 3 ข้างในเลื่อนไปทางขวา 3"
+  - type: interactive
+    title: ทดลองเลื่อน ยืด และสะท้อนกราฟรากที่สอง
+    caption: "กราฟสีแรกคือ y = √x กราฟที่สองคือ y = a√(b(x − h)) + k ลองให้ b เป็นลบเพื่อสะท้อนในแกน y และให้ a เป็นลบเพื่อสะท้อนในแกน x"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{x}", "a\\sqrt{b\\cdot(x-h)}+k"]
+      sliders:
+        - { name: a, min: -3, max: 3, step: 0.5, value: 1, label: ยืดแนวตั้ง a }
+        - { name: b, min: -3, max: 3, step: 0.5, value: 1, label: ตัวคูณข้างใน b }
+        - { name: h, min: -4, max: 4, step: 1, value: 0, label: เลื่อนแนวนอน h }
+        - { name: k, min: -4, max: 4, step: 1, value: 0, label: เลื่อนแนวตั้ง k }
+      x: [-6, 6]
+      y: [-5, 5]
+  - type: worked-example
+    title: บรรยายและร่างกราฟจากสมการ
+    problem: "จงบอกการแปลงที่เปลี่ยน $y = x^2$ เป็น $y = -(x + 1)^2 + 3$ และหาจุดยอดของกราฟใหม่"
+    steps:
+      - text: "ข้างใน $x + 1$: เลื่อนไปทางซ้าย 1 หน่วย จุดยอดย้ายจาก $(0, 0)$ ไป $(-1, 0)$"
+        why: "เครื่องหมายบวกข้างในทำให้เลื่อนไปทางลบ"
+      - text: "เครื่องหมายลบข้างหน้า: สะท้อนในแกน $x$ พาราโบลาคว่ำลง จุดยอดยังอยู่ที่ $(-1, 0)$"
+        why: "จุดบนแกน $x$ ไม่ขยับเมื่อสะท้อนในแกน $x$"
+      - text: "บวก 3 ข้างนอก: เลื่อนขึ้น 3 หน่วย จุดยอดไปอยู่ที่ $(-1, 3)$"
+      - text: "ตรวจ: แทน $x = -1$ ได้ $y = -0 + 3 = 3$ และค่า $x$ อื่นให้ $y$ น้อยกว่า 3 ทั้งหมด จึงเป็นจุดสูงสุด"
+    answer: "เลื่อนซ้าย 1 สะท้อนในแกน $x$ แล้วเลื่อนขึ้น 3 จุดยอด $(-1, 3)$"
+  - { type: check, problem: math.functions.graph-transformations.p002, prompt: "ลบข้างในทำให้เลื่อนไปทางใด" }
+  - type: figure
+    src: stretch-reflect.svg
+    alt: "กราฟ y = √x สีดำเริ่มที่จุดกำเนิดไปทางขวา y = 2√x สีน้ำเงินสูงเป็นสองเท่า y = −√x สีแดงอยู่ใต้แกน x เป็นภาพสะท้อนของ √x และ y = √(−x) สีเขียวไปทางซ้ายเป็นภาพสะท้อนในแกน y"
+    caption: "คูณข้างนอกยืดตามแนวตั้ง เครื่องหมายลบข้างนอกพลิกขึ้นลง เครื่องหมายลบข้างในพลิกซ้ายขวา"
+  - type: interactive
+    title: ตัวคูณข้างใน f(cx)
+    caption: "เส้นแรกคือ f(x) = x² − 2x เส้นที่สองคือ f(cx) ลองให้ c = 2 (หดเข้าครึ่งหนึ่ง) c = 0.5 (ยืดออกสองเท่า) และ c = −1 (สะท้อนในแกน y)"
+    widget:
+      kind: function-plot
+      functions: ["x^2-2x", "(c x)^2-2c x"]
+      sliders:
+        - { name: c, min: -2, max: 2, step: 0.25, value: 1, label: c }
+      x: [-5, 5]
+      y: [-3, 8]
+  - type: worked-example
+    title: ติดตามจุดผ่านการแปลง
+    problem: "กราฟของ $f$ ผ่านจุด $(-2, 4)$ และ $(3, -1)$ จงหาจุดที่สมนัยกันบนกราฟของ $g(x) = -f(2x) + 1$"
+    steps:
+      - text: "$f(2x)$ หดเข้าหาแกน $y$ ครึ่งหนึ่ง: $(-2, 4) \\to (-1, 4)$ และ $(3, -1) \\to (1.5, -1)$"
+        why: "ต้องใส่ $x = -1$ จึงได้ $2x = -2$ ค่า $x$ จึงหารด้วย 2"
+      - text: "เครื่องหมายลบข้างนอก สะท้อนในแกน $x$: $(-1, 4) \\to (-1, -4)$ และ $(1.5, -1) \\to (1.5, 1)$"
+      - text: "บวก 1 ข้างนอก เลื่อนขึ้น 1: $(-1, -3)$ และ $(1.5, 2)$"
+      - text: "ตรวจ: $g(-1) = -f(-2) + 1 = -4 + 1 = -3$ ถูกต้อง"
+    answer: "$(-1, -3)$ และ $(1.5, 2)$"
+  - { type: check, problem: math.functions.graph-transformations.p006, prompt: "ค่า x ต้องเป็นเท่าไรจึงได้ 2x = 2" }
+glossary:
+  - { term: การเลื่อนขนาน, definition: "การย้ายกราฟทั้งรูปไปตามแนวตั้งหรือแนวนอนโดยรูปร่างไม่เปลี่ยน" }
+  - { term: การยืดและการหด, definition: "การคูณค่า y (แนวตั้ง) หรือค่า x (แนวนอน) ของทุกจุดด้วยจำนวนเดียวกัน" }
+  - { term: การสะท้อน, definition: "การพลิกกราฟข้ามแกน x (เปลี่ยน y เป็น −y) หรือข้ามแกน y (เปลี่ยน x เป็น −x)" }
+  - { term: ฟังก์ชันคู่, definition: "ฟังก์ชันที่ f(−x) = f(x) ทุก x กราฟสมมาตรรอบแกน y" }
+  - { term: ฟังก์ชันคี่, definition: "ฟังก์ชันที่ f(−x) = −f(x) ทุก x กราฟสมมาตรรอบจุดกำเนิด" }
+flashcards:
+  - { front: "f(x − 4) เลื่อนกราฟไปทางใด", back: "ไปทางขวา 4 หน่วย" }
+  - { front: "f(3x) ทำอะไรกับกราฟ", back: "หดเข้าหาแกน y เหลือ 1/3 เท่า" }
+  - { front: "−f(x) กับ f(−x) ต่างกันอย่างไร", back: "−f(x) สะท้อนในแกน x ส่วน f(−x) สะท้อนในแกน y" }
+  - { front: "ฟังก์ชันคู่มีกราฟสมมาตรอย่างไร", back: "สมมาตรรอบแกน y เพราะ f(−x) = f(x)" }
+  - { front: "f(2x − 6) เลื่อนแนวนอนเท่าไร", back: "ขวา 3 เพราะ f(2(x − 3))" }
+references:
+  - { title: "Transformation of functions (Graph of a function)", url: "https://en.wikipedia.org/wiki/Graph_of_a_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Even and odd functions", url: "https://en.wikipedia.org/wiki/Even_and_odd_functions", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "1.5 Transformation of Functions (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/1-5-transformation-of-functions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

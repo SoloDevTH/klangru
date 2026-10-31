@@ -1,0 +1,273 @@
+problems:
+  - id: chemistry.stoichiometry.mole.p001
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 1
+    type: mcq
+    stem: "สาร 1 โมลมีอนุภาคกี่อนุภาค"
+    choices:
+      - { id: a, text: "$6.02 \\times 10^{23}$ อนุภาค", correct: true, feedback: "ถูก นี่คือเลขอาโวกาโดร" }
+      - { id: b, text: "22.4 อนุภาค", feedback: "22.4 คือปริมาตร ($\\mathrm{dm^3}$) ของแก๊ส 1 mol ที่ STP ไม่ใช่จำนวนอนุภาค" }
+      - { id: c, text: "เท่ากับมวลโมเลกุลของสารนั้น", feedback: "มวลโมเลกุลบอกมวลของสาร 1 mol เป็นกรัม ไม่ใช่จำนวนอนุภาค" }
+    hints:
+      - "หนึ่งโมลเป็นหน่วยนับ เหมือน 1 โหล = 12"
+      - "ตัวเลขนี้มีชื่อตามนักวิทยาศาสตร์ชาวอิตาลี"
+    solution: "สารทุกชนิด 1 mol มีอนุภาค $6.02 \\times 10^{23}$ อนุภาค (เลขอาโวกาโดร) ไม่ว่าจะเป็นอะตอม โมเลกุล หรือไอออน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p002
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 1
+    type: numeric
+    stem: "โมเลกุลของน้ำตาล $3.01 \\times 10^{23}$ โมเลกุล คิดเป็นกี่โมล"
+    answer: { value: 0.5, tolerance: 0.005, unit: mol }
+    misconceptions:
+      - { match: 2, feedback: "นำ $6.02 \\times 10^{23}$ ไปหารด้วยจำนวนโมเลกุล ต้องกลับกัน" }
+    hints:
+      - "จำนวนโมล = จำนวนอนุภาค ÷ $6.02 \\times 10^{23}$"
+      - "$3.01$ เป็นครึ่งหนึ่งของ $6.02$"
+    solution: "$n = \\dfrac{3.01 \\times 10^{23}}{6.02 \\times 10^{23}} = 0.5$ mol"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p003
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 2
+    type: numeric
+    stem: "คำนวณมวลต่อโมลของคาร์บอนไดออกไซด์ $\\mathrm{CO_2}$ (C = 12.01, O = 16.00) ในหน่วย g/mol"
+    answer: { value: 44.01, tolerance: 0.02, unit: g/mol }
+    misconceptions:
+      - { match: 28.01, feedback: "นับ O เพียงอะตอมเดียว $\\mathrm{CO_2}$ มี O 2 อะตอม" }
+      - { match: 56.02, feedback: "คูณ 2 กับคาร์บอนด้วย ตัวเลขห้อย 2 เป็นของออกซิเจนเท่านั้น" }
+    hints:
+      - "นับอะตอม: C 1 อะตอม O 2 อะตอม"
+      - "รวม 12.01 + 2 × 16.00"
+    solution: "$M = 12.01 + 2(16.00) = 44.01$ g/mol"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p004
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 2
+    type: numeric
+    stem: "น้ำ 90.1 g คิดเป็นกี่โมล (H = 1.008, O = 16.00)"
+    answer: { value: 5.0, tolerance: 0.05, unit: mol }
+    misconceptions:
+      - { match: 1623.2, feedback: "คูณแทนหาร มวล → โมล ต้องหารด้วยมวลต่อโมล" }
+      - { match: 5.3, feedback: "นับ H เพียงอะตอมเดียว ได้มวลต่อโมล 17.01 น้ำมี H 2 อะตอม จึงเป็น $2(1.008) + 16.00 = 18.02$" }
+    hints:
+      - "มวลต่อโมลของ $\\mathrm{H_2O}$ = $2(1.008) + 16.00$"
+      - "$n = m / M$"
+    solution: "$M = 18.02$ g/mol · $n = \\dfrac{90.1}{18.02} = 5.00$ mol"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p005
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ปริมาณกับค่าที่เท่ากับ 1 โมล"
+    pairs:
+      - { left: "แก๊สใด ๆ ที่ STP", right: "22.4 dm³" }
+      - { left: "จำนวนอนุภาค", right: "6.02 × 10²³ อนุภาค" }
+      - { left: "น้ำ $\\mathrm{H_2O}$", right: "18.02 g" }
+      - { left: "คาร์บอน", right: "12.01 g" }
+    hints:
+      - "มวลของสาร 1 mol เป็นกรัมเท่ากับมวลอะตอมหรือมวลโมเลกุล"
+      - "ปริมาตรใช้ได้เฉพาะแก๊สที่ 0 °C 1 atm"
+    solution: "แก๊ส 1 mol ที่ STP = 22.4 dm³ · 1 mol = $6.02 \\times 10^{23}$ อนุภาค · น้ำ 1 mol = 18.02 g · คาร์บอน 1 mol = 12.01 g"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p006
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สออกซิเจน $\\mathrm{O_2}$ 0.5 mol มีกี่ **โมเลกุล** ตอบเป็นตัวเลขที่คูณกับ $10^{23}$"
+    answer: { value: 3.01, tolerance: 0.02, unit: "× 10²³ โมเลกุล" }
+    misconceptions:
+      - { match: 6.02, feedback: "นั่นคือจำนวน **อะตอม** O ($0.5 \\times 2$ mol) โจทย์ถามจำนวนโมเลกุล $\\mathrm{O_2}$" }
+      - { match: 12.04, feedback: "คูณ 2 แทนการคูณ 0.5 ลองดูจำนวนโมลอีกครั้ง" }
+    hints:
+      - "จำนวนโมเลกุล = จำนวนโมล × $6.02 \\times 10^{23}$"
+      - "โจทย์ถามโมเลกุล ไม่ต้องคูณจำนวนอะตอมในโมเลกุล"
+    solution: "$N = 0.5 \\times 6.02 \\times 10^{23} = 3.01 \\times 10^{23}$ โมเลกุล (มีอะตอม O $6.02 \\times 10^{23}$ อะตอม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p007
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สคาร์บอนไดออกไซด์ 0.25 mol มีปริมาตรกี่ $\\mathrm{dm^3}$ ที่ STP"
+    answer: { value: 5.6, tolerance: 0.05, unit: dm³ }
+    misconceptions:
+      - { match: 89.6, feedback: "หาร 22.4 ด้วย 0.25 แต่ต้องคูณ: ปริมาตร = โมล × 22.4" }
+      - { match: 11.0, feedback: "นำมวลต่อโมล 44.01 มาใช้ ไม่จำเป็น แก๊สทุกชนิด 1 mol ที่ STP มีปริมาตร 22.4 dm³" }
+    hints:
+      - "แก๊ส 1 mol ที่ STP มีปริมาตร 22.4 dm³"
+      - "ปริมาตร = จำนวนโมล × 22.4"
+    solution: "$V = 0.25 \\times 22.4 = 5.6\\ \\mathrm{dm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p008
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 3
+    type: numeric
+    stem: "คลอรีนในธรรมชาติมี Cl-35 (มวล 34.969 u) ร้อยละ 75.76 และ Cl-37 (มวล 36.966 u) ร้อยละ 24.24 คำนวณมวลอะตอมเฉลี่ยของคลอรีน (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 35.45, tolerance: 0.01, unit: u }
+    misconceptions:
+      - { match: 35.97, feedback: "หาค่ากลางธรรมดาของ 34.969 กับ 36.966 ต้องถ่วงด้วยร้อยละที่พบ" }
+    hints:
+      - "มวลเฉลี่ย = Σ (สัดส่วน × มวลไอโซโทป)"
+      - "เปลี่ยนร้อยละเป็นสัดส่วน: 75.76% = 0.7576"
+    solution: "$0.7576(34.969) + 0.2424(36.966) = 26.492 + 8.961 = 35.45$ u ใกล้ Cl-35 เพราะพบมากกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p009
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อใดมีจำนวน **อะตอม** รวมมากที่สุด"
+    choices:
+      - { id: a, text: "มีเทน $\\mathrm{CH_4}$ 1 mol", correct: true, feedback: "ถูก 1 โมเลกุลมี 5 อะตอม จึงมีอะตอม 5 mol" }
+      - { id: b, text: "น้ำ $\\mathrm{H_2O}$ 1 mol", feedback: "น้ำมี 3 อะตอมต่อโมเลกุล รวม 3 mol อะตอม" }
+      - { id: c, text: "ฮีเลียม He 2 mol", feedback: "ฮีเลียมเป็นอะตอมเดี่ยว 2 mol จึงมีอะตอม 2 mol" }
+      - { id: d, text: "ออกซิเจน $\\mathrm{O_2}$ 2 mol", feedback: "มีอะตอม $2 \\times 2 = 4$ mol ยังน้อยกว่า 5" }
+    hints:
+      - "จำนวนโมลอะตอม = จำนวนโมลโมเลกุล × จำนวนอะตอมในหนึ่งโมเลกุล"
+      - "คำนวณทุกข้อแล้วเทียบ"
+    solution: "$\\mathrm{CH_4}$: $1 \\times 5 = 5$ · $\\mathrm{H_2O}$: $1 \\times 3 = 3$ · He: $2 \\times 1 = 2$ · $\\mathrm{O_2}$: $2 \\times 2 = 4$ mol อะตอม มีเทนจึงมากที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p010
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 3
+    type: numeric
+    stem: "ปุ๋ยยูเรีย $\\mathrm{CO(NH_2)_2}$ ที่ชาวนาใช้มีไนโตรเจนร้อยละเท่าใดโดยมวล (H = 1.008, C = 12.01, N = 14.01, O = 16.00 ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 46.7, tolerance: 0.15, unit: "%" }
+    misconceptions:
+      - { match: 23.3, feedback: "นับ N เพียงอะตอมเดียว ในวงเล็บ $\\mathrm{(NH_2)_2}$ มี N 2 อะตอม" }
+      - { match: 48.3, feedback: "นับ H ในวงเล็บเพียง 2 อะตอม ต้องคูณตัวห้อยนอกวงเล็บด้วย จึงมี H 4 อะตอม" }
+    hints:
+      - "นับอะตอม: C 1, O 1, N 2, H 4"
+      - "ร้อยละ N = (2 × 14.01) ÷ มวลต่อโมล × 100"
+    solution: "$M = 12.01 + 16.00 + 2(14.01) + 4(1.008) = 60.06$ g/mol · N $= \\dfrac{28.02}{60.06} \\times 100 = 46.7\\%$ ตรงกับสูตรปุ๋ย 46-0-0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p011
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 4
+    type: numeric
+    stem: "แหวนทองคำบริสุทธิ์วงหนึ่งหนัก 3.94 g มีอะตอมทองคำกี่อะตอม (Au = 196.97) ตอบเป็นตัวเลขที่คูณกับ $10^{22}$"
+    answer: { value: 1.2, tolerance: 0.02, unit: "× 10²² อะตอม" }
+    misconceptions:
+      - { match: 12.04, feedback: "ได้ $1.204 \\times 10^{22}$ แล้ว แต่เขียนเป็นตัวคูณของ $10^{21}$ ระวังการเลื่อนจุดทศนิยม" }
+      - { match: 0.12, feedback: "ได้ $1.20 \\times 10^{22}$ แต่เขียนเป็นตัวคูณของ $10^{23}$ ลองนับเลขชี้กำลังใหม่" }
+    hints:
+      - "มวล → โมล: หารด้วย 196.97"
+      - "โมล → อะตอม: คูณ $6.02 \\times 10^{23}$ แล้วเขียนเป็นตัวคูณของ $10^{22}$"
+    solution: "$n = 3.94 / 196.97 = 0.0200$ mol · $N = 0.0200 \\times 6.02 \\times 10^{23} = 1.20 \\times 10^{22}$ อะตอม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p012
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 4
+    type: numeric
+    stem: "แก๊สมีเทนจากบ่อแก๊สชีวภาพ 11.2 $\\mathrm{dm^3}$ ที่ STP มีมวลกี่กรัม (C = 12.01, H = 1.008)"
+    answer: { value: 8.02, tolerance: 0.03, unit: g }
+    misconceptions:
+      - { match: 179.67, feedback: "คูณปริมาตรกับมวลต่อโมลโดยตรง ต้องเปลี่ยนปริมาตรเป็นโมลก่อน (หาร 22.4)" }
+      - { match: 32.08, feedback: "นำ 22.4 ไปหารด้วย 11.2 ได้ 2 mol ต้องกลับกัน: โมล = ปริมาตร ÷ 22.4 = 0.5 mol" }
+    hints:
+      - "ปริมาตร → โมล: หารด้วย 22.4"
+      - "โมล → มวล: คูณด้วยมวลต่อโมลของ $\\mathrm{CH_4}$"
+    solution: "$n = 11.2 / 22.4 = 0.500$ mol · $M = 12.01 + 4(1.008) = 16.04$ g/mol · $m = 0.500 \\times 16.04 = 8.02$ g"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p013
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 4
+    type: numeric
+    stem: "เผาแมกนีเซียม 2.43 g ได้แมกนีเซียมออกไซด์ 4.03 g ตามกฎสัดส่วนคงที่ ถ้าต้องการแมกนีเซียมออกไซด์ 10.0 g ต้องใช้แมกนีเซียมกี่กรัม"
+    answer: { value: 6.03, tolerance: 0.03, unit: g }
+    misconceptions:
+      - { match: 16.58, feedback: "ใช้อัตราส่วนกลับด้าน ต้องเป็น Mg : MgO = 2.43 : 4.03" }
+      - { match: 15.19, feedback: "ใช้อัตราส่วน Mg : O (2.43 : 1.60) แต่โจทย์ให้มวลของ MgO ทั้งหมด ไม่ใช่มวลออกซิเจน" }
+    hints:
+      - "อัตราส่วนมวล Mg : MgO คงที่เสมอ"
+      - "มวล Mg = 10.0 × (2.43 / 4.03)"
+    solution: "$\\dfrac{m_{\\mathrm{Mg}}}{10.0} = \\dfrac{2.43}{4.03}$ จะได้ $m_{\\mathrm{Mg}} = 10.0 \\times 0.603 = 6.03$ g"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p014
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 4
+    type: text
+    stem: "สารชนิดหนึ่งประกอบด้วย C ร้อยละ 40.0, H ร้อยละ 6.71 และ O ร้อยละ 53.3 โดยมวล หาสูตรอย่างง่าย (เขียนตามลำดับ C H O เช่น C2H3O)"
+    accepted: ["CH2O", "CH₂O"]
+    misconceptions:
+      - { match: "C3H7O3", feedback: "นำร้อยละหารด้วยมวลอะตอมแล้วยังไม่ได้หารด้วยค่าที่น้อยที่สุด" }
+      - { match: "C40H7O53", feedback: "ต้องเปลี่ยนมวลเป็นโมลก่อน (หารด้วยมวลอะตอม) อัตราส่วนมวลไม่ใช่อัตราส่วนอะตอม" }
+    hints:
+      - "สมมติสาร 100 g แล้วหาจำนวนโมลของแต่ละธาตุ"
+      - "หารทุกจำนวนโมลด้วยค่าที่น้อยที่สุด"
+    solution: "C: $40.0/12.01 = 3.33$ · H: $6.71/1.008 = 6.66$ · O: $53.3/16.00 = 3.33$ หารด้วย 3.33 ได้ $1 : 2 : 1$ สูตรอย่างง่ายคือ $\\mathrm{CH_2O}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p015
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 5
+    type: text
+    stem: "สารในข้อก่อนหน้า (สูตรอย่างง่าย $\\mathrm{CH_2O}$) มีมวลต่อโมล 180.16 g/mol สูตรโมเลกุลคืออะไร (เขียนตามลำดับ C H O)"
+    accepted: ["C6H12O6", "C₆H₁₂O₆"]
+    misconceptions:
+      - { match: "CH2O", feedback: "นั่นคือสูตรอย่างง่าย มวล 30.03 ยังห่างจาก 180.16 มาก ต้องหาจำนวนเท่า" }
+      - { match: "C6H2O", feedback: "ต้องคูณจำนวนเท่ากับตัวห้อยทุกตัว ไม่ใช่เฉพาะคาร์บอน" }
+    hints:
+      - "มวลของสูตรอย่างง่าย $\\mathrm{CH_2O}$ = 12.01 + 2(1.008) + 16.00"
+      - "จำนวนเท่า $n$ = 180.16 ÷ มวลของสูตรอย่างง่าย แล้วคูณตัวห้อยทุกตัวด้วย $n$"
+    solution: "มวลของ $\\mathrm{CH_2O}$ $= 30.03$ · $n = 180.16 / 30.03 = 6.00$ · สูตรโมเลกุล $\\mathrm{(CH_2O)_6} = \\mathrm{C_6H_{12}O_6}$ คือกลูโคส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p016
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 5
+    type: numeric
+    stem: "น้ำ 9.01 g มีอะตอม **ไฮโดรเจน** กี่อะตอม (H = 1.008, O = 16.00) ตอบเป็นตัวเลขที่คูณกับ $10^{23}$"
+    answer: { value: 6.02, tolerance: 0.03, unit: "× 10²³ อะตอม" }
+    misconceptions:
+      - { match: 3.01, feedback: "นั่นคือจำนวน **โมเลกุล** น้ำ แต่ละโมเลกุลมี H 2 อะตอม" }
+      - { match: 9.03, feedback: "นั่นคือจำนวนอะตอมทั้งหมด (H และ O) โจทย์ถามเฉพาะ H" }
+    hints:
+      - "หาจำนวนโมลของน้ำก่อน แล้วคูณ 2 เป็นจำนวนโมลของอะตอม H"
+      - "คูณด้วย $6.02 \\times 10^{23}$"
+    solution: "$n_{\\mathrm{H_2O}} = 9.01 / 18.02 = 0.500$ mol · $n_{\\mathrm{H}} = 2 \\times 0.500 = 1.00$ mol · $N_{\\mathrm{H}} = 1.00 \\times 6.02 \\times 10^{23} = 6.02 \\times 10^{23}$ อะตอม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.mole.p017
+    topics: [chemistry.stoichiometry.mole]
+    difficulty: 5
+    type: text
+    stem: "สนิมเหล็กตัวอย่างหนึ่งประกอบด้วยเหล็ก 2.80 g รวมกับออกซิเจน 1.20 g หาสูตรอย่างง่ายของออกไซด์นี้ (Fe = 55.85, O = 16.00 เขียน Fe ก่อน O)"
+    accepted: ["Fe2O3", "Fe₂O₃"]
+    misconceptions:
+      - { match: "FeO", feedback: "ปัด 1 : 1.5 เป็น 1 : 1 เร็วเกินไป ต้องคูณ 2 ให้เป็นจำนวนเต็ม" }
+      - { match: "FeO2", feedback: "ปัด 1 : 1.5 เป็น 1 : 2 ไม่ได้ ต้องคูณ 2 ทั้งสองข้าง" }
+      - { match: "Fe7O3", feedback: "ต้องเปลี่ยนมวลเป็นโมลก่อน อัตราส่วนมวล 2.80 : 1.20 ไม่ใช่อัตราส่วนอะตอม" }
+    hints:
+      - "หาโมล: Fe = 2.80/55.85, O = 1.20/16.00"
+      - "หารด้วยค่าน้อยที่สุด ถ้าได้ 1.5 ให้คูณทั้งสองด้วย 2"
+    solution: "Fe: $2.80/55.85 = 0.0501$ mol · O: $1.20/16.00 = 0.0750$ mol · อัตราส่วน $1 : 1.50$ คูณ 2 ได้ $2 : 3$ สูตรคือ $\\mathrm{Fe_2O_3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,323 @@
+problems:
+  - id: math.functions.graph-transformations.p001
+    topics: [math.functions.graph-transformations]
+    difficulty: 1
+    type: mcq
+    stem: "กราฟของ $y = x^2 + 3$ ได้จากกราฟของ $y = x^2$ อย่างไร"
+    choices:
+      - { id: a, text: "เลื่อนขึ้น 3 หน่วย", correct: true }
+      - { id: b, text: "เลื่อนลง 3 หน่วย", feedback: "บวก 3 ข้างนอกทำให้ค่า $y$ ทุกจุดมากขึ้น 3 กราฟจึงขึ้น" }
+      - { id: c, text: "เลื่อนไปทางซ้าย 3 หน่วย", feedback: "การเลื่อนแนวนอนต้องเปลี่ยนข้างใน เช่น $(x + 3)^2$ แต่โจทย์บวกข้างนอก" }
+      - { id: d, text: "ยืดตามแนวตั้ง 3 เท่า", feedback: "การยืด 3 เท่าคือ $3x^2$ (คูณ) ไม่ใช่ $x^2 + 3$ (บวก)" }
+    hints:
+      - "บวกค่าคงตัวข้างนอกฟังก์ชันเปลี่ยนค่า $y$"
+      - "จุดยอด $(0, 0)$ ย้ายไปที่ใด"
+    solution: "ค่า $y$ ทุกจุดเพิ่มขึ้น 3 กราฟจึงเลื่อนขึ้น 3 หน่วย จุดยอดย้ายจาก $(0, 0)$ ไป $(0, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p002
+    topics: [math.functions.graph-transformations]
+    difficulty: 1
+    type: mcq
+    stem: "กราฟของ $y = (x - 2)^2$ ได้จากกราฟของ $y = x^2$ อย่างไร"
+    choices:
+      - { id: a, text: "เลื่อนไปทางขวา 2 หน่วย", correct: true }
+      - { id: b, text: "เลื่อนไปทางซ้าย 2 หน่วย", feedback: "การเปลี่ยนข้างในให้ผลทิศตรงข้ามเครื่องหมาย ต้องใส่ $x = 2$ จึงได้ค่า 0 จุดต่ำสุดจึงอยู่ที่ $x = 2$ ทางขวา" }
+      - { id: c, text: "เลื่อนลง 2 หน่วย", feedback: "การลบข้างใน (ในวงเล็บกับ $x$) เป็นการเลื่อนแนวนอน ไม่ใช่แนวตั้ง" }
+      - { id: d, text: "หดเข้าหาแกน $y$ ครึ่งหนึ่ง", feedback: "การหดแนวนอนคือ $(2x)^2$ (คูณข้างใน) ไม่ใช่ $(x - 2)^2$" }
+    hints:
+      - "หาค่า $x$ ที่ทำให้ $(x - 2)^2 = 0$"
+      - "จุดต่ำสุดของ $y = x^2$ อยู่ที่ $x = 0$"
+    solution: "$(x - 2)^2 = 0$ เมื่อ $x = 2$ จุดต่ำสุดย้ายจาก $(0, 0)$ ไป $(2, 0)$ กราฟจึงเลื่อนไปทางขวา 2 หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p003
+    topics: [math.functions.graph-transformations]
+    difficulty: 2
+    type: numeric
+    stem: "กราฟของ $f(x) = \\sqrt x$ ผ่านจุด $(9, 3)$ กราฟของ $g(x) = 2f(x)$ ผ่านจุด $(9, y)$ จงหา $y$"
+    answer: { value: 6 }
+    hints:
+      - "$g(9) = 2f(9)$"
+      - "คูณข้างนอกเปลี่ยนเฉพาะค่า $y$"
+    misconceptions:
+      - { match: 4.24, feedback: "คิด $\\sqrt{2 \\times 9} = \\sqrt{18}$ ซึ่งคือ $f(2x)$ ไม่ใช่ $2f(x)$" }
+      - { match: 1.5, feedback: "หารด้วย 2 แต่ $2f(x)$ ยืดตามแนวตั้ง ค่า $y$ ต้องคูณ 2" }
+    solution: "$g(9) = 2f(9) = 2 \\times 3 = 6$ กราฟยืดตามแนวตั้ง 2 เท่า จุด $(9, 3)$ ไปอยู่ที่ $(9, 6)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p004
+    topics: [math.functions.graph-transformations]
+    difficulty: 2
+    type: expression
+    stem: "จงเขียนสมการของกราฟที่ได้จากการเลื่อน $y = x^2$ ไปทางซ้าย 3 หน่วย แล้วเลื่อนลง 4 หน่วย"
+    prefix: "y ="
+    answer: { latex: "(x+3)^2-4", variables: [x] }
+    hints:
+      - "เลื่อนซ้าย 3: แทน $x$ ด้วย $x + 3$"
+      - "เลื่อนลง 4: ลบ 4 ข้างนอก"
+    misconceptions:
+      - { match: "(x-3)^2-4", feedback: "เลื่อนซ้ายต้องเป็น $x + 3$ ข้างใน (ทิศตรงข้ามเครื่องหมาย)" }
+      - { match: "(x+3)^2+4", feedback: "เลื่อนลงต้องลบ 4 ข้างนอก" }
+    solution: "$y = (x + 3)^2 - 4$ จุดยอดอยู่ที่ $(-3, -4)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p005
+    topics: [math.functions.graph-transformations]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ฟังก์ชันใหม่กับการแปลงที่ทำกับกราฟของ $y = f(x)$"
+    pairs:
+      - { left: "$y = f(x) + 2$", right: "เลื่อนขึ้น 2 หน่วย" }
+      - { left: "$y = f(x + 2)$", right: "เลื่อนไปทางซ้าย 2 หน่วย" }
+      - { left: "$y = 2f(x)$", right: "ยืดตามแนวตั้ง 2 เท่า" }
+      - { left: "$y = f(2x)$", right: "หดเข้าหาแกน $y$ เหลือครึ่งหนึ่ง" }
+      - { left: "$y = -f(x)$", right: "สะท้อนในแกน $x$" }
+      - { left: "$y = f(-x)$", right: "สะท้อนในแกน $y$" }
+    hints:
+      - "เปลี่ยนข้างนอกมีผลกับค่า $y$ (แนวตั้ง) เปลี่ยนข้างในมีผลกับค่า $x$ (แนวนอน)"
+      - "ผลของการเปลี่ยนข้างในตรงข้ามกับที่คาด: $+2$ ไปทางซ้าย คูณ 2 หดเข้า"
+    solution: "ข้างนอก: $+2$ ขึ้น, $\\times 2$ ยืดแนวตั้ง, เครื่องหมายลบพลิกในแกน $x$ ข้างใน: $+2$ ซ้าย, $\\times 2$ หดแนวนอน, เครื่องหมายลบพลิกในแกน $y$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p006
+    topics: [math.functions.graph-transformations]
+    difficulty: 3
+    type: numeric
+    stem: "กราฟของ $f$ ผ่านจุด $(2, 3)$ กราฟของ $g(x) = f(2x)$ ผ่านจุด $(x, 3)$ จงหา $x$"
+    answer: { value: 1 }
+    hints:
+      - "ต้องการ $g(x) = f(2x) = 3$ ซึ่งเกิดเมื่อ $2x = 2$"
+      - "การคูณข้างในทำให้ค่า $x$ ถูกหาร"
+    misconceptions:
+      - { match: 4, feedback: "คูณ $x$ ด้วย 2 แต่ $f(2x)$ หดเข้าหาแกน $y$ ค่า $x$ ต้องหารด้วย 2" }
+      - { match: 2, feedback: "จุด $(2, 3)$ อยู่บนกราฟของ $f$ แต่ $g(2) = f(4)$ ซึ่งไม่รู้ค่า" }
+    solution: "$g(x) = f(2x) = 3$ เมื่อ $2x = 2$ จึง $x = 1$ จุดที่สมนัยคือ $(1, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p007
+    topics: [math.functions.graph-transformations]
+    difficulty: 3
+    type: numeric
+    stem: "ภาพแสดงกราฟของ $f$ (เส้นทึบ) และ $g$ (เส้นประ) โดย $g(x) = f(x + k)$ จงหา $k$"
+    figure:
+      src: find-k-shift.svg
+      alt: "กราฟ f เป็นเส้นหักทึบสีน้ำเงินผ่านจุด (−1, 0), (1, 3), (2, 1), (4, 2) กราฟ g เป็นเส้นหักประสีแดงรูปร่างเหมือนกันผ่านจุด (−4, 0), (−2, 3), (−1, 1), (1, 2)"
+    answer: { value: 3 }
+    hints:
+      - "เทียบจุดยอดสูงสุด $(1, 3)$ ของ $f$ กับจุดยอดของ $g$"
+      - "$g$ อยู่ทางซ้ายของ $f$ และการเลื่อนซ้ายเขียนในรูป $f(x + k)$ โดย $k > 0$"
+    misconceptions:
+      - { match: -3, feedback: "กราฟเลื่อนไปทางซ้าย 3 ซึ่งเขียนเป็น $f(x + 3)$ ไม่ใช่ $f(x - 3)$" }
+    solution: "จุด $(1, 3)$ ของ $f$ ย้ายไปที่ $(-2, 3)$ บน $g$ ทุกจุดเลื่อนไปทางซ้าย 3 จึง $g(x) = f(x + 3)$ และ $k = 3$ ตรวจ: $g(-2) = f(1) = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p008
+    topics: [math.functions.graph-transformations]
+    difficulty: 3
+    type: mcq
+    stem: "ฟังก์ชันใดเป็นฟังก์ชันคี่"
+    choices:
+      - { id: a, text: "$f(x) = x^3 - x$", correct: true }
+      - { id: b, text: "$f(x) = x^2 + 1$", feedback: "$f(-x) = x^2 + 1 = f(x)$ เป็นฟังก์ชันคู่" }
+      - { id: c, text: "$f(x) = x^3 + 1$", feedback: "$f(-x) = -x^3 + 1$ ไม่เท่ากับ $f(x)$ และไม่เท่ากับ $-f(x) = -x^3 - 1$ จึงไม่เป็นทั้งคู่และคี่" }
+      - { id: d, text: "$f(x) = |x|$", feedback: "$|-x| = |x|$ เป็นฟังก์ชันคู่ กราฟสมมาตรรอบแกน $y$" }
+    hints:
+      - "แทน $-x$ แล้วเทียบกับ $-f(x)$"
+      - "ค่าคงตัวที่บวกเพิ่มทำให้ไม่เป็นฟังก์ชันคี่"
+    solution: "$f(-x) = (-x)^3 - (-x) = -x^3 + x = -(x^3 - x) = -f(x)$ จึงเป็นฟังก์ชันคี่ กราฟสมมาตรรอบจุดกำเนิด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p009
+    topics: [math.functions.graph-transformations]
+    difficulty: 2
+    type: mcq
+    stem: "ค่าโดยสารแท็กซี่ (สมมติ) เป็น $f(d)$ บาทเมื่อนั่ง $d$ กิโลเมตร ถ้าปรับค่าโดยสารทุกระยะทางขึ้นร้อยละ 10 ค่าโดยสารใหม่ $g(d)$ คือข้อใด"
+    choices:
+      - { id: a, text: "$g(d) = 1.1f(d)$", correct: true }
+      - { id: b, text: "$g(d) = f(1.1d)$", feedback: "$f(1.1d)$ คือค่าโดยสารของระยะทางที่ไกลขึ้น 10% ซึ่งไม่จำเป็นต้องแพงขึ้น 10% (เช่น มีค่าเริ่มต้นคงที่)" }
+      - { id: c, text: "$g(d) = f(d) + 10$", feedback: "บวก 10 บาททุกเที่ยว ไม่ใช่ร้อยละ 10 ร้อยละต้องคูณ" }
+      - { id: d, text: "$g(d) = f(d + 10)$", feedback: "$f(d + 10)$ คือค่าโดยสารของระยะทางที่ไกลขึ้น 10 กม." }
+    hints:
+      - "ร้อยละ 10 ของค่าโดยสาร คือการคูณค่า $y$ ทุกจุด"
+      - "คูณข้างนอกหรือข้างใน"
+    solution: "ค่าโดยสาร (ค่า $y$) ทุกระยะทางคูณ 1.1 จึงเป็น $g(d) = 1.1f(d)$ กราฟยืดตามแนวตั้ง 1.1 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p010
+    topics: [math.functions.graph-transformations]
+    difficulty: 3
+    type: mcq
+    stem: "$T(t)$ คืออุณหภูมิที่เชียงใหม่วันนี้ ณ เวลา $t$ นาฬิกา พยากรณ์บอกว่าพรุ่งนี้อุณหภูมิจะสูงกว่าวันนี้ 2 °C ทุกช่วง และทุกอย่างเกิดช้ากว่าวันนี้ 1 ชั่วโมง (เช่น ร้อนที่สุดช้าไป 1 ชั่วโมง) อุณหภูมิพรุ่งนี้คือข้อใด"
+    choices:
+      - { id: a, text: "$T(t - 1) + 2$", correct: true }
+      - { id: b, text: "$T(t + 1) + 2$", feedback: "$T(t + 1)$ ทำให้กราฟเลื่อนไปทางซ้าย คือเกิดเร็วขึ้น 1 ชั่วโมง" }
+      - { id: c, text: "$T(t - 1) - 2$", feedback: "อุณหภูมิสูงขึ้นต้องบวก 2 ข้างนอก" }
+      - { id: d, text: "$T(t) + 3$", feedback: "การเกิดช้าลงเป็นการเลื่อนตามแนวนอน (เวลา) ไม่ได้เพิ่มอุณหภูมิ" }
+    hints:
+      - "สูงขึ้น 2 องศา คือเลื่อนกราฟขึ้น"
+      - "เกิดช้าลง 1 ชั่วโมง คือกราฟเลื่อนไปทางขวา 1 ซึ่งเขียนข้างในเป็น $t - 1$"
+    solution: "อุณหภูมิพรุ่งนี้เวลา $t$ เท่ากับอุณหภูมิวันนี้เวลา $t - 1$ บวก 2 จึงเป็น $T(t - 1) + 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p011
+    topics: [math.functions.graph-transformations]
+    difficulty: 4
+    type: expression
+    expanded: true
+    stem: "ให้ $f(x) = x^2 - 4x$ จงหาสมการของกราฟที่ได้จากการสะท้อนกราฟของ $f$ ในแกน $y$ (กระจายให้อยู่ในรูปพหุนาม)"
+    prefix: "y ="
+    answer: { latex: "x^2+4x", variables: [x] }
+    hints:
+      - "สะท้อนในแกน $y$ คือ $f(-x)$"
+      - "แทน $x$ ด้วย $-x$: $(-x)^2 - 4(-x)$"
+    misconceptions:
+      - { match: "-x^2+4x", feedback: "ได้ $-f(x)$ ซึ่งเป็นการสะท้อนในแกน $x$" }
+      - { match: "x^2-4x", feedback: "$(-x)^2 = x^2$ ถูก แต่ $-4(-x) = +4x$ ระวังเครื่องหมาย" }
+    solution: "$f(-x) = (-x)^2 - 4(-x) = x^2 + 4x$ จุดยอดย้ายจาก $(2, -4)$ ไป $(-2, -4)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p012
+    topics: [math.functions.graph-transformations]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $f(x) = x^2$ และ $g(x) = f(kx)$ โดย $k > 0$ ถ้ากราฟของ $g$ ผ่านจุด $(2, 36)$ จงหา $k$"
+    answer: { value: 3 }
+    hints:
+      - "$g(x) = (kx)^2 = k^2x^2$"
+      - "$k^2 \\cdot 4 = 36$"
+    misconceptions:
+      - { match: 9, feedback: "ใช้ $kf(x) = 4k = 36$ แต่ $g(x) = f(kx)$ ค่า $k$ อยู่ข้างใน จึงถูกยกกำลังสองด้วย" }
+      - { match: 18, feedback: "จาก $(2k)^2 = 36$ คิดว่า $2k = 36$ ลืมถอดรากที่สอง ($2k = 6$)" }
+    solution: "$g(2) = (2k)^2 = 4k^2 = 36$ ได้ $k^2 = 9$ และ $k > 0$ จึง $k = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p013
+    topics: [math.functions.graph-transformations]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดบรรยายการแปลงจาก $y = x^2$ เป็น $y = 2(x - 1)^2 + 3$ ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "เลื่อนไปทางขวา 1 ยืดตามแนวตั้ง 2 เท่า แล้วเลื่อนขึ้น 3", correct: true }
+      - { id: b, text: "เลื่อนไปทางซ้าย 1 ยืดตามแนวตั้ง 2 เท่า แล้วเลื่อนขึ้น 3", feedback: "$x - 1$ ข้างในเลื่อนไปทางขวา" }
+      - { id: c, text: "เลื่อนไปทางขวา 1 เลื่อนขึ้น 3 แล้วยืดตามแนวตั้ง 2 เท่า", feedback: "ถ้าเลื่อนขึ้นก่อนแล้วยืด จะได้ $2\\big((x - 1)^2 + 3\\big) = 2(x - 1)^2 + 6$ จุดยอดอยู่ที่ $(1, 6)$" }
+      - { id: d, text: "เลื่อนไปทางขวา 1 หดเข้าหาแกน $y$ ครึ่งหนึ่ง แล้วเลื่อนขึ้น 3", feedback: "เลข 2 อยู่ข้างนอกวงเล็บ เป็นการยืดตามแนวตั้ง ไม่ใช่การหดแนวนอน" }
+    hints:
+      - "อ่านจากข้างในออกมาข้างนอก"
+      - "การแปลงแนวตั้ง ต้องยืดก่อนแล้วจึงเลื่อน"
+    solution: "$x - 1$ → เลื่อนขวา 1, คูณ 2 ข้างนอก → ยืดตามแนวตั้ง 2 เท่า, บวก 3 → เลื่อนขึ้น 3 จุดยอด $(1, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p014
+    topics: [math.functions.graph-transformations]
+    difficulty: 3
+    type: order
+    stem: "กราฟพาราโบลามีรูปร่างเหมือน $y = ax^2$ จุดยอดอยู่ที่ $(2, -1)$ และผ่านจุด $(0, 3)$ จงเรียงขั้นตอนการหาสมการ"
+    items:
+      - "อ่านจุดยอดจากโจทย์ $(h, k) = (2, -1)$"
+      - "เขียนรูปการเลื่อน $y = a(x - 2)^2 - 1$"
+      - "แทนจุด $(0, 3)$: $3 = a(0 - 2)^2 - 1$"
+      - "แก้สมการได้ $4a = 4$ จึง $a = 1$ และ $y = (x - 2)^2 - 1$"
+    hints:
+      - "จุดยอดบอกการเลื่อน ส่วนจุดอื่นบอกค่า $a$"
+      - "ต้องมีรูปสมการก่อนจึงจะแทนจุดได้"
+    solution: "จุดยอด → รูป $a(x - h)^2 + k$ → แทนจุดที่กราฟผ่าน → แก้หา $a$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p015
+    topics: [math.functions.graph-transformations]
+    difficulty: 5
+    type: numeric
+    stem: "ลูกตะกร้อที่เตะครั้งแรกมีความสูง $h(t) = -5t^2 + 10t$ เมตร เมื่อ $t$ เป็นวินาที ครั้งที่สองเตะช้ากว่า 0.4 วินาที และขึ้นสูงกว่าเดิม 1.5 เท่าทุกขณะ คือ $g(t) = 1.5\\,h(t - 0.4)$ ลูกครั้งที่สองขึ้นสูงสุดที่เวลา $t$ เท่าใด (วินาที)"
+    answer: { value: 1.4, tolerance: 0.01, unit: วินาที }
+    hints:
+      - "$h$ สูงสุดที่จุดยอด $t = 1$ (จาก $-\\tfrac{b}{2a} = 1$)"
+      - "$g$ เลื่อนไปทางขวา 0.4 ส่วนการยืดตามแนวตั้งไม่เปลี่ยนเวลาที่สูงสุด"
+    misconceptions:
+      - { match: 0.6, feedback: "$h(t - 0.4)$ เลื่อนไปทางขวา (ช้าลง) จึงต้องบวก 0.4 ไม่ใช่ลบ" }
+      - { match: 1.5, feedback: "ตัวคูณ 1.5 อยู่ข้างนอก เปลี่ยนความสูง (เป็น 7.5 ม.) ไม่ได้เปลี่ยนเวลา" }
+    solution: "$h$ สูงสุดที่ $t = 1$ ($h(1) = 5$ ม.) $g$ เลื่อนขวา 0.4 และยืดแนวตั้ง 1.5 เท่า จึงสูงสุดที่ $t = 1.4$ วินาที ที่ความสูง $1.5 \\times 5 = 7.5$ ม."
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p016
+    topics: [math.functions.graph-transformations]
+    difficulty: 3
+    type: numeric
+    stem: "$f$ เป็นฟังก์ชันคี่ และ $f(3) = 5$ จงหา $f(-3)$"
+    answer: { value: -5 }
+    hints:
+      - "ฟังก์ชันคี่มีสมบัติ $f(-x) = -f(x)$"
+      - "กราฟสมมาตรรอบจุดกำเนิด จุด $(3, 5)$ คู่กับจุดใด"
+    misconceptions:
+      - { match: 5, feedback: "$f(-3) = f(3)$ เป็นสมบัติของฟังก์ชันคู่" }
+    solution: "$f(-3) = -f(3) = -5$ จุด $(3, 5)$ หมุน 180° รอบจุดกำเนิดได้ $(-3, -5)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p017
+    topics: [math.functions.graph-transformations]
+    difficulty: 5
+    type: expression
+    stem: "ให้ $f(x) = \\sqrt x$ สะท้อนกราฟของ $f$ ในแกน $y$ แล้วเลื่อนไปทางขวา 2 หน่วย จงหาสมการของกราฟสุดท้าย"
+    prefix: "y ="
+    answer: { latex: "\\sqrt{2-x}", variables: [x] }
+    hints:
+      - "สะท้อนในแกน $y$: $y = \\sqrt{-x}$"
+      - "เลื่อนขวา 2: แทน $x$ ด้วย $x - 2$ ในฟังก์ชันใหม่ ได้ $\\sqrt{-(x - 2)}$"
+    misconceptions:
+      - { match: "\\sqrt{-x-2}", feedback: "ได้ $\\sqrt{-(x + 2)}$ ซึ่งเป็นการเลื่อนไปทางซ้าย 2 ต้องแทน $x$ ด้วย $x - 2$ ทั้งตัว" }
+      - { match: "-\\sqrt{x-2}", feedback: "เครื่องหมายลบข้างนอกคือการสะท้อนในแกน $x$ แต่โจทย์ให้สะท้อนในแกน $y$" }
+    solution: "สะท้อนในแกน $y$: $\\sqrt{-x}$ แล้วเลื่อนขวา 2: $\\sqrt{-(x - 2)} = \\sqrt{2 - x}$ กราฟเริ่มที่ $(2, 0)$ แล้วไปทางซ้าย ตรวจ: $x = 2$ ได้ 0, $x = -2$ ได้ 2"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p018
+    topics: [math.functions.graph-transformations]
+    difficulty: 4
+    type: numeric
+    stem: "ภาพแสดงกราฟของ $f$ (เส้นทึบ) และ $g$ (เส้นประ) โดย $g(x) = k\\,f(x)$ จงหา $k$"
+    figure:
+      src: find-k-stretch.svg
+      alt: "กราฟ f เส้นหักทึบสีน้ำเงินผ่านจุด (−3, 0), (−1, 2), (1, 0), (3, 1) กราฟ g เส้นหักประสีแดงผ่านจุด (−3, 0), (−1, −3), (1, 0), (3, −1.5)"
+    answer: { value: -1.5, tolerance: 0.01 }
+    hints:
+      - "เทียบค่า $y$ ของจุดที่มี $x$ เท่ากัน เช่น $x = -1$"
+      - "$k = \\dfrac{g(-1)}{f(-1)}$ และกราฟพลิกลงด้านล่าง $k$ จึงเป็นลบ"
+    misconceptions:
+      - { match: 1.5, feedback: "ขนาดถูกแต่กราฟ $g$ พลิกไปอยู่ใต้แกน $x$ (สะท้อนในแกน $x$) $k$ จึงเป็นลบ" }
+      - { match: -5, feedback: "ลบกัน $-3 - 2$ แต่ $kf(x)$ เป็นการคูณ ต้องหาร $-3 \\div 2$" }
+    solution: "ที่ $x = -1$: $f = 2$, $g = -3$ ได้ $k = \\tfrac{-3}{2} = -1.5$ ตรวจที่ $x = 3$: $-1.5 \\times 1 = -1.5$ ตรงกับกราฟ จุดบนแกน $x$ ไม่ขยับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.functions.graph-transformations.p019
+    topics: [math.functions.graph-transformations]
+    difficulty: 5
+    type: mcq
+    stem: "กราฟของ $y = f(3x + 6)$ ได้จากกราฟของ $y = f(x)$ อย่างไร"
+    choices:
+      - { id: a, text: "หดเข้าหาแกน $y$ เหลือ $\\tfrac13$ แล้วเลื่อนไปทางซ้าย 2 หน่วย", correct: true }
+      - { id: b, text: "หดเข้าหาแกน $y$ เหลือ $\\tfrac13$ แล้วเลื่อนไปทางซ้าย 6 หน่วย", feedback: "ต้องดึงตัวคูณออกก่อน $f(3x + 6) = f\\big(3(x + 2)\\big)$ จึงเลื่อน 2 ไม่ใช่ 6" }
+      - { id: c, text: "ยืดตามแนวตั้ง 3 เท่า แล้วเลื่อนขึ้น 6 หน่วย", feedback: "ทั้ง 3 และ 6 อยู่ข้างในวงเล็บของ $f$ จึงเป็นการแปลงแนวนอน" }
+      - { id: d, text: "ยืดออกจากแกน $y$ 3 เท่า แล้วเลื่อนไปทางขวา 2 หน่วย", feedback: "คูณข้างในด้วย 3 ทำให้หดเข้า และ $x + 2$ เลื่อนไปทางซ้าย" }
+    hints:
+      - "เขียนข้างในให้อยู่ในรูป $b(x - h)$"
+      - "$3x + 6 = 3(x + 2)$"
+    solution: "$f(3x + 6) = f\\big(3(x + 2)\\big)$: หดเข้าหาแกน $y$ เหลือ $\\tfrac13$ แล้วเลื่อนซ้าย 2 ตรวจ: จุด $(0, f(0))$ ของ $f$ ต้องใส่ $3x + 6 = 0$ คือ $x = -2$ จึงไปอยู่ที่ $x = -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

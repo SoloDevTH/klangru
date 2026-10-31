@@ -1,0 +1,78 @@
+id: chemistry.stoichiometry.mole
+subject: chemistry
+title: { th: มวลอะตอมและโมล, en: Atomic mass and the mole }
+summary: มวลอะตอมเฉลี่ย มวลโมเลกุล ความสัมพันธ์ของโมลกับจำนวนอนุภาค มวล และปริมาตรแก๊สที่ STP กฎสัดส่วนคงที่ ร้อยละโดยมวล สูตรอย่างง่ายและสูตรโมเลกุล
+difficulty: 5
+minutes: 40
+prerequisites: [chemistry.matter.atoms, math.number.scientific-notation, math.number.ratio-percent]
+encompasses:
+  - { id: chemistry.matter.atoms, weight: 0.3 }
+  - { id: math.number.scientific-notation, weight: 0.3 }
+  - { id: math.number.ratio-percent, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: mole-map.svg
+    alt: "แผนผังความสัมพันธ์ กล่อง โมล อยู่ตรงกลาง ทางซ้ายคือกล่อง มวล (g) ลูกศรจากมวลไปโมลเขียนว่า หารด้วยมวลต่อโมล และจากโมลกลับไปมวลเขียนว่า คูณมวลต่อโมล ทางขวาคือกล่อง จำนวนอนุภาค ลูกศรจากโมลไปจำนวนอนุภาคเขียนว่า คูณ 6.02×10²³ และกลับมาเขียนว่า หาร 6.02×10²³ ด้านล่างคือกล่อง ปริมาตรแก๊สที่ STP (dm³, 0 °C, 1 atm) ลูกศรลงเขียนว่า คูณ 22.4 ลูกศรขึ้นเขียนว่า หาร 22.4 ตัวอย่างใต้กล่อง: น้ำ 36.04 g = 2.000 mol = 1.204 × 10²⁴ โมเลกุล"
+    caption: "เปลี่ยนเป็นโมลก่อนเสมอ แล้วจึงเปลี่ยนเป็นปริมาณที่ต้องการ"
+  - { type: check, problem: chemistry.stoichiometry.mole.p006, prompt: "ระวังว่าโจทย์ถามโมเลกุลหรืออะตอม" }
+  - type: worked-example
+    title: หินปูน 10.0 g มีอะตอมออกซิเจนกี่อะตอม
+    problem: "หินปูน ($\\mathrm{CaCO_3}$) 10.0 g มีอะตอมออกซิเจนกี่อะตอม (Ca = 40.08, C = 12.01, O = 16.00)"
+    steps:
+      - text: "หามวลต่อโมล: $40.08 + 12.01 + 3(16.00) = 100.09$ g/mol"
+      - text: "มวล → โมล: $n = 10.0 / 100.09 = 0.0999$ mol"
+        why: "ทุกการเปลี่ยนต้องผ่านโมลก่อน"
+      - text: "หนึ่งหน่วยสูตรมี O 3 อะตอม จึงมีอะตอม O $3 \\times 0.0999 = 0.300$ mol"
+      - text: "โมล → อะตอม: $0.300 \\times 6.02 \\times 10^{23} = 1.80 \\times 10^{23}$ อะตอม"
+    answer: "$1.80 \\times 10^{23}$ อะตอม"
+  - type: worked-example
+    title: หาสูตรโมเลกุลของวิตามินซี
+    problem: "วิตามินซีในฝรั่งและส้มประกอบด้วย C ร้อยละ 40.92, H ร้อยละ 4.58 และ O ร้อยละ 54.50 โดยมวล มวลต่อโมล 176.12 g/mol จงหาสูตรอย่างง่ายและสูตรโมเลกุล (H = 1.008, C = 12.01, O = 16.00)"
+    steps:
+      - text: "สมมติสาร 100 g: C 40.92 g, H 4.58 g, O 54.50 g"
+      - text: "เปลี่ยนเป็นโมล: C $40.92/12.01 = 3.407$ · H $4.58/1.008 = 4.544$ · O $54.50/16.00 = 3.406$"
+      - text: "หารด้วยค่าน้อยที่สุด (3.406): C 1.000 · H 1.334 · O 1.000"
+      - text: "1.334 ไม่ใช่จำนวนเต็ม แต่ใกล้ $1\\tfrac13$ จึงคูณทุกตัวด้วย 3 ได้ C 3 · H 4 · O 3 สูตรอย่างง่าย $\\mathrm{C_3H_4O_3}$"
+        why: "ห้ามปัด 1.33 เป็น 1 เพราะจะได้อัตราส่วนผิด ทศนิยม .33 หรือ .67 ให้คูณ 3 ทศนิยม .5 ให้คูณ 2"
+      - text: "มวลของสูตรอย่างง่าย $= 3(12.01) + 4(1.008) + 3(16.00) = 88.06$ จำนวนเท่า $n = 176.12 / 88.06 = 2.00$"
+      - text: "คูณตัวห้อยทุกตัวด้วย 2 ได้สูตรโมเลกุล $\\mathrm{C_6H_8O_6}$"
+    answer: "สูตรอย่างง่าย $\\mathrm{C_3H_4O_3}$ · สูตรโมเลกุล $\\mathrm{C_6H_8O_6}$"
+  - { type: check, problem: chemistry.stoichiometry.mole.p009, prompt: "คิดเป็นโมลของอะตอมก่อนเทียบ" }
+  - type: molecule
+    title: กลูโคส (C₆H₁₂O₆)
+    cid: 5793
+    name: glucose
+    caption: "กลูโคสหนึ่งโมเลกุลมี C 6, H 12, O 6 อะตอม อัตราส่วนอย่างต่ำคือ 1 : 2 : 1 สูตรอย่างง่ายจึงเป็น CH₂O"
+  - type: molecule
+    title: เบนซีน (C₆H₆)
+    cid: 241
+    name: benzene
+    caption: คาร์บอน 6 อะตอมต่อกันเป็นวงหกเหลี่ยม สูตรอย่างง่าย CH เหมือนกับเอไทน์ด้านล่าง แต่สูตรโมเลกุลต่างกัน
+  - type: molecule
+    title: เอไทน์ (C₂H₂)
+    cid: 6326
+    name: acetylene
+    caption: แก๊สที่ใช้เชื่อมโลหะ สูตรอย่างง่าย CH เหมือนเบนซีน มวลต่อโมล 26.04 g/mol เป็นหนึ่งในสามของเบนซีน (78.11 g/mol)
+glossary:
+  - { term: โมล, definition: "หน่วยของปริมาณสาร 1 โมลมีอนุภาค 6.02 × 10²³ อนุภาค" }
+  - { term: เลขอาโวกาโดร, definition: "จำนวนอนุภาคในสาร 1 โมล เท่ากับ 6.02 × 10²³" }
+  - { term: มวลต่อโมล, definition: "มวลของสาร 1 โมล หน่วย g/mol มีค่าเท่ากับมวลอะตอมหรือมวลโมเลกุล" }
+  - { term: STP, definition: "ภาวะมาตรฐาน อุณหภูมิ 0 °C ความดัน 1 atm แก๊ส 1 โมลมีปริมาตรประมาณ 22.4 dm³" }
+  - { term: กฎสัดส่วนคงที่, definition: สารประกอบชนิดเดียวกันมีอัตราส่วนโดยมวลของธาตุองค์ประกอบคงที่เสมอ }
+  - { term: สูตรอย่างง่าย, definition: สูตรที่บอกอัตราส่วนอย่างต่ำของจำนวนอะตอมของธาตุในสาร }
+flashcards:
+  - { front: "ความสัมพันธ์ของโมลกับมวล จำนวนอนุภาค และปริมาตรแก๊ส", back: "$n = \\dfrac{m}{M} = \\dfrac{N}{6.02 \\times 10^{23}} = \\dfrac{V_{\\text{STP}}}{22.4}$" }
+  - { front: "แก๊ส 1 mol ที่ STP มีปริมาตรเท่าใด", back: "ประมาณ 22.4 dm³ (0 °C, 1 atm) ใช้ได้กับแก๊สเท่านั้น" }
+  - { front: "อัตราส่วนโมลได้ 1 : 1.5 หรือ 1 : 1.33 ทำอย่างไร", back: "1.5 คูณ 2 ได้ 2 : 3 · 1.33 คูณ 3 ได้ 3 : 4 ห้ามปัดทิ้ง" }
+  - { front: "หาสูตรโมเลกุลจากสูตรอย่างง่าย", back: "$n$ = มวลต่อโมลของสาร ÷ มวลของสูตรอย่างง่าย แล้วคูณตัวห้อยทุกตัวด้วย $n$" }
+references:
+  - { title: "โมล (หน่วย)", url: "https://th.wikipedia.org/wiki/โมล_(หน่วย)", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Mole (unit)", url: "https://en.wikipedia.org/wiki/Mole_(unit)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "3.1 Formula Mass and the Mole Concept (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/3-1-formula-mass-and-the-mole-concept", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.2 Determining Empirical and Molecular Formulas (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/3-2-determining-empirical-and-molecular-formulas", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
