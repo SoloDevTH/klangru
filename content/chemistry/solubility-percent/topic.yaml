@@ -1,0 +1,65 @@
+id: chemistry.solutions.solubility-percent
+subject: chemistry
+title: { th: สภาพละลายได้และความเข้มข้นร้อยละ, en: Solubility and percentage concentration }
+summary: ตัวละลาย ตัวทำละลาย สารละลายอิ่มตัว ผลของชนิดสาร อุณหภูมิ และความดันต่อสภาพละลายได้ ความเข้มข้นร้อยละโดยมวล โดยปริมาตร และมวลต่อปริมาตร และการใช้สารละลายอย่างปลอดภัย
+difficulty: 3
+minutes: 35
+prerequisites: [chemistry.matter.states-changes, math.number.ratio-percent]
+encompasses:
+  - { id: math.number.ratio-percent, weight: 0.3 }
+  - { id: chemistry.matter.states-changes, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: solubility-curve.svg
+    alt: "กราฟสภาพละลายได้ (กรัมต่อน้ำ 100 กรัม) กับอุณหภูมิ 0 ถึง 100 °C เส้นโพแทสเซียมไนเตรตเพิ่มขึ้นเร็วมาก จาก 13.3 g ที่ 0 °C เป็น 31.6 g ที่ 20 °C, 63.9 g ที่ 40 °C, 110 g ที่ 60 °C, 169 g ที่ 80 °C และ 246 g ที่ 100 °C ส่วนเส้นเกลือแกงเกือบราบ จาก 35.7 g ที่ 0 °C เป็น 35.9 g ที่ 20 °C, 37.1 g ที่ 60 °C และ 39.2 g ที่ 100 °C สองเส้นตัดกันที่ประมาณ 23 °C"
+    caption: "สภาพละลายได้ของโพแทสเซียมไนเตรตเพิ่มขึ้นมากเมื่อร้อนขึ้น ส่วนเกลือแกงแทบไม่เปลี่ยน (ค่าโดยประมาณ)"
+  - { type: check, problem: chemistry.solutions.solubility-percent.p004, prompt: "ความดันเปลี่ยนเมื่อเปิดฝา" }
+  - type: worked-example
+    title: เตรียมแอลกอฮอล์ล้างมือ 70%
+    problem: "มีเอทานอล 95% v/v ต้องการเตรียมแอลกอฮอล์ 70% v/v ปริมาตร 500 mL ต้องตวงเอทานอล 95% กี่ mL แล้วเติมน้ำจนครบ 500 mL"
+    steps:
+      - text: "สารละลายที่ต้องการมีเอทานอลบริสุทธิ์ $\\dfrac{70}{100} \\times 500 = 350$ mL"
+        why: "ร้อยละ v/v บอกปริมาตรตัวละลายในสารละลายทุก 100 หน่วยปริมาตร"
+      - text: "เอทานอล 95% ทุก 100 mL มีเอทานอลบริสุทธิ์ 95 mL"
+      - text: "ปริมาตรเอทานอล 95% ที่ต้องใช้ $= 350 \\times \\dfrac{100}{95} = 368.4$ mL"
+      - text: "ตวง 368.4 mL ใส่ภาชนะ แล้วเติมน้ำจนปริมาตรรวมเป็น 500 mL"
+        why: "เติมน้ำจนครบปริมาตร ไม่ใช่เติมน้ำ 131.6 mL เพราะน้ำกับเอทานอลผสมกันแล้วปริมาตรหดลงเล็กน้อย"
+    answer: "ตวงเอทานอล 95% ประมาณ 368 mL แล้วเติมน้ำจนครบ 500 mL"
+  - type: worked-example
+    title: ผสมน้ำเชื่อมสองความเข้มข้น
+    problem: "ผสมน้ำเชื่อม 10% w/w หนัก 200 g กับน้ำเชื่อม 25% w/w หนัก 300 g ได้น้ำเชื่อมเข้มข้นกี่เปอร์เซ็นต์โดยมวล"
+    steps:
+      - text: "น้ำตาลในขวดแรก $= 0.10 \\times 200 = 20$ g ขวดที่สอง $= 0.25 \\times 300 = 75$ g"
+      - text: "น้ำตาลรวม $= 95$ g มวลสารละลายรวม $= 500$ g"
+        why: "ทั้งน้ำตาลและน้ำรวมกันได้โดยมวลเสมอ"
+      - text: "ความเข้มข้น $= \\dfrac{95}{500} \\times 100 = 19\\%$ w/w"
+        why: "ห้ามเฉลี่ย 10 กับ 25 ตรง ๆ (ได้ 17.5) เพราะมวลของสองขวดไม่เท่ากัน"
+    answer: "19% w/w"
+  - { type: check, problem: chemistry.solutions.solubility-percent.p003, prompt: "มวลสารละลาย = มวลตัวละลาย + มวลตัวทำละลาย" }
+  - type: simulation
+    title: ความเข้มข้นและสารละลายอิ่มตัว (PhET Concentration)
+    url: https://phet.colorado.edu/en/simulations/concentration
+    provider: phet
+    note: เติมตัวละลายทีละน้อยจนเริ่มมีของแข็งค้างก้นภาชนะ สังเกตว่าความเข้มข้นหยุดเพิ่มเมื่อสารละลายอิ่มตัว แล้วลองเติมน้ำหรือระเหยน้ำ
+glossary:
+  - { term: ตัวละลาย, definition: สารที่ละลายอยู่ในสารละลาย มักมีปริมาณน้อยกว่าหรือมีสถานะต่างจากสารละลาย }
+  - { term: ตัวทำละลาย, definition: สารที่มีสถานะเดียวกับสารละลาย หรือมีปริมาณมากที่สุดเมื่อสถานะเหมือนกัน }
+  - { term: สารละลายอิ่มตัว, definition: สารละลายที่ละลายตัวละลายเพิ่มไม่ได้อีกที่อุณหภูมินั้น }
+  - { term: สภาพละลายได้, definition: มวลมากที่สุดของตัวละลายที่ละลายได้ในตัวทำละลาย 100 g ที่อุณหภูมิหนึ่ง }
+  - { term: ร้อยละโดยมวลต่อปริมาตร, definition: "มวลตัวละลาย (g) ในสารละลาย 100 cm³ เขียนว่า % w/v" }
+flashcards:
+  - { front: "ปัจจัยที่มีผลต่อสภาพละลายได้", back: "ชนิดตัวละลาย ชนิดตัวทำละลาย อุณหภูมิ และความดัน (เฉพาะแก๊ส)" }
+  - { front: "อุณหภูมิสูงขึ้น แก๊สละลายน้ำได้มากขึ้นหรือน้อยลง", back: "น้อยลง วันร้อนจัดออกซิเจนในบ่อปลาจึงลดลง" }
+  - { front: "สูตรร้อยละโดยมวล", back: "$\\%\\,w/w = \\dfrac{\\text{มวลตัวละลาย}}{\\text{มวลสารละลาย}} \\times 100$ หารด้วยมวลสารละลาย ไม่ใช่ตัวทำละลาย" }
+  - { front: "น้ำเกลือ 0.9% w/v หมายความว่าอย่างไร", back: "สารละลาย 100 cm³ มีเกลือ 0.9 g" }
+  - { front: "ห้ามผสมอะไรกับน้ำยาฟอกขาว", back: "น้ำยาล้างห้องน้ำชนิดกรด เพราะเกิดแก๊สคลอรีนที่เป็นพิษ" }
+references:
+  - { title: "สภาพละลายได้", url: "https://th.wikipedia.org/wiki/สภาพละลายได้", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Solubility", url: "https://en.wikipedia.org/wiki/Solubility", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Mass fraction (chemistry)", url: "https://en.wikipedia.org/wiki/Mass_fraction_(chemistry)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
