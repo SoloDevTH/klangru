@@ -1,0 +1,67 @@
+id: chemistry.solutions.concentration
+subject: chemistry
+title: { th: ความเข้มข้นของสารละลาย, en: Concentration of solutions }
+summary: ความเข้มข้นในหน่วยร้อยละ ppm กรัมต่อลิตร โมลาริตี โมแลลิตี และเศษส่วนโมล การเตรียมสารละลายด้วยขวดกำหนดปริมาตร การเจือจาง และจุดเดือดจุดเยือกแข็งของสารละลาย
+difficulty: 5
+minutes: 40
+prerequisites: [chemistry.stoichiometry.mole, chemistry.solutions.solubility-percent]
+encompasses:
+  - { id: chemistry.stoichiometry.mole, weight: 0.4 }
+  - { id: chemistry.solutions.solubility-percent, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: volumetric-prep.svg
+    alt: "สี่ขั้นตอนเรียงจากซ้ายไปขวา 1 ชั่งสาร: บีกเกอร์ที่มีผลึกสีฟ้าวางบนเครื่องชั่งที่อ่าน 6.24 g ใต้ภาพเขียนว่า m = C × V × M 2 ละลายด้วยน้ำน้อย ๆ: บีกเกอร์มีสารละลายครึ่งหนึ่งและแท่งแก้วคน 3 เทลงขวดและล้างตาม: ลูกศรจากบีกเกอร์ไปยังกรวยที่เสียบบนคอขวดกำหนดปริมาตร ขวดมีสารละลายในกระเปาะต่ำกว่าขีดสีแดงบนคอขวด 4 เติมน้ำถึงขีดแล้วคว่ำขวด: สารละลายเต็มถึงขีดบนคอขวด ภาพขยายแสดงส่วนโค้งล่างของผิวของเหลวแตะขีดบอกปริมาตรพอดี"
+    caption: "เตรียมสารละลายให้มีความเข้มข้นแม่นยำด้วยขวดกำหนดปริมาตร"
+  - { type: check, problem: chemistry.solutions.concentration.p006, prompt: "ขั้นใดต้องทำก่อนเติมน้ำจนถึงขีด" }
+  - type: worked-example
+    title: เตรียมสารละลายคอปเปอร์(II) ซัลเฟต 0.100 M
+    problem: "ต้องการเตรียมสารละลาย $\\mathrm{CuSO_4}$ 0.100 M ปริมาตร $250\\ \\mathrm{cm^3}$ จากผลึก $\\mathrm{CuSO_4 \\cdot 5H_2O}$ ต้องชั่งผลึกกี่กรัม (H = 1.008, O = 16.00, S = 32.06, Cu = 63.55)"
+    steps:
+      - text: "จำนวนโมลที่ต้องการ $n = C \\times V = 0.100 \\times 0.250 = 0.0250$ mol"
+        why: "เปลี่ยน $250\\ \\mathrm{cm^3}$ เป็น $0.250\\ \\mathrm{dm^3}$ ก่อน"
+      - text: "ผลึก 1 mol ให้ $\\mathrm{CuSO_4}$ 1 mol จึงต้องใช้ผลึก 0.0250 mol"
+      - text: "มวลต่อโมลของผลึก $= 63.55 + 32.06 + 4(16.00) + 5(18.016) = 249.69$ g/mol"
+        why: "น้ำผลึก 5 โมเลกุลเป็นส่วนหนึ่งของผลึกที่ชั่ง ต้องนับด้วย"
+      - text: "มวล $= 0.0250 \\times 249.69 = 6.24$ g ละลายแล้วปรับปริมาตรในขวดกำหนดปริมาตร $250\\ \\mathrm{cm^3}$"
+    answer: "ชั่งผลึก 6.24 g"
+  - type: worked-example
+    title: หามวลต่อโมลจากจุดเยือกแข็ง
+    problem: "ละลายสารที่ไม่ระเหยและไม่แตกตัว 2.40 g ในน้ำ 50.0 g สารละลายแข็งตัวที่ −0.500 °C จงหามวลต่อโมลของสาร ($K_f$ ของน้ำ $= 1.86\\ ^\\circ\\mathrm{C/m}$)"
+    steps:
+      - text: "$\\Delta T_f = 0 - (-0.500) = 0.500\\ ^\\circ\\mathrm{C}$"
+      - text: "โมแลลิตี $m = \\dfrac{\\Delta T_f}{K_f} = \\dfrac{0.500}{1.86} = 0.2688$ mol/kg"
+      - text: "จำนวนโมล $= 0.2688 \\times 0.0500\\ \\mathrm{kg} = 0.01344$ mol"
+        why: "โมแลลิตีคิดต่อน้ำ 1 kg แต่มีน้ำเพียง 50.0 g = 0.0500 kg"
+      - text: "มวลต่อโมล $= \\dfrac{2.40}{0.01344} = 178.6$ g/mol"
+    answer: "ประมาณ 179 g/mol"
+  - { type: check, problem: chemistry.solutions.concentration.p007, prompt: "จำนวนโมลก่อนและหลังเติมน้ำเท่ากัน" }
+  - type: simulation
+    title: โมลาริตี (PhET Molarity)
+    url: https://phet.colorado.edu/en/simulations/molarity
+    provider: phet
+    note: เปลี่ยนจำนวนโมลของตัวละลายและปริมาตรสารละลาย สังเกตว่าโมลาริตีเปลี่ยนอย่างไร และสารละลายอิ่มตัวเมื่อใด
+glossary:
+  - { term: โมลาริตี, definition: "จำนวนโมลของตัวละลายในสารละลาย 1 dm³ หน่วย mol/dm³ หรือ M" }
+  - { term: โมแลลิตี, definition: "จำนวนโมลของตัวละลายในตัวทำละลาย 1 kg หน่วย mol/kg หรือ m" }
+  - { term: ส่วนในล้านส่วน, definition: "มวลตัวละลายต่อมวลสารละลาย 1,000,000 ส่วน ในน้ำเจือจาง 1 ppm ≈ 1 mg/L" }
+  - { term: เศษส่วนโมล, definition: จำนวนโมลของสารหนึ่งหารด้วยจำนวนโมลรวมของทุกสารในสารละลาย }
+  - { term: ขวดกำหนดปริมาตร, definition: เครื่องแก้วที่มีขีดบอกปริมาตรเดียวบนคอขวด ใช้เตรียมสารละลายให้มีปริมาตรแม่นยำ }
+  - { term: การเจือจาง, definition: "การเติมตัวทำละลายให้ความเข้มข้นลดลง จำนวนโมลของตัวละลายคงที่ C₁V₁ = C₂V₂" }
+flashcards:
+  - { front: "สูตรโมลาริตี", back: "$C = \\dfrac{n}{V}$ เมื่อ $V$ เป็น dm³ ของสารละลาย" }
+  - { front: "สูตรการเจือจาง", back: "$C_1V_1 = C_2V_2$ เพราะจำนวนโมลของตัวละลายไม่เปลี่ยน" }
+  - { front: "โมลาริตีกับโมแลลิตีต่างกันอย่างไร", back: "โมลาริตีหารด้วยปริมาตรสารละลาย (dm³) · โมแลลิตีหารด้วยมวลตัวทำละลาย (kg)" }
+  - { front: "จุดเดือดและจุดเยือกแข็งของสารละลาย", back: "$\\Delta T_b = K_b m$ (น้ำ 0.51) · $\\Delta T_f = K_f m$ (น้ำ 1.86) สารละลายเดือดสูงขึ้น แข็งตัวต่ำลง" }
+  - { front: "เปลี่ยน % w/w เป็นโมลาริตี", back: "คิดสารละลาย 1 dm³: มวล = 1000 × ความหนาแน่น → มวลตัวละลาย → โมล" }
+references:
+  - { title: "ความเข้มข้น", url: "https://th.wikipedia.org/wiki/ความเข้มข้น", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Molar concentration", url: "https://en.wikipedia.org/wiki/Molar_concentration", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Freezing-point depression", url: "https://en.wikipedia.org/wiki/Freezing-point_depression", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "3.3 Molarity (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/3-3-molarity", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,272 @@
+problems:
+  - id: chemistry.solutions.concentration.p001
+    topics: [chemistry.solutions.concentration]
+    difficulty: 1
+    type: mcq
+    stem: "สารละลาย NaOH 0.5 M หมายความว่าอย่างไร"
+    choices:
+      - { id: a, text: "สารละลาย 1 dm³ มี NaOH 0.5 mol", correct: true, feedback: "ถูก M คือ mol ต่อ dm³ ของสารละลาย" }
+      - { id: b, text: "น้ำ 1 kg มี NaOH 0.5 mol", feedback: "นั่นคือโมแลลิตี (0.5 m) ซึ่งคิดต่อมวลตัวทำละลาย" }
+      - { id: c, text: "สารละลาย 100 g มี NaOH 0.5 g", feedback: "นั่นคือร้อยละโดยมวล 0.5% w/w" }
+    hints:
+      - "M ย่อมาจากหน่วยใด"
+      - "โมลาริตีใช้ปริมาตรของสารละลาย"
+    solution: "0.5 M = 0.5 mol/dm³ คือสารละลาย 1 dm³ มี NaOH ละลายอยู่ 0.5 mol"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p002
+    topics: [chemistry.solutions.concentration]
+    difficulty: 2
+    type: numeric
+    stem: "ละลายกลูโคส 0.20 mol แล้วปรับปริมาตรเป็น $500\\ \\mathrm{cm^3}$ สารละลายนี้มีความเข้มข้นกี่ $\\mathrm{mol/dm^3}$"
+    answer: { value: 0.4, tolerance: 0.005, unit: mol/dm³ }
+    misconceptions:
+      - { match: 0.0004, feedback: "ใช้ปริมาตรเป็น $\\mathrm{cm^3}$ ต้องเปลี่ยนเป็น $0.500\\ \\mathrm{dm^3}$ ก่อน" }
+      - { match: 0.1, feedback: "คูณโมลกับปริมาตร โมลาริตี = โมล ÷ ปริมาตร" }
+    hints:
+      - "$500\\ \\mathrm{cm^3} = 0.500\\ \\mathrm{dm^3}$"
+      - "$C = n / V$"
+    solution: "$C = \\dfrac{0.20}{0.500} = 0.40\\ \\mathrm{mol/dm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p003
+    topics: [chemistry.solutions.concentration]
+    difficulty: 2
+    type: numeric
+    stem: "การประปาตรวจน้ำตัวอย่าง 2.0 L พบฟลูออไรด์ 1.4 mg น้ำนี้มีฟลูออไรด์กี่ ppm (น้ำเจือจาง 1 L หนักประมาณ 1 kg)"
+    answer: { value: 0.7, tolerance: 0.01, unit: ppm }
+    misconceptions:
+      - { match: 2.8, feedback: "คูณแทนหาร ความเข้มข้นคือมวลต่อปริมาตร 1 L" }
+      - { match: 700, feedback: "หน่วยผิด สำหรับน้ำเจือจาง 1 ppm ≈ 1 mg/L ไม่ต้องคูณ 1,000" }
+    hints:
+      - "หามิลลิกรัมต่อลิตรก่อน"
+      - "ในน้ำเจือจาง 1 mg/L ≈ 1 ppm"
+    solution: "$\\dfrac{1.4\\ \\mathrm{mg}}{2.0\\ \\mathrm{L}} = 0.70\\ \\mathrm{mg/L} \\approx 0.70$ ppm (1 mg ใน 1 kg = 1 ใน $10^6$ ส่วน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p004
+    topics: [chemistry.solutions.concentration]
+    difficulty: 2
+    type: numeric
+    stem: "ละลาย NaOH 20.0 g แล้วปรับปริมาตรสารละลายเป็น $500\\ \\mathrm{cm^3}$ ความเข้มข้นเป็นกี่ $\\mathrm{g/dm^3}$"
+    answer: { value: 40, tolerance: 0.2, unit: g/dm³ }
+    misconceptions:
+      - { match: 0.04, feedback: "นั่นคือ $\\mathrm{g/cm^3}$ ต้องหารด้วยปริมาตร $0.500\\ \\mathrm{dm^3}$" }
+      - { match: 10, feedback: "คูณ 20.0 กับ 0.500 ต้องหาร" }
+    hints:
+      - "$500\\ \\mathrm{cm^3} = 0.500\\ \\mathrm{dm^3}$"
+      - "ความเข้มข้น = มวล ÷ ปริมาตร"
+    solution: "$\\dfrac{20.0\\ \\mathrm{g}}{0.500\\ \\mathrm{dm^3}} = 40.0\\ \\mathrm{g/dm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p005
+    topics: [chemistry.solutions.concentration]
+    difficulty: 3
+    type: numeric
+    stem: "ละลาย NaOH 10.0 g แล้วปรับปริมาตรเป็น $250\\ \\mathrm{cm^3}$ สารละลายนี้เข้มข้นกี่ $\\mathrm{mol/dm^3}$ (H = 1.008, O = 16.00, Na = 22.99)"
+    answer: { value: 1.0, tolerance: 0.01, unit: mol/dm³ }
+    misconceptions:
+      - { match: 0.0625, feedback: "คูณจำนวนโมลด้วยปริมาตร ต้องหาร: $0.250 / 0.250$" }
+      - { match: 0.25, feedback: "นั่นคือจำนวนโมล ยังไม่ได้หารด้วยปริมาตร $0.250\\ \\mathrm{dm^3}$" }
+    hints:
+      - "มวลต่อโมลของ NaOH = 22.99 + 16.00 + 1.008"
+      - "หาโมลก่อน แล้วหารด้วยปริมาตรเป็น dm³"
+    solution: "$M = 40.00$ g/mol · $n = 10.0 / 40.00 = 0.250$ mol · $C = 0.250 / 0.250 = 1.00\\ \\mathrm{mol/dm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p006
+    topics: [chemistry.solutions.concentration]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการเตรียมสารละลาย NaCl 0.100 M ปริมาตร $100\\ \\mathrm{cm^3}$"
+    items:
+      - "คำนวณมวล NaCl ที่ต้องใช้"
+      - "ชั่ง NaCl ใส่บีกเกอร์ แล้วเติมน้ำกลั่นเล็กน้อยคนจนละลาย"
+      - "เทสารละลายลงขวดกำหนดปริมาตร 100 cm³ แล้วล้างบีกเกอร์เทตามลงไป"
+      - "เติมน้ำกลั่นจนส่วนโค้งล่างของผิวของเหลวแตะขีด"
+      - "ปิดจุกแล้วคว่ำขวดกลับไปมาให้เข้ากัน"
+    hints:
+      - "ต้องรู้มวลก่อนจึงจะชั่งได้"
+      - "เติมน้ำจนถึงขีดเป็นขั้นท้าย ๆ หลังจากสารทั้งหมดอยู่ในขวดแล้ว"
+    solution: "คำนวณ ($0.100 \\times 0.100 \\times 58.44 = 0.584$ g) → ชั่งและละลายด้วยน้ำน้อย ๆ → ย้ายลงขวดพร้อมล้างตาม → เติมน้ำถึงขีด → ปิดจุกคว่ำให้เข้ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p007
+    topics: [chemistry.solutions.concentration]
+    difficulty: 3
+    type: numeric
+    stem: "ต้องการกรดไฮโดรคลอริก 0.50 M ปริมาตร $250\\ \\mathrm{cm^3}$ จากกรดไฮโดรคลอริก 2.0 M ต้องตวงกรด 2.0 M กี่ $\\mathrm{cm^3}$"
+    answer: { value: 62.5, tolerance: 0.5, unit: cm³ }
+    misconceptions:
+      - { match: 1000, feedback: "จัดสูตรกลับด้าน กรดเข้มข้นกว่าต้องใช้ปริมาตรน้อยกว่าสารละลายสุดท้าย" }
+    hints:
+      - "จำนวนโมลก่อนและหลังเจือจางเท่ากัน $C_1V_1 = C_2V_2$"
+      - "$V_1 = C_2V_2 / C_1$"
+    solution: "$V_1 = \\dfrac{0.50 \\times 250}{2.0} = 62.5\\ \\mathrm{cm^3}$ แล้วค่อย ๆ เทกรดลงในน้ำ ปรับปริมาตรเป็น $250\\ \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p008
+    topics: [chemistry.solutions.concentration]
+    difficulty: 3
+    type: numeric
+    stem: "ต้องการเตรียมสารละลายกลูโคส ($\\mathrm{C_6H_{12}O_6}$, 180.16 g/mol) เข้มข้น 0.300 M ปริมาตร $250\\ \\mathrm{cm^3}$ ต้องชั่งกลูโคสกี่กรัม (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 13.51, tolerance: 0.05, unit: g }
+    misconceptions:
+      - { match: 13511.7, feedback: "ใช้ปริมาตร 250 แทน 0.250 dm³" }
+      - { match: 0.075, feedback: "นั่นคือจำนวนโมล ต้องคูณมวลต่อโมลอีกครั้ง" }
+    hints:
+      - "$n = C \\times V$ ใช้ V เป็น dm³"
+      - "มวล = โมล × มวลต่อโมล"
+    solution: "$n = 0.300 \\times 0.250 = 0.0750$ mol · มวล $= 0.0750 \\times 180.16 = 13.51$ g"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p009
+    topics: [chemistry.solutions.concentration]
+    difficulty: 3
+    type: numeric
+    stem: "ละลายกลูโคส 18.0 g (180.16 g/mol) ในน้ำ 500 g สารละลายมีความเข้มข้นกี่โมแลล (mol/kg)"
+    answer: { value: 0.2, tolerance: 0.003, unit: mol/kg }
+    misconceptions:
+      - { match: 0.0002, feedback: "ใช้มวลน้ำเป็นกรัม ต้องเปลี่ยนเป็น 0.500 kg" }
+      - { match: 0.0999, feedback: "นั่นคือจำนวนโมล ยังไม่ได้หารด้วยมวลน้ำเป็นกิโลกรัม" }
+    hints:
+      - "โมแลลิตี = โมลตัวละลาย ÷ มวลตัวทำละลาย (kg)"
+      - "500 g = 0.500 kg"
+    solution: "$n = 18.0 / 180.16 = 0.0999$ mol · $m = 0.0999 / 0.500 = 0.200$ mol/kg"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p010
+    topics: [chemistry.solutions.concentration]
+    difficulty: 4
+    type: numeric
+    stem: "สารละลายกลูโคส 0.200 mol/kg ในน้ำจะแข็งตัวที่อุณหภูมิกี่องศาเซลเซียส ($K_f$ ของน้ำ $= 1.86\\ ^\\circ\\mathrm{C/m}$ ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: -0.372, tolerance: 0.004, unit: °C }
+    misconceptions:
+      - { match: 0.372, feedback: "นั่นคือ $\\Delta T_f$ จุดเยือกแข็งของสารละลายต้อง **ต่ำกว่า** 0 °C" }
+      - { match: -0.102, feedback: "ใช้ $K_b$ (0.51) แทน $K_f$ (1.86)" }
+    hints:
+      - "$\\Delta T_f = K_f \\times m$"
+      - "จุดเยือกแข็งของสารละลาย = 0 °C − $\\Delta T_f$"
+    solution: "$\\Delta T_f = 1.86 \\times 0.200 = 0.372\\ ^\\circ\\mathrm{C}$ · จุดเยือกแข็ง $= 0 - 0.372 = -0.372\\ ^\\circ\\mathrm{C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p011
+    topics: [chemistry.solutions.concentration]
+    difficulty: 4
+    type: numeric
+    stem: "กรดไนตริกเข้มข้นมี $\\mathrm{HNO_3}$ 70.0% โดยมวล ความหนาแน่น $1.41\\ \\mathrm{g/cm^3}$ (H = 1.008, N = 14.01, O = 16.00) กรดนี้เข้มข้นกี่ $\\mathrm{mol/dm^3}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 15.7, tolerance: 0.15, unit: mol/dm³ }
+    misconceptions:
+      - { match: 11.1, feedback: "ลืมคูณความหนาแน่น สารละลาย 1 dm³ หนัก 1,410 g ไม่ใช่ 1,000 g" }
+    hints:
+      - "คิดสารละลาย 1 dm³ = 1,000 cm³ หาว่าหนักกี่กรัม"
+      - "มวล $\\mathrm{HNO_3}$ = 70.0% ของมวลสารละลาย แล้วเปลี่ยนเป็นโมล"
+    solution: "มวลสารละลาย $= 1000 \\times 1.41 = 1410$ g · มวล $\\mathrm{HNO_3} = 0.700 \\times 1410 = 987$ g · $M = 63.02$ g/mol · $n = 987 / 63.02 = 15.7$ mol ใน 1 dm³ จึงเข้มข้น $15.7\\ \\mathrm{mol/dm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p012
+    topics: [chemistry.solutions.concentration]
+    difficulty: 4
+    type: mcq
+    stem: "คนขายไอศกรีมกะทิแบบโบราณหมุนถังใส่กะทิในน้ำแข็งที่โรยเกลือเม็ดไว้มาก ทำไมต้องใส่เกลือ"
+    choices:
+      - { id: a, text: "น้ำเกลือมีจุดเยือกแข็งต่ำกว่า 0 °C ของผสมน้ำแข็งกับเกลือจึงเย็นกว่า 0 °C จนกะทิแข็งตัวได้", correct: true, feedback: "ถูก ตัวละลายทำให้จุดเยือกแข็งลดลง" }
+      - { id: b, text: "เกลือทำให้จุดเยือกแข็งของน้ำสูงขึ้น น้ำแข็งจึงละลายช้า", feedback: "ตัวละลายทำให้จุดเยือกแข็งลดลง ไม่ใช่สูงขึ้น และน้ำแข็งที่ใส่เกลือละลายเร็วขึ้น" }
+      - { id: c, text: "เกลือซึมผ่านถังเข้าไปปรุงรสไอศกรีม", feedback: "ถังปิดสนิท เกลือไม่ได้เข้าไปในกะทิ" }
+    hints:
+      - "น้ำแข็งเปล่าละลายที่ 0 °C แต่กะทิซึ่งมีน้ำตาลแข็งตัวที่อุณหภูมิต่ำกว่านั้น"
+      - "ตัวละลายมีผลต่อจุดเยือกแข็งของสารละลายอย่างไร"
+    solution: "กะทิมีน้ำตาลละลายอยู่ จึงแข็งตัวที่ต่ำกว่า 0 °C น้ำแข็งเปล่าเย็นได้แค่ราว 0 °C ไม่พอ เกลือทำให้เกิดน้ำเกลือที่มีจุดเยือกแข็งต่ำกว่า 0 °C ของผสมน้ำแข็งกับเกลือจึงเย็นกว่ามาก ดึงความร้อนจากกะทิจนแข็งตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p013
+    topics: [chemistry.solutions.concentration]
+    difficulty: 4
+    type: numeric
+    stem: "ผสมเอทานอล ($\\mathrm{C_2H_5OH}$) 46.07 g กับน้ำ 54.05 g เศษส่วนโมลของเอทานอลเท่ากับเท่าใด (H = 1.008, C = 12.01, O = 16.00 ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.25, tolerance: 0.005 }
+    misconceptions:
+      - { match: 0.33, feedback: "หารโมลเอทานอลด้วยโมลน้ำ ต้องหารด้วยโมลรวมของทั้งสองสาร" }
+      - { match: 0.46, feedback: "นั่นคือเศษส่วนโดยมวล ต้องเปลี่ยนเป็นโมลก่อน" }
+    hints:
+      - "หาโมลของเอทานอล (46.07 g/mol) และน้ำ (18.02 g/mol)"
+      - "$x = n_{\\text{เอทานอล}} / (n_{\\text{เอทานอล}} + n_{\\text{น้ำ}})$"
+    solution: "$n_{\\text{เอทานอล}} = 46.07 / 46.07 = 1.00$ mol · $n_{\\text{น้ำ}} = 54.05 / 18.02 = 3.00$ mol · $x = \\dfrac{1.00}{1.00 + 3.00} = 0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p014
+    topics: [chemistry.solutions.concentration]
+    difficulty: 5
+    type: numeric
+    stem: "ละลายสารที่ไม่ระเหยและไม่แตกตัว 9.00 g ในน้ำ 100 g สารละลายเดือดที่ 100.255 °C (ที่ความดัน 1 atm) จงหามวลต่อโมลของสาร ($K_b$ ของน้ำ $= 0.51\\ ^\\circ\\mathrm{C/m}$)"
+    answer: { value: 180, tolerance: 2, unit: g/mol }
+    misconceptions:
+      - { match: 656.5, feedback: "ใช้ $K_f$ (1.86) แทน $K_b$ (0.51) ข้อนี้เป็นจุดเดือด" }
+      - { match: 0.18, feedback: "ใช้มวลน้ำ 100 g แทน 0.100 kg ตอนหาจำนวนโมล" }
+    hints:
+      - "$\\Delta T_b = 100.255 - 100 = 0.255\\ ^\\circ\\mathrm{C}$ แล้วหาโมแลลิตี"
+      - "จำนวนโมล = โมแลลิตี × มวลน้ำ (kg) แล้วมวลต่อโมล = มวลสาร ÷ จำนวนโมล"
+    solution: "$m = 0.255 / 0.51 = 0.500$ mol/kg · $n = 0.500 \\times 0.100 = 0.0500$ mol · มวลต่อโมล $= 9.00 / 0.0500 = 180$ g/mol (อาจเป็นกลูโคส)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p015
+    topics: [chemistry.solutions.concentration]
+    difficulty: 5
+    type: mcq
+    stem: "สารละลายในน้ำต่อไปนี้มีความเข้มข้น 0.10 mol/kg เท่ากัน สารละลายใดแข็งตัวที่อุณหภูมิต่ำที่สุด"
+    choices:
+      - { id: a, text: "แคลเซียมคลอไรด์ $\\mathrm{CaCl_2}$", correct: true, feedback: "ถูก แตกตัวให้ 3 อนุภาคต่อหน่วยสูตร มีอนุภาคตัวละลายมากที่สุด" }
+      - { id: b, text: "โซเดียมคลอไรด์ NaCl", feedback: "NaCl ให้ 2 อนุภาค น้อยกว่า $\\mathrm{CaCl_2}$ ที่ให้ 3 อนุภาค" }
+      - { id: c, text: "กลูโคส", feedback: "กลูโคสไม่แตกตัว ให้เพียง 1 อนุภาค จุดเยือกแข็งจึงลดลงน้อยที่สุด" }
+      - { id: d, text: "แข็งตัวที่อุณหภูมิเท่ากันทุกข้อ เพราะความเข้มข้นเท่ากัน", feedback: "จุดเยือกแข็งขึ้นกับจำนวนอนุภาคของตัวละลาย สารที่แตกตัวให้อนุภาคมากกว่า" }
+    hints:
+      - "การลดลงของจุดเยือกแข็งขึ้นกับจำนวนอนุภาคตัวละลาย ไม่ขึ้นกับชนิด"
+      - "นับจำนวนอนุภาคที่ได้เมื่อสารแต่ละชนิดละลาย"
+    solution: "กลูโคสให้ 1 อนุภาค NaCl ให้ 2 ($\\mathrm{Na^+}$, $\\mathrm{Cl^-}$) $\\mathrm{CaCl_2}$ ให้ 3 ($\\mathrm{Ca^{2+}}$, $2\\mathrm{Cl^-}$) สารละลาย $\\mathrm{CaCl_2}$ มีอนุภาคมากที่สุด จุดเยือกแข็งจึงต่ำที่สุด จึงใช้โรยถนนละลายหิมะในประเทศหนาว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p016
+    topics: [chemistry.solutions.concentration]
+    difficulty: 5
+    type: numeric
+    stem: "น้ำเกลือที่ให้ทางหลอดเลือดในโรงพยาบาลมี NaCl 0.9% w/v (Na = 22.99, Cl = 35.45) สารละลายนี้เข้มข้นกี่ $\\mathrm{mol/dm^3}$ (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.154, tolerance: 0.002, unit: mol/dm³ }
+    misconceptions:
+      - { match: 0.0154, feedback: "คิด 0.9 g ต่อ 1 dm³ แต่ 0.9% w/v คือ 0.9 g ต่อ 100 cm³ หรือ 9 g ต่อ 1 dm³" }
+    hints:
+      - "0.9% w/v = 0.9 g ในสารละลาย 100 cm³ เปลี่ยนเป็นกรัมต่อ 1 dm³"
+      - "หารด้วยมวลต่อโมลของ NaCl (58.44)"
+    solution: "0.9 g ต่อ 100 cm³ = 9.0 g ต่อ 1 dm³ · $C = 9.0 / 58.44 = 0.154\\ \\mathrm{mol/dm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.solutions.concentration.p017
+    topics: [chemistry.solutions.concentration]
+    difficulty: 2
+    type: mcq
+    stem: "ฉลากน้ำแร่ยี่ห้อหนึ่งบอกว่ามีแคลเซียม 20 mg/L ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "มีแคลเซียมประมาณ 20 ppm", correct: true, feedback: "ถูก น้ำเจือจาง 1 L หนักประมาณ 1 kg จึงใช้ 1 mg/L ≈ 1 ppm" }
+      - { id: b, text: "มีแคลเซียมร้อยละ 20", feedback: "20% คือ 20 g ในน้ำ 100 g มากกว่า 20 mg/L นับหมื่นเท่า" }
+      - { id: c, text: "มีแคลเซียม 20 g ในน้ำ 1 L", feedback: "mg คือมิลลิกรัม ซึ่งเป็น 1/1000 ของกรัม" }
+    hints:
+      - "1 L ของน้ำเจือจางหนักประมาณเท่าใด"
+      - "1 mg ใน 1 kg = 1 ใน 1,000,000 ส่วน"
+    solution: "น้ำ 1 L หนักประมาณ $10^6$ mg แคลเซียม 20 mg จึงเป็น 20 ส่วนในล้านส่วน หรือ 20 ppm"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
