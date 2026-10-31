@@ -1,0 +1,76 @@
+id: math.algebra.rational-abs-inequalities
+subject: math
+title: { th: สมการและอสมการเศษส่วนของพหุนามและค่าสัมบูรณ์, en: Rational and absolute value equations and inequalities }
+summary: บวก ลบ คูณ หารนิพจน์ตรรกยะ แก้สมการเศษส่วนและสมการที่มีกรณฑ์พร้อมตรวจคำตอบแปลกปลอม แก้อสมการเศษส่วนด้วยเส้นจำนวน และแก้สมการและอสมการค่าสัมบูรณ์
+difficulty: 6
+minutes: 40
+prerequisites: [math.algebra.polynomial-equations, math.algebra.linear-inequalities, math.algebra.radicals]
+encompasses:
+  - { id: math.algebra.polynomial-equations, weight: 0.4 }
+  - { id: math.algebra.linear-inequalities, weight: 0.3 }
+  - { id: math.algebra.radicals, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: แก้อสมการเศษส่วนด้วยเส้นจำนวน
+    problem: "จงแก้อสมการ $\\dfrac{x + 3}{x - 1} \\ge 2$"
+    steps:
+      - text: "ย้ายข้าง: $\\dfrac{x + 3}{x - 1} - 2 \\ge 0$"
+        why: "ห้ามคูณไขว้ด้วย $x - 1$ เพราะไม่รู้ว่าเป็นบวกหรือลบ"
+      - text: "รวมเป็นเศษส่วนเดียว: $\\dfrac{x + 3 - 2(x - 1)}{x - 1} = \\dfrac{5 - x}{x - 1} \\ge 0$"
+      - text: "จุดวิกฤต: ตัวเศษเป็นศูนย์ที่ $x = 5$ ตัวส่วนเป็นศูนย์ที่ $x = 1$"
+      - text: "เครื่องหมายแต่ละช่วง (ลองแทน $x = 0, 2, 6$): $x < 1$ ลบ, $1 < x < 5$ บวก, $x > 5$ ลบ"
+      - text: "เลือกช่วงที่ $\\ge 0$: $1 < x \\le 5$ (รวม 5 เพราะทำให้ได้ 0 แต่ไม่รวม 1 เพราะตัวส่วนเป็นศูนย์)"
+    answer: "$1 < x \\le 5$"
+  - type: figure
+    src: sign-chart.svg
+    alt: "ตารางเครื่องหมาย จุดแบ่ง 1 และ 5 แถว 5 − x เป็น บวก บวก ลบ แถว x − 1 เป็น ลบ บวก บวก แถว (5 − x)/(x − 1) เป็น ลบ บวก ลบ ใต้ตารางเป็นเส้นจำนวน ระบายช่วงจาก 1 ถึง 5 วงกลมโปร่งที่ 1 วงกลมทึบที่ 5"
+    caption: "ตัวส่วนเป็นศูนย์ที่ x = 1 จึงเป็นวงกลมโปร่งเสมอ"
+  - { type: check, problem: math.algebra.rational-abs-inequalities.p009, prompt: "ค่า x ที่ทำให้ตัวส่วนเป็นศูนย์รวมได้หรือไม่" }
+  - type: figure
+    src: abs-graph.svg
+    alt: "กราฟ y = |x − 1| รูปตัววีจุดยอด (1, 0) เส้นประแนวนอน y = 2 ตัดกราฟที่ x = −1 และ x = 3 ช่วงบนแกน x จาก −1 ถึง 3 ระบายสีเขียว ปลายทั้งสองเป็นวงกลมโปร่ง"
+    caption: "|x − 1| < 2 คือช่วงที่กราฟตัววีอยู่ใต้เส้น y = 2 ได้ −1 < x < 3"
+  - type: interactive
+    title: อสมการค่าสัมบูรณ์บนกราฟ
+    caption: "เส้นแรกคือ y = |x − h| เส้นที่สองคือ y = k เลื่อน h และ k แล้วดูว่ากราฟตัววีอยู่ใต้เส้นแนวนอนในช่วง h − k < x < h + k เสมอ ช่วงนี้กว้าง 2k และมีกึ่งกลางที่ h"
+    widget:
+      kind: function-plot
+      functions: ["|x-h|", "k"]
+      sliders:
+        - { name: h, min: -3, max: 3, step: 0.5, value: 1, label: จุดกึ่งกลาง h }
+        - { name: k, min: 0, max: 5, step: 0.5, value: 2, label: ระยะ k }
+      x: [-6, 6]
+      y: [-1, 6]
+  - type: worked-example
+    title: อสมการค่าสัมบูรณ์
+    problem: "จงแก้อสมการ $|2x - 3| \\le 7$"
+    steps:
+      - text: "$|A| \\le k$ หมายถึง $-k \\le A \\le k$ จึงได้ $-7 \\le 2x - 3 \\le 7$"
+      - text: "บวก 3 ทุกส่วน: $-4 \\le 2x \\le 10$"
+      - text: "หาร 2 ทุกส่วน: $-2 \\le x \\le 5$"
+        why: "หารด้วยจำนวนบวกไม่ต้องกลับเครื่องหมาย"
+      - text: "ตรวจปลายช่วง: $|2(-2) - 3| = 7$ และ $|2(5) - 3| = 7$ ✓"
+    answer: "$-2 \\le x \\le 5$"
+  - { type: check, problem: math.algebra.rational-abs-inequalities.p004, prompt: "x ห่างจาก 2 น้อยกว่า 3" }
+glossary:
+  - { term: นิพจน์ตรรกยะ, definition: "เศษส่วนของพหุนาม a(x)/b(x) เมื่อ b(x) ≠ 0" }
+  - { term: คำตอบแปลกปลอม, definition: "ค่าที่ได้จากการคูณด้วยตัวส่วนหรือการยกกำลังสอง แต่ไม่ทำให้สมการเดิมเป็นจริง" }
+  - { term: จุดวิกฤต, definition: "ค่าที่ทำให้ตัวเศษหรือตัวส่วนเป็นศูนย์ ใช้แบ่งเส้นจำนวนเป็นช่วง" }
+  - { term: ค่าสัมบูรณ์, definition: "|a| คือระยะจาก a ถึง 0 บนเส้นจำนวน |x − a| คือระยะจาก x ถึง a" }
+flashcards:
+  - { front: "แก้ (x − a)/(x − b) ≥ 0 ทำไมห้ามคูณไขว้", back: "ไม่รู้ว่า x − b บวกหรือลบ ถ้าลบต้องกลับเครื่องหมาย ให้ใช้เส้นจำนวนแทน" }
+  - { front: "|A| < k (k > 0) เท่ากับ", back: "−k < A < k" }
+  - { front: "|A| > k (k > 0) เท่ากับ", back: "A < −k หรือ A > k" }
+  - { front: "ทำไมต้องตรวจคำตอบของสมการ √(x + 6) = x", back: "การยกกำลังสองอาจเพิ่มคำตอบแปลกปลอม เช่น x = −2" }
+  - { front: "จุดที่ตัวส่วนเป็นศูนย์บนเส้นจำนวน", back: "วงกลมโปร่งเสมอ ไม่รวมในคำตอบ" }
+references:
+  - { title: "ค่าสัมบูรณ์", url: "https://th.wikipedia.org/wiki/ค่าสัมบูรณ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Rational function", url: "https://en.wikipedia.org/wiki/Rational_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "7.6 Solve Rational Inequalities (Intermediate Algebra 2e, OpenStax)", url: "https://openstax.org/books/intermediate-algebra-2e/pages/7-6-solve-rational-inequalities", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "2.7 Solve Absolute Value Inequalities (Intermediate Algebra 2e, OpenStax)", url: "https://openstax.org/books/intermediate-algebra-2e/pages/2-7-solve-absolute-value-inequalities", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,77 @@
+id: math.number.financial-math
+subject: math
+title: { th: ดอกเบี้ยและมูลค่าของเงิน, en: Interest and the time value of money }
+summary: ร้อยละเป็นตัวคูณ ดอกเบี้ยคงต้น ดอกเบี้ยทบต้นรายงวด มูลค่าปัจจุบันและมูลค่าอนาคต ค่ารายงวดของเงินออมและเงินผ่อน และการเปรียบเทียบทางเลือกทางการเงิน
+difficulty: 6
+minutes: 40
+prerequisites: [math.number.ratio-percent, math.functions.exponential, math.algebra.sequences-series]
+encompasses:
+  - { id: math.number.ratio-percent, weight: 0.4 }
+  - { id: math.functions.exponential, weight: 0.3 }
+  - { id: math.algebra.sequences-series, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: simple-vs-compound.svg
+    alt: "กราฟเงินรวมของเงินฝาก 10,000 บาท อัตรา 6% ต่อปี ตลอด 20 ปี เส้นตรงสีเขียวคือดอกเบี้ยคงต้น 10,000(1 + 0.06n) ถึง 22,000 บาทในปีที่ 20 เส้นโค้งสีน้ำเงินคือดอกเบี้ยทบต้น 10,000(1.06)ⁿ ถึง 32,071 บาท สองเส้นเริ่มที่ 10,000 และห่างกันมากขึ้นเรื่อย ๆ"
+    caption: "คงต้นโตเป็นเส้นตรง ทบต้นโตแบบเอกซ์โพเนนเชียล"
+  - type: worked-example
+    title: เงินฝากทบต้นรายเดือน
+    problem: "ฝากเงิน 40,000 บาทในบัญชีเงินฝากประจำของธนาคารออมสิน สมมติอัตรา 2.4% ต่อปี ทบต้นทุกเดือน (อัตราตัวอย่าง ไม่ใช่อัตราจริง) เมื่อครบ 3 ปีจะมีเงินรวมเท่าใด"
+    steps:
+      - text: "อัตราต่องวด: $i = \\dfrac{0.024}{12} = 0.002$ ต่อเดือน"
+        why: "ทบทุกเดือน จึงแบ่งอัตราต่อปีเป็น 12 ส่วน"
+      - text: "จำนวนงวด: $n = 3 \\times 12 = 36$ เดือน"
+      - text: "$S = 40{,}000(1.002)^{36}$"
+      - text: "$(1.002)^{36} \\approx 1.074578$ จึง $S \\approx 42{,}983.12$ บาท"
+      - text: "เทียบดอกเบี้ยคงต้น: $40{,}000(1 + 0.024 \\times 3) = 42{,}880$ บาท ทบต้นได้มากกว่าประมาณ 103 บาท"
+    answer: "ประมาณ $42{,}983.12$ บาท"
+  - { type: check, problem: math.number.financial-math.p003, prompt: "ปีที่สองได้ดอกเบี้ยจากดอกเบี้ยของปีแรกด้วย" }
+  - type: interactive
+    title: ดอกเบี้ยทบต้นกับดอกเบี้ยคงต้น
+    caption: "เงินต้น 10 พันบาท เส้นแรกคือทบต้นปีละครั้ง 10(1 + r/100)ˣ เส้นที่สองคือคงต้น 10(1 + rx/100) เมื่อ x คือจำนวนปี เลื่อนอัตรา r แล้วดูว่าสองเส้นแยกห่างกันเร็วเพียงใด"
+    widget:
+      kind: function-plot
+      functions: ["10\\cdot(1+\\frac{r}{100})^x", "10\\cdot(1+\\frac{r}{100}x)"]
+      sliders:
+        - { name: r, min: 1, max: 12, step: 1, value: 6, label: อัตราดอกเบี้ยต่อปี (%) }
+      x: [0, 30]
+      y: [0, 100]
+  - type: figure
+    src: annuity-timeline.svg
+    alt: "เส้นเวลามีงวดที่ 0, 1, 2, 3, …, n มีกล่อง R ที่ปลายงวด 1 ถึง n ด้านบนมีเส้นโค้งพาเงินแต่ละงวดไปที่งวด n เขียนว่ามูลค่าอนาคต S = R[(1 + i)ⁿ − 1]/i ด้านล่างมีเส้นโค้งพาเงินแต่ละงวดกลับมาที่งวด 0 เขียนว่ามูลค่าปัจจุบัน P = R[1 − (1 + i)⁻ⁿ]/i"
+    caption: "ค่ารายงวดจ่ายทุกปลายงวด ย้ายทุกงวดไปที่จุดเวลาเดียวกันแล้วรวมกันเป็นอนุกรมเรขาคณิต"
+  - type: worked-example
+    title: ค่างวดผ่อนบ้าน
+    problem: "กู้เงินซื้อบ้าน 1,500,000 บาท ผ่อนเท่ากันทุกสิ้นเดือน 20 ปี สมมติอัตราดอกเบี้ย 6% ต่อปี คิดแบบลดต้นลดดอกรายเดือน จงหาค่างวดต่อเดือน และดอกเบี้ยที่จ่ายทั้งหมด"
+    steps:
+      - text: "$i = \\dfrac{0.06}{12} = 0.005$ และ $n = 20 \\times 12 = 240$ งวด"
+      - text: "เงินกู้คือมูลค่าปัจจุบันของค่างวดทั้งหมด จึงใช้ $R = \\dfrac{Pi}{1 - (1 + i)^{-n}}$"
+        why: "ธนาคารให้เงินวันนี้ ค่างวดทุกงวดย้อนมาวันนี้ต้องรวมได้เท่าเงินกู้"
+      - text: "$(1.005)^{-240} \\approx 0.30210$ จึง $R = \\dfrac{1{,}500{,}000 \\times 0.005}{1 - 0.30210} \\approx 10{,}746.47$ บาท"
+      - text: "จ่ายทั้งหมด $240 \\times 10{,}746.47 \\approx 2{,}579{,}152$ บาท ดอกเบี้ยรวมประมาณ $1{,}079{,}152$ บาท"
+        why: "ดอกเบี้ยรวมเกือบเท่าเงินต้น เพราะระยะเวลานาน"
+    answer: "ค่างวดประมาณ $10{,}746.47$ บาทต่อเดือน ดอกเบี้ยรวมประมาณ $1.08$ ล้านบาท"
+  - { type: check, problem: math.number.financial-math.p009, prompt: "เงินงวดสุดท้ายไม่ได้ดอกเบี้ยเลย" }
+glossary:
+  - { term: ดอกเบี้ยคงต้น, definition: "ดอกเบี้ยที่คิดจากเงินต้นเท่าเดิมทุกงวด I = Prt" }
+  - { term: ดอกเบี้ยทบต้น, definition: "ดอกเบี้ยของแต่ละงวดรวมเข้าเป็นเงินต้นของงวดถัดไป S = P(1 + i)ⁿ" }
+  - { term: มูลค่าปัจจุบัน, definition: "เงินวันนี้ที่มีค่าเท่ากับเงินจำนวนหนึ่งในอนาคต P = S(1 + i)⁻ⁿ" }
+  - { term: ค่ารายงวด, definition: "เงินที่จ่ายหรือฝากเท่ากันทุกงวด เช่น ค่างวดผ่อนบ้าน เงินออมรายเดือน" }
+  - { term: อัตราที่แท้จริงต่อปี, definition: "อัตราดอกเบี้ยต่อปีเมื่อนับการทบต้นแล้ว (1 + i)ᵏ − 1" }
+flashcards:
+  - { front: "เพิ่ม 7% คือคูณด้วยเท่าใด", back: "1.07" }
+  - { front: "สูตรดอกเบี้ยทบต้นรายงวด", back: "S = P(1 + i)ⁿ เมื่อ i คืออัตราต่องวด n คือจำนวนงวด" }
+  - { front: "มูลค่าปัจจุบันของ S ในอีก n งวด", back: "P = S/(1 + i)ⁿ" }
+  - { front: "มูลค่าอนาคตของการฝาก R บาททุกปลายงวด n งวด", back: "S = R[(1 + i)ⁿ − 1]/i" }
+  - { front: "ค่างวดผ่อนเงินกู้ P บาท n งวด", back: "R = Pi / [1 − (1 + i)⁻ⁿ]" }
+references:
+  - { title: "ดอกเบี้ย", url: "https://th.wikipedia.org/wiki/ดอกเบี้ย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Time value of money", url: "https://en.wikipedia.org/wiki/Time_value_of_money", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.4 Compound Interest (Contemporary Mathematics, OpenStax)", url: "https://openstax.org/books/contemporary-mathematics/pages/6-4-compound-interest", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.8 The Basics of Loans (Contemporary Mathematics, OpenStax)", url: "https://openstax.org/books/contemporary-mathematics/pages/6-8-the-basics-of-loans", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,72 @@
+id: math.algebra.binomial-theorem
+subject: math
+title: { th: ทฤษฎีบททวินาม, en: Binomial theorem }
+summary: กระจาย (x + y) ยกกำลัง n ด้วยสามเหลี่ยมปาสคาลและสัมประสิทธิ์ทวินาม หาพจน์ทั่วไป สัมประสิทธิ์ของพจน์ที่ต้องการ ผลบวกของสัมประสิทธิ์ และประมาณค่า
+difficulty: 6
+minutes: 35
+prerequisites: [math.prob.counting, math.algebra.polynomials]
+encompasses:
+  - { id: math.prob.counting, weight: 0.4 }
+  - { id: math.algebra.polynomials, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: pascal.svg
+    alt: "สามเหลี่ยมปาสคาลหกแถว n = 0 ถึง 5: 1 / 1 1 / 1 2 1 / 1 3 3 1 / 1 4 6 4 1 / 1 5 10 10 5 1 ลูกศรจาก 4 และ 6 ในแถว n = 4 ชี้ลงไปที่ 10 ในแถว n = 5 เขียนว่า 4 + 6 = 10"
+    caption: "แต่ละจำนวนเท่ากับผลบวกของสองจำนวนที่อยู่เหนือมัน แถวที่ n คือสัมประสิทธิ์ของ (x + y)ⁿ"
+  - type: worked-example
+    title: กระจาย (2x − 3)⁴
+    problem: "จงกระจาย $(2x - 3)^4$"
+    steps:
+      - text: "แถว $n = 4$ ของสามเหลี่ยมปาสคาลคือ $1, 4, 6, 4, 1$"
+      - text: "ใช้ $(a + b)^4$ โดยให้ $a = 2x$ และ $b = -3$"
+        why: "เครื่องหมายลบเป็นของ $b$ จึงต้องยกกำลังไปด้วย"
+      - text: "เขียนทุกพจน์: $1(2x)^4 + 4(2x)^3(-3) + 6(2x)^2(-3)^2 + 4(2x)(-3)^3 + 1(-3)^4$"
+      - text: "คำนวณ: $16x^4 + 4(8x^3)(-3) + 6(4x^2)(9) + 4(2x)(-27) + 81$"
+        why: "$(2x)^3 = 8x^3$ ต้องยกกำลังทั้ง 2 และ $x$"
+      - text: "ได้ $16x^4 - 96x^3 + 216x^2 - 216x + 81$"
+      - text: "ตรวจด้วย $x = 1$: $(2 - 3)^4 = 1$ และ $16 - 96 + 216 - 216 + 81 = 1$ ✓"
+    answer: "$16x^4 - 96x^3 + 216x^2 - 216x + 81$"
+  - { type: check, problem: math.algebra.binomial-theorem.p003, prompt: "แถวที่ 3 ของสามเหลี่ยมปาสคาลคือ 1 3 3 1" }
+  - type: worked-example
+    title: หาสัมประสิทธิ์ของพจน์ที่ต้องการ
+    problem: "จงหาสัมประสิทธิ์ของ $x^5$ ในการกระจาย $\\left(x^2 + \\dfrac{2}{x}\\right)^7$"
+    steps:
+      - text: "พจน์ทั่วไป: $T_{r+1} = \\binom{7}{r}(x^2)^{7 - r}\\left(\\dfrac{2}{x}\\right)^r$"
+      - text: "รวมกำลังของ $x$: $x^{14 - 2r} \\cdot x^{-r} = x^{14 - 3r}$ ส่วนตัวเลขคือ $\\binom{7}{r}2^r$"
+        why: "$\\left(\\tfrac{2}{x}\\right)^r = 2^r x^{-r}$"
+      - text: "ต้องการ $14 - 3r = 5$ จึง $r = 3$"
+      - text: "สัมประสิทธิ์ $= \\binom{7}{3} \\cdot 2^3 = 35 \\times 8 = 280$"
+    answer: "$280$ (พจน์คือ $280x^5$ เป็นพจน์ที่ 4)"
+  - type: interactive
+    title: ประมาณ (1 + x)ⁿ ด้วยสองและสามพจน์แรก
+    caption: "เส้นแรกคือ (1 + x)ⁿ เส้นที่สองคือ 1 + nx และเส้นที่สามคือ 1 + nx + n(n − 1)x²/2 เลื่อน n แล้วสังเกตว่าใกล้ x = 0 เส้นประมาณแทบทับกราฟจริง และสามพจน์ใกล้กว่าสองพจน์"
+    widget:
+      kind: function-plot
+      functions: ["(1+x)^n", "1+n x", "1+n x+\\frac{n\\cdot(n-1)}{2}x^2"]
+      sliders:
+        - { name: n, min: 1, max: 8, step: 1, value: 4, label: กำลัง n }
+      x: [-1, 1]
+      y: [-1, 5]
+  - { type: check, problem: math.algebra.binomial-theorem.p006, prompt: "ยกกำลังเลข 3 ด้วย" }
+glossary:
+  - { term: ทฤษฎีบททวินาม, definition: "(x + y)ⁿ = ผลบวกของ C(n, r) xⁿ⁻ʳ yʳ เมื่อ r = 0, 1, …, n" }
+  - { term: สามเหลี่ยมปาสคาล, definition: "ตารางรูปสามเหลี่ยมของสัมประสิทธิ์ทวินาม ขอบเป็น 1 และจำนวนข้างในเท่ากับผลบวกของสองจำนวนเหนือมัน" }
+  - { term: สัมประสิทธิ์ทวินาม, definition: "C(n, r) = n!/(r!(n − r)!) จำนวนวิธีเลือกของ r ชิ้นจาก n ชิ้น" }
+  - { term: พจน์ทั่วไป, definition: "พจน์ที่ r + 1 ของ (x + y)ⁿ คือ C(n, r) xⁿ⁻ʳ yʳ" }
+flashcards:
+  - { front: "(x + y)ⁿ มีกี่พจน์", back: "n + 1 พจน์" }
+  - { front: "แถว n = 5 ของสามเหลี่ยมปาสคาล", back: "1 5 10 10 5 1" }
+  - { front: "พจน์ที่ 4 ของ (x + y)ⁿ ใช้ r เท่าใด", back: "r = 3 เพราะพจน์ที่ r + 1 ใช้ C(n, r)" }
+  - { front: "ผลบวก C(n, 0) + C(n, 1) + … + C(n, n)", back: "2ⁿ (แทน x = y = 1)" }
+  - { front: "(1 + h)ⁿ ประมาณเท่าใดเมื่อ h เล็ก", back: "1 + nh + C(n, 2)h²" }
+references:
+  - { title: "ทฤษฎีบททวินาม", url: "https://th.wikipedia.org/wiki/ทฤษฎีบททวินาม", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "สามเหลี่ยมปัสกาล", url: "https://th.wikipedia.org/wiki/สามเหลี่ยมปัสกาล", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Binomial theorem", url: "https://en.wikipedia.org/wiki/Binomial_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "11.6 Binomial Theorem (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

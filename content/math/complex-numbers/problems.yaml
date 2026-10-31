@@ -1,0 +1,371 @@
+problems:
+  - id: math.number.complex-numbers.p001
+    topics: [math.number.complex-numbers]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาส่วนจินตภาพของจำนวนเชิงซ้อน $z = 3 - 5i$ (ตอบเป็นจำนวนจริง)"
+    answer: { value: -5 }
+    hints:
+      - "ส่วนจินตภาพของ $a + bi$ คือ $b$"
+      - "เขียน $3 - 5i$ เป็น $3 + (-5)i$"
+    misconceptions:
+      - { match: 5, feedback: "เครื่องหมายลบเป็นของส่วนจินตภาพด้วย $3 - 5i = 3 + (-5)i$" }
+      - { match: 3, feedback: "3 คือส่วนจริง ส่วนจินตภาพคือสัมประสิทธิ์ของ $i$" }
+    solution: "$3 - 5i = 3 + (-5)i$ จึง $\\operatorname{Im}(z) = -5$ (ส่วนจินตภาพไม่มี $i$ ติดอยู่)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p002
+    topics: [math.number.complex-numbers]
+    difficulty: 1
+    type: mcq
+    stem: "ค่าของ $i^2$ คือข้อใด"
+    choices:
+      - { id: a, text: "$-1$", correct: true }
+      - { id: b, text: "$1$", feedback: "$i$ ถูกสร้างมาให้ $i^2 = -1$ จำนวนจริงเท่านั้นที่ยกกำลังสองแล้วไม่ติดลบ" }
+      - { id: c, text: "$2i$", feedback: "$i^2 = i \\cdot i$ ไม่ใช่ $i + i$" }
+      - { id: d, text: "$-i$", feedback: "$-i$ คือ $i^3$ ไม่ใช่ $i^2$" }
+    hints:
+      - "$i$ คือจำนวนที่ทำให้สมการ $x^2 + 1 = 0$ มีคำตอบ"
+      - "ย้ายข้าง $x^2 = -1$"
+    solution: "นิยามของ $i$ คือ $i^2 = -1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p003
+    topics: [math.number.complex-numbers]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $(2 + 3i)(4 - i) = a + bi$ จงหาส่วนจริง $a$"
+    answer: { value: 11 }
+    hints:
+      - "กระจายทีละพจน์แบบพหุนาม ได้สี่พจน์"
+      - "แทน $i^2 = -1$ แล้วรวมพจน์ที่ไม่มี $i$"
+    misconceptions:
+      - { match: 5, feedback: "$-3i^2 = -3(-1) = +3$ ไม่ใช่ $-3$ ลืมแทน $i^2 = -1$" }
+      - { match: 8, feedback: "คูณแค่ส่วนจริงกับส่วนจริง ($2 \\times 4$) ต้องรวมพจน์ $3i \\cdot (-i)$ ด้วย" }
+    solution: "$(2 + 3i)(4 - i) = 8 - 2i + 12i - 3i^2 = 8 + 10i + 3 = 11 + 10i$ ส่วนจริงคือ $11$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p004
+    topics: [math.number.complex-numbers]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $(5 - 2i) - (1 - 6i) = a + bi$ จงหาส่วนจินตภาพ $b$"
+    answer: { value: 4 }
+    hints:
+      - "ลบส่วนจริงกับส่วนจริง ส่วนจินตภาพกับส่วนจินตภาพ"
+      - "ระวังลบจำนวนลบ $-(-6i) = +6i$"
+    misconceptions:
+      - { match: -8, feedback: "$-(1 - 6i) = -1 + 6i$ เครื่องหมายของ $-6i$ ต้องกลับเป็นบวก" }
+    solution: "$(5 - 2i) - (1 - 6i) = 5 - 1 + (-2 + 6)i = 4 + 4i$ ส่วนจินตภาพคือ $4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p005
+    topics: [math.number.complex-numbers]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่าสัมบูรณ์ $|6 - 8i|$"
+    answer: { value: 10 }
+    hints:
+      - "$|a + bi| = \\sqrt{a^2 + b^2}$"
+      - "$a = 6$, $b = -8$ ยกกำลังสองแล้วเป็นบวก"
+    misconceptions:
+      - { match: 14, feedback: "$|a + bi|$ ไม่ใช่ $|a| + |b|$ ต้องใช้ทฤษฎีบทพีทาโกรัส" }
+      - { match: -2, feedback: "ค่าสัมบูรณ์ไม่ติดลบ และไม่ใช่ $a + b$" }
+    solution: "$|6 - 8i| = \\sqrt{6^2 + (-8)^2} = \\sqrt{100} = 10$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p006
+    topics: [math.number.complex-numbers]
+    difficulty: 2
+    type: mcq
+    stem: "สังยุคของ $z = -3 + 4i$ คือข้อใด"
+    choices:
+      - { id: a, text: "$-3 - 4i$", correct: true }
+      - { id: b, text: "$3 - 4i$", feedback: "นี่คือ $-z$ สังยุคเปลี่ยนเครื่องหมายเฉพาะส่วนจินตภาพ" }
+      - { id: c, text: "$3 + 4i$", feedback: "สังยุคไม่เปลี่ยนเครื่องหมายของส่วนจริง" }
+      - { id: d, text: "$\\dfrac{1}{-3 + 4i}$", feedback: "นี่คือส่วนกลับ ไม่ใช่สังยุค" }
+    hints:
+      - "สังยุคของ $a + bi$ คือ $a - bi$"
+      - "บนระนาบเชิงซ้อนคือการสะท้อนในแกนจริง"
+    solution: "$\\overline{-3 + 4i} = -3 - 4i$ (ส่วนจริงคงเดิม ส่วนจินตภาพเปลี่ยนเครื่องหมาย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p007
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $\\dfrac{1 + 2i}{3 - i} = a + bi$ จงหาส่วนจินตภาพ $b$ (ตอบเป็นทศนิยม)"
+    answer: { value: 0.7, tolerance: 0.01 }
+    hints:
+      - "คูณทั้งเศษและส่วนด้วยสังยุคของตัวส่วน"
+      - "สังยุคของ $3 - i$ คือ $3 + i$ และ $(3 - i)(3 + i) = 9 + 1$"
+      - "กระจายตัวเศษ $(1 + 2i)(3 + i)$ แทน $i^2 = -1$ แล้วหารด้วยตัวส่วน"
+    misconceptions:
+      - { match: 0.5, feedback: "คูณด้วย $3 - i$ (ตัวส่วนเดิม) แทนสังยุค $3 + i$" }
+      - { match: 0.875, feedback: "$(3 - i)(3 + i) = 9 - i^2 = 9 + 1 = 10$ ไม่ใช่ $9 - 1 = 8$" }
+    solution: "$\\dfrac{(1 + 2i)(3 + i)}{(3 - i)(3 + i)} = \\dfrac{3 + i + 6i + 2i^2}{10} = \\dfrac{1 + 7i}{10} = 0.1 + 0.7i$ จึง $b = 0.7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p008
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: mcq
+    stem: "คำตอบของสมการ $x^2 + 2x + 5 = 0$ ในระบบจำนวนเชิงซ้อนคือข้อใด"
+    choices:
+      - { id: a, text: "$x = -1 \\pm 2i$", correct: true }
+      - { id: b, text: "$x = 1 \\pm 2i$", feedback: "สูตรคือ $\\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ ใช้ $-b = -2$" }
+      - { id: c, text: "$x = -1 \\pm 4i$", feedback: "$\\sqrt{-16} = 4i$ ต้องหารด้วย $2a = 2$ ด้วย ได้ $2i$" }
+      - { id: d, text: "ไม่มีคำตอบ", feedback: "ไม่มีคำตอบเป็นจำนวนจริง แต่ในจำนวนเชิงซ้อนมีคำตอบสองตัวเสมอ" }
+    hints:
+      - "ดิสคริมิแนนต์ $b^2 - 4ac = 4 - 20$"
+      - "$\\sqrt{-16} = 4i$ แล้วแทนในสูตรสมการกำลังสอง"
+    solution: "$x = \\dfrac{-2 \\pm \\sqrt{4 - 20}}{2} = \\dfrac{-2 \\pm 4i}{2} = -1 \\pm 2i$ ตรวจ: $(-1 + 2i)^2 + 2(-1 + 2i) + 5 = (1 - 4i - 4) - 2 + 4i + 5 = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p009
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: mcq
+    stem: "ค่าของ $i^{2027}$ คือข้อใด"
+    choices:
+      - { id: a, text: "$-i$", correct: true }
+      - { id: b, text: "$i$", feedback: "เศษของ $2027 \\div 4$ คือ 3 ไม่ใช่ 1" }
+      - { id: c, text: "$-1$", feedback: "$i^n = -1$ เมื่อ $n$ หารด้วย 4 เหลือเศษ 2" }
+      - { id: d, text: "$1$", feedback: "$i^n = 1$ เมื่อ $n$ หารด้วย 4 ลงตัว" }
+    hints:
+      - "กำลังของ $i$ วนซ้ำทุก 4: $i, -1, -i, 1$"
+      - "หาเศษของ $2027 \\div 4$"
+    solution: "$2027 = 4 \\times 506 + 3$ จึง $i^{2027} = (i^4)^{506} \\cdot i^3 = 1 \\cdot (-i) = -i$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p010
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "ระยะระหว่างจุด $z_1 = 2 + i$ กับ $z_2 = -1 + 5i$ บนระนาบเชิงซ้อนเท่ากับเท่าใด"
+    answer: { value: 5 }
+    hints:
+      - "ระยะระหว่าง $z_1$ กับ $z_2$ คือ $|z_1 - z_2|$"
+      - "$z_1 - z_2 = 3 - 4i$"
+    misconceptions:
+      - { match: 7, feedback: "$|3 - 4i| = \\sqrt{9 + 16}$ ไม่ใช่ $3 + 4$" }
+      - { match: 6.08, feedback: "นี่คือ $|z_1 + z_2| = |1 + 6i|$ ระยะใช้ผลต่าง" }
+    solution: "$z_1 - z_2 = (2 + 1) + (1 - 5)i = 3 - 4i$ ระยะคือ $|3 - 4i| = \\sqrt{9 + 16} = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p011
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "จากภาพ จุด A บนระนาบเชิงซ้อนแทนจำนวนเชิงซ้อน $z$ จงหา $|z|$"
+    figure:
+      src: point-a.svg
+      alt: "ระนาบเชิงซ้อน แกนนอนคือแกนจริง แกนตั้งคือแกนจินตภาพ ช่องตารางละ 1 หน่วย มีจุด A ที่พิกัด (−5, 12)"
+    answer: { value: 13 }
+    hints:
+      - "อ่านพิกัดของ A แล้วเขียน $z = a + bi$"
+      - "$|z| = \\sqrt{a^2 + b^2}$"
+    misconceptions:
+      - { match: 7, feedback: "$a + b = -5 + 12$ ไม่ใช่ค่าสัมบูรณ์ ต้องยกกำลังสองแล้วถอดราก" }
+      - { match: 17, feedback: "$|a| + |b|$ ไม่ใช่ระยะตรงจากจุดกำเนิด" }
+    solution: "A อยู่ที่ $(-5, 12)$ จึง $z = -5 + 12i$ และ $|z| = \\sqrt{25 + 144} = \\sqrt{169} = 13$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p012
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: match
+    stem: "จับคู่จำนวนเชิงซ้อนกับรูปเชิงขั้ว (มุมเป็นองศาจาก $0^\\circ$ ถึง $360^\\circ$)"
+    pairs:
+      - { left: "$2i$", right: "$2(\\cos 90^\\circ + i\\sin 90^\\circ)$" }
+      - { left: "$-3$", right: "$3(\\cos 180^\\circ + i\\sin 180^\\circ)$" }
+      - { left: "$1 + i$", right: "$\\sqrt2(\\cos 45^\\circ + i\\sin 45^\\circ)$" }
+      - { left: "$1 - \\sqrt3\\,i$", right: "$2(\\cos 300^\\circ + i\\sin 300^\\circ)$" }
+      - { left: "$-2 - 2i$", right: "$2\\sqrt2(\\cos 225^\\circ + i\\sin 225^\\circ)$" }
+    hints:
+      - "หาค่าสัมบูรณ์ $r = \\sqrt{a^2 + b^2}$ ก่อน"
+      - "ดูว่าจุด $(a, b)$ อยู่จตุภาคใด แล้วเลือกมุมให้ตรง"
+    solution: "$2i$ อยู่บนแกนจินตภาพบวก ($r = 2$, $90^\\circ$); $-3$ อยู่บนแกนจริงลบ ($r = 3$, $180^\\circ$); $1 + i$ ($r = \\sqrt2$, $45^\\circ$); $1 - \\sqrt3\\,i$ อยู่จตุภาคที่ 4 ($r = 2$, $300^\\circ$); $-2 - 2i$ อยู่จตุภาคที่ 3 ($r = 2\\sqrt2$, $225^\\circ$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p013
+    topics: [math.number.complex-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "$(1 + i)^8$ เป็นจำนวนจริง จงหาค่าของมัน"
+    answer: { value: 16 }
+    hints:
+      - "$1 + i = \\sqrt2\\,e^{i\\,45^\\circ}$"
+      - "ใช้ทฤษฎีบทของเดอมัวร์: ยกกำลังค่าสัมบูรณ์ และคูณมุมด้วย 8"
+      - "หรือหา $(1 + i)^2$ ก่อน แล้วยกกำลังสี่"
+    misconceptions:
+      - { match: 256, feedback: "$|1 + i| = \\sqrt2$ ไม่ใช่ 2 จึงได้ $(\\sqrt2)^8 = 16$" }
+      - { match: -16, feedback: "มุม $8 \\times 45^\\circ = 360^\\circ$ ซึ่งชี้ไปทางแกนจริงบวก" }
+    solution: "$(1 + i)^2 = 1 + 2i + i^2 = 2i$ จึง $(1 + i)^8 = (2i)^4 = 16i^4 = 16$ หรือด้วยเดอมัวร์ $(\\sqrt2)^8(\\cos 360^\\circ + i\\sin 360^\\circ) = 16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p014
+    topics: [math.number.complex-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาอาร์กิวเมนต์ของ $z = -1 + \\sqrt3\\,i$ เป็นองศา ในช่วง $0^\\circ$ ถึง $360^\\circ$"
+    answer: { value: 120, unit: องศา }
+    hints:
+      - "จุด $(-1, \\sqrt3)$ อยู่จตุภาคใด"
+      - "มุมอ้างอิงคือ $\\tan^{-1}\\tfrac{\\sqrt3}{1} = 60^\\circ$ แล้วปรับให้อยู่ในจตุภาคที่ถูก"
+    misconceptions:
+      - { match: -60, feedback: "$\\tan^{-1}\\left(\\tfrac{\\sqrt3}{-1}\\right) = -60^\\circ$ เป็นมุมในจตุภาคที่ 4 แต่จุดนี้อยู่จตุภาคที่ 2" }
+      - { match: 60, feedback: "60° คือมุมอ้างอิง จุดอยู่จตุภาคที่ 2 มุมจึงเป็น $180^\\circ - 60^\\circ$" }
+      - { match: 300, feedback: "300° ชี้ไปที่ $1 - \\sqrt3\\,i$ ซึ่งอยู่จตุภาคที่ 4" }
+    solution: "จุด $(-1, \\sqrt3)$ อยู่จตุภาคที่ 2 มุมอ้างอิงคือ $60^\\circ$ จึงได้อาร์กิวเมนต์ $180^\\circ - 60^\\circ = 120^\\circ$ (และ $r = 2$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p015
+    topics: [math.number.complex-numbers]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "ข้อใดเป็นรากที่สี่ของ 16 (คือ $z^4 = 16$) เลือกทุกข้อที่ถูก"
+    choices:
+      - { id: a, text: "$2$", correct: true }
+      - { id: b, text: "$-2$", correct: true }
+      - { id: c, text: "$2i$", correct: true }
+      - { id: d, text: "$-2i$", correct: true }
+      - { id: e, text: "$4$", feedback: "$4^4 = 256$ ส่วน 4 คือรากที่สองของ 16" }
+      - { id: f, text: "$\\sqrt2 + \\sqrt2\\,i$", feedback: "ค่าสัมบูรณ์ 2 ถูก แต่มุม $45^\\circ \\times 4 = 180^\\circ$ จึงได้ $-16$ รากที่สี่ของ 16 มีมุม $0^\\circ, 90^\\circ, 180^\\circ, 270^\\circ$" }
+    hints:
+      - "รากที่สี่มี 4 ตัว อยู่บนวงกลมรัศมี $\\sqrt[4]{16} = 2$"
+      - "ห่างกันทุก $360^\\circ \\div 4 = 90^\\circ$ เริ่มจากมุม $0^\\circ$"
+    solution: "$z = 2e^{i\\,90^\\circ k}$ เมื่อ $k = 0, 1, 2, 3$ ได้ $2, 2i, -2, -2i$ ตรวจ $(2i)^4 = 16i^4 = 16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p016
+    topics: [math.number.complex-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $z = 4e^{i\\pi/3}$ จงหาส่วนจริงของ $z$"
+    answer: { value: 2 }
+    hints:
+      - "สูตรของออยเลอร์ $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$"
+      - "$\\dfrac{\\pi}{3}$ เรเดียน $= 60^\\circ$ ส่วนจริงคือ $r\\cos\\theta$"
+    misconceptions:
+      - { match: 3.46, feedback: "$4\\sin 60^\\circ = 2\\sqrt3$ คือส่วนจินตภาพ ส่วนจริงใช้ $\\cos$" }
+      - { match: 4, feedback: "4 คือค่าสัมบูรณ์ $r$ ต้องคูณ $\\cos\\theta$" }
+    solution: "$z = 4(\\cos 60^\\circ + i\\sin 60^\\circ) = 4\\left(\\tfrac12 + \\tfrac{\\sqrt3}{2}i\\right) = 2 + 2\\sqrt3\\,i$ ส่วนจริงคือ $2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p017
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: numeric
+    stem: "นักศึกษาวิศวกรรมไฟฟ้าที่ขอนแก่นเขียนอิมพีแดนซ์ของวงจรเป็นจำนวนเชิงซ้อน $Z = 30 + 40i$ โอห์ม ขนาดของอิมพีแดนซ์คือ $|Z|$ ถ้าต่อกับแรงดัน 220 โวลต์ กระแสไฟฟ้ามีขนาด $\\dfrac{220}{|Z|}$ แอมแปร์ จงหาขนาดของกระแส (แอมแปร์)"
+    answer: { value: 4.4, tolerance: 0.01, unit: แอมแปร์ }
+    hints:
+      - "หา $|Z| = \\sqrt{30^2 + 40^2}$ ก่อน"
+      - "แล้วหาร 220 ด้วย $|Z|$"
+    misconceptions:
+      - { match: 3.14, feedback: "$|Z|$ ไม่ใช่ $30 + 40 = 70$ ต้องใช้ $\\sqrt{30^2 + 40^2}$" }
+      - { match: 7.33, feedback: "ใช้เฉพาะส่วนจริง 30 แทน $|Z|$" }
+    solution: "$|Z| = \\sqrt{900 + 1600} = 50$ โอห์ม กระแส $= \\dfrac{220}{50} = 4.4$ แอมแปร์ (ในวิชาไฟฟ้ามักเขียน $j$ แทน $i$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p018
+    topics: [math.number.complex-numbers]
+    difficulty: 4
+    type: numeric
+    stem: "ในการแข่งหุ่นยนต์ของโรงเรียนแห่งหนึ่งในเชียงใหม่ ทีมแทนตำแหน่งหุ่นยนต์ด้วยจำนวนเชิงซ้อน หุ่นยนต์อยู่ที่ $3 + 2i$ (เมตร) แล้วหมุนรอบจุดกำเนิด $90^\\circ$ ทวนเข็มนาฬิกา ซึ่งเท่ากับการคูณด้วย $i$ จงหาส่วนจริงของตำแหน่งใหม่"
+    answer: { value: -2, unit: เมตร }
+    hints:
+      - "คำนวณ $i(3 + 2i)$"
+      - "$2i \\cdot i = 2i^2$"
+    misconceptions:
+      - { match: 2, feedback: "$2i^2 = -2$ เครื่องหมายเป็นลบ" }
+      - { match: 3, feedback: "หมุน 90° ทำให้ส่วนจริงเปลี่ยน คูณ $i$ ให้ครบก่อน" }
+    solution: "$i(3 + 2i) = 3i + 2i^2 = -2 + 3i$ ตำแหน่งใหม่คือจุด $(-2, 3)$ ส่วนจริงคือ $-2$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p019
+    topics: [math.number.complex-numbers]
+    difficulty: 3
+    type: mcq
+    stem: "แผนที่หมู่บ้านแห่งหนึ่งในจังหวัดน่านวางบนระนาบเชิงซ้อน (หน่วยกิโลเมตร) บ้านของต้นอยู่ที่ $1 + 2i$ วัดอยู่ที่ $7 - 6i$ ต้องการตั้งศาลาพักที่จุดกึ่งกลางระหว่างบ้านกับวัด ศาลาอยู่ที่จุดใด"
+    choices:
+      - { id: a, text: "$4 - 2i$", correct: true }
+      - { id: b, text: "$3 - 4i$", feedback: "นี่คือครึ่งหนึ่งของผลต่าง $\\tfrac{(7 - 6i) - (1 + 2i)}{2}$ จุดกึ่งกลางใช้ผลบวกหารสอง" }
+      - { id: c, text: "$8 - 4i$", feedback: "นี่คือผลบวก ยังไม่ได้หารสอง" }
+      - { id: d, text: "$6 - 8i$", feedback: "นี่คือผลต่างของสองจุด ใช้หาระยะ ไม่ใช่จุดกึ่งกลาง" }
+    hints:
+      - "จุดกึ่งกลางของ $z_1$ และ $z_2$ คือ $\\dfrac{z_1 + z_2}{2}$"
+      - "บวกส่วนจริงและส่วนจินตภาพแยกกัน แล้วหารสอง"
+    solution: "$\\dfrac{(1 + 2i) + (7 - 6i)}{2} = \\dfrac{8 - 4i}{2} = 4 - 2i$ (ระยะจากบ้านถึงวัดคือ $|6 - 8i| = 10$ กิโลเมตร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p020
+    topics: [math.number.complex-numbers]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการเขียน $\\dfrac{2 + 3i}{1 - 2i}$ ในรูป $a + bi$"
+    items:
+      - "หาสังยุคของตัวส่วน: $1 + 2i$"
+      - "คูณทั้งเศษและส่วนด้วย $1 + 2i$"
+      - "ตัวส่วน: $(1 - 2i)(1 + 2i) = 1 + 4 = 5$"
+      - "ตัวเศษ: $(2 + 3i)(1 + 2i) = 2 + 7i + 6i^2 = -4 + 7i$"
+      - "หารทีละส่วน: $-\\tfrac45 + \\tfrac75 i$"
+    hints:
+      - "เริ่มจากทำให้ตัวส่วนเป็นจำนวนจริง"
+      - "แทน $i^2 = -1$ ก่อนหาร"
+    solution: "หาสังยุค → คูณเศษและส่วน → ตัวส่วน $5$ → ตัวเศษ $-4 + 7i$ → $-0.8 + 1.4i$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p021
+    topics: [math.number.complex-numbers]
+    difficulty: 5
+    type: numeric
+    stem: "พหุนาม $p(x) = x^3 - 6x^2 + 13x - 10$ มีสัมประสิทธิ์เป็นจำนวนจริง และมี $2 + i$ เป็นราก ตามทฤษฎีบทหลักมูลของพีชคณิต $p$ มีราก 3 ราก จงหารากที่เป็นจำนวนจริง"
+    answer: { value: 2 }
+    hints:
+      - "รากที่ไม่จริงของพหุนามสัมประสิทธิ์จริงมาเป็นคู่สังยุค จึงมี $2 - i$ เป็นรากด้วย"
+      - "$(x - (2 + i))(x - (2 - i)) = x^2 - 4x + 5$"
+      - "หาร $p(x)$ ด้วย $x^2 - 4x + 5$"
+    misconceptions:
+      - { match: -2, feedback: "ผลหารคือ $x - 2$ รากจึงเป็น $+2$ ตรวจ $p(2) = 8 - 24 + 26 - 10 = 0$" }
+      - { match: 10, feedback: "ผลคูณของรากทั้งสามคือ 10 ไม่ใช่รากตัวที่สาม ต้องหาร 10 ด้วย $(2 + i)(2 - i) = 5$" }
+    solution: "รากคู่สังยุค $2 \\pm i$ ให้ตัวประกอบ $x^2 - 4x + 5$ และ $p(x) = (x^2 - 4x + 5)(x - 2)$ รากจริงคือ $2$ (ตรวจ: $p(2) = 8 - 24 + 26 - 10 = 0$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.number.complex-numbers.p022
+    topics: [math.number.complex-numbers]
+    difficulty: 5
+    type: numeric
+    stem: "แรงดันไฟฟ้าในวงจรหนึ่งเป็น $v(t) = 3\\cos t + 4\\sin t$ โวลต์ ซึ่งเท่ากับส่วนจริงของ $(3 - 4i)e^{it}$ จงหาแอมพลิจูด (ค่าสูงสุด) ของ $v(t)$ เป็นโวลต์"
+    answer: { value: 5, unit: โวลต์ }
+    hints:
+      - "ส่วนจริงของ $Re^{i(t - \\varphi)}$ คือ $R\\cos(t - \\varphi)$ ซึ่งมีค่าสูงสุด $R$"
+      - "แอมพลิจูดคือ $|3 - 4i|$"
+    misconceptions:
+      - { match: 7, feedback: "$3\\cos t$ และ $4\\sin t$ ไม่ได้สูงสุดพร้อมกัน แอมพลิจูดคือ $\\sqrt{3^2 + 4^2}$" }
+      - { match: 4, feedback: "4 คือแอมพลิจูดของ $4\\sin t$ เพียงพจน์เดียว" }
+    solution: "$3 - 4i = 5e^{-i\\varphi}$ เมื่อ $\\tan\\varphi = \\tfrac43$ จึง $(3 - 4i)e^{it} = 5e^{i(t - \\varphi)}$ ส่วนจริงคือ $5\\cos(t - \\varphi)$ แอมพลิจูด $= 5$ โวลต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,72 @@
+id: biology.plants.photosynthesis
+subject: biology
+title: { th: การสังเคราะห์ด้วยแสง, en: "Photosynthesis" }
+summary: การทดลองของนักวิทยาศาสตร์ในอดีต ปฏิกิริยาแสงและวัฏจักรคัลวิน การเปลี่ยนพลังงานแสงเป็นพลังงานเคมี การตรึงคาร์บอนในพืช C3 C4 และ CAM และปัจจัยที่มีผลต่อการสังเคราะห์ด้วยแสง
+difficulty: 6.5
+minutes: 55
+prerequisites: [biology.plants.plant-structure, biology.cells.cellular-respiration, biology.plants.photosynthesis-intro]
+encompasses:
+  - { id: biology.cells.cellular-respiration, weight: 0.2 }
+  - { id: biology.plants.plant-structure, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ปฏิกิริยาแสงที่เยื่อไทลาคอยด์
+    src: light-reactions.svg
+    alt: "แผนภาพเยื่อไทลาคอยด์ในแนวนอน ด้านบนคือสโตรมา ด้านล่างคือช่องในไทลาคอยด์ (ลูเมน) บนเยื่อมีโปรตีนเรียงจากซ้ายไปขวา ระบบแสง II (P680) ไซโทโครม ระบบแสง I (P700) NADP⁺ รีดักเทส และ ATP ซินเทส แสงตกที่ระบบแสง II และระบบแสง I ใต้ระบบแสง II มีการแยกน้ำ 2H₂O → 4H⁺ + O₂ + 4e⁻ ลูกศรสีแดงแสดงอิเล็กตรอนเคลื่อนจากระบบแสง II ผ่านไซโทโครม ไประบบแสง I แล้วไป NADP⁺ รีดักเทส ซึ่งสร้าง NADPH จาก NADP⁺ + H⁺ ในสโตรมา ที่ไซโทโครมมีลูกศรแสดง H⁺ ถูกปั๊มจากสโตรมาเข้าไปสะสมในลูเมน ที่ ATP ซินเทส H⁺ ไหลจากลูเมนออกสู่สโตรมา สร้าง ATP จาก ADP + Pᵢ ด้านล่างสรุปว่าพลังงานแสงเปลี่ยนเป็นพลังงานเคมีใน ATP และ NADPH ซึ่งส่งต่อไปใช้ในวัฏจักรคัลวินที่สโตรมา"
+    caption: "แผนภาพอย่างง่าย ตัวรับอิเล็กตรอนบางตัวไม่ได้แสดงไว้ (วาดโดยทีมคลังรู้)"
+  - type: figure
+    title: วัฏจักรคัลวิน
+    src: calvin-cycle.svg
+    alt: "วัฏจักรรูปวงกลมในสโตรมา ขั้นที่ 1 การตรึงคาร์บอน CO₂ 3 โมเลกุลรวมกับ RuBP (5C) 3 โมเลกุลโดยรูบิสโก ได้ PGA (3C) 6 โมเลกุล ขั้นที่ 2 รีดักชัน ใช้ 6 ATP และ 6 NADPH เปลี่ยนเป็น G3P (3C) 6 โมเลกุล G3P 1 โมเลกุลออกไปสร้างน้ำตาลและสารอื่น ขั้นที่ 3 G3P 5 โมเลกุลใช้ 3 ATP สร้าง RuBP คืน 3 โมเลกุล สรุปว่าทุก 3 CO₂ ใช้ 9 ATP และ 6 NADPH ได้ G3P สุทธิ 1 โมเลกุล"
+    caption: "ตัวเลขคิดต่อ CO₂ 3 โมเลกุล (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: ATP และ NADPH ที่ใช้สร้างกลูโคส 1 โมเลกุล
+    problem: "วัฏจักรคัลวินต้องใช้ ATP และ NADPH อย่างละกี่โมเลกุลจึงได้คาร์บอนพอสำหรับกลูโคส 1 โมเลกุล"
+    steps:
+      - text: "กลูโคสมีคาร์บอน 6 อะตอม ต้องตรึง CO₂ 6 โมเลกุล"
+      - text: "ทุก 3 CO₂ ใช้ 9 ATP และ 6 NADPH ได้ G3P สุทธิ 1 โมเลกุล"
+        why: "6 ATP และ 6 NADPH ใช้ในรีดักชัน อีก 3 ATP ใช้สร้าง RuBP คืน"
+      - text: "6 CO₂ เป็น 2 เท่าของ 3 CO₂ จึงใช้ $2 \\times 9 = 18$ ATP และ $2 \\times 6 = 12$ NADPH ได้ G3P 2 โมเลกุลที่รวมเป็นกลูโคส"
+    answer: "18 ATP และ 12 NADPH"
+  - { type: check, problem: biology.plants.photosynthesis.p005, prompt: "เริ่มจากจำนวน CO₂ ที่ต้องตรึง" }
+  - type: figure
+    title: การตรึงคาร์บอนของพืช C4 และ CAM
+    src: c4-cam.svg
+    alt: "สองฝั่งเปรียบเทียบ ฝั่งซ้ายพืช C4 แยกกันตามตำแหน่ง เซลล์มีโซฟิลล์ตรึง CO₂ กับ PEP ด้วยเอนไซม์ PEP คาร์บอกซิเลสได้ OAA (4C) แล้วเป็นมาเลต ส่งไปเซลล์บันเดิลชีทซึ่งปล่อย CO₂ ให้ความเข้มข้นสูงเข้าสู่วัฏจักรคัลวิน รูบิสโกได้ CO₂ มาก การหายใจแสงลดลง ตัวอย่างคืออ้อย ข้าวโพด ข้าวฟ่าง ฝั่งขวาพืช CAM แยกกันตามเวลา กลางคืนปากใบเปิด ตรึง CO₂ กับ PEP ได้ OAA แล้วเก็บเป็นกรดมาลิกในแวคิวโอล กลางวันปากใบปิด กรดมาลิกปล่อย CO₂ เข้าสู่วัฏจักรคัลวิน จึงเสียน้ำน้อยมาก ตัวอย่างคือสับปะรด กระบองเพชร ว่านหางจระเข้ ด้านล่างอธิบายว่าพืช C3 เช่น ข้าว ถั่ว ตรึง CO₂ ด้วยรูบิสโกโดยตรงได้ PGA และเมื่อร้อนจัดปากใบปิด รูบิสโกจับ O₂ เกิดการหายใจแสง"
+    caption: "C4 แยกสองขั้นไว้คนละเซลล์ CAM แยกไว้คนละช่วงเวลา (วาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: หาปัจจัยจำกัดจากกราฟ
+    problem: "จากกราฟอัตราการสังเคราะห์ด้วยแสง (ในโจทย์ข้อ p008) เส้น CO₂ 0.04% ที่ 30 °C อยู่ราว 12 หน่วยเมื่อแสงมากกว่า 800 ส่วนเส้น CO₂ 0.10% ที่ 30 °C อยู่ราว 17 หน่วย ที่แสง 800 ปัจจัยใดจำกัดอัตราของเส้น CO₂ 0.04%"
+    steps:
+      - text: "เส้น CO₂ 0.04% แทบไม่เพิ่มเมื่อแสงมากขึ้น แสงจึงไม่ใช่ปัจจัยจำกัดที่แสง 800"
+      - text: "เมื่อเพิ่ม CO₂ เป็น 0.10% ที่อุณหภูมิเดิม อัตราสูงขึ้น"
+        why: "ถ้าเพิ่มปัจจัยใดแล้วอัตราเพิ่ม ปัจจัยนั้นคือปัจจัยจำกัด"
+      - text: "ที่แสงต่ำ (เช่น 50) ทั้งสามเส้นเกือบทับกัน แสงจึงเป็นปัจจัยจำกัดในช่วงนั้น"
+    answer: "ที่แสง 800 ความเข้มข้นของ CO₂ เป็นปัจจัยจำกัดของเส้น CO₂ 0.04% ที่ 30 °C"
+  - { type: check, problem: biology.plants.photosynthesis.p007, prompt: "นึกถึงพืชไร่ที่ปลูกในที่ร้อนและแดดจัด" }
+glossary:
+  - { term: ไทลาคอยด์, definition: "ถุงแบนในคลอโรพลาสต์ เยื่อของไทลาคอยด์เป็นที่เกิดปฏิกิริยาแสง" }
+  - { term: สโตรมา, definition: "ของเหลวในคลอโรพลาสต์ เป็นที่เกิดวัฏจักรคัลวิน" }
+  - { term: ระบบแสง, definition: "กลุ่มรงควัตถุและโปรตีนบนเยื่อไทลาคอยด์ที่รับแสงและส่งอิเล็กตรอน มีระบบแสง I (P700) และ II (P680)" }
+  - { term: โฟโตฟอสโฟรีเลชัน, definition: "การสร้าง ATP โดยใช้พลังงานจากแสงผ่านการไหลของ H⁺ ผ่าน ATP ซินเทส" }
+  - { term: รูบิสโก, definition: "เอนไซม์ที่ตรึง CO₂ กับ RuBP ในวัฏจักรคัลวิน" }
+  - { term: การหายใจแสง, definition: "การที่รูบิสโกจับ O₂ แทน CO₂ ทำให้สูญเสียคาร์บอนที่ตรึงไว้ เกิดมากเมื่อร้อนจัดและปากใบปิด" }
+  - { term: ปัจจัยจำกัด, definition: "ปัจจัยที่มีน้อยที่สุดเมื่อเทียบกับความต้องการ และจำกัดอัตราของกระบวนการ" }
+  - { term: จุดชดเชยแสง, definition: "ความเข้มแสงที่อัตราการสังเคราะห์ด้วยแสงเท่ากับอัตราการหายใจ" }
+flashcards:
+  - { front: "ปฏิกิริยาแสงได้อะไรบ้าง", back: "ATP NADPH และ O₂ (จากการแยกน้ำ)" }
+  - { front: "วัฏจักรคัลวิน 3 ขั้น", back: "ตรึงคาร์บอน → รีดักชัน → สร้าง RuBP คืน" }
+  - { front: "สารแรกที่ได้จากการตรึง CO₂ ของพืช C3 และ C4", back: "C3: PGA (3C) C4: ออกซาโลแอซีเตต (4C)" }
+  - { front: "พืช CAM เปิดปากใบเมื่อใด", back: "กลางคืน เก็บ CO₂ เป็นกรดมาลิก ใช้ตอนกลางวัน" }
+  - { front: "ใครพิสูจน์ว่า O₂ มาจากน้ำ", back: "รูเบนและคาเมน ใช้ ¹⁸O" }
+references:
+  - { title: "8.2 The Light-Dependent Reactions of Photosynthesis (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/8-2-the-light-dependent-reactions-of-photosynthesis", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "8.3 Using Light Energy to Make Organic Molecules (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/8-3-using-light-energy-to-make-organic-molecules", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "C4 carbon fixation", url: "https://en.wikipedia.org/wiki/C4_carbon_fixation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Crassulacean acid metabolism", url: "https://en.wikipedia.org/wiki/Crassulacean_acid_metabolism", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

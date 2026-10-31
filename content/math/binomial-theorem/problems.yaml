@@ -1,0 +1,350 @@
+problems:
+  - id: math.algebra.binomial-theorem.p001
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาค่าของ $\\binom{6}{2}$"
+    answer: { value: 15 }
+    hints:
+      - "$\\binom{n}{r} = \\dfrac{n!}{r!\\,(n - r)!}$"
+      - "$\\binom{6}{2} = \\dfrac{6 \\times 5}{2 \\times 1}$"
+    misconceptions:
+      - { match: 30, feedback: "$6 \\times 5 = 30$ คือการเรียงสับเปลี่ยน ต้องหารด้วย $2! = 2$ เพราะลำดับไม่สำคัญ" }
+      - { match: 12, feedback: "$\\binom{6}{2}$ ไม่ใช่ $6 \\times 2$" }
+    solution: "$\\binom{6}{2} = \\dfrac{6!}{2!\\,4!} = \\dfrac{6 \\times 5}{2} = 15$ (ตรงกับจำนวนที่สามของแถว $n = 6$: 1, 6, 15, …)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p002
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 1
+    type: mcq
+    stem: "สัมประสิทธิ์ของการกระจาย $(x + y)^5$ เรียงจากพจน์แรกถึงพจน์สุดท้ายคือข้อใด"
+    choices:
+      - { id: a, text: "1, 5, 10, 10, 5, 1", correct: true }
+      - { id: b, text: "1, 4, 6, 4, 1", feedback: "นี่คือแถวของ $(x + y)^4$ แถวของกำลัง 5 มี 6 จำนวน" }
+      - { id: c, text: "1, 5, 10, 5, 1", feedback: "$(x + y)^5$ มี $5 + 1 = 6$ พจน์ และสัมประสิทธิ์สมมาตร จึงมี 10 สองตัว" }
+      - { id: d, text: "1, 5, 5, 5, 5, 1", feedback: "จำนวนข้างในได้จากผลบวกสองจำนวนเหนือมันในแถว 1 4 6 4 1" }
+    hints:
+      - "ใช้สามเหลี่ยมปาสคาลแถว $n = 5$"
+      - "แถว $n = 4$ คือ 1 4 6 4 1 บวกจำนวนที่อยู่ติดกัน"
+    solution: "จากแถว 1 4 6 4 1: $1, 1 + 4, 4 + 6, 6 + 4, 4 + 1, 1$ ได้ 1, 5, 10, 10, 5, 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p003
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 2
+    type: expression
+    stem: "จงกระจาย $(x + 2)^3$ ให้อยู่ในรูปที่ไม่มีวงเล็บ"
+    answer: { latex: "x^3+6x^2+12x+8", variables: [x] }
+    expanded: true
+    hints:
+      - "แถว $n = 3$ ของสามเหลี่ยมปาสคาลคือ 1 3 3 1"
+      - "พจน์คือ $1 \\cdot x^3$, $3 \\cdot x^2 \\cdot 2$, $3 \\cdot x \\cdot 2^2$, $1 \\cdot 2^3$"
+    misconceptions:
+      - { match: "x^3+8", feedback: "$(x + 2)^3 \\ne x^3 + 2^3$ ยังมีพจน์กลางอีกสองพจน์" }
+      - { match: "x^3+2x^2+4x+8", feedback: "ลืมสัมประสิทธิ์ 1 3 3 1 จากสามเหลี่ยมปาสคาล" }
+      - { match: "x^3+6x^2+6x+8", feedback: "พจน์ที่สามคือ $3 \\cdot x \\cdot 2^2 = 12x$ ต้องยกกำลังสองที่ 2" }
+    solution: "$(x + 2)^3 = x^3 + 3x^2(2) + 3x(2^2) + 2^3 = x^3 + 6x^2 + 12x + 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p004
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 2
+    type: mcq
+    stem: "การกระจาย $(x + y)^9$ มีกี่พจน์"
+    choices:
+      - { id: a, text: "10", correct: true }
+      - { id: b, text: "9", feedback: "กำลังของ $y$ เป็นได้ $0, 1, \\dots, 9$ ซึ่งมี 10 ค่า" }
+      - { id: c, text: "18", feedback: "ไม่ใช่สองเท่าของเลขชี้กำลัง แต่ละพจน์มีกำลังรวมเป็น 9" }
+      - { id: d, text: "2", feedback: "$(x + y)^9 \\ne x^9 + y^9$ มีพจน์กลางด้วย" }
+    hints:
+      - "พจน์มีรูป $x^{9 - r}y^r$"
+      - "$r$ เป็นได้กี่ค่า"
+    solution: "$r = 0, 1, 2, \\dots, 9$ จึงมี $9 + 1 = 10$ พจน์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p005
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 2
+    type: numeric
+    stem: "จากภาพสามเหลี่ยมปาสคาล จงหาจำนวนที่อยู่ในตำแหน่ง ? ของแถว $n = 6$"
+    figure:
+      src: pascal-gap.svg
+      alt: "สามเหลี่ยมปาสคาลเจ็ดแถว n = 0 ถึง 6 แถว n = 5 คือ 1 5 10 10 5 1 แถว n = 6 คือ 1 6 15 ? 15 6 1 ตำแหน่งตรงกลางเป็นเครื่องหมายคำถาม"
+    answer: { value: 20 }
+    hints:
+      - "จำนวนในสามเหลี่ยมปาสคาลเท่ากับผลบวกของสองจำนวนที่อยู่เหนือมัน"
+      - "ดูแถว $n = 5$ ตรงเหนือเครื่องหมายคำถาม"
+    misconceptions:
+      - { match: 30, feedback: "บวกสองจำนวนข้าง ๆ ในแถวเดียวกัน (15 + 15) ต้องบวกสองจำนวนในแถวเหนือ" }
+      - { match: 10, feedback: "10 คือจำนวนเหนือมันเพียงตัวเดียว ต้องบวกสองตัว" }
+    solution: "สองจำนวนเหนือ ? คือ 10 และ 10 จึงได้ $10 + 10 = 20 = \\binom{6}{3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p006
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาสัมประสิทธิ์ของ $x^3$ ในการกระจาย $(x + 3)^5$"
+    answer: { value: 90 }
+    hints:
+      - "พจน์ทั่วไปคือ $\\binom{5}{r}x^{5 - r}3^r$"
+      - "ต้องการ $5 - r = 3$ จึง $r = 2$"
+    misconceptions:
+      - { match: 10, feedback: "$\\binom{5}{2} = 10$ แต่ลืมคูณ $3^2 = 9$" }
+      - { match: 270, feedback: "ใช้ $3^3$ แต่พจน์ $x^3$ มี 3 ยกกำลัง $5 - 3 = 2$" }
+    solution: "$r = 2$: $\\binom{5}{2}x^3 \\cdot 3^2 = 10 \\cdot 9\\,x^3 = 90x^3$ สัมประสิทธิ์คือ $90$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p007
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 3
+    type: expression
+    stem: "จงกระจาย $(2x - 1)^4$ ให้อยู่ในรูปที่ไม่มีวงเล็บ"
+    answer: { latex: "16x^4-32x^3+24x^2-8x+1", variables: [x] }
+    expanded: true
+    hints:
+      - "สัมประสิทธิ์จากแถว $n = 4$ คือ 1 4 6 4 1 ใช้ $a = 2x$ และ $b = -1$"
+      - "ยกกำลังทั้ง $2x$ เช่น $(2x)^3 = 8x^3$ และเครื่องหมายสลับบวกลบ"
+    misconceptions:
+      - { match: "16x^4+32x^3+24x^2+8x+1", feedback: "$b = -1$ ยกกำลังคี่เป็นลบ เครื่องหมายต้องสลับ" }
+      - { match: "2x^4-8x^3+12x^2-8x+1", feedback: "ลืมยกกำลังเลข 2: $(2x)^4 = 16x^4$ ไม่ใช่ $2x^4$" }
+      - { match: "16x^4-1", feedback: "$(a + b)^4 \\ne a^4 + b^4$ ยังมีพจน์กลางอีกสามพจน์" }
+    solution: "$(2x)^4 + 4(2x)^3(-1) + 6(2x)^2(-1)^2 + 4(2x)(-1)^3 + (-1)^4 = 16x^4 - 32x^3 + 24x^2 - 8x + 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p008
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาสัมประสิทธิ์ของพจน์ที่ 4 ในการกระจาย $(x + 2)^8$ (เรียงตามกำลังของ $x$ จากมากไปน้อย)"
+    answer: { value: 448 }
+    hints:
+      - "พจน์ที่ $r + 1$ คือ $\\binom{8}{r}x^{8 - r}2^r$"
+      - "พจน์ที่ 4 ใช้ $r = 3$"
+    misconceptions:
+      - { match: 1120, feedback: "ใช้ $r = 4$ ซึ่งเป็นพจน์ที่ 5 พจน์แรกใช้ $r = 0$" }
+      - { match: 56, feedback: "$\\binom{8}{3} = 56$ แต่ลืมคูณ $2^3 = 8$" }
+    solution: "$r = 3$: $\\binom{8}{3}x^5 \\cdot 2^3 = 56 \\cdot 8\\,x^5 = 448x^5$ สัมประสิทธิ์คือ $448$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p009
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาสัมประสิทธิ์ของ $x^2$ ในการกระจาย $(1 - 3x)^6$"
+    answer: { value: 135 }
+    hints:
+      - "พจน์ทั่วไปคือ $\\binom{6}{r}1^{6 - r}(-3x)^r$"
+      - "$r = 2$ และ $(-3x)^2 = 9x^2$"
+    misconceptions:
+      - { match: -135, feedback: "$(-3)^2 = +9$ กำลังคู่ของจำนวนลบเป็นบวก" }
+      - { match: -45, feedback: "ลืมยกกำลังสอง: ใช้ $-3$ แทน $(-3)^2$" }
+    solution: "$\\binom{6}{2}(-3x)^2 = 15 \\cdot 9x^2 = 135x^2$ สัมประสิทธิ์คือ $135$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p010
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาผลบวกของสัมประสิทธิ์ทุกพจน์ในการกระจาย $(2x + 1)^5$"
+    answer: { value: 243 }
+    hints:
+      - "ผลบวกของสัมประสิทธิ์คือค่าของพหุนามเมื่อแทน $x = 1$"
+      - "คำนวณ $(2 + 1)^5$"
+    misconceptions:
+      - { match: 32, feedback: "$2^5$ คือผลบวกของ $\\binom{5}{r}$ เท่านั้น แต่สัมประสิทธิ์จริงมี $2^{5 - r}$ คูณอยู่ด้วย" }
+      - { match: 11, feedback: "ไม่ใช่ $2 \\times 5 + 1$ ต้องแทน $x = 1$ ในทั้งก้อนแล้วยกกำลัง" }
+    solution: "แทน $x = 1$: $(2 \\cdot 1 + 1)^5 = 3^5 = 243$ (ตรวจ: $32 + 80 + 80 + 40 + 10 + 1 = 243$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p011
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาพจน์ที่ไม่มี $x$ (พจน์ค่าคงตัว) ในการกระจาย $\\left(x + \\dfrac{2}{x}\\right)^6$"
+    answer: { value: 160 }
+    hints:
+      - "พจน์ทั่วไป $\\binom{6}{r}x^{6 - r}\\left(\\dfrac{2}{x}\\right)^r = \\binom{6}{r}2^r x^{6 - 2r}$"
+      - "พจน์ค่าคงตัวคือ $6 - 2r = 0$"
+    misconceptions:
+      - { match: 20, feedback: "$\\binom{6}{3} = 20$ แต่ลืมคูณ $2^3$" }
+      - { match: 40, feedback: "ใช้ $2$ แทน $2^3 = 8$" }
+    solution: "$6 - 2r = 0 \\Rightarrow r = 3$ พจน์คือ $\\binom{6}{3}2^3 = 20 \\times 8 = 160$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p012
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "สมมติว่าราคาผักชนิดหนึ่งในตลาดสดเพิ่มขึ้นปีละ 2% ทบกันทุกปี ตอนนี้กิโลกรัมละ 100 บาท อีก 5 ปีราคาเป็น $100(1.02)^5$ บาท จงประมาณราคานี้ด้วยสามพจน์แรกของการกระจาย $(1 + 0.02)^5$ (ตอบเป็นบาท ทศนิยมสองตำแหน่ง)"
+    answer: { value: 110.4, tolerance: 0.05, unit: บาท }
+    hints:
+      - "$(1 + h)^5 \\approx 1 + 5h + \\binom{5}{2}h^2$"
+      - "$h = 0.02$ และ $\\binom{5}{2} = 10$"
+    misconceptions:
+      - { match: 110, feedback: "ใช้แค่สองพจน์แรก $1 + 5(0.02)$ โจทย์ให้ใช้สามพจน์" }
+      - { match: 110.04, feedback: "พจน์ที่สามคือ $\\binom{5}{2}(0.02)^2 = 10 \\times 0.0004$ ลืมคูณ 10" }
+    solution: "$(1.02)^5 \\approx 1 + 5(0.02) + 10(0.0004) = 1 + 0.1 + 0.004 = 1.104$ ราคาประมาณ $110.40$ บาท (ค่าจริง $110.408\\ldots$ บาท)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p013
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 2
+    type: numeric
+    stem: "ร้านชานมไข่มุกมีท็อปปิ้ง 6 อย่าง ลูกค้าเลือกใส่กี่อย่างก็ได้ (รวมถึงไม่ใส่เลย) เลือกได้ทั้งหมดกี่แบบ"
+    answer: { value: 64, unit: แบบ }
+    hints:
+      - "จำนวนแบบที่ใส่ $r$ อย่างคือ $\\binom{6}{r}$ รวมทุก $r$ ตั้งแต่ 0 ถึง 6"
+      - "$\\binom{n}{0} + \\binom{n}{1} + \\dots + \\binom{n}{n} = 2^n$"
+    misconceptions:
+      - { match: 720, feedback: "$6! = 720$ คือจำนวนวิธีเรียงท็อปปิ้ง แต่ที่นี่แค่เลือกว่าใส่หรือไม่ใส่" }
+      - { match: 63, feedback: "โจทย์นับรวมแบบที่ไม่ใส่เลยด้วย" }
+    solution: "ท็อปปิ้งแต่ละอย่างมี 2 ทางเลือก (ใส่/ไม่ใส่) ได้ $2^6 = 64$ แบบ ซึ่งเท่ากับ $1 + 6 + 15 + 20 + 15 + 6 + 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p014
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 2
+    type: numeric
+    stem: "โยนเหรียญบาท 5 ครั้ง ผลแบบที่ได้หัว 3 ครั้งและก้อย 2 ครั้ง (เช่น หหกหก) มีกี่แบบ"
+    answer: { value: 10, unit: แบบ }
+    hints:
+      - "เลือกว่าครั้งไหนบ้างที่ได้หัว 3 ครั้งจาก 5 ครั้ง"
+      - "ใช้ $\\binom{5}{3}$ ซึ่งเป็นสัมประสิทธิ์ของ $h^3k^2$ ใน $(h + k)^5$"
+    misconceptions:
+      - { match: 60, feedback: "$5 \\times 4 \\times 3 = 60$ นับลำดับของหัวแต่ละเหรียญ ต้องหารด้วย $3! = 6$" }
+      - { match: 32, feedback: "32 คือจำนวนผลทั้งหมด $2^5$ ไม่ใช่เฉพาะแบบที่ได้หัว 3 ครั้ง" }
+    solution: "$\\binom{5}{3} = \\dfrac{5 \\times 4 \\times 3}{3 \\times 2 \\times 1} = 10$ แบบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p015
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาสัมประสิทธิ์ของ $x^5$ ในการกระจาย $\\left(x^2 - \\dfrac{1}{x}\\right)^7$"
+    answer: { value: -35 }
+    hints:
+      - "พจน์ทั่วไป $\\binom{7}{r}(x^2)^{7 - r}\\left(-\\dfrac1x\\right)^r = \\binom{7}{r}(-1)^r x^{14 - 3r}$"
+      - "ตั้ง $14 - 3r = 5$"
+    misconceptions:
+      - { match: 35, feedback: "$r = 3$ เป็นจำนวนคี่ $(-1)^3 = -1$ สัมประสิทธิ์จึงติดลบ" }
+      - { match: 21, feedback: "$\\binom{7}{2} = 21$ ให้พจน์ $x^8$ ต้องใช้ $r = 3$" }
+    solution: "$14 - 3r = 5 \\Rightarrow r = 3$ สัมประสิทธิ์ $= \\binom{7}{3}(-1)^3 = -35$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p016
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 4
+    type: expression
+    stem: "จงทำ $(x + 1)^4 + (x - 1)^4$ ให้อยู่ในรูปที่ไม่มีวงเล็บ"
+    answer: { latex: "2x^4+12x^2+2", variables: [x] }
+    expanded: true
+    hints:
+      - "กระจายทั้งสองวงเล็บด้วยแถว 1 4 6 4 1"
+      - "ใน $(x - 1)^4$ พจน์ที่มีกำลังคี่ของ $-1$ เป็นลบ จึงหักล้างกับพจน์ของ $(x + 1)^4$"
+    misconceptions:
+      - { match: "2x^4+2", feedback: "พจน์ $6x^2$ ของทั้งสองวงเล็บเป็นบวกทั้งคู่ ไม่หักล้างกัน" }
+      - { match: "2x^4+8x^3+12x^2+8x+2", feedback: "ใน $(x - 1)^4$ พจน์ $x^3$ และ $x$ เป็นลบ จึงหักล้างกัน" }
+    solution: "$(x + 1)^4 = x^4 + 4x^3 + 6x^2 + 4x + 1$ และ $(x - 1)^4 = x^4 - 4x^3 + 6x^2 - 4x + 1$ บวกกันได้ $2x^4 + 12x^2 + 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p017
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาสัมประสิทธิ์ของพจน์กลางในการกระจาย $(3x + y)^4$"
+    answer: { value: 54 }
+    hints:
+      - "$(3x + y)^4$ มี 5 พจน์ พจน์กลางคือพจน์ที่ 3 ใช้ $r = 2$"
+      - "พจน์คือ $\\binom{4}{2}(3x)^2y^2$"
+    misconceptions:
+      - { match: 6, feedback: "$\\binom{4}{2} = 6$ แต่ลืมคูณ $3^2 = 9$" }
+      - { match: 18, feedback: "$(3x)^2 = 9x^2$ ไม่ใช่ $3x^2$" }
+    solution: "$\\binom{4}{2}(3x)^2y^2 = 6 \\cdot 9x^2y^2 = 54x^2y^2$ สัมประสิทธิ์คือ $54$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p018
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 4
+    type: match
+    stem: "จับคู่นิพจน์กับค่า (ใช้ทฤษฎีบททวินามโดยไม่ต้องคูณยาว)"
+    pairs:
+      - { left: "$11^4 = (10 + 1)^4$", right: "$14641$" }
+      - { left: "$\\binom{7}{0} + \\binom{7}{1} + \\dots + \\binom{7}{7}$", right: "$128$" }
+      - { left: "$\\binom{10}{3}$", right: "$120$" }
+      - { left: "$(1.1)^3 = (1 + 0.1)^3$", right: "$1.331$" }
+      - { left: "$\\binom{5}{0} - \\binom{5}{1} + \\binom{5}{2} - \\binom{5}{3} + \\binom{5}{4} - \\binom{5}{5}$", right: "$0$" }
+    hints:
+      - "$(10 + 1)^4$ ใช้แถว 1 4 6 4 1 กับกำลังของ 10"
+      - "ผลบวกสลับเครื่องหมายคือ $(1 - 1)^5$"
+    solution: "$(10 + 1)^4 = 10000 + 4000 + 600 + 40 + 1 = 14641$; ผลบวกของแถว 7 คือ $2^7 = 128$; $\\binom{10}{3} = \\tfrac{10 \\cdot 9 \\cdot 8}{6} = 120$; $(1 + 0.1)^3 = 1 + 0.3 + 0.03 + 0.001 = 1.331$; $(1 - 1)^5 = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p019
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 5
+    type: numeric
+    stem: "ในการกระจาย $(1 + x)^n$ สัมประสิทธิ์ของ $x^2$ เท่ากับ 45 จงหา $n$"
+    answer: { value: 10 }
+    hints:
+      - "สัมประสิทธิ์ของ $x^2$ คือ $\\binom{n}{2} = \\dfrac{n(n - 1)}{2}$"
+      - "แก้ $n(n - 1) = 90$ แล้วเลือกคำตอบที่เป็นจำนวนนับ"
+    misconceptions:
+      - { match: 9, feedback: "$9 \\times 10 \\div 2 = 45$ คือ $\\binom{10}{2}$ ไม่ใช่ $\\binom{9}{2}$ สูตรคือ $\\tfrac{n(n - 1)}{2}$" }
+      - { match: 45, feedback: "45 คือสัมประสิทธิ์ ไม่ใช่ $n$ ต้องแก้สมการ $\\binom{n}{2} = 45$" }
+    solution: "$\\dfrac{n(n - 1)}{2} = 45 \\Rightarrow n^2 - n - 90 = 0 \\Rightarrow (n - 10)(n + 9) = 0$ จึง $n = 10$ (ตัด $-9$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p020
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 5
+    type: order
+    stem: "เรียงขั้นตอนการหาสัมประสิทธิ์ของ $x^4$ ในการกระจาย $\\left(2x - \\dfrac{1}{x}\\right)^8$"
+    items:
+      - "เขียนพจน์ทั่วไป $\\binom{8}{r}(2x)^{8 - r}\\left(-\\tfrac1x\\right)^r$"
+      - "แยกตัวเลขกับ $x$: $\\binom{8}{r}2^{8 - r}(-1)^r x^{8 - 2r}$"
+      - "ตั้ง $8 - 2r = 4$ ได้ $r = 2$"
+      - "แทน $r = 2$: $\\binom{8}{2}2^6(-1)^2 = 28 \\times 64$"
+      - "สัมประสิทธิ์คือ $1792$"
+    hints:
+      - "เริ่มจากพจน์ทั่วไป"
+      - "หา $r$ จากกำลังของ $x$ ก่อนจึงแทนค่าตัวเลข"
+    solution: "พจน์ทั่วไป → รวมกำลังของ $x$ → $r = 2$ → $28 \\times 64 \\times 1 = 1792$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.binomial-theorem.p021
+    topics: [math.algebra.binomial-theorem]
+    difficulty: 5
+    type: numeric
+    stem: "ชมรมนาฏศิลป์ไทยมีสมาชิก 8 คน ต้องการส่งตัวแทนไปแสดงอย่างน้อย 2 คน (กี่คนก็ได้ตั้งแต่ 2 ถึง 8 คน) เลือกตัวแทนได้กี่วิธี"
+    answer: { value: 247, unit: วิธี }
+    hints:
+      - "จำนวนวิธีเลือกกลุ่มทุกขนาด (0 ถึง 8 คน) คือ $2^8$"
+      - "หักกลุ่มที่มี 0 คนและ 1 คนออก"
+    misconceptions:
+      - { match: 256, feedback: "$2^8$ รวมกลุ่มที่ไม่มีใครเลยและกลุ่มคนเดียวด้วย ต้องหักออก" }
+      - { match: 255, feedback: "หักแค่กลุ่มว่าง ยังต้องหักกลุ่มที่มีคนเดียวอีก $\\binom{8}{1} = 8$ วิธี" }
+    solution: "$\\binom{8}{2} + \\binom{8}{3} + \\dots + \\binom{8}{8} = 2^8 - \\binom{8}{0} - \\binom{8}{1} = 256 - 1 - 8 = 247$ วิธี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

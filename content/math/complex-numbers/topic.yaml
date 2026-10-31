@@ -1,0 +1,73 @@
+id: math.number.complex-numbers
+subject: math
+title: { th: จำนวนเชิงซ้อน, en: Complex numbers }
+summary: จำนวนเชิงซ้อน a + bi การบวก ลบ คูณ หาร สังยุค ค่าสัมบูรณ์ ระนาบเชิงซ้อน รูปเชิงขั้ว สูตรออยเลอร์ รากที่ n และสมการกำลังสองที่ดิสคริมิแนนต์ติดลบ
+difficulty: 6
+minutes: 40
+prerequisites: [math.algebra.quadratic-eq, math.geometry.vectors, math.functions.trig-functions]
+encompasses:
+  - { id: math.algebra.quadratic-eq, weight: 0.3 }
+  - { id: math.geometry.vectors, weight: 0.2 }
+  - { id: math.functions.trig-functions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: argand.svg
+    alt: "ระนาบเชิงซ้อน แกนนอนคือแกนจริง แกนตั้งคือแกนจินตภาพ จุด z = 3 + 2i อยู่ที่ (3, 2) ลากเส้นจากจุดกำเนิดยาว r = √13 ทำมุม θ กับแกนจริงบวก จุดสังยุค 3 − 2i อยู่ที่ (3, −2) เป็นภาพสะท้อนในแกนจริง"
+    caption: "z = a + bi คือจุด (a, b) ค่าสัมบูรณ์คือระยะจากจุดกำเนิด สังยุคคือภาพสะท้อนในแกนจริง"
+  - type: worked-example
+    title: หารจำนวนเชิงซ้อนด้วยสังยุค
+    problem: "จงเขียน $\\dfrac{3 + 4i}{1 + 2i}$ ในรูป $a + bi$"
+    steps:
+      - text: "สังยุคของตัวส่วน $1 + 2i$ คือ $1 - 2i$ คูณทั้งเศษและส่วนด้วย $1 - 2i$"
+        why: "$(1 + 2i)(1 - 2i) = 1^2 + 2^2$ เป็นจำนวนจริง ตัวส่วนจึงไม่มี $i$ เหลือ"
+      - text: "ตัวส่วน: $(1 + 2i)(1 - 2i) = 1 + 4 = 5$"
+      - text: "ตัวเศษ: $(3 + 4i)(1 - 2i) = 3 - 6i + 4i - 8i^2 = 3 - 2i + 8 = 11 - 2i$"
+        why: "$-8i^2 = -8(-1) = +8$"
+      - text: "หารทีละส่วน: $\\dfrac{11 - 2i}{5} = \\dfrac{11}{5} - \\dfrac{2}{5}i$"
+      - text: "ตรวจ: $(1 + 2i)(2.2 - 0.4i) = 2.2 - 0.4i + 4.4i - 0.8i^2 = 3 + 4i$ ✓"
+    answer: "$\\dfrac{11}{5} - \\dfrac{2}{5}i = 2.2 - 0.4i$"
+  - { type: check, problem: math.number.complex-numbers.p003, prompt: "หลังกระจายแล้ว $-3i^2$ เท่ากับเท่าไร" }
+  - type: interactive
+    title: บวกจำนวนเชิงซ้อนเหมือนบวกเวกเตอร์
+    caption: "เวกเตอร์ a แทน 3 + i และ b แทน 1 + 2i ผลบวกคือ 4 + 3i ลากปลายเวกเตอร์เพื่อเปลี่ยนจำนวน แล้วสังเกตว่าส่วนจริงบวกกับส่วนจริง ส่วนจินตภาพบวกกับส่วนจินตภาพ"
+    widget: { kind: vector-add, a: [3, 1], b: [1, 2], draggable: true }
+  - type: figure
+    src: cube-roots.svg
+    alt: "วงกลมรัศมี 2 บนระนาบเชิงซ้อน มีจุดสามจุดคือ 2 บนแกนจริง −1 + √3 i ที่มุม 120° และ −1 − √3 i ที่มุม 240° ห่างกันจุดละ 120 องศา"
+    caption: "รากที่สามของ 8 ทั้งสามตัวอยู่บนวงกลมรัศมี ∛8 = 2 ห่างกันทุก 360°/3 = 120°"
+  - type: worked-example
+    title: หารากที่สามของ 8i
+    problem: "จงหาจำนวนเชิงซ้อน $z$ ทั้งหมดที่ $z^3 = 8i$"
+    steps:
+      - text: "เขียน $8i$ ในรูปเชิงขั้ว: จุด $(0, 8)$ อยู่บนแกนจินตภาพบวก จึง $8i = 8e^{i\\,90^\\circ}$"
+      - text: "ค่าสัมบูรณ์ของราก: $\\sqrt[3]{8} = 2$"
+      - text: "มุมของราก: $\\dfrac{90^\\circ + 360^\\circ k}{3}$ เมื่อ $k = 0, 1, 2$ ได้ $30^\\circ$, $150^\\circ$, $270^\\circ$"
+        why: "มุม $90^\\circ$, $450^\\circ$, $810^\\circ$ เป็นจุดเดียวกัน หารด้วย 3 แล้วได้มุมต่างกันสามมุม"
+      - text: "แปลงกลับ: $2(\\cos 30^\\circ + i\\sin 30^\\circ) = \\sqrt3 + i$, $\\;2(\\cos 150^\\circ + i\\sin 150^\\circ) = -\\sqrt3 + i$, $\\;2(\\cos 270^\\circ + i\\sin 270^\\circ) = -2i$"
+      - text: "ตรวจตัวหนึ่ง: $(-2i)^3 = -8i^3 = -8(-i) = 8i$ ✓"
+    answer: "$z = \\sqrt3 + i,\\ -\\sqrt3 + i,\\ -2i$"
+  - { type: check, problem: math.number.complex-numbers.p008, prompt: "ดิสคริมิแนนต์ติดลบ แต่ยังมีคำตอบเชิงซ้อน" }
+glossary:
+  - { term: จำนวนเชิงซ้อน, definition: "จำนวนในรูป a + bi เมื่อ a, b เป็นจำนวนจริง และ i² = −1" }
+  - { term: ส่วนจริงและส่วนจินตภาพ, definition: "ของ a + bi คือ a และ b ตามลำดับ (ส่วนจินตภาพเป็นจำนวนจริง b ไม่มี i)" }
+  - { term: สังยุค, definition: "ของ a + bi คือ a − bi ผลคูณ z z̄ = a² + b² เป็นจำนวนจริง" }
+  - { term: ค่าสัมบูรณ์ของจำนวนเชิงซ้อน, definition: "|a + bi| = √(a² + b²) คือระยะจากจุดกำเนิดบนระนาบเชิงซ้อน" }
+  - { term: รูปเชิงขั้ว, definition: "z = r(cos θ + i sin θ) = re^(iθ) เมื่อ r = |z| และ θ คืออาร์กิวเมนต์" }
+  - { term: ทฤษฎีบทของเดอมัวร์, definition: "(r(cos θ + i sin θ))ⁿ = rⁿ(cos nθ + i sin nθ)" }
+flashcards:
+  - { front: "i³ และ i⁴ เท่ากับเท่าใด", back: "i³ = −i และ i⁴ = 1 กำลังของ i วนซ้ำทุก 4" }
+  - { front: "หาร (a + bi)/(c + di) อย่างไร", back: "คูณทั้งเศษและส่วนด้วยสังยุค c − di ตัวส่วนจะเป็น c² + d²" }
+  - { front: "คูณจำนวนเชิงซ้อนในรูปเชิงขั้ว", back: "คูณค่าสัมบูรณ์ บวกอาร์กิวเมนต์" }
+  - { front: "สูตรของออยเลอร์", back: "e^(iθ) = cos θ + i sin θ จึง e^(iπ) + 1 = 0" }
+  - { front: "zⁿ = w มีกี่คำตอบ และเรียงตัวอย่างไร", back: "n คำตอบ อยู่บนวงกลมรัศมี ⁿ√|w| ห่างกันทุก 360°/n" }
+references:
+  - { title: "จำนวนเชิงซ้อน", url: "https://th.wikipedia.org/wiki/จำนวนเชิงซ้อน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Complex number", url: "https://en.wikipedia.org/wiki/Complex_number", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "3.1 Complex Numbers (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/3-1-complex-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "8.5 Polar Form of Complex Numbers (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/8-5-polar-form-of-complex-numbers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

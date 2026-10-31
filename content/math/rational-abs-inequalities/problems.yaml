@@ -1,0 +1,379 @@
+problems:
+  - id: math.algebra.rational-abs-inequalities.p001
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 1
+    type: mcq
+    stem: "คำตอบของสมการ $|x| = 4$ คือข้อใด"
+    choices:
+      - { id: a, text: "$x = 4$ หรือ $x = -4$", correct: true }
+      - { id: b, text: "$x = 4$ เท่านั้น", feedback: "$|-4| = 4$ ด้วย จำนวนที่ห่างจาก 0 เท่ากับ 4 มีสองจำนวน" }
+      - { id: c, text: "$x = 2$ หรือ $x = -2$", feedback: "ค่าสัมบูรณ์ไม่ใช่การถอดรากที่สอง" }
+      - { id: d, text: "ไม่มีคำตอบ", feedback: "สมการ $|x| = k$ ไม่มีคำตอบเฉพาะเมื่อ $k < 0$" }
+    hints:
+      - "$|x|$ คือระยะจาก $x$ ถึง 0"
+      - "มีจำนวนใดบ้างที่ห่างจาก 0 เท่ากับ 4"
+    solution: "จำนวนที่ห่างจาก 0 เท่ากับ 4 คือ 4 และ −4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p002
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 1
+    type: mcq
+    stem: "ค่า $x$ ใดที่แทนในนิพจน์ $\\dfrac{x + 2}{x - 5}$ ไม่ได้"
+    choices:
+      - { id: a, text: "$x = 5$", correct: true }
+      - { id: b, text: "$x = -2$", feedback: "$x = -2$ ทำให้ตัวเศษเป็นศูนย์ นิพจน์มีค่า $0$ ซึ่งแทนได้" }
+      - { id: c, text: "$x = 0$", feedback: "$x = 0$ ได้ $\\tfrac{2}{-5}$ ซึ่งหาค่าได้" }
+      - { id: d, text: "แทนได้ทุกค่า", feedback: "เศษส่วนหาค่าไม่ได้เมื่อตัวส่วนเป็นศูนย์" }
+    hints:
+      - "เศษส่วนหาค่าไม่ได้เมื่อตัวส่วนเป็นศูนย์"
+      - "แก้ $x - 5 = 0$"
+    solution: "ตัวส่วน $x - 5 = 0$ เมื่อ $x = 5$ จึงแทน $x = 5$ ไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p003
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 2
+    type: numeric
+    stem: "สมการ $|2x + 1| = 9$ มีคำตอบสองคำตอบ จงหาคำตอบที่น้อยกว่า"
+    answer: { value: -5 }
+    hints:
+      - "$2x + 1 = 9$ หรือ $2x + 1 = -9$"
+      - "แก้ทั้งสองสมการแล้วเลือกค่าที่น้อยกว่า"
+    misconceptions:
+      - { match: -4, feedback: "$2x + 1 = -9$ ต้องลบ 1 ทั้งสองข้างได้ $2x = -10$ ไม่ใช่ $-8$" }
+      - { match: 4, feedback: "4 คือคำตอบที่มากกว่า" }
+    solution: "$2x + 1 = 9 \\Rightarrow x = 4$ และ $2x + 1 = -9 \\Rightarrow x = -5$ คำตอบที่น้อยกว่าคือ $-5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p004
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 2
+    type: mcq
+    stem: "เซตคำตอบของอสมการ $|x - 2| < 3$ คือข้อใด"
+    choices:
+      - { id: a, text: "$-1 < x < 5$", correct: true }
+      - { id: b, text: "$x < 5$", feedback: "ลืมเงื่อนไขอีกข้าง $x - 2 > -3$ เช่น $x = -10$ ได้ $|-12| = 12$ ไม่น้อยกว่า 3" }
+      - { id: c, text: "$x < -1$ หรือ $x > 5$", feedback: "นี่คือคำตอบของ $|x - 2| > 3$" }
+      - { id: d, text: "$-5 < x < 1$", feedback: "$|x - 2|$ คือระยะจาก 2 ไม่ใช่จาก −2" }
+    hints:
+      - "$|A| < k$ หมายถึง $-k < A < k$"
+      - "$-3 < x - 2 < 3$ แล้วบวก 2 ทุกส่วน"
+    solution: "$-3 < x - 2 < 3 \\Rightarrow -1 < x < 5$ คือจำนวนที่ห่างจาก 2 น้อยกว่า 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p005
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 2
+    type: expression
+    stem: "จงทำ $\\dfrac{x^2 - 9}{x^2 + 3x}$ ให้อยู่ในรูปอย่างง่าย (เมื่อ $x \\ne 0, -3$)"
+    answer: { latex: "\\frac{x-3}{x}", variables: [x] }
+    hints:
+      - "แยกตัวประกอบทั้งเศษและส่วน"
+      - "$x^2 - 9 = (x - 3)(x + 3)$ และ $x^2 + 3x = x(x + 3)$"
+    misconceptions:
+      - { match: "\\frac{-9}{3x}", feedback: "ตัด $x^2$ ทิ้งไม่ได้เพราะเป็นพจน์ ไม่ใช่ตัวประกอบ ต้องแยกตัวประกอบก่อน" }
+      - { match: "x-3", feedback: "หลังตัด $x + 3$ ตัวส่วนยังเหลือ $x$" }
+    solution: "$\\dfrac{(x - 3)(x + 3)}{x(x + 3)} = \\dfrac{x - 3}{x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p006
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: numeric
+    stem: "บ้านหลังหนึ่งเติมน้ำใส่โอ่งด้วยท่อ A อย่างเดียวใช้เวลา 6 ชั่วโมง ถ้าเปิดท่อ A และท่อ B พร้อมกันใช้เวลา 4 ชั่วโมง ถ้าเปิดท่อ B อย่างเดียวจะใช้เวลากี่ชั่วโมง"
+    answer: { value: 12, unit: ชั่วโมง }
+    hints:
+      - "ใน 1 ชั่วโมง ท่อ A เติมได้ $\\tfrac16$ โอ่ง ให้ท่อ B ใช้ $x$ ชั่วโมง เติมได้ $\\tfrac1x$ โอ่งต่อชั่วโมง"
+      - "สองท่อรวมกัน $\\tfrac16 + \\tfrac1x = \\tfrac14$"
+      - "คูณด้วย ค.ร.น. $12x$ ทั้งสองข้าง"
+    misconceptions:
+      - { match: 2, feedback: "เวลาลบกันไม่ได้ ต้องคิดเป็นอัตรางานต่อชั่วโมงแล้วลบกัน" }
+      - { match: 10, feedback: "เปิดสองท่อต้องเร็วขึ้น เวลาไม่บวกกัน" }
+    solution: "$\\tfrac16 + \\tfrac1x = \\tfrac14 \\Rightarrow 2x + 12 = 3x \\Rightarrow x = 12$ ชั่วโมง ตรวจ $\\tfrac16 + \\tfrac1{12} = \\tfrac3{12} = \\tfrac14$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p007
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: numeric
+    stem: "จงแก้สมการ $\\dfrac{x^2}{x - 2} = \\dfrac{4}{x - 2}$"
+    answer: { value: -2 }
+    hints:
+      - "คูณทั้งสองข้างด้วย $x - 2$ ได้ $x^2 = 4$"
+      - "ตรวจว่าคำตอบใดทำให้ตัวส่วนเป็นศูนย์"
+    misconceptions:
+      - { match: 2, feedback: "$x = 2$ ทำให้ตัวส่วน $x - 2 = 0$ จึงเป็นคำตอบแปลกปลอม" }
+    solution: "$x^2 = 4 \\Rightarrow x = \\pm 2$ แต่ $x = 2$ ทำให้ตัวส่วนเป็นศูนย์ คำตอบจึงมีเพียง $x = -2$ ตรวจ: $\\tfrac{4}{-4} = \\tfrac{4}{-4}$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p008
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: numeric
+    stem: "จงแก้สมการ $\\sqrt{2x + 3} = x$"
+    answer: { value: 3 }
+    hints:
+      - "ยกกำลังสองทั้งสองข้าง ได้ $2x + 3 = x^2$"
+      - "แก้สมการกำลังสอง แล้วแทนคำตอบกลับในสมการเดิม"
+    misconceptions:
+      - { match: -1, feedback: "แทน $x = -1$: $\\sqrt{1} = 1 \\ne -1$ จึงเป็นคำตอบแปลกปลอมที่เกิดจากการยกกำลังสอง" }
+    solution: "$x^2 - 2x - 3 = 0 \\Rightarrow (x - 3)(x + 1) = 0$ ได้ $x = 3$ หรือ $-1$ ตรวจ: $\\sqrt{9} = 3$ ✓ แต่ $\\sqrt{1} = 1 \\ne -1$ คำตอบคือ $x = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p009
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: mcq
+    stem: "เซตคำตอบของอสมการ $\\dfrac{x - 1}{x + 2} \\ge 0$ คือข้อใด"
+    choices:
+      - { id: a, text: "$x < -2$ หรือ $x \\ge 1$", correct: true }
+      - { id: b, text: "$x \\le -2$ หรือ $x \\ge 1$", feedback: "$x = -2$ ทำให้ตัวส่วนเป็นศูนย์ รวมไม่ได้แม้มีเครื่องหมาย $\\ge$" }
+      - { id: c, text: "$-2 < x \\le 1$", feedback: "ช่วงนี้นิพจน์เป็นลบ ลองแทน $x = 0$ ได้ $-\\tfrac12$" }
+      - { id: d, text: "$x \\ge 1$", feedback: "คูณไขว้แล้วได้ $x - 1 \\ge 0$ ซึ่งลืมกรณีที่ตัวส่วนเป็นลบ ลองแทน $x = -3$ ได้ $\\tfrac{-4}{-1} = 4 \\ge 0$" }
+    hints:
+      - "จุดวิกฤตคือ $x = 1$ และ $x = -2$"
+      - "หาเครื่องหมายในสามช่วงบนเส้นจำนวน"
+    solution: "จุดวิกฤต $-2$ (ตัวส่วน) และ $1$ (ตัวเศษ) เครื่องหมาย: $x < -2$ บวก, $-2 < x < 1$ ลบ, $x > 1$ บวก รวม $x = 1$ เพราะได้ 0 แต่ไม่รวม $-2$ คำตอบคือ $x < -2$ หรือ $x \\ge 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p010
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: numeric
+    stem: "จากกราฟของ $y = |x + 1|$ และ $y = 4$ ในภาพ จำนวนเต็ม $x$ ที่ทำให้ $|x + 1| < 4$ มีกี่จำนวน"
+    figure:
+      src: abs-problem.svg
+      alt: "กราฟ y = |x + 1| รูปตัววีจุดยอดที่ (−1, 0) และเส้นประแนวนอน y = 4 บนระนาบที่มีช่องตารางละ 1 หน่วย แกน x จาก −7 ถึง 5"
+    answer: { value: 7, unit: จำนวน }
+    hints:
+      - "หาค่า $x$ ที่กราฟตัววีตัดเส้น $y = 4$"
+      - "คำตอบคือช่วงที่กราฟอยู่ใต้เส้น ไม่รวมจุดตัด เพราะเป็น $<$"
+    misconceptions:
+      - { match: 9, feedback: "รวมจุดตัด $x = -5$ และ $x = 3$ ด้วย แต่ที่จุดนั้น $|x + 1| = 4$ ไม่น้อยกว่า 4" }
+      - { match: 8, feedback: "นับจาก $-5$ ถึง $2$ หรือ $-4$ ถึง $3$ ปลายทั้งสองข้างไม่รวมเพราะเป็น $<$" }
+    solution: "กราฟตัดเส้น $y = 4$ ที่ $x = -5$ และ $x = 3$ คำตอบคือ $-5 < x < 3$ จำนวนเต็มคือ $-4, -3, -2, -1, 0, 1, 2$ รวม 7 จำนวน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p011
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: numeric
+    stem: "โรงสีข้าวในจังหวัดสุรินทร์บรรจุข้าวหอมมะลิถุงละ 5 กิโลกรัม ถุงที่ผ่านการตรวจต้องมีน้ำหนัก $w$ ที่ $|w - 5| \\le 0.08$ กิโลกรัม ถุงที่เบาที่สุดที่ผ่านการตรวจหนักกี่กิโลกรัม"
+    answer: { value: 4.92, tolerance: 0.001, unit: กิโลกรัม }
+    hints:
+      - "$|w - 5| \\le 0.08$ หมายถึง $-0.08 \\le w - 5 \\le 0.08$"
+      - "บวก 5 ทุกส่วน แล้วดูปลายล่าง"
+    misconceptions:
+      - { match: 5.08, feedback: "5.08 คือน้ำหนักมากที่สุดที่ผ่าน" }
+      - { match: 4.2, feedback: "0.08 กิโลกรัมคือ 80 กรัม ไม่ใช่ 0.8 กิโลกรัม" }
+    solution: "$4.92 \\le w \\le 5.08$ ถุงที่เบาที่สุดที่ผ่านหนัก 4.92 กิโลกรัม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p012
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: numeric
+    stem: "จำนวนเต็ม $x$ ที่ทำให้ $\\dfrac{x + 4}{x - 3} < 0$ มีกี่จำนวน"
+    answer: { value: 6, unit: จำนวน }
+    hints:
+      - "จุดวิกฤตคือ $-4$ และ $3$"
+      - "เศษส่วนเป็นลบเมื่อเศษและส่วนมีเครื่องหมายต่างกัน"
+    misconceptions:
+      - { match: 7, feedback: "รวม $x = -4$ ด้วย แต่ได้ $0$ ซึ่งไม่น้อยกว่า 0" }
+      - { match: 8, feedback: "$x = 3$ ทำให้ตัวส่วนเป็นศูนย์ และ $x = -4$ ทำให้ได้ 0 ไม่รวมทั้งคู่" }
+    solution: "เครื่องหมายเป็นลบเมื่อ $-4 < x < 3$ จำนวนเต็มคือ $-3, -2, -1, 0, 1, 2$ รวม 6 จำนวน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p013
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: expression
+    stem: "เขียน $\\dfrac{x^2 + 5x + 7}{x + 2}$ ในรูป $q(x) + \\dfrac{r}{x + 2}$ เมื่อ $q(x)$ เป็นพหุนามและ $r$ เป็นค่าคงตัว จงหา $q(x)$"
+    prefix: "q(x) ="
+    answer: { latex: "x+3", variables: [x] }
+    hints:
+      - "หารยาว $x^2 + 5x + 7$ ด้วย $x + 2$"
+      - "$x(x + 2) = x^2 + 2x$ เหลือ $3x + 7$ แล้วหารต่อ"
+    misconceptions:
+      - { match: "x+5", feedback: "หารทีละพจน์ด้วย $x$ ไม่ได้ ต้องหารยาวด้วยทั้ง $x + 2$" }
+      - { match: "x+7", feedback: "ลบ $x(x + 2) = x^2 + 2x$ แล้วเหลือ $3x + 7$ ต้องหารต่อได้ $+3$" }
+    solution: "$x^2 + 5x + 7 = (x + 2)(x + 3) + 1$ จึง $\\dfrac{x^2 + 5x + 7}{x + 2} = x + 3 + \\dfrac{1}{x + 2}$ ได้ $q(x) = x + 3$ และ $r = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p014
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: expression
+    stem: "จงเขียน $\\dfrac{1}{x - 1} - \\dfrac{1}{x + 1}$ เป็นเศษส่วนเดียว"
+    answer: { latex: "\\frac{2}{x^2-1}", variables: [x] }
+    hints:
+      - "ตัวส่วนร่วมคือ $(x - 1)(x + 1) = x^2 - 1$"
+      - "ตัวเศษคือ $(x + 1) - (x - 1)$"
+    misconceptions:
+      - { match: "\\frac{-2}{x^2-1}", feedback: "$(x + 1) - (x - 1) = x + 1 - x + 1 = 2$ เครื่องหมายเป็นบวก" }
+      - { match: "\\frac{2x}{x^2-1}", feedback: "$x$ ในตัวเศษหักล้างกันหมด เหลือ $1 + 1 = 2$" }
+    solution: "$\\dfrac{(x + 1) - (x - 1)}{(x - 1)(x + 1)} = \\dfrac{2}{x^2 - 1}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p015
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาผลบวกของคำตอบทั้งหมดของสมการ $|x - 1| = |2x + 4|$"
+    answer: { value: -6 }
+    hints:
+      - "$|A| = |B|$ หมายถึง $A = B$ หรือ $A = -B$"
+      - "แก้ $x - 1 = 2x + 4$ และ $x - 1 = -(2x + 4)$"
+    misconceptions:
+      - { match: -5, feedback: "ได้แค่คำตอบจาก $A = B$ ลืมกรณี $A = -B$" }
+      - { match: -1, feedback: "ได้แค่คำตอบจาก $A = -B$ ลืมกรณี $A = B$" }
+    solution: "$x - 1 = 2x + 4 \\Rightarrow x = -5$ และ $x - 1 = -2x - 4 \\Rightarrow x = -1$ ผลบวก $= -6$ ตรวจ: $|-6| = |-6|$ และ $|-2| = |2|$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p016
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: numeric
+    stem: "ห้อง ม.5/2 สั่งพิมพ์เสื้องานกีฬาสี ร้านคิดค่าทำบล็อก 2,000 บาท และค่าเสื้อตัวละ 80 บาท ถ้าต้องการให้ต้นทุนเฉลี่ยไม่เกินตัวละ 100 บาท ต้องสั่งอย่างน้อยกี่ตัว"
+    answer: { value: 100, unit: ตัว }
+    hints:
+      - "ต้นทุนเฉลี่ย $= \\dfrac{2000 + 80x}{x}$"
+      - "แก้ $\\dfrac{2000 + 80x}{x} \\le 100$ เมื่อ $x > 0$"
+    misconceptions:
+      - { match: 25, feedback: "หาร 2,000 ด้วยค่าเสื้อ 80 บาท แต่ค่าบล็อกที่เฉลี่ยต่อตัวต้องไม่เกิน $100 - 80 = 20$ บาท จึงต้องหารด้วย 20" }
+      - { match: 20, feedback: "$2000 \\div 100 = 20$ ลืมว่าเสื้อแต่ละตัวมีค่าเสื้อ 80 บาทอยู่แล้ว" }
+    solution: "เพราะ $x > 0$ คูณ $x$ ได้โดยไม่กลับเครื่องหมาย: $2000 + 80x \\le 100x \\Rightarrow 2000 \\le 20x \\Rightarrow x \\ge 100$ ต้องสั่งอย่างน้อย 100 ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p017
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: mcq
+    stem: "เซตคำตอบของอสมการ $|3 - 2x| > 5$ คือข้อใด"
+    choices:
+      - { id: a, text: "$x < -1$ หรือ $x > 4$", correct: true }
+      - { id: b, text: "$-1 < x < 4$", feedback: "นี่คือคำตอบของ $|3 - 2x| < 5$" }
+      - { id: c, text: "$x > 4$", feedback: "ลืมกรณี $3 - 2x > 5$ ซึ่งให้ $x < -1$" }
+      - { id: d, text: "$x < -4$ หรือ $x > 1$", feedback: "หารด้วย $-2$ ต้องกลับเครื่องหมายอสมการ" }
+    hints:
+      - "$|A| > 5$ หมายถึง $A < -5$ หรือ $A > 5$"
+      - "แก้ $3 - 2x < -5$ และ $3 - 2x > 5$ ระวังหารด้วยจำนวนลบ"
+    solution: "$3 - 2x < -5 \\Rightarrow -2x < -8 \\Rightarrow x > 4$ และ $3 - 2x > 5 \\Rightarrow -2x > 2 \\Rightarrow x < -1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p018
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 5
+    type: numeric
+    stem: "เรือหางยาวลำหนึ่งแล่นในแม่น้ำเจ้าพระยาทวนน้ำไป 24 กิโลเมตร แล้วตามน้ำกลับ 24 กิโลเมตร ใช้เวลาแล่นรวม 6 ชั่วโมง ถ้ากระแสน้ำไหล 3 กิโลเมตรต่อชั่วโมง เรือแล่นในน้ำนิ่งได้กี่กิโลเมตรต่อชั่วโมง (ตัวเลขสมมติ)"
+    answer: { value: 9, unit: กิโลเมตรต่อชั่วโมง }
+    hints:
+      - "ให้เรือแล่นในน้ำนิ่ง $v$ กม./ชม. ทวนน้ำได้ $v - 3$ ตามน้ำได้ $v + 3$"
+      - "เวลารวม $\\dfrac{24}{v - 3} + \\dfrac{24}{v + 3} = 6$"
+      - "คูณด้วย $(v - 3)(v + 3)$ แล้วแก้สมการกำลังสอง ตรวจว่าคำตอบสมเหตุสมผล"
+    misconceptions:
+      - { match: 8, feedback: "$48 \\div 6 = 8$ คืออัตราเร็วเฉลี่ยถ้าไม่มีกระแสน้ำ ทวนน้ำช้ากว่า จึงต้องตั้งสมการเศษส่วน" }
+      - { match: -1, feedback: "$v = -1$ เป็นคำตอบของสมการพหุนาม แต่อัตราเร็วติดลบไม่สมเหตุสมผล (และทำให้ทวนน้ำได้ $-4$)" }
+    solution: "$24(v + 3) + 24(v - 3) = 6(v^2 - 9) \\Rightarrow 48v = 6v^2 - 54 \\Rightarrow v^2 - 8v - 9 = 0 \\Rightarrow (v - 9)(v + 1) = 0$ ได้ $v = 9$ กม./ชม. ตรวจ $\\tfrac{24}{6} + \\tfrac{24}{12} = 4 + 2 = 6$ ✓"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p019
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 5
+    type: mcq
+    stem: "เซตคำตอบของอสมการ $\\dfrac{x^2 - x - 6}{x - 1} \\le 0$ คือข้อใด"
+    choices:
+      - { id: a, text: "$x \\le -2$ หรือ $1 < x \\le 3$", correct: true }
+      - { id: b, text: "$-2 \\le x \\le 3$", feedback: "คูณไขว้แล้วแก้ $x^2 - x - 6 \\le 0$ ลืมตัวส่วน $x - 1$ ซึ่งเปลี่ยนเครื่องหมายที่ $x = 1$ ลองแทน $x = 0$ ได้ $\\tfrac{-6}{-1} = 6 > 0$" }
+      - { id: c, text: "$x \\le -2$ หรือ $1 \\le x \\le 3$", feedback: "$x = 1$ ทำให้ตัวส่วนเป็นศูนย์ รวมไม่ได้" }
+      - { id: d, text: "$-2 \\le x < 1$ หรือ $x \\ge 3$", feedback: "นี่คือช่วงที่นิพจน์ $\\ge 0$ เครื่องหมายสลับกัน" }
+    hints:
+      - "แยกตัวประกอบ $x^2 - x - 6 = (x - 3)(x + 2)$"
+      - "จุดวิกฤต $-2, 1, 3$ แบ่งเส้นจำนวนเป็นสี่ช่วง"
+    solution: "$\\dfrac{(x - 3)(x + 2)}{x - 1}$ เครื่องหมาย: $x < -2$ ลบ, $-2 < x < 1$ บวก, $1 < x < 3$ ลบ, $x > 3$ บวก รวม $-2$ และ $3$ (ได้ 0) ไม่รวม $1$ จึงได้ $x \\le -2$ หรือ $1 < x \\le 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p020
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการแก้อสมการ $\\dfrac{2x}{x + 3} > 1$"
+    items:
+      - "ย้ายข้าง: $\\dfrac{2x}{x + 3} - 1 > 0$"
+      - "รวมเป็นเศษส่วนเดียว: $\\dfrac{x - 3}{x + 3} > 0$"
+      - "หาจุดวิกฤต: $x = 3$ และ $x = -3$"
+      - "หาเครื่องหมายแต่ละช่วงบนเส้นจำนวน"
+      - "สรุป: $x < -3$ หรือ $x > 3$"
+    hints:
+      - "อย่าคูณไขว้ด้วย $x + 3$"
+      - "ทำให้ข้างหนึ่งเป็นศูนย์ก่อน"
+    solution: "ย้ายข้าง → รวมเศษส่วน ($2x - (x + 3) = x - 3$) → จุดวิกฤต → เส้นจำนวน (บวก ลบ บวก) → $x < -3$ หรือ $x > 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p021
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 5
+    type: numeric
+    stem: "สมการ $|x^2 - 5| = 4$ มีคำตอบเป็นจำนวนจริงกี่คำตอบ"
+    answer: { value: 4, unit: คำตอบ }
+    hints:
+      - "$x^2 - 5 = 4$ หรือ $x^2 - 5 = -4$"
+      - "แต่ละกรณีเป็นสมการกำลังสอง อาจมีสองคำตอบ"
+    misconceptions:
+      - { match: 2, feedback: "ได้แค่ $x^2 = 9$ ลืมกรณี $x^2 - 5 = -4$ ซึ่งให้ $x = \\pm 1$" }
+    solution: "$x^2 = 9 \\Rightarrow x = \\pm 3$ และ $x^2 = 1 \\Rightarrow x = \\pm 1$ รวม 4 คำตอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p022
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 2
+    type: numeric
+    stem: "ตู้เย็นเก็บวัคซีนของโรงพยาบาลส่งเสริมสุขภาพตำบลต้องมีอุณหภูมิ $T$ ตั้งแต่ 2 ถึง 8 องศาเซลเซียส ถ้าเขียนเงื่อนไขนี้เป็น $|T - a| \\le b$ จงหา $a$"
+    answer: { value: 5, unit: องศาเซลเซียส }
+    hints:
+      - "$a$ คือจุดกึ่งกลางของช่วง และ $b$ คือระยะจากจุดกึ่งกลางถึงปลายช่วง"
+      - "จุดกึ่งกลางของ 2 กับ 8"
+    misconceptions:
+      - { match: 3, feedback: "3 คือ $b$ (ครึ่งหนึ่งของความกว้างช่วง) โจทย์ถามจุดกึ่งกลาง $a$" }
+      - { match: 6, feedback: "6 คือความกว้างของช่วง จุดกึ่งกลางคือ $\\tfrac{2 + 8}{2}$" }
+    solution: "$a = \\dfrac{2 + 8}{2} = 5$ และ $b = 3$ จึงได้ $|T - 5| \\le 3$ ตรวจ: $5 - 3 = 2$ และ $5 + 3 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.algebra.rational-abs-inequalities.p023
+    topics: [math.algebra.rational-abs-inequalities]
+    difficulty: 3
+    type: expression
+    stem: "จงทำ $\\dfrac{x^2 - 4}{x + 3} \\div \\dfrac{x - 2}{x^2 + 3x}$ ให้อยู่ในรูปอย่างง่าย (เมื่อ $x \\ne 0, 2, -3$)"
+    answer: { latex: "x^2+2x", variables: [x] }
+    hints:
+      - "หารด้วยเศษส่วนคือคูณด้วยส่วนกลับ: $\\dfrac{x^2 - 4}{x + 3} \\cdot \\dfrac{x^2 + 3x}{x - 2}$"
+      - "แยกตัวประกอบ $x^2 - 4 = (x - 2)(x + 2)$ และ $x^2 + 3x = x(x + 3)$ แล้วตัดตัวประกอบร่วม"
+    misconceptions:
+      - { match: "\\frac{(x-2)^2}{x\\cdot(x+3)^2}", feedback: "คูณตรง ๆ โดยไม่กลับเศษส่วนตัวหลัง การหารต้องคูณด้วยส่วนกลับ" }
+      - { match: "x+2", feedback: "ตัวประกอบ $x$ จาก $x^2 + 3x = x(x + 3)$ ยังเหลืออยู่ ตัดได้เฉพาะ $x + 3$" }
+    solution: "$\\dfrac{(x - 2)(x + 2)}{x + 3} \\cdot \\dfrac{x(x + 3)}{x - 2} = x(x + 2) = x^2 + 2x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
