@@ -1,0 +1,77 @@
+id: chemistry.bonding.polarity-intermolecular
+subject: chemistry
+title: { th: สภาพขั้วของโมเลกุลและแรงระหว่างโมเลกุล, en: Molecular polarity and intermolecular forces }
+summary: รูปร่างโมเลกุลตาม VSEPR สภาพขั้วของโมเลกุล แรงลอนดอน แรงระหว่างขั้ว พันธะไฮโดรเจน ผลต่อจุดเดือดและการละลาย และสารโคเวเลนต์โครงร่างตาข่าย
+difficulty: 5.5
+minutes: 40
+prerequisites: [chemistry.bonding.covalent, chemistry.matter.periodic-trends]
+encompasses:
+  - { id: chemistry.bonding.covalent, weight: 0.4 }
+  - { id: chemistry.matter.periodic-trends, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: hydride-boiling-points.svg
+    alt: "กราฟจุดเดือด (°C) ของสารประกอบไฮโดรเจนในคาบ 2 ถึง 5 หมู่ 14: CH₄ −161.5, SiH₄ −111.9, GeH₄ −88.5, SnH₄ −52 เพิ่มขึ้นสม่ำเสมอ หมู่ 15: NH₃ −33.3, PH₃ −87.7, AsH₃ −62.5, SbH₃ −17 หมู่ 16: H₂O 100, H₂S −60.3, H₂Se −41.3, H₂Te −2.2 หมู่ 17: HF 19.5, HCl −85.1, HBr −66.8, HI −35.4 ในหมู่ 15 ถึง 17 สารของคาบ 2 (NH₃, H₂O, HF) มีจุดเดือดสูงกว่าสารคาบ 3 มาก ผิดแนวโน้ม ส่วนหมู่ 14 ไม่มีจุดผิดแนวโน้ม"
+    caption: "หมู่ 14 จุดเดือดเพิ่มตามมวลโมเลกุล แต่ NH₃ H₂O และ HF เดือดสูงผิดแนวโน้มเพราะพันธะไฮโดรเจน"
+  - { type: check, problem: chemistry.bonding.polarity-intermolecular.p005, prompt: "H ต้องต่อกับ N, O หรือ F โดยตรง" }
+  - type: worked-example
+    title: ทำนายรูปร่างและสภาพขั้วของ BF₃ และ NF₃
+    problem: "$\\mathrm{BF_3}$ และ $\\mathrm{NF_3}$ มีอะตอมรอบนอกเป็น F 3 อะตอมเหมือนกัน จงทำนายรูปร่างและสภาพขั้วของแต่ละโมเลกุล"
+    steps:
+      - text: "B มีเวเลนซ์อิเล็กตรอน 3 ตัว ใช้ทั้งหมดสร้างพันธะกับ F 3 พันธะ ไม่มีคู่โดดเดี่ยว รวม 3 กลุ่มอิเล็กตรอน"
+        why: "B เป็นข้อยกเว้นของกฎออกเตต มีอิเล็กตรอนรอบตัวเพียง 6"
+      - text: "3 กลุ่ม ไม่มีคู่โดดเดี่ยว จึงเป็นสามเหลี่ยมแบนราบ มุม 120° ขั้ว B–F สามพันธะหักล้างกัน $\\mathrm{BF_3}$ ไม่มีขั้ว"
+      - text: "N มีเวเลนซ์อิเล็กตรอน 5 ตัว สร้างพันธะ 3 พันธะ เหลือคู่โดดเดี่ยว 1 คู่ รวม 4 กลุ่มอิเล็กตรอน"
+      - text: "4 กลุ่ม มีคู่โดดเดี่ยว 1 คู่ จึงเป็นพีระมิดฐานสามเหลี่ยม ขั้วไม่หักล้าง $\\mathrm{NF_3}$ มีขั้ว"
+        why: "คู่โดดเดี่ยวดันพันธะลงด้านเดียว โมเลกุลจึงไม่สมมาตร"
+    answer: "$\\mathrm{BF_3}$ สามเหลี่ยมแบนราบ ไม่มีขั้ว · $\\mathrm{NF_3}$ พีระมิดฐานสามเหลี่ยม มีขั้ว"
+  - type: worked-example
+    title: เรียงจุดเดือดของสาร 3 ชนิดที่มวลใกล้กัน
+    problem: "เรียงจุดเดือดจากต่ำไปสูง: โพรเพน $\\mathrm{CH_3CH_2CH_3}$ (44.1 g/mol), ไดเมทิลอีเทอร์ $\\mathrm{CH_3OCH_3}$ (46.1 g/mol), เอทานอล $\\mathrm{CH_3CH_2OH}$ (46.1 g/mol)"
+    steps:
+      - text: "มวลใกล้กัน แรงลอนดอนจึงใกล้เคียงกัน ต้องตัดสินจากแรงชนิดอื่น"
+      - text: "โพรเพนไม่มีขั้ว มีแต่แรงลอนดอน"
+      - text: "ไดเมทิลอีเทอร์มีขั้ว (มุมงอที่ O) มีแรงระหว่างขั้วเพิ่ม แต่ H ทุกตัวต่อกับ C จึงไม่มีพันธะไฮโดรเจนระหว่างโมเลกุลของตัวเอง"
+      - text: "เอทานอลมี O–H จึงเกิดพันธะไฮโดรเจน ซึ่งแรงที่สุด"
+        why: "จุดเดือดจริง: −42 °C, −24 °C และ 78 °C ตามลำดับ"
+    answer: "โพรเพน < ไดเมทิลอีเทอร์ < เอทานอล"
+  - { type: check, problem: chemistry.bonding.polarity-intermolecular.p009, prompt: "ไอน้ำยังเป็นโมเลกุล H₂O อยู่หรือไม่" }
+  - type: molecule
+    title: เอทานอล (C₂H₅OH)
+    cid: 702
+    name: ethanol
+    caption: "หมู่ O–H ทำให้เอทานอลสร้างพันธะไฮโดรเจนกับโมเลกุลเอทานอลด้วยกันและกับน้ำ จึงเดือดที่ 78 °C และผสมกับน้ำได้ทุกอัตราส่วน"
+  - type: molecule
+    title: ไดเมทิลอีเทอร์ (CH₃OCH₃)
+    cid: 8254
+    name: dimethyl ether
+    caption: "สูตรโมเลกุล C₂H₆O เหมือนเอทานอล แต่ O อยู่ตรงกลางและ H ทุกตัวต่อกับ C จึงไม่มีพันธะไฮโดรเจนระหว่างโมเลกุลของตัวเอง เดือดที่ −24 °C"
+  - type: simulation
+    title: สภาพขั้วของโมเลกุล (PhET Molecule Polarity)
+    url: https://phet.colorado.edu/en/simulations/molecule-polarity
+    provider: phet
+    note: เปลี่ยนอิเล็กโทรเนกาติวิตีของอะตอมและรูปร่างโมเลกุล แล้วดูว่าขั้วของพันธะรวมกันเป็นขั้วของโมเลกุลอย่างไร
+glossary:
+  - { term: VSEPR, definition: ทฤษฎีที่ใช้การผลักกันของกลุ่มอิเล็กตรอนรอบอะตอมกลางทำนายรูปร่างโมเลกุล }
+  - { term: โมเลกุลมีขั้ว, definition: โมเลกุลที่ขั้วของพันธะไม่หักล้างกัน มีปลายหนึ่งเป็นลบบางส่วนและอีกปลายเป็นบวกบางส่วน }
+  - { term: แรงลอนดอน, definition: แรงดึงดูดจากขั้วชั่วคราว เกิดกับทุกโมเลกุล เพิ่มตามจำนวนอิเล็กตรอนและพื้นที่ผิวสัมผัส }
+  - { term: แรงระหว่างขั้ว, definition: แรงดึงดูดระหว่างปลายบวกบางส่วนกับปลายลบบางส่วนของโมเลกุลมีขั้ว }
+  - { term: พันธะไฮโดรเจน, definition: "แรงดึงดูดระหว่าง H ที่ต่อกับ N, O หรือ F กับคู่โดดเดี่ยวบน N, O หรือ F ของอีกโมเลกุล" }
+  - { term: สารโคเวเลนต์โครงร่างตาข่าย, definition: สารที่อะตอมทั้งก้อนต่อกันด้วยพันธะโคเวเลนต์ ไม่มีโมเลกุลเดี่ยว เช่น เพชร แกรไฟต์ SiO₂ }
+flashcards:
+  - { front: "แรงระหว่างโมเลกุล 3 ชนิด เรียงจากอ่อนไปแรง (เมื่อมวลใกล้กัน)", back: "แรงลอนดอน < แรงระหว่างขั้ว < พันธะไฮโดรเจน" }
+  - { front: "เงื่อนไขของพันธะไฮโดรเจน", back: "H ต่อกับ N, O หรือ F โดยตรง และดึงดูดคู่โดดเดี่ยวบน N, O หรือ F ของอีกโมเลกุล" }
+  - { front: "สารโมเลกุลเดือด อะไรถูกทำลาย", back: "แรงระหว่างโมเลกุล ไม่ใช่พันธะโคเวเลนต์ในโมเลกุล" }
+  - { front: "รูปร่างและสภาพขั้วของ BF₃, NH₃, SF₆", back: "สามเหลี่ยมแบนราบ ไม่มีขั้ว · พีระมิดฐานสามเหลี่ยม มีขั้ว · ทรงแปดหน้า ไม่มีขั้ว" }
+  - { front: "ทำไมแกรไฟต์นำไฟฟ้าแต่เพชรไม่นำ", back: "C ในแกรไฟต์ใช้อิเล็กตรอน 3 ตัวสร้างพันธะ อีก 1 ตัวเคลื่อนที่ได้ในแผ่น ส่วนเพชรใช้ครบทั้ง 4 ตัว" }
+references:
+  - { title: "แรงระหว่างโมเลกุล", url: "https://th.wikipedia.org/wiki/แรงระหว่างโมเลกุล", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Intermolecular force", url: "https://en.wikipedia.org/wiki/Intermolecular_force", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "VSEPR theory", url: "https://en.wikipedia.org/wiki/VSEPR_theory", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.1 Intermolecular Forces (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/10-1-intermolecular-forces", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

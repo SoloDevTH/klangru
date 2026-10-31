@@ -1,0 +1,63 @@
+id: math.stats.random-variables
+subject: math
+title: { th: ตัวแปรสุ่มและการแจกแจงความน่าจะเป็นแบบไม่ต่อเนื่อง, en: Discrete random variables and probability distributions }
+summary: ตัวแปรสุ่ม ตารางและกราฟการแจกแจงความน่าจะเป็น ค่าคาดหมาย ความแปรปรวน การแจกแจงเอกรูป ทวินาม และปัวซง และการใช้ค่าคาดหมายตัดสินใจ
+difficulty: 6.5
+minutes: 40
+prerequisites: [math.prob.probability, math.prob.counting, math.stats.dispersion]
+encompasses:
+  - { id: math.prob.probability, weight: 0.4 }
+  - { id: math.prob.counting, weight: 0.3 }
+  - { id: math.stats.dispersion, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ค่าคาดหมายและส่วนเบี่ยงเบนมาตรฐานจากตาราง
+    problem: "ร้านกาแฟสุ่มแจกคูปองส่วนลด $X$ บาท ตามตาราง: $P(X = 10) = 0.5$, $P(X = 20) = 0.3$, $P(X = 50) = 0.2$ จงหา $E(X)$ และ $\\sigma$"
+    steps:
+      - text: "ตรวจว่าความน่าจะเป็นรวมกันได้ $0.5 + 0.3 + 0.2 = 1$ ✓"
+      - text: "$E(X) = 10(0.5) + 20(0.3) + 50(0.2) = 5 + 6 + 10 = 21$ บาท"
+        why: "ถ่วงแต่ละค่าด้วยความน่าจะเป็น ไม่ใช่เฉลี่ย $\\tfrac{10 + 20 + 50}{3}$"
+      - text: "$E(X^2) = 100(0.5) + 400(0.3) + 2500(0.2) = 50 + 120 + 500 = 670$"
+      - text: "$\\sigma^2 = E(X^2) - \\mu^2 = 670 - 441 = 229$"
+      - text: "$\\sigma = \\sqrt{229} \\approx 15.13$ บาท"
+    answer: "$E(X) = 21$ บาท และ $\\sigma \\approx 15.13$ บาท"
+  - { type: check, problem: math.stats.random-variables.p003, prompt: "ถ่วงแต่ละค่าด้วยความน่าจะเป็น" }
+  - type: figure
+    src: binomial-guess.svg
+    alt: "แผนภูมิแท่งการแจกแจงทวินาม n = 5, p = 0.25 แกนนอนคือจำนวนข้อที่เดาถูก 0 ถึง 5 ความสูงของแท่งคือ 0.237, 0.396, 0.264, 0.088, 0.015 และ 0.001 เส้นประสีแดงที่ 1.25 เขียนว่า E(X) = 1.25"
+    caption: "เดาข้อสอบ 5 ข้อ ข้อละ 4 ตัวเลือก มีโอกาสเดาถูก 1 ข้อมากที่สุด และคาดว่าถูกเฉลี่ย 1.25 ข้อ"
+  - type: worked-example
+    title: การแจกแจงทวินาม
+    problem: "เมล็ดพันธุ์ชนิดหนึ่งงอกได้ 30% (ค่าสมมติ) ปลูก 8 เมล็ด จงหาความน่าจะเป็นที่งอก 2 เมล็ดพอดี และค่าคาดหมายของจำนวนที่งอก"
+    steps:
+      - text: "แต่ละเมล็ดงอกหรือไม่งอกอย่างอิสระ $p = 0.3$ คงที่ $n = 8$ จึงเป็นการแจกแจงทวินาม"
+        why: "ตรวจเงื่อนไขก่อนใช้สูตร"
+      - text: "$P(X = 2) = \\binom{8}{2}(0.3)^2(0.7)^6$"
+      - text: "$= 28 \\times 0.09 \\times 0.117649 \\approx 0.2965$"
+        why: "$\\binom82 = 28$ คือจำนวนวิธีเลือกว่าเมล็ดใดสองเมล็ดที่งอก"
+      - text: "$E(X) = np = 8 \\times 0.3 = 2.4$ เมล็ด"
+    answer: "$P(X = 2) \\approx 0.2965$ และ $E(X) = 2.4$ เมล็ด"
+  - { type: check, problem: math.stats.random-variables.p007, prompt: "มีกี่ลำดับที่ได้หัวสองครั้ง" }
+glossary:
+  - { term: ตัวแปรสุ่ม, definition: "การกำหนดค่าตัวเลขให้แต่ละผลลัพธ์ในปริภูมิตัวอย่าง" }
+  - { term: การแจกแจงความน่าจะเป็น, definition: "ตารางหรือกราฟบอกค่าที่ตัวแปรสุ่มเป็นได้และความน่าจะเป็นของแต่ละค่า รวมกันได้ 1" }
+  - { term: ค่าคาดหมาย, definition: "E(X) = Σ x P(X = x) ค่าเฉลี่ยระยะยาวของตัวแปรสุ่ม" }
+  - { term: การแจกแจงทวินาม, definition: "จำนวนครั้งที่สำเร็จจากการทดลองอิสระ n ครั้ง ความน่าจะเป็นสำเร็จ p เท่ากันทุกครั้ง" }
+  - { term: การแจกแจงปัวซง, definition: "จำนวนเหตุการณ์สุ่มในช่วงเวลาหรือพื้นที่หนึ่ง เมื่อเฉลี่ยเกิด λ ครั้ง" }
+flashcards:
+  - { front: "ความน่าจะเป็นในการแจกแจงต้องมีสมบัติใด", back: "แต่ละค่าอยู่ระหว่าง 0 ถึง 1 และรวมกันได้ 1" }
+  - { front: "สูตรความแปรปรวนแบบลัด", back: "σ² = E(X²) − μ²" }
+  - { front: "ทวินาม: P(X = k), ค่าเฉลี่ย, ความแปรปรวน", back: "C(n, k)pᵏ(1 − p)ⁿ⁻ᵏ, np, np(1 − p)" }
+  - { front: "ปัวซง: P(X = k) และค่าเฉลี่ย", back: "e^(−λ) λᵏ / k! ค่าเฉลี่ยและความแปรปรวนเท่ากับ λ" }
+  - { front: "ความน่าจะเป็นที่สำเร็จอย่างน้อยหนึ่งครั้ง", back: "1 − P(X = 0) = 1 − (1 − p)ⁿ" }
+references:
+  - { title: "ตัวแปรสุ่ม", url: "https://th.wikipedia.org/wiki/ตัวแปรสุ่ม", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "การแจกแจงทวินาม", url: "https://th.wikipedia.org/wiki/การแจกแจงทวินาม", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Expected value", url: "https://en.wikipedia.org/wiki/Expected_value", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.3 Binomial Distribution (Introductory Statistics 2e, OpenStax)", url: "https://openstax.org/books/introductory-statistics-2e/pages/4-3-binomial-distribution", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

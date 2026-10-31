@@ -1,0 +1,343 @@
+problems:
+  - id: math.stats.random-variables.p001
+    topics: [math.stats.random-variables]
+    difficulty: 1
+    type: numeric
+    stem: "ตัวแปรสุ่ม $X$ มีค่าได้ 0, 1, 2 โดย $P(X = 0) = 0.2$ และ $P(X = 1) = 0.5$ จงหา $P(X = 2)$"
+    answer: { value: 0.3, tolerance: 0.001 }
+    hints:
+      - "ความน่าจะเป็นทุกค่ารวมกันต้องได้ 1"
+      - "$1 - 0.2 - 0.5$"
+    misconceptions:
+      - { match: 0.7, feedback: "0.7 คือผลบวกของสองค่าที่ให้มา ต้องนำไปลบออกจาก 1" }
+    solution: "$P(X = 2) = 1 - 0.2 - 0.5 = 0.3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p002
+    topics: [math.stats.random-variables]
+    difficulty: 1
+    type: mcq
+    stem: "ตารางใดเป็นการแจกแจงความน่าจะเป็นที่ถูกต้องของตัวแปรสุ่มที่มีค่า 1, 2, 3"
+    choices:
+      - { id: a, text: "$0.2,\\ 0.5,\\ 0.3$", correct: true }
+      - { id: b, text: "$0.3,\\ 0.4,\\ 0.4$", feedback: "รวมกันได้ 1.1 เกิน 1" }
+      - { id: c, text: "$0.6,\\ 0.5,\\ -0.1$", feedback: "รวมกันได้ 1 แต่ความน่าจะเป็นติดลบไม่ได้" }
+      - { id: d, text: "$\\tfrac13,\\ \\tfrac13,\\ \\tfrac16$", feedback: "รวมกันได้ $\\tfrac56$ ไม่ถึง 1" }
+    hints:
+      - "ทุกค่าต้องอยู่ระหว่าง 0 ถึง 1"
+      - "รวมกันต้องได้ 1 พอดี"
+    solution: "มีเพียง $0.2 + 0.5 + 0.3 = 1$ ที่ทุกค่าไม่ติดลบและรวมได้ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p003
+    topics: [math.stats.random-variables]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวแปรสุ่ม $X$ มีการแจกแจง: $P(X = 0) = 0.1$, $P(X = 1) = 0.3$, $P(X = 2) = 0.4$, $P(X = 3) = 0.2$ จงหา $E(X)$"
+    answer: { value: 1.7, tolerance: 0.001 }
+    hints:
+      - "$E(X) = \\sum x\\,P(X = x)$"
+      - "$0(0.1) + 1(0.3) + 2(0.4) + 3(0.2)$"
+    misconceptions:
+      - { match: 1.5, feedback: "เฉลี่ยค่า 0, 1, 2, 3 ตรง ๆ โดยไม่ถ่วงด้วยความน่าจะเป็น" }
+      - { match: 0.25, feedback: "นี่คือค่าเฉลี่ยของความน่าจะเป็น ต้องคูณค่า $x$ กับความน่าจะเป็นแล้วรวม" }
+    solution: "$E(X) = 0 + 0.3 + 0.8 + 0.6 = 1.7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p004
+    topics: [math.stats.random-variables]
+    difficulty: 2
+    type: numeric
+    stem: "ทอยลูกเต๋าที่เที่ยงตรงหนึ่งลูก ให้ $X$ เป็นแต้มที่ได้ จงหา $E(X)$"
+    answer: { value: 3.5, tolerance: 0.001 }
+    hints:
+      - "$X$ มีการแจกแจงเอกรูป แต่ละแต้มมีความน่าจะเป็น $\\tfrac16$"
+      - "$E(X) = \\tfrac16(1 + 2 + 3 + 4 + 5 + 6)$"
+    misconceptions:
+      - { match: 21, feedback: "21 คือผลรวมแต้ม ต้องคูณด้วย $\\tfrac16$" }
+      - { match: 3, feedback: "ค่าคาดหมายไม่จำเป็นต้องเป็นแต้มที่ทอยได้จริง คำนวณให้ครบ" }
+    solution: "$E(X) = \\tfrac{21}{6} = 3.5$ (ไม่มีหน้า 3.5 แต่ทอยหลายครั้งแล้วเฉลี่ยได้ใกล้ 3.5)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p005
+    topics: [math.stats.random-variables]
+    difficulty: 2
+    type: numeric
+    stem: "จากแผนภูมิแท่งการแจกแจงความน่าจะเป็นของ $X$ ในภาพ จงหา $E(X)$"
+    figure:
+      src: pmf-problem.svg
+      alt: "แผนภูมิแท่ง แกนนอนคือค่า x = 1, 2, 3, 4 แกนตั้งคือ P(X = x) มีเส้นตารางทุก 0.1 แท่งสูง 0.1, 0.2, 0.3 และ 0.4 ตามลำดับ"
+    answer: { value: 3, tolerance: 0.001 }
+    hints:
+      - "อ่านความสูงของแต่ละแท่งเป็นความน่าจะเป็น"
+      - "$E(X) = 1(0.1) + 2(0.2) + 3(0.3) + 4(0.4)$"
+    misconceptions:
+      - { match: 2.5, feedback: "เฉลี่ยค่า 1 ถึง 4 ตรง ๆ แต่ค่ามากมีความน่าจะเป็นสูงกว่า ต้องถ่วงน้ำหนัก" }
+      - { match: 4, feedback: "4 คือค่าที่มีความน่าจะเป็นมากที่สุด ไม่ใช่ค่าคาดหมาย" }
+    solution: "$E(X) = 0.1 + 0.4 + 0.9 + 1.6 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p006
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวแปรสุ่ม $X$ มีการแจกแจง $P(X = 0) = 0.1$, $P(X = 1) = 0.3$, $P(X = 2) = 0.4$, $P(X = 3) = 0.2$ ซึ่งมี $E(X) = 1.7$ จงหาความแปรปรวน $\\sigma^2$"
+    answer: { value: 0.81, tolerance: 0.005 }
+    hints:
+      - "$\\sigma^2 = E(X^2) - \\mu^2$"
+      - "$E(X^2) = 0(0.1) + 1(0.3) + 4(0.4) + 9(0.2)$"
+    misconceptions:
+      - { match: 3.7, feedback: "3.7 คือ $E(X^2)$ ต้องลบ $\\mu^2 = 2.89$" }
+      - { match: 0.9, feedback: "0.9 คือส่วนเบี่ยงเบนมาตรฐาน โจทย์ถามความแปรปรวน" }
+    solution: "$E(X^2) = 0.3 + 1.6 + 1.8 = 3.7$ จึง $\\sigma^2 = 3.7 - 1.7^2 = 3.7 - 2.89 = 0.81$ ($\\sigma = 0.9$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p007
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: numeric
+    stem: "โยนเหรียญที่เที่ยงตรง 4 ครั้ง ความน่าจะเป็นที่ได้หัว 2 ครั้งพอดีเท่ากับเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.375, tolerance: 0.001 }
+    hints:
+      - "จำนวนหัวมีการแจกแจงทวินาม $n = 4$, $p = 0.5$"
+      - "$P(X = 2) = \\binom42(0.5)^2(0.5)^2$"
+    misconceptions:
+      - { match: 0.0625, feedback: "$(0.5)^4$ คือความน่าจะเป็นของลำดับเดียว เช่น HHTT ต้องคูณจำนวนลำดับ $\\binom42 = 6$" }
+      - { match: 0.5, feedback: "ได้หัวครึ่งหนึ่งไม่ได้หมายความว่าความน่าจะเป็นเป็นครึ่ง ต้องคำนวณด้วยสูตรทวินาม" }
+    solution: "$\\binom42(0.5)^4 = \\dfrac{6}{16} = 0.375$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p008
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: numeric
+    stem: "เกษตรกรในเพชรบูรณ์ใช้เมล็ดพันธุ์ข้าวโพดที่มีอัตราการงอก 80% (ค่าสมมติ) ปลูก 5 เมล็ดในหลุมแยกกัน ความน่าจะเป็นที่งอกครบทั้ง 5 เมล็ดเท่ากับเท่าใด (ทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.3277, tolerance: 0.001 }
+    hints:
+      - "แต่ละเมล็ดงอกอย่างอิสระด้วยความน่าจะเป็น 0.8"
+      - "$P(X = 5) = \\binom55(0.8)^5(0.2)^0$"
+    misconceptions:
+      - { match: 0.8, feedback: "0.8 คือความน่าจะเป็นของเมล็ดเดียว ต้องงอกครบทุกเมล็ด จึงคูณกันห้าครั้ง" }
+      - { match: 4, feedback: "4 คือจำนวนที่คาดว่าจะงอก ($np$) ไม่ใช่ความน่าจะเป็น" }
+    solution: "$(0.8)^5 = 0.32768 \\approx 0.3277$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p009
+    topics: [math.stats.random-variables]
+    difficulty: 2
+    type: numeric
+    stem: "ปลูกเมล็ดข้าวโพดที่มีอัตราการงอก 80% (ค่าสมมติ) จำนวน 20 เมล็ด คาดว่าจะงอกกี่เมล็ด"
+    answer: { value: 16, unit: เมล็ด }
+    hints:
+      - "จำนวนที่งอกมีการแจกแจงทวินาม $n = 20$, $p = 0.8$"
+      - "$E(X) = np$"
+    misconceptions:
+      - { match: 4, feedback: "$20 \\times 0.2 = 4$ คือจำนวนที่คาดว่าไม่งอก" }
+    solution: "$E(X) = 20 \\times 0.8 = 16$ เมล็ด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p010
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: numeric
+    stem: "ศูนย์บริการแห่งหนึ่งได้รับโทรศัพท์เฉลี่ยชั่วโมงละ 2 สาย จำนวนสายในหนึ่งชั่วโมงมีการแจกแจงปัวซง ความน่าจะเป็นที่ชั่วโมงหนึ่งไม่มีสายเข้าเลยเท่ากับเท่าใด (ทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.1353, tolerance: 0.001 }
+    hints:
+      - "$P(X = k) = \\dfrac{e^{-\\lambda}\\lambda^k}{k!}$ เมื่อ $\\lambda = 2$"
+      - "$k = 0$: $\\lambda^0 = 1$ และ $0! = 1$"
+    misconceptions:
+      - { match: 0, feedback: "เฉลี่ย 2 สายไม่ได้แปลว่าต้องมีสายทุกชั่วโมง บางชั่วโมงไม่มีสายเลยได้" }
+      - { match: 0.5, feedback: "$\\tfrac1\\lambda$ ไม่ใช่ความน่าจะเป็นของปัวซง ต้องใช้ $e^{-\\lambda}$" }
+    solution: "$P(X = 0) = e^{-2} \\approx 0.1353$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p011
+    topics: [math.stats.random-variables]
+    difficulty: 4
+    type: numeric
+    stem: "ข้อสอบปรนัย 10 ข้อ ข้อละ 4 ตัวเลือก ตอบถูกได้ 1 คะแนน ตอบผิดถูกหัก 0.25 คะแนน ถ้าเดาทุกข้อ คะแนนคาดหมายเท่ากับเท่าใด"
+    answer: { value: 0.625, tolerance: 0.005, unit: คะแนน }
+    hints:
+      - "จำนวนข้อที่ถูกคาดว่า $10 \\times 0.25 = 2.5$ ข้อ ผิด 7.5 ข้อ"
+      - "คะแนนคาดหมาย $= 2.5(1) - 7.5(0.25)$"
+    misconceptions:
+      - { match: 2.5, feedback: "2.5 คือจำนวนข้อที่คาดว่าถูก ยังไม่หักคะแนนข้อที่ผิด" }
+      - { match: 0, feedback: "หัก 0.25 ต่อข้อผิดยังไม่พอให้คะแนนคาดหมายเป็นศูนย์ (ต้องหัก $\\tfrac13$)" }
+    solution: "$E(\\text{คะแนน}) = 2.5 - 7.5 \\times 0.25 = 2.5 - 1.875 = 0.625$ คะแนน ถ้าหักข้อละ $\\tfrac13$ คะแนนคาดหมายจะเป็น 0 พอดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p012
+    topics: [math.stats.random-variables]
+    difficulty: 4
+    type: numeric
+    stem: "งานวัดประจำปีของโรงเรียน (สมมติ) ขายสลากการกุศล 1,000 ใบ ใบละ 20 บาท มีรางวัลที่ 1 เงิน 5,000 บาท 1 รางวัล รางวัลที่ 2 เงิน 1,000 บาท 4 รางวัล และรางวัลที่ 3 เงิน 200 บาท 10 รางวัล ผู้ซื้อหนึ่งใบได้กำไรคาดหมายเท่าใด (บาท ติดลบได้)"
+    answer: { value: -9, unit: บาท }
+    hints:
+      - "เงินรางวัลคาดหมายต่อใบ $= \\dfrac{\\text{เงินรางวัลรวม}}{1000}$"
+      - "กำไรคาดหมาย = เงินรางวัลคาดหมาย − ราคาสลาก"
+    misconceptions:
+      - { match: 11, feedback: "11 บาทคือเงินรางวัลคาดหมาย ยังไม่ได้หักค่าสลาก 20 บาท" }
+      - { match: 4980, feedback: "ไม่ได้ถ่วงด้วยความน่าจะเป็น โอกาสถูกรางวัลที่ 1 มีแค่ $\\tfrac1{1000}$" }
+    solution: "เงินรางวัลรวม $5000 + 4(1000) + 10(200) = 11{,}000$ บาท คาดหมายต่อใบ $11$ บาท กำไรคาดหมาย $11 - 20 = -9$ บาท (ส่วนต่างนำไปเป็นเงินการกุศล)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p013
+    topics: [math.stats.random-variables]
+    difficulty: 4
+    type: mcq
+    stem: "ประกันรถจักรยานยนต์สองแบบ (ตัวเลขสมมติ) แบบ A เบี้ยปีละ 2,000 บาท เมื่อเกิดอุบัติเหตุจ่ายส่วนแรกเอง 500 บาท แบบ B เบี้ยปีละ 1,200 บาท จ่ายส่วนแรกเอง 5,000 บาท ถ้าโอกาสเกิดอุบัติเหตุ (ไม่เกินปีละครั้ง และค่าเสียหายเกิน 5,000 บาท) คือ 0.1 ต่อปี แบบใดมีค่าใช้จ่ายคาดหมายต่อปีน้อยกว่า"
+    choices:
+      - { id: a, text: "แบบ B (1,700 บาท เทียบกับ 2,050 บาท)", correct: true }
+      - { id: b, text: "แบบ A เพราะส่วนแรกต่ำกว่ามาก", feedback: "ต้องถ่วงส่วนแรกด้วยโอกาส 0.1 แบบ A คาดหมาย $2000 + 0.1(500) = 2050$ บาท แบบ B $1200 + 0.1(5000) = 1700$ บาท" }
+      - { id: c, text: "แบบ B (6,200 บาท เทียบกับ 2,500 บาท)", feedback: "นี่คือค่าใช้จ่ายถ้าเกิดอุบัติเหตุแน่นอน ต้องถ่วงด้วยความน่าจะเป็น 0.1" }
+      - { id: d, text: "เท่ากัน", feedback: "ค่าใช้จ่ายคาดหมายต่างกัน 350 บาท" }
+    hints:
+      - "ค่าใช้จ่ายคาดหมาย = เบี้ย + (โอกาสเกิดเหตุ × ส่วนแรก)"
+      - "คำนวณทั้งสองแบบแล้วเทียบ"
+    solution: "A: $2000 + 0.1 \\times 500 = 2050$ บาท B: $1200 + 0.1 \\times 5000 = 1700$ บาท แบบ B ถูกกว่าโดยเฉลี่ย แต่ถ้าโอกาสเกิดเหตุสูงขึ้น เช่น 0.25 แบบ A ($2125$) จะถูกกว่าแบบ B ($2450$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p014
+    topics: [math.stats.random-variables]
+    difficulty: 4
+    type: numeric
+    stem: "สำรวจ 50 ครัวเรือนในหมู่บ้านแห่งหนึ่ง (ข้อมูลสมมติ) พบว่ามีรถจักรยานยนต์ 0 คัน 5 ครัวเรือน 1 คัน 20 ครัวเรือน 2 คัน 15 ครัวเรือน และ 3 คัน 10 ครัวเรือน ให้ $X$ เป็นจำนวนรถจักรยานยนต์ของครัวเรือนที่สุ่มมา จงหา $E(X)$"
+    answer: { value: 1.6, tolerance: 0.001, unit: คัน }
+    hints:
+      - "ใช้ความถี่สัมพัทธ์เป็นความน่าจะเป็น เช่น $P(X = 1) = \\tfrac{20}{50}$"
+      - "$E(X) = \\dfrac{0(5) + 1(20) + 2(15) + 3(10)}{50}$"
+    misconceptions:
+      - { match: 1.5, feedback: "เฉลี่ยค่า 0, 1, 2, 3 ตรง ๆ ต้องถ่วงด้วยจำนวนครัวเรือน" }
+      - { match: 80, feedback: "80 คือจำนวนรถทั้งหมด ต้องหารด้วย 50 ครัวเรือน" }
+    solution: "$E(X) = \\dfrac{0 + 20 + 30 + 30}{50} = 1.6$ คัน ถ้าหมู่บ้านมี 200 ครัวเรือน คาดว่ามีรถประมาณ $200 \\times 1.6 = 320$ คัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p015
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: match
+    stem: "จับคู่สถานการณ์กับการแจกแจงที่เหมาะสม"
+    pairs:
+      - { left: "แต้มจากการทอยลูกเต๋าที่เที่ยงตรงหนึ่งครั้ง", right: "การแจกแจงเอกรูป" }
+      - { left: "จำนวนข้อที่เดาถูกจากข้อสอบ 20 ข้อ ข้อละ 4 ตัวเลือก", right: "การแจกแจงทวินาม" }
+      - { left: "จำนวนรถที่ผ่านด่านเก็บเงินในหนึ่งนาที เมื่อเฉลี่ยนาทีละ 6 คัน", right: "การแจกแจงปัวซง" }
+      - { left: "จำนวนสมาชิกในครัวเรือน จากผลสำรวจหมู่บ้าน", right: "การแจกแจงจากข้อมูลจริง (ความถี่สัมพัทธ์)" }
+    hints:
+      - "ทวินามมีจำนวนครั้งทดลอง $n$ แน่นอน ปัวซงนับเหตุการณ์ในช่วงเวลาโดยไม่มีจำนวนครั้งสูงสุด"
+      - "ถ้าความน่าจะเป็นได้มาจากการสำรวจ เป็นการแจกแจงจากข้อมูลจริง"
+    solution: "ลูกเต๋า: ทุกแต้มโอกาสเท่ากัน (เอกรูป); เดาข้อสอบ: $n = 20$, $p = 0.25$ (ทวินาม); รถผ่านด่าน: นับเหตุการณ์สุ่มในช่วงเวลา (ปัวซง $\\lambda = 6$); สมาชิกครัวเรือน: ใช้ความถี่สัมพัทธ์จากการสำรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p016
+    topics: [math.stats.random-variables]
+    difficulty: 5
+    type: numeric
+    stem: "โรงงานพบว่าหลอดไฟ 10% เป็นหลอดเสีย (ค่าสมมติ) สุ่มหลอดไฟ 6 หลอดอย่างอิสระ ความน่าจะเป็นที่มีหลอดเสียอย่างน้อยหนึ่งหลอดเท่ากับเท่าใด (ทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.4686, tolerance: 0.001 }
+    hints:
+      - "อย่างน้อยหนึ่ง $= 1 - P(\\text{ไม่มีหลอดเสียเลย})$"
+      - "$P(X = 0) = (0.9)^6$"
+    misconceptions:
+      - { match: 0.6, feedback: "$6 \\times 0.1$ คือจำนวนหลอดเสียคาดหมาย ไม่ใช่ความน่าจะเป็น (ถ้าใช้วิธีนี้กับ 11 หลอดจะได้เกิน 1)" }
+      - { match: 0.5314, feedback: "นี่คือความน่าจะเป็นที่ไม่มีหลอดเสียเลย ต้องนำไปลบออกจาก 1" }
+    solution: "$1 - (0.9)^6 = 1 - 0.531441 \\approx 0.4686$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p017
+    topics: [math.stats.random-variables]
+    difficulty: 5
+    type: numeric
+    stem: "ผ้าทอม้วนหนึ่งมีจุดบกพร่องเฉลี่ย 3 จุด จำนวนจุดบกพร่องมีการแจกแจงปัวซง ความน่าจะเป็นที่ผ้าม้วนหนึ่งมีจุดบกพร่องไม่เกิน 1 จุดเท่ากับเท่าใด (ทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.1991, tolerance: 0.001 }
+    hints:
+      - "ไม่เกิน 1 จุด $= P(X = 0) + P(X = 1)$"
+      - "$\\lambda = 3$: $P(X = 0) = e^{-3}$ และ $P(X = 1) = 3e^{-3}$"
+    misconceptions:
+      - { match: 0.0498, feedback: "นี่คือ $P(X = 0)$ อย่างเดียว ไม่เกิน 1 ต้องรวม $P(X = 1)$ ด้วย" }
+      - { match: 0.1494, feedback: "นี่คือ $P(X = 1)$ อย่างเดียว ต้องรวม $P(X = 0)$ ด้วย" }
+    solution: "$e^{-3}(1 + 3) = 4e^{-3} \\approx 4 \\times 0.049787 = 0.1991$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p018
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: mcq
+    stem: "นักเรียน 3 คน (ก ข ค) ต้องเลือก 1 คนไปเป็นตัวแทนอย่างยุติธรรม วิธีใดให้ทุกคนมีโอกาสเท่ากัน"
+    choices:
+      - { id: a, text: "ทอยลูกเต๋า แต้ม 1–2 ได้ ก แต้ม 3–4 ได้ ข แต้ม 5–6 ได้ ค", correct: true }
+      - { id: b, text: "โยนเหรียญสองเหรียญ หัวทั้งคู่ได้ ก ก้อยทั้งคู่ได้ ค ออกต่างกันได้ ข", feedback: "ออกต่างกันมีสองแบบ (HT, TH) ข มีโอกาส $\\tfrac12$ ส่วน ก และ ค มีคนละ $\\tfrac14$" }
+      - { id: c, text: "ทอยลูกเต๋า แต้ม 1 ได้ ก แต้ม 2 ได้ ข แต้มอื่นได้ ค", feedback: "ค มีโอกาส $\\tfrac46$ มากกว่าคนอื่น" }
+      - { id: d, text: "โยนเหรียญหนึ่งเหรียญ หัวได้ ก ก้อยให้ ข กับ ค ตกลงกันเอง", feedback: "ก มีโอกาส $\\tfrac12$ ไม่เท่ากับอีกสองคน" }
+    hints:
+      - "หาความน่าจะเป็นที่แต่ละคนถูกเลือกในแต่ละวิธี"
+      - "ยุติธรรมเมื่อทุกคนได้ $\\tfrac13$"
+    solution: "ลูกเต๋าแบ่งหกหน้าเป็นสามกลุ่มกลุ่มละสองหน้า ทุกคนได้ $\\tfrac26 = \\tfrac13$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p019
+    topics: [math.stats.random-variables]
+    difficulty: 5
+    type: numeric
+    stem: "ซุ้มเกมในงานวัดแห่งหนึ่ง (สมมติ) ให้เล่นครั้งละ 20 บาท ผู้เล่นทอยลูกเต๋าสองลูก ถ้าผลรวมเป็น 12 ได้เงิน 300 บาท ถ้าผลรวมเป็น 7 ได้เงิน 40 บาท นอกนั้นไม่ได้อะไร กำไรคาดหมายของผู้เล่นต่อครั้งเท่ากับกี่บาท (ติดลบได้)"
+    answer: { value: -5, unit: บาท }
+    hints:
+      - "$P(\\text{ผลรวม } 12) = \\tfrac1{36}$ และ $P(\\text{ผลรวม } 7) = \\tfrac6{36}$"
+      - "กำไรคาดหมาย = เงินรางวัลคาดหมาย − 20"
+    misconceptions:
+      - { match: 15, feedback: "15 บาทคือเงินรางวัลคาดหมาย ยังไม่ได้หักค่าเล่น" }
+      - { match: -10.56, feedback: "ผลรวม 7 เกิดได้ 6 แบบ ไม่ใช่ 1 แบบ $P = \\tfrac{6}{36}$" }
+    solution: "เงินรางวัลคาดหมาย $= 300 \\cdot \\tfrac1{36} + 40 \\cdot \\tfrac6{36} = \\tfrac{540}{36} = 15$ บาท กำไรคาดหมาย $15 - 20 = -5$ บาทต่อครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p020
+    topics: [math.stats.random-variables]
+    difficulty: 4
+    type: numeric
+    stem: "โยนเหรียญที่เที่ยงตรง 100 ครั้ง ให้ $X$ เป็นจำนวนหัว จงหาส่วนเบี่ยงเบนมาตรฐานของ $X$"
+    answer: { value: 5 }
+    hints:
+      - "$X$ มีการแจกแจงทวินาม $n = 100$, $p = 0.5$"
+      - "$\\sigma^2 = np(1 - p)$ แล้วถอดรากที่สอง"
+    misconceptions:
+      - { match: 25, feedback: "25 คือความแปรปรวน ต้องถอดรากที่สอง" }
+      - { match: 50, feedback: "50 คือค่าคาดหมาย $np$" }
+    solution: "$\\sigma^2 = 100(0.5)(0.5) = 25$ จึง $\\sigma = 5$ หัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.random-variables.p021
+    topics: [math.stats.random-variables]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาค่าคาดหมายของเงินรางวัลจากเกมหนึ่ง"
+    items:
+      - "นิยามตัวแปรสุ่ม $X$ = เงินรางวัลที่ได้ในหนึ่งครั้ง"
+      - "แจกแจงค่าที่ $X$ เป็นได้ทั้งหมด"
+      - "หาความน่าจะเป็นของแต่ละค่าจากปริภูมิตัวอย่าง"
+      - "ตรวจว่าความน่าจะเป็นรวมกันได้ 1"
+      - "คำนวณ $E(X) = \\sum x\\,P(X = x)$ แล้วเทียบกับค่าเล่น"
+    hints:
+      - "เริ่มจากกำหนดว่าสนใจปริมาณใด"
+      - "ตรวจความถูกต้องของตารางก่อนคำนวณ"
+    solution: "นิยาม $X$ → ค่าที่เป็นได้ → ความน่าจะเป็น → ตรวจผลรวม → คำนวณค่าคาดหมายและตีความ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

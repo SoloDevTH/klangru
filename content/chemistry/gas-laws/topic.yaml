@@ -1,0 +1,78 @@
+id: chemistry.gases.gas-laws
+subject: chemistry
+title: { th: แก๊สและกฎของแก๊ส, en: Gases and the gas laws }
+summary: กฎรวมแก๊ส กฎของอาโวกาโดร กฎแก๊สอุดมคติกับจำนวนโมลและมวลต่อโมล ความดันย่อยของดอลตัน การแพร่ตามกฎของเกรแฮม และการคำนวณปริมาตรแก๊สในปฏิกิริยา
+difficulty: 5.5
+minutes: 40
+prerequisites: [chemistry.stoichiometry.mole, physics.thermal.temperature-heat, physics.matter.pressure-fluids]
+encompasses:
+  - { id: chemistry.stoichiometry.mole, weight: 0.4 }
+  - { id: physics.thermal.temperature-heat, weight: 0.2 }
+  - { id: physics.matter.pressure-fluids, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: dalton-partial-pressure.svg
+    alt: "สามกล่องปริมาตรและอุณหภูมิเท่ากัน กล่องแรกมีฮีเลียม 0.4 mol (วงกลมเล็กสีส้ม 4 อนุภาค) ความดัน 0.4 atm บวกกล่องที่สองมีนีออน 0.6 mol (วงกลมใหญ่สีฟ้า 6 อนุภาค) ความดัน 0.6 atm ได้กล่องที่สามที่มีแก๊สผสม 1.0 mol (ส้ม 4 ฟ้า 6) ความดันรวม 0.4 + 0.6 = 1.0 atm"
+    caption: "แก๊สแต่ละชนิดในแก๊สผสมออกแรงดันเหมือนอยู่ลำพัง ความดันรวมเป็นผลบวกของความดันย่อย"
+  - { type: check, problem: chemistry.gases.gas-laws.p004, prompt: "เปลี่ยนองศาเซลเซียสเป็นเคลวินก่อน" }
+  - type: worked-example
+    title: ลูกโป่งตรวจอากาศลอยขึ้นที่สูง
+    problem: "ลูกโป่งตรวจอากาศมีแก๊สฮีเลียม 2.0 L ที่ระดับพื้นดิน ความดัน 1.0 atm อุณหภูมิ 27 °C เมื่อลอยขึ้นไปที่ความดัน 0.50 atm อุณหภูมิ −23 °C ลูกโป่งจะมีปริมาตรเท่าใด"
+    steps:
+      - text: "เปลี่ยนอุณหภูมิเป็นเคลวิน: $T_1 = 27 + 273 = 300$ K, $T_2 = -23 + 273 = 250$ K"
+      - text: "แก๊สมีจำนวนโมลเท่าเดิม แต่ $P$, $V$, $T$ เปลี่ยนพร้อมกัน จึงใช้กฎรวมแก๊ส $\\dfrac{P_1V_1}{T_1} = \\dfrac{P_2V_2}{T_2}$"
+      - text: "$V_2 = V_1 \\times \\dfrac{P_1}{P_2} \\times \\dfrac{T_2}{T_1} = 2.0 \\times \\dfrac{1.0}{0.50} \\times \\dfrac{250}{300}$"
+        why: "ความดันลดครึ่งหนึ่งทำให้ปริมาตรเพิ่ม 2 เท่า ส่วนอากาศที่เย็นลงทำให้ปริมาตรลดลงเล็กน้อย"
+      - text: "$V_2 = 3.33$ L"
+    answer: "ประมาณ 3.3 L"
+  - type: worked-example
+    title: ถุงลมนิรภัยต้องใช้โซเดียมเอไซด์เท่าใด
+    problem: "ถุงลมนิรภัยพองด้วยปฏิกิริยา $\\mathrm{2NaN_3(s) \\to 2Na(s) + 3N_2(g)}$ ถ้าใช้ $\\mathrm{NaN_3}$ 65.0 g จะได้แก๊สไนโตรเจนกี่ลิตรที่ 25 °C ความดัน 1.00 atm (Na = 22.99, N = 14.01)"
+    steps:
+      - text: "มวลต่อโมลของ $\\mathrm{NaN_3} = 22.99 + 3(14.01) = 65.02$ g/mol จึงมี $65.0 / 65.02 = 1.00$ mol"
+      - text: "จากสมการ $\\mathrm{NaN_3}$ 2 mol ให้ $\\mathrm{N_2}$ 3 mol จึงได้ $\\mathrm{N_2}$ $1.00 \\times \\dfrac{3}{2} = 1.50$ mol"
+        why: "สัมประสิทธิ์ในสมการบอกอัตราส่วนโมล"
+      - text: "$T = 25 + 273 = 298$ K · $V = \\dfrac{nRT}{P} = \\dfrac{1.50 \\times 0.0821 \\times 298}{1.00}$"
+      - text: "$V = 36.7$ L"
+    answer: "ประมาณ 36.7 L"
+  - { type: check, problem: chemistry.gases.gas-laws.p010, prompt: "แก๊สที่เบากว่าแพร่เร็วกว่า" }
+  - type: interactive
+    title: ความดันกับปริมาตรตามกฎแก๊สอุดมคติ
+    caption: "กราฟ P (atm) กับ V (L) จาก P = nRT/V ลองเพิ่มจำนวนโมล n หรืออุณหภูมิ T (เคลวิน) แล้วสังเกตว่าเส้นโค้งขยับขึ้น ที่ปริมาตรเท่ากัน ความดันแปรผันตรงกับ n และ T"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{0.0821 n T}{x}"]
+      sliders:
+        - { name: n, min: 0.1, max: 1, step: 0.1, value: 0.5, label: จำนวนโมล n (mol) }
+        - { name: T, min: 200, max: 600, step: 50, value: 300, label: อุณหภูมิ T (K) }
+      x: [0, 20]
+      y: [0, 10]
+  - type: simulation
+    title: สมบัติของแก๊ส (PhET Gas Properties)
+    url: https://phet.colorado.edu/en/simulations/gas-properties
+    provider: phet
+    note: เติมแก๊สหนักและแก๊สเบา ตรึงปริมาตรหรือความดันไว้ แล้วเปลี่ยนอุณหภูมิ สังเกตความดันและอัตราเร็วของอนุภาค หน้า Diffusion ใช้เปรียบเทียบการแพร่ของแก๊สที่มวลต่างกัน
+glossary:
+  - { term: กฎรวมแก๊ส, definition: "P₁V₁/T₁ = P₂V₂/T₂ ใช้กับแก๊สจำนวนโมลคงที่ เมื่อเปลี่ยนความดัน ปริมาตร และอุณหภูมิพร้อมกัน" }
+  - { term: กฎของอาโวกาโดร, definition: ที่อุณหภูมิและความดันเดียวกัน แก๊สปริมาตรเท่ากันมีจำนวนโมเลกุลเท่ากัน }
+  - { term: กฎแก๊สอุดมคติ, definition: "PV = nRT เมื่อ R = 0.0821 L·atm/(mol·K)" }
+  - { term: ความดันย่อย, definition: ความดันที่แก๊สชนิดหนึ่งในแก๊สผสมออกแรงดันเหมือนอยู่ในภาชนะตามลำพัง }
+  - { term: กฎของเกรแฮม, definition: อัตราการแพร่ของแก๊สแปรผกผันกับรากที่สองของมวลต่อโมล }
+  - { term: STP, definition: "0 °C (273 K) และ 1 atm แก๊ส 1 mol มีปริมาตร 22.4 L" }
+flashcards:
+  - { front: "กฎแก๊สอุดมคติและค่า R", back: "$PV = nRT$ · $R = 0.0821$ L·atm/(mol·K) หรือ 8.314 J/(mol·K)" }
+  - { front: "หามวลต่อโมลของแก๊สจาก m, P, V, T", back: "$M = \\dfrac{mRT}{PV}$" }
+  - { front: "กฎของดอลตัน", back: "$P_{\\text{รวม}} = P_A + P_B + \\cdots$ และ $P_A = x_A P_{\\text{รวม}}$" }
+  - { front: "กฎของเกรแฮม", back: "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{M_2}{M_1}}$ แก๊สเบาแพร่เร็วกว่า" }
+  - { front: "ปริมาตรแก๊ส 1 mol", back: "22.4 L ที่ 0 °C, 1 atm · ประมาณ 24.5 L ที่ 25 °C, 1 atm" }
+references:
+  - { title: "กฎของแก๊สอุดมคติ", url: "https://th.wikipedia.org/wiki/กฎของแก๊สอุดมคติ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Dalton's law", url: "https://en.wikipedia.org/wiki/Dalton%27s_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Graham's law", url: "https://en.wikipedia.org/wiki/Graham%27s_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

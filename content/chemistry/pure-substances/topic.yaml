@@ -1,0 +1,62 @@
+id: chemistry.matter.pure-substances
+subject: chemistry
+title: { th: สารบริสุทธิ์ สารผสม และความหนาแน่น, en: Pure substances, mixtures and density }
+summary: แยกสารบริสุทธิ์กับสารผสมด้วยแบบจำลองอนุภาค จุดเดือดและจุดหลอมเหลวจากกราฟอุณหภูมิ ความหนาแน่นและการวัดมวลและปริมาตร
+difficulty: 2.5
+minutes: 35
+prerequisites: [chemistry.matter.particle-model, math.number.decimals]
+encompasses:
+  - { id: chemistry.matter.particle-model, weight: 0.3 }
+  - { id: math.number.decimals, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: boiling-pure-vs-salt.svg
+    alt: "กราฟอุณหภูมิ (°C) กับเวลา 0 ถึง 20 นาที ที่ความดัน 1 บรรยากาศ เส้นทึบสีน้ำเงินของน้ำกลั่นเพิ่มจาก 25 °C ถึง 100 °C ที่นาทีที่ 8 แล้วเป็นเส้นราบที่ 100 °C ตลอด เส้นประสีแดงของน้ำเกลือเพิ่มขึ้นใกล้เคียงกันจนถึงประมาณ 102 °C แล้วยังค่อย ๆ สูงขึ้นถึงประมาณ 105 °C ที่นาทีที่ 20 ไม่ราบ"
+    caption: "สารบริสุทธิ์เดือดที่อุณหภูมิคงที่ สารผสมเดือดที่อุณหภูมิสูงกว่าและไม่คงที่ (ลักษณะของกราฟ)"
+  - { type: check, problem: chemistry.matter.pure-substances.p004, prompt: "สังเกตว่าเส้นราบหรือยังเพิ่มขึ้นขณะเดือด" }
+  - type: worked-example
+    title: หาความหนาแน่นของก้อนหินด้วยการแทนที่น้ำ
+    problem: "ก้อนหินหนัก 54.0 g หย่อนลงในกระบอกตวงที่มีน้ำ 40.0 mL ระดับน้ำขึ้นไปที่ 60.0 mL ก้อนหินมีความหนาแน่นเท่าใด และจมหรือลอยในน้ำ"
+    steps:
+      - text: "ปริมาตรก้อนหิน $= 60.0 - 40.0 = 20.0\\ \\mathrm{mL} = 20.0\\ \\mathrm{cm^3}$"
+        why: "ก้อนหินดันน้ำขึ้นมาเท่ากับปริมาตรของตัวเอง"
+      - text: "$\\rho = \\dfrac{m}{V} = \\dfrac{54.0}{20.0} = 2.70\\ \\mathrm{g/cm^3}$"
+      - text: "$2.70 > 1.00$ ซึ่งเป็นความหนาแน่นของน้ำ ก้อนหินจึงจม"
+    answer: "$2.70\\ \\mathrm{g/cm^3}$ จมน้ำ"
+  - type: worked-example
+    title: มงกุฎทองแท้หรือไม่
+    problem: "มงกุฎหนัก 1,000 g แทนที่น้ำได้ $60.0\\ \\mathrm{cm^3}$ ทองคำบริสุทธิ์มีความหนาแน่น $19.3\\ \\mathrm{g/cm^3}$ มงกุฎนี้ทำจากทองคำบริสุทธิ์หรือไม่"
+    steps:
+      - text: "ความหนาแน่นของมงกุฎ $= \\dfrac{1000}{60.0} = 16.7\\ \\mathrm{g/cm^3}$"
+      - text: "น้อยกว่า $19.3\\ \\mathrm{g/cm^3}$ ของทองคำบริสุทธิ์"
+        why: "สารบริสุทธิ์มีความหนาแน่นคงที่ ถ้าเป็นทองล้วนต้องได้ 19.3"
+      - text: "จึงมีโลหะที่เบากว่าผสมอยู่ เช่น เงินหรือทองแดง มงกุฎเป็นสารผสม (โลหะเจือ)"
+    answer: "ไม่ใช่ทองคำบริสุทธิ์"
+  - { type: check, problem: chemistry.matter.pure-substances.p006, prompt: "ปริมาตรของก้อนโลหะคือระดับน้ำที่เพิ่มขึ้น" }
+  - type: simulation
+    title: ความหนาแน่น (PhET Density)
+    url: https://phet.colorado.edu/en/simulations/density
+    provider: phet
+    note: ลองเปลี่ยนมวลและปริมาตรของก้อนวัสดุ สังเกตระดับน้ำที่เพิ่มขึ้น และหาความหนาแน่นเพื่อระบุชนิดของวัสดุลึกลับ
+glossary:
+  - { term: สารบริสุทธิ์, definition: สารที่มีองค์ประกอบเพียงชนิดเดียว อาจเป็นธาตุหรือสารประกอบ มีจุดเดือด จุดหลอมเหลว และความหนาแน่นคงที่ }
+  - { term: สารผสม, definition: สารที่มีองค์ประกอบตั้งแต่ 2 ชนิดขึ้นไปปนกัน สัดส่วนเปลี่ยนได้ และแยกออกจากกันได้ด้วยวิธีทางกายภาพ }
+  - { term: สารเนื้อเดียว, definition: สารที่มองเห็นเป็นเนื้อเดียวกันทั่วทั้งหมด อาจเป็นสารบริสุทธิ์หรือสารละลาย }
+  - { term: สารเนื้อผสม, definition: สารผสมที่มองเห็นส่วนประกอบแยกกัน เช่น น้ำโคลน }
+  - { term: ความหนาแน่น, definition: "มวลต่อหนึ่งหน่วยปริมาตร ρ = m/V หน่วย g/cm³ หรือ kg/m³" }
+flashcards:
+  - { front: "กราฟการเดือดของสารบริสุทธิ์กับสารผสมต่างกันอย่างไร", back: "สารบริสุทธิ์: ราบที่อุณหภูมิเดียว · สารผสม (เช่น น้ำเกลือ): เดือดสูงกว่าและอุณหภูมิค่อย ๆ เพิ่ม" }
+  - { front: "สูตรความหนาแน่น", back: "$\\rho = \\dfrac{m}{V}$ · $1\\ \\mathrm{g/cm^3} = 1000\\ \\mathrm{kg/m^3}$" }
+  - { front: "หาปริมาตรของแข็งรูปร่างไม่แน่นอน", back: "การแทนที่น้ำ: ปริมาตร = ระดับน้ำหลัง − ระดับน้ำก่อน" }
+  - { front: "ตัดก้อนโลหะเป็นครึ่ง ความหนาแน่นเปลี่ยนไหม", back: "ไม่เปลี่ยน มวลและปริมาตรลดลงครึ่งหนึ่งเท่ากัน" }
+references:
+  - { title: "สารบริสุทธิ์", url: "https://th.wikipedia.org/wiki/สารบริสุทธิ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "ความหนาแน่น", url: "https://th.wikipedia.org/wiki/ความหนาแน่น", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Chemical substance", url: "https://en.wikipedia.org/wiki/Chemical_substance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Density", url: "https://simple.wikipedia.org/wiki/Density", source: wikipedia-simple, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

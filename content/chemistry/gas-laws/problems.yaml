@@ -1,0 +1,288 @@
+problems:
+  - id: chemistry.gases.gas-laws.p001
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 1
+    type: mcq
+    stem: "อุณหภูมิ 25 °C เท่ากับกี่เคลวิน (ใช้ $T = t + 273$)"
+    choices:
+      - { id: a, text: "298 K", correct: true, feedback: "ถูก บวก 273" }
+      - { id: b, text: "−248 K", feedback: "ลบแทนบวก อุณหภูมิเคลวินไม่ติดลบ" }
+      - { id: c, text: "25 K", feedback: "ขนาดหนึ่งองศาเท่ากัน แต่จุดศูนย์ต่างกัน ต้องบวก 273" }
+    hints:
+      - "0 °C = 273 K"
+      - "เคลวิน = องศาเซลเซียส + 273"
+    solution: "$T = 25 + 273 = 298$ K"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p002
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สในกระบอกสูบมีปริมาตร 2.0 L ที่ความดัน 1.0 atm ถ้าอัดให้เหลือ 0.50 L ที่อุณหภูมิคงที่ ความดันจะเป็นกี่ atm"
+    answer: { value: 4.0, tolerance: 0.04, unit: atm }
+    misconceptions:
+      - { match: 0.25, feedback: "ความดันกับปริมาตรแปรผกผัน ปริมาตรลดลง 4 เท่า ความดันต้องเพิ่ม 4 เท่า" }
+    hints:
+      - "อุณหภูมิคงที่ ใช้กฎของบอยล์ $P_1V_1 = P_2V_2$"
+      - "$P_2 = P_1V_1 / V_2$"
+    solution: "$P_2 = \\dfrac{1.0 \\times 2.0}{0.50} = 4.0$ atm"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p003
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สออกซิเจน 11.2 L ที่ STP (0 °C, 1 atm) มีกี่โมล"
+    answer: { value: 0.5, tolerance: 0.005, unit: mol }
+    misconceptions:
+      - { match: 250.9, feedback: "คูณ 22.4 แทนการหาร" }
+    hints:
+      - "แก๊สทุกชนิด 1 mol ที่ STP มีปริมาตร 22.4 L"
+      - "$n = V / 22.4$"
+    solution: "$n = \\dfrac{11.2}{22.4} = 0.500$ mol"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p004
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 3
+    type: numeric
+    stem: "ลูกโป่งมีอากาศ 3.0 L ที่ 27 °C ถ้าทำให้ร้อนขึ้นเป็น 87 °C ที่ความดันคงที่ ลูกโป่งจะมีปริมาตรกี่ลิตร"
+    answer: { value: 3.6, tolerance: 0.04, unit: L }
+    misconceptions:
+      - { match: 9.67, feedback: "ใช้องศาเซลเซียสแทนเคลวิน ต้องใช้ 300 K และ 360 K" }
+      - { match: 2.5, feedback: "หารกลับด้าน แก๊สร้อนขึ้นที่ความดันคงที่ต้องขยายตัว" }
+    hints:
+      - "ความดันคงที่ ใช้กฎของชาร์ล $V_1/T_1 = V_2/T_2$"
+      - "เปลี่ยนเป็นเคลวิน: 27 °C = 300 K, 87 °C = 360 K"
+    solution: "$V_2 = 3.0 \\times \\dfrac{360}{300} = 3.6$ L"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p005
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 3
+    type: numeric
+    stem: "กระป๋องสเปรย์มีความดันภายใน 300 kPa ที่ 27 °C ถ้าลืมไว้ในรถที่จอดกลางแดดจนกระป๋องร้อนถึง 67 °C ความดันภายในจะเป็นกี่ kPa (ปริมาตรกระป๋องคงที่)"
+    answer: { value: 340, tolerance: 3, unit: kPa }
+    misconceptions:
+      - { match: 744.4, feedback: "ใช้องศาเซลเซียสคำนวณ ต้องเปลี่ยนเป็น 300 K และ 340 K" }
+    hints:
+      - "ปริมาตรคงที่ ใช้กฎของเกย์-ลูสแซก $P_1/T_1 = P_2/T_2$"
+      - "67 °C = 340 K"
+    solution: "$P_2 = 300 \\times \\dfrac{340}{300} = 340$ kPa ความดันที่สูงขึ้นอาจทำให้กระป๋องระเบิด จึงห้ามวางในที่ร้อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p006
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 3
+    type: mcq
+    stem: "ในปฏิกิริยา $\\mathrm{N_2(g) + 3H_2(g) \\to 2NH_3(g)}$ ที่อุณหภูมิและความดันเดียวกัน ถ้าใช้ $\\mathrm{H_2}$ 6 L ทำปฏิกิริยาหมดพอดี จะได้ $\\mathrm{NH_3}$ กี่ลิตร"
+    choices:
+      - { id: a, text: "4 L", correct: true, feedback: "ถูก อัตราส่วนปริมาตร $\\mathrm{H_2} : \\mathrm{NH_3} = 3 : 2$" }
+      - { id: b, text: "6 L", feedback: "ปริมาตรไม่ได้คงที่ในปฏิกิริยานี้ เพราะจำนวนโมลแก๊สลดลง" }
+      - { id: c, text: "12 L", feedback: "คูณด้วย 2 โดยไม่หารด้วย 3 ต้องใช้อัตราส่วน 2/3" }
+      - { id: d, text: "8 L", feedback: "รวมปริมาตร $\\mathrm{N_2}$ 2 L กับ $\\mathrm{H_2}$ 6 L แต่ผลิตภัณฑ์มีจำนวนโมลน้อยกว่าสารตั้งต้น" }
+    hints:
+      - "ตามกฎของอาโวกาโดร อัตราส่วนปริมาตรแก๊สเท่ากับอัตราส่วนโมล"
+      - "$\\mathrm{H_2}$ 3 ส่วนให้ $\\mathrm{NH_3}$ 2 ส่วน"
+    solution: "อัตราส่วนปริมาตร $\\mathrm{H_2} : \\mathrm{NH_3} = 3 : 2$ ได้ $\\mathrm{NH_3} = 6 \\times \\dfrac{2}{3} = 4$ L"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p007
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 3
+    type: numeric
+    stem: "ถังใบหนึ่งมีแก๊สไนโตรเจน 2.0 mol และแก๊สออกซิเจน 0.50 mol ความดันรวม 5.0 atm ความดันย่อยของออกซิเจนเป็นกี่ atm"
+    answer: { value: 1.0, tolerance: 0.01, unit: atm }
+    misconceptions:
+      - { match: 1.25, feedback: "หารด้วยโมลของไนโตรเจน ต้องหารด้วยโมลรวม 2.5 mol" }
+      - { match: 4.0, feedback: "นั่นคือความดันย่อยของไนโตรเจน" }
+    hints:
+      - "เศษส่วนโมลของ $\\mathrm{O_2}$ = โมล $\\mathrm{O_2}$ ÷ โมลรวม"
+      - "$P_{\\mathrm{O_2}} = x_{\\mathrm{O_2}} \\times P_{\\text{รวม}}$"
+    solution: "$x_{\\mathrm{O_2}} = \\dfrac{0.50}{2.0 + 0.50} = 0.20$ · $P_{\\mathrm{O_2}} = 0.20 \\times 5.0 = 1.0$ atm"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p008
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 4
+    type: numeric
+    stem: "ถังออกซิเจนทางการแพทย์ในโรงพยาบาลมีปริมาตร 10.0 L บรรจุแก๊สออกซิเจนที่ความดัน 150 atm อุณหภูมิ 27 °C ในถังมีออกซิเจนกี่กิโลกรัม (O = 16.00, $R = 0.0821$ L·atm/(mol·K) ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.95, tolerance: 0.02, unit: kg }
+    misconceptions:
+      - { match: 0.97, feedback: "ใช้มวลต่อโมล 16.00 แก๊สออกซิเจนเป็นโมเลกุล $\\mathrm{O_2}$ มวลต่อโมล 32.00" }
+      - { match: 21.65, feedback: "ใช้ 27 แทน 300 K อุณหภูมิในกฎแก๊สต้องเป็นเคลวิน" }
+    hints:
+      - "หาจำนวนโมลจาก $n = \\dfrac{PV}{RT}$ โดยใช้ $T$ เป็นเคลวิน"
+      - "มวล = โมล × 32.00 g/mol แล้วเปลี่ยนเป็นกิโลกรัม"
+    solution: "$n = \\dfrac{150 \\times 10.0}{0.0821 \\times 300} = 60.9$ mol · มวล $= 60.9 \\times 32.00 = 1949$ g $= 1.95$ kg"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p009
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 4
+    type: numeric
+    stem: "แก๊สชนิดหนึ่งมีความหนาแน่น 1.25 g/L ที่ STP มวลต่อโมลของแก๊สนี้เป็นกี่ g/mol"
+    answer: { value: 28.0, tolerance: 0.3, unit: g/mol }
+    misconceptions:
+      - { match: 0.0558, feedback: "หาร 1.25 ด้วย 22.4 ต้องคูณ แก๊ส 1 mol มีปริมาตร 22.4 L มวลจึงเป็น 1.25 × 22.4" }
+    hints:
+      - "แก๊ส 1 mol ที่ STP มีปริมาตร 22.4 L"
+      - "มวลของ 22.4 L = ความหนาแน่น × 22.4"
+    solution: "มวลต่อโมล $= 1.25\\ \\mathrm{g/L} \\times 22.4\\ \\mathrm{L/mol} = 28.0$ g/mol อาจเป็น $\\mathrm{N_2}$ หรือ CO"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p010
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 4
+    type: numeric
+    stem: "ในหลอดแก้วยาว 100 cm ใส่สำลีชุบแอมโมเนียที่ปลายหนึ่งและสำลีชุบกรดไฮโดรคลอริกเข้มข้นที่อีกปลายพร้อมกัน แก๊สทั้งสองแพร่เข้าหากันและเกิดวงแหวนสีขาวของ $\\mathrm{NH_4Cl}$ ตรงจุดที่พบกัน วงแหวนอยู่ห่างจากปลายแอมโมเนียกี่เซนติเมตร (ตอบทศนิยม 1 ตำแหน่ง)"
+    figure:
+      src: p-graham-tube.svg
+      alt: "หลอดแก้วแนวนอนยาว 100 cm มีสเกล 0 ถึง 100 cm ด้านล่าง ปลายซ้าย (0 cm) มีสำลีชุบ NH₃ มวลต่อโมล 17.03 g/mol ปลายขวา (100 cm) มีสำลีชุบ HCl มวลต่อโมล 36.46 g/mol"
+    answer: { value: 59.4, tolerance: 0.6, unit: cm }
+    misconceptions:
+      - { match: 40.6, feedback: "นั่นคือระยะจากปลาย HCl แอมโมเนียเบากว่าจึงแพร่ได้ไกลกว่าครึ่งหลอด" }
+      - { match: 68.2, feedback: "ใช้อัตราส่วนมวลตรง ๆ ต้องใช้รากที่สองของอัตราส่วนมวล" }
+    hints:
+      - "เวลาเท่ากัน ระยะที่แพร่ได้แปรผันตามอัตราการแพร่ $\\dfrac{r_{\\mathrm{NH_3}}}{r_{\\mathrm{HCl}}} = \\sqrt{\\dfrac{36.46}{17.03}}$"
+      - "แบ่ง 100 cm ตามอัตราส่วนระยะทางของสองแก๊ส"
+    solution: "$\\dfrac{r_{\\mathrm{NH_3}}}{r_{\\mathrm{HCl}}} = \\sqrt{\\dfrac{36.46}{17.03}} = 1.463$ · ระยะจากปลาย $\\mathrm{NH_3}$ $= 100 \\times \\dfrac{1.463}{1.463 + 1} = 59.4$ cm"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p011
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 4
+    type: numeric
+    stem: "เก็บแก๊สไฮโดรเจนโดยการแทนที่น้ำที่ 25 °C ความดันรวมในขวดเก็บแก๊สเท่ากับความดันบรรยากาศ 760 mmHg ความดันไอน้ำที่ 25 °C เท่ากับ 23.8 mmHg ความดันย่อยของไฮโดรเจนแห้งเป็นกี่ mmHg"
+    answer: { value: 736.2, tolerance: 0.5, unit: mmHg }
+    misconceptions:
+      - { match: 783.8, feedback: "บวกความดันไอน้ำ ไอน้ำเป็นส่วนหนึ่งของความดันรวม จึงต้องหักออก" }
+      - { match: 760, feedback: "ลืมว่าแก๊สที่เก็บเหนือน้ำมีไอน้ำปนอยู่" }
+    hints:
+      - "ความดันรวม = ความดันไฮโดรเจน + ความดันไอน้ำ"
+      - "หักความดันไอน้ำออกจากความดันรวม"
+    solution: "$P_{\\mathrm{H_2}} = 760 - 23.8 = 736.2$ mmHg"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p012
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 4
+    type: numeric
+    stem: "นักดำน้ำที่เกาะเต่าดำลงไปลึก 30 m ซึ่งความดันน้ำเพิ่มขึ้นราว 1 atm ทุก ๆ 10 m จากความดันบรรยากาศ 1 atm ที่ผิวน้ำ อากาศในถังมีออกซิเจนร้อยละ 21 โดยโมล ความดันย่อยของออกซิเจนที่นักดำน้ำหายใจเข้าไปเป็นกี่ atm"
+    answer: { value: 0.84, tolerance: 0.01, unit: atm }
+    misconceptions:
+      - { match: 0.63, feedback: "ลืมความดันบรรยากาศ 1 atm ที่ผิวน้ำ ความดันรวมที่ 30 m คือ 1 + 3 = 4 atm" }
+      - { match: 0.21, feedback: "นั่นคือความดันย่อยที่ผิวน้ำ ที่ความลึกต้องคูณกับความดันรวมที่สูงขึ้น" }
+    hints:
+      - "ความดันรวม = ความดันบรรยากาศ + ความดันน้ำจากความลึก"
+      - "$P_{\\mathrm{O_2}} = 0.21 \\times P_{\\text{รวม}}$"
+    solution: "ความดันรวม $= 1 + \\dfrac{30}{10} = 4$ atm · $P_{\\mathrm{O_2}} = 0.21 \\times 4 = 0.84$ atm"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p013
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 5
+    type: numeric
+    stem: "แก๊ส X ปริมาตรหนึ่งแพร่ผ่านรูเล็ก ๆ หมดในเวลา 60 s ส่วนแก๊สออกซิเจน (32.00 g/mol) ปริมาตรเท่ากันภายใต้ภาวะเดียวกันใช้เวลา 45 s มวลต่อโมลของแก๊ส X เป็นกี่ g/mol (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 56.9, tolerance: 0.6, unit: g/mol }
+    misconceptions:
+      - { match: 18.0, feedback: "กลับด้าน X ใช้เวลานานกว่า แปลว่าแพร่ช้ากว่าจึงต้องหนักกว่าออกซิเจน" }
+      - { match: 42.7, feedback: "ลืมยกกำลังสอง เวลาแปรผันตรงกับ $\\sqrt{M}$" }
+    hints:
+      - "เวลาที่ใช้แปรผันตรงกับรากที่สองของมวลต่อโมล $\\dfrac{t_X}{t_{\\mathrm{O_2}}} = \\sqrt{\\dfrac{M_X}{M_{\\mathrm{O_2}}}}$"
+      - "ยกกำลังสองทั้งสองข้างก่อนหา $M_X$"
+    solution: "$M_X = 32.00 \\times \\left(\\dfrac{60}{45}\\right)^2 = 32.00 \\times 1.778 = 56.9$ g/mol"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p014
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 5
+    type: numeric
+    stem: "ใส่ลวดแมกนีเซียม 0.486 g ในกรดไฮโดรคลอริกมากเกินพอ $\\mathrm{Mg(s) + 2HCl(aq) \\to MgCl_2(aq) + H_2(g)}$ จะได้แก๊สไฮโดรเจนกี่ลิตรที่ STP (Mg = 24.31 ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.448, tolerance: 0.004, unit: L }
+    misconceptions:
+      - { match: 0.896, feedback: "ใช้อัตราส่วนของ HCl (2) แทน $\\mathrm{H_2}$ (1) อัตราส่วนโมล Mg : $\\mathrm{H_2}$ = 1 : 1" }
+    hints:
+      - "หาโมลของ Mg แล้วใช้อัตราส่วนโมลในสมการ"
+      - "แก๊ส 1 mol ที่ STP มีปริมาตร 22.4 L"
+    solution: "$n_{\\mathrm{Mg}} = 0.486 / 24.31 = 0.0200$ mol · ได้ $\\mathrm{H_2}$ 0.0200 mol · $V = 0.0200 \\times 22.4 = 0.448$ L"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p015
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 5
+    type: numeric
+    stem: "เผาหินปูน ($\\mathrm{CaCO_3}$, 100.09 g/mol) 5.00 g จนสลายตัวหมด $\\mathrm{CaCO_3(s) \\to CaO(s) + CO_2(g)}$ แก๊สคาร์บอนไดออกไซด์ที่ได้มีปริมาตรกี่ลิตรที่ 27 °C ความดัน 0.950 atm ($R = 0.0821$ L·atm/(mol·K) ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.3, tolerance: 0.013, unit: L }
+    misconceptions:
+      - { match: 1.12, feedback: "ใช้ 22.4 L/mol ซึ่งใช้ได้เฉพาะที่ 0 °C, 1 atm ภาวะนี้ต้องใช้ $PV = nRT$" }
+      - { match: 0.117, feedback: "ใช้ 27 แทน 300 K" }
+    hints:
+      - "หาโมลของ $\\mathrm{CaCO_3}$ ซึ่งเท่ากับโมลของ $\\mathrm{CO_2}$"
+      - "$V = nRT/P$ โดย $T = 300$ K"
+    solution: "$n = 5.00 / 100.09 = 0.0500$ mol $\\mathrm{CO_2}$ · $V = \\dfrac{0.0500 \\times 0.0821 \\times 300}{0.950} = 1.30$ L"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p016
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 2
+    type: mcq
+    stem: "ขวดปิดสนิทที่มีอากาศอยู่ถูกทำให้ร้อนขึ้น ปริมาตรขวดไม่เปลี่ยน ความดันในขวดสูงขึ้นเพราะเหตุใด"
+    choices:
+      - { id: a, text: "อนุภาคแก๊สเคลื่อนที่เร็วขึ้น ชนผนังบ่อยขึ้นและแรงขึ้น", correct: true, feedback: "ถูก ความดันเกิดจากการชนผนัง" }
+      - { id: b, text: "จำนวนอนุภาคแก๊สเพิ่มขึ้น", feedback: "ขวดปิดสนิท จำนวนอนุภาคเท่าเดิม" }
+      - { id: c, text: "อนุภาคแก๊สขยายใหญ่ขึ้น", feedback: "อนุภาคไม่เปลี่ยนขนาด สิ่งที่เปลี่ยนคือความเร็ว" }
+    hints:
+      - "ความดันแก๊สเกิดจากอะไร"
+      - "อุณหภูมิสูงขึ้นมีผลต่อความเร็วของอนุภาคอย่างไร"
+    solution: "อุณหภูมิสูงขึ้น อนุภาคเคลื่อนที่เร็วขึ้น ชนผนังบ่อยขึ้นและชนแต่ละครั้งแรงขึ้น ความดันจึงสูงขึ้นตามกฎของเกย์-ลูสแซก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p017
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 3
+    type: mcq
+    stem: "ที่อุณหภูมิและความดันเดียวกัน แก๊สใดแพร่ได้เร็วที่สุด"
+    choices:
+      - { id: a, text: "$\\mathrm{H_2}$ (2.02 g/mol)", correct: true, feedback: "ถูก มวลต่อโมลน้อยที่สุดจึงเร็วที่สุด" }
+      - { id: b, text: "He (4.00 g/mol)", feedback: "ฮีเลียมเบา แต่ยังหนักกว่า $\\mathrm{H_2}$" }
+      - { id: c, text: "$\\mathrm{CH_4}$ (16.04 g/mol)", feedback: "มีเทนหนักกว่า $\\mathrm{H_2}$ 8 เท่า แพร่ช้ากว่าราว 2.8 เท่า" }
+      - { id: d, text: "$\\mathrm{O_2}$ (32.00 g/mol)", feedback: "ออกซิเจนหนักที่สุดในตัวเลือก จึงแพร่ช้าที่สุด" }
+    hints:
+      - "อัตราการแพร่แปรผกผันกับ $\\sqrt{M}$"
+      - "หาแก๊สที่มวลต่อโมลน้อยที่สุด"
+    solution: "อุณหภูมิเดียวกัน พลังงานจลน์เฉลี่ยเท่ากัน แก๊สที่เบาที่สุด ($\\mathrm{H_2}$) จึงเคลื่อนที่และแพร่เร็วที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.gases.gas-laws.p018
+    topics: [chemistry.gases.gas-laws]
+    difficulty: 2
+    type: mcq
+    stem: "ซื้อลูกโป่งสวรรค์ที่เติมฮีเลียมจากงานวัด และเป่าลูกโป่งอีกใบด้วยลมหายใจให้ขนาดเท่ากัน วันรุ่งขึ้นลูกโป่งฮีเลียมเหี่ยวมากกว่า เพราะเหตุใด"
+    choices:
+      - { id: a, text: "อะตอมฮีเลียมเบากว่าโมเลกุลในอากาศ จึงแพร่ออกผ่านผิวยางได้เร็วกว่า", correct: true, feedback: "ถูก ตามกฎของเกรแฮม แก๊สเบาแพร่เร็วกว่า" }
+      - { id: b, text: "ฮีเลียมทำปฏิกิริยากับยางลูกโป่ง", feedback: "ฮีเลียมเป็นแก๊สมีตระกูล แทบไม่ทำปฏิกิริยากับสารใด" }
+      - { id: c, text: "ฮีเลียมควบแน่นเป็นของเหลวในเวลากลางคืน", feedback: "ฮีเลียมจะเป็นของเหลวที่ประมาณ −269 °C ซึ่งเย็นกว่าอากาศกลางคืนมาก" }
+    hints:
+      - "เปรียบเทียบมวลของฮีเลียม (4 g/mol) กับไนโตรเจนและออกซิเจนในลมหายใจ"
+      - "แก๊สเบาหรือหนักที่แพร่เร็วกว่า"
+    solution: "ฮีเลียม (4.0 g/mol) เบากว่าไนโตรเจน (28.0) และออกซิเจน (32.0) มาก จึงแพร่ออกผ่านรูเล็ก ๆ ในเนื้อยางได้เร็วกว่าหลายเท่า ลูกโป่งฮีเลียมจึงเหี่ยวเร็วกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
