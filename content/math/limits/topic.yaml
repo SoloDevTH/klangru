@@ -1,0 +1,73 @@
+id: math.calculus.limits
+subject: math
+title: { th: ลิมิตและความต่อเนื่อง, en: Limits and continuity }
+summary: ลิมิตของฟังก์ชันจากตาราง กราฟ และกฎของลิมิต ลิมิตทางซ้ายและทางขวา รูปแบบ 0/0 การตรวจความต่อเนื่องของฟังก์ชัน และลิมิตที่อนันต์
+difficulty: 6.5
+minutes: 40
+prerequisites: [math.functions.functions-intro, math.calculus.rate-of-change]
+encompasses:
+  - { id: math.calculus.rate-of-change, weight: 0.3 }
+  - { id: math.functions.functions-intro, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: hole.svg
+    alt: "กราฟเส้นตรง y = x + 2 ซึ่งเป็นกราฟของ (x² − 4)/(x − 2) มีวงกลมโปร่งที่จุด (2, 4) เพราะฟังก์ชันไม่มีค่าที่ x = 2 ลูกศรสีแดงสองอันบนเส้นชี้เข้าหารูโหว่จากซ้ายและขวา เส้นประจาก (2, 4) ลงไปแกน x และไปแกน y"
+    caption: "ฟังก์ชันไม่มีค่าที่ x = 2 แต่ลิมิตเมื่อ x → 2 เท่ากับ 4"
+  - type: worked-example
+    title: ลิมิตรูปแบบ 0/0
+    problem: "จงหา $\\displaystyle\\lim_{x \\to 1} \\frac{x^3 - 1}{x^2 - 1}$"
+    steps:
+      - text: "แทน $x = 1$ ได้ $\\tfrac00$ ยังสรุปไม่ได้ ต้องจัดรูป"
+        why: "$\\tfrac00$ ไม่ได้แปลว่าลิมิตเป็น 0 หรือไม่มี"
+      - text: "แยกตัวประกอบ: $x^3 - 1 = (x - 1)(x^2 + x + 1)$ และ $x^2 - 1 = (x - 1)(x + 1)$"
+      - text: "ตัด $x - 1$ (ทำได้เพราะ $x \\ne 1$ ขณะเข้าใกล้): $\\dfrac{x^2 + x + 1}{x + 1}$"
+      - text: "แทน $x = 1$: $\\dfrac{1 + 1 + 1}{1 + 1} = \\dfrac32$"
+    answer: "$\\dfrac32$"
+  - { type: check, problem: math.calculus.limits.p003, prompt: "แยกตัวประกอบตัวเศษก่อน" }
+  - type: worked-example
+    title: หาค่าคงตัวให้ฟังก์ชันต่อเนื่อง
+    problem: "$f(x) = \\begin{cases} x^2 - 1, & x < 3 \\\\ 2x + c, & x \\ge 3 \\end{cases}$ จงหา $c$ ที่ทำให้ $f$ ต่อเนื่องที่ $x = 3$"
+    steps:
+      - text: "ลิมิตทางซ้าย (ใช้สูตร $x < 3$): $\\displaystyle\\lim_{x \\to 3^-}(x^2 - 1) = 8$"
+      - text: "ลิมิตทางขวาและค่าของฟังก์ชัน (ใช้สูตร $x \\ge 3$): $\\displaystyle\\lim_{x \\to 3^+}(2x + c) = f(3) = 6 + c$"
+      - text: "ต่อเนื่องเมื่อทั้งสามค่าเท่ากัน: $6 + c = 8$"
+        why: "เงื่อนไขข้อ 2 ต้องการลิมิตซ้ายเท่ากับขวา และข้อ 3 ต้องการให้เท่ากับ $f(3)$"
+      - text: "$c = 2$"
+    answer: "$c = 2$"
+  - type: figure
+    src: infinity.svg
+    alt: "กราฟของ y = (2x + 3)/(x + 1) สำหรับ x จาก 0 ถึง 20 เริ่มที่ (0, 3) แล้วลดลงเข้าใกล้เส้นประแนวนอน y = 2 ที่เขียนว่าเส้นกำกับแนวนอน แต่ไม่ถึง 2"
+    caption: "เมื่อ x → ∞ ค่าของ (2x + 3)/(x + 1) เข้าใกล้ 2"
+  - type: interactive
+    title: ลิมิตที่อนันต์ของ (ax + 1)/(x + 2)
+    caption: "เส้นแรกคือ y = (ax + 1)/(x + 2) เส้นที่สองคือ y = a เลื่อน a แล้วดูว่าเมื่อ x มากขึ้น เส้นโค้งเข้าใกล้เส้น y = a เสมอ เพราะลิมิตเท่ากับอัตราส่วนของสัมประสิทธิ์นำ a/1"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a x+1}{x+2}", "a"]
+      sliders:
+        - { name: a, min: -2, max: 4, step: 0.5, value: 2, label: สัมประสิทธิ์นำ a }
+      x: [0, 40]
+      y: [-3, 5]
+  - { type: check, problem: math.calculus.limits.p009, prompt: "หารเศษและส่วนด้วย x²" }
+glossary:
+  - { term: ลิมิต, definition: "ค่าที่ f(x) เข้าใกล้เมื่อ x เข้าใกล้ a โดยไม่สนใจค่าที่ x = a" }
+  - { term: ลิมิตทางซ้ายและทางขวา, definition: "ลิมิตเมื่อ x เข้าใกล้ a จากค่าที่น้อยกว่า a หรือมากกว่า a ตามลำดับ" }
+  - { term: ความต่อเนื่อง, definition: "f ต่อเนื่องที่ a เมื่อ f(a) มีค่า ลิมิตที่ a มีค่า และทั้งสองเท่ากัน" }
+  - { term: เส้นกำกับแนวนอน, definition: "เส้น y = L เมื่อ f(x) → L ขณะ x → ∞ หรือ x → −∞" }
+flashcards:
+  - { front: "ลิมิตที่ a มีค่าเมื่อใด", back: "เมื่อลิมิตทางซ้ายและทางขวามีค่าและเท่ากัน" }
+  - { front: "แทนค่าแล้วได้ 0/0 ต้องทำอย่างไร", back: "จัดรูปก่อน เช่น แยกตัวประกอบแล้วตัด หรือคูณด้วยสังยุคของกรณฑ์" }
+  - { front: "เงื่อนไขสามข้อของความต่อเนื่องที่ x = a", back: "f(a) มีค่า, lim f(x) มีค่า, lim f(x) = f(a)" }
+  - { front: "lim (x → ∞) ของเศษส่วนพหุนามที่ดีกรีเท่ากัน", back: "อัตราส่วนของสัมประสิทธิ์นำ" }
+  - { front: "ลิมิตขึ้นกับค่า f(a) หรือไม่", back: "ไม่ ลิมิตดูเฉพาะค่าของ f เมื่อ x ใกล้ a แต่ไม่เท่ากับ a" }
+references:
+  - { title: "ลิมิตของฟังก์ชัน", url: "https://th.wikipedia.org/wiki/ลิมิตของฟังก์ชัน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Limit of a function", url: "https://en.wikipedia.org/wiki/Limit_of_a_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.2 The Limit of a Function (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/2-2-the-limit-of-a-function", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "2.4 Continuity (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/2-4-continuity", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

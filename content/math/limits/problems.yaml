@@ -1,0 +1,347 @@
+problems:
+  - id: math.calculus.limits.p001
+    topics: [math.calculus.limits]
+    difficulty: 1
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to 3}(2x + 5)$"
+    answer: { value: 11 }
+    hints:
+      - "พหุนามหาลิมิตได้ด้วยการแทนค่า"
+      - "แทน $x = 3$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือค่าที่ $x$ เข้าใกล้ ลิมิตคือค่าที่ $2x + 5$ เข้าใกล้" }
+    solution: "$2(3) + 5 = 11$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p002
+    topics: [math.calculus.limits]
+    difficulty: 1
+    type: mcq
+    stem: "ตารางแสดงค่าของ $g(x)$ ใกล้ $x = 2$: $g(1.9) = 4.9$, $g(1.99) = 4.99$, $g(1.999) = 4.999$, $g(2.001) = 5.001$, $g(2.01) = 5.01$, $g(2.1) = 5.1$ ค่า $\\displaystyle\\lim_{x \\to 2} g(x)$ น่าจะเป็นเท่าใด"
+    choices:
+      - { id: a, text: "5", correct: true }
+      - { id: b, text: "2", feedback: "2 คือค่าที่ $x$ เข้าใกล้ ลิมิตคือค่าที่ $g(x)$ เข้าใกล้" }
+      - { id: c, text: "4.999", feedback: "ค่าในตารางใกล้ขึ้นเรื่อย ๆ ลิมิตคือค่าที่เข้าใกล้ ไม่ใช่ค่าสุดท้ายในตาราง" }
+      - { id: d, text: "หาไม่ได้ เพราะไม่มีค่า $g(2)$ ในตาราง", feedback: "ลิมิตไม่ต้องใช้ค่า $g(2)$ ดูเฉพาะค่าใกล้ 2 ทั้งสองข้าง" }
+    hints:
+      - "ดูว่า $g(x)$ เข้าใกล้ค่าใดเมื่อ $x$ เข้าใกล้ 2 จากทั้งสองข้าง"
+      - "ทางซ้าย 4.9, 4.99, 4.999 ทางขวา 5.1, 5.01, 5.001"
+    solution: "ทั้งสองข้างเข้าใกล้ 5 จึงคาดว่า $\\displaystyle\\lim_{x \\to 2} g(x) = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p003
+    topics: [math.calculus.limits]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to 5}\\frac{x^2 - 25}{x - 5}$"
+    answer: { value: 10 }
+    hints:
+      - "แทน $x = 5$ ได้ $\\tfrac00$ ต้องจัดรูปก่อน"
+      - "$x^2 - 25 = (x - 5)(x + 5)$"
+    misconceptions:
+      - { match: 0, feedback: "$\\tfrac00$ ไม่ได้เท่ากับ 0 ต้องแยกตัวประกอบแล้วตัด $x - 5$ ก่อน" }
+      - { match: 5, feedback: "หลังตัดได้ $x + 5$ แทน $x = 5$ ได้ $5 + 5$" }
+    solution: "$\\dfrac{(x - 5)(x + 5)}{x - 5} = x + 5$ เมื่อ $x \\ne 5$ ลิมิตคือ $5 + 5 = 10$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p004
+    topics: [math.calculus.limits]
+    difficulty: 2
+    type: numeric
+    stem: "จากกราฟของ $f$ ในภาพ จงหา $\\displaystyle\\lim_{x \\to 1^+} f(x)$"
+    figure:
+      src: jump.svg
+      alt: "กราฟของ f ช่องตารางละ 1 หน่วย ทางซ้ายของ x = 1 เป็นเส้นตรงขึ้นไปสิ้นสุดที่วงกลมโปร่ง (1, 2) ทางขวาของ x = 1 เป็นเส้นตรงลงเริ่มจากวงกลมโปร่ง (1, 4) ผ่าน (5, 0) และมีจุดทึบที่ (1, 3)"
+    answer: { value: 4 }
+    hints:
+      - "$x \\to 1^+$ คือเข้าใกล้ 1 จากทางขวา ($x > 1$)"
+      - "ดูกิ่งของกราฟทางขวาของ $x = 1$ ว่าความสูงเข้าใกล้ค่าใด"
+    misconceptions:
+      - { match: 3, feedback: "3 คือ $f(1)$ (จุดทึบ) ลิมิตไม่ดูค่าที่ $x = 1$" }
+      - { match: 2, feedback: "2 คือลิมิตทางซ้าย" }
+    solution: "กิ่งทางขวาเข้าใกล้วงกลมโปร่งที่ $(1, 4)$ จึง $\\displaystyle\\lim_{x \\to 1^+} f(x) = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p005
+    topics: [math.calculus.limits]
+    difficulty: 2
+    type: mcq
+    stem: "จากกราฟของ $f$ ในภาพ ข้อใดถูกต้อง"
+    figure:
+      src: jump.svg
+      alt: "กราฟของ f ช่องตารางละ 1 หน่วย ทางซ้ายของ x = 1 เป็นเส้นตรงขึ้นไปสิ้นสุดที่วงกลมโปร่ง (1, 2) ทางขวาของ x = 1 เป็นเส้นตรงลงเริ่มจากวงกลมโปร่ง (1, 4) ผ่าน (5, 0) และมีจุดทึบที่ (1, 3)"
+    choices:
+      - { id: a, text: "$\\displaystyle\\lim_{x \\to 1} f(x)$ หาค่าไม่ได้", correct: true }
+      - { id: b, text: "$\\displaystyle\\lim_{x \\to 1} f(x) = 3$", feedback: "3 คือ $f(1)$ ลิมิตไม่ดูค่าที่จุดนั้น และลิมิตซ้าย (2) ไม่เท่ากับขวา (4)" }
+      - { id: c, text: "$\\displaystyle\\lim_{x \\to 1} f(x) = 2$", feedback: "2 คือลิมิตทางซ้ายเท่านั้น ลิมิตต้องเท่ากันทั้งสองข้าง" }
+      - { id: d, text: "$f$ ต่อเนื่องที่ $x = 1$", feedback: "กราฟกระโดดที่ $x = 1$ ต้องยกดินสอ จึงไม่ต่อเนื่อง" }
+    hints:
+      - "หาลิมิตทางซ้ายและทางขวาที่ $x = 1$"
+      - "ลิมิตมีค่าเมื่อลิมิตทั้งสองข้างเท่ากัน"
+    solution: "ลิมิตทางซ้าย $= 2$ ลิมิตทางขวา $= 4$ ไม่เท่ากัน ลิมิตที่ $x = 1$ จึงหาค่าไม่ได้ และ $f$ ไม่ต่อเนื่องที่ $x = 1$ (แม้ $f(1) = 3$ มีค่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p006
+    topics: [math.calculus.limits]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $\\displaystyle\\lim_{x \\to a} f(x) = 3$ และ $\\displaystyle\\lim_{x \\to a} g(x) = -2$ จงหา $\\displaystyle\\lim_{x \\to a}\\big([f(x)]^2 - 4g(x)\\big)$"
+    answer: { value: 17 }
+    hints:
+      - "ใช้กฎของลิมิต: ลิมิตของผลต่าง ผลคูณด้วยค่าคงตัว และกำลัง"
+      - "$3^2 - 4(-2)$"
+    misconceptions:
+      - { match: 1, feedback: "$-4 \\times (-2) = +8$ เครื่องหมายเป็นบวก" }
+      - { match: 14, feedback: "$[f(x)]^2$ มีลิมิต $3^2 = 9$ ไม่ใช่ $2 \\times 3$" }
+    solution: "$\\lim [f(x)]^2 - 4\\lim g(x) = 3^2 - 4(-2) = 9 + 8 = 17$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p007
+    topics: [math.calculus.limits]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to 3}\\frac{x^2 - 9}{x^2 - 3x}$"
+    answer: { value: 2 }
+    hints:
+      - "แทนค่าได้ $\\tfrac00$ แยกตัวประกอบทั้งเศษและส่วน"
+      - "$\\dfrac{(x - 3)(x + 3)}{x(x - 3)}$"
+    misconceptions:
+      - { match: 0, feedback: "$\\tfrac00$ ยังสรุปไม่ได้ ต้องตัด $x - 3$ ก่อน" }
+      - { match: 3, feedback: "หลังตัดได้ $\\tfrac{x + 3}{x}$ ซึ่งยังมีตัวส่วน $x$" }
+    solution: "$\\dfrac{(x - 3)(x + 3)}{x(x - 3)} = \\dfrac{x + 3}{x}$ แทน $x = 3$ ได้ $\\tfrac63 = 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p008
+    topics: [math.calculus.limits]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to 0}\\frac{\\sqrt{x + 9} - 3}{x}$ (ตอบเป็นทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.1667, tolerance: 0.002 }
+    hints:
+      - "คูณทั้งเศษและส่วนด้วยสังยุค $\\sqrt{x + 9} + 3$"
+      - "ตัวเศษกลายเป็น $(x + 9) - 9 = x$"
+    misconceptions:
+      - { match: 0, feedback: "$\\tfrac00$ ยังสรุปไม่ได้ ต้องจัดรูปด้วยสังยุคก่อน" }
+      - { match: 0.333, feedback: "หลังจัดรูปได้ $\\tfrac{1}{\\sqrt{x + 9} + 3}$ ตัวส่วนคือ $3 + 3 = 6$ ไม่ใช่ 3" }
+    solution: "$\\dfrac{(\\sqrt{x + 9} - 3)(\\sqrt{x + 9} + 3)}{x(\\sqrt{x + 9} + 3)} = \\dfrac{x}{x(\\sqrt{x + 9} + 3)} = \\dfrac{1}{\\sqrt{x + 9} + 3} \\to \\dfrac16 \\approx 0.167$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p009
+    topics: [math.calculus.limits]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to \\infty}\\frac{3x^2 + 1}{2x^2 - x}$"
+    answer: { value: 1.5, tolerance: 0.01 }
+    hints:
+      - "หารทั้งเศษและส่วนด้วย $x^2$"
+      - "$\\dfrac{1}{x^2} \\to 0$ และ $\\dfrac1x \\to 0$"
+    misconceptions:
+      - { match: 3, feedback: "ดูเฉพาะตัวเศษ ต้องหารด้วยสัมประสิทธิ์นำของตัวส่วนด้วย" }
+      - { match: 0, feedback: "ดีกรีของเศษและส่วนเท่ากัน ลิมิตจึงไม่เป็น 0" }
+    solution: "$\\dfrac{3 + \\frac{1}{x^2}}{2 - \\frac1x} \\to \\dfrac{3}{2} = 1.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p010
+    topics: [math.calculus.limits]
+    difficulty: 3
+    type: numeric
+    stem: "บริษัทขนส่งแห่งหนึ่งคิดค่าส่งพัสดุ (อัตราสมมติ) ดังนี้ น้ำหนักไม่เกิน 1 กิโลกรัม 30 บาท มากกว่า 1 แต่ไม่เกิน 2 กิโลกรัม 45 บาท ให้ $C(w)$ เป็นค่าส่งเมื่อพัสดุหนัก $w$ กิโลกรัม จงหา $\\displaystyle\\lim_{w \\to 1^+} C(w)$ (บาท)"
+    answer: { value: 45, unit: บาท }
+    hints:
+      - "$w \\to 1^+$ คือพัสดุหนักกว่า 1 กิโลกรัมเล็กน้อย"
+      - "พัสดุหนัก 1.01 หรือ 1.001 กิโลกรัม เสียค่าส่งเท่าใด"
+    misconceptions:
+      - { match: 30, feedback: "30 บาทคือ $C(1)$ และลิมิตทางซ้าย ถ้าหนักเกิน 1 กิโลกรัมแม้เล็กน้อยก็ต้องจ่าย 45 บาท" }
+    solution: "เมื่อ $1 < w \\le 2$ ค่าส่งคือ 45 บาทคงที่ จึง $\\displaystyle\\lim_{w \\to 1^+} C(w) = 45$ ส่วนลิมิตทางซ้ายคือ 30 สองข้างไม่เท่ากัน $C$ จึงไม่ต่อเนื่องที่ $w = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p011
+    topics: [math.calculus.limits]
+    difficulty: 3
+    type: numeric
+    stem: "โรงงานน้ำปลาแห่งหนึ่งในจังหวัดระยองมีถังน้ำสะอาด 200 ลิตร แล้วเติมน้ำเกลือความเข้มข้น 300 กรัมต่อลิตรลงไปนาทีละ 10 ลิตร (ตัวเลขสมมติ) หลังเวลา $t$ นาที ความเข้มข้นของเกลือในถังคือ $C(t) = \\dfrac{3000t}{200 + 10t}$ กรัมต่อลิตร จงหา $\\displaystyle\\lim_{t \\to \\infty} C(t)$"
+    answer: { value: 300, unit: กรัมต่อลิตร }
+    hints:
+      - "หารทั้งเศษและส่วนด้วย $t$"
+      - "$\\dfrac{200}{t} \\to 0$ เมื่อ $t \\to \\infty$"
+    misconceptions:
+      - { match: 15, feedback: "$\\tfrac{3000}{200}$ ใช้พจน์ผิดคู่ เมื่อ $t$ ใหญ่มาก พจน์ 200 ในตัวส่วนแทบไม่มีผล ต้องเทียบ $3000t$ กับ $10t$" }
+      - { match: 0, feedback: "ดีกรีของเศษและส่วนเท่ากัน (กำลังหนึ่ง) ลิมิตจึงไม่เป็น 0" }
+    solution: "$C(t) = \\dfrac{3000}{\\frac{200}{t} + 10} \\to \\dfrac{3000}{10} = 300$ กรัมต่อลิตร ความเข้มข้นในถังเข้าใกล้ความเข้มข้นของน้ำเกลือที่เติม ซึ่งสมเหตุสมผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p012
+    topics: [math.calculus.limits]
+    difficulty: 4
+    type: numeric
+    stem: "$f(x) = \\begin{cases} x^2 + k, & x < 2 \\\\ 3x - 1, & x \\ge 2 \\end{cases}$ จงหาค่า $k$ ที่ทำให้ $f$ ต่อเนื่องที่ $x = 2$"
+    answer: { value: 1 }
+    hints:
+      - "ลิมิตทางซ้ายคือ $4 + k$ ลิมิตทางขวาและ $f(2)$ คือ $3(2) - 1$"
+      - "ตั้งให้เท่ากัน"
+    misconceptions:
+      - { match: 5, feedback: "5 คือ $f(2)$ ต้องแก้ $4 + k = 5$" }
+      - { match: 9, feedback: "ลิมิตทางซ้ายคือ $2^2 + k = 4 + k$ ต้องหักกำลังสองของ 2 ออก" }
+    solution: "$\\displaystyle\\lim_{x \\to 2^-} f(x) = 4 + k$ และ $\\displaystyle\\lim_{x \\to 2^+} f(x) = f(2) = 5$ ต่อเนื่องเมื่อ $4 + k = 5$ จึง $k = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p013
+    topics: [math.calculus.limits]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดอธิบายฟังก์ชัน $h(x) = \\dfrac{x^2 - 1}{x - 1}$ ที่ $x = 1$ ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "$\\displaystyle\\lim_{x \\to 1} h(x) = 2$ แต่ $h$ ไม่ต่อเนื่องที่ $x = 1$ เพราะ $h(1)$ หาค่าไม่ได้", correct: true }
+      - { id: b, text: "$h$ ต่อเนื่องที่ $x = 1$ เพราะลิมิตมีค่า", feedback: "ลิมิตมีค่าเป็นเงื่อนไขข้อเดียว $h(1)$ ต้องหาค่าได้และเท่ากับลิมิตด้วย" }
+      - { id: c, text: "ลิมิตที่ $x = 1$ หาค่าไม่ได้ เพราะตัวส่วนเป็นศูนย์", feedback: "ตัวส่วนเป็นศูนย์ที่ $x = 1$ พอดี แต่ลิมิตดูค่าใกล้ 1 ซึ่ง $h(x) = x + 1 \\to 2$" }
+      - { id: d, text: "$\\displaystyle\\lim_{x \\to 1} h(x) = 0$", feedback: "$\\tfrac00$ ไม่ได้เท่ากับ 0 ต้องตัด $x - 1$ ก่อน" }
+    hints:
+      - "ตรวจเงื่อนไขทั้งสามของความต่อเนื่อง"
+      - "$\\dfrac{x^2 - 1}{x - 1} = x + 1$ เมื่อ $x \\ne 1$"
+    solution: "$h(x) = x + 1$ เมื่อ $x \\ne 1$ จึงมีลิมิต 2 แต่ $h(1)$ หาค่าไม่ได้ (รูโหว่) จึงไม่ต่อเนื่องที่ $x = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p014
+    topics: [math.calculus.limits]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to -\\infty}\\frac{5 - 2x}{x + 4}$"
+    answer: { value: -2 }
+    hints:
+      - "หารทั้งเศษและส่วนด้วย $x$"
+      - "$\\dfrac5x \\to 0$ และ $\\dfrac4x \\to 0$ เมื่อ $x \\to -\\infty$ ด้วย"
+    misconceptions:
+      - { match: 2, feedback: "สัมประสิทธิ์ของ $x$ ในตัวเศษคือ $-2$ ไม่ใช่ 2" }
+      - { match: 1.25, feedback: "$\\tfrac54$ คือค่าที่ $x = 0$ ไม่ใช่ลิมิตที่อนันต์" }
+    solution: "$\\dfrac{\\frac5x - 2}{1 + \\frac4x} \\to \\dfrac{0 - 2}{1 + 0} = -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p015
+    topics: [math.calculus.limits]
+    difficulty: 4
+    type: match
+    stem: "จับคู่ลิมิตกับค่าของมัน"
+    pairs:
+      - { left: "$\\displaystyle\\lim_{x \\to \\infty}\\frac{1}{x}$", right: "$0$" }
+      - { left: "$\\displaystyle\\lim_{x \\to 2}\\frac{x^3 - 8}{x - 2}$", right: "$12$" }
+      - { left: "$\\displaystyle\\lim_{x \\to \\infty}\\frac{4x + 1}{2x}$", right: "$2$" }
+      - { left: "$\\displaystyle\\lim_{x \\to 0}\\frac{x^2 + 3x}{x}$", right: "$3$" }
+    hints:
+      - "$x^3 - 8 = (x - 2)(x^2 + 2x + 4)$"
+      - "$\\dfrac{x^2 + 3x}{x} = x + 3$ เมื่อ $x \\ne 0$"
+    solution: "$\\tfrac1x \\to 0$; $x^2 + 2x + 4 \\to 12$; $\\tfrac{4 + 1/x}{2} \\to 2$; $x + 3 \\to 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p016
+    topics: [math.calculus.limits]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านขนมเปี๊ยะในฉะเชิงเทราลงทุนเครื่องจักร 5,000 บาท และต้นทุนวัตถุดิบชิ้นละ 12 บาท (ตัวเลขสมมติ) ต้นทุนเฉลี่ยต่อชิ้นเมื่อผลิต $x$ ชิ้นคือ $A(x) = \\dfrac{5000 + 12x}{x}$ บาท ถ้าผลิตมากขึ้นเรื่อย ๆ ต้นทุนเฉลี่ยเข้าใกล้กี่บาท"
+    answer: { value: 12, unit: บาท }
+    hints:
+      - "หา $\\displaystyle\\lim_{x \\to \\infty} A(x)$"
+      - "$A(x) = \\dfrac{5000}{x} + 12$"
+    misconceptions:
+      - { match: 0, feedback: "ส่วนของเครื่องจักร $\\tfrac{5000}{x}$ เข้าใกล้ 0 แต่วัตถุดิบยังต้องจ่ายชิ้นละ 12 บาท" }
+      - { match: 5012, feedback: "นี่คือต้นทุนเมื่อผลิตชิ้นเดียว" }
+    solution: "$A(x) = \\dfrac{5000}{x} + 12 \\to 0 + 12 = 12$ บาท ค่าเครื่องจักรถูกเฉลี่ยจนเกือบหมด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p017
+    topics: [math.calculus.limits]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to 4}\\frac{x - 4}{\\sqrt{x} - 2}$"
+    answer: { value: 4 }
+    hints:
+      - "แทนค่าได้ $\\tfrac00$"
+      - "เขียน $x - 4 = (\\sqrt x - 2)(\\sqrt x + 2)$ หรือคูณด้วยสังยุค $\\sqrt x + 2$"
+    misconceptions:
+      - { match: 0.25, feedback: "นี่คือลิมิตของส่วนกลับ $\\tfrac{\\sqrt x - 2}{x - 4}$ หลังตัดได้ $\\sqrt x + 2$ ไม่ใช่ $\\tfrac{1}{\\sqrt x + 2}$" }
+      - { match: 0, feedback: "$\\tfrac00$ ยังสรุปไม่ได้ ต้องจัดรูปก่อน" }
+    solution: "$\\dfrac{(\\sqrt x - 2)(\\sqrt x + 2)}{\\sqrt x - 2} = \\sqrt x + 2 \\to 2 + 2 = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p018
+    topics: [math.calculus.limits]
+    difficulty: 4
+    type: numeric
+    stem: "$f(x) = \\dfrac{x^2 - 2x - 8}{x - 4}$ เมื่อ $x \\ne 4$ และ $f(4) = k$ จงหา $k$ ที่ทำให้ $f$ ต่อเนื่องที่ $x = 4$"
+    answer: { value: 6 }
+    hints:
+      - "ต้องการ $f(4) = \\displaystyle\\lim_{x \\to 4} f(x)$"
+      - "$x^2 - 2x - 8 = (x - 4)(x + 2)$"
+    misconceptions:
+      - { match: 0, feedback: "แทน $x = 4$ ในสูตรได้ $\\tfrac00$ ซึ่งไม่ใช่ 0 ต้องหาลิมิตก่อน" }
+      - { match: 2, feedback: "หลังตัดได้ $x + 2$ ต้องแทน $x = 4$ ได้ 6" }
+    solution: "$\\displaystyle\\lim_{x \\to 4}\\frac{(x - 4)(x + 2)}{x - 4} = \\lim_{x \\to 4}(x + 2) = 6$ จึงต้องให้ $k = 6$ (อุดรูโหว่)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p019
+    topics: [math.calculus.limits]
+    difficulty: 5
+    type: mcq
+    stem: "ข้อใดถูกต้องเกี่ยวกับ $\\displaystyle\\lim_{x \\to 0}\\frac{|x|}{x}$"
+    choices:
+      - { id: a, text: "หาค่าไม่ได้ เพราะลิมิตทางซ้ายเป็น $-1$ และทางขวาเป็น $1$", correct: true }
+      - { id: b, text: "เท่ากับ $1$", feedback: "ถูกเฉพาะทางขวา ($x > 0$) ทางซ้าย $|x| = -x$ จึงได้ $-1$" }
+      - { id: c, text: "เท่ากับ $0$", feedback: "$\\tfrac{|x|}{x}$ เป็น 1 หรือ $-1$ เสมอ ไม่เข้าใกล้ 0" }
+      - { id: d, text: "เท่ากับ $-1$", feedback: "ถูกเฉพาะทางซ้าย ทางขวาได้ 1" }
+    hints:
+      - "เมื่อ $x > 0$ ได้ $|x| = x$ และเมื่อ $x < 0$ ได้ $|x| = -x$"
+      - "หาลิมิตทั้งสองข้าง"
+    solution: "$x > 0$: $\\tfrac{x}{x} = 1$; $x < 0$: $\\tfrac{-x}{x} = -1$ ลิมิตซ้ายและขวาไม่เท่ากัน ลิมิตจึงหาค่าไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p020
+    topics: [math.calculus.limits]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการตรวจว่าฟังก์ชันที่นิยามเป็นช่วง ๆ ต่อเนื่องที่รอยต่อ $x = a$ หรือไม่"
+    items:
+      - "หาค่า $f(a)$ จากสูตรที่ครอบคลุม $x = a$"
+      - "หาลิมิตทางซ้ายจากสูตรของ $x < a$"
+      - "หาลิมิตทางขวาจากสูตรของ $x > a$"
+      - "ตรวจว่าลิมิตซ้ายเท่ากับลิมิตขวา (ลิมิตมีค่า)"
+      - "ตรวจว่าลิมิตเท่ากับ $f(a)$ แล้วสรุป"
+    hints:
+      - "ใช้เงื่อนไขสามข้อของความต่อเนื่อง"
+      - "ลิมิตที่ $a$ ต้องหาจากทั้งสองข้างก่อน"
+    solution: "หา $f(a)$ → ลิมิตซ้าย → ลิมิตขวา → ซ้ายเท่ากับขวาหรือไม่ → เท่ากับ $f(a)$ หรือไม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limits.p021
+    topics: [math.calculus.limits]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\displaystyle\\lim_{x \\to \\infty}\\left(\\sqrt{x^2 + 6x} - x\\right)$"
+    answer: { value: 3 }
+    hints:
+      - "รูปแบบ $\\infty - \\infty$ ยังสรุปไม่ได้ คูณและหารด้วยสังยุค $\\sqrt{x^2 + 6x} + x$"
+      - "ได้ $\\dfrac{6x}{\\sqrt{x^2 + 6x} + x}$ แล้วหารเศษและส่วนด้วย $x$"
+    misconceptions:
+      - { match: 0, feedback: "$\\sqrt{x^2 + 6x}$ โตเร็วเกือบเท่า $x$ แต่ผลต่างไม่เข้าใกล้ 0 ต้องจัดรูปด้วยสังยุค" }
+      - { match: 6, feedback: "หลังหารด้วย $x$ ตัวส่วนคือ $\\sqrt{1 + \\tfrac6x} + 1 \\to 2$ ต้องหาร 6 ด้วย 2" }
+    solution: "$\\dfrac{(x^2 + 6x) - x^2}{\\sqrt{x^2 + 6x} + x} = \\dfrac{6}{\\sqrt{1 + \\frac6x} + 1} \\to \\dfrac{6}{2} = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
