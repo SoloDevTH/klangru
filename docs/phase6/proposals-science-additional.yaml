@@ -12,30 +12,15 @@
 #   ควรรวมเป็นหัวข้อเดียวก่อนลงมือเขียน
 topics:
   # ---------- เคมี (21 หัวข้อ) ----------
-  - { id: chemistry.lab.safety-measurement, title: "ความปลอดภัยและการวัดในปฏิบัติการเคมี", difficulty: 3, prereq: [physics.units.si, physics.units.measurement],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 3 ม.4/1", "th-core-2560-chemistry-additional:เคมี 3 ม.4/2", "th-core-2560-chemistry-additional:เคมี 3 ม.4/3", "th-core-2560-chemistry-additional:เคมี 3 ม.4/4"],
-      scope: "ข้อปฏิบัติด้านความปลอดภัยและการจัดการเมื่อเกิดอุบัติเหตุ การเลือกใช้อุปกรณ์และเครื่องมือวัดปริมาตร มวล อุณหภูมิ การเขียนแผนการทดลองและรายงาน หน่วยของปริมาณทางเคมีและการเปลี่ยนหน่วยด้วยแฟกเตอร์เปลี่ยนหน่วย" }
-  - { id: chemistry.matter.atomic-structure, title: "แบบจำลองอะตอมและการจัดเรียงอิเล็กตรอน", difficulty: 5, prereq: [chemistry.matter.periodic-table],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/1", "th-core-2560-chemistry-additional:เคมี 1 ม.4/3"],
-      scope: "วิวัฒนาการของแบบจำลองอะตอมจากดอลตัน ทอมสัน รัทเทอร์ฟอร์ด โบร์ ถึงกลุ่มหมอก พร้อมหลักฐานการทดลอง ระดับพลังงานหลักและระดับพลังงานย่อย s p d f การจัดเรียงอิเล็กตรอนตามหลักเอาฟ์บาว" }
-  - { id: chemistry.matter.periodic-trends, title: "แนวโน้มสมบัติของธาตุและธาตุแทรนซิชัน", difficulty: 5, prereq: [chemistry.matter.atomic-structure],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/4", "th-core-2560-chemistry-additional:เคมี 1 ม.4/5", "th-core-2560-chemistry-additional:เคมี 1 ม.4/6", "th-core-2560-chemistry-additional:เคมี 1 ม.4/8"],
-      scope: "ธาตุเรพรีเซนเททีฟและธาตุแทรนซิชัน แนวโน้มขนาดอะตอม ขนาดไอออน พลังงานไอออไนเซชัน อิเล็กโทรเนกาติวิตี สัมพรรคภาพอิเล็กตรอน จุดหลอมเหลวจุดเดือด สมบัติของโลหะแทรนซิชัน และการใช้ประโยชน์ธาตุพร้อมผลกระทบต่อสิ่งแวดล้อม" }
   - { id: chemistry.bonding.ionic, title: "พันธะไอออนิก", difficulty: 5, prereq: [chemistry.matter.periodic-trends],
       indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/9", "th-core-2560-chemistry-additional:เคมี 1 ม.4/10", "th-core-2560-chemistry-additional:เคมี 1 ม.4/11", "th-core-2560-chemistry-additional:เคมี 1 ม.4/12", "th-core-2560-chemistry-additional:เคมี 1 ม.4/13"],
       scope: "การเกิดไอออนและพันธะไอออนิกด้วยสัญลักษณ์แบบจุดของลิวอิส สูตรและการเรียกชื่อสารประกอบไอออนิก พลังงานกับวัฏจักรบอร์น–ฮาเบอร์ สมบัติของสารประกอบไอออนิก สมการไอออนิกและสมการไอออนิกสุทธิ" }
-  - { id: chemistry.bonding.covalent-naming-energy, title: "การเรียกชื่อสารโคเวเลนต์และพลังงานพันธะ", difficulty: 5, prereq: [chemistry.bonding.covalent],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/15", "th-core-2560-chemistry-additional:เคมี 1 ม.4/16"],
-      scope: "สูตรและการเรียกชื่อสารโคเวเลนต์ ความยาวพันธะ พลังงานพันธะ และการคำนวณพลังงานของปฏิกิริยาจากพลังงานพันธะ" }
   - { id: chemistry.bonding.polarity-intermolecular, title: "สภาพขั้วของโมเลกุลและแรงระหว่างโมเลกุล", difficulty: 5.5, prereq: [chemistry.bonding.covalent, chemistry.matter.periodic-trends],
       indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/17", "th-core-2560-chemistry-additional:เคมี 1 ม.4/18", "th-core-2560-chemistry-additional:เคมี 1 ม.4/19"],
       scope: "รูปร่างโมเลกุลตามทฤษฎี VSEPR สภาพขั้วของพันธะและของโมเลกุล แรงลอนดอน แรงระหว่างขั้ว พันธะไฮโดรเจน ผลต่อจุดหลอมเหลว จุดเดือด และการละลายน้ำ และสารโคเวเลนต์โครงร่างตาข่าย เช่น เพชร แกรไฟต์ ซิลิคอนไดออกไซด์" }
   - { id: chemistry.bonding.metallic, title: "พันธะโลหะและการเปรียบเทียบสมบัติของสาร", difficulty: 4.5, prereq: [chemistry.bonding.ionic, chemistry.bonding.polarity-intermolecular],
       indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/20", "th-core-2560-chemistry-additional:เคมี 1 ม.4/21"],
       scope: "การเกิดพันธะโลหะและสมบัติของโลหะ เปรียบเทียบสมบัติของสารประกอบไอออนิก สารโคเวเลนต์ และโลหะ พร้อมตัวอย่างการใช้ประโยชน์" }
-  - { id: chemistry.stoichiometry.mole, title: "มวลอะตอมและโมล", difficulty: 5, prereq: [chemistry.matter.atoms, math.number.scientific-notation, math.number.ratio-percent],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 3 ม.4/5", "th-core-2560-chemistry-additional:เคมี 3 ม.4/6", "th-core-2560-chemistry-additional:เคมี 3 ม.4/7", "th-core-2560-chemistry-additional:เคมี 3 ม.4/8"],
-      scope: "มวลอะตอม มวลอะตอมเฉลี่ย มวลโมเลกุลและมวลสูตร ความสัมพันธ์ของโมลกับจำนวนอนุภาค มวล และปริมาตรแก๊สที่ STP กฎสัดส่วนคงที่ ร้อยละโดยมวล สูตรอย่างง่ายและสูตรโมเลกุล" }
   - { id: chemistry.solutions.concentration, title: "ความเข้มข้นของสารละลาย", difficulty: 5, prereq: [chemistry.stoichiometry.mole],
       indicators: ["th-core-2560-chemistry-additional:เคมี 3 ม.4/9", "th-core-2560-chemistry-additional:เคมี 3 ม.4/10", "th-core-2560-chemistry-additional:เคมี 3 ม.4/11"],
       scope: "ความเข้มข้นในหน่วยร้อยละ ส่วนในล้านส่วน โมลาริตี โมแลลิตี เศษส่วนโมล การเตรียมสารละลายจากสารบริสุทธิ์และการเจือจาง จุดเดือดและจุดเยือกแข็งของสารละลาย" }

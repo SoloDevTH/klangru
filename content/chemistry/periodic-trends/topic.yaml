@@ -1,0 +1,64 @@
+id: chemistry.matter.periodic-trends
+subject: chemistry
+title: { th: แนวโน้มสมบัติของธาตุและธาตุแทรนซิชัน, en: Periodic trends and transition elements }
+summary: เหตุผลของแนวโน้มขนาดอะตอม ขนาดไอออน พลังงานไอออไนเซชัน อิเล็กโทรเนกาติวิตี สัมพรรคภาพอิเล็กตรอน และจุดหลอมเหลว สมบัติของธาตุแทรนซิชัน ประโยชน์และผลกระทบของธาตุ
+difficulty: 5
+minutes: 40
+prerequisites: [chemistry.matter.atomic-structure]
+encompasses:
+  - { id: chemistry.matter.atomic-structure, weight: 0.3 }
+  - { id: chemistry.matter.periodic-table, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: period3-trends.svg
+    alt: "สองกราฟของธาตุคาบ 3 ซ้าย: กราฟแท่งรัศมีอะตอมลดลงจากซ้ายไปขวา Na 186, Mg 160, Al 143, Si 117, P 110, S 104, Cl 99 pm (Ar ไม่มีค่า) ขวา: กราฟเส้นพลังงานไอออไนเซชันลำดับที่ 1 Na 496, Mg 738, Al 578, Si 787, P 1012, S 1000, Cl 1251, Ar 1521 kJ/mol เพิ่มขึ้นโดยรวม แต่ลดลงที่ Mg ไป Al และ P ไป S"
+    caption: "ไปทางขวาในคาบ 3 อะตอมเล็กลงและ IE สูงขึ้น ยกเว้นสองจุด"
+  - { type: check, problem: chemistry.matter.periodic-trends.p007, prompt: "ดูกราฟ IE แล้วใช้การจัดเรียงอิเล็กตรอนอธิบาย" }
+  - type: figure
+    src: ion-size.svg
+    alt: "วงกลมตามมาตราส่วน แถวบน: อะตอม Na 186 pm ลูกศรไปยัง Na⁺ 102 pm ซึ่งเล็กกว่ามาก อะตอม Cl 99 pm ลูกศรไปยัง Cl⁻ 181 pm ซึ่งใหญ่กว่ามาก มีข้อความว่าไอออนบวกเล็กกว่าอะตอมเพราะเสียอิเล็กตรอนชั้นนอกทั้งชั้น ไอออนลบใหญ่กว่าอะตอมเพราะอิเล็กตรอนเพิ่มผลักกันมากขึ้น แถวล่าง: ไอออนที่มีอิเล็กตรอน 10 ตัว O²⁻ 140 (โปรตอน 8), F⁻ 133 (9), Na⁺ 102 (11), Mg²⁺ 72 (12), Al³⁺ 54 pm (13) เล็กลงตามจำนวนโปรตอน"
+    caption: "ขนาดไอออนเทียบกับอะตอม (รัศมีอะตอมเป็นรัศมีโลหะหรือโคเวเลนต์ รัศมีไอออนจากผลึก)"
+  - type: worked-example
+    title: เรียงขนาดและพลังงานไอออไนเซชันพร้อมเหตุผล
+    problem: "เรียง K, Na และ Cl ตาม (ก) ขนาดอะตอมจากใหญ่ไปเล็ก (ข) พลังงานไอออไนเซชันลำดับที่ 1 จากน้อยไปมาก พร้อมเหตุผล"
+    steps:
+      - text: "ระบุตำแหน่ง: Na คาบ 3 หมู่ 1 · K คาบ 4 หมู่ 1 · Cl คาบ 3 หมู่ 17"
+      - text: "K กับ Na หมู่เดียวกัน: K มีชั้นมากกว่า จึงใหญ่กว่า"
+        why: "ลงล่างในหมู่ จำนวนชั้นเพิ่ม เวเลนซ์อิเล็กตรอนอยู่ไกลขึ้น"
+      - text: "Na กับ Cl คาบเดียวกัน: ประจุยังผล Na ≈ 1 แต่ Cl ≈ 7 Cl จึงเล็กกว่า"
+      - text: "(ก) ขนาด: K > Na > Cl"
+      - text: "(ข) IE กลับกับขนาด เพราะอิเล็กตรอนที่อยู่ใกล้และถูกดึงแรงดึงออกยาก: K (419) < Na (496) < Cl (1,251 kJ/mol)"
+    answer: "(ก) K > Na > Cl · (ข) K < Na < Cl"
+  - type: worked-example
+    title: ทำนายผลการผสมแฮโลเจน
+    problem: "นักเรียนหยดน้ำโบรมีนลงในสารละลายโพแทสเซียมไอโอไดด์ (KI) จะเกิดปฏิกิริยาหรือไม่ ถ้าเกิด จงเขียนสมการ"
+    steps:
+      - text: "Br อยู่เหนือ I ในหมู่ 17 อะตอม Br เล็กกว่า จึงรับอิเล็กตรอนได้ดีกว่า"
+      - text: "Br₂ จึงดึงอิเล็กตรอนจาก I⁻ ได้ เกิด Br⁻ และ I₂"
+        why: "แฮโลเจนที่ว่องไวกว่าแทนที่ไอออนของแฮโลเจนที่ว่องไวน้อยกว่า"
+      - text: "เขียนสมการ: $\\mathrm{Br_2 + 2KI \\rightarrow 2KBr + I_2}$ สารละลายเปลี่ยนเป็นสีน้ำตาลเข้มของไอโอดีน"
+    answer: "เกิดปฏิกิริยา $\\mathrm{Br_2 + 2KI \\rightarrow 2KBr + I_2}$"
+  - { type: check, problem: chemistry.matter.periodic-trends.p012, prompt: "ใช้หลักเดียวกับตัวอย่างที่เพิ่งทำ" }
+glossary:
+  - { term: ประจุนิวเคลียสยังผล, definition: แรงดึงสุทธิจากนิวเคลียสที่เวเลนซ์อิเล็กตรอนรู้สึก หลังหักส่วนที่อิเล็กตรอนชั้นในบังไว้ }
+  - { term: สัมพรรคภาพอิเล็กตรอน, definition: พลังงานที่คายออกเมื่ออะตอมในสถานะแก๊สรับอิเล็กตรอน 1 ตัว }
+  - { term: ไอออนที่มีอิเล็กตรอนเท่ากัน, definition: "ไอออนของธาตุต่างกันที่มีจำนวนอิเล็กตรอนเท่ากัน เช่น O²⁻ F⁻ Na⁺ Mg²⁺" }
+  - { term: ธาตุแทรนซิชัน, definition: ธาตุหมู่ 3–12 ซึ่งเติมอิเล็กตรอนในระดับย่อย d มีเลขออกซิเดชันหลายค่าและสารประกอบมักมีสี }
+  - { term: ตัวเร่งปฏิกิริยา, definition: สารที่ทำให้ปฏิกิริยาเกิดเร็วขึ้นโดยตัวมันเองไม่ถูกใช้หมดไป }
+flashcards:
+  - { front: "ทำไมอะตอมเล็กลงเมื่อไปทางขวาในคาบ", back: "จำนวนชั้นเท่าเดิม แต่ประจุนิวเคลียสยังผลเพิ่มขึ้น เวเลนซ์อิเล็กตรอนถูกดึงเข้าใกล้" }
+  - { front: "ข้อยกเว้นของ IE ในคาบ 3", back: "Mg > Al (3p หลุดง่ายกว่า 3s) และ P > S (อิเล็กตรอนคู่ใน 3p ผลักกัน)" }
+  - { front: "แนวโน้มความว่องไวของหมู่ 1 กับหมู่ 17", back: "หมู่ 1 ว่องไวขึ้นเมื่อลงล่าง (เสียอิเล็กตรอนง่ายขึ้น) · หมู่ 17 ว่องไวลดลง (รับอิเล็กตรอนยากขึ้น)" }
+  - { front: "สมบัติเด่นของโลหะแทรนซิชัน", back: "จุดหลอมเหลวและความหนาแน่นสูง เลขออกซิเดชันหลายค่า สารประกอบมีสี เป็นตัวเร่งปฏิกิริยา" }
+  - { front: "EA ของ F กับ Cl ตัวไหนมากกว่า", back: "Cl (349) มากกว่า F (328 kJ/mol) เพราะ F เล็กมาก อิเล็กตรอนเดิมผลักตัวใหม่" }
+references:
+  - { title: "โลหะทรานซิชัน", url: "https://th.wikipedia.org/wiki/โลหะทรานซิชัน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Periodic trends", url: "https://en.wikipedia.org/wiki/Periodic_trends", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.5 Periodic Variations in Element Properties (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/6-5-periodic-variations-in-element-properties", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "19.1 Occurrence, Preparation, and Properties of Transition Metals and Their Compounds (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/19-1-occurrence-preparation-and-properties-of-transition-metals-and-their-compounds", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

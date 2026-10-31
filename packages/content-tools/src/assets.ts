@@ -6,6 +6,9 @@ import { join } from "node:path";
  * เก็บไฟล์ไว้ใน repo เพื่อให้ build และแอปทำงานได้โดยไม่ต้องต่อเน็ต
  * ข้อมูล PubChem เป็นสาธารณสมบัติ (public domain)
  */
+/** ระบุตัวตนกับบริการภายนอกด้วยชื่อโครงการและ URL ของรีโพเท่านั้น ไม่ใส่ข้อมูลส่วนตัว */
+const HEADERS = { "User-Agent": "KlangruBot/0.1 (+https://github.com/SoloDevTH/klangru)" };
+
 export async function fetchMolecules(cids: number[], contentDir: string, fetchImpl: typeof fetch = fetch): Promise<string[]> {
   const dir = join(contentDir, "_assets/molecules");
   mkdirSync(dir, { recursive: true });
@@ -13,9 +16,9 @@ export async function fetchMolecules(cids: number[], contentDir: string, fetchIm
   for (const cid of [...new Set(cids)]) {
     const file = join(dir, `${cid}.sdf`);
     if (existsSync(file)) continue;
-    let res = await fetchImpl(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/SDF?record_type=3d`);
+    let res = await fetchImpl(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/SDF?record_type=3d`, { headers: HEADERS });
     // บางสาร (เช่น ไอออนหรือโลหะ) ไม่มีโครงสร้าง 3 มิติ ใช้ 2 มิติแทน
-    if (res.status === 404) res = await fetchImpl(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/SDF`);
+    if (res.status === 404) res = await fetchImpl(`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/SDF`, { headers: HEADERS });
     if (!res.ok) throw new Error(`PubChem CID ${cid}: HTTP ${res.status}`);
     writeFileSync(file, await res.text());
     fetched.push(`${cid}.sdf`);
