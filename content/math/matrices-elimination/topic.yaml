@@ -1,0 +1,78 @@
+id: math.linalg.matrices-elimination
+subject: math
+title: { th: เมทริกซ์ การกำจัดแบบเกาส์ และดีเทอร์มิแนนต์, en: "Matrices, Gaussian elimination and determinants" }
+summary: บวก ลบ คูณเมทริกซ์ เมทริกซ์เป็นการแปลง ดีเทอร์มิแนนต์ถึงมิติสาม เมทริกซ์ผกผัน และแก้ระบบสมการด้วยตัวผกผันและการดำเนินการตามแถว
+difficulty: 7
+minutes: 45
+prerequisites: [math.algebra.systems]
+encompasses:
+  - { id: math.algebra.systems, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: transform-area.svg
+    alt: "ระนาบพิกัด สี่เหลี่ยมจัตุรัสหนึ่งหน่วยสีเทา (0,0) (1,0) (1,1) (0,1) มีเลข 1 และสี่เหลี่ยมด้านขนานสีส้ม (0,0) (2,0) (3,1.5) (1,1.5) มีเลข 3 ลูกศรสีแดง Ae₁ = (2, 0) และลูกศรสีน้ำเงิน Ae₂ = (1, 1.5) ข้อความมุมขวาบน: A มีแถว (2, 1) และ (0, 1.5), det A = 2(1.5) − 1(0) = 3"
+    caption: "เมทริกซ์ A แปลงสี่เหลี่ยมจัตุรัสหนึ่งหน่วยเป็นสี่เหลี่ยมด้านขนานที่มีพื้นที่ |det A| = 3"
+  - type: worked-example
+    title: แก้ระบบสมการด้วยเมทริกซ์ผกผัน
+    problem: "จงแก้ระบบ $4x + 3y = 18$ และ $x + y = 5$ โดยใช้เมทริกซ์ผกผัน"
+    steps:
+      - text: "เขียนเป็น $A\\mathbf{x} = \\mathbf{b}$: $\\begin{pmatrix} 4 & 3 \\\\ 1 & 1 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 18 \\\\ 5 \\end{pmatrix}$"
+      - text: "$\\det A = 4(1) - 3(1) = 1 \\ne 0$ จึงมีตัวผกผัน"
+      - text: "$A^{-1} = \\dfrac11\\begin{pmatrix} 1 & -3 \\\\ -1 & 4 \\end{pmatrix}$"
+        why: "สลับสมาชิกบนเส้นทแยงมุมหลัก เปลี่ยนเครื่องหมายอีกสองตัว แล้วหารด้วยดีเทอร์มิแนนต์"
+      - text: "$\\mathbf{x} = A^{-1}\\mathbf{b} = \\begin{pmatrix} 1(18) - 3(5) \\\\ -1(18) + 4(5) \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix}$"
+        why: "ต้องคูณ $A^{-1}$ ไว้ทางซ้ายของ $\\mathbf{b}$ เพราะการคูณเมทริกซ์ไม่สลับที่"
+      - text: "ตรวจ: $4(3) + 3(2) = 18$ และ $3 + 2 = 5$"
+    answer: "$x = 3,\\ y = 2$"
+  - type: figure
+    src: row-column.svg
+    alt: "สองภาพของระบบ 4x + 3y = 18 และ x + y = 5 ภาพซ้ายชื่อมองตามแถว: เส้นตรงสีแดง 4x + 3y = 18 และเส้นสีน้ำเงิน x + y = 5 ตัดกันที่จุด (3, 2) ภาพขวาชื่อมองตามหลัก: ลูกศรสีแดง 3·(4, 1) จากจุดกำเนิดไปถึง (12, 3) ต่อด้วยลูกศรสีน้ำเงิน 2·(3, 1) ไปถึง (18, 5) และลูกศรประสีเขียว b = (18, 5)"
+    caption: "ระบบเดียวกันมองได้สองแบบ: จุดตัดของเส้นตรง หรือการผสมหลักของ A ให้ได้ b"
+  - type: interactive
+    title: ระบบสมการที่ดีเทอร์มิแนนต์เป็นศูนย์
+    caption: "เส้นแรกคือ 4x + 3y = 18 เส้นที่สองคือ x + ky = 5 เมทริกซ์สัมประสิทธิ์มีดีเทอร์มิแนนต์ 4k − 3 ลองเลื่อน k ไปที่ 0.75 เส้นทั้งสองจะขนานกันและไม่มีจุดตัด ซึ่งตรงกับ det A = 0"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{18-4x}{3}", "\\frac{5-x}{k}"]
+      sliders:
+        - { name: k, min: 0.25, max: 2, step: 0.25, value: 1, label: สัมประสิทธิ์ k }
+      x: [-2, 8]
+      y: [-4, 8]
+  - { type: check, problem: math.linalg.matrices-elimination.p005, prompt: "ดีเทอร์มิแนนต์ 2 × 2 คือ ad − bc" }
+  - type: worked-example
+    title: การกำจัดแบบเกาส์ 3 × 3
+    problem: "จงแก้ระบบ $x + y + z = 6$, $2x - y + z = 6$, $x + 2y - z = 1$"
+    steps:
+      - text: "เมทริกซ์แต่งเติม $\\left(\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 2 & -1 & 1 & 6 \\\\ 1 & 2 & -1 & 1 \\end{array}\\right)$"
+      - text: "$R_2 - 2R_1$ และ $R_3 - R_1$: $\\left(\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 0 & -3 & -1 & -6 \\\\ 0 & 1 & -2 & -5 \\end{array}\\right)$"
+        why: "กำจัด $x$ ออกจากแถวที่ 2 และ 3"
+      - text: "$3R_3 + R_2$: แถวที่ 3 กลายเป็น $(0\\ \\ 0\\ \\ {-7} \\mid {-21})$"
+        why: "กำจัด $y$ ออกจากแถวที่ 3 ได้รูปขั้นบันได"
+      - text: "แทนค่าย้อนกลับ: $-7z = -21$ ได้ $z = 3$ จากนั้น $-3y - 3 = -6$ ได้ $y = 1$"
+      - text: "$x + 1 + 3 = 6$ ได้ $x = 2$ ตรวจสมการที่ 3: $2 + 2 - 3 = 1$ จริง"
+    answer: "$(x, y, z) = (2, 1, 3)$"
+  - { type: check, problem: math.linalg.matrices-elimination.p011, prompt: "ทำให้ใต้เส้นทแยงมุมเป็นศูนย์ก่อน แล้วแทนค่าย้อนกลับ" }
+glossary:
+  - { term: เมทริกซ์, definition: "ตารางจำนวนรูปสี่เหลี่ยมที่มี m แถว n หลัก (มิติ m × n)" }
+  - { term: เมทริกซ์สลับเปลี่ยน, definition: "Aᵀ ได้จากการเปลี่ยนแถวของ A เป็นหลัก" }
+  - { term: เมทริกซ์เอกลักษณ์, definition: "เมทริกซ์จัตุรัส I ที่มี 1 บนเส้นทแยงมุมหลักและ 0 ที่อื่น AI = IA = A" }
+  - { term: ดีเทอร์มิแนนต์, definition: "จำนวนที่คำนวณจากเมทริกซ์จัตุรัส บอกว่ามีตัวผกผันหรือไม่ และพื้นที่หรือปริมาตรถูกขยายกี่เท่า" }
+  - { term: เมทริกซ์ผกผัน, definition: "A⁻¹ ที่ทำให้ AA⁻¹ = A⁻¹A = I มีเมื่อ det A ≠ 0" }
+  - { term: การดำเนินการตามแถว, definition: "สลับแถว คูณแถวด้วยจำนวนไม่เป็นศูนย์ และบวกพหุคูณของแถวหนึ่งเข้ากับอีกแถว" }
+flashcards:
+  - { front: "AB หาได้เมื่อใด และมีมิติเท่าใด", back: "เมื่อจำนวนหลักของ A เท่ากับจำนวนแถวของ B ผลคูณ (m × n)(n × p) มีมิติ m × p" }
+  - { front: "ตัวผกผันของ (a b / c d)", back: "1/(ad − bc) คูณ (d −b / −c a) ใช้ได้เมื่อ ad − bc ≠ 0" }
+  - { front: "|det A| ของการแปลงระนาบบอกอะไร", back: "อัตราส่วนที่พื้นที่ถูกขยาย เช่น det = −5 ทำให้พื้นที่เป็น 5 เท่า" }
+  - { front: "การดำเนินการตามแถวแบบใดไม่เปลี่ยนดีเทอร์มิแนนต์", back: "บวกพหุคูณของแถวหนึ่งเข้ากับอีกแถว (สลับแถวเปลี่ยนเครื่องหมาย คูณแถวด้วย k คูณดีเทอร์มิแนนต์ด้วย k)" }
+  - { front: "ได้แถว [0 0 0 | 5] หลังการกำจัด แปลว่าอะไร", back: "0 = 5 เป็นไปไม่ได้ ระบบไม่มีคำตอบ" }
+references:
+  - { title: "เมทริกซ์ (คณิตศาสตร์)", url: "https://th.wikipedia.org/wiki/เมทริกซ์_(คณิตศาสตร์)", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "ดีเทอร์มิแนนต์", url: "https://th.wikipedia.org/wiki/ดีเทอร์มิแนนต์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Gaussian elimination", url: "https://en.wikipedia.org/wiki/Gaussian_elimination", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "18.06 Linear Algebra (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

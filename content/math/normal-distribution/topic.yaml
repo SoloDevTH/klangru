@@ -1,0 +1,73 @@
+id: math.stats.normal-distribution
+subject: math
+title: { th: ตัวแปรสุ่มต่อเนื่องและการแจกแจงปกติ, en: Continuous random variables and the normal distribution }
+summary: ฟังก์ชันความหนาแน่น การแจกแจงเอกรูปและเอกซ์โพเนนเชียล การแจกแจงปกติ กฎ 68–95–99.7 คะแนนมาตรฐาน การอ่านตาราง และเมื่อใดไม่ควรใช้โค้งปกติ
+difficulty: 7
+minutes: 45
+prerequisites: [math.stats.random-variables]
+encompasses:
+  - { id: math.stats.random-variables, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: uniform-exponential.svg
+    alt: "สองกราฟ กราฟซ้ายชื่อเอกรูปบน [0, 20]: เส้นแนวนอน f(x) = 1/20 = 0.05 จาก x = 0 ถึง 20 พื้นที่ใต้เส้นจาก 0 ถึง 5 แรเงาและเขียนว่า P(X < 5) กราฟขวาชื่อเอกซ์โพเนนเชียล λ = 0.5: เส้นโค้ง f(x) = 0.5e^(−0.5x) เริ่มที่ 0.5 แล้วลดลงเข้าใกล้ 0 พื้นที่ทางขวาของ x = 3 แรเงาและเขียนว่า P(X > 3)"
+    caption: "ความน่าจะเป็นของตัวแปรสุ่มต่อเนื่องคือพื้นที่ใต้ฟังก์ชันความหนาแน่น"
+  - type: figure
+    src: empirical-rule.svg
+    alt: "โค้งปกติรูประฆัง แกนนอนมีขีด μ − 3σ, μ − 2σ, μ − σ, μ, μ + σ, μ + 2σ, μ + 3σ พื้นที่จาก μ − σ ถึง μ + σ แรเงาเข้มที่สุดและเขียนว่า 68% ใต้แกนมีลูกศรจาก μ − 2σ ถึง μ + 2σ เขียนว่า 95% และจาก μ − 3σ ถึง μ + 3σ เขียนว่า 99.7%"
+    caption: "กฎ 68–95–99.7 ของการแจกแจงปกติ"
+  - type: interactive
+    title: โค้งปกติเมื่อเปลี่ยน μ และ σ
+    caption: "เส้นโค้งคือความหนาแน่นของ N(m, s²) เลื่อน m แล้วโค้งเลื่อนซ้ายขวาโดยรูปร่างเดิม เลื่อน s ให้มากขึ้นแล้วโค้งกว้างและเตี้ยลง เพราะพื้นที่ใต้โค้งต้องเท่ากับ 1 เสมอ"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{s\\sqrt{2\\pi}}e^{-\\frac{(x-m)^2}{2s^2}}"]
+      sliders:
+        - { name: m, min: -3, max: 3, step: 0.5, value: 0, label: ค่าเฉลี่ย μ }
+        - { name: s, min: 0.5, max: 3, step: 0.25, value: 1, label: ส่วนเบี่ยงเบนมาตรฐาน σ }
+      x: [-8, 8]
+      y: [-0.1, 0.9]
+  - type: worked-example
+    title: ความน่าจะเป็นในช่วงด้วยคะแนนมาตรฐาน
+    problem: "น้ำหนักไข่ไก่จากฟาร์มหนึ่งในนครราชสีมามีการแจกแจงปกติ ค่าเฉลี่ย 60 กรัม ส่วนเบี่ยงเบนมาตรฐาน 5 กรัม (ค่าสมมติ) ไข่ที่หนัก 55 ถึง 67 กรัมมีสัดส่วนเท่าใด"
+    steps:
+      - text: "แปลงขอบทั้งสองเป็นคะแนนมาตรฐาน: $z_1 = \\dfrac{55 - 60}{5} = -1.0$ และ $z_2 = \\dfrac{67 - 60}{5} = 1.4$"
+      - text: "จากตาราง $\\Phi(1.4) = 0.9192$ และ $\\Phi(1.0) = 0.8413$"
+      - text: "$\\Phi(-1.0) = 1 - 0.8413 = 0.1587$"
+        why: "ตารางมีเฉพาะ $z$ บวก ใช้ความสมมาตรของโค้งปกติ"
+      - text: "$P(55 < X < 67) = \\Phi(1.4) - \\Phi(-1.0) = 0.9192 - 0.1587 = 0.7605$"
+    answer: "ประมาณ 0.7605 หรือ 76%"
+  - { type: check, problem: math.stats.normal-distribution.p008, prompt: "หาคะแนนมาตรฐานก่อน แล้วระวังว่าโจทย์ถามสูงกว่า" }
+  - type: worked-example
+    title: เวลาที่มีการแจกแจงเอกซ์โพเนนเชียล
+    problem: "หลอดไฟ LED รุ่นหนึ่งมีอายุการใช้งานแจกแจงเอกซ์โพเนนเชียล อายุเฉลี่ย 5 ปี (ค่าสมมติ) ความน่าจะเป็นที่หลอดใช้งานได้นานกว่า 3 ปีเป็นเท่าใด"
+    steps:
+      - text: "$\\lambda = \\dfrac{1}{\\mu} = \\dfrac15 = 0.2$ ต่อปี"
+        why: "ค่าเฉลี่ยของการแจกแจงเอกซ์โพเนนเชียลคือ $1/\\lambda$"
+      - text: "$P(T > 3) = e^{-\\lambda \\cdot 3} = e^{-0.6}$"
+      - text: "$e^{-0.6} \\approx 0.5488$"
+    answer: "ประมาณ 0.549"
+  - { type: check, problem: math.stats.normal-distribution.p001, prompt: "ความน่าจะเป็นของการแจกแจงเอกรูปคือสัดส่วนความยาวของช่วง" }
+glossary:
+  - { term: ตัวแปรสุ่มต่อเนื่อง, definition: "ตัวแปรสุ่มที่มีค่าได้ทุกจำนวนในช่วงหนึ่ง เช่น ส่วนสูง เวลา" }
+  - { term: ฟังก์ชันความหนาแน่นของความน่าจะเป็น, definition: "ฟังก์ชัน f(x) ≥ 0 ที่พื้นที่ใต้กราฟทั้งหมดเท่ากับ 1 และพื้นที่ในช่วงคือความน่าจะเป็น" }
+  - { term: การแจกแจงปกติ, definition: "การแจกแจงรูประฆังสมมาตร กำหนดด้วยค่าเฉลี่ย μ และส่วนเบี่ยงเบนมาตรฐาน σ" }
+  - { term: คะแนนมาตรฐาน, definition: "z = (x − μ)/σ บอกว่า x ห่างจากค่าเฉลี่ยกี่เท่าของส่วนเบี่ยงเบนมาตรฐาน" }
+  - { term: การแจกแจงเอกซ์โพเนนเชียล, definition: "การแจกแจงของเวลารอ ความหนาแน่น λe^(−λx) ค่าเฉลี่ย 1/λ" }
+flashcards:
+  - { front: "P(X = a) ของตัวแปรสุ่มต่อเนื่อง", back: "เท่ากับ 0 ความน่าจะเป็นมีเฉพาะของช่วง" }
+  - { front: "กฎ 68–95–99.7", back: "ข้อมูลปกติประมาณ 68%, 95%, 99.7% อยู่ภายใน 1, 2, 3 เท่าของ σ จากค่าเฉลี่ย" }
+  - { front: "คะแนนมาตรฐาน z", back: "(x − μ)/σ" }
+  - { front: "P(Z > z) และ Φ(−z)", back: "ทั้งสองเท่ากับ 1 − Φ(z)" }
+  - { front: "P(X > x) ของการแจกแจงเอกซ์โพเนนเชียลที่มีค่าเฉลี่ย μ", back: "e^(−x/μ)" }
+references:
+  - { title: "การแจกแจงปรกติ", url: "https://th.wikipedia.org/wiki/การแจกแจงปรกติ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Normal distribution", url: "https://en.wikipedia.org/wiki/Normal_distribution", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.1 The Standard Normal Distribution (Introductory Statistics 2e, OpenStax)", url: "https://openstax.org/books/introductory-statistics-2e/pages/6-1-the-standard-normal-distribution", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "5.3 The Exponential Distribution (Introductory Statistics 2e, OpenStax)", url: "https://openstax.org/books/introductory-statistics-2e/pages/5-3-the-exponential-distribution", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

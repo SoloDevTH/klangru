@@ -1,0 +1,75 @@
+id: chemistry.stoichiometry.reactions
+subject: chemistry
+title: { th: สมการเคมีและปริมาณสัมพันธ์, en: Chemical equations and stoichiometry }
+summary: สัญลักษณ์ในสมการเคมี การดุลสมการ การคำนวณปริมาณสารจากมวล ความเข้มข้น และปริมาตรแก๊ส ปฏิกิริยาหลายขั้นตอน สารกำหนดปริมาณ และผลได้ร้อยละ
+difficulty: 6
+minutes: 45
+prerequisites: [chemistry.stoichiometry.mole, chemistry.solutions.concentration]
+encompasses:
+  - { id: chemistry.stoichiometry.mole, weight: 0.5 }
+  - { id: chemistry.solutions.concentration, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chemistry.stoichiometry.reactions.p003, prompt: "นับอะตอมแต่ละชนิดทั้งสองข้างลูกศร" }
+  - type: worked-example
+    title: ดุลสมการที่มีไอออนกลุ่มอะตอม
+    problem: "ดุลสมการ $\\mathrm{Al(s) + H_2SO_4(aq) \\to Al_2(SO_4)_3(aq) + H_2(g)}$"
+    steps:
+      - text: "Al: ขวามี 2 อะตอม จึงเติม 2 หน้า Al ได้ $\\mathrm{2Al + H_2SO_4 \\to Al_2(SO_4)_3 + H_2}$"
+      - text: "ดุล $\\mathrm{SO_4}$ เป็นกลุ่ม: ขวามี 3 กลุ่ม จึงเติม 3 หน้า $\\mathrm{H_2SO_4}$"
+        why: "กลุ่ม $\\mathrm{SO_4}$ ไม่เปลี่ยนแปลงในปฏิกิริยา นับเป็นก้อนเดียวได้ ไม่ต้องแยก S กับ O"
+      - text: "H: ซ้ายมี $3 \\times 2 = 6$ อะตอม จึงเติม 3 หน้า $\\mathrm{H_2}$"
+      - text: "ตรวจ: Al 2 = 2 · $\\mathrm{SO_4}$ 3 = 3 · H 6 = 6"
+    answer: "$\\mathrm{2Al(s) + 3H_2SO_4(aq) \\to Al_2(SO_4)_3(aq) + 3H_2(g)}$"
+  - type: figure
+    src: stoich-roadmap.svg
+    alt: "แผนผัง ฝั่งซ้ายมีกล่อง 3 กล่อง: มวลของ A หารด้วยมวลต่อโมลของ A, สารละลาย A คูณความเข้มข้นกับปริมาตร, แก๊ส A ที่ STP หารด้วย 22.4 ลูกศรจากทั้งสามกล่องชี้เข้าวงกลม โมล A จากนั้นลูกศรสีแดงชี้ไปวงกลม โมล B เขียนว่า คูณสัมประสิทธิ์ B หารสัมประสิทธิ์ A ฝั่งขวามีลูกศรจากโมล B ไปกล่อง มวลของ B คูณมวลต่อโมลของ B, สารละลาย B หารด้วยความเข้มข้นได้ปริมาตร, แก๊ส B ที่ STP คูณ 22.4"
+    caption: "เปลี่ยนเป็นโมล ใช้อัตราส่วนสัมประสิทธิ์ แล้วเปลี่ยนกลับเป็นหน่วยที่ถาม"
+  - type: figure
+    src: limiting-h2-o2.svg
+    alt: "แบบจำลองปฏิกิริยา 2H₂ + O₂ → 2H₂O กล่องก่อนเกิดปฏิกิริยามีโมเลกุล H₂ 6 โมเลกุลและ O₂ 2 โมเลกุล กล่องหลังเกิดปฏิกิริยามีโมเลกุล H₂O 4 โมเลกุลและ H₂ เหลือ 2 โมเลกุล ไม่มี O₂ เหลือ ข้อความว่า O₂ หมดก่อนจึงเป็นสารกำหนดปริมาณ เพราะ 6 หาร 2 ได้ 3 มากกว่า 2 หาร 1 ได้ 2 และ H₂ มีมากเกินพอ"
+    caption: "สารที่หมดก่อนกำหนดปริมาณผลิตภัณฑ์ แม้จะมีจำนวนโมเลกุลน้อยหรือมากก็ตาม"
+  - type: worked-example
+    title: สารกำหนดปริมาณและผลได้ร้อยละของแอมโมเนีย
+    problem: "ผสมแก๊สไนโตรเจน 28.0 g กับแก๊สไฮโดรเจน 8.0 g ทำปฏิกิริยา $\\mathrm{N_2(g) + 3H_2(g) \\to 2NH_3(g)}$ ได้แอมโมเนียจริง 25.5 g จงหาผลได้ร้อยละ (N = 14.01, H = 1.008)"
+    steps:
+      - text: "เปลี่ยนเป็นโมล: $\\mathrm{N_2}$ $= 28.0 / 28.02 = 0.999$ mol · $\\mathrm{H_2}$ $= 8.0 / 2.016 = 3.97$ mol"
+      - text: "หารด้วยสัมประสิทธิ์: $\\mathrm{N_2}$ $0.999 / 1 = 0.999$ · $\\mathrm{H_2}$ $3.97 / 3 = 1.32$ ค่าของ $\\mathrm{N_2}$ น้อยกว่า จึงเป็นสารกำหนดปริมาณ"
+        why: "มวลของ $\\mathrm{H_2}$ น้อยกว่าก็จริง แต่มวลต่อโมลของ $\\mathrm{H_2}$ เล็กมาก จึงมีจำนวนโมลมากกว่า"
+      - text: "ผลได้ตามทฤษฎี: $\\mathrm{NH_3}$ $= 0.999 \\times 2 = 1.998$ mol $\\times 17.03 = 34.0$ g"
+      - text: "ผลได้ร้อยละ $= \\dfrac{25.5}{34.0} \\times 100 = 74.9$"
+    answer: "ผลได้ร้อยละประมาณ 74.9"
+  - { type: check, problem: chemistry.stoichiometry.reactions.p012, prompt: "แต่ละโมเลกุลของ N₂ ต้องใช้ H₂ กี่โมเลกุล" }
+  - type: simulation
+    title: ดุลสมการเคมี
+    url: https://phet.colorado.edu/en/simulations/balancing-chemical-equations
+    provider: phet
+    note: "เปลี่ยนสัมประสิทธิ์จนจำนวนอะตอมสองข้างเท่ากัน สังเกตว่าตัวเลขห้อยในสูตรเปลี่ยนไม่ได้"
+  - type: simulation
+    title: สารตั้งต้น ผลิตภัณฑ์ และสารที่เหลือ
+    url: https://phet.colorado.edu/en/simulations/reactants-products-and-leftovers
+    provider: phet
+    note: "ลองเปลี่ยนจำนวนสารตั้งต้น แล้วทายก่อนว่าสารใดจะหมดก่อนและเหลือสารใดเท่าใด"
+glossary:
+  - { term: สัมประสิทธิ์, definition: ตัวเลขหน้าสูตรในสมการเคมี บอกอัตราส่วนจำนวนโมเลกุลหรือจำนวนโมลที่ทำปฏิกิริยากัน }
+  - { term: การดุลสมการ, definition: การเติมสัมประสิทธิ์ให้จำนวนอะตอมแต่ละชนิด (และประจุรวม) สองข้างลูกศรเท่ากัน }
+  - { term: ปริมาณสัมพันธ์, definition: การคำนวณปริมาณสารในปฏิกิริยาเคมีจากสมการที่ดุลแล้ว }
+  - { term: สารกำหนดปริมาณ, definition: สารตั้งต้นที่หมดก่อน และกำหนดปริมาณผลิตภัณฑ์ที่เกิดขึ้น }
+  - { term: ผลได้ตามทฤษฎี, definition: ปริมาณผลิตภัณฑ์ที่คำนวณได้จากสมการเมื่อสารกำหนดปริมาณทำปฏิกิริยาหมด }
+  - { term: ผลได้ร้อยละ, definition: ผลได้จริงหารด้วยผลได้ตามทฤษฎีคูณ 100 }
+flashcards:
+  - { front: "ดุลสมการ C₃H₈ + O₂ → CO₂ + H₂O", back: "$\\mathrm{C_3H_8 + 5O_2 \\to 3CO_2 + 4H_2O}$" }
+  - { front: "สามขั้นของโจทย์ปริมาณสัมพันธ์", back: "เปลี่ยนเป็นโมล → คูณอัตราส่วนสัมประสิทธิ์ → เปลี่ยนเป็นหน่วยที่ถาม" }
+  - { front: "หาสารกำหนดปริมาณอย่างไร", back: "หารจำนวนโมลของสารตั้งต้นแต่ละตัวด้วยสัมประสิทธิ์ ตัวที่ได้ค่าน้อยที่สุดคือสารกำหนดปริมาณ" }
+  - { front: "ผลได้ร้อยละ", back: "$\\dfrac{\\text{ผลได้จริง}}{\\text{ผลได้ตามทฤษฎี}} \\times 100$" }
+  - { front: "(s) (l) (g) (aq)", back: "ของแข็ง ของเหลว แก๊ส สารละลายในน้ำ" }
+references:
+  - { title: "ปริมาณสัมพันธ์", url: "https://th.wikipedia.org/wiki/ปริมาณสัมพันธ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Limiting reagent", url: "https://en.wikipedia.org/wiki/Limiting_reagent", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.1 Writing and Balancing Chemical Equations (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/4-1-writing-and-balancing-chemical-equations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.4 Reaction Yields (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/4-4-reaction-yields", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

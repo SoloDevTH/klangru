@@ -1,0 +1,329 @@
+problems:
+  - id: chemistry.stoichiometry.reactions.p001
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 1
+    type: mcq
+    stem: "ในสมการ $\\mathrm{NaCl(aq) + AgNO_3(aq) \\to AgCl(s) + NaNO_3(aq)}$ สัญลักษณ์ (aq) หมายถึงอะไร"
+    choices:
+      - { id: a, text: "สารละลายอยู่ในน้ำ", correct: true, feedback: "ถูก aq ย่อมาจาก aqueous แปลว่าละลายในน้ำ" }
+      - { id: b, text: "ของเหลวบริสุทธิ์", feedback: "ของเหลวบริสุทธิ์ใช้ (l) เช่น $\\mathrm{H_2O(l)}$" }
+      - { id: c, text: "ตะกอนของแข็ง", feedback: "ของแข็งหรือตะกอนใช้ (s) เช่น AgCl(s) ในสมการนี้" }
+      - { id: d, text: "แก๊ส", feedback: "แก๊สใช้ (g)" }
+    hints:
+      - "สัญลักษณ์สถานะมี 4 แบบ (s) (l) (g) (aq)"
+      - "aq มาจากคำว่า aqua ซึ่งแปลว่าน้ำ"
+    solution: "(aq) หมายถึง **ละลายอยู่ในน้ำ** (s) ของแข็ง (l) ของเหลว (g) แก๊ส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p002
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 2
+    type: numeric
+    stem: "อะลูมิเนียมทำปฏิกิริยากับออกซิเจนเกิดเป็นชั้นออกไซด์บาง ๆ ที่ผิว $\\mathrm{Al + O_2 \\to Al_2O_3}$ เมื่อดุลสมการด้วยสัมประสิทธิ์ที่เป็น **จำนวนเต็มน้อยที่สุด** สัมประสิทธิ์ของ $\\mathrm{O_2}$ เป็นเท่าใด"
+    answer: { value: 3 }
+    misconceptions:
+      - { match: 1.5, feedback: "สมการ $\\mathrm{2Al + 1.5O_2 \\to Al_2O_3}$ ดุลแล้วก็จริง แต่ต้องคูณ 2 ให้เป็นจำนวนเต็ม" }
+      - { match: 2, feedback: "ลองนับ O: ถ้า $\\mathrm{O_2}$ 2 โมเลกุลมี O 4 อะตอม ซึ่งหาร 3 ไม่ลงตัว" }
+    hints:
+      - "ฝั่งขวามี O 3 อะตอม ฝั่งซ้าย O มาเป็นคู่"
+      - "ใช้ $\\mathrm{Al_2O_3}$ 2 หน่วย จะได้ O กี่อะตอม"
+    solution: "ใช้ $\\mathrm{Al_2O_3}$ 2 หน่วย มี O 6 อะตอม ต้องใช้ $\\mathrm{O_2}$ 3 โมเลกุล และ Al 4 อะตอม: $\\mathrm{4Al + 3O_2 \\to 2Al_2O_3}$ สัมประสิทธิ์ของ $\\mathrm{O_2}$ คือ **3**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p003
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 2
+    type: mcq
+    stem: "สมการใดดุลแล้ว"
+    choices:
+      - { id: a, text: "$\\mathrm{CH_4 + 2O_2 \\to CO_2 + 2H_2O}$", correct: true, feedback: "ถูก C 1 = 1 · H 4 = 4 · O 4 = 2 + 2" }
+      - { id: b, text: "$\\mathrm{CH_4 + O_2 \\to CO_2 + 2H_2O}$", feedback: "O ซ้ายมี 2 ขวามี 4 ยังไม่เท่ากัน" }
+      - { id: c, text: "$\\mathrm{CH_4 + O_2 \\to CO_2 + H_2O_2}$", feedback: "จำนวนอะตอมเท่ากันก็จริง แต่แก้ตัวเลขห้อยของน้ำจนกลายเป็นไฮโดรเจนเปอร์ออกไซด์ ซึ่งเป็นสารอื่น" }
+      - { id: d, text: "$\\mathrm{CH_4 + 2O_2 \\to CO_2 + H_2O}$", feedback: "H ซ้ายมี 4 ขวามี 2 และ O ก็ไม่เท่ากัน" }
+    hints:
+      - "นับ C, H, O ทีละธาตุทั้งสองข้าง"
+      - "สมการที่ดุลแล้วต้องไม่เปลี่ยนสูตรของสาร"
+    solution: "ข้อ ก มี C 1 อะตอม H 4 อะตอม O 4 อะตอมทั้งสองข้าง และใช้สูตรที่ถูกต้องของทุกสาร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p004
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 3
+    type: numeric
+    stem: "เอทานอลในน้ำมันแก๊สโซฮอล์เผาไหม้ตามสมการ $\\mathrm{C_2H_5OH + O_2 \\to CO_2 + H_2O}$ เมื่อดุลด้วยจำนวนเต็มน้อยที่สุด สัมประสิทธิ์ของ $\\mathrm{O_2}$ เป็นเท่าใด"
+    answer: { value: 3 }
+    misconceptions:
+      - { match: 3.5, feedback: "ลืมนับ O 1 อะตอมที่อยู่ในเอทานอลแล้ว ต้องใช้จาก $\\mathrm{O_2}$ เพียง 6 อะตอม" }
+      - { match: 7, feedback: "7 คือจำนวนอะตอม O ทั้งหมดทางขวา ยังต้องหักที่มาจากเอทานอลและหารด้วย 2" }
+    hints:
+      - "ดุล C และ H ก่อน: C 2 อะตอม และ H 6 อะตอม"
+      - "นับ O ทางขวา แล้วหักออก 1 อะตอมที่มาจากเอทานอล"
+    solution: "C: 2 หน้า $\\mathrm{CO_2}$ · H: 3 หน้า $\\mathrm{H_2O}$ · O ขวา $= 4 + 3 = 7$ อะตอม เอทานอลมี O อยู่ 1 จึงต้องการจาก $\\mathrm{O_2}$ อีก 6 อะตอม คือ **3** โมเลกุล: $\\mathrm{C_2H_5OH + 3O_2 \\to 2CO_2 + 3H_2O}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p005
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "ดุลสมการการเผาไหม้อีเทน $\\mathrm{C_2H_6 + O_2 \\to CO_2 + H_2O}$ ด้วยจำนวนเต็มน้อยที่สุด แล้วหา **ผลรวมของสัมประสิทธิ์ทั้งหมด**"
+    answer: { value: 19 }
+    misconceptions:
+      - { match: 9.5, feedback: "$\\mathrm{C_2H_6 + 3.5O_2 \\to 2CO_2 + 3H_2O}$ ยังมีเศษส่วน ต้องคูณ 2 ทั้งสมการก่อนรวม" }
+      - { match: 11, feedback: "ตรวจ O อีกครั้ง: ขวามี O $= 4(2) + 6(1) = 14$ อะตอม ต้องใช้ $\\mathrm{O_2}$ 7 โมเลกุล" }
+    hints:
+      - "ดุล C และ H ก่อน แล้วค่อยดุล O"
+      - "ถ้า $\\mathrm{O_2}$ เป็นเศษส่วน ให้คูณทุกสัมประสิทธิ์ด้วย 2"
+    solution: "$\\mathrm{C_2H_6 + \\tfrac72 O_2 \\to 2CO_2 + 3H_2O}$ คูณ 2 ได้ $\\mathrm{2C_2H_6 + 7O_2 \\to 4CO_2 + 6H_2O}$ ผลรวม $2 + 7 + 4 + 6 =$ **19**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p006
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 3
+    type: numeric
+    stem: "โรงงานที่สระบุรีเผาหินปูน $\\mathrm{CaCO_3(s) \\xrightarrow{\\Delta} CaO(s) + CO_2(g)}$ เพื่อทำปูนดิบ ถ้าเผาหินปูนบริสุทธิ์ 50.0 g จนสลายตัวหมด จะได้ CaO กี่กรัม (Ca = 40.08, C = 12.01, O = 16.00)"
+    answer: { value: 28.01, tolerance: 0.1, unit: g }
+    misconceptions:
+      - { match: 21.99, feedback: "นี่คือมวลของ $\\mathrm{CO_2}$ ที่หนีออกไป โจทย์ถามมวลของ CaO" }
+      - { match: 50, feedback: "มวลสารตั้งต้นไม่ได้กลายเป็น CaO ทั้งหมด ส่วนหนึ่งออกไปเป็นแก๊ส $\\mathrm{CO_2}$" }
+    hints:
+      - "หามวลต่อโมลของ $\\mathrm{CaCO_3}$ และ CaO"
+      - "อัตราส่วนโมล $\\mathrm{CaCO_3}$ : CaO $= 1 : 1$"
+    solution: "$M_{\\mathrm{CaCO_3}} = 100.09$ g/mol จึงมี $50.0 / 100.09 = 0.4996$ mol ได้ CaO 0.4996 mol $\\times 56.08 =$ **28.0 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p007
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "ต้องใช้กรดไฮโดรคลอริกเข้มข้น $2.0\\ \\mathrm{mol/dm^3}$ กี่ลูกบาศก์เซนติเมตร จึงทำปฏิกิริยาพอดีกับลวดแมกนีเซียม 0.486 g ตามสมการ $\\mathrm{Mg(s) + 2HCl(aq) \\to MgCl_2(aq) + H_2(g)}$ (Mg = 24.31)"
+    answer: { value: 20.0, tolerance: 0.2, unit: "cm³" }
+    misconceptions:
+      - { match: 10.0, feedback: "Mg 1 mol ใช้ HCl 2 mol อย่าลืมคูณ 2" }
+      - { match: 0.02, feedback: "นี่คือปริมาตรในหน่วย $\\mathrm{dm^3}$ ต้องคูณ 1,000 เป็น $\\mathrm{cm^3}$" }
+    hints:
+      - "หาโมลของ Mg ก่อน"
+      - "โมลของ HCl $=$ 2 เท่าของโมล Mg แล้วใช้ $V = n/C$"
+    solution: "Mg $= 0.486 / 24.31 = 0.0200$ mol · HCl $= 2 \\times 0.0200 = 0.0400$ mol · $V = 0.0400 / 2.0 = 0.0200\\ \\mathrm{dm^3} =$ **20.0 cm³**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p008
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 3
+    type: numeric
+    stem: "ไฮโดรเจนเปอร์ออกไซด์ (ใช้ล้างแผล) สลายตัวตามสมการ $\\mathrm{2H_2O_2(aq) \\to 2H_2O(l) + O_2(g)}$ ถ้า $\\mathrm{H_2O_2}$ 6.80 g สลายตัวหมด จะได้แก๊สออกซิเจนกี่ลูกบาศก์เดซิเมตรที่ STP (H = 1.008, O = 16.00)"
+    answer: { value: 2.24, tolerance: 0.03, unit: "dm³" }
+    misconceptions:
+      - { match: 4.48, feedback: "$\\mathrm{H_2O_2}$ 2 mol ให้ $\\mathrm{O_2}$ เพียง 1 mol ต้องหาร 2" }
+      - { match: 0.1, feedback: "0.1 คือจำนวนโมลของ $\\mathrm{O_2}$ ต้องคูณ 22.4 เพื่อเป็นปริมาตร" }
+    hints:
+      - "$M_{\\mathrm{H_2O_2}} = 34.02$ g/mol"
+      - "อัตราส่วนโมล $\\mathrm{H_2O_2 : O_2} = 2 : 1$ แล้วคูณ 22.4"
+    solution: "$\\mathrm{H_2O_2}$ $= 6.80 / 34.02 = 0.200$ mol · $\\mathrm{O_2}$ $= 0.200 / 2 = 0.100$ mol · $V = 0.100 \\times 22.4 =$ **2.24 dm³**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p009
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "กรดซัลฟิวริก $0.100\\ \\mathrm{mol/dm^3}$ ปริมาตร $25.0\\ \\mathrm{cm^3}$ ทำปฏิกิริยาพอดีกับสารละลายโซเดียมไฮดรอกไซด์ $0.200\\ \\mathrm{mol/dm^3}$ ตามสมการ $\\mathrm{H_2SO_4(aq) + 2NaOH(aq) \\to Na_2SO_4(aq) + 2H_2O(l)}$ ต้องใช้ NaOH กี่ $\\mathrm{cm^3}$"
+    answer: { value: 25.0, tolerance: 0.2, unit: "cm³" }
+    misconceptions:
+      - { match: 12.5, feedback: "กรด 1 mol ใช้ NaOH 2 mol ต้องคูณ 2 ไม่ใช่หาร 2" }
+      - { match: 6.25, feedback: "ใช้อัตราส่วนกลับด้าน โมลของ NaOH ต้องมากกว่าโมลของกรด" }
+    hints:
+      - "หาโมลของ $\\mathrm{H_2SO_4}$ จาก $n = CV$ (V เป็น $\\mathrm{dm^3}$)"
+      - "โมลของ NaOH $= 2 \\times$ โมลของกรด แล้วใช้ $V = n/C$"
+    solution: "$\\mathrm{H_2SO_4}$ $= 0.100 \\times 0.0250 = 0.00250$ mol · NaOH $= 0.00500$ mol · $V = 0.00500 / 0.200 = 0.0250\\ \\mathrm{dm^3} =$ **25.0 cm³**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p010
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "การผลิตกรดซัลฟิวริกมี 3 ขั้น: $\\mathrm{S + O_2 \\to SO_2}$, $\\mathrm{2SO_2 + O_2 \\to 2SO_3}$, $\\mathrm{SO_3 + H_2O \\to H_2SO_4}$ กำมะถัน 64.12 g จะผลิต $\\mathrm{H_2SO_4}$ ได้มากที่สุดกี่กรัม (S = 32.06, H = 1.008, O = 16.00)"
+    answer: { value: 196.2, tolerance: 1, unit: g }
+    misconceptions:
+      - { match: 98.08, feedback: "นี่คือมวลของ $\\mathrm{H_2SO_4}$ 1 mol แต่กำมะถัน 64.12 g มี 2 mol" }
+      - { match: 392.3, feedback: "สัมประสิทธิ์ 2 ในขั้นที่สองใช้กับทั้ง $\\mathrm{SO_2}$ และ $\\mathrm{SO_3}$ อัตราส่วนจึงยังเป็น 1 : 1 ไม่ได้คูณ 2" }
+    hints:
+      - "ตาม S จากต้นจนจบ: S 1 อะตอมไปอยู่ใน $\\mathrm{H_2SO_4}$ กี่โมเลกุล"
+      - "อัตราส่วนโมลรวม S : $\\mathrm{H_2SO_4} = 1 : 1$"
+    solution: "S $= 64.12 / 32.06 = 2.000$ mol ทุกขั้นมีอัตราส่วน S : $\\mathrm{H_2SO_4} = 1 : 1$ จึงได้ $\\mathrm{H_2SO_4}$ 2.000 mol $\\times 98.08 =$ **196.2 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p011
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "ใส่สังกะสี 6.54 g ลงในกรดไฮโดรคลอริก $2.0\\ \\mathrm{mol/dm^3}$ ปริมาตร $50.0\\ \\mathrm{cm^3}$ ปฏิกิริยา $\\mathrm{Zn(s) + 2HCl(aq) \\to ZnCl_2(aq) + H_2(g)}$ จะได้แก๊สไฮโดรเจนมากที่สุดกี่ $\\mathrm{dm^3}$ ที่ STP (Zn = 65.38)"
+    answer: { value: 1.12, tolerance: 0.02, unit: "dm³" }
+    misconceptions:
+      - { match: 2.24, feedback: "คำนวณจาก Zn ซึ่งเป็นสารที่มีมากเกินพอ กรดหมดก่อน ต้องใช้ HCl คำนวณ" }
+      - { match: 2.0, feedback: "ตรวจหน่วย: ต้องเปลี่ยน $50.0\\ \\mathrm{cm^3}$ เป็น $0.0500\\ \\mathrm{dm^3}$ ก่อนคูณความเข้มข้น" }
+    hints:
+      - "หาโมลของ Zn และ HCl แล้วหารด้วยสัมประสิทธิ์"
+      - "ใช้สารกำหนดปริมาณคำนวณ $\\mathrm{H_2}$"
+    solution: "Zn $= 6.54 / 65.38 = 0.100$ mol (÷1 = 0.100) · HCl $= 2.0 \\times 0.0500 = 0.100$ mol (÷2 = 0.050) HCl เป็นสารกำหนดปริมาณ ได้ $\\mathrm{H_2}$ $= 0.100 / 2 = 0.050$ mol $\\times 22.4 =$ **1.12 dm³**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p012
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 3
+    type: numeric
+    stem: "ภาพแสดงภาชนะที่มีโมเลกุล $\\mathrm{N_2}$ และ $\\mathrm{H_2}$ ก่อนเกิดปฏิกิริยา $\\mathrm{N_2 + 3H_2 \\to 2NH_3}$ ถ้าปฏิกิริยาเกิดจนสารใดสารหนึ่งหมด จะได้โมเลกุล $\\mathrm{NH_3}$ กี่โมเลกุล"
+    figure:
+      src: p-n2-h2-box.svg
+      alt: "ภาชนะสี่เหลี่ยม ภายในมีโมเลกุล N₂ (วงกลมสีน้ำเงินใหญ่สองวงติดกัน) 3 โมเลกุล และโมเลกุล H₂ (วงกลมสีขาวเล็กสองวงติดกัน) 6 โมเลกุล"
+    answer: { value: 4, unit: โมเลกุล }
+    misconceptions:
+      - { match: 6, feedback: "คำนวณจาก $\\mathrm{N_2}$ ทั้ง 3 โมเลกุล แต่ต้องใช้ $\\mathrm{H_2}$ ถึง 9 โมเลกุล ซึ่งมีไม่พอ" }
+      - { match: 12, feedback: "ใช้ $\\mathrm{H_2}$ คำนวณแต่คูณอัตราส่วนกลับด้าน $\\mathrm{H_2}$ 3 โมเลกุลให้ $\\mathrm{NH_3}$ 2 โมเลกุล" }
+    hints:
+      - "นับโมเลกุลในภาพ แล้วหารด้วยสัมประสิทธิ์ของแต่ละสาร"
+      - "สารที่ได้ค่าน้อยกว่าหมดก่อน ใช้สารนั้นคำนวณ"
+    solution: "$\\mathrm{N_2}$ 3 ÷ 1 = 3 · $\\mathrm{H_2}$ 6 ÷ 3 = 2 จึงเป็นสารกำหนดปริมาณ $\\mathrm{H_2}$ 6 โมเลกุลให้ $\\mathrm{NH_3}$ $6 \\times \\tfrac23 =$ **4 โมเลกุล** และเหลือ $\\mathrm{N_2}$ 1 โมเลกุล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p013
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "เตาเผาปูนเผาหินปูน ($\\mathrm{CaCO_3}$) 1.00 kg ได้ปูนดิบ (CaO) จริง 0.500 kg ตามสมการ $\\mathrm{CaCO_3 \\to CaO + CO_2}$ ผลได้ร้อยละเป็นเท่าใด (Ca = 40.08, C = 12.01, O = 16.00)"
+    answer: { value: 89.2, tolerance: 0.3, unit: "%" }
+    misconceptions:
+      - { match: 50, feedback: "เทียบ CaO กับมวลหินปูนไม่ได้ ต้องเทียบกับผลได้ตามทฤษฎีของ CaO" }
+      - { match: 112.1, feedback: "หารกลับด้าน ผลได้ร้อยละ = ผลได้จริง ÷ ผลได้ตามทฤษฎี" }
+    hints:
+      - "หาผลได้ตามทฤษฎีของ CaO จากหินปูน 1.00 kg"
+      - "ผลได้ร้อยละ $= \\dfrac{\\text{จริง}}{\\text{ทฤษฎี}} \\times 100$"
+    solution: "$\\mathrm{CaCO_3}$ $= 1000 / 100.09 = 9.991$ mol ได้ CaO ตามทฤษฎี $9.991 \\times 56.08 = 560.3$ g ผลได้ร้อยละ $= \\dfrac{500}{560.3} \\times 100 =$ **89.2**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p014
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 5
+    type: numeric
+    stem: "ผสมแก๊สไฮโดรเจน 5.00 g กับแก๊สออกซิเจน 16.0 g แล้วจุดประกายไฟ $\\mathrm{2H_2(g) + O_2(g) \\to 2H_2O(l)}$ เมื่อปฏิกิริยาสิ้นสุด จะเหลือสารที่มากเกินพอกี่กรัม (H = 1.008, O = 16.00)"
+    answer: { value: 2.98, tolerance: 0.02, unit: g }
+    misconceptions:
+      - { match: 2.016, feedback: "2.016 g คือ $\\mathrm{H_2}$ ที่ถูกใช้ไป โจทย์ถามส่วนที่เหลือ" }
+      - { match: 0, feedback: "สารไม่ได้ผสมกันพอดี ต้องหาว่าสารใดหมดก่อน" }
+      - { match: 11, feedback: "คิดว่า $\\mathrm{H_2}$ มวลน้อยกว่าจึงหมดก่อน แต่ $\\mathrm{H_2}$ 5.00 g มีถึง 2.48 mol" }
+    hints:
+      - "เปลี่ยนเป็นโมลแล้วหารด้วยสัมประสิทธิ์ เพื่อหาสารกำหนดปริมาณ"
+      - "หามวลของสารที่มากเกินพอซึ่งถูกใช้ไป แล้วนำไปลบจากมวลเริ่มต้น"
+    solution: "$\\mathrm{H_2}$ $= 5.00 / 2.016 = 2.48$ mol (÷2 = 1.24) · $\\mathrm{O_2}$ $= 16.0 / 32.00 = 0.500$ mol (÷1 = 0.500) $\\mathrm{O_2}$ หมดก่อน ใช้ $\\mathrm{H_2}$ $2 \\times 0.500 = 1.00$ mol $= 2.016$ g เหลือ $\\mathrm{H_2}$ $5.00 - 2.016 =$ **2.98 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p015
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: numeric
+    stem: "ถังแก๊สหุงต้มขนาด 15 kg ที่ใช้ในบ้าน ถ้าสมมติว่าเป็นบิวเทน ($\\mathrm{C_4H_{10}}$) ทั้งหมด เผาไหม้สมบูรณ์ตามสมการ $\\mathrm{2C_4H_{10} + 13O_2 \\to 8CO_2 + 10H_2O}$ จะปล่อย $\\mathrm{CO_2}$ กี่กิโลกรัม (C = 12.01, H = 1.008, O = 16.00)"
+    answer: { value: 45.4, tolerance: 0.3, unit: kg }
+    misconceptions:
+      - { match: 11.4, feedback: "บิวเทน 2 mol ให้ $\\mathrm{CO_2}$ 8 mol อัตราส่วนคือ 1 : 4 ไม่ใช่ 1 : 1" }
+      - { match: 60, feedback: "ใช้อัตราส่วนสัมประสิทธิ์กับมวลโดยตรง ($15 \\times 4$) ไม่ได้ ต้องเปลี่ยนเป็นโมลก่อน" }
+    hints:
+      - "$M_{\\mathrm{C_4H_{10}}} = 58.12$ g/mol เปลี่ยน 15,000 g เป็นโมล"
+      - "อัตราส่วนโมล $\\mathrm{C_4H_{10} : CO_2} = 2 : 8 = 1 : 4$"
+    solution: "บิวเทน $= 15{,}000 / 58.12 = 258.1$ mol · $\\mathrm{CO_2}$ $= 4 \\times 258.1 = 1{,}032$ mol $\\times 44.01 = 45{,}430$ g $=$ **45.4 kg** มากกว่ามวลแก๊สในถังเกือบ 3 เท่า เพราะคาร์บอนรวมกับออกซิเจนจากอากาศ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p016
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 4
+    type: mcq
+    stem: "เผาผงเหล็ก 5.585 g ในออกซิเจนจนทำปฏิกิริยาหมด ได้ออกไซด์ของเหล็ก 7.985 g สูตรอย่างง่ายของออกไซด์นี้คือข้อใด (Fe = 55.85, O = 16.00)"
+    choices:
+      - { id: a, text: "$\\mathrm{Fe_2O_3}$", correct: true, feedback: "ถูก Fe 0.100 mol : O 0.150 mol $= 2 : 3$" }
+      - { id: b, text: "$\\mathrm{FeO}$", feedback: "ถ้าเป็น FeO จะได้ออกไซด์เพียง $0.100 \\times 71.85 = 7.185$ g" }
+      - { id: c, text: "$\\mathrm{Fe_3O_4}$", feedback: "อัตราส่วน 3 : 4 คือ 0.75 แต่ข้อมูลให้ Fe : O $= 0.100 : 0.150 \\approx 0.67$" }
+      - { id: d, text: "$\\mathrm{FeO_2}$", feedback: "คิดอัตราส่วนจากมวล (5.585 : 2.400) โดยไม่เปลี่ยนเป็นโมล" }
+    hints:
+      - "มวลออกซิเจนที่เข้าไปรวม $= 7.985 - 5.585$"
+      - "เปลี่ยนมวลของ Fe และ O เป็นโมล แล้วหาอัตราส่วนอย่างต่ำ"
+    solution: "O $= 7.985 - 5.585 = 2.400$ g $= 0.150$ mol · Fe $= 5.585 / 55.85 = 0.100$ mol อัตราส่วน $0.100 : 0.150 = 2 : 3$ สูตรอย่างง่ายคือ $\\mathrm{Fe_2O_3}$ สมการที่ดุลแล้วคือ $\\mathrm{4Fe + 3O_2 \\to 2Fe_2O_3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p017
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหามวลของผลิตภัณฑ์จากมวลของสารตั้งต้นที่โจทย์ให้"
+    items:
+      - "เขียนและดุลสมการเคมี"
+      - "เปลี่ยนมวลของสารตั้งต้นเป็นจำนวนโมล"
+      - "คูณด้วยอัตราส่วนสัมประสิทธิ์เพื่อหาโมลของผลิตภัณฑ์"
+      - "คูณจำนวนโมลของผลิตภัณฑ์ด้วยมวลต่อโมล"
+    hints:
+      - "สัมประสิทธิ์ใช้ได้เมื่อสมการดุลแล้วเท่านั้น"
+      - "อัตราส่วนสัมประสิทธิ์ใช้กับโมล ไม่ใช่มวล"
+    solution: "ดุลสมการ → มวลเป็นโมล → อัตราส่วนโมล → โมลเป็นมวล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p018
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 5
+    type: numeric
+    stem: "นักเรียนบดเปลือกไข่ 1.25 g แล้วเติมกรดไฮโดรคลอริกมากเกินพอ $\\mathrm{CaCO_3 + 2HCl \\to CaCl_2 + H_2O + CO_2}$ ชั่งพบว่ามวลลดลง 0.517 g เพราะแก๊ส $\\mathrm{CO_2}$ หนีออกไป เปลือกไข่มี $\\mathrm{CaCO_3}$ ร้อยละเท่าใดโดยมวล (สมมติว่าสารอื่นในเปลือกไข่ไม่ให้แก๊ส · Ca = 40.08, C = 12.01, O = 16.00)"
+    answer: { value: 94.1, tolerance: 0.3, unit: "%" }
+    misconceptions:
+      - { match: 41.4, feedback: "นี่คือร้อยละของมวล $\\mathrm{CO_2}$ เทียบกับเปลือกไข่ ต้องเปลี่ยนเป็นมวล $\\mathrm{CaCO_3}$ ก่อน" }
+      - { match: 188.1, feedback: "ใช้อัตราส่วน $\\mathrm{HCl}$ ($2 : 1$) แทนอัตราส่วน $\\mathrm{CaCO_3 : CO_2} = 1 : 1$" }
+    hints:
+      - "มวลที่ลดลงคือมวลของ $\\mathrm{CO_2}$ เปลี่ยนเป็นโมล"
+      - "โมล $\\mathrm{CaCO_3}$ = โมล $\\mathrm{CO_2}$ แล้วเปลี่ยนเป็นมวลและเทียบกับ 1.25 g"
+    solution: "$\\mathrm{CO_2}$ $= 0.517 / 44.01 = 0.01175$ mol $= \\mathrm{CaCO_3}$ ได้มวล $0.01175 \\times 100.09 = 1.176$ g ร้อยละ $= \\dfrac{1.176}{1.25} \\times 100 =$ **94.1**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p019
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 3
+    type: mcq
+    stem: "ผสมสารละลาย $\\mathrm{BaCl_2}$ กับสารละลาย $\\mathrm{Na_2SO_4}$ เกิดตะกอนขาวของ $\\mathrm{BaSO_4}$ สมการไอออนิกสุทธิข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$\\mathrm{Ba^{2+}(aq) + SO_4^{2-}(aq) \\to BaSO_4(s)}$", correct: true, feedback: "ถูก ตัด $\\mathrm{Na^+}$ และ $\\mathrm{Cl^-}$ ซึ่งไม่เปลี่ยนแปลงออก ดุลทั้งอะตอมและประจุ" }
+      - { id: b, text: "$\\mathrm{Na^+(aq) + Cl^-(aq) \\to NaCl(s)}$", feedback: "NaCl ละลายน้ำได้ดี ไม่ตกตะกอน ไอออนเหล่านี้เป็นไอออนที่ไม่เปลี่ยนแปลง" }
+      - { id: c, text: "$\\mathrm{Ba^{2+}(aq) + SO_4^{2-}(aq) \\to BaSO_4(aq)}$", feedback: "ตะกอนต้องใช้สัญลักษณ์ (s) ไม่ใช่ (aq)" }
+      - { id: d, text: "$\\mathrm{BaCl_2(aq) + Na_2SO_4(aq) \\to BaSO_4(s) + 2NaCl(aq)}$", feedback: "นี่คือสมการเคมีแบบเต็ม ไม่ใช่สมการไอออนิกสุทธิ" }
+    hints:
+      - "ไอออนใดรวมกันเป็นตะกอน"
+      - "ไอออนที่อยู่ในสารละลายทั้งก่อนและหลังไม่ต้องเขียน"
+    solution: "ตะกอนคือ $\\mathrm{BaSO_4}$ ไอออนที่เปลี่ยนแปลงคือ $\\mathrm{Ba^{2+}}$ กับ $\\mathrm{SO_4^{2-}}$ สมการไอออนิกสุทธิคือ $\\mathrm{Ba^{2+}(aq) + SO_4^{2-}(aq) \\to BaSO_4(s)}$ ประจุรวมสองข้างเป็นศูนย์เท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.stoichiometry.reactions.p020
+    topics: [chemistry.stoichiometry.reactions]
+    difficulty: 3
+    type: mcq
+    stem: "ปฏิกิริยา $\\mathrm{2H_2 + O_2 \\to 2H_2O}$ ฝั่งซ้ายมี 3 โมเลกุล ฝั่งขวามี 2 โมเลกุล ข้อใดถูกต้องเกี่ยวกับมวล"
+    choices:
+      - { id: a, text: "มวลรวมสองข้างเท่ากัน เพราะจำนวนอะตอม H และ O ทั้งสองข้างเท่ากัน", correct: true, feedback: "ถูก อะตอมจัดเรียงใหม่ ไม่ได้เกิดใหม่หรือหายไป ($4 \\times 1.008 + 32.00 = 36.03$ g เท่ากับ $2 \\times 18.02$ g)" }
+      - { id: b, text: "มวลลดลง เพราะจำนวนโมเลกุลลดลง", feedback: "จำนวนโมเลกุลไม่จำเป็นต้องคงที่ สิ่งที่คงที่คือจำนวนอะตอมแต่ละชนิด" }
+      - { id: c, text: "มวลเพิ่มขึ้น เพราะน้ำหนักกว่าแก๊ส", feedback: "ความหนาแน่นต่างกันไม่ได้แปลว่ามวลรวมเปลี่ยน" }
+    hints:
+      - "นับอะตอม H และ O ทั้งสองข้าง"
+      - "มวลรวมขึ้นกับจำนวนและชนิดของอะตอม"
+    solution: "ซ้ายมี H 4 O 2 ขวามี H 4 O 2 อะตอมเท่ากัน มวลรวมจึง **เท่ากัน** ตามกฎทรงมวล จำนวนโมเลกุลเปลี่ยนได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

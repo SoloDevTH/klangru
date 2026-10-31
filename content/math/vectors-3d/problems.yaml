@@ -1,0 +1,335 @@
+problems:
+  - id: math.calculus.vectors-3d.p001
+    topics: [math.calculus.vectors-3d]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาขนาดของเวกเตอร์ $\\mathbf{u} = \\langle 2, 3, 6 \\rangle$"
+    answer: { value: 7 }
+    hints:
+      - "$|\\mathbf{u}| = \\sqrt{a^2 + b^2 + c^2}$"
+      - "ยกกำลังสองแต่ละองค์ประกอบ บวกกัน แล้วถอดราก"
+    misconceptions:
+      - { match: 11, feedback: "บวกองค์ประกอบตรง ๆ ไม่ได้ ต้องยกกำลังสองก่อนแล้วถอดราก" }
+      - { match: 49, feedback: "49 คือ $|\\mathbf{u}|^2$ ยังไม่ได้ถอดราก" }
+    solution: "$|\\mathbf{u}| = \\sqrt{4 + 9 + 36} = \\sqrt{49} = 7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p002
+    topics: [math.calculus.vectors-3d]
+    difficulty: 1
+    type: numeric
+    stem: "ให้ $\\mathbf{u} = \\langle 1, -2, 3 \\rangle$ และ $\\mathbf{v} = \\langle 4, 0, -1 \\rangle$ จงหา $\\mathbf{u} \\cdot \\mathbf{v}$"
+    answer: { value: 1 }
+    hints:
+      - "คูณองค์ประกอบที่ตรงกัน แล้วบวกผลคูณทั้งสาม"
+      - "$1(4) + (-2)(0) + 3(-1)$"
+    misconceptions:
+      - { match: 7, feedback: "$3 \\times (-1) = -3$ ไม่ใช่ $+3$ ระวังเครื่องหมาย" }
+    solution: "$\\mathbf{u} \\cdot \\mathbf{v} = 4 + 0 - 3 = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p003
+    topics: [math.calculus.vectors-3d]
+    difficulty: 1
+    type: mcq
+    stem: "จุด $A(1, 2, 3)$ และ $B(4, 0, 5)$ เวกเตอร์ $\\overrightarrow{AB}$ คือข้อใด"
+    choices:
+      - { id: a, text: "$\\langle 3, -2, 2 \\rangle$", correct: true }
+      - { id: b, text: "$\\langle -3, 2, -2 \\rangle$", feedback: "นี่คือ $A - B$ หรือ $\\overrightarrow{BA}$ เวกเตอร์ $\\overrightarrow{AB}$ ใช้ปลายลบต้น" }
+      - { id: c, text: "$\\langle 5, 2, 8 \\rangle$", feedback: "บวกพิกัดเข้าด้วยกัน ต้องลบพิกัดจุดต้นออกจากจุดปลาย" }
+      - { id: d, text: "$\\langle 4, 0, 15 \\rangle$", feedback: "คูณพิกัดกันไม่ได้ ต้องลบ" }
+    hints:
+      - "$\\overrightarrow{AB} = B - A$ (ปลายลบต้น)"
+      - "ลบทีละองค์ประกอบ"
+    solution: "$\\overrightarrow{AB} = \\langle 4 - 1, 0 - 2, 5 - 3 \\rangle = \\langle 3, -2, 2 \\rangle$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p004
+    topics: [math.calculus.vectors-3d]
+    difficulty: 2
+    type: expression
+    stem: "จงหาขนาดของ $\\mathbf{w} = \\langle 1, -1, 4 \\rangle$ ตอบในรูปกรณฑ์อย่างง่าย"
+    prefix: "|w| ="
+    answer: { latex: "3\\sqrt{2}", variables: [] }
+    simplified: true
+    misconceptions:
+      - { match: "4", feedback: "บวกองค์ประกอบ $1 - 1 + 4$ ไม่ใช่ขนาด ต้องยกกำลังสองก่อน" }
+      - { match: "\\sqrt{6}", feedback: "ต้องยกกำลังสองทุกองค์ประกอบ $4^2 = 16$ ผลบวกกำลังสองคือ $1 + 1 + 16$" }
+    hints:
+      - "$|\\mathbf{w}| = \\sqrt{1^2 + (-1)^2 + 4^2}$"
+      - "$\\sqrt{18} = \\sqrt{9 \\cdot 2}$"
+    solution: "$|\\mathbf{w}| = \\sqrt{1 + 1 + 16} = \\sqrt{18} = 3\\sqrt{2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p005
+    topics: [math.calculus.vectors-3d]
+    difficulty: 2
+    type: mcq
+    stem: "เวกเตอร์คู่ใดตั้งฉากกัน"
+    choices:
+      - { id: a, text: "$\\langle 2, 1, -1 \\rangle$ และ $\\langle 1, -1, 1 \\rangle$", correct: true }
+      - { id: b, text: "$\\langle 1, 2, 3 \\rangle$ และ $\\langle 3, 2, 1 \\rangle$", feedback: "ผลคูณจุดเท่ากับ $3 + 4 + 3 = 10 \\ne 0$" }
+      - { id: c, text: "$\\langle 3, 0, 4 \\rangle$ และ $\\langle 4, 0, 3 \\rangle$", feedback: "ยาวเท่ากันไม่ได้แปลว่าตั้งฉาก ผลคูณจุดคือ $12 + 0 + 12 = 24$" }
+      - { id: d, text: "$\\langle 2, -1, 0 \\rangle$ และ $\\langle -2, 1, 0 \\rangle$", feedback: "สองเวกเตอร์นี้ขนานกันแต่ทิศตรงข้าม ผลคูณจุดคือ $-5$" }
+    hints:
+      - "เวกเตอร์ตั้งฉากกันเมื่อผลคูณจุดเป็น 0"
+      - "คำนวณผลคูณจุดของแต่ละคู่"
+    solution: "$\\langle 2, 1, -1 \\rangle \\cdot \\langle 1, -1, 1 \\rangle = 2 - 1 - 1 = 0$ จึงตั้งฉากกัน คู่อื่นได้ 10, 24 และ −5"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p006
+    topics: [math.calculus.vectors-3d]
+    difficulty: 2
+    type: numeric
+    stem: "จงหามุมระหว่าง $\\mathbf{u} = \\langle 1, 1, 0 \\rangle$ และ $\\mathbf{v} = \\langle 0, 1, 1 \\rangle$ เป็นองศา"
+    answer: { value: 60, tolerance: 0.5, unit: องศา }
+    hints:
+      - "$\\cos\\theta = \\dfrac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{u}||\\mathbf{v}|}$"
+      - "$\\mathbf{u} \\cdot \\mathbf{v} = 1$ และ $|\\mathbf{u}| = |\\mathbf{v}| = \\sqrt2$"
+    misconceptions:
+      - { match: 0.5, feedback: "0.5 คือค่า $\\cos\\theta$ ยังต้องหา $\\cos^{-1}$ เพื่อได้มุม" }
+      - { match: 30, feedback: "$\\cos\\theta = \\tfrac12$ ให้ $\\theta = 60^\\circ$ ส่วน $30^\\circ$ เป็นมุมที่ $\\sin\\theta = \\tfrac12$" }
+    solution: "$\\cos\\theta = \\dfrac{0 + 1 + 0}{\\sqrt2 \\cdot \\sqrt2} = \\dfrac12$ จึง $\\theta = 60^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p007
+    topics: [math.calculus.vectors-3d]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่า $k$ ที่ทำให้ $\\langle 2, k, -1 \\rangle$ ตั้งฉากกับ $\\langle 3, 1, 4 \\rangle$"
+    answer: { value: -2 }
+    hints:
+      - "ตั้งฉากเมื่อผลคูณจุดเท่ากับ 0"
+      - "$2(3) + k(1) + (-1)(4) = 0$"
+    misconceptions:
+      - { match: 2, feedback: "$6 + k - 4 = 0$ ได้ $k = -2$ ระวังเครื่องหมายเมื่อย้ายข้าง" }
+      - { match: -10, feedback: "$(-1)(4) = -4$ ไม่ใช่ $+4$ สมการคือ $6 + k - 4 = 0$" }
+    solution: "$6 + k - 4 = 0$ จึง $k = -2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p008
+    topics: [math.calculus.vectors-3d]
+    difficulty: 3
+    type: numeric
+    stem: "พนักงานโกดังสินค้าในสมุทรปราการลากรถเข็นด้วยแรง $\\mathbf{F} = \\langle 40, 30, -10 \\rangle$ นิวตัน รถเข็นเคลื่อนที่ได้การกระจัด $\\mathbf{d} = \\langle 12, 5, 0 \\rangle$ เมตร แรงนี้ทำงานกี่จูล"
+    answer: { value: 630, unit: J }
+    hints:
+      - "งานของแรงคงตัว $W = \\mathbf{F} \\cdot \\mathbf{d}$"
+      - "$40(12) + 30(5) + (-10)(0)$"
+    misconceptions:
+      - { match: 662.87, feedback: "$|\\mathbf{F}||\\mathbf{d}|$ ใช้ได้เฉพาะเมื่อแรงอยู่ในทิศการเคลื่อนที่พอดี ต้องใช้ผลคูณจุด" }
+      - { match: 0, feedback: "แรงไม่ได้ตั้งฉากกับการกระจัด คำนวณผลคูณจุดให้ครบทุกองค์ประกอบ" }
+    solution: "$W = 480 + 150 + 0 = 630\\ \\mathrm{J}$ ส่วนของแรงในแนวดิ่ง $-10\\ \\mathrm{N}$ ไม่ทำงานเพราะรถไม่เคลื่อนที่ในแนวดิ่ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p009
+    topics: [math.calculus.vectors-3d]
+    difficulty: 3
+    type: mcq
+    stem: "ให้ $\\mathbf{u} = \\langle 1, 0, 2 \\rangle$ และ $\\mathbf{v} = \\langle 0, 3, 1 \\rangle$ จงหา $\\mathbf{u} \\times \\mathbf{v}$"
+    choices:
+      - { id: a, text: "$\\langle -6, -1, 3 \\rangle$", correct: true }
+      - { id: b, text: "$\\langle 6, 1, -3 \\rangle$", feedback: "นี่คือ $\\mathbf{v} \\times \\mathbf{u}$ ซึ่งมีทิศตรงข้าม" }
+      - { id: c, text: "$\\langle -6, 1, 3 \\rangle$", feedback: "องค์ประกอบกลางคือ $u_3v_1 - u_1v_3 = 2(0) - 1(1) = -1$ (ใช้ดีเทอร์มิแนนต์ต้องมีเครื่องหมายลบหน้าพจน์ $\\mathbf{j}$)" }
+      - { id: d, text: "$\\langle 0, 0, 2 \\rangle$", feedback: "คูณทีละองค์ประกอบไม่ใช่ผลคูณไขว้" }
+    hints:
+      - "$\\mathbf{u} \\times \\mathbf{v} = \\langle u_2v_3 - u_3v_2,\\ u_3v_1 - u_1v_3,\\ u_1v_2 - u_2v_1 \\rangle$"
+      - "ตรวจคำตอบ: ผลคูณไขว้ต้องตั้งฉากกับ $\\mathbf{u}$ และ $\\mathbf{v}$"
+    solution: "$\\langle 0(1) - 2(3),\\ 2(0) - 1(1),\\ 1(3) - 0(0) \\rangle = \\langle -6, -1, 3 \\rangle$ ตรวจ: $\\langle -6, -1, 3 \\rangle \\cdot \\mathbf{u} = -6 + 6 = 0$ และ $\\cdot\\, \\mathbf{v} = -3 + 3 = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p010
+    topics: [math.calculus.vectors-3d]
+    difficulty: 3
+    type: numeric
+    stem: "ผ้าใบบังแดดรูปสามเหลี่ยมในงานวัดผูกไว้ที่จุด $A(0, 0, 3)$, $B(4, 0, 2)$ และ $C(0, 3, 2)$ หน่วยเป็นเมตร (ดูภาพ) ผ้าใบมีพื้นที่กี่ตารางเมตร"
+    figure:
+      src: tarp.svg
+      alt: "แกน x y z หน่วยเมตร จุด A(0, 0, 3) บนแกน z จุด B(4, 0, 2) และ C(0, 3, 2) ผ้าใบสามเหลี่ยม ABC แรเงาสีเขียว มีเส้นประจาก B และ C ลงมาที่พื้น"
+    answer: { value: 6.5, tolerance: 0.05, unit: ตารางเมตร }
+    hints:
+      - "หา $\\overrightarrow{AB}$ และ $\\overrightarrow{AC}$ แล้วหาผลคูณไขว้"
+      - "พื้นที่สามเหลี่ยม $= \\tfrac12|\\overrightarrow{AB} \\times \\overrightarrow{AC}|$"
+    misconceptions:
+      - { match: 13, feedback: "13 คือพื้นที่สี่เหลี่ยมด้านขนาน สามเหลี่ยมเป็นครึ่งหนึ่ง" }
+    solution: "$\\overrightarrow{AB} = \\langle 4, 0, -1 \\rangle$, $\\overrightarrow{AC} = \\langle 0, 3, -1 \\rangle$ ผลคูณไขว้ $= \\langle 0(-1) - (-1)(3),\\ (-1)(0) - 4(-1),\\ 4(3) - 0 \\rangle = \\langle 3, 4, 12 \\rangle$ ขนาด $\\sqrt{9 + 16 + 144} = 13$ พื้นที่ $= \\tfrac{13}{2} = 6.5\\ \\mathrm{m^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p011
+    topics: [math.calculus.vectors-3d]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ปริมาณกับความหมาย (u, v ไม่ใช่เวกเตอร์ศูนย์)"
+    pairs:
+      - { left: "$\\mathbf{u} \\cdot \\mathbf{v}$", right: "จำนวนจริงหนึ่งจำนวน" }
+      - { left: "$\\mathbf{u} \\times \\mathbf{v}$", right: "เวกเตอร์ที่ตั้งฉากกับทั้ง u และ v" }
+      - { left: "$|\\mathbf{u} \\times \\mathbf{v}|$", right: "พื้นที่สี่เหลี่ยมด้านขนานที่มี u, v เป็นด้าน" }
+      - { left: "$\\mathbf{u} \\cdot \\mathbf{v} = 0$", right: "u ตั้งฉากกับ v" }
+      - { left: "$\\mathbf{u} \\times \\mathbf{v} = \\mathbf{0}$", right: "u ขนานกับ v" }
+    hints:
+      - "ผลคูณจุดได้จำนวน ผลคูณไขว้ได้เวกเตอร์"
+      - "$|\\mathbf{u} \\times \\mathbf{v}| = |\\mathbf{u}||\\mathbf{v}|\\sin\\theta$ เป็นศูนย์เมื่อ $\\theta = 0^\\circ$ หรือ $180^\\circ$"
+    solution: "ผลคูณจุดเป็นจำนวน และเป็น 0 เมื่อตั้งฉาก ผลคูณไขว้เป็นเวกเตอร์ตั้งฉากกับทั้งสอง ขนาดเท่ากับพื้นที่สี่เหลี่ยมด้านขนาน และเป็นเวกเตอร์ศูนย์เมื่อขนานกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p012
+    topics: [math.calculus.vectors-3d]
+    difficulty: 3
+    type: numeric
+    stem: "โดรนพ่นยาในนาข้าวที่สุพรรณบุรีเริ่มที่ตำแหน่ง $(0, 0, 5)$ เมตร แล้วบินด้วยความเร็วคงตัว $\\langle 3, 4, -1 \\rangle$ เมตรต่อวินาที ตำแหน่งจึงเป็น $\\langle 0, 0, 5 \\rangle + t\\langle 3, 4, -1 \\rangle$ เมื่อโดรนลดลงถึงความสูง 2 เมตร โดรนอยู่ห่างจากจุดเริ่มในแนวราบ (ระยะบนพื้น) กี่เมตร"
+    answer: { value: 15, unit: เมตร }
+    hints:
+      - "หา $t$ จาก $z = 5 - t = 2$"
+      - "แทน $t$ หา $x, y$ แล้วระยะแนวราบคือ $\\sqrt{x^2 + y^2}$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือเวลา (วินาที) ยังต้องแทนหาตำแหน่ง" }
+      - { match: 15.3, feedback: "นี่คือระยะในสามมิติซึ่งนับการลดความสูงด้วย โจทย์ถามระยะบนพื้น ใช้เฉพาะ $x, y$" }
+    solution: "$5 - t = 2$ ได้ $t = 3$ ตำแหน่ง $(9, 12, 2)$ ระยะแนวราบ $\\sqrt{81 + 144} = 15$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p013
+    topics: [math.calculus.vectors-3d]
+    difficulty: 3
+    type: mcq
+    stem: "สมการใดเป็นสมการของเส้นตรงที่ผ่าน $A(2, 0, 1)$ และ $B(5, 4, 1)$"
+    choices:
+      - { id: a, text: "$\\langle x, y, z \\rangle = \\langle 2, 0, 1 \\rangle + t\\langle 3, 4, 0 \\rangle$", correct: true }
+      - { id: b, text: "$\\langle x, y, z \\rangle = \\langle 2, 0, 1 \\rangle + t\\langle 5, 4, 1 \\rangle$", feedback: "ใช้พิกัดของ B เป็นทิศทาง ทิศทางต้องเป็นเวกเตอร์ $\\overrightarrow{AB}$" }
+      - { id: c, text: "$\\langle x, y, z \\rangle = \\langle 3, 4, 0 \\rangle + t\\langle 2, 0, 1 \\rangle$", feedback: "สลับบทบาท: จุด $(3, 4, 0)$ ไม่ได้อยู่บนเส้น ต้องเริ่มจากจุดบนเส้นแล้วบวก $t$ คูณทิศทาง" }
+      - { id: d, text: "$\\langle x, y, z \\rangle = \\langle 2, 0, 1 \\rangle + t\\langle 7, 4, 2 \\rangle$", feedback: "บวกพิกัดสองจุด ต้องลบเพื่อได้ทิศทาง" }
+    hints:
+      - "ทิศทางของเส้นคือ $\\overrightarrow{AB} = B - A$"
+      - "สมการ: จุดบนเส้น $+\\ t \\times$ ทิศทาง"
+    solution: "$\\overrightarrow{AB} = \\langle 3, 4, 0 \\rangle$ เส้นตรงคือ $\\langle 2, 0, 1 \\rangle + t\\langle 3, 4, 0 \\rangle$ ($t = 0$ ได้ A และ $t = 1$ ได้ B)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p014
+    topics: [math.calculus.vectors-3d]
+    difficulty: 4
+    type: numeric
+    stem: "ระนาบผ่านจุด $(1, -1, 2)$ และมีเวกเตอร์แนวฉาก $\\langle 3, 2, -1 \\rangle$ เขียนสมการได้ในรูป $3x + 2y - z = d$ จงหา $d$"
+    answer: { value: -1 }
+    hints:
+      - "จุดที่ให้อยู่บนระนาบ จึงแทนพิกัดลงใน $3x + 2y - z$ ได้ $d$"
+      - "$3(1) + 2(-1) - 2$"
+    misconceptions:
+      - { match: 3, feedback: "$2y = 2(-1) = -2$ ไม่ใช่ $+2$" }
+      - { match: 7, feedback: "ระวังเครื่องหมายของทั้ง $y = -1$ และ $-z$" }
+    solution: "$d = 3(1) + 2(-1) - (2) = 3 - 2 - 2 = -1$ สมการคือ $3x + 2y - z = -1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p015
+    topics: [math.calculus.vectors-3d]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาระยะจากจุด $(2, 1, 3)$ ถึงระนาบ $2x - y + 2z = 4$"
+    answer: { value: 1.667, tolerance: 0.01 }
+    hints:
+      - "$D = \\dfrac{|ax_1 + by_1 + cz_1 - d|}{\\sqrt{a^2 + b^2 + c^2}}$"
+      - "ตัวเศษ $|4 - 1 + 6 - 4|$ ตัวส่วน $\\sqrt{4 + 1 + 4}$"
+    misconceptions:
+      - { match: 5, feedback: "ลืมหารด้วยขนาดของเวกเตอร์แนวฉาก $\\sqrt{9} = 3$" }
+      - { match: 3, feedback: "ต้องลบ $d = 4$ ในตัวเศษด้วย ($|4 - 1 + 6 - 4| = 5$)" }
+    solution: "$D = \\dfrac{|2(2) - 1 + 2(3) - 4|}{\\sqrt{4 + 1 + 4}} = \\dfrac{5}{3} \\approx 1.667$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p016
+    topics: [math.calculus.vectors-3d]
+    difficulty: 4
+    type: numeric
+    stem: "ช่างซ่อมรถตุ๊กตุ๊กใช้ประแจขันน็อตล้อ เวกเตอร์จากน็อตไปยังมือคือ $\\mathbf{r} = \\langle 0.3, 0, 0 \\rangle$ เมตร และออกแรง $\\mathbf{F} = \\langle 150, 120, -160 \\rangle$ นิวตัน จงหาขนาดของทอร์ก $\\boldsymbol{\\tau} = \\mathbf{r} \\times \\mathbf{F}$ เป็นนิวตันเมตร"
+    answer: { value: 60, unit: N·m }
+    hints:
+      - "หา $\\mathbf{r} \\times \\mathbf{F}$ ด้วยสูตรผลคูณไขว้"
+      - "ส่วนของแรงที่ขนานกับ $\\mathbf{r}$ (องค์ประกอบ $x$) ไม่ทำให้เกิดทอร์ก"
+    misconceptions:
+      - { match: 75, feedback: "$|\\mathbf{r}||\\mathbf{F}| = 0.3 \\times 250$ ใช้ได้เมื่อแรงตั้งฉากกับประแจเท่านั้น ต้องคูณ $\\sin\\theta$ หรือใช้ผลคูณไขว้" }
+      - { match: 45, feedback: "นี่คือผลคูณจุด $\\mathbf{r} \\cdot \\mathbf{F}$ ทอร์กใช้ผลคูณไขว้" }
+    solution: "$\\mathbf{r} \\times \\mathbf{F} = \\langle 0(-160) - 0(120),\\ 0(150) - 0.3(-160),\\ 0.3(120) - 0(150) \\rangle = \\langle 0, 48, 36 \\rangle$ ขนาด $\\sqrt{48^2 + 36^2} = 60\\ \\mathrm{N\\cdot m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p017
+    topics: [math.calculus.vectors-3d]
+    difficulty: 4
+    type: expression
+    stem: "จงหาพื้นที่ของสี่เหลี่ยมด้านขนานที่มี $\\mathbf{u} = \\langle 1, 1, 0 \\rangle$ และ $\\mathbf{v} = \\langle 0, 2, 2 \\rangle$ เป็นด้าน ตอบในรูปกรณฑ์อย่างง่าย"
+    prefix: "พื้นที่ ="
+    answer: { latex: "2\\sqrt{3}", variables: [] }
+    simplified: true
+    misconceptions:
+      - { match: "2", feedback: "2 คือผลคูณจุด พื้นที่ใช้ขนาดของผลคูณไขว้" }
+      - { match: "\\sqrt{3}", feedback: "นี่คือพื้นที่สามเหลี่ยม (ครึ่งหนึ่ง) สี่เหลี่ยมด้านขนานไม่ต้องหารสอง" }
+    hints:
+      - "พื้นที่ $= |\\mathbf{u} \\times \\mathbf{v}|$"
+      - "$\\mathbf{u} \\times \\mathbf{v} = \\langle 2, -2, 2 \\rangle$"
+    solution: "$\\mathbf{u} \\times \\mathbf{v} = \\langle 1(2) - 0(2),\\ 0(0) - 1(2),\\ 1(2) - 1(0) \\rangle = \\langle 2, -2, 2 \\rangle$ ขนาด $\\sqrt{12} = 2\\sqrt3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p018
+    topics: [math.calculus.vectors-3d]
+    difficulty: 5
+    type: numeric
+    stem: "เส้นตรง $\\langle x, y, z \\rangle = \\langle 1, 0, 2 \\rangle + t\\langle 1, 2, -1 \\rangle$ ตัดระนาบ $x + y + z = 9$ ที่จุดใด ตอบพิกัด $y$ ของจุดตัด"
+    answer: { value: 6 }
+    hints:
+      - "แทน $x = 1 + t$, $y = 2t$, $z = 2 - t$ ลงในสมการระนาบ"
+      - "ได้สมการของ $t$ แก้หา $t$ แล้วแทนกลับหา $y$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือค่า $t$ ต้องแทนกลับใน $y = 2t$" }
+    solution: "$(1 + t) + 2t + (2 - t) = 9$ ได้ $3 + 2t = 9$, $t = 3$ จุดตัดคือ $(4, 6, -1)$ ตรวจ: $4 + 6 - 1 = 9$ พิกัด $y = 6$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p019
+    topics: [math.calculus.vectors-3d]
+    difficulty: 5
+    type: order
+    stem: "เรียงขั้นตอนการหาสมการระนาบที่ผ่านสามจุด $P, Q, R$ ที่ไม่อยู่บนเส้นตรงเดียวกัน"
+    items:
+      - "หาเวกเตอร์ $\\overrightarrow{PQ}$ และ $\\overrightarrow{PR}$"
+      - "หาเวกเตอร์แนวฉาก $\\mathbf{n} = \\overrightarrow{PQ} \\times \\overrightarrow{PR}$"
+      - "แทน $\\mathbf{n} = \\langle a, b, c \\rangle$ และพิกัด $P$ ใน $a(x - x_0) + b(y - y_0) + c(z - z_0) = 0$"
+      - "จัดรูปเป็น $ax + by + cz = d$"
+      - "ตรวจโดยแทนพิกัด $Q$ และ $R$ ว่าสอดคล้องกับสมการ"
+    hints:
+      - "เวกเตอร์แนวฉากต้องตั้งฉากกับเวกเตอร์สองตัวที่อยู่ในระนาบ"
+      - "ใช้จุดใดจุดหนึ่งในสามจุดเป็น $(x_0, y_0, z_0)$ แล้วตรวจกับอีกสองจุด"
+    solution: "สร้างเวกเตอร์สองตัวบนระนาบ → ผลคูณไขว้ได้ $\\mathbf{n}$ → แทนในสมการจุด–แนวฉาก → จัดรูป → ตรวจด้วยอีกสองจุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vectors-3d.p020
+    topics: [math.calculus.vectors-3d]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "ให้ $\\mathbf{u}, \\mathbf{v}$ เป็นเวกเตอร์ในสามมิติใด ๆ ข้อใดจริงเสมอ (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$\\mathbf{u} \\times \\mathbf{v} = -(\\mathbf{v} \\times \\mathbf{u})$", correct: true }
+      - { id: b, text: "$\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{v} \\cdot \\mathbf{u}$", correct: true }
+      - { id: c, text: "$(\\mathbf{u} \\times \\mathbf{v}) \\cdot \\mathbf{u} = 0$", correct: true }
+      - { id: d, text: "$\\mathbf{u} \\times \\mathbf{v} = \\mathbf{v} \\times \\mathbf{u}$", feedback: "ผลคูณไขว้ไม่สลับที่ การสลับลำดับทำให้ทิศกลับ" }
+      - { id: e, text: "$|\\mathbf{u} \\times \\mathbf{v}| = |\\mathbf{u}||\\mathbf{v}|$", feedback: "ขาด $\\sin\\theta$ จริงเฉพาะเมื่อ u ตั้งฉากกับ v" }
+    hints:
+      - "ผลคูณจุดสลับที่ได้ ผลคูณไขว้สลับแล้วเปลี่ยนเครื่องหมาย"
+      - "$\\mathbf{u} \\times \\mathbf{v}$ ตั้งฉากกับ $\\mathbf{u}$ เสมอ"
+    solution: "ข้อ a, b, c จริงเสมอ ข้อ d ผิดเพราะ $\\mathbf{v} \\times \\mathbf{u} = -(\\mathbf{u} \\times \\mathbf{v})$ ข้อ e ผิดเพราะ $|\\mathbf{u} \\times \\mathbf{v}| = |\\mathbf{u}||\\mathbf{v}|\\sin\\theta$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

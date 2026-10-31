@@ -1,0 +1,64 @@
+id: chemistry.matter.elements-compounds
+subject: chemistry
+title: { th: ธาตุ สารประกอบ และธาตุโลหะ อโลหะ กึ่งโลหะ, en: "Elements, compounds, metals, non-metals and metalloids" }
+summary: อะตอม ธาตุ โมเลกุล และสารประกอบด้วยแบบจำลองอนุภาค การอ่านสูตรเคมี สมบัติของโลหะ อโลหะ กึ่งโลหะ ธาตุกัมมันตรังสีกับครึ่งชีวิต และการใช้ธาตุอย่างปลอดภัย
+difficulty: 2.5
+minutes: 35
+prerequisites: [chemistry.matter.pure-substances, chemistry.materials.material-properties]
+encompasses:
+  - { id: chemistry.matter.pure-substances, weight: 0.3 }
+  - { id: chemistry.materials.material-properties, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: particle-models.svg
+    alt: "แบบจำลองอนุภาค 4 กล่อง กล่องที่ 1 ธาตุ: อะตอมของทองแดง (วงกลมสีน้ำตาลส้ม) เรียงชิดกันเป็นแถว 5 คูณ 4 กล่องที่ 2 ธาตุ: โมเลกุลออกซิเจน O₂ แต่ละโมเลกุลเป็นวงกลมสีแดงสองวงติดกัน กล่องที่ 3 สารประกอบ: โมเลกุลน้ำ H₂O แต่ละโมเลกุลเป็นวงกลมแดงหนึ่งวง (O) ติดวงกลมขาวเล็กสองวง (H) กล่องที่ 4 สารผสม: มีทั้งโมเลกุล O₂ และโมเลกุล H₂O ปนกัน ข้อความด้านล่าง: อนุภาคเหมือนกันทุกตัวเป็นสารบริสุทธิ์ อนุภาคหลายแบบปนกันเป็นสารผสม"
+    caption: "ธาตุมีอะตอมชนิดเดียว สารประกอบมีอะตอมหลายชนิดยึดกันในอนุภาคเดียว สารผสมมีอนุภาคหลายแบบ"
+  - { type: check, problem: chemistry.matter.elements-compounds.p005, prompt: "ดูว่าอนุภาคแต่ละตัวมีอะตอมกี่ชนิด และทุกอนุภาคเหมือนกันหรือไม่" }
+  - type: worked-example
+    title: นับอะตอมจากสูตรเคมี
+    problem: "ปูนขาวที่ใช้ปรับดินเปรี้ยวมีแคลเซียมไฮดรอกไซด์ $\\mathrm{Ca(OH)_2}$ หนึ่งหน่วยสูตรมีธาตุอะไรบ้าง ธาตุละกี่อะตอม และรวมกี่อะตอม"
+    steps:
+      - text: "แยกสัญลักษณ์ธาตุ: Ca (แคลเซียม) O (ออกซิเจน) H (ไฮโดรเจน) มี 3 ธาตุ จึงเป็นสารประกอบ"
+      - text: "Ca ไม่มีตัวเลขห้อย จึงมี 1 อะตอม"
+      - text: "ในวงเล็บมี O 1 อะตอม และ H 1 อะตอม ตัวเลข 2 นอกวงเล็บคูณทั้งวงเล็บ ได้ O 2 อะตอม และ H 2 อะตอม"
+        why: "ตัวเลขห้อยหลังวงเล็บบอกว่ากลุ่ม OH มี 2 กลุ่ม"
+      - text: "รวม $1 + 2 + 2 = 5$ อะตอม"
+    answer: "Ca 1 อะตอม O 2 อะตอม H 2 อะตอม รวม 5 อะตอม"
+  - type: worked-example
+    title: ครึ่งชีวิตของไอโอดีน-131
+    problem: "โรงพยาบาลได้รับไอโอดีน-131 มา 80 mg ไอโอดีน-131 มีครึ่งชีวิต 8 วัน ผ่านไป 24 วันจะเหลือกี่มิลลิกรัม"
+    steps:
+      - text: "หาว่าผ่านไปกี่ครึ่งชีวิต: $24 \\div 8 = 3$ ครั้ง"
+      - text: "ทุกครึ่งชีวิตเหลือครึ่งหนึ่งของที่มีอยู่: 80 → 40 → 20 → 10 mg"
+        why: "ไม่ได้ลดครั้งละ 40 mg เท่ากันทุกครั้ง แต่ลดครั้งละครึ่งหนึ่งของที่เหลือ"
+    answer: "เหลือ 10 mg"
+  - { type: check, problem: chemistry.matter.elements-compounds.p010, prompt: "นับก่อนว่าผ่านไปกี่ครึ่งชีวิต" }
+  - type: simulation
+    title: ต่ออะตอมเป็นโมเลกุล
+    url: https://phet.colorado.edu/en/simulations/build-a-molecule
+    provider: phet
+    note: "ลองต่อโมเลกุล O₂ H₂O และ CO₂ แล้วสังเกตว่าโมเลกุลใดเป็นธาตุ โมเลกุลใดเป็นสารประกอบ"
+glossary:
+  - { term: อะตอม, definition: อนุภาคที่เล็กที่สุดของธาตุที่ยังแสดงสมบัติของธาตุนั้น }
+  - { term: ธาตุ, definition: สารบริสุทธิ์ที่ประกอบด้วยอะตอมชนิดเดียว }
+  - { term: สารประกอบ, definition: สารบริสุทธิ์ที่เกิดจากธาตุตั้งแต่ 2 ธาตุรวมกันทางเคมีในอัตราส่วนคงที่ }
+  - { term: โมเลกุล, definition: กลุ่มอะตอมตั้งแต่ 2 อะตอมที่ยึดกันแน่น เป็นได้ทั้งของธาตุและของสารประกอบ }
+  - { term: กึ่งโลหะ, definition: "ธาตุที่มีสมบัติบางอย่างเหมือนโลหะ บางอย่างเหมือนอโลหะ เช่น ซิลิคอน มักนำไฟฟ้าได้ดีขึ้นเมื่ออุณหภูมิสูงขึ้น" }
+  - { term: ครึ่งชีวิต, definition: เวลาที่ธาตุกัมมันตรังสีสลายจนเหลือครึ่งหนึ่งของปริมาณเดิม }
+flashcards:
+  - { front: "ธาตุ กับ สารประกอบ ต่างกันอย่างไร", back: "ธาตุมีอะตอมชนิดเดียว สารประกอบมีธาตุตั้งแต่ 2 ธาตุรวมกันทางเคมี และแยกด้วยวิธีกายภาพไม่ได้" }
+  - { front: "Ca(OH)₂ มีอะตอมรวมกี่อะตอม", back: "5 อะตอม (Ca 1, O 2, H 2) ตัวเลขนอกวงเล็บคูณทุกอะตอมในวงเล็บ" }
+  - { front: "สมบัติของโลหะ", back: "มันวาว ตีแผ่และดึงเป็นเส้นได้ นำไฟฟ้าและความร้อนดี ส่วนมากเป็นของแข็ง" }
+  - { front: "ตัวอย่างกึ่งโลหะ", back: "โบรอน ซิลิคอน เจอร์เมเนียม สารหนู" }
+  - { front: "ครึ่งชีวิต 3 ครั้ง เหลือเท่าใด", back: "หนึ่งในแปด ($\\tfrac12 \\times \\tfrac12 \\times \\tfrac12$)" }
+references:
+  - { title: "ธาตุเคมี", url: "https://th.wikipedia.org/wiki/ธาตุเคมี", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "สารประกอบเคมี", url: "https://th.wikipedia.org/wiki/สารประกอบเคมี", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Metalloid", url: "https://en.wikipedia.org/wiki/Metalloid", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Half-life", url: "https://en.wikipedia.org/wiki/Half-life", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

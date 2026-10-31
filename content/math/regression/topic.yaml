@@ -1,0 +1,66 @@
+id: math.stats.regression
+subject: math
+title: { th: การถดถอยเชิงเส้นและสหสัมพันธ์, en: Linear regression and correlation }
+summary: หาเส้นถดถอยกำลังสองน้อยสุด ส่วนเหลือ สัมประสิทธิ์สหสัมพันธ์และ r กำลังสอง ทดสอบนัยสำคัญของสหสัมพันธ์ ทำนายอย่างระวัง และตรวจค่าผิดปกติ
+difficulty: 7
+minutes: 45
+prerequisites: [math.functions.linear-graphs, math.stats.dispersion]
+encompasses:
+  - { id: math.stats.dispersion, weight: 0.3 }
+  - { id: math.functions.linear-graphs, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: residuals.svg
+    alt: "แผนภาพการกระจาย แกนนอนอุณหภูมิ x 28 ถึง 36 องศาเซลเซียส แกนตั้งยอดขาย y แก้ว จุด (28, 52) (30, 60) (32, 63) (34, 71) (36, 79) เส้นถดถอยสีน้ำเงิน ŷ = −39 + 3.25x มีเส้นประสีแดงแนวตั้งสั้น ๆ จากจุดถึงเส้นแทนส่วนเหลือ จุด (28, 52) อยู่บนเส้นพอดี จุด (30, 60) และ (36, 79) อยู่เหนือเส้นเล็กน้อย จุด (32, 63) และ (34, 71) อยู่ใต้เส้น"
+    caption: "ส่วนเหลือคือระยะแนวตั้งจากจุดถึงเส้นถดถอย เส้นกำลังสองน้อยสุดทำให้ผลบวกกำลังสองของส่วนเหลือน้อยที่สุด"
+  - type: worked-example
+    title: หาเส้นถดถอยและทำนาย
+    problem: "จากข้อมูลอุณหภูมิ $x$ (°C) กับยอดขายน้ำมะพร้าว $y$ (แก้ว): $(28, 52), (30, 60), (32, 63), (34, 71), (36, 79)$ จงหาเส้นถดถอยและทำนายยอดขายเมื่ออุณหภูมิ 33 °C"
+    steps:
+      - text: "ค่าเฉลี่ย: $\\bar{x} = \\dfrac{160}{5} = 32$ และ $\\bar{y} = \\dfrac{325}{5} = 65$"
+      - text: "ผลต่างจากค่าเฉลี่ย $x - \\bar{x} = -4, -2, 0, 2, 4$ และ $y - \\bar{y} = -13, -5, -2, 6, 14$"
+      - text: "$S_{xx} = 16 + 4 + 0 + 4 + 16 = 40$ และ $S_{xy} = 52 + 10 + 0 + 12 + 56 = 130$"
+      - text: "$b = \\dfrac{130}{40} = 3.25$ และ $a = 65 - 3.25(32) = -39$"
+        why: "เส้นถดถอยผ่าน $(\\bar{x}, \\bar{y})$ จึงหา $a$ จาก $\\bar{y} = a + b\\bar{x}$"
+      - text: "ทำนาย: $\\hat{y} = -39 + 3.25(33) = 68.25$ ประมาณ 68 แก้ว ($33$ อยู่ในช่วงข้อมูล จึงเชื่อถือได้)"
+    answer: "$\\hat{y} = -39 + 3.25x$ ทำนายได้ประมาณ 68 แก้ว"
+  - { type: check, problem: math.stats.regression.p004, prompt: "เส้นถดถอยผ่านจุด (x̄, ȳ) เสมอ" }
+  - type: worked-example
+    title: สหสัมพันธ์และนัยสำคัญ
+    problem: "จากข้อมูลชุดเดิม ($S_{xx} = 40$, $S_{xy} = 130$, $S_{yy} = 430$, $n = 5$) จงหา $r$ และ $r^2$ แล้วตัดสินว่าความสัมพันธ์เชิงเส้นมีนัยสำคัญที่ระดับ 0.05 หรือไม่"
+    steps:
+      - text: "$r = \\dfrac{130}{\\sqrt{40 \\times 430}} = \\dfrac{130}{131.15} \\approx 0.991$"
+      - text: "$r^2 \\approx 0.983$ อุณหภูมิอธิบายความแปรผันของยอดขายได้ประมาณ 98%"
+      - text: "จากตาราง $n = 5$ ค่าวิกฤตคือ 0.878"
+        why: "ข้อมูลเพียง 5 จุดต้องการ $|r|$ สูงมากจึงจะตัดความบังเอิญออกได้"
+      - text: "$0.991 > 0.878$ ความสัมพันธ์เชิงเส้นมีนัยสำคัญ ใช้เส้นถดถอยทำนายในช่วงข้อมูลได้"
+    answer: "$r \\approx 0.991$, $r^2 \\approx 0.98$ มีนัยสำคัญ"
+  - type: figure
+    src: four-scatter.svg
+    alt: "แผนภาพการกระจายสี่ภาพเรียงกัน ภาพ A จุด 30 จุดเรียงใกล้เส้นตรงขาขึ้นอย่างชัดเจน ภาพ B จุดเรียงใกล้เส้นตรงขาลงชัดเจน ภาพ C จุดกระจายทั่วไม่มีแนวโน้ม ภาพ D จุดกระจายกว้างมีแนวโน้มขาลงเล็กน้อย"
+    caption: "สหสัมพันธ์ต่างกันมีรูปแบบของจุดต่างกัน (ใช้ในโจทย์จับคู่)"
+  - { type: check, problem: math.stats.regression.p007, prompt: "ดูทั้งทิศทางและความแน่นของจุดรอบเส้นตรง" }
+glossary:
+  - { term: เส้นถดถอย, definition: "เส้นตรง ŷ = a + bx ที่ทำให้ผลบวกกำลังสองของส่วนเหลือน้อยที่สุด" }
+  - { term: ส่วนเหลือ, definition: "e = y − ŷ ผลต่างระหว่างค่าจริงกับค่าที่ทำนายจากเส้น" }
+  - { term: สัมประสิทธิ์สหสัมพันธ์, definition: "r ระหว่าง −1 ถึง 1 วัดทิศทางและความแรงของความสัมพันธ์เชิงเส้น" }
+  - { term: สัมประสิทธิ์การตัดสินใจ, definition: "r² สัดส่วนของความแปรผันของ y ที่อธิบายได้ด้วยเส้นถดถอย" }
+  - { term: การประมาณค่านอกช่วง, definition: "การทำนายที่ค่า x อยู่นอกช่วงของข้อมูล ซึ่งเสี่ยงต่อความผิดพลาด" }
+  - { term: ค่าผิดปกติ, definition: "จุดที่ส่วนเหลือมีขนาดมากกว่าประมาณ 2 เท่าของ s" }
+flashcards:
+  - { front: "สูตรความชันและจุดตัดของเส้นถดถอย", back: "b = Sxy/Sxx และ a = ȳ − b x̄" }
+  - { front: "เส้นถดถอยผ่านจุดใดเสมอ", back: "จุด (x̄, ȳ)" }
+  - { front: "r = 0.7 อธิบายความแปรผันของ y ได้กี่เปอร์เซ็นต์", back: "r² = 0.49 คือ 49%" }
+  - { front: "ทดสอบนัยสำคัญของ r อย่างง่าย", back: "เทียบ |r| กับค่าวิกฤตที่ n นั้น ถ้า |r| มากกว่า ถือว่ามีนัยสำคัญ" }
+  - { front: "เกณฑ์ค่าผิดปกติในการถดถอย", back: "|ส่วนเหลือ| > 2s เมื่อ s = √(Σe²/(n − 2))" }
+references:
+  - { title: "การวิเคราะห์การถดถอย", url: "https://th.wikipedia.org/wiki/การวิเคราะห์การถดถอย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Simple linear regression", url: "https://en.wikipedia.org/wiki/Simple_linear_regression", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.3 The Regression Equation (Introductory Statistics 2e, OpenStax)", url: "https://openstax.org/books/introductory-statistics-2e/pages/12-3-the-regression-equation", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "12.4 Testing the Significance of the Correlation Coefficient (Introductory Statistics 2e, OpenStax)", url: "https://openstax.org/books/introductory-statistics-2e/pages/12-4-testing-the-significance-of-the-correlation-coefficient", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

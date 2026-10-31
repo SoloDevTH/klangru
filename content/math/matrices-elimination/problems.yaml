@@ -1,0 +1,325 @@
+problems:
+  - id: math.linalg.matrices-elimination.p001
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 1
+    type: numeric
+    stem: "$A = \\begin{pmatrix} 4 & -1 & 7 \\\\ 2 & 0 & 5 \\end{pmatrix}$ จงหา $a_{21}$"
+    answer: { value: 2 }
+    hints:
+      - "$a_{ij}$ คือสมาชิกแถวที่ $i$ หลักที่ $j$"
+      - "$a_{21}$ อยู่แถวที่ 2 หลักที่ 1"
+    misconceptions:
+      - { match: -1, feedback: "นี่คือ $a_{12}$ (แถว 1 หลัก 2) ตัวเลขแรกคือแถว ตัวที่สองคือหลัก" }
+    solution: "แถวที่ 2 คือ $(2, 0, 5)$ สมาชิกหลักที่ 1 คือ $a_{21} = 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p002
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 1
+    type: mcq
+    stem: "$A$ มีมิติ $2 \\times 3$ และ $B$ มีมิติ $3 \\times 4$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$AB$ หาได้ และมีมิติ $2 \\times 4$", correct: true }
+      - { id: b, text: "$AB$ หาได้ และมีมิติ $3 \\times 3$", feedback: "มิติของผลคูณคือจำนวนแถวของ A คูณจำนวนหลักของ B ส่วนเลข 3 ที่ตรงกันเป็นเงื่อนไขว่าคูณได้" }
+      - { id: c, text: "$BA$ หาได้ และมีมิติ $3 \\times 3$", feedback: "$BA$ ต้องการให้จำนวนหลักของ B (4) เท่ากับจำนวนแถวของ A (2) ซึ่งไม่เท่า จึงคูณไม่ได้" }
+      - { id: d, text: "$A + B$ หาได้", feedback: "บวกได้เฉพาะเมทริกซ์ที่มิติเท่ากัน" }
+    hints:
+      - "$(m \\times n)(n \\times p)$ คูณได้และได้ $m \\times p$"
+      - "ตรวจว่าตัวเลขตรงกลางเท่ากันหรือไม่"
+    solution: "$(2 \\times 3)(3 \\times 4)$ ตัวกลางเท่ากันคือ 3 จึงคูณได้ ผลคูณมีมิติ $2 \\times 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p003
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 2
+    type: numeric
+    stem: "ร้านเสื้อยืดสาขาภูเก็ตและกระบี่ (แถว) ขายเสื้อไซซ์ M และ L (หลัก) เดือนนี้ได้ $A = \\begin{pmatrix} 12 & 8 \\\\ 5 & 10 \\end{pmatrix}$ ตัว เดือนหน้าคาดว่าจะขายได้เป็นสองเท่า ขณะที่สต็อกที่เหลือคือ $B = \\begin{pmatrix} 7 & 3 \\\\ 4 & 6 \\end{pmatrix}$ จำนวนที่ต้องสั่งเพิ่มคือ $2A - B$ สาขาภูเก็ตต้องสั่งไซซ์ L เพิ่มกี่ตัว"
+    answer: { value: 13, unit: ตัว }
+    hints:
+      - "สาขาภูเก็ตไซซ์ L คือแถว 1 หลัก 2"
+      - "$2(8) - 3$"
+    misconceptions:
+      - { match: 10, feedback: "คูณ 2 เฉพาะ A ไม่ต้องคูณ B ด้วย" }
+      - { match: 5, feedback: "ลืมคูณ A ด้วย 2" }
+    solution: "สมาชิกแถว 1 หลัก 2 ของ $2A - B$ คือ $2(8) - 3 = 13$ ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p004
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 2
+    type: numeric
+    stem: "ร้านกาแฟสาขาเชียงใหม่และลำปางขายลาเต้ อเมริกาโน และชาไทย ตามเมทริกซ์ $S = \\begin{pmatrix} 40 & 25 & 30 \\\\ 35 & 30 & 20 \\end{pmatrix}$ แก้ว (แถว 1 เชียงใหม่ แถว 2 ลำปาง) ราคาแก้วละ $\\mathbf{p} = \\begin{pmatrix} 50 \\\\ 60 \\\\ 55 \\end{pmatrix}$ บาท สาขาลำปางมีรายได้กี่บาท"
+    answer: { value: 4650, unit: บาท }
+    hints:
+      - "รายได้ของแต่ละสาขาคือสมาชิกของ $S\\mathbf{p}$"
+      - "แถวที่ 2 ของ $S$ คูณจุดกับ $\\mathbf{p}$"
+    misconceptions:
+      - { match: 5150, feedback: "นี่คือรายได้สาขาเชียงใหม่ (แถวที่ 1)" }
+    solution: "$35(50) + 30(60) + 20(55) = 1750 + 1800 + 1100 = 4650$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p005
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\det\\begin{pmatrix} 5 & 3 \\\\ 2 & 4 \\end{pmatrix}$"
+    answer: { value: 14 }
+    hints:
+      - "$\\det\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = ad - bc$"
+      - "$5(4) - 3(2)$"
+    misconceptions:
+      - { match: 26, feedback: "ดีเทอร์มิแนนต์คือ $ad - bc$ ไม่ใช่ $ad + bc$" }
+      - { match: -14, feedback: "ลบสลับข้าง ต้องเป็นเส้นทแยงมุมหลักลบเส้นทแยงมุมรอง" }
+    solution: "$5(4) - 3(2) = 20 - 6 = 14$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p006
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ให้ $A, B, C$ เป็นเมทริกซ์จัตุรัสมิติ $2 \\times 2$ ใด ๆ ข้อใดจริงเสมอ (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$(AB)C = A(BC)$", correct: true }
+      - { id: b, text: "$A(B + C) = AB + AC$", correct: true }
+      - { id: c, text: "$AI = A$ เมื่อ $I$ เป็นเมทริกซ์เอกลักษณ์", correct: true }
+      - { id: d, text: "$AB = BA$", feedback: "การคูณเมทริกซ์ไม่สลับที่ ในบทเรียนมีตัวอย่างที่ $AB \\ne BA$" }
+      - { id: e, text: "ถ้า $AB = 0$ แล้ว $A = 0$ หรือ $B = 0$", feedback: "ไม่จริงสำหรับเมทริกซ์ เช่น $\\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}^2 = 0$ ทั้งที่เมทริกซ์ไม่เป็นศูนย์" }
+    hints:
+      - "การคูณเมทริกซ์มีสมบัติการเปลี่ยนหมู่และการแจกแจง"
+      - "สมบัติใดของจำนวนจริงที่เมทริกซ์ไม่มี"
+    solution: "ข้อ a, b, c จริงเสมอ ข้อ d ไม่จริงเพราะการคูณไม่สลับที่ ข้อ e ไม่จริง เพราะเมทริกซ์ $N = \\begin{pmatrix} 0 & 1 \\\\ 0 & 0 \\end{pmatrix}$ มี $N^2 = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p007
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 3
+    type: numeric
+    stem: "$A = \\begin{pmatrix} 1 & 2 \\\\ 3 & -1 \\end{pmatrix}$, $B = \\begin{pmatrix} 4 & 0 \\\\ -2 & 5 \\end{pmatrix}$ จงหาสมาชิกแถว 2 หลัก 1 ของ $AB$"
+    answer: { value: 14 }
+    hints:
+      - "สมาชิก $(AB)_{21}$ = แถว 2 ของ $A$ คูณจุดกับหลัก 1 ของ $B$"
+      - "$(3, -1) \\cdot (4, -2)$"
+    misconceptions:
+      - { match: -6, feedback: "คูณเฉพาะสมาชิกตำแหน่งเดียวกัน $3 \\times (-2)$ การคูณเมทริกซ์ใช้แถวคูณหลัก" }
+      - { match: 13, feedback: "นี่คือสมาชิกของ $BA$ ลำดับการคูณสำคัญ" }
+    solution: "$(AB)_{21} = 3(4) + (-1)(-2) = 12 + 2 = 14$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p008
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 3
+    type: mcq
+    stem: "จงหาเมทริกซ์ผกผันของ $A = \\begin{pmatrix} 3 & 5 \\\\ 1 & 2 \\end{pmatrix}$"
+    choices:
+      - { id: a, text: "$\\begin{pmatrix} 2 & -5 \\\\ -1 & 3 \\end{pmatrix}$", correct: true }
+      - { id: b, text: "$\\begin{pmatrix} 2 & 5 \\\\ 1 & 3 \\end{pmatrix}$", feedback: "สลับเส้นทแยงมุมหลักถูกแล้ว แต่ลืมเปลี่ยนเครื่องหมายของ $b$ และ $c$" }
+      - { id: c, text: "$\\begin{pmatrix} 3 & -5 \\\\ -1 & 2 \\end{pmatrix}$", feedback: "ต้องสลับตำแหน่ง $a$ กับ $d$ ด้วย" }
+      - { id: d, text: "$\\begin{pmatrix} \\frac13 & \\frac15 \\\\ 1 & \\frac12 \\end{pmatrix}$", feedback: "ตัวผกผันของเมทริกซ์ไม่ได้หาจากส่วนกลับของแต่ละสมาชิก" }
+    hints:
+      - "$\\det A = 3(2) - 5(1) = 1$"
+      - "สลับ $a$ กับ $d$ เปลี่ยนเครื่องหมาย $b$ กับ $c$ แล้วหารด้วยดีเทอร์มิแนนต์"
+    solution: "$\\det A = 1$ จึง $A^{-1} = \\begin{pmatrix} 2 & -5 \\\\ -1 & 3 \\end{pmatrix}$ ตรวจ: $AA^{-1} = \\begin{pmatrix} 6 - 5 & -15 + 15 \\\\ 2 - 2 & -5 + 6 \\end{pmatrix} = I$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p009
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 3
+    type: numeric
+    stem: "ใช้ $A^{-1}$ จากเมทริกซ์ $A = \\begin{pmatrix} 3 & 5 \\\\ 1 & 2 \\end{pmatrix}$ แก้ระบบ $3x + 5y = 13$, $x + 2y = 5$ จงหา $y$"
+    answer: { value: 2 }
+    hints:
+      - "$\\mathbf{x} = A^{-1}\\mathbf{b}$ เมื่อ $A^{-1} = \\begin{pmatrix} 2 & -5 \\\\ -1 & 3 \\end{pmatrix}$"
+      - "$y$ คือแถวที่ 2 ของ $A^{-1}\\mathbf{b}$: $-1(13) + 3(5)$"
+    misconceptions:
+      - { match: 23, feedback: "คูณ $A\\mathbf{b}$ แทน $A^{-1}\\mathbf{b}$" }
+      - { match: 1, feedback: "1 คือค่า $x$ โจทย์ถาม $y$" }
+    solution: "$A^{-1}\\mathbf{b} = \\begin{pmatrix} 2(13) - 5(5) \\\\ -13 + 3(5) \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$ จึง $y = 2$ ตรวจ: $3 + 10 = 13$ และ $1 + 4 = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p010
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\det\\begin{pmatrix} 2 & 1 & 3 \\\\ 0 & -1 & 4 \\\\ 1 & 2 & 0 \\end{pmatrix}$"
+    answer: { value: -9 }
+    hints:
+      - "กระจายตามแถวแรก เครื่องหมาย $+, -, +$"
+      - "$2\\begin{vmatrix} -1 & 4 \\\\ 2 & 0 \\end{vmatrix} - 1\\begin{vmatrix} 0 & 4 \\\\ 1 & 0 \\end{vmatrix} + 3\\begin{vmatrix} 0 & -1 \\\\ 1 & 2 \\end{vmatrix}$"
+    misconceptions:
+      - { match: -17, feedback: "พจน์กลางต้องมีเครื่องหมายลบนำหน้า $-1 \\times (-4) = +4$" }
+    solution: "$2(0 - 8) - 1(0 - 4) + 3(0 + 1) = -16 + 4 + 3 = -9$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p011
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการแก้ระบบสมการเชิงเส้นสามตัวแปรด้วยการกำจัดแบบเกาส์"
+    items:
+      - "เขียนเมทริกซ์แต่งเติม $[A \\mid \\mathbf{b}]$"
+      - "ใช้แถวที่ 1 กำจัด $x$ ออกจากแถวที่ 2 และ 3"
+      - "ใช้แถวที่ 2 กำจัด $y$ ออกจากแถวที่ 3 (ได้รูปขั้นบันได)"
+      - "หา $z$ จากแถวสุดท้าย"
+      - "แทนค่าย้อนกลับหา $y$ แล้วหา $x$"
+      - "ตรวจคำตอบกับสมการเดิม"
+    hints:
+      - "เป้าหมายคือทำให้ใต้เส้นทแยงมุมเป็นศูนย์"
+      - "แถวล่างสุดเหลือตัวแปรเดียว จึงแก้ได้ก่อน"
+    solution: "เขียนเมทริกซ์แต่งเติม → กำจัด $x$ → กำจัด $y$ → หา $z$ → แทนค่าย้อนกลับ → ตรวจคำตอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p012
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่า $k$ ที่ทำให้ $\\begin{pmatrix} k & 4 \\\\ 3 & 6 \\end{pmatrix}$ ไม่มีเมทริกซ์ผกผัน"
+    answer: { value: 2 }
+    hints:
+      - "ไม่มีตัวผกผันเมื่อดีเทอร์มิแนนต์เป็น 0"
+      - "$6k - 12 = 0$"
+    misconceptions:
+      - { match: -2, feedback: "$6k - 12 = 0$ ให้ $k = 2$ ระวังเครื่องหมาย" }
+    solution: "$\\det = 6k - 12 = 0$ จึง $k = 2$ (แถวที่ 1 คือ $\\tfrac23$ เท่าของแถวที่ 2)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p013
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 4
+    type: numeric
+    stem: "แม่ค้าผลไม้ในจันทบุรีขายมะม่วง มังคุด และเงาะ ราคากิโลกรัมละ $x$, $y$, $z$ บาท ลูกค้าคนแรกซื้อ 2, 1, 1 กิโลกรัม จ่าย 170 บาท คนที่สองซื้อ 1, 2, 3 กิโลกรัม จ่าย 250 บาท คนที่สามซื้อ 3, 1, 2 กิโลกรัม จ่าย 240 บาท มังคุดราคากิโลกรัมละกี่บาท"
+    answer: { value: 60, unit: บาท }
+    hints:
+      - "เมทริกซ์แต่งเติม $\\left(\\begin{array}{ccc|c} 2 & 1 & 1 & 170 \\\\ 1 & 2 & 3 & 250 \\\\ 3 & 1 & 2 & 240 \\end{array}\\right)$ สลับแถว 1 กับ 2 ก่อนจะคำนวณง่ายขึ้น"
+      - "กำจัด $x$ แล้วกำจัด $y$ จากนั้นแทนค่าย้อนกลับ"
+    misconceptions:
+      - { match: 40, feedback: "40 คือราคามะม่วง ($x$) โจทย์ถามมังคุด ($y$)" }
+      - { match: 30, feedback: "30 คือราคาเงาะ ($z$)" }
+    solution: "สลับแถว: $(1, 2, 3 \\mid 250)$ แล้ว $R_2 - 2R_1$ ได้ $(0, -3, -5 \\mid -330)$ และ $R_3 - 3R_1$ ได้ $(0, -5, -7 \\mid -510)$ จากนั้น $3R_3 - 5R_2$ ได้ $(0, 0, 4 \\mid 120)$ จึง $z = 30$, $-3y - 150 = -330$ ได้ $y = 60$ และ $x = 250 - 120 - 90 = 40$ มังคุดกิโลกรัมละ 60 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p014
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 4
+    type: numeric
+    stem: "การแปลงด้วยเมทริกซ์ $\\begin{pmatrix} 3 & 1 \\\\ 2 & -1 \\end{pmatrix}$ ส่งรูปสามเหลี่ยมที่มีพื้นที่ 4 ตารางหน่วยไปเป็นรูปใหม่ รูปใหม่มีพื้นที่กี่ตารางหน่วย"
+    answer: { value: 20, unit: ตารางหน่วย }
+    hints:
+      - "พื้นที่ใหม่ $= |\\det A| \\times$ พื้นที่เดิม"
+      - "$\\det A = 3(-1) - 1(2)$"
+    misconceptions:
+      - { match: -20, feedback: "พื้นที่ไม่ติดลบ ใช้ค่าสัมบูรณ์ของดีเทอร์มิแนนต์ (เครื่องหมายลบบอกว่ารูปถูกพลิก)" }
+      - { match: 4, feedback: "พื้นที่เปลี่ยนตามดีเทอร์มิแนนต์ ไม่ได้คงเดิม" }
+    solution: "$\\det A = -3 - 2 = -5$ พื้นที่ใหม่ $= |-5| \\times 4 = 20$ ตารางหน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p015
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 4
+    type: numeric
+    stem: "$A$ เป็นเมทริกซ์มิติ $3 \\times 3$ ที่ $\\det A = 3$ จงหา $\\det(2A)$"
+    answer: { value: 24 }
+    hints:
+      - "$2A$ คือคูณทุกแถวของ $A$ ด้วย 2"
+      - "คูณแถวหนึ่งด้วย 2 ดีเทอร์มิแนนต์คูณ 2 มีสามแถว"
+    misconceptions:
+      - { match: 6, feedback: "คูณ 2 ทุกแถว ไม่ใช่แถวเดียว จึงได้ $2^3 \\det A$" }
+      - { match: 18, feedback: "สามแถวคือ $2 \\times 2 \\times 2 = 8$ ไม่ใช่ $2 \\times 3$" }
+    solution: "$\\det(2A) = 2^3 \\det A = 8 \\times 3 = 24$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p016
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 4
+    type: match
+    stem: "เมทริกซ์ $A$ มี $\\det A = 5$ จับคู่การดำเนินการตามแถวกับดีเทอร์มิแนนต์ของเมทริกซ์ใหม่"
+    pairs:
+      - { left: "สลับแถวที่ 1 กับแถวที่ 2", right: "$-5$" }
+      - { left: "คูณแถวที่ 1 ด้วย 3", right: "$15$" }
+      - { left: "บวก 4 เท่าของแถวที่ 1 เข้ากับแถวที่ 2", right: "$5$" }
+      - { left: "คูณแถวที่ 2 ด้วย $-2$", right: "$-10$" }
+    hints:
+      - "สลับแถวเปลี่ยนเครื่องหมาย คูณแถวด้วย $k$ ดีเทอร์มิแนนต์คูณ $k$"
+      - "บวกพหุคูณของแถวหนึ่งเข้ากับอีกแถวไม่เปลี่ยนดีเทอร์มิแนนต์"
+    solution: "สลับแถว: $-5$; คูณ 3: $15$; บวกพหุคูณ: $5$ เท่าเดิม; คูณ $-2$: $-10$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p017
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 4
+    type: numeric
+    stem: "เมทริกซ์ $R = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}$ หมุนจุดรอบจุดกำเนิด $90^\\circ$ ทวนเข็มนาฬิกา หุ่นยนต์ในโรงงานอยู่ที่จุด $(4, 1)$ หลังหมุนด้วย $R$ หุ่นยนต์อยู่ที่พิกัด $y$ เท่าใด"
+    answer: { value: 4 }
+    hints:
+      - "คำนวณ $R\\begin{pmatrix} 4 \\\\ 1 \\end{pmatrix}$"
+      - "พิกัด $y$ คือแถวที่ 2: $1(4) + 0(1)$"
+    misconceptions:
+      - { match: -1, feedback: "นี่คือพิกัด $x$ ใหม่ (แถวที่ 1)" }
+      - { match: 1, feedback: "นี่คือพิกัด $y$ เดิม ต้องคูณด้วยเมทริกซ์ก่อน" }
+    solution: "$R\\begin{pmatrix} 4 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 0(4) - 1(1) \\\\ 1(4) + 0(1) \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ 4 \\end{pmatrix}$ พิกัด $y = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p018
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 5
+    type: numeric
+    stem: "ระบบ $x + 2y + z = 1$, $2x + ky + z = 0$, $x + y + 2z = 3$ ไม่มีคำตอบเดียว (มีคำตอบเดียวไม่ได้) เมื่อ $k$ เท่าใด"
+    answer: { value: 5 }
+    hints:
+      - "ระบบมีคำตอบเดียวก็ต่อเมื่อดีเทอร์มิแนนต์ของเมทริกซ์สัมประสิทธิ์ไม่เป็นศูนย์"
+      - "$\\det\\begin{pmatrix} 1 & 2 & 1 \\\\ 2 & k & 1 \\\\ 1 & 1 & 2 \\end{pmatrix}$ กระจายตามแถวแรก"
+    misconceptions:
+      - { match: -5, feedback: "ดีเทอร์มิแนนต์คือ $k - 5$ จึงเป็นศูนย์เมื่อ $k = 5$" }
+    solution: "$\\det = 1(2k - 1) - 2(4 - 1) + 1(2 - k) = 2k - 1 - 6 + 2 - k = k - 5$ เป็นศูนย์เมื่อ $k = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p019
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 5
+    type: numeric
+    stem: "$A$ และ $B$ เป็นเมทริกซ์ $3 \\times 3$ ที่ $\\det A = 4$ และ $\\det B = -3$ จงหา $\\det(A^{-1}B^T)$"
+    answer: { value: -0.75, tolerance: 0.001 }
+    hints:
+      - "$\\det(XY) = \\det X \\cdot \\det Y$"
+      - "$\\det A^{-1} = \\dfrac{1}{\\det A}$ และ $\\det B^T = \\det B$"
+    misconceptions:
+      - { match: -12, feedback: "$\\det A^{-1}$ คือ $\\tfrac14$ ไม่ใช่ 4" }
+      - { match: 0.75, feedback: "$\\det B^T = \\det B = -3$ เครื่องหมายไม่เปลี่ยนเมื่อสลับเปลี่ยน" }
+    solution: "$\\det(A^{-1}B^T) = \\dfrac{1}{\\det A} \\cdot \\det B = \\dfrac{-3}{4} = -0.75$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.matrices-elimination.p020
+    topics: [math.linalg.matrices-elimination]
+    difficulty: 5
+    type: mcq
+    stem: "หลังการกำจัดแบบเกาส์ เมทริกซ์แต่งเติมของระบบหนึ่งกลายเป็น $\\left(\\begin{array}{ccc|c} 1 & 2 & -1 & 3 \\\\ 0 & 1 & 2 & 1 \\\\ 0 & 0 & 0 & 4 \\end{array}\\right)$ ข้อสรุปใดถูกต้อง"
+    choices:
+      - { id: a, text: "ระบบไม่มีคำตอบ", correct: true }
+      - { id: b, text: "ระบบมีคำตอบมากมายไม่จำกัด", feedback: "คำตอบมากมายเกิดเมื่อแถวล่างเป็นศูนย์ทั้งแถว รวมทั้งช่องขวาสุด แต่ที่นี่ช่องขวาสุดเป็น 4" }
+      - { id: c, text: "$z = 4$", feedback: "แถวสุดท้ายคือ $0x + 0y + 0z = 4$ ไม่มี $z$ ใดทำให้เป็นจริง" }
+      - { id: d, text: "$z = 0$", feedback: "แถวสุดท้ายหมายถึง $0 = 4$ ไม่ได้บอกค่า $z$" }
+    hints:
+      - "แปลงแถวสุดท้ายกลับเป็นสมการ"
+      - "$0x + 0y + 0z = 4$ เป็นไปได้หรือไม่"
+    solution: "แถวสุดท้ายคือ $0 = 4$ ซึ่งเป็นไปไม่ได้ ระบบจึงไม่มีคำตอบ (ระนาบทั้งสามไม่มีจุดร่วม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

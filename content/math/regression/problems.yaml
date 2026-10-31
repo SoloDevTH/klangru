@@ -1,0 +1,311 @@
+problems:
+  - id: math.stats.regression.p001
+    topics: [math.stats.regression]
+    difficulty: 1
+    type: numeric
+    stem: "เส้นถดถอยคือ $\\hat{y} = 12 + 3x$ จงทำนายค่า $y$ เมื่อ $x = 5$"
+    answer: { value: 27 }
+    hints:
+      - "แทน $x = 5$ ในสมการ"
+      - "$12 + 3(5)$"
+    misconceptions:
+      - { match: 75, feedback: "บวก 12 กับ 3 ก่อนแล้วคูณ 5 ต้องคูณ $3 \\times 5$ ก่อนแล้วจึงบวก 12" }
+    solution: "$\\hat{y} = 12 + 3(5) = 27$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p002
+    topics: [math.stats.regression]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อมูลชุดหนึ่งมีสัมประสิทธิ์สหสัมพันธ์ $r = -0.92$ ข้อใดอธิบายได้ถูกต้อง"
+    choices:
+      - { id: a, text: "มีความสัมพันธ์เชิงเส้นแบบผกผันที่แรง เมื่อ $x$ เพิ่ม $y$ มักลดลง", correct: true }
+      - { id: b, text: "ความสัมพันธ์อ่อนมาก เพราะ $r$ ติดลบ", feedback: "ความแรงดูจาก $|r|$ ซึ่ง 0.92 ใกล้ 1 มาก เครื่องหมายบอกเพียงทิศทาง" }
+      - { id: c, text: "เมื่อ $x$ เพิ่ม $y$ มักเพิ่มด้วย", feedback: "$r$ ติดลบหมายถึง $y$ มักลดลงเมื่อ $x$ เพิ่ม" }
+      - { id: d, text: "$x$ เป็นสาเหตุที่ทำให้ $y$ ลดลง", feedback: "สหสัมพันธ์ไม่ได้พิสูจน์ความเป็นเหตุเป็นผล" }
+    hints:
+      - "เครื่องหมายของ $r$ บอกทิศทาง"
+      - "$|r|$ ใกล้ 1 คือความสัมพันธ์เชิงเส้นแรง"
+    solution: "$r = -0.92$ มีขนาดใกล้ 1 และติดลบ จึงเป็นความสัมพันธ์เชิงเส้นผกผันที่แรง แต่ไม่ได้บอกว่าเป็นเหตุและผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p003
+    topics: [math.stats.regression]
+    difficulty: 1
+    type: numeric
+    stem: "เส้นถดถอยทำนายว่า $\\hat{y} = 27$ เมื่อ $x = 5$ แต่ข้อมูลจริงที่ $x = 5$ คือ $y = 30$ ส่วนเหลือ $e$ ของจุดนี้เท่าใด"
+    answer: { value: 3 }
+    hints:
+      - "ส่วนเหลือ $e = y - \\hat{y}$ (ค่าจริงลบค่าทำนาย)"
+      - "$30 - 27$"
+    misconceptions:
+      - { match: -3, feedback: "ส่วนเหลือคือค่าจริงลบค่าทำนาย จุดอยู่เหนือเส้นจึงเป็นบวก" }
+    solution: "$e = 30 - 27 = 3$ จุดอยู่เหนือเส้น 3 หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p004
+    topics: [math.stats.regression]
+    difficulty: 2
+    type: numeric
+    stem: "ข้อมูลชุดหนึ่งมี $S_{xy} = 48$, $S_{xx} = 16$, $\\bar{x} = 4$ และ $\\bar{y} = 20$ จงหาจุดตัดแกน $y$ ($a$) ของเส้นถดถอย $\\hat{y} = a + bx$"
+    answer: { value: 8 }
+    hints:
+      - "$b = \\dfrac{S_{xy}}{S_{xx}}$"
+      - "$a = \\bar{y} - b\\bar{x}$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือความชัน $b$ ยังต้องหา $a = \\bar{y} - b\\bar{x}$" }
+      - { match: 32, feedback: "$a = \\bar{y} - b\\bar{x}$ ต้องลบ $b\\bar{x}$ ไม่ใช่บวก" }
+    solution: "$b = \\dfrac{48}{16} = 3$ และ $a = 20 - 3(4) = 8$ เส้นถดถอยคือ $\\hat{y} = 8 + 3x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p005
+    topics: [math.stats.regression]
+    difficulty: 2
+    type: numeric
+    stem: "ความสัมพันธ์ระหว่างชั่วโมงทำงานพิเศษกับรายได้มี $r = 0.8$ เส้นถดถอยอธิบายความแปรผันของรายได้ได้กี่เปอร์เซ็นต์"
+    answer: { value: 64, unit: "%" }
+    hints:
+      - "สัดส่วนที่อธิบายได้คือ $r^2$"
+      - "$0.8^2$"
+    misconceptions:
+      - { match: 80, feedback: "$r$ ไม่ใช่สัดส่วนที่อธิบายได้ ต้องยกกำลังสอง" }
+    solution: "$r^2 = 0.64$ คือ 64%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p006
+    topics: [math.stats.regression]
+    difficulty: 2
+    type: mcq
+    stem: "นักศึกษาเก็บข้อมูลราคาที่ดินในเขตชานเมืองกรุงเทพฯ ได้เส้นถดถอย $\\hat{y} = 120{,}000 - 15{,}000x$ เมื่อ $y$ คือราคาต่อตารางวา (บาท) และ $x$ คือระยะห่างจากสถานีรถไฟฟ้า (กิโลเมตร) ความชันหมายความว่าอย่างไร"
+    choices:
+      - { id: a, text: "ที่ดินที่ไกลสถานีขึ้น 1 กิโลเมตร มีราคาต่ำลงโดยเฉลี่ยประมาณ 15,000 บาทต่อตารางวา", correct: true }
+      - { id: b, text: "ที่ดินติดสถานีมีราคา 15,000 บาทต่อตารางวา", feedback: "ราคาที่ $x = 0$ คือจุดตัดแกน $y$ 120,000 บาท" }
+      - { id: c, text: "ที่ดินทุกแปลงที่ห่าง 1 กิโลเมตรราคา 105,000 บาทพอดี", feedback: "เส้นถดถอยให้ค่าทำนายโดยเฉลี่ย ข้อมูลจริงกระจายรอบเส้น" }
+      - { id: d, text: "ระยะทางเพิ่ม 15,000 กิโลเมตรเมื่อราคาลด 1 บาท", feedback: "ความชันคือการเปลี่ยนของ $y$ ต่อ $x$ หนึ่งหน่วย ไม่ใช่กลับกัน" }
+    hints:
+      - "ความชันคือการเปลี่ยนแปลงของ $y$ เมื่อ $x$ เพิ่ม 1 หน่วย"
+      - "ความชันเป็นลบ ราคาจึงลดลง"
+    solution: "ความชัน $-15{,}000$ บาทต่อตารางวาต่อกิโลเมตร: ห่างสถานีเพิ่ม 1 กิโลเมตร ราคาทำนายลดลง 15,000 บาทต่อตารางวาโดยเฉลี่ย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p007
+    topics: [math.stats.regression]
+    difficulty: 2
+    type: match
+    stem: "จับคู่แผนภาพการกระจาย A–D ในภาพกับค่าสัมประสิทธิ์สหสัมพันธ์"
+    pairs:
+      - { left: "ภาพ A: จุดเรียงใกล้เส้นตรงขาขึ้นชัดเจน", right: "$r = 0.95$" }
+      - { left: "ภาพ B: จุดเรียงใกล้เส้นตรงขาลงชัดเจน", right: "$r = -0.9$" }
+      - { left: "ภาพ C: จุดกระจายทั่วไม่มีแนวโน้ม", right: "$r = 0.05$" }
+      - { left: "ภาพ D: จุดกระจายกว้าง แนวโน้มขาลงเล็กน้อย", right: "$r = -0.4$" }
+    figure:
+      src: four-scatter.svg
+      alt: "แผนภาพการกระจายสี่ภาพ ภาพ A จุดเรียงใกล้เส้นตรงขาขึ้นอย่างชัดเจน ภาพ B จุดเรียงใกล้เส้นตรงขาลงชัดเจน ภาพ C จุดกระจายทั่วไม่มีแนวโน้ม ภาพ D จุดกระจายกว้างมีแนวโน้มขาลงเล็กน้อย"
+    hints:
+      - "เครื่องหมายของ $r$ ตามทิศของแนวโน้ม"
+      - "จุดยิ่งเกาะเส้นแน่น $|r|$ ยิ่งใกล้ 1"
+    solution: "A ขาขึ้นแน่น $r = 0.95$; B ขาลงแน่น $r = -0.9$; C ไม่มีแนวโน้ม $r \\approx 0$; D ขาลงหลวม $r = -0.4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p008
+    topics: [math.stats.regression]
+    difficulty: 3
+    type: numeric
+    stem: "ครูโรงเรียนในอุบลราชธานีเก็บข้อมูลนักเรียน 5 คน จำนวนชั่วโมงติวต่อสัปดาห์ $x$ และคะแนนสอบ $y$: $(1, 55), (2, 60), (3, 68), (4, 70), (5, 77)$ จงหาความชัน $b$ ของเส้นถดถอย"
+    answer: { value: 5.4, tolerance: 0.05 }
+    hints:
+      - "$\\bar{x} = 3$, $\\bar{y} = 66$ แล้วหา $S_{xx}$ และ $S_{xy}$"
+      - "$S_{xx} = 10$ และ $S_{xy} = (-2)(-11) + (-1)(-6) + 0 + (1)(4) + (2)(11)$"
+    misconceptions:
+      - { match: 0.181, feedback: "หารด้วย $S_{yy}$ ความชันของ $y$ บน $x$ ใช้ $S_{xx}$ เป็นตัวส่วน" }
+      - { match: 49.8, feedback: "49.8 คือจุดตัดแกน $y$ โจทย์ถามความชัน" }
+    solution: "$S_{xy} = 22 + 6 + 0 + 4 + 22 = 54$, $S_{xx} = 4 + 1 + 0 + 1 + 4 = 10$ จึง $b = 5.4$ คะแนนต่อชั่วโมง (และ $a = 66 - 5.4(3) = 49.8$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p009
+    topics: [math.stats.regression]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาสัมประสิทธิ์สหสัมพันธ์ $r$ ของข้อมูล $(2, 8), (4, 7), (6, 5), (8, 4), (10, 1)$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: -0.981, tolerance: 0.003 }
+    hints:
+      - "$\\bar{x} = 6$, $\\bar{y} = 5$ หา $S_{xx}$, $S_{yy}$, $S_{xy}$"
+      - "$r = \\dfrac{S_{xy}}{\\sqrt{S_{xx}S_{yy}}}$ โดย $S_{xx} = 40$, $S_{yy} = 30$"
+    misconceptions:
+      - { match: 0.981, feedback: "$S_{xy}$ ติดลบ (แนวโน้มขาลง) $r$ จึงต้องติดลบ" }
+      - { match: 0.963, feedback: "นี่คือ $r^2$ ไม่ใช่ $r$" }
+    solution: "$S_{xy} = (-4)(3) + (-2)(2) + 0 + (2)(-1) + (4)(-4) = -34$ จึง $r = \\dfrac{-34}{\\sqrt{40 \\times 30}} = \\dfrac{-34}{34.64} \\approx -0.981$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p010
+    topics: [math.stats.regression]
+    difficulty: 3
+    type: numeric
+    stem: "ร้านไอศกรีมกะทิในอยุธยาเก็บข้อมูล 8 วัน ได้อุณหภูมิเฉลี่ย $\\bar{x} = 32$ °C ยอดขายเฉลี่ย $\\bar{y} = 140$ ถ้วย และความชันของเส้นถดถอย $b = 7.5$ ถ้วยต่อองศา (ข้อมูลอยู่ในช่วง 29–36 °C) จงทำนายยอดขายในวันที่อุณหภูมิ 35 °C"
+    answer: { value: 162.5, tolerance: 0.5, unit: ถ้วย }
+    hints:
+      - "หา $a = \\bar{y} - b\\bar{x}$ ก่อน"
+      - "หรือใช้ $\\hat{y} = \\bar{y} + b(x - \\bar{x})$"
+    misconceptions:
+      - { match: 262.5, feedback: "$7.5 \\times 35 = 262.5$ ยังไม่ได้รวมจุดตัด $a = -100$" }
+      - { match: 140, feedback: "140 คือยอดขายเฉลี่ยที่ 32 °C ยังไม่ได้ใช้ความชัน" }
+    solution: "$a = 140 - 7.5(32) = -100$ จึง $\\hat{y} = -100 + 7.5(35) = 162.5$ ถ้วย (หรือ $140 + 7.5 \\times 3$) อยู่ในช่วงข้อมูลจึงทำนายได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p011
+    topics: [math.stats.regression]
+    difficulty: 3
+    type: mcq
+    stem: "เส้นถดถอยของยอดขายน้ำมะพร้าวในบทเรียนสร้างจากวันที่อุณหภูมิ 28–36 °C ถ้านำไปทำนายยอดขายวันที่อุณหภูมิ 45 °C ได้ 107 แก้ว ข้อใดเหมาะสมที่สุด"
+    choices:
+      - { id: a, text: "ไม่ควรเชื่อมาก เพราะเป็นการประมาณค่านอกช่วงข้อมูล ความสัมพันธ์อาจไม่เป็นเส้นตรงแล้ว", correct: true }
+      - { id: b, text: "เชื่อได้ เพราะ $r = 0.99$ สูงมาก", feedback: "$r$ สูงบอกว่าเส้นตรงเหมาะ **ภายใน** ช่วงข้อมูลเท่านั้น" }
+      - { id: c, text: "ต้องได้มากกว่า 107 แก้ว เพราะร้อนกว่าทุกวันในข้อมูล", feedback: "ไม่มีข้อมูลที่ 45 °C จึงสรุปทิศทางไม่ได้ วันร้อนจัดคนอาจไม่ออกมาที่หาด" }
+      - { id: d, text: "เชื่อได้ เพราะแทนค่าในสมการถูกต้อง", feedback: "การแทนค่าถูกไม่ได้ทำให้แบบจำลองใช้ได้นอกช่วงข้อมูล" }
+    hints:
+      - "45 °C อยู่ในช่วงของข้อมูลหรือไม่"
+      - "นึกถึงความหมายของการประมาณค่านอกช่วง"
+    solution: "45 °C อยู่นอกช่วง 28–36 °C การทำนายเป็นการประมาณค่านอกช่วง จึงไม่น่าเชื่อถือแม้ $r$ จะสูง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p012
+    topics: [math.stats.regression]
+    difficulty: 3
+    type: numeric
+    stem: "ข้อมูล $(2, 8), (4, 7), (6, 5), (8, 4), (10, 1)$ มีเส้นถดถอย $\\hat{y} = 10.1 - 0.85x$ จงหาส่วนเหลือที่ $x = 8$"
+    answer: { value: 0.7, tolerance: 0.01 }
+    hints:
+      - "หาค่าทำนาย $\\hat{y}$ ที่ $x = 8$"
+      - "$e = y - \\hat{y}$ โดย $y = 4$"
+    misconceptions:
+      - { match: -0.7, feedback: "ส่วนเหลือคือค่าจริงลบค่าทำนาย ไม่ใช่ค่าทำนายลบค่าจริง" }
+      - { match: 3.3, feedback: "3.3 คือค่าทำนาย ยังต้องนำไปลบออกจากค่าจริง" }
+    solution: "$\\hat{y} = 10.1 - 0.85(8) = 3.3$ ส่วนเหลือ $e = 4 - 3.3 = 0.7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p013
+    topics: [math.stats.regression]
+    difficulty: 4
+    type: mcq
+    stem: "นักวิจัยสุ่มแปลงนา 8 แปลง พบว่าปริมาณปุ๋ยกับผลผลิตมี $r = 0.65$ ใช้ตารางค่าวิกฤตในบทเรียนที่ระดับนัยสำคัญ 0.05 ข้อสรุปใดถูกต้อง"
+    choices:
+      - { id: a, text: "ยังไม่มีหลักฐานพอว่ามีความสัมพันธ์เชิงเส้น เพราะ $0.65 < 0.707$", correct: true }
+      - { id: b, text: "มีความสัมพันธ์อย่างมีนัยสำคัญ เพราะ $r > 0.5$", feedback: "เกณฑ์ขึ้นกับขนาดตัวอย่าง ที่ $n = 8$ ค่าวิกฤตคือ 0.707" }
+      - { id: c, text: "มีนัยสำคัญ เพราะ $r^2 = 0.42$ มากกว่าศูนย์", feedback: "$r$ ของตัวอย่างไม่เป็นศูนย์แทบเสมอ ต้องทดสอบว่ามากพอจะไม่ใช่ความบังเอิญหรือไม่" }
+      - { id: d, text: "ปุ๋ยไม่มีผลต่อผลผลิตแน่นอน", feedback: "ไม่มีนัยสำคัญแปลว่าข้อมูลยังไม่พอจะสรุป ไม่ได้พิสูจน์ว่าไม่มีผล" }
+    hints:
+      - "ดูค่าวิกฤตที่ $n = 8$"
+      - "เทียบ $|r|$ กับค่าวิกฤต"
+    solution: "ค่าวิกฤตที่ $n = 8$ คือ 0.707 และ $|0.65| < 0.707$ จึงยังสรุปไม่ได้ว่ามีความสัมพันธ์เชิงเส้น ควรเก็บข้อมูลเพิ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p014
+    topics: [math.stats.regression]
+    difficulty: 4
+    type: numeric
+    stem: "ข้อมูล 12 คู่มี $r = 0.6$ จงคำนวณตัวสถิติ $t = \\dfrac{r\\sqrt{n - 2}}{\\sqrt{1 - r^2}}$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 2.37, tolerance: 0.02 }
+    hints:
+      - "$n - 2 = 10$ และ $1 - r^2 = 0.64$"
+      - "$t = \\dfrac{0.6\\sqrt{10}}{0.8}$"
+    misconceptions:
+      - { match: 2.6, feedback: "องศาเสรีคือ $n - 2 = 10$ ไม่ใช่ $n = 12$" }
+      - { match: 4.74, feedback: "ตัวส่วนคือ $\\sqrt{1 - r^2} = \\sqrt{0.64} = 0.8$ ไม่ใช่ $1 - r = 0.4$" }
+    solution: "$t = \\dfrac{0.6 \\times 3.162}{0.8} \\approx 2.37$ ซึ่งมากกว่าค่าวิกฤต $t$ ที่องศาเสรี 10 (ประมาณ 2.23) จึงมีนัยสำคัญ สอดคล้องกับ $0.6 > 0.576$ ในตาราง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p015
+    topics: [math.stats.regression]
+    difficulty: 4
+    type: mcq
+    stem: "ฟาร์มหมูในราชบุรีบันทึกอายุ (สัปดาห์) กับน้ำหนักลูกสุกร (กิโลกรัม) 8 ตัว ได้เส้นถดถอย $\\hat{y} = 3.09 + 2.16x$ และ $s = 2.24$ จุดใดเป็นค่าผิดปกติตามเกณฑ์ $|e| > 2s$"
+    choices:
+      - { id: a, text: "$(6, 21.0)$", correct: true }
+      - { id: b, text: "$(8, 18.8)$", feedback: "$e = 18.8 - 20.37 = -1.57$ ขนาดไม่เกิน $2s = 4.48$" }
+      - { id: c, text: "$(5, 12.6)$", feedback: "$e = 12.6 - 13.89 = -1.29$ ขนาดไม่เกิน 4.48" }
+      - { id: d, text: "$(1, 5.5)$", feedback: "$e = 5.5 - 5.25 = 0.25$ เล็กมาก" }
+    hints:
+      - "หาส่วนเหลือ $e = y - \\hat{y}$ ของแต่ละจุด"
+      - "$2s = 4.48$"
+    solution: "ที่ $x = 6$: $\\hat{y} = 3.09 + 12.96 = 16.05$ ส่วนเหลือ $21.0 - 16.05 = 4.95 > 4.48$ จึงเป็นค่าผิดปกติ ควรตรวจว่าชั่งหรือจดผิดหรือไม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p016
+    topics: [math.stats.regression]
+    difficulty: 4
+    type: numeric
+    stem: "ข้อมูลชุดหนึ่งมี $r = 0.75$, $s_x = 4$, $s_y = 12$, $\\bar{x} = 20$ และ $\\bar{y} = 70$ จงหาจุดตัดแกน $y$ ของเส้นถดถอยของ $y$ บน $x$"
+    answer: { value: 25 }
+    hints:
+      - "$b = r\\dfrac{s_y}{s_x}$"
+      - "$a = \\bar{y} - b\\bar{x}$"
+    misconceptions:
+      - { match: 2.25, feedback: "2.25 คือความชัน ยังต้องหา $a$" }
+      - { match: 65, feedback: "ความชันคือ $r\\dfrac{s_y}{s_x}$ ไม่ใช่ $r\\dfrac{s_x}{s_y}$" }
+    solution: "$b = 0.75 \\times \\dfrac{12}{4} = 2.25$ และ $a = 70 - 2.25(20) = 25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p017
+    topics: [math.stats.regression]
+    difficulty: 5
+    type: numeric
+    stem: "ฟาร์มหมูมีข้อมูลอายุกับน้ำหนักลูกสุกร 8 ตัว ได้เส้นถดถอย $\\hat{y} = 3.09 + 2.16x$ ต่อมาพบว่าจุด $(6, 21.0)$ จดผิด จึงตัดออก ข้อมูลที่เหลือ 7 จุดมี $\\sum x = 30$, $\\sum y = 81.6$, $\\sum xy = 426.6$ และ $\\sum x^2 = 168$ จงหาความชันใหม่ของเส้นถดถอย"
+    answer: { value: 1.95, tolerance: 0.01, unit: กิโลกรัมต่อสัปดาห์ }
+    hints:
+      - "$b = \\dfrac{n\\sum xy - \\sum x\\sum y}{n\\sum x^2 - (\\sum x)^2}$ โดย $n = 7$"
+      - "ตัวเศษ $7(426.6) - 30(81.6)$ ตัวส่วน $7(168) - 30^2$"
+    misconceptions:
+      - { match: 2.16, feedback: "นี่คือความชันเดิมที่ยังมีค่าผิดปกติ ต้องคำนวณใหม่จากผลรวมที่ให้" }
+      - { match: 2.76, feedback: "ลืมคูณ $\\sum xy$ และ $\\sum x^2$ ด้วย $n = 7$" }
+    solution: "$b = \\dfrac{2986.2 - 2448}{1176 - 900} = \\dfrac{538.2}{276} = 1.95$ ความชันลดจาก 2.16 เพราะจุดผิดปกติที่อยู่สูงดึงเส้นขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p018
+    topics: [math.stats.regression]
+    difficulty: 5
+    type: order
+    stem: "เรียงขั้นตอนการวิเคราะห์การถดถอยเชิงเส้นให้เหมาะสม"
+    items:
+      - "วาดแผนภาพการกระจายเพื่อดูว่าแนวโน้มเป็นเส้นตรงหรือไม่"
+      - "คำนวณ $r$ และทดสอบว่ามีนัยสำคัญหรือไม่"
+      - "หาเส้นถดถอย $\\hat{y} = a + bx$"
+      - "ตรวจส่วนเหลือหาค่าผิดปกติ"
+      - "ใช้เส้นทำนายเฉพาะในช่วงของข้อมูล"
+    hints:
+      - "ก่อนคำนวณใด ๆ ต้องดูรูปร่างของข้อมูล"
+      - "การทำนายเป็นขั้นสุดท้าย หลังจากมั่นใจว่าแบบจำลองใช้ได้"
+    solution: "วาดแผนภาพ → คำนวณและทดสอบ $r$ → หาเส้นถดถอย → ตรวจส่วนเหลือ → ทำนายในช่วงข้อมูล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.regression.p019
+    topics: [math.stats.regression]
+    difficulty: 3
+    type: numeric
+    stem: "เส้นถดถอยของข้อมูลชุดหนึ่งคือ $\\hat{y} = 5 + 2x$ และค่าเฉลี่ยของ $y$ คือ $\\bar{y} = 17$ จงหา $\\bar{x}$"
+    answer: { value: 6 }
+    hints:
+      - "เส้นถดถอยผ่านจุด $(\\bar{x}, \\bar{y})$ เสมอ"
+      - "แก้ $17 = 5 + 2\\bar{x}$"
+    misconceptions:
+      - { match: 39, feedback: "แทน 17 เป็น $x$ แต่ 17 คือค่าเฉลี่ยของ $y$" }
+    solution: "$17 = 5 + 2\\bar{x}$ จึง $\\bar{x} = 6$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

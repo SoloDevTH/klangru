@@ -72,8 +72,8 @@
 
 ## ลิงก์อ้างอิง
 
-LINKS_PLACEHOLDER
+ลิงก์วิกิพีเดียทั้ง 23 ลิงก์ตรวจผ่าน MediaWiki API แล้วว่ามีหน้าอยู่จริง ไม่ใช่หน้า redirect และไม่ใช่หน้าแก้ความกำกวม และอ่านบทนำว่าตรงเรื่อง เปลี่ยน 3 ลิงก์ที่เป็น redirect: th:ภาพพจน์ → กลวิธีวัจนลีลา, th:กาพย์พระไชยสุริยา → พระไชยสุริยา, th:สุนทรภู่ → พระสุนทรโวหาร (ภู่) ลิงก์ dictionary.orst.go.th ได้ HTTP 200 (source: orst แบบ link-only) API ของวิกิพีเดียถูกจำกัดอัตรา (HTTP 429) บ่อยระหว่างทำ จึงใช้แคชและหน่วงเวลา
 
 ## error จากโฟลเดอร์ของชุดอื่น (ไม่ได้แก้)
 
-`npm run validate -- --strict` ทั้งคลังมี error 2 รายการและคำเตือน 2 รายการ ทั้งหมดใน `chemistry/ionic` (ยังไม่มี problems.yaml จึงอ้างโจทย์ p003 p012 ไม่ได้ ชุดอื่นกำลังทำ) ส่วน 8 โฟลเดอร์ของชุดนี้ได้ 0 error 0 warning และ `npm test -w @klangru/content-tools` ผ่าน 35/35
+`npm run validate -- --strict` ทั้งคลังมี error 5 รายการ คำเตือน 3 รายการ ทั้งหมดอยู่ในโฟลเดอร์ที่ชุดอื่นกำลังทำ: `biology/environmental-issues` และ `chemistry/stoichiometry-reactions` (ยังไม่มี problems.yaml จึงอ้างโจทย์ใน check ไม่ได้) `earthscience/greenhouse-climate-intro` (ไม่พบ topic.yaml) และ `math/regression` (คำเตือน) ส่วน 8 โฟลเดอร์ของชุดนี้ได้ 0 error 0 warning และ `npm test -w @klangru/content-tools` ผ่าน 35/35

@@ -1,0 +1,323 @@
+problems:
+  - id: math.stats.normal-distribution.p001
+    topics: [math.stats.normal-distribution]
+    difficulty: 1
+    type: numeric
+    stem: "รถสองแถวหน้าตลาดออกทุก 15 นาที นักเรียนที่มาถึงป้ายในเวลาสุ่มจึงรอเป็นเวลา $X$ นาทีที่มีการแจกแจงเอกรูปบน $[0, 15]$ ความน่าจะเป็นที่รอไม่ถึง 6 นาทีเป็นเท่าใด"
+    answer: { value: 0.4, tolerance: 0.005 }
+    hints:
+      - "การแจกแจงเอกรูป: ความน่าจะเป็น = ความยาวช่วงที่สนใจ ÷ ความยาวช่วงทั้งหมด"
+      - "$\\dfrac{6 - 0}{15}$"
+    misconceptions:
+      - { match: 0.6, feedback: "นี่คือความน่าจะเป็นที่รอนานกว่า 6 นาที" }
+    solution: "$P(X < 6) = \\dfrac{6}{15} = 0.4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p002
+    topics: [math.stats.normal-distribution]
+    difficulty: 1
+    type: mcq
+    stem: "ส่วนสูง $X$ ของนักเรียนเป็นตัวแปรสุ่มต่อเนื่อง ค่า $P(X = 170)$ (สูง 170 เซนติเมตรพอดีทุกตำแหน่งทศนิยม) เป็นเท่าใด"
+    choices:
+      - { id: a, text: "0", correct: true }
+      - { id: b, text: "เท่ากับค่าของฟังก์ชันความหนาแน่น $f(170)$", feedback: "ค่าของ $f$ ไม่ใช่ความน่าจะเป็น ความน่าจะเป็นคือพื้นที่ ซึ่งที่จุดเดียวไม่มีความกว้าง" }
+      - { id: c, text: "0.5 เพราะสูงหรือไม่สูง 170", feedback: "สองผลลัพธ์ไม่ได้มีโอกาสเท่ากันเสมอ และ 170 พอดีเป็นแค่จุดเดียวจากค่าที่เป็นไปได้ไม่จำกัด" }
+      - { id: d, text: "หาไม่ได้ถ้าไม่รู้ค่าเฉลี่ย", feedback: "สำหรับตัวแปรสุ่มต่อเนื่องใด ๆ ความน่าจะเป็นของค่าเดียวเป็น 0 เสมอ" }
+    hints:
+      - "ความน่าจะเป็นของตัวแปรสุ่มต่อเนื่องคือพื้นที่ใต้ความหนาแน่น"
+      - "พื้นที่ของแถบที่กว้างเป็นศูนย์เท่ากับเท่าใด"
+    solution: "พื้นที่ใต้กราฟจาก 170 ถึง 170 มีความกว้าง 0 จึงเป็น 0 เราจึงถามความน่าจะเป็นของช่วงแทน เช่น $P(169.5 < X < 170.5)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p003
+    topics: [math.stats.normal-distribution]
+    difficulty: 1
+    type: numeric
+    stem: "ข้อมูลที่มีการแจกแจงปกติ ประมาณกี่เปอร์เซ็นต์อยู่ในช่วง $\\mu - 2\\sigma$ ถึง $\\mu + 2\\sigma$"
+    answer: { value: 95, unit: "%" }
+    hints:
+      - "ใช้กฎ 68–95–99.7"
+      - "ตัวเลขที่สองของกฎคือช่วงภายใน 2 เท่าของ $\\sigma$"
+    misconceptions:
+      - { match: 68, feedback: "68% คือช่วงภายใน 1 เท่าของ $\\sigma$" }
+      - { match: 99.7, feedback: "99.7% คือช่วงภายใน 3 เท่าของ $\\sigma$" }
+    solution: "ตามกฎ 68–95–99.7 ประมาณ 95% อยู่ภายใน $\\mu \\pm 2\\sigma$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p004
+    topics: [math.stats.normal-distribution]
+    difficulty: 2
+    type: numeric
+    stem: "คะแนนสอบมีค่าเฉลี่ย 70 และส่วนเบี่ยงเบนมาตรฐาน 8 นักเรียนที่ได้ 82 คะแนนมีคะแนนมาตรฐานเท่าใด"
+    answer: { value: 1.5, tolerance: 0.01 }
+    hints:
+      - "$z = \\dfrac{x - \\mu}{\\sigma}$"
+      - "$\\dfrac{82 - 70}{8}$"
+    misconceptions:
+      - { match: 12, feedback: "12 คือผลต่างจากค่าเฉลี่ย ต้องหารด้วย $\\sigma$" }
+      - { match: 10.25, feedback: "$z$ ใช้ $x - \\mu$ ไม่ใช่ $x$ หารด้วย $\\sigma$" }
+    solution: "$z = \\dfrac{82 - 70}{8} = 1.5$ คะแนนสูงกว่าค่าเฉลี่ย 1.5 เท่าของส่วนเบี่ยงเบนมาตรฐาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p005
+    topics: [math.stats.normal-distribution]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้ตารางในบทเรียน จงหา $P(Z < 1.2)$"
+    answer: { value: 0.8849, tolerance: 0.001 }
+    hints:
+      - "$1.2 = 0.2 + 1.0$ ดูแถว 0.2 หลัก $+1.0$"
+      - "ตารางให้พื้นที่ทางซ้ายของ $z$ โดยตรง"
+    misconceptions:
+      - { match: 0.1151, feedback: "นี่คือพื้นที่ทางขวา $1 - \\Phi(1.2)$ โจทย์ถามน้อยกว่า" }
+      - { match: 0.5793, feedback: "นี่คือ $\\Phi(0.2)$ ต้องดูหลัก $+1.0$" }
+    solution: "$P(Z < 1.2) = \\Phi(1.2) = 0.8849$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p006
+    topics: [math.stats.normal-distribution]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้ตารางในบทเรียน จงหา $P(Z > 0.8)$"
+    answer: { value: 0.2119, tolerance: 0.001 }
+    hints:
+      - "ตารางให้พื้นที่ทางซ้าย $\\Phi(0.8)$"
+      - "$P(Z > 0.8) = 1 - \\Phi(0.8)$"
+    misconceptions:
+      - { match: 0.7881, feedback: "นี่คือ $P(Z < 0.8)$ โจทย์ถามมากกว่า ต้องลบออกจาก 1" }
+    solution: "$P(Z > 0.8) = 1 - 0.7881 = 0.2119$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p007
+    topics: [math.stats.normal-distribution]
+    difficulty: 2
+    type: numeric
+    stem: "$X$ มีการแจกแจงเอกรูปบน $[2, 10]$ ฟังก์ชันความหนาแน่น $f(x)$ บนช่วงนี้มีค่าคงตัวเท่าใด"
+    answer: { value: 0.125, tolerance: 0.001 }
+    hints:
+      - "พื้นที่ใต้กราฟทั้งหมดต้องเท่ากับ 1"
+      - "ความสูง × ความกว้าง $(10 - 2) = 1$"
+    misconceptions:
+      - { match: 0.1, feedback: "ความกว้างของช่วงคือ $10 - 2 = 8$ ไม่ใช่ 10" }
+      - { match: 8, feedback: "8 คือความกว้าง ความสูงต้องเป็นส่วนกลับเพื่อให้พื้นที่เป็น 1" }
+    solution: "$f(x) = \\dfrac{1}{10 - 2} = \\dfrac18 = 0.125$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p008
+    topics: [math.stats.normal-distribution]
+    difficulty: 3
+    type: numeric
+    stem: "ส่วนสูงของนักเรียนชาย ม.6 ในโรงเรียนแห่งหนึ่งในขอนแก่นมีการแจกแจงปกติ ค่าเฉลี่ย 170 เซนติเมตร ส่วนเบี่ยงเบนมาตรฐาน 6 เซนติเมตร (ค่าสมมติ) สุ่มนักเรียนชายหนึ่งคน ความน่าจะเป็นที่เขาสูงกว่า 179 เซนติเมตรเป็นเท่าใด"
+    answer: { value: 0.0668, tolerance: 0.001 }
+    hints:
+      - "$z = \\dfrac{179 - 170}{6}$"
+      - "สูงกว่าคือพื้นที่ทางขวา $1 - \\Phi(z)$"
+    misconceptions:
+      - { match: 0.9332, feedback: "นี่คือความน่าจะเป็นที่เตี้ยกว่า 179 เซนติเมตร" }
+    solution: "$z = 1.5$, $\\Phi(1.5) = 0.9332$ จึง $P(X > 179) = 1 - 0.9332 = 0.0668$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p009
+    topics: [math.stats.normal-distribution]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาพื้นที่ที่แรเงาใต้โค้งปกติมาตรฐานในภาพ"
+    figure:
+      src: shaded-area.svg
+      alt: "โค้งปกติมาตรฐาน แกน z มีขีด −3 ถึง 3 พื้นที่ใต้โค้งตั้งแต่ z = −1 ถึง z = 2 แรเงาสีเขียว"
+    answer: { value: 0.8186, tolerance: 0.001 }
+    hints:
+      - "พื้นที่ระหว่าง $a$ กับ $b$ คือ $\\Phi(b) - \\Phi(a)$"
+      - "$\\Phi(-1) = 1 - \\Phi(1)$"
+    misconceptions:
+      - { match: 0.1359, feedback: "คำนวณ $\\Phi(2) - \\Phi(1)$ ขอบซ้ายคือ $-1$ ต้องใช้ $\\Phi(-1) = 0.1587$" }
+      - { match: 1.8185, feedback: "บวก $\\Phi(2) + \\Phi(1)$ ต้องลบพื้นที่ทางซ้ายของ $-1$ ออก" }
+    solution: "$\\Phi(2) - \\Phi(-1) = 0.9772 - (1 - 0.8413) = 0.9772 - 0.1587 = 0.8185$ (ค่าละเอียดคือ 0.8186)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p010
+    topics: [math.stats.normal-distribution]
+    difficulty: 3
+    type: numeric
+    stem: "โรงสีในสุรินทร์บรรจุข้าวหอมมะลิถุงละ 5 กิโลกรัม น้ำหนักจริงมีการแจกแจงปกติ ค่าเฉลี่ย 5.05 กิโลกรัม ส่วนเบี่ยงเบนมาตรฐาน 0.05 กิโลกรัม (ค่าสมมติ) ถุงที่หนักน้อยกว่า 5.00 กิโลกรัมมีสัดส่วนเท่าใด"
+    answer: { value: 0.1587, tolerance: 0.001 }
+    hints:
+      - "$z = \\dfrac{5.00 - 5.05}{0.05} = -1$"
+      - "$\\Phi(-1) = 1 - \\Phi(1)$"
+    misconceptions:
+      - { match: 0.8413, feedback: "นี่คือ $\\Phi(1)$ คะแนนมาตรฐานเป็นลบ พื้นที่ทางซ้ายจึงน้อยกว่า 0.5" }
+    solution: "$z = -1$, $P(X < 5.00) = \\Phi(-1) = 1 - 0.8413 = 0.1587$ ประมาณ 16% ของถุงหนักไม่ถึงที่ระบุ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p011
+    topics: [math.stats.normal-distribution]
+    difficulty: 3
+    type: numeric
+    stem: "ร้านส้มตำในย่านสีลมพบว่าเวลาระหว่างลูกค้าสองคนที่มาถึงมีการแจกแจงเอกซ์โพเนนเชียล ค่าเฉลี่ย 4 นาที (ค่าสมมติ) ความน่าจะเป็นที่ต้องรอลูกค้าคนถัดไปนานกว่า 6 นาทีเป็นเท่าใด"
+    answer: { value: 0.2231, tolerance: 0.002 }
+    hints:
+      - "$\\lambda = \\dfrac{1}{\\mu} = \\dfrac14$"
+      - "$P(T > 6) = e^{-\\lambda \\cdot 6}$"
+    misconceptions:
+      - { match: 0.7769, feedback: "นี่คือ $P(T < 6) = 1 - e^{-1.5}$ โจทย์ถามนานกว่า" }
+      - { match: 0.5134, feedback: "สลับ $\\lambda$ กับค่าเฉลี่ย ต้องเป็น $e^{-6/4}$ ไม่ใช่ $e^{-4/6}$" }
+    solution: "$P(T > 6) = e^{-6/4} = e^{-1.5} \\approx 0.2231$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p012
+    topics: [math.stats.normal-distribution]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อมูลชุดใด **ไม่เหมาะ** ที่จะประมาณร้อยละด้วยการแจกแจงปกติ"
+    choices:
+      - { id: a, text: "รายได้ต่อเดือนของครัวเรือนในจังหวัดหนึ่ง", correct: true }
+      - { id: b, text: "ส่วนสูงของนักเรียนหญิงอายุ 15 ปี", feedback: "ส่วนสูงของคนวัยและเพศเดียวกันมักกระจายใกล้รูประฆัง" }
+      - { id: c, text: "น้ำหนักของข้าวสารที่เครื่องบรรจุถุงละ 5 กิโลกรัม", feedback: "ความคลาดเคลื่อนของเครื่องบรรจุมักสมมาตรรอบค่าที่ตั้ง จึงใกล้การแจกแจงปกติ" }
+      - { id: d, text: "ความคลาดเคลื่อนจากการวัดความยาวซ้ำหลายครั้ง", feedback: "ความคลาดเคลื่อนสุ่มจากการวัดเป็นตัวอย่างคลาสสิกของการแจกแจงปกติ" }
+    hints:
+      - "การแจกแจงปกติสมมาตร ข้อมูลที่เบ้มากไม่เหมาะ"
+      - "ข้อมูลใดมีค่าสูงมากเพียงไม่กี่ค่าที่ดึงหางข้างหนึ่งให้ยาว"
+    solution: "รายได้ครัวเรือนเบ้ขวามาก (ส่วนใหญ่รายได้ปานกลาง มีบางครัวเรือนรายได้สูงมาก) โค้งปกติจะประมาณร้อยละผิด ข้อมูลอีกสามชุดใกล้รูประฆัง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p013
+    topics: [math.stats.normal-distribution]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ความน่าจะเป็นของ $Z \\sim N(0, 1)$ กับค่าโดยประมาณ"
+    pairs:
+      - { left: "$P(Z < 0)$", right: "0.5" }
+      - { left: "$P(-1 < Z < 1)$", right: "0.68" }
+      - { left: "$P(Z < 1)$", right: "0.84" }
+      - { left: "$P(Z > 2)$", right: "0.02" }
+    hints:
+      - "โค้งปกติมาตรฐานสมมาตรรอบ 0"
+      - "$\\Phi(1) = 0.8413$, $\\Phi(2) = 0.9772$"
+    solution: "$P(Z < 0) = 0.5$; $P(-1 < Z < 1) = 0.8413 - 0.1587 \\approx 0.68$; $P(Z < 1) \\approx 0.84$; $P(Z > 2) = 1 - 0.9772 \\approx 0.02$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p014
+    topics: [math.stats.normal-distribution]
+    difficulty: 4
+    type: numeric
+    stem: "คะแนนสอบคัดเลือกมีการแจกแจงปกติ ค่าเฉลี่ย 60 ส่วนเบี่ยงเบนมาตรฐาน 12 ผู้ได้คะแนนสูงสุด 10% จะได้ทุน ต้องได้อย่างน้อยกี่คะแนน (ใช้ $z \\approx 1.28$ ซึ่ง $\\Phi(1.28) \\approx 0.90$)"
+    answer: { value: 75.4, tolerance: 0.3, unit: คะแนน }
+    hints:
+      - "สูงสุด 10% แปลว่ามีคนได้น้อยกว่า 90% จึงใช้ $z$ ที่ $\\Phi(z) = 0.90$"
+      - "$x = \\mu + z\\sigma$"
+    misconceptions:
+      - { match: 44.6, feedback: "ใช้ $\\mu - z\\sigma$ ซึ่งเป็นเกณฑ์ของคน 10% ที่ได้คะแนนต่ำสุด" }
+      - { match: 61.28, feedback: "ต้องคูณ $z$ ด้วย $\\sigma = 12$ ก่อนบวกค่าเฉลี่ย" }
+    solution: "$x = 60 + 1.28(12) = 75.36 \\approx 75.4$ คะแนน (ใช้ค่าละเอียด $z = 1.2816$ ได้ 75.38)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p015
+    topics: [math.stats.normal-distribution]
+    difficulty: 4
+    type: numeric
+    stem: "$X$ มีการแจกแจงปกติ ค่าเฉลี่ย 50 และ $P(X < 58) = 0.8413$ จงหาส่วนเบี่ยงเบนมาตรฐาน"
+    answer: { value: 8 }
+    hints:
+      - "หา $z$ ที่ $\\Phi(z) = 0.8413$ จากตาราง"
+      - "$z = \\dfrac{58 - 50}{\\sigma}$"
+    misconceptions:
+      - { match: 9.51, feedback: "นำความน่าจะเป็น 0.8413 ไปใช้แทน $z$ ต้องเปิดตารางหา $z$ ก่อน" }
+      - { match: 64, feedback: "64 คือความแปรปรวน $\\sigma^2$ โจทย์ถาม $\\sigma$" }
+    solution: "$\\Phi(1.0) = 0.8413$ จึง $z = 1 = \\dfrac{8}{\\sigma}$ ได้ $\\sigma = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p016
+    topics: [math.stats.normal-distribution]
+    difficulty: 4
+    type: mcq
+    stem: "ปลายภาคนี้ ฝนได้คณิตศาสตร์ 72 คะแนน (ค่าเฉลี่ยห้อง 60 ส่วนเบี่ยงเบนมาตรฐาน 8) และวิทยาศาสตร์ 68 คะแนน (ค่าเฉลี่ย 55 ส่วนเบี่ยงเบนมาตรฐาน 10) เมื่อเทียบกับเพื่อนในห้อง ฝนทำวิชาใดได้ดีกว่า"
+    choices:
+      - { id: a, text: "คณิตศาสตร์ เพราะ $z = 1.5$ มากกว่า $z = 1.3$", correct: true }
+      - { id: b, text: "วิทยาศาสตร์ เพราะสูงกว่าค่าเฉลี่ย 13 คะแนน มากกว่า 12 คะแนน", feedback: "ผลต่างจากค่าเฉลี่ยต้องเทียบกับการกระจายด้วย วิทยาศาสตร์กระจายมากกว่า ($\\sigma = 10$)" }
+      - { id: c, text: "คณิตศาสตร์ เพราะได้คะแนนดิบมากกว่า", feedback: "คะแนนดิบเทียบข้ามวิชาตรง ๆ ไม่ได้ เพราะค่าเฉลี่ยและการกระจายต่างกัน" }
+      - { id: d, text: "เท่ากัน เพราะสูงกว่าค่าเฉลี่ยทั้งสองวิชา", feedback: "สูงกว่าค่าเฉลี่ยทั้งคู่ แต่สูงกว่ามากน้อยต่างกันเมื่อวัดเป็นจำนวนเท่าของ $\\sigma$" }
+    hints:
+      - "เปรียบเทียบด้วยคะแนนมาตรฐาน"
+      - "$z = \\dfrac{x - \\mu}{\\sigma}$ ของแต่ละวิชา"
+    solution: "คณิตศาสตร์ $z = \\tfrac{72 - 60}{8} = 1.5$ วิทยาศาสตร์ $z = \\tfrac{68 - 55}{10} = 1.3$ คณิตศาสตร์จึงดีกว่าเมื่อเทียบกับเพื่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p017
+    topics: [math.stats.normal-distribution]
+    difficulty: 4
+    type: numeric
+    stem: "นักเรียนวัดความยาวฝักถั่วฝักยาวจากแปลงเดียวกันหลายร้อยฝัก พบว่าความยาวกระจายเป็นรูประฆัง ค่าเฉลี่ย 40 เซนติเมตร ส่วนเบี่ยงเบนมาตรฐาน 5 เซนติเมตร ความแปรผันนี้มาจากทั้งพันธุกรรมและสิ่งแวดล้อม เช่น แสงและน้ำที่แต่ละต้นได้รับ ฝักที่ยาว 33 ถึง 47 เซนติเมตรมีสัดส่วนประมาณเท่าใด"
+    answer: { value: 0.8384, tolerance: 0.002 }
+    hints:
+      - "$z = \\dfrac{33 - 40}{5}$ และ $\\dfrac{47 - 40}{5}$"
+      - "ช่วงสมมาตร: $P(-1.4 < Z < 1.4) = 2\\Phi(1.4) - 1$"
+    misconceptions:
+      - { match: 0.9192, feedback: "นี่คือ $\\Phi(1.4)$ ต้องลบพื้นที่ทางซ้ายของ $-1.4$ ออก" }
+      - { match: 0.68, feedback: "ช่วงนี้กว้าง 1.4 เท่าของ $\\sigma$ ไม่ใช่ 1 เท่า จึงใช้กฎ 68% ไม่ได้" }
+    solution: "$z = \\pm 1.4$ ได้ $\\Phi(1.4) - \\Phi(-1.4) = 0.9192 - 0.0808 = 0.8384$ ประมาณ 84%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p018
+    topics: [math.stats.normal-distribution]
+    difficulty: 5
+    type: numeric
+    stem: "อายุการใช้งานของแบตเตอรี่โดรนมีการแจกแจงเอกซ์โพเนนเชียล ค่าเฉลี่ย 10 ชั่วโมง จงหามัธยฐาน (เวลา $m$ ที่ $P(T > m) = 0.5$) เป็นชั่วโมง"
+    answer: { value: 6.93, tolerance: 0.05, unit: ชั่วโมง }
+    hints:
+      - "แก้สมการ $e^{-m/10} = 0.5$"
+      - "ใส่ $\\ln$ ทั้งสองข้าง: $-\\dfrac{m}{10} = \\ln 0.5$"
+    misconceptions:
+      - { match: 10, feedback: "ค่าเฉลี่ยกับมัธยฐานไม่เท่ากัน เพราะการแจกแจงนี้เบ้ขวา" }
+      - { match: 5, feedback: "ครึ่งหนึ่งของค่าเฉลี่ยไม่ใช่มัธยฐาน ต้องแก้ $e^{-m/10} = 0.5$" }
+    solution: "$m = -10\\ln 0.5 = 10\\ln 2 \\approx 6.93$ ชั่วโมง น้อยกว่าค่าเฉลี่ย เพราะหางขวายาวดึงค่าเฉลี่ยให้สูง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p019
+    topics: [math.stats.normal-distribution]
+    difficulty: 5
+    type: numeric
+    stem: "$X$ มีการแจกแจงปกติ โดย $P(X < 40) = 0.1587$ และ $P(X > 70) = 0.0228$ จงหาค่าเฉลี่ย $\\mu$"
+    answer: { value: 50 }
+    hints:
+      - "จากตาราง $\\Phi(-1) = 0.1587$ และ $\\Phi(2) = 0.9772$"
+      - "ได้ระบบ $\\mu - \\sigma = 40$ และ $\\mu + 2\\sigma = 70$"
+    misconceptions:
+      - { match: 55, feedback: "ค่าเฉลี่ยไม่ได้อยู่กึ่งกลางระหว่าง 40 กับ 70 เพราะสองค่านี้ห่างจาก $\\mu$ ไม่เท่ากัน (1 กับ 2 เท่าของ $\\sigma$)" }
+      - { match: 10, feedback: "10 คือ $\\sigma$ โจทย์ถาม $\\mu$" }
+    solution: "$z = -1$ ที่ 40 และ $z = 2$ ที่ 70 ได้ $\\mu - \\sigma = 40$, $\\mu + 2\\sigma = 70$ ลบกันได้ $3\\sigma = 30$, $\\sigma = 10$ และ $\\mu = 50$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.stats.normal-distribution.p020
+    topics: [math.stats.normal-distribution]
+    difficulty: 5
+    type: numeric
+    stem: "สวนทุเรียนในจันทบุรีเก็บทุเรียน 1,200 ลูก น้ำหนักมีการแจกแจงปกติ ค่าเฉลี่ย 3.0 กิโลกรัม ส่วนเบี่ยงเบนมาตรฐาน 0.5 กิโลกรัม (ค่าสมมติ) ผู้ส่งออกรับเฉพาะลูกที่หนัก 2.5 ถึง 3.6 กิโลกรัม คาดว่าจะส่งออกได้ประมาณกี่ลูก"
+    answer: { value: 871, tolerance: 1.5, unit: ลูก }
+    hints:
+      - "หาสัดส่วนก่อน: $z = \\dfrac{2.5 - 3.0}{0.5}$ และ $\\dfrac{3.6 - 3.0}{0.5}$"
+      - "จำนวนลูก = สัดส่วน × 1,200"
+    misconceptions:
+      - { match: 0.7262, feedback: "นี่คือสัดส่วน ต้องคูณด้วยจำนวนลูกทั้งหมด 1,200" }
+      - { match: 1062, feedback: "นี่คือ $\\Phi(1.2) \\times 1200$ ต้องลบส่วนที่เบากว่า 2.5 กิโลกรัมออก" }
+    solution: "$z$ จาก $-1.0$ ถึง $1.2$ สัดส่วน $= 0.8849 - 0.1587 = 0.7262$ จำนวน $\\approx 0.7262 \\times 1200 \\approx 871$ ลูก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
