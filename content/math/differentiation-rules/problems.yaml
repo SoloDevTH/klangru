@@ -1,0 +1,363 @@
+problems:
+  - id: math.calculus.differentiation-rules.p001
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 1
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\big(5e^x\\big)$"
+    prefix: "f'(x) ="
+    answer: { latex: "5e^x", variables: [x] }
+    misconceptions:
+      - { match: "5xe^{x-1}", feedback: "กฎยกกำลังใช้เมื่อตัวแปรอยู่ที่ฐาน $e^x$ มีตัวแปรที่เลขชี้กำลัง อนุพันธ์คือ $e^x$ เอง" }
+      - { match: "5", feedback: "อนุพันธ์ของ $e^x$ ไม่ใช่ 1 แต่เป็น $e^x$" }
+    hints:
+      - "$\\dfrac{d}{dx}e^x = e^x$"
+      - "ค่าคงตัว 5 ที่คูณอยู่ยังคงอยู่"
+    solution: "$\\dfrac{d}{dx}(5e^x) = 5e^x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p002
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 1
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\big(3\\sin x - 2\\cos x\\big)$"
+    prefix: "f'(x) ="
+    answer: { latex: "3\\cos x+2\\sin x", variables: [x] }
+    misconceptions:
+      - { match: "3\\cos x-2\\sin x", feedback: "อนุพันธ์ของ $\\cos x$ คือ $-\\sin x$ จึงได้ $-2(-\\sin x) = +2\\sin x$" }
+      - { match: "-3\\cos x+2\\sin x", feedback: "อนุพันธ์ของ $\\sin x$ คือ $+\\cos x$ ไม่มีเครื่องหมายลบ" }
+    hints:
+      - "$(\\sin x)' = \\cos x$ และ $(\\cos x)' = -\\sin x$"
+      - "ระวังเครื่องหมายลบซ้อนกัน"
+    solution: "$3\\cos x - 2(-\\sin x) = 3\\cos x + 2\\sin x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p003
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 1
+    type: numeric
+    stem: "ให้ $f(x) = \\ln x$ จงหา $f'(4)$"
+    answer: { value: 0.25, tolerance: 0.001 }
+    hints:
+      - "$\\dfrac{d}{dx}\\ln x = \\dfrac1x$"
+      - "แทน $x = 4$ ในอนุพันธ์ ไม่ใช่ในฟังก์ชันเดิม"
+    misconceptions:
+      - { match: 1.386, feedback: "นี่คือ $\\ln 4$ ซึ่งเป็นค่าของฟังก์ชัน ต้องแทนใน $f'(x) = \\tfrac1x$" }
+    solution: "$f'(x) = \\dfrac1x$ จึง $f'(4) = \\dfrac14 = 0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p004
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 2
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\big(x^2\\sin x\\big)$"
+    prefix: "f'(x) ="
+    answer: { latex: "2x\\sin x+x^2\\cos x", variables: [x] }
+    misconceptions:
+      - { match: "2x\\cos x", feedback: "อนุพันธ์ของผลคูณไม่ใช่ผลคูณของอนุพันธ์ ใช้ $(uv)' = u'v + uv'$" }
+    hints:
+      - "ให้ $u = x^2$ และ $v = \\sin x$"
+      - "$u' = 2x$ และ $v' = \\cos x$"
+    solution: "$(x^2)'\\sin x + x^2(\\sin x)' = 2x\\sin x + x^2\\cos x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p005
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 2
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\left(\\dfrac{x}{x + 1}\\right)$ ตอบในรูปอย่างง่าย"
+    prefix: "f'(x) ="
+    answer: { latex: "\\frac{1}{(x+1)^2}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{-1}{(x+1)^2}", feedback: "สลับลำดับในตัวเศษ กฎผลหารคือ $u'v - uv'$ (อนุพันธ์ของเศษคูณส่วนมาก่อน)" }
+      - { match: "1", feedback: "หาอนุพันธ์เศษหารอนุพันธ์ส่วนไม่ได้ ต้องใช้กฎผลหาร" }
+    hints:
+      - "$\\left(\\dfrac uv\\right)' = \\dfrac{u'v - uv'}{v^2}$ โดย $u = x$, $v = x + 1$"
+      - "ตัวเศษ: $1 \\cdot (x + 1) - x \\cdot 1$"
+    solution: "$\\dfrac{(1)(x + 1) - x(1)}{(x + 1)^2} = \\dfrac{1}{(x + 1)^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p006
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 2
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}(3x + 1)^5$"
+    prefix: "f'(x) ="
+    answer: { latex: "15(3x+1)^4", variables: [x] }
+    misconceptions:
+      - { match: "5(3x+1)^4", feedback: "ลืมคูณอนุพันธ์ของชั้นใน $(3x + 1)' = 3$" }
+      - { match: "15x^4", feedback: "ชั้นในต้องคงไว้ทั้งก้อน $(3x + 1)$ ไม่ใช่แทนด้วย $x$" }
+    hints:
+      - "ชั้นนอก $u^5$ ชั้นใน $u = 3x + 1$"
+      - "$5u^4 \\cdot u'$"
+    solution: "$5(3x + 1)^4 \\cdot 3 = 15(3x + 1)^4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p007
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 2
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}e^{4x}$"
+    prefix: "f'(x) ="
+    answer: { latex: "4e^{4x}", variables: [x] }
+    misconceptions:
+      - { match: "e^{4x}", feedback: "$e^{4x}$ มีชั้นใน $4x$ ต้องคูณอนุพันธ์ของชั้นในซึ่งคือ 4" }
+      - { match: "4xe^{4x-1}", feedback: "กฎยกกำลังใช้กับ $e^{4x}$ ไม่ได้ เพราะตัวแปรอยู่ที่เลขชี้กำลัง" }
+    hints:
+      - "$\\dfrac{d}{dx}e^{u} = e^{u}\\cdot u'$"
+      - "$u = 4x$ จึง $u' = 4$"
+    solution: "$e^{4x}\\cdot 4 = 4e^{4x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p008
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\sin(x^2)$"
+    prefix: "f'(x) ="
+    answer: { latex: "2x\\cos(x^2)", variables: [x] }
+    misconceptions:
+      - { match: "\\cos(x^2)", feedback: "ลืมคูณอนุพันธ์ของชั้นใน $(x^2)' = 2x$" }
+      - { match: "\\cos(2x)", feedback: "ชั้นในต้องคงไว้เหมือนเดิม คือ $\\cos(x^2)$ แล้วจึงคูณ $2x$" }
+    hints:
+      - "ชั้นนอก $\\sin u$ ชั้นใน $u = x^2$"
+      - "$\\cos u \\cdot u'$"
+    solution: "$\\cos(x^2)\\cdot 2x = 2x\\cos(x^2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p009
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\ln(x^2 + 1)$"
+    prefix: "f'(x) ="
+    answer: { latex: "\\frac{2x}{x^2+1}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{1}{x^2+1}", feedback: "ลืมคูณอนุพันธ์ของชั้นใน $2x$" }
+      - { match: "\\frac{1}{2x}", feedback: "อนุพันธ์ของ $\\ln u$ คือ $\\dfrac{u'}{u}$ ไม่ใช่ $\\dfrac{1}{u'}$" }
+    hints:
+      - "$\\dfrac{d}{dx}\\ln u = \\dfrac{u'}{u}$"
+      - "$u = x^2 + 1$ และ $u' = 2x$"
+    solution: "$\\dfrac{2x}{x^2 + 1}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p010
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาความชันของเส้นสัมผัสเส้นโค้ง $y = xe^x$ ที่ $x = 1$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 5.44, tolerance: 0.01 }
+    hints:
+      - "ใช้กฎผลคูณ: $y' = e^x + xe^x$"
+      - "แทน $x = 1$: $e + e$"
+    misconceptions:
+      - { match: 2.72, feedback: "ใช้แค่ $x \\cdot e^x$ หรือ $e^x$ อย่างเดียว กฎผลคูณมีสองพจน์ $e^x + xe^x$" }
+    solution: "$y' = e^x(1 + x)$ ที่ $x = 1$ ได้ $2e \\approx 5.44$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p011
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ฟังก์ชันกับอนุพันธ์"
+    pairs:
+      - { left: "$\\sin x$", right: "$\\cos x$" }
+      - { left: "$\\cos x$", right: "$-\\sin x$" }
+      - { left: "$\\tan x$", right: "$\\sec^2 x$" }
+      - { left: "$\\ln x$", right: "$\\dfrac1x$" }
+      - { left: "$2^x$", right: "$2^x\\ln 2$" }
+      - { left: "$e^{-x}$", right: "$-e^{-x}$" }
+    hints:
+      - "อนุพันธ์ของ $\\cos$ มีเครื่องหมายลบ"
+      - "$a^x$ ได้ $a^x\\ln a$ และ $e^{-x}$ ใช้กฎลูกโซ่ได้ตัวคูณ $-1$"
+    solution: "$\\sin \\to \\cos$, $\\cos \\to -\\sin$, $\\tan \\to \\sec^2$, $\\ln x \\to \\tfrac1x$, $2^x \\to 2^x\\ln 2$, $e^{-x} \\to -e^{-x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p012
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: numeric
+    stem: "ช่องรายการทำอาหารอีสานบนอินเทอร์เน็ตมีผู้ติดตาม $N(t) = 500e^{0.2t}$ คน เมื่อ $t$ เป็นเดือนนับจากเปิดช่อง (แบบจำลองสมมติ) เมื่อ $t = 5$ จำนวนผู้ติดตามเพิ่มขึ้นในอัตรากี่คนต่อเดือน"
+    answer: { value: 271.8, tolerance: 0.5, unit: คนต่อเดือน }
+    hints:
+      - "อัตราการเพิ่มคือ $N'(t) = 500 \\cdot 0.2e^{0.2t}$"
+      - "แทน $t = 5$: $100e^{1}$"
+    misconceptions:
+      - { match: 1359.1, feedback: "นี่คือจำนวนผู้ติดตาม $N(5)$ ไม่ใช่อัตราการเพิ่ม (หรือลืมคูณ 0.2 จากชั้นใน)" }
+    solution: "$N'(t) = 100e^{0.2t}$ จึง $N'(5) = 100e \\approx 271.8$ คนต่อเดือน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p013
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $f(x) = 2^x$ จงหา $f'(3)$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 5.55, tolerance: 0.01 }
+    hints:
+      - "$\\dfrac{d}{dx}a^x = a^x\\ln a$"
+      - "$2^3\\ln 2$"
+    misconceptions:
+      - { match: 12, feedback: "ใช้กฎยกกำลังได้ $x \\cdot 2^{x-1}$ ซึ่งผิด เพราะตัวแปรอยู่ที่เลขชี้กำลัง" }
+      - { match: 8, feedback: "$a^x$ ไม่ใช่ $e^x$ อนุพันธ์ต้องคูณ $\\ln 2$" }
+    solution: "$f'(x) = 2^x\\ln 2$ ได้ $f'(3) = 8\\ln 2 \\approx 5.55$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p014
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 4
+    type: expression
+    stem: "เส้นโค้ง $x^2 + xy + y^2 = 7$ จงหา $\\dfrac{dy}{dx}$ ในรูปของ $x$ และ $y$"
+    prefix: "dy/dx ="
+    answer: { latex: "-\\frac{2x+y}{x+2y}", variables: [x, y] }
+    misconceptions:
+      - { match: "-\\frac{2x+y}{2y}", feedback: "อนุพันธ์ของ $xy$ ต้องใช้กฎผลคูณ $y + x\\dfrac{dy}{dx}$ พจน์ $x\\dfrac{dy}{dx}$ หายไป" }
+      - { match: "-\\frac{x}{y}", feedback: "ลืมพจน์ $xy$ ทั้งพจน์" }
+    hints:
+      - "หาอนุพันธ์ทุกพจน์: $2x + \\left(y + x\\dfrac{dy}{dx}\\right) + 2y\\dfrac{dy}{dx} = 0$"
+      - "รวมพจน์ที่มี $\\dfrac{dy}{dx}$ ไว้ข้างเดียว"
+    solution: "$2x + y + (x + 2y)\\dfrac{dy}{dx} = 0$ จึง $\\dfrac{dy}{dx} = -\\dfrac{2x + y}{x + 2y}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p015
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาความชันของเส้นสัมผัสเส้นโค้ง $x^3 + y^3 = 9$ ที่จุด $(1, 2)$"
+    answer: { value: -0.25, tolerance: 0.001 }
+    hints:
+      - "$3x^2 + 3y^2\\dfrac{dy}{dx} = 0$"
+      - "$\\dfrac{dy}{dx} = -\\dfrac{x^2}{y^2}$ แล้วแทน $(1, 2)$"
+    misconceptions:
+      - { match: -4, feedback: "กลับเศษส่วน ที่ถูกคือ $-\\dfrac{x^2}{y^2} = -\\dfrac14$" }
+      - { match: 0.25, feedback: "เมื่อย้าย $3x^2$ ไปอีกข้างต้องเป็นลบ" }
+    solution: "$\\dfrac{dy}{dx} = -\\dfrac{x^2}{y^2} = -\\dfrac{1}{4} = -0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p016
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 4
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}\\big(e^{-x}\\cos x\\big)$"
+    prefix: "f'(x) ="
+    answer: { latex: "-e^{-x}(\\cos x+\\sin x)", variables: [x] }
+    misconceptions:
+      - { match: "e^{-x}\\sin x", feedback: "นี่คือผลคูณของอนุพันธ์ $(-e^{-x})(-\\sin x)$ ต้องใช้กฎผลคูณ" }
+      - { match: "e^{-x}(\\cos x-\\sin x)", feedback: "อนุพันธ์ของ $e^{-x}$ คือ $-e^{-x}$ (คูณอนุพันธ์ของชั้นใน $-1$)" }
+    hints:
+      - "$u = e^{-x}$, $u' = -e^{-x}$; $v = \\cos x$, $v' = -\\sin x$"
+      - "$u'v + uv' = -e^{-x}\\cos x - e^{-x}\\sin x$"
+    solution: "$-e^{-x}\\cos x + e^{-x}(-\\sin x) = -e^{-x}(\\cos x + \\sin x)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p017
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 4
+    type: numeric
+    stem: "ระดับน้ำที่ปากแม่น้ำเจ้าพระยาวันหนึ่งประมาณด้วย $h(t) = 1.2 + 0.8\\sin\\left(\\dfrac{\\pi t}{6}\\right)$ เมตร เมื่อ $t$ เป็นชั่วโมง (แบบจำลองสมมติ) เมื่อ $t = 2$ ระดับน้ำสูงขึ้นในอัตรากี่เมตรต่อชั่วโมง (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.209, tolerance: 0.002, unit: เมตรต่อชั่วโมง }
+    hints:
+      - "$h'(t) = 0.8\\cos\\left(\\dfrac{\\pi t}{6}\\right)\\cdot\\dfrac{\\pi}{6}$"
+      - "ที่ $t = 2$: $\\cos\\dfrac{\\pi}{3} = 0.5$"
+    misconceptions:
+      - { match: 0.4, feedback: "ลืมคูณอนุพันธ์ของชั้นใน $\\dfrac{\\pi}{6}$" }
+      - { match: 1.893, feedback: "นี่คือระดับน้ำ $h(2)$ ไม่ใช่อัตราการเปลี่ยนแปลง" }
+    solution: "$h'(2) = 0.8 \\cdot \\dfrac{\\pi}{6} \\cdot \\cos\\dfrac{\\pi}{3} = 0.8 \\times 0.5236 \\times 0.5 \\approx 0.209$ เมตรต่อชั่วโมง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p018
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 4
+    type: expression
+    stem: "จงหา $\\dfrac{d}{dx}x^x$ เมื่อ $x > 0$ (ใช้การหาอนุพันธ์ด้วยลอการิทึม)"
+    prefix: "f'(x) ="
+    answer: { latex: "x^x(\\ln x+1)", variables: [x] }
+    misconceptions:
+      - { match: "x\\cdot x^{x-1}", feedback: "กฎยกกำลังใช้เมื่อเลขชี้กำลังเป็นค่าคงตัว ที่นี่เลขชี้กำลังเป็นตัวแปร" }
+      - { match: "x^x\\ln x", feedback: "อนุพันธ์ของ $x\\ln x$ ต้องใช้กฎผลคูณ ได้ $\\ln x + 1$" }
+    hints:
+      - "ให้ $y = x^x$ แล้ว $\\ln y = x\\ln x$"
+      - "หาอนุพันธ์สองข้าง: $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$"
+    solution: "$\\ln y = x\\ln x$ ได้ $\\dfrac{y'}{y} = \\ln x + x\\cdot\\dfrac1x = \\ln x + 1$ จึง $y' = x^x(\\ln x + 1)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p019
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $f(x) = \\sin^3(2x)$ จงหา $f'\\left(\\dfrac{\\pi}{8}\\right)$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 2.12, tolerance: 0.01 }
+    hints:
+      - "สามชั้น: $u^3$, $u = \\sin v$, $v = 2x$"
+      - "$f'(x) = 3\\sin^2(2x)\\cdot\\cos(2x)\\cdot 2$"
+    misconceptions:
+      - { match: 1.06, feedback: "ลืมคูณอนุพันธ์ของชั้นในสุด $(2x)' = 2$" }
+      - { match: 0.35, feedback: "นี่คือค่า $f(\\pi/8)$ ไม่ใช่อนุพันธ์" }
+    solution: "$f'(x) = 6\\sin^2(2x)\\cos(2x)$ ที่ $2x = \\dfrac{\\pi}{4}$: $6 \\cdot \\dfrac12 \\cdot \\dfrac{\\sqrt2}{2} = \\dfrac{3\\sqrt2}{2} \\approx 2.12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p020
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 5
+    type: numeric
+    stem: "เส้นสัมผัสเส้นโค้ง $xy + y^2 = 6$ ที่จุด $(1, 2)$ ตัดแกน $y$ ที่ค่า $y$ เท่าใด"
+    answer: { value: 2.4, tolerance: 0.01 }
+    hints:
+      - "หาอนุพันธ์โดยปริยาย: $y + x\\dfrac{dy}{dx} + 2y\\dfrac{dy}{dx} = 0$"
+      - "ความชันที่ $(1, 2)$ คือ $-\\dfrac{2}{1 + 4}$ แล้วเขียนสมการเส้นตรงผ่าน $(1, 2)$"
+    misconceptions:
+      - { match: -0.4, feedback: "นี่คือความชัน ยังต้องเขียนสมการเส้นสัมผัสแล้วแทน $x = 0$" }
+      - { match: 1.6, feedback: "จาก $y - 2 = -0.4(x - 1)$ แทน $x = 0$ ได้ $y = 2 + 0.4$ ระวังเครื่องหมาย" }
+    solution: "$\\dfrac{dy}{dx} = -\\dfrac{y}{x + 2y} = -\\dfrac25$ เส้นสัมผัส $y - 2 = -0.4(x - 1)$ ที่ $x = 0$ ได้ $y = 2.4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p021
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 3
+    type: numeric
+    stem: "นักศึกษาเภสัชศาสตร์ในขอนแก่นใช้แบบจำลอง $C(t) = 20te^{-0.5t}$ มิลลิกรัมต่อลิตร แทนความเข้มข้นของยาในเลือดหลังกินยา $t$ ชั่วโมง (แบบจำลองสมมติ) ที่ $t = 1$ ความเข้มข้นเปลี่ยนในอัตรากี่มิลลิกรัมต่อลิตรต่อชั่วโมง (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 6.07, tolerance: 0.02, unit: มิลลิกรัมต่อลิตรต่อชั่วโมง }
+    hints:
+      - "กฎผลคูณ: $C'(t) = 20e^{-0.5t} + 20t(-0.5)e^{-0.5t}$"
+      - "$C'(t) = 20e^{-0.5t}(1 - 0.5t)$"
+    misconceptions:
+      - { match: 12.13, feedback: "ใช้แค่พจน์แรก $20e^{-0.5t}$ ลืมพจน์ที่สองของกฎผลคูณ" }
+      - { match: -6.07, feedback: "$1 - 0.5(1) = 0.5$ เป็นบวก ความเข้มข้นยังเพิ่มอยู่" }
+    solution: "$C'(1) = 20e^{-0.5}(1 - 0.5) = 10e^{-0.5} \\approx 6.07$ ความเข้มข้นยังเพิ่มขึ้น และจะสูงสุดเมื่อ $1 - 0.5t = 0$ คือ $t = 2$ ชั่วโมง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.differentiation-rules.p022
+    topics: [math.calculus.differentiation-rules]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นการหาอนุพันธ์ของ $f(x) = e^{\\sin 3x}$ ด้วยกฎลูกโซ่"
+    items:
+      - "ระบุชั้นนอก $e^{u}$ และชั้นใน $u = \\sin 3x$"
+      - "หาอนุพันธ์ชั้นนอกโดยคงชั้นในไว้: $e^{\\sin 3x}$"
+      - "หาอนุพันธ์ของชั้นใน $\\sin 3x$ ด้วยกฎลูกโซ่อีกครั้ง: $3\\cos 3x$"
+      - "คูณกัน: $f'(x) = 3\\cos 3x \\, e^{\\sin 3x}$"
+    hints:
+      - "เริ่มจากแยกชั้นของฟังก์ชัน"
+      - "ชั้นในเองก็เป็นฟังก์ชันประกอบ"
+    solution: "แยกชั้น → อนุพันธ์ชั้นนอก → อนุพันธ์ชั้นใน → คูณกัน ได้ $3\\cos 3x\\,e^{\\sin 3x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

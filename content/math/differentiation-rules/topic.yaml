@@ -1,0 +1,76 @@
+id: math.calculus.differentiation-rules
+subject: math
+title: { th: กฎการหาอนุพันธ์, en: Differentiation rules }
+summary: กฎผลคูณ กฎผลหาร กฎลูกโซ่ อนุพันธ์ของฟังก์ชันตรีโกณมิติ เอกซ์โพเนนเชียลและลอการิทึม การหาอนุพันธ์ด้วยลอการิทึม และการหาอนุพันธ์โดยปริยาย
+difficulty: 7.5
+minutes: 45
+prerequisites: [math.calculus.derivative, math.calculus.limits, math.functions.trig-functions, math.functions.exponential, math.functions.logarithms]
+encompasses:
+  - { id: math.calculus.derivative, weight: 0.5 }
+  - { id: math.functions.trig-functions, weight: 0.2 }
+  - { id: math.functions.logarithms, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: sin-cos-slope.svg
+    alt: "กราฟสองชุดเรียงบนล่าง ช่วง x จาก 0 ถึง 2π ด้านบนคือ y = sin x สีน้ำเงิน มีเส้นสัมผัสสั้นสีเขียวที่ x = 0 เขียนว่าชัน 1, ที่ x = π/2 ชัน 0, ที่ x = π ชัน −1 และที่ x = 3π/2 ชัน 0 ด้านล่างคือ y = cos x = (sin x)′ สีแดง มีจุดสีเขียวที่ x = 0, π/2, π, 3π/2 ซึ่งมีค่า 1, 0, −1, 0 ตรงกับความชันด้านบน"
+    caption: "ความชันของ sin x ที่แต่ละจุดเท่ากับค่าของ cos x"
+  - type: interactive
+    title: กฎลูกโซ่กับ sin(bx)
+    caption: "เส้นแรกคือ y = sin(bx) เส้นที่สองคืออนุพันธ์ y = b cos(bx) ลองเพิ่ม b แล้วสังเกตว่ากราฟ sin ถูกบีบให้ชันขึ้น และกราฟอนุพันธ์สูงขึ้นเป็น b เท่า ซึ่งคือตัวคูณจากอนุพันธ์ของชั้นใน bx"
+    widget:
+      kind: function-plot
+      functions: ["\\sin(b x)", "b\\cos(b x)"]
+      sliders:
+        - { name: b, min: 0.5, max: 3, step: 0.5, value: 1, label: ตัวคูณในวงเล็บ b }
+      x: [-4, 4]
+      y: [-3.5, 3.5]
+  - type: worked-example
+    title: กฎผลคูณร่วมกับกฎลูกโซ่
+    problem: "จงหา $\\dfrac{d}{dx}\\big(x^2e^{3x}\\big)$"
+    steps:
+      - text: "ให้ $u = x^2$ และ $v = e^{3x}$ ใช้กฎผลคูณ $(uv)' = u'v + uv'$"
+      - text: "$u' = 2x$"
+      - text: "$v' = 3e^{3x}$"
+        why: "กฎลูกโซ่: อนุพันธ์ของ $e^{\\square}$ คือ $e^{\\square}$ คูณอนุพันธ์ของ $3x$ ซึ่งคือ 3"
+      - text: "รวมกัน: $2xe^{3x} + x^2 \\cdot 3e^{3x}$"
+      - text: "ดึงตัวร่วม: $xe^{3x}(3x + 2)$"
+    answer: "$xe^{3x}(3x + 2)$"
+  - { type: check, problem: math.calculus.differentiation-rules.p004, prompt: "ใช้กฎผลคูณ ไม่ใช่คูณอนุพันธ์สองตัว" }
+  - type: figure
+    src: circle-tangent.svg
+    alt: "วงกลม x² + y² = 25 สีน้ำเงินมีจุดศูนย์กลางที่จุดกำเนิด เส้นประยาว 5 จากจุดกำเนิดถึงจุด (3, 4) บนวงกลม เส้นตรงสีแดงสัมผัสวงกลมที่ (3, 4) เขียนว่าชัน −3/4"
+    caption: "เส้นสัมผัสวงกลมที่ (3, 4) หาความชันได้ด้วยการหาอนุพันธ์โดยปริยาย"
+  - type: worked-example
+    title: การหาอนุพันธ์โดยปริยาย
+    problem: "จงหาความชันของเส้นสัมผัสวงกลม $x^2 + y^2 = 25$ ที่จุด $(3, 4)$"
+    steps:
+      - text: "หาอนุพันธ์ทั้งสองข้างเทียบกับ $x$: $2x + 2y\\dfrac{dy}{dx} = 0$"
+        why: "$y$ เป็นฟังก์ชันของ $x$ อนุพันธ์ของ $y^2$ จึงเป็น $2y \\cdot \\dfrac{dy}{dx}$ ตามกฎลูกโซ่"
+      - text: "แก้หา $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$"
+      - text: "แทน $(3, 4)$: $\\dfrac{dy}{dx} = -\\dfrac34$"
+      - text: "ตรวจด้วยเรขาคณิต: รัศมีไป $(3, 4)$ มีความชัน $\\tfrac43$ เส้นสัมผัสตั้งฉากกับรัศมี จึงมีความชัน $-\\tfrac34$ ตรงกัน"
+    answer: "$-\\dfrac34$"
+  - { type: check, problem: math.calculus.differentiation-rules.p006, prompt: "อย่าลืมคูณอนุพันธ์ของชั้นใน" }
+glossary:
+  - { term: กฎผลคูณ, definition: "(uv)′ = u′v + uv′" }
+  - { term: กฎผลหาร, definition: "(u/v)′ = (u′v − uv′)/v²" }
+  - { term: กฎลูกโซ่, definition: "อนุพันธ์ของ f(g(x)) คือ f′(g(x)) · g′(x)" }
+  - { term: การหาอนุพันธ์โดยปริยาย, definition: "หาอนุพันธ์ทั้งสองข้างของสมการที่มี x และ y โดยถือว่า y เป็นฟังก์ชันของ x แล้วแก้หา dy/dx" }
+  - { term: การหาอนุพันธ์ด้วยลอการิทึม, definition: "ใส่ ln ทั้งสองข้างก่อนหาอนุพันธ์ ใช้กับฟังก์ชันอย่าง x^x" }
+flashcards:
+  - { front: "(uv)′ และ (u/v)′", back: "u′v + uv′ และ (u′v − uv′)/v²" }
+  - { front: "อนุพันธ์ของ sin x, cos x, tan x", back: "cos x, −sin x, sec² x (x เป็นเรเดียน)" }
+  - { front: "อนุพันธ์ของ eˣ, aˣ, ln x", back: "eˣ, aˣ ln a, 1/x" }
+  - { front: "กฎลูกโซ่พูดเป็นคำ", back: "หาอนุพันธ์ชั้นนอกโดยคงชั้นในไว้ แล้วคูณด้วยอนุพันธ์ของชั้นใน" }
+  - { front: "d/dx (y²) เมื่อ y เป็นฟังก์ชันของ x", back: "2y · dy/dx" }
+references:
+  - { title: "กฎลูกโซ่", url: "https://th.wikipedia.org/wiki/กฎลูกโซ่", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Chain rule", url: "https://en.wikipedia.org/wiki/Chain_rule", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "3.3 Differentiation Rules (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rules", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.6 The Chain Rule (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
