@@ -12,24 +12,12 @@
 #   ควรรวมเป็นหัวข้อเดียวก่อนลงมือเขียน
 topics:
   # ---------- เคมี (21 หัวข้อ) ----------
-  - { id: chemistry.bonding.ionic, title: "พันธะไอออนิก", difficulty: 5, prereq: [chemistry.matter.periodic-trends],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/9", "th-core-2560-chemistry-additional:เคมี 1 ม.4/10", "th-core-2560-chemistry-additional:เคมี 1 ม.4/11", "th-core-2560-chemistry-additional:เคมี 1 ม.4/12", "th-core-2560-chemistry-additional:เคมี 1 ม.4/13"],
-      scope: "การเกิดไอออนและพันธะไอออนิกด้วยสัญลักษณ์แบบจุดของลิวอิส สูตรและการเรียกชื่อสารประกอบไอออนิก พลังงานกับวัฏจักรบอร์น–ฮาเบอร์ สมบัติของสารประกอบไอออนิก สมการไอออนิกและสมการไอออนิกสุทธิ" }
-  - { id: chemistry.bonding.polarity-intermolecular, title: "สภาพขั้วของโมเลกุลและแรงระหว่างโมเลกุล", difficulty: 5.5, prereq: [chemistry.bonding.covalent, chemistry.matter.periodic-trends],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/17", "th-core-2560-chemistry-additional:เคมี 1 ม.4/18", "th-core-2560-chemistry-additional:เคมี 1 ม.4/19"],
-      scope: "รูปร่างโมเลกุลตามทฤษฎี VSEPR สภาพขั้วของพันธะและของโมเลกุล แรงลอนดอน แรงระหว่างขั้ว พันธะไฮโดรเจน ผลต่อจุดหลอมเหลว จุดเดือด และการละลายน้ำ และสารโคเวเลนต์โครงร่างตาข่าย เช่น เพชร แกรไฟต์ ซิลิคอนไดออกไซด์" }
   - { id: chemistry.bonding.metallic, title: "พันธะโลหะและการเปรียบเทียบสมบัติของสาร", difficulty: 4.5, prereq: [chemistry.bonding.ionic, chemistry.bonding.polarity-intermolecular],
       indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.4/20", "th-core-2560-chemistry-additional:เคมี 1 ม.4/21"],
       scope: "การเกิดพันธะโลหะและสมบัติของโลหะ เปรียบเทียบสมบัติของสารประกอบไอออนิก สารโคเวเลนต์ และโลหะ พร้อมตัวอย่างการใช้ประโยชน์" }
-  - { id: chemistry.solutions.concentration, title: "ความเข้มข้นของสารละลาย", difficulty: 5, prereq: [chemistry.stoichiometry.mole],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 3 ม.4/9", "th-core-2560-chemistry-additional:เคมี 3 ม.4/10", "th-core-2560-chemistry-additional:เคมี 3 ม.4/11"],
-      scope: "ความเข้มข้นในหน่วยร้อยละ ส่วนในล้านส่วน โมลาริตี โมแลลิตี เศษส่วนโมล การเตรียมสารละลายจากสารบริสุทธิ์และการเจือจาง จุดเดือดและจุดเยือกแข็งของสารละลาย" }
   - { id: chemistry.stoichiometry.reactions, title: "สมการเคมีและปริมาณสัมพันธ์", difficulty: 6, prereq: [chemistry.stoichiometry.mole, chemistry.solutions.concentration],
       indicators: ["th-core-2560-chemistry-additional:เคมี 2 ม.4/1", "th-core-2560-chemistry-additional:เคมี 2 ม.4/2", "th-core-2560-chemistry-additional:เคมี 2 ม.4/3", "th-core-2560-chemistry-additional:เคมี 2 ม.4/4", "th-core-2560-chemistry-additional:เคมี 2 ม.4/5", "th-core-2560-chemistry-additional:เคมี 2 ม.4/6", "th-core-2560-chemistry-additional:เคมี 2 ม.4/7"],
       scope: "สัญลักษณ์ในสมการเคมี การดุลสมการ การคำนวณปริมาณสารที่เกี่ยวกับมวล ความเข้มข้น และปริมาตรแก๊ส ปฏิกิริยาหลายขั้นตอน สารกำหนดปริมาณ และผลได้ร้อยละ" }
-  - { id: chemistry.gases.gas-laws, title: "แก๊สและกฎของแก๊ส", difficulty: 5.5, prereq: [chemistry.stoichiometry.mole, physics.thermal.temperature-heat, physics.matter.pressure-fluids],
-      indicators: ["th-core-2560-chemistry-additional:เคมี 1 ม.5/1", "th-core-2560-chemistry-additional:เคมี 1 ม.5/2", "th-core-2560-chemistry-additional:เคมี 1 ม.5/3", "th-core-2560-chemistry-additional:เคมี 1 ม.5/4", "th-core-2560-chemistry-additional:เคมี 1 ม.5/5", "th-core-2560-chemistry-additional:เคมี 1 ม.5/6", "th-core-2560-physics-additional:ฟิสิกส์ 4 ม.6/7"],
-      scope: "กฎของบอยล์ ชาร์ล เกย์-ลูสแซก กฎรวมแก๊ส กฎของอาโวกาโดร กฎแก๊สอุดมคติ PV = nRT กฎความดันย่อยของดอลตัน การแพร่ของแก๊สตามทฤษฎีจลน์และกฎของเกรแฮม และการใช้ความรู้เรื่องแก๊สในชีวิตประจำวันและอุตสาหกรรม ใช้ร่วมกับผลการเรียนรู้ฟิสิกส์เรื่องกฎของแก๊สอุดมคติ" }
   - { id: chemistry.kinetics.reaction-rates, title: "อัตราการเกิดปฏิกิริยาเคมี", difficulty: 6, prereq: [chemistry.stoichiometry.reactions, math.calculus.rate-of-change],
       indicators: ["th-core-2560-chemistry-additional:เคมี 2 ม.5/1", "th-core-2560-chemistry-additional:เคมี 2 ม.5/2", "th-core-2560-chemistry-additional:เคมี 2 ม.5/3", "th-core-2560-chemistry-additional:เคมี 2 ม.5/4", "th-core-2560-chemistry-additional:เคมี 2 ม.5/5", "th-core-2560-chemistry-additional:เคมี 2 ม.5/6"],
       scope: "การวัดและคำนวณอัตราการเกิดปฏิกิริยาจากกราฟ ทฤษฎีการชนและพลังงานก่อกัมมันต์ ผลของความเข้มข้น พื้นที่ผิว อุณหภูมิ และตัวเร่งปฏิกิริยา และตัวอย่างในชีวิตประจำวันและอุตสาหกรรม" }
