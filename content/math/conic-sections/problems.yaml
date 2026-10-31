@@ -1,0 +1,365 @@
+problems:
+  - id: math.geometry.conic-sections.p001
+    topics: [math.geometry.conic-sections]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาระยะระหว่างจุด $A(1, 2)$ และ $B(7, 10)$"
+    answer: { value: 10, unit: หน่วย }
+    hints:
+      - "$AB = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$"
+      - "ผลต่างแนวนอน 6 แนวตั้ง 8"
+    misconceptions:
+      - { match: 14, feedback: "$6 + 8 = 14$ คือระยะเดินตามแนวตาราง ระยะตรงใช้ $\\sqrt{6^2 + 8^2}$" }
+      - { match: 100, feedback: "ลืมถอดรากที่สอง" }
+    solution: "$AB = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p002
+    topics: [math.geometry.conic-sections]
+    difficulty: 1
+    type: mcq
+    stem: "จุดกึ่งกลางของส่วนของเส้นตรงที่เชื่อม $(-2, 5)$ กับ $(6, 1)$ คือข้อใด"
+    choices:
+      - { id: a, text: "$(2, 3)$", correct: true }
+      - { id: b, text: "$(4, 6)$", feedback: "นี่คือผลบวกของพิกัด ยังไม่ได้หารสอง" }
+      - { id: c, text: "$(4, -2)$", feedback: "นี่คือครึ่งหนึ่งของผลต่าง จุดกึ่งกลางใช้ค่าเฉลี่ย" }
+      - { id: d, text: "$(8, -4)$", feedback: "นี่คือผลต่างของพิกัด ไม่ใช่จุดกึ่งกลาง" }
+    hints:
+      - "จุดกึ่งกลางคือค่าเฉลี่ยของพิกัด $x$ และค่าเฉลี่ยของพิกัด $y$"
+      - "$\\tfrac{-2 + 6}{2}$ และ $\\tfrac{5 + 1}{2}$"
+    solution: "$\\left(\\tfrac{-2 + 6}{2}, \\tfrac{5 + 1}{2}\\right) = (2, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p003
+    topics: [math.geometry.conic-sections]
+    difficulty: 2
+    type: numeric
+    stem: "วงกลม $(x - 3)^2 + (y + 1)^2 = 49$ มีรัศมีเท่าใด"
+    answer: { value: 7, unit: หน่วย }
+    hints:
+      - "สมการวงกลมคือ $(x - h)^2 + (y - k)^2 = r^2$"
+      - "$r^2 = 49$"
+    misconceptions:
+      - { match: 49, feedback: "49 คือ $r^2$ ต้องถอดรากที่สอง" }
+      - { match: 24.5, feedback: "รัศมีไม่ใช่ครึ่งหนึ่งของ $r^2$ ต้องถอดรากที่สอง" }
+    solution: "$r^2 = 49$ จึง $r = 7$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p004
+    topics: [math.geometry.conic-sections]
+    difficulty: 2
+    type: mcq
+    stem: "จุดศูนย์กลางของวงกลม $(x + 2)^2 + (y - 5)^2 = 16$ คือข้อใด"
+    choices:
+      - { id: a, text: "$(-2, 5)$", correct: true }
+      - { id: b, text: "$(2, -5)$", feedback: "$(x + 2) = (x - (-2))$ จึง $h = -2$ เครื่องหมายในวงเล็บตรงข้ามกับพิกัด" }
+      - { id: c, text: "$(2, 5)$", feedback: "$h$ ต้องเป็น $-2$ เพราะ $x + 2 = x - (-2)$" }
+      - { id: d, text: "$(-2, 5)$ และรัศมี 16", feedback: "จุดศูนย์กลางถูก แต่รัศมีคือ $\\sqrt{16} = 4$" }
+    hints:
+      - "เทียบกับ $(x - h)^2 + (y - k)^2 = r^2$"
+      - "เขียน $x + 2$ เป็น $x - (-2)$"
+    solution: "$(x - (-2))^2 + (y - 5)^2 = 4^2$ จุดศูนย์กลาง $(-2, 5)$ รัศมี 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p005
+    topics: [math.geometry.conic-sections]
+    difficulty: 2
+    type: numeric
+    stem: "จุด $P$ อยู่บนส่วนของเส้นตรงจาก $A(1, 2)$ ถึง $B(10, -4)$ และแบ่ง $AB$ ให้ $AP : PB = 1 : 2$ จงหาพิกัด $x$ ของ $P$"
+    answer: { value: 4 }
+    hints:
+      - "$P$ อยู่ $\\tfrac{1}{1 + 2} = \\tfrac13$ ของทางจาก $A$ ไป $B$"
+      - "$x_P = 1 + \\tfrac13(10 - 1)$"
+    misconceptions:
+      - { match: 7, feedback: "ใช้ $\\tfrac23$ ซึ่งเป็นจุดที่ $AP : PB = 2 : 1$ จุดนี้อยู่ใกล้ $A$ มากกว่า" }
+      - { match: 5.5, feedback: "นี่คือจุดกึ่งกลาง ($1 : 1$) ไม่ใช่ $1 : 2$" }
+    solution: "$P = \\left(1 + \\tfrac13 \\cdot 9,\\ 2 + \\tfrac13 \\cdot (-6)\\right) = (4, 0)$ พิกัด $x$ คือ 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p006
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "จงหารัศมีของวงกลม $x^2 + y^2 - 6x + 8y - 11 = 0$"
+    answer: { value: 6, unit: หน่วย }
+    hints:
+      - "ทำกำลังสองสมบูรณ์: $(x^2 - 6x + 9) + (y^2 + 8y + 16) = 11 + 9 + 16$"
+      - "ด้านขวาคือ $r^2$"
+    misconceptions:
+      - { match: 3.32, feedback: "$\\sqrt{11}$ ยังไม่ได้เติมกำลังสองสมบูรณ์ ต้องบวก 9 และ 16 ทั้งสองข้าง" }
+      - { match: 36, feedback: "36 คือ $r^2$ ต้องถอดรากที่สอง" }
+    solution: "$(x - 3)^2 + (y + 4)^2 = 36$ จุดศูนย์กลาง $(3, -4)$ รัศมี 6"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p007
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "พาราโบลา $x^2 = 20y$ มีโฟกัสที่จุด $(0, c)$ จงหา $c$"
+    answer: { value: 5 }
+    hints:
+      - "เทียบกับ $x^2 = 4cy$"
+      - "$4c = 20$"
+    misconceptions:
+      - { match: 20, feedback: "20 คือ $4c$ ไม่ใช่ $c$" }
+      - { match: 10, feedback: "$4c = 20$ ต้องหารด้วย 4 ไม่ใช่ 2" }
+    solution: "$4c = 20 \\Rightarrow c = 5$ โฟกัสที่ $(0, 5)$ ไดเรกตริกซ์ $y = -5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p008
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "จานรับสัญญาณดาวเทียมของบ้านหลังหนึ่งในอุดรธานีมีภาคตัดขวางเป็นพาราโบลา $x^2 = 4cy$ จานกว้าง 60 เซนติเมตร ลึก 7.5 เซนติเมตร (ตัวเลขสมมติ) ตัวรับสัญญาณต้องอยู่ที่โฟกัส ห่างจากก้นจาน (จุดยอด) กี่เซนติเมตร"
+    answer: { value: 30, unit: เซนติเมตร }
+    hints:
+      - "วางจุดยอดที่ $(0, 0)$ ขอบจานอยู่ที่ $(30, 7.5)$"
+      - "แทนในสมการ $x^2 = 4cy$ แล้วแก้หา $c$"
+    misconceptions:
+      - { match: 7.5, feedback: "7.5 เซนติเมตรคือความลึกของจาน ไม่ใช่ระยะโฟกัส" }
+      - { match: 120, feedback: "$4c = 120$ ระยะโฟกัสคือ $c$" }
+      - { match: 15, feedback: "ใช้ $x = 60$ แต่ขอบจานอยู่ห่างแกน $\\tfrac{60}{2} = 30$ เซนติเมตร" }
+    solution: "$30^2 = 4c(7.5) \\Rightarrow 900 = 30c \\Rightarrow c = 30$ เซนติเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p009
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "วงรี $\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$ มีโฟกัสสองจุดบนแกน $x$ จงหาระยะระหว่างโฟกัสทั้งสอง"
+    answer: { value: 8, unit: หน่วย }
+    hints:
+      - "$a^2 = 25$, $b^2 = 9$ และวงรีใช้ $c^2 = a^2 - b^2$"
+      - "โฟกัสอยู่ที่ $(\\pm c, 0)$"
+    misconceptions:
+      - { match: 4, feedback: "$c = 4$ คือระยะจากจุดศูนย์กลางถึงโฟกัสหนึ่งจุด ระยะระหว่างโฟกัสคือ $2c$" }
+      - { match: 11.66, feedback: "ใช้ $c^2 = a^2 + b^2$ ซึ่งเป็นสูตรของไฮเพอร์โบลา" }
+    solution: "$c^2 = 25 - 9 = 16 \\Rightarrow c = 4$ โฟกัส $(\\pm 4, 0)$ ห่างกัน $8$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p010
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: mcq
+    stem: "เส้นกำกับของไฮเพอร์โบลา $\\dfrac{x^2}{16} - \\dfrac{y^2}{9} = 1$ คือข้อใด"
+    choices:
+      - { id: a, text: "$y = \\pm\\tfrac34x$", correct: true }
+      - { id: b, text: "$y = \\pm\\tfrac43x$", feedback: "ความชันคือ $\\tfrac{b}{a}$ โดย $a = 4$ (ใต้ $x^2$) และ $b = 3$" }
+      - { id: c, text: "$y = \\pm\\tfrac{9}{16}x$", feedback: "ใช้ $a^2$ และ $b^2$ ต้องถอดรากก่อน" }
+      - { id: d, text: "$y = \\pm 5x$", feedback: "5 คือ $c$ ระยะถึงโฟกัส ไม่เกี่ยวกับความชันของเส้นกำกับ" }
+    hints:
+      - "$\\dfrac{x^2}{a^2} - \\dfrac{y^2}{b^2} = 1$ มีเส้นกำกับ $y = \\pm\\dfrac{b}{a}x$"
+      - "$a = 4$, $b = 3$"
+    solution: "$a = 4$, $b = 3$ เส้นกำกับคือ $y = \\pm\\tfrac34x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p011
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "บนแผนที่ตำบลแห่งหนึ่ง (หน่วยกิโลเมตร) ถนนสายหลักมีสมการ $3x + 4y - 8 = 0$ และโรงเรียนอยู่ที่จุด $(2, 3)$ ระยะสั้นที่สุดจากโรงเรียนถึงถนนกี่กิโลเมตร"
+    answer: { value: 2, unit: กิโลเมตร }
+    hints:
+      - "$d = \\dfrac{|Ax_0 + By_0 + C|}{\\sqrt{A^2 + B^2}}$"
+      - "$A = 3$, $B = 4$, $C = -8$, $(x_0, y_0) = (2, 3)$"
+    misconceptions:
+      - { match: 10, feedback: "$|3(2) + 4(3) - 8| = 10$ ยังไม่ได้หารด้วย $\\sqrt{3^2 + 4^2} = 5$" }
+      - { match: 3.61, feedback: "นี่คือระยะจากโรงเรียนถึงจุดกำเนิด ไม่ใช่ถึงถนน" }
+    solution: "$d = \\dfrac{|6 + 12 - 8|}{\\sqrt{9 + 16}} = \\dfrac{10}{5} = 2$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p012
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาพื้นที่ของสามเหลี่ยม $ABC$ ในภาพ (ตารางหน่วย)"
+    figure:
+      src: triangle-area.svg
+      alt: "ระนาบพิกัด ช่องตารางละ 1 หน่วย สามเหลี่ยม ABC มีจุดยอด A(−2, 1), B(4, −1) และ C(2, 5) ระบายสีภายใน"
+    answer: { value: 16, unit: ตารางหน่วย }
+    hints:
+      - "ใช้สูตร $\\tfrac12|x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$"
+      - "หรือล้อมด้วยสี่เหลี่ยมผืนผ้าแล้วหักสามเหลี่ยมมุมฉากรอบนอก"
+    misconceptions:
+      - { match: 32, feedback: "ลืมคูณ $\\tfrac12$ ในสูตร" }
+      - { match: 36, feedback: "นี่คือพื้นที่สี่เหลี่ยมผืนผ้าที่ล้อมรอบ ($6 \\times 6$) ต้องหักสามเหลี่ยมมุมฉากสามรูปออก" }
+    solution: "$\\tfrac12|-2(-1 - 5) + 4(5 - 1) + 2(1 + 1)| = \\tfrac12|12 + 16 + 4| = 16$ ตารางหน่วย (ตรวจ: สี่เหลี่ยมล้อม 36 ลบ $6 + 6 + 8 = 20$ ได้ 16)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p013
+    topics: [math.geometry.conic-sections]
+    difficulty: 3
+    type: numeric
+    stem: "สามเหลี่ยมมีจุดยอด $(1, 1)$, $(4, 5)$ และ $(9, -7)$ จงหาความยาวเส้นรอบรูป (ทศนิยมสองตำแหน่ง)"
+    answer: { value: 29.31, tolerance: 0.02, unit: หน่วย }
+    hints:
+      - "หาความยาวทั้งสามด้านด้วยสูตรระยะทาง"
+      - "ด้านทั้งสามยาว $5$, $13$ และ $\\sqrt{128}$"
+    misconceptions:
+      - { match: 18, feedback: "ลืมด้านที่สามจาก $(9, -7)$ ถึง $(1, 1)$" }
+      - { match: 34, feedback: "ด้านที่สามคือ $\\sqrt{8^2 + 8^2} = 8\\sqrt2 \\approx 11.31$ ไม่ใช่ $8 + 8$" }
+    solution: "$\\sqrt{3^2 + 4^2} = 5$, $\\sqrt{5^2 + 12^2} = 13$, $\\sqrt{8^2 + 8^2} = 8\\sqrt2 \\approx 11.31$ เส้นรอบรูป $\\approx 29.31$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p014
+    topics: [math.geometry.conic-sections]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาความชันของเส้นสัมผัสวงกลม $x^2 + y^2 = 25$ ที่จุด $(3, 4)$"
+    answer: { value: -0.75, tolerance: 0.01 }
+    hints:
+      - "เส้นสัมผัสตั้งฉากกับรัศมีที่ลากไปจุดสัมผัส"
+      - "ความชันของรัศมีคือ $\\tfrac43$ เส้นตั้งฉากมีผลคูณความชันเท่ากับ $-1$"
+    misconceptions:
+      - { match: 1.33, feedback: "$\\tfrac43$ คือความชันของรัศมี เส้นสัมผัสตั้งฉากกับรัศมี" }
+      - { match: 0.75, feedback: "ส่วนกลับถูก แต่ต้องเปลี่ยนเครื่องหมายด้วย" }
+    solution: "ความชันรัศมี $\\tfrac{4}{3}$ เส้นสัมผัสมีความชัน $-\\tfrac34 = -0.75$ สมการคือ $3x + 4y = 25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p015
+    topics: [math.geometry.conic-sections]
+    difficulty: 4
+    type: expression
+    stem: "พาราโบลามีโฟกัสที่ $(0, 2)$ และไดเรกตริกซ์ $y = -2$ จงเขียนสมการในรูป $y = \\ldots$"
+    prefix: "y ="
+    answer: { latex: "\\frac{x^2}{8}", variables: [x] }
+    hints:
+      - "ระยะจาก $(x, y)$ ถึงโฟกัสเท่ากับระยะถึงไดเรกตริกซ์: $\\sqrt{x^2 + (y - 2)^2} = |y + 2|$"
+      - "ยกกำลังสองแล้วจัดรูป จะได้ $x^2 = 4cy$ เมื่อ $c = 2$"
+    misconceptions:
+      - { match: "\\frac{x^2}{2}", feedback: "$x^2 = 4cy$ เมื่อ $c = 2$ คือ $x^2 = 8y$ ไม่ใช่ $2y$" }
+      - { match: "8x^2", feedback: "$x^2 = 8y$ จึง $y = \\tfrac{x^2}{8}$ ไม่ใช่ $8x^2$" }
+      - { match: "\\frac{x^2}{4}", feedback: "ใช้ $c = 1$ แต่โฟกัสห่างจากจุดยอด 2 หน่วย" }
+    solution: "$x^2 + y^2 - 4y + 4 = y^2 + 4y + 4 \\Rightarrow x^2 = 8y \\Rightarrow y = \\dfrac{x^2}{8}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p016
+    topics: [math.geometry.conic-sections]
+    difficulty: 4
+    type: numeric
+    stem: "คนสวนในสวนสาธารณะแห่งหนึ่งต้องการทำแปลงดอกไม้รูปวงรี จึงปักหมุดสองอันห่างกัน 8 เมตร ผูกปลายเชือกยาว 10 เมตรไว้กับหมุดทั้งสอง แล้วลากหลักไปรอบ ๆ โดยให้เชือกตึงตลอด แปลงดอกไม้กว้างที่สุดในแนวตั้งฉากกับเส้นเชื่อมหมุด (แกนโท) กี่เมตร"
+    answer: { value: 6, unit: เมตร }
+    hints:
+      - "หมุดคือโฟกัส ผลบวกระยะถึงโฟกัส $2a = 10$ และ $2c = 8$"
+      - "$b^2 = a^2 - c^2$ แกนโทยาว $2b$"
+    misconceptions:
+      - { match: 3, feedback: "$b = 3$ คือครึ่งแกนโท ความกว้างทั้งหมดคือ $2b$" }
+      - { match: 12.81, feedback: "ใช้ $b^2 = a^2 + c^2$ ซึ่งผิด สำหรับวงรี $b^2 = a^2 - c^2$" }
+      - { match: 10, feedback: "10 เมตรคือแกนเอก (ความยาวเชือก) ไม่ใช่แกนโท" }
+    solution: "$a = 5$, $c = 4$ จึง $b = \\sqrt{25 - 16} = 3$ แกนโทยาว $2b = 6$ เมตร (ปลายแกนโทห่างจากหมุดแต่ละอัน 5 เมตร รวม 10 เมตรพอดี)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p017
+    topics: [math.geometry.conic-sections]
+    difficulty: 4
+    type: match
+    stem: "จับคู่สมการกับชนิดของภาคตัดกรวย"
+    pairs:
+      - { left: "$x^2 + y^2 = 9$", right: "วงกลม" }
+      - { left: "$y = 2x^2$", right: "พาราโบลา" }
+      - { left: "$\\dfrac{x^2}{4} + \\dfrac{y^2}{9} = 1$", right: "วงรี" }
+      - { left: "$x^2 - y^2 = 1$", right: "ไฮเพอร์โบลา" }
+    hints:
+      - "มีกำลังสองแค่ตัวแปรเดียวเป็นพาราโบลา"
+      - "กำลังสองทั้งสองตัวแปร: เครื่องหมายบวกเป็นวงกลมหรือวงรี เครื่องหมายลบเป็นไฮเพอร์โบลา"
+    solution: "$x^2 + y^2 = 9$ วงกลมรัศมี 3; $y = 2x^2$ พาราโบลา; ตัวหารใต้ $x^2$ กับ $y^2$ ต่างกันและบวกกันเป็นวงรี; $x^2 - y^2 = 1$ ลบกันเป็นไฮเพอร์โบลา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p018
+    topics: [math.geometry.conic-sections]
+    difficulty: 4
+    type: numeric
+    stem: "จุด $P$ อยู่บนไฮเพอร์โบลา $\\dfrac{x^2}{36} - \\dfrac{y^2}{64} = 1$ และ $F_1, F_2$ เป็นโฟกัส จงหา $|PF_1 - PF_2|$"
+    answer: { value: 12, unit: หน่วย }
+    hints:
+      - "นิยามของไฮเพอร์โบลา: $|PF_1 - PF_2| = 2a$"
+      - "$a^2 = 36$"
+    misconceptions:
+      - { match: 20, feedback: "20 คือ $2c$ ระยะระหว่างโฟกัส ($c = \\sqrt{36 + 64} = 10$)" }
+      - { match: 6, feedback: "6 คือ $a$ ผลต่างของระยะคือ $2a$" }
+    solution: "$a = 6$ จึง $|PF_1 - PF_2| = 2a = 12$ หน่วย ทุกจุดบนไฮเพอร์โบลา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p019
+    topics: [math.geometry.conic-sections]
+    difficulty: 5
+    type: expression
+    stem: "วงรีมีโฟกัสที่ $(-3, 0)$ และ $(3, 0)$ และผลบวกของระยะจากจุดบนวงรีถึงโฟกัสทั้งสองเท่ากับ 10 ถ้าเขียนสมการวงรีในรูป $y^2 = \\ldots$ ด้านขวาคืออะไร (เขียนในรูปของ $x$)"
+    prefix: "y^2 ="
+    answer: { latex: "16-\\frac{16x^2}{25}", variables: [x] }
+    hints:
+      - "$2a = 10$, $c = 3$ จึง $b^2 = a^2 - c^2$"
+      - "สมการ $\\dfrac{x^2}{25} + \\dfrac{y^2}{b^2} = 1$ แล้วแก้หา $y^2$"
+    misconceptions:
+      - { match: "34-\\frac{34x^2}{25}", feedback: "ใช้ $b^2 = a^2 + c^2 = 34$ ซึ่งเป็นสูตรของไฮเพอร์โบลา" }
+      - { match: "16-\\frac{16x^2}{100}", feedback: "$a = 5$ ($2a = 10$) จึง $a^2 = 25$ ไม่ใช่ 100" }
+    solution: "$a = 5$, $b^2 = 25 - 9 = 16$ ได้ $\\dfrac{x^2}{25} + \\dfrac{y^2}{16} = 1$ จึง $y^2 = 16 - \\dfrac{16x^2}{25}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p020
+    topics: [math.geometry.conic-sections]
+    difficulty: 5
+    type: numeric
+    stem: "ซุ้มประตูโรงเรียนแห่งหนึ่งเป็นรูปพาราโบลา ฐานกว้าง 20 เมตร สูงที่สุด 8 เมตรที่กึ่งกลาง ที่ระยะ 5 เมตรจากกึ่งกลาง (ตามแนวนอน) ซุ้มสูงกี่เมตร"
+    answer: { value: 6, unit: เมตร }
+    hints:
+      - "วางจุดยอดที่ $(0, 8)$ ฐานอยู่ที่ $(\\pm 10, 0)$ จึง $y = 8 - kx^2$"
+      - "แทน $(10, 0)$ หา $k$ แล้วแทน $x = 5$"
+    misconceptions:
+      - { match: 4, feedback: "คิดว่าความสูงลดลงเป็นเส้นตรง แต่พาราโบลาลดลงช้าใกล้ยอดและเร็วใกล้ฐาน" }
+      - { match: 2, feedback: "2 เมตรคือส่วนที่ลดลงจากยอด ต้องลบออกจาก 8" }
+    solution: "$0 = 8 - 100k \\Rightarrow k = 0.08$ ที่ $x = 5$: $y = 8 - 0.08(25) = 6$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p021
+    topics: [math.geometry.conic-sections]
+    difficulty: 5
+    type: numeric
+    stem: "จุด $P(x, y)$ เคลื่อนที่โดยระยะจาก $P$ ถึง $(0, 0)$ เป็นสองเท่าของระยะจาก $P$ ถึง $(3, 0)$ เสมอ ทางเดินของ $P$ เป็นวงกลม จงหารัศมีของวงกลมนี้"
+    answer: { value: 2, unit: หน่วย }
+    hints:
+      - "ตั้งสมการ $\\sqrt{x^2 + y^2} = 2\\sqrt{(x - 3)^2 + y^2}$ แล้วยกกำลังสอง"
+      - "จัดรูปแล้วทำกำลังสองสมบูรณ์"
+    misconceptions:
+      - { match: 4, feedback: "4 คือพิกัด $x$ ของจุดศูนย์กลาง $(4, 0)$ ไม่ใช่รัศมี" }
+      - { match: 3, feedback: "3 คือระยะระหว่างจุดคงที่สองจุด ต้องตั้งสมการแล้วหาจริง" }
+    solution: "$x^2 + y^2 = 4(x^2 - 6x + 9 + y^2) \\Rightarrow 3x^2 + 3y^2 - 24x + 36 = 0 \\Rightarrow x^2 - 8x + y^2 + 12 = 0 \\Rightarrow (x - 4)^2 + y^2 = 4$ รัศมี 2"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.geometry.conic-sections.p022
+    topics: [math.geometry.conic-sections]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหาจุดศูนย์กลางและรัศมีของวงกลม $x^2 + y^2 + 10x - 4y + 20 = 0$"
+    items:
+      - "จัดกลุ่ม $(x^2 + 10x) + (y^2 - 4y) = -20$"
+      - "เติม 25 และ 4 ทั้งสองข้าง"
+      - "เขียน $(x + 5)^2 + (y - 2)^2 = 9$"
+      - "อ่านจุดศูนย์กลาง $(-5, 2)$ และรัศมี 3"
+    hints:
+      - "เริ่มจากแยกพจน์ $x$ และ $y$"
+      - "เติมกำลังสองของครึ่งหนึ่งของสัมประสิทธิ์"
+    solution: "จัดกลุ่ม → เติม $5^2$ และ $2^2$ → $(x + 5)^2 + (y - 2)^2 = -20 + 25 + 4 = 9$ → จุดศูนย์กลาง $(-5, 2)$ รัศมี 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

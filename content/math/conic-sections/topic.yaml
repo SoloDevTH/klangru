@@ -1,0 +1,84 @@
+id: math.geometry.conic-sections
+subject: math
+title: { th: ภาคตัดกรวย, en: Conic sections }
+summary: ระยะทาง จุดแบ่งส่วนของเส้นตรง ระยะจากจุดถึงเส้นตรง พื้นที่จากพิกัด สมการวงกลมและเส้นสัมผัส พาราโบลา วงรี และไฮเพอร์โบลาจากนิยามโฟกัส และการนำไปใช้ เช่น จานรับสัญญาณ
+difficulty: 6
+minutes: 45
+prerequisites: [math.functions.linear-graphs, math.geometry.pythagoras, math.geometry.circles, math.functions.quadratic, math.algebra.nonlinear-systems]
+encompasses:
+  - { id: math.geometry.pythagoras, weight: 0.3 }
+  - { id: math.functions.linear-graphs, weight: 0.2 }
+  - { id: math.functions.quadratic, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: partition.svg
+    alt: "ระนาบพิกัด ส่วนของเส้นตรงจาก A(−1, 3) ถึง B(8, −3) จุด P(5, −1) อยู่บนเส้น แบ่งเป็น 2 ส่วนจาก A ถึง P และ 1 ส่วนจาก P ถึง B เส้นประแสดงการเลื่อนแนวนอน +9 และแนวตั้ง −6 จาก A ไป B"
+    caption: "P อยู่ 2/3 ของทางจาก A ไป B จึงแบ่ง AB ในอัตราส่วน 2 : 1"
+  - type: worked-example
+    title: หาจุดศูนย์กลางและรัศมีด้วยกำลังสองสมบูรณ์
+    problem: "จงหาจุดศูนย์กลางและรัศมีของวงกลม $x^2 + y^2 - 8x + 2y + 8 = 0$"
+    steps:
+      - text: "จัดกลุ่ม: $(x^2 - 8x) + (y^2 + 2y) = -8$"
+      - text: "เติมกำลังสองสมบูรณ์: ครึ่งหนึ่งของ $-8$ คือ $-4$ ยกกำลังสองได้ 16 ครึ่งหนึ่งของ 2 คือ 1 ยกกำลังสองได้ 1"
+      - text: "$(x^2 - 8x + 16) + (y^2 + 2y + 1) = -8 + 16 + 1$"
+        why: "เติมอะไรด้านซ้าย ต้องเติมเท่ากันด้านขวา"
+      - text: "$(x - 4)^2 + (y + 1)^2 = 9$"
+      - text: "จุดศูนย์กลาง $(4, -1)$ รัศมี $\\sqrt9 = 3$"
+        why: "$(x - h)^2$ กับ $(x - 4)^2$ จึง $h = 4$ ส่วน $(y + 1)^2 = (y - (-1))^2$ จึง $k = -1$"
+    answer: "จุดศูนย์กลาง $(4, -1)$ รัศมี 3"
+  - { type: check, problem: math.geometry.conic-sections.p004, prompt: "เครื่องหมายในวงเล็บตรงข้ามกับพิกัดของจุดศูนย์กลาง" }
+  - type: figure
+    src: parabola-focus.svg
+    alt: "พาราโบลา x² = 4y จุดยอดที่จุดกำเนิด โฟกัส F(0, 1) ไดเรกตริกซ์เป็นเส้นประ y = −1 จุด P(2, 1) บนพาราโบลา ส่วนของเส้นตรงจาก P ถึง F ยาว 2 และจาก P ลงไปตั้งฉากกับไดเรกตริกซ์ยาว 2 เท่ากัน ลูกศรสีส้มแทนสัญญาณที่เข้ามาขนานกับแกน y กระทบพาราโบลาแล้วสะท้อนไปที่โฟกัส"
+    caption: "ทุกจุดบนพาราโบลาห่างจากโฟกัสเท่ากับห่างจากไดเรกตริกซ์ สัญญาณที่ขนานกับแกนสะท้อนรวมกันที่โฟกัส"
+  - type: worked-example
+    title: เส้นสัมผัสวงกลม
+    problem: "จงหาสมการเส้นสัมผัสวงกลม $x^2 + y^2 = 10$ ที่จุด $(1, 3)$"
+    steps:
+      - text: "ตรวจว่าจุดอยู่บนวงกลม: $1^2 + 3^2 = 10$ ✓"
+      - text: "ความชันของรัศมีจาก $(0, 0)$ ถึง $(1, 3)$ คือ $\\dfrac{3}{1} = 3$"
+      - text: "เส้นสัมผัสตั้งฉากกับรัศมี ความชันจึงเป็น $-\\dfrac13$"
+        why: "เส้นตั้งฉากกันมีผลคูณความชันเท่ากับ $-1$"
+      - text: "$y - 3 = -\\dfrac13(x - 1)$ คูณ 3 ได้ $3y - 9 = -x + 1$"
+      - text: "จัดรูป: $x + 3y = 10$ ตรงกับสูตร $x_0x + y_0y = r^2$"
+    answer: "$x + 3y = 10$"
+  - type: figure
+    src: ellipse-hyperbola.svg
+    alt: "สองภาพ ซ้ายเป็นวงรี x²/25 + y²/21 = 1 มีโฟกัส F₁(−2, 0) และ F₂(2, 0) จุด P บนวงรีเชื่อมกับโฟกัสทั้งสอง เขียนว่า PF₁ + PF₂ = 2a = 10 ขวาเป็นไฮเพอร์โบลาสองกิ่ง x²/4 − y²/5 = 1 มีโฟกัสที่ (−3, 0) และ (3, 0) เส้นประสองเส้นตัดกันที่จุดกำเนิดคือเส้นกำกับ จุด Q บนกิ่งขวาเชื่อมกับโฟกัสทั้งสอง เขียนว่า |QF₁ − QF₂| = 2a = 4"
+    caption: "วงรี: ผลบวกของระยะถึงโฟกัสคงที่ ไฮเพอร์โบลา: ผลต่างของระยะถึงโฟกัสคงที่"
+  - type: interactive
+    title: เปลี่ยนรูปร่างของวงรี
+    caption: "สองเส้นคือครึ่งบนและครึ่งล่างของวงรี x²/a² + y²/b² = 1 เลื่อน a และ b แล้วสังเกต: ถ้า a = b ได้วงกลม ถ้า a > b วงรียาวตามแกน x และโฟกัสอยู่ที่ (±√(a² − b²), 0)"
+    widget:
+      kind: function-plot
+      functions: ["b\\sqrt{1-\\frac{x^2}{a^2}}", "-b\\sqrt{1-\\frac{x^2}{a^2}}"]
+      sliders:
+        - { name: a, min: 1, max: 6, step: 0.5, value: 5, label: ครึ่งแกนนอน a }
+        - { name: b, min: 1, max: 6, step: 0.5, value: 3, label: ครึ่งแกนตั้ง b }
+      x: [-7, 7]
+      y: [-7, 7]
+  - { type: check, problem: math.geometry.conic-sections.p009, prompt: "วงรีใช้ c² = a² − b²" }
+glossary:
+  - { term: ภาคตัดกรวย, definition: "เส้นโค้งที่ได้จากการตัดกรวยกลมด้วยระนาบ ได้แก่ วงกลม วงรี พาราโบลา ไฮเพอร์โบลา" }
+  - { term: โฟกัส, definition: "จุดคงที่ที่ใช้นิยามพาราโบลา วงรี และไฮเพอร์โบลา" }
+  - { term: ไดเรกตริกซ์, definition: "เส้นตรงคงที่ของพาราโบลา ทุกจุดบนพาราโบลาห่างจากโฟกัสเท่ากับห่างจากเส้นนี้" }
+  - { term: วงรี, definition: "เซตของจุดที่ผลบวกของระยะถึงโฟกัสสองจุดคงที่ x²/a² + y²/b² = 1" }
+  - { term: ไฮเพอร์โบลา, definition: "เซตของจุดที่ผลต่างของระยะถึงโฟกัสสองจุดคงที่ x²/a² − y²/b² = 1" }
+  - { term: เส้นกำกับ, definition: "เส้นตรงที่กิ่งของไฮเพอร์โบลาเข้าใกล้เมื่ออยู่ไกลออกไป y = ±(b/a)x" }
+flashcards:
+  - { front: "สมการวงกลมจุดศูนย์กลาง (h, k) รัศมี r", back: "(x − h)² + (y − k)² = r²" }
+  - { front: "ระยะจากจุด (x₀, y₀) ถึงเส้น Ax + By + C = 0", back: "|Ax₀ + By₀ + C| / √(A² + B²)" }
+  - { front: "พาราโบลา x² = 4cy มีโฟกัสและไดเรกตริกซ์ที่ใด", back: "โฟกัส (0, c) ไดเรกตริกซ์ y = −c" }
+  - { front: "วงรีกับไฮเพอร์โบลาหา c อย่างไร", back: "วงรี c² = a² − b² ไฮเพอร์โบลา c² = a² + b²" }
+  - { front: "เส้นสัมผัส x² + y² = r² ที่ (x₀, y₀)", back: "x₀x + y₀y = r² ตั้งฉากกับรัศมี" }
+references:
+  - { title: "ภาคตัดกรวย", url: "https://th.wikipedia.org/wiki/ภาคตัดกรวย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Conic section", url: "https://en.wikipedia.org/wiki/Conic_section", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.1 The Ellipse (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/10-1-the-ellipse", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "10.3 The Parabola (Precalculus 2e, OpenStax)", url: "https://openstax.org/books/precalculus-2e/pages/10-3-the-parabola", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
