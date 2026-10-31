@@ -1,0 +1,358 @@
+problems:
+  - id: math.calculus.definite-integral.p001
+    topics: [math.calculus.definite-integral]
+    difficulty: 1
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = 6x^2$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "2x^3", variables: [x] }
+    misconceptions:
+      - { match: "12x", feedback: "นี่คืออนุพันธ์ของ $6x^2$ ปฏิยานุพันธ์ต้องเพิ่มเลขชี้กำลังแล้วหาร" }
+      - { match: "6x^3", feedback: "เพิ่มเลขชี้กำลังเป็น 3 แล้วต้องหารด้วย 3 ด้วย" }
+    hints:
+      - "$\\displaystyle\\int x^n\\,dx = \\dfrac{x^{n+1}}{n+1} + C$"
+      - "$F(0) = 0$ ทำให้ $C = 0$"
+    solution: "$F(x) = 6 \\cdot \\dfrac{x^3}{3} + C = 2x^3 + C$ และ $F(0) = 0$ ให้ $C = 0$ ตรวจ: $(2x^3)' = 6x^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p002
+    topics: [math.calculus.definite-integral]
+    difficulty: 1
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^2 3\\,dx$"
+    answer: { value: 6 }
+    hints:
+      - "กราฟของ $y = 3$ เป็นเส้นแนวนอน พื้นที่ใต้กราฟเป็นสี่เหลี่ยมผืนผ้า"
+      - "กว้าง 2 สูง 3"
+    misconceptions:
+      - { match: 3, feedback: "3 คือความสูง ต้องคูณความกว้างของช่วง $2 - 0$" }
+    solution: "$\\Big[3x\\Big]_0^2 = 6 - 0 = 6$ ตรงกับพื้นที่สี่เหลี่ยม $2 \\times 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p003
+    topics: [math.calculus.definite-integral]
+    difficulty: 1
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^4 2x\\,dx$"
+    answer: { value: 16 }
+    hints:
+      - "ปฏิยานุพันธ์ของ $2x$ คือ $x^2$"
+      - "$F(4) - F(0)$"
+    misconceptions:
+      - { match: 8, feedback: "8 คือค่า $f(4) = 2(4)$ ไม่ใช่พื้นที่ ต้องหาปฏิยานุพันธ์ก่อน" }
+      - { match: 2, feedback: "นี่คืออนุพันธ์ของ $2x$ ต้องใช้ปฏิยานุพันธ์" }
+    solution: "$\\Big[x^2\\Big]_0^4 = 16 - 0 = 16$ (ตรงกับพื้นที่สามเหลี่ยมฐาน 4 สูง 8)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p004
+    topics: [math.calculus.definite-integral]
+    difficulty: 2
+    type: numeric
+    stem: "ประมาณ $\\displaystyle\\int_0^2 x^2\\,dx$ ด้วยผลรวมรีมันน์ปลายซ้าย 4 ช่วงเท่ากัน"
+    answer: { value: 1.75, tolerance: 0.01 }
+    hints:
+      - "$\\Delta x = \\dfrac{2 - 0}{4} = 0.5$ ปลายซ้ายคือ $0, 0.5, 1, 1.5$"
+      - "รวม $f(0) + f(0.5) + f(1) + f(1.5)$ แล้วคูณ $\\Delta x$"
+    misconceptions:
+      - { match: 3.75, feedback: "นี่คือผลรวมปลายขวา ($0.5, 1, 1.5, 2$)" }
+      - { match: 2.667, feedback: "นี่คือค่าจริง $\\tfrac83$ โจทย์ให้ประมาณด้วยผลรวมปลายซ้าย" }
+    solution: "$(0 + 0.25 + 1 + 2.25)(0.5) = 1.75$ น้อยกว่าค่าจริง $\\tfrac83$ เพราะ $x^2$ เป็นฟังก์ชันเพิ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p005
+    topics: [math.calculus.definite-integral]
+    difficulty: 2
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = 4x^3 - 2x + 5$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "x^4-x^2+5x", variables: [x] }
+    misconceptions:
+      - { match: "12x^2-2", feedback: "นี่คืออนุพันธ์ ไม่ใช่ปฏิยานุพันธ์" }
+      - { match: "x^4-x^2+5", feedback: "ปฏิยานุพันธ์ของค่าคงตัว 5 คือ $5x$" }
+    hints:
+      - "หาปฏิยานุพันธ์ทีละพจน์"
+      - "$\\int 4x^3\\,dx = x^4$, $\\int 2x\\,dx = x^2$, $\\int 5\\,dx = 5x$"
+    solution: "$F(x) = x^4 - x^2 + 5x + C$ และ $F(0) = 0$ ให้ $C = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p006
+    topics: [math.calculus.definite-integral]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_1^4 \\sqrt{x}\\,dx$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 4.67, tolerance: 0.01 }
+    hints:
+      - "$\\sqrt{x} = x^{1/2}$ ปฏิยานุพันธ์คือ $\\tfrac23 x^{3/2}$"
+      - "$\\tfrac23(4^{3/2} - 1^{3/2})$"
+    misconceptions:
+      - { match: 5.33, feedback: "ลืมลบค่าที่ขอบล่าง $F(1) = \\tfrac23$" }
+      - { match: 7, feedback: "เลขชี้กำลังใหม่คือ $\\tfrac32$ ต้องหารด้วย $\\tfrac32$ (คูณ $\\tfrac23$)" }
+    solution: "$\\Big[\\tfrac23 x^{3/2}\\Big]_1^4 = \\tfrac23(8 - 1) = \\tfrac{14}{3} \\approx 4.67$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p007
+    topics: [math.calculus.definite-integral]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $\\displaystyle\\int_0^5 f(x)\\,dx = 7$ และ $\\displaystyle\\int_0^2 f(x)\\,dx = 3$ จงหา $\\displaystyle\\int_5^2 f(x)\\,dx$"
+    answer: { value: -4 }
+    hints:
+      - "$\\displaystyle\\int_2^5 f = \\int_0^5 f - \\int_0^2 f$"
+      - "สลับขอบเขตแล้วเปลี่ยนเครื่องหมาย"
+    misconceptions:
+      - { match: 4, feedback: "นี่คือ $\\int_2^5 f$ ขอบเขตในโจทย์กลับด้าน ต้องเปลี่ยนเครื่องหมาย" }
+      - { match: 10, feedback: "$\\int_2^5$ คือส่วนที่เหลือ ต้องลบ ไม่ใช่บวก" }
+    solution: "$\\int_2^5 f = 7 - 3 = 4$ จึง $\\int_5^2 f = -4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p008
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_{-1}^{2}(x^2 - 2x)\\,dx$"
+    answer: { value: 0, tolerance: 0.001 }
+    hints:
+      - "ปฏิยานุพันธ์คือ $\\dfrac{x^3}{3} - x^2$"
+      - "$F(2) - F(-1)$ ระวังเครื่องหมายของ $(-1)^3$"
+    misconceptions:
+      - { match: 2.667, feedback: "นี่คือพื้นที่รวม (นับทุกส่วนเป็นบวก) ปริพันธ์จำกัดเขตนับส่วนใต้แกน $x$ เป็นลบ" }
+      - { match: -1.333, feedback: "ลืมลบ $F(-1) = -\\tfrac43$ ซึ่งการลบค่าติดลบเท่ากับบวก" }
+    solution: "$F(2) = \\tfrac83 - 4 = -\\tfrac43$ และ $F(-1) = -\\tfrac13 - 1 = -\\tfrac43$ ผลต่างจึงเป็น 0 ส่วนที่อยู่เหนือแกนบน $[-1, 0]$ หักล้างกับส่วนใต้แกนบน $[0, 2]$ พอดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p009
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $A(x) = \\displaystyle\\int_1^x (t^3 + 1)\\,dt$ จงหา $A'(2)$"
+    answer: { value: 9 }
+    hints:
+      - "ทฤษฎีบทหลักมูลส่วนที่ 1: $A'(x) = x^3 + 1$"
+      - "แทน $x = 2$"
+    misconceptions:
+      - { match: 4.75, feedback: "นี่คือ $A(2)$ (พื้นที่) โจทย์ถามอนุพันธ์ของ $A$" }
+      - { match: 12, feedback: "ไม่ต้องหาอนุพันธ์ของ $t^3 + 1$ อีกชั้น $A'(x)$ คือตัวฟังก์ชันที่ถูกอินทิเกรต" }
+    solution: "$A'(x) = x^3 + 1$ จึง $A'(2) = 9$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p010
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: numeric
+    stem: "รถไฟฟ้าออกจากสถานีด้วยความเร็ว $v(t) = 3t - 0.1t^2$ เมตรต่อวินาที ในช่วง $0 \\le t \\le 20$ วินาที (แบบจำลองสมมติ) ใน 20 วินาทีแรกรถไฟฟ้าเคลื่อนที่ได้กี่เมตร (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 333.3, tolerance: 0.5, unit: เมตร }
+    hints:
+      - "ระยะทาง $= \\displaystyle\\int_0^{20} v(t)\\,dt$ (ความเร็วเป็นบวกตลอดช่วง)"
+      - "ปฏิยานุพันธ์ $1.5t^2 - \\dfrac{0.1t^3}{3}$"
+    misconceptions:
+      - { match: 20, feedback: "20 คือความเร็วที่ $t = 20$ ระยะทางคือพื้นที่ใต้กราฟความเร็ว" }
+      - { match: 16.67, feedback: "ไม่ต้องหารด้วยเวลา นั่นคือความเร็วเฉลี่ย ไม่ใช่ระยะทาง" }
+    solution: "$\\Big[1.5t^2 - \\tfrac{0.1}{3}t^3\\Big]_0^{20} = 600 - 266.7 = 333.3$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p011
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: expression
+    stem: "จงหา $F(x) = \\displaystyle\\int_0^x 2t(t^2 + 1)^4\\,dt$ ในรูปของ $x$"
+    prefix: "F(x) ="
+    answer: { latex: "\\frac{(x^2+1)^5-1}{5}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{(x^2+1)^5}{5}", feedback: "ลืมลบค่าที่ขอบล่าง $t = 0$ ซึ่งได้ $\\tfrac{1}{5}$" }
+      - { match: "(x^2+1)^5-1", feedback: "$\\int u^4\\,du = \\tfrac{u^5}{5}$ ต้องหารด้วย 5" }
+    hints:
+      - "ให้ $u = t^2 + 1$ จะได้ $du = 2t\\,dt$"
+      - "ขอบเขตใหม่ $u = 1$ ถึง $u = x^2 + 1$"
+    solution: "$\\displaystyle\\int_1^{x^2 + 1} u^4\\,du = \\Big[\\tfrac{u^5}{5}\\Big]_1^{x^2+1} = \\dfrac{(x^2 + 1)^5 - 1}{5}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p012
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: numeric
+    stem: "บ้านในเชียงรายรองน้ำฝนจากหลังคาลงถัง อัตราการไหลคือ $r(t) = 40 + 6t$ ลิตรต่อนาที เมื่อ $t$ เป็นนาที (ค่าสมมติ) ใน 10 นาทีแรกได้น้ำกี่ลิตร"
+    answer: { value: 700, unit: ลิตร }
+    hints:
+      - "ปริมาณน้ำ $= \\displaystyle\\int_0^{10} (40 + 6t)\\,dt$"
+      - "ปฏิยานุพันธ์ $40t + 3t^2$"
+    misconceptions:
+      - { match: 100, feedback: "100 คืออัตราการไหลที่ $t = 10$ ปริมาณคือปริพันธ์ของอัตรา" }
+      - { match: 1000, feedback: "ปฏิยานุพันธ์ของ $6t$ คือ $3t^2$ ไม่ใช่ $6t^2$" }
+    solution: "$\\Big[40t + 3t^2\\Big]_0^{10} = 400 + 300 = 700$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p013
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: match
+    stem: "จับคู่สัญลักษณ์กับความหมาย (เมื่อ $F' = f$)"
+    pairs:
+      - { left: "$\\displaystyle\\int f(x)\\,dx$", right: "วงศ์ของฟังก์ชัน $F(x) + C$" }
+      - { left: "$\\displaystyle\\int_a^b f(x)\\,dx$", right: "จำนวนหนึ่งจำนวน (พื้นที่มีเครื่องหมาย)" }
+      - { left: "$\\dfrac{d}{dx}\\displaystyle\\int_a^x f(t)\\,dt$", right: "$f(x)$" }
+      - { left: "$\\displaystyle\\lim_{n \\to \\infty}\\sum_{i=1}^{n} f(x_i^*)\\Delta x$", right: "นิยามของปริพันธ์จำกัดเขต" }
+    hints:
+      - "ปริพันธ์ไม่จำกัดเขตให้ฟังก์ชัน ปริพันธ์จำกัดเขตให้จำนวน"
+      - "ทฤษฎีบทหลักมูลส่วนที่ 1 บอกอนุพันธ์ของพื้นที่สะสม"
+    solution: "ไม่จำกัดเขต → $F(x) + C$; จำกัดเขต → จำนวน; อนุพันธ์ของพื้นที่สะสม → $f(x)$; ลิมิตของผลรวมรีมันน์ → นิยามของปริพันธ์จำกัดเขต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p014
+    topics: [math.calculus.definite-integral]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^2 x\\sqrt{x^2 + 5}\\,dx$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 5.27, tolerance: 0.02 }
+    hints:
+      - "ให้ $u = x^2 + 5$, $du = 2x\\,dx$ จึง $x\\,dx = \\tfrac12 du$ ขอบเขตใหม่ $u = 5$ ถึง $9$"
+      - "$\\tfrac12\\displaystyle\\int_5^9 u^{1/2}\\,du = \\tfrac13\\Big[u^{3/2}\\Big]_5^9$"
+    misconceptions:
+      - { match: 15.82, feedback: "ลืมคูณ $\\tfrac13$ (มาจาก $\\tfrac12 \\times \\tfrac23$)" }
+      - { match: 9, feedback: "ไม่ได้เปลี่ยนขอบล่างหรือลืมลบค่าที่ $u = 5$" }
+    solution: "$\\tfrac13(9^{3/2} - 5^{3/2}) = \\tfrac13(27 - 5\\sqrt5) \\approx \\tfrac13(27 - 11.18) \\approx 5.27$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p015
+    topics: [math.calculus.definite-integral]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาค่าเฉลี่ยของ $f(x) = x^2$ บนช่วง $[0, 3]$"
+    answer: { value: 3 }
+    hints:
+      - "ค่าเฉลี่ย $= \\dfrac{1}{b - a}\\displaystyle\\int_a^b f(x)\\,dx$"
+      - "$\\displaystyle\\int_0^3 x^2\\,dx = 9$"
+    misconceptions:
+      - { match: 4.5, feedback: "นี่คือค่าเฉลี่ยของ $f(0)$ กับ $f(3)$ ใช้ได้เฉพาะฟังก์ชันเชิงเส้น" }
+      - { match: 9, feedback: "9 คือปริพันธ์ ต้องหารด้วยความยาวช่วง 3" }
+    solution: "$\\dfrac13 \\cdot \\Big[\\tfrac{x^3}{3}\\Big]_0^3 = \\dfrac13 \\cdot 9 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p016
+    topics: [math.calculus.definite-integral]
+    difficulty: 4
+    type: numeric
+    stem: "วัตถุมีความเร่ง $a(t) = 6t$ เมตรต่อวินาทีกำลังสอง ความเร็วเริ่มต้น $v(0) = 2$ เมตรต่อวินาที และตำแหน่งเริ่มต้น $s(0) = 0$ จงหาตำแหน่งเมื่อ $t = 2$ วินาที"
+    answer: { value: 12, unit: เมตร }
+    hints:
+      - "$v(t) = \\int 6t\\,dt = 3t^2 + C$ ใช้ $v(0) = 2$ หา $C$"
+      - "$s(t) = \\int v(t)\\,dt$ แล้วใช้ $s(0) = 0$"
+    misconceptions:
+      - { match: 8, feedback: "ลืมความเร็วเริ่มต้น $v(0) = 2$ ซึ่งทำให้ $v(t) = 3t^2 + 2$" }
+      - { match: 14, feedback: "นี่คือความเร็ว $v(2)$ โจทย์ถามตำแหน่ง" }
+    solution: "$v(t) = 3t^2 + 2$, $s(t) = t^3 + 2t$ จึง $s(2) = 8 + 4 = 12$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p017
+    topics: [math.calculus.definite-integral]
+    difficulty: 5
+    type: mcq
+    stem: "นักเรียนคนหนึ่งเขียนว่า $\\displaystyle\\int_{-1}^{1}\\frac{1}{x^2}\\,dx = \\Big[-\\frac1x\\Big]_{-1}^{1} = -1 - 1 = -2$ ข้อใดอธิบายได้ถูกต้อง"
+    choices:
+      - { id: a, text: "ผิด เพราะ $\\frac{1}{x^2}$ ไม่ต่อเนื่องที่ $x = 0$ ซึ่งอยู่ในช่วง จึงใช้ทฤษฎีบทหลักมูลไม่ได้", correct: true }
+      - { id: b, text: "ถูก เพราะปฏิยานุพันธ์ของ $\\frac{1}{x^2}$ คือ $-\\frac1x$ จริง", feedback: "ปฏิยานุพันธ์ถูก แต่ทฤษฎีบทต้องการให้ฟังก์ชันต่อเนื่องตลอดช่วง" }
+      - { id: c, text: "ผิดแค่เครื่องหมาย คำตอบที่ถูกคือ 2", feedback: "$\\frac{1}{x^2} > 0$ ทุกที่ แต่พื้นที่ใกล้ $x = 0$ ใหญ่ไม่จำกัด จึงไม่ได้เท่ากับ 2" }
+      - { id: d, text: "ถูก เพราะพื้นที่ทั้งสองข้างของแกน $y$ หักล้างกัน", feedback: "กราฟอยู่เหนือแกน $x$ ทั้งหมด ไม่มีส่วนใดหักล้างกัน" }
+    hints:
+      - "ฟังก์ชันที่ถูกอินทิเกรตเป็นบวกเสมอ คำตอบติดลบได้หรือไม่"
+      - "ทฤษฎีบทหลักมูลมีเงื่อนไขเรื่องความต่อเนื่อง"
+    solution: "$\\frac{1}{x^2} > 0$ ทุก $x \\ne 0$ ปริพันธ์จึงติดลบไม่ได้ ข้อผิดคือใช้ทฤษฎีบทหลักมูลข้ามจุด $x = 0$ ที่ฟังก์ชันไม่ต่อเนื่อง (และพื้นที่ใกล้จุดนั้นมากไม่จำกัด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p018
+    topics: [math.calculus.definite-integral]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาค่าของ $\\displaystyle\\lim_{n \\to \\infty}\\sum_{i=1}^{n}\\frac3n\\left(1 + \\frac{3i}{n}\\right)^2$ โดยมองเป็นปริพันธ์จำกัดเขต"
+    answer: { value: 21 }
+    hints:
+      - "$\\Delta x = \\dfrac3n$ และ $x_i = 1 + \\dfrac{3i}{n}$ เริ่มจาก 1 กว้างทั้งหมด 3"
+      - "เป็น $\\displaystyle\\int_1^4 x^2\\,dx$"
+    misconceptions:
+      - { match: 9, feedback: "ช่วงเริ่มที่ $x = 1$ ไม่ใช่ 0 ($x_i = 1 + \\tfrac{3i}{n}$)" }
+      - { match: 63, feedback: "ลืมคูณ $\\tfrac13$ จากปฏิยานุพันธ์ $\\tfrac{x^3}{3}$" }
+    solution: "ผลรวมคือผลรวมรีมันน์ปลายขวาของ $x^2$ บน $[1, 4]$ จึงเท่ากับ $\\Big[\\tfrac{x^3}{3}\\Big]_1^4 = \\tfrac{64 - 1}{3} = 21$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p019
+    topics: [math.calculus.definite-integral]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $G(x) = \\displaystyle\\int_0^{x^2}\\sqrt{1 + t}\\,dt$ จงหา $G'(2)$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 8.94, tolerance: 0.02 }
+    hints:
+      - "ขอบบนเป็น $x^2$ ใช้ทฤษฎีบทหลักมูลร่วมกับกฎลูกโซ่"
+      - "$G'(x) = \\sqrt{1 + x^2}\\cdot 2x$"
+    misconceptions:
+      - { match: 2.24, feedback: "ลืมคูณอนุพันธ์ของขอบบน $(x^2)' = 2x$" }
+      - { match: 1.73, feedback: "ต้องแทน $t = x^2 = 4$ ไม่ใช่ $t = x = 2$ และคูณ $2x$" }
+    solution: "$G'(x) = \\sqrt{1 + x^2} \\cdot 2x$ จึง $G'(2) = \\sqrt5 \\cdot 4 \\approx 8.94$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p020
+    topics: [math.calculus.definite-integral]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาค่า $k > 0$ ที่ทำให้ $\\displaystyle\\int_0^k (2x + 1)\\,dx = 12$"
+    answer: { value: 3 }
+    hints:
+      - "$\\Big[x^2 + x\\Big]_0^k = k^2 + k$"
+      - "แก้สมการกำลังสอง $k^2 + k - 12 = 0$"
+    misconceptions:
+      - { match: -4, feedback: "$k = -4$ เป็นรากของสมการ แต่โจทย์กำหนด $k > 0$" }
+      - { match: 5.5, feedback: "ต้องหาปฏิยานุพันธ์ก่อน ไม่ใช่แก้ $2k + 1 = 12$" }
+    solution: "$k^2 + k = 12$ ได้ $(k + 4)(k - 3) = 0$ เลือก $k = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p021
+    topics: [math.calculus.definite-integral]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นการหา $\\displaystyle\\int_a^b f(x)\\,dx$ ด้วยทฤษฎีบทหลักมูล"
+    items:
+      - "ตรวจว่า $f$ ต่อเนื่องบน $[a, b]$"
+      - "หาปฏิยานุพันธ์ $F$ ของ $f$ (ไม่ต้องใส่ $C$)"
+      - "ตรวจ $F$ โดยหาอนุพันธ์กลับ"
+      - "คำนวณ $F(b)$ และ $F(a)$"
+      - "ตอบ $F(b) - F(a)$"
+    hints:
+      - "ทฤษฎีบทใช้ได้เมื่อฟังก์ชันต่อเนื่อง"
+      - "ลบค่าที่ขอบล่างออกจากค่าที่ขอบบน"
+    solution: "ตรวจความต่อเนื่อง → หาปฏิยานุพันธ์ → ตรวจด้วยอนุพันธ์ → แทนขอบบนและขอบล่าง → $F(b) - F(a)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.definite-integral.p022
+    topics: [math.calculus.definite-integral]
+    difficulty: 3
+    type: numeric
+    stem: "สถานีวัดน้ำฝนในหาดใหญ่บันทึกพายุฝนช่วงหนึ่งที่มีความเข้มฝน $r(t) = 12t - 3t^2$ มิลลิเมตรต่อชั่วโมง ในช่วง $0 \\le t \\le 4$ ชั่วโมง (แบบจำลองสมมติ) ฝนตกสะสมทั้งหมดกี่มิลลิเมตร"
+    answer: { value: 32, unit: มิลลิเมตร }
+    hints:
+      - "ฝนสะสม $= \\displaystyle\\int_0^4 (12t - 3t^2)\\,dt$"
+      - "ปฏิยานุพันธ์ $6t^2 - t^3$"
+    misconceptions:
+      - { match: 12, feedback: "12 คือความเข้มฝนสูงสุด (ที่ $t = 2$) ไม่ใช่ปริมาณสะสม" }
+      - { match: 0, feedback: "$r(4) = 0$ คือฝนหยุดตอนท้าย แต่ปริมาณสะสมคือพื้นที่ใต้กราฟทั้งช่วง" }
+    solution: "$\\Big[6t^2 - t^3\\Big]_0^4 = 96 - 64 = 32$ มิลลิเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

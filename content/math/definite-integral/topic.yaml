@@ -1,0 +1,75 @@
+id: math.calculus.definite-integral
+subject: math
+title: { th: ปริพันธ์จำกัดเขตและทฤษฎีบทหลักมูลของแคลคูลัส, en: The definite integral and the fundamental theorem of calculus }
+summary: ปฏิยานุพันธ์และปริพันธ์ไม่จำกัดเขต ผลรวมรีมันน์ ปริพันธ์จำกัดเขตเป็นพื้นที่มีเครื่องหมาย ค่าเฉลี่ยของฟังก์ชัน ทฤษฎีบทหลักมูลของแคลคูลัส และการแทนค่า
+difficulty: 7.5
+minutes: 45
+prerequisites: [math.calculus.derivative, math.calculus.limits, math.geometry.area-perimeter]
+encompasses:
+  - { id: math.calculus.derivative, weight: 0.4 }
+  - { id: math.calculus.limits, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ปฏิยานุพันธ์มีได้หลายตัว
+    caption: "เส้นแรกคือ f(x) = 2x เส้นที่สองคือ F(x) = x² + c เลื่อน c แล้วกราฟของ F เลื่อนขึ้นลง แต่ความชันที่แต่ละ x ไม่เปลี่ยน ทุกตัวจึงมีอนุพันธ์เป็น 2x เหมือนกัน นี่คือที่มาของ + C"
+    widget:
+      kind: function-plot
+      functions: ["2x", "x^2+c"]
+      sliders:
+        - { name: c, min: -4, max: 4, step: 1, value: 0, label: ค่าคงตัว C }
+      x: [-4, 4]
+      y: [-6, 10]
+  - type: figure
+    src: riemann.svg
+    alt: "สองกราฟของเส้นโค้ง y = 0.5x² + 1 บนช่วง 0 ถึง 4 ภาพซ้ายมีสี่เหลี่ยมผืนผ้าสีส้ม 4 รูปกว้าง 1 สูงเท่าค่าฟังก์ชันที่ปลายซ้าย อยู่ใต้เส้นโค้งทั้งหมด ใต้ภาพเขียนว่า n = 4 ผลรวมปลายซ้าย = 11 ภาพขวามีสี่เหลี่ยม 16 รูปกว้าง 0.25 ช่องว่างใต้เส้นโค้งเล็กลง ใต้ภาพเขียนว่า n = 16 ผลรวมปลายซ้าย = 13.69"
+    caption: "ยิ่งแบ่งช่วงละเอียด ผลรวมรีมันน์ยิ่งเข้าใกล้พื้นที่จริง 44/3 ≈ 14.67"
+  - type: worked-example
+    title: ใช้ทฤษฎีบทหลักมูล
+    problem: "จงหา $\\displaystyle\\int_1^3 (3x^2 - 2x)\\,dx$"
+    steps:
+      - text: "หาปฏิยานุพันธ์: $F(x) = x^3 - x^2$"
+        why: "ตรวจ: $F'(x) = 3x^2 - 2x$ ตรงกับฟังก์ชันที่ให้"
+      - text: "$F(3) = 27 - 9 = 18$"
+      - text: "$F(1) = 1 - 1 = 0$"
+      - text: "$\\displaystyle\\int_1^3 (3x^2 - 2x)\\,dx = F(3) - F(1) = 18 - 0 = 18$"
+    answer: "18"
+  - { type: check, problem: math.calculus.definite-integral.p003, prompt: "หาปฏิยานุพันธ์ก่อน แล้วแทนขอบบนลบขอบล่าง" }
+  - type: figure
+    src: signed-area.svg
+    alt: "กราฟเส้นตรง y = x − 2 บนช่วง 0 ถึง 5 ตัดแกน x ที่ 2 สามเหลี่ยมสีแดงใต้แกน x จาก 0 ถึง 2 เขียนว่า −2 สามเหลี่ยมสีเขียวเหนือแกน x จาก 2 ถึง 5 สูง 3 เขียนว่า +4.5 ด้านล่างเขียนว่า ∫₀⁵ (x − 2) dx = 4.5 − 2 = 2.5"
+    caption: "ปริพันธ์จำกัดเขตนับพื้นที่ใต้แกน x เป็นลบ"
+  - type: worked-example
+    title: การแทนค่าในปริพันธ์จำกัดเขต
+    problem: "จงหา $\\displaystyle\\int_0^1 2x(x^2 + 1)^3\\,dx$"
+    steps:
+      - text: "ให้ $u = x^2 + 1$ จะได้ $du = 2x\\,dx$"
+        why: "$2x$ คืออนุพันธ์ของชั้นใน $x^2 + 1$ ที่คูณอยู่พอดี"
+      - text: "เปลี่ยนขอบเขต: $x = 0 \\Rightarrow u = 1$ และ $x = 1 \\Rightarrow u = 2$"
+      - text: "$\\displaystyle\\int_1^2 u^3\\,du = \\Big[\\tfrac{u^4}{4}\\Big]_1^2$"
+      - text: "$= \\dfrac{16}{4} - \\dfrac14 = \\dfrac{15}{4} = 3.75$"
+    answer: "$\\dfrac{15}{4} = 3.75$"
+  - { type: check, problem: math.calculus.definite-integral.p008, prompt: "ส่วนที่อยู่ใต้แกน x นับเป็นลบ" }
+glossary:
+  - { term: ปฏิยานุพันธ์, definition: "ฟังก์ชัน F ที่ F′(x) = f(x)" }
+  - { term: ปริพันธ์ไม่จำกัดเขต, definition: "∫f(x)dx = F(x) + C วงศ์ของปฏิยานุพันธ์ทั้งหมด" }
+  - { term: ผลรวมรีมันน์, definition: "ผลรวมของพื้นที่สี่เหลี่ยม Σ f(xᵢ*)Δx ที่ใช้ประมาณพื้นที่ใต้กราฟ" }
+  - { term: ปริพันธ์จำกัดเขต, definition: "ลิมิตของผลรวมรีมันน์บนช่วง [a, b] ได้เป็นจำนวน เท่ากับพื้นที่มีเครื่องหมาย" }
+  - { term: ทฤษฎีบทหลักมูลของแคลคูลัส, definition: "อนุพันธ์ของ ∫ₐˣ f(t)dt คือ f(x) และ ∫ₐᵇ f(x)dx = F(b) − F(a)" }
+  - { term: การแทนค่า, definition: "เปลี่ยนตัวแปร u = g(x), du = g′(x)dx เพื่อย้อนกฎลูกโซ่" }
+flashcards:
+  - { front: "∫xⁿ dx (n ≠ −1)", back: "xⁿ⁺¹/(n + 1) + C" }
+  - { front: "ทฤษฎีบทหลักมูลส่วนที่ 2", back: "∫ₐᵇ f(x)dx = F(b) − F(a) เมื่อ F′ = f" }
+  - { front: "d/dx ∫ₐˣ f(t) dt", back: "f(x)" }
+  - { front: "ปริพันธ์จำกัดเขตเป็นลบได้เมื่อใด", back: "เมื่อพื้นที่ส่วนใต้แกน x มากกว่าส่วนเหนือแกน" }
+  - { front: "ค่าเฉลี่ยของ f บน [a, b]", back: "(1/(b − a)) ∫ₐᵇ f(x) dx" }
+references:
+  - { title: "ทฤษฎีบทหลักมูลของแคลคูลัส", url: "https://th.wikipedia.org/wiki/ทฤษฎีบทหลักมูลของแคลคูลัส", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Riemann sum", url: "https://en.wikipedia.org/wiki/Riemann_sum", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "5.1 Approximating Areas (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "5.3 The Fundamental Theorem of Calculus (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/5-3-the-fundamental-theorem-of-calculus", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
