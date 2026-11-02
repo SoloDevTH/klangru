@@ -1,0 +1,77 @@
+id: math.calculus.integral-applications
+subject: math
+title: { th: การประยุกต์ปริพันธ์, en: Applications of integration }
+summary: พื้นที่ระหว่างเส้นโค้ง ปริมาตรด้วยการตัดเป็นแผ่น วิธีจานและวิธีแหวน งานของแรงที่ไม่คงตัว แรงดันของของไหล มวลและจุดศูนย์กลางมวล
+difficulty: 8
+minutes: 50
+prerequisites: [math.calculus.definite-integral, math.geometry.volume-surface, physics.energy.work]
+encompasses:
+  - { id: math.calculus.definite-integral, weight: 0.5 }
+  - { id: math.geometry.volume-surface, weight: 0.2 }
+  - { id: physics.energy.work, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: area-between.svg
+    alt: "พาราโบลาสีน้ำเงิน y = 6 − x² และเส้นตรงสีแดง y = x ตัดกันที่ (−3, −3) และ (2, 2) บริเวณระหว่างเส้นทั้งสองแรเงาสีเขียว มีแถบสี่เหลี่ยมแนวตั้งสีส้มบาง ๆ ใกล้ x = −0.5 ความสูงเขียนว่า (6 − x²) − x และความกว้างเขียนว่า dx"
+    caption: "แถบแนวตั้งสูง บน − ล่าง กว้าง dx"
+  - type: worked-example
+    title: พื้นที่ระหว่างพาราโบลากับเส้นตรง
+    problem: "จงหาพื้นที่ของบริเวณที่ล้อมด้วย $y = 6 - x^2$ และ $y = x$"
+    steps:
+      - text: "จุดตัด: $6 - x^2 = x$ ได้ $x^2 + x - 6 = 0$, $(x + 3)(x - 2) = 0$ จึง $x = -3$ และ $x = 2$"
+      - text: "ตรวจว่าเส้นใดอยู่บน: ที่ $x = 0$ พาราโบลาได้ 6 เส้นตรงได้ 0 พาราโบลาอยู่บน"
+      - text: "$A = \\displaystyle\\int_{-3}^{2}(6 - x^2 - x)\\,dx = \\Big[6x - \\tfrac{x^3}{3} - \\tfrac{x^2}{2}\\Big]_{-3}^{2}$"
+      - text: "$= \\left(12 - \\tfrac83 - 2\\right) - \\left(-18 + 9 - \\tfrac92\\right) = \\tfrac{22}{3} + \\tfrac{27}{2} = \\tfrac{125}{6}$"
+    answer: "$\\dfrac{125}{6} \\approx 20.83$ ตารางหน่วย"
+  - { type: check, problem: math.calculus.integral-applications.p004, prompt: "หาจุดตัดก่อน แล้วอินทิเกรต บน − ล่าง" }
+  - type: interactive
+    title: พื้นที่ระหว่างพาราโบลากับเส้นตรง
+    caption: "เส้นแรกคือ y = 6 − x² เส้นที่สองคือ y = mx เลื่อน m แล้วดูว่าจุดตัดทั้งสองย้ายไป บริเวณที่ล้อมและขอบเขตของปริพันธ์จึงเปลี่ยนตาม"
+    widget:
+      kind: function-plot
+      functions: ["6-x^2", "m x"]
+      sliders:
+        - { name: m, min: -3, max: 3, step: 0.5, value: 1, label: ความชัน m }
+      x: [-5, 5]
+      y: [-6, 8]
+  - type: figure
+    src: disc.svg
+    alt: "เส้นโค้ง y = √x จาก x = 0 ถึง 4 หมุนรอบแกน x เป็นทรงตันรูปกระสุน มีภาพสะท้อนเส้นประด้านล่าง และวงรีที่ปลาย x = 4 แผ่นจานสีส้มบาง ๆ ที่ x ประมาณ 2.5 มีรัศมีเขียนว่า r = √x และความหนา dx"
+    caption: "วิธีจาน: แต่ละแผ่นมีปริมาตร π r² dx"
+  - type: worked-example
+    title: ปริมาตรด้วยวิธีจาน
+    problem: "หมุนบริเวณใต้ $y = \\sqrt{x}$ จาก $x = 0$ ถึง $x = 4$ รอบแกน $x$ จงหาปริมาตร"
+    steps:
+      - text: "หน้าตัดที่ $x$ เป็นวงกลมรัศมี $r = \\sqrt{x}$ พื้นที่ $\\pi(\\sqrt x)^2 = \\pi x$"
+      - text: "$V = \\displaystyle\\int_0^4 \\pi x\\,dx = \\pi\\Big[\\tfrac{x^2}{2}\\Big]_0^4$"
+      - text: "$= 8\\pi \\approx 25.13$ ลูกบาศก์หน่วย"
+        why: "ตรวจความสมเหตุสมผล: ทรงกระบอกรัศมี 2 ยาว 4 ที่ครอบอยู่มีปริมาตร $16\\pi$ ทรงตันนี้ได้ครึ่งหนึ่ง"
+    answer: "$8\\pi \\approx 25.13$"
+  - type: figure
+    src: triangle-gate.svg
+    alt: "ประตูระบายน้ำรูปสามเหลี่ยมหัวกลับ ขอบบนยาว 6 m อยู่ที่ผิวน้ำ ยอดล่างลึก 3 m แถบแนวนอนสีส้มบาง ๆ ที่ความลึก h มีความกว้าง w(h) และความหนา dh"
+    caption: "แรงดันของน้ำบนแถบที่ความลึก h คือ ρgh · w(h) dh"
+  - { type: check, problem: math.calculus.integral-applications.p002, prompt: "งานของสปริงคือพื้นที่ใต้กราฟ F = kx" }
+glossary:
+  - { term: วิธีจาน, definition: "หาปริมาตรทรงตันจากการหมุนด้วย V = ∫π[f(x)]² dx" }
+  - { term: วิธีแหวน, definition: "ปริมาตรเมื่อหน้าตัดเป็นวงแหวน V = ∫π(R² − r²) dx" }
+  - { term: กฎของฮุก, definition: "แรงที่ใช้ยืดสปริงแปรผันตรงกับระยะยืด F = kx" }
+  - { term: แรงดันของของไหล, definition: "แรงที่ของเหลวกระทำต่อผิว หาจาก ∫ρgh w(h) dh เพราะความดันเพิ่มตามความลึก" }
+  - { term: จุดเซนทรอยด์, definition: "จุดศูนย์กลางเรขาคณิตของรูปหรือแผ่นสม่ำเสมอ ตรงกับจุดศูนย์กลางมวลเมื่อความหนาแน่นคงตัว" }
+flashcards:
+  - { front: "พื้นที่ระหว่างเส้นโค้ง", back: "∫(บน − ล่าง) dx จากจุดตัดหนึ่งถึงอีกจุดตัด" }
+  - { front: "ปริมาตรวิธีจานรอบแกน x", back: "∫ π[f(x)]² dx" }
+  - { front: "งานยืดสปริงจาก 0 ถึง d", back: "½kd²" }
+  - { front: "แรงของน้ำบนผนังแนวตั้ง", back: "∫ ρg h w(h) dh เมื่อ h คือความลึก" }
+  - { front: "จุดศูนย์กลางมวลของแท่ง ρ(x)", back: "x̄ = ∫xρ(x)dx ÷ ∫ρ(x)dx" }
+references:
+  - { title: "6.1 Areas between Curves (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/6-1-areas-between-curves", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.2 Determining Volumes by Slicing (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/6-2-determining-volumes-by-slicing", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.5 Physical Applications (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/6-5-physical-applications", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Solid of revolution", url: "https://en.wikipedia.org/wiki/Solid_of_revolution", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

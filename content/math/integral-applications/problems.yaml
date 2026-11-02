@@ -1,0 +1,325 @@
+problems:
+  - id: math.calculus.integral-applications.p001
+    topics: [math.calculus.integral-applications]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาพื้นที่ระหว่างเส้น $y = x + 3$ กับ $y = 1$ บนช่วง $0 \\le x \\le 2$"
+    answer: { value: 6, unit: ตารางหน่วย }
+    hints:
+      - "เส้นบนคือ $y = x + 3$ เส้นล่างคือ $y = 1$"
+      - "$\\displaystyle\\int_0^2 [(x + 3) - 1]\\,dx$"
+    misconceptions:
+      - { match: 8, feedback: "นี่คือพื้นที่ใต้ $y = x + 3$ ถึงแกน $x$ ต้องลบส่วนใต้ $y = 1$ ออก" }
+    solution: "$\\displaystyle\\int_0^2 (x + 2)\\,dx = \\Big[\\tfrac{x^2}{2} + 2x\\Big]_0^2 = 2 + 4 = 6$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p002
+    topics: [math.calculus.integral-applications]
+    difficulty: 1
+    type: numeric
+    stem: "สปริงมีค่าคงตัว $k = 200\\ \\mathrm{N/m}$ ต้องใช้งานกี่จูลจึงยืดสปริงจากความยาวธรรมชาติออกไป $0.1$ เมตร"
+    answer: { value: 1, unit: J }
+    hints:
+      - "$W = \\displaystyle\\int_0^{0.1} 200x\\,dx$"
+      - "ได้ $\\tfrac12 kd^2$"
+    misconceptions:
+      - { match: 2, feedback: "แรงไม่ได้เท่ากับ $kd = 20\\ \\mathrm{N}$ ตลอดทาง แต่เพิ่มจาก 0 จึงต้องมี $\\tfrac12$" }
+      - { match: 20, feedback: "20 N คือแรงที่ปลาย ไม่ใช่งาน" }
+    solution: "$W = \\tfrac12(200)(0.1)^2 = 1\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p003
+    topics: [math.calculus.integral-applications]
+    difficulty: 1
+    type: mcq
+    stem: "ถ้า $f(x) \\ge g(x)$ บน $[a, b]$ พื้นที่ระหว่างกราฟทั้งสองคือข้อใด"
+    choices:
+      - { id: a, text: "$\\displaystyle\\int_a^b [f(x) - g(x)]\\,dx$", correct: true }
+      - { id: b, text: "$\\displaystyle\\int_a^b [g(x) - f(x)]\\,dx$", feedback: "ล่างลบบนให้ค่าติดลบ ต้องเป็นบนลบล่าง" }
+      - { id: c, text: "$\\displaystyle\\int_a^b f(x)g(x)\\,dx$", feedback: "ความสูงของแถบคือผลต่าง ไม่ใช่ผลคูณ" }
+      - { id: d, text: "$\\displaystyle\\int_a^b [f(x) + g(x)]\\,dx$", feedback: "บวกกันเป็นการนับพื้นที่ใต้ทั้งสองกราฟ ไม่ใช่ระหว่างกราฟ" }
+    hints:
+      - "แถบแนวตั้งสูงเท่ากับ บน − ล่าง"
+      - "เส้นบนคือ $f$"
+    solution: "แถบที่ $x$ สูง $f(x) - g(x)$ กว้าง $dx$ รวมได้ $\\int_a^b [f(x) - g(x)]\\,dx$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p004
+    topics: [math.calculus.integral-applications]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาพื้นที่ของบริเวณที่ล้อมด้วย $y = x$ และ $y = x^2$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.167, tolerance: 0.002, unit: ตารางหน่วย }
+    hints:
+      - "จุดตัด $x = x^2$ ได้ $x = 0$ และ $x = 1$ บนช่วงนี้ $x \\ge x^2$"
+      - "$\\displaystyle\\int_0^1 (x - x^2)\\,dx$"
+    misconceptions:
+      - { match: -0.167, feedback: "ลบกลับด้าน บนช่วง $0 < x < 1$ เส้นตรง $y = x$ อยู่เหนือ $x^2$" }
+      - { match: 0.5, feedback: "นี่คือพื้นที่ใต้ $y = x$ อย่างเดียว ต้องลบพื้นที่ใต้ $x^2$" }
+    solution: "$\\Big[\\tfrac{x^2}{2} - \\tfrac{x^3}{3}\\Big]_0^1 = \\tfrac12 - \\tfrac13 = \\tfrac16 \\approx 0.167$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p005
+    topics: [math.calculus.integral-applications]
+    difficulty: 2
+    type: numeric
+    stem: "หมุนบริเวณใต้ $y = x$ จาก $x = 0$ ถึง $x = 3$ รอบแกน $x$ ได้กรวย จงหาปริมาตร (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 28.27, tolerance: 0.05, unit: ลูกบาศก์หน่วย }
+    hints:
+      - "วิธีจาน: $V = \\displaystyle\\int_0^3 \\pi x^2\\,dx$"
+      - "ตรวจด้วยสูตรกรวย $\\tfrac13\\pi r^2h$ เมื่อ $r = h = 3$"
+    misconceptions:
+      - { match: 9, feedback: "ลืมคูณ $\\pi$" }
+      - { match: 14.14, feedback: "ลืมยกกำลังสองรัศมี ได้ $\\int \\pi x\\,dx$" }
+    solution: "$\\pi\\Big[\\tfrac{x^3}{3}\\Big]_0^3 = 9\\pi \\approx 28.27$ ตรงกับ $\\tfrac13\\pi(3)^2(3) = 9\\pi$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p006
+    topics: [math.calculus.integral-applications]
+    difficulty: 2
+    type: numeric
+    stem: "แท่งโลหะยาว 4 เมตรมีความหนาแน่นตามความยาว $\\rho(x) = 2 + x$ กิโลกรัมต่อเมตร เมื่อ $x$ วัดจากปลายข้างหนึ่ง แท่งนี้มีมวลกี่กิโลกรัม"
+    answer: { value: 16, unit: kg }
+    hints:
+      - "$m = \\displaystyle\\int_0^4 (2 + x)\\,dx$"
+      - "ปฏิยานุพันธ์ $2x + \\tfrac{x^2}{2}$"
+    misconceptions:
+      - { match: 24, feedback: "ใช้ความหนาแน่นที่ปลาย $\\rho(4) = 6$ คูณความยาว ความหนาแน่นไม่คงตัวจึงต้องอินทิเกรต" }
+      - { match: 8, feedback: "ใช้ความหนาแน่นที่ปลายเริ่มต้น $\\rho(0) = 2$ ตลอดแท่ง" }
+    solution: "$m = \\Big[2x + \\tfrac{x^2}{2}\\Big]_0^4 = 8 + 8 = 16$ กิโลกรัม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p007
+    topics: [math.calculus.integral-applications]
+    difficulty: 2
+    type: numeric
+    stem: "ไม้คานหาบของมีน้ำหนักเบามาก แขวนตะกร้า 2 kg ที่ $x = 1$ เมตร 3 kg ที่ $x = 4$ เมตร และ 5 kg ที่ $x = 6$ เมตร จุดศูนย์กลางมวลอยู่ที่ $x$ เท่าใด"
+    answer: { value: 4.4, tolerance: 0.01, unit: เมตร }
+    hints:
+      - "$\\bar{x} = \\dfrac{\\sum m_ix_i}{\\sum m_i}$"
+      - "$\\dfrac{2(1) + 3(4) + 5(6)}{10}$"
+    misconceptions:
+      - { match: 3.67, feedback: "เฉลี่ยตำแหน่งตรง ๆ ไม่ได้ ต้องถ่วงด้วยมวล" }
+    solution: "$\\bar{x} = \\dfrac{2 + 12 + 30}{10} = 4.4$ เมตร ใกล้ตะกร้าที่หนักที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p008
+    topics: [math.calculus.integral-applications]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาพื้นที่ของบริเวณที่ล้อมด้วย $y = x^2$ และ $y = 2x + 3$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 10.67, tolerance: 0.02, unit: ตารางหน่วย }
+    hints:
+      - "จุดตัด: $x^2 = 2x + 3$ ได้ $x = -1$ และ $x = 3$"
+      - "$\\displaystyle\\int_{-1}^{3}(2x + 3 - x^2)\\,dx$"
+    misconceptions:
+      - { match: -10.67, feedback: "ลบกลับด้าน เส้นตรงอยู่เหนือพาราโบลาบนช่วงนี้" }
+      - { match: 9.33, feedback: "นี่คือพื้นที่ใต้พาราโบลา $\\int_{-1}^{3} x^2\\,dx$ ไม่ใช่พื้นที่ระหว่างเส้นโค้ง" }
+    solution: "$\\Big[x^2 + 3x - \\tfrac{x^3}{3}\\Big]_{-1}^{3} = 9 - \\left(-\\tfrac53\\right) = \\tfrac{32}{3} \\approx 10.67$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p009
+    topics: [math.calculus.integral-applications]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาพื้นที่ของบริเวณที่ล้อมด้วย $x = y^2$ และ $x = y + 2$ (แนะนำให้อินทิเกรตตาม $y$)"
+    answer: { value: 4.5, tolerance: 0.01, unit: ตารางหน่วย }
+    hints:
+      - "จุดตัด: $y^2 = y + 2$ ได้ $y = -1$ และ $y = 2$"
+      - "แถบแนวนอน: ขวา − ซ้าย $= (y + 2) - y^2$"
+    misconceptions:
+      - { match: -4.5, feedback: "ลบกลับด้าน เส้นตรง $x = y + 2$ อยู่ทางขวาของพาราโบลา" }
+      - { match: 3, feedback: "นี่คือ $\\int_{-1}^{2} y^2\\,dy$ อย่างเดียว ต้องใช้ ขวา − ซ้าย" }
+    solution: "$\\Big[\\tfrac{y^2}{2} + 2y - \\tfrac{y^3}{3}\\Big]_{-1}^{2} = \\tfrac{10}{3} - \\left(-\\tfrac76\\right) = \\tfrac92 = 4.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p010
+    topics: [math.calculus.integral-applications]
+    difficulty: 3
+    type: numeric
+    stem: "ช่างเซรามิกลำปางออกแบบถ้วยที่ด้านในเป็นทรงตันจากการหมุนส่วนโค้ง $y = x^2$ (หน่วยเซนติเมตร) รอบแกน $y$ ตั้งแต่ก้นถ้วย $y = 0$ ถึงขอบ $y = 16$ ถ้วยจุได้กี่ลูกบาศก์เซนติเมตร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 402, tolerance: 1, unit: cm³ }
+    hints:
+      - "ตัดเป็นแผ่นแนวนอนที่ความสูง $y$ รัศมีคือ $x = \\sqrt{y}$"
+      - "$V = \\displaystyle\\int_0^{16}\\pi(\\sqrt y)^2\\,dy = \\int_0^{16}\\pi y\\,dy$"
+    misconceptions:
+      - { match: 4289, feedback: "รัศมีของแผ่นที่ความสูง $y$ คือ $x = \\sqrt y$ ไม่ใช่ $y$" }
+      - { match: 128, feedback: "ลืมคูณ $\\pi$" }
+    solution: "$V = \\pi\\Big[\\tfrac{y^2}{2}\\Big]_0^{16} = 128\\pi \\approx 402\\ \\mathrm{cm^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p011
+    topics: [math.calculus.integral-applications]
+    difficulty: 3
+    type: numeric
+    stem: "สปริงมี $k = 300\\ \\mathrm{N/m}$ ขณะนี้ยืดอยู่ 0.1 เมตร ต้องใช้งานกี่จูลจึงยืดต่อจนเป็น 0.3 เมตร"
+    answer: { value: 12, unit: J }
+    hints:
+      - "$W = \\displaystyle\\int_{0.1}^{0.3} 300x\\,dx$"
+      - "$150(0.3^2 - 0.1^2)$"
+    misconceptions:
+      - { match: 6, feedback: "$\\tfrac12k(0.3 - 0.1)^2$ ผิด ต้องเป็น $\\tfrac12k(0.3^2 - 0.1^2)$ เพราะแรงช่วงหลังมากกว่า" }
+      - { match: 13.5, feedback: "ต้องลบงานที่ใช้ยืดถึง 0.1 เมตรไปแล้ว ($1.5\\ \\mathrm{J}$)" }
+    solution: "$W = 150(0.09 - 0.01) = 12\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p012
+    topics: [math.calculus.integral-applications]
+    difficulty: 3
+    type: numeric
+    stem: "แรง $F(x) = 3x^2$ นิวตันผลักวัตถุไปตามแกน $x$ จาก $x = 0$ ถึง $x = 2$ เมตร งานทั้งหมดกี่จูล"
+    answer: { value: 8, unit: J }
+    hints:
+      - "$W = \\displaystyle\\int_0^2 3x^2\\,dx$"
+      - "ปฏิยานุพันธ์ $x^3$"
+    misconceptions:
+      - { match: 24, feedback: "ใช้แรงที่ปลาย $F(2) = 12$ คูณระยะ 2 แรงไม่คงตัวต้องอินทิเกรต" }
+      - { match: 12, feedback: "12 นิวตันคือแรงที่ $x = 2$ ไม่ใช่งาน" }
+    solution: "$W = \\Big[x^3\\Big]_0^2 = 8\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p013
+    topics: [math.calculus.integral-applications]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเก็บน้ำของโรงเรียนในนครปฐมเป็นทรงกระบอกตั้ง รัศมี 1 เมตร สูง 2 เมตร มีน้ำเต็ม ต้องใช้งานกี่กิโลจูลจึงสูบน้ำทั้งหมดออกทางขอบบนของถัง ($\\rho = 1000\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$ ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 61.6, tolerance: 0.2, unit: kJ }
+    hints:
+      - "ชั้นน้ำที่ความสูง $y$ จากก้น หนา $dy$ มีน้ำหนัก $\\rho g\\pi(1)^2\\,dy$ และต้องยกขึ้น $2 - y$ เมตร"
+      - "$W = \\displaystyle\\int_0^2 9800\\pi(2 - y)\\,dy$"
+    misconceptions:
+      - { match: 123.2, feedback: "คิดว่าน้ำทุกชั้นต้องยกสูง 2 เมตร แต่ชั้นบนยกระยะสั้นกว่า" }
+      - { match: 19.6, feedback: "ลืมคูณพื้นที่หน้าตัด $\\pi r^2 = \\pi$" }
+    solution: "$W = 9800\\pi\\Big[2y - \\tfrac{y^2}{2}\\Big]_0^2 = 9800\\pi(2) \\approx 61{,}575\\ \\mathrm{J} \\approx 61.6\\ \\mathrm{kJ}$ (เท่ากับยกน้ำทั้งหมดขึ้นระยะ 1 เมตร ซึ่งเป็นระยะของจุดศูนย์กลางมวล)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p014
+    topics: [math.calculus.integral-applications]
+    difficulty: 4
+    type: numeric
+    stem: "ประตูระบายน้ำของคลองในสุพรรณบุรีเป็นแผ่นสี่เหลี่ยมผืนผ้ากว้าง 3 เมตร สูง 2 เมตร ตั้งตรง ขอบบนอยู่ที่ผิวน้ำพอดี น้ำดันประตูด้วยแรงกี่กิโลนิวตัน ($\\rho = 1000\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$)"
+    answer: { value: 58.8, tolerance: 0.1, unit: kN }
+    hints:
+      - "แถบที่ความลึก $h$ กว้าง 3 เมตร หนา $dh$ รับแรง $\\rho g h(3)\\,dh$"
+      - "$F = \\displaystyle\\int_0^2 9800(3)h\\,dh$"
+    misconceptions:
+      - { match: 117.6, feedback: "ใช้ความดันที่ก้น ($h = 2$) กับทั้งแผ่น แต่ส่วนบนรับความดันน้อยกว่า" }
+    solution: "$F = 29400\\Big[\\tfrac{h^2}{2}\\Big]_0^2 = 58{,}800\\ \\mathrm{N} = 58.8\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p015
+    topics: [math.calculus.integral-applications]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาพิกัด $\\bar{x}$ ของจุดเซนทรอยด์ของบริเวณใต้ $y = x^2$ จาก $x = 0$ ถึง $x = 2$"
+    answer: { value: 1.5, tolerance: 0.01 }
+    hints:
+      - "$A = \\displaystyle\\int_0^2 x^2\\,dx = \\tfrac83$"
+      - "$\\bar{x} = \\dfrac1A\\displaystyle\\int_0^2 x\\cdot x^2\\,dx$"
+    misconceptions:
+      - { match: 1, feedback: "จุดกึ่งกลางของช่วงใช้ได้เมื่อรูปสมมาตร บริเวณนี้หนาทางขวามากกว่า" }
+      - { match: 4, feedback: "4 คือ $\\int x^3\\,dx$ ยังไม่ได้หารด้วยพื้นที่" }
+    solution: "$\\bar{x} = \\dfrac{4}{8/3} = 1.5$ อยู่ทางขวาของจุดกึ่งกลาง เพราะส่วนที่สูงอยู่ทางขวา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p016
+    topics: [math.calculus.integral-applications]
+    difficulty: 4
+    type: numeric
+    stem: "ทรงตันหนึ่งยาวตามแกน $x$ จาก $x = 0$ ถึง 6 หน้าตัดที่ตำแหน่ง $x$ เป็นสี่เหลี่ยมจัตุรัสยาวด้านละ $\\dfrac{x}{2}$ จงหาปริมาตร"
+    answer: { value: 18, unit: ลูกบาศก์หน่วย }
+    hints:
+      - "พื้นที่หน้าตัด $A(x) = \\left(\\tfrac{x}{2}\\right)^2 = \\tfrac{x^2}{4}$"
+      - "$V = \\displaystyle\\int_0^6 \\tfrac{x^2}{4}\\,dx$"
+    misconceptions:
+      - { match: 54, feedback: "ใช้หน้าตัดใหญ่สุด ($3 \\times 3$) ตลอดความยาว ซึ่งเป็นปริมาตรปริซึม หน้าตัดเล็กลงเมื่อเข้าใกล้ $x = 0$" }
+      - { match: 9, feedback: "ด้านยาว $\\tfrac{x}{2}$ ต้องยกกำลังสองเป็นพื้นที่ก่อนอินทิเกรต" }
+    solution: "$V = \\Big[\\tfrac{x^3}{12}\\Big]_0^6 = 18$ ตรงกับพีระมิดฐาน $3 \\times 3$ สูง 6: $\\tfrac13(9)(6) = 18$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p017
+    topics: [math.calculus.integral-applications]
+    difficulty: 5
+    type: numeric
+    stem: "ประตูระบายน้ำรูปสามเหลี่ยมหัวกลับ (ดูภาพ) ขอบบนยาว 6 เมตรอยู่ที่ผิวน้ำ ยอดล่างลึก 3 เมตร น้ำดันประตูด้วยแรงกี่กิโลนิวตัน ($\\rho = 1000\\ \\mathrm{kg/m^3}$, $g = 9.8\\ \\mathrm{m/s^2}$)"
+    figure:
+      src: triangle-gate.svg
+      alt: "ประตูรูปสามเหลี่ยมหัวกลับ ขอบบนยาว 6 m อยู่ที่ผิวน้ำ ยอดล่างลึก 3 m แถบแนวนอนบาง ๆ ที่ความลึก h กว้าง w(h) หนา dh"
+    answer: { value: 88.2, tolerance: 0.2, unit: kN }
+    hints:
+      - "สามเหลี่ยมคล้าย: $w(h) = 6\\left(1 - \\tfrac{h}{3}\\right) = 6 - 2h$"
+      - "$F = \\displaystyle\\int_0^3 9800\\,h(6 - 2h)\\,dh$"
+    misconceptions:
+      - { match: 132.3, feedback: "ใช้ความลึกครึ่งหนึ่ง (1.5 m) คูณพื้นที่ แต่ส่วนกว้างของประตูอยู่ใกล้ผิวน้ำ ความลึกเฉลี่ยที่ถูกคือ 1 m" }
+      - { match: 264.6, feedback: "ใช้ความกว้างคงที่ 6 เมตรทั้งที่ประตูแคบลงตามความลึก" }
+    solution: "$F = 9800\\Big[3h^2 - \\tfrac{2h^3}{3}\\Big]_0^3 = 9800(27 - 18) = 88{,}200\\ \\mathrm{N} = 88.2\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p018
+    topics: [math.calculus.integral-applications]
+    difficulty: 5
+    type: numeric
+    stem: "แท่งยาว 3 เมตรมีความหนาแน่น $\\rho(x) = 1 + x^2$ กิโลกรัมต่อเมตร ($x$ วัดจากปลายซ้าย) จงหาตำแหน่งจุดศูนย์กลางมวล (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 2.06, tolerance: 0.01, unit: เมตร }
+    hints:
+      - "$m = \\displaystyle\\int_0^3 (1 + x^2)\\,dx = 12$"
+      - "$\\bar{x} = \\dfrac1m\\displaystyle\\int_0^3 x(1 + x^2)\\,dx$"
+    misconceptions:
+      - { match: 1.5, feedback: "จุดกึ่งกลางใช้ได้เมื่อความหนาแน่นคงตัว ทางขวาหนักกว่า" }
+      - { match: 8.25, feedback: "หารด้วยความยาว 3 ต้องหารด้วยมวล 12" }
+    solution: "$\\int_0^3 (x + x^3)\\,dx = 4.5 + 20.25 = 24.75$ จึง $\\bar{x} = \\tfrac{24.75}{12} \\approx 2.06$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p019
+    topics: [math.calculus.integral-applications]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ปริมาณกับปริพันธ์ที่ใช้หา"
+    pairs:
+      - { left: "ปริมาตรจากการหมุน $y = f(x)$ รอบแกน $x$", right: "$\\int \\pi[f(x)]^2\\,dx$" }
+      - { left: "งานยืดสปริง", right: "$\\int kx\\,dx$" }
+      - { left: "แรงของน้ำบนผนังแนวตั้ง", right: "$\\int \\rho g h\\,w(h)\\,dh$" }
+      - { left: "มวลของแท่งที่ความหนาแน่นไม่คงตัว", right: "$\\int \\rho(x)\\,dx$" }
+      - { left: "พื้นที่ระหว่างสองเส้นโค้ง", right: "$\\int [f(x) - g(x)]\\,dx$" }
+    hints:
+      - "คิดว่าชิ้นบาง ๆ หนึ่งชิ้นมีปริมาณเท่าใด"
+      - "แรงของน้ำขึ้นกับความลึกและความกว้างของแถบ"
+    solution: "ปริมาตร → $\\pi f^2$; สปริง → $kx$; แรงน้ำ → $\\rho g h\\,w$; มวล → $\\rho$; พื้นที่ → บน − ล่าง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integral-applications.p020
+    topics: [math.calculus.integral-applications]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหาพื้นที่ระหว่างเส้นโค้งสองเส้น"
+    items:
+      - "วาดกราฟทั้งสองเส้นโดยประมาณ"
+      - "หาจุดตัดเพื่อใช้เป็นขอบเขต"
+      - "ตรวจว่าเส้นใดอยู่บนในแต่ละช่วง"
+      - "ตั้งปริพันธ์ของ บน − ล่าง"
+      - "คำนวณด้วยทฤษฎีบทหลักมูลแล้วตรวจว่าได้ค่าบวก"
+    hints:
+      - "ขอบเขตมาจากจุดตัด"
+      - "ต้องรู้ว่าเส้นใดอยู่บนก่อนตั้งปริพันธ์"
+    solution: "วาดกราฟ → จุดตัด → ระบุเส้นบน → ตั้งปริพันธ์ บน − ล่าง → คำนวณและตรวจว่าเป็นบวก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
