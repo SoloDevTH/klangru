@@ -1,0 +1,71 @@
+id: chemistry.equilibrium.chemical-equilibrium
+subject: chemistry
+title: { th: สมดุลเคมี, en: Chemical equilibrium }
+summary: ปฏิกิริยาผันกลับได้และสมดุลพลวัต ค่าคงที่สมดุล การคำนวณความเข้มข้นที่สมดุล ปฏิกิริยาหลายขั้นตอน หลักของเลอชาเตอลิเอ และสมดุลในสิ่งมีชีวิต ธรรมชาติ และอุตสาหกรรม
+difficulty: 6.5
+minutes: 45
+prerequisites: [chemistry.kinetics.reaction-rates]
+encompasses:
+  - { id: chemistry.kinetics.reaction-rates, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: eq-conc-time.svg
+    alt: "กราฟสองแผง ของปฏิกิริยา H₂ + I₂ ⇌ 2HI เริ่มจาก H₂ และ I₂ 1.0 mol/L แผงซ้ายความเข้มข้นกับเวลา: เส้น H₂ และ I₂ ลดจาก 1.0 แล้วคงที่ราว 0.21 mol/L เส้น HI เพิ่มจาก 0 แล้วคงที่ราว 1.57 mol/L เส้นประแนวตั้งบอกเวลาที่เริ่มภาวะสมดุล แผงขวาอัตรากับเวลา: อัตราไปข้างหน้า (เส้นทึบ) ลดลงจากค่าสูง อัตราย้อนกลับ (เส้นประ) เพิ่มจากศูนย์ จนทั้งสองเท่ากันและคงที่ที่ภาวะสมดุล"
+    caption: "ที่ภาวะสมดุล อัตราไปข้างหน้าเท่ากับอัตราย้อนกลับ ความเข้มข้นจึงคงที่ แต่ไม่เท่ากัน"
+  - { type: check, problem: chemistry.equilibrium.chemical-equilibrium.p001, prompt: "อะไรเท่ากันที่ภาวะสมดุล" }
+  - type: interactive
+    title: ลองเปลี่ยนอัตราไปข้างหน้าและย้อนกลับของ A ⇌ B
+    caption: "เส้นที่ลดลงคือความเข้มข้นของ A เส้นที่เพิ่มขึ้นคือ B (เริ่มจาก A 1 mol/L แกน x คือเวลา) f คือค่าคงที่อัตราไปข้างหน้า r คือค่าคงที่อัตราย้อนกลับ สังเกตว่าเส้นราบที่ B = f/(f+r) ซึ่งทำให้ K = [B]/[A] = f/r และถ้าเพิ่มทั้ง f และ r เท่ากัน กราฟถึงสมดุลเร็วขึ้นแต่ระดับสมดุลไม่เปลี่ยน เหมือนผลของตัวเร่ง"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{f}{f+r}\\cdot(1-e^{-(f+r)\\cdot x})", "1-\\frac{f}{f+r}\\cdot(1-e^{-(f+r)\\cdot x})"]
+      sliders:
+        - { name: f, min: 0.1, max: 3, step: 0.1, value: 1, label: อัตราไปข้างหน้า }
+        - { name: r, min: 0.1, max: 3, step: 0.1, value: 0.5, label: อัตราย้อนกลับ }
+      x: [0, 8]
+      y: [0, 1.2]
+  - type: worked-example
+    title: หาความเข้มข้นที่สมดุลด้วยตาราง ICE
+    problem: "ใส่ $\\mathrm{H_2}$ 1.00 mol และ $\\mathrm{I_2}$ 1.00 mol ในภาชนะ 1.00 L ที่ 430 °C ($K_c = 54.3$) จงหาความเข้มข้นของ HI ที่ภาวะสมดุล"
+    steps:
+      - text: "ตาราง ICE (mol/L): I: $\\mathrm{H_2}$ 1.00, $\\mathrm{I_2}$ 1.00, HI 0 · C: $-x$, $-x$, $+2x$ · E: $1.00 - x$, $1.00 - x$, $2x$"
+        why: "สัมประสิทธิ์ของ HI เป็น 2 จึงเพิ่ม $2x$ ขณะที่ $\\mathrm{H_2}$ ลด $x$"
+      - text: "แทนในสูตร: $54.3 = \\dfrac{(2x)^2}{(1.00 - x)^2}$"
+      - text: "ถอดรากที่สองทั้งสองข้าง: $\\dfrac{2x}{1.00 - x} = \\sqrt{54.3} = 7.369$"
+      - text: "แก้สมการ: $2x = 7.369 - 7.369x$ ได้ $x = 7.369/9.369 = 0.787$"
+      - text: "$[\\mathrm{HI}] = 2x = 1.57$ mol/L และ $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 0.213$ mol/L ตรวจ: $1.573^2 / 0.2135^2 \\approx 54.3$"
+    answer: "[HI] ≈ 1.57 mol/L"
+  - { type: check, problem: chemistry.equilibrium.chemical-equilibrium.p010, prompt: "เทียบ Q กับ K" }
+  - type: worked-example
+    title: คำนวณค่าคงที่สมดุลจากข้อมูลการทดลอง
+    problem: "ใส่ $\\mathrm{SO_2}$ 0.400 mol และ $\\mathrm{O_2}$ 0.200 mol ในภาชนะ 1.00 L ที่อุณหภูมิหนึ่ง เมื่อถึงสมดุลมี $\\mathrm{SO_3}$ 0.300 mol จงหา $K_c$ ของ $\\mathrm{2SO_2(g) + O_2(g) \\rightleftharpoons 2SO_3(g)}$"
+    steps:
+      - text: "$\\mathrm{SO_3}$ เกิด 0.300 mol/L ตามอัตราส่วน $\\mathrm{SO_2}$ ใช้ไป 0.300 และ $\\mathrm{O_2}$ ใช้ไป 0.150 mol/L"
+      - text: "ที่สมดุล: $[\\mathrm{SO_2}] = 0.400 - 0.300 = 0.100$ · $[\\mathrm{O_2}] = 0.200 - 0.150 = 0.050$ · $[\\mathrm{SO_3}] = 0.300$"
+        why: "ต้องใช้ความเข้มข้นที่สมดุล ไม่ใช่ความเข้มข้นเริ่มต้น"
+      - text: "$K_c = \\dfrac{[\\mathrm{SO_3}]^2}{[\\mathrm{SO_2}]^2[\\mathrm{O_2}]} = \\dfrac{0.300^2}{0.100^2 \\times 0.050} = 180$"
+    answer: "Kc = 180"
+glossary:
+  - { term: ปฏิกิริยาผันกลับได้, definition: ปฏิกิริยาที่ผลิตภัณฑ์เปลี่ยนกลับเป็นสารตั้งต้นได้ เขียนด้วยลูกศรสองทาง }
+  - { term: สมดุลพลวัต, definition: ภาวะที่อัตราไปข้างหน้าเท่ากับอัตราย้อนกลับ ปฏิกิริยายังเกิดอยู่แต่ความเข้มข้นคงที่ }
+  - { term: ค่าคงที่สมดุล (K), definition: อัตราส่วนของความเข้มข้นผลิตภัณฑ์ต่อสารตั้งต้นที่สมดุล ยกกำลังด้วยสัมประสิทธิ์ ขึ้นกับอุณหภูมิเท่านั้น }
+  - { term: ผลหารปฏิกิริยา (Q), definition: ค่าที่คำนวณแบบเดียวกับ K แต่ใช้ความเข้มข้น ณ ขณะใดก็ได้ ใช้ทำนายทิศทาง }
+  - { term: หลักของเลอชาเตอลิเอ, definition: ระบบที่สมดุลเมื่อถูกรบกวนจะปรับตัวในทิศที่ลดผลของการรบกวน }
+  - { term: ตาราง ICE, definition: "ตารางความเข้มข้นเริ่มต้น (I) การเปลี่ยนแปลง (C) และที่สมดุล (E) ใช้คำนวณสมดุล" }
+flashcards:
+  - { front: "ที่ภาวะสมดุลอะไรเท่ากัน", back: "อัตราไปข้างหน้ากับอัตราย้อนกลับ (ความเข้มข้นคงที่ แต่ไม่จำเป็นต้องเท่ากัน)" }
+  - { front: "Kc ของ aA + bB ⇌ cC + dD", back: "[C]^c[D]^d / [A]^a[B]^b ไม่ใส่ของแข็งและของเหลวบริสุทธิ์" }
+  - { front: "กลับทิศสมการ / คูณด้วย n / รวมสองขั้น", back: "1/K · Kⁿ · K₁ × K₂" }
+  - { front: "Q < K", back: "ปฏิกิริยาดำเนินไปข้างหน้า" }
+  - { front: "สิ่งเดียวที่เปลี่ยนค่า K", back: "อุณหภูมิ" }
+references:
+  - { title: "สมดุลเคมี", url: "https://th.wikipedia.org/wiki/สมดุลเคมี", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Le Chatelier's principle", url: "https://en.wikipedia.org/wiki/Le_Chatelier%27s_principle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.2 Equilibrium Constants (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/13-2-equilibrium-constants", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "13.4 Equilibrium Calculations (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/13-4-equilibrium-calculations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

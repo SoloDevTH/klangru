@@ -1,0 +1,60 @@
+id: chemistry.practice.problem-solving
+subject: chemistry
+title: { th: การแก้ปัญหาด้วยความรู้เคมี, en: Solving problems with chemistry }
+summary: กำหนดปัญหาจากสถานการณ์จริง บูรณาการความรู้เคมีกับสาขาอื่น ใช้กระบวนการออกแบบเชิงวิศวกรรม คำนวณปริมาณสาร ทดสอบอย่างปลอดภัย และนำเสนอผลงาน
+difficulty: 6
+minutes: 40
+prerequisites: [chemistry.stoichiometry.reactions, chemistry.lab.safety-measurement]
+encompasses:
+  - { id: chemistry.stoichiometry.reactions, weight: 0.4 }
+  - { id: chemistry.lab.safety-measurement, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: design-cycle.svg
+    alt: "วงจร 6 กล่องเรียงเป็นวงกลมตามเข็มนาฬิกา: 1 ระบุปัญหา (เกณฑ์ ข้อจำกัด) → 2 รวบรวมข้อมูล (ความรู้เคมี สาขาอื่น) → 3 เสนอและเลือกวิธี (เทียบด้วยเกณฑ์) → 4 วางแผนและคำนวณ (ปริมาณ ความปลอดภัย) → 5 ทดสอบและประเมิน (วัดผล ปรับปรุง) → 6 นำเสนอ (กราฟ อินโฟกราฟิก) แล้วกลับไปขั้น 1 มีลูกศรเส้นประสีเขียวจากขั้น 5 กลับไปขั้น 3 เขียนว่ายังไม่ผ่านเกณฑ์ ปรับแล้วทดสอบใหม่"
+    caption: "การแก้ปัญหาเป็นวงจร ถ้าผลทดสอบไม่ผ่านเกณฑ์ ให้กลับไปปรับวิธีแล้วทดสอบใหม่"
+  - { type: check, problem: chemistry.practice.problem-solving.p002, prompt: "ปัญหาที่ดีต้องมีตัวเลขเป้าหมาย" }
+  - type: worked-example
+    title: คำนวณปูนขาวสำหรับสะเทินน้ำเสีย
+    problem: "น้ำเสีย 10 m³ มีกรดซัลฟิวริก 0.010 mol/L ใช้ปูนขาวที่มี $\\mathrm{Ca(OH)_2}$ 90% (มวลโมเลกุล 74.1) ต้องใช้ปูนขาวกี่กิโลกรัม"
+    steps:
+      - text: "เขียนสมการที่ดุลแล้ว: $\\mathrm{H_2SO_4 + Ca(OH)_2 \\to CaSO_4 + 2H_2O}$ อัตราส่วนโมล 1 : 1"
+      - text: "แปลงปริมาตร: $10\\,\\mathrm{m^3} = 10{,}000\\,\\mathrm{L}$ โมลกรด $= 10000 \\times 0.010 = 100\\,\\mathrm{mol}$"
+      - text: "โมล $\\mathrm{Ca(OH)_2} = 100\\,\\mathrm{mol}$ มวล $= 100 \\times 74.1 = 7410\\,\\mathrm{g} = 7.41\\,\\mathrm{kg}$"
+      - text: "ปูนขาวมีสารที่ต้องการ 90% จึงใช้ $7.41 \\div 0.90 = 8.23\\,\\mathrm{kg}$"
+        why: "สารที่ไม่บริสุทธิ์ต้องใช้มวลมากขึ้นเพื่อให้ได้สารที่ต้องการเท่าเดิม จึงหาร ไม่ใช่คูณ"
+      - text: "ในทางปฏิบัติ ไม่เติมทั้งหมดครั้งเดียว ให้เติมทีละส่วนพร้อมวัด pH เพราะความเข้มข้นจริงของน้ำเสียเปลี่ยนได้"
+    answer: "ใช้ปูนขาวราว 8.23 kg"
+  - type: worked-example
+    title: เลือกทางเลือกด้วยตารางตัดสินใจ
+    problem: "เกณฑ์และน้ำหนัก: ราคา 0.4 ความปลอดภัย 0.4 กากตะกอนน้อย 0.2 คะแนนเต็ม 5 · ปูนขาว: 5, 3, 2 · โซดาไฟ: 2, 2, 5 · หินปูน: 4, 5, 2 ทางเลือกใดดีที่สุด"
+    steps:
+      - text: "ปูนขาว: $0.4(5) + 0.4(3) + 0.2(2) = 2.0 + 1.2 + 0.4 = 3.6$"
+      - text: "โซดาไฟ: $0.4(2) + 0.4(2) + 0.2(5) = 0.8 + 0.8 + 1.0 = 2.6$"
+      - text: "หินปูน: $0.4(4) + 0.4(5) + 0.2(2) = 1.6 + 2.0 + 0.4 = 4.0$"
+        why: "น้ำหนักบอกว่าเกณฑ์ใดสำคัญกว่า ต้องตกลงน้ำหนักก่อนให้คะแนน เพื่อไม่ให้ลำเอียง"
+      - text: "หินปูนได้คะแนนสูงสุด แต่ต้องตรวจข้อจำกัดด้วย เช่น หินปูนทำปฏิกิริยาช้า ถ้าพื้นที่ถังไม่พอ อาจต้องใช้หินปูนร่วมกับปูนขาว"
+    answer: "หินปูนได้ 4.0 คะแนน สูงสุด ถ้าผ่านข้อจำกัดทุกข้อจึงเลือกใช้"
+  - { type: check, problem: chemistry.practice.problem-solving.p004, prompt: "ดูอัตราส่วนโมลในสมการ" }
+glossary:
+  - { term: กระบวนการออกแบบเชิงวิศวกรรม, definition: ขั้นตอนแก้ปัญหาอย่างเป็นระบบ ตั้งแต่ระบุปัญหา ออกแบบ ทดสอบ ปรับปรุง จนนำเสนอ }
+  - { term: เกณฑ์, definition: คุณสมบัติที่ใช้เปรียบเทียบทางเลือก ยิ่งดีมากยิ่งได้คะแนนสูง }
+  - { term: ข้อจำกัด, definition: เงื่อนไขที่ทุกทางเลือกต้องผ่าน เช่น กฎหมายหรืองบประมาณ }
+  - { term: ตารางตัดสินใจ, definition: ตารางให้คะแนนทางเลือกตามเกณฑ์ที่ถ่วงน้ำหนัก แล้วรวมคะแนนเพื่อเลือก }
+  - { term: เอกสารข้อมูลความปลอดภัย (SDS), definition: เอกสารที่บอกอันตราย วิธีจัดเก็บ อุปกรณ์ป้องกัน และการปฐมพยาบาลของสารเคมี }
+flashcards:
+  - { front: "ขั้นของกระบวนการออกแบบเชิงวิศวกรรม", back: "ระบุปัญหา → รวบรวมข้อมูล → เลือกวิธี → วางแผนและคำนวณ → ทดสอบและปรับปรุง → นำเสนอ" }
+  - { front: "เกณฑ์ต่างจากข้อจำกัดอย่างไร", back: "เกณฑ์ใช้เปรียบเทียบ ยิ่งดียิ่งได้คะแนน ข้อจำกัดเป็นเงื่อนไขที่ต้องผ่าน" }
+  - { front: "สารไม่บริสุทธิ์ x% ต้องใช้มวลเท่าใด", back: "มวลสารบริสุทธิ์ที่คำนวณได้ ÷ (x/100)" }
+  - { front: "เจือจางกรดเข้มข้นอย่างไร", back: "เทกรดลงในน้ำช้า ๆ พร้อมคน ห้ามเทน้ำลงในกรด" }
+references:
+  - { title: "Engineering design process", url: "https://en.wikipedia.org/wiki/Engineering_design_process", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Green chemistry", url: "https://en.wikipedia.org/wiki/Green_chemistry", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Industrial wastewater treatment", url: "https://en.wikipedia.org/wiki/Industrial_wastewater_treatment", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Safety data sheet", url: "https://en.wikipedia.org/wiki/Safety_data_sheet", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
