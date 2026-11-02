@@ -1,0 +1,78 @@
+id: physics.electricity.electric-field
+subject: physics
+title: { th: สนามไฟฟ้าและกฎของเกาส์, en: "Electric fields and Gauss's law" }
+summary: ระดับมหาวิทยาลัย สนามไฟฟ้าจากจุดประจุและการกระจายประจุต่อเนื่องด้วยปริพันธ์ ฟลักซ์ไฟฟ้า กฎของเกาส์ และตัวนำในสมดุลไฟฟ้าสถิต
+difficulty: 8
+minutes: 50
+prerequisites: [physics.electricity.charge, math.calculus.vectors-3d, math.calculus.integral-applications]
+encompasses:
+  - { id: physics.electricity.charge, weight: 0.4 }
+  - { id: math.calculus.integral-applications, weight: 0.3 }
+  - { id: math.calculus.vectors-3d, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: เส้นสนามไฟฟ้าของประจุบวกและลบ
+    src: dipole-field.svg
+    alt: "ประจุบวกทางซ้ายและประจุลบทางขวา เส้นสนามที่คำนวณจากกฎของคูลอมบ์ออกจากประจุบวกเป็นรัศมีทุกทิศ เส้นด้านขวาโค้งเข้าสู่ประจุลบ เส้นด้านซ้ายโค้งออกไปไกล เส้นชิดกันมากใกล้ประจุ หมายถึงสนามแรง"
+  - type: worked-example
+    title: สนามของเส้นประจุ สองวิธี
+    problem: "เส้นลวดมีประจุ $\\lambda = 3\\ \\mathrm{nC/m}$ จงหาสนามที่ระยะ $5\\ \\mathrm{cm}$ ด้วยกฎของเกาส์ (ถือว่ายาวมาก) แล้วเทียบกับการอินทิเกรตจากแท่งยาว $1\\ \\mathrm{m}$ ที่จุดบนเส้นแบ่งครึ่งตั้งฉาก"
+    steps:
+      - text: "ผิวเกาส์ทรงกระบอกรัศมี $r$ ยาว $\\ell$: สนามตั้งฉากกับผิวข้างและขนานกับฝาทั้งสอง ฟลักซ์ $= E(2\\pi r\\ell)$"
+        why: "ความสมมาตรทรงกระบอกทำให้ $E$ ชี้ออกในแนวรัศมีและมีขนาดเท่ากันทั่วผิวข้าง"
+      - text: "$E(2\\pi r\\ell) = \\lambda\\ell/\\varepsilon_0$ ได้ $E = \\dfrac{2k\\lambda}{r} = \\dfrac{2(9 \\times 10^9)(3 \\times 10^{-9})}{0.05} = 1080\\ \\mathrm{N/C}$"
+      - text: "อินทิเกรตจากแท่งยาว $L$: องค์ประกอบตามแนวแท่งหักล้างกัน เหลือ $E = \\dfrac{2k\\lambda}{r}\\cdot\\dfrac{L/2}{\\sqrt{(L/2)^2 + r^2}}$"
+      - text: "แทน $L = 1$, $r = 0.05$: ตัวคูณ $= 0.5/\\sqrt{0.25 + 0.0025} = 0.995$ ได้ $E = 1075\\ \\mathrm{N/C}$"
+        why: "เมื่อ $L \\gg r$ ตัวคูณเข้าใกล้ 1 ผลของกฎของเกาส์จึงเป็นค่าประมาณที่ดีมากใกล้กลางเส้นที่ยาว"
+    answer: "กฎของเกาส์ให้ $1080\\ \\mathrm{N/C}$ แท่งยาว $1\\ \\mathrm{m}$ ให้ $1075\\ \\mathrm{N/C}$ ต่างกันเพียง 0.5%"
+  - type: figure
+    title: ผิวเกาส์สามแบบ
+    src: gauss-surfaces.svg
+    alt: "ซ้าย: จุดประจุบวกล้อมด้วยผิวเกาส์ทรงกลม (เส้นประ) สนามชี้ออกเป็นรัศมี E · 4πr² = q/ε₀ กลาง: เส้นประจุยาว λ ล้อมด้วยผิวเกาส์ทรงกระบอกรัศมี r ยาว ℓ สนามชี้ออกตั้งฉากกับเส้น E · 2πrℓ = λℓ/ε₀ ขวา: แผ่นระนาบที่มีประจุ ผิวเกาส์เป็นกล่องทะลุแผ่น สนามชี้ออกทั้งสองด้าน E · 2A = σA/ε₀"
+  - { type: check, problem: physics.electricity.electric-field.p007, prompt: "ผิวเกาส์ทรงกระบอก สนามแปรผกผันกับ r" }
+  - type: worked-example
+    title: สนามภายในและภายนอกทรงกลมที่มีประจุ
+    problem: "ทรงกลมฉนวนรัศมี $R = 0.2\\ \\mathrm{m}$ มีประจุ $Q = 4\\ \\mathrm{nC}$ กระจายสม่ำเสมอ จงหาสนามที่ $r = 0.1$, $0.2$ และ $0.4\\ \\mathrm{m}$ แล้วเทียบกับทรงกลมโลหะที่มีประจุเท่ากัน"
+    steps:
+      - text: "ผิวเกาส์ทรงกลมรัศมี $r$: $E(4\\pi r^2) = Q_{\\text{ภายใน}}/\\varepsilon_0$ จึง $E = kQ_{\\text{ภายใน}}/r^2$"
+      - text: "$r = 0.1$ (ภายใน): $Q_{\\text{ภายใน}} = Q(r/R)^3 = 0.5\\ \\mathrm{nC}$ ได้ $E = 9 \\times 0.5/0.01 = 450\\ \\mathrm{N/C}$"
+        why: "ประจุต่อปริมาตรคงตัว ประจุภายในจึงเป็นสัดส่วนกับปริมาตร $r^3$"
+      - text: "$r = 0.2$ (ผิว): $E = 9 \\times 4/0.04 = 900\\ \\mathrm{N/C}$"
+      - text: "$r = 0.4$ (ภายนอก): $E = 9 \\times 4/0.16 = 225\\ \\mathrm{N/C}$ เหมือนจุดประจุ $4\\ \\mathrm{nC}$ ที่ศูนย์กลาง"
+      - text: "ทรงกลมโลหะ: ประจุอยู่ที่ผิวทั้งหมด จึง $E = 0$ ที่ $r = 0.1$ ส่วนที่ผิวและภายนอกได้ค่าเท่ากับทรงกลมฉนวน"
+        why: "ตรวจความต่อเนื่อง: สูตรภายใน $kQr/R^3$ ที่ $r = R$ ได้ $kQ/R^2 = 900$ ตรงกับสูตรภายนอก"
+    answer: "ฉนวน: $450$, $900$, $225\\ \\mathrm{N/C}$ โลหะ: $0$, $900$, $225\\ \\mathrm{N/C}$"
+  - type: figure
+    title: สนามไฟฟ้าของทรงกลมที่มีประจุตามระยะ
+    src: sphere-field-graph.svg
+    alt: "กราฟ E/E_R กับ r/R ทรงกลมฉนวนประจุสม่ำเสมอ สนามเพิ่มเป็นเส้นตรงจาก 0 ที่ศูนย์กลางถึง 1 ที่ผิว (r = R) แล้วลดลงแบบ 1/r² ภายนอก ทรงกลมตัวนำมีสนามเป็นศูนย์ตลอดช่วงภายใน (เส้นประบนแกน) ภายนอกทั้งสองแบบเหมือนจุดประจุ"
+  - { type: check, problem: physics.electricity.electric-field.p010, prompt: "ประจุส่วนเกินของตัวนำอยู่ที่ผิวนอก" }
+  - type: simulation
+    title: "ประจุและสนาม (PhET Charges and Fields)"
+    url: https://phet.colorado.edu/en/simulations/charges-and-fields
+    provider: phet
+    note: "วางประจุบวกหลายตัวเรียงเป็นแถวยาว แล้วใช้เซนเซอร์วัดสนามใกล้กลางแถวที่ระยะต่าง ๆ สังเกตว่าสนามลดลงช้ากว่า 1/r² (ใกล้ 1/r แบบเส้นประจุ) ลองวางประจุบวกกับลบคู่กันแล้วดูเส้นสนามเทียบกับภาพในบทเรียน"
+glossary:
+  - { term: ความหนาแน่นประจุ, definition: "ประจุต่อความยาว λ ต่อพื้นที่ σ หรือต่อปริมาตร ρ ใช้เขียน dq ในการอินทิเกรต (charge density)" }
+  - { term: ฟลักซ์ไฟฟ้า, definition: "ปริพันธ์ของ E·dA บนพื้นผิว บอกปริมาณเส้นสนามที่พุ่งผ่านผิว หน่วย N·m²/C (electric flux)" }
+  - { term: กฎของเกาส์, definition: "ฟลักซ์ไฟฟ้าสุทธิผ่านผิวปิดเท่ากับประจุภายในหารด้วย ε₀ (Gauss's law)" }
+  - { term: ผิวเกาส์, definition: "ผิวปิดสมมติที่เลือกให้สนามคงตัวและตั้งฉากกับผิว เพื่อใช้กฎของเกาส์หาสนาม (Gaussian surface)" }
+  - { term: สมดุลไฟฟ้าสถิต, definition: "สภาวะที่ประจุในตัวนำไม่เคลื่อนที่ สนามภายในเนื้อตัวนำเป็นศูนย์ (electrostatic equilibrium)" }
+  - { term: กรงฟาราเดย์, definition: "โพรงที่ล้อมด้วยตัวนำ สนามไฟฟ้าภายในเป็นศูนย์ ใช้ป้องกันฟ้าผ่าและสัญญาณรบกวน (Faraday cage)" }
+flashcards:
+  - { front: "กฎของเกาส์", back: "$\\oint \\vec E \\cdot d\\vec A = Q_{\\text{ภายใน}}/\\varepsilon_0$" }
+  - { front: "สนามของเส้นประจุยาวมาก", back: "$E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0 r} = \\dfrac{2k\\lambda}{r}$" }
+  - { front: "สนามของแผ่นประจุกว้างมาก กับที่ผิวตัวนำ", back: "แผ่นประจุ $\\sigma/2\\varepsilon_0$ ผิวตัวนำ $\\sigma/\\varepsilon_0$" }
+  - { front: "สนามภายในทรงกลมฉนวนประจุสม่ำเสมอ", back: "$E = kQr/R^3$ เพิ่มตาม $r$ ภายนอก $kQ/r^2$" }
+  - { front: "ตัวนำในสมดุลไฟฟ้าสถิต", back: "$E = 0$ ในเนื้อ ประจุอยู่ที่ผิว สนามที่ผิวตั้งฉากกับผิว" }
+references:
+  - { title: "Gauss's law", url: "https://en.wikipedia.org/wiki/Gauss%27s_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "กฎของเกาส์", url: "https://th.wikipedia.org/wiki/กฎของเกาส์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "5.5 Calculating Electric Fields of Charge Distributions (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/5-5-calculating-electric-fields-of-charge-distributions", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "6.3 Applying Gauss's Law (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/6-3-applying-gausss-law", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

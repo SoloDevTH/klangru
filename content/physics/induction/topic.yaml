@@ -1,0 +1,84 @@
+id: physics.magnetism.induction
+subject: physics
+title: { th: การเหนี่ยวนำแม่เหล็กไฟฟ้าและความเหนี่ยวนำ, en: Electromagnetic induction and inductance }
+summary: ระดับมหาวิทยาลัย กฎของฟาราเดย์และเลนซ์ในรูปอนุพันธ์ อีเอ็มเอฟจากการเคลื่อนที่ กระแสวน เครื่องกำเนิดไฟฟ้าและอีเอ็มเอฟย้อนกลับ ความเหนี่ยวนำตนเองและร่วม และวงจร RL
+difficulty: 8
+minutes: 50
+prerequisites: [physics.magnetism.magnetic-field, math.calculus.differentiation-rules, physics.magnetism.magnetic-flux-forces, physics.magnetism.induction-ac]
+encompasses:
+  - { id: physics.magnetism.magnetic-field, weight: 0.4 }
+  - { id: math.calculus.differentiation-rules, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กฎของเลนซ์
+    src: lenz.svg
+    alt: "ซ้าย: แท่งแม่เหล็กหันขั้วเหนือเคลื่อนเข้าหาวงลวด สนามเหนี่ยวนำในวงชี้กลับไปหาแม่เหล็ก หน้าวงที่หันหาแม่เหล็กเป็นขั้วเหนือ ผลักแม่เหล็กต้านการเข้าใกล้ มองจากฝั่งแม่เหล็กกระแสวนทวนเข็มนาฬิกา ขวา: แม่เหล็กเคลื่อนออก สนามเหนี่ยวนำชี้ไปทางเดียวกับสนามของแม่เหล็ก หน้าวงเป็นขั้วใต้ ดูดแม่เหล็กต้านการออกห่าง กระแสวนตามเข็มนาฬิกา ใต้ภาพ: ฟลักซ์เพิ่ม สนามเหนี่ยวนำต้านทิศสนามเดิม ฟลักซ์ลด สนามเหนี่ยวนำเสริมทิศสนามเดิม"
+  - { type: check, problem: physics.magnetism.induction.p001, prompt: "ต้านการเปลี่ยนแปลงของฟลักซ์" }
+  - type: worked-example
+    title: แท่งโลหะเลื่อนบนราง
+    problem: "แท่งโลหะยาว $0.25\\ \\mathrm{m}$ เลื่อนออกจากตัวต้านทาน $0.5\\ \\Omega$ ด้วยความเร็วคงตัว $3\\ \\mathrm{m/s}$ บนรางในสนาม $0.8\\ \\mathrm{T}$ ที่พุ่งเข้าหน้ากระดาษ จงหาอีเอ็มเอฟ กระแสและทิศ แรงที่ต้องดึง และตรวจด้วยกำลัง"
+    steps:
+      - text: "พื้นที่ของวงเพิ่มด้วยอัตรา $\\ell v$ จึง $\\varepsilon = B\\ell v = 0.8 \\times 0.25 \\times 3 = 0.6\\ \\mathrm{V}$"
+      - text: "$I = \\varepsilon/R = 0.6/0.5 = 1.2\\ \\mathrm{A}$"
+      - text: "ทิศ: ฟลักซ์เข้าหน้ากระดาษเพิ่ม สนามเหนี่ยวนำต้องพุ่งออกจากหน้ากระดาษ กระแสจึงวนทวนเข็มนาฬิกา"
+        why: "กฎมือขวา: กระแสวนทวนเข็มนาฬิกาให้สนามภายในวงพุ่งออกจากหน้ากระดาษ"
+      - text: "แรงแม่เหล็กต่อแท่ง $F = I\\ell B = 1.2 \\times 0.25 \\times 0.8 = 0.24\\ \\mathrm{N}$ ต้านการเคลื่อนที่ จึงต้องดึงด้วย $0.24\\ \\mathrm{N}$"
+      - text: "ตรวจ: กำลังกล $Fv = 0.24 \\times 3 = 0.72\\ \\mathrm{W}$ เท่ากับกำลังไฟฟ้า $I^2R = 1.44 \\times 0.5 = 0.72\\ \\mathrm{W}$"
+        why: "งานที่ดึงแท่งกลายเป็นความร้อนในตัวต้านทานทั้งหมด สอดคล้องกับกฎของเลนซ์และการอนุรักษ์พลังงาน"
+    answer: "$\\varepsilon = 0.6\\ \\mathrm{V}$, $I = 1.2\\ \\mathrm{A}$ วนทวนเข็มนาฬิกา แรงดึง $0.24\\ \\mathrm{N}$"
+  - { type: check, problem: physics.magnetism.induction.p005, prompt: "อีเอ็มเอฟ ณ ขณะหนึ่งใช้อนุพันธ์" }
+  - type: worked-example
+    title: ความเหนี่ยวนำ พลังงาน และค่าคงตัวเวลาของโซเลนอยด์
+    problem: "โซเลนอยด์ยาว $0.5\\ \\mathrm{m}$ มี $1000$ รอบ พื้นที่หน้าตัด $10\\ \\mathrm{cm^2}$ ต่ออนุกรมกับ $5\\ \\Omega$ และแบตเตอรี่ $12\\ \\mathrm{V}$ จงหา $L$ ค่าคงตัวเวลา และพลังงานที่เก็บเมื่อกระแสคงตัว"
+    steps:
+      - text: "$L = \\dfrac{\\mu_0N^2A}{\\ell} = \\dfrac{4\\pi \\times 10^{-7} \\times 10^6 \\times 10^{-3}}{0.5} = 2.51 \\times 10^{-3}\\ \\mathrm{H}$"
+      - text: "$\\tau = L/R = 2.51 \\times 10^{-3}/5 = 0.503\\ \\mathrm{ms}$ หลังราว $5\\tau \\approx 2.5\\ \\mathrm{ms}$ กระแสเกือบคงตัว"
+      - text: "กระแสคงตัว $I = V/R = 2.4\\ \\mathrm{A}$ พลังงาน $U = \\tfrac12 LI^2 = \\tfrac12(2.51 \\times 10^{-3})(2.4^2) = 7.24\\ \\mathrm{mJ}$"
+      - text: "ตรวจด้วยความหนาแน่นพลังงานในสนาม: $B = \\mu_0NI/\\ell = 6.03\\ \\mathrm{mT}$ $\\dfrac{B^2}{2\\mu_0} \\times A\\ell = 7.24\\ \\mathrm{mJ}$"
+        why: "พลังงานของตัวเหนี่ยวนำเก็บอยู่ในสนามแม่เหล็กภายในขดลวด สองวิธีจึงได้ค่าเท่ากัน"
+    answer: "$L = 2.51\\ \\mathrm{mH}$, $\\tau = 0.503\\ \\mathrm{ms}$, $U = 7.24\\ \\mathrm{mJ}$"
+  - type: figure
+    title: กระแสในวงจร RL หลังปิดสวิตช์
+    src: rl-current.svg
+    alt: "กราฟกระแส I/(V/R) กับเวลา t/τ กระแสเริ่มจากศูนย์ เพิ่มเร็วในช่วงแรกแล้วช้าลงเข้าหาค่า V/R (เส้นประแนวราบ) ที่ t = τ กระแสเท่ากับ 63% ของค่าสุดท้าย"
+  - type: interactive
+    title: ปรับ L และ R แล้วดูการเพิ่มของกระแส
+    caption: "แกน x คือเวลา (วินาที) แกน y คือกระแส (แอมแปร์) ในวงจร RL ที่ปิดสวิตช์ตอน t = 0 เพิ่ม L แล้วกระแสขึ้นช้าลง เพิ่ม R แล้วกระแสสุดท้ายน้อยลงแต่ถึงเร็วขึ้น เพราะค่าคงตัวเวลา τ = L/R"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{V}{R}\\cdot(1-e^{-\\frac{R x}{L}})"]
+      sliders:
+        - { name: V, min: 1, max: 24, step: 1, value: 12, label: "แรงดัน V (V)" }
+        - { name: R, min: 2, max: 20, step: 1, value: 10, label: "ความต้านทาน R (Ω)" }
+        - { name: L, min: 0.1, max: 2, step: 0.1, value: 0.5, label: "ความเหนี่ยวนำ L (H)" }
+      x: [0, 1]
+      y: [0, 6]
+  - type: simulation
+    title: "ห้องปฏิบัติการแม่เหล็กไฟฟ้าของฟาราเดย์ (PhET Faraday's Electromagnetic Lab)"
+    url: https://phet.colorado.edu/en/simulations/faradays-electromagnetic-lab
+    provider: phet
+    note: "ในหน้า Pickup Coil เลื่อนแม่เหล็กผ่านขดลวด เพิ่มจำนวนรอบและพื้นที่ขดลวด ดูว่าหลอดไฟสว่างขึ้นอย่างไร ในหน้า Generator ปรับอัตราการหมุนของกังหันน้ำ แล้วสังเกตว่าค่ายอดของแรงดันเพิ่มตาม ω ตรงกับ ε = NBAω"
+glossary:
+  - { term: ฟลักซ์แม่เหล็ก, definition: "ปริพันธ์ของ B·dA บนพื้นผิว หน่วยเวเบอร์ บอกปริมาณสนามที่ผ่านพื้นที่ (magnetic flux)" }
+  - { term: กฎของเลนซ์, definition: "กระแสเหนี่ยวนำมีทิศที่สร้างสนามต้านการเปลี่ยนแปลงของฟลักซ์ที่ทำให้เกิดมัน (Lenz's law)" }
+  - { term: อีเอ็มเอฟจากการเคลื่อนที่, definition: "อีเอ็มเอฟ Bℓv ที่เกิดในตัวนำซึ่งเคลื่อนที่ตัดสนามแม่เหล็ก (motional emf)" }
+  - { term: กระแสวน, definition: "กระแสที่วนในแผ่นหรือก้อนตัวนำเมื่อฟลักซ์ผ่านมันเปลี่ยน ทำให้เกิดความร้อนและแรงหน่วง (eddy current)" }
+  - { term: อีเอ็มเอฟย้อนกลับ, definition: "อีเอ็มเอฟเหนี่ยวนำในขดลวดของมอเตอร์ที่หมุน มีทิศต้านแรงดันที่จ่าย (back emf)" }
+  - { term: ความเหนี่ยวนำ, definition: "อัตราส่วนฟลักซ์คล้องต่อกระแส L = NΦ/I หน่วยเฮนรี ความเหนี่ยวนำร่วม M ใช้กับขดลวดสองขด (inductance)" }
+flashcards:
+  - { front: "กฎของฟาราเดย์", back: "$\\varepsilon = -N\\,d\\Phi_B/dt$ เครื่องหมายลบคือกฎของเลนซ์" }
+  - { front: "อีเอ็มเอฟของเครื่องกำเนิดไฟฟ้า", back: "$\\varepsilon = NBA\\omega\\sin\\omega t$ ค่ายอด $NBA\\omega$" }
+  - { front: "ความเหนี่ยวนำของโซเลนอยด์", back: "$L = \\mu_0N^2A/\\ell$ แปรผันกับ $N^2$" }
+  - { front: "พลังงานในตัวเหนี่ยวนำ", back: "$U = \\tfrac12 LI^2$ เก็บในสนามแม่เหล็ก" }
+  - { front: "วงจร RL หลังปิดสวิตช์", back: "$I = \\tfrac{V}{R}(1 - e^{-t/\\tau})$, $\\tau = L/R$" }
+references:
+  - { title: "Faraday's law of induction", url: "https://en.wikipedia.org/wiki/Faraday%27s_law_of_induction", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Inductance", url: "https://en.wikipedia.org/wiki/Inductance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.1 Faraday's Law (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "14.2 Self-Inductance and Inductors (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/14-2-self-inductance-and-inductors", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

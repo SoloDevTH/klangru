@@ -1,0 +1,310 @@
+problems:
+  - id: physics.thermal.kinetic-theory-thermodynamics.p001
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 1
+    type: mcq
+    stem: "ใช้ข้อตกลง $Q = \\Delta U + W$ ($W$ คืองานที่ระบบทำ) ถ้าแก๊สในกระบอกสูบขยายตัวดันลูกสูบออก ข้อใดถูก"
+    choices:
+      - { id: a, text: "แก๊สทำงาน $W$ เป็นบวก", correct: true }
+      - { id: b, text: "แก๊สทำงาน $W$ เป็นลบ", feedback: "ในข้อตกลงนี้ $W$ เป็นบวกเมื่อระบบทำงาน การขยายตัวคือระบบทำงานต่อลูกสูบ" }
+      - { id: c, text: "ไม่มีงาน เพราะความดันคงตัว", feedback: "ความดันคงตัวแต่ปริมาตรเปลี่ยน งาน $W = P\\Delta V$ จึงไม่เป็นศูนย์" }
+      - { id: d, text: "มีงานทำต่อแก๊ส", feedback: "งานทำต่อแก๊สเกิดเมื่อแก๊สถูกอัด" }
+    hints:
+      - "ขยายตัวหมายถึง $\\Delta V > 0$"
+      - "$W = P\\Delta V$"
+    solution: "แก๊สขยายตัว $\\Delta V > 0$ จึง $W = P\\Delta V > 0$ แก๊สเป็นผู้ทำงาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p002
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่กระบวนการของแก๊สอุดมคติกับผลต่อกฎข้อที่หนึ่ง ($Q = \\Delta U + W$)"
+    pairs:
+      - { left: "ปริมาตรคงตัว", right: "W = 0 จึง Q = ΔU" }
+      - { left: "อุณหภูมิคงตัว", right: "ΔU = 0 จึง Q = W" }
+      - { left: "ไม่มีการถ่ายโอนความร้อน", right: "Q = 0 จึง ΔU = −W" }
+      - { left: "ความดันคงตัว", right: "W = PΔV" }
+    hints:
+      - "ปริมาตรไม่เปลี่ยน ไม่มีงาน"
+      - "พลังงานภายในของแก๊สอุดมคติขึ้นกับอุณหภูมิเท่านั้น"
+    solution: "ปริมาตรคงตัว $W = 0$ อุณหภูมิคงตัว $\\Delta U = 0$ ไม่มีความร้อนเข้าออก $Q = 0$ ความดันคงตัว $W = P\\Delta V$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p003
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สขยายตัวที่ความดันคงตัว $1.0 \\times 10^5\\ \\mathrm{Pa}$ จาก $2.0$ ลิตร เป็น $2.5$ ลิตร แก๊สทำงานกี่จูล"
+    answer: { value: 50, tolerance: 0.5, unit: J }
+    misconceptions:
+      - { match: 50000, feedback: "ใช้ปริมาตรเป็นลิตร ต้องแปลงเป็นลูกบาศก์เมตร $0.5\\ \\mathrm{L} = 0.5 \\times 10^{-3}\\ \\mathrm{m^3}$" }
+      - { match: 250, feedback: "ใช้ปริมาตรสุดท้าย $2.5$ ลิตรแทนปริมาตรที่เปลี่ยน" }
+    hints:
+      - "$W = P\\Delta V$"
+      - "$\\Delta V = 0.5\\ \\mathrm{L} = 5 \\times 10^{-4}\\ \\mathrm{m^3}$"
+    solution: "$W = (1.0 \\times 10^5)(5 \\times 10^{-4}) = 50\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p004
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สฮีเลียม $2\\ \\mathrm{mol}$ (แก๊สอุดมคติอะตอมเดี่ยว) ร้อนขึ้นจาก $300\\ \\mathrm{K}$ เป็น $350\\ \\mathrm{K}$ พลังงานภายในเพิ่มขึ้นกี่จูล ($R = 8.31\\ \\mathrm{J/(mol\\cdot K)}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 1246.5, tolerance: 5, unit: J }
+    misconceptions:
+      - { match: 831, feedback: "ใช้ $nR\\Delta T$ ลืมตัวคูณ $\\tfrac32$" }
+      - { match: 2077.5, feedback: "ใช้ $\\tfrac52 nR\\Delta T$ ซึ่งเป็นความร้อนที่ความดันคงตัว ไม่ใช่พลังงานภายใน" }
+    hints:
+      - "แก๊สอะตอมเดี่ยว $\\Delta U = \\tfrac32 nR\\Delta T$"
+      - "$\\Delta T = 50\\ \\mathrm{K}$"
+    solution: "$\\Delta U = \\tfrac32 (2)(8.31)(50) = 1246.5\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p005
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สได้รับความร้อน $800\\ \\mathrm{J}$ และทำงานดันลูกสูบ $300\\ \\mathrm{J}$ พลังงานภายในของแก๊สเปลี่ยนไปกี่จูล (ตอบพร้อมเครื่องหมาย)"
+    answer: { value: 500, tolerance: 0.5, unit: J }
+    misconceptions:
+      - { match: 1100, feedback: "บวกงานเข้าไป แต่แก๊สเป็นผู้ทำงาน พลังงานจึงออกไป $\\Delta U = Q - W$" }
+      - { match: -500, feedback: "สลับเครื่องหมาย แก๊สได้ความร้อนมากกว่างานที่ทำ พลังงานภายในต้องเพิ่ม" }
+    hints:
+      - "$Q = \\Delta U + W$"
+      - "$\\Delta U = Q - W$"
+    solution: "$\\Delta U = 800 - 300 = 500\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p006
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "แก๊สอุดมคติอะตอมเดี่ยว $1\\ \\mathrm{mol}$ ได้รับความร้อนที่ความดันคงตัว จนอุณหภูมิเพิ่ม $20\\ \\mathrm{K}$ แก๊สได้รับความร้อนกี่จูล ($R = 8.31$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 415.5, tolerance: 2, unit: J }
+    misconceptions:
+      - { match: 249.3, feedback: "นี่คือ $\\Delta U$ อย่างเดียว ความดันคงตัวแก๊สขยายตัวทำงานด้วย ต้องบวก $W = nR\\Delta T$" }
+      - { match: 166.2, feedback: "นี่คืองาน $W = nR\\Delta T$ อย่างเดียว ต้องบวก $\\Delta U$ ด้วย" }
+    hints:
+      - "ความดันคงตัว: $W = P\\Delta V = nR\\Delta T$"
+      - "$Q = \\Delta U + W = \\tfrac32 nR\\Delta T + nR\\Delta T$"
+    solution: "$W = 8.31 \\times 20 = 166.2\\ \\mathrm{J}$ $\\Delta U = 1.5 \\times 166.2 = 249.3\\ \\mathrm{J}$ $Q = 415.5\\ \\mathrm{J}$ (ตรวจ: $\\tfrac52 nR\\Delta T = 415.5$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p007
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ที่อุณหภูมิเดียวกัน อัตราเร็วอาร์เอ็มเอสของโมเลกุลไฮโดรเจน ($M = 2\\ \\mathrm{g/mol}$) เป็นกี่เท่าของออกซิเจน ($M = 32\\ \\mathrm{g/mol}$)"
+    answer: { value: 4, tolerance: 0.02, unit: "เท่า" }
+    misconceptions:
+      - { match: 16, feedback: "ใช้อัตราส่วนมวลตรง ๆ แต่ $v_{\\text{rms}} \\propto 1/\\sqrt M$ ต้องถอดรากที่สอง" }
+      - { match: 0.25, feedback: "กลับอัตราส่วน โมเลกุลที่เบากว่าวิ่งเร็วกว่า" }
+    hints:
+      - "$v_{\\text{rms}} = \\sqrt{3RT/M}$ ที่ $T$ เท่ากัน"
+      - "$\\dfrac{v_{\\mathrm{H_2}}}{v_{\\mathrm{O_2}}} = \\sqrt{\\dfrac{M_{\\mathrm{O_2}}}{M_{\\mathrm{H_2}}}}$"
+    solution: "$\\sqrt{32/2} = \\sqrt{16} = 4$ เท่า โมเลกุลทั้งสองมีพลังงานจลน์เฉลี่ยเท่ากัน แต่ไฮโดรเจนเบากว่า 16 เท่าจึงเร็วกว่า 4 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p008
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "พลังงานจลน์เฉลี่ยของโมเลกุลแก๊สที่ $300\\ \\mathrm{K}$ เป็นกี่อิเล็กตรอนโวลต์ ($k_B = 1.38 \\times 10^{-23}\\ \\mathrm{J/K}$, $1\\ \\mathrm{eV} = 1.6 \\times 10^{-19}\\ \\mathrm{J}$ ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.039, tolerance: 0.001, unit: eV }
+    misconceptions:
+      - { match: 0.026, feedback: "ใช้ $k_BT$ ลืมตัวคูณ $\\tfrac32$" }
+      - { match: 6.21e-21, feedback: "ได้หน่วยจูล ต้องหารด้วย $1.6 \\times 10^{-19}$ เพื่อแปลงเป็น eV" }
+    hints:
+      - "$\\overline{E_k} = \\tfrac32 k_BT$"
+      - "หารด้วย $1.6 \\times 10^{-19}$"
+    solution: "$\\overline{E_k} = 1.5 \\times 1.38 \\times 10^{-23} \\times 300 = 6.21 \\times 10^{-21}\\ \\mathrm{J} = 0.039\\ \\mathrm{eV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p009
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ลูกโป่งฮีเลียมในงานวัดมีปริมาตร $0.01\\ \\mathrm{m^3}$ ความดันภายใน $1.1 \\times 10^5\\ \\mathrm{Pa}$ (ค่าสมมติ) ถือว่าฮีเลียมเป็นแก๊สอุดมคติอะตอมเดี่ยว พลังงานภายในของแก๊สเป็นกี่จูล"
+    answer: { value: 1650, tolerance: 5, unit: J }
+    misconceptions:
+      - { match: 1100, feedback: "ใช้ $PV$ ลืมตัวคูณ $\\tfrac32$" }
+      - { match: 2750, feedback: "ใช้ $\\tfrac52 PV$ ซึ่งเป็นของแก๊สโมเลกุลสองอะตอม ฮีเลียมเป็นแก๊สอะตอมเดี่ยว" }
+    hints:
+      - "$U = \\tfrac32 nRT$ และ $PV = nRT$"
+      - "$U = \\tfrac32 PV$ ไม่ต้องรู้อุณหภูมิ"
+    solution: "$U = \\tfrac32 PV = 1.5 \\times 1.1 \\times 10^5 \\times 0.01 = 1650\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p010
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 3
+    type: mcq
+    stem: "ขณะสูบลมยางจักรยานเร็ว ๆ กระบอกสูบร้อนขึ้น ข้อใดอธิบายด้วยกฎข้อที่หนึ่งได้ถูกต้อง"
+    choices:
+      - { id: a, text: "มีงานทำต่ออากาศ ($W < 0$) ความร้อนออกไม่ทัน ($Q \\approx 0$) พลังงานภายในจึงเพิ่ม", correct: true }
+      - { id: b, text: "อากาศได้รับความร้อนจากมือ", feedback: "มือไม่ได้ร้อนกว่ากระบอกสูบ พลังงานมาจากงานที่ใช้อัดอากาศ" }
+      - { id: c, text: "อากาศทำงาน ($W > 0$) จึงร้อนขึ้น", feedback: "อากาศถูกอัด ปริมาตรลดลง จึงเป็นงานที่ทำต่ออากาศ และถ้าอากาศทำงานเองพลังงานภายในจะลด" }
+      - { id: d, text: "แรงเสียดทานของลูกสูบเพียงอย่างเดียว", feedback: "แรงเสียดทานมีส่วนบ้าง แต่ส่วนสำคัญคือการอัดแก๊สเร็ว ๆ ซึ่งเพิ่มพลังงานภายในของอากาศ" }
+    hints:
+      - "อัดเร็ว ความร้อนแทบไม่มีเวลาออก"
+      - "$\\Delta U = Q - W$ เมื่อ $Q \\approx 0$ และ $W < 0$"
+    solution: "การอัดเร็ว $Q \\approx 0$ งานทำต่อแก๊สทำให้ $W < 0$ จึง $\\Delta U = -W > 0$ อุณหภูมิอากาศสูงขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p011
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "แก๊สในกระบอกสูบพื้นที่หน้าตัด $0.01\\ \\mathrm{m^2}$ ได้รับความร้อน $150\\ \\mathrm{J}$ ลูกสูบเลื่อนขึ้น $5\\ \\mathrm{cm}$ ที่ความดันคงตัว $1.2 \\times 10^5\\ \\mathrm{Pa}$ พลังงานภายในเพิ่มขึ้นกี่จูล"
+    answer: { value: 90, tolerance: 0.5, unit: J }
+    misconceptions:
+      - { match: 210, feedback: "บวกงานกับความร้อน แต่แก๊สทำงาน พลังงานภายในจึงได้ส่วนที่เหลือจากความร้อนหักงาน" }
+      - { match: -5850, feedback: "ใช้ระยะ $5$ เป็นเมตร ต้องแปลง $5\\ \\mathrm{cm} = 0.05\\ \\mathrm{m}$" }
+    hints:
+      - "$W = PA\\Delta x$"
+      - "$\\Delta U = Q - W$"
+    solution: "$W = (1.2 \\times 10^5)(0.01)(0.05) = 60\\ \\mathrm{J}$ $\\Delta U = 150 - 60 = 90\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p012
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเหล็กแข็ง (ปริมาตรคงตัว) บรรจุฮีเลียม $20\\ \\mathrm{mol}$ ตั้งตากแดดจนได้รับความร้อน $5000\\ \\mathrm{J}$ (ค่าสมมติ) อุณหภูมิของแก๊สเพิ่มขึ้นกี่เคลวิน ($R = 8.31$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 20.1, tolerance: 0.2, unit: K }
+    misconceptions:
+      - { match: 12.0, feedback: "ใช้ $Q = \\tfrac52 nR\\Delta T$ ของความดันคงตัว แต่ถังแข็งมีปริมาตรคงตัว ไม่มีงาน ความร้อนทั้งหมดเพิ่มพลังงานภายใน" }
+      - { match: 30.1, feedback: "ใช้ $Q = nR\\Delta T$ ลืมตัวคูณ $\\tfrac32$" }
+    hints:
+      - "ปริมาตรคงตัว $W = 0$ จึง $Q = \\Delta U$"
+      - "$\\Delta T = \\dfrac{Q}{\\tfrac32 nR}$"
+    solution: "$\\Delta T = \\dfrac{5000}{1.5 \\times 20 \\times 8.31} = 20.1\\ \\mathrm{K}$ ความดันในถังจึงเพิ่มขึ้นด้วย ถังแก๊สจึงไม่ควรตากแดด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p013
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำมีความหนาแน่น $1000\\ \\mathrm{kg/m^3}$ ไอน้ำที่ $100\\ ^\\circ\\mathrm{C}$ มีความหนาแน่นราว $0.6\\ \\mathrm{kg/m^3}$ ระยะห่างเฉลี่ยระหว่างโมเลกุลในไอน้ำเป็นกี่เท่าของในน้ำ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 11.9, tolerance: 0.2, unit: "เท่า" }
+    misconceptions:
+      - { match: 1666.7, feedback: "นี่คืออัตราส่วนของปริมาตรต่อโมเลกุล ระยะห่างเป็นความยาว ต้องถอดรากที่สาม" }
+      - { match: 40.8, feedback: "ถอดรากที่สอง แต่ปริมาตรเป็นสามมิติ ต้องถอดรากที่สาม" }
+    hints:
+      - "มวลเท่ากัน ปริมาตรแปรผกผันกับความหนาแน่น จำนวนโมเลกุลเท่ากัน"
+      - "ปริมาตรต่อโมเลกุล $\\propto d^3$ เมื่อ $d$ คือระยะห่าง"
+    solution: "ปริมาตรต่อโมเลกุลต่างกัน $1000/0.6 = 1667$ เท่า ระยะห่างต่างกัน $\\sqrt[3]{1667} = 11.9$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p014
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "แก๊สเปลี่ยนสถานะจาก 1 ไป 2 ไป 3 ตามแผนภาพ $P$–$V$ ในภาพ แก๊สทำงานรวมกี่จูล"
+    figure: { src: p-pv.svg, alt: "แผนภาพ P–V แกนนอนคือปริมาตรเป็นลิตร 0 ถึง 5 แกนตั้งคือความดันหน่วย 10⁵ Pa 0 ถึง 3 จุด 1 อยู่ที่ (1 L, 2) เส้นแนวราบไปจุด 2 ที่ (4 L, 2) แล้วเส้นแนวดิ่งลงไปจุด 3 ที่ (4 L, 1)" }
+    answer: { value: 600, tolerance: 2, unit: J }
+    misconceptions:
+      - { match: 900, feedback: "คิดว่าช่วง 2 ไป 3 มีงานด้วย แต่ปริมาตรคงตัว จึงไม่มีงาน" }
+      - { match: 600000, feedback: "ใช้ปริมาตรเป็นลิตร ต้องแปลงเป็น $\\mathrm{m^3}$" }
+    hints:
+      - "งานคือพื้นที่ใต้เส้นกราฟ"
+      - "ช่วง 1→2 ความดันคงตัว ช่วง 2→3 ปริมาตรคงตัว"
+    solution: "ช่วง 1→2: $W = (2 \\times 10^5)(3 \\times 10^{-3}) = 600\\ \\mathrm{J}$ ช่วง 2→3: $\\Delta V = 0$ จึง $W = 0$ รวม $600\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p015
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 5
+    type: numeric
+    stem: "อัดแก๊สอุดมคติอย่างช้า ๆ ที่อุณหภูมิคงตัว โดยทำงานต่อแก๊ส $400\\ \\mathrm{J}$ แก๊สคายความร้อนออกสู่สิ่งแวดล้อมกี่จูล"
+    answer: { value: 400, tolerance: 0.5, unit: J }
+    misconceptions:
+      - { match: 0, feedback: "คิดว่าอุณหภูมิคงตัวแปลว่าไม่มีความร้อนเข้าออก แต่อุณหภูมิคงตัวแปลว่า $\\Delta U = 0$ ความร้อนต้องออกไปเท่ากับงานที่ได้รับ" }
+      - { match: 800, feedback: "นับงานซ้ำสองครั้ง ใช้ $Q = \\Delta U + W$ เมื่อ $\\Delta U = 0$" }
+    hints:
+      - "อุณหภูมิคงตัว $\\Delta U = 0$"
+      - "งานทำต่อแก๊ส $W = -400\\ \\mathrm{J}$ แล้ว $Q = W$"
+    solution: "$\\Delta U = 0$ จึง $Q = W = -400\\ \\mathrm{J}$ เครื่องหมายลบแปลว่าแก๊สคายความร้อนออก $400\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p016
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 5
+    type: numeric
+    stem: "แก๊สอุดมคติอะตอมเดี่ยว $0.5\\ \\mathrm{mol}$ ขยายตัวที่ความดันคงตัว $1.0 \\times 10^5\\ \\mathrm{Pa}$ จาก $10$ ลิตร เป็น $15$ ลิตร แก๊สได้รับความร้อนกี่จูล"
+    answer: { value: 1250, tolerance: 5, unit: J }
+    misconceptions:
+      - { match: 750, feedback: "นี่คือ $\\Delta U$ ลืมบวกงานที่แก๊สทำ" }
+      - { match: 500, feedback: "นี่คืองาน $P\\Delta V$ ลืมพลังงานภายในที่เพิ่ม" }
+    hints:
+      - "$W = P\\Delta V$ และที่ความดันคงตัว $nR\\Delta T = P\\Delta V$"
+      - "$\\Delta U = \\tfrac32 nR\\Delta T = \\tfrac32 P\\Delta V$"
+    solution: "$W = (1.0 \\times 10^5)(5 \\times 10^{-3}) = 500\\ \\mathrm{J}$ $\\Delta U = \\tfrac32 \\times 500 = 750\\ \\mathrm{J}$ $Q = 1250\\ \\mathrm{J}$ (อุณหภูมิเพิ่ม $500/(0.5 \\times 8.31) = 120\\ \\mathrm{K}$ ตรวจ: $\\tfrac32(0.5)(8.31)(120.3) = 750$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p017
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับสิ่งที่เกิดกับสารทำความเย็นในเครื่องปรับอากาศหนึ่งรอบ เริ่มจากคอมเพรสเซอร์"
+    items:
+      - "คอมเพรสเซอร์อัดสารทำความเย็น ทำให้ร้อนและความดันสูง"
+      - "สารร้อนไหลผ่านคอยล์ร้อนนอกห้อง คายความร้อนออก"
+      - "สารผ่านวาล์วขยายตัว ความดันลดลงและเย็นจัด"
+      - "สารเย็นไหลผ่านคอยล์เย็นในห้อง รับความร้อนจากอากาศในห้อง"
+    hints:
+      - "งานทำต่อสารทำความเย็นที่คอมเพรสเซอร์"
+      - "สารต้องร้อนกว่าอากาศนอกห้องจึงคายความร้อนได้ และเย็นกว่าในห้องจึงรับความร้อนได้"
+    solution: "อัด (ร้อนขึ้น) → คายความร้อนนอกห้อง → ขยายตัว (เย็นลง) → รับความร้อนในห้อง แล้วกลับเข้าคอมเพรสเซอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p018
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 5
+    type: numeric
+    stem: "แก๊สออกซิเจน ($M = 0.032\\ \\mathrm{kg/mol}$) เริ่มที่ $300\\ \\mathrm{K}$ ได้รับความร้อนที่ความดันคงตัวจนปริมาตรเป็นสองเท่า อัตราเร็วอาร์เอ็มเอสของโมเลกุลหลังได้รับความร้อนเป็นกี่เมตรต่อวินาที ($R = 8.31$)"
+    answer: { value: 683.7, tolerance: 4, unit: "m/s" }
+    misconceptions:
+      - { match: 966.9, feedback: "คิดว่าอัตราเร็วเป็นสองเท่า แต่อุณหภูมิสองเท่าทำให้อัตราเร็วเพิ่มเพียง $\\sqrt2$ เท่า" }
+      - { match: 483.4, feedback: "นี่คืออัตราเร็วที่ $300\\ \\mathrm{K}$ ก่อนได้รับความร้อน" }
+    hints:
+      - "ความดันคงตัว ปริมาตรสองเท่า อุณหภูมิเป็นเท่าใด (กฎของชาร์ล)"
+      - "$v_{\\text{rms}} = \\sqrt{3RT/M}$ ที่ $T = 600\\ \\mathrm{K}$"
+    solution: "$V/T$ คงตัว จึง $T = 600\\ \\mathrm{K}$ $v_{\\text{rms}} = \\sqrt{3(8.31)(600)/0.032} = 683.7\\ \\mathrm{m/s}$ ตรวจ: $483.4 \\times \\sqrt2 = 683.7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.kinetic-theory-thermodynamics.p019
+    topics: [physics.thermal.kinetic-theory-thermodynamics]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดมีพลังงานภายในมากกว่า น้ำอุ่น $40\\ ^\\circ\\mathrm{C}$ เต็มอ่างอาบน้ำ หรือน้ำร้อน $90\\ ^\\circ\\mathrm{C}$ หนึ่งแก้ว"
+    choices:
+      - { id: a, text: "น้ำในอ่าง เพราะมีโมเลกุลมากกว่ามาก พลังงานรวมจึงมากกว่า", correct: true }
+      - { id: b, text: "น้ำในแก้ว เพราะอุณหภูมิสูงกว่า", feedback: "อุณหภูมิบอกพลังงานจลน์เฉลี่ยต่อโมเลกุล แต่พลังงานภายในเป็นผลรวมของทุกโมเลกุล" }
+      - { id: c, text: "เท่ากัน เพราะเป็นน้ำเหมือนกัน", feedback: "พลังงานภายในขึ้นกับทั้งอุณหภูมิและปริมาณของสาร" }
+      - { id: d, text: "เปรียบเทียบไม่ได้", feedback: "เปรียบเทียบได้ น้ำในอ่างมีมวลมากกว่าแก้วหลายร้อยเท่า" }
+    hints:
+      - "พลังงานภายในคือผลรวมพลังงานของอนุภาคทุกตัว"
+      - "อุณหภูมิบอกค่าเฉลี่ย ไม่ใช่ผลรวม"
+    solution: "อุณหภูมิบอกพลังงานจลน์เฉลี่ยต่อโมเลกุล แต่น้ำในอ่างมีโมเลกุลมากกว่าแก้วหลายร้อยเท่า ผลรวมพลังงานจึงมากกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

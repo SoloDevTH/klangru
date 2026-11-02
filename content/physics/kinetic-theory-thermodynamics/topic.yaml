@@ -1,0 +1,71 @@
+id: physics.thermal.kinetic-theory-thermodynamics
+subject: physics
+title: { th: ทฤษฎีจลน์ของแก๊สและพลังงานภายในระบบ, en: Kinetic theory and the internal energy of a system }
+summary: ต่อยอดทฤษฎีจลน์ สถานะของสสารกับความหนาแน่น พลังงานภายใน งานของแก๊สที่ความดันคงตัว กฎข้อที่หนึ่งของอุณหพลศาสตร์ และเครื่องใช้อย่างที่สูบลม สเปรย์ ตู้เย็น
+difficulty: 6.5
+minutes: 40
+prerequisites: [chemistry.gases.gas-laws, physics.energy.kinetic-potential, physics.thermal.kinetic-theory]
+encompasses:
+  - { id: physics.thermal.kinetic-theory, weight: 0.5 }
+  - { id: chemistry.gases.gas-laws, weight: 0.3 }
+  - { id: physics.energy.kinetic-potential, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: physics.thermal.kinetic-theory-thermodynamics.p007, prompt: "อัตราเร็วแปรผกผันกับรากที่สองของมวลโมเลกุล" }
+  - type: figure
+    title: งานของแก๊สที่ความดันคงตัว
+    src: piston-work.svg
+    alt: "ซ้าย: กระบอกสูบมีแก๊สอยู่ใต้ลูกสูบ ให้ความร้อน Q ที่ก้น ลูกสูบเลื่อนขึ้นเป็นระยะ Δx จากตำแหน่งก่อน (เส้นประ) ไปตำแหน่งหลัง แรง F = PA ดันลูกสูบ ด้านบนเขียน W = FΔx = PAΔx = PΔV ขวา: กราฟ P–V ความดันคงตัว 2 × 10⁵ Pa จากจุด 1 ที่ 1.5 ลิตร ไปจุด 2 ที่ 4 ลิตร พื้นที่สี่เหลี่ยมใต้เส้นแรเงาไว้เขียนว่า พื้นที่ = W ใต้กราฟเขียนว่าแก๊สขยายตัว ΔV > 0 แก๊สทำงาน W > 0"
+  - type: worked-example
+    title: กฎข้อที่หนึ่งเมื่อความดันคงตัว
+    problem: "ฮีเลียม $0.3\\ \\mathrm{mol}$ ในกระบอกสูบที่ลูกสูบเลื่อนได้อย่างอิสระ ความดันคงตัว $1.0 \\times 10^5\\ \\mathrm{Pa}$ ได้รับความร้อนจนอุณหภูมิเพิ่มจาก $300\\ \\mathrm{K}$ เป็น $350\\ \\mathrm{K}$ จงหางานที่แก๊สทำ การเปลี่ยนปริมาตร พลังงานภายในที่เพิ่ม และความร้อนที่ได้รับ ($R = 8.31$)"
+    steps:
+      - text: "ความดันคงตัว: $W = P\\Delta V = nR\\Delta T = 0.3 \\times 8.31 \\times 50 = 124.7\\ \\mathrm{J}$"
+        why: "จาก $PV = nRT$ ที่ $P$ คงตัว จะได้ $P\\Delta V = nR\\Delta T$"
+      - text: "$\\Delta V = W/P = 124.7/10^5 = 1.25 \\times 10^{-3}\\ \\mathrm{m^3}$ หรือ $1.25$ ลิตร"
+      - text: "$\\Delta U = \\tfrac32 nR\\Delta T = 1.5 \\times 124.7 = 187.0\\ \\mathrm{J}$"
+      - text: "$Q = \\Delta U + W = 187.0 + 124.7 = 311.6\\ \\mathrm{J}$"
+        why: "ตรวจ: ความดันคงตัวสำหรับแก๊สอะตอมเดี่ยว $Q = \\tfrac52 nR\\Delta T = 2.5 \\times 124.65 = 311.6\\ \\mathrm{J}$"
+    answer: "$W = 124.7\\ \\mathrm{J}$, $\\Delta V = 1.25\\ \\mathrm{L}$, $\\Delta U = 187.0\\ \\mathrm{J}$, $Q = 311.6\\ \\mathrm{J}$ ความร้อนราว 40% ออกไปเป็นงาน"
+  - { type: check, problem: physics.thermal.kinetic-theory-thermodynamics.p005, prompt: "ความร้อนเข้าเพิ่มพลังงาน งานที่แก๊สทำลดพลังงาน" }
+  - type: worked-example
+    title: พลังงานภายในของลูกโป่งฮีเลียมสองวิธี
+    problem: "ลูกโป่งฮีเลียมปริมาตร $0.01\\ \\mathrm{m^3}$ ความดัน $1.1 \\times 10^5\\ \\mathrm{Pa}$ อุณหภูมิ $300\\ \\mathrm{K}$ ($M = 0.004\\ \\mathrm{kg/mol}$) จงหาพลังงานภายใน แล้วตรวจด้วยอัตราเร็วอาร์เอ็มเอส"
+    steps:
+      - text: "วิธีที่ 1: $U = \\tfrac32 nRT = \\tfrac32 PV = 1.5 \\times 1.1 \\times 10^5 \\times 0.01 = 1650\\ \\mathrm{J}$"
+      - text: "จำนวนโมล $n = \\dfrac{PV}{RT} = \\dfrac{1100}{8.31 \\times 300} = 0.441\\ \\mathrm{mol}$ มวลแก๊ส $= 0.441 \\times 0.004 = 1.76 \\times 10^{-3}\\ \\mathrm{kg}$"
+      - text: "$v_{\\text{rms}} = \\sqrt{\\dfrac{3RT}{M}} = \\sqrt{\\dfrac{3 \\times 8.31 \\times 300}{0.004}} = 1367\\ \\mathrm{m/s}$"
+      - text: "วิธีที่ 2: พลังงานจลน์รวม $= \\tfrac12 (\\text{มวลแก๊ส})\\,v_{\\text{rms}}^2 = 0.5 \\times 1.765 \\times 10^{-3} \\times 1367^2 = 1650\\ \\mathrm{J}$"
+        why: "พลังงานภายในของแก๊สอุดมคติอะตอมเดี่ยวคือพลังงานจลน์ของทุกโมเลกุลรวมกัน สองวิธีจึงต้องได้เท่ากัน"
+    answer: "$U = 1650\\ \\mathrm{J}$ ทั้งสองวิธี"
+  - type: figure
+    title: วัฏจักรของตู้เย็นและเครื่องปรับอากาศ
+    src: refrigerator.svg
+    alt: "แผนภาพสองฝั่ง ฝั่งซ้ายในห้องหรือในตู้ (เย็น) มีคอยล์เย็นรับความร้อนจากอาหาร ฝั่งขวานอกห้อง (ร้อน) มีคอยล์ร้อนคายความร้อนออก ด้านบนคอมเพรสเซอร์อัดแก๊สที่มาจากคอยล์เย็น งานทำต่อแก๊ส แก๊สร้อนขึ้น แล้วส่งไปคอยล์ร้อน ด้านล่างสารจากคอยล์ร้อนผ่านวาล์วขยายตัว ขยายตัวเย็นลงมาก แล้วกลับไปคอยล์เย็น ใต้ภาพเขียนว่าความร้อนถูกสูบจากที่เย็นไปที่ร้อนได้เพราะคอมเพรสเซอร์ใช้ไฟฟ้าทำงาน"
+  - type: simulation
+    title: "สมบัติของแก๊ส (PhET Gas Properties)"
+    url: https://phet.colorado.edu/en/simulations/gas-properties
+    provider: phet
+    note: "ในหน้า Ideal ใส่แก๊สแล้วกดให้ความร้อน สังเกตว่าอนุภาควิ่งเร็วขึ้นและความดันสูงขึ้น จากนั้นตั้งให้ความดันคงตัวแล้วให้ความร้อนอีกครั้ง ดูผนังเลื่อนออก (แก๊สทำงาน) ลองเลื่อนผนังเข้าเร็ว ๆ เพื่อดูอุณหภูมิที่สูงขึ้นจากงานที่ทำต่อแก๊ส"
+glossary:
+  - { term: แก๊สอุดมคติ, definition: "แบบจำลองแก๊สที่โมเลกุลเล็กมาก ไม่มีแรงระหว่างกันยกเว้นขณะชน และชนแบบยืดหยุ่น (ideal gas)" }
+  - { term: อัตราเร็วอาร์เอ็มเอส, definition: "รากที่สองของค่าเฉลี่ยของกำลังสองของอัตราเร็วโมเลกุล √(3RT/M) (root-mean-square speed)" }
+  - { term: พลังงานภายใน, definition: "ผลรวมพลังงานจลน์และพลังงานศักย์ของอนุภาคทุกตัวในระบบ แก๊สอุดมคติอะตอมเดี่ยวมี U = 3/2 nRT (internal energy)" }
+  - { term: กฎข้อที่หนึ่งของอุณหพลศาสตร์, definition: "Q = ΔU + W ความร้อนที่ระบบได้รับเท่ากับพลังงานภายในที่เพิ่มบวกงานที่ระบบทำ (first law of thermodynamics)" }
+  - { term: สารทำความเย็น, definition: "สารที่ไหลวนในตู้เย็นและเครื่องปรับอากาศ ถูกอัดให้ร้อนและขยายตัวให้เย็นเพื่อพาความร้อนออก (refrigerant)" }
+flashcards:
+  - { front: "กฎข้อที่หนึ่ง (ข้อตกลงหนังสือเรียนไทย)", back: "$Q = \\Delta U + W$, $Q > 0$ ได้รับความร้อน, $W > 0$ ระบบทำงาน" }
+  - { front: "งานของแก๊สที่ความดันคงตัว", back: "$W = P\\Delta V = nR\\Delta T$ เท่ากับพื้นที่ใต้กราฟ P–V" }
+  - { front: "พลังงานภายในของแก๊สอุดมคติอะตอมเดี่ยว", back: "$U = \\tfrac32 nRT = \\tfrac32 PV$ ขึ้นกับอุณหภูมิอย่างเดียว" }
+  - { front: "ทำไมที่สูบลมร้อนขึ้น", back: "อัดเร็ว $Q \\approx 0$ งานทำต่อแก๊สเพิ่มพลังงานภายใน" }
+  - { front: "ระยะห่างโมเลกุลในไอน้ำเทียบกับน้ำ", back: "ราว $\\sqrt[3]{1000/0.6} \\approx 12$ เท่า แก๊สจึงหนาแน่นน้อยมาก" }
+references:
+  - { title: "ทฤษฎีจลน์ของแก๊ส", url: "https://th.wikipedia.org/wiki/ทฤษฎีจลน์ของแก๊ส", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Internal energy", url: "https://en.wikipedia.org/wiki/Internal_energy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "3.3 First Law of Thermodynamics (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/3-3-first-law-of-thermodynamics", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "2.2 Pressure, Temperature, and RMS Speed (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/2-2-pressure-temperature-and-rms-speed", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

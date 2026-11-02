@@ -1,0 +1,295 @@
+problems:
+  - id: physics.magnetism.induction.p001
+    topics: [physics.magnetism.induction]
+    difficulty: 1
+    type: mcq
+    stem: "เลื่อนขั้วเหนือของแม่เหล็กเข้าหาวงลวดทองแดง กระแสเหนี่ยวนำในวงลวดสร้างสนามแม่เหล็กอย่างไร"
+    choices:
+      - { id: a, text: "ด้านของวงที่หันหาแม่เหล็กกลายเป็นขั้วเหนือ ผลักแม่เหล็ก", correct: true }
+      - { id: b, text: "ด้านของวงที่หันหาแม่เหล็กกลายเป็นขั้วใต้ ดูดแม่เหล็กเข้ามา", feedback: "ถ้าวงดูดแม่เหล็กเข้ามา ฟลักซ์จะเพิ่มเร็วขึ้นเอง ได้พลังงานฟรี ซึ่งขัดกับการอนุรักษ์พลังงาน" }
+      - { id: c, text: "ไม่เกิดกระแส เพราะแม่เหล็กไม่ได้แตะวงลวด", feedback: "การเหนี่ยวนำเกิดจากฟลักซ์ที่เปลี่ยน ไม่ต้องสัมผัส" }
+      - { id: d, text: "สนามเหนี่ยวนำมีทิศเดียวกับสนามของแม่เหล็กเสมอ", feedback: "ทิศของสนามเหนี่ยวนำขึ้นกับว่าฟลักซ์เพิ่มหรือลด เมื่อฟลักซ์เพิ่มจะตรงข้าม" }
+    hints:
+      - "กฎของเลนซ์: ต้านการเปลี่ยนแปลงของฟลักซ์"
+      - "แม่เหล็กเข้าใกล้ ฟลักซ์ผ่านวงเพิ่มขึ้น"
+    solution: "ฟลักซ์เพิ่ม กระแสเหนี่ยวนำจึงสร้างสนามตรงข้าม ด้านที่หันหาแม่เหล็กกลายเป็นขั้วเหนือ ผลักแม่เหล็กออก ต้านการเข้าใกล้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p002
+    topics: [physics.magnetism.induction]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณกับหน่วย SI"
+    pairs:
+      - { left: "ฟลักซ์แม่เหล็ก", right: "เวเบอร์ (Wb = T·m²)" }
+      - { left: "ความเหนี่ยวนำ", right: "เฮนรี (H = V·s/A)" }
+      - { left: "ความหนาแน่นฟลักซ์แม่เหล็ก", right: "เทสลา (T)" }
+      - { left: "อีเอ็มเอฟเหนี่ยวนำ", right: "โวลต์ (V = Wb/s)" }
+    hints:
+      - "ฟลักซ์ = สนาม × พื้นที่"
+      - "จาก $\\varepsilon = -L\\,dI/dt$ ได้ $L$ มีหน่วย V·s/A"
+    solution: "ฟลักซ์เป็น Wb ความเหนี่ยวนำเป็น H สนามเป็น T และอีเอ็มเอฟเป็น V ซึ่งเท่ากับ Wb/s"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p003
+    topics: [physics.magnetism.induction]
+    difficulty: 2
+    type: numeric
+    stem: "วงลวดพื้นที่ $0.05\\ \\mathrm{m^2}$ อยู่ในสนามแม่เหล็กสม่ำเสมอ $0.4\\ \\mathrm{T}$ เวกเตอร์ตั้งฉากกับวงทำมุม $30^\\circ$ กับสนาม ฟลักซ์ผ่านวงเป็นกี่มิลลิเวเบอร์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 17.3, tolerance: 0.2, unit: mWb }
+    misconceptions:
+      - { match: 10, feedback: "ใช้ $\\sin 30^\\circ$ มุมวัดจากเวกเตอร์ตั้งฉากกับวง จึงใช้ $\\cos$" }
+      - { match: 20, feedback: "ลืมคิดมุม $BA$ ใช้ได้เมื่อสนามตั้งฉากกับระนาบของวง" }
+    hints:
+      - "$\\Phi_B = BA\\cos\\theta$"
+      - "แปลงเวเบอร์เป็นมิลลิเวเบอร์ (คูณ 1000)"
+    solution: "$\\Phi_B = 0.4 \\times 0.05 \\times \\cos 30^\\circ = 0.01732\\ \\mathrm{Wb} = 17.3\\ \\mathrm{mWb}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p004
+    topics: [physics.magnetism.induction]
+    difficulty: 2
+    type: numeric
+    stem: "แท่งโลหะยาว $0.5\\ \\mathrm{m}$ เคลื่อนที่ด้วยความเร็ว $4\\ \\mathrm{m/s}$ ตั้งฉากกับสนามแม่เหล็ก $0.2\\ \\mathrm{T}$ อีเอ็มเอฟเหนี่ยวนำระหว่างปลายแท่งเป็นกี่โวลต์"
+    answer: { value: 0.4, tolerance: 0.005, unit: V }
+    misconceptions:
+      - { match: 0.1, feedback: "ลืมคูณความเร็ว อีเอ็มเอฟจากการเคลื่อนที่คือ $B\\ell v$" }
+      - { match: 10, feedback: "ใช้ $\\ell v/B$ ต้องคูณทั้งสามค่า" }
+    hints:
+      - "$\\varepsilon = B\\ell v$"
+      - "$0.2 \\times 0.5 \\times 4$"
+    solution: "$\\varepsilon = 0.2 \\times 0.5 \\times 4 = 0.4\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p005
+    topics: [physics.magnetism.induction]
+    difficulty: 3
+    type: numeric
+    stem: "ขดลวด $100$ รอบ พื้นที่ $0.01\\ \\mathrm{m^2}$ วางตั้งฉากกับสนามที่เปลี่ยนตาม $B = 0.5t^2$ ($B$ เป็นเทสลา $t$ เป็นวินาที) ขนาดของอีเอ็มเอฟเหนี่ยวนำที่ $t = 2\\ \\mathrm{s}$ เป็นกี่โวลต์"
+    answer: { value: 2, tolerance: 0.02, unit: V }
+    misconceptions:
+      - { match: 1, feedback: "ใช้อัตราเฉลี่ย $\\Delta B/\\Delta t$ ตั้งแต่ $0$ ถึง $2\\ \\mathrm{s}$ แต่โจทย์ถามค่า ณ ขณะ $t = 2\\ \\mathrm{s}$ ต้องหาอนุพันธ์" }
+      - { match: 0.02, feedback: "ลืมคูณจำนวนรอบ $N = 100$" }
+    hints:
+      - "$\\varepsilon = NA\\,dB/dt$"
+      - "$dB/dt = 1.0\\,t$"
+    solution: "$dB/dt = t = 2\\ \\mathrm{T/s}$ ที่ $t = 2$ $\\varepsilon = 100 \\times 0.01 \\times 2 = 2\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p006
+    topics: [physics.magnetism.induction]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องกำเนิดไฟฟ้าจำลองในห้องปฏิบัติการมีขดลวด $200$ รอบ พื้นที่ $0.02\\ \\mathrm{m^2}$ หมุนในสนาม $0.3\\ \\mathrm{T}$ ด้วยความถี่ $50\\ \\mathrm{Hz}$ อีเอ็มเอฟสูงสุดเป็นกี่โวลต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 377.0, tolerance: 2, unit: V }
+    misconceptions:
+      - { match: 60, feedback: "ใช้ $f$ แทน $\\omega = 2\\pi f$" }
+      - { match: 266.6, feedback: "หารด้วย $\\sqrt2$ ซึ่งเป็นค่า rms แต่โจทย์ถามค่าสูงสุด" }
+    hints:
+      - "$\\varepsilon = NBA\\omega\\sin\\omega t$ ค่าสูงสุดคือ $NBA\\omega$"
+      - "$\\omega = 2\\pi(50)$"
+    solution: "$\\varepsilon_{\\max} = 200 \\times 0.3 \\times 0.02 \\times 2\\pi(50) = 377.0\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p007
+    topics: [physics.magnetism.induction]
+    difficulty: 3
+    type: numeric
+    stem: "โซเลนอยด์ยาว $25\\ \\mathrm{cm}$ มี $500$ รอบ พื้นที่หน้าตัด $4\\ \\mathrm{cm^2}$ มีความเหนี่ยวนำตนเองกี่มิลลิเฮนรี ($\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{T\\cdot m/A}$ ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.503, tolerance: 0.005, unit: mH }
+    misconceptions:
+      - { match: 0.001, feedback: "ใช้ $N$ แทน $N^2$ ความเหนี่ยวนำแปรผันกับกำลังสองของจำนวนรอบ" }
+      - { match: 5026.5, feedback: "ใช้พื้นที่ $4$ เป็นตารางเมตร ต้องแปลง $4\\ \\mathrm{cm^2} = 4 \\times 10^{-4}\\ \\mathrm{m^2}$" }
+    hints:
+      - "$L = \\mu_0 N^2A/\\ell$"
+      - "$A = 4 \\times 10^{-4}\\ \\mathrm{m^2}$, $\\ell = 0.25\\ \\mathrm{m}$"
+    solution: "$L = \\dfrac{4\\pi \\times 10^{-7} \\times 500^2 \\times 4 \\times 10^{-4}}{0.25} = 5.03 \\times 10^{-4}\\ \\mathrm{H} = 0.503\\ \\mathrm{mH}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p008
+    topics: [physics.magnetism.induction]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวเหนี่ยวนำ $20\\ \\mathrm{mH}$ มีกระแสเพิ่มจาก $0$ ถึง $3\\ \\mathrm{A}$ อย่างสม่ำเสมอใน $2\\ \\mathrm{ms}$ ขนาดของอีเอ็มเอฟเหนี่ยวนำตนเองเป็นกี่โวลต์"
+    answer: { value: 30, tolerance: 0.2, unit: V }
+    misconceptions:
+      - { match: 0.03, feedback: "ไม่แปลงมิลลิวินาที ($2\\ \\mathrm{ms} = 0.002\\ \\mathrm{s}$)" }
+      - { match: 0.06, feedback: "ใช้ $LI$ ซึ่งเป็นฟลักซ์รวม ต้องใช้อัตราการเปลี่ยนกระแส $L\\,dI/dt$" }
+    hints:
+      - "$|\\varepsilon| = L\\,dI/dt$"
+      - "$dI/dt = 3/0.002 = 1500\\ \\mathrm{A/s}$"
+    solution: "$|\\varepsilon| = 0.020 \\times 1500 = 30\\ \\mathrm{V}$ ทิศต้านการเพิ่มของกระแส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p009
+    topics: [physics.magnetism.induction]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวเหนี่ยวนำ $0.5\\ \\mathrm{H}$ มีกระแส $4\\ \\mathrm{A}$ เก็บพลังงานในสนามแม่เหล็กกี่จูล"
+    answer: { value: 4, tolerance: 0.02, unit: J }
+    misconceptions:
+      - { match: 8, feedback: "ลืมตัวคูณ $\\tfrac12$ ใน $U = \\tfrac12 LI^2$" }
+      - { match: 1, feedback: "ใช้ $\\tfrac12 LI$ ลืมยกกำลังสองของกระแส" }
+    hints:
+      - "$U = \\tfrac12 LI^2$"
+      - "$\\tfrac12 \\times 0.5 \\times 16$"
+    solution: "$U = \\tfrac12 (0.5)(4^2) = 4\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p010
+    topics: [physics.magnetism.induction]
+    difficulty: 4
+    type: numeric
+    stem: "วงจร RL มี $L = 0.2\\ \\mathrm{H}$ $R = 10\\ \\Omega$ ต่อกับแบตเตอรี่ $12\\ \\mathrm{V}$ แล้วปิดสวิตช์ที่ $t = 0$ กระแสที่ $t = 20\\ \\mathrm{ms}$ เป็นกี่แอมแปร์ (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.759, tolerance: 0.005, unit: A }
+    misconceptions:
+      - { match: 1.2, feedback: "นี่คือกระแสสุดท้าย $V/R$ กระแสยังขึ้นไม่ถึงเพราะตัวเหนี่ยวนำต้านการเปลี่ยนกระแส" }
+      - { match: 0.441, feedback: "ใช้ $\\tfrac{V}{R}e^{-t/\\tau}$ ซึ่งเป็นกระแสขาลง (หลังตัดแบตเตอรี่) กระแสขาขึ้นคือ $\\tfrac{V}{R}(1 - e^{-t/\\tau})$" }
+    hints:
+      - "$\\tau = L/R = 0.02\\ \\mathrm{s}$ ดังนั้น $t = \\tau$"
+      - "$I = \\tfrac{V}{R}(1 - e^{-t/\\tau})$"
+    solution: "$\\tau = 0.2/10 = 0.02\\ \\mathrm{s}$ $I = 1.2(1 - e^{-1}) = 1.2 \\times 0.632 = 0.759\\ \\mathrm{A}$ ตรวจด้วยการแก้สมการ $L\\,dI/dt = V - IR$ เชิงตัวเลขได้ $0.759\\ \\mathrm{A}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p011
+    topics: [physics.magnetism.induction]
+    difficulty: 4
+    type: numeric
+    stem: "มอเตอร์กระแสตรงของปั๊มน้ำ (ค่าสมมติ) ต่อกับ $120\\ \\mathrm{V}$ ขดลวดอาร์เมเจอร์มีความต้านทาน $2\\ \\Omega$ เมื่อหมุนเต็มที่กินกระแส $5\\ \\mathrm{A}$ อีเอ็มเอฟย้อนกลับเป็นกี่โวลต์"
+    answer: { value: 110, tolerance: 0.5, unit: V }
+    misconceptions:
+      - { match: 120, feedback: "ถ้าอีเอ็มเอฟย้อนกลับเท่าแรงดันที่จ่าย จะไม่มีกระแสไหลเลย ต้องหักแรงดันตกคร่อมความต้านทาน" }
+      - { match: 10, feedback: "นี่คือแรงดันตกคร่อมความต้านทาน $IR$ ไม่ใช่อีเอ็มเอฟย้อนกลับ" }
+    hints:
+      - "$V = \\varepsilon_{\\text{ย้อนกลับ}} + IR$"
+      - "$\\varepsilon_{\\text{ย้อนกลับ}} = 120 - 5(2)$"
+    solution: "$\\varepsilon_{\\text{ย้อนกลับ}} = 120 - 10 = 110\\ \\mathrm{V}$ ตอนเริ่มหมุน อีเอ็มเอฟย้อนกลับเป็นศูนย์ กระแสพุ่งถึง $120/2 = 60\\ \\mathrm{A}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p012
+    topics: [physics.magnetism.induction]
+    difficulty: 4
+    type: numeric
+    stem: "แท่งโลหะเลื่อนบนรางในสนามแม่เหล็ก $0.5\\ \\mathrm{T}$ ดังภาพ ระยะระหว่างราง $0.4\\ \\mathrm{m}$ ปลายรางต่อตัวต้านทาน $2\\ \\Omega$ ต้องออกแรงกี่นิวตันดึงแท่งให้เคลื่อนที่ด้วยความเร็วคงตัว $5\\ \\mathrm{m/s}$ (ไม่มีแรงเสียดทาน)"
+    figure: { src: p-rails.svg, alt: "รางขนานสองเส้นแนวราบ ปลายซ้ายต่อตัวต้านทาน R = 2 Ω แท่งโลหะแนวดิ่งวางพาดราง ยาว ℓ = 0.4 m ระหว่างราง เคลื่อนที่ไปทางขวาด้วย v = 5 m/s สนามแม่เหล็ก B = 0.5 T พุ่งเข้าหน้ากระดาษ (เครื่องหมาย × ทั่วบริเวณ) รางและแท่งไม่มีความต้านทาน" }
+    answer: { value: 0.1, tolerance: 0.002, unit: N }
+    misconceptions:
+      - { match: 0, feedback: "ความเร็วคงตัวไม่ได้แปลว่าไม่ต้องออกแรง แท่งมีกระแสไหลจึงถูกแรงแม่เหล็กต้าน ต้องดึงด้วยแรงเท่ากัน" }
+      - { match: 0.5, feedback: "นี่คือกระแส $0.5\\ \\mathrm{A}$ (หรือกำลัง $0.5\\ \\mathrm{W}$) ไม่ใช่แรง แรงคือ $I\\ell B$" }
+    hints:
+      - "$\\varepsilon = B\\ell v$ แล้ว $I = \\varepsilon/R$"
+      - "แรงแม่เหล็กต่อแท่ง $F = I\\ell B$ ต้องดึงด้วยแรงเท่ากันเพื่อให้ความเร็วคงตัว"
+    solution: "$\\varepsilon = 0.5 \\times 0.4 \\times 5 = 1\\ \\mathrm{V}$ $I = 0.5\\ \\mathrm{A}$ $F = 0.5 \\times 0.4 \\times 0.5 = 0.1\\ \\mathrm{N}$ ตรวจด้วยพลังงาน: $Fv = 0.5\\ \\mathrm{W} = I^2R$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p013
+    topics: [physics.magnetism.induction]
+    difficulty: 5
+    type: numeric
+    stem: "โซเลนอยด์ยาวมีจำนวนรอบต่อความยาว $1000\\ \\mathrm{รอบ/m}$ ภายในมีขดลวดเล็ก $50$ รอบ พื้นที่ $2\\ \\mathrm{cm^2}$ วางแกนร่วมกัน ถ้ากระแสในโซเลนอยด์เพิ่มด้วยอัตรา $200\\ \\mathrm{A/s}$ อีเอ็มเอฟเหนี่ยวนำในขดลวดเล็กเป็นกี่มิลลิโวลต์ ($\\mu_0 = 4\\pi \\times 10^{-7}$ ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.51, tolerance: 0.03, unit: mV }
+    misconceptions:
+      - { match: 0.05, feedback: "ลืมคูณจำนวนรอบของขดลวดเล็ก $N_2 = 50$" }
+      - { match: 25.13, feedback: "แปลงพื้นที่ผิด $2\\ \\mathrm{cm^2} = 2 \\times 10^{-4}\\ \\mathrm{m^2}$ ไม่ใช่ $2 \\times 10^{-3}$" }
+    hints:
+      - "สนามในโซเลนอยด์ $B = \\mu_0 n I_1$ ฟลักซ์ผ่านขดเล็ก $N_2BA_2$"
+      - "$M = \\mu_0 n N_2 A_2$ และ $\\varepsilon = M\\,dI_1/dt$"
+    solution: "$M = 4\\pi \\times 10^{-7} \\times 1000 \\times 50 \\times 2 \\times 10^{-4} = 1.257 \\times 10^{-5}\\ \\mathrm{H}$ $\\varepsilon = 1.257 \\times 10^{-5} \\times 200 = 2.51 \\times 10^{-3}\\ \\mathrm{V} = 2.51\\ \\mathrm{mV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p014
+    topics: [physics.magnetism.induction]
+    difficulty: 5
+    type: numeric
+    stem: "ในโซเลนอยด์ยาวมาก สนามแม่เหล็กสม่ำเสมอเพิ่มด้วยอัตรา $0.05\\ \\mathrm{T/s}$ สนามไฟฟ้าเหนี่ยวนำที่ระยะ $0.1\\ \\mathrm{m}$ จากแกน (ภายในโซเลนอยด์) มีขนาดกี่มิลลิโวลต์ต่อเมตร"
+    answer: { value: 2.5, tolerance: 0.03, unit: "mV/m" }
+    misconceptions:
+      - { match: 5, feedback: "ลืมหารด้วย 2 จาก $E(2\\pi r) = \\pi r^2\\,dB/dt$ ได้ $E = \\tfrac{r}{2}\\,dB/dt$" }
+      - { match: 1.57, feedback: "นี่คืออัตราการเปลี่ยนฟลักซ์ $\\pi r^2\\,dB/dt$ (mWb/s) ยังไม่ได้หารด้วยเส้นรอบวง $2\\pi r$" }
+    hints:
+      - "ใช้ $\\oint \\vec E \\cdot d\\vec l = -d\\Phi_B/dt$ บนวงกลมรัศมี $r$"
+      - "$E(2\\pi r) = \\pi r^2\\,dB/dt$"
+    solution: "$E = \\dfrac{r}{2}\\dfrac{dB}{dt} = \\dfrac{0.1}{2} \\times 0.05 = 2.5 \\times 10^{-3}\\ \\mathrm{V/m} = 2.5\\ \\mathrm{mV/m}$ สนามนี้วนเป็นวงกลมรอบแกน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p015
+    topics: [physics.magnetism.induction]
+    difficulty: 4
+    type: mcq
+    stem: "เตาแม่เหล็กไฟฟ้าในครัวทำให้หม้อเหล็กร้อน แต่ถ้าใช้หม้ออะลูมิเนียมบางหรือหม้อดินเผาจะแทบไม่ร้อน ข้อใดอธิบายได้ดีที่สุด"
+    choices:
+      - { id: a, text: "สนามแม่เหล็กที่เปลี่ยนเร็วเหนี่ยวนำกระแสวนในก้นหม้อ หม้อเหล็กมีความต้านทานและสมบัติแม่เหล็กเหมาะให้เกิดความร้อนมาก ดินเผาไม่นำไฟฟ้าจึงไม่มีกระแสวน", correct: true }
+      - { id: b, text: "ขดลวดใต้เตาร้อนจัดแล้วนำความร้อนสู่หม้อ", feedback: "ถ้าเป็นแบบนั้น หม้อทุกชนิดจะร้อน ความร้อนเกิดในก้นหม้อเองจากกระแสวน แผ่นกระจกร้อนเพราะรับความร้อนจากหม้อ" }
+      - { id: c, text: "เตาปล่อยรังสีอินฟราเรดที่หม้อเหล็กดูดกลืนได้ดีกว่า", feedback: "เตาแม่เหล็กไฟฟ้าไม่ได้ทำงานด้วยการแผ่รังสี ใช้การเหนี่ยวนำแม่เหล็กไฟฟ้า" }
+      - { id: d, text: "หม้อเหล็กหนักกว่าจึงกดสวิตช์ของเตา", feedback: "เตาบางรุ่นตรวจว่ามีหม้อ แต่การทำให้ร้อนมาจากกระแสวนที่เหนี่ยวนำในก้นหม้อ" }
+    hints:
+      - "ขดลวดใต้เตามีกระแสสลับความถี่สูง"
+      - "สนามแม่เหล็กที่เปลี่ยนเหนี่ยวนำกระแสในตัวนำ"
+    solution: "กระแสสลับความถี่สูงในขดลวดสร้างสนามที่เปลี่ยนเร็ว เหนี่ยวนำกระแสวนในก้นหม้อที่นำไฟฟ้า กำลัง $I^2R$ ทำให้หม้อร้อน หม้อเหล็กให้ความร้อนดีที่สุด หม้อดินเผาไม่นำไฟฟ้าจึงไม่ร้อน (เตาบางรุ่นปรับความถี่ใช้กับหม้ออะลูมิเนียมได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p016
+    topics: [physics.magnetism.induction]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนหาทิศกระแสเหนี่ยวนำด้วยกฎของเลนซ์"
+    items:
+      - "หาทิศของสนามแม่เหล็กเดิมที่ผ่านวงลวด"
+      - "ดูว่าฟลักซ์ผ่านวงกำลังเพิ่มหรือลด"
+      - "กำหนดทิศสนามเหนี่ยวนำให้ต้านการเปลี่ยนแปลงนั้น"
+      - "ใช้กฎมือขวาหาทิศกระแสที่สร้างสนามเหนี่ยวนำนั้น"
+    hints:
+      - "ต้องรู้สนามเดิมและการเปลี่ยนแปลงก่อน"
+      - "กฎมือขวาใช้ขั้นสุดท้าย"
+    solution: "ทิศสนามเดิม → ฟลักซ์เพิ่มหรือลด → ทิศสนามเหนี่ยวนำที่ต้าน → กฎมือขวาหาทิศกระแส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p017
+    topics: [physics.magnetism.induction]
+    difficulty: 2
+    type: mcq
+    stem: "ทิ้งแม่เหล็กแรงสูงลงในท่อทองแดงที่ตั้งตรง แม่เหล็กตกช้ากว่าทิ้งในท่อพลาสติกมาก เพราะเหตุใด"
+    choices:
+      - { id: a, text: "แม่เหล็กที่ตกทำให้ฟลักซ์ในท่อเปลี่ยน เกิดกระแสวนในท่อทองแดงที่สร้างสนามต้านการตก", correct: true }
+      - { id: b, text: "แม่เหล็กดูดทองแดง", feedback: "ทองแดงไม่ใช่สารแม่เหล็ก แม่เหล็กนิ่งไม่ดูดทองแดง แรงเกิดเฉพาะเมื่อแม่เหล็กเคลื่อนที่" }
+      - { id: c, text: "แรงเสียดทานกับผนังท่อทองแดงมากกว่า", feedback: "ถ้าแม่เหล็กไม่แตะผนังก็ยังตกช้า แรงต้านมาจากการเหนี่ยวนำ" }
+      - { id: d, text: "อากาศในท่อทองแดงหนาแน่นกว่า", feedback: "อากาศในท่อทั้งสองเหมือนกัน ความต่างมาจากทองแดงนำไฟฟ้า" }
+    hints:
+      - "ทองแดงนำไฟฟ้าได้ดี พลาสติกไม่นำ"
+      - "กฎของเลนซ์ต้านการเปลี่ยนแปลงที่ทำให้เกิดกระแส"
+    solution: "ขณะแม่เหล็กตก ฟลักซ์ผ่านแต่ละส่วนของท่อเปลี่ยน เกิดกระแสวนที่สร้างสนามต้านการเคลื่อนที่ (เลนซ์) พลังงานศักย์กลายเป็นความร้อนในท่อแทนพลังงานจลน์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.induction.p018
+    topics: [physics.magnetism.induction]
+    difficulty: 5
+    type: expression
+    stem: "วงจร RL ต่อกับแบตเตอรี่ $V$ แล้วปิดสวิตช์ที่ $t = 0$ (กระแสเริ่มต้นเป็นศูนย์) จงเขียนกระแส $I$ เป็นฟังก์ชันของเวลา $t$ ในรูปของ $V$, $R$, $L$, $t$"
+    prefix: "I ="
+    answer: { latex: "\\frac{V}{R}\\cdot(1-e^{-\\frac{Rt}{L}})", variables: [V, R, L, t] }
+    misconceptions:
+      - { match: "\\frac{V}{R}\\cdot e^{-\\frac{Rt}{L}}", feedback: "นี่คือกระแสที่ลดลงหลังตัดแบตเตอรี่ ที่ $t = 0$ ได้ $V/R$ ซึ่งขัดกับกระแสเริ่มต้นเป็นศูนย์" }
+      - { match: "\\frac{V}{R}\\cdot(1-e^{-\\frac{Lt}{R}})", feedback: "ค่าคงตัวเวลาคือ $\\tau = L/R$ เลขชี้กำลังจึงเป็น $-t/\\tau = -Rt/L$" }
+    hints:
+      - "$V - IR - L\\,dI/dt = 0$ เป็นสมการเชิงอนุพันธ์อันดับหนึ่ง"
+      - "ค่าสุดท้ายคือ $V/R$ และค่าคงตัวเวลา $\\tau = L/R$"
+    solution: "แยกตัวแปร $\\dfrac{dI}{V/R - I} = \\dfrac{R}{L}dt$ อินทิเกรตด้วย $I(0) = 0$ ได้ $I = \\dfrac{V}{R}\\left(1 - e^{-Rt/L}\\right)$ ตรวจ: $t = 0$ ได้ $0$ และ $t \\to \\infty$ ได้ $V/R$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

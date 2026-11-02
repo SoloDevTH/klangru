@@ -1,0 +1,311 @@
+problems:
+  - id: physics.electricity.electric-field.p001
+    topics: [physics.electricity.electric-field]
+    difficulty: 1
+    type: mcq
+    stem: "ตามกฎของเกาส์ ฟลักซ์ไฟฟ้าสุทธิผ่านผิวปิดขึ้นกับอะไร"
+    choices:
+      - { id: a, text: "ประจุสุทธิที่อยู่ภายในผิวปิดเท่านั้น", correct: true }
+      - { id: b, text: "ขนาดและรูปร่างของผิวปิด", feedback: "ผิวปิดใหญ่หรือเล็ก กลมหรือเหลี่ยม ถ้าล้อมประจุเท่ากัน ฟลักซ์สุทธิเท่ากัน" }
+      - { id: c, text: "ประจุทุกตัว ทั้งในและนอกผิว", feedback: "เส้นสนามจากประจุภายนอกเข้าแล้วก็ออก ฟลักซ์สุทธิจากประจุภายนอกเป็นศูนย์" }
+      - { id: d, text: "สนามไฟฟ้าที่จุดศูนย์กลางของผิว", feedback: "ฟลักซ์คือปริพันธ์ของสนามทั่วทั้งผิว ไม่ใช่ค่าที่จุดเดียว" }
+    hints:
+      - "$\\oint \\vec E \\cdot d\\vec A = Q_{\\text{ภายใน}}/\\varepsilon_0$"
+      - "เส้นสนามจากประจุภายนอกทะลุเข้าแล้วทะลุออก"
+    solution: "ฟลักซ์สุทธิ $= Q_{\\text{ภายใน}}/\\varepsilon_0$ ขึ้นกับประจุภายในเท่านั้น ไม่ขึ้นกับรูปร่างผิว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p002
+    topics: [physics.electricity.electric-field]
+    difficulty: 1
+    type: match
+    stem: "จับคู่การกระจายประจุกับผิวเกาส์ที่เหมาะสม"
+    pairs:
+      - { left: "จุดประจุหรือทรงกลมที่มีประจุสม่ำเสมอ", right: "ทรงกลมที่มีจุดศูนย์กลางร่วมกัน" }
+      - { left: "เส้นลวดยาวมากที่มีประจุสม่ำเสมอ", right: "ทรงกระบอกที่มีลวดเป็นแกน" }
+      - { left: "แผ่นระนาบกว้างมากที่มีประจุสม่ำเสมอ", right: "กล่องหรือทรงกระบอกสั้นทะลุแผ่น" }
+    hints:
+      - "เลือกผิวที่สนามตั้งฉากและมีขนาดเท่ากันทุกจุดบนผิว"
+      - "ผิวเกาส์ต้องมีความสมมาตรแบบเดียวกับการกระจายประจุ"
+    solution: "สมมาตรทรงกลมใช้ทรงกลม สมมาตรทรงกระบอกใช้ทรงกระบอก สมมาตรระนาบใช้กล่องทะลุแผ่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p003
+    topics: [physics.electricity.electric-field]
+    difficulty: 2
+    type: numeric
+    stem: "จุดประจุ $2\\ \\mu\\mathrm{C}$ สนามไฟฟ้าที่ระยะ $0.3\\ \\mathrm{m}$ มีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9\\ \\mathrm{N\\cdot m^2/C^2}$)"
+    answer: { value: 2.0e5, tolerance: 2000, unit: "N/C" }
+    misconceptions:
+      - { match: 6.0e4, feedback: "หารด้วย $r$ แทน $r^2$ สนามของจุดประจุแปรผกผันกับกำลังสองของระยะ" }
+      - { match: 2.0e11, feedback: "ไม่แปลงไมโครคูลอมบ์ ($10^{-6}$)" }
+    hints:
+      - "$E = kq/r^2$"
+      - "$q = 2 \\times 10^{-6}\\ \\mathrm{C}$, $r^2 = 0.09\\ \\mathrm{m^2}$"
+    solution: "$E = \\dfrac{9 \\times 10^9 \\times 2 \\times 10^{-6}}{0.09} = 2.0 \\times 10^5\\ \\mathrm{N/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p004
+    topics: [physics.electricity.electric-field]
+    difficulty: 2
+    type: numeric
+    stem: "สนามไฟฟ้าสม่ำเสมอ $500\\ \\mathrm{N/C}$ ผ่านผิวราบพื้นที่ $0.2\\ \\mathrm{m^2}$ เวกเตอร์ตั้งฉากกับผิวทำมุม $60^\\circ$ กับสนาม ฟลักซ์ไฟฟ้าผ่านผิวเป็นเท่าใด (หน่วย $\\mathrm{N\\cdot m^2/C}$)"
+    answer: { value: 50, tolerance: 0.5, unit: "N·m²/C" }
+    misconceptions:
+      - { match: 86.6, feedback: "ใช้ $\\sin 60^\\circ$ มุมวัดระหว่างสนามกับเวกเตอร์ตั้งฉากของผิว จึงใช้ $\\cos$" }
+      - { match: 100, feedback: "ลืมคิดมุม ผลคูณ $EA$ ใช้ได้เฉพาะเมื่อสนามตั้งฉากกับผิว" }
+    hints:
+      - "$\\Phi_E = EA\\cos\\theta$"
+      - "$\\theta$ คือมุมระหว่าง $\\vec E$ กับเวกเตอร์พื้นที่ (ตั้งฉากกับผิว)"
+    solution: "$\\Phi_E = 500 \\times 0.2 \\times \\cos 60^\\circ = 50\\ \\mathrm{N\\cdot m^2/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p005
+    topics: [physics.electricity.electric-field]
+    difficulty: 2
+    type: numeric
+    stem: "ผิวปิดรูปมันฝรั่งล้อมประจุ $1\\ \\mathrm{nC}$ ไว้ ฟลักซ์ไฟฟ้าสุทธิผ่านผิวนี้เป็นเท่าใด ($\\varepsilon_0 = 8.85 \\times 10^{-12}$ หน่วย $\\mathrm{N\\cdot m^2/C}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 113.0, tolerance: 1, unit: "N·m²/C" }
+    misconceptions:
+      - { match: 0, feedback: "ฟลักซ์สุทธิเป็นศูนย์เมื่อประจุอยู่นอกผิว ในที่นี้ประจุอยู่ข้างใน" }
+      - { match: 1.13e11, feedback: "ไม่แปลงนาโนคูลอมบ์ ($1\\ \\mathrm{nC} = 10^{-9}\\ \\mathrm{C}$)" }
+    hints:
+      - "รูปร่างของผิวไม่มีผลต่อฟลักซ์สุทธิ"
+      - "$\\Phi = Q_{\\text{ภายใน}}/\\varepsilon_0$"
+    solution: "$\\Phi = \\dfrac{10^{-9}}{8.85 \\times 10^{-12}} = 113.0\\ \\mathrm{N\\cdot m^2/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p006
+    topics: [physics.electricity.electric-field]
+    difficulty: 3
+    type: numeric
+    stem: "วงแหวนรัศมี $R = 0.1\\ \\mathrm{m}$ มีประจุ $Q = 10\\ \\mathrm{nC}$ กระจายสม่ำเสมอ ดังภาพ สนามไฟฟ้าที่จุด P บนแกนห่างจากศูนย์กลาง $z = 0.1\\ \\mathrm{m}$ มีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    figure: { src: p-ring.svg, alt: "วงแหวนรัศมี R วางตั้งฉากกับแกนแนวราบ จุด P อยู่บนแกนห่างจากศูนย์กลางวงแหวนเป็นระยะ z วงแหวนมีประจุ Q กระจายสม่ำเสมอ" }
+    answer: { value: 3182, tolerance: 30, unit: "N/C" }
+    misconceptions:
+      - { match: 9000, feedback: "ถือว่าประจุทั้งหมดอยู่ที่ศูนย์กลาง ($kQ/z^2$) แต่ประจุอยู่ห่างจาก P มากกว่า $z$ และองค์ประกอบตั้งฉากกับแกนหักล้างกัน" }
+      - { match: 4500, feedback: "ใช้ $kQ/(z^2 + R^2)$ ลืมคูณ $\\cos\\theta = z/\\sqrt{z^2 + R^2}$ ที่เหลือเฉพาะองค์ประกอบตามแกน" }
+    hints:
+      - "ทุกชิ้น $dq$ อยู่ห่าง P เท่ากัน $\\sqrt{z^2 + R^2}$ และองค์ประกอบตั้งฉากกับแกนหักล้างกัน"
+      - "$E_z = \\dfrac{kQz}{(z^2 + R^2)^{3/2}}$"
+    solution: "$E = \\dfrac{9 \\times 10^9 \\times 10^{-8} \\times 0.1}{(0.02)^{3/2}} = \\dfrac{9}{2.828 \\times 10^{-3}} = 3182\\ \\mathrm{N/C}$ ตรวจด้วยการบวกเชิงตัวเลขจากชิ้นประจุ $100{,}000$ ชิ้นได้ $3182\\ \\mathrm{N/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p007
+    topics: [physics.electricity.electric-field]
+    difficulty: 3
+    type: numeric
+    stem: "สายไฟยาวมากมีประจุ $\\lambda = 5\\ \\mathrm{nC/m}$ สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากสายมีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 900, tolerance: 5, unit: "N/C" }
+    misconceptions:
+      - { match: 4500, feedback: "ใช้ $k\\lambda/r^2$ เหมือนจุดประจุ สนามของเส้นประจุยาวแปรผกผันกับ $r$ ไม่ใช่ $r^2$" }
+      - { match: 450, feedback: "ลืมตัวคูณ 2 ใน $E = 2k\\lambda/r$" }
+    hints:
+      - "ใช้ผิวเกาส์ทรงกระบอก: $E(2\\pi r\\ell) = \\lambda\\ell/\\varepsilon_0$"
+      - "$E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0 r} = \\dfrac{2k\\lambda}{r}$"
+    solution: "$E = \\dfrac{2 \\times 9 \\times 10^9 \\times 5 \\times 10^{-9}}{0.1} = 900\\ \\mathrm{N/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p008
+    topics: [physics.electricity.electric-field]
+    difficulty: 3
+    type: numeric
+    stem: "แผ่นพลาสติกกว้างมากมีประจุกระจายสม่ำเสมอ $\\sigma = 8.85 \\times 10^{-9}\\ \\mathrm{C/m^2}$ สนามไฟฟ้าใกล้แผ่นมีขนาดกี่นิวตันต่อคูลอมบ์ ($\\varepsilon_0 = 8.85 \\times 10^{-12}$)"
+    answer: { value: 500, tolerance: 3, unit: "N/C" }
+    misconceptions:
+      - { match: 1000, feedback: "ใช้ $\\sigma/\\varepsilon_0$ ซึ่งเป็นสนามที่ผิวตัวนำ แผ่นฉนวนบางมีสนามทั้งสองด้าน จึงเป็น $\\sigma/2\\varepsilon_0$" }
+      - { match: 7.8e-20, feedback: "คูณ $\\sigma$ กับ $\\varepsilon_0$ ต้องหาร" }
+    hints:
+      - "ผิวเกาส์เป็นกล่องทะลุแผ่น ฟลักซ์ออกทั้งสองหน้า"
+      - "$E(2A) = \\sigma A/\\varepsilon_0$"
+    solution: "$E = \\dfrac{\\sigma}{2\\varepsilon_0} = \\dfrac{8.85 \\times 10^{-9}}{2 \\times 8.85 \\times 10^{-12}} = 500\\ \\mathrm{N/C}$ ไม่ขึ้นกับระยะห่างจากแผ่น (ถ้าแผ่นกว้างมากเทียบกับระยะ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p009
+    topics: [physics.electricity.electric-field]
+    difficulty: 4
+    type: numeric
+    stem: "ทรงกลมฉนวนรัศมี $0.2\\ \\mathrm{m}$ มีประจุ $4\\ \\mathrm{nC}$ กระจายสม่ำเสมอทั่วปริมาตร สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากจุดศูนย์กลางมีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 450, tolerance: 3, unit: "N/C" }
+    misconceptions:
+      - { match: 3600, feedback: "ใช้ประจุทั้งหมด $kQ/r^2$ แต่ผิวเกาส์รัศมี $0.1\\ \\mathrm{m}$ ล้อมประจุเพียง $(0.1/0.2)^3 = 1/8$ ของทั้งหมด" }
+      - { match: 0, feedback: "สนามเป็นศูนย์ภายในตัวนำ แต่นี่คือทรงกลมฉนวน ประจุกระจายอยู่ทั่วเนื้อ" }
+    hints:
+      - "ประจุภายในผิวเกาส์ $Q_{\\text{ภายใน}} = Q\\,r^3/R^3$"
+      - "$E = kQ_{\\text{ภายใน}}/r^2 = kQr/R^3$"
+    solution: "$Q_{\\text{ภายใน}} = 4 \\times (1/8) = 0.5\\ \\mathrm{nC}$ $E = \\dfrac{9 \\times 10^9 \\times 0.5 \\times 10^{-9}}{0.01} = 450\\ \\mathrm{N/C}$ (ตรวจ: $kQr/R^3 = 9 \\times 10^9 \\times 4 \\times 10^{-9} \\times 0.1/0.008 = 450$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p010
+    topics: [physics.electricity.electric-field]
+    difficulty: 4
+    type: numeric
+    stem: "ทรงกลมโลหะตันรัศมี $0.2\\ \\mathrm{m}$ มีประจุ $4\\ \\mathrm{nC}$ อยู่ในสมดุลไฟฟ้าสถิต สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากจุดศูนย์กลางมีขนาดกี่นิวตันต่อคูลอมบ์"
+    answer: { value: 0, tolerance: 0.5, unit: "N/C" }
+    misconceptions:
+      - { match: 450, feedback: "นี่คือคำตอบของทรงกลมฉนวนที่มีประจุทั่วเนื้อ ในตัวนำ ประจุส่วนเกินไปอยู่ที่ผิวนอกทั้งหมด" }
+      - { match: 3600, feedback: "ใช้ $kQ/r^2$ แต่ผิวเกาส์ภายในตัวนำไม่ได้ล้อมประจุใดเลย" }
+    hints:
+      - "อิเล็กตรอนอิสระในโลหะเคลื่อนจนสนามภายในเป็นศูนย์"
+      - "ประจุส่วนเกินของตัวนำอยู่ที่ใด"
+    solution: "ในสมดุลไฟฟ้าสถิต สนามในเนื้อตัวนำเป็นศูนย์ ประจุ $4\\ \\mathrm{nC}$ อยู่ที่ผิวนอก ผิวเกาส์รัศมี $0.1\\ \\mathrm{m}$ ล้อมประจุศูนย์ จึง $E = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p011
+    topics: [physics.electricity.electric-field]
+    difficulty: 4
+    type: numeric
+    stem: "แท่งพลาสติกยาว $0.4\\ \\mathrm{m}$ มีประจุ $8\\ \\mathrm{nC}$ กระจายสม่ำเสมอ จุด P อยู่บนแนวของแท่ง ห่างจากปลายหนึ่ง $0.1\\ \\mathrm{m}$ สนามไฟฟ้าที่ P มีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 1440, tolerance: 10, unit: "N/C" }
+    misconceptions:
+      - { match: 800, feedback: "ถือว่าประจุทั้งหมดอยู่ที่กึ่งกลางแท่ง (ห่าง $0.3\\ \\mathrm{m}$) แต่สนามแปรผกผันกับกำลังสองของระยะ ชิ้นที่ใกล้ให้สนามมากกว่า ต้องอินทิเกรต" }
+      - { match: 7200, feedback: "ใช้ระยะถึงปลายใกล้ $0.1\\ \\mathrm{m}$ กับประจุทั้งหมด ซึ่งเกินจริงมาก" }
+    hints:
+      - "ชิ้น $dq = \\lambda\\,dx$ ที่ห่าง P เป็นระยะ $s$ ให้ $dE = k\\lambda\\,ds/s^2$"
+      - "อินทิเกรต $s$ จาก $0.1$ ถึง $0.5$: $E = k\\lambda\\left(\\dfrac{1}{0.1} - \\dfrac{1}{0.5}\\right) = \\dfrac{kQ}{d(L + d)}$"
+    solution: "$\\lambda = 8/0.4 = 20\\ \\mathrm{nC/m}$ $E = 9 \\times 10^9 \\times 20 \\times 10^{-9} \\times (10 - 2) = 1440\\ \\mathrm{N/C}$ ตรวจด้วยสูตร $kQ/[d(L + d)] = 72/(0.1 \\times 0.5) = 1440$ และด้วยการบวกเชิงตัวเลข"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p012
+    topics: [physics.electricity.electric-field]
+    difficulty: 4
+    type: numeric
+    stem: "สายโคแอกเชียลของเสาอากาศทีวี ตัวนำในมีประจุ $+2\\ \\mathrm{nC/m}$ ตัวนำนอกทรงกระบอกมีประจุ $-2\\ \\mathrm{nC/m}$ (ค่าสมมติ) สนามไฟฟ้าระหว่างตัวนำทั้งสอง ที่ระยะ $2\\ \\mathrm{mm}$ จากแกน มีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 18000, tolerance: 100, unit: "N/C" }
+    misconceptions:
+      - { match: 0, feedback: "สนามเป็นศูนย์ภายนอกสาย (ผิวเกาส์ล้อมประจุสุทธิศูนย์) แต่ระหว่างตัวนำ ผิวเกาส์ล้อมเฉพาะตัวนำใน" }
+      - { match: 9000, feedback: "ลืมตัวคูณ 2 ใน $2k\\lambda/r$" }
+    hints:
+      - "ผิวเกาส์ทรงกระบอกรัศมี $2\\ \\mathrm{mm}$ ล้อมเฉพาะประจุของตัวนำใน"
+      - "$E = 2k\\lambda/r$"
+    solution: "$E = \\dfrac{2 \\times 9 \\times 10^9 \\times 2 \\times 10^{-9}}{0.002} = 18{,}000\\ \\mathrm{N/C}$ ภายนอกสาย ประจุภายในผิวเกาส์รวมเป็นศูนย์ สนามจึงเป็นศูนย์ สายโคแอกเชียลจึงไม่รบกวนสิ่งรอบข้าง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p013
+    topics: [physics.electricity.electric-field]
+    difficulty: 3
+    type: numeric
+    stem: "ช่วงพายุฝนฟ้าคะนอง อากาศเริ่มแตกตัวเมื่อสนามไฟฟ้าถึงราว $3 \\times 10^6\\ \\mathrm{N/C}$ ปลายสายล่อฟ้าโลหะต้องมีความหนาแน่นประจุที่ผิวกี่ไมโครคูลอมบ์ต่อตารางเมตร สนามจึงถึงค่านี้ ($\\varepsilon_0 = 8.85 \\times 10^{-12}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 26.6, tolerance: 0.3, unit: "μC/m²" }
+    misconceptions:
+      - { match: 53.1, feedback: "ใช้ $E = \\sigma/2\\varepsilon_0$ ของแผ่นฉนวน แต่ที่ผิวตัวนำ $E = \\sigma/\\varepsilon_0$" }
+      - { match: 2.66e-5, feedback: "ได้หน่วย $\\mathrm{C/m^2}$ โจทย์ถามเป็นไมโครคูลอมบ์ต่อตารางเมตร (คูณ $10^6$)" }
+    hints:
+      - "สนามที่ผิวตัวนำ $E = \\sigma/\\varepsilon_0$"
+      - "$\\sigma = \\varepsilon_0 E$"
+    solution: "$\\sigma = 8.85 \\times 10^{-12} \\times 3 \\times 10^6 = 2.66 \\times 10^{-5}\\ \\mathrm{C/m^2} = 26.6\\ \\mu\\mathrm{C/m^2}$ ปลายแหลมมีรัศมีความโค้งเล็ก ประจุรวมตัวหนาแน่นที่ปลาย จึงถึงค่านี้ง่ายกว่าผิวเรียบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p014
+    topics: [physics.electricity.electric-field]
+    difficulty: 5
+    type: expression
+    stem: "วงแหวนรัศมี $R$ มีประจุ $Q$ จงเขียนขนาดของสนามไฟฟ้าที่จุดบนแกนห่างจากศูนย์กลาง $z$ ในรูปของ $k$, $Q$, $z$, $R$"
+    prefix: "E ="
+    answer: { latex: "\\frac{kQz}{(z^2+R^2)^{3/2}}", variables: [k, Q, z, R] }
+    misconceptions:
+      - { match: "\\frac{kQ}{z^2+R^2}", feedback: "ลืมคูณ $\\cos\\theta = z/\\sqrt{z^2 + R^2}$ องค์ประกอบตั้งฉากกับแกนหักล้างกัน เหลือเฉพาะส่วนตามแกน" }
+      - { match: "\\frac{kQ}{z^2}", feedback: "ถือว่าประจุอยู่ที่ศูนย์กลาง ใช้ได้เฉพาะเมื่อ $z \\gg R$" }
+    hints:
+      - "ทุกชิ้น $dq$ อยู่ห่าง $r = \\sqrt{z^2 + R^2}$ ให้ $dE = k\\,dq/r^2$"
+      - "องค์ประกอบตามแกน $dE\\cos\\theta$ เมื่อ $\\cos\\theta = z/r$ แล้วรวมทุก $dq$"
+    solution: "$E_z = \\int \\dfrac{k\\,dq}{r^2}\\cdot\\dfrac{z}{r} = \\dfrac{kz}{r^3}\\int dq = \\dfrac{kQz}{(z^2 + R^2)^{3/2}}$ ตรวจ: $z = 0$ ได้ $0$ และ $z \\gg R$ ได้ $kQ/z^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p015
+    topics: [physics.electricity.electric-field]
+    difficulty: 5
+    type: numeric
+    stem: "จุดประจุ $6\\ \\mathrm{nC}$ อยู่ที่จุดศูนย์กลางของลูกบาศก์ ฟลักซ์ไฟฟ้าผ่านหน้าลูกบาศก์ **หน้าเดียว** เป็นเท่าใด ($\\varepsilon_0 = 8.85 \\times 10^{-12}$ หน่วย $\\mathrm{N\\cdot m^2/C}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 113.0, tolerance: 1, unit: "N·m²/C" }
+    misconceptions:
+      - { match: 678.0, feedback: "นี่คือฟลักซ์ผ่านลูกบาศก์ทั้งหกหน้ารวมกัน" }
+      - { match: 0, feedback: "ฟลักซ์สุทธิเป็นศูนย์เฉพาะเมื่อประจุอยู่นอกผิวปิด" }
+    hints:
+      - "ฟลักซ์รวมผ่านลูกบาศก์ $= q/\\varepsilon_0$"
+      - "ประจุอยู่ที่ศูนย์กลาง ทั้งหกหน้าสมมาตรกัน"
+    solution: "ฟลักซ์รวม $= 6 \\times 10^{-9}/8.85 \\times 10^{-12} = 678.0$ แบ่งเท่ากันหกหน้า ได้หน้าละ $113.0\\ \\mathrm{N\\cdot m^2/C}$ (หาสนามบนหน้าลูกบาศก์ด้วยกฎของเกาส์ไม่ได้ เพราะสนามบนหน้าไม่คงตัว แต่หาฟลักซ์ได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p016
+    topics: [physics.electricity.electric-field]
+    difficulty: 3
+    type: mcq
+    stem: "ทำไมคนที่นั่งในรถยนต์หลังคาโลหะจึงค่อนข้างปลอดภัยเมื่อฟ้าผ่ารถ"
+    choices:
+      - { id: a, text: "ตัวถังโลหะเป็นตัวนำ ประจุไหลไปตามผิวนอก และสนามในโพรงที่ล้อมด้วยตัวนำเป็นศูนย์", correct: true }
+      - { id: b, text: "ยางรถเป็นฉนวนกั้นไฟฟ้าจากพื้น", feedback: "ฟ้าผ่ามีแรงดันหลายล้านโวลต์ ทะลุผ่านยางและอากาศได้ ความปลอดภัยมาจากตัวถังโลหะที่เป็นกรงฟาราเดย์" }
+      - { id: c, text: "กระจกรถสะท้อนฟ้าผ่า", feedback: "กระจกไม่ได้สะท้อนกระแส ตัวถังโลหะต่างหากที่นำประจุไปตามผิวนอก" }
+      - { id: d, text: "ภายในรถมีประจุบวกและลบหักล้างกันพอดีตลอดเวลา", feedback: "สิ่งสำคัญคือประจุส่วนเกินไปอยู่ที่ผิวนอกของตัวนำ และสนามในโพรงเป็นศูนย์" }
+    hints:
+      - "นึกถึงสมบัติของตัวนำในสมดุลไฟฟ้าสถิต"
+      - "โพรงที่ล้อมด้วยตัวนำ"
+    solution: "ตัวถังโลหะทำหน้าที่เป็นกรงฟาราเดย์ ประจุไหลไปตามผิวนอกลงสู่พื้น และสนามในโพรงเกือบเป็นศูนย์ (ควรนั่งนิ่ง ไม่แตะชิ้นส่วนโลหะ และรถเปิดประทุนไม่ได้ป้องกันแบบนี้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p017
+    topics: [physics.electricity.electric-field]
+    difficulty: 4
+    type: mcq
+    stem: "กรณีใดใช้กฎของเกาส์หาสนามไฟฟ้าได้ง่ายโดยไม่ต้องอินทิเกรต"
+    choices:
+      - { id: a, text: "เปลือกทรงกลมบางที่มีประจุสม่ำเสมอ", correct: true }
+      - { id: b, text: "แท่งที่มีประจุยาว 10 cm ที่จุดห่าง 5 cm", feedback: "แท่งสั้นไม่สมมาตรพอ สนามบนผิวเกาส์ไม่คงตัว ต้องอินทิเกรตจากชิ้นประจุ" }
+      - { id: c, text: "แผ่นสี่เหลี่ยมจัตุรัสเล็กที่มีประจุ ที่จุดห่างจากแผ่นเท่าความกว้าง", feedback: "แผ่นเล็กไม่ได้กว้างมากเทียบกับระยะ สนามไม่สม่ำเสมอ ใช้ผลของแผ่นระนาบกว้างไม่ได้" }
+      - { id: d, text: "ประจุสองตัวต่างชนิดห่างกันเล็กน้อย", feedback: "กฎของเกาส์ยังจริง แต่ไม่มีผิวที่สนามคงตัว จึงใช้หาสนามไม่ได้ ใช้การรวมเวกเตอร์แทน" }
+    hints:
+      - "ต้องหาผิวที่สนามมีขนาดคงตัวและตั้งฉากกับผิว"
+      - "สมมาตรทรงกลม ทรงกระบอกยาวมาก หรือระนาบกว้างมาก"
+    solution: "เปลือกทรงกลมสมมาตรทรงกลม ผิวเกาส์ทรงกลมให้ $E = kQ/r^2$ ภายนอก และ $0$ ภายใน กรณีอื่นไม่สมมาตรพอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p018
+    topics: [physics.electricity.electric-field]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการใช้กฎของเกาส์หาสนามไฟฟ้า"
+    items:
+      - "ดูความสมมาตรของการกระจายประจุ เพื่อรู้ทิศของสนาม"
+      - "เลือกผิวเกาส์ผ่านจุดที่ต้องการ ให้สนามคงตัวและตั้งฉากกับผิว"
+      - "คำนวณฟลักซ์ผ่านผิวเกาส์ในรูปของ E"
+      - "หาประจุที่อยู่ภายในผิวเกาส์"
+      - "ตั้งฟลักซ์เท่ากับประจุภายในหารด้วย ε₀ แล้วแก้หา E"
+    hints:
+      - "ความสมมาตรต้องมาก่อนการเลือกผิว"
+      - "ขั้นสุดท้ายคือใช้กฎของเกาส์"
+    solution: "ความสมมาตร → เลือกผิวเกาส์ → ฟลักซ์ในรูป E → ประจุภายใน → $\\Phi = Q_{\\text{ภายใน}}/\\varepsilon_0$ แก้หา E"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.electricity.electric-field.p019
+    topics: [physics.electricity.electric-field]
+    difficulty: 2
+    type: numeric
+    stem: "ประจุ $+4\\ \\mathrm{nC}$ อยู่ที่ $x = 0$ และประจุ $-4\\ \\mathrm{nC}$ อยู่ที่ $x = 0.2\\ \\mathrm{m}$ สนามไฟฟ้าที่จุดกึ่งกลาง ($x = 0.1\\ \\mathrm{m}$) มีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 7200, tolerance: 50, unit: "N/C" }
+    misconceptions:
+      - { match: 0, feedback: "คิดว่าสนามหักล้างกัน แต่สนามจากประจุบวกชี้ออกจากมัน (ไป $+x$) และจากประจุลบชี้เข้าหามัน (ไป $+x$ เช่นกัน) จึงเสริมกัน" }
+      - { match: 3600, feedback: "คิดสนามจากประจุเพียงตัวเดียว ต้องรวมสนามจากทั้งสองประจุ" }
+    hints:
+      - "หาทิศของสนามจากแต่ละประจุที่จุดกึ่งกลาง"
+      - "แต่ละตัวให้ $kq/r^2$ ที่ $r = 0.1\\ \\mathrm{m}$"
+    solution: "แต่ละประจุให้ $9 \\times 10^9 \\times 4 \\times 10^{-9}/0.01 = 3600\\ \\mathrm{N/C}$ ทั้งสองชี้ไปทาง $+x$ รวมเป็น $7200\\ \\mathrm{N/C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
