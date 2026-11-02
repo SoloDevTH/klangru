@@ -1,0 +1,311 @@
+problems:
+  - id: math.calculus.integration-techniques.p001
+    topics: [math.calculus.integration-techniques]
+    difficulty: 1
+    type: mcq
+    stem: "จะหา $\\displaystyle\\int x^2\\ln x\\,dx$ ด้วยปริพันธ์ทีละส่วน ควรเลือก $u$ เป็นอะไร"
+    choices:
+      - { id: a, text: "$u = \\ln x$ และ $dv = x^2\\,dx$", correct: true }
+      - { id: b, text: "$u = x^2$ และ $dv = \\ln x\\,dx$", feedback: "ต้องหาปฏิยานุพันธ์ของ $dv$ ได้ แต่ปฏิยานุพันธ์ของ $\\ln x$ เองต้องใช้ปริพันธ์ทีละส่วนอีกรอบ ทำให้ยากขึ้น" }
+      - { id: c, text: "$u = x^2\\ln x$ และ $dv = dx$", feedback: "ได้ $du$ ที่ยาวกว่าเดิม ปริพันธ์ใหม่ไม่ง่ายลง" }
+      - { id: d, text: "ใช้การแทนค่า $u = \\ln x$ อย่างเดียวก็พอ", feedback: "$du = \\tfrac1x\\,dx$ แต่ในปริพันธ์ไม่มี $\\tfrac1x$ คูณอยู่ การแทนค่าอย่างเดียวจึงไม่พอ" }
+    hints:
+      - "นึกถึงลำดับ LIATE"
+      - "ลอการิทึมมาก่อนพีชคณิต"
+    solution: "ตาม LIATE เลือก $u = \\ln x$ ซึ่งหาอนุพันธ์แล้วได้ $\\tfrac1x$ ที่ง่ายลง และ $dv = x^2\\,dx$ ให้ $v = \\tfrac{x^3}{3}$ จะได้ $\\int x^2\\ln x\\,dx = \\tfrac{x^3}{3}\\ln x - \\int \\tfrac{x^2}{3}\\,dx = \\tfrac{x^3}{3}\\ln x - \\tfrac{x^3}{9} + C$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p002
+    topics: [math.calculus.integration-techniques]
+    difficulty: 1
+    type: numeric
+    stem: "เขียน $\\dfrac{1}{(x - 1)(x + 1)} = \\dfrac{A}{x - 1} + \\dfrac{B}{x + 1}$ จงหา $A$"
+    answer: { value: 0.5, tolerance: 0.01 }
+    hints:
+      - "คูณ $(x - 1)(x + 1)$ ทั้งสองข้าง: $1 = A(x + 1) + B(x - 1)$"
+      - "แทน $x = 1$ เพื่อให้พจน์ของ $B$ หายไป"
+    misconceptions:
+      - { match: -0.5, feedback: "นี่คือค่า $B$ (แทน $x = -1$) โจทย์ถามค่า $A$" }
+      - { match: 1, feedback: "แทน $x = 1$ แล้วได้ $1 = 2A$ ต้องหารด้วย 2" }
+    solution: "$1 = A(x + 1) + B(x - 1)$ แทน $x = 1$: $1 = 2A$ จึง $A = \\tfrac12$ (และ $B = -\\tfrac12$) ตรวจ: $\\tfrac{1/2}{x - 1} - \\tfrac{1/2}{x + 1} = \\tfrac{(x + 1) - (x - 1)}{2(x^2 - 1)} = \\tfrac{1}{x^2 - 1}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p003
+    topics: [math.calculus.integration-techniques]
+    difficulty: 2
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = xe^{x}$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "xe^{x}-e^{x}+1", variables: [x] }
+    misconceptions:
+      - { match: "xe^{x}", feedback: "นี่คือ $uv$ อย่างเดียว ต้องลบ $\\int v\\,du = \\int e^{x}\\,dx$ ด้วย" }
+      - { match: "xe^{x}+e^{x}-1", feedback: "สูตรคือ $uv - \\int v\\,du$ ต้องลบ $e^{x}$ ไม่ใช่บวก" }
+    hints:
+      - "ให้ $u = x$ และ $dv = e^{x}\\,dx$"
+      - "$\\int xe^{x}\\,dx = xe^{x} - \\int e^{x}\\,dx$ แล้วใช้ $F(0) = 0$ หาค่าคงตัว"
+    solution: "$u = x$, $dv = e^{x}dx$ ได้ $du = dx$, $v = e^{x}$ จึง $\\int xe^{x}dx = xe^{x} - e^{x} + C$ และ $F(0) = 0 - 1 + C = 0$ ให้ $C = 1$ ได้ $F(x) = xe^{x} - e^{x} + 1$ ตรวจ: $F'(x) = e^{x} + xe^{x} - e^{x} = xe^{x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p004
+    topics: [math.calculus.integration-techniques]
+    difficulty: 2
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = x\\cos x$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "x\\sin x+\\cos x-1", variables: [x] }
+    misconceptions:
+      - { match: "x\\sin x-\\cos x+1", feedback: "ปฏิยานุพันธ์ของ $\\sin x$ คือ $-\\cos x$ เมื่อลบใน $uv - \\int v\\,du$ จึงได้ $+\\cos x$" }
+      - { match: "x\\sin x", feedback: "ยังไม่ได้ลบ $\\int v\\,du = \\int \\sin x\\,dx$" }
+    hints:
+      - "ให้ $u = x$ และ $dv = \\cos x\\,dx$ จะได้ $v = \\sin x$"
+      - "$\\int x\\cos x\\,dx = x\\sin x - \\int \\sin x\\,dx$ ระวังเครื่องหมาย แล้วใช้ $F(0) = 0$"
+    solution: "$\\int x\\cos x\\,dx = x\\sin x - \\int \\sin x\\,dx = x\\sin x + \\cos x + C$ และ $F(0) = 0 + 1 + C = 0$ ให้ $C = -1$ ได้ $F(x) = x\\sin x + \\cos x - 1$ ตรวจ: $F'(x) = \\sin x + x\\cos x - \\sin x = x\\cos x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p005
+    topics: [math.calculus.integration-techniques]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_1^{\\infty}\\frac{1}{x^3}\\,dx$"
+    answer: { value: 0.5, tolerance: 0.01 }
+    hints:
+      - "$\\displaystyle\\int_1^{\\infty}\\frac{dx}{x^3} = \\lim_{b\\to\\infty}\\int_1^b x^{-3}\\,dx$"
+      - "ปฏิยานุพันธ์คือ $-\\dfrac{1}{2x^2}$ เมื่อ $b \\to \\infty$ พจน์ $-\\dfrac{1}{2b^2} \\to 0$"
+    misconceptions:
+      - { match: -0.5, feedback: "ลบกลับลำดับ ต้องเป็น (ค่าที่ $b$) − (ค่าที่ 1) $= 0 - (-\\tfrac12)$" }
+      - { match: 1, feedback: "ปฏิยานุพันธ์ของ $x^{-3}$ คือ $\\tfrac{x^{-2}}{-2}$ ต้องหารด้วย 2" }
+    solution: "$\\displaystyle\\lim_{b\\to\\infty}\\Big[-\\frac{1}{2x^2}\\Big]_1^b = \\lim_{b\\to\\infty}\\Big(-\\frac{1}{2b^2} + \\frac12\\Big) = \\frac12$ ลู่เข้า (ตรงกับ $\\tfrac{1}{p - 1}$ เมื่อ $p = 3$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p006
+    topics: [math.calculus.integration-techniques]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ปริพันธ์ไม่ตรงแบบใดต่อไปนี้ **ลู่เข้า** (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "$\\displaystyle\\int_1^{\\infty}\\frac{dx}{x^2}$", correct: true }
+      - { id: b, text: "$\\displaystyle\\int_0^{\\infty}e^{-x}\\,dx$", correct: true }
+      - { id: c, text: "$\\displaystyle\\int_1^{\\infty}\\frac{dx}{x}$", feedback: "ได้ $\\lim_{b\\to\\infty}\\ln b$ ซึ่งโตไม่มีขอบเขต แม้ $\\tfrac1x \\to 0$" }
+      - { id: d, text: "$\\displaystyle\\int_1^{\\infty}\\frac{dx}{\\sqrt{x}}$", feedback: "$p = \\tfrac12 \\le 1$ ได้ $\\lim_{b\\to\\infty}(2\\sqrt{b} - 2)$ ลู่ออก" }
+    hints:
+      - "$\\int_1^{\\infty}\\tfrac{dx}{x^p}$ ลู่เข้าเมื่อ $p > 1$"
+      - "$\\int_0^b e^{-x}\\,dx = 1 - e^{-b}$"
+    solution: "$\\int_1^{\\infty}x^{-2}\\,dx = 1$ และ $\\int_0^{\\infty}e^{-x}\\,dx = 1$ ลู่เข้า ส่วน $\\tfrac1x$ ($p = 1$) และ $\\tfrac{1}{\\sqrt x}$ ($p = \\tfrac12$) ลู่ออก ฟังก์ชันเข้าใกล้ศูนย์อย่างเดียวไม่พอ ต้องเข้าใกล้เร็วพอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p007
+    topics: [math.calculus.integration-techniques]
+    difficulty: 3
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\ln x$ ($x > 0$) ที่ $F(1) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "x\\ln x-x+1", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{1}{x}", feedback: "นี่คืออนุพันธ์ของ $\\ln x$ ไม่ใช่ปฏิยานุพันธ์" }
+      - { match: "x\\ln x-x", feedback: "ถูกถึงขั้น $+C$ แล้ว แต่ต้องใช้ $F(1) = 0$: $1\\cdot 0 - 1 + C = 0$ ให้ $C = 1$" }
+    hints:
+      - "ให้ $u = \\ln x$ และ $dv = dx$"
+      - "$\\int \\ln x\\,dx = x\\ln x - \\int x\\cdot\\tfrac1x\\,dx$"
+    solution: "$u = \\ln x$, $dv = dx$ ได้ $du = \\tfrac1x dx$, $v = x$ จึง $\\int \\ln x\\,dx = x\\ln x - \\int 1\\,dx = x\\ln x - x + C$ เงื่อนไข $F(1) = 0 - 1 + C = 0$ ให้ $C = 1$ ตรวจ: $(x\\ln x - x + 1)' = \\ln x + 1 - 1 = \\ln x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p008
+    topics: [math.calculus.integration-techniques]
+    difficulty: 3
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\sin^3 x$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "\\frac{\\cos^3 x}{3}-\\cos x+\\frac{2}{3}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{\\sin^4 x}{4}", feedback: "กฎยกกำลังใช้ได้เมื่อมีอนุพันธ์ของ $\\sin x$ คูณอยู่ด้วย ต้องแยก $\\sin^3 x = (1 - \\cos^2 x)\\sin x$ ก่อน" }
+      - { match: "-\\frac{\\cos^3 x}{3}+\\cos x-\\frac{2}{3}", feedback: "เมื่อ $u = \\cos x$ จะได้ $du = -\\sin x\\,dx$ เครื่องหมายลบทำให้ทุกพจน์กลับเครื่องหมาย" }
+    hints:
+      - "กำลังคี่: แยก $\\sin x$ ออกมาหนึ่งตัว แล้วเขียน $\\sin^2 x = 1 - \\cos^2 x$"
+      - "ให้ $u = \\cos x$, $du = -\\sin x\\,dx$ แล้วใช้ $F(0) = 0$"
+    solution: "$\\int \\sin^3 x\\,dx = \\int (1 - \\cos^2 x)\\sin x\\,dx$ ให้ $u = \\cos x$ ได้ $-\\int (1 - u^2)\\,du = -u + \\tfrac{u^3}{3} + C = -\\cos x + \\tfrac{\\cos^3 x}{3} + C$ ที่ $x = 0$: $-1 + \\tfrac13 + C = 0$ จึง $C = \\tfrac23$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p009
+    topics: [math.calculus.integration-techniques]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^{\\pi/2}\\sin^2 x\\,dx$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.785, tolerance: 0.005 }
+    hints:
+      - "ลดกำลัง: $\\sin^2 x = \\dfrac{1 - \\cos 2x}{2}$"
+      - "$\\displaystyle\\int \\frac{1 - \\cos 2x}{2}\\,dx = \\frac{x}{2} - \\frac{\\sin 2x}{4}$"
+    misconceptions:
+      - { match: 1.571, feedback: "ลืมหารด้วย 2 ในสูตรมุมสองเท่า" }
+      - { match: 0.333, feedback: "ใช้กฎยกกำลังเป็น $\\tfrac{\\sin^3 x}{3}$ ซึ่งผิด เพราะไม่มี $\\cos x$ คูณอยู่" }
+    solution: "$\\Big[\\tfrac{x}{2} - \\tfrac{\\sin 2x}{4}\\Big]_0^{\\pi/2} = \\tfrac{\\pi}{4} - 0 = \\tfrac{\\pi}{4} \\approx 0.785$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p010
+    topics: [math.calculus.integration-techniques]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_2^3 \\frac{5x + 1}{(x - 1)(x + 2)}\\,dx$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 2.06, tolerance: 0.01 }
+    hints:
+      - "เขียน $\\dfrac{5x + 1}{(x - 1)(x + 2)} = \\dfrac{A}{x - 1} + \\dfrac{B}{x + 2}$ แล้วแทน $x = 1$ และ $x = -2$"
+      - "จะได้ $A = 2$, $B = 3$ แล้วหาปริพันธ์เป็น $\\ln$"
+    misconceptions:
+      - { match: 2.53, feedback: "สลับ $A$ กับ $B$ ตรวจโดยแทน $x = 1$: $6 = 3A$" }
+    solution: "$5x + 1 = A(x + 2) + B(x - 1)$ แทน $x = 1$: $6 = 3A$, $A = 2$ แทน $x = -2$: $-9 = -3B$, $B = 3$ จึงได้ $\\Big[2\\ln|x - 1| + 3\\ln|x + 2|\\Big]_2^3 = 2\\ln 2 + 3\\ln\\tfrac54 \\approx 1.386 + 0.669 = 2.06$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p011
+    topics: [math.calculus.integration-techniques]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ปริพันธ์กับวิธีที่เหมาะที่สุด"
+    pairs:
+      - { left: "$\\int x e^{2x}\\,dx$", right: "ปริพันธ์ทีละส่วน" }
+      - { left: "$\\int \\sin^2 x\\cos^3 x\\,dx$", right: "แยก $\\cos x$ หนึ่งตัวแล้วใช้ $\\cos^2 x = 1 - \\sin^2 x$" }
+      - { left: "$\\int \\dfrac{dx}{x^2 - 4}$", right: "เศษส่วนย่อย" }
+      - { left: "$\\int \\dfrac{2x}{x^2 + 1}\\,dx$", right: "การแทนค่า $u = x^2 + 1$" }
+    hints:
+      - "ตัวเศษเป็นอนุพันธ์ของตัวส่วนหรือไม่"
+      - "ผลคูณของพีชคณิตกับเอกซ์โพเนนเชียลใช้ทีละส่วน ตัวส่วนที่แยกตัวประกอบเชิงเส้นได้ใช้เศษส่วนย่อย"
+    solution: "$xe^{2x}$ → ทีละส่วน ($u = x$); $\\sin^2 x\\cos^3 x$ มี $\\cos$ กำลังคี่ → แยก $\\cos x$ แล้วแทน $u = \\sin x$; $\\tfrac{1}{x^2 - 4} = \\tfrac{1}{(x - 2)(x + 2)}$ → เศษส่วนย่อย; $\\tfrac{2x}{x^2 + 1}$ ตัวเศษเป็นอนุพันธ์ของตัวส่วน → แทนค่า ได้ $\\ln(x^2 + 1) + C$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p012
+    topics: [math.calculus.integration-techniques]
+    difficulty: 4
+    type: numeric
+    stem: "ผู้ป่วยในโรงพยาบาลชุมชนแห่งหนึ่งกินยาเม็ด ความเข้มข้นของยาในเลือดตามแบบจำลองคือ $C(t) = 6te^{-0.5t}$ มิลลิกรัมต่อลิตร เมื่อ $t$ เป็นชั่วโมง (แบบจำลองสมมติ) ค่า AUC คือ $\\displaystyle\\int_0^{\\infty}C(t)\\,dt$ ใช้วัดปริมาณยาที่ร่างกายได้รับทั้งหมด จงหา AUC เป็น mg·h/L"
+    answer: { value: 24, unit: "mg·h/L", tolerance: 0.1 }
+    hints:
+      - "ใช้ปริพันธ์ทีละส่วนกับ $\\int te^{-0.5t}\\,dt$ โดยให้ $u = t$"
+      - "$\\int te^{-0.5t}dt = -2te^{-0.5t} - 4e^{-0.5t} + C$ แล้วหาลิมิตเมื่อ $b \\to \\infty$ ($be^{-0.5b} \\to 0$)"
+    misconceptions:
+      - { match: 12, feedback: "$\\int_0^{\\infty}te^{-kt}dt = \\tfrac{1}{k^2}$ ไม่ใช่ $\\tfrac1k$ เมื่อ $k = 0.5$ ได้ 4 ไม่ใช่ 2" }
+    solution: "$\\int te^{-0.5t}dt$: $u = t$, $dv = e^{-0.5t}dt$, $v = -2e^{-0.5t}$ ได้ $-2te^{-0.5t} + 2\\int e^{-0.5t}dt = -2te^{-0.5t} - 4e^{-0.5t}$ จาก 0 ถึง $b$ แล้ว $b \\to \\infty$: $0 - (0 - 4) = 4$ จึง AUC $= 6 \\times 4 = 24$ mg·h/L"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p013
+    topics: [math.calculus.integration-techniques]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเก็บน้ำบนหลังคาบ้านหลังหนึ่งในขอนแก่นมีรอยรั่วที่ค่อย ๆ อุดตัน อัตราน้ำรั่วคือ $r(t) = \\dfrac{20}{(t + 1)(t + 2)}$ ลิตรต่อชั่วโมง (แบบจำลองสมมติ) ถ้าปล่อยไว้ตลอดไป น้ำจะรั่วออกทั้งหมดกี่ลิตร (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 13.86, unit: ลิตร, tolerance: 0.05 }
+    hints:
+      - "แยกเศษส่วนย่อย: $\\dfrac{20}{(t + 1)(t + 2)} = \\dfrac{20}{t + 1} - \\dfrac{20}{t + 2}$"
+      - "ปฏิยานุพันธ์คือ $20\\ln\\dfrac{t + 1}{t + 2}$ ซึ่งเข้าใกล้ $20\\ln 1 = 0$ เมื่อ $t \\to \\infty$"
+    misconceptions:
+      - { match: -13.86, feedback: "ลบกลับลำดับ ค่าที่ขอบบน (0) ลบค่าที่ $t = 0$ ($20\\ln\\tfrac12$) ได้บวก" }
+    solution: "$\\displaystyle\\int_0^{\\infty}\\Big(\\frac{20}{t + 1} - \\frac{20}{t + 2}\\Big)dt = \\lim_{b\\to\\infty}\\Big[20\\ln\\frac{t + 1}{t + 2}\\Big]_0^b = 0 - 20\\ln\\frac12 = 20\\ln 2 \\approx 13.86$ ลิตร แม้รั่วตลอดไป แต่อัตราลดลงเร็วพอ ปริมาณรวมจึงจำกัด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p014
+    topics: [math.calculus.integration-techniques]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^1 \\ln x\\,dx$"
+    answer: { value: -1, tolerance: 0.001 }
+    hints:
+      - "$\\ln x$ ไม่มีขอบเขตเมื่อ $x \\to 0^+$ จึงเขียนเป็น $\\lim_{a\\to0^+}\\int_a^1 \\ln x\\,dx$"
+      - "ปฏิยานุพันธ์คือ $x\\ln x - x$ และ $\\lim_{a\\to0^+}a\\ln a = 0$"
+    misconceptions:
+      - { match: 1, feedback: "บนช่วง $(0, 1)$ ค่า $\\ln x < 0$ ทั้งหมด ปริพันธ์ต้องเป็นลบ" }
+    solution: "$\\displaystyle\\lim_{a\\to0^+}\\Big[x\\ln x - x\\Big]_a^1 = (0 - 1) - \\lim_{a\\to0^+}(a\\ln a - a) = -1 - 0 = -1$ ลู่เข้า แม้กราฟพุ่งลงไม่มีขอบเขตที่ $x = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p015
+    topics: [math.calculus.integration-techniques]
+    difficulty: 4
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = x^2e^{x}$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "(x^2-2x+2)e^{x}-2", variables: [x] }
+    misconceptions:
+      - { match: "(x^2+2x+2)e^{x}-2", feedback: "รอบที่สองต้องลบ $\\int 2xe^{x}dx$ ทั้งก้อน เครื่องหมายของ $2x$ จึงเป็นลบ" }
+      - { match: "x^2e^{x}-2xe^{x}", feedback: "ทำทีละส่วนรอบที่สองยังไม่จบ $\\int 2xe^{x}dx = 2xe^{x} - 2e^{x}$" }
+    hints:
+      - "รอบแรก $u = x^2$: $\\int x^2e^{x}dx = x^2e^{x} - \\int 2xe^{x}dx$"
+      - "รอบสอง $u = 2x$ แล้วใช้ $F(0) = 0$ หาค่าคงตัว"
+    solution: "$\\int x^2e^{x}dx = x^2e^{x} - (2xe^{x} - 2e^{x}) + C = (x^2 - 2x + 2)e^{x} + C$ ที่ $x = 0$: $2 + C = 0$ จึง $C = -2$ ตรวจ: $F'(x) = (2x - 2)e^{x} + (x^2 - 2x + 2)e^{x} = x^2e^{x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p016
+    topics: [math.calculus.integration-techniques]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^{\\pi}e^{x}\\sin x\\,dx$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 12.07, tolerance: 0.02 }
+    hints:
+      - "ทำทีละส่วนสองรอบ (ให้ $u$ เป็นฟังก์ชันตรีโกณทั้งสองรอบ) แล้วปริพันธ์เดิมจะกลับมา"
+      - "ได้ $I = e^{x}\\sin x - e^{x}\\cos x - I$ ย้ายข้างแก้หา $I$"
+    misconceptions:
+      - { match: 11.07, feedback: "ที่ $x = \\pi$ ค่า $-e^{x}\\cos x = +e^{\\pi}$ และที่ $x = 0$ เท่ากับ $-1$ ผลต่างจึงเป็น $e^{\\pi} + 1$ ไม่ใช่ $e^{\\pi} - 1$" }
+    solution: "$\\int e^{x}\\sin x\\,dx = e^{x}\\sin x - \\int e^{x}\\cos x\\,dx = e^{x}\\sin x - e^{x}\\cos x - \\int e^{x}\\sin x\\,dx$ จึง $\\int e^{x}\\sin x\\,dx = \\tfrac12 e^{x}(\\sin x - \\cos x) + C$ ได้ $\\tfrac12\\big[e^{\\pi}(0 + 1) - (0 - 1)\\big] = \\tfrac{e^{\\pi} + 1}{2} \\approx 12.07$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p017
+    topics: [math.calculus.integration-techniques]
+    difficulty: 4
+    type: mcq
+    stem: "นักศึกษาคนหนึ่งคำนวณ $\\displaystyle\\int_{-1}^{1}\\frac{dx}{x^2} = \\Big[-\\frac1x\\Big]_{-1}^{1} = -1 - 1 = -2$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ปริพันธ์ลู่ออก เพราะ $\\tfrac{1}{x^2}$ ไม่มีขอบเขตที่ $x = 0$ ต้องแยกเป็นสองส่วนและแต่ละส่วนลู่ออก", correct: true }
+      - { id: b, text: "ถูกต้อง ปริพันธ์เท่ากับ $-2$", feedback: "$\\tfrac{1}{x^2} > 0$ ทุกจุด พื้นที่จะติดลบไม่ได้ สัญญาณว่าใช้ทฤษฎีบทหลักมูลผิดเงื่อนไข" }
+      - { id: c, text: "ปริพันธ์เท่ากับ 2 เพราะลบกลับลำดับ", feedback: "ปัญหาไม่ใช่ลำดับการลบ แต่คือฟังก์ชันไม่ต่อเนื่องที่ $x = 0$ ในช่วง" }
+      - { id: d, text: "ปริพันธ์เท่ากับ 0 เพราะฟังก์ชันสมมาตร", feedback: "ฟังก์ชันคู่ที่เป็นบวกให้ส่วนซ้ายขวาเท่ากันและบวกทั้งคู่ ไม่หักล้างกัน" }
+    hints:
+      - "ฟังก์ชันต่อเนื่องบนช่วง $[-1, 1]$ หรือไม่"
+      - "ลองหา $\\lim_{a\\to0^+}\\int_a^1 \\tfrac{dx}{x^2}$"
+    solution: "$\\tfrac{1}{x^2}$ ไม่มีขอบเขตที่ $x = 0$ จึงใช้ทฤษฎีบทหลักมูลตรง ๆ ไม่ได้ ต้องแยก $\\int_{-1}^{0} + \\int_0^1$ และ $\\int_a^1 \\tfrac{dx}{x^2} = \\tfrac1a - 1 \\to \\infty$ เมื่อ $a \\to 0^+$ ปริพันธ์จึงลู่ออก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p018
+    topics: [math.calculus.integration-techniques]
+    difficulty: 5
+    type: numeric
+    stem: "ที่ดินแปลงหนึ่งในเชียงใหม่ให้เช่าทำสวน ได้ค่าเช่าแบบต่อเนื่องในอัตรา $R(t) = 100{,}000 + 5{,}000t$ บาทต่อปี เมื่อ $t$ เป็นปีนับจากวันนี้ (ค่าสมมติ) ถ้าใช้อัตราคิดลดต่อเนื่อง 5% ต่อปี มูลค่าปัจจุบันของค่าเช่าตลอดไปคือ $\\displaystyle\\int_0^{\\infty}R(t)e^{-0.05t}\\,dt$ จงหาค่านี้เป็นบาท"
+    answer: { value: 4000000, unit: บาท, tolerance: 1000 }
+    hints:
+      - "แยกเป็น $100{,}000\\int_0^{\\infty}e^{-0.05t}dt + 5{,}000\\int_0^{\\infty}te^{-0.05t}dt$"
+      - "$\\int_0^{\\infty}e^{-kt}dt = \\tfrac1k$ และ (ทีละส่วน) $\\int_0^{\\infty}te^{-kt}dt = \\tfrac{1}{k^2}$"
+    misconceptions:
+      - { match: 2000000, feedback: "นี่คือมูลค่าของค่าเช่าคงที่ 100,000 บาทเท่านั้น ยังไม่รวมส่วนที่เพิ่มขึ้น $5{,}000t$" }
+      - { match: 2100000, feedback: "$\\int_0^{\\infty}te^{-0.05t}dt = \\tfrac{1}{0.05^2} = 400$ ไม่ใช่ $\\tfrac{1}{0.05} = 20$" }
+    solution: "$100{,}000 \\cdot \\tfrac{1}{0.05} = 2{,}000{,}000$ และ $5{,}000 \\cdot \\tfrac{1}{0.05^2} = 5{,}000 \\cdot 400 = 2{,}000{,}000$ รวม 4,000,000 บาท ($\\int_0^{\\infty}te^{-kt}dt$ ได้จาก $u = t$: $\\big[-\\tfrac{t}{k}e^{-kt}\\big]_0^{\\infty} + \\tfrac1k\\int_0^{\\infty}e^{-kt}dt = 0 + \\tfrac{1}{k^2}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.integration-techniques.p019
+    topics: [math.calculus.integration-techniques]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหา $\\displaystyle\\int \\frac{P(x)}{Q(x)}\\,dx$ ด้วยเศษส่วนย่อย"
+    items:
+      - "เทียบดีกรี ถ้าดีกรีของ $P$ ไม่น้อยกว่าของ $Q$ ให้หารยาวก่อน"
+      - "แยกตัวประกอบ $Q(x)$"
+      - "เขียนรูปเศษส่วนย่อยตามชนิดของตัวประกอบ"
+      - "หาค่าคงตัว $A, B, \\dots$ ด้วยการแทนค่าหรือเทียบสัมประสิทธิ์"
+      - "หาปริพันธ์ทีละพจน์ ได้พจน์ $\\ln$ หรือ $\\arctan$"
+    hints:
+      - "ต้องรู้ตัวประกอบของตัวส่วนก่อนจึงเขียนรูปเศษส่วนย่อยได้"
+      - "การหารยาวต้องทำก่อนทุกอย่างเมื่อเศษส่วนไม่แท้"
+    solution: "หารยาว (ถ้าจำเป็น) → แยกตัวประกอบตัวส่วน → เขียนรูปเศษส่วนย่อย → หาค่าคงตัว → หาปริพันธ์ทีละพจน์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

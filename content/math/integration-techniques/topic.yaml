@@ -1,0 +1,73 @@
+id: math.calculus.integration-techniques
+subject: math
+title: { th: เทคนิคการหาปริพันธ์, en: Techniques of integration }
+summary: ปริพันธ์ทีละส่วน ปริพันธ์ของฟังก์ชันตรีโกณมิติ การแยกเศษส่วนย่อย และปริพันธ์ไม่ตรงแบบที่ขอบเขตเป็นอนันต์หรือฟังก์ชันไม่มีขอบเขต
+difficulty: 8
+minutes: 50
+prerequisites: [math.calculus.definite-integral, math.calculus.differentiation-rules]
+encompasses:
+  - { id: math.calculus.definite-integral, weight: 0.5 }
+  - { id: math.calculus.differentiation-rules, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ปริพันธ์ทีละส่วนกับลอการิทึม
+    problem: "จงหา $\\displaystyle\\int x\\ln x\\,dx$ เมื่อ $x > 0$"
+    steps:
+      - text: "ให้ $u = \\ln x$ และ $dv = x\\,dx$"
+        why: "ตาม LIATE ลอการิทึมมาก่อนพีชคณิต และเราหาปฏิยานุพันธ์ของ $\\ln x$ ตรง ๆ ไม่ได้ จึงต้องให้มันเป็นตัวที่ถูกหาอนุพันธ์"
+      - text: "$du = \\dfrac{1}{x}\\,dx$ และ $v = \\dfrac{x^2}{2}$"
+      - text: "$\\displaystyle\\int x\\ln x\\,dx = \\frac{x^2}{2}\\ln x - \\int \\frac{x^2}{2}\\cdot\\frac{1}{x}\\,dx = \\frac{x^2}{2}\\ln x - \\int \\frac{x}{2}\\,dx$"
+      - text: "$= \\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4} + C$"
+      - text: "ตรวจ: $\\Big(\\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4}\\Big)' = x\\ln x + \\dfrac{x}{2} - \\dfrac{x}{2} = x\\ln x$"
+        why: "การหาอนุพันธ์กลับเป็นวิธีตรวจที่เร็วและแน่นอนที่สุด"
+    answer: "$\\dfrac{x^2}{2}\\ln x - \\dfrac{x^2}{4} + C$"
+  - { type: check, problem: math.calculus.integration-techniques.p003, prompt: "เลือก $u = x$ แล้วอย่าลืมใช้เงื่อนไข $F(0) = 0$ หาค่าคงตัว" }
+  - type: worked-example
+    title: แยกเศษส่วนย่อย
+    problem: "จงหา $\\displaystyle\\int \\frac{x + 7}{x^2 - x - 6}\\,dx$"
+    steps:
+      - text: "ดีกรีตัวเศษ (1) น้อยกว่าดีกรีตัวส่วน (2) ไม่ต้องหารยาว แยกตัวประกอบ $x^2 - x - 6 = (x - 3)(x + 2)$"
+      - text: "เขียน $\\dfrac{x + 7}{(x - 3)(x + 2)} = \\dfrac{A}{x - 3} + \\dfrac{B}{x + 2}$ แล้วคูณ $(x - 3)(x + 2)$ ตลอด: $x + 7 = A(x + 2) + B(x - 3)$"
+      - text: "แทน $x = 3$: $10 = 5A$ ได้ $A = 2$ แทน $x = -2$: $5 = -5B$ ได้ $B = -1$"
+        why: "เลือก $x$ ที่ทำให้พจน์หนึ่งเป็นศูนย์ จะเหลือตัวไม่ทราบค่าทีละตัว"
+      - text: "$\\displaystyle\\int \\Big(\\frac{2}{x - 3} - \\frac{1}{x + 2}\\Big)dx = 2\\ln|x - 3| - \\ln|x + 2| + C$"
+    answer: "$2\\ln|x - 3| - \\ln|x + 2| + C$"
+  - type: figure
+    src: improper-compare.svg
+    alt: "สองกราฟเทียบกัน กราฟซ้าย y = 1/x² บนช่วง x = 1 ถึง 10 แรเงาพื้นที่ใต้กราฟสีเขียว เขียนว่าปริพันธ์จาก 1 ถึง b เท่ากับ 1 − 1/b เข้าใกล้ 1 ลู่เข้า กราฟขวา y = 1/x บนช่วงเดียวกันแรเงาสีแดง เขียนว่าปริพันธ์จาก 1 ถึง b เท่ากับ ln b เข้าใกล้อนันต์ ลู่ออก"
+    caption: "กราฟทั้งสองเข้าใกล้แกน x เหมือนกัน แต่ 1/x² ลดลงเร็วพอให้พื้นที่ทั้งหมดจำกัด"
+  - type: interactive
+    title: เส้นโค้ง 1/xᵖ ลดลงเร็วแค่ไหน
+    caption: "เส้นแรกคือ 1/x (p = 1) เส้นที่สองคือ 1/xᵖ เลื่อน p แล้วสังเกตว่าเมื่อ p > 1 เส้นโค้งอยู่ใต้ 1/x และลดลงเร็วกว่าเมื่อ x > 1 ปริพันธ์จาก 1 ถึงอนันต์ของ 1/xᵖ ลู่เข้าเมื่อ p > 1 เท่านั้น"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{x}", "x^{-p}"]
+      sliders:
+        - { name: p, min: 0.5, max: 3, step: 0.25, value: 2, label: เลขชี้กำลัง p }
+      x: [0, 8]
+      y: [0, 3]
+  - { type: check, problem: math.calculus.integration-techniques.p005, prompt: "เขียนเป็นลิมิตของ $\\int_1^b$ ก่อน แล้วดูว่าพจน์ที่มี $b$ เข้าใกล้อะไร" }
+glossary:
+  - { term: ปริพันธ์ทีละส่วน, definition: "∫u dv = uv − ∫v du ได้จากการหาปริพันธ์กฎผลคูณ" }
+  - { term: LIATE, definition: "ลำดับช่วยเลือก u: ลอการิทึม ตรีโกณผกผัน พีชคณิต ตรีโกณ เอกซ์โพเนนเชียล" }
+  - { term: เศษส่วนย่อย, definition: "การเขียนฟังก์ชันตรรกยะเป็นผลบวกของเศษส่วนที่มีตัวส่วนเป็นตัวประกอบของตัวส่วนเดิม" }
+  - { term: ปริพันธ์ไม่ตรงแบบ, definition: "ปริพันธ์ที่ขอบเขตเป็นอนันต์หรือฟังก์ชันไม่มีขอบเขตในช่วง นิยามด้วยลิมิต" }
+  - { term: ลู่เข้า, definition: "ลิมิตที่นิยามปริพันธ์ไม่ตรงแบบมีค่าจำกัด" }
+  - { term: ลู่ออก, definition: "ลิมิตที่นิยามปริพันธ์ไม่ตรงแบบไม่มีค่าจำกัด" }
+flashcards:
+  - { front: "สูตรปริพันธ์ทีละส่วน", back: "∫u dv = uv − ∫v du" }
+  - { front: "∫ sin²x dx ใช้สูตรใด", back: "sin²x = (1 − cos 2x)/2 ได้ x/2 − sin(2x)/4 + C" }
+  - { front: "∫₁^∞ 1/xᵖ dx ลู่เข้าเมื่อใด", back: "เมื่อ p > 1 (ได้ค่า 1/(p − 1))" }
+  - { front: "เศษส่วนย่อยของตัวประกอบซ้ำ (x − a)²", back: "A/(x − a) + B/(x − a)²" }
+  - { front: "ทำเศษส่วนย่อยเมื่อดีกรีตัวเศษ ≥ ดีกรีตัวส่วน", back: "หารยาวก่อน แล้วแยกเศษที่เหลือ" }
+references:
+  - { title: "3.1 Integration by Parts (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-1-integration-by-parts", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.4 Partial Fractions (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-4-partial-fractions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.7 Improper Integrals (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-7-improper-integrals", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Integration by parts", url: "https://en.wikipedia.org/wiki/Integration_by_parts", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
