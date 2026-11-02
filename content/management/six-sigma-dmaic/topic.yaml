@@ -1,0 +1,73 @@
+id: management.quality.six-sigma-dmaic
+subject: management
+title: { th: ซิกซ์ซิกมาและวงจร DMAIC, en: Six Sigma and the DMAIC cycle }
+summary: บทบาทและการเลือกโครงการ กฎบัตรและ SIPOC DPMO ระดับซิกมาและ RTY การยืนยันสาเหตุด้วยการทดสอบสมมติฐานและการถดถอย การทดลองแฟกทอเรียล 2 ระดับ และการรักษาผลในขั้นควบคุม
+difficulty: 8
+minutes: 50
+prerequisites: [management.quality.process-capability, management.operations.lean, math.stats.inference, math.stats.regression]
+encompasses:
+  - { id: management.quality.process-capability, weight: 0.3 }
+  - { id: math.stats.inference, weight: 0.3 }
+  - { id: math.stats.regression, weight: 0.2 }
+  - { id: management.operations.lean, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: dmaic.svg
+    alt: "วงจรห้าขั้นต่อกันด้วยลูกศรตามเข็มนาฬิกา D นิยาม (Define): กฎบัตรโครงการ SIPOC เสียงลูกค้าสู่ CTQ → M วัด (Measure): วิเคราะห์ระบบการวัด DPMO RTY ระดับซิกมา → A วิเคราะห์ (Analyze): ก้างปลา 5 ทำไม ทดสอบสมมติฐาน ถดถอย → I ปรับปรุง (Improve): ออกแบบการทดลอง ทดลองนำร่อง FMEA → C ควบคุม (Control): แผนควบคุม SPC ป้องกันความผิดพลาด ส่งมอบ แล้ววนกลับ กลางวงเขียนว่าปัญหาที่วัดได้สู่ผลที่ยั่งยืน"
+    caption: "วงจร DMAIC และเครื่องมือหลักของแต่ละขั้น"
+  - type: worked-example
+    title: ยืนยันว่าวิธีใหม่ลดของเสียได้จริง
+    problem: "โรงงานถุงมือ (สมมติ) ก่อนปรับปรุงสุ่มตรวจ 1,200 ชิ้น มีรูรั่ว 48 ชิ้น หลังปรับปรุงสุ่ม 1,250 ชิ้น มีรูรั่ว 27 ชิ้น ที่ระดับนัยสำคัญ 0.05 (ทดสอบทางเดียว) สรุปได้หรือไม่ว่าสัดส่วนของเสียลดลง"
+    steps:
+      - text: "$H_0: p_1 = p_2$ $H_1: p_1 > p_2$ โดย $\\hat p_1 = 48/1{,}200 = 0.040$ และ $\\hat p_2 = 27/1{,}250 = 0.0216$"
+      - text: "สัดส่วนรวม $\\hat p = (48 + 27)/(1{,}200 + 1{,}250) \\approx 0.0306$"
+        why: "ภายใต้ $H_0$ สองกลุ่มมีสัดส่วนเท่ากัน จึงรวมข้อมูลประมาณค่าเดียว"
+      - text: "$SE = \\sqrt{\\hat p(1-\\hat p)\\left(\\tfrac{1}{1{,}200} + \\tfrac{1}{1{,}250}\\right)} \\approx 0.00696$"
+      - text: "$z = (0.040 - 0.0216)/0.00696 \\approx 2.64$ ค่า $p \\approx 0.004$"
+      - text: "$0.004 < 0.05$ ปฏิเสธ $H_0$ มีหลักฐานว่าสัดส่วนของเสียลดลงจริง"
+    answer: "z ≈ 2.64, p ≈ 0.004 สรุปได้ว่าของเสียลดลงอย่างมีนัยสำคัญ"
+  - { type: check, problem: management.quality.six-sigma-dmaic.p004 }
+  - type: figure
+    src: interaction.svg
+    alt: "กราฟอันตรกิริยา แกนนอนปัจจัย A อุณหภูมิเตาอบ ต่ำ (−) และสูง (+) แกนตั้งรูรั่วต่อ 1,000 ชิ้น เส้นทึบสีน้ำเงิน B เวลาอบสั้น (−) จาก 12 ลดเป็น 8 เส้นประสีแดง B เวลาอบยาว (+) จาก 10 ลดเป็น 3 สองเส้นไม่ขนานกัน เส้นแดงชันกว่า"
+    caption: "ผลการทดลอง 2² สองปัจจัย (ข้อมูลสมมติ)"
+  - type: worked-example
+    title: ผลหลักและอันตรกิริยาจากการทดลอง 2²
+    problem: "จากกราฟ ค่าเฉลี่ยรูรั่วต่อ 1,000 ชิ้น ของชุด (A, B) = (−, −) 12, (+, −) 8, (−, +) 10, (+, +) 3 จงหาผลหลักของ A ผลหลักของ B และอันตรกิริยา AB"
+    steps:
+      - text: "ผลหลัก A $= \\frac{8 + 3}{2} - \\frac{12 + 10}{2} = 5.5 - 11 = -5.5$"
+      - text: "ผลหลัก B $= \\frac{10 + 3}{2} - \\frac{12 + 8}{2} = 6.5 - 10 = -3.5$"
+      - text: "อันตรกิริยา AB $= \\frac{12 + 3}{2} - \\frac{8 + 10}{2} = 7.5 - 9 = -1.5$"
+        why: "ชุดที่สองปัจจัยอยู่ระดับเดียวกัน (−− และ ++) เทียบกับชุดที่ต่างระดับ (+− และ −+)"
+      - text: "เพิ่มอุณหภูมิให้ผลมากที่สุด และได้ผลมากขึ้นเมื่ออบนาน (เส้นไม่ขนาน) จึงเลือกชุด (+, +) แล้วทดลองนำร่องยืนยัน"
+    answer: "A = −5.5, B = −3.5, AB = −1.5 ชุดที่ดีที่สุดคืออุณหภูมิสูงและอบนาน"
+  - { type: check, problem: management.quality.six-sigma-dmaic.p008 }
+  - type: figure
+    src: p-rty.svg
+    alt: "ผังกระบวนการสี่ขั้นต่อกันด้วยลูกศร 1 จุ่มแม่พิมพ์ในน้ำยาง ผลได้ครั้งแรก 98% → 2 อบให้ยางคงรูป 95% → 3 ถอดและตรวจด้วยลม 99% → 4 นับและบรรจุกล่อง 97% หมายเหตุ ผลได้ครั้งแรกคือสัดส่วนชิ้นที่ผ่านขั้นนั้นโดยไม่ต้องแก้ไขหรือทำซ้ำ"
+    caption: "กระบวนการผลิตถุงมือยาง (ข้อมูลสมมติ ใช้ในโจทย์ข้อ 8)"
+glossary:
+  - { term: DMAIC, definition: "วงจรปรับปรุงกระบวนการห้าขั้น นิยาม วัด วิเคราะห์ ปรับปรุง ควบคุม" }
+  - { term: SIPOC, definition: "แผนภาพขอบเขตกระบวนการ ผู้ส่งมอบ ปัจจัยนำเข้า กระบวนการ ผลผลิต ลูกค้า" }
+  - { term: CTQ, definition: "ลักษณะสำคัญต่อคุณภาพที่วัดได้ ซึ่งแปลงมาจากเสียงลูกค้า" }
+  - { term: DPMO, definition: "จำนวนข้อบกพร่องต่อหนึ่งล้านโอกาส = ข้อบกพร่อง ÷ (หน่วย × โอกาสต่อหน่วย) × 10⁶" }
+  - { term: ผลได้ตลอดกระบวนการ (RTY), definition: "ผลคูณของผลได้ครั้งแรกของทุกขั้น บอกโอกาสที่ชิ้นงานผ่านทุกขั้นโดยไม่ต้องแก้" }
+  - { term: อันตรกิริยา, definition: "เมื่อผลของปัจจัยหนึ่งขึ้นกับระดับของอีกปัจจัยหนึ่ง เห็นเป็นเส้นไม่ขนานในกราฟ" }
+  - { term: แผนควบคุม, definition: "เอกสารระบุตัวแปรสำคัญ วิธีวัด ความถี่ ขอบเขต และสิ่งที่ต้องทำเมื่อผิดปกติ" }
+flashcards:
+  - { front: "ระดับซิกมาจาก DPMO", back: "z ที่หางขวามีพื้นที่ DPMO ÷ 10⁶ แล้วบวก 1.5 (ถ้าใช้ข้อตกลงการเลื่อน 1.5σ)" }
+  - { front: "RTY", back: "FPY₁ × FPY₂ × … × FPYₙ" }
+  - { front: "ผลหลักในการทดลอง 2 ระดับ", back: "ค่าเฉลี่ยที่ระดับสูง − ค่าเฉลี่ยที่ระดับต่ำ" }
+  - { front: "จำนวนชุดทดลองแฟกทอเรียล 2 ระดับ k ปัจจัย", back: "2ᵏ ชุด (คูณจำนวนซ้ำ)" }
+  - { front: "DMAIC กับ DMADV", back: "DMAIC ปรับปรุงกระบวนการเดิม · DMADV ออกแบบใหม่ (DfSS)" }
+references:
+  - { title: "Six Sigma", url: "https://en.wikipedia.org/wiki/Six_Sigma", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "DMAIC", url: "https://en.wikipedia.org/wiki/DMAIC", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Rolled throughput yield", url: "https://en.wikipedia.org/wiki/Rolled_throughput_yield", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Factorial experiment", url: "https://en.wikipedia.org/wiki/Factorial_experiment", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
