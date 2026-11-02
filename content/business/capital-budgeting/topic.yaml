@@ -1,0 +1,141 @@
+id: business.finance.capital-budgeting
+subject: business
+title:
+  th: 'การประเมินโครงการลงทุน: ระยะคืนทุน NPV และ IRR'
+  en: 'Capital budgeting: payback, NPV and IRR'
+summary: กระแสเงินสดส่วนเพิ่มของโครงการ ระยะคืนทุนและแบบคิดลด NPV IRR และ PI ความขัดแย้งของเกณฑ์ เงินลงทุนจำกัด WACC เป็นอัตราคิดลด ความไว การประเมินมูลค่ากิจการ และต้นทุน-ผลประโยชน์
+difficulty: 7
+minutes: 50
+prerequisites:
+- business.finance.sources-of-funds
+- business.finance.financial-ratios
+encompasses:
+- id: business.finance.sources-of-funds
+  weight: 0.4
+- id: business.finance.time-value-of-money
+  weight: 0.4
+- id: business.finance.financial-ratios
+  weight: 0.1
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: จากงบประมาณการสู่ NPV ของเครื่องอบ
+  problem: เครื่องอบ $1{,}000$ พันบาท (รวมติดตั้ง) เงินทุนหมุนเวียน $100$ อายุ 5 ปี ค่าเสื่อมเส้นตรงถึง $0$ รายได้เพิ่ม $600$ ต้นทุนเงินสด $250$ ต่อปี ภาษี $20\%$ ขายเครื่องปีที่ 5 ได้ $100$ ค่าสำรวจตลาดที่จ่ายไปแล้ว $50$ WACC $10\%$ หา NPV และ PI
+  steps:
+  - text: ไม่นับค่าสำรวจ $50$ เพราะเป็นต้นทุนจม เงินลงทุนวันนี้ $= 1{,}000 + 100 = 1{,}100$
+    why: เงินทุนหมุนเวียนเป็นเงินที่ต้องจมไว้ระหว่างโครงการ
+  - text: กระแสเงินสดปีที่ 1–5 $= (600 - 250 - 200)(0.8) + 200 = 320$
+  - text: ปีที่ 5 เพิ่มเครื่องเก่าหลังภาษี $100(1 - 0.2) = 80$ และเงินทุนหมุนเวียนคืน $100$ รวมปีที่ 5 $= 500$
+  - text: NPV $= -1{,}100 + 320 \times 3.1699 + 500/1.1^5 \approx -1{,}100 + 1{,}014.37 + 310.46 = 224.82$
+    why: $3.1699$ คือตัวประกอบเงินงวด 4 ปีที่ $10\%$
+  - text: 'PI $= 1{,}324.82 / 1{,}100 \approx 1.20$ ตรวจ: IRR $\approx 17.2\%$ สูงกว่า WACC สอดคล้องกัน'
+  answer: NPV $\approx 224.82$ พันบาท PI $\approx 1.20$
+- type: check
+  problem: business.finance.capital-budgeting.p001
+  prompt: เงินก้อนนี้เปลี่ยนเพราะโครงการหรือไม่
+- type: figure
+  src: payback.svg
+  alt: แผนภูมิแท่งคู่ของกระแสเงินสดสะสมปีที่ 0 ถึง 5 หน่วยพันบาท แท่งน้ำเงินสะสมไม่คิดลด −1,100 −780 −460 −140 180 680 แท่งส้มสะสมคิดลดที่ 10% −1,100 −809 −545 −304 −86 225 จุดน้ำเงินบนแกนนอนที่ประมาณ 3.44 ปีเขียนว่าคืนทุน และจุดส้มที่ประมาณ 4.28 ปีเขียนว่าคืนทุนคิดลด
+  caption: การคิดลดทำให้คืนทุนช้าลง และเงินหลังคืนทุนยังมีค่า
+- type: figure
+  src: npv-profiles.svg
+  alt: กราฟ NPV ของโครงการ A (เส้นทึบน้ำเงิน) และ B (เส้นประแดง) เทียบอัตราคิดลด 0% ถึง 25% ที่ 0% B มี NPV 600 A มี 400 เส้น B ชันกว่าและตัดเส้น A ที่ประมาณ 11.8% (NPV ราว 135) เส้น B ตัดแกนนอนที่ IRR ประมาณ 16.6% เส้น A ตัดแกนนอนที่ IRR ประมาณ 20.0% ทางซ้ายของจุดตัด B สูงกว่า ทางขวา A สูงกว่า
+  caption: เกณฑ์ NPV กับ IRR ขัดกันเมื่ออัตราคิดลดต่ำกว่าจุดตัด
+- type: interactive
+  title: NPV ของสองโครงการเมื่อเปลี่ยนอัตราคิดลด
+  caption: เส้นแรกคือ NPV ของ A เส้นที่สองคือ NPV ของ B (พันบาท) แกนนอนคืออัตราคิดลด (%) ลองเปลี่ยนเงินปีสุดท้ายของ B ($k$) แล้วดูว่าจุดตัดและ IRR ของ B เลื่อนไปอย่างไร
+  widget:
+    kind: function-plot
+    functions:
+    - -1000 + \frac{600}{1 + \frac{x}{100}} + \frac{400}{(1 + \frac{x}{100})^{2}} + \frac{300}{(1 + \frac{x}{100})^{3}} + \frac{100}{(1 + \frac{x}{100})^{4}}
+    - -1000 + \frac{100}{1 + \frac{x}{100}} + \frac{300}{(1 + \frac{x}{100})^{2}} + \frac{500}{(1 + \frac{x}{100})^{3}} + \frac{k}{(1 + \frac{x}{100})^{4}}
+    sliders:
+    - name: k
+      min: 400
+      max: 1000
+      step: 50
+      value: 700
+      label: เงินปีที่ 4 ของ B (พันบาท)
+    x:
+    - 0
+    - 25
+    y:
+    - -300
+    - 800
+- type: check
+  problem: business.finance.capital-budgeting.p012
+  prompt: อัตราคิดลดควรสะท้อนความเสี่ยงของโครงการ
+- type: figure
+  src: sensitivity.svg
+  alt: แผนภูมิทอร์นาโดของ NPV โครงการเครื่องอบ กรณีฐาน 225 พันบาท ยอดขาย ±10% ให้ NPV 43 ถึง 407 ต้นทุนเงินสด ±10% ให้ 149 ถึง 301 เงินลงทุน ±10% ให้ 140 ถึง 310 อัตราคิดลด 12% หรือ 8% ให้ 156 ถึง 300 แถบของยอดขายยาวที่สุด
+  caption: NPV ไวต่อยอดขายมากที่สุด
+- type: worked-example
+  title: จุดคุ้มทุนทาง NPV ของรายได้
+  problem: จากตัวอย่างเครื่องอบ รายได้ต่อปีต่ำสุดเท่าใดที่ NPV ยังไม่ติดลบ
+  steps:
+  - text: ให้รายได้ $R$ กระแสเงินสดต่อปี $= (R - 450)(0.8) + 200$ ปีที่ 5 ได้เพิ่มอีก $180$
+  - text: NPV $= -1{,}100 + [(R - 450)(0.8) + 200] \times 3.7908 + 111.77 = 0$
+    why: $3.7908$ คือตัวประกอบเงินงวด 5 ปีที่ $10\%$ และ $111.77 = 180/1.1^5$
+  - text: กระแสเงินสดต่อปีที่ต้องการ $\approx 988.23/3.7908 \approx 260.69$
+  - text: $(R - 450)(0.8) = 60.69 \Rightarrow R \approx 525.87$ พันบาท ต่ำกว่ากรณีฐานราว $12.4\%$
+  answer: $R \approx 525.87$ พันบาทต่อปี
+glossary:
+- term: กระแสเงินสดส่วนเพิ่ม
+  definition: กระแสเงินสดที่เกิดขึ้นหรือเปลี่ยนไปเพราะตัดสินใจทำโครงการ
+- term: ต้นทุนจม
+  definition: เงินที่จ่ายไปแล้วและเรียกคืนไม่ได้ ไม่เกี่ยวกับการตัดสินใจ
+- term: ค่าเสียโอกาส
+  definition: ผลประโยชน์จากทางเลือกที่ดีที่สุดที่ต้องสละไปเมื่อใช้ทรัพยากรกับโครงการ
+- term: ระยะเวลาคืนทุนคิดลด
+  definition: เวลาที่มูลค่าปัจจุบันของเงินรับสะสมเท่ากับเงินลงทุน
+- term: ดัชนีความสามารถทำกำไร (PI)
+  definition: มูลค่าปัจจุบันของเงินรับหารด้วยเงินลงทุน
+- term: โครงการที่แยกกันไม่ได้
+  definition: โครงการที่เลือกได้เพียงหนึ่งจากหลายทางเลือก (mutually exclusive)
+- term: อัตราจุดตัด
+  definition: อัตราคิดลดที่ทำให้ NPV ของสองโครงการเท่ากัน
+- term: การจำกัดเงินลงทุน
+  definition: สถานการณ์ที่งบลงทุนมีจำกัด ต้องเลือกชุดโครงการที่ NPV รวมสูงสุด
+- term: การวิเคราะห์ความไว
+  definition: การเปลี่ยนสมมติฐานทีละตัวเพื่อดูผลต่อ NPV
+- term: การวิเคราะห์ต้นทุน-ผลประโยชน์
+  definition: การเทียบมูลค่าปัจจุบันของผลประโยชน์ทั้งหมดกับต้นทุนทั้งหมด รวมผลที่ไม่ผ่านตลาด
+flashcards:
+- front: กระแสเงินสดจากการดำเนินงาน
+  back: $(R - C - D)(1 - t) + D$
+- front: PI
+  back: PV ของเงินรับ ÷ เงินลงทุน · ยอมรับเมื่อ $> 1$
+- front: NPV กับ IRR ขัดกัน
+  back: โครงการที่แยกกันไม่ได้ ยึด NPV
+- front: มูลค่ากิจการที่โตคงที่
+  back: $FCF_1 / (\text{WACC} - g)$
+- front: ไม่นับในกระแสเงินสด
+  back: ต้นทุนจม และดอกเบี้ย (อยู่ใน WACC แล้ว)
+references:
+- title: 16.1 Payback Period Method (Principles of Finance 2e, OpenStax)
+  url: https://openstax.org/books/principles-finance-2e/pages/16-1-payback-period-method
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 16.5 Choosing between Projects (Principles of Finance 2e, OpenStax)
+  url: https://openstax.org/books/principles-finance-2e/pages/16-5-choosing-between-projects
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: Capital budgeting
+  url: https://en.wikipedia.org/wiki/Capital_budgeting
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Profitability index
+  url: https://en.wikipedia.org/wiki/Profitability_index
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

@@ -1,0 +1,157 @@
+id: engineering.materials.beam-bending
+subject: engineering
+title:
+  th: ความเค้นดัดและการแอ่นตัวของคาน
+  en: Bending stress and beam deflection
+summary: สูตรการดัด แกนสะเทินและโมดูลัสหน้าตัด ความเค้นเฉือนในคาน ความสัมพันธ์โมเมนต์กับความโค้ง การแอ่นด้วยการอินทิเกรตสองครั้ง การซ้อนทับ และคานอินดีเทอร์มิเนตอย่างง่าย
+difficulty: 8.5
+minutes: 50
+prerequisites:
+- engineering.mechanics.shear-moment
+- engineering.materials.stress-strain
+- math.calculus.integration-techniques
+- engineering.mechanics.centroids-inertia
+encompasses:
+- id: engineering.mechanics.shear-moment
+  weight: 0.5
+- id: engineering.materials.stress-strain
+  weight: 0.3
+- id: engineering.mechanics.centroids-inertia
+  weight: 0.3
+- id: math.calculus.integration-techniques
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: bending-stress.svg
+  alt: 'ซ้าย: ชิ้นคานที่แอ่นแบบหงาย (โมเมนต์บวก) เส้นผิวบนสีน้ำเงินหดสั้น (อัด) เส้นประสีเทาตรงกลางคือแกนสะเทินยาวเท่าเดิม เส้นผิวล่างสีแดงยืด (ดึง) ปลายทั้งสองเป็นเส้นตรงแสดงว่าหน้าตัดยังเป็นระนาบ ขวา: หน้าตัดสี่เหลี่ยม b × h มีเส้นประแกนสะเทิน N.A. ที่กึ่งกลาง ข้าง ๆ เป็นแผนภาพความเค้นเชิงเส้น สามเหลี่ยมสีน้ำเงินด้านบนคือความเค้นอัดสูงสุดที่ผิวบน ศูนย์ที่แกนสะเทิน สามเหลี่ยมสีแดงด้านล่างคือความเค้นดึงสูงสุดที่ผิวล่าง สูตร σ = −My/I และ |σ|max = Mc/I = M/S'
+  caption: ความเค้นดัดแปรเชิงเส้นตามระยะจากแกนสะเทิน
+- type: worked-example
+  title: 'ตงไม้บ้านไม้: ความเค้นผ่าน แต่การแอ่นไม่ผ่าน'
+  problem: ตงไม้ $50 \times 150\ \mathrm{mm}$ วางตั้ง ช่วง $3\ \mathrm{m}$ รับ $1.5\ \mathrm{kN/m}$ $E = 10\ \mathrm{GPa}$ (สมมติ) ความเค้นที่ยอมให้ $10\ \mathrm{MPa}$ (สมมติ) ตรวจความเค้นดัด ความเค้นเฉือน และการแอ่น (เกณฑ์ $L/360$)
+  steps:
+  - text: $M_{\max} = wL^2/8 = 1.5(3)^2/8 = 1.6875\ \mathrm{kN\cdot m}$ และ $V_{\max} = wL/2 = 2.25\ \mathrm{kN}$
+  - text: $S = 50(150)^2/6 = 187{,}500\ \mathrm{mm^3}$ ได้ $\sigma = 1.6875 \times 10^6/187{,}500 = 9.0\ \mathrm{MPa} < 10$ ผ่าน
+  - text: $\tau_{\max} = 1.5 \times 2{,}250/7{,}500 = 0.45\ \mathrm{MPa}$
+  - text: $I = 50(150)^3/12 = 14.06 \times 10^6\ \mathrm{mm^4}$ ได้ $v_{\max} = \dfrac{5(1.5)(3000)^4}{384(10{,}000)(14.06 \times 10^6)} = 11.25\ \mathrm{mm}$
+    why: ใช้ N/mm กับ mm และ MPa ทั้งหมด
+  - text: 'เกณฑ์ $L/360 = 8.33\ \mathrm{mm}$ ไม่ผ่าน เปลี่ยนเป็น $50 \times 200$: $I = 33.3 \times 10^6$ ได้ $v = 4.75\ \mathrm{mm}$ และ $\sigma = 5.06\ \mathrm{MPa}$'
+    why: $I \propto h^3$ ความลึกเพิ่ม $4/3$ เท่า การแอ่นลดราว $2.4$ เท่า
+  answer: ใช้ $50 \times 200\ \mathrm{mm}$ เพราะการแอ่นเป็นตัวกำหนด
+- type: check
+  problem: engineering.materials.beam-bending.p005
+  prompt: เทียบ $S = bh^2/6$ ของสองแบบ
+- type: figure
+  src: shear-ibeam.svg
+  alt: 'ซ้าย: หน้าตัดรูปตัวไอ ปีก 200 × 12 มม. เอวหนา 8 สูง 276 มม. ขวา: กราฟความเค้นเฉือนตามความสูงเมื่อ V = 20 kN ในปีกมีค่าน้อยมาก (ประมาณ 0.3 MPa) ที่รอยต่อกับเอวค่ากระโดดเป็นประมาณ 7.61 MPa แล้วโค้งพาราโบลาขึ้นสูงสุดประมาณ 9.28 MPa ที่แกนสะเทิน ข้อความเอวรับแรงเฉือนเกือบทั้งหมด'
+  caption: τ = VQ/(It) กระโดดเมื่อความกว้าง t เปลี่ยนจากปีกเป็นเอว
+- type: figure
+  src: deflection.svg
+  alt: 'บน: คานช่วงเดียวบนหมุดและลูกกลิ้งรับแรงกระจายสม่ำเสมอ w เส้นการแอ่นสีน้ำเงินโค้งลงสมมาตร มากที่สุดที่กึ่งกลาง ป้าย v_max = 5wL⁴/(384EI) ที่กึ่งกลาง และ v = 0 ที่ฐานทั้งสอง ล่าง: คานยื่นยึดแน่นทางซ้าย แรง P กดลงที่ปลายขวา เส้นการแอ่นเริ่มในแนวราบที่จุดยึดแล้วโค้งลงมากที่สุดที่ปลาย ป้าย v_max = PL³/(3EI) ที่ปลาย และ v = 0 กับ dv/dx = 0 ที่จุดยึดแน่น การแอ่นขยายให้เห็นชัด'
+  caption: เงื่อนไขขอบเขตต่างกันตามชนิดของฐานรองรับ
+- type: interactive
+  title: เส้นการแอ่นของคานช่วงเดียวรับแรงกระจาย
+  caption: แกนนอนคือ $x$ (m) แกนตั้งคือการแอ่น $v$ (mm) $= -\dfrac{1000\,w x (L^3 - 2Lx^2 + x^3)}{24k}$ เมื่อ $w$ เป็น kN/m และ $k = EI$ เป็น kN·m² ดูเฉพาะ $0 \le x \le L$ ลองเพิ่ม $L$ เป็นสองเท่าแล้วดูว่าการแอ่นสูงสุดเพิ่มราว 16 เท่า
+  widget:
+    kind: function-plot
+    functions:
+    - -\frac{1000 w \cdot x \cdot (L^3 - 2 L x^2 + x^3)}{24 k}
+    sliders:
+    - name: w
+      min: 1
+      max: 10
+      step: 0.5
+      value: 5
+      label: แรงกระจาย w (kN/m)
+    - name: L
+      min: 2
+      max: 8
+      step: 0.5
+      value: 6
+      label: ช่วงคาน L (m)
+    - name: k
+      min: 5000
+      max: 40000
+      step: 1000
+      value: 22700
+      label: EI (kN·m²)
+    x:
+    - 0
+    - 8
+    y:
+    - -60
+    - 5
+- type: worked-example
+  title: คานยื่นที่มีลูกกลิ้งรองปลายด้วยการซ้อนทับ
+  problem: คาน AB ยาว $L$ ยึดแน่นที่ A วางบนลูกกลิ้งที่ B รับ $w$ สม่ำเสมอ หาแรงปฏิกิริยาที่ B และโมเมนต์ที่ A ถ้า $w = 10\ \mathrm{kN/m}$, $L = 5\ \mathrm{m}$
+  steps:
+  - text: สมการสมดุลมี 3 สมการ แต่ไม่รู้ค่า 4 ตัว ($R_A$, $M_A$, $R_B$ และแรงแนวราบ) จึงเป็นคานอินดีเทอร์มิเนตขั้นหนึ่ง
+    why: ต้องใช้การเสียรูปช่วยหาสมการที่ขาด
+  - text: 'ถอดลูกกลิ้ง: คานยื่นรับ $w$ ปลาย B ลง $wL^4/(8EI)$'
+  - text: 'คานยื่นรับแรง $R_B$ ขึ้นที่ปลาย: ปลายขึ้น $R_BL^3/(3EI)$'
+  - text: 'ความเข้ากันได้ $v_B = 0$: $R_BL^3/3 = wL^4/8 \Rightarrow R_B = 3wL/8 = 18.75\ \mathrm{kN}$'
+  - text: 'สมดุล: $R_A = wL - R_B = 31.25\ \mathrm{kN}$ และ $M_A = R_BL - wL^2/2 = 93.75 - 125 = -31.25\ \mathrm{kN\cdot m}$ ($= -wL^2/8$)'
+    why: ตรวจด้วย sympy โดยแก้ $EIv'' = M$ กับ $v(0) = v'(0) = v(L) = 0$ ได้ผลเดียวกัน
+  answer: $R_B = 18.75\ \mathrm{kN}$, $M_A = -31.25\ \mathrm{kN\cdot m}$
+- type: figure
+  src: superposition.svg
+  alt: สามภาพเรียงกัน คานยื่นที่มีลูกกลิ้งรองปลายรับแรงกระจาย w เท่ากับ คานยื่นรับ w ซึ่งปลายลง wL⁴/(8EI) บวก คานยื่นรับแรง R ขึ้นที่ปลาย ซึ่งปลายขึ้น RL³/(3EI) ด้านล่างเขียนว่าฐานลูกกลิ้งไม่ให้ปลายเคลื่อน wL⁴/(8EI) = RL³/(3EI) จึงได้ R = 3wL/8
+  caption: แยกคานอินดีเทอร์มิเนตเป็นสองกรณีที่รู้คำตอบ แล้วบังคับให้ปลายไม่เคลื่อน
+- type: check
+  problem: engineering.materials.beam-bending.p006
+  prompt: ใช้ $\sigma = -My/I$ กับเครื่องหมายของ $y$
+glossary:
+- term: การดัดล้วน
+  definition: สภาวะที่ช่วงหนึ่งของคานรับเฉพาะโมเมนต์ดัดคงที่ ไม่มีแรงเฉือน (pure bending)
+- term: แกนสะเทิน
+  definition: แนวในหน้าตัดที่ความเค้นและความเครียดดัดเป็นศูนย์ ผ่านเซนทรอยด์ (neutral axis)
+- term: สูตรการดัด
+  definition: $\sigma = -My/I$ ความสัมพันธ์ระหว่างความเค้นดัด โมเมนต์ และโมเมนต์ความเฉื่อย (flexure formula)
+- term: โมดูลัสหน้าตัด
+  definition: $S = I/c$ ใช้หาความเค้นดัดสูงสุด $M/S$ (section modulus)
+- term: ความโค้ง
+  definition: ส่วนกลับของรัศมีความโค้ง $1/\rho = M/(EI)$ (curvature)
+- term: ความแกร่งดัด
+  definition: ผลคูณ $EI$ บอกว่าคานต้านการโค้งได้มากเพียงใด (flexural rigidity)
+- term: เส้นการแอ่น
+  definition: รูปร่างของแกนคานหลังรับน้ำหนัก หาจาก $EI\,v'' = M$ (elastic curve)
+- term: เงื่อนไขขอบเขต
+  definition: ค่า $v$ หรือ $v'$ ที่รู้ที่ฐานรองรับ ใช้หาค่าคงที่จากการอินทิเกรต (boundary conditions)
+- term: การซ้อนทับ
+  definition: การรวมผลของน้ำหนักหลายแบบโดยบวกผลของแต่ละแบบ ใช้ได้เมื่อระบบเชิงเส้น (superposition)
+- term: คานอินดีเทอร์มิเนตเชิงสถิต
+  definition: คานที่มีแรงปฏิกิริยามากกว่าที่สมการสมดุลหาได้ ต้องใช้เงื่อนไขการเสียรูปเพิ่ม (statically indeterminate beam)
+flashcards:
+- front: ความเค้นดัดสูงสุด
+  back: $\sigma_{\max} = Mc/I = M/S$ · สี่เหลี่ยม $S = bh^2/6$
+- front: ความเค้นเฉือนในคาน
+  back: $\tau = VQ/(It)$ · สี่เหลี่ยม $\tau_{\max} = 3V/(2A)$
+- front: สมการเส้นการแอ่น
+  back: $EI\,v'' = M(x)$ · อินทิเกรตสองครั้ง + เงื่อนไขขอบเขต
+- front: การแอ่นสูงสุดที่ควรจำ
+  back: 'ช่วงเดียว $w$: $5wL^4/384EI$ · กลางช่วง $P$: $PL^3/48EI$ · คานยื่น $P$: $PL^3/3EI$ · คานยื่น $w$: $wL^4/8EI$'
+- front: คานยื่นมีลูกกลิ้งรองปลาย รับ w
+  back: $R_B = 3wL/8$ · $M_A = -wL^2/8$
+references:
+- title: Euler–Bernoulli beam theory
+  url: https://en.wikipedia.org/wiki/Euler–Bernoulli_beam_theory
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Deflection (engineering)
+  url: https://en.wikipedia.org/wiki/Deflection_(engineering)
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 2.001 Mechanics and Materials I (MIT OpenCourseWare)
+  url: https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/
+  source: mit-ocw
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

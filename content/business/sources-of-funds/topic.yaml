@@ -1,0 +1,111 @@
+id: business.finance.sources-of-funds
+subject: business
+title:
+  th: แหล่งเงินทุน ตลาดการเงิน และต้นทุนเงินทุน
+  en: Sources of funds, financial markets and the cost of capital
+summary: แหล่งเงินทุนภายในและภายนอก หนี้กับส่วนของเจ้าของ เงินกู้ธนาคาร หุ้นกู้ พันธบัตร หุ้นสามัญ SET และ mai ความเสี่ยงกับผลตอบแทน ต้นทุนหนี้หลังภาษี CAPM และ WACC
+difficulty: 6.5
+minutes: 45
+prerequisites:
+- business.finance.time-value-of-money
+- management.principles.functions
+- business.finance.financial-ratios
+encompasses:
+- id: business.finance.time-value-of-money
+  weight: 0.3
+- id: management.principles.functions
+  weight: 0.1
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: funding-map.svg
+  alt: 'ตารางสองคูณสองของแหล่งเงินทุน คอลัมน์ซ้ายหนี้สิน (ต้องจ่ายคืนและดอกเบี้ย) คอลัมน์ขวาส่วนของเจ้าของ (ไม่ต้องจ่ายคืน) แถวบนระยะสั้น แถวล่างระยะยาว ช่องหนี้ระยะสั้น: เงินเบิกเกินบัญชี เครดิตการค้าจากผู้ขาย ตั๋วสัญญาใช้เงิน แฟกตอริง ช่องหนี้ระยะยาว: เงินกู้ระยะยาวจากธนาคาร หุ้นกู้ สัญญาเช่าหรือเช่าซื้อ ช่องแหล่งภายใน: เงินของเจ้าของ กำไรสะสม ต้นทุนคือค่าเสียโอกาส ช่องตลาดทุน: หุ้นสามัญ หุ้นบุริมสิทธิ เสนอขายผ่าน SET หรือ mai เงินร่วมลงทุน ด้านล่างลูกศรบอกความเสี่ยงของผู้ให้เงินทุนเพิ่มขึ้นตามลำดับ เจ้าหนี้มีหลักประกัน ผู้ถือหุ้นกู้ ผู้ถือหุ้นบุริมสิทธิ ผู้ถือหุ้นสามัญ'
+  caption: แหล่งเงินทุนแบ่งตามหนี้หรือทุน และระยะสั้นหรือยาว
+- type: check
+  problem: business.finance.sources-of-funds.p001
+  prompt: เป็นหนี้หรือส่วนของเจ้าของ
+- type: worked-example
+  title: ราคาหุ้นกู้เมื่ออัตราตลาดสูงกว่าดอกเบี้ยหน้าตั๋ว
+  problem: หุ้นกู้ $1{,}000$ บาท ดอกเบี้ยหน้าตั๋ว $4\%$ จ่ายปีละครั้ง ครบกำหนด 5 ปี อัตราตลาด $5\%$ ราคาที่เหมาะสมเท่าใด
+  steps:
+  - text: ดอกเบี้ยปีละ $1{,}000 \times 4\% = 40$ บาท 5 งวด และเงินต้น $1{,}000$ บาทปลายปีที่ 5
+  - text: PV ดอกเบี้ย $= 40 \times \dfrac{1 - 1.05^{-5}}{0.05} \approx 173.18$
+    why: ใช้อัตราตลาด เพราะเป็นผลตอบแทนที่นักลงทุนหาได้จากตราสารอื่นที่เสี่ยงเท่ากัน
+  - text: PV เงินต้น $= 1{,}000 / 1.05^5 \approx 783.53$
+  - text: ราคา $\approx 956.71$ บาท ต่ำกว่าราคาที่ตราไว้ (ขายแบบมีส่วนลด)
+  answer: $\approx 956.71$ บาท
+- type: figure
+  src: wacc-curve.svg
+  alt: กราฟแบบจำลองต้นทุนเงินทุนเทียบกับสัดส่วนหนี้ต่อเงินทุนรวม 0% ถึง 80% เส้นต้นทุนส่วนของเจ้าของเริ่มที่ 9% และสูงขึ้นเร็วเมื่อหนี้มากจนเกิน 20% ที่หนี้ 80% เส้นประต้นทุนหนี้หลังภาษีเริ่มที่ 4% และค่อย ๆ สูงขึ้นถึงราว 9% เส้น WACC เริ่มที่ 9% ลดลงเล็กน้อยถึงจุดต่ำสุดราว 8.44% ที่หนี้ประมาณ 37% แล้วสูงขึ้นเป็นราว 11% ที่หนี้ 80%
+  caption: WACC ต่ำสุดที่โครงสร้างเงินทุนที่สมดุล (ค่าสมมติจากแบบจำลอง)
+- type: worked-example
+  title: WACC ของบริษัทสมมติ
+  problem: บริษัทมีหุ้น $5$ ล้านหุ้น ราคา $20$ บาท หุ้นกู้มูลค่าตลาด $50$ ล้านบาท ผลตอบแทนที่ต้องการของหุ้นกู้ $5\%$ ภาษี $20\%$ และ $r_f = 3\%$, $\beta = 1.25$, ส่วนชดเชยความเสี่ยงตลาด $6\%$ หา WACC
+  steps:
+  - text: 'มูลค่าตลาด: $E = 5 \times 20 = 100$ ล้านบาท $D = 50$ ล้านบาท $V = 150$ ล้านบาท'
+  - text: 'CAPM: $k_e = 3\% + 1.25 \times 6\% = 10.5\%$'
+    why: ระบุแบบจำลองที่ใช้ เพราะวิธีต่างกันให้ค่าต่างกัน
+  - text: 'หนี้หลังภาษี: $5\% \times 0.8 = 4\%$'
+  - text: WACC $= \tfrac{100}{150}(10.5\%) + \tfrac{50}{150}(4\%) = 7\% + 1.33\% \approx 8.33\%$
+  answer: WACC $\approx 8.33\%$
+- type: check
+  problem: business.finance.sources-of-funds.p003
+  prompt: ดอกเบี้ยช่วยประหยัดภาษี
+glossary:
+- term: หุ้นกู้
+  definition: ตราสารหนี้ที่บริษัทออกขายเพื่อกู้เงินจากผู้ลงทุน จ่ายดอกเบี้ยและคืนเงินต้นเมื่อครบกำหนด
+- term: พันธบัตรรัฐบาล
+  definition: ตราสารหนี้ที่รัฐบาลออกเพื่อกู้เงิน ถือว่าความเสี่ยงผิดนัดต่ำ
+- term: หุ้นสามัญ
+  definition: หลักทรัพย์แสดงความเป็นเจ้าของ มีสิทธิออกเสียงและรับเงินปันผล ได้รับชำระคืนเป็นลำดับสุดท้าย
+- term: หุ้นบุริมสิทธิ
+  definition: หุ้นที่ได้รับเงินปันผลและเงินคืนก่อนหุ้นสามัญ มักจ่ายเงินปันผลคงที่
+- term: เครดิตการค้า
+  definition: การที่ผู้ขายให้ผู้ซื้อจ่ายเงินภายหลัง เป็นแหล่งเงินทุนระยะสั้น
+- term: หลักการจับคู่ระยะเวลา
+  definition: จัดหาเงินทุนให้มีอายุสอดคล้องกับอายุของสินทรัพย์ที่ลงทุน
+- term: ต้นทุนเงินทุน
+  definition: อัตราผลตอบแทนที่ผู้ให้เงินทุนต้องการ ซึ่งเป็นต้นทุนของกิจการ
+- term: เบตา (β)
+  definition: ค่าที่วัดว่าผลตอบแทนของหุ้นผันผวนตามตลาดมากน้อยเพียงใด
+- term: ต้นทุนเงินทุนถัวเฉลี่ยถ่วงน้ำหนัก (WACC)
+  definition: ค่าเฉลี่ยของต้นทุนแต่ละแหล่งถ่วงด้วยสัดส่วนมูลค่าตลาด หนี้คิดหลังภาษี
+flashcards:
+- front: ต้นทุนหนี้หลังภาษี
+  back: $k_d(1 - t)$ · $6\%$ ภาษี $20\%$ → $4.8\%$
+- front: CAPM
+  back: $k_e = r_f + \beta(r_m - r_f)$
+- front: แบบจำลองกอร์ดอน
+  back: $k_e = D_1 / P_0 + g$ · $D_1 = D_0(1 + g)$
+- front: WACC
+  back: $\tfrac{E}{V}k_e + \tfrac{D}{V}k_d(1 - t)$ · น้ำหนักตามมูลค่าตลาด
+- front: ดอกเบี้ยตลาดสูงขึ้น
+  back: ราคาตราสารหนี้ที่ออกแล้วลดลง
+references:
+- title: 17.3 Calculating the Weighted Average Cost of Capital (Principles of Finance 2e, OpenStax)
+  url: https://openstax.org/books/principles-finance-2e/pages/17-3-calculating-the-weighted-average-cost-of-capital
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 17.2 The Costs of Debt and Equity Capital (Principles of Finance 2e, OpenStax)
+  url: https://openstax.org/books/principles-finance-2e/pages/17-2-the-costs-of-debt-and-equity-capital
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: Weighted average cost of capital
+  url: https://en.wikipedia.org/wiki/Weighted_average_cost_of_capital
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: ตลาดหลักทรัพย์แห่งประเทศไทย
+  url: https://th.wikipedia.org/wiki/ตลาดหลักทรัพย์แห่งประเทศไทย
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

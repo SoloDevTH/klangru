@@ -1,0 +1,136 @@
+id: business.econ.monetary-fiscal-policy
+subject: business
+title:
+  th: นโยบายการเงินและนโยบายการคลัง
+  en: Monetary and fiscal policy
+summary: เป้าหมายของนโยบายการเงิน กนง. และอัตราดอกเบี้ยนโยบาย ช่องทางการส่งผ่าน งบประมาณแผ่นดิน ภาษีและรายจ่ายรัฐ ตัวทวีคูณ หนี้สาธารณะ และผลต่อการพัฒนาเศรษฐกิจ
+difficulty: 6
+minutes: 45
+prerequisites:
+- business.econ.macro-indicators
+- business.econ.money-banking
+encompasses:
+- id: business.econ.macro-indicators
+  weight: 0.4
+- id: business.econ.money-banking
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: ad-as.svg
+  alt: แบบจำลอง AD–AS แกนนอน GDP ที่แท้จริง (Y) แกนตั้งระดับราคา (P) เส้น AS ลาดขึ้น เส้น AD₀ ลาดลง ตัดกันที่ E₀ (Y₀, P₀) เส้นประ AD₁ อยู่ทางขวาของ AD₀ มีลูกศรชี้จาก AD₀ ไป AD₁ และข้อความนโยบายแบบขยายตัว (ลดดอกเบี้ย เพิ่มรายจ่ายรัฐ ลดภาษี) จุดตัดใหม่ E₁ มี Y₁ มากกว่า Y₀ และ P₁ สูงกว่า P₀
+  caption: นโยบายแบบขยายตัวเลื่อน AD ไปขวา ผลผลิตเพิ่ม ราคาสูงขึ้น
+- type: check
+  problem: business.econ.monetary-fiscal-policy.p002
+  prompt: ดอกเบี้ยเป็นของใคร ภาษีเป็นของใคร
+- type: figure
+  src: transmission.svg
+  alt: ผังการส่งผ่านของนโยบายการเงิน กล่องซ้ายอัตราดอกเบี้ยนโยบาย (กนง.) มีลูกศรแยกไปห้ากล่อง ได้แก่ อัตราดอกเบี้ยในตลาด (เงินฝาก เงินกู้) สินเชื่อ (ปริมาณการปล่อยกู้) ราคาสินทรัพย์ (หุ้น ที่ดิน) อัตราแลกเปลี่ยน (ค่าเงินบาท) และการคาดการณ์ (เงินเฟ้อ ความเชื่อมั่น) ทั้งห้ากล่องมีลูกศรรวมไปที่กล่องการบริโภค การลงทุน การส่งออก แล้วต่อไปที่กล่อง GDP และเงินเฟ้อ ด้านล่างเขียนว่าผลเต็มที่ใช้เวลาประมาณ 2 ปี (ธปท.)
+  caption: ดอกเบี้ยนโยบายส่งผลผ่านหลายช่องทางก่อนถึง GDP และเงินเฟ้อ
+- type: worked-example
+  title: ต้นทุนของเงินกู้เมื่อดอกเบี้ยเปลี่ยน
+  problem: โรงงานผลิตชิ้นส่วนแห่งหนึ่ง (สมมติ) มีเงินกู้ดอกเบี้ยลอยตัว $50$ ล้านบาท อัตรา MLR $- 0.5\%$ ถ้า MLR ขึ้นจาก $7.0\%$ เป็น $7.25\%$ ตามดอกเบี้ยนโยบาย ดอกเบี้ยต่อปีเพิ่มเท่าใด และกระทบการตัดสินใจอย่างไร
+  steps:
+  - text: อัตราเดิม $= 7.0 - 0.5 = 6.5\%$ อัตราใหม่ $= 7.25 - 0.5 = 6.75\%$
+    why: ส่วนลดจาก MLR คงที่ตามสัญญา
+  - text: ดอกเบี้ยเดิม $= 50{,}000{,}000 \times 0.065 = 3{,}250{,}000$ บาท
+  - text: ดอกเบี้ยใหม่ $= 50{,}000{,}000 \times 0.0675 = 3{,}375{,}000$ บาท เพิ่ม $125{,}000$ บาทต่อปี
+  - text: โครงการลงทุนใหม่ที่เคยคุ้มพอดีอาจไม่ผ่านเกณฑ์ เพราะต้นทุนเงินสูงขึ้น นี่คือช่องทางที่ดอกเบี้ยนโยบายชะลอการใช้จ่าย
+  answer: ดอกเบี้ยเพิ่ม $125{,}000$ บาทต่อปี
+- type: worked-example
+  title: ตัวทวีคูณรายจ่ายกับการรั่วไหล
+  problem: รัฐ (สมมติ) เพิ่มรายจ่ายสร้างระบบชลประทาน $20$ พันล้านบาท MPC $= 0.8$ หาผลต่อ GDP เมื่อ (ก) ไม่มีการนำเข้า (ข) MPM $= 0.3$
+  steps:
+  - text: (ก) รอบแรก $20$ รอบสอง $0.8 \times 20 = 16$ รอบสาม $12.8$ … รวมเป็นอนุกรมเรขาคณิต $20 / (1 - 0.8) = 100$
+    why: แต่ละรอบเป็นรายได้ของคนถัดไป ใช้จ่ายต่อร้อยละ 80
+  - text: (ข) แต่ละบาทที่ได้ ใช้ซื้อของในประเทศเพียง $0.8 - 0.3 = 0.5$ บาท
+  - text: ตัวทวีคูณ $= 1 / (1 - 0.8 + 0.3) = 2$ GDP เพิ่ม $40$ พันล้านบาท
+  - text: เศรษฐกิจที่นำเข้ามากได้ผลทวีคูณน้อยกว่า และโครงการที่ใช้วัสดุในประเทศมากจะกระตุ้นเศรษฐกิจในประเทศได้มากกว่า
+  answer: (ก) $100$ (ข) $40$ พันล้านบาท
+- type: interactive
+  title: ตัวทวีคูณเมื่อเปลี่ยน MPC และการนำเข้า
+  caption: แกนนอน $x$ คือรายจ่ายรัฐที่เพิ่ม (พันล้านบาท) เส้นแสดง GDP ที่เพิ่ม $= \dfrac{x}{1 - b + m}$ เลื่อน $b$ (MPC) และ $m$ (MPM) ดูว่าการนำเข้าทำให้เส้นชันน้อยลง
+  widget:
+    kind: function-plot
+    functions:
+    - \frac{x}{1 - b + m}
+    sliders:
+    - name: b
+      min: 0.5
+      max: 0.9
+      step: 0.05
+      value: 0.8
+      label: MPC (b)
+    - name: m
+      min: 0
+      max: 0.4
+      step: 0.05
+      value: 0.3
+      label: MPM (m)
+    x:
+    - 0
+    - 30
+    y:
+    - 0
+    - 150
+- type: check
+  problem: business.econ.monetary-fiscal-policy.p006
+  prompt: รายจ่ายถูกใช้ต่อหลายรอบ
+glossary:
+- term: นโยบายการเงิน
+  definition: การดูแลต้นทุนการกู้ยืมและปริมาณเงินโดยธนาคารกลาง เพื่อเสถียรภาพราคาและเศรษฐกิจ
+- term: อัตราดอกเบี้ยนโยบาย
+  definition: อัตราที่ กนง. กำหนดเพื่อส่งสัญญาณนโยบาย ของไทยคืออัตราซื้อคืนพันธบัตรแบบทวิภาคี 1 วัน
+- term: คณะกรรมการนโยบายการเงิน (กนง.)
+  definition: คณะกรรมการ 7 คนของ ธปท. ที่ลงมติกำหนดนโยบายการเงิน
+- term: กรอบเป้าหมายเงินเฟ้อแบบยืดหยุ่น
+  definition: การดำเนินนโยบายให้เงินเฟ้ออยู่ในเป้าหมายระยะปานกลาง โดยคำนึงถึงการเติบโตและเสถียรภาพระบบการเงินด้วย
+- term: นโยบายการคลัง
+  definition: การใช้รายจ่าย ภาษี และการกู้ของรัฐบาลเพื่อดูแลและพัฒนาเศรษฐกิจ
+- term: ขาดดุลงบประมาณ
+  definition: ภาวะที่รายจ่ายรัฐมากกว่ารายได้ ต้องกู้มาชดเชย
+- term: ตัวทวีคูณ
+  definition: อัตราส่วนของ GDP ที่เปลี่ยนต่อรายจ่ายหรือภาษีที่เปลี่ยนในรอบแรก
+- term: ตัวรักษาเสถียรภาพอัตโนมัติ
+  definition: ภาษีและรายจ่ายที่เปลี่ยนตามภาวะเศรษฐกิจเองโดยไม่ต้องออกมาตรการใหม่
+- term: อุปสงค์มวลรวม (AD)
+  definition: การใช้จ่ายรวมในระบบเศรษฐกิจที่ระดับราคาต่าง ๆ
+flashcards:
+- front: เครื่องมือหลักของ กนง.
+  back: อัตราดอกเบี้ยนโยบาย (อัตราซื้อคืนพันธบัตร 1 วัน) · ประชุมปีละ 6 ครั้ง
+- front: ตัวทวีคูณรายจ่าย / ภาษี
+  back: $\dfrac{1}{1 - \text{MPC}}$ และ $\dfrac{-\text{MPC}}{1 - \text{MPC}}$
+- front: นโยบายแบบขยายตัว
+  back: ลดดอกเบี้ย เพิ่มรายจ่ายรัฐ ลดภาษี → AD เลื่อนขวา
+- front: ปีงบประมาณของไทย
+  back: 1 ตุลาคม ถึง 30 กันยายน
+- front: เศรษฐกิจเปิด
+  back: ตัวทวีคูณเล็กลงเพราะการนำเข้ารั่วไหล
+references:
+- title: 28.3 How a Central Bank Executes Monetary Policy (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/28-3-how-a-central-bank-executes-monetary-policy
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 30.4 Using Fiscal Policy to Fight Recession, Unemployment, and Inflation (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/30-4-using-fiscal-policy-to-fight-recession-unemployment-and-inflation
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: นโยบายการเงิน
+  url: https://th.wikipedia.org/wiki/นโยบายการเงิน
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: นโยบายการคลัง
+  url: https://th.wikipedia.org/wiki/นโยบายการคลัง
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

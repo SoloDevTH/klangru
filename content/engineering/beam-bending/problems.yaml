@@ -1,0 +1,420 @@
+problems:
+- id: engineering.materials.beam-bending.p001
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 1
+  type: mcq
+  stem: คานรับโมเมนต์ดัดอย่างเดียว ความเค้นดัดในหน้าตัดเป็นศูนย์ที่ใด
+  choices:
+  - id: a
+    text: ที่แกนสะเทิน ซึ่งผ่านเซนทรอยด์ของหน้าตัด
+    correct: true
+  - id: b
+    text: ที่ผิวบนสุดของคาน
+    feedback: ผิวบนสุดมีความเค้นมากที่สุด (อัดเมื่อโมเมนต์บวก)
+  - id: c
+    text: ที่ผิวล่างสุดของคาน
+    feedback: ผิวล่างสุดมีความเค้นมากที่สุดอีกด้านหนึ่ง (ดึงเมื่อโมเมนต์บวก)
+  - id: d
+    text: ไม่มีจุดใดเป็นศูนย์ เพราะความเค้นกระจายเท่ากันทั้งหน้าตัด
+    feedback: ความเค้นสม่ำเสมอเป็นกรณีแรงตามแนวแกน การดัดให้ความเค้นแปรเชิงเส้นตามระยะจากแกนสะเทิน
+  hints:
+  - ด้านหนึ่งของคานถูกอัด อีกด้านถูกดึง
+  - ระหว่างสองด้านต้องมีชั้นที่ไม่ยืดไม่หด
+  solution: ความเค้นดัด $\sigma = -My/I$ เป็นศูนย์ที่ $y = 0$ คือแกนสะเทิน เมื่อไม่มีแรงตามแนวแกน แกนสะเทินผ่านเซนทรอยด์ของหน้าตัด เพราะแรงลัพธ์ของความเค้นทั้งหน้าตัดต้องเป็นศูนย์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p002
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 1
+  type: match
+  stem: จับคู่ปริมาณกับสูตร
+  pairs:
+  - left: ความเค้นดัดที่ระยะ $y$ จากแกนสะเทิน
+    right: $\sigma = -\dfrac{My}{I}$
+  - left: โมดูลัสหน้าตัด
+    right: $S = \dfrac{I}{c}$
+  - left: ความเค้นเฉือนในคาน
+    right: $\tau = \dfrac{VQ}{It}$
+  - left: ความโค้งของคาน
+    right: $\dfrac{1}{\rho} = \dfrac{M}{EI}$
+  hints:
+  - $c$ คือระยะจากแกนสะเทินถึงผิวที่ไกลที่สุด
+  - $Q$ คือโมเมนต์ที่หนึ่งของพื้นที่ส่วนที่อยู่เหนือจุดที่พิจารณา
+  solution: ความเค้นดัดแปรตาม $y$ · $S = I/c$ ใช้หาความเค้นสูงสุด $M/S$ · ความเค้นเฉือน $VQ/(It)$ · ความโค้งแปรตาม $M$ และผกผันกับความแกร่งดัด $EI$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p003
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 2
+  type: expression
+  stem: จงหาโมดูลัสหน้าตัด $S$ ของหน้าตัดสี่เหลี่ยมผืนผ้ากว้าง $b$ สูง $h$ (ดัดรอบแกนที่ขนานกับด้าน $b$)
+  prefix: S =
+  answer:
+    latex: \frac{b h^2}{6}
+    variables:
+    - b
+    - h
+  misconceptions:
+  - match: \frac{b h^3}{12}
+    feedback: นั่นคือ $I$ ยังไม่ได้หารด้วย $c$
+  - match: \frac{b^2 h}{6}
+    feedback: สลับ $b$ กับ $h$ ความลึกในแนวแรงคือ $h$
+  hints:
+  - $I = \dfrac{bh^3}{12}$ และ $c = \dfrac{h}{2}$
+  - $S = I / c$
+  solution: $S = \dfrac{bh^3/12}{h/2} = \dfrac{bh^2}{6}$ ความลึก $h$ มีผลกำลังสอง จึงสำคัญกว่าความกว้าง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p004
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 2
+  type: numeric
+  stem: คานเหล็กรับโมเมนต์ดัดสูงสุด $20\ \mathrm{kN\cdot m}$ โมดูลัสหน้าตัด $S = 500 \times 10^3\ \mathrm{mm^3}$ ความเค้นดัดสูงสุดเป็นกี่เมกะปาสกาล
+  answer:
+    value: 40
+    unit: MPa
+  misconceptions:
+  - match: 0.04
+    feedback: ลืมแปลง kN·m เป็น N·mm
+  - match: 40000
+    feedback: แปลงหน่วยเกิน ใช้ N·mm หารด้วย m³ ปนกัน
+  hints:
+  - $\sigma_{\max} = M/S$
+  - แปลง $20\ \mathrm{kN\cdot m} = 20 \times 10^6\ \mathrm{N\cdot mm}$
+  solution: $\sigma_{\max} = \dfrac{20 \times 10^6}{500 \times 10^3} = 40\ \mathrm{N/mm^2} = 40\ \mathrm{MPa}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p005
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 2
+  type: mcq
+  stem: ไม้ตงขนาด $50 \times 150\ \mathrm{mm}$ ของบ้านไม้ (ดูภาพ) ถ้าวางตั้ง (ก) แทนวางแบน (ข) ภายใต้โมเมนต์เท่ากัน ความเค้นดัดสูงสุดจะเป็นอย่างไร
+  choices:
+  - id: a
+    text: ลดลงเหลือ 1/3 เพราะ $S$ ของแบบวางตั้งมากกว่า 3 เท่า
+    correct: true
+  - id: b
+    text: เท่าเดิม เพราะพื้นที่หน้าตัดเท่ากัน
+    feedback: ความต้านทานการดัดขึ้นกับ $S = bh^2/6$ ไม่ใช่พื้นที่
+  - id: c
+    text: ลดลงเหลือ 1/9
+    feedback: $S$ แปรตาม $h^2$ แต่ $b$ ก็เปลี่ยนด้วย อัตราส่วน $S$ คือ $(50 \cdot 150^2)/(150 \cdot 50^2) = 3$ (ส่วน $I$ ต่างกัน 9 เท่า)
+  - id: d
+    text: เพิ่มขึ้น 3 เท่า
+    feedback: การวางตั้งเพิ่มความลึกในแนวแรง ความเค้นจึงลดลง ไม่ใช่เพิ่ม
+  figure:
+    src: p-joist.svg
+    alt: หน้าตัดไม้ขนาด 50 × 150 มม. สองแบบ แบบ ก วางตั้ง ด้าน 150 อยู่แนวดิ่ง แบบ ข วางแบน ด้าน 150 อยู่แนวนอน แรงกดในแนวดิ่ง
+  hints:
+  - เทียบ $S = bh^2/6$ โดย $h$ คือด้านในแนวแรง
+  - 'ก: $b = 50$, $h = 150$ ข: $b = 150$, $h = 50$'
+  solution: $S_ก = 50(150^2)/6 = 187{,}500$ และ $S_ข = 150(50^2)/6 = 62{,}500\ \mathrm{mm^3}$ ต่างกัน 3 เท่า ความเค้น $M/S$ จึงลดเหลือ 1/3 ส่วนการแอ่นลดเหลือ 1/9 เพราะ $I$ ต่างกัน 9 เท่า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p006
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 2
+  type: mcq
+  stem: คานช่วงเดียวรับน้ำหนักลง (โมเมนต์บวก แอ่นแบบหงาย) จุดที่อยู่ **เหนือ** แกนสะเทินอยู่ในสภาพใด
+  choices:
+  - id: a
+    text: ถูกอัด ($\sigma < 0$)
+    correct: true
+  - id: b
+    text: ถูกดึง ($\sigma > 0$)
+    feedback: ผิวล่างของคานที่แอ่นแบบหงายถูกดึง ส่วนผิวบนหดสั้นลง
+  - id: c
+    text: ไม่มีความเค้น
+    feedback: มีเพียงแกนสะเทินที่ความเค้นเป็นศูนย์
+  - id: d
+    text: ขึ้นกับวัสดุ
+    feedback: ทิศของความเค้นขึ้นกับทิศของโมเมนต์ ส่วนวัสดุมีผลต่อขนาดความเครียด
+  hints:
+  - นึกถึงไม้บรรทัดที่ถูกกดตรงกลาง
+  - $\sigma = -My/I$ เมื่อ $M > 0$ และ $y > 0$
+  solution: $\sigma = -My/I$ ที่ $M > 0$, $y > 0$ ได้ค่าลบ คือถูกอัด ผิวบนของคานที่แอ่นแบบหงายหดสั้น ผิวล่างยืด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p007
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 3
+  type: numeric
+  stem: ไม้ตง $50 \times 150\ \mathrm{mm}$ ($I = 14.0625 \times 10^6\ \mathrm{mm^4}$) รับโมเมนต์ $M = 1.6875\ \mathrm{kN\cdot m}$ (บวก) จงหาความเค้นดัดที่จุดสูงจากแกนสะเทิน $y = +50\ \mathrm{mm}$ (MPa ตอบพร้อมเครื่องหมาย)
+  answer:
+    value: -6.0
+    tolerance: 0.05
+    unit: MPa
+  misconceptions:
+  - match: 6
+    feedback: ขนาดถูกแต่เครื่องหมายผิด จุดเหนือแกนสะเทินถูกอัด
+  - match: -9
+    feedback: นั่นคือที่ผิวบน $y = 75\ \mathrm{mm}$
+  hints:
+  - $\sigma = -\dfrac{My}{I}$ ใช้หน่วย N·mm และ mm
+  - $M = 1.6875 \times 10^6\ \mathrm{N\cdot mm}$
+  solution: $\sigma = -\dfrac{1.6875 \times 10^6 \times 50}{14.0625 \times 10^6} = -6.0\ \mathrm{MPa}$ (อัด) เท่ากับ $2/3$ ของค่าที่ผิวบน $-9.0\ \mathrm{MPa}$ เพราะความเค้นแปรเชิงเส้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p008
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 3
+  type: numeric
+  stem: ไม้ตงเดียวกัน ($50 \times 150\ \mathrm{mm}$) รับแรงเฉือนสูงสุด $V = 2.25\ \mathrm{kN}$ ความเค้นเฉือนสูงสุดเป็นกี่เมกะปาสกาล
+  answer:
+    value: 0.45
+    tolerance: 0.01
+    unit: MPa
+  misconceptions:
+  - match: 0.3
+    feedback: ใช้ $V/A$ ซึ่งเป็นค่าเฉลี่ย ค่าสูงสุดมากกว่า 1.5 เท่า
+  hints:
+  - 'หน้าตัดสี่เหลี่ยม: $\tau_{\max} = \dfrac{3V}{2A}$ ที่แกนสะเทิน'
+  - $A = 50 \times 150 = 7{,}500\ \mathrm{mm^2}$
+  solution: $\tau_{\max} = 1.5 \times \dfrac{2{,}250}{7{,}500} = 0.45\ \mathrm{MPa}$ (ได้จาก $VQ/(It)$ โดย $Q = b(h/2)(h/4)$) ไม้มีกำลังเฉือนตามเสี้ยนต่ำ ค่านี้จึงต้องตรวจในคานไม้สั้นที่รับน้ำหนักมาก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p009
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 3
+  type: numeric
+  stem: แผ่นเหล็ก ($E = 200\ \mathrm{GPa}$) มี $I = 50 \times 10^6\ \mathrm{mm^4}$ รับโมเมนต์คงที่ $40\ \mathrm{kN\cdot m}$ รัศมีความโค้งเป็นกี่เมตร
+  answer:
+    value: 250
+    unit: m
+  misconceptions:
+  - match: 250000
+    feedback: ลืมแปลง mm เป็น m
+  - match: 0.004
+    feedback: นั่นคือความโค้ง ($1/\rho$) ไม่ใช่รัศมี
+  hints:
+  - $\rho = \dfrac{EI}{M}$
+  - $E = 200{,}000\ \mathrm{MPa}$, $M = 40 \times 10^6\ \mathrm{N\cdot mm}$ ผลลัพธ์เป็น mm
+  solution: $\rho = \dfrac{200{,}000 \times 50 \times 10^6}{40 \times 10^6} = 250{,}000\ \mathrm{mm} = 250\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p010
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 3
+  type: expression
+  stem: คานยื่นยาว $L$ ยึดแน่นที่ $x = 0$ รับแรง $P$ กดลงที่ปลาย $x = L$ ใช้ $EI\,v'' = M(x) = -P(L - x)$ และเงื่อนไข $v(0) = 0$, $v'(0) = 0$ จงหา $EI\,v(x)$ ($v$ บวกขึ้น)
+  prefix: EI\,v(x) =
+  answer:
+    latex: -\frac{P x^2 \cdot (3L - x)}{6}
+    variables:
+    - P
+    - L
+    - x
+  misconceptions:
+  - match: \frac{P x^2 \cdot (3L - x)}{6}
+    feedback: เครื่องหมายผิด แรงกดลงทำให้คานแอ่นลง $v$ เป็นลบ
+  - match: -\frac{P x^3}{3}
+    feedback: ใช้ค่าที่ปลายแทนสมการทั้งเส้น
+  hints:
+  - 'อินทิเกรตครั้งแรก: $EI\,v'' = -P(Lx - x^2/2) + C_1$ แล้วใช้ $v''(0) = 0$'
+  - อินทิเกรตอีกครั้งแล้วใช้ $v(0) = 0$
+  solution: $EI\,v' = -PLx + \tfrac{P}{2}x^2$ ($C_1 = 0$) $EI\,v = -\tfrac{PL}{2}x^2 + \tfrac{P}{6}x^3$ ($C_2 = 0$) $= -\dfrac{Px^2(3L - x)}{6}$ ที่ปลาย $v(L) = -\dfrac{PL^3}{3EI}$ (ตรวจด้วย sympy แล้ว)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p011
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 3
+  type: numeric
+  stem: ตงไม้ในบ้านไม้ (สมมติ) $50 \times 150\ \mathrm{mm}$ วางตั้ง ช่วง $3\ \mathrm{m}$ รับแรงกระจาย $1.5\ \mathrm{kN/m}$ ใช้ $E = 10\ \mathrm{GPa}$ (ค่าสมมติของไม้เนื้อแข็ง) การแอ่นตัวสูงสุดเป็นกี่มิลลิเมตร
+  answer:
+    value: 11.25
+    tolerance: 0.1
+    unit: mm
+  misconceptions:
+  - match: 1.125
+    feedback: แปลงหน่วยผิด (ใช้ $E$ เป็น 100 GPa หรือเลื่อนทศนิยม)
+  - match: 18.0
+    feedback: ใช้สูตรของแรงจุดกลางช่วง
+  hints:
+  - $v_{\max} = \dfrac{5wL^4}{384EI}$ โดย $1.5\ \mathrm{kN/m} = 1.5\ \mathrm{N/mm}$
+  - $I = 50(150)^3/12 = 14.0625 \times 10^6\ \mathrm{mm^4}$
+  solution: $v_{\max} = \dfrac{5(1.5)(3000)^4}{384(10{,}000)(14.0625 \times 10^6)} = 11.25\ \mathrm{mm}$ เกินเกณฑ์ที่นิยมใช้ $L/360 = 8.33\ \mathrm{mm}$ แม้ความเค้น ($9\ \mathrm{MPa}$) อาจยังรับได้ พื้นจึงจะยวบ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p012
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 4
+  type: numeric
+  stem: คานเหล็กรูปตัวไอในภาพ ($I = 113.6 \times 10^6\ \mathrm{mm^4}$ คำนวณจากขนาด) เป็นคานรอกในโรงงานที่ชลบุรี (สมมติ) ช่วง $6\ \mathrm{m}$ รับแรง $40\ \mathrm{kN}$ ที่กึ่งกลาง (ไม่คิดน้ำหนักคาน) ความเค้นดัดสูงสุดเป็นกี่เมกะปาสกาล
+  answer:
+    value: 79.220621
+    tolerance: 0.8
+    unit: MPa
+  misconceptions:
+  - match: 158.441242
+    feedback: ใช้ $PL/2$ แทน $PL/4$
+  - match: 158.441242
+    feedback: ใช้ $c$ เป็นความสูงทั้งหมด ต้องใช้ครึ่งหนึ่ง
+  figure: &id001
+    src: p-ibeam.svg
+    alt: หน้าตัดคานเหล็กรูปตัวไอ ปีกบนและล่างกว้าง 200 มม. หนา 12 มม. เอวหนา 8 มม. ความสูงรวม 300 มม.
+  hints:
+  - $M_{\max} = PL/4$
+  - $\sigma = Mc/I$ โดย $c = 150\ \mathrm{mm}$
+  solution: $M = 40(6)/4 = 60\ \mathrm{kN\cdot m}$ $\sigma = \dfrac{60 \times 10^6 \times 150}{113.6 \times 10^6} \approx 79.2\ \mathrm{MPa}$ ต่ำกว่ากำลังครากของเหล็กโครงสร้างทั่วไปมาก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p013
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 4
+  type: numeric
+  stem: คานเดียวกัน แรงเฉือนสูงสุด $V = 20\ \mathrm{kN}$ จงหาความเค้นเฉือนที่แกนสะเทินในเอว (MPa ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 9.281488
+    tolerance: 0.1
+    unit: MPa
+  misconceptions:
+  - match: 0.37126
+    feedback: ใช้ความกว้างปีก 200 มม. แทนความหนาเอว
+  - match: 2.853881
+    feedback: ใช้ $V/A$ ของทั้งหน้าตัด
+  figure: *id001
+  hints:
+  - $Q$ ของพื้นที่เหนือแกนสะเทิน $=$ ปีก $200 \times 12 \times 144$ $+$ เอวครึ่งบน $8 \times 138 \times 69$
+  - $\tau = VQ/(It)$ โดย $t = 8\ \mathrm{mm}$
+  solution: $Q = 345{,}600 + 76{,}176 = 421{,}776\ \mathrm{mm^3}$ $\tau = \dfrac{20{,}000 \times 421{,}776}{113.6 \times 10^6 \times 8} \approx 9.28\ \mathrm{MPa}$ ใกล้ค่าประมาณ $V/(t\,h_w) = 9.06\ \mathrm{MPa}$ เพราะเอวรับแรงเฉือนเกือบทั้งหมด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p014
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 4
+  type: numeric
+  stem: คานเดียวกัน ($E = 200\ \mathrm{GPa}$) ช่วง $6\ \mathrm{m}$ แรง $40\ \mathrm{kN}$ ที่กึ่งกลาง การแอ่นตัวที่กึ่งกลางเป็นกี่มิลลิเมตร (ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 7.922062
+    tolerance: 0.08
+    unit: mm
+  misconceptions:
+  - match: 126.752994
+    feedback: ใช้สูตรคานยื่น $PL^3/(3EI)$
+  hints:
+  - $v_{\max} = \dfrac{PL^3}{48EI}$
+  - ใช้ N mm MPa ให้ตรงกัน
+  solution: $v = \dfrac{40{,}000 \times 6000^3}{48 \times 200{,}000 \times 113.6 \times 10^6} \approx 7.92\ \mathrm{mm}$ (ตรวจด้วยการอินทิเกรตเชิงตัวเลขของ $M/EI$ สองครั้งได้ค่าเดียวกัน) น้อยกว่า $L/360 = 16.7\ \mathrm{mm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p015
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 4
+  type: order
+  stem: เรียงขั้นตอนการหาการแอ่นตัวด้วยวิธีอินทิเกรตสองครั้ง
+  items:
+  - หาแรงปฏิกิริยาและเขียน $M(x)$ ของแต่ละช่วง
+  - ตั้งสมการ $EI\,v'' = M(x)$
+  - อินทิเกรตครั้งแรกได้ความชัน $v'$ พร้อมค่าคงที่ $C_1$
+  - อินทิเกรตครั้งที่สองได้ $v$ พร้อมค่าคงที่ $C_2$
+  - ใช้เงื่อนไขขอบเขตหาค่าคงที่ แล้วแทนค่าหาการแอ่นที่ต้องการ
+  hints:
+  - ต้องรู้โมเมนต์ก่อน
+  - ค่าคงที่หาได้หลังอินทิเกรตครบแล้ว
+  solution: $M(x)$ → $EIv'' = M$ → $v'$ (+$C_1$) → $v$ (+$C_2$) → เงื่อนไขขอบเขต เช่น $v = 0$ ที่ฐานรองรับ $v' = 0$ ที่จุดยึดแน่น หรือที่กึ่งกลางของคานสมมาตร
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p016
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 4
+  type: numeric
+  stem: ระเบียงเหล็กยื่น (สมมติ) ยาว $1.5\ \mathrm{m}$ $EI = 1.6 \times 10^{12}\ \mathrm{N\cdot mm^2}$ รับแรงกระจาย $2\ \mathrm{kN/m}$ และกระถางต้นไม้ $3\ \mathrm{kN}$ ที่ปลาย ใช้การซ้อนทับหาการแอ่นที่ปลาย (มม. ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 2.900391
+    tolerance: 0.03
+    unit: mm
+  misconceptions:
+  - match: 2.109375
+    feedback: คิดเฉพาะกระถาง ลืมแรงกระจาย
+  - match: 0.922852
+    feedback: ใช้สูตรแรงจุดกลางช่วงของคานช่วงเดียว
+  hints:
+  - 'แรงกระจาย: $\dfrac{wL^4}{8EI}$ แรงที่ปลาย: $\dfrac{PL^3}{3EI}$'
+  - $w = 2\ \mathrm{N/mm}$, $L = 1{,}500\ \mathrm{mm}$ แล้วรวมกัน
+  solution: $\dfrac{2(1500)^4}{8(1.6 \times 10^{12})} \approx 0.79$ และ $\dfrac{3000(1500)^3}{3(1.6 \times 10^{12})} \approx 2.11$ รวม $\approx 2.90\ \mathrm{mm}$ การซ้อนทับใช้ได้เพราะวัสดุยังยืดหยุ่นเชิงเส้นและการแอ่นเล็ก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p017
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 5
+  type: numeric
+  stem: คาน AB ในภาพ ปลาย A ยึดแน่น ปลาย B วางบนลูกกลิ้ง ยาว $5\ \mathrm{m}$ รับ $10\ \mathrm{kN/m}$ ตลอดช่วง ($EI$ คงที่) แรงปฏิกิริยาที่ B เป็นกี่กิโลนิวตัน
+  answer:
+    value: 18.75
+    tolerance: 0.05
+    unit: kN
+  misconceptions:
+  - match: 25
+    feedback: คิดเหมือนคานช่วงเดียว $wL/2$ แต่ปลาย A ยึดแน่นรับแรงมากกว่า
+  - match: 31.25
+    feedback: นั่นคือแรงที่ A
+  figure:
+    src: p-propped.svg
+    alt: คาน AB ยาว 5 เมตร ปลาย A ยึดแน่นกับผนัง ปลาย B วางบนลูกกลิ้ง รับแรงกระจายสม่ำเสมอ 10 kN/m ตลอดช่วง
+  hints:
+  - ถอดลูกกลิ้งออก คิดเป็นคานยื่นรับ $w$ (ปลายลง $wL^4/8EI$) บวกคานยื่นรับแรง $R_B$ ขึ้น (ปลายขึ้น $R_BL^3/3EI$)
+  - 'ปลาย B ต้องไม่เคลื่อน: ผลรวมการแอ่นเป็นศูนย์'
+  solution: $\dfrac{wL^4}{8EI} = \dfrac{R_BL^3}{3EI} \Rightarrow R_B = \dfrac{3wL}{8} = \dfrac{3(10)(5)}{8} = 18.75\ \mathrm{kN}$ ดังนั้น $R_A = 31.25\ \mathrm{kN}$ และโมเมนต์ที่ A $= -wL^2/8 = -31.25\ \mathrm{kN\cdot m}$ (ตรวจด้วย sympy โดยแก้ $v(0) = v'(0) = v(L) = 0$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p018
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 5
+  type: numeric
+  stem: ออกแบบตงไม้กว้าง $50\ \mathrm{mm}$ ช่วง $3\ \mathrm{m}$ รับ $1.5\ \mathrm{kN/m}$ $E = 10\ \mathrm{GPa}$ (สมมติ) ให้การแอ่นไม่เกิน $L/360$ ต้องลึกอย่างน้อยกี่มิลลิเมตร (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 165.781417
+    tolerance: 0.5
+    unit: mm
+  misconceptions:
+  - match: 142.3
+    feedback: นั่นคือความลึกที่ต้องการตามเกณฑ์ความเค้น $10\ \mathrm{MPa}$ ไม่ใช่เกณฑ์การแอ่น
+  hints:
+  - ตั้ง $\dfrac{5wL^4}{384EI} = \dfrac{L}{360}$ แล้วหา $I$ ที่ต้องการ
+  - $h = \left(\dfrac{12I}{b}\right)^{1/3}$
+  solution: $I_{\text{ต้องการ}} = \dfrac{5(1.5)(3000)^4}{384(10{,}000)(8.333)} \approx 18.98 \times 10^6\ \mathrm{mm^4}$ $h = (12 \times 18.98 \times 10^6 / 50)^{1/3} \approx 165.8\ \mathrm{mm}$ ในทางปฏิบัติเลือกไม้ $50 \times 200\ \mathrm{mm}$ (การแอ่น $4.75\ \mathrm{mm}$ ความเค้น $5.06\ \mathrm{MPa}$) ถ้าใช้เกณฑ์ความเค้น $10\ \mathrm{MPa}$ อย่างเดียวจะได้เพียง $142.3\ \mathrm{mm}$ การแอ่นจึงเป็นตัวกำหนด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.beam-bending.p019
+  topics:
+  - engineering.materials.beam-bending
+  difficulty: 5
+  type: mcq
+  stem: ถ้าเพิ่มความลึกของคานหน้าตัดสี่เหลี่ยมเป็น 2 เท่า (ความกว้าง ช่วง และน้ำหนักเท่าเดิม) ความเค้นดัดสูงสุดและการแอ่นตัวเปลี่ยนอย่างไร
+  choices:
+  - id: a
+    text: ความเค้นเหลือ 1/4 การแอ่นเหลือ 1/8
+    correct: true
+  - id: b
+    text: ความเค้นเหลือ 1/2 การแอ่นเหลือ 1/2
+    feedback: ความลึกมีผลมากกว่าเชิงเส้น เพราะ $S \propto h^2$ และ $I \propto h^3$
+  - id: c
+    text: ความเค้นเหลือ 1/8 การแอ่นเหลือ 1/4
+    feedback: สลับกัน ความเค้นขึ้นกับ $S$ ($h^2$) ส่วนการแอ่นขึ้นกับ $I$ ($h^3$)
+  - id: d
+    text: ไม่เปลี่ยน เพราะโมเมนต์เท่าเดิม
+    feedback: โมเมนต์เท่าเดิม แต่ความต้านทานของหน้าตัดเพิ่มขึ้น
+  hints:
+  - $\sigma_{\max} = M/S$ โดย $S = bh^2/6$
+  - $v \propto 1/(EI)$ โดย $I = bh^3/12$
+  solution: $S$ เพิ่ม $2^2 = 4$ เท่า ความเค้นจึงเหลือ 1/4 และ $I$ เพิ่ม $2^3 = 8$ เท่า การแอ่นจึงเหลือ 1/8 นี่คือเหตุผลที่คานลึกและหน้าตัดตัวไอ (เอาเนื้อวัสดุไปไว้ไกลแกนสะเทิน) มีประสิทธิภาพ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
