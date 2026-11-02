@@ -55,13 +55,13 @@ $$\Delta H = \sum E_{\text{พันธะที่สลาย}} - \sum E_{\tex
 
 ถ้า $\Delta H$ เป็นลบ ปฏิกิริยา **คายความร้อน** (พันธะที่สร้างแข็งแรงกว่ารวมกัน) ถ้าเป็นบวก ปฏิกิริยา **ดูดความร้อน**
 
-### ตัวอย่าง: $\mathrm{H_2 + Cl_2 \rightarrow 2HCl}$
+### ตัวอย่าง: $\mathrm{H_2} + \mathrm{Cl_2} \rightarrow \mathrm{2HCl}$
 
 - สลาย: H–H 1 พันธะ + Cl–Cl 1 พันธะ $= 436 + 242 = 678\ \mathrm{kJ}$
 - สร้าง: H–Cl 2 พันธะ $= 2 \times 431 = 862\ \mathrm{kJ}$
 - $\Delta H = 678 - 862 = -184\ \mathrm{kJ}$ คายความร้อน
 
-### ตัวอย่าง: แยกน้ำ $\mathrm{2H_2O \rightarrow 2H_2 + O_2}$
+### ตัวอย่าง: แยกน้ำ $\mathrm{2H_2O} \rightarrow \mathrm{2H_2} + \mathrm{O_2}$
 
 - สลาย: O–H 4 พันธะ $= 4 \times 463 = 1{,}852\ \mathrm{kJ}$
 - สร้าง: H–H 2 พันธะ + O=O 1 พันธะ $= 872 + 495 = 1{,}367\ \mathrm{kJ}$

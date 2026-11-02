@@ -7,6 +7,7 @@ import { implicitGrade, nextLevel, scheduleGrade, toRating } from "./mastery.ts"
 import { bktUpdate, DEFAULT_BKT, guessFor, selectNext, sessionDone, targetDifficulty } from "./bkt.ts";
 import { answeredToday, applyFlashcard, applyPlacement, applySession, emptyProgress, migrate, setNote, setSettings, streak } from "./progress-model.ts";
 import { memoryBackend, mergeStamped, syncProgress } from "./sync.ts";
+import { blockMath } from "./markdown-math.ts";
 
 const base = {
   topics: ["math.x.a"],
@@ -259,8 +260,17 @@ test("flashcard queue: due cards plus at most 10 new cards from started topics",
   assert.equal(q.fresh.length, 10);
   assert.equal(q.due.length, 0);
   assert.ok(q.fresh.every((c) => c.topic === "t1"), "cards of unstarted topics stay hidden");
-  p = applyFlashcard(p, "t1#0", Rating.Again);
-  q = flashcardQueue(cards, p, new Map([["t1", 0]]), new Date(Date.now() + 3_600_000));
+  // เวลาคงที่กลางวัน: ถ้าใช้เวลาจริง +1 ชั่วโมงตอนใกล้เที่ยงคืน จะข้ามวันและการ์ดไม่นับเป็น "วันนี้"
+  const noon = new Date(2026, 0, 15, 12);
+  p = applyFlashcard(p, "t1#0", Rating.Again, noon);
+  q = flashcardQueue(cards, p, new Map([["t1", 0]]), new Date(noon.getTime() + 3_600_000));
   assert.equal(q.due.length, 1);
   assert.equal(q.fresh.length, 9, "a card introduced today counts against the daily limit");
+});
+
+test("$$...$$ บรรทัดเดียวกลายเป็นสมการแยกบรรทัด ส่วนสมการในประโยคไม่เปลี่ยน", () => {
+  assert.equal(blockMath("ก\n$$x^2$$\nข"), "ก\n\n$$\nx^2\n$$\nข");
+  assert.equal(blockMath("- $$a=b$$"), "- \n  $$\n  a=b\n  $$");
+  assert.equal(blockMath("ดังนั้น $$x$$ และ $y$"), "ดังนั้น $$x$$ และ $y$");
+  assert.equal(blockMath("$$\nx\n$$"), "$$\nx\n$$");
 });

@@ -2,9 +2,11 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { blockMath } from "../lib/markdown-math";
 
 /** Markdown + ตาราง + สมการ KaTeX สำหรับบทเรียน โจทย์ และเฉลย */
 export function Markdown({ children, inline = false }: { children: string; inline?: boolean }) {
+  const source = inline ? children : blockMath(children);
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm, remarkMath]}
@@ -15,7 +17,8 @@ export function Markdown({ children, inline = false }: { children: string; inlin
           : { table: ({ children }) => <div className="table-scroll"><table>{children}</table></div> }
       }
     >
-      {children}
+      {source}
     </ReactMarkdown>
   );
 }
+

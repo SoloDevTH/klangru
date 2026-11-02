@@ -7,15 +7,15 @@
 - **อาร์เรเนียส** กรดแตกตัวในน้ำให้ $\mathrm{H^+}$ (ซึ่งรวมกับน้ำเป็น $\mathrm{H_3O^+}$) เบสแตกตัวให้ $\mathrm{OH^-}$ เช่น HCl และ NaOH
 - **เบรินสเตด-ลาวรี** กรดคือ **ผู้ให้โปรตอน** ($\mathrm{H^+}$) เบสคือ **ผู้รับโปรตอน** ใช้ได้กว้างกว่า เช่น $\mathrm{NH_3}$ ไม่มี $\mathrm{OH^-}$ แต่รับโปรตอนจากน้ำได้
 
-$$\mathrm{NH_3 + H_2O \rightleftharpoons NH_4^+ + OH^-}$$
+$$\mathrm{NH_3} + \mathrm{H_2O} \rightleftharpoons \mathrm{NH_4^+} + \mathrm{OH^-}$$
 
-- **ลิวอิส** กรดคือ **ผู้รับคู่อิเล็กตรอน** เบสคือ **ผู้ให้คู่อิเล็กตรอน** ใช้ได้แม้ไม่มีโปรตอน เช่น $\mathrm{BF_3 + NH_3 \to F_3B{-}NH_3}$ ($\mathrm{BF_3}$ เป็นกรดลิวอิส) และไอออนโลหะที่จับกับน้ำหรือแอมโมเนีย
+- **ลิวอิส** กรดคือ **ผู้รับคู่อิเล็กตรอน** เบสคือ **ผู้ให้คู่อิเล็กตรอน** ใช้ได้แม้ไม่มีโปรตอน เช่น $\mathrm{BF_3} + \mathrm{NH_3} \to \mathrm{F_3B{-}NH_3}$ ($\mathrm{BF_3}$ เป็นกรดลิวอิส) และไอออนโลหะที่จับกับน้ำหรือแอมโมเนีย
 
 ## คู่กรด-เบส
 
 เมื่อกรดให้โปรตอน ส่วนที่เหลือเป็น **เบสคู่ (คู่เบส)** เมื่อเบสรับโปรตอน ได้ **กรดคู่ (คู่กรด)** สองสารในคู่ต่างกันเพียง $\mathrm{H^+}$ หนึ่งตัว
 
-$$\mathrm{\underset{\text{กรด}}{CH_3COOH} + \underset{\text{เบส}}{H_2O} \rightleftharpoons \underset{\text{เบส}}{CH_3COO^-} + \underset{\text{กรด}}{H_3O^+}}$$
+$$\mathrm{\underset{\text{กรด}}{CH_3COOH}} + \mathrm{\underset{\text{เบส}}{H_2O}} \rightleftharpoons \mathrm{\underset{\text{เบส}}{CH_3COO^-}} + \mathrm{\underset{\text{กรด}}{H_3O^+}}$$
 
 คู่กรด-เบสคือ $\mathrm{CH_3COOH/CH_3COO^-}$ และ $\mathrm{H_3O^+/H_2O}$ น้ำเป็นได้ทั้งกรดและเบส (แอมโฟเทอริก) ไอออน $\mathrm{HCO_3^-}$ ก็เช่นกัน
 
@@ -34,7 +34,7 @@ $K_a$ ยิ่งมาก กรดยิ่งแรง เช่น ที�
 
 ## pH และ pOH
 
-น้ำแตกตัวเล็กน้อย $\mathrm{2H_2O \rightleftharpoons H_3O^+ + OH^-}$ มี $K_w = [\mathrm{H_3O^+}][\mathrm{OH^-}] = 1.0 \times 10^{-14}$ ที่ 25 °C
+น้ำแตกตัวเล็กน้อย $\mathrm{2H_2O} \rightleftharpoons \mathrm{H_3O^+} + \mathrm{OH^-}$ มี $K_w = [\mathrm{H_3O^+}][\mathrm{OH^-}] = 1.0 \times 10^{-14}$ ที่ 25 °C
 
 $$\mathrm{pH} = -\log[\mathrm{H_3O^+}] \qquad \mathrm{pOH} = -\log[\mathrm{OH^-}] \qquad \mathrm{pH + pOH} = 14.00$$
 
@@ -48,19 +48,19 @@ pH ต่ำกว่า 7 เป็นกรด เท่ากับ 7 เป�
 
 ## ปฏิกิริยาของกรดและออกไซด์
 
-- กรด + โลหะ (ที่อยู่สูงกว่าไฮโดรเจน) → เกลือ + $\mathrm{H_2}$ เช่น $\mathrm{Zn + 2HCl \to ZnCl_2 + H_2}$
-- กรด + คาร์บอเนต → เกลือ + น้ำ + $\mathrm{CO_2}$ เช่น $\mathrm{CaCO_3 + 2HCl \to CaCl_2 + H_2O + CO_2}$
-- **ออกไซด์ของโลหะเป็นเบส** เช่น $\mathrm{CaO + H_2O \to Ca(OH)_2}$ **ออกไซด์ของอโลหะเป็นกรด** เช่น $\mathrm{SO_2 + H_2O \rightleftharpoons H_2SO_3}$ และ $\mathrm{CO_2}$ ทำให้น้ำฝนปกติมี pH ราว 5.6
+- กรด + โลหะ (ที่อยู่สูงกว่าไฮโดรเจน) → เกลือ + $\mathrm{H_2}$ เช่น $\mathrm{Zn} + \mathrm{2HCl} \to \mathrm{ZnCl_2} + \mathrm{H_2}$
+- กรด + คาร์บอเนต → เกลือ + น้ำ + $\mathrm{CO_2}$ เช่น $\mathrm{CaCO_3} + \mathrm{2HCl} \to \mathrm{CaCl_2} + \mathrm{H_2O} + \mathrm{CO_2}$
+- **ออกไซด์ของโลหะเป็นเบส** เช่น $\mathrm{CaO} + \mathrm{H_2O} \to \mathrm{Ca(OH)_2}$ **ออกไซด์ของอโลหะเป็นกรด** เช่น $\mathrm{SO_2} + \mathrm{H_2O} \rightleftharpoons \mathrm{H_2SO_3}$ และ $\mathrm{CO_2}$ ทำให้น้ำฝนปกติมี pH ราว 5.6
 
 ## ปฏิกิริยาสะเทินและไฮโดรลิซิสของเกลือ
 
-กรด + เบส → เกลือ + น้ำ สมการไอออนสุทธิของกรดแก่กับเบสแก่คือ $\mathrm{H_3O^+ + OH^- \to 2H_2O}$ สารละลายหลังสะเทินเป็นกรดหรือเบสขึ้นกับ **สารที่เหลือมากเกิน** และ **ชนิดของเกลือ**
+กรด + เบส → เกลือ + น้ำ สมการไอออนสุทธิของกรดแก่กับเบสแก่คือ $\mathrm{H_3O^+} + \mathrm{OH^-} \to \mathrm{2H_2O}$ สารละลายหลังสะเทินเป็นกรดหรือเบสขึ้นกับ **สารที่เหลือมากเกิน** และ **ชนิดของเกลือ**
 
 เกลือบางชนิดทำปฏิกิริยากับน้ำ (ไฮโดรลิซิส)
 
 - เกลือจากกรดแก่ + เบสแก่ เช่น NaCl: เป็นกลาง
-- เกลือจากกรดอ่อน + เบสแก่ เช่น $\mathrm{CH_3COONa}$: เป็นเบส เพราะ $\mathrm{CH_3COO^- + H_2O \rightleftharpoons CH_3COOH + OH^-}$
-- เกลือจากกรดแก่ + เบสอ่อน เช่น $\mathrm{NH_4Cl}$: เป็นกรด เพราะ $\mathrm{NH_4^+ + H_2O \rightleftharpoons NH_3 + H_3O^+}$
+- เกลือจากกรดอ่อน + เบสแก่ เช่น $\mathrm{CH_3COONa}$: เป็นเบส เพราะ $\mathrm{CH_3COO^-} + \mathrm{H_2O} \rightleftharpoons \mathrm{CH_3COOH} + \mathrm{OH^-}$
+- เกลือจากกรดแก่ + เบสอ่อน เช่น $\mathrm{NH_4Cl}$: เป็นกรด เพราะ $\mathrm{NH_4^+} + \mathrm{H_2O} \rightleftharpoons \mathrm{NH_3} + \mathrm{H_3O^+}$
 
 ภาพกราฟการสะเทินแสดงว่า เมื่อเติม NaOH พอดีกับกรด (จุดสมมูล) สารละลายของ HCl มี pH 7 แต่ของกรดแอซีติกมี pH ราว 8.7 เพราะไอออนแอซีเทตไฮโดรลิซิส ส่วนการเลือกอินดิเคเตอร์และสารละลายบัฟเฟอร์จะเรียนในหัวข้อการไทเทรต
 

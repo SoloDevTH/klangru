@@ -250,6 +250,7 @@ await step("ภาพประกอบ ตัวอย่างแสดงว�
   await page.goto(`${base}/topic/${t.id}/`);
   const img = page.locator(".lesson .figure img, figure.figure img").first();
   await img.waitFor();
+  await img.scrollIntoViewIfNeeded(); // ภาพใช้ loading="lazy" จึงต้องเลื่อนให้เห็นก่อนจึงจะโหลด
   await page.waitForFunction(() => [...document.querySelectorAll("figure.figure img")].some((i) => i.complete && i.naturalWidth > 0));
   const ex = topic.lessons.find((b) => b.type === "worked-example");
   const box = page.locator(".worked").first();
