@@ -1,0 +1,139 @@
+id: business.econ.demand-supply
+subject: business
+title:
+  th: อุปสงค์ อุปทาน และกลไกราคา
+  en: Demand, supply and the price mechanism
+summary: กฎของอุปสงค์และอุปทาน ปัจจัยที่ทำให้เส้นเลื่อน ราคาและปริมาณดุลยภาพจากสมการเส้นตรง ความยืดหยุ่น การแข่งขัน ค่าจ้าง และภาษีต่อหน่วย
+difficulty: 4.5
+minutes: 40
+prerequisites:
+- business.econ.circular-flow
+- math.functions.linear-graphs
+encompasses:
+- id: math.functions.linear-graphs
+  weight: 0.3
+- id: business.econ.circular-flow
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: durian-market.svg
+  alt: กราฟตลาดทุเรียน (สมมติ) แกนนอนคือปริมาณ 0 ถึง 400 ตันต่อสัปดาห์ แกนตั้งคือราคา 0 ถึง 160 บาทต่อกิโลกรัม เส้นอุปสงค์ D ลาดลงจาก (0, 150) ถึง (400, 50) เส้นอุปทาน S ลาดขึ้นจาก (0, 60) ตัดกับ D ที่ดุลยภาพเดิม E ราคา 100 บาท ปริมาณ 200 ตัน เส้นประ S ต้นฤดูอยู่ทางซ้าย ตัด D ที่ E′ ราคา 120 บาท ปริมาณ 120 ตัน ลูกศรแสดงว่าอุปทานลดทำให้ราคาสูงขึ้นและปริมาณลดลง
+  caption: ต้นฤดูอุปทานลด เส้นอุปทานเลื่อนไปซ้าย ราคาขึ้นจาก 100 เป็น 120 บาท (สมมติ)
+- type: interactive
+  title: เลื่อนเส้นอุปสงค์และอุปทาน
+  caption: เส้นที่ลาดลงคืออุปสงค์ $P = 150 - \tfrac{Q}{4} + a$ เส้นที่ลาดขึ้นคืออุปทาน $P = 60 + \tfrac{Q}{5} + c$ (แกนนอนคือปริมาณ) ลองเพิ่ม $a$ (อุปสงค์เพิ่ม) หรือเพิ่ม $c$ (ต้นทุนสูงขึ้น อุปทานลด) แล้วดูว่าจุดตัดย้ายไปทางไหน
+  widget:
+    kind: function-plot
+    functions:
+    - 150 - \frac{x}{4} + a
+    - 60 + \frac{x}{5} + c
+    sliders:
+    - name: a
+      min: -40
+      max: 40
+      step: 5
+      value: 0
+      label: อุปสงค์เลื่อน
+    - name: c
+      min: -40
+      max: 40
+      step: 5
+      value: 0
+      label: อุปทานเลื่อนขึ้น (ต้นทุน)
+    x:
+    - 0
+    - 400
+    y:
+    - 0
+    - 200
+- type: worked-example
+  title: ดุลยภาพเดิมและดุลยภาพใหม่ต้นฤดู
+  problem: $Q_d = 600 - 4P$, $Q_s = -300 + 5P$ ต้นฤดูอุปทานเป็น $Q_s = -480 + 5P$ หาดุลยภาพก่อนและหลัง
+  steps:
+  - text: 'ดุลยภาพเดิม: $600 - 4P = -300 + 5P \Rightarrow 900 = 9P \Rightarrow P = 100$'
+    why: ดุลยภาพคือจุดที่ปริมาณเสนอซื้อเท่ากับปริมาณเสนอขาย
+  - text: '$Q = 600 - 4(100) = 200$ ตัน ตรวจ: $-300 + 5(100) = 200$ ✓'
+  - text: 'ดุลยภาพใหม่: $600 - 4P = -480 + 5P \Rightarrow 1{,}080 = 9P \Rightarrow P = 120$'
+  - text: $Q = 600 - 4(120) = 120$ ตัน
+    why: อุปทานลดทำให้ราคาสูงขึ้นแต่ปริมาณซื้อขายลดลง
+  - text: สรุป ราคาเพิ่ม $20$ บาท ($20\%$) ปริมาณลด $80$ ตัน ($40\%$)
+  answer: เดิม $P = 100$, $Q = 200$ · ต้นฤดู $P = 120$, $Q = 120$
+- type: check
+  problem: business.econ.demand-supply.p004
+  prompt: ราคาของสินค้าเองเปลี่ยน เส้นเลื่อนหรือไม่
+- type: figure
+  src: tax-wedge.svg
+  alt: กราฟตลาดทุเรียนเมื่อเก็บภาษี 9 บาทต่อกิโลกรัมจากผู้ขาย เส้นอุปทาน S เดิม และเส้น S + ภาษี ที่สูงกว่าเดิม 9 บาททุกจุด เส้นอุปสงค์ D ตัด S เดิมที่ราคา 100 บาท ปริมาณ 200 ตัน และตัดเส้นใหม่ที่ราคาผู้ซื้อจ่าย 105 บาท ปริมาณ 180 ตัน ที่ปริมาณ 180 ตัน ผู้ขายได้รับ 96 บาท ช่องว่างแนวตั้งระหว่าง 105 กับ 96 คือภาษี 9 บาท แบ่งเป็นภาระผู้ซื้อ 5 บาท (100 ถึง 105) และภาระผู้ขาย 4 บาท (96 ถึง 100) พื้นที่สี่เหลี่ยมแรเงาคือรายได้ภาษีของรัฐ
+  caption: ภาษีต่อหน่วยสร้าง "ลิ่ม" ระหว่างราคาที่ผู้ซื้อจ่ายกับราคาที่ผู้ขายได้รับ (สมมติ)
+- type: worked-example
+  title: ใครรับภาระภาษีต่อหน่วย
+  problem: ตลาดเดิม $Q_d = 600 - 4P$, $Q_s = -300 + 5P$ รัฐเก็บภาษีจากผู้ขาย $9$ บาทต่อกิโลกรัม หาราคาที่ผู้ซื้อจ่าย ราคาที่ผู้ขายได้รับ และภาระของแต่ละฝ่าย
+  steps:
+  - text: ผู้ขายได้รับจริง $P - 9$ บาท อุปทานใหม่ $Q_s = -300 + 5(P - 9) = -345 + 5P$
+    why: ผู้ขายตัดสินใจจากเงินที่เหลือหลังจ่ายภาษี
+  - text: $600 - 4P = -345 + 5P \Rightarrow 945 = 9P \Rightarrow P = 105$ บาท (ราคาที่ผู้ซื้อจ่าย)
+  - text: ผู้ขายได้รับ $105 - 9 = 96$ บาท ปริมาณ $600 - 420 = 180$ ตัน
+  - text: ภาระผู้ซื้อ $105 - 100 = 5$ บาท ภาระผู้ขาย $100 - 96 = 4$ บาท
+    why: ราคาเปลี่ยน 1 บาท ผู้ซื้อเปลี่ยนปริมาณ 4 ตัน ผู้ขายเปลี่ยน 5 ตัน ผู้ซื้อตอบสนองต่อราคาน้อยกว่าจึงแบกภาระมากกว่า ($\tfrac{5}{9}$ ของภาษี)
+  - text: รัฐได้ภาษี $9 \times 180{,}000 = 1{,}620{,}000$ บาทต่อสัปดาห์
+  answer: 'ผู้ซื้อจ่าย $105$ บาท ผู้ขายได้ $96$ บาท ภาระ $5 : 4$'
+- type: check
+  problem: business.econ.demand-supply.p006
+  prompt: ตั้งสมการดุลยภาพแล้วแก้
+glossary:
+- term: อุปสงค์
+  definition: ปริมาณสินค้าที่ผู้ซื้อต้องการและมีกำลังซื้อ ณ ราคาต่าง ๆ
+- term: อุปทาน
+  definition: ปริมาณสินค้าที่ผู้ขายเต็มใจขาย ณ ราคาต่าง ๆ
+- term: ดุลยภาพ
+  definition: จุดที่ปริมาณเสนอซื้อเท่ากับปริมาณเสนอขาย ได้ราคาและปริมาณดุลยภาพ
+- term: อุปสงค์ส่วนเกิน
+  definition: ปริมาณเสนอซื้อมากกว่าปริมาณเสนอขาย สินค้าขาดตลาด เกิดเมื่อราคาต่ำกว่าดุลยภาพ
+- term: อุปทานส่วนเกิน
+  definition: ปริมาณเสนอขายมากกว่าปริมาณเสนอซื้อ สินค้าล้นตลาด เกิดเมื่อราคาสูงกว่าดุลยภาพ
+- term: กลไกราคา
+  definition: การที่ราคาปรับขึ้นลงเองจนตลาดเข้าสู่ดุลยภาพ และเป็นสัญญาณจัดสรรทรัพยากร
+- term: ความยืดหยุ่นของอุปสงค์ต่อราคา
+  definition: ร้อยละการเปลี่ยนแปลงของปริมาณซื้อหารด้วยร้อยละการเปลี่ยนแปลงของราคา
+- term: ราคาขั้นสูง ราคาขั้นต่ำ
+  definition: ราคาที่รัฐกำหนดว่าห้ามขายเกิน หรือห้ามซื้อต่ำกว่า
+flashcards:
+- front: กฎของอุปสงค์ / อุปทาน
+  back: ราคาขึ้น ซื้อน้อยลง / ราคาขึ้น ขายมากขึ้น
+- front: เคลื่อนบนเส้น vs เลื่อนเส้น
+  back: ราคาของสินค้าเองเปลี่ยน = เคลื่อนบนเส้น · ปัจจัยอื่นเปลี่ยน = เส้นเลื่อน
+- front: หาดุลยภาพ
+  back: ตั้ง $Q_d = Q_s$ แก้หา $P$ แล้วแทนกลับหา $Q$
+- front: อุปทานลด
+  back: เส้นอุปทานเลื่อนซ้าย ราคาขึ้น ปริมาณลด
+- front: ภาษีต่อหน่วย
+  back: ผู้ซื้อจ่ายแพงขึ้นน้อยกว่าภาษี ผู้ขายแบกส่วนที่เหลือ
+references:
+- title: อุปสงค์และอุปทาน
+  url: https://th.wikipedia.org/wiki/อุปสงค์และอุปทาน
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: Supply and demand
+  url: https://en.wikipedia.org/wiki/Supply_and_demand
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 3.1 Demand, Supply, and Equilibrium in Markets for Goods and Services (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/3-1-demand-supply-and-equilibrium-in-markets-for-goods-and-services
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 5.1 Price Elasticity of Demand and Price Elasticity of Supply (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/5-1-price-elasticity-of-demand-and-price-elasticity-of-supply
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

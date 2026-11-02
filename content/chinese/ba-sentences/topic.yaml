@@ -1,0 +1,56 @@
+id: chinese.grammar.ba-sentences
+subject: chinese
+title: { th: "ประโยค 把 และ 被", en: "把 and 被 sentences" }
+summary: ประโยค 把 บอกว่าจัดการสิ่งของอย่างไร (把书放在桌子上) และประโยค 被 叫 让 บอกว่าสิ่งใดถูกกระทำ พร้อมข้อจำกัดเรื่องกริยา กรรม คำปฏิเสธ และผู้กระทำ
+difficulty: 5.5
+minutes: 40
+prerequisites: [chinese.grammar.complements-basic]
+encompasses:
+  - { id: chinese.grammar.complements-basic, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: ba-slots.svg
+    alt: "ผังช่องประโยค 把 หัวคอลัมน์ ประธาน · 没/别/要 · 把 · กรรม (ที่รู้กัน) · กริยา · ส่วนอื่น (ต้องมี) ตัวอย่าง 我 把 书 放 在桌子上了 · 你 别 把 手机 放 在床上 · 他 没 把 作业 做 完 · 你 要 把 窗户 关 上 ข้อผิด 我把书放。 (กริยาเปล่า) และ 我把作业没做完。 (没 ต้องอยู่หน้า 把) ผังประโยค 被: ผู้ถูกกระทำ · 没 · 被/叫/让 · ผู้กระทำ · กริยา + ส่วนอื่น ตัวอย่าง 我的蛋糕 被 弟弟 吃了 · 我的手机 被 (ไม่บอกก็ได้) 偷走了 หมายเหตุ 叫 让 ต้องบอกผู้กระทำ"
+    caption: "把 ยกกรรมมาหน้ากริยา 被 ยกผู้ถูกกระทำขึ้นเป็นประธาน และทั้งคู่ห้ามจบที่กริยาเปล่า"
+  - { type: check, problem: chinese.grammar.ba-sentences.p005, prompt: "ประโยค 把 จบที่กริยาเปล่าได้ไหม" }
+  - type: worked-example
+    title: เปลี่ยนคำสั่งเป็นประโยค 把
+    problem: "บอกเพื่อนเป็นภาษาจีนว่า \"เอาหนังสือเดินทางใส่ไว้ในกระเป๋าเดินทาง\" (护照 hùzhào, 行李箱 xínglixiāng)"
+    steps:
+      - text: "กรรมคือหนังสือเดินทางที่รู้กันอยู่ (护照) และจุดหมายคือในกระเป๋า (放在行李箱里)"
+      - text: "มี 在 + สถานที่ตามหลังกริยา จึงต้องใช้ 把: 把护照放在行李箱里。"
+        why: "放护照在行李箱里 ผิด เพราะกรรมกับ 在 + สถานที่วางหลังกริยาพร้อมกันไม่ได้"
+      - text: "เติม 请 ให้สุภาพ หรือ 别 ถ้าเป็นคำห้าม (วางหน้า 把): 请把护照放在行李箱里。"
+    answer: "请把护照放在行李箱里。"
+  - type: worked-example
+    title: เล่าเรื่องร้ายด้วย 被
+    problem: "เล่าว่า \"เมื่อวานโทรศัพท์ของฉันโดนน้องทำพัง\" (弄坏 nònghuài = ทำพัง) แล้วเขียนแบบใช้ 让"
+    steps:
+      - text: "ผู้ถูกกระทำ (我的手机) ขึ้นต้นประโยค ตามด้วยเวลา: 我的手机昨天…"
+      - text: "被 + ผู้กระทำ + กริยา + ส่วนเติมเต็ม + 了: 我的手机昨天被弟弟弄坏了。"
+        why: "กริยาต้องมีส่วนอื่นตาม ที่นี่คือผล 坏 และ 了"
+      - text: "แบบภาษาพูดใช้ 让 แทน 被 และต้องบอกผู้กระทำ: 我的手机昨天让弟弟弄坏了。"
+    answer: "我的手机昨天被弟弟弄坏了。 / 我的手机昨天让弟弟弄坏了。"
+  - { type: check, problem: chinese.grammar.ba-sentences.p006, prompt: "没 อยู่หน้าหรือหลัง 把" }
+glossary:
+  - { term: "把 bǎ", definition: "นำกรรมที่รู้กันมาไว้หน้ากริยา: ประธาน + 把 + กรรม + กริยา + ส่วนอื่น" }
+  - { term: "被 bèi", definition: "ผู้ถูกกระทำ + 被 + (ผู้กระทำ) + กริยา + ส่วนอื่น มักใช้กับเรื่องไม่ดี" }
+  - { term: "叫 jiào / 让 ràng (ถูกกระทำ)", definition: "ใช้แทน 被 ในภาษาพูด ต้องบอกผู้กระทำเสมอ" }
+  - { term: "放在 fàng zài", definition: "วางไว้ที่… มักใช้คู่กับ 把 เช่น 把书放在桌子上" }
+  - { term: "翻译成 / 换成", definition: "แปลเป็น / แลกเป็น ใช้ 把 + กรรม + กริยา + 成" }
+flashcards:
+  - { front: "เอาหนังสือวางบนโต๊ะ", back: "把书放在桌子上。" }
+  - { front: "ยังไม่ได้ทำการบ้านเสร็จ (ประโยค 把)", back: "我还没把作业做完。 (没 อยู่หน้า 把)" }
+  - { front: "จักรยานถูกขโมย", back: "我的自行车被偷了。" }
+  - { front: "叫/让 ต่างจาก 被 อย่างไร", back: "叫 让 ต้องบอกผู้กระทำ 被 ละได้" }
+  - { front: "กริยาใดใช้กับ 把 ไม่ได้", back: "是 有 在 喜欢 知道 觉得 看见 (ไม่ได้จัดการกรรม)" }
+references:
+  - { title: "把", url: "https://en.wiktionary.org/wiki/把", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "被", url: "https://en.wiktionary.org/wiki/被", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Chinese grammar", url: "https://en.wikipedia.org/wiki/Chinese_grammar", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

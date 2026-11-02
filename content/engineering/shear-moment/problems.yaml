@@ -1,0 +1,282 @@
+problems:
+  - id: engineering.mechanics.shear-moment.p001
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 1
+    type: mcq
+    stem: "ตามข้อตกลงเครื่องหมายในบทเรียน โมเมนต์ดัดบวกหมายถึงอะไร"
+    choices:
+      - { id: a, text: "คานแอ่นแบบหงาย ผิวบนถูกอัด ผิวล่างถูกดึง", correct: true }
+      - { id: b, text: "คานแอ่นแบบคว่ำ ผิวบนถูกดึง", feedback: "นั่นคือโมเมนต์ลบ เช่นที่ฐานของคานยื่น" }
+      - { id: c, text: "โมเมนต์ที่หมุนทวนเข็มนาฬิกาเสมอ ไม่ว่าจะมองชิ้นซ้ายหรือชิ้นขวา", feedback: "โมเมนต์ภายในบนชิ้นซ้ายและชิ้นขวามีทิศตรงข้ามกัน ข้อตกลงจึงอิงรูปการแอ่นของคาน ไม่ใช่ทิศหมุน" }
+      - { id: d, text: "คานถูกดึงตามแนวแกน", feedback: "นั่นคือแรงตามแนวแกน $N$ ไม่ใช่โมเมนต์ดัด" }
+    hints:
+      - "นึกถึงคานช่วงเดียวที่รับน้ำหนักลงตรงกลาง"
+      - "คานแบบนั้นแอ่นเป็นรูปถ้วยหงาย"
+    solution: "โมเมนต์บวกทำให้คานแอ่นแบบหงาย (sagging) เส้นใยด้านบนสั้นลง (ถูกอัด) ด้านล่างยืดออก (ถูกดึง) เป็นกรณีของคานช่วงเดียวที่รับน้ำหนักลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p002
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 1
+    type: match
+    stem: "จับคู่น้ำหนักบรรทุกในช่วงหนึ่งของคานกับรูปร่างของแผนภาพโมเมนต์ดัดในช่วงนั้น"
+    pairs:
+      - { left: "ไม่มีแรงกระทำในช่วง", right: "เส้นตรง" }
+      - { left: "แรงกระจายสม่ำเสมอ", right: "พาราโบลา" }
+      - { left: "แรงกระจายรูปสามเหลี่ยม", right: "เส้นโค้งกำลังสาม" }
+      - { left: "คู่ควบกระทำที่จุดหนึ่ง", right: "กระโดดเป็นขั้น" }
+    hints:
+      - "$dV/dx = -w$ และ $dM/dx = V$"
+      - "อินทิเกรตสองครั้งจาก $w$ ไปถึง $M$ ดีกรีเพิ่มทีละหนึ่ง"
+    solution: "$w = 0$: $V$ คงที่ $M$ เส้นตรง; $w$ คงที่: $V$ เส้นตรง $M$ พาราโบลา; $w$ เชิงเส้น: $V$ พาราโบลา $M$ กำลังสาม; คู่ควบ: $M$ กระโดดเท่ากับขนาดคู่ควบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p003
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 2
+    type: numeric
+    stem: "คานช่วงเดียวยาว $6\\ \\mathrm{m}$ รับแรง $12\\ \\mathrm{kN}$ ที่กึ่งกลางช่วง ไม่คิดน้ำหนักคาน โมเมนต์ดัดสูงสุดเป็นกี่กิโลนิวตันเมตร"
+    answer: { value: 18, tolerance: 0.1, unit: "kN·m" }
+    misconceptions:
+      - { match: 36, feedback: "ใช้ $PL/2$ แรงปฏิกิริยาแต่ละข้างคือ $P/2$ และแขนคือ $L/2$ จึงได้ $PL/4$" }
+      - { match: 72, feedback: "คูณแรงกับความยาวคานทั้งหมด ซึ่งเป็นโมเมนต์ของคานยื่น ไม่ใช่คานช่วงเดียว" }
+    hints:
+      - "แรงปฏิกิริยาแต่ละข้าง $6\\ \\mathrm{kN}$"
+      - "ตัดที่กึ่งกลาง: $M = R_A \\times 3$"
+    solution: "$M_{\\max} = \\dfrac{PL}{4} = \\dfrac{12 \\times 6}{4} = 18\\ \\mathrm{kN\\cdot m}$ (หรือ $6\\ \\mathrm{kN} \\times 3\\ \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p004
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 2
+    type: numeric
+    stem: "คานช่วงเดียวยาว $8\\ \\mathrm{m}$ รับแรงกระจายสม่ำเสมอ $5\\ \\mathrm{kN/m}$ ตลอดช่วง โมเมนต์ดัดสูงสุดเป็นกี่กิโลนิวตันเมตร"
+    answer: { value: 40, tolerance: 0.2, unit: "kN·m" }
+    misconceptions:
+      - { match: 80, feedback: "ใช้ $wL^2/4$: คิดว่าแรงรวม $40\\ \\mathrm{kN}$ เป็นแรงจุดกลางช่วงแล้วคูณ $L/2$ ลืมหักโมเมนต์ของแรงกระจายครึ่งซ้าย" }
+      - { match: 160, feedback: "ใช้ $wL^2/2$ ซึ่งเป็นโมเมนต์ที่ฐานของคานยื่น" }
+    hints:
+      - "$R_A = wL/2 = 20\\ \\mathrm{kN}$"
+      - "ที่กึ่งกลาง: $M = R_A(4) - (5 \\times 4)(2)$"
+    solution: "$M_{\\max} = \\dfrac{wL^2}{8} = \\dfrac{5 \\times 64}{8} = 40\\ \\mathrm{kN\\cdot m}$ ตรวจ: $20(4) - 20(2) = 40$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p005
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 2
+    type: numeric
+    stem: "ป้ายชื่อหมู่บ้านแขวนที่ปลายแขนเหล็กยื่นยาว $3\\ \\mathrm{m}$ ซึ่งยึดแน่นกับเสา น้ำหนักป้าย $4\\ \\mathrm{kN}$ (ไม่คิดน้ำหนักแขน) โมเมนต์ดัดในแขนที่จุดยึดกับเสาเป็นกี่กิโลนิวตันเมตร ตอบพร้อมเครื่องหมายตามข้อตกลงในบทเรียน"
+    answer: { value: -12, tolerance: 0.1, unit: "kN·m" }
+    misconceptions:
+      - { match: 12, feedback: "ขนาดถูกแต่เครื่องหมายผิด คานยื่นแอ่นแบบคว่ำ ผิวบนถูกดึง จึงเป็นโมเมนต์ลบ" }
+      - { match: -6, feedback: "ใช้ครึ่งหนึ่งของความยาว แรงอยู่ที่ปลายแขน แขนของโมเมนต์จึงเท่ากับ $3\\ \\mathrm{m}$" }
+    hints:
+      - "ตัดที่ใกล้เสา คิดชิ้นที่มีป้าย"
+      - "$|M| = Pa$ และคานยื่นแอ่นแบบคว่ำ"
+    solution: "$M = -Pa = -4 \\times 3 = -12\\ \\mathrm{kN\\cdot m}$ ผิวบนของแขนถูกดึง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p006
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 3
+    type: numeric
+    stem: "คาน AB ในภาพยาว $8\\ \\mathrm{m}$ รับแรง $10\\ \\mathrm{kN}$ ที่ $2\\ \\mathrm{m}$ และ $20\\ \\mathrm{kN}$ ที่ $6\\ \\mathrm{m}$ จาก A จงหาแรงเฉือนที่ $x = 4\\ \\mathrm{m}$ เป็นกิโลนิวตัน (ตอบพร้อมเครื่องหมาย)"
+    figure: { src: p-twoloads.svg, alt: "คาน AB ยาว 8 เมตร หมุดที่ A ลูกกลิ้งที่ B แรง 10 kN กดลงที่ 2 เมตรจาก A และแรง 20 kN กดลงที่ 6 เมตรจาก A (ห่าง B 2 เมตร)" }
+    answer: { value: 2.5, tolerance: 0.05, unit: kN }
+    misconceptions:
+      - { match: 12.5, feedback: "ใช้แรงปฏิกิริยาที่ A อย่างเดียว ลืมหักแรง $10\\ \\mathrm{kN}$ ที่อยู่ทางซ้ายของหน้าตัด" }
+      - { match: -2.5, feedback: "เครื่องหมายกลับ แรงสุทธิทางซ้ายของหน้าตัดชี้ขึ้น $2.5\\ \\mathrm{kN}$ ซึ่งตามข้อตกลงคือ $V$ บวก" }
+    hints:
+      - "$\\sum M_B = 0$ หา $R_A$"
+      - "$V(4) = R_A - 10$"
+    solution: "$8R_A = 10(6) + 20(2) = 100$ ได้ $R_A = 12.5\\ \\mathrm{kN}$ ตัดที่ $x = 4$: $V = 12.5 - 10 = 2.5\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p007
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 3
+    type: numeric
+    stem: "คานในภาพเดิม ($R_A = 12.5\\ \\mathrm{kN}$) ใช้วิธีพื้นที่ใต้แผนภาพแรงเฉือนหาโมเมนต์ดัดที่ $x = 6\\ \\mathrm{m}$ เป็นกิโลนิวตันเมตร"
+    figure: { src: p-twoloads.svg, alt: "คาน AB ยาว 8 เมตร หมุดที่ A ลูกกลิ้งที่ B แรง 10 kN กดลงที่ 2 เมตรจาก A และแรง 20 kN กดลงที่ 6 เมตรจาก A (ห่าง B 2 เมตร)" }
+    answer: { value: 35, tolerance: 0.2, unit: "kN·m" }
+    misconceptions:
+      - { match: 75, feedback: "ใช้ $V = 12.5$ ตลอดช่วง $0$ ถึง $6$ ลืมว่าแรงเฉือนลดเหลือ $2.5$ หลังผ่านแรง $10\\ \\mathrm{kN}$" }
+      - { match: 25, feedback: "นี่คือโมเมนต์ที่ $x = 2\\ \\mathrm{m}$ ต้องรวมพื้นที่ช่วง $2$ ถึง $6$ ด้วย" }
+    hints:
+      - "$V = 12.5$ ในช่วง $0$–$2$ และ $V = 2.5$ ในช่วง $2$–$6$"
+      - "$M(6) = 0 + \\int_0^6 V\\,dx$"
+    solution: "$M(6) = 12.5(2) + 2.5(4) = 25 + 10 = 35\\ \\mathrm{kN\\cdot m}$ ตรวจจากชิ้นขวา: $R_B = 17.5$ และ $M(6) = 17.5 \\times 2 = 35$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p008
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 3
+    type: numeric
+    stem: "คานช่วงเดียวยาว $10\\ \\mathrm{m}$ รับแรงกระจาย $4\\ \\mathrm{kN/m}$ เฉพาะครึ่งซ้าย ($0 \\le x \\le 5\\ \\mathrm{m}$) โมเมนต์ดัดสูงสุดอยู่ที่ $x$ เท่าใด (เมตร)"
+    answer: { value: 3.75, tolerance: 0.03, unit: m }
+    misconceptions:
+      - { match: 5, feedback: "คิดว่าโมเมนต์สูงสุดอยู่กึ่งกลางคานเสมอ ต้องหาจุดที่ $V = 0$" }
+      - { match: 2.5, feedback: "คิดว่าอยู่ที่กึ่งกลางของแรงกระจาย แต่แรงปฏิกิริยาสองข้างไม่เท่ากัน" }
+    hints:
+      - "$R_A = \\dfrac{20 \\times 7.5}{10} = 15\\ \\mathrm{kN}$"
+      - "ในช่วงที่มีแรงกระจาย $V = 15 - 4x$"
+    solution: "$V = 15 - 4x = 0$ ที่ $x = 3.75\\ \\mathrm{m}$ ซึ่งอยู่ในช่วงแรงกระจายจริง ได้ $M_{\\max} = 15(3.75) - 2(3.75)^2 = 28.1\\ \\mathrm{kN\\cdot m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p009
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 3
+    type: expression
+    stem: "คานช่วงเดียวยาว $L$ รับแรงกระจายสม่ำเสมอ $w$ ตลอดช่วง จงเขียนโมเมนต์ดัด $M(x)$ ที่ระยะ $x$ จากฐานซ้าย"
+    prefix: "M(x) ="
+    answer: { latex: "\\frac{wLx}{2}-\\frac{wx^2}{2}", variables: [w, L, x] }
+    misconceptions:
+      - { match: "\\frac{wLx}{2}-wx^2", feedback: "แรงกระจายในชิ้นซ้าย $wx$ กระทำที่ $x/2$ โมเมนต์จึงเป็น $wx^2/2$" }
+      - { match: "\\frac{wL}{2}-wx", feedback: "นี่คือแรงเฉือน $V(x)$ ไม่ใช่โมเมนต์" }
+    hints:
+      - "$R_A = wL/2$"
+      - "ชิ้นซ้ายยาว $x$: แรงกระจาย $wx$ ที่กึ่งกลางชิ้น"
+    solution: "$M(x) = \\dfrac{wL}{2}x - wx \\cdot \\dfrac{x}{2} = \\dfrac{wx}{2}(L - x)$ ตรวจ: $dM/dx = wL/2 - wx = V$ และ $M(L/2) = wL^2/8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p010
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 4
+    type: numeric
+    stem: "คานรับกันสาดของแผงตลาดสด (ค่าสมมติ) ตามภาพ หมุดที่ A ลูกกลิ้งที่ B ($AB = 6\\ \\mathrm{m}$) ปลายยื่น BC ยาว $2\\ \\mathrm{m}$ รับแรงกระจาย $3\\ \\mathrm{kN/m}$ บนช่วง AB และแรง $8\\ \\mathrm{kN}$ ที่ C จงหาโมเมนต์ดัดที่ B เป็นกิโลนิวตันเมตร (ตอบพร้อมเครื่องหมาย)"
+    figure: { src: p-overhang.svg, alt: "คาน ABC หมุดที่ A ลูกกลิ้งที่ B ห่าง A 6 เมตร ปลาย C ยื่นเลย B ไป 2 เมตร แรงกระจาย 3 kN/m กดลงบนช่วง AB และแรงจุด 8 kN กดลงที่ปลาย C" }
+    answer: { value: -16, tolerance: 0.1, unit: "kN·m" }
+    misconceptions:
+      - { match: 16, feedback: "ขนาดถูก แต่ปลายยื่นทำให้คานแอ่นแบบคว่ำเหนือฐาน B จึงเป็นค่าลบ" }
+      - { match: 6.69, feedback: "นี่คือโมเมนต์บวกสูงสุดในช่วง AB โจทย์ถามที่ B" }
+    hints:
+      - "ตัดที่ B แล้วคิดชิ้นขวา (ปลายยื่น) ซึ่งไม่ต้องรู้แรงปฏิกิริยา"
+      - "แรง $8\\ \\mathrm{kN}$ ห่าง B $2\\ \\mathrm{m}$"
+    solution: "ชิ้นขวาของหน้าตัดที่ B มีเพียงแรง $8\\ \\mathrm{kN}$ ที่ปลาย ได้ $M_B = -8 \\times 2 = -16\\ \\mathrm{kN\\cdot m}$ ตรวจจากชิ้นซ้าย: $R_A = 6.33\\ \\mathrm{kN}$ และ $M_B = 6.33(6) - 18(3) = -16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p011
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 4
+    type: numeric
+    stem: "คานในภาพเดิม ($R_A = 6.33\\ \\mathrm{kN}$) จุดดัดกลับในช่วง AB ซึ่งโมเมนต์ดัดเป็นศูนย์อยู่ห่าง A กี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-overhang.svg, alt: "คาน ABC หมุดที่ A ลูกกลิ้งที่ B ห่าง A 6 เมตร ปลาย C ยื่นเลย B ไป 2 เมตร แรงกระจาย 3 kN/m กดลงบนช่วง AB และแรงจุด 8 kN กดลงที่ปลาย C" }
+    answer: { value: 4.22, tolerance: 0.03, unit: m }
+    misconceptions:
+      - { match: 2.11, feedback: "นี่คือจุดที่ $V = 0$ ซึ่งเป็นจุดโมเมนต์บวกสูงสุด ไม่ใช่จุดที่ $M = 0$" }
+      - { match: 6, feedback: "ที่ B โมเมนต์เป็น $-16$ ไม่ใช่ศูนย์ จุดดัดกลับอยู่ก่อนถึง B" }
+    hints:
+      - "ในช่วง AB: $M(x) = 6.33x - 1.5x^2$"
+      - "แก้ $M(x) = 0$ ที่ $x \\neq 0$"
+    solution: "$R_A = (18 \\times 3 - 8 \\times 2)/6 = 6.333\\ \\mathrm{kN}$ ได้ $M = 6.333x - 1.5x^2 = x(6.333 - 1.5x) = 0$ ที่ $x = 6.333/1.5 = 4.22\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p012
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 4
+    type: numeric
+    stem: "คานช่วงเดียวยาว $6\\ \\mathrm{m}$ ไม่มีแรงอื่นนอกจากคู่ควบตามเข็มนาฬิกาขนาด $12\\ \\mathrm{kN\\cdot m}$ กระทำที่ $x = 2\\ \\mathrm{m}$ จงหาโมเมนต์ดัดที่หน้าตัดถัดไปทางขวาของจุดนั้น ($x = 2^+$) เป็นกิโลนิวตันเมตร"
+    answer: { value: 8, tolerance: 0.1, unit: "kN·m" }
+    misconceptions:
+      - { match: -4, feedback: "นี่คือค่าทางซ้าย ($x = 2^-$) คู่ควบตามเข็มนาฬิกาทำให้ $M$ กระโดดขึ้น $12$" }
+      - { match: 12, feedback: "ลืมว่าแรงปฏิกิริยาทำให้มีโมเมนต์ $-4$ ก่อนถึงคู่ควบ" }
+    hints:
+      - "แรงปฏิกิริยาเป็นคู่ควบต้าน: $R_A = -2$, $R_B = +2\\ \\mathrm{kN}$"
+      - "$M(2^-) = R_A \\times 2$ แล้วบวกขนาดคู่ควบ"
+    solution: "$\\sum M_A$: $6R_B - 12 = 0$ ได้ $R_B = 2\\ \\mathrm{kN}$ ขึ้น และ $R_A = -2\\ \\mathrm{kN}$ (ลง) $M(2^-) = -2 \\times 2 = -4$ คู่ควบตามเข็มบนชิ้นซ้ายทำให้ $M(2^+) = -4 + 12 = 8\\ \\mathrm{kN\\cdot m}$ ตรวจจากชิ้นขวา: $M = R_B \\times 4 = 8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p013
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 4
+    type: numeric
+    stem: "สะพานคนเดินข้ามคลองช่วงเดียวยาว $12\\ \\mathrm{m}$ (ค่าสมมติ) ออกแบบให้รับน้ำหนักฝูงชน $4\\ \\mathrm{kN/m}$ ตลอดช่วง พร้อมรถเข็นขายของ $8\\ \\mathrm{kN}$ ที่ $4\\ \\mathrm{m}$ จากฝั่ง A จงหาโมเมนต์ดัดสูงสุดเป็นกิโลนิวตันเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 88.9, tolerance: 0.4, unit: "kN·m" }
+    misconceptions:
+      - { match: 96, feedback: "บวก $wL^2/8$ กับ $PL/4$ แต่สองค่านี้เกิดคนละตำแหน่ง และรถเข็นไม่ได้อยู่กลางช่วง" }
+      - { match: 72, feedback: "ใช้เฉพาะแรงกระจาย ลืมรถเข็น" }
+    hints:
+      - "$R_A = (48 \\times 6 + 8 \\times 8)/12$"
+      - "หาจุดที่ $V = 0$ (หลังผ่านรถเข็น)"
+    solution: "$R_A = 29.33\\ \\mathrm{kN}$ หลัง $x = 4$: $V = 29.33 - 8 - 4x = 0$ ที่ $x = 5.33\\ \\mathrm{m}$ ได้ $M_{\\max} = 29.33(5.33) - 2(5.33)^2 - 8(1.33) = 88.9\\ \\mathrm{kN\\cdot m}$ (ตรวจด้วยการอินทิเกรต $V$ เชิงตัวเลขได้ค่าเดียวกัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p014
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 5
+    type: numeric
+    stem: "คานช่วงเดียวยาว $6\\ \\mathrm{m}$ รับแรงกระจายรูปสามเหลี่ยมจาก $0$ ที่ A ถึง $6\\ \\mathrm{kN/m}$ ที่ B (เช่น แรงดันของดินหรือน้ำ) จงหาโมเมนต์ดัดสูงสุดเป็นกิโลนิวตันเมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 13.86, tolerance: 0.1, unit: "kN·m" }
+    misconceptions:
+      - { match: 27, feedback: "ใช้ $wL^2/8$ ของแรงกระจายสม่ำเสมอที่ค่าสูงสุด แรงรวมจริงมีเพียงครึ่งหนึ่ง" }
+      - { match: 13.5, feedback: "หาโมเมนต์ที่กึ่งกลางคาน ($x = 3$) แต่ $V = 0$ ที่ $x = L/\\sqrt3 = 3.46\\ \\mathrm{m}$" }
+    hints:
+      - "$w(x) = x\\ \\mathrm{kN/m}$, $R_A = \\tfrac13$ ของแรงรวม $18\\ \\mathrm{kN}$"
+      - "$V(x) = 6 - x^2/2$ และ $M(x) = 6x - x^3/6$"
+    solution: "แรงรวม $\\tfrac12(6)(6) = 18\\ \\mathrm{kN}$ ที่ $4\\ \\mathrm{m}$ จาก A ได้ $R_A = 18 \\times 2/6 = 6\\ \\mathrm{kN}$ $V = 6 - x^2/2 = 0$ ที่ $x = \\sqrt{12} = 3.464\\ \\mathrm{m}$ ได้ $M_{\\max} = 6(3.464) - (3.464)^3/6 = 13.86\\ \\mathrm{kN\\cdot m}$ ตรงกับสูตร $w_0L^2/(9\\sqrt3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p015
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 5
+    type: numeric
+    stem: "คานยาว $10\\ \\mathrm{m}$ รับแรงกระจายสม่ำเสมอตลอดความยาว วางบนฐานรองรับสองจุดที่ห่างปลายแต่ละข้างเท่ากันเป็นระยะ $a$ (มีปลายยื่นสองข้าง) ถ้าต้องการให้โมเมนต์บวกสูงสุดกลางช่วงมีขนาดเท่ากับโมเมนต์ลบที่ฐานรองรับ $a$ ควรเป็นกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.07, tolerance: 0.02, unit: m }
+    misconceptions:
+      - { match: 2.5, feedback: "ใช้โมเมนต์กลางช่วงเป็น $w(L - 2a)^2/8$ ของคานช่วงเดียว ซึ่งลืมว่าปลายยื่นทั้งสองข้างลดโมเมนต์กลางช่วงลงอีก $wa^2/2$" }
+      - { match: 1.83, feedback: "ใช้โมเมนต์ที่ฐานเป็น $wa^2$ แรงของปลายยื่น $wa$ กระทำที่กึ่งกลางปลายยื่น จึงได้ $wa^2/2$" }
+    hints:
+      - "ที่ฐาน: $M = -wa^2/2$ ที่กึ่งกลาง: $M = \\dfrac{wL}{2}\\left(\\dfrac L2 - a\\right) - \\dfrac{w}{2}\\left(\\dfrac L2\\right)^2$"
+      - "ตั้งขนาดให้เท่ากัน ได้สมการกำลังสองของ $a$"
+    solution: "กลางช่วง: $M = \\dfrac{wL^2}{8} - \\dfrac{wLa}{2}$ ตั้ง $\\dfrac{wL^2}{8} - \\dfrac{wLa}{2} = \\dfrac{wa^2}{2}$ ได้ $4a^2 + 4La - L^2 = 0$ และ $a = \\dfrac{\\sqrt2 - 1}{2}L = 0.207L = 2.07\\ \\mathrm{m}$ (ตรวจด้วยการไล่ค่า $a$ เชิงตัวเลขได้ $|M| = 2.14w$ ทั้งสองตำแหน่ง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p016
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการวาดแผนภาพแรงเฉือนและโมเมนต์ดัดด้วยวิธีพื้นที่"
+    items:
+      - "วาดแผนภาพวัตถุอิสระและหาแรงปฏิกิริยา"
+      - "เริ่มแผนภาพ V จากปลายซ้าย ใส่การกระโดดที่แรงจุด และความชันเท่ากับ −w ในช่วงแรงกระจาย"
+      - "หาตำแหน่งที่ V = 0"
+      - "สร้างแผนภาพ M โดยบวกพื้นที่ใต้กราฟ V ทีละช่วง และใส่การกระโดดที่คู่ควบ"
+      - "ตรวจว่า M ที่ปลายขวาตรงกับเงื่อนไขของฐานรองรับ"
+    hints:
+      - "แผนภาพ $V$ ต้องมาก่อน $M$"
+      - "การตรวจที่ปลายขวาบอกว่าคำนวณสะสมมาถูกหรือไม่"
+    solution: "แรงปฏิกิริยา → แผนภาพ $V$ (กระโดดที่แรงจุด ความชัน $-w$) → ตำแหน่ง $V = 0$ → แผนภาพ $M$ จากพื้นที่ใต้ $V$ → ตรวจค่าที่ปลาย (ฐานหมุนหรือปลายอิสระ $M = 0$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.shear-moment.p017
+    topics: [engineering.mechanics.shear-moment]
+    difficulty: 3
+    type: mcq
+    stem: "ในช่วงหนึ่งของคาน แผนภาพแรงเฉือนเป็นค่าบวกคงที่ $5\\ \\mathrm{kN}$ ข้อใดถูกต้องเกี่ยวกับโมเมนต์ดัดในช่วงนั้น"
+    choices:
+      - { id: a, text: "M เพิ่มขึ้นเป็นเส้นตรงด้วยความชัน 5 kN·m ต่อเมตร", correct: true }
+      - { id: b, text: "M คงที่เท่ากับ 5 kN·m", feedback: "$V$ คือความชันของ $M$ ไม่ใช่ค่าของ $M$" }
+      - { id: c, text: "M เป็นพาราโบลา", feedback: "พาราโบลาเกิดเมื่อ $V$ เปลี่ยนเป็นเส้นตรง คือมีแรงกระจายสม่ำเสมอ" }
+      - { id: d, text: "M เป็นศูนย์ตลอดช่วง", feedback: "$M = 0$ ตลอดช่วงต้องมี $V = 0$ ด้วย" }
+    hints:
+      - "$dM/dx = V$"
+      - "อนุพันธ์คงที่หมายถึงฟังก์ชันเส้นตรง"
+    solution: "$dM/dx = V = 5$ คงที่ $M$ จึงเป็นเส้นตรงที่เพิ่มขึ้น $5\\ \\mathrm{kN\\cdot m}$ ทุก $1\\ \\mathrm{m}$ และในช่วงนี้ไม่มีแรงกระจาย ($dV/dx = 0$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

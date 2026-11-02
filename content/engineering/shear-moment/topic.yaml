@@ -1,0 +1,74 @@
+id: engineering.mechanics.shear-moment
+subject: engineering
+title: { th: แรงเฉือนและโมเมนต์ดัดในคาน, en: Shear force and bending moment in beams }
+summary: แรงภายในคาน ข้อตกลงเครื่องหมาย การเขียนแรงเฉือนและโมเมนต์ดัดเป็นฟังก์ชัน แผนภาพแรงเฉือนและโมเมนต์ดัด และความสัมพันธ์กับน้ำหนักบรรทุก
+difficulty: 7.5
+minutes: 45
+prerequisites: [engineering.mechanics.rigid-body-equilibrium, math.calculus.definite-integral]
+encompasses:
+  - { id: engineering.mechanics.rigid-body-equilibrium, weight: 0.5 }
+  - { id: math.calculus.definite-integral, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: แผนภาพแรงเฉือนและโมเมนต์ดัดของคานสะพานคนเดิน
+    src: sfd-bmd.svg
+    alt: "บน: คาน AB ยาว 6 เมตร หมุดที่ A ลูกกลิ้งที่ B แรงกระจาย 4 kN/m ตลอดช่วง และแรง 10 kN ที่ 2 เมตรจาก A กลาง: แผนภาพแรงเฉือน เริ่ม 18.67 kN ที่ A ลดเป็นเส้นตรงถึง 10.67 ที่ x = 2 กระโดดลงเหลือ 0.67 แล้วลดต่อผ่านศูนย์ที่ x = 2.17 เมตร ไปถึง -15.33 ที่ B ล่าง: แผนภาพโมเมนต์ดัดเป็นเส้นโค้งพาราโบลาสองช่วง เริ่มและจบที่ศูนย์ สูงสุด 29.39 kN m ที่ x = 2.17 เมตร ตรงกับจุดที่แรงเฉือนเป็นศูนย์"
+  - type: worked-example
+    title: แผนภาพของคานสะพานคนเดิน
+    problem: "คานช่วงเดียวยาว $6\\ \\mathrm{m}$ รับแรงกระจาย $4\\ \\mathrm{kN/m}$ ตลอดช่วงและแรง $10\\ \\mathrm{kN}$ ที่ $x = 2\\ \\mathrm{m}$ จงเขียน $V(x)$ $M(x)$ และหาโมเมนต์สูงสุด"
+    steps:
+      - text: "แรงปฏิกิริยา $R_A = 18.67\\ \\mathrm{kN}$, $R_B = 15.33\\ \\mathrm{kN}$"
+      - text: "ช่วง $0 < x < 2$: ตัดที่ $x$ ชิ้นซ้ายมี $R_A$ และแรงกระจาย $4x$ ได้ $V = 18.67 - 4x$ และ $M = 18.67x - 2x^2$"
+        why: "แรงลัพธ์ของแรงกระจายในชิ้นซ้ายคือ $4x$ กระทำที่ $x/2$ จากหน้าตัด จึงให้โมเมนต์ $4x \\cdot x/2$"
+      - text: "ช่วง $2 < x < 6$: เพิ่มแรง $10\\ \\mathrm{kN}$ ได้ $V = 8.67 - 4x$ และ $M = 18.67x - 2x^2 - 10(x - 2)$"
+      - text: "$V = 0$ ที่ $x = 8.67/4 = 2.17\\ \\mathrm{m}$ ได้ $M_{\\max} = 29.39\\ \\mathrm{kN\\cdot m}$"
+        why: "$dM/dx = V$ จุดสูงสุดของ $M$ จึงอยู่ที่ $V = 0$"
+      - text: "ตรวจ: $dM/dx$ ของแต่ละช่วงเท่ากับ $V$ และ $M(6) = 18.67(6) - 72 - 40 = 0$ ตรงกับฐานลูกกลิ้ง"
+    answer: "$M_{\\max} = 29.39\\ \\mathrm{kN\\cdot m}$ ที่ $x = 2.17\\ \\mathrm{m}$"
+  - { type: check, problem: engineering.mechanics.shear-moment.p004, prompt: "แรงกระจายสม่ำเสมอบนคานช่วงเดียว โมเมนต์สูงสุดอยู่กึ่งกลาง" }
+  - type: interactive
+    title: แรงเฉือนและโมเมนต์ของคานที่รับแรงกระจายสม่ำเสมอ
+    caption: "คานช่วงเดียวยาว L รับแรงกระจาย w (kN/m) เส้นแรกคือ V(x) = wL/2 − wx เส้นที่สองคือ M(x) = (wL/2)x − wx²/2 ดูเฉพาะช่วง 0 ≤ x ≤ L สังเกตว่า M สูงสุดตรงที่ V ตัดแกน x และความชันของ M เท่ากับค่าของ V"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{wL}{2}-wx", "\\frac{wL}{2}x-\\frac{w}{2}x^2"]
+      sliders:
+        - { name: w, min: 1, max: 6, step: 0.5, value: 4, label: "แรงกระจาย w (kN/m)" }
+        - { name: L, min: 2, max: 10, step: 1, value: 8, label: "ช่วงคาน L (m)" }
+      x: [0, 10]
+      y: [-35, 80]
+  - type: worked-example
+    title: ระเบียงยื่นรับแรงกระจายสามเหลี่ยม
+    problem: "ระเบียงยื่นยาว $2\\ \\mathrm{m}$ ยึดแน่นกับผนังที่ปลายขวา รับแรงกระจายที่เพิ่มเป็นเส้นตรงจาก $0$ ที่ปลายอิสระ ($x = 0$) ถึง $6\\ \\mathrm{kN/m}$ ที่ผนัง จงหา $V(x)$ $M(x)$ และค่าที่ผนัง"
+    steps:
+      - text: "$w(x) = 3x\\ \\mathrm{kN/m}$ ชิ้นซ้ายยาว $x$ มีแรงลัพธ์ $\\tfrac12(x)(3x) = 1.5x^2$ กระทำห่างหน้าตัด $x/3$"
+        why: "แรงลัพธ์ของสามเหลี่ยมอยู่ที่ $1/3$ ของความยาวจากด้านที่ค่าสูงสุด ซึ่งคือด้านหน้าตัด"
+      - text: "$\\sum F_y = 0$: $-1.5x^2 - V = 0$ ได้ $V = -1.5x^2$"
+      - text: "$\\sum M_{\\text{หน้าตัด}} = 0$: $1.5x^2 \\cdot \\dfrac{x}{3} + M = 0$ ได้ $M = -0.5x^3$"
+      - text: "ตรวจ: $dM/dx = -1.5x^2 = V$ และ $dV/dx = -3x = -w$"
+      - text: "ที่ผนัง $x = 2$: $V = -6\\ \\mathrm{kN}$, $M = -4\\ \\mathrm{kN\\cdot m}$ (ค่าลบคือผิวบนถูกดึง)"
+    answer: "$V = -1.5x^2$, $M = -0.5x^3$; ที่ผนัง $V = -6\\ \\mathrm{kN}$, $M = -4\\ \\mathrm{kN\\cdot m}$"
+  - { type: check, problem: engineering.mechanics.shear-moment.p005, prompt: "คานยื่นแอ่นแบบคว่ำ โมเมนต์เป็นลบ" }
+glossary:
+  - { term: แรงเฉือน, definition: "แรงภายในที่ตั้งฉากกับแกนคาน เท่ากับผลรวมแรงแนวดิ่งด้านหนึ่งของหน้าตัด (shear force)" }
+  - { term: โมเมนต์ดัด, definition: "โมเมนต์ภายในที่หน้าตัดของคาน ทำให้คานโค้ง (bending moment)" }
+  - { term: แผนภาพแรงเฉือนและโมเมนต์ดัด, definition: "กราฟของ V และ M ตลอดความยาวคาน ใช้หาตำแหน่งที่แรงภายในสูงสุด (shear and moment diagrams)" }
+  - { term: แอ่นแบบหงาย, definition: "การโค้งที่ผิวบนถูกอัด ผิวล่างถูกดึง ถือเป็นโมเมนต์บวก (sagging)" }
+  - { term: แอ่นแบบคว่ำ, definition: "การโค้งที่ผิวบนถูกดึง เช่นที่ฐานของคานยื่น ถือเป็นโมเมนต์ลบ (hogging)" }
+  - { term: จุดดัดกลับ, definition: "จุดที่โมเมนต์ดัดเปลี่ยนเครื่องหมาย ความโค้งของคานเปลี่ยนทิศ (inflection point)" }
+flashcards:
+  - { front: "ความสัมพันธ์ระหว่าง w, V และ M", back: "$dV/dx = -w$ และ $dM/dx = V$ ($w$ กดลงเป็นบวก)" }
+  - { front: "โมเมนต์ดัดสูงสุดอยู่ตรงไหน", back: "ที่ $V = 0$ หรือที่ $V$ เปลี่ยนเครื่องหมายแบบกระโดด" }
+  - { front: "$M_{\\max}$ ของคานช่วงเดียว: แรงจุดกลางช่วง และแรงกระจายสม่ำเสมอ", back: "$PL/4$ และ $wL^2/8$" }
+  - { front: "แรงจุดและคู่ควบทำให้แผนภาพเปลี่ยนอย่างไร", back: "แรงจุด: $V$ กระโดด $M$ หักมุม คู่ควบ: $M$ กระโดด $V$ ไม่เปลี่ยน" }
+  - { front: "โมเมนต์ที่ฐานของคานยื่นยาว L รับแรงที่ปลาย P", back: "$-PL$ (แอ่นแบบคว่ำ)" }
+references:
+  - { title: "Shear and moment diagram", url: "https://en.wikipedia.org/wiki/Shear_and_moment_diagram", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Bending moment", url: "https://en.wikipedia.org/wiki/Bending_moment", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.001 Mechanics and Materials I (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,115 @@
+id: business.marketing.digital-marketing
+subject: business
+title:
+  th: การตลาดดิจิทัลและการวัดผล
+  en: Digital marketing and metrics
+summary: ช่องทางออนไลน์ กรวยการขาย ตัวชี้วัด CTR อัตราการเปลี่ยนเป็นผู้ซื้อ CPC CAC ROAS มูลค่าลูกค้าตลอดอายุ การทดลองแบบ A/B และการตลาดออนไลน์อย่างรับผิดชอบ
+difficulty: 5
+minutes: 40
+prerequisites:
+- business.marketing.marketing-mix
+- business.stats.descriptive
+encompasses:
+- id: business.stats.descriptive
+  weight: 0.3
+- id: business.marketing.marketing-mix
+  weight: 0.3
+- id: math.number.ratio-percent
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: funnel.svg
+  alt: กรวยการขายของร้านเสื้อผ้าออนไลน์ (สมมติ) สี่ชั้นแคบลงตามลำดับ ชั้นบนสุด เห็นโฆษณา 200,000 ครั้ง ชั้นที่สอง คลิก 3,000 ครั้ง (CTR 1.5%) ชั้นที่สาม เพิ่มลงตะกร้า 600 ครั้ง (20% ของผู้คลิก) ชั้นล่างสุด สั่งซื้อ 150 รายการ (25% ของผู้ใส่ตะกร้า หรือ 5% ของผู้คลิก) ด้านข้างระบุค่าโฆษณา 9,000 บาท CPC 3 บาท CAC 60 บาท
+  caption: แต่ละขั้นของกรวยมีคนหลุดออก ตัวชี้วัดแต่ละตัวบอกว่าปัญหาอยู่ขั้นไหน
+- type: worked-example
+  title: อ่านตัวเลขแคมเปญ
+  problem: ค่าโฆษณา $9{,}000$ บาท แสดง $200{,}000$ ครั้ง คลิก $3{,}000$ ครั้ง สั่งซื้อ $150$ รายการ มูลค่าเฉลี่ย $350$ บาท กำไรขั้นต้น $40\%$ หา CTR อัตราการเปลี่ยนเป็นผู้ซื้อ CAC ROAS และกำไรขั้นต้นหลังหักค่าโฆษณา
+  steps:
+  - text: CTR $= 3{,}000 \div 200{,}000 \times 100 = 1.5\%$
+  - text: อัตราการเปลี่ยนเป็นผู้ซื้อ $= 150 \div 3{,}000 \times 100 = 5\%$
+    why: ตัวหารคือคนที่คลิกเข้ามา ไม่ใช่คนที่เห็นโฆษณา
+  - text: CAC $= 9{,}000 \div 150 = 60$ บาท
+  - text: ยอดขาย $= 150 \times 350 = 52{,}500$ บาท ROAS $= 52{,}500 \div 9{,}000 \approx 5.83$ เท่า
+  - text: กำไรขั้นต้น $= 52{,}500 \times 0.4 = 21{,}000$ บาท หักโฆษณาเหลือ $12{,}000$ บาท
+    why: ROAS ดูดี แต่ต้องแปลงเป็นกำไรก่อนตัดสินว่าคุ้ม
+  answer: CTR $1.5\%$ · แปลง $5\%$ · CAC $60$ บาท · ROAS $\approx 5.83$ · เหลือ $12{,}000$ บาท
+- type: check
+  problem: business.marketing.digital-marketing.p004
+  prompt: อัตราการเปลี่ยนเป็นผู้ซื้อหารด้วยอะไร
+- type: figure
+  src: ab-test.svg
+  alt: แผนภูมิแท่งผลการทดลองแบบ A/B (สมมติ) หน้า A ผู้เข้าชม 4,000 คน ซื้อ 120 คน อัตรา 3.0% หน้า B ผู้เข้าชม 4,000 คน ซื้อ 160 คน อัตรา 4.0% มีข้อความว่าผลต่าง 1 จุดเปอร์เซ็นต์ หรือ B สูงกว่า A ประมาณ 33% เมื่อเทียบกับ A
+  caption: 'ทดลองแบบ A/B: สุ่มผู้เข้าชม เปลี่ยนอย่างเดียว เทียบอัตราการเปลี่ยนเป็นผู้ซื้อ'
+- type: worked-example
+  title: CLV เทียบ CAC และงบที่ต้องใช้
+  problem: กำไรขั้นต้นต่อคำสั่งซื้อ $140$ บาท ลูกค้าซื้อปีละ $4$ ครั้ง เป็นลูกค้า $2$ ปี ร้านอยากได้ลูกค้าใหม่ $300$ ราย คาด CTR $2\%$ อัตราการเปลี่ยนเป็นผู้ซื้อ $4\%$ ค่าโฆษณา $50$ บาทต่อการแสดงพันครั้ง
+  steps:
+  - text: CLV $= 140 \times 4 \times 2 = 1{,}120$ บาท
+  - text: คลิกที่ต้องการ $= 300 \div 0.04 = 7{,}500$ คลิก
+    why: ย้อนกรวยจากล่างขึ้นบน หารด้วยอัตราของแต่ละขั้น
+  - text: จำนวนครั้งที่แสดง $= 7{,}500 \div 0.02 = 375{,}000$ ครั้ง
+  - text: งบ $= \dfrac{375{,}000}{1{,}000} \times 50 = 18{,}750$ บาท CAC $= 18{,}750 \div 300 = 62.50$ บาท
+  - text: CLV ต่อ CAC $= 1{,}120 \div 62.5 \approx 17.9$ เท่า คุ้มที่จะลงทุนถ้าลูกค้าซื้อซ้ำตามที่คาด
+  answer: งบประมาณ $18{,}750$ บาท CAC $62.50$ บาท CLV $1{,}120$ บาท
+- type: check
+  problem: business.marketing.digital-marketing.p007
+  prompt: ROAS ใช้ยอดขายหรือกำไร
+glossary:
+- term: อัตราการคลิก (CTR)
+  definition: จำนวนคลิกหารด้วยจำนวนครั้งที่แสดงโฆษณา $\times 100$
+- term: อัตราการเปลี่ยนเป็นผู้ซื้อ
+  definition: จำนวนผู้ซื้อหารด้วยจำนวนผู้เข้าชมหรือผู้คลิก $\times 100$
+- term: ต้นทุนต่อคลิก (CPC)
+  definition: ค่าโฆษณาหารด้วยจำนวนคลิก
+- term: ต้นทุนต่อการได้ลูกค้า (CAC)
+  definition: ค่าการตลาดหารด้วยจำนวนลูกค้าใหม่
+- term: ผลตอบแทนจากค่าโฆษณา (ROAS)
+  definition: ยอดขายที่เกิดจากโฆษณาหารด้วยค่าโฆษณา
+- term: มูลค่าลูกค้าตลอดอายุ (CLV)
+  definition: กำไรที่คาดว่าจะได้จากลูกค้าหนึ่งคนตลอดช่วงที่เป็นลูกค้า
+- term: กรวยการขาย
+  definition: ขั้นที่ลูกค้าผ่านตั้งแต่รับรู้จนซื้อและซื้อซ้ำ
+- term: การทดลองแบบ A/B
+  definition: การสุ่มแบ่งผู้ใช้ให้เห็นสองแบบที่ต่างกันเพียงอย่างเดียว แล้วเทียบผล
+- term: SEO
+  definition: การปรับเว็บไซต์และเนื้อหาให้ติดอันดับผลการค้นหาโดยไม่จ่ายค่าโฆษณา
+flashcards:
+- front: CTR vs อัตราการเปลี่ยนเป็นผู้ซื้อ
+  back: 'CTR: คลิก ÷ การแสดง · แปลง: ผู้ซื้อ ÷ คลิก'
+- front: CAC
+  back: ค่าการตลาด ÷ ลูกค้าใหม่
+- front: ROAS
+  back: ยอดขาย ÷ ค่าโฆษณา (ยังไม่ใช่กำไร)
+- front: CLV แบบง่าย
+  back: กำไรต่อคำสั่งซื้อ × ครั้งต่อปี × จำนวนปี · ต้องมากกว่า CAC
+- front: A/B ที่ดี
+  back: สุ่ม · ช่วงเวลาเดียวกัน · เปลี่ยนอย่างเดียว · ข้อมูลมากพอ
+references:
+- title: การตลาดดิจิทัล
+  url: https://th.wikipedia.org/wiki/การตลาดดิจิทัล
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: Customer lifetime value
+  url: https://en.wikipedia.org/wiki/Customer_lifetime_value
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: A/B testing
+  url: https://en.wikipedia.org/wiki/A/B_testing
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 16.3 Metrics Used to Evaluate the Success of Online Marketing (Principles of Marketing, OpenStax)
+  url: https://openstax.org/books/principles-marketing/pages/16-3-metrics-used-to-evaluate-the-success-of-online-marketing
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

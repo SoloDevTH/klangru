@@ -1,0 +1,57 @@
+id: chinese.reading.short-texts
+subject: chinese
+title: { th: "การอ่านข้อความสั้นภาษาจีน", en: "Reading short Chinese texts" }
+summary: อ่านป้าย ประกาศ ข้อความวีแชต และเรื่องเล่าสั้น หาใจความสำคัญและรายละเอียด เดาคำจากส่วนประกอบของอักษร ใช้พินอินและพจนานุกรมช่วย และรวบรวมข้อมูลเป็นตาราง
+difficulty: 4
+minutes: 40
+prerequisites: [chinese.grammar.compound-sentences, chinese.hanzi.radicals]
+encompasses:
+  - { id: chinese.grammar.compound-sentences, weight: 0.3 }
+  - { id: chinese.hanzi.radicals, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: reading-steps.svg
+    alt: "ข้อความวีแชตจาก 王老师: 同学们：明天上午九点，我们在学校门口集合，一起坐车去动物园。请带水和帽子。— 王老师 แต่ละบรรทัดขีดเส้นใต้และโยงไปป้าย 明天上午九点 → 什么时候 · 在学校门口集合 → 在哪儿 · 坐车去动物园 → 做什么 · 请带水和帽子 → ต้องเตรียม · 王老师 → 谁 กล่องสรุปใจความ: พรุ่งนี้ 9 โมงเช้า รวมที่หน้าประตูโรงเรียน นั่งรถไปสวนสัตว์ด้วยกัน (เตรียมน้ำและหมวก) ศัพท์: 动物园 dòngwùyuán สวนสัตว์ 帽子 màozi หมวก"
+    caption: "หา 谁 什么时候 在哪儿 做什么 แล้วรวมเป็นใจความสำคัญ"
+  - { type: check, problem: chinese.reading.short-texts.p005, prompt: "เดาความหมายจาก 氵" }
+  - type: worked-example
+    title: อ่านเมนูโดยไม่รู้ทุกตัว
+    problem: "เมนูร้านอาหารจีนในเยาวราชเขียนว่า 冬荫功汤 และ 芒果汁 เดาว่าแต่ละรายการคืออะไร (汤 tāng, 芒果 mángguǒ = มะม่วง)"
+    steps:
+      - text: "冬荫功 คือต้มยำกุ้ง ส่วน 汤 มี 氵 จึงน่าจะเป็นน้ำแกงหรือซุป: 冬荫功汤 = ต้มยำกุ้ง (แบบน้ำแกง)"
+      - text: "芒果 = มะม่วง และ 汁 มี 氵 จึงเป็นของเหลว: 芒果汁 = น้ำมะม่วง"
+        why: "ส่วนประกอบ 氵 มักเกี่ยวกับน้ำหรือของเหลว ใช้เป็นเบาะแสได้ แต่ควรตรวจกับพจนานุกรมเมื่อไม่แน่ใจ"
+      - text: "ถ้ายังไม่แน่ใจ ค้นพจนานุกรมด้วยพินอิน tāng หรือหมวด 氵 + จำนวนขีดที่เหลือ"
+    answer: "冬荫功汤 = ต้มยำกุ้ง · 芒果汁 = น้ำมะม่วง"
+  - type: worked-example
+    title: แยกใจความกับรายละเอียด
+    problem: "อ่าน: 我妹妹今年十岁。她很喜欢画画，每个星期六都去美术班。她画的大象很漂亮。 (美术班 = ชั้นเรียนศิลปะ) ใจความคืออะไร และรายละเอียดมีอะไรบ้าง"
+    steps:
+      - text: "หาเรื่องหลัก: ใคร (我妹妹) ทำอะไร (喜欢画画) → ใจความ: น้องสาวของผู้เขียนชอบวาดรูป"
+      - text: "ข้อมูลที่เหลือเป็นรายละเอียด: อายุ 10 ปี · ไปเรียนศิลปะทุกวันเสาร์ · วาดช้างสวย"
+        why: "รายละเอียดสนับสนุนใจความ ถ้าตัดออกเรื่องหลักยังอยู่"
+    answer: "ใจความ: น้องสาวชอบวาดรูป · รายละเอียด: 10 ขวบ เรียนศิลปะวันเสาร์ วาดช้างสวย"
+  - { type: check, problem: chinese.reading.short-texts.p012, prompt: "หาประโยคที่มี 如果" }
+glossary:
+  - { term: "通知 tōngzhī", definition: "ประกาศ มีผู้รับ เวลา สถานที่ สิ่งที่ต้องทำ ผู้ประกาศ และวันที่" }
+  - { term: "短信 duǎnxìn / 微信 Wēixìn", definition: "ข้อความทางโทรศัพท์ / แอปวีแชต ใช้ภาษาพูดสั้น ๆ" }
+  - { term: "禁止 jìnzhǐ / 请勿 qǐng wù", definition: "ห้าม / กรุณาอย่า ใช้บนป้าย" }
+  - { term: "集合 jíhé / 出发 chūfā", definition: "รวมตัว / ออกเดินทาง มักพบในประกาศทัศนศึกษา" }
+  - { term: "ใจความสำคัญ (大意 dàyì)", definition: "เรื่องหลักของข้อความ ตอบว่าใครทำอะไร ส่วนข้อมูลย่อยเป็นรายละเอียด" }
+  - { term: "汁 zhī", definition: "น้ำคั้น น้ำผลไม้ มี 氵 บอกว่าเป็นของเหลว" }
+flashcards:
+  - { front: "入口 / 出口", back: "ทางเข้า / ทางออก" }
+  - { front: "推 / 拉", back: "ผลัก / ดึง" }
+  - { front: "请勿拍照 · 禁止吸烟", back: "กรุณางดถ่ายรูป · ห้ามสูบบุหรี่" }
+  - { front: "คำถาม 4 ข้อเพื่อหาใจความ", back: "谁 · 什么时候 · 在哪儿 · 做什么" }
+  - { front: "HSK ระดับ 3 อ่านได้อย่างน้อย", back: "120 ตัวอักษรต่อนาที (ข้อความไม่เกิน 300 ตัว)" }
+references:
+  - { title: "Chinese dictionary", url: "https://en.wikipedia.org/wiki/Chinese_dictionary", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Chinese character radicals", url: "https://en.wikipedia.org/wiki/Chinese_character_radicals", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "读", url: "https://en.wiktionary.org/wiki/读", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

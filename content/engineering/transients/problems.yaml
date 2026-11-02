@@ -1,0 +1,296 @@
+problems:
+  - id: engineering.circuits.transients.p001
+    topics: [engineering.circuits.transients]
+    difficulty: 1
+    type: mcq
+    multiple: true
+    stem: "ปริมาณใดต่อเนื่องขณะสับสวิตช์ (ค่าที่ $t = 0^+$ เท่ากับที่ $t = 0^-$) เลือกทุกข้อที่ถูก"
+    choices:
+      - { id: a, text: "แรงดันคร่อมตัวเก็บประจุ", correct: true }
+      - { id: b, text: "กระแสผ่านตัวเหนี่ยวนำ", correct: true }
+      - { id: c, text: "กระแสผ่านตัวเก็บประจุ", feedback: "$i_C = C\\,dv_C/dt$ กระโดดได้ เช่น ตอนปิดสวิตช์กระแสพุ่งขึ้นทันที" }
+      - { id: d, text: "แรงดันคร่อมตัวเหนี่ยวนำ", feedback: "$v_L = L\\,di_L/dt$ กระโดดได้ จึงเกิดแรงดันกระชากเมื่อเปิดสวิตช์" }
+    hints:
+      - "ปริมาณที่ผูกกับพลังงานที่เก็บไว้เปลี่ยนทันทีไม่ได้"
+      - "พลังงาน $\\tfrac12Cv_C^2$ และ $\\tfrac12Li_L^2$"
+    solution: "การเปลี่ยน $v_C$ หรือ $i_L$ ทันทีต้องใช้กำลังไม่จำกัด จึงต่อเนื่องเสมอ ส่วน $i_C$ และ $v_L$ กระโดดได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p002
+    topics: [engineering.circuits.transients]
+    difficulty: 1
+    type: match
+    stem: "จับคู่วงจรหรือปริมาณกับสูตร"
+    pairs:
+      - { left: "ค่าคงตัวเวลาของวงจร RC", right: "RC" }
+      - { left: "ค่าคงตัวเวลาของวงจร RL", right: "L/R" }
+      - { left: "ความถี่ธรรมชาติของ LC", right: "1/√(LC)" }
+      - { left: "ค่า α ของ RLC อนุกรม", right: "R/(2L)" }
+    hints:
+      - "ตรวจด้วยหน่วย: $\\Omega \\cdot \\mathrm{F} = \\mathrm{s}$ และ $\\mathrm{H}/\\Omega = \\mathrm{s}$"
+      - "α มีหน่วย $\\mathrm{s^{-1}}$"
+    solution: "$\\tau_{RC} = RC$, $\\tau_{RL} = L/R$, $\\omega_0 = 1/\\sqrt{LC}$, $\\alpha = R/(2L)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p003
+    topics: [engineering.circuits.transients]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเก็บประจุ $100\\ \\mu\\mathrm{F}$ ต่อกับวงจรที่มีแหล่งจ่ายแรงดันอนุกรมกับตัวต้านทาน $10\\ \\mathrm{k\\Omega}$ และมีตัวต้านทานอีก $10\\ \\mathrm{k\\Omega}$ ต่อขนานกับตัวเก็บประจุ ค่าคงตัวเวลาเป็นกี่วินาที"
+    answer: { value: 0.5, tolerance: 0.005, unit: s }
+    misconceptions:
+      - { match: 2, feedback: "นำตัวต้านทานสองตัวมาอนุกรมกัน เมื่อปิดแหล่งจ่าย (ลัดวงจร) ทั้งสองตัวขนานกันเมื่อมองจากตัวเก็บประจุ" }
+      - { match: 1, feedback: "ใช้ตัวต้านทานตัวเดียว ต้องใช้ $R_{\\text{th}}$ ที่ตัวเก็บประจุมองเห็น" }
+    hints:
+      - "ปิดแหล่งจ่ายแรงดันด้วยการลัดวงจร"
+      - "$R_{\\text{th}} = 10\\,\\|\\,10\\ \\mathrm{k\\Omega}$"
+    solution: "$R_{\\text{th}} = 5\\ \\mathrm{k\\Omega}$ ได้ $\\tau = 5000 \\times 100 \\times 10^{-6} = 0.5\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p004
+    topics: [engineering.circuits.transients]
+    difficulty: 2
+    type: numeric
+    stem: "ขดลวดรีเลย์ $L = 0.5\\ \\mathrm{H}$ มีกระแส $2\\ \\mathrm{A}$ เก็บพลังงานในสนามแม่เหล็กกี่จูล"
+    answer: { value: 1, tolerance: 0.01, unit: J }
+    misconceptions:
+      - { match: 2, feedback: "ลืมคูณ $\\tfrac12$" }
+      - { match: 0.5, feedback: "ไม่ได้ยกกำลังสองของกระแส $W = \\tfrac12LI^2$" }
+    hints:
+      - "$W = \\tfrac12 LI^2$"
+      - "$\\tfrac12 \\times 0.5 \\times 2^2$"
+    solution: "$W = \\tfrac12(0.5)(2)^2 = 1\\ \\mathrm{J}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p005
+    topics: [engineering.circuits.transients]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวเก็บประจุ $470\\ \\mu\\mathrm{F}$ มีแรงดัน $12\\ \\mathrm{V}$ คายประจุผ่านตัวต้านทาน $1\\ \\mathrm{k\\Omega}$ ตั้งแต่ $t = 0$ แรงดันที่ $t = 0.5\\ \\mathrm{s}$ เป็นกี่โวลต์ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.14, tolerance: 0.04, unit: V }
+    misconceptions:
+      - { match: 7.86, feedback: "ใช้รูปการประจุ $V(1 - e^{-t/\\tau})$ ตัวเก็บประจุกำลังคายประจุ ค่าสุดท้ายเป็นศูนย์" }
+      - { match: 0, feedback: "หลัง $0.5\\ \\mathrm{s}$ ผ่านไปเพียงราว $1.06\\tau$ ยังไม่ถึง $5\\tau$ แรงดันยังไม่หมด" }
+    hints:
+      - "$\\tau = RC = 0.47\\ \\mathrm{s}$"
+      - "$v(t) = 12e^{-t/\\tau}$"
+    solution: "$v(0.5) = 12e^{-0.5/0.47} = 12 \\times 0.345 = 4.14\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p006
+    topics: [engineering.circuits.transients]
+    difficulty: 3
+    type: numeric
+    stem: "วงจรอันดับหนึ่งมีค่าคงตัวเวลา $2\\ \\mathrm{ms}$ เริ่มจากศูนย์ไปหาค่าสุดท้าย ใช้เวลากี่มิลลิวินาทีจึงถึง 90% ของค่าสุดท้าย (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.61, tolerance: 0.05, unit: ms }
+    misconceptions:
+      - { match: 0.21, feedback: "ใช้ $\\tau\\ln(1/0.9)$ ซึ่งคือเวลาถึง 10% สมการคือ $e^{-t/\\tau} = 0.1$" }
+      - { match: 1.8, feedback: "คิดว่าเปลี่ยนเป็นเส้นตรง ผลตอบสนองเป็นเอกซ์โพเนนเชียล" }
+    hints:
+      - "$1 - e^{-t/\\tau} = 0.9$"
+      - "$t = \\tau\\ln 10$"
+    solution: "$e^{-t/\\tau} = 0.1$ ได้ $t = \\tau\\ln 10 = 2 \\times 2.303 = 4.61\\ \\mathrm{ms}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p007
+    topics: [engineering.circuits.transients]
+    difficulty: 3
+    type: numeric
+    stem: "วงจรในภาพ สวิตช์ S ปิดอยู่นานจนเข้าสภาวะคงตัว แล้วเปิดที่ $t = 0$ จงหาขนาดของแรงดันคร่อม $R_2$ ที่ $t = 0^+$ เป็นโวลต์"
+    figure: { src: p-rl.svg, alt: "แหล่งจ่าย 24 V ต่ออนุกรมกับตัวต้านทาน R1 = 4 โอห์ม และสวิตช์ S ไปยังโนด a จากโนด a มีตัวต้านทาน R2 = 12 โอห์ม และตัวเหนี่ยวนำ L = 0.2 H ต่อขนานกันลงกราวด์ สวิตช์ปิดอยู่นานมากแล้วเปิดที่ t = 0" }
+    answer: { value: 72, tolerance: 0.5, unit: V }
+    misconceptions:
+      - { match: 24, feedback: "คิดว่าแรงดันไม่เกินแหล่งจ่าย หลังเปิดสวิตช์ กระแส $6\\ \\mathrm{A}$ ในตัวเหนี่ยวนำต้องไหลผ่าน $R_2$ ทั้งหมด" }
+      - { match: 18, feedback: "ใช้กระแสที่แบ่งระหว่าง $R_2$ กับ L ในสภาวะคงตัว แต่ L เป็นลัดวงจร กระแสผ่าน $R_2$ เป็นศูนย์ และ $i_L = 24/4 = 6\\ \\mathrm{A}$" }
+    hints:
+      - "สภาวะคงตัวก่อนเปิด: L ลัดวงจร $R_2$ จึง $i_L = 24/4$"
+      - "หลังเปิด: $i_L$ ต่อเนื่อง และไหลวนผ่าน $R_2$"
+    solution: "ก่อนเปิด $i_L = 24/4 = 6\\ \\mathrm{A}$ ($R_2$ ถูกลัด) หลังเปิดกระแส $6\\ \\mathrm{A}$ ไหลผ่าน $R_2$ ได้ $|v| = 6 \\times 12 = 72\\ \\mathrm{V}$ สามเท่าของแหล่งจ่าย แล้วลดลงด้วย $\\tau = L/R_2 = 16.7\\ \\mathrm{ms}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p008
+    topics: [engineering.circuits.transients]
+    difficulty: 3
+    type: numeric
+    stem: "ไฟกะพริบเตือนหน้าโรงเรียน (ค่าสมมติ) ใช้วงจรตั้งเวลาที่ประจุตัวเก็บประจุ $10\\ \\mu\\mathrm{F}$ ผ่านตัวต้านทาน $100\\ \\mathrm{k\\Omega}$ จากแหล่งจ่าย $V_{CC}$ เริ่มจากศูนย์ วงจรสลับสถานะเมื่อแรงดันถึง $\\tfrac23V_{CC}$ ใช้เวลากี่วินาที (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.1, tolerance: 0.011, unit: s }
+    misconceptions:
+      - { match: 0.41, feedback: "ใช้ $\\tau\\ln(3/2)$ ซึ่งเป็นเวลาถึง $\\tfrac13V_{CC}$" }
+      - { match: 1, feedback: "ใช้ $t = \\tau$ ซึ่งถึงเพียง 63%" }
+    hints:
+      - "$1 - e^{-t/\\tau} = \\tfrac23$"
+      - "$t = \\tau\\ln 3$"
+    solution: "$\\tau = 100\\,000 \\times 10^{-5} = 1\\ \\mathrm{s}$ และ $e^{-t/\\tau} = \\tfrac13$ ได้ $t = \\ln 3 = 1.10\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p009
+    topics: [engineering.circuits.transients]
+    difficulty: 3
+    type: numeric
+    stem: "ขดลวดรีเลย์ในตู้ควบคุมปั๊มน้ำประปาหมู่บ้าน $L = 0.5\\ \\mathrm{H}$ มีกระแส $100\\ \\mathrm{mA}$ เมื่อตัดไฟ กระแสไหลต่อผ่านตัวต้านทานป้องกัน $1\\ \\mathrm{k\\Omega}$ ที่ต่อคร่อมขดลวด กระแสลดเหลือ $10\\ \\mathrm{mA}$ เมื่อเวลาผ่านไปกี่มิลลิวินาที (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.15, tolerance: 0.015, unit: ms }
+    misconceptions:
+      - { match: 0.5, feedback: "นี่คือค่าคงตัวเวลา $L/R$ ซึ่งกระแสลดเหลือ 37% ไม่ใช่ 10%" }
+      - { match: 2.3, feedback: "ใช้ $\\tau = 1\\ \\mathrm{ms}$ ค่าคงตัวเวลาคือ $L/R = 0.5/1000 = 0.5\\ \\mathrm{ms}$" }
+    hints:
+      - "$\\tau = L/R$"
+      - "$i(t) = 100e^{-t/\\tau}$ ตั้งให้เท่ากับ $10$"
+    solution: "$\\tau = 0.5/1000 = 0.5\\ \\mathrm{ms}$ และ $t = \\tau\\ln 10 = 0.5 \\times 2.303 = 1.15\\ \\mathrm{ms}$ (แรงดันกระชากเริ่มต้น $0.1 \\times 1000 = 100\\ \\mathrm{V}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p010
+    topics: [engineering.circuits.transients]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวเก็บประจุมีแรงดันเริ่มต้น $2\\ \\mathrm{V}$ ที่ $t = 0$ วงจรพาไปสู่ค่าสุดท้าย $10\\ \\mathrm{V}$ ด้วยค่าคงตัวเวลา $0.1\\ \\mathrm{s}$ แรงดันที่ $t = 0.15\\ \\mathrm{s}$ เป็นกี่โวลต์ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.21, tolerance: 0.05, unit: V }
+    misconceptions:
+      - { match: 7.77, feedback: "ไม่คิดแรงดันเริ่มต้น ใช้ $10(1 - e^{-t/\\tau})$ ซึ่งถูกเฉพาะเมื่อเริ่มจากศูนย์" }
+      - { match: 9.77, feedback: "บวกแรงดันเริ่มต้นเข้ากับผลการประจุจากศูนย์ ส่วนที่ต้องเปลี่ยนคือ $10 - 2 = 8\\ \\mathrm{V}$ เท่านั้น" }
+    hints:
+      - "$v(t) = v(\\infty) + [v(0) - v(\\infty)]e^{-t/\\tau}$"
+      - "$10 + (2 - 10)e^{-1.5}$"
+    solution: "$v(0.15) = 10 - 8e^{-1.5} = 10 - 8(0.2231) = 8.21\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p011
+    topics: [engineering.circuits.transients]
+    difficulty: 4
+    type: mcq
+    stem: "วงจร RLC อนุกรมมี $R = 100\\ \\Omega$, $L = 10\\ \\mathrm{mH}$, $C = 1\\ \\mu\\mathrm{F}$ ผลตอบสนองขั้นเป็นแบบใด"
+    choices:
+      - { id: a, text: "หน่วงน้อย แกว่งก่อนเข้าสู่ค่าสุดท้าย", correct: true }
+      - { id: b, text: "หน่วงวิกฤต", feedback: "ใช้ $\\alpha = R/L = 10^4$ ซึ่งบังเอิญเท่ากับ $\\omega_0$ ค่าที่ถูกคือ $\\alpha = R/(2L) = 5000$" }
+      - { id: c, text: "หน่วงเกิน", feedback: "หน่วงเกินต้องมี $\\alpha > \\omega_0$ แต่ $5000 < 10^4$" }
+      - { id: d, text: "แกว่งตลอดไปไม่ลดลง", feedback: "แกว่งไม่ลดเฉพาะเมื่อ $R = 0$" }
+    hints:
+      - "$\\alpha = R/(2L)$, $\\omega_0 = 1/\\sqrt{LC}$"
+      - "เทียบ $\\alpha$ กับ $\\omega_0$"
+    solution: "$\\alpha = 100/(0.02) = 5000\\ \\mathrm{s^{-1}}$, $\\omega_0 = 1/\\sqrt{10^{-8}} = 10^4\\ \\mathrm{rad/s}$ เนื่องจาก $\\alpha < \\omega_0$ ($\\zeta = 0.5$) จึงหน่วงน้อย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p012
+    topics: [engineering.circuits.transients]
+    difficulty: 4
+    type: numeric
+    stem: "วงจร RLC อนุกรมมี $L = 50\\ \\mathrm{mH}$ และ $C = 2\\ \\mu\\mathrm{F}$ ต้องใช้ $R$ กี่โอห์มจึงหน่วงวิกฤต (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 316.2, tolerance: 2, unit: "Ω" }
+    misconceptions:
+      - { match: 158.1, feedback: "ลืมคูณ 2 เงื่อนไขคือ $R/(2L) = 1/\\sqrt{LC}$ ได้ $R = 2\\sqrt{L/C}$" }
+      - { match: 632.5, feedback: "ใช้ $\\alpha = R/(4L)$ หรือคูณ 2 ซ้ำ ค่าที่ถูกคือ $2\\sqrt{L/C}$" }
+    hints:
+      - "หน่วงวิกฤตเมื่อ $\\alpha = \\omega_0$"
+      - "$R = 2\\sqrt{L/C}$"
+    solution: "$R = 2\\sqrt{\\dfrac{0.05}{2 \\times 10^{-6}}} = 2\\sqrt{25000} = 316.2\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p013
+    topics: [engineering.circuits.transients]
+    difficulty: 4
+    type: numeric
+    stem: "วงจรในข้อที่หน่วงน้อย ($R = 100\\ \\Omega$, $L = 10\\ \\mathrm{mH}$, $C = 1\\ \\mu\\mathrm{F}$) แกว่งด้วยความถี่กี่เฮิรตซ์ (ทศนิยม 0 ตำแหน่ง)"
+    answer: { value: 1378, tolerance: 14, unit: Hz }
+    misconceptions:
+      - { match: 1592, feedback: "นี่คือ $f_0 = \\omega_0/2\\pi$ ความหน่วงทำให้แกว่งช้าลงเป็น $\\omega_d$" }
+      - { match: 8660, feedback: "นี่คือ $\\omega_d$ เป็น $\\mathrm{rad/s}$ ต้องหารด้วย $2\\pi$" }
+    hints:
+      - "$\\omega_d = \\sqrt{\\omega_0^2 - \\alpha^2}$"
+      - "$f_d = \\omega_d/(2\\pi)$"
+    solution: "$\\omega_d = \\sqrt{10^8 - 2.5 \\times 10^7} = 8660\\ \\mathrm{rad/s}$ ได้ $f_d = 8660/(2\\pi) = 1378\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p014
+    topics: [engineering.circuits.transients]
+    difficulty: 5
+    type: numeric
+    stem: "ต่อแหล่งจ่าย $10\\ \\mathrm{V}$ กับ RLC อนุกรม $R = 20\\ \\Omega$, $L = 0.1\\ \\mathrm{H}$, $C = 100\\ \\mu\\mathrm{F}$ ที่ $t = 0$ (เริ่มไม่มีประจุและกระแส) แรงดันตัวเก็บประจุสูงสุดเป็นกี่โวลต์ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 13.51, tolerance: 0.1, unit: V }
+    misconceptions:
+      - { match: 20, feedback: "ใช้กรณีไม่มีความต้านทาน ($R = 0$) ซึ่งพุ่งถึงสองเท่า ความต้านทานทำให้ลดลงด้วย $e^{-\\alpha\\pi/\\omega_d}$" }
+      - { match: 13.7, feedback: "ใช้ $e^{-\\alpha\\pi/\\omega_0}$ ค่าสูงสุดเกิดที่ $t = \\pi/\\omega_d$ ต้องใช้ $\\omega_d$" }
+    hints:
+      - "$\\alpha = 100$, $\\omega_0 = 316.2$, $\\omega_d = 300\\ \\mathrm{rad/s}$"
+      - "$v_{\\max} = V(1 + e^{-\\alpha\\pi/\\omega_d})$"
+    solution: "$\\omega_d = \\sqrt{100000 - 10000} = 300\\ \\mathrm{rad/s}$ ได้ $v_{\\max} = 10(1 + e^{-100\\pi/300}) = 10(1 + 0.351) = 13.51\\ \\mathrm{V}$ ที่ $t = \\pi/300 = 10.5\\ \\mathrm{ms}$ (ตรวจด้วย RK4 ได้ $13.51\\ \\mathrm{V}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p015
+    topics: [engineering.circuits.transients]
+    difficulty: 4
+    type: numeric
+    stem: "วงจร RLC อนุกรม ($R = 20\\ \\Omega$, $L = 0.1\\ \\mathrm{H}$, $C = 100\\ \\mu\\mathrm{F}$) ตัวเก็บประจุมีแรงดัน $4\\ \\mathrm{V}$ อยู่ก่อนและไม่มีกระแส ต่อแหล่งจ่าย $12\\ \\mathrm{V}$ ที่ $t = 0$ อัตราการเปลี่ยนกระแส $di/dt$ ที่ $t = 0^+$ เป็นกี่แอมแปร์ต่อวินาที"
+    answer: { value: 80, tolerance: 0.5, unit: "A/s" }
+    misconceptions:
+      - { match: 120, feedback: "ไม่คิดแรงดันเดิมของตัวเก็บประจุ ซึ่งต้านแหล่งจ่ายอยู่ $4\\ \\mathrm{V}$" }
+      - { match: 0, feedback: "กระแสเป็นศูนย์ที่ $0^+$ แต่อนุพันธ์ของกระแสไม่จำเป็นต้องเป็นศูนย์ แรงดันคร่อม L กระโดดได้" }
+    hints:
+      - "ที่ $0^+$: $i = 0$ จึงไม่มีแรงดันคร่อม R และ $v_C = 4\\ \\mathrm{V}$"
+      - "$L\\,di/dt = 12 - 0 - 4$"
+    solution: "KVL ที่ $0^+$: $v_L = 12 - Ri - v_C = 12 - 0 - 4 = 8\\ \\mathrm{V}$ ได้ $di/dt = 8/0.1 = 80\\ \\mathrm{A/s}$ (ตรวจด้วย RK4 ในช่วงสั้น ๆ ได้ความชันเดียวกัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p016
+    topics: [engineering.circuits.transients]
+    difficulty: 3
+    type: expression
+    stem: "วงจร RC เริ่มจากศูนย์ประจุไปหาแรงดันสุดท้าย $V$ จงเขียนเวลาที่แรงดันถึงสัดส่วน $k$ ของ $V$ ($0 < k < 1$) ในรูปของ $R$, $C$, $k$"
+    prefix: "t ="
+    answer: { latex: "RC\\ln\\left(\\frac{1}{1-k}\\right)", variables: [R, C, k] }
+    misconceptions:
+      - { match: "RC\\ln\\left(\\frac{1}{k}\\right)", feedback: "นี่คือเวลาที่ส่วนที่เหลือเท่ากับ $k$ สมการคือ $e^{-t/RC} = 1 - k$" }
+      - { match: "RC\\ln(1-k)", feedback: "เครื่องหมายผิด ได้เวลาติดลบ ต้องเป็น $-RC\\ln(1 - k)$" }
+    hints:
+      - "$1 - e^{-t/RC} = k$"
+      - "ใส่ลอการิทึมธรรมชาติทั้งสองข้างของ $e^{-t/RC} = 1 - k$"
+    solution: "$e^{-t/RC} = 1 - k$ ได้ $t = -RC\\ln(1 - k) = RC\\ln\\dfrac{1}{1 - k}$ เช่น $k = 0.63$ ได้ $t \\approx RC$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p017
+    topics: [engineering.circuits.transients]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนหาผลตอบสนองของวงจรอันดับหนึ่งหลังสับสวิตช์"
+    items:
+      - "หา v_C หรือ i_L ก่อนสับสวิตช์จากวงจรสภาวะคงตัวเดิม"
+      - "ใช้ความต่อเนื่องหาค่าที่ t = 0⁺"
+      - "หาค่าสุดท้ายโดยให้ C เป็นวงจรเปิดหรือ L เป็นลัดวงจร"
+      - "หา R_th ที่ C หรือ L มองเห็น แล้วคำนวณ τ"
+      - "เขียน x(t) = x(∞) + [x(0⁺) − x(∞)]e^(−t/τ)"
+    hints:
+      - "ค่าเริ่มต้นมาจากอดีต ค่าสุดท้ายมาจากอนาคต"
+      - "τ ใช้วงจรหลังสับสวิตช์"
+    solution: "สภาวะเดิม → ค่าเริ่มต้นจากความต่อเนื่อง → ค่าสุดท้าย → $R_{\\text{th}}$ และ $\\tau$ (ของวงจรหลังสับสวิตช์) → แทนในสูตรสามค่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.transients.p018
+    topics: [engineering.circuits.transients]
+    difficulty: 5
+    type: numeric
+    stem: "วงจร RLC อนุกรม $R = 500\\ \\Omega$, $L = 0.1\\ \\mathrm{H}$, $C = 10\\ \\mu\\mathrm{F}$ เป็นแบบหน่วงเกิน จงหาขนาดของรากที่ช้ากว่าของสมการลักษณะเฉพาะ (ค่าที่ควบคุมเวลาเข้าสู่สภาวะคงตัว) เป็น $\\mathrm{s^{-1}}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 208.7, tolerance: 2, unit: "s⁻¹" }
+    misconceptions:
+      - { match: 2500, feedback: "นี่คือ $\\alpha$ ในกรณีหน่วงเกินรากคือ $-\\alpha \\pm \\sqrt{\\alpha^2 - \\omega_0^2}$" }
+      - { match: 4791.3, feedback: "นี่คือรากที่เร็วกว่า ซึ่งหายไปก่อน รากที่ช้ากว่าคือค่าที่มีขนาดเล็ก" }
+    hints:
+      - "$\\alpha = 2500$, $\\omega_0 = 1000$"
+      - "$s = -\\alpha \\pm \\sqrt{\\alpha^2 - \\omega_0^2}$"
+    solution: "$\\sqrt{2500^2 - 1000^2} = 2291.3$ ได้ $s_1 = -208.7$ และ $s_2 = -4791.3\\ \\mathrm{s^{-1}}$ รากที่ช้ากว่าคือ $208.7\\ \\mathrm{s^{-1}}$ (ค่าคงตัวเวลาประมาณ $4.8\\ \\mathrm{ms}$) ตรวจ: $LCs_1^2 + RCs_1 + 1 = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

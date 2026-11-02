@@ -1,0 +1,492 @@
+problems:
+- id: chinese.reading.short-texts.p001
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 1
+  type: match
+  stem: จับคู่ป้ายกับความหมาย
+  pairs:
+  - left: 入口
+    right: ทางเข้า
+  - left: 出口
+    right: ทางออก
+  - left: 洗手间
+    right: ห้องน้ำ
+  - left: 禁止吸烟
+    right: ห้ามสูบบุหรี่
+  hints:
+  - 入 = เข้า 出 = ออก
+  - 洗手 = ล้างมือ 禁止 = ห้าม
+  solution: 入口 ทางเข้า · 出口 ทางออก · 洗手间 ห้องน้ำ · 禁止吸烟 ห้ามสูบบุหรี่
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p002
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 2
+  type: mcq
+  stem: ประตูร้านสะดวกซื้อในย่านท่องเที่ยวติดป้ายว่า 推 (tuī) ต้องทำอย่างไรกับประตู
+  choices:
+  - id: a
+    text: ดึงประตูเข้าหาตัว
+    feedback: ดึงคือ 拉 lā
+  - id: b
+    text: ห้ามเปิดประตู
+    feedback: ห้ามใช้ 禁止 หรือ 请勿
+  - id: c
+    text: ประตูนี้เป็นทางออก
+    feedback: ทางออกคือ 出口
+  - id: d
+    text: ผลักประตูออกไป
+    correct: true
+    feedback: ถูก 推 = ผลัก
+  hints:
+  - 推 มี 扌 (มือ)
+  - 推 กับ 拉 เป็นคู่ตรงข้ามที่ติดอยู่บนประตู
+  solution: '**ผลัก** (推 tuī ผลัก · 拉 lā ดึง)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p003
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 2
+  type: mcq
+  stem: ดูภาพป้าย ป้ายหมายเลขใดบอกว่า **กรุณางดถ่ายรูป**
+  figure:
+    src: signs-quiz.svg
+    alt: 'ป้ายภาษาจีน 4 ป้าย ป้ายที่ 1: 请勿拍照 ป้ายที่ 2: 小心地滑 ป้ายที่ 3: 出口 ป้ายที่ 4: 禁止吸烟'
+    caption: ป้ายในห้างและสถานที่ท่องเที่ยว
+  choices:
+  - id: a
+    text: ป้าย 1
+    correct: true
+    feedback: ถูก 请勿拍照 = กรุณางดถ่ายรูป (拍照 = ถ่ายรูป)
+  - id: b
+    text: ป้าย 2
+    feedback: 小心地滑 = ระวังพื้นลื่น
+  - id: c
+    text: ป้าย 3
+    feedback: 出口 = ทางออก
+  - id: d
+    text: ป้าย 4
+    feedback: 禁止吸烟 = ห้ามสูบบุหรี่
+  hints:
+  - 拍照 pāizhào = ถ่ายรูป
+  - 请勿 = กรุณาอย่า
+  solution: '**ป้าย 1** 请勿拍照 qǐng wù pāizhào'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p004
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 2
+  type: hanzi
+  stem: เขียนอักษร 读 (dú อ่าน) ตามลำดับขีด
+  character: 读
+  pinyin: dú
+  meaning: อ่าน
+  hints:
+  - 读 = 讠 (คำพูด) + 卖 รวม 10 ขีด
+  - เขียน 讠 ทางซ้ายก่อน แล้วเขียน 卖 จากบนลงล่าง
+  solution: '讠: 点 → 横折提 แล้ว 卖: 横 → 竖 (十) → 横钩 → 点 → 点 → 横 → 撇 → 点 รวม 10 ขีด'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p005
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 2
+  type: mcq
+  stem: เมนูร้านอาหารในพัทยามีคำว่า 西瓜汁 ถ้ารู้ว่า 西瓜 xīguā คือแตงโม และ 汁 zhī มีส่วนประกอบ 氵 น่าจะเป็นเมนูอะไร
+  choices:
+  - id: a
+    text: ไอศกรีมแตงโม
+    feedback: ไม่มีคำบอกว่าเป็นของเย็นแข็ง
+  - id: b
+    text: เมล็ดแตงโม
+    feedback: ไม่มีคำบอกว่าเป็นเมล็ด
+  - id: c
+    text: น้ำแตงโม
+    correct: true
+    feedback: ถูก 氵 เกี่ยวกับน้ำหรือของเหลว 西瓜汁 = น้ำแตงโม
+  - id: d
+    text: แตงโมหั่นเป็นชิ้น
+    feedback: 汁 มี 氵 จึงน่าจะเป็นของเหลว
+  hints:
+  - 氵 = น้ำ ของเหลว
+  - รวมความหมาย แตงโม + ของเหลว
+  solution: '**น้ำแตงโม** (汁 zhī = น้ำคั้น น้ำผลไม้)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p006
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 2
+  type: match
+  stem: จับคู่สถานการณ์กับแบบของข้อความที่ต้องอ่าน
+  pairs:
+  - left: ครูแจ้งนักเรียนทั้งชั้นเรื่องไปทัศนศึกษา
+    right: 通知
+  - left: เพื่อนส่งมาถามว่าเย็นนี้ว่างไหม
+    right: 短信
+  - left: ดูว่าร้านมีอาหารอะไร ราคาเท่าไร
+    right: 菜单
+  - left: อ่านเรื่องการเดินทางของนักเรียนคนหนึ่ง
+    right: 故事
+  hints:
+  - 通知 = ประกาศ 短信 = ข้อความ
+  - 菜单 = เมนู 故事 = เรื่องเล่า
+  solution: ทัศนศึกษา → 通知 · ถามว่าว่างไหม → 短信 · ดูอาหาร → 菜单 · เรื่องการเดินทาง → 故事
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p007
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 3
+  type: mcq
+  stem: อ่านประกาศ 他们什么时候出发？ (พวกเขาออกเดินทางเมื่อไร)
+  figure: &id001
+    src: notice.svg
+    alt: 'ประกาศ (สมมติ) หัวเรื่อง 通知 ข้อความ: 中文俱乐部的同学们：这个星期六（11月14日）我们去唐人街参观。早上八点在学校门口集合，八点半出发，下午四点回学校。每个人交一百五十泰铢。请带水、帽子和笔记本。如果下雨，我们就去博物馆。 ลงชื่อ 中文俱乐部 วันที่ 11月9日 คำอธิบายศัพท์: 唐人街 = ไชน่าทาวน์ (เยาวราช) 笔记本 = สมุดจด 博物馆 = พิพิธภัณฑ์'
+    caption: ประกาศของชมรมภาษาจีน (สมมติ)
+  choices:
+  - id: a
+    text: 星期六早上八点半
+    correct: true
+    feedback: ถูก 八点半出发 = ออกเดินทาง 8:30
+  - id: b
+    text: 星期六早上八点
+    feedback: 8 โมงคือเวลารวมตัว (集合) ไม่ใช่เวลาออกเดินทาง
+  - id: c
+    text: 11月9日八点半
+    feedback: 11月9日 คือวันที่ออกประกาศ
+  - id: d
+    text: 下午四点
+    feedback: บ่าย 4 โมงคือเวลากลับถึงโรงเรียน
+  hints:
+  - 出发 chūfā = ออกเดินทาง
+  - หาตัวเลขที่อยู่หน้าคำว่า 出发
+  solution: '**星期六 (11月14日) 早上八点半** (集合 8:00 · 出发 8:30 · 回学校 16:00)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p008
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 3
+  type: mcq
+  stem: อ่านประกาศ 要带什么？ (ต้องนำอะไรไป เลือกทุกข้อที่ถูก)
+  figure: *id001
+  multiple: true
+  choices:
+  - id: a
+    text: 护照
+    feedback: ไปเยาวราชไม่ต้องใช้หนังสือเดินทาง ประกาศไม่ได้บอก
+  - id: b
+    text: 水
+    correct: true
+    feedback: ถูก 请带水
+  - id: c
+    text: 帽子
+    correct: true
+    feedback: ถูก
+  - id: d
+    text: 笔记本
+    correct: true
+    feedback: ถูก
+  - id: e
+    text: 雨伞
+    feedback: ประกาศไม่ได้ให้นำร่ม ถ้าฝนตกจะเปลี่ยนไปพิพิธภัณฑ์
+  hints:
+  - หาประโยคที่ขึ้นต้นด้วย 请带
+  - 、 คั่นรายการของ
+  solution: 请带**水**、**帽子**和**笔记本**。
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p009
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 3
+  type: numeric
+  stem: อ่านประกาศ ถ้าสมาชิกชมรมไปทัศนศึกษา 12 คน ค่าใช้จ่ายรวมกี่บาท
+  figure: *id001
+  answer:
+    value: 1800
+    unit: บาท
+  misconceptions:
+  - match: 162
+    feedback: 'ต้องคูณ ไม่ใช่บวก: 12 คน คนละ 150'
+  - match: 150
+    feedback: 150 คือค่าใช้จ่ายต่อคน (每个人)
+  hints:
+  - 每个人交一百五十泰铢 = คนละ 150 บาท
+  - จำนวนคน × ค่าใช้จ่ายต่อคน
+  solution: $12 \times 150 = 1800$ บาท
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p010
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 3
+  type: match
+  stem: รวบรวมข้อมูลจากประกาศลงตาราง จับคู่หัวข้อกับข้อมูล
+  figure: *id001
+  pairs:
+  - left: 时间
+    right: 11月14日 星期六
+  - left: 集合地点
+    right: 学校门口
+  - left: 费用
+    right: 150泰铢
+  - left: 下雨的话
+    right: 去博物馆
+  hints:
+  - 时间 = เวลา 地点 = สถานที่ 费用 = ค่าใช้จ่าย
+  - 下雨的话 = ถ้าฝนตก
+  solution: 时间 11月14日 (星期六) · 集合地点 学校门口 · 费用 150泰铢 · 下雨的话 去博物馆
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p011
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 3
+  type: numeric
+  stem: กรอบ HSK ระดับ 3 ตั้งเป้าว่าผู้เรียนอ่านได้อย่างน้อย 120 ตัวอักษรต่อนาที ถ้าข้อความยาว 240 ตัวอักษร ควรอ่านจบภายในกี่นาที
+  answer:
+    value: 2
+    unit: นาที
+  misconceptions:
+  - match: 0.5
+    feedback: หารกลับด้าน ต้องเป็นจำนวนตัวอักษร ÷ ความเร็ว
+  - match: 360
+    feedback: ไม่ต้องบวกกัน ใช้การหาร
+  hints:
+  - เวลา = จำนวนตัวอักษร ÷ ความเร็วในการอ่าน
+  - 240 ÷ 120
+  solution: $240 \div 120 = 2$ นาที
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p012
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 3
+  type: mcq
+  stem: เพื่อนชาวจีนส่งข้อความมาว่า 明天下午三点我们在地铁站门口见，好吗？如果下雨，我们就在商场里看电影。 ถ้าพรุ่งนี้ฝนตก จะทำอะไร
+  choices:
+  - id: a
+    text: เลื่อนเป็นบ่าย 3 โมงวันถัดไป
+    feedback: บ่าย 3 โมงคือเวลานัดพรุ่งนี้
+  - id: b
+    text: ดูหนังในห้าง
+    correct: true
+    feedback: ถูก 如果下雨，我们就在商场里看电影
+  - id: c
+    text: ยกเลิกนัด
+    feedback: ข้อความไม่ได้บอกว่าจะยกเลิก
+  - id: d
+    text: รอที่หน้าสถานีรถไฟใต้ดิน
+    feedback: นั่นคือจุดนัดพบ ไม่ใช่สิ่งที่จะทำเมื่อฝนตก
+  hints:
+  - หาประโยคที่ขึ้นต้นด้วย 如果
+  - 如果 A，就 B = ถ้า A ก็ B
+  solution: '**ดูหนังในห้าง** (商场里 = ในห้าง 看电影 = ดูหนัง)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p013
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 4
+  type: mcq
+  stem: อ่านเรื่องสั้น ใจความสำคัญของเรื่องคือข้อใด
+  figure: &id002
+    src: story-card.svg
+    alt: 'เรื่องสั้นสมมติ 去清迈 พร้อมภาพรถไฟ ภูเขา และช้าง ข้อความ: 上个月，我和爸爸妈妈坐火车去清迈。火车很慢，我们坐了十二个小时，但是我一点儿也不累，因为窗外的风景很美。在清迈，我们先去看了大象，然后去夜市买东西。清迈比曼谷凉快，晚上我们都穿外套。我很喜欢清迈，如果有机会，我明年还想去。 คำอธิบายศัพท์: 风景 = ทิวทัศน์ 窗外 = นอกหน้าต่าง 外套 = เสื้อแจ็กเก็ต 小时 = ชั่วโมง'
+    caption: เรื่องสั้น 去清迈 (สมมติ)
+  choices:
+  - id: a
+    text: ตลาดกลางคืนในเชียงใหม่มีของขายมาก
+    feedback: เรื่องไม่ได้เล่าเรื่องของในตลาด และเป็นเพียงรายละเอียด
+  - id: b
+    text: เชียงใหม่อากาศเย็นกว่ากรุงเทพฯ
+    feedback: เป็นรายละเอียด ไม่ใช่ใจความทั้งเรื่อง
+  - id: c
+    text: ผู้เขียนไปเที่ยวเชียงใหม่กับพ่อแม่และชอบมาก
+    correct: true
+    feedback: ถูก บอก ใคร ไปไหน และความรู้สึกหลักของเรื่อง
+  - id: d
+    text: รถไฟไปเชียงใหม่ช้ามาก
+    feedback: เป็นรายละเอียดหนึ่งของการเดินทาง ไม่ใช่เรื่องหลัก
+  hints:
+  - ใจความ = ใคร ทำอะไร ที่ไหน
+  - ข้อที่ครอบคลุมทั้งเรื่อง ไม่ใช่เพียงประโยคเดียว
+  solution: '**ผู้เขียนไปเที่ยวเชียงใหม่กับพ่อแม่และชอบมาก** ส่วนข้ออื่นเป็นรายละเอียด'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p014
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 4
+  type: mcq
+  stem: อ่านเรื่องสั้น ทำไมผู้เขียนจึงไม่เหนื่อย ทั้งที่นั่งรถไฟนาน
+  figure: *id002
+  choices:
+  - id: a
+    text: เพราะรถไฟเร็วมาก
+    feedback: เรื่องบอกว่า 火车很慢 (รถไฟช้ามาก)
+  - id: b
+    text: เพราะนั่งเพียง 2 ชั่วโมง
+    feedback: 十二个小时 = 12 ชั่วโมง
+  - id: c
+    text: เพราะนอนหลับตลอดทาง
+    feedback: เรื่องไม่ได้บอก
+  - id: d
+    text: เพราะทิวทัศน์นอกหน้าต่างสวย
+    correct: true
+    feedback: ถูก 因为窗外的风景很美
+  hints:
+  - หาคำว่า 因为
+  - 因为 นำเหตุผลที่อยู่หลัง 不累
+  solution: …但是我一点儿也不累，**因为窗外的风景很美**。
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p015
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 4
+  type: mcq
+  stem: อ่านเรื่องสั้นแล้วเลือกข้อความที่ **ตรงกับเรื่อง** ทุกข้อ
+  figure: *id002
+  multiple: true
+  choices:
+  - id: a
+    text: 他们坐飞机去清迈。
+    feedback: เรื่องบอกว่า 坐火车
+  - id: b
+    text: 晚上清迈很热。
+    feedback: 晚上我们都穿外套 แสดงว่าตอนกลางคืนเย็น
+  - id: c
+    text: 他们先看了大象，然后去了夜市。
+    correct: true
+    feedback: ถูก 先去看了大象，然后去夜市
+  - id: d
+    text: 作者觉得清迈比曼谷凉快。
+    correct: true
+    feedback: ถูก 清迈比曼谷凉快
+  - id: e
+    text: 如果有机会，作者明年还想去清迈。
+    correct: true
+    feedback: ถูก ประโยคสุดท้ายของเรื่อง
+  hints:
+  - ตรวจทีละข้อกับประโยคในเรื่อง
+  - 先…然后 บอกลำดับ
+  solution: 'ตรงกับเรื่อง: **先看大象，然后去夜市** · **清迈比曼谷凉快** · **明年还想去**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p016
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 4
+  type: text
+  stem: 'อ่านเรื่องสั้นแล้วตอบเป็นภาษาจีน: 他们是怎么去清迈的？ (พิมพ์อักษรจีน)'
+  figure: *id002
+  accepted:
+  - 坐火车
+  - 坐火车。
+  - 坐火车.
+  - 坐火车？
+  - 坐火车?
+  - 坐火车去的
+  - 坐火车去的。
+  - 坐火车去的.
+  - 坐火车去的？
+  - 坐火车去的?
+  - 他们是坐火车去的
+  - 他们是坐火车去的。
+  - 他们是坐火车去的.
+  - 他们是坐火车去的？
+  - 他们是坐火车去的?
+  - 他们坐火车去的
+  - 他们坐火车去的。
+  - 他们坐火车去的.
+  - 他们坐火车去的？
+  - 他们坐火车去的?
+  - 他们坐火车去清迈
+  - 他们坐火车去清迈。
+  - 他们坐火车去清迈.
+  - 他们坐火车去清迈？
+  - 他们坐火车去清迈?
+  - 火车
+  - 火车。
+  - 火车.
+  - 火车？
+  - 火车?
+  - 坐火車
+  - 坐火車。
+  - 坐火車.
+  - 坐火車？
+  - 坐火車?
+  - 坐火車去的
+  - 坐火車去的。
+  - 坐火車去的.
+  - 坐火車去的？
+  - 坐火車去的?
+  misconceptions:
+  - match: 坐飞机
+    feedback: เรื่องบอกว่า 坐火车
+  - match: 坐飞机。
+    feedback: เรื่องบอกว่า 坐火车
+  - match: 坐飞机？
+    feedback: เรื่องบอกว่า 坐火车
+  - match: 上个月
+    feedback: คำถามถาม 怎么 (อย่างไร) ไม่ได้ถามเวลา
+  - match: 上个月。
+    feedback: คำถามถาม 怎么 (อย่างไร) ไม่ได้ถามเวลา
+  - match: 上个月？
+    feedback: คำถามถาม 怎么 (อย่างไร) ไม่ได้ถามเวลา
+  hints:
+  - 怎么去 = ไปอย่างไร (ด้วยวิธีใด)
+  - ดูประโยคแรกของเรื่อง
+  solution: '**坐火车去的。** (他们是坐火车去的。)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p017
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 4
+  type: order
+  stem: เรียงประโยคเป็นเรื่องสั้นที่มีลำดับเหตุการณ์ถูกต้อง
+  items:
+  - 小林早上七点起床。
+  - 他先吃了早饭，
+  - 然后坐公共汽车去学校，
+  - 最后在教室上了第一节课。
+  hints:
+  - เริ่มจากเวลาที่ตื่น
+  - 先 → 然后 → 最后
+  solution: 小林早上七点起床。他先吃了早饭，然后坐公共汽车去学校，最后在教室上了第一节课。
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.reading.short-texts.p018
+  topics:
+  - chinese.reading.short-texts
+  difficulty: 5
+  type: mcq
+  stem: 'นักเรียนส่งข้อความถึงครู: 王老师：对不起，我今天发烧了，不能去上课。我妈妈带我去医院了。小林 ข้อใด **สรุปจากข้อความไม่ได้**'
+  choices:
+  - id: a
+    text: 小林今天不去学校。
+    feedback: สรุปได้จาก 不能去上课
+  - id: b
+    text: 小林生病了。
+    feedback: สรุปได้ เพราะ 发烧 = เป็นไข้
+  - id: c
+    text: 王老师是小林的老师。
+    feedback: สรุปได้ เพราะเขียนถึงครูหวังเรื่องลาเรียน
+  - id: d
+    text: 小林的妈妈是医生。
+    correct: true
+    feedback: ถูก (สรุปไม่ได้) ข้อความบอกแค่ว่าแม่พาไปโรงพยาบาล ไม่ได้บอกว่าแม่เป็นหมอ
+  hints:
+  - แยกสิ่งที่ข้อความบอกจริงกับสิ่งที่เราเดาเอง
+  - 带我去医院 = พาฉันไปโรงพยาบาล
+  solution: '**小林的妈妈是医生** สรุปไม่ได้ ข้ออื่นมีหลักฐานในข้อความ'
+  license: CC-BY-SA-4.0
+  ai_assisted: true

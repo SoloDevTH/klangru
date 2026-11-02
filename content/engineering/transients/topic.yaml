@@ -1,0 +1,93 @@
+id: engineering.circuits.transients
+subject: engineering
+title: { th: วงจร RC RL และ RLC ในโดเมนเวลา, en: RC, RL and RLC circuits in the time domain }
+summary: สมการของตัวเก็บประจุและตัวเหนี่ยวนำ ความต่อเนื่องขณะสับสวิตช์ ผลตอบสนองขั้นของวงจรอันดับหนึ่งด้วยวิธีสามค่า แรงดันกระชาก และวงจร RLC แบบหน่วงเกิน วิกฤต และหน่วงน้อย
+difficulty: 8.5
+minutes: 50
+prerequisites: [engineering.circuits.dc-analysis, physics.electricity.potential-capacitance, physics.magnetism.induction, math.de.first-order]
+encompasses:
+  - { id: engineering.circuits.dc-analysis, weight: 0.3 }
+  - { id: math.de.first-order, weight: 0.3 }
+  - { id: physics.magnetism.induction, weight: 0.2 }
+  - { id: physics.electricity.potential-capacitance, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: วงจร RC ที่มีตัวต้านทานสองตัว
+    src: rc-switch.svg
+    alt: "แหล่งจ่าย 12 V ต่อผ่านสวิตช์ที่ปิดเมื่อ t = 0 และตัวต้านทาน R1 = 4 kΩ ไปยังโนดบน จากโนดนี้มีตัวต้านทาน R2 = 12 kΩ และตัวเก็บประจุ C = 10 μF ต่อขนานลงกราวด์ แรงดัน vC คร่อมตัวเก็บประจุ ก่อนปิดสวิตช์ตัวเก็บประจุไม่มีประจุ"
+  - type: interactive
+    title: ผลตอบสนองของวงจรอันดับหนึ่ง
+    caption: "x(t) = b + (a − b)e^(−t/T) แกนนอนคือเวลาเป็นมิลลิวินาที a คือค่าเริ่มต้น b คือค่าสุดท้าย T คือค่าคงตัวเวลา ลองให้ a มากกว่า b (คายประจุ) และน้อยกว่า b (ประจุ) สังเกตว่าเมื่อ t = T ระยะที่เหลือถึงค่าสุดท้ายเหลือ 37% เสมอ"
+    widget:
+      kind: function-plot
+      functions: ["b+(a-b)e^{-x/T}"]
+      sliders:
+        - { name: a, min: 0, max: 12, step: 1, value: 0, label: "ค่าเริ่มต้น a (V)" }
+        - { name: b, min: 0, max: 12, step: 1, value: 9, label: "ค่าสุดท้าย b (V)" }
+        - { name: T, min: 5, max: 60, step: 5, value: 30, label: "ค่าคงตัวเวลา T (ms)" }
+      x: [0, 200]
+      y: [0, 13]
+  - type: worked-example
+    title: ปล่อยให้ตัวเก็บประจุคายประจุ
+    problem: "วงจรในภาพทำงานจนตัวเก็บประจุมีแรงดัน $9\\ \\mathrm{V}$ แล้วเปิดสวิตช์อีกครั้งที่ $t = 0$ จงหา $v_C(t)$ และเวลาที่แรงดันลดเหลือ $1\\ \\mathrm{V}$"
+    steps:
+      - text: "ค่าเริ่มต้น: $v_C(0^+) = v_C(0^-) = 9\\ \\mathrm{V}$"
+        why: "แรงดันตัวเก็บประจุเปลี่ยนทันทีไม่ได้"
+      - text: "ค่าสุดท้าย: แหล่งจ่ายถูกตัดออก ตัวเก็บประจุคายผ่าน $R_2$ จนหมด $v_C(\\infty) = 0$"
+      - text: "ค่าคงตัวเวลา: ตัวเก็บประจุมองเห็นเฉพาะ $R_2 = 12\\ \\mathrm{k\\Omega}$ ได้ $\\tau = 12000 \\times 10 \\times 10^{-6} = 0.12\\ \\mathrm{s}$"
+        why: "$R_1$ ถูกตัดออกจากวงจรพร้อมสวิตช์ $\\tau$ จึงยาวกว่าตอนประจุ ($30\\ \\mathrm{ms}$) ถึงสี่เท่า"
+      - text: "$v_C(t) = 9e^{-t/0.12}\\ \\mathrm{V}$"
+      - text: "$1 = 9e^{-t/0.12}$ ได้ $t = 0.12\\ln 9 = 0.264\\ \\mathrm{s}$"
+    answer: "$v_C(t) = 9e^{-t/0.12}\\ \\mathrm{V}$ และลดถึง $1\\ \\mathrm{V}$ ที่ $t = 0.264\\ \\mathrm{s}$"
+  - { type: check, problem: engineering.circuits.transients.p003, prompt: "ปิดแหล่งจ่ายแรงดันโดยลัดวงจร แล้วดูว่าตัวเก็บประจุมองเห็นตัวต้านทานอย่างไร" }
+  - type: figure
+    title: ผลตอบสนองขั้นของวงจร RLC อนุกรมสามแบบ
+    src: damping-cases.svg
+    alt: "กราฟแรงดันตัวเก็บประจุหารด้วยแรงดันขั้นเทียบกับ omega0 t สามเส้น เส้นสีแดงหน่วงน้อย zeta 0.25 พุ่งเกินถึงราว 1.44 ที่ omega0 t ราว 3.2 แล้วแกว่งลดลงรอบค่า 1 เส้นสีเขียวหน่วงวิกฤต zeta 1 ขึ้นเร็วถึง 1 โดยไม่เกิน เส้นสีน้ำเงินหน่วงเกิน zeta 2.5 ขึ้นช้าที่สุดและยังไม่ถึง 1 ที่ omega0 t = 14"
+  - type: interactive
+    title: ปรับอัตราส่วนการหน่วง
+    caption: "ผลตอบสนองขั้นของ RLC อนุกรมกรณีหน่วงน้อย แกนนอนคือ ω₀t แกนตั้งคือ v_C/V ลดค่า z (อัตราส่วนการหน่วง ζ = α/ω₀) แล้วดูว่าการพุ่งเกินและการแกว่งมากขึ้น เมื่อ z เข้าใกล้ 1 กราฟจะใกล้กรณีหน่วงวิกฤต"
+    widget:
+      kind: function-plot
+      functions: ["1-e^{-zx}\\left(\\cos\\left(\\sqrt{1-z^2}x\\right)+\\frac{z}{\\sqrt{1-z^2}}\\sin\\left(\\sqrt{1-z^2}x\\right)\\right)"]
+      sliders:
+        - { name: z, min: 0.05, max: 0.95, step: 0.05, value: 0.25, label: "อัตราส่วนการหน่วง z" }
+      x: [0, 20]
+      y: [0, 2]
+  - type: worked-example
+    title: วงจร RLC อนุกรมรับแรงดันขั้น
+    problem: "ต่อแหล่งจ่าย $10\\ \\mathrm{V}$ กับ $R = 40\\ \\Omega$, $L = 0.1\\ \\mathrm{H}$, $C = 100\\ \\mu\\mathrm{F}$ อนุกรม ที่ $t = 0$ (เริ่มไม่มีประจุและกระแส) จงจัดประเภทการหน่วงและหาแรงดันสูงสุดของตัวเก็บประจุ"
+    steps:
+      - text: "$\\alpha = R/(2L) = 200\\ \\mathrm{s^{-1}}$, $\\omega_0 = 1/\\sqrt{LC} = 316.2\\ \\mathrm{rad/s}$ เนื่องจาก $\\alpha < \\omega_0$ จึงหน่วงน้อย ($\\zeta = 0.63$)"
+      - text: "$\\omega_d = \\sqrt{316.2^2 - 200^2} = 244.9\\ \\mathrm{rad/s}$"
+      - text: "เงื่อนไขเริ่มต้น: $v_C(0^+) = 0$ และ $dv_C/dt(0^+) = i_L(0^+)/C = 0$ ค่าสุดท้าย $v_C(\\infty) = 10\\ \\mathrm{V}$"
+        why: "ในสภาวะคงตัว C เป็นวงจรเปิด กระแสเป็นศูนย์ แรงดันทั้งหมดตกคร่อม C"
+      - text: "$v_C(t) = 10 - 10e^{-200t}\\left(\\cos 244.9t + 0.816\\sin 244.9t\\right)\\ \\mathrm{V}$"
+      - text: "ค่าสูงสุดที่ $t = \\pi/\\omega_d = 12.8\\ \\mathrm{ms}$: $v_{\\max} = 10\\left(1 + e^{-200\\pi/244.9}\\right) = 10.77\\ \\mathrm{V}$"
+        why: "ตรวจด้วยการแก้สมการเชิงอนุพันธ์แบบเชิงตัวเลข (RK4) ได้ $10.77\\ \\mathrm{V}$ ที่ $12.8\\ \\mathrm{ms}$ เช่นกัน"
+    answer: "หน่วงน้อย แรงดันสูงสุด $10.77\\ \\mathrm{V}$ ที่ $t = 12.8\\ \\mathrm{ms}$"
+  - { type: check, problem: engineering.circuits.transients.p011, prompt: "ใช้ α = R/(2L) แล้วเทียบกับ ω₀" }
+glossary:
+  - { term: ช่วงชั่วครู่, definition: "ผลตอบสนองของวงจรระหว่างสภาวะเดิมกับสภาวะคงตัวใหม่หลังสับสวิตช์ (transient)" }
+  - { term: ค่าคงตัวเวลา, definition: "τ = RthC หรือ L/Rth เวลาที่ปริมาณเปลี่ยนไป 63% ของระยะถึงค่าสุดท้าย (time constant)" }
+  - { term: ความต้านทานเทวินิน, definition: "ความต้านทานที่ตัวเก็บประจุหรือตัวเหนี่ยวนำมองเห็นเมื่อปิดแหล่งจ่ายอิสระ (Thevenin resistance)" }
+  - { term: ไดโอดกันกลับ, definition: "ไดโอดที่ต่อคร่อมขดลวดเพื่อให้กระแสไหลต่อเมื่อเปิดสวิตช์ ป้องกันแรงดันกระชาก (flyback diode)" }
+  - { term: อัตราส่วนการหน่วง, definition: "ζ = α/ω0 บอกว่าวงจรอันดับสองหน่วงเกิน (ζ > 1) วิกฤต (ζ = 1) หรือหน่วงน้อย (ζ < 1) (damping ratio)" }
+  - { term: ความถี่ธรรมชาติแบบหน่วง, definition: "ωd = √(ω0² − α²) ความถี่เชิงมุมของการแกว่งในวงจรหน่วงน้อย (damped natural frequency)" }
+flashcards:
+  - { front: "ปริมาณที่เปลี่ยนทันทีไม่ได้ขณะสับสวิตช์", back: "แรงดันตัวเก็บประจุ $v_C$ และกระแสตัวเหนี่ยวนำ $i_L$" }
+  - { front: "วิธีสามค่าของวงจรอันดับหนึ่ง", back: "$x(t) = x(\\infty) + [x(0^+) - x(\\infty)]e^{-t/\\tau}$" }
+  - { front: "ค่าคงตัวเวลาของวงจร RC และ RL", back: "$R_{\\text{th}}C$ และ $L/R_{\\text{th}}$" }
+  - { front: "α และ ω₀ ของ RLC อนุกรม", back: "$\\alpha = R/(2L)$, $\\omega_0 = 1/\\sqrt{LC}$ หน่วงวิกฤตที่ $R = 2\\sqrt{L/C}$" }
+  - { front: "C และ L ในสภาวะคงตัวของไฟตรง", back: "C เป็นวงจรเปิด L เป็นลัดวงจร" }
+references:
+  - { title: "10.5 RC Circuits (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/10-5-rc-circuits", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "14.6 RLC Series Circuits (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/14-6-rlc-series-circuits", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "RLC circuit", url: "https://en.wikipedia.org/wiki/RLC_circuit", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.002 Circuits and Electronics (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
