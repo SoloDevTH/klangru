@@ -1,0 +1,136 @@
+id: business.econ.macro-indicators
+subject: business
+title:
+  th: ตัวชี้วัดเศรษฐกิจมหภาคและโครงสร้างตลาด
+  en: Macroeconomic indicators and market structures
+summary: GDP ด้านรายจ่าย GDP ที่แท้จริงและตัวปรับค่า อัตราการเติบโต ดัชนีราคาและอัตราดอกเบี้ยที่แท้จริง ผลต่อการตัดสินใจของธุรกิจ และโครงสร้างตลาดสี่แบบกับ HHI
+difficulty: 5.5
+minutes: 45
+prerequisites:
+- business.econ.inflation-unemployment
+- business.econ.demand-supply
+encompasses:
+- id: business.econ.inflation-unemployment
+  weight: 0.4
+- id: business.econ.demand-supply
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: gdp-components.svg
+  alt: แผนภูมิแท่งแบบน้ำตกของ GDP ด้านรายจ่ายของประเทศ ก (สมมติ) หน่วยพันล้านบาท แท่งต่อกันขึ้นไป C การบริโภค 9,600 I การลงทุน 4,000 G รัฐใช้จ่าย 3,200 X ส่งออก 11,000 รวมถึง 27,800 แล้วแท่ง M นำเข้า −10,200 ลดลงมา แท่งสุดท้าย GDP = C+I+G+X−M = 17,600
+  caption: ส่งออกและนำเข้าสูงมาก แต่ส่วนที่เพิ่มให้ GDP คือส่งออกสุทธิ 800
+- type: worked-example
+  title: GDP ราคาประจำปี ที่แท้จริง และตัวปรับค่า
+  problem: 'ประเทศสมมติผลิตข้าวกับบริการตัดผม ปี 2567 (ฐาน): ข้าว $1{,}000$ ตัน ตันละ $15$ พันบาท ตัดผม $200$ พันครั้ง ครั้งละ $100$ บาท ปี 2568: ข้าว $1{,}050$ ตัน ตันละ $16$ พันบาท ตัดผม $210$ พันครั้ง ครั้งละ $110$ บาท หาการเติบโตที่แท้จริงและตัวปรับค่า GDP ปี 2568'
+  steps:
+  - text: GDP 2567 $= 1{,}000(15) + 200(100) = 35{,}000$ พันบาท
+    why: ปีฐาน ราคาประจำปีกับที่แท้จริงเท่ากัน
+  - text: GDP ราคาประจำปี 2568 $= 1{,}050(16) + 210(110) = 39{,}900$ พันบาท โต $14\%$
+  - text: GDP ที่แท้จริง 2568 $= 1{,}050(15) + 210(100) = 36{,}750$ พันบาท
+    why: ใช้ปริมาณปีนี้แต่ราคาปีฐาน จึงเห็นเฉพาะการผลิตที่เพิ่ม
+  - text: อัตราการเติบโตที่แท้จริง $= 36{,}750 / 35{,}000 - 1 = 5\%$
+  - text: ตัวปรับค่า $= 39{,}900 / 36{,}750 \times 100 \approx 108.57$ ราคาเฉลี่ยขึ้นราว $8.57\%$
+  answer: โตที่แท้จริง $5\%$ ตัวปรับค่า GDP $\approx 108.57$
+- type: check
+  problem: business.econ.macro-indicators.p004
+  prompt: หารด้วยค่าปีไหน
+- type: figure
+  src: nominal-real.svg
+  alt: กราฟเส้นสองเส้นปี 2564 ถึง 2568 (สมมติ) หน่วยพันล้านบาท เส้นทึบสีส้ม GDP ราคาประจำปี 15,000 15,759 16,548 17,204 17,971 เส้นประสีน้ำเงิน GDP ที่แท้จริง ณ ราคาปี 2564 คือ 15,000 15,450 15,760 16,230 16,640 สองเส้นเริ่มที่จุดเดียวกันในปีฐานแล้วห่างกันมากขึ้นเพราะราคาสูงขึ้น
+  caption: ช่องว่างระหว่างสองเส้นคือผลของราคา ไม่ใช่การผลิตที่เพิ่ม
+- type: interactive
+  title: การเติบโตแบบทบต้นของ GDP ที่แท้จริง
+  caption: GDP ที่แท้จริง (พันล้านบาท) $= 10{,}000 \cdot (1 + g/100)^x$ เมื่อ $x$ คือจำนวนปี ลองเปลี่ยนอัตราการเติบโต $g$ แล้วดูว่าต่างกันเพียง 1–2% ต่อปี แต่ผ่านไป 20–30 ปีระดับรายได้ต่างกันมาก
+  widget:
+    kind: function-plot
+    functions:
+    - 10000 \cdot (1 + \frac{g}{100})^{x}
+    sliders:
+    - name: g
+      min: 0
+      max: 8
+      step: 0.5
+      value: 3
+      label: อัตราการเติบโต g (% ต่อปี)
+    x:
+    - 0
+    - 30
+    y:
+    - 0
+    - 60000
+- type: figure
+  src: market-structures.svg
+  alt: 'ตารางเทียบโครงสร้างตลาดสี่แบบเรียงจากซ้ายไปขวา แข่งขันสมบูรณ์ แข่งขันแบบผูกขาด ผู้ขายน้อยราย ผูกขาด แถวจำนวนผู้ขาย: มากมาก มาก น้อยราย รายเดียว แถวสินค้า: เหมือนกัน ต่างกันเล็กน้อย เหมือนหรือต่าง ไม่มีสินค้าแทน แถวการเข้าตลาด: ง่ายมาก ง่าย ยาก ยากมากหรือปิด แถวอำนาจกำหนดราคา: ไม่มี มีบ้าง มากแต่ต้องดูคู่แข่ง มากที่สุด ลูกศรด้านล่างชี้ไปทางขวา เขียนว่าการแข่งขันลดลง อำนาจตลาดของผู้ขายเพิ่มขึ้น'
+  caption: สี่โครงสร้างตลาดบนเส้นเดียวกัน
+- type: worked-example
+  title: วัดการกระจุกตัวด้วย CR4 และ HHI
+  problem: ตลาดน้ำดื่มบรรจุขวดในจังหวัดหนึ่ง (สมมติ) มีผู้ขาย 5 ราย ส่วนแบ่ง $35\%$, $25\%$, $20\%$, $10\%$, $10\%$ หา CR4 และ HHI
+  steps:
+  - text: CR4 $= 35 + 25 + 20 + 10 = 90\%$
+  - text: HHI $= 35^2 + 25^2 + 20^2 + 10^2 + 10^2 = 1{,}225 + 625 + 400 + 100 + 100$
+    why: ยกกำลังสองทำให้รายใหญ่มีน้ำหนักมาก
+  - text: HHI $= 2{,}450$ ใกล้เกณฑ์ที่มักถือว่ากระจุกตัวสูง (ราว $2{,}500$)
+  - text: ตลาดนี้มีลักษณะผู้ขายน้อยราย ธุรกิจใหม่ต้องคาดว่ารายใหญ่จะตอบโต้ด้านราคาหรือโปรโมชัน
+  answer: CR4 $= 90\%$, HHI $= 2{,}450$
+- type: check
+  problem: business.econ.macro-indicators.p002
+  prompt: ดูจำนวนผู้ขายและความต่างของสินค้า
+glossary:
+- term: ผลิตภัณฑ์มวลรวมในประเทศ (GDP)
+  definition: มูลค่าตลาดของสินค้าและบริการขั้นสุดท้ายที่ผลิตในประเทศในช่วงเวลาหนึ่ง
+- term: GDP ที่แท้จริง
+  definition: GDP ที่คิดจากราคาปีฐาน ตัดผลของการเปลี่ยนแปลงราคาออก
+- term: ตัวปรับค่า GDP
+  definition: GDP ราคาประจำปีหารด้วย GDP ที่แท้จริงคูณ 100 เป็นดัชนีราคาของสิ่งที่ผลิตทั้งหมด
+- term: อัตราการเติบโตทางเศรษฐกิจ
+  definition: ร้อยละการเปลี่ยนแปลงของ GDP ที่แท้จริงเทียบกับช่วงก่อน
+- term: อัตราดอกเบี้ยที่แท้จริง
+  definition: อัตราดอกเบี้ยหลังหักผลของเงินเฟ้อ
+- term: ตัวชี้นำ
+  definition: ตัวชี้วัดที่มักเปลี่ยนก่อนภาวะเศรษฐกิจ เช่น ยอดสั่งซื้อใหม่ ความเชื่อมั่นทางธุรกิจ
+- term: ผู้ขายน้อยราย
+  definition: ตลาดที่มีผู้ขายไม่กี่รายซึ่งการตัดสินใจของแต่ละรายกระทบกัน (oligopoly)
+- term: แข่งขันแบบผูกขาด
+  definition: ตลาดที่มีผู้ขายมาก สินค้าต่างกันเล็กน้อย เข้าออกง่าย (monopolistic competition)
+- term: ดัชนีเฮอร์ฟินดาห์ล–เฮิร์ชแมน (HHI)
+  definition: ผลรวมกำลังสองของส่วนแบ่งตลาด (ร้อยละ) ของผู้ขายทุกราย วัดการกระจุกตัว
+flashcards:
+- front: GDP ด้านรายจ่าย
+  back: $C + I + G + (X - M)$
+- front: ตัวปรับค่า GDP
+  back: $\dfrac{\text{GDP ราคาประจำปี}}{\text{GDP ที่แท้จริง}} \times 100$
+- front: อัตราดอกเบี้ยที่แท้จริง
+  back: $1 + r = \dfrac{1 + i}{1 + \pi}$ · ประมาณ $i - \pi$
+- front: HHI
+  back: $\sum s_i^2$ · ผูกขาด $= 10{,}000$ · 4 รายเท่ากัน $= 2{,}500$
+- front: ผู้ขายน้อยราย
+  back: ไม่กี่ราย เข้ายาก ต้องจับตาปฏิกิริยาคู่แข่ง
+references:
+- title: '19.1 Measuring the Size of the Economy: Gross Domestic Product (Principles of Economics 3e, OpenStax)'
+  url: https://openstax.org/books/principles-economics-3e/pages/19-1-measuring-the-size-of-the-economy-gross-domestic-product
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 10.2 Oligopoly (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/10-2-oligopoly
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: ผลิตภัณฑ์มวลรวมภายในประเทศ
+  url: https://th.wikipedia.org/wiki/ผลิตภัณฑ์มวลรวมภายในประเทศ
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: Herfindahl–Hirschman index
+  url: https://en.wikipedia.org/wiki/Herfindahl–Hirschman_index
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้
