@@ -1,0 +1,74 @@
+id: math.calculus.derivative-applications
+subject: math
+title: { th: การประยุกต์อนุพันธ์, en: Applications of derivatives }
+summary: อัตราสัมพัทธ์ การประมาณเชิงเส้นและผลต่างเชิงอนุพันธ์ ค่าสุดขีดและจุดวิกฤต ความเว้าและจุดเปลี่ยนเว้า และปัญหาค่าเหมาะที่สุดทางวิศวกรรม
+difficulty: 7.5
+minutes: 45
+prerequisites: [math.calculus.differentiation-rules, math.functions.quadratic]
+encompasses:
+  - { id: math.calculus.differentiation-rules, weight: 0.5 }
+  - { id: math.calculus.derivative, weight: 0.3 }
+  - { id: math.functions.quadratic, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: อัตราสัมพัทธ์ของวงคลื่น
+    problem: "วงคลื่นในบ่อเลี้ยงปลามีรัศมีเพิ่มขึ้น $0.5$ เมตรต่อวินาที เมื่อรัศมีเป็น 4 เมตร พื้นที่ในวงคลื่นเพิ่มขึ้นเร็วเท่าใด"
+    steps:
+      - text: "ตัวแปร: รัศมี $r$ พื้นที่ $A$ รู้ $\\dfrac{dr}{dt} = 0.5$ ต้องการ $\\dfrac{dA}{dt}$ เมื่อ $r = 4$"
+      - text: "สมการเชื่อม: $A = \\pi r^2$"
+      - text: "หาอนุพันธ์เทียบกับ $t$: $\\dfrac{dA}{dt} = 2\\pi r\\dfrac{dr}{dt}$"
+        why: "$r$ เปลี่ยนตามเวลา กฎลูกโซ่ทำให้ต้องคูณ $\\dfrac{dr}{dt}$"
+      - text: "แทนค่า: $\\dfrac{dA}{dt} = 2\\pi(4)(0.5) = 4\\pi \\approx 12.57$"
+    answer: "ประมาณ $12.57\\ \\mathrm{m^2/s}$"
+  - { type: check, problem: math.calculus.derivative-applications.p004, prompt: "หาอนุพันธ์ของ A = πr² เทียบกับเวลาก่อนแทนค่า" }
+  - type: interactive
+    title: เส้นสัมผัสคือการประมาณเชิงเส้น
+    caption: "เส้นแรกคือ y = x³ − 3x เส้นที่สองคือเส้นสัมผัสที่ x = a หรือ L(x) = f(a) + f′(a)(x − a) เลื่อน a แล้วดูว่าเส้นสัมผัสใกล้เส้นโค้งมากเฉพาะบริเวณรอบ x = a"
+    widget:
+      kind: function-plot
+      functions: ["x^3-3x", "a^3-3a+(3a^2-3)\\cdot(x-a)"]
+      sliders:
+        - { name: a, min: -2, max: 2, step: 0.25, value: 1.5, label: จุดสัมผัส a }
+      x: [-3, 3]
+      y: [-5, 5]
+  - type: figure
+    src: concavity.svg
+    alt: "กราฟ y = x³ − 3x² + 1 จาก x = −1 ถึง 3 จุดสีแดงสูงสุดสัมพัทธ์ที่ (0, 1) จุดสีเขียวจุดเปลี่ยนเว้าที่ (1, −1) จุดสีน้ำเงินต่ำสุดสัมพัทธ์ที่ (2, −3) พื้นหลังทางซ้ายของ x = 1 สีส้มเขียนว่าเว้าลง f″ < 0 ทางขวาสีฟ้าเขียนว่าเว้าขึ้น f″ > 0"
+    caption: "จุดเปลี่ยนเว้าแบ่งส่วนที่เว้าลงกับเว้าขึ้น"
+  - type: worked-example
+    title: กระป๋องที่ใช้โลหะน้อยที่สุด
+    problem: "กระป๋องทรงกระบอกต้องจุ $330\\ \\mathrm{cm^3}$ รัศมีเท่าใดจึงใช้แผ่นโลหะ (พื้นที่ผิวทั้งหมด) น้อยที่สุด"
+    steps:
+      - text: "พื้นที่ผิว $S = 2\\pi r^2 + 2\\pi rh$ และปริมาตร $\\pi r^2h = 330$"
+      - text: "กำจัด $h = \\dfrac{330}{\\pi r^2}$ ได้ $S(r) = 2\\pi r^2 + \\dfrac{660}{r}$ เมื่อ $r > 0$"
+        why: "ต้องเหลือตัวแปรเดียวจึงหาอนุพันธ์ได้"
+      - text: "$S'(r) = 4\\pi r - \\dfrac{660}{r^2} = 0$ ได้ $r^3 = \\dfrac{330}{2\\pi}$ จึง $r \\approx 3.74\\ \\mathrm{cm}$"
+      - text: "$S''(r) = 4\\pi + \\dfrac{1320}{r^3} > 0$ เป็นค่าต่ำสุดจริง"
+      - text: "ความสูง $h = \\dfrac{330}{\\pi(3.74)^2} \\approx 7.49\\ \\mathrm{cm} = 2r$ คือสูงเท่าเส้นผ่านศูนย์กลาง"
+        why: "กระป๋องจริงสูงกว่านี้ เพราะฝาและก้นหนากว่าผนังและต้องจับถือสะดวก แบบจำลองจึงต้องเพิ่มต้นทุนเหล่านี้"
+    answer: "รัศมีประมาณ 3.74 cm สูงประมาณ 7.49 cm"
+  - { type: check, problem: math.calculus.derivative-applications.p013, prompt: "เขียนความยาวรั้วเป็นฟังก์ชันของตัวแปรเดียวก่อน" }
+glossary:
+  - { term: อัตราสัมพัทธ์, definition: "อัตราการเปลี่ยนแปลงตามเวลาของปริมาณที่ผูกกันด้วยสมการ หาได้จากการหาอนุพันธ์ของสมการเทียบกับเวลา" }
+  - { term: การประมาณเชิงเส้น, definition: "f(x) ≈ f(a) + f′(a)(x − a) ใช้เส้นสัมผัสแทนเส้นโค้งใกล้ x = a" }
+  - { term: ผลต่างเชิงอนุพันธ์, definition: "dy = f′(x) dx ใช้ประมาณการเปลี่ยนแปลงของ y เมื่อ x เปลี่ยนเล็กน้อย" }
+  - { term: จุดวิกฤต, definition: "จุดในโดเมนที่ f′(c) = 0 หรือ f′(c) หาค่าไม่ได้" }
+  - { term: จุดเปลี่ยนเว้า, definition: "จุดบนกราฟที่ความเว้าเปลี่ยนจากเว้าขึ้นเป็นเว้าลงหรือกลับกัน" }
+  - { term: ทฤษฎีบทค่าสุดขีด, definition: "ฟังก์ชันต่อเนื่องบนช่วงปิดมีค่าสูงสุดและต่ำสุดสัมบูรณ์เสมอ" }
+flashcards:
+  - { front: "ขั้นสำคัญของโจทย์อัตราสัมพัทธ์", back: "หาอนุพันธ์ของสมการเทียบกับเวลาก่อน แล้วจึงแทนค่า ณ ขณะที่ถาม" }
+  - { front: "การประมาณเชิงเส้นของ f ใกล้ a", back: "L(x) = f(a) + f′(a)(x − a)" }
+  - { front: "f″ > 0 และ f″ < 0 บอกอะไร", back: "เว้าขึ้น (รูปถ้วย) และเว้าลง (รูปโดม)" }
+  - { front: "f′(c) = 0 และ f″(c) = 0 สรุปอะไรได้", back: "การทดสอบอนุพันธ์อันดับสองสรุปไม่ได้ ต้องดูเครื่องหมายของ f′ รอบ c" }
+  - { front: "จุดวิกฤตมีกี่แบบ", back: "จุดที่ f′ = 0 และจุดที่ f′ หาค่าไม่ได้ (เช่น มุมแหลมของ |x|)" }
+references:
+  - { title: "Related rates", url: "https://en.wikipedia.org/wiki/Related_rates", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.1 Related Rates (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.5 Derivatives and the Shape of a Graph (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/4-5-derivatives-and-the-shape-of-a-graph", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.7 Applied Optimization Problems (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/4-7-applied-optimization-problems", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

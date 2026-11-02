@@ -1,0 +1,331 @@
+problems:
+  - id: math.calculus.derivative-applications.p001
+    topics: [math.calculus.derivative-applications]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาพิกัด $x$ ของจุดเปลี่ยนเว้าของ $f(x) = x^3 - 6x^2 + 5$"
+    answer: { value: 2 }
+    hints:
+      - "หา $f''(x)$ แล้วแก้ $f''(x) = 0$"
+      - "$f'(x) = 3x^2 - 12x$ และ $f''(x) = 6x - 12$"
+    misconceptions:
+      - { match: 4, feedback: "$x = 4$ เป็นจุดวิกฤต (จาก $f' = 0$) จุดเปลี่ยนเว้าหาจาก $f''$" }
+      - { match: 0, feedback: "$x = 0$ เป็นจุดวิกฤต ไม่ใช่จุดเปลี่ยนเว้า" }
+    solution: "$f''(x) = 6x - 12 = 0$ ได้ $x = 2$ และ $f''$ เปลี่ยนจากลบเป็นบวกที่ $x = 2$ จึงเป็นจุดเปลี่ยนเว้าจริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p002
+    topics: [math.calculus.derivative-applications]
+    difficulty: 1
+    type: numeric
+    stem: "ใช้การประมาณเชิงเส้นของ $f(x) = \\sqrt{x}$ ที่ $a = 4$ ประมาณค่า $\\sqrt{4.1}$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 2.025, tolerance: 0.0005 }
+    hints:
+      - "$f(4) = 2$ และ $f'(x) = \\dfrac{1}{2\\sqrt{x}}$ จึง $f'(4) = \\dfrac14$"
+      - "$L(4.1) = 2 + \\dfrac14(0.1)$"
+    misconceptions:
+      - { match: 2.05, feedback: "$f'(4) = \\dfrac{1}{2\\sqrt4} = \\dfrac14$ ไม่ใช่ $\\dfrac12$" }
+    solution: "$\\sqrt{4.1} \\approx 2 + 0.025 = 2.025$ (ค่าจริงประมาณ 2.0248)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p003
+    topics: [math.calculus.derivative-applications]
+    difficulty: 1
+    type: mcq
+    stem: "ถ้า $f''(x) > 0$ ทุก $x$ ในช่วงหนึ่ง ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "กราฟของ $f$ เว้าขึ้นบนช่วงนั้น (ความชันเพิ่มขึ้น)", correct: true }
+      - { id: b, text: "$f$ เป็นฟังก์ชันเพิ่มบนช่วงนั้น", feedback: "การเพิ่มดูจาก $f' > 0$ ฟังก์ชันที่เว้าขึ้นอาจกำลังลดลงก็ได้ เช่น $x^2$ เมื่อ $x < 0$" }
+      - { id: c, text: "$f(x) > 0$ บนช่วงนั้น", feedback: "เครื่องหมายของ $f''$ ไม่ได้บอกเครื่องหมายของ $f$" }
+      - { id: d, text: "กราฟเว้าลงเหมือนรูปโดม", feedback: "รูปโดมคือ $f'' < 0$" }
+    hints:
+      - "$f''$ คืออัตราการเปลี่ยนของความชัน"
+      - "ความชันเพิ่มขึ้นเรื่อย ๆ กราฟเป็นรูปถ้วย"
+    solution: "$f'' > 0$ แปลว่า $f'$ เพิ่มขึ้น กราฟจึงเว้าขึ้น (รูปถ้วย) ไม่ได้บอกว่า $f$ เพิ่มหรือเป็นบวก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p004
+    topics: [math.calculus.derivative-applications]
+    difficulty: 2
+    type: numeric
+    stem: "แผ่นน้ำมันรั่วบนผิวน้ำเป็นวงกลม รัศมีเพิ่มขึ้น 2 เซนติเมตรต่อวินาที เมื่อรัศมีเป็น 5 เซนติเมตร พื้นที่เพิ่มขึ้นกี่ตารางเซนติเมตรต่อวินาที (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 62.83, tolerance: 0.1, unit: cm²/s }
+    hints:
+      - "$A = \\pi r^2$ หาอนุพันธ์เทียบกับเวลา"
+      - "$\\dfrac{dA}{dt} = 2\\pi r\\dfrac{dr}{dt}$"
+    misconceptions:
+      - { match: 31.42, feedback: "อนุพันธ์ของ $r^2$ คือ $2r$ ลืมคูณ 2" }
+      - { match: 78.54, feedback: "นี่คือพื้นที่ $\\pi(5)^2$ ไม่ใช่อัตราการเปลี่ยนแปลง" }
+    solution: "$\\dfrac{dA}{dt} = 2\\pi(5)(2) = 20\\pi \\approx 62.83\\ \\mathrm{cm^2/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p005
+    topics: [math.calculus.derivative-applications]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $y = x^3$ จงใช้ผลต่างเชิงอนุพันธ์ประมาณการเปลี่ยนแปลงของ $y$ เมื่อ $x$ เปลี่ยนจาก 2 เป็น 2.01"
+    answer: { value: 0.12, tolerance: 0.001 }
+    hints:
+      - "$dy = f'(x)\\,dx$ โดย $dx = 0.01$"
+      - "$f'(x) = 3x^2$ ที่ $x = 2$"
+    misconceptions:
+      - { match: 0.04, feedback: "อนุพันธ์ของ $x^3$ คือ $3x^2 = 12$ ไม่ใช่ $x^2 = 4$" }
+      - { match: 12, feedback: "12 คือ $f'(2)$ ต้องคูณด้วย $dx = 0.01$" }
+    solution: "$dy = 3(2)^2(0.01) = 0.12$ (ค่าจริง $2.01^3 - 8 = 0.120601$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p006
+    topics: [math.calculus.derivative-applications]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาจุดวิกฤตของ $f(x) = xe^{-x}$"
+    answer: { value: 1 }
+    hints:
+      - "กฎผลคูณ: $f'(x) = e^{-x} - xe^{-x}$"
+      - "$e^{-x}(1 - x) = 0$ และ $e^{-x}$ ไม่เป็นศูนย์"
+    misconceptions:
+      - { match: 0, feedback: "แก้ $xe^{-x} = 0$ ซึ่งเป็นตัวฟังก์ชัน จุดวิกฤตหาจาก $f'(x) = 0$" }
+      - { match: -1, feedback: "อนุพันธ์ของ $e^{-x}$ คือ $-e^{-x}$ ได้ $1 - x = 0$" }
+    solution: "$f'(x) = e^{-x}(1 - x) = 0$ ได้ $x = 1$ ($f'$ เปลี่ยนจากบวกเป็นลบ จึงเป็นค่าสูงสุดสัมพัทธ์ $f(1) = \\tfrac1e$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p007
+    topics: [math.calculus.derivative-applications]
+    difficulty: 2
+    type: mcq
+    stem: "$f(x) = x^4$ มี $f'(0) = 0$ และ $f''(0) = 0$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "การทดสอบอนุพันธ์อันดับสองสรุปไม่ได้ ดูเครื่องหมายของ $f'$ แล้วพบว่า $x = 0$ เป็นจุดต่ำสุดสัมพัทธ์", correct: true }
+      - { id: b, text: "$x = 0$ เป็นจุดเปลี่ยนเว้า เพราะ $f''(0) = 0$", feedback: "$f''(x) = 12x^2 \\ge 0$ ไม่เปลี่ยนเครื่องหมาย กราฟเว้าขึ้นทั้งสองข้าง" }
+      - { id: c, text: "$x = 0$ ไม่ใช่ค่าสุดขีด เพราะ $f''(0) = 0$", feedback: "$f''(0) = 0$ แปลว่าการทดสอบสรุปไม่ได้ ไม่ได้แปลว่าไม่ใช่ค่าสุดขีด" }
+      - { id: d, text: "$x = 0$ เป็นจุดสูงสุดสัมพัทธ์", feedback: "$f'$ เปลี่ยนจากลบเป็นบวก เป็นจุดต่ำสุด" }
+    hints:
+      - "เมื่อ $f''(c) = 0$ ต้องใช้วิธีอื่น"
+      - "$f'(x) = 4x^3$ เป็นลบเมื่อ $x < 0$ และบวกเมื่อ $x > 0$"
+    solution: "$f''(0) = 0$ ทำให้การทดสอบอันดับสองสรุปไม่ได้ $f'(x) = 4x^3$ เปลี่ยนจากลบเป็นบวกที่ 0 จึงเป็นต่ำสุดสัมพัทธ์ (และสัมบูรณ์)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p008
+    topics: [math.calculus.derivative-applications]
+    difficulty: 3
+    type: numeric
+    stem: "บันไดยาว 5 เมตรพิงผนังบ้าน (ดูภาพ) ปลายล่างไถลออกจากผนังด้วยอัตรา 0.3 เมตรต่อวินาที ขณะที่ปลายล่างห่างผนัง 3 เมตร ปลายบนเลื่อนลงด้วยอัตรากี่เมตรต่อวินาที"
+    figure:
+      src: ladder.svg
+      alt: "บันไดยาว 5 เมตรพิงผนังแนวตั้ง ปลายล่างบนพื้นห่างผนัง x เมตร ปลายบนสูงจากพื้น y เมตร ลูกศรสีแดงที่ปลายล่างชี้ออกจากผนังเขียนว่าไถลออก"
+    answer: { value: 0.225, tolerance: 0.002, unit: m/s }
+    hints:
+      - "$x^2 + y^2 = 25$ หาอนุพันธ์เทียบกับเวลา: $2x\\dfrac{dx}{dt} + 2y\\dfrac{dy}{dt} = 0$"
+      - "เมื่อ $x = 3$ จะได้ $y = 4$"
+    misconceptions:
+      - { match: 0.4, feedback: "สลับ $x$ กับ $y$ ที่ถูกคือ $\\dfrac{dy}{dt} = -\\dfrac{x}{y}\\dfrac{dx}{dt}$" }
+      - { match: 0.3, feedback: "ปลายบนและปลายล่างไม่ได้เคลื่อนด้วยอัตราเท่ากัน ต้องใช้สมการพีทาโกรัส" }
+    solution: "$\\dfrac{dy}{dt} = -\\dfrac{x}{y}\\dfrac{dx}{dt} = -\\dfrac34(0.3) = -0.225$ ปลายบนเลื่อนลง 0.225 เมตรต่อวินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p009
+    topics: [math.calculus.derivative-applications]
+    difficulty: 3
+    type: numeric
+    stem: "ถังพักน้ำประปาหมู่บ้านในลำพูนเป็นกรวยคว่ำ รัศมีปาก 2 เมตร ลึก 4 เมตร สูบน้ำเข้าด้วยอัตรา 0.5 ลูกบาศก์เมตรต่อนาที ขณะน้ำลึก 2 เมตร ระดับน้ำสูงขึ้นกี่เมตรต่อนาที (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.159, tolerance: 0.002, unit: เมตรต่อนาที }
+    hints:
+      - "รัศมีผิวน้ำ $r = \\dfrac{h}{2}$ (สามเหลี่ยมคล้าย) จึง $V = \\dfrac13\\pi r^2h = \\dfrac{\\pi h^3}{12}$"
+      - "$\\dfrac{dV}{dt} = \\dfrac{\\pi h^2}{4}\\dfrac{dh}{dt}$"
+    misconceptions:
+      - { match: 0.053, feedback: "ปริมาตรกรวยมี $\\tfrac13$ ได้ $V = \\tfrac{\\pi h^3}{12}$ ไม่ใช่ $\\tfrac{\\pi h^3}{4}$" }
+      - { match: 0.119, feedback: "ใช้ $r = 2$ คงที่ แต่รัศมีผิวน้ำเปลี่ยนตามความลึก $r = \\tfrac{h}{2}$" }
+    solution: "$0.5 = \\dfrac{\\pi(2)^2}{4}\\dfrac{dh}{dt} = \\pi\\dfrac{dh}{dt}$ จึง $\\dfrac{dh}{dt} = \\dfrac{0.5}{\\pi} \\approx 0.159$ เมตรต่อนาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p010
+    topics: [math.calculus.derivative-applications]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่าต่ำสุดสัมบูรณ์ของ $f(x) = x - 2\\sin x$ บนช่วง $[0, \\pi]$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: -0.685, tolerance: 0.003 }
+    hints:
+      - "$f'(x) = 1 - 2\\cos x = 0$ ได้ $\\cos x = \\tfrac12$"
+      - "เทียบ $f$ ที่ $x = \\tfrac{\\pi}{3}$ กับปลายช่วง $0$ และ $\\pi$"
+    misconceptions:
+      - { match: 0, feedback: "$f(0) = 0$ แต่ที่จุดวิกฤต $x = \\tfrac{\\pi}{3}$ ค่าต่ำกว่านั้น" }
+      - { match: 1.047, feedback: "นี่คือตำแหน่ง $x = \\tfrac{\\pi}{3}$ โจทย์ถามค่าต่ำสุดของ $f$" }
+    solution: "จุดวิกฤต $x = \\tfrac{\\pi}{3}$: $f = \\tfrac{\\pi}{3} - \\sqrt3 \\approx -0.685$ ปลายช่วง $f(0) = 0$, $f(\\pi) = \\pi$ ค่าต่ำสุดคือ $-0.685$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p011
+    topics: [math.calculus.derivative-applications]
+    difficulty: 3
+    type: match
+    stem: "จับคู่เงื่อนไขที่ $x = c$ กับข้อสรุป"
+    pairs:
+      - { left: "$f'(c) = 0$ และ $f''(c) < 0$", right: "สูงสุดสัมพัทธ์" }
+      - { left: "$f'(c) = 0$ และ $f''(c) > 0$", right: "ต่ำสุดสัมพัทธ์" }
+      - { left: "$f''$ เปลี่ยนเครื่องหมายที่ $c$", right: "จุดเปลี่ยนเว้า" }
+      - { left: "$f'$ ไม่เปลี่ยนเครื่องหมายที่จุดวิกฤต $c$", right: "ไม่ใช่ค่าสุดขีดสัมพัทธ์" }
+    hints:
+      - "เว้าลงที่จุดยอดคือยอดเขา"
+      - "ความเว้าเปลี่ยนคือจุดเปลี่ยนเว้า"
+    solution: "$f'' < 0$ ที่จุดวิกฤตคือยอด (สูงสุด) $f'' > 0$ คือก้นหุบ (ต่ำสุด) $f''$ เปลี่ยนเครื่องหมายคือจุดเปลี่ยนเว้า และ $f'$ ไม่เปลี่ยนเครื่องหมายแปลว่าไม่ใช่ค่าสุดขีด เช่น $x^3$ ที่ 0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p012
+    topics: [math.calculus.derivative-applications]
+    difficulty: 3
+    type: numeric
+    stem: "ช่างทำลูกตะกร้อวัดเส้นผ่านศูนย์กลางได้คลาดเคลื่อนไม่เกิน 2% จงใช้ผลต่างเชิงอนุพันธ์ประมาณความคลาดเคลื่อนสัมพัทธ์สูงสุดของปริมาตรทรงกลม เป็นเปอร์เซ็นต์"
+    answer: { value: 6, unit: "%" }
+    hints:
+      - "$V = \\dfrac{\\pi}{6}D^3$ จึง $dV = \\dfrac{\\pi}{2}D^2\\,dD$"
+      - "$\\dfrac{dV}{V} = 3\\dfrac{dD}{D}$"
+    misconceptions:
+      - { match: 2, feedback: "ปริมาตรแปรผันตาม $D^3$ ความคลาดเคลื่อนสัมพัทธ์จึงเป็น 3 เท่า" }
+      - { match: 8, feedback: "คูณด้วยเลขชี้กำลัง 3 ไม่ใช่ยกกำลังสาม $2^3$" }
+    solution: "$\\dfrac{dV}{V} = \\dfrac{\\frac{\\pi}{2}D^2\\,dD}{\\frac{\\pi}{6}D^3} = 3\\dfrac{dD}{D} = 3(2\\%) = 6\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p013
+    topics: [math.calculus.derivative-applications]
+    difficulty: 4
+    type: numeric
+    stem: "เกษตรกรริมแม่น้ำปิงต้องการล้อมแปลงผักสี่เหลี่ยมผืนผ้าพื้นที่ 800 ตารางเมตร โดยด้านที่ติดแม่น้ำไม่ต้องล้อม ต้องใช้รั้วสั้นที่สุดกี่เมตร"
+    answer: { value: 80, unit: เมตร }
+    hints:
+      - "ให้ด้านที่ตั้งฉากกับแม่น้ำยาว $x$ ด้านขนานยาว $\\dfrac{800}{x}$ รั้ว $L = 2x + \\dfrac{800}{x}$"
+      - "$L'(x) = 2 - \\dfrac{800}{x^2} = 0$"
+    misconceptions:
+      - { match: 20, feedback: "20 เมตรคือด้าน $x$ โจทย์ถามความยาวรั้วทั้งหมด" }
+      - { match: 113.1, feedback: "นี่คือรั้วสี่ด้านของสี่เหลี่ยมจัตุรัส ด้านติดแม่น้ำไม่ต้องล้อม" }
+    solution: "$x^2 = 400$ ได้ $x = 20$ ด้านขนานแม่น้ำ 40 เมตร $L = 40 + 40 = 80$ เมตร ($L''(x) = \\tfrac{1600}{x^3} > 0$ เป็นค่าต่ำสุด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p014
+    topics: [math.calculus.derivative-applications]
+    difficulty: 4
+    type: numeric
+    stem: "ถังทรงกระบอกมีฝาปิดต้องจุ $1000\\ \\mathrm{cm^3}$ รัศมีเท่าใดจึงใช้วัสดุ (พื้นที่ผิวทั้งหมด) น้อยที่สุด (ตอบเป็นเซนติเมตร ทศนิยมสองตำแหน่ง)"
+    answer: { value: 5.42, tolerance: 0.03, unit: cm }
+    hints:
+      - "$S(r) = 2\\pi r^2 + \\dfrac{2000}{r}$"
+      - "$S'(r) = 4\\pi r - \\dfrac{2000}{r^2} = 0$ ได้ $r^3 = \\dfrac{500}{\\pi}$"
+    misconceptions:
+      - { match: 6.83, feedback: "ใช้พื้นที่ผิวแบบไม่มีฝา ($\\pi r^2$) แต่ถังนี้มีฝาบนและก้น" }
+      - { match: 10.84, feedback: "นี่คือความสูง (หรือเส้นผ่านศูนย์กลาง) โจทย์ถามรัศมี" }
+    solution: "$r = \\left(\\dfrac{500}{\\pi}\\right)^{1/3} \\approx 5.42\\ \\mathrm{cm}$ และ $h = 2r \\approx 10.84\\ \\mathrm{cm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p015
+    topics: [math.calculus.derivative-applications]
+    difficulty: 4
+    type: numeric
+    stem: "กราฟของ $f(x) = \\ln(x^2 + 1)$ มีจุดเปลี่ยนเว้าสองจุด จงหาพิกัด $x$ ของจุดที่ $x > 0$"
+    answer: { value: 1 }
+    hints:
+      - "$f'(x) = \\dfrac{2x}{x^2 + 1}$ ใช้กฎผลหารหา $f''$"
+      - "$f''(x) = \\dfrac{2(1 - x^2)}{(x^2 + 1)^2}$"
+    misconceptions:
+      - { match: 0, feedback: "$x = 0$ เป็นจุดต่ำสุด ($f' = 0$) ไม่ใช่จุดเปลี่ยนเว้า" }
+    solution: "$f''(x) = 0$ เมื่อ $1 - x^2 = 0$ ได้ $x = \\pm1$ และ $f''$ เปลี่ยนเครื่องหมายที่ทั้งสองจุด จุดที่ $x > 0$ คือ $x = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p016
+    topics: [math.calculus.derivative-applications]
+    difficulty: 4
+    type: numeric
+    stem: "โดรนถ่ายภาพงานบุญบั้งไฟที่ยโสธรบินที่ความสูงคงที่ 100 เมตร ในแนวราบด้วยความเร็ว 10 เมตรต่อวินาที ออกห่างจากผู้ควบคุมที่ยืนบนพื้น ขณะโดรนอยู่ห่างในแนวราบ 240 เมตร ระยะทางตรงจากผู้ควบคุมถึงโดรนเพิ่มขึ้นกี่เมตรต่อวินาที (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 9.23, tolerance: 0.02, unit: m/s }
+    hints:
+      - "$s^2 = x^2 + 100^2$ ได้ $s\\dfrac{ds}{dt} = x\\dfrac{dx}{dt}$"
+      - "เมื่อ $x = 240$ จะได้ $s = 260$"
+    misconceptions:
+      - { match: 10, feedback: "ระยะทางตรงเพิ่มช้ากว่าระยะแนวราบ เพราะส่วนหนึ่งของระยะเป็นความสูงที่คงที่" }
+      - { match: 24, feedback: "ต้องหารด้วย $s = 260$ ไม่ใช่ 100" }
+    solution: "$\\dfrac{ds}{dt} = \\dfrac{x}{s}\\dfrac{dx}{dt} = \\dfrac{240}{260}(10) \\approx 9.23$ เมตรต่อวินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p017
+    topics: [math.calculus.derivative-applications]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาระยะที่สั้นที่สุดจากจุด $(3, 0)$ ถึงเส้นโค้ง $y = \\sqrt{x}$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 1.66, tolerance: 0.01 }
+    hints:
+      - "ลดรูปด้วยการหาค่าต่ำสุดของระยะกำลังสอง $D^2 = (x - 3)^2 + x$"
+      - "$\\dfrac{d}{dx}D^2 = 2(x - 3) + 1 = 0$"
+    misconceptions:
+      - { match: 2.75, feedback: "2.75 คือ $D^2$ ต้องถอดรากที่สอง" }
+      - { match: 1.73, feedback: "นี่คือระยะถึงจุด $(3, \\sqrt3)$ ซึ่งไม่ใช่จุดที่ใกล้ที่สุด" }
+    solution: "$x = 2.5$ ได้ $D^2 = 0.25 + 2.5 = 2.75$ และ $D = \\sqrt{2.75} \\approx 1.66$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p018
+    topics: [math.calculus.derivative-applications]
+    difficulty: 5
+    type: numeric
+    stem: "โรงงานอยู่ริมแม่น้ำเจ้าพระยาฝั่งหนึ่ง โรงสูบน้ำอยู่ฝั่งตรงข้ามเลยลงไปตามลำน้ำ 3 กิโลเมตร แม่น้ำกว้าง 1 กิโลเมตร วางท่อใต้น้ำกิโลเมตรละ 5 ล้านบาท บนบกกิโลเมตรละ 4 ล้านบาท (ค่าสมมติ) ถ้าวางท่อใต้น้ำตรงไปยังจุดบนฝั่งตรงข้ามที่ห่างลงไป $x$ กิโลเมตร แล้วเดินท่อบนบกต่อ ค่าก่อสร้างต่ำสุดกี่ล้านบาท"
+    answer: { value: 15, unit: ล้านบาท }
+    hints:
+      - "$C(x) = 5\\sqrt{1 + x^2} + 4(3 - x)$ เมื่อ $0 \\le x \\le 3$"
+      - "$C'(x) = \\dfrac{5x}{\\sqrt{1 + x^2}} - 4 = 0$ ได้ $x = \\dfrac43$"
+    misconceptions:
+      - { match: 17, feedback: "นี่คือค่าเมื่อข้ามแม่น้ำตรง ๆ ($x = 0$) ยังไม่ใช่ค่าต่ำสุด" }
+      - { match: 15.81, feedback: "นี่คือค่าเมื่อวางท่อใต้น้ำตลอดทาง ($x = 3$) ยังไม่ใช่ค่าต่ำสุด" }
+    solution: "$25x^2 = 16(1 + x^2)$ ได้ $x = \\tfrac43$ จึง $C = 5\\cdot\\tfrac53 + 4\\cdot\\tfrac53 = 15$ ล้านบาท ซึ่งน้อยกว่าปลายช่วง $C(0) = 17$ และ $C(3) \\approx 15.81$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p019
+    topics: [math.calculus.derivative-applications]
+    difficulty: 5
+    type: mcq
+    stem: "ภาพแสดงกราฟของ **อนุพันธ์** $f'(x)$ (ไม่ใช่กราฟของ $f$) กราฟของ $f$ มีจุดเปลี่ยนเว้าที่ใด"
+    figure:
+      src: fprime-graph.svg
+      alt: "กราฟของ y = f′(x) เป็นพาราโบลาหงาย ตัดแกน y ที่ 3 ตัดแกน x ที่ x = 1 และ x = 3 จุดต่ำสุดของพาราโบลาอยู่ที่ (2, −1)"
+    choices:
+      - { id: a, text: "$x = 2$", correct: true }
+      - { id: b, text: "$x = 1$ และ $x = 3$", feedback: "จุดที่ $f' = 0$ คือจุดวิกฤตของ $f$ ($x = 1$ สูงสุด $x = 3$ ต่ำสุด) ไม่ใช่จุดเปลี่ยนเว้า" }
+      - { id: c, text: "$x = 0$", feedback: "ที่ $x = 0$ กราฟ $f'$ ไม่ได้เปลี่ยนจากลดเป็นเพิ่ม" }
+      - { id: d, text: "ไม่มีจุดเปลี่ยนเว้า เพราะ $f'$ เป็นพาราโบลาหงาย", feedback: "$f'$ ลดแล้วเพิ่ม $f''$ จึงเปลี่ยนจากลบเป็นบวก" }
+    hints:
+      - "จุดเปลี่ยนเว้าของ $f$ คือที่ $f''$ เปลี่ยนเครื่องหมาย"
+      - "$f''$ คือความชันของกราฟ $f'$ ดูว่า $f'$ เปลี่ยนจากลดเป็นเพิ่มที่ใด"
+    solution: "กราฟ $f'$ ลดลงเมื่อ $x < 2$ ($f'' < 0$) และเพิ่มเมื่อ $x > 2$ ($f'' > 0$) จุดเปลี่ยนเว้าของ $f$ จึงอยู่ที่ $x = 2$ ซึ่งเป็นจุดต่ำสุดของกราฟ $f'$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.derivative-applications.p020
+    topics: [math.calculus.derivative-applications]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการแก้ปัญหาค่าเหมาะที่สุด"
+    items:
+      - "วาดภาพและระบุปริมาณที่ต้องการให้มากหรือน้อยที่สุด"
+      - "ใช้เงื่อนไขของโจทย์เขียนปริมาณนั้นเป็นฟังก์ชันของตัวแปรเดียว"
+      - "กำหนดโดเมนที่เป็นไปได้ของตัวแปร"
+      - "หาจุดวิกฤตจาก $f'(x) = 0$ หรือ $f'$ หาค่าไม่ได้"
+      - "ยืนยันค่าสูงสุดหรือต่ำสุดด้วยการทดสอบอนุพันธ์หรือเทียบกับปลายช่วง"
+      - "ตอบปริมาณที่โจทย์ถามพร้อมหน่วย"
+    hints:
+      - "ต้องมีฟังก์ชันตัวแปรเดียวก่อนหาอนุพันธ์"
+      - "จุดวิกฤตยังไม่ใช่คำตอบจนกว่าจะยืนยัน"
+    solution: "วาดภาพ → เขียนฟังก์ชันตัวแปรเดียว → โดเมน → จุดวิกฤต → ยืนยัน → ตอบพร้อมหน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
