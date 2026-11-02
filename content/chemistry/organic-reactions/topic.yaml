@@ -1,0 +1,65 @@
+id: chemistry.organic.reactions
+subject: chemistry
+title: { th: ปฏิกิริยาของสารประกอบอินทรีย์, en: Reactions of organic compounds }
+summary: การเผาไหม้ ปฏิกิริยากับโบรมีนและเปอร์แมงกาเนตของไฮโดรคาร์บอน เอสเทอริฟิเคชัน การสังเคราะห์เอไมด์ ไฮโดรลิซิส สะปอนนิฟิเคชัน และการใช้สารอินทรีย์ในชีวิตและอุตสาหกรรม
+difficulty: 6.5
+minutes: 45
+prerequisites: [chemistry.organic.structures-naming, chemistry.stoichiometry.reactions]
+encompasses:
+  - { id: chemistry.organic.structures-naming, weight: 0.4 }
+  - { id: chemistry.stoichiometry.reactions, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: organic-reactions-map.svg
+    alt: "แผนภาพ 3 แถว แถว 1 การแทนที่: มีเทน (C ต่อ H 4 อะตอม) + Br–Br เมื่อมีแสง ได้ CH₃Br (C ต่อ H 3 อะตอมและ Br 1 อะตอม) + H–Br และบอกว่า HBr เปลี่ยนกระดาษลิตมัสสีน้ำเงินชื้นเป็นแดง แถว 2 การเติม: เอทีน (C=C แต่ละ C ต่อ H 2 อะตอม) + Br–Br ในที่มืด ได้ CH₂Br–CH₂Br ซึ่ง C แต่ละตัวต่อ Br 1 อะตอม พันธะคู่เปิดออก สีน้ำตาลแดงหาย แถว 3 เอสเทอริฟิเคชัน: CH₃–C(=O)–O–H (ล้อมกรอบ OH) + H–O–CH₂CH₃ (ล้อมกรอบ H) ลูกศรสองทาง ได้ CH₃–C(=O)–O–CH₂CH₃ เอทิลเอทาโนเอต + H₂O"
+    caption: "การแทนที่ได้ HBr เป็นผลพลอยได้ การเติมไม่ได้ ส่วนน้ำในเอสเทอริฟิเคชันเกิดจาก –OH ของกรดกับ H ของแอลกอฮอล์"
+  - { type: check, problem: chemistry.organic.reactions.p003, prompt: "แอลคีนทำปฏิกิริยาแบบการเติม" }
+  - type: worked-example
+    title: สมการการเผาไหม้และมวลคาร์บอนไดออกไซด์
+    problem: "เขียนสมการการเผาไหม้สมบูรณ์ของบิวเทน ($\\mathrm{C_4H_{10}}$) ในแก๊สหุงต้ม แล้วหามวล $\\mathrm{CO_2}$ ที่เกิดจากบิวเทน 58.12 g (C = 12.01, H = 1.008, O = 16.00)"
+    steps:
+      - text: "ดุล C และ H ก่อน: $\\mathrm{C_4H_{10} \\to 4CO_2 + 5H_2O}$ ด้านขวามี O $= 8 + 5 = 13$ อะตอม จึงต้องใช้ $\\mathrm{6\\tfrac{1}{2}O_2}$"
+      - text: "คูณ 2 ให้เป็นจำนวนเต็ม: $\\mathrm{2C_4H_{10} + 13O_2 \\to 8CO_2 + 10H_2O}$"
+      - text: "มวลโมเลกุลบิวเทน $= 4(12.01) + 10(1.008) = 58.12$ จึงมี 1.000 mol"
+      - text: "อัตราส่วน $\\mathrm{C_4H_{10} : CO_2} = 2 : 8 = 1 : 4$ ได้ $\\mathrm{CO_2}$ 4.000 mol $\\times 44.01 = 176.0\\,\\mathrm{g}$"
+        why: "มวล CO₂ มากกว่ามวลเชื้อเพลิง เพราะรวมออกซิเจนจากอากาศเข้าไปด้วย"
+    answer: "2C₄H₁₀ + 13O₂ → 8CO₂ + 10H₂O ได้ CO₂ 176.0 g"
+  - type: worked-example
+    title: เอสเทอร์จากกรดโพรพาโนอิกกับเมทานอล
+    problem: "ให้กรดโพรพาโนอิก ($\\mathrm{CH_3CH_2COOH}$) 7.41 g ทำปฏิกิริยากับเมทานอลมากเกินพอ มีกรดซัลฟิวริกเข้มข้นเป็นตัวเร่ง ได้เอสเทอร์ชื่ออะไร และถ้าผลได้ร้อยละ 70 ได้เอสเทอร์กี่กรัม"
+    steps:
+      - text: "เขียนสมการ: $\\mathrm{CH_3CH_2COOH + CH_3OH \\rightleftharpoons CH_3CH_2COOCH_3 + H_2O}$"
+      - text: "เรียกชื่อ: ส่วนแอลกอฮอล์ (เมทิล) + ส่วนกรด (โพรพาโนเอต) ได้ **เมทิลโพรพาโนเอต**"
+        why: "ชื่อเอสเทอร์ขึ้นต้นด้วยหมู่จากแอลกอฮอล์ แม้ในสูตรจะเขียนไว้ด้านขวา"
+      - text: "โมลกรด $= 7.41 / 74.08 = 0.100\\,\\mathrm{mol}$ ได้เอสเทอร์ตามทฤษฎี 0.100 mol $\\times 88.10 = 8.81\\,\\mathrm{g}$"
+      - text: "ผลได้จริง $= 8.81 \\times 0.70 = 6.17\\,\\mathrm{g}$ ผลได้ไม่ถึง 100% ส่วนหนึ่งเพราะปฏิกิริยาผันกลับได้"
+    answer: "เมทิลโพรพาโนเอต 6.17 g"
+  - type: molecule
+    title: เอทิลเอทาโนเอต (เอทิลแอซีเทต)
+    cid: 8857
+    name: ethyl acetate
+  - { type: check, problem: chemistry.organic.reactions.p007, prompt: "น้ำเกิดจาก –OH ของกรดกับ H ของแอลกอฮอล์" }
+glossary:
+  - { term: ปฏิกิริยาการแทนที่, definition: ปฏิกิริยาที่อะตอมหนึ่งในโมเลกุลถูกแทนที่ด้วยอะตอมอื่น เช่น H ของแอลเคนถูกแทนที่ด้วย Br }
+  - { term: ปฏิกิริยาการเติม, definition: ปฏิกิริยาที่อะตอมเติมเข้าที่พันธะคู่หรือพันธะสาม ทำให้พันธะเปิดออก }
+  - { term: เอสเทอริฟิเคชัน, definition: ปฏิกิริยาของกรดคาร์บอกซิลิกกับแอลกอฮอล์ ได้เอสเทอร์และน้ำ }
+  - { term: ไฮโดรลิซิส, definition: ปฏิกิริยาที่ใช้น้ำแยกสาร เช่น แยกเอสเทอร์เป็นกรดกับแอลกอฮอล์ }
+  - { term: สะปอนนิฟิเคชัน, definition: ไฮโดรลิซิสของเอสเทอร์ด้วยเบส ถ้าเป็นไขมันจะได้สบู่และกลีเซอรอล }
+  - { term: เอไมด์, definition: "สารที่มีหมู่ –CO–NH– เกิดจากกรดคาร์บอกซิลิกกับเอมีน" }
+flashcards:
+  - { front: "แอลเคน / แอลคีน กับ Br₂ ในที่มืด", back: "ไม่เกิด (ต้องมีแสง เกิดการแทนที่ได้ HBr) / สีหายทันที (การเติม)" }
+  - { front: "แอลคีนกับ KMnO₄", back: "สีม่วงจาง เกิดตะกอนสีน้ำตาล MnO₂" }
+  - { front: "กรด + แอลกอฮอล์ ⇌", back: "เอสเทอร์ + น้ำ (H₂SO₄ เข้มข้นเป็นตัวเร่ง)" }
+  - { front: "ไขมัน + NaOH →", back: "สบู่ + กลีเซอรอล (สะปอนนิฟิเคชัน)" }
+  - { front: "กรด + เอมีน →", back: "เอไมด์ + น้ำ" }
+references:
+  - { title: "เอสเทอร์", url: "https://th.wikipedia.org/wiki/เอสเทอร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Fischer–Speier esterification", url: "https://en.wikipedia.org/wiki/Fischer%E2%80%93Speier_esterification", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Saponification", url: "https://en.wikipedia.org/wiki/Saponification", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "20.1 Hydrocarbons (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/20-1-hydrocarbons", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
