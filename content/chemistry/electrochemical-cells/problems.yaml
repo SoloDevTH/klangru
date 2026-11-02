@@ -1,0 +1,313 @@
+problems:
+  - id: chemistry.redox.electrochemical-cells.p001
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 1
+    type: mcq
+    stem: "ในเซลล์เคมีไฟฟ้าทุกชนิด ขั้วแอโนดคือขั้วที่เกิดอะไร"
+    choices:
+      - { id: a, text: "ออกซิเดชัน", correct: true, feedback: "ถูก แอโนดเกิดออกซิเดชันเสมอ ทั้งในเซลล์กัลวานิกและเซลล์อิเล็กโทรไลต์" }
+      - { id: b, text: "รีดักชัน", feedback: "รีดักชันเกิดที่แคโทด" }
+      - { id: c, text: "ไม่มีปฏิกิริยา เป็นเพียงขั้วบวก", feedback: "แอโนดมีปฏิกิริยาเสมอ และเป็นขั้วลบในเซลล์กัลวานิก" }
+    hints:
+      - "จำคู่สระ: แอโนด-ออกซิเดชัน (ขึ้นต้นด้วยสระ) แคโทด-รีดักชัน"
+      - "แอโนดไม่ได้นิยามด้วยเครื่องหมายบวกหรือลบ"
+    solution: "แอโนดคือขั้วที่เกิด **ออกซิเดชัน** แคโทดคือขั้วที่เกิดรีดักชัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p002
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 2
+    type: mcq
+    stem: "จากแผนภาพเซลล์ $\\mathrm{Zn(s)\\,|\\,Zn^{2+}(aq)\\,\\|\\,Ag^+(aq)\\,|\\,Ag(s)}$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "Zn เป็นแอโนด อิเล็กตรอนไหลในลวดจาก Zn ไป Ag", correct: true, feedback: "ถูก ด้านซ้ายของแผนภาพคือแอโนด" }
+      - { id: b, text: "Ag เป็นแอโนด อิเล็กตรอนไหลจาก Ag ไป Zn", feedback: "แผนภาพเขียนแอโนดทางซ้าย Ag อยู่ทางขวาจึงเป็นแคโทด" }
+      - { id: c, text: "เส้นคู่ ‖ หมายถึงลวดตัวนำ", feedback: "เส้นคู่แทนสะพานเกลือ ลวดไม่ได้เขียนในแผนภาพ" }
+    hints:
+      - "แผนภาพเซลล์เขียนแอโนดทางซ้ายเสมอ"
+      - "อิเล็กตรอนไหลจากขั้วที่เกิดออกซิเดชัน"
+    solution: "ซ้ายคือ **แอโนด (Zn)** ขวาคือแคโทด (Ag) อิเล็กตรอนไหลในลวดจาก Zn ไป Ag"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p003
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้ $E^\\circ$ ของ $\\mathrm{Cu^{2+}/Cu} = +0.34$ V และ $\\mathrm{Zn^{2+}/Zn} = -0.76$ V คำนวณ $E^\\circ_\\text{เซลล์}$ ของเซลล์ดาเนียล $\\mathrm{Zn\\,|\\,Zn^{2+}\\,\\|\\,Cu^{2+}\\,|\\,Cu}$ เป็นโวลต์"
+    answer: { value: 1.1, unit: V, tolerance: 0.01 }
+    misconceptions:
+      - { match: -0.42, feedback: "นำค่าทั้งสองมาบวกกัน ต้องใช้ E°แคโทด − E°แอโนด" }
+      - { match: -1.1, feedback: "ลบสลับข้าง แคโทด (Cu) ต้องเป็นตัวตั้ง" }
+    hints:
+      - "Cu มี E° สูงกว่า จึงเป็นแคโทด"
+      - "E°เซลล์ = E°แคโทด − E°แอโนด"
+    solution: "$E^\\circ = 0.34 - (-0.76) =$ **1.10 V**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p004
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 3
+    type: numeric
+    stem: "เซลล์ $\\mathrm{Mg + 2Ag^+ \\to Mg^{2+} + 2Ag}$ มี $E^\\circ_\\text{เซลล์}$ กี่โวลต์ ($E^\\circ$: Mg²⁺/Mg −2.37 V, Ag⁺/Ag +0.80 V)"
+    answer: { value: 3.17, unit: V, tolerance: 0.01 }
+    misconceptions:
+      - { match: 3.97, feedback: "คูณ E° ของเงินด้วย 2 ตามสัมประสิทธิ์ แต่ E° ไม่ขึ้นกับจำนวนอะตอม" }
+      - { match: -1.57, feedback: "นำค่ามาบวกกัน ต้องเป็นแคโทดลบแอโนด" }
+    hints:
+      - "Ag⁺ ถูกรีดิวซ์ (แคโทด) Mg ถูกออกซิไดซ์ (แอโนด)"
+      - "ไม่ต้องคูณ E° ด้วยสัมประสิทธิ์ 2"
+    solution: "$E^\\circ = 0.80 - (-2.37) =$ **3.17 V**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p005
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 3
+    type: mcq
+    stem: "ถ้ายกสะพานเกลือออกจากเซลล์ Zn–Cu ที่กำลังจ่ายไฟ จะเกิดอะไรขึ้น"
+    choices:
+      - { id: a, text: "กระแสหยุดไหลทันที เพราะประจุสะสมในสารละลายทั้งสองข้างและวงจรขาด", correct: true, feedback: "ถูก ฝั่งแอโนดมีไอออนบวกเพิ่ม ฝั่งแคโทดมีไอออนบวกลด ต้องมีไอออนจากสะพานเกลือมาชดเชย" }
+      - { id: b, text: "กระแสไหลแรงขึ้นเพราะไม่มีสิ่งกีดขวาง", feedback: "สะพานเกลือเป็นส่วนหนึ่งของวงจร ไม่ใช่สิ่งกีดขวาง" }
+      - { id: c, text: "ไม่มีผล เพราะอิเล็กตรอนไหลผ่านลวดอยู่แล้ว", feedback: "อิเล็กตรอนไหลในลวดได้ก็ต่อเมื่อไอออนไหลครบวงจรในสารละลายด้วย" }
+    hints:
+      - "หน้าที่ของสะพานเกลือคืออะไร"
+      - "ถ้าประจุบวกสะสมฝั่งแอโนด อิเล็กตรอนยังออกจากแอโนดได้หรือไม่"
+    solution: "สะพานเกลือรักษาความเป็นกลางทางไฟฟ้าและทำให้วงจรครบ ถ้ายกออก **กระแสจะหยุด**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p006
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 3
+    type: mcq
+    stem: "แยกสารละลาย $\\mathrm{CuSO_4}$ ด้วยไฟฟ้าโดยใช้ขั้วคาร์บอนดังภาพ ที่ขั้ว A จะสังเกตเห็นอะไร"
+    figure:
+      src: p-electrolysis-cuso4.svg
+      alt: "บีกเกอร์บรรจุสารละลาย CuSO₄ สีฟ้า มีแท่งคาร์บอนสองแท่ง แท่งซ้ายชื่อ B ต่อสายไฟกับขั้วบวก (+) ของแบตเตอรี่ แท่งขวาชื่อ A ต่อสายไฟกับขั้วลบ (−) ของแบตเตอรี่"
+    choices:
+      - { id: a, text: "มีของแข็งสีน้ำตาลแดงของทองแดงเกาะ", correct: true, feedback: "ถูก A ต่อขั้วลบจึงเป็นแคโทด Cu²⁺ รับอิเล็กตรอนเป็นทองแดง" }
+      - { id: b, text: "มีฟองแก๊สออกซิเจน", feedback: "แก๊สออกซิเจนเกิดที่แอโนด (B) ซึ่งต่อกับขั้วบวก" }
+      - { id: c, text: "แท่งคาร์บอนละลายหายไป", feedback: "คาร์บอนเป็นขั้วเฉื่อย ไม่ละลายในปฏิกิริยานี้" }
+      - { id: d, text: "มีฟองแก๊สไฮโดรเจน", feedback: "Cu²⁺ รับอิเล็กตรอนได้ง่ายกว่าน้ำ (E° สูงกว่า) จึงได้ทองแดง ไม่ใช่ไฮโดรเจน" }
+    hints:
+      - "ขั้วที่ต่อกับขั้วลบของแหล่งไฟฟ้าเป็นแคโทดหรือแอโนด"
+      - "ที่แคโทด ไอออนใดรับอิเล็กตรอนได้ง่ายที่สุด"
+    solution: "A ต่อขั้วลบ จึงเป็น **แคโทด** เกิด $\\mathrm{Cu^{2+} + 2e^- \\to Cu}$ ได้ทองแดงเกาะ ส่วน B (แอโนด) เกิดแก๊สออกซิเจนจากน้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p007
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านเครื่องประดับชุบเงินบนต่างหูด้วยกระแส 0.50 A นาน 30.0 นาที ในสารละลายไอออน Ag⁺ จะได้เงินเคลือบกี่กรัม (Ag = 107.87, F = 96,485 C/mol)"
+    answer: { value: 1.006, unit: g, tolerance: 0.01 }
+    misconceptions:
+      - { match: 0.503, feedback: "ใช้อิเล็กตรอน 2 ตัวต่ออะตอม แต่ Ag⁺ รับอิเล็กตรอนเพียง 1 ตัว" }
+      - { match: 0.0168, feedback: "ใช้เวลาเป็นนาที ต้องแปลงเป็นวินาทีก่อน" }
+    hints:
+      - "Q = It โดย t เป็นวินาที"
+      - "Ag⁺ + e⁻ → Ag อิเล็กตรอน 1 mol ให้เงิน 1 mol"
+    solution: "$Q = 0.50 \\times 1800 = 900$ C โมล e⁻ $= 900/96485 = 0.009328$ ได้ Ag 0.009328 mol $\\times 107.87 \\approx$ **1.006 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p008
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: numeric
+    stem: "โรงงานทำทองแดงให้บริสุทธิ์ด้วยไฟฟ้า ใช้กระแส 10.0 A นาน 1.00 ชั่วโมง แคโทดจะมีทองแดงบริสุทธิ์เพิ่มขึ้นกี่กรัม (Cu = 63.55, F = 96,485 C/mol)"
+    answer: { value: 11.86, unit: g, tolerance: 0.12 }
+    misconceptions:
+      - { match: 23.71, feedback: "ลืมหารด้วย 2 Cu²⁺ ต้องใช้อิเล็กตรอน 2 ตัวต่ออะตอม" }
+      - { match: 0.198, feedback: "ใช้เวลาเป็นนาที (60) แทนวินาที (3,600)" }
+    hints:
+      - "Q = 10.0 × 3600"
+      - "Cu²⁺ + 2e⁻ → Cu"
+    solution: "$Q = 36000$ C โมล e⁻ $= 0.3731$ โมล Cu $= 0.1866$ มวล $= 0.1866 \\times 63.55 \\approx$ **11.86 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p009
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: mcq
+    stem: "แยกโซเดียมคลอไรด์ด้วยไฟฟ้าสองแบบ (1) NaCl หลอมเหลว (2) สารละลาย NaCl เข้มข้นในน้ำ ผลิตภัณฑ์ที่แคโทดของแต่ละแบบคืออะไร"
+    choices:
+      - { id: a, text: "(1) โลหะโซเดียม (2) แก๊สไฮโดรเจน", correct: true, feedback: "ถูก ในสารละลาย น้ำรับอิเล็กตรอนได้ง่ายกว่า Na⁺ จึงได้ H₂ และเหลือ OH⁻" }
+      - { id: b, text: "(1) โลหะโซเดียม (2) โลหะโซเดียม", feedback: "ถ้าได้โซเดียมในน้ำ โซเดียมจะทำปฏิกิริยากับน้ำทันที จริง ๆ แล้วน้ำถูกรีดิวซ์ก่อน" }
+      - { id: c, text: "(1) แก๊สคลอรีน (2) แก๊สคลอรีน", feedback: "คลอรีนเกิดที่แอโนด ไม่ใช่แคโทด" }
+    hints:
+      - "แคโทดเกิดรีดักชัน ในของเหลวหลอมเหลวมีแต่ Na⁺ และ Cl⁻"
+      - "ในสารละลายมีน้ำแข่งขันรับอิเล็กตรอนด้วย"
+    solution: "(1) หลอมเหลว: **Na⁺ + e⁻ → Na** (2) สารละลาย: **2H₂O + 2e⁻ → H₂ + 2OH⁻** เพราะ Na⁺ รับอิเล็กตรอนยากกว่าน้ำมาก ทั้งสองแบบได้ Cl₂ ที่แอโนด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p010
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 3
+    type: mcq
+    stem: "ทำไมจึงไม่ควรนำถ่านไฟฉายธรรมดา (เซลล์แห้งสังกะสี-คาร์บอน) ไปชาร์จด้วยเครื่องชาร์จ"
+    choices:
+      - { id: a, text: "เป็นเซลล์ปฐมภูมิ ปฏิกิริยาย้อนกลับไม่ได้ดี การชาร์จทำให้ร้อน เกิดแก๊ส และอาจรั่วหรือบวม", correct: true, feedback: "ถูก ควรใช้แบตเตอรี่ทุติยภูมิที่ออกแบบมาให้ชาร์จได้" }
+      - { id: b, text: "เพราะถ่านไฟฉายไม่มีปฏิกิริยาเคมี", feedback: "ถ่านไฟฉายให้ไฟฟ้าจากปฏิกิริยารีดอกซ์ระหว่างสังกะสีกับแมงกานีสไดออกไซด์" }
+      - { id: c, text: "เพราะถ่านไฟฉายเป็นเซลล์อิเล็กโทรไลต์", feedback: "ถ่านไฟฉายเป็นเซลล์กัลวานิก จ่ายไฟได้เอง" }
+    hints:
+      - "เซลล์ปฐมภูมิกับทุติยภูมิต่างกันอย่างไร"
+      - "ผลิตภัณฑ์ในถ่านไฟฉายเปลี่ยนกลับเป็นสารตั้งต้นได้ดีหรือไม่"
+    solution: "ถ่านไฟฉายเป็น **เซลล์ปฐมภูมิ** ใช้แล้วทิ้ง การชาร์จเสี่ยงต่อความร้อน การรั่ว และการระเบิด ถ่านที่ใช้แล้วควรทิ้งในถังขยะอันตราย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p011
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: mcq
+    stem: "ช่างตรวจแบตเตอรี่ตะกั่ว-กรดของรถยนต์ด้วยไฮโดรมิเตอร์ (วัดความหนาแน่นของกรด) ถ้าแบตเตอรี่ไฟใกล้หมด ค่าที่วัดได้เป็นอย่างไร และเพราะอะไร"
+    choices:
+      - { id: a, text: "ความหนาแน่นต่ำลง เพราะขณะจ่ายไฟ H₂SO₄ ถูกใช้ไปเป็น PbSO₄ และเกิดน้ำ", correct: true, feedback: "ถูก ทั้งสองขั้วใช้ SO₄²⁻ และแคโทดให้น้ำ กรดจึงเจือจางลง" }
+      - { id: b, text: "ความหนาแน่นสูงขึ้น เพราะเกิดกรดเพิ่ม", feedback: "ขณะจ่ายไฟกรดถูกใช้ไป ไม่ได้เกิดเพิ่ม" }
+      - { id: c, text: "ไม่เปลี่ยน เพราะกรดเป็นเพียงตัวกลาง", feedback: "H₂SO₄ เป็นสารตั้งต้นในปฏิกิริยาของทั้งสองขั้ว" }
+    hints:
+      - "ดูครึ่งปฏิกิริยาที่แอโนดและแคโทดขณะจ่ายไฟ"
+      - "ไอออน SO₄²⁻ และ H⁺ ถูกใช้หรือเกิดขึ้น"
+    solution: "ปฏิกิริยารวมขณะจ่ายไฟ $\\mathrm{Pb + PbO_2 + 2H_2SO_4 \\to 2PbSO_4 + 2H_2O}$ กรดถูกใช้และเกิดน้ำ **ความหนาแน่นจึงลดลง** การชาร์จทำให้ปฏิกิริยาย้อนกลับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p012
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: mcq
+    stem: "ขณะรถยนต์ไฟฟ้า (EV) ใช้พลังงานจากแบตเตอรี่ลิเทียมไอออน ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "Li⁺ เคลื่อนจากแกรไฟต์ (แอโนด) ผ่านอิเล็กโทรไลต์ไปยังออกไซด์ของโลหะ (แคโทด) ส่วนอิเล็กตรอนไหลผ่านมอเตอร์", correct: true, feedback: "ถูก ไอออนไหลภายใน อิเล็กตรอนไหลในวงจรภายนอก" }
+      - { id: b, text: "อิเล็กตรอนไหลผ่านอิเล็กโทรไลต์ ส่วน Li⁺ ไหลผ่านสายไฟ", feedback: "สลับกัน อิเล็กโทรไลต์นำไอออน สายไฟนำอิเล็กตรอน" }
+      - { id: c, text: "โลหะลิเทียมละลายหมดเมื่อแบตเตอรี่หมด", feedback: "ลิเทียมอยู่ในรูปไอออนที่เคลื่อนไปมาระหว่างขั้ว เมื่อชาร์จจะกลับไปแทรกในแกรไฟต์" }
+    hints:
+      - "อะไรไหลในสายไฟ อะไรไหลในอิเล็กโทรไลต์"
+      - "ขณะจ่ายไฟ แอโนดคือขั้วที่ปล่อยอิเล็กตรอน"
+    solution: "ขณะจ่ายไฟ **Li⁺ ไหลจากแกรไฟต์ไปแคโทดผ่านอิเล็กโทรไลต์** และอิเล็กตรอนไหลผ่านวงจรภายนอกไปขับมอเตอร์ เมื่อชาร์จจะกลับทิศ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p013
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 5
+    type: numeric
+    stem: "คำนวณ $\\Delta G^\\circ$ ของเซลล์ $\\mathrm{Zn + Cu^{2+} \\to Zn^{2+} + Cu}$ ($E^\\circ_\\text{เซลล์} = 1.10$ V, $F = 96{,}485$ C/mol) ตอบเป็นกิโลจูลต่อโมล"
+    answer: { value: -212.3, unit: kJ/mol, tolerance: 1 }
+    misconceptions:
+      - { match: -106.1, feedback: "ใช้ n = 1 แต่ปฏิกิริยานี้ถ่ายโอนอิเล็กตรอน 2 mol" }
+      - { match: 212.3, feedback: "ลืมเครื่องหมายลบ ΔG° = −nFE° ปฏิกิริยาที่เกิดได้เองมี ΔG° ติดลบ" }
+    hints:
+      - "Zn → Zn²⁺ + 2e⁻ จึงมี n = 2"
+      - "ΔG° = −nFE° ได้หน่วยจูล แล้วหารด้วย 1,000"
+    solution: "$\\Delta G^\\circ = -2 \\times 96485 \\times 1.10 = -212{,}267$ J ≈ **−212.3 kJ/mol** ค่าติดลบยืนยันว่าเกิดได้เอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p014
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: mcq
+    stem: "หลังคาเหล็กอาบสังกะสีกับกระป๋องเหล็กเคลือบดีบุก ถ้าผิวเคลือบถลอกจนเห็นเนื้อเหล็ก ข้อใดถูกต้อง ($E^\\circ$: Zn −0.76, Fe −0.45, Sn −0.14 V)"
+    choices:
+      - { id: a, text: "บนหลังคา สังกะสีถูกกัดกร่อนแทนเหล็ก ส่วนบนกระป๋อง เหล็กถูกกัดกร่อนเร็วขึ้น", correct: true, feedback: "ถูก โลหะที่ E° ต่ำกว่าเป็นแอโนดและถูกกัดกร่อน" }
+      - { id: b, text: "ทั้งสองแบบ เหล็กยังปลอดภัยเพราะยังมีโลหะเคลือบบางส่วน", feedback: "ดีบุกมี E° สูงกว่าเหล็ก เหล็กจึงกลายเป็นแอโนดและผุเร็วขึ้น" }
+      - { id: c, text: "บนหลังคา เหล็กถูกกัดกร่อนเร็วขึ้น ส่วนบนกระป๋อง ดีบุกถูกกัดกร่อนแทน", feedback: "สลับกัน Zn ให้อิเล็กตรอนง่ายกว่า Fe แต่ Sn ให้อิเล็กตรอนยากกว่า Fe" }
+    hints:
+      - "เทียบ E° ของโลหะเคลือบกับเหล็ก"
+      - "โลหะที่ E° ต่ำกว่าถูกออกซิไดซ์ (เป็นแอโนด)"
+    solution: "Zn มี E° ต่ำกว่า Fe จึง **ถูกกัดกร่อนแทนเหล็ก** (โลหะสังเวย) แต่ Sn มี E° สูงกว่า Fe เมื่อถลอก **เหล็กกลายเป็นแอโนดและผุเร็วขึ้น**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p015
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 5
+    type: numeric
+    stem: "ต้องชุบนิกเกิลให้ได้ 2.00 g บนชิ้นงาน ด้วยกระแส 2.50 A จากสารละลาย Ni²⁺ ต้องใช้เวลากี่นาที (Ni = 58.69, F = 96,485 C/mol)"
+    answer: { value: 43.84, unit: นาที, tolerance: 0.44 }
+    misconceptions:
+      - { match: 21.92, feedback: "ใช้อิเล็กตรอน 1 ตัวต่ออะตอม แต่ Ni²⁺ ต้องการ 2 ตัว" }
+      - { match: 2630, feedback: "นี่คือเวลาเป็นวินาที ต้องหารด้วย 60" }
+    hints:
+      - "โมล Ni = 2.00/58.69 โมลอิเล็กตรอน = 2 × โมล Ni"
+      - "t = Q/I = (โมล e⁻ × F)/I แล้วแปลงเป็นนาที"
+    solution: "Ni $= 0.03408$ mol e⁻ $= 0.06815$ mol $Q = 0.06815 \\times 96485 = 6576$ C $t = 6576/2.50 = 2630$ s ≈ **43.8 นาที**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p016
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 3
+    type: order
+    stem: "ใช้ค่า $E^\\circ$ ในบทเรียน เรียงโลหะตามความสามารถในการเป็นตัวรีดิวซ์ จาก **แรงที่สุด** ไป **อ่อนที่สุด**"
+    items:
+      - "Mg"
+      - "Al"
+      - "Zn"
+      - "Fe"
+      - "Cu"
+      - "Ag"
+    hints:
+      - "ตัวรีดิวซ์ที่แรงให้อิเล็กตรอนง่าย มี E° ต่ำ"
+      - "เรียง E° จากค่าลบมากที่สุดไปบวกมากที่สุด"
+    solution: "E°: Mg −2.37 < Al −1.66 < Zn −0.76 < Fe −0.45 < Cu +0.34 < Ag +0.80 ลำดับตัวรีดิวซ์: **Mg > Al > Zn > Fe > Cu > Ag**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p017
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 5
+    type: mcq
+    stem: "โรงงานแผงวงจรไฟฟ้ากัดลายทองแดงบนแผ่นวงจรด้วยสารละลาย $\\mathrm{FeCl_3}$ ใช้ $E^\\circ$ อธิบายว่าปฏิกิริยา $\\mathrm{Cu + 2Fe^{3+} \\to Cu^{2+} + 2Fe^{2+}}$ เกิดได้เองหรือไม่ ($E^\\circ$: Fe³⁺/Fe²⁺ +0.77 V, Cu²⁺/Cu +0.34 V)"
+    choices:
+      - { id: a, text: "เกิดได้เอง E°เซลล์ = +0.43 V เพราะ Fe³⁺ รับอิเล็กตรอนได้ดีกว่า Cu²⁺", correct: true, feedback: "ถูก Fe³⁺ ออกซิไดซ์ทองแดงให้ละลายเป็น Cu²⁺" }
+      - { id: b, text: "ไม่เกิด เพราะทองแดงไม่ทำปฏิกิริยากับกรด", feedback: "FeCl₃ ไม่ได้ทำหน้าที่เป็นกรด แต่เป็นตัวออกซิไดส์ที่แรงพอจะออกซิไดซ์ทองแดง" }
+      - { id: c, text: "เกิดได้เอง E°เซลล์ = +1.11 V", feedback: "บวกค่าทั้งสอง ต้องใช้แคโทด (Fe³⁺) ลบแอโนด (Cu)" }
+      - { id: d, text: "ไม่เกิด E°เซลล์ = −0.43 V", feedback: "สลับแคโทดกับแอโนด Fe³⁺ ถูกรีดิวซ์ จึงเป็นแคโทด" }
+    hints:
+      - "สารใดถูกรีดิวซ์ในสมการ"
+      - "E°เซลล์ = E°(Fe³⁺/Fe²⁺) − E°(Cu²⁺/Cu)"
+    solution: "Fe³⁺ ถูกรีดิวซ์ (แคโทด) Cu ถูกออกซิไดซ์ (แอโนด) $E^\\circ = 0.77 - 0.34 =$ **+0.43 V** เป็นบวก จึงเกิดได้เอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p018
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 2
+    type: match
+    stem: "จับคู่อุปกรณ์หรือกระบวนการกับประเภทของเซลล์"
+    pairs:
+      - { left: "ถ่านไฟฉายอัลคาไลน์", right: "เซลล์กัลวานิกปฐมภูมิ" }
+      - { left: "แบตเตอรี่ลิเทียมไอออนในโทรศัพท์", right: "เซลล์กัลวานิกทุติยภูมิ" }
+      - { left: "การชุบโครเมียมบนก๊อกน้ำ", right: "เซลล์อิเล็กโทรไลต์" }
+      - { left: "รถที่ป้อนแก๊สไฮโดรเจนและออกซิเจนต่อเนื่อง", right: "เซลล์เชื้อเพลิง" }
+    hints:
+      - "เซลล์ใดใช้ไฟฟ้าจากภายนอก"
+      - "เซลล์ใดชาร์จใหม่ได้ และเซลล์ใดต้องป้อนเชื้อเพลิง"
+    solution: "ถ่านอัลคาไลน์ → ปฐมภูมิ · ลิเทียมไอออน → ทุติยภูมิ · การชุบ → เซลล์อิเล็กโทรไลต์ · H₂/O₂ ป้อนต่อเนื่อง → เซลล์เชื้อเพลิง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.redox.electrochemical-cells.p019
+    topics: [chemistry.redox.electrochemical-cells]
+    difficulty: 4
+    type: numeric
+    stem: "แยกน้ำเกลือด้วยไฟฟ้าด้วยกระแส 2.00 A นาน 965 วินาที แก๊สไฮโดรเจนที่แคโทดมีปริมาตรกี่ลูกบาศก์เซนติเมตรที่ STP ($\\mathrm{2H_2O + 2e^- \\to H_2 + 2OH^-}$ แก๊ส 1 mol = 22.4 dm³ ที่ STP, F = 96,485 C/mol)"
+    answer: { value: 224, unit: cm³, tolerance: 2 }
+    misconceptions:
+      - { match: 448, feedback: "ลืมว่าต้องใช้อิเล็กตรอน 2 mol ต่อ H₂ 1 mol" }
+      - { match: 0.224, feedback: "นี่คือปริมาตรเป็น dm³ ต้องคูณ 1,000 เป็น cm³" }
+    hints:
+      - "Q = 2.00 × 965 แล้วหาโมลอิเล็กตรอน"
+      - "โมล H₂ = โมล e⁻ ÷ 2"
+    solution: "$Q = 1930$ C โมล e⁻ $= 0.0200$ โมล H₂ $= 0.0100$ ปริมาตร $= 0.0100 \\times 22.4 = 0.224$ dm³ = **224 cm³**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

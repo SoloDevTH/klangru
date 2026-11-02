@@ -1,0 +1,328 @@
+problems:
+  - id: chemistry.acids-bases.acid-base-ph.p001
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 1
+    type: mcq
+    stem: "สารละลายที่มี pH 3 เป็นสารละลายประเภทใด (ที่ 25 °C)"
+    choices:
+      - { id: a, text: "กรด", correct: true, feedback: "ถูก pH น้อยกว่า 7 เป็นกรด" }
+      - { id: b, text: "เบส", feedback: "เบสมี pH มากกว่า 7" }
+      - { id: c, text: "กลาง", feedback: "สารละลายที่เป็นกลางมี pH เท่ากับ 7" }
+    hints:
+      - "เทียบกับ pH 7"
+      - "pH ยิ่งต่ำยิ่งเป็นกรด"
+    solution: "pH 3 น้อยกว่า 7 จึงเป็น **กรด**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p002
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 2
+    type: mcq
+    stem: "ในปฏิกิริยา $\\mathrm{NH_3 + H_2O \\rightleftharpoons NH_4^+ + OH^-}$ น้ำทำหน้าที่เป็นอะไรตามทฤษฎีเบรินสเตด-ลาวรี"
+    choices:
+      - { id: a, text: "กรด เพราะให้โปรตอนแก่ NH₃", correct: true, feedback: "ถูก น้ำเสีย H⁺ กลายเป็น OH⁻" }
+      - { id: b, text: "เบส เพราะรับโปรตอน", feedback: "NH₃ ต่างหากที่รับโปรตอนกลายเป็น NH₄⁺" }
+      - { id: c, text: "ไม่เป็นทั้งกรดและเบส เป็นเพียงตัวทำละลาย", feedback: "น้ำเข้าร่วมปฏิกิริยาโดยให้โปรตอน จึงเป็นกรด" }
+    hints:
+      - "ดูว่า H₂O กลายเป็นอะไรทางขวา"
+      - "เสีย H⁺ คือกรด รับ H⁺ คือเบส"
+    solution: "H₂O → OH⁻ คือเสียโปรตอน น้ำจึงเป็น **กรด** ส่วน NH₃ เป็นเบส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p003
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 2
+    type: match
+    stem: "จับคู่กรดกับเบสคู่ (คู่เบส) ของมัน"
+    pairs:
+      - { left: "HCl", right: "Cl⁻" }
+      - { left: "NH₄⁺", right: "NH₃" }
+      - { left: "H₂O", right: "OH⁻" }
+      - { left: "HCO₃⁻", right: "CO₃²⁻" }
+      - { left: "CH₃COOH", right: "CH₃COO⁻" }
+    hints:
+      - "เบสคู่คือกรดที่เสีย H⁺ ไปหนึ่งตัว"
+      - "ประจุจะลดลง 1 เสมอ"
+    solution: "HCl/Cl⁻ · NH₄⁺/NH₃ · H₂O/OH⁻ · HCO₃⁻/CO₃²⁻ · CH₃COOH/CH₃COO⁻ แต่ละคู่ต่างกันด้วย H⁺ หนึ่งตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p004
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: numeric
+    stem: "สารละลายกรดไนตริก ($\\mathrm{HNO_3}$ กรดแก่) เข้มข้น 0.0050 mol/L มี pH เท่าใด"
+    answer: { value: 2.3, tolerance: 0.01 }
+    misconceptions:
+      - { match: 11.7, feedback: "นี่คือ 14 − 2.30 ซึ่งใช้กับเบส สำหรับกรด pH = −log[H₃O⁺] โดยตรง" }
+      - { match: 0.0050, feedback: "นี่คือความเข้มข้น ต้องหา −log ของค่านี้" }
+    hints:
+      - "กรดแก่แตกตัวหมด [H₃O⁺] = ความเข้มข้นของกรด"
+      - "pH = −log(0.0050)"
+    solution: "$[\\mathrm{H_3O^+}] = 0.0050$ mol/L $\\mathrm{pH} = -\\log 0.0050 =$ **2.30**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p005
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: numeric
+    stem: "น้ำปูนใสเจือจางมีแคลเซียมไฮดรอกไซด์ ($\\mathrm{Ca(OH)_2}$) 0.0010 mol/L ซึ่งแตกตัวหมด สารละลายนี้มี pH เท่าใด (25 °C)"
+    answer: { value: 11.3, tolerance: 0.01 }
+    misconceptions:
+      - { match: 11, feedback: "ลืมว่า Ca(OH)₂ 1 หน่วยให้ OH⁻ 2 ไอออน [OH⁻] = 0.0020 mol/L" }
+      - { match: 2.7, feedback: "นี่คือ pOH ต้องใช้ pH = 14 − pOH" }
+    hints:
+      - "[OH⁻] = 2 × 0.0010 mol/L"
+      - "หา pOH แล้วใช้ pH = 14 − pOH"
+    solution: "$[\\mathrm{OH^-}] = 0.0020$ $\\mathrm{pOH} = 2.70$ $\\mathrm{pH} = 14.00 - 2.70 =$ **11.30**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p006
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: mcq
+    stem: "ในปฏิกิริยา $\\mathrm{BF_3 + NH_3 \\to F_3B{-}NH_3}$ สารใดเป็นกรดลิวอิส และเพราะเหตุใด"
+    choices:
+      - { id: a, text: "BF₃ เพราะรับคู่อิเล็กตรอนโดดเดี่ยวจาก N", correct: true, feedback: "ถูก B ใน BF₃ มีอิเล็กตรอนไม่ครบแปด จึงรับคู่อิเล็กตรอนได้" }
+      - { id: b, text: "NH₃ เพราะให้โปรตอน", feedback: "NH₃ ไม่ได้ให้โปรตอน แต่ให้คู่อิเล็กตรอน จึงเป็นเบสลิวอิส" }
+      - { id: c, text: "ไม่มีกรด เพราะไม่มี H⁺ ถ่ายโอน", feedback: "ทฤษฎีลิวอิสไม่ต้องมีโปรตอน ดูที่การรับและให้คู่อิเล็กตรอน" }
+    hints:
+      - "กรดลิวอิสคือผู้รับคู่อิเล็กตรอน"
+      - "N ใน NH₃ มีคู่อิเล็กตรอนโดดเดี่ยว"
+    solution: "NH₃ ให้คู่อิเล็กตรอนโดดเดี่ยว (เบสลิวอิส) **BF₃ รับคู่อิเล็กตรอน จึงเป็นกรดลิวอิส**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p007
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 4
+    type: numeric
+    stem: "สมมติว่าน้ำส้มสายชูขวดหนึ่งมีกรดแอซีติก 0.80 mol/L ($K_a = 1.8 \\times 10^{-5}$) จงหา pH (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.42, tolerance: 0.02 }
+    misconceptions:
+      - { match: 0.1, feedback: "คิดว่ากรดแอซีติกแตกตัวหมดเหมือนกรดแก่ แต่กรดอ่อนแตกตัวเพียงบางส่วน" }
+      - { match: 4.84, feedback: "ลืมถอดรากที่สอง [H₃O⁺] = √(Ka × C) ไม่ใช่ Ka × C" }
+    hints:
+      - "$K_a = x^2/(0.80 - x)$"
+      - "x น้อยมากเทียบกับ 0.80 จึงประมาณ $x \\approx \\sqrt{K_a \\times 0.80}$"
+    solution: "$x = \\sqrt{1.8 \\times 10^{-5} \\times 0.80} = 3.79 \\times 10^{-3}$ mol/L $\\mathrm{pH} = -\\log(3.79 \\times 10^{-3}) =$ **2.42**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p008
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 4
+    type: numeric
+    stem: "กรดแอซีติก 0.010 mol/L ($K_a = 1.8 \\times 10^{-5}$) แตกตัวได้กี่เปอร์เซ็นต์ (แก้สมการกำลังสอง ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.15, unit: "%", tolerance: 0.04 }
+    misconceptions:
+      - { match: 4.24, feedback: "ใช้การประมาณ √(Ka·C) ซึ่งคลาดเคลื่อนเมื่อแตกตัวเกิน 4% โจทย์ให้แก้สมการกำลังสอง" }
+      - { match: 1.33, feedback: "นี่คือร้อยละการแตกตัวที่ 0.10 mol/L ที่ 0.010 mol/L กรดแตกตัวได้ร้อยละมากกว่า" }
+    hints:
+      - "$x^2 + K_a x - K_a C = 0$"
+      - "ร้อยละการแตกตัว = x/C × 100"
+    solution: "$x^2 + 1.8 \\times 10^{-5}x - 1.8 \\times 10^{-7} = 0$ ได้ $x = 4.15 \\times 10^{-4}$ ร้อยละ $= 4.15 \\times 10^{-4}/0.010 \\times 100 =$ **4.15%** มากกว่าที่ 0.10 mol/L (1.33%) เพราะยิ่งเจือจางยิ่งแตกตัวมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p009
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 4
+    type: numeric
+    stem: "กรดอ่อน HA 0.050 mol/L มี pH 3.20 จงหา $K_a$ ตอบเป็นตัวเลขที่คูณกับ $10^{-6}$ (เช่น ถ้า $K_a = 2.5 \\times 10^{-6}$ ให้ตอบ 2.5)"
+    answer: { value: 8.06, tolerance: 0.12 }
+    misconceptions:
+      - { match: 12619, feedback: "ลืมยกกำลังสอง Ka = [H₃O⁺][A⁻]/[HA] ทั้ง [H₃O⁺] และ [A⁻] เท่ากับ x" }
+      - { match: 631, feedback: "นี่คือ [H₃O⁺] = 6.31 × 10⁻⁴ ยังต้องแทนในสูตร Ka" }
+    hints:
+      - "$[\\mathrm{H_3O^+}] = 10^{-3.20}$"
+      - "$K_a = x^2/(0.050 - x)$"
+    solution: "$x = 10^{-3.20} = 6.31 \\times 10^{-4}$ $K_a = \\dfrac{(6.31 \\times 10^{-4})^2}{0.050 - 0.00063} = 8.06 \\times 10^{-6}$ ตอบ **8.06** (ถ้าประมาณตัวส่วนเป็น 0.050 ได้ 7.96 ซึ่งยอมรับได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p010
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 4
+    type: mcq
+    stem: "สารละลายเกลือใดต่อไปนี้มีสมบัติเป็นเบส"
+    choices:
+      - { id: a, text: "โซเดียมแอซีเทต ($\\mathrm{CH_3COONa}$)", correct: true, feedback: "ถูก CH₃COO⁻ เป็นเบสคู่ของกรดอ่อน รับโปรตอนจากน้ำให้ OH⁻" }
+      - { id: b, text: "โซเดียมคลอไรด์ (NaCl)", feedback: "Cl⁻ เป็นเบสคู่ของกรดแก่ อ่อนมากจนไม่รับโปรตอนจากน้ำ สารละลายจึงเป็นกลาง" }
+      - { id: c, text: "แอมโมเนียมคลอไรด์ ($\\mathrm{NH_4Cl}$)", feedback: "NH₄⁺ ให้โปรตอนแก่น้ำ สารละลายจึงเป็นกรด" }
+    hints:
+      - "เกลือมาจากกรดและเบสคู่ใด แต่ละตัวแก่หรืออ่อน"
+      - "เกลือของกรดอ่อนกับเบสแก่ไฮโดรลิซิสให้ OH⁻"
+    solution: "**CH₃COONa** มาจากกรดอ่อน (CH₃COOH) กับเบสแก่ (NaOH): $\\mathrm{CH_3COO^- + H_2O \\rightleftharpoons CH_3COOH + OH^-}$ จึงเป็นเบส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p011
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 4
+    type: numeric
+    stem: "ผสม HCl 0.10 mol/L 25.0 mL กับ NaOH 0.10 mol/L 20.0 mL สารละลายที่ได้มี pH เท่าใด"
+    answer: { value: 1.95, tolerance: 0.02 }
+    misconceptions:
+      - { match: 1.7, feedback: "หารด้วย 25.0 mL แต่ปริมาตรรวมหลังผสมคือ 45.0 mL" }
+      - { match: 7, feedback: "กรดและเบสมีโมลไม่เท่ากัน กรดเหลือมากเกิน สารละลายจึงเป็นกรด" }
+    hints:
+      - "หาโมลของ H₃O⁺ และ OH⁻ แล้วดูว่าตัวใดเหลือ"
+      - "ความเข้มข้นที่เหลือ = mmol ที่เหลือ ÷ ปริมาตรรวม"
+    solution: "H₃O⁺ 2.5 mmol OH⁻ 2.0 mmol เหลือ H₃O⁺ 0.5 mmol ใน 45.0 mL $= 0.0111$ mol/L $\\mathrm{pH} =$ **1.95**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p012
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 5
+    type: numeric
+    stem: "สารละลายโซเดียมแอซีเทต 0.10 mol/L มี pH เท่าใด ($K_a$ ของกรดแอซีติก $= 1.8 \\times 10^{-5}$ $K_w = 1.0 \\times 10^{-14}$)"
+    answer: { value: 8.87, tolerance: 0.02 }
+    misconceptions:
+      - { match: 5.13, feedback: "นี่คือ pOH ต้องใช้ pH = 14 − pOH" }
+      - { match: 7, feedback: "เกลือนี้ไม่เป็นกลาง CH₃COO⁻ ไฮโดรลิซิสให้ OH⁻" }
+    hints:
+      - "หา $K_b$ ของ CH₃COO⁻ จาก $K_b = K_w/K_a$"
+      - "$[\\mathrm{OH^-}] \\approx \\sqrt{K_b C}$ แล้วหา pOH และ pH"
+    solution: "$K_b = 10^{-14}/1.8 \\times 10^{-5} = 5.56 \\times 10^{-10}$ $[\\mathrm{OH^-}] = \\sqrt{5.56 \\times 10^{-11}} = 7.45 \\times 10^{-6}$ $\\mathrm{pOH} = 5.13$ $\\mathrm{pH} =$ **8.87**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p013
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 5
+    type: numeric
+    stem: "สารละลายแอมโมเนียมคลอไรด์ 0.20 mol/L มี pH เท่าใด ($K_b$ ของ $\\mathrm{NH_3} = 1.8 \\times 10^{-5}$ $K_w = 1.0 \\times 10^{-14}$)"
+    answer: { value: 4.98, tolerance: 0.02 }
+    misconceptions:
+      - { match: 2.72, feedback: "ใช้ Kb ของ NH₃ เป็น Ka ของ NH₄⁺ ต้องคำนวณ Ka = Kw/Kb" }
+      - { match: 9.02, feedback: "คำนวณถูกแต่ใช้ 14 − pH NH₄⁺ ให้ H₃O⁺ สารละลายจึงเป็นกรด" }
+    hints:
+      - "NH₄⁺ เป็นกรดคู่ของ NH₃: $K_a = K_w/K_b$"
+      - "$[\\mathrm{H_3O^+}] \\approx \\sqrt{K_a C}$"
+    solution: "$K_a = 10^{-14}/1.8 \\times 10^{-5} = 5.56 \\times 10^{-10}$ $[\\mathrm{H_3O^+}] = \\sqrt{5.56 \\times 10^{-10} \\times 0.20} = 1.05 \\times 10^{-5}$ $\\mathrm{pH} =$ **4.98**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p014
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: mcq
+    stem: "น้ำดอกอัญชันมีสีน้ำเงิน เมื่อบีบน้ำมะนาวลงไปจะเปลี่ยนเป็นสีม่วงแดง และเมื่อหยดลงในน้ำปูนใสจะเป็นสีเขียว ข้อสรุปใดถูกต้อง"
+    choices:
+      - { id: a, text: "น้ำอัญชันใช้เป็นอินดิเคเตอร์ธรรมชาติได้ เพราะสีเปลี่ยนตามความเป็นกรด-เบส", correct: true, feedback: "ถูก สารสีแอนโทไซยานินในอัญชันมีโครงสร้างต่างกันใน pH ต่าง ๆ" }
+      - { id: b, text: "น้ำมะนาวเป็นเบส น้ำปูนใสเป็นกรด", feedback: "น้ำมะนาวมีกรดซิตริก (กรด) น้ำปูนใสมี Ca(OH)₂ (เบส)" }
+      - { id: c, text: "อัญชันบอกค่า pH ได้ละเอียดเท่า pH มิเตอร์", feedback: "อินดิเคเตอร์บอกได้เพียงช่วง pH อย่างคร่าว ๆ pH มิเตอร์ละเอียดกว่ามาก" }
+    hints:
+      - "น้ำมะนาวและน้ำปูนใสเป็นกรดหรือเบส"
+      - "อินดิเคเตอร์คือสารที่เปลี่ยนสีตามอะไร"
+    solution: "สีของอัญชันเปลี่ยนในกรด (มะนาว) และเบส (ปูนใส) จึงเป็น **อินดิเคเตอร์ธรรมชาติ** ที่บอกช่วง pH ได้คร่าว ๆ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p015
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ออกไซด์ใดเมื่อละลายน้ำแล้วได้สารละลายที่เป็น **กรด** (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "ซัลเฟอร์ไดออกไซด์ ($\\mathrm{SO_2}$)", correct: true, feedback: "ถูก ออกไซด์ของอโลหะ ได้กรดซัลฟิวรัส" }
+      - { id: b, text: "คาร์บอนไดออกไซด์ ($\\mathrm{CO_2}$)", correct: true, feedback: "ถูก ได้กรดคาร์บอนิก น้ำฝนปกติจึงมี pH ราว 5.6" }
+      - { id: c, text: "แคลเซียมออกไซด์ (CaO ปูนดิบ)", feedback: "ออกไซด์ของโลหะ ได้ Ca(OH)₂ ซึ่งเป็นเบส" }
+      - { id: d, text: "โซเดียมออกไซด์ ($\\mathrm{Na_2O}$)", feedback: "ออกไซด์ของโลหะ ได้ NaOH ซึ่งเป็นเบส" }
+    hints:
+      - "ออกไซด์ของโลหะหรืออโลหะ"
+      - "ออกไซด์ของอโลหะเป็นกรด ออกไซด์ของโลหะเป็นเบส"
+    solution: "**SO₂ และ CO₂** เป็นออกไซด์ของอโลหะ ละลายน้ำได้กรด ส่วน CaO และ Na₂O เป็นออกไซด์ของโลหะ ได้เบส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p016
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: mcq
+    stem: "หยดกรดไฮโดรคลอริกเจือจางลงบนหินปูน ($\\mathrm{CaCO_3}$) เกิดฟองแก๊ส สมการใดถูกต้องและดุลแล้ว"
+    choices:
+      - { id: a, text: "$\\mathrm{CaCO_3 + 2HCl \\to CaCl_2 + H_2O + CO_2}$", correct: true, feedback: "ถูก กรด + คาร์บอเนต → เกลือ + น้ำ + CO₂" }
+      - { id: b, text: "$\\mathrm{CaCO_3 + 2HCl \\to CaCl_2 + H_2CO_3 + H_2}$", feedback: "ไม่เกิดแก๊สไฮโดรเจน และสมการนี้ไม่ดุล (H ซ้าย 2 ขวา 4)" }
+      - { id: c, text: "$\\mathrm{CaCO_3 + HCl \\to CaCl_2 + H_2O + CO_2}$", feedback: "ผลิตภัณฑ์ถูก แต่ยังไม่ดุล Cl ซ้าย 1 ขวา 2" }
+    hints:
+      - "กรด + คาร์บอเนต ให้อะไร"
+      - "นับ Cl และ H ทั้งสองข้าง"
+    solution: "**$\\mathrm{CaCO_3 + 2HCl \\to CaCl_2 + H_2O + CO_2}$** แก๊ส CO₂ ทำให้น้ำปูนใสขุ่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p017
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 5
+    type: mcq
+    stem: "กราฟแสดง pH ขณะเติม NaOH 0.100 mol/L ลงในกรด P และกรด Q อย่างละ 0.100 mol/L 25.0 mL ข้อใดสรุปได้ถูกต้อง"
+    figure:
+      src: p-curves-pq.svg
+      alt: "กราฟ pH กับปริมาตร NaOH 0 ถึง 50 mL สองเส้น เส้นทึบกรด P เริ่มที่ pH 1.0 ค่อย ๆ เพิ่มถึงราว 2.7 ที่ 24 mL แล้วพุ่งขึ้นแนวเกือบตั้งที่ 25 mL ผ่าน pH 7 เส้นประกรด Q เริ่มที่ pH ราว 2.4 เพิ่มเป็นราว 3.7 ที่ 12.5 mL ราว 5 ที่ 24 mL แล้วพุ่งขึ้นที่ 25 mL โดยกึ่งกลางช่วงพุ่งอยู่สูงกว่า pH 7 (ราว 8.2) หลัง 25 mL ทั้งสองเส้นทับกันที่ pH ราว 11–12.5 มีเส้นประแนวนอนที่ pH 7"
+    choices:
+      - { id: a, text: "Q เป็นกรดอ่อน เพราะ pH เริ่มต้นสูงกว่า และ pH ที่จุดสมมูลมากกว่า 7 ทั้งสองต้องใช้ NaOH 25.0 mL เท่ากัน", correct: true, feedback: "ถูก ความแรงต่างกันแต่โมลกรดเท่ากัน จึงใช้เบสเท่ากัน" }
+      - { id: b, text: "Q ต้องใช้ NaOH มากกว่า P เพราะเป็นกรดที่แรงกว่า", feedback: "ทั้งสองเส้นพุ่งที่ 25.0 mL เหมือนกัน ปริมาณเบสที่ใช้ขึ้นกับโมลกรด ไม่ใช่ความแรง" }
+      - { id: c, text: "P เป็นกรดอ่อน เพราะ pH เริ่มต้นต่ำกว่า", feedback: "pH ต่ำแปลว่ามี H₃O⁺ มาก กรดแตกตัวมาก จึงเป็นกรดแก่" }
+      - { id: d, text: "ที่จุดสมมูลของทั้งสองกรด สารละลายเป็นกลางเสมอ", feedback: "เกลือของกรดอ่อนไฮโดรลิซิสให้ OH⁻ จุดสมมูลของ Q จึงเป็นเบส" }
+    hints:
+      - "เทียบ pH เริ่มต้นของสองเส้นที่ความเข้มข้นเท่ากัน"
+      - "จุดสมมูลอยู่ที่ปริมาตรเท่าใด และ pH ตรงนั้นเป็นเท่าใด"
+    solution: "P เริ่มที่ pH 1.0 (แตกตัวหมด กรดแก่) Q เริ่มที่ราว 2.4 และจุดสมมูลมี pH ราว 8.2 **Q จึงเป็นกรดอ่อน** ทั้งสองมีโมลเท่ากันจึงใช้ NaOH 25.0 mL เท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p018
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 4
+    type: numeric
+    stem: "กรดฟอร์มิก (HCOOH ในพิษมดบางชนิด) มี $K_a = 1.8 \\times 10^{-4}$ ที่ 25 °C ค่า $\\mathrm{p}K_b$ ของไอออนฟอร์เมต ($\\mathrm{HCOO^-}$) เป็นเท่าใด ($\\mathrm{p}K = -\\log K$ และ $\\mathrm{p}K_a + \\mathrm{p}K_b = 14.00$)"
+    answer: { value: 10.26, tolerance: 0.02 }
+    misconceptions:
+      - { match: 3.74, feedback: "นี่คือ pKa ของกรดฟอร์มิก ต้องหา pKb = 14 − pKa" }
+      - { match: 4, feedback: "ใช้ Kb = 1.8 × 10⁻⁴ ตรง ๆ แต่ Kb ของเบสคู่ = Kw/Ka" }
+    hints:
+      - "$\\mathrm{p}K_a = -\\log(1.8 \\times 10^{-4})$"
+      - "$\\mathrm{p}K_b = 14.00 - \\mathrm{p}K_a$"
+    solution: "$\\mathrm{p}K_a = 3.74$ จึงได้ $\\mathrm{p}K_b = 14.00 - 3.74 =$ **10.26** ($K_b = 5.6 \\times 10^{-11}$) กรดยิ่งแรง เบสคู่ยิ่งอ่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p019
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: numeric
+    stem: "น้ำฝนปกติมี pH ราว 5.6 ถ้าวัดฝนกรดในเขตอุตสาหกรรมได้ pH 4.3 ฝนกรดนี้มีความเข้มข้นของ $\\mathrm{H_3O^+}$ มากกว่าฝนปกติกี่เท่า (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 20, unit: เท่า, tolerance: 0.3 }
+    misconceptions:
+      - { match: 1.3, feedback: "นี่คือผลต่างของ pH pH เป็นสเกลลอการิทึม ต่างกัน 1.3 หน่วยคือ 10^1.3 เท่า" }
+      - { match: 13, feedback: "คูณ 1.3 ด้วย 10 แต่ต้องใช้ 10 ยกกำลัง 1.3" }
+    hints:
+      - "$[\\mathrm{H_3O^+}] = 10^{-\\mathrm{pH}}$"
+      - "อัตราส่วน $= 10^{-4.3}/10^{-5.6} = 10^{1.3}$"
+    solution: "$10^{5.6 - 4.3} = 10^{1.3} \\approx$ **20 เท่า**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.acid-base-ph.p020
+    topics: [chemistry.acids-bases.acid-base-ph]
+    difficulty: 3
+    type: mcq
+    stem: "นำ HCl และ CH₃COOH อย่างละ 0.10 mol/L ปริมาตรเท่ากันมาเปรียบเทียบ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "HCl นำไฟฟ้าดีกว่าและ pH ต่ำกว่า แต่ทั้งสองสะเทิน NaOH ได้ปริมาณเท่ากัน", correct: true, feedback: "ถูก ความแรงต่างกันแต่โมลกรดเท่ากัน" }
+      - { id: b, text: "HCl สะเทิน NaOH ได้มากกว่า เพราะแรงกว่า", feedback: "ขณะเติมเบส กรดอ่อนจะแตกตัวต่อจนหมด จึงใช้เบสเท่ากัน" }
+      - { id: c, text: "ทั้งสองมี pH เท่ากันเพราะความเข้มข้นเท่ากัน", feedback: "กรดอ่อนแตกตัวเพียงราว 1% จึงมี H₃O⁺ น้อยกว่า pH สูงกว่า" }
+    hints:
+      - "ความแรงเกี่ยวกับร้อยละการแตกตัว"
+      - "ปริมาณเบสที่ใช้ขึ้นกับจำนวนโมลของกรด"
+    solution: "HCl แตกตัวหมด จึง **มี H₃O⁺ มากกว่า นำไฟฟ้าดีกว่า pH ต่ำกว่า** แต่โมลกรดเท่ากัน จึงสะเทิน NaOH ได้เท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,62 @@
+id: chemistry.redox.electrochemical-cells
+subject: chemistry
+title: { th: เซลล์เคมีไฟฟ้า, en: Electrochemical cells }
+summary: เซลล์กัลวานิกและเซลล์อิเล็กโทรไลต์ แผนภาพเซลล์ ศักย์ไฟฟ้ามาตรฐาน เซลล์ปฐมภูมิและทุติยภูมิ แบตเตอรี่ การชุบโลหะ การแยกสารด้วยไฟฟ้า การทำโลหะให้บริสุทธิ์ และการป้องกันการกัดกร่อน
+difficulty: 7
+minutes: 45
+prerequisites: [chemistry.redox.redox-reactions, physics.electricity.current-voltage]
+encompasses:
+  - { id: chemistry.redox.redox-reactions, weight: 0.4 }
+  - { id: physics.electricity.current-voltage, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: galvanic-cell.svg
+    alt: "เซลล์กัลวานิกสองบีกเกอร์ บีกเกอร์ซ้ายมีแผ่นสังกะสี (Zn) จุ่มในสารละลาย ZnSO₄ 1 mol/L บีกเกอร์ขวามีแผ่นทองแดง (Cu) จุ่มในสารละลาย CuSO₄ 1 mol/L สีฟ้า สองบีกเกอร์ต่อกันด้วยสะพานเกลือรูปตัวยูคว่ำบรรจุ KNO₃ ไอออน NO₃⁻ เคลื่อนไปทางซ้าย ไอออน K⁺ เคลื่อนไปทางขวา ขั้วทั้งสองต่อด้วยลวดผ่านโวลต์มิเตอร์อ่านได้ 1.10 V ลูกศร e⁻ ในลวดชี้จาก Zn ไป Cu ไอออน Zn²⁺ ออกจากแผ่นสังกะสีสู่สารละลาย ไอออน Cu²⁺ เคลื่อนเข้าหาแผ่นทองแดง ใต้บีกเกอร์ซ้ายเขียนว่า แอโนด (−) ออกซิเดชัน Zn → Zn²⁺ + 2e⁻ ใต้บีกเกอร์ขวาเขียนว่า แคโทด (+) รีดักชัน Cu²⁺ + 2e⁻ → Cu"
+    caption: "อิเล็กตรอนไหลในลวดจากแอโนดไปแคโทด ส่วนไอออนในสะพานเกลือรักษาความเป็นกลางทางไฟฟ้า"
+  - { type: check, problem: chemistry.redox.electrochemical-cells.p001, prompt: "ออกซิเดชันเกิดที่ขั้วใด" }
+  - type: worked-example
+    title: เขียนแผนภาพเซลล์และคำนวณศักย์ไฟฟ้ามาตรฐาน
+    problem: "เซลล์กัลวานิกประกอบด้วยครึ่งเซลล์ Ni/Ni²⁺ และ Ag/Ag⁺ ($E^\\circ$: Ni²⁺/Ni −0.26 V, Ag⁺/Ag +0.80 V) จงระบุแอโนดและแคโทด เขียนแผนภาพเซลล์ ปฏิกิริยารวม และ $E^\\circ_\\text{เซลล์}$"
+    steps:
+      - text: "Ag⁺ มี $E^\\circ$ สูงกว่า จึงรับอิเล็กตรอน (รีดักชัน) ขั้ว Ag เป็นแคโทด ส่วน Ni ถูกออกซิไดซ์ เป็นแอโนด"
+      - text: "แผนภาพเซลล์: $\\mathrm{Ni(s)\\,|\\,Ni^{2+}(aq)\\,\\|\\,Ag^+(aq)\\,|\\,Ag(s)}$"
+      - text: "ครึ่งปฏิกิริยา: $\\mathrm{Ni \\to Ni^{2+} + 2e^-}$ และ $\\mathrm{Ag^+ + e^- \\to Ag}$ คูณครึ่งหลังด้วย 2 ให้อิเล็กตรอนเท่ากัน ได้ $\\mathrm{Ni + 2Ag^+ \\to Ni^{2+} + 2Ag}$"
+      - text: "$E^\\circ_\\text{เซลล์} = 0.80 - (-0.26) = 1.06\\,\\mathrm{V}$"
+        why: "ศักย์ไฟฟ้าเป็นสมบัติต่อประจุ ไม่ขึ้นกับจำนวนอะตอม จึงไม่คูณ 0.80 ด้วย 2"
+    answer: "แอโนด Ni แคโทด Ag · Ni + 2Ag⁺ → Ni²⁺ + 2Ag · E° = 1.06 V"
+  - type: worked-example
+    title: มวลทองแดงที่ชุบได้จากกฎของฟาราเดย์
+    problem: "ชุบทองแดงบนกุญแจด้วยกระแส 2.0 A นาน 15 นาที ในสารละลาย CuSO₄ ได้ทองแดงกี่กรัม (Cu = 63.55, F = 96,485 C/mol)"
+    steps:
+      - text: "กุญแจเป็นแคโทด: $\\mathrm{Cu^{2+} + 2e^- \\to Cu}$"
+      - text: "ประจุ $Q = It = 2.0 \\times (15 \\times 60) = 1800\\,\\mathrm{C}$"
+        why: "เวลาต้องเป็นวินาที เพราะ 1 A = 1 C/s"
+      - text: "โมลอิเล็กตรอน $= 1800 / 96485 = 0.01866\\,\\mathrm{mol}$"
+      - text: "โมล Cu $= 0.01866 / 2 = 0.00933\\,\\mathrm{mol}$ มวล $= 0.00933 \\times 63.55 = 0.593\\,\\mathrm{g}$"
+    answer: "ได้ทองแดงราว 0.593 g"
+  - { type: check, problem: chemistry.redox.electrochemical-cells.p003, prompt: "แคโทดลบแอโนด" }
+glossary:
+  - { term: เซลล์กัลวานิก, definition: เซลล์เคมีไฟฟ้าที่ปฏิกิริยารีดอกซ์เกิดได้เองและให้กระแสไฟฟ้า }
+  - { term: เซลล์อิเล็กโทรไลต์, definition: เซลล์ที่ใช้ไฟฟ้าจากภายนอกทำให้ปฏิกิริยาที่ไม่เกิดเองเกิดขึ้น }
+  - { term: แอโนด, definition: ขั้วที่เกิดออกซิเดชัน }
+  - { term: แคโทด, definition: ขั้วที่เกิดรีดักชัน }
+  - { term: สะพานเกลือ, definition: ทางให้ไอออนเคลื่อนที่ระหว่างครึ่งเซลล์ เพื่อรักษาความเป็นกลางทางไฟฟ้า }
+  - { term: ศักย์ไฟฟ้ารีดักชันมาตรฐาน, definition: "ศักย์ของครึ่งเซลล์ที่ภาวะมาตรฐานเทียบกับขั้วไฮโดรเจนมาตรฐาน (0.00 V)" }
+  - { term: โลหะสังเวย, definition: โลหะที่ว่องไวกว่าซึ่งต่อกับเหล็กเพื่อให้ถูกกัดกร่อนแทน }
+flashcards:
+  - { front: "แอโนด / แคโทด", back: "ออกซิเดชัน / รีดักชัน (ในเซลล์กัลวานิก แอโนดเป็นขั้วลบ)" }
+  - { front: "E°เซลล์", back: "E°แคโทด − E°แอโนด ไม่คูณด้วยสัมประสิทธิ์" }
+  - { front: "กฎของฟาราเดย์", back: "Q = It · โมล e⁻ = Q/F (F = 96,485 C/mol)" }
+  - { front: "ชุบโลหะ: ชิ้นงานอยู่ขั้วใด", back: "แคโทด (ต่อขั้วลบของแหล่งไฟฟ้า) โลหะที่ใช้ชุบเป็นแอโนด" }
+  - { front: "เซลล์ปฐมภูมิ / ทุติยภูมิ", back: "ประจุใหม่ไม่ได้ เช่น ถ่านไฟฉาย / ประจุใหม่ได้ เช่น ตะกั่ว-กรด ลิเทียมไอออน" }
+references:
+  - { title: "17.2 Galvanic Cells (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/17-2-galvanic-cells", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "L Standard Electrode (Half-Cell) Potentials (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/l-standard-electrode-half-cell-potentials", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Electrolysis", url: "https://en.wikipedia.org/wiki/Electrolysis", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Lithium-ion battery", url: "https://en.wikipedia.org/wiki/Lithium-ion_battery", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,77 @@
+id: chemistry.acids-bases.acid-base-ph
+subject: chemistry
+title: { th: กรด-เบสและ pH, en: Acids, bases and pH }
+summary: ทฤษฎีกรด-เบสของอาร์เรเนียส เบรินสเตด-ลาวรี และลิวอิส คู่กรด-เบส ความแรงของกรดเบส Ka Kb ค่า pH และ pOH ปฏิกิริยาสะเทิน และไฮโดรลิซิสของเกลือ
+difficulty: 6.5
+minutes: 45
+prerequisites: [chemistry.equilibrium.chemical-equilibrium, math.functions.logarithms]
+encompasses:
+  - { id: chemistry.equilibrium.chemical-equilibrium, weight: 0.4 }
+  - { id: math.functions.logarithms, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: ph-scale.svg
+    alt: "แถบสี pH 0 ถึง 14 จากแดง (กรด) ผ่านเขียว (กลาง) ไปม่วง (เบส) ด้านบนมีลูกศรชี้ซ้ายเขียนว่ากรด คำว่ากลางตรงกลาง และลูกศรชี้ขวาเขียนว่าเบส ตัวอย่างเหนือแถบ: น้ำย่อยในกระเพาะ pH ราว 1.5 น้ำมะนาว ราว 2.2 น้ำส้มสายชู ราว 3 กาแฟดำ ราว 5 น้ำบริสุทธิ์ 7 ใต้แถบ: ฝนปกติ ราว 5.6 เลือด ราว 7.4 น้ำทะเล ราว 8.1 น้ำปูนใส ราว 12.4 น้ำยาล้างท่อ ราว 13.5 หมายเหตุ ค่าโดยประมาณที่ 25 °C ลด 1 หน่วย pH หมายถึง [H₃O⁺] เพิ่ม 10 เท่า"
+    caption: "pH เป็นสเกลลอการิทึม น้ำมะนาว (pH ราว 2) มี H₃O⁺ มากกว่ากาแฟ (pH ราว 5) ราว 1,000 เท่า"
+  - { type: check, problem: chemistry.acids-bases.acid-base-ph.p002, prompt: "สารใดให้โปรตอน สารใดรับโปรตอน" }
+  - type: worked-example
+    title: pH ของกรดแอซีติก 0.10 mol/L
+    problem: "หา pH และร้อยละการแตกตัวของกรดแอซีติก 0.10 mol/L ($K_a = 1.8 \\times 10^{-5}$ ที่ 25 °C)"
+    steps:
+      - text: "ตาราง ICE: $\\mathrm{CH_3COOH}$ $0.10 - x$ · $\\mathrm{H_3O^+}$ $x$ · $\\mathrm{CH_3COO^-}$ $x$"
+      - text: "$K_a = \\dfrac{x^2}{0.10 - x} = 1.8 \\times 10^{-5}$"
+      - text: "ประมาณ $0.10 - x \\approx 0.10$: $x = \\sqrt{1.8 \\times 10^{-6}} = 1.34 \\times 10^{-3}$ mol/L (แก้สมการกำลังสองเต็มได้ $1.33 \\times 10^{-3}$)"
+        why: "x เป็นเพียงราว 1.3% ของ 0.10 การประมาณจึงคลาดเคลื่อนน้อยมาก"
+      - text: "$\\mathrm{pH} = -\\log(1.33 \\times 10^{-3}) = 2.88$"
+      - text: "ร้อยละการแตกตัว $= 1.33 \\times 10^{-3} / 0.10 \\times 100 = 1.3\\%$ ส่วน HCl 0.10 mol/L มี pH 1.00 เพราะแตกตัวหมด"
+    answer: "pH ≈ 2.88 แตกตัวราว 1.3%"
+  - type: figure
+    src: neutralization-curves.svg
+    alt: "กราฟ pH กับปริมาตร NaOH 0.100 mol/L ที่เติมลงในกรด 0.100 mol/L 25.0 mL สองเส้น เส้นทึบ HCl (กรดแก่) เริ่มที่ pH 1.0 ค่อย ๆ เพิ่มแล้วพุ่งขึ้นในแนวเกือบตั้งที่ 25.0 mL ผ่าน pH 7 ไปถึงราว 10 แล้วราบที่ราว 12.5 เส้นประ CH₃COOH (กรดอ่อน) เริ่มที่ pH ราว 2.9 เพิ่มขึ้นช้า ๆ อยู่ราว 4–5 แล้วพุ่งขึ้นที่ 25.0 mL โดยจุดสมมูลอยู่ที่ pH ราว 8.7 หลังจุดสมมูลทั้งสองเส้นทับกัน มีเส้นประแนวนอนที่ pH 7 และเส้นประแนวตั้งเขียนว่าจุดสมมูล 25.0 mL"
+    caption: "ที่จุดสมมูล สารละลายของกรดแก่เป็นกลาง (NaCl) แต่ของกรดอ่อนเป็นเบส เพราะไอออนแอซีเทตไฮโดรลิซิส"
+  - type: worked-example
+    title: pH หลังผสมกรดแก่กับเบสแก่
+    problem: "ผสม HCl 0.10 mol/L 25.0 mL กับ NaOH 0.10 mol/L 30.0 mL สารละลายมี pH เท่าใด"
+    steps:
+      - text: "$\\mathrm{H_3O^+ + OH^- \\to 2H_2O}$ อัตราส่วน 1 : 1"
+      - text: "โมล $\\mathrm{H_3O^+} = 0.10 \\times 25.0 = 2.5$ mmol · โมล $\\mathrm{OH^-} = 0.10 \\times 30.0 = 3.0$ mmol"
+      - text: "$\\mathrm{OH^-}$ เหลือ $0.5$ mmol ในปริมาตรรวม $55.0$ mL: $[\\mathrm{OH^-}] = 0.5/55.0 = 9.09 \\times 10^{-3}$ mol/L"
+        why: "หลังผสม ปริมาตรเป็นผลรวมของสองสารละลาย ต้องหารด้วย 55.0 mL ไม่ใช่ 30.0 mL"
+      - text: "$\\mathrm{pOH} = 2.04$ จึงได้ $\\mathrm{pH} = 14.00 - 2.04 = 11.96$ สารละลายเป็นเบส"
+    answer: "pH ≈ 11.96"
+  - { type: check, problem: chemistry.acids-bases.acid-base-ph.p010, prompt: "เกลือนี้มาจากกรดแก่หรือกรดอ่อน" }
+  - type: simulation
+    title: สารละลายกรด-เบส (PhET Acid-Base Solutions)
+    url: https://phet.colorado.edu/en/simulations/acid-base-solutions
+    provider: phet
+    note: เทียบกรดแก่กับกรดอ่อนที่ความเข้มข้นเท่ากัน ดูจำนวนโมเลกุลที่แตกตัว ค่า pH และการนำไฟฟ้า
+  - type: simulation
+    title: มาตรวัด pH (PhET pH Scale)
+    url: https://phet.colorado.edu/en/simulations/ph-scale
+    provider: phet
+    note: ลองเติมน้ำลงในสารละลายในชีวิตประจำวัน แล้วสังเกตว่า pH และ [H₃O⁺] เปลี่ยนอย่างไร
+glossary:
+  - { term: กรดเบรินสเตด-ลาวรี, definition: สารที่ให้โปรตอน (H⁺) แก่สารอื่น }
+  - { term: เบสเบรินสเตด-ลาวรี, definition: สารที่รับโปรตอนจากสารอื่น }
+  - { term: กรดลิวอิส, definition: สารที่รับคู่อิเล็กตรอน เช่น BF₃ และไอออนโลหะ }
+  - { term: คู่กรด-เบส, definition: สองสารที่ต่างกันเพียงโปรตอนหนึ่งตัว เช่น CH₃COOH กับ CH₃COO⁻ }
+  - { term: ค่าคงที่การแตกตัวของกรด (Ka), definition: ค่าคงที่สมดุลของการแตกตัวของกรดในน้ำ ยิ่งมากกรดยิ่งแรง }
+  - { term: pH, definition: "ลบลอการิทึมฐานสิบของความเข้มข้นไฮโดรเนียมไอออน (mol/L)" }
+  - { term: ไฮโดรลิซิสของเกลือ, definition: ปฏิกิริยาของไอออนของเกลือกับน้ำ ทำให้สารละลายเกลือเป็นกรดหรือเบส }
+flashcards:
+  - { front: "กรด/เบส ตามเบรินสเตด-ลาวรี", back: "ผู้ให้โปรตอน / ผู้รับโปรตอน" }
+  - { front: "pH + pOH ที่ 25 °C", back: "14.00 (Kw = 1.0 × 10⁻¹⁴)" }
+  - { front: "Ka × Kb ของคู่กรด-เบส", back: "Kw" }
+  - { front: "CH₃COONa / NH₄Cl / NaCl ในน้ำ", back: "เบส / กรด / กลาง" }
+  - { front: "pH ของกรดอ่อน (ประมาณ)", back: "[H₃O⁺] ≈ √(Ka·C) แล้ว pH = −log[H₃O⁺]" }
+references:
+  - { title: "พีเอช", url: "https://th.wikipedia.org/wiki/พีเอช", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "14.1 Brønsted-Lowry Acids and Bases (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/14-1-bronsted-lowry-acids-and-bases", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "14.3 Relative Strengths of Acids and Bases (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/14-3-relative-strengths-of-acids-and-bases", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "H Ionization Constants of Weak Acids (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/h-ionization-constants-of-weak-acids", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
