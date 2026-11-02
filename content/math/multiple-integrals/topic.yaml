@@ -1,0 +1,59 @@
+id: math.calculus.multiple-integrals
+subject: math
+title: { th: ปริพันธ์หลายชั้น, en: Multiple integrals }
+summary: ปริพันธ์สองชั้นบนสี่เหลี่ยมและบริเวณทั่วไป การสลับลำดับ พิกัดเชิงขั้ว ปริพันธ์สามชั้นในพิกัดทรงกระบอกและทรงกลม มวล จุดศูนย์กลางมวล และโมเมนต์ความเฉื่อย
+difficulty: 9
+minutes: 55
+prerequisites: [math.calculus.integration-techniques, math.calculus.partial-derivatives]
+encompasses:
+  - { id: math.calculus.integration-techniques, weight: 0.4 }
+  - { id: math.calculus.definite-integral, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: region-strips.svg
+    alt: "สองภาพของบริเวณสามเหลี่ยมเดียวกันที่มีจุดยอด (0, 0), (0, 1) และ (2, 1) ขอบล่างเอียงคือเส้น y = x/2 หรือ x = 2y ภาพซ้ายมีแถบแนวตั้งสีส้มกว้าง dx จากเส้นเอียงขึ้นไปถึง y = 1 เขียนว่า x/2 ≤ y ≤ 1, 0 ≤ x ≤ 2 ภาพขวามีแถบแนวนอนสีส้มสูง dy จากแกน y ไปถึงเส้นเอียง เขียนว่า 0 ≤ x ≤ 2y, 0 ≤ y ≤ 1"
+    caption: "บริเวณเดียวกันอธิบายได้ทั้งด้วยแถบแนวตั้งและแถบแนวนอน การสลับลำดับปริพันธ์คือการเปลี่ยนแถบ"
+  - type: worked-example
+    title: ปริพันธ์บนบริเวณระหว่างเส้นโค้ง
+    problem: "จงหา $\\displaystyle\\iint_D xy\\,dA$ เมื่อ $D$ คือบริเวณระหว่าง $y = x^2$ และ $y = x$"
+    steps:
+      - text: "เส้นทั้งสองตัดกันที่ $x = 0$ และ $x = 1$ บนช่วงนี้ $x^2 \\le x$ จึงเขียน $D$: $0 \\le x \\le 1$, $x^2 \\le y \\le x$"
+        why: "ต้องรู้ว่าเส้นใดอยู่บน เพื่อให้ขอบล่างและขอบบนของ $y$ ถูก"
+      - text: "ชั้นใน: $\\displaystyle\\int_{x^2}^{x} xy\\,dy = x\\Big[\\frac{y^2}{2}\\Big]_{x^2}^{x} = \\frac{x^3 - x^5}{2}$"
+      - text: "ชั้นนอก: $\\displaystyle\\int_0^1 \\frac{x^3 - x^5}{2}\\,dx = \\frac12\\Big(\\frac14 - \\frac16\\Big) = \\frac{1}{24}$"
+    answer: "$\\dfrac{1}{24} \\approx 0.0417$"
+  - { type: check, problem: math.calculus.multiple-integrals.p004, prompt: "ขอบเขตชั้นในของ $y$ คือ 0 ถึง $x$ หาปริพันธ์ชั้นในก่อน" }
+  - type: worked-example
+    title: มวลของจานด้วยพิกัดเชิงขั้ว
+    problem: "จานกลมรัศมี 2 มีความหนาแน่นต่อพื้นที่ $\\sigma = r$ (หนักขึ้นเมื่อห่างจากจุดศูนย์กลาง) จงหามวล"
+    steps:
+      - text: "$m = \\displaystyle\\iint_D \\sigma\\,dA = \\int_0^{2\\pi}\\!\\!\\int_0^2 r \\cdot r\\,dr\\,d\\theta$"
+        why: "$r$ ตัวแรกคือความหนาแน่น ตัวที่สองมาจาก $dA = r\\,dr\\,d\\theta$"
+      - text: "ชั้นใน: $\\displaystyle\\int_0^2 r^2\\,dr = \\frac83$"
+      - text: "ชั้นนอก: $\\displaystyle\\int_0^{2\\pi}\\frac83\\,d\\theta = \\frac{16\\pi}{3} \\approx 16.76$"
+    answer: "$\\dfrac{16\\pi}{3} \\approx 16.76$"
+  - { type: check, problem: math.calculus.multiple-integrals.p005, prompt: "อย่าลืม $r$ ใน $dA = r\\,dr\\,d\\theta$" }
+glossary:
+  - { term: ปริพันธ์สองชั้น, definition: "∬_R f dA ลิมิตของผลรวม f·ΔA บนบริเวณ R ถ้า f ≥ 0 คือปริมาตรใต้พื้นผิว" }
+  - { term: ปริพันธ์ซ้อน, definition: "การหาปริพันธ์ทีละตัวแปร ชั้นในก่อนแล้วชั้นนอก" }
+  - { term: ทฤษฎีบทของฟูบินี, definition: "บนสี่เหลี่ยม ปริพันธ์สองชั้นเท่ากับปริพันธ์ซ้อนในลำดับใดก็ได้" }
+  - { term: พิกัดเชิงขั้ว, definition: "x = r cos θ, y = r sin θ มี dA = r dr dθ" }
+  - { term: พิกัดทรงกลม, definition: "(ρ, φ, θ) โดย φ วัดจากแกน z มี dV = ρ² sin φ dρ dφ dθ" }
+  - { term: โมเมนต์ความเฉื่อย, definition: "I = ∬ d² σ dA วัดความยากในการหมุนรอบแกน" }
+flashcards:
+  - { front: "dA ในพิกัดเชิงขั้ว", back: "r dr dθ" }
+  - { front: "dV ในพิกัดทรงกระบอก", back: "r dz dr dθ" }
+  - { front: "dV ในพิกัดทรงกลม", back: "ρ² sin φ dρ dφ dθ" }
+  - { front: "x̄ ของแผ่นบาง", back: "(1/m)∬ x σ dA" }
+  - { front: "โมเมนต์ความเฉื่อยของจานกลมสม่ำเสมอรอบจุดศูนย์กลาง", back: "½MR²" }
+references:
+  - { title: "5.2 Double Integrals over General Regions (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/5-2-double-integrals-over-general-regions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "5.3 Double Integrals in Polar Coordinates (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/5-3-double-integrals-in-polar-coordinates", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "5.6 Calculating Centers of Mass and Moments of Inertia (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/5-6-calculating-centers-of-mass-and-moments-of-inertia", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Multiple integral", url: "https://en.wikipedia.org/wiki/Multiple_integral", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

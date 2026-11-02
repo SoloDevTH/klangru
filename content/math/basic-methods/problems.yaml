@@ -1,0 +1,289 @@
+problems:
+  - id: math.numerical.basic-methods.p001
+    topics: [math.numerical.basic-methods]
+    difficulty: 1
+    type: numeric
+    stem: "ใช้วิธีแบ่งครึ่งช่วงหารากของ $f(x) = x^2 - 3$ บนช่วง $[1, 2]$ รอบแรกได้จุดกึ่งกลาง $1.5$ และ $f(1.5) = -0.75$ จุดกึ่งกลางของรอบที่สองคือเท่าใด"
+    answer: { value: 1.75, tolerance: 0.001 }
+    hints:
+      - "$f(1) = -2 < 0$, $f(2) = 1 > 0$ และ $f(1.5) < 0$ รากอยู่ครึ่งไหน"
+      - "เก็บครึ่งที่ปลายทั้งสองมีเครื่องหมายต่างกัน แล้วหาจุดกึ่งกลางของช่วงนั้น"
+    misconceptions:
+      - { match: 1.25, feedback: "$f(1)$ และ $f(1.5)$ เป็นลบทั้งคู่ รากจึงไม่อยู่ใน $[1, 1.5]$ ต้องเลือก $[1.5, 2]$" }
+    solution: "$f(1.5) < 0$ และ $f(2) > 0$ รากอยู่ใน $[1.5, 2]$ จุดกึ่งกลางคือ $\\tfrac{1.5 + 2}{2} = 1.75$ (ราก $\\sqrt3 \\approx 1.732$ อยู่ในช่วงนี้จริง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p002
+    topics: [math.numerical.basic-methods]
+    difficulty: 1
+    type: mcq
+    stem: "สูตรวนซ้ำของวิธีของนิวตันสำหรับหารากของ $f(x) = 0$ คือข้อใด"
+    choices:
+      - { id: a, text: "$x_{n+1} = x_n - \\dfrac{f(x_n)}{f'(x_n)}$", correct: true }
+      - { id: b, text: "$x_{n+1} = x_n + \\dfrac{f(x_n)}{f'(x_n)}$", feedback: "เครื่องหมายบวกพาออกห่างจากราก ลองวาดเส้นสัมผัสที่จุดซึ่ง $f > 0$ และ $f' > 0$ จุดตัดแกน $x$ อยู่ทางซ้าย" }
+      - { id: c, text: "$x_{n+1} = x_n - \\dfrac{f'(x_n)}{f(x_n)}$", feedback: "เศษกับส่วนสลับกัน ก้าวต้องเป็น $f/f'$ ซึ่งเล็กลงเมื่อ $f(x_n) \\to 0$" }
+      - { id: d, text: "$x_{n+1} = \\dfrac{x_n + f(x_n)}{2}$", feedback: "นี่ไม่ใช่วิธีของนิวตัน (ไม่ได้ใช้อนุพันธ์เลย)" }
+    hints:
+      - "เส้นสัมผัสที่ $x_n$ คือ $y = f(x_n) + f'(x_n)(x - x_n)$"
+      - "ให้ $y = 0$ แล้วแก้หา $x$"
+    solution: "ตั้ง $0 = f(x_n) + f'(x_n)(x - x_n)$ ได้ $x = x_n - \\dfrac{f(x_n)}{f'(x_n)}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p003
+    topics: [math.numerical.basic-methods]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้วิธีของนิวตันกับ $f(x) = x^2 - 5$ เริ่มที่ $x_0 = 2$ จงหา $x_1$"
+    answer: { value: 2.25, tolerance: 0.001 }
+    hints:
+      - "$f(2) = -1$ และ $f'(x) = 2x$ ได้ $f'(2) = 4$"
+      - "$x_1 = 2 - \\dfrac{-1}{4}$"
+    misconceptions:
+      - { match: 1.75, feedback: "$f(2) = -1$ เป็นลบ ลบด้วยจำนวนลบจึงเป็นการบวก" }
+    solution: "$x_1 = 2 - \\dfrac{4 - 5}{2 \\cdot 2} = 2 + 0.25 = 2.25$ (ค่าจริง $\\sqrt5 \\approx 2.236$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p004
+    topics: [math.numerical.basic-methods]
+    difficulty: 2
+    type: numeric
+    stem: "ประมาณ $\\displaystyle\\int_0^2 x^2\\,dx$ ด้วยกฎสี่เหลี่ยมคางหมู $n = 2$"
+    answer: { value: 3, tolerance: 0.001 }
+    hints:
+      - "$h = 1$ จุดคือ $x = 0, 1, 2$ ได้ $y = 0, 1, 4$"
+      - "$T_2 = \\tfrac{h}{2}(y_0 + 2y_1 + y_2)$"
+    misconceptions:
+      - { match: 2.667, feedback: "นี่คือค่าจริง $\\tfrac83$ โจทย์ให้ประมาณด้วยกฎสี่เหลี่ยมคางหมู" }
+      - { match: 5, feedback: "จุดปลายต้องได้น้ำหนัก $\\tfrac12$ ไม่ใช่บวกทุกค่าเต็ม" }
+    solution: "$T_2 = \\tfrac12(0 + 2 \\cdot 1 + 4) = 3$ มากกว่าค่าจริง $\\tfrac83$ เพราะ $x^2$ โค้งหงาย เส้นตรงจึงอยู่เหนือเส้นโค้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p005
+    topics: [math.numerical.basic-methods]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้วิธีของออยเลอร์กับ $y' = y + t$, $y(0) = 1$ ขนาดก้าว $h = 0.1$ จงหาค่าประมาณของ $y(0.2)$"
+    answer: { value: 1.22, tolerance: 0.001 }
+    hints:
+      - "ก้าวแรก: $y_1 = 1 + 0.1(1 + 0)$"
+      - "ก้าวสอง: คำนวณความชันใหม่ที่ $(t_1, y_1) = (0.1, y_1)$"
+    misconceptions:
+      - { match: 1.2, feedback: "ใช้ความชันที่จุดเริ่ม (1) ทั้งสองก้าว ต้องคำนวณความชันใหม่ที่ $(0.1, 1.1)$" }
+      - { match: 1.1, feedback: "นี่คือ $y(0.1)$ ต้องเดินอีกหนึ่งก้าวถึง $t = 0.2$" }
+    solution: "$y_1 = 1 + 0.1(1 + 0) = 1.1$ และ $y_2 = 1.1 + 0.1(1.1 + 0.1) = 1.1 + 0.12 = 1.22$ (ค่าจริง $2e^{0.2} - 1.2 \\approx 1.243$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p006
+    topics: [math.numerical.basic-methods]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้วิธีแบ่งครึ่งช่วงเริ่มจากช่วงยาว 1 หน่วย ต้องทำอย่างน้อยกี่รอบ ช่วงที่เหลือจึงยาวไม่เกิน 0.001"
+    answer: { value: 10, unit: รอบ }
+    hints:
+      - "หลัง $n$ รอบช่วงยาว $\\dfrac{1}{2^n}$"
+      - "หา $n$ ที่เล็กที่สุดที่ $2^n \\ge 1000$"
+    misconceptions:
+      - { match: 9, feedback: "$2^9 = 512$ ช่วงยังยาว $\\tfrac{1}{512} \\approx 0.00195$ เกิน 0.001" }
+      - { match: 1000, feedback: "ช่วงลดลงครึ่งหนึ่งทุกรอบ (แบบเลขยกกำลัง) ไม่ได้ลดทีละ 0.001" }
+    solution: "$2^{10} = 1024 \\ge 1000$ แต่ $2^9 = 512 < 1000$ จึงต้อง 10 รอบ ช่วงเหลือยาว $\\tfrac{1}{1024} \\approx 0.00098$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p007
+    topics: [math.numerical.basic-methods]
+    difficulty: 3
+    type: numeric
+    stem: "ประมาณ $\\displaystyle\\int_1^3 \\frac{dx}{x}$ ด้วยกฎของซิมป์สัน $n = 2$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.111, tolerance: 0.002 }
+    hints:
+      - "$h = 1$ จุดคือ $1, 2, 3$ ได้ $y = 1, \\tfrac12, \\tfrac13$"
+      - "$S_2 = \\tfrac{h}{3}(y_0 + 4y_1 + y_2)$"
+    misconceptions:
+      - { match: 1.167, feedback: "นี่คือกฎสี่เหลี่ยมคางหมู $\\tfrac12(1 + 2 \\cdot \\tfrac12 + \\tfrac13)$" }
+      - { match: 1.099, feedback: "นี่คือค่าจริง $\\ln 3$ โจทย์ให้ประมาณด้วยกฎของซิมป์สัน" }
+    solution: "$S_2 = \\tfrac13\\big(1 + 4 \\cdot \\tfrac12 + \\tfrac13\\big) = \\tfrac13 \\cdot \\tfrac{10}{3} = \\tfrac{10}{9} \\approx 1.111$ ค่าจริง $\\ln 3 \\approx 1.0986$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p008
+    topics: [math.numerical.basic-methods]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ระเบียบวิธีกับสมบัติของมัน"
+    pairs:
+      - { left: "วิธีแบ่งครึ่งช่วง", right: "ลู่เข้าเสมอเมื่อเริ่มจากช่วงที่ $f$ เปลี่ยนเครื่องหมาย แต่ช้า" }
+      - { left: "วิธีของนิวตัน", right: "ต้องใช้ $f'$ ลู่เข้าเร็วมากเมื่อใกล้ราก แต่อาจล้มเหลวถ้าเริ่มไกล" }
+      - { left: "กฎของซิมป์สัน", right: "ลด $h$ ครึ่งหนึ่ง ความคลาดเคลื่อนลดราว 16 เท่า" }
+      - { left: "วิธีของออยเลอร์", right: "ลด $h$ ครึ่งหนึ่ง ความคลาดเคลื่อนลดราวครึ่งหนึ่ง" }
+    hints:
+      - "นึกถึงตารางในบทเรียน: ซิมป์สันคลาดแปรผันตาม $h^4$ ออยเลอร์ตาม $h$"
+      - "วิธีใดไม่ต้องใช้อนุพันธ์แต่รับประกันว่าได้ราก"
+    solution: "แบ่งครึ่ง: รับประกันแต่ช้า; นิวตัน: เร็วแบบกำลังสองแต่ต้องเริ่มใกล้รากและ $f' \\ne 0$; ซิมป์สัน: คลาด $\\propto h^4$; ออยเลอร์: คลาด $\\propto h$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p009
+    topics: [math.numerical.basic-methods]
+    difficulty: 3
+    type: numeric
+    stem: "กรมชลประทานวัดความลึกของคลองสายหนึ่งในอยุธยาซึ่งกว้าง 12 เมตร ทุก 2 เมตรจากตลิ่งซ้าย ได้ความลึกตามภาพ (ข้อมูลสมมติ) ใช้กฎของซิมป์สันประมาณพื้นที่หน้าตัดของน้ำในคลองเป็นตารางเมตร (ตอบทศนิยมสองตำแหน่ง)"
+    figure:
+      src: canal.svg
+      alt: "ภาพตัดขวางของคลองกว้าง 12 เมตร ระยะจากตลิ่งซ้าย 0, 2, 4, 6, 8, 10, 12 เมตร ความลึกที่จุดเหล่านั้นคือ 0, 1.2, 2, 2.6, 2.2, 1.4 และ 0 เมตร"
+    answer: { value: 19.47, unit: ตารางเมตร, tolerance: 0.02 }
+    hints:
+      - "$h = 2$ และมี 6 ช่วง (จำนวนคู่) ใช้ซิมป์สันได้"
+      - "$S_6 = \\tfrac{2}{3}\\big(y_0 + 4(y_1 + y_3 + y_5) + 2(y_2 + y_4) + y_6\\big)$"
+    misconceptions:
+      - { match: 18.8, feedback: "นี่คือกฎสี่เหลี่ยมคางหมู โจทย์ให้ใช้กฎของซิมป์สัน" }
+    solution: "$4(1.2 + 2.6 + 1.4) = 20.8$ และ $2(2.0 + 2.2) = 8.4$ ได้ $S_6 = \\tfrac23(0 + 20.8 + 8.4 + 0) = \\tfrac23(29.2) \\approx 19.47$ ตารางเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p010
+    topics: [math.numerical.basic-methods]
+    difficulty: 3
+    type: numeric
+    stem: "สมการ $x^3 - x - 3 = 0$ เขียนเป็นการวนซ้ำ $x_{n+1} = \\sqrt[3]{x_n + 3}$ เริ่มที่ $x_0 = 1$ จงหา $x_3$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.670, tolerance: 0.001 }
+    hints:
+      - "$x_1 = \\sqrt[3]{4} \\approx 1.5874$"
+      - "แทนค่าก่อนหน้าซ้ำอีกสองครั้ง โดยเก็บทศนิยมอย่างน้อยสี่ตำแหน่งระหว่างทาง"
+    misconceptions:
+      - { match: 1.662, feedback: "นี่คือ $x_2$ ต้องวนอีกหนึ่งรอบ" }
+    solution: "$x_1 = \\sqrt[3]{4} \\approx 1.5874$, $x_2 = \\sqrt[3]{4.5874} \\approx 1.6616$, $x_3 = \\sqrt[3]{4.6616} \\approx 1.6705$ ตอบ 1.670 (ลำดับเข้าใกล้ราก 1.6717)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p011
+    topics: [math.numerical.basic-methods]
+    difficulty: 5
+    type: numeric
+    stem: "ถังเก็บน้ำทรงกลมของหมู่บ้านแห่งหนึ่งในน่านมีรัศมีภายใน 1 เมตร เมื่อน้ำลึก $h$ เมตร ปริมาตรน้ำคือ $V(h) = \\dfrac{\\pi h^2(3 - h)}{3}$ ลูกบาศก์เมตร ใช้วิธีของนิวตันกับ $f(h) = V(h) - 1$ เริ่มที่ $h_0 = 0.5$ หาความลึกที่มีน้ำ 1 ลูกบาศก์เมตร (1,000 ลิตร) ตอบเป็นเซนติเมตร ทศนิยมหนึ่งตำแหน่ง"
+    answer: { value: 63.55, unit: เซนติเมตร, tolerance: 0.06 }
+    hints:
+      - "$f'(h) = V'(h) = \\pi(2h - h^2)$"
+      - "วนจนสองรอบติดกันต่างกันน้อยกว่า 0.0001 เมตร ($h_1 \\approx 0.6466$)"
+    misconceptions:
+      - { match: 64.7, feedback: "นี่คือผลของรอบแรก $h_1$ ยังไม่ลู่เข้า ต้องวนต่อ" }
+    solution: "$h_1 = 0.5 - \\tfrac{V(0.5) - 1}{\\pi(0.75)} \\approx 0.6466$, $h_2 \\approx 0.63555$, $h_3 \\approx 0.635501$ คงที่ ความลึก $\\approx 0.6355$ เมตร หรือ 63.5–63.6 เซนติเมตร ตรวจ: $V(0.6355) \\approx 1.000$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p012
+    topics: [math.numerical.basic-methods]
+    difficulty: 4
+    type: numeric
+    stem: "ระดับน้ำในถังประปาหมู่บ้านลดลงตามแบบจำลอง $\\dfrac{dh}{dt} = -0.2\\sqrt{h}$ เมื่อ $h$ เป็นเมตร $t$ เป็นชั่วโมง และ $h(0) = 4$ (แบบจำลองสมมติ) ใช้วิธีของออยเลอร์ขนาดก้าว 1 ชั่วโมง ประมาณระดับน้ำเมื่อ $t = 2$ ชั่วโมง (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 3.22, unit: เมตร, tolerance: 0.01 }
+    hints:
+      - "ก้าวแรก: $h_1 = 4 + 1 \\cdot (-0.2\\sqrt4)$"
+      - "ก้าวสอง: ใช้ $\\sqrt{h_1}$ ไม่ใช่ $\\sqrt4$"
+    misconceptions:
+      - { match: 3.2, feedback: "ใช้ความชันที่ $h = 4$ ทั้งสองก้าว ต้องคำนวณใหม่ที่ $h_1 = 3.6$" }
+      - { match: 3.24, feedback: "นี่คือผลเฉลยจริง $(2 - 0.1t)^2$ โจทย์ให้ใช้วิธีของออยเลอร์" }
+    solution: "$h_1 = 4 - 0.2(2) = 3.6$ และ $h_2 = 3.6 - 0.2\\sqrt{3.6} \\approx 3.6 - 0.3795 = 3.2205 \\approx 3.22$ เมตร (ผลเฉลยจริง $h = (2 - 0.1t)^2$ ให้ 3.24)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p013
+    topics: [math.numerical.basic-methods]
+    difficulty: 4
+    type: mcq
+    stem: "ใช้วิธีของนิวตันกับ $f(x) = x^3 - 2x + 2$ เริ่มที่ $x_0 = 0$ จะเกิดอะไรขึ้น"
+    choices:
+      - { id: a, text: "ได้ $x_1 = 1$, $x_2 = 0$, $x_3 = 1, \\dots$ วนเป็นวัฏจักรไม่ลู่เข้า", correct: true }
+      - { id: b, text: "ลู่เข้าสู่รากใกล้ $x = 0$ อย่างรวดเร็ว", feedback: "ลองคำนวณจริง: $x_1 = 0 - \\tfrac{2}{-2} = 1$ แล้ว $x_2 = 1 - \\tfrac{1}{1} = 0$ กลับมาที่เดิม" }
+      - { id: c, text: "หยุดทันทีเพราะ $f'(0) = 0$", feedback: "$f'(0) = -2 \\ne 0$ การหารทำได้ ปัญหาอยู่ที่ลำดับวนซ้ำ" }
+      - { id: d, text: "ลู่เข้าสู่ $x = 1$ ซึ่งเป็นราก", feedback: "$f(1) = 1 \\ne 0$ ดังนั้น 1 ไม่ใช่ราก" }
+    hints:
+      - "$f'(x) = 3x^2 - 2$ คำนวณ $x_1$ และ $x_2$"
+      - "ดูว่าค่ากลับมาซ้ำหรือไม่"
+    solution: "$x_1 = 0 - \\tfrac{2}{-2} = 1$, $x_2 = 1 - \\tfrac{1}{1} = 0$ วนกลับมาที่ 0 ไม่สิ้นสุด (รากจริงอยู่ใกล้ $-1.77$) โปรแกรมต้องจำกัดจำนวนรอบ หรือเปลี่ยนจุดเริ่ม/ใช้วิธีแบ่งครึ่งก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p014
+    topics: [math.numerical.basic-methods]
+    difficulty: 4
+    type: numeric
+    stem: "กฎสี่เหลี่ยมคางหมู $n = 4$ ประมาณปริพันธ์หนึ่งคลาดประมาณ 0.0040 ถ้าเปลี่ยนเป็น $n = 12$ กับปริพันธ์เดียวกัน ความคลาดเคลื่อนจะลดลงประมาณกี่เท่า"
+    answer: { value: 9, unit: เท่า, tolerance: 0.01 }
+    hints:
+      - "ความคลาดเคลื่อนของกฎสี่เหลี่ยมคางหมูแปรผันตาม $h^2$ หรือ $\\tfrac{1}{n^2}$"
+      - "$n$ เพิ่ม 3 เท่า ($h$ ลดเหลือ $\\tfrac13$)"
+    misconceptions:
+      - { match: 3, feedback: "ความคลาดเคลื่อนแปรผันตาม $h^2$ ไม่ใช่ $h$ (แบบ $h$ คือวิธีของออยเลอร์)" }
+      - { match: 81, feedback: "ลด $3^4 = 81$ เท่าเป็นสมบัติของกฎของซิมป์สัน ($h^4$) ไม่ใช่สี่เหลี่ยมคางหมู" }
+    solution: "$E \\propto \\tfrac{1}{n^2}$ จึง $\\tfrac{E_4}{E_{12}} = \\big(\\tfrac{12}{4}\\big)^2 = 9$ เท่า ความคลาดเคลื่อนเหลือราว $\\tfrac{0.0040}{9} \\approx 0.00044$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p015
+    topics: [math.numerical.basic-methods]
+    difficulty: 5
+    type: numeric
+    stem: "แก้ $y' = y$, $y(0) = 1$ ด้วยวิธีของออยเลอร์ ได้ $y(1) \\approx 2.25$ เมื่อ $h = 0.5$ และ $y(1) \\approx 2.4414$ เมื่อ $h = 0.25$ ถ้าความคลาดเคลื่อนแปรผันตาม $h$ (คลาด $\\approx Ch$) จงใช้สองค่านี้ประมาณ $y(1)$ ที่ดีขึ้น (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 2.633, tolerance: 0.002 }
+    hints:
+      - "ให้ค่าจริง $Y$: $Y \\approx 2.25 + 0.5C$ และ $Y \\approx 2.4414 + 0.25C$"
+      - "ลบสองสมการเพื่อหา $C$ หรือใช้ $Y \\approx 2(2.4414) - 2.25$"
+    misconceptions:
+      - { match: 2.718, feedback: "นี่คือค่าจริง $e$ โจทย์ให้ประมาณจากสองค่าที่คำนวณได้" }
+      - { match: 2.346, feedback: "นี่คือค่าเฉลี่ยของสองค่า แต่ค่าที่ $h$ เล็กกว่าแม่นกว่า ต้องให้น้ำหนักมากกว่า" }
+    solution: "ลบสองสมการ: $0 = -0.1914 + 0.25C$ ได้ $C \\approx 0.7656$ จึง $Y \\approx 2.4414 + 0.25(0.7656) = 2.6328 \\approx 2.633$ (เท่ากับ $2(2.4414) - 2.25$) ใกล้ $e \\approx 2.718$ กว่าทั้งสองค่าเดิมมาก วิธีนี้เรียกว่าการประมาณค่านอกช่วงของริชาร์ดสัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p016
+    topics: [math.numerical.basic-methods]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนของโปรแกรมวิธีของนิวตันที่ปลอดภัย"
+    items:
+      - "รับฟังก์ชัน $f$, อนุพันธ์ $f'$, จุดเริ่ม และเกณฑ์ความคลาดเคลื่อน"
+      - "คำนวณก้าว $f(x)/f'(x)$"
+      - "ปรับ $x \\leftarrow x -$ ก้าว"
+      - "ถ้า |ก้าว| น้อยกว่าเกณฑ์ ให้คืนค่า $x$"
+      - "ถ้าวนครบจำนวนรอบสูงสุดแล้วยังไม่ลู่เข้า ให้แจ้งข้อผิดพลาด"
+    hints:
+      - "การตรวจเงื่อนไขหยุดทำหลังปรับค่า $x$"
+      - "การแจ้งว่าไม่ลู่เข้าเกิดเมื่อวนครบทุกรอบแล้วเท่านั้น"
+    solution: "รับข้อมูล → คำนวณก้าว → ปรับ $x$ → ตรวจว่าก้าวเล็กพอ (ถ้าใช่คืนค่า) → ถ้าวนครบแล้วยังไม่ลู่เข้าให้แจ้งข้อผิดพลาด ตรงกับฟังก์ชัน `newton` ในบทเรียน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p017
+    topics: [math.numerical.basic-methods]
+    difficulty: 2
+    type: mcq
+    stem: "นักศึกษาเขียนลูป `while f(x) != 0:` เพื่อวนวิธีของนิวตันจนเจอราก โปรแกรมทำงานไม่จบ สาเหตุที่น่าจะเป็นที่สุดคืออะไร"
+    choices:
+      - { id: a, text: "จำนวนทศนิยมในคอมพิวเตอร์มีความละเอียดจำกัด $f(x)$ อาจไม่เป็นศูนย์พอดีเลย ควรหยุดเมื่อก้าวหรือ $|f(x)|$ เล็กกว่าเกณฑ์", correct: true }
+      - { id: b, text: "วิธีของนิวตันไม่มีวันหารากได้", feedback: "นิวตันลู่เข้าเร็วมากเมื่อเริ่มใกล้ราก ปัญหาอยู่ที่เงื่อนไขหยุด" }
+      - { id: c, text: "ต้องใช้ `f(x) > 0` แทน", feedback: "เงื่อนไขนี้ไม่เกี่ยวกับการเข้าใกล้ราก และยังเทียบค่าทศนิยมแบบตรงตัวอยู่ดี" }
+      - { id: d, text: "ต้องเริ่มจาก $x_0 = 0$ เสมอ", feedback: "จุดเริ่มควรอยู่ใกล้ราก ไม่มีกฎว่าต้องเป็น 0" }
+    hints:
+      - "ลองพิมพ์ `0.1 + 0.2 == 0.3` ใน Python"
+      - "รากจริงมักเป็นจำนวนอตรรกยะที่เขียนด้วยทศนิยมจำกัดไม่ได้"
+    solution: "รากอย่าง $\\sqrt2$ เก็บในคอมพิวเตอร์ได้แค่ค่าประมาณ $f(x)$ จึงอาจเป็น $4.4 \\times 10^{-16}$ แทนที่จะเป็น 0 ทำให้ลูปไม่จบ ควรใช้ `abs(step) < tol` และจำกัดจำนวนรอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.numerical.basic-methods.p018
+    topics: [math.numerical.basic-methods]
+    difficulty: 3
+    type: numeric
+    stem: "ใช้วิธีของนิวตันกับ $f(x) = x^2 - 10$ เริ่มที่ $x_0 = 3$ จงหา $x_2$ (ตอบทศนิยมห้าตำแหน่ง)"
+    answer: { value: 3.16228, tolerance: 0.00001 }
+    hints:
+      - "$x_1 = 3 - \\dfrac{9 - 10}{6}$"
+      - "$x_2 = x_1 - \\dfrac{x_1^2 - 10}{2x_1}$ เก็บทศนิยมให้มากพอ"
+    solution: "$x_1 = 3 + \\tfrac16 \\approx 3.166667$ และ $x_2 = 3.166667 - \\tfrac{0.027778}{6.333333} \\approx 3.162281$ ตอบ 3.16228 (ค่าจริง $\\sqrt{10} = 3.1622777$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

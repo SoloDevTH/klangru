@@ -1,0 +1,75 @@
+id: math.numerical.basic-methods
+subject: math
+title: { th: ระเบียบวิธีเชิงตัวเลขเบื้องต้น, en: Introductory numerical methods }
+summary: หารากของสมการด้วยวิธีแบ่งครึ่งช่วง การวนซ้ำ และวิธีของนิวตัน ประมาณปริพันธ์ด้วยกฎสี่เหลี่ยมคางหมูและซิมป์สัน แก้สมการเชิงอนุพันธ์ด้วยวิธีของออยเลอร์ และเขียนเป็นโปรแกรม
+difficulty: 8
+minutes: 50
+prerequisites: [math.calculus.derivative-applications, math.calculus.definite-integral, computer.programming.functions]
+encompasses:
+  - { id: math.calculus.definite-integral, weight: 0.3 }
+  - { id: math.calculus.derivative-applications, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: newton.svg
+    alt: "กราฟ y = x³ − x − 2 บนช่วง x = 1.2 ถึง 2.15 จุดเริ่ม x₀ = 2 อยู่บนกราฟที่ความสูง 4 เส้นสัมผัสสีแดงที่จุดนั้นตัดแกน x ที่ x₁ ≈ 1.636 เส้นสัมผัสสีส้มที่ x₁ ตัดแกน x ที่ x₂ ≈ 1.530 ซึ่งใกล้รากจริง 1.5214 ที่กราฟตัดแกน x"
+    caption: "แต่ละรอบของวิธีของนิวตันแทนเส้นโค้งด้วยเส้นสัมผัส แล้วกระโดดไปที่จุดตัดแกน x ของเส้นสัมผัส"
+  - type: interactive
+    title: เส้นสัมผัสพาไปใกล้รากแค่ไหน
+    caption: "เส้นแรกคือ f(x) = x³ − x − 2 เส้นที่สองคือเส้นสัมผัสที่ x = a เลื่อน a แล้วดูว่าเส้นสัมผัสตัดแกน x ที่ใด ลอง a ใกล้ 0.58 ซึ่ง f′(a) ≈ 0 เส้นสัมผัสเกือบขนานแกน x และพาออกไปไกลมาก"
+    widget:
+      kind: function-plot
+      functions: ["x^3-x-2", "(a^3-a-2)+(3a^2-1)\\cdot(x-a)"]
+      sliders:
+        - { name: a, min: -1, max: 2.5, step: 0.05, value: 2, label: จุดสัมผัส a }
+      x: [-2, 3]
+      y: [-6, 8]
+  - type: worked-example
+    title: หา √3 ด้วยวิธีของนิวตัน
+    problem: "ใช้วิธีของนิวตันกับ $f(x) = x^2 - 3$ เริ่มที่ $x_0 = 2$ หาค่าประมาณของ $\\sqrt3$ สองรอบ"
+    steps:
+      - text: "$f'(x) = 2x$ สูตรวนซ้ำคือ $x_{n+1} = x_n - \\dfrac{x_n^2 - 3}{2x_n}$"
+      - text: "$x_1 = 2 - \\dfrac{4 - 3}{4} = 1.75$"
+      - text: "$x_2 = 1.75 - \\dfrac{1.75^2 - 3}{3.5} = 1.75 - \\dfrac{0.0625}{3.5} \\approx 1.732143$"
+        why: "ค่าจริง $\\sqrt3 = 1.7320508\\ldots$ รอบที่สองถูกแล้ว 4 หลัก รอบถัดไปได้ $1.7320508$ ถูก 8 หลัก นี่คือการลู่เข้าแบบกำลังสอง"
+      - text: "ตรวจ: $1.732143^2 \\approx 3.00032$ ใกล้ 3"
+    answer: "$x_2 \\approx 1.732143$"
+  - { type: check, problem: math.numerical.basic-methods.p003, prompt: "แทนในสูตร $x_1 = x_0 - f(x_0)/f'(x_0)$ ระวังเครื่องหมาย" }
+  - type: worked-example
+    title: ประมาณ π ด้วยกฎของซิมป์สัน
+    problem: "ใช้ $\\displaystyle\\int_0^1 \\frac{dx}{1 + x^2} = \\frac{\\pi}{4}$ และกฎของซิมป์สันกับ $n = 4$ ประมาณค่า $\\pi$"
+    steps:
+      - text: "$h = \\dfrac{1 - 0}{4} = 0.25$ จุดคือ $0, 0.25, 0.5, 0.75, 1$"
+      - text: "$y_i = \\dfrac{1}{1 + x_i^2}$: $1,\\ 0.9412,\\ 0.8,\\ 0.64,\\ 0.5$"
+      - text: "$S_4 = \\dfrac{0.25}{3}\\big(1 + 4(0.9412) + 2(0.8) + 4(0.64) + 0.5\\big) = \\dfrac{0.25}{3}(9.4247) \\approx 0.785392$"
+        why: "สัมประสิทธิ์เรียง 1, 4, 2, 4, 1 จุดคี่ได้ 4 จุดคู่ภายในได้ 2"
+      - text: "$\\pi \\approx 4S_4 \\approx 3.141569$ คลาดจากค่าจริง $3.141593$ เพียงราว $2.4 \\times 10^{-5}$ (กฎสี่เหลี่ยมคางหมูด้วยจุดเดียวกันได้ $3.1312$)"
+    answer: "$\\pi \\approx 3.14157$"
+  - type: figure
+    src: slope-euler.svg
+    alt: "สนามความชันของ y′ = t − y เป็นขีดสีเทาสั้น ๆ บนช่วง t จาก 0 ถึง 2.2 และ y จาก 0 ถึง 2 เส้นโค้งสีน้ำเงินคือผลเฉลยจริงที่ผ่าน (0, 1) ลดลงถึงราว 0.69 แล้วเพิ่มขึ้นเป็น 1.271 ที่ t = 2 เส้นหักสีแดงคือวิธีของออยเลอร์ h = 0.5 ผ่านจุด (0, 1), (0.5, 0.5), (1, 0.5), (1.5, 0.75), (2, 1.125) อยู่ใต้เส้นจริงตลอด"
+    caption: "ออยเลอร์เดินตามขีดความชันทีละก้าว ก้าวยาวทำให้หลุดจากเส้นโค้งจริงมาก"
+  - { type: check, problem: math.numerical.basic-methods.p005, prompt: "คำนวณความชันใหม่ที่จุดล่าสุดทุกก้าว" }
+glossary:
+  - { term: วิธีแบ่งครึ่งช่วง, definition: "หารากโดยแบ่งช่วงที่ f เปลี่ยนเครื่องหมายครึ่งหนึ่งทุกรอบ ลู่เข้าเสมอแต่ช้า" }
+  - { term: การวนซ้ำจุดตรึง, definition: "เขียนสมการเป็น x = g(x) แล้วคำนวณ xₙ₊₁ = g(xₙ) ลู่เข้าเมื่อ |g′| < 1 ใกล้ราก" }
+  - { term: วิธีของนิวตัน, definition: "xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ) ใช้เส้นสัมผัส ลู่เข้าเร็วแบบกำลังสองเมื่อใกล้ราก" }
+  - { term: กฎของซิมป์สัน, definition: "ประมาณปริพันธ์ด้วยพาราโบลาทีละสองช่วง สัมประสิทธิ์ 1, 4, 2, 4, …, 4, 1 คูณ h/3" }
+  - { term: สนามความชัน, definition: "ขีดสั้น ๆ ที่แสดงความชันที่ทุกจุดตามสมการ y′ = f(t, y)" }
+  - { term: วิธีของออยเลอร์, definition: "yₙ₊₁ = yₙ + h·f(tₙ, yₙ) เดินตามความชันทีละก้าว ความคลาดเคลื่อนแปรผันตาม h" }
+flashcards:
+  - { front: "สูตรวิธีของนิวตัน", back: "xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)" }
+  - { front: "ความยาวช่วงหลังแบ่งครึ่ง n รอบ", back: "(b − a)/2ⁿ" }
+  - { front: "กฎสี่เหลี่ยมคางหมู", back: "(h/2)(y₀ + 2y₁ + … + 2yₙ₋₁ + yₙ) คลาดแปรผันตาม h²" }
+  - { front: "กฎของซิมป์สันใช้ได้เมื่อ", back: "n เป็นจำนวนคู่ คลาดแปรผันตาม h⁴" }
+  - { front: "ขั้นหนึ่งของวิธีของออยเลอร์", back: "yₙ₊₁ = yₙ + h·f(tₙ, yₙ)" }
+references:
+  - { title: "4.9 Newton's Method (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/4-9-newtons-method", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.6 Numerical Integration (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-6-numerical-integration", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.2 Direction Fields and Numerical Methods (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/4-2-direction-fields-and-numerical-methods", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Bisection method", url: "https://en.wikipedia.org/wiki/Bisection_method", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,289 @@
+problems:
+  - id: math.calculus.multiple-integrals.p001
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 1
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^1\\!\\!\\int_0^2 6xy^2\\,dx\\,dy$"
+    answer: { value: 4 }
+    hints:
+      - "ชั้นใน (เทียบ $x$): $\\int_0^2 6xy^2\\,dx = \\big[3x^2y^2\\big]_0^2 = 12y^2$"
+      - "ชั้นนอก: $\\int_0^1 12y^2\\,dy$"
+    misconceptions:
+      - { match: 12, feedback: "หาชั้นในแล้วยังต้องหาปริพันธ์ $12y^2$ เทียบ $y$ จาก 0 ถึง 1 อีกชั้น" }
+    solution: "$\\int_0^2 6xy^2\\,dx = 12y^2$ และ $\\int_0^1 12y^2\\,dy = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p002
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 1
+    type: mcq
+    stem: "เมื่อเปลี่ยนปริพันธ์สองชั้นเป็นพิกัดเชิงขั้ว $dA$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$r\\,dr\\,d\\theta$", correct: true }
+      - { id: b, text: "$dr\\,d\\theta$", feedback: "ชิ้นพื้นที่เล็กยาว $r\\,d\\theta$ ไม่ใช่ $d\\theta$ ชิ้นที่ห่างจุดกำเนิดจึงใหญ่กว่า" }
+      - { id: c, text: "$r^2\\,dr\\,d\\theta$", feedback: "$r^2$ คล้ายกับ $\\rho^2$ ในพิกัดทรงกลมสามมิติ แต่ในระนาบใช้ $r$ ตัวเดียว" }
+      - { id: d, text: "$\\cos\\theta\\,\\sin\\theta\\,dr\\,d\\theta$", feedback: "$\\cos\\theta$ และ $\\sin\\theta$ อยู่ใน $x$ และ $y$ ไม่ได้อยู่ใน $dA$" }
+    hints:
+      - "วาดชิ้นพื้นที่ระหว่างรัศมี $r$ ถึง $r + dr$ และมุม $\\theta$ ถึง $\\theta + d\\theta$"
+      - "ความยาวส่วนโค้งของวงกลมรัศมี $r$ ที่กางมุม $d\\theta$ คือ $r\\,d\\theta$"
+    solution: "ชิ้นพื้นที่เกือบเป็นสี่เหลี่ยม กว้าง $dr$ ยาว $r\\,d\\theta$ จึง $dA = r\\,dr\\,d\\theta$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p003
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\iint_R (x + y)\\,dA$ เมื่อ $R = [0, 1] \\times [0, 2]$ ($0 \\le x \\le 1$, $0 \\le y \\le 2$)"
+    answer: { value: 3 }
+    hints:
+      - "$\\displaystyle\\int_0^1\\!\\!\\int_0^2 (x + y)\\,dy\\,dx$"
+      - "ชั้นใน: $\\big[xy + \\tfrac{y^2}{2}\\big]_0^2 = 2x + 2$"
+    misconceptions:
+      - { match: 2, feedback: "ชั้นในต้องมอง $x$ เป็นค่าคงตัว $\\int_0^2 x\\,dy = 2x$ ไม่ใช่ศูนย์" }
+    solution: "$\\int_0^2 (x + y)\\,dy = 2x + 2$ และ $\\int_0^1 (2x + 2)\\,dx = 1 + 2 = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p004
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^1\\!\\!\\int_0^{x} xy\\,dy\\,dx$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.125, tolerance: 0.001 }
+    hints:
+      - "ชั้นใน: $\\int_0^{x} xy\\,dy = x\\cdot\\tfrac{x^2}{2}$"
+      - "ชั้นนอก: $\\int_0^1 \\tfrac{x^3}{2}\\,dx$"
+    misconceptions:
+      - { match: 0.25, feedback: "ใช้ขอบบนของ $y$ เป็น 1 แทน $x$ บริเวณนี้คือสามเหลี่ยมใต้เส้น $y = x$" }
+    solution: "$\\int_0^x xy\\,dy = \\tfrac{x^3}{2}$ และ $\\int_0^1 \\tfrac{x^3}{2}\\,dx = \\tfrac18 = 0.125$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p005
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้พิกัดเชิงขั้วหาพื้นที่ของวงกลมรัศมี 3 จาก $\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^3 r\\,dr\\,d\\theta$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 28.27, tolerance: 0.01 }
+    hints:
+      - "ชั้นใน: $\\int_0^3 r\\,dr = \\tfrac92$"
+      - "ชั้นนอก: คูณด้วย $2\\pi$"
+    misconceptions:
+      - { match: 18.85, feedback: "ลืม $r$ ใน $dA$: $\\int_0^{2\\pi}\\int_0^3 dr\\,d\\theta = 6\\pi$ ซึ่งไม่ใช่พื้นที่" }
+    solution: "$\\tfrac92 \\times 2\\pi = 9\\pi \\approx 28.27$ ตรงกับสูตร $\\pi r^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p006
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 3
+    type: numeric
+    stem: "แปลงที่ดินริมคลองในปทุมธานีมีขอบตามภาพ (หน่วยเมตร ข้อมูลสมมติ) ขอบบนเป็นคลองโค้ง $y = 60 - \\tfrac{x^2}{160}$ สำหรับ $0 \\le x \\le 80$ ใช้ปริพันธ์สองชั้นหาพื้นที่แปลง แล้วตอบเป็นไร่ (1 ไร่ = 1,600 ตารางเมตร ทศนิยมสองตำแหน่ง)"
+    figure:
+      src: land-plot.svg
+      alt: "แปลงที่ดินในระบบพิกัดหน่วยเมตร ขอบล่างคือถนนตามแกน x จาก 0 ถึง 80 ขอบซ้ายตามแกน y สูง 60 ขอบขวาเป็นเส้นตั้ง x = 80 ขอบบนเป็นคลองโค้งตามสมการ y = 60 − x²/160"
+    answer: { value: 2.33, unit: ไร่, tolerance: 0.01 }
+    hints:
+      - "$A = \\displaystyle\\int_0^{80}\\!\\!\\int_0^{60 - x^2/160} dy\\,dx = \\int_0^{80}\\Big(60 - \\frac{x^2}{160}\\Big)dx$"
+      - "ได้พื้นที่เป็นตารางเมตร แล้วหารด้วย 1,600"
+    misconceptions:
+      - { match: 3, feedback: "นี่คือพื้นที่ของสี่เหลี่ยม $80 \\times 60$ ซึ่งรวมส่วนที่เป็นคลองด้วย" }
+      - { match: 3733.33, feedback: "นี่คือพื้นที่เป็นตารางเมตร ต้องหารด้วย 1,600 ให้เป็นไร่" }
+    solution: "$\\int_0^{80}\\big(60 - \\tfrac{x^2}{160}\\big)dx = 4800 - \\tfrac{80^3}{480} = 4800 - 1066.67 = 3733.33$ ตารางเมตร หาร 1,600 ได้ประมาณ 2.33 ไร่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p007
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^1\\!\\!\\int_x^1 e^{y^2}\\,dy\\,dx$ โดยสลับลำดับการหาปริพันธ์ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.859, tolerance: 0.002 }
+    hints:
+      - "บริเวณคือ $0 \\le x \\le y$, $0 \\le y \\le 1$ (วาดสามเหลี่ยมก่อน)"
+      - "$\\displaystyle\\int_0^1\\!\\!\\int_0^y e^{y^2}\\,dx\\,dy = \\int_0^1 ye^{y^2}\\,dy$ แล้วแทนค่า $u = y^2$"
+    misconceptions:
+      - { match: 1.718, feedback: "$\\int ye^{y^2}dy = \\tfrac12 e^{y^2}$ อย่าลืม $\\tfrac12$ จากการแทนค่า" }
+    solution: "สลับลำดับ: $\\int_0^1 ye^{y^2}\\,dy = \\big[\\tfrac12 e^{y^2}\\big]_0^1 = \\tfrac{e - 1}{2} \\approx 0.859$ ในลำดับเดิมหา $\\int e^{y^2}dy$ ด้วยฟังก์ชันพื้นฐานไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p008
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ระบบพิกัดกับชิ้นปริมาตรหรือชิ้นพื้นที่"
+    pairs:
+      - { left: "พิกัดฉากสองมิติ", right: "$dx\\,dy$" }
+      - { left: "พิกัดเชิงขั้ว", right: "$r\\,dr\\,d\\theta$" }
+      - { left: "พิกัดทรงกระบอก", right: "$r\\,dz\\,dr\\,d\\theta$" }
+      - { left: "พิกัดทรงกลม", right: "$\\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$" }
+    hints:
+      - "พิกัดทรงกระบอกคือพิกัดเชิงขั้วบวกความสูง $z$"
+      - "พิกัดทรงกลมมีตัวประกอบกำลังสองของรัศมี"
+    solution: "ฉาก $dx\\,dy$; ขั้ว $r\\,dr\\,d\\theta$; ทรงกระบอกเพิ่ม $dz$ ได้ $r\\,dz\\,dr\\,d\\theta$; ทรงกลม $\\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p009
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\iint_D e^{-(x^2 + y^2)}\\,dA$ เมื่อ $D$ คือวงกลม $x^2 + y^2 \\le 4$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 3.084, tolerance: 0.002 }
+    hints:
+      - "เปลี่ยนเป็นพิกัดเชิงขั้ว: $\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^2 e^{-r^2}r\\,dr\\,d\\theta$"
+      - "แทนค่า $u = r^2$: $\\int_0^2 e^{-r^2}r\\,dr = \\tfrac12(1 - e^{-4})$"
+    misconceptions:
+      - { match: 3.142, feedback: "นี่คือค่าเมื่อรัศมีเป็นอนันต์ ($\\pi$) วงกลมรัศมี 2 ได้ $\\pi(1 - e^{-4})$" }
+      - { match: 6.168, feedback: "ลืม $\\tfrac12$ จากการแทนค่า $u = r^2$, $du = 2r\\,dr$" }
+    solution: "$2\\pi \\cdot \\tfrac12(1 - e^{-4}) = \\pi(1 - e^{-4}) \\approx 3.084$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p010
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาปริมาตรของทรงตันที่อยู่ใต้พาราโบลอยด์ $z = 4 - x^2 - y^2$ และเหนือระนาบ $z = 0$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 25.13, tolerance: 0.02 }
+    hints:
+      - "พาราโบลอยด์ตัดระนาบ $z = 0$ ที่วงกลม $r = 2$ ใช้พิกัดทรงกระบอก"
+      - "$V = \\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^2 (4 - r^2)\\,r\\,dr\\,d\\theta$"
+    misconceptions:
+      - { match: 33.51, feedback: "ลืม $r$ ใน $dA$ ($\\int_0^2 (4 - r^2)\\,dr = \\tfrac{16}{3}$)" }
+    solution: "$\\int_0^2 (4r - r^3)\\,dr = 8 - 4 = 4$ คูณ $2\\pi$ ได้ $8\\pi \\approx 25.13$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p011
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 4
+    type: numeric
+    stem: "แผ่นบางรูปครึ่งวงกลม $x^2 + y^2 \\le 4$, $y \\ge 0$ มีความหนาแน่นสม่ำเสมอ จงหาพิกัด $\\bar{y}$ ของจุดศูนย์กลางมวล (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.849, tolerance: 0.002 }
+    hints:
+      - "$\\bar{x} = 0$ จากความสมมาตร และ $\\bar{y} = \\dfrac{\\iint y\\,dA}{\\iint dA}$"
+      - "พิกัดเชิงขั้ว: $\\int_0^{\\pi}\\!\\int_0^2 (r\\sin\\theta)\\,r\\,dr\\,d\\theta = \\tfrac83 \\cdot 2$ และพื้นที่ $= 2\\pi$"
+    misconceptions:
+      - { match: 1, feedback: "จุดศูนย์กลางมวลไม่ได้อยู่กึ่งกลางรัศมี เนื้อแผ่นส่วนใหญ่อยู่ใกล้ฐาน" }
+      - { match: 0.637, feedback: "ตรวจ $\\int_0^2 r^2\\,dr = \\tfrac83$ (ใช้ $r\\,dA$ ไม่ใช่ $dA$)" }
+    solution: "$\\iint y\\,dA = \\int_0^{\\pi}\\sin\\theta\\,d\\theta \\int_0^2 r^2\\,dr = 2 \\cdot \\tfrac83 = \\tfrac{16}{3}$ พื้นที่ $= 2\\pi$ จึง $\\bar{y} = \\tfrac{16/3}{2\\pi} = \\tfrac{8}{3\\pi} \\approx 0.849$ (ตรงกับสูตร $\\tfrac{4R}{3\\pi}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p012
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 3
+    type: numeric
+    stem: "นาข้าวในนครสวรรค์เป็นสี่เหลี่ยม $0 \\le x \\le 100$, $0 \\le y \\le 50$ (เมตร) ฝนครั้งหนึ่งตกลึก $f(x, y) = 0.02 + 0.0001x$ เมตร (มากขึ้นทางตะวันออก แบบจำลองสมมติ) ปริมาตรน้ำฝนทั้งแปลงเป็นกี่ลูกบาศก์เมตร"
+    answer: { value: 125, unit: ลูกบาศก์เมตร, tolerance: 0.1 }
+    hints:
+      - "$V = \\displaystyle\\int_0^{100}\\!\\!\\int_0^{50}(0.02 + 0.0001x)\\,dy\\,dx$"
+      - "ชั้นใน: $50(0.02 + 0.0001x)$"
+    misconceptions:
+      - { match: 100, feedback: "นี่คือปริมาตรจากความลึก 0.02 เมตรอย่างเดียว ยังไม่รวมส่วน $0.0001x$" }
+      - { match: 150, feedback: "ใช้ความลึกสูงสุดที่ขอบตะวันออก (0.03 m) ทั้งแปลง ต้องหาปริพันธ์" }
+    solution: "$\\int_0^{100} 50(0.02 + 0.0001x)\\,dx = 50\\big[0.02x + 0.00005x^2\\big]_0^{100} = 50(2 + 0.5) = 125$ ลูกบาศก์เมตร (เท่ากับพื้นที่ 5,000 m² คูณความลึกเฉลี่ย 0.025 m)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p013
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 4
+    type: numeric
+    stem: "แป้นหมุนปั้นดินเผาของช่างที่ด่านเกวียนเป็นจานกลมบางสม่ำเสมอ มวล 2 กิโลกรัม รัศมี 0.3 เมตร (ค่าสมมติ) ใช้ $I = \\iint_D r^2\\sigma\\,dA$ หาโมเมนต์ความเฉื่อยรอบแกนผ่านจุดศูนย์กลาง (kg·m² ทศนิยมสองตำแหน่ง)"
+    answer: { value: 0.09, unit: "kg·m²", tolerance: 0.001 }
+    hints:
+      - "$\\sigma = \\dfrac{M}{\\pi R^2}$ และ $dA = r\\,dr\\,d\\theta$"
+      - "$I = \\sigma\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^R r^3\\,dr\\,d\\theta = \\sigma \\cdot 2\\pi \\cdot \\frac{R^4}{4}$"
+    misconceptions:
+      - { match: 0.18, feedback: "$MR^2$ เป็นของห่วงบางที่มวลอยู่ที่ขอบทั้งหมด จานเต็มมีมวลใกล้แกนด้วย จึงได้ครึ่งหนึ่ง" }
+    solution: "$I = \\tfrac{M}{\\pi R^2} \\cdot 2\\pi \\cdot \\tfrac{R^4}{4} = \\tfrac12 MR^2 = \\tfrac12(2)(0.09) = 0.09$ kg·m²"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p014
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาปริมาตรของทรงตันรูปกรวยไอศกรีมที่อยู่ภายในทรงกลม $\\rho \\le 2$ และภายในกรวย $\\varphi \\le \\tfrac{\\pi}{4}$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 4.91, tolerance: 0.01 }
+    hints:
+      - "$V = \\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^{\\pi/4}\\!\\!\\int_0^2 \\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$"
+      - "แยกเป็นผลคูณ $2\\pi \\cdot (1 - \\cos\\tfrac{\\pi}{4}) \\cdot \\tfrac83$"
+    misconceptions:
+      - { match: 16.76, feedback: "ลืม $\\sin\\varphi$ หรือใช้ช่วง $\\varphi$ ผิด นี่คือปริมาตรครึ่งทรงกลม $\\tfrac{16\\pi}{3}$" }
+      - { match: 11.85, feedback: "ใช้ $\\cos\\tfrac{\\pi}{4}$ แทน $1 - \\cos\\tfrac{\\pi}{4}$ ($\\int_0^{\\pi/4}\\sin\\varphi\\,d\\varphi = 1 - \\cos\\tfrac{\\pi}{4}$)" }
+    solution: "$\\int_0^2 \\rho^2\\,d\\rho = \\tfrac83$, $\\int_0^{\\pi/4}\\sin\\varphi\\,d\\varphi = 1 - \\tfrac{\\sqrt2}{2}$, $\\int_0^{2\\pi}d\\theta = 2\\pi$ คูณกันได้ $\\tfrac{16\\pi}{3}\\big(1 - \\tfrac{\\sqrt2}{2}\\big) \\approx 4.91$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p015
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 5
+    type: numeric
+    stem: "แผ่นบางรูปสามเหลี่ยม $0 \\le y \\le x$, $0 \\le x \\le 1$ มีความหนาแน่น $\\sigma(x, y) = x + y$ จงหา $\\bar{x}$ ของจุดศูนย์กลางมวล"
+    answer: { value: 0.75, tolerance: 0.001 }
+    hints:
+      - "$m = \\displaystyle\\int_0^1\\!\\!\\int_0^x (x + y)\\,dy\\,dx$ และ $M_y = \\int_0^1\\!\\!\\int_0^x x(x + y)\\,dy\\,dx$"
+      - "ชั้นในของ $m$: $x^2 + \\tfrac{x^2}{2} = \\tfrac32 x^2$"
+    misconceptions:
+      - { match: 0.667, feedback: "นี่คือ $\\bar{x}$ ของสามเหลี่ยมที่ความหนาแน่นสม่ำเสมอ ความหนาแน่น $x + y$ ทำให้ด้านขวาหนักกว่า" }
+      - { match: 0.375, feedback: "นี่คือ $M_y$ ต้องหารด้วยมวล $m = \\tfrac12$" }
+    solution: "$m = \\int_0^1 \\tfrac32x^2\\,dx = \\tfrac12$ และ $M_y = \\int_0^1 \\tfrac32x^3\\,dx = \\tfrac38$ จึง $\\bar{x} = \\tfrac{3/8}{1/2} = 0.75$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p016
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 2
+    type: mcq
+    stem: "เมื่อสลับลำดับของ $\\displaystyle\\int_0^2\\!\\!\\int_{x^2}^{4} f(x, y)\\,dy\\,dx$ จะได้ข้อใด"
+    choices:
+      - { id: a, text: "$\\displaystyle\\int_0^4\\!\\!\\int_0^{\\sqrt{y}} f(x, y)\\,dx\\,dy$", correct: true }
+      - { id: b, text: "$\\displaystyle\\int_{x^2}^4\\!\\!\\int_0^2 f(x, y)\\,dx\\,dy$", feedback: "ขอบเขตชั้นนอกต้องเป็นค่าคงตัว สลับขอบเขตตรง ๆ ใช้ไม่ได้ ต้องวาดบริเวณใหม่" }
+      - { id: c, text: "$\\displaystyle\\int_0^4\\!\\!\\int_{\\sqrt{y}}^{2} f(x, y)\\,dx\\,dy$", feedback: "บริเวณอยู่ **เหนือ** พาราโบลา $y = x^2$ แถบแนวนอนจึงเริ่มที่ $x = 0$ และสิ้นสุดที่ $x = \\sqrt{y}$" }
+      - { id: d, text: "$\\displaystyle\\int_0^2\\!\\!\\int_0^{\\sqrt{y}} f(x, y)\\,dx\\,dy$", feedback: "$y$ วิ่งจาก 0 ถึง 4 ไม่ใช่ 0 ถึง 2" }
+    hints:
+      - "บริเวณคือ $0 \\le x \\le 2$ และ $x^2 \\le y \\le 4$ วาดพาราโบลาและเส้น $y = 4$"
+      - "สำหรับ $y$ หนึ่งค่า แถบแนวนอนเริ่มที่แกน $y$ และสิ้นสุดที่พาราโบลา"
+    solution: "บริเวณอยู่ระหว่างแกน $y$ พาราโบลา $y = x^2$ และเส้น $y = 4$ ในแบบแถบแนวนอน $0 \\le y \\le 4$ และ $0 \\le x \\le \\sqrt{y}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p017
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหาปริพันธ์สองชั้นบนบริเวณทั่วไป"
+    items:
+      - "วาดบริเวณและหาจุดตัดของเส้นขอบ"
+      - "เลือกแถบแนวตั้งหรือแนวนอน"
+      - "เขียนขอบเขตชั้นใน (เป็นฟังก์ชัน) และชั้นนอก (เป็นค่าคงตัว)"
+      - "หาปริพันธ์ชั้นใน โดยมองตัวแปรชั้นนอกเป็นค่าคงตัว"
+      - "หาปริพันธ์ชั้นนอก"
+    hints:
+      - "ต้องเห็นบริเวณก่อนจึงเขียนขอบเขตได้"
+      - "ชั้นในทำก่อนชั้นนอกเสมอ"
+    solution: "วาดบริเวณ → เลือกแถบ → เขียนขอบเขต → หาชั้นใน → หาชั้นนอก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.multiple-integrals.p018
+    topics: [math.calculus.multiple-integrals]
+    difficulty: 3
+    type: numeric
+    stem: "ใช้ปริพันธ์สามชั้นหาปริมาตรของทรงสี่หน้า $x \\ge 0$, $y \\ge 0$, $z \\ge 0$, $x + y + z \\le 1$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.167, tolerance: 0.001 }
+    hints:
+      - "$V = \\displaystyle\\int_0^1\\!\\!\\int_0^{1 - x}\\!\\!\\int_0^{1 - x - y} dz\\,dy\\,dx$"
+      - "ชั้นในได้ $1 - x - y$ ชั้นกลางได้ $\\tfrac{(1 - x)^2}{2}$"
+    misconceptions:
+      - { match: 0.5, feedback: "นี่คือปริมาตรของปริซึมที่มีฐานสามเหลี่ยมพื้นที่ $\\tfrac12$ สูง 1 แต่ทรงสี่หน้าบางลงเมื่อขึ้นสูง" }
+      - { match: 1, feedback: "ใช้ขอบเขตคงที่ 0 ถึง 1 ทั้งสามตัวแปรได้ลูกบาศก์ ขอบบนของ $y$ และ $z$ ต้องขึ้นกับตัวแปรชั้นนอก" }
+    solution: "$\\int_0^{1 - x - y}dz = 1 - x - y$, $\\int_0^{1 - x}(1 - x - y)\\,dy = \\tfrac{(1 - x)^2}{2}$, $\\int_0^1 \\tfrac{(1 - x)^2}{2}\\,dx = \\tfrac16 \\approx 0.167$ ตรงกับสูตร $\\tfrac13 \\times$ พื้นที่ฐาน $\\times$ สูง $= \\tfrac13 \\cdot \\tfrac12 \\cdot 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

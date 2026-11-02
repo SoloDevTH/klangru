@@ -1,0 +1,283 @@
+problems:
+  - id: math.de.first-order.p001
+    topics: [math.de.first-order]
+    difficulty: 1
+    type: mcq
+    stem: "ฟังก์ชันใดเป็นผลเฉลยของ $y' = 3y$"
+    choices:
+      - { id: a, text: "$y = 5e^{3x}$", correct: true }
+      - { id: b, text: "$y = 3e^{x}$", feedback: "$y' = 3e^{x}$ แต่ $3y = 9e^{x}$ ไม่เท่ากัน" }
+      - { id: c, text: "$y = e^{3x} + 5$", feedback: "$y' = 3e^{3x}$ แต่ $3y = 3e^{3x} + 15$ ค่าคงตัวที่บวกเพิ่มทำให้ไม่เป็นผลเฉลย" }
+      - { id: d, text: "$y = 3x$", feedback: "$y' = 3$ แต่ $3y = 9x$" }
+    hints:
+      - "แทนแต่ละตัวเลือกลงในสมการ คำนวณ $y'$ และ $3y$"
+      - "ผลเฉลยต้องทำให้สองข้างเท่ากันทุก $x$"
+    solution: "$y = 5e^{3x}$ ให้ $y' = 15e^{3x} = 3(5e^{3x}) = 3y$ เป็นจริงทุก $x$ (ผลเฉลยทั่วไปคือ $y = Ce^{3x}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p002
+    topics: [math.de.first-order]
+    difficulty: 1
+    type: numeric
+    stem: "ปริมาณ $y$ เป็นไปตาม $y' = -0.5y$ และ $y(0) = 8$ จงหา $y(2)$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 2.94, tolerance: 0.01 }
+    hints:
+      - "ผลเฉลยคือ $y = y_0e^{kt}$ โดย $k = -0.5$"
+      - "$y(2) = 8e^{-1}$"
+    misconceptions:
+      - { match: 7, feedback: "ไม่ได้ลดเชิงเส้น $8 - 0.5(2)$ ต้องใช้เอกซ์โพเนนเชียล" }
+      - { match: 21.75, feedback: "เครื่องหมายของ $k$ เป็นลบ ปริมาณต้องลดลง ไม่ใช่เพิ่ม" }
+    solution: "$y = 8e^{-0.5t}$ จึง $y(2) = 8e^{-1} \\approx 2.94$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p003
+    topics: [math.de.first-order]
+    difficulty: 2
+    type: expression
+    stem: "จงแก้ $\\dfrac{dy}{dx} = 2xy$ เมื่อ $y(0) = 3$"
+    prefix: "y ="
+    answer: { latex: "3e^{x^2}", variables: [x] }
+    misconceptions:
+      - { match: "3e^{2x}", feedback: "$\\int 2x\\,dx = x^2$ ไม่ใช่ $2x$" }
+      - { match: "e^{x^2}+2", feedback: "จาก $\\ln|y| = x^2 + C$ ได้ $y = Ae^{x^2}$ ค่าคงตัวคูณ ไม่ใช่บวก" }
+    hints:
+      - "แยกตัวแปร: $\\dfrac{dy}{y} = 2x\\,dx$"
+      - "$\\ln|y| = x^2 + C$ แล้วยกกำลัง $e$ ทั้งสองข้าง"
+    solution: "$\\ln|y| = x^2 + C$ ได้ $y = Ae^{x^2}$ และ $y(0) = A = 3$ จึง $y = 3e^{x^2}$ ตรวจ: $y' = 6xe^{x^2} = 2x(3e^{x^2})$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p004
+    topics: [math.de.first-order]
+    difficulty: 3
+    type: numeric
+    stem: "แม่ตักข้าวต้มร้อน 90 °C วางในครัวที่อุณหภูมิ 30 °C ผ่านไป 10 นาทีข้าวต้มเหลือ 60 °C ตามกฎการเย็นตัวของนิวตัน (ค่าสมมติ) ต้องรออีกกี่นาทีนับจากตักจนข้าวต้มเหลือ 40 °C พอให้เด็กกินได้ (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 25.8, unit: นาที, tolerance: 0.1 }
+    hints:
+      - "$T = 30 + 60e^{-kt}$ และ $60 = 30 + 60e^{-10k}$ ได้ $e^{-10k} = \\tfrac12$"
+      - "แก้ $40 = 30 + 60e^{-kt}$ ได้ $e^{-kt} = \\tfrac16$"
+    misconceptions:
+      - { match: 16.7, feedback: "อุณหภูมิไม่ได้ลดเชิงเส้น 3 องศาต่อนาที ยิ่งใกล้อุณหภูมิห้องยิ่งเย็นช้า" }
+      - { match: 20, feedback: "ลองตรวจ: ทุก 10 นาทีผลต่างลดครึ่ง หลัง 20 นาทีผลต่างเหลือ 15 องศา (45 °C) ยังไม่ถึง 40 °C" }
+    solution: "$k = \\tfrac{\\ln 2}{10}$ และ $e^{-kt} = \\tfrac16$ ได้ $t = \\tfrac{\\ln 6}{k} = \\tfrac{10\\ln 6}{\\ln 2} \\approx 25.8$ นาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p005
+    topics: [math.de.first-order]
+    difficulty: 2
+    type: numeric
+    stem: "ยาชนิดหนึ่งถูกกำจัดออกจากร่างกายด้วยอัตราแปรผันตามปริมาณที่เหลือ มีครึ่งชีวิต 4 ชั่วโมง (ค่าสมมติ) ผู้ป่วยได้รับยา 200 มิลลิกรัม หลัง 10 ชั่วโมงเหลือยาในร่างกายกี่มิลลิกรัม (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 35.4, unit: มิลลิกรัม, tolerance: 0.1 }
+    hints:
+      - "$A = 200\\big(\\tfrac12\\big)^{t/4}$ หรือ $A = 200e^{-kt}$ โดย $k = \\tfrac{\\ln 2}{4}$"
+      - "10 ชั่วโมงเท่ากับ 2.5 ครึ่งชีวิต"
+    misconceptions:
+      - { match: 50, feedback: "ผ่านไป 2 ครึ่งชีวิตได้ 50 มิลลิกรัมที่ 8 ชั่วโมง ยังเหลืออีก 2 ชั่วโมง" }
+      - { match: 0, feedback: "ไม่ได้ลดเชิงเส้น 25 มิลลิกรัมต่อชั่วโมง การสลายแบบเอกซ์โพเนนเชียลไม่ถึงศูนย์" }
+    solution: "$A(10) = 200\\big(\\tfrac12\\big)^{10/4} = 200 \\times 0.1768 \\approx 35.4$ มิลลิกรัม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p006
+    topics: [math.de.first-order]
+    difficulty: 2
+    type: expression
+    stem: "จงหาตัวประกอบอินทิเกรต $\\mu(x)$ ของสมการ $y' + 3y = x$"
+    prefix: "\\mu(x) ="
+    answer: { latex: "e^{3x}", variables: [x] }
+    misconceptions:
+      - { match: "e^{-3x}", feedback: "$\\mu = e^{\\int p\\,dx}$ เมื่อ $p = +3$ จึงได้ $e^{3x}$" }
+      - { match: "3x", feedback: "นั่นคือ $\\int p\\,dx$ ต้องยก $e$ กำลังนั้น" }
+    hints:
+      - "รูปมาตรฐาน $y' + p(x)y = q(x)$ ที่นี่ $p(x) = 3$"
+      - "$\\mu = e^{\\int p(x)\\,dx}$"
+    solution: "$p(x) = 3$ ได้ $\\int 3\\,dx = 3x$ จึง $\\mu = e^{3x}$ ตรวจ: $(e^{3x}y)' = e^{3x}y' + 3e^{3x}y = e^{3x}(y' + 3y)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p007
+    topics: [math.de.first-order]
+    difficulty: 3
+    type: expression
+    stem: "จงแก้ $y' + 2y = 4$ เมื่อ $y(0) = 0$ ($y$ เป็นฟังก์ชันของ $x$)"
+    prefix: "y ="
+    answer: { latex: "2-2e^{-2x}", variables: [x] }
+    misconceptions:
+      - { match: "2+2e^{-2x}", feedback: "ตรวจค่าเริ่มต้น: ที่ $x = 0$ ได้ 4 ไม่ใช่ 0 ต้องใช้ $C = -2$" }
+      - { match: "2e^{-2x}", feedback: "นี่คือส่วนชั่วครู่อย่างเดียว ต้องมีสภาวะคงตัว 2 ด้วย และที่ $x = 0$ ต้องได้ 0" }
+    hints:
+      - "$\\mu = e^{2x}$ ได้ $(e^{2x}y)' = 4e^{2x}$"
+      - "หาปริพันธ์ $e^{2x}y = 2e^{2x} + C$ แล้วใช้ $y(0) = 0$"
+    solution: "$e^{2x}y = 2e^{2x} + C$ จึง $y = 2 + Ce^{-2x}$ และ $y(0) = 2 + C = 0$ ได้ $C = -2$: $y = 2 - 2e^{-2x}$ ตรวจ: $y' + 2y = 4e^{-2x} + 4 - 4e^{-2x} = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p008
+    topics: [math.de.first-order]
+    difficulty: 3
+    type: expression
+    stem: "จงแก้ $y' + \\dfrac{y}{x} = x^2$ เมื่อ $x > 0$ และ $y(1) = 1$"
+    prefix: "y ="
+    answer: { latex: "\\frac{x^3}{4}+\\frac{3}{4x}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{x^3}{4}", feedback: "ลืมค่าคงตัว: $xy = \\tfrac{x^4}{4} + C$ แล้วหาร $x$ ได้พจน์ $\\tfrac{C}{x}$ และ $y(1) = 1$ ให้ $C = \\tfrac34$" }
+      - { match: "\\frac{x^3}{3}+\\frac{2}{3}", feedback: "นี่คือผลของการหาปริพันธ์ $x^2$ โดยไม่คูณตัวประกอบอินทิเกรต $\\mu = x$" }
+    hints:
+      - "$p(x) = \\tfrac1x$ ได้ $\\mu = e^{\\ln x} = x$"
+      - "$(xy)' = x^3$"
+    solution: "$\\mu = x$ ได้ $(xy)' = x^3$ จึง $xy = \\tfrac{x^4}{4} + C$ และ $y(1) = \\tfrac14 + C = 1$ ได้ $C = \\tfrac34$ ดังนั้น $y = \\tfrac{x^3}{4} + \\tfrac{3}{4x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p009
+    topics: [math.de.first-order]
+    difficulty: 3
+    type: numeric
+    stem: "วงจร RC มีตัวต้านทาน 10 kΩ ตัวเก็บประจุ 100 μF และแบตเตอรี่ 9 V ตัวเก็บประจุเริ่มไม่มีประจุ หลังปิดสวิตช์ 2 วินาที แรงดันคร่อมตัวเก็บประจุเป็นกี่โวลต์ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 7.78, unit: V, tolerance: 0.01 }
+    hints:
+      - "$\\tau = RC = (10^4)(10^{-4}) = 1$ วินาที"
+      - "$v_C = V(1 - e^{-t/\\tau})$"
+    misconceptions:
+      - { match: 1.22, feedback: "นี่คือแรงดันคร่อมตัวต้านทาน $9e^{-2}$ ตัวเก็บประจุได้ $9 - 1.22$" }
+      - { match: 9, feedback: "ตัวเก็บประจุเข้าใกล้ 9 V แต่ที่ $t = 2\\tau$ ยังชาร์จได้ราว 86%" }
+    solution: "$\\tau = 1$ s จึง $v_C(2) = 9(1 - e^{-2}) \\approx 9(0.8647) \\approx 7.78$ V"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p010
+    topics: [math.de.first-order]
+    difficulty: 3
+    type: match
+    stem: "จับคู่สมการเชิงอนุพันธ์กับชนิดหรือวิธีแก้ที่เหมาะสม"
+    pairs:
+      - { left: "$y' = -0.2y$", right: "แยกตัวแปรได้ ผลเฉลยเป็นการสลายแบบเอกซ์โพเนนเชียล" }
+      - { left: "$y' + \\dfrac{2}{x}y = \\sin x$", right: "เชิงเส้น ใช้ตัวประกอบอินทิเกรต $x^2$" }
+      - { left: "$P' = 0.3P\\big(1 - \\tfrac{P}{500}\\big)$", right: "ลอจิสติก เข้าหาขีดจำกัด 500" }
+      - { left: "$y'' + 4y = 0$", right: "อันดับสอง ไม่อยู่ในขอบเขตของบทนี้" }
+    hints:
+      - "ดูอันดับก่อน แล้วดูว่าเป็นรูป $y' + py = q$ หรือแยกตัวแปรได้"
+      - "$e^{\\int 2/x\\,dx} = x^2$"
+    solution: "$y' = -0.2y$ แยกตัวแปรได้ $y = y_0e^{-0.2t}$; $y' + \\tfrac2x y = \\sin x$ เชิงเส้น $\\mu = x^2$; สมการที่สามเป็นลอจิสติก $K = 500$; $y'' + 4y = 0$ มีอนุพันธ์อันดับสองจึงเป็นอันดับสอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p011
+    topics: [math.de.first-order]
+    difficulty: 4
+    type: numeric
+    stem: "บ่อพักน้ำเลี้ยงกุ้งในจันทบุรีจุ 2,000 ลูกบาศก์เมตร มีน้ำเค็ม ผู้เลี้ยงเติมน้ำจืดวันละ 100 ลูกบาศก์เมตร และระบายน้ำที่ผสมทั่วแล้วออกวันละ 100 ลูกบาศก์เมตร (ค่าสมมติ) ความเค็มของบ่อจะลดเหลือครึ่งหนึ่งในกี่วัน (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 13.9, unit: วัน, tolerance: 0.1 }
+    hints:
+      - "เกลือ $S$ ในบ่อ: $S' = 0 - 100\\cdot\\tfrac{S}{2000} = -0.05S$"
+      - "ครึ่งชีวิต $t_{1/2} = \\tfrac{\\ln 2}{0.05}$"
+    misconceptions:
+      - { match: 10, feedback: "ไม่ได้ลดเชิงเส้น 5% ของเกลือตั้งต้นต่อวัน น้ำที่ระบายออกเค็มน้อยลงเรื่อย ๆ" }
+      - { match: 20, feedback: "20 วันคือเวลาเปลี่ยนน้ำครบปริมาตรบ่อ แต่เพราะน้ำผสมกัน ความเค็มจึงลดแบบเอกซ์โพเนนเชียล" }
+    solution: "$S' = -\\tfrac{100}{2000}S = -0.05S$ ได้ $S = S_0e^{-0.05t}$ ความเค็มเหลือครึ่งเมื่อ $t = \\tfrac{\\ln 2}{0.05} \\approx 13.9$ วัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p012
+    topics: [math.de.first-order]
+    difficulty: 4
+    type: numeric
+    stem: "ผักตบชวาในบึงแห่งหนึ่งในสุพรรณบุรีคลุมพื้นที่ตามแบบจำลองลอจิสติก $P' = 0.5P\\big(1 - \\tfrac{P}{1000}\\big)$ ตารางเมตรต่อสัปดาห์ เริ่มต้น $P(0) = 100$ ตารางเมตร (แบบจำลองสมมติ) หลัง 4 สัปดาห์ผักตบชวาคลุมกี่ตารางเมตร (ตอบจำนวนเต็ม)"
+    answer: { value: 451, unit: ตารางเมตร, tolerance: 1 }
+    hints:
+      - "$P(t) = \\dfrac{K}{1 + Ae^{-rt}}$ โดย $A = \\tfrac{K - P_0}{P_0} = 9$"
+      - "$P(4) = \\dfrac{1000}{1 + 9e^{-2}}$"
+    misconceptions:
+      - { match: 739, feedback: "นี่คือการเติบโตแบบเอกซ์โพเนนเชียล $100e^{2}$ ซึ่งไม่คำนึงถึงขีดจำกัด 1,000" }
+    solution: "$P(4) = \\dfrac{1000}{1 + 9e^{-2}} = \\dfrac{1000}{1 + 1.218} \\approx 451$ ตารางเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p013
+    topics: [math.de.first-order]
+    difficulty: 4
+    type: numeric
+    stem: "ถังผสมในภาพจุน้ำเกลือ 200 ลิตร เริ่มมีเกลือ 10 กิโลกรัม เติมน้ำเกลือเข้มข้น 0.15 กิโลกรัมต่อลิตร อัตรา 4 ลิตรต่อนาที และปล่อยของผสมออก 4 ลิตรต่อนาที หลัง 25 นาทีมีเกลือในถังกี่กิโลกรัม (ตอบทศนิยมสองตำแหน่ง)"
+    figure:
+      src: mixing-tank.svg
+      alt: "ถังผสมขนาด 200 ลิตร มีใบพัดกวน ท่อเข้าเติมน้ำเกลือ 0.15 กิโลกรัมต่อลิตร อัตรา 4 ลิตรต่อนาที ท่อออก 4 ลิตรต่อนาที"
+    answer: { value: 17.87, unit: กิโลกรัม, tolerance: 0.02 }
+    hints:
+      - "อัตราเข้า $= 0.15 \\times 4 = 0.6$ kg/min อัตราออก $= 4 \\cdot \\tfrac{S}{200} = \\tfrac{S}{50}$"
+      - "$S' + \\tfrac{S}{50} = 0.6$ มีสภาวะคงตัว 30 kg ผลเฉลยรูป $S = 30 + Ce^{-t/50}$"
+    misconceptions:
+      - { match: 11.8, feedback: "ลืมเกลือ 10 kg ที่มีอยู่ตอนเริ่ม (ใช้ $S(0) = 0$)" }
+      - { match: 6.07, feedback: "ลืมเกลือที่เติมเข้ามา คิดแค่ส่วนที่ไหลออก" }
+    solution: "$S(0) = 10$ ให้ $C = -20$ จึง $S = 30 - 20e^{-t/50}$ และ $S(25) = 30 - 20e^{-0.5} \\approx 30 - 12.13 = 17.87$ kg"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p014
+    topics: [math.de.first-order]
+    difficulty: 5
+    type: numeric
+    stem: "จงแก้ $y' + 2ty = t$ เมื่อ $y(0) = 1$ แล้วหา $y(1)$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.684, tolerance: 0.002 }
+    hints:
+      - "$\\mu = e^{\\int 2t\\,dt} = e^{t^2}$"
+      - "$(e^{t^2}y)' = te^{t^2}$ หาปริพันธ์ด้วยการแทนค่า $u = t^2$"
+    misconceptions:
+      - { match: 0.5, feedback: "นี่คือสภาวะคงตัว $\\tfrac12$ ยังต้องรวมส่วน $\\tfrac12 e^{-t^2}$ ที่มาจากค่าเริ่มต้น" }
+      - { match: 0.368, feedback: "นี่คือ $e^{-1}$ ผลเฉลยของสมการเอกพันธ์ $y' + 2ty = 0$ อย่างเดียว ยังไม่ได้รวมพจน์ $t$ ทางขวา" }
+    solution: "$e^{t^2}y = \\tfrac12 e^{t^2} + C$ และ $y(0) = 1$ ให้ $C = \\tfrac12$ จึง $y = \\tfrac12 + \\tfrac12 e^{-t^2}$ ได้ $y(1) = \\tfrac12 + \\tfrac{1}{2e} \\approx 0.684$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p015
+    topics: [math.de.first-order]
+    difficulty: 5
+    type: numeric
+    stem: "ผู้ป่วยในโรงพยาบาลจังหวัดได้รับยาทางหลอดเลือดดำต่อเนื่อง 20 มิลลิกรัมต่อชั่วโมง ร่างกายกำจัดยาด้วยอัตรา $0.25A$ มิลลิกรัมต่อชั่วโมง เมื่อ $A$ เป็นปริมาณยาในร่างกาย และ $A(0) = 0$ (แบบจำลองสมมติ) ปริมาณยาจะถึง 90% ของระดับคงตัวเมื่อใด (ชั่วโมง ทศนิยมสองตำแหน่ง)"
+    answer: { value: 9.21, unit: ชั่วโมง, tolerance: 0.01 }
+    hints:
+      - "$A' = 20 - 0.25A$ มีระดับคงตัว $A = 80$ มิลลิกรัม"
+      - "$A = 80(1 - e^{-0.25t})$ ตั้ง $1 - e^{-0.25t} = 0.9$"
+    misconceptions:
+      - { match: 0.42, feedback: "$e^{-0.25t} = 0.1$ ต้องใช้ $\\ln 0.1$ ไม่ใช่ $\\ln 0.9$" }
+      - { match: 3.6, feedback: "ปริมาณยาไม่ได้เพิ่มเชิงเส้น 20 มิลลิกรัมต่อชั่วโมง เพราะร่างกายกำจัดยาไปพร้อมกัน" }
+    solution: "$A = 80(1 - e^{-0.25t})$ ตั้ง $e^{-0.25t} = 0.1$ ได้ $t = \\tfrac{\\ln 10}{0.25} \\approx 9.21$ ชั่วโมง (ไม่ขึ้นกับอัตราให้ยา ขึ้นกับอัตรากำจัดเท่านั้น)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p016
+    topics: [math.de.first-order]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการแก้สมการเชิงเส้นอันดับหนึ่งด้วยตัวประกอบอินทิเกรต"
+    items:
+      - "จัดให้อยู่ในรูป $y' + p(x)y = q(x)$"
+      - "คำนวณ $\\mu = e^{\\int p(x)\\,dx}$"
+      - "คูณสมการด้วย $\\mu$ ให้ฝั่งซ้ายเป็น $(\\mu y)'$"
+      - "หาปริพันธ์ทั้งสองข้าง พร้อมค่าคงตัว $C$"
+      - "หารด้วย $\\mu$ แล้วใช้ค่าเริ่มต้นหา $C$"
+    hints:
+      - "ต้องรู้ $p(x)$ ก่อนจึงคำนวณ $\\mu$ ได้"
+      - "ค่าคงตัวต้องเกิดตอนหาปริพันธ์ ก่อนหารด้วย $\\mu$"
+    solution: "รูปมาตรฐาน → หา $\\mu$ → คูณให้ได้ $(\\mu y)' = \\mu q$ → หาปริพันธ์ใส่ $C$ → หารด้วย $\\mu$ และใช้ค่าเริ่มต้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.first-order.p017
+    topics: [math.de.first-order]
+    difficulty: 3
+    type: mcq
+    stem: "สมการใดเป็นสมการเชิงอนุพันธ์ **เชิงเส้น** อันดับหนึ่ง"
+    choices:
+      - { id: a, text: "$y' + x^2y = \\sin x$", correct: true }
+      - { id: b, text: "$y' = y^2$", feedback: "มี $y^2$ จึงไม่เชิงเส้นใน $y$ (แต่แยกตัวแปรได้)" }
+      - { id: c, text: "$yy' = x$", feedback: "$y$ คูณ $y'$ ทำให้ไม่เชิงเส้น" }
+      - { id: d, text: "$y'' + y = 0$", feedback: "เชิงเส้นแต่เป็นอันดับสอง" }
+    hints:
+      - "เชิงเส้นคือ $y$ และ $y'$ ปรากฏเป็นกำลังหนึ่ง ไม่คูณกัน"
+      - "สัมประสิทธิ์เป็นฟังก์ชันของ $x$ ได้"
+    solution: "$y' + x^2y = \\sin x$ อยู่ในรูป $y' + p(x)y = q(x)$ โดย $p = x^2$, $q = \\sin x$ สัมประสิทธิ์ไม่ต้องเป็นค่าคงตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

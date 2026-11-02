@@ -1,0 +1,76 @@
+id: math.stats.inference
+subject: math
+title: { th: ช่วงความเชื่อมั่นและการทดสอบสมมติฐาน, en: Confidence intervals and hypothesis testing }
+summary: ทฤษฎีบทลิมิตสู่ส่วนกลาง ช่วงความเชื่อมั่นของค่าเฉลี่ยและสัดส่วน การแจกแจง t การทดสอบสมมติฐาน ค่า p ความคลาดเคลื่อนสองประเภท และการทดสอบแบบสุ่มจัดกลุ่มใหม่
+difficulty: 8
+minutes: 50
+prerequisites: [math.stats.normal-distribution, math.stats.sampling-surveys]
+encompasses:
+  - { id: math.stats.normal-distribution, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ค่าเฉลี่ยตัวอย่างกระจุกตัวเมื่อ n โตขึ้น
+    caption: "เส้นแรกคือความหนาแน่นของประชากร N(50, 10²) เส้นที่สองคือความหนาแน่นของค่าเฉลี่ยตัวอย่างขนาด n ซึ่งมีส่วนเบี่ยงเบนมาตรฐาน 10/√n เพิ่ม n แล้วโค้งแคบและสูงขึ้น เพิ่ม n สี่เท่า ความกว้างลดเหลือครึ่งหนึ่ง"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{10\\sqrt{2\\pi}}e^{-\\frac{(x-50)^2}{200}}", "\\frac{\\sqrt{n}}{10\\sqrt{2\\pi}}e^{-\\frac{n\\cdot(x-50)^2}{200}}"]
+      sliders:
+        - { name: n, min: 1, max: 64, step: 1, value: 4, label: ขนาดตัวอย่าง n }
+      x: [20, 80]
+      y: [0, 0.35]
+  - type: figure
+    src: ci-coverage.svg
+    alt: "ช่วงความเชื่อมั่น 95% จำนวน 20 ช่วง จากตัวอย่างสุ่ม 20 ชุด ชุดละ 25 ค่า จากประชากรที่ค่าเฉลี่ยจริงคือ 50 แต่ละช่วงเป็นเส้นแนวนอนมีจุดตรงกลางคือค่าเฉลี่ยตัวอย่าง เส้นประแนวตั้งที่ 50 คือค่าจริง 19 ช่วงตัดเส้นประ มี 1 ช่วงสีแดงอยู่ทางขวาทั้งช่วงไม่ครอบ 50"
+    caption: "ความเชื่อมั่น 95% หมายถึงวิธีสร้างช่วงที่ครอบค่าจริงราว 95% ของครั้งที่สุ่ม (ภาพจำลองด้วยคอมพิวเตอร์ ครั้งนี้พลาด 1 ใน 20)"
+  - type: worked-example
+    title: ช่วงความเชื่อมั่นด้วยการแจกแจง t
+    problem: "ตรวจความหวานของน้ำอ้อยคั้นสด 10 ขวดจากร้านหนึ่ง ได้ปริมาณน้ำตาลเฉลี่ย $\\bar{x} = 14.2$ กรัมต่อ 100 มิลลิลิตร และ $s = 0.9$ (ค่าสมมติ) จงหาช่วงความเชื่อมั่น 95% ของค่าเฉลี่ยจริง"
+    steps:
+      - text: "ไม่รู้ $\\sigma$ และ $n = 10$ เล็ก ใช้การแจกแจง t ที่องศาเสรี $10 - 1 = 9$ ได้ $t^{*} = 2.262$"
+        why: "ใช้ $z^{*} = 1.96$ จะได้ช่วงแคบเกินจริง เพราะไม่ได้คิดความไม่แน่นอนของ $s$"
+      - text: "ความคลาดเคลื่อนมาตรฐาน $\\dfrac{s}{\\sqrt{n}} = \\dfrac{0.9}{\\sqrt{10}} \\approx 0.285$"
+      - text: "ขอบเขตความคลาดเคลื่อน $2.262 \\times 0.285 \\approx 0.644$"
+      - text: "ช่วง $14.2 \\pm 0.644 = (13.56,\\ 14.84)$ กรัมต่อ 100 มิลลิลิตร"
+    answer: "$(13.56,\\ 14.84)$"
+  - { type: check, problem: math.stats.inference.p003, prompt: "ความคลาดเคลื่อนมาตรฐานคือ $\\sigma/\\sqrt{n}$ แล้วคูณ $1.96$" }
+  - type: figure
+    src: p-value.svg
+    alt: "โค้งปกติมาตรฐาน แรเงาสีแดงที่หางซ้าย z น้อยกว่า −2.1 และหางขวา z มากกว่า 2.1 แต่ละหางเขียนว่า 0.018 เส้นประที่ −1.96 และ 1.96 ด้านล่างเขียนว่า ค่า p สองทาง = 0.018 + 0.018 ≈ 0.036 น้อยกว่า 0.05 จึงปฏิเสธ H₀"
+    caption: "ค่า p ของตัวอย่างน้ำปลาในบทเรียน: พื้นที่ทั้งสองหางที่ไกลจาก 0 อย่างน้อยเท่ากับ |z| = 2.1"
+  - type: worked-example
+    title: ทดสอบสมมติฐานของสัดส่วน
+    problem: "บริษัทอ้างว่าเมล็ดพันธุ์ข้าวโพดงอกอย่างน้อย 90% สหกรณ์สุ่มเพาะ 200 เมล็ด งอก 171 เมล็ด (ค่าสมมติ) ที่ระดับนัยสำคัญ 0.05 มีหลักฐานว่าอัตรางอกต่ำกว่าที่อ้างหรือไม่"
+    steps:
+      - text: "$H_0: p = 0.90$ และ $H_a: p < 0.90$ (ทางเดียว เพราะสนใจว่าต่ำกว่า)"
+      - text: "$\\hat{p} = \\dfrac{171}{200} = 0.855$ ตรวจเงื่อนไข: $np_0 = 180$ และ $n(1 - p_0) = 20$ ไม่น้อยกว่า 10"
+      - text: "$z = \\dfrac{0.855 - 0.90}{\\sqrt{0.90 \\times 0.10/200}} = \\dfrac{-0.045}{0.0212} \\approx -2.12$"
+        why: "ตัวส่วนใช้ $p_0$ เพราะคำนวณภายใต้สมมติฐานว่า $H_0$ จริง"
+      - text: "ค่า p $= P(Z < -2.12) \\approx 0.017$"
+      - text: "$0.017 < 0.05$ ปฏิเสธ $H_0$: มีหลักฐานว่าอัตรางอกจริงต่ำกว่า 90%"
+    answer: "$z \\approx -2.12$ ค่า p $\\approx 0.017$ ปฏิเสธ $H_0$"
+  - { type: check, problem: math.stats.inference.p009, prompt: "ช่วงความเชื่อมั่นพูดถึงวิธีสร้าง หรือพูดถึงค่าแต่ละค่า" }
+glossary:
+  - { term: การแจกแจงสุ่มตัวอย่าง, definition: "การแจกแจงของค่าสถิติ เช่น x̄ เมื่อสุ่มตัวอย่างขนาดเดิมซ้ำหลายครั้ง" }
+  - { term: ความคลาดเคลื่อนมาตรฐาน, definition: "ส่วนเบี่ยงเบนมาตรฐานของค่าสถิติ เช่น σ/√n สำหรับ x̄" }
+  - { term: ทฤษฎีบทลิมิตสู่ส่วนกลาง, definition: "เมื่อ n ใหญ่ การแจกแจงของ x̄ ใกล้ปกติ ไม่ว่าประชากรมีรูปร่างแบบใด" }
+  - { term: ช่วงความเชื่อมั่น, definition: "ช่วงค่าประมาณ ± ขอบเขตความคลาดเคลื่อน ที่สร้างด้วยวิธีที่ครอบค่าจริงตามร้อยละที่กำหนด" }
+  - { term: ค่า p, definition: "ความน่าจะเป็นที่จะได้ผลสุดโต่งอย่างน้อยเท่าที่เห็น เมื่อสมมติว่า H₀ จริง" }
+  - { term: ความคลาดเคลื่อนประเภทที่ 1, definition: "ปฏิเสธ H₀ ทั้งที่ H₀ จริง เกิดได้ด้วยโอกาส α" }
+  - { term: ความคลาดเคลื่อนประเภทที่ 2, definition: "ไม่ปฏิเสธ H₀ ทั้งที่ H₀ เท็จ เกิดได้ด้วยโอกาส β" }
+flashcards:
+  - { front: "ความคลาดเคลื่อนมาตรฐานของ x̄", back: "σ/√n" }
+  - { front: "z* ของความเชื่อมั่น 90%, 95%, 99%", back: "1.645, 1.96, 2.576" }
+  - { front: "ใช้การแจกแจง t เมื่อใด", back: "เมื่อไม่รู้ σ ใช้ s แทน องศาเสรี n − 1" }
+  - { front: "ค่า p ≤ α หมายความว่า", back: "ปฏิเสธ H₀ ผลมีนัยสำคัญทางสถิติ" }
+  - { front: "ความคลาดเคลื่อนประเภทที่ 2", back: "ไม่ปฏิเสธ H₀ ทั้งที่ H₀ เท็จ (โอกาส β)" }
+references:
+  - { title: "7.1 The Central Limit Theorem for Sample Means (Statistics, OpenStax)", url: "https://openstax.org/books/statistics/pages/7-1-the-central-limit-theorem-for-sample-means-averages", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "8.1 A Single Population Mean using the Normal Distribution (Statistics, OpenStax)", url: "https://openstax.org/books/statistics/pages/8-1-a-single-population-mean-using-the-normal-distribution", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "9.2 Outcomes and the Type I and Type II Errors (Statistics, OpenStax)", url: "https://openstax.org/books/statistics/pages/9-2-outcomes-and-the-type-i-and-type-ii-errors", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Confidence interval", url: "https://en.wikipedia.org/wiki/Confidence_interval", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

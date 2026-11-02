@@ -1,0 +1,79 @@
+id: math.de.first-order
+subject: math
+title: { th: สมการเชิงอนุพันธ์อันดับหนึ่ง, en: First-order differential equations }
+summary: ผลเฉลยและปัญหาค่าเริ่มต้น สมการแยกตัวแปรได้ การเติบโตและการสลาย การเย็นตัวของนิวตัน การเติบโตแบบลอจิสติก สมการเชิงเส้นกับตัวประกอบอินทิเกรต การผสมสาร และวงจร RC
+difficulty: 8.5
+minutes: 50
+prerequisites: [math.calculus.integration-techniques, math.functions.exponential, math.numerical.basic-methods]
+encompasses:
+  - { id: math.calculus.integration-techniques, weight: 0.4 }
+  - { id: math.functions.exponential, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: cooling-field.svg
+    alt: "สนามความชันของ dT/dt = −0.1(T − 30) เวลา 0 ถึง 40 นาที อุณหภูมิ 0 ถึง 100 องศาเซลเซียส ขีดเอียงลงเหนือเส้น 30 องศาและเอียงขึ้นใต้เส้น เส้นประแนวนอนที่ 30 องศาคืออุณหภูมิห้อง เส้นสีแดงคือข้าวต้มเริ่ม 90 องศาลดลงเข้าหา 30 เส้นสีน้ำเงินคือน้ำเย็นเริ่ม 5 องศาเพิ่มขึ้นเข้าหา 30"
+    caption: "ผลเฉลยทุกเส้นของกฎการเย็นตัวของนิวตันไหลเข้าหาผลเฉลยสมดุล T = 30 °C"
+  - type: interactive
+    title: เปลี่ยนอุณหภูมิเริ่มต้นและค่า k
+    caption: "กราฟคือ T(t) = 30 + (a − 30)e^(−kt) เมื่อ t เป็นนาทีบนแกนนอน เลื่อน a (อุณหภูมิเริ่มต้น) และ k แล้วสังเกตว่าทุกเส้นเข้าหา 30 °C ค่า k ยิ่งมาก (เช่น ภาชนะบาง ลมพัด) ยิ่งเย็นเร็ว"
+    widget:
+      kind: function-plot
+      functions: ["30+(a-30)\\cdot e^{-kx}"]
+      sliders:
+        - { name: a, min: 0, max: 100, step: 5, value: 90, label: อุณหภูมิเริ่มต้น }
+        - { name: k, min: 0.02, max: 0.3, step: 0.02, value: 0.1, label: ค่า k ต่อนาที }
+      x: [0, 60]
+      y: [0, 100]
+  - type: worked-example
+    title: สมการแยกตัวแปรได้
+    problem: "จงแก้ $\\dfrac{dy}{dx} = \\dfrac{x}{y}$ เมื่อ $y(0) = 3$"
+    steps:
+      - text: "แยกตัวแปร: $y\\,dy = x\\,dx$"
+      - text: "หาปริพันธ์ทั้งสองข้าง: $\\dfrac{y^2}{2} = \\dfrac{x^2}{2} + C$"
+        why: "ใส่ค่าคงตัวข้างเดียวพอ เพราะค่าคงตัวสองข้างรวมเป็นตัวเดียวได้"
+      - text: "แทน $x = 0$, $y = 3$: $\\dfrac92 = C$ จึง $y^2 = x^2 + 9$"
+      - text: "เพราะ $y(0) = 3 > 0$ เลือกรากบวก $y = \\sqrt{x^2 + 9}$"
+      - text: "ตรวจ: $y' = \\dfrac{x}{\\sqrt{x^2 + 9}} = \\dfrac{x}{y}$"
+    answer: "$y = \\sqrt{x^2 + 9}$"
+  - { type: check, problem: math.de.first-order.p003, prompt: "แยก $\\tfrac{dy}{y} = 2x\\,dx$ แล้วอย่าลืมใช้ค่าเริ่มต้น" }
+  - type: worked-example
+    title: ตัวประกอบอินทิเกรต
+    problem: "จงแก้ $xy' + 2y = 4x^2$ เมื่อ $x > 0$ และ $y(1) = 2$"
+    steps:
+      - text: "หารด้วย $x$ ให้อยู่ในรูปมาตรฐาน: $y' + \\dfrac{2}{x}y = 4x$"
+        why: "สูตรตัวประกอบอินทิเกรตใช้ได้เมื่อสัมประสิทธิ์ของ $y'$ เป็น 1"
+      - text: "$\\mu = e^{\\int 2/x\\,dx} = e^{2\\ln x} = x^2$"
+      - text: "คูณตลอด: $x^2y' + 2xy = 4x^3$ ฝั่งซ้ายคือ $(x^2y)'$"
+      - text: "หาปริพันธ์: $x^2y = x^4 + C$ แทน $y(1) = 2$: $2 = 1 + C$ ได้ $C = 1$"
+      - text: "$y = x^2 + \\dfrac{1}{x^2}$ ตรวจ: $x(2x - 2x^{-3}) + 2(x^2 + x^{-2}) = 4x^2$"
+    answer: "$y = x^2 + \\dfrac{1}{x^2}$"
+  - type: figure
+    src: mixing-tank.svg
+    alt: "ถังผสมขนาด 200 ลิตร มีใบพัดกวนตรงกลาง ท่อเข้าด้านซ้ายบนเติมน้ำเกลือเข้มข้น 0.15 กิโลกรัมต่อลิตรอัตรา 4 ลิตรต่อนาที ท่อออกด้านขวาล่างปล่อยออก 4 ลิตรต่อนาที"
+    caption: "ปัญหาการผสม: อัตราการเปลี่ยนของเกลือ = อัตราเข้า − อัตราออก (ภาพนี้ใช้ในโจทย์ข้อ 13)"
+  - { type: check, problem: math.de.first-order.p007, prompt: "ตัวประกอบอินทิเกรตคือ $e^{2x}$ แล้วใช้ $y(0) = 0$" }
+glossary:
+  - { term: สมการเชิงอนุพันธ์, definition: "สมการที่มีอนุพันธ์ของฟังก์ชันที่ไม่ทราบค่า" }
+  - { term: อันดับ, definition: "อันดับสูงสุดของอนุพันธ์ที่ปรากฏในสมการ" }
+  - { term: ปัญหาค่าเริ่มต้น, definition: "สมการเชิงอนุพันธ์คู่กับค่า y(x₀) ที่ใช้หาค่าคงตัวในผลเฉลยทั่วไป" }
+  - { term: สมการแยกตัวแปรได้, definition: "สมการรูป dy/dx = g(x)h(y) แก้โดยแยก y และ x ไปคนละข้างแล้วหาปริพันธ์" }
+  - { term: ตัวประกอบอินทิเกรต, definition: "μ = e^∫p dx ที่คูณ y′ + py = q แล้วฝั่งซ้ายกลายเป็น (μy)′" }
+  - { term: ผลเฉลยสมดุล, definition: "ผลเฉลยค่าคงตัวที่ทำให้ y′ = 0" }
+  - { term: ค่าคงตัวเวลา, definition: "τ = RC ในวงจร RC เวลาที่ส่วนชั่วครู่ลดเหลือ e⁻¹ ≈ 37%" }
+flashcards:
+  - { front: "ผลเฉลยของ y′ = ky", back: "y = y₀eᵏᵗ" }
+  - { front: "กฎการเย็นตัวของนิวตัน", back: "T = Tₐ + (T₀ − Tₐ)e^(−kt)" }
+  - { front: "ตัวประกอบอินทิเกรตของ y′ + p(x)y = q(x)", back: "μ = e^∫p(x)dx" }
+  - { front: "ผลเฉลยลอจิสติก", back: "P = K/(1 + Ae^(−rt)) โดย A = (K − P₀)/P₀" }
+  - { front: "ปัญหาการผสม dS/dt", back: "อัตราเข้า − (อัตราไหลออก)·S/V" }
+references:
+  - { title: "4.3 Separable Equations (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/4-3-separable-equations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.5 First-order Linear Equations (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "18.03SC Differential Equations (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Integrating factor", url: "https://en.wikipedia.org/wiki/Integrating_factor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

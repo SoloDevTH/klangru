@@ -1,0 +1,281 @@
+problems:
+  - id: math.calculus.partial-derivatives.p001
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 1
+    type: expression
+    stem: "ให้ $f(x, y) = x^3y^2$ จงหา $\\dfrac{\\partial f}{\\partial x}$"
+    prefix: "f_x ="
+    answer: { latex: "3x^2y^2", variables: [x, y] }
+    misconceptions:
+      - { match: "2x^3y", feedback: "นี่คืออนุพันธ์ย่อยเทียบ $y$ โจทย์ถามเทียบ $x$" }
+      - { match: "6x^2y", feedback: "หาอนุพันธ์ทั้ง $x^3$ และ $y^2$ พร้อมกัน แต่ $y$ ต้องเป็นค่าคงตัว" }
+    hints:
+      - "มอง $y^2$ เป็นค่าคงตัวที่คูณอยู่"
+      - "อนุพันธ์ของ $x^3$ คือ $3x^2$"
+    solution: "ตรึง $y$: $f_x = y^2 \\cdot 3x^2 = 3x^2y^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p002
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 1
+    type: numeric
+    stem: "ให้ $f(x, y) = 2x + 5y - xy$ จงหา $f_y(1, 2)$"
+    answer: { value: 4 }
+    hints:
+      - "$f_y = 5 - x$ (มอง $x$ เป็นค่าคงตัว)"
+      - "แทน $x = 1$"
+    misconceptions:
+      - { match: 0, feedback: "นี่คือ $f_x(1, 2) = 2 - y = 0$ โจทย์ถาม $f_y$" }
+      - { match: 3, feedback: "อนุพันธ์ของ $-xy$ เทียบ $y$ คือ $-x$ ไม่ใช่ $-y$" }
+    solution: "$f_y = 5 - x$ จึง $f_y(1, 2) = 5 - 1 = 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p003
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 2
+    type: expression
+    stem: "ให้ $f(x, y) = e^{xy}$ จงหา $\\dfrac{\\partial f}{\\partial y}$"
+    prefix: "f_y ="
+    answer: { latex: "xe^{xy}", variables: [x, y] }
+    misconceptions:
+      - { match: "e^{xy}", feedback: "ต้องคูณอนุพันธ์ของชั้นใน $xy$ เทียบ $y$ ซึ่งคือ $x$ (กฎลูกโซ่)" }
+      - { match: "ye^{xy}", feedback: "นี่คืออนุพันธ์ย่อยเทียบ $x$ โจทย์ถามเทียบ $y$" }
+    hints:
+      - "ใช้กฎลูกโซ่: อนุพันธ์ของ $e^{u}$ คือ $e^{u}u'$"
+      - "$\\dfrac{\\partial}{\\partial y}(xy) = x$"
+    solution: "$f_y = e^{xy} \\cdot \\dfrac{\\partial}{\\partial y}(xy) = xe^{xy}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p004
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 2
+    type: expression
+    stem: "ให้ $f(x, y) = \\sin(x^2y)$ จงหา $\\dfrac{\\partial f}{\\partial x}$"
+    prefix: "f_x ="
+    answer: { latex: "2xy\\cos(x^2y)", variables: [x, y] }
+    misconceptions:
+      - { match: "\\cos(x^2y)", feedback: "ลืมคูณอนุพันธ์ของชั้นใน $\\tfrac{\\partial}{\\partial x}(x^2y) = 2xy$" }
+      - { match: "x^2\\cos(x^2y)", feedback: "นี่คือ $f_y$ (อนุพันธ์ชั้นในเทียบ $y$ คือ $x^2$)" }
+    hints:
+      - "ชั้นนอก $\\sin u$ ชั้นใน $u = x^2y$"
+      - "$\\dfrac{\\partial u}{\\partial x} = 2xy$"
+    solution: "$f_x = \\cos(x^2y) \\cdot 2xy = 2xy\\cos(x^2y)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p005
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $f(x, y) = x^2 + y^2$ จงหาขนาดของเกรเดียนต์ $|\\nabla f|$ ที่จุด $(3, 4)$"
+    answer: { value: 10, tolerance: 0.001 }
+    hints:
+      - "$\\nabla f = (2x, 2y)$"
+      - "ขนาดของ $(a, b)$ คือ $\\sqrt{a^2 + b^2}$"
+    misconceptions:
+      - { match: 5, feedback: "นี่คือขนาดของเวกเตอร์ตำแหน่ง $(3, 4)$ ต้องหาขนาดของ $\\nabla f = (6, 8)$" }
+      - { match: 14, feedback: "ขนาดของเวกเตอร์ไม่ใช่ผลบวกของส่วนประกอบ" }
+    solution: "$\\nabla f(3, 4) = (6, 8)$ และ $|\\nabla f| = \\sqrt{36 + 64} = 10$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p006
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 2
+    type: mcq
+    stem: "จากแผนภาพเส้นระดับของ $f(x, y)$ ในภาพ ข้อใดถูกต้องเกี่ยวกับเครื่องหมายของ $f_x$ และ $f_y$ ที่จุด $P$"
+    figure:
+      src: contour-sign.svg
+      alt: "แผนภาพเส้นระดับของ f(x, y) เป็นพาราโบลาหงายห้าเส้นซ้อนกันในแนวตั้ง เส้นบนสุดมีค่า f = −2 แล้วลดลงมาเป็น −1, 0, 1, 2 ที่เส้นล่างสุด ค่า f เพิ่มขึ้นเมื่อเลื่อนลงด้านล่าง จุด P อยู่ที่ (1, 1) บนกิ่งขวาของเส้นหนึ่ง"
+    choices:
+      - { id: a, text: "$f_x > 0$ และ $f_y < 0$", correct: true }
+      - { id: b, text: "$f_x > 0$ และ $f_y > 0$", feedback: "เลื่อนขึ้นจาก $P$ (เพิ่ม $y$) จะข้ามไปเส้นที่มีค่าน้อยลง $f_y$ จึงเป็นลบ" }
+      - { id: c, text: "$f_x < 0$ และ $f_y < 0$", feedback: "เลื่อนไปทางขวาจาก $P$ (เพิ่ม $x$) จะข้ามไปเส้นด้านล่างซึ่งมีค่ามากขึ้น $f_x$ จึงเป็นบวก" }
+      - { id: d, text: "$f_x = 0$ และ $f_y = 0$", feedback: "$P$ ไม่ใช่จุดยอดของพาราโบลา และเส้นระดับไม่ได้ราบตรงนั้น" }
+    hints:
+      - "$f_x$: เลื่อนจาก $P$ ไปทางขวาเล็กน้อย (ตรึง $y$) ค่า $f$ เพิ่มหรือลด"
+      - "$f_y$: เลื่อนจาก $P$ ขึ้นไปเล็กน้อย (ตรึง $x$) ค่า $f$ เพิ่มหรือลด"
+    solution: "ค่า $f$ ของเส้นระดับเพิ่มเมื่อลงด้านล่าง เลื่อนขวาจาก $P$ เส้นโค้งที่ผ่านกิ่งขวาอยู่ต่ำกว่า จึงข้ามไปเส้นค่ามากขึ้น $f_x > 0$ เลื่อนขึ้นข้ามไปเส้นค่าน้อยลง $f_y < 0$ (ฟังก์ชันในภาพคือ $f = x^2 - 1 - y$ ซึ่งมี $f_x = 2x = 2$ และ $f_y = -1$ ที่ $P$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p007
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $f(x, y) = x^2y$ จงหาอนุพันธ์ระบุทิศทางของ $f$ ที่จุด $(1, 2)$ ในทิศของเวกเตอร์ $\\mathbf{v} = (3, 4)$"
+    answer: { value: 3.2, tolerance: 0.01 }
+    hints:
+      - "$\\nabla f = (2xy,\\ x^2)$ ที่ $(1, 2)$ ได้ $(4, 1)$"
+      - "เวกเตอร์หนึ่งหน่วย $\\mathbf{u} = \\tfrac{(3, 4)}{5}$ แล้วหา $\\nabla f \\cdot \\mathbf{u}$"
+    misconceptions:
+      - { match: 16, feedback: "ใช้ $(3, 4)$ ตรง ๆ ต้องหารด้วยขนาด 5 ให้เป็นเวกเตอร์หนึ่งหน่วยก่อน" }
+      - { match: 4.123, feedback: "นี่คือ $|\\nabla f|$ ซึ่งเป็นอัตราสูงสุด ไม่ใช่อัตราในทิศที่กำหนด" }
+    solution: "$\\nabla f(1, 2) = (4, 1)$, $\\mathbf{u} = (0.6, 0.8)$ ได้ $D_{\\mathbf{u}}f = 4(0.6) + 1(0.8) = 3.2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p008
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $z = x^2y$ โดย $x = t^2$ และ $y = 3t + 1$ จงหา $\\dfrac{dz}{dt}$ เมื่อ $t = 1$"
+    answer: { value: 19 }
+    hints:
+      - "$\\dfrac{dz}{dt} = z_x\\dfrac{dx}{dt} + z_y\\dfrac{dy}{dt} = 2xy(2t) + x^2(3)$"
+      - "ที่ $t = 1$: $x = 1$, $y = 4$"
+    misconceptions:
+      - { match: 16, feedback: "ลืมพจน์ที่มาทาง $y$: $z_y\\,\\tfrac{dy}{dt} = x^2 \\cdot 3$" }
+      - { match: 3, feedback: "ลืมพจน์ที่มาทาง $x$: $z_x\\,\\tfrac{dx}{dt} = 2xy \\cdot 2t$" }
+    solution: "ที่ $t = 1$: $x = 1$, $y = 4$, $z_x = 2xy = 8$, $z_y = x^2 = 1$, $\\tfrac{dx}{dt} = 2$, $\\tfrac{dy}{dt} = 3$ จึง $\\tfrac{dz}{dt} = 8(2) + 1(3) = 19$ ตรวจ: $z = t^4(3t + 1) = 3t^5 + t^4$ ได้ $z' = 15t^4 + 4t^3 = 19$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p009
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 3
+    type: numeric
+    stem: "เนินเขาลูกหนึ่งในเชียงรายมีความสูง $h(x, y) = 1200 - 0.002x^2 - 0.001y^2$ เมตร เมื่อ $x, y$ เป็นระยะ (เมตร) ไปทางตะวันออกและทางเหนือจากยอด (แบบจำลองสมมติ) นักเดินป่ายืนที่ $(100, 200)$ ถ้าเดินในทิศที่ชันขึ้นมากที่สุด ความสูงจะเพิ่มกี่เมตรต่อระยะเดิน 1 เมตร (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.566, unit: "m/m", tolerance: 0.002 }
+    hints:
+      - "$\\nabla h = (-0.004x,\\ -0.002y)$"
+      - "อัตราการเพิ่มสูงสุดคือ $|\\nabla h|$"
+    misconceptions:
+      - { match: 0.8, feedback: "ขนาดของ $(-0.4, -0.4)$ ไม่ใช่ $0.4 + 0.4$ ต้องใช้ $\\sqrt{0.4^2 + 0.4^2}$" }
+      - { match: 0.4, feedback: "นี่คืออัตราในทิศตะวันตกหรือใต้อย่างเดียว ทิศที่ชันที่สุดคือทิศของ $\\nabla h$" }
+    solution: "$\\nabla h(100, 200) = (-0.4,\\ -0.4)$ อัตราสูงสุด $|\\nabla h| = \\sqrt{0.32} \\approx 0.566$ เมตรต่อเมตร ในทิศ $(-1, -1)$ คือทางตะวันตกเฉียงใต้ ซึ่งมุ่งเข้าหายอดเขา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p010
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 3
+    type: match
+    stem: "ที่จุดวิกฤตของ $f(x, y)$ ให้ $D = f_{xx}f_{yy} - (f_{xy})^2$ จับคู่ผลการทดสอบกับข้อสรุป"
+    pairs:
+      - { left: "$D > 0$ และ $f_{xx} > 0$", right: "ต่ำสุดสัมพัทธ์" }
+      - { left: "$D > 0$ และ $f_{xx} < 0$", right: "สูงสุดสัมพัทธ์" }
+      - { left: "$D < 0$", right: "จุดอานม้า" }
+      - { left: "$D = 0$", right: "การทดสอบสรุปไม่ได้" }
+    hints:
+      - "$D > 0$ แปลว่าพื้นผิวโค้งไปทางเดียวกันทุกทิศ"
+      - "$f_{xx} > 0$ แปลว่าโค้งหงาย"
+    solution: "$D > 0$: โค้งทางเดียวกันทุกทิศ ถ้า $f_{xx} > 0$ เป็นต่ำสุด ถ้า $f_{xx} < 0$ เป็นสูงสุด; $D < 0$: โค้งต่างทางกัน เป็นจุดอานม้า; $D = 0$: ต้องใช้วิธีอื่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p011
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 4
+    type: numeric
+    stem: "ฟังก์ชัน $f(x, y) = x^3 - 3x + y^2 - 4y$ มีจุดวิกฤตสองจุด จงหาค่าต่ำสุดสัมพัทธ์ของ $f$"
+    answer: { value: -6 }
+    hints:
+      - "$f_x = 3x^2 - 3 = 0$ และ $f_y = 2y - 4 = 0$ ได้จุด $(\\pm1, 2)$"
+      - "$f_{xx} = 6x$, $f_{yy} = 2$, $f_{xy} = 0$ ตรวจ $D$ ที่แต่ละจุด"
+    misconceptions:
+      - { match: -2, feedback: "$f(-1, 2) = -2$ แต่ที่ $(-1, 2)$ ได้ $D = (-6)(2) < 0$ เป็นจุดอานม้า ไม่ใช่ค่าต่ำสุด" }
+    solution: "ที่ $(1, 2)$: $D = (6)(2) - 0 = 12 > 0$ และ $f_{xx} = 6 > 0$ เป็นต่ำสุดสัมพัทธ์ $f(1, 2) = 1 - 3 + 4 - 8 = -6$ ที่ $(-1, 2)$: $D = -12 < 0$ เป็นจุดอานม้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p012
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 4
+    type: numeric
+    stem: "สหกรณ์ผู้ปลูกลำไยในลำพูนออกแบบลังกระดาษ **ไม่มีฝา** ทรงสี่เหลี่ยมมุมฉาก ฐานกว้าง $x$ ยาว $y$ สูง $z$ เซนติเมตร ให้จุ 32,000 ลูกบาศก์เซนติเมตร (32 ลิตร) พื้นที่กระดาษที่น้อยที่สุดเป็นกี่ตารางเซนติเมตร"
+    answer: { value: 4800, unit: ตารางเซนติเมตร, tolerance: 1 }
+    hints:
+      - "พื้นที่ $S = xy + 2xz + 2yz$ และ $z = \\dfrac{32000}{xy}$ จึง $S = xy + \\dfrac{64000}{y} + \\dfrac{64000}{x}$"
+      - "ตั้ง $S_x = 0$ และ $S_y = 0$ จะได้ $x = y$ และ $x^3 = 64000$"
+    misconceptions:
+      - { match: 6048, feedback: "นี่คือกล่องลูกบาศก์ที่มีฝา ($6x^2$) ลังไม่มีฝาจึงไม่ต้องนับด้านบน และขนาดที่ดีที่สุดจะเตี้ยลง" }
+    solution: "$S_x = y - \\tfrac{64000}{x^2} = 0$ และ $S_y = x - \\tfrac{64000}{y^2} = 0$ ได้ $x = y = 40$ และ $z = \\tfrac{32000}{1600} = 20$ ตรวจ $D = S_{xx}S_{yy} - 1 = (2)(2) - 1 > 0$, $S_{xx} > 0$ เป็นต่ำสุด $S = 1600 + 1600 + 1600 = 4800$ ตารางเซนติเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p013
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 4
+    type: numeric
+    stem: "อุณหภูมิบนกระทะหมูกระทะคือ $T(x, y) = 250 - 2x^2 - y^2$ องศาเซลเซียส ($x, y$ เป็นเซนติเมตรจากจุดกลาง แบบจำลองสมมติ) ชิ้นหมูไถลไปตามทาง $x = 1 + t$, $y = 2t$ ($t$ เป็นวินาที) อุณหภูมิใต้ชิ้นหมูเปลี่ยนด้วยอัตราเท่าใดเมื่อ $t = 1$ (องศาเซลเซียสต่อวินาที)"
+    answer: { value: -16, unit: "°C/s" }
+    hints:
+      - "ใช้กฎลูกโซ่ $\\dfrac{dT}{dt} = T_x\\dfrac{dx}{dt} + T_y\\dfrac{dy}{dt}$"
+      - "ที่ $t = 1$: $x = 2$, $y = 2$, $T_x = -4x$, $T_y = -2y$"
+    misconceptions:
+      - { match: -12, feedback: "ลืมคูณ $T_y$ ด้วย $\\tfrac{dy}{dt} = 2$" }
+      - { match: -8, feedback: "ใส่แค่พจน์ทาง $x$ ต้องรวมพจน์ทาง $y$ ด้วย" }
+    solution: "$T_x = -4x = -8$, $T_y = -2y = -4$, $\\tfrac{dx}{dt} = 1$, $\\tfrac{dy}{dt} = 2$ จึง $\\tfrac{dT}{dt} = -8(1) + (-4)(2) = -16$ °C/s ชิ้นหมูกำลังเลื่อนออกไปยังส่วนที่เย็นกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p014
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 4
+    type: expression
+    stem: "เส้นโค้ง $x^2y + y^3 = 10$ กำหนด $y$ เป็นฟังก์ชันของ $x$ โดยปริยาย ใช้สูตร $\\dfrac{dy}{dx} = -\\dfrac{F_x}{F_y}$ จงหา $\\dfrac{dy}{dx}$ ในรูปของ $x$ และ $y$"
+    prefix: "\\frac{dy}{dx} ="
+    answer: { latex: "-\\frac{2xy}{x^2+3y^2}", variables: [x, y] }
+    misconceptions:
+      - { match: "\\frac{2xy}{x^2+3y^2}", feedback: "สูตรมีเครื่องหมายลบ $-\\tfrac{F_x}{F_y}$" }
+      - { match: "-\\frac{x^2+3y^2}{2xy}", feedback: "เศษกับส่วนสลับกัน ตัวเศษคือ $F_x$" }
+    hints:
+      - "ให้ $F(x, y) = x^2y + y^3 - 10$"
+      - "$F_x = 2xy$ และ $F_y = x^2 + 3y^2$"
+    solution: "$F_x = 2xy$, $F_y = x^2 + 3y^2$ จึง $\\dfrac{dy}{dx} = -\\dfrac{2xy}{x^2 + 3y^2}$ (ตรงกับการหาอนุพันธ์โดยปริยายแบบเดิม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p015
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 5
+    type: numeric
+    stem: "ฟังก์ชัน $f(x, y) = x^4 + y^4 - 4xy$ มีจุดวิกฤตสามจุด จงหาค่าต่ำสุดของ $f$"
+    answer: { value: -2 }
+    hints:
+      - "$f_x = 4x^3 - 4y = 0$ และ $f_y = 4y^3 - 4x = 0$ แทน $y = x^3$ ลงในสมการที่สอง"
+      - "ได้ $x^9 = x$ จุดวิกฤตคือ $(0, 0), (1, 1), (-1, -1)$ ตรวจ $D$ ที่แต่ละจุด"
+    misconceptions:
+      - { match: 0, feedback: "ที่ $(0, 0)$: $D = 0 \\cdot 0 - (-4)^2 = -16 < 0$ เป็นจุดอานม้า" }
+    solution: "$f_{xx} = 12x^2$, $f_{yy} = 12y^2$, $f_{xy} = -4$ ที่ $(\\pm1, \\pm1)$: $D = 144 - 16 = 128 > 0$ และ $f_{xx} = 12 > 0$ เป็นต่ำสุด ค่า $f = 1 + 1 - 4 = -2$ ที่ $(0, 0)$ เป็นจุดอานม้า เนื่องจาก $f \\to \\infty$ เมื่อออกไกล ค่า $-2$ จึงเป็นค่าต่ำสุดสัมบูรณ์ด้วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p016
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "ให้ $h(x, y)$ เป็นความสูงของพื้นที่ลาดชันแห่งหนึ่ง ที่จุด $P$ มี $\\nabla h = (3, -4)$ ข้อใดถูกต้อง (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "น้ำฝนที่ตกตรง $P$ เริ่มไหลในทิศ $(-3, 4)$", correct: true }
+      - { id: b, text: "เดินในทิศ $(4, 3)$ ความสูงจะไม่เปลี่ยนในทันที", correct: true }
+      - { id: c, text: "ความชันมากที่สุดที่ $P$ คือ 5", correct: true }
+      - { id: d, text: "เส้นชั้นความสูงที่ผ่าน $P$ ขนานกับเวกเตอร์ $(3, -4)$", feedback: "เส้นระดับ **ตั้งฉาก** กับเกรเดียนต์ จึงขนานกับ $(4, 3)$" }
+      - { id: e, text: "เดินในทิศ $(1, 0)$ ความสูงลดลง", feedback: "$D_{(1,0)}h = 3 > 0$ ความสูงเพิ่มขึ้น" }
+    hints:
+      - "น้ำไหลไปทางที่ลดลงเร็วที่สุด คือ $-\\nabla h$"
+      - "$(4, 3) \\cdot (3, -4) = 0$ และ $|\\nabla h| = 5$"
+    solution: "$-\\nabla h = (-3, 4)$ คือทิศที่ลงเร็วที่สุด น้ำจึงไหลทางนั้น; $(4, 3)$ ตั้งฉากกับ $\\nabla h$ อนุพันธ์ระบุทิศทางเป็นศูนย์ (ตามเส้นชั้นความสูง); ความชันมากสุด $|\\nabla h| = 5$; เส้นระดับขนานกับ $(4, 3)$ ไม่ใช่ $(3, -4)$; ทิศ $(1, 0)$ ได้อัตรา $3 > 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.partial-derivatives.p017
+    topics: [math.calculus.partial-derivatives]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $f(x, y) = x^2y^3$ จงหา $f_{xy}(1, 2)$"
+    answer: { value: 24 }
+    hints:
+      - "หา $f_x = 2xy^3$ ก่อน"
+      - "แล้วหาอนุพันธ์ย่อยของ $f_x$ เทียบ $y$"
+    misconceptions:
+      - { match: 16, feedback: "นี่คือ $f_{xx} = 2y^3$ ที่ $(1, 2)$ ต้องหาอนุพันธ์ครั้งที่สองเทียบ $y$" }
+      - { match: 12, feedback: "นี่คือ $f_y(1, 2) = 3x^2y^2$ ยังหาอนุพันธ์ไม่ครบสองครั้ง" }
+    solution: "$f_x = 2xy^3$ และ $f_{xy} = 6xy^2$ ที่ $(1, 2)$: $6(1)(4) = 24$ (และ $f_{yx} = \\tfrac{\\partial}{\\partial x}(3x^2y^2) = 6xy^2$ เท่ากันตามทฤษฎีบทของแคลโร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

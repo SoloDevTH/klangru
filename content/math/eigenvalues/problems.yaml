@@ -1,0 +1,275 @@
+problems:
+  - id: math.linalg.eigenvalues.p001
+    topics: [math.linalg.eigenvalues]
+    difficulty: 1
+    type: mcq
+    stem: "ให้ $A = \\begin{bmatrix}2 & 3\\\\ 0 & -1\\end{bmatrix}$ เวกเตอร์ใดเป็นเวกเตอร์เฉพาะของ $A$"
+    choices:
+      - { id: a, text: "$(1, 0)$", correct: true }
+      - { id: b, text: "$(0, 1)$", feedback: "$A(0, 1) = (3, -1)$ ไม่ใช่พหุคูณของ $(0, 1)$" }
+      - { id: c, text: "$(1, 1)$", feedback: "$A(1, 1) = (5, -1)$ ไม่ใช่พหุคูณของ $(1, 1)$" }
+      - { id: d, text: "$(0, 0)$", feedback: "เวกเตอร์ศูนย์ไม่นับเป็นเวกเตอร์เฉพาะตามนิยาม" }
+    hints:
+      - "คำนวณ $A\\mathbf{v}$ ของแต่ละตัวเลือก"
+      - "เวกเตอร์เฉพาะต้องได้ $A\\mathbf{v} = \\lambda\\mathbf{v}$ และ $\\mathbf{v} \\ne \\mathbf{0}$"
+    solution: "$A(1, 0) = (2, 0) = 2(1, 0)$ จึงเป็นเวกเตอร์เฉพาะที่ $\\lambda = 2$ (อีกตัวคือ $(1, -1)$ ที่ $\\lambda = -1$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p002
+    topics: [math.linalg.eigenvalues]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาค่าเฉพาะที่มากที่สุดของ $\\begin{bmatrix}4 & 7\\\\ 0 & -2\\end{bmatrix}$"
+    answer: { value: 4 }
+    hints:
+      - "เมทริกซ์นี้เป็นเมทริกซ์สามเหลี่ยมบน"
+      - "ค่าเฉพาะของเมทริกซ์สามเหลี่ยมคือสมาชิกบนแนวทแยง"
+    misconceptions:
+      - { match: 7, feedback: "7 อยู่นอกแนวทแยง ค่าเฉพาะดูจากแนวทแยงเท่านั้น" }
+      - { match: 2, feedback: "นี่คือ trace $4 + (-2)$ ซึ่งเป็นผลบวกของค่าเฉพาะทั้งสอง" }
+    solution: "$\\det(A - \\lambda I) = (4 - \\lambda)(-2 - \\lambda) = 0$ ได้ $\\lambda = 4, -2$ ค่ามากที่สุดคือ 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p003
+    topics: [math.linalg.eigenvalues]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $A = \\begin{bmatrix}1 & 2\\\\ 2 & 1\\end{bmatrix}$ และ $\\mathbf{v} = (1, 1)$ ซึ่งเป็นเวกเตอร์เฉพาะ จงหาค่าเฉพาะ $\\lambda$ ที่คู่กับ $\\mathbf{v}$"
+    answer: { value: 3 }
+    hints:
+      - "คำนวณ $A\\mathbf{v}$"
+      - "$A\\mathbf{v}$ เป็นกี่เท่าของ $\\mathbf{v}$"
+    misconceptions:
+      - { match: -1, feedback: "$-1$ เป็นค่าเฉพาะอีกตัวของ $A$ ซึ่งคู่กับ $(1, -1)$ ไม่ใช่ $(1, 1)$" }
+    solution: "$A(1, 1) = (1 + 2,\\ 2 + 1) = (3, 3) = 3(1, 1)$ จึง $\\lambda = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p004
+    topics: [math.linalg.eigenvalues]
+    difficulty: 2
+    type: numeric
+    stem: "เมทริกซ์ $2 \\times 2$ ตัวหนึ่งมีค่าเฉพาะ 2 และ 5 จงหาดีเทอร์มิแนนต์ของเมทริกซ์นี้"
+    answer: { value: 10 }
+    hints:
+      - "ผลคูณของค่าเฉพาะเท่ากับดีเทอร์มิแนนต์"
+      - "ผลบวกของค่าเฉพาะเท่ากับ trace"
+    misconceptions:
+      - { match: 7, feedback: "7 คือผลบวก ซึ่งเท่ากับ trace ไม่ใช่ดีเทอร์มิแนนต์" }
+    solution: "$\\det A = \\lambda_1\\lambda_2 = 2 \\times 5 = 10$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p005
+    topics: [math.linalg.eigenvalues]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่าเฉพาะที่มากที่สุดของ $A = \\begin{bmatrix}7 & 2\\\\ -4 & 1\\end{bmatrix}$"
+    answer: { value: 5 }
+    hints:
+      - "trace $= 8$ และ $\\det A = 7 - (-8) = 15$"
+      - "แก้ $\\lambda^2 - 8\\lambda + 15 = 0$"
+    misconceptions:
+      - { match: 7, feedback: "7 อยู่บนแนวทแยง แต่เมทริกซ์ไม่ใช่เมทริกซ์สามเหลี่ยม ต้องแก้สมการลักษณะเฉพาะ" }
+    solution: "$\\lambda^2 - 8\\lambda + 15 = (\\lambda - 3)(\\lambda - 5) = 0$ ได้ $\\lambda = 3, 5$ ค่ามากที่สุดคือ 5 ตรวจ: $3 + 5 = 8$ และ $3 \\times 5 = 15$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p006
+    topics: [math.linalg.eigenvalues]
+    difficulty: 3
+    type: numeric
+    stem: "เมทริกซ์ $A = \\begin{bmatrix}4 & -2\\\\ 1 & 1\\end{bmatrix}$ มีค่าเฉพาะ 3 เวกเตอร์เฉพาะที่คู่กับ $\\lambda = 3$ เขียนได้ในรูป $(2, k)$ จงหา $k$"
+    answer: { value: 1 }
+    hints:
+      - "$A - 3I = \\begin{bmatrix}1 & -2\\\\ 1 & -2\\end{bmatrix}$"
+      - "แก้ $x_1 - 2x_2 = 0$ เมื่อ $x_1 = 2$"
+    misconceptions:
+      - { match: 2, feedback: "$(2, 2)$ คู่กับ $\\lambda = 2$ (ทิศ $(1, 1)$) ไม่ใช่ $\\lambda = 3$" }
+      - { match: 4, feedback: "จาก $x_1 - 2x_2 = 0$ ได้ $x_2 = \\tfrac{x_1}{2}$ ไม่ใช่ $2x_1$" }
+    solution: "$(A - 3I)\\mathbf{x} = \\mathbf{0}$ ให้ $x_1 = 2x_2$ เมื่อ $x_1 = 2$ ได้ $x_2 = 1$ ตรวจ: $A(2, 1) = (8 - 2,\\ 2 + 1) = (6, 3) = 3(2, 1)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p007
+    topics: [math.linalg.eigenvalues]
+    difficulty: 3
+    type: mcq
+    stem: "เมทริกซ์หมุน 90° คือ $R = \\begin{bmatrix}0 & -1\\\\ 1 & 0\\end{bmatrix}$ ค่าเฉพาะของ $R$ คือข้อใด"
+    choices:
+      - { id: a, text: "$i$ และ $-i$", correct: true }
+      - { id: b, text: "$1$ และ $-1$", feedback: "ถ้า $\\lambda = \\pm1$ จะมีทิศจริงที่ไม่เปลี่ยนหรือกลับทิศ แต่การหมุน 90° เปลี่ยนทิศของทุกเวกเตอร์จริง" }
+      - { id: c, text: "$0$ ทั้งสองค่า", feedback: "$\\det R = 1 \\ne 0$ ค่าเฉพาะจึงเป็น 0 ไม่ได้" }
+      - { id: d, text: "ไม่มีค่าเฉพาะเลย", feedback: "ไม่มีค่าเฉพาะ **จริง** แต่มีค่าเฉพาะเชิงซ้อนสองค่า (สมการกำลังสองมีสองรากเสมอในจำนวนเชิงซ้อน)" }
+    hints:
+      - "trace $= 0$ และ $\\det R = 0 - (-1) = 1$"
+      - "แก้ $\\lambda^2 + 1 = 0$"
+    solution: "$\\lambda^2 - 0\\lambda + 1 = 0$ ได้ $\\lambda = \\pm i$ ตรวจ: $i + (-i) = 0$ = trace และ $i(-i) = 1$ = det ค่าเฉพาะเชิงซ้อนเป็นสัญญาณของการหมุนหรือการสั่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p008
+    topics: [math.linalg.eigenvalues]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ชนิดของเมทริกซ์ $2 \\times 2$ กับสมบัติของค่าเฉพาะ"
+    pairs:
+      - { left: "เมทริกซ์ฉายลงบนเส้นตรง", right: "ค่าเฉพาะคือ 0 และ 1" }
+      - { left: "เมทริกซ์หมุน 90°", right: "ค่าเฉพาะคือ $\\pm i$" }
+      - { left: "เมทริกซ์สมมาตร", right: "ค่าเฉพาะจริง เวกเตอร์เฉพาะตั้งฉากกัน" }
+      - { left: "เมทริกซ์สามเหลี่ยม", right: "ค่าเฉพาะคือสมาชิกบนแนวทแยง" }
+    hints:
+      - "เมทริกซ์ฉาย: เวกเตอร์บนเส้นไม่เปลี่ยน เวกเตอร์ที่ตั้งฉากถูกฉายเป็นศูนย์"
+      - "การหมุนไม่มีทิศจริงที่คงที่"
+    solution: "ฉาย: บนเส้น $\\lambda = 1$ ตั้งฉาก $\\lambda = 0$; หมุน 90°: $\\pm i$; สมมาตร: ค่าเฉพาะจริงและเวกเตอร์เฉพาะตั้งฉาก; สามเหลี่ยม: แนวทแยง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p009
+    topics: [math.linalg.eigenvalues]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $A = \\begin{bmatrix}4 & -2\\\\ 1 & 1\\end{bmatrix}$ มีเวกเตอร์เฉพาะ $(1, 1)$ ที่ $\\lambda = 2$ และ $(2, 1)$ ที่ $\\lambda = 3$ ใช้ค่าเฉพาะหาส่วนประกอบแรกของ $A^3(3, 2)$"
+    answer: { value: 62 }
+    hints:
+      - "$(3, 2) = (1, 1) + (2, 1)$"
+      - "$A^3(3, 2) = 2^3(1, 1) + 3^3(2, 1)$"
+    misconceptions:
+      - { match: 43, feedback: "สลับค่าเฉพาะ ส่วน $(1, 1)$ คู่กับ $\\lambda = 2$ จึงคูณ $2^3 = 8$ และส่วน $(2, 1)$ คู่กับ $\\lambda = 3$ จึงคูณ $3^3 = 27$" }
+      - { match: 8, feedback: "นี่คือ $A(3, 2)$ ครั้งเดียว ต้องยกกำลัง 3 ทุกค่าเฉพาะ" }
+    solution: "$A^3(3, 2) = 8(1, 1) + 27(2, 1) = (8 + 54,\\ 8 + 27) = (62, 35)$ ส่วนประกอบแรกคือ 62 (ตรวจด้วยการคูณตรง: $A(3, 2) = (8, 5)$, $A(8, 5) = (22, 13)$, $A(22, 13) = (62, 35)$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p010
+    topics: [math.linalg.eigenvalues]
+    difficulty: 4
+    type: numeric
+    stem: "แบบจำลองการเดินทางในกรุงเทพฯ (ค่าสมมติ): ทุกเดือน 90% ของผู้ใช้รถไฟฟ้ายังใช้รถไฟฟ้า อีก 10% เปลี่ยนไปใช้รถเมล์ ส่วนผู้ใช้รถเมล์ 20% เปลี่ยนไปใช้รถไฟฟ้า 80% ใช้รถเมล์ต่อ เมทริกซ์มาร์คอฟคือ $\\begin{bmatrix}0.9 & 0.2\\\\ 0.1 & 0.8\\end{bmatrix}$ ในระยะยาวผู้ใช้รถไฟฟ้าจะเป็นกี่เปอร์เซ็นต์ (ทศนิยมสองตำแหน่ง)"
+    answer: { value: 66.67, unit: "%", tolerance: 0.01 }
+    hints:
+      - "สภาวะคงตัวคือเวกเตอร์เฉพาะของ $\\lambda = 1$: $(A - I)\\mathbf{x} = \\mathbf{0}$"
+      - "$-0.1x_1 + 0.2x_2 = 0$ ได้ $x_1 = 2x_2$ แล้วทำให้ผลรวมเป็น 1"
+    misconceptions:
+      - { match: 90, feedback: "90% คือสัดส่วนที่ยังอยู่ในเดือนถัดไป ไม่ใช่สัดส่วนระยะยาว" }
+      - { match: 33.33, feedback: "นี่คือสัดส่วนของรถเมล์ โจทย์ถามรถไฟฟ้า" }
+    solution: "$x_1 = 2x_2$ และ $x_1 + x_2 = 1$ ได้ $\\mathbf{x} = \\big(\\tfrac23, \\tfrac13\\big)$ รถไฟฟ้า $\\approx 66.67\\%$ ตรวจ: $0.9\\cdot\\tfrac23 + 0.2\\cdot\\tfrac13 = \\tfrac23$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p011
+    topics: [math.linalg.eigenvalues]
+    difficulty: 5
+    type: numeric
+    stem: "ต่อจากแบบจำลองรถไฟฟ้าและรถเมล์ (เมทริกซ์ $\\begin{bmatrix}0.9 & 0.2\\\\ 0.1 & 0.8\\end{bmatrix}$ มีค่าเฉพาะ 1 และ 0.7) ถ้าเดือนนี้ผู้ใช้แบ่งเป็นรถไฟฟ้า 50% รถเมล์ 50% อีก 3 เดือนผู้ใช้รถไฟฟ้าจะเป็นกี่เปอร์เซ็นต์ (ทศนิยมสองตำแหน่ง)"
+    answer: { value: 60.95, unit: "%", tolerance: 0.01 }
+    hints:
+      - "เขียน $(0.5, 0.5) = \\big(\\tfrac23, \\tfrac13\\big) + c(1, -1)$ ได้ $c = -\\tfrac16$ ($(1, -1)$ คือเวกเตอร์เฉพาะของ 0.7)"
+      - "$A^3\\mathbf{u}_0 = \\big(\\tfrac23, \\tfrac13\\big) - \\tfrac16(0.7)^3(1, -1)$"
+    misconceptions:
+      - { match: 66.67, feedback: "นี่คือสภาวะคงตัวในระยะยาว หลัง 3 เดือนยังไม่ถึง เพราะส่วนของ $\\lambda = 0.7$ ยังไม่หมด" }
+      - { match: 55, feedback: "นี่คือผลหลัง 1 เดือน ($0.9(0.5) + 0.2(0.5)$) ต้องคูณ $A$ สามครั้ง" }
+    solution: "$\\tfrac23 - \\tfrac16(0.343) = 0.66667 - 0.05717 = 0.60950$ หรือ 60.95% ตรวจด้วยการคูณตรง: 50% → 55% → 58.5% → 60.95%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p012
+    topics: [math.linalg.eigenvalues]
+    difficulty: 3
+    type: numeric
+    stem: "เมทริกซ์สมมาตร $A = \\begin{bmatrix}5 & 2\\\\ 2 & 2\\end{bmatrix}$ มีค่าเฉพาะสองค่า จงหาค่าที่มากกว่า"
+    answer: { value: 6 }
+    hints:
+      - "trace $= 7$ และ $\\det A = 10 - 4 = 6$"
+      - "แก้ $\\lambda^2 - 7\\lambda + 6 = 0$"
+    misconceptions:
+      - { match: 5, feedback: "5 คือสมาชิกแนวทแยง แต่ $A$ ไม่ใช่เมทริกซ์สามเหลี่ยม" }
+      - { match: 1, feedback: "1 เป็นค่าเฉพาะที่น้อยกว่า" }
+    solution: "$(\\lambda - 6)(\\lambda - 1) = 0$ ได้ $\\lambda = 6, 1$ เวกเตอร์เฉพาะ $(2, 1)$ และ $(-1, 2)$ ตั้งฉากกันตามสมบัติของเมทริกซ์สมมาตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p013
+    topics: [math.linalg.eigenvalues]
+    difficulty: 5
+    type: numeric
+    stem: "ระบบสองตัวแปรที่เชื่อมกัน (เช่น อุณหภูมิของห้องสองห้องติดกัน เทียบกับภายนอก) เป็นไปตาม $\\mathbf{u}' = A\\mathbf{u}$ โดย $A = \\begin{bmatrix}-3 & 1\\\\ 1 & -3\\end{bmatrix}$ และ $\\mathbf{u}(0) = (1, 1)$ จงหา $u_1(1)$ (ทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.1353, tolerance: 0.0002 }
+    hints:
+      - "$(1, 1)$ เป็นเวกเตอร์เฉพาะของ $A$ หรือไม่ คำนวณ $A(1, 1)$"
+      - "ถ้า $\\mathbf{u}(0)$ เป็นเวกเตอร์เฉพาะของ $\\lambda$ แล้ว $\\mathbf{u}(t) = e^{\\lambda t}\\mathbf{u}(0)$"
+    misconceptions:
+      - { match: 0.0183, feedback: "นี่คือ $e^{-4}$ ซึ่งใช้กับเวกเตอร์เฉพาะ $(1, -1)$ แต่ $(1, 1)$ คู่กับ $\\lambda = -2$" }
+      - { match: 0.0498, feedback: "นี่คือ $e^{-3}$ ใช้สมาชิกแนวทแยงแทนค่าเฉพาะ" }
+    solution: "$A(1, 1) = (-2, -2) = -2(1, 1)$ จึง $\\mathbf{u}(t) = e^{-2t}(1, 1)$ และ $u_1(1) = e^{-2} \\approx 0.1353$ ค่าเฉพาะ $-2$ และ $-4$ เป็นลบทั้งคู่ ระบบจึงเข้าสู่ศูนย์ (เสถียร)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p014
+    topics: [math.linalg.eigenvalues]
+    difficulty: 4
+    type: mcq
+    stem: "เมทริกซ์ $B = \\begin{bmatrix}2 & 1\\\\ 0 & 2\\end{bmatrix}$ ทำเป็นเมทริกซ์ทแยงมุมได้หรือไม่"
+    choices:
+      - { id: a, text: "ไม่ได้ เพราะมีค่าเฉพาะ 2 ซ้ำแต่เวกเตอร์เฉพาะมีแค่ทิศเดียว", correct: true }
+      - { id: b, text: "ได้ เพราะเป็นเมทริกซ์สามเหลี่ยม", feedback: "เมทริกซ์สามเหลี่ยมบอกค่าเฉพาะได้ง่าย แต่ไม่รับประกันว่ามีเวกเตอร์เฉพาะครบ" }
+      - { id: c, text: "ได้ เพราะดีเทอร์มิแนนต์ไม่เป็นศูนย์", feedback: "การมีตัวผกผันกับการทำเป็นทแยงมุมได้เป็นคนละเรื่องกัน" }
+      - { id: d, text: "ไม่ได้ เพราะค่าเฉพาะเป็นจำนวนเชิงซ้อน", feedback: "ค่าเฉพาะคือ 2 ซึ่งเป็นจำนวนจริง" }
+    hints:
+      - "หาเวกเตอร์เฉพาะจาก $B - 2I = \\begin{bmatrix}0 & 1\\\\ 0 & 0\\end{bmatrix}$"
+      - "ต้องมีเวกเตอร์เฉพาะที่อิสระเชิงเส้น 2 ตัว"
+    solution: "$(B - 2I)\\mathbf{x} = \\mathbf{0}$ ให้ $x_2 = 0$ เวกเตอร์เฉพาะทั้งหมดอยู่ในทิศ $(1, 0)$ ทิศเดียว สร้าง $S$ ที่มีตัวผกผันไม่ได้ จึงทำเป็นเมทริกซ์ทแยงมุมไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p015
+    topics: [math.linalg.eigenvalues]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหาค่าเฉพาะและเวกเตอร์เฉพาะของเมทริกซ์ $A$"
+    items:
+      - "เขียน $A - \\lambda I$"
+      - "ตั้งสมการลักษณะเฉพาะ $\\det(A - \\lambda I) = 0$"
+      - "แก้หาค่าเฉพาะ แล้วตรวจด้วย trace และ det"
+      - "สำหรับแต่ละ $\\lambda$ แก้ $(A - \\lambda I)\\mathbf{x} = \\mathbf{0}$ หาเวกเตอร์เฉพาะ"
+      - "ตรวจด้วย $A\\mathbf{x} = \\lambda\\mathbf{x}$"
+    hints:
+      - "ต้องรู้ค่าเฉพาะก่อนจึงหาเวกเตอร์เฉพาะได้"
+      - "การตรวจทำหลังได้คำตอบแต่ละส่วน"
+    solution: "$A - \\lambda I$ → สมการลักษณะเฉพาะ → ค่าเฉพาะ (ตรวจ trace/det) → เวกเตอร์เฉพาะจากปริภูมิศูนย์ → ตรวจ $A\\mathbf{x} = \\lambda\\mathbf{x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p016
+    topics: [math.linalg.eigenvalues]
+    difficulty: 5
+    type: numeric
+    stem: "ฟาร์มปลานิลในฉะเชิงเทราใช้แบบจำลองเลสลีแบ่งปลาเป็นปลาเล็กและปลาโต (ค่าสมมติ): ปลาโตหนึ่งตัวให้ปลาเล็กที่รอดถึงรอบถัดไป 4 ตัว ปลาเล็ก 50% โตเป็นปลาโต และปลาโต 50% รอดถึงรอบถัดไป เมทริกซ์คือ $\\begin{bmatrix}0 & 4\\\\ 0.5 & 0.5\\end{bmatrix}$ ในระยะยาวประชากรเพิ่มเป็นกี่เท่าต่อรอบ (ค่าเฉพาะที่มากที่สุด ทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.686, tolerance: 0.002 }
+    hints:
+      - "trace $= 0.5$ และ $\\det = 0 - 2 = -2$ สมการคือ $\\lambda^2 - 0.5\\lambda - 2 = 0$"
+      - "ใช้สูตรกำลังสอง $\\lambda = \\dfrac{0.5 \\pm \\sqrt{0.25 + 8}}{2}$"
+    misconceptions:
+      - { match: 1.414, feedback: "นี่คือ $\\sqrt2$ ซึ่งได้เมื่อไม่นับการรอดของปลาโต (สมาชิก 0.5 มุมขวาล่าง)" }
+      - { match: 5, feedback: "ผลรวมสมาชิกทั้งหมดไม่ใช่อัตราการเติบโต ต้องหาค่าเฉพาะ" }
+    solution: "$\\lambda = \\tfrac{0.5 + \\sqrt{8.25}}{2} = \\tfrac{0.5 + 2.872}{2} \\approx 1.686$ ประชากรเพิ่มราว 68.6% ต่อรอบ และสัดส่วนปลาเล็กต่อปลาโตเข้าสู่ทิศของเวกเตอร์เฉพาะที่คู่กัน (ประมาณ $2.37 : 1$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.eigenvalues.p017
+    topics: [math.linalg.eigenvalues]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาผลคูณของค่าเฉพาะทั้งสามของ $\\begin{bmatrix}2 & 1 & 0\\\\ 1 & 2 & 0\\\\ 0 & 0 & 5\\end{bmatrix}$"
+    answer: { value: 15 }
+    hints:
+      - "ผลคูณของค่าเฉพาะเท่ากับดีเทอร์มิแนนต์"
+      - "แยกบล็อก: $\\det = (2 \\cdot 2 - 1 \\cdot 1) \\times 5$"
+    misconceptions:
+      - { match: 20, feedback: "นี่คือผลคูณของสมาชิกแนวทแยง $2 \\cdot 2 \\cdot 5$ ซึ่งใช้ได้กับเมทริกซ์สามเหลี่ยมเท่านั้น" }
+      - { match: 9, feedback: "นี่คือผลบวกของค่าเฉพาะ (trace) ไม่ใช่ผลคูณ" }
+    solution: "$\\det = (4 - 1)(5) = 15$ ค่าเฉพาะจริงคือ 1, 3, 5 ซึ่งคูณกันได้ 15 และบวกกันได้ 9 = trace"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

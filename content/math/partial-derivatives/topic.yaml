@@ -1,0 +1,71 @@
+id: math.calculus.partial-derivatives
+subject: math
+title: { th: อนุพันธ์ย่อยและเกรเดียนต์, en: Partial derivatives and the gradient }
+summary: ฟังก์ชันหลายตัวแปรและเส้นระดับ อนุพันธ์ย่อย กฎลูกโซ่ อนุพันธ์ระบุทิศทาง เกรเดียนต์ และการหาค่าสุดขีดด้วยการทดสอบอนุพันธ์อันดับสอง
+difficulty: 8.5
+minutes: 50
+prerequisites: [math.calculus.differentiation-rules, math.calculus.vectors-3d]
+encompasses:
+  - { id: math.calculus.differentiation-rules, weight: 0.5 }
+  - { id: math.calculus.vectors-3d, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: อนุพันธ์ย่อยคือความชันของรอยตัด
+    caption: "ใช้เนินเขา f(x, y) = 4 − x² − 2y² ตัดด้วยระนาบ y = b เส้นแรกคือรอยตัด 4 − x² − 2b² เส้นที่สองคือเส้นสัมผัสรอยตัดที่ x = 1 เลื่อน b แล้วรอยตัดเลื่อนขึ้นลง แต่ความชันที่ x = 1 ยังเป็น −2 เสมอ เพราะ fₓ = −2x ไม่ขึ้นกับ y"
+    widget:
+      kind: function-plot
+      functions: ["4-x^2-2b^2", "(3-2b^2)-2\\cdot(x-1)"]
+      sliders:
+        - { name: b, min: -1.4, max: 1.4, step: 0.1, value: 0, label: ระนาบตัด y = b }
+      x: [-3, 3]
+      y: [-4, 5]
+  - type: figure
+    src: gradient-contours.svg
+    alt: "เส้นระดับของ f(x, y) = x² + 2y² เป็นวงรีซ้อนกันห้าวงที่ระดับ 1, 2, 4, 6, 8 ลูกศรสีแดงคือเกรเดียนต์ที่จุด (2, 0), (1, 1), (−1.5, −1.37) และ (0, −1) ทุกลูกศรตั้งฉากกับวงรีที่จุดนั้นและชี้ออกไปยังวงรีที่ค่ามากขึ้น"
+    caption: "เกรเดียนต์ตั้งฉากกับเส้นระดับและชี้ไปทางที่ f เพิ่มเร็วที่สุด"
+  - type: worked-example
+    title: อนุพันธ์ระบุทิศทาง
+    problem: "ให้ $f(x, y) = xy^2$ จงหาอัตราการเปลี่ยนของ $f$ ที่จุด $(2, 1)$ เมื่อเคลื่อนไปทางจุด $(5, 5)$ และอัตราการเพิ่มที่มากที่สุด ณ จุดนั้น"
+    steps:
+      - text: "$\\nabla f = (y^2,\\ 2xy)$ ที่ $(2, 1)$ ได้ $\\nabla f = (1,\\ 4)$"
+      - text: "ทิศไปยัง $(5, 5)$ คือ $\\mathbf{v} = (3, 4)$ ขนาด 5 ทำให้เป็นเวกเตอร์หนึ่งหน่วย $\\mathbf{u} = (0.6,\\ 0.8)$"
+        why: "สูตร $\\nabla f \\cdot \\mathbf{u}$ ใช้ได้กับเวกเตอร์หนึ่งหน่วยเท่านั้น ถ้าใช้ $(3, 4)$ ตรง ๆ ผลจะโตขึ้น 5 เท่า"
+      - text: "$D_{\\mathbf{u}}f = (1)(0.6) + (4)(0.8) = 3.8$"
+      - text: "อัตราสูงสุดเท่ากับ $|\\nabla f| = \\sqrt{1 + 16} = \\sqrt{17} \\approx 4.12$ ในทิศของ $(1, 4)$"
+    answer: "$D_{\\mathbf{u}}f = 3.8$ และอัตราสูงสุด $\\sqrt{17} \\approx 4.12$"
+  - { type: check, problem: math.calculus.partial-derivatives.p007, prompt: "ทำเวกเตอร์ทิศให้เป็นเวกเตอร์หนึ่งหน่วยก่อน" }
+  - type: worked-example
+    title: หาและจำแนกจุดวิกฤต
+    problem: "จงหาจุดวิกฤตของ $f(x, y) = x^2 + xy + y^2 - 3x$ และบอกชนิด"
+    steps:
+      - text: "$f_x = 2x + y - 3 = 0$ และ $f_y = x + 2y = 0$"
+      - text: "จากสมการที่สอง $x = -2y$ แทนในสมการแรก: $-4y + y - 3 = 0$ ได้ $y = -1$, $x = 2$"
+      - text: "$f_{xx} = 2$, $f_{yy} = 2$, $f_{xy} = 1$ จึง $D = (2)(2) - 1^2 = 3 > 0$"
+      - text: "$D > 0$ และ $f_{xx} > 0$ เป็นจุดต่ำสุดสัมพัทธ์ $f(2, -1) = 4 - 2 + 1 - 6 = -3$"
+        why: "$D > 0$ บอกว่าโค้งไปทางเดียวกันทุกทิศ เครื่องหมายของ $f_{xx}$ บอกว่าโค้งหงายหรือคว่ำ"
+    answer: "จุดต่ำสุดสัมพัทธ์ที่ $(2, -1)$ ค่า $-3$"
+  - { type: check, problem: math.calculus.partial-derivatives.p010, prompt: "นึกถึงความหมายของ $D$ และเครื่องหมายของ $f_{xx}$" }
+glossary:
+  - { term: เส้นระดับ, definition: "เซตของจุดที่ f(x, y) = c คงที่ เหมือนเส้นชั้นความสูงในแผนที่" }
+  - { term: อนุพันธ์ย่อย, definition: "อัตราการเปลี่ยนของ f เทียบกับตัวแปรหนึ่ง เมื่อตรึงตัวแปรอื่นไว้" }
+  - { term: เกรเดียนต์, definition: "เวกเตอร์ ∇f = (fₓ, f_y) ชี้ทางที่ f เพิ่มเร็วที่สุด ตั้งฉากกับเส้นระดับ" }
+  - { term: อนุพันธ์ระบุทิศทาง, definition: "อัตราการเปลี่ยนของ f ในทิศของเวกเตอร์หนึ่งหน่วย u เท่ากับ ∇f · u" }
+  - { term: จุดวิกฤต, definition: "จุดที่ ∇f = 0 หรือหาอนุพันธ์ย่อยไม่ได้" }
+  - { term: จุดอานม้า, definition: "จุดวิกฤตที่ไม่ใช่ค่าสุดขีด ฟังก์ชันเพิ่มในทิศหนึ่งและลดในอีกทิศ" }
+flashcards:
+  - { front: "หา fₓ อย่างไร", back: "มอง y เป็นค่าคงตัว แล้วหาอนุพันธ์เทียบ x" }
+  - { front: "กฎลูกโซ่ dz/dt เมื่อ z = f(x, y)", back: "fₓ·dx/dt + f_y·dy/dt" }
+  - { front: "อนุพันธ์ระบุทิศทาง", back: "D_u f = ∇f · u (u เป็นเวกเตอร์หนึ่งหน่วย)" }
+  - { front: "อัตราการเพิ่มสูงสุดของ f", back: "|∇f| ในทิศของ ∇f" }
+  - { front: "D = fₓₓf_yy − fₓ_y² < 0 ที่จุดวิกฤต", back: "จุดอานม้า" }
+references:
+  - { title: "4.3 Partial Derivatives (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/4-3-partial-derivatives", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.6 Directional Derivatives and the Gradient (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/4-6-directional-derivatives-and-the-gradient", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "4.7 Maxima/Minima Problems (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/4-7-maxima-minima-problems", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Gradient", url: "https://en.wikipedia.org/wiki/Gradient", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

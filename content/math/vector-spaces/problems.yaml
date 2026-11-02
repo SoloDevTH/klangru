@@ -1,0 +1,276 @@
+problems:
+  - id: math.linalg.vector-spaces.p001
+    topics: [math.linalg.vector-spaces]
+    difficulty: 1
+    type: mcq
+    stem: "เซตใดต่อไปนี้เป็นปริภูมิย่อยของ $\\mathbb{R}^2$"
+    choices:
+      - { id: a, text: "จุดทั้งหมดบนเส้นตรง $y = 2x$", correct: true }
+      - { id: b, text: "จุดทั้งหมดบนเส้นตรง $y = 2x + 1$", feedback: "เส้นนี้ไม่ผ่าน $(0, 0)$ ปริภูมิย่อยต้องมีเวกเตอร์ศูนย์" }
+      - { id: c, text: "จุดทั้งหมดในจตุภาคที่ 1 ($x \\ge 0$, $y \\ge 0$)", feedback: "คูณ $(1, 1)$ ด้วย $-1$ ได้ $(-1, -1)$ ซึ่งหลุดออกจากเซต จึงไม่ปิดภายใต้การคูณด้วยสเกลาร์" }
+      - { id: d, text: "จุดทั้งหมดบนแกน $x$ รวมกับแกน $y$", feedback: "$(1, 0) + (0, 1) = (1, 1)$ ไม่อยู่บนแกนใด จึงไม่ปิดภายใต้การบวก" }
+    hints:
+      - "ตรวจสามข้อ: มี $\\mathbf{0}$ ปิดภายใต้การบวก ปิดภายใต้การคูณด้วยสเกลาร์"
+      - "ลองหาตัวอย่างค้านสำหรับแต่ละเซต"
+    solution: "เส้น $y = 2x$ ผ่านจุดกำเนิด และ $(a, 2a) + (b, 2b) = (a + b, 2(a + b))$, $c(a, 2a) = (ca, 2ca)$ ยังอยู่บนเส้น จึงเป็นปริภูมิย่อย ส่วนอีกสามเซตมีตัวอย่างค้าน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p002
+    topics: [math.linalg.vector-spaces]
+    difficulty: 1
+    type: numeric
+    stem: "ระนาบ $x + y + z = 0$ ใน $\\mathbb{R}^3$ เป็นปริภูมิย่อยที่มีมิติเท่าใด"
+    answer: { value: 2 }
+    hints:
+      - "ระนาบนี้คือปริภูมิศูนย์ของเมทริกซ์ $\\begin{bmatrix}1 & 1 & 1\\end{bmatrix}$"
+      - "มีตัวแปรอิสระกี่ตัว"
+    misconceptions:
+      - { match: 3, feedback: "ระนาบเป็นสองมิติ แม้จะอยู่ในปริภูมิสามมิติ" }
+      - { match: 1, feedback: "1 คือแรงก์ของเมทริกซ์ $\\begin{bmatrix}1 & 1 & 1\\end{bmatrix}$ มิติของปริภูมิศูนย์คือ $3 - 1$" }
+    solution: "เมทริกซ์ $1 \\times 3$ แรงก์ 1 ปริภูมิศูนย์มีมิติ $3 - 1 = 2$ ฐานหลักเช่น $(-1, 1, 0)$ และ $(-1, 0, 1)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p003
+    topics: [math.linalg.vector-spaces]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาแรงก์ของ $\\begin{bmatrix}1 & 2 & 3\\\\ 2 & 4 & 6\\\\ 1 & 0 & 1\\end{bmatrix}$"
+    answer: { value: 2 }
+    hints:
+      - "แถว 2 เป็นกี่เท่าของแถว 1"
+      - "กำจัดแล้วนับจำนวนตัวนำ"
+    misconceptions:
+      - { match: 3, feedback: "แถว 2 = 2 × แถว 1 ทำให้เกิดแถวศูนย์หลังกำจัด ตัวนำจึงไม่ครบ 3" }
+      - { match: 1, feedback: "แถว 3 ไม่เป็นพหุคูณของแถว 1 จึงมีตัวนำอย่างน้อย 2 ตัว" }
+    solution: "แถว 2 − 2 × แถว 1 = $\\mathbf{0}$ และแถว 3 − แถว 1 = $(0, -2, -2)$ เหลือแถวไม่เป็นศูนย์ 2 แถว แรงก์ = 2"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p004
+    topics: [math.linalg.vector-spaces]
+    difficulty: 2
+    type: numeric
+    stem: "เมทริกซ์ $A$ ขนาด $3 \\times 5$ มีแรงก์ 3 ปริภูมิศูนย์ $N(A)$ มีมิติเท่าใด"
+    answer: { value: 2 }
+    hints:
+      - "$N(A)$ อยู่ใน $\\mathbb{R}^n$ เมื่อ $n$ คือจำนวนหลัก"
+      - "$\\dim N(A) = n - r$"
+    misconceptions:
+      - { match: 0, feedback: "$m - r = 3 - 3 = 0$ คือมิติของปริภูมิศูนย์ซ้าย $N(A^{T})$ ปริภูมิศูนย์ใช้จำนวนหลัก" }
+      - { match: 3, feedback: "3 คือมิติของปริภูมิหลัก" }
+    solution: "$\\dim N(A) = n - r = 5 - 3 = 2$ (มีตัวแปรอิสระ 2 ตัว)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p005
+    topics: [math.linalg.vector-spaces]
+    difficulty: 2
+    type: mcq
+    stem: "เวกเตอร์ $(1, 2, 3)$, $(2, 4, 6)$ และ $(0, 1, 1)$ เป็นอย่างไร"
+    choices:
+      - { id: a, text: "ไม่อิสระเชิงเส้น เพราะ $(2, 4, 6) = 2(1, 2, 3)$", correct: true }
+      - { id: b, text: "อิสระเชิงเส้น เพราะไม่มีเวกเตอร์ใดเป็นศูนย์", feedback: "ไม่มีเวกเตอร์ศูนย์ก็ยังไม่อิสระได้ ถ้าตัวหนึ่งเป็นผลรวมเชิงเส้นของตัวอื่น" }
+      - { id: c, text: "เป็นฐานหลักของ $\\mathbb{R}^3$ เพราะมี 3 ตัว", feedback: "ต้องอิสระเชิงเส้นด้วย สองตัวแรกขนานกัน จึงแผ่ทั่วได้แค่ระนาบ" }
+      - { id: d, text: "อิสระเชิงเส้น เพราะ $(0, 1, 1)$ ไม่ขนานกับตัวอื่น", feedback: "ต้องตรวจทุกคู่และทุกผลรวม สองตัวแรกขนานกันอยู่แล้ว" }
+    hints:
+      - "ดูว่ามีเวกเตอร์ใดเป็นพหุคูณของอีกตัวหรือไม่"
+      - "$2(1, 2, 3) - (2, 4, 6) + 0(0, 1, 1) = \\mathbf{0}$"
+    solution: "$2\\mathbf{v}_1 - \\mathbf{v}_2 = \\mathbf{0}$ เป็นผลรวมเชิงเส้นที่สัมประสิทธิ์ไม่เป็นศูนย์ทั้งหมด จึงไม่อิสระเชิงเส้น ทั้งสามแผ่ทั่วระนาบมิติ 2 เท่านั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p006
+    topics: [math.linalg.vector-spaces]
+    difficulty: 2
+    type: match
+    stem: "เมทริกซ์ $A$ ขนาด $4 \\times 7$ มีแรงก์ 3 จับคู่ปริภูมิย่อยกับมิติและปริภูมิที่มันอยู่"
+    pairs:
+      - { left: "ปริภูมิหลัก $C(A)$", right: "มิติ 3 อยู่ใน $\\mathbb{R}^4$" }
+      - { left: "ปริภูมิแถว $C(A^{T})$", right: "มิติ 3 อยู่ใน $\\mathbb{R}^7$" }
+      - { left: "ปริภูมิศูนย์ $N(A)$", right: "มิติ 4 อยู่ใน $\\mathbb{R}^7$" }
+      - { left: "ปริภูมิศูนย์ซ้าย $N(A^{T})$", right: "มิติ 1 อยู่ใน $\\mathbb{R}^4$" }
+    hints:
+      - "หลักของ $A$ มี 4 ส่วนประกอบ แถวของ $A$ มี 7 ส่วนประกอบ"
+      - "$\\dim N(A) = n - r$ และ $\\dim N(A^{T}) = m - r$"
+    solution: "$m = 4$, $n = 7$, $r = 3$: $C(A)$ มิติ 3 ใน $\\mathbb{R}^4$; $C(A^{T})$ มิติ 3 ใน $\\mathbb{R}^7$; $N(A)$ มิติ $7 - 3 = 4$ ใน $\\mathbb{R}^7$; $N(A^{T})$ มิติ $4 - 3 = 1$ ใน $\\mathbb{R}^4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p007
+    topics: [math.linalg.vector-spaces]
+    difficulty: 3
+    type: numeric
+    stem: "เมทริกซ์รูปขั้นบันไดลดรูป $R = \\begin{bmatrix}1 & 2 & 0 & 1\\\\ 0 & 0 & 1 & 3\\end{bmatrix}$ มีตัวแปรอิสระ $x_2$ และ $x_4$ ผลเฉลยพิเศษของ $R\\mathbf{x} = \\mathbf{0}$ ที่ $x_2 = 0$, $x_4 = 1$ มีค่า $x_3$ เท่าใด"
+    answer: { value: -3 }
+    hints:
+      - "แถวที่สองให้สมการ $x_3 + 3x_4 = 0$"
+      - "แทน $x_4 = 1$"
+    misconceptions:
+      - { match: 3, feedback: "ย้ายข้างแล้วต้องเปลี่ยนเครื่องหมาย $x_3 = -3x_4$" }
+      - { match: -1, feedback: "นี่คือค่า $x_1$ (จากแถวแรก $x_1 + 2x_2 + x_4 = 0$) โจทย์ถาม $x_3$" }
+    solution: "$x_3 = -3x_4 = -3$ และ $x_1 = -2x_2 - x_4 = -1$ ผลเฉลยพิเศษคือ $(-1, 0, -3, 1)$ ตรวจ: $R\\mathbf{x} = (-1 + 0 + 0 + 1,\\ -3 + 3) = \\mathbf{0}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p008
+    topics: [math.linalg.vector-spaces]
+    difficulty: 3
+    type: numeric
+    stem: "ฟาร์มไก่ในฉะเชิงเทรามีอาหารสองสูตร สูตร A ต่อถุงให้โปรตีน 1 หน่วยและพลังงาน 2 หน่วย สูตร B ให้โปรตีน 2 หน่วยและพลังงาน 4 หน่วย (ค่าสมมติ) ต้องการผสมให้ได้โปรตีน 3 หน่วยและพลังงาน $k$ หน่วยพอดี ค่า $k$ ต้องเป็นเท่าใดจึงผสมได้"
+    answer: { value: 6 }
+    hints:
+      - "ต้องการ $(3, k)$ อยู่ในปริภูมิหลักของ $\\begin{bmatrix}1 & 2\\\\ 2 & 4\\end{bmatrix}$"
+      - "หลักทั้งสองขนานกัน ปริภูมิหลักคือเส้นตรงในทิศ $(1, 2)$"
+    misconceptions:
+      - { match: 3, feedback: "ทุกส่วนผสมมีพลังงานเป็นสองเท่าของโปรตีนเสมอ ไม่ใช่เท่ากัน" }
+    solution: "ทั้ง $(1, 2)$ และ $(2, 4)$ อยู่บนเส้น $y = 2x$ ส่วนผสมทุกแบบ $a(1, 2) + b(2, 4) = (a + 2b)(1, 2)$ จึงมีพลังงาน = 2 × โปรตีน ได้ $k = 6$ ค่าอื่นทำไม่ได้เพราะ $(3, k)$ ไม่อยู่ใน $C(A)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p009
+    topics: [math.linalg.vector-spaces]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาส่วนประกอบแรกของภาพฉาย $\\mathbf{p}$ ของ $\\mathbf{b} = (2, 3)$ ลงบนเส้นในทิศ $\\mathbf{a} = (1, 1)$"
+    answer: { value: 2.5, tolerance: 0.001 }
+    hints:
+      - "$\\mathbf{p} = \\dfrac{\\mathbf{a}^{T}\\mathbf{b}}{\\mathbf{a}^{T}\\mathbf{a}}\\mathbf{a}$"
+      - "$\\mathbf{a}^{T}\\mathbf{b} = 5$ และ $\\mathbf{a}^{T}\\mathbf{a} = 2$"
+    misconceptions:
+      - { match: 5, feedback: "ลืมหารด้วย $\\mathbf{a}^{T}\\mathbf{a} = 2$ (ใช้ได้เฉพาะเมื่อ $\\mathbf{a}$ เป็นเวกเตอร์หนึ่งหน่วย)" }
+      - { match: 3.536, feedback: "นี่คือความยาวของภาพฉาย $\\tfrac{5}{\\sqrt2}$ โจทย์ถามส่วนประกอบแรกของเวกเตอร์ $\\mathbf{p}$" }
+    solution: "$\\mathbf{p} = \\tfrac52(1, 1) = (2.5, 2.5)$ ตรวจ: $\\mathbf{e} = (-0.5, 0.5)$ และ $\\mathbf{e} \\cdot \\mathbf{a} = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p010
+    topics: [math.linalg.vector-spaces]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านชาไทยเปิดใหม่ในหาดใหญ่ขายได้ 1, 2, 6, 7 ร้อยแก้วในสัปดาห์ที่ $t = 1, 2, 3, 4$ (ข้อมูลสมมติ) ใช้สมการปกติหาเส้นกำลังสองน้อยสุด $y = C + Dt$ ความชัน $D$ เป็นเท่าใด (ร้อยแก้วต่อสัปดาห์)"
+    answer: { value: 2.2, tolerance: 0.01 }
+    hints:
+      - "$A = \\begin{bmatrix}1 & 1\\\\ 1 & 2\\\\ 1 & 3\\\\ 1 & 4\\end{bmatrix}$ ได้ $A^{T}A = \\begin{bmatrix}4 & 10\\\\ 10 & 30\\end{bmatrix}$"
+      - "$A^{T}\\mathbf{b} = (16,\\ 1 + 4 + 18 + 28) = (16, 51)$ แล้วแก้ระบบ $2 \\times 2$"
+    misconceptions:
+      - { match: 2, feedback: "นี่คือความชันระหว่างจุดแรกกับจุดสุดท้าย เส้นกำลังสองน้อยสุดใช้ข้อมูลทุกจุด" }
+    solution: "$4C + 10D = 16$ และ $10C + 30D = 51$ คูณสมการแรกด้วย 2.5: $10C + 25D = 40$ ลบกันได้ $5D = 11$, $D = 2.2$ และ $C = \\tfrac{16 - 22}{4} = -1.5$ เส้นคือ $y = -1.5 + 2.2t$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p011
+    topics: [math.linalg.vector-spaces]
+    difficulty: 4
+    type: numeric
+    stem: "เวกเตอร์ $(1, 0, 1)$, $(0, 1, 1)$, $(2, 1, 3)$, $(1, 1, 2)$ แผ่ทั่วปริภูมิย่อยของ $\\mathbb{R}^3$ ที่มีมิติเท่าใด"
+    answer: { value: 2 }
+    hints:
+      - "วางเป็นหลักของเมทริกซ์ $3 \\times 4$ แล้วหาแรงก์"
+      - "ลองเขียน $(2, 1, 3)$ และ $(1, 1, 2)$ เป็นผลรวมเชิงเส้นของสองตัวแรก"
+    misconceptions:
+      - { match: 4, feedback: "เวกเตอร์ 4 ตัวใน $\\mathbb{R}^3$ อิสระเชิงเส้นไม่ได้ มิติไม่เกิน 3" }
+      - { match: 3, feedback: "ตัวที่สามและสี่เป็นผลรวมเชิงเส้นของสองตัวแรก จึงไม่เพิ่มมิติ" }
+    solution: "$(2, 1, 3) = 2(1, 0, 1) + (0, 1, 1)$ และ $(1, 1, 2) = (1, 0, 1) + (0, 1, 1)$ สองตัวแรกอิสระเชิงเส้น ปริภูมิที่แผ่ทั่วจึงเป็นระนาบมิติ 2 (แรงก์ของเมทริกซ์ = 2)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p012
+    topics: [math.linalg.vector-spaces]
+    difficulty: 4
+    type: mcq
+    stem: "เมทริกซ์ $A$ ขนาด $3 \\times 2$ มีแรงก์ 2 ระบบ $A\\mathbf{x} = \\mathbf{b}$ มีผลเฉลยได้กี่ตัว"
+    choices:
+      - { id: a, text: "ไม่มีเลยหรือมีหนึ่งตัวพอดี ขึ้นกับว่า $\\mathbf{b}$ อยู่ใน $C(A)$ หรือไม่", correct: true }
+      - { id: b, text: "มีหนึ่งตัวพอดีสำหรับทุก $\\mathbf{b}$", feedback: "$C(A)$ เป็นระนาบมิติ 2 ใน $\\mathbb{R}^3$ มี $\\mathbf{b}$ จำนวนมากที่อยู่นอกระนาบนั้น" }
+      - { id: c, text: "มีได้ไม่จำกัดจำนวน", feedback: "$N(A)$ มีมิติ $2 - 2 = 0$ ไม่มีตัวแปรอิสระ ผลเฉลยถ้ามีจึงมีตัวเดียว" }
+      - { id: d, text: "มีหนึ่งตัวหรือไม่จำกัดจำนวน", feedback: "ไม่จำกัดจำนวนต้องมีตัวแปรอิสระ ซึ่งเมทริกซ์นี้ไม่มี" }
+    hints:
+      - "$r = n = 2$: มีตัวแปรอิสระหรือไม่"
+      - "$r < m = 3$: ทุก $\\mathbf{b}$ อยู่ใน $C(A)$ หรือไม่"
+    solution: "$r = n$ ทำให้ $N(A) = \\{\\mathbf{0}\\}$ ผลเฉลยถ้ามีจึงมีตัวเดียว แต่ $r < m$ ทำให้ $C(A)$ ไม่ใช่ $\\mathbb{R}^3$ ทั้งหมด บาง $\\mathbf{b}$ ไม่มีผลเฉลย (กรณีนี้ใช้กำลังสองน้อยสุด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p013
+    topics: [math.linalg.vector-spaces]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $A = \\begin{bmatrix}1 & 0\\\\ 0 & 1\\\\ 1 & 1\\end{bmatrix}$ และ $\\mathbf{b} = (1, 1, 0)$ ระบบ $A\\mathbf{x} = \\mathbf{b}$ ไม่มีผลเฉลย จงหา $\\hat{x}_1$ ของผลเฉลยกำลังสองน้อยสุด (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.333, tolerance: 0.002 }
+    hints:
+      - "$A^{T}A = \\begin{bmatrix}2 & 1\\\\ 1 & 2\\end{bmatrix}$ และ $A^{T}\\mathbf{b} = (1, 1)$"
+      - "แก้ $2\\hat{x}_1 + \\hat{x}_2 = 1$ และ $\\hat{x}_1 + 2\\hat{x}_2 = 1$"
+    misconceptions:
+      - { match: 1, feedback: "ตัดสมการที่สามทิ้งแล้วได้ $x_1 = 1$ แต่ต้องใช้ทุกสมการผ่านสมการปกติ" }
+    solution: "จากสมการปกติ ลบกันได้ $\\hat{x}_1 = \\hat{x}_2$ แทนได้ $3\\hat{x}_1 = 1$, $\\hat{x}_1 = \\tfrac13 \\approx 0.333$ ตรวจ: $\\mathbf{e} = \\mathbf{b} - A\\hat{\\mathbf{x}} = \\big(\\tfrac23, \\tfrac23, -\\tfrac23\\big)$ ตั้งฉากกับทั้งสองหลักของ $A$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p014
+    topics: [math.linalg.vector-spaces]
+    difficulty: 4
+    type: numeric
+    stem: "ห้องปฏิบัติการฟิสิกส์ของมหาวิทยาลัยแห่งหนึ่งในพิษณุโลกวัดแรงดึงสปริง $F$ (นิวตัน) ที่ระยะยืด $x = 1, 2, 3, 4$ เซนติเมตร ได้ 2.1, 3.9, 6.2, 7.8 นิวตัน (ข้อมูลสมมติ) หาค่าคงตัวสปริง $k$ ของแบบจำลอง $F = kx$ ด้วยกำลังสองน้อยสุด (นิวตันต่อเซนติเมตร ทศนิยมสองตำแหน่ง)"
+    answer: { value: 1.99, unit: "N/cm", tolerance: 0.005 }
+    hints:
+      - "$A$ มีหลักเดียว $\\mathbf{x} = (1, 2, 3, 4)$ สมการปกติคือ $(\\mathbf{x}^{T}\\mathbf{x})k = \\mathbf{x}^{T}\\mathbf{F}$"
+      - "$\\mathbf{x}^{T}\\mathbf{x} = 30$ และ $\\mathbf{x}^{T}\\mathbf{F} = 2.1 + 7.8 + 18.6 + 31.2$"
+    misconceptions:
+      - { match: 2.02, feedback: "นี่คือค่าเฉลี่ยของ $F/x$ ทีละจุด ไม่ใช่ผลเฉลยกำลังสองน้อยสุด" }
+    solution: "$k = \\dfrac{\\mathbf{x}^{T}\\mathbf{F}}{\\mathbf{x}^{T}\\mathbf{x}} = \\dfrac{59.7}{30} = 1.99$ นิวตันต่อเซนติเมตร เป็นการฉาย $\\mathbf{F}$ ลงบนเส้นในทิศ $\\mathbf{x}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p015
+    topics: [math.linalg.vector-spaces]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "ให้ $A$ เป็นเมทริกซ์ $m \\times n$ ข้อใดถูกต้องเสมอ (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "ทุกเวกเตอร์ใน $N(A)$ ตั้งฉากกับทุกแถวของ $A$", correct: true }
+      - { id: b, text: "$\\dim C(A) = \\dim C(A^{T})$", correct: true }
+      - { id: c, text: "$\\dim N(A) + \\dim C(A^{T}) = n$", correct: true }
+      - { id: d, text: "$C(A) = C(R)$ เมื่อ $R$ เป็นรูปขั้นบันไดลดรูปของ $A$", feedback: "การดำเนินการตามแถวเปลี่ยนปริภูมิหลักได้ เช่น $A = \\begin{bmatrix}1\\\\ 1\\end{bmatrix}$ มี $R = \\begin{bmatrix}1\\\\ 0\\end{bmatrix}$ ปริภูมิหลักเปลี่ยนจากเส้นในทิศ $(1, 1)$ เป็นเส้นในทิศ $(1, 0)$ สิ่งที่การดำเนินการตามแถวรักษาไว้คือปริภูมิแถวและปริภูมิศูนย์" }
+      - { id: e, text: "ถ้า $m < n$ แล้ว $N(A) = \\{\\mathbf{0}\\}$", feedback: "กลับกัน: $m < n$ ทำให้ $r \\le m < n$ มีตัวแปรอิสระอย่างน้อยหนึ่งตัว $N(A)$ จึงไม่ใช่แค่ $\\{\\mathbf{0}\\}$" }
+    hints:
+      - "$A\\mathbf{x} = \\mathbf{0}$ หมายถึงผลคูณจุดของแต่ละแถวกับ $\\mathbf{x}$ เป็นศูนย์"
+      - "ปริภูมิหลักและปริภูมิแถวมีมิติเท่ากับแรงก์ $r$ ทั้งคู่"
+    solution: "a ถูกเพราะ $A\\mathbf{x} = \\mathbf{0}$ คือ (แถว)·$\\mathbf{x} = 0$ ทุกแถว; b ถูก ทั้งคู่มีมิติ $r$; c ถูก $(n - r) + r = n$; d ผิด การดำเนินการตามแถวรักษาปริภูมิแถวแต่เปลี่ยนปริภูมิหลัก; e ผิด เมทริกซ์ที่หลักมากกว่าแถวมีปริภูมิศูนย์ไม่ใช่ศูนย์เสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p016
+    topics: [math.linalg.vector-spaces]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหาฐานหลักของปริภูมิศูนย์ $N(A)$"
+    items:
+      - "กำจัด $A$ จนได้รูปขั้นบันไดลดรูป $R$"
+      - "ระบุหลักที่มีตัวนำ (ตัวแปรหลัก) และหลักที่ไม่มี (ตัวแปรอิสระ)"
+      - "ให้ตัวแปรอิสระตัวหนึ่งเป็น 1 ตัวอื่นเป็น 0"
+      - "แก้หาตัวแปรหลักจาก $R\\mathbf{x} = \\mathbf{0}$ ได้ผลเฉลยพิเศษ"
+      - "ทำซ้ำกับตัวแปรอิสระทุกตัว ผลเฉลยพิเศษทั้งหมดคือฐานหลัก"
+    hints:
+      - "ต้องรู้ว่าตัวแปรใดอิสระก่อนจึงกำหนดค่าได้"
+      - "ผลเฉลยพิเศษมีจำนวนเท่ากับจำนวนตัวแปรอิสระ"
+    solution: "กำจัดเป็น $R$ → แยกตัวแปรหลัก/อิสระ → กำหนดตัวแปรอิสระทีละตัวเป็น 1 → แก้หาตัวแปรหลัก → ได้ผลเฉลยพิเศษ $n - r$ ตัวเป็นฐานหลักของ $N(A)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.vector-spaces.p017
+    topics: [math.linalg.vector-spaces]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $A = \\begin{bmatrix}1 & 2 & 3\\\\ 2 & 5 & 7\\\\ 3 & 7 & k\\end{bmatrix}$ ค่า $k$ เท่าใดที่ทำให้หลักของ $A$ ไม่อิสระเชิงเส้น (แรงก์ 2)"
+    answer: { value: 10 }
+    hints:
+      - "กำจัด: แถว 2 − 2 × แถว 1 และแถว 3 − 3 × แถว 1"
+      - "ได้แถว $(0, 1, 1)$ และ $(0, 1, k - 9)$ แล้วกำจัดต่อ"
+    misconceptions:
+      - { match: 9, feedback: "หลังกำจัดตัวนำที่สามคือ $k - 9 - 1 = k - 10$ อย่าลืมลบแถว $(0, 1, 1)$" }
+    solution: "หลังกำจัดได้ $\\begin{bmatrix}1 & 2 & 3\\\\ 0 & 1 & 1\\\\ 0 & 0 & k - 10\\end{bmatrix}$ ถ้า $k = 10$ ตัวนำที่สามหายไป แรงก์ 2 หลักที่สาม = หลักแรก + หลักที่สอง (ตรวจ: $(1 + 2, 2 + 5, 3 + 7) = (3, 7, 10)$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

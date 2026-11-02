@@ -1,0 +1,72 @@
+id: math.linalg.vector-spaces
+subject: math
+title: { th: ปริภูมิเวกเตอร์ ฐานหลัก และมิติ, en: "Vector spaces, basis and dimension" }
+summary: ปริภูมิย่อย ปริภูมิหลักและปริภูมิศูนย์ อิสระเชิงเส้น ฐานหลัก มิติ และแรงก์ ปริภูมิย่อยหลักทั้งสี่ของเมทริกซ์ และการประมาณกำลังสองน้อยสุดด้วยภาพฉาย
+difficulty: 8.5
+minutes: 50
+prerequisites: [math.linalg.matrices-elimination, math.calculus.vectors-3d]
+encompasses:
+  - { id: math.linalg.matrices-elimination, weight: 0.5 }
+  - { id: math.calculus.vectors-3d, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ผลรวมเชิงเส้นของสองเวกเตอร์
+    caption: "ลากเวกเตอร์ a และ b แล้วดูผลบวก ผลรวมเชิงเส้น c₁a + c₂b ของสองเวกเตอร์ที่ไม่ขนานกันไปถึงได้ทุกจุดในระนาบ จึงแผ่ทั่ว ℝ² และเป็นฐานหลักได้ ลองลาก b ให้ขนานกับ a แล้วผลรวมทั้งหมดจะอยู่บนเส้นตรงเส้นเดียว (มิติ 1)"
+    widget:
+      kind: vector-add
+      a: [2, 1]
+      b: [1, 2]
+      draggable: true
+  - type: worked-example
+    title: หาแรงก์และฐานหลัก
+    problem: "ให้ $B = \\begin{bmatrix}1 & 3 & 1\\\\ 2 & 6 & 4\\end{bmatrix}$ จงหาแรงก์ ฐานหลักของ $C(B)$ และฐานหลักของ $N(B)$"
+    steps:
+      - text: "แถว 2 − 2 × แถว 1: $\\begin{bmatrix}1 & 3 & 1\\\\ 0 & 0 & 2\\end{bmatrix}$ หารแถว 2 ด้วย 2 แล้วลบออกจากแถว 1: $R = \\begin{bmatrix}1 & 3 & 0\\\\ 0 & 0 & 1\\end{bmatrix}$"
+      - text: "ตัวนำอยู่หลัก 1 และ 3 แรงก์ $r = 2$ ตัวแปรอิสระคือ $x_2$"
+      - text: "ฐานหลักของ $C(B)$: หลัก 1 และ 3 ของ $B$ เดิม คือ $(1, 2)$ และ $(1, 4)$ ซึ่งแผ่ทั่ว $\\mathbb{R}^2$"
+        why: "ต้องใช้หลักของ $B$ เดิม เพราะการดำเนินการตามแถวเปลี่ยนหลัก แต่ไม่เปลี่ยนว่าหลักใดเป็นอิสระ"
+      - text: "ให้ $x_2 = 1$: จาก $R$ ได้ $x_1 = -3$, $x_3 = 0$ ฐานหลักของ $N(B)$ คือ $(-3, 1, 0)$"
+      - text: "ตรวจ: $\\dim C(B) + \\dim N(B) = 2 + 1 = 3$ เท่ากับจำนวนหลัก"
+    answer: "$r = 2$, $C(B) = \\mathbb{R}^2$, $N(B)$ แผ่ทั่วด้วย $(-3, 1, 0)$"
+  - { type: check, problem: math.linalg.vector-spaces.p004, prompt: "ใช้ทฤษฎีบทแรงก์–ภาวะศูนย์ จำนวนหลักลบแรงก์" }
+  - type: figure
+    src: projection.svg
+    alt: "ระนาบพิกัด เวกเตอร์ b = (3, 4) สีน้ำเงิน เวกเตอร์ a = (3, 1) สีเขียวบนเส้นประผ่านจุดกำเนิด ภาพฉาย p = (3.9, 1.3) สีส้มอยู่บนเส้นเดียวกันและยาวกว่า a เวกเตอร์ e = b − p สีแดงเส้นประจากปลาย p ไปปลาย b ตั้งฉากกับเส้น มีเครื่องหมายมุมฉาก"
+    caption: "ภาพฉาย p เป็นจุดบนเส้นที่ใกล้ b ที่สุด เพราะความคลาดเคลื่อน e ตั้งฉากกับเส้น"
+  - type: worked-example
+    title: ฉายลงบนเส้นตรงใน ℝ³
+    problem: "จงหาภาพฉายของ $\\mathbf{b} = (1, 2, 2)$ ลงบนเส้นในทิศ $\\mathbf{a} = (1, 1, 1)$ และตรวจว่าความคลาดเคลื่อนตั้งฉากกับ $\\mathbf{a}$"
+    steps:
+      - text: "$\\mathbf{a}^{T}\\mathbf{b} = 1 + 2 + 2 = 5$ และ $\\mathbf{a}^{T}\\mathbf{a} = 3$"
+      - text: "$\\mathbf{p} = \\dfrac{\\mathbf{a}^{T}\\mathbf{b}}{\\mathbf{a}^{T}\\mathbf{a}}\\mathbf{a} = \\dfrac53(1, 1, 1)$"
+        why: "นี่คือสมการปกติกรณี $A$ มีหลักเดียว $A^{T}A\\hat{x} = A^{T}\\mathbf{b}$ ได้ $\\hat{x} = \\tfrac53$ ซึ่งเป็นค่าเฉลี่ยของ 1, 2, 2"
+      - text: "$\\mathbf{e} = \\mathbf{b} - \\mathbf{p} = \\big(-\\tfrac23, \\tfrac13, \\tfrac13\\big)$"
+      - text: "$\\mathbf{e} \\cdot \\mathbf{a} = -\\tfrac23 + \\tfrac13 + \\tfrac13 = 0$ ตั้งฉากจริง"
+    answer: "$\\mathbf{p} = \\big(\\tfrac53, \\tfrac53, \\tfrac53\\big)$"
+  - { type: check, problem: math.linalg.vector-spaces.p009, prompt: "ใช้สูตร $\\mathbf{p} = \\tfrac{\\mathbf{a}^{T}\\mathbf{b}}{\\mathbf{a}^{T}\\mathbf{a}}\\mathbf{a}$" }
+glossary:
+  - { term: ปริภูมิย่อย, definition: "เซตของเวกเตอร์ที่ปิดภายใต้การบวกและการคูณด้วยสเกลาร์ มีเวกเตอร์ศูนย์เสมอ" }
+  - { term: ปริภูมิหลัก, definition: "C(A) เซตของผลรวมเชิงเส้นทั้งหมดของหลักของ A คือทุก b ที่ Ax = b มีผลเฉลย" }
+  - { term: ปริภูมิศูนย์, definition: "N(A) เซตของ x ทั้งหมดที่ Ax = 0" }
+  - { term: อิสระเชิงเส้น, definition: "ไม่มีเวกเตอร์ใดเขียนเป็นผลรวมเชิงเส้นของตัวอื่นได้ ผลรวมเป็นศูนย์ได้เมื่อทุกสัมประสิทธิ์เป็นศูนย์" }
+  - { term: ฐานหลัก, definition: "ชุดเวกเตอร์ที่อิสระเชิงเส้นและแผ่ทั่วปริภูมิ" }
+  - { term: มิติ, definition: "จำนวนเวกเตอร์ในฐานหลักของปริภูมิ" }
+  - { term: แรงก์, definition: "จำนวนตัวนำหลังการกำจัด เท่ากับมิติของปริภูมิหลักและปริภูมิแถว" }
+  - { term: สมการปกติ, definition: "AᵀA x̂ = Aᵀb ให้ผลเฉลยกำลังสองน้อยสุดของ Ax = b" }
+flashcards:
+  - { front: "ทุกปริภูมิย่อยต้องมีเวกเตอร์ใด", back: "เวกเตอร์ศูนย์" }
+  - { front: "Ax = b มีผลเฉลยเมื่อใด", back: "เมื่อ b อยู่ในปริภูมิหลัก C(A)" }
+  - { front: "dim N(A) ของเมทริกซ์ m × n แรงก์ r", back: "n − r" }
+  - { front: "ปริภูมิศูนย์ตั้งฉากกับปริภูมิใด", back: "ปริภูมิแถว C(Aᵀ)" }
+  - { front: "สมการปกติของกำลังสองน้อยสุด", back: "AᵀA x̂ = Aᵀb" }
+references:
+  - { title: "18.06 Linear Algebra (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Vector space", url: "https://en.wikipedia.org/wiki/Vector_space", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Rank–nullity theorem", url: "https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Least squares", url: "https://en.wikipedia.org/wiki/Least_squares", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

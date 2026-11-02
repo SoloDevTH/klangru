@@ -1,0 +1,73 @@
+id: math.linalg.eigenvalues
+subject: math
+title: { th: ค่าเฉพาะและเวกเตอร์เฉพาะ, en: Eigenvalues and eigenvectors }
+summary: ค่าเฉพาะและเวกเตอร์เฉพาะ สมการลักษณะเฉพาะ trace และดีเทอร์มิแนนต์ ค่าเฉพาะเชิงซ้อน การทำให้เป็นเมทริกซ์ทแยงมุมและกำลังของเมทริกซ์ เมทริกซ์มาร์คอฟ และเมทริกซ์สมมาตร
+difficulty: 9
+minutes: 50
+prerequisites: [math.linalg.vector-spaces, math.number.complex-numbers]
+encompasses:
+  - { id: math.linalg.vector-spaces, weight: 0.4 }
+  - { id: math.linalg.matrices-elimination, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: eigen-stretch.svg
+    alt: "ระนาบพิกัด วงกลมหนึ่งหน่วยเส้นประสีเทา และวงรีสีฟ้าซึ่งเป็นภาพของวงกลมภายใต้เมทริกซ์ A = [[2, 1], [1, 2]] แกนยาวของวงรีอยู่ในแนว y = x เวกเตอร์ v₁ = (1, 1)/√2 สีเขียวอ่อนถูกยืดเป็น A·v₁ = 3v₁ สีเขียวเข้มในทิศเดิม เวกเตอร์ v₂ = (1, −1)/√2 สีม่วงไม่เปลี่ยน เวกเตอร์ (1, 0) สีเทาเข้มถูกแปลงเป็น (2, 1) สีแดงซึ่งชี้ทิศอื่น"
+    caption: "เวกเตอร์ทั่วไปเปลี่ยนทิศ แต่เวกเตอร์เฉพาะแค่ถูกยืดด้วยค่าเฉพาะ λ และเป็นแกนของวงรี"
+  - type: interactive
+    title: ค่าเฉพาะคือรากของสมการลักษณะเฉพาะ
+    caption: "เส้นโค้งคือ p(x) = x² − t·x + d เมื่อ t คือ trace และ d คือดีเทอร์มิแนนต์ของเมทริกซ์ 2 × 2 จุดที่โค้งตัดแกนนอนคือค่าเฉพาะ ลองตั้ง t = 0, d = 1 (เมทริกซ์หมุน 90°) โค้งไม่ตัดแกนเลย ค่าเฉพาะจึงเป็นจำนวนเชิงซ้อน ±i"
+    widget:
+      kind: function-plot
+      functions: ["x^2-t\\cdot x+d"]
+      sliders:
+        - { name: t, min: -6, max: 8, step: 0.5, value: 7, label: trace }
+        - { name: d, min: -6, max: 14, step: 0.5, value: 10, label: det }
+      x: [-4, 8]
+      y: [-8, 10]
+  - type: worked-example
+    title: หาค่าเฉพาะและเวกเตอร์เฉพาะ
+    problem: "จงหาค่าเฉพาะและเวกเตอร์เฉพาะของ $A = \\begin{bmatrix}1 & 4\\\\ 2 & 3\\end{bmatrix}$"
+    steps:
+      - text: "trace $= 4$ และ $\\det A = 3 - 8 = -5$ สมการลักษณะเฉพาะ $\\lambda^2 - 4\\lambda - 5 = 0$"
+      - text: "แยกตัวประกอบ $(\\lambda - 5)(\\lambda + 1) = 0$ ได้ $\\lambda = 5$ และ $\\lambda = -1$"
+        why: "ตรวจ: ผลบวก $5 + (-1) = 4$ = trace และผลคูณ $-5$ = det"
+      - text: "$\\lambda = 5$: $A - 5I = \\begin{bmatrix}-4 & 4\\\\ 2 & -2\\end{bmatrix}$ แถวบอก $x_1 = x_2$ ได้ $\\mathbf{x}_1 = (1, 1)$"
+      - text: "$\\lambda = -1$: $A + I = \\begin{bmatrix}2 & 4\\\\ 2 & 4\\end{bmatrix}$ แถวบอก $x_1 = -2x_2$ ได้ $\\mathbf{x}_2 = (2, -1)$"
+      - text: "ตรวจ: $A(2, -1) = (2 - 4,\\ 4 - 3) = (-2, 1) = -1 \\cdot (2, -1)$"
+    answer: "$\\lambda = 5,\\ (1, 1)$ และ $\\lambda = -1,\\ (2, -1)$"
+  - { type: check, problem: math.linalg.eigenvalues.p003, prompt: "คูณ $A\\mathbf{v}$ แล้วดูว่าได้กี่เท่าของ $\\mathbf{v}$" }
+  - type: worked-example
+    title: ใช้ค่าเฉพาะหากำลังของเมทริกซ์
+    problem: "ให้ $A = \\begin{bmatrix}4 & 1\\\\ 2 & 3\\end{bmatrix}$ ซึ่งมี $\\lambda_1 = 5,\\ \\mathbf{x}_1 = (1, 1)$ และ $\\lambda_2 = 2,\\ \\mathbf{x}_2 = (1, -2)$ จงหา $A^3(1, 0)$"
+    steps:
+      - text: "เขียน $(1, 0) = c_1(1, 1) + c_2(1, -2)$: $c_1 + c_2 = 1$ และ $c_1 - 2c_2 = 0$ ได้ $c_1 = \\tfrac23$, $c_2 = \\tfrac13$"
+        why: "เมื่อแยกเป็นเวกเตอร์เฉพาะ การคูณ $A$ แต่ละครั้งแค่คูณ $\\lambda$ ให้แต่ละส่วน"
+      - text: "$A^3(1, 0) = \\tfrac23 \\cdot 5^3(1, 1) + \\tfrac13 \\cdot 2^3(1, -2)$"
+      - text: "$= \\big(\\tfrac{250}{3} + \\tfrac83,\\ \\tfrac{250}{3} - \\tfrac{16}{3}\\big) = (86,\\ 78)$"
+      - text: "ตรวจด้วยการคูณตรง: $A(1, 0) = (4, 2)$, $A^2(1, 0) = (18, 14)$, $A^3(1, 0) = (86, 78)$"
+    answer: "$(86,\\ 78)$"
+  - { type: check, problem: math.linalg.eigenvalues.p008, prompt: "นึกถึงว่าแต่ละชนิดของเมทริกซ์ทำอะไรกับเวกเตอร์" }
+glossary:
+  - { term: ค่าเฉพาะ, definition: "จำนวน λ ที่มีเวกเตอร์ x ≠ 0 ทำให้ Ax = λx" }
+  - { term: เวกเตอร์เฉพาะ, definition: "เวกเตอร์ x ≠ 0 ที่ A แค่คูณด้วยสเกลาร์ λ ไม่เปลี่ยนทิศ (หรือกลับทิศ)" }
+  - { term: สมการลักษณะเฉพาะ, definition: "det(A − λI) = 0 รากคือค่าเฉพาะ" }
+  - { term: การทำให้เป็นเมทริกซ์ทแยงมุม, definition: "เขียน A = SΛS⁻¹ เมื่อหลักของ S เป็นเวกเตอร์เฉพาะที่อิสระเชิงเส้นครบ n ตัว" }
+  - { term: เมทริกซ์มาร์คอฟ, definition: "เมทริกซ์ที่สมาชิกไม่ติดลบและแต่ละหลักบวกกันได้ 1 มีค่าเฉพาะ 1 ที่ให้สภาวะคงตัว" }
+  - { term: เมทริกซ์สมมาตร, definition: "Aᵀ = A มีค่าเฉพาะจริง เวกเตอร์เฉพาะตั้งฉากกัน และเขียนเป็น QΛQᵀ ได้" }
+flashcards:
+  - { front: "นิยามค่าเฉพาะ", back: "Ax = λx เมื่อ x ≠ 0" }
+  - { front: "ผลบวกและผลคูณของค่าเฉพาะ", back: "ผลบวก = trace, ผลคูณ = det A" }
+  - { front: "ค่าเฉพาะของเมทริกซ์สามเหลี่ยม", back: "สมาชิกบนแนวทแยง" }
+  - { front: "Aᵏ เมื่อ A = SΛS⁻¹", back: "SΛᵏS⁻¹" }
+  - { front: "สมบัติของเมทริกซ์สมมาตร", back: "ค่าเฉพาะจริง เวกเตอร์เฉพาะตั้งฉาก A = QΛQᵀ" }
+references:
+  - { title: "18.06 Linear Algebra (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Eigenvalues and eigenvectors", url: "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Diagonalizable matrix", url: "https://en.wikipedia.org/wiki/Diagonalizable_matrix", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ค่าลักษณะเฉพาะและเวกเตอร์ลักษณะเฉพาะ", url: "https://th.wikipedia.org/wiki/ค่าลักษณะเฉพาะและเวกเตอร์ลักษณะเฉพาะ", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
