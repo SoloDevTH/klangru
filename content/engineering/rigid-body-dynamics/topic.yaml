@@ -1,0 +1,69 @@
+id: engineering.mechanics.rigid-body-dynamics
+subject: engineering
+title: { th: พลศาสตร์ของวัตถุแข็งเกร็ง, en: Rigid-body dynamics }
+summary: จลนศาสตร์ของวัตถุแข็งเกร็งในระนาบ จุดหมุนชั่วขณะ การกลิ้ง สมการการเคลื่อนที่ของนิวตัน–ออยเลอร์ โมเมนตัมเชิงมุมและการดลเชิงมุม มวลหมุนที่ไม่สมดุล และพลังงาน
+difficulty: 8.5
+minutes: 55
+prerequisites: [engineering.mechanics.particle-dynamics, physics.rotation.rotational-dynamics, engineering.mechanics.centroids-inertia]
+encompasses:
+  - { id: engineering.mechanics.particle-dynamics, weight: 0.4 }
+  - { id: physics.rotation.rotational-dynamics, weight: 0.4 }
+  - { id: engineering.mechanics.centroids-inertia, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: จุดหมุนชั่วขณะของบันไดที่ไถล
+    src: ladder-ic.svg
+    alt: "บันไดยาว 4 เมตร ปลายบน B พิงผนังแนวดิ่ง ปลายล่าง A อยู่บนพื้น ทำมุม 60 องศากับพื้น A เลื่อนออกจากผนังด้วยความเร็ว 1.5 เมตรต่อวินาที B เลื่อนลงตามผนัง เส้นประตั้งฉากกับความเร็วที่ A (แนวดิ่ง) และที่ B (แนวราบ) ตัดกันที่จุด IC ซึ่งอยู่เหนือ A ในระดับเดียวกับ B ระยะจาก IC ถึง A คือ L sin theta และถึง B คือ L cos theta"
+  - type: worked-example
+    title: บันไดของช่างทาสีไถล
+    problem: "บันไดยาว $4\\ \\mathrm{m}$ พิงผนังลื่น ขณะทำมุม $60^\\circ$ กับพื้น ปลายล่างไถลออกด้วยความเร็ว $1.5\\ \\mathrm{m/s}$ จงหาความเร็วเชิงมุมของบันไดและความเร็วของปลายบน"
+    steps:
+      - text: "ความเร็วของ A แนวราบ ของ B แนวดิ่ง เส้นตั้งฉากกับทั้งสองตัดกันที่ IC ซึ่งอยู่เหนือ A ที่ระดับของ B"
+      - text: "ระยะ IC–A $= L\\sin 60^\\circ = 3.464\\ \\mathrm{m}$ ได้ $\\omega = v_A/3.464 = 0.433\\ \\mathrm{rad/s}$"
+        why: "จุดบนวัตถุเคลื่อนที่เหมือนหมุนรอบ IC ในขณะนั้น ความเร็วจึงเท่ากับ $\\omega$ คูณระยะถึง IC"
+      - text: "ระยะ IC–B $= L\\cos 60^\\circ = 2\\ \\mathrm{m}$ ได้ $v_B = 0.433 \\times 2 = 0.866\\ \\mathrm{m/s}$ ลง"
+      - text: "ตรวจด้วยเรขาคณิต: $x_A^2 + y_B^2 = L^2$ อนุพันธ์ได้ $x_A\\dot x_A + y_B\\dot y_B = 0$ ดังนั้น $\\dot y_B = -\\dfrac{2(1.5)}{3.464} = -0.866\\ \\mathrm{m/s}$"
+    answer: "$\\omega = 0.433\\ \\mathrm{rad/s}$, $v_B = 0.866\\ \\mathrm{m/s}$ ลง"
+  - { type: check, problem: engineering.mechanics.rigid-body-dynamics.p005, prompt: "จุดสัมผัสพื้นคือ IC ระยะถึงจุดที่ระดับเพลาคือ r√2" }
+  - type: figure
+    title: แผนภาพวัตถุอิสระของไม้กั้นทางรถไฟ
+    src: barrier-fbd.svg
+    alt: "ไม้กั้นทางรถไฟยาว 4 เมตร มวล 20 กิโลกรัม หมุนรอบหมุด O ที่ปลายซ้าย จุดศูนย์กลางมวล G อยู่กึ่งกลางห่าง O 2 เมตร แรงที่กระทำคือน้ำหนัก mg ลงที่ G และแรงจากหมุด Ox และ Oy ที่ O ลูกศรโค้ง alpha ตามเข็มนาฬิกาแสดงว่าไม้เริ่มหมุนลง เริ่มจากหยุดนิ่งในแนวราบ"
+  - type: worked-example
+    title: ไม้กั้นทางรถไฟที่หลุดจากตัวยก
+    problem: "ไม้กั้นสม่ำเสมอยาว $4\\ \\mathrm{m}$ มวล $20\\ \\mathrm{kg}$ หมุนรอบหมุดที่ปลาย ถ้าตัวยกหลุดขณะไม้อยู่นิ่งในแนวราบ (ค่าสมมติ) จงหาความเร่งเชิงมุมทันทีหลังหลุดและแรงที่หมุด"
+    steps:
+      - text: "แกนหมุนคงที่: $I_O = \\tfrac13 mL^2 = \\tfrac13(20)(16) = 106.7\\ \\mathrm{kg\\cdot m^2}$"
+      - text: "$\\sum M_O = I_O\\alpha$: $mg\\dfrac{L}{2} = \\tfrac13 mL^2\\alpha$ ได้ $\\alpha = \\dfrac{3g}{2L} = 3.68\\ \\mathrm{rad/s^2}$"
+        why: "หาโมเมนต์รอบหมุดทำให้แรงที่หมุดซึ่งไม่รู้หายไปจากสมการ"
+      - text: "$a_G = \\alpha\\dfrac{L}{2} = 7.36\\ \\mathrm{m/s^2}$ ลง ส่วนความเร่งสู่ศูนย์กลาง $\\omega^2L/2 = 0$ เพราะ $\\omega = 0$"
+      - text: "$\\sum F_y = ma_G$: $O_y - mg = -m(7.36)$ ได้ $O_y = 20(9.81 - 7.36) = 49.1\\ \\mathrm{N} = mg/4$ และ $O_x = 0$"
+        why: "แรงที่หมุดลดลงจาก $mg/2$ (ตอนมีตัวยกค้ำ) เหลือ $mg/4$ เพราะ G กำลังเร่งลง"
+      - text: "ตรวจด้วย $\\sum M_G = I_G\\alpha$: $O_y \\cdot 2 = \\tfrac{1}{12}(20)(16)(3.68)$ ได้ $O_y = 49.1\\ \\mathrm{N}$ ตรงกัน"
+    answer: "$\\alpha = 3.68\\ \\mathrm{rad/s^2}$, แรงที่หมุด $49.1\\ \\mathrm{N}$ ขึ้น"
+  - { type: check, problem: engineering.mechanics.rigid-body-dynamics.p008, prompt: "ใช้ I รอบหมุด ไม่ใช่รอบ G" }
+glossary:
+  - { term: จุดหมุนชั่วขณะ, definition: "จุดบนวัตถุหรือที่ขยายออกไปซึ่งมีความเร็วเป็นศูนย์ในขณะนั้น ทุกจุดเคลื่อนที่เหมือนหมุนรอบจุดนี้ (instantaneous center, IC)" }
+  - { term: การกลิ้งโดยไม่ไถล, definition: "การเคลื่อนที่ของล้อที่จุดสัมผัสไม่เลื่อนบนพื้น v_G = ωr และ a_G = αr (rolling without slipping)" }
+  - { term: สมการนิวตัน–ออยเลอร์, definition: "ΣF = m a_G และ ΣM_G = I_G α สมการการเคลื่อนที่ของวัตถุแข็งเกร็งในระนาบ (Newton–Euler equations)" }
+  - { term: โมเมนตัมเชิงมุม, definition: "H_G = I_G ω รอบจุดศูนย์กลางมวล และ H_O = I_G ω + r × m v_G รอบจุดอื่น (angular momentum)" }
+  - { term: การดลเชิงมุม, definition: "ปริพันธ์ของโมเมนต์ตามเวลา เท่ากับการเปลี่ยนโมเมนตัมเชิงมุม (angular impulse)" }
+  - { term: จุดศูนย์กลางการกระแทก, definition: "จุดที่แรงกระแทกไม่ทำให้เกิดแรงที่หมุด อยู่ห่างหมุด I_O/(m r_G) (center of percussion)" }
+  - { term: การไม่สมดุลของมวลหมุน, definition: "มวลเยื้องศูนย์ที่ทำให้เกิดแรงหมุน m e ω² ที่แบริ่ง (rotating unbalance)" }
+flashcards:
+  - { front: "ความเร็วของจุด B เทียบจุด A บนวัตถุแข็งเกร็ง", back: "$\\vec v_B = \\vec v_A + \\vec\\omega \\times \\vec r_{B/A}$" }
+  - { front: "จุดใดใช้ $\\sum M = I\\alpha$ ได้โดยตรง", back: "G, แกนหมุนคงที่ (ใช้ $I_O$), จุดสัมผัสของล้อที่กลิ้งโดยไม่ไถล" }
+  - { front: "พลังงานจลน์ของวัตถุแข็งเกร็งในระนาบ", back: "$T = \\tfrac12mv_G^2 + \\tfrac12I_G\\omega^2$" }
+  - { front: "แรงจากมวลเยื้องศูนย์ที่หมุน", back: "$me\\omega^2$ ชี้ออกจากแกนและหมุนตามเพลา" }
+  - { front: "ไม้สม่ำเสมอหมุนรอบปลาย ปล่อยจากแนวราบ", back: "$\\alpha = 3g/(2L)$ แรงที่หมุด $mg/4$" }
+references:
+  - { title: "2.003SC Engineering Dynamics (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Instant centre of rotation", url: "https://en.wikipedia.org/wiki/Instant_centre_of_rotation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "11.2 Angular Momentum (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/11-2-angular-momentum", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Center of percussion", url: "https://en.wikipedia.org/wiki/Center_of_percussion", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

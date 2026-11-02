@@ -1,0 +1,266 @@
+problems:
+  - id: engineering.mechanics.trusses-friction.p001
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 1
+    type: mcq
+    stem: "ทำไมจึงถือว่าทุกชิ้นส่วนของโครงข้อหมุนรับแรงดึงหรือแรงอัดตามแนวชิ้นส่วนเท่านั้น"
+    choices:
+      - { id: a, text: "ชิ้นส่วนต่อกันด้วยหมุดและมีแรงกระทำที่ปลายสองจุดเท่านั้น จึงเป็นชิ้นส่วนสองแรง", correct: true }
+      - { id: b, text: "ชิ้นส่วนทำจากเหล็กซึ่งรับแรงดัดไม่ได้", feedback: "วัสดุรับแรงดัดได้ แต่สมมติฐานเรื่องหมุดและแรงที่ข้อต่อทำให้ไม่มีแรงดัดเกิดขึ้น" }
+      - { id: c, text: "ชิ้นส่วนทุกชิ้นตั้งอยู่ในแนวดิ่งหรือแนวราบ", feedback: "ชิ้นส่วนเอียงได้ทุกมุม แรงก็ยังอยู่ตามแนวชิ้นส่วน" }
+      - { id: d, text: "แรงปฏิกิริยาที่ฐานรองรับรวมกันเป็นศูนย์", feedback: "แรงปฏิกิริยารวมกับแรงภายนอกเป็นศูนย์ ไม่เกี่ยวกับทิศของแรงในชิ้นส่วน" }
+    hints:
+      - "นึกถึงชิ้นส่วนสองแรงจากหัวข้อสมดุลของวัตถุแข็งเกร็ง"
+      - "หมุดไม่ส่งโมเมนต์ และแรงภายนอกกระทำที่ข้อต่อเท่านั้น"
+    solution: "สมมติฐานคือข้อต่อเป็นหมุดไร้แรงเสียดทานและแรงภายนอกกระทำที่ข้อต่อ แต่ละชิ้นส่วนจึงมีแรงเพียงสองจุดที่ปลาย ซึ่งต้องเท่ากัน ตรงข้าม และอยู่ในแนวเส้นที่เชื่อมสองจุด คือแรงดึงหรือแรงอัดตามแนวชิ้นส่วน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p002
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สถานการณ์กับความสัมพันธ์ที่ใช้"
+    pairs:
+      - { left: "กล่องกำลังจะเริ่มไถล", right: "F = μs N" }
+      - { left: "กล่องไถลไปแล้ว", right: "F = μk N" }
+      - { left: "กล่องนิ่งและแรงผลักยังน้อย", right: "F เท่าที่สมดุลต้องการ ไม่เกิน μs N" }
+      - { left: "เชือกพันรอบหลักกำลังไถล", right: "T2 = T1 e^(μs β)" }
+    hints:
+      - "แรงเสียดทานสถิตไม่ได้มีค่าคงที่"
+      - "สูตรสายพานใช้กับเชือกบนผิวโค้งเมื่อกำลังไถล"
+    solution: "กำลังจะไถล: $F = \\mu_s N$ ไถลแล้ว: $F = \\mu_k N$ นิ่งโดยยังไม่ถึงขีดจำกัด: $F$ หาจากสมดุลและ $\\le \\mu_s N$ เชือกบนผิวโค้งกำลังไถล: $T_2 = T_1 e^{\\mu_s\\beta}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p003
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 2
+    type: numeric
+    stem: "โครงข้อหมุนในระนาบมีข้อต่อ 7 จุด ฐานรองรับเป็นหมุดหนึ่งตัวและลูกกลิ้งหนึ่งตัว ถ้าต้องการให้เป็นโครงดีเทอร์มิเนตเชิงสถิตพอดี ต้องมีชิ้นส่วนกี่ชิ้น"
+    answer: { value: 11, unit: ชิ้น }
+    misconceptions:
+      - { match: 14, feedback: "ใช้ $m = 2j$ โดยลืมว่าแรงปฏิกิริยาก็เป็นค่าที่ไม่รู้ ต้องใช้ $m + r = 2j$" }
+      - { match: 12, feedback: "นับแรงปฏิกิริยาเป็น 2 ค่า หมุดให้ 2 ค่าและลูกกลิ้งให้ 1 ค่า รวม 3" }
+    hints:
+      - "นับค่าที่ไม่รู้: แรงในชิ้นส่วน $m$ ค่า และแรงปฏิกิริยา $r$ ค่า"
+      - "แต่ละข้อต่อให้สมการได้ 2 สมการ"
+    solution: "$r = 2 + 1 = 3$ จาก $m + r = 2j$: $m = 2(7) - 3 = 11$ ชิ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p004
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 2
+    type: mcq
+    stem: "โครงสะพานคนเดินข้ามคลองแบบแพรตต์ในภาพ (ค่าสมมติ) รับแรง $6\\ \\mathrm{kN}$ ที่ $L_1$ $L_2$ $L_3$ ชิ้นส่วนใดเป็นชิ้นส่วนแรงเป็นศูนย์ภายใต้แรงชุดนี้"
+    figure: { src: p-pratt.svg, alt: "โครงสะพานแบบแพรตต์ 4 ช่อง ช่องละ 2.5 เมตร สูง 2.5 เมตร คอร์ดล่าง L0 L1 L2 L3 L4 คอร์ดบน U1 U2 U3 ชิ้นส่วนตั้ง L1U1 L2U2 L3U3 ชิ้นส่วนเฉียง L0U1 U1L2 L2U3 U3L4 หมุดที่ L0 ลูกกลิ้งที่ L4 แรง 6 kN กดลงที่ L1 L2 และ L3" }
+    choices:
+      - { id: a, text: "$L_2U_2$", correct: true }
+      - { id: b, text: "$L_1U_1$", feedback: "ข้อต่อ $L_1$ มีแรงภายนอก $6\\ \\mathrm{kN}$ กดลง ชิ้นส่วนตั้ง $L_1U_1$ ต้องรับแรงนี้ไว้ จึงไม่เป็นศูนย์" }
+      - { id: c, text: "$U_1L_2$", feedback: "ชิ้นส่วนเฉียงต้องรับแรงเฉือนของโครงในช่องที่สอง ซึ่งไม่เป็นศูนย์" }
+      - { id: d, text: "ไม่มีชิ้นใดเลย เพราะทุกข้อต่อมีแรงภายนอก", feedback: "ข้อต่อ $U_2$ ไม่มีแรงภายนอก ลองดูสมดุลแนวดิ่งที่ข้อต่อนี้" }
+    hints:
+      - "หาข้อต่อที่มีสามชิ้นส่วน สองชิ้นอยู่แนวเดียวกัน"
+      - "ข้อต่อนั้นต้องไม่มีแรงภายนอก"
+    solution: "ที่ข้อต่อ $U_2$ มี $U_1U_2$ และ $U_2U_3$ อยู่แนวราบเดียวกัน และ $L_2U_2$ ตั้งฉาก ไม่มีแรงภายนอก $\\sum F_y = 0$ ให้ $F_{L_2U_2} = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p005
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 2
+    type: numeric
+    stem: "ลากลังหนัก $500\\ \\mathrm{N}$ บนพื้นราบด้วยเชือกที่ทำมุม $30^\\circ$ เหนือแนวราบ $\\mu_s = 0.4$ ต้องดึงด้วยแรงอย่างน้อยกี่นิวตันลังจึงเริ่มเคลื่อน (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 187.6, tolerance: 1, unit: N }
+    misconceptions:
+      - { match: 200, feedback: "ใช้ $N = W$ และแรงดึงแนวราบทั้งหมด แต่เชือกเฉียงทั้งยกลังขึ้น (ลด $N$) และมีเพียง $P\\cos 30^\\circ$ ที่ดึงไปข้างหน้า" }
+      - { match: 300.3, feedback: "คิดว่าแรงดึงเพิ่มแรงตั้งฉาก ที่จริงองค์ประกอบ $P\\sin 30^\\circ$ ชี้ขึ้น จึง $N = W - P\\sin 30^\\circ$" }
+    hints:
+      - "$N = W - P\\sin 30^\\circ$"
+      - "กำลังจะเคลื่อน: $P\\cos 30^\\circ = \\mu_s N$"
+    solution: "$P\\cos 30^\\circ = 0.4(500 - P\\sin 30^\\circ)$ ได้ $P = \\dfrac{0.4 \\times 500}{\\cos 30^\\circ + 0.4\\sin 30^\\circ} = \\dfrac{200}{0.8660 + 0.2} = 187.6\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p006
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 3
+    type: numeric
+    stem: "โครงข้อหมุนสามเหลี่ยม ABC ในภาพมีหมุดที่ A ลูกกลิ้งที่ B รับแรง $12\\ \\mathrm{kN}$ กดลงที่ C จงหาขนาดของแรงในชิ้นส่วน AC เป็นกิโลนิวตัน (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-triangle.svg, alt: "โครงสามเหลี่ยม A อยู่ซ้ายล่าง B อยู่ขวาล่างห่าง A 6 เมตร C อยู่สูง 3 เมตร ห่างจาก A ตามแนวราบ 2 เมตร หมุดที่ A ลูกกลิ้งที่ B แรง 12 kN กดลงที่ C" }
+    answer: { value: 9.61, tolerance: 0.1, unit: kN }
+    misconceptions:
+      - { match: 8, feedback: "นี่คือแรงปฏิกิริยา $A_y$ แรงในชิ้นส่วนเฉียงต้องหารด้วยองค์ประกอบแนวดิ่ง $3/\\sqrt{13}$" }
+      - { match: 6.67, feedback: "นี่คือแรงในชิ้นส่วน BC" }
+    hints:
+      - "หาแรงปฏิกิริยาก่อน: $\\sum M_B = 0$"
+      - "ที่ข้อต่อ A ชิ้นส่วน AC มีองค์ประกอบแนวดิ่ง $3/\\sqrt{13}$ ของแรงในชิ้นส่วน"
+    solution: "$\\sum M_B$: $6A_y = 12 \\times 4$ ได้ $A_y = 8\\ \\mathrm{kN}$ ที่ข้อต่อ A: $8 + F_{AC}\\dfrac{3}{\\sqrt{13}} = 0$ ได้ $F_{AC} = -9.61\\ \\mathrm{kN}$ คือแรงอัด $9.61\\ \\mathrm{kN}$ (ตรวจที่ข้อต่อ C: $F_{BC} = -6.67$ และแรงแนวราบที่ C สมดุล $9.61 \\cdot \\tfrac{2}{\\sqrt{13}} = 6.67 \\cdot \\tfrac{4}{5} = 5.33$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p007
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 3
+    type: numeric
+    stem: "ตู้เก็บของกว้าง $0.8\\ \\mathrm{m}$ สูง $1.8\\ \\mathrm{m}$ จุดศูนย์ถ่วงอยู่กึ่งกลาง $\\mu_s = 0.3$ กับพื้น ถ้าผลักด้วยแรงแนวราบ ต้องผลักที่ความสูงไม่เกินกี่เมตรจากพื้น ตู้จึงไถลก่อนล้ม (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.33, tolerance: 0.02, unit: m }
+    misconceptions:
+      - { match: 2.67, feedback: "ลืมว่าแขนของน้ำหนักรอบขอบตู้คือครึ่งหนึ่งของความกว้าง $b/2$" }
+      - { match: 0.12, feedback: "คูณ $\\mu_s$ แทนการหาร: เงื่อนไขล้มคือ $Ph = W(b/2)$ ที่ $P = \\mu_s W$" }
+    hints:
+      - "ไถลเมื่อ $P = \\mu_s W$"
+      - "ล้มรอบขอบหน้าเมื่อ $Ph = W \\cdot b/2$"
+    solution: "ตู้ไถลที่ $P = \\mu_s W$ ถ้าแรงนี้ยังไม่ทำให้ล้ม ต้อง $\\mu_s W h < W b/2$ ได้ $h < \\dfrac{b}{2\\mu_s} = \\dfrac{0.8}{0.6} = 1.33\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p008
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 3
+    type: numeric
+    stem: "คนที่ท่าเรือพันเชือกรอบหลักผูกเรือ 2 รอบเต็ม แล้วรั้งปลายเชือกด้วยแรง $200\\ \\mathrm{N}$ ถ้า $\\mu_s = 0.3$ ระหว่างเชือกกับหลัก เรือดึงเชือกได้มากที่สุดกี่นิวตันก่อนเชือกไถล (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 8675, tolerance: 90, unit: N }
+    misconceptions:
+      - { match: 1317, feedback: "ใช้แค่หนึ่งรอบ ($2\\pi$) สองรอบคือ $\\beta = 4\\pi$" }
+      - { match: 400, feedback: "ความสัมพันธ์เป็นเอกซ์โพเนนเชียล ไม่ใช่คูณด้วยจำนวนรอบ" }
+    hints:
+      - "$T_2 = T_1 e^{\\mu_s\\beta}$ โดย $T_2$ คือด้านเรือ"
+      - "$\\beta = 2 \\times 2\\pi$ เรเดียน"
+    solution: "$\\beta = 4\\pi = 12.57\\ \\mathrm{rad}$ ได้ $T_2 = 200\\,e^{0.3 \\times 12.57} = 200 \\times 43.4 = 8675\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p009
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาแรงในชิ้นส่วนกลางโครงด้วยวิธีตัดหน้าตัด"
+    items:
+      - "หาแรงปฏิกิริยาจากสมดุลของทั้งโครง"
+      - "ลากเส้นตัดผ่านชิ้นส่วนที่ต้องการ โดยตัดชิ้นส่วนที่ไม่รู้ไม่เกินสามชิ้น"
+      - "วาดแผนภาพวัตถุอิสระของชิ้นด้านหนึ่ง สมมติแรงในชิ้นส่วนที่ถูกตัดเป็นแรงดึง"
+      - "หาโมเมนต์รอบจุดที่แนวของอีกสองชิ้นส่วนตัดกัน"
+      - "บอกผลเป็นแรงดึงหรือแรงอัดจากเครื่องหมาย"
+    hints:
+      - "บางครั้งไม่ต้องหาแรงปฏิกิริยา ถ้าเลือกชิ้นที่ไม่มีฐานรองรับ แต่ปกติทำก่อน"
+      - "เครื่องหมายลบหมายถึงทิศจริงตรงข้ามกับที่สมมติ"
+    solution: "แรงปฏิกิริยา → เส้นตัด (ไม่เกินสามชิ้น) → แผนภาพวัตถุอิสระของชิ้นหนึ่ง (สมมติแรงดึง) → สมการโมเมนต์รอบจุดตัดของอีกสองชิ้น → แปลเครื่องหมายเป็น T หรือ C"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p010
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 4
+    type: numeric
+    stem: "โครงสะพานแพรตต์ในภาพ (แรง $6\\ \\mathrm{kN}$ ที่ $L_1$ $L_2$ $L_3$) จงหาแรงในชิ้นส่วนเฉียง $U_1L_2$ เป็นกิโลนิวตัน ตอบพร้อมเครื่องหมาย (แรงดึงเป็นบวก ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-pratt.svg, alt: "โครงสะพานแบบแพรตต์ 4 ช่อง ช่องละ 2.5 เมตร สูง 2.5 เมตร คอร์ดล่าง L0 L1 L2 L3 L4 คอร์ดบน U1 U2 U3 ชิ้นส่วนตั้ง L1U1 L2U2 L3U3 ชิ้นส่วนเฉียง L0U1 U1L2 L2U3 U3L4 หมุดที่ L0 ลูกกลิ้งที่ L4 แรง 6 kN กดลงที่ L1 L2 และ L3" }
+    answer: { value: 4.24, tolerance: 0.05, unit: kN }
+    misconceptions:
+      - { match: -4.24, feedback: "ขนาดถูกแต่ทิศผิด ชิ้นส่วนเฉียงของแพรตต์ที่เอียงลงเข้าหากลางช่วงรับแรงดึงภายใต้น้ำหนักกดลง" }
+      - { match: 3, feedback: "ได้แรงเฉือนในช่องแล้วแต่ลืมหารด้วย $\\sin 45^\\circ$ เพื่อเปลี่ยนเป็นแรงตามแนวชิ้นส่วน" }
+    hints:
+      - "แรงปฏิกิริยาที่ $L_0$ และ $L_4$ เท่ากันเพราะสมมาตร"
+      - "ตัดผ่าน $U_1U_2$, $U_1L_2$, $L_1L_2$ แล้วใช้ $\\sum F_y = 0$ กับชิ้นซ้าย"
+    solution: "$R_{L_0} = 18/2 = 9\\ \\mathrm{kN}$ ชิ้นซ้ายของหน้าตัดมีแรงแนวดิ่ง $9 - 6 = 3\\ \\mathrm{kN}$ ขึ้น ชิ้นส่วน $U_1L_2$ ที่เอียง $45^\\circ$ ต้องให้ $3\\ \\mathrm{kN}$ ลง: $F\\sin 45^\\circ = 3$ ได้ $F = 4.24\\ \\mathrm{kN}$ (T) ตรวจด้วยวิธีจุดต่อทั้งโครงได้ค่าเดียวกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p011
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 4
+    type: numeric
+    stem: "ช่างไฟยืนบนบันไดทรง A ในภาพ (ค่าสมมติ) ขาทั้งสองยาว $3\\ \\mathrm{m}$ ต่อกันด้วยหมุดที่ A ปลายขาห่างกัน $2\\ \\mathrm{m}$ บนพื้นลื่น เชือก DE ผูกที่กึ่งกลางขาทั้งสอง น้ำหนักช่าง $800\\ \\mathrm{N}$ อยู่บนขา AB ห่าง B $2\\ \\mathrm{m}$ ตามขา ไม่คิดน้ำหนักบันได จงหาแรงตึงในเชือกเป็นนิวตัน (ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-aladder.svg, alt: "บันไดทรง A ขา AB และ AC ยาว 3 เมตร ต่อกันด้วยหมุดที่ยอด A ปลายขา B และ C ห่างกัน 2 เมตรบนพื้นลื่น เชือก DE แนวราบผูกที่กึ่งกลางของขาทั้งสอง แรง 800 N กดลงบนขา AB ที่ระยะ 2 เมตรจาก B ตามขา" }
+    answer: { value: 188.6, tolerance: 2, unit: N }
+    misconceptions:
+      - { match: 282.8, feedback: "แบ่งน้ำหนักให้ปลายขาเท่ากันข้างละ 400 N ช่างยืนอยู่บนขา AB จึงต้องหาแรงที่ C จากโมเมนต์รอบ B" }
+      - { match: 377.1, feedback: "ใช้แรงที่ B ($533\\ \\mathrm{N}$) กับขา AC แรงที่ปลายขา C คือ $266.7\\ \\mathrm{N}$" }
+    hints:
+      - "ทั้งบันได: $\\sum M_B = 0$ หาแรงตั้งฉากที่ C"
+      - "แยกขา AC ซึ่งมีแรงที่ C แรงเชือกที่ E และแรงที่หมุด A แล้วหาโมเมนต์รอบ A"
+    solution: "ความสูงของ A คือ $\\sqrt{3^2 - 1^2} = 2.828\\ \\mathrm{m}$ ช่างอยู่ห่าง B ตามแนวราบ $\\tfrac23 \\times 1 = 0.667\\ \\mathrm{m}$ ทั้งระบบ: $2N_C = 800 \\times 0.667$ ได้ $N_C = 266.7\\ \\mathrm{N}$ ขา AC รอบ A: $N_C \\times 1 = T \\times 1.414$ (E ต่ำกว่า A $1.414\\ \\mathrm{m}$) ได้ $T = 188.6\\ \\mathrm{N}$ ตรวจด้วยขา AB รอบ A: $533.3(1) - 800(0.333) - 188.6(1.414) = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p012
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 4
+    type: numeric
+    stem: "เบรกแบบสายรัดของเครื่องสีข้าวขนาดเล็ก (ค่าสมมติ) มีสายพันรอบดรัมรัศมี $0.25\\ \\mathrm{m}$ เป็นมุม $270^\\circ$ $\\mu = 0.35$ คันเบรกดึงปลายหย่อนด้วยแรง $400\\ \\mathrm{N}$ เมื่อดรัมกำลังจะลื่นในสาย แรงบิดเบรกเป็นกี่นิวตันเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 420.4, tolerance: 4, unit: "N·m" }
+    misconceptions:
+      - { match: 520.4, feedback: "คูณแรงตึงด้านตึงกับรัศมีอย่างเดียว แรงบิดสุทธิมาจากผลต่าง $(T_2 - T_1)r$" }
+      - { match: 100, feedback: "ใช้แรงด้านหย่อนคูณรัศมี ต้องหาแรงด้านตึงจาก $T_2 = T_1 e^{\\mu\\beta}$ ก่อน" }
+    hints:
+      - "$\\beta = 270^\\circ = 3\\pi/2$ เรเดียน"
+      - "แรงบิดเบรก $= (T_2 - T_1)r$"
+    solution: "$T_2 = 400\\,e^{0.35 \\times 4.712} = 400 \\times 5.204 = 2081\\ \\mathrm{N}$ แรงบิด $= (2081 - 400)(0.25) = 420.4\\ \\mathrm{N\\cdot m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p013
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 5
+    type: numeric
+    stem: "ช่างในโรงสีตอกลิ่มมุม $12^\\circ$ เข้าใต้เครื่องจักรหนัก $10\\ \\mathrm{kN}$ ซึ่งเคลื่อนได้แนวดิ่งเท่านั้น (รางนำลื่น) ตามภาพ $\\mu = 0.25$ ทั้งผิวลิ่มกับเครื่องจักรและผิวลิ่มกับพื้น ต้องดันลิ่มด้วยแรง $P$ อย่างน้อยกี่กิโลนิวตันเพื่อเริ่มยกเครื่องจักร (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-wedge.svg, alt: "ลิ่มสามเหลี่ยมวางบนพื้น ด้านหนาอยู่ซ้าย ปลายแหลมอยู่ขวา ผิวบนเอียง 12 องศากับแนวราบ เครื่องจักรหนัก 10 kN วางบนผิวเอียงของลิ่ม มีรางนำแนวดิ่งสองข้างที่ไม่มีแรงเสียดทาน แรง P ดันลิ่มจากซ้ายไปขวา ค่า mu 0.25 ที่ผิวลิ่มทั้งสองด้าน" }
+    answer: { value: 7.39, tolerance: 0.08, unit: kN }
+    misconceptions:
+      - { match: 4.89, feedback: "ลืมแรงเสียดทานระหว่างลิ่มกับพื้น ซึ่งเท่ากับ $\\mu N_2 = 0.25 \\times 10 = 2.5\\ \\mathrm{kN}$" }
+      - { match: 2.13, feedback: "ไม่คิดแรงเสียดทานเลย ($W\\tan 12^\\circ$) ลิ่มจริงต้องชนะแรงเสียดทานทั้งสองผิว" }
+    hints:
+      - "เครื่องจักร: แรงจากลิ่มคือแรงตั้งฉาก $N_1$ บวกแรงเสียดทาน $\\mu N_1$ ที่ต้านการไถลของเครื่องจักรเทียบกับลิ่ม ใช้ $\\sum F_y = 0$ หา $N_1$"
+      - "ลิ่ม: แรงจากพื้น $N_2 = W$ และแรงเสียดทาน $\\mu N_2$ ต้านการเคลื่อนที่ ใช้ $\\sum F_x = 0$"
+    solution: "เครื่องจักร: $N_1(\\cos 12^\\circ - 0.25\\sin 12^\\circ) = 10$ ได้ $N_1 = 10.77\\ \\mathrm{kN}$ ลิ่ม: แรงแนวราบจากเครื่องจักร $N_1(\\sin 12^\\circ + 0.25\\cos 12^\\circ) = 4.89\\ \\mathrm{kN}$ และ $N_2 = 10\\ \\mathrm{kN}$ ได้ $P = 4.89 + 0.25(10) = 7.39\\ \\mathrm{kN}$ ตรวจด้วยมุมเสียดทาน $\\phi = \\tan^{-1}0.25$: $P = W\\tan(12^\\circ + \\phi) + \\mu W = 7.39\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p014
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 3
+    type: numeric
+    stem: "กระสอบข้าวหนัก $600\\ \\mathrm{N}$ วางบนแผ่นไม้เอียง $30^\\circ$ $\\mu_s = 0.3$ ต้องออกแรงขนานกับแผ่นไม้ขึ้นข้างบนอย่างน้อยกี่นิวตันเพื่อไม่ให้กระสอบไถลลง (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 144.1, tolerance: 1.5, unit: N }
+    misconceptions:
+      - { match: 455.9, feedback: "นี่คือแรงที่ทำให้กระสอบเริ่มเลื่อนขึ้น เมื่อกันไม่ให้ไถลลง แรงเสียดทานชี้ขึ้นช่วยเรา" }
+      - { match: 300, feedback: "ไม่คิดแรงเสียดทาน แรงเสียดทานสถิตช่วยรับน้ำหนักได้ถึง $\\mu_s N$" }
+    hints:
+      - "กระสอบกำลังจะไถลลง แรงเสียดทานชี้ขึ้นตามพื้นเอียง"
+      - "$P + \\mu_s W\\cos 30^\\circ = W\\sin 30^\\circ$"
+    solution: "$P = W(\\sin 30^\\circ - \\mu_s\\cos 30^\\circ) = 600(0.5 - 0.2598) = 144.1\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p015
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 5
+    type: numeric
+    stem: "โครงหลังคาศาลาในบทเรียน (หมุดที่ A ลูกกลิ้งที่ C ช่วง $8\\ \\mathrm{m}$ สูง $3\\ \\mathrm{m}$ แรง $4\\ \\mathrm{kN}$ กดลงที่ D E F) ได้รับแรงลมเพิ่ม $2\\ \\mathrm{kN}$ ในแนวราบชี้ไปทาง C ที่ยอด E จงหาขนาดของแรงในชิ้นส่วน FC เป็นกิโลนิวตัน (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 11.25, tolerance: 0.1, unit: kN }
+    misconceptions:
+      - { match: 10, feedback: "ลืมโมเมนต์ของแรงลม แรงลมที่สูง $3\\ \\mathrm{m}$ ทำให้แรงปฏิกิริยาที่ C เพิ่มขึ้น" }
+      - { match: 8.75, feedback: "นี่คือแรงใน AD ฝั่งที่แรงปฏิกิริยาลดลง ชิ้นส่วน FC อยู่ฝั่ง C" }
+    hints:
+      - "$\\sum M_A = 0$ รวมโมเมนต์ของแรงลม $2 \\times 3$"
+      - "ข้อต่อ C มีชิ้นส่วน FC (องค์ประกอบดิ่ง 0.6) และ BC (แนวราบ) ลูกกลิ้งให้แรงแนวดิ่งเท่านั้น"
+    solution: "$\\sum M_A$: $8C_y = 4(2) + 4(4) + 4(6) + 2(3) = 54$ ได้ $C_y = 6.75\\ \\mathrm{kN}$ ข้อต่อ C: $6.75 + 0.6F_{FC} = 0$ ได้ $F_{FC} = -11.25\\ \\mathrm{kN}$ คือแรงอัด $11.25\\ \\mathrm{kN}$ (แก้ทั้งโครงด้วยเมทริกซ์ได้ค่าเดียวกัน และ $A_x = -2$, $A_y = 5.25\\ \\mathrm{kN}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.trusses-friction.p016
+    topics: [engineering.mechanics.trusses-friction]
+    difficulty: 2
+    type: numeric
+    stem: "คีมตัดลวดมีด้ามยาวจากหมุด $100\\ \\mathrm{mm}$ และปากคีมจับลวดห่างหมุด $20\\ \\mathrm{mm}$ ถ้ามือบีบด้ามด้วยแรง $150\\ \\mathrm{N}$ ตั้งฉากกับด้าม ลวดได้รับแรงกี่นิวตัน"
+    answer: { value: 750, tolerance: 5, unit: N }
+    misconceptions:
+      - { match: 30, feedback: "กลับอัตราส่วน ปากคีมอยู่ใกล้หมุด แรงที่ปากจึงมากกว่าแรงที่มือ" }
+      - { match: 1500, feedback: "คูณสองเพราะมีสองด้าม แต่แต่ละครึ่งของคีมเป็นคานคนละตัว แรงที่ลวดคือแรงจากปากข้างเดียวที่ถูกอีกข้างกดไว้" }
+    hints:
+      - "แยกครึ่งหนึ่งของคีมออกมา หาโมเมนต์รอบหมุด"
+      - "$F_{\\text{ปาก}} \\times 20 = 150 \\times 100$"
+    solution: "ครึ่งหนึ่งของคีม: $\\sum M_{\\text{หมุด}} = 0$ ได้ $F \\times 20 = 150 \\times 100$ ดังนั้น $F = 750\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

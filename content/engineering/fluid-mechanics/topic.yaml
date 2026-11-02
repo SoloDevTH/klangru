@@ -1,0 +1,71 @@
+id: engineering.fluids.fluid-mechanics
+subject: engineering
+title: { th: กลศาสตร์ของไหลวิศวกรรม, en: Engineering fluid mechanics }
+summary: ความดันเกจและมาโนมิเตอร์ แรงบนผิวจมน้ำและศูนย์กลางความดัน สมการโมเมนตัมของปริมาตรควบคุม การสูญเสียเฮดในท่อ การเลือกปั๊ม และการวิเคราะห์มิติ
+difficulty: 8.5
+minutes: 55
+prerequisites: [physics.fluids.fluid-dynamics, math.calculus.integral-applications, engineering.process.mass-energy-balance]
+encompasses:
+  - { id: physics.fluids.fluid-dynamics, weight: 0.4 }
+  - { id: math.calculus.integral-applications, weight: 0.2 }
+  - { id: engineering.process.mass-energy-balance, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: แรงดันน้ำบนประตูระบายน้ำ
+    src: gate-pressure.svg
+    alt: "ประตูระบายน้ำแนวดิ่งกว้าง 3 เมตร สูง 2 เมตร ขอบบนอยู่ลึก 1.5 เมตรจากผิวน้ำ ลูกศรความดันบนประตูยาวขึ้นตามความลึกเป็นรูปสี่เหลี่ยมคางหมู แรงลัพธ์ F_R กระทำที่ศูนย์กลางความดันลึก 2.63 เมตร ซึ่งต่ำกว่าเซนทรอยด์ของประตูที่ลึก 2.5 เมตร"
+  - { type: check, problem: engineering.fluids.fluid-mechanics.p006, prompt: "ใช้ความลึกของเซนทรอยด์ของประตู" }
+  - type: figure
+    title: ระบบสูบน้ำจากคลองขึ้นหอถังน้ำ
+    src: pump-system.svg
+    alt: "ปั๊มดูดน้ำจากคลองส่งผ่านท่อเหล็กเส้นผ่านศูนย์กลาง 100 มิลลิเมตร ยาวรวม 120 เมตร ความขรุขระ 0.045 มิลลิเมตร ผลรวมสัมประสิทธิ์การสูญเสียรอง 5.0 ขึ้นไปยังหอถังน้ำของ อบต. ผิวน้ำในถังสูงกว่าผิวน้ำในคลอง 15 เมตร อัตราการไหล 15 ลิตรต่อวินาที ประสิทธิภาพปั๊ม 70%"
+  - type: worked-example
+    title: เลือกปั๊มสูบน้ำขึ้นหอถังน้ำ
+    problem: "ระบบในภาพ (ค่าสมมติ) ใช้น้ำ $\\nu = 1.0 \\times 10^{-6}\\ \\mathrm{m^2/s}$ จงหาเฮดที่ปั๊มต้องให้และกำลังเพลา"
+    steps:
+      - text: "$A = \\pi(0.1)^2/4 = 7.85 \\times 10^{-3}\\ \\mathrm{m^2}$ ได้ $V = 0.015/A = 1.91\\ \\mathrm{m/s}$ และ $Re = VD/\\nu = 1.91 \\times 10^5$ (ปั่นป่วน)"
+      - text: "สวามี–เชน: $\\varepsilon/(3.7D) = 1.22 \\times 10^{-4}$ และ $5.74/Re^{0.9} = 1.01 \\times 10^{-4}$ ได้ $f = 0.25/[\\log_{10}(2.23 \\times 10^{-4})]^2 = 0.0187$"
+        why: "ตรวจด้วยการวนซ้ำสมการคอลบรูกได้ $f = 0.0186$ ต่างกันไม่ถึง 1%"
+      - text: "$\\dfrac{V^2}{2g} = 0.186\\ \\mathrm{m}$ ได้ $h_f = 0.0187 \\times \\dfrac{120}{0.1} \\times 0.186 = 4.18\\ \\mathrm{m}$ และ $h_m = 5.0 \\times 0.186 = 0.93\\ \\mathrm{m}$"
+      - text: "สมการพลังงานระหว่างผิวน้ำในคลองและในถัง (ความดันบรรยากาศ ความเร็วผิวน้ำ $\\approx 0$): $h_{\\text{ปั๊ม}} = 15 + 4.18 + 0.93 = 20.1\\ \\mathrm{m}$"
+        why: "ค่า $K$ รวมทางออกที่น้ำเสียพลังงานจลน์ทั้งหมดในถังแล้ว จึงไม่ต้องบวก $V^2/2g$ อีก"
+      - text: "$P = \\dfrac{\\rho gQh}{\\eta} = \\dfrac{1000(9.81)(0.015)(20.1)}{0.70} = 4.23\\ \\mathrm{kW}$"
+    answer: "เฮดปั๊ม $20.1\\ \\mathrm{m}$ กำลังเพลา $4.2\\ \\mathrm{kW}$"
+  - type: interactive
+    title: เส้นโค้งระบบของท่อส่งน้ำ
+    caption: "เฮดที่ปั๊มต้องให้ h = a + cQ² แกนนอนคืออัตราการไหลเป็นลิตรต่อวินาที a คือความสูงสถิต c รวมการสูญเสียทั้งหลักและรอง (ระบบในตัวอย่างมี a = 15 m และ c ≈ 0.023 m/(L/s)²) ลองเพิ่ม c เหมือนท่อเล็กลงหรือเก่าลง สังเกตว่าที่อัตราการไหลสูง การสูญเสียกลายเป็นส่วนใหญ่ของเฮด"
+    widget:
+      kind: function-plot
+      functions: ["a+cx^2"]
+      sliders:
+        - { name: a, min: 0, max: 30, step: 1, value: 15, label: "ความสูงสถิต a (m)" }
+        - { name: c, min: 0.005, max: 0.1, step: 0.005, value: 0.025, label: "สัมประสิทธิ์การสูญเสีย c" }
+      x: [0, 30]
+      y: [0, 60]
+  - { type: check, problem: engineering.fluids.fluid-mechanics.p008, prompt: "Re = 500 เป็นการไหลแบบใด แล้วใช้สูตร f ใด" }
+glossary:
+  - { term: ความดันเกจ, definition: "ความดันที่วัดเทียบกับความดันบรรยากาศ (gauge pressure)" }
+  - { term: เฮด, definition: "พลังงานต่อหน่วยน้ำหนักของของไหล หน่วยเมตร เช่น เฮดความดัน p/(ρg) (head)" }
+  - { term: ศูนย์กลางความดัน, definition: "จุดที่แรงลัพธ์ของความดันบนผิวกระทำ ลึกกว่าเซนทรอยด์ของผิว (center of pressure)" }
+  - { term: ตัวประกอบความเสียดทาน, definition: "f ในสมการดาร์ซี–ไวส์บัค ขึ้นกับเลขเรย์โนลด์สและความขรุขระสัมพัทธ์ (friction factor)" }
+  - { term: การสูญเสียรอง, definition: "การสูญเสียเฮดที่ข้อต่อ วาล์ว ทางเข้า ทางออก เขียนเป็น K V²/(2g) (minor loss)" }
+  - { term: แผนภูมิมูดี, definition: "กราฟของตัวประกอบความเสียดทานกับเลขเรย์โนลด์สสำหรับความขรุขระต่าง ๆ (Moody chart)" }
+  - { term: ทฤษฎีบทบัคกิงแฮมพาย, definition: "ปัญหาที่มีตัวแปร n ตัวและมิติพื้นฐาน k มิติ เขียนได้ด้วยกลุ่มไร้มิติ n − k กลุ่ม (Buckingham Pi theorem)" }
+  - { term: ความคล้ายแบบฟรูด, definition: "การออกแบบแบบจำลองให้เลขฟรูดเท่าต้นแบบ ใช้กับการไหลที่แรงโน้มถ่วงสำคัญ เช่น ทางน้ำเปิด (Froude similarity)" }
+flashcards:
+  - { front: "แรงบนผิวเรียบจมน้ำ", back: "$F_R = \\rho gh_cA$ กระทำที่ $y_p = y_c + \\bar I_x/(y_cA)$" }
+  - { front: "สมการดาร์ซี–ไวส์บัค", back: "$h_f = f(L/D)V^2/(2g)$ ราบเรียบ $f = 64/Re$" }
+  - { front: "กำลังเพลาของปั๊ม", back: "$P = \\rho gQh_{\\text{ปั๊ม}}/\\eta$" }
+  - { front: "แรงของลำน้ำที่กระแทกผนังตั้งฉากแล้วแผ่ออกด้านข้าง", back: "$F = \\rho QV$" }
+  - { front: "อัตราส่วนอัตราการไหลในความคล้ายแบบฟรูด", back: "$Q_p/Q_m = L_r^{5/2}$" }
+references:
+  - { title: "14.2 Measuring Pressure (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/14-2-measuring-pressure", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "14.7 Viscosity and Turbulence (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/14-7-viscosity-and-turbulence", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Darcy–Weisbach equation", url: "https://en.wikipedia.org/wiki/Darcy%E2%80%93Weisbach_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Buckingham π theorem", url: "https://en.wikipedia.org/wiki/Buckingham_%CF%80_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -66,8 +66,8 @@
 
 ## ผลตรวจลิงก์วิกิพีเดีย
 
-LINKCHECK_PLACEHOLDER
+ทุกลิงก์ได้ HTTP 200 และชื่อหน้าตรงเรื่อง หลังเว้นระยะ 20–90 วินาทีระหว่างคำขอเมื่อได้ 429 (th อุปสงค์และอุปทาน, th ภาษีเงินได้บุคคลธรรมดา, en Taxation in Thailand) ตรวจซ้ำผ่านทั้งหมด ไม่มีลิงก์ค้างไม่ได้ตรวจ เปลี่ยนลิงก์ที่ได้ 404 สองลิงก์: th ความได้เปรียบโดยเปรียบเทียบ → en Comparative advantage และ en Taxation in Thailand → en Progressive tax ส่วน th ภาษีเงินได้บุคคลธรรมดา redirect ไปหน้า "ภาษีเงินได้บุคคลธรรมดา (ประเทศไทย)" จึงใช้ชื่อปลายทางในลิงก์
 
 ## error จากโฟลเดอร์ของชุดอื่น
 
-`npm run validate -- --strict` ครั้งสุดท้าย: error 3 คำเตือน 3 ทั้งหมดจาก `engineering/` ที่ชุดอื่นกำลังเขียน (`engineering/fluid-mechanics` คำถามในบทเรียนอ้าง p006 p008 ที่ยังไม่มี ยังไม่มี problems.yaml ภาพ p-gate.svg p-hinged.svg ยังไม่ถูกใช้ และ `engineering/centroids-inertia` ลิงก์ไป `engineering.mechanics.rigid-body-dynamics` ที่ยังไม่มี) ไม่มี error หรือ warning จากโฟลเดอร์ของชุดนี้ `npm test -w @klangru/content-tools` ผ่าน 35/35
+ระหว่างทำ `npm run validate -- --strict` แสดง error 3 คำเตือน 3 ชั่วคราวจาก `engineering/` ที่ชุดอื่นกำลังเขียน (`engineering/fluid-mechanics` คำถามในบทเรียนอ้าง p006 p008 ที่ยังไม่มี ยังไม่มี problems.yaml ภาพ p-gate.svg p-hinged.svg ยังไม่ถูกใช้ และ `engineering/centroids-inertia` ลิงก์ไป `engineering.mechanics.rigid-body-dynamics` ที่ยังไม่มี) รันครั้งสุดท้ายได้ error 0 คำเตือน 0 ไม่มี error หรือ warning จากโฟลเดอร์ของชุดนี้ `npm test -w @klangru/content-tools` ผ่าน 35/35

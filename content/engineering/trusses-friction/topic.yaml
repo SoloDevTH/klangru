@@ -1,0 +1,70 @@
+id: engineering.mechanics.trusses-friction
+subject: engineering
+title: { th: โครงข้อหมุนและแรงเสียดทานในงานสถิตยศาสตร์, en: Trusses and friction in statics }
+summary: วิเคราะห์โครงข้อหมุนด้วยวิธีจุดต่อและวิธีตัดหน้าตัด ชิ้นส่วนแรงเป็นศูนย์ โครงสร้างและเครื่องจักร แรงเสียดทานแห้ง การล้มกับการไถล ลิ่ม และสายพาน
+difficulty: 7
+minutes: 50
+prerequisites: [engineering.mechanics.rigid-body-equilibrium, physics.dynamics.friction]
+encompasses:
+  - { id: engineering.mechanics.rigid-body-equilibrium, weight: 0.4 }
+  - { id: physics.dynamics.friction, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: โครงหลังคาศาลาและหน้าตัด a–a
+    src: sala-truss.svg
+    alt: "โครงข้อหมุนหลังคาศาลา ช่วง 8 เมตร สูง 3 เมตร คอร์ดล่าง A B C (B อยู่กึ่งกลาง) จุด D และ F อยู่กึ่งกลางของจันทันซ้ายและขวาที่สูง 1.5 เมตร ยอด E อยู่เหนือ B สูง 3 เมตร ชิ้นส่วนคือ AB BC AD DE EF FC DB BE BF หมุดที่ A ลูกกลิ้งที่ C แรง 4 kN กดลงที่ D E และ F เส้นประสีแดงคือหน้าตัด a–a ตัดผ่านชิ้นส่วน DE DB และ AB"
+  - type: worked-example
+    title: แรงในชิ้นส่วนของโครงหลังคาศาลา
+    problem: "โครงหลังคาศาลาในภาพรับแรง $4\\ \\mathrm{kN}$ ที่ D E F จงหาแรงในชิ้นส่วน AD และ AB ด้วยวิธีจุดต่อ แล้วหาแรงใน DE ด้วยวิธีตัดหน้าตัด"
+    steps:
+      - text: "แรงปฏิกิริยา: โครงและแรงสมมาตร $A_y = C_y = 12/2 = 6\\ \\mathrm{kN}$ และ $A_x = 0$"
+      - text: "ข้อต่อ A: ชิ้นส่วน AD ไปทาง $(2, 1.5)$ ยาว $2.5\\ \\mathrm{m}$ องค์ประกอบหน่วย $(0.8, 0.6)$ สมมติทุกชิ้นรับแรงดึง"
+        why: "แรงดึงในชิ้นส่วนดึงข้อต่อเข้าหาชิ้นส่วน จึงชี้จาก A ไปทาง D"
+      - text: "$\\sum F_y = 0$: $6 + 0.6F_{AD} = 0$ ได้ $F_{AD} = -10\\ \\mathrm{kN}$ คือแรงอัด $10\\ \\mathrm{kN}$"
+      - text: "$\\sum F_x = 0$: $F_{AB} + 0.8(-10) = 0$ ได้ $F_{AB} = 8\\ \\mathrm{kN}$ (T)"
+      - text: "หน้าตัด a–a ผ่าน DE DB AB คิดชิ้นซ้าย หาโมเมนต์รอบ B ซึ่ง DB และ AB ผ่าน: $-4(6) + 2(4) - 2.4F_{DE} = 0$"
+        why: "แรง $F_{DE}$ กระทำที่ D ทิศ $(0.8, 0.6)$ โมเมนต์รอบ B คือ $xF_y - yF_x = (-2)(0.6F) - (1.5)(0.8F) = -2.4F$"
+      - text: "$F_{DE} = -16/2.4 = -6.67\\ \\mathrm{kN}$ คือแรงอัด $6.67\\ \\mathrm{kN}$ ตรงกับวิธีจุดต่อที่ข้อต่อ D"
+    answer: "$F_{AD} = 10\\ \\mathrm{kN}$ (C), $F_{AB} = 8\\ \\mathrm{kN}$ (T), $F_{DE} = 6.67\\ \\mathrm{kN}$ (C)"
+  - { type: check, problem: engineering.mechanics.trusses-friction.p004, prompt: "ดูข้อต่อที่มีสามชิ้นส่วน สองชิ้นอยู่แนวเดียวกัน และไม่มีแรงภายนอก" }
+  - type: figure
+    title: แรงตึงของสายบนผิวโค้ง
+    src: belt.svg
+    alt: "ล้อกลมนิ่ง สายพันจากด้านซ้ายข้ามด้านบนไปลงด้านขวา มุมสัมผัส beta วัดจากรัศมีที่ปลายทั้งสองของส่วนที่สัมผัส ด้านซ้ายเป็นแรงตึง T1 ด้านหย่อน ด้านขวาเป็น T2 ด้านตึง สายเริ่มไถลไปทาง T2 สูตร T2 = T1 e^(mu beta) โดย beta เป็นเรเดียน"
+  - type: worked-example
+    title: ลากเรือขึ้นทางลาดโดยพันเชือกรอบหลัก
+    problem: "ชาวบ้านลากเรือหนัก $1.2\\ \\mathrm{kN}$ ขึ้นทางลาดเอียง $15^\\circ$ ($\\mu_s = 0.3$ ระหว่างท้องเรือกับทางลาด) เชือกจากเรือขนานกับทางลาด แล้วอ้อมหลักไม้กลมหนึ่งในสี่รอบ ($\\mu_s = 0.25$) ไปยังคนดึง (ค่าสมมติ) คนดึงต้องออกแรงเท่าใดเรือจึงเริ่มเคลื่อน"
+    steps:
+      - text: "เรือกำลังจะเลื่อนขึ้น แรงเสียดทานชี้ลงตามทางลาด: $T_{\\text{เรือ}} = W(\\sin 15^\\circ + \\mu_s\\cos 15^\\circ)$"
+        why: "แรงเสียดทานตรงข้ามกับทิศที่กำลังจะเคลื่อน"
+      - text: "$T_{\\text{เรือ}} = 1200(0.2588 + 0.3 \\times 0.9659) = 658\\ \\mathrm{N}$"
+      - text: "เชือกกำลังไถลรอบหลักไปทางคนดึง ด้านคนดึงจึงเป็นด้านตึง $T_2$ และ $\\beta = \\pi/2$"
+        why: "แรงเสียดทานที่หลักต้านการไถล คนดึงจึงต้องดึงมากกว่าแรงที่ส่งถึงเรือ"
+      - text: "$T_{\\text{คน}} = 658\\,e^{0.25 \\times \\pi/2} = 658 \\times 1.481 = 975\\ \\mathrm{N}$"
+    answer: "ราว $975\\ \\mathrm{N}$ (ต้องช่วยกันหลายคน ถ้าใช้หลักนี้ผ่อนเรือลง แรงเสียดทานจะช่วยแทน)"
+  - { type: check, problem: engineering.mechanics.trusses-friction.p008, prompt: "β ต้องเป็นเรเดียน สองรอบคือ 4π" }
+glossary:
+  - { term: โครงข้อหมุน, definition: "โครงสร้างจากชิ้นส่วนตรงที่ต่อกันด้วยหมุดเป็นรูปสามเหลี่ยม แรงกระทำที่ข้อต่อ ทุกชิ้นส่วนรับแรงดึงหรือแรงอัดอย่างเดียว (truss)" }
+  - { term: วิธีจุดต่อ, definition: "หาแรงในชิ้นส่วนโดยใช้สมดุลของแรงที่ข้อต่อทีละจุด (method of joints)" }
+  - { term: วิธีตัดหน้าตัด, definition: "ตัดโครงผ่านไม่เกินสามชิ้นส่วนที่ไม่รู้ แล้วใช้สมดุลของชิ้นด้านหนึ่ง (method of sections)" }
+  - { term: ชิ้นส่วนแรงเป็นศูนย์, definition: "ชิ้นส่วนที่ไม่รับแรงภายใต้รูปแบบแรงนั้น หาได้จากการดูข้อต่อ (zero-force member)" }
+  - { term: โครงสร้างและเครื่องจักร, definition: "ระบบที่มีชิ้นส่วนรับแรงหลายจุด ต้องแยกวิเคราะห์ทีละชิ้น เครื่องจักรมีชิ้นส่วนเคลื่อนที่เพื่อเปลี่ยนแรง (frames and machines)" }
+  - { term: การเคลื่อนที่ที่กำลังจะเกิด, definition: "สภาวะที่แรงเสียดทานสถิตถึงค่าสูงสุด μsN พอดี (impending motion)" }
+  - { term: ลิ่ม, definition: "ชิ้นรูปสามเหลี่ยมมุมแหลมเล็กที่ใช้ยกหรือดันของหนักด้วยแรงน้อย (wedge)" }
+flashcards:
+  - { front: "เงื่อนไขดีเทอร์มิเนตของโครงข้อหมุนในระนาบ", back: "$m + r = 2j$ (ชิ้นส่วน + แรงปฏิกิริยา = 2 × ข้อต่อ) และจัดวางให้มั่นคง" }
+  - { front: "วิธีตัดหน้าตัดตัดได้กี่ชิ้นส่วนที่ไม่รู้", back: "ไม่เกินสามชิ้น หาโมเมนต์รอบจุดที่อีกสองชิ้นตัดกัน" }
+  - { front: "แรงเสียดทานสถิตมีค่าเท่าใด", back: "เท่าที่สมดุลต้องการ ไม่เกิน $\\mu_s N$ จะเท่ากับ $\\mu_s N$ เมื่อกำลังจะเคลื่อนที่เท่านั้น" }
+  - { front: "สูตรแรงตึงของสายบนผิวโค้ง", back: "$T_2 = T_1 e^{\\mu_s\\beta}$ ($\\beta$ เป็นเรเดียน $T_2$ ด้านตึง)" }
+  - { front: "ตู้กว้าง b ถูกผลักที่สูง h จะไถลก่อนล้มเมื่อใด", back: "$h < b/(2\\mu_s)$" }
+references:
+  - { title: "Truss", url: "https://en.wikipedia.org/wiki/Truss", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Capstan equation", url: "https://en.wikipedia.org/wiki/Capstan_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.2 Friction (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/6-2-friction", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "2.001 Mechanics and Materials I (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

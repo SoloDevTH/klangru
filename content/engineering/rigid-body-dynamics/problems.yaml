@@ -1,0 +1,295 @@
+problems:
+  - id: engineering.mechanics.rigid-body-dynamics.p001
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 1
+    type: mcq
+    stem: "ล้อที่กลิ้งโดยไม่ไถลบนถนนด้วยความเร็วของเพลา $v$ จุดของล้อที่สัมผัสถนนมีความเร็วเท่าใด"
+    choices:
+      - { id: a, text: "$0$", correct: true }
+      - { id: b, text: "$v$", feedback: "นั่นคือความเร็วของเพลา (จุดศูนย์กลาง) จุดสัมผัสไม่เลื่อนบนถนน" }
+      - { id: c, text: "$2v$", feedback: "นั่นคือความเร็วของจุดบนสุดของล้อ" }
+      - { id: d, text: "$v$ ในทิศถอยหลัง", feedback: "ความเร็วเนื่องจากการหมุน ($\\omega r$ ถอยหลัง) หักล้างกับความเร็วของเพลาพอดี" }
+    hints:
+      - "ความเร็วของจุดสัมผัส $= v_G + \\omega \\times r$"
+      - "ไม่ไถลแปลว่าจุดสัมผัสไม่เลื่อนเทียบพื้น"
+    solution: "จุดสัมผัสมีความเร็ว $v - \\omega r = 0$ เพราะ $v = \\omega r$ จุดนี้จึงเป็นจุดหมุนชั่วขณะ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p002
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณกับสูตรสำหรับวัตถุแข็งเกร็งในระนาบ"
+    pairs:
+      - { left: "พลังงานจลน์", right: "½mv_G² + ½I_Gω²" }
+      - { left: "โมเมนตัมเชิงมุมรอบ G", right: "I_G ω" }
+      - { left: "แรงจากมวลเยื้องศูนย์ที่หมุน", right: "m e ω²" }
+      - { left: "ความเร่งของ G เมื่อกลิ้งโดยไม่ไถล", right: "α r" }
+    hints:
+      - "พลังงานจลน์มีทั้งส่วนเลื่อนและส่วนหมุน"
+      - "แรงสู่ศูนย์กลางแปรตาม $\\omega^2$"
+    solution: "$T = \\tfrac12mv_G^2 + \\tfrac12I_G\\omega^2$, $H_G = I_G\\omega$, แรงไม่สมดุล $me\\omega^2$, กลิ้ง $a_G = \\alpha r$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p003
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "รถจักรยานยนต์วิ่ง $72\\ \\mathrm{km/h}$ ล้อมีรัศมี $0.3\\ \\mathrm{m}$ และกลิ้งโดยไม่ไถล ล้อหมุนด้วยความเร็วเชิงมุมกี่เรเดียนต่อวินาที (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 66.7, tolerance: 0.5, unit: "rad/s" }
+    misconceptions:
+      - { match: 240, feedback: "ใช้ $72\\ \\mathrm{km/h}$ โดยไม่แปลงเป็น $20\\ \\mathrm{m/s}$" }
+      - { match: 10.6, feedback: "นี่คือรอบต่อวินาที ($\\omega/2\\pi$) โจทย์ถามเรเดียนต่อวินาที" }
+    hints:
+      - "$72\\ \\mathrm{km/h} = 20\\ \\mathrm{m/s}$"
+      - "$\\omega = v/r$"
+    solution: "$\\omega = 20/0.3 = 66.7\\ \\mathrm{rad/s}$ (ราว 637 รอบต่อนาที)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p004
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "แท่งสม่ำเสมอมวล $3\\ \\mathrm{kg}$ ยาว $1.5\\ \\mathrm{m}$ หมุนรอบแกนที่ปลายข้างหนึ่ง โมเมนต์ความเฉื่อยรอบแกนนั้นเป็นกี่ $\\mathrm{kg\\cdot m^2}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.25, tolerance: 0.02, unit: "kg·m²" }
+    misconceptions:
+      - { match: 0.56, feedback: "นี่คือ $I_G = mL^2/12$ รอบจุดกึ่งกลาง ต้องย้ายแกนด้วย $md^2$" }
+      - { match: 7.31, feedback: "ใช้ $d = L$ ในทฤษฎีบทแกนขนาน ระยะจาก G ถึงปลายคือ $L/2$" }
+    hints:
+      - "$I_G = mL^2/12$"
+      - "$I_O = I_G + m(L/2)^2$"
+    solution: "$I_O = \\dfrac{3(1.5)^2}{12} + 3(0.75)^2 = 0.5625 + 1.6875 = 2.25\\ \\mathrm{kg\\cdot m^2} = mL^2/3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p005
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "รถจักรยานยนต์ในข้อก่อน ($20\\ \\mathrm{m/s}$ ล้อรัศมี $0.3\\ \\mathrm{m}$) จุดบนขอบล้อด้านหน้าที่อยู่ระดับเดียวกับเพลามีอัตราเร็วกี่เมตรต่อวินาที (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 28.3, tolerance: 0.3, unit: "m/s" }
+    misconceptions:
+      - { match: 40, feedback: "นี่คือจุดบนสุดของล้อ ($2v$) จุดที่ระดับเพลาห่าง IC เพียง $r\\sqrt2$" }
+      - { match: 20, feedback: "ความเร็วของจุดนี้มีทั้งส่วนของเพลาไปข้างหน้าและส่วนของการหมุนชี้ลง" }
+    hints:
+      - "จุดสัมผัสพื้นคือ IC ระยะจาก IC ถึงจุดนี้คือ $r\\sqrt2$"
+      - "หรือรวมเวกเตอร์ $v$ ไปข้างหน้ากับ $\\omega r$ ชี้ลง"
+    solution: "$v_P = \\omega(r\\sqrt2) = 66.7 \\times 0.424 = 28.3\\ \\mathrm{m/s}$ ตรวจ: $\\sqrt{20^2 + 20^2} = 28.3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p006
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "กลไกข้อเหวี่ยงลูกสูบของเครื่องยนต์รถจักรยานยนต์ในภาพ (ค่าสมมติ) ข้อเหวี่ยง OA ยาว $30\\ \\mathrm{mm}$ ก้านสูบ AB ยาว $100\\ \\mathrm{mm}$ ข้อเหวี่ยงหมุน $6000\\ \\mathrm{rpm}$ ขณะทำมุม $30^\\circ$ กับแนวการเคลื่อนที่ของลูกสูบ ลูกสูบมีอัตราเร็วกี่เมตรต่อวินาที (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-slider-crank.svg, alt: "ข้อเหวี่ยง OA ยาว 30 มิลลิเมตรหมุนรอบ O ทวนเข็มนาฬิกา ทำมุม 30 องศากับแนวราบ ก้านสูบ AB ยาว 100 มิลลิเมตรต่อจาก A ไปยังลูกสูบ B ซึ่งเลื่อนในกระบอกสูบแนวราบที่อยู่ระดับเดียวกับ O ความเร็วรอบ 6000 rpm" }
+    answer: { value: 11.9, tolerance: 0.12, unit: "m/s" }
+    misconceptions:
+      - { match: 9.42, feedback: "ใช้ $r\\omega\\sin\\theta$ ซึ่งถูกเมื่อก้านสูบยาวไม่จำกัด ก้านสูบที่เอียงทำให้ลูกสูบเร็วกว่านั้น" }
+      - { match: 18.85, feedback: "นี่คืออัตราเร็วของสลัก A ($r\\omega$) ไม่ใช่ของลูกสูบ" }
+    hints:
+      - "$\\omega = 6000 \\times 2\\pi/60 = 628.3\\ \\mathrm{rad/s}$, $v_A = r\\omega = 18.85\\ \\mathrm{m/s}$ ตั้งฉากกับ OA"
+      - "IC ของก้านสูบอยู่ที่จุดตัดของเส้น OA ที่ต่อออกไปกับเส้นดิ่งผ่าน B"
+    solution: "ตำแหน่งลูกสูบ $x = r\\cos\\theta + \\sqrt{l^2 - r^2\\sin^2\\theta}$ อนุพันธ์ที่ $30^\\circ$ คูณ $\\omega$ ได้ $|v_B| = 11.90\\ \\mathrm{m/s}$ ตรวจด้วย IC: IC อยู่ห่าง A $0.1142\\ \\mathrm{m}$ ได้ $\\omega_{AB} = 18.85/0.1142 = 165.1\\ \\mathrm{rad/s}$ และ IC ห่าง B $0.0721\\ \\mathrm{m}$ ได้ $v_B = 11.90\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p007
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ล้อรถจักรยานยนต์รัศมี $0.3\\ \\mathrm{m}$ กลิ้งด้วยความเร็วคงที่ $20\\ \\mathrm{m/s}$ จุดของยางที่สัมผัสถนนมีความเร่งขนาดกี่ $\\mathrm{m/s^2}$ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1333, tolerance: 10, unit: "m/s²" }
+    misconceptions:
+      - { match: 0, feedback: "จุดสัมผัสมีความเร็วศูนย์ แต่ความเร่งไม่เป็นศูนย์ มันกำลังเปลี่ยนทิศเพื่อยกตัวขึ้นจากถนน" }
+      - { match: 66.7, feedback: "นี่คือ $\\omega$ ความเร่งสู่ศูนย์กลางคือ $r\\omega^2$" }
+    hints:
+      - "เพลาไม่มีความเร่ง ($v$ คงที่) และ $\\alpha = 0$"
+      - "เหลือเพียงความเร่งสู่ศูนย์กลาง $r\\omega^2$"
+    solution: "$a = r\\omega^2 = v^2/r = 400/0.3 = 1333\\ \\mathrm{m/s^2}$ ชี้ขึ้นหาเพลา (ราว 136 เท่าของ $g$ จึงสลัดน้ำและเศษหินออกจากดอกยาง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p008
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "แท่งสม่ำเสมอยาว $1.2\\ \\mathrm{m}$ หมุนได้รอบหมุดที่ปลายข้างหนึ่ง ปล่อยจากหยุดนิ่งในแนวราบ ความเร่งเชิงมุมทันทีหลังปล่อยเป็นกี่ $\\mathrm{rad/s^2}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 12.26, tolerance: 0.12, unit: "rad/s²" }
+    misconceptions:
+      - { match: 8.18, feedback: "ใช้ $g/L$ เหมือนลูกตุ้มที่มวลอยู่ปลาย แท่งสม่ำเสมอมี $I_O = mL^2/3$ และน้ำหนักกระทำที่ $L/2$" }
+      - { match: 24.53, feedback: "ใช้ $I_G = mL^2/12$ แทน $I_O$ ในสมการโมเมนต์รอบหมุด" }
+    hints:
+      - "$\\sum M_O = I_O\\alpha$"
+      - "$mg(L/2) = (mL^2/3)\\alpha$"
+    solution: "$\\alpha = \\dfrac{3g}{2L} = \\dfrac{3(9.81)}{2.4} = 12.26\\ \\mathrm{rad/s^2}$ ไม่ขึ้นกับมวล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p009
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "แท่งในข้อก่อนมีมวล $6\\ \\mathrm{kg}$ แรงที่หมุดกระทำต่อแท่งทันทีหลังปล่อยมีขนาดกี่นิวตัน (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 14.7, tolerance: 0.15, unit: N }
+    misconceptions:
+      - { match: 29.4, feedback: "นี่คือแรงขณะยังมีที่ค้ำปลายอีกข้าง ($mg/2$) เมื่อปล่อยแล้ว G เร่งลง แรงที่หมุดจึงลดลง" }
+      - { match: 58.9, feedback: "คิดว่าหมุดรับน้ำหนักทั้งหมด แต่แท่งกำลังเร่งลง" }
+    hints:
+      - "$a_G = \\alpha L/2 = 3g/4$ ลง และ $\\omega = 0$"
+      - "$\\sum F_y = ma_G$"
+    solution: "$O_y - mg = -m\\dfrac{3g}{4}$ ได้ $O_y = \\dfrac{mg}{4} = \\dfrac{6(9.81)}{4} = 14.7\\ \\mathrm{N}$ และ $O_x = 0$ ตรวจด้วย $\\sum M_G = I_G\\alpha$: $O_y(0.6) = 0.72 \\times 12.26$ ได้ $14.7\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p010
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ทรงกระบอกตันกลิ้งลงพื้นเอียง $20^\\circ$ ที่มี $\\mu_s = 0.15$ จากหยุดนิ่ง ตรวจก่อนว่ากลิ้งโดยไม่ไถลหรือไม่ แล้วหาความเร่งของจุดศูนย์กลางเป็น $\\mathrm{m/s^2}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.24, tolerance: 0.03, unit: "m/s²" }
+    misconceptions:
+      - { match: 3.36, feedback: "ใช้ $g\\sin\\theta$ เหมือนวัตถุไถลไม่มีแรงเสียดทาน แรงเสียดทานต้องทำให้ทรงกระบอกหมุนด้วย" }
+      - { match: 2.4, feedback: "ใช้ $\\tfrac57$ ซึ่งเป็นของทรงกลมตัน ทรงกระบอกตันมี $I_G = \\tfrac12mr^2$" }
+    hints:
+      - "รอบจุดสัมผัส: $mgr\\sin\\theta = \\tfrac32mr^2\\alpha$"
+      - "แรงเสียดทานที่ต้องการ $f = \\tfrac13mg\\sin\\theta$ เทียบกับ $\\mu_smg\\cos\\theta$"
+    solution: "$a_G = \\tfrac23g\\sin 20^\\circ = 2.24\\ \\mathrm{m/s^2}$ ต้องการ $\\mu \\ge \\tfrac13\\tan 20^\\circ = 0.121 < 0.15$ จึงกลิ้งโดยไม่ไถลจริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p011
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "โรเตอร์ของเครื่องสีข้าวในชุมชน (ค่าสมมติ) มีมวลไม่สมดุลเทียบเท่า $50\\ \\mathrm{g}$ ที่รัศมี $0.25\\ \\mathrm{m}$ หมุน $1200\\ \\mathrm{rpm}$ แบริ่งต้องรับแรงหมุนขนาดกี่นิวตัน (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 197.4, tolerance: 2, unit: N }
+    misconceptions:
+      - { match: 18000, feedback: "ใช้รอบต่อนาทีเป็น $\\omega$ โดยตรง ต้องแปลงเป็น $125.7\\ \\mathrm{rad/s}$" }
+      - { match: 1.57, feedback: "ไม่ได้ยกกำลังสองของ $\\omega$ แรงสู่ศูนย์กลางคือ $me\\omega^2$" }
+    hints:
+      - "$\\omega = 1200 \\times 2\\pi/60$"
+      - "$F = me\\omega^2$"
+    solution: "$\\omega = 125.7\\ \\mathrm{rad/s}$ ได้ $F = 0.05(0.25)(125.7)^2 = 197.4\\ \\mathrm{N}$ มวลเพียง $50\\ \\mathrm{g}$ ทำให้เกิดแรงเท่ากับน้ำหนักของมวล $20\\ \\mathrm{kg}$ ที่หมุนเปลี่ยนทิศ 20 ครั้งต่อวินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p012
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ล้อตุนกำลัง $I = 2\\ \\mathrm{kg\\cdot m^2}$ หมุน $600\\ \\mathrm{rpm}$ ถูกเบรกด้วยแรงบิดคงที่ $15\\ \\mathrm{N\\cdot m}$ ใช้เวลากี่วินาทีจึงหยุด (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.38, tolerance: 0.08, unit: s }
+    misconceptions:
+      - { match: 80, feedback: "ใช้รอบต่อนาทีเป็น $\\omega$ ต้องแปลงเป็นเรเดียนต่อวินาที" }
+      - { match: 0.84, feedback: "หารด้วยค่าที่ผิด ($\\omega/I$ หรือลืมคูณ $I$) การดลเชิงมุม $Mt = I\\omega$" }
+    hints:
+      - "การดลเชิงมุม: $Mt = \\Delta H = I\\omega$"
+      - "$\\omega = 600 \\times 2\\pi/60 = 62.83\\ \\mathrm{rad/s}$"
+    solution: "$H = 2(62.83) = 125.7\\ \\mathrm{kg\\cdot m^2/s}$ ได้ $t = 125.7/15 = 8.38\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p013
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ไม้ตีกลองยาวสม่ำเสมอยาว $0.9\\ \\mathrm{m}$ ถือไว้หลวม ๆ ที่ปลายด้ามซึ่งทำหน้าที่เหมือนหมุด ควรตีกลองที่ระยะกี่เมตรจากปลายด้ามจึงไม่มีแรงกระแทกส่งกลับมาที่มือ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.6, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 0.45, feedback: "นี่คือจุดศูนย์กลางมวล ถ้าตีที่ G แท่งจะเลื่อนไปทั้งแท่ง ปลายด้ามจึงถูกกระชาก" }
+      - { match: 0.9, feedback: "ตีที่ปลายสุดทำให้แท่งหมุนมากเกินไป ปลายด้ามจะถูกดันถอยหลัง" }
+    hints:
+      - "จุดศูนย์กลางการกระแทก $q = I_O/(mr_G)$"
+      - "$I_O = mL^2/3$, $r_G = L/2$"
+    solution: "$q = \\dfrac{mL^2/3}{m(L/2)} = \\dfrac{2L}{3} = 0.6\\ \\mathrm{m}$ (ตรวจ: การดล $F\\Delta t$ ที่ $q$ ให้ $\\Delta v_G = F\\Delta t/m$ และ $\\Delta\\omega = F\\Delta t(q - L/2)/I_G$ ทำให้ความเร็วของปลายด้าม $\\Delta v_G - \\Delta\\omega L/2 = 0$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p014
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "ม้วนสายไฟในภาพมวล $10\\ \\mathrm{kg}$ รัศมีนอก $R = 0.3\\ \\mathrm{m}$ แกนในรัศมี $r = 0.15\\ \\mathrm{m}$ รัศมีไจเรชัน $0.2\\ \\mathrm{m}$ ช่างดึงสายที่ออกจากใต้แกนในในแนวราบด้วยแรง $40\\ \\mathrm{N}$ ม้วนกลิ้งโดยไม่ไถล จงหาความเร่งของ G เป็น $\\mathrm{m/s^2}$ (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-spool.svg, alt: "ม้วนสายไฟวางบนพื้น รัศมีนอก 0.3 เมตร แกนในรัศมี 0.15 เมตร สายไฟออกจากด้านล่างของแกนใน ถูกดึงในแนวราบไปทางขวาด้วยแรง P มวล 10 กิโลกรัม รัศมีไจเรชัน 0.2 เมตร" }
+    answer: { value: 1.38, tolerance: 0.02, unit: "m/s²" }
+    misconceptions:
+      - { match: 4, feedback: "ใช้ $P/m$ ไม่คิดแรงเสียดทานที่พื้น ซึ่งในกรณีนี้ชี้ถอยหลังและมีขนาดถึง $26\\ \\mathrm{N}$" }
+      - { match: 4.15, feedback: "ใช้แขน $R + r$ ซึ่งเป็นกรณีสายออกจากด้านบนของแกนใน สายที่ออกจากใต้แกนในอยู่สูงจากพื้น $R - r$" }
+    hints:
+      - "รอบจุดสัมผัส C: $\\sum M_C = I_C\\alpha$ เมื่อ $I_C = m(k^2 + R^2)$"
+      - "แนวแรงสายอยู่สูงจากพื้น $R - r = 0.15\\ \\mathrm{m}$ และ $a_G = \\alpha R$"
+    solution: "$I_C = 10(0.04 + 0.09) = 1.3\\ \\mathrm{kg\\cdot m^2}$ ได้ $\\alpha = \\dfrac{40(0.15)}{1.3} = 4.615\\ \\mathrm{rad/s^2}$ และ $a_G = 4.615(0.3) = 1.38\\ \\mathrm{m/s^2}$ ไปทางที่ดึง ตรวจด้วยสมการรอบ G: $40 + f = 10a$ และ $0.15(40) + 0.3f = -0.4a/0.3$ แก้ได้ $a = 1.38$ และ $f = -26.2\\ \\mathrm{N}$ (ชี้ถอยหลัง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p015
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 3
+    type: expression
+    stem: "จานกลมตันมวล $m$ กลิ้งโดยไม่ไถลด้วยความเร็วจุดศูนย์กลาง $v$ จงเขียนพลังงานจลน์รวม"
+    prefix: "T ="
+    answer: { latex: "\\frac{3}{4}mv^2", variables: [m, v] }
+    misconceptions:
+      - { match: "\\frac{1}{2}mv^2", feedback: "คิดเฉพาะการเลื่อน ลืมพลังงานการหมุน $\\tfrac12I_G\\omega^2$" }
+      - { match: "mv^2", feedback: "ใช้ $I_G = mr^2$ ของวงแหวน จานตันมี $I_G = \\tfrac12mr^2$" }
+    hints:
+      - "$T = \\tfrac12mv^2 + \\tfrac12I_G\\omega^2$"
+      - "$I_G = \\tfrac12mr^2$ และ $\\omega = v/r$"
+    solution: "$T = \\tfrac12mv^2 + \\tfrac12\\left(\\tfrac12mr^2\\right)\\dfrac{v^2}{r^2} = \\tfrac12mv^2 + \\tfrac14mv^2 = \\tfrac34mv^2$ หรือใช้ $\\tfrac12I_C\\omega^2$ รอบจุดสัมผัส $I_C = \\tfrac32mr^2$ ได้ผลเดียวกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p016
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ในการเคลื่อนที่ในระนาบ สมการ $\\sum M_P = I_P\\alpha$ ใช้ได้โดยตรงเมื่อ P เป็นจุดใด เลือกทุกข้อที่ถูก"
+    choices:
+      - { id: a, text: "จุดศูนย์กลางมวล G", correct: true }
+      - { id: b, text: "แกนหมุนคงที่ของวัตถุที่หมุนรอบแกนนั้น", correct: true }
+      - { id: c, text: "จุดสัมผัสของล้อกลมที่กลิ้งโดยไม่ไถลบนพื้นเรียบ", correct: true }
+      - { id: d, text: "จุดใดก็ได้บนวัตถุ", feedback: "รอบจุดทั่วไปต้องบวกโมเมนต์ของ $m\\vec a_G$ ด้วย" }
+    hints:
+      - "สมการทั่วไป $\\sum M_P = I_G\\alpha + \\vec r_{G/P} \\times m\\vec a_G$"
+      - "พจน์หลังรวมกับ $I_G\\alpha$ เป็น $I_P\\alpha$ ได้เมื่อใด"
+    solution: "ที่ G พจน์หลังเป็นศูนย์ ที่แกนคงที่ $a_G$ มีส่วนสู่ศูนย์กลางที่ผ่าน P (ไม่มีโมเมนต์) และส่วนสัมผัส $\\alpha d$ ซึ่งให้ $md^2\\alpha$ รวมกับ $I_G\\alpha$ เป็น $I_P\\alpha$ ล้อกลมที่กลิ้งบนพื้นเรียบมี $a_G = \\alpha R$ ขนานพื้นและตั้งฉากกับ GP จึงได้ผลเดียวกัน ส่วนจุดทั่วไปใช้ไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p017
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "แท่งสม่ำเสมอมวล $6\\ \\mathrm{kg}$ ยาว $1.2\\ \\mathrm{m}$ หมุนรอบหมุดที่ปลาย ปล่อยจากแนวราบ เมื่อแกว่งลงถึงแนวดิ่ง แรงที่หมุดกระทำต่อแท่งมีขนาดกี่นิวตัน (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 147.2, tolerance: 1.5, unit: N }
+    misconceptions:
+      - { match: 58.9, feedback: "ใช้แรงเท่าน้ำหนักเหมือนแท่งนิ่ง ที่จุดต่ำสุด G มีความเร่งสู่ศูนย์กลางชี้ขึ้น" }
+      - { match: 88.3, feedback: "ได้เฉพาะส่วน $m\\omega^2L/2$ ลืมบวกน้ำหนัก $mg$" }
+    hints:
+      - "พลังงาน: $mg\\dfrac{L}{2} = \\tfrac12\\left(\\tfrac13mL^2\\right)\\omega^2$ ได้ $\\omega^2 = 3g/L$"
+      - "ที่แนวดิ่ง $\\alpha = 0$ (น้ำหนักผ่านหมุด) และ $O - mg = m\\omega^2(L/2)$"
+    solution: "$\\omega^2 = 3g/L = 24.5\\ \\mathrm{rad^2/s^2}$ ได้ $O = mg + m\\dfrac{3g}{L}\\dfrac{L}{2} = \\tfrac52mg = 147.2\\ \\mathrm{N}$ (ตรวจด้วยการอินทิเกรตสมการ $\\ddot\\theta = \\tfrac{3g}{2L}\\cos\\theta$ เชิงตัวเลขได้ $\\omega$ เดียวกัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-dynamics.p018
+    topics: [engineering.mechanics.rigid-body-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ประตูรั้วเหล็กบานหมุนจำลองเป็นแท่งสม่ำเสมอมวล $6\\ \\mathrm{kg}$ ยาว $1.2\\ \\mathrm{m}$ หมุนรอบบานพับที่ปลายด้วย $2\\ \\mathrm{rad/s}$ โมเมนตัมเชิงมุมรอบบานพับเป็นกี่ $\\mathrm{kg\\cdot m^2/s}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.76, tolerance: 0.05, unit: "kg·m²/s" }
+    misconceptions:
+      - { match: 1.44, feedback: "ใช้ $I_G\\omega$ ซึ่งเป็นโมเมนตัมเชิงมุมรอบ G ต้องบวกโมเมนต์ของโมเมนตัมเชิงเส้น $r_Gmv_G$" }
+      - { match: 4.32, feedback: "คิดเฉพาะ $r_Gmv_G$ ลืมส่วนการหมุนรอบตัวเอง $I_G\\omega$" }
+    hints:
+      - "$H_O = I_G\\omega + r_G(mv_G)$ เมื่อ $v_G = \\omega L/2$"
+      - "หรือ $H_O = I_O\\omega$ เพราะ O เป็นแกนคงที่"
+    solution: "$I_O\\omega = \\tfrac13(6)(1.44)(2) = 5.76$ ตรวจ: $I_G\\omega + r_Gmv_G = 0.72(2) + 0.6(6)(1.2) = 1.44 + 4.32 = 5.76\\ \\mathrm{kg\\cdot m^2/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

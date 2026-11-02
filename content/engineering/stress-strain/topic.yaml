@@ -1,0 +1,70 @@
+id: engineering.materials.stress-strain
+subject: engineering
+title: { th: ความเค้น ความเครียด แรงตามแนวแกน และการบิด, en: Stress, strain, axial loading and torsion }
+summary: ความเค้นตั้งฉากและเฉือน ความเครียด กฎของฮุก อัตราส่วนปัวซอง การยืดหดของชิ้นส่วนรับแรงตามแนวแกน ระบบอินดีเทอร์มิเนต ความเค้นจากอุณหภูมิ และการบิดของเพลา
+difficulty: 7.5
+minutes: 50
+prerequisites: [engineering.mechanics.rigid-body-equilibrium, engineering.materials.materials-science, engineering.mechanics.centroids-inertia]
+encompasses:
+  - { id: engineering.mechanics.rigid-body-equilibrium, weight: 0.3 }
+  - { id: engineering.materials.materials-science, weight: 0.2 }
+  - { id: engineering.mechanics.centroids-inertia, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: การยืดของแท่งเหล็กสองขั้น
+    problem: "แท่งเหล็ก ($E = 200\\ \\mathrm{GPa}$) ยึดกับผนังที่ A ช่วง AB เส้นผ่านศูนย์กลาง $20\\ \\mathrm{mm}$ ยาว $500\\ \\mathrm{mm}$ ช่วง BC เส้นผ่านศูนย์กลาง $12\\ \\mathrm{mm}$ ยาว $400\\ \\mathrm{mm}$ มีแรงดึง $25\\ \\mathrm{kN}$ ที่ B และ $15\\ \\mathrm{kN}$ ที่ C (ทั้งสองชี้ออกจากผนัง) จงหาความเค้นในแต่ละช่วงและการยืดรวม"
+    steps:
+      - text: "แรงภายใน: ตัดในช่วง BC ชิ้นขวามีแค่ $15\\ \\mathrm{kN}$ ได้ $N_{BC} = 15\\ \\mathrm{kN}$ ตัดในช่วง AB ได้ $N_{AB} = 25 + 15 = 40\\ \\mathrm{kN}$"
+        why: "แต่ละช่วงรับแรงภายในไม่เท่ากัน ต้องใช้แรงภายในของช่วงนั้น ไม่ใช่แรงภายนอกตัวใดตัวหนึ่ง"
+      - text: "$A_{AB} = \\pi(20)^2/4 = 314.2\\ \\mathrm{mm^2}$, $A_{BC} = 113.1\\ \\mathrm{mm^2}$ ได้ $\\sigma_{AB} = 127.3\\ \\mathrm{MPa}$ และ $\\sigma_{BC} = 132.6\\ \\mathrm{MPa}$"
+      - text: "$\\delta_{AB} = \\dfrac{40000 \\times 500}{314.2 \\times 200000} = 0.318\\ \\mathrm{mm}$"
+        why: "ใช้ $\\mathrm{N}$, $\\mathrm{mm}$ และ $E$ เป็น $\\mathrm{N/mm^2}$ ($200\\ \\mathrm{GPa} = 200000\\ \\mathrm{MPa}$) หน่วยจึงเข้ากันโดยไม่ต้องแปลง"
+      - text: "$\\delta_{BC} = \\dfrac{15000 \\times 400}{113.1 \\times 200000} = 0.265\\ \\mathrm{mm}$"
+      - text: "$\\delta = 0.318 + 0.265 = 0.584\\ \\mathrm{mm}$ ตรวจ: ความเครียด $\\sigma/E$ ของสองช่วงคูณความยาวได้ค่าเดียวกัน"
+    answer: "$\\sigma_{AB} = 127.3\\ \\mathrm{MPa}$, $\\sigma_{BC} = 132.6\\ \\mathrm{MPa}$, $\\delta = 0.584\\ \\mathrm{mm}$"
+  - type: figure
+    title: วิธีออฟเซต 0.2% หาความเค้นคราก
+    src: offset-yield.svg
+    alt: "กราฟความเค้นกับความเครียดของวัสดุที่ไม่มีจุดครากชัด เช่น อะลูมิเนียมอัลลอย ช่วงแรกเป็นเส้นตรงความชัน E แล้วโค้งลาดลงเรื่อย ๆ เส้นประสีแดงขนานกับช่วงเส้นตรงเริ่มจากความเครียด 0.002 ตัดเส้นโค้งที่ความเค้น 280 MPa ซึ่งเป็นความเค้นคราก"
+  - { type: check, problem: engineering.materials.stress-strain.p004, prompt: "ใช้ N และ mm แล้ว E เป็น N/mm²" }
+  - type: figure
+    title: ความเค้นเฉือนในเพลาที่ถูกบิด
+    src: torsion-stress.svg
+    alt: "ซ้าย: หน้าตัดวงกลมของเพลา ลูกศรความเค้นเฉือนตั้งฉากกับรัศมีและวนรอบแกน ลูกศรที่ขอบยาวกว่าลูกศรที่ครึ่งรัศมี ขวา: กราฟความเค้นเฉือนตามแนวเส้นผ่านศูนย์กลาง เป็นศูนย์ที่แกนและเพิ่มเป็นเส้นตรงจนสูงสุดที่ผิว tau max = Tc/J"
+  - type: worked-example
+    title: เพลาปั๊มน้ำ
+    problem: "มอเตอร์ $15\\ \\mathrm{kW}$ หมุน $1450\\ \\mathrm{rpm}$ ขับปั๊มผ่านเพลาเหล็กตันเส้นผ่านศูนย์กลาง $30\\ \\mathrm{mm}$ ยาว $0.6\\ \\mathrm{m}$ ($G = 80\\ \\mathrm{GPa}$) จงหาความเค้นเฉือนสูงสุดและมุมบิด"
+    steps:
+      - text: "$\\omega = 1450 \\times 2\\pi/60 = 151.8\\ \\mathrm{rad/s}$ ได้ $T = P/\\omega = 15000/151.8 = 98.8\\ \\mathrm{N\\cdot m}$"
+        why: "$P = T\\omega$ ใช้ $\\omega$ เป็นเรเดียนต่อวินาทีเท่านั้น"
+      - text: "$J = \\pi(30)^4/32 = 79\\,522\\ \\mathrm{mm^4}$"
+      - text: "$\\tau_{\\max} = \\dfrac{Tc}{J} = \\dfrac{98\\,800 \\times 15}{79\\,522} = 18.6\\ \\mathrm{MPa}$ ตรวจด้วย $16T/(\\pi d^3)$ ได้ค่าเดียวกัน"
+      - text: "$\\phi = \\dfrac{TL}{GJ} = \\dfrac{98\\,800 \\times 600}{80\\,000 \\times 79\\,522} = 0.00932\\ \\mathrm{rad} = 0.53^\\circ$"
+    answer: "$\\tau_{\\max} = 18.6\\ \\mathrm{MPa}$, $\\phi = 0.53^\\circ$"
+  - { type: check, problem: engineering.materials.stress-strain.p010, prompt: "τmax = 16T/(πd³) สำหรับเพลาตัน" }
+glossary:
+  - { term: ความเค้น, definition: "แรงภายในต่อหน่วยพื้นที่ แบ่งเป็นความเค้นตั้งฉากและความเค้นเฉือน หน่วย Pa หรือ MPa (stress)" }
+  - { term: ความเครียด, definition: "การเสียรูปต่อความยาวเดิม ไม่มีหน่วย (strain)" }
+  - { term: มอดุลัสของยัง, definition: "อัตราส่วนความเค้นต่อความเครียดตามแนวแกนในช่วงยืดหยุ่น (Young's modulus, E)" }
+  - { term: อัตราส่วนปัวซอง, definition: "ลบของอัตราส่วนความเครียดด้านข้างต่อความเครียดตามแกน (Poisson's ratio, ν)" }
+  - { term: มอดุลัสเฉือน, definition: "อัตราส่วนความเค้นเฉือนต่อความเครียดเฉือน G = E/(2(1+ν)) (shear modulus)" }
+  - { term: เงื่อนไขความเข้ากันได้, definition: "สมการที่บอกว่าการเสียรูปของชิ้นส่วนต้องสอดคล้องกับฐานรองรับและกันและกัน ใช้แก้ระบบอินดีเทอร์มิเนต (compatibility)" }
+  - { term: ตัวประกอบความปลอดภัย, definition: "อัตราส่วนความแข็งแรงของวัสดุต่อความเค้นที่ยอมให้ใช้ (factor of safety)" }
+  - { term: มุมบิด, definition: "มุมที่ปลายเพลาหมุนเทียบกันเมื่อรับแรงบิด φ = TL/(GJ) (angle of twist)" }
+flashcards:
+  - { front: "การยืดของชิ้นส่วนรับแรงตามแนวแกน", back: "$\\delta = PL/(AE)$ หลายช่วงใช้ $\\sum N_iL_i/(A_iE_i)$" }
+  - { front: "ความเค้นจากอุณหภูมิเมื่อถูกยึดสองปลาย", back: "$\\sigma = -E\\alpha\\Delta T$ (อัดเมื่อร้อนขึ้น)" }
+  - { front: "สูตรการบิดของเพลาวงกลม", back: "$\\tau = T\\rho/J$, $\\phi = TL/(GJ)$, เพลาตัน $J = \\pi d^4/32$" }
+  - { front: "ความสัมพันธ์ระหว่าง E, G, ν", back: "$G = E/[2(1+\\nu)]$" }
+  - { front: "กำลังที่ส่งผ่านเพลา", back: "$P = T\\omega$ โดย $\\omega$ เป็น rad/s" }
+references:
+  - { title: "12.3 Stress, Strain, and Elastic Modulus (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Stress–strain curve", url: "https://en.wikipedia.org/wiki/Stress%E2%80%93strain_curve", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Torsion (mechanics)", url: "https://en.wikipedia.org/wiki/Torsion_(mechanics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.001 Mechanics and Materials I (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

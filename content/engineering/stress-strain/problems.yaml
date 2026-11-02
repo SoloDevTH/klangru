@@ -1,0 +1,291 @@
+problems:
+  - id: engineering.materials.stress-strain.p001
+    topics: [engineering.materials.stress-strain]
+    difficulty: 1
+    type: mcq
+    stem: "ความเค้น $1\\ \\mathrm{MPa}$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$1\\ \\mathrm{N/mm^2}$", correct: true }
+      - { id: b, text: "$1\\ \\mathrm{N/cm^2}$", feedback: "$1\\ \\mathrm{N/cm^2} = 10^4\\ \\mathrm{N/m^2} = 0.01\\ \\mathrm{MPa}$" }
+      - { id: c, text: "$1\\ \\mathrm{kN/m^2}$", feedback: "นั่นคือ $1\\ \\mathrm{kPa}$ น้อยกว่า $1\\ \\mathrm{MPa}$ พันเท่า" }
+      - { id: d, text: "$1000\\ \\mathrm{N/m^2}$", feedback: "นั่นคือ $1\\ \\mathrm{kPa}$ $1\\ \\mathrm{MPa} = 10^6\\ \\mathrm{N/m^2}$" }
+    hints:
+      - "$1\\ \\mathrm{MPa} = 10^6\\ \\mathrm{N/m^2}$"
+      - "$1\\ \\mathrm{m^2} = 10^6\\ \\mathrm{mm^2}$"
+    solution: "$1\\ \\mathrm{MPa} = \\dfrac{10^6\\ \\mathrm{N}}{1\\ \\mathrm{m^2}} = \\dfrac{10^6\\ \\mathrm{N}}{10^6\\ \\mathrm{mm^2}} = 1\\ \\mathrm{N/mm^2}$ จึงใช้ N กับ mm คำนวณแล้วได้ MPa ทันที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p002
+    topics: [engineering.materials.stress-strain]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณกับสูตร"
+    pairs:
+      - { left: "การยืดของแท่งรับแรงตามแนวแกน", right: "PL/(AE)" }
+      - { left: "ความเค้นเฉือนสูงสุดในเพลาที่ถูกบิด", right: "Tc/J" }
+      - { left: "ความเครียดจากอุณหภูมิ", right: "α ΔT" }
+      - { left: "มุมบิดของเพลา", right: "TL/(GJ)" }
+    hints:
+      - "สูตรการยืดใช้ $E$ ส่วนสูตรมุมบิดใช้ $G$"
+      - "ความเครียดจากอุณหภูมิไม่ขึ้นกับแรง"
+    solution: "$\\delta = PL/(AE)$, $\\tau_{\\max} = Tc/J$, $\\varepsilon_T = \\alpha\\Delta T$, $\\phi = TL/(GJ)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p003
+    topics: [engineering.materials.stress-strain]
+    difficulty: 2
+    type: numeric
+    stem: "เหล็กเส้นกลมเส้นผ่านศูนย์กลาง $16\\ \\mathrm{mm}$ รับแรงดึง $30\\ \\mathrm{kN}$ ความเค้นตั้งฉากเป็นกี่เมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 149.2, tolerance: 1.5, unit: MPa }
+    misconceptions:
+      - { match: 117.2, feedback: "ใช้พื้นที่ $d^2$ โดยลืม $\\pi/4$" }
+      - { match: 37.3, feedback: "ใช้ $16\\ \\mathrm{mm}$ เป็นรัศมี พื้นที่จึงใหญ่ไปสี่เท่า" }
+    hints:
+      - "$A = \\pi d^2/4$"
+      - "ใช้ N และ $\\mathrm{mm^2}$ ได้ MPa"
+    solution: "$A = \\pi(16)^2/4 = 201.1\\ \\mathrm{mm^2}$ ได้ $\\sigma = 30000/201.1 = 149.2\\ \\mathrm{MPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p004
+    topics: [engineering.materials.stress-strain]
+    difficulty: 2
+    type: numeric
+    stem: "สลิงเหล็กของลิฟต์ขนของในตึกแถว (ค่าสมมติ) ยาว $20\\ \\mathrm{m}$ พื้นที่หน้าตัดรวม $100\\ \\mathrm{mm^2}$ $E = 200\\ \\mathrm{GPa}$ รับแรงดึง $10\\ \\mathrm{kN}$ สลิงยืดออกกี่มิลลิเมตร"
+    answer: { value: 10, tolerance: 0.1, unit: mm }
+    misconceptions:
+      - { match: 0.01, feedback: "ได้หน่วยเป็นเมตร ($0.01\\ \\mathrm{m}$) แต่โจทย์ถามเป็นมิลลิเมตร" }
+      - { match: 10000, feedback: "ใช้ $E = 200$ โดยไม่แปลง $\\mathrm{GPa}$ เป็น $200000\\ \\mathrm{N/mm^2}$" }
+    hints:
+      - "$\\delta = PL/(AE)$"
+      - "$P = 10000\\ \\mathrm{N}$, $L = 20000\\ \\mathrm{mm}$, $E = 200000\\ \\mathrm{N/mm^2}$"
+    solution: "$\\delta = \\dfrac{10000 \\times 20000}{100 \\times 200000} = 10\\ \\mathrm{mm}$ (ความเค้น $100\\ \\mathrm{MPa}$ ความเครียด $0.0005$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p005
+    topics: [engineering.materials.stress-strain]
+    difficulty: 2
+    type: numeric
+    stem: "เหล็กมี $E = 200\\ \\mathrm{GPa}$ และ $\\nu = 0.3$ มอดุลัสเฉือน $G$ เป็นกี่จิกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 76.9, tolerance: 0.5, unit: GPa }
+    misconceptions:
+      - { match: 153.8, feedback: "ลืมคูณ 2 ในตัวส่วน $G = E/[2(1+\\nu)]$" }
+      - { match: 142.9, feedback: "ใช้ $1 - \\nu$ แทน $1 + \\nu$ และลืมคูณ 2" }
+    hints:
+      - "$G = \\dfrac{E}{2(1+\\nu)}$"
+      - "$2(1.3) = 2.6$"
+    solution: "$G = \\dfrac{200}{2(1 + 0.3)} = \\dfrac{200}{2.6} = 76.9\\ \\mathrm{GPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p006
+    topics: [engineering.materials.stress-strain]
+    difficulty: 3
+    type: numeric
+    stem: "ข้อต่อแบบก้ามปูใช้สลักเส้นผ่านศูนย์กลาง $16\\ \\mathrm{mm}$ ยึดแผ่นกลางที่ถูกดึง $24\\ \\mathrm{kN}$ ระหว่างแผ่นนอกสองแผ่น (สลักถูกเฉือนสองระนาบ) ความเค้นเฉือนเฉลี่ยในสลักเป็นกี่เมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 59.7, tolerance: 0.6, unit: MPa }
+    misconceptions:
+      - { match: 119.4, feedback: "คิดเป็นการเฉือนระนาบเดียว สลักในข้อต่อแบบก้ามปูรับแรงสองหน้าตัด" }
+      - { match: 29.8, feedback: "หารสี่ ระนาบเฉือนมีสองระนาบ แรงในแต่ละระนาบคือ $P/2$" }
+    hints:
+      - "แรงแบ่งให้สองระนาบเฉือน ระนาบละ $P/2$"
+      - "$\\tau = P/(2A)$"
+    solution: "$A = \\pi(16)^2/4 = 201.1\\ \\mathrm{mm^2}$ ได้ $\\tau = \\dfrac{24000}{2 \\times 201.1} = 59.7\\ \\mathrm{MPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p007
+    topics: [engineering.materials.stress-strain]
+    difficulty: 3
+    type: numeric
+    stem: "แท่งอะลูมิเนียม ($E = 70\\ \\mathrm{GPa}$) ในภาพยึดกับผนังที่ A ช่วง AB ($400\\ \\mathrm{mm^2}$ ยาว $300\\ \\mathrm{mm}$) ช่วง BC ($200\\ \\mathrm{mm^2}$ ยาว $200\\ \\mathrm{mm}$) มีแรงดึง $10\\ \\mathrm{kN}$ ที่ C และแรง $6\\ \\mathrm{kN}$ ที่ B ชี้เข้าหาผนัง จงหาการยืดรวมของแท่งเป็นมิลลิเมตร (ทศนิยม 3 ตำแหน่ง)"
+    figure: { src: p-stepped.svg, alt: "แท่งสองขั้นยึดกับผนังด้านซ้ายที่ A ช่วง AB ยาว 300 มิลลิเมตร พื้นที่ 400 ตารางมิลลิเมตร ช่วง BC ยาว 200 มิลลิเมตร พื้นที่ 200 ตารางมิลลิเมตร แรง 10 kN ดึงไปทางขวาที่ปลาย C และแรง 6 kN ที่ B ชี้ไปทางซ้ายเข้าหาผนัง" }
+    answer: { value: 0.186, tolerance: 0.003, unit: mm }
+    misconceptions:
+      - { match: 0.25, feedback: "ใช้แรง $10\\ \\mathrm{kN}$ ทั้งสองช่วง ช่วง AB มีแรงภายในเพียง $10 - 6 = 4\\ \\mathrm{kN}$" }
+      - { match: 0.314, feedback: "บวกแรงเป็น $16\\ \\mathrm{kN}$ ในช่วง AB แรงที่ B ชี้เข้าผนัง จึงหักออก" }
+    hints:
+      - "ตัดในช่วง BC: $N = 10\\ \\mathrm{kN}$ ตัดในช่วง AB: $N = 10 - 6$"
+      - "$\\delta = \\sum NL/(AE)$ ใช้ N, mm, MPa"
+    solution: "$\\delta_{AB} = \\dfrac{4000 \\times 300}{400 \\times 70000} = 0.043\\ \\mathrm{mm}$ $\\delta_{BC} = \\dfrac{10000 \\times 200}{200 \\times 70000} = 0.143\\ \\mathrm{mm}$ รวม $0.186\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p008
+    topics: [engineering.materials.stress-strain]
+    difficulty: 3
+    type: numeric
+    stem: "แท่งเหล็กกลมเส้นผ่านศูนย์กลาง $20\\ \\mathrm{mm}$ ($E = 200\\ \\mathrm{GPa}$, $\\nu = 0.3$) รับแรงดึง $50\\ \\mathrm{kN}$ เส้นผ่านศูนย์กลางลดลงกี่ไมโครเมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.77, tolerance: 0.05, unit: "μm" }
+    misconceptions:
+      - { match: 15.92, feedback: "ใช้ความเครียดตามแกนกับด้านข้างโดยลืมคูณ $\\nu$" }
+      - { match: 2.39, feedback: "ใช้รัศมีแทนเส้นผ่านศูนย์กลางในการคูณขั้นสุดท้าย" }
+    hints:
+      - "$\\varepsilon_{\\text{แกน}} = \\sigma/E$"
+      - "$\\Delta d = -\\nu\\varepsilon_{\\text{แกน}}d$"
+    solution: "$\\sigma = 50000/314.2 = 159.2\\ \\mathrm{MPa}$, $\\varepsilon = 159.2/200000 = 7.96 \\times 10^{-4}$ ได้ $\\Delta d = 0.3 \\times 7.96 \\times 10^{-4} \\times 20 = 0.00477\\ \\mathrm{mm} = 4.77\\ \\mu\\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p009
+    topics: [engineering.materials.stress-strain]
+    difficulty: 3
+    type: numeric
+    stem: "รางรถไฟแบบเชื่อมต่อเนื่องถูกยึดไม่ให้ยืด วางเมื่อรางมีอุณหภูมิ $25\\,^\\circ\\mathrm{C}$ ช่วงบ่ายหน้าร้อนรางร้อนถึง $60\\,^\\circ\\mathrm{C}$ (ค่าสมมติ) $E = 200\\ \\mathrm{GPa}$, $\\alpha = 11.5 \\times 10^{-6}\\ /^\\circ\\mathrm{C}$ ความเค้นอัดในรางเป็นกี่เมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 80.5, tolerance: 0.8, unit: MPa }
+    misconceptions:
+      - { match: 138, feedback: "ใช้อุณหภูมิ $60\\,^\\circ\\mathrm{C}$ ตรง ๆ ต้องใช้ผลต่าง $\\Delta T = 35\\,^\\circ\\mathrm{C}$" }
+      - { match: 0.0004, feedback: "นี่คือความเครียดจากอุณหภูมิ ต้องคูณ $E$ เพื่อได้ความเค้น" }
+    hints:
+      - "ถูกยึดไว้: ความเครียดรวมเป็นศูนย์ ความเครียดเชิงกลต้องหักล้างความเครียดจากอุณหภูมิ"
+      - "$|\\sigma| = E\\alpha\\Delta T$"
+    solution: "$|\\sigma| = 200000 \\times 11.5 \\times 10^{-6} \\times 35 = 80.5\\ \\mathrm{MPa}$ (อัด) ถ้าปล่อยให้ยืดอิสระ ราง $1\\ \\mathrm{km}$ จะยาวขึ้น $0.40\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p010
+    topics: [engineering.materials.stress-strain]
+    difficulty: 3
+    type: numeric
+    stem: "เพลาเหล็กตันเส้นผ่านศูนย์กลาง $40\\ \\mathrm{mm}$ รับแรงบิด $500\\ \\mathrm{N\\cdot m}$ ความเค้นเฉือนสูงสุดเป็นกี่เมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 39.8, tolerance: 0.4, unit: MPa }
+    misconceptions:
+      - { match: 79.6, feedback: "ใช้ $32T/(\\pi d^3)$ ตัวเลข 32 อยู่ในสูตร $J = \\pi d^4/32$ เมื่อคูณ $c = d/2$ แล้วเหลือ 16" }
+      - { match: 318.3, feedback: "ใช้ $20\\ \\mathrm{mm}$ (รัศมี) แทนเส้นผ่านศูนย์กลางในสูตร $16T/(\\pi d^3)$" }
+    hints:
+      - "$\\tau_{\\max} = Tc/J$ กับ $J = \\pi d^4/32$, $c = d/2$"
+      - "ใช้ $T$ เป็น $\\mathrm{N\\cdot mm}$"
+    solution: "$\\tau_{\\max} = \\dfrac{16T}{\\pi d^3} = \\dfrac{16 \\times 500000}{\\pi (40)^3} = 39.8\\ \\mathrm{MPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p011
+    topics: [engineering.materials.stress-strain]
+    difficulty: 4
+    type: numeric
+    stem: "เพลากลวงรัศมีนอก $25\\ \\mathrm{mm}$ รัศมีใน $20\\ \\mathrm{mm}$ รับแรงบิด $1\\ \\mathrm{kN\\cdot m}$ ความเค้นเฉือนสูงสุดเป็นกี่เมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 69.0, tolerance: 0.7, unit: MPa }
+    misconceptions:
+      - { match: 40.7, feedback: "ใช้ $J$ ของเพลาตันรัศมี $25\\ \\mathrm{mm}$ ต้องหักส่วนกลวง $\\tfrac{\\pi}{2}(r_o^4 - r_i^4)$" }
+      - { match: 55.2, feedback: "ใช้รัศมีใน ความเค้นสูงสุดอยู่ที่ผิวนอก $c = r_o$" }
+    hints:
+      - "$J = \\tfrac{\\pi}{2}(25^4 - 20^4)$"
+      - "$\\tau_{\\max} = Tr_o/J$"
+    solution: "$J = \\tfrac{\\pi}{2}(390625 - 160000) = 362\\,265\\ \\mathrm{mm^4}$ ได้ $\\tau_{\\max} = \\dfrac{10^6 \\times 25}{362\\,265} = 69.0\\ \\mathrm{MPa}$ เพลากลวงนี้ใช้เนื้อเหล็กเพียง 36% ของเพลาตันขนาดเดียวกัน แต่ความเค้นเพิ่มจาก $40.7$ เป็น $69.0\\ \\mathrm{MPa}$ เท่านั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p012
+    topics: [engineering.materials.stress-strain]
+    difficulty: 4
+    type: numeric
+    stem: "ปั๊มสูบน้ำจากคลองเข้านาใช้มอเตอร์ $7.5\\ \\mathrm{kW}$ ที่ $1450\\ \\mathrm{rpm}$ (ค่าสมมติ) ถ้าความเค้นเฉือนที่ยอมให้ของเพลาเหล็กตันคือ $40\\ \\mathrm{MPa}$ เพลาต้องมีเส้นผ่านศูนย์กลางอย่างน้อยกี่มิลลิเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 18.5, tolerance: 0.2, unit: mm }
+    misconceptions:
+      - { match: 8.7, feedback: "ใช้ $1450$ เป็น $\\omega$ ตรง ๆ ต้องแปลงเป็น $\\mathrm{rad/s}$: $1450 \\times 2\\pi/60$" }
+      - { match: 23.3, feedback: "ใช้ $32T/(\\pi\\tau)$ ในการหา $d^3$ สูตรของเพลาตันคือ $d^3 = 16T/(\\pi\\tau)$" }
+    hints:
+      - "$T = P/\\omega$ เมื่อ $\\omega = 151.8\\ \\mathrm{rad/s}$"
+      - "$d = \\sqrt[3]{16T/(\\pi\\tau_{\\text{allow}})}$"
+    solution: "$T = 7500/151.8 = 49.4\\ \\mathrm{N\\cdot m} = 49\\,400\\ \\mathrm{N\\cdot mm}$ ได้ $d^3 = \\dfrac{16 \\times 49\\,400}{\\pi \\times 40} = 6289$ และ $d = 18.5\\ \\mathrm{mm}$ (ในทางปฏิบัติเลือกขนาดมาตรฐานถัดไป เช่น $20\\ \\mathrm{mm}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p013
+    topics: [engineering.materials.stress-strain]
+    difficulty: 4
+    type: numeric
+    stem: "แท่งตรงยาว $1.0\\ \\mathrm{m}$ หน้าตัดและวัสดุเดียวกันตลอด ยึดแน่นทั้งปลาย A และปลาย B รับแรงตามแนวแกน $60\\ \\mathrm{kN}$ ที่จุด C ห่าง A $0.4\\ \\mathrm{m}$ แรงปฏิกิริยาที่ A มีขนาดกี่กิโลนิวตัน"
+    answer: { value: 36, tolerance: 0.2, unit: kN }
+    misconceptions:
+      - { match: 24, feedback: "สลับกัน ปลายที่อยู่ใกล้แรงกว่า (A) เป็นช่วงที่สั้นกว่าและแข็งกว่า จึงรับแรงมากกว่า" }
+      - { match: 30, feedback: "แบ่งครึ่งตามสมดุลอย่างเดียว สมการสมดุลมีสมการเดียวแต่ไม่รู้สองค่า ต้องใช้เงื่อนไขความเข้ากันได้" }
+    hints:
+      - "สมดุล: $R_A + R_B = 60$"
+      - "ความยาวรวมไม่เปลี่ยน: ช่วง AC ยืดเท่ากับที่ช่วง CB หด $R_A(0.4) = R_B(0.6)$"
+    solution: "$R_A(0.4)/(AE) = R_B(0.6)/(AE)$ และ $R_A + R_B = 60$ ได้ $R_A = 60 \\times 0.6/1.0 = 36\\ \\mathrm{kN}$ และ $R_B = 24\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p014
+    topics: [engineering.materials.stress-strain]
+    difficulty: 5
+    type: numeric
+    stem: "เสาคอนกรีตของหอถังน้ำประปาหมู่บ้าน (ค่าสมมติ) หน้าตัด $300 \\times 300\\ \\mathrm{mm}$ เสริมเหล็กเส้นผ่านศูนย์กลาง $20\\ \\mathrm{mm}$ จำนวน 4 เส้น รับแรงอัด $900\\ \\mathrm{kN}$ ถ้า $E_{\\text{เหล็ก}} = 200\\ \\mathrm{GPa}$ และ $E_{\\text{คอนกรีต}} = 25\\ \\mathrm{GPa}$ ความเค้นอัดในเหล็กเสริมเป็นกี่เมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 72.9, tolerance: 0.7, unit: MPa }
+    misconceptions:
+      - { match: 10, feedback: "หารแรงด้วยพื้นที่ทั้งหมดเหมือนวัสดุเดียว เหล็กแข็งกว่าคอนกรีต 8 เท่า จึงรับความเค้นมากกว่า" }
+      - { match: 716.2, feedback: "ให้เหล็กรับแรงทั้งหมด คอนกรีตก็หดเท่าเหล็กและรับแรงส่วนใหญ่" }
+    hints:
+      - "เหล็กและคอนกรีตหดเท่ากัน: $\\sigma_s/E_s = \\sigma_c/E_c$ ได้ $\\sigma_s = 8\\sigma_c$"
+      - "$900\\,000 = \\sigma_cA_c + 8\\sigma_cA_s$ เมื่อ $A_s = 4 \\times 314.2$ และ $A_c = 90000 - A_s$"
+    solution: "$A_s = 1256.6\\ \\mathrm{mm^2}$, $A_c = 88\\,743\\ \\mathrm{mm^2}$ ได้ $\\sigma_c = \\dfrac{900\\,000}{88\\,743 + 8(1256.6)} = 9.11\\ \\mathrm{MPa}$ และ $\\sigma_s = 8 \\times 9.11 = 72.9\\ \\mathrm{MPa}$ ตรวจ: $9.11(88\\,743) + 72.9(1256.6) = 900\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p015
+    topics: [engineering.materials.stress-strain]
+    difficulty: 5
+    type: numeric
+    stem: "แท่งเหล็กยาว $1\\ \\mathrm{m}$ ยึดที่ปลายหนึ่ง อีกปลายห่างผนังแข็ง $0.3\\ \\mathrm{mm}$ ($E = 200\\ \\mathrm{GPa}$, $\\alpha = 12 \\times 10^{-6}\\ /^\\circ\\mathrm{C}$) ถ้าอุณหภูมิเพิ่มขึ้น $50\\,^\\circ\\mathrm{C}$ ความเค้นอัดในแท่งเป็นกี่เมกะพาสคัล"
+    answer: { value: 60, tolerance: 0.5, unit: MPa }
+    misconceptions:
+      - { match: 120, feedback: "ไม่หักช่องว่าง แท่งยืดได้อิสระ $0.3\\ \\mathrm{mm}$ ก่อนชนผนัง" }
+      - { match: 0, feedback: "แท่งอยากยืด $0.6\\ \\mathrm{mm}$ แต่มีที่ว่างเพียง $0.3\\ \\mathrm{mm}$ จึงถูกอัดส่วนที่เหลือ" }
+    hints:
+      - "การยืดอิสระ $\\alpha\\Delta TL = 0.6\\ \\mathrm{mm}$"
+      - "ส่วนที่ถูกห้ามคือ $0.6 - 0.3 = 0.3\\ \\mathrm{mm}$ แล้วใช้ $\\sigma = E\\delta/L$"
+    solution: "ยืดอิสระ $12 \\times 10^{-6} \\times 50 \\times 1000 = 0.6\\ \\mathrm{mm}$ ช่องว่างรับได้ $0.3\\ \\mathrm{mm}$ ส่วนที่ถูกห้าม $0.3\\ \\mathrm{mm}$ ได้ $\\sigma = 200000 \\times 0.3/1000 = 60\\ \\mathrm{MPa}$ (อัด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p016
+    topics: [engineering.materials.stress-strain]
+    difficulty: 3
+    type: numeric
+    stem: "แท่งรับแรงดึงที่มีความเค้นตั้งฉาก $100\\ \\mathrm{MPa}$ บนหน้าตัดตั้งฉาก จงหาความเค้นเฉือนบนระนาบที่ทำมุม $30^\\circ$ กับหน้าตัดตั้งฉาก เป็นเมกะพาสคัล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 43.3, tolerance: 0.4, unit: MPa }
+    misconceptions:
+      - { match: 75, feedback: "นี่คือความเค้นตั้งฉาก $\\sigma\\cos^2\\theta$ บนระนาบนั้น" }
+      - { match: 50, feedback: "นี่คือความเค้นเฉือนสูงสุดที่ $45^\\circ$ ไม่ใช่ที่ $30^\\circ$" }
+    hints:
+      - "$\\tau_\\theta = \\sigma\\sin\\theta\\cos\\theta$"
+      - "$\\sin 30^\\circ\\cos 30^\\circ = 0.433$"
+    solution: "$\\tau_{30^\\circ} = 100 \\times 0.5 \\times 0.866 = 43.3\\ \\mathrm{MPa}$ (ความเค้นตั้งฉากบนระนาบเดียวกัน $100\\cos^2 30^\\circ = 75\\ \\mathrm{MPa}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p017
+    topics: [engineering.materials.stress-strain]
+    difficulty: 4
+    type: numeric
+    stem: "เพลาเหล็กตันเส้นผ่านศูนย์กลาง $30\\ \\mathrm{mm}$ ยาว $1.2\\ \\mathrm{m}$ ($G = 80\\ \\mathrm{GPa}$) รับแรงบิด $200\\ \\mathrm{N\\cdot m}$ ปลายทั้งสองบิดต่างกันกี่องศา (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 2.16, tolerance: 0.03, unit: "°" }
+    misconceptions:
+      - { match: 0.038, feedback: "นี่คือค่าเป็นเรเดียน ต้องคูณ $180/\\pi$" }
+      - { match: 0.86, feedback: "ใช้ $E = 200\\ \\mathrm{GPa}$ แทน $G$ มุมบิดขึ้นกับมอดุลัสเฉือน" }
+    hints:
+      - "$\\phi = TL/(GJ)$ และ $J = \\pi d^4/32$"
+      - "ใช้ N·mm, mm, MPa แล้วแปลงเรเดียนเป็นองศา"
+    solution: "$J = \\pi(30)^4/32 = 79\\,522\\ \\mathrm{mm^4}$ ได้ $\\phi = \\dfrac{200\\,000 \\times 1200}{80\\,000 \\times 79\\,522} = 0.0377\\ \\mathrm{rad} = 2.16^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.stress-strain.p018
+    topics: [engineering.materials.stress-strain]
+    difficulty: 4
+    type: numeric
+    stem: "แผ่นอะลูมิเนียม ($E = 70\\ \\mathrm{GPa}$, $\\nu = 0.33$) รับความเค้นดึงสองแกน $\\sigma_x = 80\\ \\mathrm{MPa}$ และ $\\sigma_y = 40\\ \\mathrm{MPa}$ จงหาความเครียด $\\varepsilon_x$ ในหน่วยไมโครสเตรน ($10^{-6}$)"
+    answer: { value: 954, tolerance: 10, unit: "μɛ" }
+    misconceptions:
+      - { match: 1143, feedback: "ไม่คิดผลของ $\\sigma_y$ ความเค้นแนว $y$ ทำให้แผ่นคอดในแนว $x$" }
+      - { match: 1331, feedback: "บวกผลของ $\\sigma_y$ ปัวซองทำให้แนว $x$ หดลง ต้องลบ" }
+    hints:
+      - "กฎของฮุกแบบทั่วไป: $\\varepsilon_x = (\\sigma_x - \\nu\\sigma_y)/E$"
+      - "$80 - 0.33 \\times 40 = 66.8\\ \\mathrm{MPa}$"
+    solution: "$\\varepsilon_x = \\dfrac{80 - 0.33(40)}{70000} = \\dfrac{66.8}{70000} = 954 \\times 10^{-6}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,69 @@
+id: engineering.mechanics.centroids-inertia
+subject: engineering
+title: { th: จุดเซนทรอยด์และโมเมนต์ความเฉื่อยของพื้นที่, en: Centroids and area moments of inertia }
+summary: จุดศูนย์ถ่วง ศูนย์กลางมวล และเซนทรอยด์จากการอินทิเกรตและพื้นที่ประกอบ โมเมนต์ความเฉื่อยของพื้นที่ ทฤษฎีบทแกนขนาน และหน้าตัดคาน
+difficulty: 7.5
+minutes: 45
+prerequisites: [math.calculus.integral-applications, engineering.mechanics.rigid-body-equilibrium]
+encompasses:
+  - { id: math.calculus.integral-applications, weight: 0.4 }
+  - { id: engineering.mechanics.rigid-body-equilibrium, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: เซนทรอยด์ของพื้นที่ใต้พาราโบลาด้วยวิธีแถบ
+    src: parabola-strip.svg
+    alt: "พื้นที่ใต้เส้นโค้ง y = h(x/b)^2 จาก x = 0 ถึง b แรเงาไว้ มีแถบตั้งกว้าง dx สูง y เซนทรอยด์ของแถบอยู่ที่ (x, y/2) พื้นที่ของแถบ dA = y dx จุด C คือเซนทรอยด์ของทั้งพื้นที่ อยู่ค่อนไปทางขวาและต่ำ"
+  - type: worked-example
+    title: เซนทรอยด์ของพื้นที่ใต้พาราโบลา
+    problem: "จงหาเซนทรอยด์ของพื้นที่ใต้เส้นโค้ง $y = h(x/b)^2$ จาก $x = 0$ ถึง $x = b$"
+    steps:
+      - text: "$A = \\int_0^b \\dfrac{h}{b^2}x^2\\,dx = \\dfrac{bh}{3}$"
+      - text: "$\\int x\\,dA = \\int_0^b x \\cdot \\dfrac{h}{b^2}x^2\\,dx = \\dfrac{hb^2}{4}$ ได้ $\\bar x = \\dfrac{hb^2/4}{bh/3} = \\dfrac{3b}{4}$"
+      - text: "$\\int \\bar y_{\\text{แถบ}}\\,dA = \\int_0^b \\dfrac{y}{2}\\,y\\,dx = \\dfrac{h^2}{2b^4}\\int_0^b x^4\\,dx = \\dfrac{bh^2}{10}$"
+        why: "เซนทรอยด์ของแถบตั้งอยู่กึ่งกลางความสูงของแถบ คือ $y/2$ ไม่ใช่ $y$"
+      - text: "$\\bar y = \\dfrac{bh^2/10}{bh/3} = \\dfrac{3h}{10}$"
+      - text: "ตรวจความสมเหตุสมผล: พื้นที่หนาแน่นทางขวาและด้านล่าง จึง $\\bar x > b/2$ และ $\\bar y < h/2$"
+    answer: "$\\bar x = 3b/4$, $\\bar y = 3h/10$"
+  - { type: check, problem: engineering.mechanics.centroids-inertia.p006, prompt: "แถบตั้งระหว่างสองเส้นโค้งมีความสูง $x - x^2$ และเซนทรอยด์ที่ $(x + x^2)/2$" }
+  - type: figure
+    title: หน้าตัดรูปตัวทีและระยะสำหรับทฤษฎีบทแกนขนาน
+    src: tee-section.svg
+    alt: "หน้าตัดรูปตัวที ปีกบนกว้าง 200 หนา 40 มิลลิเมตร เอวกว้าง 40 สูง 160 มิลลิเมตร เซนทรอยด์ของปีก C1 อยู่สูงจากฐาน 180 เซนทรอยด์ของเอว C2 สูง 80 เส้นประสีแดงคือแกนผ่านเซนทรอยด์รวมที่ 135.6 มิลลิเมตรจากฐาน ระยะ d1 = 44.4 จากแกนถึง C1 และ d2 = 55.6 จากแกนถึง C2"
+  - type: worked-example
+    title: โมเมนต์ความเฉื่อยของหน้าตัดรูปตัวที
+    problem: "หน้าตัดรูปตัวทีในภาพ (ปีก $200 \\times 40$ เอว $40 \\times 160\\ \\mathrm{mm}$) จงหาเซนทรอยด์และ $\\bar I_x$ รอบแกนนอนผ่านเซนทรอยด์"
+    steps:
+      - text: "แบ่งเป็นสองสี่เหลี่ยม วัด $y$ จากฐาน: ปีก $A_1 = 8000\\ \\mathrm{mm^2}$, $\\bar y_1 = 180$ เอว $A_2 = 6400\\ \\mathrm{mm^2}$, $\\bar y_2 = 80$"
+      - text: "$\\bar y = \\dfrac{8000(180) + 6400(80)}{14400} = 135.6\\ \\mathrm{mm}$"
+        why: "รูปสมมาตรรอบแกนตั้ง จึงหาเฉพาะ $\\bar y$"
+      - text: "ปีก: $\\dfrac{200(40)^3}{12} + 8000(180 - 135.6)^2 = 1.07 \\times 10^6 + 15.80 \\times 10^6\\ \\mathrm{mm^4}$"
+      - text: "เอว: $\\dfrac{40(160)^3}{12} + 6400(80 - 135.6)^2 = 13.65 \\times 10^6 + 19.75 \\times 10^6\\ \\mathrm{mm^4}$"
+        why: "พจน์ $Ad^2$ ของทั้งสองชิ้นมากกว่า $\\bar I$ ของชิ้นเอง เพราะเนื้อวัสดุอยู่ห่างแกนรวม"
+      - text: "รวม $\\bar I_x = 50.3 \\times 10^6\\ \\mathrm{mm^4}$ ตรวจด้วยการอินทิเกรตเชิงตัวเลขของ $\\int (y - \\bar y)^2 w(y)\\,dy$ ได้ค่าเดียวกัน"
+    answer: "$\\bar y = 135.6\\ \\mathrm{mm}$ จากฐาน, $\\bar I_x = 50.3 \\times 10^6\\ \\mathrm{mm^4}$"
+  - { type: check, problem: engineering.mechanics.centroids-inertia.p005, prompt: "แกนที่ฐานห่างจากเซนทรอยด์ครึ่งหนึ่งของความลึก" }
+glossary:
+  - { term: เซนทรอยด์, definition: "จุดเฉลี่ยทางเรขาคณิตของพื้นที่หรือปริมาตร ตรงกับศูนย์กลางมวลเมื่อความหนาแน่นสม่ำเสมอ (centroid)" }
+  - { term: จุดศูนย์ถ่วง, definition: "จุดที่น้ำหนักรวมของวัตถุกระทำ (center of gravity)" }
+  - { term: โมเมนต์ที่หนึ่งของพื้นที่, definition: "ปริพันธ์ของระยะคูณพื้นที่ ∫y dA ใช้หาเซนทรอยด์ (first moment of area)" }
+  - { term: โมเมนต์ความเฉื่อยของพื้นที่, definition: "ปริพันธ์ของระยะกำลังสองคูณพื้นที่ ∫y² dA บอกความต้านทานการดัด หน่วย m⁴ (second moment of area)" }
+  - { term: โมเมนต์ความเฉื่อยเชิงขั้ว, definition: "J = ∫r² dA = Ix + Iy ใช้กับการบิดของเพลา (polar moment of inertia)" }
+  - { term: ทฤษฎีบทแกนขนาน, definition: "I = Ī + Ad² เมื่อ Ī รอบแกนผ่านเซนทรอยด์และ d คือระยะระหว่างแกนที่ขนานกัน (parallel-axis theorem)" }
+  - { term: รัศมีไจเรชัน, definition: "k = √(I/A) ระยะที่ถ้ารวมพื้นที่ทั้งหมดไว้แล้วให้โมเมนต์ความเฉื่อยเท่าเดิม (radius of gyration)" }
+flashcards:
+  - { front: "เซนทรอยด์ของพื้นที่ประกอบ", back: "$\\bar y = \\sum A_i\\bar y_i / \\sum A_i$ รูเจาะใช้พื้นที่ติดลบ" }
+  - { front: "$\\bar I$ ของสี่เหลี่ยมกว้าง b สูง h", back: "$bh^3/12$ รอบแกนผ่านเซนทรอยด์ และ $bh^3/3$ รอบฐาน" }
+  - { front: "ทฤษฎีบทแกนขนาน", back: "$I = \\bar I + Ad^2$ ใช้ได้เมื่อแกนหนึ่งผ่านเซนทรอยด์" }
+  - { front: "เซนทรอยด์ของสามเหลี่ยมและครึ่งวงกลม", back: "สามเหลี่ยม $h/3$ จากฐาน ครึ่งวงกลม $4r/(3\\pi)$ จากเส้นผ่านศูนย์กลาง" }
+  - { front: "J ของหน้าตัดวงกลมกลวง", back: "$J = \\tfrac{\\pi}{2}(r_o^4 - r_i^4)$" }
+references:
+  - { title: "Centroid", url: "https://en.wikipedia.org/wiki/Centroid", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Second moment of area", url: "https://en.wikipedia.org/wiki/Second_moment_of_area", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.6 Moments and Centers of Mass (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/6-6-moments-and-centers-of-mass", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Parallel axis theorem", url: "https://en.wikipedia.org/wiki/Parallel_axis_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

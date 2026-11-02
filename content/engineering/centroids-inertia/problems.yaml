@@ -1,0 +1,280 @@
+problems:
+  - id: engineering.mechanics.centroids-inertia.p001
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 1
+    type: mcq
+    stem: "เซนทรอยด์ของสามเหลี่ยมที่มีฐานยาว $b$ สูง $h$ อยู่ห่างจากฐานเท่าใด"
+    choices:
+      - { id: a, text: "$h/3$", correct: true }
+      - { id: b, text: "$h/2$", feedback: "ถูกสำหรับสี่เหลี่ยม สามเหลี่ยมมีพื้นที่หนาแน่นใกล้ฐานมากกว่า เซนทรอยด์จึงต่ำกว่ากึ่งกลาง" }
+      - { id: c, text: "$2h/3$", feedback: "นี่คือระยะจากยอด ไม่ใช่จากฐาน" }
+      - { id: d, text: "$h/4$", feedback: "นี่คือเซนทรอยด์ของพื้นที่ใต้พาราโบลาบางรูป สามเหลี่ยมคือ $h/3$" }
+    hints:
+      - "เซนทรอยด์ของสามเหลี่ยมคือจุดตัดของเส้นมัธยฐาน"
+      - "จุดตัดนั้นแบ่งเส้นมัธยฐานเป็นอัตราส่วน 2 : 1"
+    solution: "จุดตัดของเส้นมัธยฐานอยู่ $2/3$ ของระยะจากยอด หรือ $h/3$ จากฐาน ยืนยันด้วยปริพันธ์ $\\bar y = \\dfrac{1}{A}\\int_0^h y \\cdot b\\left(1 - \\tfrac{y}{h}\\right)dy = \\dfrac{bh^2/6}{bh/2} = \\dfrac{h}{3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p002
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 1
+    type: match
+    stem: "จับคู่รูปและแกนกับโมเมนต์ความเฉื่อยของพื้นที่"
+    pairs:
+      - { left: "สี่เหลี่ยม b × h รอบแกนผ่านเซนทรอยด์ขนานกับ b", right: "bh³/12" }
+      - { left: "สี่เหลี่ยม b × h รอบฐาน", right: "bh³/3" }
+      - { left: "สามเหลี่ยมรอบแกนผ่านเซนทรอยด์ขนานกับฐาน", right: "bh³/36" }
+      - { left: "วงกลมรัศมี r รอบแกนผ่านศูนย์กลาง", right: "πr⁴/4" }
+    hints:
+      - "รอบฐานมีค่ามากกว่ารอบแกนผ่านเซนทรอยด์เสมอ"
+      - "ใช้ $I = \\bar I + Ad^2$ ตรวจคู่ของสี่เหลี่ยม"
+    solution: "สี่เหลี่ยม: $\\bar I = bh^3/12$ รอบฐาน $bh^3/12 + bh(h/2)^2 = bh^3/3$ สามเหลี่ยม: $bh^3/36$ วงกลม: $\\pi r^4/4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p003
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 2
+    type: numeric
+    stem: "แผ่นเหล็กรูปตัว L ประกอบด้วยสี่เหลี่ยม $100 \\times 20\\ \\mathrm{mm}$ วางตามแกน $x$ ($0 \\le x \\le 100$, $0 \\le y \\le 20$) และสี่เหลี่ยม $20 \\times 80\\ \\mathrm{mm}$ ตั้งขึ้น ($0 \\le x \\le 20$, $20 \\le y \\le 100$) จงหา $\\bar x$ เป็นมิลลิเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 32.2, tolerance: 0.3, unit: mm }
+    misconceptions:
+      - { match: 30, feedback: "เฉลี่ยตำแหน่งเซนทรอยด์สองชิ้น $(50 + 10)/2$ โดยไม่ถ่วงด้วยพื้นที่" }
+      - { match: 50, feedback: "นี่คือเซนทรอยด์ของชิ้นแนวราบชิ้นเดียว" }
+    hints:
+      - "ชิ้นแนวราบ: $A = 2000$ ที่ $x = 50$ ชิ้นตั้ง: $A = 1600$ ที่ $x = 10$"
+      - "$\\bar x = \\sum A_i x_i / \\sum A_i$"
+    solution: "$\\bar x = \\dfrac{2000(50) + 1600(10)}{3600} = \\dfrac{116000}{3600} = 32.2\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p004
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 2
+    type: numeric
+    stem: "คานไม้หน้าตัดสี่เหลี่ยมกว้าง $200\\ \\mathrm{mm}$ ลึก $300\\ \\mathrm{mm}$ วางให้ด้านลึกตั้งขึ้น จงหาโมเมนต์ความเฉื่อยรอบแกนนอนผ่านเซนทรอยด์ ในหน่วย $10^6\\ \\mathrm{mm^4}$"
+    answer: { value: 450, tolerance: 2, unit: "×10⁶ mm⁴" }
+    misconceptions:
+      - { match: 200, feedback: "สลับ $b$ กับ $h$ ด้านที่ยกกำลังสามคือด้านที่ตั้งฉากกับแกน คือความลึก $300\\ \\mathrm{mm}$" }
+      - { match: 1800, feedback: "นี่คือค่ารอบฐาน ($bh^3/3$) ไม่ใช่รอบแกนผ่านเซนทรอยด์" }
+    hints:
+      - "$\\bar I = bh^3/12$ เมื่อ $h$ คือด้านที่ตั้งฉากกับแกน"
+      - "$200 \\times 300^3 / 12$"
+    solution: "$\\bar I = \\dfrac{200 \\times 300^3}{12} = 450 \\times 10^6\\ \\mathrm{mm^4}$ (ถ้าวางนอน ได้เพียง $200 \\times 10^6$ คานจึงควรวางด้านลึกตั้งขึ้น)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p005
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 2
+    type: numeric
+    stem: "ใช้ทฤษฎีบทแกนขนานหาโมเมนต์ความเฉื่อยของหน้าตัดในข้อก่อน ($200 \\times 300\\ \\mathrm{mm}$) รอบแกนที่อยู่ตามขอบล่าง ในหน่วย $10^6\\ \\mathrm{mm^4}$"
+    answer: { value: 1800, tolerance: 5, unit: "×10⁶ mm⁴" }
+    misconceptions:
+      - { match: 5850, feedback: "ใช้ $d = 300\\ \\mathrm{mm}$ ระยะจากเซนทรอยด์ถึงขอบล่างคือครึ่งหนึ่งของความลึก $150\\ \\mathrm{mm}$" }
+      - { match: 1350, feedback: "นี่คือพจน์ $Ad^2$ อย่างเดียว ต้องบวก $\\bar I = 450 \\times 10^6$ ด้วย" }
+    hints:
+      - "$I = \\bar I + Ad^2$ เมื่อ $d = 150\\ \\mathrm{mm}$"
+      - "$A = 60000\\ \\mathrm{mm^2}$"
+    solution: "$I = 450 \\times 10^6 + 60000 \\times 150^2 = 450 \\times 10^6 + 1350 \\times 10^6 = 1800 \\times 10^6\\ \\mathrm{mm^4}$ ตรงกับ $bh^3/3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p006
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\bar y$ ของบริเวณที่ล้อมด้วย $y = x$ และ $y = x^2$ (หน่วยเป็นเมตร ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.4, tolerance: 0.005, unit: m }
+    misconceptions:
+      - { match: 0.5, feedback: "นี่คือ $\\bar x$ ของบริเวณนี้" }
+      - { match: 0.8, feedback: "ลืมคูณ $\\tfrac12$ เซนทรอยด์ของแถบตั้งอยู่ที่ $(x + x^2)/2$" }
+    hints:
+      - "พื้นที่ $A = \\int_0^1 (x - x^2)\\,dx = 1/6$"
+      - "$\\int \\bar y_{\\text{แถบ}}\\,dA = \\int_0^1 \\tfrac12(x + x^2)(x - x^2)\\,dx = \\tfrac12\\int_0^1 (x^2 - x^4)\\,dx$"
+    solution: "$\\tfrac12\\int_0^1 (x^2 - x^4)\\,dx = \\tfrac12\\left(\\tfrac13 - \\tfrac15\\right) = \\tfrac{1}{15}$ ได้ $\\bar y = \\dfrac{1/15}{1/6} = 0.4\\ \\mathrm{m}$ (ส่วน $\\bar x = \\int_0^1 x(x - x^2)\\,dx \\big/ A = (1/12)/(1/6) = 0.5\\ \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p007
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 3
+    type: numeric
+    stem: "แผ่นป้ายเหล็กของ อบต. (ค่าสมมติ) เป็นสี่เหลี่ยม $1.2 \\times 0.8\\ \\mathrm{m}$ เจาะรูกลมรัศมี $0.15\\ \\mathrm{m}$ ที่ศูนย์กลาง $(0.9,\\ 0.5)\\ \\mathrm{m}$ ตามภาพ จงหา $\\bar x$ ของแผ่นป้ายเป็นเมตร (ทศนิยม 3 ตำแหน่ง)"
+    figure: { src: p-plate.svg, alt: "แผ่นสี่เหลี่ยมกว้าง 1.2 เมตรตามแกน x สูง 0.8 เมตรตามแกน y มุมล่างซ้ายอยู่ที่จุดกำเนิด มีรูกลมรัศมี 0.15 เมตร ศูนย์กลางที่ x = 0.9 y = 0.5" }
+    answer: { value: 0.576, tolerance: 0.003, unit: m }
+    misconceptions:
+      - { match: 0.621, feedback: "บวกพื้นที่ของรูแทนการลบ รูใช้พื้นที่ติดลบ" }
+      - { match: 0.6, feedback: "ไม่คิดรู รูอยู่ทางขวาของกึ่งกลาง เซนทรอยด์จึงเลื่อนไปทางซ้ายเล็กน้อย" }
+    hints:
+      - "สี่เหลี่ยม: $A_1 = 0.96$ ที่ $x = 0.6$ รู: $A_2 = -\\pi(0.15)^2$ ที่ $x = 0.9$"
+      - "$\\bar x = (A_1x_1 + A_2x_2)/(A_1 + A_2)$"
+    solution: "$A_2 = -0.0707\\ \\mathrm{m^2}$ ได้ $\\bar x = \\dfrac{0.96(0.6) - 0.0707(0.9)}{0.96 - 0.0707} = \\dfrac{0.5124}{0.8893} = 0.576\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p008
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 3
+    type: numeric
+    stem: "คานคอนกรีตของศาลาเอนกประสงค์มีหน้าตัดรูปตัวทีตามภาพ (ปีก $300 \\times 60$ เอว $120 \\times 340\\ \\mathrm{mm}$) จงหาระยะเซนทรอยด์ $\\bar y$ วัดจากขอบล่าง เป็นมิลลิเมตร (ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-tee.svg, alt: "หน้าตัดรูปตัวที ปีกบนกว้าง 300 หนา 60 มิลลิเมตร เอวกว้าง 120 สูง 340 มิลลิเมตร ความสูงรวม 400 มิลลิเมตร" }
+    answer: { value: 231.2, tolerance: 1, unit: mm }
+    misconceptions:
+      - { match: 168.8, feedback: "นี่คือระยะจากขอบบน โจทย์ถามจากขอบล่าง" }
+      - { match: 270, feedback: "เฉลี่ยตำแหน่งของสองชิ้นโดยไม่ถ่วงด้วยพื้นที่" }
+    hints:
+      - "ปีก: $A_1 = 18000$ ที่ $y = 370$ เอว: $A_2 = 40800$ ที่ $y = 170$"
+      - "$\\bar y = \\sum A_i\\bar y_i / \\sum A_i$"
+    solution: "$\\bar y = \\dfrac{18000(370) + 40800(170)}{58800} = \\dfrac{13596000}{58800} = 231.2\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p009
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้หน้าตัดรูปตัวทีในภาพเดิม ($\\bar y = 231.2\\ \\mathrm{mm}$ จากขอบล่าง) จงหา $\\bar I_x$ รอบแกนนอนผ่านเซนทรอยด์ ในหน่วย $10^6\\ \\mathrm{mm^4}$ (ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-tee.svg, alt: "หน้าตัดรูปตัวที ปีกบนกว้าง 300 หนา 60 มิลลิเมตร เอวกว้าง 120 สูง 340 มิลลิเมตร ความสูงรวม 400 มิลลิเมตร" }
+    answer: { value: 898.0, tolerance: 5, unit: "×10⁶ mm⁴" }
+    misconceptions:
+      - { match: 398.4, feedback: "รวมเฉพาะ $\\bar I$ ของแต่ละชิ้น ลืมพจน์ $Ad^2$" }
+      - { match: 4041.8, feedback: "หาโมเมนต์ความเฉื่อยรอบขอบล่าง ไม่ใช่รอบแกนผ่านเซนทรอยด์" }
+    hints:
+      - "ระยะ $d$: ปีก $370 - 231.2 = 138.8$ เอว $170 - 231.2 = -61.2\\ \\mathrm{mm}$"
+      - "แต่ละชิ้น: $bh^3/12 + Ad^2$"
+    solution: "ปีก: $\\dfrac{300(60)^3}{12} + 18000(138.8)^2 = 5.4 \\times 10^6 + 346.7 \\times 10^6$ เอว: $\\dfrac{120(340)^3}{12} + 40800(61.2)^2 = 393.0 \\times 10^6 + 152.9 \\times 10^6$ รวม $898.0 \\times 10^6\\ \\mathrm{mm^4}$ (ตรวจด้วยการอินทิเกรตเชิงตัวเลขได้ค่าเดียวกัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p010
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 4
+    type: numeric
+    stem: "คานเหล็กของสะพานคนเดินข้ามคลอง (ค่าสมมติ) มีหน้าตัดรูปตัวไอตามภาพ ลึกรวม $300\\ \\mathrm{mm}$ ปีกกว้าง $200$ หนา $20\\ \\mathrm{mm}$ เอวหนา $10\\ \\mathrm{mm}$ จงหา $I_x$ รอบแกนนอนผ่านเซนทรอยด์ ในหน่วย $10^6\\ \\mathrm{mm^4}$ (ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-ibeam.svg, alt: "หน้าตัดรูปตัวไอสมมาตร ลึกรวม 300 มิลลิเมตร ปีกบนและล่างกว้าง 200 หนา 20 มิลลิเมตร เอวตั้งหนา 10 มิลลิเมตร สูง 260 มิลลิเมตร" }
+    answer: { value: 171.7, tolerance: 1, unit: "×10⁶ mm⁴" }
+    misconceptions:
+      - { match: 450, feedback: "นี่คือสี่เหลี่ยมตัน $200 \\times 300$ ต้องหักส่วนว่างสองข้างของเอวออก" }
+      - { match: 156.8, feedback: "คิดเฉพาะ $Ad^2$ ของปีก ลืม $\\bar I$ ของปีกและของเอว" }
+    hints:
+      - "วิธีลัด: สี่เหลี่ยมตัน $200 \\times 300$ ลบสี่เหลี่ยมว่าง $190 \\times 260$ ซึ่งมีเซนทรอยด์ร่วมกัน"
+      - "ตรวจด้วยการรวมสามชิ้นพร้อมทฤษฎีบทแกนขนาน"
+    solution: "$I_x = \\dfrac{200(300)^3}{12} - \\dfrac{190(260)^3}{12} = 450 \\times 10^6 - 278.3 \\times 10^6 = 171.7 \\times 10^6\\ \\mathrm{mm^4}$ ตรวจ: ปีกสองชิ้น $2[200(20)^3/12 + 4000(140)^2] = 157.1 \\times 10^6$ เอว $10(260)^3/12 = 14.6 \\times 10^6$ รวม $171.7 \\times 10^6$ ใช้เหล็กเพียง $10600\\ \\mathrm{mm^2}$ หรือ 18% ของสี่เหลี่ยมตัน แต่ได้ $I$ ถึง 38%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p011
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 3
+    type: expression
+    stem: "จงหาโมเมนต์ความเฉื่อยของพื้นที่สามเหลี่ยมฐาน $b$ สูง $h$ รอบแกนที่อยู่ตามฐาน โดยอินทิเกรต $\\int_0^h y^2\\,b\\left(1 - \\tfrac{y}{h}\\right)dy$"
+    prefix: "I_{\\text{ฐาน}} ="
+    answer: { latex: "\\frac{bh^3}{12}", variables: [b, h] }
+    misconceptions:
+      - { match: "\\frac{bh^3}{36}", feedback: "นี่คือค่ารอบแกนผ่านเซนทรอยด์ รอบฐานต้องบวก $A(h/3)^2$" }
+      - { match: "\\frac{bh^3}{3}", feedback: "นี่คือสี่เหลี่ยมรอบฐาน ความกว้างของสามเหลี่ยมลดลงตามความสูง" }
+    hints:
+      - "กระจาย: $b\\int_0^h \\left(y^2 - \\tfrac{y^3}{h}\\right)dy$"
+      - "$\\tfrac{h^3}{3} - \\tfrac{h^3}{4}$"
+    solution: "$b\\left[\\dfrac{y^3}{3} - \\dfrac{y^4}{4h}\\right]_0^h = b\\left(\\dfrac{h^3}{3} - \\dfrac{h^3}{4}\\right) = \\dfrac{bh^3}{12}$ ตรวจด้วยแกนขนาน: $\\dfrac{bh^3}{36} + \\dfrac{bh}{2}\\left(\\dfrac{h}{3}\\right)^2 = \\dfrac{bh^3}{12}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p012
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 4
+    type: numeric
+    stem: "แผ่นบางรูปสามเหลี่ยม $0 \\le y \\le x \\le 1$ (หน่วยเมตร) มีความหนาแน่นเชิงพื้นที่ $\\rho = x + y\\ \\mathrm{kg/m^2}$ จงหาพิกัด $\\bar x$ ของศูนย์กลางมวลเป็นเมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.75, tolerance: 0.005, unit: m }
+    misconceptions:
+      - { match: 0.67, feedback: "นี่คือเซนทรอยด์ของสามเหลี่ยมเมื่อความหนาแน่นสม่ำเสมอ ความหนาแน่น $x + y$ มากทางขวา ศูนย์กลางมวลจึงเลื่อนไปทางขวา" }
+      - { match: 0.42, feedback: "นี่คือ $\\bar y$" }
+    hints:
+      - "มวล $M = \\int_0^1\\int_0^x (x + y)\\,dy\\,dx$"
+      - "$\\bar x = \\dfrac{1}{M}\\int_0^1\\int_0^x x(x + y)\\,dy\\,dx$"
+    solution: "ชั้นใน: $\\int_0^x (x + y)\\,dy = \\tfrac32x^2$ ได้ $M = \\int_0^1 \\tfrac32x^2\\,dx = \\tfrac12\\ \\mathrm{kg}$ และ $\\int_0^1 x \\cdot \\tfrac32x^2\\,dx = \\tfrac38$ ได้ $\\bar x = \\dfrac{3/8}{1/2} = 0.75\\ \\mathrm{m}$ (ส่วน $\\bar y = 5/12 = 0.42\\ \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p013
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 4
+    type: numeric
+    stem: "เพลากลวงของปั๊มน้ำมีรัศมีนอก $30\\ \\mathrm{mm}$ รัศมีใน $20\\ \\mathrm{mm}$ จงหาโมเมนต์ความเฉื่อยเชิงขั้ว $J$ เป็น $\\mathrm{cm^4}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 102.1, tolerance: 0.5, unit: "cm⁴" }
+    misconceptions:
+      - { match: 51.1, feedback: "นี่คือ $I_x$ รอบเส้นผ่านศูนย์กลาง ($\\pi/4$) โมเมนต์เชิงขั้ว $J = I_x + I_y$ ใช้ $\\pi/2$" }
+      - { match: 1.6, feedback: "ยกกำลังสี่ของผลต่างรัศมี ต้องเป็นผลต่างของรัศมียกกำลังสี่ $r_o^4 - r_i^4$" }
+    hints:
+      - "$J = \\tfrac{\\pi}{2}(r_o^4 - r_i^4)$"
+      - "$1\\ \\mathrm{cm^4} = 10^4\\ \\mathrm{mm^4}$"
+    solution: "$J = \\tfrac{\\pi}{2}(30^4 - 20^4) = \\tfrac{\\pi}{2}(810000 - 160000) = 1.021 \\times 10^6\\ \\mathrm{mm^4} = 102.1\\ \\mathrm{cm^4}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p014
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 5
+    type: numeric
+    stem: "คานเหล็กประกอบรูปตัวไอไม่สมมาตร: ปีกบน $150 \\times 20\\ \\mathrm{mm}$ เอว $12 \\times 300\\ \\mathrm{mm}$ ปีกล่าง $250 \\times 20\\ \\mathrm{mm}$ (ลึกรวม $340\\ \\mathrm{mm}$) จงหา $\\bar I_x$ รอบแกนนอนผ่านเซนทรอยด์ ในหน่วย $10^6\\ \\mathrm{mm^4}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 223.2, tolerance: 1.2, unit: "×10⁶ mm⁴" }
+    misconceptions:
+      - { match: 232.1, feedback: "ใช้แกนที่กึ่งกลางความลึก ($170\\ \\mathrm{mm}$) แต่หน้าตัดไม่สมมาตร เซนทรอยด์อยู่ต่ำกว่า ค่ารอบแกนอื่นมากกว่าค่ารอบเซนทรอยด์เสมอ" }
+      - { match: 171.7, feedback: "ค่าของคานตัวไอสมมาตรในข้อก่อนหน้า ต้องหาเซนทรอยด์ของหน้าตัดนี้ใหม่" }
+    hints:
+      - "วัดจากขอบล่าง: ปีกล่าง $5000\\ \\mathrm{mm^2}$ ที่ $10$ เอว $3600$ ที่ $170$ ปีกบน $3000$ ที่ $330$"
+      - "หา $\\bar y$ ก่อน แล้วรวม $bh^3/12 + Ad^2$ ทั้งสามชิ้น"
+    solution: "$\\bar y = \\dfrac{5000(10) + 3600(170) + 3000(330)}{11600} = 142.4\\ \\mathrm{mm}$ ปีกล่าง: $0.17 \\times 10^6 + 5000(132.4)^2 = 87.8 \\times 10^6$ เอว: $27.0 \\times 10^6 + 3600(27.6)^2 = 29.7 \\times 10^6$ ปีกบน: $0.10 \\times 10^6 + 3000(187.6)^2 = 105.7 \\times 10^6$ รวม $223.2 \\times 10^6\\ \\mathrm{mm^4}$ (ตรวจด้วยการอินทิเกรตเชิงตัวเลขได้ $223.2 \\times 10^6$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p015
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 2
+    type: mcq
+    stem: "นักศึกษารู้ $I_a$ ของหน้าตัดรอบแกน $a$ ซึ่งห่างเซนทรอยด์ $50\\ \\mathrm{mm}$ แล้วเขียน $I_b = I_a + A(30)^2$ สำหรับแกน $b$ ที่ขนานกันและห่างแกน $a$ อีก $30\\ \\mathrm{mm}$ (ห่างเซนทรอยด์ $80\\ \\mathrm{mm}$) ข้อใดถูก"
+    choices:
+      - { id: a, text: "ผิด ต้องผ่านเซนทรอยด์ก่อน: $\\bar I = I_a - A(50)^2$ แล้ว $I_b = \\bar I + A(80)^2$", correct: true }
+      - { id: b, text: "ถูก เพราะทฤษฎีบทแกนขนานใช้กับแกนขนานคู่ใดก็ได้", feedback: "พจน์ $Ad^2$ มาจากการที่ $\\int y\\,dA = 0$ รอบเซนทรอยด์ ใช้ได้เมื่อแกนหนึ่งผ่านเซนทรอยด์เท่านั้น" }
+      - { id: c, text: "ผิด ต้องใช้ $I_b = I_a - A(30)^2$", feedback: "แกน $b$ อยู่ไกลเซนทรอยด์กว่า $I_b$ ต้องมากกว่า $I_a$" }
+      - { id: d, text: "ผิด ต้องใช้ $I_b = I_a + A(80)^2$", feedback: "$I_a$ ไม่ใช่ค่ารอบเซนทรอยด์ บวก $A(80)^2$ ซ้ำทำให้นับส่วนของ $50\\ \\mathrm{mm}$ เกิน" }
+    hints:
+      - "ทฤษฎีบทแกนขนาน: $I = \\bar I + Ad^2$ เมื่อ $\\bar I$ รอบเซนทรอยด์"
+      - "ผลต่างของ $I$ คือ $A(80^2 - 50^2)$ ไม่ใช่ $A(30)^2$"
+    solution: "$I_a = \\bar I + A(50)^2$ และ $I_b = \\bar I + A(80)^2$ จึง $I_b = I_a + A(80^2 - 50^2) = I_a + 3900A$ ซึ่งไม่เท่ากับ $I_a + 900A$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p016
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาโมเมนต์ความเฉื่อยของพื้นที่ใต้เส้นโค้ง $y = \\sqrt{x}$ จาก $x = 0$ ถึง $x = 4$ (หน่วยเมตร) รอบแกน $x$ คือ $I_x = \\iint y^2\\,dA$ เป็น $\\mathrm{m^4}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.27, tolerance: 0.03, unit: "m⁴" }
+    misconceptions:
+      - { match: 12.8, feedback: "ลืมหาร 3 ปริพันธ์ชั้นในคือ $\\int_0^{\\sqrt x} y^2\\,dy = (\\sqrt x)^3/3$" }
+      - { match: 8, feedback: "ใช้ $\\int y^2\\,dx$ ซึ่งไม่ใช่ $\\iint y^2\\,dA$ แถบตั้งแต่ละแถบมีจุดหลายระยะจากแกน $x$" }
+    hints:
+      - "เขียนเป็นปริพันธ์สองชั้น $\\int_0^4\\int_0^{\\sqrt x} y^2\\,dy\\,dx$"
+      - "ชั้นในได้ $x^{3/2}/3$"
+    solution: "$I_x = \\int_0^4 \\dfrac{x^{3/2}}{3}\\,dx = \\dfrac13 \\cdot \\dfrac25 \\cdot 4^{5/2} = \\dfrac{2}{15}(32) = \\dfrac{64}{15} = 4.27\\ \\mathrm{m^4}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.centroids-inertia.p017
+    topics: [engineering.mechanics.centroids-inertia]
+    difficulty: 3
+    type: numeric
+    stem: "จงหารัศมีไจเรชัน $k_x$ ของหน้าตัดสี่เหลี่ยม $200 \\times 300\\ \\mathrm{mm}$ (ลึก $300$) รอบแกนนอนผ่านเซนทรอยด์ เป็นมิลลิเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 86.6, tolerance: 0.5, unit: mm }
+    misconceptions:
+      - { match: 150, feedback: "ใช้ครึ่งความลึก รัศมีไจเรชันคือ $\\sqrt{I/A}$ ซึ่งน้อยกว่าระยะขอบ" }
+      - { match: 57.7, feedback: "ใช้ความกว้าง $200$ แทนความลึกที่ตั้งฉากกับแกน" }
+    hints:
+      - "$k = \\sqrt{\\bar I / A}$"
+      - "สำหรับสี่เหลี่ยม $k = h/\\sqrt{12}$"
+    solution: "$k = \\sqrt{\\dfrac{bh^3/12}{bh}} = \\dfrac{h}{\\sqrt{12}} = \\dfrac{300}{3.464} = 86.6\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
