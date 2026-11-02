@@ -1,0 +1,69 @@
+id: engineering.surveying.surveying-basics
+subject: engineering
+title: { th: วิศวกรรมสำรวจเบื้องต้น, en: Introduction to surveying }
+summary: การวัดระยะและการแก้ค่า การวัดมุมและอะซิมัท การทำระดับด้วยค่าอ่านหลังและค่าอ่านหน้า ความคลาดเคลื่อนในการวัด วงรอบ การคำนวณพิกัด และพื้นที่จากพิกัด
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.geometry.trig-ratios, physics.units.measurement, math.functions.coordinate-plane]
+encompasses:
+  - { id: math.geometry.trig-ratios, weight: 0.4 }
+  - { id: math.functions.coordinate-plane, weight: 0.2 }
+  - { id: physics.units.measurement, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: การทำระดับด้วยกล้องระดับ
+    src: levelling.svg
+    alt: "ภาพตัดพื้นดินลาดลงจากซ้ายไปขวา ไม้สต๊าฟตั้งบนหมุดหลักฐาน BM ทางซ้าย และบนจุด A ทางขวา กล้องระดับบนขาตั้งอยู่ตรงกลาง แนวเล็งราบสีน้ำเงินไปที่ไม้สต๊าฟทั้งสอง ค่าที่อ่านบนไม้ BM คือค่าอ่านหลัง BS ค่าที่อ่านบนไม้ A คือค่าอ่านหน้า FS ลูกศรสีแดงแสดงว่า BS และ FS คือระยะจากพื้นถึงแนวเล็ง ด้านล่างเขียนสูตร HI = RL ของ BM + BS และ RL ของ A = HI − FS"
+  - type: worked-example
+    title: ทำระดับถนนผ่านจุดพักกล้อง
+    problem: "ทำระดับถนนในจังหวัดขอนแก่น (ค่าสมมติ) จากหมุด BM ที่มีระดับ $162.500\\ \\mathrm{m}$ (รทก.) ค่าอ่านหลังที่ BM $1.820$ ค่าอ่านหน้าที่ TP1 $0.640$ ย้ายกล้องแล้วอ่านค่าอ่านหลังที่ TP1 $1.105$ และค่าอ่านหน้าที่จุด C $2.390$ จงหาระดับของจุด C"
+    steps:
+      - text: "ตั้งกล้องครั้งที่ 1: $HI = 162.500 + 1.820 = 164.320\\ \\mathrm{m}$"
+      - text: "ระดับ TP1 $= 164.320 - 0.640 = 163.680\\ \\mathrm{m}$"
+      - text: "ตั้งกล้องครั้งที่ 2: $HI = 163.680 + 1.105 = 164.785\\ \\mathrm{m}$"
+        why: "ไม้สต๊าฟยังตั้งอยู่ที่ TP1 จุดเดิม ระดับของ TP1 จึงเป็นฐานของการตั้งกล้องครั้งใหม่"
+      - text: "ระดับ C $= 164.785 - 2.390 = 162.395\\ \\mathrm{m}$"
+      - text: "ตรวจ: $\\sum BS - \\sum FS = (1.820 + 1.105) - (0.640 + 2.390) = -0.105$ และ $162.395 - 162.500 = -0.105$ ตรงกัน"
+        why: "การตรวจนี้จับความผิดพลาดในการบวกลบได้ แต่จับการอ่านไม้สต๊าฟผิดไม่ได้ ต้องทำระดับวนกลับมาที่ BM"
+    answer: "ระดับของจุด C $= 162.395\\ \\mathrm{m}$ (รทก.)"
+  - { type: check, problem: engineering.surveying.surveying-basics.p003, prompt: "HI = RL + BS แล้ว RL ใหม่ = HI − FS" }
+  - type: figure
+    title: วงรอบปิดและองค์ประกอบของแนว
+    src: traverse.svg
+    alt: "วงรอบปิดรูปสี่เหลี่ยม ABCD จุด A อยู่ซ้ายล่าง B ขวาล่าง C ขวาบน D ซ้ายบน ที่จุด B มีลูกศรชี้ทิศเหนือ และมุม α วัดจากทิศเหนือตามเข็มนาฬิกาไปยังแนว BC เส้นประสีแดงแบ่งแนว BC เป็นส่วนแนวนอน ΔE = L sin α และส่วนแนวตั้ง ΔN = L cos α"
+  - type: worked-example
+    title: ตรวจและปรับแก้วงรอบปิด
+    problem: "วงรอบปิดรอบแปลงที่ดิน (ค่าสมมติ) ยาวรวม $800\\ \\mathrm{m}$ คำนวณได้ $\\sum\\Delta N = +0.08\\ \\mathrm{m}$ และ $\\sum\\Delta E = -0.06\\ \\mathrm{m}$ จงหาความละเอียดสัมพัทธ์ และค่าแก้ของแนวที่ยาว $200\\ \\mathrm{m}$ ด้วยกฎของเข็มทิศ"
+    steps:
+      - text: "ระยะคลาดเคลื่อนบรรจบ $e = \\sqrt{0.08^2 + 0.06^2} = 0.10\\ \\mathrm{m}$"
+      - text: "ความละเอียดสัมพัทธ์ $= 1 : \\dfrac{800}{0.10} = 1 : 8000$"
+        why: "ถ้างานกำหนดไว้ไม่หยาบกว่า 1:5000 วงรอบนี้ผ่านเกณฑ์ ปรับแก้ได้"
+      - text: "ค่าแก้ $\\Delta N$ ของแนว $200\\ \\mathrm{m}$: $-0.08 \\times \\dfrac{200}{800} = -0.020\\ \\mathrm{m}$"
+        why: "ค่าแก้มีเครื่องหมายตรงข้ามกับผลรวมที่เกินมา และแบ่งตามสัดส่วนความยาว"
+      - text: "ค่าแก้ $\\Delta E$: $+0.06 \\times \\dfrac{200}{800} = +0.015\\ \\mathrm{m}$"
+    answer: "ความละเอียด 1:8000 แนวนี้แก้ $\\Delta N$ ด้วย $-0.020\\ \\mathrm{m}$ และ $\\Delta E$ ด้วย $+0.015\\ \\mathrm{m}$"
+  - { type: check, problem: engineering.surveying.surveying-basics.p008, prompt: "ΔE ใช้ sin ของอะซิมัท" }
+glossary:
+  - { term: หมุดหลักฐาน, definition: "หมุดที่รู้ค่าพิกัดหรือระดับแล้ว ใช้เป็นจุดอ้างอิงของงานสำรวจ (benchmark, BM)" }
+  - { term: ค่าอ่านหลัง, definition: "ค่าที่อ่านบนไม้สต๊าฟที่ตั้งบนจุดที่รู้ระดับแล้ว (backsight, BS)" }
+  - { term: ค่าอ่านหน้า, definition: "ค่าที่อ่านบนไม้สต๊าฟที่ตั้งบนจุดที่ต้องการหาระดับ (foresight, FS)" }
+  - { term: มุมอะซิมัท, definition: "มุมทิศทางของแนว วัดจากทิศเหนือตามเข็มนาฬิกา 0 ถึง 360 องศา (azimuth)" }
+  - { term: วงรอบ, definition: "แนวสำรวจหลายช่วงต่อกัน วัดระยะและมุมทุกช่วงเพื่อหาพิกัดของหมุด (traverse)" }
+  - { term: ความคลาดเคลื่อนบรรจบ, definition: "ผลต่างที่เหลือเมื่อการวัดวนกลับมาจุดที่รู้ค่า ใช้ตรวจคุณภาพงาน (misclosure)" }
+flashcards:
+  - { front: "ระดับของจุดใหม่จากการทำระดับ", back: "$HI = RL_{BM} + BS$ แล้ว $RL = HI - FS$" }
+  - { front: "การตรวจทางคณิตศาสตร์ของการทำระดับ", back: "$\\sum BS - \\sum FS = RL_{\\text{สุดท้าย}} - RL_{\\text{แรก}}$" }
+  - { front: "องค์ประกอบของแนวยาว $L$ อะซิมัท $\\alpha$", back: "$\\Delta N = L\\cos\\alpha$, $\\Delta E = L\\sin\\alpha$" }
+  - { front: "ผลรวมมุมภายในรูปหลายเหลี่ยมปิด $n$ ด้าน", back: "$(n - 2) \\times 180^\\circ$" }
+  - { front: "1 ไร่ เท่ากับกี่ตารางเมตร", back: "$1600\\ \\mathrm{m^2}$ (4 งาน งานละ $400\\ \\mathrm{m^2}$)" }
+references:
+  - { title: "Surveying", url: "https://en.wikipedia.org/wiki/Surveying", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Levelling", url: "https://en.wikipedia.org/wiki/Levelling", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Traverse (surveying)", url: "https://en.wikipedia.org/wiki/Traverse_(surveying)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Shoelace formula", url: "https://en.wikipedia.org/wiki/Shoelace_formula", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

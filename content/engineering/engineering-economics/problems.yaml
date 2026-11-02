@@ -1,0 +1,291 @@
+problems:
+  - id: engineering.management.engineering-economics.p001
+    topics: [engineering.management.engineering-economics]
+    difficulty: 1
+    type: mcq
+    stem: "ถ้าเลือกได้ระหว่างรับเงิน 10,000 บาทวันนี้ กับรับ 10,000 บาทในอีก 1 ปีข้างหน้า (ไม่มีเงินเฟ้อและไม่มีความเสี่ยง) ทางเลือกใดมีค่ามากกว่าในทางเศรษฐศาสตร์วิศวกรรม"
+    choices:
+      - { id: a, text: "รับวันนี้ เพราะนำไปฝากหรือลงทุนได้ดอกเบี้ยระหว่างปี", correct: true }
+      - { id: b, text: "เท่ากัน เพราะจำนวนเงินเท่ากัน", feedback: "จำนวนเงินเท่ากันแต่อยู่คนละเวลา เงินวันนี้สร้างผลตอบแทนได้ทันที" }
+      - { id: c, text: "รับปีหน้า เพราะไม่ต้องเก็บรักษาเงิน", feedback: "การรอทำให้เสียโอกาสได้ดอกเบี้ย นี่คือหลักมูลค่าของเงินตามเวลา" }
+    hints:
+      - "เงินที่ได้วันนี้ทำอะไรได้บ้างในหนึ่งปี"
+      - "นึกถึงดอกเบี้ยเงินฝาก"
+    solution: "รับวันนี้มีค่ามากกว่า เพราะฝากได้ดอกเบี้ย ปีหน้าจะมีมากกว่า 10,000 บาท นี่คือมูลค่าของเงินตามเวลา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p002
+    topics: [engineering.management.engineering-economics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สัญลักษณ์กับความหมาย"
+    pairs:
+      - { left: "$P$", right: "มูลค่าที่เวลา 0 (ปัจจุบัน)" }
+      - { left: "$F$", right: "มูลค่าก้อนเดียวที่สิ้นงวดที่ $n$" }
+      - { left: "$A$", right: "เงินงวดเท่ากันทุกสิ้นงวด" }
+      - { left: "$i$", right: "อัตราดอกเบี้ยต่องวด" }
+    hints:
+      - "P มาจาก present F มาจาก future"
+      - "A มาจาก annuity หรือ annual"
+    solution: "$P$ มูลค่าปัจจุบัน $F$ มูลค่าอนาคต $A$ เงินงวดเท่ากัน $i$ อัตราดอกเบี้ยต่องวด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p003
+    topics: [engineering.management.engineering-economics]
+    difficulty: 2
+    type: numeric
+    stem: "ฝากเงิน 50,000 บาท ได้ดอกเบี้ย 5% ต่อปีทบต้นทุกปี เมื่อครบ 3 ปีมีเงินรวมกี่บาท"
+    answer: { value: 57881.25, tolerance: 1, unit: บาท }
+    misconceptions:
+      - { match: 57500, feedback: "นี่คือดอกเบี้ยเชิงเดียว $50\\,000(1 + 0.05 \\times 3)$ ดอกเบี้ยทบต้นคิดดอกเบี้ยจากดอกเบี้ยด้วย" }
+      - { match: 7881.25, feedback: "นี่คือดอกเบี้ยอย่างเดียว คำถามถามเงินรวม" }
+    hints:
+      - "$F = P(1 + i)^n$"
+      - "$1.05^3 = 1.157625$"
+    solution: "$F = 50\\,000 \\times 1.05^3 = 50\\,000 \\times 1.157625 = 57\\,881.25$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p004
+    topics: [engineering.management.engineering-economics]
+    difficulty: 3
+    type: mcq
+    stem: "ธนาคาร ก ให้ดอกเบี้ย 12% ต่อปีทบต้นปีละครั้ง ธนาคาร ข ให้ 11.6% ต่อปีทบต้นรายเดือน (อัตราสมมติ) ฝากที่ใดได้ผลตอบแทนต่อปีที่แท้จริงมากกว่า"
+    choices:
+      - { id: a, text: "ธนาคาร ข", correct: true }
+      - { id: b, text: "ธนาคาร ก", feedback: "อัตราที่ประกาศของ ก สูงกว่า แต่ ข ทบต้น 12 ครั้งต่อปี อัตราที่แท้จริงได้ $(1 + 0.116/12)^{12} - 1 = 12.24\\%$" }
+      - { id: c, text: "เท่ากัน", feedback: "คำนวณอัตราที่แท้จริงแล้วไม่เท่ากัน" }
+    hints:
+      - "เทียบด้วยอัตราดอกเบี้ยที่แท้จริงต่อปี"
+      - "$i_{\\text{eff}} = (1 + r/m)^m - 1$"
+    solution: "ก: $12\\%$ ข: $(1 + 0.116/12)^{12} - 1 = 0.1224 = 12.24\\%$ ธนาคาร ข ให้มากกว่า แม้อัตราที่ประกาศจะต่ำกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p005
+    topics: [engineering.management.engineering-economics]
+    difficulty: 2
+    type: numeric
+    stem: "บริษัทต้องการเงิน 1,000,000 บาทในอีก 5 ปีเพื่อซื้อเครื่องจักรใหม่ ถ้าลงทุนได้ 6% ต่อปีทบต้น ต้องลงทุนวันนี้กี่บาท"
+    answer: { value: 747258.17, tolerance: 10, unit: บาท }
+    misconceptions:
+      - { match: 769230.77, feedback: "หารด้วย $1 + 0.06 \\times 5$ ซึ่งเป็นดอกเบี้ยเชิงเดียว ต้องหารด้วย $1.06^5$" }
+      - { match: 733904.02, feedback: "คูณด้วย $0.94^5$ (หักออก 6% ทุกปี) ที่ถูกคือหารด้วย $1.06^5$" }
+    hints:
+      - "$P = F/(1 + i)^n$"
+      - "$1.06^5 = 1.338226$"
+    solution: "$P = \\dfrac{1\\,000\\,000}{1.06^5} = \\dfrac{1\\,000\\,000}{1.338226} = 747\\,258$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p006
+    topics: [engineering.management.engineering-economics]
+    difficulty: 3
+    type: numeric
+    stem: "บัตรเครดิตคิดดอกเบี้ย 12% ต่อปี ทบต้นรายเดือน อัตราดอกเบี้ยที่แท้จริงต่อปีเป็นกี่เปอร์เซ็นต์ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 12.68, tolerance: 0.01, unit: "%" }
+    misconceptions:
+      - { match: 12, feedback: "นี่คืออัตราที่ประกาศ การทบต้นรายเดือนทำให้อัตราที่แท้จริงสูงกว่า" }
+    hints:
+      - "อัตราต่อเดือน $= 12\\%/12 = 1\\%$"
+      - "$i_{\\text{eff}} = 1.01^{12} - 1$"
+    solution: "$i_{\\text{eff}} = (1 + 0.01)^{12} - 1 = 1.12683 - 1 = 12.68\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p007
+    topics: [engineering.management.engineering-economics]
+    difficulty: 3
+    type: numeric
+    stem: "โรงงาน SME แห่งหนึ่งกู้เงิน 2,000,000 บาทซื้อเครื่องจักร ผ่อนเท่ากันทุกสิ้นปี 5 ปี ดอกเบี้ย 7% ต่อปี (อัตราสมมติ) ค่างวดต่อปีเป็นกี่บาท"
+    answer: { value: 487781.39, tolerance: 10, unit: บาท }
+    misconceptions:
+      - { match: 400000, feedback: "หารเงินต้นด้วย 5 ปีโดยไม่คิดดอกเบี้ย" }
+      - { match: 540000, feedback: "คิดดอกเบี้ยเชิงเดียวจากเงินต้นเต็มทุกปี แต่เงินต้นคงค้างลดลงทุกงวด ต้องใช้ตัวคูณคืนทุน" }
+    hints:
+      - "$A = P\\,(A/P, i, n) = P\\,\\dfrac{i(1 + i)^n}{(1 + i)^n - 1}$"
+      - "$1.07^5 = 1.402552$"
+    solution: "$A = 2\\,000\\,000 \\times \\dfrac{0.07 \\times 1.402552}{1.402552 - 1} = 2\\,000\\,000 \\times 0.243891 = 487\\,781$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p008
+    topics: [engineering.management.engineering-economics]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องจักรราคา 800,000 บาท อายุใช้งาน 8 ปี มูลค่าซาก 80,000 บาท ใช้ค่าเสื่อมราคาแบบเส้นตรง มูลค่าตามบัญชีเมื่อสิ้นปีที่ 3 เป็นกี่บาท"
+    answer: { value: 530000, tolerance: 1, unit: บาท }
+    misconceptions:
+      - { match: 500000, feedback: "ลืมหักมูลค่าซากก่อนแบ่ง ค่าเสื่อมต่อปีต้องเป็น $(800\\,000 - 80\\,000)/8$" }
+      - { match: 270000, feedback: "นี่คือค่าเสื่อมราคาสะสม 3 ปี ต้องนำไปหักจากราคาซื้อ" }
+    hints:
+      - "$D = (P - S)/N$"
+      - "มูลค่าตามบัญชี $= P - 3D$"
+    solution: "$D = \\dfrac{800\\,000 - 80\\,000}{8} = 90\\,000$ บาทต่อปี มูลค่าตามบัญชี $= 800\\,000 - 3(90\\,000) = 530\\,000$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p009
+    topics: [engineering.management.engineering-economics]
+    difficulty: 3
+    type: numeric
+    stem: "จากแผนภาพกระแสเงินสด ถ้า MARR เท่ากับ 10% ต่อปี มูลค่าปัจจุบันสุทธิของโครงการเป็นกี่บาท"
+    figure: { src: p-cashflow.svg, alt: "เส้นเวลาปี 0 ถึง 5 ที่ปี 0 มีลูกศรลงสีแดง 300,000 บาท (เงินลงทุน) ปี 1 ถึง 5 มีลูกศรขึ้นสีเขียวปีละ 80,000 บาท" }
+    answer: { value: 3262.94, tolerance: 10, unit: บาท }
+    misconceptions:
+      - { match: 100000, feedback: "บวกเงินรับ 5 ปีโดยไม่คิดลด เงินในอนาคตต้องคูณด้วย $(P/A, 10\\%, 5)$" }
+      - { match: 303262.94, feedback: "ลืมหักเงินลงทุนที่ปี 0" }
+    hints:
+      - "$(P/A, 10\\%, 5) = \\dfrac{1.1^5 - 1}{0.1 \\times 1.1^5}$"
+      - "$PW = -300\\,000 + 80\\,000 \\times (P/A, 10\\%, 5)$"
+    solution: "$(P/A, 10\\%, 5) = 3.7908$ จึง $PW = -300\\,000 + 80\\,000(3.7908) = 3\\,263$ บาท เป็นบวกเล็กน้อย โครงการคุ้มค่าแบบเฉียดฉิว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p010
+    topics: [engineering.management.engineering-economics]
+    difficulty: 2
+    type: numeric
+    stem: "โรงงานในนิคมอุตสาหกรรมแห่งหนึ่ง (ค่าสมมติ) ติดแผงโซลาร์บนหลังคาด้วยเงิน 1,200,000 บาท ประหยัดค่าไฟปีละ 180,000 บาท ระยะเวลาคืนทุนแบบง่ายกี่ปี (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.67, tolerance: 0.01, unit: ปี }
+    misconceptions:
+      - { match: 0.15, feedback: "หารกลับด้าน ระยะเวลาคืนทุน = เงินลงทุน ÷ เงินที่ได้ต่อปี" }
+    hints:
+      - "เงินที่ประหยัดสะสมกี่ปีจึงเท่าเงินลงทุน"
+      - "$1\\,200\\,000 \\div 180\\,000$"
+    solution: "$1\\,200\\,000 / 180\\,000 = 6.67$ ปี ระยะเวลาคืนทุนแบบนี้ไม่คิดดอกเบี้ย ถ้าคิดลดด้วย MARR จะนานกว่านี้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p011
+    topics: [engineering.management.engineering-economics]
+    difficulty: 4
+    type: numeric
+    stem: "โซลาร์รูฟขนาด $50\\ \\mathrm{kW}$ ของโรงงาน (ค่าสมมติ) ราคา 1,600,000 บาท ผลิตไฟได้ปีละ $70\\,000\\ \\mathrm{kWh}$ แทนไฟที่ซื้อในราคา 4.2 บาทต่อหน่วย อายุ 20 ปี ไม่มีมูลค่าซาก MARR 7% มูลค่าปัจจุบันสุทธิเป็นกี่บาท (ประมาณถึงหลักร้อย)"
+    answer: { value: 1514640, tolerance: 200, unit: บาท }
+    misconceptions:
+      - { match: 4280000, feedback: "รวมเงินประหยัด 20 ปีโดยไม่คิดลด เงินในปีท้าย ๆ มีค่าปัจจุบันน้อยกว่ามาก" }
+      - { match: 3114640, feedback: "ลืมหักเงินลงทุน 1,600,000 บาท" }
+    hints:
+      - "เงินประหยัดต่อปี $= 70\\,000 \\times 4.2$"
+      - "$(P/A, 7\\%, 20) = 10.594$"
+    solution: "ประหยัดปีละ $294\\,000$ บาท $PW = -1\\,600\\,000 + 294\\,000 \\times 10.594 = 1\\,514\\,640$ บาท คุ้มค่า แต่ควรวิเคราะห์ความไวต่อค่าไฟและปริมาณไฟที่ผลิตได้จริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p012
+    topics: [engineering.management.engineering-economics]
+    difficulty: 4
+    type: numeric
+    stem: "โครงการลงทุน 100,000 บาท ได้เงินคืนปีละ 30,000 บาท นาน 4 ปี อัตราผลตอบแทนภายใน (IRR) เป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 7.7, tolerance: 0.1, unit: "%" }
+    misconceptions:
+      - { match: 5, feedback: "หากำไรเฉลี่ยต่อปี $20\\,000/4 = 5\\,000$ หารเงินลงทุน ซึ่งไม่คิดมูลค่าเงินตามเวลา IRR คืออัตราที่ทำให้ PW = 0" }
+      - { match: 20, feedback: "นี่คือกำไรรวมเป็นเปอร์เซ็นต์ของเงินลงทุน ไม่ใช่อัตราต่อปี" }
+    hints:
+      - "หา $i$ ที่ $30\\,000(P/A, i, 4) = 100\\,000$ หรือ $(P/A, i, 4) = 3.333$"
+      - "ลอง $i = 7\\%$ และ $8\\%$ แล้วประมาณค่าในช่วง"
+    solution: "$(P/A, 7\\%, 4) = 3.387$ และ $(P/A, 8\\%, 4) = 3.312$ ค่าที่ต้องการ $3.333$ อยู่ระหว่างกลาง ประมาณค่าในช่วงหรือแก้เชิงตัวเลขได้ $i \\approx 7.7\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p013
+    topics: [engineering.management.engineering-economics]
+    difficulty: 4
+    type: mcq
+    stem: "เลือกปั๊มน้ำสำหรับโรงงาน (ค่าสมมติ) ปั๊ม X ราคา 400,000 บาท อายุ 4 ปี ค่าดำเนินการปีละ 60,000 บาท ปั๊ม Y ราคา 650,000 บาท อายุ 8 ปี ค่าดำเนินการปีละ 40,000 บาท ไม่มีมูลค่าซาก MARR 8% ควรเลือกแบบใด"
+    choices:
+      - { id: a, text: "Y เพราะต้นทุนรายปีเทียบเท่าต่ำกว่า (ประมาณ 153,000 กับ 181,000 บาทต่อปี)", correct: true }
+      - { id: b, text: "X เพราะมูลค่าปัจจุบันของต้นทุนตลอดอายุต่ำกว่า (ประมาณ 599,000 กับ 880,000 บาท)", feedback: "X ให้บริการเพียง 4 ปี ส่วน Y ให้บริการ 8 ปี เทียบ PW ตลอดอายุของแต่ละแบบตรง ๆ ไม่ได้ ต้องใช้มูลค่ารายปี" }
+      - { id: c, text: "X เพราะราคาซื้อถูกกว่า", feedback: "ราคาซื้ออย่างเดียวไม่พอ ต้องรวมค่าดำเนินการและอายุใช้งาน" }
+      - { id: d, text: "เท่ากัน เพราะต้นทุนรวมไม่คิดดอกเบี้ยใกล้เคียงกัน", feedback: "ต้องคิดมูลค่าเงินตามเวลาและเทียบต่อปี" }
+    hints:
+      - "อายุไม่เท่ากัน ใช้มูลค่ารายปี (AW)"
+      - "AW ของต้นทุน $= P(A/P, 8\\%, n) +$ ค่าดำเนินการต่อปี"
+    solution: "X: $400\\,000(A/P, 8\\%, 4) + 60\\,000 = 400\\,000(0.30192) + 60\\,000 = 180\\,768$ บาทต่อปี Y: $650\\,000(A/P, 8\\%, 8) + 40\\,000 = 650\\,000(0.17401) + 40\\,000 = 153\\,110$ บาทต่อปี เลือก Y"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p014
+    topics: [engineering.management.engineering-economics]
+    difficulty: 4
+    type: numeric
+    stem: "บริษัทกันเงินเข้ากองทุนเปลี่ยนเครื่องจักรปีละ 100,000 บาท ทุกสิ้นปี นาน 10 ปี ได้ผลตอบแทน 5% ต่อปี เมื่อครบ 10 ปีกองทุนมีเงินกี่บาท"
+    answer: { value: 1257789.25, tolerance: 10, unit: บาท }
+    misconceptions:
+      - { match: 1000000, feedback: "รวมเงินต้นโดยไม่คิดดอกเบี้ยทบต้นของแต่ละงวด" }
+      - { match: 1628894.63, feedback: "นำเงินรวม 1,000,000 บาทไปทบต้น 10 ปีเต็ม แต่แต่ละงวดฝากคนละปี งวดสุดท้ายไม่ได้ดอกเบี้ยเลย" }
+    hints:
+      - "$F = A\\,(F/A, i, n) = A\\,\\dfrac{(1 + i)^n - 1}{i}$"
+      - "$1.05^{10} = 1.628895$"
+    solution: "$F = 100\\,000 \\times \\dfrac{1.628895 - 1}{0.05} = 100\\,000 \\times 12.5779 = 1\\,257\\,789$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p015
+    topics: [engineering.management.engineering-economics]
+    difficulty: 5
+    type: numeric
+    stem: "โรงพยาบาลแห่งหนึ่ง (ค่าสมมติ) จะเปลี่ยนเครื่องปรับอากาศเป็นรุ่นประหยัดไฟ ลงทุน 450,000 บาท อายุ 6 ปี ไม่มีมูลค่าซาก MARR 8% ต้องประหยัดค่าไฟอย่างน้อยปีละกี่บาทจึงคุ้มทุนพอดี (PW = 0)"
+    answer: { value: 97341.92, tolerance: 20, unit: บาท }
+    misconceptions:
+      - { match: 75000, feedback: "หารเงินลงทุนด้วย 6 ปี ซึ่งคุ้มทุนเฉพาะเมื่อไม่คิดดอกเบี้ย ที่ MARR 8% ต้องใช้ตัวคูณคืนทุน" }
+    hints:
+      - "หา $A$ ที่ทำให้ $-450\\,000 + A(P/A, 8\\%, 6) = 0$"
+      - "$A = 450\\,000 \\times (A/P, 8\\%, 6)$"
+    solution: "$(A/P, 8\\%, 6) = 0.21632$ จึง $A = 450\\,000 \\times 0.21632 = 97\\,342$ บาทต่อปี ถ้าคาดว่าประหยัดได้น้อยกว่านี้ โครงการไม่คุ้ม นี่คือการวิเคราะห์จุดคุ้มทุนเพื่อรับมือความไม่แน่นอนของเงินที่ประหยัดได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p016
+    topics: [engineering.management.engineering-economics]
+    difficulty: 5
+    type: numeric
+    stem: "โครงการถนนของรัฐ (ค่าสมมติ) ลงทุน 100 ล้านบาท ค่าบำรุงรักษาปีละ 2 ล้านบาท ให้ผลประโยชน์แก่ผู้ใช้ทาง (ประหยัดเวลาและค่าน้ำมัน) ปีละ 12 ล้านบาท นาน 20 ปี อัตราคิดลด 6% อัตราส่วนผลประโยชน์ต่อต้นทุน (B/C) เป็นเท่าใด (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.12, tolerance: 0.01 }
+    misconceptions:
+      - { match: 1.71, feedback: "รวมเงินโดยไม่คิดลด ($240/140$) ต้องคิดลดผลประโยชน์และค่าบำรุงรักษาทุกปีมาเป็นมูลค่าปัจจุบัน" }
+      - { match: 1.38, feedback: "ลืมนับค่าบำรุงรักษาเป็นต้นทุน ($137.6/100$)" }
+    hints:
+      - "$(P/A, 6\\%, 20) = 11.4699$"
+      - "B/C = PW ผลประโยชน์ ÷ (เงินลงทุน + PW ค่าบำรุงรักษา)"
+    solution: "PW ผลประโยชน์ $= 12 \\times 11.4699 = 137.64$ ล้านบาท PW ต้นทุน $= 100 + 2 \\times 11.4699 = 122.94$ ล้านบาท B/C $= 137.64/122.94 = 1.12$ มากกว่า 1 จึงคุ้มค่าทางเศรษฐกิจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p017
+    topics: [engineering.management.engineering-economics]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการวิเคราะห์ทางเศรษฐศาสตร์เพื่อเลือกโครงการ"
+    items:
+      - "กำหนดทางเลือกที่เป็นไปได้ทั้งหมด"
+      - "ประมาณกระแสเงินสดของแต่ละทางเลือกและวาดแผนภาพ"
+      - "กำหนด MARR"
+      - "คำนวณ PW, AW หรือ IRR ของแต่ละทางเลือก"
+      - "วิเคราะห์ความไวต่อค่าที่ไม่แน่นอน"
+      - "ตัดสินใจโดยรวมปัจจัยที่ไม่ใช่ตัวเงินด้วย"
+    hints:
+      - "ต้องรู้ว่ามีทางเลือกอะไรและเงินเข้าออกเมื่อใดก่อนคำนวณ"
+      - "การวิเคราะห์ความไวทำหลังได้ผลคำนวณหลัก"
+    solution: "กำหนดทางเลือก → ประมาณกระแสเงินสด → กำหนด MARR → คำนวณเกณฑ์ → วิเคราะห์ความไว → ตัดสินใจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.management.engineering-economics.p018
+    topics: [engineering.management.engineering-economics]
+    difficulty: 4
+    type: numeric
+    stem: "โครงการสร้างโรงงานแปรรูปยางพารา (ค่าสมมติ) มีสามสถานการณ์ ราคายางสูง: PW = +2.0 ล้านบาท (ความน่าจะเป็น 0.3) ราคาปกติ: +0.5 ล้านบาท (0.5) ราคาต่ำ: −1.5 ล้านบาท (0.2) ค่าคาดหมายของ PW เป็นกี่ล้านบาท"
+    answer: { value: 0.55, tolerance: 0.005, unit: ล้านบาท }
+    misconceptions:
+      - { match: 0.33, feedback: "เฉลี่ยสามค่าเท่า ๆ กัน แต่สถานการณ์มีความน่าจะเป็นไม่เท่ากัน ต้องถ่วงน้ำหนัก" }
+      - { match: 1.15, feedback: "ลืมเครื่องหมายลบของสถานการณ์ราคาต่ำ" }
+    hints:
+      - "$E[PW] = \\sum p_k \\, PW_k$"
+      - "$0.3(2.0) + 0.5(0.5) + 0.2(-1.5)$"
+    solution: "$E[PW] = 0.6 + 0.25 - 0.3 = 0.55$ ล้านบาท เป็นบวก แต่มีโอกาส 20% ที่จะขาดทุน 1.5 ล้านบาท ผู้ตัดสินใจต้องพิจารณาว่ารับความเสี่ยงนี้ได้หรือไม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

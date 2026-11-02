@@ -1,0 +1,69 @@
+id: engineering.materials.materials-science
+subject: engineering
+title: { th: โครงสร้างและสมบัติของวัสดุวิศวกรรม, en: Structure and properties of engineering materials }
+summary: พันธะในของแข็ง โครงสร้างผลึก SC BCC FCC ความหนาแน่นทางทฤษฎี ความบกพร่องในผลึก โลหะ เซรามิก พอลิเมอร์ วัสดุผสม สารกึ่งตัวนำ และความสัมพันธ์ระหว่างโครงสร้างกับสมบัติ
+difficulty: 6
+minutes: 40
+prerequisites: [chemistry.matter.atoms, chemistry.matter.periodic-table, chemistry.bonding.covalent, chemistry.bonding.metallic]
+encompasses:
+  - { id: chemistry.bonding.covalent, weight: 0.2 }
+  - { id: chemistry.matter.atoms, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: หน่วยเซลล์ลูกบาศก์สามแบบ
+    src: unit-cells.svg
+    alt: "ลูกบาศก์สามรูปเรียงกัน ซ้ายคือลูกบาศก์อย่างง่าย มีอะตอมเฉพาะที่มุมทั้งแปด กลางคือลูกบาศก์กลางตัว มีอะตอมที่มุมทั้งแปดและอีกหนึ่งอะตอมสีแดงที่กึ่งกลางลูกบาศก์ ขวาคือลูกบาศก์กลางหน้า มีอะตอมที่มุมทั้งแปดและอะตอมสีเขียวที่กึ่งกลางของหน้าทั้งหก"
+  - type: worked-example
+    title: ความหนาแน่นทางทฤษฎีของทองแดง
+    problem: "ทองแดงที่ใช้ทำสายไฟมีโครงสร้าง FCC รัศมีอะตอม $R = 0.128\\ \\mathrm{nm}$ มวลอะตอม $63.55\\ \\mathrm{g/mol}$ จงหาความหนาแน่นทางทฤษฎี"
+    steps:
+      - text: "FCC มี $n = 4$ อะตอมต่อหน่วยเซลล์ และ $a = 2\\sqrt2\\,R = 2\\sqrt2(0.128) = 0.3620\\ \\mathrm{nm}$"
+        why: "ใน FCC อะตอมสัมผัสกันตามเส้นทแยงมุมของหน้า ซึ่งยาว $4R = \\sqrt2\\,a$"
+      - text: "แปลงหน่วย $a = 0.3620 \\times 10^{-7}\\ \\mathrm{cm}$ ได้ $a^3 = 4.745 \\times 10^{-23}\\ \\mathrm{cm^3}$"
+      - text: "$\\rho = \\dfrac{nA}{a^3 N_A} = \\dfrac{4 \\times 63.55}{(4.745 \\times 10^{-23})(6.022 \\times 10^{23})}$"
+      - text: "$\\rho = \\dfrac{254.2}{28.58} = 8.89\\ \\mathrm{g/cm^3}$"
+        why: "ค่าที่วัดจริงคือ $8.96\\ \\mathrm{g/cm^3}$ ต่างกันไม่ถึง 1% แสดงว่าแบบจำลองทรงกลมแข็งใช้ได้ดี"
+    answer: "$\\rho \\approx 8.89\\ \\mathrm{g/cm^3}$"
+  - { type: check, problem: engineering.materials.materials-science.p003, prompt: "อะตอมที่มุมได้ 1/8 อะตอมที่หน้าได้ 1/2" }
+  - type: figure
+    title: ความบกพร่องแบบจุด
+    src: point-defects.svg
+    alt: "แถวอะตอมทรงกลมสีฟ้าเรียงเป็นตารางสม่ำเสมอ มีตำแหน่งหนึ่งว่างเป็นวงกลมเส้นประ เรียกว่าช่องว่าง (vacancy) มีอะตอมสีส้มขนาดใหญ่กว่าอยู่แทนที่อะตอมเดิมหนึ่งตำแหน่ง เรียกว่าอะตอมแทนที่ และมีอะตอมสีแดงขนาดเล็กแทรกอยู่ระหว่างอะตอมสี่ตัว เรียกว่าอะตอมแทรก ด้านล่างบอกตัวอย่าง สังกะสีแทนที่ทองแดงในทองเหลือง และคาร์บอนแทรกระหว่างอะตอมเหล็กในเหล็กกล้า"
+  - type: figure
+    title: เส้นโค้งความเค้นกับความเครียดของวัสดุสามกลุ่ม
+    src: stress-strain.svg
+    alt: "กราฟเชิงคุณภาพ แกนนอนเป็นความเครียด แกนตั้งเป็นความเค้น เส้นสีม่วงของเซรามิกชันมากและหยุดที่จุดขาดเร็ว เส้นสีน้ำเงินของโลหะเป็นเส้นตรงชันถึงจุดคราก แล้วโค้งขึ้นช้า ๆ ถึงความเค้นสูงสุด แล้วลดลงจนขาดที่ความเครียดมาก เส้นสีส้มของพอลิเมอร์เทอร์โมพลาสติกมีความชันต่ำ ความเค้นน้อย แต่ยืดได้มากที่สุดก่อนขาด"
+  - type: worked-example
+    title: มอดุลัสของไฟเบอร์กลาส
+    problem: "อู่ต่อเรือประมงไฟเบอร์กลาสแห่งหนึ่ง (ค่าสมมติ) ใช้เส้นใยแก้ว ($E_f = 72\\ \\mathrm{GPa}$) ในเรซินพอลิเอสเตอร์ ($E_m = 3\\ \\mathrm{GPa}$) สัดส่วนปริมาตรเส้นใย 0.30 จงประมาณมอดุลัสตามแนวเส้นใย"
+    steps:
+      - text: "สัดส่วนเรซิน $V_m = 1 - 0.30 = 0.70$"
+      - text: "$E_c = V_f E_f + V_m E_m = 0.30(72) + 0.70(3)$"
+        why: "เมื่อดึงตามแนวเส้นใย เส้นใยกับเรซินยืดเท่ากัน แรงรวมจึงเป็นผลบวกของแรงในแต่ละส่วน"
+      - text: "$E_c = 21.6 + 2.1 = 23.7\\ \\mathrm{GPa}$"
+    answer: "ประมาณ $23.7\\ \\mathrm{GPa}$ แข็งกว่าเรซินล้วนเกือบ 8 เท่า แต่เบากว่าเหล็กมาก"
+  - { type: check, problem: engineering.materials.materials-science.p005, prompt: "นึกถึงดิสโลเคชันและชนิดของพันธะ" }
+glossary:
+  - { term: หน่วยเซลล์, definition: "กลุ่มอะตอมเล็กที่สุดที่ซ้ำกันในสามมิติจนได้ผลึกทั้งก้อน (unit cell)" }
+  - { term: เลขโคออร์ดิเนชัน, definition: "จำนวนอะตอมที่อยู่ติดกับอะตอมหนึ่งในผลึก SC = 6, BCC = 8, FCC = 12 (coordination number)" }
+  - { term: สัดส่วนการบรรจุอะตอม, definition: "ปริมาตรอะตอมในหน่วยเซลล์หารด้วยปริมาตรหน่วยเซลล์ (atomic packing factor)" }
+  - { term: ดิสโลเคชัน, definition: "ความบกพร่องแบบเส้นในผลึก การเลื่อนของดิสโลเคชันทำให้โลหะเปลี่ยนรูปถาวรได้ (dislocation)" }
+  - { term: เทอร์โมพลาสติก, definition: "พอลิเมอร์ที่โซ่ไม่เชื่อมขวาง ให้ความร้อนแล้วอ่อนตัวและขึ้นรูปใหม่ได้ (thermoplastic)" }
+  - { term: วัสดุผสม, definition: "วัสดุที่ประกอบด้วยวัสดุสองชนิดขึ้นไปที่แยกเฟสกัน เช่น คอนกรีตเสริมเหล็ก ไฟเบอร์กลาส (composite)" }
+flashcards:
+  - { front: "จำนวนอะตอมต่อหน่วยเซลล์ SC, BCC, FCC", back: "1, 2, 4" }
+  - { front: "ความสัมพันธ์ $a$ กับ $R$ ของ BCC และ FCC", back: "BCC: $a = 4R/\\sqrt3$ · FCC: $a = 2\\sqrt2\\,R$" }
+  - { front: "ความหนาแน่นทางทฤษฎีของผลึก", back: "$\\rho = \\dfrac{nA}{a^3 N_A}$" }
+  - { front: "ทำไมเซรามิกเปราะ", back: "พันธะไอออนิก/โคเวเลนต์ทำให้ดิสโลเคชันเลื่อนไม่ได้ รอยร้าวจึงลามทันที" }
+  - { front: "กฎการผสมของมอดุลัสตามแนวเส้นใย", back: "$E_c = V_f E_f + V_m E_m$" }
+references:
+  - { title: "Materials science", url: "https://en.wikipedia.org/wiki/Materials_science", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Cubic crystal system", url: "https://en.wikipedia.org/wiki/Cubic_crystal_system", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.6 Lattice Structures in Crystalline Solids (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/10-6-lattice-structures-in-crystalline-solids", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Crystallographic defect", url: "https://en.wikipedia.org/wiki/Crystallographic_defect", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

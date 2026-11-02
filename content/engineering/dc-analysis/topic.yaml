@@ -1,0 +1,73 @@
+id: engineering.circuits.dc-analysis
+subject: engineering
+title: { th: การวิเคราะห์วงจรไฟฟ้ากระแสตรง, en: DC circuit analysis }
+summary: นามธรรมแบบก้อน กฎของเคียร์ชฮอฟฟ์ วิธีแรงดันโนดและกระแสเมช การทับซ้อน วงจรสมมูลเทวินินและนอร์ตัน และการส่งกำลังสูงสุด
+difficulty: 7
+minutes: 45
+prerequisites: [physics.electricity.circuits, physics.electricity.electric-power, math.algebra.systems]
+encompasses:
+  - { id: physics.electricity.circuits, weight: 0.4 }
+  - { id: math.algebra.systems, weight: 0.3 }
+  - { id: physics.electricity.electric-power, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: วงจรตัวอย่างสำหรับวิธีแรงดันโนด
+    src: nodal-example.svg
+    alt: "วงจรมีสามกิ่งแนวตั้งต่อกับเส้นล่างที่เป็นกราวด์ กิ่งซ้ายเป็นแหล่งจ่าย 12 V ขั้วบวกด้านบน กิ่งขวาเป็นแหล่งจ่าย 6 V ขั้วบวกด้านบน กิ่งกลางเป็นตัวต้านทาน R₂ = 12 Ω จากโนด a ลงกราวด์ ด้านบนมี R₁ = 4 Ω ต่อจากแหล่ง 12 V ไปโนด a และ R₃ = 6 Ω ต่อจากโนด a ไปแหล่ง 6 V"
+  - { type: check, problem: engineering.circuits.dc-analysis.p002, prompt: "กระแสเข้ารวม = กระแสออกรวม" }
+  - type: worked-example
+    title: วิธีกระแสเมช
+    problem: "วงจรสองเมช: กิ่งซ้ายเป็นแหล่งจ่าย $15\\ \\mathrm{V}$ (บวกด้านบน) ต่อผ่าน $5\\ \\Omega$ ไปยังโนดบนกลาง กิ่งกลางเป็น $10\\ \\Omega$ ลงไปเส้นล่าง จากโนดบนกลางผ่าน $5\\ \\Omega$ ไปยังกิ่งขวาซึ่งเป็นแหล่งจ่าย $5\\ \\mathrm{V}$ (บวกด้านบน) จงหากระแสใน $10\\ \\Omega$"
+    steps:
+      - text: "กำหนดกระแสเมช $I_1$ (ซ้าย) และ $I_2$ (ขวา) วนตามเข็มนาฬิกา ตัวต้านทาน $10\\ \\Omega$ มีกระแสลง $I_1 - I_2$"
+      - text: "KVL เมชซ้าย: $15 - 5I_1 - 10(I_1 - I_2) = 0$ ได้ $15I_1 - 10I_2 = 15$"
+      - text: "KVL เมชขวา: $-10(I_2 - I_1) - 5I_2 - 5 = 0$ ได้ $-10I_1 + 15I_2 = -5$"
+        why: "เดินตามเข็มนาฬิกาในเมชขวา ลงผ่านแหล่ง 5 V จากขั้วบวกไปขั้วลบ แรงดันลดลง 5 V"
+      - text: "แก้ระบบสมการ: $I_1 = 1.4\\ \\mathrm{A}$ และ $I_2 = 0.6\\ \\mathrm{A}$"
+      - text: "กระแสใน $10\\ \\Omega$ $= 1.4 - 0.6 = 0.8\\ \\mathrm{A}$ (ไหลลง) แรงดันคร่อม $8\\ \\mathrm{V}$"
+        why: "ตรวจด้วยวิธีแรงดันโนด: $\\tfrac{V - 15}{5} + \\tfrac{V}{10} + \\tfrac{V - 5}{5} = 0$ ได้ $V = 8\\ \\mathrm{V}$ ตรงกัน"
+    answer: "$0.8\\ \\mathrm{A}$ ไหลลงผ่านตัวต้านทาน $10\\ \\Omega$"
+  - type: figure
+    title: วงจรสมมูลเทวินินและนอร์ตัน
+    src: thevenin.svg
+    alt: "ซ้ายเป็นกล่องวงจรเชิงเส้นที่มีแหล่งจ่ายและตัวต้านทาน มีขั้ว a และ b เครื่องหมายสมมูลไปยังวงจรกลาง ซึ่งเป็นแหล่งจ่ายแรงดัน V_Th ต่ออนุกรมกับ R_Th ไปยังขั้ว a และ b และเครื่องหมายสมมูลไปยังวงจรขวา ซึ่งเป็นแหล่งจ่ายกระแส I_N ต่อขนานกับ R_N ที่ขั้ว a และ b ด้านล่างอธิบายว่า V_Th คือแรงดันขั้วเปิด R_Th = R_N คือความต้านทานที่มองเข้าไปเมื่อปิดแหล่งจ่ายอิสระ และ I_N = V_Th / R_Th"
+  - type: worked-example
+    title: วงจรสมมูลเทวินินที่มองจากตัวต้านทาน R₂
+    problem: "ในวงจรตัวอย่างวิธีแรงดันโนด ถอด $R_2$ ออก แล้วหาวงจรสมมูลเทวินินระหว่างโนด a กับกราวด์ จากนั้นใส่ $R_2 = 12\\ \\Omega$ กลับเข้าไปเพื่อตรวจคำตอบ"
+    steps:
+      - text: "$V_{Th}$: เมื่อไม่มี $R_2$ เขียน KCL ที่โนด a: $\\dfrac{V - 12}{4} + \\dfrac{V - 6}{6} = 0$ ได้ $5V = 48$ จึง $V_{Th} = 9.6\\ \\mathrm{V}$"
+      - text: "$R_{Th}$: ลัดวงจรแหล่งจ่ายแรงดันทั้งสอง เหลือ $4\\ \\Omega \\parallel 6\\ \\Omega = 2.4\\ \\Omega$"
+        why: "แหล่งจ่ายแรงดันอุดมคติที่ถูกปิดมีแรงดันเป็นศูนย์ จึงเหมือนสายไฟ"
+      - text: "ตรวจ: ใส่ $R_2 = 12\\ \\Omega$ ได้ $V_a = 9.6 \\times \\dfrac{12}{2.4 + 12} = 8\\ \\mathrm{V}$ ตรงกับวิธีแรงดันโนด"
+      - text: "ถ้าต้องการให้โหลดที่ตำแหน่งนี้ได้กำลังสูงสุด ใช้ $R_L = 2.4\\ \\Omega$ ได้ $P_{\\max} = \\dfrac{9.6^2}{4(2.4)} = 9.6\\ \\mathrm{W}$"
+    answer: "$V_{Th} = 9.6\\ \\mathrm{V}$, $R_{Th} = 2.4\\ \\Omega$ กำลังสูงสุดที่ส่งให้โหลดได้ $9.6\\ \\mathrm{W}$"
+  - { type: check, problem: engineering.circuits.dc-analysis.p009, prompt: "ปิดแหล่งจ่ายแรงดันโดยลัดวงจร แล้วมองเข้าไปจากขั้ว a b" }
+  - type: simulation
+    title: "ต่อวงจรและวัดค่า (PhET Circuit Construction Kit: DC)"
+    url: https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc
+    provider: phet
+    note: "ต่อวงจรตัวอย่างวิธีแรงดันโนด (แบตเตอรี่ 12 V และ 6 V ตัวต้านทาน 4, 12, 6 Ω) แล้วใช้โวลต์มิเตอร์วัดแรงดันที่โนด a เทียบกับ 8 V ที่คำนวณได้ จากนั้นถอดตัวต้านทาน 12 Ω ออก วัดแรงดันขั้วเปิด (V_Th) และลองต่อโหลดค่าต่าง ๆ ดูว่าค่าใดได้กำลังมากที่สุด"
+glossary:
+  - { term: โนด, definition: "จุดที่อุปกรณ์ตั้งแต่สองตัวขึ้นไปต่อเข้าด้วยกัน (node)" }
+  - { term: กฎกระแสของเคียร์ชฮอฟฟ์, definition: "ผลรวมกระแสที่ไหลเข้าโนดเท่ากับผลรวมกระแสที่ไหลออก (KCL)" }
+  - { term: กฎแรงดันของเคียร์ชฮอฟฟ์, definition: "ผลรวมแรงดันรอบวงปิดใด ๆ เป็นศูนย์ (KVL)" }
+  - { term: การทับซ้อน, definition: "ในวงจรเชิงเส้น ผลตอบสนองรวมเท่ากับผลรวมของผลตอบสนองต่อแหล่งจ่ายทีละตัว (superposition)" }
+  - { term: วงจรสมมูลเทวินิน, definition: "แหล่งจ่ายแรงดัน V_Th อนุกรมกับ R_Th ที่ให้ผลที่ขั้วเหมือนวงจรเดิมทุกประการ (Thevenin equivalent)" }
+  - { term: การส่งกำลังสูงสุด, definition: "โหลดได้กำลังมากที่สุดเมื่อความต้านทานโหลดเท่ากับ R_Th ได้ V_Th²/(4R_Th) (maximum power transfer)" }
+flashcards:
+  - { front: "กฎของเคียร์ชฮอฟฟ์สองข้อ", back: "KCL: $\\sum I = 0$ ที่ทุกโนด · KVL: $\\sum V = 0$ รอบทุกวงปิด" }
+  - { front: "ปิดแหล่งจ่ายเมื่อใช้การทับซ้อนหรือหา $R_{Th}$", back: "แหล่งจ่ายแรงดัน → ลัดวงจร · แหล่งจ่ายกระแส → เปิดวงจร" }
+  - { front: "หา $V_{Th}$, $I_N$, $R_{Th}$", back: "แรงดันขั้วเปิด · กระแสลัดวงจร · $R_{Th} = V_{Th}/I_N$" }
+  - { front: "เงื่อนไขการส่งกำลังสูงสุด", back: "$R_L = R_{Th}$ ได้ $P_{\\max} = V_{Th}^2/(4R_{Th})$ ประสิทธิภาพ 50%" }
+  - { front: "วิธีแรงดันโนดต้องใช้กี่สมการ", back: "จำนวนโนดลบหนึ่ง (โนดที่เหลือเป็นกราวด์)" }
+references:
+  - { title: "Kirchhoff's circuit laws", url: "https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Thévenin's theorem", url: "https://en.wikipedia.org/wiki/Th%C3%A9venin%27s_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.3 Kirchhoff's Rules (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.002 Circuits and Electronics (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

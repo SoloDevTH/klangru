@@ -1,0 +1,76 @@
+id: engineering.management.engineering-economics
+subject: engineering
+title: { th: เศรษฐศาสตร์วิศวกรรม, en: Engineering economics }
+summary: มูลค่าของเงินตามเวลา ดอกเบี้ยทบต้น มูลค่าปัจจุบันและอนาคต เงินงวด อัตราผลตอบแทนภายใน ระยะเวลาคืนทุน ค่าเสื่อมราคา การเทียบทางเลือก และการวิเคราะห์ความเสี่ยง
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.number.ratio-percent, math.functions.exponential]
+encompasses:
+  - { id: math.functions.exponential, weight: 0.3 }
+  - { id: math.number.ratio-percent, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: เงินฝากทบต้น
+    problem: "วิศวกรจบใหม่ฝากเงิน 100,000 บาท ในบัญชีที่ให้ดอกเบี้ย 6% ต่อปีทบต้นทุกปี (อัตราสมมติ) เมื่อครบ 10 ปีจะมีเงินเท่าใด และถ้าต้องการเงิน 100,000 บาทในอีก 10 ปี ต้องฝากวันนี้เท่าใด"
+    steps:
+      - text: "$F = P(1 + i)^n = 100\\,000 \\times 1.06^{10}$"
+      - text: "$1.06^{10} = 1.7908$ จึงได้ $F \\approx 179\\,085$ บาท"
+        why: "ดอกเบี้ยเชิงเดียวจะได้เพียง $100\\,000(1 + 0.06 \\times 10) = 160\\,000$ บาท ส่วนต่างคือดอกเบี้ยของดอกเบี้ย"
+      - text: "กลับด้าน: $P = F(1 + i)^{-n} = 100\\,000 \\times 0.5584 = 55\\,839$ บาท"
+        why: "$0.5584$ คือตัวคูณ $(P/F, 6\\%, 10)$"
+    answer: "ครบ 10 ปีได้ประมาณ 179,085 บาท และต้องฝากวันนี้ประมาณ 55,839 บาท"
+  - type: interactive
+    title: ดอกเบี้ยทบต้นกับดอกเบี้ยเชิงเดียว
+    caption: "เส้นแรกคือเงิน 100 บาทที่ได้ดอกเบี้ยทบต้น $100(1 + r/100)^x$ เส้นที่สองคือดอกเบี้ยเชิงเดียว $100(1 + rx/100)$ เมื่อ $x$ คือจำนวนปี ลองเลื่อน $r$ แล้วสังเกตว่าสองเส้นห่างกันเร็วเพียงใดเมื่อเวลาผ่านไปนาน"
+    widget:
+      kind: function-plot
+      functions: ["100\\cdot(1+\\frac{r}{100})^{x}", "100\\cdot(1+\\frac{r}{100}\\cdot x)"]
+      sliders:
+        - { name: r, min: 1, max: 15, step: 1, value: 6, label: ดอกเบี้ยต่อปี (%) }
+      x: [0, 30]
+      y: [0, 600]
+  - { type: check, problem: engineering.management.engineering-economics.p005, prompt: "มูลค่าปัจจุบันคือการหารด้วย $(1 + i)^n$" }
+  - type: figure
+    title: แผนภาพกระแสเงินสด
+    src: cashflow.svg
+    alt: "เส้นเวลาแนวนอนจากปี 0 ถึง 6 ที่ปี 0 มีลูกศรสีแดงชี้ลง P = 500,000 บาท ปี 1 ถึง 6 มีลูกศรสีเขียวชี้ขึ้นปีละ 120,000 บาท ปี 6 มีลูกศรสีส้มต่อขึ้นไปอีกคือมูลค่าซาก 50,000 บาท ลูกศรขึ้นคือเงินรับหรือเงินที่ประหยัดได้ ลูกศรลงคือเงินจ่าย ไม่ตามมาตราส่วน"
+  - type: worked-example
+    title: ประเมินโครงการเปลี่ยนหลอด LED
+    problem: "โรงพยาบาลแห่งหนึ่ง (ค่าสมมติ) ลงทุน 500,000 บาท เปลี่ยนหลอดไฟเป็น LED ประหยัดค่าไฟปีละ 120,000 บาท นาน 6 ปี และขายอุปกรณ์เป็นซากได้ 50,000 บาทเมื่อสิ้นปีที่ 6 ถ้า MARR เท่ากับ 8% ต่อปี โครงการคุ้มค่าหรือไม่"
+    steps:
+      - text: "$(P/A, 8\\%, 6) = \\dfrac{1.08^6 - 1}{0.08 \\times 1.08^6} = 4.6229$"
+      - text: "$(P/F, 8\\%, 6) = 1.08^{-6} = 0.6302$"
+      - text: "$PW = -500\\,000 + 120\\,000(4.6229) + 50\\,000(0.6302) = -500\\,000 + 554\\,746 + 31\\,508$"
+        why: "เงินลงทุนอยู่ที่ปี 0 ไม่ต้องคิดลด เงินประหยัดเป็นเงินงวด ส่วนซากเป็นเงินก้อนเดียวที่ปี 6"
+      - text: "$PW \\approx 86\\,254$ บาท ซึ่งมากกว่าศูนย์"
+      - text: "ลองหลายอัตราจนได้ $PW = 0$ ที่ $i \\approx 13.3\\%$ คือ IRR ซึ่งมากกว่า MARR"
+    answer: "คุ้มค่า PW ประมาณ 86,000 บาทที่ MARR 8% และ IRR ประมาณ 13.3%"
+  - type: figure
+    title: มูลค่าปัจจุบันสุทธิกับอัตราดอกเบี้ย
+    src: pw-curve.svg
+    alt: "กราฟเส้นโค้งลดลงของมูลค่าปัจจุบัน (พันบาท) เทียบกับอัตราดอกเบี้ย 0 ถึง 30 เปอร์เซ็นต์ ที่ 0% มีค่า 270 พันบาท จุดสีเขียวที่ 8% มีค่าประมาณ 86 พันบาท เส้นตัดแกนศูนย์ที่ประมาณ 13.3% ซึ่งคือ IRR ที่ 30% มีค่าประมาณ −173 พันบาท"
+  - { type: check, problem: engineering.management.engineering-economics.p009, prompt: "คิดลดเงินรับทุกปี แล้วหักเงินลงทุน" }
+glossary:
+  - { term: มูลค่าของเงินตามเวลา, definition: "หลักที่ว่าเงินจำนวนเท่ากันในเวลาต่างกันมีค่าไม่เท่ากัน เพราะเงินลงทุนได้ผลตอบแทน (time value of money)" }
+  - { term: มูลค่าปัจจุบันสุทธิ, definition: "ผลรวมของกระแสเงินสดทุกงวดที่คิดลดมาที่เวลา 0 ด้วยอัตราผลตอบแทนขั้นต่ำ (PW หรือ NPV)" }
+  - { term: อัตราผลตอบแทนภายใน, definition: "อัตราดอกเบี้ยที่ทำให้มูลค่าปัจจุบันสุทธิเป็นศูนย์ (IRR)" }
+  - { term: MARR, definition: "อัตราผลตอบแทนขั้นต่ำที่ยอมรับได้ ใช้เป็นอัตราคิดลดในการประเมินโครงการ (minimum attractive rate of return)" }
+  - { term: ค่าเสื่อมราคา, definition: "การกระจายต้นทุนของสินทรัพย์ตามอายุใช้งาน แบบเส้นตรงคือ (P − S)/N ต่อปี (depreciation)" }
+  - { term: ระยะเวลาคืนทุน, definition: "เวลาที่เงินรับสะสมเท่ากับเงินลงทุน แบบง่ายไม่คิดมูลค่าเงินตามเวลา (payback period)" }
+flashcards:
+  - { front: "มูลค่าอนาคตของเงินก้อนเดียว", back: "$F = P(1 + i)^n$" }
+  - { front: "มูลค่าปัจจุบันของเงินงวด $A$ นาน $n$ งวด", back: "$P = A\\,\\dfrac{(1 + i)^n - 1}{i(1 + i)^n}$" }
+  - { front: "อัตราดอกเบี้ยที่แท้จริงต่อปี", back: "$i_{\\text{eff}} = (1 + r/m)^m - 1$" }
+  - { front: "เทียบทางเลือกที่อายุไม่เท่ากัน", back: "ใช้มูลค่ารายปี (AW) ไม่ใช่ PW ตลอดอายุของแต่ละทางเลือก" }
+  - { front: "ค่าเสื่อมราคาแบบเส้นตรง", back: "$D = (P - S)/N$ มูลค่าตามบัญชีปีที่ $t$ คือ $P - tD$" }
+references:
+  - { title: "Engineering economics", url: "https://en.wikipedia.org/wiki/Engineering_economics", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Net present value", url: "https://en.wikipedia.org/wiki/Net_present_value", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Internal rate of return", url: "https://en.wikipedia.org/wiki/Internal_rate_of_return", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ดอกเบี้ย", url: "https://th.wikipedia.org/wiki/ดอกเบี้ย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

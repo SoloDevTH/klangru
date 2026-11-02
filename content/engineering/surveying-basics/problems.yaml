@@ -1,0 +1,306 @@
+problems:
+  - id: engineering.surveying.surveying-basics.p001
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 1
+    type: mcq
+    stem: "ในการทำระดับ ค่าอ่านหลัง (BS) คือค่าที่อ่านบนไม้สต๊าฟที่ตั้งอยู่บนจุดใด"
+    choices:
+      - { id: a, text: "จุดที่รู้ระดับแล้ว เช่น หมุดหลักฐาน", correct: true }
+      - { id: b, text: "จุดที่ต้องการหาระดับ", feedback: "ค่าที่อ่านบนจุดที่ต้องการหาระดับคือค่าอ่านหน้า (FS)" }
+      - { id: c, text: "จุดที่อยู่ด้านหลังผู้สำรวจเสมอ", feedback: "คำว่า หลัง ไม่ได้หมายถึงทิศ แต่หมายถึงการอ่านย้อนไปยังจุดที่รู้ค่าแล้ว" }
+      - { id: d, text: "จุดที่ตั้งกล้องระดับ", feedback: "ไม้สต๊าฟไม่ได้ตั้งที่ตำแหน่งกล้อง" }
+    hints:
+      - "เราใช้ค่าอ่านหลังหาระดับแนวเล็ง HI"
+      - "HI = RL + BS ต้องรู้ RL ก่อน"
+    solution: "ค่าอ่านหลังอ่านบนจุดที่รู้ระดับแล้ว เช่น BM หรือจุดพักกล้องที่หาระดับได้แล้ว เพื่อหาระดับแนวเล็ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p002
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ตัวอย่างกับชนิดของความคลาดเคลื่อน"
+    pairs:
+      - { left: "จดค่า 1.432 เป็น 1.342", right: "ความผิดพลาด (blunder)" }
+      - { left: "เทปเหล็กยืดเพราะใช้วัดกลางแดดร้อน", right: "ความคลาดเคลื่อนเชิงระบบ" }
+      - { left: "อ่านไม้สต๊าฟคลาดไปเล็กน้อยทั้งมากและน้อยกว่าจริง", right: "ความคลาดเคลื่อนสุ่ม" }
+    hints:
+      - "ความคลาดเคลื่อนเชิงระบบมีทิศทางคงที่และแก้ด้วยสูตรได้"
+      - "ความผิดพลาดเกิดจากความประมาท ต้องตรวจพบแล้วตัดทิ้ง"
+    solution: "จดตัวเลขสลับเป็นความผิดพลาด เทปยืดตามอุณหภูมิเป็นเชิงระบบ (ทิศเดียวกันทุกครั้ง) ส่วนการอ่านคลาดไปทั้งสองทางเป็นความคลาดเคลื่อนสุ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p003
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 2
+    type: numeric
+    stem: "หมุด BM มีระดับ $10.000\\ \\mathrm{m}$ ค่าอ่านหลังที่ BM $1.250\\ \\mathrm{m}$ ค่าอ่านหน้าที่จุด A $2.105\\ \\mathrm{m}$ จุด A มีระดับกี่เมตร"
+    answer: { value: 9.145, tolerance: 0.001, unit: m }
+    misconceptions:
+      - { match: 13.355, feedback: "บวกค่าอ่านหน้า แต่ค่าอ่านหน้ามากแปลว่าจุดอยู่ต่ำกว่าแนวเล็งมาก ต้องลบ" }
+      - { match: 10.855, feedback: "สลับเครื่องหมาย ต้องบวกค่าอ่านหลังและลบค่าอ่านหน้า" }
+    hints:
+      - "$HI = RL_{BM} + BS$"
+      - "$RL_A = HI - FS$"
+    solution: "$HI = 10.000 + 1.250 = 11.250\\ \\mathrm{m}$ และ $RL_A = 11.250 - 2.105 = 9.145\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p004
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 2
+    type: numeric
+    stem: "วัดระยะตามพื้นลาดได้ $50.00\\ \\mathrm{m}$ พื้นลาดทำมุม $5^\\circ$ กับแนวราบ ระยะราบเป็นกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 49.81, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 4.36, feedback: "ใช้ $\\sin 5^\\circ$ ซึ่งให้ระยะดิ่ง ระยะราบใช้ $\\cos$" }
+      - { match: 50, feedback: "ระยะลาดยาวกว่าระยะราบเสมอ ต้องแก้เป็นระยะราบก่อนใช้ในแบบ" }
+    hints:
+      - "ระยะลาดเป็นด้านตรงข้ามมุมฉาก"
+      - "$H = L\\cos\\theta$"
+    solution: "$H = 50.00\\cos 5^\\circ = 50.00 \\times 0.99619 = 49.81\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p005
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 2
+    type: mcq
+    stem: "แนวหนึ่งมีอะซิมัท $300^\\circ$ เขียนเป็นมุมทิศ (bearing) ได้อย่างไร"
+    choices:
+      - { id: a, text: "N $60^\\circ$ W", correct: true }
+      - { id: b, text: "N $30^\\circ$ W", feedback: "$30^\\circ$ คือมุมจากทิศตะวันตก มุมทิศวัดจากทิศเหนือหรือใต้ $360^\\circ - 300^\\circ = 60^\\circ$" }
+      - { id: c, text: "S $60^\\circ$ W", feedback: "อะซิมัทระหว่าง $270^\\circ$ ถึง $360^\\circ$ อยู่ในจตุภาคตะวันตกเฉียงเหนือ ไม่ใช่ใต้" }
+      - { id: d, text: "N $60^\\circ$ E", feedback: "อะซิมัทเกิน $180^\\circ$ แนวจึงชี้ไปทางตะวันตก" }
+    hints:
+      - "อะซิมัท $270^\\circ$ ถึง $360^\\circ$ อยู่ในจตุภาคใด"
+      - "มุมทิศวัดจากทิศเหนือหรือใต้ ไม่เกิน $90^\\circ$"
+    solution: "อะซิมัท $300^\\circ$ อยู่ในจตุภาคตะวันตกเฉียงเหนือ มุมจากทิศเหนือทวนเข็มคือ $360^\\circ - 300^\\circ = 60^\\circ$ จึงเป็น N $60^\\circ$ W"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p006
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 3
+    type: numeric
+    stem: "เทปเหล็กยาว $30\\ \\mathrm{m}$ สอบเทียบที่ $20^\\circ\\mathrm{C}$ นำไปวัดที่หน้างานก่อสร้างในกรุงเทพฯ ขณะเทปร้อน $35^\\circ\\mathrm{C}$ อ่านได้เต็มเทป $30.000\\ \\mathrm{m}$ ค่าแก้เนื่องจากอุณหภูมิเป็นกี่มิลลิเมตร ($\\alpha = 1.16 \\times 10^{-5}\\ /^\\circ\\mathrm{C}$ ตอบเป็นบวกถ้าต้องบวกเพิ่ม)"
+    answer: { value: 5.22, tolerance: 0.05, unit: mm }
+    misconceptions:
+      - { match: -5.22, feedback: "เครื่องหมายผิด เทปร้อนยาวขึ้น ขีดบนเทปห่างกันกว่าเดิม ตัวเลขที่อ่านได้จึงน้อยกว่าระยะจริง ต้องบวก" }
+      - { match: 0.00522, feedback: "นี่คือค่าแก้เป็นเมตร โจทย์ถามเป็นมิลลิเมตร" }
+    hints:
+      - "$C_t = \\alpha L (T - T_s)$"
+      - "เทปยาวขึ้นแปลว่าค่าที่อ่านน้อยกว่าระยะจริง"
+    solution: "$C_t = 1.16 \\times 10^{-5} \\times 30 \\times (35 - 20) = 0.00522\\ \\mathrm{m} = +5.22\\ \\mathrm{mm}$ ระยะจริง $30.005\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p007
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 3
+    type: numeric
+    stem: "จากภาพการทำระดับ (ค่าสมมติ) หมุด BM มีระดับ $25.000\\ \\mathrm{m}$ จุด B มีระดับกี่เมตร"
+    figure: { src: p-levelling.svg, alt: "พื้นดินลาดลงจากซ้ายไปขวา ไม้สต๊าฟตั้งที่ BM (ระดับ 25.000 m) จุดพักกล้อง TP1 และจุด B ตั้งกล้องระดับสองครั้ง ครั้งแรกระหว่าง BM กับ TP1 อ่านค่าอ่านหลังที่ BM 1.432 และค่าอ่านหน้าที่ TP1 0.876 ครั้งที่สองระหว่าง TP1 กับ B อ่านค่าอ่านหลังที่ TP1 1.215 และค่าอ่านหน้าที่ B 2.648 หน่วยเมตร" }
+    answer: { value: 24.123, tolerance: 0.001, unit: m }
+    misconceptions:
+      - { match: 31.171, feedback: "บวกค่าอ่านทุกตัว ค่าอ่านหน้าต้องลบ" }
+      - { match: 25.877, feedback: "สลับเครื่องหมายของค่าอ่านหลังกับค่าอ่านหน้า" }
+    hints:
+      - "หาระดับ TP1 ก่อนจากการตั้งกล้องครั้งแรก"
+      - "หรือใช้ $RL_B = RL_{BM} + \\sum BS - \\sum FS$"
+    solution: "$HI_1 = 25.000 + 1.432 = 26.432$, $RL_{TP1} = 26.432 - 0.876 = 25.556$, $HI_2 = 25.556 + 1.215 = 26.771$, $RL_B = 26.771 - 2.648 = 24.123\\ \\mathrm{m}$ ตรวจ: $(1.432 + 1.215) - (0.876 + 2.648) = -0.877 = 24.123 - 25.000$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p008
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 3
+    type: numeric
+    stem: "แนวสำรวจยาว $120.00\\ \\mathrm{m}$ มีอะซิมัท $60^\\circ$ องค์ประกอบทางตะวันออก $\\Delta E$ เป็นกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 103.92, tolerance: 0.02, unit: m }
+    misconceptions:
+      - { match: 60, feedback: "ใช้ $\\cos 60^\\circ$ ซึ่งให้ $\\Delta N$ อะซิมัทวัดจากทิศเหนือ $\\Delta E$ จึงใช้ $\\sin$" }
+    hints:
+      - "อะซิมัทวัดจากแกนเหนือ"
+      - "$\\Delta E = L\\sin\\alpha$"
+    solution: "$\\Delta E = 120.00\\sin 60^\\circ = 120.00 \\times 0.8660 = 103.92\\ \\mathrm{m}$ (และ $\\Delta N = 120\\cos 60^\\circ = 60.00\\ \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p009
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 3
+    type: numeric
+    stem: "วัดระยะเดียวกันหกครั้งได้ $125.32$, $125.35$, $125.30$, $125.83$, $125.36$ และ $125.32\\ \\mathrm{m}$ ค่าหนึ่งเป็นความผิดพลาดชัดเจน ตัดค่านั้นทิ้งแล้วหาค่าเฉลี่ย (เมตร ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 125.33, tolerance: 0.005, unit: m }
+    misconceptions:
+      - { match: 125.41, feedback: "เฉลี่ยรวมค่า $125.83$ ซึ่งต่างจากค่าอื่นราวครึ่งเมตร น่าจะอ่านเทปผิด ความผิดพลาดต้องตัดทิ้ง ไม่นำไปเฉลี่ย" }
+    hints:
+      - "ค่าใดต่างจากค่าอื่นมากผิดปกติ"
+      - "เฉลี่ยห้าค่าที่เหลือ"
+    solution: "ตัด $125.83$ ทิ้ง ค่าเฉลี่ย $= \\dfrac{125.32 + 125.35 + 125.30 + 125.36 + 125.32}{5} = 125.33\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p010
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 4
+    type: numeric
+    stem: "ทำระดับวนรอบหมู่บ้านแห่งหนึ่งในจังหวัดสุพรรณบุรี (ค่าสมมติ) ระยะทางรวม $2.25\\ \\mathrm{km}$ งานนี้กำหนดเกณฑ์ความคลาดเคลื่อนบรรจบไม่เกิน $12\\sqrt{K}\\ \\mathrm{mm}$ ($K$ เป็นกิโลเมตร) ความคลาดเคลื่อนบรรจบที่ยอมให้ได้เป็นกี่มิลลิเมตร"
+    answer: { value: 18, tolerance: 0.1, unit: mm }
+    misconceptions:
+      - { match: 27, feedback: "คูณ 12 กับ $K$ โดยตรง เกณฑ์นี้ใช้รากที่สองของระยะทาง" }
+    hints:
+      - "แทน $K = 2.25$"
+      - "$\\sqrt{2.25} = 1.5$"
+    solution: "$12\\sqrt{2.25} = 12 \\times 1.5 = 18\\ \\mathrm{mm}$ ความคลาดเคลื่อนสุ่มสะสมตามรากที่สองของจำนวนครั้งที่ตั้งกล้อง จึงใช้รากที่สองของระยะทาง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p011
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 4
+    type: numeric
+    stem: "วงรอบปิดยาวรวม $600\\ \\mathrm{m}$ คำนวณได้ $\\sum\\Delta N = +0.12\\ \\mathrm{m}$ และ $\\sum\\Delta E = -0.09\\ \\mathrm{m}$ ความละเอียดสัมพัทธ์เป็น 1 ต่อเท่าใด"
+    answer: { value: 4000, tolerance: 10 }
+    misconceptions:
+      - { match: 5000, feedback: "ใช้เฉพาะ $\\sum\\Delta N$ ระยะคลาดเคลื่อนบรรจบต้องรวมทั้งสองทิศด้วยทฤษฎีบทพีทาโกรัส" }
+      - { match: 2857, feedback: "บวก $0.12 + 0.09$ ตรง ๆ แต่สององค์ประกอบตั้งฉากกัน ต้องใช้ $\\sqrt{0.12^2 + 0.09^2}$" }
+    hints:
+      - "$e = \\sqrt{(\\sum\\Delta N)^2 + (\\sum\\Delta E)^2}$"
+      - "ความละเอียด $= 1 : \\sum L / e$"
+    solution: "$e = \\sqrt{0.12^2 + 0.09^2} = 0.15\\ \\mathrm{m}$ ความละเอียด $= 1 : 600/0.15 = 1 : 4000$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p012
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 4
+    type: numeric
+    stem: "แปลงนาในจังหวัดชัยนาท (ค่าสมมติ) มีหมุดสี่มุม พิกัด $(E, N)$ เป็นเมตร: A $(0, 0)$, B $(80, 10)$, C $(90, 70)$, D $(10, 60)$ แปลงนี้มีพื้นที่กี่ตารางเมตร"
+    answer: { value: 4700, tolerance: 1, unit: m² }
+    misconceptions:
+      - { match: 9400, feedback: "ลืมคูณ $\\tfrac12$ ในสูตรเชือกผูกรองเท้า" }
+    hints:
+      - "$A = \\tfrac12 |\\sum (E_i N_{i+1} - E_{i+1} N_i)|$ วนกลับมาจุดแรก"
+      - "คู่ A→B: $0 \\times 10 - 80 \\times 0 = 0$ ทำต่อ B→C, C→D, D→A"
+    solution: "A→B: $0$ · B→C: $80 \\times 70 - 90 \\times 10 = 4700$ · C→D: $90 \\times 60 - 10 \\times 70 = 4700$ · D→A: $10 \\times 0 - 0 \\times 60 = 0$ รวม $9400$ พื้นที่ $= 4700\\ \\mathrm{m^2}$ หรือ 2 ไร่ 3 งาน 75 ตารางวา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p013
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 5
+    type: numeric
+    stem: "วงรอบปิดยาวรวม $600\\ \\mathrm{m}$ มี $\\sum\\Delta E = -0.09\\ \\mathrm{m}$ ใช้กฎของเข็มทิศปรับแก้ แนวที่ยาว $150\\ \\mathrm{m}$ ได้ค่าแก้ $\\Delta E$ กี่มิลลิเมตร (ใส่เครื่องหมาย)"
+    answer: { value: 22.5, tolerance: 0.1, unit: mm }
+    misconceptions:
+      - { match: -22.5, feedback: "ค่าแก้ต้องมีเครื่องหมายตรงข้ามกับผลรวมที่เหลือ เพื่อให้ผลรวมหลังแก้เป็นศูนย์" }
+      - { match: 0.0225, feedback: "คำตอบนี้เป็นเมตร โจทย์ถามเป็นมิลลิเมตร" }
+    hints:
+      - "$c = -\\sum\\Delta E \\times \\dfrac{L}{\\sum L}$"
+      - "$-(-0.09) \\times \\dfrac{150}{600}$"
+    solution: "$c = +0.09 \\times \\dfrac{150}{600} = +0.0225\\ \\mathrm{m} = +22.5\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p014
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 4
+    type: numeric
+    stem: "สำรวจแนวถนนในจังหวัดลำปาง (ค่าสมมติ) จุดที่ระยะ 0+000 มีระดับ $152.340\\ \\mathrm{m}$ จุดที่ระยะ 0+150 มีระดับ $151.590\\ \\mathrm{m}$ ความลาดชันของแนวนี้เป็นกี่เปอร์เซ็นต์ (ใส่เครื่องหมาย ลบคือลาดลง)"
+    answer: { value: -0.5, tolerance: 0.01, unit: "%" }
+    misconceptions:
+      - { match: 0.5, feedback: "ระดับลดลงจาก 152.340 เป็น 151.590 แนวนี้จึงลาดลง ต้องเป็นค่าลบ" }
+      - { match: -0.005, feedback: "นี่คือความลาดเป็นอัตราส่วน ต้องคูณ 100 เป็นเปอร์เซ็นต์" }
+    hints:
+      - "0+150 หมายถึงระยะ 150 เมตรจากจุดเริ่ม"
+      - "ความลาด = (ระดับปลาย − ระดับต้น) ÷ ระยะราบ × 100"
+    solution: "$\\dfrac{151.590 - 152.340}{150} \\times 100 = \\dfrac{-0.750}{150} \\times 100 = -0.5\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p015
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 2
+    type: mcq
+    stem: "นักศึกษาวัดระยะเดียวกันห้าครั้งได้ค่าใกล้กันมาก แต่ภายหลังพบว่าเทปที่ใช้ยาวเกินจริง 2 ซม. ผลวัดชุดนี้เป็นอย่างไร"
+    choices:
+      - { id: a, text: "เที่ยงแต่ไม่แม่น", correct: true }
+      - { id: b, text: "แม่นแต่ไม่เที่ยง", feedback: "ค่าวัดใกล้กันเองคือความเที่ยงสูง แต่ทุกค่าคลาดไปทางเดียวกันจากเทปผิด จึงไม่แม่น" }
+      - { id: c, text: "ทั้งเที่ยงและแม่น", feedback: "เทปยาวเกินทำให้ทุกค่าคลาดจากค่าจริง ผลจึงไม่แม่น" }
+      - { id: d, text: "ไม่เที่ยงและไม่แม่น", feedback: "ค่าที่ได้ใกล้กันมาก จึงเที่ยง" }
+    hints:
+      - "ความเที่ยงดูจากค่าที่วัดซ้ำใกล้กันเองหรือไม่"
+      - "ความแม่นดูจากค่าใกล้ค่าจริงหรือไม่"
+    solution: "ผลวัดใกล้กันเองจึงเที่ยง แต่เทปผิดเป็นความคลาดเคลื่อนเชิงระบบทำให้ทุกค่าคลาดไปทางเดียวกัน จึงไม่แม่น แก้ได้ด้วยการแก้ค่าความยาวเทป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p016
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการทำระดับจากหมุด BM ไปยังจุด B ที่ต้องย้ายกล้องหนึ่งครั้ง"
+    items:
+      - "ตั้งกล้องระดับแล้วอ่านค่าอ่านหลังที่ BM"
+      - "อ่านค่าอ่านหน้าที่จุดพักกล้อง TP1"
+      - "ย้ายกล้อง โดยไม่ขยับไม้สต๊าฟที่ TP1"
+      - "อ่านค่าอ่านหลังที่ TP1"
+      - "อ่านค่าอ่านหน้าที่จุด B"
+      - "ตรวจ ΣBS − ΣFS กับผลต่างระดับที่คำนวณได้"
+    hints:
+      - "ทุกครั้งที่ตั้งกล้อง อ่านค่าอ่านหลังก่อน แล้วจึงอ่านค่าอ่านหน้า"
+      - "ไม้สต๊าฟที่ TP1 ต้องอยู่ตำแหน่งเดิมจนอ่านค่าอ่านหลังเสร็จ"
+    solution: "BS ที่ BM → FS ที่ TP1 → ย้ายกล้อง (ไม้ที่ TP1 อยู่กับที่) → BS ที่ TP1 → FS ที่ B → ตรวจทางคณิตศาสตร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p017
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 5
+    type: numeric
+    stem: "หมุด A มีพิกัด $E = 1000.000\\ \\mathrm{m}$, $N = 2000.000\\ \\mathrm{m}$ แนว AB ยาว $250.000\\ \\mathrm{m}$ อะซิมัท $210^\\circ$ พิกัด $N$ ของหมุด B เป็นกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1783.49, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 2216.51, feedback: "เครื่องหมายผิด $\\cos 210^\\circ$ เป็นลบ แนวชี้ไปทางใต้ $N$ จึงลดลง" }
+      - { match: 1875, feedback: "ใช้ $\\sin$ กับ $\\Delta N$ ได้ $250\\sin 210^\\circ = -125$ ซึ่งคือ $\\Delta E$" }
+    hints:
+      - "$\\Delta N = L\\cos\\alpha$ เครื่องหมายมาจากโคไซน์เอง"
+      - "$\\cos 210^\\circ = -\\cos 30^\\circ$"
+    solution: "$\\Delta N = 250\\cos 210^\\circ = -216.506\\ \\mathrm{m}$ จึงได้ $N_B = 2000.000 - 216.506 = 1783.49\\ \\mathrm{m}$ (และ $\\Delta E = 250\\sin 210^\\circ = -125\\ \\mathrm{m}$, $E_B = 875.000\\ \\mathrm{m}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p018
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 4
+    type: numeric
+    stem: "กล้องประมวลผลรวมวัดระยะลาดไปยังเป้าได้ $200.000\\ \\mathrm{m}$ มุมดิ่งจากจุดยอดฟ้า (zenith angle) $87^\\circ$ เป้าสูงกว่าแกนกล้องกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 10.47, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 199.73, feedback: "นี่คือระยะราบ $S\\sin z$ ต่างระดับใช้ $S\\cos z$ เพราะมุมวัดจากแนวดิ่ง" }
+    hints:
+      - "มุมจากจุดยอดฟ้าวัดจากแนวดิ่งขึ้นไป มุม $90^\\circ$ คือแนวราบ"
+      - "ต่างระดับ $= S\\cos z$"
+    solution: "ต่างระดับ $= 200\\cos 87^\\circ = 200 \\times 0.05234 = 10.47\\ \\mathrm{m}$ (มุมน้อยกว่า $90^\\circ$ แนวเล็งเงยขึ้น เป้าจึงสูงกว่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.surveying.surveying-basics.p019
+    topics: [engineering.surveying.surveying-basics]
+    difficulty: 5
+    type: numeric
+    stem: "วงรอบปิดห้าด้านวัดมุมภายในได้ผลรวม $540^\\circ 01' 15''$ ถ้าแบ่งค่าแก้เท่ากันทุกมุม แต่ละมุมต้องแก้กี่ฟิลิปดา (ใส่เครื่องหมาย)"
+    answer: { value: -15, tolerance: 0.1, unit: "″" }
+    misconceptions:
+      - { match: 15, feedback: "ผลรวมเกินค่าทฤษฎี ต้องลบออก ค่าแก้จึงเป็นลบ" }
+      - { match: -25, feedback: "หารด้วย 3 ซึ่งคือ $n - 2$ แต่ต้องแบ่งให้ทุกมุม คือ 5 มุม" }
+    hints:
+      - "ผลรวมมุมภายในตามทฤษฎี $= (n - 2) \\times 180^\\circ$"
+      - "ส่วนเกิน $1' 15'' = 75''$ แบ่งให้ 5 มุม"
+    solution: "ทฤษฎี $(5 - 2) \\times 180^\\circ = 540^\\circ$ วัดเกิน $75''$ แต่ละมุมแก้ $-75''/5 = -15''$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

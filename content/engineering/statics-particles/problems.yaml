@@ -1,0 +1,296 @@
+problems:
+  - id: engineering.mechanics.statics-particles.p001
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 1
+    type: mcq
+    stem: "ห่วงเหล็กที่ผูกลวดหลายเส้นอยู่นิ่ง ข้อใดเป็นเงื่อนไขสมดุลของห่วงนี้ (ถือเป็นอนุภาค)"
+    choices:
+      - { id: a, text: "ผลรวมเวกเตอร์ของแรงทุกแรงที่กระทำต่อห่วงเป็นศูนย์", correct: true }
+      - { id: b, text: "ผลรวมขนาดของแรงทุกแรงเป็นศูนย์", feedback: "ขนาดของแรงเป็นบวกเสมอ รวมกันไม่เป็นศูนย์ ต้องรวมแบบเวกเตอร์ซึ่งคิดทิศด้วย" }
+      - { id: c, text: "แรงตึงในลวดทุกเส้นเท่ากัน", feedback: "แรงตึงต่างกันได้ ขึ้นกับมุมของลวด สิ่งที่ต้องเป็นศูนย์คือผลรวมเวกเตอร์" }
+      - { id: d, text: "ไม่มีแรงกระทำต่อห่วงเลย", feedback: "มีแรงกระทำได้หลายแรง ขอเพียงหักล้างกันจนแรงลัพธ์เป็นศูนย์" }
+    hints:
+      - "กฎข้อที่หนึ่งของนิวตัน"
+      - "แรงเป็นปริมาณเวกเตอร์"
+    solution: "อนุภาคสมดุลเมื่อ $\\sum \\vec F = \\vec 0$ ซึ่งในแต่ละแกนคือ $\\sum F_x = 0$, $\\sum F_y = 0$ (และ $\\sum F_z = 0$ ในสามมิติ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p002
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สิ่งที่สัมผัสอนุภาคกับแรงที่วาดในแผนภาพวัตถุอิสระ"
+    pairs:
+      - { left: "เชือกหรือลวด", right: "แรงตึงตามแนวเชือก ชี้ออกจากอนุภาค" }
+      - { left: "ผิวเรียบไม่มีแรงเสียดทาน", right: "แรงตั้งฉากกับผิว ชี้เข้าหาอนุภาค" }
+      - { left: "สปริงเชิงเส้น", right: "แรงขนาด ks ตามแนวสปริง" }
+      - { left: "โลก (แรงโน้มถ่วง)", right: "น้ำหนัก mg ชี้ลงในแนวดิ่ง" }
+    hints:
+      - "เชือกดึงได้ ผลักไม่ได้"
+      - "ผิวเรียบดันได้เฉพาะในทิศตั้งฉากกับผิว"
+    solution: "เชือกให้แรงตึงชี้ออกจากอนุภาค ผิวเรียบให้แรงตั้งฉาก สปริงให้ $ks$ ตามแนวสปริง และโลกให้น้ำหนักลงในแนวดิ่ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p003
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 2
+    type: numeric
+    stem: "แรงขนาด $500\\ \\mathrm{N}$ ทำมุม $30^\\circ$ กับแกน $x$ (เหนือแกน) องค์ประกอบ $F_x$ เป็นกี่นิวตัน (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 433.0, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 250, feedback: "ใช้ $\\sin 30^\\circ$ ซึ่งให้องค์ประกอบ $y$ มุมวัดจากแกน $x$ องค์ประกอบ $x$ จึงใช้ $\\cos$" }
+    hints:
+      - "องค์ประกอบที่อยู่ติดกับมุมใช้ $\\cos$"
+      - "$F_x = F\\cos\\theta$"
+    solution: "$F_x = 500\\cos 30^\\circ = 500 \\times 0.8660 = 433.0\\ \\mathrm{N}$ (และ $F_y = 250\\ \\mathrm{N}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p004
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 2
+    type: numeric
+    stem: "แรง $300\\ \\mathrm{N}$ ในแนว $+x$ และแรง $400\\ \\mathrm{N}$ ในแนว $+y$ กระทำต่ออนุภาค ต้องใช้แรงที่สามขนาดเท่าใดจึงจะสมดุล (นิวตัน)"
+    answer: { value: 500, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 700, feedback: "บวกขนาดตรง ๆ แต่สองแรงตั้งฉากกัน ต้องรวมแบบเวกเตอร์" }
+      - { match: 100, feedback: "ลบขนาด แต่แรงทั้งสองไม่ได้อยู่ในแนวเดียวกัน" }
+    hints:
+      - "แรงที่สามต้องหักล้างแรงลัพธ์ของสองแรงแรก"
+      - "ขนาดแรงลัพธ์ $= \\sqrt{300^2 + 400^2}$"
+    solution: "แรงลัพธ์ของสองแรง $= \\sqrt{300^2 + 400^2} = 500\\ \\mathrm{N}$ แรงที่สามจึงต้องมีขนาด $500\\ \\mathrm{N}$ ชี้ในทิศตรงข้าม คือ $-300\\hat i - 400\\hat j\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p005
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 2
+    type: numeric
+    stem: "สปริงมีค่าคงตัว $2000\\ \\mathrm{N/m}$ ความยาวธรรมชาติ $0.25\\ \\mathrm{m}$ ถูกดึงจนยาว $0.35\\ \\mathrm{m}$ สปริงออกแรงกี่นิวตัน"
+    answer: { value: 200, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 700, feedback: "ใช้ความยาวทั้งหมด $0.35\\ \\mathrm{m}$ แทนระยะที่ยืด ต้องใช้ $s = 0.35 - 0.25$" }
+      - { match: 500, feedback: "ใช้ความยาวธรรมชาติเป็นระยะยืด ระยะยืดคือผลต่างของความยาว" }
+    hints:
+      - "$F = ks$ โดย $s$ คือระยะที่ยืดจากความยาวธรรมชาติ"
+      - "$s = 0.35 - 0.25$"
+    solution: "$s = 0.10\\ \\mathrm{m}$ $F = 2000 \\times 0.10 = 200\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p006
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 3
+    type: numeric
+    stem: "ป้ายร้านกาแฟหนัก $600\\ \\mathrm{N}$ (ค่าสมมติ) แขวนจากห่วง C ที่ผูกลวด CA ทำมุม $30^\\circ$ และลวด CB ทำมุม $45^\\circ$ กับแนวราบ ดังภาพ แรงตึงในลวด CB เป็นกี่นิวตัน"
+    figure: { src: p-sign.svg, alt: "ห่วง C แขวนป้ายร้านกาแฟหนัก 600 นิวตันด้วยลวดแนวดิ่ง ห่วงผูกลวดไปทางซ้ายบนถึงจุดยึด A บนเพดาน ทำมุม 30 องศากับแนวราบ และลวดไปทางขวาบนถึงจุดยึด B ทำมุม 45 องศากับแนวราบ" }
+    answer: { value: 537.9, tolerance: 1, unit: N }
+    misconceptions:
+      - { match: 424.3, feedback: "ถือว่าลวดทั้งสองรับน้ำหนักเท่ากัน แต่มุมต่างกัน ต้องแก้สมการ $\\sum F_x = 0$ และ $\\sum F_y = 0$ พร้อมกัน" }
+      - { match: 439.2, feedback: "นี่คือแรงตึงในลวด CA" }
+    hints:
+      - "$\\sum F_x = 0$: $T_{CB}\\cos 45^\\circ = T_{CA}\\cos 30^\\circ$"
+      - "$\\sum F_y = 0$: $T_{CA}\\sin 30^\\circ + T_{CB}\\sin 45^\\circ = 600$"
+    solution: "จากสมการแรก $T_{CA} = 0.8165\\,T_{CB}$ แทนในสมการที่สอง $T_{CB}(0.8165 \\times 0.5 + 0.7071) = 600$ ได้ $T_{CB} = 537.9\\ \\mathrm{N}$ และ $T_{CA} = 439.2\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p007
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 3
+    type: numeric
+    stem: "กล่องหนัก $1000\\ \\mathrm{N}$ วางนิ่งบนพื้นเอียงเรียบ (ไม่มีแรงเสียดทาน) ที่ทำมุม $20^\\circ$ กับแนวราบ ถูกยึดไว้ด้วยเชือกที่ขึงในแนว **ราบ** แรงตึงเชือกเป็นกี่นิวตัน"
+    answer: { value: 364.0, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 342.0, feedback: "นี่คือคำตอบเมื่อเชือกขนานกับพื้นเอียง ($W\\sin 20^\\circ$) แต่เชือกในโจทย์ขึงแนวราบ" }
+      - { match: 1064.2, feedback: "นี่คือแรงตั้งฉากจากพื้นเอียง ($W/\\cos 20^\\circ$) ไม่ใช่แรงตึงเชือก" }
+    hints:
+      - "มีสามแรง: น้ำหนัก แรงตั้งฉาก และแรงตึงแนวราบ"
+      - "เลือกแกนตามแนวพื้นเอียงเพื่อตัดแรงตั้งฉากออก: $T\\cos 20^\\circ = W\\sin 20^\\circ$"
+    solution: "ตามแนวพื้นเอียง แรงตั้งฉากไม่มีองค์ประกอบ $T\\cos 20^\\circ - W\\sin 20^\\circ = 0$ ได้ $T = W\\tan 20^\\circ = 1000 \\times 0.3640 = 364.0\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p008
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 2
+    type: numeric
+    stem: "คนงานก่อสร้างยกถังปูนหนัก $800\\ \\mathrm{N}$ ด้วยรอกเคลื่อนที่ (รอกลื่น น้ำหนักรอกและเชือกน้อยมาก) โดยเชือกสองช่วงที่คล้องรอกอยู่ในแนวดิ่งทั้งคู่ แรงตึงในเชือกเป็นกี่นิวตัน"
+    answer: { value: 400, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 800, feedback: "เชือกสองช่วงช่วยกันรับน้ำหนัก และรอกลื่นทำให้แรงตึงเท่ากันทุกช่วง" }
+      - { match: 1600, feedback: "คูณ 2 แทนการหาร วาดแผนภาพวัตถุอิสระของรอก: แรงตึงสองแรงขึ้นรับน้ำหนักหนึ่งแรงลง" }
+    hints:
+      - "วาดแผนภาพวัตถุอิสระของรอกเคลื่อนที่"
+      - "$2T = W$"
+    solution: "แผนภาพของรอก: แรงตึง $T$ ขึ้นสองช่วง น้ำหนัก $800\\ \\mathrm{N}$ ลง $2T = 800$ ได้ $T = 400\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p009
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 3
+    type: numeric
+    stem: "ลวดเส้นหนึ่งลากจาก $A(0, 0, 0)$ ไป $B(2, 3, 6)$ (เมตร) มีแรงตึง $700\\ \\mathrm{N}$ องค์ประกอบ $F_z$ ของแรงที่ลวดกระทำต่อจุด A เป็นกี่นิวตัน"
+    answer: { value: 600, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 4200, feedback: "คูณแรงกับพิกัด 6 โดยไม่หารด้วยความยาวลวด ต้องใช้เวกเตอร์หนึ่งหน่วย" }
+      - { match: 381.8, feedback: "หารด้วยผลรวมพิกัด $2 + 3 + 6 = 11$ ความยาวลวดคือ $\\sqrt{2^2 + 3^2 + 6^2} = 7$" }
+    hints:
+      - "ความยาว $AB = \\sqrt{2^2 + 3^2 + 6^2}$"
+      - "$F_z = F \\times \\dfrac{z_B - z_A}{AB}$"
+    solution: "$AB = 7\\ \\mathrm{m}$ $\\hat u = (\\tfrac27, \\tfrac37, \\tfrac67)$ $F_z = 700 \\times \\tfrac67 = 600\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p010
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 3
+    type: numeric
+    stem: "แรง $\\vec F = 120\\hat i - 90\\hat j + 200\\hat k\\ \\mathrm{N}$ มีขนาดกี่นิวตัน"
+    answer: { value: 250, tolerance: 0.5, unit: N }
+    misconceptions:
+      - { match: 230, feedback: "บวกองค์ประกอบตรง ๆ ($120 - 90 + 200$) ขนาดต้องใช้รากที่สองของผลบวกกำลังสอง" }
+      - { match: 410, feedback: "บวกค่าสัมบูรณ์ขององค์ประกอบ ขนาดเวกเตอร์ใช้ $\\sqrt{F_x^2 + F_y^2 + F_z^2}$" }
+    hints:
+      - "$F = \\sqrt{F_x^2 + F_y^2 + F_z^2}$"
+      - "เครื่องหมายลบหายไปเมื่อยกกำลังสอง"
+    solution: "$F = \\sqrt{120^2 + 90^2 + 200^2} = \\sqrt{14\\,400 + 8100 + 40\\,000} = \\sqrt{62\\,500} = 250\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p011
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 4
+    type: numeric
+    stem: "แรง $\\vec F = 120\\hat i - 90\\hat j + 200\\hat k\\ \\mathrm{N}$ ทำมุม $\\gamma$ กับแกน $+z$ กี่องศา (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 36.9, tolerance: 0.1, unit: "°" }
+    misconceptions:
+      - { match: 53.1, feedback: "นี่คือมุมที่แรงทำกับระนาบ $xy$ มุมแสดงทิศทางวัดจากแกน $z$ ใช้ $\\cos\\gamma = F_z/F$" }
+      - { match: 61.3, feedback: "นี่คือมุม $\\alpha$ กับแกน $x$ ($\\cos\\alpha = 120/250$)" }
+    hints:
+      - "หาขนาด $F$ ก่อน"
+      - "$\\cos\\gamma = F_z/F$"
+    solution: "$F = 250\\ \\mathrm{N}$ $\\cos\\gamma = 200/250 = 0.8$ ได้ $\\gamma = 36.9^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p012
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 4
+    type: numeric
+    stem: "ป้ายแขวนดังภาพ (ลวด CA ทำมุม $30^\\circ$ ลวด CB ทำมุม $45^\\circ$ กับแนวราบ) ถ้าลวดแต่ละเส้นรับแรงตึงได้ไม่เกิน $1000\\ \\mathrm{N}$ ป้ายหนักได้มากสุดกี่นิวตัน"
+    figure: { src: p-sign-max.svg, alt: "ห่วง C แขวนป้ายน้ำหนัก W ด้วยลวดแนวดิ่ง ห่วงผูกลวดไปทางซ้ายบนถึงจุดยึด A ทำมุม 30 องศากับแนวราบ และลวดไปทางขวาบนถึงจุดยึด B ทำมุม 45 องศากับแนวราบ" }
+    answer: { value: 1115.4, tolerance: 2, unit: N }
+    misconceptions:
+      - { match: 1366, feedback: "ใช้ลวด CA กำหนดน้ำหนักสูงสุด แต่ลวด CB รับแรงมากกว่าต่อน้ำหนักหนึ่งหน่วย จะขาดก่อน" }
+      - { match: 2000, feedback: "บวกความแข็งแรงของลวดสองเส้นตรง ๆ แต่ลวดเอียงจึงเสียแรงบางส่วนไปหักล้างกันในแนวราบ" }
+    hints:
+      - "จากโจทย์ป้าย 600 N: $T_{CA} = 0.7321\\,W$ และ $T_{CB} = 0.8966\\,W$"
+      - "ลวดที่มีสัมประสิทธิ์มากกว่าจะถึงขีดจำกัดก่อน"
+    solution: "$T_{CB} = 0.8966\\,W$ มากกว่า $T_{CA}$ เสมอ ตั้ง $0.8966\\,W = 1000$ ได้ $W = 1115.4\\ \\mathrm{N}$ ขณะนั้น $T_{CA} = 816.6\\ \\mathrm{N}$ ยังไม่ถึงขีดจำกัด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p013
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 4
+    type: numeric
+    stem: "ปั้นจั่นที่ไซต์ก่อสร้างคอนโดมิเนียมแห่งหนึ่งยกคานเหล็กหนัก $12\\ \\mathrm{kN}$ (ค่าสมมติ) ด้วยสลิงสองเส้นที่ห้อยจากตะขอเดียว แต่ละเส้นทำมุม $60^\\circ$ กับแนวราบ แรงตึงในสลิงแต่ละเส้นเป็นกี่กิโลนิวตัน (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.93, tolerance: 0.02, unit: kN }
+    misconceptions:
+      - { match: 6, feedback: "แบ่งน้ำหนักครึ่งหนึ่งโดยไม่คิดมุม สลิงเอียงต้องดึงแรงกว่านี้" }
+      - { match: 12, feedback: "ใช้ $\\cos 60^\\circ$ แทน $\\sin 60^\\circ$ มุมวัดจากแนวราบ องค์ประกอบแนวดิ่งจึงใช้ $\\sin$" }
+    hints:
+      - "สมมาตร สลิงทั้งสองมีแรงตึงเท่ากัน"
+      - "$2T\\sin 60^\\circ = 12$"
+    solution: "$T = \\dfrac{12}{2\\sin 60^\\circ} = \\dfrac{12}{1.732} = 6.93\\ \\mathrm{kN}$ ถ้าสลิงเอียงมากขึ้น (มุมกับแนวราบลดลง) แรงตึงจะเพิ่มขึ้นอีก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p014
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 5
+    type: numeric
+    stem: "โคมไฟระย้าในหอประชุมแห่งหนึ่งหนัก $900\\ \\mathrm{N}$ (ค่าสมมติ) แขวนที่จุด A ด้วยลวดสามเส้นไปยังเพดานที่จุด B, C, D ตามพิกัดในภาพ แรงตึงในลวด AB เป็นกี่นิวตัน"
+    figure: { src: p-lamp3d.svg, alt: "ภาพสามมิติ โคมไฟที่จุด A (0, 0, 0) แขวนด้วยลวดสามเส้นขึ้นไปยังจุดบนเพดานที่ระดับ z = 4 m ได้แก่ B (0, −3, 4) C (2.4, 1.8, 4) และ D (−2.4, 1.8, 4) หน่วยเมตร มีแกน x y z ที่จุด A" }
+    answer: { value: 421.9, tolerance: 1, unit: N }
+    misconceptions:
+      - { match: 300, feedback: "แบ่งน้ำหนักเท่ากันสามเส้น แต่ลวดมีทิศต่างกัน ต้องแก้สมการสมดุลสามแกน" }
+      - { match: 351.6, feedback: "นี่คือแรงตึงในลวด AC (หรือ AD)" }
+    hints:
+      - "ลวดทุกเส้นยาว 5 m เวกเตอร์หนึ่งหน่วย: $\\hat u_{AB} = (0, -0.6, 0.8)$, $\\hat u_{AC} = (0.48, 0.36, 0.8)$, $\\hat u_{AD} = (-0.48, 0.36, 0.8)$"
+      - "จากสมการแกน $x$ ได้ $T_C = T_D$ แล้วใช้แกน $y$ และ $z$"
+    solution: "$\\sum F_x$: $0.48T_C - 0.48T_D = 0$ จึง $T_C = T_D$ · $\\sum F_y$: $-0.6T_B + 0.36(2T_C) = 0$ จึง $T_B = 1.2T_C$ · $\\sum F_z$: $0.8(T_B + 2T_C) = 900$ ได้ $0.8(3.2T_C) = 900$ จึง $T_C = 351.6\\ \\mathrm{N}$ และ $T_B = 421.9\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p015
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 5
+    type: numeric
+    stem: "โคมไฟหนัก $80\\ \\mathrm{N}$ แขวนที่จุดหนึ่งด้วยลวดที่ทำมุม $30^\\circ$ กับแนวดิ่งไปยังเพดาน และสปริงในแนวราบไปยังผนัง ($k = 500\\ \\mathrm{N/m}$) ขณะสมดุลสปริงยาว $0.40\\ \\mathrm{m}$ ความยาวธรรมชาติของสปริงเป็นกี่เมตร (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.308, tolerance: 0.002, unit: m }
+    misconceptions:
+      - { match: 0.492, feedback: "สปริงถูกดึงให้ยืด ความยาวธรรมชาติจึงสั้นกว่า 0.40 m ต้องลบระยะยืด ไม่ใช่บวก" }
+      - { match: 0.32, feedback: "ใช้ $W\\sin 30^\\circ$ เป็นแรงสปริง แต่องค์ประกอบแนวราบของลวดคือ $T\\sin 30^\\circ$ โดย $T\\cos 30^\\circ = W$ จึงได้ $W\\tan 30^\\circ$" }
+    hints:
+      - "$\\sum F_y$: $T\\cos 30^\\circ = 80$ และ $\\sum F_x$: $F_s = T\\sin 30^\\circ$"
+      - "$F_s = 80\\tan 30^\\circ$ แล้ว $s = F_s/k$"
+    solution: "$F_s = 80\\tan 30^\\circ = 46.19\\ \\mathrm{N}$ ระยะยืด $s = 46.19/500 = 0.0924\\ \\mathrm{m}$ ความยาวธรรมชาติ $= 0.40 - 0.0924 = 0.308\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p016
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 2
+    type: mcq
+    stem: "อนุภาคหนึ่งอยู่ในสมดุลสามมิติ มีแรงที่ไม่รู้ขนาดอยู่ 4 แรง (รู้ทิศทั้งหมด) จะหาแรงทั้งสี่จากเงื่อนไขสมดุลของอนุภาคได้หรือไม่"
+    choices:
+      - { id: a, text: "ไม่ได้ เพราะมีสมการสมดุลเพียง 3 สมการ", correct: true }
+      - { id: b, text: "ได้ เพราะมีสมการ 4 สมการ", feedback: "อนุภาคในสามมิติมีสมการอิสระ 3 สมการ คือ $\\sum F_x$, $\\sum F_y$, $\\sum F_z$" }
+      - { id: c, text: "ได้ เพราะมีสมการ 6 สมการ", feedback: "6 สมการเป็นของวัตถุแข็งเกร็ง (รวมโมเมนต์) อนุภาคไม่มีสมการโมเมนต์" }
+      - { id: d, text: "ไม่ได้ เพราะมีสมการเพียง 2 สมการ", feedback: "2 สมการเป็นกรณีสองมิติ" }
+    hints:
+      - "นับจำนวนสมการอิสระของอนุภาคในสามมิติ"
+      - "จำนวนค่าที่ไม่รู้ต้องไม่เกินจำนวนสมการ"
+    solution: "อนุภาคในสามมิติมี 3 สมการ หาค่าที่ไม่รู้ได้ไม่เกิน 3 ค่า แรงที่ไม่รู้ 4 แรงต้องใช้ข้อมูลเพิ่ม เช่น ความยืดหยุ่นของลวด (ปัญหาแบบนี้เรียกว่าอินดีเทอร์มิเนตเชิงสถิต)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p017
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการแก้โจทย์สมดุลของอนุภาคในสามมิติที่รู้พิกัดปลายลวด"
+    items:
+      - "วาดแผนภาพวัตถุอิสระของอนุภาค"
+      - "เขียนเวกเตอร์ตำแหน่งจากอนุภาคไปยังปลายลวดแต่ละเส้น"
+      - "หาเวกเตอร์หนึ่งหน่วยของลวดแต่ละเส้น"
+      - "เขียนแรงแต่ละแรงเป็น T คูณเวกเตอร์หนึ่งหน่วย"
+      - "ตั้งสมการผลรวมองค์ประกอบในแกน x y z เป็นศูนย์"
+      - "แก้ระบบสมการและตรวจเครื่องหมาย"
+    hints:
+      - "ต้องรู้ว่ามีแรงอะไรบ้างก่อนเขียนเวกเตอร์"
+      - "เวกเตอร์หนึ่งหน่วยได้จากเวกเตอร์ตำแหน่งหารด้วยความยาว"
+    solution: "แผนภาพวัตถุอิสระ → เวกเตอร์ตำแหน่ง → เวกเตอร์หนึ่งหน่วย → เขียนแรงเป็นเวกเตอร์ → ตั้งสมการสามแกน → แก้สมการและตรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.statics-particles.p018
+    topics: [engineering.mechanics.statics-particles]
+    difficulty: 3
+    type: numeric
+    stem: "ไฟจราจรหนัก $250\\ \\mathrm{N}$ (ค่าสมมติ) แขวนที่กึ่งกลางลวดที่ขึงข้ามถนนในอำเภอหนึ่ง ลวดแต่ละข้างทำมุม $10^\\circ$ กับแนวราบ แรงตึงในลวดแต่ละข้างเป็นกี่นิวตัน"
+    answer: { value: 719.8, tolerance: 1, unit: N }
+    misconceptions:
+      - { match: 125, feedback: "แบ่งน้ำหนักครึ่งหนึ่งโดยไม่คิดมุม ลวดเกือบราบต้องดึงแรงมากจึงจะได้องค์ประกอบแนวดิ่งพอ" }
+      - { match: 126.9, feedback: "ใช้ $\\cos 10^\\circ$ มุมวัดจากแนวราบ องค์ประกอบแนวดิ่งจึงใช้ $\\sin 10^\\circ$" }
+    hints:
+      - "สมมาตร ลวดสองข้างมีแรงตึงเท่ากัน"
+      - "$2T\\sin 10^\\circ = 250$"
+    solution: "$T = \\dfrac{250}{2\\sin 10^\\circ} = \\dfrac{250}{0.3473} = 719.8\\ \\mathrm{N}$ เกือบสามเท่าของน้ำหนัก ลวดที่ตึงเกือบราบจึงต้องแข็งแรงมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

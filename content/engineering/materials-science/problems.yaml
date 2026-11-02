@@ -1,0 +1,296 @@
+problems:
+  - id: engineering.materials.materials-science.p001
+    topics: [engineering.materials.materials-science]
+    difficulty: 1
+    type: mcq
+    stem: "สายไฟในบ้านใช้ทองแดงเพราะนำไฟฟ้าได้ดี สมบัตินี้มาจากพันธะชนิดใด"
+    choices:
+      - { id: a, text: "พันธะโลหะ ที่มีอิเล็กตรอนเคลื่อนที่อิสระทั่วทั้งก้อน", correct: true }
+      - { id: b, text: "พันธะไอออนิก", feedback: "ของแข็งไอออนิกไม่นำไฟฟ้า เพราะไอออนถูกตรึงอยู่กับที่ในผลึก" }
+      - { id: c, text: "พันธะโคเวเลนต์แบบร่างตาข่าย", feedback: "อิเล็กตรอนในพันธะโคเวเลนต์ถูกใช้ร่วมระหว่างอะตอมคู่หนึ่ง เคลื่อนที่อิสระไม่ได้ เช่น เพชรไม่นำไฟฟ้า" }
+      - { id: d, text: "แรงระหว่างโมเลกุล", feedback: "ทองแดงไม่ได้เป็นโมเลกุล และของแข็งโมเลกุลไม่นำไฟฟ้า" }
+    hints:
+      - "การนำไฟฟ้าต้องมีอนุภาคที่มีประจุเคลื่อนที่ได้"
+      - "แบบจำลองทะเลอิเล็กตรอน"
+    solution: "พันธะโลหะมีเวเลนซ์อิเล็กตรอนเคลื่อนที่อิสระทั่วทั้งก้อน เมื่อมีความต่างศักย์ อิเล็กตรอนจึงไหลเป็นกระแสได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p002
+    topics: [engineering.materials.materials-science]
+    difficulty: 1
+    type: match
+    stem: "จับคู่กลุ่มวัสดุกับตัวอย่างในงานก่อสร้างและชีวิตประจำวัน"
+    pairs:
+      - { left: "โลหะ", right: "เหล็กข้ออ้อยเสริมคอนกรีต" }
+      - { left: "เซรามิก", right: "กระเบื้องปูพื้นและชามดินเผา" }
+      - { left: "พอลิเมอร์", right: "ท่อพีวีซีประปา" }
+      - { left: "วัสดุผสม", right: "เรือไฟเบอร์กลาส" }
+    hints:
+      - "เซรามิกได้จากการเผาดินหรือออกไซด์"
+      - "วัสดุผสมรวมวัสดุสองชนิดเข้าด้วยกัน"
+    solution: "เหล็กข้ออ้อยเป็นโลหะ กระเบื้องและชามดินเผาเป็นเซรามิก ท่อพีวีซีเป็นพอลิเมอร์ ไฟเบอร์กลาสเป็นวัสดุผสมของเส้นใยแก้วกับเรซิน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p003
+    topics: [engineering.materials.materials-science]
+    difficulty: 2
+    type: numeric
+    stem: "หน่วยเซลล์ลูกบาศก์กลางหน้า (FCC) มีอะตอมเป็นของหน่วยเซลล์นั้นทั้งหมดกี่อะตอม"
+    answer: { value: 4, tolerance: 0, unit: อะตอม }
+    misconceptions:
+      - { match: 14, feedback: "นับมุม 8 และหน้า 6 เป็นอะตอมเต็ม แต่อะตอมที่มุมใช้ร่วมกับ 8 เซลล์ ที่หน้าใช้ร่วมกับ 2 เซลล์" }
+      - { match: 7, feedback: "คิดอะตอมที่หน้าครึ่งเดียวถูกแล้ว แต่ลืมแบ่งอะตอมที่มุม: $8 \\times \\tfrac18 = 1$" }
+    hints:
+      - "อะตอมที่มุมเป็นของเซลล์นี้ $\\tfrac18$ อะตอมที่หน้าเป็นของเซลล์นี้ $\\tfrac12$"
+      - "$8 \\times \\tfrac18 + 6 \\times \\tfrac12$"
+    solution: "$8 \\times \\tfrac18 + 6 \\times \\tfrac12 = 1 + 3 = 4$ อะตอม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p004
+    topics: [engineering.materials.materials-science]
+    difficulty: 2
+    type: numeric
+    stem: "ในโครงสร้างลูกบาศก์กลางตัว (BCC) อะตอมที่กึ่งกลางเซลล์สัมผัสกับอะตอมข้างเคียงกี่อะตอม (เลขโคออร์ดิเนชัน)"
+    answer: { value: 8, tolerance: 0 }
+    misconceptions:
+      - { match: 6, feedback: "นี่คือเลขโคออร์ดิเนชันของลูกบาศก์อย่างง่าย ใน BCC อะตอมกลางสัมผัสอะตอมที่มุมทั้งแปด" }
+      - { match: 12, feedback: "นี่คือเลขโคออร์ดิเนชันของ FCC ซึ่งบรรจุแน่นกว่า" }
+    hints:
+      - "อะตอมกลางสัมผัสอะตอมใดบ้างตามเส้นทแยงมุมของลูกบาศก์"
+      - "ลูกบาศก์มีกี่มุม"
+    solution: "อะตอมกลางสัมผัสอะตอมที่มุมทั้ง 8 ตามเส้นทแยงมุมภายในลูกบาศก์ เลขโคออร์ดิเนชันของ BCC จึงเป็น 8"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p005
+    topics: [engineering.materials.materials-science]
+    difficulty: 2
+    type: mcq
+    stem: "เหตุใดเหล็กเส้นจึงดัดงอได้โดยไม่หัก แต่แผ่นกระเบื้องเซรามิกหักทันทีเมื่อถูกดัด"
+    choices:
+      - { id: a, text: "ในโลหะ ดิสโลเคชันเลื่อนได้ง่าย ส่วนพันธะไอออนิกหรือโคเวเลนต์ของเซรามิกทำให้ดิสโลเคชันเลื่อนแทบไม่ได้", correct: true }
+      - { id: b, text: "เหล็กมีพันธะแข็งแรงกว่าเซรามิกทุกชนิด", feedback: "เซรามิกหลายชนิดมีพันธะแข็งแรงและจุดหลอมเหลวสูงกว่าเหล็ก ความเปราะไม่ได้มาจากพันธะอ่อน" }
+      - { id: c, text: "เซรามิกไม่มีโครงสร้างผลึก", feedback: "เซรามิกส่วนใหญ่เป็นผลึก (เช่น อะลูมินา) ความเปราะมาจากการที่ระนาบอะตอมเลื่อนผ่านกันไม่ได้" }
+      - { id: d, text: "เหล็กมีความหนาแน่นมากกว่า", feedback: "ความหนาแน่นไม่ได้กำหนดว่าวัสดุเหนียวหรือเปราะ" }
+    hints:
+      - "การเปลี่ยนรูปถาวรเกิดจากการเลื่อนของแถวอะตอม"
+      - "ถ้าเลื่อนไอออนบวกไปอยู่ข้างไอออนบวกจะเกิดอะไรขึ้น"
+    solution: "โลหะมีทะเลอิเล็กตรอนที่ไม่มีทิศทาง ดิสโลเคชันเลื่อนได้ จึงเปลี่ยนรูปถาวรแทนการแตก ในเซรามิก การเลื่อนทำให้ไอออนชนิดเดียวกันมาชิดกันหรือต้องหักพันธะโคเวเลนต์ที่มีทิศทาง ดิสโลเคชันจึงเลื่อนไม่ได้ รอยร้าวเล็ก ๆ ลามจนแตก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p006
+    topics: [engineering.materials.materials-science]
+    difficulty: 3
+    type: numeric
+    stem: "โลหะชนิดหนึ่งมีโครงสร้าง FCC รัศมีอะตอม $0.128\\ \\mathrm{nm}$ ความยาวขอบหน่วยเซลล์ $a$ เป็นกี่นาโนเมตร (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.362, tolerance: 0.002, unit: nm }
+    misconceptions:
+      - { match: 0.256, feedback: "ใช้ $a = 2R$ ซึ่งเป็นของลูกบาศก์อย่างง่าย ใน FCC อะตอมสัมผัสกันตามเส้นทแยงมุมของหน้า" }
+      - { match: 0.296, feedback: "ใช้ $a = 4R/\\sqrt3$ ซึ่งเป็นของ BCC" }
+    hints:
+      - "เส้นทแยงมุมของหน้ายาว $4R$ และยาว $\\sqrt2\\,a$"
+      - "$a = 2\\sqrt2\\,R$"
+    solution: "$a = 2\\sqrt2 \\times 0.128 = 0.362\\ \\mathrm{nm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p007
+    topics: [engineering.materials.materials-science]
+    difficulty: 3
+    type: numeric
+    stem: "เหล็กที่อุณหภูมิห้องมีโครงสร้าง BCC รัศมีอะตอม $0.124\\ \\mathrm{nm}$ มวลอะตอม $55.85\\ \\mathrm{g/mol}$ ความหนาแน่นทางทฤษฎีเป็นกี่ $\\mathrm{g/cm^3}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 7.9, tolerance: 0.03, unit: g/cm³ }
+    misconceptions:
+      - { match: 15.8, feedback: "ใช้ $n = 4$ ของ FCC แต่ BCC มี 2 อะตอมต่อหน่วยเซลล์" }
+      - { match: 3.95, feedback: "ใช้ $n = 1$ ลืมอะตอมที่กึ่งกลางเซลล์" }
+    hints:
+      - "BCC: $n = 2$ และ $a = 4R/\\sqrt3$"
+      - "แปลง $a$ เป็นเซนติเมตรแล้วใช้ $\\rho = nA/(a^3 N_A)$"
+    solution: "$a = 4(0.124)/\\sqrt3 = 0.2864\\ \\mathrm{nm} = 2.864 \\times 10^{-8}\\ \\mathrm{cm}$ $a^3 = 2.348 \\times 10^{-23}\\ \\mathrm{cm^3}$ $\\rho = \\dfrac{2(55.85)}{(2.348 \\times 10^{-23})(6.022 \\times 10^{23})} = 7.90\\ \\mathrm{g/cm^3}$ (ค่าที่วัดได้ 7.87)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p008
+    topics: [engineering.materials.materials-science]
+    difficulty: 3
+    type: numeric
+    stem: "พอลิเอทิลีนสำหรับทำถุงพลาสติกมีมวลโมเลกุลเฉลี่ย $140\\,000\\ \\mathrm{g/mol}$ หน่วยซ้ำ $\\mathrm{C_2H_4}$ มีมวล $28.05\\ \\mathrm{g/mol}$ ระดับการเกิดพอลิเมอร์ (จำนวนหน่วยซ้ำต่อโซ่) ประมาณเท่าใด"
+    answer: { value: 4991, tolerance: 10 }
+    misconceptions:
+      - { match: 9979, feedback: "ใช้มวลของ $\\mathrm{CH_2}$ ($14.03$) แต่หน่วยซ้ำของพอลิเอทิลีนตามโจทย์คือ $\\mathrm{C_2H_4}$" }
+    hints:
+      - "ระดับการเกิดพอลิเมอร์ $= M/m$"
+      - "$140\\,000 \\div 28.05$"
+    solution: "$\\dfrac{140\\,000}{28.05} \\approx 4991$ หน่วยซ้ำต่อโซ่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p009
+    topics: [engineering.materials.materials-science]
+    difficulty: 3
+    type: mcq
+    stem: "โรงงานรีไซเคิลรับขยะพลาสติก ข้อใดนำมาหลอมขึ้นรูปใหม่ได้ง่ายที่สุด"
+    choices:
+      - { id: a, text: "ท่อพีวีซีเก่า (เทอร์โมพลาสติก)", correct: true }
+      - { id: b, text: "จานเมลามีน (เทอร์โมเซต)", feedback: "เทอร์โมเซตมีพันธะเชื่อมขวางทั่วทั้งชิ้น ให้ความร้อนแล้วไม่หลอมแต่จะไหม้" }
+      - { id: c, text: "ยางรถยนต์ที่วัลคาไนซ์แล้ว", feedback: "ยางวัลคาไนซ์มีพันธะกำมะถันเชื่อมขวาง หลอมขึ้นรูปใหม่ไม่ได้ ต้องบดหรือใช้กระบวนการพิเศษ" }
+      - { id: d, text: "แผ่นวงจรอีพอกซีเสริมใยแก้ว", feedback: "อีพอกซีเป็นเทอร์โมเซต และยังผสมใยแก้ว แยกและหลอมใหม่ยาก" }
+    hints:
+      - "พลาสติกที่โซ่ไม่เชื่อมขวางกันจะอ่อนตัวเมื่อร้อน"
+      - "เทอร์โมพลาสติกกับเทอร์โมเซตต่างกันอย่างไร"
+    solution: "พีวีซีเป็นเทอร์โมพลาสติก โซ่พอลิเมอร์แยกกัน ให้ความร้อนแล้วโซ่เลื่อนผ่านกันได้ จึงหลอมขึ้นรูปใหม่ได้ ส่วนเทอร์โมเซตและยางวัลคาไนซ์มีพันธะเชื่อมขวาง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p010
+    topics: [engineering.materials.materials-science]
+    difficulty: 3
+    type: numeric
+    stem: "กราฟแสดงช่วงต้นของเส้นโค้งความเค้นกับความเครียดของเหล็กกล้าจากการทดสอบแรงดึง มอดุลัสของยังของเหล็กกล้านี้เป็นกี่จิกะพาสคัล (GPa)"
+    figure: { src: p-elastic.svg, alt: "กราฟแกนนอนเป็นความเครียดคูณ 10 ยกกำลังลบ 3 ตั้งแต่ 0 ถึง 4 แกนตั้งเป็นความเค้น 0 ถึง 350 MPa มีเส้นตารางทุก 0.5 และทุก 50 MPa เส้นกราฟเป็นเส้นตรงจากจุดกำเนิด ผ่านจุดความเครียด 1 × 10⁻³ ที่ความเค้น 200 MPa ไปถึงความเค้น 250 MPa ที่ความเครียด 1.25 × 10⁻³ แล้วเปลี่ยนเป็นเส้นเกือบราบที่เพิ่มขึ้นช้า ๆ ถึงประมาณ 272 MPa ที่ความเครียด 4 × 10⁻³" }
+    answer: { value: 200, tolerance: 2, unit: GPa }
+    misconceptions:
+      - { match: 0.2, feedback: "ลืมว่าความเครียดบนแกนคูณ $10^{-3}$ อยู่" }
+      - { match: 68, feedback: "ใช้จุดที่ความเครียด $4 \\times 10^{-3}$ ซึ่งอยู่นอกช่วงยืดหยุ่น มอดุลัสต้องหาจากความชันของช่วงที่เป็นเส้นตรง" }
+    hints:
+      - "มอดุลัสของยังคือความชันของช่วงเส้นตรง $E = \\sigma/\\varepsilon$"
+      - "อ่านจุดบนเส้นตรง เช่น ความเครียด $1 \\times 10^{-3}$"
+    solution: "ที่ $\\varepsilon = 1 \\times 10^{-3}$ อ่านได้ $\\sigma = 200\\ \\mathrm{MPa}$ จึง $E = \\dfrac{200\\ \\mathrm{MPa}}{0.001} = 200\\,000\\ \\mathrm{MPa} = 200\\ \\mathrm{GPa}$ และความเค้นครากประมาณ $250\\ \\mathrm{MPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p011
+    topics: [engineering.materials.materials-science]
+    difficulty: 4
+    type: numeric
+    stem: "แผ่นไฟเบอร์กลาสมีเส้นใยแก้ว ($E_f = 72\\ \\mathrm{GPa}$) สัดส่วนปริมาตร 0.40 ในเรซินพอลิเอสเตอร์ ($E_m = 3\\ \\mathrm{GPa}$) มอดุลัสตามแนวเส้นใยประมาณกี่ GPa"
+    answer: { value: 30.6, tolerance: 0.1, unit: GPa }
+    misconceptions:
+      - { match: 37.5, feedback: "เฉลี่ยสองค่าเท่า ๆ กัน แต่ต้องถ่วงด้วยสัดส่วนปริมาตร" }
+      - { match: 4.86, feedback: "ใช้สูตรแบบอนุกรม ($1/E_c = V_f/E_f + V_m/E_m$) ซึ่งใช้กับแรงตั้งฉากกับเส้นใย ตามแนวเส้นใยใช้ผลบวกถ่วงน้ำหนัก" }
+    hints:
+      - "$E_c = V_f E_f + V_m E_m$"
+      - "$V_m = 1 - 0.40$"
+    solution: "$E_c = 0.40(72) + 0.60(3) = 28.8 + 1.8 = 30.6\\ \\mathrm{GPa}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p012
+    topics: [engineering.materials.materials-science]
+    difficulty: 4
+    type: numeric
+    stem: "หาสัดส่วนการบรรจุอะตอม (APF) ของโครงสร้าง BCC โดยถืออะตอมเป็นทรงกลมแข็งรัศมี $R$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.68, tolerance: 0.005 }
+    misconceptions:
+      - { match: 0.74, feedback: "นี่คือ APF ของ FCC ซึ่งมี 4 อะตอมต่อเซลล์และบรรจุแน่นกว่า" }
+      - { match: 0.34, feedback: "ใช้อะตอมเพียงหนึ่งตัว แต่ BCC มี 2 อะตอมต่อหน่วยเซลล์" }
+    hints:
+      - "APF $= \\dfrac{n \\cdot \\tfrac43\\pi R^3}{a^3}$ โดย $n = 2$"
+      - "$a = 4R/\\sqrt3$"
+    solution: "APF $= \\dfrac{2 \\cdot \\tfrac43\\pi R^3}{(4R/\\sqrt3)^3} = \\dfrac{\\sqrt3\\,\\pi}{8} = 0.68$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p013
+    topics: [engineering.materials.materials-science]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "วิธีใดทำให้เหล็กกล้าแข็งแรงขึ้น (ความเค้นครากสูงขึ้น) (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "รีดเย็นให้เกิดดิสโลเคชันจำนวนมากพันกัน", correct: true }
+      - { id: b, text: "ทำให้เกรนมีขนาดเล็กลง", correct: true }
+      - { id: c, text: "ผสมธาตุอื่นที่ทำให้แลตทิซบิดเบี้ยว", correct: true }
+      - { id: d, text: "อบอ่อน (annealing) ที่อุณหภูมิสูงเป็นเวลานาน", feedback: "การอบอ่อนลดจำนวนดิสโลเคชันและทำให้เกรนโตขึ้น โลหะจึงอ่อนและเหนียวขึ้น" }
+    hints:
+      - "โลหะแข็งแรงขึ้นเมื่อดิสโลเคชันเลื่อนยากขึ้น"
+      - "สิ่งใดขวางการเลื่อนของดิสโลเคชัน"
+    solution: "การรีดเย็น (ดิสโลเคชันพันกันเอง) เกรนเล็ก (ขอบเกรนมากขึ้น) และการผสมธาตุ (อะตอมแปลกปลอมทำให้แลตทิซบิดเบี้ยว) ล้วนขวางดิสโลเคชัน ส่วนการอบอ่อนให้ผลตรงข้าม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p014
+    topics: [engineering.materials.materials-science]
+    difficulty: 4
+    type: mcq
+    stem: "ประเทศไทยผลิตยางธรรมชาติจากต้นยางพาราจำนวนมาก ยางดิบเหนียวเยิ้มเมื่อร้อนและแข็งเปราะเมื่อเย็น การวัลคาไนซ์ด้วยกำมะถันทำให้ยางใช้ทำยางรถยนต์ได้เพราะเหตุใด"
+    choices:
+      - { id: a, text: "กำมะถันสร้างพันธะเชื่อมขวางระหว่างโซ่ยาง โซ่จึงยืดออกได้แต่ไม่ไหลผ่านกัน และดึงกลับคืนรูป", correct: true }
+      - { id: b, text: "กำมะถันทำให้โซ่ยางสั้นลง ยางจึงแข็งขึ้น", feedback: "การวัลคาไนซ์ไม่ได้ตัดโซ่ แต่เชื่อมโซ่เข้าด้วยกัน" }
+      - { id: c, text: "กำมะถันทำให้ยางกลายเป็นผลึกทั้งก้อน", feedback: "ยางวัลคาไนซ์ยังเป็นพอลิเมอร์อสัณฐานเป็นส่วนใหญ่ ความยืดหยุ่นมาจากโซ่ที่ขดไปมาและพันธะเชื่อมขวาง" }
+      - { id: d, text: "กำมะถันทำให้ยางนำไฟฟ้าได้", feedback: "การวัลคาไนซ์ไม่ได้ทำให้ยางนำไฟฟ้า สมบัติที่เปลี่ยนคือความยืดหยุ่นและความทนความร้อน" }
+    hints:
+      - "ยางดิบเหนียวเยิ้มเพราะโซ่เลื่อนผ่านกันได้"
+      - "จะทำอย่างไรให้โซ่ยืดได้แต่ไม่ไหล"
+    solution: "พันธะกำมะถันเชื่อมโซ่ยางเป็นช่วง ๆ เมื่อดึง โซ่ที่ขดอยู่ยืดออก เมื่อปล่อย พันธะเชื่อมขวางดึงกลับคืนรูป และโซ่ไม่ไหลผ่านกันเมื่อร้อน ยางจึงเป็นอีลาสโตเมอร์ที่ใช้งานได้ในช่วงอุณหภูมิกว้าง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p015
+    topics: [engineering.materials.materials-science]
+    difficulty: 5
+    type: numeric
+    stem: "ทองแดงมีอะตอม $N = 8.0 \\times 10^{28}$ อะตอมต่อลูกบาศก์เมตร พลังงานการเกิดช่องว่าง $Q_v = 0.90\\ \\mathrm{eV}$ ต่ออะตอม ที่อุณหภูมิ $1000^\\circ\\mathrm{C}$ มีช่องว่างกี่อะตอมต่อลูกบาศก์เมตร ตอบเป็นหน่วย $10^{25}\\ \\mathrm{m^{-3}}$ ($k = 8.62 \\times 10^{-5}\\ \\mathrm{eV/K}$)"
+    answer: { value: 2.19, tolerance: 0.03, unit: "× 10²⁵ m⁻³" }
+    misconceptions:
+      - { match: 0.234, feedback: "ใช้อุณหภูมิเป็นองศาเซลเซียส ($1000$) ต้องแปลงเป็นเคลวิน $1273\\ \\mathrm{K}$" }
+    hints:
+      - "$N_v = N\\,e^{-Q_v/kT}$ โดย $T$ เป็นเคลวิน"
+      - "$Q_v/kT = 0.90/(8.62 \\times 10^{-5} \\times 1273) = 8.20$"
+    solution: "$T = 1273\\ \\mathrm{K}$ $e^{-8.20} = 2.74 \\times 10^{-4}$ $N_v = 8.0 \\times 10^{28} \\times 2.74 \\times 10^{-4} = 2.19 \\times 10^{25}\\ \\mathrm{m^{-3}}$ ประมาณ 3 ช่องว่างต่ออะตอม 10,000 ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p016
+    topics: [engineering.materials.materials-science]
+    difficulty: 5
+    type: mcq
+    stem: "โลหะชนิดหนึ่งมีมวลอะตอม $92.91\\ \\mathrm{g/mol}$ รัศมีอะตอม $0.143\\ \\mathrm{nm}$ วัดความหนาแน่นได้ $8.57\\ \\mathrm{g/cm^3}$ และมีโครงสร้างลูกบาศก์แบบใดแบบหนึ่ง โครงสร้างผลึกน่าจะเป็นแบบใด"
+    choices:
+      - { id: a, text: "BCC (คำนวณได้ $8.57\\ \\mathrm{g/cm^3}$)", correct: true }
+      - { id: b, text: "FCC (คำนวณได้ $9.33\\ \\mathrm{g/cm^3}$)", feedback: "ค่าที่คำนวณจาก FCC สูงกว่าค่าที่วัดได้เกือบ 9% ไม่ตรง" }
+      - { id: c, text: "SC (คำนวณได้ $6.60\\ \\mathrm{g/cm^3}$)", feedback: "ค่าจาก SC ต่ำกว่าค่าที่วัดได้มาก และโลหะแทบไม่มีโครงสร้าง SC" }
+      - { id: d, text: "บอกไม่ได้ ต้องใช้รังสีเอกซ์เท่านั้น", feedback: "การเทียบความหนาแน่นทางทฤษฎีกับค่าที่วัดได้ช่วยคัดโครงสร้างที่เป็นไปได้ได้" }
+    hints:
+      - "คำนวณ $\\rho = nA/(a^3 N_A)$ ของแต่ละโครงสร้าง แล้วเทียบกับค่าที่วัดได้"
+      - "BCC: $n = 2$, $a = 4R/\\sqrt3$ · FCC: $n = 4$, $a = 2\\sqrt2\\,R$"
+    solution: "BCC: $a = 0.3303\\ \\mathrm{nm}$ ได้ $\\rho = 8.57\\ \\mathrm{g/cm^3}$ ตรงกับค่าที่วัด FCC: $a = 0.4045\\ \\mathrm{nm}$ ได้ $9.33$ SC: $a = 0.286\\ \\mathrm{nm}$ ได้ $6.60$ จึงเป็น BCC (โลหะนี้คือไนโอเบียม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p017
+    topics: [engineering.materials.materials-science]
+    difficulty: 2
+    type: mcq
+    stem: "เติมฟอสฟอรัส (หมู่ 15 มี 5 เวเลนซ์อิเล็กตรอน) ลงในผลึกซิลิคอนบริสุทธิ์ (หมู่ 14) ได้สารกึ่งตัวนำชนิดใด"
+    choices:
+      - { id: a, text: "ชนิด n มีอิเล็กตรอนเกินเป็นพาหะส่วนใหญ่", correct: true }
+      - { id: b, text: "ชนิด p มีโฮลเป็นพาหะส่วนใหญ่", feedback: "ชนิด p ได้จากการเติมธาตุหมู่ 13 เช่น โบรอน ซึ่งมีเวเลนซ์อิเล็กตรอนน้อยกว่าซิลิคอน" }
+      - { id: c, text: "ฉนวน เพราะสิ่งเจือปนขวางการไหลของอิเล็กตรอน", feedback: "การเติมสารเจือปนเล็กน้อยทำให้ซิลิคอนนำไฟฟ้าได้ดีขึ้นมาก ไม่ใช่น้อยลง" }
+      - { id: d, text: "ตัวนำแบบโลหะ", feedback: "ยังเป็นสารกึ่งตัวนำ เพียงแต่มีพาหะมากขึ้น" }
+    hints:
+      - "ซิลิคอนใช้ 4 อิเล็กตรอนสร้างพันธะกับอะตอมข้างเคียง"
+      - "ฟอสฟอรัสมีอิเล็กตรอนเหลือกี่ตัวหลังสร้างพันธะครบ"
+    solution: "ฟอสฟอรัสใช้ 4 อิเล็กตรอนสร้างพันธะกับซิลิคอน เหลือ 1 อิเล็กตรอนที่หลุดออกเป็นพาหะได้ง่าย จึงเป็นชนิด n (negative)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.materials.materials-science.p018
+    topics: [engineering.materials.materials-science]
+    difficulty: 4
+    type: numeric
+    stem: "ห้องปฏิบัติการทดสอบวัสดุทดสอบแรงดึงเหล็กข้ออ้อยจากโครงการก่อสร้างอาคาร (ค่าสมมติ) ขีดระยะวัดบนชิ้นทดสอบ $50.0\\ \\mathrm{mm}$ หลังดึงจนขาดแล้วนำมาต่อกัน วัดได้ $61.5\\ \\mathrm{mm}$ ความยืดจนขาด (เปอร์เซ็นต์ความยืด) เป็นเท่าใด"
+    answer: { value: 23, tolerance: 0.1, unit: "%" }
+    misconceptions:
+      - { match: 18.7, feedback: "หารด้วยความยาวหลังขาด $61.5$ ต้องหารด้วยความยาวเดิม" }
+      - { match: 123, feedback: "นี่คือความยาวใหม่เป็นเปอร์เซ็นต์ของความยาวเดิม ต้องลบ 100 ออก" }
+    hints:
+      - "%ความยืด $= \\dfrac{L_f - L_0}{L_0} \\times 100$"
+      - "$L_0 = 50.0$ และ $L_f = 61.5$"
+    solution: "$\\dfrac{61.5 - 50.0}{50.0} \\times 100 = 23\\%$ ค่านี้บอกความเหนียว เหล็กเสริมคอนกรีตต้องเหนียวพอที่จะดัดงอได้และเตือนก่อนพัง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

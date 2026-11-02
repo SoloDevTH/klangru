@@ -1,0 +1,68 @@
+id: engineering.mechanics.statics-particles
+subject: engineering
+title: { th: สมดุลของอนุภาค, en: Equilibrium of a particle }
+summary: แผนภาพวัตถุอิสระ การแตกแรงเป็นองค์ประกอบ สปริงและรอก สมดุลของอนุภาคในสองมิติ เวกเตอร์คาร์ทีเซียน เวกเตอร์หนึ่งหน่วยตามแนวลวด และสมดุลในสามมิติ
+difficulty: 6
+minutes: 40
+prerequisites: [physics.dynamics.forces, physics.units.vectors, physics.dynamics.newton-first, math.geometry.trig-ratios, physics.rotation.static-equilibrium]
+encompasses:
+  - { id: physics.units.vectors, weight: 0.4 }
+  - { id: math.geometry.trig-ratios, weight: 0.3 }
+  - { id: physics.dynamics.forces, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: แผนภาพวัตถุอิสระของห่วง
+    src: fbd-ring.svg
+    alt: "ซ้าย: ห่วง C ผูกลวดไปยังจุดยึด A บนเพดานด้านซ้ายและ B ด้านขวา และแขวนก้อนมวล m ด้านล่าง ลูกศรบอกว่าตัดแยกห่วงออกมา ขวา: แผนภาพวัตถุอิสระของห่วง C มีแรงสามแรง แรงตึง T_CA ชี้ไปทางซ้ายบนทำมุม 40 องศากับแนวราบ แรงตึง T_CB ชี้ไปทางขวาบนทำมุม 60 องศากับแนวราบ และน้ำหนัก W = mg ชี้ลง มีแกน x แนวราบและแกน y แนวดิ่ง ด้านล่างเขียนว่า ΣFx = 0 และ ΣFy = 0 ได้สองสมการ หาค่าที่ไม่รู้ได้สองค่า"
+  - type: worked-example
+    title: แรงตึงในลวดสองเส้น
+    problem: "ห่วง C ในภาพแขวนกล่องมวล $50\\ \\mathrm{kg}$ ลวด CA ทำมุม $40^\\circ$ และลวด CB ทำมุม $60^\\circ$ กับแนวราบ จงหาแรงตึงในลวดทั้งสอง ($g = 9.81\\ \\mathrm{m/s^2}$)"
+    steps:
+      - text: "น้ำหนัก $W = 50 \\times 9.81 = 490.5\\ \\mathrm{N}$"
+      - text: "$\\sum F_x = 0$: $-T_{CA}\\cos 40^\\circ + T_{CB}\\cos 60^\\circ = 0$ ได้ $T_{CB} = 1.532\\,T_{CA}$"
+        why: "T_CA ชี้ไปทางซ้าย องค์ประกอบ $x$ จึงเป็นลบ มุมวัดจากแนวราบ จึงใช้ $\\cos$ กับแกน $x$"
+      - text: "$\\sum F_y = 0$: $T_{CA}\\sin 40^\\circ + T_{CB}\\sin 60^\\circ - 490.5 = 0$"
+      - text: "แทนค่า: $T_{CA}(0.6428 + 1.532 \\times 0.8660) = 490.5$ ได้ $1.9696\\,T_{CA} = 490.5$"
+      - text: "$T_{CA} = 249.0\\ \\mathrm{N}$ และ $T_{CB} = 1.532 \\times 249.0 = 381.5\\ \\mathrm{N}$"
+        why: "ลวดที่ชันกว่า (ใกล้แนวดิ่งกว่า) รับน้ำหนักมากกว่า และผลรวมของแรงตึงมากกว่าน้ำหนักเพราะองค์ประกอบแนวราบหักล้างกันเอง"
+    answer: "$T_{CA} \\approx 249\\ \\mathrm{N}$ และ $T_{CB} \\approx 382\\ \\mathrm{N}$"
+  - { type: check, problem: engineering.mechanics.statics-particles.p003, prompt: "มุมวัดจากแกน x ใช้ cos กับองค์ประกอบ x" }
+  - type: worked-example
+    title: แรงในลวดเมื่อรู้พิกัดปลายทั้งสอง
+    problem: "ลวดยึดเสาเริ่มที่ $A(1, 0, 0)\\ \\mathrm{m}$ ไปยัง $B(-2, 4, 12)\\ \\mathrm{m}$ มีแรงตึง $1300\\ \\mathrm{N}$ จงเขียนแรงที่ลวดกระทำต่อจุด $A$ ในรูปเวกเตอร์คาร์ทีเซียน และหามุม $\\gamma$ ที่แรงทำกับแกน $z$"
+    steps:
+      - text: "$\\vec r_{AB} = (-2 - 1)\\hat i + (4 - 0)\\hat j + (12 - 0)\\hat k = -3\\hat i + 4\\hat j + 12\\hat k\\ \\mathrm{m}$"
+        why: "ปลายลบต้น ลวดดึงจุด A เข้าหา B"
+      - text: "$|\\vec r_{AB}| = \\sqrt{9 + 16 + 144} = 13\\ \\mathrm{m}$ จึง $\\hat u_{AB} = -\\tfrac{3}{13}\\hat i + \\tfrac{4}{13}\\hat j + \\tfrac{12}{13}\\hat k$"
+      - text: "$\\vec F = 1300\\,\\hat u_{AB} = -300\\hat i + 400\\hat j + 1200\\hat k\\ \\mathrm{N}$"
+      - text: "$\\cos\\gamma = \\dfrac{1200}{1300}$ ได้ $\\gamma = 22.6^\\circ$"
+        why: "ตรวจ: $300^2 + 400^2 + 1200^2 = 1300^2$"
+    answer: "$\\vec F = \\{-300\\hat i + 400\\hat j + 1200\\hat k\\}\\ \\mathrm{N}$ และ $\\gamma \\approx 22.6^\\circ$"
+  - type: interactive
+    title: รวมแรงสองแรงจนสมดุล
+    caption: "ลากเวกเตอร์ a และ b ซึ่งแทนแรงตึงในลวดสองเส้น ผลรวมคือแรงลัพธ์ อนุภาคจะสมดุลเมื่อแรงลัพธ์นี้มีขนาดเท่ากับน้ำหนักแต่ชี้ขึ้นตรง ลองทำให้ผลรวมชี้ขึ้นในแนวดิ่ง แล้วสังเกตว่าเมื่อเวกเตอร์ทั้งสองเอียงเข้าใกล้แนวราบ ต้องยาวขึ้นเท่าใด"
+    widget: { kind: vector-add, a: [-2, 2], b: [2, 3], draggable: true }
+  - { type: check, problem: engineering.mechanics.statics-particles.p009, prompt: "องค์ประกอบ = ขนาดแรง × (องค์ประกอบของเวกเตอร์ตำแหน่ง ÷ ความยาว)" }
+glossary:
+  - { term: อนุภาค, definition: "วัตถุที่ถือว่าแรงทุกแรงกระทำผ่านจุดเดียว จึงพิจารณาเฉพาะการเลื่อนที่ ไม่พิจารณาการหมุน (particle)" }
+  - { term: แผนภาพวัตถุอิสระ, definition: "ภาพที่แยกวัตถุออกจากสิ่งรอบข้างแล้ววาดแรงภายนอกทุกแรงที่กระทำต่อวัตถุ (free-body diagram)" }
+  - { term: เวกเตอร์หนึ่งหน่วย, definition: "เวกเตอร์ขนาด 1 ที่บอกทิศทาง ได้จากเวกเตอร์หารด้วยขนาดของมัน (unit vector)" }
+  - { term: มุมแสดงทิศทาง, definition: "มุม α β γ ที่เวกเตอร์ทำกับแกน x y z โดย cos ของมุมเท่ากับองค์ประกอบหารด้วยขนาด (direction angles)" }
+  - { term: ความยาวธรรมชาติของสปริง, definition: "ความยาวของสปริงเมื่อไม่มีแรงกระทำ ใช้วัดระยะยืดหรือหดในสูตร F = ks (unstretched length)" }
+flashcards:
+  - { front: "เงื่อนไขสมดุลของอนุภาคในสามมิติ", back: "$\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$ หาค่าที่ไม่รู้ได้สามค่า" }
+  - { front: "แรงในลวดจาก A ไป B", back: "$\\vec F = F\\,\\dfrac{\\vec r_{AB}}{|\\vec r_{AB}|}$" }
+  - { front: "ทิศของแรงตึงในแผนภาพวัตถุอิสระ", back: "ตามแนวเชือกและชี้ออกจากวัตถุ (เชือกดึงได้ ผลักไม่ได้)" }
+  - { front: "แรงจากสปริงเชิงเส้น", back: "$F = ks$ เมื่อ $s$ คือระยะยืดหรือหดจากความยาวธรรมชาติ" }
+  - { front: "ไฟจราจรแขวนกลางลวดที่เกือบราบ", back: "แรงตึงมากกว่าน้ำหนักหลายเท่า เพราะ $T = W/(2\\sin\\theta)$" }
+references:
+  - { title: "Free body diagram", url: "https://en.wikipedia.org/wiki/Free_body_diagram", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Statics", url: "https://en.wikipedia.org/wiki/Statics", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.1 Conditions for Static Equilibrium (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/12-1-conditions-for-static-equilibrium", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "2.001 Mechanics and Materials I (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
