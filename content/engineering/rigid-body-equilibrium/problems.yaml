@@ -1,0 +1,281 @@
+problems:
+  - id: engineering.mechanics.rigid-body-equilibrium.p001
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดคือเงื่อนไขสมดุลของวัตถุแข็งเกร็งในระนาบ"
+    choices:
+      - { id: a, text: "$\\sum F_x = 0$, $\\sum F_y = 0$ และ $\\sum M_O = 0$ รอบจุดใดก็ได้", correct: true }
+      - { id: b, text: "$\\sum F_x = 0$ และ $\\sum F_y = 0$ เท่านั้น", feedback: "พอสำหรับอนุภาค แต่วัตถุแข็งเกร็งหมุนได้ ต้องให้โมเมนต์ลัพธ์เป็นศูนย์ด้วย" }
+      - { id: c, text: "$\\sum M_O = 0$ รอบจุดศูนย์กลางมวลเท่านั้น", feedback: "เมื่อแรงลัพธ์เป็นศูนย์แล้ว โมเมนต์ลัพธ์เท่ากันทุกจุด จึงเลือกจุดใดก็ได้ และยังต้องมีสมการแรงด้วย" }
+      - { id: d, text: "แรงทุกแรงต้องผ่านจุดเดียวกัน", feedback: "นั่นคือกรณีพิเศษของอนุภาค วัตถุแข็งเกร็งมีแรงหลายแนวได้" }
+    hints:
+      - "วัตถุแข็งเกร็งทั้งเลื่อนที่และหมุนได้"
+      - "ต้องห้ามทั้งสองอย่าง"
+    solution: "สมดุลต้องไม่มีความเร่งเชิงเส้นและเชิงมุม จึงต้องมี $\\sum \\vec F = \\vec 0$ และ $\\sum \\vec M_O = \\vec 0$ ในระนาบได้สามสมการ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p002
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ฐานรองรับในสองมิติกับแรงปฏิกิริยาที่ต้องวาดในแผนภาพวัตถุอิสระ"
+    pairs:
+      - { left: "ลูกกลิ้งบนพื้นราบ", right: "แรงหนึ่งแรงตั้งฉากกับพื้น" }
+      - { left: "หมุดหรือบานพับ", right: "แรงสองแรง Ax และ Ay" }
+      - { left: "ฐานยึดแน่น", right: "แรงสองแรงและโมเมนต์หนึ่งค่า" }
+      - { left: "ลวดยึด", right: "แรงตึงหนึ่งแรงตามแนวลวด" }
+    hints:
+      - "ฐานรองรับห้ามการเคลื่อนที่ทิศใด ก็ให้แรงในทิศนั้น"
+      - "ฐานที่ห้ามการหมุนด้วยให้โมเมนต์"
+    solution: "ลูกกลิ้งห้ามเฉพาะการเคลื่อนตั้งฉากกับผิว (1 ค่า) หมุดห้ามการเลื่อนทุกทิศ (2 ค่า) ฐานยึดแน่นห้ามทั้งเลื่อนและหมุน (3 ค่า) ลวดดึงได้ตามแนวของมันเท่านั้น (1 ค่า)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p003
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 2
+    type: numeric
+    stem: "ช่างออกแรง $150\\ \\mathrm{N}$ ที่ปลายประแจซึ่งห่างจากศูนย์กลางนอต $0.25\\ \\mathrm{m}$ แนวแรงทำมุม $60^\\circ$ กับด้ามประแจ โมเมนต์รอบนอตเป็นกี่นิวตันเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 32.5, tolerance: 0.3, unit: "N·m" }
+    misconceptions:
+      - { match: 18.75, feedback: "ใช้ $\\cos 60^\\circ$ แต่องค์ประกอบที่ทำให้หมุนคือส่วนที่ตั้งฉากกับด้าม คือ $F\\sin 60^\\circ$" }
+      - { match: 37.5, feedback: "คูณแรงกับความยาวด้ามตรง ๆ ซึ่งถูกเฉพาะเมื่อแรงตั้งฉากกับด้าม" }
+    hints:
+      - "โมเมนต์ใช้ระยะตั้งฉากถึงแนวแรง หรือองค์ประกอบของแรงที่ตั้งฉากกับด้าม"
+      - "$M = Fr\\sin\\theta$ เมื่อ $\\theta$ คือมุมระหว่างแรงกับด้าม"
+    solution: "$M = Fr\\sin\\theta = 150 \\times 0.25 \\times \\sin 60^\\circ = 37.5 \\times 0.8660 = 32.5\\ \\mathrm{N\\cdot m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p004
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 2
+    type: numeric
+    stem: "แรง $\\vec F = (300\\hat i - 400\\hat j)\\ \\mathrm{N}$ กระทำที่จุด $(2, 1.5)\\ \\mathrm{m}$ จงหาโมเมนต์ $M_O$ รอบจุดกำเนิด (นิวตันเมตร ตอบพร้อมเครื่องหมาย ทวนเข็มนาฬิกาเป็นบวก)"
+    answer: { value: -1250, tolerance: 1, unit: "N·m" }
+    misconceptions:
+      - { match: 1250, feedback: "สลับลำดับเป็น $yF_x - xF_y$ ผลคูณเชิงเวกเตอร์ $\\vec r \\times \\vec F$ ให้ $M_O = xF_y - yF_x$" }
+      - { match: -350, feedback: "บวก $yF_x$ แทนการลบ สูตรคือ $xF_y - yF_x$" }
+    hints:
+      - "$\\vec M_O = \\vec r \\times \\vec F$ ในระนาบเหลือองค์ประกอบ $z$"
+      - "$M_O = xF_y - yF_x$"
+    solution: "$M_O = (2)(-400) - (1.5)(300) = -800 - 450 = -1250\\ \\mathrm{N\\cdot m}$ เครื่องหมายลบคือหมุนตามเข็มนาฬิกา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p005
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 2
+    type: numeric
+    stem: "มือทั้งสองข้างหมุนพวงมาลัยด้วยแรง $80\\ \\mathrm{N}$ ทิศตรงข้ามกัน แนวแรงขนานห่างกัน $0.36\\ \\mathrm{m}$ โมเมนต์ของคู่ควบเป็นกี่นิวตันเมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 28.8, tolerance: 0.2, unit: "N·m" }
+    misconceptions:
+      - { match: 57.6, feedback: "คิดโมเมนต์ของแต่ละแรงด้วยระยะเต็ม $0.36\\ \\mathrm{m}$ แล้วบวกกัน โมเมนต์ของคู่ควบคือแรงหนึ่งแรงคูณระยะระหว่างแนวแรง" }
+      - { match: 14.4, feedback: "ใช้ระยะครึ่งหนึ่ง ซึ่งคือโมเมนต์ของแรงเพียงแรงเดียวรอบจุดศูนย์กลาง ต้องรวมทั้งสองแรง" }
+    hints:
+      - "คู่ควบมีโมเมนต์ $M = Fd$ เมื่อ $d$ คือระยะระหว่างแนวแรงทั้งสอง"
+      - "โมเมนต์ของคู่ควบเท่ากันรอบทุกจุด"
+    solution: "$M = Fd = 80 \\times 0.36 = 28.8\\ \\mathrm{N\\cdot m}$ (ตรวจ: รอบจุดกึ่งกลาง แต่ละแรงให้ $80 \\times 0.18 = 14.4$ รวมสองแรงได้ $28.8$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p006
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 3
+    type: numeric
+    stem: "ผนังกั้นน้ำได้รับแรงดันน้ำเป็นแรงกระจายรูปสามเหลี่ยม จาก $0$ ที่ผิวน้ำถึง $6\\ \\mathrm{kN/m}$ ที่ก้นซึ่งลึก $3\\ \\mathrm{m}$ (คิดต่อความกว้างผนัง 1 เมตร) แรงลัพธ์มีขนาดกี่กิโลนิวตัน"
+    answer: { value: 9, tolerance: 0.05, unit: kN }
+    misconceptions:
+      - { match: 18, feedback: "คูณค่าสูงสุดกับความยาวเหมือนแรงกระจายสม่ำเสมอ แรงลัพธ์คือพื้นที่สามเหลี่ยม ต้องคูณ $\\tfrac12$" }
+      - { match: 6, feedback: "ใช้ค่าสูงสุดของแรงต่อความยาวเป็นแรง ต้องคูณกับความยาวที่กระจาย" }
+    hints:
+      - "แรงลัพธ์ของแรงกระจาย = พื้นที่ใต้กราฟแรงต่อความยาว"
+      - "พื้นที่สามเหลี่ยม $= \\tfrac12 \\times$ ฐาน $\\times$ สูง"
+    solution: "$F_R = \\tfrac12 (6)(3) = 9\\ \\mathrm{kN}$ กระทำที่ระยะ $3/3 = 1\\ \\mathrm{m}$ เหนือก้น (ด้านที่แรงมากที่สุด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p007
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 3
+    type: numeric
+    stem: "สะพานไม้คนเดินข้ามคลองยาว $6\\ \\mathrm{m}$ (ค่าสมมติ) วางบนหมุดที่ฝั่ง A และลูกกลิ้งที่ฝั่ง B รถเข็นขายผลไม้หนัก $12\\ \\mathrm{kN}$ จอดอยู่ห่างฝั่ง A $2\\ \\mathrm{m}$ ไม่คิดน้ำหนักสะพาน แรงปฏิกิริยาแนวดิ่งที่ A เป็นกี่กิโลนิวตัน"
+    answer: { value: 8, tolerance: 0.05, unit: kN }
+    misconceptions:
+      - { match: 4, feedback: "นี่คือแรงที่ B ฝั่งที่อยู่ใกล้น้ำหนักต้องรับแรงมากกว่า" }
+      - { match: 6, feedback: "แบ่งครึ่ง ซึ่งถูกเฉพาะเมื่อน้ำหนักอยู่กึ่งกลาง" }
+    hints:
+      - "หาโมเมนต์รอบ B เพื่อตัดแรงที่ B ออก"
+      - "$6A_y = 12 \\times (6 - 2)$"
+    solution: "$\\sum M_B = 0$: $6A_y - 12(4) = 0$ ได้ $A_y = 8\\ \\mathrm{kN}$ ตรวจ: $\\sum M_A$ ได้ $B_y = 12(2)/6 = 4$ และ $8 + 4 = 12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p008
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 3
+    type: numeric
+    stem: "คาน ABC ในภาพมีหมุดที่ A ลูกกลิ้งที่ B ช่วง AB ยาว $4\\ \\mathrm{m}$ รับแรงกระจาย $2\\ \\mathrm{kN/m}$ และปลายยื่น C ห่าง B $2\\ \\mathrm{m}$ รับแรง $3\\ \\mathrm{kN}$ ลง แรงปฏิกิริยาแนวดิ่งที่ A เป็นกี่กิโลนิวตัน (ชี้ขึ้นเป็นบวก)"
+    figure: { src: p-overhang.svg, alt: "คาน ABC แนวราบ หมุดที่ A ลูกกลิ้งที่ B ห่าง A 4 เมตร ปลาย C ยื่นเลย B ไป 2 เมตร แรงกระจายสม่ำเสมอ 2 kN/m กดลงตลอดช่วง AB และแรงจุด 3 kN กดลงที่ปลาย C" }
+    answer: { value: 2.5, tolerance: 0.05, unit: kN }
+    misconceptions:
+      - { match: 4, feedback: "ลืมแรงที่ปลายยื่น แรง 3 kN ที่ C ทำให้คานกระดกรอบ B และยก A ขึ้น แรงที่ A จึงลดลง" }
+      - { match: 8.5, feedback: "นี่คือแรงที่ B" }
+    hints:
+      - "เปลี่ยนแรงกระจายเป็นแรงลัพธ์ $8\\ \\mathrm{kN}$ ที่กึ่งกลาง AB"
+      - "หาโมเมนต์รอบ B: แรงที่ C อยู่คนละฝั่งกับแรงกระจาย"
+    solution: "$\\sum M_B = 0$ (ทวนเข็มบวก): $-4A_y + 8(2) - 3(2) = 0$ ได้ $A_y = 2.5\\ \\mathrm{kN}$ จาก $\\sum M_A$: $4B_y = 8(2) + 3(6) = 34$ ได้ $B_y = 8.5\\ \\mathrm{kN}$ ตรวจ $2.5 + 8.5 = 8 + 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p009
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 3
+    type: mcq
+    stem: "คานในระนาบยึดด้วยหมุดที่ปลายทั้งสองข้าง ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "มีค่าที่ไม่รู้ 4 ค่า แต่มีสมการสมดุล 3 สมการ จึงเป็นอินดีเทอร์มิเนตเชิงสถิต", correct: true }
+      - { id: b, text: "มีค่าที่ไม่รู้ 2 ค่า หาได้ด้วย $\\sum F_y = 0$ และ $\\sum M = 0$", feedback: "หมุดแต่ละตัวให้แรงสองแรง ($x$ และ $y$) รวมเป็น 4 ค่า" }
+      - { id: c, text: "หาแรงทั้งหมดได้ เพราะหาโมเมนต์รอบหลายจุดได้หลายสมการ", feedback: "สมการโมเมนต์รอบจุดอื่นไม่ใช่สมการอิสระใหม่ ในระนาบมีสมการอิสระเพียง 3 สมการ" }
+      - { id: d, text: "คานเคลื่อนที่ได้ จึงไม่สมดุล", feedback: "คานมีฐานรองรับมากเกินพอ ไม่ใช่น้อยเกินไป" }
+    hints:
+      - "นับค่าที่ไม่รู้จากฐานรองรับ"
+      - "ในระนาบมีสมการสมดุลอิสระกี่สมการ"
+    solution: "หมุดสองตัวให้ $A_x, A_y, B_x, B_y$ รวม 4 ค่า แต่สมการสมดุลในระนาบมี 3 สมการ หาแรง $A_y$ และ $B_y$ ได้ แต่แยก $A_x$ กับ $B_x$ ไม่ได้ ต้องใช้การเสียรูปของคานช่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p010
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 4
+    type: numeric
+    stem: "บูม AB สม่ำเสมอหนัก $0.5\\ \\mathrm{kN}$ ยาว $4\\ \\mathrm{m}$ ยึดผนังด้วยบานพับที่ A และลวด BC ไปยังจุด C บนผนังสูงกว่า A $3\\ \\mathrm{m}$ ดังภาพ ที่ปลาย B แขวนของหนัก $2\\ \\mathrm{kN}$ แรงตึงในลวด BC เป็นกี่กิโลนิวตัน"
+    figure: { src: p-boom.svg, alt: "ผนังแนวดิ่งด้านซ้าย บูม AB แนวราบยาว 4 เมตร ต่อกับผนังด้วยบานพับที่ A ปลาย B ผูกลวดเฉียงขึ้นไปยังจุด C บนผนังซึ่งสูงกว่า A 3 เมตร ที่ B แขวนกล่องหนัก 2 kN บูมสม่ำเสมอหนัก 0.5 kN" }
+    answer: { value: 3.75, tolerance: 0.03, unit: kN }
+    misconceptions:
+      - { match: 3.333, feedback: "ลืมน้ำหนักของบูมเอง ซึ่งกระทำที่กึ่งกลาง" }
+      - { match: 2.8125, feedback: "ใช้องค์ประกอบแนวราบของแรงตึง ($4/5$) แต่องค์ประกอบที่ให้โมเมนต์รอบ A คือแนวดิ่ง ($3/5$)" }
+    hints:
+      - "หาโมเมนต์รอบ A เพื่อตัดแรงที่บานพับ"
+      - "ลวดยาว $5\\ \\mathrm{m}$ องค์ประกอบแนวดิ่งของแรงตึงคือ $\\tfrac35 T$ ซึ่งมีแขนโมเมนต์ $4\\ \\mathrm{m}$"
+    solution: "$\\sum M_A = 0$: $\\tfrac35 T(4) - 2(4) - 0.5(2) = 0$ ได้ $2.4T = 9$ จึง $T = 3.75\\ \\mathrm{kN}$ แรงที่บานพับ $A_x = \\tfrac45 T = 3\\ \\mathrm{kN}$ และ $A_y = 2.5 - 2.25 = 0.25\\ \\mathrm{kN}$ ตรวจด้วย $\\sum M_B$: $4A_y = 0.5(2)$ ได้ $0.25$ ตรงกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p011
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 4
+    type: numeric
+    stem: "ช่างไฟพาดบันไดยาว $5\\ \\mathrm{m}$ หนัก $200\\ \\mathrm{N}$ กับผนังลื่น โคนบันไดห่างผนัง $3\\ \\mathrm{m}$ (ปลายบนสูง $4\\ \\mathrm{m}$) ช่างหนัก $700\\ \\mathrm{N}$ ยืนที่ระยะ $\\tfrac34$ ของความยาวบันไดจากโคน พื้นต้องให้แรงเสียดทานแนวราบกี่นิวตันบันไดจึงไม่ลื่น (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 468.75, tolerance: 1, unit: N }
+    misconceptions:
+      - { match: 75, feedback: "คิดแค่น้ำหนักบันได ต้องรวมโมเมนต์จากน้ำหนักของช่างด้วย" }
+      - { match: 600, feedback: "วางช่างไว้ที่ปลายบนสุด ช่างอยู่ที่ $\\tfrac34$ ของความยาว ระยะแนวราบจากโคนจึงเป็น $2.25\\ \\mathrm{m}$" }
+    hints:
+      - "ผนังลื่นให้แรงตั้งฉากแนวราบเท่านั้น และแรงเสียดทานที่พื้นต้องเท่ากับแรงนี้"
+      - "หาโมเมนต์รอบโคนบันได ใช้ระยะแนวราบของน้ำหนักและระยะแนวดิ่ง $4\\ \\mathrm{m}$ ของแรงจากผนัง"
+    solution: "$\\sum M_{\\text{โคน}} = 0$: $N_w(4) = 200(1.5) + 700(2.25) = 300 + 1575 = 1875$ ได้ $N_w = 468.75\\ \\mathrm{N}$ จาก $\\sum F_x = 0$ แรงเสียดทาน $= N_w = 468.75\\ \\mathrm{N}$ (แรงตั้งฉากจากพื้น $= 900\\ \\mathrm{N}$ ต้องมี $\\mu_s \\ge 0.52$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p012
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 4
+    type: numeric
+    stem: "คานระเบียงยื่นจากเสาตึกแถว (ฐานยึดแน่น) ยาว $2.5\\ \\mathrm{m}$ รับแรงกระจาย $4\\ \\mathrm{kN/m}$ ตลอดความยาว และกระถางต้นไม้หนัก $3\\ \\mathrm{kN}$ ที่ปลาย (ค่าสมมติ) ขนาดของโมเมนต์ที่ฐานยึดแน่นเป็นกี่กิโลนิวตันเมตร"
+    answer: { value: 20, tolerance: 0.1, unit: "kN·m" }
+    misconceptions:
+      - { match: 32.5, feedback: "วางแรงกระจายรวม $10\\ \\mathrm{kN}$ ไว้ที่ปลายคาน แรงลัพธ์ของแรงกระจายสม่ำเสมออยู่ที่กึ่งกลาง ($1.25\\ \\mathrm{m}$)" }
+      - { match: 13, feedback: "นี่คือแรงปฏิกิริยาแนวดิ่ง ($10 + 3$) ไม่ใช่โมเมนต์" }
+    hints:
+      - "ฐานยึดแน่นให้แรงแนวดิ่งและโมเมนต์"
+      - "หาโมเมนต์รอบฐาน: แรงกระจายรวมกระทำที่กึ่งกลาง แรงจุดกระทำที่ปลาย"
+    solution: "แรงกระจายรวม $4 \\times 2.5 = 10\\ \\mathrm{kN}$ ที่ $1.25\\ \\mathrm{m}$ $M_A = 10(1.25) + 3(2.5) = 12.5 + 7.5 = 20\\ \\mathrm{kN\\cdot m}$ และแรงแนวดิ่ง $13\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p013
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาแรงปฏิกิริยาของคานที่มีหมุดและลูกกลิ้ง"
+    items:
+      - "วาดแผนภาพวัตถุอิสระ ใส่แรงที่รู้และแรงปฏิกิริยาที่ไม่รู้ทุกตัว"
+      - "เปลี่ยนแรงกระจายเป็นแรงลัพธ์ที่ตำแหน่งเซนทรอยด์"
+      - "เขียนสมการโมเมนต์รอบหมุดเพื่อหาแรงที่ลูกกลิ้ง"
+      - "ใช้สมการแรงแนวราบและแนวดิ่งหาแรงที่หมุด"
+      - "ตรวจด้วยสมการโมเมนต์รอบอีกจุดหนึ่ง"
+    hints:
+      - "เริ่มจากภาพ จบด้วยการตรวจ"
+      - "สมการโมเมนต์รอบหมุดมีค่าที่ไม่รู้เพียงตัวเดียว"
+    solution: "แผนภาพวัตถุอิสระ → แรงลัพธ์ของแรงกระจาย → $\\sum M$ รอบหมุด → $\\sum F_x$, $\\sum F_y$ → ตรวจด้วยโมเมนต์รอบจุดอื่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p014
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 5
+    type: numeric
+    stem: "เสาธงชั่วคราวในงานวัด (ค่าสมมติ) ตั้งบนฐานลูกหมากที่ O ปลายบน A อยู่ที่ $(0, 0, 6)\\ \\mathrm{m}$ ยึดด้วยลวด AB ไปยัง $B(4, -4, 0)$ และลวด AC ไปยัง $C(-2, -4, 0)$ ลมดันปลายเสาด้วยแรง $2\\ \\mathrm{kN}$ ในแนว $+y$ ดังภาพ แรงตึงในลวด AC เป็นกี่กิโลนิวตัน (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-pole3d.svg, alt: "เสาแนวดิ่งตั้งบนฐานลูกหมากที่จุดกำเนิด O ปลายบน A อยู่ที่ (0, 0, 6) เมตร มีลวดจาก A ลงไปยึดพื้นที่ B (4, −4, 0) และ C (−2, −4, 0) แรง P = 2 kN กระทำที่ A ในแนว +y ไม่คิดน้ำหนักเสา" }
+    answer: { value: 2.49, tolerance: 0.02, unit: kN }
+    misconceptions:
+      - { match: 1.37, feedback: "นี่คือแรงตึงในลวด AB" }
+      - { match: 1.0, feedback: "แบ่งแรงลมให้สองลวดเท่ากัน แต่ลวดทั้งสองมีทิศต่างกัน ต้องเขียนเป็นเวกเตอร์หนึ่งหน่วยแล้วแก้สมการ" }
+    hints:
+      - "เสาเป็นชิ้นส่วนที่มีข้อต่อลูกหมาก โมเมนต์รอบ O เป็นศูนย์ได้ก็ต่อเมื่อแรงแนว $x$ และ $y$ ที่ A รวมเป็นศูนย์"
+      - "$\\hat u_{AB} = (4, -4, -6)/\\sqrt{68}$ และ $\\hat u_{AC} = (-2, -4, -6)/\\sqrt{56}$ ตั้ง $\\sum F_x = 0$ และ $\\sum F_y = 0$ ที่ A"
+    solution: "$\\sum F_x$: $\\tfrac{4}{8.246}T_B - \\tfrac{2}{7.483}T_C = 0$ และ $\\sum F_y$: $-\\tfrac{4}{8.246}T_B - \\tfrac{4}{7.483}T_C + 2 = 0$ แก้ได้ $T_B = 1.37\\ \\mathrm{kN}$ และ $T_C = 2.49\\ \\mathrm{kN}$ ฐาน O รับแรงกดลง $O_z = 3.0\\ \\mathrm{kN}$ ตรวจ: $\\vec r_{OA} \\times (\\text{แรงรวมที่ A}) = \\vec 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p015
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 5
+    type: numeric
+    stem: "คาน AB ยาว $5\\ \\mathrm{m}$ มีหมุดที่ A ปลาย B วางบนลูกกลิ้งบนพื้นเอียง $30^\\circ$ กับแนวราบ (แรงจากลูกกลิ้งตั้งฉากกับพื้นเอียง จึงทำมุม $30^\\circ$ กับแนวดิ่ง และเอียงไปทาง A) คานรับแรง $10\\ \\mathrm{kN}$ ลงที่ระยะ $3\\ \\mathrm{m}$ จาก A ขนาดของแรงลัพธ์ที่หมุด A เป็นกี่กิโลนิวตัน (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.29, tolerance: 0.03, unit: kN }
+    misconceptions:
+      - { match: 4, feedback: "ถือว่าแรงจากลูกกลิ้งอยู่ในแนวดิ่ง แต่ลูกกลิ้งบนพื้นเอียงให้แรงตั้งฉากกับพื้นเอียง จึงมีองค์ประกอบแนวราบที่หมุดต้องต้าน" }
+      - { match: 6.93, feedback: "นี่คือแรงที่ลูกกลิ้ง B" }
+    hints:
+      - "หาโมเมนต์รอบ A: เฉพาะองค์ประกอบแนวดิ่งของแรงที่ B ($B\\cos 30^\\circ$) ให้โมเมนต์"
+      - "จากนั้นหา $A_x = B\\sin 30^\\circ$ และ $A_y = 10 - B\\cos 30^\\circ$"
+    solution: "$\\sum M_A$: $B\\cos 30^\\circ (5) = 10(3)$ ได้ $B = 6.93\\ \\mathrm{kN}$ $A_x = 6.93 \\sin 30^\\circ = 3.46\\ \\mathrm{kN}$ $A_y = 10 - 6 = 4\\ \\mathrm{kN}$ $|A| = \\sqrt{3.46^2 + 4^2} = 5.29\\ \\mathrm{kN}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p016
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 3
+    type: mcq
+    stem: "ในโจทย์บูมที่มีบานพับ A และลวด BC ถ้าต้องการหาแรงตึงในลวดด้วยสมการเดียว ควรหาโมเมนต์รอบจุดใด"
+    choices:
+      - { id: a, text: "จุด A เพราะแรงที่บานพับทั้งสององค์ประกอบผ่าน A จึงไม่อยู่ในสมการ", correct: true }
+      - { id: b, text: "จุด B เพราะแรงตึงกระทำที่ B", feedback: "รอบ B แรงตึงไม่มีโมเมนต์ จึงหาแรงตึงไม่ได้ แต่ใช้หา $A_y$ ได้" }
+      - { id: c, text: "จุดกึ่งกลางบูม เพราะเป็นจุดศูนย์ถ่วง", feedback: "รอบจุดนี้ยังมีทั้ง $A_y$ และแรงตึง ได้สมการสองตัวแปร" }
+      - { id: d, text: "จุดใดก็ได้ ผลเหมือนกันเสมอ", feedback: "ผลรวมสุดท้ายเหมือนกัน แต่จำนวนตัวแปรในแต่ละสมการต่างกัน การเลือกจุดที่ดีช่วยให้แก้ได้ทันที" }
+    hints:
+      - "แรงที่ผ่านจุดหมุนไม่มีโมเมนต์รอบจุดนั้น"
+      - "จุดใดที่แรงไม่รู้หลายแรงผ่าน"
+    solution: "รอบ A แรงที่บานพับ $A_x$ และ $A_y$ หายไป เหลือแรงตึงเป็นตัวแปรเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.rigid-body-equilibrium.p017
+    topics: [engineering.mechanics.rigid-body-equilibrium]
+    difficulty: 2
+    type: numeric
+    stem: "แม่ค้าหาบตะกร้าด้วยไม้คานยาว $1.6\\ \\mathrm{m}$ ตะกร้าหน้าหนัก $20\\ \\mathrm{kg}$ ตะกร้าหลังหนัก $12\\ \\mathrm{kg}$ ห้อยที่ปลายทั้งสอง (ไม่คิดน้ำหนักไม้คาน) บ่าต้องอยู่ห่างตะกร้าหน้ากี่เมตรไม้คานจึงสมดุล"
+    answer: { value: 0.6, tolerance: 0.01, unit: m }
+    misconceptions:
+      - { match: 1.0, feedback: "นี่คือระยะจากตะกร้าที่เบากว่า บ่าต้องอยู่ใกล้ตะกร้าที่หนักกว่า" }
+      - { match: 0.8, feedback: "วางบ่าตรงกลาง ซึ่งถูกเฉพาะเมื่อตะกร้าหนักเท่ากัน" }
+    hints:
+      - "บ่าเป็นจุดหมุน โมเมนต์ของสองตะกร้ารอบบ่าต้องเท่ากัน"
+      - "$20x = 12(1.6 - x)$"
+    solution: "$20x = 12(1.6 - x)$ ได้ $32x = 19.2$ จึง $x = 0.6\\ \\mathrm{m}$ จากตะกร้าหน้า (บ่ารับแรง $32g$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

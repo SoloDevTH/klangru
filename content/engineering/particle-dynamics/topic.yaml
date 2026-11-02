@@ -1,0 +1,73 @@
+id: engineering.mechanics.particle-dynamics
+subject: engineering
+title: { th: พลศาสตร์ของอนุภาค, en: Dynamics of particles }
+summary: จลนศาสตร์เมื่อความเร่งไม่คงตัว พิกัดฉาก ตั้งฉาก-สัมผัส และเชิงขั้ว กฎของนิวตันและแรงเสมือน วิธีงาน-พลังงาน กำลัง และการดล-โมเมนตัมของระบบอนุภาค
+difficulty: 7.5
+minutes: 50
+prerequisites: [physics.kinematics.projectile, physics.kinematics.circular, physics.momentum.collisions, physics.energy.conservation, math.calculus.differentiation-rules]
+encompasses:
+  - { id: physics.kinematics.circular, weight: 0.4 }
+  - { id: physics.energy.conservation, weight: 0.3 }
+  - { id: physics.momentum.collisions, weight: 0.3 }
+  - { id: math.calculus.differentiation-rules, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: พิกัดตั้งฉาก-สัมผัสและพิกัดเชิงขั้ว
+    src: nt-polar.svg
+    alt: "ซ้าย: จุด P บนเส้นทางโค้ง ลูกศร a_t = dv/dt ชี้ตามแนวสัมผัสไปทางที่เคลื่อนที่ ลูกศร a_n = v²/ρ ชี้เข้าหาศูนย์กลางความโค้งซึ่งอยู่ห่าง ρ ขวา: จุด P อยู่ห่างจุด O เป็นระยะ r ทำมุม θ กับแกนอ้างอิง เวกเตอร์หนึ่งหน่วย e_r ชี้ออกตามแนวรัศมี e_θ ตั้งฉากกับ e_r ไปทางที่ θ เพิ่ม ใต้ภาพเขียน a_r = d²r/dt² − rω² และ a_θ = rα + 2(dr/dt)ω เมื่อ ω = dθ/dt และ α = dω/dt"
+  - type: worked-example
+    title: รถไฟฟ้าเบรกขณะเข้าโค้ง
+    problem: "ขบวนรถไฟฟ้าเข้าโค้งรัศมี $300\\ \\mathrm{m}$ ด้วยอัตราเร็ว $15\\ \\mathrm{m/s}$ และกำลังเบรกจนอัตราเร็วลดลง $1.0\\ \\mathrm{m/s^2}$ (ค่าสมมติ) จงหาขนาดของความเร่ง และแรงลัพธ์ที่กระทำต่อผู้โดยสาร $60\\ \\mathrm{kg}$"
+    steps:
+      - text: "ความเร่งสัมผัส $a_t = dv/dt = -1.0\\ \\mathrm{m/s^2}$ (ตรงข้ามทิศการเคลื่อนที่)"
+      - text: "ความเร่งตั้งฉาก $a_n = v^2/\\rho = 225/300 = 0.75\\ \\mathrm{m/s^2}$ ชี้เข้าหาศูนย์กลางโค้ง"
+        why: "แม้อัตราเร็วลดลง ทิศยังเปลี่ยนอยู่ จึงยังมี $a_n$"
+      - text: "$a = \\sqrt{1.0^2 + 0.75^2} = 1.25\\ \\mathrm{m/s^2}$"
+      - text: "แรงลัพธ์ต่อผู้โดยสาร $\\sum F = ma = 60 \\times 1.25 = 75\\ \\mathrm{N}$ ในแนวราบ มาจากแรงเสียดทานที่เท้าและแรงที่มือจับห่วง"
+        why: "แผนภาพจลน์แสดง $m\\vec a$ ไม่ใช่แรงใหม่ แรงจริงคือแรงที่พื้นและห่วงกระทำ"
+    answer: "$a = 1.25\\ \\mathrm{m/s^2}$ แรงลัพธ์ $75\\ \\mathrm{N}$ ในแนวราบ"
+  - { type: check, problem: engineering.mechanics.particle-dynamics.p006, prompt: "สององค์ประกอบตั้งฉากกัน" }
+  - type: interactive
+    title: รวมความเร่งสัมผัสกับความเร่งตั้งฉาก
+    caption: "ให้เวกเตอร์ a แทนความเร่งสัมผัส (ตามแนวทางวิ่ง) และ b แทนความเร่งตั้งฉาก (เข้าหาศูนย์กลางโค้ง) ผลรวมคือความเร่งจริง ลองลากให้ทั้งสองตั้งฉากกันแล้วเปลี่ยนความยาวของ b ซึ่งเพิ่มตาม v²/ρ สังเกตว่าความยาวของผลรวมไม่เท่ากับผลบวกของสองความยาว"
+    widget: { kind: vector-add, a: [-2, 0], b: [0, 1.5], draggable: true }
+  - type: worked-example
+    title: แรงจากแขนหมุนที่กระทำต่อปลอก
+    problem: "ปลอก $0.5\\ \\mathrm{kg}$ เลื่อนบนแขนเรียบที่หมุนในระนาบราบด้วย $\\omega = 2\\ \\mathrm{rad/s}$ คงตัว ตำแหน่งปลอก $r = 0.2 + 0.1t^2$ เมตร จงหาความเร่งและแรงที่แขนกระทำต่อปลอกในแนวตั้งฉากกับแขนที่ $t = 1\\ \\mathrm{s}$"
+    steps:
+      - text: "ที่ $t = 1$: $r = 0.3\\ \\mathrm{m}$, $\\dot r = 0.2t = 0.2\\ \\mathrm{m/s}$, $\\ddot r = 0.2\\ \\mathrm{m/s^2}$, $\\alpha = 0$"
+      - text: "$a_r = \\ddot r - r\\omega^2 = 0.2 - 0.3(4) = -1.0\\ \\mathrm{m/s^2}$ (ชี้เข้าหาจุดหมุน)"
+      - text: "$a_\\theta = r\\alpha + 2\\dot r\\omega = 0 + 2(0.2)(2) = 0.8\\ \\mathrm{m/s^2}$"
+        why: "ปลอกที่เลื่อนออกต้องมีอัตราเร็วในแนว $\\theta$ เพิ่มขึ้น ($r\\omega$ เพิ่ม) แขนจึงต้องดันมันไปข้างหน้า"
+      - text: "แขนเรียบให้แรงได้เฉพาะแนวตั้งฉากกับแขน: $F_\\theta = ma_\\theta = 0.5 \\times 0.8 = 0.4\\ \\mathrm{N}$"
+      - text: "ในแนวรัศมีต้องมีแรง $ma_r = -0.5\\ \\mathrm{N}$ ซึ่งต้องมาจากเชือกหรือสปริงที่ดึงปลอกเข้า (แขนเรียบให้แรงแนวนี้ไม่ได้)"
+    answer: "$a = \\sqrt{1.0^2 + 0.8^2} = 1.28\\ \\mathrm{m/s^2}$ แขนดันปลอกด้วยแรง $0.4\\ \\mathrm{N}$ ตั้งฉากกับแขน"
+  - type: figure
+    title: ห่วงจับในรถไฟฟ้าขณะเบรก
+    src: p-strap.svg
+    alt: "ตู้รถไฟฟ้าเคลื่อนที่ไปทางซ้ายและกำลังลดความเร็ว ห่วงจับห้อยจากราวด้านบน เอียงไปทางด้านหน้าของรถ ทำมุม θ กับเส้นประแนวดิ่ง"
+  - { type: check, problem: engineering.mechanics.particle-dynamics.p009, prompt: "แรงตึงต้องมีองค์ประกอบแนวราบเท่ากับ ma" }
+glossary:
+  - { term: พิกัดตั้งฉาก-สัมผัส, definition: "ระบบพิกัดที่เคลื่อนไปกับอนุภาค แกน t สัมผัสเส้นทาง แกน n ชี้เข้าหาศูนย์กลางความโค้ง (normal-tangential coordinates)" }
+  - { term: รัศมีความโค้ง, definition: "รัศมีของวงกลมที่แนบเส้นทางพอดีที่จุดนั้น ใช้ในความเร่งตั้งฉาก v²/ρ (radius of curvature)" }
+  - { term: ความเร่งคอริออลิส, definition: "พจน์ 2ṙω ในความเร่งแนว θ เกิดเมื่ออนุภาคเลื่อนตามแนวรัศมีของกรอบที่หมุน (Coriolis acceleration)" }
+  - { term: แผนภาพจลน์, definition: "ภาพที่แสดงเวกเตอร์ ma ของวัตถุ วาดคู่กับแผนภาพวัตถุอิสระเพื่อเขียน ΣF = ma (kinetic diagram)" }
+  - { term: แรงเสมือน, definition: "แรง −ma₀ ที่ต้องเติมเมื่อใช้กฎของนิวตันในกรอบอ้างอิงที่มีความเร่ง a₀ ไม่มีวัตถุใดเป็นผู้ออกแรง (fictitious force)" }
+  - { term: จุดศูนย์กลางมวล, definition: "ตำแหน่งเฉลี่ยถ่วงด้วยมวล Σmr/M เคลื่อนที่เหมือนอนุภาคที่รับแรงภายนอกทั้งหมด (center of mass)" }
+flashcards:
+  - { front: "ความเร่งในพิกัด n-t", back: "$a_t = dv/dt$, $a_n = v^2/\\rho$, $a = \\sqrt{a_t^2 + a_n^2}$" }
+  - { front: "ความเร่งในพิกัดเชิงขั้ว", back: "$a_r = \\ddot r - r\\omega^2$, $a_\\theta = r\\alpha + 2\\dot r\\omega$" }
+  - { front: "หลักงาน-พลังงาน", back: "$T_1 + \\sum U_{1\\to2} = T_2$ เหมาะกับโจทย์อัตราเร็วกับระยะทาง" }
+  - { front: "ความเร่งขึ้นกับอัตราเร็วหรือตำแหน่ง", back: "ใช้ $a\\,ds = v\\,dv$ แล้วอินทิเกรต" }
+  - { front: "แรงภายนอกกับจุดศูนย์กลางมวล", back: "$\\sum \\vec F_{\\text{ภายนอก}} = M\\vec a_{\\text{cm}}$ แรงภายในไม่เปลี่ยนการเคลื่อนที่ของจุดศูนย์กลางมวล" }
+references:
+  - { title: "Curvilinear coordinates", url: "https://en.wikipedia.org/wiki/Curvilinear_coordinates", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.4 Uniform Circular Motion (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/4-4-uniform-circular-motion", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "9.6 Center of Mass (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/9-6-center-of-mass", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "2.003SC Engineering Dynamics (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

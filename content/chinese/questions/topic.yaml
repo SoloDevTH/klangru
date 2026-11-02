@@ -1,0 +1,56 @@
+id: chinese.grammar.questions
+subject: chinese
+title: { th: "การตั้งคำถามด้วย 吗 呢 และคำแสดงคำถาม", en: "Asking questions with 吗, 呢 and question words" }
+summary: ถามใช่หรือไม่ด้วย 吗 ถามกลับด้วย 呢 ถามให้เลือกด้วย 还是 รูป A不A และคำแสดงคำถาม 什么 谁 哪 哪儿 几 多少 怎么 多
+difficulty: 2
+minutes: 30
+prerequisites: [chinese.grammar.pronouns-shi]
+encompasses:
+  - { id: chinese.grammar.pronouns-shi, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: question-slot.svg
+    alt: "ตาราง 3 คู่ แถวตอบสีเขียวและแถวถามสีแดง: 我 叫 玛丽 คู่กับ 你 叫 什么 · 他 是 我哥哥 คู่กับ 他 是 谁 · 我 去 清迈 คู่กับ 你 去 哪儿 คำตอบและคำแสดงคำถามอยู่ช่องเดียวกัน หมายเหตุด้านล่าง: ถามใช่หรือไม่ใช้ ประโยคบอกเล่า + 吗 เช่น 他是老师吗 ถ้ามีคำแสดงคำถามอยู่แล้วไม่ต้องเติม 吗"
+    caption: "คำแสดงคำถามอยู่ตรงตำแหน่งของคำตอบ เหมือนภาษาไทย"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chinese.grammar.questions.p007, prompt: "ประโยคไหนใช้ 吗 ผิด" }
+  - type: worked-example
+    title: เปลี่ยนคำตอบเป็นคำถาม
+    problem: "เพื่อนตอบว่า 我有两个妹妹。 (ฉันมีน้องสาว 2 คน) คำถามของเราคืออะไร"
+    steps:
+      - text: "หาส่วนที่เป็นคำตอบ: 两个 (จำนวน)"
+      - text: "จำนวนพี่น้องน่าจะน้อยกว่า 10 ใช้ 几 และคงลักษณนาม 个 ไว้"
+        why: "几 ต้องมีลักษณนามตามหลัง"
+      - text: "เปลี่ยน 我 เป็น 你 และแทน 两 ด้วย 几 ตรงตำแหน่งเดิม"
+      - text: "ไม่เติม 吗 เพราะมีคำแสดงคำถามแล้ว"
+    answer: "你有几个妹妹？ Nǐ yǒu jǐ gè mèimei?"
+  - type: worked-example
+    title: ถามแบบให้เลือกและแบบ A不A
+    problem: "ถามเพื่อนชาวจีนเป็นสองแบบ: (ก) จะไปภูเก็ตหรือเชียงใหม่ (ข) จะไปหรือไม่ไป"
+    steps:
+      - text: "(ก) มีสองตัวเลือก ใช้ 还是 คั่นกลาง: 你去普吉还是清迈？"
+        why: "还是 ใช้ในคำถาม ส่วน 或者 ใช้ในประโยคบอกเล่า"
+      - text: "(ข) กริยาคือ 去 พูดแบบบอกเล่าแล้วตามด้วยปฏิเสธ: 去不去"
+      - text: "วางแทนกริยาเดิม: 你去不去？ และไม่เติม 吗"
+    answer: "(ก) 你去普吉还是清迈？ (ข) 你去不去？ Nǐ qù bu qù?"
+  - { type: check, problem: chinese.grammar.questions.p010, prompt: "几 หรือ 多少" }
+glossary:
+  - { term: "吗 ma", definition: "คำลงท้ายที่ทำให้ประโยคบอกเล่าเป็นคำถามแบบใช่หรือไม่" }
+  - { term: "呢 ne", definition: "คำลงท้ายถามกลับเรื่องเดียวกัน เช่น 你呢 แล้วคุณล่ะ" }
+  - { term: "还是 háishi", definition: "หรือ ใช้ในคำถามให้เลือก ก 还是 ข" }
+  - { term: "几 jǐ / 多少 duōshao", definition: "กี่ (จำนวนน้อย ต้องมีลักษณนาม) / เท่าไร (จำนวนมากหรือไม่รู้)" }
+  - { term: "哪儿 nǎr", definition: "ที่ไหน อย่าสับสนกับ 那儿 nàr ที่นั่น" }
+flashcards:
+  - { front: "ตำแหน่งของคำแสดงคำถาม", back: "ตรงที่ของคำตอบ: 你叫什么？ ← 我叫玛丽。" }
+  - { front: "他是谁吗？ ถูกไหม", back: "ไม่ถูก มี 谁 แล้วไม่ต้องมี 吗: 他是谁？" }
+  - { front: "คุณดื่มชาหรือกาแฟ", back: "你喝茶还是咖啡？" }
+  - { front: "คุณเป็นนักเรียนหรือเปล่า (แบบ A不A)", back: "你是不是学生？" }
+references:
+  - { title: "Chinese grammar", url: "https://en.wikipedia.org/wiki/Chinese_grammar", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "吗", url: "https://en.wiktionary.org/wiki/吗", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "什么", url: "https://en.wiktionary.org/wiki/什么", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

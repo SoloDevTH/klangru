@@ -1,0 +1,54 @@
+id: chinese.grammar.location-you-zai
+subject: chinese
+title: { th: "บอกตำแหน่งด้วย 在 有 และคำบอกทิศ", en: "Location with 在, 有 and position words" }
+summary: คำบอกทิศ 上 下 里 外 前 后 左 右 ที่วางหลังคำนาม ประโยค 在 บอกว่าสิ่งใดอยู่ที่ไหน ประโยค 有 บอกว่าที่ใดมีอะไร และ 这儿 那儿 哪儿
+difficulty: 2.5
+minutes: 30
+prerequisites: [chinese.grammar.pronouns-shi]
+encompasses:
+  - { id: chinese.grammar.pronouns-shi, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: fangwei.svg
+    alt: "ภาพด้านหน้าของกล่องสี่เหลี่ยม มีลูกบอลวางอยู่บนกล่อง (上边 shàngbian บน) ใต้กล่อง (下边 xiàbian ล่าง ใต้) ทางซ้าย (左边 zuǒbian) ทางขวา (右边 yòubian) และในกล่อง (里边 lǐbian ใน) ลูกบอลอีกลูกอยู่ไกลออกไป (外边 wàibian นอก) ภาพด้านข้างทางขวาแสดงผู้ดูทางซ้าย ลูกบอลระหว่างผู้ดูกับกล่องคือ 前边 qiánbian หน้า และลูกบอลที่อยู่อีกด้านของกล่องคือ 后边 hòubian หลัง หมายเหตุ: 里边 = 里 · 上边 = 上 และใช้ 面 แทน 边 ได้"
+    caption: "คำบอกทิศวางหลังคำนาม: 箱子上边 = บนกล่อง"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chinese.grammar.location-you-zai.p006, prompt: "บนโต๊ะมีหนังสือ พูดอย่างไร" }
+  - type: worked-example
+    title: เลือก 在 หรือ 有
+    problem: "บรรยายห้องเรียนเป็นภาษาจีน 2 ประโยค: (ก) ครูของเราอยู่ในห้องเรียน (ข) ในห้องเรียนมีนักเรียน 30 คน"
+    steps:
+      - text: "(ก) ขึ้นต้นด้วยคนที่รู้กันอยู่แล้ว (ครูของเรา) จึงใช้ 在: 我们的老师 + 在 + 教室里"
+      - text: "ห้องเรียนเป็นห้องหนึ่ง เติม 里 หลังคำนามเพื่อบอกว่าข้างใน"
+        why: "คำบอกทิศอยู่หลังคำนาม"
+      - text: "(ข) ขึ้นต้นด้วยสถานที่ แล้วบอกว่ามีอะไร จึงใช้ 有: 教室里 + 有 + 三十个学生"
+    answer: "(ก) 我们的老师在教室里。 (ข) 教室里有三十个学生。"
+  - type: worked-example
+    title: ปฏิเสธประโยค 在 และ 有
+    problem: "เปลี่ยนเป็นประโยคปฏิเสธ: 他在家。 และ 书包里有手机。"
+    steps:
+      - text: "在 ปฏิเสธด้วย 不: 他不在家。 (เขาไม่อยู่บ้าน)"
+      - text: "有 ปฏิเสธด้วย 没有 เท่านั้น: 书包里没有手机。 (ในกระเป๋าไม่มีโทรศัพท์)"
+        why: "ภาษาจีนไม่พูด 不有"
+    answer: "他不在家。 · 书包里没有手机。"
+  - { type: check, problem: chinese.grammar.location-you-zai.p012, prompt: "เมื่อไรต้องเติม 里" }
+glossary:
+  - { term: "方位词 fāngwèicí", definition: "คำบอกทิศ เช่น 上 下 里 外 前 后 左 右 วางหลังคำนาม" }
+  - { term: "在 zài", definition: "อยู่ (ที่) ใช้ในรูป สิ่งที่พูดถึง + 在 + สถานที่ ปฏิเสธด้วย 不在" }
+  - { term: "有 yǒu", definition: "มี ใช้ในรูป สถานที่ + 有 + สิ่งของ ปฏิเสธด้วย 没有" }
+  - { term: "这儿 / 那儿 / 哪儿", definition: "zhèr ที่นี่ / nàr ที่นั่น / nǎr ที่ไหน" }
+  - { term: "旁边 pángbiān", definition: "ข้าง ๆ เช่น 学校旁边 ข้างโรงเรียน" }
+flashcards:
+  - { front: "บนโต๊ะ", back: "桌子上 (คำบอกทิศอยู่หลังคำนาม)" }
+  - { front: "หนังสืออยู่บนโต๊ะ / บนโต๊ะมีหนังสือ", back: "书在桌子上。 / 桌子上有书。" }
+  - { front: "ปฏิเสธ 在 และ 有", back: "不在 · 没有 (ไม่มี 不有)" }
+  - { front: "我在泰国里 ถูกไหม", back: "ไม่ถูก ชื่อประเทศและเมืองไม่เติม 里: 我在泰国。" }
+references:
+  - { title: "在", url: "https://en.wiktionary.org/wiki/在", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "有", url: "https://en.wiktionary.org/wiki/有", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Chinese grammar", url: "https://en.wikipedia.org/wiki/Chinese_grammar", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

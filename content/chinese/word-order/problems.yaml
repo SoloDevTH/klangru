@@ -1,0 +1,463 @@
+problems:
+- id: chinese.grammar.word-order.p001
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 1
+  type: mcq
+  stem: '"ฉันอ่านหนังสือที่บ้าน" ภาษาจีนเรียงคำอย่างไร'
+  choices:
+  - id: a
+    text: 在家看书我。
+    feedback: ประธานต้องอยู่หน้ากริยา
+  - id: b
+    text: 我看在家书。
+    feedback: 在家 แทรกระหว่างกริยากับกรรมไม่ได้
+  - id: c
+    text: 我在家看书。
+    correct: true
+    feedback: ถูก สถานที่ (在家) วางหน้ากริยา (看)
+  - id: d
+    text: 我看书在家。
+    feedback: เรียงตามภาษาไทย ภาษาจีนไม่วาง 在 + สถานที่ ไว้ท้ายประโยค
+  hints:
+  - ภาษาไทยวาง ที่บ้าน ไว้ท้าย
+  - 'ภาษาจีน: ประธาน + 在 + สถานที่ + กริยา + กรรม'
+  solution: '**我在家看书。** Wǒ zài jiā kàn shū.'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p002
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 2
+  type: order
+  stem: เรียงคำเป็นประโยค "ตอนบ่ายพวกเราเรียนที่ห้องสมุด" (图书馆 túshūguǎn = ห้องสมุด, 学习 xuéxí = เรียน)
+  items:
+  - 我们
+  - 下午
+  - 在
+  - 图书馆
+  - 学习
+  hints:
+  - ประธาน + เวลา + สถานที่ + กริยา
+  - สถานที่ใช้ 在 นำหน้า
+  solution: '**我们下午在图书馆学习。** Wǒmen xiàwǔ zài túshūguǎn xuéxí. (下午我们在图书馆学习 ก็ถูก)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p003
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 2
+  type: mcq
+  stem: '"ฉันก็เป็นคนไทย" ประโยคใดถูกต้อง'
+  choices:
+  - id: a
+    text: 我也是泰国人。
+    correct: true
+    feedback: ถูก 也 อยู่หลังประธาน หน้ากริยา
+  - id: b
+    text: 也我是泰国人。
+    feedback: 也 วางหน้าประธานไม่ได้
+  - id: c
+    text: 我是也泰国人。
+    feedback: 也 ต้องอยู่หน้ากริยา 是
+  - id: d
+    text: 我是泰国人也。
+    feedback: 也 ไม่วางท้ายประโยคแบบคำว่า ด้วย ในภาษาไทย
+  hints:
+  - 也 yě = ก็ ด้วย
+  - ภาษาจีนวาง 也 ไว้หน้ากริยาเท่านั้น
+  solution: '**我也是泰国人。** Wǒ yě shì Tàiguórén.'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p004
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 2
+  type: hanzi
+  stem: เขียนอักษร 都 (dōu) ที่แปลว่า ทั้งหมด ล้วน ตามลำดับขีด
+  character: 都
+  pinyin: dōu
+  meaning: ทั้งหมด ล้วน
+  hints:
+  - 都 = 者 ทางซ้าย (8 ขีด) + 阝 ทางขวา (2 ขีด) รวม 10 ขีด
+  - 'เขียน 者 ให้เสร็จก่อน: ส่วนบนคล้าย 土 แล้วขีดเฉียงยาว แล้ว 日 ด้านล่าง'
+  solution: '者: 横 → 竖 → 横 → 撇 → 竖 → 横折 → 横 → 横 แล้ว 阝: 横撇弯钩 → 竖 รวม 10 ขีด'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p005
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 2
+  type: match
+  stem: ประโยค 我明天在学校吃午饭。 (พรุ่งนี้ฉันกินข้าวกลางวันที่โรงเรียน) จับคู่ส่วนของประโยคกับหน้าที่
+  pairs:
+  - left: 我
+    right: ประธาน
+  - left: 明天
+    right: เวลา
+  - left: 在学校
+    right: สถานที่
+  - left: 吃
+    right: กริยา
+  - left: 午饭
+    right: กรรม
+  hints:
+  - 明天 = พรุ่งนี้ 午饭 = ข้าวกลางวัน
+  - ลำดับคือ ประธาน เวลา สถานที่ กริยา กรรม
+  solution: 我 ประธาน · 明天 เวลา · 在学校 สถานที่ · 吃 กริยา · 午饭 กรรม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p006
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 3
+  type: mcq
+  stem: นัดเพื่อนชาวจีนว่า "พวกเราเจอกันที่สถานี BTS สยามตอนบ่ายสามโมง" ประโยคใดถูกต้อง (暹罗站 Xiānluó zhàn = สถานีสยาม, 见 jiàn = พบ)
+  choices:
+  - id: a
+    text: 我们见在暹罗站下午三点。
+    feedback: เรียงตามภาษาไทย ภาษาจีนวางเวลาและสถานที่หน้ากริยา
+  - id: b
+    text: 我们在暹罗站见下午三点。
+    feedback: เวลาต้องอยู่หน้ากริยา ไม่ใช่ท้ายประโยค
+  - id: c
+    text: 下午三点见我们在暹罗站。
+    feedback: ประธานต้องอยู่หน้ากริยา และสถานที่อยู่หน้ากริยา
+  - id: d
+    text: 我们下午三点在暹罗站见。
+    correct: true
+    feedback: ถูก เวลา (下午三点) แล้วสถานที่ (在暹罗站) อยู่หน้ากริยา 见
+  hints:
+  - ภาษาจีนวางเวลาก่อนสถานที่ และทั้งสองอยู่หน้ากริยา
+  - เวลาวางหน้าหรือหลังประธานได้ แต่ต้องอยู่หน้ากริยา
+  solution: '**我们下午三点在暹罗站见。** (下午三点我们在暹罗站见 ก็ถูก)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p007
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 3
+  type: mcq
+  stem: '"พวกเราเป็นนักเรียนทุกคน" ประโยคใดถูกต้อง'
+  choices:
+  - id: a
+    text: 我们都是学生。
+    correct: true
+    feedback: ถูก 都 อยู่หลังประธานที่เป็นพหูพจน์ หน้ากริยา
+  - id: b
+    text: 都我们是学生。
+    feedback: 都 วางหน้าประธานไม่ได้
+  - id: c
+    text: 我们是都学生。
+    feedback: 都 ต้องอยู่หน้ากริยา 是
+  - id: d
+    text: 我们是学生都。
+    feedback: 都 ไม่วางท้ายประโยคแบบคำว่า ทุกคน ในภาษาไทย
+  hints:
+  - 都 dōu = ทั้งหมด ล้วน
+  - 都 รวบคำที่อยู่ข้างหน้า จึงวางหลังประธาน หน้ากริยา
+  solution: '**我们都是学生。** Wǒmen dōu shì xuésheng.'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p008
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 3
+  type: mcq
+  stem: '"วันนี้ร้อนมาก" (热 rè = ร้อน) ประโยคใดถูกต้อง'
+  choices:
+  - id: a
+    text: 很今天热。
+    feedback: 很 ขยายคุณศัพท์ จึงต้องอยู่หน้า 热 ติดกัน
+  - id: b
+    text: 今天很热。
+    correct: true
+    feedback: ถูก 很 วางหน้าคุณศัพท์ และไม่ต้องมี 是
+  - id: c
+    text: 今天热很。
+    feedback: ภาษาไทยวาง มาก หลังคุณศัพท์ แต่ภาษาจีนวาง 很 หน้าคุณศัพท์
+  - id: d
+    text: 今天是很热。
+    feedback: คุณศัพท์ไม่ต้องมี 是
+  hints:
+  - 很 hěn = มาก
+  - 'ภาษาจีน: 很 + คุณศัพท์'
+  solution: '**今天很热。** Jīntiān hěn rè. (很 อยู่หน้าคุณศัพท์ ต่างจาก มาก ในภาษาไทย)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p009
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 3
+  type: mcq
+  stem: ข้อความภาษาจีน 我有苹果、香蕉和芒果。 เครื่องหมาย 、 ทำหน้าที่อะไร (香蕉 xiāngjiāo = กล้วย)
+  choices:
+  - id: a
+    text: แสดงคำถาม
+    feedback: คำถามใช้ ？
+  - id: b
+    text: คั่นประโยคย่อย
+    feedback: คั่นประโยคย่อยใช้ ，
+  - id: c
+    text: คั่นรายการคำที่เรียงกันในประโยค
+    correct: true
+    feedback: ถูก 、 (顿号 dùnhào) ใช้คั่นรายการ ภาษาไทยมักเว้นวรรคแทน
+  - id: d
+    text: จบประโยค
+    feedback: จบประโยคใช้ 。 (จุดวงกลม)
+  hints:
+  - ดูว่า 、 อยู่ระหว่างอะไร
+  - ภาษาจีนมีจุลภาคสองแบบ ， และ 、
+  solution: 、 = **顿号** ใช้คั่นรายการคำ ส่วน ， คั่นประโยคย่อย และ 。 จบประโยค
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p010
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 4
+  type: text
+  stem: เขียน "พวกเขาก็เป็นนักเรียนกันทุกคน" เป็นภาษาจีน (พิมพ์อักษรจีน)
+  accepted:
+  - 他们也都是学生
+  - 他们也都是学生。
+  - 他们也都是学生.
+  - 他们也都是学生？
+  - 他们也都是学生?
+  - 她们也都是学生
+  - 她们也都是学生。
+  - 她们也都是学生.
+  - 她们也都是学生？
+  - 她们也都是学生?
+  - 他們也都是學生
+  - 他們也都是學生。
+  - 他們也都是學生.
+  - 他們也都是學生？
+  - 他們也都是學生?
+  - 她們也都是學生
+  - 她們也都是學生。
+  - 她們也都是學生.
+  - 她們也都是學生？
+  - 她們也都是學生?
+  misconceptions:
+  - match: 他们都也是学生
+    feedback: ถ้ามีทั้งสองคำ 也 อยู่หน้า 都 เสมอ
+  - match: 他们都也是学生。
+    feedback: ถ้ามีทั้งสองคำ 也 อยู่หน้า 都 เสมอ
+  - match: 他们都也是学生？
+    feedback: ถ้ามีทั้งสองคำ 也 อยู่หน้า 都 เสมอ
+  - match: 他们也是都学生
+    feedback: 也 และ 都 ต้องอยู่หน้ากริยา 是
+  - match: 他们也是都学生。
+    feedback: 也 และ 都 ต้องอยู่หน้ากริยา 是
+  - match: 他们也是都学生？
+    feedback: 也 และ 都 ต้องอยู่หน้ากริยา 是
+  - match: 他们是学生也都
+    feedback: 也 都 ไม่วางท้ายประโยค
+  - match: 他们是学生也都。
+    feedback: 也 都 ไม่วางท้ายประโยค
+  - match: 他们是学生也都？
+    feedback: 也 都 ไม่วางท้ายประโยค
+  hints:
+  - ก็ = 也 ทุกคน = 都 ทั้งสองคำอยู่หลังประธาน หน้ากริยา
+  - ถ้ามีทั้งสองคำ เรียงเป็น 也都
+  solution: '**他们也都是学生。** Tāmen yě dōu shì xuésheng.'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p011
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 4
+  type: mcq
+  stem: '"พรุ่งนี้ฉันอ่านหนังสือที่บ้าน" ข้อใดถูกต้อง (เลือกทุกข้อที่ถูก)'
+  multiple: true
+  choices:
+  - id: a
+    text: 明天我在家看书。
+    correct: true
+    feedback: ถูก เวลาวางหน้าประธานได้
+  - id: b
+    text: 我明天在家看书。
+    correct: true
+    feedback: ถูก เวลาวางหลังประธานได้
+  - id: c
+    text: 我在家看书明天。
+    feedback: เวลาวางท้ายประโยคไม่ได้
+  - id: d
+    text: 我看书在家明天。
+    feedback: ทั้งเวลาและสถานที่ต้องอยู่หน้ากริยา
+  hints:
+  - เวลาวางได้สองที่ คือ หน้าประธาน หรือ หลังประธาน
+  - ทั้งสองแบบ เวลาและสถานที่อยู่หน้ากริยา
+  solution: 'ถูก: **明天我在家看书。** และ **我明天在家看书。**'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p012
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 4
+  type: mcq
+  stem: '"แม่ทำอาหารในครัวทุกเย็น" ประโยคใดถูกต้อง (每天晚上 = ทุกเย็น, 厨房 chúfáng = ครัว, 做饭 zuòfàn = ทำอาหาร)'
+  choices:
+  - id: a
+    text: 每天晚上妈妈做饭在厨房。
+    feedback: สถานที่ที่ใช้ 在 ต้องอยู่หน้ากริยา
+  - id: b
+    text: 妈妈每天晚上在厨房做饭。
+    correct: true
+    feedback: ถูก ประธาน + เวลา + สถานที่ + กริยา
+  - id: c
+    text: 妈妈在厨房每天晚上做饭。
+    feedback: ปกติเวลาวางก่อนสถานที่
+  - id: d
+    text: 妈妈做饭在厨房每天晚上。
+    feedback: เวลาและสถานที่ต้องอยู่หน้ากริยา
+  hints:
+  - 'ลำดับ: ประธาน เวลา สถานที่ กริยา'
+  - ภาษาไทยวาง ในครัว ทุกเย็น ไว้ท้าย แต่ภาษาจีนไม่ทำ
+  solution: '**妈妈每天晚上在厨房做饭。** Māma měi tiān wǎnshang zài chúfáng zuòfàn.'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p013
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 4
+  type: order
+  stem: เรียงคำเป็นประโยค "เสาร์อาทิตย์พวกเราก็วิ่งที่สวนสาธารณะลุมพินี" (周末 zhōumò = สุดสัปดาห์, 公园 gōngyuán = สวนสาธารณะ, 跑步 pǎobù = วิ่ง)
+  items:
+  - 我们
+  - 周末
+  - 也
+  - 在
+  - 伦披尼公园
+  - 跑步
+  hints:
+  - ประธาน + เวลา + 也 + 在 + สถานที่ + กริยา
+  - 也 วางหน้าส่วนที่เป็นกริยา (รวม 在 + สถานที่)
+  solution: '**我们周末也在伦披尼公园跑步。** (伦披尼 Lúnpīní = ลุมพินี)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p014
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 5
+  type: mcq
+  stem: 我们不都是泰国人。 หมายความว่าอะไร
+  choices:
+  - id: a
+    text: พวกเราทุกคนไม่ใช่คนไทย
+    feedback: ทุกคนไม่ใช่ = 都不是 (都 อยู่หน้า 不)
+  - id: b
+    text: พวกเราทุกคนเป็นคนไทย
+    feedback: มี 不 อยู่ จึงไม่ใช่ประโยคบอกเล่า
+  - id: c
+    text: พวกเราก็ไม่ใช่คนไทย
+    feedback: ก็ = 也
+  - id: d
+    text: พวกเราไม่ได้เป็นคนไทยทุกคน (บางคนเป็น บางคนไม่เป็น)
+    correct: true
+    feedback: ถูก 不都 = ไม่ใช่ทั้งหมด
+  hints:
+  - ลำดับของ 不 กับ 都 เปลี่ยนความหมาย
+  - 不都 = ไม่ทั้งหมด · 都不 = ทั้งหมดไม่
+  solution: '**不都** = ไม่ใช่ทุกคน (บางคน) · **都不** = ทุกคนไม่'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p015
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 5
+  type: match
+  stem: จับคู่ประโยคกับความหมาย
+  pairs:
+  - left: 他们都去。
+    right: พวกเขาไปทุกคน
+  - left: 他们都不去。
+    right: พวกเขาไม่ไปสักคน
+  - left: 他们不都去。
+    right: พวกเขาไม่ได้ไปทุกคน (บางคนไป)
+  - left: 他们也不去。
+    right: พวกเขาก็ไม่ไปเหมือนกัน
+  hints:
+  - 都不 = ทุกคนไม่ · 不都 = ไม่ใช่ทุกคน
+  - 也 = ก็ เหมือนกัน
+  solution: 都去 ไปทุกคน · 都不去 ไม่ไปสักคน · 不都去 ไม่ได้ไปทุกคน · 也不去 ก็ไม่ไป
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p016
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 5
+  type: mcq
+  stem: ข้อใดเปรียบเทียบลำดับคำและเครื่องหมายวรรคตอนภาษาไทยกับภาษาจีนได้ถูกต้อง
+  choices:
+  - id: a
+    text: ภาษาจีนไม่มีเครื่องหมายวรรคตอน
+    feedback: ภาษาจีนปัจจุบันใช้ 。 ， 、 ？ ！ เป็นปกติ
+  - id: b
+    text: ภาษาไทยวางเวลาและสถานที่ไว้ท้ายประโยคได้ ภาษาจีนวางไว้หน้ากริยา และภาษาจีนจบประโยคด้วย 。 ส่วนภาษาไทยมักเว้นวรรค
+    correct: true
+    feedback: ถูก เช่น ฉันอ่านหนังสือที่บ้านพรุ่งนี้ ↔ 我明天在家看书。
+  - id: c
+    text: ภาษาจีนวางสถานที่ไว้ท้ายประโยคเหมือนภาษาไทย
+    feedback: 在 + สถานที่ ต้องอยู่หน้ากริยา
+  - id: d
+    text: ทั้งสองภาษาวาง มาก/很 หลังคุณศัพท์
+    feedback: 'ภาษาจีนวาง 很 หน้าคุณศัพท์: 很热'
+  hints:
+  - เทียบ ร้อนมาก กับ 很热
+  - เทียบตำแหน่งของ ที่บ้าน กับ 在家
+  solution: 'ภาษาจีน: **เวลา สถานที่ และ 很 อยู่หน้ากริยาหรือคุณศัพท์** ภาษาไทยวางหลังได้ ภาษาจีนจบประโยคด้วย 。 ภาษาไทยมักใช้การเว้นวรรค'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.grammar.word-order.p017
+  topics:
+  - chinese.grammar.word-order
+  difficulty: 3
+  type: text
+  stem: 'แก้ประโยคให้ถูก: 我学习中文在学校。 (ฉันเรียนภาษาจีนที่โรงเรียน; พิมพ์อักษรจีน)'
+  accepted:
+  - 我在学校学习中文
+  - 我在学校学习中文。
+  - 我在学校学习中文.
+  - 我在学校学习中文？
+  - 我在学校学习中文?
+  - 我在學校學習中文
+  - 我在學校學習中文。
+  - 我在學校學習中文.
+  - 我在學校學習中文？
+  - 我在學校學習中文?
+  - 我在学校学中文
+  - 我在学校学中文。
+  - 我在学校学中文.
+  - 我在学校学中文？
+  - 我在学校学中文?
+  - 我在學校學中文
+  - 我在學校學中文。
+  - 我在學校學中文.
+  - 我在學校學中文？
+  - 我在學校學中文?
+  misconceptions:
+  - match: 我学习在学校中文
+    feedback: 在学校 ต้องอยู่หน้ากริยา 学习 ไม่ใช่แทรกระหว่างกริยากับกรรม
+  - match: 我学习在学校中文。
+    feedback: 在学校 ต้องอยู่หน้ากริยา 学习 ไม่ใช่แทรกระหว่างกริยากับกรรม
+  - match: 我学习在学校中文？
+    feedback: 在学校 ต้องอยู่หน้ากริยา 学习 ไม่ใช่แทรกระหว่างกริยากับกรรม
+  - match: 在学校学习中文我
+    feedback: ประธานขึ้นต้นประโยค
+  - match: 在学校学习中文我。
+    feedback: ประธานขึ้นต้นประโยค
+  - match: 在学校学习中文我？
+    feedback: ประธานขึ้นต้นประโยค
+  - match: 我学习中文在学校
+    feedback: นี่คือประโยคเดิม ย้าย 在学校 ไปไว้หน้ากริยา
+  - match: 我学习中文在学校。
+    feedback: นี่คือประโยคเดิม ย้าย 在学校 ไปไว้หน้ากริยา
+  - match: 我学习中文在学校？
+    feedback: นี่คือประโยคเดิม ย้าย 在学校 ไปไว้หน้ากริยา
+  hints:
+  - 'หาส่วนที่บอกสถานที่: 在学校'
+  - ย้ายส่วนนั้นไปไว้หน้ากริยา 学习
+  solution: '**我在学校学习中文。** Wǒ zài xuéxiào xuéxí Zhōngwén.'
+  license: CC-BY-SA-4.0
+  ai_assisted: true

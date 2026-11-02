@@ -1,0 +1,59 @@
+id: chinese.vocab.money-shopping
+subject: chinese
+title: { th: "เงินและการซื้อของ", en: "Money and shopping" }
+summary: หน่วยเงิน 元 角 分 และคำพูด 块 毛 การอ่านราคา การถาม 多少钱 การต่อราคาด้วย 太贵了 便宜一点儿 และบทสนทนาซื้อของในตลาดและร้านค้า
+difficulty: 3
+minutes: 35
+prerequisites: [chinese.grammar.measure-words, chinese.grammar.questions]
+encompasses:
+  - { id: chinese.grammar.measure-words, weight: 0.3 }
+  - { id: chinese.grammar.questions, weight: 0.2 }
+  - { id: chinese.hanzi.numbers, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: money-units.svg
+    alt: "ตารางหน่วยเงินหยวน 3 แถว คอลัมน์ภาษาเขียน ภาษาพูด และค่า: 元 yuán → 块 kuài = 1 หยวน · 角 jiǎo → 毛 máo = 0.1 หยวน (1 元 = 10 角) · 分 fēn → 分 fēn = 0.01 หยวน (1 角 = 10 分) กรอบด้านล่าง: ป้าย ¥12.50 พูดว่า 十二块五 (毛) shí'èr kuài wǔ (máo) หน่วยสุดท้ายละได้ 2 หยวน = 两块 ช่องว่างใช้ 零 เช่น ¥3.05 = 三块零五 (分)"
+    caption: "ป้ายใช้ 元 角 ภาษาพูดใช้ 块 毛"
+  - { type: check, problem: chinese.vocab.money-shopping.p004, prompt: "อ่านป้าย ¥8.50" }
+  - type: worked-example
+    title: อ่านราคาและรวมเงิน
+    problem: "ป้ายเขียนว่า 牛奶 ¥3.80 และ 面包 ¥4.50 (ราคาสมมติ) ซื้ออย่างละ 1 ชิ้น พูดราคารวมเป็นภาษาจีนอย่างไร"
+    steps:
+      - text: "รวมราคา: $3.80 + 4.50 = 8.30$ หยวน"
+      - text: "ส่วนหน้าจุดคือ 8 块 หลักแรกหลังจุดคือ 3 毛"
+      - text: "ละหน่วยสุดท้ายได้ จึงพูดว่า 八块三"
+        why: "หลัง 块 ตัวเลขที่ไม่มีหน่วยหมายถึง 毛"
+    answer: "一共八块三 (毛)。 Yígòng bā kuài sān (máo)."
+  - type: worked-example
+    title: ลดราคาแบบ 打折
+    problem: "เสื้อราคาเดิม 150 หยวน ป้ายเขียน 打九折 ต้องจ่ายเท่าไร"
+    steps:
+      - text: "九折 = จ่าย 9 ส่วนใน 10 ส่วน คือ 90%"
+        why: "ตัวเลขหน้า 折 บอกส่วนที่ต้องจ่าย ไม่ใช่ส่วนที่ลด"
+      - text: "คำนวณ: $150 \\times 0.9 = 135$ หยวน"
+      - text: "ลดไป $150 - 135 = 15$ หยวน"
+    answer: "จ่าย 135 หยวน (一百三十五块)"
+  - { type: check, problem: chinese.vocab.money-shopping.p015, prompt: "八折 ลดเท่าไร" }
+glossary:
+  - { term: "元 yuán / 块 kuài", definition: "หยวน หน่วยเงินหลัก (元 ภาษาเขียน 块 ภาษาพูด)" }
+  - { term: "角 jiǎo / 毛 máo", definition: "0.1 หยวน (角 ภาษาเขียน 毛 ภาษาพูด)" }
+  - { term: "多少钱 duōshao qián", definition: "ราคาเท่าไร" }
+  - { term: "贵 guì / 便宜 piányi", definition: "แพง / ถูก" }
+  - { term: "斤 jīn", definition: "หน่วยน้ำหนักในตลาดจีนแผ่นดินใหญ่ เท่ากับ 500 กรัม" }
+  - { term: "打折 dǎzhé", definition: "ลดราคา 打八折 = จ่าย 80% ของราคาเดิม" }
+flashcards:
+  - { front: "¥12.50 พูดว่า", back: "十二块五 (毛)" }
+  - { front: "¥3.05 พูดว่า", back: "三块零五 (分)" }
+  - { front: "แพงเกินไป ลดหน่อยนะ", back: "太贵了！便宜一点儿吧。" }
+  - { front: "1 斤 = ?", back: "500 กรัม (ครึ่งกิโลกรัม)" }
+  - { front: "打八折", back: "จ่าย 80% ของราคาเดิม (ลด 20%)" }
+references:
+  - { title: "Renminbi", url: "https://en.wikipedia.org/wiki/Renminbi", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "块", url: "https://en.wiktionary.org/wiki/块", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Catty", url: "https://en.wikipedia.org/wiki/Catty", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

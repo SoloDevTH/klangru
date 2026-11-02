@@ -1,0 +1,55 @@
+id: chinese.grammar.word-order
+subject: chinese
+title: { th: "ลำดับคำ: ประธาน เวลา สถานที่ กริยา", en: "Word order: subject, time, place, verb" }
+summary: คำบอกเวลาและสถานที่วางหน้ากริยา 很 วางหน้าคุณศัพท์ 也 และ 都 วางหลังประธาน ความต่างของ 都不 กับ 不都 และเทียบลำดับคำกับเครื่องหมายวรรคตอนของภาษาไทย
+difficulty: 3
+minutes: 35
+prerequisites: [chinese.grammar.location-you-zai, chinese.vocab.time-dates]
+encompasses:
+  - { id: chinese.grammar.location-you-zai, weight: 0.3 }
+  - { id: chinese.vocab.time-dates, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: slot-chart.svg
+    alt: "แผนผังช่องลำดับคำ 6 ช่องจากซ้ายไปขวา: ประธาน 我们 · เวลา 下午 · 也/都 都 · 在 + สถานที่ 在图书馆 · กริยา 看 · กรรม 书 พินอิน Wǒmen xiàwǔ dōu zài túshūguǎn kàn shū. แถวภาษาไทย: พวกเรา ทุกคน อ่าน หนังสือ ที่ห้องสมุด ตอนบ่าย กรอบด้านล่าง: ภาษาไทยวางเวลาและสถานที่ไว้ท้ายประโยคได้ ภาษาจีนต้องวางไว้ก่อนกริยา (เวลาวางหน้าประธานได้: 下午我们都在图书馆看书) 也 都 อยู่หลังประธาน หน้ากริยา ถ้ามีทั้งคู่ใช้ 也都"
+    caption: "ภาษาจีนบอกเวลาและสถานที่ก่อน แล้วจึงบอกการกระทำ"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chinese.grammar.word-order.p011, prompt: "เวลาวางได้ตรงไหนบ้าง" }
+  - type: worked-example
+    title: แก้ประโยคที่เรียงแบบภาษาไทย
+    problem: "แก้ประโยค 我们吃饭在食堂中午。 (พวกเรากินข้าวที่โรงอาหารตอนเที่ยง; 食堂 shítáng = โรงอาหาร, 中午 zhōngwǔ = เที่ยง)"
+    steps:
+      - text: "หาส่วนเวลา (中午) และสถานที่ (在食堂) ที่วางผิดอยู่ท้ายประโยค"
+      - text: "ย้ายเวลามาไว้หลังประธาน: 我们中午"
+      - text: "ตามด้วยสถานที่หน้ากริยา: 在食堂 แล้วจึงเป็น 吃饭"
+        why: "ลำดับ ประธาน เวลา สถานที่ กริยา"
+    answer: "我们中午在食堂吃饭。 (หรือ 中午我们在食堂吃饭。)"
+  - type: worked-example
+    title: ใส่ 也 และ 都
+    problem: "เพิ่มความหมาย \"ก็...กันทุกคน\" ในประโยค 他们在曼谷工作。 (พวกเขาทำงานที่กรุงเทพฯ)"
+    steps:
+      - text: "也 และ 都 อยู่หลังประธาน หน้าส่วนกริยา ซึ่งเริ่มที่ 在曼谷"
+      - text: "เมื่อมีทั้งสองคำ เรียงเป็น 也都"
+        why: "也 อยู่หน้า 都 เสมอ"
+    answer: "他们也都在曼谷工作。 พวกเขาก็ทำงานที่กรุงเทพฯ กันทุกคน"
+  - { type: check, problem: chinese.grammar.word-order.p014, prompt: "不都 กับ 都不" }
+glossary:
+  - { term: "ลำดับคำพื้นฐาน", definition: "ประธาน + เวลา + สถานที่ + กริยา + กรรม เวลาวางหน้าประธานได้" }
+  - { term: "很 hěn", definition: "มาก วางหน้าคุณศัพท์ เช่น 很热" }
+  - { term: "也 yě", definition: "ก็ ด้วย วางหลังประธาน หน้ากริยา" }
+  - { term: "都 dōu", definition: "ทั้งหมด ล้วน วางหลังคำพหูพจน์ที่มันรวบ หน้ากริยา" }
+  - { term: "、 顿号 dùnhào", definition: "เครื่องหมายคั่นรายการคำในภาษาจีน" }
+flashcards:
+  - { front: "ฉันอ่านหนังสือที่บ้านพรุ่งนี้", back: "我明天在家看书。" }
+  - { front: "ร้อนมาก", back: "很热 (ไม่ใช่ 热很)" }
+  - { front: "พวกเขาก็เป็นนักเรียนกันทุกคน", back: "他们也都是学生。" }
+  - { front: "都不去 กับ 不都去", back: "ไม่ไปสักคน · ไม่ได้ไปทุกคน" }
+references:
+  - { title: "Chinese grammar", url: "https://en.wikipedia.org/wiki/Chinese_grammar", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Chinese punctuation", url: "https://en.wikipedia.org/wiki/Chinese_punctuation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "都", url: "https://en.wiktionary.org/wiki/都", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

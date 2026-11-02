@@ -1,0 +1,311 @@
+problems:
+  - id: engineering.circuits.ac-phasors.p001
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 1
+    type: mcq
+    stem: "ต่อตัวเหนี่ยวนำอุดมคติกับแหล่งจ่ายไฟกระแสสลับ กระแสมีเฟสเทียบกับแรงดันอย่างไร"
+    choices:
+      - { id: a, text: "กระแสตามหลังแรงดัน $90^\\circ$", correct: true }
+      - { id: b, text: "กระแสนำหน้าแรงดัน $90^\\circ$", feedback: "นั่นคือตัวเก็บประจุ ตัวเหนี่ยวนำต้านการเปลี่ยนกระแส กระแสจึงขึ้นช้ากว่าแรงดัน" }
+      - { id: c, text: "กระแสกับแรงดันมีเฟสเดียวกัน", feedback: "นั่นคือตัวต้านทาน" }
+      - { id: d, text: "กระแสตรงข้ามเฟสกับแรงดัน ($180^\\circ$)", feedback: "องค์ประกอบพาสซีฟไม่ให้มุม $180^\\circ$ อิมพีแดนซ์ $j\\omega L$ มีมุม $+90^\\circ$" }
+    hints:
+      - "$\\mathbf Z_L = j\\omega L = \\omega L\\angle 90^\\circ$"
+      - "$\\mathbf I = \\mathbf V/\\mathbf Z$ มุมของกระแส = มุมของแรงดัน − มุมของอิมพีแดนซ์"
+    solution: "$\\mathbf I = \\mathbf V/(\\omega L\\angle 90^\\circ)$ มุมของกระแสน้อยกว่าแรงดัน $90^\\circ$ กระแสจึงตามหลัง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p002
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ปริมาณกับหน่วยหรือความหมาย"
+    pairs:
+      - { left: "กำลังจริง P", right: "วัตต์ (W) เปลี่ยนเป็นความร้อนหรืองาน" }
+      - { left: "กำลังรีแอกทีฟ Q", right: "var พลังงานที่วิ่งไปกลับกับ L หรือ C" }
+      - { left: "กำลังปรากฏ |S|", right: "VA ใช้กำหนดขนาดสายไฟและหม้อแปลง" }
+      - { left: "ตัวประกอบกำลัง", right: "cos θ ไม่มีหน่วย" }
+    hints:
+      - "$\\mathbf S = P + jQ$"
+      - "กำลังจริงเกิดในตัวต้านทานเท่านั้น"
+    solution: "$P$ หน่วย W, $Q$ หน่วย var, $|\\mathbf S|$ หน่วย VA และตัวประกอบกำลัง $\\cos\\theta = P/|\\mathbf S|$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p003
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 2
+    type: numeric
+    stem: "ไฟบ้านในไทยมีแรงดันระบุ $230\\ \\mathrm{V}$ (ค่า rms) แรงดันยอดเป็นกี่โวลต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 325.3, tolerance: 1, unit: V }
+    misconceptions:
+      - { match: 162.6, feedback: "หารด้วย $\\sqrt2$ แต่ค่ายอดมากกว่าค่า rms ต้องคูณ" }
+      - { match: 460, feedback: "คูณ 2 นั่นคือค่ายอดถึงยอด (peak-to-peak) โดยประมาณ ค่ายอดคือ $\\sqrt2$ เท่า" }
+    hints:
+      - "$V_{\\text{rms}} = V_m/\\sqrt2$"
+      - "$V_m = \\sqrt2\\,V_{\\text{rms}}$"
+    solution: "$V_m = 230\\sqrt2 = 325.3\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p004
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเหนี่ยวนำ $100\\ \\mathrm{mH}$ ต่อกับไฟ $50\\ \\mathrm{Hz}$ มีรีแอกแตนซ์กี่โอห์ม (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 31.42, tolerance: 0.1, unit: "Ω" }
+    misconceptions:
+      - { match: 5, feedback: "ใช้ $fL$ ต้องใช้ $\\omega = 2\\pi f$" }
+      - { match: 31415.9, feedback: "ไม่แปลงมิลลิเฮนรีเป็นเฮนรี" }
+    hints:
+      - "$X_L = \\omega L$"
+      - "$\\omega = 2\\pi(50)$ และ $L = 0.1\\ \\mathrm{H}$"
+    solution: "$X_L = 2\\pi(50)(0.1) = 31.42\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p005
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวเก็บประจุ $10\\ \\mu\\mathrm{F}$ ต่อกับไฟ $50\\ \\mathrm{Hz}$ มีรีแอกแตนซ์กี่โอห์ม (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 318.3, tolerance: 1, unit: "Ω" }
+    misconceptions:
+      - { match: 2000, feedback: "ใช้ $1/(fC)$ ต้องใช้ $\\omega = 2\\pi f$" }
+      - { match: 0.00314, feedback: "คูณ $\\omega C$ แทนการหาร $X_C = 1/(\\omega C)$" }
+    hints:
+      - "$X_C = 1/(\\omega C)$"
+      - "$\\omega C = 314.16 \\times 10 \\times 10^{-6}$"
+    solution: "$X_C = \\dfrac{1}{2\\pi(50)(10 \\times 10^{-6})} = 318.3\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p006
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 3
+    type: numeric
+    stem: "มอเตอร์พัดลมจำลองเป็น $R = 30\\ \\Omega$ อนุกรมกับรีแอกแตนซ์เหนี่ยวนำ $40\\ \\Omega$ (ค่าสมมติ) ต่อกับไฟ $230\\ \\mathrm{V}$ $50\\ \\mathrm{Hz}$ กระแส rms เป็นกี่แอมแปร์"
+    answer: { value: 4.6, tolerance: 0.03, unit: A }
+    misconceptions:
+      - { match: 3.29, feedback: "บวก $30 + 40 = 70\\ \\Omega$ ตรง ๆ ต้องใช้ขนาดของจำนวนเชิงซ้อน $|30 + j40|$" }
+      - { match: 7.67, feedback: "ใช้เฉพาะ $R$ ลืมรีแอกแตนซ์" }
+    hints:
+      - "$\\mathbf Z = 30 + j40$"
+      - "$|\\mathbf Z| = \\sqrt{30^2 + 40^2}$"
+    solution: "$|\\mathbf Z| = 50\\ \\Omega$ $I = 230/50 = 4.6\\ \\mathrm{A}$ ตามหลังแรงดัน $53.1^\\circ$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p007
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 3
+    type: numeric
+    stem: "จากมอเตอร์พัดลมในโจทย์ก่อน ($30 + j40\\ \\Omega$ กับไฟ $230\\ \\mathrm{V}$) กำลังจริงที่มอเตอร์ใช้เป็นกี่วัตต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 634.8, tolerance: 3, unit: W }
+    misconceptions:
+      - { match: 1058, feedback: "คูณ $V_{\\text{rms}}I_{\\text{rms}}$ ซึ่งเป็นกำลังปรากฏ (VA) ต้องคูณตัวประกอบกำลัง $0.6$" }
+      - { match: 846.4, feedback: "ใช้ $I^2X_L$ นั่นคือกำลังรีแอกทีฟ (var) กำลังจริงเกิดในความต้านทานเท่านั้น" }
+    hints:
+      - "กำลังจริงเกิดในส่วนความต้านทาน"
+      - "$P = I^2R$ หรือ $VI\\cos\\theta$"
+    solution: "$P = 4.6^2 \\times 30 = 634.8\\ \\mathrm{W}$ ตรวจ: $230 \\times 4.6 \\times 0.6 = 634.8\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p008
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 3
+    type: mcq
+    stem: "โหลดมีอิมพีแดนซ์ $\\mathbf Z = 20 - j15\\ \\Omega$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "เป็นโหลดแบบเก็บประจุ ตัวประกอบกำลัง $0.8$ แบบนำหน้า", correct: true }
+      - { id: b, text: "เป็นโหลดแบบเหนี่ยวนำ ตัวประกอบกำลัง $0.8$ แบบตามหลัง", feedback: "ส่วนจินตภาพเป็นลบ คือรีแอกแตนซ์แบบเก็บประจุ กระแสจึงนำหน้า" }
+      - { id: c, text: "ตัวประกอบกำลัง $0.6$ แบบนำหน้า", feedback: "$\\cos\\theta = R/|\\mathbf Z| = 20/25$ ไม่ใช่ $15/25$" }
+      - { id: d, text: "ตัวประกอบกำลังเป็นลบ เพราะ $\\theta$ เป็นลบ", feedback: "$\\cos$ ของมุมลบเป็นบวก ตัวประกอบกำลังของโหลดพาสซีฟอยู่ระหว่าง 0 ถึง 1 และระบุแบบนำหน้าหรือตามหลังแทน" }
+    hints:
+      - "ส่วนจินตภาพลบคือ $-j/(\\omega C)$"
+      - "$|\\mathbf Z| = \\sqrt{20^2 + 15^2}$ และ $\\cos\\theta = R/|\\mathbf Z|$"
+    solution: "$|\\mathbf Z| = 25\\ \\Omega$ มุม $-36.9^\\circ$ เป็นโหลดแบบเก็บประจุ กระแสนำหน้าแรงดัน ตัวประกอบกำลัง $20/25 = 0.8$ แบบนำหน้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p009
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 3
+    type: numeric
+    stem: "รวมสัญญาณ $v_1 = 100\\cos(\\omega t)$ กับ $v_2 = 100\\cos(\\omega t - 90^\\circ)$ โวลต์ ผลรวมเป็นไซน์ความถี่เดิมที่มีค่ายอดกี่โวลต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 141.4, tolerance: 0.5, unit: V }
+    misconceptions:
+      - { match: 200, feedback: "บวกค่ายอดตรง ๆ สองสัญญาณถึงยอดคนละเวลา ต้องบวกแบบเฟสเซอร์" }
+      - { match: 0, feedback: "สองสัญญาณต่างเฟสกัน $90^\\circ$ ไม่ใช่ $180^\\circ$ จึงไม่หักล้างกัน" }
+    hints:
+      - "เฟสเซอร์: $100\\angle 0^\\circ + 100\\angle -90^\\circ = 100 - j100$"
+      - "หาขนาดของจำนวนเชิงซ้อน"
+    solution: "$100 - j100 = 141.4\\angle -45^\\circ$ จึง $v = 141.4\\cos(\\omega t - 45^\\circ)\\ \\mathrm{V}$ ตรวจด้วยการคำนวณค่าสูงสุดของผลรวมในโดเมนเวลาได้ $141.4\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p010
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 4
+    type: numeric
+    stem: "วงจรสั่นพ้องในเตาแม่เหล็กไฟฟ้ารุ่นหนึ่งมีขดลวด $L = 60\\ \\mu\\mathrm{H}$ และตัวเก็บประจุ $C = 0.33\\ \\mu\\mathrm{F}$ (ค่าสมมติ) ความถี่สั่นพ้องเป็นกี่กิโลเฮิรตซ์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 35.8, tolerance: 0.3, unit: kHz }
+    misconceptions:
+      - { match: 224.7, feedback: "นี่คือ $\\omega_0$ เป็นเรเดียนต่อวินาที (หน่วยพัน) ต้องหารด้วย $2\\pi$ เพื่อได้เฮิรตซ์" }
+      - { match: 0.0358, feedback: "ได้หน่วยเมกะเฮิรตซ์ โจทย์ถามเป็นกิโลเฮิรตซ์" }
+    hints:
+      - "$\\omega_0 = 1/\\sqrt{LC}$"
+      - "$f_0 = \\dfrac{1}{2\\pi\\sqrt{LC}}$"
+    solution: "$\\sqrt{LC} = \\sqrt{60 \\times 10^{-6} \\times 0.33 \\times 10^{-6}} = 4.45 \\times 10^{-6}\\ \\mathrm{s}$ $f_0 = 1/(2\\pi \\times 4.45 \\times 10^{-6}) = 35.8\\ \\mathrm{kHz}$ ความถี่สูงกว่าที่หูได้ยิน และทำให้ก้นหม้อเหล็กร้อนจากกระแสวนได้ดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p011
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 4
+    type: numeric
+    stem: "วงจรรับวิทยุ AM เป็น RLC อนุกรม $R = 10\\ \\Omega$ $L = 250\\ \\mu\\mathrm{H}$ ต้องปรับตัวเก็บประจุเป็นกี่พิโคฟารัดจึงจะรับสถานีความถี่ $1.0\\ \\mathrm{MHz}$ ได้ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 101.3, tolerance: 1, unit: pF }
+    misconceptions:
+      - { match: 4000, feedback: "ใช้ $C = 1/(f^2L)$ ต้องใช้ $\\omega = 2\\pi f$" }
+      - { match: 636.6, feedback: "ใช้ $C = 1/(\\omega^2L)$ แต่ใส่ $\\omega$ ไม่ยกกำลังสองหรือขาด $2\\pi$ หนึ่งตัว ตรวจ $\\omega^2 = (2\\pi \\times 10^6)^2$" }
+    hints:
+      - "ที่สั่นพ้อง $\\omega_0 L = 1/(\\omega_0 C)$"
+      - "$C = \\dfrac{1}{\\omega_0^2L}$ เมื่อ $\\omega_0 = 2\\pi \\times 10^6$"
+    solution: "$C = \\dfrac{1}{(2\\pi \\times 10^6)^2(250 \\times 10^{-6})} = 1.013 \\times 10^{-10}\\ \\mathrm{F} = 101.3\\ \\mathrm{pF}$ ตัวประกอบคุณภาพ $Q = \\omega_0L/R = 157$ แบนด์วิดท์ $f_0/Q = 6.4\\ \\mathrm{kHz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p012
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 4
+    type: numeric
+    stem: "ร้านกลึงโลหะมีโหลด $10\\ \\mathrm{kW}$ ตัวประกอบกำลัง $0.75$ แบบตามหลัง ที่ $230\\ \\mathrm{V}$ $50\\ \\mathrm{Hz}$ (ค่าสมมติ) ต้องการแก้เป็น $0.95$ แบบตามหลัง ตัวเก็บประจุต้องให้กำลังรีแอกทีฟกี่ kvar (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.53, tolerance: 0.05, unit: kvar }
+    misconceptions:
+      - { match: 8.82, feedback: "นี่คือกำลังรีแอกทีฟทั้งหมดของโหลด ซึ่งจะแก้ให้ตัวประกอบกำลังเป็น 1 แต่โจทย์ต้องการเพียง 0.95" }
+      - { match: 3.29, feedback: "นี่คือกำลังรีแอกทีฟที่ยังเหลือหลังแก้ ($P\\tan\\theta_2$) ตัวเก็บประจุต้องให้ส่วนที่ลดลง" }
+    hints:
+      - "$Q = P\\tan\\theta$ หา $\\theta_1 = \\cos^{-1}0.75$ และ $\\theta_2 = \\cos^{-1}0.95$"
+      - "$Q_C = P(\\tan\\theta_1 - \\tan\\theta_2)$"
+    solution: "$\\tan\\theta_1 = 0.8819$, $\\tan\\theta_2 = 0.3287$ $Q_C = 10(0.8819 - 0.3287) = 5.53\\ \\mathrm{kvar}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p013
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 4
+    type: numeric
+    stem: "ในวงจรเฟสเซอร์ตามภาพ แหล่งจ่าย $10\\angle 0^\\circ\\ \\mathrm{V}$ ต่ออนุกรมกับ $4\\ \\Omega$ ไปยังโนด a จากโนด a มีสองกิ่งลงกราวด์ คือ $-j4\\ \\Omega$ และ $2 + j2\\ \\Omega$ ขนาดของแรงดันที่โนด a เป็นกี่โวลต์"
+    figure: { src: p-node.svg, alt: "แหล่งจ่ายไฟกระแสสลับ 10∠0° V ทางซ้าย ขั้วบนต่อผ่านตัวต้านทาน 4 Ω ไปยังโนด a จากโนด a มีตัวเก็บประจุ −j4 Ω ลงเส้นล่าง และอีกกิ่งเป็นตัวต้านทาน 2 Ω อนุกรมกับตัวเหนี่ยวนำ j2 Ω ลงเส้นล่าง เส้นล่างต่อกราวด์ ค่าเฟสเซอร์เป็นค่า rms" }
+    answer: { value: 5, tolerance: 0.05, unit: V }
+    misconceptions:
+      - { match: 2.93, feedback: "ใช้ขนาดของอิมพีแดนซ์ ($4$ และ $2.83$) รวมกันเหมือนตัวต้านทาน แต่ต้องคิดเฟสด้วยจำนวนเชิงซ้อน" }
+      - { match: 10, feedback: "ลืมแรงดันตกคร่อมตัวต้านทาน $4\\ \\Omega$" }
+    hints:
+      - "KCL ที่โนด a: $\\dfrac{\\mathbf V_a - 10}{4} + \\dfrac{\\mathbf V_a}{-j4} + \\dfrac{\\mathbf V_a}{2 + j2} = 0$"
+      - "หรือรวมสองกิ่งขนานก่อน $\\dfrac{(-j4)(2 + j2)}{2 - j2}$ แล้วใช้ตัวแบ่งแรงดัน"
+    solution: "สองกิ่งขนานกัน $\\mathbf Z_p = \\dfrac{(-j4)(2 + j2)}{2 - j2} = \\dfrac{8 - j8}{2 - j2} = 4\\ \\Omega$ (จริงล้วน) ตัวแบ่งแรงดัน $\\mathbf V_a = 10 \\times \\dfrac{4}{4 + 4} = 5\\angle 0^\\circ\\ \\mathrm{V}$ ตรวจด้วย KCL: $\\tfrac{5 - 10}{4} + \\tfrac{5}{-j4} + \\tfrac{5}{2 + j2} = -1.25 + j1.25 + (1.25 - j1.25) = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p014
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 5
+    type: numeric
+    stem: "วงกรองผ่านต่ำ $RC$ มี $R = 1\\ \\mathrm{k\\Omega}$ และ $C = 0.1\\ \\mu\\mathrm{F}$ ขาออกคือแรงดันคร่อม $C$ ที่ความถี่ $5\\ \\mathrm{kHz}$ อัตราขยาย $|H|$ เป็นกี่เดซิเบล (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: -10.36, tolerance: 0.1, unit: dB }
+    misconceptions:
+      - { match: -0.97, feedback: "ใช้ $f$ แทน $\\omega = 2\\pi f$ ใน $\\omega RC$" }
+      - { match: -9.94, feedback: "ใช้เส้นกำกับ $f_c/f$ ซึ่งใช้ได้เมื่อ $f \\gg f_c$ แต่ $5\\ \\mathrm{kHz}$ ยังใกล้ $f_c = 1.59\\ \\mathrm{kHz}$ ต้องใช้สูตรเต็ม" }
+    hints:
+      - "$H = \\dfrac{1}{1 + j\\omega RC}$ และ $|H| = \\dfrac{1}{\\sqrt{1 + (\\omega RC)^2}}$"
+      - "เดซิเบล $= 20\\log_{10}|H|$"
+    solution: "$\\omega RC = 2\\pi(5000)(10^3)(10^{-7}) = 3.142$ $|H| = 1/\\sqrt{1 + 9.870} = 0.3033$ $20\\log_{10}0.3033 = -10.36\\ \\mathrm{dB}$ (ความถี่ตัด $f_c = 1/(2\\pi RC) = 1.59\\ \\mathrm{kHz}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p015
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 3
+    type: numeric
+    stem: "บ้านหลังหนึ่งรับแรงดัน $\\mathbf V = 230\\angle 0^\\circ\\ \\mathrm{V}$ และกระแส $\\mathbf I = 10\\angle -30^\\circ\\ \\mathrm{A}$ (ค่า rms) กำลังรีแอกทีฟ $Q$ เป็นกี่ var"
+    answer: { value: 1150, tolerance: 5, unit: var }
+    misconceptions:
+      - { match: -1150, feedback: "คูณ $\\mathbf V\\mathbf I$ โดยไม่สังยุคกระแส ทำให้เครื่องหมายผิด โหลดเหนี่ยวนำ (กระแสตามหลัง) มี $Q$ เป็นบวก" }
+      - { match: 1991.9, feedback: "นี่คือกำลังจริง $P = VI\\cos 30^\\circ$" }
+    hints:
+      - "$\\mathbf S = \\mathbf V\\mathbf I^*$"
+      - "$\\mathbf I^* = 10\\angle 30^\\circ$ แล้วหาส่วนจินตภาพ"
+    solution: "$\\mathbf S = 230 \\times 10\\angle 30^\\circ = 1991.9 + j1150$ ได้ $P = 1992\\ \\mathrm{W}$, $Q = 1150\\ \\mathrm{var}$, $|\\mathbf S| = 2300\\ \\mathrm{VA}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p016
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 5
+    type: numeric
+    stem: "วงจร $RLC$ อนุกรม $R = 20\\ \\Omega$, $L = 0.1\\ \\mathrm{H}$, $C = 50\\ \\mu\\mathrm{F}$ ต่อกับไฟ $230\\ \\mathrm{V}$ $50\\ \\mathrm{Hz}$ แรงดัน rms คร่อมตัวเก็บประจุเป็นกี่โวลต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 385.9, tolerance: 2, unit: V }
+    misconceptions:
+      - { match: 230, feedback: "คิดว่าแรงดันคร่อมองค์ประกอบใดไม่เกินแหล่งจ่าย แต่ $V_L$ กับ $V_C$ มีเฟสตรงข้ามและหักล้างกันบางส่วน แต่ละตัวจึงสูงกว่าแหล่งจ่ายได้" }
+      - { match: 190.4, feedback: "นี่คือแรงดันคร่อมตัวเหนี่ยวนำ $IX_L$" }
+    hints:
+      - "$X_L = 31.42\\ \\Omega$, $X_C = 63.66\\ \\Omega$ $\\mathbf Z = 20 + j(31.42 - 63.66)$"
+      - "$I = 230/|\\mathbf Z|$ แล้ว $V_C = IX_C$"
+    solution: "$\\mathbf Z = 20 - j32.24$, $|\\mathbf Z| = 37.94\\ \\Omega$, $I = 6.06\\ \\mathrm{A}$ $V_C = 6.06 \\times 63.66 = 385.9\\ \\mathrm{V}$ ตรวจด้วย KVL แบบเฟสเซอร์ (ใช้กระแสเป็นเฟสอ้างอิง): $121.2 + j190.4 - j385.9 = 121.2 - j195.5$ มีขนาด $230\\ \\mathrm{V}$ เท่าแหล่งจ่าย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p017
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการวิเคราะห์วงจรไฟฟ้ากระแสสลับในสถานะคงตัวด้วยเฟสเซอร์"
+    items:
+      - "หาความถี่เชิงมุม ω ของแหล่งจ่าย"
+      - "แปลงแหล่งจ่ายเป็นเฟสเซอร์ และแปลง R L C เป็นอิมพีแดนซ์"
+      - "แก้วงจรด้วย KCL KVL หรือวิธีโนดและเมชด้วยจำนวนเชิงซ้อน"
+      - "แปลงเฟสเซอร์ที่ได้เป็นขนาดกับมุม หรือฟังก์ชันของเวลา"
+      - "ตรวจด้วยสมดุลกำลังหรือ KVL แบบเฟสเซอร์"
+    hints:
+      - "อิมพีแดนซ์ของ L และ C ขึ้นกับ ω จึงต้องรู้ ω ก่อน"
+      - "จบด้วยการแปลงกลับและตรวจ"
+    solution: "ω → เฟสเซอร์และอิมพีแดนซ์ → แก้วงจร → แปลงกลับ → ตรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p018
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 5
+    type: numeric
+    stem: "ต่อจากร้านกลึงโลหะ (โหลด $10\\ \\mathrm{kW}$ ตัวประกอบกำลัง $0.75$ ตามหลัง แก้เป็น $0.95$ ที่ $230\\ \\mathrm{V}$ $50\\ \\mathrm{Hz}$) ต้องใช้ตัวเก็บประจุขนานกับโหลดกี่ไมโครฟารัด"
+    answer: { value: 333, tolerance: 3, unit: "μF" }
+    misconceptions:
+      - { match: 2092, feedback: "ใช้ $f$ แทน $\\omega$ ใน $C = Q_C/(\\omega V^2)$" }
+      - { match: 166.4, feedback: "ใช้แรงดันยอด $325\\ \\mathrm{V}$ แต่สูตรกำลังใช้ค่า rms" }
+    hints:
+      - "จากโจทย์ก่อน $Q_C = 5532\\ \\mathrm{var}$"
+      - "ตัวเก็บประจุที่แรงดัน $V$ ให้ $Q_C = V^2/X_C = \\omega CV^2$"
+    solution: "$C = \\dfrac{5532}{2\\pi(50)(230^2)} = 3.33 \\times 10^{-4}\\ \\mathrm{F} = 333\\ \\mu\\mathrm{F}$ หลังแก้ กระแสลดจาก $10{,}000/(230 \\times 0.75) = 58.0\\ \\mathrm{A}$ เหลือ $45.8\\ \\mathrm{A}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.circuits.ac-phasors.p019
+    topics: [engineering.circuits.ac-phasors]
+    difficulty: 4
+    type: expression
+    stem: "จงเขียนตัวประกอบคุณภาพ $Q = \\omega_0L/R$ ของวงจร $RLC$ อนุกรม ในรูปของ $R$, $L$, $C$ เท่านั้น"
+    prefix: "Q ="
+    answer: { latex: "\\frac{1}{R}\\sqrt{\\frac{L}{C}}", variables: [R, L, C] }
+    misconceptions:
+      - { match: "R\\sqrt{\\frac{C}{L}}", feedback: "กลับเศษส่วนทั้งหมด นี่คือ $1/Q$" }
+      - { match: "\\sqrt{\\frac{L}{C}}", feedback: "ลืมหารด้วย $R$" }
+    hints:
+      - "แทน $\\omega_0 = 1/\\sqrt{LC}$"
+      - "$\\dfrac{L}{R\\sqrt{LC}}$ จัดรูปให้ง่าย"
+    solution: "$Q = \\dfrac{L}{R\\sqrt{LC}} = \\dfrac{1}{R}\\sqrt{\\dfrac{L}{C}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

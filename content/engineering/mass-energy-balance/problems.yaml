@@ -1,0 +1,295 @@
+problems:
+  - id: engineering.process.mass-energy-balance.p001
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 1
+    type: mcq
+    stem: "กระบวนการไหลต่อเนื่องที่อยู่ใน \"สถานะคงตัว\" หมายความว่าอย่างไร"
+    choices:
+      - { id: a, text: "ปริมาณสารในระบบไม่เปลี่ยนตามเวลา พจน์สะสมเป็นศูนย์", correct: true }
+      - { id: b, text: "ไม่มีสารไหลเข้าหรือออก", feedback: "นั่นคือระบบปิด ระบบสถานะคงตัวมีสารไหลเข้าออกได้ แต่เข้าเท่ากับออก" }
+      - { id: c, text: "ไม่มีปฏิกิริยาเคมีเกิดขึ้น", feedback: "ระบบที่มีปฏิกิริยาก็อยู่ในสถานะคงตัวได้ ถ้าปริมาณในระบบไม่เปลี่ยนตามเวลา" }
+      - { id: d, text: "อุณหภูมิทุกจุดในระบบเท่ากัน", feedback: "อุณหภูมิต่างกันในแต่ละจุดได้ ขอเพียงค่าที่แต่ละจุดไม่เปลี่ยนตามเวลา" }
+    hints:
+      - "นึกถึงสมการ เข้า − ออก + เกิด − ใช้ไป = สะสม"
+      - "คำว่า คงตัว หมายถึงไม่เปลี่ยนตามเวลา"
+    solution: "สถานะคงตัวคือทุกปริมาณในระบบไม่เปลี่ยนตามเวลา พจน์สะสมจึงเป็นศูนย์ ถ้าไม่มีปฏิกิริยาด้วยจะได้ เข้า = ออก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p002
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำกับความหมาย"
+    pairs:
+      - { left: "ระบบเปิด", right: "มีสารไหลข้ามขอบเขตระบบ" }
+      - { left: "ระบบปิด", right: "พลังงานข้ามขอบเขตได้ แต่สารข้ามไม่ได้" }
+      - { left: "ฐานการคำนวณ", right: "ปริมาณที่เลือกเป็นจุดเริ่ม เช่น 100 kg ของสายป้อน" }
+      - { left: "สารกำหนดปริมาณ", right: "สารตั้งต้นที่หมดก่อนตามอัตราส่วนในสมการเคมี" }
+    hints:
+      - "ระบบเปิดกับปิดต่างกันที่การข้ามขอบเขตของสาร"
+      - "ฐานการคำนวณเลือกได้อิสระ แล้วค่อยปรับขนาดภายหลัง"
+    solution: "ระบบเปิดมีสารไหลเข้าออก ระบบปิดแลกเปลี่ยนได้เฉพาะพลังงาน ฐานการคำนวณคือปริมาณอ้างอิงที่เลือก สารกำหนดปริมาณคือสารที่หมดก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p003
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 2
+    type: numeric
+    stem: "โรงงานน้ำตาลป้อนน้ำอ้อย $100\\ \\mathrm{t/h}$ ที่มีน้ำตาล 15% โดยมวล เข้าเครื่องระเหยจนได้น้ำเชื่อมที่มีน้ำตาล 65% (ข้อมูลสมมติ) ต้องระเหยน้ำออกกี่ตันต่อชั่วโมง (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 76.92, tolerance: 0.1, unit: "t/h" }
+    misconceptions:
+      - { match: 50, feedback: "ลบร้อยละ $65 - 15$ ตรง ๆ ร้อยละคิดจากมวลรวมคนละค่า ต้องใช้ดุลน้ำตาลซึ่งไม่ระเหย" }
+      - { match: 23.08, feedback: "นี่คืออัตราการไหลของน้ำเชื่อม ไม่ใช่น้ำที่ระเหย" }
+    hints:
+      - "น้ำตาลไม่ระเหย น้ำตาลเข้าเท่ากับน้ำตาลออกในน้ำเชื่อม"
+      - "หาอัตราไหลของน้ำเชื่อมก่อน แล้วใช้ดุลมวลรวม"
+    solution: "ดุลน้ำตาล: $0.15(100) = 0.65S$ ได้ $S = 23.08\\ \\mathrm{t/h}$ ดุลมวลรวม: $W = 100 - 23.08 = 76.92\\ \\mathrm{t/h}$ ตรวจด้วยดุลน้ำ: $85 = 0.35(23.08) + 76.92$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p004
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 2
+    type: numeric
+    stem: "ผสมน้ำเกลือ $300\\ \\mathrm{kg/h}$ ที่มีเกลือ 10% กับน้ำเกลือ $200\\ \\mathrm{kg/h}$ ที่มีเกลือ 40% โดยมวล กระแสที่ออกมีเกลือร้อยละเท่าใด"
+    answer: { value: 22, tolerance: 0.1, unit: "%" }
+    misconceptions:
+      - { match: 25, feedback: "หาค่าเฉลี่ยของร้อยละตรง ๆ ต้องถ่วงด้วยอัตราการไหล" }
+      - { match: 28, feedback: "สลับอัตราไหลของสองกระแส" }
+    hints:
+      - "เกลือเข้า = เกลือออก"
+      - "เกลือออก ÷ มวลรวมที่ออก"
+    solution: "เกลือ $= 0.10(300) + 0.40(200) = 110\\ \\mathrm{kg/h}$ มวลรวม $500\\ \\mathrm{kg/h}$ จึงเป็น $110/500 = 22\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p005
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 3
+    type: numeric
+    stem: "ผสม $\\mathrm{HCl}$ $1.0\\ \\mathrm{M}$ $50\\ \\mathrm{mL}$ กับ $\\mathrm{NaOH}$ $1.0\\ \\mathrm{M}$ $50\\ \\mathrm{mL}$ ในแคลอริมิเตอร์ถ้วยโฟม อุณหภูมิเพิ่ม $6.8\\ ^\\circ\\mathrm{C}$ ถือว่าสารละลายมีมวล $100\\ \\mathrm{g}$ และ $c = 4.18\\ \\mathrm{J/(g\\cdot K)}$ ความร้อนที่ปล่อยออกต่อโมลของน้ำที่เกิดเป็นกี่กิโลจูลต่อโมล (ตอบเป็นขนาด ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 56.8, tolerance: 0.6, unit: "kJ/mol" }
+    misconceptions:
+      - { match: 28.4, feedback: "ใช้มวล $50\\ \\mathrm{g}$ ของสารละลายเดียว อุณหภูมิของสารละลายทั้งหมด $100\\ \\mathrm{g}$ เพิ่มขึ้น" }
+      - { match: 113.7, feedback: "ใช้จำนวนโมล $0.025$ น้ำเกิดขึ้น $0.050\\ \\mathrm{mol}$ ตามจำนวนโมลของกรดหรือเบส" }
+    hints:
+      - "$q = mc\\,\\Delta T$ ใช้มวลของสารละลายทั้งหมด"
+      - "จำนวนโมลของน้ำ $= 1.0 \\times 0.050\\ \\mathrm{L}$"
+    solution: "$q = 100 \\times 4.18 \\times 6.8 = 2842\\ \\mathrm{J}$ น้ำเกิด $0.050\\ \\mathrm{mol}$ จึงได้ $2842/0.050 = 56{,}850\\ \\mathrm{J/mol} \\approx 56.8\\ \\mathrm{kJ/mol}$ (ปฏิกิริยาคายความร้อน $\\Delta H \\approx -56.8\\ \\mathrm{kJ/mol}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p006
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 3
+    type: numeric
+    stem: "สหกรณ์อบข้าวเปลือกชื้น $1000\\ \\mathrm{kg}$ ที่มีความชื้น 25% (โดยมวลเปียก) ให้เหลือความชื้น 14% เพื่อเก็บรักษา (ข้อมูลสมมติ) ต้องระเหยน้ำออกกี่กิโลกรัม (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 127.9, tolerance: 0.5, unit: kg }
+    misconceptions:
+      - { match: 110, feedback: "ลบร้อยละความชื้น $25 - 14 = 11\\%$ ของมวลเดิม แต่ร้อยละหลังอบคิดจากมวลใหม่ที่น้อยลง ต้องใช้มวลแห้งซึ่งคงตัว" }
+      - { match: 872.1, feedback: "นี่คือมวลข้าวเปลือกหลังอบ" }
+    hints:
+      - "มวลเนื้อข้าวแห้ง (ไม่รวมน้ำ) ไม่เปลี่ยน"
+      - "มวลแห้ง $= 0.75 \\times 1000$ และหลังอบมวลแห้งเป็น 86% ของมวลใหม่"
+    solution: "มวลแห้ง $750\\ \\mathrm{kg}$ หลังอบมวลรวม $= 750/0.86 = 872.1\\ \\mathrm{kg}$ น้ำที่ระเหย $= 1000 - 872.1 = 127.9\\ \\mathrm{kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p007
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 2
+    type: numeric
+    stem: "เครื่องทำน้ำร้อนในโรงงานอุ่นน้ำ $2\\ \\mathrm{kg/s}$ จาก $25\\ ^\\circ\\mathrm{C}$ เป็น $85\\ ^\\circ\\mathrm{C}$ ต้องให้ความร้อนกี่กิโลวัตต์ ($c = 4.18\\ \\mathrm{kJ/(kg\\cdot K)}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 501.6, tolerance: 2, unit: kW }
+    misconceptions:
+      - { match: 710.6, feedback: "ใช้อุณหภูมิปลาย $85$ แทนผลต่างอุณหภูมิ $60$" }
+      - { match: 1003.2, feedback: "คูณ 2 ซ้ำ หรือใช้ผลต่าง $120$ ตรวจผลต่างอุณหภูมิอีกครั้ง" }
+    hints:
+      - "ระบบเปิดไหลคงตัว ไม่มีงาน: $\\dot Q = \\dot m c\\,\\Delta T$"
+      - "$\\Delta T = 85 - 25$"
+    solution: "$\\dot Q = 2 \\times 4.18 \\times 60 = 501.6\\ \\mathrm{kW}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p008
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 2
+    type: numeric
+    stem: "หม้อข้าวต้ม $5\\ \\mathrm{kg}$ ($c = 3.8\\ \\mathrm{kJ/(kg\\cdot K)}$ ค่าสมมติ) เย็นลงจาก $90\\ ^\\circ\\mathrm{C}$ เป็น $40\\ ^\\circ\\mathrm{C}$ ใน $30$ นาที อัตราการเสียความร้อนเฉลี่ยเป็นกี่วัตต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 527.8, tolerance: 3, unit: W }
+    misconceptions:
+      - { match: 31666.7, feedback: "หารด้วย $30$ นาทีโดยไม่แปลงเป็นวินาที วัตต์คือจูลต่อวินาที" }
+      - { match: 0.5278, feedback: "ได้หน่วยกิโลวัตต์ โจทย์ถามเป็นวัตต์" }
+    hints:
+      - "ความร้อนที่เสีย $Q = mc\\,\\Delta T$ เป็นกิโลจูล"
+      - "แปลงเป็นจูลแล้วหารด้วยเวลาเป็นวินาที"
+    solution: "$Q = 5 \\times 3.8 \\times 50 = 950\\ \\mathrm{kJ}$ เวลา $1800\\ \\mathrm{s}$ อัตรา $= 950{,}000/1800 = 527.8\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p009
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 3
+    type: numeric
+    stem: "เตาเผาในภาพเผาไบโอแก๊สจากฟาร์มสุกร $100\\ \\mathrm{mol/h}$ ($\\mathrm{CH_4}$ 60%, $\\mathrm{CO_2}$ 40% โดยโมล) ด้วยอากาศมากเกินพอ 20% ต้องป้อนอากาศกี่โมลต่อชั่วโมง (ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-burner.svg, alt: "แผนภาพกระบวนการ เตาเผาหนึ่งกล่อง กระแสเข้าสองกระแส คือไบโอแก๊ส 100 mol/h มี CH4 60% CO2 40% โดยโมล และอากาศ (O2 21% N2 79%) มากเกินพอ 20% กระแสออกคือแก๊สไอเสียที่มี CO2 H2O O2 N2 ใต้ภาพเขียนสมการ CH4 + 2O2 → CO2 + 2H2O" }
+    answer: { value: 685.7, tolerance: 2, unit: "mol/h" }
+    misconceptions:
+      - { match: 571.4, feedback: "ใช้ออกซิเจนตามทฤษฎีพอดี ต้องเพิ่มอีก 20%" }
+      - { match: 144, feedback: "นี่คือจำนวนโมลของ $\\mathrm{O_2}$ อากาศมี $\\mathrm{O_2}$ เพียง 21%" }
+    hints:
+      - "$\\mathrm{O_2}$ ตามทฤษฎี $= 2 \\times$ โมลของ $\\mathrm{CH_4}$ ($\\mathrm{CO_2}$ ไม่เผาไหม้)"
+      - "คูณ $1.2$ แล้วหารด้วย $0.21$"
+    solution: "$\\mathrm{O_2}$ ทฤษฎี $= 2(60) = 120$ ป้อนจริง $1.2(120) = 144\\ \\mathrm{mol/h}$ อากาศ $= 144/0.21 = 685.7\\ \\mathrm{mol/h}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p010
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องปฏิกรณ์ผลิตแอมโมเนีย $\\mathrm{N_2 + 3H_2 \\to 2NH_3}$ ป้อน $\\mathrm{N_2}$ $100\\ \\mathrm{mol}$ และ $\\mathrm{H_2}$ $240\\ \\mathrm{mol}$ สารกำหนดปริมาณเปลี่ยนไป 30% ได้ $\\mathrm{NH_3}$ กี่โมล"
+    answer: { value: 48, tolerance: 0.1, unit: mol }
+    misconceptions:
+      - { match: 60, feedback: "ใช้ $\\mathrm{N_2}$ เป็นสารกำหนดปริมาณ แต่ $\\mathrm{N_2}$ $100\\ \\mathrm{mol}$ ต้องใช้ $\\mathrm{H_2}$ $300\\ \\mathrm{mol}$ ซึ่งมีไม่พอ $\\mathrm{H_2}$ จึงหมดก่อน" }
+      - { match: 144, feedback: "ใช้ $\\mathrm{H_2}$ ที่ทำปฏิกิริยาคูณ 2 โดยไม่หาร 3 ตามสัมประสิทธิ์" }
+    hints:
+      - "เทียบอัตราส่วนป้อน $240/100$ กับอัตราส่วนในสมการ $3/1$"
+      - "$\\mathrm{H_2}$ ที่ทำปฏิกิริยา $= 0.30 \\times 240$ แล้วใช้อัตราส่วน $2/3$"
+    solution: "$\\mathrm{H_2}$ ต้องการ $300$ แต่มี $240$ จึงเป็นสารกำหนดปริมาณ ทำปฏิกิริยา $0.30(240) = 72\\ \\mathrm{mol}$ ได้ $\\mathrm{NH_3}$ $= 72 \\times \\tfrac23 = 48\\ \\mathrm{mol}$ (ใช้ $\\mathrm{N_2}$ ไป $24\\ \\mathrm{mol}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p011
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 3
+    type: numeric
+    stem: "แม่น้ำสายหนึ่งไหล $10\\ \\mathrm{m^3/s}$ มีค่า BOD $2\\ \\mathrm{mg/L}$ รับน้ำทิ้งจากโรงงาน $0.5\\ \\mathrm{m^3/s}$ ที่มี BOD $50\\ \\mathrm{mg/L}$ (ข้อมูลสมมติ) หลังผสมทั่วถึง BOD ของแม่น้ำเป็นกี่มิลลิกรัมต่อลิตร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 4.29, tolerance: 0.03, unit: "mg/L" }
+    misconceptions:
+      - { match: 26, feedback: "หาค่าเฉลี่ยของความเข้มข้นตรง ๆ ต้องถ่วงด้วยอัตราการไหล" }
+      - { match: 4.5, feedback: "หารด้วย $10$ แทนอัตราไหลรวม $10.5\\ \\mathrm{m^3/s}$" }
+    hints:
+      - "ดุลมวลของ BOD ที่จุดผสม: มวลต่อเวลา $= QC$"
+      - "$C = (Q_1C_1 + Q_2C_2)/(Q_1 + Q_2)$"
+    solution: "$C = \\dfrac{10(2) + 0.5(50)}{10.5} = \\dfrac{45}{10.5} = 4.29\\ \\mathrm{mg/L}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p012
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 4
+    type: numeric
+    stem: "บ่อบำบัดน้ำเสียของชุมชนปริมาตร $20{,}000\\ \\mathrm{m^3}$ กวนผสมทั่วถึง รับน้ำเสีย $1000\\ \\mathrm{m^3/d}$ ที่มี BOD $200\\ \\mathrm{mg/L}$ BOD สลายตัวด้วยอัตรา $kCV$ เมื่อ $k = 0.2\\ \\mathrm{d^{-1}}$ (ข้อมูลสมมติ) ที่สถานะคงตัว BOD ของน้ำที่ออกจากบ่อเป็นกี่มิลลิกรัมต่อลิตร"
+    answer: { value: 40, tolerance: 0.2, unit: "mg/L" }
+    misconceptions:
+      - { match: 3.66, feedback: "ใช้ $C_0e^{-kt}$ ซึ่งเป็นสูตรของการไหลแบบไม่ผสม (plug flow) บ่อที่กวนผสมทั่วถึงมีความเข้มข้นทั้งบ่อเท่ากับน้ำที่ออก" }
+      - { match: 200, feedback: "ลืมพจน์ที่ BOD สลายตัวไปในบ่อ" }
+    hints:
+      - "ดุล BOD: เข้า − ออก − สลายตัว = 0"
+      - "$QC_{\\text{เข้า}} = QC + kCV$ แก้หา $C$"
+    solution: "$C = \\dfrac{C_{\\text{เข้า}}}{1 + kV/Q} = \\dfrac{200}{1 + 0.2(20{,}000)/1000} = \\dfrac{200}{5} = 40\\ \\mathrm{mg/L}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p013
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 4
+    type: numeric
+    stem: "ต่อจากโจทย์เครื่องระเหยน้ำอ้อย ($100\\ \\mathrm{t/h}$ น้ำตาล 15% เป็นน้ำเชื่อม 65%) ถ้าน้ำอ้อยถูกอุ่นถึงจุดเดือดมาก่อนแล้ว และความร้อนแฝงของการกลายเป็นไอคือ $2257\\ \\mathrm{kJ/kg}$ เครื่องระเหยต้องได้รับความร้อนกี่เมกะวัตต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 48.2, tolerance: 0.3, unit: MW }
+    misconceptions:
+      - { match: 62.7, feedback: "ใช้อัตราไหลของน้ำอ้อยทั้งหมด แต่น้ำที่กลายเป็นไอมีเพียง $76.92\\ \\mathrm{t/h}$" }
+      - { match: 173.6, feedback: "ไม่ได้แปลงตันต่อชั่วโมงเป็นกิโลกรัมต่อวินาที" }
+    hints:
+      - "หาอัตราน้ำที่ระเหยจากดุลมวลก่อน"
+      - "$\\dot Q = \\dot m_{\\text{ไอ}} h_{fg}$ โดย $\\dot m$ เป็น $\\mathrm{kg/s}$"
+    solution: "น้ำระเหย $76.92\\ \\mathrm{t/h} = 76{,}920/3600 = 21.37\\ \\mathrm{kg/s}$ $\\dot Q = 21.37 \\times 2257 = 48{,}230\\ \\mathrm{kW} \\approx 48.2\\ \\mathrm{MW}$ ตัวเลขที่สูงมากนี้คือเหตุที่โรงงานใช้เครื่องระเหยหลายชั้นและเผากากอ้อยเป็นเชื้อเพลิง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p014
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 5
+    type: numeric
+    stem: "จากเตาเผาไบโอแก๊สในโจทย์ก่อนหน้า ($100\\ \\mathrm{mol/h}$ มี $\\mathrm{CH_4}$ 60%, $\\mathrm{CO_2}$ 40% อากาศมากเกินพอ 20% เผาไหม้สมบูรณ์) เครื่องวิเคราะห์แก๊สวัดแบบแห้ง (ไม่นับไอน้ำ) จะอ่าน $\\mathrm{CO_2}$ ได้ร้อยละเท่าใดโดยโมล (ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-burner.svg, alt: "แผนภาพกระบวนการ เตาเผาหนึ่งกล่อง กระแสเข้าสองกระแส คือไบโอแก๊ส 100 mol/h มี CH4 60% CO2 40% โดยโมล และอากาศ (O2 21% N2 79%) มากเกินพอ 20% กระแสออกคือแก๊สไอเสียที่มี CO2 H2O O2 N2 ใต้ภาพเขียนสมการ CH4 + 2O2 → CO2 + 2H2O" }
+    answer: { value: 15.0, tolerance: 0.15, unit: "%" }
+    misconceptions:
+      - { match: 12.7, feedback: "นับไอน้ำด้วย (ฐานเปียก) โจทย์ถามแบบแห้ง" }
+      - { match: 9.6, feedback: "ลืม $\\mathrm{CO_2}$ $40\\ \\mathrm{mol}$ ที่มากับไบโอแก๊สซึ่งผ่านเตาออกไปด้วย" }
+    hints:
+      - "ไอเสีย: $\\mathrm{CO_2}$ จากการเผาไหม้บวกที่มากับไบโอแก๊ส $\\mathrm{O_2}$ ที่เหลือ และ $\\mathrm{N_2}$ ทั้งหมดจากอากาศ"
+      - "$\\mathrm{N_2} = 144 \\times 79/21$ ตัด $\\mathrm{H_2O}$ ออกก่อนหาร้อยละ"
+    solution: "$\\mathrm{CO_2} = 60 + 40 = 100$, $\\mathrm{O_2} = 144 - 120 = 24$, $\\mathrm{N_2} = 541.7$, $\\mathrm{H_2O} = 120$ (ไม่นับ) ฐานแห้ง $= 665.7\\ \\mathrm{mol}$ $\\mathrm{CO_2} = 100/665.7 = 15.0\\%$ ตรวจด้วยดุลอะตอม O: เข้า $2(40) + 2(144) = 368$ ออก $2(100) + 120 + 2(24) = 368$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p015
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 4
+    type: numeric
+    stem: "โรงครัวอุ่นข้าวต้ม $10\\ \\mathrm{kg}$ ($c = 3.8\\ \\mathrm{kJ/(kg\\cdot K)}$) จาก $25\\ ^\\circ\\mathrm{C}$ เป็น $70\\ ^\\circ\\mathrm{C}$ โดยพ่นไอน้ำ $100\\ ^\\circ\\mathrm{C}$ เข้าไปผสมโดยตรง ไอน้ำควบแน่นแล้วเย็นลงเหลือ $70\\ ^\\circ\\mathrm{C}$ ไม่มีความร้อนสูญเสีย ต้องใช้ไอน้ำกี่กิโลกรัม ($h_{fg} = 2257\\ \\mathrm{kJ/kg}$, $c_{\\text{น้ำ}} = 4.18\\ \\mathrm{kJ/(kg\\cdot K)}$ ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.718, tolerance: 0.004, unit: kg }
+    misconceptions:
+      - { match: 0.758, feedback: "คิดเฉพาะความร้อนแฝง ลืมความร้อนที่น้ำจากไอน้ำคายออกเมื่อเย็นลงจาก $100$ เป็น $70\\ ^\\circ\\mathrm{C}$" }
+      - { match: 13.6, feedback: "ใช้แค่ความร้อนสัมผัสของน้ำ ($4.18 \\times 30$) โดยไม่คิดความร้อนแฝงของการควบแน่น" }
+    hints:
+      - "ความร้อนที่ข้าวต้มรับ = ความร้อนที่ไอน้ำให้"
+      - "ไอน้ำ 1 kg ให้ความร้อน $h_{fg} + c_{\\text{น้ำ}}(100 - 70)$"
+    solution: "ข้าวต้มรับ $10 \\times 3.8 \\times 45 = 1710\\ \\mathrm{kJ}$ ไอน้ำ 1 kg ให้ $2257 + 4.18(30) = 2382.4\\ \\mathrm{kJ}$ จึงต้องใช้ $1710/2382.4 = 0.718\\ \\mathrm{kg}$ ตรวจ: $0.718 \\times 2382.4 = 1710\\ \\mathrm{kJ}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p016
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการแก้โจทย์ดุลมวลของกระบวนการ"
+    items:
+      - "วาดแผนภาพกระบวนการ เขียนค่าที่รู้และตั้งชื่อตัวที่ไม่รู้ทุกกระแส"
+      - "เลือกฐานการคำนวณ"
+      - "นับจำนวนตัวที่ไม่รู้เทียบกับจำนวนสมการอิสระ"
+      - "เขียนสมการดุลที่มีตัวที่ไม่รู้น้อยที่สุดก่อนแล้วแก้"
+      - "ตรวจคำตอบด้วยสมการดุลที่ยังไม่ได้ใช้"
+    hints:
+      - "เริ่มจากภาพ จบด้วยการตรวจ"
+      - "ต้องรู้ว่าแก้ได้หรือไม่ ก่อนลงมือเขียนสมการ"
+    solution: "แผนภาพกระบวนการ → ฐานการคำนวณ → นับตัวที่ไม่รู้กับสมการ → แก้สมการทีละตัว → ตรวจด้วยสมการที่เหลือ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p017
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 3
+    type: mcq
+    stem: "ในเตาเผาที่มีปฏิกิริยา $\\mathrm{CH_4 + 2O_2 \\to CO_2 + 2H_2O}$ ที่สถานะคงตัว สมการใดใช้ได้โดยตรงในรูป เข้า = ออก"
+    choices:
+      - { id: a, text: "จำนวนโมลของอะตอมคาร์บอนและอะตอมออกซิเจน", correct: true }
+      - { id: b, text: "จำนวนโมลของ $\\mathrm{O_2}$", feedback: "$\\mathrm{O_2}$ ถูกใช้ไปในปฏิกิริยา ต้องมีพจน์ ใช้ไป ด้วย" }
+      - { id: c, text: "จำนวนโมลรวมของแก๊สทั้งหมด", feedback: "โมลรวมเปลี่ยนได้เมื่อมีปฏิกิริยา (ในสมการนี้ 3 โมลเป็น 3 โมลพอดี แต่ไม่จริงทั่วไป) ที่คงตัวเสมอคือมวลรวมและอะตอม" }
+      - { id: d, text: "จำนวนโมลของ $\\mathrm{CO_2}$", feedback: "$\\mathrm{CO_2}$ เกิดขึ้นในปฏิกิริยา ต้องมีพจน์ เกิด ด้วย" }
+    hints:
+      - "สิ่งใดเกิดใหม่หรือหายไปในปฏิกิริยาเคมีไม่ได้"
+      - "ปฏิกิริยาเคมีจัดเรียงอะตอมใหม่"
+    solution: "ปฏิกิริยาเคมีไม่สร้างหรือทำลายอะตอม ดุลอะตอมของแต่ละธาตุ (และมวลรวม) จึงเป็น เข้า = ออก ส่วนโมเลกุลแต่ละชนิดต้องมีพจน์เกิดหรือใช้ไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.mass-energy-balance.p018
+    topics: [engineering.process.mass-energy-balance]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สในกระบอกสูบ (ระบบปิด) ได้รับความร้อน $500\\ \\mathrm{J}$ และดันลูกสูบทำงาน $200\\ \\mathrm{J}$ ใช้ข้อตกลง $\\Delta U = Q - W$ ($Q$ คือความร้อนเข้า $W$ คืองานที่ระบบทำ) พลังงานภายในเปลี่ยนไปกี่จูล"
+    answer: { value: 300, tolerance: 0.5, unit: J }
+    misconceptions:
+      - { match: 700, feedback: "บวกงานเข้าไป แต่ระบบเป็นผู้ทำงาน พลังงานจึงออกจากระบบ" }
+      - { match: -300, feedback: "สลับเครื่องหมาย ระบบได้ความร้อนมากกว่างานที่ทำ พลังงานภายในจึงเพิ่ม" }
+    hints:
+      - "ความร้อนเข้าเพิ่มพลังงาน งานที่ระบบทำลดพลังงาน"
+      - "$\\Delta U = Q - W$"
+    solution: "$\\Delta U = 500 - 200 = 300\\ \\mathrm{J}$ (ในข้อตกลง $\\Delta U = q + w$ ของตำราเคมีบางเล่ม $w = -200\\ \\mathrm{J}$ ได้ผลเท่ากัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,81 @@
+id: engineering.process.mass-energy-balance
+subject: engineering
+title: { th: ดุลมวลและพลังงาน, en: Mass and energy balances }
+summary: ระบบและขอบเขตระบบ สมการดุลทั่วไป ดุลมวลของกระบวนการไหลต่อเนื่องและที่มีปฏิกิริยา ดุลพลังงาน แคลอริเมทรี และแผนภาพกระบวนการ
+difficulty: 7
+minutes: 45
+prerequisites: [physics.thermal.temperature-heat, physics.energy.conservation, math.algebra.systems]
+encompasses:
+  - { id: physics.thermal.temperature-heat, weight: 0.4 }
+  - { id: math.algebra.systems, weight: 0.3 }
+  - { id: physics.energy.conservation, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: สมการดุลรอบขอบเขตระบบ
+    src: balance-system.svg
+    alt: "กล่องระบบล้อมด้วยเส้นประซึ่งเป็นขอบเขตระบบ มีลูกศรสองลูกเข้าทางซ้ายและหนึ่งลูกออกทางขวา ภายในกล่องเขียนว่า เกิด (ปฏิกิริยา) ใช้ไป (ปฏิกิริยา) และสะสมภายใน ใต้ภาพเขียนสมการ เข้า − ออก + เกิด − ใช้ไป = สะสม และหมายเหตุว่า สถานะคงตัว สะสม = 0 และถ้าไม่มีปฏิกิริยา เกิด = ใช้ไป = 0"
+  - { type: check, problem: engineering.process.mass-energy-balance.p004, prompt: "ถ่วงร้อยละด้วยอัตราการไหล" }
+  - type: figure
+    title: แผนภาพกระบวนการของเครื่องระเหยน้ำอ้อย
+    src: pfd-evaporator.svg
+    alt: "เครื่องระเหยเป็นกล่องกลาง น้ำอ้อย F = 100 t/h มีน้ำตาล 15% โดยมวลไหลเข้าทางซ้าย ไอน้ำที่ระเหยออก W ซึ่งเป็นน้ำบริสุทธิ์ออกทางด้านบน น้ำเชื่อม S มีน้ำตาล 65% ออกทางขวา ด้านล่างมีไอน้ำร้อนเข้าเพื่อให้ความร้อนและน้ำควบแน่นออกกลับหม้อไอน้ำ โดยไม่ผสมกับน้ำอ้อย W และ S เป็นค่าที่ต้องหา"
+  - type: worked-example
+    title: ดุลมวลของเครื่องระเหยน้ำอ้อย
+    problem: "น้ำอ้อย $100\\ \\mathrm{t/h}$ มีน้ำตาล 15% ระเหยจนเป็นน้ำเชื่อมน้ำตาล 65% ต้องระเหยน้ำออกเท่าใด และได้น้ำเชื่อมเท่าใด (ข้อมูลสมมติ)"
+    steps:
+      - text: "ระบบคือเครื่องระเหย สถานะคงตัว ไม่มีปฏิกิริยา จึงใช้ เข้า = ออก ทั้งมวลรวมและแต่ละองค์ประกอบ"
+      - text: "มีตัวที่ไม่รู้สองตัว ($W$, $S$) และองค์ประกอบสองชนิด (น้ำตาล น้ำ) จึงเขียนสมการอิสระได้สองสมการ พอดี"
+        why: "สมการดุลมวลรวมเป็นผลบวกของสมการองค์ประกอบ จึงไม่ใช่สมการที่สามที่อิสระ"
+      - text: "ดุลน้ำตาล: $0.15(100) = 0.65S$ ได้ $S = 23.08\\ \\mathrm{t/h}$"
+        why: "น้ำตาลไม่อยู่ในกระแสไอ สมการนี้จึงมีตัวที่ไม่รู้ตัวเดียว"
+      - text: "ดุลมวลรวม: $W = 100 - 23.08 = 76.92\\ \\mathrm{t/h}$"
+      - text: "ตรวจด้วยดุลน้ำ: เข้า $0.85(100) = 85$ ออก $0.35(23.08) + 76.92 = 85.0\\ \\mathrm{t/h}$"
+    answer: "ระเหยน้ำ $76.92\\ \\mathrm{t/h}$ ได้น้ำเชื่อม $23.08\\ \\mathrm{t/h}$"
+  - { type: check, problem: engineering.process.mass-energy-balance.p006, prompt: "มวลของแข็งแห้งคงตัว" }
+  - type: worked-example
+    title: ดุลพลังงานของเครื่องแลกเปลี่ยนความร้อนพาสเจอร์ไรซ์นม
+    problem: "เครื่องพาสเจอร์ไรซ์อุ่นนม $2\\ \\mathrm{kg/s}$ ($c = 3.9\\ \\mathrm{kJ/(kg\\cdot K)}$) จาก $4$ เป็น $72\\ ^\\circ\\mathrm{C}$ ด้วยน้ำร้อน $3\\ \\mathrm{kg/s}$ ที่เข้า $90\\ ^\\circ\\mathrm{C}$ ($c = 4.18$) ไม่มีความร้อนสูญเสีย น้ำร้อนออกที่อุณหภูมิเท่าใด (ข้อมูลสมมติ)"
+    steps:
+      - text: "ระบบคือเครื่องแลกเปลี่ยนความร้อนทั้งเครื่อง ไหลคงตัว ไม่มีงาน ไม่มีความร้อนออกนอกเครื่อง จึงได้ $\\sum \\dot m\\,\\Delta h = 0$"
+        why: "ความร้อนที่นมรับมาจากน้ำร้อนทั้งหมด"
+      - text: "นมรับความร้อน $\\dot Q = 2 \\times 3.9 \\times (72 - 4) = 530.4\\ \\mathrm{kW}$"
+      - text: "น้ำร้อนเสียความร้อนเท่ากัน: $3 \\times 4.18 \\times (90 - T) = 530.4$"
+      - text: "$90 - T = 42.3$ ได้ $T = 47.7\\ ^\\circ\\mathrm{C}$"
+      - text: "ตรวจ: $3 \\times 4.18 \\times 42.3 = 530.4\\ \\mathrm{kW}$ และน้ำออก $47.7\\ ^\\circ\\mathrm{C}$ ยังร้อนกว่านมที่เข้า $4\\ ^\\circ\\mathrm{C}$ จึงถ่ายเทความร้อนได้จริง"
+        why: "ถ้าคำนวณได้อุณหภูมิที่ทำให้ความร้อนไหลจากเย็นไปร้อน แปลว่าข้อมูลหรือเครื่องหมายผิด"
+    answer: "น้ำร้อนออกที่ประมาณ $47.7\\ ^\\circ\\mathrm{C}$ ภาระความร้อน $530\\ \\mathrm{kW}$"
+  - type: interactive
+    title: น้ำที่ต้องระเหยเมื่อต้องการน้ำเชื่อมเข้มข้นขึ้น
+    caption: "แกน x คือสัดส่วนน้ำตาลในน้ำเชื่อมที่ต้องการ (0.65 คือ 65%) เส้นโค้งคือน้ำที่ต้องระเหย W = F(1 − a/x) เมื่อ F คืออัตราป้อนและ a คือสัดส่วนน้ำตาลในน้ำอ้อย สังเกตว่าเมื่อความเข้มข้นสูงขึ้น น้ำที่ต้องระเหยเพิ่มขึ้นช้าลงเรื่อย ๆ และไม่มีวันเกิน F(1 − a)"
+    widget:
+      kind: function-plot
+      functions: ["F\\cdot(1-\\frac{a}{x})"]
+      sliders:
+        - { name: F, min: 50, max: 200, step: 10, value: 100, label: "อัตราป้อน F (t/h)" }
+        - { name: a, min: 0.1, max: 0.2, step: 0.01, value: 0.15, label: "สัดส่วนน้ำตาลในน้ำอ้อย a" }
+      x: [0.1, 1]
+      y: [0, 200]
+glossary:
+  - { term: ระบบและขอบเขตระบบ, definition: "ส่วนที่เลือกพิจารณา และเส้นที่ล้อมรอบมัน ทุกสิ่งที่ข้ามเส้นนี้คือสิ่งที่ เข้า หรือ ออก (system, boundary)" }
+  - { term: สถานะคงตัว, definition: "ภาวะที่ปริมาณต่าง ๆ ในระบบไม่เปลี่ยนตามเวลา พจน์สะสมเป็นศูนย์ (steady state)" }
+  - { term: แผนภาพกระบวนการ, definition: "แผนภาพที่แสดงหน่วยปฏิบัติการเป็นกล่องและกระแสสารเป็นลูกศร พร้อมอัตราไหลและองค์ประกอบ (process flow diagram)" }
+  - { term: ฐานการคำนวณ, definition: "ปริมาณอ้างอิงที่เลือกเพื่อเริ่มคำนวณ เช่น 100 kg หรือ 1 ชั่วโมงของสายป้อน (basis of calculation)" }
+  - { term: อากาศมากเกินพอ, definition: "อากาศที่ป้อนเกินปริมาณที่ต้องใช้เผาไหม้สมบูรณ์ คิดเป็นร้อยละของปริมาณตามทฤษฎี (excess air)" }
+  - { term: แคลอริมิเตอร์, definition: "อุปกรณ์วัดความร้อนของปฏิกิริยาหรือการเปลี่ยนแปลง จากการเปลี่ยนอุณหภูมิของสารที่รู้ความจุความร้อน (calorimeter)" }
+flashcards:
+  - { front: "สมการดุลทั่วไป", back: "เข้า − ออก + เกิด − ใช้ไป = สะสม" }
+  - { front: "จุดผสมสองกระแส", back: "$C = \\dfrac{Q_1C_1 + Q_2C_2}{Q_1 + Q_2}$ ถ่วงด้วยอัตราไหล" }
+  - { front: "อบแห้งหรือระเหย ใช้อะไรเป็นตัวเชื่อม", back: "องค์ประกอบที่ผ่านไปทางเดียว เช่น มวลของแข็งแห้งหรือน้ำตาล" }
+  - { front: "ดุลพลังงานระบบเปิดไหลคงตัว", back: "$\\dot Q - \\dot W_s = \\sum_{\\text{ออก}} \\dot m h - \\sum_{\\text{เข้า}} \\dot m h$" }
+  - { front: "เมื่อมีปฏิกิริยา ดุลอะไรได้ตรง ๆ", back: "มวลรวมและอะตอมของแต่ละธาตุ (โมเลกุลต้องใช้ปริมาณสัมพันธ์)" }
+references:
+  - { title: "Mass balance", url: "https://en.wikipedia.org/wiki/Mass_balance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Process flow diagram", url: "https://en.wikipedia.org/wiki/Process_flow_diagram", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.3 Reaction Stoichiometry (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/4-3-reaction-stoichiometry", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "5.2 Calorimetry (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/5-2-calorimetry", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

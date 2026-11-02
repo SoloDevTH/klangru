@@ -1,0 +1,413 @@
+problems:
+- id: chinese.vocab.money-shopping.p001
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 1
+  type: mcq
+  stem: ลูกค้าชาวจีนชี้กระเป๋าแล้วถามว่า 这个多少钱？ (Zhège duōshao qián?) ลูกค้าถามเรื่องอะไร
+  choices:
+  - id: a
+    text: มีกระเป๋ากี่ใบ
+    feedback: ถามจำนวนใช้ 几个 หรือ 多少个 ไม่มี 钱
+  - id: b
+    text: กระเป๋าใบนี้ของใคร
+    feedback: ถามเจ้าของใช้ 谁的
+  - id: c
+    text: ราคาของกระเป๋าใบนี้
+    correct: true
+    feedback: ถูก 多少钱 = กี่เงิน ราคาเท่าไร
+  - id: d
+    text: กระเป๋าใบนี้สีอะไร
+    feedback: ถามสีใช้ 什么颜色
+  hints:
+  - 钱 qián = เงิน
+  - 多少 = เท่าไร
+  solution: 这个多少钱？ = **อันนี้ราคาเท่าไร**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p002
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 1
+  type: match
+  stem: จับคู่คำกับความหมาย
+  pairs:
+  - left: 块 kuài
+    right: หน่วยเงินในภาษาพูด (= 元)
+  - left: 毛 máo
+    right: หนึ่งในสิบของ 块 (= 角)
+  - left: 贵 guì
+    right: แพง
+  - left: 便宜 piányi
+    right: ถูก (ราคา)
+  - left: 一共 yígòng
+    right: ทั้งหมด รวม
+  hints:
+  - 块 毛 เป็นคำพูด 元 角 เป็นคำเขียน
+  - 贵 กับ 便宜 เป็นคู่ตรงข้าม
+  solution: 块 = 元 · 毛 = 角 (0.1 หยวน) · 贵 แพง · 便宜 ถูก · 一共 ทั้งหมด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p003
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 2
+  type: hanzi
+  stem: เขียนอักษร 钱 (qián) ที่แปลว่า เงิน ตามลำดับขีด
+  character: 钱
+  pinyin: qián
+  meaning: เงิน
+  hints:
+  - 钱 = 钅 (โลหะ 5 ขีด) ทางซ้าย + 戋 (5 ขีด) ทางขวา รวม 10 ขีด
+  - เขียน 钅 ให้เสร็จก่อน ขีดสุดท้ายของ 钅 เป็นขีดตั้งที่หักขึ้น
+  solution: '钅: 撇 → 横 → 横 → 横 → 竖提 แล้ว 戋: 横 → 横 → 斜钩 → 撇 → 点 รวม 10 ขีด (เงินสมัยก่อนเป็นเหรียญโลหะ)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p004
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 2
+  type: mcq
+  stem: ป้ายราคาเขียนว่า ¥8.50 แม่ค้าพูดราคานี้ว่าอย่างไร
+  choices:
+  - id: a
+    text: 八块五十
+    feedback: 50 毛 ไม่มีจริง 0.50 หยวนคือ 5 毛
+  - id: b
+    text: 八块五
+    correct: true
+    feedback: ถูก 8 块 กับ 5 毛 และละ 毛 ท้ายได้
+  - id: c
+    text: 八毛五
+    feedback: = 0.85 หยวน (8 毛 5 分)
+  - id: d
+    text: 五块八
+    feedback: = 5.80 หยวน สลับตัวเลข
+  hints:
+  - ส่วนหน้าจุดคือ 块 หลักแรกหลังจุดคือ 毛
+  - หน่วยสุดท้ายละไว้ได้
+  solution: ¥8.50 = 8 块 5 毛 พูดว่า **八块五** bā kuài wǔ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p005
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 2
+  type: numeric
+  stem: เพื่อนชาวจีนบอกว่าน้ำดื่มขวดหนึ่งราคา 三块二 ราคานี้คือกี่หยวน
+  answer:
+    value: 3.2
+    unit: หยวน
+    tolerance: 0.01
+  misconceptions:
+  - match: 3.02
+    feedback: 二 ที่ละไว้คือ 毛 (0.1) ไม่ใช่ 分 (0.01) ถ้าเป็น 3.02 ต้องพูด 三块零二
+  - match: 32
+    feedback: 块 คือหน่วยหยวน 三块 = 3 หยวน ไม่ใช่ 30
+  hints:
+  - 三块 = 3 หยวน
+  - หลัง 块 ถ้ามีตัวเลขโดยไม่บอกหน่วย หมายถึง 毛
+  solution: 三块二 = 3 块 2 毛 = $3 + 0.2 = 3.2$ หยวน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p006
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 3
+  type: numeric
+  stem: นักเรียนไทยไปทัศนศึกษาที่คุนหมิง ดูป้ายราคาในภาพ ถ้าซื้อ 两斤苹果 และ 一个面包 ต้องจ่ายกี่หยวน
+  figure: &id001
+    src: price-tags.svg
+    alt: 'ป้ายราคา 4 ป้าย: 苹果 แอปเปิล 一斤 ¥6.50 · 牛奶 นม 一盒 ¥3.80 · 面包 ขนมปัง 一个 ¥4.50 · T恤 เสื้อยืด 一件 ¥35.00 ใต้ภาพเขียนว่า ราคาสมมติ'
+    caption: ป้ายราคาในร้านค้าที่คุนหมิง (ราคาสมมติ)
+  answer:
+    value: 17.5
+    unit: หยวน
+    tolerance: 0.01
+  misconceptions:
+  - match: 11
+    feedback: 两斤 = 2 斤 คูณราคาแอปเปิลด้วย 2
+  - match: 13
+    feedback: อย่าลืมขนมปัง 1 ชิ้น
+  hints:
+  - 两斤 = 2 斤 แอปเปิลราคาต่อ 斤
+  - คูณราคาแอปเปิลกับ 2 แล้วบวกราคาขนมปัง
+  solution: แอปเปิล $2 \times 6.50 = 13.00$ หยวน · ขนมปัง 4.50 หยวน · รวม $13.00 + 4.50 = 17.50$ หยวน (十七块五)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p007
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 3
+  type: mcq
+  stem: ลูกค้าชาวจีนที่ร้านเสื้อผ้าในประตูน้ำพูดว่า 太贵了！便宜一点儿吧。 หมายความว่าอะไร
+  choices:
+  - id: a
+    text: แพงไป ลดหน่อยนะ
+    correct: true
+    feedback: ถูก 太…了 = เกินไป 便宜一点儿 = ถูกลงหน่อย 吧 = ชวนหรือขอ
+  - id: b
+    text: ถูกมาก เอาหลายตัว
+    feedback: 太贵了 แปลว่า แพงเกินไป
+  - id: c
+    text: แพงนิดหน่อย แต่ซื้อ
+    feedback: ไม่มีคำว่าซื้อ ลูกค้ากำลังต่อราคา
+  - id: d
+    text: ราคาเท่าไร
+    feedback: ถามราคาใช้ 多少钱
+  hints:
+  - 贵 = แพง 太…了 = …เกินไป
+  - 便宜 = ถูก 一点儿 = หน่อย
+  solution: 太贵了！= **แพงเกินไป** · 便宜一点儿吧 = **ลดหน่อยนะ** (ถูกลงหน่อย)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p008
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 3
+  type: order
+  stem: ร้านของฝากในสำเพ็ง เรียงบทสนทนาต่อราคาระหว่างลูกค้าชาวจีนกับแม่ค้าให้ถูกลำดับ (块 ในที่นี้หมายถึง บาท)
+  items:
+  - 'ลูกค้า: 这个多少钱？'
+  - 'แม่ค้า: 一百五十块。'
+  - 'ลูกค้า: 太贵了！便宜一点儿吧。'
+  - 'แม่ค้า: 一百二十块，怎么样？'
+  - 'ลูกค้า: 好，我要两个。'
+  hints:
+  - เริ่มจากลูกค้าถามราคา
+  - ลูกค้าบอกว่าแพงก่อน แม่ค้าจึงลดราคา แล้วลูกค้าจึงตกลง
+  solution: ถามราคา → บอกราคา 150 → ว่าแพงเกิน ขอลด → ลดเหลือ 120 (怎么样 = เป็นอย่างไร) → ตกลงซื้อ 2 อัน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p009
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 3
+  type: mcq
+  stem: ราคา 2 หยวนพอดี พูดว่าอย่างไร
+  choices:
+  - id: a
+    text: 两毛
+    feedback: 两毛 = 0.2 หยวน
+  - id: b
+    text: 二十块
+    feedback: = 20 หยวน
+  - id: c
+    text: 两块
+    correct: true
+    feedback: ถูก 2 ที่อยู่ลำพังหน้าลักษณนาม 块 ใช้ 两
+  - id: d
+    text: 二块
+    feedback: หน้าลักษณนามใช้ 两 ไม่ใช้ 二
+  hints:
+  - 块 ทำหน้าที่เหมือนลักษณนาม
+  - ทบทวนกฎ 两 กับ 二 จากบทลักษณนาม
+  solution: '**两块** liǎng kuài (เช่นเดียวกับ 两个 两本)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p010
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 3
+  type: numeric
+  stem: ร้านขายของในเยาวราชบอกนักท่องเที่ยวชาวจีนว่า 一个三百块 (หมายถึง 300 บาท) ถ้าอัตราแลกเปลี่ยนสมมติว่า 1 หยวน = 5 บาท ราคานี้คิดเป็นกี่หยวน
+  answer:
+    value: 60
+    unit: หยวน
+  misconceptions:
+  - match: 1500
+    feedback: แปลงบาทเป็นหยวนต้องหาร 5 ไม่ใช่คูณ
+  - match: 300
+    feedback: 块 ในประโยคนี้หมายถึงบาท ต้องแปลงเป็นหยวนก่อน
+  hints:
+  - ในประเทศไทยคนจีนมักใช้ 块 เรียกบาท
+  - 1 หยวน = 5 บาท ดังนั้นจำนวนหยวน = จำนวนบาท ÷ 5
+  solution: $300 \div 5 = 60$ หยวน (อัตรานี้เป็นอัตราสมมติ อัตราจริงเปลี่ยนทุกวัน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p011
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 4
+  type: mcq
+  stem: ป้ายราคาเขียนว่า ¥3.05 พูดว่าอย่างไร
+  choices:
+  - id: a
+    text: 三块零五 (分)
+    correct: true
+    feedback: ถูก ไม่มี 毛 จึงต้องใส่ 零 แทนหลักที่ว่าง
+  - id: b
+    text: 三块五
+    feedback: = 3.50 หยวน
+  - id: c
+    text: 三毛五
+    feedback: = 0.35 หยวน
+  - id: d
+    text: 三十块五
+    feedback: = 30.50 หยวน
+  hints:
+  - ¥3.05 = 3 块 0 毛 5 分
+  - หลักที่เป็นศูนย์ตรงกลางอ่านว่า 零
+  solution: ¥3.05 = **三块零五 (分)** sān kuài líng wǔ (fēn)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p012
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 4
+  type: text
+  stem: เขียนคำถาม "อันนี้ราคาเท่าไร" เป็นภาษาจีน (พิมพ์อักษรจีน)
+  accepted:
+  - 这个多少钱
+  - 这个多少钱。
+  - 这个多少钱.
+  - 这个多少钱？
+  - 这个多少钱?
+  - 這個多少錢
+  - 這個多少錢。
+  - 這個多少錢.
+  - 這個多少錢？
+  - 這個多少錢?
+  - 这个几块钱
+  - 这个几块钱。
+  - 这个几块钱.
+  - 这个几块钱？
+  - 这个几块钱?
+  - 這個幾塊錢
+  - 這個幾塊錢。
+  - 這個幾塊錢.
+  - 這個幾塊錢？
+  - 這個幾塊錢?
+  misconceptions:
+  - match: 多少钱这个
+    feedback: 'ภาษาจีนวางคำแสดงคำถามตรงตำแหน่งของคำตอบ: 这个 + 多少钱'
+  - match: 多少钱这个。
+    feedback: 'ภาษาจีนวางคำแสดงคำถามตรงตำแหน่งของคำตอบ: 这个 + 多少钱'
+  - match: 多少钱这个？
+    feedback: 'ภาษาจีนวางคำแสดงคำถามตรงตำแหน่งของคำตอบ: 这个 + 多少钱'
+  - match: 这个多少钱吗
+    feedback: มี 多少 เป็นคำถามแล้ว ไม่ต้องเติม 吗
+  - match: 这个多少钱吗。
+    feedback: มี 多少 เป็นคำถามแล้ว ไม่ต้องเติม 吗
+  - match: 这个多少钱吗？
+    feedback: มี 多少 เป็นคำถามแล้ว ไม่ต้องเติม 吗
+  - match: 这个几钱
+    feedback: '几 ต้องมีลักษณนาม: 几块钱 หรือใช้ 多少钱'
+  - match: 这个几钱。
+    feedback: '几 ต้องมีลักษณนาม: 几块钱 หรือใช้ 多少钱'
+  - match: 这个几钱？
+    feedback: '几 ต้องมีลักษณนาม: 几块钱 หรือใช้ 多少钱'
+  hints:
+  - อันนี้ = 这个
+  - ราคาเท่าไร = 多少钱
+  solution: '**这个多少钱？** Zhège duōshao qián?'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p013
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 4
+  type: numeric
+  stem: ร้านทุเรียนในจันทบุรีติดป้ายสำหรับลูกค้าชาวจีนว่า 榴莲一斤八十块 (ราคาสมมติ 80 บาทต่อ 斤 และ 1 斤 = 500 กรัม) ลูกค้าซื้อทุเรียนหนัก 3 กิโลกรัม ต้องจ่ายกี่บาท
+  answer:
+    value: 480
+    unit: บาท
+  misconceptions:
+  - match: 240
+    feedback: 1 斤 = ครึ่งกิโลกรัม ไม่ใช่ 1 กิโลกรัม 3 กิโลกรัมจึงเท่ากับ 6 斤
+  hints:
+  - 1 กิโลกรัม = 1000 กรัม = 2 斤
+  - เปลี่ยน 3 กิโลกรัมเป็น 斤 ก่อน แล้วคูณราคาต่อ 斤
+  solution: 3 กิโลกรัม = $3 \times 2 = 6$ 斤 · ราคา $6 \times 80 = 480$ บาท
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p014
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 4
+  type: numeric
+  stem: ดูป้ายราคาในภาพ ซื้อ 一件T恤 กับ 一盒牛奶 แล้วจ่ายธนบัตร 50 หยวน จะได้เงินทอน (找钱 zhǎoqián) กี่หยวน
+  figure: *id001
+  answer:
+    value: 11.2
+    unit: หยวน
+    tolerance: 0.01
+  misconceptions:
+  - match: 15
+    feedback: อย่าลืมราคานม 3.80 หยวน
+  - match: 46.2
+    feedback: อย่าลืมราคาเสื้อยืด 35 หยวน
+  - match: 38.8
+    feedback: 38.80 คือราคารวม ต้องนำไปลบออกจาก 50
+  hints:
+  - ราคารวม = เสื้อยืด + นม
+  - เงินทอน = เงินที่จ่าย − ราคารวม
+  solution: รวม $35.00 + 3.80 = 38.80$ หยวน · ทอน $50 - 38.80 = 11.20$ หยวน (十一块二)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p015
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 5
+  type: numeric
+  stem: ร้านในห้างที่เซี่ยงไฮ้ติดป้าย 原价200元，打八折 (ราคาเดิม 200 หยวน ลดราคาแบบ 八折) ต้องจ่ายกี่หยวน
+  answer:
+    value: 160
+    unit: หยวน
+  misconceptions:
+  - match: 40
+    feedback: 八折 หมายถึงจ่าย 80% ของราคาเดิม (ลด 20%) ไม่ใช่จ่าย 20%
+  - match: 120
+    feedback: 八折 ไม่ได้แปลว่าลด 80 หยวน แต่จ่าย 8 ใน 10 ส่วน
+  hints:
+  - ตัวเลขหน้า 折 บอกว่าจ่ายกี่ส่วนในสิบส่วน
+  - 八折 = จ่าย 8/10 ของราคาเดิม
+  solution: '八折 = จ่าย 80% ของราคาเดิม: $200 \times 0.8 = 160$ หยวน (ลดไป 40 หยวน)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p016
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 5
+  type: mcq
+  stem: 'อ่านบทสนทนาที่แผงผลไม้ (ราคาสมมติ; 顾客 gùkè = ลูกค้า, 老板 lǎobǎn = เจ้าของร้าน, 芒果 mángguǒ = มะม่วง) แล้วเลือกคำที่ควรเติมในช่องว่าง: 顾客：芒果多少钱一斤？ / 老板：一斤十二块。 / 顾客：我要两斤。 / 老板：一共二十四块。 / 顾客：给你五十块。 / 老板：找你＿＿。'
+  choices:
+  - id: a
+    text: 七十四块
+    feedback: เงินทอนต้องลบ ไม่ใช่บวก
+  - id: b
+    text: 二十六块
+    correct: true
+    feedback: ถูก ราคารวม 24 块 จ่าย 50 块 ทอน 26 块
+  - id: c
+    text: 三十八块
+    feedback: คิดจากราคามะม่วง 1 斤 (50 − 12) แต่ลูกค้าซื้อ 2 斤
+  - id: d
+    text: 二十四块
+    feedback: 24 块 คือราคารวม ไม่ใช่เงินทอน
+  hints:
+  - 一共二十四块 = รวม 24 块
+  - เงินทอน = 50 − ราคารวม
+  solution: ทอน $50 - 24 = 26$ 块 แม่ค้าพูดว่า **找你二十六块。**
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: chinese.vocab.money-shopping.p017
+  topics:
+  - chinese.vocab.money-shopping
+  difficulty: 2
+  type: numeric
+  stem: 5 块 เท่ากับกี่ 毛
+  answer:
+    value: 50
+    unit: 毛
+  misconceptions:
+  - match: 500
+    feedback: 1 块 = 10 毛 (100 คือจำนวน 分)
+  - match: 0.5
+    feedback: 毛 เป็นหน่วยเล็กกว่า 块 จำนวน 毛 จึงต้องมากกว่า
+  hints:
+  - 1 块 = 10 毛
+  - คูณจำนวน 块 ด้วย 10
+  solution: $5 \times 10 = 50$ 毛
+  license: CC-BY-SA-4.0
+  ai_assisted: true

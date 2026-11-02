@@ -1,0 +1,311 @@
+problems:
+  - id: engineering.mechanics.particle-dynamics.p001
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 1
+    type: mcq
+    stem: "รถยนต์วิ่งบนทางโค้งด้วยอัตราเร็วคงตัว ความเร่งของรถเป็นอย่างไร"
+    choices:
+      - { id: a, text: "มีเฉพาะองค์ประกอบตั้งฉาก $a_n = v^2/\\rho$ ชี้เข้าหาศูนย์กลางความโค้ง", correct: true }
+      - { id: b, text: "เป็นศูนย์ เพราะอัตราเร็วไม่เปลี่ยน", feedback: "ทิศของความเร็วเปลี่ยน ความเร็วซึ่งเป็นเวกเตอร์จึงเปลี่ยน จึงมีความเร่ง" }
+      - { id: c, text: "มีเฉพาะองค์ประกอบสัมผัส ชี้ไปตามทางวิ่ง", feedback: "$a_t = dv/dt$ เป็นศูนย์เมื่ออัตราเร็วคงตัว" }
+      - { id: d, text: "ชี้ออกจากศูนย์กลางความโค้ง", feedback: "ที่รู้สึกถูกเหวี่ยงออกเป็นผลของความเฉื่อยในกรอบที่หมุน ความเร่งจริงชี้เข้าหาศูนย์กลาง" }
+    hints:
+      - "ความเร็วเป็นเวกเตอร์ เปลี่ยนได้ทั้งขนาดและทิศ"
+      - "$a_t = dv/dt$ และ $a_n = v^2/\\rho$"
+    solution: "อัตราเร็วคงตัวทำให้ $a_t = 0$ แต่ทิศเปลี่ยน จึงมี $a_n = v^2/\\rho$ ชี้เข้าหาศูนย์กลางความโค้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p002
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สถานการณ์กับระบบพิกัดหรือวิธีที่เหมาะที่สุด"
+    pairs:
+      - { left: "ลูกบอลที่ถูกเตะเป็นโพรเจกไทล์", right: "พิกัดฉาก x-y" }
+      - { left: "รถบนทางโค้งที่รู้รัศมีความโค้ง", right: "พิกัดตั้งฉาก-สัมผัส n-t" }
+      - { left: "ปลอกที่เลื่อนบนแขนที่หมุน", right: "พิกัดเชิงขั้ว r-θ" }
+      - { left: "ถามอัตราเร็วหลังเคลื่อนที่ได้ระยะหนึ่ง", right: "วิธีงาน-พลังงาน" }
+    hints:
+      - "ดูว่าการเคลื่อนที่อธิบายด้วยอะไรได้ง่ายที่สุด แกนคงที่ เส้นทาง หรือมุมกับระยะจากจุดหมุน"
+      - "งาน-พลังงานเชื่อมอัตราเร็วกับระยะทางโดยไม่ต้องหาเวลา"
+    solution: "โพรเจกไทล์แยกแกน x กับ y อิสระ ทางโค้งใช้ n-t แขนหมุนใช้ r-θ และอัตราเร็วกับระยะทางใช้งาน-พลังงาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p003
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "อนุภาคเคลื่อนที่แนวตรงตาม $s = t^3 - 6t^2 + 9t$ ($s$ เป็นเมตร $t$ เป็นวินาที) ความเร็วที่ $t = 4\\ \\mathrm{s}$ เป็นกี่เมตรต่อวินาที"
+    answer: { value: 9, tolerance: 0.05, unit: "m/s" }
+    misconceptions:
+      - { match: 1, feedback: "หารตำแหน่ง $s(4) = 4\\ \\mathrm{m}$ ด้วยเวลา ซึ่งเป็นความเร็วเฉลี่ย ไม่ใช่ความเร็วขณะหนึ่ง" }
+      - { match: 12, feedback: "นี่คือความเร่ง $d^2s/dt^2$ ที่ $t = 4$ ความเร็วคืออนุพันธ์อันดับหนึ่ง" }
+    hints:
+      - "$v = ds/dt$"
+      - "$v = 3t^2 - 12t + 9$"
+    solution: "$v = 3t^2 - 12t + 9$ ที่ $t = 4$ ได้ $48 - 48 + 9 = 9\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p004
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "รถไฟฟ้าวิ่ง $80\\ \\mathrm{km/h}$ แล้วเบรกด้วยความหน่วงคงตัว $1.2\\ \\mathrm{m/s^2}$ (ค่าสมมติ) จนหยุด ต้องเริ่มเบรกก่อนถึงจุดจอดกี่เมตร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 205.8, tolerance: 1, unit: m }
+    misconceptions:
+      - { match: 2666.7, feedback: "ใช้ $80$ โดยไม่แปลง $\\mathrm{km/h}$ เป็น $\\mathrm{m/s}$" }
+      - { match: 411.5, feedback: "ลืมเลข 2 ใน $v^2 = 2as$" }
+    hints:
+      - "แปลง $80\\ \\mathrm{km/h}$ เป็น $\\mathrm{m/s}$ (หาร 3.6)"
+      - "ความเร่งคงตัว: $0 = v_0^2 - 2as$"
+    solution: "$v_0 = 80/3.6 = 22.22\\ \\mathrm{m/s}$ $s = v_0^2/(2a) = 493.8/2.4 = 205.8\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p005
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "เรือหางยาวดับเครื่องขณะวิ่ง $10\\ \\mathrm{m/s}$ แรงต้านของน้ำทำให้ $a = -0.1v^2$ ($a$ เป็น $\\mathrm{m/s^2}$ $v$ เป็น $\\mathrm{m/s}$ ค่าสมมติ) เรือไถลไปได้กี่เมตรจนอัตราเร็วเหลือ $5\\ \\mathrm{m/s}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 6.93, tolerance: 0.05, unit: m }
+    misconceptions:
+      - { match: 7.5, feedback: "ใช้อัตราเร็วเฉลี่ย $7.5\\ \\mathrm{m/s}$ คูณเวลา $1\\ \\mathrm{s}$ ซึ่งถูกเฉพาะเมื่อความเร่งคงตัว" }
+      - { match: 1, feedback: "นี่คือเวลาที่ใช้ ไม่ใช่ระยะทาง" }
+    hints:
+      - "ความเร่งขึ้นกับอัตราเร็ว ใช้ $a\\,ds = v\\,dv$"
+      - "$ds = \\dfrac{v\\,dv}{-0.1v^2} = -\\dfrac{dv}{0.1v}$ อินทิเกรตจาก $10$ ถึง $5$"
+    solution: "$s = \\int_{10}^{5} -\\dfrac{dv}{0.1v} = 10\\ln\\dfrac{10}{5} = 6.93\\ \\mathrm{m}$ ตรวจด้วยการจำลองเชิงตัวเลข (RK4) ได้ $6.93\\ \\mathrm{m}$ ที่เวลา $1.00\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p006
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "รถยนต์ขับบนทางโค้งรัศมี $50\\ \\mathrm{m}$ ขณะอัตราเร็ว $72\\ \\mathrm{km/h}$ และกำลังเร่งเพิ่มอัตราเร็ว $2\\ \\mathrm{m/s^2}$ ขนาดของความเร่งรวมเป็นกี่เมตรต่อวินาทีกำลังสอง (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.25, tolerance: 0.05, unit: "m/s^2" }
+    misconceptions:
+      - { match: 10, feedback: "บวกขนาด $a_t + a_n$ ตรง ๆ ทั้งสององค์ประกอบตั้งฉากกัน ต้องใช้พีทาโกรัส" }
+      - { match: 8, feedback: "นี่คือ $a_n$ อย่างเดียว ลืมความเร่งสัมผัส" }
+    hints:
+      - "$v = 20\\ \\mathrm{m/s}$ $a_n = v^2/\\rho$"
+      - "$a = \\sqrt{a_t^2 + a_n^2}$"
+    solution: "$a_n = 20^2/50 = 8\\ \\mathrm{m/s^2}$ $a = \\sqrt{2^2 + 8^2} = 8.25\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p007
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "รถจักรยานยนต์เลี้ยวบนทางโค้งราบ (ไม่ยกขอบ) รัศมี $40\\ \\mathrm{m}$ สัมประสิทธิ์แรงเสียดทานสถิตระหว่างยางกับถนน $0.6$ อัตราเร็วสูงสุดที่ไม่ไถลออกเป็นกี่เมตรต่อวินาที ($g = 9.81\\ \\mathrm{m/s^2}$ ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 15.3, tolerance: 0.15, unit: "m/s" }
+    misconceptions:
+      - { match: 55.2, feedback: "ได้หน่วยกิโลเมตรต่อชั่วโมง โจทย์ถามเป็นเมตรต่อวินาที" }
+      - { match: 235.4, feedback: "ลืมถอดรากที่สอง ค่านี้คือ $v^2$" }
+    hints:
+      - "แรงเสียดทานสถิตเป็นแรงเข้าสู่ศูนย์กลาง $\\sum F_n = mv^2/\\rho$"
+      - "ที่อัตราเร็วสูงสุด $\\mu_s mg = mv^2/\\rho$"
+    solution: "$v = \\sqrt{\\mu_s g\\rho} = \\sqrt{0.6 \\times 9.81 \\times 40} = 15.3\\ \\mathrm{m/s}$ (ประมาณ $55\\ \\mathrm{km/h}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p008
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ปลอกเลื่อนบนแท่งที่หมุนในระนาบราบด้วย $\\omega = 3\\ \\mathrm{rad/s}$ คงตัว ขณะที่ปลอกอยู่ห่างจุดหมุน $r = 0.4\\ \\mathrm{m}$ และเลื่อนออกด้วยอัตราคงตัว $\\dot r = 0.5\\ \\mathrm{m/s}$ ดังภาพ ขนาดของความเร่งของปลอกเป็นกี่เมตรต่อวินาทีกำลังสอง (ทศนิยม 2 ตำแหน่ง)"
+    figure: { src: p-collar.svg, alt: "แท่งตรงหมุนรอบจุด O ในระนาบราบด้วยอัตราเร็วเชิงมุม ω = dθ/dt = 3 rad/s คงตัว ปลอกสีเหลืองอยู่บนแท่งห่าง O 0.4 เมตร ลูกศรบอกว่าปลอกเลื่อนออกตามแท่งด้วย dr/dt = 0.5 m/s คงตัว" }
+    answer: { value: 4.69, tolerance: 0.05, unit: "m/s^2" }
+    misconceptions:
+      - { match: 3.6, feedback: "คิดเฉพาะ $r\\omega^2$ ลืมความเร่งคอริออลิส $2\\dot r\\omega$ ในแนว $\\theta$" }
+      - { match: 3.9, feedback: "ใช้ $\\dot r\\omega$ แทน $2\\dot r\\omega$ ความเร่งคอริออลิสมีตัวคูณ 2" }
+    hints:
+      - "$a_r = \\ddot r - r\\omega^2$ และ $a_\\theta = r\\alpha + 2\\dot r\\omega$"
+      - "$\\ddot r = 0$ และ $\\alpha = 0$"
+    solution: "$a_r = 0 - 0.4(9) = -3.6\\ \\mathrm{m/s^2}$ $a_\\theta = 0 + 2(0.5)(3) = 3\\ \\mathrm{m/s^2}$ $a = \\sqrt{3.6^2 + 3^2} = 4.69\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p009
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "รถไฟฟ้าลดความเร็วด้วยความหน่วงคงตัว $1.2\\ \\mathrm{m/s^2}$ ห่วงจับที่ห้อยจากราวเอียงทำมุม $\\theta$ กับแนวดิ่งดังภาพ $\\theta$ เป็นกี่องศา ($g = 9.81\\ \\mathrm{m/s^2}$ ทศนิยม 1 ตำแหน่ง)"
+    figure: { src: p-strap.svg, alt: "ตู้รถไฟฟ้าเคลื่อนที่ไปทางซ้ายและกำลังลดความเร็ว ห่วงจับห้อยจากราวด้านบน เอียงทำมุม θ กับเส้นประแนวดิ่ง" }
+    answer: { value: 7.0, tolerance: 0.1, unit: "°" }
+    misconceptions:
+      - { match: 83.0, feedback: "ได้มุมที่สายทำกับแนวราบ โจทย์ถามมุมกับแนวดิ่ง" }
+      - { match: 0.12, feedback: "ได้ค่าเป็นเรเดียน (หรือค่า $\\tan\\theta$) ต้องแปลงเป็นองศา" }
+    hints:
+      - "ในกรอบของพื้นดิน ห่วงมีความเร่งเท่ารถ แรงตึงต้องมีองค์ประกอบแนวราบ $ma$ และแนวดิ่ง $mg$"
+      - "$\\tan\\theta = a/g$"
+    solution: "$T\\sin\\theta = ma$ และ $T\\cos\\theta = mg$ จึง $\\tan\\theta = 1.2/9.81 = 0.1223$ ได้ $\\theta = 7.0^\\circ$ ห่วงเอียงไปทางด้านหน้าของรถ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p010
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ลากกล่อง $20\\ \\mathrm{kg}$ ขึ้นพื้นเอียง $30^\\circ$ ด้วยแรง $200\\ \\mathrm{N}$ ขนานกับพื้นเอียง สัมประสิทธิ์แรงเสียดทานจลน์ $0.2$ ความเร่งของกล่องเป็นกี่เมตรต่อวินาทีกำลังสอง ($g = 9.81\\ \\mathrm{m/s^2}$ ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.40, tolerance: 0.04, unit: "m/s^2" }
+    misconceptions:
+      - { match: 5.10, feedback: "ลืมแรงเสียดทาน $\\mu_k N = \\mu_k mg\\cos 30^\\circ$" }
+      - { match: 3.13, feedback: "ใช้แรงตั้งฉาก $N = mg$ แต่บนพื้นเอียง $N = mg\\cos 30^\\circ$" }
+    hints:
+      - "แกนขนานพื้นเอียง: แรงดึง − $mg\\sin 30^\\circ$ − แรงเสียดทาน $= ma$"
+      - "$N = mg\\cos 30^\\circ$"
+    solution: "$mg\\sin 30^\\circ = 98.1\\ \\mathrm{N}$ $f = 0.2 \\times 20 \\times 9.81 \\times \\cos 30^\\circ = 33.98\\ \\mathrm{N}$ $a = (200 - 98.1 - 33.98)/20 = 3.40\\ \\mathrm{m/s^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p011
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "กล่องพัสดุ $5\\ \\mathrm{kg}$ ไถลบนพื้นราบด้วยอัตราเร็ว $4\\ \\mathrm{m/s}$ แล้วชนสปริงกันชน $k = 800\\ \\mathrm{N/m}$ สัมประสิทธิ์แรงเสียดทานจลน์ระหว่างกล่องกับพื้น $0.3$ (ตลอดการกดสปริง) สปริงถูกกดได้มากที่สุดกี่เมตร ($g = 9.81\\ \\mathrm{m/s^2}$ ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.298, tolerance: 0.002, unit: m }
+    misconceptions:
+      - { match: 0.316, feedback: "ไม่คิดงานของแรงเสียดทานระหว่างที่สปริงถูกกด" }
+      - { match: 0.224, feedback: "ใช้พลังงานสปริง $kx^2$ (ลืม $\\tfrac12$) และไม่คิดแรงเสียดทาน พลังงานสปริงคือ $\\tfrac12 kx^2$" }
+    hints:
+      - "$T_1 + \\sum U = T_2$ โดย $T_2 = 0$ ที่จุดกดลึกสุด"
+      - "$\\tfrac12 mv^2 = \\tfrac12 kx^2 + \\mu_k mg\\,x$ เป็นสมการกำลังสองของ $x$"
+    solution: "$40 = 400x^2 + 14.715x$ ได้ $x = \\dfrac{-14.715 + \\sqrt{14.715^2 + 4(400)(40)}}{800} = 0.298\\ \\mathrm{m}$ ตรวจด้วยการจำลองเชิงตัวเลขของ $m\\ddot x = -kx - \\mu_k mg$ ได้ $0.298\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p012
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ลิฟต์คอนโดพร้อมผู้โดยสารมวล $1200\\ \\mathrm{kg}$ ขึ้นด้วยอัตราเร็วคงตัว $2\\ \\mathrm{m/s}$ มอเตอร์และรอกมีประสิทธิภาพรวม 80% (ค่าสมมติ) มอเตอร์ต้องรับกำลังไฟฟ้ากี่กิโลวัตต์ ($g = 9.81\\ \\mathrm{m/s^2}$ ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 29.43, tolerance: 0.2, unit: kW }
+    misconceptions:
+      - { match: 23.54, feedback: "นี่คือกำลังที่ใช้ยกจริง ยังไม่ได้หารด้วยประสิทธิภาพ" }
+      - { match: 18.84, feedback: "คูณด้วยประสิทธิภาพแทนการหาร กำลังเข้าต้องมากกว่ากำลังออก" }
+    hints:
+      - "อัตราเร็วคงตัว แรงดึงเท่ากับน้ำหนัก กำลังออก $= Fv$"
+      - "$P_{\\text{เข้า}} = P_{\\text{ออก}}/\\eta$"
+    solution: "$P_{\\text{ออก}} = 1200 \\times 9.81 \\times 2 = 23{,}544\\ \\mathrm{W}$ $P_{\\text{เข้า}} = 23{,}544/0.8 = 29{,}430\\ \\mathrm{W} = 29.43\\ \\mathrm{kW}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p013
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "แรงในแนวราบ $F = 30t$ นิวตัน ($t$ เป็นวินาที) กระทำต่อวัตถุ $4\\ \\mathrm{kg}$ ที่หยุดนิ่งบนพื้นลื่น ตั้งแต่ $t = 0$ ถึง $2\\ \\mathrm{s}$ อัตราเร็วที่ $t = 2\\ \\mathrm{s}$ เป็นกี่เมตรต่อวินาที"
+    answer: { value: 15, tolerance: 0.05, unit: "m/s" }
+    misconceptions:
+      - { match: 30, feedback: "ใช้แรงที่ปลายช่วง $60\\ \\mathrm{N}$ คูณเวลาเต็มช่วง แต่แรงเพิ่มจากศูนย์ การดลคือพื้นที่ใต้กราฟแรง-เวลา" }
+      - { match: 7.5, feedback: "หารการดลด้วยมวลแล้วหารด้วยเวลาอีกครั้ง การดลหารมวลให้การเปลี่ยนความเร็วโดยตรง" }
+    hints:
+      - "การดล $= \\int F\\,dt$"
+      - "$mv_2 = mv_1 + \\int_0^2 30t\\,dt$"
+    solution: "$\\int_0^2 30t\\,dt = 15t^2\\big|_0^2 = 60\\ \\mathrm{N\\cdot s}$ $v = 60/4 = 15\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p014
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ที่ลานสับเปลี่ยนรถไฟ ตู้สินค้ามวล $20\\ \\mathrm{t}$ วิ่ง $2\\ \\mathrm{m/s}$ ชนแล้วต่อพ่วงติดกับตู้มวล $30\\ \\mathrm{t}$ ที่จอดนิ่ง (ค่าสมมติ ไม่คิดแรงเสียดทาน) พลังงานจลน์หายไปกี่กิโลจูล"
+    answer: { value: 24, tolerance: 0.1, unit: kJ }
+    misconceptions:
+      - { match: 0, feedback: "โมเมนตัมคงตัว แต่การชนแล้วติดกันเป็นการชนไม่ยืดหยุ่น พลังงานจลน์ไม่คงตัว" }
+      - { match: 40, feedback: "นี่คือพลังงานจลน์ก่อนชนทั้งหมด หลังชนตู้ยังเคลื่อนที่ จึงยังมีพลังงานจลน์เหลือ" }
+    hints:
+      - "โมเมนตัมของระบบสองตู้คงตัว หาอัตราเร็วหลังต่อพ่วงก่อน"
+      - "พลังงานที่หาย $=$ พลังงานจลน์ก่อน $-$ หลัง"
+    solution: "$v = \\dfrac{20{,}000 \\times 2}{50{,}000} = 0.8\\ \\mathrm{m/s}$ ก่อน: $\\tfrac12(20{,}000)(4) = 40\\ \\mathrm{kJ}$ หลัง: $\\tfrac12(50{,}000)(0.64) = 16\\ \\mathrm{kJ}$ หายไป $24\\ \\mathrm{kJ}$ กลายเป็นความร้อน เสียง และการเสียรูปของข้อต่อ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p015
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "พลุลูกหนึ่งมวล $3\\ \\mathrm{kg}$ ถ้าไม่แตกจะตกถึงพื้นที่ระยะแนวราบ $200\\ \\mathrm{m}$ จากจุดยิง แต่พลุแตกที่จุดสูงสุด (ระยะแนวราบ $100\\ \\mathrm{m}$) เป็นสองชิ้น ชิ้น $1\\ \\mathrm{kg}$ หยุดนิ่งชั่วขณะแล้วตกลงในแนวดิ่ง ชิ้น $2\\ \\mathrm{kg}$ ตกถึงพื้นที่ระยะแนวราบกี่เมตรจากจุดยิง (ไม่คิดแรงต้านอากาศ พื้นราบ)"
+    answer: { value: 250, tolerance: 0.5, unit: m }
+    misconceptions:
+      - { match: 200, feedback: "นี่คือจุดตกของจุดศูนย์กลางมวล ชิ้นที่ตกใกล้กว่า ทำให้อีกชิ้นต้องตกไกลกว่า" }
+      - { match: 300, feedback: "ถือว่าสองชิ้นมีมวลเท่ากัน ต้องถ่วงด้วยมวล $3(200) = 1(100) + 2x$" }
+    hints:
+      - "แรงระเบิดเป็นแรงภายใน จุดศูนย์กลางมวลยังเคลื่อนตามพาราโบลาเดิมและตกที่ $200\\ \\mathrm{m}$"
+      - "ทั้งสองชิ้นเริ่มจากความสูงเดียวกันด้วยความเร็วแนวดิ่งศูนย์ จึงถึงพื้นพร้อมกัน ใช้ $x_{\\text{cm}} = \\sum m_ix_i/M$"
+    solution: "$3(200) = 1(100) + 2x$ ได้ $x = 250\\ \\mathrm{m}$ ตรวจด้วยโมเมนตัม: ก่อนแตกพลุมีความเร็วแนวราบ $v$ หลังแตก $3v = 2v_2$ ได้ $v_2 = 1.5v$ ชิ้นนี้ไปต่ออีก $1.5 \\times 100 = 150\\ \\mathrm{m}$ ถึง $250\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p016
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 5
+    type: numeric
+    stem: "ถนนข้ามเนินมีรูปตัดตาม $y = 20 - 0.005x^2$ (เมตร) รถยนต์ $1200\\ \\mathrm{kg}$ ผ่านยอดเนิน ($x = 0$) ด้วยอัตราเร็ว $25\\ \\mathrm{m/s}$ แรงตั้งฉากจากถนนที่ยอดเนินเป็นกี่นิวตัน ($g = 9.81\\ \\mathrm{m/s^2}$)"
+    answer: { value: 4272, tolerance: 20, unit: N }
+    misconceptions:
+      - { match: 11772, feedback: "ใช้ $N = mg$ เหมือนรถจอดนิ่ง แต่รถกำลังเคลื่อนตามเส้นโค้ง มีความเร่งเข้าหาศูนย์กลางความโค้ง (ลง)" }
+      - { match: 8022, feedback: "ใช้ $\\rho = 1/0.005$ แต่ $y'' = -0.01$ จึง $\\rho = 1/0.01 = 100\\ \\mathrm{m}$" }
+    hints:
+      - "ที่ยอดเนิน $y' = 0$ จึง $\\rho = 1/|y''|$"
+      - "แนวตั้งฉาก (ลง): $mg - N = mv^2/\\rho$"
+    solution: "$y'' = -0.01$ จึง $\\rho = 100\\ \\mathrm{m}$ $a_n = 625/100 = 6.25\\ \\mathrm{m/s^2}$ $N = 1200(9.81 - 6.25) = 4272\\ \\mathrm{N}$ ถ้าเร็วถึง $\\sqrt{9.81 \\times 100} = 31.3\\ \\mathrm{m/s}$ ล้อจะลอยพ้นถนน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p017
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการแก้โจทย์หาแรงด้วยกฎข้อที่สองของนิวตัน"
+    items:
+      - "เลือกระบบพิกัดที่เหมาะกับการเคลื่อนที่"
+      - "วาดแผนภาพวัตถุอิสระ แสดงแรงภายนอกทุกแรง"
+      - "วาดแผนภาพจลน์ แสดงองค์ประกอบของ ma"
+      - "เขียน ΣF = ma ในแต่ละแกน"
+      - "ใช้ความสัมพันธ์ทางจลนศาสตร์เพิ่มถ้าตัวที่ไม่รู้มากกว่าสมการ แล้วแก้และตรวจหน่วย"
+    hints:
+      - "ระบบพิกัดกำหนดว่าจะแยกองค์ประกอบอย่างไร"
+      - "แผนภาพสองภาพ (แรง และ ma) ต้องมาก่อนสมการ"
+    solution: "เลือกพิกัด → แผนภาพวัตถุอิสระ → แผนภาพจลน์ → ΣF = ma ทีละแกน → เพิ่มสมการจลนศาสตร์ แก้ และตรวจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p018
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 2
+    type: numeric
+    stem: "อนุภาค $2\\ \\mathrm{kg}$ อยู่ที่ $x = 0$ และอนุภาค $3\\ \\mathrm{kg}$ อยู่ที่ $x = 5\\ \\mathrm{m}$ จุดศูนย์กลางมวลอยู่ที่ $x$ เท่าใด (เมตร)"
+    answer: { value: 3, tolerance: 0.02, unit: m }
+    misconceptions:
+      - { match: 2.5, feedback: "ใช้จุดกึ่งกลาง ซึ่งถูกเฉพาะเมื่อมวลเท่ากัน" }
+      - { match: 2, feedback: "ถ่วงผิดข้าง จุดศูนย์กลางมวลอยู่ใกล้มวลที่มากกว่า" }
+    hints:
+      - "$x_{\\text{cm}} = \\dfrac{\\sum m_ix_i}{\\sum m_i}$"
+      - "$\\dfrac{2(0) + 3(5)}{5}$"
+    solution: "$x_{\\text{cm}} = \\dfrac{0 + 15}{5} = 3\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.particle-dynamics.p019
+    topics: [engineering.mechanics.particle-dynamics]
+    difficulty: 4
+    type: expression
+    stem: "อนุภาคเคลื่อนตาม $r = bt^2$ และ $\\theta = ct$ ($b$, $c$ เป็นค่าคงตัว) จงเขียนองค์ประกอบความเร่งตามแนว $\\theta$ ($a_\\theta$) ในรูปของ $b$, $c$, $t$"
+    prefix: "a_\\theta ="
+    answer: { latex: "4bct", variables: [b, c, t] }
+    misconceptions:
+      - { match: "2bct", feedback: "ลืมตัวคูณ 2 ของความเร่งคอริออลิส $2\\dot r\\omega$" }
+      - { match: "bct", feedback: "ใช้ $\\dot r\\omega$ แต่ $\\dot r = 2bt$ และพจน์คอริออลิสคือ $2\\dot r\\omega$" }
+    hints:
+      - "$a_\\theta = r\\alpha + 2\\dot r\\omega$"
+      - "$\\omega = c$ คงตัว จึง $\\alpha = 0$ และ $\\dot r = 2bt$"
+    solution: "$\\dot r = 2bt$, $\\omega = c$, $\\alpha = 0$ ดังนั้น $a_\\theta = bt^2(0) + 2(2bt)(c) = 4bct$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

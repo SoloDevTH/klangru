@@ -1,0 +1,78 @@
+id: engineering.circuits.ac-phasors
+subject: engineering
+title: { th: วงจรไฟฟ้ากระแสสลับ เฟสเซอร์ และอิมพีแดนซ์, en: "AC circuits: phasors and impedance" }
+summary: สัญญาณไซน์และค่า rms เฟสเซอร์ อิมพีแดนซ์ การวิเคราะห์สถานะคงตัวไซน์ กำลังจริง กำลังรีแอกทีฟ ตัวประกอบกำลัง การสั่นพ้อง และวงกรองความถี่
+difficulty: 8.5
+minutes: 50
+prerequisites: [engineering.circuits.dc-analysis, math.number.complex-numbers, math.functions.trig-functions]
+encompasses:
+  - { id: engineering.circuits.dc-analysis, weight: 0.4 }
+  - { id: math.number.complex-numbers, weight: 0.5 }
+  - { id: math.functions.trig-functions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: เฟสเซอร์ของแรงดันและกระแสใน R L C
+    src: phasor-rlc.svg
+    alt: "สามแผนภาพเฟสเซอร์ แรงดัน V ชี้ไปทางขวาทุกภาพ ตัวต้านทาน: กระแส I ชี้ไปทางขวาเฟสเดียวกับ V, Z = R ตัวเหนี่ยวนำ: กระแส I ชี้ลง ตามหลัง V อยู่ 90 องศา, Z = jωL ตัวเก็บประจุ: กระแส I ชี้ขึ้น นำหน้า V อยู่ 90 องศา, Z = 1/(jωC) = −j/(ωC)"
+  - { type: check, problem: engineering.circuits.ac-phasors.p004, prompt: "รีแอกแตนซ์ใช้ ω = 2πf" }
+  - type: worked-example
+    title: วงจร RLC อนุกรมกับไฟบ้าน
+    problem: "วงจร $R = 40\\ \\Omega$, $L = 0.2\\ \\mathrm{H}$, $C = 100\\ \\mu\\mathrm{F}$ ต่ออนุกรมกับไฟ $230\\ \\mathrm{V}$ $50\\ \\mathrm{Hz}$ จงหากระแส มุมเฟส ตัวประกอบกำลัง และกำลังจริง"
+    steps:
+      - text: "$\\omega = 2\\pi(50) = 314.2\\ \\mathrm{rad/s}$ $X_L = \\omega L = 62.83\\ \\Omega$ $X_C = 1/(\\omega C) = 31.83\\ \\Omega$"
+      - text: "$\\mathbf Z = 40 + j(62.83 - 31.83) = 40 + j31.00\\ \\Omega = 50.61\\angle 37.8^\\circ\\ \\Omega$"
+        why: "รีแอกแตนซ์ของ $L$ และ $C$ มีเครื่องหมายตรงข้ามกัน จึงลบกัน"
+      - text: "ใช้แรงดันเป็นเฟสอ้างอิง $\\mathbf I = \\dfrac{230\\angle 0^\\circ}{50.61\\angle 37.8^\\circ} = 4.545\\angle -37.8^\\circ\\ \\mathrm{A}$"
+      - text: "ตัวประกอบกำลัง $\\cos 37.8^\\circ = 0.790$ แบบตามหลัง เพราะ $X_L > X_C$"
+      - text: "$P = I^2R = 4.545^2 \\times 40 = 826\\ \\mathrm{W}$"
+        why: "ตรวจด้วยวิธีที่สอง: $VI\\cos\\theta = 230 \\times 4.545 \\times 0.790 = 826\\ \\mathrm{W}$"
+    answer: "$I = 4.55\\ \\mathrm{A}$ ตามหลังแรงดัน $37.8^\\circ$ ตัวประกอบกำลัง $0.79$ กำลังจริง $826\\ \\mathrm{W}$"
+  - type: figure
+    title: แผนภาพเฟสเซอร์ของวงจร RLC อนุกรม
+    src: rlc-phasor.svg
+    alt: "ใช้กระแส I เป็นเฟสอ้างอิงตามแนวราบ V_R = 182 V อยู่แนวราบ จากปลาย V_R ลูกศร V_L = 286 V ชี้ขึ้น และ V_C = 145 V ชี้ลงหักล้างบางส่วน ผลรวม V = 230 V ลากจากจุดเริ่มถึงปลายสุด ทำมุม 37.8 องศากับกระแส ค่าวงจร R = 40 Ω, L = 0.2 H, C = 100 μF, 230 V 50 Hz"
+  - { type: check, problem: engineering.circuits.ac-phasors.p006, prompt: "ขนาดของจำนวนเชิงซ้อน ไม่ใช่ผลบวกตรง ๆ" }
+  - type: worked-example
+    title: แก้ตัวประกอบกำลังของอู่ซ่อมรถ
+    problem: "อู่ซ่อมรถมีโหลด $5\\ \\mathrm{kW}$ ตัวประกอบกำลัง $0.8$ ตามหลัง ที่ $230\\ \\mathrm{V}$ $50\\ \\mathrm{Hz}$ (ค่าสมมติ) ต้องต่อตัวเก็บประจุขนานเท่าใดให้ตัวประกอบกำลังเป็น $1$ และกระแสจากสายเมนลดลงเท่าใด"
+    steps:
+      - text: "$\\theta_1 = \\cos^{-1}0.8 = 36.87^\\circ$ $Q = P\\tan\\theta_1 = 5000 \\times 0.75 = 3750\\ \\mathrm{var}$"
+      - text: "ตัวประกอบกำลัง $1$ หมายถึง $Q$ รวมเป็นศูนย์ ตัวเก็บประจุต้องให้ $Q_C = 3750\\ \\mathrm{var}$"
+        why: "ตัวเก็บประจุมีกำลังรีแอกทีฟเป็นลบ หักล้างกับโหลดเหนี่ยวนำ โดยกำลังจริงไม่เปลี่ยน"
+      - text: "$C = \\dfrac{Q_C}{\\omega V^2} = \\dfrac{3750}{314.16 \\times 230^2} = 226\\ \\mu\\mathrm{F}$"
+      - text: "กระแสก่อนแก้ $= \\dfrac{5000}{230 \\times 0.8} = 27.2\\ \\mathrm{A}$ หลังแก้ $= \\dfrac{5000}{230} = 21.7\\ \\mathrm{A}$"
+    answer: "ตัวเก็บประจุประมาณ $226\\ \\mu\\mathrm{F}$ กระแสในสายเมนลดจาก $27.2$ เหลือ $21.7\\ \\mathrm{A}$"
+  - type: interactive
+    title: เส้นโค้งการสั่นพ้อง
+    caption: "แกน x คือความถี่เทียบกับความถี่สั่นพ้อง (ω/ω₀) แกน y คือกระแสของวงจร RLC อนุกรมที่ทำให้เป็นหน่วย (L = C = 1 แหล่งจ่าย 1 V) ลองลด R แล้วสังเกตว่ายอดสูงและแคบลง นั่นคือตัวประกอบคุณภาพสูงขึ้น วิทยุจึงเลือกสถานีได้ชัด"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{\\sqrt{R^2+(x-\\frac{1}{x})^2}}"]
+      sliders:
+        - { name: R, min: 0.1, max: 2, step: 0.1, value: 0.5, label: "ความต้านทาน R (หน่วยเทียบ)" }
+      x: [0.2, 3]
+      y: [0, 5]
+glossary:
+  - { term: เฟสเซอร์, definition: "จำนวนเชิงซ้อนที่แทนสัญญาณไซน์ความถี่เดียว ขนาดคือแอมพลิจูด (หรือค่า rms) มุมคือมุมเฟส (phasor)" }
+  - { term: อิมพีแดนซ์, definition: "อัตราส่วนเฟสเซอร์แรงดันต่อเฟสเซอร์กระแส Z = R + jX หน่วยโอห์ม (impedance)" }
+  - { term: รีแอกแตนซ์, definition: "ส่วนจินตภาพของอิมพีแดนซ์ X_L = ωL และ X_C = 1/(ωC) (reactance)" }
+  - { term: ตัวประกอบกำลัง, definition: "อัตราส่วนกำลังจริงต่อกำลังปรากฏ cos θ บอกว่าเป็นแบบนำหน้าหรือตามหลัง (power factor)" }
+  - { term: กำลังเชิงซ้อน, definition: "S = VI* = P + jQ ส่วนจริงคือกำลังจริง ส่วนจินตภาพคือกำลังรีแอกทีฟ (complex power)" }
+  - { term: ตัวประกอบคุณภาพ, definition: "Q = ω₀L/R ของวงจรสั่นพ้องอนุกรม ยิ่งสูงยอดยิ่งแคบ แบนด์วิดท์ = ω₀/Q (quality factor)" }
+flashcards:
+  - { front: "อิมพีแดนซ์ของ R, L, C", back: "$R$, $j\\omega L$, $\\dfrac{1}{j\\omega C}$" }
+  - { front: "ค่า rms ของไซน์", back: "$V_{\\text{rms}} = V_m/\\sqrt2$ ไฟบ้านไทย $230\\ \\mathrm{V}$ มียอด $325\\ \\mathrm{V}$" }
+  - { front: "กำลังเชิงซ้อน", back: "$\\mathbf S = \\mathbf V\\mathbf I^* = P + jQ$, $P = VI\\cos\\theta$" }
+  - { front: "ความถี่สั่นพ้องของ RLC อนุกรม", back: "$\\omega_0 = 1/\\sqrt{LC}$ ที่นี่ $\\mathbf Z = R$ และกระแสสูงสุด" }
+  - { front: "ตัวเก็บประจุแก้ตัวประกอบกำลัง", back: "$Q_C = P(\\tan\\theta_1 - \\tan\\theta_2)$, $C = Q_C/(\\omega V^2)$" }
+references:
+  - { title: "Phasor", url: "https://en.wikipedia.org/wiki/Phasor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Power factor", url: "https://en.wikipedia.org/wiki/Power_factor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "15.3 RLC Series Circuits with AC (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/15-3-rlc-series-circuits-with-ac", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "6.002 Circuits and Electronics (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
