@@ -1,0 +1,296 @@
+problems:
+  - id: earthscience.astronomy.stellar-properties.p001
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 1
+    type: match
+    stem: "จับคู่ชนิดสเปกตรัมของดาวฤกษ์กับสีที่เห็น"
+    pairs:
+      - { left: "ชนิด O", right: "น้ำเงิน" }
+      - { left: "ชนิด A", right: "ขาว" }
+      - { left: "ชนิด G", right: "เหลือง" }
+      - { left: "ชนิด M", right: "แดง" }
+    hints:
+      - "ลำดับ O B A F G K M เรียงจากร้อนไปเย็น"
+      - "ดาวร้อนสีน้ำเงิน ดาวเย็นสีแดง"
+    solution: "O ร้อนที่สุดสีน้ำเงิน A สีขาว G สีเหลือง (เช่น ดวงอาทิตย์) และ M เย็นที่สุดสีแดง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p002
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 1
+    type: mcq
+    stem: "คืนหนึ่งที่จังหวัดนครราชสีมา นักเรียนดูข้อมูลดาวสี่ดวงซึ่งมีโชติมาตรปรากฏ −1.5, 0.0, 2.0 และ 6.0 ดาวดวงใดดูสว่างที่สุด"
+    choices:
+      - { id: a, text: "ดาวที่มีโชติมาตร −1.5", correct: true }
+      - { id: b, text: "ดาวที่มีโชติมาตร 6.0", feedback: "โชติมาตรยิ่งมากยิ่งสลัว ดาวโชติมาตร 6 แทบมองไม่เห็นด้วยตาเปล่า" }
+      - { id: c, text: "ดาวที่มีโชติมาตร 0.0", feedback: "0.0 สว่างมาก แต่ −1.5 มีตัวเลขน้อยกว่า จึงสว่างกว่า" }
+      - { id: d, text: "สว่างเท่ากันทุกดวง", feedback: "โชติมาตรต่างกันแปลว่าความส่องสว่างต่างกัน" }
+    hints:
+      - "มาตราโชติมาตร ตัวเลขน้อยคือสว่าง"
+      - "ค่าติดลบน้อยกว่าศูนย์"
+    solution: "โชติมาตรยิ่งน้อยยิ่งสว่าง −1.5 น้อยที่สุด จึงสว่างที่สุด (ใกล้เคียงดาวซิริอัส)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p003
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 2
+    type: numeric
+    stem: "ดาวโชติมาตร 1 สว่างกว่าดาวโชติมาตร 6 กี่เท่า"
+    answer: { value: 100, tolerance: 1, unit: "เท่า" }
+    misconceptions:
+      - { match: 5, feedback: "ผลต่างโชติมาตร 5 ไม่ได้แปลว่าสว่างต่างกัน 5 เท่า มาตรานี้เป็นแบบลอการิทึม ต่างกัน 5 โชติมาตรคือ 100 เท่า" }
+      - { match: 12.56, feedback: "นำ 2.512 คูณ 5 แต่ต้องยกกำลัง $2.512^5$" }
+    hints:
+      - "ต่างกัน 1 โชติมาตร สว่างต่างกันราว 2.512 เท่า"
+      - "ต่างกัน 5 โชติมาตร $= 2.512^5$"
+    solution: "$10^{0.4 \\times 5} = 100$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p004
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 2
+    type: numeric
+    stem: "ดาวดวงหนึ่งมีมุมแพรัลแลกซ์ 0.1 ฟิลิปดา อยู่ห่างจากโลกกี่พาร์เซก"
+    answer: { value: 10, tolerance: 0.1, unit: "pc" }
+    misconceptions:
+      - { match: 0.1, feedback: "ระยะทางแปรผกผันกับมุมแพรัลแลกซ์ $d = 1/p$" }
+      - { match: 32.6, feedback: "32.6 คือระยะเป็นปีแสง โจทย์ถามพาร์เซก" }
+    hints:
+      - "$d = \\dfrac{1}{p}$ เมื่อ $p$ เป็นฟิลิปดา"
+      - "มุมยิ่งเล็ก ดาวยิ่งไกล"
+    solution: "$d = 1/0.1 = 10$ พาร์เซก หรือราว 32.6 ปีแสง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p005
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 2
+    type: mcq
+    stem: "หัวค่ำเดือนมกราคมในประเทศไทย เห็นดาวบีเทลจุสสีส้มแดงและดาวไรเจลสีขาวอมฟ้าในกลุ่มดาวนายพราน ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ไรเจลมีอุณหภูมิผิวสูงกว่าบีเทลจุส", correct: true }
+      - { id: b, text: "บีเทลจุสมีอุณหภูมิผิวสูงกว่า เพราะสีแดงคือสีของความร้อน", feedback: "วัตถุที่ร้อนมากแผ่รังสีเข้มสุดที่คลื่นสั้น จึงออกสีฟ้า สีแดงคือดาวที่เย็นกว่า" }
+      - { id: c, text: "ทั้งสองมีอุณหภูมิเท่ากัน สีต่างกันเพราะระยะทาง", feedback: "สีของดาวขึ้นกับอุณหภูมิผิว ไม่ใช่ระยะทาง" }
+      - { id: d, text: "บอกไม่ได้ ต้องรู้ขนาดของดาวก่อน", feedback: "สีบอกอุณหภูมิผิวได้โดยตรงตามกฎของวีน ไม่ต้องรู้ขนาด" }
+    hints:
+      - "กฎของวีน $\\lambda_{\\text{max}} = b/T$"
+      - "คลื่นสั้นคือสีฟ้า คลื่นยาวคือสีแดง"
+    solution: "ไรเจลเข้มสุดที่คลื่นสั้นจึงเป็นสีขาวอมฟ้า แปลว่าร้อนกว่า (ราว 12,000 K) บีเทลจุสเย็นกว่า (ราว 3,600 K)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p006
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 3
+    type: numeric
+    stem: "สเปกตรัมของดาวดวงหนึ่งเข้มที่สุดที่ความยาวคลื่น 290 nm ใช้กฎของวีน $\\lambda_{\\text{max}} T = 2.898 \\times 10^{-3}\\ \\mathrm{m\\,K}$ ดาวนี้มีอุณหภูมิผิวกี่เคลวิน"
+    answer: { value: 9993, tolerance: 60, unit: "K" }
+    misconceptions:
+      - { match: 0.00001, feedback: "ต้องแปลง 290 nm เป็น $2.90 \\times 10^{-7}$ m ก่อนหาร" }
+    hints:
+      - "$290\\ \\mathrm{nm} = 2.90 \\times 10^{-7}\\ \\mathrm{m}$"
+      - "$T = \\dfrac{2.898 \\times 10^{-3}}{2.90 \\times 10^{-7}}$"
+    solution: "$T = \\dfrac{2.898 \\times 10^{-3}}{2.90 \\times 10^{-7}} \\approx 9{,}990$ K ดาวชนิด A สีขาว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p007
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 3
+    type: numeric
+    stem: "ดาวพร็อกซิมาคนครึ่งม้ามีมุมแพรัลแลกซ์ 0.768 ฟิลิปดา อยู่ห่างจากโลกกี่ปีแสง (1 พาร์เซก = 3.26 ปีแสง)"
+    answer: { value: 4.24, tolerance: 0.05, unit: "ปีแสง" }
+    misconceptions:
+      - { match: 1.30, feedback: "นี่คือระยะเป็นพาร์เซก ต้องคูณ 3.26 อีกครั้ง" }
+      - { match: 2.50, feedback: "นำมุมแพรัลแลกซ์คูณ 3.26 ต้องหาระยะ $d = 1/p$ ก่อน" }
+    hints:
+      - "$d = 1/0.768$ พาร์เซก"
+      - "คูณด้วย 3.26 เพื่อเป็นปีแสง"
+    solution: "$d = 1/0.768 = 1.30$ pc $\\times 3.26 \\approx 4.24$ ปีแสง เป็นดาวฤกษ์ที่ใกล้ดวงอาทิตย์ที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p008
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 3
+    type: numeric
+    stem: "บนดอยอินทนนท์ในคืนที่ฟ้ามืดสนิท ตาเปล่าเห็นดาวได้ถึงโชติมาตร 6 สมมติว่ากล้องโทรทรรศน์ขนาด 2.4 เมตรของหอดูดาวแห่งชาติถ่ายภาพดาวได้ถึงโชติมาตร 21 ดาวที่สลัวที่สุดที่กล้องถ่ายได้สลัวกว่าดาวที่สลัวที่สุดที่ตาเห็นกี่เท่า"
+    answer: { value: 1000000, tolerance: 10000, unit: "เท่า" }
+    misconceptions:
+      - { match: 37.7, feedback: "นำ 2.512 คูณ 15 แต่ต้องยกกำลัง $2.512^{15}$ หรือ $10^{0.4 \\times 15}$" }
+    hints:
+      - "ผลต่างโชติมาตร = 21 − 6"
+      - "อัตราส่วนความส่องสว่าง $= 10^{0.4 \\Delta m}$"
+    solution: "$\\Delta m = 15$ อัตราส่วน $= 10^{0.4 \\times 15} = 10^6$ หรือ 5 โชติมาตรสามครั้ง $= 100^3$ คือหนึ่งล้านเท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p009
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับวิวัฒนาการของดาวฤกษ์มวลใกล้เคียงดวงอาทิตย์"
+    items:
+      - "ดาวฤกษ์ก่อนเกิดหดตัวในเนบิวลา"
+      - "ดาวในแถบลำดับหลัก หลอมไฮโดรเจนเป็นฮีเลียมในแกน"
+      - "ดาวยักษ์แดง ชั้นนอกพองออก แกนหลอมฮีเลียมเป็นคาร์บอน"
+      - "ชั้นนอกหลุดออกเป็นเนบิวลาดาวเคราะห์"
+      - "แกนที่เหลือเป็นดาวแคระขาว ค่อย ๆ เย็นลง"
+    hints:
+      - "ดาวใช้เวลาส่วนใหญ่ของชีวิตในแถบลำดับหลัก"
+      - "ดาวมวลน้อยไม่ระเบิดเป็นซูเปอร์โนวา"
+    solution: "ดาวฤกษ์ก่อนเกิด → ลำดับหลัก → ดาวยักษ์แดง → เนบิวลาดาวเคราะห์ → ดาวแคระขาว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p010
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 3
+    type: mcq
+    stem: "แผนภาพเฮิร์ซปรุง-รัสเซลล์แสดงตำแหน่งดาว A B C และ D ดาวดวงใดมีรัศมีใหญ่ที่สุด"
+    figure: { src: p-hr.svg, alt: "แผนภาพแกนนอนอุณหภูมิผิว 40,000 ถึง 3,000 K ลดลงไปทางขวา แกนตั้งกำลังส่องสว่าง 10⁻⁴ ถึง 10⁶ เท่าของดวงอาทิตย์ แถบลำดับหลักลาดจากบนซ้ายลงล่างขวา ดาว A อยู่บนแถบลำดับหลักด้านบนซ้าย ราว 25,000 K และ 10⁴ เท่า ดาว B อยู่บนขวา ราว 3,500 K และราว 6 × 10⁴ เท่า ดาว C อยู่ล่างซ้ายใต้แถบลำดับหลัก ราว 12,000 K และราว 0.003 เท่า ดาว D อยู่ปลายล่างขวาของแถบลำดับหลัก ราว 3,300 K และ 0.01 เท่า" }
+    choices:
+      - { id: a, text: "B เพราะเย็นแต่สว่างมาก จึงต้องมีพื้นที่ผิวมาก", correct: true }
+      - { id: b, text: "A เพราะสว่างและร้อนที่สุด", feedback: "A ร้อนมาก พลังงานต่อพื้นที่จึงมาก ไม่ต้องมีขนาดใหญ่มากก็สว่าง B เย็นกว่าเกือบ 7 เท่าแต่สว่างกว่า จึงใหญ่กว่ามาก" }
+      - { id: c, text: "C เพราะอยู่ทางซ้ายของแผนภาพ", feedback: "C ร้อนแต่สลัวมาก จึงมีขนาดเล็กมาก เป็นดาวแคระขาว" }
+      - { id: d, text: "D เพราะเป็นดาวสีแดง", feedback: "D สีแดงแต่สลัว เป็นดาวแคระแดงขนาดเล็ก สีแดงอย่างเดียวไม่ได้บอกว่าใหญ่" }
+    hints:
+      - "$L \\propto R^2 T^4$"
+      - "ดาวที่เย็นแต่สว่างมากต้องมี $R$ ใหญ่"
+    solution: "จาก $R \\propto \\sqrt{L}/T^2$ ดาว B สว่างมากที่สุดและเย็นที่สุด รัศมีจึงใหญ่ที่สุด เป็นดาวยักษ์ใหญ่แดง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p011
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวดวงหนึ่งมีโชติมาตรปรากฏ 8 และโชติมาตรสัมบูรณ์ 3 อยู่ห่างจากโลกกี่พาร์เซก ใช้ $m - M = 5\\log_{10}\\dfrac{d}{10\\ \\mathrm{pc}}$"
+    answer: { value: 100, tolerance: 1, unit: "pc" }
+    misconceptions:
+      - { match: 10, feedback: "ได้ $d/10 = 10$ แล้วลืมคูณ 10 กลับ" }
+      - { match: 1000, feedback: "ใช้ $\\log_{10} d = (m - M)/5 + 2$ ผิด ต้องเป็น $\\log_{10} d = (m - M + 5)/5$" }
+    hints:
+      - "$\\log_{10}\\dfrac{d}{10} = \\dfrac{8 - 3}{5} = 1$"
+      - "$\\dfrac{d}{10} = 10^1$"
+    solution: "$\\log_{10}(d/10) = 1$ ได้ $d/10 = 10$ จึง $d = 100$ พาร์เซก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p012
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวซิริอัสมีโชติมาตรปรากฏ −1.46 อยู่ห่าง 2.64 พาร์เซก โชติมาตรสัมบูรณ์ของดาวซิริอัสเป็นเท่าใด"
+    answer: { value: 1.43, tolerance: 0.02, unit: "" }
+    misconceptions:
+      - { match: -4.35, feedback: "$\\log_{10}(0.264)$ เป็นลบ $M = m - 5\\log_{10}(d/10) = -1.46 - 5(-0.578)$ ต้องได้ค่าที่มากขึ้น" }
+      - { match: -1.46, feedback: "นี่คือโชติมาตรปรากฏ ต้องปรับเป็นระยะ 10 พาร์เซก" }
+    hints:
+      - "$M = m - 5\\log_{10}\\dfrac{d}{10}$"
+      - "$\\log_{10}(0.264) \\approx -0.578$"
+    solution: "$M = -1.46 - 5\\log_{10}(0.264) = -1.46 + 2.89 = 1.43$ ซิริอัสอยู่ใกล้กว่า 10 พาร์เซก ถ้าย้ายไปที่ 10 พาร์เซกจะดูสลัวลง โชติมาตรจึงมากขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p013
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 4
+    type: numeric
+    stem: "ดาวดวงหนึ่งมีกำลังส่องสว่าง 10,000 เท่าของดวงอาทิตย์ อุณหภูมิผิว 3,000 K รัศมีของดาวเป็นกี่เท่าของดวงอาทิตย์ ($T_\\odot = 5{,}772$ K)"
+    answer: { value: 370, tolerance: 4, unit: "เท่า" }
+    misconceptions:
+      - { match: 100, feedback: "คิดเฉพาะ $\\sqrt{L}$ แต่ดาวเย็นกว่าดวงอาทิตย์ จึงต้องใหญ่กว่านั้นอีก $(T_\\odot/T)^2$ เท่า" }
+      - { match: 192.4, feedback: "ต้องยกกำลังสองอัตราส่วนอุณหภูมิ เพราะ $L \\propto R^2 T^4$ จึงได้ $R \\propto \\sqrt{L}/T^2$" }
+    hints:
+      - "$\\dfrac{R}{R_\\odot} = \\sqrt{\\dfrac{L}{L_\\odot}} \\left(\\dfrac{T_\\odot}{T}\\right)^2$"
+      - "$\\sqrt{10{,}000} = 100$ และ $(5772/3000)^2 \\approx 3.70$"
+    solution: "$\\dfrac{R}{R_\\odot} = 100 \\times (1.924)^2 \\approx 370$ เท่า เป็นดาวยักษ์ใหญ่แดง ถ้าวางแทนดวงอาทิตย์จะใหญ่เกือบถึงวงโคจรโลก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p014
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "จากแผนภาพเฮิร์ซปรุง-รัสเซลล์ที่แสดงดาว A B C และ D ข้อใดถูกต้อง (เลือกได้มากกว่าหนึ่งข้อ)"
+    figure: { src: p-hr.svg, alt: "แผนภาพแกนนอนอุณหภูมิผิว 40,000 ถึง 3,000 K ลดลงไปทางขวา แกนตั้งกำลังส่องสว่าง 10⁻⁴ ถึง 10⁶ เท่าของดวงอาทิตย์ แถบลำดับหลักลาดจากบนซ้ายลงล่างขวา ดาว A อยู่บนแถบลำดับหลักด้านบนซ้าย ราว 25,000 K และ 10⁴ เท่า ดาว B อยู่บนขวา ราว 3,500 K และราว 6 × 10⁴ เท่า ดาว C อยู่ล่างซ้ายใต้แถบลำดับหลัก ราว 12,000 K และราว 0.003 เท่า ดาว D อยู่ปลายล่างขวาของแถบลำดับหลัก ราว 3,300 K และ 0.01 เท่า" }
+    choices:
+      - { id: a, text: "C เป็นดาวแคระขาว ซึ่งไม่มีการหลอมนิวเคลียสแล้ว", correct: true }
+      - { id: b, text: "A มีมวลมากกว่า D และมีอายุในแถบลำดับหลักสั้นกว่า", correct: true }
+      - { id: c, text: "D กำลังหลอมไฮโดรเจนในแกน", correct: true }
+      - { id: d, text: "C จะวิวัฒนาการกลายเป็น A ในอนาคต", feedback: "ดาวแคระขาวคือแกนที่เหลือของดาวที่ตายแล้ว จะค่อย ๆ เย็นและสลัวลง ไม่กลับเข้าสู่ลำดับหลัก" }
+      - { id: e, text: "B เป็นดาวในแถบลำดับหลักที่เย็นที่สุด", feedback: "B อยู่สูงเหนือแถบลำดับหลักมาก เป็นดาวยักษ์ใหญ่ ไม่ได้อยู่ในแถบลำดับหลัก" }
+    hints:
+      - "ดาวที่อยู่ในแถบลำดับหลักหลอมไฮโดรเจนในแกน ยิ่งบนซ้ายยิ่งมวลมาก"
+      - "ล่างซ้ายของแผนภาพคือดาวร้อนแต่เล็กมาก"
+    solution: "C อยู่ล่างซ้ายเป็นดาวแคระขาว A และ D อยู่ในแถบลำดับหลักจึงหลอมไฮโดรเจน A อยู่บนซ้ายมวลมากกว่าและใช้เชื้อเพลิงเร็ว อายุสั้นกว่า ส่วน B เป็นดาวยักษ์ใหญ่ และดาวแคระขาวไม่กลายเป็นดาวลำดับหลัก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p015
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 5
+    type: numeric
+    stem: "ดาวแคระขาวดวงหนึ่งมีรัศมี 0.01 เท่าของดวงอาทิตย์ อุณหภูมิผิว 10,000 K กำลังส่องสว่างเป็นกี่ $\\times 10^{-4}$ เท่าของดวงอาทิตย์ ($T_\\odot = 5{,}772$ K)"
+    answer: { value: 9.01, tolerance: 0.1, unit: "×10⁻⁴ L☉" }
+    misconceptions:
+      - { match: 3.0, feedback: "ยกกำลังอัตราส่วนอุณหภูมิเพียงสอง ต้องยกกำลังสี่ตามกฎของสเตฟาน–โบลซ์มันน์" }
+      - { match: 900.9, feedback: "ไม่ได้ยกกำลังสองของรัศมี $(0.01)^2 = 10^{-4}$" }
+    hints:
+      - "$\\dfrac{L}{L_\\odot} = (0.01)^2 \\left(\\dfrac{10{,}000}{5{,}772}\\right)^4$"
+      - "$(1.7325)^4 \\approx 9.01$"
+    solution: "$\\dfrac{L}{L_\\odot} = 10^{-4} \\times 9.01 = 9.01 \\times 10^{-4}$ แม้ร้อนกว่าดวงอาทิตย์ แต่เล็กมาก จึงสลัวกว่าราวพันเท่า อยู่ล่างซ้ายของแผนภาพ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p016
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 5
+    type: numeric
+    stem: "ดาวดวงหนึ่งมีโชติมาตรปรากฏ 5.0 และมุมแพรัลแลกซ์ 0.02 ฟิลิปดา กำลังส่องสว่างของดาวนี้เป็นกี่เท่าของดวงอาทิตย์ (โชติมาตรสัมบูรณ์ของดวงอาทิตย์ 4.83)"
+    answer: { value: 21.4, tolerance: 0.4, unit: "เท่า" }
+    misconceptions:
+      - { match: 0.0342, feedback: "เครื่องหมายผิดใน $M = m - 5\\log_{10}(d/10)$ ดาวอยู่ไกลกว่า 10 pc จึงต้องสว่างกว่าที่เห็น $M$ ต้องน้อยกว่า $m$" }
+    hints:
+      - "$d = 1/p = 50$ pc แล้ว $M = m - 5\\log_{10}(d/10)$"
+      - "$\\dfrac{L}{L_\\odot} = 10^{0.4(4.83 - M)}$"
+    solution: "$d = 50$ pc $M = 5.0 - 5\\log_{10}5 = 5.0 - 3.49 = 1.51$ $\\dfrac{L}{L_\\odot} = 10^{0.4(4.83 - 1.51)} \\approx 21.4$ เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p017
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 2
+    type: text
+    stem: "แผนภาพที่เขียนกำลังส่องสว่างของดาวฤกษ์เทียบกับอุณหภูมิผิว ซึ่งทำให้เห็นแถบลำดับหลัก ดาวยักษ์ และดาวแคระขาว เรียกว่าอะไร"
+    accepted: ["แผนภาพเฮิร์ซปรุง-รัสเซลล์", "แผนภาพเฮิร์ซปรุงรัสเซลล์", "แผนภาพเอชอาร์", "แผนภาพ H-R", "H-R diagram", "HR diagram", "Hertzsprung-Russell diagram", "Hertzsprung–Russell diagram"]
+    misconceptions:
+      - { match: "สเปกตรัม", feedback: "สเปกตรัมคือแสงที่แยกตามความยาวคลื่น โจทย์ถามชื่อแผนภาพที่ใช้จัดกลุ่มดาว" }
+    hints:
+      - "ตั้งชื่อตามนักดาราศาสตร์สองคน ชาวเดนมาร์กและชาวอเมริกัน"
+      - "ย่อว่า H–R"
+    solution: "แผนภาพเฮิร์ซปรุง-รัสเซลล์ (H–R diagram)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: earthscience.astronomy.stellar-properties.p018
+    topics: [earthscience.astronomy.stellar-properties]
+    difficulty: 3
+    type: mcq
+    stem: "ทองคำในแหวนและแคลเซียมในกระดูกของเรามีต้นกำเนิดจากที่ใด คำอธิบายใดตรงกับความรู้ปัจจุบันที่สุด"
+    choices:
+      - { id: a, text: "แคลเซียมเกิดจากการหลอมนิวเคลียสในดาวมวลมาก ทองคำเกิดในเหตุการณ์รุนแรง เช่น ซูเปอร์โนวาและการชนกันของดาวนิวตรอน แล้วกระจายสู่อวกาศกลายเป็นวัตถุดิบของระบบสุริยะ", correct: true }
+      - { id: b, text: "ธาตุทุกชนิดเกิดพร้อมกันในบิกแบง", feedback: "บิกแบงสร้างไฮโดรเจน ฮีเลียม และลิเทียมเล็กน้อย ธาตุหนักกว่านั้นเกิดในดาวฤกษ์และการระเบิดของดาว" }
+      - { id: c, text: "ธาตุทั้งสองเกิดจากปฏิกิริยาเคมีในเปลือกโลก", feedback: "ปฏิกิริยาเคมีไม่สร้างธาตุใหม่ ธาตุใหม่เกิดจากปฏิกิริยานิวเคลียร์" }
+      - { id: d, text: "ดวงอาทิตย์ในปัจจุบันผลิตทองคำแล้วส่งมากับลมสุริยะ", feedback: "แกนดวงอาทิตย์ปัจจุบันหลอมไฮโดรเจนเป็นฮีเลียม ไม่ได้ผลิตธาตุหนักอย่างทองคำ" }
+    hints:
+      - "การหลอมนิวเคลียสในดาวให้พลังงานได้ถึงเหล็ก"
+      - "ธาตุหนักกว่าเหล็กต้องจับนิวตรอนจำนวนมากอย่างรวดเร็ว"
+    solution: "ธาตุถึงเหล็ก เช่น แคลเซียม เกิดจากการหลอมในดาว ธาตุหนักกว่าเหล็ก เช่น ทองคำ ส่วนใหญ่เกิดในซูเปอร์โนวาและการชนกันของดาวนิวตรอน แล้วกระจายไปรวมในเนบิวลาที่ให้กำเนิดระบบสุริยะ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

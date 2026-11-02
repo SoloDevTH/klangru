@@ -1,0 +1,301 @@
+problems:
+  - id: math.de.second-order-linear.p001
+    topics: [math.de.second-order-linear]
+    difficulty: 1
+    type: mcq
+    stem: "สมการลักษณะเฉพาะของ $y'' - 5y' + 6y = 0$ คือข้อใด"
+    choices:
+      - { id: a, text: "$r^2 - 5r + 6 = 0$", correct: true, feedback: "ถูก แทน $y = e^{rt}$ แล้วหารด้วย $e^{rt}$" }
+      - { id: b, text: "$r^2 + 5r + 6 = 0$", feedback: "เครื่องหมายของพจน์ $y'$ คือ −5 ต้องคงไว้" }
+      - { id: c, text: "$-5r + 6 = 0$", feedback: "ลืมพจน์ $y''$ ซึ่งให้ $r^2$" }
+    hints:
+      - "แทน $y = e^{rt}$ ได้ $y' = re^{rt}$ และ $y'' = r^2e^{rt}$"
+      - "อนุพันธ์อันดับ $k$ กลายเป็น $r^k$"
+    solution: "$r^2e^{rt} - 5re^{rt} + 6e^{rt} = 0$ หารด้วย $e^{rt}$ ได้ **$r^2 - 5r + 6 = 0$** (ราก 2 และ 3)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p002
+    topics: [math.de.second-order-linear]
+    difficulty: 2
+    type: expression
+    stem: "จงแก้ $y'' - y' - 6y = 0$ เมื่อ $y(0) = 2$ และ $y'(0) = 1$"
+    prefix: "y ="
+    answer: { latex: "e^{3t}+e^{-2t}", variables: [t] }
+    misconceptions:
+      - { match: "e^{-3t}+e^{2t}", feedback: "รากของ $r^2 - r - 6 = 0$ คือ 3 และ −2 (ไม่ใช่ −3 และ 2) ตรวจด้วยการแทน $r$ กลับ" }
+      - { match: "2e^{3t}", feedback: "ใช้แค่ $y(0) = 2$ ผลเฉลยอันดับสองต้องมีสองพจน์และใช้ค่าเริ่มต้นสองค่า" }
+    hints:
+      - "$r^2 - r - 6 = (r - 3)(r + 2) = 0$"
+      - "$y = C_1e^{3t} + C_2e^{-2t}$ ได้ $C_1 + C_2 = 2$ และ $3C_1 - 2C_2 = 1$"
+    solution: "รากคือ 3 และ −2 แก้ $C_1 + C_2 = 2$, $3C_1 - 2C_2 = 1$ ได้ $C_1 = C_2 = 1$ จึง $y = e^{3t} + e^{-2t}$ ตรวจ: $y'' - y' - 6y = (9 - 3 - 6)e^{3t} + (4 + 2 - 6)e^{-2t} = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p003
+    topics: [math.de.second-order-linear]
+    difficulty: 2
+    type: mcq
+    stem: "สมการลักษณะเฉพาะของสมการเชิงอนุพันธ์หนึ่งมีราก $r = -1 \\pm 2i$ ผลเฉลยทั่วไปคือข้อใด"
+    choices:
+      - { id: a, text: "$y = e^{-t}(C_1\\cos 2t + C_2\\sin 2t)$", correct: true, feedback: "ถูก ส่วนจริงอยู่ในเอกซ์โพเนนเชียล ส่วนจินตภาพเป็นความถี่" }
+      - { id: b, text: "$y = e^{2t}(C_1\\cos t + C_2\\sin t)$", feedback: "สลับบทบาท ส่วนจริง −1 อยู่ใน $e^{\\alpha t}$ และส่วนจินตภาพ 2 อยู่ใน $\\cos\\beta t$" }
+      - { id: c, text: "$y = C_1e^{-t} + C_2e^{2t}$", feedback: "รากเป็นเชิงซ้อน ไม่ใช่รากจริง −1 และ 2" }
+    hints:
+      - "รากเชิงซ้อน $\\alpha \\pm \\beta i$"
+      - "$y = e^{\\alpha t}(C_1\\cos\\beta t + C_2\\sin\\beta t)$"
+    solution: "$\\alpha = -1$, $\\beta = 2$ จึงได้ **$y = e^{-t}(C_1\\cos 2t + C_2\\sin 2t)$** เป็นการสั่นที่ค่อย ๆ หน่วงลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p004
+    topics: [math.de.second-order-linear]
+    difficulty: 3
+    type: expression
+    stem: "จงแก้ $y'' + 6y' + 9y = 0$ เมื่อ $y(0) = 1$ และ $y'(0) = 0$"
+    prefix: "y ="
+    answer: { latex: "(1+3t)e^{-3t}", variables: [t] }
+    misconceptions:
+      - { match: "e^{-3t}", feedback: "รากซ้ำต้องมีพจน์ $te^{-3t}$ ด้วย และ $e^{-3t}$ อย่างเดียวให้ $y'(0) = -3$ ไม่ใช่ 0" }
+      - { match: "(1-3t)e^{-3t}", feedback: "ตรวจ $y'(0) = -3C_1 + C_2 = 0$ ได้ $C_2 = +3$" }
+    hints:
+      - "$r^2 + 6r + 9 = (r + 3)^2$ ได้รากซ้ำ −3"
+      - "$y = (C_1 + C_2t)e^{-3t}$ และ $y'(0) = C_2 - 3C_1$"
+    solution: "รากซ้ำ $r = -3$ ได้ $y = (C_1 + C_2t)e^{-3t}$ จาก $y(0) = C_1 = 1$ และ $y'(0) = C_2 - 3 = 0$ ได้ $C_2 = 3$ จึง $y = (1 + 3t)e^{-3t}$ (หน่วงวิกฤต)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p005
+    topics: [math.de.second-order-linear]
+    difficulty: 3
+    type: expression
+    stem: "จงแก้ $y'' + 4y = 0$ เมื่อ $y(0) = 3$ และ $y'(0) = 4$"
+    prefix: "y ="
+    answer: { latex: "3\\cos(2t)+2\\sin(2t)", variables: [t] }
+    misconceptions:
+      - { match: "3\\cos(2t)+4\\sin(2t)", feedback: "$y'(0) = 2C_2$ เพราะอนุพันธ์ของ $\\sin 2t$ คือ $2\\cos 2t$ จึง $C_2 = 2$" }
+      - { match: "3\\cos(4t)+2\\sin(4t)", feedback: "รากคือ $\\pm 2i$ เพราะ $r^2 = -4$ ความถี่เชิงมุมจึงเป็น 2 ไม่ใช่ 4" }
+    hints:
+      - "$r^2 + 4 = 0$ ได้ $r = \\pm 2i$"
+      - "$y = C_1\\cos 2t + C_2\\sin 2t$ แล้วใช้ค่าเริ่มต้นทั้งสอง"
+    solution: "$y = C_1\\cos 2t + C_2\\sin 2t$ ได้ $C_1 = 3$ และ $y'(0) = 2C_2 = 4$ ได้ $C_2 = 2$ จึง $y = 3\\cos 2t + 2\\sin 2t$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p006
+    topics: [math.de.second-order-linear]
+    difficulty: 3
+    type: match
+    stem: "ระบบ $x'' + cx' + 4x = 0$ ($m = 1$, $k = 4$) จับคู่ค่า $c$ กับลักษณะการเคลื่อนที่"
+    pairs:
+      - { left: "c = 0", right: "สั่นไม่หยุด แอมพลิจูดคงที่" }
+      - { left: "c = 2", right: "หน่วงน้อย สั่นโดยแอมพลิจูดลดลง" }
+      - { left: "c = 4", right: "หน่วงวิกฤต กลับสู่สมดุลเร็วที่สุดโดยไม่สั่น" }
+      - { left: "c = 6", right: "หน่วงมาก กลับสู่สมดุลช้าโดยไม่สั่น" }
+    hints:
+      - "เทียบ $c^2$ กับ $4mk = 16$"
+      - "$c^2 < 16$ รากเชิงซ้อน · $c^2 = 16$ รากซ้ำ · $c^2 > 16$ รากจริงสองค่า"
+    solution: "c = 0: ไม่หน่วง · c = 2 ($4 < 16$): หน่วงน้อย · c = 4 ($16 = 16$): วิกฤต · c = 6 ($36 > 16$): หน่วงมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p007
+    topics: [math.de.second-order-linear]
+    difficulty: 3
+    type: numeric
+    stem: "อู่ซ่อมรถในขอนแก่นออกแบบระบบกันสะเทือนของรถกระบะ (แบบจำลองหนึ่งในสี่คัน) มวล 400 kg สปริง 40,000 N/m โช้คอัพต้องมีค่าความหน่วงเท่าใดจึงหน่วงวิกฤตพอดี (หน่วย N·s/m ค่าสมมติ)"
+    answer: { value: 8000, unit: N·s/m }
+    misconceptions:
+      - { match: 4000, feedback: "ลืมคูณ 2: $c_c = 2\\sqrt{mk}$" }
+      - { match: 10, feedback: "นี่คือ $\\sqrt{k/m}$ ซึ่งเป็นความถี่เชิงมุมธรรมชาติ ไม่ใช่ค่าความหน่วง" }
+    hints:
+      - "หน่วงวิกฤตเมื่อ $c^2 = 4mk$"
+      - "$c_c = 2\\sqrt{mk} = 2\\sqrt{400 \\times 40{,}000}$"
+    solution: "$c_c = 2\\sqrt{400 \\times 40{,}000} = 2\\sqrt{1.6 \\times 10^7} = 2 \\times 4000 =$ **8,000 N·s/m**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p008
+    topics: [math.de.second-order-linear]
+    difficulty: 4
+    type: expression
+    stem: "จงหาผลเฉลยเฉพาะ $y_p$ ในรูป $Ae^{t}$ ของ $y'' + 3y' + 2y = 12e^{t}$"
+    prefix: "y_p ="
+    answer: { latex: "2e^{t}", variables: [t] }
+    misconceptions:
+      - { match: "6e^{t}", feedback: "แทน $Ae^t$ ได้ $(1 + 3 + 2)A = 6A$ ต้องให้ $6A = 12$ จึง $A = 2$ ไม่ใช่ 6" }
+      - { match: "12e^{t}", feedback: "ยังไม่ได้แทนในสมการ ต้องหา $A$ ที่ทำให้ด้านซ้ายเท่ากับ $12e^t$" }
+    hints:
+      - "$y_p = Ae^t$ ได้ $y_p' = y_p'' = Ae^t$"
+      - "$A + 3A + 2A = 12$"
+    solution: "$6Ae^t = 12e^t$ ได้ $A = 2$ จึง $y_p = 2e^t$ ($e^t$ ไม่ซ้ำกับ $y_h = C_1e^{-t} + C_2e^{-2t}$ จึงไม่ต้องปรับแก้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p009
+    topics: [math.de.second-order-linear]
+    difficulty: 4
+    type: expression
+    stem: "จงหาผลเฉลยเฉพาะ $y_p$ ที่เป็นพหุนามของ $y'' + y = 3t^2$"
+    prefix: "y_p ="
+    answer: { latex: "3t^2-6", variables: [t] }
+    misconceptions:
+      - { match: "3t^2", feedback: "แทนแล้วได้ $6 + 3t^2$ ต้องมีพจน์ค่าคงตัว −6 มาหักล้าง 6 จาก $y''$" }
+      - { match: "t^3", feedback: "การหาปริพันธ์ไม่ใช่วิธีนี้ ให้เดาพหุนามดีกรีเท่ากับด้านขวา $At^2 + Bt + C$" }
+    hints:
+      - "เดา $y_p = At^2 + Bt + C$ ได้ $y_p'' = 2A$"
+      - "เทียบสัมประสิทธิ์: $A = 3$, $B = 0$, $2A + C = 0$"
+    solution: "$2A + At^2 + Bt + C = 3t^2$ ได้ $A = 3$, $B = 0$, $C = -6$ จึง $y_p = 3t^2 - 6$ ตรวจ: $6 + 3t^2 - 6 = 3t^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p010
+    topics: [math.de.second-order-linear]
+    difficulty: 4
+    type: expression
+    stem: "จงหาผลเฉลยเฉพาะ $y_p$ ของ $y'' - y' - 2y = 6e^{2t}$ (ระวังกฎปรับแก้)"
+    prefix: "y_p ="
+    answer: { latex: "2te^{2t}", variables: [t] }
+    misconceptions:
+      - { match: "6te^{2t}", feedback: "แทน $Ate^{2t}$ ได้ $3Ae^{2t}$ ต้องให้ $3A = 6$ จึง $A = 2$" }
+      - { match: "-\\frac{3}{2}e^{2t}", feedback: "รากของสมการลักษณะเฉพาะคือ 2 และ −1 ดังนั้น $e^{2t}$ ซ้ำกับ $y_h$ ต้องคูณด้วย $t$" }
+    hints:
+      - "$r^2 - r - 2 = (r - 2)(r + 1)$ มี $r = 2$ อยู่แล้ว"
+      - "เดา $y_p = Ate^{2t}$ แล้วแทนค่า"
+    solution: "เพราะ $e^{2t}$ อยู่ใน $y_h$ จึงเดา $Ate^{2t}$: $y_p' = A(1 + 2t)e^{2t}$, $y_p'' = A(4 + 4t)e^{2t}$ แทนได้ $A(4 + 4t - 1 - 2t - 2t)e^{2t} = 3Ae^{2t} = 6e^{2t}$ จึง $A = 2$ และ $y_p = 2te^{2t}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p011
+    topics: [math.de.second-order-linear]
+    difficulty: 4
+    type: numeric
+    stem: "ระบบ $x'' + 2x' + 26x = 0$ (เวลาเป็นวินาที) สั่นแบบหน่วงน้อย คาบของการสั่นเป็นกี่วินาที (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.257, unit: s, tolerance: 0.003 }
+    misconceptions:
+      - { match: 1.232, feedback: "นี่คือคาบของระบบไม่หน่วง $2\\pi/\\sqrt{26}$ ความหน่วงทำให้ความถี่ลดลง ต้องใช้ส่วนจินตภาพของราก" }
+      - { match: 0.796, feedback: "นี่คือ $5/(2\\pi)$ ซึ่งเป็นความถี่ (รอบต่อวินาที) คาบคือ $2\\pi/5$" }
+    hints:
+      - "$r = -1 \\pm \\sqrt{1 - 26} = -1 \\pm 5i$"
+      - "คาบ $= 2\\pi/\\beta$"
+    solution: "$r = -1 \\pm 5i$ ความถี่เชิงมุม $\\omega_d = 5$ rad/s คาบ $= 2\\pi/5 =$ **1.257 s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p012
+    topics: [math.de.second-order-linear]
+    difficulty: 4
+    type: numeric
+    stem: "แบบจำลองรถเก๋งที่ข้ามลูกระนาดในหมู่บ้าน (ภาพ) มี $m = 300$ kg, $k = 30{,}000$ N/m และ $c = 3{,}000$ N·s/m หลังข้ามลูกระนาด ตัวรถสั่นขึ้นลงด้วยคาบกี่วินาที (ตอบทศนิยมสามตำแหน่ง ค่าสมมติ)"
+    figure:
+      src: p-quarter-car.svg
+      alt: "แบบจำลองหนึ่งในสี่ของรถยนต์ กล่องตัวรถมวล m = 300 kg วางบนสปริง k = 30,000 N/m และโช้คอัพ c = 3,000 N·s/m ซึ่งต่อกับล้อบนถนนที่มีลูกระนาด ลูกศรขึ้นลงบอกระยะกระจัด x(t) ของตัวรถ"
+    answer: { value: 0.726, unit: s, tolerance: 0.003 }
+    misconceptions:
+      - { match: 0.628, feedback: "นี่คือคาบเมื่อไม่มีโช้คอัพ $2\\pi/\\omega_0$ ความหน่วงทำให้สั่นช้าลง" }
+      - { match: 1.378, feedback: "นี่คือความถี่ $\\omega_d/2\\pi$ (รอบต่อวินาที) คาบคือส่วนกลับของค่านี้" }
+    hints:
+      - "$300r^2 + 3000r + 30{,}000 = 0$ หรือ $r^2 + 10r + 100 = 0$"
+      - "$r = -5 \\pm \\sqrt{75}\\,i$ คาบ $= 2\\pi/\\sqrt{75}$"
+    solution: "$\\omega_0 = \\sqrt{30{,}000/300} = 10$ rad/s $c/2m = 5$ s⁻¹ $\\omega_d = \\sqrt{100 - 25} = 8.66$ rad/s คาบ $= 2\\pi/8.66 =$ **0.726 s** ($\\zeta = 0.5$ หน่วงน้อย ซึ่งเหมาะกับรถยนต์)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p013
+    topics: [math.de.second-order-linear]
+    difficulty: 5
+    type: numeric
+    stem: "จงแก้ $x'' + 9x = 10\\cos 2t$ เมื่อ $x(0) = 0$ และ $x'(0) = 0$ แล้วหา $x(1)$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.148, tolerance: 0.002 }
+    misconceptions:
+      - { match: -0.832, feedback: "นี่คือ $y_p(1) = 2\\cos 2$ อย่างเดียว ลืมส่วนเอกพันธ์ที่ต้องเติมให้ $x(0) = 0$" }
+      - { match: 0.441, feedback: "ใช้ $F_0/(\\omega_0^2 + \\omega^2) = 10/13$ แต่ต้องเป็น $10/(9 - 4) = 2$" }
+    hints:
+      - "$y_p = A\\cos 2t$: $(-4 + 9)A = 10$"
+      - "$x = C_1\\cos 3t + C_2\\sin 3t + 2\\cos 2t$ แล้วใช้ค่าเริ่มต้น"
+    solution: "$A = 2$ ได้ $x = C_1\\cos 3t + C_2\\sin 3t + 2\\cos 2t$ จาก $x(0) = C_1 + 2 = 0$ ได้ $C_1 = -2$ และ $x'(0) = 3C_2 = 0$ จึง $x = 2\\cos 2t - 2\\cos 3t$ และ $x(1) = 2(-0.4161) - 2(-0.9900) =$ **1.148**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p014
+    topics: [math.de.second-order-linear]
+    difficulty: 5
+    type: expression
+    stem: "จงแก้ $y'' + 4y = 8\\sin 2t$ เมื่อ $y(0) = 0$ และ $y'(0) = 0$"
+    prefix: "y ="
+    answer: { latex: "\\sin(2t)-2t\\cos(2t)", variables: [t] }
+    misconceptions:
+      - { match: "-2t\\cos(2t)", feedback: "นี่คือ $y_p$ อย่างเดียว ได้ $y'(0) = -2 \\ne 0$ ต้องเติม $C_2\\sin 2t$ ด้วย $C_2 = 1$" }
+      - { match: "2t\\cos(2t)", feedback: "ตรวจเครื่องหมาย: $L[t\\cos 2t] = -4\\sin 2t$ จึงต้อง $A = -2$" }
+    hints:
+      - "$\\sin 2t$ ซ้ำกับ $y_h$ จึงเดา $y_p = t(A\\cos 2t + B\\sin 2t)$"
+      - "แทนแล้วได้ $-4A\\sin 2t + 4B\\cos 2t = 8\\sin 2t$"
+    solution: "$A = -2$, $B = 0$ ได้ $y_p = -2t\\cos 2t$ ผลเฉลยทั่วไป $y = C_1\\cos 2t + C_2\\sin 2t - 2t\\cos 2t$ จาก $y(0) = C_1 = 0$ และ $y'(0) = 2C_2 - 2 = 0$ ได้ $C_2 = 1$ จึง $y = \\sin 2t - 2t\\cos 2t$ (การสั่นพ้อง แอมพลิจูดโตตาม $t$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p015
+    topics: [math.de.second-order-linear]
+    difficulty: 5
+    type: numeric
+    stem: "ฐานของเครื่องสูบน้ำในนาข้าวสุพรรณบุรีจำลองด้วย $x'' + 2x' + 10x = 20\\cos 3t$ (หน่วยตามระบบ ค่าสมมติ) เมื่อเวลาผ่านไปนาน ส่วนชั่วครู่หายไป แอมพลิจูดของการสั่นสถานะคงตัวเป็นเท่าใด (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 3.288, tolerance: 0.004 }
+    misconceptions:
+      - { match: 20, feedback: "ใช้ $F_0/|k - m\\omega^2| = 20/1$ ลืมพจน์ความหน่วง $(c\\omega)^2 = 36$" }
+      - { match: 2, feedback: "นี่คือ $F_0/k$ ซึ่งเป็นการยืดเมื่อแรงคงที่ ไม่ได้คิดผลของความถี่" }
+    hints:
+      - "$A = \\dfrac{F_0}{\\sqrt{(k - m\\omega^2)^2 + (c\\omega)^2}}$"
+      - "$k - m\\omega^2 = 10 - 9 = 1$ และ $c\\omega = 6$"
+    solution: "$A = \\dfrac{20}{\\sqrt{1^2 + 6^2}} = \\dfrac{20}{\\sqrt{37}} =$ **3.288** (ตรวจด้วยการแทน $y_p = \\tfrac{20}{37}\\cos 3t + \\tfrac{120}{37}\\sin 3t$ ซึ่งมีแอมพลิจูด $\\sqrt{(20/37)^2 + (120/37)^2} = 3.288$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p016
+    topics: [math.de.second-order-linear]
+    difficulty: 3
+    type: mcq
+    stem: "ระบบสปริง $x'' + 16x = F_0\\cos\\omega t$ (ไม่มีความหน่วง) จะเกิดการสั่นพ้องเมื่อ $\\omega$ เท่าใด"
+    choices:
+      - { id: a, text: "$\\omega = 4$", correct: true, feedback: "ถูก ความถี่เชิงมุมธรรมชาติคือ $\\sqrt{16} = 4$" }
+      - { id: b, text: "$\\omega = 16$", feedback: "16 คือ $\\omega_0^2$ ต้องถอดราก" }
+      - { id: c, text: "$\\omega = 8$", feedback: "ไม่มีเหตุให้คูณ 2 ความถี่ธรรมชาติคือ $\\sqrt{16}$" }
+    hints:
+      - "สมการเอกพันธ์ $r^2 + 16 = 0$"
+      - "การสั่นพ้องเกิดเมื่อ $\\cos\\omega t$ ซ้ำกับผลเฉลยของสมการเอกพันธ์"
+    solution: "$r = \\pm 4i$ จึง $\\omega_0 = 4$ เมื่อ **$\\omega = 4$** รูปที่เดาซ้ำกับ $y_h$ ได้ $y_p$ ที่มี $t\\sin 4t$ แอมพลิจูดโตไม่จำกัด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p017
+    topics: [math.de.second-order-linear]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการแก้ปัญหาค่าเริ่มต้น $ay'' + by' + cy = g(t)$ ด้วยวิธีสัมประสิทธิ์ตัวกำหนด"
+    items:
+      - "แก้สมการลักษณะเฉพาะ หา $y_h$ ที่มี $C_1, C_2$"
+      - "เดารูป $y_p$ ตาม $g(t)$ และคูณ $t$ ถ้าซ้ำกับ $y_h$"
+      - "แทน $y_p$ ในสมการ เทียบสัมประสิทธิ์หาค่าที่ไม่รู้"
+      - "เขียน $y = y_h + y_p$"
+      - "ใช้ค่าเริ่มต้นสองค่าหา $C_1, C_2$"
+    hints:
+      - "ต้องรู้ $y_h$ ก่อนจึงรู้ว่าต้องใช้กฎปรับแก้หรือไม่"
+      - "ค่าเริ่มต้นใช้กับผลเฉลยรวม ไม่ใช่กับ $y_h$ อย่างเดียว"
+    solution: "หา $y_h$ → เดา $y_p$ (ปรับแก้ถ้าซ้ำ) → หาสัมประสิทธิ์ → รวม $y_h + y_p$ → ใช้ค่าเริ่มต้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.second-order-linear.p018
+    topics: [math.de.second-order-linear]
+    difficulty: 2
+    type: numeric
+    stem: "ตาชั่งสปริงในตลาดสดเชียงรายมีจานและผักรวมมวล 2 kg และสปริง $k = 50$ N/m ถ้าไม่มีความหน่วง จานจะสั่นด้วยความถี่เชิงมุมกี่ rad/s (ค่าสมมติ)"
+    answer: { value: 5, unit: rad/s }
+    misconceptions:
+      - { match: 25, feedback: "นี่คือ $k/m = \\omega_0^2$ ต้องถอดราก" }
+      - { match: 0.796, feedback: "นี่คือความถี่เป็นรอบต่อวินาที $\\omega_0/2\\pi$ โจทย์ถามความถี่เชิงมุม" }
+    hints:
+      - "$2x'' + 50x = 0$"
+      - "$\\omega_0 = \\sqrt{k/m}$"
+    solution: "$r^2 = -25$ ได้ $r = \\pm 5i$ จึง $\\omega_0 = \\sqrt{50/2} =$ **5 rad/s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

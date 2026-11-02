@@ -1,0 +1,78 @@
+id: math.de.second-order-linear
+subject: math
+title: { th: สมการเชิงอนุพันธ์เชิงเส้นอันดับสอง, en: Second-order linear differential equations }
+summary: สมการค่าสัมประสิทธิ์คงตัว สมการลักษณะเฉพาะ การสั่นแบบหน่วงสามกรณี สมการไม่เอกพันธ์ วิธีสัมประสิทธิ์ตัวกำหนด การสั่นบังคับ และการสั่นพ้อง
+difficulty: 9
+minutes: 55
+prerequisites: [math.de.first-order, math.number.complex-numbers, physics.waves.shm]
+encompasses:
+  - { id: math.de.first-order, weight: 0.3 }
+  - { id: math.number.complex-numbers, weight: 0.3 }
+  - { id: physics.waves.shm, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: รากเชิงซ้อนกับค่าเริ่มต้น
+    problem: "จงแก้ $y'' + 2y' + 5y = 0$ เมื่อ $y(0) = 1$ และ $y'(0) = 0$"
+    steps:
+      - text: "สมการลักษณะเฉพาะ $r^2 + 2r + 5 = 0$ ได้ $r = \\dfrac{-2 \\pm \\sqrt{4 - 20}}{2} = -1 \\pm 2i$"
+      - text: "$\\alpha = -1$, $\\beta = 2$ ผลเฉลยทั่วไป $y = e^{-t}(C_1\\cos 2t + C_2\\sin 2t)$"
+      - text: "$y(0) = C_1 = 1$"
+      - text: "$y' = e^{-t}[(-C_1 + 2C_2)\\cos 2t + (-C_2 - 2C_1)\\sin 2t]$ จึง $y'(0) = -C_1 + 2C_2 = 0$ ได้ $C_2 = \\tfrac12$"
+        why: "อนุพันธ์ของผลคูณ: อนุพันธ์ของ e^(−t) ให้พจน์ −y และอนุพันธ์ของ cos, sin ให้พจน์ที่คูณ 2"
+      - text: "ตรวจด้วยการแทนกลับ: $y'' + 2y' + 5y = 0$ ทุก $t$"
+    answer: "$y = e^{-t}\\left(\\cos 2t + \\tfrac12\\sin 2t\\right)$ (หน่วงน้อย สั่นด้วยความถี่เชิงมุม 2)"
+  - type: figure
+    src: damping-cases.svg
+    alt: "กราฟระยะกระจัด x กับเวลา t จาก 0 ถึง 8 วินาที ของ x″ + c x′ + 4x = 0 เริ่มที่ x = 1 ความเร็วศูนย์ สี่เส้น เส้นประสีเทา c = 0 ไม่หน่วง สั่นระหว่าง 1 กับ −1 ด้วยคาบราว 3.14 ตลอดเวลา เส้นสีน้ำเงิน c = 1 หน่วงน้อย สั่นผ่านศูนย์ ลงต่ำสุดราว −0.44 ที่ t ราว 1.6 แล้วแกว่งเล็กลงเรื่อย ๆ เส้นสีแดง c = 4 หน่วงวิกฤต ลดลงสู่ศูนย์เร็วโดยไม่ข้ามศูนย์ เส้นสีเขียว c = 8 หน่วงมาก ลดลงช้ากว่า ยังเหลือราว 0.13 ที่ t = 4"
+    caption: "ความหน่วงวิกฤต (c² = 4mk) กลับสู่สมดุลเร็วที่สุดโดยไม่สั่น ความหน่วงมากเกินไปกลับช้ากว่า"
+  - { type: check, problem: math.de.second-order-linear.p004, prompt: "รากซ้ำ r = −3 ต้องมีพจน์ t ด้วย" }
+  - type: worked-example
+    title: การสั่นพ้องด้วยกฎปรับแก้
+    problem: "จงแก้ $y'' + 4y = 8\\cos 2t$ เมื่อ $y(0) = 0$ และ $y'(0) = 0$"
+    steps:
+      - text: "สมการเอกพันธ์: $r^2 + 4 = 0$ ได้ $r = \\pm 2i$ จึง $y_h = C_1\\cos 2t + C_2\\sin 2t$"
+      - text: "$g = 8\\cos 2t$ ซ้ำกับ $y_h$ จึงเดา $y_p = t(A\\cos 2t + B\\sin 2t)$"
+        why: "ถ้าเดา A cos 2t + B sin 2t แทนแล้วได้ศูนย์ทั้งหมด เพราะเป็นผลเฉลยของสมการเอกพันธ์อยู่แล้ว"
+      - text: "แทนค่า: $y_p'' + 4y_p = -4A\\sin 2t + 4B\\cos 2t$ เทียบกับ $8\\cos 2t$ ได้ $A = 0$, $B = 2$"
+      - text: "$y = C_1\\cos 2t + C_2\\sin 2t + 2t\\sin 2t$ ใช้ $y(0) = 0$ ได้ $C_1 = 0$ และ $y'(0) = 2C_2 = 0$ ได้ $C_2 = 0$"
+    answer: "$y = 2t\\sin 2t$ แอมพลิจูดโตเป็นเส้นตรงตาม t"
+  - type: figure
+    src: resonance-growth.svg
+    alt: "กราฟ x กับเวลา t จาก 0 ถึง 20 ของ x″ + 4x = cos ωt เริ่มจากนิ่ง สองเส้น เส้นสีเขียว ω = 1.6 แกว่งโดยแอมพลิจูดขึ้นลงเป็นจังหวะ (บีต) ไม่เกินราว 1.4 เส้นสีแดง ω = 2 เท่ากับความถี่ธรรมชาติ แกว่งโดยแอมพลิจูดโตขึ้นเรื่อย ๆ ระหว่างเส้นประ x = t/4 และ x = −t/4 ถึงราว 5 ที่ t = 20"
+    caption: "เมื่อแรงบังคับมีความถี่เท่ากับความถี่ธรรมชาติ (ไม่มีความหน่วง) แอมพลิจูดโตไม่จำกัด"
+  - type: interactive
+    title: แอมพลิจูดของการสั่นบังคับเมื่อเปลี่ยนความหน่วง
+    caption: "กราฟคือ A(ω) = 1/√((4 − ω²)² + (cω)²) ของ x″ + c x′ + 4x = cos ωt โดยแกนนอนคือ ω เลื่อน c แล้วสังเกตว่ายอดอยู่ใกล้ ω = 2 (ความถี่ธรรมชาติ) และยิ่ง c น้อยยอดยิ่งสูงและแหลม"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{\\sqrt{(4-x^2)^2+(c x)^2}}"]
+      sliders:
+        - { name: c, min: 0.2, max: 4, step: 0.2, value: 1, label: ความหน่วง c }
+      x: [0, 5]
+      y: [0, 2.6]
+  - { type: check, problem: math.de.second-order-linear.p016, prompt: "การสั่นพ้องเกิดเมื่อความถี่ของแรงเท่ากับความถี่ธรรมชาติ" }
+glossary:
+  - { term: สมการเอกพันธ์, definition: "สมการเชิงเส้นที่ด้านขวาเป็นศูนย์ เช่น ay″ + by′ + cy = 0" }
+  - { term: สมการลักษณะเฉพาะ, definition: "ar² + br + c = 0 ได้จากการแทน y = eʳᵗ ในสมการเอกพันธ์" }
+  - { term: หลักการซ้อนทับ, definition: "ผลรวมเชิงเส้นของผลเฉลยของสมการเชิงเส้นเอกพันธ์เป็นผลเฉลยด้วย" }
+  - { term: ผลเฉลยเฉพาะ, definition: "ผลเฉลยหนึ่งตัวของสมการไม่เอกพันธ์ ไม่มีค่าคงตัวใด ๆ" }
+  - { term: วิธีสัมประสิทธิ์ตัวกำหนด, definition: "การเดารูปของผลเฉลยเฉพาะตามรูปของด้านขวา แล้วแทนค่าหาสัมประสิทธิ์" }
+  - { term: ความหน่วงวิกฤต, definition: "c = 2√(mk) ระบบกลับสู่สมดุลเร็วที่สุดโดยไม่สั่น" }
+  - { term: การสั่นพ้อง, definition: "การที่แอมพลิจูดใหญ่มากเมื่อความถี่ของแรงบังคับเท่ากับหรือใกล้ความถี่ธรรมชาติ" }
+flashcards:
+  - { front: "รากเชิงซ้อน α ± βi", back: "y = e^(αt)(C₁cos βt + C₂sin βt)" }
+  - { front: "รากซ้ำ r", back: "y = (C₁ + C₂t)eʳᵗ" }
+  - { front: "หน่วงน้อย / วิกฤต / มาก", back: "c² < 4mk / c² = 4mk / c² > 4mk" }
+  - { front: "ผลเฉลยทั่วไปของสมการไม่เอกพันธ์", back: "y = y_h + y_p แล้วจึงใช้ค่าเริ่มต้น" }
+  - { front: "กฎปรับแก้", back: "ถ้ารูปที่เดาซ้ำกับ y_h ให้คูณด้วย t" }
+references:
+  - { title: "7.1 Second-Order Linear Equations (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/7-1-second-order-linear-equations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "7.2 Nonhomogeneous Linear Equations (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/7-2-nonhomogeneous-linear-equations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "7.3 Applications (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/7-3-applications", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "18.03SC Differential Equations (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

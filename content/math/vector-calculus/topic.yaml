@@ -1,0 +1,62 @@
+id: math.calculus.vector-calculus
+subject: math
+title: { th: แคลคูลัสเวกเตอร์, en: Vector calculus }
+summary: สนามเวกเตอร์ ปริพันธ์ตามเส้น สนามอนุรักษ์และฟังก์ชันศักย์ ไดเวอร์เจนซ์ เคิร์ล ฟลักซ์ ทฤษฎีบทของกรีน สโตกส์ และไดเวอร์เจนซ์
+difficulty: 9.5
+minutes: 60
+prerequisites: [math.calculus.multiple-integrals]
+encompasses:
+  - { id: math.calculus.multiple-integrals, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: div-curl-fields.svg
+    alt: "สนามเวกเตอร์สองแผงบนตาราง −2 ถึง 2 แผงซ้าย F = ⟨x, y⟩ ลูกศรทุกตัวชี้ออกจากจุดกำเนิดและยาวขึ้นเมื่อห่างออกไป เขียนว่า div F = 2, curl F = 0 ไหลออกจากทุกจุดเหมือนน้ำพุ แผงขวา G = ⟨−y, x⟩ ลูกศรหมุนทวนเข็มนาฬิการอบจุดกำเนิด ยาวขึ้นเมื่อห่างออกไป มีวงกลมสีแดงรัศมี 1.5 ซึ่งลูกศรสัมผัสไปตามทิศของวง เขียนว่า div G = 0, curl G = 2k"
+    caption: "ไดเวอร์เจนซ์วัดการไหลออก เคิร์ลวัดการหมุนวน"
+  - type: worked-example
+    title: งานตามเส้นโค้งและฟังก์ชันศักย์
+    problem: "จงหางานของ $\\mathbf{F} = \\langle 2xy,\\; x^2 + 1\\rangle$ ตามเส้นโค้ง $y = x^3$ จาก $(0, 0)$ ถึง $(2, 8)$ ด้วยสองวิธี"
+    steps:
+      - text: "วิธีที่ 1 อิงตัวแปรเสริม: $\\mathbf{r}(t) = \\langle t, t^3\\rangle$, $0 \\le t \\le 2$ ได้ $\\mathbf{r}'(t) = \\langle 1, 3t^2\\rangle$"
+      - text: "$\\mathbf{F}(\\mathbf{r}(t))\\cdot\\mathbf{r}'(t) = 2t\\cdot t^3 + (t^2 + 1)\\cdot 3t^2 = 5t^4 + 3t^2$"
+      - text: "$\\displaystyle\\int_0^2 (5t^4 + 3t^2)\\,dt = \\big[t^5 + t^3\\big]_0^2 = 32 + 8 = 40$"
+      - text: "วิธีที่ 2 ตรวจ: $P_y = 2x = Q_x$ จึงอนุรักษ์ หา $f = \\int 2xy\\,dx = x^2y + g(y)$ และ $f_y = x^2 + g'(y) = x^2 + 1$ ได้ $f = x^2y + y$"
+        why: "ถ้าสนามอนุรักษ์ งานขึ้นกับจุดปลายเท่านั้น เส้นทางยากแค่ไหนก็ไม่ต้องอิงตัวแปรเสริม"
+      - text: "$f(2, 8) - f(0, 0) = 4 \\cdot 8 + 8 - 0 = 40$ ตรงกัน"
+    answer: "งาน = 40 หน่วย"
+  - { type: check, problem: math.calculus.vector-calculus.p004, prompt: "ลองหา f ที่ f_x = y และ f_y = x" }
+  - type: worked-example
+    title: ตรวจทฤษฎีบทของกรีนทั้งสองข้าง
+    problem: "ให้ $\\mathbf{F} = \\langle xy,\\; x^2\\rangle$ และ $C$ เป็นขอบสี่เหลี่ยม $0 \\le x \\le 2$, $0 \\le y \\le 1$ เดินทวนเข็มนาฬิกา จงหา $\\oint_C \\mathbf{F}\\cdot d\\mathbf{r}$"
+    steps:
+      - text: "ด้านปริพันธ์สองชั้น: $Q_x - P_y = 2x - x = x$"
+      - text: "$\\displaystyle\\iint_D x\\,dA = \\int_0^1\\!\\!\\int_0^2 x\\,dx\\,dy = 2$"
+      - text: "ด้านปริพันธ์ตามเส้น แยก 4 ด้าน: ล่าง ($y = 0$) $\\int P\\,dx = 0$ · ขวา ($x = 2$) $\\int_0^1 4\\,dy = 4$ · บน ($y = 1$ จาก $x = 2$ ไป 0) $\\int_2^0 x\\,dx = -2$ · ซ้าย ($x = 0$) ได้ 0"
+        why: "ด้านบนเดินจากขวาไปซ้าย ขอบเขตปริพันธ์จึงเป็นจาก 2 ไป 0"
+      - text: "รวม $0 + 4 - 2 + 0 = 2$ เท่ากับด้านปริพันธ์สองชั้น"
+    answer: "$\\oint_C \\mathbf{F}\\cdot d\\mathbf{r} = 2$"
+  - { type: check, problem: math.calculus.vector-calculus.p008, prompt: "สนามนี้หมุนวน รอบเส้นปิดจึงไม่เป็นศูนย์" }
+glossary:
+  - { term: สนามเวกเตอร์, definition: "ฟังก์ชันที่ให้เวกเตอร์หนึ่งตัวกับแต่ละจุดในระนาบหรือในปริภูมิ" }
+  - { term: ปริพันธ์ตามเส้น, definition: "ปริพันธ์ของฟังก์ชันหรือสนามเวกเตอร์ตามเส้นโค้ง เช่น งานของแรงตามเส้นทาง" }
+  - { term: สนามอนุรักษ์, definition: "สนามเวกเตอร์ที่เป็นเกรเดียนต์ของฟังก์ชันศักย์ ปริพันธ์ตามเส้นไม่ขึ้นกับเส้นทาง" }
+  - { term: ไดเวอร์เจนซ์, definition: "∇·F สเกลาร์ที่วัดการไหลออกสุทธิต่อหน่วยปริมาตรที่จุดหนึ่ง" }
+  - { term: เคิร์ล, definition: "∇×F เวกเตอร์ที่วัดการหมุนวนรอบจุดหนึ่ง" }
+  - { term: ฟลักซ์, definition: "ปริพันธ์ของ F·n บนผิว เช่น ปริมาตรของไหลที่ผ่านผิวต่อหน่วยเวลา" }
+  - { term: ทฤษฎีบทของกรีน, definition: "การหมุนเวียนรอบเส้นปิดในระนาบเท่ากับปริพันธ์สองชั้นของ Qₓ − P_y บนบริเวณภายใน" }
+flashcards:
+  - { front: "∫_C F·dr เมื่อ F = ∇f", back: "f(จุดปลาย) − f(จุดเริ่ม)" }
+  - { front: "ทดสอบสนามอนุรักษ์ในระนาบ", back: "∂P/∂y = ∂Q/∂x (บนบริเวณไม่มีรู)" }
+  - { front: "div F และ curl F", back: "∇·F (สเกลาร์) และ ∇×F (เวกเตอร์)" }
+  - { front: "ทฤษฎีบทของกรีน", back: "∮(P dx + Q dy) = ∬(Qₓ − P_y) dA" }
+  - { front: "ทฤษฎีบทไดเวอร์เจนซ์", back: "ฟลักซ์ออกจากผิวปิด = ∭ div F dV" }
+references:
+  - { title: "6.2 Line Integrals (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/6-2-line-integrals", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.4 Green's Theorem (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/6-4-greens-theorem", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.5 Divergence and Curl (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/6-5-divergence-and-curl", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Divergence theorem", url: "https://en.wikipedia.org/wiki/Divergence_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

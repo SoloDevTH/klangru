@@ -1,0 +1,69 @@
+id: management.project.cpm-pert
+subject: management
+title: { th: การจัดตารางโครงการด้วย CPM และ PERT, en: Project scheduling with CPM and PERT }
+summary: ข่ายงาน AON การคำนวณเดินหน้าและถอยหลัง เวลาลอยตัวและเส้นทางวิกฤต เวลาคาดหมายและความแปรปรวนแบบ PERT การเร่งโครงการ และการติดตามด้วยมูลค่าที่ได้ (PV EV AC)
+difficulty: 6.5
+minutes: 45
+prerequisites: [management.project.project-fundamentals, math.stats.dispersion]
+encompasses:
+  - { id: management.project.project-fundamentals, weight: 0.3 }
+  - { id: math.stats.dispersion, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: aon.svg
+    alt: "ข่ายงาน AON สร้างหอประชุมโรงเรียน (สมมติ) แต่ละกล่องมี ES เวลา EF ด้านบน ชื่อกิจกรรมตรงกลาง LS เวลาลอยรวม LF ด้านล่าง A ออกแบบขออนุญาต 10 วัน 0–10 ลอย 0 · B เตรียมพื้นที่ 5 วัน หลัง A 10–15 ลอย 0 · C ฐานราก 12 วัน หลัง B 15–27 ลอย 0 · D สั่งโครงหลังคา 15 วัน หลัง A ES 10 EF 25 LS 26 LF 41 ลอย 16 · E โครงสร้างเสา 14 วัน หลัง C 27–41 ลอย 0 · F ติดตั้งหลังคา 8 วัน หลัง D และ E 41–49 ลอย 0 · G ไฟฟ้าประปา 10 วัน หลัง E ES 41 EF 51 LS 48 LF 58 ลอย 7 · H ผนังและพื้น 9 วัน หลัง F 49–58 ลอย 0 · I ทาสีตกแต่ง 6 วัน หลัง G และ H 58–64 ลอย 0 เส้นทางวิกฤต A–B–C–E–F–H–I รวม 64 วัน แสดงเป็นเส้นหนาสีแดง"
+    caption: "ข่ายงานหอประชุม เส้นทางวิกฤตเป็นสีแดง (ข้อมูลสมมติ)"
+  - type: worked-example
+    title: เดินหน้าและถอยหลังที่จุดรวมของข่ายงาน
+    problem: "จากข่ายงานหอประชุม จงหา ES ของ F และเวลาลอยตัวรวมของ D และ G พร้อมบอกว่าถ้าสั่งโครงหลังคา (D) ช้าไป 20 วัน โครงการจะเสร็จช้ากี่วัน"
+    steps:
+      - text: "F มีกิจกรรมก่อนหน้าสองตัว EF ของ D = 25 และ EF ของ E = 41 ดังนั้น $ES_F = \\max(25, 41) = 41$"
+        why: "F เริ่มได้เมื่อทั้ง D และ E เสร็จ จึงต้องรอตัวที่เสร็จช้ากว่า"
+      - text: "ถอยหลัง $LF_D = LS_F = 41$ ดังนั้น $LS_D = 41 - 15 = 26$ และลอยรวม $26 - 10 = 16$ วัน"
+      - text: "$LF_G = LS_I = 58$ $LS_G = 48$ ลอยรวม $48 - 41 = 7$ วัน"
+      - text: "D ช้า 20 วันเกินเวลาลอยตัว 16 วันไป 4 วัน โครงการจึงช้า 4 วัน และ D กลายเป็นกิจกรรมวิกฤต"
+    answer: "ES ของ F = 41 วัน ลอยรวมของ D = 16 วัน ของ G = 7 วัน ถ้า D ช้า 20 วัน โครงการช้า 4 วัน"
+  - { type: check, problem: management.project.cpm-pert.p006 }
+  - type: figure
+    src: pert-curve.svg
+    alt: "โค้งระฆังของเวลาเสร็จ ค่าเฉลี่ย tₑ 30.33 วัน ส่วนเบี่ยงเบนมาตรฐาน 2 วัน เส้นแดงที่กำหนดส่ง 32 วัน พื้นที่ด้านซ้ายของเส้นแดงแรเงาสีฟ้า เขียนว่าพื้นที่ประมาณ 0.80"
+    caption: "ความน่าจะเป็นที่จะเสร็จทันคือพื้นที่ใต้โค้งทางซ้ายของกำหนดส่ง"
+  - type: worked-example
+    title: โอกาสเสร็จทันตามแบบ PERT
+    problem: "เส้นทางวิกฤตของงานปรับปรุงห้องปฏิบัติการ (สมมติ) มีสี่กิจกรรม ค่า (a, m, b) เป็นวัน (4, 6, 10), (8, 10, 14), (3, 5, 9), (6, 8, 12) โอกาสที่จะเสร็จภายใน 32 วันเป็นเท่าไร"
+    steps:
+      - text: "$t_e$ ของแต่ละกิจกรรม $\\frac{4 + 24 + 10}{6} \\approx 6.33$, $10.33$, $5.33$, $8.33$ รวม $T_e \\approx 30.33$ วัน"
+      - text: "ความแปรปรวนแต่ละกิจกรรม $\\left(\\frac{b-a}{6}\\right)^2 = 1$ ทุกตัว รวม $\\sigma_T^2 = 4$ จึงได้ $\\sigma_T = 2$ วัน"
+        why: "รวมความแปรปรวนแล้วถอดราก ถ้าบวกส่วนเบี่ยงเบนมาตรฐาน (1+1+1+1 = 4) จะได้ σ ใหญ่เกินจริงเป็นสองเท่า"
+      - text: "$z = \\frac{32 - 30.33}{2} \\approx 0.83$"
+      - text: "$P(Z \\le 0.83) \\approx 0.80$"
+    answer: "ประมาณ 80%"
+  - { type: check, problem: management.project.cpm-pert.p009 }
+  - type: figure
+    src: p-network.svg
+    alt: "ข่ายงานเจ็ดกิจกรรม ปรับปรุงห้องสมุดโรงเรียน (สมมติ) A 4 วัน B 6 วัน เริ่มได้ทันที C 3 วัน หลัง A · D 5 วัน หลังทั้ง A และ B · E 7 วัน หลัง C · F 4 วัน หลัง D · G 2 วัน หลังทั้ง E และ F"
+    caption: "ข่ายงานสำหรับโจทย์ข้อ 4–7 และ 15–16"
+glossary:
+  - { term: ข่ายงาน AON, definition: "แผนภาพที่กิจกรรมเป็นกล่อง และลูกศรแสดงว่ากิจกรรมใดต้องเสร็จก่อน" }
+  - { term: ES EF LS LF, definition: "เวลาเริ่มเร็วสุด เสร็จเร็วสุด เริ่มช้าสุด และเสร็จช้าสุดของกิจกรรม" }
+  - { term: เวลาลอยตัวรวม, definition: "จำนวนวันที่กิจกรรมช้าได้โดยโครงการไม่ช้า เท่ากับ LS − ES" }
+  - { term: เส้นทางวิกฤต, definition: "เส้นทางที่ใช้เวลารวมมากที่สุด กิจกรรมบนเส้นทางนี้ไม่มีเวลาลอยตัว" }
+  - { term: การเร่งโครงการ, definition: "การเพิ่มทรัพยากรให้กิจกรรมวิกฤตสั้นลง โดยเลือกตัวที่ต้นทุนเร่งต่อวันต่ำที่สุดก่อน" }
+  - { term: มูลค่าที่ได้ (EV), definition: "งบประมาณของงานที่ทำเสร็จจริง ใช้เทียบกับแผน (PV) และเงินที่จ่ายจริง (AC)" }
+  - { term: CPI และ SPI, definition: "ดัชนีผลงานด้านต้นทุน EV ÷ AC และด้านกำหนดการ EV ÷ PV น้อยกว่า 1 คือแย่กว่าแผน" }
+flashcards:
+  - { front: "เดินหน้าใช้ค่าอะไรที่จุดรวม", back: "ES = ค่ามากที่สุดของ EF ก่อนหน้า" }
+  - { front: "ถอยหลังใช้ค่าอะไรที่จุดแยก", back: "LF = ค่าน้อยที่สุดของ LS ถัดไป" }
+  - { front: "PERT tₑ และ σ²", back: "tₑ = (a + 4m + b) ÷ 6 · σ² = ((b − a) ÷ 6)²" }
+  - { front: "เร่งโครงการเลือกกิจกรรมใด", back: "กิจกรรมวิกฤตที่ต้นทุนเร่งต่อวันต่ำสุด แล้วตรวจเส้นทางวิกฤตใหม่" }
+  - { front: "EAC เมื่อประสิทธิภาพต้นทุนคงเดิม", back: "BAC ÷ CPI" }
+references:
+  - { title: "Critical path method", url: "https://en.wikipedia.org/wiki/Critical_path_method", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Program evaluation and review technique", url: "https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Earned value management", url: "https://en.wikipedia.org/wiki/Earned_value_management", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

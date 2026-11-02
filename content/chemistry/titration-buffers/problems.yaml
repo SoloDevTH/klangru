@@ -1,0 +1,293 @@
+problems:
+  - id: chemistry.acids-bases.titration-buffers.p001
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 1
+    type: mcq
+    stem: "ในการไทเทรต จุดที่ \"อินดิเคเตอร์เปลี่ยนสีและเราหยุดเติมสารจากบิวเรตต์\" เรียกว่าอะไร"
+    choices:
+      - { id: a, text: "จุดยุติ", correct: true, feedback: "ถูก จุดยุติเป็นสิ่งที่สังเกตได้ ส่วนจุดสมมูลเป็นจุดทางทฤษฎี" }
+      - { id: b, text: "จุดสมมูล", feedback: "จุดสมมูลคือจุดที่กรดและเบสทำปฏิกิริยาพอดีตามสมการ มองไม่เห็นโดยตรง" }
+      - { id: c, text: "จุดกึ่งกลางการสะเทิน", feedback: "จุดนี้คือเมื่อเติมไปครึ่งหนึ่งของปริมาตรที่จุดสมมูล" }
+    hints:
+      - "คำหนึ่งหมายถึงการหยุด"
+      - "อีกคำหนึ่งหมายถึงปริมาณเท่ากันพอดี"
+    solution: "จุดที่อินดิเคเตอร์เปลี่ยนสีคือ **จุดยุติ** ถ้าเลือกอินดิเคเตอร์เหมาะสม จุดยุติจะใกล้จุดสมมูลมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p002
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 2
+    type: numeric
+    stem: "ไทเทรตกรดไฮโดรคลอริก 25.00 mL ด้วย NaOH 0.100 mol/L ใช้ไป 18.40 mL กรดมีความเข้มข้นกี่ mol/L (ตอบทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.0736, unit: mol/L, tolerance: 0.0005 }
+    misconceptions:
+      - { match: 0.1359, feedback: "สลับปริมาตร: C(HCl) = 0.100 × 18.40 / 25.00 ไม่ใช่ 0.100 × 25.00 / 18.40" }
+    hints:
+      - "HCl + NaOH → NaCl + H₂O อัตราส่วน 1 : 1"
+      - "โมล NaOH = 0.100 × 0.01840 แล้วหารด้วยปริมาตรกรด 0.02500 L"
+    solution: "โมล NaOH $= 0.100 \\times 0.01840 = 1.84 \\times 10^{-3}$ mol = โมล HCl ความเข้มข้น $= 1.84 \\times 10^{-3}/0.02500 =$ **0.0736 mol/L**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p003
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 2
+    type: match
+    stem: "จับคู่การไทเทรตกับ pH ที่จุดสมมูล (25 °C)"
+    pairs:
+      - { left: "HCl กับ NaOH", right: "เท่ากับ 7" }
+      - { left: "CH₃COOH กับ NaOH", right: "มากกว่า 7" }
+      - { left: "NH₃ กับ HCl", right: "น้อยกว่า 7" }
+    hints:
+      - "ดูเกลือที่เกิดขึ้นที่จุดสมมูล"
+      - "เกลือของกรดอ่อนเป็นเบส เกลือของเบสอ่อนเป็นกรด"
+    solution: "HCl/NaOH ได้ NaCl → 7 · CH₃COOH/NaOH ได้ CH₃COO⁻ → มากกว่า 7 · NH₃/HCl ได้ NH₄⁺ → น้อยกว่า 7"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p004
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 2
+    type: mcq
+    stem: "สารละลายคู่ใดเป็นสารละลายบัฟเฟอร์"
+    choices:
+      - { id: a, text: "CH₃COOH กับ CH₃COONa", correct: true, feedback: "ถูก กรดอ่อนกับเกลือของเบสคู่" }
+      - { id: b, text: "HCl กับ NaCl", feedback: "HCl เป็นกรดแก่ Cl⁻ ไม่รับโปรตอน จึงรับกรดที่เติมเพิ่มไม่ได้" }
+      - { id: c, text: "NaOH กับ NaCl", feedback: "NaOH เป็นเบสแก่ ไม่มีกรดอ่อนไว้รับเบสที่เติมเพิ่ม" }
+      - { id: d, text: "NaCl กับน้ำ", feedback: "สารละลายเกลือของกรดแก่และเบสแก่ไม่ต้านการเปลี่ยน pH" }
+    hints:
+      - "บัฟเฟอร์ต้องมีทั้งตัวรับ H₃O⁺ และตัวรับ OH⁻"
+      - "มองหากรดอ่อนกับเบสคู่ของมัน"
+    solution: "**CH₃COOH/CH₃COONa** มี CH₃COO⁻ รับกรด และ CH₃COOH รับเบส จึงเป็นบัฟเฟอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p005
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 3
+    type: numeric
+    stem: "ไทเทรตกรดซัลฟิวริก 20.00 mL ด้วย NaOH 0.1000 mol/L ใช้ไป 24.60 mL กรดซัลฟิวริกมีความเข้มข้นกี่ mol/L (ตอบทศนิยมสี่ตำแหน่ง)"
+    answer: { value: 0.0615, unit: mol/L, tolerance: 0.0005 }
+    misconceptions:
+      - { match: 0.123, feedback: "ลืมอัตราส่วน H₂SO₄ : NaOH = 1 : 2 โมลกรดเป็นครึ่งหนึ่งของโมล NaOH" }
+    hints:
+      - "$\\mathrm{H_2SO_4 + 2NaOH \\to Na_2SO_4 + 2H_2O}$"
+      - "โมลกรด = โมล NaOH ÷ 2"
+    solution: "โมล NaOH $= 0.1000 \\times 0.02460 = 2.460 \\times 10^{-3}$ โมล $\\mathrm{H_2SO_4} = 1.230 \\times 10^{-3}$ ความเข้มข้น $= 1.230 \\times 10^{-3}/0.02000 =$ **0.0615 mol/L**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p006
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 3
+    type: mcq
+    stem: "ไทเทรตกรดแอซีติกด้วย NaOH ควรใช้อินดิเคเตอร์ใด"
+    choices:
+      - { id: a, text: "ฟีนอล์ฟทาลีน (เปลี่ยนสีที่ pH 8.3–10.0)", correct: true, feedback: "ถูก จุดสมมูลมี pH ราว 8.7 อยู่ในช่วงชันที่ฟีนอล์ฟทาลีนเปลี่ยนสี" }
+      - { id: b, text: "เมทิลออเรนจ์ (เปลี่ยนสีที่ pH 3.1–4.4)", feedback: "ช่วงนี้อยู่ในบริเวณบัฟเฟอร์ก่อนจุดสมมูลมาก จะเปลี่ยนสีเร็วเกินไป" }
+      - { id: c, text: "เมทิลเรด (เปลี่ยนสีที่ pH 4.4–6.2)", feedback: "ยังต่ำกว่าช่วงชันของกรดอ่อนกับเบสแก่ จะหยุดก่อนถึงจุดสมมูล" }
+    hints:
+      - "เกลือ CH₃COONa ที่จุดสมมูลเป็นกลาง กรด หรือเบส"
+      - "ช่วงเปลี่ยนสีต้องอยู่ในช่วงชันรอบ pH ที่จุดสมมูล"
+    solution: "ที่จุดสมมูลมี CH₃COO⁻ ซึ่งเป็นเบส pH ราว 8–9 จึงเลือก **ฟีนอล์ฟทาลีน**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p007
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 3
+    type: numeric
+    stem: "นักเรียนตรวจน้ำส้มสายชูจากตลาด: ปิเปตต์ 10.00 mL เจือจางเป็น 100.0 mL แบ่งมา 25.00 mL ไทเทรตด้วย NaOH 0.1000 mol/L ใช้ไป 20.85 mL น้ำส้มสายชูมีกรดแอซีติกกี่ % w/v (CH₃COOH 60.05 g/mol ตอบทศนิยมสองตำแหน่ง ข้อมูลสมมติ)"
+    answer: { value: 5.01, unit: "% w/v", tolerance: 0.03 }
+    misconceptions:
+      - { match: 0.5, feedback: "นี่คือความเข้มข้นของสารละลายที่เจือจางแล้ว ต้องคูณด้วย 10 เพราะเจือจางจาก 10 mL เป็น 100 mL" }
+      - { match: 1.25, feedback: "คิดว่ากรดในส่วนที่แบ่งมา 25 mL มาจากน้ำส้มสายชูทั้ง 10 mL ลืมคูณ 100/25" }
+    hints:
+      - "โมลกรดในส่วนที่แบ่งมา = โมล NaOH"
+      - "คูณ 100.0/25.00 ได้โมลทั้งขวด ซึ่งมาจากน้ำส้มสายชู 10.00 mL"
+    solution: "โมล NaOH $= 2.085 \\times 10^{-3}$ ทั้งขวด $= 2.085 \\times 10^{-3} \\times 4 = 8.34 \\times 10^{-3}$ mol ใน 10.00 mL ได้ 0.834 mol/L $\\times 60.05 = 50.1$ g/L $=$ **5.01% w/v**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p008
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 3
+    type: numeric
+    stem: "บัฟเฟอร์มีกรดแอซีติก 0.10 mol/L และโซเดียมแอซีเทต 0.20 mol/L ($K_a = 1.8 \\times 10^{-5}$) มี pH เท่าใด (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 5.04, tolerance: 0.02 }
+    misconceptions:
+      - { match: 4.44, feedback: "กลับเศษกับส่วน ต้องเป็น log([A⁻]/[HA]) = log(0.20/0.10) มีเบสคู่มากกว่า pH จึงสูงกว่า pKa" }
+      - { match: 4.74, feedback: "นี่คือ pKa ซึ่งเท่ากับ pH เฉพาะเมื่อสองส่วนเท่ากัน" }
+    hints:
+      - "pKa = −log(1.8 × 10⁻⁵)"
+      - "pH = pKa + log([CH₃COO⁻]/[CH₃COOH])"
+    solution: "$\\mathrm{p}K_a = 4.74$ $\\mathrm{pH} = 4.74 + \\log(0.20/0.10) = 4.74 + 0.30 =$ **5.04** (ใช้ pKa ละเอียด 4.745 หรือแก้สมการดุลประจุเต็มได้ 5.05)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p009
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 4
+    type: numeric
+    stem: "ภาพเป็นกราฟการไทเทรตกรดอ่อน HA 0.100 mol/L 25.0 mL ด้วย NaOH 0.100 mol/L จงอ่านค่า $\\mathrm{p}K_a$ ของ HA จากกราฟ (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    figure:
+      src: p-unknown-acid.svg
+      alt: "กราฟ pH กับปริมาตร NaOH 0 ถึง 40 mL มีเส้นตารางละเอียดทุก 0.5 mL และทุก 0.5 หน่วย pH กราฟเริ่มที่ pH ราว 2.6 เพิ่มช้า ๆ ผ่าน pH ราว 4.2 ที่ 12.5 mL ราว 4.8 ที่ 20 mL ดิ่งขึ้นเกือบตั้งที่ 25 mL จากราว 6 ถึงราว 11 แล้วค่อย ๆ เข้าใกล้ 12.4"
+    answer: { value: 4.2, tolerance: 0.15 }
+    misconceptions:
+      - { match: 8.5, feedback: "นี่คือ pH ที่จุดสมมูล (25 mL) pKa อ่านที่ครึ่งหนึ่งของปริมาตรที่จุดสมมูล" }
+      - { match: 2.6, feedback: "นี่คือ pH เริ่มต้น ยังไม่มีเบสคู่ จึงไม่ใช่ pKa" }
+    hints:
+      - "หาปริมาตรที่จุดสมมูลจากกลางช่วงชันก่อน"
+      - "ที่ครึ่งหนึ่งของปริมาตรนั้น [HA] = [A⁻] จึงได้ pH = pKa"
+    solution: "จุดสมมูลอยู่ที่ 25.0 mL ครึ่งหนึ่งคือ 12.5 mL อ่าน pH ได้ราว 4.2 จึง $\\mathrm{p}K_a \\approx$ **4.2** ($K_a \\approx 6 \\times 10^{-5}$ ใกล้เคียงกรดเบนโซอิก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p010
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 4
+    type: mcq
+    stem: "ไทเทรตสารละลายแอมโมเนีย 0.100 mol/L ด้วย HCl 0.100 mol/L ที่จุดสมมูล pH ราว 5.3 ควรใช้อินดิเคเตอร์ใด"
+    choices:
+      - { id: a, text: "เมทิลเรด (4.4–6.2)", correct: true, feedback: "ถูก ช่วงเปลี่ยนสีครอบ pH ที่จุดสมมูลและอยู่ในช่วงชัน" }
+      - { id: b, text: "ฟีนอล์ฟทาลีน (8.3–10.0)", feedback: "ฟีนอล์ฟทาลีนหมดสีเมื่อเติมกรดเพียงราว 90% ของที่ต้องใช้ ผลจะต่ำเกินจริง" }
+      - { id: c, text: "บรอมไทมอลบลู (6.0–7.6)", feedback: "ช่วงนี้อยู่บนสุดของช่วงชัน ยังห่างจาก pH 5.3 ผลจะคลาดเคลื่อนได้ เมทิลเรดเหมาะกว่า" }
+    hints:
+      - "จุดสมมูลเป็นกรด เพราะมี NH₄⁺"
+      - "เลือกอินดิเคเตอร์ที่ช่วงเปลี่ยนสีครอบ pH 5.3"
+    solution: "จุดสมมูล pH ราว 5.3 อยู่ในช่วงเปลี่ยนสีของ **เมทิลเรด** (ดูภาพกราฟแอมโมเนียในบทเรียน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p011
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 4
+    type: numeric
+    stem: "เติม HCl 0.100 mol/L 10.00 mL ลงในแอมโมเนีย 0.100 mol/L 25.00 mL ($K_b$ ของ $\\mathrm{NH_3} = 1.8 \\times 10^{-5}$) สารละลายมี pH เท่าใด (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 9.44, tolerance: 0.02 }
+    misconceptions:
+      - { match: 9.08, feedback: "กลับอัตราส่วน: pOH = pKb + log([NH₄⁺]/[NH₃]) = pKb + log(1.0/1.5)" }
+      - { match: 4.56, feedback: "นี่คือ pOH ยังต้องใช้ pH = 14 − pOH" }
+    hints:
+      - "หลังทำปฏิกิริยา: NH₃ เหลือ 2.5 − 1.0 mmol และเกิด NH₄⁺ 1.0 mmol เป็นบัฟเฟอร์"
+      - "pOH = pKb + log([NH₄⁺]/[NH₃]) แล้ว pH = 14 − pOH"
+    solution: "NH₃ 2.50 mmol + HCl 1.00 mmol → NH₃ 1.50 mmol, NH₄⁺ 1.00 mmol $\\mathrm{p}K_b = 4.74$ $\\mathrm{pOH} = 4.74 + \\log(1.00/1.50) = 4.56$ $\\mathrm{pH} =$ **9.44** (ใช้ pKb ละเอียดได้ 9.43)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p012
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 4
+    type: numeric
+    stem: "บัฟเฟอร์ 1.00 L มี CH₃COOH 0.10 mol และ CH₃COONa 0.10 mol ($\\mathrm{p}K_a = 4.74$) เติม HCl 0.010 mol (ไม่คิดการเปลี่ยนปริมาตร) pH ใหม่เป็นเท่าใด (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 4.65, tolerance: 0.02 }
+    misconceptions:
+      - { match: 2, feedback: "นี่คือ pH ถ้าเติม HCl ลงในน้ำเปล่า บัฟเฟอร์ใช้ CH₃COO⁻ รับ H₃O⁺ ไว้" }
+      - { match: 4.83, feedback: "คิดปฏิกิริยากลับทิศ กรดที่เติมทำให้ CH₃COO⁻ ลดลงและ CH₃COOH เพิ่มขึ้น pH ต้องลดลง" }
+    hints:
+      - "CH₃COO⁻ + H₃O⁺ → CH₃COOH + H₂O"
+      - "หลังปฏิกิริยา CH₃COO⁻ 0.09 mol และ CH₃COOH 0.11 mol"
+    solution: "$\\mathrm{pH} = 4.74 + \\log(0.090/0.110) = 4.74 - 0.087 =$ **4.65** ลดลงไม่ถึง 0.1 ขณะที่น้ำเปล่าจะลดจาก 7 เป็น 2"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p013
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการไทเทรตหาความเข้มข้นของกรดด้วย NaOH มาตรฐาน"
+    items:
+      - "ล้างบิวเรตต์ด้วย NaOH มาตรฐาน แล้วเติมให้เต็มและอ่านปริมาตรเริ่มต้น"
+      - "ปิเปตต์สารละลายกรดใส่ขวดรูปกรวย"
+      - "หยดอินดิเคเตอร์ 2–3 หยด"
+      - "หยด NaOH พร้อมแกว่งขวด จนสีเปลี่ยนถาวร แล้วอ่านปริมาตรสุดท้าย"
+      - "ทำซ้ำจนได้ปริมาตรใกล้กันแล้วคำนวณจากค่าเฉลี่ย"
+    hints:
+      - "เตรียมอุปกรณ์และตัวอย่างก่อนเติมอินดิเคเตอร์"
+      - "ผลครั้งเดียวไม่พอ ต้องทำซ้ำ"
+    solution: "เตรียมบิวเรตต์ → ปิเปตต์กรด → หยดอินดิเคเตอร์ → ไทเทรตถึงจุดยุติ → ทำซ้ำแล้วคำนวณ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p014
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 5
+    type: numeric
+    stem: "ต้องการบัฟเฟอร์ pH 5.00 โดยเติม NaOH 0.20 mol/L ลงในกรดแอซีติก 0.20 mol/L 100 mL ($\\mathrm{p}K_a = 4.74$) ต้องเติม NaOH กี่ mL (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 64.5, unit: mL, tolerance: 0.5 }
+    misconceptions:
+      - { match: 50, feedback: "เติมครึ่งหนึ่งได้ pH = pKa = 4.74 แต่ต้องการ 5.00 จึงต้องมีเบสคู่มากกว่ากรด" }
+      - { match: 35.5, feedback: "กลับอัตราส่วน [A⁻]/[HA] ที่ pH สูงกว่า pKa ต้องมี A⁻ มากกว่า HA" }
+    hints:
+      - "อัตราส่วน [A⁻]/[HA] = 10^(5.00 − 4.74)"
+      - "เติม NaOH x mL ได้ A⁻ = 0.20x mmol และ HA เหลือ 0.20(100 − x) mmol"
+    solution: "$[\\mathrm{A^-}]/[\\mathrm{HA}] = 10^{0.26} = 1.82$ จึง $\\dfrac{x}{100 - x} = 1.82$ ได้ $x = 182/2.82 =$ **64.5 mL** (ใช้ pKa 4.745 ได้ 64.3 mL)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p015
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 5
+    type: numeric
+    stem: "ยาลดกรดเม็ดหนึ่งจากร้านขายยามี CaCO₃ ละลายเม็ดยาใน HCl 0.500 mol/L 50.00 mL (มากเกินพอ) แล้วไทเทรต HCl ที่เหลือด้วย NaOH 0.200 mol/L ใช้ไป 32.40 mL เม็ดยามี CaCO₃ กี่กรัม (CaCO₃ 100.09 g/mol ตอบทศนิยมสามตำแหน่ง ข้อมูลสมมติ)"
+    answer: { value: 0.927, unit: g, tolerance: 0.005 }
+    misconceptions:
+      - { match: 1.854, feedback: "ลืมอัตราส่วน CaCO₃ + 2HCl: โมล CaCO₃ เป็นครึ่งหนึ่งของโมล HCl ที่ทำปฏิกิริยา" }
+      - { match: 0.324, feedback: "ใช้โมล HCl ที่เหลือ (ที่ทำปฏิกิริยากับ NaOH) แทนส่วนที่ทำปฏิกิริยากับเม็ดยา" }
+      - { match: 1.251, feedback: "ใช้ HCl ทั้งหมดที่เติม ต้องหักส่วนที่เหลือซึ่งวัดจากการไทเทรตก่อน" }
+    hints:
+      - "นี่คือการไทเทรตย้อนกลับ: HCl ที่ทำปฏิกิริยากับเม็ดยา = HCl ทั้งหมด − HCl ที่เหลือ"
+      - "$\\mathrm{CaCO_3 + 2HCl \\to CaCl_2 + H_2O + CO_2}$"
+    solution: "HCl ทั้งหมด $= 0.0250$ mol เหลือ $= 0.200 \\times 0.03240 = 0.00648$ mol ทำปฏิกิริยากับเม็ดยา $0.01852$ mol CaCO₃ $= 0.00926$ mol $\\times 100.09 =$ **0.927 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p016
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 5
+    type: numeric
+    stem: "บัฟเฟอร์ในเลือดคือ $\\mathrm{H_2CO_3/HCO_3^-}$ ซึ่งมี $\\mathrm{p}K_a = 6.10$ (ที่อุณหภูมิร่างกาย) ถ้าเลือดมี pH 7.40 อัตราส่วน $[\\mathrm{HCO_3^-}]/[\\mathrm{H_2CO_3}]$ เป็นเท่าใด (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 20, tolerance: 0.3 }
+    misconceptions:
+      - { match: 0.05, feedback: "กลับอัตราส่วน pH สูงกว่า pKa จึงต้องมี HCO₃⁻ มากกว่า H₂CO₃" }
+      - { match: 1.3, feedback: "นี่คือ log ของอัตราส่วน ต้องยก 10 กำลัง 1.3" }
+    hints:
+      - "7.40 = 6.10 + log(อัตราส่วน)"
+      - "อัตราส่วน = 10^(7.40 − 6.10)"
+    solution: "$\\log$ อัตราส่วน $= 1.30$ อัตราส่วน $= 10^{1.30} =$ **20.0** เลือดจึงมี HCO₃⁻ มาก ทำให้รับกรด (เช่น กรดแลกติก) ได้ดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p017
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 3
+    type: mcq
+    stem: "ชาวนาในพื้นที่ดินเปรี้ยวจังหวัดนครนายกวัด pH ดินได้ราว 4 ข้าวโตไม่ดี วิธีใดใช้ความรู้กรด-เบสแก้ปัญหาได้เหมาะที่สุด"
+    choices:
+      - { id: a, text: "หว่านปูนมาร์ล (CaCO₃) ตามปริมาณที่คำนวณจากผลวิเคราะห์ดิน", correct: true, feedback: "ถูก คาร์บอเนตสะเทินกรดในดิน การคำนวณช่วยไม่ให้ใส่มากเกิน" }
+      - { id: b, text: "ใส่ปุ๋ยแอมโมเนียมซัลเฟตเพิ่ม", feedback: "แอมโมเนียมซัลเฟตทำให้ดินเป็นกรดมากขึ้น" }
+      - { id: c, text: "ใส่โซดาไฟ (NaOH) ลงในนาให้มาก", feedback: "NaOH เป็นเบสแก่กัดผิว อันตราย และโซเดียมทำลายโครงสร้างดิน" }
+    hints:
+      - "ดินเปรี้ยวมีกรดมากเกิน ต้องใช้เบส"
+      - "เลือกเบสที่ปลอดภัยและไม่ทำลายดิน"
+    solution: "ใช้ **ปูนมาร์ล** ซึ่งเป็นแคลเซียมคาร์บอเนต สะเทินกรด $\\mathrm{CaCO_3 + 2H^+ \\to Ca^{2+} + H_2O + CO_2}$ ปริมาณที่ใส่ควรคำนวณจากความเป็นกรดของดิน (หาได้ด้วยการไทเทรต)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.titration-buffers.p018
+    topics: [chemistry.acids-bases.titration-buffers]
+    difficulty: 4
+    type: mcq
+    stem: "บัฟเฟอร์แอซีเตต 1.0 L สามขวด ขวดใดต้านการเปลี่ยน pH ได้ดีที่สุดเมื่อเติม HCl 0.020 mol"
+    choices:
+      - { id: a, text: "CH₃COOH 0.50 mol/L + CH₃COONa 0.50 mol/L", correct: true, feedback: "ถูก มีทั้งสองส่วนมากและเท่ากัน ความจุบัฟเฟอร์สูงสุด (pH ลดเพียงราว 0.03)" }
+      - { id: b, text: "CH₃COOH 0.050 mol/L + CH₃COONa 0.050 mol/L", feedback: "pH เริ่มต้นเท่ากับขวด a แต่เบสคู่มีน้อย pH ลดราว 0.37" }
+      - { id: c, text: "CH₃COOH 0.90 mol/L + CH₃COONa 0.10 mol/L", feedback: "เบสคู่มีเพียง 0.10 mol ที่จะรับกรด pH ลดราว 0.10 และ pH เริ่มต้นห่างจาก pKa" }
+    hints:
+      - "ส่วนที่รับ HCl คือ CH₃COO⁻"
+      - "ใช้สมการเฮนเดอร์สัน–ฮัสเซลบาล์คคำนวณ pH ก่อนและหลังเติมกรดของแต่ละขวด"
+    solution: "ขวด a: log(0.48/0.52) = −0.035 · ขวด b: log(0.030/0.070) − 0 = −0.37 · ขวด c: log(0.08/0.92) − log(0.10/0.90) = −0.11 ขวด **a** เปลี่ยนน้อยที่สุด เพราะความเข้มข้นสูงและสองส่วนเท่ากัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

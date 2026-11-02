@@ -1,0 +1,59 @@
+id: chemistry.analysis.gas-ion-tests
+subject: chemistry
+title: { th: การทดสอบแก๊สและไอออน, en: Tests for gases and ions }
+summary: ทดสอบแก๊สไฮโดรเจน ออกซิเจน คาร์บอนไดออกไซด์ และคลอรีน ทดสอบไอออนด้วยสีเปลวไฟและตะกอน และคำนวณปริมาณไอออนจากมวลตะกอน
+difficulty: 5
+minutes: 40
+prerequisites: [chemistry.acids-bases.acid-base-ph, chemistry.bonding.ionic]
+encompasses:
+  - { id: chemistry.bonding.ionic, weight: 0.4 }
+  - { id: chemistry.acids-bases.acid-base-ph, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: precipitate-colours.svg
+    alt: "ตารางผลการทดสอบไอออน ด้านซ้าย เติม NaOH ทีละหยด: Cu²⁺ ตะกอนสีฟ้า ไม่ละลายใน NaOH มากเกินพอ Fe²⁺ ตะกอนเขียวหม่น ไม่ละลาย ผิวหน้าค่อย ๆ เป็นสีน้ำตาล Fe³⁺ ตะกอนน้ำตาลแดง ไม่ละลาย Ca²⁺ และ Mg²⁺ ตะกอนขาว ไม่ละลาย Al³⁺ และ Zn²⁺ ตะกอนขาว ละลายได้สารละลายใสเมื่อเติม NaOH มากเกินพอ ด้านขวาบน สีเปลวไฟ: Li⁺ แดงเข้ม Na⁺ เหลืองส้ม K⁺ ม่วงอ่อน Ca²⁺ ส้มแดง Cu²⁺ เขียว ด้านขวาล่าง เติม HNO₃ แล้ว AgNO₃: Cl⁻ ตะกอนขาว Br⁻ ขาวครีม I⁻ เหลือง และหมายเหตุว่าเติม HCl แล้ว BaCl₂ ซัลเฟตให้ตะกอนขาว BaSO₄"
+    caption: "สีของตะกอนและเปลวไฟที่ใช้ระบุไอออน"
+  - { type: check, problem: chemistry.analysis.gas-ion-tests.p004, prompt: "ตะกอนสีฟ้ากับ NaOH บอกไอออนใด" }
+  - type: worked-example
+    title: ระบุเกลือจากผลการทดสอบ
+    problem: "ผงขาวชนิดหนึ่งละลายน้ำได้ใส ทดสอบเปลวไฟได้สีม่วงอ่อน เติม HCl เจือจางไม่มีฟองแก๊ส แล้วเติม BaCl₂ ได้ตะกอนขาว ผงนี้คือสารใด"
+    steps:
+      - text: "เปลวไฟสีม่วงอ่อน (ไลแลก) บอกว่ามี $\\mathrm{K^+}$"
+      - text: "เติมกรดแล้วไม่มีฟอง จึงไม่มีคาร์บอเนต"
+        why: "ถ้ามี CO₃²⁻ จะเกิดฟอง CO₂ ทันทีที่เติมกรด"
+      - text: "ตะกอนขาวกับ $\\mathrm{BaCl_2}$ ในสารละลายที่เป็นกรด คือ $\\mathrm{BaSO_4}$ จึงมี $\\mathrm{SO_4^{2-}}$"
+      - text: "รวมไอออนบวกและลบให้ประจุสุทธิเป็นศูนย์: $\\mathrm{2K^+ + SO_4^{2-}}$ ได้ $\\mathrm{K_2SO_4}$"
+    answer: "โพแทสเซียมซัลเฟต K₂SO₄"
+  - type: worked-example
+    title: ซัลเฟตในน้ำบาดาลจากมวลตะกอน
+    problem: "นำน้ำบาดาล 500 mL มาเติม HCl และ BaCl₂ มากเกินพอ กรองตะกอน BaSO₄ อบแห้งได้ 0.466 g น้ำนี้มีซัลเฟตกี่ mg/L (BaSO₄ 233.39 g/mol, SO₄²⁻ 96.06 g/mol ข้อมูลสมมติ)"
+    steps:
+      - text: "โมล $\\mathrm{BaSO_4} = 0.466 / 233.39 = 0.00200$ mol"
+      - text: "$\\mathrm{Ba^{2+} + SO_4^{2-} \\to BaSO_4}$ อัตราส่วน 1 : 1 จึงมี $\\mathrm{SO_4^{2-}}$ 0.00200 mol"
+      - text: "มวลซัลเฟต $= 0.00200 \\times 96.06 = 0.192$ g $= 192$ mg"
+      - text: "อยู่ในน้ำ 0.500 L: $192 / 0.500 = 384$ mg/L"
+        why: "ต้องหารด้วยปริมาตรตัวอย่างเป็นลิตรจึงได้หน่วย mg/L"
+    answer: "ราว 384 mg/L ซึ่งเกินเกณฑ์น้ำประปาดื่มได้ (ไม่เกิน 250 mg/L)"
+  - { type: check, problem: chemistry.analysis.gas-ion-tests.p006, prompt: "กรดที่เติมต้องไม่ใส่ไอออนที่เรากำลังหา" }
+glossary:
+  - { term: การวิเคราะห์เชิงคุณภาพ, definition: "การระบุว่ามีสารหรือไอออนใดอยู่ จากสิ่งที่สังเกตได้ เช่น สีตะกอน แก๊ส สีเปลวไฟ" }
+  - { term: การทดสอบเปลวไฟ, definition: "การนำสารเข้าเปลวไฟร้อนแล้วดูสีของแสงที่ไอออนโลหะปล่อยออกมา" }
+  - { term: น้ำปูนใส, definition: "สารละลายแคลเซียมไฮดรอกไซด์ ขุ่นขาวเมื่อมีแก๊ส CO₂ ผ่าน" }
+  - { term: ตะกอน, definition: "ของแข็งที่ไม่ละลายซึ่งเกิดขึ้นเมื่อผสมสารละลายสองชนิด" }
+  - { term: ก้านไม้ที่มีถ่านแดง, definition: "ก้านไม้ที่ไฟดับแล้วแต่ปลายยังแดง ใช้ทดสอบออกซิเจน" }
+flashcards:
+  - { front: "H₂ / O₂", back: "ไม้ลุกไฟ → เสียงป๊อก / ไม้ถ่านแดง → ลุกเป็นไฟใหม่" }
+  - { front: "CO₂ / Cl₂", back: "น้ำปูนใสขุ่นขาว / ลิตมัสน้ำเงินชื้นเป็นแดงแล้วซีดขาว" }
+  - { front: "สีเปลวไฟ Li Na K Ca Cu", back: "แดงเข้ม เหลืองส้ม ม่วงอ่อน ส้มแดง เขียว" }
+  - { front: "ตะกอนกับ NaOH: Cu²⁺ Fe²⁺ Fe³⁺", back: "ฟ้า เขียวหม่น น้ำตาลแดง" }
+  - { front: "AgCl AgBr AgI", back: "ขาว ขาวครีม เหลือง (เติม HNO₃ ก่อน AgNO₃)" }
+references:
+  - { title: "Flame test", url: "https://en.wikipedia.org/wiki/Flame_test", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Qualitative inorganic analysis", url: "https://en.wikipedia.org/wiki/Qualitative_inorganic_analysis", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.5 Quantitative Chemical Analysis (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/4-5-quantitative-chemical-analysis", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

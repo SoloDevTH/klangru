@@ -1,0 +1,78 @@
+id: chemistry.acids-bases.titration-buffers
+subject: chemistry
+title: { th: การไทเทรตและสารละลายบัฟเฟอร์, en: Titration and buffer solutions }
+summary: หลักการไทเทรตกรด-เบส จุดสมมูลและจุดยุติ กราฟการไทเทรต การเลือกอินดิเคเตอร์ การคำนวณความเข้มข้น สารละลายบัฟเฟอร์ และสมการเฮนเดอร์สัน–ฮัสเซลบาล์ค
+difficulty: 7
+minutes: 50
+prerequisites: [chemistry.acids-bases.acid-base-ph, chemistry.stoichiometry.reactions]
+encompasses:
+  - { id: chemistry.acids-bases.acid-base-ph, weight: 0.5 }
+  - { id: chemistry.stoichiometry.reactions, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: หาปริมาณกรดในน้ำส้มสายชู
+    problem: "ปิเปตต์น้ำส้มสายชู 5.00 mL เติมน้ำกลั่นในขวดวัดปริมาตรจนเป็น 50.00 mL แล้วแบ่งมา 20.00 mL ไทเทรตด้วย NaOH 0.1000 mol/L ใช้ไป 16.40 mL (ฟีนอล์ฟทาลีน) น้ำส้มสายชูมีกรดแอซีติกกี่ % w/v (CH₃COOH 60.05 g/mol ข้อมูลสมมติ)"
+    steps:
+      - text: "โมล NaOH $= 0.1000 \\times 0.01640 = 1.640 \\times 10^{-3}$ mol"
+      - text: "$\\mathrm{CH_3COOH : NaOH = 1 : 1}$ จึงมีกรด $1.640 \\times 10^{-3}$ mol ในส่วนที่แบ่งมา 20.00 mL"
+      - text: "ทั้งขวด 50.00 mL มีกรด $1.640 \\times 10^{-3} \\times \\dfrac{50.00}{20.00} = 4.100 \\times 10^{-3}$ mol ซึ่งมาจากน้ำส้มสายชู 5.00 mL"
+        why: "กรดทั้งหมดในขวดมาจากน้ำส้มสายชูที่ปิเปตต์มา การเติมน้ำไม่เปลี่ยนจำนวนโมล"
+      - text: "ความเข้มข้นเดิม $= 4.100 \\times 10^{-3} / 0.00500 = 0.820$ mol/L"
+      - text: "เป็นกรัมต่อลิตร $0.820 \\times 60.05 = 49.2$ g/L หรือ 4.92 g ต่อ 100 mL"
+    answer: "ราว 4.92% w/v ใกล้กับฉลาก 5%"
+  - type: figure
+    src: titration-indicators.svg
+    alt: "กราฟ pH กับปริมาตร HCl 0.100 mol/L ที่เติมลงในแอมโมเนีย 0.100 mol/L 25.0 mL แกนนอน 0 ถึง 40 mL แกนตั้ง pH 0 ถึง 14 กราฟเริ่มที่ pH ราว 11.1 ลดลงช้า ๆ ผ่านจุดสีแดงที่ 12.5 mL pH ราว 9.26 (ครึ่งทาง pH = 14 − pKb) แล้วดิ่งลงเกือบตั้งที่ 25.0 mL จากราว 7 ลงไปราว 3.5 เส้นประแนวตั้งบอกจุดสมมูล 25.0 mL pH 5.28 จากนั้นค่อย ๆ ลดไปราว 1.6 ที่ 40 mL แถบสีแนวนอนแสดงช่วงเปลี่ยนสี ฟีนอล์ฟทาลีน 8.3–10.0 (อยู่เหนือช่วงชัน) เมทิลเรด 4.4–6.2 และเมทิลออเรนจ์ 3.1–4.4 (อยู่ในช่วงชัน)"
+    caption: "ไทเทรตเบสอ่อนด้วยกรดแก่ จุดสมมูลเป็นกรด (pH 5.28) จึงเลือกเมทิลเรด ไม่ใช่ฟีนอล์ฟทาลีน"
+  - { type: check, problem: chemistry.acids-bases.titration-buffers.p006, prompt: "จุดสมมูลของกรดอ่อนกับเบสแก่มี pH มากหรือน้อยกว่า 7" }
+  - type: interactive
+    title: ส่วนบัฟเฟอร์ของกราฟการไทเทรต
+    caption: "กราฟคือ pH = pKa + log(x/(25 − x)) เมื่อเติม NaOH x mL ลงในกรดอ่อนที่ต้องใช้ NaOH 25 mL ถึงจุดสมมูล เลื่อน p (ค่า pKa) แล้วสังเกตว่าที่ x = 12.5 mL ค่า pH เท่ากับ pKa เสมอ และช่วงกลางราบเพราะเป็นบัฟเฟอร์ (สูตรนี้ใช้ไม่ได้ใกล้ 0 และ 25 mL)"
+    widget:
+      kind: function-plot
+      functions: ["p+\\log_{10}\\left(\\frac{x}{25-x}\\right)"]
+      sliders:
+        - { name: p, min: 3, max: 10, step: 0.25, value: 4.75, label: pKa }
+      x: [0, 25]
+      y: [0, 14]
+  - type: figure
+    src: buffer-vs-water.svg
+    alt: "กราฟ pH กับปริมาตร HCl 0.10 mol/L ที่เติม 0 ถึง 20 mL ลงในของเหลว 100 mL สองชนิด เส้นสีแดงคือน้ำบริสุทธิ์ เริ่มที่ pH 7 แล้วดิ่งลงเหลือราว 3 ทันทีที่เติม 1 mL และราว 1.8 ที่ 20 mL เส้นสีน้ำเงินคือบัฟเฟอร์ CH₃COOH 0.10 กับ CH₃COONa 0.10 mol/L เริ่มที่ pH 4.74 และลดลงเหลือเพียงราว 4.57 ที่ 20 mL"
+    caption: "เติมกรดเท่ากัน น้ำบริสุทธิ์ pH ลดลงกว่า 5 หน่วย แต่บัฟเฟอร์ลดลงไม่ถึง 0.2 หน่วย"
+  - type: worked-example
+    title: pH ของบัฟเฟอร์หลังเติมกรด
+    problem: "บัฟเฟอร์ 500 mL มี CH₃COOH 0.20 mol/L และ CH₃COONa 0.20 mol/L ($\\mathrm{p}K_a = 4.74$) เติม HCl 0.020 mol (ปริมาตรน้อยมาก ไม่คิดการเปลี่ยนปริมาตร) pH เป็นเท่าใด เทียบกับเติม HCl เท่ากันลงในน้ำ 500 mL"
+    steps:
+      - text: "โมลเริ่มต้น: $\\mathrm{CH_3COOH} = 0.20 \\times 0.500 = 0.10$ mol และ $\\mathrm{CH_3COO^-} = 0.10$ mol"
+      - text: "$\\mathrm{CH_3COO^- + H_3O^+ \\to CH_3COOH + H_2O}$ ได้ $\\mathrm{CH_3COO^-} = 0.10 - 0.020 = 0.080$ mol และ $\\mathrm{CH_3COOH} = 0.10 + 0.020 = 0.12$ mol"
+        why: "กรดแก่ที่เติมถูกเบสคู่ในบัฟเฟอร์รับไว้จนหมด จึงคิดปฏิกิริยาก่อนใช้สมการ"
+      - text: "$\\mathrm{pH} = 4.74 + \\log\\dfrac{0.080}{0.12} = 4.74 - 0.18 = 4.56$"
+        why: "อยู่ในปริมาตรเดียวกัน จึงใช้อัตราส่วนโมลแทนความเข้มข้นได้"
+      - text: "ในน้ำ: $[\\mathrm{H_3O^+}] = 0.020/0.500 = 0.040$ mol/L ได้ pH 1.40"
+    answer: "บัฟเฟอร์ pH 4.56 (ลดลง 0.18) ส่วนน้ำ pH 1.40 (ลดลง 5.6)"
+  - { type: check, problem: chemistry.acids-bases.titration-buffers.p004, prompt: "บัฟเฟอร์ต้องมีทั้งตัวรับกรดและตัวรับเบส" }
+glossary:
+  - { term: การไทเทรต, definition: "การหาปริมาณสารโดยค่อย ๆ เติมสารละลายมาตรฐานจนทำปฏิกิริยาพอดี" }
+  - { term: สารละลายมาตรฐาน, definition: "สารละลายที่รู้ความเข้มข้นแน่นอน ใช้ในการไทเทรต" }
+  - { term: จุดสมมูล, definition: "จุดที่สารทำปฏิกิริยาพอดีตามอัตราส่วนโมลในสมการ" }
+  - { term: จุดยุติ, definition: "จุดที่อินดิเคเตอร์เปลี่ยนสีและหยุดการไทเทรต" }
+  - { term: อินดิเคเตอร์กรด-เบส, definition: "กรดอ่อนที่รูปกรดและรูปเบสมีสีต่างกัน เปลี่ยนสีในช่วง pH แคบ ๆ" }
+  - { term: สารละลายบัฟเฟอร์, definition: "สารละลายของกรดอ่อนกับเบสคู่ (หรือเบสอ่อนกับกรดคู่) ที่รักษา pH ไว้ได้เมื่อเติมกรดหรือเบสเล็กน้อย" }
+  - { term: ความจุบัฟเฟอร์, definition: "ปริมาณกรดหรือเบสที่บัฟเฟอร์รับได้ก่อน pH เปลี่ยนมาก ขึ้นกับความเข้มข้นของทั้งสองส่วน" }
+flashcards:
+  - { front: "จุดสมมูล vs จุดยุติ", back: "ทำปฏิกิริยาพอดี (ทฤษฎี) / อินดิเคเตอร์เปลี่ยนสี (ที่สังเกตได้)" }
+  - { front: "อินดิเคเตอร์สำหรับกรดอ่อน + เบสแก่ / กรดแก่ + เบสอ่อน", back: "ฟีนอล์ฟทาลีน / เมทิลเรด" }
+  - { front: "สมการเฮนเดอร์สัน–ฮัสเซลบาล์ค", back: "pH = pKa + log([A⁻]/[HA])" }
+  - { front: "pH ที่จุดกึ่งกลางการสะเทินกรดอ่อน", back: "pH = pKa" }
+  - { front: "บัฟเฟอร์ในเลือด", back: "H₂CO₃/HCO₃⁻ รักษา pH ราว 7.35–7.45" }
+references:
+  - { title: "การไทเทรต", url: "https://th.wikipedia.org/wiki/การไทเทรต", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "สารละลายบัฟเฟอร์", url: "https://th.wikipedia.org/wiki/สารละลายบัฟเฟอร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "14.6 Buffers (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/14-6-buffers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "14.7 Acid-Base Titrations (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/14-7-acid-base-titrations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,296 @@
+problems:
+  - id: math.calculus.vector-calculus.p001
+    topics: [math.calculus.vector-calculus]
+    difficulty: 1
+    type: mcq
+    stem: "ข้อใดเป็นสนามเวกเตอร์"
+    choices:
+      - { id: a, text: "$\\mathbf{F}(x, y) = \\langle y, -x\\rangle$", correct: true, feedback: "ถูก ทุกจุด $(x, y)$ ได้เวกเตอร์หนึ่งตัว" }
+      - { id: b, text: "$f(x, y) = x^2 + y^2$", feedback: "ให้ตัวเลขหนึ่งตัวต่อจุด จึงเป็นฟังก์ชันสเกลาร์ (แต่เกรเดียนต์ของมันเป็นสนามเวกเตอร์)" }
+      - { id: c, text: "$\\mathbf{r}(t) = \\langle \\cos t, \\sin t\\rangle$", feedback: "นี่คือเส้นโค้งที่อิงตัวแปรเสริม $t$ ตัวเดียว ไม่ได้ให้เวกเตอร์กับทุกจุดในระนาบ" }
+    hints:
+      - "สนามเวกเตอร์รับจุดเข้าไปแล้วให้เวกเตอร์ออกมา"
+      - "ดูว่าแต่ละข้อรับอะไรเป็นข้อมูลเข้าและให้อะไรออก"
+    solution: "**$\\langle y, -x\\rangle$** ให้เวกเตอร์กับทุกจุด $(x, y)$ ส่วน $x^2 + y^2$ เป็นสเกลาร์ และ $\\mathbf{r}(t)$ เป็นเส้นโค้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p002
+    topics: [math.calculus.vector-calculus]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $\\mathbf{F} = \\langle x^2y,\\; 3yz,\\; xz\\rangle$ จงหา $\\nabla\\cdot\\mathbf{F}$ ที่จุด $(1, 1, 1)$"
+    answer: { value: 6 }
+    misconceptions:
+      - { match: 5, feedback: "หาอนุพันธ์ผิดตัวแปร ($P_y + Q_z + R_x$) ไดเวอร์เจนซ์คือ $P_x + Q_y + R_z$" }
+    hints:
+      - "$\\nabla\\cdot\\mathbf{F} = \\dfrac{\\partial P}{\\partial x} + \\dfrac{\\partial Q}{\\partial y} + \\dfrac{\\partial R}{\\partial z}$"
+      - "$P_x = 2xy$, $Q_y = 3z$, $R_z = x$"
+    solution: "$\\nabla\\cdot\\mathbf{F} = 2xy + 3z + x$ ที่ $(1, 1, 1)$ ได้ $2 + 3 + 1 =$ **6**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p003
+    topics: [math.calculus.vector-calculus]
+    difficulty: 2
+    type: expression
+    stem: "ให้ $\\mathbf{F} = \\langle x^2,\\; xy,\\; yz\\rangle$ จงหา $\\nabla\\cdot\\mathbf{F}$"
+    prefix: "\\nabla\\cdot\\mathbf{F} ="
+    answer: { latex: "3x+y", variables: [x, y] }
+    misconceptions:
+      - { match: "x^2+xy+yz", feedback: "นั่นคือผลบวกขององค์ประกอบ ต้องหาอนุพันธ์ย่อยของแต่ละองค์ประกอบตามตัวแปรของมันก่อน" }
+      - { match: "2x+y", feedback: "ลืม $Q_y$: อนุพันธ์ของ $xy$ เทียบ $y$ คือ $x$" }
+    hints:
+      - "$P_x$, $Q_y$, $R_z$"
+      - "$\\partial(x^2)/\\partial x = 2x$, $\\partial(xy)/\\partial y = x$, $\\partial(yz)/\\partial z = y$"
+    solution: "$2x + x + y = 3x + y$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p004
+    topics: [math.calculus.vector-calculus]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_C \\mathbf{F}\\cdot d\\mathbf{r}$ เมื่อ $\\mathbf{F} = \\langle y, x\\rangle$ และ $C$ เป็นเส้นทางใด ๆ จาก $(0, 0)$ ถึง $(2, 3)$"
+    answer: { value: 6 }
+    misconceptions:
+      - { match: 0, feedback: "ศูนย์เกิดเฉพาะเส้นทางปิด ที่นี่จุดเริ่มและจุดปลายต่างกัน" }
+      - { match: 5, feedback: "นี่คือ $2 + 3$ ฟังก์ชันศักย์คือ $f = xy$ ไม่ใช่ $x + y$" }
+    hints:
+      - "$P_y = 1 = Q_x$ สนามนี้อนุรักษ์"
+      - "หา $f$ ที่ $f_x = y$ และ $f_y = x$ แล้วใช้ $f(2, 3) - f(0, 0)$"
+    solution: "$f = xy$ จึงได้ $f(2, 3) - f(0, 0) = 6 - 0 =$ **6** ไม่ขึ้นกับเส้นทาง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p005
+    topics: [math.calculus.vector-calculus]
+    difficulty: 3
+    type: numeric
+    stem: "ลวดตรงจาก $(0, 0)$ ถึง $(3, 4)$ มีความหนาแน่น $\\rho(x, y) = x + y$ กรัมต่อหน่วยความยาว จงหามวลของลวด $\\displaystyle\\int_C (x + y)\\,ds$ เป็นกรัม"
+    answer: { value: 17.5, unit: g, tolerance: 0.01 }
+    misconceptions:
+      - { match: 3.5, feedback: "ลืมคูณ $|\\mathbf{r}'(t)| = 5$ ซึ่งแปลง $dt$ เป็นความยาว $ds$" }
+    hints:
+      - "$\\mathbf{r}(t) = \\langle 3t, 4t\\rangle$, $0 \\le t \\le 1$ ได้ $|\\mathbf{r}'(t)| = 5$"
+      - "$\\int_0^1 (3t + 4t)\\cdot 5\\,dt$"
+    solution: "$\\int_0^1 7t \\cdot 5\\,dt = 35 \\cdot \\tfrac12 =$ **17.5 g**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p006
+    topics: [math.calculus.vector-calculus]
+    difficulty: 3
+    type: expression
+    stem: "จงหาฟังก์ชันศักย์ $f(x, y)$ ของ $\\mathbf{F} = \\langle 2xy + 3,\\; x^2 + 4y\\rangle$ ที่มี $f(0, 0) = 0$"
+    prefix: "f(x, y) ="
+    answer: { latex: "x^2y+3x+2y^2", variables: [x, y] }
+    misconceptions:
+      - { match: "2x^2y+3x+2y^2", feedback: "นับพจน์ $x^2y$ ซ้ำ พจน์นี้ได้จากการหาปริพันธ์ $P$ แล้ว เมื่อหาปริพันธ์ $Q$ ให้เติมเฉพาะพจน์ที่ขึ้นกับ $y$ อย่างเดียว" }
+      - { match: "x^2y+3x", feedback: "ลืมพจน์ $g(y)$ ตรวจ $f_y = x^2$ ยังขาด $4y$ จึงต้องมี $2y^2$" }
+    hints:
+      - "$f = \\int (2xy + 3)\\,dx = x^2y + 3x + g(y)$"
+      - "ให้ $f_y = x^2 + g'(y) = x^2 + 4y$"
+    solution: "$g'(y) = 4y$ ได้ $g = 2y^2$ (ค่าคงตัว 0 เพราะ $f(0, 0) = 0$) จึง $f = x^2y + 3x + 2y^2$ ตรวจ: $f_x = 2xy + 3$, $f_y = x^2 + 4y$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p007
+    topics: [math.calculus.vector-calculus]
+    difficulty: 3
+    type: mcq
+    stem: "สนามเวกเตอร์ใดเป็นสนามอนุรักษ์บนระนาบทั้งระนาบ"
+    choices:
+      - { id: a, text: "$\\langle 2x + y,\\; x + 2y\\rangle$", correct: true, feedback: "ถูก $P_y = 1 = Q_x$ (ศักย์ $x^2 + xy + y^2$)" }
+      - { id: b, text: "$\\langle -y,\\; x\\rangle$", feedback: "$P_y = -1$ แต่ $Q_x = 1$ สนามนี้หมุนวน" }
+      - { id: c, text: "$\\langle xy,\\; x\\rangle$", feedback: "$P_y = x$ แต่ $Q_x = 1$ ไม่เท่ากันทุกจุด" }
+      - { id: d, text: "$\\langle y^2,\\; x\\rangle$", feedback: "$P_y = 2y$ แต่ $Q_x = 1$" }
+    hints:
+      - "ตรวจ $\\partial P/\\partial y = \\partial Q/\\partial x$"
+      - "ต้องเท่ากันทุกจุด ไม่ใช่บางจุด"
+    solution: "เฉพาะ **$\\langle 2x + y, x + 2y\\rangle$** ที่ $P_y = Q_x = 1$ และมีฟังก์ชันศักย์ $f = x^2 + xy + y^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p008
+    topics: [math.calculus.vector-calculus]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาการหมุนเวียน $\\oint_C \\mathbf{F}\\cdot d\\mathbf{r}$ ของ $\\mathbf{F} = \\langle -y, x\\rangle$ รอบวงกลมหนึ่งหน่วย เดินทวนเข็มนาฬิกา (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 6.283, tolerance: 0.003 }
+    misconceptions:
+      - { match: 0, feedback: "รอบเส้นปิดได้ศูนย์เฉพาะสนามอนุรักษ์ สนามนี้มี $Q_x - P_y = 2$" }
+      - { match: -6.283, feedback: "นี่คือค่าเมื่อเดินตามเข็มนาฬิกา โจทย์กำหนดทวนเข็มนาฬิกา" }
+    hints:
+      - "$\\mathbf{r}(t) = \\langle\\cos t, \\sin t\\rangle$, $0 \\le t \\le 2\\pi$"
+      - "$\\mathbf{F}\\cdot\\mathbf{r}' = \\sin^2 t + \\cos^2 t = 1$"
+    solution: "$\\int_0^{2\\pi} 1\\,dt = 2\\pi \\approx$ **6.283** (ตรวจด้วยกรีน: $\\iint 2\\,dA = 2\\pi$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p009
+    topics: [math.calculus.vector-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้ทฤษฎีบทของกรีนหา $\\oint_C (x^2 - y)\\,dx + (x + y^2)\\,dy$ เมื่อ $C$ เป็นขอบสี่เหลี่ยมผืนผ้า $0 \\le x \\le 2$, $0 \\le y \\le 3$ เดินทวนเข็มนาฬิกา"
+    answer: { value: 12 }
+    misconceptions:
+      - { match: -12, feedback: "สลับลำดับเป็น $P_y - Q_x$ สูตรของกรีนคือ $Q_x - P_y$" }
+      - { match: 6, feedback: "นี่คือพื้นที่ ยังต้องคูณด้วย $Q_x - P_y = 2$" }
+    hints:
+      - "$P = x^2 - y$, $Q = x + y^2$"
+      - "$Q_x - P_y = 1 - (-1) = 2$ แล้วคูณพื้นที่"
+    solution: "$\\iint_D 2\\,dA = 2 \\times (2 \\times 3) =$ **12** (คิดตรงทั้งสี่ด้านก็ได้ 12)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p010
+    topics: [math.calculus.vector-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้สูตรพื้นที่จากทฤษฎีบทของกรีน $A = \\tfrac12\\oint_C (x\\,dy - y\\,dx)$ หาพื้นที่ของวงรี $x = 4\\cos t$, $y = 3\\sin t$, $0 \\le t \\le 2\\pi$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 37.7, tolerance: 0.04 }
+    misconceptions:
+      - { match: 75.4, feedback: "ลืมคูณ $\\tfrac12$" }
+      - { match: 12, feedback: "นี่คือ $ab$ พื้นที่วงรีคือ $\\pi ab$" }
+    hints:
+      - "$x\\,dy - y\\,dx = (4\\cos t)(3\\cos t)\\,dt - (3\\sin t)(-4\\sin t)\\,dt$"
+      - "ได้ $12\\,dt$ แล้วหาปริพันธ์ 0 ถึง $2\\pi$"
+    solution: "$x\\,dy - y\\,dx = 12(\\cos^2 t + \\sin^2 t)\\,dt = 12\\,dt$ ได้ $A = \\tfrac12 \\cdot 12 \\cdot 2\\pi = 12\\pi \\approx$ **37.70**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p011
+    topics: [math.calculus.vector-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "โดรนพ่นยาในนาข้าวบินผ่านลมที่ทำให้เกิดแรง $\\mathbf{F} = \\langle y^2, x\\rangle$ (หน่วยสมมติ) ตามเส้นทาง $C_1$ ซึ่งเป็นพาราโบลา $y = x^2$ จาก $(0, 0)$ ถึง $(1, 1)$ ดังภาพ จงหางานของแรงนี้ตาม $C_1$ (ตอบทศนิยมสามตำแหน่ง)"
+    figure:
+      src: p-two-paths.svg
+      alt: "สนามเวกเตอร์ F = ⟨y², x⟩ บนสี่เหลี่ยม 0 ถึง 1.2 ลูกศรชี้ขึ้นเกือบตั้งใกล้แกน x และเอียงไปทางขวามากขึ้นเมื่อ y เพิ่ม มีเส้นทางสองเส้นจาก (0, 0) ถึง (1, 1) เส้นทึบสีแดง C₁ ตามพาราโบลา y = x² และเส้นประสีเขียว C₂ ตามเส้นตรง y = x"
+    answer: { value: 0.867, tolerance: 0.002 }
+    misconceptions:
+      - { match: 0.833, feedback: "นี่คืองานตามเส้นตรง $C_2$ สนามนี้ไม่อนุรักษ์ ($P_y = 2y \\ne Q_x = 1$) งานจึงขึ้นกับเส้นทาง" }
+    hints:
+      - "$\\mathbf{r}(t) = \\langle t, t^2\\rangle$ ได้ $\\mathbf{r}'(t) = \\langle 1, 2t\\rangle$"
+      - "$\\mathbf{F}\\cdot\\mathbf{r}' = t^4 + t \\cdot 2t$"
+    solution: "$\\int_0^1 (t^4 + 2t^2)\\,dt = \\tfrac15 + \\tfrac23 = \\tfrac{13}{15} \\approx$ **0.867** ส่วนตาม $C_2$ ได้ $\\tfrac56 \\approx 0.833$ ต่างกันเพราะสนามไม่อนุรักษ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p012
+    topics: [math.calculus.vector-calculus]
+    difficulty: 4
+    type: match
+    stem: "จับคู่ทฤษฎีบทกับความสัมพันธ์"
+    pairs:
+      - { left: "ทฤษฎีบทหลักมูลของปริพันธ์ตามเส้น", right: "∫_C ∇f·dr = f(ปลาย) − f(เริ่ม)" }
+      - { left: "ทฤษฎีบทของกรีน", right: "∮_C P dx + Q dy = ∬_D (Qₓ − P_y) dA" }
+      - { left: "ทฤษฎีบทของสโตกส์", right: "∮_C F·dr = ∬_S (∇×F)·n dS" }
+      - { left: "ทฤษฎีบทไดเวอร์เจนซ์", right: "∯_S F·n dS = ∭_E ∇·F dV" }
+    hints:
+      - "ทุกทฤษฎีบทเชื่อมค่าบนขอบกับอนุพันธ์ภายใน"
+      - "ขอบของผิวคือเส้นโค้ง ขอบของทรงตันคือผิวปิด"
+    solution: "หลักมูล: จุดปลายของเส้น · กรีน: เส้นปิดกับบริเวณในระนาบ · สโตกส์: เส้นปิดกับผิวในสามมิติ · ไดเวอร์เจนซ์: ผิวปิดกับทรงตัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p013
+    topics: [math.calculus.vector-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "ให้ $\\mathbf{F} = \\langle -y, x, 0\\rangle$ และ $S$ เป็นครึ่งทรงกลม $x^2 + y^2 + z^2 = 4$, $z \\ge 0$ ที่มีเวกเตอร์แนวฉากชี้ออก ใช้ทฤษฎีบทของสโตกส์หา $\\iint_S (\\nabla\\times\\mathbf{F})\\cdot\\mathbf{n}\\,dS$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 25.13, tolerance: 0.03 }
+    misconceptions:
+      - { match: 50.27, feedback: "คูณขนาดเคิร์ล 2 กับพื้นที่ผิวครึ่งทรงกลม $8\\pi$ แต่ $\\mathbf{n}$ ไม่ขนานกับ $\\nabla\\times\\mathbf{F}$ ทุกจุด ใช้ขอบวงกลมแทนจะง่ายกว่า" }
+      - { match: 12.57, feedback: "ลืมว่าเคิร์ลมีขนาด 2 พื้นที่วงกลม $4\\pi$ ต้องคูณด้วย 2" }
+    hints:
+      - "ขอบของครึ่งทรงกลมคือวงกลม $x^2 + y^2 = 4$ บนระนาบ $z = 0$ เดินทวนเข็มนาฬิกาเมื่อมองจากด้านบน"
+      - "$\\oint \\mathbf{F}\\cdot d\\mathbf{r}$ รอบวงกลมรัศมี 2 ด้วย $\\mathbf{r} = \\langle 2\\cos t, 2\\sin t, 0\\rangle$"
+    solution: "$\\mathbf{F}\\cdot\\mathbf{r}' = 4\\sin^2 t + 4\\cos^2 t = 4$ ได้ $\\int_0^{2\\pi} 4\\,dt = 8\\pi \\approx$ **25.13** (ตรวจ: $\\nabla\\times\\mathbf{F} = \\langle 0, 0, 2\\rangle$ ฟลักซ์ผ่านแผ่นวงกลมรัศมี 2 คือ $2 \\cdot 4\\pi = 8\\pi$ และคำนวณบนครึ่งทรงกลมโดยตรงก็ได้ $8\\pi$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p014
+    topics: [math.calculus.vector-calculus]
+    difficulty: 5
+    type: numeric
+    stem: "คลองชลประทานแห่งหนึ่งในจังหวัดสุพรรณบุรีกว้าง 10 m ลึก 2 m (หน้าตัดสี่เหลี่ยม ดังภาพ) ความเร็วน้ำตั้งฉากกับหน้าตัดเป็น $u(y) = 0.6\\left(1 - \\dfrac{y^2}{25}\\right)$ m/s เมื่อ $y$ วัดจากกึ่งกลางคลอง ($-5 \\le y \\le 5$) และไม่ขึ้นกับความลึก จงหาอัตราการไหล (ฟลักซ์) ผ่านหน้าตัดเป็น m³/s (ค่าสมมติ)"
+    figure:
+      src: p-canal-section.svg
+      alt: "หน้าตัดคลองสี่เหลี่ยมกว้าง 10 m จาก y = −5 ถึง 5 ลึก 2 m ด้านบนมีกราฟพาราโบลาของความเร็ว u สูงสุด 0.6 m/s ที่กึ่งกลางและเป็น 0 ที่ตลิ่ง วงกลมที่มีจุดตรงกลางแสดงน้ำไหลออกจากจอ วงใหญ่ที่กึ่งกลาง เล็กลงเมื่อเข้าใกล้ตลิ่ง"
+    answer: { value: 8, unit: m³/s, tolerance: 0.05 }
+    misconceptions:
+      - { match: 12, feedback: "ใช้ความเร็วสูงสุด 0.6 m/s คูณพื้นที่ 20 m² แต่น้ำริมตลิ่งไหลช้ากว่า ต้องหาปริพันธ์" }
+      - { match: 6, feedback: "ใช้ความเร็วเฉลี่ยเป็นครึ่งหนึ่งของค่าสูงสุด แต่ค่าเฉลี่ยของพาราโบลานี้คือ 2/3 ของค่าสูงสุด" }
+    hints:
+      - "ฟลักซ์ $= \\iint u\\,dA = \\int_0^2\\!\\!\\int_{-5}^{5} u(y)\\,dy\\,dz$"
+      - "$\\int_{-5}^{5} \\left(1 - \\tfrac{y^2}{25}\\right)dy = 10 - \\tfrac{250}{75}$"
+    solution: "$\\int_{-5}^{5} 0.6(1 - y^2/25)\\,dy = 0.6 \\times \\tfrac{20}{3} = 4$ m²/s คูณความลึก 2 m ได้ **8 m³/s** (ความเร็วเฉลี่ย 0.4 m/s)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p015
+    topics: [math.calculus.vector-calculus]
+    difficulty: 5
+    type: numeric
+    stem: "ใช้ทฤษฎีบทไดเวอร์เจนซ์หาฟลักซ์ออกของ $\\mathbf{F} = \\langle x^3, y^3, z^3\\rangle$ ผ่านทรงกลมหนึ่งหน่วย $x^2 + y^2 + z^2 = 1$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 7.54, tolerance: 0.008 }
+    misconceptions:
+      - { match: 12.566, feedback: "ใช้ $\\nabla\\cdot\\mathbf{F} = 3$ บนผิวทรงกลม (ที่ $\\rho = 1$) คูณปริมาตร แต่ไดเวอร์เจนซ์ $3\\rho^2$ เปลี่ยนตามตำแหน่งภายใน ต้องหาปริพันธ์" }
+      - { match: 2.513, feedback: "ลืมคูณ 3 จาก $\\nabla\\cdot\\mathbf{F} = 3(x^2 + y^2 + z^2)$" }
+    hints:
+      - "$\\nabla\\cdot\\mathbf{F} = 3(x^2 + y^2 + z^2) = 3\\rho^2$"
+      - "พิกัดทรงกลม $dV = \\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$"
+    solution: "$\\iiint 3\\rho^2 \\cdot \\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta = 3 \\cdot \\tfrac15 \\cdot 2 \\cdot 2\\pi = \\tfrac{12\\pi}{5} \\approx$ **7.540** (คำนวณฟลักซ์บนผิวโดยตรงก็ได้ $12\\pi/5$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p016
+    topics: [math.calculus.vector-calculus]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\oint_C -y^3\\,dx + x^3\\,dy$ เมื่อ $C$ เป็นวงกลมหนึ่งหน่วย เดินทวนเข็มนาฬิกา (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 4.712, tolerance: 0.005 }
+    misconceptions:
+      - { match: 6.283, feedback: "ลืม $r$ ใน $dA = r\\,dr\\,d\\theta$ ของพิกัดเชิงขั้ว" }
+      - { match: 0, feedback: "ไม่ใช่สนามอนุรักษ์ ($Q_x - P_y = 3x^2 + 3y^2 \\ne 0$)" }
+    hints:
+      - "กรีน: $Q_x - P_y = 3x^2 + 3y^2$"
+      - "พิกัดเชิงขั้ว: $\\int_0^{2\\pi}\\!\\int_0^1 3r^2 \\cdot r\\,dr\\,d\\theta$"
+    solution: "$\\int_0^{2\\pi}\\!\\int_0^1 3r^3\\,dr\\,d\\theta = 2\\pi \\cdot \\tfrac34 = \\tfrac{3\\pi}{2} \\approx$ **4.712** (อิงตัวแปรเสริมตรงก็ได้ $\\int_0^{2\\pi}(\\sin^4 t + \\cos^4 t)\\,dt = \\tfrac{3\\pi}{2}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p017
+    topics: [math.calculus.vector-calculus]
+    difficulty: 3
+    type: mcq
+    stem: "จากโจทย์คลองชลประทาน ให้สนามความเร็วผิวน้ำเป็น $\\mathbf{v} = \\langle 0.6(1 - y^2/25),\\; 0\\rangle$ (ไหลตามแกน $x$) ใบไม้เล็กที่ลอยอยู่ห่างจากกึ่งกลางคลองจะเป็นอย่างไร"
+    choices:
+      - { id: a, text: "ลอยไปตามน้ำและหมุนรอบตัวเอง เพราะเคิร์ลไม่เป็นศูนย์ (ยกเว้นที่กึ่งกลาง)", correct: true, feedback: "ถูก ส่วน z ของเคิร์ลคือ $-\\partial u/\\partial y = 0.048y$ น้ำสองข้างใบไม้ไหลเร็วไม่เท่ากัน" }
+      - { id: b, text: "ไม่หมุน เพราะน้ำไหลเป็นเส้นตรง", feedback: "แม้เส้นการไหลตรง ความเร็วต่างกันข้ามความกว้างทำให้เกิดการหมุนได้" }
+      - { id: c, text: "จมลง เพราะไดเวอร์เจนซ์เป็นลบ", feedback: "$\\nabla\\cdot\\mathbf{v} = \\partial u/\\partial x = 0$ ไม่มีน้ำหายหรือเกิดเพิ่ม" }
+    hints:
+      - "คำนวณ $Q_x - P_y$ เมื่อ $P = u(y)$, $Q = 0$"
+      - "เคิร์ลบอกการหมุนของวัตถุเล็ก ๆ ที่ลอยตามน้ำ"
+    solution: "$\\nabla\\cdot\\mathbf{v} = 0$ แต่ส่วน z ของเคิร์ล $= 0 - u'(y) = 0.048y$ ไม่เป็นศูนย์เมื่อ $y \\ne 0$ ใบไม้จึง **ลอยไปและหมุน** (ฝั่ง $y > 0$ หมุนทวนเข็ม ฝั่ง $y < 0$ หมุนตามเข็ม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.vector-calculus.p018
+    topics: [math.calculus.vector-calculus]
+    difficulty: 4
+    type: expression
+    stem: "ให้ $\\mathbf{F} = \\langle x^2y,\\; xy^2,\\; 0\\rangle$ จงหาองค์ประกอบ $z$ ของ $\\nabla\\times\\mathbf{F}$"
+    prefix: "(\\nabla\\times\\mathbf{F})_z ="
+    answer: { latex: "y^2-x^2", variables: [x, y] }
+    misconceptions:
+      - { match: "x^2-y^2", feedback: "สลับลำดับ องค์ประกอบ z คือ $Q_x - P_y$ ไม่ใช่ $P_y - Q_x$" }
+      - { match: "2xy+2xy", feedback: "นี่คือ $P_x + Q_y$ (ไดเวอร์เจนซ์) ไม่ใช่เคิร์ล" }
+    hints:
+      - "$(\\nabla\\times\\mathbf{F})_z = \\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}$"
+      - "$Q_x = y^2$, $P_y = x^2$"
+    solution: "$Q_x - P_y = y^2 - x^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

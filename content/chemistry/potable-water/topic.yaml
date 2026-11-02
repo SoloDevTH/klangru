@@ -1,0 +1,66 @@
+id: chemistry.water.potable-water
+subject: chemistry
+title: { th: น้ำดื่มและการบำบัดน้ำ, en: Potable water and water treatment }
+summary: แหล่งน้ำดิบ ขั้นตอนผลิตน้ำประปา การทำให้ตกตะกอน การกรอง การฆ่าเชื้อด้วยคลอรีน น้ำกระด้าง การกลั่นน้ำทะเล การบำบัดน้ำเสีย และเกณฑ์น้ำดื่มของไทย
+difficulty: 4
+minutes: 35
+prerequisites: [chemistry.mixtures.separating-mixtures, earthscience.hydrosphere.water-resources]
+encompasses:
+  - { id: chemistry.mixtures.separating-mixtures, weight: 0.4 }
+  - { id: earthscience.hydrosphere.water-resources, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: water-treatment-flow.svg
+    alt: "ผังขั้นตอนผลิตน้ำประปาจากน้ำผิวดิน 8 ขั้น เรียงตามลูกศร: 1 รับน้ำดิบจากแม่น้ำ คลอง หรืออ่างเก็บน้ำ 2 ตะแกรงดักขยะ กิ่งไม้ ผักตบชวา 3 กวนเร็ว เติมสารส้ม (และปูนขาว) 4 กวนช้า ตะกอนเล็กรวมเป็นก้อน 5 ตกตะกอน ก้อนตะกอนจมลงก้นถัง 6 กรองทราย กรองตะกอนที่ยังเหลือ 7 ฆ่าเชื้อ เติมคลอรีน 8 ถังน้ำใส ส่งไปหอถังสูงและบ้านเรือน ใต้ภาพเขียนว่าขั้น 3–5 กำจัดความขุ่น ขั้น 6 คือการกรอง ขั้น 7 ฆ่าเชื้อ และน้ำบาดาลมักข้ามขั้น 3–5 แต่อาจต้องเติมอากาศและกรองเพื่อกำจัดเหล็ก"
+    caption: "ขั้นตอนผลิตน้ำประปาจากน้ำผิวดิน แต่ละขั้นกำจัดสิ่งเจือปนคนละแบบ"
+  - { type: check, problem: chemistry.water.potable-water.p004, prompt: "อนุภาคเล็กมากที่ลอยอยู่ทำให้น้ำขุ่น อะไรช่วยให้มันจมลง" }
+  - type: worked-example
+    title: เติมผงปูนคลอรีนในถังประปาหมู่บ้าน
+    problem: "ถังพักน้ำประปาหมู่บ้านจุน้ำ 20 m³ ต้องการเติมคลอรีน 1.0 mg/L ด้วยผงปูนคลอรีนที่มีคลอรีนใช้ได้ 65% ต้องใช้ผงกี่กรัม (ค่าสมมติ)"
+    steps:
+      - text: "เปลี่ยนหน่วย: $1.0\\ \\mathrm{mg/L} = 1.0\\ \\mathrm{g/m^3}$"
+        why: "1 m³ มี 1,000 L และ 1,000 mg เท่ากับ 1 g จึงเท่ากันพอดี"
+      - text: "มวลคลอรีนที่ต้องการ $= 1.0\\ \\mathrm{g/m^3} \\times 20\\ \\mathrm{m^3} = 20\\ \\mathrm{g}$"
+      - text: "ผง 100 g ให้คลอรีน 65 g จึงต้องใช้ผง $= 20 \\div 0.65 = 30.8\\ \\mathrm{g}$"
+        why: "ผงไม่ใช่คลอรีนล้วน ต้องใช้ผงมากกว่ามวลคลอรีนเสมอ"
+    answer: "ใช้ผงปูนคลอรีนราว 31 g"
+  - type: figure
+    src: p-village-taps.svg
+    alt: "ท่อประปาจากหอถังสูงต่อไปยังก๊อก 4 จุดเรียงจากใกล้ไปไกล ก๊อก A วัดคลอรีนอิสระคงเหลือได้ 0.8 mg/L ก๊อก B 0.5 mg/L ก๊อก C 0.3 mg/L ก๊อก D 0.1 mg/L (ข้อมูลสมมติ)"
+    caption: "ยิ่งไกลจากหอถัง คลอรีนยิ่งถูกใช้ไปมาก (ภาพนี้ใช้ในโจทย์ข้อ 9)"
+  - type: worked-example
+    title: ความกระด้างของน้ำบาดาล
+    problem: "น้ำบาดาลมี $\\mathrm{Ca^{2+}}$ 80 mg/L และ $\\mathrm{Mg^{2+}}$ 12 mg/L ความกระด้างในรูป $\\mathrm{CaCO_3}$ เป็นเท่าใด ผ่านเกณฑ์น้ำประปาดื่มได้ (ไม่เกิน 300 mg/L) หรือไม่ (ใช้ตัวคูณ $\\mathrm{Ca^{2+}} \\to \\mathrm{CaCO_3}$ = 2.50 และ $\\mathrm{Mg^{2+}} \\to \\mathrm{CaCO_3}$ = 4.12)"
+    steps:
+      - text: "ตัวคูณมาจากอัตราส่วนมวลต่อโมล: $\\mathrm{CaCO_3}$ 100.1 g/mol, Ca 40.08 g/mol จึงได้ $100.1/40.08 = 2.50$ และ $100.1/24.31 = 4.12$"
+        why: "ไอออนหนึ่งตัวเทียบกับ CaCO₃ หนึ่งหน่วย จึงใช้อัตราส่วนมวลโมเลกุลได้"
+      - text: "ส่วนของ Ca: $80 \\times 2.50 = 200$ mg/L"
+      - text: "ส่วนของ Mg: $12 \\times 4.12 = 49.4$ mg/L"
+      - text: "รวม $= 249$ mg/L ซึ่งไม่เกิน 300 mg/L จึงผ่านเกณฑ์ แต่เป็นน้ำค่อนข้างกระด้าง"
+    answer: "ราว 249 mg/L ในรูป CaCO₃ ผ่านเกณฑ์"
+  - { type: check, problem: chemistry.water.potable-water.p007, prompt: "น้ำเค็มต้องแยกสิ่งที่ละลายอยู่ วิธีไหนแยกได้จริง" }
+glossary:
+  - { term: น้ำดื่มได้, definition: "น้ำที่ปลอดภัยต่อการดื่ม มีสารเจือปนและเชื้อโรคไม่เกินเกณฑ์ ไม่จำเป็นต้องเป็นน้ำบริสุทธิ์" }
+  - { term: สารส้ม, definition: "สารที่ทำให้อนุภาคเล็กที่ลอยอยู่ในน้ำจับกันเป็นก้อนแล้วตกตะกอน" }
+  - { term: คลอรีนอิสระคงเหลือ, definition: "คลอรีนที่ยังเหลือในน้ำหลังทำปฏิกิริยากับเชื้อโรคและสารอินทรีย์แล้ว ช่วยฆ่าเชื้อในท่อ" }
+  - { term: ความต้องการคลอรีน, definition: "ปริมาณคลอรีนที่ถูกใช้ไปกับสิ่งเจือปนในน้ำก่อนจะมีคลอรีนเหลือ" }
+  - { term: น้ำกระด้าง, definition: "น้ำที่มี Ca²⁺ และ Mg²⁺ ละลายอยู่มาก สบู่เกิดฟองยากและเกิดตะกรัน" }
+  - { term: ออสโมซิสผันกลับ (RO), definition: "การใช้ความดันสูงดันน้ำผ่านเยื่อที่ไอออนผ่านไม่ได้ เพื่อแยกเกลือออก" }
+  - { term: สลัดจ์, definition: "ตะกอนที่เกิดจากจุลินทรีย์และของแข็งในการบำบัดน้ำเสีย" }
+flashcards:
+  - { front: "ขั้นตอนประปาน้ำผิวดิน", back: "ตะแกรง → สารส้ม กวนเร็ว กวนช้า → ตกตะกอน → กรองทราย → คลอรีน → ถังน้ำใส" }
+  - { front: "1 mg/L เท่ากับกี่ g/m³", back: "1 g/m³" }
+  - { front: "คลอรีนอิสระคงเหลือปลายท่อที่กรมอนามัยแนะนำ", back: "0.2–0.5 mg/L" }
+  - { front: "กำจัดเหล็กในน้ำบาดาล", back: "เติมอากาศให้เกิดตะกอนสีส้มน้ำตาล แล้วกรอง" }
+  - { front: "ทำน้ำเค็มให้ดื่มได้", back: "การกลั่นหรือออสโมซิสผันกลับ (กรอง ต้ม คลอรีน ไม่กำจัดเกลือ)" }
+references:
+  - { title: "น้ำประปา", url: "https://th.wikipedia.org/wiki/น้ำประปา", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "น้ำกระด้าง", url: "https://th.wikipedia.org/wiki/น้ำกระด้าง", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Water purification", url: "https://en.wikipedia.org/wiki/Water_purification", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Desalination", url: "https://en.wikipedia.org/wiki/Desalination", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,69 @@
+id: management.strategy.strategic-management
+subject: management
+title: { th: การจัดการเชิงกลยุทธ์, en: Strategic management }
+summary: วิสัยทัศน์และพันธกิจ การวิเคราะห์ PESTEL แรงกดดันห้าประการ SWOT และ TOWS กลยุทธ์สามระดับ การถ่ายทอดด้วย KPI และ balanced scorecard และการติดตามปรับแผน
+difficulty: 6
+minutes: 40
+prerequisites: [management.principles.planning-decision, management.org.organizational-behavior]
+encompasses:
+  - { id: management.principles.planning-decision, weight: 0.3 }
+  - { id: management.org.organizational-behavior, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: tows.svg
+    alt: "ตาราง TOWS ของวิสาหกิจชุมชนกาแฟดอย เชียงราย (สมมติ) หัวคอลัมน์ จุดแข็ง S1 เมล็ดอาราบิกาคุณภาพสูง S2 ทีมแปรรูปผ่านการอบรม และจุดอ่อน W1 ทุนน้อย เครื่องคั่วเก่า W2 การตลาดออนไลน์อ่อน หัวแถว โอกาส O1 นักท่องเที่ยวเชิงเกษตรเพิ่ม O2 ตลาดกาแฟพิเศษโต และอุปสรรค T1 ฝนแล้ง T2 กาแฟนำเข้าราคาต่ำ ช่อง SO ทัวร์ไร่กาแฟพร้อมชิมกาแฟพิเศษ ช่อง WO ขายตรงผ่านแพลตฟอร์มออนไลน์ให้คอกาแฟพิเศษ ช่อง ST สร้างตราสินค้าแหล่งกำเนิดหนีการแข่งขันด้านราคา ช่อง WT ร่วมลงทุนระบบน้ำหยดกับสมาชิกลดความเสียหายจากแล้ง"
+    caption: "TOWS จับคู่ปัจจัยภายในกับภายนอกเป็นกลยุทธ์สี่แบบ"
+  - type: worked-example
+    title: คะแนนตารางประเมินปัจจัยภายนอก (EFE)
+    problem: "วิสาหกิจกาแฟ (สมมติ) ให้น้ำหนักปัจจัยภายนอกห้าข้อเป็น 0.20, 0.30, 0.15, 0.20, 0.15 และให้คะแนนการตอบสนองเป็น 3, 2, 4, 1, 3 ตามลำดับ (1 แย่มาก ถึง 4 ดีมาก) คะแนน EFE รวมเป็นเท่าไร และแปลว่าอย่างไร"
+    steps:
+      - text: "ตรวจน้ำหนัก $0.20 + 0.30 + 0.15 + 0.20 + 0.15 = 1.00$"
+        why: "น้ำหนักต้องรวมเป็น 1 คะแนนรวมจึงอยู่ในช่วง 1 ถึง 4 เทียบกับค่ากลาง 2.5 ได้"
+      - text: "คูณทีละข้อ $0.6,\\ 0.6,\\ 0.6,\\ 0.2,\\ 0.45$"
+      - text: "รวม $0.6 + 0.6 + 0.6 + 0.2 + 0.45 = 2.45$"
+      - text: "2.45 ต่ำกว่าค่ากลาง 2.5 เล็กน้อย ข้อที่น้ำหนัก 0.20 แต่ได้คะแนน 1 คือจุดที่ควรรีบหากลยุทธ์รับมือ"
+    answer: "คะแนน EFE 2.45 ตอบสนองสภาพแวดล้อมภายนอกได้ต่ำกว่าค่ากลางเล็กน้อย"
+  - { type: check, problem: management.strategy.strategic-management.p006 }
+  - type: figure
+    src: bsc-map.svg
+    alt: "แผนที่กลยุทธ์สี่ชั้นจากล่างขึ้นบน ชั้นการเรียนรู้และพัฒนา: ทักษะคั่วและชิมของทีม ระบบข้อมูลการขาย ชั้นกระบวนการภายใน: รสชาติการคั่วสม่ำเสมอ จัดทัวร์ไร่ทุกสุดสัปดาห์ ชั้นลูกค้า: ลูกค้าซื้อซ้ำเพิ่มขึ้น ลูกค้าใหม่จากทัวร์ไร่ ชั้นการเงิน: รายได้โตปีละ 10% ลูกศรชี้ขึ้น ทักษะคั่วไปรสชาติสม่ำเสมอ ระบบข้อมูลไปทั้งทัวร์ไร่และรสชาติ รสชาติไปลูกค้าซื้อซ้ำ ทัวร์ไร่ไปลูกค้าใหม่ และลูกค้าทั้งสองกลุ่มไปรายได้"
+    caption: "แผนที่กลยุทธ์เชื่อมสี่มุมมองของ balanced scorecard ด้วยเหตุและผล"
+  - type: worked-example
+    title: อัตราเติบโตเฉลี่ยต่อปีที่ต้องทำให้ได้
+    problem: "วิสาหกิจกาแฟมีรายได้ 80 ล้านบาท ตั้งวัตถุประสงค์เชิงกลยุทธ์ให้มีรายได้ 120 ล้านบาทภายใน 4 ปี ต้องโตเฉลี่ยปีละกี่เปอร์เซ็นต์ และถ้าตั้ง KPI ปีละ 10% จะถึงเป้าหรือไม่"
+    steps:
+      - text: "CAGR $= (120/80)^{1/4} - 1 = 1.5^{0.25} - 1 \\approx 0.1067$ หรือประมาณ $10.67\\%$ ต่อปี"
+        why: "การเติบโตทบต้น ปีหลังโตจากฐานที่ใหญ่ขึ้น จึงไม่ใช่ $50\\% \\div 4 = 12.5\\%$"
+      - text: "ถ้าโตปีละ 10% สี่ปีได้ $80 \\times 1.1^4 \\approx 117.1$ ล้านบาท"
+      - text: "ยังขาดราว 2.9 ล้านบาท KPI รายปีจึงควรตั้งอย่างน้อย 10.7% หรือเพิ่มแผนปฏิบัติการให้ได้รายได้ส่วนที่ขาด"
+    answer: "ต้องโตเฉลี่ยประมาณ 10.67% ต่อปี KPI 10% ไม่พอ"
+  - { type: check, problem: management.strategy.strategic-management.p007 }
+  - type: figure
+    src: p-kpi-trend.svg
+    alt: "กราฟเส้นร้อยละลูกค้าที่ซื้อซ้ำ (สมมติ) ปี 2564 52% ปี 2565 54% ปี 2566 55% ปี 2567 57% แกนนอนปี 2564 ถึง 2571 มีเส้นประสีแดงที่ 68% เขียนว่าเป้าหมายปี 2571 68% ยังไม่มีข้อมูลหลังปี 2567"
+    caption: "ตัวชี้วัดลูกค้าซื้อซ้ำ (ข้อมูลสมมติ ใช้ในโจทย์ข้อ 12)"
+glossary:
+  - { term: วิสัยทัศน์, definition: "ภาพอนาคตที่องค์กรต้องการเป็น ใช้กำหนดทิศทางระยะยาว" }
+  - { term: PESTEL, definition: "กรอบวิเคราะห์ปัจจัยภายนอกหกด้าน การเมือง เศรษฐกิจ สังคม เทคโนโลยี สิ่งแวดล้อม กฎหมาย" }
+  - { term: แรงกดดันห้าประการ, definition: "กรอบของพอร์เตอร์ดูการแข่งขันในอุตสาหกรรม คู่แข่งเดิม ผู้เข้ามาใหม่ สินค้าทดแทน อำนาจผู้ซื้อ อำนาจผู้ขาย" }
+  - { term: TOWS, definition: "ตารางจับคู่จุดแข็ง จุดอ่อน โอกาส อุปสรรค เป็นกลยุทธ์ SO WO ST WT" }
+  - { term: VRIO, definition: "เกณฑ์ทรัพยากรที่สร้างความได้เปรียบยั่งยืน มีคุณค่า หายาก ลอกเลียนยาก และองค์กรจัดการให้ใช้ได้" }
+  - { term: balanced scorecard, definition: "ระบบวัดผลสี่มุมมอง การเงิน ลูกค้า กระบวนการภายใน การเรียนรู้และพัฒนา ที่เชื่อมกันด้วยเหตุและผล" }
+  - { term: ตัวชี้วัดนำ, definition: "ตัวชี้วัดที่เปลี่ยนก่อนผลลัพธ์ปลายทาง ใช้เตือนล่วงหน้า เช่น ชั่วโมงฝึกอบรม" }
+flashcards:
+  - { front: "SWOT แยกภายในกับภายนอกอย่างไร", back: "S W อยู่ภายในองค์กร · O T มาจากภายนอก" }
+  - { front: "กลยุทธ์ WO", back: "ใช้โอกาสภายนอกช่วยแก้จุดอ่อนภายใน" }
+  - { front: "กลยุทธ์ทั่วไปของพอร์เตอร์", back: "ผู้นำต้นทุน · ความแตกต่าง · มุ่งตลาดเฉพาะส่วน" }
+  - { front: "ร้อยละความสำเร็จของ KPI ยิ่งน้อยยิ่งดี", back: "เป้าหมาย ÷ ผลจริง × 100" }
+  - { front: "CAGR", back: "(ค่าปลาย ÷ ค่าต้น)^(1/n) − 1" }
+references:
+  - { title: "8.2 Using SWOT for Strategic Analysis (Principles of Management, OpenStax)", url: "https://openstax.org/books/principles-management/pages/8-2-using-swot-for-strategic-analysis", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "9.6 Measuring and Evaluating Strategic Performance (Principles of Management, OpenStax)", url: "https://openstax.org/books/principles-management/pages/9-6-measuring-and-evaluating-strategic-performance", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Porter's five forces analysis", url: "https://en.wikipedia.org/wiki/Porter%27s_five_forces_analysis", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Balanced scorecard", url: "https://en.wikipedia.org/wiki/Balanced_scorecard", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
