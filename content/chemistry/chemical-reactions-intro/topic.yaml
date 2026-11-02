@@ -1,0 +1,64 @@
+id: chemistry.reactions.chemical-reactions-intro
+subject: chemistry
+title: { th: ปฏิกิริยาเคมีและกฎทรงมวล, en: Chemical reactions and conservation of mass }
+summary: หลักฐานของปฏิกิริยาเคมี สารตั้งต้นและผลิตภัณฑ์ สมการข้อความ การจัดเรียงตัวใหม่ของอะตอม กฎทรงมวลในระบบปิดและระบบเปิด และปฏิกิริยาดูดความร้อนกับคายความร้อน
+difficulty: 3
+minutes: 35
+prerequisites: [chemistry.matter.elements-compounds, chemistry.matter.atoms]
+encompasses:
+  - { id: chemistry.matter.elements-compounds, weight: 0.3 }
+  - { id: chemistry.matter.states-changes, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chemistry.reactions.chemical-reactions-intro.p001, prompt: "เกิดสารใหม่หรือไม่" }
+  - type: figure
+    src: methane-rearrangement.svg
+    alt: "แบบจำลองอะตอม ซ้ายเป็นสารตั้งต้น: มีเทน 1 โมเลกุล (คาร์บอนสีเทาเข้มตรงกลาง ล้อมด้วยไฮโดรเจนสีขาว 4 อะตอม) บวกออกซิเจน 2 โมเลกุล (วงกลมแดงคู่ 2 คู่) ลูกศรเขียนว่าสลายพันธะเดิม สร้างพันธะใหม่ ขวาเป็นผลิตภัณฑ์: คาร์บอนไดออกไซด์ 1 โมเลกุล (คาร์บอนตรงกลางระหว่างออกซิเจน 2 อะตอม) บวกน้ำ 2 โมเลกุล (ออกซิเจน 1 อะตอมกับไฮโดรเจน 2 อะตอม) ใต้ทั้งสองฝั่งเขียนว่า C 1 H 4 O 4 เท่ากัน ข้อความว่าจำนวนอะตอมแต่ละชนิดเท่าเดิม มวลรวมจึงเท่าเดิม"
+    caption: "CH₄ + 2O₂ → CO₂ + 2H₂O อะตอมจัดเรียงตัวใหม่ จำนวนอะตอมแต่ละชนิดไม่เปลี่ยน"
+  - { type: check, problem: chemistry.reactions.chemical-reactions-intro.p007, prompt: "ตัวเลขหน้าสูตรคูณทุกอะตอมในโมเลกุลนั้น" }
+  - type: worked-example
+    title: ชั่งมวลก่อนและหลังเผาฝอยเหล็ก
+    problem: "ฝอยเหล็ก 5.6 g วางบนกระเบื้องทนไฟแล้วเผาในอากาศจนหยุดลุกไหม้ ชั่งได้ 8.0 g ผลนี้ขัดกับกฎทรงมวลหรือไม่ และมีออกซิเจนรวมเข้าไปกี่กรัม"
+    steps:
+      - text: "เขียนสมการข้อความ: เหล็ก + ออกซิเจน → เหล็กออกไซด์"
+      - text: "ออกซิเจนมาจากอากาศ ซึ่งไม่ได้ชั่งตอนเริ่ม นี่จึงเป็นระบบเปิด"
+        why: "ถ้าชั่งออกซิเจนที่ใช้ไปด้วย มวลรวมก่อนและหลังจะเท่ากัน"
+      - text: "มวลก่อน (เหล็ก + ออกซิเจน) = มวลหลัง (เหล็กออกไซด์) จึงได้ ออกซิเจน $= 8.0 - 5.6 = 2.4$ g"
+    answer: "ไม่ขัดกับกฎทรงมวล มีออกซิเจนรวมเข้าไป 2.4 g"
+  - type: worked-example
+    title: แยกปฏิกิริยาดูดความร้อนและคายความร้อน
+    problem: "นักเรียนวัดอุณหภูมิก่อนและหลังผสมสาร ชุด A: เม็ดฟู่ในน้ำ 30.0 → 24.5 °C ชุด B: ผงแมกนีเซียมในกรดไฮโดรคลอริกเจือจาง 30.0 → 41.0 °C ชุดใดเป็นปฏิกิริยาดูดความร้อน"
+    steps:
+      - text: "หาการเปลี่ยนแปลงอุณหภูมิ: A $24.5 - 30.0 = -5.5$ °C · B $41.0 - 30.0 = +11.0$ °C"
+      - text: "อุณหภูมิของสารละลายลดลง แปลว่าปฏิกิริยาดึงความร้อนออกจากสิ่งแวดล้อม (น้ำและภาชนะ)"
+        why: "เทอร์โมมิเตอร์วัดอุณหภูมิของสิ่งแวดล้อม ไม่ได้วัดพลังงานในพันธะ"
+      - text: "อุณหภูมิเพิ่มขึ้น แปลว่าปฏิกิริยาปล่อยความร้อนออกมา"
+    answer: "A เป็นปฏิกิริยาดูดความร้อน (อุณหภูมิลด 5.5 °C) · B เป็นปฏิกิริยาคายความร้อน (อุณหภูมิเพิ่ม 11.0 °C)"
+  - type: simulation
+    title: นับอะตอมและดุลสมการอย่างง่าย
+    url: https://phet.colorado.edu/en/simulations/balancing-chemical-equations
+    provider: phet
+    note: "ใช้หน้าจอแรก (Introduction) เปลี่ยนจำนวนโมเลกุลแล้วนับอะตอมแต่ละชนิดสองฝั่งให้เท่ากัน"
+glossary:
+  - { term: ปฏิกิริยาเคมี, definition: การเปลี่ยนแปลงที่ทำให้เกิดสารใหม่ที่มีสมบัติต่างจากสารเดิม }
+  - { term: สารตั้งต้น, definition: สารที่เข้าทำปฏิกิริยา เขียนทางซ้ายของลูกศร }
+  - { term: ผลิตภัณฑ์, definition: สารใหม่ที่เกิดจากปฏิกิริยา เขียนทางขวาของลูกศร }
+  - { term: กฎทรงมวล, definition: มวลรวมของสารก่อนเกิดปฏิกิริยาเท่ากับมวลรวมของสารหลังเกิดปฏิกิริยา }
+  - { term: ปฏิกิริยาคายความร้อน, definition: ปฏิกิริยาที่ปล่อยพลังงานความร้อนออกมา สิ่งแวดล้อมร้อนขึ้น }
+  - { term: ปฏิกิริยาดูดความร้อน, definition: ปฏิกิริยาที่ดึงพลังงานความร้อนจากสิ่งแวดล้อม สิ่งแวดล้อมเย็นลง }
+flashcards:
+  - { front: "หลักฐานว่าอาจเกิดปฏิกิริยาเคมี", back: "ฟองแก๊ส สีเปลี่ยน ตะกอน อุณหภูมิเปลี่ยนหรือมีแสง กลิ่นใหม่ (ยืนยันด้วยสมบัติของสารใหม่)" }
+  - { front: "กฎทรงมวล", back: "มวลรวมก่อนเท่ากับหลังปฏิกิริยา เพราะอะตอมเพียงจัดเรียงตัวใหม่" }
+  - { front: "เผากระดาษแล้วเถ้าเบากว่ากระดาษ ขัดกฎทรงมวลไหม", back: "ไม่ขัด มวลส่วนหนึ่งออกไปเป็นแก๊ส CO₂ และไอน้ำ (ระบบเปิด)" }
+  - { front: "2H₂O มีอะตอมอะไรบ้าง", back: "H 4 อะตอม และ O 2 อะตอม (น้ำ 2 โมเลกุล)" }
+  - { front: "อุณหภูมิลดลงหลังผสมสาร แปลว่า", back: "ปฏิกิริยาดูดความร้อนจากสิ่งแวดล้อม" }
+references:
+  - { title: "ปฏิกิริยาเคมี", url: "https://th.wikipedia.org/wiki/ปฏิกิริยาเคมี", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Conservation of mass", url: "https://en.wikipedia.org/wiki/Conservation_of_mass", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Exothermic reaction", url: "https://en.wikipedia.org/wiki/Exothermic_reaction", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Endothermic process", url: "https://en.wikipedia.org/wiki/Endothermic_process", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

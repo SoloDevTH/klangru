@@ -1,0 +1,69 @@
+id: chemistry.kinetics.reaction-rates
+subject: chemistry
+title: { th: อัตราการเกิดปฏิกิริยาเคมี, en: Rates of chemical reactions }
+summary: การวัดและคำนวณอัตราการเกิดปฏิกิริยาจากข้อมูลและกราฟ ทฤษฎีการชน พลังงานก่อกัมมันต์และแผนภาพพลังงาน ผลของความเข้มข้น พื้นที่ผิว อุณหภูมิ ตัวเร่งปฏิกิริยา และตัวอย่างการใช้ประโยชน์
+difficulty: 6
+minutes: 45
+prerequisites: [chemistry.stoichiometry.reactions, math.calculus.rate-of-change]
+encompasses:
+  - { id: chemistry.stoichiometry.reactions, weight: 0.3 }
+  - { id: math.calculus.rate-of-change, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ผลิตภัณฑ์เพิ่มขึ้น สารตั้งต้นลดลง
+    caption: "เส้นที่ลดลงคือสัดส่วนของสารตั้งต้นที่เหลือ เส้นที่เพิ่มขึ้นคือสัดส่วนของผลิตภัณฑ์ (แกน x คือเวลา) เพิ่ม k แล้วสังเกตว่ากราฟชันขึ้นตอนเริ่มและราบเร็วขึ้น ความชันของกราฟ ณ แต่ละเวลาคืออัตรา ณ ขณะนั้น"
+    widget:
+      kind: function-plot
+      functions: ["1-e^{-k x}", "e^{-k x}"]
+      sliders:
+        - { name: k, min: 0.1, max: 2, step: 0.1, value: 0.5, label: ความเร็วของปฏิกิริยา }
+      x: [0, 10]
+      y: [0, 1.2]
+  - { type: check, problem: chemistry.kinetics.reaction-rates.p002, prompt: "อัตราคือปริมาณที่เปลี่ยนหารด้วยเวลา" }
+  - type: worked-example
+    title: อัตราของสารที่ไม่ได้วัด
+    problem: "ในการสลายตัว $\\mathrm{2H_2O_2(aq) \\to 2H_2O(l) + O_2(g)}$ ภาชนะ $1.00\\ \\mathrm{dm^3}$ เก็บแก๊สออกซิเจนได้ 0.030 mol ในช่วง 60 วินาทีแรก จงหาอัตราเฉลี่ยของการเกิด $\\mathrm{O_2}$ อัตราเฉลี่ยของการลดลงของ $\\mathrm{H_2O_2}$ และอัตราการเกิดปฏิกิริยา"
+    steps:
+      - text: "อัตราการเกิด $\\mathrm{O_2}$ $= \\dfrac{0.030}{60} = 5.0 \\times 10^{-4}\\ \\mathrm{mol/(dm^3 \\cdot s)}$"
+      - text: "จากสมการ $\\mathrm{H_2O_2}$ หายไป 2 mol ต่อ $\\mathrm{O_2}$ 1 mol จึงลดลงเร็วเป็น 2 เท่า: $1.0 \\times 10^{-3}\\ \\mathrm{mol/(dm^3 \\cdot s)}$"
+        why: "สัมประสิทธิ์บอกอัตราส่วนโมลที่เปลี่ยนในช่วงเวลาเดียวกัน"
+      - text: "อัตราการเกิดปฏิกิริยา $= \\dfrac{1}{2} \\times 1.0 \\times 10^{-3} = \\dfrac{1}{1} \\times 5.0 \\times 10^{-4} = 5.0 \\times 10^{-4}\\ \\mathrm{mol/(dm^3 \\cdot s)}$"
+    answer: "O₂ เกิด 5.0 × 10⁻⁴ · H₂O₂ ลดลง 1.0 × 10⁻³ · อัตราการเกิดปฏิกิริยา 5.0 × 10⁻⁴ mol/(dm³·s)"
+  - type: figure
+    src: energy-profile-catalyst.svg
+    alt: "แผนภาพพลังงาน แกนตั้งคือพลังงาน แกนนอนคือการดำเนินไปของปฏิกิริยา เส้นทึบเริ่มที่ระดับสารตั้งต้น ขึ้นไปเป็นยอดสูง (สารเชิงซ้อนกัมมันต์) แล้วลงมาที่ระดับผลิตภัณฑ์ซึ่งต่ำกว่าสารตั้งต้น ลูกศรสีแดงจากระดับสารตั้งต้นถึงยอดคือ Eₐ เส้นประสีเขียวเป็นทางเมื่อมีตัวเร่งปฏิกิริยา มียอดต่ำกว่า ลูกศรสีเขียวสั้นกว่าคือ Eₐ เมื่อมีตัวเร่ง ลูกศรสีม่วงลงจากระดับสารตั้งต้นถึงผลิตภัณฑ์ เขียนว่า ΔH < 0 ซึ่งเท่ากันทั้งสองทาง"
+    caption: "ตัวเร่งปฏิกิริยาลดพลังงานก่อกัมมันต์ แต่ไม่เปลี่ยนพลังงานของสารตั้งต้น ผลิตภัณฑ์ และ ΔH"
+  - type: worked-example
+    title: อ่านค่าจากแผนภาพพลังงาน
+    problem: "ปฏิกิริยาหนึ่งมีพลังงานของสารตั้งต้น 50 kJ สารเชิงซ้อนกัมมันต์ 130 kJ และผลิตภัณฑ์ 20 kJ (เทียบกับระดับอ้างอิงเดียวกัน) จงหา $E_a$ และ $\\Delta H$ และบอกว่าเป็นปฏิกิริยาคายหรือดูดความร้อน"
+    steps:
+      - text: "$E_a$ = ยอด − สารตั้งต้น $= 130 - 50 = 80$ kJ"
+      - text: "$\\Delta H$ = ผลิตภัณฑ์ − สารตั้งต้น $= 20 - 50 = -30$ kJ"
+        why: "ใช้ผลิตภัณฑ์ลบสารตั้งต้นเสมอ เครื่องหมายบอกทิศของพลังงาน"
+      - text: "$\\Delta H$ เป็นลบ ผลิตภัณฑ์มีพลังงานต่ำกว่า จึงเป็นปฏิกิริยาคายความร้อน"
+    answer: "$E_a = 80$ kJ, $\\Delta H = -30$ kJ ปฏิกิริยาคายความร้อน"
+  - { type: check, problem: chemistry.kinetics.reaction-rates.p008, prompt: "คิดถึงจำนวนการชนและพลังงานของการชน" }
+glossary:
+  - { term: อัตราการเกิดปฏิกิริยาเคมี, definition: ปริมาณสารตั้งต้นที่ลดลงหรือผลิตภัณฑ์ที่เพิ่มขึ้นต่อหน่วยเวลา }
+  - { term: อัตรา ณ ขณะหนึ่ง, definition: ความชันของเส้นสัมผัสกราฟปริมาณสารกับเวลา ณ เวลานั้น }
+  - { term: ทฤษฎีการชน, definition: แนวคิดว่าอนุภาคต้องชนกันด้วยพลังงานพอและทิศทางเหมาะสมจึงเกิดปฏิกิริยา }
+  - { term: พลังงานก่อกัมมันต์, definition: พลังงานต่ำสุดที่อนุภาคต้องมีเมื่อชนกันจึงเกิดปฏิกิริยาได้ }
+  - { term: สารเชิงซ้อนกัมมันต์, definition: สภาวะที่มีพลังงานสูงสุดระหว่างปฏิกิริยา พันธะเดิมกำลังสลายและพันธะใหม่กำลังเกิด }
+  - { term: ตัวเร่งปฏิกิริยา, definition: สารที่ทำให้ปฏิกิริยาเร็วขึ้นโดยลดพลังงานก่อกัมมันต์ และได้คืนเมื่อปฏิกิริยาสิ้นสุด }
+flashcards:
+  - { front: "2H₂O₂ → 2H₂O + O₂ อัตราลดลงของ H₂O₂ เทียบกับอัตราเกิด O₂", back: "เป็น 2 เท่า" }
+  - { front: "เงื่อนไขของการชนที่เกิดปฏิกิริยา", back: "พลังงานอย่างน้อยเท่า Eₐ และทิศทางการชนเหมาะสม" }
+  - { front: "4 ปัจจัยที่ทำให้ปฏิกิริยาเร็วขึ้น", back: "ความเข้มข้นสูงขึ้น พื้นที่ผิวมากขึ้น อุณหภูมิสูงขึ้น และตัวเร่งปฏิกิริยา" }
+  - { front: "ตัวเร่งปฏิกิริยาเปลี่ยนอะไร ไม่เปลี่ยนอะไร", back: "ลด Eₐ ทำให้เร็วขึ้น แต่ไม่เปลี่ยน ΔH ปริมาณผลิตภัณฑ์ และไม่ถูกใช้หมด" }
+  - { front: "อัตรา ณ ขณะหนึ่งอ่านจากกราฟอย่างไร", back: "ความชันของเส้นสัมผัสกราฟที่เวลานั้น" }
+references:
+  - { title: "อัตราการเกิดปฏิกิริยา", url: "https://th.wikipedia.org/wiki/อัตราการเกิดปฏิกิริยา", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Collision theory", url: "https://en.wikipedia.org/wiki/Collision_theory", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.2 Factors Affecting Reaction Rates (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-2-factors-affecting-reaction-rates", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "12.7 Catalysis (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

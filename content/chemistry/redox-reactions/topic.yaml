@@ -1,0 +1,63 @@
+id: chemistry.redox.redox-reactions
+subject: chemistry
+title: { th: ปฏิกิริยารีดอกซ์, en: Redox reactions }
+summary: ออกซิเดชันและรีดักชันจากการรับเสียออกซิเจนและอิเล็กตรอน เลขออกซิเดชัน ตัวรีดิวซ์และตัวออกซิไดส์ ครึ่งปฏิกิริยา อนุกรมความว่องไว การถลุงโลหะด้วยคาร์บอน และการดุลสมการรีดอกซ์
+difficulty: 6
+minutes: 45
+prerequisites: [chemistry.stoichiometry.reactions, chemistry.bonding.ionic]
+encompasses:
+  - { id: chemistry.stoichiometry.reactions, weight: 0.3 }
+  - { id: chemistry.bonding.ionic, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chemistry.redox.redox-reactions.p002, prompt: "ผลรวมเลขออกซิเดชันในสารประกอบเป็นศูนย์" }
+  - type: worked-example
+    title: ระบุตัวรีดิวซ์และตัวออกซิไดส์
+    problem: "ในเตาถลุงเหล็ก $\\mathrm{Fe_2O_3 + 3CO \\to 2Fe + 3CO_2}$ จงหาเลขออกซิเดชันที่เปลี่ยน แล้วระบุสารที่ถูกออกซิไดซ์ สารที่ถูกรีดิวซ์ ตัวรีดิวซ์ และตัวออกซิไดส์"
+    steps:
+      - text: "Fe ใน $\\mathrm{Fe_2O_3}$: $2x + 3(-2) = 0$ ได้ $+3$ · Fe อิสระเป็น 0 เลขออกซิเดชันลดลง Fe จึงถูกรีดิวซ์"
+      - text: "C ใน CO: $x + (-2) = 0$ ได้ $+2$ · C ใน $\\mathrm{CO_2}$: $x + 2(-2) = 0$ ได้ $+4$ เลขออกซิเดชันเพิ่มขึ้น CO จึงถูกออกซิไดซ์"
+      - text: "สารที่ถูกออกซิไดซ์ (CO) เป็นตัวรีดิวซ์ สารที่ถูกรีดิวซ์ ($\\mathrm{Fe_2O_3}$) เป็นตัวออกซิไดส์"
+        why: "ตัวรีดิวซ์ทำให้สารอื่นถูกรีดิวซ์ โดยตัวเองเสียอิเล็กตรอน"
+      - text: "ตรวจ: Fe 2 อะตอมลด $2 \\times 3 = 6$ หน่วย · C 3 อะตอมเพิ่ม $3 \\times 2 = 6$ หน่วย เท่ากัน"
+    answer: "CO เป็นตัวรีดิวซ์ (C: +2 → +4) · Fe₂O₃ เป็นตัวออกซิไดส์ (Fe: +3 → 0)"
+  - type: figure
+    src: reactivity-series.svg
+    alt: "ตารางแนวตั้งของอนุกรมความว่องไว จากบนลงล่าง: K, Na, Ca, Mg, Al (พื้นสีชมพู ข้างขวาเขียนว่าสกัดด้วยการแยกด้วยไฟฟ้า), C คาร์บอน (อโลหะ ตัวอักษรสีแดง), Zn, Fe, Sn, Pb (พื้นสีเหลือง ข้างขวาเขียนว่าถลุงโดยเผาออกไซด์กับคาร์บอน), H ไฮโดรเจน (อโลหะ ตัวอักษรสีแดง), Cu, Ag, Au (พื้นสีเขียว ข้างขวาเขียนว่าไม่ทำปฏิกิริยากับกรดเจือจางให้ H₂ และทองคำพบเป็นโลหะอิสระ) ลูกศรสีน้ำเงินชี้ขึ้นด้านซ้ายเขียนว่าตัวรีดิวซ์แรงขึ้น"
+    caption: "โลหะที่อยู่สูงกว่าแทนที่ไอออนของโลหะที่อยู่ต่ำกว่าได้ ตำแหน่งของคาร์บอนบอกว่าโลหะใดถลุงด้วยคาร์บอนได้"
+  - type: worked-example
+    title: ดุลสมการรีดอกซ์ด้วยวิธีครึ่งปฏิกิริยาในกรด
+    problem: "ดุลสมการ $\\mathrm{Cr_2O_7^{2-} + I^- \\to Cr^{3+} + I_2}$ ในสารละลายกรด"
+    steps:
+      - text: "ครึ่งปฏิกิริยาออกซิเดชัน: $\\mathrm{2I^- \\to I_2 + 2e^-}$"
+      - text: "ครึ่งปฏิกิริยารีดักชัน ดุล Cr: $\\mathrm{Cr_2O_7^{2-} \\to 2Cr^{3+}}$ ดุล O ด้วย $\\mathrm{7H_2O}$ ดุล H ด้วย $\\mathrm{14H^+}$"
+      - text: "ดุลประจุ: ซ้าย $-2 + 14 = +12$ ขวา $2(+3) = +6$ เติม $6e^-$ ทางซ้าย ได้ $\\mathrm{Cr_2O_7^{2-} + 14H^+ + 6e^- \\to 2Cr^{3+} + 7H_2O}$"
+        why: "อิเล็กตรอนอยู่ฝั่งสารตั้งต้นในครึ่งปฏิกิริยารีดักชันเสมอ"
+      - text: "คูณครึ่งปฏิกิริยาออกซิเดชันด้วย 3 ให้อิเล็กตรอนเท่ากัน (6) แล้วรวม ตัด $e^-$ ออก"
+      - text: "ตรวจประจุ: ซ้าย $-2 - 6 + 14 = +6$ ขวา $+6$ เท่ากัน"
+    answer: "$\\mathrm{Cr_2O_7^{2-} + 6I^- + 14H^+ \\to 2Cr^{3+} + 3I_2 + 7H_2O}$"
+  - { type: check, problem: chemistry.redox.redox-reactions.p009, prompt: "ดูตำแหน่งของ Cu และ Ag ในอนุกรมความว่องไว" }
+glossary:
+  - { term: ปฏิกิริยารีดอกซ์, definition: ปฏิกิริยาที่มีการถ่ายโอนอิเล็กตรอน เลขออกซิเดชันของธาตุบางตัวเปลี่ยน }
+  - { term: ออกซิเดชัน, definition: "การเสียอิเล็กตรอน เลขออกซิเดชันเพิ่มขึ้น (หรือการรับออกซิเจน)" }
+  - { term: รีดักชัน, definition: "การรับอิเล็กตรอน เลขออกซิเดชันลดลง (หรือการเสียออกซิเจน)" }
+  - { term: เลขออกซิเดชัน, definition: ประจุสมมติของอะตอมเมื่อคิดว่าอิเล็กตรอนในพันธะเป็นของอะตอมที่อิเล็กโทรเนกาติวิตีสูงกว่า }
+  - { term: ตัวรีดิวซ์, definition: สารที่ให้อิเล็กตรอนแก่สารอื่น ตัวเองถูกออกซิไดซ์ }
+  - { term: ตัวออกซิไดส์, definition: สารที่รับอิเล็กตรอนจากสารอื่น ตัวเองถูกรีดิวซ์ }
+  - { term: อนุกรมความว่องไว, definition: ลำดับโลหะตามความสามารถในการให้อิเล็กตรอน จากการทดลองการแทนที่ }
+flashcards:
+  - { front: "ออกซิเดชัน / รีดักชัน", back: "เสียอิเล็กตรอน เลขออกซิเดชันเพิ่ม / รับอิเล็กตรอน เลขออกซิเดชันลด" }
+  - { front: "เลขออกซิเดชันของ Mn ใน MnO₄⁻ และ Cr ใน Cr₂O₇²⁻", back: "+7 และ +6" }
+  - { front: "ตัวรีดิวซ์คือสารที่", back: "ถูกออกซิไดซ์ (ให้อิเล็กตรอน)" }
+  - { front: "โลหะใดถลุงด้วยคาร์บอนได้", back: "โลหะที่อยู่ต่ำกว่าคาร์บอนในอนุกรมความว่องไว เช่น Zn Fe Sn Pb" }
+  - { front: "ขั้นดุลครึ่งปฏิกิริยาในกรด", back: "ดุลอะตอมหลัก → O ด้วย H₂O → H ด้วย H⁺ → ประจุด้วย e⁻ → ทำ e⁻ ให้เท่ากันแล้วรวม" }
+references:
+  - { title: "ปฏิกิริยารีดอกซ์", url: "https://th.wikipedia.org/wiki/ปฏิกิริยารีดอกซ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Oxidation state", url: "https://en.wikipedia.org/wiki/Oxidation_state", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Reactivity series", url: "https://en.wikipedia.org/wiki/Reactivity_series", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.2 Classifying Chemical Reactions (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/4-2-classifying-chemical-reactions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
