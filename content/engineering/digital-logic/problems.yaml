@@ -1,0 +1,312 @@
+problems:
+  - id: engineering.electronics.digital-logic.p001
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 1
+    type: mcq
+    stem: "เกต NAND มีอินพุต $A = 1$ และ $B = 1$ เอาต์พุตเป็นเท่าใด"
+    choices:
+      - { id: a, text: "0", correct: true }
+      - { id: b, text: "1", feedback: "นี่คือเอาต์พุตของ AND ส่วน NAND คือ AND แล้วกลับค่า" }
+    hints:
+      - "NAND = NOT AND"
+      - "หาค่า $A \\cdot B$ ก่อน แล้วกลับค่า"
+    solution: "$A \\cdot B = 1$ กลับค่าได้ $\\overline{AB} = 0$ NAND ให้ 0 เฉพาะเมื่ออินพุตเป็น 1 ทั้งหมด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p002
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 1
+    type: numeric
+    stem: "แปลงเลขฐานสอง $1101_2$ เป็นเลขฐานสิบ"
+    answer: { value: 13, tolerance: 0 }
+    misconceptions:
+      - { match: 11, feedback: "อ่านค่าประจำหลักกลับด้าน ($1011_2 = 11$) หลักขวาสุดมีค่า $2^0 = 1$" }
+      - { match: 3, feedback: "นับจำนวนบิตที่เป็น 1 แต่ต้องคูณแต่ละบิตกับค่าประจำหลัก" }
+    hints:
+      - "ค่าประจำหลักจากขวาไปซ้ายคือ 1, 2, 4, 8"
+      - "บวกค่าประจำหลักของบิตที่เป็น 1"
+    solution: "$1 \\times 8 + 1 \\times 4 + 0 \\times 2 + 1 \\times 1 = 13$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p003
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 2
+    type: numeric
+    stem: "รหัสข้อผิดพลาดของเครื่องจักรแสดงเป็นเลขฐานสิบหก $\\mathrm{2A}_{16}$ มีค่าเท่าใดในฐานสิบ"
+    answer: { value: 42, tolerance: 0 }
+    misconceptions:
+      - { match: 30, feedback: "ถือว่า A = 10 แล้วเขียนต่อท้าย 2 แต่ต้องคิดค่าประจำหลัก $2 \\times 16 + 10$" }
+      - { match: 210, feedback: "คิดหลักซ้ายเป็นหลักสิบของฐานสิบ ($2 \\times 100 + 10$) ฐานสิบหกมีค่าประจำหลัก 16" }
+    hints:
+      - "ตัวเลข A ในฐานสิบหกมีค่า 10"
+      - "ค่าประจำหลักคือ $16^1$ และ $16^0$"
+    solution: "$\\mathrm{2A}_{16} = 2 \\times 16 + 10 \\times 1 = 42$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p004
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 2
+    type: numeric
+    stem: "ฟังก์ชันตรรกะที่มีอินพุต 4 ตัว มีตารางค่าความจริงกี่แถว"
+    answer: { value: 16, tolerance: 0, unit: แถว }
+    misconceptions:
+      - { match: 8, feedback: "$2 \\times 4 = 8$ ไม่ใช่จำนวนแถว แต่ละอินพุตเพิ่มจำนวนแถวเป็นสองเท่า จึงต้องใช้ $2^4$" }
+      - { match: 4, feedback: "จำนวนแถวไม่เท่ากับจำนวนอินพุต ต้องนับทุกชุดของค่า 0/1" }
+    hints:
+      - "อินพุตแต่ละตัวมีได้ 2 ค่า"
+      - "จำนวนชุดค่า $= 2^n$"
+    solution: "$2^4 = 16$ แถว ตั้งแต่ $0000$ ถึง $1111$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p005
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 2
+    type: match
+    stem: "จับคู่นิพจน์บูลีนกับผลที่ลดรูปแล้ว"
+    pairs:
+      - { left: "$A + 1$", right: "$1$" }
+      - { left: "$A \\cdot \\overline{A}$", right: "$0$" }
+      - { left: "$A + AB$", right: "$A$" }
+      - { left: "$A + \\overline{A}B$", right: "$A + B$" }
+    hints:
+      - "OR กับ 1 ได้ 1 เสมอ ตัวแปรกับส่วนเติมเต็ม AND กันได้ 0"
+      - "ลองแทน $A = 0$ และ $A = 1$ ในแต่ละนิพจน์"
+    solution: "$A + 1 = 1$, $A\\overline{A} = 0$, $A + AB = A(1 + B) = A$, $A + \\overline{A}B = (A + \\overline{A})(A + B) = A + B$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p006
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: numeric
+    stem: "ตระกูลวงจรหนึ่งมี $V_{OH} = 4.4\\ \\mathrm{V}$, $V_{OL} = 0.1\\ \\mathrm{V}$, $V_{IH} = 3.5\\ \\mathrm{V}$, $V_{IL} = 1.5\\ \\mathrm{V}$ สัญญาณรบกวนที่ระบบทนได้แน่นอน (ส่วนเผื่อที่น้อยกว่าระหว่าง $NM_H$ กับ $NM_L$) เป็นกี่โวลต์"
+    answer: { value: 0.9, tolerance: 0.01, unit: V }
+    misconceptions:
+      - { match: 1.4, feedback: "นี่คือ $NM_L$ ซึ่งมากกว่า ระบบทนได้แน่นอนเพียงค่าที่น้อยกว่า" }
+      - { match: 2, feedback: "$V_{IH} - V_{IL}$ คือช่วงที่อ่านค่าไม่แน่นอน ไม่ใช่ส่วนเผื่อ" }
+    hints:
+      - "$NM_H = V_{OH} - V_{IH}$ และ $NM_L = V_{IL} - V_{OL}$"
+      - "เลือกค่าที่น้อยกว่า"
+    solution: "$NM_H = 4.4 - 3.5 = 0.9\\ \\mathrm{V}$ และ $NM_L = 1.5 - 0.1 = 1.4\\ \\mathrm{V}$ ระบบทนได้แน่นอน $0.9\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p007
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: mcq
+    stem: "นิพจน์ใดเท่ากับ $\\overline{A \\cdot B}$"
+    choices:
+      - { id: a, text: "$\\overline{A} + \\overline{B}$", correct: true }
+      - { id: b, text: "$\\overline{A} \\cdot \\overline{B}$", feedback: "กลับค่าแต่ละตัวแล้วลืมเปลี่ยน AND เป็น OR ที่ $A = 1, B = 0$ นิพจน์นี้ได้ 0 แต่ $\\overline{AB} = 1$" }
+      - { id: c, text: "$A + B$", feedback: "ลืมกลับค่าตัวแปร ที่ $A = B = 1$ นิพจน์นี้ได้ 1 แต่ $\\overline{AB} = 0$" }
+      - { id: d, text: "$\\overline{A + B}$", feedback: "นี่คือ NOR ให้ 1 เฉพาะเมื่อทั้งสองเป็น 0 ส่วน NAND ให้ 1 ในสามแถว" }
+    hints:
+      - "ใช้กฎเดอมอร์แกน: กลับค่าทุกตัว และสลับ AND กับ OR"
+      - "ตรวจด้วยตารางค่าความจริงสี่แถว"
+    solution: "ตามกฎเดอมอร์แกน $\\overline{AB} = \\overline{A} + \\overline{B}$ ทั้งสองนิพจน์ได้ $1, 1, 1, 0$ สำหรับ $AB = 00, 01, 10, 11$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p008
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: mcq
+    stem: "ลดรูป $AB + A\\overline{B}$"
+    choices:
+      - { id: a, text: "$A$", correct: true }
+      - { id: b, text: "$B$", feedback: "ตัวแปรที่ถูกตัดทิ้งคือตัวที่ปรากฏทั้งแบบปกติและกลับค่า ซึ่งคือ $B$ ไม่ใช่ $A$" }
+      - { id: c, text: "$2A$", feedback: "พีชคณิตบูลีนไม่มีค่า 2 ค่ามีเพียง 0 กับ 1" }
+      - { id: d, text: "$1$", feedback: "ถ้า $A = 0$ ทั้งสองพจน์เป็น 0 ผลจึงไม่ใช่ 1 เสมอ" }
+    hints:
+      - "ดึง $A$ เป็นตัวร่วม"
+      - "$B + \\overline{B} = 1$"
+    solution: "$AB + A\\overline{B} = A(B + \\overline{B}) = A \\cdot 1 = A$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p009
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: numeric
+    stem: "การประกวดโครงงานวิทยาศาสตร์ระดับจังหวัดใช้ปุ่มของกรรมการ 3 คน ($A$, $B$, $C$) ไฟผ่านติดเมื่อกรรมการกดอย่างน้อย 2 คน ในตารางค่าความจริง 8 แถว มีกี่แถวที่ไฟติด"
+    answer: { value: 4, tolerance: 0, unit: แถว }
+    misconceptions:
+      - { match: 3, feedback: "นับเฉพาะแถวที่มี 1 สองตัวพอดี ($011$, $101$, $110$) ลืมแถว $111$ ที่ทั้งสามคนกด" }
+      - { match: 1, feedback: "นับเฉพาะกรณีที่ทุกคนกด แต่เงื่อนไขคืออย่างน้อยสองคน" }
+    hints:
+      - "เขียนตาราง 8 แถวตั้งแต่ $000$ ถึง $111$"
+      - "นับแถวที่มีเลข 1 ตั้งแต่สองตัวขึ้นไป"
+    solution: "แถวที่ไฟติดคือ $011$, $101$, $110$, $111$ รวม 4 แถว (มินเทอม 3, 5, 6, 7)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p010
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: numeric
+    stem: "จากวงจรในภาพ ในชุดอินพุต $ABC$ ทั้งหมด 8 ชุด มีกี่ชุดที่ $F = 1$"
+    figure: { src: p-circuit.svg, alt: "วงจรเกตตรรกะ อินพุต A และ B เข้าเกต AND อินพุต C เข้าเกต NOT เอาต์พุตของเกต AND และเกต NOT เข้าเกต OR ซึ่งให้เอาต์พุต F" }
+    answer: { value: 5, tolerance: 0 }
+    misconceptions:
+      - { match: 4, feedback: "นับเฉพาะแถวที่ $C = 0$ ลืมแถว $ABC = 111$ ที่เกต AND ให้ 1" }
+      - { match: 2, feedback: "นับแถวที่ $AB = 1$ เท่านั้น เกต OR ให้ 1 เมื่ออินพุตใดอินพุตหนึ่งเป็น 1" }
+    hints:
+      - "เขียนนิพจน์จากวงจร: $F = AB + \\overline{C}$"
+      - "แถวที่ $C = 0$ ทำให้ $F = 1$ เสมอ แล้วดูแถวที่ $C = 1$"
+    solution: "$F = AB + \\overline{C}$ แถวที่ $C = 0$ มี 4 แถว ($F = 1$ ทั้งหมด) แถวที่ $C = 1$ ต้องมี $AB = 1$ คือแถว $111$ เพียงแถวเดียว รวม 5 ชุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p011
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 4
+    type: mcq
+    stem: "ฟังก์ชัน $F(A, B, C) = \\sum m(0, 2, 4, 6)$ ($A$ เป็นบิตซ้ายสุด) ลดรูปได้เป็นข้อใด"
+    choices:
+      - { id: a, text: "$\\overline{C}$", correct: true }
+      - { id: b, text: "$\\overline{A}$", feedback: "$\\overline{A}$ คือมินเทอม 0–3 แต่ฟังก์ชันนี้เป็น 1 ที่ 4 และ 6 ด้วย ซึ่ง $A = 1$" }
+      - { id: c, text: "$\\overline{A}\\,\\overline{C}$", feedback: "ครอบเพียงมินเทอม 0 และ 2 ยังขาด 4 และ 6 กลุ่มที่ใหญ่กว่าครอบได้ทั้งสี่ช่อง" }
+      - { id: d, text: "$\\overline{B}$", feedback: "$\\overline{B}$ คือมินเทอม 0, 1, 4, 5 ไม่ตรงกับฟังก์ชัน" }
+    hints:
+      - "เขียนมินเทอมเป็นเลขฐานสอง: $000, 010, 100, 110$"
+      - "บิตใดเป็น 0 ในทุกมินเทอม"
+    solution: "มินเทอมทั้งสี่มี $C = 0$ เสมอ ส่วน $A$ และ $B$ มีครบทุกค่า ในแผนผังคาร์นอห์เป็นกลุ่มสี่ช่อง (คอลัมน์ $BC = 00$ และ $10$ ทั้งสองแถว) จึงได้ $F = \\overline{C}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p012
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 4
+    type: mcq
+    stem: "ตัวบวกเต็มได้อินพุต $A = 1$, $B = 1$, $C_{in} = 1$ เอาต์พุต $S$ และ $C_{out}$ เป็นเท่าใด"
+    choices:
+      - { id: a, text: "$S = 1$, $C_{out} = 1$", correct: true }
+      - { id: b, text: "$S = 0$, $C_{out} = 1$", feedback: "นี่คือผลของ $1 + 1$ สองบิต แต่ต้องบวกตัวทดอีก 1 ด้วย $1 + 1 + 1 = 3 = 11_2$" }
+      - { id: c, text: "$S = 1$, $C_{out} = 0$", feedback: "ผลรวมคือ 3 ซึ่งเกิน 1 จึงต้องมีตัวทด" }
+      - { id: d, text: "$S = 0$, $C_{out} = 0$", feedback: "XOR ของ 1 สามตัวเป็น 1 ไม่ใช่ 0 และผลรวม 3 ต้องมีตัวทด" }
+    hints:
+      - "ตัวบวกเต็มคำนวณ $A + B + C_{in}$ แล้วเขียนผลเป็นเลขฐานสองสองบิต $C_{out}S$"
+      - "$1 + 1 + 1 = 3$"
+    solution: "$1 + 1 + 1 = 3 = 11_2$ จึงได้ $C_{out} = 1$ และ $S = 1$ ตรงกับ $S = A \\oplus B \\oplus C_{in} = 1$ และ $C_{out} = AB + C_{in}(A \\oplus B) = 1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p013
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 4
+    type: mcq
+    stem: "ต้องการสร้างเกต NOT จากเกต NAND สองอินพุตเพียงตัวเดียว ต้องต่ออย่างไร"
+    choices:
+      - { id: a, text: "ต่ออินพุตสองขาเข้าด้วยกันแล้วป้อนสัญญาณ $A$", correct: true }
+      - { id: b, text: "ป้อน $A$ ที่ขาหนึ่ง และต่ออีกขากับ 0", feedback: "$\\overline{A \\cdot 0} = \\overline{0} = 1$ เสมอ ได้ค่าคงที่ ไม่ใช่ NOT" }
+      - { id: c, text: "ป้อน $A$ ทั้งสองขาแล้วต่อเกต NAND อีกตัวตามหลัง", feedback: "NAND สองตัวต่อกันแบบนี้กลับค่าสองครั้ง ได้ $A$ เหมือนเดิม" }
+      - { id: d, text: "ทำไม่ได้ ต้องใช้เกต NOT เท่านั้น", feedback: "NAND เป็นเกตสากล สร้างทุกฟังก์ชันได้ รวมทั้ง NOT" }
+    hints:
+      - "$\\overline{A \\cdot A}$ เท่ากับอะไร"
+      - "$A \\cdot A = A$"
+    solution: "ต่อขาเข้าด้วยกันได้ $\\overline{A \\cdot A} = \\overline{A}$ (อีกวิธีคือต่ออีกขากับ 1 ได้ $\\overline{A \\cdot 1} = \\overline{A}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p014
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 4
+    type: numeric
+    stem: "ต้องการสร้างฟังก์ชัน $A + B$ โดยใช้เฉพาะเกต NAND สองอินพุต ต้องใช้อย่างน้อยกี่ตัว"
+    answer: { value: 3, tolerance: 0, unit: ตัว }
+    misconceptions:
+      - { match: 2, feedback: "NAND สองตัวต่อกันได้ AND ไม่ใช่ OR ต้องกลับค่า $A$ และ $B$ ก่อนตามกฎเดอมอร์แกน" }
+      - { match: 1, feedback: "NAND ตัวเดียวให้ $\\overline{AB} = \\overline{A} + \\overline{B}$ ยังเป็นค่ากลับของตัวแปร" }
+    hints:
+      - "เดอมอร์แกน: $A + B = \\overline{\\overline{A} \\cdot \\overline{B}}$"
+      - "ต้องกลับค่า $A$ และ $B$ (อย่างละหนึ่งตัว) แล้ว NAND อีกครั้ง"
+    solution: "NAND ตัวที่ 1 และ 2 ต่อขาเข้าด้วยกันได้ $\\overline{A}$ และ $\\overline{B}$ NAND ตัวที่ 3 ได้ $\\overline{\\overline{A}\\,\\overline{B}} = A + B$ รวม 3 ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p015
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 5
+    type: mcq
+    stem: "ฟังก์ชัน $F(A, B, C) = \\sum m(1, 3, 5, 6, 7)$ ($A$ เป็นบิตซ้ายสุด) ลดรูปได้น้อยที่สุดเป็นข้อใด"
+    choices:
+      - { id: a, text: "$C + AB$", correct: true }
+      - { id: b, text: "$C + A$", feedback: "$C + A$ เป็น 1 ที่มินเทอม 4 ($100$) ด้วย แต่ฟังก์ชันนี้เป็น 0 ที่มินเทอม 4" }
+      - { id: c, text: "$AB + BC$", feedback: "ขาดมินเทอม 1 และ 5 ซึ่งมี $B = 0$" }
+      - { id: d, text: "$\\overline{A}C + AB$", feedback: "ขาดมินเทอม 5 ($101$) ถ้าวงกลุ่ม $C = 1$ ให้ครบทั้งสองแถวจะได้กลุ่มสี่ช่อง" }
+    hints:
+      - "มินเทอม 1, 3, 5, 7 มีอะไรเหมือนกัน"
+      - "มินเทอม 6 ($110$) จับกลุ่มกับมินเทอม 7 ($111$)"
+    solution: "มินเทอม 1, 3, 5, 7 ทั้งหมดมี $C = 1$ เป็นกลุ่มสี่ช่อง ได้ $C$ มินเทอม 6 จับคู่กับ 7 ได้ $AB$ จึงได้ $F = C + AB$ ตรวจด้วยตารางค่าความจริงครบ 8 แถวตรงกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p016
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 5
+    type: mcq
+    stem: "ระบบเตือนน้ำท่วมริมแม่น้ำมูลในจังหวัดอุบลราชธานี (ระบบสมมติ) มีเซนเซอร์ระดับน้ำสามจุด ($A$, $B$, $C$ เป็น 1 เมื่อน้ำถึงระดับเตือน) เพื่อกันเซนเซอร์ตัวเดียวเสียแล้วเตือนผิด จึงให้สัญญาณเตือนดังเมื่อเซนเซอร์อย่างน้อยสองตัวเป็น 1 วงจรที่ลดรูปแล้วคือข้อใด"
+    choices:
+      - { id: a, text: "$AB + BC + AC$", correct: true }
+      - { id: b, text: "$A + B + C$", feedback: "วงจรนี้ดังเมื่อเซนเซอร์ตัวเดียวเป็น 1 ซึ่งทำให้เซนเซอร์เสียตัวเดียวเตือนผิดได้" }
+      - { id: c, text: "$ABC$", feedback: "ดังเฉพาะเมื่อทั้งสามตัวเป็น 1 ถ้าเซนเซอร์ตัวหนึ่งเสียค้างที่ 0 ระบบจะไม่เตือนเลย" }
+      - { id: d, text: "$A \\oplus B \\oplus C$", feedback: "XOR สามตัวเป็น 1 เมื่อจำนวนเลข 1 เป็นคี่ ที่ $ABC = 110$ ได้ 0 แต่ต้องเตือน" }
+    hints:
+      - "นี่คือฟังก์ชันเสียงข้างมาก มินเทอม 3, 5, 6, 7"
+      - "วงกลุ่มในแผนผังคาร์นอห์ได้สามกลุ่มสองช่องที่ซ้อนกัน"
+    solution: "เตือนที่ $ABC = 011, 101, 110, 111$ วงกลุ่มได้ $BC$, $AC$, $AB$ จึงได้ $F = AB + BC + AC$ ระบบนี้ทนเซนเซอร์เสียได้หนึ่งตัวทั้งแบบค้างที่ 0 และค้างที่ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p017
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 2
+    type: text
+    stem: "เขียนคอลัมน์เอาต์พุตของเกต XOR สำหรับอินพุต $AB = 00, 01, 10, 11$ ตามลำดับ เป็นเลขสี่หลักติดกัน (เช่น 0001)"
+    accepted: ["0110"]
+    misconceptions:
+      - { match: "0111", feedback: "นี่คือ OR เกต XOR ให้ 0 เมื่ออินพุตเป็น 1 ทั้งคู่" }
+      - { match: "1001", feedback: "นี่คือ XNOR (ค่ากลับของ XOR) XOR ให้ 1 เมื่ออินพุตต่างกัน" }
+    hints:
+      - "XOR ให้ 1 เมื่ออินพุตต่างกัน"
+      - "แถว $11$ อินพุตเหมือนกัน"
+    solution: "$00 \\to 0$, $01 \\to 1$, $10 \\to 1$, $11 \\to 0$ จึงเป็น 0110"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p018
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: text
+    stem: "เขียนคอลัมน์เอาต์พุตของ $F = (A + B)\\overline{C}$ สำหรับ $ABC = 000, 001, 010, \\ldots, 111$ ตามลำดับ เป็นเลขแปดหลักติดกัน"
+    accepted: ["00101010"]
+    misconceptions:
+      - { match: "00010101", feedback: "ใช้ $C$ แทน $\\overline{C}$ ฟังก์ชันนี้เป็น 1 ได้เฉพาะแถวที่ $C = 0$" }
+      - { match: "00101111", feedback: "นี่คือ $A + B\\overline{C}$ วงเล็บบอกให้ OR ก่อนแล้วจึง AND กับ $\\overline{C}$" }
+    hints:
+      - "$F = 1$ เมื่อ $C = 0$ และ $A$ หรือ $B$ เป็น 1 อย่างน้อยหนึ่งตัว"
+      - "แถวที่ $C = 0$ คือ $000, 010, 100, 110$"
+    solution: "แถวที่ $C = 0$: $000 \\to 0$, $010 \\to 1$, $100 \\to 1$, $110 \\to 1$ แถวที่ $C = 1$ ได้ 0 ทั้งหมด จึงเป็น 0, 0, 1, 0, 1, 0, 1, 0 หรือ 00101010"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.digital-logic.p019
+    topics: [engineering.electronics.digital-logic]
+    difficulty: 3
+    type: numeric
+    stem: "สายพานลำเลียงในโรงงานแห่งหนึ่งในนิคมอุตสาหกรรม (ระบบสมมติ) ใช้วงจร $M = D(S + R)$ เมื่อ $D$ = ประตูนิรภัยปิดแล้ว $S$ = กดปุ่มเริ่มที่เครื่อง $R$ = สั่งจากห้องควบคุม จากชุดอินพุต $DSR$ ทั้ง 8 ชุด มอเตอร์ทำงาน ($M = 1$) กี่ชุด"
+    answer: { value: 3, tolerance: 0 }
+    misconceptions:
+      - { match: 1, feedback: "คิดว่าต้องกด $S$ และ $R$ พร้อมกัน แต่ $S + R$ คือ OR อย่างใดอย่างหนึ่งก็พอ" }
+      - { match: 7, feedback: "นับทุกกรณีที่มี 1 อย่างน้อยหนึ่งตัว แต่ $D$ ต้องเป็น 1 เสมอเพื่อความปลอดภัย" }
+    hints:
+      - "$D$ ต้องเป็น 1 เพราะ AND กับส่วนที่เหลือ"
+      - "เมื่อ $D = 1$ นับชุดของ $SR$ ที่ทำให้ $S + R = 1$"
+    solution: "ต้องมี $D = 1$ แล้ว $SR \\in \\{01, 10, 11\\}$ รวม 3 ชุด ถ้าประตูนิรภัยเปิดอยู่ มอเตอร์ไม่ทำงานไม่ว่ากดปุ่มใด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

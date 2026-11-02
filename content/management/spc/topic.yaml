@@ -1,0 +1,69 @@
+id: management.quality.spc
+subject: management
+title: { th: การควบคุมกระบวนการเชิงสถิติ (SPC) ขั้นลึก, en: Statistical process control in depth }
+summary: กลุ่มย่อยที่มีเหตุผล แผนภูมิ x-bar กับ R และ s แผนภูมิค่าเดี่ยวและพิสัยเคลื่อนที่ แผนภูมิ np c u กฎ Western Electric สัญญาณเตือนผิด และแผนควบคุม
+difficulty: 7
+minutes: 50
+prerequisites: [management.quality.qc-tools, math.stats.normal-distribution]
+encompasses:
+  - { id: management.quality.qc-tools, weight: 0.4 }
+  - { id: math.stats.normal-distribution, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: xbar-r.svg
+    alt: "แผนภูมิสองช่อง ช่องบนคือแผนภูมิ x̄ ของปริมาตรน้ำปลา 20 กลุ่มย่อย CL = 699.77 UCL = 702.86 LCL = 696.67 จุดส่วนใหญ่อยู่ระหว่าง 697.8 ถึง 701.0 มิลลิลิตร กลุ่มที่ 16 มีค่า 704.64 หลุดเหนือ UCL และเป็นจุดสีแดง ช่องล่างคือแผนภูมิ R CL = 5.36 UCL = 11.33 พิสัยทุกกลุ่มอยู่ระหว่าง 2.0 ถึง 8.9 ไม่มีจุดหลุด"
+    caption: "แผนภูมิ R อยู่ในการควบคุม แต่แผนภูมิ x̄ มีกลุ่มที่ 16 หลุดเหนือเส้นควบคุมบน"
+  - type: worked-example
+    title: ระยะที่ 1 ของแผนภูมิ x̄–R โรงงานน้ำปลา
+    problem: "จากข้อมูล 20 กลุ่มย่อย (กลุ่มละ 5 ขวด) ในภาพ ได้ $\\bar{\\bar{x}} = 699.77$ และ $\\bar{R} = 5.36$ mL กลุ่มที่ 16 หลุดเหนือ UCL ทีมพบว่าวันนั้นเปลี่ยนหัวฉีดแล้วตั้งค่าผิด จงคำนวณเส้นควบคุมใหม่หลังตัดกลุ่มที่ 16 ออก ถ้าค่าเฉลี่ยของ 19 กลุ่มที่เหลือคือ $\\bar{\\bar{x}} = 699.51$ และ $\\bar{R} = 5.39$ mL"
+    steps:
+      - text: "ตรวจแผนภูมิ R ก่อน: ไม่มีจุดเกิน $D_4\\bar{R} = 2.114 \\times 5.36 = 11.33$ ความผันแปรภายในกลุ่มเสถียร"
+        why: "เส้นของแผนภูมิ x̄ คำนวณจาก $\\bar{R}$ ถ้าแผนภูมิ R ไม่เสถียร เส้นของ x̄ จะเชื่อไม่ได้"
+      - text: "กลุ่มที่ 16 มีสาเหตุพิเศษที่ระบุได้และแก้แล้ว จึงตัดออกจากการคำนวณ"
+        why: "ถ้าไม่รู้สาเหตุ ไม่ควรตัดจุดทิ้งเพียงเพราะมันหลุด"
+      - text: "แผนภูมิ x̄ ใหม่: $699.51 \\pm 0.577(5.39) = 699.51 \\pm 3.11$ ได้ LCL $\\approx 696.40$ และ UCL $\\approx 702.62$ mL"
+      - text: "แผนภูมิ R ใหม่: UCL $= 2.114 \\times 5.39 \\approx 11.39$ mL และ LCL $= 0$ (เพราะ $D_3 = 0$ เมื่อ $n = 5$)"
+      - text: "ประมาณส่วนเบี่ยงเบนมาตรฐานของขวดเดี่ยว: $\\hat{\\sigma} = \\bar{R}/d_2 = 5.39/2.326 \\approx 2.32$ mL"
+    answer: "x̄: CL 699.51, UCL 702.62, LCL 696.40 mL · R: CL 5.39, UCL 11.39, LCL 0 mL ใช้เส้นนี้เฝ้าดูข้อมูลใหม่ในระยะที่ 2"
+  - { type: check, problem: management.quality.spc.p004, prompt: "อย่าลืมเลือก $A_2$ ให้ตรงกับขนาดกลุ่มย่อย" }
+  - type: figure
+    src: we-zones.svg
+    alt: "แผนภาพโซนของแผนภูมิควบคุม เส้นกลาง CL อยู่ตรงกลาง เส้นประที่ ±1σ ±2σ และเส้นควบคุมที่ ±3σ แถบระหว่าง CL ถึง 1σ คือโซน C แถบ 1σ ถึง 2σ คือโซน B แถบ 2σ ถึง 3σ คือโซน A ทั้งด้านบนและล่าง ใต้ภาพมีกฎ 1: 1 จุดนอกเส้นควบคุม กฎ 2: 2 ใน 3 จุดติดกันอยู่ในโซน A หรือเลยไป ด้านเดียวกัน กฎ 3: 4 ใน 5 จุดติดกันอยู่ในโซน B หรือเลยไป ด้านเดียวกัน กฎ 4: 8 จุดติดกันอยู่ด้านเดียวกันของเส้นกลาง"
+    caption: "โซนของแผนภูมิควบคุมและกฎ Western Electric"
+  - type: worked-example
+    title: แผนภูมิ I-MR ของตัวชี้วัดรายเดือนในสำนักงานเขต
+    problem: "สำนักงานเขตแห่งหนึ่ง (สมมติ) วัดเวลารอเฉลี่ยรายเดือน (นาที) ได้ 34, 31, 36, 33, 29, 35, 32, 38, 30, 33, 31, 34 เดือนถัดมาวัดได้ 45 นาที ผู้บริหารควรสรุปว่าอย่างไร"
+    steps:
+      - text: "ค่าเฉลี่ย: $\\bar{x} = 396/12 = 33$ นาที"
+      - text: "พิสัยเคลื่อนที่ 11 ค่า: 3, 5, 3, 4, 6, 3, 6, 8, 3, 2, 3 ได้ $\\overline{MR} = 46/11 \\approx 4.18$"
+        why: "12 ค่ามีผลต่างระหว่างเดือนติดกันเพียง 11 คู่"
+      - text: "แผนภูมิ I: $33 \\pm 2.66(4.18)$ ได้ UCL $\\approx 44.1$ และ LCL $\\approx 21.9$ นาที"
+      - text: "แผนภูมิ MR: UCL $= 3.267 \\times 4.18 \\approx 13.7$ นาที เดือน 8 ($MR = 8$) ยังไม่เกิน"
+      - text: "เดือนใหม่ 45 นาที มากกว่า UCL 44.1 เป็นสัญญาณของสาเหตุพิเศษ"
+    answer: "ความผันแปร 29–38 นาทีใน 12 เดือนแรกเป็นความผันแปรปกติ ไม่ต้องตอบสนองทุกเดือน แต่เดือนที่ได้ 45 นาทีเกิน UCL ควรหาสาเหตุ เช่น เจ้าหน้าที่ลา หรือระบบล่ม"
+  - { type: check, problem: management.quality.spc.p006 }
+glossary:
+  - { term: กลุ่มย่อยที่มีเหตุผล, definition: "กลุ่มตัวอย่างที่เลือกให้ความผันแปรภายในกลุ่มมาจากสาเหตุทั่วไปเท่านั้น เช่น ชิ้นที่ผลิตติดกันจากเครื่องเดียวกัน" }
+  - { term: แผนภูมิ R, definition: "แผนภูมิควบคุมของพิสัยภายในกลุ่มย่อย ใช้เฝ้าดูความผันแปรระยะสั้นของกระบวนการ" }
+  - { term: พิสัยเคลื่อนที่, definition: "ผลต่างสัมบูรณ์ระหว่างค่าที่ติดกัน ใช้ประมาณความผันแปรเมื่อมีข้อมูลครั้งละค่าเดียว" }
+  - { term: แผนภูมิ u, definition: "แผนภูมิจำนวนจุดบกพร่องต่อหน่วย ใช้เมื่อขนาดหน่วยตรวจแต่ละครั้งไม่เท่ากัน" }
+  - { term: กฎ Western Electric, definition: "ชุดกฎสี่ข้อที่ใช้รูปแบบของจุดตามโซน A B C ตรวจหาสัญญาณของสาเหตุพิเศษ" }
+  - { term: ความยาวรันเฉลี่ย (ARL), definition: "จำนวนจุดเฉลี่ยจนกว่าจะเกิดสัญญาณ ถ้ากระบวนการปกติคือระยะเฉลี่ยระหว่างสัญญาณเตือนผิด" }
+  - { term: แผนควบคุม, definition: "เอกสารระบุคุณลักษณะที่ต้องควบคุม วิธีวัด ความถี่ เครื่องมือ และแผนรับมือเมื่อเกิดความผิดปกติ" }
+flashcards:
+  - { front: "เส้นควบคุม x̄–R", back: "x̄: x̿ ± A₂R̄ · R: D₃R̄ ถึง D₄R̄ (n = 5: A₂ = 0.577, D₃ = 0, D₄ = 2.114)" }
+  - { front: "เส้นควบคุม I-MR", back: "I: x̄ ± 2.66 MR̄ · MR: UCL = 3.267 MR̄" }
+  - { front: "แผนภูมิ c และ u", back: "c: c̄ ± 3√c̄ (หน่วยตรวจเท่ากัน) · u: ū ± 3√(ū/nᵢ) (หน่วยตรวจไม่เท่ากัน)" }
+  - { front: "ประมาณ σ จากพิสัย", back: "σ̂ = R̄/d₂ (n = 5: d₂ = 2.326)" }
+  - { front: "ARL เมื่อใช้เฉพาะกฎ 3σ", back: "1/0.0027 ≈ 370 จุด ใช้ครบสี่กฎ Western Electric เหลือราว 92 จุด" }
+references:
+  - { title: "NIST/SEMATECH e-Handbook: 6.3.2.1 Shewhart X-bar and R and S Control Charts", url: "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm", source: nist, lang: en, license: public-domain }
+  - { title: "Control chart", url: "https://en.wikipedia.org/wiki/Control_chart", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Western Electric rules", url: "https://en.wikipedia.org/wiki/Western_Electric_rules", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Shewhart individuals control chart", url: "https://en.wikipedia.org/wiki/Shewhart_individuals_control_chart", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

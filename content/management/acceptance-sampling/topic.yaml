@@ -1,0 +1,65 @@
+id: management.quality.acceptance-sampling
+subject: management
+title: { th: การชักตัวอย่างเพื่อการยอมรับ, en: Acceptance sampling }
+summary: แผนการชักตัวอย่างเชิงเดี่ยว ความน่าจะเป็นที่จะยอมรับจากการแจกแจงทวินามและปัวซง เส้นโค้ง OC AQL LTPD ความเสี่ยงของผู้ผลิตและผู้บริโภค AOQ และการตรวจรับวัตถุดิบ
+difficulty: 7
+minutes: 50
+prerequisites: [management.quality.qc-tools, math.stats.random-variables]
+encompasses:
+  - { id: math.stats.random-variables, weight: 0.5 }
+  - { id: management.quality.qc-tools, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: oc-curve.svg
+    alt: "กราฟเส้นโค้ง OC สองเส้น แกนนอนคือสัดส่วนของเสียในล็อต 0% ถึง 12% แกนตั้งคือความน่าจะเป็นที่จะยอมรับ 0 ถึง 1 เส้นสีน้ำเงินคือแผน n = 50, c = 1 เส้นสีแดงคือแผน n = 100, c = 2 ทั้งสองเริ่มที่ 1 เมื่อ p = 0 แล้วลดลง เส้นแดงลดลงชันกว่า เส้นประแนวตั้งที่ AQL 1% และ LTPD 8% จุดดำบนเส้นน้ำเงินที่ AQL มี Pa = 0.911 และที่ LTPD มี Pa = 0.083 ที่ 8% เส้นแดงเกือบเป็นศูนย์"
+    caption: "แผนที่ใหญ่กว่า (n = 100, c = 2) แยกล็อตดีกับล็อตเสียได้ชัดกว่า แต่ต้องตรวจมากกว่า"
+  - type: worked-example
+    title: ความน่าจะเป็นที่จะยอมรับล็อตถุงมือ
+    problem: "โรงพยาบาลใช้แผน $n = 80$, $c = 2$ ตรวจรับถุงมือยาง ถ้าล็อตหนึ่งมีกล่องที่บกพร่อง 2% ความน่าจะเป็นที่จะยอมรับล็อตนี้เป็นเท่าใด (ล็อตใหญ่มาก ใช้การแจกแจงทวินาม)"
+    steps:
+      - text: "ยอมรับเมื่อพบของเสีย 0, 1 หรือ 2 ชิ้น จึงต้องรวมสามพจน์"
+        why: "เลขยอมรับ $c = 2$ หมายถึงยอมรับได้ถึง 2 ชิ้น ไม่ใช่ 2 ชิ้นพอดี"
+      - text: "$P(0) = 0.98^{80} \\approx 0.1986$"
+      - text: "$P(1) = 80(0.02)(0.98)^{79} \\approx 0.3243$"
+      - text: "$P(2) = \\binom{80}{2}(0.02)^2(0.98)^{78} = 3160(0.0004)(0.98)^{78} \\approx 0.2614$"
+      - text: "$P_a = 0.1986 + 0.3243 + 0.2614 \\approx 0.784$"
+    answer: "ประมาณ 0.784 ล็อตที่มีของเสีย 2% จะถูกยอมรับราว 78 ครั้งใน 100 ครั้ง"
+  - { type: check, problem: management.quality.acceptance-sampling.p004, prompt: "เมื่อ c = 0 ต้องไม่พบของเสียเลยแม้แต่ชิ้นเดียว" }
+  - type: worked-example
+    title: คุณภาพขาออกและจำนวนตรวจเมื่อคัดล็อตที่ถูกปฏิเสธ
+    problem: "ใช้แผน $n = 50$, $c = 1$ กับล็อตขนาด $N = 2{,}000$ ล็อตที่ถูกปฏิเสธจะถูกคัดทุกชิ้นและเปลี่ยนของเสียเป็นของดี ถ้าล็อตเข้ามีของเสีย 2% จงหา AOQ และ ATI"
+    steps:
+      - text: "$P_a = 0.98^{50} + 50(0.02)(0.98)^{49} \\approx 0.3642 + 0.3716 = 0.7358$"
+      - text: "$\\text{AOQ} = P_a \\cdot p \\cdot \\dfrac{N - n}{N} = 0.7358 \\times 0.02 \\times \\dfrac{1950}{2000} \\approx 0.0143$"
+        why: "ล็อตที่ถูกปฏิเสธถูกคัดจนไม่มีของเสีย และของเสียที่พบในตัวอย่างถูกเปลี่ยนแล้ว เหลือของเสียเฉพาะส่วนที่ไม่ได้ตรวจของล็อตที่ยอมรับ"
+      - text: "$\\text{ATI} = n + (1 - P_a)(N - n) = 50 + 0.2642 \\times 1950 \\approx 565$ ชิ้นต่อล็อต"
+    answer: "AOQ ประมาณ 1.43% (ดีกว่าขาเข้า 2%) แต่ต้องตรวจเฉลี่ยราว 565 ชิ้นต่อล็อต"
+  - type: figure
+    src: p-oc.svg
+    alt: "กราฟเส้นโค้ง OC สองเส้น แกนนอนคือสัดส่วนของเสียในล็อต 0% ถึง 12% แกนตั้งคือความน่าจะเป็นที่จะยอมรับ แผน ก (สีเขียว) เริ่มที่ 1 แล้วลดลงค่อนข้างเป็นเส้นโค้งตื้น ที่ 1% ประมาณ 0.82 ที่ 6% ประมาณ 0.29 ที่ 12% ประมาณ 0.08 แผน ข (สีน้ำตาล) อยู่ใกล้ 1 ในช่วงแรกแล้วลดลงชันกว่า ที่ 1% ประมาณ 0.95 ที่ 6% ประมาณ 0.13 และเกือบ 0 ที่ 12% สองเส้นตัดกันที่ประมาณ 3.3%"
+    caption: "เส้นโค้ง OC ที่ใช้ในโจทย์ ข้อ p010 และ p011"
+  - { type: check, problem: management.quality.acceptance-sampling.p010 }
+glossary:
+  - { term: แผนการชักตัวอย่างเชิงเดี่ยว, definition: "แผนที่สุ่มตัวอย่าง n ชิ้นครั้งเดียว ยอมรับล็อตถ้าของเสียไม่เกินเลขยอมรับ c" }
+  - { term: เส้นโค้ง OC, definition: "กราฟความน่าจะเป็นที่จะยอมรับล็อตเทียบกับสัดส่วนของเสียในล็อต" }
+  - { term: AQL, definition: "ระดับคุณภาพที่ยอมรับได้ สัดส่วนของเสียที่ถือว่าล็อตดีและควรยอมรับเกือบทุกครั้ง" }
+  - { term: LTPD, definition: "สัดส่วนของเสียที่ถือว่าล็อตเสีย แผนควรยอมรับล็อตแบบนี้น้อยมาก" }
+  - { term: ความเสี่ยงของผู้ผลิต (α), definition: "ความน่าจะเป็นที่ล็อตคุณภาพระดับ AQL ถูกปฏิเสธ" }
+  - { term: ความเสี่ยงของผู้บริโภค (β), definition: "ความน่าจะเป็นที่ล็อตคุณภาพระดับ LTPD ถูกยอมรับ" }
+  - { term: AOQ, definition: "คุณภาพขาออกเฉลี่ยหลังการตรวจแบบแก้ไขล็อต ประมาณ Pa × p × (N − n)/N" }
+flashcards:
+  - { front: "Pa ของแผน (n, c) แบบทวินาม", back: "ผลรวมของ C(n, d) pᵈ (1 − p)ⁿ⁻ᵈ จาก d = 0 ถึง c" }
+  - { front: "α และ β", back: "α = 1 − Pa(AQL) ความเสี่ยงผู้ผลิต · β = Pa(LTPD) ความเสี่ยงผู้บริโภค" }
+  - { front: "AOQ และ ATI", back: "AOQ ≈ Pa · p · (N − n)/N · ATI = n + (1 − Pa)(N − n)" }
+  - { front: "เพิ่ม n และ c ตามสัดส่วน", back: "เส้นโค้ง OC ชันขึ้น แยกล็อตดีกับเสียได้ดีขึ้น แต่ตรวจมากขึ้น" }
+  - { front: "เมื่อใดใช้ปัวซงแทนทวินาม", back: "n ใหญ่และ p เล็ก ใช้ λ = np ล็อตเล็กใช้ไฮเพอร์จีโอเมตริก" }
+references:
+  - { title: "Acceptance sampling", url: "https://en.wikipedia.org/wiki/Acceptance_sampling", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Acceptable quality limit", url: "https://en.wikipedia.org/wiki/Acceptable_quality_limit", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "NIST/SEMATECH e-Handbook of Statistical Methods: 6.2 Test Product for Acceptability: Lot Acceptance Sampling", url: "https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc2.htm", source: nist, lang: en, license: public-domain }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,65 @@
+id: engineering.electronics.digital-logic
+subject: engineering
+title: { th: ตรรกะดิจิทัลและพีชคณิตบูลีน, en: Digital logic and Boolean algebra }
+summary: นามธรรมดิจิทัลและส่วนเผื่อสัญญาณรบกวน เลขฐานสองและฐานสิบหก กฎพีชคณิตบูลีน มินเทอม แผนผังคาร์นอห์ เกตสากล และวงจรคอมบิเนชัน เช่น ตัวบวกเต็มและมัลติเพล็กเซอร์
+difficulty: 5.5
+minutes: 40
+prerequisites: [math.number.place-value, math.number.exponents]
+encompasses:
+  - { id: math.number.place-value, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ระดับแรงดันตรรกะและส่วนเผื่อสัญญาณรบกวน
+    src: noise-margin.svg
+    alt: "แท่งแรงดันสองแท่งจาก 0 ถึง 5 โวลต์ แท่งซ้ายคือเอาต์พุตของเกตส่ง ช่วงบนตั้งแต่ V_OH = 4.4 V ขึ้นไปคือ 1 ช่วงล่างไม่เกิน V_OL = 0.1 V คือ 0 ระหว่างกลางเป็นช่วงห้ามส่ง แท่งขวาคืออินพุตของเกตรับ ตั้งแต่ V_IH = 3.5 V ขึ้นไปอ่านเป็น 1 ไม่เกิน V_IL = 1.5 V อ่านเป็น 0 ระหว่างกลางไม่แน่นอน ลูกศรสีแดงแสดง NM_H ระหว่าง 4.4 กับ 3.5 V และ NM_L ระหว่าง 1.5 กับ 0.1 V"
+  - type: worked-example
+    title: ต่อโมดูลเซนเซอร์เข้ากับไมโครคอนโทรลเลอร์ได้หรือไม่
+    problem: "โมดูลเซนเซอร์ในเครื่องจักร (ค่าสมมติ) ส่งสัญญาณ $V_{OH} = 2.4\\ \\mathrm{V}$, $V_{OL} = 0.4\\ \\mathrm{V}$ ไมโครคอนโทรลเลอร์รับ $V_{IH} = 2.0\\ \\mathrm{V}$, $V_{IL} = 0.8\\ \\mathrm{V}$ จงหาส่วนเผื่อสัญญาณรบกวน ถ้าสายสัญญาณมีสัญญาณรบกวนแกว่ง $\\pm 0.5\\ \\mathrm{V}$ ระบบยังทำงานถูกหรือไม่"
+    steps:
+      - text: "$NM_H = V_{OH} - V_{IH} = 2.4 - 2.0 = 0.4\\ \\mathrm{V}$"
+        why: "กรณีแย่สุดผู้ส่งให้ 1 ที่ $2.4\\ \\mathrm{V}$ สัญญาณรบกวนลดได้อีก $0.4\\ \\mathrm{V}$ ก่อนตกต่ำกว่า $V_{IH}$"
+      - text: "$NM_L = V_{IL} - V_{OL} = 0.8 - 0.4 = 0.4\\ \\mathrm{V}$"
+      - text: "สัญญาณรบกวน $0.5\\ \\mathrm{V}$ มากกว่าส่วนเผื่อ $0.4\\ \\mathrm{V}$ จึงอาจอ่านผิดได้"
+    answer: "ส่วนเผื่อทั้งสองฝั่งเป็น $0.4\\ \\mathrm{V}$ ไม่พอสำหรับสัญญาณรบกวน $0.5\\ \\mathrm{V}$ ต้องลดสัญญาณรบกวน (เช่น สายชีลด์ เดินสายห่างสายกำลัง) หรือเลือกวงจรที่มีส่วนเผื่อมากขึ้น"
+  - { type: check, problem: engineering.electronics.digital-logic.p006, prompt: "ความทนทานของระบบดูจากส่วนเผื่อที่น้อยกว่า" }
+  - type: figure
+    title: แผนผังคาร์นอห์ของฟังก์ชันเสียงข้างมาก
+    src: kmap-majority.svg
+    alt: "ตารางสองแถวสี่คอลัมน์ แถวคือ A = 0 และ 1 คอลัมน์คือ BC = 00, 01, 11, 10 แถว A = 0 มีค่า 0 0 1 0 แถว A = 1 มีค่า 0 1 1 1 กลุ่มสีน้ำเงินครอบคอลัมน์ 11 ทั้งสองแถวคือ BC กลุ่มสีเขียวครอบแถวล่างคอลัมน์ 01 และ 11 คือ AC กลุ่มสีส้มครอบแถวล่างคอลัมน์ 11 และ 10 คือ AB ผลลัพธ์ F = AB + BC + AC"
+  - type: worked-example
+    title: ลดรูปด้วยแผนผังคาร์นอห์
+    problem: "ไฟเตือนในสายการผลิตติดตามตารางค่าความจริงที่มีมินเทอม $F = \\sum m(0, 2, 3, 7)$ ของตัวแปร $A, B, C$ ($A$ เป็นบิตซ้ายสุด) จงลดรูป $F$"
+    steps:
+      - text: "แปลงเลขมินเทอมเป็น $ABC$: $0 = 000$, $2 = 010$, $3 = 011$, $7 = 111$"
+      - text: "ใส่ 1 ในแผนผัง: แถว $A = 0$ คอลัมน์ $BC = 00, 11, 10$ และแถว $A = 1$ คอลัมน์ $BC = 11$"
+        why: "คอลัมน์เรียงแบบรหัสเกรย์ $00, 01, 11, 10$"
+      - text: "กลุ่มที่ 1: ช่อง $000$ กับ $010$ อยู่ติดกัน (ซ้ายสุดกับขวาสุดของแถวบน) $B$ เปลี่ยน จึงเหลือ $\\overline{A}\\,\\overline{C}$"
+        why: "ขอบซ้ายและขอบขวาของแผนผังถือว่าติดกัน"
+      - text: "กลุ่มที่ 2: ช่อง $011$ กับ $111$ อยู่คอลัมน์เดียวกัน $A$ เปลี่ยน จึงเหลือ $BC$"
+      - text: "ทุกเลข 1 ถูกครอบแล้ว ตรวจด้วยตารางค่าความจริงทั้ง 8 แถว ได้ผลตรงกัน"
+    answer: "$F = \\overline{A}\\,\\overline{C} + BC$"
+  - { type: check, problem: engineering.electronics.digital-logic.p011, prompt: "หาตัวแปรที่คงค่าเดิมในทุกช่องของกลุ่ม" }
+glossary:
+  - { term: นามธรรมดิจิทัล, definition: "การตีความแรงดันต่อเนื่องเป็นค่าตรรกะ 0 หรือ 1 ตามช่วงแรงดันที่กำหนด (digital abstraction)" }
+  - { term: ส่วนเผื่อสัญญาณรบกวน, definition: "ขนาดสัญญาณรบกวนที่ยังไม่ทำให้อ่านค่าผิด NM_H = V_OH − V_IH และ NM_L = V_IL − V_OL (noise margin)" }
+  - { term: มินเทอม, definition: "ผลคูณของตัวแปรทุกตัวที่ให้ค่า 1 ในแถวเดียวของตารางค่าความจริง (minterm)" }
+  - { term: แผนผังคาร์นอห์, definition: "ตารางที่เรียงช่องแบบรหัสเกรย์ ใช้วงกลุ่มเลข 1 เพื่อลดรูปฟังก์ชันบูลีน (Karnaugh map)" }
+  - { term: เกตสากล, definition: "เกตที่ใช้สร้างฟังก์ชันตรรกะได้ทุกฟังก์ชัน ได้แก่ NAND และ NOR (universal gate)" }
+  - { term: วงจรคอมบิเนชัน, definition: "วงจรตรรกะที่เอาต์พุตขึ้นกับอินพุตขณะนั้นเท่านั้น ไม่มีหน่วยความจำ (combinational circuit)" }
+flashcards:
+  - { front: "กฎเดอมอร์แกน", back: "$\\overline{AB} = \\overline{A} + \\overline{B}$ และ $\\overline{A + B} = \\overline{A}\\,\\overline{B}$" }
+  - { front: "ส่วนเผื่อสัญญาณรบกวนด้านสูงและด้านต่ำ", back: "$NM_H = V_{OH} - V_{IH}$ และ $NM_L = V_{IL} - V_{OL}$" }
+  - { front: "ลำดับคอลัมน์ของแผนผังคาร์นอห์ 2 ตัวแปร", back: "$00, 01, 11, 10$ (รหัสเกรย์ ช่องติดกันต่างกันหนึ่งบิต)" }
+  - { front: "ตัวบวกเต็ม", back: "$S = A \\oplus B \\oplus C_{in}$, $C_{out} = AB + C_{in}(A \\oplus B)$" }
+  - { front: "$A + AB$ เท่ากับ", back: "$A$ (กฎการดูดกลืน)" }
+references:
+  - { title: "พีชคณิตแบบบูล", url: "https://th.wikipedia.org/wiki/พีชคณิตแบบบูล", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Karnaugh map", url: "https://en.wikipedia.org/wiki/Karnaugh_map", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Noise margin", url: "https://en.wikipedia.org/wiki/Noise_margin", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.002 Circuits and Electronics (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
