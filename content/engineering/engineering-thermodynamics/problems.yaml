@@ -1,0 +1,274 @@
+problems:
+  - id: engineering.thermo.engineering-thermodynamics.p001
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 1
+    type: mcq
+    stem: "ของผสมน้ำกับไอน้ำอิ่มตัวมีคุณภาพ $x = 0.3$ หมายความว่าอย่างไร"
+    choices:
+      - { id: a, text: "มวล 30% เป็นไอ และ 70% เป็นของเหลว", correct: true }
+      - { id: b, text: "ปริมาตร 30% เป็นไอ", feedback: "คุณภาพนิยามด้วยมวล ไอมีปริมาตรจำเพาะมากกว่าของเหลวมาก ปริมาตรส่วนใหญ่จึงเป็นไอแม้ $x$ เล็ก" }
+      - { id: c, text: "มวล 30% เป็นของเหลว", feedback: "กลับกัน $x$ คือสัดส่วนมวลของไอ" }
+      - { id: d, text: "อุณหภูมิอยู่ 30% ของทางจากจุดเยือกแข็งถึงจุดเดือด", feedback: "ในของผสมอิ่มตัว อุณหภูมิเท่ากับอุณหภูมิอิ่มตัวตลอด ไม่ขึ้นกับ $x$" }
+    hints:
+      - "$x = m_{\\text{ไอ}}/m_{\\text{ทั้งหมด}}$"
+      - "ในโดม อุณหภูมิและความดันผูกกัน"
+    solution: "$x = m_g/(m_f + m_g) = 0.3$ คือไอ 30% ของมวล ของเหลว 70%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p002
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 1
+    type: match
+    stem: "จับคู่อุปกรณ์การไหลคงตัวกับความสัมพันธ์ที่ได้จากดุลพลังงานอย่างง่าย"
+    pairs:
+      - { left: "กังหันแอเดียแบติก", right: "w = h1 − h2" }
+      - { left: "วาล์วลดความดัน", right: "h2 = h1" }
+      - { left: "ปั๊มของเหลว", right: "w = v ΔP" }
+      - { left: "หัวฉีด", right: "V2² = 2(h1 − h2) + V1²" }
+    hints:
+      - "ดุลพลังงาน $q - w = \\Delta h + \\Delta V^2/2$"
+      - "อุปกรณ์ใดไม่มีทั้งงานและความร้อนและไม่เร่งของไหล"
+    solution: "กังหัน: $q \\approx 0$ ได้ $w = h_1 - h_2$; วาล์ว: $q = w = 0$ ได้ $h_2 = h_1$; ปั๊ม: ของเหลวอัดตัวไม่ได้ $w = v\\Delta P$; หัวฉีด: $q = w = 0$ พลังงานจลน์เพิ่มเท่ากับเอนทัลปีที่ลด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p003
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 2
+    type: numeric
+    stem: "ไอน้ำเปียกที่ $100\\ \\mathrm{kPa}$ มีคุณภาพ $0.9$ จากตารางไอน้ำ $h_f = 417.5$ และ $h_{fg} = 2257.4\\ \\mathrm{kJ/kg}$ เอนทัลปีจำเพาะเป็นกี่ $\\mathrm{kJ/kg}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 2449.2, tolerance: 2, unit: "kJ/kg" }
+    misconceptions:
+      - { match: 2031.7, feedback: "คูณ $x$ กับ $h_{fg}$ แล้วลืมบวก $h_f$" }
+      - { match: 2257.4, feedback: "ไม่ได้ใช้คุณภาพ ต้องคิดเฉพาะส่วนที่กลายเป็นไอ" }
+    hints:
+      - "$h = h_f + xh_{fg}$"
+      - "$417.5 + 0.9 \\times 2257.4$"
+    solution: "$h = 417.5 + 0.9(2257.4) = 2449.2\\ \\mathrm{kJ/kg}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p004
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 2
+    type: numeric
+    stem: "แก๊สในกระบอกสูบขยายตัวที่ความดันคงที่ $200\\ \\mathrm{kPa}$ จาก $0.05$ เป็น $0.12\\ \\mathrm{m^3}$ แก๊สทำงานกี่กิโลจูล"
+    answer: { value: 14, tolerance: 0.1, unit: kJ }
+    misconceptions:
+      - { match: 14000, feedback: "ได้หน่วยเป็นจูลเพราะใช้ความดันเป็น Pa ($\\mathrm{kPa \\times m^3} = \\mathrm{kJ}$ อยู่แล้ว)" }
+      - { match: 24, feedback: "คูณความดันกับปริมาตรสุดท้าย งานคือ $P\\Delta V$" }
+    hints:
+      - "$W_b = P(V_2 - V_1)$"
+      - "$\\mathrm{kPa \\cdot m^3} = \\mathrm{kJ}$"
+    solution: "$W_b = 200(0.12 - 0.05) = 14\\ \\mathrm{kJ}$ (บวกคือแก๊สทำงานต่อสิ่งแวดล้อม)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p005
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "อัดอากาศ (แก๊สอุดมคติ) อย่างช้า ๆ ที่อุณหภูมิคงที่จาก $0.1\\ \\mathrm{m^3}$ ที่ $100\\ \\mathrm{kPa}$ เหลือ $0.02\\ \\mathrm{m^3}$ ต้องใส่งานกี่กิโลจูล (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 16.1, tolerance: 0.2, unit: kJ }
+    misconceptions:
+      - { match: 8, feedback: "ใช้ $P_1\\Delta V$ เหมือนความดันคงที่ ความดันเพิ่มขึ้นระหว่างอัด ต้องอินทิเกรต $\\int P\\,dV$" }
+      - { match: 40, feedback: "ใช้ความดันสุดท้าย $500\\ \\mathrm{kPa}$ คูณ $\\Delta V$" }
+    hints:
+      - "$W_b = P_1V_1\\ln(V_2/V_1)$"
+      - "ค่าที่ได้เป็นลบ หมายถึงงานที่ใส่เข้าไป"
+    solution: "$W_b = 100(0.1)\\ln(0.02/0.1) = 10\\ln 0.2 = -16.1\\ \\mathrm{kJ}$ จึงต้องใส่งาน $16.1\\ \\mathrm{kJ}$ (และอากาศคายความร้อนเท่ากันเพราะ $\\Delta U = 0$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p006
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องยนต์ดีเซลของรถไถนา (ค่าสมมติ) อัดอากาศ $300\\ \\mathrm{K}$ ด้วยอัตราส่วนกำลังอัด $V_1/V_2 = 18$ ถ้าถือว่าเป็นแอเดียแบติกผันกลับได้ของแก๊สอุดมคติ $k = 1.4$ อุณหภูมิหลังอัดเป็นกี่เคลวิน (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 953, tolerance: 5, unit: K }
+    misconceptions:
+      - { match: 5400, feedback: "คูณอัตราส่วนกำลังอัดตรง ๆ ความสัมพันธ์คือ $T_2 = T_1(V_1/V_2)^{k-1}$" }
+      - { match: 17159, feedback: "ใช้เลขชี้กำลัง $k$ แทน $k - 1$ ($k$ ใช้กับความดัน $P_2/P_1$)" }
+    hints:
+      - "$TV^{k-1}$ คงที่"
+      - "$18^{0.4} = 3.18$"
+    solution: "$T_2 = 300(18)^{0.4} = 300 \\times 3.178 = 953\\ \\mathrm{K}$ ($680\\,^\\circ\\mathrm{C}$) ร้อนพอให้น้ำมันดีเซลที่ฉีดเข้าไปติดไฟเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p007
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "ไอที่ออกจากกังหันที่ $10\\ \\mathrm{kPa}$ มีเอนทัลปี $2300\\ \\mathrm{kJ/kg}$ ตารางไอน้ำที่ $10\\ \\mathrm{kPa}$: $h_f = 191.81$, $h_{fg} = 2392.1$, $h_g = 2583.9\\ \\mathrm{kJ/kg}$ คุณภาพของไอเป็นเท่าใด (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.881, tolerance: 0.003 }
+    misconceptions:
+      - { match: 0.89, feedback: "ใช้ $h/h_g$ ต้องใช้ $(h - h_f)/h_{fg}$" }
+      - { match: 0.962, feedback: "ใช้ $h/h_{fg}$ โดยลืมหัก $h_f$" }
+    hints:
+      - "$h = h_f + xh_{fg}$"
+      - "$x = (h - h_f)/h_{fg}$"
+    solution: "$x = \\dfrac{2300 - 191.81}{2392.1} = 0.881$ ไอมีความชื้น 11.9% ซึ่งกัดกร่อนใบกังหันช่วงท้าย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p008
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "กังหันไอน้ำของโรงไฟฟ้าแบบแม่เมาะ (ค่าสมมติ) รับไอ $140\\ \\mathrm{kg/s}$ ที่ $h_1 = 3214.5\\ \\mathrm{kJ/kg}$ ไอออกที่ $h_2 = 2305.1\\ \\mathrm{kJ/kg}$ ไม่คิดการสูญเสียความร้อนและพลังงานจลน์ กังหันให้กำลังกี่เมกะวัตต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 127.3, tolerance: 1, unit: MW }
+    misconceptions:
+      - { match: 322.7, feedback: "ใช้เอนทัลปีขาออกแทนผลต่าง กำลังคือ $\\dot m(h_1 - h_2)$" }
+      - { match: 909.4, feedback: "ไม่ได้คูณอัตราการไหล นี่คืองานต่อกิโลกรัม (kJ/kg)" }
+    hints:
+      - "$\\dot W = \\dot m(h_1 - h_2)$"
+      - "$\\mathrm{kg/s \\times kJ/kg} = \\mathrm{kW}$"
+    solution: "$\\dot W = 140(3214.5 - 2305.1) = 140 \\times 909.4 = 127\\,316\\ \\mathrm{kW} = 127.3\\ \\mathrm{MW}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p009
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 3
+    type: numeric
+    stem: "อากาศไหลเข้าหัวฉีดที่ $400\\ \\mathrm{K}$ ความเร็ว $10\\ \\mathrm{m/s}$ ออกที่ $300\\ \\mathrm{K}$ ถ้าหัวฉีดหุ้มฉนวนและใช้แก๊สอุดมคติ $c_p = 1.005\\ \\mathrm{kJ/(kg\\cdot K)}$ คงที่ ความเร็วขาออกเป็นกี่เมตรต่อวินาที (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 448.4, tolerance: 4, unit: "m/s" }
+    misconceptions:
+      - { match: 17.3, feedback: "ใช้ $c_p$ เป็น kJ ต้องแปลงเป็น $1005\\ \\mathrm{J/(kg\\cdot K)}$ ให้หน่วยเข้ากับ $V^2/2$" }
+      - { match: 317.2, feedback: "ลืมคูณ 2 ใน $V_2^2 = 2(h_1 - h_2) + V_1^2$" }
+    hints:
+      - "$\\dfrac{V_2^2 - V_1^2}{2} = c_p(T_1 - T_2)$"
+      - "ใช้หน่วย J/kg"
+    solution: "$V_2 = \\sqrt{2(1005)(100) + 10^2} = \\sqrt{201\\,100} = 448.4\\ \\mathrm{m/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p010
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องปรับอากาศในบ้าน (ค่าสมมติ) ใช้ R-134a ของเหลวอิ่มตัวที่ $45\\,^\\circ\\mathrm{C}$ ($h = 115.80\\ \\mathrm{kJ/kg}$) ผ่านวาล์วลดความดันเข้าเครื่องระเหยที่ $5\\,^\\circ\\mathrm{C}$ ($h_f = 58.61$, $h_g = 253.35\\ \\mathrm{kJ/kg}$) คุณภาพหลังวาล์วเป็นเท่าใด (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.294, tolerance: 0.003 }
+    misconceptions:
+      - { match: 0.457, feedback: "ใช้ $h/h_g$ ต้องใช้ $(h - h_f)/(h_g - h_f)$" }
+      - { match: 0, feedback: "คิดว่าของเหลวยังเป็นของเหลวทั้งหมด ความดันที่ลดลงทำให้บางส่วนเดือดกลายเป็นไอทันที" }
+    hints:
+      - "วาล์ว: $h_4 = h_3 = 115.80$"
+      - "$x = (h - h_f)/(h_g - h_f)$"
+    solution: "$h_{fg} = 253.35 - 58.61 = 194.74$ ได้ $x = \\dfrac{115.80 - 58.61}{194.74} = 0.294$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p011
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "ไอ $4\\ \\mathrm{MPa}$, $400\\,^\\circ\\mathrm{C}$ ($h_1 = 3214.5\\ \\mathrm{kJ/kg}$, $s_1 = 6.7714\\ \\mathrm{kJ/(kg\\cdot K)}$) ขยายตัวไอเซนโทรปิกถึง $10\\ \\mathrm{kPa}$ ($h_f = 191.81$, $h_{fg} = 2392.1\\ \\mathrm{kJ/kg}$, $s_f = 0.6492$, $s_{fg} = 7.4996\\ \\mathrm{kJ/(kg\\cdot K)}$) เอนทัลปีขาออก $h_{2s}$ เป็นกี่ $\\mathrm{kJ/kg}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 2144.6, tolerance: 2, unit: "kJ/kg" }
+    misconceptions:
+      - { match: 1989, feedback: "หารด้วย $s_g$ แทน $s_{fg}$ ในการหาคุณภาพ" }
+      - { match: 2109.3, feedback: "คูณคุณภาพกับ $h_g$ ต้องใช้ $h_f + xh_{fg}$" }
+    hints:
+      - "$x_2 = (s_1 - s_f)/s_{fg}$"
+      - "$h_{2s} = h_f + x_2h_{fg}$"
+    solution: "$x_2 = \\dfrac{6.7714 - 0.6492}{7.4996} = 0.8163$ ได้ $h_{2s} = 191.81 + 0.8163(2392.1) = 2144.6\\ \\mathrm{kJ/kg}$ (ตรวจด้วยสมการสมบัติ IAPWS ได้ $2144.5$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p012
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 5
+    type: numeric
+    stem: "วัฏจักรแรงคินอุดมคติใช้ไอ $4\\ \\mathrm{MPa}$, $400\\,^\\circ\\mathrm{C}$ และเครื่องควบแน่น $10\\ \\mathrm{kPa}$ (ค่าจากข้อก่อน: $h_1 = 3214.5$, $h_{2s} = 2144.6$, $h_f = 191.81\\ \\mathrm{kJ/kg}$, $v_f = 0.00101\\ \\mathrm{m^3/kg}$) ประสิทธิภาพเชิงความร้อนเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 35.3, tolerance: 0.3, unit: "%" }
+    misconceptions:
+      - { match: 52.6, feedback: "นี่คือประสิทธิภาพคาร์โนต์ระหว่าง $400\\,^\\circ\\mathrm{C}$ กับ $45.8\\,^\\circ\\mathrm{C}$ วัฏจักรแรงคินต่ำกว่านี้" }
+      - { match: 33.2, feedback: "ใช้ $h_1$ เป็นความร้อนเข้าทั้งหมด ความร้อนเข้าคือ $h_1 - h_4$ เพราะน้ำเข้าหม้อไอน้ำมีเอนทัลปี $h_4$ อยู่แล้ว" }
+    hints:
+      - "$w_P = v_f\\Delta P = 0.00101(4000 - 10)$ และ $h_4 = h_f + w_P$"
+      - "$\\eta = (w_T - w_P)/(h_1 - h_4)$"
+    solution: "$w_T = 1069.9$, $w_P = 4.03$, $h_4 = 195.84$, $q_{\\text{เข้า}} = 3018.7\\ \\mathrm{kJ/kg}$ ได้ $\\eta = \\dfrac{1069.9 - 4.0}{3018.7} = 35.3\\%$ (ตรวจ: $q_{\\text{ออก}} = 2144.6 - 191.8 = 1952.8$ และ $q_{\\text{เข้า}} - q_{\\text{ออก}} = 1065.9$ เท่ากับงานสุทธิ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p013
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องปรับอากาศในข้อก่อน (R-134a, $5\\,^\\circ\\mathrm{C}$ / $45\\,^\\circ\\mathrm{C}$) มี $h_1 = 253.35$ (ไออิ่มตัวเข้าเครื่องอัด) $h_2 = 278.25$ (หลังอัดไอเซนโทรปิก) และ $h_3 = 115.80\\ \\mathrm{kJ/kg}$ COP ของการทำความเย็นเป็นเท่าใด (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 5.52, tolerance: 0.05 }
+    misconceptions:
+      - { match: 6.52, feedback: "ใช้ $(h_2 - h_3)/(h_2 - h_1)$ ซึ่งเป็น COP ของปั๊มความร้อน" }
+      - { match: 6.95, feedback: "นี่คือ COP ของคาร์โนต์ $T_L/(T_H - T_L)$ วัฏจักรจริงต่ำกว่า" }
+    hints:
+      - "$q_L = h_1 - h_4$ และ $h_4 = h_3$"
+      - "$\\mathrm{COP} = q_L/(h_2 - h_1)$"
+    solution: "$q_L = 253.35 - 115.80 = 137.55$, $w = 278.25 - 253.35 = 24.90\\ \\mathrm{kJ/kg}$ ได้ $\\mathrm{COP} = 5.52$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p014
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "การกลายเป็นไอของน้ำที่ $100\\ \\mathrm{kPa}$ มี $\\Delta h = 2257.4\\ \\mathrm{kJ/kg}$ และ $\\Delta s = 6.056\\ \\mathrm{kJ/(kg\\cdot K)}$ ถ้าถือว่าสองค่านี้คงที่ จงหา $\\Delta g = \\Delta h - T\\Delta s$ ที่ $120\\,^\\circ\\mathrm{C}$ เป็น $\\mathrm{kJ/kg}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: -123.5, tolerance: 1.2, unit: "kJ/kg" }
+    misconceptions:
+      - { match: 1530.7, feedback: "ใช้อุณหภูมิเป็นองศาเซลเซียส ต้องใช้เคลวิน $393.15\\ \\mathrm{K}$" }
+      - { match: 123.5, feedback: "เครื่องหมายกลับ $T\\Delta s$ มากกว่า $\\Delta h$ ที่อุณหภูมินี้ ผลจึงเป็นลบ" }
+    hints:
+      - "$T = 393.15\\ \\mathrm{K}$"
+      - "$\\Delta g < 0$ หมายถึงการเดือดเกิดขึ้นเองได้"
+    solution: "$\\Delta g = 2257.4 - 393.15(6.056) = 2257.4 - 2380.9 = -123.5\\ \\mathrm{kJ/kg}$ ติดลบ น้ำที่ $120\\,^\\circ\\mathrm{C}$ ภายใต้ $100\\ \\mathrm{kPa}$ จึงเดือดเอง ส่วนที่ $80\\,^\\circ\\mathrm{C}$ ได้ $+118.7$ (ไม่เดือด) และ $\\Delta g = 0$ ที่ $372.8\\ \\mathrm{K}$ ซึ่งคืออุณหภูมิอิ่มตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p015
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 5
+    type: numeric
+    stem: "น้ำ $1\\ \\mathrm{kg}$ ($c = 4.18\\ \\mathrm{kJ/(kg\\cdot K)}$) ถูกต้มจาก $25$ เป็น $85\\,^\\circ\\mathrm{C}$ ด้วยความร้อนจากแหล่งที่อุณหภูมิคงที่ $120\\,^\\circ\\mathrm{C}$ เอนโทรปีที่เกิดขึ้นทั้งหมด (น้ำรวมแหล่งความร้อน) เป็นกี่ $\\mathrm{kJ/K}$ (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.129, tolerance: 0.003, unit: "kJ/K" }
+    misconceptions:
+      - { match: 0.766, feedback: "คิดเฉพาะเอนโทรปีของน้ำ แหล่งความร้อนเสียเอนโทรปี $Q/T$ ด้วย" }
+      - { match: 3.025, feedback: "ใช้องศาเซลเซียสในลอการิทึมและใน $Q/T$ ต้องใช้เคลวิน" }
+    hints:
+      - "น้ำ: $\\Delta S = mc\\ln(T_2/T_1)$ (เคลวิน)"
+      - "แหล่งความร้อน: $\\Delta S = -Q/T_{\\text{แหล่ง}}$ เมื่อ $Q = mc\\Delta T$"
+    solution: "น้ำ: $4.18\\ln(358.15/298.15) = 0.766\\ \\mathrm{kJ/K}$ แหล่ง: $-250.8/393.15 = -0.638\\ \\mathrm{kJ/K}$ รวม $S_{\\text{gen}} = 0.129\\ \\mathrm{kJ/K} > 0$ ตามกฎข้อที่สอง เพราะความร้อนไหลข้ามผลต่างอุณหภูมิจำกัด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p016
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องควบแน่นของโรงไฟฟ้าในข้อกังหัน (ไอ $140\\ \\mathrm{kg/s}$ เข้าที่ $h = 2305.1$ ออกเป็นของเหลวอิ่มตัว $h_f = 191.8\\ \\mathrm{kJ/kg}$) ใช้น้ำหล่อเย็นจากอ่างเก็บน้ำที่ร้อนขึ้นได้ $8\\,^\\circ\\mathrm{C}$ ($c = 4.18\\ \\mathrm{kJ/(kg\\cdot K)}$) ต้องใช้น้ำหล่อเย็นกี่กิโลกรัมต่อวินาที (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 8847, tolerance: 90, unit: "kg/s" }
+    misconceptions:
+      - { match: 9650, feedback: "ใช้เอนทัลปีขาเข้าทั้งหมด ไอออกจากเครื่องควบแน่นยังมี $h_f$ ความร้อนที่ปล่อยคือ $h - h_f$" }
+      - { match: 63.2, feedback: "ลืมคูณอัตราการไหลของไอ $140\\ \\mathrm{kg/s}$" }
+    hints:
+      - "ความร้อนที่ไอปล่อย $= \\dot m_s(h - h_f)$"
+      - "ความร้อนที่น้ำหล่อเย็นรับ $= \\dot m_w c\\Delta T$"
+    solution: "$\\dot Q = 140(2305.1 - 191.8) = 295\\,862\\ \\mathrm{kW}$ ได้ $\\dot m_w = \\dfrac{295\\,862}{4.18 \\times 8} = 8847\\ \\mathrm{kg/s}$ (เกือบ $9\\ \\mathrm{m^3}$ ต่อวินาที เป็นเหตุที่โรงไฟฟ้าต้องตั้งใกล้แหล่งน้ำหรือมีหอหล่อเย็น)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.engineering-thermodynamics.p017
+    topics: [engineering.thermo.engineering-thermodynamics]
+    difficulty: 2
+    type: numeric
+    stem: "ปั๊มป้อนน้ำในวัฏจักรแรงคินอัดน้ำอิ่มตัว ($v = 0.00101\\ \\mathrm{m^3/kg}$) จาก $10\\ \\mathrm{kPa}$ เป็น $8\\ \\mathrm{MPa}$ งานปั๊มอุดมคติเป็นกี่ $\\mathrm{kJ/kg}$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.07, tolerance: 0.05, unit: "kJ/kg" }
+    misconceptions:
+      - { match: 0.008, feedback: "ใช้ความดันเป็น MPa ($v \\times \\mathrm{MPa}$ ได้ $\\mathrm{MJ/kg}$) ต้องใช้ kPa จึงได้ kJ/kg" }
+      - { match: 8070, feedback: "ใช้ความดันเป็น Pa จึงได้หน่วย J/kg ไม่ใช่ kJ/kg" }
+    hints:
+      - "$w = v(P_2 - P_1)$"
+      - "$\\mathrm{m^3/kg \\times kPa = kJ/kg}$"
+    solution: "$w = 0.00101(8000 - 10) = 8.07\\ \\mathrm{kJ/kg}$ น้อยกว่างานกังหันราว 150 เท่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

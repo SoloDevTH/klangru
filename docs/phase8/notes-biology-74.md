@@ -40,3 +40,10 @@
 `npm run validate -- --strict` ทั้งคลังพบ error จาก `engineering/engineering-thermodynamics/topic.yaml` (ไม่พบไฟล์) และ `engineering/centroids-inertia/lesson.md` (ลิงก์ไปหัวข้อที่ยังไม่มี) และคำเตือนจาก `business/inflation-unemployment/topic.yaml` ไม่มี error หรือ warning จากโฟลเดอร์ของชุดนี้ `npm test -w @klangru/content-tools` ผ่าน 35/35
 
 ## ผลตรวจลิงก์
+
+ตรวจวันที่ 2026-11-02 ด้วย User-Agent ของคลังรู้ ทุกลิงก์ได้ HTTP 200 และตรงเรื่อง ไม่มีลิงก์ที่ยังไม่ได้ตรวจ
+
+- 200 https://en.wikipedia.org/wiki/Drug_development
+- 200 https://en.wikipedia.org/wiki/Phases_of_clinical_research
+- 200 https://en.wikipedia.org/wiki/Declaration_of_Helsinki
+- 200 https://en.wikipedia.org/wiki/Pharmacogenomics

@@ -1,0 +1,72 @@
+id: engineering.thermo.engineering-thermodynamics
+subject: engineering
+title: { th: อุณหพลศาสตร์วิศวกรรม, en: Engineering thermodynamics }
+summary: สมบัติของสารบริสุทธิ์และตารางไอน้ำ งานขอบเขตของระบบปิด อุปกรณ์การไหลคงตัว เอนโทรปี วัฏจักรแรงคิน วัฏจักรทำความเย็นแบบอัดไอ และพลังงานอิสระของกิบส์
+difficulty: 8.5
+minutes: 55
+prerequisites: [physics.thermal.second-law, physics.thermal.phase-change, engineering.process.mass-energy-balance]
+encompasses:
+  - { id: physics.thermal.second-law, weight: 0.4 }
+  - { id: engineering.process.mass-energy-balance, weight: 0.3 }
+  - { id: physics.thermal.phase-change, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: กระบวนการของแก๊สอุดมคติบนแผนภาพ P–v
+    src: pv-processes.svg
+    alt: "แผนภาพความดันกับปริมาตรจำเพาะ เริ่มจากสถานะ 100 kPa 0.8 ลูกบาศก์เมตรต่อกิโลกรัม เส้นสีเขียวความดันคงที่ไปทางซ้ายถึง 0.2 มีพื้นที่ใต้เส้นแรเงาแสดงงานขอบเขต เส้นสีน้ำเงินอุณหภูมิคงที่ Pv คงที่ และเส้นสีแดงแอเดียแบติก Pv^k คงที่ซึ่งชันกว่า เส้นสีม่วงตั้งขึ้นคือปริมาตรคงที่ซึ่งไม่มีงาน"
+  - { type: check, problem: engineering.thermo.engineering-thermodynamics.p004, prompt: "งานขอบเขตที่ความดันคงที่คือ P คูณการเปลี่ยนปริมาตร" }
+  - type: figure
+    title: วัฏจักรแรงคินบนแผนภาพ T–s
+    src: rankine-ts.svg
+    alt: "แผนภาพอุณหภูมิกับเอนโทรปีของน้ำ มีเส้นโค้งรูปโดมของสถานะอิ่มตัว วัฏจักรแรงคินอุดมคติ จุด 1 ไอร้อนยิ่งยวด 500 องศา ที่ s ราว 6.73 เส้นตั้งลงถึงจุด 2 ที่ 45.8 องศาภายในโดมคือกังหัน เส้นแนวนอนจาก 2 ไปจุด 3 บนเส้นของเหลวอิ่มตัวคือเครื่องควบแน่นที่ 10 kPa จาก 3 ไป 4 สั้นมากคือปั๊ม จาก 4 ตามเส้นความดัน 8 MPa ขึ้นไปผ่านช่วงเดือดแนวราบที่ราว 295 องศาจนถึงจุด 1 คือหม้อไอน้ำ"
+  - type: worked-example
+    title: วัฏจักรแรงคินอุดมคติ
+    problem: "โรงไฟฟ้า (ค่าสมมติ) ใช้ไอ $8\\ \\mathrm{MPa}$, $500\\,^\\circ\\mathrm{C}$ ($h_1 = 3399.5\\ \\mathrm{kJ/kg}$, $s_1 = 6.7266\\ \\mathrm{kJ/(kg\\cdot K)}$) ควบแน่นที่ $10\\ \\mathrm{kPa}$ ($h_f = 191.81$, $h_{fg} = 2392.1\\ \\mathrm{kJ/kg}$, $s_f = 0.6492$, $s_{fg} = 7.4996\\ \\mathrm{kJ/(kg\\cdot K)}$, $v_f = 0.00101\\ \\mathrm{m^3/kg}$) จงหาประสิทธิภาพเชิงความร้อน"
+    steps:
+      - text: "กังหันไอเซนโทรปิก $s_2 = s_1$: $x_2 = \\dfrac{6.7266 - 0.6492}{7.4996} = 0.810$"
+        why: "ไอที่ออกจากกังหันอยู่ในโดม จึงใช้สูตรคุณภาพกับ $s$"
+      - text: "$h_2 = 191.81 + 0.810(2392.1) = 2130.3\\ \\mathrm{kJ/kg}$ ได้ $w_T = 3399.5 - 2130.3 = 1269.2\\ \\mathrm{kJ/kg}$"
+      - text: "ปั๊ม: $w_P = v_f\\Delta P = 0.00101(8000 - 10) = 8.07\\ \\mathrm{kJ/kg}$ ได้ $h_4 = 199.9\\ \\mathrm{kJ/kg}$"
+        why: "$\\mathrm{m^3/kg} \\times \\mathrm{kPa} = \\mathrm{kJ/kg}$ จึงต้องใช้ความดันเป็น kPa"
+      - text: "$q_{\\text{เข้า}} = h_1 - h_4 = 3199.6\\ \\mathrm{kJ/kg}$"
+      - text: "$\\eta = \\dfrac{1269.2 - 8.1}{3199.6} = 39.4\\%$ เทียบคาร์โนต์ $1 - \\dfrac{319.0}{773.2} = 58.7\\%$"
+        why: "ตรวจด้วยดุลพลังงานทั้งวัฏจักร: $q_{\\text{ออก}} = h_2 - h_3 = 1938.5$ และ $q_{\\text{เข้า}} - q_{\\text{ออก}} = 1261.1 = w_T - w_P$"
+    answer: "$\\eta = 39.4\\%$ (งานสุทธิ $1261\\ \\mathrm{kJ/kg}$)"
+  - type: worked-example
+    title: ห้องเย็นแช่กุ้ง
+    problem: "ห้องเย็นแช่กุ้ง (ค่าสมมติ) ต้องดึงความร้อน $5\\ \\mathrm{kW}$ ใช้วัฏจักรอัดไอ R-134a อุดมคติ เครื่องระเหยที่ $-10\\,^\\circ\\mathrm{C}$ เครื่องควบแน่นที่ $40\\,^\\circ\\mathrm{C}$ จากตาราง R-134a: $h_1 = 244.52$ (ไออิ่มตัวที่ $-10\\,^\\circ\\mathrm{C}$) $h_2 = 278.34$ (หลังอัดไอเซนโทรปิก) $h_3 = 108.27\\ \\mathrm{kJ/kg}$ (ของเหลวอิ่มตัวที่ $40\\,^\\circ\\mathrm{C}$) จงหาอัตราการไหลของสารทำความเย็น กำลังของเครื่องอัด และ COP"
+    steps:
+      - text: "วาล์วลดความดัน: $h_4 = h_3 = 108.27\\ \\mathrm{kJ/kg}$"
+        why: "วาล์วไม่มีงานและความร้อน เอนทัลปีจึงคงที่"
+      - text: "ผลทำความเย็น $q_L = h_1 - h_4 = 136.25\\ \\mathrm{kJ/kg}$ ได้ $\\dot m = 5/136.25 = 0.0367\\ \\mathrm{kg/s}$"
+      - text: "งานเครื่องอัด $w = h_2 - h_1 = 33.82\\ \\mathrm{kJ/kg}$ ได้ $\\dot W = 0.0367 \\times 33.82 = 1.24\\ \\mathrm{kW}$"
+      - text: "$\\mathrm{COP} = 136.25/33.82 = 4.03$ ต่ำกว่าคาร์โนต์ $263.15/50 = 5.26$"
+        why: "ความร้อนที่คายออกนอกห้อง $= 5 + 1.24 = 6.24\\ \\mathrm{kW}$ ตรงกับ $\\dot m(h_2 - h_3)$"
+    answer: "$\\dot m = 0.0367\\ \\mathrm{kg/s}$, $\\dot W = 1.24\\ \\mathrm{kW}$, $\\mathrm{COP} = 4.03$"
+  - { type: check, problem: engineering.thermo.engineering-thermodynamics.p010, prompt: "วาล์วลดความดันทำให้ h คงที่ แล้วใช้สูตรคุณภาพที่ความดันต่ำ" }
+glossary:
+  - { term: คุณภาพ, definition: "สัดส่วนมวลของไอในของผสมอิ่มตัว x มีค่า 0 ถึง 1 (quality)" }
+  - { term: เอนทัลปี, definition: "h = u + Pv พลังงานภายในรวมงานผลักดัน ใช้กับมวลที่ไหลผ่านปริมาตรควบคุม (enthalpy)" }
+  - { term: ไอร้อนยิ่งยวด, definition: "ไอที่อุณหภูมิสูงกว่าอุณหภูมิอิ่มตัวที่ความดันนั้น (superheated vapor)" }
+  - { term: ปริมาตรควบคุม, definition: "บริเวณในอวกาศที่เลือกวิเคราะห์ มวลไหลเข้าออกได้ (control volume)" }
+  - { term: กระบวนการไอเซนโทรปิก, definition: "กระบวนการที่เอนโทรปีคงที่ เช่น แอเดียแบติกผันกลับได้ ใช้เป็นอุดมคติของกังหัน ปั๊ม เครื่องอัด (isentropic process)" }
+  - { term: วัฏจักรแรงคิน, definition: "วัฏจักรกำลังไอน้ำ ประกอบด้วยปั๊ม หม้อไอน้ำ กังหัน และเครื่องควบแน่น (Rankine cycle)" }
+  - { term: สัมประสิทธิ์สมรรถนะ, definition: "COP = ผลที่ต้องการหารด้วยงานที่ใส่ ของเครื่องทำความเย็นคือ qL/w (coefficient of performance)" }
+  - { term: พลังงานอิสระของกิบส์, definition: "G = H − TS กระบวนการที่ T และ P คงที่เกิดเองได้เมื่อ ΔG < 0 (Gibbs free energy)" }
+flashcards:
+  - { front: "สมบัติของของผสมอิ่มตัว", back: "$h = h_f + xh_{fg}$ (ใช้แบบเดียวกันกับ $s$, $v$, $u$)" }
+  - { front: "ดุลพลังงานของอุปกรณ์การไหลคงตัว", back: "$q - w = \\Delta h + \\Delta V^2/2 + g\\Delta z$" }
+  - { front: "วาล์วลดความดันและปั๊มของเหลว", back: "วาล์ว: $h_2 = h_1$ ปั๊ม: $w = v\\Delta P$" }
+  - { front: "ประสิทธิภาพวัฏจักรแรงคิน", back: "$\\eta = (w_T - w_P)/q_{\\text{เข้า}}$ ต่ำกว่าคาร์โนต์ที่อุณหภูมิสูงสุดและต่ำสุดเดียวกัน" }
+  - { front: "งานขอบเขตของแก๊สอุดมคติที่อุณหภูมิคงที่", back: "$W = P_1V_1\\ln(V_2/V_1)$" }
+references:
+  - { title: "3.4 Thermodynamic Processes (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/3-4-thermodynamic-processes", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Rankine cycle", url: "https://en.wikipedia.org/wiki/Rankine_cycle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Vapor-compression refrigeration", url: "https://en.wikipedia.org/wiki/Vapor-compression_refrigeration", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "16.4 Free Energy (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/16-4-free-energy", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

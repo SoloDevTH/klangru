@@ -53,3 +53,17 @@
 `npm run validate -- --strict` ทั้งคลังพบ error จากโฟลเดอร์ที่ชุดอื่นกำลังเขียน: `engineering/engineering-thermodynamics/topic.yaml` (ไม่พบไฟล์) `engineering/centroids-inertia/lesson.md` (ลิงก์ไป engineering.mechanics.rigid-body-dynamics ที่ยังไม่มี) และคำเตือน `business/inflation-unemployment/topic.yaml` (encompasses) ไม่มี error หรือ warning จากโฟลเดอร์ของชุดนี้ `--only` สามโฟลเดอร์ของชุดนี้ได้ 0 error 0 warning `npm test -w @klangru/content-tools` ผ่าน 35/35
 
 ## ผลตรวจลิงก์
+
+ตรวจวันที่ 2026-11-02 ด้วย User-Agent ของคลังรู้ ทุกลิงก์ได้ HTTP 200 และตรงเรื่อง ไม่มีลิงก์ที่ยังไม่ได้ตรวจ ลิงก์วิกิพีเดียไทย "การเปลี่ยนแปลงภูมิอากาศ" เปลี่ยนทางไปหน้า "ภาวะโลกร้อน" (ตรงเรื่อง ปรับชื่อในอ้างอิงแล้ว)
+
+- 200 https://en.wikipedia.org/wiki/2011_Thailand_floods
+- 200 https://en.wikipedia.org/wiki/Landslide
+- 200 https://en.wikipedia.org/wiki/Sinkhole
+- 200 https://en.wikipedia.org/wiki/Coastal_erosion
+- 200 https://en.wikipedia.org/wiki/IPCC_Sixth_Assessment_Report
+- 200 https://en.wikipedia.org/wiki/Climate_sensitivity
+- 200 https://en.wikipedia.org/wiki/Carbon_budget
+- 200 https://th.wikipedia.org/wiki/การเปลี่ยนแปลงภูมิอากาศ
+- 200 https://en.wikipedia.org/wiki/Climate_model
+- 200 https://en.wikipedia.org/wiki/Euler_method
+- 200 https://en.wikipedia.org/wiki/Maximum_sustainable_yield

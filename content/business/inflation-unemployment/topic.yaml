@@ -1,0 +1,112 @@
+id: business.econ.inflation-unemployment
+subject: business
+title:
+  th: เงินเฟ้อ เงินฝืด และการว่างงาน
+  en: Inflation, deflation and unemployment
+summary: ดัชนีราคาผู้บริโภคและอัตราเงินเฟ้อ ผลของเงินเฟ้อและเงินฝืดต่อผู้ออม ผู้กู้ และธุรกิจ อัตราการว่างงาน ประเภท ผลเสีย และแนวทางแก้
+difficulty: 5
+minutes: 40
+prerequisites:
+- business.econ.government-taxes
+- math.number.ratio-percent
+encompasses:
+- id: math.number.ratio-percent
+  weight: 0.3
+- id: business.econ.government-taxes
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: cpi-line.svg
+  alt: กราฟเส้นดัชนีราคาผู้บริโภคของประเทศสมมติ ปี 2563 ถึง 2568 ปีฐาน 2563 เท่ากับ 100.0 ปี 2564 101.2 ปี 2565 107.4 ปี 2566 108.7 ปี 2567 108.2 ปี 2568 109.3 ใต้แต่ละช่วงเขียนอัตราเงินเฟ้อ 1.2% 6.1% 1.2% −0.5% และ 1.0% แถบสีอ่อนแสดงช่วงเป้าหมาย 1–3% ต่อปี ปี 2565 สูงกว่าเป้าหมาย และปี 2567 ติดลบ (เงินฝืด)
+  caption: ดัชนีราคาและอัตราเงินเฟ้อรายปีของประเทศสมมติ เทียบกับช่วงเป้าหมาย 1–3%
+- type: worked-example
+  title: จากตะกร้าสินค้าถึงอัตราเงินเฟ้อและค่าจ้างแท้จริง
+  problem: ค่าตะกร้าปีฐาน $2{,}500$ บาท ปีที่ 1 เท่ากับ $2{,}604$ บาท ปีที่ 2 เท่ากับ $2{,}708.16$ บาท หา CPI แต่ละปี อัตราเงินเฟ้อปีที่ 2 และถ้าเงินเดือนปีที่ 2 ขึ้น $3\%$ ค่าจ้างแท้จริงเปลี่ยนเท่าไร
+  steps:
+  - text: CPI ปีที่ 1 $= 2{,}604 \div 2{,}500 \times 100 = 104.16$
+  - text: CPI ปีที่ 2 $= 2{,}708.16 \div 2{,}500 \times 100 = 108.3264 \approx 108.33$
+  - text: เงินเฟ้อปีที่ 2 $= \dfrac{108.3264 - 104.16}{104.16} \times 100 = 4\%$
+    why: เทียบกับปีก่อน ไม่ใช่ปีฐาน ถ้าใช้ผลต่าง 4.17 จุด จะผิด
+  - text: ค่าจ้างแท้จริง $= \dfrac{1.03}{1.04} - 1 \approx -0.96\%$
+    why: ได้เงินเพิ่ม 3% แต่ของแพงขึ้น 4% อำนาจซื้อจึงลดลง
+  answer: CPI $104.16$ และ $\approx 108.33$ · เงินเฟ้อ $4\%$ · ค่าจ้างแท้จริง $\approx -0.96\%$
+- type: check
+  problem: business.econ.inflation-unemployment.p006
+  prompt: หารด้วยดัชนีปีไหน
+- type: figure
+  src: labor-force.svg
+  alt: แผนผังต้นไม้ของจังหวัดสมมติ กล่องบนสุด ผู้อายุ 15 ปีขึ้นไป 1,200,000 คน แยกเป็นสองกล่อง กำลังแรงงาน 800,000 คน และผู้อยู่นอกกำลังแรงงาน 400,000 คน (นักเรียน ผู้ทำงานบ้าน ผู้เกษียณ) กำลังแรงงานแยกเป็นผู้มีงานทำ 760,000 คน และผู้ว่างงาน 40,000 คน ด้านล่างเขียนสูตรอัตราการว่างงาน 40,000 หาร 800,000 เท่ากับ 5%
+  caption: ตัวหารของอัตราการว่างงานคือกำลังแรงงาน ไม่ใช่ประชากรทั้งหมด
+- type: worked-example
+  title: อัตราการว่างงานและผลผลิตที่เสียไป
+  problem: ผู้อายุ 15 ปีขึ้นไป $1{,}200{,}000$ คน มีงานทำ $760{,}000$ คน ว่างงาน $40{,}000$ คน ถ้าผู้ว่างงานครึ่งหนึ่งได้งานทำ (สมมติกำลังแรงงานเท่าเดิม) อัตราการว่างงานใหม่เป็นเท่าไร
+  steps:
+  - text: กำลังแรงงาน $= 760{,}000 + 40{,}000 = 800{,}000$ คน
+  - text: อัตราการว่างงานเดิม $= 40{,}000 \div 800{,}000 \times 100 = 5\%$
+    why: ผู้อยู่นอกกำลังแรงงาน 400,000 คนไม่อยู่ในตัวหาร
+  - text: ได้งาน $20{,}000$ คน ผู้ว่างงานเหลือ $20{,}000$ คน กำลังแรงงานยังเป็น $800{,}000$ คน
+    why: คนย้ายจากผู้ว่างงานไปเป็นผู้มีงานทำ ยังอยู่ในกำลังแรงงาน
+  - text: อัตราใหม่ $= 20{,}000 \div 800{,}000 \times 100 = 2.5\%$
+  answer: จาก $5\%$ เหลือ $2.5\%$
+- type: check
+  problem: business.econ.inflation-unemployment.p008
+  prompt: ตัวหารของอัตราการว่างงานคืออะไร
+glossary:
+- term: ภาวะเงินเฟ้อ
+  definition: ภาวะที่ระดับราคาสินค้าและบริการโดยทั่วไปสูงขึ้นอย่างต่อเนื่อง
+- term: ภาวะเงินฝืด
+  definition: ภาวะที่ระดับราคาสินค้าและบริการโดยทั่วไปลดลงอย่างต่อเนื่อง
+- term: ดัชนีราคาผู้บริโภค (CPI)
+  definition: ค่าใช้จ่ายของตะกร้าสินค้าและบริการปีนี้เทียบกับปีฐาน $\times 100$
+- term: อำนาจซื้อ
+  definition: ปริมาณสินค้าและบริการที่เงินจำนวนหนึ่งซื้อได้
+- term: ค่าจ้างที่แท้จริง
+  definition: ค่าจ้างที่ปรับด้วยระดับราคาแล้ว บอกว่าซื้อของได้จริงเท่าไร
+- term: กำลังแรงงาน
+  definition: ผู้มีงานทำรวมกับผู้ว่างงาน
+- term: อัตราการว่างงาน
+  definition: ผู้ว่างงานหารด้วยกำลังแรงงาน $\times 100$
+- term: การว่างงานเชิงโครงสร้าง
+  definition: การว่างงานเพราะทักษะหรือที่ตั้งของแรงงานไม่ตรงกับงานที่ตลาดต้องการ
+- term: เป้าหมายเงินเฟ้อ
+  definition: ช่วงอัตราเงินเฟ้อที่ธนาคารกลางใช้เป็นเป้าหมายของนโยบายการเงิน
+flashcards:
+- front: อัตราเงินเฟ้อ
+  back: $\dfrac{\text{CPI ปีนี้} - \text{CPI ปีก่อน}}{\text{CPI ปีก่อน}} \times 100$
+- front: เงินเฟ้อสูงกว่าคาด
+  back: ผู้กู้ดอกเบี้ยคงที่ได้ · ผู้ออมและผู้มีรายได้คงที่เสีย
+- front: ค่าแท้จริง
+  back: $\dfrac{1 + \text{อัตราตัวเงิน}}{1 + \text{เงินเฟ้อ}} - 1$
+- front: อัตราการว่างงาน
+  back: ผู้ว่างงาน ÷ (ผู้มีงานทำ + ผู้ว่างงาน)
+- front: ว่างงาน 4 ประเภท
+  back: ชั่วคราว · โครงสร้าง · วัฏจักร · ฤดูกาล
+references:
+- title: ภาวะเงินเฟ้อ
+  url: https://th.wikipedia.org/wiki/ภาวะเงินเฟ้อ
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: การว่างงาน
+  url: https://th.wikipedia.org/wiki/การว่างงาน
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: 22.2 How to Measure Changes in the Cost of Living (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/22-2-how-to-measure-changes-in-the-cost-of-living
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 21.1 How Economists Define and Compute Unemployment Rate (Principles of Economics 3e, OpenStax)
+  url: https://openstax.org/books/principles-economics-3e/pages/21-1-how-economists-define-and-compute-unemployment-rate
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้
