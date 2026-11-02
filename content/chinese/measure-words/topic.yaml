@@ -1,0 +1,56 @@
+id: chinese.grammar.measure-words
+subject: chinese
+title: { th: "ลักษณนามและ 两", en: "Measure words and 两" }
+summary: ลักษณนามภาษาจีนที่ใช้บ่อย เช่น 个 本 杯 家 条 件 位 โครงสร้าง ตัวเลข + ลักษณนาม + คำนาม การใช้ 两 และเทียบกับลักษณนามไทย
+difficulty: 2.5
+minutes: 30
+prerequisites: [chinese.hanzi.numbers]
+encompasses:
+  - { id: chinese.hanzi.numbers, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: order-compare.svg
+    alt: "เปรียบเทียบลำดับคำ แถวไทย: หนังสือ (คำนาม) สาม (ตัวเลข) เล่ม (ลักษณนาม) แถวจีน: 三 sān ตัวเลข, 本 běn ลักษณนาม, 书 shū คำนาม ข้อความใต้ภาพ: ภาษาจีน ตัวเลข + ลักษณนาม + คำนาม คำนามอยู่ท้ายสุด"
+    caption: "ภาษาไทยวางคำนามไว้หน้า ภาษาจีนวางคำนามไว้ท้าย"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chinese.grammar.measure-words.p003, prompt: "เรียงคำสั่งชาไทยให้ถูก" }
+  - type: worked-example
+    title: เลือกลักษณนามให้ตรงกับสิ่งของ
+    problem: "พูดเป็นภาษาจีน: กางเกงหนึ่งตัว เสื้อสองตัว และครูสามท่าน"
+    steps:
+      - text: "กางเกงเป็นของยาว ใช้ 条: 一条裤子 (一 หน้า tiáo เสียง 2 อ่าน yì)"
+      - text: "เสื้อใช้ 件 และเลข 2 หน้าลักษณนามใช้ 两: 两件衣服"
+        why: "ภาษาไทยใช้ ตัว กับทั้งกางเกงและเสื้อ แต่ภาษาจีนแยกลักษณนาม"
+      - text: "ครูใช้ 位 เพื่อความสุภาพ: 三位老师"
+    answer: "一条裤子 · 两件衣服 · 三位老师"
+  - type: worked-example
+    title: คิดเงินจากรายการสั่งอาหาร
+    problem: "ลูกค้าสั่ง 三杯咖啡，两块椰子蛋糕 กาแฟแก้วละ 40 บาท เค้กชิ้นละ 45 บาท ต้องจ่ายกี่บาท"
+    steps:
+      - text: "อ่านจำนวน: 三杯 = 3 แก้ว · 两块 = 2 ชิ้น"
+        why: "ตัวเลขอยู่หน้าลักษณนาม และ 两 คือ 2"
+      - text: "กาแฟ: $3 \\times 40 = 120$ บาท"
+      - text: "เค้ก: $2 \\times 45 = 90$ บาท"
+      - text: "รวม: $120 + 90 = 210$ บาท"
+    answer: "210 บาท"
+  - { type: check, problem: chinese.grammar.measure-words.p006, prompt: "12 อัน ใช้ 二 หรือ 两" }
+glossary:
+  - { term: "量词 liàngcí", definition: "ลักษณนาม คำที่อยู่ระหว่างตัวเลขหรือคำชี้กับคำนาม" }
+  - { term: "个 gè", definition: "ลักษณนามทั่วไป ใช้กับคนและสิ่งที่ไม่มีลักษณนามเฉพาะ" }
+  - { term: "两 liǎng", definition: "สอง ใช้เมื่อ 2 อยู่ลำพังหน้าลักษณนาม เช่น 两个 แต่ 12 ใช้ 十二个" }
+  - { term: "位 wèi", definition: "ลักษณนามของคนแบบสุภาพ เช่น 几位 กี่ท่าน" }
+  - { term: "条 tiáo", definition: "ลักษณนามของสิ่งยาวและแคบ เช่น ปลา กางเกง ถนน แม่น้ำ" }
+flashcards:
+  - { front: "ลำดับคำของลักษณนามภาษาจีน", back: "ตัวเลข + ลักษณนาม + คำนาม เช่น 三本书" }
+  - { front: "本 杯 件 条", back: "หนังสือ (เล่ม) · เครื่องดื่ม (แก้ว) · เสื้อผ้า เรื่อง (ตัว) · ของยาว (ตัว สาย)" }
+  - { front: "家 口 位", back: "ร้าน บริษัท · สมาชิกครอบครัว · คน (สุภาพ)" }
+  - { front: "2 แก้ว / 12 แก้ว", back: "两杯 / 十二杯" }
+references:
+  - { title: "Chinese classifier", url: "https://en.wikipedia.org/wiki/Chinese_classifier", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "量词", url: "https://zh.wikipedia.org/wiki/量词", source: wikipedia-zh, lang: zh, license: CC-BY-SA-4.0 }
+  - { title: "个", url: "https://en.wiktionary.org/wiki/个", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

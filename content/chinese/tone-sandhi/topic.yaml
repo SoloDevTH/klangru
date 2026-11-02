@@ -1,0 +1,61 @@
+id: chinese.pinyin.tone-sandhi
+subject: chinese
+title: { th: "การเปลี่ยนเสียงวรรณยุกต์ เสียงเบา และ 儿化", en: "Tone sandhi, neutral tone and erhua" }
+summary: เสียง 3 ติดกันและเสียง 3 ครึ่ง กฎเปลี่ยนเสียงของ 一 และ 不 เสียงเบาในคำที่ใช้บ่อย และเสียง 儿 ท้ายพยางค์
+difficulty: 2.5
+minutes: 30
+prerequisites: [chinese.pinyin.initials-finals]
+encompasses:
+  - { id: chinese.pinyin.initials-finals, weight: 0.2 }
+  - { id: chinese.pinyin.tones, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: sandhi-flowchart.svg
+    alt: "ผังสามคอลัมน์ ดูเสียงเดิมของพยางค์ถัดไป คอลัมน์ 一 yī: หน้าเสียง 4 ไหม ใช่ → yí, เสียง 1 2 3 → yì, กรณีไม่เปลี่ยน yī คือการนับเลข ลำดับ ท้ายคำ และกลางกริยาซ้ำ 看一看 เป็น yi เสียงเบา คอลัมน์ 不 bù: หน้าเสียง 4 ไหม ใช่ → bú ไม่ใช่ → bù กลาง A不A เช่น 好不好 เป็น bu เสียงเบา คอลัมน์เสียง 3: ตามด้วยเสียง 3 ไหม ใช่ → เสียง 2 เสียงอื่น → เสียง 3 ครึ่ง ท้ายวลีหรืออ่านเดี่ยว → เสียง 3 เต็ม ตัวอย่าง 一定 yídìng 一起 yìqǐ 不错 búcuò 不好 bù hǎo 水果 shuíguǒ 老师 lǎoshī"
+    caption: "กฎทั้งหมดตัดสินจากเสียงเดิมของพยางค์ถัดไป"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: third-tone-pitch.svg
+    alt: "กราฟระดับเสียงสเกล 1 ถึง 5 สามกลุ่ม: 马 mǎ อ่านเดี่ยวเป็นเสียง 3 เต็ม ลงจาก 2 ถึง 1 แล้วขึ้นถึง 4 (214) · 老师 lǎoshī 老 เป็นเสียง 3 ครึ่ง ลงจาก 2 ถึง 1 (21) แล้ว 师 ระดับ 5 (55) · 你好 nǐ hǎo พูดเป็น ní hǎo 你 ขึ้นจาก 3 ถึง 5 (35) แล้ว 好 เป็น 214"
+    caption: "เสียง 3 เต็ม เสียง 3 ครึ่ง และ 3 + 3 ที่กลายเป็น 2 + 3"
+  - { type: check, problem: chinese.pinyin.tone-sandhi.p003, prompt: "ลองใช้กฎเสียง 3 ติดกัน" }
+  - type: worked-example
+    title: อ่าน 我不想去 (ฉันไม่อยากไป)
+    problem: "我不想去 สะกดว่า wǒ bù xiǎng qù เวลาพูดจริงแต่ละพยางค์ออกเสียงอย่างไร"
+    steps:
+      - text: "我 wǒ ตามด้วย 不 bù (เสียง 4) จึงเป็นเสียง 3 ครึ่ง ไม่เปลี่ยนเป็นเสียง 2"
+        why: "เสียง 3 เปลี่ยนเป็นเสียง 2 เฉพาะหน้าเสียง 3"
+      - text: "不 ตามด้วย 想 xiǎng (เสียง 3) จึงคง bù"
+      - text: "想 ตามด้วย 去 qù (เสียง 4) จึงเป็นเสียง 3 ครึ่ง"
+      - text: "去 อยู่ท้ายประโยค คงเสียง 4"
+    answer: "wǒ bù xiǎng qù (我 และ 想 เป็นเสียง 3 ครึ่ง ไม่มีพยางค์ใดเปลี่ยนวรรณยุกต์)"
+  - type: worked-example
+    title: 一 ในวันที่และเบอร์ห้อง
+    problem: "อ่าน 一月一号 (1 มกราคม) และห้อง 1101 ของโรงแรม"
+    steps:
+      - text: "一月 เป็นชื่อเดือน (เลขลำดับ) จึงอ่าน yī: yīyuè"
+        why: "กฎ 一 หน้าเสียง 4 ไม่ใช้กับเลขลำดับ"
+      - text: "一号 เป็นวันที่ (เลขลำดับ) จึงอ่าน yī hào แม้ 号 จะเป็นเสียง 4"
+      - text: "เลขห้องอ่านทีละตัว และ 1 นิยมอ่าน yāo: yāo yāo líng yāo"
+    answer: "一月一号 = yīyuè yī hào · ห้อง 1101 = yāo yāo líng yāo"
+  - { type: check, problem: chinese.pinyin.tone-sandhi.p008, prompt: "一 กลางกริยาซ้ำออกเสียงอย่างไร" }
+glossary:
+  - { term: "变调 biàndiào", definition: "การเปลี่ยนเสียงวรรณยุกต์ตามพยางค์ข้างเคียง เช่น 3 + 3 → 2 + 3" }
+  - { term: "半三声 bàn sānshēng", definition: "เสียง 3 ครึ่ง ต่ำแล้วไม่เชิดขึ้น ใช้เมื่อเสียง 3 อยู่หน้าเสียง 1 2 4 หรือเสียงเบา" }
+  - { term: "轻声 qīngshēng", definition: "เสียงเบา พยางค์สั้นและเบา ไม่ใส่เครื่องหมายวรรณยุกต์ เช่น 们 子 的" }
+  - { term: "儿化 érhuà", definition: "การเติมเสียงม้วนลิ้น r ท้ายพยางค์ เช่น 哪儿 nǎr พบมากในภาษาพูดภาคเหนือของจีน" }
+flashcards:
+  - { front: "3 + 3 อ่านอย่างไร", back: "2 + 3 เช่น 水果 shuíguǒ 可以 kéyǐ" }
+  - { front: "一 อ่านอย่างไรบ้าง", back: "yī (นับ ลำดับ ท้ายคำ) · yí (หน้าเสียง 4) · yì (หน้าเสียง 1 2 3) · yi (กลางกริยาซ้ำ)" }
+  - { front: "不 อ่านอย่างไรบ้าง", back: "bù (ปกติ) · bú (หน้าเสียง 4) · bu (กลาง A不A เช่น 好不好)" }
+  - { front: "东西 dōngxi กับ dōngxī", back: "dōngxi (เสียงเบา) = สิ่งของ · dōngxī = ตะวันออกและตะวันตก" }
+  - { front: "一点儿 อ่านอย่างไร", back: "yìdiǎnr (n หายเมื่อเติม r ฟังคล้าย yìdiǎr)" }
+references:
+  - { title: "Standard Chinese phonology", url: "https://en.wikipedia.org/wiki/Standard_Chinese_phonology", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Erhua", url: "https://en.wikipedia.org/wiki/Erhua", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "一", url: "https://en.wiktionary.org/wiki/一", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

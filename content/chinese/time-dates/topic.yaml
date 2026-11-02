@@ -1,0 +1,61 @@
+id: chinese.vocab.time-dates
+subject: chinese
+title: { th: "วัน เดือน ปี และการบอกเวลา", en: "Days, dates and telling the time" }
+summary: 年 月 号 星期 วันในสัปดาห์ การบอกเวลาด้วย 点 分 半 差 และลำดับวันที่แบบจีนที่เรียงจากปี เดือน ไปวัน
+difficulty: 2.5
+minutes: 30
+prerequisites: [chinese.hanzi.numbers]
+encompasses:
+  - { id: chinese.hanzi.numbers, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: date-order.svg
+    alt: "เปรียบเทียบลำดับวันที่ แถวไทย: วันจันทร์ | ที่ 2 | พฤศจิกายน | 2569 แถวจีน: 2026年 | 11月 | 2日 | 星期一 อ่านว่า èr líng èr liù nián shíyī yuè èr rì xīngqīyī หมายเหตุ พ.ศ. ลบ 543 เป็น ค.ศ. และวันในสัปดาห์อยู่ท้ายสุด"
+    caption: "ภาษาไทยเรียงจากเล็กไปใหญ่ ภาษาจีนเรียงจากใหญ่ไปเล็ก"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chinese.vocab.time-dates.p004, prompt: "三月 กับ 三个月 ต่างกันอย่างไร" }
+  - type: worked-example
+    title: บอกวันเกิดเป็นภาษาจีน
+    problem: "นักเรียนไทยเกิดวันอังคารที่ 14 กุมภาพันธ์ พ.ศ. 2555 เขียนวันเกิดเป็นภาษาจีน"
+    steps:
+      - text: "แปลงปี: $2555 - 543 = 2012$ เขียน 2012年 อ่าน èr líng yī èr nián"
+        why: "ประเทศจีนใช้ปีคริสต์ศักราช และอ่านปีทีละหลัก"
+      - text: "เดือนกุมภาพันธ์คือเดือนที่ 2: 二月"
+      - text: "วันที่ 14: 十四日 (ภาษาพูด 十四号)"
+      - text: "วันอังคาร: 星期二 วางท้ายสุด"
+    answer: "2012年2月14日 星期二 (二〇一二年二月十四日 星期二)"
+  - type: worked-example
+    title: บอกเวลาด้วย 差
+    problem: "นาฬิกาบอก 10:50 นักท่องเที่ยวถามเวลา บอกได้กี่แบบ"
+    steps:
+      - text: "แบบตรง: สิบโมง ห้าสิบนาที → 十点五十分 (ช่วงสายใช้ 上午 นำหน้าได้)"
+      - text: "แบบขาด: อีก 10 นาทีจะ 11 โมง → 差十分十一点"
+        why: "差 แปลว่า ขาด นับถอยจากชั่วโมงถัดไป"
+      - text: "ทั้งสองแบบหมายถึงเวลาเดียวกัน"
+    answer: "(上午) 十点五十分 หรือ 差十分十一点"
+  - type: figure
+    src: calendar-nov-2026.svg
+    alt: "ปฏิทินเดือน 2026年11月 หัวคอลัมน์ 一 二 三 四 五 六 日 คือจันทร์ถึงอาทิตย์ วันที่ 1 เป็นวันอาทิตย์ วันที่ 2 เป็นวันจันทร์ และวันที่ 30 เป็นวันจันทร์"
+    caption: "ปฏิทินจีนมักเขียนหัวคอลัมน์ด้วยตัวเลขวันในสัปดาห์ และ 日 คือวันอาทิตย์"
+  - { type: check, problem: chinese.vocab.time-dates.p008, prompt: "ลองคิดเวลาแบบ 差" }
+glossary:
+  - { term: "年 nián · 月 yuè · 号 hào / 日 rì", definition: "ปี · เดือน · วันที่ (号 ภาษาพูด 日 ภาษาเขียน)" }
+  - { term: "星期 xīngqī", definition: "สัปดาห์ และใช้นำหน้าตัวเลขบอกวันในสัปดาห์ เช่น 星期一 วันจันทร์ 星期天 วันอาทิตย์" }
+  - { term: "点 diǎn · 分 fēn", definition: "นาฬิกา (โมง) · นาที" }
+  - { term: "半 bàn", definition: "ครึ่ง ใช้บอกเวลา 30 นาที เช่น 两点半 2:30" }
+  - { term: "差 chà", definition: "ขาด ใช้บอกเวลาว่าอีกกี่นาทีจะถึงชั่วโมงถัดไป เช่น 差五分十点 = 9:55" }
+flashcards:
+  - { front: "ลำดับวันที่ภาษาจีน", back: "ปี → เดือน → วัน → วันในสัปดาห์ เช่น 2026年11月2日 星期一" }
+  - { front: "星期一 ถึง 星期天", back: "จันทร์ อังคาร พุธ พฤหัสบดี ศุกร์ เสาร์ อาทิตย์ (星期天 หรือ 星期日)" }
+  - { front: "2:00 · 2:30 · 2:05", back: "两点 · 两点半 · 两点零五分" }
+  - { front: "บ่ายสามโมง", back: "下午三点 (ช่วงของวันวางหน้าเวลา)" }
+  - { front: "พ.ศ. → ค.ศ.", back: "ลบ 543 เช่น 2569 → 2026" }
+references:
+  - { title: "星期", url: "https://en.wiktionary.org/wiki/星期", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Date and time notation in China", url: "https://en.wikipedia.org/wiki/Date_and_time_notation_in_China", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "点", url: "https://en.wiktionary.org/wiki/点", source: wiktionary, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

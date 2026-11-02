@@ -1,0 +1,62 @@
+id: chinese.culture.festivals
+subject: chinese
+title: { th: "เทศกาลและประเพณีจีน", en: "Chinese festivals and customs" }
+summary: ตรุษจีน วันไหว้พระจันทร์ และเทศกาลบ๊ะจ่าง คำศัพท์และคำอวยพร ปฏิทินจีน และเทียบกับเทศกาลของไทย
+difficulty: 2.5
+minutes: 30
+prerequisites: [chinese.vocab.time-dates]
+encompasses:
+  - { id: chinese.vocab.time-dates, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: festival-timeline-2026.svg
+    alt: "เส้นเวลาปี 2026 (พ.ศ. 2569) แบ่ง 12 เดือน เทศกาลจีนสีแดงเหนือเส้น: 春节 17 ก.พ., 元宵节 3 มี.ค., 清明节 5 เม.ย., 端午节 19 มิ.ย., 中秋节 25 ก.ย. เทศกาลไทยสีน้ำเงินใต้เส้น: สงกรานต์ 13–15 เม.ย., วันแม่ 12 ส.ค., ลอยกระทงมักอยู่เดือนพฤศจิกายน หมายเหตุว่าเทศกาลจีนใช้ปฏิทินจีนจึงเลื่อนทุกปี"
+    caption: "วันเทศกาลในปี 2026 ปีอื่นเทศกาลจีนจะตรงกับวันอื่น"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: lunar-month.svg
+    alt: "ข้างขึ้นข้างแรมในหนึ่งเดือนจีน ราว 29.5 วัน: 初一 วันที่ 1 ดวงจันทร์มืด, 初八 วันที่ 8 สว่างครึ่งดวงด้านขวา, 十五 วันที่ 15 เต็มดวง, 廿三 วันที่ 23 สว่างครึ่งดวงด้านซ้าย, 廿九 วันที่ 29 เหลือเสี้ยวบาง ๆ ตรุษจีนตรงกับ 正月初一 ส่วน 元宵 และ 中秋 ตรงกับวันที่ 15 คืนเพ็ญ"
+    caption: "เดือนจีนเริ่มที่เดือนมืด วันที่ 15 จึงเป็นคืนเพ็ญเสมอ"
+  - { type: check, problem: chinese.culture.festivals.p006, prompt: "中秋节 ตรงกับวันใดในปฏิทินจีน" }
+  - type: worked-example
+    title: อวยพรให้ถูกเทศกาล
+    problem: "เลือกคำอวยพรภาษาจีนสำหรับ (1) ตรุษจีน (2) เทศกาลบ๊ะจ่าง (3) วันไหว้พระจันทร์"
+    steps:
+      - text: "รูปแบบทั่วไปคือ ชื่อเทศกาล + 快乐 kuàilè (มีความสุข)"
+      - text: "ตรุษจีน: 新年快乐 หรือ 春节快乐 และเพิ่ม 恭喜发财 (ขอให้ร่ำรวย) ได้"
+      - text: "เทศกาลบ๊ะจ่าง: 端午节快乐 หรือ 端午安康 (ขอให้สุขภาพแข็งแรง)"
+        why: "บางคนเห็นว่าเทศกาลนี้เกี่ยวกับการระลึกถึงผู้เสียชีวิต จึงนิยม 安康"
+      - text: "วันไหว้พระจันทร์: 中秋节快乐"
+    answer: "新年快乐 / 恭喜发财 · 端午安康 / 端午节快乐 · 中秋节快乐"
+  - type: worked-example
+    title: ทำไมตรุษจีนปีหน้าเร็วขึ้น
+    problem: "ตรุษจีน 2026 ตรงกับ 17 ก.พ. ปี 2026 ตามปฏิทินจีนไม่มีเดือนอธิกมาส ตรุษจีน 2027 ควรเร็วขึ้นประมาณกี่วัน"
+    steps:
+      - text: "ปีจีนปกติมี 12 เดือนจันทรคติ ราว $12 \\times 29.53 \\approx 354$ วัน"
+      - text: "ปีสากลมี 365 วัน ต่างกันราว $365 - 354 = 11$ วัน"
+      - text: "ตรุษจีนปีถัดไปจึงเร็วขึ้นราว 11 วัน: 17 ก.พ. − 11 วัน = 6 ก.พ. 2027"
+        why: "ตรงกับวันตรุษจีนจริงของปี 2027"
+    answer: "เร็วขึ้นราว 11 วัน ตรุษจีน 2027 ตรงกับ 6 กุมภาพันธ์"
+  - { type: check, problem: chinese.culture.festivals.p009, prompt: "อาหารและกิจกรรมของแต่ละเทศกาล" }
+glossary:
+  - { term: "农历 nónglì", definition: "ปฏิทินจีน เป็นปฏิทินจันทรสุริยคติ เดือนนับตามดวงจันทร์และเพิ่มเดือนอธิกมาสให้ตรงฤดูกาล" }
+  - { term: "春节 Chūn Jié", definition: "ตรุษจีน วันที่ 1 เดือน 1 ตามปฏิทินจีน อยู่ระหว่าง 21 ม.ค.–20 ก.พ." }
+  - { term: "端午节 Duānwǔ Jié", definition: "เทศกาลตวนอู่หรือเทศกาลบ๊ะจ่าง วันที่ 5 เดือน 5 มีการแข่งเรือมังกรและกิน 粽子" }
+  - { term: "中秋节 Zhōngqiū Jié", definition: "วันไหว้พระจันทร์ วันที่ 15 เดือน 8 คืนพระจันทร์เต็มดวง กิน 月饼" }
+  - { term: "红包 hóngbāo", definition: "อั่งเปา ซองแดงใส่เงินที่ผู้ใหญ่ให้เพื่ออวยพรในวันตรุษจีน" }
+flashcards:
+  - { front: "春节 · 端午节 · 中秋节 ตรงกับวันใด", back: "วันที่ 1 เดือน 1 · วันที่ 5 เดือน 5 · วันที่ 15 เดือน 8 (ปฏิทินจีน)" }
+  - { front: "อาหารประจำเทศกาล", back: "春节 饺子 · 元宵节 汤圆 · 端午节 粽子 · 中秋节 月饼" }
+  - { front: "คำอวยพรตรุษจีน", back: "新年快乐 xīnnián kuàilè · 恭喜发财 gōngxǐ fācái" }
+  - { front: "ทำไมติด 福 กลับหัว", back: "倒 dào (กลับหัว) พ้องเสียง 到 dào (มาถึง): 福到了 โชคมาถึงแล้ว" }
+  - { front: "วันจ่าย วันไหว้ วันเที่ยว", back: "ซื้อของ → ไหว้ในวันสิ้นปี (除夕) → เที่ยวในวันปีใหม่ (春节)" }
+references:
+  - { title: "Chinese New Year", url: "https://en.wikipedia.org/wiki/Chinese_New_Year", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Mid-Autumn Festival", url: "https://en.wikipedia.org/wiki/Mid-Autumn_Festival", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Dragon Boat Festival", url: "https://en.wikipedia.org/wiki/Dragon_Boat_Festival", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ตรุษจีน", url: "https://th.wikipedia.org/wiki/ตรุษจีน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

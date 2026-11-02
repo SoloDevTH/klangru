@@ -1,0 +1,52 @@
+id: chinese.hanzi.radicals
+subject: chinese
+title: { th: "ส่วนประกอบของอักษรจีนและหมวดอักษร (部首)", en: "Character components and radicals" }
+summary: โครงสร้างซ้าย-ขวา บน-ล่าง และล้อมกรอบ หมวดอักษรที่พบบ่อย เช่น 亻 口 氵 木 女 และใช้หมวดอักษรเดาความหมายหรือค้นพจนานุกรม
+difficulty: 2.5
+minutes: 30
+prerequisites: [chinese.hanzi.basic-strokes]
+encompasses:
+  - { id: chinese.hanzi.basic-strokes, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: structures.svg
+    alt: "โครงสร้างอักษรจีน 5 แบบ แต่ละแบบมีกรอบแผนผังและอักษรที่ได้: ซ้าย-ขวา 女 กับ 子 ได้ 好 hǎo ดี · บน-ล่าง 日 อยู่บน 十 อยู่ล่าง ได้ 早 zǎo เช้า · ล้อมรอบ 囗 ล้อม 玉 ได้ 国 guó ประเทศ · ล้อมครึ่ง 辶 โอบด้านซ้ายและล่างของ 文 ได้ 这 zhè นี่ · อักษรเดี่ยว 人 rén คน ส่วนสีแดงคือหมวดอักษรของตัวอย่าง"
+    caption: "อักษรประสมเรียงชิ้นส่วนได้หลายแบบ"
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: chinese.hanzi.radicals.p002, prompt: "สังเกตส่วนทางซ้ายของอักษรเกี่ยวกับน้ำ" }
+  - type: figure
+    src: qing-family.svg
+    alt: "แผนภาพ 青 qīng อยู่ตรงกลางในฐานะส่วนบอกเสียง มีลูกศรไปยังอักษรสี่ตัว: 清 qīng หมวด 氵 น้ำ แปลว่า ใส · 晴 qíng หมวด 日 ดวงอาทิตย์ แปลว่า แจ่มใส · 情 qíng หมวด 忄 ใจ แปลว่า ความรู้สึก · 请 qǐng หมวด 讠 คำพูด แปลว่า เชิญ"
+    caption: "ส่วนบอกเสียงเหมือนกัน หมวดอักษรต่างกัน ความหมายจึงต่างกัน"
+  - type: worked-example
+    title: ค้นอักษร 海 ในพจนานุกรมด้วยหมวดอักษร
+    problem: "พบอักษร 海 บนป้ายชายหาดพัทยาสำหรับนักท่องเที่ยวชาวจีน แต่ไม่รู้เสียงอ่าน จะค้นในพจนานุกรมกระดาษอย่างไร"
+    steps:
+      - text: "หาหมวดอักษร: ทางซ้ายเป็น 氵 (สามจุดน้ำ)"
+      - text: "氵 มี 3 ขีด เปิดสารบัญหมวดอักษรช่อง 3 ขีด หาหน้าของหมวด 氵"
+      - text: "นับขีดส่วนที่เหลือ 每: 7 ขีด"
+        why: "นับเฉพาะส่วนที่ไม่ใช่หมวดอักษร"
+      - text: "ในรายการหมวด 氵 ดูช่อง 7 ขีด จะพบ 海 พร้อมเลขหน้า"
+      - text: "เปิดหน้านั้น อ่านได้ว่า 海 hǎi แปลว่า ทะเล"
+    answer: "หมวด 氵 (3 ขีด) + ส่วนที่เหลือ 7 ขีด → 海 hǎi ทะเล (รวม 10 ขีด)"
+  - { type: check, problem: chinese.hanzi.radicals.p011, prompt: "ส่วนประกอบหนึ่งอาจบอกเสียง ไม่ใช่ความหมาย" }
+glossary:
+  - { term: "部首 bùshǒu", definition: "หมวดอักษร ชิ้นส่วนที่พจนานุกรมใช้จัดกลุ่มอักษร มักบอกกลุ่มของความหมาย" }
+  - { term: "偏旁 piānpáng", definition: "ชิ้นส่วนประกอบของอักษร เช่น 亻 ใน 你 และ 尔 ใน 你" }
+  - { term: "形声字 xíngshēngzì", definition: "อักษรที่มีส่วนบอกความหมายกับส่วนบอกเสียง เช่น 妈 = 女 + 马" }
+  - { term: "独体字 dútǐzì", definition: "อักษรเดี่ยวที่แยกเป็นชิ้นส่วนที่มีความหมายไม่ได้ เช่น 人 口 木" }
+  - { term: "部首检字法", definition: "วิธีค้นพจนานุกรมด้วยหมวดอักษรและจำนวนขีด ใช้เมื่อไม่รู้เสียงอ่าน" }
+flashcards:
+  - { front: "亻 氵 艹 讠 หมายถึงอะไร", back: "亻 คน · 氵 น้ำ · 艹 พืช · 讠 คำพูด" }
+  - { front: "โครงสร้างของ 好 早 国", back: "好 ซ้าย-ขวา · 早 บน-ล่าง · 国 ล้อมรอบ" }
+  - { front: "妈 = 女 + 马 แต่ละส่วนทำหน้าที่อะไร", back: "女 บอกความหมาย (ผู้หญิง) · 马 mǎ บอกเสียง" }
+  - { front: "หมวดอักษรของ 想", back: "心 (ด้านล่าง) ไม่ใช่ 木 หรือ 目" }
+references:
+  - { title: "Chinese character radicals", url: "https://en.wikipedia.org/wiki/Chinese_character_radicals", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Chinese character classification", url: "https://en.wikipedia.org/wiki/Chinese_character_classification", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "部首", url: "https://zh.wikipedia.org/wiki/部首", source: wikipedia-zh, lang: zh, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,61 @@
+id: chinese.pinyin.initials-finals
+subject: chinese
+title: { th: "พยัญชนะต้นและสระในพินอิน", en: "Pinyin initials and finals" }
+summary: พยัญชนะต้น 21 ตัว สระเดี่ยว สระผสม สระนาสิก กฎการเขียน y w และ ü และเสียงที่คนไทยมักสับสน
+difficulty: 1.5
+minutes: 30
+prerequisites: [chinese.pinyin.tones]
+encompasses:
+  - { id: chinese.pinyin.tones, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: syllable-parts.svg
+    alt: "แผนภาพพยางค์ 光 guāng แตกเป็นสามกล่อง: g คือพยัญชนะต้น 声母, uang คือสระ 韵母, เครื่องหมาย ˉ เสียง 1 คือวรรณยุกต์ 声调"
+    caption: "พยางค์ = พยัญชนะต้น + สระ + วรรณยุกต์"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: initials-chart.svg
+    alt: "ตารางพยัญชนะต้น 21 ตัว 6 แถว พร้อมเสียงไทยโดยประมาณ ดอกจันคือมีลม: ริมฝีปาก b ป, p พ*, m ม, f ฟ · ปลายลิ้นกับปุ่มเหงือก d ต, t ท*, n น, l ล · โคนลิ้น g ก, k ค*, h ฮ · ลิ้นแบนใช้กับ i ü: j จ, q ช*, x ซ · ม้วนปลายลิ้น zh จ, ch ช*, sh ซ, r ร · ปลายลิ้นหลังฟันบน z จ, c ทส*, s ซ"
+    caption: "พยัญชนะต้นเรียงเป็นกลุ่มตามตำแหน่งที่ออกเสียง คู่ไม่มีลม/มีลมอยู่ติดกัน"
+  - { type: check, problem: chinese.pinyin.initials-finals.p004, prompt: "สระ e ในพินอินออกเสียงอย่างไร" }
+  - type: worked-example
+    title: เขียนพินอินของพยางค์ที่ไม่มีพยัญชนะต้น
+    problem: "เขียนพินอินของ 有 (มี: สระ iou เสียง 3) และ 鱼 (ปลา: สระ ü เสียง 2)"
+    steps:
+      - text: "有 ไม่มีพยัญชนะต้นและขึ้นต้นด้วย i จึงเปลี่ยน i เป็น y: iou → you"
+        why: "iou ใช้รูปย่อ iu เฉพาะเมื่อมีพยัญชนะต้น ถ้าไม่มีให้เขียนเต็มเป็น you"
+      - text: "ใส่เสียง 3 บน o ตามลำดับ a → o/e: yǒu"
+      - text: "鱼 สระ ü ไม่มีพยัญชนะต้น เขียนเป็น yu และไม่ต้องใส่จุด"
+      - text: "ใส่เสียง 2 บน u: yú"
+    answer: "有 yǒu · 鱼 yú"
+  - type: worked-example
+    title: แยกเสียงที่คนไทยมักสับสน
+    problem: "นักเรียนไทยอ่าน 吃 chī (กิน) กับ 七 qī (เจ็ด) เหมือนกันว่า ชี ทั้งสองพยางค์ต่างกันอย่างไร"
+    steps:
+      - text: "พยัญชนะต้น ch เป็นแถวม้วนปลายลิ้น ส่วน q เป็นแถวลิ้นแบน ทั้งสองมีลม"
+      - text: "i หลัง ch เป็นสระพิเศษ ลิ้นค้างอยู่ตำแหน่งม้วน ฟังใกล้ อือ"
+        why: "i หลัง z c s zh ch sh r ไม่ใช่เสียง อี"
+      - text: "i หลัง q เป็นเสียง อี จริง ริมฝีปากยิ้มกว้าง"
+      - text: "จึงอ่าน chī ใกล้ ชือ (ม้วนลิ้น) และ qī ใกล้ ชี (ลิ้นแบน) โดยประมาณ"
+    answer: "ต่างกันทั้งพยัญชนะต้น (ch ม้วนลิ้น / q ลิ้นแบน) และเสียงสระ i"
+  - { type: check, problem: chinese.pinyin.initials-finals.p009, prompt: "i หลัง z และ sh ออกเสียงอย่างไร" }
+glossary:
+  - { term: "声母 shēngmǔ", definition: "พยัญชนะต้นของพยางค์ภาษาจีน มี 21 ตัว เช่น b, zh, x" }
+  - { term: "韵母 yùnmǔ", definition: "สระของพยางค์ รวมเสียงท้าย -n และ -ng เช่น a, ao, ang" }
+  - { term: "สระนาสิก", definition: "สระที่ลงท้ายด้วยเสียงขึ้นจมูก -n (ใกล้แม่กน) หรือ -ng (ใกล้แม่กง) เช่น an, ang" }
+  - { term: "เสียงมีลม", definition: "พยัญชนะที่มีลมพุ่งออกมาแรง เช่น p t k q ch c ตรงข้ามกับ b d g j zh z ที่ไม่มีลม" }
+  - { term: "เสียงม้วนลิ้น", definition: "zh ch sh r ออกเสียงโดยม้วนปลายลิ้นขึ้นใกล้เพดาน ไม่มีในภาษาไทย" }
+flashcards:
+  - { front: "พยัญชนะต้นคู่ไม่มีลม/มีลม", back: "b/p · d/t · g/k · j/q · zh/ch · z/c (ตัวแรกไม่มีลม)" }
+  - { front: "e เดี่ยวในพินอินออกเสียงอย่างไร", back: "ใกล้ เออ เช่น 饿 è แต่ใน ie üe ei ใกล้ เอ" }
+  - { front: "รูปย่อ iu ui un ย่อมาจากอะไร", back: "iou · uei · uen (ใช้รูปย่อเมื่อมีพยัญชนะต้น)" }
+  - { front: "j q x ใช้กับสระใด", back: "i และ ü เท่านั้น (ü หลัง j q x ไม่ต้องใส่จุด)" }
+references:
+  - { title: "Pinyin table", url: "https://en.wikipedia.org/wiki/Pinyin_table", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Standard Chinese phonology", url: "https://en.wikipedia.org/wiki/Standard_Chinese_phonology", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "พินอิน", url: "https://th.wikipedia.org/wiki/พินอิน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
