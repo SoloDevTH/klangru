@@ -1,0 +1,67 @@
+id: management.quality.excellence-self-assessment
+subject: management
+title: { th: การประเมินองค์กรตามเกณฑ์รางวัลคุณภาพ TQA PMQA และ Baldrige, en: "Organizational self-assessment with TQA, PMQA and Baldrige criteria" }
+summary: โครงร่างองค์กร หมวดและการให้คะแนน การประเมินกระบวนการด้วย ADLI และผลลัพธ์ด้วย LeTCI การจัดการความรู้ การเขียนจุดแข็งและโอกาสพัฒนา และเปรียบเทียบ TQA PMQA 4.0 และ Baldrige 2026
+difficulty: 7
+minutes: 45
+prerequisites: [management.quality.iso-management-systems, management.strategy.strategic-management, management.hr.human-resource-management, management.quality.quality-planning]
+encompasses:
+  - { id: management.strategy.strategic-management, weight: 0.3 }
+  - { id: management.quality.iso-management-systems, weight: 0.2 }
+  - { id: management.hr.human-resource-management, weight: 0.1 }
+  - { id: management.quality.quality-planning, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: framework.svg
+    alt: "แผนภาพที่คลังรู้วาดใหม่ แถบบนสุดคือโครงร่างองค์กร ลักษณะองค์กร สภาวการณ์ ความท้าทาย และความได้เปรียบเชิงกลยุทธ์ ไม่ให้คะแนนแต่ใช้ตีความทุกหมวด ด้านซ้ายมีกล่อง 1 การนำองค์กร 2 กลยุทธ์ 3 ลูกค้า ด้านขวามี 5 บุคลากร 6 การปฏิบัติการ ทุกกล่องมีลูกศรชี้เข้ากล่องผลลัพธ์ตรงกลาง (ผลิตภัณฑ์ ลูกค้า บุคลากร การนำ การเงิน กลยุทธ์) แถบล่างคือ 4 การวัด การวิเคราะห์ และการจัดการความรู้ เป็นฐานข้อมูลของทุกหมวด มีลูกศรชี้ขึ้น หมายเหตุใต้ภาพ TQA 2567–2568 และ PMQA 4.0 แยกผลลัพธ์เป็นหมวด 7 ส่วน Baldrige 2026 รวมคำถามผลลัพธ์ไว้ในแต่ละหมวดและเหลือหกหมวด"
+    caption: "แก่นร่วมของเกณฑ์คุณภาพการบริหารจัดการ (วาดใหม่ ไม่ใช่ภาพของผู้ดูแลเกณฑ์)"
+  - type: worked-example
+    title: อ่านกระบวนการด้วย ADLI
+    problem: "โรงพยาบาลจังหวัด (สมมติ) เขียนว่า \"เรามีแนวทางป้องกันการพลัดตกที่พัฒนาจากหลักฐานวิชาการ ใช้แล้วในหอผู้ป่วยอายุรกรรม 4 จาก 9 หอ ทีมทบทวนอุบัติการณ์ทุกเดือนและปรับแบบประเมินความเสี่ยงเมื่อปีที่แล้ว\" จงหาจุดแข็งและโอกาสพัฒนาตาม ADLI"
+    steps:
+      - text: "A: มีแนวทางที่อิงหลักฐานและเป็นระบบ เป็นจุดแข็ง"
+      - text: "D: ใช้เพียง 4 จาก 9 หอ ($4 \\div 9 \\approx 44\\%$) เป็นโอกาสพัฒนาเรื่องการนำไปใช้"
+        why: "แนวทางที่ดีแต่ใช้ไม่ทั่วถึง ผู้ป่วยในหออื่นยังไม่ได้รับการป้องกันแบบเดียวกัน"
+      - text: "L: ทบทวนทุกเดือนและปรับแบบประเมินแล้ว เป็นจุดแข็งด้านการเรียนรู้"
+      - text: "I: ยังไม่บอกว่าเชื่อมกับเป้าหมายความปลอดภัยในแผนกลยุทธ์หรือตัววัดระดับองค์กรอย่างไร เป็นโอกาสพัฒนา"
+    answer: "จุดแข็ง A และ L · โอกาสพัฒนา D (ใช้ไม่ครบทุกหอ) และ I (ยังไม่เห็นความเชื่อมโยงกับกลยุทธ์)"
+  - { type: check, problem: management.quality.excellence-self-assessment.p008 }
+  - type: worked-example
+    title: อ่านผลลัพธ์ด้วย LeTCI
+    problem: "ความผูกพันของบุคลากรของสำนักงานแห่งหนึ่ง (สมมติ) ปี 2565 ถึง 2567 เป็น 62%, 65%, 70% เป้าปี 2567 คือ 68% ค่าเฉลี่ยของหน่วยงานที่คล้ายกันเป็น 72% จงประเมินตาม LeTCI"
+    steps:
+      - text: "Le: ปี 2567 ได้ 70% สูงกว่าเป้า 68% อยู่ 2 จุด"
+      - text: "T: มีสามจุดข้อมูล เพิ่มขึ้นเฉลี่ย $(70 - 62) \\div 2 = 4$ จุดต่อปี แนวโน้มดี"
+        why: "สามปีมีสองช่วงห่าง จึงหารด้วย 2 ไม่ใช่ 3"
+      - text: "C: ยังต่ำกว่าค่าเฉลี่ยหน่วยงานที่คล้ายกัน 2 จุด"
+      - text: "I: ควรแยกตามกลุ่มบุคลากรที่สำคัญ เช่น สายวิชาชีพ ลูกจ้าง เพื่อดูว่ากลุ่มใดต่ำ"
+    answer: "ระดับผ่านเป้าและแนวโน้มดี แต่ยังต่ำกว่าคู่เปรียบเทียบ และยังไม่แยกตามกลุ่ม"
+  - { type: check, problem: management.quality.excellence-self-assessment.p009 }
+  - type: figure
+    src: p-results.svg
+    alt: "กราฟเส้นความพึงพอใจของผู้ป่วยใน (สมมติ) ร้อยละ โรงพยาบาลของเรา (เส้นทึบสีน้ำเงิน) ปี 2564 78 ปี 2565 81 ปี 2566 83 ปี 2567 86 ควอร์ไทล์บนของโรงพยาบาลกลุ่มเดียวกัน (เส้นประสีส้ม) 88 89 89 90"
+    caption: "ผลลัพธ์ด้านผู้รับบริการเทียบกับคู่เปรียบเทียบ (ข้อมูลสมมติ ใช้ในโจทย์ข้อ 7 และ 11)"
+glossary:
+  - { term: เกณฑ์คุณภาพการบริหารจัดการ, definition: "ชุดคำถามที่ให้องค์กรประเมินระบบการบริหารทั้งองค์กรและผลลัพธ์ เช่น TQA PMQA Baldrige" }
+  - { term: โครงร่างองค์กร, definition: "ข้อมูลลักษณะและสภาวการณ์ขององค์กร ใช้ตีความทุกหมวด ไม่ให้คะแนน" }
+  - { term: ADLI, definition: "มิติประเมินกระบวนการ แนวทาง การนำไปใช้ การเรียนรู้ การบูรณาการ" }
+  - { term: LeTCI, definition: "มิติประเมินผลลัพธ์ ระดับ แนวโน้ม การเปรียบเทียบ การบูรณาการ" }
+  - { term: โอกาสพัฒนา (OFI), definition: "ข้อคิดเห็นที่ชี้ช่องว่างสำคัญขององค์กรพร้อมเหตุผล โดยไม่สั่งวิธีแก้" }
+  - { term: การจัดการความรู้, definition: "การรวบรวม แบ่งปัน และต่อยอดความรู้ขององค์กร ให้ใช้แก้ปัญหาและไม่สูญหายไปพร้อมคน" }
+  - { term: แผนสืบทอดตำแหน่ง, definition: "การเตรียมคนให้พร้อมรับตำแหน่งผู้นำหรือตำแหน่งสำคัญเมื่อผู้ดำรงตำแหน่งเดิมออก" }
+flashcards:
+  - { front: "ADLI", back: "แนวทาง · การนำไปใช้ · การเรียนรู้ · การบูรณาการ" }
+  - { front: "LeTCI", back: "ระดับ · แนวโน้ม · การเปรียบเทียบ · การบูรณาการ" }
+  - { front: "TQA 2567–2568 มีกี่หมวด กี่คะแนน", back: "7 หมวด 1,000 คะแนน หมวด 7 ผลลัพธ์ 400 คะแนน" }
+  - { front: "Baldrige 2026 ต่างจาก TQA 2567–2568 อย่างไร", back: "เหลือ 6 หมวด คำถามผลลัพธ์อยู่ในแต่ละหมวด" }
+  - { front: "คะแนนหัวข้อ", back: "คะแนนเต็มของหัวข้อ × ร้อยละที่ได้ แล้วรวมทุกหัวข้อ" }
+references:
+  - { title: "Malcolm Baldrige National Quality Award", url: "https://en.wikipedia.org/wiki/Malcolm_Baldrige_National_Quality_Award", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Benchmarking", url: "https://en.wikipedia.org/wiki/Benchmarking", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Knowledge management", url: "https://en.wikipedia.org/wiki/Knowledge_management", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

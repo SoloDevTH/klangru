@@ -69,4 +69,33 @@
 
 ## error จากโฟลเดอร์ของชุดอื่น
 
-`npm run validate -- --strict` ทั้งคลังระหว่างทำงานพบ error จากโฟลเดอร์ที่ชุดอื่นกำลังเขียน: `management/cpm-pert/topic.yaml` (2 error 1 warning ในการรันครั้งหนึ่ง) และ `thai/literary-analysis/topic.yaml` (ไม่พบไฟล์ topic.yaml ในอีกครั้ง) ไม่มี error หรือ warning จากโฟลเดอร์ของชุดนี้ `--only` 6 โฟลเดอร์ของชุดนี้ได้ 0 error 0 warning `npm test -w @klangru/content-tools` ผ่าน 35/35
+`npm run validate -- --strict` ทั้งคลังระหว่างทำงานพบ error จากโฟลเดอร์ที่ชุดอื่นกำลังเขียน: `management/cpm-pert/topic.yaml` (2 error 1 warning ในการรันครั้งหนึ่ง) `thai/literary-analysis/topic.yaml` และ `management/six-sigma-dmaic/topic.yaml` (ไม่พบไฟล์ topic.yaml ในการรันครั้งอื่น) ไม่มี error หรือ warning จากโฟลเดอร์ของชุดนี้ `--only` 6 โฟลเดอร์ของชุดนี้ได้ 0 error 0 warning `npm test -w @klangru/content-tools` ผ่าน 35/35
+
+## ผลตรวจลิงก์
+
+ตรวจวันที่ 2026-11-02 ด้วย User-Agent ของคลังรู้ ทุกลิงก์ได้ HTTP 200 และชื่อหน้าตรงเรื่อง ไม่มีลิงก์ที่ยังไม่ได้ตรวจ
+
+- 200 https://th.wikipedia.org/wiki/น้ำบาดาล
+- 200 https://en.wikipedia.org/wiki/Groundwater
+- 200 https://en.wikipedia.org/wiki/Aquifer
+- 200 https://en.wikipedia.org/wiki/Bhumibol_Dam
+- 200 https://en.wikipedia.org/wiki/Ocean_gyre
+- 200 https://en.wikipedia.org/wiki/Thermohaline_circulation
+- 200 https://en.wikipedia.org/wiki/Upwelling
+- 200 https://en.wikipedia.org/wiki/El_Niño–Southern_Oscillation
+- 200 https://en.wikipedia.org/wiki/Lapse_rate
+- 200 https://en.wikipedia.org/wiki/Weather_front
+- 200 https://en.wikipedia.org/wiki/Station_model
+- 200 https://en.wikipedia.org/wiki/Air_mass
+- 200 https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System
+- 200 https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion
+- 200 https://en.wikipedia.org/wiki/Solar_wind
+- 200 https://en.wikipedia.org/wiki/Habitable_zone
+- 200 https://en.wikipedia.org/wiki/Celestial_sphere
+- 200 https://en.wikipedia.org/wiki/Equation_of_time
+- 200 https://en.wikipedia.org/wiki/Time_in_Thailand
+- 200 https://en.wikipedia.org/wiki/Elongation_(astronomy)
+- 200 https://en.wikipedia.org/wiki/Hertzsprung–Russell_diagram
+- 200 https://en.wikipedia.org/wiki/Absolute_magnitude
+- 200 https://en.wikipedia.org/wiki/Stellar_parallax
+- 200 https://en.wikipedia.org/wiki/Stellar_evolution
