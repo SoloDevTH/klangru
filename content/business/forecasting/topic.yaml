@@ -1,0 +1,60 @@
+id: business.stats.forecasting
+subject: business
+title: { th: "แนวโน้ม การพยากรณ์ และความสัมพันธ์เชิงเส้นในธุรกิจ", en: "Trends, forecasting and linear relationships in business" }
+summary: "อนุกรมเวลาและกราฟเส้น ค่าเฉลี่ยเคลื่อนที่ เส้นแนวโน้มกำลังสองน้อยสุด สหสัมพันธ์ ดัชนีฤดูกาล ความคลาดเคลื่อนของการพยากรณ์ (MAD MAPE) และข้อจำกัดของการพยากรณ์ยอดขาย"
+difficulty: 6
+minutes: 45
+prerequisites: [business.stats.descriptive, math.functions.linear-graphs, math.stats.bivariate-data]
+encompasses:
+  - { id: business.stats.descriptive, weight: 0.4 }
+  - { id: math.functions.linear-graphs, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: trend-ma.svg
+    alt: "กราฟเส้นยอดขายร้านชาไข่มุก 6 เดือน (พันบาท) จุดสีน้ำเงินคือยอดจริง 52, 55, 61, 60, 66, 70 เส้นสีเขียวคือค่าเฉลี่ยเคลื่อนที่ 3 เดือน เริ่มที่เดือน 3 ค่า 56, 58.7, 62.3, 65.3 อยู่ต่ำกว่ายอดจริงเพราะตามหลังแนวโน้ม เส้นประสีส้มคือเส้นแนวโน้ม 48.47 + 3.49t ลากต่อถึงเดือน 7 ซึ่งมีวงกลมกลวงแสดงค่าพยากรณ์ประมาณ 72.9"
+    caption: "ค่าเฉลี่ยเคลื่อนที่ทำให้เรียบแต่ตามหลังแนวโน้ม เส้นแนวโน้มลากต่อเพื่อพยากรณ์ได้"
+  - { type: check, problem: business.stats.forecasting.p003, prompt: "ลองพยากรณ์ด้วยค่าเฉลี่ยเคลื่อนที่" }
+  - type: worked-example
+    title: "เส้นแนวโน้มยอดขายร้านชา"
+    problem: "ยอดขาย 6 เดือนของร้านชา (พันบาท) คือ $52, 55, 61, 60, 66, 70$ หาเส้นแนวโน้ม $\\hat{y} = a + bt$ และพยากรณ์เดือนที่ 7"
+    steps:
+      - { text: "$\\bar{t} = \\dfrac{1 + 2 + \\dots + 6}{6} = 3.5$ และ $\\bar{y} = \\dfrac{364}{6} \\approx 60.67$" }
+      - { text: "$\\sum (t - \\bar{t})(y - \\bar{y}) = 61$ และ $\\sum (t - \\bar{t})^2 = 6.25 + 2.25 + 0.25 + 0.25 + 2.25 + 6.25 = 17.5$", why: "ในสเปรดชีตใช้ =SLOPE() และ =INTERCEPT() ได้ทันที แต่ควรรู้ว่าคำนวณจากอะไร" }
+      - { text: "$b = 61 \\div 17.5 \\approx 3.49$ และ $a = 60.67 - 3.49 \\times 3.5 \\approx 48.47$" }
+      - { text: "พยากรณ์เดือนที่ 7: $\\hat{y} = 48.47 + 3.49(7) \\approx 72.9$ พันบาท", why: "เดือนถัดจากข้อมูล 6 เดือนคือ $t = 7$" }
+      - { text: "เทียบค่าเฉลี่ยเคลื่อนที่ 3 เดือน ($65.3$) ซึ่งต่ำกว่ามาก เพราะค่าเฉลี่ยเคลื่อนที่ตามหลังเมื่อข้อมูลมีแนวโน้มขาขึ้น" }
+    answer: "$\\hat{y} = 48.47 + 3.49t$ พยากรณ์เดือนที่ 7 ประมาณ $72.9$ พันบาท"
+  - type: worked-example
+    title: "พยากรณ์ที่ปรับฤดูกาล"
+    problem: "ร้านไอศกรีม (สมมติ) มียอดขายเฉลี่ยของไตรมาส 2 สองปีที่ผ่านมา $126$ พันบาท ค่าเฉลี่ยทุกไตรมาส $105$ พันบาท เส้นแนวโน้มพยากรณ์ไตรมาส 2 ปีหน้าได้ $115$ พันบาท หาค่าพยากรณ์ที่ปรับฤดูกาลแล้ว"
+    steps:
+      - { text: "ดัชนีฤดูกาลไตรมาส 2 $= 126 \\div 105 = 1.20$", why: "ไตรมาส 2 เป็นหน้าร้อน ขายสูงกว่าค่าเฉลี่ย $20\\%$" }
+      - { text: "พยากรณ์ $= 115 \\times 1.20 = 138$ พันบาท" }
+      - { text: "ใช้วางแผนสั่งกะทิและจ้างพนักงานชั่วคราวเพิ่มในไตรมาส 2 และเตรียมแผนรองรับถ้ายอดจริงต่ำกว่าคาด" }
+    answer: "ประมาณ $138$ พันบาท"
+  - { type: check, problem: business.stats.forecasting.p008, prompt: "ทำไมต้องใส่ค่าสัมบูรณ์" }
+glossary:
+  - { term: "อนุกรมเวลา", definition: "ข้อมูลที่เก็บต่อเนื่องตามลำดับเวลา เช่น ยอดขายรายเดือน" }
+  - { term: "ค่าเฉลี่ยเคลื่อนที่", definition: "ค่าเฉลี่ยของข้อมูลจำนวนช่วงเวลาล่าสุดที่กำหนด แล้วเลื่อนไปทีละช่วง ใช้ทำให้ข้อมูลเรียบและพยากรณ์" }
+  - { term: "เส้นแนวโน้ม", definition: "เส้นตรง ŷ = a + bt ที่หาด้วยวิธีกำลังสองน้อยสุดจากข้อมูลอนุกรมเวลา" }
+  - { term: "ดัชนีฤดูกาล", definition: "ค่าเฉลี่ยของช่วงเวลาหนึ่ง (เช่น ไตรมาส) หารด้วยค่าเฉลี่ยของทุกช่วง บอกว่าช่วงนั้นสูงหรือต่ำกว่าปกติเท่าใด" }
+  - { term: MAD, definition: "ค่าเฉลี่ยของค่าสัมบูรณ์ของความคลาดเคลื่อน (ค่าจริง − ค่าพยากรณ์)" }
+  - { term: MAPE, definition: "ค่าเฉลี่ยของร้อยละความคลาดเคลื่อนสัมบูรณ์เทียบกับค่าจริง" }
+  - { term: "สัมประสิทธิ์สหสัมพันธ์", definition: "ค่า r ระหว่าง −1 ถึง 1 บอกทิศทางและความแรงของความสัมพันธ์เชิงเส้นของสองตัวแปร" }
+flashcards:
+  - { front: "เส้นแนวโน้ม a และ b", back: "b = Σ(t − t̄)(y − ȳ) ÷ Σ(t − t̄)² · a = ȳ − b t̄ · สเปรดชีต =SLOPE() =INTERCEPT() =FORECAST.LINEAR()" }
+  - { front: "พยากรณ์ที่ปรับฤดูกาล", back: "ค่าตามแนวโน้ม × ดัชนีฤดูกาล" }
+  - { front: "MAD กับ MAPE", back: "MAD = เฉลี่ย |จริง − พยากรณ์| (หน่วยเดียวกับข้อมูล) · MAPE = เฉลี่ย |จริง − พยากรณ์| ÷ จริง × 100%" }
+  - { front: "ข้อเสียของค่าเฉลี่ยเคลื่อนที่", back: "ตามหลังข้อมูลที่มีแนวโน้ม ค่าพยากรณ์จะต่ำเกินเมื่อแนวโน้มขึ้น สูงเกินเมื่อแนวโน้มลง" }
+  - { front: "ทำไม r สูงจึงยังไม่ใช่เหตุและผล", back: "อาจมีตัวแปรอื่นที่ทำให้ทั้งสองเปลี่ยนพร้อมกัน เช่น เทศกาล" }
+references:
+  - { title: "Moving average", url: "https://en.wikipedia.org/wiki/Moving_average", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: Forecasting, url: "https://en.wikipedia.org/wiki/Forecasting", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Simple linear regression", url: "https://en.wikipedia.org/wiki/Simple_linear_regression", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.4 The Regression Equation (Introductory Business Statistics 2e, OpenStax)", url: "https://openstax.org/books/introductory-business-statistics-2e/pages/13-4-the-regression-equation", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: ["ทีมคลังรู้"]
