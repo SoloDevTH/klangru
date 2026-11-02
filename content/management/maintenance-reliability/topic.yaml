@@ -1,0 +1,62 @@
+id: management.operations.maintenance-reliability
+subject: management
+title: { th: ความเชื่อถือได้และการบำรุงรักษาทวีผลแบบทุกคนมีส่วนร่วม, en: Reliability, maintenance and total productive maintenance }
+summary: ความเชื่อถือได้ของระบบอนุกรมและขนาน MTBF MTTR ความพร้อมใช้ การบำรุงรักษาเชิงป้องกันและเชิงพยากรณ์ OEE TPM และความต่อเนื่องเมื่อเกิดเหตุฉุกเฉิน
+difficulty: 6.5
+minutes: 45
+prerequisites: [management.operations.lean, math.prob.probability]
+encompasses:
+  - { id: management.operations.lean, weight: 0.3 }
+  - { id: math.prob.probability, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bathtub.svg
+    alt: "กราฟเส้นโค้งอ่างอาบน้ำ แกนนอนคืออายุการใช้งาน แกนตั้งคืออัตราการเสีย เส้นเริ่มสูงทางซ้ายแล้วลดลงเร็ว (ช่วงเริ่มใช้ เสียบ่อยจากข้อบกพร่องแฝง) จากนั้นราบเกือบคงที่ตลอดช่วงกลาง (ช่วงใช้งานปกติ เสียแบบสุ่ม ใช้ R(t) = e^(−λt) และ MTBF = 1/λ) แล้วสูงขึ้นทางขวา (ช่วงเสื่อมสภาพ ชิ้นส่วนสึกหรอ ควรเปลี่ยนก่อนถึงช่วงนี้)"
+    caption: "อัตราการเสียของเครื่องเปลี่ยนไปตามอายุ แต่ละช่วงต้องการการดูแลต่างกัน"
+  - type: worked-example
+    title: ระบบสำรองของห้องผ่าตัด
+    problem: "ระบบจ่ายออกซิเจนของห้องผ่าตัดในโรงพยาบาลแห่งหนึ่ง (สมมติ) มีปั๊ม ($R = 0.95$ ในหนึ่งเดือน) ต่ออนุกรมกับชุดควบคุม ($R = 0.98$) ถ้าเพิ่มปั๊มรุ่นเดียวกันอีกตัวต่อขนานกับปั๊มเดิม ความเชื่อถือได้ของระบบเปลี่ยนจากเท่าใดเป็นเท่าใด"
+    steps:
+      - text: "ระบบเดิม (อนุกรม): $0.95 \\times 0.98 = 0.931$"
+      - text: "ปั๊มสองตัวขนาน: โอกาสเสียทั้งคู่ $= 0.05 \\times 0.05 = 0.0025$ จึงได้ $1 - 0.0025 = 0.9975$"
+        why: "ส่วนขนานจะล้มเหลวก็ต่อเมื่อทุกตัวเสียพร้อมกัน จึงคิดจากโอกาสเสียแล้วลบออกจาก 1"
+      - text: "ระบบใหม่: $0.9975 \\times 0.98 \\approx 0.978$"
+      - text: "ตอนนี้ส่วนที่อ่อนที่สุดคือชุดควบคุม (0.98) ถ้าต้องการสูงขึ้นอีก ต้องสำรองชุดควบคุมด้วย"
+    answer: "จาก 0.931 เป็นประมาณ 0.978 โอกาสระบบล้มเหลวลดจาก 6.9% เหลือราว 2.2%"
+  - { type: check, problem: management.operations.maintenance-reliability.p007, prompt: "ส่วนขนานล้มเหลวเมื่อทุกตัวเสียพร้อมกัน" }
+  - type: worked-example
+    title: คำนวณ OEE ของเครื่องบรรจุ
+    problem: "เครื่องบรรจุน้ำผลไม้ทำงานกะ 480 นาที พักตามแผน 30 นาที เครื่องเสียรวม 45 นาที รอบเวลาในอุดมคติ 0.5 นาทีต่อกล่อง ผลิตได้ 720 กล่อง เป็นของดี 684 กล่อง จงหา OEE"
+    steps:
+      - text: "เวลาวางแผนผลิต $= 480 - 30 = 450$ นาที เวลาเดินเครื่องจริง $= 450 - 45 = 405$ นาที"
+      - text: "ความพร้อมใช้ $= 405 / 450 = 0.90$"
+      - text: "สมรรถนะ $= (0.5 \\times 720) / 405 = 360 / 405 \\approx 0.889$"
+        why: "ถ้าเดินเต็มความเร็วตลอด 405 นาที จะผลิตได้ 810 กล่อง แต่ได้แค่ 720 แสดงว่ามีการหยุดเล็ก ๆ หรือเดินช้า"
+      - text: "คุณภาพ $= 684 / 720 = 0.95$"
+      - text: "OEE $= 0.90 \\times 0.889 \\times 0.95 \\approx 0.76$ ตรวจด้วยอีกวิธี: $(684 \\times 0.5) / 450 = 342 / 450 = 0.76$"
+    answer: "OEE = 76% ความสูญเสียมากที่สุดอยู่ที่สมรรถนะ (88.9%) และความพร้อมใช้ (90%)"
+  - { type: check, problem: management.operations.maintenance-reliability.p005 }
+glossary:
+  - { term: ความเชื่อถือได้, definition: "ความน่าจะเป็นที่สิ่งหนึ่งทำงานได้ตามหน้าที่โดยไม่เสียตลอดช่วงเวลาที่กำหนดภายใต้สภาพที่กำหนด" }
+  - { term: MTBF, definition: "เวลาเฉลี่ยระหว่างการเสียของเครื่องที่ซ่อมได้ เท่ากับเวลาทำงานรวมหารจำนวนครั้งที่เสีย" }
+  - { term: MTTR, definition: "เวลาเฉลี่ยที่ใช้ซ่อมจนเครื่องกลับมาทำงานได้" }
+  - { term: ความพร้อมใช้, definition: "สัดส่วนเวลาที่เครื่องพร้อมทำงาน MTBF ÷ (MTBF + MTTR)" }
+  - { term: OEE, definition: "ประสิทธิผลโดยรวมของเครื่องจักร เท่ากับความพร้อมใช้ × สมรรถนะ × คุณภาพ" }
+  - { term: TPM, definition: "การบำรุงรักษาทวีผลแบบทุกคนมีส่วนร่วม ให้พนักงานเดินเครื่องดูแลเครื่องเองประจำวันร่วมกับงานบำรุงรักษาตามแผน" }
+flashcards:
+  - { front: "ระบบอนุกรม vs ขนาน", back: "อนุกรม: R₁ × R₂ × … · ขนาน: 1 − (1 − R₁)(1 − R₂)…" }
+  - { front: "ความพร้อมใช้", back: "MTBF ÷ (MTBF + MTTR)" }
+  - { front: "OEE", back: "ความพร้อมใช้ × สมรรถนะ × คุณภาพ = (ชิ้นงานดี × รอบเวลาในอุดมคติ) ÷ เวลาวางแผนผลิต" }
+  - { front: "R(t) เมื่ออัตราการเสียคงที่", back: "e^(−λt) โดย λ = 1/MTBF" }
+  - { front: "บำรุงรักษาเชิงป้องกัน vs เชิงพยากรณ์", back: "ป้องกัน: ทำตามรอบเวลา · พยากรณ์: วัดสภาพจริงแล้วซ่อมเมื่อเริ่มผิดปกติ" }
+references:
+  - { title: "Reliability engineering", url: "https://en.wikipedia.org/wiki/Reliability_engineering", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Overall equipment effectiveness", url: "https://en.wikipedia.org/wiki/Overall_equipment_effectiveness", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Total productive maintenance", url: "https://en.wikipedia.org/wiki/Total_productive_maintenance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Bathtub curve", url: "https://en.wikipedia.org/wiki/Bathtub_curve", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

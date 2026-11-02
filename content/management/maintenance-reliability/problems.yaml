@@ -1,0 +1,300 @@
+problems:
+  - id: management.operations.maintenance-reliability.p001
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 1
+    type: match
+    stem: "จับคู่รูปแบบการบำรุงรักษากับตัวอย่าง"
+    pairs:
+      - { left: "ซ่อมเมื่อเสีย", right: "ใช้หลอดไฟในห้องเก็บของจนขาดแล้วจึงเปลี่ยน" }
+      - { left: "เชิงป้องกัน", right: "เปลี่ยนน้ำมันเครื่องอัดอากาศทุก 500 ชั่วโมงการทำงาน" }
+      - { left: "เชิงพยากรณ์", right: "วัดการสั่นของมอเตอร์ทุกสัปดาห์ แล้วเปลี่ยนตลับลูกปืนเมื่อค่าการสั่นเริ่มสูงผิดปกติ" }
+      - { left: "การบำรุงรักษาด้วยตนเอง", right: "พนักงานเดินเครื่องทำความสะอาดและตรวจน็อตหลวมก่อนเริ่มกะทุกวัน" }
+    hints:
+      - "ดูว่าตัดสินใจซ่อมจากอะไร: เครื่องเสีย รอบเวลา หรือสภาพที่วัดได้"
+      - "การบำรุงรักษาด้วยตนเองเป็นงานของพนักงานเดินเครื่องใน TPM"
+    solution: "รอให้เสียคือซ่อมเมื่อเสีย ทำตามรอบชั่วโมงคือเชิงป้องกัน วัดการสั่นแล้วซ่อมเมื่อผิดปกติคือเชิงพยากรณ์ และพนักงานดูแลเครื่องเองทุกวันคือการบำรุงรักษาด้วยตนเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p002
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 1
+    type: mcq
+    stem: "โรงพยาบาลซื้อเครื่องช่วยหายใจรุ่นใหม่ 20 เครื่อง ในเดือนแรกเสีย 3 เครื่องจากรอยบัดกรีที่บกพร่อง หลังจากนั้นแทบไม่เสียอีก ช่วงเดือนแรกตรงกับช่วงใดของเส้นโค้งอ่างอาบน้ำ"
+    choices:
+      - { id: a, text: "ช่วงเริ่มใช้", correct: true }
+      - { id: b, text: "ช่วงใช้งานปกติ", feedback: "ช่วงใช้งานปกติเสียแบบสุ่มด้วยอัตราต่ำและคงที่ ไม่ใช่เสียมากในช่วงแรกแล้วลดลง" }
+      - { id: c, text: "ช่วงเสื่อมสภาพ", feedback: "ช่วงเสื่อมสภาพเกิดตอนเครื่องอายุมากและสึกหรอ ไม่ใช่เดือนแรก" }
+      - { id: d, text: "ไม่อยู่ในเส้นโค้งใดเลย", feedback: "การเสียมากตอนเริ่มใช้แล้วลดลงคือลักษณะของช่วงแรกของเส้นโค้งอ่างอาบน้ำ" }
+    hints:
+      - "อัตราการเสียสูงตอนแรกแล้วลดลง"
+      - "สาเหตุคือข้อบกพร่องแฝงจากการผลิต"
+    solution: "การเสียจากข้อบกพร่องแฝงตอนเริ่มใช้แล้วลดลงคือช่วงเริ่มใช้ (infant mortality) จึงนิยมเดินเครื่องทดสอบก่อนใช้งานจริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p003
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 1
+    type: mcq
+    stem: "OEE เป็นผลคูณของตัวประกอบสามตัวใด"
+    choices:
+      - { id: a, text: "ความพร้อมใช้ × สมรรถนะ × คุณภาพ", correct: true }
+      - { id: b, text: "MTBF × MTTR × ความพร้อมใช้", feedback: "MTBF และ MTTR ใช้คำนวณความพร้อมใช้ แต่ไม่ใช่ตัวประกอบของ OEE โดยตรง" }
+      - { id: c, text: "ผลผลิต × ปัจจัยนำเข้า × ผลิตภาพ", feedback: "นี่เป็นคำของเรื่องผลิตภาพ ไม่ใช่ OEE" }
+      - { id: d, text: "ความเชื่อถือได้ × เวลาแท็กต์ × คุณภาพ", feedback: "เวลาแท็กต์มาจากความต้องการของลูกค้า ไม่ใช่ตัวประกอบของ OEE" }
+    hints:
+      - "OEE ดูสามเรื่อง: เครื่องเดินไหม เดินเร็วไหม ได้ของดีไหม"
+      - "แต่ละเรื่องเป็นสัดส่วนระหว่าง 0 ถึง 1"
+    solution: "OEE = ความพร้อมใช้ (เครื่องเดินได้ตามเวลาที่วางแผน) × สมรรถนะ (เดินเต็มความเร็ว) × คุณภาพ (ได้ของดี)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p004
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 2
+    type: numeric
+    stem: "เครื่องฉีดพลาสติกเดินเครื่องรวม 1,200 ชั่วโมงในหนึ่งไตรมาส เสีย 4 ครั้ง MTBF เป็นเท่าใด (ตอบในหน่วยชั่วโมง)"
+    answer: { value: 300, unit: ชั่วโมง }
+    hints:
+      - "MTBF = เวลาทำงานรวม ÷ จำนวนครั้งที่เสีย"
+      - "$1{,}200 \\div 4$"
+    misconceptions:
+      - { match: 4800, feedback: "ต้องหาร ไม่ใช่คูณ" }
+      - { match: 0.0033, feedback: "นั่นคืออัตราการเสีย (ครั้งต่อชั่วโมง) ซึ่งเป็นส่วนกลับของ MTBF" }
+    solution: "$\\text{MTBF} = 1{,}200 \\div 4 = 300$ ชั่วโมง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p005
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 2
+    type: numeric
+    stem: "เครื่องฉีดพลาสติกมี MTBF 300 ชั่วโมง และ MTTR 20 ชั่วโมง ความพร้อมใช้เป็นร้อยละเท่าใด (ตอบในหน่วย % ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 93.75, unit: "%", tolerance: 0.05 }
+    hints:
+      - "$A = \\dfrac{\\text{MTBF}}{\\text{MTBF} + \\text{MTTR}}$"
+      - "$\\dfrac{300}{320}$ แล้วคูณ 100"
+    misconceptions:
+      - { match: 93.33, feedback: "ดูเหมือนคิด $1 - 20/300$ ตัวหารต้องเป็น MTBF + MTTR" }
+      - { match: 6.25, feedback: "นั่นคือสัดส่วนเวลาที่เครื่องไม่พร้อมใช้" }
+    solution: "$A = \\dfrac{300}{300 + 20} = 0.9375 = 93.75\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p006
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 2
+    type: numeric
+    stem: "สายการผลิตมีเครื่องสามเครื่องต่อเนื่องกัน (อนุกรม) ความเชื่อถือได้ในหนึ่งสัปดาห์เป็น 0.95, 0.98 และ 0.99 และเสียอิสระต่อกัน ความเชื่อถือได้ของทั้งสายเป็นเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.9217, tolerance: 0.001 }
+    hints:
+      - "ระบบอนุกรมทำงานเมื่อทุกเครื่องทำงาน"
+      - "คูณความเชื่อถือได้ของทุกเครื่อง"
+    misconceptions:
+      - { match: 0.95, feedback: "นั่นคือค่าต่ำสุดของเครื่องเดียว ระบบอนุกรมเชื่อถือได้น้อยกว่าเครื่องที่อ่อนที่สุดเสมอ" }
+      - { match: 0.9733, feedback: "นั่นคือค่าเฉลี่ย ระบบอนุกรมต้องคูณ ไม่ใช่เฉลี่ย" }
+    solution: "$R = 0.95 \\times 0.98 \\times 0.99 \\approx 0.9217$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p007
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 3
+    type: numeric
+    stem: "สถานีสูบน้ำของเทศบาล (สมมติ) มีปั๊มสองตัวต่อขนาน ตัวใดตัวหนึ่งทำงานก็พอ แต่ละตัวมีความเชื่อถือได้ 0.90 ในหนึ่งเดือนและเสียอิสระต่อกัน ความเชื่อถือได้ของระบบเป็นเท่าใด (ตอบเป็นทศนิยม)"
+    answer: { value: 0.99, tolerance: 0.001 }
+    hints:
+      - "ระบบขนานล้มเหลวเมื่อปั๊มทั้งสองเสียพร้อมกัน"
+      - "$R = 1 - (1 - 0.90)^2$"
+    misconceptions:
+      - { match: 0.81, feedback: "นั่นคือระบบอนุกรม ($0.9 \\times 0.9$) ระบบขนานต้องคิดจากโอกาสเสียทั้งคู่" }
+      - { match: 1.8, feedback: "ความน่าจะเป็นเกิน 1 ไม่ได้ บวกกันตรง ๆ ไม่ได้" }
+    solution: "โอกาสเสียทั้งคู่ $= 0.1 \\times 0.1 = 0.01$ จึงได้ $R = 1 - 0.01 = 0.99$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p008
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 3
+    type: numeric
+    stem: "จากแผนภาพบล็อกระบบจ่ายน้ำประปาหมู่บ้านในภาพ ความเชื่อถือได้ของทั้งระบบเป็นเท่าใด (ตอบเป็นทศนิยม 4 ตำแหน่ง)"
+    figure:
+      src: rbd.svg
+      alt: "แผนภาพบล็อก น้ำเข้าผ่านปั๊มดิบ A (R = 0.90) แล้วแยกเป็นสองทางขนาน ตัวกรอง B (R = 0.80) และตัวกรอง C (R = 0.80) แล้วรวมกันผ่านปั๊มจ่าย D (R = 0.95) ก่อนออก ข้อความใต้ภาพ: B และ C ต่อขนานกัน ตัวใดตัวหนึ่งทำงานก็พอ ทุกส่วนเสียอิสระต่อกัน"
+    answer: { value: 0.8208, tolerance: 0.001 }
+    hints:
+      - "รวมส่วนขนาน B กับ C ก่อน: $1 - (1 - 0.8)^2$"
+      - "แล้วคูณกับ A และ D ซึ่งต่ออนุกรม"
+    misconceptions:
+      - { match: 0.5472, feedback: "นั่นคือการคิดทุกส่วนเป็นอนุกรม ($0.9 \\times 0.8 \\times 0.8 \\times 0.95$) แต่ B กับ C ต่อขนาน" }
+      - { match: 0.96, feedback: "นั่นคือค่าของส่วนขนาน B–C อย่างเดียว ยังต้องคูณ A และ D" }
+    solution: "ส่วนขนาน $= 1 - 0.2^2 = 0.96$ ทั้งระบบ $= 0.90 \\times 0.96 \\times 0.95 = 0.8208$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p009
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องตัดผ้าของโรงงานตัดเย็บมีความพร้อมใช้ 0.90 สมรรถนะ 0.95 และคุณภาพ 0.98 OEE เป็นร้อยละเท่าใด (ตอบในหน่วย % ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 83.8, unit: "%", tolerance: 0.1 }
+    hints:
+      - "OEE = ความพร้อมใช้ × สมรรถนะ × คุณภาพ"
+      - "$0.90 \\times 0.95 \\times 0.98$"
+    misconceptions:
+      - { match: 94.3, feedback: "นั่นคือค่าเฉลี่ยของสามตัว OEE ต้องคูณกัน" }
+      - { match: 90, feedback: "ตัวประกอบที่ต่ำที่สุดไม่ใช่ OEE ความสูญเสียทั้งสามด้านสะสมกัน" }
+    solution: "$\\text{OEE} = 0.90 \\times 0.95 \\times 0.98 = 0.8379 \\approx 83.8\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p010
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องอัดเม็ดยาในโรงงานยา (สมมติ) ทำงานกะ 480 นาที พักตามแผน 60 นาที เครื่องเสียและตั้งเครื่องรวม 42 นาที รอบเวลาในอุดมคติ 1.2 นาทีต่อถาด ผลิตได้ 300 ถาด เป็นของเสีย 9 ถาด OEE เป็นร้อยละเท่าใด (ตอบในหน่วย % ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 83.1, unit: "%", tolerance: 0.15 }
+    hints:
+      - "เวลาวางแผนผลิต $= 480 - 60$ เวลาเดินจริง = เวลาวางแผน − 42"
+      - "ตรวจด้วย OEE = (ชิ้นงานดี × รอบเวลาในอุดมคติ) ÷ เวลาวางแผนผลิต"
+    misconceptions:
+      - { match: 75, feedback: "ดูเหมือนใช้เวลากะ 480 นาทีเป็นตัวหาร ต้องหักเวลาพักตามแผนก่อน" }
+      - { match: 85.7, feedback: "ดูเหมือนใช้จำนวนที่ผลิต 300 ถาดแทนชิ้นงานดี 291 ถาด" }
+    solution: "เวลาวางแผน $= 420$ นาที เวลาเดินจริง $= 378$ นาที ความพร้อมใช้ $= 378/420 = 0.90$ สมรรถนะ $= (1.2 \\times 300)/378 \\approx 0.952$ คุณภาพ $= 291/300 = 0.97$ OEE $= 0.90 \\times 0.952 \\times 0.97 \\approx 0.831$ ตรวจ: $(291 \\times 1.2)/420 = 349.2/420 \\approx 83.1\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p011
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 4
+    type: numeric
+    stem: "ตลับลูกปืนรุ่นหนึ่งอยู่ในช่วงอัตราการเสียคงที่ มี MTBF 2,000 ชั่วโมง ความน่าจะเป็นที่ตลับลูกปืนทำงานได้ครบ 500 ชั่วโมงโดยไม่เสียเป็นเท่าใด (ตอบเป็นทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.7788, tolerance: 0.001 }
+    hints:
+      - "$\\lambda = 1/\\text{MTBF}$ และ $R(t) = e^{-\\lambda t}$"
+      - "$R(500) = e^{-500/2000} = e^{-0.25}$"
+    misconceptions:
+      - { match: 0.75, feedback: "นั่นคือ $1 - 500/2000$ ซึ่งเป็นการประมาณเชิงเส้น ต้องใช้ฟังก์ชันเอกซ์โพเนนเชียล" }
+      - { match: 0.2212, feedback: "นั่นคือความน่าจะเป็นที่เสียก่อน 500 ชั่วโมง ($1 - e^{-0.25}$)" }
+    solution: "$\\lambda = 1/2000 = 0.0005$ ต่อชั่วโมง $R(500) = e^{-0.0005 \\times 500} = e^{-0.25} \\approx 0.7788$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p012
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นแรก ๆ ของการบำรุงรักษาด้วยตนเองใน TPM ให้ถูกต้อง"
+    items:
+      - "ทำความสะอาดเครื่องครั้งใหญ่และตรวจหาสิ่งผิดปกติ"
+      - "กำจัดต้นเหตุของความสกปรกและจุดที่เข้าถึงยาก"
+      - "จัดทำมาตรฐานชั่วคราวของการทำความสะอาดและหล่อลื่น"
+      - "อบรมการตรวจเครื่องทั่วไปและให้พนักงานตรวจเอง"
+    hints:
+      - "ต้องเห็นสภาพจริงของเครื่องก่อนจึงรู้ว่าความสกปรกมาจากไหน"
+      - "เขียนมาตรฐานหลังจากแก้ต้นเหตุแล้ว จึงทำตามได้จริงในเวลาที่มี"
+    solution: "ทำความสะอาดครั้งใหญ่ (ทำความสะอาดคือการตรวจ) → กำจัดต้นเหตุความสกปรกและจุดเข้าถึงยาก → ตั้งมาตรฐานการทำความสะอาดและหล่อลื่น → อบรมและตรวจเครื่องด้วยตนเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p013
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 4
+    type: match
+    stem: "จับคู่ความสูญเสียกับตัวประกอบของ OEE ที่ได้รับผลกระทบ"
+    pairs:
+      - { left: "สายพานขาด เครื่องหยุด 40 นาที", right: "ความพร้อมใช้" }
+      - { left: "ชิ้นงานติดรางบ่อย ต้องหยุดเคลียร์ครั้งละ 1–2 นาที", right: "สมรรถนะ" }
+      - { left: "ขวดที่ฝาปิดไม่สนิทต้องคัดออก", right: "คุณภาพ" }
+    hints:
+      - "เครื่องหยุดนานจนนับเป็นเวลาหยุดเครื่อง กับหยุดสั้น ๆ ที่มักไม่ถูกบันทึก ต่างกัน"
+      - "ของเสียกระทบตัวประกอบใด"
+    solution: "การเสียนานลดความพร้อมใช้ การหยุดเล็ก ๆ บ่อย ๆ ลดสมรรถนะ (ผลิตได้น้อยกว่าความเร็วเต็มที่ในเวลาเดินเครื่อง) และของเสียลดคุณภาพ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p014
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 4
+    type: mcq
+    stem: "เครื่องทำความเย็นของห้องเก็บวัคซีนในโรงพยาบาล (สมมติ) เสียแบบสุ่ม ไม่ขึ้นกับอายุ (อยู่ในช่วงอัตราการเสียคงที่) ถ้าเสียวัคซีนจะเสียหายมูลค่าสูง ควรใช้การบำรุงรักษาแบบใดเป็นหลัก"
+    choices:
+      - { id: a, text: "เชิงพยากรณ์: ติดตามอุณหภูมิและกระแสไฟของคอมเพรสเซอร์ต่อเนื่องพร้อมสัญญาณเตือน และมีตู้สำรอง", correct: true }
+      - { id: b, text: "ซ่อมเมื่อเสีย เพราะเครื่องเสียแบบสุ่มอยู่แล้ว", feedback: "ผลกระทบของการเสียสูงมาก รอให้เสียแล้วซ่อมไม่คุ้ม" }
+      - { id: c, text: "เปลี่ยนเครื่องใหม่ทุก 6 เดือนตามรอบ", feedback: "เมื่อเสียแบบสุ่ม เครื่องใหม่ก็เสียได้ด้วยอัตราเดิม การเปลี่ยนตามรอบสิ้นเปลืองโดยไม่ลดการเสียมาก" }
+      - { id: d, text: "ลดการเปิดประตูตู้ให้น้อยลงอย่างเดียว", feedback: "ช่วยเรื่องอุณหภูมิได้บ้าง แต่ไม่ได้ตรวจจับหรือรับมือเมื่อเครื่องเริ่มผิดปกติ" }
+    hints:
+      - "เมื่อการเสียไม่ขึ้นกับอายุ การทำตามรอบเวลาช่วยได้น้อย"
+      - "ถ้าผลกระทบสูง ควรตรวจจับความผิดปกติแต่เนิ่น ๆ และมีระบบสำรอง"
+    solution: "การเสียแบบสุ่มไม่ลดลงด้วยการเปลี่ยนตามรอบ ควรเฝ้าดูสภาพจริงเพื่อพบความผิดปกติก่อนเสีย และมีตู้สำรองเพื่อความต่อเนื่อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p015
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 5
+    type: numeric
+    stem: "ศูนย์ข้อมูลของหน่วยงานรัฐแห่งหนึ่ง (สมมติ) ต้องการให้ระบบไฟสำรองมีความเชื่อถือได้อย่างน้อย 0.999 ในช่วงไฟดับ เครื่องปั่นไฟแต่ละเครื่องมีความเชื่อถือได้ 0.90 และเสียอิสระต่อกัน ต้องต่อขนานอย่างน้อยกี่เครื่อง"
+    answer: { value: 3, unit: เครื่อง }
+    hints:
+      - "เครื่องปั่นไฟ $n$ เครื่องขนาน: $R = 1 - 0.1^n$"
+      - "หาค่า $n$ ที่น้อยที่สุดที่ $1 - 0.1^n \\ge 0.999$"
+    misconceptions:
+      - { match: 2, feedback: "สองเครื่องได้ $1 - 0.01 = 0.99$ ยังไม่ถึง 0.999" }
+      - { match: 10, feedback: "ดูเหมือนคิดว่าต้องเพิ่มทีละ 0.1 ระบบขนานลดโอกาสเสียแบบคูณ" }
+    solution: "$n = 2$: $1 - 0.1^2 = 0.99$ ไม่พอ $n = 3$: $1 - 0.1^3 = 0.999$ พอดี จึงต้องอย่างน้อย 3 เครื่อง (และต้องทดสอบเดินเครื่องตามรอบด้วย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p016
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "โรงพยาบาลจังหวัดแห่งหนึ่ง (สมมติ) ทำแผนความต่อเนื่องเมื่อไฟฟ้าดับ ข้อใดเป็นแนวปฏิบัติที่ดี เลือกทุกข้อที่ถูก"
+    choices:
+      - { id: a, text: "ระบุพื้นที่ที่หยุดไม่ได้ เช่น ห้องผ่าตัด ไอซียู ห้องเก็บวัคซีน แล้วต่อเข้าระบบไฟสำรองก่อน", correct: true }
+      - { id: b, text: "ทดสอบเดินเครื่องปั่นไฟสำรองพร้อมโหลดตามรอบและบันทึกผล", correct: true }
+      - { id: c, text: "สำรองน้ำมันเชื้อเพลิงให้พอใช้ตามระยะเวลาที่ประเมินไว้ และมีสัญญากับผู้ส่งน้ำมัน", correct: true }
+      - { id: d, text: "ซ้อมแผนกับเจ้าหน้าที่จริงเป็นระยะ", correct: true }
+      - { id: e, text: "เก็บเครื่องปั่นไฟไว้ไม่ใช้งานเลยจนกว่าจะเกิดไฟดับจริง เพื่อไม่ให้สึกหรอ", feedback: "เครื่องที่ไม่เคยเดินอาจสตาร์ตไม่ติดในวันที่ต้องใช้ ต้องทดสอบตามรอบ" }
+    hints:
+      - "แผนที่ดีระบุสิ่งสำคัญ เตรียมทรัพยากร และพิสูจน์ว่าใช้ได้จริง"
+      - "ระบบสำรองที่ไม่เคยทดสอบเชื่อถือได้หรือไม่"
+    solution: "ก ข ค ง ถูก แผนต้องจัดลำดับพื้นที่สำคัญ ทดสอบระบบสำรอง เตรียมเชื้อเพลิง และซ้อมกับคนจริง ส่วนการไม่ทดสอบเลยทำให้ไม่รู้ว่าระบบใช้ได้หรือไม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p017
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 5
+    type: numeric
+    stem: "เครื่องฉีดพลาสติกมี MTBF 300 ชั่วโมง และ MTTR 20 ชั่วโมง ทีม TPM เตรียมอะไหล่หลักไว้ข้างเครื่องและฝึกช่าง ทำให้ MTTR ลดเหลือ 8 ชั่วโมง โดย MTBF เท่าเดิม ความพร้อมใช้ใหม่เป็นร้อยละเท่าใด (ตอบในหน่วย % ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 97.4, unit: "%", tolerance: 0.1 }
+    hints:
+      - "$A = \\dfrac{\\text{MTBF}}{\\text{MTBF} + \\text{MTTR}}$ ด้วย MTTR ใหม่"
+      - "$\\dfrac{300}{308}$"
+    misconceptions:
+      - { match: 93.75, feedback: "นั่นคือความพร้อมใช้เดิม (MTTR 20 ชั่วโมง)" }
+      - { match: 97.3, feedback: "ดูเหมือนคิด $1 - 8/300$ ตัวหารต้องเป็น MTBF + MTTR" }
+    solution: "$A = \\dfrac{300}{300 + 8} \\approx 0.974 = 97.4\\%$ เพิ่มจาก 93.75% โดยไม่ต้องลดการเสียเลย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: management.operations.maintenance-reliability.p018
+    topics: [management.operations.maintenance-reliability]
+    difficulty: 3
+    type: mcq
+    stem: "ผู้จัดการโรงงานบอกว่า \"เครื่องนี้ MTBF 1,000 ชั่วโมง แปลว่าจะไม่เสียแน่นอนใน 1,000 ชั่วโมงแรก\" ถ้าเครื่องอยู่ในช่วงอัตราการเสียคงที่ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ไม่ถูก โอกาสทำงานครบ 1,000 ชั่วโมงโดยไม่เสียมีเพียงราว 37%", correct: true }
+      - { id: b, text: "ถูก MTBF คือเวลาขั้นต่ำก่อนเสีย", feedback: "MTBF เป็นค่าเฉลี่ย ไม่ใช่ค่าขั้นต่ำ เครื่องเสียก่อนหรือหลังก็ได้" }
+      - { id: c, text: "ไม่ถูก โอกาสทำงานครบ 1,000 ชั่วโมงคือ 50% พอดี", feedback: "ในการแจกแจงเอกซ์โพเนนเชียล $R(\\text{MTBF}) = e^{-1} \\approx 0.37$ ไม่ใช่ 0.5" }
+      - { id: d, text: "ไม่ถูก เครื่องต้องเสียก่อน 1,000 ชั่วโมงแน่นอน", feedback: "มีโอกาสราว 37% ที่จะทำงานครบโดยไม่เสีย" }
+    hints:
+      - "$R(t) = e^{-t/\\text{MTBF}}$"
+      - "แทน $t = \\text{MTBF}$"
+    solution: "$R(1{,}000) = e^{-1{,}000/1{,}000} = e^{-1} \\approx 0.37$ เครื่องมีโอกาสราว 63% ที่จะเสียก่อนถึง MTBF"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

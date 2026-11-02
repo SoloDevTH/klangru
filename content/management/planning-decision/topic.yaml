@@ -1,0 +1,62 @@
+id: management.principles.planning-decision
+subject: management
+title: { th: การวางแผนและการตัดสินใจ, en: Planning and decision making }
+summary: ประเภทของแผน เป้าหมายแบบ SMART ขั้นตอนการตัดสินใจ ตารางผลตอบแทน เกณฑ์ maximax maximin และค่าเสียโอกาส มูลค่าคาดหมาย และต้นไม้การตัดสินใจ
+difficulty: 4.5
+minutes: 40
+prerequisites: [management.principles.functions, math.prob.probability]
+encompasses:
+  - { id: management.principles.functions, weight: 0.2 }
+  - { id: math.prob.probability, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: เลือกผู้รับจ้างซักผ้าของโรงพยาบาลด้วยคะแนนถ่วงน้ำหนัก
+    problem: "โรงพยาบาลแห่งหนึ่ง (สมมติ) เลือกผู้รับจ้างซักผ้าจากสองบริษัท ใช้เกณฑ์ราคา (น้ำหนัก 0.4) คุณภาพความสะอาด (0.4) และระยะทาง (0.2) ให้คะแนนเต็ม 10 บริษัท ก ได้ 8, 6, 9 บริษัท ข ได้ 6, 9, 8 ควรเลือกบริษัทใด"
+    steps:
+      - text: "ตรวจว่าน้ำหนักรวมเป็น 1: $0.4 + 0.4 + 0.2 = 1$"
+      - text: "บริษัท ก: $0.4(8) + 0.4(6) + 0.2(9) = 3.2 + 2.4 + 1.8 = 7.4$"
+      - text: "บริษัท ข: $0.4(6) + 0.4(9) + 0.2(8) = 2.4 + 3.6 + 1.6 = 7.6$"
+        why: "ถ้าบวกคะแนนตรง ๆ จะได้ 23 เท่ากันทั้งสองบริษัท น้ำหนักทำให้เกณฑ์ที่สำคัญกว่ามีผลมากกว่า"
+      - text: "เลือกบริษัทที่คะแนนรวมสูงกว่า"
+    answer: "เลือกบริษัท ข (7.6 ต่อ 7.4) เพราะคุณภาพความสะอาดซึ่งมีน้ำหนักมากดีกว่าชัดเจน"
+  - type: figure
+    src: tree.svg
+    alt: "ต้นไม้การตัดสินใจ สี่เหลี่ยมทางซ้ายแตกเป็นสามกิ่ง ใหญ่ กลาง เล็ก แต่ละกิ่งไปยังวงกลมที่แตกเป็นความต้องการสูง (0.3) ปานกลาง (0.5) ต่ำ (0.2) ผลตอบแทนพันบาท ใหญ่: 900, 300, −400 EMV 340 กลาง: 600, 400, −100 EMV 360 มีเครื่องหมายถูก เล็ก: 300, 250, 100 EMV 235"
+    caption: "คำนวณ EMV ที่วงกลมแต่ละวง แล้วเลือกกิ่งที่ EMV สูงสุดที่สี่เหลี่ยม"
+  - type: worked-example
+    title: คำนวณต้นไม้การตัดสินใจของลานตากข้าว
+    problem: "จากต้นไม้ในภาพ (ใหญ่: 900, 300, −400 · กลาง: 600, 400, −100 · เล็ก: 300, 250, 100 พันบาท ความน่าจะเป็น 0.3, 0.5, 0.2) สหกรณ์ควรสร้างลานตากขนาดใด และข้อมูลพยากรณ์ที่แม่นยำสมบูรณ์มีค่าสูงสุดเท่าใด"
+    steps:
+      - text: "EMV ใหญ่ $= 0.3(900) + 0.5(300) + 0.2(-400) = 270 + 150 - 80 = 340$"
+      - text: "EMV กลาง $= 180 + 200 - 20 = 360$ และ EMV เล็ก $= 90 + 125 + 20 = 235$"
+      - text: "ที่จุดตัดสินใจเลือกกิ่งที่ EMV สูงสุด คือกลาง (360)"
+      - text: "ถ้ารู้อนาคตแน่นอน จะเลือกผลดีที่สุดของแต่ละสภาวะ: 900, 400, 100 ได้ค่าคาดหมาย $0.3(900) + 0.5(400) + 0.2(100) = 490$"
+        why: "ข้อมูลสมบูรณ์ทำให้เลือกถูกทุกครั้ง แต่ยังไม่รู้ล่วงหน้าว่าข้อมูลจะบอกสภาวะใด จึงต้องถ่วงด้วยความน่าจะเป็น"
+      - text: "$\\text{EVPI} = 490 - 360 = 130$"
+    answer: "สร้างขนาดกลาง (EMV 360 พันบาท) และไม่ควรจ่ายค่าข้อมูลพยากรณ์เกิน 130 พันบาท"
+  - { type: check, problem: management.principles.planning-decision.p007, prompt: "คูณผลตอบแทนกับความน่าจะเป็นทีละสภาวะแล้วรวม" }
+  - { type: check, problem: management.principles.planning-decision.p002 }
+glossary:
+  - { term: แผนประจำ, definition: "แผนที่ใช้ซ้ำได้หลายครั้ง ได้แก่ นโยบาย ขั้นตอนการปฏิบัติ และกฎ" }
+  - { term: แผนใช้ครั้งเดียว, definition: "แผนสำหรับเป้าหมายเฉพาะครั้ง ได้แก่ แผนงาน โครงการ และงบประมาณ" }
+  - { term: ตารางผลตอบแทน, definition: "ตารางผลของแต่ละทางเลือกภายใต้แต่ละสภาวะที่ควบคุมไม่ได้" }
+  - { term: มูลค่าคาดหมาย (EMV), definition: "ผลรวมของความน่าจะเป็นของสภาวะคูณผลตอบแทน เป็นผลเฉลี่ยระยะยาวของทางเลือก" }
+  - { term: ค่าเสียโอกาส, definition: "ผลดีที่สุดในสภาวะนั้นลบผลของทางเลือกที่เลือก ใช้กับเกณฑ์ minimax regret" }
+  - { term: มูลค่าของข้อมูลสมบูรณ์ (EVPI), definition: "ค่าคาดหมายเมื่อรู้อนาคตแน่นอนลบ EMV ที่ดีที่สุด เป็นราคาสูงสุดที่ควรจ่ายเพื่อข้อมูล" }
+flashcards:
+  - { front: "SMART", back: "เจาะจง · วัดได้ · ทำได้จริง · สอดคล้อง · มีกำหนดเวลา" }
+  - { front: "maximax vs maximin", back: "maximax: เลือกทางที่ผลดีสุดสูงสุด (แง่ดี) · maximin: เลือกทางที่ผลแย่สุดยังดีที่สุด (แง่ร้าย)" }
+  - { front: "minimax regret", back: "ค่าเสียโอกาส = ค่าดีสุดในคอลัมน์ − ค่าของทางเลือก เลือกทางที่ค่าเสียโอกาสสูงสุดน้อยที่สุด" }
+  - { front: "EVPI", back: "(ค่าคาดหมายของผลดีที่สุดแต่ละสภาวะ) − (EMV ที่ดีที่สุด)" }
+  - { front: "สัญลักษณ์ในต้นไม้การตัดสินใจ", back: "สี่เหลี่ยม = จุดตัดสินใจ · วงกลม = เหตุการณ์สุ่ม คำนวณย้อนจากขวาไปซ้าย" }
+references:
+  - { title: "2.1 Overview of Managerial Decision-Making (Principles of Management, OpenStax)", url: "https://openstax.org/books/principles-management/pages/2-1-overview-of-managerial-decision-making", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "Decision tree", url: "https://en.wikipedia.org/wiki/Decision_tree", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Expected value of perfect information", url: "https://en.wikipedia.org/wiki/Expected_value_of_perfect_information", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "SMART criteria", url: "https://en.wikipedia.org/wiki/SMART_criteria", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
