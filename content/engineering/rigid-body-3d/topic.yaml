@@ -1,0 +1,123 @@
+id: engineering.mechanics.rigid-body-3d
+subject: engineering
+title:
+  th: พลศาสตร์ของวัตถุแข็งเกร็งในสามมิติ
+  en: Three-dimensional rigid-body dynamics
+summary: เทนเซอร์ความเฉื่อยและผลคูณความเฉื่อย แกนหลักเป็นเวกเตอร์เฉพาะ โมเมนตัมเชิงมุมที่ไม่ขนานกับความเร็วเชิงมุม การถ่วงสมดุลพลวัต สมการของออยเลอร์ และการควงของไจโรสโคป
+difficulty: 9
+minutes: 55
+prerequisites:
+- engineering.mechanics.rigid-body-dynamics
+- math.linalg.eigenvalues
+- math.calculus.vectors-3d
+encompasses:
+- id: engineering.mechanics.rigid-body-dynamics
+  weight: 0.4
+- id: math.linalg.eigenvalues
+  weight: 0.3
+- id: math.calculus.vectors-3d
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: แผ่นสี่เหลี่ยมหมุนรอบเส้นทแยงมุม
+  problem: แผ่นบางมวล $3\ \mathrm{kg}$ ขนาด $0.4 \times 0.2\ \mathrm{m}$ ยึดกับเพลาตามเส้นทแยงมุม หมุนคงที่ $10\ \mathrm{rad/s}$ จงหา $\vec H$ มุมระหว่าง $\vec H$ กับ $\vec\omega$ พลังงานจลน์ และคู่ควบที่แบริ่งต้องให้
+  steps:
+  - text: 'แกนหลักคือแกนตามด้านของแผ่น: $I_{xx} = mb^2/12 = 0.01$, $I_{yy} = ma^2/12 = 0.04\ \mathrm{kg\cdot m^2}$'
+    why: แผ่นสมมาตรรอบแกนทั้งสอง ผลคูณความเฉื่อยเป็นศูนย์
+  - text: $\vec\omega = 10(0.4, 0.2)/\sqrt{0.2} = (8.944, 4.472, 0)\ \mathrm{rad/s}$
+  - text: $\vec H = (0.01 \times 8.944,\ 0.04 \times 4.472,\ 0) = (0.0894, 0.1789, 0)$
+  - text: มุมของ $\vec\omega$ คือ $26.57^\circ$ มุมของ $\vec H$ คือ $63.43^\circ$ ต่างกัน $36.87^\circ$ และ $T = \tfrac12\vec\omega\cdot\vec H = 0.80\ \mathrm{J}$
+  - text: $\vec M = \vec\omega \times \vec H = (0, 0, 8.944(0.1789) - 4.472(0.0894)) = (0, 0, 1.2)\ \mathrm{N\cdot m}$
+    why: $\vec H$ หมุนตามแผ่นรอบ $\vec\omega$ ตรวจวิธีที่สองโดยหมุนเทนเซอร์ให้แกน $x'$ อยู่ตามเส้นทแยงมุม ได้ผลคูณความเฉื่อย $0.012$ คูณ $\omega^2 = 100$ เท่ากับ $1.2$
+  answer: $\vec H = (0.089, 0.179, 0)$ ทำมุม $36.9^\circ$ กับ $\vec\omega$, $T = 0.8\ \mathrm{J}$, คู่ควบ $1.2\ \mathrm{N\cdot m}$ ที่หมุนตามแผ่น
+- type: figure
+  src: plate-diagonal.svg
+  alt: แผ่นสี่เหลี่ยมผืนผ้ากว้าง 0.4 เมตร สูง 0.2 เมตร เพลาเส้นประวางตามเส้นทแยงมุมจากมุมล่างซ้ายไปมุมบนขวา มีแบริ่งที่ปลายทั้งสอง ลูกศรสีน้ำเงิน ω ชี้ตามเส้นทแยงมุม (26.6 องศาจากแนวนอน) ลูกศรสีแดง H = Iω ชี้ชันกว่า (63.4 องศาจากแนวนอน) มุมระหว่างสองลูกศร 36.9 องศา
+  caption: แกนหมุนไม่ใช่แกนหลัก โมเมนตัมเชิงมุมจึงไม่ขนานกับความเร็วเชิงมุม
+- type: check
+  problem: engineering.mechanics.rigid-body-3d.p005
+  prompt: คูณเมทริกซ์ทแยงมุมกับเวกเตอร์ทีละส่วน แล้วดูว่า $\vec H$ ขนานกับ $\vec\omega$ ไหม
+- type: worked-example
+  title: แกนหลักของแขนหุ่นยนต์ด้วยค่าเฉพาะ
+  problem: เทนเซอร์ความเฉื่อยของแขนหุ่นยนต์รอบศูนย์กลางมวล (ข้อมูลสมมติ) $\mathbf{I} = \begin{bmatrix}0.3 & -0.1 & 0\\ -0.1 & 0.2 & 0\\ 0 & 0 & 0.4\end{bmatrix}\ \mathrm{kg\cdot m^2}$ จงหาโมเมนต์ความเฉื่อยหลักและแกนหลัก
+  steps:
+  - text: แถวและหลักที่สามมีเพียง $0.4$ แกน $z$ จึงเป็นแกนหลัก $I_3 = 0.4$
+    why: $I_{xz} = I_{yz} = 0$
+  - text: 'บล็อก $2 \times 2$: $\det\begin{bmatrix}0.3 - \lambda & -0.1\\ -0.1 & 0.2 - \lambda\end{bmatrix} = \lambda^2 - 0.5\lambda + 0.05 = 0$'
+  - text: $\lambda = 0.25 \pm \sqrt{0.0125}$ ได้ $0.3618$ และ $0.1382\ \mathrm{kg\cdot m^2}$
+    why: ผลรวมค่าเฉพาะ $= 0.5$ เท่ากับ trace ของบล็อก ใช้ตรวจได้
+  - text: 'แทน $\lambda = 0.3618$: $(0.3 - 0.3618)v_x - 0.1v_y = 0$ ได้ $v_y = -0.618v_x$ แกนทำมุม $-31.72^\circ$ กับแกน $x$'
+  - text: แกนของ $0.1382$ ตั้งฉากกับแกนแรก (มุม $58.28^\circ$) ตรวจด้วย numpy.linalg.eigh ได้ค่าเฉพาะและเวกเตอร์เฉพาะตรงกัน
+  answer: $I_1 = 0.138$, $I_2 = 0.362$, $I_3 = 0.4\ \mathrm{kg\cdot m^2}$ แกนหลักในระนาบ $xy$ อยู่ที่ $-31.7^\circ$ และ $58.3^\circ$
+- type: figure
+  src: dynamic-balance.svg
+  alt: เพลาแนวนอนบนแบริ่ง A และ B มีมวล m สองก้อนที่รัศมี r ก้อนหนึ่งชี้ขึ้น อีกก้อนชี้ลง ห่างกันตามแนวเพลา 2a ลูกศรสีแดง mrω² ชี้ออกจากเพลาที่มวลแต่ละก้อน (ขึ้นและลง) ลูกศรสีเขียว R ที่แบริ่ง A ชี้ลง ที่แบริ่ง B ชี้ขึ้น ข้อความบอกว่าศูนย์กลางมวลอยู่บนแกน แต่แรงหนีศูนย์สองแรงเกิดคู่ควบ mrω²·2a ที่หมุนตามเพลา และแบริ่งต้องรับแรง R = mrω²·2a หารด้วยระยะระหว่างแบริ่ง
+  caption: สมดุลสถิตไม่พอ ต้องสมดุลพลวัตด้วย
+- type: check
+  problem: engineering.mechanics.rigid-body-3d.p006
+  prompt: ศูนย์กลางมวลรวมอยู่ที่ไหน และแรงหนีศูนย์สองแรงอยู่ในแนวเดียวกันไหม
+- type: figure
+  src: gyroscope.svg
+  alt: ล้อจักรยานหมุนด้วย ωs บนแกนแนวนอน ปลายแกนข้างหนึ่งแขวนบนเสาที่จุด O ศูนย์กลางล้อห่าง O เป็นระยะ r น้ำหนัก mg กดลงที่ศูนย์กลางล้อ ลูกศรสีแดง H (สปิน) ชี้ตามแกนออกจากเสา สัญลักษณ์วงกลมกากบาทสีเขียวแทนแรงบิด M = mgr ที่มีทิศพุ่งเข้าไปในกระดาษ ตั้งฉากกับ H ลูกศรโค้งสีส้มเหนือเสาแสดงการควง Ω ทวนเข็มนาฬิกาเมื่อมองจากด้านบน แกนล้อหมุนวนรอบเสาในแนวนอน ข้อความบอกว่า dH/dt = M ตั้งฉากกับ H ปลาย H จึงเลื่อนไปด้านข้าง แกนหมุนวนรอบเสาไม่ตกลง
+  caption: แรงบิดจากน้ำหนักเปลี่ยนทิศของ H ไม่ใช่ขนาด
+glossary:
+- term: เทนเซอร์ความเฉื่อย
+  definition: เมทริกซ์สมมาตร 3 × 3 ที่ให้ $\vec H = \mathbf{I}\vec\omega$ (inertia tensor)
+- term: ผลคูณความเฉื่อย
+  definition: $I_{xy} = \int xy\,dm$ วัดความไม่สมมาตรของการกระจายมวล (product of inertia)
+- term: แกนหลักของความเฉื่อย
+  definition: แกนที่ผลคูณความเฉื่อยเป็นศูนย์ คือเวกเตอร์เฉพาะของเทนเซอร์ (principal axes)
+- term: โมเมนต์ความเฉื่อยหลัก
+  definition: ค่าเฉพาะของเทนเซอร์ความเฉื่อย (principal moments of inertia)
+- term: ทฤษฎีบทแกนขนานสามมิติ
+  definition: ย้ายเทนเซอร์จากศูนย์กลางมวลไปจุดอื่นโดยบวกเทอมของมวลคูณระยะ (parallel-axis theorem)
+- term: สมดุลสถิต
+  definition: ศูนย์กลางมวลอยู่บนแกนหมุน (static balance)
+- term: สมดุลพลวัต
+  definition: แกนหมุนเป็นแกนหลักด้วย ไม่มีคู่ควบที่หมุนตามเพลา (dynamic balance)
+- term: สมการของออยเลอร์
+  definition: สมการการหมุนของวัตถุแข็งเกร็งเขียนในแกนหลักที่ติดกับวัตถุ (Euler's equations)
+- term: การควง
+  definition: การที่แกนหมุนของวัตถุที่หมุนเร็วหมุนวนช้า ๆ เพราะแรงบิดตั้งฉากกับ $\vec H$ (precession)
+- term: ไจโรสโคป
+  definition: วัตถุหมุนเร็วที่ใช้ความคงที่ของทิศโมเมนตัมเชิงมุม (gyroscope)
+flashcards:
+- front: เทนเซอร์ความเฉื่อย
+  back: $\vec H = \mathbf{I}\vec\omega$ · นอกแนวทแยง $= -I_{xy}$ · $T = \tfrac12\vec\omega\cdot\mathbf{I}\vec\omega$
+- front: แกนหลัก
+  back: เวกเตอร์เฉพาะของ $\mathbf{I}$ · $\vec H \parallel \vec\omega$ เฉพาะแกนหลัก
+- front: ω คงที่ แต่ไม่ใช่แกนหลัก
+  back: '$\vec M = \vec\omega \times \vec H \ne 0$ · เพลา: $\omega^2\sqrt{I_{xz}^2 + I_{yz}^2}$'
+- front: สมการของออยเลอร์
+  back: $M_3 = I_3\dot\omega_3 + (I_2 - I_1)\omega_1\omega_2$ (วนดัชนี)
+- front: การควงของไจโรสโคป
+  back: $\Omega = mgr/(I\omega_s)$
+references:
+- title: Moment of inertia
+  url: https://en.wikipedia.org/wiki/Moment_of_inertia
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Euler's equations (rigid body dynamics)
+  url: https://en.wikipedia.org/wiki/Euler's_equations_(rigid_body_dynamics)
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 11.4 Precession of a Gyroscope (University Physics Volume 1, OpenStax)
+  url: https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 2.003SC Engineering Dynamics (MIT OpenCourseWare)
+  url: https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/
+  source: mit-ocw
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

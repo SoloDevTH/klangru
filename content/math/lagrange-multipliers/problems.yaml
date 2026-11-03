@@ -1,0 +1,271 @@
+problems:
+  - id: math.calculus.lagrange-multipliers.p001
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 1
+    type: mcq
+    stem: "จะหาค่ามากสุดของ $f(x, y)$ ภายใต้เงื่อนไข $g(x, y) = k$ ด้วยวิธีของลากรองจ์ ต้องแก้ระบบสมการใด"
+    choices:
+      - { id: a, text: "$\\nabla f = \\lambda\\nabla g$ และ $g(x, y) = k$", correct: true }
+      - { id: b, text: "$\\nabla f = \\mathbf{0}$ และ $g(x, y) = k$", feedback: "$\\nabla f = \\mathbf{0}$ หาจุดวิกฤตของ $f$ ที่ไม่มีเงื่อนไข จุดที่ดีที่สุดบนเส้นเงื่อนไขมักไม่ใช่จุดวิกฤตของ $f$" }
+      - { id: c, text: "$\\nabla f = \\lambda\\nabla g$ อย่างเดียว", feedback: "ต้องมีสมการเงื่อนไข $g = k$ ด้วย ไม่เช่นนั้นจะมีสามตัวไม่ทราบค่าแต่มีเพียงสองสมการ" }
+      - { id: d, text: "$f = \\lambda g$", feedback: "เงื่อนไขเป็นเรื่องของเกรเดียนต์ (ทิศตั้งฉากกับเส้นระดับ) ไม่ใช่ค่าของฟังก์ชัน" }
+    hints:
+      - "ที่จุดเหมาะที่สุด เส้นระดับของ $f$ สัมผัสเส้นเงื่อนไข"
+      - "เกรเดียนต์สองตัวต้องขนานกัน และจุดต้องอยู่บนเส้นเงื่อนไข"
+    solution: "ที่จุดเหมาะที่สุด $\\nabla f$ ขนานกับ $\\nabla g$ จึงมี $\\lambda$ ที่ $\\nabla f = \\lambda\\nabla g$ และจุดต้องอยู่บนเงื่อนไข $g = k$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p002
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่ามากสุดของ $f(x, y) = xy$ ภายใต้เงื่อนไข $x + y = 10$"
+    answer: { value: 25 }
+    misconceptions:
+      - { match: 5, feedback: "5 คือค่า $x$ (และ $\\lambda$) ที่จุดเหมาะที่สุด โจทย์ถามค่าของ $f$" }
+    hints:
+      - "$\\nabla f = (y, x)$ และ $\\nabla g = (1, 1)$"
+      - "$y = \\lambda$ และ $x = \\lambda$ จึง $x = y$"
+    solution: "$y = \\lambda$, $x = \\lambda$ แทนใน $x + y = 10$ ได้ $x = y = 5$ ค่ามากสุด $f = 25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p003
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่าน้อยสุดของ $f(x, y) = x^2 + y^2$ ภายใต้เงื่อนไข $x + y = 4$"
+    answer: { value: 8 }
+    misconceptions:
+      - { match: 0, feedback: "0 คือค่าน้อยสุดที่ $(0, 0)$ เมื่อไม่มีเงื่อนไข แต่ $(0, 0)$ ไม่อยู่บนเส้น $x + y = 4$" }
+      - { match: 4, feedback: "4 คือค่า $\\lambda$ (หรือ $x + y$) ค่าน้อยสุดคือ $2^2 + 2^2$" }
+    hints:
+      - "$2x = \\lambda$ และ $2y = \\lambda$"
+      - "จึง $x = y$ แทนในเงื่อนไข"
+    solution: "$2x = \\lambda = 2y$ ได้ $x = y = 2$ ค่าน้อยสุด $f = 4 + 4 = 8$ (เส้นตรงยาวไม่จำกัดและ $f$ โตไม่จำกัดเมื่อไปไกล จุดนี้จึงเป็นค่าน้อยสุด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p004
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 2
+    type: mcq
+    stem: "ที่จุด $P$ บนเส้นเงื่อนไข $g = k$ เส้นระดับของ $f$ **ตัด** เส้นเงื่อนไข (ไม่สัมผัส) ข้อสรุปใดถูกต้อง"
+    choices:
+      - { id: a, text: "$P$ ไม่ใช่จุดมากสุดหรือน้อยสุดภายใต้เงื่อนไข (ถ้าไม่ใช่จุดปลาย)", correct: true }
+      - { id: b, text: "$P$ เป็นจุดมากสุด เพราะเส้นระดับไปถึงเส้นเงื่อนไขแล้ว", feedback: "ถ้าเส้นระดับตัดผ่าน การเดินต่อตามเส้นเงื่อนไขไปทางหนึ่งจะได้ $f$ มากขึ้น อีกทางได้น้อยลง" }
+      - { id: c, text: "$\\nabla f$ ขนานกับ $\\nabla g$ ที่ $P$", feedback: "เกรเดียนต์ขนานกันเมื่อเส้นทั้งสองสัมผัสกันเท่านั้น ถ้าตัดกัน เส้นระดับทั้งสองมีแนวต่างกัน" }
+      - { id: d, text: "$\\lambda = 0$ ที่ $P$", feedback: "$\\lambda$ นิยามที่จุดซึ่ง $\\nabla f = \\lambda\\nabla g$ เท่านั้น ที่ $P$ ไม่มี $\\lambda$ เช่นนั้น" }
+    hints:
+      - "ลองนึกว่าเดินไปตามเส้นเงื่อนไขผ่าน $P$ ค่า $f$ เปลี่ยนอย่างไร"
+      - "ค่าสุดขีดเกิดที่จุดสัมผัส"
+    solution: "เส้นระดับที่ตัดเส้นเงื่อนไขแปลว่าค่า $f$ ตามเส้นเงื่อนไขกำลังเพิ่มหรือลดผ่าน $P$ ไม่ได้หยุดนิ่ง $P$ จึงไม่ใช่ค่าสุดขีด (ยกเว้นเมื่อ $P$ เป็นจุดปลายของเส้นเงื่อนไข)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p005
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่ามากสุดของ $f(x, y) = x + y$ บนวงกลม $x^2 + y^2 = 8$"
+    answer: { value: 4 }
+    misconceptions:
+      - { match: -4, feedback: "นี่คือค่าน้อยสุดที่ $(-2, -2)$ ต้องเทียบทุกจุดแล้วเลือกค่ามากสุด" }
+      - { match: 2, feedback: "2 คือพิกัด $x$ ของจุดมากสุด ค่า $f = 2 + 2$" }
+    hints:
+      - "$1 = 2\\lambda x$ และ $1 = 2\\lambda y$ จึง $x = y$"
+      - "แทนในวงกลม $2x^2 = 8$"
+    solution: "$x = y$ และ $2x^2 = 8$ ได้ $(2, 2)$ กับ $(-2, -2)$ ค่า $f$ คือ $4$ และ $-4$ วงกลมปิดและมีขอบเขต ค่ามากสุดจึงเป็น 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p006
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่ามากสุดของ $f(x, y) = x^2y$ บนวงกลม $x^2 + y^2 = 3$"
+    answer: { value: 2 }
+    misconceptions:
+      - { match: 0, feedback: "จุด $(0, \\pm\\sqrt3)$ ที่ได้จากกรณี $x = 0$ ให้ $f = 0$ แต่ยังมีจุดที่ให้ค่ามากกว่า อย่าลืมกรณี $x \\ne 0$" }
+      - { match: -2, feedback: "นี่คือค่าน้อยสุดที่ $y = -1$" }
+    hints:
+      - "$2xy = 2\\lambda x$ และ $x^2 = 2\\lambda y$ แยกกรณี $x = 0$ กับ $x \\ne 0$"
+      - "ถ้า $x \\ne 0$ ได้ $\\lambda = y$ แล้ว $x^2 = 2y^2$"
+    solution: "กรณี $x = 0$: $y = \\pm\\sqrt3$, $f = 0$ กรณี $x \\ne 0$: $\\lambda = y$, $x^2 = 2y^2$ แทนในวงกลม $3y^2 = 3$ ได้ $y = \\pm1$, $x^2 = 2$ ค่า $f = 2y$ คือ $2$ หรือ $-2$ ค่ามากสุดคือ **2** ที่ $(\\pm\\sqrt2, 1)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p007
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 4
+    type: numeric
+    stem: "จากโจทย์ค่ามากสุดของ $xy$ ภายใต้ $x + y = 10$ ได้ค่ามากสุด 25 และ $\\lambda = 5$ จงใช้ $\\lambda$ ประมาณค่ามากสุดเมื่อเงื่อนไขเปลี่ยนเป็น $x + y = 10.2$"
+    answer: { value: 26, tolerance: 0.005 }
+    misconceptions:
+      - { match: 30, feedback: "ต้องคูณ $\\lambda$ กับการเปลี่ยนของ $k$ ($0.2$) ไม่ใช่บวก $\\lambda$ ตรง ๆ" }
+    hints:
+      - "$\\dfrac{dM}{dk} = \\lambda$ จึง $\\Delta M \\approx \\lambda\\,\\Delta k$"
+      - "$\\Delta k = 0.2$"
+    solution: "$M(10.2) \\approx 25 + 5(0.2) = 26$ (ค่าจริงคือ $5.1^2 = 26.01$ ใกล้มาก)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p008
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการแก้ปัญหาค่าเหมาะที่สุดภายใต้เงื่อนไขด้วยวิธีของลากรองจ์"
+    items:
+      - "ระบุฟังก์ชันเป้าหมาย $f$ และเงื่อนไข $g = k$"
+      - "หา $\\nabla f$ และ $\\nabla g$"
+      - "ตั้งระบบ $\\nabla f = \\lambda\\nabla g$ และ $g = k$"
+      - "แก้ระบบหาจุดที่เป็นไปได้ทั้งหมด"
+      - "แทนจุดเหล่านั้น (และจุดปลายถ้ามี) ใน $f$ แล้วเทียบค่า"
+    hints:
+      - "ต้องมีฟังก์ชันก่อนจึงหาเกรเดียนต์ได้"
+      - "การเทียบค่าเป็นขั้นสุดท้าย"
+    solution: "ระบุ $f, g$ → หาเกรเดียนต์ → ตั้งระบบ → แก้ระบบ → เทียบค่า $f$ ที่ทุกจุด (รวมจุดปลาย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p009
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 4
+    type: numeric
+    stem: "สวนผลไม้ริมแม่น้ำเจ้าพระยาในนนทบุรีจะล้อมรั้วรูปสี่เหลี่ยมผืนผ้า ด้านที่ติดแม่น้ำไม่ล้อม ด้านที่ขนานกับแม่น้ำใช้รั้วเมตรละ 400 บาท สองด้านที่ตั้งฉากกับแม่น้ำใช้รั้วเมตรละ 300 บาท มีงบ 48,000 บาท (ค่าสมมติ) จงหาพื้นที่มากที่สุดเป็นตารางเมตร"
+    answer: { value: 2400, unit: m² }
+    misconceptions:
+      - { match: 4800, feedback: "ลืมว่าด้านตั้งฉากมีสองด้าน เงื่อนไขต้องเป็น $400x + 2(300)y = 48{,}000$ ไม่ใช่ $400x + 300y$" }
+      - { match: 0.1, feedback: "0.1 คือ $\\lambda$ (ตารางเมตรต่อบาท) โจทย์ถามพื้นที่" }
+    hints:
+      - "$f = xy$ และ $g = 400x + 600y = 48{,}000$"
+      - "$y = 400\\lambda$ และ $x = 600\\lambda$"
+    solution: "แทนในงบ: $400(600\\lambda) + 600(400\\lambda) = 480{,}000\\lambda = 48{,}000$ ได้ $\\lambda = 0.1$ จึง $x = 60$ m, $y = 40$ m พื้นที่ $2{,}400\\ \\mathrm{m^2}$ (ที่ปลายเส้นงบพื้นที่เป็น 0)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p010
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 4
+    type: numeric
+    stem: "ผู้ส่งออกมะม่วงในฉะเชิงเทราต้องการกล่องกระดาษไม่มีฝา ฐานเป็นสี่เหลี่ยม $x \\times y$ สูง $z$ เซนติเมตร จุ $32{,}000\\ \\mathrm{cm^3}$ โดยใช้กระดาษน้อยที่สุด (ค่าสมมติ) พื้นที่กระดาษคือ $xy + 2xz + 2yz$ จงหาพื้นที่กระดาษน้อยที่สุดเป็นตารางเซนติเมตร"
+    answer: { value: 4800, unit: cm² }
+    misconceptions:
+      - { match: 40, feedback: "40 cm คือความกว้างของฐาน โจทย์ถามพื้นที่กระดาษ" }
+    hints:
+      - "เงื่อนไข $xyz = 32{,}000$ ตั้ง $y + 2z = \\lambda yz$, $x + 2z = \\lambda xz$, $2x + 2y = \\lambda xy$"
+      - "สองสมการแรกให้ $x = y$ สมการที่สามให้ $z = \\tfrac{x}{2}$"
+    solution: "$x = y$ และ $z = \\tfrac{x}{2}$ แทนใน $xyz = \\tfrac{x^3}{2} = 32{,}000$ ได้ $x = 40$ จึง $40 \\times 40 \\times 20$ cm พื้นที่ $1{,}600 + 1{,}600 + 1{,}600 = 4{,}800\\ \\mathrm{cm^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p011
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 4
+    type: numeric
+    stem: "โรงงานแปรรูปสับปะรดในประจวบคีรีขันธ์ผลิตได้ $Q = 10\\sqrt{LK}$ หน่วย เมื่อใช้แรงงาน $L$ หน่วย (หน่วยละ 300 บาท) และทุน $K$ หน่วย (หน่วยละ 1,200 บาท) มีงบ 120,000 บาท (ค่าสมมติ) จงหาผลผลิตมากที่สุด"
+    answer: { value: 1000, unit: หน่วย }
+    misconceptions:
+      - { match: 200, feedback: "200 คือจำนวนแรงงาน $L$ ที่เหมาะที่สุด โจทย์ถาม $Q$" }
+      - { match: 800, feedback: "ใช้ $L = K = 80$ (จำนวนหน่วยเท่ากัน) แต่ทุนแพงกว่า ที่ถูกคือใช้เงินกับแต่ละอย่างเท่ากัน ได้ $L = 200$, $K = 50$" }
+    hints:
+      - "$Q_L = 5\\sqrt{K/L} = 300\\lambda$ และ $Q_K = 5\\sqrt{L/K} = 1{,}200\\lambda$"
+      - "หารกันได้ $\\tfrac{K}{L} = \\tfrac14$ จึง $L = 4K$"
+    solution: "$L = 4K$ แทนในงบ $300(4K) + 1{,}200K = 2{,}400K = 120{,}000$ ได้ $K = 50$, $L = 200$ ผลผลิต $Q = 10\\sqrt{10{,}000} = 1{,}000$ หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p012
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 5
+    type: numeric
+    stem: "จากโรงงานสับปะรดข้อก่อน ($Q = 10\\sqrt{LK}$ แรงงานหน่วยละ 300 บาท ทุนหน่วยละ 1,200 บาท งบ 120,000 บาท ค่าสมมติ) จงหาค่า $\\lambda$ ที่จุดเหมาะที่สุด แล้วประมาณว่าถ้าได้งบเพิ่ม 1,000 บาท ผลผลิตสูงสุดจะเพิ่มกี่หน่วย (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 8.33, tolerance: 0.02, unit: หน่วย }
+    misconceptions:
+      - { match: 0.008, feedback: "นี่คือ $\\lambda \\approx 0.0083$ หน่วยต่อบาท ต้องคูณงบที่เพิ่ม 1,000 บาท" }
+    hints:
+      - "$\\lambda = \\dfrac{Q_L}{300} = \\dfrac{5\\sqrt{K/L}}{300}$ ที่ $L = 200$, $K = 50$"
+      - "$\\Delta Q \\approx \\lambda \\times 1{,}000$"
+    solution: "$\\lambda = \\tfrac{5(0.5)}{300} = \\tfrac{1}{120} \\approx 0.00833$ หน่วยต่อบาท งบเพิ่ม 1,000 บาทให้ผลผลิตเพิ่มประมาณ $\\tfrac{1000}{120} \\approx 8.33$ หน่วย (ตรวจ: งบ 121,000 ให้ $Q = 10\\sqrt{\\tfrac{121000}{600}\\cdot\\tfrac{121000}{2400}} \\approx 1{,}008.33$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p013
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 4
+    type: numeric
+    stem: "แผ่นโลหะรูปวงกลม $x^2 + y^2 \\le 1$ มีอุณหภูมิ $T(x, y) = x^2 + 2y^2$ (หน่วยสมมติ) จงหาอุณหภูมิสูงสุดบนขอบ $x^2 + y^2 = 1$"
+    answer: { value: 2 }
+    misconceptions:
+      - { match: 1, feedback: "นี่คืออุณหภูมิต่ำสุดบนขอบที่ $(\\pm1, 0)$ ต้องเทียบกับจุด $(0, \\pm1)$ ด้วย" }
+    hints:
+      - "$2x = 2\\lambda x$ และ $4y = 2\\lambda y$ แยกกรณี"
+      - "ถ้า $x \\ne 0$ ได้ $\\lambda = 1$ แล้ว $y = 0$ ถ้า $x = 0$ ได้ $y = \\pm1$"
+    solution: "จุดที่ได้คือ $(\\pm1, 0)$ ให้ $T = 1$ และ $(0, \\pm1)$ ให้ $T = 2$ วงกลมปิด อุณหภูมิสูงสุดบนขอบคือ **2**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p014
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 5
+    type: numeric
+    stem: "เส้นโค้ง $C$ เป็นรอยตัดของระนาบ $x + y + z = 12$ กับพื้นผิว $z = x^2 + y^2$ จงใช้ตัวคูณลากรองจ์สองตัวหาค่ามากสุดของ $z$ บน $C$"
+    answer: { value: 18 }
+    misconceptions:
+      - { match: 8, feedback: "8 คือค่าน้อยสุดที่ $(2, 2, 8)$ จุดที่ได้มีสองจุด ต้องเทียบค่า" }
+      - { match: 12, feedback: "12 คือค่าคงตัวในสมการระนาบ ไม่ใช่ค่ามากสุดของ $z$" }
+    hints:
+      - "$f = z$, $g = x + y + z$, $h = x^2 + y^2 - z$ ตั้ง $\\nabla f = \\lambda\\nabla g + \\mu\\nabla h$: $0 = \\lambda + 2\\mu x$, $0 = \\lambda + 2\\mu y$, $1 = \\lambda - \\mu$"
+      - "สองสมการแรกให้ $x = y$ (เมื่อ $\\mu \\ne 0$) แทนในเงื่อนไข $2x + 2x^2 = 12$"
+    solution: "$x = y$ และ $z = 2x^2$ แทนในระนาบ $2x^2 + 2x - 12 = 0$ ได้ $x = 2$ หรือ $x = -3$ จุด $(2, 2, 8)$ และ $(-3, -3, 18)$ $C$ เป็นวงรีปิด ค่ามากสุดของ $z$ คือ **18**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p015
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาค่ามากสุดของ $f(x, y) = x^2 + y^2$ ภายใต้เงื่อนไข $x + y = 10$ เมื่อ $x \\ge 0$ และ $y \\ge 0$"
+    answer: { value: 100 }
+    misconceptions:
+      - { match: 50, feedback: "จุด $(5, 5)$ จากลากรองจ์ให้ค่า **น้อยสุด** เส้นเงื่อนไขมีปลาย ต้องตรวจจุดปลาย $(10, 0)$ และ $(0, 10)$ ด้วย" }
+    hints:
+      - "ลากรองจ์ให้จุดเดียวคือ $(5, 5)$"
+      - "เส้นเงื่อนไขเป็นส่วนของเส้นตรงจาก $(10, 0)$ ถึง $(0, 10)$ ตรวจค่าที่ปลายทั้งสอง"
+    solution: "ลากรองจ์ให้ $(5, 5)$ ซึ่ง $f = 50$ ที่ปลาย $(10, 0)$ และ $(0, 10)$ ได้ $f = 100$ ค่ามากสุดจึงเป็น **100** ที่จุดปลาย ส่วน 50 เป็นค่าน้อยสุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p016
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 3
+    type: match
+    stem: "ในปัญหารั้วริมแม่น้ำ (หาพื้นที่ $xy$ มากสุดภายใต้งบ $300x + 400y = 60{,}000$) จับคู่สัญลักษณ์กับความหมาย"
+    pairs:
+      - { left: "$f(x, y) = xy$", right: "ปริมาณที่ต้องการให้มากที่สุด (พื้นที่)" }
+      - { left: "$g(x, y) = 60{,}000$", right: "เงื่อนไขบังคับ (ใช้งบหมดพอดี)" }
+      - { left: "$\\nabla g = (300, 400)$", right: "ทิศที่ค่าใช้จ่ายเพิ่มเร็วที่สุด ตั้งฉากกับเส้นงบ" }
+      - { left: "$\\lambda = 0.25$", right: "พื้นที่ที่เพิ่มต่องบเพิ่ม 1 บาท" }
+    hints:
+      - "$\\nabla g$ ตั้งฉากกับเส้นระดับของ $g$"
+      - "$\\lambda = \\tfrac{dM}{dk}$"
+    solution: "$f$ คือเป้าหมาย · $g = k$ คือเงื่อนไข · $\\nabla g$ ตั้งฉากกับเส้นงบ · $\\lambda$ คืออัตราการเพิ่มของพื้นที่มากสุดต่องบหนึ่งบาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lagrange-multipliers.p017
+    topics: [math.calculus.lagrange-multipliers]
+    difficulty: 5
+    type: numeric
+    stem: "จงหาระยะที่สั้นที่สุดจากจุด $(0, 3)$ ถึงพาราโบลา $y = x^2$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.658, tolerance: 0.003 }
+    misconceptions:
+      - { match: 3, feedback: "จุด $(0, 0)$ เป็นจุดจากลากรองจ์ก็จริง แต่ให้ระยะ 3 ซึ่งไม่ใช่ระยะสั้นสุด ต้องเทียบกับจุด $(\\pm\\sqrt{2.5}, 2.5)$" }
+      - { match: 2.75, feedback: "2.75 คือกำลังสองของระยะ ต้องถอดรากที่สอง" }
+    hints:
+      - "หาค่าน้อยสุดของ $f = x^2 + (y - 3)^2$ (กำลังสองของระยะ) ภายใต้ $g = y - x^2 = 0$"
+      - "$2x = -2\\lambda x$ และ $2(y - 3) = \\lambda$ แยกกรณี $x = 0$ กับ $\\lambda = -1$"
+    solution: "กรณี $x = 0$: จุด $(0, 0)$ ระยะ 3 กรณี $\\lambda = -1$: $y - 3 = -\\tfrac12$ ได้ $y = 2.5$, $x^2 = 2.5$ กำลังสองของระยะ $= 2.5 + 0.25 = 2.75$ ระยะสั้นสุด $\\sqrt{2.75} \\approx 1.658$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

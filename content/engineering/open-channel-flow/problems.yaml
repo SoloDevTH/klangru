@@ -1,0 +1,423 @@
+problems:
+- id: engineering.fluids.open-channel-flow.p001
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 1
+  type: mcq
+  stem: ข้อใดเป็นลักษณะสำคัญที่ทำให้การไหลในคลองต่างจากการไหลในท่อประปาที่ไหลเต็มท่อ
+  choices:
+  - id: a
+    text: ผิวน้ำเป็นผิวอิสระที่มีความดันบรรยากาศ และน้ำไหลได้เพราะแรงโน้มถ่วงตามความลาด
+    correct: true
+  - id: b
+    text: น้ำในคลองไม่มีแรงเสียดทานกับผนัง
+    feedback: มีแรงเสียดทานกับก้นและตลิ่ง ซึ่งค่าความขรุขระ $n$ ในสมการแมนนิงแทนผลนี้
+  - id: c
+    text: น้ำในคลองไหลได้เพราะความต่างความดันจากเครื่องสูบเท่านั้น
+    feedback: นั่นคือท่อที่ไหลเต็ม ทางน้ำเปิดไหลด้วยแรงโน้มถ่วง
+  - id: d
+    text: ความลึกของน้ำในคลองคงที่เสมอไม่ว่าอัตราการไหลเท่าใด
+    feedback: ความลึกเปลี่ยนตามอัตราการไหล ความลาด และความขรุขระ
+  hints:
+  - ผิวน้ำในคลองสัมผัสอะไร
+  - อะไรผลักน้ำให้ไหลถ้าไม่มีเครื่องสูบ
+  solution: ทางน้ำเปิด (คลอง ราง ท่อระบายน้ำที่ไหลไม่เต็ม) มีผิวอิสระที่ความดันบรรยากาศ แรงขับคือองค์ประกอบของแรงโน้มถ่วงตามความลาด ความลึกจึงเป็นตัวแปรที่ปรับตัวตามอัตราการไหล
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p002
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 1
+  type: match
+  stem: จับคู่ช่วงของเลขฟรูดกับลักษณะการไหล
+  pairs:
+  - left: $Fr < 1$
+    right: 'ต่ำกว่าวิกฤต: ลึกและช้า คลื่นเล็กเดินทวนน้ำได้'
+  - left: $Fr = 1$
+    right: 'วิกฤต: พลังงานจำเพาะต่ำสุด'
+  - left: $Fr > 1$
+    right: 'เหนือวิกฤต: ตื้นและเร็ว เช่น น้ำที่พุ่งลอดประตูระบายน้ำ'
+  - left: เปลี่ยนจาก $Fr > 1$ เป็น $Fr < 1$ อย่างฉับพลัน
+    right: การกระโดดของน้ำ
+  hints:
+  - $Fr = V/\sqrt{gD}$ เทียบความเร็วน้ำกับความเร็วคลื่นผิวน้ำ
+  - น้ำตื้นที่เร็วมากมี $Fr$ สูง
+  solution: เลขฟรูดเทียบความเร็วน้ำกับความเร็วคลื่น $\sqrt{gD}$ ต่ำกว่าวิกฤตคลื่นเดินทวนน้ำได้ เหนือวิกฤตคลื่นถูกพัดไปทางท้ายน้ำหมด การเปลี่ยนจากเหนือวิกฤตเป็นต่ำกว่าวิกฤตเกิดเป็นการกระโดดของน้ำ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p003
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 2
+  type: numeric
+  stem: รางระบายน้ำคอนกรีตหน้าตัดสี่เหลี่ยมกว้าง $3\ \mathrm{m}$ น้ำลึก $1\ \mathrm{m}$ รัศมีชลศาสตร์เป็นกี่เมตร
+  answer:
+    value: 0.6
+    tolerance: 0.01
+    unit: m
+  misconceptions:
+  - match: 0.428571
+    feedback: นับความกว้างผิวน้ำเป็นเส้นขอบเปียกด้วย ผิวน้ำสัมผัสอากาศ ไม่มีแรงเสียดทาน
+  - match: 1.0
+    feedback: ใช้ความลึกเป็นรัศมีชลศาสตร์
+  - match: 0.75
+    feedback: นับผนังข้างเดียว
+  hints:
+  - $A = by$ และเส้นขอบเปียก $P = b + 2y$ (ไม่นับผิวน้ำ)
+  - $R = A/P$
+  solution: $A = 3 \times 1 = 3\ \mathrm{m^2}$, $P = 3 + 2(1) = 5\ \mathrm{m}$ ได้ $R = 3/5 = 0.6\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p004
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 2
+  type: numeric
+  stem: คลองส่งน้ำดาดคอนกรีต ($n = 0.013$) มีรัศมีชลศาสตร์ $0.5\ \mathrm{m}$ ความลาดท้องคลอง $0.001$ จงหาความเร็วเฉลี่ยด้วยสมการแมนนิง (m/s)
+  answer:
+    value: 1.532392
+    tolerance: 0.02
+    unit: m/s
+  misconceptions:
+  - match: 0.048459
+    feedback: ลืมถอดรากที่สองของความลาด
+  - match: 1.720052
+    feedback: ใช้ $R^{1/2}$ แทน $R^{2/3}$
+  - match: 0.000259
+    feedback: คูณด้วย $n$ แทนการหาร
+  hints:
+  - $V = \dfrac{1}{n}R^{2/3}S^{1/2}$ (หน่วย SI)
+  - $0.5^{2/3} = 0.630$ และ $\sqrt{0.001} = 0.0316$
+  solution: $V = \dfrac{1}{0.013}(0.5)^{2/3}(0.001)^{1/2} = 76.92 \times 0.630 \times 0.0316 = 1.53\ \mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p005
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 2
+  type: numeric
+  stem: น้ำในรางสี่เหลี่ยมลึก $0.5\ \mathrm{m}$ ไหลเร็ว $2\ \mathrm{m/s}$ เลขฟรูดเป็นเท่าใด (ใช้ $g = 9.81\ \mathrm{m/s^2}$)
+  answer:
+    value: 0.903047
+    tolerance: 0.01
+  misconceptions:
+  - match: 0.407747
+    feedback: ลืมถอดราก $\sqrt{gy}$
+  - match: 2.828427
+    feedback: ลืมคูณ $g$
+  hints:
+  - รางสี่เหลี่ยม ความลึกชลศาสตร์ $D = A/T = y$
+  - $Fr = V/\sqrt{gy}$
+  solution: $Fr = \dfrac{2}{\sqrt{9.81 \times 0.5}} = \dfrac{2}{2.215} = 0.903$ น้อยกว่า 1 เป็นการไหลต่ำกว่าวิกฤต (แต่ใกล้วิกฤต ผิวน้ำมักเป็นคลื่น)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p006
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 2
+  type: mcq
+  stem: คลองเดิมส่งน้ำอัตราการไหลเท่าเดิม แต่ปล่อยให้วัชพืชขึ้นเต็มตลิ่ง (ค่า $n$ เพิ่มขึ้น) ความลึกปกติของน้ำจะเป็นอย่างไร
+  choices:
+  - id: a
+    text: ลึกขึ้น เพราะน้ำไหลช้าลง ต้องใช้หน้าตัดใหญ่ขึ้นเพื่อให้ $Q = AV$ เท่าเดิม
+    correct: true
+  - id: b
+    text: ตื้นลง เพราะวัชพืชกินพื้นที่
+    feedback: วัชพืชเพิ่มความต้านทาน ความเร็วลดลง น้ำจึงยกตัวสูงขึ้น
+  - id: c
+    text: เท่าเดิม เพราะอัตราการไหลเท่าเดิม
+    feedback: อัตราการไหลเท่าเดิมแต่ความเร็วลดลง หน้าตัดการไหลต้องเพิ่ม
+  - id: d
+    text: ขึ้นกับความลาดอย่างเดียว ค่า $n$ ไม่มีผล
+    feedback: สมการแมนนิงมี $1/n$ คูณอยู่ ความขรุขระมีผลโดยตรง
+  hints:
+  - ดูสมการแมนนิง $V \propto 1/n$
+  - $Q = AV$ คงที่
+  solution: $n$ มากขึ้นทำให้ $V$ ที่ความลึกเดิมลดลง อัตราการไหลจึงไม่พอ น้ำจะยกระดับจนหน้าตัดและรัศมีชลศาสตร์ใหญ่พอ คลองที่ไม่ได้ลอกวัชพืชจึงล้นตลิ่งง่ายกว่าเมื่อฝนตกหนัก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p007
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 3
+  type: numeric
+  stem: คลองดินชลประทานในภาคกลาง (ข้อมูลสมมติ ดูภาพ) ก้นกว้าง $4\ \mathrm{m}$ ลาดตลิ่ง $2:1$ น้ำลึก $1.5\ \mathrm{m}$ ค่า $n = 0.025$ ความลาดท้องคลอง $0.0002$ จงหาอัตราการไหล ($\mathrm{m^3/s}$)
+  answer:
+    value: 5.862453
+    tolerance: 0.08
+    unit: m³/s
+  misconceptions:
+  - match: 3.062634
+    feedback: คิดเป็นหน้าตัดสี่เหลี่ยม ลืมส่วนลาดตลิ่ง
+  - match: 6.136073
+    feedback: ใช้ความยาวลาดตลิ่ง $zy$ แทน $y\sqrt{1+z^2}$
+  figure:
+    src: p-trapezoid.svg
+    alt: หน้าตัดคลองดินรูปสี่เหลี่ยมคางหมู ก้นคลองกว้าง 4.0 เมตร น้ำลึก 1.5 เมตร ลาดตลิ่งทั้งสองฝั่ง 2 ต่อ 1 (แนวนอน 2 ส่วน ต่อแนวดิ่ง 1 ส่วน)
+  hints:
+  - $A = (b + zy)y$ และ $P = b + 2y\sqrt{1 + z^2}$
+  - $Q = \dfrac{A}{n}R^{2/3}S^{1/2}$
+  solution: $A = (4 + 2 \times 1.5)(1.5) = 10.50\ \mathrm{m^2}$, $P = 4 + 2(1.5)\sqrt{5} = 10.708\ \mathrm{m}$, $R = 0.981\ \mathrm{m}$ ได้ $Q = \dfrac{10.50}{0.025}(0.981)^{2/3}(0.0002)^{1/2} = 5.86\ \mathrm{m^3/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p008
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 3
+  type: numeric
+  stem: รางสี่เหลี่ยมกว้าง $3\ \mathrm{m}$ ส่งน้ำ $5\ \mathrm{m^3/s}$ จงหาความลึกวิกฤต (m)
+  answer:
+    value: 0.656663
+    tolerance: 0.01
+    unit: m
+  misconceptions:
+  - match: 0.283158
+    feedback: ลืมถอดรากที่สาม
+  - match: 1.365915
+    feedback: ใช้ $Q$ แทน $q = Q/b$
+  hints:
+  - อัตราการไหลต่อความกว้าง $q = Q/b$
+  - $y_c = \sqrt[3]{q^2/g}$
+  solution: $q = 5/3 = 1.667\ \mathrm{m^2/s}$ ได้ $y_c = \sqrt[3]{1.667^2/9.81} = 0.657\ \mathrm{m}$ และ $E_{\min} = 1.5y_c = 0.985\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p009
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 3
+  type: numeric
+  stem: น้ำในคลองลึก $1.0\ \mathrm{m}$ ไหลเร็ว $1.5\ \mathrm{m/s}$ พลังงานจำเพาะเทียบกับก้นคลองเป็นกี่เมตร
+  answer:
+    value: 1.114679
+    tolerance: 0.01
+    unit: m
+  misconceptions:
+  - match: 1.229358
+    feedback: ลืมหาร 2 ในเฮดความเร็ว
+  - match: 1.076453
+    feedback: ลืมยกกำลังสองความเร็ว
+  hints:
+  - $E = y + \dfrac{V^2}{2g}$
+  - เฮดความเร็ว $1.5^2/(2 \times 9.81)$
+  solution: $E = 1.0 + \dfrac{1.5^2}{19.62} = 1.0 + 0.115 = 1.115\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p010
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 3
+  type: mcq
+  stem: ที่พลังงานจำเพาะเท่ากันค่าหนึ่งซึ่งมากกว่า $E_{\min}$ ทางน้ำสี่เหลี่ยมมีความลึกได้สองค่า (ความลึกคู่) ข้อใดถูก
+  choices:
+  - id: a
+    text: ความลึกที่ตื้นกว่าเป็นการไหลเหนือวิกฤต ($Fr > 1$) และไหลเร็วกว่า
+    correct: true
+  - id: b
+    text: ความลึกที่ตื้นกว่าเป็นการไหลต่ำกว่าวิกฤต
+    feedback: ตื้นกว่าแต่อัตราการไหลเท่ากัน ความเร็วจึงมากกว่า และ $Fr$ มากกว่า 1
+  - id: c
+    text: ทั้งสองความลึกมีความเร็วเท่ากัน
+    feedback: $q = Vy$ คงที่ ความลึกต่างกันความเร็วจึงต่างกัน
+  - id: d
+    text: ความลึกทั้งสองมีเลขฟรูดเท่ากับ 1
+    feedback: $Fr = 1$ เกิดเฉพาะที่ความลึกวิกฤต ซึ่งเป็นจุดที่ความลึกคู่มาบรรจบกัน
+  hints:
+  - ดูกราฟพลังงานจำเพาะ แขนล่างและแขนบนของเส้นโค้ง
+  - $q = Vy$ คงที่
+  solution: แขนล่างของกราฟ ($y < y_c$) มีเฮดความเร็วเป็นส่วนใหญ่ของพลังงาน คือการไหลเหนือวิกฤต แขนบน ($y > y_c$) พลังงานส่วนใหญ่เป็นความลึก คือการไหลต่ำกว่าวิกฤต ทั้งสองมาบรรจบกันที่ $y_c$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p011
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 3
+  type: order
+  stem: เรียงขั้นตอนหาความลึกปกติด้วยการแบ่งครึ่งช่วง (bisection) เมื่อรู้ $Q, n, S$ และรูปหน้าตัด
+  items:
+  - เขียน $f(y) = \dfrac{A(y)}{n}R(y)^{2/3}S^{1/2} - Q$
+  - เลือกช่วง $[y_{\text{ล่าง}}, y_{\text{บน}}]$ ที่ $f$ มีเครื่องหมายต่างกัน
+  - คำนวณ $f$ ที่จุดกึ่งกลางของช่วง
+  - เก็บครึ่งช่วงที่ $f$ ยังเปลี่ยนเครื่องหมาย
+  - ทำซ้ำจนช่วงแคบกว่าความละเอียดที่ต้องการ แล้วตรวจ $Q$ ที่ความลึกที่ได้
+  hints:
+  - ต้องมีฟังก์ชันที่ราก (ค่าศูนย์) คือคำตอบก่อน
+  - ทุกครั้งที่ทำซ้ำช่วงแคบลงครึ่งหนึ่ง
+  solution: สมการแมนนิงแก้หา $y$ ตรง ๆ ไม่ได้ จึงตั้ง $f(y) = Q(y) - Q$ หาช่วงที่ $f$ เปลี่ยนเครื่องหมาย แล้วแบ่งครึ่งซ้ำ ช่วงแคบลงครึ่งหนึ่งทุกรอบ ประมาณ 20 รอบได้ความละเอียดระดับมิลลิเมตร (หรือใช้สเปรดชีต Goal Seek)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p012
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 4
+  type: numeric
+  stem: รางระบายน้ำคอนกรีตสี่เหลี่ยมกว้าง $3\ \mathrm{m}$ ($n = 0.014$) ความลาด $0.001$ ส่งน้ำ $5\ \mathrm{m^3/s}$ จงหาความลึกปกติ (m) ด้วยการลองแทนค่าหรือแบ่งครึ่งช่วง
+  answer:
+    value: 1.026495
+    tolerance: 0.01
+    unit: m
+  misconceptions:
+  - match: 0.656663
+    feedback: นั่นคือความลึกวิกฤต ซึ่งไม่ขึ้นกับ $n$ และ $S$
+  - match: 0.833271
+    feedback: ใช้ $R = y$ (สมมติรางกว้างมาก) ซึ่งไม่เหมาะกับรางกว้างเพียง 3 m
+  hints:
+  - 'ลอง $y = 1.0$: $A = 3$, $P = 5$, $R = 0.6$ แล้วหา $Q$ เทียบกับ 5'
+  - ถ้า $Q$ ที่ได้น้อยไป ให้เพิ่ม $y$ แล้วแบ่งครึ่งช่วงระหว่างค่าที่น้อยไปกับมากไป
+  solution: 'ที่ $y = 1.0$: $Q = \dfrac{3}{0.014}(0.6)^{2/3}(0.001)^{1/2} = 4.82$ น้อยไป ที่ $y = 1.1$: $Q = 5.50$ มากไป แบ่งครึ่งช่วงจนได้ $y_n = 1.026\ \mathrm{m}$ (ตรวจด้วยวิธีนิวตันได้ค่าเดียวกัน)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p013
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 4
+  type: mcq
+  stem: จากข้อก่อน ความลึกปกติ $1.03\ \mathrm{m}$ ความลึกวิกฤต $0.66\ \mathrm{m}$ การไหลสม่ำเสมอในรางนี้เป็นแบบใด
+  choices:
+  - id: a
+    text: ต่ำกว่าวิกฤต ความลาดของรางเป็นความลาดน้อย (mild)
+    correct: true
+  - id: b
+    text: เหนือวิกฤต เพราะความลึกปกติมากกว่าความลึกวิกฤต
+    feedback: ลึกกว่าความลึกวิกฤตคือต่ำกว่าวิกฤต
+  - id: c
+    text: วิกฤต เพราะทั้งสองค่าใกล้กัน
+    feedback: ต่างกันพอสมควร $Fr = V/\sqrt{gy} = 0.51$
+  - id: d
+    text: บอกไม่ได้ ต้องรู้ความเร็วก่อน
+    feedback: เทียบ $y_n$ กับ $y_c$ ก็พอ หรือคำนวณ $V = Q/A$ ได้จากข้อมูลที่มี
+  hints:
+  - $y > y_c$ หมายถึงอะไรบนกราฟพลังงานจำเพาะ
+  - ตรวจด้วย $Fr = V/\sqrt{gy}$
+  solution: '$y_n > y_c$ การไหลสม่ำเสมอเป็นแบบต่ำกว่าวิกฤต ตรวจ: $V = 5/(3 \times 1.026) = 1.62\ \mathrm{m/s}$, $Fr = 0.51 < 1$ ความลาดที่ให้ $y_n > y_c$ เรียกความลาดน้อย ส่วนความลาดที่ให้ $y_n < y_c$ เรียกความลาดชัน'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p014
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 4
+  type: numeric
+  stem: น้ำพุ่งลอดประตูระบายน้ำของเขื่อนทดน้ำ (ข้อมูลสมมติ) ลึก $0.4\ \mathrm{m}$ เร็ว $6\ \mathrm{m/s}$ แล้วเกิดการกระโดดของน้ำในรางสี่เหลี่ยม จงหาความลึกหลังการกระโดด (m)
+  answer:
+    value: 1.525045
+    tolerance: 0.015
+    unit: m
+  misconceptions:
+  - match: 1.211565
+    feedback: ใช้ $y_2 = y_1 Fr_1$ ซึ่งไม่ใช่สมการโมเมนตัม
+  - match: 1.925045
+    feedback: ลืมลบ 1 ในวงเล็บ
+  - match: 2.17267
+    feedback: ใช้พลังงานคงที่ (ความลึกคู่) แต่การกระโดดสูญเสียพลังงาน ต้องใช้สมการโมเมนตัม
+  hints:
+  - $Fr_1 = V_1/\sqrt{gy_1}$
+  - $\dfrac{y_2}{y_1} = \dfrac{1}{2}\left(\sqrt{1 + 8Fr_1^2} - 1\right)$
+  solution: $Fr_1 = 6/\sqrt{9.81 \times 0.4} = 3.029$ ได้ $y_2 = \dfrac{0.4}{2}\left(\sqrt{1 + 8(3.029)^2} - 1\right) = 1.525\ \mathrm{m}$ (ตรวจด้วยแรงจำเพาะ $y^2/2 + q^2/(gy)$ ก่อนและหลังเท่ากัน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p015
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 4
+  type: numeric
+  stem: การกระโดดของน้ำในข้อก่อน ($y_1 = 0.4\ \mathrm{m}$, $y_2 = 1.525\ \mathrm{m}$) สูญเสียพลังงานกี่เมตร (เฮด)
+  answer:
+    value: 0.583589
+    tolerance: 0.01
+    unit: m
+  misconceptions:
+  - match: 1.125045
+    feedback: ผลต่างความลึกไม่ใช่การสูญเสียพลังงาน ต้องรวมเฮดความเร็ว
+  - match: 2.334355
+    feedback: ลืมหาร 4
+  hints:
+  - $\Delta E = \dfrac{(y_2 - y_1)^3}{4y_1y_2}$
+  - หรือหา $E_1 - E_2$ จาก $E = y + V^2/(2g)$ โดย $V_2 = V_1y_1/y_2$
+  solution: '$\Delta E = \dfrac{(1.525 - 0.4)^3}{4(0.4)(1.525)} = 0.584\ \mathrm{m}$ ตรวจ: $E_1 = 0.4 + 6^2/19.62 = 2.235$, $E_2 = 1.651$ ผลต่าง $0.584\ \mathrm{m}$ ตรงกัน แอ่งสลายพลังงานท้ายประตูระบายน้ำใช้การกระโดดนี้ลดพลังงานก่อนน้ำไหลไปกัดเซาะคลอง'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p016
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 4
+  type: numeric
+  stem: ฝายสันคมสี่เหลี่ยมสำหรับวัดน้ำในคลองส่งน้ำ (ข้อมูลสมมติ) สันฝายยาว $1.5\ \mathrm{m}$ ความสูงน้ำเหนือสันฝาย $H = 0.3\ \mathrm{m}$ สัมประสิทธิ์การไหล $C_d = 0.62$ จงหาอัตราการไหล ($\mathrm{m^3/s}$) จาก $Q = C_d\tfrac{2}{3}\sqrt{2g}\,LH^{3/2}$
+  answer:
+    value: 0.451256
+    tolerance: 0.003
+    unit: m³/s
+  misconceptions:
+  - match: 0.823877
+    feedback: ลืมยกกำลัง $3/2$
+  - match: 0.319086
+    feedback: ใช้ $\sqrt{g}$ แทน $\sqrt{2g}$
+  hints:
+  - $\sqrt{2g} = 4.43$ และ $H^{3/2} = 0.3^{1.5}$
+  - คูณทุกพจน์รวมกัน
+  solution: $Q = 0.62 \times \tfrac{2}{3} \times 4.429 \times 1.5 \times 0.3^{1.5} = 0.451\ \mathrm{m^3/s}$ (ประมาณ $451$ ลิตรต่อวินาที) ฝายสันคมเปลี่ยนการวัดอัตราการไหลให้เหลือการวัดความสูงน้ำเพียงค่าเดียว
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p017
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 5
+  type: numeric
+  stem: ท่อระบายน้ำฝนคอนกรีตใต้ถนนในกรุงเทพฯ (ข้อมูลสมมติ) เส้นผ่านศูนย์กลาง $1.0\ \mathrm{m}$ น้ำไหลครึ่งท่อ $n = 0.013$ ความลาด $0.002$ จงหาอัตราการไหล ($\mathrm{m^3/s}$)
+  answer:
+    value: 0.536115
+    tolerance: 0.006
+    unit: m³/s
+  misconceptions:
+  - match: 0.85103
+    feedback: ใช้รัศมีท่อ $D/2$ เป็นรัศมีชลศาสตร์
+  - match: 1.072231
+    feedback: ใช้พื้นที่เต็มท่อ
+  hints:
+  - 'ครึ่งวงกลม: $A = \pi D^2/8$ และเส้นขอบเปียก $P = \pi D/2$'
+  - จึงได้ $R = D/4$ (เท่ากับกรณีไหลเต็มท่อ)
+  solution: $A = \pi(1)^2/8 = 0.3927\ \mathrm{m^2}$, $R = 0.25\ \mathrm{m}$ ได้ $V = \dfrac{1}{0.013}(0.25)^{2/3}(0.002)^{1/2} = 1.365\ \mathrm{m/s}$ และ $Q = 0.536\ \mathrm{m^3/s}$ ท่อระบายน้ำออกแบบเป็นทางน้ำเปิด เพราะส่วนใหญ่ไหลไม่เต็มท่อ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p018
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 5
+  type: numeric
+  stem: ทางน้ำสี่เหลี่ยมมีอัตราการไหลต่อความกว้าง $q = 2\ \mathrm{m^2/s}$ ที่จุดหนึ่งน้ำลึก $0.3\ \mathrm{m}$ (เหนือวิกฤต) จงหาความลึกคู่ฝั่งต่ำกว่าวิกฤตที่มีพลังงานจำเพาะเท่ากัน (m)
+  answer:
+    value: 2.533499
+    tolerance: 0.02
+    unit: m
+  misconceptions:
+  - match: 2.565262
+    feedback: ตอบพลังงานจำเพาะ ความลึกต้องน้อยกว่า $E$ เล็กน้อยเพราะยังมีเฮดความเร็ว
+  - match: 1.505541
+    feedback: นั่นคือความลึกหลังการกระโดดของน้ำ ซึ่งใช้โมเมนตัม ไม่ใช่พลังงานคงที่
+  hints:
+  - หา $E = y + q^2/(2gy^2)$ ที่ $y = 0.3$ ก่อน
+  - แก้ $y + q^2/(2gy^2) = E$ บนช่วง $y > y_c$ ด้วยการลองค่าหรือแบ่งครึ่งช่วง
+  solution: $E = 0.3 + \dfrac{4}{2(9.81)(0.09)} = 2.565\ \mathrm{m}$ ($y_c = 0.742$) แก้ได้ $y = 2.533\ \mathrm{m}$ (เฮดความเร็วเหลือเพียง $0.032\ \mathrm{m}$ ตรวจด้วยวิธีนิวตันได้ค่าเดียวกัน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.fluids.open-channel-flow.p019
+  topics:
+  - engineering.fluids.open-channel-flow
+  difficulty: 5
+  type: expression
+  stem: ทางน้ำสี่เหลี่ยมมีอัตราการไหลต่อความกว้าง $q$ จงหาความลึกวิกฤต $y_c$ โดยหาค่า $y$ ที่ทำให้ $E = y + \dfrac{q^2}{2gy^2}$ ต่ำสุด
+  prefix: y_c =
+  answer:
+    latex: \left(\frac{q^2}{g}\right)^{\frac{1}{3}}
+    variables:
+    - q
+    - g
+  misconceptions:
+  - match: \left(\frac{q^2}{2g}\right)^{\frac{1}{3}}
+    feedback: มาจากการลืมว่าอนุพันธ์ของ $1/(2y^2)$ คือ $-1/y^3$ (ตัว 2 ตัดกัน)
+  - match: \frac{q^2}{g}
+    feedback: ยังไม่ได้ถอดรากที่สาม
+  hints:
+  - ตั้ง $\dfrac{dE}{dy} = 1 - \dfrac{q^2}{gy^3} = 0$
+  - แก้หา $y^3$ แล้วถอดรากที่สาม
+  solution: $\dfrac{dE}{dy} = 1 - \dfrac{q^2}{gy^3} = 0 \Rightarrow y_c^3 = \dfrac{q^2}{g}$ ได้ $y_c = (q^2/g)^{1/3}$ แทนกลับได้ $V_c = \sqrt{gy_c}$ คือ $Fr = 1$ และ $E_{\min} = \tfrac{3}{2}y_c$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

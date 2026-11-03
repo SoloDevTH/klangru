@@ -1,0 +1,109 @@
+id: business.accounting.activity-based-costing
+subject: business
+title:
+  th: ต้นทุนฐานกิจกรรม (ABC)
+  en: Activity-based costing (ABC)
+summary: ข้อจำกัดของอัตราเดียวทั้งโรงงาน กลุ่มต้นทุนกิจกรรม ตัวผลักดันต้นทุน ลำดับชั้นกิจกรรม อัตรากิจกรรม การเทียบกับวิธีดั้งเดิม ABM และ ABC ในงานบริการ
+difficulty: 6
+minutes: 40
+prerequisites:
+- business.accounting.product-costing
+encompasses:
+- id: business.accounting.product-costing
+  weight: 0.5
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: abc-flow.svg
+  alt: 'แผนภาพสามชั้น บนสุด: ค่าใช้จ่ายการผลิตทั้งปี 1,200,000 บาท ลูกศรแยกไปสี่กลุ่มต้นทุนกิจกรรม: ใช้เครื่องอบ 480,000 บาท ตัวผลักดันชั่วโมงเครื่องจักร รวม 10,000 หน่วย อัตรา 48 บาท · ตั้งเครื่องและล้างไลน์ 300,000 บาท จำนวนครั้งที่ตั้งเครื่อง รวม 60 อัตรา 5,000 บาท · ตรวจคุณภาพ 240,000 บาท จำนวนครั้งที่ตรวจ รวม 120 อัตรา 2,000 บาท · ออกแบบและดูแลสูตร 180,000 บาท ชั่วโมงงานออกแบบ รวม 300 อัตรา 600 บาท ชั้นล่าง: ทุกกลุ่มส่งลูกศรไปผลิตภัณฑ์สองชนิด ขนมเปี๊ยะมาตรฐาน (A) 20,000 กล่อง รับค่าใช้จ่าย 624,000 บาท 31.2 บาทต่อกล่อง และไส้ทุเรียนพรีเมียม (B) 2,000 กล่อง รับ 576,000 บาท 288.0 บาทต่อกล่อง'
+  caption: ทรัพยากรถูกใช้โดยกิจกรรม กิจกรรมถูกใช้โดยผลิตภัณฑ์
+- type: worked-example
+  title: คิดต้นทุนแบบ ABC ของโรงงานขนมเปี๊ยะ
+  problem: ใช้ข้อมูลในภาพ หาอัตรากิจกรรม ค่าใช้จ่ายการผลิตที่ A และ B รับ และต้นทุนต่อกล่อง เทียบกับวิธีดั้งเดิม (อัตราเดียวตามชั่วโมงแรงงาน A ใช้ 10,000 ชม. B ใช้ 2,000 ชม.)
+  steps:
+  - text: 'อัตรา: เครื่องอบ $480{,}000/10{,}000 = 48$ บาท/ชม. ตั้งเครื่อง $300{,}000/60 = 5{,}000$ บาท/ครั้ง ตรวจ $240{,}000/120 = 2{,}000$ บาท/ครั้ง ออกแบบ $180{,}000/300 = 600$ บาท/ชม.'
+    why: ตัวหารคือปริมาณตัวผลักดันของทุกผลิตภัณฑ์รวมกัน
+  - text: 'A: $48(8{,}000) + 5{,}000(20) + 2{,}000(40) + 600(100) = 384{,}000 + 100{,}000 + 80{,}000 + 60{,}000 = 624{,}000$ บาท'
+  - text: 'B: $48(2{,}000) + 5{,}000(40) + 2{,}000(80) + 600(200) = 96{,}000 + 200{,}000 + 160{,}000 + 120{,}000 = 576{,}000$ บาท'
+    why: 'ตรวจ: 624,000 + 576,000 = 1,200,000 ครบยอด'
+  - text: 'ต่อกล่อง: A $= 624{,}000/20{,}000 = 31.2$ บาท B $= 576{,}000/2{,}000 = 288$ บาท'
+  - text: 'วิธีดั้งเดิม: $1{,}200{,}000/12{,}000 = 100$ บาท/ชม.แรงงาน A ได้ $50$ B ได้ $100$ บาทต่อกล่อง'
+  answer: 'ABC: A 31.2 บาท B 288 บาทต่อกล่อง · ดั้งเดิม: A 50 บาท B 100 บาทต่อกล่อง'
+- type: check
+  problem: business.accounting.activity-based-costing.p003
+  prompt: ตัวหารของอัตรากิจกรรมคืออะไร
+- type: figure
+  src: cost-compare.svg
+  alt: 'กราฟแท่งค่าใช้จ่ายการผลิตต่อกล่อง ขนมเปี๊ยะมาตรฐาน A: วิธีดั้งเดิม 50.0 บาท ABC 31.2 บาท ไส้ทุเรียนพรีเมียม B: วิธีดั้งเดิม 100.0 บาท ABC 288.0 บาท แท่งสีเทาคือวิธีดั้งเดิม (อัตราเดียว 100 บาทต่อชั่วโมงแรงงาน) แท่งสีน้ำเงินคือ ABC'
+  caption: วิธีดั้งเดิมทำให้ A แพงเกินจริงและ B ถูกเกินจริง
+- type: worked-example
+  title: 'ABC ในงานบริการ: ต้นทุนต่อลูกค้า'
+  problem: 'บริษัทกระจายสินค้า (สมมติ) มีลูกค้าสองรายซื้อปีละ 1 ล้านบาทเท่ากัน ร้าน ก สั่ง 12 ครั้ง 300 รายการ ไม่ขอส่งด่วน ร้าน ข สั่ง 120 ครั้ง 900 รายการ ขอส่งด่วน 30 เที่ยว อัตรากิจกรรม: คำสั่งซื้อ 80 บาท รายการ 5 บาท ส่งด่วน 400 บาท'
+  steps:
+  - text: 'ร้าน ก: $80(12) + 5(300) + 400(0) = 960 + 1{,}500 = 2{,}460$ บาท'
+  - text: 'ร้าน ข: $80(120) + 5(900) + 400(30) = 9{,}600 + 4{,}500 + 12{,}000 = 26{,}100$ บาท'
+    why: ยอดซื้อเท่ากัน แต่ใช้กิจกรรมต่างกันมาก
+  - text: ถ้าปันส่วนตามยอดขายจะได้เท่ากันทั้งสองราย ซึ่งบิดเบือนกำไรต่อลูกค้า
+  - text: 'ทางเลือก: ตั้งยอดสั่งขั้นต่ำ คิดค่าส่งด่วน หรือชวนร้าน ข สั่งรวมเป็นรายสัปดาห์'
+  answer: ร้าน ก 2,460 บาท ร้าน ข 26,100 บาท ต่อปี ต้นทุนบริการต่างกันกว่า 10 เท่า
+- type: check
+  problem: business.accounting.activity-based-costing.p005
+  prompt: ต้นทุนระดับรุ่นแปรตามชั่วโมงแรงงานหรือไม่
+glossary:
+- term: ต้นทุนฐานกิจกรรม
+  definition: วิธีปันส่วนค่าใช้จ่ายเข้าผลิตภัณฑ์ตามกิจกรรมที่ผลิตภัณฑ์ใช้ (activity-based costing, ABC)
+- term: กลุ่มต้นทุนกิจกรรม
+  definition: ค่าใช้จ่ายทั้งหมดของกิจกรรมหนึ่ง เช่น การตั้งเครื่อง (activity cost pool)
+- term: ตัวผลักดันต้นทุน
+  definition: ปัจจัยที่เป็นสาเหตุของต้นทุนกิจกรรม ใช้เป็นฐานปันส่วน (cost driver)
+- term: อัตรากิจกรรม
+  definition: ต้นทุนกลุ่มกิจกรรม ÷ ปริมาณตัวผลักดันทั้งหมด (activity rate)
+- term: ลำดับชั้นกิจกรรม
+  definition: การจัดกิจกรรมเป็นระดับหน่วย ระดับรุ่น ระดับผลิตภัณฑ์ และระดับโรงงาน (cost hierarchy)
+- term: อัตราเดียวทั้งโรงงาน
+  definition: อัตราค่าใช้จ่ายการผลิตอัตราเดียวที่ใช้ฐานเดียว เช่น ชั่วโมงแรงงาน (plantwide rate)
+- term: การอุดหนุนข้ามผลิตภัณฑ์
+  definition: ผลิตภัณฑ์หนึ่งรับต้นทุนเกินจริงแทนอีกผลิตภัณฑ์ที่รับต่ำเกินจริง (cross-subsidization)
+- term: การบริหารฐานกิจกรรม
+  definition: การใช้ข้อมูลกิจกรรมเพื่อลดต้นทุนและปรับปรุงกระบวนการ (activity-based management, ABM)
+- term: กิจกรรมที่ไม่เพิ่มคุณค่า
+  definition: กิจกรรมที่ลูกค้าไม่ยอมจ่ายเพื่อมัน เช่น การขนย้าย การรอ (non-value-added activity)
+flashcards:
+- front: อัตรากิจกรรม
+  back: ต้นทุนกลุ่มกิจกรรม ÷ ปริมาณตัวผลักดันทั้งหมด
+- front: ปันส่วนแบบ ABC
+  back: Σ อัตรากิจกรรม × ปริมาณตัวผลักดันที่ผลิตภัณฑ์ใช้
+- front: ลำดับชั้นกิจกรรม
+  back: หน่วย · รุ่น · ผลิตภัณฑ์ · โรงงาน
+- front: อัตราเดียวบิดเบือนอย่างไร
+  back: สินค้าปริมาณน้อยต้นทุนต่ำเกินจริง สินค้าปริมาณมากสูงเกินจริง
+- front: ABM
+  back: ลดตัวผลักดัน ตัดกิจกรรมที่ไม่เพิ่มคุณค่า ตั้งราคาตามต้นทุนจริง
+references:
+- title: Activity-based costing
+  url: https://en.wikipedia.org/wiki/Activity-based_costing
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: ต้นทุนฐานกิจกรรม
+  url: https://th.wikipedia.org/wiki/ต้นทุนฐานกิจกรรม
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: '6.3 Calculate Activity-Based Product Costs (Principles of Accounting, Volume 2: Managerial Accounting, OpenStax)'
+  url: https://openstax.org/books/principles-managerial-accounting/pages/6-3-calculate-activity-based-product-costs
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: '6.4 Compare and Contrast Traditional and Activity-Based Costing Systems (Principles of Accounting, Volume 2: Managerial Accounting, OpenStax)'
+  url: https://openstax.org/books/principles-managerial-accounting/pages/6-4-compare-and-contrast-traditional-and-activity-based-costing-systems
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

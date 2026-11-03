@@ -1,0 +1,59 @@
+id: math.calculus.change-of-variables
+subject: math
+title: { th: การเปลี่ยนตัวแปรในปริพันธ์หลายชั้นและจาโคเบียน, en: Change of variables in multiple integrals and the Jacobian }
+summary: การแปลงบริเวณจากระนาบ uv ไปยังระนาบ xy จาโคเบียนเป็นอัตราขยายพื้นที่และปริมาตร สูตรเปลี่ยนตัวแปร และที่มาของตัวประกอบในพิกัดเชิงขั้ว ทรงกระบอก และทรงกลม
+difficulty: 9.5
+minutes: 50
+prerequisites: [math.calculus.multiple-integrals, math.linalg.matrices-elimination]
+encompasses:
+  - { id: math.calculus.multiple-integrals, weight: 0.5 }
+  - { id: math.linalg.matrices-elimination, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: region-transform.svg
+    alt: "สองแผงต่อกันด้วยลูกศร x = (u − v)/3, y = (2u + v)/3 แผงซ้ายคือระนาบ uv มีสี่เหลี่ยมผืนผ้า 1 ≤ u ≤ 3, 0 ≤ v ≤ 3 พื้นที่ 6 แบ่งด้วยเส้นแดง u คงที่และเส้นเขียว v คงที่ มีชิ้นสีส้มเล็ก ๆ หนึ่งชิ้น แผงขวาคือระนาบ xy มีสี่เหลี่ยมด้านขนานที่มุมอยู่ที่ (1/3, 2/3), (1, 2), (0, 3), (−2/3, 5/3) พื้นที่ 2 เส้นแดงและเขียวกลายเป็นตารางเอียง ชิ้นสีส้มกลายเป็นสี่เหลี่ยมด้านขนานเล็ก ข้อความด้านล่างบอกว่าทุกชิ้นถูกย่อพื้นที่ด้วยตัวประกอบ |J| = 1/3"
+    caption: "u = x + y และ v = y − 2x เปลี่ยนสี่เหลี่ยมด้านขนานให้เป็นสี่เหลี่ยมผืนผ้า ทุกชิ้นพื้นที่เปลี่ยนด้วยตัวประกอบเดียวกัน |J|"
+  - type: worked-example
+    title: ปริพันธ์บนสี่เหลี่ยมด้านขนาน
+    problem: "ให้ $R$ เป็นสี่เหลี่ยมด้านขนานที่ล้อมด้วย $x + y = 1$, $x + y = 3$, $y - 2x = 0$ และ $y - 2x = 3$ จงหา $\\displaystyle\\iint_R (x + y)\\,dA$"
+    steps:
+      - text: "ให้ $u = x + y$ และ $v = y - 2x$ บริเวณใหม่คือ $1 \\le u \\le 3$, $0 \\le v \\le 3$"
+        why: "เลือกตัวแปรใหม่จากสมการขอบ ขอบทั้งสี่จึงกลายเป็นเส้น $u$ หรือ $v$ คงที่"
+      - text: "$\\dfrac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} 1 & 1 \\\\ -2 & 1 \\end{vmatrix} = 3$ จึง $\\left|\\dfrac{\\partial(x, y)}{\\partial(u, v)}\\right| = \\dfrac13$"
+        why: "หาจาโคเบียนกลับง่ายกว่า เพราะไม่ต้องแก้หา $x, y$ ในรูป $u, v$"
+      - text: "ฟังก์ชัน $x + y = u$ ได้ $\\displaystyle\\int_0^3\\!\\!\\int_1^3 u \\cdot \\frac13\\,du\\,dv = \\frac13 \\cdot 4 \\cdot 3 = 4$"
+      - text: "ตรวจพื้นที่: $\\iint_R 1\\,dA = \\tfrac13 \\cdot 2 \\cdot 3 = 2$ ตรงกับสูตรพื้นที่จากพิกัดมุม $(\\tfrac13, \\tfrac23)$, $(1, 2)$, $(0, 3)$, $(-\\tfrac23, \\tfrac53)$"
+    answer: "$\\displaystyle\\iint_R (x + y)\\,dA = 4$"
+  - { type: check, problem: math.calculus.change-of-variables.p007, prompt: "หา $\\tfrac{\\partial(u, v)}{\\partial(x, y)}$ ก่อน แล้วกลับเศษเป็นส่วน" }
+  - type: worked-example
+    title: พิกัดเชิงขั้วแบบยืดสำหรับวงรี
+    problem: "ให้ $E$ เป็นบริเวณวงรี $\\dfrac{x^2}{4} + y^2 \\le 1$ จงหา $\\displaystyle\\iint_E x^2\\,dA$"
+    steps:
+      - text: "ให้ $x = 2r\\cos\\theta$, $y = r\\sin\\theta$ วงรีกลายเป็น $r^2 \\le 1$ คือ $0 \\le r \\le 1$, $0 \\le \\theta \\le 2\\pi$"
+      - text: "$J = \\begin{vmatrix} 2\\cos\\theta & -2r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{vmatrix} = 2r\\cos^2\\theta + 2r\\sin^2\\theta = 2r$"
+        why: "เหมือนพิกัดเชิงขั้ว แต่คูณเพิ่มด้วย $ab = 2 \\cdot 1$ จากการยืดแกน"
+      - text: "$\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^1 4r^2\\cos^2\\theta \\cdot 2r\\,dr\\,d\\theta = 8\\int_0^1 r^3\\,dr\\int_0^{2\\pi}\\cos^2\\theta\\,d\\theta = 8 \\cdot \\frac14 \\cdot \\pi$"
+      - text: "$= 2\\pi \\approx 6.283$ (ตรวจด้วยการหาปริพันธ์ในพิกัดฉากโดยตรงได้ค่าเดียวกัน)"
+    answer: "$2\\pi$"
+  - { type: check, problem: math.calculus.change-of-variables.p005, prompt: "ใช้ $x = 3u$, $y = 2v$ วงรีจะกลายเป็นวงกลมหนึ่งหน่วย" }
+glossary:
+  - { term: การแปลง, definition: "ฟังก์ชัน T(u, v) = (x(u, v), y(u, v)) ที่ส่งบริเวณในระนาบ uv ไปยังบริเวณในระนาบ xy" }
+  - { term: จาโคเบียน, definition: "ดีเทอร์มิแนนต์ของเมทริกซ์อนุพันธ์ย่อย ∂(x, y)/∂(u, v) ค่าสัมบูรณ์คืออัตราขยายพื้นที่" }
+  - { term: สูตรเปลี่ยนตัวแปร, definition: "∬_R f dA = ∬_S f(x(u, v), y(u, v)) |J| du dv" }
+  - { term: พิกัดทรงกลม, definition: "(ρ, φ, θ) โดย ρ ระยะจากจุดกำเนิด φ มุมจากแกน z และ θ มุมในระนาบ xy มี dV = ρ² sin φ dρ dφ dθ" }
+flashcards:
+  - { front: "จาโคเบียน ∂(x, y)/∂(u, v)", back: "xᵤ y_v − x_v yᵤ (ดีเทอร์มิแนนต์ของอนุพันธ์ย่อย)" }
+  - { front: "dA ในตัวแปรใหม่", back: "dA = |∂(x, y)/∂(u, v)| du dv" }
+  - { front: "จาโคเบียนกลับ", back: "∂(x, y)/∂(u, v) = 1 / [∂(u, v)/∂(x, y)]" }
+  - { front: "จาโคเบียนของพิกัดเชิงขั้ว ทรงกระบอก ทรงกลม", back: "r, r และ ρ² sin φ" }
+  - { front: "วงรี x²/a² + y²/b² ≤ 1 ใช้ตัวแปรใด", back: "x = ar cos θ, y = br sin θ ได้ J = abr" }
+references:
+  - { title: "5.7 Change of Variables in Multiple Integrals (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/5-7-change-of-variables-in-multiple-integrals", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "5.5 Triple Integrals in Cylindrical and Spherical Coordinates (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/5-5-triple-integrals-in-cylindrical-and-spherical-coordinates", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Jacobian matrix and determinant", url: "https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

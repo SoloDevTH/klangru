@@ -1,0 +1,409 @@
+problems:
+- id: engineering.materials.stress-transformation.p001
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 1
+  type: mcq
+  stem: ข้อใดอธิบาย **ความเค้นระนาบ** (plane stress) ในระนาบ $xy$ ได้ถูกต้อง
+  choices:
+  - id: a
+    text: $\sigma_z = \tau_{xz} = \tau_{yz} = 0$ เหลือเพียง $\sigma_x$, $\sigma_y$ และ $\tau_{xy}$
+    correct: true
+  - id: b
+    text: $\sigma_x = \sigma_y$ ทุกจุด
+    feedback: ความเค้นระนาบบอกว่าไม่มีความเค้นบนหน้าที่ตั้งฉากกับ $z$ ไม่ได้บอกว่าความเค้นสองแกนเท่ากัน
+  - id: c
+    text: ความเครียดในแนว $z$ เป็นศูนย์ด้วย
+    feedback: นั่นคือความเครียดระนาบ (plane strain) แผ่นบางที่รับความเค้นระนาบยังหดหรือพองในแนว $z$ ได้จากอัตราส่วนปัวซอง
+  - id: d
+    text: ไม่มีความเค้นเฉือนเลย
+    feedback: ความเค้นระนาบมี $\tau_{xy}$ ได้ ที่เป็นศูนย์คือความเค้นเฉือนบนหน้าที่ตั้งฉากกับ $z$
+  hints:
+  - นึกถึงแผ่นบางหรือผิวของเพลาซึ่งหน้าด้านนอกไม่มีแรงกระทำ
+  - ความเค้นทุกตัวที่มีดัชนี $z$ หายไป
+  solution: ความเค้นระนาบคือสภาวะที่หน้าซึ่งตั้งฉากกับแกน $z$ ไม่มีแรงกระทำ จึงเหลือเพียง $\sigma_x, \sigma_y, \tau_{xy}$ พบที่แผ่นบางและที่ผิวอิสระของชิ้นส่วน ความเครียด $\varepsilon_z = -\nu(\sigma_x+\sigma_y)/E$ ยังไม่เป็นศูนย์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p002
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 1
+  type: match
+  stem: จับคู่ปริมาณกับสูตร (ความเค้นระนาบ)
+  pairs:
+  - left: จุดศูนย์กลางของวงกลมของมอร์
+    right: $C = \dfrac{\sigma_x + \sigma_y}{2}$
+  - left: รัศมีของวงกลมของมอร์
+    right: $R = \sqrt{\left(\dfrac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}$
+  - left: ความเค้นหลัก
+    right: $\sigma_{1,2} = C \pm R$
+  - left: มุมของระนาบหลัก
+    right: $\tan 2\theta_p = \dfrac{2\tau_{xy}}{\sigma_x - \sigma_y}$
+  hints:
+  - ความเค้นหลักอยู่ที่จุดซ้ายสุดและขวาสุดของวงกลม
+  - มุมบนวงกลมเป็นสองเท่าของมุมบนชิ้นส่วน
+  solution: จุดศูนย์กลางคือค่าเฉลี่ยของความเค้นตั้งฉาก รัศมีคือความเค้นเฉือนสูงสุดในระนาบ ความเค้นหลักคือ $C \pm R$ และมุมของระนาบหลักหาจาก $\tan 2\theta_p$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p003
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 2
+  type: numeric
+  stem: ชิ้นส่วนรับ $\sigma_x = 60\ \mathrm{MPa}$, $\sigma_y = 20\ \mathrm{MPa}$, $\tau_{xy} = 0$ จงหาความเค้นตั้งฉาก $\sigma_{x'}$ บนระนาบที่หมุนทวนเข็มนาฬิกา $\theta = 30^\circ$ (MPa)
+  answer:
+    value: 50.0
+    unit: MPa
+  misconceptions:
+  - match: 57.320508
+    feedback: ใช้ $\cos\theta$ แทน $\cos 2\theta$
+  - match: 30.0
+    feedback: นั่นคือ $\sigma_{y'}$ บนระนาบที่ตั้งฉากกัน
+  hints:
+  - $\sigma_{x'} = \dfrac{\sigma_x+\sigma_y}{2} + \dfrac{\sigma_x-\sigma_y}{2}\cos 2\theta + \tau_{xy}\sin 2\theta$
+  - ใช้ $2\theta = 60^\circ$
+  solution: $\sigma_{x'} = 40 + 20\cos 60^\circ + 0 = 40 + 10 = 50\ \mathrm{MPa}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p004
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 2
+  type: numeric
+  stem: สภาวะความเค้น $\sigma_x = 50$, $\sigma_y = -10$, $\tau_{xy} = 40\ \mathrm{MPa}$ จงหาความเค้นหลักค่ามาก $\sigma_1$ (MPa)
+  answer:
+    value: 70.0
+    unit: MPa
+  misconceptions:
+  - match: 92.111026
+    feedback: ลืมหาร $\sigma_x - \sigma_y$ ด้วย 2 ในรัศมี
+  - match: 80.0
+    feedback: ใช้ $(\sigma_x - \sigma_y)/2$ เป็นจุดศูนย์กลาง จุดศูนย์กลางคือค่าเฉลี่ย $(\sigma_x+\sigma_y)/2$
+  hints:
+  - $C = (\sigma_x+\sigma_y)/2$ และ $R = \sqrt{((\sigma_x-\sigma_y)/2)^2 + \tau_{xy}^2}$
+  - $\sigma_1 = C + R$
+  solution: $C = 20$, $R = \sqrt{30^2 + 40^2} = 50$ ดังนั้น $\sigma_1 = 70\ \mathrm{MPa}$ (และ $\sigma_2 = -30\ \mathrm{MPa}$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p005
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 2
+  type: mcq
+  stem: บนระนาบหลัก (principal plane) ความเค้นเฉือนมีค่าเท่าใด
+  choices:
+  - id: a
+    text: เป็นศูนย์
+    correct: true
+  - id: b
+    text: มีค่าสูงสุด
+    feedback: ความเค้นเฉือนสูงสุดอยู่บนระนาบที่ทำมุม $45^\circ$ กับระนาบหลัก
+  - id: c
+    text: เท่ากับ $\tau_{xy}$ เดิม
+    feedback: เมื่อหมุนชิ้นส่วน ความเค้นเฉือนเปลี่ยนตาม $\tau_{x'y'} = -\tfrac{\sigma_x-\sigma_y}{2}\sin 2\theta + \tau_{xy}\cos 2\theta$
+  - id: d
+    text: เท่ากับ $(\sigma_1+\sigma_2)/2$
+    feedback: $(\sigma_1+\sigma_2)/2$ คือความเค้นตั้งฉากบนระนาบเฉือนสูงสุด ไม่ใช่ความเค้นเฉือน
+  hints:
+  - ความเค้นหลักอยู่ตรงไหนบนวงกลมของมอร์
+  - จุดบนแกน $\sigma$ มีพิกัด $\tau$ เท่าไร
+  solution: ระนาบหลักนิยามว่าเป็นระนาบที่ความเค้นตั้งฉากมีค่าสูงสุดหรือต่ำสุด ซึ่งเกิดเมื่อ $d\sigma_{x'}/d\theta = 0$ และเงื่อนไขนี้เหมือนกับ $\tau_{x'y'} = 0$ บนวงกลมของมอร์คือจุดที่วงกลมตัดแกน $\sigma$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p006
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 2
+  type: order
+  stem: เรียงขั้นตอนการสร้างวงกลมของมอร์จากสภาวะความเค้น $(\sigma_x, \sigma_y, \tau_{xy})$
+  items:
+  - วาดแกน $\sigma$ แนวนอน และแกน $\tau$ แนวตั้ง (ตกลงว่า $\tau$ บวกชี้ลง)
+  - จุดจุด X $= (\sigma_x, \tau_{xy})$ แทนหน้า $x$ และจุด Y $= (\sigma_y, -\tau_{xy})$ แทนหน้า $y$
+  - ลากเส้นตรง XY ตัดแกน $\sigma$ ที่จุดศูนย์กลาง C
+  - วาดวงกลมรัศมี CX
+  - อ่าน $\sigma_1$, $\sigma_2$ ที่วงกลมตัดแกน $\sigma$ และวัดมุม $2\theta_p$ จาก CX
+  hints:
+  - ต้องมีแกนก่อนจุดจุด
+  - จุดศูนย์กลางหาได้หลังมีจุด X และ Y
+  solution: แกน → จุด X และ Y → เส้น XY ให้จุดศูนย์กลาง C ที่ $(\sigma_x+\sigma_y)/2$ → วงกลมรัศมี CX → อ่านความเค้นหลักและมุม ($2\theta$ บนวงกลมสอดคล้องกับ $\theta$ บนชิ้นส่วน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p007
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 3
+  type: numeric
+  stem: จากสภาวะ $\sigma_x = 50$, $\sigma_y = -10$, $\tau_{xy} = 40\ \mathrm{MPa}$ ระนาบหลักที่รับ $\sigma_1$ ทำมุม $\theta_p$ ทวนเข็มนาฬิกาจากแกน $x$ กี่องศา
+  answer:
+    value: 26.565051
+    tolerance: 0.3
+    unit: °
+  misconceptions:
+  - match: 53.130102
+    feedback: นั่นคือ $2\theta_p$ ยังไม่ได้หารด้วย 2
+  - match: 18.434949
+    feedback: สลับเศษกับส่วนของ $\tan 2\theta_p$
+  hints:
+  - $\tan 2\theta_p = \dfrac{2\tau_{xy}}{\sigma_x - \sigma_y} = \dfrac{80}{60}$
+  - อย่าลืมหารมุมที่ได้ด้วย 2 แล้วตรวจโดยแทนค่าในสมการแปลง
+  solution: '$2\theta_p = \arctan(80/60) = 53.13^\circ$ จึงได้ $\theta_p = 26.57^\circ$ ตรวจ: $\sigma_{x''} = 20 + 30\cos 53.13^\circ + 40\sin 53.13^\circ = 20 + 18 + 32 = 70\ \mathrm{MPa} = \sigma_1$ ถูกต้อง (อีกระนาบหนึ่งที่ $116.57^\circ$ รับ $\sigma_2 = -30$)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p008
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 3
+  type: numeric
+  stem: ชิ้นส่วนในภาพรับ $\sigma_x = 80$, $\sigma_y = 20$, $\tau_{xy} = 25\ \mathrm{MPa}$ จงหาความเค้นตั้งฉาก $\sigma_{x'}$ บนระนาบที่หมุนทวนเข็มนาฬิกา $30^\circ$ (MPa)
+  answer:
+    value: 86.650635
+    tolerance: 0.8665
+    unit: MPa
+  misconceptions:
+  - match: 88.480762
+    feedback: ใช้ $\theta$ แทน $2\theta$
+  - match: 65.0
+    feedback: ลืมพจน์ $\tau_{xy}\sin 2\theta$
+  figure:
+    src: p-element.svg
+    alt: ชิ้นส่วนสี่เหลี่ยมจัตุรัสรับความเค้นระนาบ หน้าขวาและซ้ายมีความเค้นดึง σx = 80 MPa หน้าบนและล่างมีความเค้นดึง σy = 20 MPa และมีความเค้นเฉือนบวก τxy = 25 MPa บนทุกหน้า (หน้าขวาชี้ขึ้น หน้าบนชี้ไปทางขวา)
+  hints:
+  - $\dfrac{\sigma_x+\sigma_y}{2} = 50$ และ $\dfrac{\sigma_x-\sigma_y}{2} = 30$
+  - '$2\theta = 60^\circ$: $\cos 60^\circ = 0.5$, $\sin 60^\circ = 0.866$'
+  solution: $\sigma_{x'} = 50 + 30(0.5) + 25(0.866) = 50 + 15 + 21.65 = 86.65\ \mathrm{MPa}$ และ $\tau_{x'y'} = -30(0.866) + 25(0.5) = -13.48\ \mathrm{MPa}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p009
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 3
+  type: numeric
+  stem: สภาวะความเค้น $\sigma_x = 90$, $\sigma_y = 30$, $\tau_{xy} = -40\ \mathrm{MPa}$ ความเค้นเฉือนสูงสุดในระนาบ ($\tau_{\max}$ ในระนาบ $xy$) เป็นกี่ MPa
+  answer:
+    value: 50.0
+    unit: MPa
+  misconceptions:
+  - match: 40.0
+    feedback: ตอบ $|\tau_{xy}|$ เดิม ซึ่งเป็นความเค้นเฉือนบนหน้า $x$ เท่านั้น
+  - match: 30.0
+    feedback: ใช้เพียง $(\sigma_x - \sigma_y)/2$ ลืมรวม $\tau_{xy}$
+  - match: 100.0
+    feedback: นั่นคือ $\sigma_1 - \sigma_2$ ต้องหารด้วย 2
+  hints:
+  - ความเค้นเฉือนสูงสุดในระนาบเท่ากับรัศมีของวงกลมของมอร์
+  - $R = \sqrt{30^2 + (-40)^2}$
+  solution: $\tau_{\max} = R = \sqrt{\left(\tfrac{90-30}{2}\right)^2 + 40^2} = 50\ \mathrm{MPa}$ ระนาบนี้ยังมีความเค้นตั้งฉาก $C = 60\ \mathrm{MPa}$ กระทำอยู่ด้วย เครื่องหมายของ $\tau_{xy}$ มีผลต่อทิศของระนาบ ไม่มีผลต่อขนาด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p010
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 3
+  type: numeric
+  stem: ก้อนเหล็ก ($E = 200\ \mathrm{GPa}$, $\nu = 0.3$) รับ $\sigma_x = 100\ \mathrm{MPa}$, $\sigma_y = -50\ \mathrm{MPa}$, $\sigma_z = 0$ จงหาความเครียด $\varepsilon_x$ ในหน่วยไมโครสเตรน ($10^{-6}$)
+  answer:
+    value: 575.0
+    unit: µε
+  misconceptions:
+  - match: 500.0
+    feedback: ไม่คิดผลของอัตราส่วนปัวซอง
+  - match: 425.0
+    feedback: 'เครื่องหมายผิด: $-\nu\sigma_y$ เมื่อ $\sigma_y$ ติดลบได้ค่าบวก'
+  hints:
+  - $\varepsilon_x = \dfrac{1}{E}\left[\sigma_x - \nu(\sigma_y + \sigma_z)\right]$
+  - $E = 200{,}000\ \mathrm{MPa}$ ผลหารคูณ $10^6$ เป็นไมโครสเตรน
+  solution: $\varepsilon_x = \dfrac{100 - 0.3(-50 + 0)}{200{,}000} = \dfrac{115}{200{,}000} = 575 \times 10^{-6}$ ความเค้นอัดในแนว $y$ ทำให้ชิ้นงานพองในแนว $x$ เพิ่ม ความเครียดจึงมากกว่ากรณีดึงแกนเดียว ($500\ \mu\varepsilon$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p011
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 4
+  type: numeric
+  stem: ติดโรเซตต์มาตรวัดความเครียดแบบ $45^\circ$ (ดูภาพ) ที่คานเหล็กของสะพานคนเดินข้ามคลอง (ข้อมูลสมมติ) อ่านได้ $\varepsilon_a = 600$, $\varepsilon_b = 350$, $\varepsilon_c = -200$ ไมโครสเตรน จงหาความเครียดหลักค่ามาก $\varepsilon_1$ (ไมโครสเตรน)
+  answer:
+    value: 627.200187
+    tolerance: 3.0
+    unit: µε
+  misconceptions:
+  - match: 700.0
+    feedback: ใช้ $\gamma_{xy}$ แทน $\gamma_{xy}/2$
+  - match: 636.60623
+    feedback: ใช้ $\varepsilon_b$ เป็น $\gamma_{xy}$ โดยตรง
+  figure:
+    src: p-rosette.svg
+    alt: โรเซตต์มาตรวัดความเครียดสามตัวติดบนผิวชิ้นงาน มาตรวัด a วางตามแกน x (0 องศา) มาตรวัด b ทำมุม 45 องศา และมาตรวัด c วางตามแกน y (90 องศา) ทุกตัวเริ่มจากจุดเดียวกัน
+  hints:
+  - มาตรวัด a และ c ให้ $\varepsilon_x$ และ $\varepsilon_y$ โดยตรง และ $\gamma_{xy} = 2\varepsilon_b - (\varepsilon_a + \varepsilon_c)$
+  - ใช้สูตรเหมือนความเค้นหลัก แต่แทน $\tau_{xy}$ ด้วย $\gamma_{xy}/2$
+  solution: $\gamma_{xy} = 2(350) - (600 - 200) = 300\ \mu\varepsilon$ ได้ $\varepsilon_1 = \dfrac{600 - 200}{2} + \sqrt{400^2 + 150^2} = 200 + 427.2 = 627.2\ \mu\varepsilon$ (และ $\varepsilon_2 = -227.2\ \mu\varepsilon$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p012
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 4
+  type: mcq
+  stem: ถังแก๊สหุงต้มผนังบาง (ค่าสมมติ) มีความเค้นตามเส้นรอบวง $\sigma_h = 120\ \mathrm{MPa}$ และตามแนวแกน $\sigma_a = 60\ \mathrm{MPa}$ ที่ผิวด้านนอก $\sigma_r = 0$ ความเค้นเฉือนสูงสุดสัมบูรณ์ (พิจารณาทั้งสามมิติ) เป็นเท่าใด
+  choices:
+  - id: a
+    text: $60\ \mathrm{MPa}$
+    correct: true
+  - id: b
+    text: $30\ \mathrm{MPa}$
+    feedback: นั่นคือความเค้นเฉือนสูงสุดในระนาบผิว $(\sigma_h - \sigma_a)/2$ แต่ระนาบที่เอียงออกนอกผิวมีค่ามากกว่า
+  - id: c
+    text: $90\ \mathrm{MPa}$
+    feedback: $(\sigma_h + \sigma_a)/2$ คือความเค้นตั้งฉากเฉลี่ย ไม่ใช่ความเค้นเฉือน
+  - id: d
+    text: $120\ \mathrm{MPa}$
+    feedback: ความเค้นเฉือนสูงสุดคือครึ่งหนึ่งของผลต่างความเค้นหลักมากสุดกับน้อยสุด
+  hints:
+  - 'มีความเค้นหลักสามค่า: $120$, $60$ และ $0$'
+  - $\tau_{\text{abs}} = (\sigma_{\max} - \sigma_{\min})/2$ เมื่อรวมความเค้นหลักตัวที่สามด้วย
+  solution: ความเค้นหลักทั้งสามคือ $120, 60, 0$ วงกลมของมอร์ที่ใหญ่ที่สุดผ่าน $0$ และ $120$ จึงได้ $\tau_{\text{abs}} = (120 - 0)/2 = 60\ \mathrm{MPa}$ เมื่อความเค้นหลักในระนาบมีเครื่องหมายเดียวกัน ต้องรวมความเค้นศูนย์ในแนวที่สามเสมอ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p013
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 4
+  type: numeric
+  stem: เพลาปั๊มน้ำของสถานีสูบน้ำชลประทาน (ข้อมูลสมมติ ดูภาพ) เส้นผ่านศูนย์กลาง $40\ \mathrm{mm}$ รับแรงดึงตามแนวแกน $50\ \mathrm{kN}$ และแรงบิด $600\ \mathrm{N\cdot m}$ จงหาความเค้นฟอนมิเซสที่จุด K บนผิว (MPa)
+  answer:
+    value: 91.773217
+    tolerance: 0.9177
+    unit: MPa
+  misconceptions:
+  - match: 62.151992
+    feedback: ลืมตัวคูณ 3 หน้า $\tau^2$
+  - match: 103.450713
+    feedback: นั่นคือความเค้นเทียบเท่าของเทรสกา $\sqrt{\sigma^2 + 4\tau^2}$
+  - match: 87.535219
+    feedback: บวกความเค้นตรง ๆ ไม่ได้ เพราะเป็นความเค้นต่างชนิดบนระนาบต่างกัน
+  figure: &id001
+    src: p-shaft.svg
+    alt: เพลากลมตันเส้นผ่านศูนย์กลาง 40 มม. ถูกดึงด้วยแรงตามแนวแกน P = 50 kN ที่ปลายทั้งสองข้าง และถูกบิดด้วยแรงบิด T = 600 N·m ในทิศตรงข้ามกันที่ปลายทั้งสอง จุด K อยู่บนผิวด้านบนของเพลา
+  hints:
+  - $\sigma = P/A$ และ $\tau = Tc/J = 16T/(\pi d^3)$
+  - สภาวะ $(\sigma, 0, \tau)$ ให้ $\sigma_{vm} = \sqrt{\sigma^2 + 3\tau^2}$
+  solution: '$\sigma = \dfrac{50{,}000}{\pi(40)^2/4} = 39.79\ \mathrm{MPa}$, $\tau = \dfrac{16(600{,}000)}{\pi(40)^3} = 47.75\ \mathrm{MPa}$ ได้ $\sigma_{vm} = \sqrt{39.79^2 + 3(47.75)^2} = 91.8\ \mathrm{MPa}$ (ตรวจด้วยความเค้นหลัก $\sigma_1 = 71.62$, $\sigma_2 = -31.83$: $\sqrt{\sigma_1^2 - \sigma_1\sigma_2 + \sigma_2^2}$ ได้ค่าเดียวกัน)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p014
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 4
+  type: mcq
+  stem: เพลาเหล็กเหนียวต้นเดียวกัน ถ้าประเมินตัวประกอบความปลอดภัยด้วยเกณฑ์เทรสกาและฟอนมิเซส ผลจะเป็นอย่างไร
+  choices:
+  - id: a
+    text: เทรสกาให้ตัวประกอบความปลอดภัยน้อยกว่าหรือเท่ากับฟอนมิเซสเสมอ จึงเป็นเกณฑ์ที่อนุรักษ์กว่า
+    correct: true
+  - id: b
+    text: ฟอนมิเซสให้ค่าน้อยกว่าเสมอ
+    feedback: หกเหลี่ยมของเทรสกาอยู่ภายในวงรีของฟอนมิเซส เทรสกาจึงทำนายการครากก่อนหรือพร้อมกัน
+  - id: c
+    text: ทั้งสองให้ค่าเท่ากันทุกกรณี
+    feedback: เท่ากันเฉพาะแรงดึงแกนเดียวและแรงดึงสองแกนเท่ากัน กรณีเฉือนล้วนต่างกันมากที่สุด (0.5 กับ 0.577)
+  - id: d
+    text: เกณฑ์ทั้งสองใช้กับวัสดุเปราะ เช่น เหล็กหล่อ
+    feedback: ทั้งสองเป็นเกณฑ์การครากของวัสดุเหนียว วัสดุเปราะใช้เกณฑ์ความเค้นตั้งฉากสูงสุดหรือเกณฑ์ของมอร์
+  hints:
+  - ดูภาพขอบเขตการครากในระนาบ $\sigma_1$–$\sigma_2$
+  - รูปใดอยู่ด้านใน
+  solution: ขอบเขตเทรสกา (หกเหลี่ยม) อยู่ภายในวงรีฟอนมิเซส จึงให้ความเค้นเทียบเท่ามากกว่าหรือเท่ากัน และตัวประกอบความปลอดภัยน้อยกว่าหรือเท่ากัน กรณีเฉือนล้วนต่างกันมากที่สุดราว 15% ทั้งสองเกณฑ์ใช้กับวัสดุเหนียว
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p015
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 5
+  type: numeric
+  stem: เพลาปั๊มในข้อก่อน (ดูภาพ) ทำจากเหล็กที่มีความเค้นคราก $\sigma_Y = 250\ \mathrm{MPa}$ จงหาตัวประกอบความปลอดภัยตามเกณฑ์เทรสกา
+  answer:
+    value: 2.41661
+    tolerance: 0.02
+  misconceptions:
+  - match: 2.724106
+    feedback: ใช้ความเค้นฟอนมิเซส
+  - match: 3.490659
+    feedback: ใช้ $\sigma_1$ อย่างเดียว ลืมว่า $\sigma_2$ ติดลบทำให้ผลต่างมากขึ้น
+  - match: 2.617994
+    feedback: คิดแต่แรงบิด ไม่รวมแรงตามแนวแกน
+  figure: *id001
+  hints:
+  - หาความเค้นหลักของสภาวะ $(\sigma, 0, \tau)$ ซึ่งมีเครื่องหมายต่างกัน
+  - 'เทรสกา: $\sigma_1 - \sigma_2 = \sqrt{\sigma^2 + 4\tau^2} \le \sigma_Y/n$'
+  solution: $\sigma = 39.79$, $\tau = 47.75$ ได้ $\sigma_1 = 71.62$, $\sigma_2 = -31.83\ \mathrm{MPa}$ (ความเค้นหลักตัวที่สามเป็นศูนย์อยู่ระหว่างกลาง) $\sigma_1 - \sigma_2 = 103.5$ จึงได้ $n = 250/103.5 = 2.42$ น้อยกว่าฟอนมิเซส ($250/91.8 = 2.72$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p016
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 5
+  type: numeric
+  stem: เพลาเดิม (แรงดึง $50\ \mathrm{kN}$, $d = 40\ \mathrm{mm}$, $\sigma_Y = 250\ \mathrm{MPa}$) ผู้ออกแบบต้องการตัวประกอบความปลอดภัย $2$ ตามเกณฑ์ฟอนมิเซส แรงบิดสูงสุดที่ยอมให้เป็นกี่นิวตันเมตร
+  answer:
+    value: 859.728853
+    tolerance: 10.0
+    unit: N·m
+  misconceptions:
+  - match: 906.899682
+    feedback: ลืมหักส่วนของแรงตามแนวแกน
+  - match: 1790.679983
+    feedback: ไม่ได้หารความเค้นครากด้วยตัวประกอบความปลอดภัย
+  hints:
+  - ตั้ง $\sqrt{\sigma^2 + 3\tau^2} = \sigma_Y/2 = 125\ \mathrm{MPa}$ แล้วแก้หา $\tau$
+  - แปลง $\tau$ เป็นแรงบิดด้วย $T = \tau\pi d^3/16$ (ได้ N·mm)
+  solution: $\tau = \sqrt{(125^2 - 39.79^2)/3} = 68.42\ \mathrm{MPa}$ ได้ $T = 68.42 \times \pi(40)^3/16 = 859{,}729\ \mathrm{N\cdot mm} \approx 860\ \mathrm{N\cdot m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p017
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 4
+  type: expression
+  stem: ชิ้นส่วนรับ $\sigma_x = \sigma$, $\sigma_y = 0$ และ $\tau_{xy} = \tau$ จงเขียนความเค้นหลักค่ามาก $\sigma_1$ เป็นนิพจน์ของ $\sigma$ และ $\tau$
+  prefix: \sigma_1 =
+  answer:
+    latex: \frac{\sigma}{2}+\sqrt{\frac{\sigma^2}{4}+\tau^2}
+    variables:
+    - sigma
+    - tau
+  misconceptions:
+  - match: \frac{\sigma}{2}+\sqrt{\sigma^2+\tau^2}
+    feedback: ลืมหาร $\sigma$ ด้วย 2 ในรัศมี
+  - match: \sqrt{\frac{\sigma^2}{4}+\tau^2}
+    feedback: นั่นคือรัศมี (ความเค้นเฉือนสูงสุด) ยังไม่ได้บวกจุดศูนย์กลาง
+  hints:
+  - $C = \sigma/2$
+  - $R = \sqrt{(\sigma/2)^2 + \tau^2}$
+  solution: $\sigma_1 = C + R = \dfrac{\sigma}{2} + \sqrt{\dfrac{\sigma^2}{4} + \tau^2}$ ใช้กับผิวของเพลาที่รับแรงตามแนวแกนร่วมกับแรงบิด หรือคานที่รับทั้งโมเมนต์ดัดและแรงเฉือน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.stress-transformation.p018
+  topics:
+  - engineering.materials.stress-transformation
+  difficulty: 5
+  type: mcq
+  stem: บนวงกลมของมอร์ (ตกลงว่า $\tau$ บวกชี้ลง) จุด X ของหน้า $x$ อยู่ที่ $(50, 40)$ จุดศูนย์กลาง $C = 20$ ถ้าหมุนชิ้นส่วนทวนเข็มนาฬิกา $\theta = 45^\circ$ จุดของหน้า $x'$ อยู่ที่ใด
+  choices:
+  - id: a
+    text: หมุนรัศมี CX ทวนเข็มนาฬิกา $90^\circ$ ได้จุด $(60, -30)$
+    correct: true
+  - id: b
+    text: หมุนรัศมี CX ทวนเข็มนาฬิกา $45^\circ$
+    feedback: มุมบนวงกลมเป็นสองเท่าของมุมบนชิ้นส่วน
+  - id: c
+    text: จุด $(70, 0)$ ซึ่งเป็นความเค้นหลัก
+    feedback: ระนาบหลักอยู่ที่ $\theta_p = 26.57^\circ$ ไม่ใช่ $45^\circ$
+  - id: d
+    text: จุด $(-10, -40)$ ซึ่งเป็นหน้า $y$
+    feedback: หน้า $y$ คือการหมุน $90^\circ$ บนชิ้นส่วน หรือ $180^\circ$ บนวงกลม
+  hints:
+  - CX $= (30, 40)$ ใน (ทิศ $\sigma$, ทิศ $\tau$ ชี้ลง)
+  - หมุนเวกเตอร์ $90^\circ$ แล้วบวกกลับกับ C และตรวจด้วยสมการแปลง
+  solution: 'บนวงกลมหมุน $2\theta = 90^\circ$ เวกเตอร์ CX $= (30, 40)$ (ทิศ $\tau$ ชี้ลง) หมุนทวนเข็มนาฬิกาบนภาพได้ $(40, -30)$ จุดใหม่จึงเป็น $(20 + 40, -30) = (60, -30)$ ตรวจด้วยสมการแปลง: $\sigma_{x''} = 20 + 30\cos 90^\circ + 40\sin 90^\circ = 60$ และ $\tau_{x''y''} = -30\sin 90^\circ + 40\cos 90^\circ = -30$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true

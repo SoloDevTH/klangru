@@ -1,0 +1,68 @@
+id: math.calculus.mean-value-theorem
+subject: math
+title: { th: ทฤษฎีบทค่าเฉลี่ย, en: The mean value theorem }
+summary: ทฤษฎีบทของโรลล์และทฤษฎีบทค่าเฉลี่ย เส้นสัมผัสที่ขนานกับเส้นตัด เงื่อนไขที่ต้องตรวจ และผลที่ตามมา เช่น ฟังก์ชันที่อนุพันธ์เท่ากันต่างกันด้วยค่าคงตัว
+difficulty: 8
+minutes: 40
+prerequisites: [math.calculus.derivative-applications]
+encompasses:
+  - { id: math.calculus.derivative-applications, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: mvt-secant-tangent.svg
+    alt: "กราฟ y = x³ − 3x บนช่วง −2 ถึง 2 ขึ้นจาก (−2, −2) ถึงยอดที่ (−1, 2) ลงถึงก้นที่ (1, −2) แล้วขึ้นถึง (2, 2) เส้นตัดสีแดงเชื่อม (−2, −2) กับ (2, 2) คือเส้น y = x ความชัน 1 เส้นประสีเขียวสองเส้นสัมผัสกราฟที่ x ≈ −1.155 และ x ≈ 1.155 ทั้งสองเส้นขนานกับเส้นตัด"
+    caption: "เส้นสัมผัสที่ c ≈ ±1.155 ขนานกับเส้นตัด ทฤษฎีบทรับรองว่ามีอย่างน้อยหนึ่งจุด ในกรณีนี้มีสองจุด"
+  - type: interactive
+    title: หาจุดที่เส้นสัมผัสขนานกับเส้นตัด
+    caption: "เส้นแรกคือ y = x³ − 3x เส้นที่สองคือเส้นตัด y = x จาก (−2, −2) ถึง (2, 2) เส้นที่สามคือเส้นสัมผัสที่ x = c เลื่อน c จนเส้นสัมผัสขนานกับเส้นตัด จะพบสองตำแหน่งใกล้ c = ±1.15"
+    widget:
+      kind: function-plot
+      functions: ["x^3-3x", "x", "(3c^2-3)(x-c)+c^3-3c"]
+      sliders:
+        - { name: c, min: -2, max: 2, step: 0.05, value: 0.5, label: จุดสัมผัส c }
+      x: [-2.5, 2.5]
+      y: [-4, 4]
+  - type: worked-example
+    title: หาค่า c ของทฤษฎีบทค่าเฉลี่ย
+    problem: "ให้ $f(x) = \\dfrac1x$ บนช่วง $[1, 4]$ จงตรวจเงื่อนไขของทฤษฎีบทค่าเฉลี่ยและหาค่า $c$ ทุกค่าที่ทฤษฎีบทรับรอง"
+    steps:
+      - text: "$f$ ไม่ต่อเนื่องเฉพาะที่ $x = 0$ ซึ่งอยู่นอก $[1, 4]$ จึงต่อเนื่องบน $[1, 4]$ และ $f'(x) = -\\dfrac{1}{x^2}$ มีค่าทุกจุดใน $(1, 4)$"
+        why: "ต้องตรวจเงื่อนไขก่อนเสมอ ถ้าช่วงคร่อม $x = 0$ จะใช้ทฤษฎีบทไม่ได้"
+      - text: "ความชันเส้นตัด $\\dfrac{f(4) - f(1)}{4 - 1} = \\dfrac{\\tfrac14 - 1}{3} = -\\dfrac14$"
+      - text: "แก้ $f'(c) = -\\dfrac{1}{c^2} = -\\dfrac14$ ได้ $c^2 = 4$ จึง $c = \\pm 2$"
+      - text: "เก็บเฉพาะค่าที่อยู่ใน $(1, 4)$ คือ $c = 2$"
+        why: "$c = -2$ เป็นคำตอบของสมการ แต่ไม่อยู่ในช่วง ทฤษฎีบทพูดถึงเฉพาะจุดภายในช่วง"
+    answer: "$c = 2$"
+  - { type: check, problem: math.calculus.mean-value-theorem.p006, prompt: "หาความชันเส้นตัดก่อน แล้วตั้งสมการ $f'(c)$ เท่ากับความชันนั้น" }
+  - type: worked-example
+    title: ใช้ทฤษฎีบทค่าเฉลี่ยพิสูจน์อสมการ
+    problem: "จงแสดงว่า $|\\sin b - \\sin a| \\le |b - a|$ สำหรับจำนวนจริง $a, b$ ใด ๆ"
+    steps:
+      - text: "ถ้า $a = b$ ทั้งสองข้างเป็นศูนย์ ให้ $a < b$ (กรณี $a > b$ สลับชื่อได้)"
+      - text: "$f(x) = \\sin x$ ต่อเนื่องและหาอนุพันธ์ได้ทุกจุด จึงมี $c$ ใน $(a, b)$ ที่ $\\sin b - \\sin a = \\cos c\\,(b - a)$"
+      - text: "เพราะ $|\\cos c| \\le 1$ จึงได้ $|\\sin b - \\sin a| = |\\cos c|\\,|b - a| \\le |b - a|$"
+        why: "นี่คือผลข้อ 4 ในบทเรียน: อนุพันธ์มีขอบเขต $M = 1$ การเปลี่ยนแปลงจึงไม่เกิน $M$ คูณความยาวช่วง"
+      - text: "ตัวอย่างใช้งาน: $|\\sin 0.3 - \\sin 0| \\le 0.3$ ค่าจริงคือ $\\sin 0.3 \\approx 0.2955$ สอดคล้องกัน"
+    answer: "$|\\sin b - \\sin a| \\le |b - a|$ ทุก $a, b$"
+  - { type: check, problem: math.calculus.mean-value-theorem.p011, prompt: "ฟังก์ชันสองตัวที่อนุพันธ์เท่ากันต่างกันด้วยค่าคงตัว หาค่าคงตัวนั้นจากจุดที่รู้ค่าทั้งคู่" }
+glossary:
+  - { term: ทฤษฎีบทของโรลล์, definition: "ถ้า f ต่อเนื่องบน [a, b] หาอนุพันธ์ได้บน (a, b) และ f(a) = f(b) จะมี c ใน (a, b) ที่ f′(c) = 0" }
+  - { term: ทฤษฎีบทค่าเฉลี่ย, definition: "ถ้า f ต่อเนื่องบน [a, b] และหาอนุพันธ์ได้บน (a, b) จะมี c ที่ f′(c) = (f(b) − f(a))/(b − a)" }
+  - { term: เส้นตัด, definition: "เส้นตรงที่เชื่อมสองจุดบนกราฟ ความชันคืออัตราการเปลี่ยนเฉลี่ย" }
+  - { term: อัตราการเปลี่ยนเฉลี่ย, definition: "(f(b) − f(a))/(b − a) เช่น ความเร็วเฉลี่ยระหว่างสองเวลา" }
+flashcards:
+  - { front: "ทฤษฎีบทค่าเฉลี่ย (ข้อสรุป)", back: "มี c ใน (a, b) ที่ f′(c) = (f(b) − f(a))/(b − a)" }
+  - { front: "เงื่อนไขของทฤษฎีบทค่าเฉลี่ย", back: "ต่อเนื่องบน [a, b] และหาอนุพันธ์ได้บน (a, b)" }
+  - { front: "ความหมายทางเรขาคณิต", back: "มีเส้นสัมผัสที่ขนานกับเส้นตัดผ่านจุดปลาย" }
+  - { front: "f′(x) = g′(x) ทั้งช่วง แล้ว", back: "f(x) = g(x) + C" }
+  - { front: "|f′(x)| ≤ M ทั้งช่วง แล้ว", back: "|f(b) − f(a)| ≤ M|b − a|" }
+references:
+  - { title: "4.4 The Mean Value Theorem (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Mean value theorem", url: "https://en.wikipedia.org/wiki/Mean_value_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Rolle's theorem", url: "https://en.wikipedia.org/wiki/Rolle%27s_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

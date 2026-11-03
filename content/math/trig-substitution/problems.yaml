@@ -1,0 +1,313 @@
+problems:
+  - id: math.calculus.trig-substitution.p001
+    topics: [math.calculus.trig-substitution]
+    difficulty: 1
+    type: mcq
+    stem: "จะหา $\\displaystyle\\int \\sqrt{9 - x^2}\\,dx$ ควรแทนค่าแบบใด"
+    choices:
+      - { id: a, text: "$x = 3\\sin\\theta$", correct: true }
+      - { id: b, text: "$x = 3\\tan\\theta$", feedback: "$9 - 9\\tan^2\\theta$ ไม่เป็นกำลังสองสมบูรณ์ การแทนด้วยแทนเจนต์ใช้กับ $\\sqrt{9 + x^2}$" }
+      - { id: c, text: "$x = 3\\sec\\theta$", feedback: "$9 - 9\\sec^2\\theta = -9\\tan^2\\theta$ ติดลบ การแทนด้วยซีแคนต์ใช้กับ $\\sqrt{x^2 - 9}$" }
+      - { id: d, text: "$u = 9 - x^2$", feedback: "$du = -2x\\,dx$ แต่ในปริพันธ์ไม่มี $x$ คูณอยู่ การแทนค่านี้จึงไม่ช่วย" }
+    hints:
+      - "หาเอกลักษณ์ที่ทำให้ $9 - (\\ldots)^2$ เป็นกำลังสองสมบูรณ์"
+      - "$1 - \\sin^2\\theta = \\cos^2\\theta$"
+    solution: "รูป $\\sqrt{a^2 - x^2}$ กับ $a = 3$ ใช้ $x = 3\\sin\\theta$ จะได้ $\\sqrt{9 - 9\\sin^2\\theta} = 3\\cos\\theta$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p002
+    topics: [math.calculus.trig-substitution]
+    difficulty: 2
+    type: numeric
+    stem: "แทนค่า $x = 3\\sin\\theta$ โดย $0 \\le \\theta \\le \\tfrac{\\pi}{2}$ เมื่อ $x = 1.8$ จงใช้สามเหลี่ยมอ้างอิงหาค่า $\\cos\\theta$"
+    answer: { value: 0.8, tolerance: 0.001 }
+    misconceptions:
+      - { match: 0.6, feedback: "นี่คือ $\\sin\\theta = \\tfrac{1.8}{3}$ โคไซน์คือด้านประชิดหารด้านตรงข้ามมุมฉาก" }
+      - { match: 2.4, feedback: "2.4 คือความยาวด้านประชิด $\\sqrt{9 - x^2}$ ต้องหารด้วยด้านตรงข้ามมุมฉาก 3" }
+    hints:
+      - "$\\sin\\theta = \\tfrac{x}{3}$ วาดด้านตรงข้าม $x$ ด้านตรงข้ามมุมฉาก 3"
+      - "ด้านประชิด $= \\sqrt{9 - x^2}$"
+    solution: "ด้านประชิด $\\sqrt{9 - 1.8^2} = \\sqrt{5.76} = 2.4$ จึง $\\cos\\theta = \\tfrac{2.4}{3} = 0.8$ (หรือ $\\cos\\theta = \\tfrac{\\sqrt{9 - x^2}}{3}$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p003
+    topics: [math.calculus.trig-substitution]
+    difficulty: 2
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\tan x\\sec^2 x$ ที่ $F(0) = 0$ (สำหรับ $|x| < \\tfrac{\\pi}{2}$)"
+    prefix: "F(x) ="
+    answer: { latex: "\\frac{\\tan^2 x}{2}", variables: [x] }
+    misconceptions:
+      - { match: "\\tan^2 x", feedback: "$\\int u\\,du = \\tfrac{u^2}{2}$ อย่าลืมหารด้วย 2" }
+      - { match: "\\frac{\\sec^2 x}{2}", feedback: "ปฏิยานุพันธ์นี้ถูกต้องในรูปทั่วไป แต่ $F(0) = \\tfrac12 \\ne 0$ ต้องลบค่าคงตัว $\\tfrac12$" }
+    hints:
+      - "ให้ $u = \\tan x$ จะได้ $du = \\sec^2 x\\,dx$"
+      - "$\\int u\\,du = \\tfrac{u^2}{2} + C$ แล้วใช้ $F(0) = 0$"
+    solution: "$u = \\tan x$, $du = \\sec^2 x\\,dx$ ได้ $\\int u\\,du = \\tfrac{\\tan^2 x}{2} + C$ และ $F(0) = 0 + C = 0$ จึง $F(x) = \\tfrac{\\tan^2 x}{2}$ (เท่ากับ $\\tfrac{\\sec^2 x}{2} - \\tfrac12$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p004
+    topics: [math.calculus.trig-substitution]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^{\\pi/4}\\tan x\\,dx$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.347, tolerance: 0.002 }
+    misconceptions:
+      - { match: 1, feedback: "$\\sec^2 x$ คืออนุพันธ์ของ $\\tan x$ ไม่ใช่ปฏิยานุพันธ์ ปฏิยานุพันธ์คือ $\\ln|\\sec x|$" }
+      - { match: -0.347, feedback: "$\\int \\tan x\\,dx = -\\ln|\\cos x|$ ตรวจเครื่องหมายลบ" }
+    hints:
+      - "$\\tan x = \\dfrac{\\sin x}{\\cos x}$ ให้ $u = \\cos x$"
+      - "$\\int \\tan x\\,dx = \\ln|\\sec x| + C$"
+    solution: "$\\big[\\ln|\\sec x|\\big]_0^{\\pi/4} = \\ln\\sqrt2 - \\ln 1 = \\tfrac12\\ln 2 \\approx 0.347$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p005
+    topics: [math.calculus.trig-substitution]
+    difficulty: 2
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\sin 3x\\cos x$ ที่ $F(0) = 0$"
+    prefix: "F(x) ="
+    answer: { latex: "-\\frac{\\cos 4x}{8}-\\frac{\\cos 2x}{4}+\\frac{3}{8}", variables: [x] }
+    misconceptions:
+      - { match: "-\\frac{\\cos 4x}{4}-\\frac{\\cos 2x}{2}+\\frac{3}{4}", feedback: "สูตรผลคูณเป็นผลบวกมี $\\tfrac12$ อยู่หน้า ลืมคูณ $\\tfrac12$" }
+      - { match: "-\\frac{\\cos 4x}{8}-\\frac{\\cos 2x}{4}", feedback: "เป็นปฏิยานุพันธ์ที่ถูก แต่ $F(0) = -\\tfrac38$ ต้องบวกค่าคงตัว $\\tfrac38$" }
+    hints:
+      - "$\\sin 3x\\cos x = \\tfrac12(\\sin 4x + \\sin 2x)$"
+      - "$\\int \\sin kx\\,dx = -\\tfrac{\\cos kx}{k}$ แล้วใช้ $F(0) = 0$"
+    solution: "$\\tfrac12\\int(\\sin 4x + \\sin 2x)\\,dx = -\\tfrac{\\cos 4x}{8} - \\tfrac{\\cos 2x}{4} + C$ ที่ $x = 0$ ได้ $-\\tfrac18 - \\tfrac14 + C = 0$ จึง $C = \\tfrac38$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p006
+    topics: [math.calculus.trig-substitution]
+    difficulty: 3
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\tan^3 x\\sec x$ ที่ $F(0) = 0$ (สำหรับ $|x| < \\tfrac{\\pi}{2}$)"
+    prefix: "F(x) ="
+    answer: { latex: "\\frac{\\sec^3 x}{3}-\\sec x+\\frac{2}{3}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{\\sec^3 x}{3}-\\sec x", feedback: "ปฏิยานุพันธ์ถูกแล้ว แต่ $F(0) = \\tfrac13 - 1 = -\\tfrac23$ ต้องบวก $\\tfrac23$" }
+      - { match: "\\frac{\\tan^4 x}{4}", feedback: "ให้ $u = \\tan x$ ไม่ได้ เพราะต้องมี $\\sec^2 x$ เป็น $du$ แต่มีเพียง $\\sec x$" }
+    hints:
+      - "กำลังของ $\\tan$ เป็นคี่ เก็บ $\\sec x\\tan x$ ไว้เป็น $du$ เมื่อ $u = \\sec x$"
+      - "$\\tan^2 x = \\sec^2 x - 1$ ได้ $\\int (u^2 - 1)\\,du$"
+    solution: "$\\tan^3 x\\sec x = \\tan^2 x \\cdot \\sec x\\tan x = (\\sec^2 x - 1)\\sec x\\tan x$ ให้ $u = \\sec x$ ได้ $\\int(u^2 - 1)\\,du = \\tfrac{\\sec^3 x}{3} - \\sec x + C$ ที่ $x = 0$: $\\tfrac13 - 1 + C = 0$ จึง $C = \\tfrac23$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p007
+    topics: [math.calculus.trig-substitution]
+    difficulty: 3
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\sec^4 x$ ที่ $F(0) = 0$ (สำหรับ $|x| < \\tfrac{\\pi}{2}$)"
+    prefix: "F(x) ="
+    answer: { latex: "\\tan x+\\frac{\\tan^3 x}{3}", variables: [x] }
+    misconceptions:
+      - { match: "\\frac{\\sec^5 x}{5}", feedback: "กฎกำลังใช้ไม่ได้ เพราะอนุพันธ์ของ $\\sec x$ ไม่ใช่ 1" }
+      - { match: "\\frac{\\tan^3 x}{3}", feedback: "ลืมพจน์ที่มาจากเลข 1 ใน $1 + \\tan^2 x$" }
+    hints:
+      - "$\\sec^4 x = \\sec^2 x \\cdot \\sec^2 x = (1 + \\tan^2 x)\\sec^2 x$"
+      - "ให้ $u = \\tan x$"
+    solution: "$\\int (1 + \\tan^2 x)\\sec^2 x\\,dx = \\int(1 + u^2)\\,du = \\tan x + \\tfrac{\\tan^3 x}{3} + C$ และ $F(0) = 0$ ให้ $C = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p008
+    topics: [math.calculus.trig-substitution]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^{\\pi/4}\\cos 3x\\cos x\\,dx$"
+    answer: { value: 0.25, tolerance: 0.002 }
+    misconceptions:
+      - { match: 0.5, feedback: "ลืม $\\tfrac12$ ในสูตร $\\cos mx\\cos nx = \\tfrac12[\\cos(m - n)x + \\cos(m + n)x]$" }
+    hints:
+      - "$\\cos 3x\\cos x = \\tfrac12(\\cos 2x + \\cos 4x)$"
+      - "ปฏิยานุพันธ์คือ $\\tfrac12\\big(\\tfrac{\\sin 2x}{2} + \\tfrac{\\sin 4x}{4}\\big)$ แทนขอบเขต"
+    solution: "$\\tfrac12\\Big[\\tfrac{\\sin 2x}{2} + \\tfrac{\\sin 4x}{4}\\Big]_0^{\\pi/4} = \\tfrac12\\Big(\\tfrac12 + 0\\Big) - 0 = \\tfrac14 = 0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p009
+    topics: [math.calculus.trig-substitution]
+    difficulty: 3
+    type: expression
+    stem: "จงหาปฏิยานุพันธ์ $F$ ของ $f(x) = \\sqrt{4 - x^2}$ ที่ $F(0) = 0$ (สำหรับ $|x| < 2$)"
+    prefix: "F(x) ="
+    answer: { latex: "2\\arcsin\\frac{x}{2}+\\frac{x\\sqrt{4-x^2}}{2}", variables: [x] }
+    misconceptions:
+      - { match: "2\\arcsin\\frac{x}{2}", feedback: "$\\cos^2\\theta = \\tfrac{1 + \\cos 2\\theta}{2}$ ให้พจน์ $\\sin 2\\theta$ ด้วย ซึ่งกลับเป็น $\\tfrac{x\\sqrt{4 - x^2}}{4}$ คูณ 2" }
+    hints:
+      - "ให้ $x = 2\\sin\\theta$, $dx = 2\\cos\\theta\\,d\\theta$ ได้ $\\int 4\\cos^2\\theta\\,d\\theta$"
+      - "$4\\cos^2\\theta = 2 + 2\\cos 2\\theta$ และ $\\sin 2\\theta = 2\\sin\\theta\\cos\\theta = 2 \\cdot \\tfrac{x}{2} \\cdot \\tfrac{\\sqrt{4 - x^2}}{2}$"
+    solution: "$\\int 4\\cos^2\\theta\\,d\\theta = 2\\theta + \\sin 2\\theta + C$ กลับเป็น $x$: $\\theta = \\arcsin\\tfrac{x}{2}$ และ $\\sin 2\\theta = \\tfrac{x\\sqrt{4 - x^2}}{2}$ ได้ $F(x) = 2\\arcsin\\tfrac{x}{2} + \\tfrac{x\\sqrt{4 - x^2}}{2}$ ซึ่ง $F(0) = 0$ ตรวจ: $F'(x) = \\tfrac{2}{\\sqrt{4 - x^2}} + \\tfrac{\\sqrt{4 - x^2}}{2} - \\tfrac{x^2}{2\\sqrt{4 - x^2}} = \\sqrt{4 - x^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p010
+    topics: [math.calculus.trig-substitution]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^1 \\frac{dx}{(1 + x^2)^{3/2}}$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.707, tolerance: 0.002 }
+    misconceptions:
+      - { match: 0.785, feedback: "$\\tfrac{\\pi}{4}$ คือปริพันธ์ของ $\\tfrac{1}{1 + x^2}$ ไม่มีกำลัง $\\tfrac32$" }
+      - { match: 0.841, feedback: "ใช้ขอบเขตเดิม $0$ ถึง $1$ กับตัวแปร $\\theta$ ได้ $\\sin 1$ ต้องเปลี่ยนขอบเขตเป็น $0$ ถึง $\\tfrac{\\pi}{4}$" }
+    hints:
+      - "ให้ $x = \\tan\\theta$ จะได้ $(1 + x^2)^{3/2} = \\sec^3\\theta$ และ $dx = \\sec^2\\theta\\,d\\theta$"
+      - "ขอบเขต $x = 0 \\to 1$ กลายเป็น $\\theta = 0 \\to \\tfrac{\\pi}{4}$"
+    solution: "$\\displaystyle\\int_0^{\\pi/4}\\frac{\\sec^2\\theta}{\\sec^3\\theta}\\,d\\theta = \\int_0^{\\pi/4}\\cos\\theta\\,d\\theta = \\sin\\tfrac{\\pi}{4} = \\tfrac{1}{\\sqrt2} \\approx 0.707$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p011
+    topics: [math.calculus.trig-substitution]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_2^4 \\frac{\\sqrt{x^2 - 4}}{x}\\,dx$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.370, tolerance: 0.003 }
+    misconceptions:
+      - { match: 3.464, feedback: "นี่คือ $2\\tan\\theta$ ที่ปลาย ($2\\sqrt3$) ยังไม่ได้ลบ $2\\theta$" }
+    hints:
+      - "ให้ $x = 2\\sec\\theta$ จะได้ $\\sqrt{x^2 - 4} = 2\\tan\\theta$ และ $dx = 2\\sec\\theta\\tan\\theta\\,d\\theta$"
+      - "ปริพันธ์กลายเป็น $\\int 2\\tan^2\\theta\\,d\\theta = \\int 2(\\sec^2\\theta - 1)\\,d\\theta$ ขอบเขต $x = 2 \\to 4$ คือ $\\theta = 0 \\to \\tfrac{\\pi}{3}$"
+    solution: "$\\displaystyle\\int_0^{\\pi/3}\\frac{2\\tan\\theta}{2\\sec\\theta}\\cdot 2\\sec\\theta\\tan\\theta\\,d\\theta = \\int_0^{\\pi/3}2(\\sec^2\\theta - 1)\\,d\\theta = \\big[2\\tan\\theta - 2\\theta\\big]_0^{\\pi/3} = 2\\sqrt3 - \\tfrac{2\\pi}{3} \\approx 1.370$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p012
+    topics: [math.calculus.trig-substitution]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_{-1}^{1}\\frac{dx}{(x^2 + 2x + 5)^{3/2}}$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.177, tolerance: 0.002 }
+    misconceptions:
+      - { match: 0.707, feedback: "ลืมตัวประกอบจาก $a = 2$: $\\int \\tfrac{2\\sec^2\\theta}{8\\sec^3\\theta}d\\theta = \\tfrac14\\int\\cos\\theta\\,d\\theta$" }
+    hints:
+      - "เติมกำลังสอง $x^2 + 2x + 5 = (x + 1)^2 + 4$ ให้ $x + 1 = 2\\tan\\theta$"
+      - "ขอบเขต $x = -1 \\to 1$ คือ $x + 1 = 0 \\to 2$ หรือ $\\theta = 0 \\to \\tfrac{\\pi}{4}$"
+    solution: "$x + 1 = 2\\tan\\theta$, $dx = 2\\sec^2\\theta\\,d\\theta$, $((x + 1)^2 + 4)^{3/2} = 8\\sec^3\\theta$ ได้ $\\tfrac14\\int_0^{\\pi/4}\\cos\\theta\\,d\\theta = \\tfrac14 \\cdot \\tfrac{1}{\\sqrt2} = \\tfrac{1}{4\\sqrt2} \\approx 0.177$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p013
+    topics: [math.calculus.trig-substitution]
+    difficulty: 4
+    type: numeric
+    stem: "สระบัวในสวนสาธารณะแห่งหนึ่งในกรุงเทพฯ เป็นรูปวงรี ยาว 40 m กว้าง 24 m (ค่าสมมติ) วางแกนให้ขอบสระคือ $\\tfrac{x^2}{20^2} + \\tfrac{y^2}{12^2} = 1$ จงหาพื้นที่ผิวน้ำด้วย $4\\int_0^{20} 12\\sqrt{1 - \\tfrac{x^2}{400}}\\,dx$ เป็นตารางเมตร (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    answer: { value: 754.0, tolerance: 1, unit: m² }
+    misconceptions:
+      - { match: 3015.9, feedback: "ใช้ความยาวทั้งเส้น 40 และ 24 แทนครึ่งแกน 20 และ 12 สูตรคือ $\\pi ab$ เมื่อ $a, b$ เป็นครึ่งแกน" }
+      - { match: 188.5, feedback: "นี่คือพื้นที่หนึ่งในสี่ของสระ ต้องคูณ 4" }
+    hints:
+      - "แทน $x = 20\\sin\\theta$ ขอบเขต $0 \\to \\tfrac{\\pi}{2}$"
+      - "ได้ $4 \\cdot 12 \\cdot 20\\int_0^{\\pi/2}\\cos^2\\theta\\,d\\theta$ และ $\\int_0^{\\pi/2}\\cos^2\\theta\\,d\\theta = \\tfrac{\\pi}{4}$"
+    solution: "$4 \\cdot 240 \\cdot \\tfrac{\\pi}{4} = 240\\pi \\approx 754.0\\ \\mathrm{m^2}$ ตรงกับสูตร $\\pi ab = \\pi(20)(12)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p014
+    topics: [math.calculus.trig-substitution]
+    difficulty: 5
+    type: numeric
+    stem: "สายไฟเส้นหนึ่งห้อยข้ามคลองในอยุธยาเป็นรูปพาราโบลา $y = \\tfrac{x^2}{40}$ เมตร ตั้งแต่ $x = -20$ ถึง $x = 20$ (ค่าสมมติ) ดังภาพ ความยาวสายคือ $\\displaystyle L = \\int_{-20}^{20}\\sqrt{1 + (y')^2}\\,dx$ จงหา $L$ เป็นเมตร (ตอบทศนิยมสองตำแหน่ง)"
+    figure:
+      src: p-cable.svg
+      alt: "สายไฟสีแดงห้อยเป็นรูปพาราโบลาระหว่างเสาสองต้นสองฝั่งคลอง เสาห่างกัน 40 m จุดยึดสูงกว่าจุดต่ำสุดของสาย 10 m จุดต่ำสุดอยู่ที่ (0, 0)"
+    answer: { value: 45.91, tolerance: 0.05, unit: m }
+    misconceptions:
+      - { match: 40, feedback: "40 m คือระยะห่างของเสา สายที่ห้อยยาวกว่าระยะตรง" }
+      - { match: 44.72, feedback: "นี่คือความยาวของเส้นตรงสองเส้นจาก $(-20, 10)$ ถึง $(0, 0)$ ถึง $(20, 10)$ ซึ่งสั้นกว่าเส้นโค้งจริง" }
+    hints:
+      - "$y' = \\tfrac{x}{20}$ ปริพันธ์คือ $\\int_{-20}^{20}\\sqrt{1 + \\tfrac{x^2}{400}}\\,dx = 2\\int_0^{20}\\tfrac{1}{20}\\sqrt{400 + x^2}\\,dx$"
+      - "แทน $x = 20\\tan\\theta$ ได้ $40\\int_0^{\\pi/4}\\sec^3\\theta\\,d\\theta$ และ $\\int\\sec^3\\theta\\,d\\theta = \\tfrac12(\\sec\\theta\\tan\\theta + \\ln|\\sec\\theta + \\tan\\theta|)$"
+    solution: "$L = 40\\int_0^{\\pi/4}\\sec^3\\theta\\,d\\theta = 20\\big[\\sec\\theta\\tan\\theta + \\ln|\\sec\\theta + \\tan\\theta|\\big]_0^{\\pi/4} = 20\\big(\\sqrt2 + \\ln(1 + \\sqrt2)\\big) \\approx 45.91$ m"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p015
+    topics: [math.calculus.trig-substitution]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ปริพันธ์กับวิธีที่เหมาะที่สุดเป็นขั้นแรก"
+    pairs:
+      - { left: "$\\int xe^{x^2}\\,dx$", right: "การแทนค่า $u = x^2$" }
+      - { left: "$\\int xe^{x}\\,dx$", right: "ปริพันธ์ทีละส่วน" }
+      - { left: "$\\int \\frac{dx}{x^2 - 1}$", right: "เศษส่วนย่อย" }
+      - { left: "$\\int \\frac{x^2}{\\sqrt{4 - x^2}}\\,dx$", right: "แทนค่า $x = 2\\sin\\theta$" }
+      - { left: "$\\int \\tan^3 x\\sec^3 x\\,dx$", right: "เก็บ $\\sec x\\tan x$ ให้ $u = \\sec x$" }
+    hints:
+      - "มองหาฟังก์ชันชั้นในที่อนุพันธ์คูณอยู่ก่อน"
+      - "รากที่สองของ $a^2 - x^2$ บอกการแทนค่าด้วยไซน์ กำลังคี่ของแทนเจนต์บอกให้ใช้ $u = \\sec x$"
+    solution: "$xe^{x^2}$ มี $2x$ เป็นอนุพันธ์ของ $x^2$ · $xe^x$ เป็นผลคูณพหุนามกับเอกซ์โพเนนเชียล · $\\tfrac{1}{x^2 - 1} = \\tfrac{1}{(x - 1)(x + 1)}$ · $\\sqrt{4 - x^2}$ ใช้ $x = 2\\sin\\theta$ · $\\tan$ กำลังคี่ใช้ $u = \\sec x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p016
+    topics: [math.calculus.trig-substitution]
+    difficulty: 5
+    type: numeric
+    stem: "ถังน้ำมันดีเซลทรงกระบอกวางนอนในสวนทุเรียนจันทบุรี รัศมี 1 m ยาว 3 m (ค่าสมมติ) มีน้ำมันลึก 0.5 m จากก้นถัง พื้นที่หน้าตัดของน้ำมันคือ $\\displaystyle 2\\int_{-1}^{-0.5}\\sqrt{1 - y^2}\\,dy$ ตารางเมตร (วัด $y$ จากแกนกลางถัง) จงหาปริมาตรน้ำมันเป็นลิตร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1843, tolerance: 5, unit: ลิตร }
+    misconceptions:
+      - { match: 2356, feedback: "คิดตามสัดส่วนความลึก (ลึก $\\tfrac14$ ของเส้นผ่านศูนย์กลาง จึงได้ $\\tfrac14$ ของถัง) ไม่ถูก เพราะถังกลมแคบลงที่ก้น ต้องหาพื้นที่ส่วนของวงกลมด้วยปริพันธ์" }
+      - { match: 614, feedback: "ลืมคูณความยาวถัง 3 m ได้เพียง $0.614\\ \\mathrm{m^3}$ ต่อความยาว 1 m" }
+    hints:
+      - "แทน $y = \\sin\\theta$ ขอบเขต $y = -1 \\to -0.5$ คือ $\\theta = -\\tfrac{\\pi}{2} \\to -\\tfrac{\\pi}{6}$"
+      - "$\\int\\sqrt{1 - y^2}\\,dy = \\tfrac12\\big(\\arcsin y + y\\sqrt{1 - y^2}\\big)$ แล้วคูณความยาวถังและ 1,000 ลิตรต่อลูกบาศก์เมตร"
+    solution: "พื้นที่ $= \\big[\\arcsin y + y\\sqrt{1 - y^2}\\big]_{-1}^{-0.5} = \\big(-\\tfrac{\\pi}{6} - 0.5\\sqrt{0.75}\\big) - \\big(-\\tfrac{\\pi}{2}\\big) = \\tfrac{\\pi}{3} - 0.433 \\approx 0.6142\\ \\mathrm{m^2}$ ปริมาตร $0.6142 \\times 3 = 1.8426\\ \\mathrm{m^3} \\approx 1{,}843$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p017
+    topics: [math.calculus.trig-substitution]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\displaystyle\\int_0^{\\pi/4}\\sec^3 x\\,dx$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.148, tolerance: 0.002 }
+    misconceptions:
+      - { match: 0.707, feedback: "นี่คือ $\\tfrac12\\sec x\\tan x$ ที่ปลายบน ลืมพจน์ $\\tfrac12\\ln|\\sec x + \\tan x|$ ที่มาจากการย้ายข้าง" }
+    hints:
+      - "ปริพันธ์ทีละส่วน $u = \\sec x$, $dv = \\sec^2 x\\,dx$ ได้ $\\sec x\\tan x - \\int \\sec x\\tan^2 x\\,dx$"
+      - "แทน $\\tan^2 x = \\sec^2 x - 1$ จะได้ $\\int\\sec^3 x$ กลับมา ย้ายข้างแล้วหารด้วย 2"
+    solution: "$\\int\\sec^3 x\\,dx = \\tfrac12\\big(\\sec x\\tan x + \\ln|\\sec x + \\tan x|\\big) + C$ แทนขอบเขต: $\\tfrac12\\big(\\sqrt2 + \\ln(1 + \\sqrt2)\\big) \\approx \\tfrac12(1.4142 + 0.8814) \\approx 1.148$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p018
+    topics: [math.calculus.trig-substitution]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการหา $\\displaystyle\\int \\frac{dx}{\\sqrt{x^2 + 16}}$ ด้วยการแทนค่าด้วยตรีโกณมิติ"
+    items:
+      - "เลือก $x = 4\\tan\\theta$ ตามรูป $\\sqrt{a^2 + x^2}$"
+      - "แทน $dx = 4\\sec^2\\theta\\,d\\theta$ และ $\\sqrt{x^2 + 16} = 4\\sec\\theta$"
+      - "หาปริพันธ์ $\\int \\sec\\theta\\,d\\theta = \\ln|\\sec\\theta + \\tan\\theta| + C$"
+      - "วาดสามเหลี่ยมอ้างอิงจาก $\\tan\\theta = \\tfrac{x}{4}$"
+      - "เขียนคำตอบในตัวแปร $x$ แล้วตรวจด้วยการหาอนุพันธ์"
+    hints:
+      - "ต้องรู้ว่าแทนค่าอะไรก่อนจึงแทน $dx$ ได้"
+      - "สามเหลี่ยมอ้างอิงใช้ตอนกลับเป็น $x$"
+    solution: "เลือกการแทนค่า → แทน $dx$ และรากที่สอง → หาปริพันธ์ใน $\\theta$ → สามเหลี่ยมอ้างอิง → กลับเป็น $x$ และตรวจ ได้ $\\ln\\big|x + \\sqrt{x^2 + 16}\\big| + C$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.trig-substitution.p019
+    topics: [math.calculus.trig-substitution]
+    difficulty: 4
+    type: mcq
+    stem: "ตารางปริพันธ์ให้สูตร $\\displaystyle\\int \\frac{du}{a^2 - u^2} = \\frac{1}{2a}\\ln\\left|\\frac{a + u}{a - u}\\right| + C$ จงใช้สูตรนี้หา $\\displaystyle\\int \\frac{dx}{9 - 4x^2}$"
+    choices:
+      - { id: a, text: "$\\dfrac{1}{12}\\ln\\left|\\dfrac{3 + 2x}{3 - 2x}\\right| + C$", correct: true }
+      - { id: b, text: "$\\dfrac{1}{6}\\ln\\left|\\dfrac{3 + 2x}{3 - 2x}\\right| + C$", feedback: "ให้ $u = 2x$ แล้วต้องแทน $dx = \\tfrac12du$ ด้วย ลืมตัวประกอบ $\\tfrac12$" }
+      - { id: c, text: "$\\dfrac{1}{6}\\ln\\left|\\dfrac{3 + x}{3 - x}\\right| + C$", feedback: "นี่คือสูตรของ $\\int\\tfrac{dx}{9 - x^2}$ ตัวส่วนมี $4x^2 = (2x)^2$ จึงต้องให้ $u = 2x$" }
+      - { id: d, text: "$\\dfrac{1}{4}\\ln\\left|\\dfrac{2 + 3x}{2 - 3x}\\right| + C$", feedback: "สลับบทบาทของ $a$ กับสัมประสิทธิ์ของ $x$: $a^2 = 9$ จึง $a = 3$ และ $u = 2x$" }
+    hints:
+      - "จัด $9 - 4x^2 = 3^2 - (2x)^2$ ให้ $a = 3$, $u = 2x$"
+      - "$du = 2\\,dx$ จึง $dx = \\tfrac12du$"
+    solution: "$\\int\\tfrac{dx}{9 - 4x^2} = \\tfrac12\\int\\tfrac{du}{9 - u^2} = \\tfrac12 \\cdot \\tfrac16\\ln\\left|\\tfrac{3 + u}{3 - u}\\right| + C = \\tfrac{1}{12}\\ln\\left|\\tfrac{3 + 2x}{3 - 2x}\\right| + C$ ตรวจ: อนุพันธ์คือ $\\tfrac{1}{12}\\big(\\tfrac{2}{3 + 2x} + \\tfrac{2}{3 - 2x}\\big) = \\tfrac{1}{12} \\cdot \\tfrac{12}{9 - 4x^2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

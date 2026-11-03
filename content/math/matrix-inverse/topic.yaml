@@ -1,0 +1,62 @@
+id: math.linalg.matrix-inverse
+subject: math
+title: { th: เมทริกซ์ผกผันด้วยวิธีเกาส์–จอร์แดนและการแก้ระบบสมการ, en: Matrix inverses by Gauss–Jordan elimination }
+summary: หาตัวผกผันของเมทริกซ์สามคูณสามด้วยการดำเนินการตามแถว สมบัติของตัวผกผัน เมทริกซ์ผูกพัน กฎของคราเมอร์ และการแก้ระบบสมการเมื่อค่าคงตัวเปลี่ยนหลายครั้ง
+difficulty: 7.5
+minutes: 45
+prerequisites: [math.linalg.matrices-elimination]
+encompasses:
+  - { id: math.linalg.matrices-elimination, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: gauss-jordan-steps.svg
+    alt: "เมทริกซ์แต่งเติม 3 × 6 ห้าขั้นต่อกันด้วยลูกศร เริ่มจาก [A | I] ที่ A มีแถว (1, 2, 1), (2, 5, 3), (1, 3, 3) ขั้นที่ 1 ทำ R₂ − 2R₁ และ R₃ − R₁ ได้แถว (0, 1, 1 | −2, 1, 0) และ (0, 1, 2 | −1, 0, 1) ขั้นที่ 2 ทำ R₃ − R₂ ได้แถวสาม (0, 0, 1 | 1, −1, 1) ขั้นที่ 3 ทำ R₂ − R₃ และ R₁ − R₃ ได้แถว (1, 2, 0 | 0, 1, −1) และ (0, 1, 0 | −3, 2, −1) ขั้นสุดท้ายทำ R₁ − 2R₂ ได้ [I | A⁻¹] โดย A⁻¹ มีแถว (6, −3, 1), (−3, 2, −1), (1, −1, 1) แถวที่เพิ่งเปลี่ยนระบายสีส้ม ด้านขวาของเส้นประเป็นสีแดง"
+    caption: "ทำการดำเนินการตามแถวกับทั้งแถวยาว ด้านซ้ายกลายเป็น I ด้านขวากลายเป็น A⁻¹"
+  - type: worked-example
+    title: ใช้ตัวผกผันตัวเดียวกับค่าคงตัวหลายชุด
+    problem: "ให้ $A = \\begin{pmatrix} 1 & 2 & 1 \\\\ 2 & 5 & 3 \\\\ 1 & 3 & 3 \\end{pmatrix}$ จงแก้ $A\\mathbf{x} = \\mathbf{b}_1$ และ $A\\mathbf{x} = \\mathbf{b}_2$ เมื่อ $\\mathbf{b}_1 = (4, 11, 10)$ และ $\\mathbf{b}_2 = (8, 21, 17)$"
+    steps:
+      - text: "หา $A^{-1}$ ด้วยเกาส์–จอร์แดนครั้งเดียว (ตามภาพ) ได้ $A^{-1} = \\begin{pmatrix} 6 & -3 & 1 \\\\ -3 & 2 & -1 \\\\ 1 & -1 & 1 \\end{pmatrix}$"
+      - text: "ตรวจแถวแรกของ $AA^{-1}$: $(1, 2, 1)$ คูณหลักแรก $(6, -3, 1)$ ได้ $6 - 6 + 1 = 1$ และคูณหลักที่สอง $(-3, 2, -1)$ ได้ $-3 + 4 - 1 = 0$"
+        why: "ตรวจสักสองสามช่องก่อนใช้งาน ถ้าผิดตั้งแต่ตัวผกผัน คำตอบทุกชุดจะผิดหมด"
+      - text: "$\\mathbf{x}_1 = A^{-1}\\mathbf{b}_1 = \\begin{pmatrix} 24 - 33 + 10 \\\\ -12 + 22 - 10 \\\\ 4 - 11 + 10 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 3 \\end{pmatrix}$"
+      - text: "$\\mathbf{x}_2 = A^{-1}\\mathbf{b}_2 = \\begin{pmatrix} 48 - 63 + 17 \\\\ -24 + 42 - 17 \\\\ 8 - 21 + 17 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 1 \\\\ 4 \\end{pmatrix}$"
+        why: "ชุดที่สองไม่ต้องทำการดำเนินการตามแถวใหม่ แค่คูณเมทริกซ์กับเวกเตอร์"
+      - text: "ตรวจ $\\mathbf{x}_2$: $2 + 2 + 4 = 8$, $4 + 5 + 12 = 21$, $2 + 3 + 12 = 17$ ตรงกับ $\\mathbf{b}_2$"
+    answer: "$\\mathbf{x}_1 = (1, 0, 3)$ และ $\\mathbf{x}_2 = (2, 1, 4)$"
+  - { type: check, problem: math.linalg.matrix-inverse.p004, prompt: "ลองลบแถวแรกออกจากแถวอื่นด้วยพหุคูณที่เหมาะ แล้วดูว่าแถวสุดท้ายด้านซ้ายเหลืออะไร" }
+  - type: worked-example
+    title: กฎของคราเมอร์
+    problem: "จงหา $y$ จากระบบ $2x + y - z = 1$, $x + 3y + 2z = 13$, $x - y + z = 2$ ด้วยกฎของคราเมอร์"
+    steps:
+      - text: "$\\det A = \\begin{vmatrix} 2 & 1 & -1 \\\\ 1 & 3 & 2 \\\\ 1 & -1 & 1 \\end{vmatrix} = 2(3 + 2) - 1(1 - 2) + (-1)(-1 - 3) = 10 + 1 + 4 = 15$"
+        why: "ต้องได้ $\\det A \\ne 0$ ก่อน กฎของคราเมอร์จึงใช้ได้"
+      - text: "แทนหลักที่สอง (หลักของ $y$) ด้วย $\\mathbf{b} = (1, 13, 2)$: $\\det A_y = \\begin{vmatrix} 2 & 1 & -1 \\\\ 1 & 13 & 2 \\\\ 1 & 2 & 1 \\end{vmatrix} = 2(13 - 4) - 1(1 - 2) + (-1)(2 - 13) = 18 + 1 + 11 = 30$"
+      - text: "$y = \\dfrac{\\det A_y}{\\det A} = \\dfrac{30}{15} = 2$"
+      - text: "ทำแบบเดียวกันได้ $x = \\tfrac{15}{15} = 1$ และ $z = \\tfrac{45}{15} = 3$ ตรวจ: $2 + 2 - 3 = 1$, $1 + 6 + 6 = 13$, $1 - 2 + 3 = 2$"
+    answer: "$y = 2$ (และ $x = 1$, $z = 3$)"
+  - { type: check, problem: math.linalg.matrix-inverse.p008, prompt: "หา $\\det A$ ก่อน แล้วแทนเฉพาะหลักของตัวแปรที่ต้องการด้วย $\\mathbf{b}$" }
+glossary:
+  - { term: เมทริกซ์ผกผัน, definition: "A⁻¹ ที่ทำให้ AA⁻¹ = A⁻¹A = I มีเมื่อ det A ≠ 0 เท่านั้น" }
+  - { term: วิธีเกาส์–จอร์แดน, definition: "ใช้การดำเนินการตามแถวจนด้านซ้ายเป็น I เมื่อทำกับ [A | I] จะได้ [I | A⁻¹]" }
+  - { term: เมทริกซ์เอกฐาน, definition: "เมทริกซ์จัตุรัสที่ไม่มีตัวผกผัน ดีเทอร์มิแนนต์เป็นศูนย์" }
+  - { term: ตัวประกอบร่วมเกี่ยว, definition: "Cᵢⱼ = (−1)^(i+j) Mᵢⱼ เมื่อ Mᵢⱼ เป็นดีเทอร์มิแนนต์หลังตัดแถว i หลัก j" }
+  - { term: เมทริกซ์ผูกพัน, definition: "adj A คือเมทริกซ์ตัวประกอบร่วมเกี่ยวที่สลับเปลี่ยนแล้ว A⁻¹ = adj A / det A" }
+  - { term: กฎของคราเมอร์, definition: "xᵢ = det Aᵢ / det A เมื่อ Aᵢ คือ A ที่แทนหลัก i ด้วย b" }
+flashcards:
+  - { front: "หา A⁻¹ ด้วยเกาส์–จอร์แดน", back: "[A | I] → [I | A⁻¹] ด้วยการดำเนินการตามแถว" }
+  - { front: "(AB)⁻¹ = ?", back: "B⁻¹A⁻¹ (ลำดับกลับกัน)" }
+  - { front: "เจอแถวศูนย์ด้านซ้ายระหว่างทำเกาส์–จอร์แดน", back: "A ไม่มีตัวผกผัน det A = 0" }
+  - { front: "A⁻¹ ด้วยเมทริกซ์ผูกพัน", back: "A⁻¹ = (1/det A) adj A และ adj A = Cᵀ" }
+  - { front: "กฎของคราเมอร์", back: "xᵢ = det Aᵢ / det A (แทนหลัก i ด้วย b)" }
+references:
+  - { title: "7.7 Solving Systems with Inverses (College Algebra 2e, OpenStax)", url: "https://openstax.org/books/college-algebra-2e/pages/7-7-solving-systems-with-inverses", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "7.8 Solving Systems with Cramer's Rule (College Algebra 2e, OpenStax)", url: "https://openstax.org/books/college-algebra-2e/pages/7-8-solving-systems-with-cramers-rule", source: openstax, lang: en, license: CC-BY-4.0 }
+  - { title: "18.06 Linear Algebra (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Invertible matrix", url: "https://en.wikipedia.org/wiki/Invertible_matrix", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

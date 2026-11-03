@@ -1,0 +1,71 @@
+id: math.calculus.tangent-planes
+subject: math
+title: { th: ระนาบสัมผัสและการประมาณเชิงเส้นของฟังก์ชันหลายตัวแปร, en: Tangent planes and linear approximations }
+summary: สมการระนาบสัมผัสของพื้นผิวและพื้นผิวระดับ การประมาณเชิงเส้น ความหาอนุพันธ์ได้ และผลต่างเชิงอนุพันธ์รวมสำหรับประมาณความคลาดเคลื่อนจากการวัดหลายปริมาณ
+difficulty: 8.5
+minutes: 45
+prerequisites: [math.calculus.partial-derivatives, math.calculus.derivative-applications]
+encompasses:
+  - { id: math.calculus.partial-derivatives, weight: 0.5 }
+  - { id: math.calculus.derivative-applications, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: tangent-plane.svg
+    alt: "ภาพสามมิติแบบโครงลวดของพื้นผิวรูปโดม z = 4 − x² − y² ยอดอยู่ที่ (0, 0, 4) แผ่นสี่เหลี่ยมสีแดงคือระนาบสัมผัส z = 6 − 2x − 2y แตะพื้นผิวที่จุดดำ (1, 1, 2) มีลูกศรสีเขียว n = (2, 2, 1) ชี้ออกจากจุดสัมผัสตั้งฉากกับระนาบ"
+    caption: "ระนาบสัมผัสที่ (1, 1, 2) ใกล้จุดสัมผัสแทบแยกไม่ออกจากพื้นผิว"
+  - type: interactive
+    title: รอยตัดของระนาบสัมผัสในแนว y = b
+    caption: "เส้นแรกคือรอยตัด z = 4 − x² − b² ของพื้นผิวกับระนาบ y = b เส้นที่สองคือรอยตัดของระนาบสัมผัสที่จุด (a, b) ซึ่งเป็นเส้นตรง เลื่อน a และ b แล้วสังเกตว่าเส้นตรงแตะเส้นโค้งที่ x = a และใกล้กันมากเฉพาะรอบจุดนั้น"
+    widget:
+      kind: function-plot
+      functions: ["4-x^2-b^2", "4-a^2-b^2-2a\\cdot(x-a)"]
+      sliders:
+        - { name: a, min: -2, max: 2, step: 0.1, value: 1, label: จุดสัมผัส a }
+        - { name: b, min: -1.5, max: 1.5, step: 0.1, value: 1, label: ระนาบตัด y = b }
+      x: [-3, 3]
+      y: [-4, 6]
+  - type: worked-example
+    title: ประมาณค่าฟังก์ชันด้วยระนาบสัมผัส
+    problem: "ให้ $f(x, y) = xe^{xy}$ จงหาการประมาณเชิงเส้นที่ $(1, 0)$ แล้วประมาณ $f(1.1, -0.1)$"
+    steps:
+      - text: "$f(1, 0) = 1 \\cdot e^0 = 1$"
+      - text: "$f_x = e^{xy} + xye^{xy}$ ได้ $f_x(1, 0) = 1$ และ $f_y = x^2e^{xy}$ ได้ $f_y(1, 0) = 1$"
+        why: "แทนค่าจุดสัมผัสหลังหาอนุพันธ์ย่อยแล้ว ระนาบจึงมีแต่พจน์เชิงเส้น"
+      - text: "$L(x, y) = 1 + 1(x - 1) + 1(y - 0) = x + y$"
+      - text: "$f(1.1, -0.1) \\approx L(1.1, -0.1) = 1.1 - 0.1 = 1.0$"
+      - text: "ค่าจริง $1.1e^{-0.11} \\approx 0.985$ คลาดเคลื่อนราว 0.015 เพราะจุดอยู่ห่างจากจุดสัมผัส 0.1 ทั้งสองแกน"
+    answer: "$L(x, y) = x + y$ และ $f(1.1, -0.1) \\approx 1.0$"
+  - { type: check, problem: math.calculus.tangent-planes.p003, prompt: "หา $f$, $f_x$, $f_y$ ที่ $(2, 1)$ ก่อน แล้วระวังว่า $dy$ เป็นลบ" }
+  - type: worked-example
+    title: ความคลาดเคลื่อนของปริมาตรกระป๋อง
+    problem: "วัดกระป๋องทรงกระบอกได้รัศมี $4$ cm ความสูง $10$ cm โดยรัศมีอาจคลาดเคลื่อน $0.02$ cm และความสูงอาจคลาดเคลื่อน $0.05$ cm จงประมาณความคลาดเคลื่อนสูงสุดของปริมาตร"
+    steps:
+      - text: "$V = \\pi r^2h$ จึง $dV = 2\\pi rh\\,dr + \\pi r^2\\,dh$"
+      - text: "แทนค่า: $2\\pi(4)(10)(0.02) + \\pi(16)(0.05) = 1.6\\pi + 0.8\\pi = 2.4\\pi \\approx 7.54\\ \\mathrm{cm^3}$"
+        why: "เอาขนาดของแต่ละพจน์มาบวกกัน เพราะต้องการกรณีที่ความคลาดเคลื่อนเสริมกันมากที่สุด"
+      - text: "ปริมาตร $V = \\pi(16)(10) = 160\\pi \\approx 502.7\\ \\mathrm{cm^3}$ ความคลาดเคลื่อนสัมพัทธ์ $\\dfrac{2.4\\pi}{160\\pi} = 1.5\\%$"
+      - text: "ตรวจด้วยสูตรสัมพัทธ์: $2\\dfrac{0.02}{4} + \\dfrac{0.05}{10} = 1\\% + 0.5\\% = 1.5\\%$ ตรงกัน"
+    answer: "ประมาณ $\\pm 7.5\\ \\mathrm{cm^3}$ หรือ 1.5% ของปริมาตร"
+  - { type: check, problem: math.calculus.tangent-planes.p009, prompt: "เขียน $\\tfrac{dV}{V}$ ในรูป $\\tfrac{dr}{r}$ กับ $\\tfrac{dh}{h}$ แล้วระวังเลขชี้กำลังของ $r$" }
+glossary:
+  - { term: ระนาบสัมผัส, definition: "ระนาบที่แตะพื้นผิว ณ จุดหนึ่ง และมีเส้นสัมผัสทุกเส้นของพื้นผิวที่จุดนั้น" }
+  - { term: การประมาณเชิงเส้น, definition: "L(x, y) = f(a, b) + fₓ(a, b)(x − a) + f_y(a, b)(y − b) ใช้แทน f ใกล้ (a, b)" }
+  - { term: ผลต่างเชิงอนุพันธ์รวม, definition: "dz = fₓ dx + f_y dy ประมาณการเปลี่ยนแปลงของ z เมื่อ x, y เปลี่ยนเล็กน้อย" }
+  - { term: ความหาอนุพันธ์ได้, definition: "f − L เล็กลงเร็วกว่าระยะห่างจากจุด รับรองได้เมื่ออนุพันธ์ย่อยต่อเนื่อง" }
+  - { term: เส้นตั้งฉาก, definition: "เส้นตรงผ่านจุดบนพื้นผิวในทิศของเกรเดียนต์ ∇F" }
+flashcards:
+  - { front: "ระนาบสัมผัสของ z = f(x, y) ที่ (a, b)", back: "z = f(a, b) + fₓ(a, b)(x − a) + f_y(a, b)(y − b)" }
+  - { front: "ระนาบสัมผัสของ F(x, y, z) = k", back: "∇F(x₀, y₀, z₀) · (x − x₀, y − y₀, z − z₀) = 0" }
+  - { front: "ผลต่างเชิงอนุพันธ์รวม", back: "dz = fₓ dx + f_y dy" }
+  - { front: "ความคลาดเคลื่อนสัมพัทธ์ของ V = πr²h", back: "dV/V = 2 dr/r + dh/h" }
+  - { front: "มีอนุพันธ์ย่อยแล้วหาอนุพันธ์ได้หรือไม่", back: "ไม่เสมอ ต้องให้อนุพันธ์ย่อยต่อเนื่องจึงรับรองได้" }
+references:
+  - { title: "4.4 Tangent Planes and Linear Approximations (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/4-4-tangent-planes-and-linear-approximations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "18.02SC Multivariable Calculus (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Linear approximation", url: "https://en.wikipedia.org/wiki/Linear_approximation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

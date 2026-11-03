@@ -1,0 +1,283 @@
+problems:
+  - id: math.calculus.change-of-variables.p001
+    topics: [math.calculus.change-of-variables]
+    difficulty: 1
+    type: mcq
+    stem: "สำหรับการแปลง $x = x(u, v)$, $y = y(u, v)$ จาโคเบียน $\\dfrac{\\partial(x, y)}{\\partial(u, v)}$ คือข้อใด"
+    choices:
+      - { id: a, text: "$\\dfrac{\\partial x}{\\partial u}\\dfrac{\\partial y}{\\partial v} - \\dfrac{\\partial x}{\\partial v}\\dfrac{\\partial y}{\\partial u}$", correct: true }
+      - { id: b, text: "$\\dfrac{\\partial x}{\\partial u}\\dfrac{\\partial y}{\\partial v} + \\dfrac{\\partial x}{\\partial v}\\dfrac{\\partial y}{\\partial u}$", feedback: "ดีเทอร์มิแนนต์ $2 \\times 2$ คือ $ad - bc$ ต้องเป็นเครื่องหมายลบ" }
+      - { id: c, text: "$\\dfrac{\\partial x}{\\partial u} + \\dfrac{\\partial y}{\\partial v}$", feedback: "นี่คือผลบวกของสมาชิกบนเส้นทแยงมุม (รอย) ไม่ใช่ดีเทอร์มิแนนต์" }
+      - { id: d, text: "$\\dfrac{\\partial u}{\\partial x}\\dfrac{\\partial v}{\\partial y} - \\dfrac{\\partial u}{\\partial y}\\dfrac{\\partial v}{\\partial x}$", feedback: "นี่คือ $\\tfrac{\\partial(u, v)}{\\partial(x, y)}$ ซึ่งเป็นส่วนกลับของจาโคเบียนที่ถาม" }
+    hints:
+      - "จาโคเบียนคือดีเทอร์มิแนนต์ของเมทริกซ์อนุพันธ์ย่อย แถวแรกเป็นของ $x$ แถวที่สองเป็นของ $y$"
+      - "$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = ad - bc$"
+    solution: "$\\dfrac{\\partial(x, y)}{\\partial(u, v)} = \\begin{vmatrix} x_u & x_v \\\\ y_u & y_v \\end{vmatrix} = x_uy_v - x_vy_u$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p002
+    topics: [math.calculus.change-of-variables]
+    difficulty: 2
+    type: numeric
+    stem: "การแปลง $x = 2u + v$, $y = u - 3v$ ขยายพื้นที่ด้วยตัวประกอบเท่าใด (หา $\\left|\\tfrac{\\partial(x, y)}{\\partial(u, v)}\\right|$)"
+    answer: { value: 7 }
+    misconceptions:
+      - { match: -7, feedback: "$-7$ คือจาโคเบียน อัตราขยายพื้นที่ใช้ค่าสัมบูรณ์" }
+      - { match: -5, feedback: "ดีเทอร์มิแนนต์คือ $ad - bc$ ไม่ใช่ $ad + bc$" }
+    hints:
+      - "$x_u = 2$, $x_v = 1$, $y_u = 1$, $y_v = -3$"
+      - "$J = (2)(-3) - (1)(1)$"
+    solution: "$J = \\begin{vmatrix} 2 & 1 \\\\ 1 & -3 \\end{vmatrix} = -6 - 1 = -7$ อัตราขยายพื้นที่ $|J| = 7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p003
+    topics: [math.calculus.change-of-variables]
+    difficulty: 2
+    type: mcq
+    stem: "เมื่อเปลี่ยนเป็นพิกัดเชิงขั้ว $x = r\\cos\\theta$, $y = r\\sin\\theta$ ชิ้นพื้นที่ $dA$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$r\\,dr\\,d\\theta$", correct: true }
+      - { id: b, text: "$dr\\,d\\theta$", feedback: "ลืมจาโคเบียน ชิ้นที่อยู่ไกลจุดกำเนิดมีส่วนโค้งยาว $r\\,d\\theta$ จึงใหญ่กว่า" }
+      - { id: c, text: "$r^2\\,dr\\,d\\theta$", feedback: "$J = r\\cos^2\\theta + r\\sin^2\\theta = r$ ไม่ใช่ $r^2$ ($\\rho^2$ เป็นของพิกัดทรงกลมสามมิติ)" }
+      - { id: d, text: "$r\\sin\\theta\\,dr\\,d\\theta$", feedback: "ตัวประกอบ $\\sin\\varphi$ อยู่ในพิกัดทรงกลม ในพิกัดเชิงขั้ว $\\cos^2\\theta + \\sin^2\\theta = 1$" }
+    hints:
+      - "หาดีเทอร์มิแนนต์ $\\begin{vmatrix} \\cos\\theta & -r\\sin\\theta \\\\ \\sin\\theta & r\\cos\\theta \\end{vmatrix}$"
+      - "ใช้ $\\cos^2\\theta + \\sin^2\\theta = 1$"
+    solution: "$J = r\\cos^2\\theta + r\\sin^2\\theta = r$ จึง $dA = r\\,dr\\,d\\theta$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p004
+    topics: [math.calculus.change-of-variables]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $x = uv$ และ $y = v$ จงหาค่าจาโคเบียน $\\dfrac{\\partial(x, y)}{\\partial(u, v)}$ ที่จุด $(u, v) = (2, 3)$"
+    answer: { value: 3 }
+    misconceptions:
+      - { match: 2, feedback: "นี่คือค่า $u$ ซึ่งเป็น $x_v$ จาโคเบียนคือ $x_uy_v - x_vy_u = v \\cdot 1 - u \\cdot 0$" }
+      - { match: 6, feedback: "จาโคเบียนไม่ใช่ $uv$ ต้องหาดีเทอร์มิแนนต์ของอนุพันธ์ย่อย" }
+    hints:
+      - "$x_u = v$, $x_v = u$, $y_u = 0$, $y_v = 1$"
+      - "$J = v(1) - u(0)$"
+    solution: "$J = \\begin{vmatrix} v & u \\\\ 0 & 1 \\end{vmatrix} = v$ ที่ $(2, 3)$ ได้ $J = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p005
+    topics: [math.calculus.change-of-variables]
+    difficulty: 3
+    type: numeric
+    stem: "ใช้การแปลง $x = 3u$, $y = 2v$ หาพื้นที่ของวงรี $\\dfrac{x^2}{9} + \\dfrac{y^2}{4} \\le 1$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 18.85, tolerance: 0.02 }
+    misconceptions:
+      - { match: 3.14, feedback: "นี่คือพื้นที่วงกลมหนึ่งหน่วยในระนาบ $uv$ ลืมคูณ $|J| = 6$" }
+      - { match: 0.524, feedback: "หารด้วย 6 แทนที่จะคูณ จาโคเบียน $\\tfrac{\\partial(x, y)}{\\partial(u, v)} = 6$ ขยายพื้นที่" }
+    hints:
+      - "วงรีกลายเป็น $u^2 + v^2 \\le 1$ ซึ่งมีพื้นที่ $\\pi$"
+      - "$J = \\begin{vmatrix} 3 & 0 \\\\ 0 & 2 \\end{vmatrix} = 6$"
+    solution: "พื้นที่ $= \\iint_{u^2 + v^2 \\le 1} 6\\,du\\,dv = 6\\pi \\approx 18.85$ ตรงกับสูตร $\\pi ab = \\pi(3)(2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p006
+    topics: [math.calculus.change-of-variables]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $R$ เป็นสี่เหลี่ยมด้านขนานที่ล้อมด้วย $x + y = 0$, $x + y = 2$, $x - 2y = 0$ และ $x - 2y = 3$ จงหา $\\displaystyle\\iint_R (x + y)\\,dA$ โดยใช้ $u = x + y$, $v = x - 2y$"
+    answer: { value: 2 }
+    misconceptions:
+      - { match: 6, feedback: "ลืมคูณ $|J| = \\tfrac13$" }
+      - { match: 18, feedback: "คูณด้วย $\\left|\\tfrac{\\partial(u, v)}{\\partial(x, y)}\\right| = 3$ แทน ต้องใช้ส่วนกลับ $\\tfrac13$" }
+    hints:
+      - "บริเวณใหม่ $0 \\le u \\le 2$, $0 \\le v \\le 3$ และ $\\tfrac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} 1 & 1 \\\\ 1 & -2 \\end{vmatrix}$"
+      - "$\\left|\\tfrac{\\partial(x, y)}{\\partial(u, v)}\\right| = \\tfrac13$ และ $x + y = u$"
+    solution: "$\\tfrac{\\partial(u, v)}{\\partial(x, y)} = -2 - 1 = -3$ จึง $|J| = \\tfrac13$ ได้ $\\displaystyle\\int_0^3\\!\\!\\int_0^2 \\frac{u}{3}\\,du\\,dv = \\frac13 \\cdot 2 \\cdot 3 = 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p007
+    topics: [math.calculus.change-of-variables]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $u = x + y$ และ $v = x - y$ จงหา $\\left|\\dfrac{\\partial(x, y)}{\\partial(u, v)}\\right|$"
+    answer: { value: 0.5, tolerance: 0.001 }
+    misconceptions:
+      - { match: 2, feedback: "นี่คือ $\\left|\\tfrac{\\partial(u, v)}{\\partial(x, y)}\\right|$ ต้องกลับเศษเป็นส่วน" }
+      - { match: -2, feedback: "นี่คือ $\\tfrac{\\partial(u, v)}{\\partial(x, y)}$ ต้องกลับเศษเป็นส่วนและใช้ค่าสัมบูรณ์" }
+    hints:
+      - "$\\dfrac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} 1 & 1 \\\\ 1 & -1 \\end{vmatrix}$"
+      - "$\\dfrac{\\partial(x, y)}{\\partial(u, v)} = 1 \\Big/ \\dfrac{\\partial(u, v)}{\\partial(x, y)}$"
+    solution: "$\\tfrac{\\partial(u, v)}{\\partial(x, y)} = -1 - 1 = -2$ จึง $\\left|\\tfrac{\\partial(x, y)}{\\partial(u, v)}\\right| = \\tfrac12$ ตรวจ: แก้ได้ $x = \\tfrac{u + v}{2}$, $y = \\tfrac{u - v}{2}$ และ $J = \\tfrac12(-\\tfrac12) - \\tfrac12 \\cdot \\tfrac12 = -\\tfrac12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p008
+    topics: [math.calculus.change-of-variables]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการหาปริพันธ์สองชั้นด้วยการเปลี่ยนตัวแปร"
+    items:
+      - "เลือก $u, v$ จากสมการขอบของบริเวณ $R$"
+      - "หาบริเวณใหม่ $S$ ในระนาบ $uv$"
+      - "หาจาโคเบียน $\\tfrac{\\partial(x, y)}{\\partial(u, v)}$ (หรือส่วนกลับของ $\\tfrac{\\partial(u, v)}{\\partial(x, y)}$)"
+      - "เขียนฟังก์ชันในรูป $u, v$ และคูณด้วย $|J|$"
+      - "หาปริพันธ์บน $S$"
+    hints:
+      - "เริ่มจากดูรูปร่างของบริเวณ"
+      - "ต้องรู้ตัวแปรใหม่ก่อนจึงหาจาโคเบียนได้"
+    solution: "เลือก $u, v$ → หาบริเวณ $S$ → หาจาโคเบียน → แปลงฟังก์ชันและคูณ $|J|$ → หาปริพันธ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p009
+    topics: [math.calculus.change-of-variables]
+    difficulty: 4
+    type: numeric
+    stem: "บริเวณ $R$ ในภาพอยู่ในจตุภาคที่หนึ่ง ล้อมด้วย $xy = 1$, $xy = 4$, $y = x$ และ $y = 3x$ จงใช้ $u = xy$, $v = \\tfrac{y}{x}$ หาพื้นที่ของ $R$ (ตอบทศนิยมสามตำแหน่ง)"
+    figure:
+      src: p-hyperbola-region.svg
+      alt: "ระนาบ xy จตุภาคที่หนึ่ง เส้นประสีแดงคือไฮเพอร์โบลา xy = 1 และ xy = 4 เส้นประสีเขียวคือเส้นตรง y = x และ y = 3x ผ่านจุดกำเนิด บริเวณ R ระบายสีฟ้าอยู่ระหว่างไฮเพอร์โบลาทั้งสองและระหว่างเส้นตรงทั้งสอง มุมของ R อยู่ที่ประมาณ (0.58, 1.73), (1, 1), (2, 2) และ (1.15, 3.46)"
+    answer: { value: 1.648, tolerance: 0.003 }
+    misconceptions:
+      - { match: 6, feedback: "ลืมจาโคเบียน: $\\iint du\\,dv$ ได้พื้นที่ของสี่เหลี่ยมในระนาบ $uv$ เท่านั้น" }
+      - { match: 24, feedback: "ใช้ $\\tfrac{\\partial(u, v)}{\\partial(x, y)} = 2v$ แทน ต้องใช้ส่วนกลับ $\\tfrac{1}{2v}$" }
+    hints:
+      - "$\\dfrac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} y & x \\\\ -\\tfrac{y}{x^2} & \\tfrac1x \\end{vmatrix} = \\dfrac{2y}{x} = 2v$"
+      - "พื้นที่ $= \\displaystyle\\int_1^3\\!\\!\\int_1^4 \\frac{1}{2v}\\,du\\,dv$"
+    solution: "$|J| = \\tfrac{1}{2v}$ บริเวณใหม่ $1 \\le u \\le 4$, $1 \\le v \\le 3$ พื้นที่ $= 3 \\cdot \\tfrac12\\ln 3 = \\tfrac32\\ln 3 \\approx 1.648$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p010
+    topics: [math.calculus.change-of-variables]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\displaystyle\\iiint_B (x^2 + y^2 + z^2)\\,dV$ เมื่อ $B$ เป็นทรงกลมตันรัศมี 1 ที่มีจุดศูนย์กลางที่จุดกำเนิด (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 2.513, tolerance: 0.003 }
+    misconceptions:
+      - { match: 6.58, feedback: "ลืมจาโคเบียน $\\rho^2\\sin\\varphi$ ของพิกัดทรงกลม" }
+      - { match: 4.189, feedback: "ใช้ $dV = \\rho^2\\sin\\varphi$ ถูกแล้ว แต่ลืมคูณฟังก์ชัน $\\rho^2$ จึงได้ปริมาตรทรงกลม $\\tfrac43\\pi$ ต้องหา $\\int_0^1\\rho^4\\,d\\rho$" }
+    hints:
+      - "ใช้พิกัดทรงกลม $x^2 + y^2 + z^2 = \\rho^2$ และ $dV = \\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$"
+      - "$\\displaystyle\\int_0^{2\\pi}\\!\\int_0^{\\pi}\\!\\int_0^1 \\rho^4\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$"
+    solution: "$\\int_0^1\\rho^4\\,d\\rho = \\tfrac15$, $\\int_0^{\\pi}\\sin\\varphi\\,d\\varphi = 2$, $\\int_0^{2\\pi}d\\theta = 2\\pi$ ผลคูณ $\\tfrac{4\\pi}{5} \\approx 2.513$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p011
+    topics: [math.calculus.change-of-variables]
+    difficulty: 4
+    type: numeric
+    stem: "ถังหมักน้ำปลาทรงกระบอกในจังหวัดระยองรัศมี 1 m สูง 2 m ความเข้มข้นของเกลือขึ้นกับระยะ $r$ จากแกนกลางถังตามแบบจำลอง $c(r) = 200 + 100r^2$ กิโลกรัมต่อลูกบาศก์เมตร (ค่าสมมติ) จงหามวลเกลือทั้งถังเป็นกิโลกรัม (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1571, tolerance: 2, unit: kg }
+    misconceptions:
+      - { match: 2932, feedback: "ลืม $r$ ใน $dV = r\\,dz\\,dr\\,d\\theta$" }
+      - { match: 1466, feedback: "ใช้ความเข้มข้นเฉลี่ยของ $c$ ตามรัศมี ($\\tfrac{1}{1}\\int_0^1 c\\,dr$) คูณปริมาตรถัง ซึ่งไม่ถูก เพราะชั้นนอกมีปริมาตรมากกว่า ต้องถ่วงด้วย $r$" }
+    hints:
+      - "มวล $= \\displaystyle\\int_0^{2\\pi}\\!\\int_0^1\\!\\int_0^2 (200 + 100r^2)\\,r\\,dz\\,dr\\,d\\theta$"
+      - "$\\int_0^1 (200r + 100r^3)\\,dr = 100 + 25$"
+    solution: "มวล $= 2\\pi \\cdot 2 \\cdot (100 + 25) = 500\\pi \\approx 1{,}571$ kg"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p012
+    topics: [math.calculus.change-of-variables]
+    difficulty: 4
+    type: numeric
+    stem: "แปลงนาในสุพรรณบุรีเป็นรูปสี่เหลี่ยมด้านขนานที่มีมุมอยู่ที่ $(0, 0)$, $(100, 0)$, $(140, 80)$ และ $(40, 80)$ หน่วยเมตร ฝนที่ตกวันหนึ่งลึก $d(x, y) = 0.04 + 0.0002x$ เมตร (ค่าสมมติ) ใช้ $u = x - \\tfrac{y}{2}$, $v = y$ หาปริมาตรน้ำฝนที่ตกบนแปลงเป็นลูกบาศก์เมตร"
+    answer: { value: 432, tolerance: 0.5, unit: m³ }
+    misconceptions:
+      - { match: 320, feedback: "คิดเฉพาะความลึกคงที่ 0.04 m ลืมส่วน $0.0002x$ ที่เพิ่มตามระยะ $x$" }
+      - { match: 400, feedback: "ใช้ $x = u$ แทนที่จะเป็น $x = u + \\tfrac{v}{2}$ เมื่อแปลงฟังก์ชันต้องแทน $x$ ทั้งหมดในรูป $u, v$" }
+    hints:
+      - "บริเวณใหม่ $0 \\le u \\le 100$, $0 \\le v \\le 80$ และ $\\tfrac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} 1 & -\\tfrac12 \\\\ 0 & 1 \\end{vmatrix} = 1$"
+      - "$x = u + \\tfrac{v}{2}$ ปริมาตร $= \\displaystyle\\int_0^{80}\\!\\int_0^{100}\\Big(0.04 + 0.0002\\big(u + \\tfrac{v}{2}\\big)\\Big)\\,du\\,dv$"
+    solution: "$|J| = 1$ (การเฉือนไม่เปลี่ยนพื้นที่ แปลงนี้ 8,000 ตารางเมตร = 5 ไร่) ปริมาตร $= 0.04(8{,}000) + 0.0002\\big(80 \\cdot 5{,}000 + 100 \\cdot 1{,}600\\big) = 320 + 112 = 432\\ \\mathrm{m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p013
+    topics: [math.calculus.change-of-variables]
+    difficulty: 5
+    type: numeric
+    stem: "บ่อเลี้ยงปลานิลในฉะเชิงเทรามีขอบเป็นวงรี $\\dfrac{x^2}{30^2} + \\dfrac{y^2}{20^2} = 1$ (เมตร) ความลึกน้ำ $h(x, y) = 2\\Big(1 - \\dfrac{x^2}{900} - \\dfrac{y^2}{400}\\Big)$ เมตร (ค่าสมมติ) จงใช้ $x = 30r\\cos\\theta$, $y = 20r\\sin\\theta$ หาปริมาตรน้ำในบ่อเป็นลูกบาศก์เมตร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1885, tolerance: 2, unit: m³ }
+    misconceptions:
+      - { match: 5027, feedback: "ลืมตัว $r$ ในจาโคเบียน $J = 30 \\cdot 20 \\cdot r$" }
+      - { match: 3.14, feedback: "ลืมตัวประกอบ $ab = 600$ ในจาโคเบียน" }
+    hints:
+      - "บ่อกลายเป็น $0 \\le r \\le 1$, $0 \\le \\theta \\le 2\\pi$ และความลึก $2(1 - r^2)$"
+      - "$J = 600r$ ปริมาตร $= \\displaystyle\\int_0^{2\\pi}\\!\\int_0^1 2(1 - r^2)\\,600r\\,dr\\,d\\theta$"
+    solution: "$\\int_0^1 (r - r^3)\\,dr = \\tfrac14$ ปริมาตร $= 2 \\cdot 600 \\cdot \\tfrac14 \\cdot 2\\pi = 600\\pi \\approx 1{,}885\\ \\mathrm{m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p014
+    topics: [math.calculus.change-of-variables]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $T$ เป็นสามเหลี่ยมที่มีมุมอยู่ที่ $(0, 0)$, $(1, 0)$ และ $(0, 1)$ จงหา $\\displaystyle\\iint_T e^{(y - x)/(y + x)}\\,dA$ โดยใช้ $u = y - x$, $v = y + x$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.588, tolerance: 0.002 }
+    misconceptions:
+      - { match: 1.175, feedback: "ลืมคูณ $|J| = \\tfrac12$" }
+      - { match: 2.35, feedback: "คูณ $\\left|\\tfrac{\\partial(u, v)}{\\partial(x, y)}\\right| = 2$ แทนส่วนกลับ $\\tfrac12$" }
+    hints:
+      - "ขอบ $x = 0$ คือ $u = v$ ขอบ $y = 0$ คือ $u = -v$ และ $x + y = 1$ คือ $v = 1$ บริเวณใหม่ $0 \\le v \\le 1$, $-v \\le u \\le v$"
+      - "$|J| = \\tfrac12$ และ $\\int_{-v}^{v} e^{u/v}\\,du = v(e - e^{-1})$"
+    solution: "$\\displaystyle\\frac12\\int_0^1\\!\\int_{-v}^{v} e^{u/v}\\,du\\,dv = \\frac12\\int_0^1 v(e - e^{-1})\\,dv = \\frac{e - e^{-1}}{4} \\approx 0.588$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p015
+    topics: [math.calculus.change-of-variables]
+    difficulty: 3
+    type: match
+    stem: "จับคู่การแปลงกับค่าสัมบูรณ์ของจาโคเบียน"
+    pairs:
+      - { left: "เชิงขั้ว $x = r\\cos\\theta$, $y = r\\sin\\theta$", right: "$r$" }
+      - { left: "ทรงกลม $(\\rho, \\varphi, \\theta)$", right: "$\\rho^2\\sin\\varphi$" }
+      - { left: "ยืดแกน $x = au$, $y = bv$", right: "$ab$" }
+      - { left: "$x = \\tfrac{u + v}{2}$, $y = \\tfrac{u - v}{2}$", right: "$\\tfrac12$" }
+    hints:
+      - "หาดีเทอร์มิแนนต์ของเมทริกซ์อนุพันธ์ย่อยแต่ละแบบ"
+      - "การยืดแกนให้เมทริกซ์ทแยงมุม"
+    solution: "เชิงขั้ว: $r$ · ทรงกลม: $\\rho^2\\sin\\varphi$ · ยืดแกน: $\\begin{vmatrix} a & 0 \\\\ 0 & b \\end{vmatrix} = ab$ · $\\begin{vmatrix} \\tfrac12 & \\tfrac12 \\\\ \\tfrac12 & -\\tfrac12 \\end{vmatrix} = -\\tfrac12$ ค่าสัมบูรณ์ $\\tfrac12$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p016
+    topics: [math.calculus.change-of-variables]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "ข้อความใดเกี่ยวกับสูตรเปลี่ยนตัวแปร $\\iint_R f\\,dA = \\iint_S f\\,|J|\\,du\\,dv$ ถูกต้อง (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "ต้องใช้ค่าสัมบูรณ์ของจาโคเบียน เพราะพื้นที่ไม่ติดลบ", correct: true }
+      - { id: b, text: "$\\dfrac{\\partial(x, y)}{\\partial(u, v)} \\cdot \\dfrac{\\partial(u, v)}{\\partial(x, y)} = 1$", correct: true }
+      - { id: c, text: "ถ้าการแปลงเป็นเชิงเส้น จาโคเบียนเป็นค่าคงตัวทั้งบริเวณ", correct: true }
+      - { id: d, text: "จาโคเบียนของพิกัดทรงกลมไม่ขึ้นกับตำแหน่ง", feedback: "$\\rho^2\\sin\\varphi$ ขึ้นกับ $\\rho$ และ $\\varphi$ ชิ้นที่ไกลจุดกำเนิดใหญ่กว่า และชิ้นใกล้แกน $z$ เล็กกว่า" }
+      - { id: e, text: "เปลี่ยนตัวแปรแล้วใช้ขอบเขตเดิมของ $x, y$ ได้", feedback: "ขอบเขตต้องเป็นของบริเวณใหม่ $S$ ในระนาบ $uv$" }
+    hints:
+      - "จาโคเบียนของการแปลงเชิงเส้นคือดีเทอร์มิแนนต์ของเมทริกซ์คงที่"
+      - "การแปลงกลับมีเมทริกซ์อนุพันธ์เป็นตัวผกผัน"
+    solution: "(ก) จริง (ข) จริง เพราะเมทริกซ์อนุพันธ์ของการแปลงกลับเป็นตัวผกผัน และ $\\det(A^{-1}) = \\tfrac{1}{\\det A}$ (ค) จริง อนุพันธ์ย่อยของฟังก์ชันเชิงเส้นเป็นค่าคงตัว (ง) ไม่จริง (จ) ไม่จริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.change-of-variables.p017
+    topics: [math.calculus.change-of-variables]
+    difficulty: 2
+    type: numeric
+    stem: "การแปลง $x = 2u$, $y = 3v$ ส่งสี่เหลี่ยมผืนผ้า $0 \\le u \\le 1$, $0 \\le v \\le 2$ ไปเป็นบริเวณในระนาบ $xy$ จงหาพื้นที่ของภาพนั้น"
+    answer: { value: 12 }
+    misconceptions:
+      - { match: 2, feedback: "นี่คือพื้นที่ในระนาบ $uv$ ต้องคูณ $|J| = 6$" }
+      - { match: 6, feedback: "6 คือ $|J|$ ต้องคูณกับพื้นที่เดิม 2" }
+    hints:
+      - "$J = \\begin{vmatrix} 2 & 0 \\\\ 0 & 3 \\end{vmatrix} = 6$"
+      - "พื้นที่ใหม่ = $|J| \\times$ พื้นที่เดิม"
+    solution: "ภาพคือสี่เหลี่ยมผืนผ้า $0 \\le x \\le 2$, $0 \\le y \\le 6$ พื้นที่ $= 6 \\times 2 = 12$ ตรงกับ $|J| \\times 2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

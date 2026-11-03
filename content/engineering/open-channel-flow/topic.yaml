@@ -1,0 +1,136 @@
+id: engineering.fluids.open-channel-flow
+subject: engineering
+title:
+  th: ชลศาสตร์การไหลในทางน้ำเปิด
+  en: Open-channel flow
+summary: รัศมีชลศาสตร์ การไหลสม่ำเสมอด้วยสมการแมนนิง ความลึกปกติ พลังงานจำเพาะ ความลึกวิกฤตและเลขฟรูด การกระโดดของน้ำ และการวัดอัตราการไหลด้วยฝาย
+difficulty: 8.5
+minutes: 50
+prerequisites:
+- engineering.fluids.fluid-mechanics
+encompasses:
+- id: engineering.fluids.fluid-mechanics
+  weight: 0.4
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: channel-section.svg
+  alt: หน้าตัดคลองรูปสี่เหลี่ยมคางหมู ก้นกว้าง b ตลิ่งลาด z ต่อ 1 (แนวนอน z ส่วนต่อแนวดิ่ง 1 ส่วน) น้ำลึก y ผิวน้ำกว้าง T พื้นที่น้ำสีฟ้าเขียนว่า A = (b + zy)y เส้นสีแดงหนาตามก้นและตลิ่งใต้น้ำคือเส้นขอบเปียก P = b + 2y√(1 + z²) ไม่รวมผิวน้ำ และ R = A/P
+  caption: เส้นขอบเปียกนับเฉพาะผนังที่น้ำสัมผัส
+- type: worked-example
+  title: อัตราการไหลของคลองส่งน้ำดาดคอนกรีต
+  problem: คลองส่งน้ำดาดคอนกรีต (ข้อมูลสมมติ) ก้นกว้าง $2\ \mathrm{m}$ ลาดตลิ่ง $1.5:1$ น้ำลึก $1.2\ \mathrm{m}$ $n = 0.015$ ความลาด $0.0004$ (ลดลง 40 ซม. ต่อ 1 กม.) จงหาความเร็ว อัตราการไหล และชนิดการไหล
+  steps:
+  - text: $A = (2 + 1.5 \times 1.2)(1.2) = 4.56\ \mathrm{m^2}$
+  - text: $P = 2 + 2(1.2)\sqrt{1 + 1.5^2} = 6.327\ \mathrm{m}$ ได้ $R = 4.56/6.327 = 0.721\ \mathrm{m}$
+    why: ความยาวตลิ่งที่เปียกคือ $y\sqrt{1+z^2}$ ไม่ใช่ $zy$
+  - text: $V = \dfrac{1}{0.015}(0.721)^{2/3}(0.0004)^{1/2} = 1.072\ \mathrm{m/s}$
+  - text: $Q = AV = 4.56 \times 1.072 = 4.89\ \mathrm{m^3/s}$
+  - text: $T = 2 + 2(1.5)(1.2) = 5.6\ \mathrm{m}$, $D = A/T = 0.814\ \mathrm{m}$ ได้ $Fr = 1.072/\sqrt{9.81 \times 0.814} = 0.38$
+    why: หน้าตัดที่ไม่ใช่สี่เหลี่ยมใช้ความลึกชลศาสตร์ $D = A/T$ ในเลขฟรูด
+  answer: $V \approx 1.07\ \mathrm{m/s}$, $Q \approx 4.89\ \mathrm{m^3/s}$ การไหลต่ำกว่าวิกฤต ($Fr \approx 0.38$)
+- type: check
+  problem: engineering.fluids.open-channel-flow.p003
+  prompt: ผิวน้ำสัมผัสอะไร นับเป็นเส้นขอบเปียกไหม
+- type: figure
+  src: specific-energy.svg
+  alt: กราฟแกนนอนพลังงานจำเพาะ E (เมตร) แกนตั้งความลึก y (เมตร) ของรางสี่เหลี่ยมที่ q = 1.67 ตารางเมตรต่อวินาที เส้นโค้งสีน้ำเงินมีจุดต่ำสุดทางซ้ายที่จุดวิกฤต yc = 0.66 m และ Emin = 0.98 m แขนบนเข้าใกล้เส้นประ E = y แขนล่างพุ่งไปทางขวาเมื่อความลึกน้อย เส้นตั้งที่ E = 1.3 m ตัดเส้นโค้งสองจุด คือความลึกคู่ 1.20 m (ต่ำกว่าวิกฤต) และ 0.40 m (เหนือวิกฤต) ป้ายบอกว่าบริเวณบน Fr < 1 ลึกและช้า บริเวณล่าง Fr > 1 ตื้นและเร็ว
+  caption: พลังงานเดียวกัน มีความลึกได้สองค่า ยกเว้นที่จุดวิกฤต
+- type: interactive
+  title: พลังงานจำเพาะเมื่อเปลี่ยนอัตราการไหลต่อความกว้าง
+  caption: แกนนอนคือความลึก $y$ (m) แกนตั้งคือ $E = y + q^2/(2gy^2)$ (m) ลองเพิ่ม $q$ แล้วดูว่าจุดต่ำสุด (ความลึกวิกฤต) เลื่อนไปทางขวาและขึ้นบน ตามสูตร $y_c = (q^2/g)^{1/3}$
+  widget:
+    kind: function-plot
+    functions:
+    - x + \frac{q^2}{19.62 x^2}
+    sliders:
+    - name: q
+      min: 0.5
+      max: 4
+      step: 0.1
+      value: 1.7
+      label: q (m²/s)
+    x:
+    - 0
+    - 3
+    y:
+    - 0
+    - 4
+- type: worked-example
+  title: ความลึกปกติและความลึกวิกฤตของรางสี่เหลี่ยม
+  problem: รางระบายน้ำคอนกรีตกว้าง $3\ \mathrm{m}$ ($n = 0.014$) ความลาด $0.001$ ส่งน้ำ $5\ \mathrm{m^3/s}$ จงหาความลึกปกติ ความลึกวิกฤต และบอกชนิดการไหล
+  steps:
+  - text: ตั้ง $f(y) = \dfrac{3y}{0.014}\left(\dfrac{3y}{3 + 2y}\right)^{2/3}(0.001)^{1/2} - 5$ ที่ $y = 1.0$ ได้ $f = -0.179$ ที่ $y = 1.1$ ได้ $f = 0.505$
+    why: เครื่องหมายต่างกัน รากจึงอยู่ระหว่าง 1.0 กับ 1.1
+  - text: 'แบ่งครึ่งช่วง: $y = 1.05$ ได้ $f = 0.160$ เก็บช่วง $[1.0, 1.05]$ ทำซ้ำจนได้ $y_n = 1.026\ \mathrm{m}$'
+  - text: $q = 5/3 = 1.667\ \mathrm{m^2/s}$ ได้ $y_c = (1.667^2/9.81)^{1/3} = 0.657\ \mathrm{m}$
+  - text: $y_n > y_c$ การไหลต่ำกว่าวิกฤต ตรวจ $V = 1.624\ \mathrm{m/s}$, $Fr = 0.51$
+    why: ตรวจรากด้วยวิธีนิวตันได้ค่าเดียวกันถึงทศนิยมหกตำแหน่ง
+  answer: $y_n \approx 1.03\ \mathrm{m}$, $y_c \approx 0.66\ \mathrm{m}$ ต่ำกว่าวิกฤต
+- type: figure
+  src: hydraulic-jump.svg
+  alt: ภาพตัดตามยาว น้ำเหนือประตูระบายน้ำลึก น้ำพุ่งลอดใต้ประตูเป็นชั้นตื้น y₁ ไหลเร็ว V₁ (Fr₁ > 1 เหนือวิกฤต) แล้วผิวน้ำยกตัวขึ้นอย่างปั่นป่วนเป็นการกระโดดของน้ำ หลังจากนั้นน้ำลึก y₂ ไหลช้า V₂ (Fr₂ < 1 ต่ำกว่าวิกฤต) สัดส่วนความลึกวาดตาม y₁ = 0.4 m และ y₂ = 1.53 m
+  caption: การกระโดดของน้ำสูญเสียพลังงานในช่วงสั้น ๆ
+- type: check
+  problem: engineering.fluids.open-channel-flow.p010
+  prompt: ดูกราฟพลังงานจำเพาะ แขนใดตื้นกว่า
+glossary:
+- term: ทางน้ำเปิด
+  definition: ทางน้ำที่มีผิวอิสระสัมผัสบรรยากาศ เช่น คลอง ราง ท่อที่ไหลไม่เต็ม (open channel)
+- term: เส้นขอบเปียก
+  definition: ความยาวขอบหน้าตัดที่น้ำสัมผัส ไม่รวมผิวน้ำ (wetted perimeter)
+- term: รัศมีชลศาสตร์
+  definition: $R = A/P$ พื้นที่การไหลต่อเส้นขอบเปียก (hydraulic radius)
+- term: สมการแมนนิง
+  definition: $V = \tfrac{1}{n}R^{2/3}S^{1/2}$ ความเร็วของการไหลสม่ำเสมอ (Manning equation)
+- term: ความลึกปกติ
+  definition: ความลึกของการไหลสม่ำเสมอที่แรงโน้มถ่วงสมดุลกับแรงเสียดทาน (normal depth)
+- term: พลังงานจำเพาะ
+  definition: $E = y + V^2/(2g)$ พลังงานต่อน้ำหนักวัดจากก้นทางน้ำ (specific energy)
+- term: ความลึกวิกฤต
+  definition: ความลึกที่พลังงานจำเพาะต่ำสุดและ $Fr = 1$ (critical depth)
+- term: เลขฟรูด
+  definition: $Fr = V/\sqrt{gD}$ อัตราส่วนความเร็วน้ำต่อความเร็วคลื่นผิวน้ำ (Froude number)
+- term: การกระโดดของน้ำ
+  definition: การเปลี่ยนจากการไหลเหนือวิกฤตเป็นต่ำกว่าวิกฤตอย่างฉับพลัน พร้อมการสูญเสียพลังงาน (hydraulic jump)
+- term: ฝายสันคม
+  definition: แผ่นกั้นทางน้ำที่มีสันบาง ใช้วัดอัตราการไหลจากความสูงน้ำเหนือสัน (sharp-crested weir)
+flashcards:
+- front: สมการแมนนิง (SI)
+  back: $Q = \dfrac{A}{n}R^{2/3}S^{1/2}$, $R = A/P$
+- front: ความลึกวิกฤต (รางสี่เหลี่ยม)
+  back: $y_c = (q^2/g)^{1/3}$ · $E_{\min} = 1.5y_c$
+- front: เลขฟรูด
+  back: $Fr = V/\sqrt{gD}$ · $<1$ ต่ำกว่าวิกฤต · $>1$ เหนือวิกฤต
+- front: การกระโดดของน้ำ
+  back: $y_2/y_1 = \tfrac12(\sqrt{1 + 8Fr_1^2} - 1)$ · $\Delta E = (y_2 - y_1)^3/(4y_1y_2)$
+- front: หน้าตัดที่มีประสิทธิภาพ
+  back: สี่เหลี่ยม $b = 2y$ · คางหมูครึ่งหกเหลี่ยม
+references:
+- title: Open-channel flow
+  url: https://en.wikipedia.org/wiki/Open-channel_flow
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Manning formula
+  url: https://en.wikipedia.org/wiki/Manning_formula
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Hydraulic jump
+  url: https://en.wikipedia.org/wiki/Hydraulic_jump
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Froude number
+  url: https://en.wikipedia.org/wiki/Froude_number
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

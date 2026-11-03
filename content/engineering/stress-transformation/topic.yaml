@@ -1,0 +1,122 @@
+id: engineering.materials.stress-transformation
+subject: engineering
+title:
+  th: การแปลงความเค้น ความเค้นหลัก และวงกลมของมอร์
+  en: Stress transformation, principal stresses and Mohr's circle
+summary: สมการแปลงความเค้นระนาบ ความเค้นหลักและความเค้นเฉือนสูงสุด วงกลมของมอร์ กฎของฮุกหลายแกน การแปลงความเครียดและโรเซตต์ และเกณฑ์การครากของเทรสกาและฟอนมิเซส
+difficulty: 8.5
+minutes: 50
+prerequisites:
+- engineering.materials.stress-strain
+- math.functions.trig-functions
+encompasses:
+- id: engineering.materials.stress-strain
+  weight: 0.4
+- id: math.functions.trig-functions
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: stress-element.svg
+  alt: 'ก: ชิ้นส่วนสี่เหลี่ยมจัตุรัสในแกน x–y หน้าขวาและซ้ายมีลูกศร σx = 50 MPa ชี้ออก (ดึง) หน้าบนและล่างมีลูกศร σy = −10 MPa ชี้เข้า (อัด) และลูกศรความเค้นเฉือน τxy = 40 MPa บนทุกหน้า หน้าขวาชี้ขึ้น หน้าบนชี้ไปทางขวา ข: ชิ้นส่วนเดียวกันที่หมุนทวนเข็มนาฬิกาเป็นมุม θ มีความเค้น σx′ σy′ และ τx′y′ บนหน้าใหม่ มีเส้นประบอกมุม θ จากแนวนอน'
+  caption: สภาวะความเค้นเดียวกัน มองบนแกนต่างกันได้ค่าต่างกัน
+- type: worked-example
+  title: ความเค้นหลักด้วยสูตรและตรวจด้วยวงกลมของมอร์
+  problem: ที่จุดหนึ่งบนโครงเหล็กป้ายโฆษณาริมทางด่วน (ข้อมูลสมมติ) มี $\sigma_x = 50$, $\sigma_y = -10$, $\tau_{xy} = 40\ \mathrm{MPa}$ จงหาความเค้นหลัก มุมของระนาบหลัก และความเค้นเฉือนสูงสุดในระนาบ
+  steps:
+  - text: $C = \dfrac{50 + (-10)}{2} = 20\ \mathrm{MPa}$ และ $\dfrac{\sigma_x - \sigma_y}{2} = 30\ \mathrm{MPa}$
+  - text: $R = \sqrt{30^2 + 40^2} = 50\ \mathrm{MPa}$ ได้ $\sigma_1 = 70$, $\sigma_2 = -30\ \mathrm{MPa}$
+    why: 'ตรวจ: $\sigma_1 + \sigma_2 = 40 = \sigma_x + \sigma_y$'
+  - text: $\tan 2\theta_p = 80/60$ ได้ $2\theta_p = 53.13^\circ$ และ $\theta_p = 26.57^\circ$
+  - text: 'แทน $\theta = 26.57^\circ$ ในสมการแปลง: $\sigma_{x''} = 20 + 30(0.6) + 40(0.8) = 70$ และ $\tau_{x''y''} = -30(0.8) + 40(0.6) = 0$ ระนาบนี้จึงรับ $\sigma_1$'
+    why: มุมจาก $\arctan$ อาจเป็นระนาบของ $\sigma_2$ ก็ได้ จึงต้องแทนค่าตรวจทุกครั้ง
+  - text: บนวงกลมของมอร์ จุด X $(50, 40)$ หมุนทวนเข็มนาฬิกา $53.13^\circ$ ถึงจุด $\sigma_1 = 70$ สอดคล้องกับการหมุนชิ้นส่วนทวนเข็มนาฬิกา $26.57^\circ$ (ภาพถัดไป)
+  - text: $\tau_{\max} = R = 50\ \mathrm{MPa}$ บนระนาบ $\theta_s = 26.57^\circ - 45^\circ = -18.43^\circ$ ซึ่งมีความเค้นตั้งฉาก $C = 20\ \mathrm{MPa}$
+    why: ตรวจด้วยค่าเฉพาะของเมทริกซ์ความเค้นด้วย numpy ได้ 70 และ −30 ทิศเวกเตอร์เฉพาะ 26.57° ตรงกัน
+  answer: $\sigma_1 = 70\ \mathrm{MPa}$ ที่ $\theta_p = 26.57^\circ$, $\sigma_2 = -30\ \mathrm{MPa}$, $\tau_{\max} = 50\ \mathrm{MPa}$
+- type: figure
+  src: mohr-circle.svg
+  alt: วงกลมของมอร์ แกนนอน σ (MPa) แกนตั้ง τ บวกชี้ลง จุดศูนย์กลาง C = 20 รัศมี 50 จุด X (50, 40) แทนหน้า x อยู่ใต้แกน จุด Y (−10, −40) แทนหน้า y อยู่เหนือแกน เส้นประ XY ผ่านจุดศูนย์กลาง วงกลมตัดแกน σ ที่ σ₁ = 70 และ σ₂ = −30 จุดบนสุดของวงกลมคือ τmax = R = 50 ที่ σ = 20 ลูกศรโค้งสีส้มจาก X ไป σ₁ ทวนเข็มนาฬิกา 2θp = 53.13° ข้อความด้านล่างบอกว่าเท่ากับหมุนชิ้นส่วนทวนเข็มนาฬิกา θp = 26.57°
+  caption: อ่านความเค้นหลักและความเค้นเฉือนสูงสุดจากวงกลมเดียว
+- type: check
+  problem: engineering.materials.stress-transformation.p004
+  prompt: หา $C$ และ $R$ ก่อน แล้วตรวจว่า $\sigma_1 + \sigma_2 = \sigma_x + \sigma_y$
+- type: worked-example
+  title: 'เพลารับแรงดึงร่วมกับแรงบิด: เทรสกาเทียบฟอนมิเซส'
+  problem: เพลาตันเหล็ก $d = 40\ \mathrm{mm}$ ($\sigma_Y = 250\ \mathrm{MPa}$) รับแรงดึง $50\ \mathrm{kN}$ และแรงบิด $600\ \mathrm{N\cdot m}$ จงหาตัวประกอบความปลอดภัยตามเกณฑ์ทั้งสอง
+  steps:
+  - text: $\sigma = P/A = 50{,}000/1{,}256.6 = 39.79\ \mathrm{MPa}$
+  - text: $\tau = 16T/(\pi d^3) = 16(600{,}000)/(\pi \cdot 64{,}000) = 47.75\ \mathrm{MPa}$ ที่ผิว
+    why: ความเค้นเฉือนจากการบิดสูงสุดที่ผิว ส่วนความเค้นตามแนวแกนเท่ากันทั้งหน้าตัด จุดวิกฤตจึงอยู่ที่ผิว
+  - text: 'ความเค้นหลัก: $C = 19.89$, $R = \sqrt{19.89^2 + 47.75^2} = 51.73$ ได้ $\sigma_1 = 71.62$, $\sigma_2 = -31.83\ \mathrm{MPa}$'
+  - text: 'ฟอนมิเซส: $\sigma_{vm} = \sqrt{\sigma^2 + 3\tau^2} = 91.8\ \mathrm{MPa}$ ได้ $n = 250/91.8 = 2.72$'
+  - text: 'เทรสกา: $\sigma_1 - \sigma_2 = 103.5\ \mathrm{MPa}$ ได้ $n = 2.42$'
+    why: เครื่องหมายต่างกัน ความเค้นศูนย์ในแนวที่สามอยู่ระหว่างกลาง ผลต่างมากสุดจึงเป็น $\sigma_1 - \sigma_2$
+  answer: ฟอนมิเซส $n \approx 2.72$ เทรสกา $n \approx 2.42$ (เทรสกาอนุรักษ์กว่า)
+- type: figure
+  src: failure-envelope.svg
+  alt: กราฟในระนาบ σ₁/σY แนวนอน และ σ₂/σY แนวตั้ง ขอบเขตเทรสกาเป็นหกเหลี่ยมสีแดงผ่านจุด (1, 0) (1, 1) (0, 1) (−1, 0) (−1, −1) (0, −1) ขอบเขตฟอนมิเซสเป็นวงรีสีน้ำเงิน σ₁² − σ₁σ₂ + σ₂² = σY² ล้อมหกเหลี่ยมไว้และสัมผัสกันที่มุมทั้งหก เช่น (1, 1) บนเส้นประเฉือนล้วน σ₂ = −σ₁ วงรีอยู่ที่ τ = 0.577σY ส่วนหกเหลี่ยมอยู่ที่ τ = 0.5σY
+  caption: จุดความเค้นที่อยู่ในขอบเขตคือยังไม่คราก เทรสกาอยู่ด้านในจึงอนุรักษ์กว่า
+- type: check
+  problem: engineering.materials.stress-transformation.p009
+  prompt: ความเค้นเฉือนสูงสุดในระนาบคือส่วนใดของวงกลมของมอร์
+glossary:
+- term: ความเค้นระนาบ
+  definition: สภาวะที่ความเค้นบนหน้าที่ตั้งฉากกับแกนหนึ่งเป็นศูนย์ เหลือ $\sigma_x, \sigma_y, \tau_{xy}$ (plane stress)
+- term: สมการแปลงความเค้น
+  definition: สูตรหาความเค้นบนแกนที่หมุนไปมุม $\theta$ ใช้ฟังก์ชันของ $2\theta$ (stress transformation)
+- term: ความเค้นหลัก
+  definition: ความเค้นตั้งฉากค่ามากสุดและน้อยสุดที่จุดหนึ่ง บนระนาบที่ไม่มีความเค้นเฉือน (principal stresses)
+- term: ระนาบหลัก
+  definition: ระนาบที่รับความเค้นหลัก ทำมุม $\theta_p$ จาก $\tan 2\theta_p = 2\tau_{xy}/(\sigma_x - \sigma_y)$ (principal planes)
+- term: ความเค้นเฉือนสูงสุดในระนาบ
+  definition: $R = (\sigma_1 - \sigma_2)/2$ บนระนาบที่ทำมุม $45^\circ$ กับระนาบหลัก (maximum in-plane shear stress)
+- term: วงกลมของมอร์
+  definition: วงกลมในระนาบ $(\sigma, \tau)$ ที่แสดงความเค้นบนทุกระนาบที่ผ่านจุดหนึ่ง (Mohr's circle)
+- term: กฎของฮุกแบบทั่วไป
+  definition: ความสัมพันธ์ความเค้นกับความเครียดสามแกนที่รวมผลของอัตราส่วนปัวซอง (generalized Hooke's law)
+- term: โรเซตต์มาตรวัดความเครียด
+  definition: มาตรวัดความเครียดสามตัวที่มุมต่างกัน ใช้หาความเครียดระนาบครบสามค่า (strain rosette)
+- term: เกณฑ์เทรสกา
+  definition: ครากเมื่อความเค้นเฉือนสูงสุดถึง $\sigma_Y/2$ หรือ $\sigma_{\max} - \sigma_{\min} = \sigma_Y$ (Tresca criterion)
+- term: เกณฑ์ฟอนมิเซส
+  definition: ครากเมื่อความเค้นฟอนมิเซส $\sqrt{\sigma_1^2 - \sigma_1\sigma_2 + \sigma_2^2}$ ถึง $\sigma_Y$ (von Mises criterion)
+flashcards:
+- front: ความเค้นหลัก
+  back: $\sigma_{1,2} = \dfrac{\sigma_x+\sigma_y}{2} \pm \sqrt{\left(\dfrac{\sigma_x-\sigma_y}{2}\right)^2 + \tau_{xy}^2}$
+- front: มุมของระนาบหลัก
+  back: $\tan 2\theta_p = \dfrac{2\tau_{xy}}{\sigma_x - \sigma_y}$ · ระนาบเฉือนสูงสุดห่าง $45^\circ$
+- front: วงกลมของมอร์
+  back: จุดศูนย์กลาง $C$ รัศมี $R = \tau_{\max}$ · หมุน $2\theta$ บนวงกลม = $\theta$ บนชิ้นส่วน
+- front: โรเซตต์ 0°–45°–90°
+  back: $\gamma_{xy} = 2\varepsilon_b - (\varepsilon_a + \varepsilon_c)$ · แปลงความเครียดใช้ $\gamma/2$
+- front: เพลารับแรงตามแนวแกน + แรงบิด
+  back: ฟอนมิเซส $\sqrt{\sigma^2 + 3\tau^2}$ · เทรสกา $\sqrt{\sigma^2 + 4\tau^2}$
+references:
+- title: Mohr's circle
+  url: https://en.wikipedia.org/wiki/Mohr's_circle
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Von Mises yield criterion
+  url: https://en.wikipedia.org/wiki/Von_Mises_yield_criterion
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Strain gauge
+  url: https://en.wikipedia.org/wiki/Strain_gauge
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 2.001 Mechanics and Materials I (MIT OpenCourseWare)
+  url: https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/
+  source: mit-ocw
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้

@@ -1,0 +1,328 @@
+problems:
+  - id: math.calculus.mean-value-theorem.p001
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 1
+    type: mcq
+    stem: "ถ้า $f$ ต่อเนื่องบน $[a, b]$ และหาอนุพันธ์ได้บน $(a, b)$ ทฤษฎีบทค่าเฉลี่ยรับรองข้อใด"
+    choices:
+      - { id: a, text: "มี $c$ ใน $(a, b)$ อย่างน้อยหนึ่งค่าที่ $f'(c) = \\dfrac{f(b) - f(a)}{b - a}$", correct: true }
+      - { id: b, text: "$f'\\big(\\tfrac{a + b}{2}\\big) = \\dfrac{f(b) - f(a)}{b - a}$ เสมอ", feedback: "ทฤษฎีบทไม่ได้บอกว่า $c$ อยู่กึ่งกลางช่วง เช่น $x^3$ บน $[0, 3]$ มี $c = \\sqrt3 \\ne 1.5$" }
+      - { id: c, text: "มี $c$ เพียงค่าเดียวที่ $f'(c) = 0$", feedback: "นั่นคือทฤษฎีบทของโรลล์ ซึ่งต้องมี $f(a) = f(b)$ ด้วย และรับรองว่ามีอย่างน้อยหนึ่งค่า ไม่ใช่ค่าเดียว" }
+      - { id: d, text: "$f$ เป็นฟังก์ชันเพิ่มบน $[a, b]$", feedback: "ทฤษฎีบทไม่ได้บอกว่าฟังก์ชันเพิ่ม ฟังก์ชันอาจขึ้นลงหลายครั้งในช่วงก็ได้" }
+    hints:
+      - "นึกถึงเส้นตัดที่เชื่อมจุด $(a, f(a))$ กับ $(b, f(b))$"
+      - "ทฤษฎีบทพูดถึงเส้นสัมผัสที่ขนานกับเส้นตัดนั้น"
+    solution: "ทฤษฎีบทค่าเฉลี่ยบอกว่ามีอย่างน้อยหนึ่งจุด $c$ ภายในช่วงที่ความชันเส้นสัมผัสเท่ากับความชันเส้นตัด $\\dfrac{f(b) - f(a)}{b - a}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p002
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 1
+    type: numeric
+    stem: "ให้ $f(x) = x^2 + x$ บนช่วง $[1, 4]$ ทฤษฎีบทค่าเฉลี่ยรับรองว่ามี $c$ ใน $(1, 4)$ ที่ $f'(c)$ เท่ากับเท่าใด"
+    answer: { value: 6 }
+    misconceptions:
+      - { match: 18, feedback: "นี่คือ $f(4) - f(1)$ ยังไม่ได้หารด้วยความยาวช่วง $4 - 1 = 3$" }
+    hints:
+      - "$f'(c)$ ต้องเท่ากับความชันของเส้นตัด $\\dfrac{f(4) - f(1)}{4 - 1}$"
+      - "$f(4) = 20$ และ $f(1) = 2$"
+    solution: "$\\dfrac{f(4) - f(1)}{4 - 1} = \\dfrac{20 - 2}{3} = 6$ จึงมี $c$ ที่ $f'(c) = 6$ (ในที่นี้ $2c + 1 = 6$ ได้ $c = 2.5$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p003
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาค่า $c$ ที่สอดคล้องกับทฤษฎีบทค่าเฉลี่ยของ $f(x) = x^2$ บนช่วง $[1, 5]$"
+    answer: { value: 3 }
+    misconceptions:
+      - { match: 6, feedback: "6 คือความชันของเส้นตัด โจทย์ถามตำแหน่ง $c$ ที่ $f'(c)$ เท่ากับความชันนั้น" }
+    hints:
+      - "ความชันเส้นตัด $\\dfrac{25 - 1}{5 - 1}$"
+      - "แก้ $f'(c) = 2c$ ให้เท่ากับความชันเส้นตัด"
+    solution: "ความชันเส้นตัด $\\dfrac{25 - 1}{4} = 6$ แก้ $2c = 6$ ได้ $c = 3$ ซึ่งอยู่ใน $(1, 5)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p004
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $f(x) = x^2 - 4x + 3$ บนช่วง $[1, 3]$ ตรวจว่า $f(1) = f(3)$ แล้วหาค่า $c$ ที่ทฤษฎีบทของโรลล์รับรอง"
+    answer: { value: 2 }
+    misconceptions:
+      - { match: 0, feedback: "0 คือค่าของ $f'(c)$ (และ $f(1) = f(3) = 0$) โจทย์ถามตำแหน่ง $c$" }
+    hints:
+      - "$f(1) = 0$ และ $f(3) = 0$ เงื่อนไขของโรลล์ครบ"
+      - "แก้ $f'(c) = 2c - 4 = 0$"
+    solution: "$f(1) = 1 - 4 + 3 = 0 = f(3)$ และพหุนามต่อเนื่องและหาอนุพันธ์ได้ทุกจุด แก้ $2c - 4 = 0$ ได้ $c = 2$ (จุดยอดของพาราโบลา)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p005
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ฟังก์ชันใดเป็นไปตามเงื่อนไขของทฤษฎีบทค่าเฉลี่ยบนช่วง $[-1, 1]$ (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "$f(x) = x^3$", correct: true }
+      - { id: b, text: "$f(x) = |x|$", feedback: "ต่อเนื่อง แต่หาอนุพันธ์ไม่ได้ที่ $x = 0$ ซึ่งอยู่ภายในช่วง" }
+      - { id: c, text: "$f(x) = \\dfrac1x$", feedback: "ไม่นิยามและไม่ต่อเนื่องที่ $x = 0$" }
+      - { id: d, text: "$f(x) = \\sqrt{x + 1}$", correct: true }
+      - { id: e, text: "$f(x) = x^{2/3}$", feedback: "$f'(x) = \\tfrac{2}{3}x^{-1/3}$ ไม่มีค่าที่ $x = 0$ กราฟมีปลายแหลม" }
+    hints:
+      - "ตรวจสองข้อ: ต่อเนื่องบนช่วงปิด และหาอนุพันธ์ได้ทุกจุด **ภายใน** ช่วง"
+      - "อนุพันธ์ที่ปลายช่วง $x = \\pm1$ ไม่ต้องมีก็ได้"
+    solution: "$x^3$ ผ่านทั้งสองข้อ $\\sqrt{x + 1}$ ต่อเนื่องบน $[-1, 1]$ และ $f'(x) = \\tfrac{1}{2\\sqrt{x + 1}}$ มีค่าทุกจุดใน $(-1, 1)$ (ไม่มีเฉพาะที่ปลาย $x = -1$ ซึ่งไม่ต้องมี) ส่วน $|x|$ และ $x^{2/3}$ หาอนุพันธ์ไม่ได้ที่ 0 และ $\\tfrac1x$ ไม่ต่อเนื่องที่ 0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p006
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่า $c$ ที่สอดคล้องกับทฤษฎีบทค่าเฉลี่ยของ $f(x) = \\sqrt{x}$ บนช่วง $[1, 9]$"
+    answer: { value: 4 }
+    misconceptions:
+      - { match: 5, feedback: "5 คือจุดกึ่งกลางช่วง ทฤษฎีบทไม่ได้บอกว่า $c$ อยู่กึ่งกลาง ต้องแก้ $f'(c)$ = ความชันเส้นตัด" }
+      - { match: 0.25, feedback: "$\\tfrac14$ คือความชันเส้นตัด โจทย์ถามตำแหน่ง $c$" }
+    hints:
+      - "ความชันเส้นตัด $\\dfrac{\\sqrt9 - \\sqrt1}{9 - 1}$"
+      - "$f'(c) = \\dfrac{1}{2\\sqrt{c}}$"
+    solution: "ความชันเส้นตัด $\\dfrac{3 - 1}{8} = \\dfrac14$ แก้ $\\dfrac{1}{2\\sqrt{c}} = \\dfrac14$ ได้ $\\sqrt{c} = 2$ จึง $c = 4$ อยู่ใน $(1, 9)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p007
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่า $c$ ที่สอดคล้องกับทฤษฎีบทค่าเฉลี่ยของ $f(x) = x^3$ บนช่วง $[0, 3]$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.732, tolerance: 0.005 }
+    misconceptions:
+      - { match: 1.5, feedback: "1.5 คือจุดกึ่งกลางช่วง ซึ่งไม่ใช่คำตอบโดยทั่วไป" }
+      - { match: 9, feedback: "9 คือความชันเส้นตัด ต้องแก้ $3c^2 = 9$ ต่อ" }
+    hints:
+      - "ความชันเส้นตัด $\\dfrac{27 - 0}{3 - 0} = 9$"
+      - "แก้ $3c^2 = 9$ แล้วเลือกรากที่อยู่ใน $(0, 3)$"
+    solution: "$3c^2 = 9$ ได้ $c^2 = 3$ จึง $c = \\pm\\sqrt3$ เลือก $c = \\sqrt3 \\approx 1.732$ ซึ่งอยู่ใน $(0, 3)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p008
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "บนทางหลวงสายหนึ่งมีกล้องตรวจจับความเร็วเฉลี่ยสองตัวห่างกัน 12 km (ค่าสมมติ) รถกระบะคันหนึ่งผ่านกล้องตัวแรกเวลา 10:00:00 น. และกล้องตัวที่สองเวลา 10:06:00 น. ทฤษฎีบทค่าเฉลี่ยรับรองว่ามีอย่างน้อยหนึ่งขณะที่มาตรวัดความเร็วชี้ค่าใดพอดี (ตอบเป็น km/h)"
+    answer: { value: 120, unit: km/h }
+    misconceptions:
+      - { match: 2, feedback: "$\\tfrac{12}{6} = 2$ เป็นกิโลเมตรต่อ **นาที** ต้องแปลง 6 นาทีเป็น $0.1$ ชั่วโมง" }
+      - { match: 20, feedback: "6 นาทีไม่ใช่ 0.6 ชั่วโมง แต่เป็น $\\tfrac{6}{60} = 0.1$ ชั่วโมง" }
+    hints:
+      - "ความเร็วเฉลี่ย = ระยะทาง ÷ เวลา ใช้หน่วยชั่วโมง"
+      - "ถ้า $s(t)$ เป็นตำแหน่ง ทฤษฎีบทให้ $s'(c)$ = ความเร็วเฉลี่ย"
+    solution: "เวลา 6 นาที = 0.1 ชั่วโมง ความเร็วเฉลี่ย $\\tfrac{12}{0.1} = 120\\ \\mathrm{km/h}$ ตำแหน่งของรถต่อเนื่องและหาอนุพันธ์ได้ ทฤษฎีบทค่าเฉลี่ยจึงรับรองว่ามีขณะหนึ่งที่ $s'(c) = 120\\ \\mathrm{km/h}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p009
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "กล้องตรวจจับความเร็วเฉลี่ยสองตัวบนทางหลวงห่างกัน 12 km และช่วงนี้จำกัดความเร็วไม่เกิน 100 km/h (ค่าสมมติ) ระบบออกใบสั่งเมื่อความเร็วเฉลี่ยเกินกำหนด ซึ่งทฤษฎีบทค่าเฉลี่ยรับรองว่ามีขณะที่ขับเร็วเกินจริง รถต้องใช้เวลาระหว่างกล้องสองตัว **อย่างน้อยกี่นาที** จึงไม่ถูกออกใบสั่ง"
+    answer: { value: 7.2, tolerance: 0.05, unit: นาที }
+    misconceptions:
+      - { match: 0.12, feedback: "0.12 เป็นหน่วยชั่วโมง โจทย์ถามเป็นนาที ต้องคูณ 60" }
+      - { match: 8.33, feedback: "คิดกลับด้าน $\\tfrac{100}{12}$ เวลาต้องเป็นระยะทางหารด้วยความเร็ว" }
+    hints:
+      - "ความเร็วเฉลี่ยไม่เกิน 100 km/h แปลว่า $\\dfrac{12}{t} \\le 100$ เมื่อ $t$ เป็นชั่วโมง"
+      - "แก้หา $t$ แล้วแปลงเป็นนาที"
+    solution: "$\\dfrac{12}{t} \\le 100$ ได้ $t \\ge 0.12$ ชั่วโมง $= 0.12 \\times 60 = 7.2$ นาที ถ้าใช้เวลาน้อยกว่านี้ ความเร็วเฉลี่ยเกิน 100 km/h และทฤษฎีบทค่าเฉลี่ยรับรองว่ามีขณะหนึ่งที่ความเร็วจริงเท่ากับค่าเฉลี่ยนั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p010
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 2
+    type: expression
+    stem: "ฟังก์ชัน $f$ มี $f'(x) = 2x + 3$ ทุกจำนวนจริง $x$ และ $f(0) = 4$ จงหา $f(x)$"
+    prefix: "f(x) ="
+    answer: { latex: "x^2+3x+4", variables: [x] }
+    misconceptions:
+      - { match: "x^2+3x", feedback: "ผลข้อ 2 ของทฤษฎีบทค่าเฉลี่ยบอกว่า $f$ ต่างจาก $x^2 + 3x$ ด้วยค่าคงตัว ต้องใช้ $f(0) = 4$ หาค่าคงตัวนั้น" }
+      - { match: "x^2+3x+4x", feedback: "ค่าคงตัวที่บวกเข้าไปไม่มี $x$ คูณ" }
+    hints:
+      - "$x^2 + 3x$ มีอนุพันธ์ $2x + 3$ ฟังก์ชันที่อนุพันธ์เท่ากันต่างกันด้วยค่าคงตัว"
+      - "เขียน $f(x) = x^2 + 3x + C$ แล้วแทน $x = 0$"
+    solution: "$g(x) = x^2 + 3x$ มี $g' = f'$ ทุกจุด ตามผลของทฤษฎีบทค่าเฉลี่ย $f(x) = x^2 + 3x + C$ และ $f(0) = C = 4$ จึง $f(x) = x^2 + 3x + 4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p011
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 3
+    type: numeric
+    stem: "ฟังก์ชัน $f$ และ $g$ หาอนุพันธ์ได้ทุกจุด และ $f'(x) = g'(x)$ ทุก $x$ ถ้า $f(1) = 4$, $g(1) = 1$ และ $f(3) = 10$ จงหา $g(3)$"
+    answer: { value: 7 }
+    misconceptions:
+      - { match: 10, feedback: "อนุพันธ์เท่ากันไม่ได้แปลว่าฟังก์ชันเท่ากัน ทั้งสองต่างกันด้วยค่าคงตัว" }
+      - { match: 13, feedback: "$f - g$ เป็นค่าคงตัว $f(1) - g(1) = 3$ จึง $g = f - 3$ ไม่ใช่ $f + 3$" }
+    hints:
+      - "ให้ $h = f - g$ จะได้ $h' = 0$ ทุกจุด $h$ จึงเป็นค่าคงตัว"
+      - "$h(1) = f(1) - g(1)$"
+    solution: "$h = f - g$ มี $h' = 0$ จึงเป็นค่าคงตัว $h(1) = 4 - 1 = 3$ ดังนั้น $g(3) = f(3) - 3 = 10 - 3 = 7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p012
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "ฟังก์ชัน $f$ หาอนุพันธ์ได้ทุกจุด $f(0) = 3$ และ $f'(x) \\le 5$ ทุก $x$ ค่า $f(2)$ ที่มากที่สุดที่เป็นไปได้คือเท่าใด"
+    answer: { value: 13 }
+    misconceptions:
+      - { match: 8, feedback: "ลืมคูณความยาวช่วง $f(2) - f(0) = f'(c)(2 - 0)$" }
+      - { match: 10, feedback: "ลืมบวก $f(0) = 3$ คำนวณได้เพียงการเปลี่ยนแปลง $f(2) - f(0)$ ที่มากสุด" }
+    hints:
+      - "ทฤษฎีบทค่าเฉลี่ยบน $[0, 2]$: $f(2) - f(0) = f'(c)(2 - 0)$"
+      - "ใช้ $f'(c) \\le 5$"
+    solution: "$f(2) - f(0) = 2f'(c) \\le 2(5) = 10$ จึง $f(2) \\le 3 + 10 = 13$ ค่า 13 เกิดได้จริงเมื่อ $f(x) = 5x + 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p013
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "ระดับน้ำในเขื่อนแห่งหนึ่งในภาคเหนือช่วงฤดูฝนเพิ่มจาก 152.4 m เป็น 155.0 m (เหนือระดับน้ำทะเล) ในเวลา 13 วัน (ค่าสมมติ) ระดับน้ำเปลี่ยนอย่างต่อเนื่องและราบเรียบ ทฤษฎีบทค่าเฉลี่ยรับรองว่ามีขณะหนึ่งที่ระดับน้ำเพิ่มในอัตรากี่เซนติเมตรต่อวันพอดี"
+    answer: { value: 20, unit: cm/วัน }
+    misconceptions:
+      - { match: 0.2, feedback: "0.2 เป็นเมตรต่อวัน โจทย์ถามเป็นเซนติเมตรต่อวัน" }
+      - { match: 260, feedback: "260 cm คือระดับที่เพิ่มทั้งหมด ยังไม่ได้หารด้วย 13 วัน" }
+    hints:
+      - "อัตราเฉลี่ย = (ระดับสุดท้าย − ระดับเริ่ม) ÷ เวลา"
+      - "แปลง 2.6 m เป็นเซนติเมตร"
+    solution: "ระดับเพิ่ม $155.0 - 152.4 = 2.6$ m $= 260$ cm อัตราเฉลี่ย $\\tfrac{260}{13} = 20$ cm/วัน ทฤษฎีบทค่าเฉลี่ยรับรองว่ามีขณะหนึ่งที่อัตราขณะนั้นเท่ากับ 20 cm/วันพอดี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p014
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 4
+    type: mcq
+    stem: "ภาพแสดง $f(x) = |x - 1|$ บน $[0, 3]$ และเส้นตัดจาก $(0, 1)$ ถึง $(3, 2)$ ซึ่งมีความชัน $\\tfrac13$ มี $c$ ใน $(0, 3)$ ที่ $f'(c) = \\tfrac13$ หรือไม่"
+    figure:
+      src: p-abs-graph.svg
+      alt: "กราฟรูปตัววีของ y = |x − 1| บนช่วง 0 ถึง 3 ลงจาก (0, 1) ถึงมุมแหลมที่ (1, 0) แล้วขึ้นถึง (3, 2) มีเส้นประสีแดงเชื่อมจุด (0, 1) กับ (3, 2)"
+    choices:
+      - { id: a, text: "ไม่มี เพราะ $f'$ เป็น $-1$ หรือ $1$ เท่านั้น ซึ่งไม่ขัดกับทฤษฎีบท เพราะ $f$ หาอนุพันธ์ไม่ได้ที่ $x = 1$", correct: true }
+      - { id: b, text: "มี เพราะทฤษฎีบทค่าเฉลี่ยรับรองเสมอสำหรับฟังก์ชันต่อเนื่อง", feedback: "ทฤษฎีบทต้องการให้หาอนุพันธ์ได้ภายในช่วงด้วย ความต่อเนื่องอย่างเดียวไม่พอ" }
+      - { id: c, text: "มี ที่ $c = 1$ เพราะเป็นจุดต่ำสุด", feedback: "ที่ $x = 1$ ไม่มีอนุพันธ์ (มุมแหลม) และถึงมีก็ควรเป็น 0 ที่จุดต่ำสุด ไม่ใช่ $\\tfrac13$" }
+      - { id: d, text: "ไม่มี และนี่แสดงว่าทฤษฎีบทค่าเฉลี่ยผิด", feedback: "ทฤษฎีบทไม่ผิด เงื่อนไขของมันไม่ครบตั้งแต่แรก จึงไม่ได้รับรองอะไร" }
+    hints:
+      - "หา $f'(x)$ บน $(0, 1)$ และบน $(1, 3)$"
+      - "ตรวจเงื่อนไขของทฤษฎีบททั้งสองข้อ"
+    solution: "บน $(0, 1)$ $f'(x) = -1$ และบน $(1, 3)$ $f'(x) = 1$ ไม่มีจุดใดที่ $f' = \\tfrac13$ ทฤษฎีบทไม่ได้ผิด เพราะ $f$ หาอนุพันธ์ไม่ได้ที่ $x = 1$ ซึ่งอยู่ภายในช่วง เงื่อนไขจึงไม่ครบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p015
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 5
+    type: numeric
+    stem: "สมการ $x^3 + 3x + 1 = 0$ มีรากที่เป็นจำนวนจริงกี่ราก"
+    answer: { value: 1 }
+    misconceptions:
+      - { match: 3, feedback: "พหุนามดีกรีสามมีรากไม่เกินสามราก แต่ไม่จำเป็นต้องเป็นจำนวนจริงทั้งหมด ลองดูเครื่องหมายของ $f'$" }
+      - { match: 0, feedback: "พหุนามดีกรีคี่มีรากจริงอย่างน้อยหนึ่งรากเสมอ เช่น $f(-1) = -3 < 0$ แต่ $f(0) = 1 > 0$" }
+    hints:
+      - "$f(-1)$ กับ $f(0)$ มีเครื่องหมายต่างกัน จึงมีรากอย่างน้อยหนึ่งราก"
+      - "ถ้ามีสองราก ทฤษฎีบทของโรลล์จะให้จุดที่ $f'(c) = 0$ แต่ $f'(x) = 3x^2 + 3$ เป็นศูนย์ได้หรือไม่"
+    solution: "$f(-1) = -3$ และ $f(0) = 1$ ทฤษฎีบทค่าระหว่างกลางให้รากอย่างน้อยหนึ่งรากใน $(-1, 0)$ ถ้ามีรากสองราก $a < b$ จะได้ $f(a) = f(b) = 0$ และโรลล์ให้ $c$ ที่ $f'(c) = 3c^2 + 3 = 0$ ซึ่งเป็นไปไม่ได้ จึงมีรากจริงเพียง **1** ราก (ประมาณ $-0.322$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p016
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาค่า $c$ ที่สอดคล้องกับทฤษฎีบทค่าเฉลี่ยของ $f(x) = \\ln x$ บนช่วง $[1, e]$ (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 1.718, tolerance: 0.005 }
+    misconceptions:
+      - { match: 0.582, feedback: "0.582 คือความชันเส้นตัด $\\tfrac{1}{e - 1}$ โจทย์ถามตำแหน่ง $c$" }
+      - { match: 1.859, feedback: "1.859 คือจุดกึ่งกลางช่วง $\\tfrac{1 + e}{2}$ ซึ่งไม่ใช่คำตอบ" }
+    hints:
+      - "ความชันเส้นตัด $\\dfrac{\\ln e - \\ln 1}{e - 1} = \\dfrac{1}{e - 1}$"
+      - "$f'(c) = \\dfrac1c$"
+    solution: "แก้ $\\dfrac1c = \\dfrac{1}{e - 1}$ ได้ $c = e - 1 \\approx 1.718$ อยู่ใน $(1, e)$ เพราะ $e \\approx 2.718$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p017
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $f(x) = x^3 - kx^2$ บนช่วง $[0, 3]$ จงหาค่าคงตัว $k$ ที่ทำให้ $c = 2$ เป็นจุดที่ทฤษฎีบทค่าเฉลี่ยรับรอง"
+    answer: { value: 3 }
+    misconceptions:
+      - { match: -3, feedback: "อนุพันธ์ของ $kx^2$ คือ $2kx$ ไม่ใช่ $kx$ จึง $f'(2) = 12 - 4k$" }
+    hints:
+      - "ความชันเส้นตัด $\\dfrac{f(3) - f(0)}{3} = \\dfrac{27 - 9k}{3} = 9 - 3k$"
+      - "$f'(x) = 3x^2 - 2kx$ ตั้ง $f'(2) = 9 - 3k$"
+    solution: "$f'(2) = 12 - 4k$ ตั้งเท่ากับ $9 - 3k$ ได้ $k = 3$ ตรวจ: $f(x) = x^3 - 3x^2$ มีเส้นตัดความชัน $\\tfrac{0 - 0}{3} = 0$ และ $f'(2) = 12 - 12 = 0$ ตรงกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p018
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 5
+    type: numeric
+    stem: "ใช้ทฤษฎีบทค่าเฉลี่ยกับ $f(x) = \\sqrt{x}$ บน $[100, 101]$ และข้อเท็จจริงว่า $f'(c) < f'(100)$ เมื่อ $c > 100$ เพื่อหาขอบบน $U$ ที่ $\\sqrt{101} < U$ (ตอบทศนิยมสองตำแหน่ง)"
+    answer: { value: 10.05, tolerance: 0.002 }
+    misconceptions:
+      - { match: 10.1, feedback: "อนุพันธ์ของ $\\sqrt{x}$ คือ $\\dfrac{1}{2\\sqrt{x}}$ ไม่ใช่ $\\dfrac{1}{\\sqrt{x}}$" }
+      - { match: 0.05, feedback: "นี่คือขอบบนของ $\\sqrt{101} - 10$ ต้องบวก $\\sqrt{100} = 10$ กลับ" }
+    hints:
+      - "$\\sqrt{101} - \\sqrt{100} = f'(c)(101 - 100) = \\dfrac{1}{2\\sqrt{c}}$ สำหรับ $c$ บางค่าใน $(100, 101)$"
+      - "$\\dfrac{1}{2\\sqrt{c}} < \\dfrac{1}{2\\sqrt{100}}$"
+    solution: "$\\sqrt{101} - 10 = \\dfrac{1}{2\\sqrt{c}} < \\dfrac{1}{20} = 0.05$ จึง $\\sqrt{101} < 10.05$ (ค่าจริง $\\approx 10.0499$ อยู่ใต้ขอบบนจริง)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p019
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 3
+    type: order
+    stem: "เรียงขั้นตอนการพิสูจน์ว่า \"ถ้า $f'(x) > 0$ ทุก $x$ ในช่วง $I$ แล้ว $f$ เป็นฟังก์ชันเพิ่มบน $I$\""
+    items:
+      - "เลือก $x_1 < x_2$ ใด ๆ ใน $I$"
+      - "$f$ ต่อเนื่องบน $[x_1, x_2]$ และหาอนุพันธ์ได้บน $(x_1, x_2)$"
+      - "ทฤษฎีบทค่าเฉลี่ยให้ $c$ ที่ $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$"
+      - "$f'(c) > 0$ และ $x_2 - x_1 > 0$ ผลคูณจึงเป็นบวก"
+      - "สรุป $f(x_2) > f(x_1)$ ทุกคู่ $f$ จึงเป็นฟังก์ชันเพิ่ม"
+    hints:
+      - "เริ่มจากการเลือกจุดสองจุดใด ๆ"
+      - "ต้องตรวจเงื่อนไขก่อนใช้ทฤษฎีบท"
+    solution: "เลือก $x_1 < x_2$ → ตรวจเงื่อนไข → ใช้ทฤษฎีบทค่าเฉลี่ย → ผลคูณของจำนวนบวกสองตัวเป็นบวก → $f(x_2) > f(x_1)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.mean-value-theorem.p020
+    topics: [math.calculus.mean-value-theorem]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ฟังก์ชันและช่วงกับข้อสรุปเรื่องทฤษฎีบทค่าเฉลี่ย"
+    pairs:
+      - { left: "$|x|$ บน $[-1, 1]$", right: "ใช้ไม่ได้ หาอนุพันธ์ไม่ได้ที่ $x = 0$" }
+      - { left: "$\\tfrac1x$ บน $[-1, 1]$", right: "ใช้ไม่ได้ ไม่ต่อเนื่องที่ $x = 0$" }
+      - { left: "$x^2$ บน $[0, 2]$", right: "ใช้ได้ และ $c = 1$" }
+      - { left: "$\\sqrt{x}$ บน $[0, 4]$", right: "ใช้ได้ และ $c = 1$ แม้ไม่มีอนุพันธ์ที่ $x = 0$" }
+    hints:
+      - "ตรวจความต่อเนื่องบนช่วงปิด และการหาอนุพันธ์ได้ภายในช่วงเปิด"
+      - "$\\sqrt{x}$ บน $[0, 4]$: เส้นตัดมีความชัน $\\tfrac{2}{4}$ แก้ $\\tfrac{1}{2\\sqrt{c}} = \\tfrac12$"
+    solution: "$|x|$ มีมุมแหลมที่ 0 · $\\tfrac1x$ ขาดที่ 0 · $x^2$ บน $[0, 2]$: ความชันเส้นตัด 2 แก้ $2c = 2$ ได้ $c = 1$ · $\\sqrt{x}$ บน $[0, 4]$: ความชันเส้นตัด $\\tfrac12$ แก้ $\\tfrac{1}{2\\sqrt{c}} = \\tfrac12$ ได้ $c = 1$ อนุพันธ์ที่ปลายช่วงไม่ต้องมี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

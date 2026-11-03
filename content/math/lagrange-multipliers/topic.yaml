@@ -1,0 +1,70 @@
+id: math.calculus.lagrange-multipliers
+subject: math
+title: { th: ตัวคูณลากรองจ์และค่าเหมาะที่สุดภายใต้เงื่อนไขบังคับ, en: Lagrange multipliers and constrained optimization }
+summary: หาค่ามากสุดและน้อยสุดเมื่อมีเงื่อนไขบังคับ ภาพเส้นระดับสัมผัสเส้นเงื่อนไข ระบบสมการของลากรองจ์ กรณีสามตัวแปรและสองเงื่อนไข และความหมายของตัวคูณ
+difficulty: 9
+minutes: 45
+prerequisites: [math.calculus.partial-derivatives]
+encompasses:
+  - { id: math.calculus.partial-derivatives, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: level-curves-constraint.svg
+    alt: "ระนาบ x (m) ตั้งแต่ 0 ถึง 220 และ y (m) ตั้งแต่ 0 ถึง 170 มีเส้นระดับรูปไฮเพอร์โบลา xy = 2,500, 5,000, 7,500 และ 10,000 เส้น xy = 7,500 เป็นเส้นทึบสีแดง เส้นอื่นเป็นเส้นประ เส้นตรงสีเขียว 300x + 400y = 60,000 จาก (0, 150) ถึง (200, 0) สัมผัสเส้น xy = 7,500 ที่จุด (100, 75) และตัดเส้น xy = 2,500 กับ 5,000 ส่วนเส้น xy = 10,000 อยู่เหนือเส้นตรงทั้งเส้น ที่จุดสัมผัสมีลูกศร ∇f = (75, 100) และ ∇g = (300, 400) ชี้ไปทางเดียวกัน"
+    caption: "เส้นงบประมาณแตะเส้นระดับสูงสุดที่ไปถึงได้ (xy = 7,500) ที่นั่น ∇f ขนานกับ ∇g"
+  - type: interactive
+    title: เลื่อนเส้นระดับจนแตะเส้นงบประมาณ
+    caption: "เส้นแรกคือเส้นงบประมาณ 300x + 400y = 60,000 เส้นที่สองคือเส้นระดับ xy = A เพิ่ม A ทีละน้อย ถ้าเส้นทั้งสองยังตัดกัน แปลว่ามีรั้วที่ให้พื้นที่ A ได้ ค่า A มากสุดที่ยังแตะกันคือ 7,500"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{60000-300x}{400}", "\\frac{A}{x}"]
+      sliders:
+        - { name: A, min: 1000, max: 12000, step: 500, value: 4000, label: พื้นที่ A (m²) }
+      x: [0, 220]
+      y: [0, 170]
+  - type: worked-example
+    title: รั้วริมแม่น้ำเจ้าพระยา
+    problem: "ล้อมรั้วแปลงผักริมแม่น้ำ ด้านขนานแม่น้ำยาว $x$ ราคาเมตรละ 300 บาท สองด้านตั้งฉากยาว $y$ ราคาเมตรละ 200 บาท ด้านติดแม่น้ำไม่ล้อม งบ 60,000 บาท (ค่าสมมติ) จงหาพื้นที่มากที่สุดและค่า $\\lambda$"
+    steps:
+      - text: "$f = xy$ และ $g = 300x + 400y = 60{,}000$"
+      - text: "$\\nabla f = (y, x)$, $\\nabla g = (300, 400)$ จึง $y = 300\\lambda$ และ $x = 400\\lambda$"
+      - text: "แทนในงบ: $300(400\\lambda) + 400(300\\lambda) = 240{,}000\\lambda = 60{,}000$ ได้ $\\lambda = \\tfrac14$"
+      - text: "$x = 100$ m, $y = 75$ m พื้นที่ $= 7{,}500\\ \\mathrm{m^2}$"
+        why: "เส้นงบประมาณเป็นส่วนของเส้นตรงที่มีปลาย ตรวจปลาย: ที่ $(200, 0)$ หรือ $(0, 150)$ พื้นที่เป็น 0 จุดนี้จึงเป็นค่ามากสุดจริง"
+      - text: "$\\lambda = 0.25\\ \\mathrm{m^2}$ ต่อบาท ถ้าได้งบเพิ่ม 1,000 บาท พื้นที่เพิ่มประมาณ $250\\ \\mathrm{m^2}$"
+        why: "ตรวจ: งบ 61,000 บาทให้ $x = \\tfrac{61000}{600}$, $y = \\tfrac{61000}{800}$ และ $xy \\approx 7{,}752$ เพิ่มจริง 252"
+    answer: "พื้นที่มากสุด $7{,}500\\ \\mathrm{m^2}$ ที่ $x = 100$ m, $y = 75$ m และ $\\lambda = 0.25\\ \\mathrm{m^2}$/บาท"
+  - { type: check, problem: math.calculus.lagrange-multipliers.p003, prompt: "ตั้ง $2x = \\lambda$ และ $2y = \\lambda$ แล้วแทนในเงื่อนไข" }
+  - type: worked-example
+    title: จัดสรรงบระหว่างแรงงานกับทุน
+    problem: "โรงงานหนึ่งผลิตได้ $Q = 12L^{2/3}K^{1/3}$ หน่วย เมื่อใช้แรงงาน $L$ หน่วย (หน่วยละ 200 บาท) และทุน $K$ หน่วย (หน่วยละ 400 บาท) มีงบ 60,000 บาท (ค่าสมมติ) ควรใช้ $L$ และ $K$ เท่าใด"
+    steps:
+      - text: "เงื่อนไข $200L + 400K = 60{,}000$ ระบบคือ $8L^{-1/3}K^{1/3} = 200\\lambda$ และ $4L^{2/3}K^{-2/3} = 400\\lambda$"
+      - text: "หารสมการแรกด้วยสมการที่สอง: $\\dfrac{2K}{L} = \\dfrac12$ จึง $L = 4K$"
+        why: "การหารกำจัด $\\lambda$ ออก เหลือความสัมพันธ์ระหว่าง $L$ กับ $K$"
+      - text: "แทนในงบ: $200(4K) + 400K = 1{,}200K = 60{,}000$ ได้ $K = 50$ และ $L = 200$"
+      - text: "$Q = 12(200)^{2/3}(50)^{1/3} \\approx 1{,}512$ หน่วย และ $\\lambda = \\dfrac{8(50)^{1/3}}{200(200)^{1/3}} \\approx 0.0252$ หน่วยต่อบาท"
+        why: "ใช้แรงงาน $\\tfrac23$ ของงบและทุน $\\tfrac13$ ของงบ ตรงกับเลขชี้กำลังของ $L$ และ $K$"
+    answer: "$L = 200$, $K = 50$ ได้ $Q \\approx 1{,}512$ หน่วย งบเพิ่ม 1,000 บาทให้ผลผลิตเพิ่มราว 25 หน่วย"
+  - { type: check, problem: math.calculus.lagrange-multipliers.p005, prompt: "บนวงกลมมีทั้งค่ามากสุดและน้อยสุด แทนทุกจุดที่ได้แล้วเลือกค่ามากสุด" }
+glossary:
+  - { term: เงื่อนไขบังคับ, definition: "สมการ g(x, y) = k ที่ตัวแปรต้องเป็นไปตาม เช่น งบประมาณหรือปริมาตรที่กำหนด" }
+  - { term: ตัวคูณลากรองจ์, definition: "จำนวน λ ที่ทำให้ ∇f = λ∇g ที่จุดค่าเหมาะที่สุดภายใต้เงื่อนไข" }
+  - { term: ราคาเงา, definition: "ค่า λ ที่บอกว่าค่าเหมาะที่สุดเพิ่มเท่าใดเมื่อผ่อนเงื่อนไขหนึ่งหน่วย" }
+  - { term: เส้นระดับ, definition: "เซตของจุดที่ f(x, y) มีค่าเท่ากัน" }
+flashcards:
+  - { front: "เงื่อนไขของลากรองจ์", back: "∇f = λ∇g และ g(x, y) = k" }
+  - { front: "ความหมายทางเรขาคณิต", back: "ที่ค่าเหมาะที่สุด เส้นระดับของ f สัมผัสเส้นเงื่อนไข" }
+  - { front: "สองเงื่อนไข g = k₁ และ h = k₂", back: "∇f = λ∇g + μ∇h" }
+  - { front: "ความหมายของ λ", back: "dM/dk อัตราการเปลี่ยนของค่าเหมาะที่สุดต่อ k" }
+  - { front: "เงื่อนไขเป็นส่วนของเส้นที่มีปลาย", back: "ต้องเทียบค่าที่จุดปลายด้วย" }
+references:
+  - { title: "4.8 Lagrange Multipliers (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/4-8-lagrange-multipliers", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "18.02SC Multivariable Calculus (MIT OpenCourseWare)", url: "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Lagrange multiplier", url: "https://en.wikipedia.org/wiki/Lagrange_multiplier", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,427 @@
+problems:
+- id: engineering.mechanics.rigid-body-3d.p001
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 1
+  type: mcq
+  stem: วัตถุแข็งเกร็งหมุนรอบแกนที่ผ่านศูนย์กลางมวล เมื่อใดโมเมนตัมเชิงมุม $\vec H$ จะขนานกับ $\vec\omega$
+  choices:
+  - id: a
+    text: เมื่อแกนหมุนเป็นแกนหลักของความเฉื่อย
+    correct: true
+  - id: b
+    text: ทุกครั้ง เพราะ $H = I\omega$
+    feedback: $H = I\omega$ แบบสเกลาร์ใช้ได้เฉพาะแกนหลัก ในสามมิติ $\vec H = \mathbf{I}\vec\omega$ เป็นเมทริกซ์คูณเวกเตอร์
+  - id: c
+    text: เมื่อวัตถุมีมวลมาก
+    feedback: มวลมีผลต่อขนาดของ $H$ ไม่ใช่ทิศ
+  - id: d
+    text: เมื่อหมุนช้า
+    feedback: ทิศของ $\vec H$ เทียบกับ $\vec\omega$ ไม่ขึ้นกับความเร็ว ขนาดของ $\omega$ คูณทุกส่วนเท่ากัน
+  hints:
+  - $\vec H = \mathbf{I}\vec\omega$ เมื่อใด $\mathbf{I}\vec\omega$ ขนานกับ $\vec\omega$
+  - นิยามของเวกเตอร์เฉพาะ
+  solution: $\mathbf{I}\vec\omega = \lambda\vec\omega$ ก็ต่อเมื่อ $\vec\omega$ เป็นเวกเตอร์เฉพาะของเทนเซอร์ความเฉื่อย คือหมุนรอบแกนหลัก เช่น ล้อที่ถ่วงสมดุลแล้วหมุนรอบเพลา
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p002
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 1
+  type: match
+  stem: จับคู่ปริมาณกับนิยาม
+  pairs:
+  - left: โมเมนต์ความเฉื่อย $I_{xx}$
+    right: $\int (y^2 + z^2)\,dm$
+  - left: ผลคูณความเฉื่อย $I_{xy}$
+    right: $\int xy\,dm$
+  - left: โมเมนต์ความเฉื่อยหลัก
+    right: ค่าเฉพาะของเทนเซอร์ความเฉื่อย
+  - left: แกนหลักของความเฉื่อย
+    right: เวกเตอร์เฉพาะของเทนเซอร์ความเฉื่อย
+  hints:
+  - $I_{xx}$ ใช้ระยะตั้งฉากจากแกน $x$ ยกกำลังสอง
+  - ผลคูณความเฉื่อยเป็นศูนย์เมื่อวัตถุสมมาตร
+  solution: $I_{xx}$ ใช้ระยะจากแกน $x$ ยกกำลังสอง ($y^2 + z^2$) ผลคูณความเฉื่อยวัดความไม่สมมาตร ค่าเฉพาะและเวกเตอร์เฉพาะของเทนเซอร์คือโมเมนต์ความเฉื่อยหลักและทิศของแกนหลัก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p003
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 2
+  type: numeric
+  stem: มวลจุด $2\ \mathrm{kg}$ อยู่ที่ $(0.3, 0.4, 0)\ \mathrm{m}$ จงหา $I_{xx}$ รอบจุดกำเนิด ($\mathrm{kg\cdot m^2}$)
+  answer:
+    value: 0.32
+    tolerance: 0.01
+    unit: kg·m²
+  misconceptions:
+  - match: 0.5
+    feedback: นั่นคือ $I_{zz} = m(x^2 + y^2)$
+  - match: 0.18
+    feedback: ใช้ $mx^2$ ระยะจากแกน $x$ ไม่ใช่พิกัด $x$
+  hints:
+  - $I_{xx} = m(y^2 + z^2)$
+  - ระยะตั้งฉากจากแกน $x$ ไม่รวมพิกัด $x$
+  solution: $I_{xx} = 2(0.4^2 + 0^2) = 0.32\ \mathrm{kg\cdot m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p004
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 2
+  type: numeric
+  stem: มวลจุดเดียวกัน ($2\ \mathrm{kg}$ ที่ $(0.3, 0.4, 0)$) สมาชิกแถว $x$ หลัก $y$ ของเทนเซอร์ความเฉื่อย $\mathbf{I}$ มีค่าเท่าใด ($\mathrm{kg\cdot m^2}$ ตอบพร้อมเครื่องหมาย)
+  answer:
+    value: -0.24
+    tolerance: 0.005
+    unit: kg·m²
+  misconceptions:
+  - match: 0.24
+    feedback: ลืมเครื่องหมายลบของสมาชิกนอกแนวทแยง
+  - match: 0.0
+    feedback: มวลไม่อยู่บนแกนใดแกนหนึ่ง ผลคูณความเฉื่อยจึงไม่เป็นศูนย์
+  hints:
+  - ผลคูณความเฉื่อย $I_{xy} = \int xy\,dm = mxy$
+  - สมาชิกนอกแนวทแยงของเทนเซอร์เป็น $-I_{xy}$
+  solution: $I_{xy} = 2(0.3)(0.4) = 0.24$ สมาชิกในเทนเซอร์ $= -I_{xy} = -0.24\ \mathrm{kg\cdot m^2}$ (ตำราบางเล่มนิยามผลคูณความเฉื่อยรวมเครื่องหมายลบไว้แล้ว ต้องดูนิยามที่ใช้)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p005
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 2
+  type: numeric
+  stem: วัตถุมีเทนเซอร์ความเฉื่อยรอบศูนย์กลางมวล $\mathbf{I} = \mathrm{diag}(2, 3, 5)\ \mathrm{kg\cdot m^2}$ หมุนด้วย $\vec\omega = (1, 2, 0)\ \mathrm{rad/s}$ จงหา $H_y$ ($\mathrm{kg\cdot m^2/s}$)
+  answer:
+    value: 6.0
+    unit: kg·m²/s
+  misconceptions:
+  - match: 4.0
+    feedback: ใช้ $I_{xx}$ คูณ $\omega_y$
+  - match: 10.0
+    feedback: ใช้ $I_{zz}$ คูณ $\omega_y$
+  hints:
+  - แกนพิกัดเป็นแกนหลัก $\vec H = (I_1\omega_x, I_2\omega_y, I_3\omega_z)$
+  - $H_y = I_{yy}\omega_y$
+  solution: $\vec H = (2 \times 1, 3 \times 2, 0) = (2, 6, 0)$ ได้ $H_y = 6\ \mathrm{kg\cdot m^2/s}$ สังเกตว่า $\vec H$ ไม่ขนานกับ $\vec\omega = (1, 2, 0)$ เพราะ $6/2 \ne 2/1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p006
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 2
+  type: mcq
+  stem: ใบพัดของเครื่องสีข้าวมีมวลเยื้องศูนย์สองก้อนเท่ากัน อยู่คนละด้านของเพลาและคนละตำแหน่งตามแนวเพลา (ดูภาพ) เพลานี้อยู่ในสภาพใด
+  choices:
+  - id: a
+    text: สมดุลสถิต แต่ไม่สมดุลพลวัต แบริ่งรับคู่ควบที่หมุนตามเพลา
+    correct: true
+  - id: b
+    text: สมดุลทั้งสถิตและพลวัต เพราะมวลหักล้างกัน
+    feedback: แรงหนีศูนย์หักล้างกันแต่ไม่อยู่บนแนวเดียวกัน จึงเกิดคู่ควบ
+  - id: c
+    text: ไม่สมดุลสถิต
+    feedback: ศูนย์กลางมวลรวมอยู่บนแกน วางนิ่งไว้มุมใดเพลาก็ไม่หมุนเอง จึงสมดุลสถิต
+  - id: d
+    text: ไม่มีแรงกระทำต่อแบริ่งเลย
+    feedback: คู่ควบ $mr\omega^2 \cdot 2a$ ต้องมีแรงปฏิกิริยาที่แบริ่งทั้งสองต้าน
+  figure: &id001
+    src: p-shaft.svg
+    alt: เพลาวางบนแบริ่ง A และ B ห่างกัน 0.6 เมตร มีมวล 0.2 กิโลกรัมสองก้อนติดที่รัศมี 0.1 เมตร ก้อนหนึ่งชี้ขึ้น อีกก้อนชี้ลง ห่างกันตามแนวเพลา 0.3 เมตร และอยู่สมมาตรรอบกึ่งกลางเพลา เพลาหมุน 1,500 รอบต่อนาที
+  hints:
+  - ศูนย์กลางมวลรวมอยู่ที่ใด
+  - แรงหนีศูนย์สองแรงเท่ากันแต่ไม่อยู่ในแนวเดียวกัน ได้อะไร
+  solution: ศูนย์กลางมวลอยู่บนแกน (สมดุลสถิต) แต่ผลคูณความเฉื่อย $I_{xz} \ne 0$ แกนหมุนจึงไม่ใช่แกนหลัก แรงหนีศูนย์เกิดคู่ควบที่หมุนตามเพลา เครื่องสั่น ต้องถ่วงสองระนาบ (สมดุลพลวัต)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p007
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 3
+  type: numeric
+  stem: ชิ้นส่วนมวล $4\ \mathrm{kg}$ มี $I_{G,xx} = 0.05\ \mathrm{kg\cdot m^2}$ ศูนย์กลางมวลอยู่ที่ $(0.1, 0.2, 0.3)\ \mathrm{m}$ จากจุด O จงหา $I_{O,xx}$ ($\mathrm{kg\cdot m^2}$)
+  answer:
+    value: 0.57
+    tolerance: 0.01
+    unit: kg·m²
+  misconceptions:
+  - match: 0.09
+    feedback: ใช้ $x_G^2$ แทน $y_G^2 + z_G^2$
+  - match: 0.61
+    feedback: รวมทั้งสามพิกัด
+  - match: -0.47
+    feedback: ลบแทนการบวก แกนที่ไม่ผ่าน G มีโมเมนต์ความเฉื่อยมากกว่าเสมอ
+  hints:
+  - 'ทฤษฎีบทแกนขนานสามมิติ: $I_{O,xx} = I_{G,xx} + m(y_G^2 + z_G^2)$'
+  - ใช้เฉพาะพิกัดที่ตั้งฉากกับแกน $x$
+  solution: $I_{O,xx} = 0.05 + 4(0.2^2 + 0.3^2) = 0.05 + 4(0.13) = 0.57\ \mathrm{kg\cdot m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p008
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 3
+  type: numeric
+  stem: แผ่นบางมวล $2\ \mathrm{kg}$ ขนาด $0.3 \times 0.2\ \mathrm{m}$ (ดูภาพ) หมุนรอบเส้นทแยงมุมด้วย $12\ \mathrm{rad/s}$ มุมระหว่าง $\vec H$ กับ $\vec\omega$ เป็นกี่องศา ($I_{xx} = mb^2/12$, $I_{yy} = ma^2/12$ รอบศูนย์กลาง)
+  answer:
+    value: 22.619865
+    tolerance: 0.3
+    unit: °
+  misconceptions:
+  - match: 0.0
+    feedback: $\vec H$ ขนานกับ $\vec\omega$ เฉพาะแกนหลัก เส้นทแยงมุมของสี่เหลี่ยมผืนผ้าไม่ใช่แกนหลัก
+  - match: 56.309932
+    feedback: นั่นคือมุมของ $\vec H$ จากแกน $x$ ยังไม่ได้ลบมุมของ $\vec\omega$
+  figure: &id002
+    src: p-plate.svg
+    alt: แผ่นบางสี่เหลี่ยมผืนผ้ากว้าง 0.3 เมตร (แนวแกน x) สูง 0.2 เมตร (แนวแกน y) ยึดกับเพลาที่วางตามเส้นทแยงมุมของแผ่น เพลารองด้วยแบริ่งสองตัวนอกแผ่น ลูกศร ω ชี้ตามเส้นทแยงมุม
+  hints:
+  - $\vec\omega = 12(0.3, 0.2)/\sqrt{0.13}$
+  - หา $\vec H = (I_{xx}\omega_x, I_{yy}\omega_y)$ แล้วเทียบมุมของสองเวกเตอร์
+  solution: $I_{xx} = 0.00667$, $I_{yy} = 0.015$ $\vec\omega = (9.985, 6.656)$ ได้ $\vec H = (0.0666, 0.0998)$ มุมของ $\vec\omega$ คือ $33.69^\circ$ มุมของ $\vec H$ คือ $56.31^\circ$ ต่างกัน $22.62^\circ$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p009
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 3
+  type: numeric
+  stem: เทนเซอร์ความเฉื่อย $\mathbf{I} = \begin{bmatrix}0.3 & -0.1 & 0\\ -0.1 & 0.2 & 0\\ 0 & 0 & 0.4\end{bmatrix}\ \mathrm{kg\cdot m^2}$ และ $\vec\omega = (4, 2, 0)\ \mathrm{rad/s}$ จงหาพลังงานจลน์การหมุน $T = \tfrac12\vec\omega\cdot\mathbf{I}\vec\omega$ (J)
+  answer:
+    value: 2.0
+    unit: J
+  misconceptions:
+  - match: 2.8
+    feedback: ไม่คิดสมาชิกนอกแนวทแยง (ผลคูณความเฉื่อย)
+  - match: 4.0
+    feedback: ลืมตัวคูณ $\tfrac12$
+  hints:
+  - หา $\vec H = \mathbf{I}\vec\omega$ ก่อน
+  - $T = \tfrac12\vec\omega\cdot\vec H$
+  solution: $\vec H = (0.3 \cdot 4 - 0.1 \cdot 2,\ -0.1 \cdot 4 + 0.2 \cdot 2,\ 0) = (1.0, 0, 0)$ ได้ $T = \tfrac12(4 \times 1.0 + 2 \times 0) = 2.0\ \mathrm{J}$ (ถ้าไม่คิดผลคูณความเฉื่อยจะได้ $2.8\ \mathrm{J}$ ซึ่งผิด)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p010
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 3
+  type: order
+  stem: เรียงขั้นตอนหาแกนหลักและโมเมนต์ความเฉื่อยหลักของชิ้นส่วนที่ไม่สมมาตร
+  items:
+  - เลือกจุดอ้างอิง (มักเป็นศูนย์กลางมวล) และแกนพิกัด
+  - หา $I_{xx}, I_{yy}, I_{zz}$ และผลคูณความเฉื่อย (ใช้ทฤษฎีบทแกนขนานกับชิ้นส่วนย่อย)
+  - เขียนเทนเซอร์ความเฉื่อยแบบสมมาตร โดยสมาชิกนอกแนวทแยงเป็น $-I_{xy}, -I_{yz}, -I_{zx}$
+  - แก้ $\det(\mathbf{I} - \lambda\mathbf{1}) = 0$ ได้โมเมนต์ความเฉื่อยหลัก
+  - แทน $\lambda$ แต่ละค่าหาเวกเตอร์เฉพาะ ซึ่งเป็นทิศของแกนหลักที่ตั้งฉากกัน
+  hints:
+  - ต้องมีเทนเซอร์ก่อนหาค่าเฉพาะ
+  - ค่าเฉพาะได้ก่อนเวกเตอร์เฉพาะ
+  solution: จุดอ้างอิงและแกน → สมาชิกของเทนเซอร์ → เขียนเทนเซอร์ → ค่าเฉพาะ (โมเมนต์ความเฉื่อยหลัก) → เวกเตอร์เฉพาะ (แกนหลัก) เทนเซอร์สมมาตรจึงได้ค่าเฉพาะจริงและแกนหลักตั้งฉากกันเสมอ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p011
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 4
+  type: numeric
+  stem: จากเทนเซอร์ $\mathbf{I} = \begin{bmatrix}0.3 & -0.1 & 0\\ -0.1 & 0.2 & 0\\ 0 & 0 & 0.4\end{bmatrix}\ \mathrm{kg\cdot m^2}$ ของแขนหุ่นยนต์ในโรงงานประกอบรถยนต์ (ข้อมูลสมมติ) จงหาโมเมนต์ความเฉื่อยหลักค่าน้อยที่สุด ($\mathrm{kg\cdot m^2}$)
+  answer:
+    value: 0.138197
+    tolerance: 0.0014
+    unit: kg·m²
+  misconceptions:
+  - match: 0.2
+    feedback: ตอบสมาชิกแนวทแยง ซึ่งไม่ใช่ค่าเฉพาะเมื่อมีผลคูณความเฉื่อย
+  - match: 0.1
+    feedback: ลบผลคูณความเฉื่อยออกจากสมาชิกแนวทแยงตรง ๆ
+  hints:
+  - แกน $z$ เป็นแกนหลักอยู่แล้ว ($0.4$) เหลือบล็อก $2 \times 2$
+  - $(0.3 - \lambda)(0.2 - \lambda) - 0.01 = 0$
+  solution: $\lambda^2 - 0.5\lambda + 0.05 = 0$ ได้ $\lambda = 0.25 \pm \sqrt{0.0125} = 0.3618$ หรือ $0.1382$ รวมกับ $0.4$ ค่าน้อยที่สุดคือ $0.1382\ \mathrm{kg\cdot m^2}$ (ตรวจด้วย numpy.linalg.eigh ได้ค่าเดียวกัน และผลรวม $= 0.9 =$ trace)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p012
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 4
+  type: numeric
+  stem: จากเทนเซอร์ในข้อก่อน แกนหลักที่มีโมเมนต์ความเฉื่อยหลักค่ามากในระนาบ $xy$ ทำมุมเท่าใดกับแกน $x$ (องศา ตอบพร้อมเครื่องหมาย ทวนเข็มนาฬิกาเป็นบวก อยู่ในช่วง $-90^\circ$ ถึง $90^\circ$)
+  answer:
+    value: -31.717474
+    tolerance: 0.3
+    unit: °
+  misconceptions:
+  - match: 31.717474
+    feedback: เครื่องหมายผิด สมาชิกนอกแนวทแยงเป็น $-0.1$
+  - match: -63.434949
+    feedback: ลืมหารมุม $2\theta$ ด้วย 2
+  hints:
+  - 'ใช้สูตรเดียวกับระนาบหลักของความเค้น: $\tan 2\theta = \dfrac{2(\text{สมาชิก } xy)}{I_{xx} - I_{yy}}$'
+  - สมาชิก $xy$ ของเทนเซอร์คือ $-0.1$ ตรวจคำตอบด้วย $(\mathbf{I} - \lambda\mathbf{1})\vec v = 0$
+  solution: '$\tan 2\theta = \dfrac{2(-0.1)}{0.3 - 0.2} = -2$ ได้ $2\theta = -63.43^\circ$, $\theta = -31.72^\circ$ ตรวจ: $\vec v = (\cos\theta, \sin\theta) = (0.851, -0.526)$ ได้ $\mathbf{I}\vec v = (0.308, -0.190) = 0.3618\,\vec v$ (เทียบวงกลมของมอร์ใน[การแปลงความเค้น](/topic/engineering.materials.stress-transformation/))'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p013
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 4
+  type: numeric
+  stem: เพลาเครื่องสีข้าวของโรงสีชุมชน (ข้อมูลสมมติ ดูภาพ) หมุน $1{,}500$ รอบต่อนาที แรงปฏิกิริยาที่หมุนตามเพลาที่แบริ่งแต่ละตัวมีขนาดกี่นิวตัน
+  answer:
+    value: 246.74011
+    tolerance: 3.0
+    unit: N
+  misconceptions:
+  - match: 22500.0
+    feedback: ใช้รอบต่อนาทีแทน rad/s
+  - match: 148.044066
+    feedback: นั่นคือคู่ควบ ยังไม่ได้หารด้วยระยะแบริ่ง
+  - match: 123.370055
+    feedback: คิดแรงหนีศูนย์ของมวลก้อนเดียว
+  figure: *id001
+  hints:
+  - $\omega = 1{,}500 \times 2\pi/60\ \mathrm{rad/s}$ แรงหนีศูนย์ของแต่ละมวล $mr\omega^2$
+  - คู่ควบ $= mr\omega^2 \times 0.3$ แล้วหารด้วยระยะแบริ่ง $0.6\ \mathrm{m}$
+  solution: $\omega = 157.08\ \mathrm{rad/s}$ แรงหนีศูนย์ $0.2(0.1)(157.08)^2 = 493.5\ \mathrm{N}$ คู่ควบ $493.5 \times 0.3 = 148.0\ \mathrm{N\cdot m}$ (เท่ากับ $I_{xz}\omega^2$ เมื่อ $I_{xz} = 2(0.2)(0.1)(0.15) = 0.006$) แรงที่แบริ่ง $= 148.0/0.6 = 247\ \mathrm{N}$ ทิศตรงข้ามกันและหมุนตามเพลา
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p014
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 4
+  type: numeric
+  stem: สาธิตไจโรสโคปด้วยล้อจักรยาน (ประมาณเป็นวงแหวน มวล $2\ \mathrm{kg}$ รัศมี $0.3\ \mathrm{m}$) หมุน $30\ \mathrm{rad/s}$ แกนล้อวางแนวนอนแขวนที่ปลายข้างเดียว ห่างจากศูนย์กลางล้อ $0.15\ \mathrm{m}$ จงหาอัตราเร็วเชิงมุมของการควง (rad/s)
+  answer:
+    value: 0.545
+    tolerance: 0.006
+    unit: rad/s
+  misconceptions:
+  - match: 1.09
+    feedback: ใช้ $I = \tfrac12mR^2$ ของจานตัน ล้อจักรยานมีมวลเกือบทั้งหมดที่ขอบ
+  - match: 15.8922
+    feedback: คูณ $H$ แทนการหาร
+  hints:
+  - วงแหวน $I = mR^2$ และ $H = I\omega_s$
+  - $\Omega = \dfrac{M}{H} = \dfrac{mgr}{I\omega_s}$
+  solution: $I = 2(0.3)^2 = 0.18\ \mathrm{kg\cdot m^2}$, $H = 0.18 \times 30 = 5.4$ แรงบิด $M = 2(9.81)(0.15) = 2.943\ \mathrm{N\cdot m}$ ได้ $\Omega = 2.943/5.4 = 0.545\ \mathrm{rad/s}$ (ควงครบรอบใน $11.5$ วินาที)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p015
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 4
+  type: mcq
+  stem: ถ้าทำให้ล้อในข้อก่อนหมุนเร็วขึ้นเป็นสองเท่า การควงจะเป็นอย่างไร
+  choices:
+  - id: a
+    text: ช้าลงครึ่งหนึ่ง เพราะ $\Omega = M/H$ และ $H$ เพิ่มเป็นสองเท่า
+    correct: true
+  - id: b
+    text: เร็วขึ้นสองเท่า
+    feedback: แรงบิดจากน้ำหนักเท่าเดิม แต่ $H$ ใหญ่ขึ้น ปลาย $H$ จึงเลื่อนช้าลง
+  - id: c
+    text: เท่าเดิม
+    feedback: $\Omega$ แปรผกผันกับ $\omega_s$
+  - id: d
+    text: ล้อจะตกลงทันที
+    feedback: ยิ่งหมุนเร็วยิ่งทรงตัวได้ดี ล้อจะตกเมื่อหมุนช้าลงจนการประมาณ $\Omega = M/H$ ใช้ไม่ได้
+  hints:
+  - $\Omega = mgr/(I\omega_s)$
+  - ตัวแปรใดเปลี่ยน
+  solution: $\Omega = mgr/(I\omega_s)$ เมื่อ $\omega_s$ เพิ่มเป็นสองเท่า $\Omega$ ลดเหลือครึ่งหนึ่ง ลูกข่างที่หมุนเร็วจึงควงช้าและทรงตัวนิ่ง เมื่อแรงเสียดทานทำให้หมุนช้าลง การควงจะเร็วขึ้นและส่ายมากขึ้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p016
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 5
+  type: numeric
+  stem: แผ่นในภาพ (มวล $2\ \mathrm{kg}$, $0.3 \times 0.2\ \mathrm{m}$) หมุนรอบเส้นทแยงมุมด้วยอัตราคงที่ $12\ \mathrm{rad/s}$ แบริ่งต้องให้คู่ควบขนาดกี่นิวตันเมตร
+  answer:
+    value: 0.553846
+    tolerance: 0.006
+    unit: N·m
+  misconceptions:
+  - match: 0.0
+    feedback: แม้ $\omega$ คงที่ $\vec H$ ยังเปลี่ยนทิศ จึงต้องมีคู่ควบ
+  - match: 1.44
+    feedback: ใช้ $|\vec H|\omega$ ซึ่งคิดราวกับ $\vec H$ ตั้งฉากกับ $\vec\omega$
+  figure: *id002
+  hints:
+  - $\vec\omega$ คงที่ แต่ $\vec H$ ที่ไม่ขนานกับ $\vec\omega$ หมุนตามแผ่น
+  - $\vec M = d\vec H/dt = \vec\omega \times \vec H$
+  solution: '$\vec H = (0.0666, 0.0998, 0)$ ได้ $|\vec\omega \times \vec H| = \omega_xH_y - \omega_yH_x = 9.985(0.0998) - 6.656(0.0666) = 0.554\ \mathrm{N\cdot m}$ ตรวจวิธีที่สอง: หมุนเทนเซอร์ให้แกน $x''$ อยู่ตามเส้นทแยงมุม ผลคูณความเฉื่อย $\times \omega^2$ ได้ค่าเดียวกัน'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p017
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 5
+  type: mcq
+  stem: โยนโทรศัพท์มือถือขึ้นให้หมุนรอบแกนต่าง ๆ ของตัวเครื่อง (โมเมนต์ความเฉื่อยหลัก $I_1 < I_2 < I_3$) การหมุนรอบแกนใดไม่เสถียร เครื่องจะพลิกไปมา
+  choices:
+  - id: a
+    text: แกนที่มีโมเมนต์ความเฉื่อยกลาง $I_2$
+    correct: true
+  - id: b
+    text: แกนที่มีโมเมนต์ความเฉื่อยน้อยที่สุด $I_1$
+    feedback: การหมุนรอบแกนที่ $I$ น้อยที่สุดเสถียร (สำหรับวัตถุแข็งเกร็งที่ไม่สูญเสียพลังงาน)
+  - id: c
+    text: แกนที่มีโมเมนต์ความเฉื่อยมากที่สุด $I_3$
+    feedback: แกนที่ $I$ มากที่สุดเสถียรที่สุด
+  - id: d
+    text: ทุกแกนเสถียรเท่ากัน
+    feedback: สมการของออยเลอร์แสดงว่าการรบกวนเล็ก ๆ รอบแกนกลางโตขึ้นแบบเอกซ์โพเนนเชียล
+  hints:
+  - สมการของออยเลอร์เมื่อ $M = 0$
+  - ทำให้เป็นเชิงเส้นรอบ $\omega_2$ แล้วดูว่า $(I_2 - I_1)(I_2 - I_3)$ มีเครื่องหมายใด
+  solution: เมื่อหมุนรอบแกน 2 แล้วมีการรบกวนเล็ก ๆ สมการของออยเลอร์ให้ $\ddot\omega_1 = \dfrac{(I_2 - I_3)(I_1 - I_2)}{I_1I_3}\omega_2^2\,\omega_1$ โดย $(I_2 - I_3) < 0$ และ $(I_1 - I_2) < 0$ ผลคูณเป็นบวก การรบกวนจึงโตขึ้น (ทฤษฎีบทแกนกลาง) ส่วนแกน 1 และ 3 ได้ค่าลบ จึงแกว่งรอบสมดุล
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p018
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 5
+  type: numeric
+  stem: วัตถุมีโมเมนต์ความเฉื่อยหลัก $I_1 = 2$, $I_2 = 3$, $I_3 = 5\ \mathrm{kg\cdot m^2}$ ขณะหนึ่ง $\vec\omega = (1, 2, 0)\ \mathrm{rad/s}$ ในแกนหลัก และต้องการให้ $\vec\omega$ คงที่ในแกนของวัตถุ ($\dot{\vec\omega} = 0$) ต้องใช้โมเมนต์ $M_3$ เท่าใด (N·m)
+  answer:
+    value: 2.0
+    unit: N·m
+  misconceptions:
+  - match: -2.0
+    feedback: สลับลำดับ $(I_1 - I_2)$ เครื่องหมายผิด
+  - match: 0.0
+    feedback: $\dot\omega = 0$ ไม่ได้แปลว่าไม่ต้องมีโมเมนต์ในสามมิติ
+  hints:
+  - 'สมการของออยเลอร์: $M_3 = I_3\dot\omega_3 + (I_2 - I_1)\omega_1\omega_2$'
+  - ตรวจด้วย $\vec\omega \times \mathbf{I}\vec\omega$
+  solution: '$M_3 = 5(0) + (3 - 2)(1)(2) = 2\ \mathrm{N\cdot m}$ ตรวจ: $\mathbf{I}\vec\omega = (2, 6, 0)$ และ $\vec\omega \times \mathbf{I}\vec\omega = (0, 0, 1 \cdot 6 - 2 \cdot 2) = (0, 0, 2)$ แม้ความเร็วเชิงมุมคงที่ก็ต้องมีโมเมนต์ เพราะไม่ได้หมุนรอบแกนหลัก'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.mechanics.rigid-body-3d.p019
+  topics:
+  - engineering.mechanics.rigid-body-3d
+  difficulty: 5
+  type: expression
+  stem: ไจโรสโคปที่หมุนรอบแกนของตัวเองด้วย $\omega$ (โมเมนต์ความเฉื่อยรอบแกนหมุน $I$) แขวนปลายแกนแนวนอนข้างเดียว ศูนย์กลางมวลห่างจุดแขวน $r$ มวล $m$ จงเขียนอัตราเร็วเชิงมุมของการควง $\Omega$
+  prefix: \Omega =
+  answer:
+    latex: \frac{m g r}{I \omega}
+    variables:
+    - m
+    - g
+    - r
+    - I
+    - omega
+  misconceptions:
+  - match: \frac{I \omega}{m g r}
+    feedback: กลับเศษส่วน
+  - match: \frac{m g r}{I}
+    feedback: ลืมหารด้วย $\omega$ (นั่นคือความเร่งเชิงมุมถ้าล้อไม่หมุน)
+  hints:
+  - แรงบิดจากน้ำหนักรอบจุดแขวน $M = mgr$
+  - $|d\vec H/dt| = \Omega H$ เมื่อ $\vec H$ หมุนในแนวนอน
+  solution: $\vec M = d\vec H/dt$ แรงบิด $mgr$ ตั้งฉากกับ $\vec H$ ทำให้ปลาย $\vec H$ เลื่อนด้านข้าง $dH = H\,d\phi$ จึงได้ $mgr = \Omega I\omega$ หรือ $\Omega = \dfrac{mgr}{I\omega}$ (ใช้ได้เมื่อ $\omega \gg \Omega$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true

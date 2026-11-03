@@ -1,0 +1,77 @@
+id: math.calculus.trig-substitution
+subject: math
+title: { th: ปริพันธ์ตรีโกณมิติและการแทนค่าด้วยตรีโกณมิติ, en: Trigonometric integrals and trigonometric substitution }
+summary: ปริพันธ์ของกำลังของแทนเจนต์และซีแคนต์ สูตรผลคูณเป็นผลบวก การแทนค่าด้วยไซน์ แทนเจนต์ ซีแคนต์ สามเหลี่ยมอ้างอิง และการเลือกเทคนิคหาปริพันธ์
+difficulty: 8.5
+minutes: 50
+prerequisites: [math.calculus.integration-techniques, math.functions.trig-functions]
+encompasses:
+  - { id: math.calculus.integration-techniques, weight: 0.5 }
+  - { id: math.functions.trig-functions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: reference-triangles.svg
+    alt: "สามเหลี่ยมมุมฉากสามรูป มุม θ อยู่ที่มุมล่างซ้าย รูปแรก x = a sin θ ด้านตรงข้าม x ด้านตรงข้ามมุมฉาก a ด้านประชิด √(a² − x²) รูปที่สอง x = a tan θ ด้านตรงข้าม x ด้านประชิด a ด้านตรงข้ามมุมฉาก √(a² + x²) รูปที่สาม x = a sec θ ด้านประชิด a ด้านตรงข้ามมุมฉาก x ด้านตรงข้าม √(x² − a²)"
+    caption: "วาดด้านสองด้านจากสมการแทนค่า แล้วหาด้านที่สามด้วยพีทาโกรัส อ่านฟังก์ชันตรีโกณมิติตัวอื่นกลับเป็น x"
+  - type: worked-example
+    title: กำลังคู่ของซีแคนต์
+    problem: "จงหา $\\displaystyle\\int \\tan^2 x\\sec^4 x\\,dx$"
+    steps:
+      - text: "กำลังของ $\\sec x$ เป็นคู่ เก็บ $\\sec^2 x$ ไว้หนึ่งตัว: $\\tan^2 x\\sec^2 x \\cdot \\sec^2 x\\,dx$"
+        why: "$\\sec^2 x\\,dx$ คือ $du$ เมื่อ $u = \\tan x$"
+      - text: "เปลี่ยน $\\sec^2 x$ ที่เหลือด้วย $1 + \\tan^2 x$: $\\tan^2 x(1 + \\tan^2 x)\\sec^2 x\\,dx$"
+      - text: "ให้ $u = \\tan x$, $du = \\sec^2 x\\,dx$ ได้ $\\displaystyle\\int (u^2 + u^4)\\,du = \\frac{u^3}{3} + \\frac{u^5}{5} + C$"
+      - text: "กลับเป็น $x$: $\\dfrac{\\tan^3 x}{3} + \\dfrac{\\tan^5 x}{5} + C$ ตรวจ: อนุพันธ์คือ $\\tan^2 x\\sec^2 x + \\tan^4 x\\sec^2 x = \\tan^2 x\\sec^2 x(1 + \\tan^2 x) = \\tan^2 x\\sec^4 x$"
+    answer: "$\\dfrac{\\tan^3 x}{3} + \\dfrac{\\tan^5 x}{5} + C$"
+  - { type: check, problem: math.calculus.trig-substitution.p007, prompt: "เก็บ $\\sec^2 x$ ไว้หนึ่งตัว แล้วเปลี่ยนอีกตัวเป็น $1 + \\tan^2 x$" }
+  - type: interactive
+    title: สูตรผลคูณเป็นผลบวก
+    caption: "เส้นแรกคือ sin(mx)cos(nx) เส้นที่สองคือ ½[sin((m + n)x) + sin((m − n)x)] เลื่อน m และ n แล้วสังเกตว่าสองเส้นทับกันทุกค่า ผลคูณที่หาปริพันธ์ยากจึงเปลี่ยนเป็นผลบวกที่หาง่าย"
+    widget:
+      kind: function-plot
+      functions: ["\\sin(mx)\\cos(nx)", "\\frac{1}{2}\\left(\\sin((m+n)x)+\\sin((m-n)x)\\right)"]
+      sliders:
+        - { name: m, min: 1, max: 6, step: 1, value: 3, label: m }
+        - { name: n, min: 1, max: 6, step: 1, value: 1, label: n }
+      x: [-3.2, 3.2]
+      y: [-1.2, 1.2]
+  - type: worked-example
+    title: เติมกำลังสองแล้วแทนค่าด้วยแทนเจนต์
+    problem: "จงหา $\\displaystyle\\int \\frac{dx}{\\sqrt{x^2 + 6x + 13}}$"
+    steps:
+      - text: "เติมกำลังสอง: $x^2 + 6x + 13 = (x + 3)^2 + 4$"
+      - text: "รูป $\\sqrt{u^2 + a^2}$ กับ $u = x + 3$, $a = 2$ แทน $x + 3 = 2\\tan\\theta$, $dx = 2\\sec^2\\theta\\,d\\theta$ และ $\\sqrt{(x + 3)^2 + 4} = 2\\sec\\theta$"
+        why: "$4\\tan^2\\theta + 4 = 4\\sec^2\\theta$ รากที่สองจึงหายไป"
+      - text: "$\\displaystyle\\int \\frac{2\\sec^2\\theta}{2\\sec\\theta}\\,d\\theta = \\int \\sec\\theta\\,d\\theta = \\ln|\\sec\\theta + \\tan\\theta| + C_1$"
+      - text: "จากสามเหลี่ยมอ้างอิง $\\tan\\theta = \\dfrac{x + 3}{2}$ และ $\\sec\\theta = \\dfrac{\\sqrt{x^2 + 6x + 13}}{2}$"
+      - text: "$\\ln\\left|\\dfrac{x + 3 + \\sqrt{x^2 + 6x + 13}}{2}\\right| + C_1 = \\ln\\left|x + 3 + \\sqrt{x^2 + 6x + 13}\\right| + C$"
+        why: "$-\\ln 2$ เป็นค่าคงตัว รวมเข้ากับ $C$ ได้"
+    answer: "$\\ln\\left|x + 3 + \\sqrt{x^2 + 6x + 13}\\right| + C$"
+  - type: figure
+    src: p-cable.svg
+    alt: "สายไฟสีแดงห้อยเป็นรูปพาราโบลาระหว่างเสาสองต้นที่อยู่สองฝั่งคลอง เสาห่างกัน 40 m จุดยึดบนเสาสูงกว่าจุดต่ำสุดของสายซึ่งอยู่กลางคลอง 10 m วางแกนให้จุดต่ำสุดอยู่ที่ (0, 0) สายมีรูป y = kx²"
+    caption: "ความยาวของสายที่ห้อยเป็นพาราโบลาต้องใช้ปริพันธ์ของ √(1 + (y′)²) ซึ่งแทนค่าด้วยแทนเจนต์ (ใช้ในโจทย์ข้อ 14)"
+  - { type: check, problem: math.calculus.trig-substitution.p010, prompt: "แทน $x = \\tan\\theta$ แล้วเปลี่ยนขอบเขต $x = 0 \\to 1$ เป็นมุม $\\theta$" }
+glossary:
+  - { term: การแทนค่าด้วยตรีโกณมิติ, definition: "แทน x ด้วย a sin θ, a tan θ หรือ a sec θ เพื่อกำจัดรากที่สองของ a² − x², a² + x², x² − a²" }
+  - { term: สามเหลี่ยมอ้างอิง, definition: "สามเหลี่ยมมุมฉากที่วาดจากสมการแทนค่า ใช้เปลี่ยนคำตอบในตัวแปร θ กลับเป็น x" }
+  - { term: สูตรผลคูณเป็นผลบวก, definition: "เขียน sin mx cos nx, sin mx sin nx, cos mx cos nx เป็นครึ่งหนึ่งของผลบวกหรือผลต่างของไซน์หรือโคไซน์" }
+  - { term: ตารางปริพันธ์, definition: "รายการสูตรปฏิยานุพันธ์สำเร็จรูป ใช้ได้เมื่อจัดปริพันธ์ให้ตรงกับรูปในตาราง" }
+  - { term: การเติมกำลังสอง, definition: "เขียน x² + bx + c เป็น (x + b/2)² + (c − b²/4) ก่อนแทนค่า" }
+flashcards:
+  - { front: "√(a² − x²) ใช้การแทนค่าใด", back: "x = a sin θ ได้ √(a² − x²) = a cos θ" }
+  - { front: "√(a² + x²) ใช้การแทนค่าใด", back: "x = a tan θ ได้ √(a² + x²) = a sec θ" }
+  - { front: "√(x² − a²) ใช้การแทนค่าใด", back: "x = a sec θ ได้ √(x² − a²) = a tan θ" }
+  - { front: "∫ tan x dx และ ∫ sec x dx", back: "ln|sec x| + C และ ln|sec x + tan x| + C" }
+  - { front: "sin mx cos nx = ?", back: "½[sin (m + n)x + sin (m − n)x]" }
+references:
+  - { title: "3.2 Trigonometric Integrals (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-2-trigonometric-integrals", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.3 Trigonometric Substitution (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-3-trigonometric-substitution", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "3.5 Other Strategies for Integration (Calculus Volume 2, OpenStax)", url: "https://openstax.org/books/calculus-volume-2/pages/3-5-other-strategies-for-integration", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Trigonometric substitution", url: "https://en.wikipedia.org/wiki/Trigonometric_substitution", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

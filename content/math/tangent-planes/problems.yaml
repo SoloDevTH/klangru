@@ -1,0 +1,297 @@
+problems:
+  - id: math.calculus.tangent-planes.p001
+    topics: [math.calculus.tangent-planes]
+    difficulty: 1
+    type: mcq
+    stem: "สมการระนาบสัมผัสของพื้นผิว $z = f(x, y)$ ที่จุด $(a, b, f(a, b))$ คือข้อใด"
+    choices:
+      - { id: a, text: "$z = f(a, b) + f_x(a, b)(x - a) + f_y(a, b)(y - b)$", correct: true }
+      - { id: b, text: "$z = f_x(a, b)\\,x + f_y(a, b)\\,y$", feedback: "ระนาบนี้ผ่านจุดกำเนิด ไม่ได้ผ่านจุดสัมผัส ต้องมี $f(a, b)$ และใช้ $(x - a), (y - b)$" }
+      - { id: c, text: "$z = f(a, b) + f_x(x, y)(x - a) + f_y(x, y)(y - b)$", feedback: "อนุพันธ์ย่อยต้องแทนค่าที่จุดสัมผัส ถ้าปล่อยเป็นฟังก์ชันของ $x, y$ จะไม่ได้ระนาบ" }
+      - { id: d, text: "$z = f(a, b) + f_x(a, b)f_y(a, b)(x - a)(y - b)$", feedback: "ระนาบเป็นสมการเชิงเส้นใน $x, y$ ไม่มีพจน์ $(x - a)(y - b)$" }
+    hints:
+      - "ระนาบต้องผ่านจุด $(a, b, f(a, b))$"
+      - "ความชันในทิศ $x$ คือ $f_x(a, b)$ และในทิศ $y$ คือ $f_y(a, b)$"
+    solution: "ระนาบสัมผัสผ่านจุดสัมผัสและมีความชัน $f_x(a, b)$ ในทิศ $x$ และ $f_y(a, b)$ ในทิศ $y$ จึงเป็น $z = f(a, b) + f_x(a, b)(x - a) + f_y(a, b)(y - b)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p002
+    topics: [math.calculus.tangent-planes]
+    difficulty: 2
+    type: expression
+    stem: "จงหาสมการระนาบสัมผัสของพื้นผิว $z = x^2 + y^2$ ที่จุด $(1, 2, 5)$"
+    prefix: "z ="
+    answer: { latex: "5+2(x-1)+4(y-2)", variables: [x, y] }
+    misconceptions:
+      - { match: "2x+4y", feedback: "ลืมให้ระนาบผ่านจุด $(1, 2, 5)$ ต้องเป็น $5 + 2(x - 1) + 4(y - 2)$" }
+      - { match: "5+2x(x-1)+2y(y-2)", feedback: "อนุพันธ์ย่อยต้องแทนค่าที่ $(1, 2)$ ก่อน ได้ $f_x = 2$ และ $f_y = 4$" }
+    hints:
+      - "$f_x = 2x$, $f_y = 2y$ แทนค่าที่ $(1, 2)$"
+      - "$z = f(1, 2) + f_x(1, 2)(x - 1) + f_y(1, 2)(y - 2)$"
+    solution: "$f(1, 2) = 5$, $f_x(1, 2) = 2$, $f_y(1, 2) = 4$ ระนาบสัมผัสคือ $z = 5 + 2(x - 1) + 4(y - 2) = 2x + 4y - 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p003
+    topics: [math.calculus.tangent-planes]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $f(x, y) = x^2y$ จงใช้การประมาณเชิงเส้นที่ $(2, 1)$ ประมาณค่า $f(2.1, 0.95)$"
+    answer: { value: 4.2, tolerance: 0.005 }
+    misconceptions:
+      - { match: 4.6, feedback: "$y$ ลดลงจาก 1 เป็น 0.95 จึง $dy = -0.05$ ไม่ใช่ $+0.05$" }
+      - { match: 4, feedback: "นี่คือ $f(2, 1)$ ยังไม่ได้บวกการเปลี่ยนแปลง $f_x\\,dx + f_y\\,dy$" }
+    hints:
+      - "$f(2, 1) = 4$, $f_x = 2xy$, $f_y = x^2$"
+      - "$dx = 0.1$ และ $dy = -0.05$"
+    solution: "$f_x(2, 1) = 4$, $f_y(2, 1) = 4$ จึง $L = 4 + 4(0.1) + 4(-0.05) = 4.2$ (ค่าจริง $2.1^2(0.95) = 4.1895$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p004
+    topics: [math.calculus.tangent-planes]
+    difficulty: 2
+    type: numeric
+    stem: "ให้ $z = x^3y^2$ จงหาผลต่างเชิงอนุพันธ์รวม $dz$ ที่ $(1, 2)$ เมื่อ $dx = 0.01$ และ $dy = -0.02$"
+    answer: { value: 0.04, tolerance: 0.001 }
+    misconceptions:
+      - { match: 0.2, feedback: "ใช้ $dy = +0.02$ แทน $-0.02$" }
+    hints:
+      - "$dz = z_x\\,dx + z_y\\,dy$ โดย $z_x = 3x^2y^2$ และ $z_y = 2x^3y$"
+      - "ที่ $(1, 2)$: $z_x = 12$, $z_y = 4$"
+    solution: "$dz = 12(0.01) + 4(-0.02) = 0.12 - 0.08 = 0.04$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p005
+    topics: [math.calculus.tangent-planes]
+    difficulty: 3
+    type: expression
+    stem: "จงหาระนาบสัมผัสของทรงกลม $x^2 + y^2 + z^2 = 14$ ที่จุด $(1, 2, 3)$ แล้วเขียน $z$ เป็นฟังก์ชันของ $x$ และ $y$"
+    prefix: "z ="
+    answer: { latex: "\\frac{14-x-2y}{3}", variables: [x, y] }
+    misconceptions:
+      - { match: "14-x-2y", feedback: "จาก $x + 2y + 3z = 14$ ต้องหารด้วย 3 เพื่อให้ $z$ อยู่ข้างเดียว" }
+      - { match: "\\frac{14-x-2y}{6}", feedback: "$\\nabla F = (2, 4, 6)$ หาร 2 ตลอดได้ $x + 2y + 3z = 14$ ไม่ใช่ $6z$" }
+    hints:
+      - "$F = x^2 + y^2 + z^2$ มี $\\nabla F = (2x, 2y, 2z) = (2, 4, 6)$ ที่จุดนั้น"
+      - "$2(x - 1) + 4(y - 2) + 6(z - 3) = 0$"
+    solution: "$2(x - 1) + 4(y - 2) + 6(z - 3) = 0$ หาร 2 ได้ $x + 2y + 3z = 1 + 4 + 9 = 14$ จึง $z = \\dfrac{14 - x - 2y}{3}$ ตรวจ: ที่ $(1, 2)$ ได้ $z = 3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p006
+    topics: [math.calculus.tangent-planes]
+    difficulty: 3
+    type: numeric
+    stem: "ระนาบสัมผัสของทรงรี $\\dfrac{x^2}{4} + y^2 + \\dfrac{z^2}{9} = 3$ ที่จุด $(2, 1, 3)$ ตัดแกน $z$ ที่ $z$ เท่าใด"
+    answer: { value: 9 }
+    misconceptions:
+      - { match: 3, feedback: "3 คือพิกัด $z$ ของจุดสัมผัส ต้องแทน $x = y = 0$ ในสมการระนาบ" }
+      - { match: 15, feedback: "อนุพันธ์ย่อยของ $\\tfrac{z^2}{9}$ คือ $\\tfrac{2z}{9}$ ไม่ใช่ $\\tfrac{z}{9}$" }
+    hints:
+      - "$\\nabla F = \\big(\\tfrac{x}{2}, 2y, \\tfrac{2z}{9}\\big) = \\big(1, 2, \\tfrac23\\big)$ ที่จุดนั้น"
+      - "ระนาบ $1(x - 2) + 2(y - 1) + \\tfrac23(z - 3) = 0$ แทน $x = y = 0$"
+    solution: "$-2 - 2 + \\tfrac23(z - 3) = 0$ ได้ $z - 3 = 6$ จึงตัดแกน $z$ ที่ $z = 9$ (สมการระนาบคือ $3x + 6y + 2z = 18$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p007
+    topics: [math.calculus.tangent-planes]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $f(x, y) = e^{x + 2y}$ จงใช้การประมาณเชิงเส้นที่ $(0, 0)$ ประมาณ $f(0.1, 0.05)$"
+    answer: { value: 1.2, tolerance: 0.002 }
+    misconceptions:
+      - { match: 1.15, feedback: "$f_y = 2e^{x + 2y}$ ตามกฎลูกโซ่ ลืมคูณ 2" }
+    hints:
+      - "$f(0, 0) = 1$, $f_x = e^{x + 2y}$, $f_y = 2e^{x + 2y}$"
+      - "$L(x, y) = 1 + x + 2y$"
+    solution: "$L(0.1, 0.05) = 1 + 0.1 + 2(0.05) = 1.2$ (ค่าจริง $e^{0.2} \\approx 1.2214$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p008
+    topics: [math.calculus.tangent-planes]
+    difficulty: 3
+    type: mcq
+    stem: "ให้ $f(x, y) = \\dfrac{xy}{x^2 + y^2}$ เมื่อ $(x, y) \\ne (0, 0)$ และ $f(0, 0) = 0$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "$f_x(0, 0) = f_y(0, 0) = 0$ แต่ $f$ หาอนุพันธ์ไม่ได้ที่ $(0, 0)$", correct: true }
+      - { id: b, text: "$f$ หาอนุพันธ์ได้ที่ $(0, 0)$ และระนาบสัมผัสคือ $z = 0$", feedback: "บนเส้น $y = x$ ค่าเป็น $\\tfrac12$ เสมอ ระนาบ $z = 0$ จึงประมาณไม่ได้ ฟังก์ชันไม่ต่อเนื่องที่จุดกำเนิดด้วยซ้ำ" }
+      - { id: c, text: "$f_x(0, 0)$ หาค่าไม่ได้", feedback: "บนแกน $x$ ค่าเป็น 0 ตลอด จึง $f_x(0, 0) = \\lim_{h\\to0}\\tfrac{0 - 0}{h} = 0$ มีค่า" }
+      - { id: d, text: "$f$ ต่อเนื่องที่ $(0, 0)$ เพราะมีอนุพันธ์ย่อยครบ", feedback: "การมีอนุพันธ์ย่อยไม่รับรองความต่อเนื่องในสองตัวแปร ค่าตามเส้น $y = x$ คือ $\\tfrac12 \\ne 0$" }
+    hints:
+      - "ดูค่าของ $f$ บนแกน $x$ และบนเส้น $y = x$"
+      - "ฟังก์ชันที่หาอนุพันธ์ได้ต้องต่อเนื่อง"
+    solution: "บนแกนทั้งสอง $f = 0$ จึง $f_x(0, 0) = f_y(0, 0) = 0$ แต่บน $y = x$ ได้ $f = \\tfrac{x^2}{2x^2} = \\tfrac12$ ฟังก์ชันจึงไม่ต่อเนื่องที่ $(0, 0)$ และหาอนุพันธ์ไม่ได้ อนุพันธ์ย่อยอย่างเดียวไม่พอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p009
+    topics: [math.calculus.tangent-planes]
+    difficulty: 3
+    type: numeric
+    stem: "โรงงานนมข้นหวานแห่งหนึ่งในนครปฐมวัดกระป๋องทรงกระบอก รัศมีคลาดเคลื่อนได้ไม่เกิน 1% และความสูงคลาดเคลื่อนได้ไม่เกิน 2% (ค่าสมมติ) จงใช้ผลต่างเชิงอนุพันธ์ประมาณความคลาดเคลื่อนสัมพัทธ์สูงสุดของปริมาตร $V = \\pi r^2h$ เป็นร้อยละ"
+    answer: { value: 4, unit: "%" }
+    misconceptions:
+      - { match: 3, feedback: "รัศมียกกำลังสอง ความคลาดเคลื่อนของ $r$ จึงคูณ 2: $2(1\\%) + 2\\%$" }
+      - { match: 5, feedback: "เลข 2 คูณเฉพาะความคลาดเคลื่อนของ $r$ ไม่ใช่ของ $h$" }
+    hints:
+      - "$\\dfrac{dV}{V} = 2\\dfrac{dr}{r} + \\dfrac{dh}{h}$"
+      - "แทน $\\tfrac{dr}{r} = 1\\%$ และ $\\tfrac{dh}{h} = 2\\%$"
+    solution: "$dV = 2\\pi rh\\,dr + \\pi r^2\\,dh$ หารด้วย $V = \\pi r^2h$ ได้ $\\tfrac{dV}{V} = 2\\tfrac{dr}{r} + \\tfrac{dh}{h} = 2(1\\%) + 2\\% = 4\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p010
+    topics: [math.calculus.tangent-planes]
+    difficulty: 4
+    type: numeric
+    stem: "นักศึกษาวิทยาลัยเทคนิคแห่งหนึ่งต่อตัวต้านทาน $R_1 = 30\\ \\Omega$ และ $R_2 = 60\\ \\Omega$ แบบขนาน ได้ $R = \\dfrac{R_1R_2}{R_1 + R_2} = 20\\ \\Omega$ ถ้า $R_1$ คลาดเคลื่อนได้ $0.5\\ \\Omega$ และ $R_2$ คลาดเคลื่อนได้ $1\\ \\Omega$ (ค่าสมมติ) จงประมาณความคลาดเคลื่อนสูงสุดของ $R$ เป็นโอห์ม (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.333, tolerance: 0.003, unit: Ω }
+    misconceptions:
+      - { match: 1.5, feedback: "บวกความคลาดเคลื่อนตรง ๆ เหมือนต่ออนุกรม การต่อขนานต้องคูณด้วย $\\tfrac{\\partial R}{\\partial R_1}$ และ $\\tfrac{\\partial R}{\\partial R_2}$" }
+      - { match: 0.5, feedback: "สลับอนุพันธ์ย่อย $\\tfrac{\\partial R}{\\partial R_1} = \\tfrac{R_2^2}{(R_1 + R_2)^2} = \\tfrac49$ ใช้คู่กับ $dR_1 = 0.5$" }
+    hints:
+      - "$\\dfrac{\\partial R}{\\partial R_1} = \\dfrac{R_2^2}{(R_1 + R_2)^2}$ และ $\\dfrac{\\partial R}{\\partial R_2} = \\dfrac{R_1^2}{(R_1 + R_2)^2}$"
+      - "$dR = \\tfrac{3600}{8100}(0.5) + \\tfrac{900}{8100}(1)$"
+    solution: "$\\tfrac{\\partial R}{\\partial R_1} = \\tfrac49$, $\\tfrac{\\partial R}{\\partial R_2} = \\tfrac19$ จึง $dR = \\tfrac49(0.5) + \\tfrac19(1) = \\tfrac29 + \\tfrac19 = \\tfrac13 \\approx 0.333\\ \\Omega$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p011
+    topics: [math.calculus.tangent-planes]
+    difficulty: 4
+    type: numeric
+    stem: "ที่ดินรูปสามเหลี่ยมแปลงหนึ่งในนครราชสีมา วัดด้านสองด้านได้ $a = 50$ m และ $b = 40$ m มุมระหว่างสองด้าน $C = 60^\\circ$ ดังภาพ (ค่าสมมติ) พื้นที่คือ $A = \\tfrac12 ab\\sin C$ ถ้าวัดด้านแต่ละด้านคลาดเคลื่อนได้ 0.2 m และวัดมุมคลาดเคลื่อนได้ $1^\\circ$ จงประมาณความคลาดเคลื่อนสูงสุดของพื้นที่เป็นตารางเมตร (ตอบทศนิยมหนึ่งตำแหน่ง)"
+    figure:
+      src: p-land-triangle.svg
+      alt: "ที่ดินรูปสามเหลี่ยมสีเขียว ด้านล่าง a = 50 m ด้านซ้าย b = 40 m มุมระหว่างสองด้านที่มุมซ้ายล่าง C = 60 องศา"
+    answer: { value: 16.5, tolerance: 0.2, unit: m² }
+    misconceptions:
+      - { match: 507.8, feedback: "ใช้ $dC = 1$ (องศา) ในสูตร ต้องแปลงเป็นเรเดียน $dC = \\tfrac{\\pi}{180}$ เพราะ $(\\sin C)' = \\cos C$ ใช้ได้เมื่อ $C$ เป็นเรเดียน" }
+      - { match: 7.8, feedback: "คิดเฉพาะความคลาดเคลื่อนจากด้าน ลืมพจน์ของมุม $\\tfrac12ab\\cos C\\,dC$" }
+    hints:
+      - "$dA = \\tfrac12b\\sin C\\,da + \\tfrac12a\\sin C\\,db + \\tfrac12ab\\cos C\\,dC$"
+      - "$dC = 1^\\circ = \\tfrac{\\pi}{180}$ เรเดียน"
+    solution: "$dA = \\tfrac12(40)(0.866)(0.2) + \\tfrac12(50)(0.866)(0.2) + \\tfrac12(2000)(0.5)\\tfrac{\\pi}{180} = 3.46 + 4.33 + 8.73 \\approx 16.5\\ \\mathrm{m^2}$ (พื้นที่ราว $866\\ \\mathrm{m^2}$ มุมเป็นแหล่งความคลาดเคลื่อนใหญ่ที่สุด)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p012
+    topics: [math.calculus.tangent-planes]
+    difficulty: 4
+    type: expression
+    stem: "จงหาการประมาณเชิงเส้น $L(x, y)$ ของ $f(x, y) = \\sqrt{x^2 + y^2}$ ที่จุด $(3, 4)$"
+    prefix: "L(x, y) ="
+    answer: { latex: "5+\\frac{3}{5}(x-3)+\\frac{4}{5}(y-4)", variables: [x, y] }
+    misconceptions:
+      - { match: "5+3(x-3)+4(y-4)", feedback: "$f_x = \\dfrac{x}{\\sqrt{x^2 + y^2}}$ ต้องหารด้วย $\\sqrt{25} = 5$" }
+      - { match: "5+\\frac{3}{10}(x-3)+\\frac{4}{10}(y-4)", feedback: "อนุพันธ์ของ $\\sqrt{u}$ คือ $\\tfrac{1}{2\\sqrt u}$ คูณ $u' = 2x$ เลข 2 ตัดกัน ได้ $\\tfrac{x}{\\sqrt{x^2 + y^2}}$" }
+    hints:
+      - "$f(3, 4) = 5$"
+      - "$f_x = \\dfrac{x}{\\sqrt{x^2 + y^2}}$ และ $f_y = \\dfrac{y}{\\sqrt{x^2 + y^2}}$"
+    solution: "$f_x(3, 4) = \\tfrac35$, $f_y(3, 4) = \\tfrac45$ จึง $L = 5 + \\tfrac35(x - 3) + \\tfrac45(y - 4)$ ซึ่งจัดรูปได้ $\\tfrac35x + \\tfrac45y$ เช่น $\\sqrt{3.1^2 + 3.9^2} \\approx L(3.1, 3.9) = 4.98$ (ค่าจริง 4.982)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p013
+    topics: [math.calculus.tangent-planes]
+    difficulty: 4
+    type: numeric
+    stem: "บนพื้นผิว $z = x^2 + y^2$ มีจุดหนึ่งที่ระนาบสัมผัสขนานกับระนาบ $2x + 4y - z = 1$ จงหาพิกัด $z$ ของจุดนั้น"
+    answer: { value: 5 }
+    misconceptions:
+      - { match: 17, feedback: "ตั้ง $2x = 2$ ถูกแล้ว แต่ $2y = 4$ ให้ $y = 2$ ไม่ใช่ 4" }
+      - { match: 1, feedback: "นี่คือพิกัด $x$ ($x = 1$) โจทย์ถามพิกัด $z$" }
+    hints:
+      - "เวกเตอร์ตั้งฉากของระนาบสัมผัสคือ $(f_x, f_y, -1) = (2x, 2y, -1)$"
+      - "ขนานกับระนาบ $2x + 4y - z = 1$ เมื่อ $(2x, 2y, -1)$ ขนานกับ $(2, 4, -1)$"
+    solution: "พิกัดที่สามเป็น $-1$ ทั้งคู่ จึงต้องเท่ากันพอดี: $2x = 2$, $2y = 4$ ได้ $(x, y) = (1, 2)$ และ $z = 1 + 4 = 5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p014
+    topics: [math.calculus.tangent-planes]
+    difficulty: 5
+    type: numeric
+    stem: "ระนาบสัมผัสของพื้นผิว $xyz = 6$ ที่จุด $(1, 2, 3)$ ตัดกับระนาบพิกัดทั้งสามเป็นทรงสี่หน้า จงหาปริมาตรของทรงสี่หน้านี้"
+    answer: { value: 27 }
+    misconceptions:
+      - { match: 162, feedback: "ปริมาตรทรงสี่หน้าคือ $\\tfrac16$ ของผลคูณระยะตัดแกน ไม่ใช่ผลคูณทั้งหมด" }
+      - { match: 1, feedback: "ใช้ระยะตัดแกนจากพิกัดจุดสัมผัส $(1, 2, 3)$ ได้ $\\tfrac16(6) = 1$ ต้องหาระยะตัดแกนจากสมการระนาบสัมผัส" }
+    hints:
+      - "$\\nabla F = (yz, xz, xy) = (6, 3, 2)$ ที่จุด $(1, 2, 3)$"
+      - "ระนาบ $6x + 3y + 2z = 18$ ตัดแกนที่ $x = 3$, $y = 6$, $z = 9$"
+    solution: "$6(x - 1) + 3(y - 2) + 2(z - 3) = 0$ คือ $6x + 3y + 2z = 18$ ตัดแกนที่ 3, 6, 9 ปริมาตร $\\tfrac16(3)(6)(9) = 27$ ลูกบาศก์หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p015
+    topics: [math.calculus.tangent-planes]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "ข้อความใดเกี่ยวกับฟังก์ชัน $f(x, y)$ ถูกต้อง (เลือกได้หลายข้อ)"
+    choices:
+      - { id: a, text: "ถ้า $f$ หาอนุพันธ์ได้ที่ $(a, b)$ แล้ว $f$ ต่อเนื่องที่ $(a, b)$", correct: true }
+      - { id: b, text: "ถ้า $f_x$ และ $f_y$ ต่อเนื่องในบริเวณรอบ $(a, b)$ แล้ว $f$ หาอนุพันธ์ได้ที่ $(a, b)$", correct: true }
+      - { id: c, text: "ถ้า $f_x(a, b)$ และ $f_y(a, b)$ มีค่า แล้ว $f$ หาอนุพันธ์ได้ที่ $(a, b)$", feedback: "ไม่จริง ตัวอย่าง $\\tfrac{xy}{x^2 + y^2}$ มีอนุพันธ์ย่อยที่จุดกำเนิดแต่ไม่ต่อเนื่องที่นั่น" }
+      - { id: d, text: "ระนาบสัมผัสประมาณ $f$ ได้ดีเท่ากันทุกจุดบนพื้นผิว", feedback: "การประมาณเชิงเส้นดีเฉพาะใกล้จุดสัมผัส ยิ่งห่างยิ่งคลาดเคลื่อน" }
+    hints:
+      - "นึกถึงตัวอย่าง $\\tfrac{xy}{x^2 + y^2}$ ในบทเรียน"
+      - "ความหาอนุพันธ์ได้แข็งแรงกว่าการมีอนุพันธ์ย่อย"
+    solution: "(ก) หาอนุพันธ์ได้แล้วต่อเนื่อง จริง (ข) อนุพันธ์ย่อยต่อเนื่องรับรองความหาอนุพันธ์ได้ จริง (ค) ไม่จริงตามตัวอย่าง $\\tfrac{xy}{x^2 + y^2}$ (ง) ไม่จริง การประมาณดีเฉพาะใกล้จุดสัมผัส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p016
+    topics: [math.calculus.tangent-planes]
+    difficulty: 2
+    type: match
+    stem: "จับคู่สัญลักษณ์กับความหมาย"
+    pairs:
+      - { left: "$f_x(a, b)$", right: "ความชันของพื้นผิวในทิศ $x$ ที่จุด $(a, b)$" }
+      - { left: "$L(x, y)$", right: "ค่าบนระนาบสัมผัสที่ใช้แทน $f$ ใกล้ $(a, b)$" }
+      - { left: "$dz$", right: "การเปลี่ยนแปลงโดยประมาณของ $z$ จากการเปลี่ยน $dx, dy$" }
+      - { left: "$\\nabla F$ ที่จุดบนพื้นผิวระดับ", right: "เวกเตอร์ตั้งฉากกับระนาบสัมผัส" }
+    hints:
+      - "$dz = f_x\\,dx + f_y\\,dy$"
+      - "เกรเดียนต์ตั้งฉากกับเซตระดับ"
+    solution: "$f_x$ คือความชันในทิศ $x$ · $L$ คือการประมาณเชิงเส้น · $dz$ คือผลต่างเชิงอนุพันธ์รวม · $\\nabla F$ เป็นเวกเตอร์ตั้งฉาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p017
+    topics: [math.calculus.tangent-planes]
+    difficulty: 4
+    type: numeric
+    stem: "กองข้าวเปลือกบนลานตากในสุพรรณบุรีเป็นรูปกรวย $V = \\tfrac13\\pi r^2h$ เดิมรัศมี 3 m สูง 2 m ระหว่างวันชาวนาเกลี่ยกองข้าวให้รัศมีเพิ่ม 0.05 m และความสูงลด 0.04 m (ค่าสมมติ) จงใช้ผลต่างเชิงอนุพันธ์ประมาณการเปลี่ยนแปลงของปริมาตรเป็นลูกบาศก์เมตร (ตอบทศนิยมสามตำแหน่ง)"
+    answer: { value: 0.251, tolerance: 0.003, unit: m³ }
+    misconceptions:
+      - { match: 1.005, feedback: "ใช้ $dh = +0.04$ ทั้งที่ความสูงลดลง ต้องใช้ $dh = -0.04$" }
+      - { match: 0.754, feedback: "ลืม $\\tfrac13$ ของปริมาตรกรวย" }
+    hints:
+      - "$dV = \\tfrac23\\pi rh\\,dr + \\tfrac13\\pi r^2\\,dh$"
+      - "$dr = 0.05$ และ $dh = -0.04$"
+    solution: "$dV = \\tfrac23\\pi(3)(2)(0.05) + \\tfrac13\\pi(9)(-0.04) = 0.2\\pi - 0.12\\pi = 0.08\\pi \\approx 0.251\\ \\mathrm{m^3}$ (ค่าจริง $\\approx 0.244$)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.tangent-planes.p018
+    topics: [math.calculus.tangent-planes]
+    difficulty: 5
+    type: numeric
+    stem: "ให้ $z = x^2 + y^2$ เปลี่ยนจุด $(1, 1)$ เป็น $(1.1, 1.1)$ จงหาผลต่าง $\\Delta z - dz$ ระหว่างการเปลี่ยนแปลงจริงกับผลต่างเชิงอนุพันธ์รวม"
+    answer: { value: 0.02, tolerance: 0.0005 }
+    misconceptions:
+      - { match: 0.42, feedback: "นี่คือ $\\Delta z$ อย่างเดียว ยังไม่ได้ลบ $dz = 0.4$" }
+      - { match: 0.01, feedback: "ความคลาดเคลื่อนมาจากทั้ง $(dx)^2$ และ $(dy)^2$ รวม $0.01 + 0.01$" }
+    hints:
+      - "$\\Delta z = (1.1^2 + 1.1^2) - 2$"
+      - "$dz = 2x\\,dx + 2y\\,dy$ ที่ $(1, 1)$ กับ $dx = dy = 0.1$"
+    solution: "$\\Delta z = 2.42 - 2 = 0.42$ และ $dz = 2(0.1) + 2(0.1) = 0.4$ ผลต่าง $= 0.02 = (dx)^2 + (dy)^2$ ซึ่งเล็กกว่า $dx$ มาก ความคลาดเคลื่อนของการประมาณเชิงเส้นเล็กลงเร็วกว่าระยะห่าง นี่คือความหมายของความหาอนุพันธ์ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

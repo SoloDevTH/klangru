@@ -1,0 +1,124 @@
+id: business.marketing.ab-testing
+subject: business
+title:
+  th: การทดสอบนัยสำคัญของการทดลอง A/B
+  en: Significance testing for A/B experiments
+summary: การออกแบบการทดลอง A/B และจริยธรรม การทดสอบ z ของผลต่างสองสัดส่วน ค่า p ช่วงความเชื่อมั่นของผลต่าง ขนาดตัวอย่าง และกับดักอย่างการแอบดูผลและการทดสอบหลายตัวชี้วัด
+difficulty: 8
+minutes: 45
+prerequisites:
+- business.marketing.digital-marketing
+- math.stats.inference
+encompasses:
+- id: math.stats.inference
+  weight: 0.4
+- id: business.marketing.digital-marketing
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: ทดสอบปุ่มสีส้มของร้านผ้าไหม
+  problem: กลุ่ม A (ปุ่มเดิม) ผู้เข้าชม 4,000 คน ซื้อ 160 คน กลุ่ม B (ปุ่มสีส้ม) ผู้เข้าชม 4,000 คน ซื้อ 200 คน ทดสอบที่ $\alpha = 0.05$ สองทาง และหาช่วงความเชื่อมั่น 95% ของผลต่าง
+  steps:
+  - text: $\hat p_A = 0.040$, $\hat p_B = 0.050$ ผลต่าง $0.010$ (1 จุดเปอร์เซ็นต์ หรือเพิ่ม 25% เทียบกับ A)
+  - text: สัดส่วนรวม $\hat p = 360/8{,}000 = 0.045$ ได้ $SE = \sqrt{0.045(0.955)(2/4{,}000)} = 0.00464$
+    why: ภายใต้ $H_0$ สองกลุ่มมีสัดส่วนเดียวกัน จึงรวมข้อมูลประมาณค่านั้น
+  - text: $z = 0.010/0.00464 = 2.16$ ค่า p สองทาง $= 2P(Z > 2.16) = 0.031$
+    why: ตรวจด้วยไคกำลังสองของตาราง 2 × 2 ได้ $\chi^2 = z^2$ และค่า p จาก statistics.NormalDist ตรงกับ math.erfc
+  - text: 'ช่วงความเชื่อมั่น: $SE = \sqrt{0.04(0.96)/4{,}000 + 0.05(0.95)/4{,}000} = 0.00463$ ได้ $0.010 \pm 1.96(0.00463) = (0.0009, 0.0191)$'
+  - text: ค่า p $< 0.05$ และช่วงไม่ครอบคลุมศูนย์ แต่ผลจริงอาจเล็กเพียง 0.09 จุดเปอร์เซ็นต์ ถ้าการเปลี่ยนปุ่มแทบไม่มีต้นทุนก็ใช้แบบ B ได้
+    why: ผู้ทดลองควรคำนวณขนาดตัวอย่างไว้ก่อน ซึ่งสำหรับผลต่าง 1 จุดเปอร์เซ็นต์ต้องใช้ราว 6,700 คนต่อกลุ่ม การทดลองนี้จึงมีกำลังต่ำกว่าที่ควร
+  answer: $z \approx 2.16$, ค่า p $\approx 0.031$ ปฏิเสธ $H_0$ ช่วงความเชื่อมั่น 95% ของผลต่าง 0.09 ถึง 1.91 จุดเปอร์เซ็นต์
+- type: figure
+  src: ab-results.svg
+  alt: กราฟแท่งอัตราการซื้อ A (หน้าเดิม) 4.0% จาก 160/4,000 คน และ B (หน้าใหม่) 5.0% จาก 200/4,000 คน แต่ละแท่งมีเส้นช่วงความเชื่อมั่น 95% ของ A ประมาณ 3.39 ถึง 4.61 ของ B ประมาณ 4.32 ถึง 5.68 ช่วงของสองกลุ่มซ้อนกันเล็กน้อย ด้านล่างเขียนว่าผลต่าง B − A = 1.00 จุดเปอร์เซ็นต์ ช่วงความเชื่อมั่น 95% ของผลต่าง 0.09 ถึง 1.91
+  caption: ช่วงของแต่ละกลุ่มซ้อนกันได้ แม้ผลต่างจะมีนัยสำคัญ ให้ดูช่วงของผลต่างโดยตรง
+- type: figure
+  src: p-value.svg
+  alt: เส้นโค้งปกติมาตรฐาน มีเส้นประที่ z = ±1.96 และเส้นสีแดงที่ z = 2.16 พื้นที่หางสีแดงทั้งสองข้างเหนือ 2.16 และต่ำกว่า −2.16 ข้างละ 0.0155 ข้อความบอกว่าค่า p สองทาง = 0.031 น้อยกว่า α = 0.05
+  caption: ค่า p สองทางคือพื้นที่ทั้งสองหาง
+- type: check
+  problem: business.marketing.ab-testing.p005
+  prompt: ค่า p คำนวณโดยสมมติว่าอะไรเป็นจริง
+- type: interactive
+  title: ขนาดตัวอย่างต่อกลุ่มเมื่อเปลี่ยนผลต่างที่ต้องการตรวจจับ
+  caption: แกนนอนคือผลต่างที่ต้องการตรวจจับ (จุดเปอร์เซ็นต์) แกนตั้งคือจำนวนคนต่อกลุ่ม ($\alpha = 0.05$ สองทาง กำลัง 80%) ปรับ $p$ คืออัตราเดิม ลองดูว่าผลต่างลดจาก 1 เหลือ 0.5 จุด จำนวนคนเพิ่มราวสี่เท่า
+  widget:
+    kind: function-plot
+    functions:
+    - \frac{7.84\cdot(p\cdot(1-p)+(p+\frac{x}{100})\cdot(1-p-\frac{x}{100}))}{(\frac{x}{100})^2}
+    sliders:
+    - name: p
+      min: 0.01
+      max: 0.2
+      step: 0.01
+      value: 0.04
+      label: อัตราเดิม p
+    x:
+    - 0.2
+    - 3
+    y:
+    - 0
+    - 50000
+- type: figure
+  src: peeking.svg
+  alt: กราฟเส้นค่า z สะสมรายวัน 28 วันของการทดลอง A/A ที่ทั้งสองกลุ่มมีอัตราการซื้อจริง 4% วันละ 1,000 คนต่อกลุ่ม เส้นประสีแดงที่ ±1.96 ค่า z แกว่งขึ้นถึง 2.34 ในวันที่ 10 ซึ่งเกินเส้น 1.96 ถ้าหยุดตรงนั้นจะสรุปผิดว่ามีผลต่าง จากนั้นค่า z ลดลงเหลือ 0.48 ในวันที่ 28
+  caption: ไม่มีผลต่างจริง แต่ถ้าแอบดูทุกวันแล้วหยุดเมื่อผ่านเกณฑ์ จะสรุปผิด
+- type: check
+  problem: business.marketing.ab-testing.p001
+  prompt: การสุ่มทำให้สองกลุ่มต่างกันแค่เรื่องใด
+glossary:
+- term: การทดลอง A/B
+  definition: การสุ่มแบ่งผู้ใช้เป็นสองกลุ่มเพื่อเทียบแบบเดิมกับแบบใหม่ในเวลาเดียวกัน (A/B test)
+- term: หน่วยทดลอง
+  definition: สิ่งที่ถูกสุ่มเข้ากลุ่ม มักเป็นผู้ใช้หนึ่งคน (experimental unit)
+- term: กลุ่มควบคุม
+  definition: กลุ่มที่ได้แบบเดิม ใช้เป็นฐานเปรียบเทียบ (control group)
+- term: สัดส่วนรวม
+  definition: สัดส่วนที่รวมข้อมูลสองกลุ่ม ใช้ประมาณค่าภายใต้สมมติฐานว่าง (pooled proportion)
+- term: ค่า p
+  definition: ความน่าจะเป็นที่จะได้ผลอย่างน้อยเท่าที่เห็นเมื่อสมมติฐานว่างเป็นจริง (p-value)
+- term: ระดับนัยสำคัญ
+  definition: เกณฑ์ $\alpha$ ที่ตั้งไว้ก่อน ถ้าค่า p ต่ำกว่าจึงปฏิเสธสมมติฐานว่าง (significance level)
+- term: กำลังการทดสอบ
+  definition: ความน่าจะเป็นที่จะตรวจพบผลต่างที่มีอยู่จริง $= 1 - \beta$ (power)
+- term: จุดเปอร์เซ็นต์
+  definition: หน่วยของผลต่างระหว่างร้อยละสองค่า เช่น 4% เป็น 5% เพิ่ม 1 จุดเปอร์เซ็นต์ (percentage point)
+- term: การแอบดูผล
+  definition: การดูผลระหว่างทดลองแล้วหยุดเมื่อผ่านเกณฑ์ ทำให้ผลบวกลวงเพิ่มขึ้น (peeking)
+- term: การปรับของบอนเฟอร์โรนี
+  definition: ทดสอบแต่ละตัวที่ $\alpha/m$ เมื่อทดสอบ $m$ สมมติฐานพร้อมกัน (Bonferroni correction)
+flashcards:
+- front: ค่าสถิติ z ของสองสัดส่วน
+  back: $z = \dfrac{\hat p_B - \hat p_A}{\sqrt{\hat p(1-\hat p)(1/n_A + 1/n_B)}}$ · $\hat p$ = สัดส่วนรวม
+- front: ช่วงความเชื่อมั่น 95% ของผลต่าง
+  back: $(\hat p_B - \hat p_A) \pm 1.96\sqrt{\hat p_A\hat q_A/n_A + \hat p_B\hat q_B/n_B}$
+- front: ขนาดตัวอย่างต่อกลุ่ม
+  back: $n \approx 7.84[p_1q_1 + p_2q_2]/(p_2 - p_1)^2$ ($\alpha = 0.05$, กำลัง 80%)
+- front: นัยสำคัญ ≠ คุ้มค่า
+  back: ค่า p บอกว่าไม่น่าเป็นศูนย์ ช่วงความเชื่อมั่นบอกว่าใหญ่แค่ไหน
+- front: กับดัก
+  back: แอบดูแล้วหยุดก่อน · หลายตัวชี้วัด · แบ่งกลุ่มไม่สมดุล · ผลของความแปลกใหม่
+references:
+- title: A/B testing
+  url: https://en.wikipedia.org/wiki/A/B_testing
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 10.3 Comparing Two Independent Population Proportions (Statistics, OpenStax)
+  url: https://openstax.org/books/statistics/pages/10-3-comparing-two-independent-population-proportions
+  source: openstax
+  lang: en
+  license: CC-BY-4.0
+- title: 1.4 Experimental Design and Ethics (Statistics, OpenStax)
+  url: https://openstax.org/books/statistics/pages/1-4-experimental-design-and-ethics
+  source: openstax
+  lang: en
+  license: CC-BY-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้
