@@ -1,0 +1,294 @@
+# หัวข้อในคลังที่ตรงกับ 2026 CSTA PK–12 Computer Science Standards
+# เป็นการเทียบภายในของคลังรู้ ไม่ใช่การรับรองจาก CSTA
+# full = บทเรียนและโจทย์สอนครบตามมาตรฐาน, partial = บางส่วน (ดู note)
+# แอปไม่มีตัวแก้ไขหรือตัวรันโปรแกรม มาตรฐานที่ให้ผู้เรียน "สร้าง" หรือ "พัฒนา" โปรแกรม ชิ้นงาน หรือแบบจำลองเอง
+# จึงเป็น partial เมื่อบทเรียนสอนผ่านการไล่ เลือก เรียง และแก้โปรแกรมที่ให้มา
+framework: csta-k12-cs-2026
+mappings:
+  # ---------- อัลกอริทึม ----------
+  - topic: computer.algorithms.intro
+    indicators: [EK-ALG-PS-01, E1-ALG-PS-01, EK-ALG-IM-03, MS-ALG-PS-03, EK-PRO-TR-07]
+    coverage: full
+    note: ทำตามและแยกกิจวัตรเป็นขั้นตอน (หุงข้าว ชงชา ไข่เจียว) อัลกอริทึมที่ดีต้องชัดเจนและมีจุดจบ ไล่ตารางค่าเพื่อตรวจผลกับข้อมูลเข้า และหาขั้นที่ผิดในอัลกอริทึมหาค่าเฉลี่ย
+  - topic: computer.algorithms.intro
+    indicators: [E4-ALG-PS-01, MS-ALG-PS-02]
+    coverage: partial
+    note: เขียนอัลกอริทึมด้วยรหัสลำลองและผังงานที่มีลำดับ ทางเลือก และวงวน แต่ไม่มีเหตุการณ์ (events) และยังไม่ใช้กระบวนงานย่อย (procedure)
+  - topic: computer.algorithms.computational-thinking
+    indicators: [E1-ALG-PS-01, MS-ALG-PS-02]
+    coverage: full
+    note: แยกปัญหาเป็นส่วนย่อยหลายชั้น หารูปแบบ นามธรรม และออกแบบอัลกอริทึมด้วยรหัสลำลองและผังงานที่มีวงวน ทางเลือก และส่วนที่ใช้ซ้ำทุกห้อง
+  - topic: computer.algorithms.computational-thinking
+    indicators: [S1-XCS-XC-01, S1-XCS-XC-02]
+    coverage: partial
+    note: จับคู่ปัญหาในวิชาอื่นกับอัลกอริทึมเดียวกัน (ค้นหาแบบแบ่งครึ่ง ค่าน้ำประปา ค่าจอดรถ) แต่ผู้เรียนไม่ได้ตั้งปัญหาในวิชาอื่นแล้วสร้างคำตอบเชิงคำนวณเอง
+  - topic: computer.algorithms.logical-reasoning
+    indicators: [MS-ALG-PS-03]
+    coverage: full
+    note: คาดการณ์ผลของเงื่อนไขกับข้อมูลเข้า (ค่าส่ง ค่าเข้าชม เครื่องรดน้ำ) และหาข้อมูลเข้าที่ทำให้อัลกอริทึมตัดเกรดผิด
+  - topic: computer.algorithms.logical-reasoning
+    indicators: [E4-PRO-PD-04]
+    coverage: partial
+    note: เปรียบเทียบหลายอัลกอริทึมของปัญหาเดียวกันด้วยความถูกต้องและจำนวนขั้นในกรณีแย่ที่สุด (หาเหรียญปลอม ทายเลข หาบัตร) แต่เป็นอัลกอริทึม ไม่ใช่โปรแกรม
+  - topic: computer.algorithms.searching-sorting
+    indicators: [HS-ALG-PS-03]
+    coverage: full
+    note: นับจำนวนการเทียบและใช้บิ๊กโอเปรียบเทียบการค้นหาและการเรียงหลายวิธี และชั่งความอ่านง่ายกับประสิทธิภาพเมื่อเลือกวิธี
+  - topic: computer.algorithms.efficiency
+    indicators: [HS-ALG-PS-03]
+    coverage: full
+    note: วัดประสิทธิภาพด้วยจำนวนขั้นเป็นฟังก์ชันของ n และบิ๊กโอ พิสูจน์ความถูกต้องด้วยค่าคงตัวของวงวน และแสดงว่ากรณีทดสอบอย่างเดียวไม่พอ
+  - topic: computer.algorithms.efficiency
+    indicators: [S2-SWD-DD-04]
+    coverage: partial
+    note: ดัดแปลงการค้นหาแบบทวิภาคกับปัญหาใหม่ และเปลี่ยนการหารหัสซ้ำจากเทียบทุกคู่เป็นเรียงแล้วตรวจตัวติดกันหรือใช้เซต แต่ผู้เรียนไม่ได้แก้โปรแกรมเองในแอป
+  - topic: computer.algorithms.data-structures
+    indicators: [S2-SWD-DD-01]
+    coverage: full
+    note: ใช้ตารางแฮช ต้นไม้ค้นหาแบบทวิภาค และกราฟกับปัญหาจริง (ใส่คีย์และนับการชน ใส่ค่าในต้นไม้ ท่องกราฟหาทางสั้นที่สุด) และเลือกโครงสร้างให้เหมาะกับงาน
+  - topic: computer.algorithms.data-structures
+    indicators: [HS-ALG-PS-01, S1-SWD-DD-01]
+    coverage: partial
+    note: เลือกโครงสร้างข้อมูลให้เหมาะกับงานและไล่การทำงานของสแตกกับคิว แต่ผู้เรียนไม่ได้ออกแบบอัลกอริทึมหรือเขียนโครงสร้างข้อมูลเองในแอป
+  - topic: computer.ai.intro
+    indicators: [E1-ALG-ML-02, E2-ALG-ML-02, E4-ALG-ML-02, MS-ALG-ML-06, MS-ALG-ML-07, MS-ALG-ML-08, MS-ALG-PS-04, HS-ALG-ML-06, MS-ALG-IM-10, S1-AIN-DD-05, S1-AIN-HR-09]
+    coverage: full
+    note: AI หารูปแบบจากข้อมูลเพื่อจำแนกหรือสร้างสิ่งใหม่ ข้อมูลฝึกกับข้อมูลทดสอบ ความลำเอียงจากข้อมูลและวิธีลด (เก็บข้อมูลให้ครบทุกกลุ่ม วัดแยกกลุ่ม) การเรียนรู้เกินและความแม่นยำที่หลอกตา และเลือกระหว่างการค้นหาตามกติกา การเขียน if-else และการเรียนรู้จากข้อมูล
+  - topic: computer.ai.intro
+    indicators: [E5-ALG-ML-02, HS-ALG-ML-07, HS-ALG-ML-08, HS-ALG-PS-05, HS-ALG-IM-10, E4-SOC-HU-18, S1-AIN-DD-01, S1-AIN-DD-02, S1-AIN-HR-08, S2-DSC-MI-08]
+    coverage: partial
+    note: จำแนกมะม่วงด้วย k เพื่อนบ้านใกล้ที่สุดด้วยมือและโค้ดที่ให้มา ตรวจผลของ AI แบบรู้สร้าง และวัดผลแบบจำลองกับข้อมูลที่ไม่สมดุล แต่ผู้เรียนไม่ได้ฝึกแบบจำลองหรือแก้ข้อมูลฝึกเองในเครื่องมือจริง และไม่ได้ประเมินแหล่งที่มาหรือความเป็นส่วนตัวของข้อมูลฝึกอย่างละเอียด
+
+  # ---------- การเขียนโปรแกรม ----------
+  - topic: computer.programming.block-programming
+    indicators: [EK-PRO-PD-04, EK-PRO-RD-06, E1-PRO-RD-06, E1-PRO-TR-07, E2-PRO-TR-07, E3-PRO-VD-06]
+    coverage: full
+    note: เรียงบล็อกคำสั่งให้หุ่นยนต์ทำงานสำเร็จ อธิบายโปรแกรมที่เริ่มด้วยบล็อกเหตุการณ์ ไล่และแก้โปรแกรมที่มีลำดับ เหตุการณ์ และวงวน และตัวแปรเหรียญหรือชีวิตที่เปลี่ยนค่าในเกม
+  - topic: computer.programming.block-programming
+    indicators: [E1-PRO-PD-04, E2-PRO-PD-04, E2-ALG-PS-01, E5-PRO-PD-04]
+    coverage: partial
+    note: เลือกและเรียงบล็อกเป็นโปรแกรมที่มีลำดับ เหตุการณ์ และวงวน และดัดแปลงเกมของเพื่อนพร้อมให้เครดิต แต่ไม่ได้สร้างโปรแกรมเองในเครื่องมือจริง
+  - topic: computer.programming.basics
+    indicators: [E3-PRO-VD-06, E4-PRO-VD-06]
+    coverage: full
+    note: ไล่ค่าตัวแปรที่เปลี่ยนผ่านการกำหนดค่า เงื่อนไข และวงวน (รวมวงวนซ้อนและ while)
+  - topic: computer.programming.basics
+    indicators: [E5-PRO-VD-06, MS-PRO-VD-16, MS-PRO-RD-17, E3-PRO-TR-08]
+    coverage: partial
+    note: ตัวแปรหลายชนิดข้อมูล (จำนวนเต็ม ทศนิยม สตริง บูลีน) เงื่อนไขและวงวน และหาข้อผิดพลาดของโปรแกรม แต่ยังไม่มีกระบวนงานย่อยและเหตุการณ์ และผู้เรียนไม่ได้เขียนโปรแกรมเอง
+  - topic: computer.programming.design-debug
+    indicators: [E3-PRO-TR-08, E4-PRO-TR-08, E5-PRO-TR-08, MS-PRO-TR-19, E4-PRO-RD-07, MS-ALG-PS-03]
+    coverage: full
+    note: ไล่และแก้โปรแกรมที่มีลำดับ เหตุการณ์ วงวน และเงื่อนไขแบบรวม เขียนทีละส่วนแล้วทดสอบทีละส่วน ดีบักอย่างเป็นระบบ เลือกกรณีทดสอบปกติ ขอบ และผิดรูป และเขียนคอมเมนต์ที่อธิบายเหตุผล
+  - topic: computer.programming.design-debug
+    indicators: [E5-PRO-RD-07, S1-SWD-TR-07]
+    coverage: partial
+    note: เลือกชุดข้อมูลทดสอบที่ครอบคลุมขอบและข้อมูลผิดรูป และรู้ว่าเอกสารควรมีอะไร แต่ผู้เรียนไม่ได้เขียนแผนทดสอบหรือเอกสารของโครงงานตนเอง
+  - topic: computer.programming.functions
+    indicators: [MS-PRO-RD-17, HS-PRO-RD-17]
+    coverage: full
+    note: อธิบายบทบาทของพารามิเตอร์ ค่าที่คืน ขอบเขตของตัวแปร วงวน และเงื่อนไขในฟังก์ชัน และไล่ผลของโค้ดที่เรียกฟังก์ชัน
+  - topic: computer.programming.functions
+    indicators: [MS-PRO-PD-12, HS-PRO-PD-12, HS-ALG-PS-02, S1-XCS-XC-02]
+    coverage: partial
+    note: แยกโปรแกรมเป็นฟังก์ชันและโมดูลเพื่อใช้ซ้ำ ฟังก์ชันแก้โจทย์คณิตศาสตร์และวิทยาศาสตร์ และเลือกฟังก์ชันแบบมีพารามิเตอร์ที่ใช้ซ้ำได้ แต่ผู้เรียนไม่ได้เขียนและปรับโปรแกรมเองในแอป
+  - topic: computer.programming.lists-strings
+    indicators: [HS-PRO-RD-17]
+    coverage: full
+    note: ไล่โค้ดที่ใช้ลิสต์ ดิกชันนารี เซต และสตริง รวมการอ้างถึงลิสต์เดียวกันจากสองตัวแปร
+  - topic: computer.programming.lists-strings
+    indicators: [HS-PRO-VD-16, HS-ALG-PS-01, MS-PRO-VD-16, S1-SWD-DD-01, HS-DAT-DC-23]
+    coverage: partial
+    note: เลือกโครงสร้างข้อมูลให้เหมาะกับปัญหา (คะแนน 40 คน นับคำ ตัดสต็อก) และประมวลผลข้อความ แต่แอปไม่มีตัวรันโปรแกรม ผู้เรียนจึงไม่ได้สร้างโปรแกรมเอง
+  - topic: computer.programming.recursion
+    indicators: [HS-PRO-RD-17]
+    coverage: full
+    note: ไล่ฟังก์ชันเรียกซ้ำด้วยกองการเรียก พารามิเตอร์และค่าที่คืนในแต่ละชั้น และการเรียกซ้ำกับลิสต์ สตริง และโฟลเดอร์ซ้อน
+  - topic: computer.programming.oop
+    indicators: [HS-PRO-RD-17, MS-PRO-PD-13]
+    coverage: full
+    note: ไล่โค้ดคลาส เมทอด และการสืบทอด และอ่านเอกสาร API ของโมดูลและบริการข้อมูลเพื่อเรียกใช้ให้ถูก
+  - topic: computer.programming.oop
+    indicators: [HS-PRO-PD-12, HS-PRO-PD-13, S1-SWD-DD-02]
+    coverage: partial
+    note: แยกโปรแกรมสหกรณ์เป็นโมดูล ใช้ไลบรารีและ API และสร้างคลาสที่นำมาใช้ซ้ำ ผ่านตัวอย่างและโจทย์ แต่ผู้เรียนไม่ได้สร้างโปรแกรมแบบโมดูลเองในแอป
+  - topic: computer.programming.development-process
+    indicators: [E3-PRO-PD-05, E5-PRO-PD-04, MS-PRO-TR-20, HS-PRO-TR-20, HS-PRO-PD-14, HS-PRO-TR-19, S2-SWD-DD-03, S2-SWD-PP-09]
+    coverage: partial
+    note: วงจรชีวิตซอฟต์แวร์ ต้นแบบที่ทดสอบกับผู้ใช้หลายกลุ่ม จัดลำดับความเห็น ต่อยอดโปรแกรมโอเพนซอร์สพร้อมให้เครดิต บันทึกเหตุผลการออกแบบ และเลือกแบบวนรอบหรือแบบน้ำตก แต่ผู้เรียนไม่ได้ปรับโปรแกรมของตนเองตามผลทดสอบในแอป
+  - topic: computer.programming.teamwork
+    indicators: [E4-PRO-PD-05, E5-PRO-PD-05, MS-PRO-PD-15, HS-PRO-PD-15, E5-SOC-CE-19, HS-SOC-CE-45, S1-SWD-PP-08, S1-GMD-PP-09, S2-GMD-PP-08]
+    coverage: partial
+    note: บทบาทในทีมพัฒนาเกม การแบ่งงานและกำหนดเวลา การสื่อสาร ระบบควบคุมเวอร์ชัน การตรวจโค้ด และการทำงานกับทีมที่อยู่ต่างที่ แต่การรับบทบาทและสร้างชิ้นงานร่วมกับทีมจริงทำนอกแอป
+  - topic: computer.projects.app-development
+    indicators: [E2-PRO-RD-06]
+    coverage: full
+    note: อธิบายขั้นตอนของโครงงานแอปตั้งแต่ตั้งปัญหา แยกปัญหา ออกแบบ สร้าง ทดสอบ จนประเมิน (แอปค่าไฟ แอปบันทึกขยะชายหาด)
+  - topic: computer.projects.app-development
+    indicators: [S1-XCS-XC-02]
+    coverage: partial
+    note: ใช้แนวคิดเชิงคำนวณกับปัญหาค่าไฟที่ต้องใช้ความรู้ฟิสิกส์และคณิตศาสตร์ และบูรณาการโครงงานกับวิชาอื่น แต่ผู้เรียนไม่ได้สร้างแอปเองในแอป
+
+  # ---------- ข้อมูล ----------
+  - topic: computer.data.digital-data-basics
+    indicators: [EK-DAT-DC-08, EK-DAT-IM-10, EK-SYS-HW-11]
+    coverage: full
+    note: ใช้ข้อมูลที่เก็บมาตอบคำถาม (แผนภูมิรูปภาพ แผนภูมิแท่ง) ใช้ข้อมูลช่วยตัดสินใจ และเลือกเครื่องมือหรือซอฟต์แวร์ให้เหมาะกับงานและผู้ใช้ (คุณยายสายตาไม่ดี)
+  - topic: computer.data.digital-data-basics
+    indicators: [E2-DAT-DC-08, E3-DAT-DC-09, E4-DAT-DC-09, E2-DAT-DI-09]
+    coverage: partial
+    note: จำแนกรูปแบบข้อมูล ตรวจค่าที่ผิดปกติในตารางคะแนน ใช้ตารางคำนวณ และเรียงขั้นตอนตั้งคำถามแล้วเก็บข้อมูล แต่ผู้เรียนไม่ได้เก็บและจัดข้อมูลเองด้วยเครื่องมือจริง
+  - topic: computer.data.data-processing
+    indicators: [MS-DAT-DC-24]
+    coverage: full
+    note: จับคู่ปัญหาคุณภาพข้อมูล (แถวซ้ำ ช่องว่าง หน่วยไม่ตรง ค่าเกินช่วง) กับวิธีแก้ และทำความสะอาดข้อมูลตามขั้นตอนแล้วคำนวณผล
+  - topic: computer.data.data-processing
+    indicators: [E5-DAT-DC-09, MS-DAT-DC-23, HS-DAT-DC-24, MS-DAT-DI-25, MS-DAT-DI-27, MS-DAT-IM-29, HS-DAT-DI-26, S1-DSC-AM-05]
+    coverage: partial
+    note: วงจรชีวิตข้อมูล สูตรตารางคำนวณ (AVERAGE COUNTIF SUM) ตรวจค่าที่รับเข้า สร้างและทดสอบแบบจำลองเชิงเส้น สหสัมพันธ์กับเหตุผล และข้อจำกัดของแบบจำลองและแผนที่ค่าฝุ่น แต่ผู้เรียนไม่ได้เก็บ จัดกลุ่ม หรือสร้างแบบจำลองในซอฟต์แวร์เอง
+  - topic: computer.data.databases
+    indicators: [MS-DAT-DC-23]
+    coverage: full
+    note: กรอง เรียง นับ และรวมข้อมูลในตารางด้วย SQL (WHERE ORDER BY COUNT JOIN)
+  - topic: computer.data.databases
+    indicators: [HS-DAT-DC-22, HS-SYS-SE-33]
+    coverage: partial
+    note: ออกแบบตาราง คีย์หลัก คีย์นอก และความสัมพันธ์ระหว่างตาราง และแก้ช่องโหว่ SQL injection กับการเก็บรหัสผ่าน แต่ไม่ได้เขียนพจนานุกรมข้อมูลที่ระบุชนิดและค่าที่ยอมรับของทุกคอลัมน์
+  - topic: computer.data.binary
+    indicators: [MS-DAT-DC-21]
+    coverage: partial
+    note: ความละเอียดของภาพและการสุ่มวัดเสียงส่งผลต่อขนาดข้อมูล แต่ไม่ได้วิเคราะห์ผลต่อความแม่นยำของการวิเคราะห์ข้อมูล
+  - topic: computer.data.number-representation
+    indicators: [MS-DAT-DC-21]
+    coverage: partial
+    note: จำนวนบิตกำหนดช่วงและความละเอียดของจำนวน (การล้น จุดตรึง จุดลอยตัว 0.1 + 0.2) แต่ไม่ได้โยงกับการเก็บข้อมูลจริง
+  - topic: computer.data.internet-search
+    indicators: [E3-SYS-NT-14]
+    coverage: full
+    note: ค้นหาข้อมูลด้วยเครื่องมือค้นหา ประเมินความน่าเชื่อถือ และเลือกเครื่องมือสื่อสารออนไลน์ให้เหมาะกับงาน
+
+  # ---------- ระบบ เครือข่าย และความปลอดภัย ----------
+  - topic: computer.systems.computer-systems
+    indicators: [E1-SYS-HW-11, E2-SYS-HW-11, E3-SYS-HW-12, E5-SYS-HW-12, E4-SYS-NT-14]
+    coverage: full
+    note: ฮาร์ดแวร์ห้าหน่วยด้วยคำที่ถูกต้อง การรับเข้าและแสดงผลเมื่อกดแป้นพิมพ์ ซอฟต์แวร์ที่ทำงานคู่กับฮาร์ดแวร์ วงรอบดึง ถอดรหัส ทำคำสั่ง และลำดับชั้นหน่วยความจำ และสื่อกลางแบบมีสายกับไร้สาย
+  - topic: computer.systems.computer-systems
+    indicators: [MS-SYS-HW-30]
+    coverage: partial
+    note: เลือกสเปกเครื่องตามงานของผู้ใช้ (ชมรมวิดีโอ) แต่ไม่ได้พิจารณาผลกระทบด้านสังคม สิ่งแวดล้อม และจริยธรรม
+  - topic: computer.systems.troubleshooting
+    indicators: [E4-SYS-HW-12]
+    coverage: full
+    note: บอกอาการ กลยุทธ์แก้ปัญหาทั่วไป แยกปัญหาฮาร์ดแวร์กับซอฟต์แวร์ และไล่หาสาเหตุอย่างเป็นระบบ
+  - topic: computer.systems.troubleshooting
+    indicators: [S1-CYB-NO-05]
+    coverage: partial
+    note: ไล่หาสาเหตุที่เครื่องเข้าอินเทอร์เน็ตไม่ได้จากผลการทดสอบทีละขั้น แต่ไม่ได้ใช้เครื่องมือวินิจฉัยเครือข่ายจริง
+  - topic: computer.systems.operating-systems
+    indicators: [HS-SYS-HW-29]
+    coverage: full
+    note: ระบบปฏิบัติการเป็นซอฟต์แวร์ระบบที่จัดการฮาร์ดแวร์และแอปอื่น ผ่าน system call ไดรเวอร์ กระบวนการ การจัดคิวหน่วยประมวลผล หน่วยความจำ และอุปกรณ์ต่อพ่วง
+  - topic: computer.systems.physical-computing
+    indicators: [MS-SYS-HW-31]
+    coverage: full
+    note: ระบบสมองกลฝังตัวรอบตัว (ประตูอัตโนมัติ หม้อหุงข้าว สถานีวัดอากาศ ระบบรดน้ำ) หน้าที่ของแต่ละส่วนและงานที่ช่วยแก้
+  - topic: computer.systems.physical-computing
+    indicators: [HS-SYS-HW-30, S1-PHY-HC-01, S1-PHY-IO-02, S1-PHY-DD-03, S1-PHY-CI-04, S2-PHY-IO-02]
+    coverage: partial
+    note: ออกแบบระบบที่รวมเซนเซอร์ ไมโครคอนโทรลเลอร์ รีเลย์ และตัวขับเคลื่อน ปรับเทียบเซนเซอร์ วงวนหลัก การส่งข้อมูลระยะไกล และเกณฑ์เปิดปิดสองระดับ แต่การต่อวงจรและรันโปรแกรมบนบอร์ดจริงต้องใช้ฮาร์ดแวร์นอกแอป
+  - topic: computer.networks.internet-basics
+    indicators: [E5-SYS-NT-14, MS-SYS-NT-34, MS-SYS-NT-35, HS-SYS-NT-35]
+    coverage: full
+    note: สวิตช์ เราเตอร์ จุดเข้าใช้งานไร้สาย และเซิร์ฟเวอร์ แบ่งข้อมูลเป็นแพ็กเก็ตแล้วประกอบกลับ ความทนทานเมื่อสายขาด LAN WAN และอินเทอร์เน็ตเป็นเครือข่ายของเครือข่าย
+  - topic: computer.networks.internet-basics
+    indicators: [HS-SYS-NT-34, S1-CYB-ND-01, S1-CYB-ND-03]
+    coverage: partial
+    note: อ่านแผนผังเครือข่ายเราเตอร์ โพรโทคอลตามชั้น ที่อยู่ IP ลักษณะการเชื่อมต่อ และความเสี่ยงของ Wi-Fi สาธารณะ แต่ผู้เรียนไม่ได้วาดแผนผังเครือข่ายเอง
+  - topic: computer.networks.performance
+    indicators: [MS-SYS-NT-35, S1-CYB-NO-05]
+    coverage: partial
+    note: จุดล้มเหลวเดียวในโทโพโลยีแบบดาว คอขวด และใช้ ping วัดความหน่วง แต่เน้นประสิทธิภาพมากกว่าความทนทานของอินเทอร์เน็ตทั้งระบบ
+  - topic: computer.security.cybersecurity-basics
+    indicators: [E1-SYS-SE-12, E4-SYS-SE-13, E5-SYS-SE-13, MS-SYS-SE-32, MS-SYS-SE-33, HS-SYS-SE-31, S1-CYB-ND-04, S1-CYB-TS-10]
+    coverage: full
+    note: สามเป้าหมาย (ความลับ ความถูกต้อง ความพร้อมใช้) และผลเมื่อเสียไป การยืนยันตัวตนกับการกำหนดสิทธิ์ รหัสผ่านและปัจจัยยืนยันตัวตน ฟิชชิง มัลแวร์ แรนซัมแวร์และวิธีป้องกัน มาตรการกายภาพและดิจิทัลหลายชั้น และการชั่งความปลอดภัยกับความสะดวก
+  - topic: computer.security.cybersecurity-basics
+    indicators: [HS-SYS-SE-32, HS-SYS-SE-33, S1-CYB-TS-07, S1-CYB-TS-08, S1-CYB-PP-13, S1-CYB-PP-14, S2-CYB-TS-07, S2-CYB-TS-08]
+    coverage: partial
+    note: ผลของการเจาะระบบต่อบุคคลและคลินิก ช่องโหว่จากโค้ดที่ไม่ตรวจข้อมูลเข้าและไลบรารี ให้คะแนนความเสี่ยง และขั้นตอนเมื่อบัญชีถูกขโมย แต่ไม่ได้ครอบคลุมผลต่ออุตสาหกรรมและรัฐ สถานะของข้อมูล หรือแผนรับมือเหตุขององค์กรเต็มรูป
+  - topic: computer.security.encryption
+    indicators: [S1-CYB-TS-09]
+    coverage: full
+    note: รหัสเลื่อน รหัสแทนที่ XOR กุญแจสมมาตรและกุญแจสาธารณะ ปริภูมิกุญแจ และ HTTPS ที่ใช้ทั้งสองแบบปกป้องข้อมูลระหว่างส่ง
+  - topic: computer.society.privacy
+    indicators: [EK-SYS-SE-12, E3-SYS-SE-13, E4-DAT-IM-11, E5-DAT-IM-11]
+    coverage: full
+    note: ข้อมูลส่วนบุคคลกับข้อมูลทั่วไป ร่องรอยดิจิทัลจากคุกกี้ ตำแหน่ง และการอนุมาน การระบุตัวคนจากตารางที่ลบชื่อแล้ว และประโยชน์กับความเสี่ยงของแอปที่เก็บข้อมูล (นาฬิกาออกกำลังกาย แอปเช็กชื่อ)
+  - topic: computer.society.privacy
+    indicators: [MS-DAT-IM-28, HS-DAT-IM-27, HS-DAT-IM-28, HS-SYS-IM-36, S1-DSC-PP-12]
+    coverage: partial
+    note: ชั่งการเปิดเผยกับการเก็บเป็นความลับ หลักการและสิทธิตาม PDPA การออกแบบระบบให้เคารพความเป็นส่วนตัว และกล้องจดจำใบหน้าในที่สาธารณะ แต่ไม่ได้พูดถึงความเป็นเจ้าของและอธิปไตยของข้อมูล และไม่ได้ให้ผู้เรียนอภิปรายประสิทธิผลของกฎหมาย
+  - topic: computer.safety.safe-ict-primary
+    indicators: [EK-SYS-SE-12, E1-SYS-SE-12, E2-SYS-SE-12, EK-SYS-IM-13, E1-SYS-IM-13]
+    coverage: full
+    note: ข้อมูลส่วนตัวที่ไม่ควรบอก รหัสผ่านที่ปลอดภัยและการออกจากระบบ สิ่งที่ทำออนไลน์มีผลจริง (นัดเจอคนในเกม ข้อความหลอก) และมารยาท สิทธิ และหน้าที่ในการใช้ห้องคอมพิวเตอร์และกลุ่มแชต
+  - topic: computer.safety.safe-ict-primary
+    indicators: [E2-SYS-IM-13]
+    coverage: partial
+    note: เน้นอันตรายและวิธีป้องกัน กล่าวถึงประโยชน์ของการใช้เทคโนโลยีเพียงเล็กน้อย
+  - topic: computer.society.responsible-ict
+    indicators: [MS-PRO-PD-14, HS-SYS-IM-36]
+    coverage: full
+    note: ลิขสิทธิ์ สาธารณสมบัติ ครีเอทีฟคอมมอนส์ สัญญาอนุญาตซอฟต์แวร์ เหตุผลที่ต้องให้เครดิต และ พ.ร.บ.คอมพิวเตอร์กับกฎหมายทรัพย์สินทางปัญญาทั้งผลดีและผลเสีย
+  - topic: computer.society.responsible-ict
+    indicators: [HS-PRO-PD-14, S1-GMD-PP-08]
+    coverage: partial
+    note: ขั้นตอนนำไลบรารีโอเพนซอร์สและสื่อ CC มาใช้ในแอปและเกมพร้อมให้เครดิต แต่ผู้เรียนไม่ได้ให้เครดิตในชิ้นงานของตนเองจริง
+
+  # ---------- คอมพิวเตอร์กับสังคมและการออกแบบ ----------
+  - topic: computer.society.computing-impacts
+    indicators: [EK-SOC-HI-14, E1-SOC-HI-14, E3-SOC-HI-16, E3-SOC-ET-17, E3-SYS-IM-15, E5-SYS-IM-15, MS-SYS-IM-37]
+    coverage: full
+    note: เปรียบเทียบงานเดียวกันก่อนและหลังมีเทคโนโลยี (ตลาดนัด จ่ายค่าน้ำ) เทคโนโลยีที่เปลี่ยนโลก ข้อแลกเปลี่ยนต่อชีวิตและการทำงาน และการเข้าถึงอินเทอร์เน็ตที่ต่างกัน
+  - topic: computer.society.computing-impacts
+    indicators: [E2-SOC-HI-14, MS-SOC-HI-39, MS-SOC-CE-45, MS-SOC-ET-42, HS-SOC-ET-41, HS-SYS-IM-37, HS-SOC-HU-43]
+    coverage: partial
+    note: เทคโนโลยีกับวัฒนธรรมไทย ประวัติจาก ENIAC ถึงทรานซิสเตอร์ งานไรเดอร์ กล้องจดจำใบหน้า และขั้นตอนประเมินผลกระทบรอบด้าน แต่ไม่ได้วิเคราะห์ผลกระทบต่อสิ่งแวดล้อมหรือการแทนที่งานด้วยระบบอัตโนมัติอย่างละเอียด
+  - topic: computer.society.inclusive-design
+    indicators: [E5-ALG-IM-03, MS-ALG-IM-09, MS-SYS-IM-37]
+    coverage: full
+    note: หลักการเข้าถึงได้สี่ข้อ ข้อจำกัดชั่วคราวและตามสถานการณ์ วิเคราะห์ตู้กดบัตรคิวและฟอร์มที่บอกข้อผิดด้วยสีอย่างเดียว และการเข้าถึงที่ต่างกันตามความสามารถทางกายและอายุ
+  - topic: computer.society.inclusive-design
+    indicators: [E4-ALG-IM-03, MS-PRO-TR-20, MS-SYS-IM-36, S1-SWD-UX-04, S1-AIN-PP-12]
+    coverage: partial
+    note: ผลทดสอบผู้ช่วยสั่งงานด้วยเสียงและระบบสแกนใบหน้าแยกตามกลุ่ม คำนวณความต่างของสี และเสนอการปรับปรุงจากผลทดสอบกับผู้ใช้ แต่ผู้เรียนไม่ได้ปรับชิ้นงานของตนเองกับผู้ใช้จริงในแอป
+  - topic: computer.design.user-centred-design
+    indicators: [E5-ALG-IM-03, MS-ALG-IM-09, S2-SWD-UX-05]
+    coverage: full
+    note: user story เกณฑ์การออกแบบที่วัดได้ ระบุจุดที่ออกแบบไม่ดีบนหน้าจอ และประเมินต้นแบบกับเกณฑ์จากผลทดสอบกับผู้ใช้ (อัตราสำเร็จ จำนวนครั้งที่กด)
+  - topic: computer.design.user-centred-design
+    indicators: [HS-ALG-IM-09, HS-PRO-TR-19, MS-PRO-TR-20, S1-SWD-UX-05, S2-SWD-DD-02]
+    coverage: partial
+    note: ออกแบบระบบสั่งอาหารล่วงหน้าจากผู้มีส่วนได้ส่วนเสีย เปรียบเทียบทางเลือกด้วยเกณฑ์ถ่วงน้ำหนัก และวางแผนทดสอบ แต่ผู้เรียนไม่ได้สร้างต้นแบบเองและไม่ได้ใช้ persona หรือ journey map
+  - topic: computer.projects.digital-innovation
+    indicators: [E3-SOC-CE-19]
+    coverage: full
+    note: กลุ่มแม่บ้าน เกษตรกร และร้านค้าในชุมชนใช้ข้อมูล สื่อดิจิทัล และหลายแอปเพิ่มมูลค่าสินค้าและลดงานซ้ำ
+  - topic: computer.web.html-css
+    indicators: [S1-SWD-UX-04, S2-SWD-UX-06]
+    coverage: partial
+    note: แท็กที่มีความหมาย ข้อความแทนภาพ ขนาดตัวอักษรที่ผู้ใช้ปรับได้ และจัดวางการ์ดในความกว้างของหน้า แต่ยังไม่ได้สอนการออกแบบที่ปรับตามขนาดจอ (responsive) ผู้เรียนไม่ได้สร้างหน้าเว็บเอง และไม่ได้ใช้เครื่องมือตรวจการเข้าถึงได้
+
+  # ---------- เทคโนโลยี (วิทยาการคำนวณกับการออกแบบและเทคโนโลยี) ----------
+  - topic: technology.design.technology-concepts
+    indicators: [E4-SOC-ET-17, E5-SOC-ET-17, E4-SYS-IM-15]
+    coverage: partial
+    note: ปัจจัยที่ทำให้เทคโนโลยีเปลี่ยน (ไถนาถึงโดรน) การเลือกใช้เทคโนโลยีโดยเทียบประโยชน์ ราคา และผลต่อสิ่งแวดล้อม และขยะอิเล็กทรอนิกส์ แต่เป็นเทคโนโลยีทั่วไป ไม่เจาะจงระบบคอมพิวเตอร์
+  - topic: technology.design.materials-tools
+    indicators: [S1-PHY-HC-01]
+    coverage: partial
+    note: วงจรอย่างง่าย ตัวต้านทานจำกัดกระแสของแอลอีดี และบอร์ดไมโครคอนโทรลเลอร์ (KidBright Arduino) ที่รับเซนเซอร์และสั่งอุปกรณ์ แต่การต่อวงจรจริงทำนอกแอป
+  - topic: technology.design.technology-project
+    indicators: [S2-PHY-PP-06]
+    coverage: partial
+    note: วางแผนโครงงานระบบรดน้ำแปลงผักด้วยไมโครคอนโทรลเลอร์ด้วยแผนภูมิแกนต์ งบประมาณ ความปลอดภัย และการบันทึก แต่ไม่ได้ทำงานเป็นทีมสร้างและทดสอบระบบจริง

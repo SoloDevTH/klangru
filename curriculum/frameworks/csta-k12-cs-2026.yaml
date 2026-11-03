@@ -1,0 +1,550 @@
+# 2026 CSTA PK–12 Computer Science Standards (Computer Science Teachers Association)
+#
+# สถานะ: ฉบับสมบูรณ์ที่เผยแพร่แล้ว (ไม่ใช่ร่าง) PDF ทางการ 218 หน้า สร้างเมื่อ 6 ก.ค. 2026 แก้ไขล่าสุด 17 ก.ค. 2026
+#   อ้างอิงตามที่ CSTA แนะนำ: Computer Science Teachers Association. (2026). 2026 CSTA PK–12 computer science standards.
+#   https://csteachers.org/pk12standards/ DOI 10.1145/3820482 ISBN 979-8-4007-2780-1
+#   ฉบับ 2017 ยังเก็บแยกใน csta-k12-cs.yaml เพราะรหัสและระดับต่างกันทั้งหมด จับคู่ข้ามฉบับไม่ได้ตรง ๆ
+#
+# ที่มาและการคัดลอก (ตรวจเมื่อ 2026-11-03)
+# - ข้อความมาตรฐานทั้ง 331 ข้อ (Foundational 196 ข้อ, High School Specialty 135 ข้อ) ตรวจกับชั้นข้อความของ PDF ทางการ
+#   (pdftotext -raw) ว่ารหัสตามด้วยข้อความตรงกันทุกตัวอักษร (ไม่นับช่องว่าง) ไม่ได้ OCR
+#   รายการรหัส ระดับ แนวคิดย่อย และข้อความอ่านจากข้อมูลของหน้า View Standards บน csteachers.org
+#   แล้วเทียบกับ PDF ได้ครบ 331 ข้อ ต่างกันเพียงเครื่องหมายอัญประกาศเดี่ยว ซึ่งใช้ (’) ตาม PDF
+# - ไม่ได้เก็บ boundary statement, implementation example, interdisciplinary connection และ progression
+#   (อ่านได้ใน PDF และหน้า View Standards)
+#
+# โครงสร้าง
+# - strand = concept ของ Foundational Standards (ALG PRO DAT SYS SOC) และ specialty area ของ High School Specialty Standards
+#   (AIN CYB DSC GMD PHY SWD และ XCS) standard = subconcept (รหัสย่อตามตารางในต้นฉบับ เช่น ALG-PS, CYB-TS)
+#   indicator = มาตรฐานแต่ละข้อ
+# - รหัสตามต้นฉบับ: Foundational เป็น <ระดับ>-<concept>-<subconcept>-<เลข> เช่น E3-PRO-VD-06, MS-SYS-SE-32
+#   ระดับ EK = PK/Kindergarten (อายุ 4–6), E1–E5 = ป.1–ป.5 รายชั้น, MS = เกรด 6–8, HS = เกรด 9–12
+#   เลขข้อนับต่อเนื่องข้ามทุก concept ภายในชั้นหรือช่วงชั้นเดียวกัน (จึงไม่เรียงติดกันภายในแต่ละ subconcept)
+#   Specialty เป็น <S1|S2>-<area>-<subconcept>-<เลข> เช่น S1-AIN-DD-01 เลขเริ่ม 01 ใหม่ในแต่ละ area และระดับ
+# - level: PK/K, Grade 1–Grade 5, MS, HS, Specialty I, Specialty II
+#   Foundational สำหรับผู้เรียนทุกคน Specialty I/II สำหรับนักเรียนมัธยมปลายที่เลือกเรียนลึกในสาขานั้น
+#   (Specialty II ต่อจาก Specialty I) X+CS คือการบูรณาการเนื้อหา HS กับวิชาอื่น
+# - note เก็บรหัส practice ตามบรรทัด "Practice(s):" ของต้นฉบับ ซึ่งมี 12 ข้อในสี่กลุ่ม
+#   ESR1–ESR2 = Ethics & Social Responsibility, IC3–IC5 = Inclusive Collaboration, CT6–CT9 = Computational Thinking,
+#   HCD10–HCD12 = Human-Centered Design
+#   "AI-related" ตามช่อง AI-related ของหน้า View Standards (มาตรฐานที่มีเนื้อหาเรื่อง AI โดยตรง 107 ข้อ)
+#
+# การจับคู่ใน curriculum/mappings/csta-k12-cs-2026.yaml เป็นการเทียบภายในของคลังรู้ ไม่ใช่การรับรอง (Seal of Alignment) จาก CSTA
+id: csta-k12-cs-2026
+title: 2026 CSTA PK–12 Computer Science Standards
+short: CSTA PK–12 CS 2026
+kind: international-standard
+subjects: [computer]
+language: en
+sources:
+  - { title: "2026 CSTA PK–12 Computer Science Standards (PDF)", url: "https://csteachers.org/wp-content/uploads/2026/07/2026-CSTA-PK%E2%80%9312-Computer-Science-Standards.pdf", publisher: "Computer Science Teachers Association (CSTA)", retrieved: "2026-11-03", pages: "34–156, 188–198" }
+  - { title: "2026 CSTA PK–12 Standards: View Standards (ข้อมูลรายข้อ practice และ AI-related)", url: "https://csteachers.org/pk12standards/view/", publisher: "Computer Science Teachers Association (CSTA)", retrieved: "2026-11-03" }
+  - { title: "CSTA PK–12 Standards (หน้าหลัก ระบุสัญญาอนุญาตและการอ้างอิง)", url: "https://csteachers.org/pk12standards/", publisher: "Computer Science Teachers Association (CSTA)", retrieved: "2026-11-03" }
+copyright: "© 2026 Computer Science Teachers Association ต้นฉบับระบุว่า \"These Standards are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License\" คัดข้อความเต็มได้เพราะคลังรู้ไม่แสวงหากำไร (เงื่อนไขเดียวกับฉบับ 2017 ใน csta-k12-cs.yaml) ต้องให้เครดิต CSTA และการดัดแปลงข้อความมาตรฐานต้องใช้ CC BY-NC-SA 4.0 (ห้ามคัดไปใส่เนื้อหาหัวข้อที่เป็น CC BY-SA)"
+completeness: full-text
+strands:
+  - id: ALG
+    title: "Algorithms & Design"
+    standards:
+      - id: "ALG-PS"
+        text: "Algorithmic Problem Solving"
+        indicators:
+          - { id: "EK-ALG-PS-01", level: "PK/K", text: "Carry out algorithms in daily activities.", note: "Practice CT7" }
+          - { id: "E1-ALG-PS-01", level: "Grade 1", text: "Decompose a problem or task into individual parts to develop an algorithm.", note: "Practice CT6, CT7" }
+          - { id: "E2-ALG-PS-01", level: "Grade 2", text: "Create an algorithm that includes sequence, events, and iteration to solve a problem or express an idea.", note: "Practice CT6, CT8" }
+          - { id: "E3-ALG-PS-01", level: "Grade 3", text: "Create an algorithm that includes a combination of sequence, events, iteration, and selection to solve a problem or express an idea.", note: "Practice CT6, CT8" }
+          - { id: "E4-ALG-PS-01", level: "Grade 4", text: "Create a written representation of an algorithm that includes a combination of sequence, events, iteration, and selection to solve a problem or express an idea.", note: "Practice CT6, CT7" }
+          - { id: "E5-ALG-PS-01", level: "Grade 5", text: "Create a visual representation of an algorithm that includes variables and a combination of sequence, events, iteration, and selection to solve a problem or express an idea.", note: "Practice CT6, CT7" }
+          - { id: "MS-ALG-PS-01", level: "MS", text: "Design an algorithm that includes variables of multiple data types to solve a problem or express an idea.", note: "Practice CT6, CT7" }
+          - { id: "MS-ALG-PS-02", level: "MS", text: "Model a given algorithm with a flowchart or pseudocode that includes a combination of control structures and procedures.", note: "Practice CT7, CT8" }
+          - { id: "MS-ALG-PS-03", level: "MS", text: "Verify the accuracy of an algorithm for given inputs.", note: "Practice CT9, HCD11" }
+          - { id: "MS-ALG-PS-04", level: "MS", text: "Justify whether a problem is best solved using procedural instructions, rule-based logic, data-driven methods, or a combination of these approaches.", note: "Practice CT6; AI-related" }
+          - { id: "MS-ALG-PS-05", level: "MS", text: "Use an AI tool to generate outputs that assist in solving a computational problem.", note: "Practice CT8, HCD11; AI-related" }
+          - { id: "HS-ALG-PS-01", level: "HS", text: "Design an algorithm using appropriate data structures to solve a problem or express an idea.", note: "Practice CT7, CT9" }
+          - { id: "HS-ALG-PS-02", level: "HS", text: "Optimize the design of an algorithm using procedural abstraction and control structures.", note: "Practice CT6, CT7" }
+          - { id: "HS-ALG-PS-03", level: "HS", text: "Evaluate algorithms for efficiency, correctness, and clarity, using metrics or test cases.", note: "Practice CT9" }
+          - { id: "HS-ALG-PS-04", level: "HS", text: "Describe the differences between deterministic and probabilistic algorithms.", note: "Practice CT6; AI-related" }
+          - { id: "HS-ALG-PS-05", level: "HS", text: "Evaluate AI-generated output to assess bias, accuracy, and potential harms.", note: "Practice ESR1, CT9; AI-related" }
+      - id: "ALG-ML"
+        text: "Machine Learning"
+        indicators:
+          - { id: "EK-ALG-ML-02", level: "PK/K", text: "Recognize attributes of objects to notice patterns and make decisions.", note: "Practice IC3, CT7; AI-related" }
+          - { id: "E1-ALG-ML-02", level: "Grade 1", text: "Recognize that AI systems are technologies that use patterns in data to make decisions or generate new things.", note: "Practice IC3, CT7; AI-related" }
+          - { id: "E2-ALG-ML-02", level: "Grade 2", text: "Examine how data is used to train a machine learning model.", note: "Practice ESR1, CT7; AI-related" }
+          - { id: "E3-ALG-ML-02", level: "Grade 3", text: "Investigate how a machine learning model can change when new data is added to a training set.", note: "Practice CT7, CT9; AI-related" }
+          - { id: "E4-ALG-ML-02", level: "Grade 4", text: "Analyze relationships between the properties of training data and a machine learning model’s output.", note: "Practice CT9, HCD11; AI-related" }
+          - { id: "E5-ALG-ML-02", level: "Grade 5", text: "Train a machine learning model to make a classification or prediction.", note: "Practice CT8, CT9; AI-related" }
+          - { id: "MS-ALG-ML-06", level: "MS", text: "Hypothesize how a machine learning model generates classifications or predictions.", note: "Practice CT7, CT9; AI-related" }
+          - { id: "MS-ALG-ML-07", level: "MS", text: "Investigate ways to improve the accuracy of a machine learning model and reduce bias by refining the quality of examples and nonexamples in the training data.", note: "Practice ESR1, CT9; AI-related" }
+          - { id: "MS-ALG-ML-08", level: "MS", text: "Evaluate the features and limitations of a machine learning model.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "HS-ALG-ML-06", level: "HS", text: "Justify the selection of a type of AI algorithm to accomplish a task.", note: "Practice IC3, CT7; AI-related" }
+          - { id: "HS-ALG-ML-07", level: "HS", text: "Evaluate training data by examining its source, quality, representativeness, potential biases, and privacy implications.", note: "Practice ESR1, ESR2; AI-related" }
+          - { id: "HS-ALG-ML-08", level: "HS", text: "Develop a machine learning model for a chosen task using appropriate data and tools.", note: "Practice CT8, CT9; AI-related" }
+      - id: "ALG-IM"
+        text: "Impacts of Algorithms & Design"
+        indicators:
+          - { id: "EK-ALG-IM-03", level: "PK/K", text: "Describe how people create algorithms to solve problems.", note: "Practice ESR1, IC3" }
+          - { id: "E1-ALG-IM-03", level: "Grade 1", text: "Explain how a change to an algorithm leads to a different outcome.", note: "Practice ESR1, IC3" }
+          - { id: "E2-ALG-IM-03", level: "Grade 2", text: "Describe how an algorithm might impact peers in varied situations.", note: "Practice ESR1, IC3" }
+          - { id: "E3-ALG-IM-03", level: "Grade 3", text: "Compare how different algorithms may affect outcomes, situations, and people with a wide range of needs.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "E4-ALG-IM-03", level: "Grade 4", text: "Evaluate how different algorithms for solving the same problem produce outcomes that may benefit or disadvantage different groups of people.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "E5-ALG-IM-03", level: "Grade 5", text: "Articulate how human-centered design principles are incorporated into the development of a computing technology.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "MS-ALG-IM-09", level: "MS", text: "Evaluate which human-centered design principles are present or missing in an existing computing technology.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "MS-ALG-IM-10", level: "MS", text: "Examine evidence of beneficial and harmful impacts, ethical issues, and biases of algorithms encountered in daily life.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "MS-ALG-IM-11", level: "MS", text: "Modify an algorithm to address a specific societal impact, ethical issue, or bias.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "HS-ALG-IM-09", level: "HS", text: "Design a computing technology using human-centered design principles.", note: "Practice CT8, HCD10; AI-related" }
+          - { id: "HS-ALG-IM-10", level: "HS", text: "Evaluate the ethical implications, societal impacts, and potential biases of rule-based and data-driven algorithms.", note: "Practice ESR1, CT9; AI-related" }
+          - { id: "HS-ALG-IM-11", level: "HS", text: "Articulate the values embedded in the design of an algorithmic system.", note: "Practice ESR1, HCD10; AI-related" }
+  - id: PRO
+    title: "Programming"
+    standards:
+      - id: "PRO-PD"
+        text: "Program Development"
+        indicators:
+          - { id: "EK-PRO-PD-04", level: "PK/K", text: "Create a sequence of commands to solve a problem or express an idea.", note: "Practice CT7, CT8" }
+          - { id: "E1-PRO-PD-04", level: "Grade 1", text: "Create code from an algorithm that includes sequence to solve a problem or express an idea.", note: "Practice CT7, CT8" }
+          - { id: "E2-PRO-PD-04", level: "Grade 2", text: "Create code from an algorithm that includes sequence, events, and iteration to solve a problem or express an idea.", note: "Practice CT7, CT8" }
+          - { id: "E3-PRO-PD-04", level: "Grade 3", text: "Develop code from a student-created algorithm that includes a combination of sequence, events, iteration, and selection to solve a problem or express an idea.", note: "Practice ESR2, CT8" }
+          - { id: "E3-PRO-PD-05", level: "Grade 3", text: "Use constructive feedback to improve a program.", note: "Practice IC5, CT9" }
+          - { id: "E4-PRO-PD-04", level: "Grade 4", text: "Compare different programming solutions to the same problem based on correctness and clarity.", note: "Practice IC3, CT9" }
+          - { id: "E4-PRO-PD-05", level: "Grade 4", text: "Collaborate with a team by offering a meaningful contribution to creating a program.", note: "Practice IC5, CT8" }
+          - { id: "E5-PRO-PD-04", level: "Grade 5", text: "Create a novel program by modifying or combining elements of existing programs.", note: "Practice ESR2, CT8" }
+          - { id: "E5-PRO-PD-05", level: "Grade 5", text: "Construct individual components of a program that are collaboratively assembled into a programming project.", note: "Practice IC4, CT8" }
+          - { id: "MS-PRO-PD-12", level: "MS", text: "Use a procedure to structure code for clarity and reusability.", note: "Practice CT7, CT8" }
+          - { id: "MS-PRO-PD-13", level: "MS", text: "Use reference documentation in program development.", note: "Practice IC4, CT9" }
+          - { id: "MS-PRO-PD-14", level: "MS", text: "Justify the importance of attribution and intellectual property when developing computing technologies.", note: "Practice ESR2, IC3" }
+          - { id: "MS-PRO-PD-15", level: "MS", text: "Develop a program utilizing inclusive collaboration practices.", note: "Practice IC4, CT8" }
+          - { id: "HS-PRO-PD-12", level: "HS", text: "Create a modular program that uses procedures, external libraries, or objects to improve reusability and readability.", note: "Practice CT7, CT8" }
+          - { id: "HS-PRO-PD-13", level: "HS", text: "Use documentation, libraries, application programming interfaces (APIs), and other tools in program development.", note: "Practice ESR2, CT9" }
+          - { id: "HS-PRO-PD-14", level: "HS", text: "Apply appropriate attribution of intellectual property when developing a computing technology.", note: "Practice ESR2, IC3" }
+          - { id: "HS-PRO-PD-15", level: "HS", text: "Collaborate on a programming project using a defined workflow that includes design documentation and clear task roles.", note: "Practice IC4, IC5" }
+      - id: "PRO-VD"
+        text: "Variables & Data Storage"
+        indicators:
+          - { id: "EK-PRO-VD-05", level: "PK/K", text: "Identify everyday gestures and symbols that represent information people use to make choices.", note: "Practice IC3, CT7" }
+          - { id: "E1-PRO-VD-05", level: "Grade 1", text: "Identify terms that refer to data values that change over time in everyday life.", note: "Practice IC3, CT7" }
+          - { id: "E2-PRO-VD-05", level: "Grade 2", text: "Label different representations of information with a name and whether its value is constant or changes.", note: "Practice IC3, CT7" }
+          - { id: "E3-PRO-VD-06", level: "Grade 3", text: "Identify the variables being stored and manipulated in a program.", note: "Practice IC3, CT7" }
+          - { id: "E4-PRO-VD-06", level: "Grade 4", text: "Trace how data flows and changes variable values in a program.", note: "Practice CT7, CT9" }
+          - { id: "E5-PRO-VD-06", level: "Grade 5", text: "Use variables to store, compare, and modify data within a program.", note: "Practice CT7, CT8" }
+          - { id: "MS-PRO-VD-16", level: "MS", text: "Use variables of multiple data types to store, access, and manipulate data within a program.", note: "Practice CT7, CT8" }
+          - { id: "HS-PRO-VD-16", level: "HS", text: "Create a program that uses appropriate data structures to store, access, and manipulate data.", note: "Practice CT7, CT8" }
+      - id: "PRO-RD"
+        text: "Reading & Documenting"
+        indicators:
+          - { id: "EK-PRO-RD-06", level: "PK/K", text: "Describe how a sequence of commands completes a task.", note: "Practice IC3, CT6" }
+          - { id: "E1-PRO-RD-06", level: "Grade 1", text: "Explain the function of code that includes an event and sequence.", note: "Practice IC3, CT6" }
+          - { id: "E2-PRO-RD-06", level: "Grade 2", text: "Explain the steps taken to create a program.", note: "Practice ESR2, IC3" }
+          - { id: "E3-PRO-RD-07", level: "Grade 3", text: "Articulate how a specific segment of code contributes to the overall purpose of a program.", note: "Practice IC3, CT6" }
+          - { id: "E4-PRO-RD-07", level: "Grade 4", text: "Document a program to clarify its functionality.", note: "Practice IC3, CT6" }
+          - { id: "E5-PRO-RD-07", level: "Grade 5", text: "Create embedded or external documentation for a programming project.", note: "Practice IC4, CT6" }
+          - { id: "MS-PRO-RD-17", level: "MS", text: "Analyze the roles of iteration, selection, variables, and procedures in a segment of code.", note: "Practice IC3, CT7" }
+          - { id: "MS-PRO-RD-18", level: "MS", text: "Analyze AI-generated code for accuracy and usability in a programming project.", note: "Practice CT9, HCD11; AI-related" }
+          - { id: "HS-PRO-RD-17", level: "HS", text: "Analyze how a segment of code works, including the role of parameters, return values, and data structures.", note: "Practice CT6, CT7" }
+          - { id: "HS-PRO-RD-18", level: "HS", text: "Evaluate AI-generated code for accuracy, reliability, and alignment with program requirements.", note: "Practice CT6, CT9; AI-related" }
+      - id: "PRO-TR"
+        text: "Testing & Refining"
+        indicators:
+          - { id: "EK-PRO-TR-07", level: "PK/K", text: "Identify a step in a sequence of commands that does not work as expected.", note: "Practice CT6, CT9" }
+          - { id: "E1-PRO-TR-07", level: "Grade 1", text: "Debug a program that includes a sequence of commands.", note: "Practice CT6, CT9" }
+          - { id: "E2-PRO-TR-07", level: "Grade 2", text: "Debug a program that includes sequence, events, and iteration.", note: "Practice CT6, CT9" }
+          - { id: "E3-PRO-TR-08", level: "Grade 3", text: "Debug a program that includes a combination of sequence, events, iteration, and selection.", note: "Practice CT6, CT9" }
+          - { id: "E4-PRO-TR-08", level: "Grade 4", text: "Debug a program incrementally and repeatedly throughout the development process.", note: "Practice CT9, HCD11" }
+          - { id: "E5-PRO-TR-08", level: "Grade 5", text: "Debug a program using systematic strategies.", note: "Practice CT9, HCD11" }
+          - { id: "MS-PRO-TR-19", level: "MS", text: "Use systematic strategies to test, refine, and document changes to a computing technology to meet the intended purpose.", note: "Practice IC4, CT9" }
+          - { id: "MS-PRO-TR-20", level: "MS", text: "Refine a computing technology based on user feedback to improve its usability and accessibility.", note: "Practice HCD10, HCD11" }
+          - { id: "HS-PRO-TR-19", level: "HS", text: "Evaluate a computing technology’s alignment with design specifications and responsible design values, including its correctness, effectiveness, and user experience.", note: "Practice CT9, HCD11" }
+          - { id: "HS-PRO-TR-20", level: "HS", text: "Refine a computing technology based on user feedback, testing results, and responsible design values to improve its effectiveness and impact.", note: "Practice HCD10, HCD11" }
+  - id: DAT
+    title: "Data & Analysis"
+    standards:
+      - id: "DAT-DC"
+        text: "Data Collection & Preparation"
+        indicators:
+          - { id: "EK-DAT-DC-08", level: "PK/K", text: "Use collected data to help answer questions.", note: "Practice IC3, CT7" }
+          - { id: "E1-DAT-DC-08", level: "Grade 1", text: "Use multiple methods to collect both numeric and non-numeric data to help answer questions.", note: "Practice IC3, CT7" }
+          - { id: "E2-DAT-DC-08", level: "Grade 2", text: "Compare numeric and non-numeric types of data in terms of how they are collected and what information they provide.", note: "Practice IC3, CT7" }
+          - { id: "E3-DAT-DC-09", level: "Grade 3", text: "Evaluate numeric and non-numeric data for accuracy and completeness.", note: "Practice IC3, CT7" }
+          - { id: "E4-DAT-DC-09", level: "Grade 4", text: "Organize collected data into a table using a computational tool, with rows representing records and columns representing attributes.", note: "Practice CT8" }
+          - { id: "E5-DAT-DC-09", level: "Grade 5", text: "Use computational tools to collect and organize different types of data.", note: "Practice CT8, CT9" }
+          - { id: "MS-DAT-DC-21", level: "MS", text: "Evaluate how different levels of precision and granularity in data collection affect accuracy, storage, and analysis.", note: "Practice IC3, CT7" }
+          - { id: "MS-DAT-DC-22", level: "MS", text: "Explain how data and its associated metadata can be used to answer questions.", note: "Practice ESR2, IC3" }
+          - { id: "MS-DAT-DC-23", level: "MS", text: "Use a computational tool to sort, filter, group, and summarize structured data.", note: "Practice IC3, CT7" }
+          - { id: "MS-DAT-DC-24", level: "MS", text: "Analyze options to address a data quality issue.", note: "Practice CT9, HCD11" }
+          - { id: "HS-DAT-DC-21", level: "HS", text: "Use a computational tool to generate simulated data that fits certain parameters for use in a simulation.", note: "Practice CT8, HCD12" }
+          - { id: "HS-DAT-DC-22", level: "HS", text: "Create a data dictionary that describes the name, type, and allowable values for each attribute and the logical relationships between variables in a dataset.", note: "Practice CT7, CT8" }
+          - { id: "HS-DAT-DC-23", level: "HS", text: "Use a computational tool to clean and organize text-based data.", note: "Practice CT9, HCD11" }
+          - { id: "HS-DAT-DC-24", level: "HS", text: "Evaluate different approaches to verifying consistency and compliance with expected data types, values, and ranges.", note: "Practice CT6, CT7" }
+      - id: "DAT-DI"
+        text: "Data Investigation"
+        indicators:
+          - { id: "EK-DAT-DI-09", level: "PK/K", text: "Investigate a question that can be answered by collecting data in students’ everyday environments.", note: "Practice IC3, CT6" }
+          - { id: "E1-DAT-DI-09", level: "Grade 1", text: "Compare a question that can be answered through a data investigation and a question that can be answered through other means.", note: "Practice IC3, CT6" }
+          - { id: "E2-DAT-DI-09", level: "Grade 2", text: "Develop a question that can be answered with data.", note: "Practice IC3, CT6" }
+          - { id: "E3-DAT-DI-10", level: "Grade 3", text: "Investigate a data question involving relationships between multiple attributes.", note: "Practice IC3, CT7" }
+          - { id: "E4-DAT-DI-10", level: "Grade 4", text: "Create an explanation that includes at least one data visualization to report the process and results of a data investigation.", note: "Practice IC3, CT8" }
+          - { id: "E5-DAT-DI-10", level: "Grade 5", text: "Analyze a dataset to identify the nature and possible sources of variability in the data.", note: "Practice IC3, CT7" }
+          - { id: "MS-DAT-DI-25", level: "MS", text: "Use a computational tool to identify relationships among variables in a dataset and make a classification or prediction.", note: "Practice IC4, CT7" }
+          - { id: "MS-DAT-DI-26", level: "MS", text: "Create data visualizations to show how different design choices can impact the interpretation of the same data.", note: "Practice HCD10, HCD11" }
+          - { id: "MS-DAT-DI-27", level: "MS", text: "Summarize a data investigation process, including potential biases, limitations, and supporting evidence.", note: "Practice IC5, CT6" }
+          - { id: "HS-DAT-DI-25", level: "HS", text: "Create a data visualization of a multivariate dataset to answer a question or make a classification or prediction.", note: "Practice IC4, CT8" }
+          - { id: "HS-DAT-DI-26", level: "HS", text: "Evaluate a data simulation or visualization to answer a data question, inform decision-making, and identify potential limitations.", note: "Practice ESR1" }
+      - id: "DAT-IM"
+        text: "Impacts of Data Science"
+        indicators:
+          - { id: "EK-DAT-IM-10", level: "PK/K", text: "Investigate how data can help a person make informed decisions in everyday life.", note: "Practice ESR1, CT7" }
+          - { id: "E1-DAT-IM-10", level: "Grade 1", text: "Examine a variety of data questions that address the needs of a person or community.", note: "Practice ESR1, HCD10" }
+          - { id: "E2-DAT-IM-10", level: "Grade 2", text: "Distinguish between data collection approaches, including those that may lead to inaccurate or biased data.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "E3-DAT-IM-11", level: "Grade 3", text: "Design a data collection process that addresses the needs of people from different backgrounds or groups.", note: "Practice ESR1, CT6; AI-related" }
+          - { id: "E4-DAT-IM-11", level: "Grade 4", text: "Investigate how data collected about people may affect individuals and groups.", note: "Practice ESR1, ESR2; AI-related" }
+          - { id: "E5-DAT-IM-11", level: "Grade 5", text: "Analyze the benefits and risks of a computing technology that uses collected data.", note: "Practice ESR1, ESR2; AI-related" }
+          - { id: "MS-DAT-IM-28", level: "MS", text: "Explain the benefits and risks of allowing personal data and metadata to be collected and used in datasets, including issues of data ownership, privacy, and sovereignty.", note: "Practice IC3, IC5; AI-related" }
+          - { id: "MS-DAT-IM-29", level: "MS", text: "Analyze how decisions made at different stages of working with data can lead to biased data, misleading conclusions, and compromised AI models.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "HS-DAT-IM-27", level: "HS", text: "Evaluate the societal, environmental, and ethical implications of large-scale data collection and processing, including within AI applications.", note: "Practice ESR2, CT6; AI-related" }
+          - { id: "HS-DAT-IM-28", level: "HS", text: "Debate the efficacy of a policy or regulation to ensure responsible data use.", note: "Practice ESR1, CT6; AI-related" }
+  - id: SYS
+    title: "Systems & Security"
+    standards:
+      - id: "SYS-HW"
+        text: "Hardware & Software"
+        indicators:
+          - { id: "EK-SYS-HW-11", level: "PK/K", text: "Examine the use of tools to accomplish a task or solve a problem for different users.", note: "Practice IC3, HCD10" }
+          - { id: "E1-SYS-HW-11", level: "Grade 1", text: "Describe the purpose of basic hardware components of a computing system, using accurate terminology.", note: "Practice IC3" }
+          - { id: "E2-SYS-HW-11", level: "Grade 2", text: "Explain how the basic hardware components of a computing system work together to perform input and output (I/O) operations.", note: "Practice IC3" }
+          - { id: "E3-SYS-HW-12", level: "Grade 3", text: "Describe the role of software in a computing system to accomplish tasks or solve problems.", note: "Practice IC3, CT6" }
+          - { id: "E4-SYS-HW-12", level: "Grade 4", text: "Apply a basic troubleshooting process to identify and fix common hardware and software issues.", note: "Practice IC3" }
+          - { id: "E5-SYS-HW-12", level: "Grade 5", text: "Explain how hardware and software components of a computing system work together to perform input and output operations, processing, and storage.", note: "Practice IC3, CT6" }
+          - { id: "MS-SYS-HW-30", level: "MS", text: "Examine differences between computing systems based on user needs, system requirements, and potential societal, environmental, and ethical impacts.", note: "Practice HCD10, HCD12" }
+          - { id: "MS-SYS-HW-31", level: "MS", text: "Describe computing devices used in various industries, their basic functions, and how they are used to accomplish tasks or solve problems.", note: "Practice IC3, CT6" }
+          - { id: "HS-SYS-HW-29", level: "HS", text: "Differentiate an operating system as a special type of software that manages both the hardware and other software components of a computing system, including handling memory and peripherals.", note: "Practice IC3, CT7" }
+          - { id: "HS-SYS-HW-30", level: "HS", text: "Demonstrate the capabilities and limitations of a physical or simulated computing device to address a task or problem.", note: "Practice CT6, HCD12" }
+      - id: "SYS-SE"
+        text: "Security"
+        indicators:
+          - { id: "EK-SYS-SE-12", level: "PK/K", text: "Differentiate between public and private information.", note: "Practice ESR2, IC3" }
+          - { id: "E1-SYS-SE-12", level: "Grade 1", text: "Describe how to keep devices and online accounts safe from unauthorized access.", note: "Practice ESR2, IC5" }
+          - { id: "E2-SYS-SE-12", level: "Grade 2", text: "Explain how online actions have real-world consequences.", note: "Practice ESR2, IC3" }
+          - { id: "E3-SYS-SE-13", level: "Grade 3", text: "Evaluate how sharing information online might reveal personally identifiable information and other details.", note: "Practice ESR2, IC3" }
+          - { id: "E4-SYS-SE-13", level: "Grade 4", text: "Distinguish between authentication and authorization in protecting devices and private information.", note: "Practice IC3" }
+          - { id: "E5-SYS-SE-13", level: "Grade 5", text: "Describe the concepts of the CIA triad and how each component is important in protecting information.", note: "Practice IC3, HCD12" }
+          - { id: "MS-SYS-SE-32", level: "MS", text: "Explain the effects of not using the CIA triad when working with data.", note: "Practice IC3, HCD12" }
+          - { id: "MS-SYS-SE-33", level: "MS", text: "Evaluate common types of cyber attacks and preventions.", note: "Practice IC3, CT6; AI-related" }
+          - { id: "HS-SYS-SE-31", level: "HS", text: "Identify different types of cybersecurity and physical security measures and the trade-offs for users, data, and devices.", note: "Practice ESR2, CT6" }
+          - { id: "HS-SYS-SE-32", level: "HS", text: "Classify the causes and impacts of security breaches and social engineering attacks for individuals, industries, communities, and governments.", note: "Practice ESR2, CT6; AI-related" }
+          - { id: "HS-SYS-SE-33", level: "HS", text: "Formulate a solution to a security flaw in a given system.", note: "Practice ESR1, CT6" }
+      - id: "SYS-NT"
+        text: "Networks"
+        indicators:
+          - { id: "E3-SYS-NT-14", level: "Grade 3", text: "Explain how people access the internet to gain information and communicate with each other.", note: "Practice ESR1, IC3" }
+          - { id: "E4-SYS-NT-14", level: "Grade 4", text: "Compare wired and wireless methods that computing devices use to connect to the internet.", note: "Practice IC3" }
+          - { id: "E5-SYS-NT-14", level: "Grade 5", text: "Distinguish between the components of wired and wireless networks.", note: "Practice IC3, CT7" }
+          - { id: "MS-SYS-NT-34", level: "MS", text: "Model how information in a network is broken down into packets, transmitted between devices, and reassembled.", note: "Practice CT6, CT7" }
+          - { id: "MS-SYS-NT-35", level: "MS", text: "Explain how the resilience of the internet depends on interconnected devices and their roles and functions within the network.", note: "Practice IC3, CT6" }
+          - { id: "HS-SYS-NT-34", level: "HS", text: "Diagram a network of computing systems, including hardware and software.", note: "Practice CT7, CT8" }
+          - { id: "HS-SYS-NT-35", level: "HS", text: "Analyze how the internet functions as a network of networks and how it differs from other types of networks.", note: "Practice CT7" }
+      - id: "SYS-IM"
+        text: "Impacts of Computing Systems"
+        indicators:
+          - { id: "EK-SYS-IM-13", level: "PK/K", text: "Identify responsible behavior when using computing systems and digital tools.", note: "Practice ESR1, IC3" }
+          - { id: "E1-SYS-IM-13", level: "Grade 1", text: "Describe an individual’s role in responsibly using computing systems and digital tools.", note: "Practice ESR1, IC3" }
+          - { id: "E2-SYS-IM-13", level: "Grade 2", text: "Describe the benefits and harms that arise from an individual’s use of computing systems and digital tools.", note: "Practice ESR1, IC3" }
+          - { id: "E3-SYS-IM-15", level: "Grade 3", text: "Describe how widely used computing systems may impact an individual’s life and community.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "E4-SYS-IM-15", level: "Grade 4", text: "Investigate the impacts of widely used computing systems on natural resources and the environment.", note: "Practice ESR1, ESR2; AI-related" }
+          - { id: "E5-SYS-IM-15", level: "Grade 5", text: "Examine how computing systems impact culture and the ways people live and work.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "MS-SYS-IM-36", level: "MS", text: "Collaborate to improve the design of a computing system to meet the needs of diverse users.", note: "Practice IC5, HCD12; AI-related" }
+          - { id: "MS-SYS-IM-37", level: "MS", text: "Examine how access to computing systems can vary based on personal and social factors, such as physical ability, geographic location, socioeconomic status, and age.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "HS-SYS-IM-36", level: "HS", text: "Evaluate the rationale behind a law or policy governing the design and use of computing systems.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "HS-SYS-IM-37", level: "HS", text: "Investigate how computing systems and infrastructure impact society and the environment, identifying who is affected and why.", note: "Practice ESR1, HCD10; AI-related" }
+  - id: SOC
+    title: "Computing & Society"
+    standards:
+      - id: "SOC-HI"
+        text: "History of Computing"
+        indicators:
+          - { id: "EK-SOC-HI-14", level: "PK/K", text: "Identify computing technologies used in daily life that have changed over time.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "E1-SOC-HI-14", level: "Grade 1", text: "Compare how an everyday activity changed after a specific computing technology was introduced.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "E2-SOC-HI-14", level: "Grade 2", text: "Analyze the ways that people from different cultures, backgrounds, and time periods have designed computing technologies to help them solve problems and express ideas.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "E3-SOC-HI-16", level: "Grade 3", text: "Examine how computing innovations have changed the ways people live, work, or communicate over time.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "E4-SOC-HI-16", level: "Grade 4", text: "Investigate the contributions of diverse individuals and communities in the history of computing.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "E5-SOC-HI-16", level: "Grade 5", text: "Analyze how the inclusion or exclusion of diverse individuals and communities has shaped the design, development, and societal impact of computing technologies.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "MS-SOC-HI-38", level: "MS", text: "Compare the roles of individuals, communities, organizations, and governments in shaping computing technologies across major eras in computing history.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "MS-SOC-HI-39", level: "MS", text: "Analyze intended and unintended impacts of a historical computing technology on society and the environment.", note: "Practice ESR1, IC5; AI-related" }
+          - { id: "HS-SOC-HI-38", level: "HS", text: "Analyze the historical trajectory of a specific computing technology and how its development is linked to societal and environmental factors.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "HS-SOC-HI-39", level: "HS", text: "Propose modifications to an existing policy or piece of legislation that encourages ethical innovation and minimizes societal risks associated with technology.", note: "Practice ESR1, ESR2; AI-related" }
+      - id: "SOC-ET"
+        text: "Emerging Technologies"
+        indicators:
+          - { id: "E3-SOC-ET-17", level: "Grade 3", text: "Describe how new technologies create both benefits and risks in personal and family life.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "E4-SOC-ET-17", level: "Grade 4", text: "Analyze how the limitations of existing technologies can lead to emerging technologies.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "E5-SOC-ET-17", level: "Grade 5", text: "Examine how people decide whether or not to use emerging technologies.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "MS-SOC-ET-40", level: "MS", text: "Evaluate when it is appropriate to use AI and other emerging technologies to solve a problem based on their capabilities, limitations, and environmental impacts.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "MS-SOC-ET-41", level: "MS", text: "Evaluate how the decisions made while designing an emerging technology influence user experiences differently across different communities.", note: "Practice ESR2, IC3; AI-related" }
+          - { id: "MS-SOC-ET-42", level: "MS", text: "Debate ways an emerging technology impacts the social, cultural, and environmental issues in local communities.", note: "Practice ESR1, CT8; AI-related" }
+          - { id: "HS-SOC-ET-40", level: "HS", text: "Evaluate the fundamental technological differences between an emerging technology and established technologies and how those differences influence computing.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "HS-SOC-ET-41", level: "HS", text: "Evaluate the societal and environmental impacts of an emerging technology, including those that lead to inequities in access and outcomes.", note: "Practice HCD10, HCD12; AI-related" }
+          - { id: "HS-SOC-ET-42", level: "HS", text: "Design a conceptual solution to a real-world problem using an emerging technology, analyzing its potential benefits and harms.", note: "Practice ESR1, CT6; AI-related" }
+      - id: "SOC-HU"
+        text: "Humans & Computing"
+        indicators:
+          - { id: "EK-SOC-HU-15", level: "PK/K", text: "Explain that people design and develop computing technologies.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "E1-SOC-HU-15", level: "Grade 1", text: "Differentiate between activities that humans do well and activities that computing technologies do well.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "E2-SOC-HU-15", level: "Grade 2", text: "Investigate situations where humans have created computing technologies to solve problems.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "E3-SOC-HU-18", level: "Grade 3", text: "Examine why people design and build computing technologies.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "E4-SOC-HU-18", level: "Grade 4", text: "Distinguish between human learning and machine learning processes.", note: "Practice CT6, CT7; AI-related" }
+          - { id: "E5-SOC-HU-18", level: "Grade 5", text: "Evaluate when it is appropriate to use or not use computing technologies to solve a problem.", note: "Practice ESR1, CT6; AI-related" }
+          - { id: "MS-SOC-HU-43", level: "MS", text: "Analyze how the decisions humans make when using computing technologies have ethical and social consequences.", note: "Practice ESR1, CT6; AI-related" }
+          - { id: "HS-SOC-HU-43", level: "HS", text: "Evaluate how human choices in using, designing, deploying, and regulating computing technologies have risks, benefits, and long-term impacts.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "HS-SOC-HU-44", level: "HS", text: "Debate perspectives on differences between human and artificial intelligence and their implications for consciousness, ethics, and human responsibility.", note: "Practice ESR1, CT6; AI-related" }
+      - id: "SOC-CE"
+        text: "Career Exploration"
+        indicators:
+          - { id: "EK-SOC-CE-16", level: "PK/K", text: "Identify how people use digital devices at home, at school, and at work.", note: "Practice ESR1, IC3" }
+          - { id: "E1-SOC-CE-16", level: "Grade 1", text: "Describe how computing is used by people at home, at school, and in the community.", note: "Practice ESR1, IC3" }
+          - { id: "E2-SOC-CE-16", level: "Grade 2", text: "Investigate how personal interests connect to computing in different industries and careers.", note: "Practice ESR1, IC3" }
+          - { id: "E3-SOC-CE-19", level: "Grade 3", text: "Explain how people in different industries use computing technologies and skills to accomplish their work.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "E4-SOC-CE-19", level: "Grade 4", text: "Investigate how the workforce adopts new computing technologies and continues to update their computing skills.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "E5-SOC-CE-19", level: "Grade 5", text: "Examine how professionals collaborate while using computing technologies to solve problems.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "MS-SOC-CE-44", level: "MS", text: "Analyze how workers in different careers use computational thinking to solve real-world problems.", note: "Practice IC4, CT6; AI-related" }
+          - { id: "MS-SOC-CE-45", level: "MS", text: "Evaluate how automation in technology can create or replace jobs and change how people work.", note: "Practice ESR1, CT6; AI-related" }
+          - { id: "HS-SOC-CE-45", level: "HS", text: "Analyze how diverse teams of people use computational thinking and computing technologies to solve problems and express ideas.", note: "Practice CT6, HCD10; AI-related" }
+          - { id: "HS-SOC-CE-46", level: "HS", text: "Connect computing knowledge and skills acquired to students’ personal goals and career aspirations.", note: "Practice CT6, HCD10; AI-related" }
+  - id: AIN
+    title: "Artificial Intelligence (HS Specialty)"
+    standards:
+      - id: "AIN-DD"
+        text: "Design & Development"
+        indicators:
+          - { id: "S1-AIN-DD-01", level: "Specialty I", text: "Analyze AI systems to differentiate the types of problems they address.", note: "Practice CT6, CT7; AI-related" }
+          - { id: "S1-AIN-DD-02", level: "Specialty I", text: "Modify AI system training data to improve fairness and accuracy in outputs.", note: "Practice ESR1, CT9; AI-related" }
+          - { id: "S1-AIN-DD-03", level: "Specialty I", text: "Create an application using a prebuilt supervised learning model to make a classification or prediction.", note: "Practice CT8, CT9; AI-related" }
+          - { id: "S1-AIN-DD-04", level: "Specialty I", text: "Compare data representations and how representation choice constrains applicable algorithms.", note: "Practice CT6, CT7; AI-related" }
+          - { id: "S1-AIN-DD-05", level: "Specialty I", text: "Evaluate whether an AI or non-AI computational solution is appropriate for a real-world problem.", note: "Practice CT6, CT7; AI-related" }
+          - { id: "S2-AIN-DD-01", level: "Specialty II", text: "Analyze problems that can be addressed using unsupervised learning.", note: "Practice CT6, CT7; AI-related" }
+          - { id: "S2-AIN-DD-02", level: "Specialty II", text: "Optimize an AI algorithm’s performance for a given problem.", note: "Practice CT7, CT9; AI-related" }
+          - { id: "S2-AIN-DD-03", level: "Specialty II", text: "Create an application using a complex supervised learning model.", note: "Practice IC4, CT8; AI-related" }
+      - id: "AIN-DS"
+        text: "Data Science for AI"
+        indicators:
+          - { id: "S1-AIN-DS-06", level: "Specialty I", text: "Examine how data flows through a neural network structure.", note: "Practice IC3, CT7; AI-related" }
+          - { id: "S1-AIN-DS-07", level: "Specialty I", text: "Apply data acquisition, cleaning, and transformation techniques to prepare data for AI analysis.", note: "Practice CT6, HCD11; AI-related" }
+          - { id: "S2-AIN-DS-04", level: "Specialty II", text: "Evaluate metadata and data pipelines to support transparency in AI model selection and deployment.", note: "Practice ESR1, IC5; AI-related" }
+          - { id: "S2-AIN-DS-05", level: "Specialty II", text: "Transform data to meet the input requirements of an AI algorithm.", note: "Practice CT7, CT8; AI-related" }
+      - id: "AIN-HR"
+        text: "Human Responsibility"
+        indicators:
+          - { id: "S1-AIN-HR-08", level: "Specialty I", text: "Plan safeguards for AI systems that protect human well-being and privacy while ensuring meaningful human involvement in decision-making.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "S1-AIN-HR-09", level: "Specialty I", text: "Analyze the potential biases and limitations of AI systems.", note: "Practice ESR1, HCD12; AI-related" }
+          - { id: "S1-AIN-HR-10", level: "Specialty I", text: "Analyze the environmental impacts of widespread AI adoption.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "S2-AIN-HR-06", level: "Specialty II", text: "Develop a policy that promotes transparency in AI applications.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "S2-AIN-HR-07", level: "Specialty II", text: "Analyze how model optimization choices impact a model’s performance, interpretability, and fairness.", note: "Practice ESR1, CT6; AI-related" }
+      - id: "AIN-PP"
+        text: "Professional Practice"
+        indicators:
+          - { id: "S1-AIN-PP-11", level: "Specialty I", text: "Integrate a prebuilt AI agent into an application.", note: "Practice CT6, CT8; AI-related" }
+          - { id: "S1-AIN-PP-12", level: "Specialty I", text: "Analyze how AI tools shape user experiences for people with diverse backgrounds and characteristics.", note: "Practice ESR1, HCD10; AI-related" }
+          - { id: "S1-AIN-PP-13", level: "Specialty I", text: "Assess how unauthorized data collection has influenced the practice of training AI models.", note: "Practice ESR1, ESR2; AI-related" }
+          - { id: "S1-AIN-PP-14", level: "Specialty I", text: "Evaluate how ethical implications of AI have changed over time.", note: "Practice ESR1, IC3; AI-related" }
+          - { id: "S2-AIN-PP-08", level: "Specialty II", text: "Develop an AI agent to accomplish a defined task.", note: "Practice IC4, CT8; AI-related" }
+          - { id: "S2-AIN-PP-09", level: "Specialty II", text: "Develop a professional communication artifact by interpreting technical AI results for diverse audiences.", note: "Practice IC3, HCD10; AI-related" }
+          - { id: "S2-AIN-PP-10", level: "Specialty II", text: "Debate aspects of AI regulatory frameworks and legislation across countries.", note: "Practice ESR1, IC3; AI-related" }
+  - id: CYB
+    title: "Cybersecurity (HS Specialty)"
+    standards:
+      - id: "CYB-ND"
+        text: "Network Theory & Design"
+        indicators:
+          - { id: "S1-CYB-ND-01", level: "Specialty I", text: "Analyze the role of network services and protocols in secure communication and their potential vulnerabilities.", note: "Practice IC3, CT6" }
+          - { id: "S1-CYB-ND-02", level: "Specialty I", text: "Examine the concepts of the Open Systems Interconnection (OSI) model and their role in network communication.", note: "Practice CT6, CT7" }
+          - { id: "S1-CYB-ND-03", level: "Specialty I", text: "Distinguish between networks based on their protocols, topologies, and addressing schemes.", note: "Practice CT6, CT7" }
+          - { id: "S1-CYB-ND-04", level: "Specialty I", text: "Examine security risks in digital systems and corresponding mitigation strategies.", note: "Practice IC5, CT6" }
+          - { id: "S2-CYB-ND-01", level: "Specialty II", text: "Integrate security features in networking hardware and software.", note: "Practice CT9" }
+          - { id: "S2-CYB-ND-02", level: "Specialty II", text: "Design a secure network, including servers, switches, routers, endpoints, and firewalls.", note: "Practice HCD11" }
+          - { id: "S2-CYB-ND-03", level: "Specialty II", text: "Evaluate the security implications of different network topologies.", note: "Practice ESR1, CT6" }
+      - id: "CYB-NO"
+        text: "Network Operations"
+        indicators:
+          - { id: "S1-CYB-NO-05", level: "Specialty I", text: "Apply diagnostic tools and techniques to resolve network connectivity issues.", note: "Practice IC5, CT6" }
+          - { id: "S1-CYB-NO-06", level: "Specialty I", text: "Analyze system processes and network activity using command-line tools to identify potential security concerns.", note: "Practice CT6, CT7" }
+          - { id: "S2-CYB-NO-04", level: "Specialty II", text: "Analyze network traffic patterns to distinguish between normal and potentially malicious behavior.", note: "Practice CT6, CT9" }
+          - { id: "S2-CYB-NO-05", level: "Specialty II", text: "Analyze cybersecurity tasks to improve efficiency and reliability.", note: "Practice ESR1, CT8" }
+      - id: "CYB-TS"
+        text: "Threats & Security Measures"
+        indicators:
+          - { id: "S1-CYB-TS-07", level: "Specialty I", text: "Analyze how common cyber threats related to network activity exploit system vulnerabilities.", note: "Practice ESR1, CT6" }
+          - { id: "S1-CYB-TS-08", level: "Specialty I", text: "Evaluate a security threat using the CIA triad, states of data, and types of control.", note: "Practice CT6, CT7" }
+          - { id: "S1-CYB-TS-09", level: "Specialty I", text: "Analyze how encryption methods in network communication protect privacy and security.", note: "Practice ESR1, CT6" }
+          - { id: "S1-CYB-TS-10", level: "Specialty I", text: "Evaluate security measures as part of a layered defense strategy to protect sensitive information.", note: "Practice ESR1, CT6" }
+          - { id: "S2-CYB-TS-06", level: "Specialty II", text: "Design access controls to protect sensitive information.", note: "Practice CT6, HCD10" }
+          - { id: "S2-CYB-TS-07", level: "Specialty II", text: "Evaluate security risks to determine appropriate risk management strategies.", note: "Practice CT6, HCD12" }
+          - { id: "S2-CYB-TS-08", level: "Specialty II", text: "Examine an incident response plan for a real-world scenario.", note: "Practice IC3, CT6" }
+      - id: "CYB-CP"
+        text: "Cybersecurity Policies"
+        indicators:
+          - { id: "S1-CYB-CP-11", level: "Specialty I", text: "Explain the importance of cybersecurity policies in protecting organizational assets and mitigating risks.", note: "Practice IC3, CT6" }
+          - { id: "S1-CYB-CP-12", level: "Specialty I", text: "Explain key components of effective security policies.", note: "Practice ESR1, CT6" }
+          - { id: "S2-CYB-CP-09", level: "Specialty II", text: "Debate how various regulations impact organizational security policies, procedures, and compliance.", note: "Practice ESR1, IC5" }
+      - id: "CYB-PP"
+        text: "Professional Practice"
+        indicators:
+          - { id: "S1-CYB-PP-13", level: "Specialty I", text: "Analyze the potential consequences of a cybersecurity decision on individuals, organizations, and society.", note: "Practice ESR2, IC5" }
+          - { id: "S1-CYB-PP-14", level: "Specialty I", text: "Analyze social engineering techniques and how they exploit human cognitive biases and organizational weaknesses.", note: "Practice IC5, HCD12" }
+          - { id: "S1-CYB-PP-15", level: "Specialty I", text: "Translate cybersecurity concepts, risks, and solutions clearly to both technical and nontechnical audiences.", note: "Practice IC3, HCD10" }
+          - { id: "S2-CYB-PP-10", level: "Specialty II", text: "Analyze the benefits, risks, and ethical implications of AI in cybersecurity.", note: "Practice ESR1, CT6; AI-related" }
+          - { id: "S2-CYB-PP-11", level: "Specialty II", text: "Analyze cybersecurity vulnerabilities and incidents to inform responsible disclosure practices.", note: "Practice ESR2, IC5" }
+          - { id: "S2-CYB-PP-12", level: "Specialty II", text: "Create documentation of cybersecurity processes and decisions that supports team coordination and accountability.", note: "Practice IC4, IC5" }
+  - id: DSC
+    title: "Data Science (HS Specialty)"
+    standards:
+      - id: "DSC-CC"
+        text: "Creation & Curation"
+        indicators:
+          - { id: "S1-DSC-CC-01", level: "Specialty I", text: "Apply exploratory data analysis techniques to non-hierarchical quantitative data.", note: "Practice CT7, HCD11" }
+          - { id: "S1-DSC-CC-02", level: "Specialty I", text: "Interpret metadata when using data collected by others.", note: "Practice ESR2, CT6" }
+          - { id: "S1-DSC-CC-03", level: "Specialty I", text: "Develop a program to manipulate and transform data to prepare for analysis.", note: "Practice CT6, CT8" }
+          - { id: "S2-DSC-CC-01", level: "Specialty II", text: "Apply exploratory data analysis techniques to a hierarchical structured data source.", note: "Practice CT7, HCD11" }
+          - { id: "S2-DSC-CC-02", level: "Specialty II", text: "Document the origin, structure, and preparation of a dataset to support clarity and reproducibility.", note: "Practice IC4, IC5" }
+          - { id: "S2-DSC-CC-03", level: "Specialty II", text: "Develop a program to collect and integrate data from multiple sources.", note: "Practice CT8, CT9" }
+          - { id: "S2-DSC-CC-04", level: "Specialty II", text: "Choose appropriate data to collect for a data science project based on available tools, skills, and project goals.", note: "Practice IC4, CT6" }
+      - id: "DSC-AM"
+        text: "Analysis & Modeling Techniques"
+        indicators:
+          - { id: "S1-DSC-AM-04", level: "Specialty I", text: "Apply appropriate analytic and visualization techniques for categorical and quantitative data.", note: "Practice CT6, HCD12" }
+          - { id: "S1-DSC-AM-05", level: "Specialty I", text: "Examine missing data and its impact on data analysis.", note: "Practice ESR1, CT6" }
+          - { id: "S1-DSC-AM-06", level: "Specialty I", text: "Analyze structured categorical and/or quantitative datasets, using computational tools and libraries.", note: "Practice CT6, CT8" }
+          - { id: "S2-DSC-AM-05", level: "Specialty II", text: "Build a model to explain relationships, make predictions, and evaluate the influence of different variables.", note: "Practice CT6, CT8" }
+          - { id: "S2-DSC-AM-06", level: "Specialty II", text: "Evaluate strategies for handling missing data.", note: "Practice ESR1, CT6" }
+          - { id: "S2-DSC-AM-07", level: "Specialty II", text: "Analyze an unstructured, mixed-type, or high-dimensional dataset using computational tools and libraries.", note: "Practice CT7, CT8" }
+      - id: "DSC-MI"
+        text: "Model Interpretation & Reasoning"
+        indicators:
+          - { id: "S1-DSC-MI-07", level: "Specialty I", text: "Interpret the results of a data analysis to explain patterns, anomalies, and trends, and connect them back to the original problem or research question.", note: "Practice IC3, CT6" }
+          - { id: "S1-DSC-MI-08", level: "Specialty I", text: "Explain the appropriateness of predictive models for the specific problem being addressed.", note: "Practice ESR1, CT6" }
+          - { id: "S1-DSC-MI-09", level: "Specialty I", text: "Explain how dataset size affects model stability and performance.", note: "Practice CT7, CT9" }
+          - { id: "S2-DSC-MI-08", level: "Specialty II", text: "Evaluate the performance of models using established metrics.", note: "Practice CT7, CT9" }
+          - { id: "S2-DSC-MI-09", level: "Specialty II", text: "Analyze the trade-offs between interpretability, accuracy, and generalizability as they relate to model complexity.", note: "Practice CT7, HCD12" }
+          - { id: "S2-DSC-MI-10", level: "Specialty II", text: "Analyze how adding or removing variables affects model behavior and performance.", note: "Practice CT7, CT9" }
+      - id: "DSC-VZ"
+        text: "Visualization"
+        indicators:
+          - { id: "S1-DSC-VZ-10", level: "Specialty I", text: "Create a data visualization that communicates key findings to diverse audiences.", note: "Practice CT8, HCD10" }
+          - { id: "S1-DSC-VZ-11", level: "Specialty I", text: "Analyze how graphical conventions in data visualizations support accurate interpretation and how breaking conventions can mislead.", note: "Practice ESR1, IC3" }
+          - { id: "S2-DSC-VZ-11", level: "Specialty II", text: "Create a visualization that accurately represents data and avoids misleading design choices.", note: "Practice ESR1, HCD10" }
+          - { id: "S2-DSC-VZ-12", level: "Specialty II", text: "Critique a data visualization for misleading elements and their role in spreading misinformation.", note: "Practice ESR1, HCD10" }
+      - id: "DSC-PP"
+        text: "Professional Practice"
+        indicators:
+          - { id: "S1-DSC-PP-12", level: "Specialty I", text: "Apply ethical principles to data collection, analysis, and communication to promote privacy, transparency, and accountability.", note: "Practice ESR2, HCD10" }
+          - { id: "S1-DSC-PP-13", level: "Specialty I", text: "Assess how data collection and use may impact marginalized and underrepresented groups.", note: "Practice ESR1, ESR2" }
+          - { id: "S1-DSC-PP-14", level: "Specialty I", text: "Document data analysis results in a format appropriate for an audience with diverse backgrounds and perspectives.", note: "Practice IC3, HCD10" }
+          - { id: "S2-DSC-PP-13", level: "Specialty II", text: "Evaluate ethical, legal, and social considerations when working with large-scale datasets, predictive models, and emerging technologies.", note: "Practice ESR1, ESR2" }
+          - { id: "S2-DSC-PP-14", level: "Specialty II", text: "Evaluate protective measures in data collection, usage, and governance for privacy, security, and fairness.", note: "Practice ESR2, HCD12" }
+          - { id: "S2-DSC-PP-15", level: "Specialty II", text: "Translate technical results for diverse audiences in professional communication artifacts.", note: "Practice IC3, HCD10" }
+  - id: GMD
+    title: "Game Development (HS Specialty)"
+    standards:
+      - id: "GMD-DD"
+        text: "Design & Development"
+        indicators:
+          - { id: "S1-GMD-DD-01", level: "Specialty I", text: "Analyze the fundamental components of a game, including players, rules, game mechanics, and outcomes.", note: "Practice CT6, CT7" }
+          - { id: "S1-GMD-DD-02", level: "Specialty I", text: "Create a storyboard to plan and communicate a game’s narrative and interactive experience.", note: "Practice IC3, CT6" }
+          - { id: "S1-GMD-DD-03", level: "Specialty I", text: "Develop an interactive experience to support gameplay.", note: "Practice CT8, HCD12" }
+          - { id: "S1-GMD-DD-04", level: "Specialty I", text: "Adapt rule-based logic to improve control of game agents or systems.", note: "Practice CT6, CT9" }
+          - { id: "S2-GMD-DD-01", level: "Specialty II", text: "Justify the use of responsible design principles in developing an engaging, meaningful game experience.", note: "Practice ESR1, HCD12" }
+          - { id: "S2-GMD-DD-02", level: "Specialty II", text: "Develop a system that programmatically controls 2D or 3D animation states based on game logic and player interactions.", note: "Practice CT7, CT8" }
+          - { id: "S2-GMD-DD-03", level: "Specialty II", text: "Construct in-game artificial intelligence to control NPC behavior.", note: "Practice CT7, CT8" }
+      - id: "GMD-PX"
+        text: "Player Experience"
+        indicators:
+          - { id: "S1-GMD-PX-05", level: "Specialty I", text: "Create a user-friendly interface for a game, considering accessibility, usability, and aesthetics.", note: "Practice CT8, HCD10" }
+          - { id: "S1-GMD-PX-06", level: "Specialty I", text: "Optimize basic game usability through user testing and identifying actionable design revisions.", note: "Practice HCD10, HCD11" }
+          - { id: "S2-GMD-PX-04", level: "Specialty II", text: "Evaluate game interactions using diverse input devices to enhance immersion and player experience.", note: "Practice CT9, HCD10" }
+          - { id: "S2-GMD-PX-05", level: "Specialty II", text: "Evaluate two versions of a game using defined metrics to determine which performs better.", note: "Practice HCD10, HCD11" }
+      - id: "GMD-AR"
+        text: "Architecture"
+        indicators:
+          - { id: "S1-GMD-AR-07", level: "Specialty I", text: "Examine the key architectural features of computing hardware and their implications for game development.", note: "Practice IC3, CT6" }
+          - { id: "S2-GMD-AR-06", level: "Specialty II", text: "Analyze game system architectures that support scalability, maintainability, and performance.", note: "Practice IC3, CT6" }
+      - id: "GMD-PP"
+        text: "Professional Practice"
+        indicators:
+          - { id: "S1-GMD-PP-08", level: "Specialty I", text: "Analyze the ethical implications of copyright and intellectual property in game development.", note: "Practice ESR2, IC3" }
+          - { id: "S1-GMD-PP-09", level: "Specialty I", text: "Develop a game project collaboratively within a diverse team.", note: "Practice IC3, IC4" }
+          - { id: "S2-GMD-PP-07", level: "Specialty II", text: "Create a game utilizing ethical principles in the design and development process.", note: "Practice ESR1, IC4" }
+          - { id: "S2-GMD-PP-08", level: "Specialty II", text: "Collaborate effectively in a project team by defining and executing assigned roles, communicating clearly, and managing shared resources to deliver a game project.", note: "Practice IC3, IC5" }
+  - id: PHY
+    title: "Physical Computing (HS Specialty)"
+    standards:
+      - id: "PHY-HC"
+        text: "Hardware & Circuit Design"
+        indicators:
+          - { id: "S1-PHY-HC-01", level: "Specialty I", text: "Construct an electrical circuit to power and control a physical computing device.", note: "Practice CT7, CT8" }
+          - { id: "S2-PHY-HC-01", level: "Specialty II", text: "Develop an electromechanical system using a CAD tool for design and testing.", note: "Practice CT7, CT8" }
+      - id: "PHY-IO"
+        text: "Inputs & Outputs"
+        indicators:
+          - { id: "S1-PHY-IO-02", level: "Specialty I", text: "Integrate sensors, actuators, and peripherals into a physical computing system.", note: "Practice CT6, CT8" }
+          - { id: "S2-PHY-IO-02", level: "Specialty II", text: "Design a closed-loop feedback control system to meet a desired outcome using varying sensor types.", note: "Practice HCD10, HCD12" }
+      - id: "PHY-DD"
+        text: "Design & Development"
+        indicators:
+          - { id: "S1-PHY-DD-03", level: "Specialty I", text: "Develop software to control a physical device using an iterative design process.", note: "Practice CT8, HCD11" }
+          - { id: "S2-PHY-DD-03", level: "Specialty II", text: "Develop an application that extends functionality and user engagement with physical devices.", note: "Practice CT8, HCD10" }
+      - id: "PHY-CI"
+        text: "Connectivity & Internet of Things"
+        indicators:
+          - { id: "S1-PHY-CI-04", level: "Specialty I", text: "Use IoT devices to collect sensor data and transmit it locally using device-to-device or device-to-gateway communication.", note: "Practice CT8, HCD12" }
+          - { id: "S1-PHY-CI-05", level: "Specialty I", text: "Implement IoT communication by connecting physical devices with protocols, applying security practices.", note: "Practice IC4, CT9" }
+          - { id: "S2-PHY-CI-04", level: "Specialty II", text: "Develop an IoT system to manage the collection and transmission of data and enable remote monitoring and control of a physical system.", note: "Practice CT9, HCD10" }
+          - { id: "S2-PHY-CI-05", level: "Specialty II", text: "Develop an embedded network, evaluating trade-offs among network protocols, security measures, and scalability.", note: "Practice IC4, CT8" }
+      - id: "PHY-PP"
+        text: "Professional Practice"
+        indicators:
+          - { id: "S1-PHY-PP-06", level: "Specialty I", text: "Use a version control system to coordinate development in a physical computing project.", note: "Practice IC3, IC5" }
+          - { id: "S1-PHY-PP-07", level: "Specialty I", text: "Evaluate social, technical, and sociotechnical impacts of a physical computing system.", note: "Practice ESR1, HCD10" }
+          - { id: "S1-PHY-PP-08", level: "Specialty I", text: "Evaluate the security implications of a physical computing system, including data privacy, unauthorized access, and potential vulnerabilities.", note: "Practice IC3, HCD10" }
+          - { id: "S2-PHY-PP-06", level: "Specialty II", text: "Apply a project management methodology to collaboratively design, develop, and test a physical computing project.", note: "Practice IC4, IC5" }
+          - { id: "S2-PHY-PP-07", level: "Specialty II", text: "Evaluate how physical computing technologies shape social processes, communities, power, and equity in global society.", note: "Practice ESR1, ESR2" }
+          - { id: "S2-PHY-PP-08", level: "Specialty II", text: "Develop a physical computing solution for diverse users using the engineering design process.", note: "Practice ESR1, HCD10" }
+  - id: SWD
+    title: "Software Development (HS Specialty)"
+    standards:
+      - id: "SWD-DD"
+        text: "Design & Development"
+        indicators:
+          - { id: "S1-SWD-DD-01", level: "Specialty I", text: "Implement linear data structures to organize and access collections of data when solving computational problems.", note: "Practice CT6, CT8" }
+          - { id: "S1-SWD-DD-02", level: "Specialty I", text: "Design software that accounts for complexity through abstraction.", note: "Practice CT7, CT8" }
+          - { id: "S1-SWD-DD-03", level: "Specialty I", text: "Use integrated development environment (IDE) features to streamline software development, including code editing, debugging, version control, and project management.", note: "Practice IC4, CT8" }
+          - { id: "S2-SWD-DD-01", level: "Specialty II", text: "Apply associative and hierarchical data structures to solve computational problems.", note: "Practice CT6, CT7" }
+          - { id: "S2-SWD-DD-02", level: "Specialty II", text: "Develop a prototype using diverse user personas and user journey maps to guide design decisions.", note: "Practice HCD10, HCD12" }
+          - { id: "S2-SWD-DD-03", level: "Specialty II", text: "Develop a project in iterative cycles, documenting changes and the rationale for each cycle.", note: "Practice IC4, HCD11" }
+          - { id: "S2-SWD-DD-04", level: "Specialty II", text: "Modify an existing algorithm to improve efficiency, considering factors such as data structures and algorithmic paradigms.", note: "Practice CT6, CT7" }
+      - id: "SWD-UX"
+        text: "User Experience"
+        indicators:
+          - { id: "S1-SWD-UX-04", level: "Specialty I", text: "Refine a user interface design using accessibility and responsive design tools.", note: "Practice HCD10, HCD11" }
+          - { id: "S1-SWD-UX-05", level: "Specialty I", text: "Create software that serves intended users and contexts using human-centered design principles.", note: "Practice ESR1, HCD12" }
+          - { id: "S2-SWD-UX-05", level: "Specialty II", text: "Evaluate the user experience to improve usability.", note: "Practice IC3, HCD10" }
+          - { id: "S2-SWD-UX-06", level: "Specialty II", text: "Create a user-friendly, accessible, and responsively designed interface.", note: "Practice CT8, HCD10" }
+      - id: "SWD-TR"
+        text: "Testing & Refining"
+        indicators:
+          - { id: "S1-SWD-TR-06", level: "Specialty I", text: "Use AI-assisted IDE tools or features to understand unfamiliar code and identify errors during debugging.", note: "Practice IC3, CT9; AI-related" }
+          - { id: "S1-SWD-TR-07", level: "Specialty I", text: "Design a test plan that exercises program functionality, including edge cases, error conditions, and varied user inputs.", note: "Practice CT7, CT9; AI-related" }
+          - { id: "S2-SWD-TR-07", level: "Specialty II", text: "Use an IDE to test and refine a complex software project.", note: "Practice IC4, CT9; AI-related" }
+          - { id: "S2-SWD-TR-08", level: "Specialty II", text: "Debug a complex software project to identify, isolate, and fix errors.", note: "Practice IC3, CT9" }
+      - id: "SWD-PP"
+        text: "Professional Practice"
+        indicators:
+          - { id: "S1-SWD-PP-08", level: "Specialty I", text: "Collaborate to develop software that reflects diverse perspectives.", note: "Practice ESR2, IC5" }
+          - { id: "S2-SWD-PP-09", level: "Specialty II", text: "Apply an industry-standard software development process to plan and deliver a project while prioritizing equity and justice.", note: "Practice ESR1, IC4" }
+  - id: XCS
+    title: "X+CS (HS Specialty)"
+    standards:
+      - id: "XCS-XC"
+        text: "X+CS"
+        indicators:
+          - { id: "S1-XCS-XC-01", level: "Specialty I", text: "Explain connections between CS concepts and practices and those from a non-CS discipline (X).", note: "Practice IC3, CT6" }
+          - { id: "S1-XCS-XC-02", level: "Specialty I", text: "Formulate a computational solution to a problem in a non-CS discipline (X) using computational thinking.", note: "Practice CT7, CT8" }
+          - { id: "S1-XCS-XC-03", level: "Specialty I", text: "Analyze a computer science technology or approach used in a non-CS discipline (X).", note: "Practice ESR1, CT6" }
+          - { id: "S1-XCS-XC-04", level: "Specialty I", text: "Model relationships within a non-CS discipline using data, visualizations, and computational methods.", note: "Practice CT6, CT7" }
+          - { id: "S1-XCS-XC-05", level: "Specialty I", text: "Assess how well an algorithm solves problems within a non-CS discipline (X) by evaluating its accuracy, efficiency, and relevance to the intended goal.", note: "Practice ESR1, CT6" }
