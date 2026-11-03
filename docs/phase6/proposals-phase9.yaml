@@ -1,0 +1,58 @@
+# ข้อเสนอหัวข้อเพิ่มเติม (เฟส 9) ตามที่เจ้าของโครงการขอเมื่อ 3 พ.ย. 2569
+# ที่มา: ช่องว่างที่ครูและเอเจนต์พบระหว่างเขียนหัวข้อเฟส 8 (docs/phase8/) คือตัวชี้วัดที่ไม่มีหัวข้อใดสอน
+# หรือหัวข้อเดิมสอนเพียงบางส่วน (coverage: partial ใน curriculum/mappings/) และเนื้อหาที่ขาดไม่ควรยัดเพิ่มในหัวข้อเดิม
+# จึงแยกเป็นบทเรียนใหม่ หัวข้อละหนึ่งเรื่องที่สอนจบในตัว
+#
+# ช่องว่างตั้งต้นและหัวข้อที่รับ
+#   math        การแทนค่าด้วยตรีโกณมิติ (CALC2 3.3; CALC2 3.2 สอนบางส่วนใน math.calculus.integration-techniques)
+#               ทฤษฎีบทค่าเฉลี่ย (CALC1 4.4)  ระนาบสัมผัสและการประมาณเชิงเส้น (CALC3 4.4)  ตัวคูณลากรองจ์ (CALC3 4.8)
+#               การเปลี่ยนตัวแปรและจาโคเบียน (CALC3 5.7)
+#               เมทริกซ์ผกผัน 3 × 3 ด้วยเกาส์–จอร์แดน (A-REI.9, MIT18.06 3 สอนบางส่วนใน math.linalg.matrices-elimination)
+#   engineering การแปลงความเค้น ความเค้นหลัก และวงกลมของมอร์ (MIT2.001 12, 16, 17)
+#               ชลศาสตร์ทางน้ำเปิด (ENV-2.8, CIV-3.4 สอนบางส่วนใน engineering.fluids.fluid-mechanics)
+#               พลศาสตร์วัตถุแข็งเกร็งสามมิติ เทนเซอร์ความเฉื่อยและโมเมนตัมเชิงมุม (MIT2.003SC U6)
+#   business    ต้นทุนฐานกิจกรรม ต่อจาก business.accounting.product-costing (th-tqf-accounting 8.1.2 ส่วนตัวผลักดันต้นทุน)
+#               การทดสอบนัยสำคัญของการทดลอง A/B (STAT 10.3, 10.5 และ STAT 1.4 การออกแบบการทดลอง)
+#   management  การตรวจติดตามคุณภาพภายใน แยกออกจาก management.quality.iso-management-systems
+#
+# ตัวชี้วัดอื่นจาก npm run curriculum -- --missing ที่อยู่ในบทเรียนเดียวกันจริง จึงผูกไว้ด้วย
+#   CALC2 3.5 (กลยุทธ์อื่นในการหาปริพันธ์ ตารางปริพันธ์) เป็นบทสรุปการเลือกเทคนิคของหัวข้อการแทนค่าด้วยตรีโกณมิติ
+#   CALC3 5.5 (ปริพันธ์สามชั้นในพิกัดทรงกระบอกและทรงกลม) หัวข้อจาโคเบียนพิสูจน์ dV = r dz dr dθ และ ρ² sin φ
+#     (math.calculus.multiple-integrals ใช้สูตรนี้อยู่แล้วแต่ยังไม่ได้จับคู่ใน mappings ควรเพิ่มแถวให้หัวข้อนั้นด้วย)
+#   MIT18.06 20 (การประยุกต์ดีเทอร์มิแนนต์: สูตรตัวผกผันด้วยโคแฟกเตอร์และกฎของคราเมอร์) อยู่กับเมทริกซ์ผกผัน 3 × 3
+#   MIT2.001 13 (ความเค้นหลายแกน) และ 18 (การวิบัติของวัสดุ เกณฑ์เทรสกาและฟอนมิเซส) อยู่กับการแปลงความเค้น
+#   th-coe ME-2.4 (กลศาสตร์ของแข็ง) สอนบางส่วนใน engineering.materials.stress-strain หัวข้อการแปลงความเค้นเติมส่วนที่ขาด
+#   MIT2.003SC U5 (สอนบางส่วนใน engineering.mechanics.rigid-body-dynamics) และ UPHYS1 11.4 (การควงของไจโรสโคป)
+#     อยู่กับพลศาสตร์สามมิติ
+#
+# ข้อสังเกต: iso-9001-2015 9.2 และ asq-quality-bok CQE II.D ถูกจับคู่แบบ full กับ management.quality.iso-management-systems
+# แล้ว (หัวข้อนั้นมีผังเจ็ดขั้นและตัวอย่างการเขียนข้อพบหนึ่งตัวอย่าง) แต่ยังไม่ได้สอนโปรแกรมการตรวจ การสุ่มหลักฐาน
+# รายการตรวจ การจัดระดับข้อพบ และการติดตามผล เมื่อเขียนหัวข้อ management.quality.internal-audit
+# ให้ย้ายสองรหัสนี้ไปเป็น full ของหัวข้อใหม่ และลดแถวเดิมเป็น partial หลักสูตรใน curriculum/frameworks/ ไม่มี
+# องค์ความรู้ Certified Quality Auditor ของ ASQ จึงผูกได้เพียง CQE II.D
+#
+# เรียงตาม prerequisite: หัวข้อใน prereq มีอยู่แล้วในคลังหรือเสนอไว้ก่อนหน้าในไฟล์นี้
+# difficulty ไม่ต่ำกว่า prerequisite ใด (integration-techniques 8, partial-derivatives 8.5, multiple-integrals 9,
+# matrices-elimination 7, eigenvalues 9, stress-strain 7.5, fluid-mechanics 8.5, rigid-body-dynamics 8.5,
+# product-costing 5.5, inference 8, iso-management-systems 6)
+topics:
+  # ---------- แคลคูลัสตัวแปรเดียว ----------
+  - { id: math.calculus.mean-value-theorem, title: ทฤษฎีบทค่าเฉลี่ย, difficulty: 8, prereq: [math.calculus.derivative-applications], indicators: ["university-foundations:CALC1 4.4"], scope: "ทฤษฎีบทของโรลล์ ทฤษฎีบทค่าเฉลี่ยและความหมายทางเรขาคณิต (เส้นสัมผัสขนานกับเส้นตัด) เงื่อนไขต่อเนื่องบนช่วงปิดและหาอนุพันธ์ได้บนช่วงเปิด ผลที่ตามมา: f′ = 0 ทั้งช่วงแล้ว f คงตัว ฟังก์ชันที่อนุพันธ์เท่ากันต่างกันด้วยค่าคงตัว และเหตุผลของการทดสอบฟังก์ชันเพิ่ม/ลด ตัวอย่างความเร็วเฉลี่ยกับกล้องจับความเร็วสองจุด" }
+  - { id: math.calculus.trig-substitution, title: ปริพันธ์ตรีโกณมิติและการแทนค่าด้วยตรีโกณมิติ, difficulty: 8.5, prereq: [math.calculus.integration-techniques, math.functions.trig-functions], indicators: ["university-foundations:CALC2 3.2", "university-foundations:CALC2 3.3", "university-foundations:CALC2 3.5"], scope: "∫tanᵐx secⁿx และผลคูณ sin(mx)cos(nx) ด้วยสูตรผลคูณเป็นผลบวก การแทนค่า x = a sin θ, a tan θ, a sec θ สำหรับ √(a² − x²), √(a² + x²), √(x² − a²) การวาดสามเหลี่ยมอ้างอิงเพื่อกลับเป็นตัวแปรเดิม การเติมกำลังสองก่อนแทนค่า ขอบเขตของปริพันธ์จำกัดเขต และการเลือกเทคนิคให้เหมาะกับรูปปริพันธ์รวมถึงการใช้ตารางปริพันธ์ ตัวอย่างพื้นที่วงรีและความยาวสายเคเบิล" }
+  # ---------- แคลคูลัสหลายตัวแปร ----------
+  - { id: math.calculus.tangent-planes, title: ระนาบสัมผัสและการประมาณเชิงเส้นของฟังก์ชันหลายตัวแปร, difficulty: 8.5, prereq: [math.calculus.partial-derivatives, math.calculus.derivative-applications], indicators: ["university-foundations:CALC3 4.4"], scope: "สมการระนาบสัมผัสของพื้นผิว z = f(x, y) และของพื้นผิวระดับ F(x, y, z) = 0 ด้วยเกรเดียนต์ การประมาณเชิงเส้น L(x, y) ความหาอนุพันธ์ได้ของฟังก์ชันสองตัวแปร ผลต่างเชิงอนุพันธ์รวม dz และการประมาณความคลาดเคลื่อนสัมพัทธ์จากการวัดหลายปริมาณ (ปริมาตรกระป๋อง ความต้านทานขนาน)" }
+  - { id: math.calculus.lagrange-multipliers, title: ตัวคูณลากรองจ์และค่าเหมาะที่สุดภายใต้เงื่อนไขบังคับ, difficulty: 9, prereq: [math.calculus.partial-derivatives], indicators: ["university-foundations:CALC3 4.8"], scope: "ปัญหาค่าสูงสุดต่ำสุดที่มีเงื่อนไขบังคับ g(x, y) = k ภาพเส้นระดับสัมผัสกับเส้นเงื่อนไข เงื่อนไข ∇f = λ∇g การแก้ระบบสมการที่ได้ การตรวจจุดปลายของเส้นเงื่อนไขที่ปิด กรณีสามตัวแปรและสองเงื่อนไข และความหมายของ λ เป็นอัตราการเปลี่ยนของค่าเหมาะที่สุดต่อ k ตัวอย่างกล่องต้นทุนต่ำสุดและการจัดสรรงบประมาณระหว่างแรงงานกับทุน" }
+  - { id: math.calculus.change-of-variables, title: การเปลี่ยนตัวแปรในปริพันธ์หลายชั้นและจาโคเบียน, difficulty: 9.5, prereq: [math.calculus.multiple-integrals, math.linalg.matrices-elimination], indicators: ["university-foundations:CALC3 5.7", "university-foundations:CALC3 5.5"], scope: "การแปลง (u, v) → (x, y) และภาพของบริเวณ จาโคเบียนเป็นดีเทอร์มิแนนต์ของอนุพันธ์ย่อยและเป็นอัตราขยายพื้นที่ |∂(x, y)/∂(u, v)| สูตรเปลี่ยนตัวแปรของปริพันธ์สองชั้นและสามชั้น ที่มาของ dA = r dr dθ, dV = r dz dr dθ และ ρ² sin φ dρ dφ dθ การเลือกตัวแปรใหม่ให้บริเวณเป็นสี่เหลี่ยม (สี่เหลี่ยมด้านขนาน วงรี บริเวณระหว่างไฮเพอร์โบลา)" }
+  # ---------- พีชคณิตเชิงเส้น ----------
+  - { id: math.linalg.matrix-inverse, title: เมทริกซ์ผกผันด้วยวิธีเกาส์–จอร์แดนและการแก้ระบบสมการ, difficulty: 7.5, prereq: [math.linalg.matrices-elimination], indicators: ["us-ccss-math:A-REI.9", "university-foundations:MIT18.06 3", "university-foundations:MIT18.06 20"], scope: "การหาตัวผกผันของเมทริกซ์ 3 × 3 ด้วยการดำเนินการตามแถวบน [A | I] จนได้ [I | A⁻¹] การตรวจว่าไม่มีตัวผกผันเมื่อได้แถวศูนย์ สมบัติ (AB)⁻¹ = B⁻¹A⁻¹ และ (Aᵀ)⁻¹ การมองผลคูณเมทริกซ์แบบหลักและแบบบล็อก สูตรตัวผกผันด้วยเมทริกซ์ผูกพัน (โคแฟกเตอร์) กฎของคราเมอร์ การแก้ระบบ Ax = b ด้วย x = A⁻¹b เมื่อเปลี่ยน b หลายครั้ง และการใช้เครื่องคิดเลขหรือสเปรดชีตกับเมทริกซ์ที่ใหญ่กว่า 3 × 3" }
+  # ---------- วิศวกรรม: กลศาสตร์วัสดุ ----------
+  - { id: engineering.materials.stress-transformation, title: การแปลงความเค้น ความเค้นหลัก และวงกลมของมอร์, difficulty: 8.5, prereq: [engineering.materials.stress-strain, math.functions.trig-functions], indicators: ["university-foundations:MIT2.001 12", "university-foundations:MIT2.001 13", "university-foundations:MIT2.001 16", "university-foundations:MIT2.001 17", "university-foundations:MIT2.001 18", "th-coe-engineering-basics:ME-2.4"], scope: "สภาวะความเค้นบนชิ้นส่วนเล็ก ความเค้นระนาบ สมการแปลงความเค้นบนระนาบที่หมุนมุม θ ความเค้นหลักและมุมระนาบหลัก ความเค้นเฉือนสูงสุด การสร้างและอ่านวงกลมของมอร์ การแปลงความเครียดและโรเซตต์มาตรวัดความเครียด และเกณฑ์การวิบัติของเทรสกาและฟอนมิเซสกับเพลาที่รับแรงบิดร่วมกับแรงตามแนวแกน" }
+  # ---------- วิศวกรรม: ชลศาสตร์ ----------
+  - { id: engineering.fluids.open-channel-flow, title: ชลศาสตร์การไหลในทางน้ำเปิด, difficulty: 8.5, prereq: [engineering.fluids.fluid-mechanics], indicators: ["th-coe-engineering-basics:ENV-2.8", "th-coe-engineering-basics:CIV-3.4"], scope: "ลักษณะการไหลในทางน้ำเปิด รัศมีชลศาสตร์ การไหลสม่ำเสมอด้วยสมการแมนนิงและเชซี หน้าตัดที่มีประสิทธิภาพทางชลศาสตร์ พลังงานจำเพาะ ความลึกวิกฤตและเลขฟรูด การไหลแบบต่ำกว่าวิกฤตและเหนือวิกฤต การกระโดดของน้ำ และการวัดอัตราการไหลด้วยฝายสันคม ตัวอย่างคลองชลประทานและท่อระบายน้ำฝน" }
+  # ---------- วิศวกรรม: พลศาสตร์ ----------
+  - { id: engineering.mechanics.rigid-body-3d, title: พลศาสตร์ของวัตถุแข็งเกร็งในสามมิติ, difficulty: 9, prereq: [engineering.mechanics.rigid-body-dynamics, math.linalg.eigenvalues, math.calculus.vectors-3d], indicators: ["university-foundations:MIT2.003SC U5", "university-foundations:MIT2.003SC U6", "university-foundations:UPHYS1 11.4"], scope: "โมเมนตัมเชิงมุม H = Σ r × m v ของวัตถุที่หมุนในสามมิติ เทนเซอร์ความเฉื่อย ผลคูณความเฉื่อย ทฤษฎีบทแกนขนานในสามมิติ แกนหลักเป็นเวกเตอร์เฉพาะของเทนเซอร์ความเฉื่อย H ไม่ขนานกับ ω เมื่อหมุนรอบแกนที่ไม่ใช่แกนหลัก การถ่วงสมดุลพลวัตของเพลาหมุน สมการของออยเลอร์ และการควงของไจโรสโคป" }
+  # ---------- บริหารธุรกิจ ----------
+  - { id: business.accounting.activity-based-costing, title: ต้นทุนฐานกิจกรรม (ABC), difficulty: 6, prereq: [business.accounting.product-costing], indicators: ["th-tqf-accounting:8.1.2"], scope: "ข้อจำกัดของการปันส่วนค่าใช้จ่ายการผลิตด้วยอัตราเดียวทั้งโรงงาน การระบุกิจกรรมและกลุ่มต้นทุนกิจกรรม ตัวผลักดันต้นทุน ลำดับชั้นกิจกรรม (ระดับหน่วย ระดับรุ่น ระดับผลิตภัณฑ์ ระดับโรงงาน) การคำนวณอัตรากิจกรรมและต้นทุนต่อหน่วยแบบ ABC เทียบกับวิธีดั้งเดิม การบิดเบือนต้นทุนของสินค้าปริมาณน้อย การบริหารฐานกิจกรรม (ABM) และการนำไปใช้กับงานบริการ" }
+  - { id: business.marketing.ab-testing, title: การทดสอบนัยสำคัญของการทดลอง A/B, difficulty: 8, prereq: [business.marketing.digital-marketing, math.stats.inference], indicators: ["university-foundations:STAT 10.3", "university-foundations:STAT 10.5", "university-foundations:STAT 1.4"], scope: "การออกแบบการทดลองแบบ A/B (หน่วยทดลอง การสุ่มจัดกลุ่ม กลุ่มควบคุม ตัวแปรเดียว ระยะเวลา และจริยธรรมกับความยินยอมของผู้ใช้) สมมติฐานว่างและทางเลือก การทดสอบ z ของผลต่างสองสัดส่วนด้วยสัดส่วนรวม ค่า p และระดับนัยสำคัญ ช่วงความเชื่อมั่นของผลต่าง นัยสำคัญทางสถิติเทียบกับผลต่างที่มีความหมายทางธุรกิจ ขนาดตัวอย่างและกำลังการทดสอบโดยประมาณ และกับดัก เช่น แอบดูผลแล้วหยุดก่อน ทดสอบหลายตัวชี้วัดพร้อมกัน" }
+  # ---------- การจัดการคุณภาพ ----------
+  - { id: management.quality.internal-audit, title: การตรวจติดตามคุณภาพภายใน, difficulty: 6.5, prereq: [management.quality.iso-management-systems], indicators: ["iso-9001-2015:9.2", "asq-quality-bok:CQE II.D"], scope: "ประเภทการตรวจ (ฝ่ายที่หนึ่ง สอง สาม การตรวจระบบ กระบวนการ ผลิตภัณฑ์) โปรแกรมการตรวจประจำปีตามความสำคัญและความเสี่ยงของกระบวนการ คุณสมบัติและความเป็นอิสระของผู้ตรวจ การจัดทำรายการตรวจ การสุ่มหลักฐานจากบันทึกและการสัมภาษณ์ การตรวจตามรอยกระบวนการ การเขียนและจัดระดับข้อพบ (ข้อบกพร่องหลัก ย่อย ข้อสังเกต) รายงานการตรวจ การติดตามการปฏิบัติการแก้ไขและประเมินประสิทธิผล และการนำผลเข้าสู่การทบทวนโดยฝ่ายบริหาร" }
