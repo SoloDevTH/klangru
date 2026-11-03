@@ -391,3 +391,122 @@ problems:
     solution: "total = 80 + 90 + 50 + 60 + 70 = 350 และ n = 5 ได้ 350 / 5 = 70.0 ต่างจากค่าเฉลี่ยของค่าเฉลี่ยรายคน (85 + 60) / 2 = 72.5 เพราะต้นสอบมากครั้งกว่า"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: computer.programming.lists-strings.p018
+    topics: [computer.programming.lists-strings]
+    difficulty: 2
+    type: code
+    stem: "เขียนฟังก์ชัน `average(scores)` คืนค่าเฉลี่ยของคะแนนในลิสต์ `scores` ถ้าลิสต์ว่างให้คืน `0`"
+    starter: |
+      def average(scores):
+          total = 0
+          for s in scores:
+              total = total + s
+          return total
+    tests: |
+      assert average([10, 20, 30]) == 20, f"average([10, 20, 30]) ควรได้ 20 แต่ได้ {average([10, 20, 30])}"
+      assert average([7]) == 7, "average([7]) ควรได้ 7"
+      assert abs(average([1, 2]) - 1.5) < 1e-9, "average([1, 2]) ควรได้ 1.5"
+      assert average([]) == 0, "ลิสต์ว่างควรคืน 0 (ระวังหารด้วยศูนย์)"
+    reference: |
+      def average(scores):
+          if len(scores) == 0:
+              return 0
+          return sum(scores) / len(scores)
+    hints:
+      - "ค่าเฉลี่ย = ผลรวม ÷ จำนวนสมาชิก จำนวนสมาชิกหาได้จาก `len(scores)`"
+      - "ตรวจ `len(scores) == 0` ก่อนหาร ไม่เช่นนั้นลิสต์ว่างจะเกิด `ZeroDivisionError`"
+    solution: |
+      ```python
+      def average(scores):
+          if len(scores) == 0:
+              return 0
+          return sum(scores) / len(scores)
+      ```
+      โค้ดเริ่มต้นคืนผลรวมโดยไม่หาร และไม่ได้กันกรณีลิสต์ว่าง
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p019
+    topics: [computer.programming.lists-strings]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน `passed(scores)` คืน **ลิสต์ใหม่** ที่มีเฉพาะคะแนนตั้งแต่ 50 ขึ้นไป เรียงตามลำดับเดิม และไม่แก้ลิสต์ที่รับเข้ามา"
+    starter: |
+      def passed(scores):
+          result = []
+          return result
+    tests: |
+      data = [72, 45, 50, 49, 88]
+      r = passed(data)
+      assert r == [72, 50, 88], f"passed([72, 45, 50, 49, 88]) ควรได้ [72, 50, 88] แต่ได้ {r}"
+      assert data == [72, 45, 50, 49, 88], "ลิสต์เดิมถูกแก้ ให้สร้างลิสต์ใหม่แล้ว append แทนการลบจากลิสต์เดิม"
+      assert passed([]) == [], "ลิสต์ว่างควรได้ลิสต์ว่าง"
+      assert passed([10, 20]) == [], "ไม่มีใครผ่านควรได้ลิสต์ว่าง"
+    reference: |
+      def passed(scores):
+          result = []
+          for s in scores:
+              if s >= 50:
+                  result.append(s)
+          return result
+    hints:
+      - "วนผ่านทุกคะแนนด้วย `for s in scores:` แล้วตรวจด้วย `if`"
+      - "คะแนนที่ผ่านให้เพิ่มต่อท้ายลิสต์ใหม่ด้วย `result.append(s)` ระวังใช้ `>=` เพราะ 50 นับว่าผ่าน"
+    solution: |
+      ```python
+      def passed(scores):
+          result = []
+          for s in scores:
+              if s >= 50:
+                  result.append(s)
+          return result
+      ```
+      การลบสมาชิกออกจากลิสต์ขณะวนอยู่ทำให้ข้ามบางตัวและยังแก้ข้อมูลเดิมด้วย การสร้างลิสต์ใหม่จึงปลอดภัยกว่า
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.lists-strings.p020
+    topics: [computer.programming.lists-strings]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `count_words(text)` รับข้อความที่คั่นคำด้วยช่องว่าง แล้วคืน **ดิกชันนารี** ที่คีย์คือคำ และค่าคือจำนวนครั้งที่คำนั้นปรากฏ
+
+      เช่น `count_words("แมว หมา แมว")` ได้ `{"แมว": 2, "หมา": 1}`
+    starter: |
+      def count_words(text):
+          counts = {}
+          return counts
+    tests: |
+      r = count_words("แมว หมา แมว")
+      assert r == {"แมว": 2, "หมา": 1}, f'count_words("แมว หมา แมว") ควรได้ {{"แมว": 2, "หมา": 1}} แต่ได้ {r}'
+      assert count_words("a b c a b a") == {"a": 3, "b": 2, "c": 1}, "นับคำ a b c ไม่ถูก"
+      assert count_words("  ข้าว   ข้าว ") == {"ข้าว": 2}, "ช่องว่างหลายช่องติดกันไม่ควรนับเป็นคำ ใช้ split() โดยไม่ใส่อาร์กิวเมนต์"
+      assert count_words("") == {}, "ข้อความว่างควรได้ดิกชันนารีว่าง"
+    reference: |
+      def count_words(text):
+          counts = {}
+          for w in text.split():
+              if w in counts:
+                  counts[w] = counts[w] + 1
+              else:
+                  counts[w] = 1
+          return counts
+    hints:
+      - "`text.split()` แยกข้อความเป็นลิสต์ของคำ และตัดช่องว่างที่ซ้อนกันให้เอง"
+      - "ถ้าคำยังไม่อยู่ในดิกชันนารี ให้ตั้งค่าเป็น 1 ถ้ามีแล้วให้บวก 1 (หรือใช้ `counts.get(w, 0) + 1`)"
+    solution: |
+      ```python
+      def count_words(text):
+          counts = {}
+          for w in text.split():
+              if w in counts:
+                  counts[w] = counts[w] + 1
+              else:
+                  counts[w] = 1
+          return counts
+      ```
+      ถ้าเขียน `counts[w] = counts[w] + 1` โดยไม่ตรวจก่อน คำที่พบครั้งแรกจะเกิด `KeyError`
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -427,3 +427,113 @@ problems:
     solution: "import geometry ทำให้ใช้ทุกฟังก์ชันในไฟล์ได้ผ่านชื่อ geometry. เช่น geometry.circle_area(2) (หรือเขียน from geometry import circle_area แล้วเรียก circle_area(2) ก็ได้) การแยกโมดูลช่วยให้นำฟังก์ชันไปใช้ในหลายโปรแกรม"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: computer.programming.functions.p019
+    topics: [computer.programming.functions]
+    difficulty: 2
+    type: code
+    stem: "เขียนฟังก์ชัน `bmi(weight, height)` ที่ **คืนค่า** (return) ดัชนีมวลกาย คือน้ำหนัก (กิโลกรัม) หารด้วยส่วนสูง (เมตร) ยกกำลังสอง"
+    starter: |
+      def bmi(weight, height):
+          pass
+    tests: |
+      r = bmi(50, 1.6)
+      assert r is not None, "bmi(50, 1.6) ไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+      assert abs(r - 19.53125) < 1e-6, f"bmi(50, 1.6) ควรได้ 19.53125 แต่ได้ {r}"
+      assert abs(bmi(72, 1.8) - 22.2222222) < 1e-6, "bmi(72, 1.8) ควรได้ประมาณ 22.22"
+    reference: |
+      def bmi(weight, height):
+          return weight / height ** 2
+    hints:
+      - "ยกกำลังใน Python ใช้ `**` เช่น `height ** 2`"
+      - "เขียน `return weight / height ** 2` ยกกำลังทำก่อนหาร จึงไม่ต้องใส่วงเล็บ"
+    solution: |
+      ```python
+      def bmi(weight, height):
+          return weight / height ** 2
+      ```
+      $50 \div 1.6^2 = 50 \div 2.56 = 19.53$ ถ้าใช้ `print` แทน `return` ฟังก์ชันจะคืน `None` ซึ่งนำไปคำนวณต่อไม่ได้
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p020
+    topics: [computer.programming.functions]
+    difficulty: 3
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `grade(score)` คืนเกรดเป็นข้อความตามเกณฑ์
+
+      | คะแนน | เกรด |
+      |---|---|
+      | 80 ขึ้นไป | "A" |
+      | 70–79 | "B" |
+      | 60–69 | "C" |
+      | 50–59 | "D" |
+      | ต่ำกว่า 50 | "F" |
+    starter: |
+      def grade(score):
+          return "F"
+    tests: |
+      for s, g in [(95, "A"), (80, "A"), (79, "B"), (70, "B"), (65, "C"), (60, "C"), (50, "D"), (49, "F"), (0, "F")]:
+          assert grade(s) == g, f"grade({s}) ควรได้ \"{g}\" แต่ได้ {grade(s)!r}"
+    reference: |
+      def grade(score):
+          if score >= 80:
+              return "A"
+          elif score >= 70:
+              return "B"
+          elif score >= 60:
+              return "C"
+          elif score >= 50:
+              return "D"
+          else:
+              return "F"
+    hints:
+      - "ใช้ `if` `elif` `else` ตรวจจากเกณฑ์สูงสุดลงมา Python ทำเฉพาะทางแรกที่เป็นจริง"
+      - "ใช้ `>=` เพื่อให้คะแนนพอดีขอบ เช่น 80 ได้ \"A\" และ 50 ได้ \"D\""
+    solution: |
+      ```python
+      def grade(score):
+          if score >= 80:
+              return "A"
+          elif score >= 70:
+              return "B"
+          elif score >= 60:
+              return "C"
+          elif score >= 50:
+              return "D"
+          else:
+              return "F"
+      ```
+      เรียงจากเกณฑ์สูงลงต่ำ ถ้าตรวจ `score >= 50` ก่อน คะแนน 95 จะได้ "D" เพราะเงื่อนไขแรกที่จริงคือข้อนั้น
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.functions.p021
+    topics: [computer.programming.functions]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `is_leap(year)` คืน `True` ถ้าปี ค.ศ. `year` เป็นปีอธิกสุรทิน (กุมภาพันธ์มี 29 วัน) ไม่เช่นนั้นคืน `False`
+
+      กฎ: ปีที่หารด้วย 4 ลงตัวเป็นปีอธิกสุรทิน **ยกเว้น** ปีที่หารด้วย 100 ลงตัว แต่ถ้าหารด้วย 400 ลงตัวก็ยังเป็นปีอธิกสุรทิน
+    starter: |
+      def is_leap(year):
+          return year % 4 == 0
+    tests: |
+      for y, ans in [(2024, True), (2023, False), (2000, True), (1900, False), (2100, False), (1600, True), (2028, True)]:
+          assert is_leap(y) is ans, f"is_leap({y}) ควรได้ {ans} แต่ได้ {is_leap(y)!r}"
+    reference: |
+      def is_leap(year):
+          return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+    hints:
+      - "โค้ดเริ่มต้นตอบผิดที่ปี 1900 ซึ่งหาร 4 ลงตัวแต่หาร 100 ลงตัวด้วย"
+      - "เขียนเป็นเงื่อนไขเดียว: หาร 4 ลงตัว **และ** (หาร 100 ไม่ลงตัว **หรือ** หาร 400 ลงตัว)"
+    solution: |
+      ```python
+      def is_leap(year):
+          return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+      ```
+      2000 หาร 400 ลงตัวจึงเป็นปีอธิกสุรทิน 1900 และ 2100 หาร 100 ลงตัวแต่หาร 400 ไม่ลงตัวจึงไม่เป็น
+    license: CC-BY-SA-4.0
+    ai_assisted: true

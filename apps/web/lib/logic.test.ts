@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import type { Problem } from "@klangru/schema";
 import { Rating } from "ts-fsrs";
-import { check, parseNumber, seededShuffle } from "./check.ts";
+import { check, codeResult, parseNumber, seededShuffle } from "./check.ts";
 import { implicitGrade, nextLevel, scheduleGrade, toRating } from "./mastery.ts";
 import { bktUpdate, DEFAULT_BKT, guessFor, selectNext, sessionDone, targetDifficulty } from "./bkt.ts";
 import { answeredToday, applyFlashcard, applyPlacement, applySession, emptyProgress, migrate, setNote, setSettings, streak } from "./progress-model.ts";
@@ -94,6 +94,29 @@ test("expression answers accept equivalent forms and reject the rest", async () 
   const rad: Problem = { ...p, id: "math.a.p009", prefix: undefined, simplified: true, answer: { latex: "5\\sqrt{3}", variables: [] }, misconceptions: [] };
   assert.equal((await check(rad, { type: "expression", latex: "5\\sqrt{3}" })).correct, true);
   assert.ok((await check(rad, { type: "expression", latex: "\\sqrt{75}" })).invalid?.includes("รูปอย่างง่าย"));
+});
+
+test("code: empty or unchanged starter is not counted as an attempt", async () => {
+  const p: Problem = { ...base, id: "cs.a.p001", type: "code", language: "python", starter: "def f(x):\n    pass\n", tests: "assert f(1) == 2" };
+  assert.ok((await check(p, { type: "code", source: "   " })).invalid);
+  assert.ok((await check(p, { type: "code", source: "def f(x):\n    pass   \n\n" })).invalid);
+});
+
+test("code: run results map to Thai feedback", () => {
+  const run = (r: Partial<import("@klangru/schema/code").CodeRunResult>) =>
+    codeResult({ status: "done", result: { ok: false, stage: null, error: null, message: null, line: null, stdout: "", truncated: false, ...r } }, "6");
+  assert.deepEqual(run({ ok: true, stdout: "6\n" }), { correct: true, output: "6\n" });
+  const a = run({ stage: "tests", error: "AssertionError", message: "f(1) ควรได้ 2" });
+  assert.equal(a.correct, false);
+  assert.match(a.feedback!, /f\(1\) ควรได้ 2/);
+  const n = run({ stage: "code", error: "NameError", message: "name 'x' is not defined", line: 3 });
+  assert.match(n.feedback!, /บรรทัด 3/);
+  assert.match(n.feedback!, /ยังไม่ได้กำหนด/);
+  const o = run({ stage: "output", stdout: "5\n" });
+  assert.equal(o.expectedOutput, "6");
+  assert.equal(o.output, "5\n");
+  assert.match(codeResult({ status: "timeout" }).feedback!, /วนซ้ำไม่รู้จบ/);
+  assert.ok(codeResult({ status: "unavailable", message: "offline" }).invalid);
 });
 
 test("hanzi passes within the allowed number of mistakes", async () => {
@@ -227,6 +250,9 @@ test("placement binary search credits ancestors on correct answers", () => {
   assert.equal(nextPlacementTopic(topics, s), null, "search ends between c and d");
   const mk = (id: string, difficulty: number, type = "numeric"): Problem => ({ ...base, id, difficulty, type, answer: { value: 1, tolerance: 0 }, misconceptions: [] }) as Problem;
   assert.equal(placementProblem([mk("p.p001", 1), mk("p.p002", 4), mk("p.p003", 3)])?.id, "p.p003");
+  // โจทย์เขียนโค้ดใช้เวลานาน ไม่ใช้ในแบบทดสอบวัดระดับ
+  const codeP = { ...mk("p.p004", 3), type: "code", language: "python", starter: "", tests: "assert True" } as Problem;
+  assert.equal(placementProblem([mk("p.p001", 1), codeP])?.id, "p.p001");
 });
 
 test("xAPI export produces valid statements", () => {

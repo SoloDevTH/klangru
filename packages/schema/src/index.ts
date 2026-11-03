@@ -3,6 +3,7 @@ import { z } from "zod";
 export * from "./license.ts";
 export * from "./expression.ts";
 export * from "./curriculum.ts";
+export * from "./code.ts";
 import { Reference } from "./curriculum.ts";
 import { LICENSES } from "./license.ts";
 
@@ -241,6 +242,20 @@ export const Problem = z.discriminatedUnion("type", [
     meaning: z.string().min(1),
     /** จำนวนขีดที่เขียนผิดได้โดยยังนับว่าถูก */
     max_mistakes: z.number().int().min(0).max(10).default(3),
+  }),
+  z.object({
+    ...ProblemBase,
+    /** เขียนโค้ด Python แล้วรันในแอป (Pyodide) ผ่านเมื่อโค้ดของผู้เรียนต่อด้วย tests รันจบโดยไม่มี exception ภายในเวลาที่กำหนด */
+    type: z.literal("code"),
+    language: z.literal("python").default("python"),
+    /** โค้ดเริ่มต้นในช่องแก้ไข (ว่างได้) */
+    starter: z.string().default(""),
+    /** โค้ด Python ที่รันต่อจากโค้ดของผู้เรียนในเนมสเปซเดียวกัน ใช้ assert พร้อมข้อความภาษาไทย เช่น assert area(2, 3) == 6, "area(2, 3) ควรได้ 6" */
+    tests: z.string().default(""),
+    /** ถ้าระบุ: ข้อความที่โค้ดของผู้เรียนพิมพ์ออกมา (print) ต้องตรงกับค่านี้ (ไม่สนช่องว่างท้ายบรรทัดและบรรทัดว่างหัวท้าย) */
+    expected_output: z.string().optional(),
+    /** เฉลยที่รันผ่าน ใช้ตรวจโจทย์ตอน validate เท่านั้น (ไม่ส่งไปในแอป) ต้องมีเสมอ */
+    reference: z.string().optional(),
   }),
 ]);
 

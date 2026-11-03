@@ -85,7 +85,7 @@ export function problemContext(pack: TutorPack, problemId: string | undefined): 
   const p = problemId ? pack.problems.find((q) => q.id === problemId) : undefined;
   if (!p) return "The learner is reading the lesson; no problem is open.";
   const { id, type, stem, hints, solution, ...rest } = p;
-  const answerFields = Object.fromEntries(Object.entries(rest).filter(([k]) => ["answer", "choices", "accepted", "items", "pairs", "misconceptions", "prefix"].includes(k)));
+  const answerFields = Object.fromEntries(Object.entries(rest).filter(([k]) => ["answer", "choices", "accepted", "items", "pairs", "misconceptions", "prefix", "starter", "tests", "expected_output"].includes(k)));
   const figure = (rest as { figure?: { alt: string } }).figure;
   return `<open_problem id="${id}" type="${type}">\n<stem>${stem}</stem>${figure ? `\n<figure>${figure.alt}</figure>` : ""}\n<answer_key>${JSON.stringify(answerFields)}</answer_key>\n<official_hints>${hints.map((h, i) => `\n${i + 1}. ${h}`).join("")}\n</official_hints>\n<official_solution>${solution}</official_solution>\n</open_problem>`;
 }

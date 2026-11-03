@@ -539,3 +539,102 @@ problems:
     solution: "49 ต้องได้ \"ไม่ผ่าน\" 50 และ 51 ต้องได้ \"ผ่าน\" ถ้าเขียนผิดเป็น `score > 50` ค่า 50 จะให้ผลผิดทันที ชุด 49, 50, 51 จึงจับความผิดที่ขอบได้"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: com.prog.p025
+    topics: [computer.programming.basics]
+    difficulty: 1
+    type: code
+    stem: |
+      มะลิซื้อสมุดเล่มละ 25 บาท จำนวน 4 เล่ม แก้โค้ดให้ตัวแปร `total` เก็บราคารวมโดยคำนวณจาก `price` และ `count` แล้วพิมพ์ `total` ออกมา
+
+      กด **รันโค้ด** เพื่อดูผล แล้วกด **ตรวจคำตอบ**
+    starter: |
+      price = 25
+      count = 4
+      total = 0   # แก้บรรทัดนี้
+    tests: |
+      assert total == price * count, "total ควรเท่ากับ price * count คือ 100"
+    expected_output: "100"
+    reference: |
+      price = 25
+      count = 4
+      total = price * count
+      print(total)
+    hints:
+      - "ราคารวม = ราคาต่อเล่ม × จำนวนเล่ม ใน Python ใช้ `*` แทนการคูณ"
+      - "เขียน `total = price * count` แล้วเพิ่มบรรทัด `print(total)`"
+    solution: |
+      ```python
+      price = 25
+      count = 4
+      total = price * count
+      print(total)
+      ```
+      ใช้ตัวแปรแทนการพิมพ์ 100 ตรง ๆ เพื่อให้เปลี่ยนราคาหรือจำนวนแล้วโปรแกรมยังคิดถูก
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p026
+    topics: [computer.programming.basics]
+    difficulty: 2
+    type: code
+    stem: "ใช้ `for` กับ `range` หาผลบวก $1 + 2 + 3 + \\dots + 100$ แล้วเก็บผลไว้ในตัวแปร `total`"
+    starter: |
+      total = 0
+      # เขียนวงวน for ที่นี่
+    tests: |
+      assert total != 0, "total ยังเป็น 0 อยู่ วงวนยังไม่ได้บวกค่าเข้าไป"
+      assert total != 4950, "ได้ 4950 แสดงว่าไม่ได้บวก 100 ด้วย range(1, 100) หยุดก่อนถึง 100"
+      assert total == 5050, "1 + 2 + ... + 100 ควรได้ 5050"
+    reference: |
+      total = 0
+      for i in range(1, 101):
+          total = total + i
+    hints:
+      - "เริ่มจาก `total = 0` แล้วในแต่ละรอบบวกเลขของรอบนั้นเข้าไปใน `total`"
+      - "`range(1, 101)` ให้เลข 1 ถึง 100 (ค่าท้ายไม่นับ)"
+    solution: |
+      ```python
+      total = 0
+      for i in range(1, 101):
+          total = total + i
+      ```
+      ทุกรอบนำ `i` ไปบวกสะสม เมื่อจบวงวนได้ 5050 ระวัง `range(1, 100)` ซึ่งหยุดที่ 99
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: com.prog.p027
+    topics: [computer.programming.basics]
+    difficulty: 4
+    type: code
+    stem: |
+      ฝากเงิน 1,000 บาท ได้ดอกเบี้ยทบต้นปีละ 10% (เงินคูณ 1.1 ทุกปี) ใช้ `while` หาว่าต้องฝากกี่ปีเงินจึงมีอย่างน้อย 2,000 บาท เก็บจำนวนปีไว้ใน `years` และเงินตอนนั้นใน `money`
+    starter: |
+      money = 1000
+      years = 0
+      # เขียนวงวน while ที่นี่
+    tests: |
+      assert years != 0, "years ยังเป็น 0 วงวนยังไม่ได้นับปี"
+      assert money >= 2000, "เมื่อจบวงวน money ควรมีอย่างน้อย 2000"
+      assert years == 8, f"ควรได้ 8 ปี แต่ได้ {years} ตรวจเงื่อนไขของ while ว่าวนต่อเมื่อเงินยังไม่ถึง 2000"
+      assert abs(money - 1000 * 1.1 ** 8) < 0.01, "money ควรเป็นเงินหลังได้ดอกเบี้ยครบ 8 ปี"
+    reference: |
+      money = 1000
+      years = 0
+      while money < 2000:
+          money = money * 1.1
+          years = years + 1
+    hints:
+      - "วนต่อไปตราบที่เงินยังน้อยกว่า 2000: `while money < 2000:`"
+      - "ในแต่ละรอบ คูณเงินด้วย 1.1 แล้วเพิ่ม `years` ทีละ 1 ถ้าลืมเปลี่ยน `money` วงวนจะไม่มีวันจบ"
+    solution: |
+      ```python
+      money = 1000
+      years = 0
+      while money < 2000:
+          money = money * 1.1
+          years = years + 1
+      ```
+      หลัง 7 ปีมีเงินประมาณ 1,948.72 บาท ยังไม่ถึง หลัง 8 ปีมีประมาณ 2,143.59 บาท วงวนจึงหยุดที่ `years = 8`
+    license: CC-BY-SA-4.0
+    ai_assisted: true

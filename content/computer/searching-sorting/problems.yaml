@@ -310,3 +310,114 @@ problems:
     solution: "i=1 แทรก 1: เทียบ 3 (เลื่อน) แล้ว j หลุดต้นลิสต์ = 1 ครั้ง ได้ [1, 3, 2, 5, 4] i=2 แทรก 2: เทียบ 3 (เลื่อน) เทียบ 1 (หยุด) = 2 ครั้ง i=3 แทรก 5: เทียบ 3 (หยุด) = 1 ครั้ง i=4 แทรก 4: เทียบ 5 (เลื่อน) เทียบ 3 (หยุด) = 2 ครั้ง รวม 6 ครั้ง"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: computer.algorithms.searching-sorting.p018
+    topics: [computer.algorithms.searching-sorting]
+    difficulty: 2
+    type: code
+    stem: "เขียนฟังก์ชัน `linear_search(a, target)` ค้นหาแบบลำดับ คืน **ดัชนีแรก** ที่พบ `target` ในลิสต์ `a` ถ้าไม่พบให้คืน `-1` (ไม่ใช้ `a.index()`)"
+    starter: |
+      def linear_search(a, target):
+          return -1
+    tests: |
+      names = ["มะลิ", "ก้อง", "ฟ้า", "ก้อง"]
+      assert linear_search(names, "ฟ้า") == 2, "หา \"ฟ้า\" ควรได้ดัชนี 2"
+      assert linear_search(names, "มะลิ") == 0, "สมาชิกตัวแรกอยู่ที่ดัชนี 0"
+      assert linear_search(names, "ก้อง") == 1, "ถ้ามีหลายตัวให้คืนดัชนีของตัวแรกที่พบ"
+      assert linear_search(names, "ต้น") == -1, "ไม่พบควรคืน -1"
+      assert linear_search([], 5) == -1, "ลิสต์ว่างควรคืน -1"
+    reference: |
+      def linear_search(a, target):
+          for i in range(len(a)):
+              if a[i] == target:
+                  return i
+          return -1
+    hints:
+      - "วนดัชนีด้วย `for i in range(len(a)):` แล้วเทียบ `a[i] == target`"
+      - "เจอแล้ว `return i` ทันที ส่วน `return -1` อยู่หลังวงวน (นอกวงวน) จะทำเมื่อดูครบทุกตัวแล้วไม่พบ"
+    solution: |
+      ```python
+      def linear_search(a, target):
+          for i in range(len(a)):
+              if a[i] == target:
+                  return i
+          return -1
+      ```
+      ถ้าย่อหน้า `return -1` ไว้ใน `for` ฟังก์ชันจะเลิกค้นตั้งแต่ตัวแรกที่ไม่ตรง
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.searching-sorting.p019
+    topics: [computer.algorithms.searching-sorting]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `binary_search(a, target)` ค้นหาแบบทวิภาคในลิสต์ `a` ที่เรียงจากน้อยไปมากแล้ว คืนดัชนีที่พบ `target` หรือ `-1` ถ้าไม่พบ
+
+      ชุดทดสอบใช้ลิสต์ยาว 100,000 ตัว และนับว่าโค้ดอ่านสมาชิกกี่ครั้ง ต้องไม่เกิน 40 ครั้งต่อการค้นหนึ่งครั้ง (ห้ามวนดูทุกตัวหรือใช้ `in` และ `a.index()`)
+    starter: |
+      def binary_search(a, target):
+          lo = 0
+          hi = len(a) - 1
+          # เขียนวงวน while ที่นี่
+          return -1
+    tests: |
+      class Probe(list):
+          reads = 0
+          def __getitem__(self, i):
+              if isinstance(i, slice):
+                  raise AssertionError("ไม่ต้องตัดลิสต์ (slice) ให้ขยับ lo และ hi แทน")
+              Probe.reads += 1
+              return list.__getitem__(self, i)
+          def __iter__(self):
+              raise AssertionError("ค้นหาแบบทวิภาคไม่ต้องวนดูทุกตัว ให้ดูเฉพาะตัวกลางช่วง")
+          def __contains__(self, x):
+              raise AssertionError("ให้เขียนการค้นหาเอง ไม่ใช้ in")
+          def index(self, *args):
+              raise AssertionError("ให้เขียนการค้นหาเอง ไม่ใช้ a.index()")
+
+      assert binary_search([1, 3, 5, 7, 9], 7) == 3, "หา 7 ใน [1, 3, 5, 7, 9] ควรได้ดัชนี 3"
+      assert binary_search([1, 3, 5, 7, 9], 1) == 0, "หาตัวแรกควรได้ 0"
+      assert binary_search([1, 3, 5, 7, 9], 9) == 4, "หาตัวสุดท้ายควรได้ 4"
+      assert binary_search([1, 3, 5, 7, 9], 4) == -1, "ไม่พบควรคืน -1"
+      assert binary_search([], 4) == -1, "ลิสต์ว่างควรคืน -1"
+      big = Probe(range(0, 200000, 2))
+      for t, ans in [(0, 0), (199998, 99999), (123456, 61728), (77777, -1), (-5, -1), (300000, -1)]:
+          Probe.reads = 0
+          got = binary_search(big, t)
+          assert got == ans, f"หา {t} ในลิสต์ 0, 2, 4, ..., 199998 ควรได้ {ans} แต่ได้ {got}"
+          assert Probe.reads <= 40, f"หา {t} อ่านสมาชิกไป {Probe.reads} ครั้ง มากเกินไปสำหรับการค้นหาแบบทวิภาค"
+    reference: |
+      def binary_search(a, target):
+          lo = 0
+          hi = len(a) - 1
+          while lo <= hi:
+              mid = (lo + hi) // 2
+              if a[mid] == target:
+                  return mid
+              elif a[mid] < target:
+                  lo = mid + 1
+              else:
+                  hi = mid - 1
+          return -1
+    hints:
+      - "วนตราบที่ช่วงยังไม่ว่าง `while lo <= hi:` แล้วดูตัวกลาง `mid = (lo + hi) // 2`"
+      - "ถ้า `a[mid]` น้อยกว่าเป้าหมาย ให้ทิ้งครึ่งซ้าย `lo = mid + 1` ถ้ามากกว่าให้ทิ้งครึ่งขวา `hi = mid - 1` ต้องบวกหรือลบ 1 ไม่เช่นนั้นอาจวนไม่รู้จบ"
+    solution: |
+      ```python
+      def binary_search(a, target):
+          lo = 0
+          hi = len(a) - 1
+          while lo <= hi:
+              mid = (lo + hi) // 2
+              if a[mid] == target:
+                  return mid
+              elif a[mid] < target:
+                  lo = mid + 1
+              else:
+                  hi = mid - 1
+          return -1
+      ```
+      แต่ละรอบช่วงลดลงครึ่งหนึ่ง ลิสต์ 100,000 ตัวจึงใช้ไม่เกินราว 17 รอบ ($2^{17} > 100{,}000$) ในโค้ดนี้แต่ละรอบอ่าน `a[mid]` ไม่เกิน 2 ครั้ง จึงอ่านไม่เกินราว 34 ครั้ง ขณะที่ค้นหาแบบลำดับอาจต้องอ่านถึง 100,000 ครั้ง
+    license: CC-BY-SA-4.0
+    ai_assisted: true

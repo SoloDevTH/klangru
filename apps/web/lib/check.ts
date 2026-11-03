@@ -1,4 +1,5 @@
 import type { Problem } from "@klangru/schema";
+import type { RunOutcome } from "./python";
 
 /** คำตอบของผู้เรียนตามชนิดโจทย์ */
 export type Response =
@@ -8,7 +9,8 @@ export type Response =
   | { type: "order"; order: string[] }
   | { type: "match"; mapping: Record<string, string> }
   | { type: "expression"; latex: string }
-  | { type: "hanzi"; mistakes: number; completed: boolean };
+  | { type: "hanzi"; mistakes: number; completed: boolean }
+  | { type: "code"; source: string };
 
 export interface CheckResult {
   correct: boolean;
@@ -16,6 +18,10 @@ export interface CheckResult {
   feedback?: string;
   /** อ่านคำตอบไม่ออก เช่น พิมพ์ตัวอักษรในช่องตัวเลข: ไม่นับเป็นการตอบผิด */
   invalid?: string;
+  /** โจทย์เขียนโค้ด: ข้อความที่โปรแกรมพิมพ์ออกมาตอนตรวจ */
+  output?: string;
+  /** โจทย์เขียนโค้ดแบบเทียบข้อความ: ข้อความที่ควรได้ (แสดงเมื่อพิมพ์ไม่ตรง) */
+  expectedOutput?: string;
 }
 
 /** อ่านตัวเลขที่ผู้เรียนพิมพ์: รองรับ 1,000 / −3 / 0,5 / 3/4 / 1.2e3 */
@@ -106,6 +112,13 @@ export async function check(problem: Problem, response: Response): Promise<Check
         ? { correct: true }
         : { correct: false, feedback: `เขียนผิด ${response.mistakes} ขีด ลองดูลำดับขีดอีกครั้งแล้วเขียนใหม่` };
     }
+    case "code": {
+      if (response.type !== "code") break;
+      if (!response.source.trim()) return { correct: false, invalid: "เขียนโค้ดก่อนกดตรวจ" };
+      if (sameCode(response.source, problem.starter)) return { correct: false, invalid: "แก้โค้ดในช่องให้ทำตามโจทย์ก่อนกดตรวจ" };
+      const { runPython } = await import("./python");
+      return codeResult(await runPython(response.source, problem.tests, problem.expected_output), problem.expected_output);
+    }
   }
   return { correct: false, invalid: "รูปแบบคำตอบไม่ตรงกับชนิดโจทย์" };
 }
@@ -127,4 +140,38 @@ export function seededShuffle<T>(items: readonly T[], seed: string): T[] {
   // ถ้าบังเอิญได้ลำดับเดิม ให้เลื่อนไปหนึ่งตำแหน่ง ผู้เรียนจะได้ไม่เห็นคำตอบตั้งแต่แรก
   if (out.length > 1 && out.every((x, i) => x === items[i])) out.push(out.shift()!);
   return out;
+}
+
+const sameCode = (a: string, b: string) => a.replace(/\s+$/gm, "").trim() === b.replace(/\s+$/gm, "").trim();
+
+/** คำอธิบายภาษาไทยของ exception ที่ผู้เริ่มเขียน Python พบบ่อย */
+export const PYTHON_ERRORS: Record<string, string> = {
+  SyntaxError: "เขียนผิดไวยากรณ์ ตรวจเครื่องหมาย : วงเล็บ และเครื่องหมายคำพูดให้ครบคู่",
+  IndentationError: "ย่อหน้าไม่ถูกต้อง คำสั่งในบล็อกเดียวกันต้องย่อหน้าเท่ากัน (นิยม 4 ช่องว่าง)",
+  TabError: "ใช้ Tab ปนกับช่องว่างในการย่อหน้า ให้ใช้ช่องว่างอย่างเดียว",
+  NameError: "เรียกใช้ชื่อที่ยังไม่ได้กำหนด ตรวจการสะกดและลำดับว่ากำหนดค่าก่อนใช้",
+  TypeError: "ใช้ข้อมูลผิดชนิด เช่น บวกข้อความกับตัวเลข หรือเรียกฟังก์ชันด้วยจำนวนอาร์กิวเมนต์ไม่ตรง",
+  ValueError: "ค่าไม่เหมาะกับคำสั่ง เช่น int(\"abc\")",
+  ZeroDivisionError: "หารด้วยศูนย์",
+  IndexError: "ใช้ตำแหน่งเกินขนาดของลิสต์หรือข้อความ (ตำแหน่งเริ่มที่ 0)",
+  KeyError: "ไม่มีคีย์นี้ในดิกชันนารี",
+  AttributeError: "ข้อมูลชนิดนี้ไม่มีเมท็อดหรือแอตทริบิวต์ที่เรียก",
+  RecursionError: "เรียกตัวเองลึกเกินไป อาจไม่มีกรณีฐานหรือไม่เข้าใกล้กรณีฐาน",
+  EOFError: "ในแอปนี้ไม่มีช่องพิมพ์ข้อมูลเข้า ให้กำหนดค่าในตัวแปรแทนการใช้ input()",
+  UnboundLocalError: "ใช้ตัวแปรในฟังก์ชันก่อนกำหนดค่า",
+};
+
+/** แปลงผลการรันเป็นผลตรวจ: ผ่านเมื่อรันจบ ข้อความตรง และ tests ไม่มี exception */
+export function codeResult(run: RunOutcome, expected?: string): CheckResult {
+  if (run.status === "unavailable") return { correct: false, invalid: `ยังรัน Python ไม่ได้ (${run.message}) ถ้าใช้ครั้งแรกต้องต่ออินเทอร์เน็ตเพื่อโหลดตัวรัน แล้วลองอีกครั้ง` };
+  if (run.status === "timeout") return { correct: false, feedback: "โปรแกรมทำงานนานเกินกำหนด อาจวนซ้ำไม่รู้จบ ตรวจเงื่อนไขของ `while` ว่าจะเป็นเท็จได้ หรือกรณีฐานของฟังก์ชันเรียกตัวเอง" };
+  const r = run.result;
+  const output = r.stdout ? r.stdout + (r.truncated ? "\n… (ตัดข้อความที่เหลือ)" : "") : undefined;
+  if (r.ok) return { correct: true, output };
+  if (r.stage === "output") return { correct: false, feedback: "ข้อความที่โปรแกรมแสดงยังไม่ตรงกับที่โจทย์ต้องการ", output: output ?? "(ไม่มีข้อความ)", expectedOutput: expected?.trim() };
+  if (r.stage === "tests" && r.error === "AssertionError") return { correct: false, feedback: r.message ? `ยังไม่ผ่าน: ${r.message}` : "ผลลัพธ์ยังไม่ถูกต้อง", output };
+  const where = r.line ? ` ที่บรรทัด ${r.line}` : "";
+  const explain = PYTHON_ERRORS[r.error ?? ""];
+  const detail = `\`${r.error}${r.message ? `: ${r.message}` : ""}\``;
+  return { correct: false, feedback: `เกิดข้อผิดพลาด${where} ${detail}${explain ? ` — ${explain}` : ""}`, output };
 }

@@ -96,6 +96,18 @@ const problemTypes = [
     label: "เขียนอักษรจีน",
     fields: [...problemBase, str("character", "อักษร 1 ตัว"), str("pinyin", "พินอิน"), str("meaning", "ความหมาย"), { name: "max_mistakes", label: "ผิดได้ไม่เกิน (ขีด)", widget: "number", value_type: "int", default: 3, required: false }],
   },
+  {
+    name: "code",
+    label: "เขียนโค้ด Python",
+    fields: [
+      ...problemBase,
+      { name: "language", label: "ภาษา", widget: "hidden", default: "python" },
+      opt({ ...text("starter", "โค้ดเริ่มต้นในช่อง"), widget: "code", default_language: "python", output_code_only: true }),
+      opt({ ...text("tests", "tests: assert ที่รันต่อจากโค้ดของผู้เรียน (ข้อความภาษาไทย)"), widget: "code", default_language: "python", output_code_only: true }),
+      opt(text("expected_output", "ข้อความที่ต้องพิมพ์ออกมา (ถ้าใช้แทนหรือร่วมกับ tests)")),
+      { ...text("reference", "เฉลยที่รันผ่าน (ตัวตรวจใช้ ไม่แสดงในแอป)"), widget: "code", default_language: "python", output_code_only: true },
+    ],
+  },
 ];
 
 const lessonTypes = [

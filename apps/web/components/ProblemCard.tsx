@@ -5,6 +5,7 @@ import type { Problem } from "@klangru/schema";
 import { Markdown } from "./Markdown";
 import { MathField } from "./MathField";
 import { HanziPad } from "./HanziPad";
+import { CodeEditor } from "./CodeEditor";
 import { ReportButton } from "./ReportButton";
 import { FigureView } from "./FigureView";
 import { check, seededShuffle, type CheckResult, type Response } from "@/lib/check";
@@ -83,12 +84,27 @@ export function ProblemCard({
       {result && (allowHints || result.invalid) && (
         <div className={result.correct ? "feedback ok" : result.invalid ? "feedback info" : "feedback bad"} role="status">
           {result.correct ? (
-            <strong>ถูกต้อง</strong>
+            <>
+              <strong>ถูกต้อง</strong>
+              {p.type === "code" && " โค้ดผ่านการทดสอบทุกข้อ"}
+            </>
           ) : result.invalid ? (
             result.invalid
           ) : (
             <>
               <strong>ยังไม่ถูก</strong> {result.feedback ? <Markdown inline>{result.feedback}</Markdown> : "ลองอีกครั้ง หรือขอคำใบ้"}
+            </>
+          )}
+          {result.output !== undefined && (
+            <>
+              <span className="eyebrow">ผลการรันตอนตรวจ</span>
+              <pre className="code-output">{result.output}</pre>
+            </>
+          )}
+          {result.expectedOutput !== undefined && (
+            <>
+              <span className="eyebrow">ควรได้</span>
+              <pre className="code-output">{result.expectedOutput}</pre>
             </>
           )}
         </div>
@@ -117,7 +133,7 @@ export function ProblemCard({
         {!answered && (
           <>
             <button type="button" className="btn primary" onClick={submit} disabled={busy}>
-              {busy ? "กำลังตรวจ…" : "ตรวจคำตอบ"}
+              {busy ? (p.type === "code" ? "กำลังรันทดสอบ…" : "กำลังตรวจ…") : "ตรวจคำตอบ"}
             </button>
             {allowHints && hints < p.hints.length && (
               <button type="button" className="btn" onClick={() => setHints(hints + 1)}>
@@ -160,6 +176,7 @@ function AnswerInput({ problem: p, disabled, onChange }: { problem: Problem; dis
   // ให้ลำดับเริ่มต้นนับเป็นคำตอบ เผื่อผู้เรียนเห็นว่าถูกอยู่แล้ว
   useEffect(() => {
     if (p.type === "order") onChange({ type: "order", order: shuffledOrder });
+    if (p.type === "code") onChange({ type: "code", source: p.starter });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p.id]);
 
@@ -229,6 +246,8 @@ function AnswerInput({ problem: p, disabled, onChange }: { problem: Problem; dis
           <HanziPad character={p.character} disabled={disabled} onResult={(r) => onChange({ type: "hanzi", ...r })} />
         </div>
       );
+    case "code":
+      return <CodeEditor id={p.id} starter={p.starter} disabled={disabled} onChange={(source) => onChange({ type: "code", source })} />;
     case "order": {
       const move = (k: number, d: -1 | 1) => {
         const next = [...order];

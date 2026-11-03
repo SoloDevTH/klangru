@@ -357,3 +357,24 @@ textarea.input { width: 100%; font-size: 16px; line-height: 1.6; resize: vertica
 .worked pre { margin: 0; padding: 12px 14px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); font-size: 14px; line-height: 1.5; }
 .lesson-check { border: 1px dashed var(--accent); border-radius: 8px; padding: 12px 14px; display: grid; gap: 8px; }
 .lesson-check .problem { border: 0; padding: 0; background: transparent; }
+
+/* ---------- โจทย์เขียนโค้ด Python ---------- */
+.code-editor { display: grid; gap: 8px; min-width: 0; }
+.code-input {
+  display: block; width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace; font-size: 15px; line-height: 1.5;
+  tab-size: 4; white-space: pre; overflow-x: auto; overflow-wrap: normal; resize: vertical;
+  padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+}
+.code-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.code-input[readonly] { opacity: 0.85; }
+.code-help { margin: 0; }
+.code-result { display: grid; gap: 4px; min-width: 0; }
+.code-output {
+  margin: 0; padding: 10px 12px; max-width: 100%; max-height: 16em; overflow: auto; box-sizing: border-box;
+  border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace; font-size: 14px; line-height: 1.5; white-space: pre;
+}
+.code-error { color: var(--bad); white-space: pre-wrap; }
+.feedback .eyebrow { display: block; margin-top: 8px; }
+.feedback .code-output { margin-top: 4px; }

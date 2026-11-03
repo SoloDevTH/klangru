@@ -1,7 +1,7 @@
 // ทดสอบแบบ end-to-end บนเว็บที่ build แล้ว (apps/web/out) ด้วย Playwright
 // ใช้: node e2e/smoke.mjs [--shots <dir>]   (ต้องติดตั้ง playwright และ chromium)
 import { createServer } from "node:http";
-import { existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -19,9 +19,11 @@ const shots = shotsArg > 0 ? process.argv[shotsArg + 1] : null;
 if (shots) mkdirSync(shots, { recursive: true });
 
 // เซิร์ฟเวอร์ static ขนาดเล็ก (รองรับ path ที่มีจุด เช่น /topic/math.number.integers/)
-const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".woff2": "font/woff2", ".woff": "font/woff", ".svg": "image/svg+xml", ".sdf": "chemical/x-mdl-sdfile", ".txt": "text/plain", ".webmanifest": "application/manifest+json", ".png": "image/png" };
+const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".woff2": "font/woff2", ".woff": "font/woff", ".svg": "image/svg+xml", ".sdf": "chemical/x-mdl-sdfile", ".txt": "text/plain", ".webmanifest": "application/manifest+json", ".png": "image/png", ".wasm": "application/wasm", ".zip": "application/zip" };
+const served = new Set();
 const server = createServer((req, res) => {
   let p = normalize(decodeURIComponent(new URL(req.url, "http://x").pathname)).replace(/^(\.\.[/\\])+/, "");
+  served.add(p);
   let file = join(root, p);
   if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
   if (!existsSync(file)) {
@@ -216,6 +218,69 @@ await step("เขียนอักษรจีน: โหลดข้อมู
   expect(res.ok() && /\/content\/hanzi\/[0-9a-f]+\.json$/.test(res.url()), `โหลด ${res.url()} ไม่ได้ (${res.status()})`);
   // ชื่อไฟล์ต้องเป็น ASCII เพื่อให้ build แอป Android ได้
   await page.waitForFunction(() => document.querySelectorAll(".hanzi-box svg path").length > 0, null, { timeout: 15000 });
+});
+
+await step("โจทย์เขียนโค้ด Python: รันจริงในเครื่อง (Pyodide) หมดเวลาเมื่อวนไม่รู้จบ และผ่านเมื่อโค้ดถูก", async () => {
+  // เฉลย (reference) ไม่ได้อยู่ใน content pack จึงอ่านจากไฟล์ต้นฉบับ
+  const { parse } = await import("yaml");
+  const contentDir = fileURLToPath(new URL("../../../content/computer", import.meta.url));
+  const references = new Map();
+  for (const d of readdirSync(contentDir)) {
+    const f = join(contentDir, d, "problems.yaml");
+    if (existsSync(f)) for (const q of parse(readFileSync(f, "utf8")).problems) if (q.type === "code") references.set(q.id, q.reference);
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${base}/`);
+  await page.getByText("เรียนต่อ").waitFor(); // รอให้แอปสร้างความคืบหน้าในเครื่องก่อนตั้งกลุ่มทดลอง
+  await setVariant("fixed");
+  const t = "computer.programming.functions";
+  const { problems } = pack(t);
+  const idx = problems.findIndex((p) => p.type === "code");
+  expect(idx >= 0, `${t} ไม่มีโจทย์เขียนโค้ด`);
+  const p = problems[idx];
+  expect(p.reference === undefined, "เฉลยโค้ด (reference) หลุดไปใน content pack");
+  await page.goto(`${base}/topic/${t}/practice/`);
+  for (let i = 0; i < idx; i++) {
+    await answerCurrent(t);
+    await page.getByRole("button", { name: /ข้อต่อไป/ }).click();
+  }
+  const editor = page.locator("textarea.code-input");
+  await editor.waitFor({ timeout: 15000 });
+  expect((await editor.inputValue()) === p.starter, "ช่องโค้ดไม่ได้เริ่มจาก starter");
+  // โหลด Python จากไฟล์ในแอปเท่านั้น
+  await page.getByRole("button", { name: /รันโค้ด/ }).waitFor({ timeout: 90000 });
+  expect([...served].some((u) => /^\/pyodide\/[^/]+\/pyodide\.asm\.wasm$/.test(u)), "ไม่ได้โหลด Pyodide จากไฟล์ในแอป");
+  // ช่องโค้ดต้องไม่ทำให้หน้ากว้างเกินจอ 390px
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  expect(overflow <= 1, `หน้าโจทย์เขียนโค้ดล้นจอ ${overflow}px`);
+  // Tab ย่อหน้า 4 ช่อง และ Enter หลัง : ย่อหน้าให้
+  await editor.fill("");
+  await editor.press("Tab");
+  expect((await editor.inputValue()) === "    ", "Tab ไม่ได้ย่อหน้า 4 ช่อง");
+  await editor.fill("for i in range(3):");
+  await editor.press("End");
+  await editor.press("Enter");
+  expect((await editor.inputValue()) === "for i in range(3):\n    ", `Enter หลัง : ไม่ย่อหน้า: ${JSON.stringify(await editor.inputValue())}`);
+  // รันโค้ดเฉย ๆ เห็นผลลัพธ์
+  await editor.fill('print("สวัสดี", 6 * 7)');
+  await page.getByRole("button", { name: /รันโค้ด/ }).click();
+  await page.locator(".code-result pre", { hasText: "สวัสดี 42" }).waitFor({ timeout: 30000 });
+  // วนไม่รู้จบ: หยุดเมื่อหมดเวลาแล้วบอกผู้เรียน
+  await editor.fill("while True:\n    pass\n");
+  await page.getByRole("button", { name: "ตรวจคำตอบ" }).click();
+  await page.locator(".feedback.bad", { hasText: "วนซ้ำไม่รู้จบ" }).waitFor({ timeout: 30000 });
+  // โค้ดผิด: เห็นข้อความจาก assert ภาษาไทย
+  await editor.fill(p.starter.replace("pass", "return 0"));
+  await page.getByRole("button", { name: "ตรวจคำตอบ" }).click();
+  await page.locator(".feedback.bad", { hasText: "ยังไม่ผ่าน" }).waitFor({ timeout: 60000 });
+  // พิมพ์เฉลยแล้วผ่าน
+  const ref = references.get(p.id);
+  expect(ref, `ไม่พบ reference ของ ${p.id}`);
+  await editor.fill(ref);
+  await page.getByRole("button", { name: "ตรวจคำตอบ" }).click();
+  await page.locator(".feedback.ok", { hasText: "ผ่านการทดสอบ" }).waitFor({ timeout: 60000 });
+  await shot("11-code", false);
+  await page.setViewportSize({ width: 412, height: 900 });
 });
 
 await step("ค้นหาภาษาไทยเจอบทเรียน", async () => {

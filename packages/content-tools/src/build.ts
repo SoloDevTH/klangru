@@ -110,7 +110,9 @@ export function buildPacks(content: ValidContent, outDir: string, contentDir: st
       if (b.type === "molecule") copyFileSync(join(contentDir, "_assets/molecules", `${b.cid}.sdf`), join(outDir, "molecules", `${b.cid}.sdf`));
     }
     for (const p of problems) if (p.type === "hanzi") hanzi.add(p.character);
-    const pack: TopicPack = { topic, lessonMarkdown, problems: [...problems].sort((a, b) => a.difficulty - b.difficulty), curriculum: links.get(topic.id) ?? [] };
+    // เฉลยโค้ด (reference) ใช้ตรวจตอน validate เท่านั้น ไม่ส่งไปในแอป
+    const shipped = problems.map((p) => (p.type === "code" ? { ...p, reference: undefined } : p));
+    const pack: TopicPack = { topic, lessonMarkdown, problems: shipped.sort((a, b) => a.difficulty - b.difficulty), curriculum: links.get(topic.id) ?? [] };
     writeFileSync(join(outDir, "topics", `${topic.id}.json`), JSON.stringify(pack));
   }
 

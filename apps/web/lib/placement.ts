@@ -46,8 +46,8 @@ export function answerPlacement(topics: TopicSummary[], s: PlacementState, corre
   return { lo: s.lo, hi: mid - 1, asked, known: s.known };
 }
 
-/** เลือกโจทย์ระดับกลาง (ใกล้ความยาก 3) ที่ตอบได้เร็ว ไม่ใช้โจทย์เขียนอักษร */
+/** เลือกโจทย์ระดับกลาง (ใกล้ความยาก 3) ที่ตอบได้เร็ว ไม่ใช้โจทย์เขียนอักษรและเขียนโค้ด */
 export function placementProblem(problems: Problem[]): Problem | null {
-  const usable = problems.filter((p) => p.type !== "hanzi");
+  const usable = problems.filter((p) => p.type !== "hanzi" && p.type !== "code");
   return usable.sort((a, b) => Math.abs(a.difficulty - 3) - Math.abs(b.difficulty - 3) || a.id.localeCompare(b.id))[0] ?? null;
 }

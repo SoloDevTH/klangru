@@ -1,3 +1,4 @@
+import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
@@ -12,10 +13,12 @@ import {
   isSimplifiedRadical,
   parseLatex,
   phetEmbedUrl,
+  PYTHON_CLI,
   Problem,
   ProblemFile,
   Subject,
   Topic,
+  type CodeRunResult,
   type Figure,
   type License,
 } from "@klangru/schema";
@@ -31,7 +34,34 @@ export interface Issue {
 export interface ValidateOptions {
   /** มีข้อมูลลำดับขีดของอักษรจีนตัวนี้หรือไม่ */
   hanziAvailable?: (char: string) => boolean;
+  /** รันโค้ดของโจทย์ชนิด code (ค่าเริ่มต้น: python3 ในเครื่อง) คืน null ถ้าไม่มี python3 */
+  runPython?: PythonRunner;
 }
+
+export type PythonRunner = (code: string, tests: string, expected?: string) => CodeRunResult | null;
+
+/** เวลาสูงสุดต่อการรันหนึ่งครั้งตอนตรวจ (ในแอปจำกัด CODE_TIMEOUT_MS แต่เครื่องที่ตรวจอาจช้ากว่า) */
+export const VALIDATE_CODE_TIMEOUT_MS = 10_000;
+
+/** รันด้วย python3 ในเครื่อง ผ่านตัวรันเดียวกับในแอป (PYTHON_HARNESS) จึงได้ผลตรงกัน */
+export const pythonRunner = (timeoutMs = VALIDATE_CODE_TIMEOUT_MS): PythonRunner => (code, tests, expected) => {
+  const r = spawnSync("python3", ["-I", "-c", PYTHON_CLI], {
+    input: JSON.stringify({ code, tests, expected: expected ?? null }),
+    encoding: "utf8",
+    timeout: timeoutMs,
+    env: { PATH: process.env.PATH ?? "", PYTHONIOENCODING: "utf-8" },
+  });
+  if ((r.error as NodeJS.ErrnoException | undefined)?.code === "ENOENT") return null;
+  if (r.error || r.status !== 0) {
+    const timedOut = (r.error as NodeJS.ErrnoException | undefined)?.code === "ETIMEDOUT" || r.signal === "SIGTERM";
+    return { ok: false, stage: "code", error: timedOut ? "Timeout" : "PythonCrash", message: timedOut ? `รันนานเกิน ${timeoutMs / 1000} วินาที` : (r.stderr || String(r.error)).trim().slice(-300), line: null, stdout: "", truncated: false };
+  }
+  return JSON.parse(r.stdout.trim().split("\n").pop()!) as CodeRunResult;
+};
+export const localPython = pythonRunner();
+
+const describeRun = (r: CodeRunResult) =>
+  r.stage === "output" ? "ข้อความที่พิมพ์ไม่ตรงกับ expected_output" : `${r.error}${r.message ? `: ${r.message}` : ""}${r.line ? ` (บรรทัด ${r.line})` : ""}${r.stage === "tests" ? " ใน tests" : ""}`;
 
 let hanziDir: string | null | undefined;
 /** ตำแหน่งข้อมูล hanzi-writer-data (ใบอนุญาต Arphic Public License) */
@@ -211,12 +241,32 @@ function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]
     case "hanzi":
       if (!opts.hanziAvailable(p.character)) err(`ไม่มีข้อมูลลำดับขีดของ "${p.character}" ใน hanzi-writer-data`);
       break;
+    case "code": {
+      if (!p.tests.trim() && p.expected_output === undefined) {
+        err("ต้องมี tests หรือ expected_output อย่างน้อยหนึ่งอย่าง");
+        break;
+      }
+      if (!p.reference?.trim()) {
+        err("ต้องมี reference (เฉลยที่รันผ่าน) เพื่อตรวจว่าโจทย์ทำได้จริง");
+        break;
+      }
+      if (/\binput\s*\(/.test(p.reference)) warn(`${p.id}: reference ใช้ input() แต่ในแอปไม่มีช่องพิมพ์ข้อมูลเข้า (input() จะได้ EOFError) ให้กำหนดค่าในตัวแปรแทน`);
+      const ref = opts.runPython(p.reference, p.tests, p.expected_output);
+      if (ref === null) {
+        warn(`${p.id}: ไม่พบ python3 จึงข้ามการรันเฉลยของโจทย์เขียนโค้ด`);
+        break;
+      }
+      if (!ref.ok) err(`reference ไม่ผ่าน: ${describeRun(ref)}`);
+      const starter = opts.runPython(p.starter, p.tests, p.expected_output);
+      if (starter?.ok) err("โค้ดเริ่มต้น (starter) ผ่าน tests อยู่แล้ว ผู้เรียนไม่ต้องเขียนอะไรเลย");
+      break;
+    }
   }
 }
 
 /** ตรวจเนื้อหาทั้งคลัง คืนรายการปัญหาและเนื้อหาที่ผ่าน schema แล้ว */
 export function validate(raw: RawContent, options: ValidateOptions = {}): { issues: Issue[]; content: ValidContent } {
-  const opts: Required<ValidateOptions> = { hanziAvailable: options.hanziAvailable ?? defaultHanzi };
+  const opts: Required<ValidateOptions> = { hanziAvailable: options.hanziAvailable ?? defaultHanzi, runPython: options.runPython ?? localPython };
   const issues: Issue[] = raw.parseErrors.map((e) => ({ level: "error", file: e.file, message: `YAML ผิดรูปแบบ: ${e.message}` }));
   const content: ValidContent = { subjects: [], topics: [] };
 

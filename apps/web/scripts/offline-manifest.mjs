@@ -17,6 +17,7 @@ const version = hash.digest("hex").slice(0, 12);
 const shell = ["/", "/search/", "/review/", "/profile/", "/placement/", "/manifest.webmanifest", "/content/index.json", "/content/search.json", "/content/flashcards.json", "/icons/icon-192.png"];
 const assets = files.map(url).filter((u) => u.startsWith("/_next/static/") || u.startsWith("/mathlive/") || /\.(woff2?)$/.test(u));
 
+const pyodide = files.map(url).filter((u) => u.startsWith("/pyodide/"));
 const index = JSON.parse(readFileSync(join(out, "content/index.json"), "utf8"));
 const subjects = {};
 for (const t of index.topics) {
@@ -28,9 +29,13 @@ for (const t of index.topics) {
     if (b.type === "worked-example" && b.figure) extra.push(b.figure.src);
   }
   for (const p of pack.problems) if (p.figure) extra.push(p.figure.src);
+  // วิชาที่มีโจทย์เขียนโค้ด: ดาวน์โหลดตัวรัน Python ไปด้วย (ปกติแคชเมื่อใช้ครั้งแรก)
+  if (pack.problems.some((p) => p.type === "code")) extra.push("/py-worker.js", ...pyodide);
   for (const p of pack.problems) if (p.type === "hanzi") extra.push(`/content/hanzi/${p.character.codePointAt(0).toString(16)}.json`); // ตรงกับ hanziFile() ใน schema
-  (subjects[t.subject] ??= []).push(`/topic/${t.id}/`, `/topic/${t.id}/practice/`, `/topic/${t.id}/review/`, `/content/topics/${t.id}.json`, ...extra);
+  (subjects[t.subject] ??= new Set()).add(`/topic/${t.id}/`);
+  for (const u of [`/topic/${t.id}/`, `/topic/${t.id}/practice/`, `/topic/${t.id}/review/`, `/content/topics/${t.id}.json`, ...extra]) subjects[t.subject].add(u);
 }
+for (const k of Object.keys(subjects)) subjects[k] = [...subjects[k]];
 const bytes = (list) => list.reduce((n, u) => n + statSync(join(out, decodeURIComponent(u).replace(/\/$/, "/index.html"))).size, 0);
 const sizes = { assets: bytes(assets), ...Object.fromEntries(Object.entries(subjects).map(([k, v]) => [k, bytes(v)])) };
 

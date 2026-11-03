@@ -2,6 +2,8 @@
  * - ติดตั้ง: แคชหน้าหลักและดัชนีเนื้อหา (shell)
  * - หน้าเว็บ: ลองเน็ตก่อน ถ้าไม่ได้ใช้ของในแคช
  * - โค้ด ฟอนต์ เนื้อหา: ใช้ของในแคชก่อน แล้วอัปเดตเบื้องหลัง
+ * - ตัวรัน Python (/pyodide/<รุ่น>/, ราว 12 MB): ไม่แคชตอนติดตั้ง แคชเมื่อเปิดโจทย์เขียนโค้ดครั้งแรก
+ *   ไฟล์ไม่เปลี่ยนภายในรุ่นเดียวกัน จึงใช้ของในแคชเลยโดยไม่โหลดซ้ำเบื้องหลัง
  * - ข้อความ {type:"download", urls}: ดาวน์โหลดเนื้อหาทั้งวิชาไว้ล่วงหน้า
  */
 const PREFIX = "klangru-";
@@ -31,7 +33,7 @@ self.addEventListener("activate", (event) => {
       if (m) VERSION = m.version;
       const names = await caches.keys();
       // เก็บเนื้อหาที่ดาวน์โหลดไว้ (ไม่ขึ้นกับเวอร์ชัน) ลบเฉพาะ shell เวอร์ชันเก่า
-      await Promise.all(names.filter((n) => n.startsWith(PREFIX) && n !== PREFIX + VERSION && n !== PREFIX + "content").map((n) => caches.delete(n)));
+      await Promise.all(names.filter((n) => n.startsWith(PREFIX) && n !== PREFIX + VERSION && n !== PREFIX + "content" && n !== PREFIX + "pyodide").map((n) => caches.delete(n)));
       await self.clients.claim();
     })(),
   );
@@ -71,6 +73,19 @@ self.addEventListener("fetch", (event) => {
         } catch {
           return (await caches.match(url.pathname)) ?? (await caches.match("/")) ?? new Response("ออฟไลน์", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
         }
+      })(),
+    );
+    return;
+  }
+
+  if (url.pathname.startsWith("/pyodide/")) {
+    event.respondWith(
+      (async () => {
+        const cached = await caches.match(url.pathname);
+        if (cached) return cached;
+        const res = await fetch(req);
+        if (res.ok) (await caches.open(PREFIX + "pyodide")).put(url.pathname, res.clone());
+        return res;
       })(),
     );
     return;

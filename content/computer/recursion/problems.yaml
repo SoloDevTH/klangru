@@ -407,3 +407,68 @@ problems:
     solution: "broken(0) คืน 0 → broken(1) คำนวณ 1 + 0 แต่ไม่ return จึงคืน None → broken(2) คำนวณ 2 + None เกิด TypeError ทันที แก้โดยเขียน return n + broken(n - 1)"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: computer.programming.recursion.p018
+    topics: [computer.programming.recursion]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชันเรียกตัวเอง `factorial(n)` คืนค่า $n! = n \\times (n-1) \\times \\dots \\times 1$ โดย $0! = 1$"
+    starter: |
+      def factorial(n):
+          return n * factorial(n - 1)
+    tests: |
+      assert factorial(0) == 1, "factorial(0) ควรได้ 1 (กรณีฐาน)"
+      assert factorial(1) == 1, "factorial(1) ควรได้ 1"
+      assert factorial(5) == 120, f"factorial(5) ควรได้ 120 แต่ได้ {factorial(5)}"
+      assert factorial(10) == 3628800, "factorial(10) ควรได้ 3628800"
+    reference: |
+      def factorial(n):
+          if n == 0:
+              return 1
+          return n * factorial(n - 1)
+    hints:
+      - "โค้ดเริ่มต้นไม่มีกรณีฐาน จึงเรียกตัวเองไปเรื่อย ๆ จนเกิด `RecursionError`"
+      - "เพิ่ม `if n == 0: return 1` ไว้ก่อนบรรทัดที่เรียกตัวเอง"
+    solution: |
+      ```python
+      def factorial(n):
+          if n == 0:
+              return 1
+          return n * factorial(n - 1)
+      ```
+      กรณีฐาน `n == 0` หยุดการเรียก ส่วนกรณีทั่วไปเรียกด้วย `n - 1` ซึ่งเข้าใกล้ 0 ทุกครั้ง
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.recursion.p019
+    topics: [computer.programming.recursion]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชันเรียกตัวเอง `digit_sum(n)` คืนผลบวกของเลขโดดทุกหลักของจำนวนเต็มบวกหรือศูนย์ `n` เช่น `digit_sum(1234)` ได้ 10"
+    starter: |
+      def digit_sum(n):
+          pass
+    tests: |
+      assert digit_sum(7) == 7, "digit_sum(7) ควรได้ 7"
+      assert digit_sum(0) == 0, "digit_sum(0) ควรได้ 0"
+      assert digit_sum(1234) == 10, f"digit_sum(1234) ควรได้ 10 แต่ได้ {digit_sum(1234)}"
+      assert digit_sum(9081) == 18, "digit_sum(9081) ควรได้ 18"
+      assert digit_sum(1000000) == 1, "digit_sum(1000000) ควรได้ 1"
+    reference: |
+      def digit_sum(n):
+          if n < 10:
+              return n
+          return n % 10 + digit_sum(n // 10)
+    hints:
+      - "`n % 10` ให้เลขหลักหน่วย ส่วน `n // 10` ตัดหลักหน่วยทิ้ง เช่น 1234 → 4 และ 123"
+      - "กรณีฐาน: ถ้า `n < 10` คำตอบคือ `n` เอง กรณีทั่วไป: หลักหน่วย + `digit_sum(n // 10)`"
+    solution: |
+      ```python
+      def digit_sum(n):
+          if n < 10:
+              return n
+          return n % 10 + digit_sum(n // 10)
+      ```
+      `digit_sum(1234)` = 4 + `digit_sum(123)` = 4 + 3 + `digit_sum(12)` = 4 + 3 + 2 + 1 = 10 ถ้าใช้ `/` แทน `//` จะได้ทศนิยมและไม่ถึงกรณีฐานตามที่ตั้งใจ
+    license: CC-BY-SA-4.0
+    ai_assisted: true
