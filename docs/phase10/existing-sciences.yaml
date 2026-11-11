@@ -1,0 +1,198 @@
+# ตัวชี้วัด university-foundations กลุ่ม sciences (UPHYS1 UPHYS2 CHEM BIO) ที่หัวข้อเดิมในคลังสอนแล้ว
+# ตามแนวทาง docs/phase10/planning-brief.md ส่วน ก ผู้ประสานงานตรวจแล้วรวมเข้า curriculum/mappings/university-foundations.yaml
+# ตัดสินจาก lesson.md problems.yaml และ topic.yaml ของแต่ละหัวข้อ ตัวชี้วัดคือชื่อหัวข้อย่อยในสารบัญ OpenStax
+# หัวข้อ ม.ปลายที่สอนแนวคิดและโจทย์ของหัวข้อย่อยครบโดยไม่ใช้แคลคูลัสนับเป็น full ตามแนวเดียวกับแถวเดิม
+#   (เช่น physics.thermal.kinetic-theory กับ UPHYS2 2.1 2.2) ส่วนที่ตำราใช้แคลคูลัสเป็นแก่นของหัวข้อย่อยจะเป็น partial หรืออยู่ในหัวข้อใหม่
+# ตัวชี้วัดที่เป็น partial ส่วนใหญ่มีหัวข้อใหม่เติมส่วนที่ขาดใน docs/phase6/proposals-phase10-sciences.yaml
+# ---------- ฟิสิกส์มหาวิทยาลัย เล่ม 1 ----------
+- { topic: physics.units.experiments-graphs, framework: university-foundations, indicators: ["UPHYS1 1.1"], coverage: partial, note: "สอนว่าฟิสิกส์ศึกษาอะไรและหาความรู้อย่างไร ยังไม่สอนช่วงขนาดของปริมาณในธรรมชาติและอันดับขนาด (อยู่ในหัวข้อใหม่ physics.units.estimation-problem-solving)" }
+- { topic: physics.units.si, framework: university-foundations, indicators: ["UPHYS1 1.2", "UPHYS1 1.3", "UPHYS1 1.4"], coverage: full, note: "หน่วยฐานและหน่วยอนุพันธ์ คำนำหน้าหน่วย การแปลงหน่วยด้วยตัวคูณที่เท่ากับ 1 และการวิเคราะห์มิติเพื่อตรวจสมการ" }
+- { topic: physics.units.measurement, framework: university-foundations, indicators: ["UPHYS1 1.6"], coverage: full }
+- { topic: physics.units.vectors, framework: university-foundations, indicators: ["UPHYS1 2.1"], coverage: full }
+- { topic: physics.units.vectors, framework: university-foundations, indicators: ["UPHYS1 2.2"], coverage: partial, note: "แยกองค์ประกอบ x y และหาขนาดกับทิศจากองค์ประกอบในสองมิติ ส่วนองค์ประกอบสามมิติอยู่ใน math.calculus.vectors-3d" }
+- { topic: math.calculus.vectors-3d, framework: university-foundations, indicators: ["UPHYS1 2.3"], coverage: full, note: "บวก ลบ คูณสเกลาร์ทีละองค์ประกอบ และเวกเตอร์หนึ่งหน่วย i j k" }
+- { topic: math.calculus.vectors-3d, framework: university-foundations, indicators: ["UPHYS1 2.2"], coverage: partial, note: "องค์ประกอบสามมิติและเวกเตอร์หนึ่งหน่วย ส่วนพิกัดเชิงขั้วในระนาบอยู่ใน physics.units.vectors (ขนาดและทิศ)" }
+- { topic: physics.kinematics.velocity, framework: university-foundations, indicators: ["UPHYS1 3.1"], coverage: full }
+- { topic: physics.kinematics.velocity, framework: university-foundations, indicators: ["UPHYS1 4.5"], coverage: partial, note: "สอนความเร็วสัมพัทธ์ในหนึ่งมิติ (รถสวนกันและแซงกัน) ยังไม่มีความเร็วสัมพัทธ์สองมิติ เช่น เรือข้ามแม่น้ำ เครื่องบินในลม" }
+- { topic: engineering.mechanics.particle-dynamics, framework: university-foundations, indicators: ["UPHYS1 3.2", "UPHYS1 3.6", "UPHYS1 4.1", "UPHYS1 4.2"], coverage: full, note: "นิยาม v = ds/dt และ a = dv/dt อินทิเกรตความเร่งที่ไม่คงตัวหาความเร็วและตำแหน่ง และเวกเตอร์ความเร็วกับความเร่งในพิกัดฉาก ตั้งฉาก-สัมผัส และเชิงขั้ว" }
+- { topic: physics.kinematics.acceleration, framework: university-foundations, indicators: ["UPHYS1 3.3"], coverage: full, note: "ความเร่งเฉลี่ยและความเร่งขณะหนึ่งจากความชันของกราฟความเร็ว–เวลา" }
+- { topic: physics.kinematics.constant-acceleration, framework: university-foundations, indicators: ["UPHYS1 3.4"], coverage: full }
+- { topic: physics.kinematics.free-fall, framework: university-foundations, indicators: ["UPHYS1 3.5"], coverage: full }
+- { topic: physics.kinematics.free-fall, framework: university-foundations, indicators: ["UPHYS1 6.4"], coverage: partial, note: "อธิบายแรงต้านอากาศและความเร็วปลายเชิงคุณภาพ ยังไม่มีสมการแรงต้าน ½CρAv² กฎของสโตกส์ และการคำนวณความเร็วปลาย" }
+- { topic: physics.kinematics.projectile, framework: university-foundations, indicators: ["UPHYS1 4.3"], coverage: full }
+- { topic: physics.dynamics.forces, framework: university-foundations, indicators: ["UPHYS1 5.1"], coverage: full }
+- { topic: physics.dynamics.forces, framework: university-foundations, indicators: ["UPHYS1 5.6"], coverage: partial, note: "ตารางแรงที่พบบ่อย (น้ำหนัก แรงตั้งฉาก แรงตึง แรงเสียดทาน) ส่วนแรงสปริงตามกฎของฮุกอยู่ใน physics.energy.variable-force-work และพื้นเอียงอยู่ใน physics.dynamics.inclined-plane" }
+- { topic: physics.dynamics.newton-first, framework: university-foundations, indicators: ["UPHYS1 5.2"], coverage: full }
+- { topic: physics.dynamics.newton-second, framework: university-foundations, indicators: ["UPHYS1 5.3", "UPHYS1 6.1"], coverage: full, note: "ขั้นตอนแก้โจทย์ ลิฟต์ จรวด และวัตถุหลายก้อนที่ผูกติดกัน" }
+- { topic: physics.dynamics.weight-normal, framework: university-foundations, indicators: ["UPHYS1 5.4"], coverage: full }
+- { topic: physics.dynamics.newton-third, framework: university-foundations, indicators: ["UPHYS1 5.5"], coverage: full }
+- { topic: physics.dynamics.free-body-practice, framework: university-foundations, indicators: ["UPHYS1 5.7"], coverage: full }
+- { topic: physics.dynamics.friction, framework: university-foundations, indicators: ["UPHYS1 6.2"], coverage: full }
+- { topic: physics.kinematics.circular, framework: university-foundations, indicators: ["UPHYS1 6.3"], coverage: full, note: "แรงสู่ศูนย์กลางจากแรงตึง แรงเสียดทาน แรงโน้มถ่วง ทางโค้งราบ และถนนยกขอบ" }
+- { topic: physics.energy.work, framework: university-foundations, indicators: ["UPHYS1 7.1"], coverage: full, note: "รวมงานจากพื้นที่ใต้กราฟแรงกับตำแหน่ง" }
+- { topic: physics.energy.kinetic-potential, framework: university-foundations, indicators: ["UPHYS1 7.2", "UPHYS1 7.3", "UPHYS1 8.1"], coverage: full, note: "พลังงานจลน์ ทฤษฎีบทงาน–พลังงาน และพลังงานศักย์ที่เป็นของระบบ" }
+- { topic: physics.energy.power, framework: university-foundations, indicators: ["UPHYS1 7.4"], coverage: full }
+- { topic: physics.energy.conservation, framework: university-foundations, indicators: ["UPHYS1 8.3"], coverage: full }
+- { topic: earthscience.resources.energy-resources, framework: university-foundations, indicators: ["UPHYS1 8.5"], coverage: full, note: "เชื้อเพลิงฟอสซิลและพลังงานหมุนเวียน" }
+- { topic: physics.momentum.momentum-impulse, framework: university-foundations, indicators: ["UPHYS1 9.1", "UPHYS1 9.2"], coverage: full }
+- { topic: physics.momentum.momentum-impulse, framework: university-foundations, indicators: ["UPHYS1 9.5"], coverage: partial, note: "สอนว่าโมเมนตัมเป็นเวกเตอร์และการกระดอนเฉียงจากกำแพง ยังไม่สอนการอนุรักษ์โมเมนตัมแยกองค์ประกอบในการชนสองมิติ" }
+- { topic: physics.momentum.collisions, framework: university-foundations, indicators: ["UPHYS1 9.3", "UPHYS1 9.4"], coverage: full }
+- { topic: physics.rotation.rotational-dynamics, framework: university-foundations, indicators: ["UPHYS1 10.1", "UPHYS1 10.3"], coverage: full, note: "อัตราเร็วเชิงมุม ความเร่งเชิงมุม และ v = ωr, a_t = αr" }
+- { topic: engineering.mechanics.rigid-body-dynamics, framework: university-foundations, indicators: ["UPHYS1 10.5"], coverage: partial, note: "ใช้ทฤษฎีบทแกนขนาน ยังไม่หาโมเมนต์ความเฉื่อยของวัตถุต่อเนื่องด้วยการอินทิเกรต" }
+- { topic: engineering.mechanics.rigid-body-dynamics, framework: university-foundations, indicators: ["UPHYS1 11.2"], coverage: full, note: "โมเมนตัมเชิงมุม H_O = I_Gω + r × mv และการดลเชิงมุม" }
+- { topic: physics.rotation.torque, framework: university-foundations, indicators: ["UPHYS1 10.6"], coverage: full }
+- { topic: physics.matter.elasticity, framework: university-foundations, indicators: ["UPHYS1 12.4"], coverage: full, note: "สภาพยืดหยุ่น สภาพพลาสติก และขีดจำกัดสภาพยืดหยุ่น" }
+- { topic: physics.dynamics.gravitation, framework: university-foundations, indicators: ["UPHYS1 13.1", "UPHYS1 13.2"], coverage: full }
+- { topic: physics.dynamics.satellite-motion, framework: university-foundations, indicators: ["UPHYS1 13.4", "UPHYS1 13.5"], coverage: partial, note: "สอนอัตราเร็วและคาบของวงโคจรวงกลม วงโคจรค้างฟ้า และกฎข้อที่สามของเคปเลอร์ ยังไม่มีพลังงานของวงโคจร วงรี และกฎข้อที่หนึ่งกับสอง" }
+- { topic: earthscience.astronomy.seasons-moon-tides, framework: university-foundations, indicators: ["UPHYS1 13.6"], coverage: partial, note: "อธิบายน้ำขึ้นน้ำลง น้ำเกิด น้ำตายจากผลต่างของแรงดึงดูดเชิงคุณภาพ ยังไม่คำนวณแรงไทดัล" }
+- { topic: physics.matter.pressure-fluids, framework: university-foundations, indicators: ["UPHYS1 14.1", "UPHYS1 14.4"], coverage: full }
+- { topic: physics.waves.shm, framework: university-foundations, indicators: ["UPHYS1 15.1", "UPHYS1 15.2", "UPHYS1 15.3"], coverage: full, note: "x = A cos ωt เทียบกับเงาของการเคลื่อนที่แบบวงกลม และพลังงานของการแกว่ง" }
+- { topic: physics.waves.shm, framework: university-foundations, indicators: ["UPHYS1 15.4"], coverage: partial, note: "สอนลูกตุ้มอย่างง่าย ยังไม่มีลูกตุ้มฟิสิคัลและลูกตุ้มบิด" }
+- { topic: math.de.second-order-linear, framework: university-foundations, indicators: ["UPHYS1 15.5", "UPHYS1 15.6"], coverage: full, note: "ระบบมวล–สปริง–ตัวหน่วง หน่วงน้อย หน่วงวิกฤต หน่วงมาก การสั่นบังคับและการสั่นพ้อง" }
+- { topic: physics.waves.wave-basics, framework: university-foundations, indicators: ["UPHYS1 16.1"], coverage: full }
+- { topic: physics.waves.resonance-standing-waves, framework: university-foundations, indicators: ["UPHYS1 16.3", "UPHYS1 16.6"], coverage: full, note: "v = √(T/μ) คลื่นนิ่ง บัพ ปฏิบัพ และฮาร์มอนิกในเส้นเชือก" }
+- { topic: physics.waves.resonance-standing-waves, framework: university-foundations, indicators: ["UPHYS1 17.4"], coverage: partial, note: "สอนท่อปลายเปิดหนึ่งด้าน ยังไม่มีท่อปลายเปิดสองด้าน" }
+- { topic: physics.waves.sound-properties, framework: university-foundations, indicators: ["UPHYS1 16.4"], coverage: partial, note: "สอนความเข้มแปรผันตามกำลังสองของแอมพลิจูด ยังไม่มีกำลังของคลื่นในเส้นเชือก" }
+- { topic: physics.waves.sound-properties, framework: university-foundations, indicators: ["UPHYS1 17.6", "UPHYS1 17.7", "UPHYS1 17.8"], coverage: full }
+- { topic: physics.waves.wave-behaviour, framework: university-foundations, indicators: ["UPHYS1 16.5"], coverage: full }
+- { topic: physics.waves.sound, framework: university-foundations, indicators: ["UPHYS1 17.1", "UPHYS1 17.3"], coverage: full }
+- { topic: physics.waves.sound, framework: university-foundations, indicators: ["UPHYS1 17.2"], coverage: partial, note: "ใช้ v ≈ 331 + 0.6T ยังไม่มี v = √(B/ρ) และ √(γRT/M)" }
+- { topic: physics.waves.sound, framework: university-foundations, indicators: ["UPHYS1 17.5"], coverage: partial, note: "กล่าวถึงคุณภาพเสียงของเครื่องดนตรี ยังไม่วิเคราะห์ฮาร์มอนิกของเครื่องดนตรีแต่ละแบบ" }
+# ---------- ฟิสิกส์มหาวิทยาลัย เล่ม 2 ----------
+- { topic: physics.thermal.temperature-heat, framework: university-foundations, indicators: ["UPHYS2 1.1", "UPHYS2 1.4"], coverage: full, note: "สมดุลความร้อน ความจุความร้อนจำเพาะ และการผสมน้ำร้อนกับน้ำเย็น" }
+- { topic: physics.thermal.temperature-heat, framework: university-foundations, indicators: ["UPHYS2 1.2"], coverage: partial, note: "สเกลเซลเซียสกับเคลวิน ยังไม่มีสเกลฟาเรนไฮต์และหลักการของเทอร์มอมิเตอร์แบบต่าง ๆ" }
+- { topic: physics.thermal.expansion-heat-transfer, framework: university-foundations, indicators: ["UPHYS2 1.3", "UPHYS2 1.6"], coverage: partial, note: "สอนการขยายตัวและการนำ การพา การแผ่รังสีความร้อนเชิงคุณภาพ ยังไม่มีสัมประสิทธิ์การขยายตัว อัตราการนำความร้อน และกฎของสเตฟาน–โบลซ์มันน์" }
+- { topic: physics.thermal.phase-change, framework: university-foundations, indicators: ["UPHYS2 1.5"], coverage: partial, note: "ความร้อนแฝงและกราฟอุณหภูมิกับเวลา ยังไม่มีแผนภาพเฟส" }
+- { topic: physics.thermal.first-law, framework: university-foundations, indicators: ["UPHYS2 3.1", "UPHYS2 3.5"], coverage: full, note: "ระบบ สถานะ แผนภาพ P–V และ C_V C_P = C_V + R γ ของแก๊สอุดมคติ" }
+- { topic: physics.thermal.first-law, framework: university-foundations, indicators: ["UPHYS2 2.3"], coverage: partial, note: "ให้ค่า C_V ของแก๊สอะตอมเดี่ยวและอะตอมคู่ ยังไม่สอนทฤษฎีบทการแบ่งพลังงานเท่ากัน" }
+- { topic: physics.thermal.second-law, framework: university-foundations, indicators: ["UPHYS2 4.1", "UPHYS2 4.4"], coverage: full, note: "กระบวนการผันกลับได้และไม่ได้ ข้อความแบบเคลวิน–พลังค์และแบบเคลาซิอุส" }
+- { topic: physics.electricity.charge, framework: university-foundations, indicators: ["UPHYS2 5.1", "UPHYS2 5.2", "UPHYS2 5.3", "UPHYS2 5.6"], coverage: full }
+- { topic: physics.electricity.electric-field, framework: university-foundations, indicators: ["UPHYS2 6.2", "UPHYS2 6.4"], coverage: full, note: "ฟลักซ์ผ่านผิวปิดขึ้นกับประจุภายในเท่านั้น และสมบัติสี่ข้อของตัวนำในสมดุลไฟฟ้าสถิต" }
+- { topic: physics.electricity.potential-capacitance, framework: university-foundations, indicators: ["UPHYS2 7.3", "UPHYS2 7.4"], coverage: partial, note: "หาศักย์ของจุดประจุด้วยการอินทิเกรตและ E_x = −dV/dx ในหนึ่งมิติ ยังไม่มีศักย์ของการกระจายประจุต่อเนื่องและเกรเดียนต์สามมิติ" }
+- { topic: physics.electricity.potential-capacitance, framework: university-foundations, indicators: ["UPHYS2 8.4", "UPHYS2 8.5"], coverage: full, note: "C = κC₀ การเกิดขั้วของโมเลกุลฉนวน ประจุเหนี่ยวนำ และความคงทนไดอิเล็กทริก" }
+- { topic: physics.electricity.electric-potential, framework: university-foundations, indicators: ["UPHYS2 7.5"], coverage: partial, note: "ผิวสมศักย์ระหว่างแผ่นขนาน ยังไม่มีผิวสมศักย์ของตัวนำและการสะสมประจุที่ปลายแหลม" }
+- { topic: physics.electricity.capacitors, framework: university-foundations, indicators: ["UPHYS2 7.6"], coverage: full, note: "เครื่องถ่ายเอกสาร เครื่องกำจัดฝุ่น และสายล่อฟ้า" }
+- { topic: physics.electricity.current-voltage, framework: university-foundations, indicators: ["UPHYS2 9.1", "UPHYS2 9.4"], coverage: full }
+- { topic: physics.electricity.current-voltage, framework: university-foundations, indicators: ["UPHYS2 10.4"], coverage: partial, note: "การต่อแอมมิเตอร์และโวลต์มิเตอร์ ยังไม่มีการดัดแปลงแกลแวนอมิเตอร์ด้วยตัวต้านทานชันต์และตัวต้านทานอนุกรม" }
+- { topic: physics.electricity.resistivity-drift, framework: university-foundations, indicators: ["UPHYS2 9.2"], coverage: full }
+- { topic: physics.electricity.resistivity-drift, framework: university-foundations, indicators: ["UPHYS2 9.3"], coverage: partial, note: "R = ρL/A และบอกว่าความต้านทานโลหะเพิ่มตามอุณหภูมิ ยังไม่มีสัมประสิทธิ์อุณหภูมิของสภาพต้านทาน" }
+- { topic: physics.electricity.electric-power, framework: university-foundations, indicators: ["UPHYS2 9.5"], coverage: full }
+- { topic: physics.electricity.emf-sources, framework: university-foundations, indicators: ["UPHYS2 10.1"], coverage: full }
+- { topic: physics.electricity.circuits, framework: university-foundations, indicators: ["UPHYS2 10.2", "UPHYS2 10.6"], coverage: full, note: "รวมวงจรไฟฟ้าในบ้าน ฟิวส์ เบรกเกอร์ สายดิน และเครื่องตัดไฟรั่ว" }
+- { topic: physics.magnetism.magnetic-field, framework: university-foundations, indicators: ["UPHYS2 11.2", "UPHYS2 11.3", "UPHYS2 11.4"], coverage: full }
+- { topic: physics.magnetism.magnetic-field, framework: university-foundations, indicators: ["UPHYS2 11.1"], coverage: partial, note: "เข็มทิศและโลกเป็นแม่เหล็ก ยังไม่เล่าลำดับการค้นพบ" }
+- { topic: physics.magnetism.magnetic-flux-forces, framework: university-foundations, indicators: ["UPHYS2 11.5", "UPHYS2 11.7", "UPHYS2 12.2", "UPHYS2 12.3"], coverage: full, note: "โมเมนต์ NIAB cos θ บนขดลวด แมสสเปกโทรมิเตอร์ ไซโคลตรอน B = μ₀I/2πr และแรงระหว่างลวดคู่ขนาน" }
+- { topic: physics.magnetism.magnetic-flux-forces, framework: university-foundations, indicators: ["UPHYS2 12.6"], coverage: partial, note: "สนามในโซเลนอยด์ B = μ₀nI ยังไม่มีทอรอยด์และที่มาจากกฎของแอมแปร์" }
+- { topic: physics.magnetism.induction, framework: university-foundations, indicators: ["UPHYS2 13.3", "UPHYS2 13.4", "UPHYS2 13.5", "UPHYS2 14.1", "UPHYS2 14.3"], coverage: full, note: "อีเอ็มเอฟจากการเคลื่อนที่ สนามไฟฟ้าเหนี่ยวนำ กระแสวน ความเหนี่ยวนำร่วม และพลังงาน ½LI² กับความหนาแน่นพลังงาน B²/2μ₀" }
+- { topic: physics.magnetism.induction-ac, framework: university-foundations, indicators: ["UPHYS2 13.7", "UPHYS2 15.1", "UPHYS2 15.6"], coverage: full }
+- { topic: engineering.circuits.transients, framework: university-foundations, indicators: ["UPHYS2 14.5"], coverage: partial, note: "สอนผ่านวงจร RLC อนุกรม ω₀ = 1/√(LC) และการแกว่งแบบหน่วงน้อย ยังไม่วิเคราะห์วงจร LC ไม่มีความต้านทานแยกเป็นกรณีเฉพาะ" }
+- { topic: engineering.circuits.ac-phasors, framework: university-foundations, indicators: ["UPHYS2 15.5"], coverage: full }
+- { topic: physics.waves.electromagnetic-waves, framework: university-foundations, indicators: ["UPHYS2 16.1", "UPHYS2 16.2", "UPHYS2 16.3"], coverage: partial, note: "เชิงคุณภาพ สนามที่เปลี่ยนแปลงสร้างกันและกัน E = cB c = 1/√(μ₀ε₀) และความเข้มลดตาม 1/r² ยังไม่มีสมการของแมกซ์เวลล์ กระแสการกระจัด และเวกเตอร์พอยน์ติง" }
+- { topic: physics.waves.em-spectrum-intro, framework: university-foundations, indicators: ["UPHYS2 16.5"], coverage: full }
+# ---------- เคมีทั่วไป ----------
+- { topic: science.nature.nature-of-science, framework: university-foundations, indicators: ["CHEM 1.1"], coverage: partial, note: "สมมติฐาน กฎ และทฤษฎี ยังไม่มีมุมมองระดับมหภาค จุลภาค และสัญลักษณ์ของเคมี" }
+- { topic: chemistry.matter.pure-substances, framework: university-foundations, indicators: ["CHEM 1.2"], coverage: full, note: "สารบริสุทธิ์ ธาตุ สารประกอบ สารเนื้อเดียว สารเนื้อผสม ด้วยแบบจำลองอนุภาค" }
+- { topic: chemistry.matter.states-changes, framework: university-foundations, indicators: ["CHEM 1.3"], coverage: partial, note: "การเปลี่ยนแปลงทางกายภาพและทางเคมี ยังไม่มีสมบัติแบบขึ้นกับปริมาณและไม่ขึ้นกับปริมาณ" }
+- { topic: chemistry.lab.safety-measurement, framework: university-foundations, indicators: ["CHEM 1.4", "CHEM 1.6"], coverage: full, note: "หน่วยเอสไอ เครื่องมือวัดปริมาตร มวล อุณหภูมิ และแฟกเตอร์เปลี่ยนหน่วย" }
+- { topic: physics.units.measurement, framework: university-foundations, indicators: ["CHEM 1.5"], coverage: full, note: "เลขนัยสำคัญ ความแม่นและความเที่ยง" }
+- { topic: chemistry.matter.atoms, framework: university-foundations, indicators: ["CHEM 2.1"], coverage: partial, note: "แบบจำลองของดอลตัน ยังไม่มีกฎสัดส่วนพหุคูณ" }
+- { topic: chemistry.matter.atoms, framework: university-foundations, indicators: ["CHEM 2.2", "CHEM 2.3"], coverage: full, note: "ทอมสัน รัทเทอร์ฟอร์ด อนุภาค 3 ชนิด เลขอะตอม เลขมวล ไอโซโทป และไอออน" }
+- { topic: chemistry.stoichiometry.mole, framework: university-foundations, indicators: ["CHEM 3.1", "CHEM 3.2"], coverage: full }
+- { topic: chemistry.stoichiometry.mole, framework: university-foundations, indicators: ["CHEM 2.4"], coverage: partial, note: "สูตรอย่างง่ายและสูตรโมเลกุล ส่วนสูตรโครงสร้างอยู่ใน chemistry.organic.structures-naming" }
+- { topic: chemistry.matter.periodic-table, framework: university-foundations, indicators: ["CHEM 2.5"], coverage: full }
+- { topic: chemistry.bonding.ionic, framework: university-foundations, indicators: ["CHEM 2.6", "CHEM 7.1"], coverage: full, note: "แยกสารที่เป็นโครงผลึกไอออนิกกับโมเลกุล การเกิดไอออนและพันธะไอออนิก" }
+- { topic: chemistry.bonding.ionic, framework: university-foundations, indicators: ["CHEM 2.7"], coverage: partial, note: "เรียกชื่อสารประกอบไอออนิก ส่วนสารโคเวเลนต์อยู่ใน chemistry.bonding.covalent-naming-energy ยังไม่มีการเรียกชื่อกรด" }
+- { topic: chemistry.bonding.ionic, framework: university-foundations, indicators: ["CHEM 11.2"], coverage: partial, note: "การละลายแบบแตกตัวและไม่แตกตัว ยังไม่แยกอิเล็กโทรไลต์แก่และอ่อน" }
+- { topic: chemistry.bonding.covalent-naming-energy, framework: university-foundations, indicators: ["CHEM 2.7"], coverage: partial, note: "เรียกชื่อสารโคเวเลนต์สองธาตุ" }
+- { topic: chemistry.bonding.covalent-naming-energy, framework: university-foundations, indicators: ["CHEM 5.3", "CHEM 7.5"], coverage: partial, note: "พลังงานพันธะและ ΔH จากพันธะที่สลายกับพันธะที่สร้าง ยังไม่มีกฎของเฮสส์และเอนทัลปีของการเกิดมาตรฐาน (พลังงานโครงผลึกอยู่ใน chemistry.bonding.ionic)" }
+- { topic: chemistry.solutions.concentration, framework: university-foundations, indicators: ["CHEM 3.3", "CHEM 3.4"], coverage: full }
+- { topic: chemistry.solutions.concentration, framework: university-foundations, indicators: ["CHEM 11.4"], coverage: partial, note: "จุดเดือดสูงขึ้นและจุดเยือกแข็งต่ำลง ยังไม่มีความดันไอลดลงและความดันออสโมติก" }
+- { topic: chemistry.stoichiometry.reactions, framework: university-foundations, indicators: ["CHEM 4.1", "CHEM 4.4"], coverage: full }
+- { topic: chemistry.acids-bases.titration-buffers, framework: university-foundations, indicators: ["CHEM 4.5"], coverage: partial, note: "การไทเทรต ส่วนการวิเคราะห์โดยมวลอยู่ใน chemistry.analysis.gas-ion-tests" }
+- { topic: chemistry.analysis.gas-ion-tests, framework: university-foundations, indicators: ["CHEM 4.5"], coverage: partial, note: "วิเคราะห์ปริมาณไอออนจากมวลตะกอน" }
+- { topic: physics.thermal.temperature-heat, framework: university-foundations, indicators: ["CHEM 5.1"], coverage: full, note: "ความร้อน อุณหภูมิ ความจุความร้อนจำเพาะ q = mcΔT" }
+- { topic: physics.modern.quantum-atom, framework: university-foundations, indicators: ["CHEM 6.1", "CHEM 6.2"], coverage: full, note: "พลังงานโฟตอน โฟโตอิเล็กทริก และอะตอมของโบร์กับสเปกตรัมไฮโดรเจน" }
+- { topic: chemistry.matter.atomic-structure, framework: university-foundations, indicators: ["CHEM 6.4"], coverage: full }
+- { topic: chemistry.matter.atomic-structure, framework: university-foundations, indicators: ["CHEM 6.3"], coverage: partial, note: "ระดับพลังงานย่อยและออร์บิทัล s p d f ยังไม่มีเลขควอนตัมสี่ตัวและหลักความไม่แน่นอน" }
+- { topic: chemistry.matter.periodic-trends, framework: university-foundations, indicators: ["CHEM 6.5", "CHEM 18.1"], coverage: full }
+- { topic: chemistry.matter.periodic-trends, framework: university-foundations, indicators: ["CHEM 19.1"], coverage: partial, note: "สมบัติทั่วไปของธาตุแทรนซิชัน ยังไม่มีแหล่งที่พบและการถลุง" }
+- { topic: chemistry.bonding.covalent, framework: university-foundations, indicators: ["CHEM 7.2"], coverage: full }
+- { topic: chemistry.bonding.covalent, framework: university-foundations, indicators: ["CHEM 7.3"], coverage: partial, note: "โครงสร้างลิวอิสตามกฎออกเตต ยังไม่มีข้อยกเว้นของกฎออกเตต" }
+- { topic: chemistry.bonding.polarity-intermolecular, framework: university-foundations, indicators: ["CHEM 7.6", "CHEM 10.1"], coverage: full }
+- { topic: physics.matter.pressure-fluids, framework: university-foundations, indicators: ["CHEM 9.1"], coverage: full, note: "ความดัน ความดันบรรยากาศ บารอมิเตอร์ และแมนอมิเตอร์" }
+- { topic: chemistry.gases.gas-laws, framework: university-foundations, indicators: ["CHEM 9.3", "CHEM 9.4"], coverage: full, note: "ความดันย่อยของดอลตัน ปริมาณสัมพันธ์ของแก๊ส และกฎของเกรแฮม" }
+- { topic: chemistry.gases.gas-laws, framework: university-foundations, indicators: ["CHEM 9.6"], coverage: partial, note: "บอกเชิงคุณภาพว่าแก๊สจริงเบี่ยงเบนเมื่อความดันสูงหรืออุณหภูมิต่ำ ยังไม่มีสมการแวนเดอร์วาลส์" }
+- { topic: physics.thermal.kinetic-theory, framework: university-foundations, indicators: ["CHEM 9.5"], coverage: full }
+- { topic: physics.matter.fluids-advanced, framework: university-foundations, indicators: ["CHEM 10.2"], coverage: partial, note: "ความตึงผิว การซึมตามรูเล็ก และความหนืด ยังไม่โยงกับแรงระหว่างโมเลกุล" }
+- { topic: physics.thermal.phase-change, framework: university-foundations, indicators: ["CHEM 10.3"], coverage: partial, note: "ความร้อนแฝง การระเหยกับการเดือด ยังไม่มีความดันไอเชิงปริมาณ" }
+- { topic: chemistry.solutions.solubility-percent, framework: university-foundations, indicators: ["CHEM 11.1", "CHEM 11.3"], coverage: partial, note: "สภาพละลายได้ ผลของอุณหภูมิและความดัน (เชิงคุณภาพ) ยังไม่มีพลังงานของการละลายและกฎของเฮนรี" }
+- { topic: chemistry.kinetics.reaction-rates, framework: university-foundations, indicators: ["CHEM 12.1", "CHEM 12.2"], coverage: full }
+- { topic: chemistry.kinetics.reaction-rates, framework: university-foundations, indicators: ["CHEM 12.5", "CHEM 12.7"], coverage: partial, note: "ทฤษฎีการชน พลังงานก่อกัมมันต์ และตัวเร่งปฏิกิริยาที่ลด Ea ยังไม่มีสมการของอาร์เรเนียสและตัวเร่งเอกพันธุ์กับวิวิธพันธุ์" }
+- { topic: chemistry.equilibrium.chemical-equilibrium, framework: university-foundations, indicators: ["CHEM 13.1", "CHEM 13.3", "CHEM 13.4"], coverage: full }
+- { topic: chemistry.equilibrium.chemical-equilibrium, framework: university-foundations, indicators: ["CHEM 13.2"], coverage: partial, note: "K_c และผลหารปฏิกิริยา ยังไม่มี K_p" }
+- { topic: chemistry.acids-bases.acid-base-ph, framework: university-foundations, indicators: ["CHEM 14.1", "CHEM 14.2", "CHEM 14.3", "CHEM 14.4"], coverage: full }
+- { topic: chemistry.acids-bases.acid-base-ph, framework: university-foundations, indicators: ["CHEM 15.2"], coverage: partial, note: "นิยามกรด-เบสลิวอิส ยังไม่มีการเกิดไอออนเชิงซ้อนและค่าคงที่การเกิด" }
+- { topic: chemistry.acids-bases.titration-buffers, framework: university-foundations, indicators: ["CHEM 14.6", "CHEM 14.7"], coverage: full }
+- { topic: chemistry.redox.redox-reactions, framework: university-foundations, indicators: ["CHEM 17.1"], coverage: full }
+- { topic: chemistry.redox.electrochemical-cells, framework: university-foundations, indicators: ["CHEM 17.2", "CHEM 17.3", "CHEM 17.5", "CHEM 17.6", "CHEM 17.7"], coverage: full }
+- { topic: chemistry.redox.electrochemical-cells, framework: university-foundations, indicators: ["CHEM 17.4"], coverage: partial, note: "ΔG° = −nFE° เป็นความรู้เสริม ยังไม่มีสมการของเนิร์นสท์และความสัมพันธ์กับ K" }
+- { topic: chemistry.organic.structures-naming, framework: university-foundations, indicators: ["CHEM 20.1", "CHEM 20.2", "CHEM 20.3", "CHEM 20.4"], coverage: full, note: "ไฮโดรคาร์บอน แอลกอฮอล์ อีเทอร์ แอลดีไฮด์ คีโตน กรดคาร์บอกซิลิก เอสเทอร์ เอมีน เอไมด์ (ปฏิกิริยาอยู่ใน chemistry.organic.reactions)" }
+- { topic: physics.nuclear.nuclear-energy-particles, framework: university-foundations, indicators: ["CHEM 21.1"], coverage: full, note: "สัดส่วนนิวตรอนต่อโปรตอนและพลังงานยึดเหนี่ยวต่อนิวคลีออน" }
+- { topic: physics.nuclear.nuclear-energy-particles, framework: university-foundations, indicators: ["CHEM 21.4"], coverage: partial, note: "ฟิชชัน ฟิวชัน และเครื่องปฏิกรณ์ ยังไม่มีการแปรธาตุด้วยการยิงอนุภาค" }
+- { topic: physics.nuclear.radioactivity, framework: university-foundations, indicators: ["CHEM 21.2", "CHEM 21.3", "CHEM 21.5", "CHEM 21.6"], coverage: full }
+# ---------- ชีววิทยา ----------
+- { topic: biology.foundations.life-and-science, framework: university-foundations, indicators: ["BIO 1.1", "BIO 1.2"], coverage: full }
+- { topic: chemistry.matter.atoms, framework: university-foundations, indicators: ["BIO 2.1"], coverage: partial, note: "อะตอม ไอโซโทป และไอออน พันธะเคมีอยู่ใน chemistry.bonding.*" }
+- { topic: biology.molecules.water-biomolecules, framework: university-foundations, indicators: ["BIO 3.1"], coverage: partial, note: "การต่อพันธะไกลโคซิดิกและเพปไทด์โดยให้น้ำ ยังไม่สอนไฮโดรไลซิสเป็นปฏิกิริยาย้อนกลับ" }
+- { topic: biology.cells.cell-structure, framework: university-foundations, indicators: ["BIO 4.1"], coverage: partial, note: "กล้องจุลทรรศน์ใช้แสงและการวัดขนาดเซลล์ ยังไม่มีกล้องจุลทรรศน์อิเล็กตรอนและทฤษฎีเซลล์" }
+- { topic: biology.cells.membrane-transport, framework: university-foundations, indicators: ["BIO 5.4"], coverage: full, note: "เอนโดไซโทซิส (ฟาโกไซโทซิส พิโนไซโทซิส ผ่านตัวรับ) และเอกโซไซโทซิส" }
+- { topic: biology.cells.enzymes, framework: university-foundations, indicators: ["BIO 6.1", "BIO 6.2"], coverage: partial, note: "เมแทบอลิซึม ปฏิกิริยาดูดและคายพลังงาน และพลังงานก่อกัมมันต์ ยังไม่มีพลังงานอิสระของกิบส์" }
+- { topic: biology.cells.enzymes, framework: university-foundations, indicators: ["BIO 6.5"], coverage: partial, note: "บริเวณเร่ง โคแฟกเตอร์ ตัวยับยั้งแบบแข่งขันและไม่แข่งขัน ยังไม่มีการยับยั้งแบบป้อนกลับ" }
+- { topic: biology.cells.cellular-respiration, framework: university-foundations, indicators: ["BIO 7.5"], coverage: full }
+- { topic: biology.cells.cellular-respiration, framework: university-foundations, indicators: ["BIO 7.1"], coverage: partial, note: "NADH FADH₂ เป็นตัวพาอิเล็กตรอนและ ATP ยังไม่อธิบายรีดอกซ์ในเซลล์" }
+- { topic: biology.plants.photosynthesis, framework: university-foundations, indicators: ["BIO 8.1"], coverage: full }
+- { topic: biology.plants.reproduction-growth, framework: university-foundations, indicators: ["BIO 11.2"], coverage: partial, note: "วัฏจักรชีวิตแบบสลับของพืช ยังไม่เทียบวัฏจักรแบบดิพลอยด์เด่นและแฮพลอยด์เด่น" }
+- { topic: biology.plants.reproduction-growth, framework: university-foundations, indicators: ["BIO 32.1"], coverage: full }
+- { topic: biology.genetics.mutation-biotechnology, framework: university-foundations, indicators: ["BIO 13.2", "BIO 17.1"], coverage: full, note: "โครโมโซมไม่แยกระหว่างไมโอซิส ดาวน์ เทอร์เนอร์ ไคลน์เฟลเตอร์ ดีเอ็นเอรีคอมบิแนนท์ PCR" }
+- { topic: biology.genetics.chromosomes-dna, framework: university-foundations, indicators: ["BIO 14.1"], coverage: full, note: "กริฟฟิท เอเวอรี เฮอร์ชีย์และเชส" }
+- { topic: biology.genetics.chromosomes-dna, framework: university-foundations, indicators: ["BIO 14.4", "BIO 14.5"], coverage: partial, note: "เฮลิเคสและ DNA พอลิเมอเรสกับการจำลองแบบกึ่งอนุรักษ์ ยังไม่มีไพรเมส ไลเกส ชิ้นโอคาซากิ และเทโลเมียร์" }
+- { topic: biology.genetics.chromosomes-dna, framework: university-foundations, indicators: ["BIO 15.3", "BIO 15.4"], coverage: partial, note: "RNA พอลิเมอเรสและการตัดอินทรอน ยังไม่มีโพรโมเตอร์ การเติมแคปและหางพอลิเอ" }
+- { topic: biology.evolution.evolution, framework: university-foundations, indicators: ["BIO 18.1", "BIO 18.2"], coverage: full }
+- { topic: biology.diversity.biodiversity-classification, framework: university-foundations, indicators: ["BIO 20.1"], coverage: full }
+- { topic: biology.diversity.biodiversity-classification, framework: university-foundations, indicators: ["BIO 20.2", "BIO 20.3"], coverage: partial, note: "แคลโดแกรมจากลักษณะที่เกิดใหม่ร่วมกันและระบบสามโดเมน ยังไม่มีโฮโมโลยีกับอะนาโลยี หลักความประหยัด และการถ่ายโอนยีนในแนวราบ" }
+- { topic: biology.diversity.biodiversity-classification, framework: university-foundations, indicators: ["BIO 23.1"], coverage: partial, note: "ทฤษฎีเอนโดซิมไบโอซิส ยังไม่มีหลักฐานและลำดับเหตุการณ์ของยูแคริโอตแรกเริ่ม" }
+- { topic: biology.plants.plant-structure, framework: university-foundations, indicators: ["BIO 30.1"], coverage: full }
+- { topic: biology.plants.plant-structure, framework: university-foundations, indicators: ["BIO 30.2", "BIO 30.3", "BIO 30.4"], coverage: partial, note: "โครงสร้างภายในของลำต้น ราก และใบจากภาคตัดขวาง ยังไม่มีรูปแบบดัดแปลงและการจัดเรียงใบ" }
+- { topic: biology.plants.plant-transport, framework: university-foundations, indicators: ["BIO 31.1"], coverage: full }
+- { topic: biology.plants.plant-transport, framework: university-foundations, indicators: ["BIO 30.5"], coverage: partial, note: "การคายน้ำ แรงดึงจากการคายน้ำ และการลำเลียงทางโฟลเอ็ม ยังไม่ใช้ศักย์น้ำ" }
+- { topic: biology.plants.hormones-responses, framework: university-foundations, indicators: ["BIO 30.6"], coverage: partial, note: "ฮอร์โมนพืชและการตอบสนองต่อแสง แรงโน้มถ่วง การสัมผัส ยังไม่มีไฟโทโครม ช่วงแสง และการป้องกันตัวของพืช" }
+- { topic: earthscience.geology.earth-structure-surface, framework: university-foundations, indicators: ["BIO 31.2"], coverage: full, note: "การเกิดดิน ชั้นหน้าตัดดิน และสมบัติของดิน" }
+- { topic: biology.plants.reproduction-propagation, framework: university-foundations, indicators: ["BIO 32.2", "BIO 32.3"], coverage: full }
+- { topic: biology.animals.homeostasis, framework: university-foundations, indicators: ["BIO 33.3", "BIO 41.1", "BIO 41.5"], coverage: full, note: "การป้อนกลับ ADH แอลโดสเตอโรน และดุลน้ำกับเกลือแร่" }
+- { topic: biology.animals.digestion, framework: university-foundations, indicators: ["BIO 34.1", "BIO 34.3"], coverage: full }
+- { topic: biology.humans.nutrition-digestion, framework: university-foundations, indicators: ["BIO 34.2"], coverage: partial, note: "สารอาหาร 6 ประเภทและพลังงานจากอาหาร ยังไม่มีอัตราเมแทบอลิซึมพื้นฐาน" }
+- { topic: biology.animals.hormones, framework: university-foundations, indicators: ["BIO 37.1", "BIO 37.2", "BIO 37.3", "BIO 37.4", "BIO 37.5"], coverage: full }
+- { topic: biology.animals.hormones, framework: university-foundations, indicators: ["BIO 34.4"], coverage: partial, note: "ซีเครตินกระตุ้นตับอ่อน ยังไม่มีแกสตรินและโคลีซิสโตไคนิน" }
+- { topic: biology.animals.nervous-system, framework: university-foundations, indicators: ["BIO 35.2", "BIO 35.3", "BIO 35.4"], coverage: full }
+- { topic: biology.animals.nervous-system, framework: university-foundations, indicators: ["BIO 35.1"], coverage: partial, note: "โครงสร้างเซลล์ประสาทและเยื่อไมอีลิน ยังไม่แยกชนิดของเซลล์เกลีย" }
+- { topic: biology.animals.senses, framework: university-foundations, indicators: ["BIO 36.1", "BIO 36.2", "BIO 36.3", "BIO 36.4", "BIO 36.5"], coverage: full }
+- { topic: biology.animals.movement, framework: university-foundations, indicators: ["BIO 38.1", "BIO 38.3", "BIO 38.4"], coverage: full }
+- { topic: biology.animals.movement, framework: university-foundations, indicators: ["BIO 38.2"], coverage: partial, note: "หน้าที่ของกระดูก ยังไม่มีเนื้อเยื่อกระดูก เซลล์กระดูก และการเจริญของกระดูก" }
+- { topic: biology.animals.gas-exchange, framework: university-foundations, indicators: ["BIO 39.1", "BIO 39.2", "BIO 39.3", "BIO 39.4"], coverage: full }
+- { topic: biology.animals.circulation, framework: university-foundations, indicators: ["BIO 40.1", "BIO 40.2", "BIO 40.3"], coverage: full }
+- { topic: biology.animals.circulation, framework: university-foundations, indicators: ["BIO 40.4"], coverage: partial, note: "ความดันเลือดและความเร็วการไหล ยังไม่มีกลไกควบคุมความดันเลือด" }
+- { topic: biology.animals.excretion, framework: university-foundations, indicators: ["BIO 41.2", "BIO 41.3", "BIO 41.4"], coverage: full }
+- { topic: biology.animals.immunity, framework: university-foundations, indicators: ["BIO 42.1", "BIO 42.2", "BIO 42.4"], coverage: full }
+- { topic: biology.animals.immunity, framework: university-foundations, indicators: ["BIO 42.3"], coverage: partial, note: "เซลล์พลาสมาหลั่งแอนติบอดีรูปตัว Y ยังไม่มีชนิดของแอนติบอดีและการจับแอนติเจน" }
+- { topic: biology.animals.reproduction-development, framework: university-foundations, indicators: ["BIO 43.1", "BIO 43.2", "BIO 43.3", "BIO 43.6"], coverage: full }
+- { topic: biology.animals.reproduction-development, framework: university-foundations, indicators: ["BIO 43.7"], coverage: partial, note: "ชั้นเนื้อเยื่อและการสร้างอวัยวะโดยสังเขป ยังไม่มีการกำหนดแกนลำตัวและยีน Hox" }
+- { topic: biology.humans.reproductive-system, framework: university-foundations, indicators: ["BIO 43.4", "BIO 43.5"], coverage: partial, note: "เอสโทรเจน โพรเจสเทอโรน รอบประจำเดือน และการตั้งครรภ์ ยังไม่มีฮอร์โมน FSH LH จากต่อมใต้สมองและฮอร์โมนในการคลอด" }
+- { topic: biology.ecology.ecosystems, framework: university-foundations, indicators: ["BIO 44.1"], coverage: full }
+- { topic: biology.ecology.biomes-succession, framework: university-foundations, indicators: ["BIO 44.3", "BIO 44.4"], coverage: full }
+- { topic: biology.ecology.biomes-succession, framework: university-foundations, indicators: ["BIO 44.2"], coverage: partial, note: "ไบโอมตามอุณหภูมิ ปริมาณฝน ละติจูด ความสูง ยังไม่มีชีวภูมิศาสตร์และถิ่นเฉพาะ" }
+- { topic: earthscience.atmosphere.climate-change, framework: university-foundations, indicators: ["BIO 44.5"], coverage: full }
+- { topic: biology.ecology.populations, framework: university-foundations, indicators: ["BIO 45.1", "BIO 45.3", "BIO 45.4"], coverage: full }
+- { topic: biology.ecology.food-webs, framework: university-foundations, indicators: ["BIO 45.6"], coverage: partial, note: "ความสัมพันธ์ระหว่างสิ่งมีชีวิตในระบบนิเวศ ยังไม่มีการแก่งแย่งตามหลักการกีดกัน ชนิดพันธุ์หลัก และโครงสร้างชุมชน" }
+- { topic: biology.animals.behaviour, framework: university-foundations, indicators: ["BIO 45.7"], coverage: full }
+- { topic: biology.diversity.biodiversity, framework: university-foundations, indicators: ["BIO 47.2", "BIO 47.3"], coverage: full }
+- { topic: biology.diversity.biodiversity, framework: university-foundations, indicators: ["BIO 47.1", "BIO 47.4"], coverage: partial, note: "ภัยคุกคามและการอนุรักษ์ในและนอกถิ่นที่อยู่ ยังไม่มีอัตราการสูญพันธุ์ การสูญพันธุ์ครั้งใหญ่ และการออกแบบพื้นที่คุ้มครอง" }

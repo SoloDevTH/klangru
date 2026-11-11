@@ -1,0 +1,853 @@
+# ข้อเสนอหัวข้อใหม่เฟส 10 กลุ่ม sciences (ตามแนวทาง docs/phase10/planning-brief.md ส่วน ข)
+#
+# ตัวชี้วัดในกลุ่ม: university-foundations สาระ university-physics-1 (UPHYS1) university-physics-2 (UPHYS2)
+#   general-chemistry (CHEM) และ general-biology (BIO) ที่ยังไม่มีแถว full หรือ partial ใน curriculum/mappings/
+#   รวม 429 ข้อ (BIO 174 · CHEM 107 · UPHYS1 83 · UPHYS2 65) ตัวชี้วัดคือชื่อหัวข้อย่อยในสารบัญตำรา OpenStax
+#   University Physics 1–2, Chemistry 2e และ Biology 2e
+# ตัวชี้วัดที่หัวข้อเดิมสอนแล้ว (ส่วน ก) อยู่ใน docs/phase10/existing-sciences.yaml
+# ตัวชี้วัดที่ไม่วางแผนอยู่ใน docs/phase10/not-planned-sciences.md (กลุ่มนี้ไม่มี)
+#
+# ตัวชี้วัดบางข้อมีทั้งแถว partial ในส่วน ก และอยู่ในหัวข้อใหม่ที่นี่ เพราะหัวข้อเดิมสอนเพียงบางส่วน หัวข้อใหม่เติมส่วนที่ขาด
+# หัวข้อ chemistry.thermochem.entropy-gibbs ผูก CHEM 16.2 และ 16.4 ด้วย ซึ่งมีแถว partial กับ
+#   engineering.thermo.engineering-thermodynamics อยู่แล้ว เพราะเป็นบทเรียนเดียวกันกับ 16.1 และ 16.3
+#
+# ระดับ: ตัวชี้วัดเป็นวิชาพื้นฐานปีหนึ่ง หัวข้อฟิสิกส์ส่วนใหญ่ใช้แคลคูลัส (อนุพันธ์ ปริพันธ์) ตามตำรา
+# difficulty เทียบกับหัวข้อเดิม: physics.units.si 2, physics.units.measurement 3, physics.units.vectors 5.2,
+# physics.kinematics.free-fall 4.5, physics.energy.conservation 5, physics.momentum.collisions 6,
+# physics.rotation.rotational-dynamics 7.5, physics.dynamics.satellite-motion 6, physics.waves.shm 6.5,
+# physics.waves.resonance-standing-waves 6, physics.thermal.kinetic-theory 6.5, physics.thermal.second-law 8,
+# physics.electricity.potential-capacitance 7.5, physics.electricity.electric-field 8, physics.magnetism.induction 8,
+# chemistry.stoichiometry.reactions 5.5, chemistry.matter.atomic-structure 5, chemistry.kinetics.reaction-rates 6,
+# chemistry.equilibrium.chemical-equilibrium 6.5, chemistry.acids-bases.titration-buffers 7,
+# chemistry.redox.electrochemical-cells 7, biology.cells.enzymes 5, biology.genetics.chromosomes-dna 6,
+# biology.diversity.biodiversity-classification 6.5, biology.evolution.evolution 6.5,
+# math.functions.exponential 6, math.functions.logarithms 6.5, math.calculus.derivative 7,
+# math.calculus.definite-integral 7.5, math.calculus.integral-applications 8, math.calculus.partial-derivatives 8.5
+# เรียงตาม prerequisite: หัวข้อใน prereq มีอยู่แล้วในคลังหรือเสนอไว้ก่อนหน้าในไฟล์นี้
+topics:
+  # ---------- ฟิสิกส์: กลศาสตร์ ----------
+  # ลำดับ 3
+  - id: physics.units.estimation-problem-solving
+    title: ขนาดของสิ่งต่าง ๆ การประมาณแบบแฟร์มี และกลยุทธ์แก้โจทย์ฟิสิกส์
+    difficulty: 3.5
+    prereq: [physics.units.si, physics.units.measurement, physics.units.experiments-graphs]
+    indicators:
+      - university-foundations:UPHYS1 1.1
+      - university-foundations:UPHYS1 1.5
+      - university-foundations:UPHYS1 1.7
+    scope: >-
+      ช่วงขนาดของความยาว มวล และเวลาในธรรมชาติตั้งแต่นิวเคลียสถึงเอกภาพ อันดับขนาด (order of magnitude) และการปัดเป็นกำลังของสิบ
+      แบบจำลองและทฤษฎีกับขอบเขตที่ใช้ได้ การประมาณแบบแฟร์มี แตกคำถามใหญ่เป็นปริมาณย่อยที่ประมาณได้ เช่น จำนวนเม็ดข้าวที่คนไทยกินต่อปี
+      หรือปริมาตรน้ำในสระ แล้วตรวจว่าคำตอบสมเหตุสมผล กลยุทธ์แก้โจทย์สามขั้น (วางกลยุทธ์ วาดรูปและระบุตัวแปร แก้สมการแบบสัญลักษณ์ก่อนแทนค่า)
+      และการตรวจคำตอบด้วยหน่วย อันดับขนาด และกรณีสุดขั้ว
+  # ลำดับ 3
+  - id: physics.kinematics.relative-velocity
+    title: ความเร็วสัมพัทธ์ในหนึ่งและสองมิติ
+    difficulty: 5.5
+    prereq: [physics.units.vectors, physics.kinematics.velocity]
+    indicators:
+      - university-foundations:UPHYS1 4.5
+    scope: >-
+      กรอบอ้างอิงและการบอกตำแหน่งกับความเร็วเทียบกรอบต่าง ๆ สูตรรวมความเร็ว v_PA = v_PB + v_BA แบบเวกเตอร์ ทบทวนกรณีหนึ่งมิติ
+      แล้วขยายเป็นสองมิติ เรือข้ามแม่น้ำ (เล็งหัวเรือเพื่อไปตรงฝั่งหรือเพื่อใช้เวลาน้อยที่สุด) เครื่องบินบินในลมขวาง ฝนตกเฉียงเมื่อมองจากรถ
+      และความเร่งเท่ากันในทุกกรอบที่เคลื่อนที่ด้วยความเร็วคงตัวเทียบกัน
+  # ลำดับ 3
+  - id: physics.dynamics.drag-force
+    title: แรงต้านของของไหลและความเร็วปลาย
+    difficulty: 6
+    prereq: [physics.kinematics.free-fall, physics.dynamics.newton-second, math.functions.exponential]
+    indicators:
+      - university-foundations:UPHYS1 6.4
+    scope: >-
+      แรงต้านเมื่อวัตถุเคลื่อนที่ในอากาศหรือน้ำ สมการแรงต้านแบบกำลังสอง F_D = ½CρAv² สัมประสิทธิ์แรงต้าน และพื้นที่หน้าตัด
+      ความเร็วปลาย v_t = √(2mg/CρA) ของนักดิ่งพสุธาก่อนและหลังกางร่ม แรงต้านแบบเชิงเส้นของวัตถุเล็กในของเหลวหนืด (กฎของสโตกส์)
+      ความเร็วตามเวลา v(t) = v_t(1 − e^(−t/τ)) ของแรงต้านเชิงเส้นและความหมายของ τ และการออกแบบรถยนต์ให้ลดแรงต้านเพื่อประหยัดพลังงาน
+  # ลำดับ 2
+  - id: physics.energy.potential-energy-diagrams
+    title: แรงอนุรักษ์ แรงไม่อนุรักษ์ และกราฟพลังงานศักย์
+    difficulty: 7
+    prereq: [physics.energy.conservation, physics.energy.variable-force-work, math.calculus.derivative]
+    indicators:
+      - university-foundations:UPHYS1 8.2
+      - university-foundations:UPHYS1 8.4
+    scope: >-
+      แรงอนุรักษ์คือแรงที่งานไม่ขึ้นกับเส้นทางและงานรอบวงปิดเป็นศูนย์ (แรงโน้มถ่วง แรงสปริง) แรงเสียดทานเป็นแรงไม่อนุรักษ์
+      นิยามพลังงานศักย์จากงานของแรงอนุรักษ์ ΔU = −W และหาแรงจากพลังงานศักย์ F = −dU/dx กราฟ U(x) อ่านจุดวกกลับจากพลังงานรวม
+      บริเวณที่วัตถุเคลื่อนที่ได้ จุดสมดุลเสถียร ไม่เสถียร และสะเทิน จากความโค้งของกราฟ การแกว่งเล็ก ๆ รอบจุดต่ำสุด
+      และงานของแรงไม่อนุรักษ์เท่ากับการเปลี่ยนพลังงานกล
+  # ลำดับ 2
+  - id: physics.momentum.collisions-2d-rockets
+    title: การชนในสองมิติและการขับเคลื่อนของจรวด
+    difficulty: 7.5
+    prereq: [physics.momentum.collisions, physics.units.vectors, math.calculus.definite-integral]
+    indicators:
+      - university-foundations:UPHYS1 9.5
+      - university-foundations:UPHYS1 9.7
+    scope: >-
+      อนุรักษ์โมเมนตัมแยกองค์ประกอบ x และ y ในการชนสองมิติ ลูกสนุกเกอร์ชนเฉียง การชนแบบติดกันที่สี่แยก และการชนยืดหยุ่นของมวลเท่ากัน
+      ที่ลูกทั้งสองแยกตั้งฉากกัน ระบบที่มวลเปลี่ยน การหาสมการจรวดของซีออลคอฟสกี Δv = u ln(m₀/m) ด้วยการอินทิเกรต แรงขับ = u|dm/dt|
+      จรวดที่ต้องต้านแรงโน้มถ่วงขณะขึ้นจากพื้น และเหตุผลที่จรวดใช้หลายท่อน
+  # ลำดับ 2
+  - id: physics.rotation.rotational-kinematics-inertia
+    title: จลนศาสตร์การหมุน โมเมนต์ความเฉื่อยจากปริพันธ์ งานของการหมุน และลูกตุ้มฟิสิคัล
+    difficulty: 8
+    prereq: [physics.rotation.rotational-dynamics, math.calculus.integral-applications, physics.waves.shm]
+    indicators:
+      - university-foundations:UPHYS1 10.2
+      - university-foundations:UPHYS1 10.5
+      - university-foundations:UPHYS1 10.8
+      - university-foundations:UPHYS1 15.4
+    scope: >-
+      สมการการหมุนด้วยความเร่งเชิงมุมคงตัว (ω = ω₀ + αt, θ = ω₀t + ½αt², ω² = ω₀² + 2αθ) เทียบกับการเคลื่อนที่แนวตรง
+      หาโมเมนต์ความเฉื่อย I = ∫r² dm ของแท่ง แผ่นกลม และวงแหวน ทฤษฎีบทแกนขนานและแกนตั้งฉาก งานของทอร์ก W = ∫τ dθ
+      ทฤษฎีบทงาน–พลังงานของการหมุน และกำลัง P = τω เช่น มอเตอร์และเพลา ลูกตุ้มฟิสิคัล T = 2π√(I/mgd) และลูกตุ้มบิด T = 2π√(I/κ)
+  # ลำดับ 2
+  - id: physics.dynamics.gravitational-energy-orbits
+    title: พลังงานศักย์โน้มถ่วง วงโคจร กฎของเคปเลอร์ แรงไทดัล และแนวคิดของไอน์สไตน์
+    difficulty: 7.5
+    prereq: [physics.dynamics.satellite-motion, physics.energy.conservation, math.calculus.definite-integral]
+    indicators:
+      - university-foundations:UPHYS1 13.3
+      - university-foundations:UPHYS1 13.4
+      - university-foundations:UPHYS1 13.5
+      - university-foundations:UPHYS1 13.6
+      - university-foundations:UPHYS1 13.7
+    scope: >-
+      พลังงานศักย์โน้มถ่วง U = −GMm/r จากการอินทิเกรต และเหตุที่ mgh เป็นค่าประมาณใกล้ผิวโลก อัตราเร็วหลุดพ้น พลังงานรวมของวงโคจรวงกลม
+      E = −GMm/2r กับการย้ายวงโคจร กฎสามข้อของเคปเลอร์ วงรี จุดใกล้และไกลที่สุด กฎพื้นที่เท่ากันกับการอนุรักษ์โมเมนตัมเชิงมุม
+      แรงไทดัลจากผลต่างของแรงโน้มถ่วงข้ามขนาดโลก น้ำเกิดน้ำตาย และการล็อกด้วยแรงไทดัล หลักความสมมูลและความโค้งของกาลอวกาศเชิงแนวคิด
+      การเบนของแสง หลุมดำ รัศมีชวาร์ซชิลด์ และคลื่นความโน้มถ่วง
+  # ---------- ฟิสิกส์: คลื่นและเสียง ----------
+  # ลำดับ 2
+  - id: physics.waves.wave-functions-energy
+    title: ฟังก์ชันคลื่น อัตราเร็วคลื่นจากสมบัติตัวกลาง และพลังงานของคลื่น
+    difficulty: 7.5
+    prereq: [physics.waves.wave-basics, physics.waves.resonance-standing-waves, physics.waves.sound, math.calculus.differentiation-rules]
+    indicators:
+      - university-foundations:UPHYS1 16.2
+      - university-foundations:UPHYS1 16.4
+      - university-foundations:UPHYS1 17.2
+    scope: >-
+      ฟังก์ชันคลื่นรูปไซน์ y(x, t) = A sin(kx − ωt + φ) เลขคลื่น k ความถี่เชิงมุม ω และทิศการเคลื่อนที่จากเครื่องหมาย
+      อัตราเร็วของอนุภาคในตัวกลาง ∂y/∂t เทียบกับอัตราเร็วคลื่น และสมการคลื่นเชิงเส้น อัตราเร็วคลื่นเสียง v = √(B/ρ) ในของไหล
+      v = √(Y/ρ) ในแท่งของแข็ง และ v = √(γRT/M) ในแก๊สกับที่มาของสูตรประมาณ 331 + 0.6T พลังงานและกำลังเฉลี่ยของคลื่นในเส้นเชือก
+      P = ½μωA²v และความเข้มของคลื่นทรงกลมที่ลดตาม 1/r²
+  # ลำดับ 3
+  - id: physics.waves.pipes-musical-sound
+    title: โหมดปกติของท่อลมและเสียงของเครื่องดนตรี
+    difficulty: 6
+    prereq: [physics.waves.resonance-standing-waves, physics.waves.sound-properties]
+    indicators:
+      - university-foundations:UPHYS1 17.4
+      - university-foundations:UPHYS1 17.5
+    scope: >-
+      คลื่นนิ่งของเสียงในท่อปลายเปิดสองด้านและปลายเปิดหนึ่งด้าน บัพและปฏิบัพของการกระจัดกับความดัน ความถี่ของโหมดปกติ
+      f = nv/2L และ f = nv/4L (n คี่) การแก้ปลายท่อ เสียงมูลฐานกับเสียงฮาร์มอนิก คุณภาพเสียงจากสัดส่วนของฮาร์มอนิก
+      เครื่องสาย (ซอ จะเข้) เครื่องเป่า (ขลุ่ย แคน) และเครื่องตี (ระนาด) และการเปลี่ยนระดับเสียงด้วยความยาว แรงตึง และอุณหภูมิ
+  # ---------- ฟิสิกส์: อุณหพลศาสตร์ ----------
+  # ลำดับ 2
+  - id: physics.thermal.heat-transfer-rates
+    title: การขยายตัวเชิงปริมาณ และอัตราการถ่ายโอนความร้อนโดยการนำ การพา และการแผ่รังสี
+    difficulty: 5.5
+    prereq: [physics.thermal.temperature-heat, physics.thermal.expansion-heat-transfer]
+    indicators:
+      - university-foundations:UPHYS2 1.3
+      - university-foundations:UPHYS2 1.6
+    scope: >-
+      การขยายตัวเชิงเส้น ΔL = αLΔT เชิงพื้นที่และเชิงปริมาตร β ≈ 3α การขยายตัวที่ผิดปกติของน้ำ ความเค้นจากความร้อนเมื่อยึดปลายไว้
+      อัตราการนำความร้อน P = kAΔT/d สภาพนำความร้อนของวัสดุ ค่า R ของฉนวนหลายชั้น การพาความร้อนเชิงคุณภาพและอัตราที่ขึ้นกับความเร็วลม
+      การแผ่รังสีตามกฎของสเตฟาน–โบลซ์มันน์ P = σeAT⁴ สุทธิระหว่างวัตถุกับสิ่งแวดล้อม และการออกแบบผนัง หลังคา และกระติกเก็บความร้อน
+  # ลำดับ 3
+  - id: physics.thermal.statistical-thermodynamics
+    title: การแบ่งพลังงานเท่ากัน การแจกแจงอัตราเร็วของโมเลกุล และเอนโทรปีระดับจุลภาค
+    difficulty: 8.5
+    prereq: [physics.thermal.kinetic-theory, physics.thermal.first-law, physics.thermal.second-law]
+    indicators:
+      - university-foundations:UPHYS2 2.3
+      - university-foundations:UPHYS2 2.4
+      - university-foundations:UPHYS2 4.7
+    scope: >-
+      องศาอิสระของการเลื่อนที่ การหมุน และการสั่น ทฤษฎีบทการแบ่งพลังงานเท่ากัน ½kT ต่อองศาอิสระ ที่มาของ C_V = 3/2 R และ 5/2 R
+      การ "แช่แข็ง" องศาอิสระที่อุณหภูมิต่ำ และความจุความร้อนของของแข็ง (กฎของดูลองและปติต์) การแจกแจงอัตราเร็วของแมกซ์เวลล์–โบลซ์มันน์
+      อัตราเร็วที่เป็นไปได้มากที่สุด อัตราเร็วเฉลี่ย และอัตราเร็วอาร์เอ็มเอส ผลของอุณหภูมิและมวล สถานะจุลภาคกับสถานะมหภาค
+      S = k ln W นับสถานะจากการโยนเหรียญและการกระจายโมเลกุลในกล่อง และเหตุที่เอนโทรปีเพิ่มเป็นเรื่องของความน่าจะเป็น
+  # ---------- ฟิสิกส์: ไฟฟ้าและแม่เหล็ก ----------
+  # ลำดับ 2
+  - id: physics.electricity.dipoles-potential-gradient
+    title: ไดโพลไฟฟ้า ศักย์ของการกระจายประจุ และสนามจากเกรเดียนต์ของศักย์
+    difficulty: 8.5
+    prereq: [physics.electricity.potential-capacitance, physics.electricity.electric-field, math.calculus.partial-derivatives]
+    indicators:
+      - university-foundations:UPHYS2 5.7
+      - university-foundations:UPHYS2 7.3
+      - university-foundations:UPHYS2 7.4
+      - university-foundations:UPHYS2 7.5
+    scope: >-
+      ไดโพลไฟฟ้าและโมเมนต์ไดโพล p = qd สนามไกลของไดโพล ทอร์ก τ = p × E และพลังงาน U = −p·E โมเลกุลน้ำในเตาไมโครเวฟ
+      ศักย์จากจุดประจุหลายตัวด้วยการบวกสเกลาร์ ศักย์ของการกระจายประจุต่อเนื่อง V = k∫dq/r (เส้นประจุ วงแหวน แผ่นกลม)
+      หาสนามจากศักย์ E = −∇V ด้วยอนุพันธ์ย่อย ผิวสมศักย์ตั้งฉากกับเส้นสนาม ตัวนำเป็นผิวสมศักย์ ประจุหนาแน่นที่ปลายแหลม
+      และการใช้งาน เช่น สายล่อฟ้าและเครื่องกำเนิดแวนเดอกราฟ
+  # ลำดับ 1
+  - id: physics.magnetism.biot-savart-ampere
+    title: แหล่งกำเนิดสนามแม่เหล็ก กฎของบีโอ–ซาวาร์ต์ และกฎของแอมแปร์
+    difficulty: 8.5
+    prereq: [physics.magnetism.magnetic-flux-forces, math.calculus.vectors-3d, math.calculus.integral-applications, physics.electricity.electric-field]
+    indicators:
+      - university-foundations:UPHYS2 12.1
+      - university-foundations:UPHYS2 12.4
+      - university-foundations:UPHYS2 12.5
+      - university-foundations:UPHYS2 12.6
+    scope: >-
+      กฎของบีโอ–ซาวาร์ต์ dB = (μ₀/4π) I dl × r̂ / r² หาสนามของลวดตรงยาวจำกัดและอนันต์ (ที่มาของ μ₀I/2πr) และสนามบนแกนของขดลวดวงกลม
+      สนามที่ศูนย์กลางและไกลออกไปในรูปไดโพลแม่เหล็ก กฎของแอมแปร์ ∮B·dl = μ₀I เลือกเส้นทางแอมแปร์ที่สมมาตร หาสนามภายในและภายนอกลวดหนา
+      โซเลนอยด์ยาว และทอรอยด์ เปรียบเทียบกับกฎของเกาส์ในไฟฟ้าสถิต
+  # ลำดับ 3
+  - id: physics.magnetism.magnetic-materials-hall
+    title: ปรากฏการณ์ฮอลล์ สมบัติแม่เหล็กของสาร และตัวนำยวดยิ่ง
+    difficulty: 7
+    prereq: [physics.magnetism.magnetic-flux-forces, physics.electricity.resistivity-drift]
+    indicators:
+      - university-foundations:UPHYS2 11.6
+      - university-foundations:UPHYS2 12.7
+      - university-foundations:UPHYS2 9.6
+    scope: >-
+      ปรากฏการณ์ฮอลล์ สมดุลแรงไฟฟ้ากับแรงแม่เหล็กบนพาหะ แรงดันฮอลล์ V_H = IB/nqt การหาเครื่องหมายและความหนาแน่นพาหะ และเซนเซอร์ฮอลล์
+      ในโทรศัพท์และรถยนต์ โมเมนต์แม่เหล็กของอะตอม สารพาราแมกเนติก ไดอะแมกเนติก และเฟร์โรแมกเนติก สภาพให้ซึมได้สัมพัทธ์ โดเมนแม่เหล็ก
+      วงฮิสเทอรีซิส แม่เหล็กถาวรกับแกนหม้อแปลง อุณหภูมิกูรี ตัวนำยวดยิ่ง ความต้านทานเป็นศูนย์ใต้อุณหภูมิวิกฤต ปรากฏการณ์ไมส์เนอร์
+      และการใช้ใน MRI กับรถไฟแม่เหล็ก
+  # ลำดับ 2
+  - id: physics.waves.maxwell-em-waves
+    title: สมการของแมกซ์เวลล์ คลื่นแม่เหล็กไฟฟ้าระนาบ พลังงาน และความดันรังสี
+    difficulty: 9
+    prereq: [physics.magnetism.biot-savart-ampere, physics.magnetism.induction, physics.waves.electromagnetic-waves]
+    indicators:
+      - university-foundations:UPHYS2 16.1
+      - university-foundations:UPHYS2 16.2
+      - university-foundations:UPHYS2 16.3
+      - university-foundations:UPHYS2 16.4
+    scope: >-
+      กระแสการกระจัดที่ทำให้กฎของแอมแปร์ใช้ได้กับตัวเก็บประจุที่กำลังอัดประจุ สมการของแมกซ์เวลล์สี่สมการในรูปปริพันธ์และความหมายของแต่ละสมการ
+      คลื่นระนาบ E และ B ตั้งฉากกันและตั้งฉากกับทิศการเคลื่อนที่ ได้ c = 1/√(μ₀ε₀) และ E = cB จากกฎของฟาราเดย์กับแอมแปร์–แมกซ์เวลล์
+      ความหนาแน่นพลังงาน u = ε₀E² เวกเตอร์พอยน์ติง ความเข้ม I = ½cε₀E₀² ความเข้มของแสงแดดและสัญญาณมือถือ โมเมนตัมของคลื่น p = U/c
+      ความดันรังสี I/c เมื่อดูดกลืนและ 2I/c เมื่อสะท้อน และใบเรือสุริยะ
+  # ---------- เคมี: ปฏิกิริยาและอุณหเคมี ----------
+  # ลำดับ 1
+  - id: chemistry.reactions.aqueous-reaction-types
+    title: อิเล็กโทรไลต์และประเภทของปฏิกิริยาในสารละลาย
+    difficulty: 5.5
+    prereq: [chemistry.stoichiometry.reactions, chemistry.bonding.ionic]
+    indicators:
+      - university-foundations:CHEM 4.2
+      - university-foundations:CHEM 11.2
+    scope: >-
+      อิเล็กโทรไลต์แก่ อิเล็กโทรไลต์อ่อน และนอนอิเล็กโทรไลต์ ทดสอบด้วยการนำไฟฟ้า ปฏิกิริยาตกตะกอนกับกฎการละลายของสารประกอบไอออนิก
+      การเขียนสมการโมเลกุล สมการไอออนิกเต็ม และสมการไอออนิกสุทธิ ปฏิกิริยากรด-เบส (สะเทิน เกิดเกลือกับน้ำหรือแก๊ส) ปฏิกิริยารีดอกซ์
+      แบบแทนที่ของโลหะเบื้องต้นด้วยเลขออกซิเดชัน และการเผาไหม้ จำแนกปฏิกิริยาจากสมการ และทำนายผลิตภัณฑ์จากการผสมสารละลายสองชนิด
+  # ลำดับ 1
+  - id: chemistry.thermochem.enthalpy-hess
+    title: เอนทัลปี กฎของเฮสส์ และเอนทัลปีของการเกิดมาตรฐาน
+    difficulty: 6
+    prereq: [chemistry.stoichiometry.reactions, chemistry.bonding.covalent-naming-energy, physics.thermal.temperature-heat]
+    indicators:
+      - university-foundations:CHEM 5.3
+    scope: >-
+      เอนทัลปีเป็นฟังก์ชันสถานะ ΔH = q ที่ความดันคงตัว สมการเทอร์โมเคมีและการปรับ ΔH เมื่อกลับสมการหรือคูณสัมประสิทธิ์ สถานะมาตรฐาน
+      เอนทัลปีของการเผาไหม้และของการเกิดมาตรฐาน ΔH°f กฎของเฮสส์ รวมสมการหลายขั้นหา ΔH ของปฏิกิริยาที่วัดตรงไม่ได้
+      ΔH°rxn = ΣnΔH°f(ผลิตภัณฑ์) − ΣnΔH°f(สารตั้งต้น) เทียบผลกับการประมาณจากพลังงานพันธะ และค่าความร้อนของเชื้อเพลิง (LPG แก๊สชีวภาพ เอทานอล)
+  # ---------- เคมี: โครงสร้างอะตอมและพันธะ ----------
+  # ลำดับ 2
+  - id: chemistry.matter.quantum-numbers-orbitals
+    title: แบบจำลองอะตอมเชิงควอนตัม เลขควอนตัม และรูปร่างออร์บิทัล
+    difficulty: 7
+    prereq: [chemistry.matter.atomic-structure, physics.modern.quantum-atom]
+    indicators:
+      - university-foundations:CHEM 6.3
+    scope: >-
+      ทวิภาวะของอิเล็กตรอนและหลักความไม่แน่นอนของไฮเซนเบิร์ก เหตุที่วงโคจรแบบโบร์ใช้ไม่ได้ ฟังก์ชันคลื่นและความหนาแน่นความน่าจะเป็นเชิงแนวคิด
+      เลขควอนตัมสี่ตัว n, l, m_l, m_s ค่าที่เป็นไปได้และความหมาย จำนวนออร์บิทัลในแต่ละชั้นย่อย รูปร่างและทิศของออร์บิทัล s p d
+      ปมของออร์บิทัล และใช้เลขควอนตัมอธิบายหลักของเพาลีกับความจุของชั้นย่อย
+  # ลำดับ 2
+  - id: chemistry.bonding.formal-charge-resonance
+    title: ข้อยกเว้นของกฎออกเตต ประจุฟอร์มัล และโครงสร้างเรโซแนนซ์
+    difficulty: 6
+    prereq: [chemistry.bonding.covalent, chemistry.bonding.polarity-intermolecular]
+    indicators:
+      - university-foundations:CHEM 7.3
+      - university-foundations:CHEM 7.4
+    scope: >-
+      ขั้นตอนเขียนโครงสร้างลิวอิสของโมเลกุลและไอออนหลายอะตอม ข้อยกเว้นของกฎออกเตต (จำนวนอิเล็กตรอนคี่ เช่น NO, อะตอมกลางขาดออกเตต
+      เช่น BF₃, ออกเตตขยายเช่น PCl₅ SF₆) ประจุฟอร์มัลและการเลือกโครงสร้างที่เหมาะสมที่สุด โครงสร้างเรโซแนนซ์ของ O₃ NO₃⁻ CO₃²⁻
+      ลูกผสมเรโซแนนซ์ ความยาวพันธะเฉลี่ย และอันดับพันธะ
+  # ลำดับ 2
+  - id: chemistry.bonding.hybridization
+    title: ทฤษฎีพันธะเวเลนซ์ ออร์บิทัลไฮบริด และพันธะซิกมากับพาย
+    difficulty: 7
+    prereq: [chemistry.matter.quantum-numbers-orbitals, chemistry.bonding.formal-charge-resonance]
+    indicators:
+      - university-foundations:CHEM 8.1
+      - university-foundations:CHEM 8.2
+      - university-foundations:CHEM 8.3
+    scope: >-
+      ทฤษฎีพันธะเวเลนซ์ การซ้อนเหลื่อมของออร์บิทัลและพลังงานกับระยะห่างของ H₂ ออร์บิทัลไฮบริด sp sp² sp³ sp³d sp³d² กับรูปทรงตาม VSEPR
+      หาชนิดไฮบริดจากจำนวนกลุ่มอิเล็กตรอน พันธะซิกมาและพันธะพายในพันธะคู่และพันธะสาม การหมุนรอบพันธะคู่ไม่ได้ และนับพันธะ σ π
+      ในเอทีน เอไทน์ CO₂ และโมเลกุลอินทรีย์
+  # ลำดับ 3
+  - id: chemistry.bonding.molecular-orbitals
+    title: ทฤษฎีออร์บิทัลเชิงโมเลกุล
+    difficulty: 7.5
+    prereq: [chemistry.bonding.hybridization]
+    indicators:
+      - university-foundations:CHEM 8.4
+    scope: >-
+      การรวมออร์บิทัลอะตอมเป็นออร์บิทัลเชิงโมเลกุลแบบพันธะและแอนติบอนดิง σ และ π แผนภาพระดับพลังงานของโมเลกุลอะตอมคู่คาบที่ 1 และ 2
+      การเติมอิเล็กตรอน อันดับพันธะ = (พันธะ − แอนติบอนดิง)/2 ทำนายว่าโมเลกุลมีอยู่ได้หรือไม่ (He₂) อธิบายสมบัติพาราแมกเนติกของ O₂
+      ที่โครงสร้างลิวอิสอธิบายไม่ได้ และการสลับลำดับ σ2p กับ π2p ของ B₂ C₂ N₂
+  # ---------- เคมี: สถานะของสารและสารละลาย ----------
+  # ลำดับ 2
+  - id: chemistry.states.real-gases-phase-diagrams
+    title: แก๊สจริง สมบัติของของเหลว ความดันไอ และแผนภาพเฟส
+    difficulty: 6.5
+    prereq: [chemistry.gases.gas-laws, physics.thermal.phase-change, chemistry.bonding.polarity-intermolecular, math.functions.logarithms]
+    indicators:
+      - university-foundations:CHEM 9.6
+      - university-foundations:CHEM 10.2
+      - university-foundations:CHEM 10.3
+      - university-foundations:CHEM 10.4
+      - university-foundations:UPHYS2 1.5
+    scope: >-
+      ตัวประกอบการอัดตัว Z = PV/nRT และสมการแวนเดอร์วาลส์กับความหมายของ a และ b สมบัติของของเหลวที่มาจากแรงระหว่างโมเลกุล ความหนืด
+      ความตึงผิว และการซึมตามรูเล็ก สมดุลการระเหยกับการควบแน่น ความดันไอกับอุณหภูมิ จุดเดือดปกติ สมการเคลาซิอุส–คลาเปรอง
+      กราฟการให้ความร้อนและความร้อนของการเปลี่ยนสถานะ แผนภาพเฟสของน้ำและคาร์บอนไดออกไซด์ จุดร่วมสาม จุดวิกฤต ของไหลวิกฤตยิ่งยวด
+      การระเหิดของน้ำแข็งแห้ง และหม้อความดันกับการต้มน้ำบนยอดดอย
+  # ลำดับ 2
+  - id: chemistry.solutions.solution-process-colligative
+    title: กระบวนการละลาย กฎของเฮนรี สมบัติคอลลิเกทีฟ และคอลลอยด์
+    difficulty: 6.5
+    prereq: [chemistry.solutions.concentration, chemistry.bonding.polarity-intermolecular, chemistry.states.real-gases-phase-diagrams]
+    indicators:
+      - university-foundations:CHEM 11.1
+      - university-foundations:CHEM 11.3
+      - university-foundations:CHEM 11.4
+      - university-foundations:CHEM 11.5
+    scope: >-
+      การละลายเชิงโมเลกุล พลังงานของการแยกตัวละลาย แยกตัวทำละลาย และการเกิดแรงดึงดูดใหม่ เอนทัลปีของการละลาย (ถุงประคบร้อนเย็น)
+      สารละลายอุดมคติ ของเหลวผสมเข้ากันได้และไม่ได้ กฎของเฮนรี C = kP กับน้ำอัดลมและโรคน้ำหนีบ สมบัติคอลลิเกทีฟ ความดันไอลดลงตามกฎของราอูลต์
+      จุดเดือดสูงขึ้น จุดเยือกแข็งต่ำลง ความดันออสโมติก π = iMRT ตัวประกอบแวนต์ฮอฟฟ์ น้ำเกลือทางการแพทย์และการกรองน้ำแบบออสโมซิสผันกลับ
+      คอลลอยด์ ชนิด (โซล เจล อิมัลชัน แอโรซอล) ปรากฏการณ์ทินดอลล์ และสบู่กับอิมัลซิไฟเออร์
+  # ---------- เคมี: จลนศาสตร์ ----------
+  # ลำดับ 1
+  - id: chemistry.kinetics.rate-laws
+    title: กฎอัตรา อันดับปฏิกิริยา และกฎอัตราแบบอินทิเกรต
+    difficulty: 7
+    prereq: [chemistry.kinetics.reaction-rates, math.functions.logarithms]
+    indicators:
+      - university-foundations:CHEM 12.3
+      - university-foundations:CHEM 12.4
+    scope: >-
+      กฎอัตรา rate = k[A]^m[B]^n อันดับปฏิกิริยาหาได้จากการทดลองไม่ใช่จากสัมประสิทธิ์ หาอันดับและค่าคงที่อัตราด้วยวิธีอัตราเริ่มต้น หน่วยของ k
+      กฎอัตราแบบอินทิเกรตอันดับศูนย์ หนึ่ง และสอง กราฟเส้นตรงที่ใช้ระบุอันดับ ([A], ln[A], 1/[A] กับเวลา) ครึ่งชีวิตของแต่ละอันดับ
+      และตัวอย่างการสลายของยาในร่างกาย การสลายของ H₂O₂ และกัมมันตรังสีที่เป็นอันดับหนึ่ง
+  # ลำดับ 2
+  - id: chemistry.kinetics.arrhenius-mechanisms
+    title: สมการของอาร์เรเนียส กลไกปฏิกิริยา และตัวเร่งปฏิกิริยา
+    difficulty: 7.5
+    prereq: [chemistry.kinetics.rate-laws]
+    indicators:
+      - university-foundations:CHEM 12.5
+      - university-foundations:CHEM 12.6
+      - university-foundations:CHEM 12.7
+    scope: >-
+      สมการของอาร์เรเนียส k = Ae^(−Ea/RT) แฟกเตอร์ความถี่และทิศทางการชน หา Ea จากกราฟ ln k กับ 1/T และจากค่า k สองอุณหภูมิ
+      กลไกปฏิกิริยา ปฏิกิริยาขั้นมูลฐานและโมเลกุลาริตี สารมัธยันตร์ ขั้นกำหนดอัตรา ตรวจกลไกกับกฎอัตราที่วัดได้ ตัวเร่งเอกพันธุ์และวิวิธพันธุ์
+      (เครื่องฟอกไอเสียรถยนต์ กระบวนการฮาเบอร์) แผนภาพพลังงานของปฏิกิริยาที่มีและไม่มีตัวเร่ง และเอนไซม์เป็นตัวเร่งทางชีวภาพ
+  # ---------- เคมี: สมดุลกรด-เบส การละลาย และอุณหพลศาสตร์ ----------
+  # ลำดับ 3
+  - id: chemistry.acids-bases.polyprotic-lewis-complex
+    title: กรดหลายโปรตอน กรด-เบสลิวอิส และการเกิดไอออนเชิงซ้อน
+    difficulty: 7.5
+    prereq: [chemistry.acids-bases.titration-buffers]
+    indicators:
+      - university-foundations:CHEM 14.5
+      - university-foundations:CHEM 15.2
+    scope: >-
+      กรดหลายโปรตอน (H₂CO₃ H₃PO₄ H₂SO₄) การแตกตัวทีละขั้น K_a1 ≫ K_a2 การคำนวณ pH ที่ขั้นแรกครอบงำ และสัดส่วนของแต่ละสปีชีส์กับ pH
+      กราฟการไทเทรตที่มีจุดสมมูลหลายจุด กรดและเบสลิวอิสในรูปการรับและให้คู่อิเล็กตรอน ไอออนโลหะที่ถูกน้ำล้อมเป็นกรด การเกิดไอออนเชิงซ้อน
+      ค่าคงที่การเกิด K_f เช่น [Cu(NH₃)₄]²⁺ และ [Ag(NH₃)₂]⁺
+  # ลำดับ 2
+  - id: chemistry.equilibrium.solubility-product
+    title: ผลคูณการละลายและสมดุลควบคู่
+    difficulty: 7.5
+    prereq: [chemistry.equilibrium.chemical-equilibrium, chemistry.acids-bases.polyprotic-lewis-complex]
+    indicators:
+      - university-foundations:CHEM 15.1
+      - university-foundations:CHEM 15.3
+    scope: >-
+      สมดุลการละลายของสารที่ละลายน้อย ผลคูณการละลาย K_sp และความสัมพันธ์กับสภาพละลายได้ระดับโมล ทำนายการตกตะกอนด้วย Q เทียบ K_sp
+      ผลของไอออนร่วม การตกตะกอนแยกทีละชนิด สมดุลควบคู่ การละลายของตะกอนเมื่อเติมกรด (CaCO₃ กับฝนกรด หินปูนในถ้ำ ฟันผุ) และเมื่อเกิดไอออนเชิงซ้อน
+      (AgCl ละลายในแอมโมเนีย) รวม K ของสมดุลหลายขั้นด้วยการคูณ
+  # ลำดับ 1
+  - id: chemistry.thermochem.entropy-gibbs
+    title: ความเกิดขึ้นเอง เอนโทรปี กฎข้อที่สามของอุณหพลศาสตร์ และพลังงานอิสระของกิบส์
+    difficulty: 7
+    prereq: [chemistry.thermochem.enthalpy-hess, chemistry.equilibrium.chemical-equilibrium, math.functions.logarithms]
+    indicators:
+      - university-foundations:CHEM 16.1
+      - university-foundations:CHEM 16.2
+      - university-foundations:CHEM 16.3
+      - university-foundations:CHEM 16.4
+      - university-foundations:CHEM 13.2
+    scope: >-
+      กระบวนการที่เกิดขึ้นเองกับที่ไม่เกิดเอง (และไม่เกี่ยวกับความเร็ว) เอนโทรปีกับจำนวนสถานะจุลภาค ทำนายเครื่องหมายของ ΔS จากสถานะ
+      จำนวนโมลแก๊ส และการละลาย กฎข้อที่สองในรูป ΔS_univ > 0 กฎข้อที่สามและเอนโทรปีมาตรฐาน S° คำนวณ ΔS°rxn จากตาราง พลังงานอิสระของกิบส์
+      ΔG = ΔH − TΔS สี่กรณีของเครื่องหมายและอุณหภูมิที่เปลี่ยนความเกิดขึ้นเอง ΔG°f ค่าคงที่สมดุล K_p ของแก๊สและ K_p = K_c(RT)^Δn
+      ความสัมพันธ์ ΔG = ΔG° + RT ln Q และ ΔG° = −RT ln K
+  # ลำดับ 2
+  - id: chemistry.redox.nernst-equation
+    title: ศักย์ของเซลล์ พลังงานอิสระ ค่าคงที่สมดุล และสมการของเนิร์นสท์
+    difficulty: 7.5
+    prereq: [chemistry.redox.electrochemical-cells, chemistry.thermochem.entropy-gibbs]
+    indicators:
+      - university-foundations:CHEM 17.4
+    scope: >-
+      ความสัมพันธ์ ΔG° = −nFE°cell = −RT ln K เปลี่ยนค่ากันไปมาและบอกทิศของปฏิกิริยา สมการของเนิร์นสท์ E = E° − (0.0592/n) log Q ที่ 25 °C
+      ศักย์ของเซลล์เมื่อความเข้มข้นไม่มาตรฐาน เซลล์ความเข้มข้น แบตเตอรี่ที่แรงดันลดลงเมื่อใช้ไปจนเซลล์ถึงสมดุล (E = 0) และหลักการของ pH มิเตอร์
+  # ---------- เคมี: เคมีพรรณนาของธาตุ ----------
+  # ลำดับ 3
+  - id: chemistry.descriptive.metals-metalloids
+    title: โลหะเรพรีเซนเททีฟ กึ่งโลหะ และการถลุงโลหะแทรนซิชัน
+    difficulty: 6
+    prereq: [chemistry.matter.periodic-trends, chemistry.redox.redox-reactions]
+    indicators:
+      - university-foundations:CHEM 18.2
+      - university-foundations:CHEM 18.3
+      - university-foundations:CHEM 19.1
+    scope: >-
+      แหล่งที่พบ การเตรียม และสมบัติของโลหะแอลคาไล แอลคาไลน์เอิร์ท อะลูมิเนียม ดีบุก ตะกั่ว (การแยกด้วยไฟฟ้า การรีดิวซ์ด้วยคาร์บอน)
+      สมบัติของกึ่งโลหะ (โบรอน ซิลิคอน เจอร์เมเนียม) ซิลิคอนกับสารกึ่งตัวนำและซิลิเกต แร่ของโลหะแทรนซิชัน การถลุงเหล็กในเตาสูง
+      การทำทองแดงให้บริสุทธิ์ สมบัติทั่วไปและสารประกอบของโลหะแทรนซิชัน และแหล่งแร่ดีบุกกับสังกะสีในประเทศไทย
+  # ลำดับ 3
+  - id: chemistry.descriptive.hydrogen-carbon-nitrogen-phosphorus
+    title: อโลหะ ไฮโดรเจน คาร์บอเนต ไนโตรเจน และฟอสฟอรัส
+    difficulty: 6.5
+    prereq: [chemistry.matter.periodic-trends, chemistry.acids-bases.acid-base-ph]
+    indicators:
+      - university-foundations:CHEM 18.4
+      - university-foundations:CHEM 18.5
+      - university-foundations:CHEM 18.6
+      - university-foundations:CHEM 18.7
+      - university-foundations:CHEM 18.8
+    scope: >-
+      โครงสร้างและสมบัติทั่วไปของอโลหะ อัญรูปของคาร์บอน ไฮโดรเจน การเตรียม (รีฟอร์มมิงด้วยไอน้ำ แยกน้ำด้วยไฟฟ้า) ไฮไดรด์ และไฮโดรเจนเป็นเชื้อเพลิง
+      คาร์บอเนตและไฮโดรเจนคาร์บอเนต การเผาหินปูน และผงฟู ไนโตรเจน กระบวนการฮาเบอร์ แอมโมเนีย ออกไซด์ของไนโตรเจน กรดไนตริก และปุ๋ย
+      ฟอสฟอรัสขาวกับแดง กรดฟอสฟอริกและฟอสเฟตในปุ๋ยกับผงซักฟอก และปัญหายูโทรฟิเคชัน
+  # ลำดับ 3
+  - id: chemistry.descriptive.oxygen-sulfur-halogens-noble-gases
+    title: ออกซิเจน กำมะถัน แฮโลเจน และแก๊สมีตระกูล
+    difficulty: 6.5
+    prereq: [chemistry.matter.periodic-trends, chemistry.acids-bases.acid-base-ph]
+    indicators:
+      - university-foundations:CHEM 18.9
+      - university-foundations:CHEM 18.10
+      - university-foundations:CHEM 18.11
+      - university-foundations:CHEM 18.12
+    scope: >-
+      ออกซิเจนและโอโซน ออกไซด์ เปอร์ออกไซด์ ออกไซด์ที่เป็นกรด เบส และแอมโฟเทอริก กำมะถัน แหล่งที่พบ กระบวนการคอนแทกต์ผลิตกรดซัลฟิวริก
+      SO₂ กับฝนกรด แฮโลเจน แนวโน้มความว่องไว การเตรียมคลอรีนด้วยการแยกไฟฟ้า สารประกอบของแฮโลเจน (โซเดียมไฮโปคลอไรต์ ฟลูออไรด์ในยาสีฟัน)
+      แก๊สมีตระกูล แหล่งที่พบ การใช้ฮีเลียม นีออน อาร์กอน และสารประกอบของซีนอน
+  # ลำดับ 3
+  - id: chemistry.coordination.complexes-crystal-field
+    title: สารประกอบโคออร์ดิเนชันและทฤษฎีสนามผลึก
+    difficulty: 8
+    prereq: [chemistry.matter.quantum-numbers-orbitals, chemistry.acids-bases.polyprotic-lewis-complex, chemistry.descriptive.metals-metalloids]
+    indicators:
+      - university-foundations:CHEM 19.2
+      - university-foundations:CHEM 19.3
+    scope: >-
+      ไอออนโลหะกลาง ลิแกนด์ เลขโคออร์ดิเนชัน ลิแกนด์หลายฟันและคีเลต (EDTA ฮีโมโกลบิน คลอโรฟิลล์) การเรียกชื่อและเขียนสูตรสารเชิงซ้อน
+      รูปทรงเหลี่ยมสี่หน้า สี่เหลี่ยมแบนราบ ทรงแปดหน้า และไอโซเมอร์ซิส–ทรานส์ ทฤษฎีสนามผลึก การแยกระดับพลังงาน d ในสนามทรงแปดหน้า
+      สนามอ่อนกับสนามแรง สปินสูงกับสปินต่ำ อนุกรมสเปกโทรเคมี สีของสารเชิงซ้อนจากแสงที่ถูกดูดกลืน และสมบัติแม่เหล็ก
+  # ---------- ชีววิทยา: เซลล์และพลังงาน ----------
+  # ลำดับ 2
+  - id: biology.cells.cytoskeleton-junctions
+    title: การศึกษาเซลล์ด้วยกล้องจุลทรรศน์อิเล็กตรอน โครงร่างเซลล์ และการเชื่อมต่อระหว่างเซลล์
+    difficulty: 5
+    prereq: [biology.cells.cell-structure, biology.cells.membrane-transport]
+    indicators:
+      - university-foundations:BIO 4.1
+      - university-foundations:BIO 4.5
+      - university-foundations:BIO 4.6
+    scope: >-
+      ทฤษฎีเซลล์ กำลังขยายกับกำลังแยก กล้องจุลทรรศน์อิเล็กตรอนแบบส่องผ่านและแบบส่องกราด เทียบกับกล้องใช้แสง โครงร่างเซลล์สามชนิด
+      ไมโครฟิลาเมนต์ (แอกทิน การคอดของเซลล์ การไหลของไซโทพลาซึม) อินเตอร์มีเดียตฟิลาเมนต์ และไมโครทิวบูล (เส้นใยสปินเดิล เซนทริโอล
+      แฟลเจลลัมและซิเลียแบบ 9 + 2) เมทริกซ์นอกเซลล์ของเซลล์สัตว์ ผนังเซลล์พืช พลาสโมเดสมาตา และรอยต่อแบบแน่น เดสโมโซม และแกปจังก์ชัน
+  # ลำดับ 2
+  - id: biology.cells.bioenergetics
+    title: พลังงานในสิ่งมีชีวิต พลังงานอิสระ และตัวพาอิเล็กตรอน
+    difficulty: 6
+    prereq: [biology.cells.enzymes, chemistry.redox.redox-reactions]
+    indicators:
+      - university-foundations:BIO 6.1
+      - university-foundations:BIO 6.2
+      - university-foundations:BIO 6.3
+      - university-foundations:BIO 7.1
+    scope: >-
+      วิถีเมแทบอลิซึมแบบสร้างและสลาย พลังงานศักย์และพลังงานจลน์ในระดับโมเลกุล กฎข้อที่หนึ่งและสองของอุณหพลศาสตร์กับสิ่งมีชีวิตในฐานะระบบเปิด
+      เอนโทรปีกับการรักษาความเป็นระเบียบ พลังงานอิสระของกิบส์ ΔG ปฏิกิริยาเอ็กเซอร์โกนิกและเอนเดอร์โกนิก สมดุลกับเซลล์ที่ไม่อยู่ในสมดุล
+      พลังงานก่อกัมมันต์ ปฏิกิริยารีดอกซ์ในเซลล์ การส่งอิเล็กตรอนพร้อมไฮโดรเจนผ่าน NAD⁺/NADH FAD/FADH₂ และ ATP เป็นสกุลเงินพลังงาน
+      ที่ใช้คู่ปฏิกิริยา (energy coupling)
+  # ลำดับ 3
+  - id: biology.cells.metabolic-regulation
+    title: ความเชื่อมโยงของวิถีเมแทบอลิซึมและการควบคุม
+    difficulty: 6.5
+    prereq: [biology.cells.cellular-respiration, biology.cells.bioenergetics]
+    indicators:
+      - university-foundations:BIO 6.5
+      - university-foundations:BIO 7.6
+      - university-foundations:BIO 7.7
+    scope: >-
+      คาร์โบไฮเดรตอื่น ไกลโคเจน ลิพิด (กลีเซอรอลและเบตาออกซิเดชันของกรดไขมัน) และโปรตีน (การกำจัดหมู่อะมิโน) เข้าสู่ไกลโคลิซิสและวัฏจักรเครบส์
+      ที่จุดใด และสารมัธยันตร์ใช้สร้างสารอื่นกลับ การควบคุมเอนไซม์แบบอัลโลสเตอริก การยับยั้งแบบป้อนกลับ การควบคุมการหายใจระดับเซลล์ที่เอนไซม์สำคัญ
+      (ฟอสโฟฟรุกโตไคเนส) ด้วย ATP ADP และซิเตรต การควบคุมการขนส่งกลูโคสเข้าเซลล์ และตัวอย่างการเปลี่ยนแป้งส่วนเกินเป็นไขมัน
+  # ลำดับ 2
+  - id: biology.cells.cell-signaling
+    title: การสื่อสารระหว่างเซลล์
+    difficulty: 6
+    prereq: [biology.cells.membrane-transport, biology.animals.hormones, biology.cells.enzymes]
+    indicators:
+      - university-foundations:BIO 9.1
+      - university-foundations:BIO 9.2
+      - university-foundations:BIO 9.3
+      - university-foundations:BIO 9.4
+    scope: >-
+      การส่งสัญญาณแบบออโตไครน์ พาราไครน์ เอนโดไครน์ และผ่านรอยต่อระหว่างเซลล์ ลิแกนด์และตัวรับภายในเซลล์กับตัวรับที่ผิวเซลล์
+      (ตัวรับที่เป็นช่องไอออน ตัวรับคู่โปรตีน G ตัวรับที่เป็นเอนไซม์) การส่งต่อสัญญาณ การเติมหมู่ฟอสเฟตแบบลำดับขั้น ผู้ส่งสารที่สอง cAMP
+      Ca²⁺ IP₃ การขยายสัญญาณ การตอบสนองที่การแสดงออกของยีน เมแทบอลิซึม การเติบโต และการตายแบบอะพอพโทซิส และการสื่อสารของสิ่งมีชีวิตเซลล์เดียว
+      การรับรู้โควรัมของแบคทีเรียและการผสมพันธุ์ของยีสต์
+  # ลำดับ 2
+  - id: biology.cells.cell-cycle-control
+    title: การควบคุมวัฏจักรเซลล์ มะเร็ง และการแบ่งเซลล์ของโพรแคริโอต
+    difficulty: 6.5
+    prereq: [biology.cells.cell-division, biology.cells.cell-signaling]
+    indicators:
+      - university-foundations:BIO 10.3
+      - university-foundations:BIO 10.4
+      - university-foundations:BIO 10.5
+    scope: >-
+      สัญญาณภายนอกที่ควบคุมการแบ่งเซลล์ (ขนาดเซลล์ ปัจจัยการเจริญเติบโต การสัมผัสกัน) จุดตรวจ G1 G2 และ M ไซคลินกับไคเนสที่ขึ้นกับไซคลิน
+      โปรตีนควบคุมเชิงลบ p53 และ Rb มะเร็งเป็นโรคของการควบคุมวัฏจักรเซลล์ โปรโตออนโคยีน ออนโคยีน ยีนต้านเนื้องอก การสะสมมิวเทชัน
+      และการแบ่งตัวแบบทวิภาคของแบคทีเรียกับโปรตีน FtsZ เทียบกับไมโทซิส
+  # ---------- ชีววิทยา: พันธุศาสตร์ระดับโมเลกุล ----------
+  # ลำดับ 2
+  - id: biology.genetics.linkage-mapping
+    title: ทฤษฎีโครโมโซม ยีนที่เกาะกลุ่ม และแผนที่ยีน
+    difficulty: 6
+    prereq: [biology.genetics.mendelian]
+    indicators:
+      - university-foundations:BIO 13.1
+    scope: >-
+      ทฤษฎีโครโมโซมของบอเวรีและซัตตัน หลักฐานจากแมลงหวี่ของมอร์แกน ยีนที่อยู่บนโครโมโซมเดียวกันไม่รวมกลุ่มอย่างอิสระ ครอสซิงโอเวอร์กับรีคอมบิแนนท์
+      คำนวณความถี่ของการรวมกลุ่มใหม่จากผลการผสมทดสอบ หน่วยแผนที่ (เซนติมอร์แกน) และสร้างแผนที่ยีนสามยีนจากความถี่ ทำไมยีนที่อยู่ห่างกันมาก
+      จึงดูเหมือนรวมกลุ่มอย่างอิสระ
+  # ลำดับ 2
+  - id: biology.genetics.dna-replication-repair
+    title: การจำลองดีเอ็นเอในโพรแคริโอตและยูแคริโอต และการซ่อมดีเอ็นเอ
+    difficulty: 6.5
+    prereq: [biology.genetics.chromosomes-dna]
+    indicators:
+      - university-foundations:BIO 14.4
+      - university-foundations:BIO 14.5
+      - university-foundations:BIO 14.6
+    scope: >-
+      การทดลองของเมเซลสันและสตาห์ล จุดเริ่มจำลองและส้อมจำลอง เฮลิเคส โปรตีนจับสายเดี่ยว โทโพไอโซเมอเรส ไพรเมสและไพรเมอร์ DNA พอลิเมอเรส
+      สร้างสายใหม่ทิศ 5′→3′ สายนำและสายตามกับชิ้นโอคาซากิ ไลเกส ความแตกต่างในยูแคริโอต (หลายจุดเริ่ม ฮิสโตน) ปัญหาปลายโครโมโซม เทโลเมียร์
+      และเทโลเมอเรสกับการแก่และมะเร็ง การพิสูจน์อักษร การซ่อมคู่เบสผิด การซ่อมแบบตัดนิวคลีโอไทด์ออก (ไดเมอร์ไทมีนจากรังสียูวี)
+  # ลำดับ 2
+  - id: biology.genetics.transcription-rna-processing
+    title: การถอดรหัสในโพรแคริโอตและยูแคริโอต และการดัดแปลง RNA
+    difficulty: 6.5
+    prereq: [biology.genetics.chromosomes-dna]
+    indicators:
+      - university-foundations:BIO 15.2
+      - university-foundations:BIO 15.3
+      - university-foundations:BIO 15.4
+    scope: >-
+      สายแม่แบบกับสายรหัส โพรโมเตอร์ บริเวณ −10 และ −35 ของแบคทีเรีย RNA พอลิเมอเรสกับซิกมาแฟกเตอร์ การเริ่ม การต่อสาย และการสิ้นสุด
+      (แบบอาศัยและไม่อาศัยโปรตีน rho) การถอดรหัสและแปลรหัสพร้อมกันในแบคทีเรีย RNA พอลิเมอเรสสามชนิดของยูแคริโอต ทาทาบ็อกซ์และแฟกเตอร์ถอดรหัสทั่วไป
+      การเติมแคป 5′ และหางพอลิเอ การตัดต่ออินทรอนโดยสไปซ์โซม การตัดต่อแบบทางเลือก และการดัดแปลง tRNA กับ rRNA
+  # ลำดับ 2
+  - id: biology.genetics.prokaryotic-gene-regulation
+    title: หลักการควบคุมการแสดงออกของยีนและโอเปอรอนของแบคทีเรีย
+    difficulty: 7
+    prereq: [biology.genetics.transcription-rna-processing]
+    indicators:
+      - university-foundations:BIO 16.1
+      - university-foundations:BIO 16.2
+    scope: >-
+      เหตุที่เซลล์ต้องควบคุมการแสดงออกของยีน ระดับที่ควบคุมได้ในโพรแคริโอตเทียบกับยูแคริโอต โอเปอรอน ตัวกดและตัวกระตุ้น โอเปอรอน trp แบบกดได้
+      โอเปอรอน lac แบบเหนี่ยวนำได้ กับบทบาทของแล็กโทส กลูโคส cAMP และ CAP ทำนายการแสดงออกในสภาพที่มีและไม่มีน้ำตาลแต่ละชนิด และผลของมิวเทชัน
+      ที่ตัวดำเนินการหรือยีนตัวกด
+  # ลำดับ 2
+  - id: biology.genetics.eukaryotic-gene-regulation
+    title: การควบคุมการแสดงออกของยีนในยูแคริโอตและมะเร็ง
+    difficulty: 7.5
+    prereq: [biology.genetics.prokaryotic-gene-regulation, biology.cells.cell-cycle-control]
+    indicators:
+      - university-foundations:BIO 16.3
+      - university-foundations:BIO 16.4
+      - university-foundations:BIO 16.5
+      - university-foundations:BIO 16.6
+      - university-foundations:BIO 16.7
+    scope: >-
+      การควบคุมแบบเอพิเจเนติกส์ การดัดแปลงฮิสโตนและการเติมหมู่เมทิลที่ DNA กับการเปิดปิดโครมาทิน แฟกเตอร์ถอดรหัส เอนแฮนเซอร์และตัวกด
+      การควบคุมหลังการถอดรหัส การตัดต่อแบบทางเลือก ความเสถียรของ mRNA และ microRNA การควบคุมการแปลรหัสและหลังการแปลรหัส (การดัดแปลงโปรตีน
+      ยูบิควิตินและโปรตีเอโซม) มะเร็งจากการควบคุมยีนผิดพลาดในทุกระดับ และยาที่มุ่งเป้า เช่น ยายับยั้งไคเนสและยาที่ปรับเอพิเจเนติกส์
+  # ลำดับ 3
+  - id: biology.genetics.genomics-proteomics
+    title: แผนที่จีโนม การหาลำดับเบสทั้งจีโนม จีโนมิกส์ และโปรตีโอมิกส์
+    difficulty: 7
+    prereq: [biology.genetics.mutation-biotechnology, biology.genetics.linkage-mapping, biology.genetics.transcription-rna-processing]
+    indicators:
+      - university-foundations:BIO 17.2
+      - university-foundations:BIO 17.3
+      - university-foundations:BIO 17.4
+      - university-foundations:BIO 17.5
+    scope: >-
+      แผนที่พันธุกรรมกับแผนที่กายภาพ เครื่องหมายทางพันธุกรรม การหาลำดับเบสแบบแซงเกอร์และรุ่นถัดไป การหาลำดับทั้งจีโนมแบบช็อตกันและการต่อลำดับ
+      โครงการจีโนมมนุษย์ การใช้จีโนมิกส์ในการแพทย์เฉพาะบุคคล เภสัชพันธุศาสตร์ การวินิจฉัยโรคและการตรวจคัดกรองพาหะ เมทาจีโนมิกส์กับจุลินทรีย์ในลำไส้
+      จีโนมิกส์ในการเกษตร โปรตีโอมและโปรตีโอมิกส์ ตัวบ่งชี้ทางชีวภาพ และข้อพิจารณาด้านความเป็นส่วนตัวของข้อมูลพันธุกรรม
+  # ---------- ชีววิทยา: วิวัฒนาการและความหลากหลาย ----------
+  # ลำดับ 3
+  - id: biology.evolution.phylogeny-speciation-rates
+    title: การสร้างต้นไม้วิวัฒนาการ เขตลูกผสม และอัตราการเกิดสปีชีส์
+    difficulty: 7
+    prereq: [biology.evolution.evolution, biology.diversity.biodiversity-classification]
+    indicators:
+      - university-foundations:BIO 18.3
+      - university-foundations:BIO 20.2
+      - university-foundations:BIO 20.3
+    scope: >-
+      ลักษณะโฮโมโลกัสกับอะนาโลกัส ลักษณะบรรพบุรุษกับลักษณะที่เกิดใหม่ร่วมกัน สร้างแคลโดแกรมจากตารางลักษณะด้วยหลักความประหยัดสูงสุด
+      ข้อมูลลำดับเบสในระบบวิทยาโมเลกุล การถ่ายโอนยีนในแนวราบและแนวคิดเครือข่ายชีวิต เขตลูกผสมเมื่อประชากรที่แยกกันกลับมาพบกัน
+      (การเสริมความแยก การหลอมรวม ความเสถียร) แบบค่อยเป็นค่อยไปเทียบกับแบบดุลยภาพเป็นช่วง และหลักฐานจากซากดึกดำบรรพ์
+  # ลำดับ 2
+  - id: biology.diversity.viruses
+    title: ไวรัส ไพรออน และไวรอยด์
+    difficulty: 6.5
+    prereq: [biology.genetics.chromosomes-dna, biology.animals.immunity, biology.diversity.biodiversity-classification]
+    indicators:
+      - university-foundations:BIO 21.1
+      - university-foundations:BIO 21.2
+      - university-foundations:BIO 21.3
+      - university-foundations:BIO 21.4
+    scope: >-
+      ไวรัสไม่ใช่เซลล์ โครงสร้าง (แคปซิด เยื่อหุ้ม) การจำแนกตามสารพันธุกรรมและระบบของบัลติมอร์ ขั้นตอนการเพิ่มจำนวนในเซลล์เจ้าบ้าน วัฏจักรไลติกและไลโซเจนิก
+      ของแบคเทอริโอเฟจ ไวรัสในสัตว์และพืช รีโทรไวรัสและเอนไซม์รีเวิร์สทรานสคริปเทส (เอชไอวี) ไวรัสก่อมะเร็ง (HPV) วัคซีนชนิดต่าง ๆ รวม mRNA
+      ยาต้านไวรัสและเหตุที่ยาปฏิชีวนะใช้ไม่ได้ การกลายพันธุ์ของไข้หวัดใหญ่ ไพรออนกับโรควัวบ้า และไวรอยด์ในพืช
+  # ลำดับ 2
+  - id: biology.diversity.prokaryotes
+    title: แบคทีเรียและอาร์เคีย โครงสร้าง เมแทบอลิซึม โรค และประโยชน์
+    difficulty: 6.5
+    prereq: [biology.diversity.biodiversity-classification, biology.cells.cellular-respiration]
+    indicators:
+      - university-foundations:BIO 22.1
+      - university-foundations:BIO 22.2
+      - university-foundations:BIO 22.3
+      - university-foundations:BIO 22.4
+      - university-foundations:BIO 22.5
+    scope: >-
+      ความหลากหลายของโพรแคริโอตและแหล่งที่อยู่สุดขั้ว ไบโอฟิล์ม โครงสร้าง ผนังเซลล์แกรมบวกและแกรมลบ แคปซูล ฟิมเบรีย แฟลเจลลัม พลาสมิด
+      การแลกเปลี่ยนยีน (ทรานส์ฟอร์เมชัน ทรานส์ดักชัน คอนจูเกชัน) ความหลากหลายทางเมแทบอลิซึม ผู้ผลิตจากแสงหรือสารเคมี บทบาทในวัฏจักรคาร์บอนและไนโตรเจน
+      โรคจากแบคทีเรียในคน (วัณโรค อหิวาต์ อาหารเป็นพิษ) เชื้อดื้อยาและการใช้ยาปฏิชีวนะอย่างสมเหตุผล และประโยชน์ในการหมักอาหารไทย
+      การบำบัดน้ำเสีย และการผลิตอินซูลิน
+  # ลำดับ 3
+  - id: biology.diversity.protists
+    title: โพรทิสต์ กำเนิดยูแคริโอต กลุ่มหลัก และบทบาททางนิเวศ
+    difficulty: 6.5
+    prereq: [biology.diversity.biodiversity-classification, biology.diversity.prokaryotes]
+    indicators:
+      - university-foundations:BIO 23.1
+      - university-foundations:BIO 23.2
+      - university-foundations:BIO 23.3
+      - university-foundations:BIO 23.4
+    scope: >-
+      หลักฐานของเอนโดซิมไบโอซิส (DNA และไรโบโซมของไมโทคอนเดรียกับคลอโรพลาสต์) และเอนโดซิมไบโอซิสทุติยภูมิ ลักษณะของโพรทิสต์ โครงสร้าง
+      การกินอาหาร การเคลื่อนที่ และการสืบพันธุ์ กลุ่มหลักโดยสังเขป (ยูกลีนา ไดอะตอม ไดโนแฟลกเจลเลต อะมีบา พารามีเซียม สาหร่ายสีเขียว สีแดง สีน้ำตาล)
+      โพรทิสต์เป็นผู้ผลิตในทะเล สาเหตุของน้ำทะเลเปลี่ยนสี ปรสิตก่อโรค (มาลาเรีย บิด อะมีบา) และผู้ย่อยสลาย
+  # ลำดับ 3
+  - id: biology.diversity.fungi
+    title: ฟังไจ ลักษณะ การจำแนก นิเวศวิทยา และความสำคัญต่อมนุษย์
+    difficulty: 6.5
+    prereq: [biology.diversity.biodiversity-classification]
+    indicators:
+      - university-foundations:BIO 24.1
+      - university-foundations:BIO 24.2
+      - university-foundations:BIO 24.3
+      - university-foundations:BIO 24.4
+      - university-foundations:BIO 24.5
+    scope: >-
+      โครงสร้างของฟังไจ ไฮฟา ไมซีเลียม ผนังไคทิน การกินอาหารแบบดูดซึม การสืบพันธุ์แบบอาศัยและไม่อาศัยเพศ สปอร์ กลุ่มหลัก (ไคทริด ราขนมปัง
+      ราแอสโคไมซีต เห็ดแบสิดิโอไมซีต) ผู้ย่อยสลาย ไมคอร์ไรซา ไลเคน และเอนโดไฟต์ โรคพืช (โรคใบไหม้ข้าว) โรคในคน (กลาก เกลื้อน ราในปอด)
+      สารพิษอะฟลาทอกซิน เห็ดพิษ และการใช้ประโยชน์ ยีสต์หมักอาหาร เพนิซิลลิน เห็ดเพาะ และราควบคุมแมลง
+  # ลำดับ 3
+  - id: biology.diversity.seedless-plants
+    title: กำเนิดพืชบก สาหร่ายสีเขียว ไบรโอไฟต์ และพืชมีท่อลำเลียงไร้เมล็ด
+    difficulty: 6.5
+    prereq: [biology.diversity.biodiversity-classification, biology.plants.reproduction-growth]
+    indicators:
+      - university-foundations:BIO 25.1
+      - university-foundations:BIO 25.2
+      - university-foundations:BIO 25.3
+      - university-foundations:BIO 25.4
+    scope: >-
+      การปรับตัวเพื่อขึ้นบก (คิวทิเคิล ปากใบ เอ็มบริโอที่ได้รับการปกป้อง สปอร์ผนังหนา) สาหร่ายคาโรไฟต์เป็นญาติใกล้ชิดของพืช วัฏจักรชีวิตแบบสลับ
+      ที่แกมีโทไฟต์เด่นในลิเวอร์เวิร์ต ฮอร์นเวิร์ต และมอส บทบาทของมอสในป่าดิบเขา พืชมีท่อลำเลียงไร้เมล็ด ไลโคไฟต์ หางม้า และเฟิร์น วัฏจักรชีวิต
+      ที่สปอโรไฟต์เด่น และป่าเฟิร์นยุคคาร์บอนิเฟอรัสกับถ่านหิน
+  # ลำดับ 3
+  - id: biology.diversity.seed-plants
+    title: พืชเมล็ด พืชเมล็ดเปลือย พืชดอก และความสำคัญต่อมนุษย์
+    difficulty: 6.5
+    prereq: [biology.diversity.seedless-plants]
+    indicators:
+      - university-foundations:BIO 26.1
+      - university-foundations:BIO 26.2
+      - university-foundations:BIO 26.3
+      - university-foundations:BIO 26.4
+    scope: >-
+      วิวัฒนาการของเมล็ด ละอองเรณู และออวุล ข้อได้เปรียบเหนือสปอร์ พืชเมล็ดเปลือย (สน ปรง แปะก๊วย มะเมื่อย) และวัฏจักรชีวิตของสน
+      พืชดอก ดอกและผลเป็นการปรับตัว วัฏจักรชีวิต การเทียบใบเลี้ยงเดี่ยวกับใบเลี้ยงคู่ การวิวัฒนาการร่วมกับสัตว์ถ่ายเรณู ความสำคัญของพืชเมล็ด
+      ต่ออาหาร ยา ไม้ และเศรษฐกิจไทย (ข้าว ยาง มันสำปะหลัง) และภัยคุกคามต่อความหลากหลายของพืช
+  # ลำดับ 2
+  - id: biology.diversity.animal-body-plans
+    title: ลักษณะของอาณาจักรสัตว์ แผนผังร่างกาย และวิวัฒนาการของสัตว์
+    difficulty: 6.5
+    prereq: [biology.diversity.biodiversity-classification, biology.animals.reproduction-development]
+    indicators:
+      - university-foundations:BIO 27.1
+      - university-foundations:BIO 27.2
+      - university-foundations:BIO 27.3
+      - university-foundations:BIO 27.4
+    scope: >-
+      ลักษณะร่วมของสัตว์ การเจริญของเอ็มบริโอและชนิดของเนื้อเยื่อ ลักษณะที่ใช้จำแนก สมมาตรแบบรัศมีและแบบด้านข้าง ชั้นเนื้อเยื่อสองชั้นและสามชั้น
+      ช่องตัวแท้ ช่องตัวเทียม และไม่มีช่องตัว โพรโทสโตมกับดิวเทอโรสโตม การแบ่งตามการลอกคราบกับไม่ลอกคราบ ต้นไม้วิวัฒนาการของสัตว์ตามข้อมูลโมเลกุล
+      การระเบิดของแคมเบรียน และการสูญพันธุ์ครั้งใหญ่ที่เปลี่ยนสายวิวัฒนาการของสัตว์
+  # ลำดับ 3
+  - id: biology.diversity.basal-animals-lophotrochozoa
+    title: ฟองน้ำ ไนดาเรีย หนอนตัวแบน หอย และหนอนปล้อง
+    difficulty: 6.5
+    prereq: [biology.diversity.animal-body-plans]
+    indicators:
+      - university-foundations:BIO 28.1
+      - university-foundations:BIO 28.2
+      - university-foundations:BIO 28.3
+      - university-foundations:BIO 28.4
+    scope: >-
+      ไฟลัมพอริเฟอรา (ฟองน้ำ เซลล์ปลอกคอ การกรองอาหาร) ไฟลัมไนดาเรีย (แมงกะพรุน ดอกไม้ทะเล ปะการัง เซลล์เข็มพิษ รูปแบบโพลิปและเมดูซา)
+      ซูเปอร์ไฟลัมโลโฟโทรโคซัว หนอนตัวแบน (พลานาเรีย พยาธิใบไม้ตับและพยาธิตัวตืดที่พบในไทย) โรติเฟอร์ และเนเมอร์เทียน ไฟลัมมอลลัสกา
+      (หอยฝาเดียว หอยสองฝา หมึก แมนเทิล เรดูลา) และไฟลัมแอนเนลิดา (ไส้เดือนดิน ปลิง ไส้เดือนทะเล) เทียบแผนผังร่างกายของแต่ละไฟลัม
+  # ลำดับ 3
+  - id: biology.diversity.ecdysozoa-deuterostomes
+    title: หนอนตัวกลม ทาร์ดิเกรด สัตว์ขาปล้อง และดิวเทอโรสโตม
+    difficulty: 6.5
+    prereq: [biology.diversity.basal-animals-lophotrochozoa]
+    indicators:
+      - university-foundations:BIO 28.5
+      - university-foundations:BIO 28.6
+      - university-foundations:BIO 28.7
+    scope: >-
+      ซูเปอร์ไฟลัมเอคไดโซซัว การลอกคราบ หนอนตัวกลม (พยาธิไส้เดือน พยาธิปากขอ C. elegans) ทาร์ดิเกรดและความทนทาน สัตว์ขาปล้อง
+      โครงร่างภายนอก รยางค์เป็นข้อ กลุ่มย่อย แมลง ครัสเตเชียน แมง ตะขาบกิ้งกือ ความสำคัญของแมลงต่อการถ่ายเรณูและการเป็นพาหะ (ยุงลาย)
+      ซูเปอร์ไฟลัมดิวเทอโรสโตม เอไคโนเดิร์ม (ดาวทะเล เม่นทะเล ระบบท่อน้ำ) และความเชื่อมโยงกับคอร์เดต
+  # ลำดับ 3
+  - id: biology.diversity.chordates-fishes-amphibians
+    title: คอร์เดต ปลา และสัตว์สะเทินน้ำสะเทินบก
+    difficulty: 6.5
+    prereq: [biology.diversity.ecdysozoa-deuterostomes]
+    indicators:
+      - university-foundations:BIO 29.1
+      - university-foundations:BIO 29.2
+      - university-foundations:BIO 29.3
+    scope: >-
+      ลักษณะสี่ประการของคอร์เดต (โนโทคอร์ด ท่อประสาทด้านหลัง ช่องเหงือก หางหลังทวารหนัก) เพรียงหัวหอมและแอมฟิออกซัส สัตว์มีกะโหลก
+      ปลาไม่มีขากรรไกร ปลากระดูกอ่อน ปลากระดูกแข็ง ปลาครีบรยางค์และการขึ้นบก สัตว์สะเทินน้ำสะเทินบก กบ ซาลาแมนเดอร์ เขียดงู
+      การหายใจทางผิวหนัง วัฏจักรชีวิตแบบเมทามอร์โฟซิส และการลดลงจากเชื้อราไคทริด
+  # ลำดับ 3
+  - id: biology.diversity.amniotes-primates
+    title: สัตว์มีถุงน้ำคร่ำ สัตว์เลื้อยคลาน นก สัตว์เลี้ยงลูกด้วยน้ำนม และไพรเมต
+    difficulty: 6.5
+    prereq: [biology.diversity.chordates-fishes-amphibians, biology.evolution.evolution]
+    indicators:
+      - university-foundations:BIO 29.4
+      - university-foundations:BIO 29.5
+      - university-foundations:BIO 29.6
+      - university-foundations:BIO 29.7
+    scope: >-
+      ไข่มีถุงน้ำคร่ำและเยื่อหุ้มเอ็มบริโอ สัตว์เลื้อยคลาน (เต่า จระเข้ งู กิ้งก่า) การควบคุมอุณหภูมิจากภายนอก นกกับไดโนเสาร์ ขนนก กระดูกกลวง
+      ถุงลมและการบิน สัตว์เลี้ยงลูกด้วยน้ำนม ขน ต่อมน้ำนม ฟันหลายแบบ กลุ่มโมโนทรีม มาร์ซูเปียล และยูเธอเรีย วิวัฒนาการของไพรเมต
+      ลิงโลกเก่าและโลกใหม่ เอป และสายวิวัฒนาการของมนุษย์ตั้งแต่ออสตราโลพิเทคัสถึง Homo sapiens
+  # ---------- ชีววิทยา: พืช สัตว์ และนิเวศวิทยา ----------
+  # ลำดับ 3
+  - id: biology.plants.plant-adaptations
+    title: อวัยวะดัดแปลง การรับรู้แสง การป้องกันตัว และการได้ธาตุอาหารของพืช
+    difficulty: 6
+    prereq: [biology.plants.hormones-responses, biology.plants.plant-transport, biology.plants.plant-structure]
+    indicators:
+      - university-foundations:BIO 31.3
+      - university-foundations:BIO 30.2
+      - university-foundations:BIO 30.3
+      - university-foundations:BIO 30.4
+      - university-foundations:BIO 30.6
+    scope: >-
+      ลำต้นดัดแปลง (เหง้า หัว ไหล มือเกาะ) รากดัดแปลง (รากสะสมอาหาร รากค้ำ รากหายใจของโกงกาง รากอากาศของกล้วยไม้) ใบดัดแปลงและการเรียงใบ
+      ไฟโทโครมกับแสงสีแดงและแสงสีแดงไกล ช่วงแสงกับการออกดอกของพืชวันสั้นและวันยาว นาฬิกาชีวภาพ การป้องกันตัวจากสัตว์กินพืชและเชื้อโรค
+      (หนาม สารทุติยภูมิ การตอบสนองต่อบาดแผล) การได้ไนโตรเจนจากแบคทีเรียตรึงไนโตรเจนในปมรากถั่ว ไมคอร์ไรซา พืชกินแมลง (หม้อข้าวหม้อแกงลิง)
+      พืชเบียน (กาฝาก ฝอยทอง) และพืชอิงอาศัย
+  # ลำดับ 2
+  - id: biology.animals.tissues-body-plan
+    title: รูปร่างกับหน้าที่ของสัตว์ เนื้อเยื่อหลักสี่ชนิด และอัตราเมแทบอลิซึม
+    difficulty: 5.5
+    prereq: [biology.cells.cell-structure, biology.animals.homeostasis]
+    indicators:
+      - university-foundations:BIO 33.1
+      - university-foundations:BIO 33.2
+    scope: >-
+      ขนาดและรูปร่างของสัตว์ อัตราส่วนพื้นที่ผิวต่อปริมาตรกับการแลกเปลี่ยนสาร สัตว์ที่ควบคุมอุณหภูมิภายในและภายนอก อัตราเมแทบอลิซึมพื้นฐาน
+      และขนาดร่างกาย เนื้อเยื่อบุผิว (รูปร่างและจำนวนชั้น ต่อม) เนื้อเยื่อเกี่ยวพัน (หลวม เส้นใย กระดูกอ่อน กระดูก ไขมัน เลือด) เนื้อเยื่อกล้ามเนื้อ
+      (โครงร่าง เรียบ หัวใจ) และเนื้อเยื่อประสาท ระบุชนิดเนื้อเยื่อจากภาพและหน้าที่ และการทำงานร่วมกันเป็นอวัยวะ
+  # ลำดับ 3
+  - id: biology.animals.nervous-system-disorders
+    title: ความผิดปกติของระบบประสาท
+    difficulty: 6
+    prereq: [biology.animals.nervous-system]
+    indicators:
+      - university-foundations:BIO 35.5
+    scope: >-
+      โรคความเสื่อมของระบบประสาท อัลไซเมอร์และพาร์กินสันกับการสูญเสียเซลล์ประสาทและสารสื่อประสาท โรคหลอดเลือดสมองและสัญญาณเตือน (BE FAST)
+      ลมชัก ความผิดปกติทางพัฒนาการ ออทิซึมและสมาธิสั้น โรคทางจิตเวช ซึมเศร้าและจิตเภทกับบทบาทของสารสื่อประสาท การบาดเจ็บของสมองจากการกระแทก
+      วิธีวินิจฉัยและรักษาเชิงหลักการ การไม่ตีตราผู้ป่วย และช่องทางขอความช่วยเหลือ (สายด่วนสุขภาพจิต 1323 และเหตุฉุกเฉิน 1669)
+  # ลำดับ 3
+  - id: biology.ecology.life-history-community
+    title: ชีวภูมิศาสตร์ ประวัติชีวิต ประชากรมนุษย์ และนิเวศวิทยาชุมชน
+    difficulty: 6.5
+    prereq: [biology.ecology.populations, biology.ecology.biomes-succession, biology.ecology.food-webs]
+    indicators:
+      - university-foundations:BIO 44.2
+      - university-foundations:BIO 45.2
+      - university-foundations:BIO 45.5
+      - university-foundations:BIO 45.6
+    scope: >-
+      ชีวภูมิศาสตร์ ปัจจัยที่กำหนดการกระจายของสิ่งมีชีวิต ถิ่นเฉพาะ และเส้นวอลเลซ ประวัติชีวิตกับการแลกได้แลกเสียของการสืบพันธุ์ กลยุทธ์ r และ K
+      การเติบโตของประชากรโลก การเปลี่ยนผ่านทางประชากร ปิรามิดอายุของไทยกับประเทศอื่น ขีดความสามารถในการรองรับของโลก นิเวศวิทยาชุมชน
+      การล่าเหยื่อกับวัฏจักรประชากรผู้ล่า–เหยื่อ การป้องกันตัวของเหยื่อ หลักการแก่งแย่งแข่งขันกีดกันและการแบ่งนิช ภาวะพึ่งพาแบบต่าง ๆ
+      ความหลากหลายของชุมชน ชนิดพันธุ์หลักและชนิดพันธุ์ต่างถิ่นรุกราน
+  # ลำดับ 3
+  - id: biology.ecology.conservation-biology
+    title: วิกฤตความหลากหลายทางชีวภาพและชีววิทยาการอนุรักษ์
+    difficulty: 6.5
+    prereq: [biology.diversity.biodiversity, biology.ecology.environmental-issues, biology.ecology.populations]
+    indicators:
+      - university-foundations:BIO 47.1
+      - university-foundations:BIO 47.4
+    scope: >-
+      การสูญพันธุ์ครั้งใหญ่ห้าครั้งในอดีต อัตราการสูญพันธุ์พื้นหลังเทียบกับปัจจุบันและวิธีประมาณ (ความสัมพันธ์พื้นที่–จำนวนชนิด) จุดความหลากหลายสูง
+      ประเมินสถานะการถูกคุกคามด้วยเกณฑ์บัญชีแดงของ IUCN การออกแบบพื้นที่คุ้มครอง ขนาด รูปร่าง และแนวเชื่อมต่อ การฟื้นฟูระบบนิเวศ
+      (ป่าชายเลน แนวปะการัง) การนำชนิดพันธุ์กลับคืนถิ่น กฎหมายและอนุสัญญาที่เกี่ยวข้อง (CITES CBD) และกรณีศึกษาของไทย เช่น สมเสร็จ พะยูน และเสือโคร่ง
