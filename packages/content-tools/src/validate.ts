@@ -43,13 +43,43 @@ export type PythonRunner = (code: string, tests: string, expected?: string) => C
 /** เวลาสูงสุดต่อการรันหนึ่งครั้งตอนตรวจ (ในแอปจำกัด CODE_TIMEOUT_MS แต่เครื่องที่ตรวจอาจช้ากว่า) */
 export const VALIDATE_CODE_TIMEOUT_MS = 10_000;
 
-/** รันด้วย python3 ในเครื่อง ผ่านตัวรันเดียวกับในแอป (PYTHON_HARNESS) จึงได้ผลตรงกัน */
+/** ตัวแปรสภาพแวดล้อมขั้นต่ำสำหรับรัน Python (Windows ต้องมี SYSTEMROOT จึงจะเริ่มได้) */
+const pythonEnv = (): NodeJS.ProcessEnv => {
+  const env: NodeJS.ProcessEnv = { PATH: process.env.PATH ?? "", PYTHONIOENCODING: "utf-8" };
+  for (const k of ["SYSTEMROOT", "SystemRoot", "PATHEXT"]) if (process.env[k]) env[k] = process.env[k];
+  return env;
+};
+
+let pythonCmd: string[] | null | undefined;
+/**
+ * หาคำสั่ง Python 3 ในเครื่อง: KLANGRU_PYTHON (เช่น "py -3") ถ้าตั้งไว้ ไม่เช่นนั้นลอง python3, python และ py -3
+ * ตามลำดับ (Windows มักไม่มี python3) คืน null ถ้าไม่พบ Python 3
+ */
+export function findPython(): string[] | null {
+  if (pythonCmd !== undefined) return pythonCmd;
+  const fromEnv = process.env.KLANGRU_PYTHON?.trim();
+  const candidates = fromEnv ? [fromEnv.split(/\s+/)] : [["python3"], ["python"], ["py", "-3"]];
+  pythonCmd = null;
+  for (const [cmd, ...args] of candidates) {
+    const r = spawnSync(cmd, [...args, "-c", "import sys; print(sys.version_info[0])"], { encoding: "utf8", env: pythonEnv(), timeout: 10_000 });
+    if (!r.error && r.status === 0 && r.stdout.trim() === "3") {
+      pythonCmd = [cmd, ...args];
+      break;
+    }
+  }
+  return pythonCmd;
+}
+
+/** รันด้วย Python 3 ในเครื่อง ผ่านตัวรันเดียวกับในแอป (PYTHON_HARNESS) จึงได้ผลตรงกัน */
 export const pythonRunner = (timeoutMs = VALIDATE_CODE_TIMEOUT_MS): PythonRunner => (code, tests, expected) => {
-  const r = spawnSync("python3", ["-I", "-c", PYTHON_CLI], {
+  const py = findPython();
+  if (!py) return null;
+  const [cmd, ...pre] = py;
+  const r = spawnSync(cmd, [...pre, "-I", "-c", PYTHON_CLI], {
     input: JSON.stringify({ code, tests, expected: expected ?? null }),
     encoding: "utf8",
     timeout: timeoutMs,
-    env: { PATH: process.env.PATH ?? "", PYTHONIOENCODING: "utf-8" },
+    env: pythonEnv(),
   });
   if ((r.error as NodeJS.ErrnoException | undefined)?.code === "ENOENT") return null;
   if (r.error || r.status !== 0) {
@@ -253,7 +283,7 @@ function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]
       if (/\binput\s*\(/.test(p.reference)) warn(`${p.id}: reference ใช้ input() แต่ในแอปไม่มีช่องพิมพ์ข้อมูลเข้า (input() จะได้ EOFError) ให้กำหนดค่าในตัวแปรแทน`);
       const ref = opts.runPython(p.reference, p.tests, p.expected_output);
       if (ref === null) {
-        warn(`${p.id}: ไม่พบ python3 จึงข้ามการรันเฉลยของโจทย์เขียนโค้ด`);
+        warn(`${p.id}: ไม่พบ Python 3 (ลอง python3, python, py -3 หรือตั้ง KLANGRU_PYTHON) จึงข้ามการรันเฉลยของโจทย์เขียนโค้ด`);
         break;
       }
       if (!ref.ok) err(`reference ไม่ผ่าน: ${describeRun(ref)}`);

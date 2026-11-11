@@ -21,7 +21,9 @@
     "draft": "npm run draft -w @klangru/content-tools --",
     "approve": "npm run approve -w @klangru/content-tools --",
     "curriculum": "npm run curriculum -w @klangru/content-tools --",
-    "plan": "npm run plan -w @klangru/content-tools --"
+    "plan": "npm run plan -w @klangru/content-tools --",
+    "check": "npm run validate -- --strict && npm run typecheck && npm run typecheck -w @klangru/web && npm test && npm test -w @klangru/web && npm run test:db && npm run build",
+    "check:full": "npm run check && npm run check:functions && npm run e2e -w @klangru/web"
   },
   "engines": {
     "node": ">=20"

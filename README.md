@@ -77,5 +77,5 @@ docs/                    ADR, คู่มือติดตั้ง, คู่
 - [สถานะและเกณฑ์ผ่านแต่ละเฟส](docs/status.md)
 - [หลักสูตรและแหล่งอ้างอิง](curriculum/README.md) · [สารานุกรมและตำราเปิด: ใช้อะไรได้แค่ไหน](docs/research/encyclopedias.md) · [แผนเฟส 6: ขยายคลังตามหลักสูตร](docs/phase6/README.md)
 - [คู่มือผู้เขียนเนื้อหา](docs/authoring-guide.md)
-- ติดตั้ง: [Supabase](docs/setup/supabase.md) · [Android](docs/setup/android.md) · [CMS](docs/setup/cms.md) · [Claude API](docs/setup/ai.md)
+- ติดตั้ง: [ทำงานบนเครื่องตัวเอง](docs/setup/local.md) · [Supabase](docs/setup/supabase.md) · [Android](docs/setup/android.md) · [CMS](docs/setup/cms.md) · [Claude API](docs/setup/ai.md)
 - ADR: [0001 ไม่หารายได้และใบอนุญาต](docs/decisions/0001-non-commercial-and-licensing.md) · [0002 ขอบเขตนำร่อง](docs/decisions/0002-pilot-scope.md) · [0003 เทคโนโลยีหลัก](docs/decisions/0003-tech-stack.md) · [0004 โครงข้อมูลและระดับความชำนาญ](docs/decisions/0004-content-model.md) · [0005 CMS และคิวร่างด้วย AI](docs/decisions/0005-cms-and-ai-drafting.md) · [0006 ผู้ช่วย AI](docs/decisions/0006-ai-tutor.md) · [0007 การซิงก์และ PDPA](docs/decisions/0007-sync-privacy-pdpa.md)
