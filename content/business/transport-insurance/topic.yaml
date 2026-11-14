@@ -1,0 +1,100 @@
+id: business.law.transport-insurance
+subject: business
+title:
+  th: กฎหมายการขนส่งสินค้าและการประกันภัยสินค้าระหว่างขนส่ง
+  en: Cargo transport law and cargo insurance
+summary: สัญญารับขนและความรับผิดของผู้ขนส่ง ใบตราส่งสามบทบาท ระดับความคุ้มครอง ICC (A) (B) (C) การคำนวณทุนประกันตาม CIF บวก 10% และการเชื่อมโยงกับ Incoterms 2020
+difficulty: 6.5
+minutes: 45
+prerequisites:
+- business.law.contracts
+- management.operations.supply-chain
+encompasses:
+- id: business.law.contracts
+  weight: 0.4
+- id: management.operations.supply-chain
+  weight: 0.3
+- id: business.econ.consumer-rights
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: cargo-chain.svg
+  alt: เส้นทางขนส่งแนวนอนจากผู้ส่งออกผ่านท่าต้นทาง ทางทะเล และท่าปลายทางไปถึงผู้รับ กล่องสีเขียวอยู่ใต้ช่วงจากท่าต้นทางถึงท่าปลายทางระบุว่าผู้ขนส่งดูแลสินค้าตั้งแต่รับจนส่งมอบ แถบสีเหลืองยาวทั้งเส้นทางระบุว่าประกันภัยขนส่งขึ้นอยู่กับข้อตกลงการค้า มีเส้นประสีแดงที่ท่าต้นทางระบุตัวอย่างการโอนความเสี่ยงเมื่อขึ้นเรือของ CIF หรือ FOB
+  caption: ช่วงรับผิดชอบของผู้ขนส่งและช่วงประกันภัยไม่จำเป็นต้องตรงกันทั้งหมด
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: icc-coverage.svg
+  alt: ตารางเปรียบเทียบความคุ้มครองสามระดับ คอลัมน์ ICC (A) มีทั้งสามแถว แถวที่สองคือน้ำทะเลเข้า คลื่นพัดสินค้าตกเรือ แผ่นดินไหว ICC (B) มีถึงแถวที่สองแต่ไม่มีการลักขโมย ICC (C) มีเฉพาะไฟไหม้ เรือล่ม เรือชน
+  caption: ตารางย่อจากความคุ้มครองพื้นฐานของแต่ละระดับ ไม่ใช่ข้อความกรมธรรม์ฉบับเต็ม
+- type: worked-example
+  title: คำนวณทุนประกันจากราคา CIF
+  problem: ข้าวหอมมะลิส่งออก (สมมติ) ราคา FOB 500,000 บาท ค่าระวางทางเรือ 45,000 บาท ทุนประกันตามเกณฑ์ CIF บวก 10% เป็นเท่าไร
+  steps:
+  - text: "ราคา CIF $= \\text{FOB} + \\text{ค่าระวาง} = 500{,}000 + 45{,}000 = 545{,}000$ บาท"
+    why: CIF รวมค่าระวางถึงท่าปลายทางไว้ในราคาสินค้า
+  - text: "ทุนประกัน $= 545{,}000 \\times 1.10 = 599{,}500$ บาท"
+    why: การบวก 10% ทำให้ทุนประกันครอบคลุมกำไรที่คาดว่าจะได้ด้วย
+  answer: ทุนประกันเป็น $599{,}500$ บาท
+- type: check
+  problem: business.law.transport-insurance.p006
+  prompt: ลองคิดก่อนอ่านต่อ ระดับใดที่คุ้มครองการลักขโมยโดยไม่ต้องเพิ่มเงื่อนไข
+- type: worked-example
+  title: หักค่าส่วนแรกจากความเสียหายที่ประเมินได้
+  problem: ตู้สินค้าเกิดความเสียหายจากน้ำทะเลเข้า ผู้สำรวจประเมินความเสียหายได้ 220,000 บาท ทุนประกันคือ 1,100,000 บาท และกรมธรรม์มีค่าส่วนแรก 10,000 บาท ผู้เอาประกันได้รับเงินชดเชยเท่าไร
+  steps:
+  - text: "ความเสียหายที่ประเมินได้คือ 220,000 บาท ซึ่งน้อยกว่าทุนประกัน 1,100,000 บาท จึงอยู่ในวงเงิน"
+    why: ความเสียหายต้องไม่เกินทุนประกัน มิฉะนั้นการชดเชยถูกจำกัดที่ทุนประกัน
+  - text: "หักค่าส่วนแรกซึ่งผู้เอาประกันรับเอง $220{,}000 - 10{,}000 = 210{,}000$ บาท"
+    why: ค่าส่วนแรกทำให้ผู้เอาประกันมีส่วนร่วมรับความเสียหายเล็กน้อยเอง
+  answer: ผู้เอาประกันได้รับเงินชดเชย $210{,}000$ บาท
+- type: check
+  problem: business.law.transport-insurance.p012
+  prompt: ตามเงื่อนไข CIF ความเสี่ยงของสินค้าโอนไปยังผู้ซื้อเมื่อใด
+glossary:
+- term: ใบตราส่ง (Bill of Lading)
+  definition: เอกสารที่ผู้ขนส่งออกให้เมื่อรับสินค้า ทำหน้าที่เป็นใบรับของ หลักฐานสัญญาการขนส่ง และเอกสารสิทธิในสินค้า
+- term: ทุนประกัน
+  definition: วงเงินสูงสุดที่บริษัทประกันจะรับผิดชอบตามกรมธรรม์ โดยทั่วไปตั้งที่ราคา CIF บวก 10%
+- term: ค่าส่วนแรก (deductible)
+  definition: จำนวนความเสียหายที่ผู้เอาประกันรับเองก่อนที่บริษัทประกันจะชดเชยส่วนที่เหลือ
+- term: Incoterms
+  definition: ชุดคำจำกัดความการค้าระหว่างประเทศที่กำหนดหน้าที่ของผู้ขายและผู้ซื้อ รวมถึงการขนส่ง การประกันภัย และการโอนความเสี่ยง
+- term: Institute Cargo Clauses
+  definition: เงื่อนไขความคุ้มครองมาตรฐานการประกันภัยสินค้าทางทะเลในระดับ A B และ C ซึ่งต่างกันที่ขอบเขตของภัยที่คุ้มครอง
+flashcards:
+- front: ICC (A) ต่างจาก ICC (C) อย่างไร
+  back: ICC (A) คุ้มครองทุกความเสี่ยงยกเว้นที่ระบุ รวมถึงการลักขโมย ส่วน ICC (C) คุ้มครองเฉพาะภัยสำคัญขั้นต่ำ
+- front: ทุนประกันตาม CIF
+  back: CIF $\times 1.10$
+- front: ใบตราส่งทำหน้าที่อะไรบ้าง
+  back: ใบรับของ หลักฐานสัญญาการขนส่ง และเอกสารสิทธิในสินค้า
+- front: ค่าส่วนแรก (deductible) คืออะไร
+  back: ความเสียหายส่วนแรกที่ผู้เอาประกันรับเอง ก่อนได้รับชดเชย
+references:
+- title: ใบตราส่งสินค้า
+  url: https://th.wikipedia.org/wiki/ใบตราส่งสินค้า
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+- title: Incoterms
+  url: https://en.wikipedia.org/wiki/Incoterms
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Cargo insurance
+  url: https://en.wikipedia.org/wiki/Cargo_insurance
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Multimodal transport
+  url: https://en.wikipedia.org/wiki/Multimodal_transport
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors:
+- ทีมคลังรู้
