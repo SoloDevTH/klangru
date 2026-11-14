@@ -1,0 +1,287 @@
+problems:
+  - id: math.linalg.lu-factorization.p001
+    topics: [math.linalg.lu-factorization]
+    difficulty: 1
+    type: numeric
+    stem: "สำหรับ $A=\\begin{pmatrix}2&1\\\\4&3\\end{pmatrix}$ เมื่อกำจัดแถวที่สองด้วยพิวอต 2 สมาชิก $u_{22}$ ของ $U$ เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 1, tolerance: 0 }
+    hints:
+      - "ตัวคูณคือ $\\frac{4}{2}=2$"
+      - "ลบ 2 เท่าของแถวแรกจากแถวที่สอง"
+      - "สมาชิกตำแหน่ง $(2,2)$ ใหม่คือ $3-2\\cdot 1$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือค่าเดิมของ $a_{22}$ ก่อนกำจัด ต้องลบ $\\ell_{21}\\cdot a_{12}$ ออกไปด้วย" }
+    solution: "$\\ell_{21}=2$ และ $u_{22}=3-2\\cdot 1=1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p002
+    topics: [math.linalg.lu-factorization]
+    difficulty: 1
+    type: mcq
+    stem: "ในการแยก $A=LU$ เมทริกซ์ $L$ มีลักษณะใด"
+    choices:
+      - { id: a, text: "สามเหลี่ยมล่างที่มีหนึ่งบนแนวทแยง", correct: true }
+      - { id: b, text: "สามเหลี่ยมบน", feedback: "สามเหลี่ยมบนคือ $U$ ส่วน $L$ เป็นสามเหลี่ยมล่าง" }
+      - { id: c, text: "สมมาตรเสมอ", feedback: "ความสมมาตรไม่ใช่ลักษณะทั่วไปของ $L$" }
+      - { id: d, text: "เอกลักษณ์เสมอ", feedback: "$L$ เป็นเอกลักษณ์ก็ต่อเมื่อตัวคูณทั้งหมดเป็นศูนย์ ซึ่งไม่ได้เกิดทั่วไป" }
+    hints:
+      - "ดูตำแหน่งของตัวคูณที่เก็บจากการกำจัด"
+      - "แนวทแยงของ $L$ เป็นหนึ่งเสมอ"
+    solution: "$L$ เก็บตัวคูณใต้แนวทแยงและมีหนึ่งบนแนวทแยง จึงเป็นสามเหลี่ยมล่างที่มีหนึ่งบนแนวทแยง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p003
+    topics: [math.linalg.lu-factorization]
+    difficulty: 2
+    type: numeric
+    stem: "ในการแยก LU ของ $A=\\begin{pmatrix}2&1&3\\\\4&5&7\\\\-6&3&-5\\end{pmatrix}$ ตัวคูณ $\\ell_{31}$ เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: -3, tolerance: 0 }
+    hints:
+      - "ตัวคูณคือสัมประสิทธิ์ของแถวที่ต้องการกำจัดหารด้วยพิวอตของแถวแรก"
+      - "พิวอตแรกคือ $a_{11}=2$"
+      - "คำนวณ $\\frac{a_{31}}{a_{11}}$"
+    misconceptions:
+      - { match: 3, feedback: "3 เกิดจากลืมเครื่องหมาย ตัวคูณคือ $\\frac{a_{31}}{a_{11}}=\\frac{-6}{2}=-3$" }
+    solution: "$\\ell_{31}=\\frac{a_{31}}{a_{11}}=\\frac{-6}{2}=-3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p004
+    topics: [math.linalg.lu-factorization]
+    difficulty: 2
+    type: numeric
+    stem: "ในการแยก LU ของ $A=\\begin{pmatrix}2&1&3\\\\4&5&7\\\\-6&3&-5\\end{pmatrix}$ สมาชิก $u_{33}$ ของ $U$ เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "ทำการกำจัดสองขั้น ขั้นแรกใช้พิวอต 2 แล้วหาพิวอตที่สองจากแถวที่สองใหม่"
+      - "หลังขั้นแรก แถวที่สองคือ $(0,3,1)$ และแถวที่สามคือ $(0,6,4)$"
+      - "ขั้นที่สองใช้ตัวคูณ $\\ell_{32}=\\frac{6}{3}$ กับแถวที่สองใหม่"
+    misconceptions:
+      - { match: 4, feedback: "4 คือค่าที่ตำแหน่ง $(3,3)$ หลังขั้นแรก ก่อนทำขั้นที่สอง ซึ่งยังไม่ใช่ $u_{33}$ สุดท้าย" }
+      - { match: -5, feedback: "-5 คือค่าเดิมของ $a_{33}$ ยังไม่ได้กำจัดเลย" }
+    solution: "ขั้นแรก $\\ell_{21}=2$, $\\ell_{31}=-3$ ได้แถวที่สอง $(0,3,1)$ และแถวที่สาม $(0,6,4)$ ขั้นที่สอง $\\ell_{32}=2$ ได้แถวที่สาม $(0,0,4-2\\cdot 1)=(0,0,2)$ จึงได้ $u_{33}=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p005
+    topics: [math.linalg.lu-factorization]
+    difficulty: 2
+    type: numeric
+    stem: "โรงงานมีระบบสมการเชิงเส้น 100 สมการที่แยก LU ไว้แล้ว การแก้ระบบหนึ่งครั้งด้วยการแทนค่าไปหน้าและย้อนหลังใช้การคูณประมาณ $n^2$ ครั้ง จำนวนการคูณโดยประมาณสำหรับการแก้หนึ่งครั้งคือเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 10000, tolerance: 0 }
+    hints:
+      - "ค่า $n$ คือจำนวนสมการหรือตัวแปร ซึ่งเท่ากับ 100"
+      - "ใช้ $n^2$ โดยแทน $n=100$"
+    misconceptions:
+      - { match: 333333, feedback: "333333 คือ $\\frac{n^3}{3}$ ซึ่งเป็นจำนวนการคูณของการแยก LU ไม่ใช่การแก้ระบบหนึ่งครั้งที่ใช้ประมาณ $n^2$" }
+    solution: "การแก้หนึ่งครั้งใช้ประมาณ $n^2=100^2=10000$ การคูณ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p006
+    topics: [math.linalg.lu-factorization]
+    difficulty: 2
+    type: mcq
+    stem: "ถ้า $A$ และ $B$ เป็นเมทริกซ์ที่คูณกันได้ ทรานสโพสของ $AB$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$B^TA^T$", correct: true }
+      - { id: b, text: "$A^TB^T$", feedback: "ลำดับการคูณไม่ได้สลับ ผลที่ได้โดยทั่วไปไม่เท่ากับ $(AB)^T$" }
+      - { id: c, text: "$A^{-1}B^{-1}$", feedback: "นี่ไม่ใช่ทรานสโพส ส่วนกลับของ $AB$ คือ $B^{-1}A^{-1}$" }
+      - { id: d, text: "$AB$", feedback: "ทรานสโพสจะสลับแถวกับคอลัมน์ ไม่คงค่าเดิม" }
+    hints:
+      - "นึกถึงการสลับแถวกับคอลัมน์ของผลคูณ"
+      - "ลำดับของการคูณจะกลับด้าน"
+    solution: "ทรานสโพสของผลคูณเท่ากับผลคูณของทรานสโพสตามลำดับกลับกัน คือ $(AB)^T=B^TA^T$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p007
+    topics: [math.linalg.lu-factorization]
+    difficulty: 3
+    type: numeric
+    stem: "กำหนด $A=\\begin{pmatrix}2&1&3\\\\4&5&7\\\\-6&3&-5\\end{pmatrix}$ และ $b=(6,11,-16)$ จงแยก $A=LU$ แล้วแก้ $Ax=b$ จงหา $x_1$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 0.5, tolerance: 0.005 }
+    hints:
+      - "หา $L$ และ $U$ จากการกำจัดสองขั้น"
+      - "แก้ $Ly=b$ ด้วยการแทนค่าไปหน้า"
+      - "แก้ $Ux=y$ ด้วยการแทนค่าย้อนหลังโดยเริ่มจาก $x_3$"
+    misconceptions:
+      - { match: 2, feedback: "2 คือ $x_3$ ซึ่งได้จากแถวล่างสุดของ $U$ ก่อน ต้องแทนค่าย้อนหลังต่อจนถึง $x_1$" }
+    solution: "$L=\\begin{pmatrix}1&0&0\\\\2&1&0\\\\-3&2&1\\end{pmatrix}$, $U=\\begin{pmatrix}2&1&3\\\\0&3&1\\\\0&0&2\\end{pmatrix}$ แทนค่าไปหน้าได้ $y=(6,-1,4)$ แล้วแทนค่าย้อนหลังได้ $x_3=2$, $x_2=\\frac{-1-2}{3}=-1$ และ $x_1=\\frac{6-(-1)-3\\cdot 2}{2}=0.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p008
+    topics: [math.linalg.lu-factorization]
+    difficulty: 3
+    type: expression
+    stem: "สำหรับ $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ ที่มี $a\\ne 0$ ตัวคูณ $\\ell_{21}$ ในการแยก LU เขียนเป็นนิพจน์ได้อย่างไร (ตอบเป็นนิพจน์)"
+    prefix: "ℓ21 ="
+    answer: { latex: "\\frac{c}{a}", variables: [a, c] }
+    misconceptions:
+      - { match: "\\frac{a}{c}", feedback: "สลับเศษกับส่วน ตัวคูณคือสัมประสิทธิ์ของแถวล่าง $c$ หารด้วยพิวอต $a$" }
+    hints:
+      - "ตัวคูณคือสัมประสิทธิ์ของแถวล่างหารด้วยพิวอตของแถวบน"
+      - "พิวอตแรกของ $A$ คือ $a$"
+    solution: "$\\ell_{21}=\\frac{c}{a}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p009
+    topics: [math.linalg.lu-factorization]
+    difficulty: 3
+    type: match
+    stem: "จับคู่เมทริกซ์หรือองค์ประกอบกับความหมายของมัน"
+    pairs:
+      - { left: "$L$", right: "สามเหลี่ยมล่างที่มีหนึ่งบนแนวทแยงและเก็บตัวคูณ" }
+      - { left: "$U$", right: "สามเหลี่ยมบนที่เป็นผลของการกำจัด" }
+      - { left: "$P$", right: "เมทริกซ์การเรียงแถวที่ใช้เมื่อพิวอตเป็นศูนย์" }
+      - { left: "$D$", right: "เมทริกซ์แนวทแยงที่มีพิวอตอยู่บนแนวทแยง" }
+    hints:
+      - "สามเหลี่ยมล่างกับบนแยกกันตามตำแหน่งสมาชิก"
+      - "$P$ เกี่ยวข้องกับการสลับแถว"
+    solution: "$L$ เก็บตัวคูณใต้แนวทแยง $U$ เป็นผลการกำจัด $P$ สลับแถว และ $D$ เก็บพิวอตบนแนวทแยง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p010
+    topics: [math.linalg.lu-factorization]
+    difficulty: 3
+    type: numeric
+    stem: "เมทริกซ์ $A$ ขนาด $3\\times 5$ มีแรงก์ 3 และระบบ $Ax=b$ มีผลเฉลย จำนวนตัวแปรอิสระในผลเฉลยทั้งหมดคือเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "จำนวนตัวแปรอิสระคือ $n-r$ โดย $n$ คือจำนวนคอลัมน์"
+      - "ที่นี่ $n=5$ และ $r=3$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือแรงก์ ไม่ใช่จำนวนตัวแปรอิสระ ซึ่งคือ $n-r=5-3$" }
+    solution: "จำนวนตัวแปรอิสระคือ $n-r=5-3=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p011
+    topics: [math.linalg.lu-factorization]
+    difficulty: 3
+    type: numeric
+    stem: "ให้ $A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}$ และ $B=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$ จงหาสมาชิกแถวที่ 1 คอลัมน์ที่ 2 ของ $(AB)^T$ (ตอบจำนวนเต็ม)"
+    answer: { value: 4, tolerance: 0 }
+    hints:
+      - "หา $AB$ ก่อน แล้วค่อยทรานสโพส"
+      - "สมาชิกตำแหน่ง $(1,2)$ ของ $(AB)^T$ คือสมาชิกตำแหน่ง $(2,1)$ ของ $AB$"
+    misconceptions:
+      - { match: 1, feedback: "1 คือสมาชิกแถวที่ 1 คอลัมน์ที่ 2 ของ $A^TB^T$ ซึ่งผิด เพราะ $(AB)^T=B^TA^T$" }
+    solution: "$AB=\\begin{pmatrix}2&1\\\\4&3\\end{pmatrix}$ จึงได้ $(AB)^T_{12}=(AB)_{21}=4$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p012
+    topics: [math.linalg.lu-factorization]
+    difficulty: 4
+    type: numeric
+    stem: "สำหรับ $A=\\begin{pmatrix}0&1\\\\1&1\\end{pmatrix}$ เมื่อสลับแถวให้ได้ $PA=LU$ สมาชิก $u_{11}$ ของ $U$ เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 1, tolerance: 0 }
+    hints:
+      - "พิวอตแรกของ $A$ เป็นศูนย์ จึงต้องสลับแถวก่อน"
+      - "หลังสลับแถว แถวบนสุดคือ $(1,1)$"
+    misconceptions:
+      - { match: 0, feedback: "0 คือพิวอตของ $A$ ก่อนสลับแถว ซึ่งเป็นศูนย์ ทำให้กำจัดแบบปกติไม่ได้" }
+    solution: "หลังสลับแถวได้ $PA=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$ จึงได้ $u_{11}=1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p013
+    topics: [math.linalg.lu-factorization]
+    difficulty: 4
+    type: numeric
+    stem: "เมทริกซ์ $A$ ขนาด $4\\times 4$ มีแรงก์ 1 จำนวนตัวแปรอิสระในผลเฉลยของ $Ax=0$ คือเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 3, tolerance: 0 }
+    hints:
+      - "จำนวนตัวแปรอิสระคือ $n-r$"
+      - "ที่นี่ $n=4$ และ $r=1$"
+    misconceptions:
+      - { match: 1, feedback: "1 คือแรงก์ ไม่ใช่จำนวนตัวแปรอิสระ ซึ่งคือ $n-r=4-1=3$" }
+    solution: "จำนวนตัวแปรอิสระคือ $n-r=4-1=3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p014
+    topics: [math.linalg.lu-factorization]
+    difficulty: 4
+    type: mcq
+    stem: "เมทริกซ์ขนาด $m\\times n$ ที่มีแรงก์ $r=m<n$ ระบบ $Ax=b$ มีผลเฉลยอย่างไร"
+    choices:
+      - { id: a, text: "ไม่มีผลเฉลยเสมอ", feedback: "เมื่อ $r=m$ แถวทุกแถวเป็นอิสระ ระบบจึงมีผลเฉลยสำหรับทุก $b$" }
+      - { id: b, text: "มีผลเฉลยเดียวเสมอ", feedback: "ผลเฉลยเดียวเกิดเมื่อ $r=n$ ซึ่งไม่ใช่กรณีนี้เพราะ $n>m$" }
+      - { id: c, text: "มีผลเฉลยนับไม่ถ้วนและมีผลเฉลยสำหรับทุก $b$", correct: true }
+      - { id: d, text: "มีผลเฉลยเฉพาะเมื่อ $b=0$", feedback: "สมการ $Ax=0$ มีผลเฉลยเสมอ แต่ระบบนี้มีผลเฉลยสำหรับทุก $b$ ไม่ใช่เฉพาะ $b=0$" }
+    hints:
+      - "แรงก์เท่ากับจำนวนแถว หมายความว่าแถวทุกแถวเป็นอิสระ"
+      - "มี $n-r$ ตัวแปรอิสระซึ่งมากกว่าศูนย์"
+    solution: "เมื่อ $r=m<n$ ระบบมีผลเฉลยสำหรับทุก $b$ และมีตัวแปรอิสระ $n-m\\ge 1$ ตัว จึงได้ผลเฉลยนับไม่ถ้วน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p015
+    topics: [math.linalg.lu-factorization]
+    difficulty: 4
+    type: numeric
+    stem: "ในการวิเคราะห์วงจรไฟฟ้าที่มี 60 โหนด ระบบสมการเชิงเส้นมีขนาด $60\\times 60$ ถ้าแยก LU ของระบบนี้ด้วยการคูณประมาณ $\\frac{n^3}{3}$ ครั้ง จำนวนการคูณโดยประมาณคือเท่าไร (ตอบจำนวนเต็ม ประมาณได้ ±100)"
+    answer: { value: 72000, tolerance: 100 }
+    hints:
+      - "ใช้สูตร $\\frac{n^3}{3}$ โดย $n=60$"
+      - "คำนวณ $60^3$ ก่อนแล้วหารด้วย 3"
+    misconceptions:
+      - { match: 216000, feedback: "216000 คือ $n^3$ โดยไม่ได้หารด้วย 3 ซึ่งผิดจากสูตรการแยก LU" }
+    solution: "$\\frac{60^3}{3}=\\frac{216000}{3}=72000$ ครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p016
+    topics: [math.linalg.lu-factorization]
+    difficulty: 5
+    type: numeric
+    stem: "สำหรับ $A=\\begin{pmatrix}0.001&1\\\\1&1\\end{pmatrix}$ ถ้าไม่สลับแถวแล้วแยก LU สมาชิก $u_{22}$ ของ $U$ เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: -999, tolerance: 0 }
+    hints:
+      - "ตัวคูณคือ $\\frac{1}{0.001}$"
+      - "คำนวณ $1-\\ell_{21}\\cdot 1$"
+    misconceptions:
+      - { match: 0.999, feedback: "0.999 คือค่าเมื่อสลับแถวแล้ว (การเลือกพิวอตบางส่วน) ไม่ใช่ค่าในกรณีที่ไม่สลับแถว" }
+    solution: "$\\ell_{21}=\\frac{1}{0.001}=1000$ จึงได้ $u_{22}=1-1000\\cdot 1=-999$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p017
+    topics: [math.linalg.lu-factorization]
+    difficulty: 5
+    type: mcq
+    stem: "การเลือกพิวอตบางส่วนช่วยอะไรในการคำนวณเชิงตัวเลข"
+    choices:
+      - { id: a, text: "ทำให้ตัวคูณไม่ใหญ่เกินไป จึงลดการขยายข้อผิดพลาดจากการปัดเศษ", correct: true }
+      - { id: b, text: "ทำให้ $L$ เป็นเมทริกซ์เอกลักษณ์เสมอ", feedback: "$L$ เป็นเอกลักษณ์ก็ต่อเมื่อไม่มีตัวคูณที่ไม่เป็นศูนย์ การเลือกพิวอตไม่ได้ทำให้เป็นเช่นนั้น" }
+      - { id: c, text: "ทำให้ไม่ต้องใช้การแทนค่าไปหน้า", feedback: "การแก้ $Ly=b$ ยังต้องทำอยู่เสมอ" }
+      - { id: d, text: "ทำให้จำนวนการคูณลดลงเหลือ $n^2$", feedback: "การแยก LU ยังต้องใช้ประมาณ $\\frac{n^3}{3}$ ครั้ง การเลือกพิวอตไม่ได้ลดงานลงเช่นนั้น" }
+    hints:
+      - "พิจารณาขนาดของตัวคูณเมื่อพิวอตเล็กมาก"
+      - "ดูตัวอย่างที่พิวอตเป็น $0.001$"
+    solution: "พิวอตที่ใหญ่ที่สุดในคอลัมน์ทำให้ตัวคูณมีขนาดไม่เกิน 1 ซึ่งลดการขยายข้อผิดพลาดการปัดเศษ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.linalg.lu-factorization.p018
+    topics: [math.linalg.lu-factorization]
+    difficulty: 5
+    type: numeric
+    stem: "โรงงานผลิตน้ำหอมจากสารสองชนิดตามระบบ $Ax=b$ ซึ่งแยกได้ $A=LU$ โดย $L=\\begin{pmatrix}1&0\\\\2&1\\end{pmatrix}$ และ $U=\\begin{pmatrix}3&1\\\\0&4\\end{pmatrix}$ และ $b=(3,10)$ จงหา $x_1$ ซึ่งเป็นปริมาณสารชนิดแรก (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.6667, tolerance: 0.0001 }
+    hints:
+      - "แก้ $Ly=b$ ด้วยการแทนค่าไปหน้าก่อน"
+      - "แก้ $Ux=y$ ด้วยการแทนค่าย้อนหลัง โดยเริ่มจาก $x_2$"
+      - "จากแถวแรกของ $U$ แก้หา $x_1$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือ $y_1$ จากการแทนค่าไปหน้า ยังไม่ได้แทนค่าย้อนหลังเพื่อหา $x_1$" }
+    solution: "$y=(3,4)$ จากการแทนค่าไปหน้า แล้ว $x_2=1$ และ $3x_1+1=3$ จึงได้ $x_1=\\frac{2}{3}\\approx 0.6667$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

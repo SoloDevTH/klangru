@@ -1,0 +1,293 @@
+problems:
+  - id: math.calculus.lhopital-asymptotes.p001
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 1
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to\\infty}\\frac{3x^2+1}{2x^2-5}$ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 1.5, tolerance: 0.01 }
+    hints:
+      - "เมื่อ $x$ ใหญ่มาก พจน์ที่มี $\\frac{1}{x^2}$ จะเข้าใกล้ศูนย์"
+      - "หารทั้งตัวเศษและตัวส่วนด้วย $x^2$ แล้วพิจารณาสัมประสิทธิ์ของ $x^2$"
+      - "อัตราส่วนของสัมประสิทธิ์นำของตัวเศษต่อตัวส่วนคือ $\\frac{3}{2}$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือสัมประสิทธิ์ของ $x^2$ ในตัวเศษเท่านั้น ต้องเทียบกับสัมประสิทธิ์ของ $x^2$ ในตัวส่วนด้วย" }
+    solution: "$\\lim_{x\\to\\infty}\\frac{3x^2+1}{2x^2-5}=\\lim_{x\\to\\infty}\\frac{3+\\frac{1}{x^2}}{2-\\frac{5}{x^2}}=\\frac{3}{2}=1.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p002
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 1
+    type: mcq
+    stem: "จงหาเส้นกำกับแนวนอนของ $f(x)=\\frac{2x+5}{x-1}$"
+    choices:
+      - { id: a, text: "$y=5$", feedback: "5 คือค่าคงที่ในตัวเศษ ไม่ใช่ค่าที่ลิมิตเข้าใกล้ เมื่อดีกรีเท่ากันให้เทียบสัมประสิทธิ์ของพจน์ที่มีกำลังสูงสุด" }
+      - { id: b, text: "$y=2$", correct: true }
+      - { id: c, text: "$y=0$", feedback: "$y=0$ ใช้เมื่อดีกรีตัวเศษน้อยกว่าตัวส่วน ซึ่งไม่ใช่กรณีนี้" }
+      - { id: d, text: "$x=1$", feedback: "$x=1$ เป็นเส้นกำกับแนวดิ่ง ไม่ใช่แนวนอน" }
+    hints:
+      - "เส้นกำกับแนวนอนหาจากค่าของ $\\lim_{x\\to\\infty} f(x)$"
+      - "ดีกรีของตัวเศษและตัวส่วนเท่ากัน ดังนั้นลิมิตคืออัตราส่วนของสัมประสิทธิ์นำ"
+    solution: "$\\lim_{x\\to\\infty}\\frac{2x+5}{x-1}=\\lim_{x\\to\\infty}\\frac{2+\\frac{5}{x}}{1-\\frac{1}{x}}=2$ จึงได้เส้นกำกับแนวนอน $y=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p003
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to 0}\\frac{\\sin(3x)}{2x}$ (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.5, tolerance: 0.005 }
+    hints:
+      - "แทน $x=0$ จะได้ $\\frac{0}{0}$ จึงเป็นรูปไม่กำหนด"
+      - "ใช้กฎของโลปีตาลโดยหาอนุพันธ์ของตัวเศษและตัวส่วนแยกกัน"
+      - "อนุพันธ์ของ $\\sin(3x)$ คือ $3\\cos(3x)$ และของ $2x$ คือ $2$"
+    misconceptions:
+      - { match: 0.67, feedback: "0.67 คือ $\\frac{2}{3}$ ซึ่งเกิดจากการสลับตัวเศษกับตัวส่วนของอัตราส่วนอนุพันธ์" }
+    solution: "$\\lim_{x\\to 0}\\frac{3\\cos(3x)}{2}=\\frac{3}{2}=1.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p004
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to 0}\\frac{e^{2x}-1}{x}$ (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "แทน $x=0$ ได้ $\\frac{0}{0}$ จึงใช้กฎของโลปีตาลได้"
+      - "อนุพันธ์ของ $e^{2x}$ ต้องคิดกฎลูกโซ่ด้วย"
+      - "ได้ค่าลิมิตจาก $\\frac{2e^{2x}}{1}$ เมื่อ $x=0$"
+    misconceptions:
+      - { match: 1, feedback: "1 เกิดจากลืมคูณ 2 ซึ่งเป็นอนุพันธ์ของ $2x$ ในเลขชี้กำลัง อนุพันธ์ของ $e^{2x}$ คือ $2e^{2x}$" }
+    solution: "$\\lim_{x\\to 0}\\frac{e^{2x}-1}{x}=\\lim_{x\\to 0}\\frac{2e^{2x}}{1}=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p005
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "เส้นกำกับแนวดิ่งของ $f(x)=\\frac{x+1}{x^2-4}$ อยู่ที่ใดบ้าง (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$x=-2$", correct: true }
+      - { id: b, text: "$x=-1$", feedback: "ที่ $x=-1$ ตัวเศษเป็นศูนย์ แต่ตัวส่วนไม่เป็นศูนย์ ฟังก์ชันจึงไม่มีเส้นกำกับแนวดิ่งที่นี่" }
+      - { id: c, text: "$x=2$", correct: true }
+      - { id: d, text: "$x=4$", feedback: "4 ไม่ใช่รากของตัวส่วน $x^2-4$" }
+    hints:
+      - "เส้นกำกับแนวดิ่งอยู่ที่รากของตัวส่วน ที่ตัวเศษไม่เป็นศูนย์ด้วย"
+      - "แก้สมการ $x^2-4=0$ แล้วตรวจตัวเศษที่แต่ละคำตอบ"
+    solution: "ตัวส่วนเป็นศูนย์เมื่อ $x=\\pm 2$ และตัวเศษ $x+1$ ไม่เป็นศูนย์ที่จุดเหล่านั้น จึงมีเส้นกำกับแนวดิ่ง $x=-2$ และ $x=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p006
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 3
+    type: numeric
+    stem: "กราฟของ $f(x)=\\frac{2x^2+3}{x}$ มีเส้นกำกับแนวเฉียง $y=mx+b$ จงหาค่า $m$ (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "ลองหารพหุนามตัวเศษด้วย $x$ ให้เหลือส่วนที่เป็นพหุนามกับเศษ"
+      - "พจน์ที่เหลือเป็น $\\frac{3}{x}$ ซึ่งเข้าใกล้ศูนย์เมื่อ $x$ ใหญ่"
+      - "สัมประสิทธิ์ของ $x$ ในส่วนที่เป็นพหุนามคือ $m$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือค่าคงที่ในตัวเศษ แต่ $\\frac{3}{x}$ เข้าใกล้ 0 จึงไม่มีผลต่อความชัน ความชันคือสัมประสิทธิ์ของ $x$ ซึ่งเป็น 2" }
+    solution: "$f(x)=\\frac{2x^2+3}{x}=2x+\\frac{3}{x}$ เมื่อ $x\\to\\pm\\infty$ พจน์ $\\frac{3}{x}\\to 0$ จึงได้เส้นกำกับ $y=2x$ ดังนั้น $m=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p007
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 3
+    type: mcq
+    stem: "ต้องการหา $\\lim_{x\\to 0^+}x\\ln x$ ด้วยกฎของโลปีตาล การจัดรูปแบบใดเท่ากับ $x\\ln x$ และเป็นรูป $\\frac{\\pm\\infty}{\\infty}$ เมื่อ $x\\to 0^+$"
+    choices:
+      - { id: a, text: "$\\frac{\\ln x}{1/x}$", correct: true }
+      - { id: b, text: "$\\frac{\\ln x}{x}$", feedback: "ผลหารนี้ไม่เท่ากับ $x\\ln x$ ตัวส่วนต้องเป็น $\\frac{1}{x}$ ไม่ใช่ $x$" }
+      - { id: c, text: "$\\frac{x}{\\ln x}$", feedback: "ผลหารนี้ไม่เท่ากับ $x\\ln x$ ถ้าจะให้ $\\ln x$ อยู่ตัวส่วนต้องเขียน $\\frac{x}{1/\\ln x}$" }
+      - { id: d, text: "$\\frac{x}{1/\\ln x}$", feedback: "รูปนี้เท่ากับ $x\\ln x$ จริง แต่เป็นรูป $\\frac{0}{0}$ และอนุพันธ์ของ $\\frac{1}{\\ln x}$ ยุ่งกว่ามาก การให้ $\\ln x$ อยู่ตัวเศษจะง่ายกว่า" }
+    hints:
+      - "เขียน $x$ ในรูปของส่วนกลับ คือ $x=\\frac{1}{1/x}$"
+      - "ตรวจว่าผลหารเท่ากับ $x\\ln x$ และดูว่าตัวเศษกับตัวส่วนเข้าใกล้อะไรเมื่อ $x\\to 0^+$"
+    solution: "$x\\ln x=\\frac{\\ln x}{1/x}$ เมื่อ $x\\to 0^+$ ตัวเศษ $\\ln x\\to-\\infty$ และตัวส่วน $\\frac{1}{x}\\to\\infty$ จึงเป็นรูป $\\frac{-\\infty}{\\infty}$ ใช้กฎของโลปีตาลได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p008
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to 0}\\frac{1-\\cos x}{x^2}$ (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.5, tolerance: 0.005 }
+    hints:
+      - "แทน $x=0$ ได้ $\\frac{0}{0}$ จึงใช้กฎของโลปีตาลได้"
+      - "อนุพันธ์ของ $1-\\cos x$ คือ $\\sin x$ โปรดสังเกตเครื่องหมาย"
+      - "ใช้กฎอีกครั้งถ้าได้ $\\frac{\\sin x}{2x}$ ซึ่งยังเป็น $\\frac{0}{0}$"
+    misconceptions:
+      - { match: -0.5, feedback: "เครื่องหมายผิด อนุพันธ์ของ $1-\\cos x$ คือ $\\sin x$ ซึ่งเป็นบวกเมื่อ $x$ เล็ก ผลลัพธ์จึงเป็นบวก" }
+    solution: "$\\lim_{x\\to 0}\\frac{1-\\cos x}{x^2}=\\lim_{x\\to 0}\\frac{\\sin x}{2x}=\\lim_{x\\to 0}\\frac{\\cos x}{2}=\\frac{1}{2}=0.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p009
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 3
+    type: numeric
+    stem: "โรงงานทำขนมไทยมีค่าใช้จ่ายคงที่รายวัน 5000 บาท และต้นทุนวัตถุดิบ 20 บาทต่อกล่อง ถ้าผลิต $x$ กล่อง ต้นทุนเฉลี่ยต่อกล่องคือ $\\frac{5000+20x}{x}$ บาท เมื่อผลิตมากขึ้นเรื่อย ๆ ต้นทุนเฉลี่ยต่อกล่องจะเข้าใกล้กี่บาท (ตอบจำนวนเต็ม)"
+    answer: { value: 20, tolerance: 0, unit: บาท }
+    hints:
+      - "ต้นทุนเฉลี่ยคือลิมิตเมื่อ $x\\to\\infty$ ของ $\\frac{5000+20x}{x}$"
+      - "แยกเป็น $\\frac{5000}{x}+20$ แล้วพิจารณาว่า $\\frac{5000}{x}$ เข้าใกล้อะไร"
+      - "เมื่อ $x$ ใหญ่มาก $\\frac{5000}{x}$ เข้าใกล้ 0"
+    misconceptions:
+      - { match: 5000, feedback: "5000 คือค่าใช้จ่ายคงที่รายวันทั้งหมด ซึ่งถูกหารด้วย $x$ จนเข้าใกล้ 0 เมื่อผลิตมาก ไม่ได้เป็นต้นทุนเฉลี่ยที่เข้าใกล้" }
+    solution: "$\\lim_{x\\to\\infty}\\frac{5000+20x}{x}=\\lim_{x\\to\\infty}\\left(\\frac{5000}{x}+20\\right)=20$ บาทต่อกล่อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p010
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to 0^+}x^x$ (ตอบจำนวนเต็ม)"
+    answer: { value: 1, tolerance: 0 }
+    hints:
+      - "รูปนี้เป็น $0^0$ ซึ่งยังบอกค่าไม่ได้ทันที"
+      - "ให้ $L=\\lim x^x$ แล้วเขียน $\\ln L=\\lim x\\ln x$"
+      - "ใช้ $x\\ln x=\\frac{\\ln x}{1/x}$ แล้วกฎของโลปีตาล"
+    misconceptions:
+      - { match: 0, feedback: "0 เกิดจากสรุปว่า $0^0=0$ โดยไม่วิเคราะห์ ความจริงคือ $x\\ln x\\to 0$ จึงได้ $e^0=1$" }
+    solution: "ให้ $L=\\lim_{x\\to 0^+}x^x$ จะได้ $\\ln L=\\lim_{x\\to 0^+}x\\ln x=\\lim_{x\\to 0^+}\\frac{\\ln x}{1/x}=\\lim_{x\\to 0^+}\\frac{1/x}{-1/x^2}=\\lim_{x\\to 0^+}(-x)=0$ ดังนั้น $L=e^0=1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p011
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 4
+    type: numeric
+    stem: "ฝากเงิน 1 บาท อัตราดอกเบี้ย 100% ต่อปี ถ้าทบต้น $n$ ครั้งต่อปี มูลค่าเมื่อครบปีคือ $\\left(1+\\frac{1}{n}\\right)^n$ บาท เมื่อทบต้นถี่ขึ้นเรื่อย ๆ มูลค่าเมื่อครบปีจะเข้าใกล้กี่บาท (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 2.7183, tolerance: 0.0001, unit: บาท }
+    hints:
+      - "ฐาน $1+\\frac{1}{n}$ เข้าใกล้ 1 และเลขชี้กำลัง $n$ เข้าใกล้อนันต์ จึงเป็นรูป $1^\\infty$"
+      - "ให้ $L$ เป็นลิมิต แล้วคิดลิมิตของ $\\ln L$ ซึ่งได้ $n\\ln\\left(1+\\frac{1}{n}\\right)$"
+      - "แทน $m=\\frac{1}{n}$ จะได้ $\\frac{\\ln(1+m)}{m}$ เมื่อ $m\\to 0$"
+    misconceptions:
+      - { match: 2, feedback: "2 คือมูลค่าเมื่อทบต้นปีละครั้ง $\\left(1+\\frac{1}{1}\\right)^1$ ไม่ใช่ค่าที่เข้าใกล้เมื่อทบต้นถี่ขึ้นเรื่อย ๆ" }
+    solution: "$\\ln L=\\lim_{n\\to\\infty}n\\ln\\left(1+\\frac{1}{n}\\right)=\\lim_{m\\to 0}\\frac{\\ln(1+m)}{m}=1$ จึงได้ $L=e\\approx 2.7183$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p012
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 4
+    type: text
+    stem: "เมื่อ $x\\to 0^+$ ลิมิต $\\lim_{x\\to 0^+}x\\ln x$ อยู่ในรูปแบบยังไม่กำหนดแบบใด (ตอบเป็นสัญลักษณ์แบบเดียวกับ $\\frac{0}{0}$ หรือ $1^\\infty$ ใช้ · แทนการคูณ)"
+    accepted: ["0·∞", "0*∞", "0×∞", "0∞", "0 x ∞", "0⋅∞", "0·(-∞)", "0·-∞", "0*inf", "∞·0"]
+    misconceptions:
+      - { match: "0/0", feedback: "0/0 ใช้เมื่อตัวเศษและตัวส่วนเข้าสู่ศูนย์พร้อมกัน ที่นี่ $\\ln x$ ไปเป็น $-\\infty$ จึงไม่ใช่ 0/0" }
+      - { match: "∞/∞", feedback: "∞/∞ ต้องเป็นเศษส่วนที่ตัวเศษและตัวส่วนไปเป็นอนันต์ ที่นี่เป็นผลคูณของ $x$ ที่เข้าใกล้ศูนย์กับ $\\ln x$ ที่เข้าใกล้อนันต์" }
+    hints:
+      - "สังเกตว่าลิมิตนี้เป็นผลคูณของสองพจน์ พจน์แรกเข้าใกล้อะไร และพจน์ที่สองเข้าใกล้อะไร"
+      - "ผลคูณของสองพจน์ที่ฝั่งหนึ่งเข้าใกล้ศูนย์และอีกฝั่งเข้าใกล้อนันต์"
+    solution: "$x\\to 0^+$ ทำให้ $x\\to 0$ และ $\\ln x\\to -\\infty$ จึงเป็นผลคูณของศูนย์กับอนันต์ คือรูป $0\\cdot\\infty$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p013
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to 0}\\frac{x-\\sin x}{x^3}$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.1667, tolerance: 0.0001 }
+    hints:
+      - "แทน $x=0$ ได้ $\\frac{0}{0}$ จึงใช้กฎของโลปีตาลได้ และอาจต้องใช้ซ้ำหลายครั้ง"
+      - "อนุพันธ์ของ $x^3$ คือ $3x^2$ ควรเก็บตัวประกอบ $3$ ไว้ให้ครบ"
+      - "ครั้งที่สองยังได้ $\\frac{\\sin x}{6x}$ ซึ่งยังเป็น $\\frac{0}{0}$"
+    misconceptions:
+      - { match: 0.5, feedback: "0.5 เกิดจากลืมหารด้วย 3 ซึ่งมาจากอนุพันธ์ของ $x^3$ คือ $3x^2$ ทำให้ได้ค่าของ $\\frac{1-\\cos x}{x^2}$ แทน" }
+    solution: "$\\lim_{x\\to 0}\\frac{1-\\cos x}{3x^2}=\\lim_{x\\to 0}\\frac{\\sin x}{6x}=\\lim_{x\\to 0}\\frac{\\cos x}{6}=\\frac{1}{6}\\approx 0.1667$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p014
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดใช้กฎของโลปีตาลได้ถูกต้อง"
+    choices:
+      - { id: a, text: "$\\lim_{x\\to 2}\\frac{x^2-4}{x-2}$ เป็นรูป $\\frac{0}{0}$ จึงใช้กฎได้ ได้ค่า 4", correct: true }
+      - { id: b, text: "$\\lim_{x\\to 0}\\frac{x+1}{x^2+1}$ ใช้กฎได้เพราะมี $x$ อยู่ในตัวเศษ", feedback: "แทน $x=0$ ได้ $\\frac{1}{1}=1$ โดยตรง ไม่ใช่รูปไม่กำหนด การใช้กฎผิดเงื่อนไขและทำให้ได้คำตอบผิด" }
+      - { id: c, text: "$\\lim_{x\\to 0^+}\\frac{\\cos x}{x}$ ใช้กฎได้เพราะเป็นเศษส่วน", feedback: "แทนค่าได้ $\\frac{1}{0}$ ซึ่งไม่ใช่รูป $\\frac{0}{0}$ หรือ $\\frac{\\infty}{\\infty}$ ลิมิตเป็นอนันต์ การใช้กฎจะให้ผลลัพธ์ผิด" }
+    hints:
+      - "ตรวจก่อนว่าแทนค่าแล้วได้รูป $\\frac{0}{0}$ หรือ $\\frac{\\pm\\infty}{\\pm\\infty}$ หรือไม่"
+      - "ถ้าตัวส่วนเข้าสู่ศูนย์แต่ตัวเศษไม่เข้าสู่ศูนย์ กฎของโลปีตาลใช้ไม่ได้"
+    solution: "$\\lim_{x\\to 2}\\frac{x^2-4}{x-2}$ เป็นรูป $\\frac{0}{0}$ จึงใช้กฎได้ และ $\\lim_{x\\to 2}\\frac{2x}{1}=4$ ส่วน $\\frac{x+1}{x^2+1}$ ที่ $x\\to 0$ และ $\\frac{\\cos x}{x}$ ที่ $x\\to 0^+$ ไม่เป็นรูปไม่กำหนดตั้งแต่แรก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p015
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to\\infty}x\\sin\\left(\\frac{1}{x}\\right)$ (ตอบจำนวนเต็ม)"
+    answer: { value: 1, tolerance: 0 }
+    hints:
+      - "ให้ $t=\\frac{1}{x}$ เมื่อ $x\\to\\infty$ จะได้ $t\\to 0^+$"
+      - "เขียน $x\\sin\\left(\\frac{1}{x}\\right)$ ในรูป $\\frac{\\sin t}{t}$"
+      - "ใช้กฎของโลปีตาลกับ $\\frac{\\sin t}{t}$ เมื่อ $t\\to 0$"
+    misconceptions:
+      - { match: 0, feedback: "0 เกิดจากสรุปว่า $\\infty\\cdot 0$ เป็น 0 โดยไม่วิเคราะห์ ให้เปลี่ยนตัวแปรเป็น $t=\\frac{1}{x}$ แล้วใช้ $\\frac{\\sin t}{t}$" }
+    solution: "ให้ $t=\\frac{1}{x}$ จะได้ $\\lim_{x\\to\\infty}x\\sin\\frac{1}{x}=\\lim_{t\\to 0^+}\\frac{\\sin t}{t}=\\lim_{t\\to 0^+}\\frac{\\cos t}{1}=1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p016
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\lim_{x\\to 0}\\left(\\frac{1}{x}-\\frac{1}{e^x-1}\\right)$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.5, tolerance: 0.0001 }
+    hints:
+      - "รวมเศษส่วนให้เป็นก้อนเดียว จะได้รูป $\\frac{0}{0}$"
+      - "ตัวส่วนรวมคือ $x(e^x-1)$ ซึ่งเข้าใกล้ศูนย์เร็วกว่า $x$ เพียงอย่างเดียว"
+      - "หลังรวมแล้วใช้กฎของโลปีตาลได้สองครั้ง"
+    misconceptions:
+      - { match: -0.5, feedback: "เครื่องหมายผิด เมื่อ $x$ เล็กมาก $\\frac{1}{e^x-1}\\approx\\frac{1}{x}-\\frac{1}{2}$ ผลต่างจึงเข้าใกล้ $+\\frac{1}{2}$" }
+    solution: "$\\frac{1}{x}-\\frac{1}{e^x-1}=\\frac{e^x-1-x}{x(e^x-1)}$ เป็นรูป $\\frac{0}{0}$ ครั้งแรกได้ $\\frac{e^x-1}{e^x+xe^x-1}$ ยังเป็น $\\frac{0}{0}$ ครั้งที่สองได้ $\\frac{e^x}{2e^x+xe^x}$ จึงได้ $\\lim_{x\\to 0}=\\frac{1}{2}=0.5$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p017
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เมื่อ $x\\to\\infty$ ข้อใดถูกต้องเกี่ยวกับอัตราการโต (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "$\\ln x$ โตช้ากว่า $x$", correct: true }
+      - { id: b, text: "$x^2$ โตเร็วกว่า $e^x$", feedback: "$e^x$ โตเร็วกว่าพหุนามทุกดีกรี ดังนั้น $e^x$ จะแซง $x^2$ ในที่สุด" }
+      - { id: c, text: "$\\sqrt{x}$ โตเร็วกว่า $\\ln x$", correct: true }
+      - { id: d, text: "$e^x$ โตช้ากว่า $x^{100}$", feedback: "ในช่วงแรก $x^{100}$ อาจใหญ่กว่า แต่ในที่สุด $e^x$ จะแซงหน้า $x^{100}$ เสมอ" }
+    hints:
+      - "เปรียบเทียบด้วยลิมิตของอัตราส่วน เช่น $\\lim\\frac{x^2}{e^x}$"
+      - "ลำดับที่จำได้คือ $\\ln x$ ก่อน แล้วพหุนาม แล้วเลขชี้กำลัง"
+    solution: "ลำดับการโตคือ $\\ln x \\ll \\sqrt{x} \\ll x \\ll e^x$ จึงถูกคือ $\\ln x$ โตช้ากว่า $x$ และ $\\sqrt{x}$ โตเร็วกว่า $\\ln x$ ส่วน $e^x$ โตเร็วกว่าทั้ง $x^2$ และ $x^{100}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.lhopital-asymptotes.p018
+    topics: [math.calculus.lhopital-asymptotes]
+    difficulty: 2
+    type: numeric
+    stem: "ค่าโทรศัพท์รายเดือนแบบเหมาจ่ายคือ 300 บาท และคิดค่าโทรเพิ่มนาทีละ 2 บาท ถ้าโทรรวม $t$ นาที ค่าโทรเฉลี่ยต่อนาทีคือ $\\frac{300+2t}{t}$ บาท เมื่อโทรนานมากขึ้นเรื่อย ๆ ค่าโทรเฉลี่ยต่อนาทีจะเข้าใกล้กี่บาท (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0, unit: บาท }
+    hints:
+      - "ลองแยก $\\frac{300+2t}{t}$ เป็นผลรวมของสองพจน์"
+      - "พจน์ $\\frac{300}{t}$ เข้าใกล้ค่าอะไรเมื่อ $t$ ใหญ่มาก"
+    misconceptions:
+      - { match: 300, feedback: "300 คือค่าเหมาจ่ายรายเดือน ซึ่งถูกหารด้วย $t$ จนเข้าใกล้ 0 เมื่อโทรนานมาก จึงไม่ใช่ค่าที่เข้าใกล้" }
+    solution: "$\\lim_{t\\to\\infty}\\frac{300+2t}{t}=\\lim_{t\\to\\infty}\\left(\\frac{300}{t}+2\\right)=2$ บาทต่อนาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

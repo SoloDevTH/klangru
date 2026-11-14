@@ -1,0 +1,70 @@
+id: math.calculus.quadric-surfaces
+subject: math
+title: { th: พื้นผิวกำลังสอง พิกัดทรงกระบอก และพิกัดทรงกลม, en: Quadric surfaces, cylindrical and spherical coordinates }
+summary: จำแนกพื้นผิวกำลังสองทั้งหกชนิดจากสมการ ใช้รอยตัดเพื่อมองรูปร่าง และแปลงจุดระหว่างพิกัดฉาก ทรงกระบอก และทรงกลม
+difficulty: 7.5
+minutes: 40
+prerequisites: [math.calculus.vectors-3d, math.geometry.conic-sections]
+encompasses:
+  - { id: math.calculus.vectors-3d, weight: 0.4 }
+  - { id: math.geometry.conic-sections, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: spherical-coords.svg
+    alt: "ภาพสามมิติฉายบนระนาบ แสดงแกน x แกน y และแกน z จากจุดกำเนิด จุด P อยู่ไกลจากจุดกำเนิดตามเส้น ρ ทำมุม φ กับแกน z และมุม θ วัดรอบแกน z จากแกน x"
+    caption: "ระยะ $\\rho$ มุม $\\theta$ บนระนาบ $xy$ และมุม $\\varphi$ ที่วัดจากแกน $z$ ลงมาถึงเส้น $OP$"
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ตัดด้วยระนาบ y เท่ากับ a แล้วได้พาราโบลาเลื่อนขึ้นลง
+    caption: "พื้นผิว z เท่ากับ x กำลังสองลบ y กำลังสอง เมื่อตัดด้วยระนาบ y เท่ากับ a จะได้ z เท่ากับ x กำลังสองลบ a กำลังสอง ลองเลื่อนแถบเลื่อน a ดูว่ารอยตัดเลื่อนขึ้นลง"
+    widget:
+      kind: function-plot
+      functions: ["x^2 - a^2"]
+      sliders:
+        - { name: a, min: 0, max: 2, step: 0.25, value: 1, label: ระนาบ y เท่ากับ a }
+      x: [-3, 3]
+      y: [-3, 5]
+  - type: worked-example
+    title: ระบุชนิดของ z เท่ากับ x กำลังสองลบ y กำลังสอง
+    problem: "จงระบุชนิดของพื้นผิว $z=x^2-y^2$ และอธิบายรอยตัดที่ $y=0$ กับ $z=0$"
+    steps:
+      - text: "สมการมีพจน์เชิงเส้น $z$ ตัวเดียว จึงเป็นพาราโบลอยด์ และมีพจน์กำลังสองที่มีเครื่องหมายต่างกัน คือ $+x^2$ กับ $-y^2$"
+        why: "พจน์เชิงเส้นบอกว่าเป็นพาราโบลอยด์ ส่วนเครื่องหมายต่างกันบอกว่ารูปเป็นอานม้า"
+      - text: "ที่ $y=0$ ได้ $z=x^2$ ซึ่งเป็นพาราโบลาเปิดขึ้น"
+        why: "แทน $y=0$ ทำให้พจน์ $y^2$ หายไป"
+      - text: "ที่ $z=0$ ได้ $x^2-y^2=0$ จึงเป็น $y=x$ และ $y=-x$ ซึ่งเป็นเส้นตรงคู่ตัดกันที่จุดกำเนิด"
+        why: "การแยกตัวประกอบ $x^2-y^2=(x-y)(x+y)$ ทำให้เห็นเส้นตรงสองเส้น"
+    answer: "เป็นพาราโบลอยด์ไฮเพอร์โบลิก (รูปอานม้า) รอยตัด $y=0$ เป็นพาราโบลา และรอยตัด $z=0$ เป็นเส้นตรงคู่"
+  - { type: check, problem: math.calculus.quadric-surfaces.p002, prompt: "ลองนับเครื่องหมายลบและดูด้านขวาของสมการ" }
+  - type: worked-example
+    title: แปลงจุดระหว่างพิกัดฉาก ทรงกระบอก และทรงกลม
+    problem: "จงหาพิกัดทรงกลมและพิกัดทรงกระบอกของจุด $(x,y,z)=(\\sqrt{3},1,2)$"
+    steps:
+      - text: "หาระยะจากจุดกำเนิด $\\rho=\\sqrt{x^2+y^2+z^2}=\\sqrt{3+1+4}=2\\sqrt{2}$"
+        why: "ระยะทางในสามมิติคือรากของผลบวกกำลังสองของพิกัดทั้งสาม"
+      - text: "จาก $\\cos\\varphi=\\frac{z}{\\rho}=\\frac{2}{2\\sqrt{2}}=\\frac{1}{\\sqrt{2}}$ ได้ $\\varphi=\\frac{\\pi}{4}$ และจาก $\\tan\\theta=\\frac{y}{x}=\\frac{1}{\\sqrt{3}}$ ได้ $\\theta=\\frac{\\pi}{6}$"
+        why: "$\\varphi$ วัดจากแกน $z$ ลงมา จึงใช้ $\\cos\\varphi$ และ $\\theta$ ใช้ $\\tan$ ของอัตราส่วน $y$ ต่อ $x$"
+      - text: "ในพิกัดทรงกระบอก $r=\\sqrt{x^2+y^2}=\\sqrt{4}=2$ และ $z=2$ จึงได้ $(r,\\theta,z)=(2,\\frac{\\pi}{6},2)$"
+        why: "พิกัด $z$ ไม่เปลี่ยนเมื่อเปลี่ยนจากพิกัดฉากเป็นทรงกระบอก"
+    answer: "ทรงกลม $(\\rho,\\theta,\\varphi)=\\left(2\\sqrt{2},\\frac{\\pi}{6},\\frac{\\pi}{4}\\right)$ และทรงกระบอก $(r,\\theta,z)=\\left(2,\\frac{\\pi}{6},2\\right)$"
+  - { type: check, problem: math.calculus.quadric-surfaces.p004, prompt: "ในพิกัดทรงกระบอก ค่า $z$ เปลี่ยนไหม" }
+glossary:
+  - { term: พื้นผิวกำลังสอง, definition: "พื้นผิวสามมิติที่สมการมีพจน์กำลังสองของ $x$, $y$, $z$ และอาจมีพจน์เชิงเส้นตัวหนึ่ง มีหกชนิดหลัก" }
+  - { term: รอยตัด (trace), definition: "เส้นโค้งที่ได้จากการตัดพื้นผิวด้วยระนาบ เช่น $z=k$ ใช้ดูรูปร่างของพื้นผิว" }
+  - { term: พิกัดทรงกระบอก, definition: "ระบบพิกัด $(r,\\theta,z)$ โดย $x=r\\cos\\theta$, $y=r\\sin\\theta$ และ $z$ เหมือนพิกัดฉาก เหมาะกับพื้นผิวที่สมมาตรรอบแกน $z$" }
+  - { term: พิกัดทรงกลม, definition: "ระบบพิกัด $(\\rho,\\theta,\\varphi)$ โดย $\\rho$ คือระยะจากจุดกำเนิด เหมาะกับพื้นผิวที่สมมาตรรอบจุดกำเนิด" }
+flashcards:
+  - { front: "พื้นผิวที่สมการมีเครื่องหมายลบหนึ่งตัวและด้านขวาเป็น 1", back: "ไฮเพอร์โบลอยด์หนึ่งแผ่น" }
+  - { front: "พิกัดทรงกระบอกของ $x^2+y^2$", back: "$r^2$ โดย $x=r\\cos\\theta$ และ $y=r\\sin\\theta$" }
+  - { front: "พิกัดทรงกลมของ $x^2+y^2+z^2$", back: "$\\rho^2$ และ $z=\\rho\\cos\\varphi$" }
+  - { front: "รอยตัดของ $z=x^2+y^2$ ที่ $z=k$", back: "วงกลมรัศมี $\\sqrt{k}$ เมื่อ $k>0$" }
+references:
+  - { title: "Quadric", url: "https://en.wikipedia.org/wiki/Quadric", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Cylindrical coordinate system", url: "https://en.wikipedia.org/wiki/Cylindrical_coordinate_system", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Spherical coordinate system", url: "https://en.wikipedia.org/wiki/Spherical_coordinate_system", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.6 Quadric Surfaces (Calculus Volume 3, OpenStax)", url: "https://openstax.org/books/calculus-volume-3/pages/2-6-quadric-surfaces", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

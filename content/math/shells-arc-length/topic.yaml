@@ -1,0 +1,73 @@
+id: math.calculus.shells-arc-length
+subject: math
+title: { th: วิธีเปลือกทรงกระบอก ความยาวส่วนโค้ง และพื้นที่ผิวจากการหมุน, en: Cylindrical shells, arc length and surface area of revolution }
+summary: คำนวณปริมาตรของทรงตันด้วยวิธีเปลือกทรงกระบอก หาความยาวส่วนโค้งของเส้นโค้ง และหาพื้นที่ผิวจากการหมุนรอบแกน
+difficulty: 8
+minutes: 40
+prerequisites: [math.calculus.integral-applications]
+encompasses:
+  - { id: math.calculus.integral-applications, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: shell-method.svg
+    alt: "บริเวณใต้เส้นโค้ง y เท่ากับ x กำลังสอง บนช่วง x ตั้งแต่ 0 ถึง 2 มีแถบสีส้มแนวตั้งที่ x ประมาณ 1.4 ซึ่งมีความสูงเท่ากับ f ของ x เมื่อหมุนรอบแกน y แถบนี้จะกลายเป็นเปลือกทรงกระบอก"
+    caption: "แถบแนวตั้งที่ตำแหน่ง $x$ หมุนรอบแกน $y$ ได้เปลือกทรงกระบอกรัศมี $x$ สูง $f(x)$ หนา $dx$"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: arc-chords.svg
+    alt: "เส้นโค้ง y เท่ากับ x กำลังสองหารสอง บนช่วง x ตั้งแต่ 0 ถึง 2 มีเส้นตรงสีส้มสี่ช่วงเชื่อมจุดบนเส้นโค้งที่ x เท่ากับ 0, 0.5, 1, 1.5 และ 2 เส้นตรงทั้งสี่เกาะเส้นโค้งใกล้มาก"
+    caption: "ยิ่งแบ่งช่วงละเอียดเท่าไร ผลรวมความยาวของเส้นตรงเล็ก ๆ ก็ยิ่งเข้าใกล้ความยาวของเส้นโค้งจริง"
+  - type: interactive
+    title: ความยาวส่วนโค้งของ y เท่ากับ a x กำลังสองหารสอง
+    caption: "ถ้า $y=\\frac{a}{2}x^2$ จะได้ $f'(x)=ax$ ดังนั้นตัวถูกอินทิเกรตของความยาวส่วนโค้งคือ $\\sqrt{1+a^2x^2}$ ลองเลื่อนค่า a ดูว่ากราฟเปลี่ยนอย่างไร"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{1 + a^2 x^2}"]
+      sliders:
+        - { name: a, min: 0, max: 3, step: 0.5, value: 1, label: ค่า a }
+      x: [0, 2]
+      y: [0, 4]
+  - type: worked-example
+    title: หาความยาวส่วนโค้งของเส้นโค้งกำลังสามครึ่ง
+    problem: "จงหาความยาวของเส้นโค้ง $y=\\frac{2}{3}x^{3/2}$ เมื่อ $0\\le x\\le 3$"
+    steps:
+      - text: "หาอนุพันธ์ $f'(x)=x^{1/2}$ จึงได้ $1+(f'(x))^2=1+x$"
+        why: "ตัวถูกอินทิเกรตต้องใช้ $\\left(f'(x)\\right)^2$ ซึ่งยกกำลังสองจะตัดรากออกได้"
+      - text: "ใช้สูตร $L=\\int_0^3\\sqrt{1+x}\\,dx$"
+        why: "สูตรความยาวส่วนโค้งมี $\\sqrt{1+(f')^2}$ อยู่ภายในปริพันธ์"
+      - text: "หาปริพันธ์ $\\left[\\frac{2}{3}(1+x)^{3/2}\\right]_0^3=\\frac{2}{3}(8-1)=\\frac{14}{3}$"
+        why: "$(1+3)^{3/2}=8$ และ $(1+0)^{3/2}=1$"
+    answer: "ความยาวส่วนโค้งเท่ากับ $\\frac{14}{3}$ หน่วย"
+  - { type: check, problem: math.calculus.shells-arc-length.p002, prompt: "ลองนึกว่าสูตรความยาวส่วนโค้งมีรากที่สองอยู่ตรงไหน" }
+  - type: worked-example
+    title: ปริมาตรของทรงตันจากการหมุนด้วยวิธีเปลือก
+    problem: "หมุนบริเวณใต้เส้นโค้ง $y=x$ บนช่วง $0\\le x\\le 2$ รอบแกน $y$ จงหาปริมาตร"
+    steps:
+      - text: "รัศมีของเปลือกที่ตำแหน่ง $x$ คือ $x$ และความสูงคือ $f(x)=x$"
+        why: "แกนหมุนคือแกน $y$ จึงวัดรัศมีจากแกน $y$ ไปหาตำแหน่ง $x$"
+      - text: "ได้ $V=\\int_0^2 2\\pi x\\cdot x\\,dx=2\\pi\\int_0^2 x^2\\,dx$"
+        why: "วางค่าในสูตร $V=\\int 2\\pi x f(x)\\,dx$"
+      - text: "$2\\pi\\left[\\frac{x^3}{3}\\right]_0^2=2\\pi\\cdot\\frac{8}{3}=\\frac{16\\pi}{3}$"
+        why: "อินทิเกรต $x^2$ ได้ $\\frac{x^3}{3}$"
+    answer: "ปริมาตรเท่ากับ $\\frac{16\\pi}{3}$ ลูกบาศก์หน่วย"
+  - { type: check, problem: math.calculus.shells-arc-length.p004, prompt: "อินทิเกรตนี้มีรากที่สองอยู่ ลองจัดรูปให้เป็นกำลังสองที่ถอดรากได้" }
+glossary:
+  - { term: วิธีเปลือกทรงกระบอก, definition: "วิธีหาปริมาตรของทรงตันที่หมุนจากแถบแนวตั้ง โดยแต่ละแถบกลายเป็นเปลือกทรงกระบอกรัศมี $x$ และปริมาตร $2\\pi x f(x)\\,dx$" }
+  - { term: ความยาวส่วนโค้ง, definition: "ความยาวของเส้นโค้งระหว่างสองจุด คำนวณได้จาก $\\int\\sqrt{1+(f')^2}\\,dx$" }
+  - { term: พื้นที่ผิวจากการหมุน, definition: "พื้นที่ของผิวที่เกิดจากการหมุนเส้นโค้งรอบแกน คำนวณด้วย $\\int 2\\pi f\\sqrt{1+(f')^2}\\,dx$" }
+  - { term: กฎของซิมป์สัน, definition: "วิธีประมาณค่าปริพันธ์จำกัดเขตโดยใช้พาราโบลาต่อช่วงย่อยสองช่วงติดกัน ให้ความแม่นยำสูงเมื่อแบ่งช่วงย่อยพอเหมาะ" }
+flashcards:
+  - { front: "สูตรปริมาตรด้วยวิธีเปลือกเมื่อหมุนรอบแกน y", back: "$V=\\int_a^b 2\\pi x\\,f(x)\\,dx$" }
+  - { front: "สูตรความยาวส่วนโค้งของ $y=f(x)$", back: "$L=\\int_a^b\\sqrt{1+(f'(x))^2}\\,dx$" }
+  - { front: "สูตรพื้นที่ผิวจากการหมุน $y=f(x)$ รอบแกน x", back: "$S=\\int_a^b 2\\pi f(x)\\sqrt{1+(f'(x))^2}\\,dx$" }
+  - { front: "ความยาวส่วนโค้งเมื่อกำหนด $x=g(y)$", back: "$L=\\int_c^d\\sqrt{1+(g'(y))^2}\\,dy$" }
+references:
+  - { title: "Shell integration", url: "https://en.wikipedia.org/wiki/Shell_integration", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Arc length", url: "https://en.wikipedia.org/wiki/Arc_length", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.3 Volumes of Revolution: Cylindrical Shells (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/6-3-volumes-of-revolution-cylindrical-shells", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "6.4 Arc Length of a Curve and Surface Area (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/6-4-arc-length-of-a-curve-and-surface-area", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

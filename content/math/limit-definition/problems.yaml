@@ -1,0 +1,293 @@
+problems:
+  - id: math.calculus.limit-definition.p001
+    topics: [math.calculus.limit-definition]
+    difficulty: 1
+    type: numeric
+    stem: "ช่างไฟฟ้าตั้งเครื่องตัดสายไฟที่ค่า $x$ แล้วได้ความยาวที่ตัด $f(x)=3x-1$ เซนติเมตร ต้องการให้ความยาวอยู่ห่างจาก 5 เซนติเมตรไม่เกิน $\\varepsilon=0.06$ เซนติเมตร จงหา $\\delta$ ที่มากที่สุดซึ่งทำให้ $0<|x-2|<\\delta$ ได้ $|f(x)-5|<0.06$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.02, tolerance: 0.0001 }
+    hints:
+      - "เขียน $|f(x)-5|$ ให้อยู่ในรูปของ $|x-2|$ ก่อน"
+      - "$|3x-1-5|=|3x-6|=3|x-2|$"
+      - "หา $|x-2|$ ที่ทำให้ $3|x-2|<0.06$"
+    misconceptions:
+      - { match: 0.06, feedback: "0.06 คือค่า $\\varepsilon$ ตรง ๆ แต่ยังไม่ได้หารด้วยตัวคูณ 3 ที่หน้า $|x-2|$" }
+    solution: "$|f(x)-5|=3|x-2|<0.06$ เทียบเท่ากับ $|x-2|<0.02$ จึงเลือก $\\delta=0.02$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p002
+    topics: [math.calculus.limit-definition]
+    difficulty: 1
+    type: mcq
+    stem: "ในนิยามเอปไซลอน–เดลตาของลิมิต ค่าใดคือความคลาดเคลื่อนที่ยอมรับได้ของ $f(x)$ จากค่า $L$"
+    choices:
+      - { id: a, text: "$\\delta$", feedback: "$\\delta$ คือระยะที่ $x$ ต้องอยู่ใกล้จุด $a$ ไม่ใช่ความคลาดเคลื่อนของค่าฟังก์ชัน" }
+      - { id: b, text: "$\\varepsilon$", correct: true }
+      - { id: c, text: "$L$", feedback: "$L$ คือค่าลิมิตที่ต้องการ ไม่ใช่ความคลาดเคลื่อน" }
+      - { id: d, text: "$a$", feedback: "$a$ คือจุดที่ $x$ เข้าใกล้ ไม่ใช่ค่าที่วัดความคลาดเคลื่อน" }
+    hints:
+      - "ค่านี้วัดระยะของ $f(x)$ จาก $L$ ไม่ใช่ระยะของ $x$ จาก $a$"
+      - "ใช้สัญลักษณ์ที่มักคู่กับ $\\delta$ ในนิยาม"
+    solution: "นิยามกำหนดว่า $|f(x)-L|<\\varepsilon$ จึง $\\varepsilon$ คือความคลาดเคลื่อนของค่าฟังก์ชัน ส่วน $\\delta$ คือระยะของ $x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p003
+    topics: [math.calculus.limit-definition]
+    difficulty: 2
+    type: numeric
+    stem: "ถังพักน้ำของระบบประปาหมู่บ้านมีระดับน้ำ $f(x)=5-4x$ เซนติเมตร เมื่อปรับวาล์วไปที่ตำแหน่ง $x$ ต้องการให้ระดับน้ำใกล้ 1 เซนติเมตร โดยคลาดเคลื่อนไม่เกิน $\\varepsilon=0.2$ เซนติเมตร จงหาระยะ $\\delta$ ที่มากที่สุดที่ $x$ อยู่ห่างจาก 1 ได้ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.05, tolerance: 0.0001 }
+    hints:
+      - "$|f(x)-1|=|4-4x|=4|x-1|$"
+      - "ต้องการให้ $4|x-1|<0.2$"
+      - "หารทั้งสองข้างด้วย 4 เพื่อหาระยะ $|x-1|$"
+    misconceptions:
+      - { match: 0.2, feedback: "0.2 คือค่า $\\varepsilon$ ตรง ๆ แต่ตัวคูณ 4 ของ $|x-1|$ ทำให้ $\\delta$ ต้องเล็กกว่า" }
+    solution: "$|f(x)-1|=4|x-1|<0.2$ เทียบเท่ากับ $|x-1|<0.05$ จึงเลือก $\\delta=0.05$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p004
+    topics: [math.calculus.limit-definition]
+    difficulty: 2
+    type: numeric
+    stem: "พิสูจน์ $\\lim_{x\\to 2}x^2=4$ ด้วยวิธีในบทเรียน คือจำกัด $|x-2|<1$ ก่อน หาขอบบน $M$ ของ $|x+2|$ แล้วเลือก $\\delta=\\min\\left(1,\\frac{\\varepsilon}{M}\\right)$ เมื่อ $\\varepsilon=0.5$ จะได้ $\\delta$ เท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.1, tolerance: 0.0001 }
+    hints:
+      - "แยกตัวประกอบ $|x^2-4|=|x-2|\\,|x+2|$"
+      - "จำกัด $|x-2|<1$ แล้วจะได้ $|x+2|<5$"
+      - "ต้องการ $5|x-2|<0.5$"
+    misconceptions:
+      - { match: 0.125, feedback: "0.125 คือ $\\frac{\\varepsilon}{4}$ ซึ่งใช้ค่า $|x+2|=4$ ที่ $x=2$ เท่านั้น แต่ขอบบนของ $|x+2|$ บนช่วง $(1,3)$ คือ 5 จึงต้องใช้ $M=5$ (การเดาด้วยค่าที่จุดเดียวไม่ใช่การพิสูจน์)" }
+    solution: "$|x^2-4|<5|x-2|<0.5$ เมื่อ $|x-2|<0.1$ จึงเลือก $\\delta=\\min\\left(1,\\frac{0.5}{5}\\right)=0.1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p005
+    topics: [math.calculus.limit-definition]
+    difficulty: 2
+    type: mcq
+    stem: "ถ้า $|x-2|<1$ ข้อใดเป็นจริงเสมอ"
+    choices:
+      - { id: a, text: "$|x+2|<5$", correct: true }
+      - { id: b, text: "$|x+2|<3$", feedback: "เมื่อ $x$ อยู่ใกล้ 3 ค่า $x+2$ ใกล้ 5 จึงเกิน 3" }
+      - { id: c, text: "$|x+2|<4$", feedback: "ที่ $x=2.9$ ค่า $x+2=4.9$ ซึ่งเกิน 4" }
+      - { id: d, text: "$|x+2|<1$", feedback: "เมื่อ $x$ อยู่ใกล้ 2 ค่า $x+2$ อยู่ใกล้ 4 ไม่ใช่ใกล้ 0" }
+    hints:
+      - "เขียน $|x-2|<1$ เป็นช่วง $1<x<3$"
+      - "บวก 2 ทุกด้านแล้วดูช่วงของ $x+2$"
+    solution: "เมื่อ $1<x<3$ จะได้ $3<x+2<5$ จึงได้ $|x+2|<5$ เสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p006
+    topics: [math.calculus.limit-definition]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาค่า $\\delta$ ที่มากที่สุดสำหรับ $\\lim_{x\\to 0}(x^3+1)=1$ เมื่อ $\\varepsilon=0.008$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.2, tolerance: 0.0001 }
+    hints:
+      - "$|f(x)-1|=|x^3|=|x|^3$"
+      - "ต้องการ $|x|^3<0.008$"
+      - "ถอดรากที่สามของ $0.008$"
+    misconceptions:
+      - { match: 0.004, feedback: "0.004 คือ $\\frac{\\varepsilon}{2}$ ซึ่งผิด เพราะ $|x|^3<\\varepsilon$ ต้องถอดรากที่สามไม่ใช่หารสอง" }
+    solution: "$|x|^3<0.008$ เทียบเท่ากับ $|x|<\\sqrt[3]{0.008}=0.2$ จึงเลือก $\\delta=0.2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p007
+    topics: [math.calculus.limit-definition]
+    difficulty: 3
+    type: mcq
+    stem: "ในนิยามเอปไซลอน–เดลตา ค่า $\\delta$ ที่หาได้ขึ้นกับอะไร"
+    choices:
+      - { id: a, text: "ค่า $\\varepsilon$ และฟังก์ชัน $f$ ที่ศึกษา แต่ไม่ขึ้นกับตำแหน่ง $x$ ที่เลือกในย่าน", correct: true }
+      - { id: b, text: "ค่า $x$ ที่เลือกเพียงค่าเดียว", feedback: "$\\delta$ ต้องใช้ได้กับทุก $x$ ในย่าน ไม่ใช่เฉพาะจุดเดียว" }
+      - { id: c, text: "ค่า $L$ เท่านั้น", feedback: "$L$ เป็นค่าที่ฟังก์ชันเข้าใกล้ แต่ไม่ได้กำหนด $\\delta$ เพียงลำพัง" }
+      - { id: d, text: "ไม่ขึ้นกับอะไรเลย เป็นค่าเท่าไรก็ได้", feedback: "$\\delta$ ต้องเล็กพอให้ $|f(x)-L|<\\varepsilon$ จึงขึ้นกับ $\\varepsilon$ และฟังก์ชัน" }
+    hints:
+      - "$\\delta$ ต้องทำให้ทุก $x$ ที่ $0<|x-a|<\\delta$ ได้ผลตามเงื่อนไข"
+      - "ลองนึกว่าถ้าเปลี่ยน $\\varepsilon$ ให้เล็กลง $\\delta$ จะเปลี่ยนไปอย่างไร"
+    solution: "$\\delta$ ต้องทำให้ทุก $x$ ที่อยู่ในระยะนั้นได้ $|f(x)-L|<\\varepsilon$ จึงขึ้นกับ $\\varepsilon$ และฟังก์ชัน แต่ไม่ขึ้นกับจุด $x$ ที่เลือก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p008
+    topics: [math.calculus.limit-definition]
+    difficulty: 3
+    type: expression
+    stem: "จงเขียน $3x-6$ ในรูปผลคูณของตัวประกอบ (ตอบเป็นนิพจน์)"
+    answer: { latex: "3\\cdot(x-2)", variables: [x] }
+    factored: true
+    misconceptions:
+      - { match: "3\\cdot(x+2)", feedback: "เครื่องหมายในวงเล็บผิด $3x-6=3(x-2)$" }
+    hints:
+      - "หาตัวร่วมที่มากที่สุดของ $3x$ และ $6$"
+      - "ตัวร่วมนั้นคือ 3"
+    solution: "$3x-6=3(x-2)$ ดังนั้น $|3x-6|=3|x-2|$ ซึ่งใช้หา $\\delta$ ได้โดยตรง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p009
+    topics: [math.calculus.limit-definition]
+    difficulty: 4
+    type: numeric
+    stem: "พิสูจน์ $\\lim_{x\\to 1}x^3=1$ โดยจำกัด $|x-1|<1$ ก่อน หาขอบบน $M$ ของ $|x^2+x+1|$ บนช่วงนั้น แล้วเลือก $\\delta=\\min\\left(1,\\frac{\\varepsilon}{M}\\right)$ เมื่อ $\\varepsilon=0.07$ จะได้ $\\delta$ เท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.01, tolerance: 0.0001 }
+    hints:
+      - "แยกตัวประกอบ $x^3-1=(x-1)(x^2+x+1)$"
+      - "จำกัด $|x-1|<1$ แล้ว $x$ อยู่ในช่วง $(0,2)$"
+      - "หาค่าสูงสุดของ $x^2+x+1$ บนช่วงนั้น"
+    misconceptions:
+      - { match: 0.0233, feedback: "0.0233 คือ $\\frac{\\varepsilon}{3}$ ซึ่งใช้ค่า $x^2+x+1=3$ ที่ $x=1$ เท่านั้น ค่านี้ใหญ่เกินไปจริง เช่น $x=1.023$ ได้ $|x^3-1|\\approx 0.0706>0.07$ บนช่วง $(0,2)$ ขอบบนของ $x^2+x+1$ คือ 7" }
+    solution: "เมื่อ $|x-1|<1$ จะได้ $|x^2+x+1|<7$ จึง $|x^3-1|<7|x-1|$ เลือก $\\delta=\\min\\left(1,\\frac{0.07}{7}\\right)=0.01$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p010
+    topics: [math.calculus.limit-definition]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดแสดงว่า $\\lim_{x\\to 0}\\frac{|x|}{x}$ ไม่มีค่า"
+    choices:
+      - { id: a, text: "ลิมิตจากขวาเป็น 1 และลิมิตจากซ้ายเป็น -1", correct: true }
+      - { id: b, text: "ฟังก์ชันไม่นิยามที่ $x=0$", feedback: "การไม่นิยามที่จุดหนึ่งไม่ได้ทำให้ลิมิตไม่มีค่าโดยตัวมันเอง ลิมิตดูจากค่ารอบจุดนั้น" }
+      - { id: c, text: "ค่าฟังก์ชันที่ $x=0$ เป็นศูนย์", feedback: "ค่า $f(0)$ ไม่เกี่ยวกับการมีอยู่ของลิมิต" }
+      - { id: d, text: "$\\frac{|x|}{x}$ เป็น 1 เสมอ", feedback: "สำหรับ $x<0$ ค่าเป็น -1 ไม่ใช่ 1" }
+    hints:
+      - "แยกกรณี $x>0$ และ $x<0$ ออกจากกัน"
+      - "ค่า $|x|$ เท่ากับ $x$ หรือ $-x$ ขึ้นกับเครื่องหมาย"
+    solution: "สำหรับ $x>0$ ได้ $\\frac{|x|}{x}=1$ และสำหรับ $x<0$ ได้ $\\frac{|x|}{x}=-1$ ลิมิตสองข้างต่างกันจึงไม่มีลิมิต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p011
+    topics: [math.calculus.limit-definition]
+    difficulty: 4
+    type: numeric
+    stem: "ฟังก์ชัน $f(x,y)=\\frac{xy}{x^2+y^2}$ เข้าใกล้ $(0,0)$ ตามเส้นทาง $y=x$ เมื่อ $x\\to 0$ ค่าลิมิตที่ได้ตามเส้นทางนี้เท่ากับเท่าไร (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 0.5, tolerance: 0.0001 }
+    hints:
+      - "แทน $y=x$ ลงใน $f(x,y)$"
+      - "จะได้ $\\frac{x^2}{x^2+x^2}$"
+      - "ตัดตัวประกอบ $x^2$ ออกจากตัวเศษและตัวส่วน"
+    misconceptions:
+      - { match: 0, feedback: "0 คือค่าตามแกน $x$ (เมื่อ $y=0$) ไม่ใช่ตามเส้นทาง $y=x$ ซึ่งได้ $\\frac{1}{2}$" }
+    solution: "แทน $y=x$ ได้ $f(x,x)=\\frac{x^2}{2x^2}=\\frac{1}{2}$ ซึ่งเป็นค่าคงที่ตลอดเส้นทาง จึงได้ $\\frac{1}{2}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p012
+    topics: [math.calculus.limit-definition]
+    difficulty: 4
+    type: text
+    stem: "วิธีใดใช้แสดงว่าลิมิตของฟังก์ชันสองตัวแปรไม่มีค่า โดยเปรียบเทียบค่าตามเส้นทางต่างกัน (ตอบเป็นชื่อวิธี)"
+    accepted: ["การทดสอบสองเส้นทาง", "สองเส้นทาง", "วิธีสองเส้นทาง", "two-path test", "two path test"]
+    misconceptions:
+      - { match: "การแทนค่าโดยตรง", feedback: "การแทนค่าตรง ๆ ที่ $(0,0)$ ของ $\\frac{xy}{x^2+y^2}$ ได้ $\\frac{0}{0}$ ซึ่งยังไม่บอกค่าลิมิต จึงใช้แสดงว่าลิมิตไม่มีค่าไม่ได้" }
+    hints:
+      - "วิธีนี้เลือกเส้นทางที่เข้าหาจุดเดียวกันหลายเส้น"
+      - "ชื่อวิธีมีคำว่า 'สอง' อยู่ในชื่อ"
+    solution: "การทดสอบสองเส้นทางเปรียบเทียบค่าตามเส้นทางต่างกัน ถ้าได้ค่าต่างกันก็สรุปว่าลิมิตไม่มีค่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p013
+    topics: [math.calculus.limit-definition]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดใช้ทฤษฎีบทค่าระหว่างกลางพิสูจน์ได้ว่า $x^3-x-1=0$ มีคำตอบในช่วง $(1,2)$"
+    choices:
+      - { id: a, text: "$f$ ต่อเนื่องบน $[1,2]$ และ $f(1)<0<f(2)$", correct: true }
+      - { id: b, text: "$f(1)=0$", feedback: "ถ้า $f(1)=0$ คำตอบจะเป็น 1 ซึ่งไม่อยู่ในช่วงเปิด $(1,2)$ และที่จริง $f(1)=-1$" }
+      - { id: c, text: "$f$ เป็นฟังก์ชันคู่", feedback: "ทฤษฎีบทนี้ไม่เกี่ยวกับความเป็นฟังก์ชันคู่" }
+      - { id: d, text: "$f'(x)>0$ ทุก $x$", feedback: "ไม่จริง เช่น $f'(0)=-1$ และการเพิ่มอย่างเดียวไม่ได้ยืนยันการมีราก ทฤษฎีบทนี้ต้องใช้เครื่องหมายที่ปลายช่วง" }
+    hints:
+      - "ทฤษฎีบทต้องการสองสิ่ง คือความต่อเนื่องบนช่วงปิด และเครื่องหมายต่างกันที่ปลายช่วง"
+      - "คำนวณ $f(1)$ และ $f(2)$"
+    solution: "$f$ เป็นพหุนามจึงต่อเนื่องบน $[1,2]$ และ $f(1)=-1<0<5=f(2)$ จึงมีราก $c\\in(1,2)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p014
+    topics: [math.calculus.limit-definition]
+    difficulty: 4
+    type: numeric
+    stem: "โรงงานคำนวณต้นทุนเฉลี่ยต่อชิ้นเมื่อผลิต $x$ ชิ้นเป็น $f(x)=\\frac{x^2-9}{x-3}$ บาทเมื่อ $x\\ne 3$ และกำหนดให้ต้นทุนเฉลี่ยเมื่อผลิต 3 ชิ้นเป็น $k$ บาท จงหาค่า $k$ ที่ทำให้ฟังก์ชันนี้ต่อเนื่องที่ $x=3$ (ตอบจำนวนเต็ม)"
+    answer: { value: 6, tolerance: 0 }
+    hints:
+      - "ความต่อเนื่องที่ 3 ต้องการให้ $k$ เท่ากับ $\\lim_{x\\to 3}f(x)$"
+      - "แยกตัวประกอบ $x^2-9=(x-3)(x+3)$"
+      - "เมื่อ $x\\ne 3$ ตัด $x-3$ ออกได้"
+    misconceptions:
+      - { match: 0, feedback: "0 เกิดจากแทน $x=3$ ใน $\\frac{x^2-9}{x-3}$ แล้วได้ $\\frac{0}{0}$ จึงสรุปว่าเป็นศูนย์ ซึ่งผิด ต้องหาลิมิตก่อน" }
+    solution: "เมื่อ $x\\ne 3$ จะได้ $f(x)=x+3$ จึง $\\lim_{x\\to 3}f(x)=6$ ดังนั้น $k=6$ บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p015
+    topics: [math.calculus.limit-definition]
+    difficulty: 5
+    type: numeric
+    stem: "พิสูจน์ $\\lim_{x\\to 1}\\frac{1}{x}=1$ โดยจำกัด $|x-1|<0.5$ ก่อน หาขอบบน $M$ ของ $\\frac{1}{|x|}$ บนช่วงนั้น แล้วเลือก $\\delta=\\min\\left(0.5,\\frac{\\varepsilon}{M}\\right)$ เมื่อ $\\varepsilon=0.1$ จะได้ $\\delta$ เท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.05, tolerance: 0.0001 }
+    hints:
+      - "$\\left|\\frac{1}{x}-1\\right|=\\frac{|x-1|}{|x|}$"
+      - "เมื่อ $|x-1|<0.5$ จะได้ $|x|>0.5$"
+      - "ดังนั้น $\\left|\\frac{1}{x}-1\\right|<2|x-1|$"
+    misconceptions:
+      - { match: 0.1, feedback: "0.1 คือ $\\varepsilon$ เอง แต่ $\\frac{|x-1|}{|x|}$ มีตัวหาร $|x|$ ที่เล็กลงเมื่อ $x$ เข้าใกล้ 0.5 จึงต้องเลือก $\\delta$ เล็กกว่า" }
+    solution: "เมื่อ $|x-1|<\\delta\\le 0.5$ จะได้ $|x|>0.5$ และ $\\left|\\frac{1}{x}-1\\right|<2|x-1|$ จึงเลือก $\\delta=\\min\\left(0.5,\\frac{0.1}{2}\\right)=0.05$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p016
+    topics: [math.calculus.limit-definition]
+    difficulty: 5
+    type: numeric
+    stem: "จงหา $\\delta$ ที่มากที่สุดสำหรับ $\\lim_{(x,y)\\to(0,0)}(x^2+y^2)=0$ เมื่อ $\\varepsilon=0.01$ โดยใช้ย่านวงกลม $\\sqrt{x^2+y^2}<\\delta$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.1, tolerance: 0.0001 }
+    hints:
+      - "ให้ $r=\\sqrt{x^2+y^2}$ จะได้ $x^2+y^2=r^2$"
+      - "ต้องการ $r^2<0.01$"
+      - "ถอดรากที่สองทั้งสองข้าง"
+    misconceptions:
+      - { match: 0.01, feedback: "0.01 คือ $\\varepsilon$ เอง แต่ $x^2+y^2=r^2<\\delta^2$ จึงต้องการ $\\delta=\\sqrt{\\varepsilon}$" }
+    solution: "$|x^2+y^2-0|=r^2<\\delta^2$ ต้องการ $\\delta^2\\le 0.01$ จึงเลือก $\\delta=0.1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p017
+    topics: [math.calculus.limit-definition]
+    difficulty: 5
+    type: mcq
+    stem: "ข้อใดแสดงว่า $\\lim_{(x,y)\\to(0,0)}\\frac{x^2y}{x^4+y^2}$ ไม่มีค่า"
+    choices:
+      - { id: a, text: "ตามเส้นโค้ง $y=x^2$ ได้ $\\frac{1}{2}$ แต่ตามแกน $x$ ได้ 0", correct: true }
+      - { id: b, text: "ตามแกน $x$ ได้ 0 และตามแกน $y$ ได้ 0 จึงมีค่า 0", feedback: "เส้นตรงสองเส้นที่ให้ 0 ไม่พอที่จะสรุปว่ามีลิมิต ต้องตรวจเส้นโค้งอื่นด้วย" }
+      - { id: c, text: "ตามเส้นตรง $y=x$ ได้ 0 จึงมีลิมิต 0", feedback: "ค่า 0 ตามเส้นตรงเส้นเดียวไม่พอ" }
+      - { id: d, text: "ค่า $f(0,0)$ เป็นศูนย์ จึงมีลิมิต", feedback: "ลิมิตไม่ขึ้นกับค่า ณ จุดนั้น" }
+    hints:
+      - "ลองแทน $y=x^2$ ลงในฟังก์ชัน"
+      - "แทน $y=0$ ได้ค่าเท่าไร"
+    solution: "แทน $y=x^2$ ได้ $\\frac{x^4}{x^4+x^4}=\\frac{1}{2}$ แต่แทน $y=0$ ได้ 0 เส้นทางให้ค่าต่างกันจึงไม่มีลิมิต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.limit-definition.p018
+    topics: [math.calculus.limit-definition]
+    difficulty: 5
+    type: numeric
+    stem: "ค่าของ $k$ ที่ทำให้ $f(x,y)=\\frac{x^2y}{x^2+y^2}$ เมื่อ $(x,y)\\ne(0,0)$ และ $f(0,0)=k$ ต่อเนื่องที่ $(0,0)$ คือเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 0, tolerance: 0 }
+    hints:
+      - "ประมาณค่าตัวเศษด้วย $|x^2y|\\le|y|(x^2+y^2)$"
+      - "ดังนั้น $|f(x,y)|\\le|y|$"
+      - "เมื่อ $(x,y)\\to(0,0)$ จะได้ $|y|\\to 0$"
+    misconceptions:
+      - { match: 0.5, feedback: "0.5 คือค่าตามเส้น $y=x$ ของ $\\frac{xy}{x^2+y^2}$ ซึ่งเป็นคนละฟังก์ชัน สำหรับ $\\frac{x^2y}{x^2+y^2}$ ตามเส้น $y=x$ ได้ $\\frac{x}{2}\\to 0$ และ $|f|\\le|y|$ ทำให้ลิมิตเป็น 0 ทุกทาง" }
+    solution: "เพราะ $x^2\\le x^2+y^2$ จึงได้ $|f(x,y)|\\le|y|\\le\\sqrt{x^2+y^2}$ ถ้าเลือก $\\delta=\\varepsilon$ ก็ได้ $|f(x,y)-0|<\\varepsilon$ เมื่อ $0<\\sqrt{x^2+y^2}<\\delta$ จึงได้ $\\lim_{(x,y)\\to(0,0)}f(x,y)=0$ ดังนั้น $k=0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

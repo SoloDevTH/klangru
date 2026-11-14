@@ -1,0 +1,60 @@
+id: math.linalg.lu-factorization
+subject: math
+title: { th: การแยกตัวประกอบ LU และผลเฉลยทั้งหมดของ Ax = b, en: LU factorization and the complete solution of Ax = b }
+summary: แยกเมทริกซ์เป็น LU ด้วยการกำจัดแบบเกาส์ แก้ระบบด้วยการแทนค่า หาผลเฉลยทั้งหมดของระบบไม่จัตุรัส และเลือกพิวอตเพื่อความแม่นยำ
+difficulty: 8.5
+minutes: 40
+prerequisites: [math.linalg.vector-spaces, math.linalg.matrix-inverse]
+encompasses:
+  - { id: math.linalg.matrix-inverse, weight: 0.3 }
+  - { id: math.linalg.vector-spaces, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: lu-structure.svg
+    alt: "ผังสามตาราง L คูณ U เท่ากับ A โดย L เป็นตารางสามเหลี่ยมล่างที่มีหนึ่งบนแนวทแยงและตัวคูณ ℓ21 ℓ31 ℓ32 ใต้แนวทแยง U เป็นตารางสามเหลี่ยมบนที่มี u11 ถึง u33 และ A มีค่า a11 ถึง a33"
+    caption: "ตัวคูณจากการกำจัดอยู่ใน $L$ ใต้แนวทแยง ส่วนผลการกำจัดอยู่ใน $U$ บนแนวทแยงและเหนือแนวทแยง"
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: แยก LU ของเมทริกซ์ 2 คูณ 2
+    problem: "จงแยก $A=\\begin{pmatrix}1&2\\\\3&8\\end{pmatrix}$ เป็น $LU$"
+    steps:
+      - text: "พิวอตแรกคือ $a_{11}=1$ ตัวคูณ $\\ell_{21}=\\frac{3}{1}=3$"
+        why: "ตัวคูณคือสัมประสิทธิ์ของแถวล่างหารด้วยพิวอตของแถวบน"
+      - text: "ลบ $3$ เท่าของแถวแรกจากแถวที่สอง ได้ $(0,\\ 8-3\\cdot 2)=(0,\\ 2)$"
+        why: "การกำจัดทำให้สัมประสิทธิ์ใต้พิวอตเป็นศูนย์"
+      - text: "ได้ $U=\\begin{pmatrix}1&2\\\\0&2\\end{pmatrix}$ และ $L=\\begin{pmatrix}1&0\\\\3&1\\end{pmatrix}$"
+        why: "$L$ เก็บตัวคูณและมีหนึ่งบนแนวทแยง"
+    answer: "$L=\\begin{pmatrix}1&0\\\\3&1\\end{pmatrix}$ และ $U=\\begin{pmatrix}1&2\\\\0&2\\end{pmatrix}$"
+  - { type: check, problem: math.linalg.lu-factorization.p002, prompt: "ลองนึกว่า L มีค่าอะไรบนแนวทแยง" }
+  - type: worked-example
+    title: แก้ระบบด้วยการแทนค่าไปหน้าและย้อนหลัง
+    problem: "กำหนด $A=\\begin{pmatrix}2&1\\\\6&8\\end{pmatrix}$ และ $b=(3,17)$ จงแก้ $Ax=b$"
+    steps:
+      - text: "แยก $A=LU$ โดย $L=\\begin{pmatrix}1&0\\\\3&1\\end{pmatrix}$ และ $U=\\begin{pmatrix}2&1\\\\0&5\\end{pmatrix}$"
+        why: "ตัวคูณคือ $\\frac{6}{2}=3$ และพิวอตที่สองคือ $8-3\\cdot 1=5$"
+      - text: "แก้ $Ly=b$ ด้วยการแทนค่าไปหน้า ได้ $y_1=3$ และ $y_2=17-3\\cdot 3=8$"
+        why: "แถวแรกของ $L$ มีเพียง $y_1$ จึงได้ค่าทันที"
+      - text: "แก้ $Ux=y$ ด้วยการแทนค่าย้อนหลัง ได้ $x_2=\\frac{8}{5}=1.6$ และ $x_1=\\frac{3-1.6}{2}=0.7$"
+        why: "เริ่มจากแถวล่างสุดของ $U$ แล้วแทนค่ากลับขึ้นไป"
+    answer: "$x=(0.7,\\ 1.6)$"
+  - { type: check, problem: math.linalg.lu-factorization.p006, prompt: "ทรานสโพสของผลคูณสลับลำดับอย่างไร" }
+glossary:
+  - { term: การแยกตัวประกอบ LU, definition: "การเขียนเมทริกซ์ $A$ เป็นผลคูณของสามเหลี่ยมล่าง $L$ ที่มีหนึ่งบนแนวทแยงกับสามเหลี่ยมบน $U$ ซึ่งเป็นผลของการกำจัดแบบเกาส์" }
+  - { term: พิวอต, definition: "สมาชิกบนแนวทแยงที่ใช้เป็นตัวหารในการคำนวณตัวคูณของการกำจัดแต่ละขั้น" }
+  - { term: เมทริกซ์การเรียงสับเปลี่ยน, definition: "เมทริกซ์ $P$ ที่ได้จากการสลับแถวของเมทริกซ์เอกลักษณ์ ใช้เมื่อพิวอตเป็นศูนย์ต้องสลับแถว" }
+  - { term: การเลือกพิวอตบางส่วน, definition: "การสลับแถวให้พิวอตเป็นสมาชิกที่มีค่าสัมบูรณ์มากที่สุดในคอลัมน์ เพื่อให้ตัวคูณไม่ใหญ่เกินไป" }
+flashcards:
+  - { front: "ตัวคูณ $\\ell_{ij}$ ในการกำจัดแบบเกาส์", back: "$\\frac{a_{ij}}{\\text{พิวอตของแถวบน}}$ เก็บใน $L$ ใต้แนวทแยง" }
+  - { front: "ขั้นตอนการแก้ $Ax=b$ ด้วย LU", back: "แก้ $Ly=b$ ด้วยการแทนค่าไปหน้า แล้วแก้ $Ux=y$ ด้วยการแทนค่าย้อนหลัง" }
+  - { front: "ทรานสโพสของผลคูณ $(AB)^T$", back: "$B^TA^T$ (ลำดับกลับกัน)" }
+  - { front: "จำนวนตัวแปรอิสระของ $Ax=b$ เมื่อแรงก์ $r$", back: "$n-r$ เมื่อ $n$ คือจำนวนตัวแปร" }
+references:
+  - { title: "LU decomposition", url: "https://en.wikipedia.org/wiki/LU_decomposition", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Gaussian elimination", url: "https://en.wikipedia.org/wiki/Gaussian_elimination", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Permutation matrix", url: "https://en.wikipedia.org/wiki/Permutation_matrix", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "18.06 Linear Algebra (MIT OpenCourseWare, Spring 2010)", url: "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

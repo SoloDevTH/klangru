@@ -1,0 +1,67 @@
+id: math.calculus.lhopital-asymptotes
+subject: math
+title: { th: ลิมิตที่อนันต์ เส้นกำกับ และกฎของโลปีตาล, en: Limits at infinity, asymptotes and L'Hôpital's rule }
+summary: หาลิมิตเมื่อ x ไปถึงอนันต์ ระบุเส้นกำกับของกราฟ และใช้กฎของโลปีตาลกับรูปแบบยังไม่กำหนดที่พบบ่อย
+difficulty: 7.5
+minutes: 40
+prerequisites: [math.calculus.limits, math.calculus.derivative-applications]
+encompasses:
+  - { id: math.calculus.limits, weight: 0.4 }
+  - { id: math.calculus.derivative-applications, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: rational-asymptotes.svg
+    alt: "กราฟของ f(x) เท่ากับ (x กำลังสองบวก 1) หารด้วย x มีเส้นประแนวดิ่งที่ x เท่ากับ 0 และเส้นประแนวเฉียง y เท่ากับ x กราฟมีสองส่วนแยกกัน ส่วนบนขวาเข้าใกล้เส้นเฉียงเมื่อ x มาก และส่วนล่างซ้ายเข้าใกล้เส้นเฉียงเมื่อ x ติดลบมาก"
+    caption: "เส้นแนวดิ่ง $x=0$ เกิดจากตัวส่วนเป็นศูนย์ ส่วนเส้นแนวเฉียง $y=x$ เกิดจากพจน์ $\\frac{1}{x}$ ที่หายไปเมื่อ $x$ ใหญ่"
+  - { type: explanation, file: lesson.md }
+  - type: interactive
+    title: ลองดูว่ากราฟเข้าใกล้เส้นกำกับอย่างไร
+    caption: "ลากดูกราฟ แล้วสังเกตว่าเมื่อ x ใกล้ 0 กราฟพุ่งขึ้นหรือลงแนวดิ่ง และเมื่อ x ไกลจากศูนย์มาก กราฟอยู่ใกล้เส้น y = x"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{x^2 + 1}{x}", "x"]
+      x: [-6, 6]
+      y: [-6, 6]
+  - type: worked-example
+    title: หาเส้นกำกับแนวดิ่งและแนวนอนของ f(x) เท่ากับ (2x+1) หารด้วย (x−3)
+    problem: "จงหาเส้นกำกับแนวดิ่งและแนวนอนของ $f(x)=\\frac{2x+1}{x-3}$"
+    steps:
+      - text: "เส้นกำกับแนวดิ่งอยู่ที่รากของตัวส่วน $x-3=0$ จึงได้ $x=3$ โดยตัวเศษที่ $x=3$ คือ $7 \\neq 0$"
+        why: "ถ้าตัวเศษเป็นศูนย์ที่จุดเดียวกัน จะตัดกันและไม่เป็นเส้นกำกับ"
+      - text: "หาค่าลิมิตเมื่อ $x\\to\\infty$: ดีกรีของตัวเศษและตัวส่วนเท่ากัน จึงได้ $\\lim_{x\\to\\infty}\\frac{2x+1}{x-3}=\\lim_{x\\to\\infty}\\frac{2+\\frac{1}{x}}{1-\\frac{3}{x}}=2$"
+        why: "หารทั้งตัวเศษและตัวส่วนด้วย $x$ เพื่อให้พจน์ที่มี $\\frac{1}{x}$ หายไป"
+      - text: "เส้นกำกับแนวนอนคือ $y=2$"
+    answer: "เส้นกำกับแนวดิ่ง $x=3$ และเส้นกำกับแนวนอน $y=2$"
+  - { type: check, problem: math.calculus.lhopital-asymptotes.p002, prompt: "ลองคิดก่อนอ่านต่อ: เส้นกำกับแนวนอนมาจากค่าอะไร" }
+  - type: worked-example
+    title: ใช้กฎของโลปีตาลสองครั้ง
+    problem: "จงหาค่าของ $\\lim_{x\\to 0}\\frac{e^x-1-x}{x^2}$"
+    steps:
+      - text: "แทน $x=0$ ได้ $\\frac{e^0-1-0}{0^2}=\\frac{0}{0}$ จึงเป็นรูปไม่กำหนด ใช้กฎของโลปีตาลได้"
+        why: "ตัวเศษและตัวส่วนเข้าสู่ศูนย์พร้อมกัน ซึ่งเป็นเงื่อนไขของกฎ"
+      - text: "หาอนุพันธ์แยกกัน ได้ $\\lim_{x\\to 0}\\frac{e^x-1}{2x}$ ซึ่งยังเป็น $\\frac{0}{0}$"
+        why: "อนุพันธ์ของตัวเศษคือ $e^x$ ลบอนุพันธ์ของ $1+x$ คือ $1$ และอนุพันธ์ของตัวส่วนคือ $2x$"
+      - text: "ใช้กฎอีกครั้ง ได้ $\\lim_{x\\to 0}\\frac{e^x}{2}=\\frac{1}{2}$"
+        why: "เมื่อได้ค่าที่ไม่เป็นรูปไม่กำหนดแล้วจึงหยุด"
+    answer: "ลิมิตเท่ากับ $\\frac{1}{2}$"
+  - { type: check, problem: math.calculus.lhopital-asymptotes.p004, prompt: "ลองหาอนุพันธ์ของตัวเศษและตัวส่วนแยกกัน" }
+glossary:
+  - { term: เส้นกำกับ, definition: "เส้นที่กราฟเข้าใกล้เรื่อย ๆ โดยไม่ต้องไปถึง มีสามแบบคือแนวนอน แนวดิ่ง และแนวเฉียง" }
+  - { term: รูปแบบยังไม่กำหนด, definition: "รูปของลิมิตที่แทนค่าตรง ๆ แล้วได้ $\\frac{0}{0}$ หรือ $\\frac{\\infty}{\\infty}$ ซึ่งยังบอกค่าลิมิตไม่ได้ทันที" }
+  - { term: กฎของโลปีตาล, definition: "วิธีหาลิมิตของรูปแบบยังไม่กำหนดโดยหาลิมิตของอนุพันธ์ตัวเศษหารด้วยอนุพันธ์ตัวส่วน แยกกันทั้งสองตัว" }
+  - { term: อัตราการโต, definition: "การเปรียบเทียบว่าฟังก์ชันเพิ่มค่าเร็วเพียงใดเมื่อ $x$ ใหญ่ขึ้น เช่น $\\ln x$, $x^n$ และ $e^x$" }
+flashcards:
+  - { front: "ลิมิต $\\lim_{x\\to\\infty}$ ของฟังก์ชันตรรกยะที่ดีกรีตัวเศษน้อยกว่าตัวส่วน", back: "เท่ากับ 0 ทำให้มีเส้นกำกับแนวนอน $y=0$" }
+  - { front: "เงื่อนไขการใช้กฎของโลปีตาล", back: "แทนค่าแล้วได้ $\\frac{0}{0}$ หรือ $\\frac{\\pm\\infty}{\\pm\\infty}$ และหาอนุพันธ์ตัวเศษกับตัวส่วนแยกกันได้" }
+  - { front: "รูปแบบ $1^\\infty$ จัดการอย่างไร", back: "ให้ $L=\\lim f^g$ แล้วคิด $\\ln L=\\lim g\\ln f$ จากนั้น $L=e^{\\ln L}$" }
+  - { front: "เส้นกำกับแนวดิ่งอยู่ที่ไหน", back: "ที่ $x=a$ ซึ่งทำให้ตัวส่วนเป็นศูนย์ และตัวเศษไม่เป็นศูนย์ ทำให้ฟังก์ชันไปเป็น $\\pm\\infty$" }
+references:
+  - { title: "ลิมิตของฟังก์ชัน", url: "https://th.wikipedia.org/wiki/ลิมิตของฟังก์ชัน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "L'Hôpital's rule", url: "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Asymptote", url: "https://en.wikipedia.org/wiki/Asymptote", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "4.8 L'Hôpital's Rule (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

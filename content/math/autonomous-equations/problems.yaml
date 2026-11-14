@@ -1,0 +1,290 @@
+problems:
+  - id: math.de.autonomous-equations.p001
+    topics: [math.de.autonomous-equations]
+    difficulty: 1
+    type: numeric
+    stem: "สมการ $y'=y(1-y)$ มีจุดสมดุลสองจุด จงหาจุดสมดุลที่ไม่เป็นศูนย์ (ตอบจำนวนเต็ม)"
+    answer: { value: 1, tolerance: 0 }
+    hints:
+      - "จุดสมดุลคือค่า $y$ ที่ทำให้ $y(1-y)=0$"
+      - "ผลคูณจะเป็นศูนย์เมื่อ $y=0$ หรือ $1-y=0$"
+    misconceptions:
+      - { match: 0, feedback: "0 เป็นจุดสมดุลด้วย แต่โจทย์ถามจุดที่ไม่เป็นศูนย์" }
+    solution: "$y(1-y)=0$ เมื่อ $y=0$ หรือ $y=1$ จุดที่ไม่เป็นศูนย์คือ $y=1$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p002
+    topics: [math.de.autonomous-equations]
+    difficulty: 1
+    type: mcq
+    stem: "สมการ $y'=f(y)$ ที่ $f$ ไม่ขึ้นกับ $t$ เรียกว่าอะไร"
+    choices:
+      - { id: a, text: "สมการอัตโนมัติ", correct: true }
+      - { id: b, text: "สมการเชิงเส้นอันดับหนึ่ง", feedback: "สมการเชิงเส้นอันดับหนึ่งมีรูป $y'+p(t)y=q(t)$ ซึ่งอาจมี $t$ ในสัมประสิทธิ์" }
+      - { id: c, text: "สมการคู่", feedback: "ความเป็นคู่ใช้กับฟังก์ชันของ $x$ ไม่ใช่ชื่อของสมการประเภทนี้" }
+      - { id: d, text: "สมการลอจิสติกส์", feedback: "สมการลอจิสติกส์เป็นตัวอย่างหนึ่งของสมการอัตโนมัติ ไม่ใช่ชื่อทั่วไปของสมการประเภทนี้" }
+    hints:
+      - "คำว่าอัตโนมัติหมายถึงกฎการเปลี่ยนแปลงทำงานเองโดยไม่ขึ้นกับเวลา"
+      - "ดูว่าสมการมี $t$ อยู่ในฟังก์ชัน $f$ หรือไม่"
+    solution: "เรียกว่าสมการอัตโนมัติ เพราะกฎการเปลี่ยนแปลงไม่ขึ้นกับเวลา $t$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p003
+    topics: [math.de.autonomous-equations]
+    difficulty: 2
+    type: numeric
+    stem: "สมการ $y'=y(1-y)-0.21$ มีจุดสมดุลสองจุด จงหาจุดสมดุลที่มีค่ามากกว่า (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.7, tolerance: 0.005 }
+    hints:
+      - "ตั้ง $y(1-y)-0.21=0$ แล้วจัดเป็น $y^2-y+0.21=0$"
+      - "ใช้สูตรกำลังสองโดยมี $a=1$, $b=-1$ และ $c=0.21$"
+      - "ค่าที่มากกว่าคือรากที่ใช้เครื่องหมายบวก"
+    misconceptions:
+      - { match: 0.3, feedback: "0.3 คือจุดสมดุลที่น้อยกว่า ซึ่งไม่เสถียร โจทย์ถามจุดที่มีค่ามากกว่า" }
+    solution: "$y=\\frac{1\\pm\\sqrt{1-0.84}}{2}=\\frac{1\\pm 0.4}{2}$ ได้ $0.3$ และ $0.7$ ค่าที่มากกว่าคือ $0.7$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p004
+    topics: [math.de.autonomous-equations]
+    difficulty: 2
+    type: numeric
+    stem: "สนามทิศทางของ $y'=t+y$ มีความชันที่จุด $(t,y)=(1,2)$ เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 3, tolerance: 0 }
+    hints:
+      - "ความชันที่จุดใดคือค่าของ $f(t,y)$ ที่จุดนั้น"
+      - "แทน $t=1$ และ $y=2$ ลงใน $t+y$"
+    misconceptions:
+      - { match: 2, feedback: "2 คือค่า $y$ เท่านั้น ลืมบวกค่า $t$ ที่จุดนั้น" }
+    solution: "$y'=t+y=1+2=3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p005
+    topics: [math.de.autonomous-equations]
+    difficulty: 2
+    type: mcq
+    stem: "เส้นไอโซไคลน์ของ $y'=t+y$ ที่มีความชัน $c$ คือเส้นใด"
+    choices:
+      - { id: a, text: "$t+y=c$", correct: true }
+      - { id: b, text: "$y=ct$", feedback: "สับสนความชันของขีดกับความชันของเส้น $y=ct$ ที่จุดบนเส้นนี้ $f=t+ct$ ซึ่งไม่คงที่" }
+      - { id: c, text: "$y=c$", feedback: "บนเส้น $y=c$ ค่า $f=t+c$ ยังเปลี่ยนตาม $t$ เส้นนี้จะเป็นไอโซไคลน์ได้ก็ต่อเมื่อสมการเป็นแบบอัตโนมัติ" }
+      - { id: d, text: "$ty=c$", feedback: "ใช้ผลคูณแทนผลบวก ซึ่งไม่ตรงกับ $f(t,y)=t+y$" }
+    hints:
+      - "ไอโซไคลน์คือเซตของจุดที่ $f(t,y)=c$"
+      - "ในที่นี้ $f(t,y)=t+y$"
+    solution: "ไอโซไคลน์คือจุดที่ $t+y=c$ จึงเป็นเส้นตรงความชัน $-1$ บนระนาบ $ty$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p006
+    topics: [math.de.autonomous-equations]
+    difficulty: 2
+    type: numeric
+    stem: "สำหรับ $y'=y(1-y)$ ที่จุดที่ $y=0.2$ ความชันของผลเฉลยเท่ากับเท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.16, tolerance: 0.0001 }
+    hints:
+      - "ความชันเท่ากับ $f(y)=y(1-y)$"
+      - "แทน $y=0.2$ ลงในนิพจน์"
+    misconceptions:
+      - { match: 0.2, feedback: "0.2 คือค่า $y$ เอง แต่ความชันคือ $y(1-y)=0.2\\cdot 0.8=0.16$" }
+    solution: "$y'=0.2(1-0.2)=0.2\\cdot 0.8=0.16$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p007
+    topics: [math.de.autonomous-equations]
+    difficulty: 3
+    type: expression
+    stem: "สำหรับ $y'=y(1-y)-h$ เมื่อ $h<\\frac{1}{4}$ จงเขียนจุดสมดุลที่มีค่ามากกว่าในรูปของ $h$ (ตอบเป็นนิพจน์)"
+    answer: { latex: "\\frac{1+\\sqrt{1-4h}}{2}", variables: [h] }
+    misconceptions:
+      - { match: "\\frac{1-\\sqrt{1-4h}}{2}", feedback: "นี่คือจุดสมดุลที่น้อยกว่า ไม่ใช่ค่าที่มากกว่า" }
+    hints:
+      - "ตั้ง $y(1-y)-h=0$ แล้วจัดเป็น $y^2-y+h=0$"
+      - "ใช้สูตรกำลังสองโดยมี $a=1$, $b=-1$ และ $c=h$"
+      - "เลือกรากที่ใช้เครื่องหมายบวกเพื่อให้ได้ค่าที่มากกว่า"
+    solution: "$y=\\frac{1\\pm\\sqrt{1-4h}}{2}$ ค่าที่มากกว่าใช้เครื่องหมายบวก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p008
+    topics: [math.de.autonomous-equations]
+    difficulty: 3
+    type: mcq
+    stem: "สำหรับ $y'=y(1-y)-h$ เมื่อ $h>\\frac{1}{4}$ ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "ไม่มีจุดสมดุล และ $y'<0$ ทุกค่า $y$ ทำให้ประชากรลดลงจนหมด", correct: true }
+      - { id: b, text: "มีจุดสมดุลสองจุดเสมอ", feedback: "สมการ $y^2-y+h=0$ มีรากจริงก็ต่อเมื่อ $1-4h\\ge 0$" }
+      - { id: c, text: "มีจุดสมดุลที่เสถียรหนึ่งจุด", feedback: "ไม่มีจุดสมดุลเลยเมื่อ $h>\\frac{1}{4}$" }
+      - { id: d, text: "มีจุดสมดุลกึ่งเสถียรหนึ่งจุด", feedback: "จุดกึ่งเสถียรเกิดที่ $h=\\frac{1}{4}$ เท่านั้น" }
+    hints:
+      - "ดูค่าสูงสุดของ $y-y^2$"
+      - "เขียน $y-y^2-h$ ในรูปกำลังสองสมบูรณ์"
+    solution: "$y-y^2-h=-\\left(y-\\frac{1}{2}\\right)^2-\\left(h-\\frac{1}{4}\\right)<0$ ทุกค่า $y$ เมื่อ $h>\\frac{1}{4}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p009
+    topics: [math.de.autonomous-equations]
+    difficulty: 3
+    type: match
+    stem: "จับคู่คำศัพท์กับความหมาย"
+    pairs:
+      - { left: "จุดวิกฤต", right: "ค่า $y$ ที่ทำให้ $f(y)=0$" }
+      - { left: "เส้นเฟส", right: "เส้นแนวตั้งที่แสดงทิศทางการเปลี่ยนแปลงของ $y$" }
+      - { left: "แนวแบ่ง (separatrix)", right: "เส้นโค้งที่แยกผลเฉลยที่มีพฤติกรรมต่างกัน" }
+      - { left: "กรวย (funnel)", right: "ผลเฉลยทั้งหมดในบริเวณหนึ่งเข้าหาเส้นเดียวกัน" }
+    hints:
+      - "จุดวิกฤตคือจุดที่ความชันเป็นศูนย์"
+      - "แนวแบ่งแยกผลเฉลยออกเป็นสองกลุ่ม"
+    solution: "จุดวิกฤตคือค่า $y$ ที่ $f(y)=0$ เส้นเฟสแสดงทิศทาง แนวแบ่งแยกผลเฉลย และกรวยรวมผลเฉลยเข้าหาเส้นเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p010
+    topics: [math.de.autonomous-equations]
+    difficulty: 4
+    type: numeric
+    stem: "ผลเฉลยของ $y'=y^2$ ที่ $y(0)=4$ ไปเป็นอนันต์เมื่อ $t$ เท่ากับเท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.25, tolerance: 0.001 }
+    hints:
+      - "แยกตัวแปรได้ $\\frac{dy}{y^2}=dt$"
+      - "อินทิเกรตได้ $-\\frac{1}{y}=t+C$"
+      - "แทน $y(0)=4$ เพื่อหา $C$"
+    misconceptions:
+      - { match: 4, feedback: "4 คือค่าเริ่มต้น $y(0)$ ไม่ใช่เวลา จาก $\\frac{1}{y}=\\frac{1}{4}-t$ ตัวส่วนเป็นศูนย์เมื่อ $t=\\frac{1}{4}$" }
+    solution: "$-\\frac{1}{y}=t+C$ และ $y(0)=4$ ให้ $C=-\\frac{1}{4}$ จึงได้ $y(t)=\\frac{1}{\\frac{1}{4}-t}$ ซึ่งไปเป็นอนันต์เมื่อ $t=0.25$ (ยิ่งค่าเริ่มต้นใหญ่ ยิ่งระเบิดเร็ว)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p011
+    topics: [math.de.autonomous-equations]
+    difficulty: 4
+    type: numeric
+    stem: "ประชากรกระต่ายในป่าสงวนเมื่อวัดเป็นสัดส่วนของความจุเป็นไปตาม $y'=y(1-y)$ โดย $y(0)=0.2$ จงหา $y(2)$ (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.6488, tolerance: 0.0005 }
+    hints:
+      - "สมการนี้แยกตัวแปรได้"
+      - "ผลเฉลยลอจิสติกส์คือ $y(t)=\\frac{1}{1+\\left(\\frac{1}{y_0}-1\\right)e^{-t}}$"
+      - "แทน $y_0=0.2$ และ $t=2$"
+    misconceptions:
+      - { match: 0.4046, feedback: "0.4046 คือค่าที่เวลา $t=1$ ไม่ใช่ $t=2$ เกิดจากคำนวณเวลาผิด" }
+    solution: "$y(2)=\\frac{1}{1+4e^{-2}}\\approx 0.6488$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p012
+    topics: [math.de.autonomous-equations]
+    difficulty: 5
+    type: numeric
+    stem: "ในบ่อเพาะเลี้ยงปลา สัดส่วนประชากร $y$ เป็นไปตาม $y'=y(1-y)-h$ โดย $h=0.16$ คืออัตราการจับต่อปี จงหาจุดสมดุลที่เสถียร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.8, tolerance: 0.005 }
+    hints:
+      - "ตั้ง $y^2-y+0.16=0$"
+      - "ใช้สูตรกำลังสองแล้วได้จุดสมดุลสองจุด"
+      - "จุดเสถียรคือจุดที่ลูกศรบนเส้นเฟสชี้เข้าจากทั้งสองข้าง"
+    misconceptions:
+      - { match: 0.2, feedback: "0.2 เป็นจุดสมดุลที่ไม่เสถียร ถ้าประชากรต่ำกว่านี้จะลดลงเรื่อย ๆ โจทย์ถามจุดเสถียร" }
+    solution: "$y=\\frac{1\\pm\\sqrt{0.36}}{2}=\\frac{1\\pm 0.6}{2}$ ได้ $0.2$ และ $0.8$ จุดเสถียรคือ $0.8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p013
+    topics: [math.de.autonomous-equations]
+    difficulty: 5
+    type: numeric
+    stem: "สำหรับ $y'=y(1-y)-h$ ค่า $h$ สูงสุดที่ยังมีจุดสมดุลอย่างน้อยหนึ่งจุดเท่ากับเท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.25, tolerance: 0.0001 }
+    hints:
+      - "จุดสมดุลมีได้เมื่อ $1-4h\\ge 0$"
+      - "หา $h$ ที่ทำให้ค่านี้เป็นศูนย์"
+    misconceptions:
+      - { match: 0.5, feedback: "0.5 คือค่า $y$ ของจุดที่ซ้อนกัน ไม่ใช่ค่า $h$ ที่เป็นคำตอบ" }
+    solution: "$1-4h\\ge 0$ เมื่อ $h\\le\\frac{1}{4}$ จึงได้ $h_{\\max}=0.25$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p014
+    topics: [math.de.autonomous-equations]
+    difficulty: 4
+    type: mcq
+    stem: "สำหรับ $y'=y(y-1)^2$ จุดสมดุล $y=1$ เป็นชนิดใด"
+    choices:
+      - { id: a, text: "เสถียร", feedback: "ลูกศรไม่ได้ชี้เข้าจากทั้งสองข้าง เพราะ $f\\ge 0$ ทั้งสองข้างของ $y=1$" }
+      - { id: b, text: "ไม่เสถียร", feedback: "ลูกศรไม่ได้ชี้ออกจากทั้งสองข้างเช่นกัน" }
+      - { id: c, text: "กึ่งเสถียร", correct: true }
+      - { id: d, text: "ไม่ใช่จุดสมดุล", feedback: "เพราะ $f(1)=0$ จึงเป็นจุดสมดุล" }
+    hints:
+      - "ดูเครื่องหมายของ $f$ ทั้งสองข้างของ $y=1$"
+      - "กำลังสองของ $(y-1)$ ไม่เปลี่ยนเครื่องหมาย"
+    solution: "$f(y)=y(y-1)^2\\ge 0$ เมื่อ $y>0$ ทั้งสองข้างของ $1$ ลูกศรชี้ขึ้นทั้งคู่ จึงเป็นจุดกึ่งเสถียร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p015
+    topics: [math.de.autonomous-equations]
+    difficulty: 4
+    type: numeric
+    stem: "ใช้วิธีของออยเลอร์กับ $y'=y(1-y)$ โดยมี $y(0)=0.2$ และขนาดขั้น $\\Delta t=0.5$ ประมาณ $y(1)$ ได้เท่าไร (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.3808, tolerance: 0.0001 }
+    hints:
+      - "สูตรออยเลอร์คือ $y_{n+1}=y_n+\\Delta t\\,f(y_n)$"
+      - "ต้องทำสองขั้นเพราะ $1=2\\times 0.5$"
+      - "คำนวณ $y_1$ ก่อนแล้วใช้ค่านั้นในขั้นที่สอง"
+    misconceptions:
+      - { match: 0.16, feedback: "0.16 คือความชันที่จุดเริ่มต้นเท่านั้น วิธีออยเลอร์ต้องเดินตามความชันใหม่ทุกขั้น" }
+    solution: "$y_1=0.2+0.5(0.16)=0.28$ และ $y_2=0.28+0.5(0.28)(0.72)=0.3808$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p016
+    topics: [math.de.autonomous-equations]
+    difficulty: 5
+    type: mcq
+    stem: "ข้อใดแสดงความต่างระหว่างสมการเชิงเส้นกับสมการไม่เชิงเส้นได้ดีที่สุด"
+    choices:
+      - { id: a, text: "ผลเฉลยของสมการเชิงเส้นซ้อนทับกันได้ ส่วนของ $y'=y^2$ ไม่มีคุณสมบัตินี้", correct: true }
+      - { id: b, text: "สมการ $y'=y^2$ ไม่มีผลเฉลยเลย", feedback: "สมการนี้มีผลเฉลยเสมอ เช่น $y=\\frac{1}{1-t}$" }
+      - { id: c, text: "สมการเชิงเส้นมีผลเฉลยที่ระเบิดในเวลาจำกัด", feedback: "สมการเชิงเส้นที่มีสัมประสิทธิ์ต่อเนื่องไม่ระเบิดในเวลาจำกัด" }
+      - { id: d, text: "ทั้งสองแบบซ้อนทับกันได้เสมอ", feedback: "สมการไม่เชิงเส้นส่วนใหญ่ไม่มีคุณสมบัตินี้" }
+    hints:
+      - "ลองนึกว่าถ้า $y_1$ กับ $y_2$ เป็นผลเฉลย แล้ว $y_1+y_2$ จะเป็นผลเฉลยหรือไม่"
+      - "ตรวจกับ $y'=y^2$ ว่า $(y_1+y_2)^2$ ไม่เท่ากับ $y_1^2+y_2^2$"
+    solution: "สมการเชิงเส้นอย่าง $y'=y$ มีคุณสมบัติซ้อนทับ ส่วน $y'=y^2$ ไม่มี เพราะ $(y_1+y_2)'=y_1^2+y_2^2\\neq(y_1+y_2)^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p017
+    topics: [math.de.autonomous-equations]
+    difficulty: 5
+    type: numeric
+    stem: "สมการ $y'=y(1-y)-0.3$ มีจุดสมดุลกี่จุด (ตอบจำนวนเต็ม)"
+    answer: { value: 0, tolerance: 0 }
+    hints:
+      - "จุดสมดุลคือรากของ $y^2-y+0.3=0$"
+      - "คำนวณดิสคริมิแนนต์ $1-4(0.3)$"
+      - "ถ้าดิสคริมิแนนต์ติดลบ สมการไม่มีรากจริง"
+    misconceptions:
+      - { match: 2, feedback: "2 เกิดจากคิดว่ามีจุดสมดุลสองจุดเสมอ แต่เมื่อ $h=0.3>\\frac{1}{4}$ สมการไม่มีรากจริง" }
+    solution: "ดิสคริมิแนนต์เท่ากับ $1-1.2=-0.2<0$ จึงไม่มีจุดสมดุลจริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.de.autonomous-equations.p018
+    topics: [math.de.autonomous-equations]
+    difficulty: 5
+    type: numeric
+    stem: "แบบจำลองอย่างง่ายของจำนวนผู้เข้าชมเว็บไซต์ข่าวที่กำลังเป็นกระแส $y(t)$ (พันคน) คือ $y'=y^2$ เมื่อ $t$ เป็นวัน และ $y(0)=0.5$ พันคน จงหาวันที่แบบจำลองทำนายว่าจำนวนผู้เข้าชมไปเป็นอนันต์ (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "สมการนี้แยกตัวแปรได้ $\\frac{dy}{y^2}=dt$"
+      - "อินทิเกรตแล้วแทน $y(0)=0.5$ เพื่อหาค่าคงที่"
+      - "ตัวส่วนที่เป็นศูนย์ทำให้ $y$ ไปเป็นอนันต์"
+    misconceptions:
+      - { match: 1, feedback: "1 เกิดจากสับสนค่าคงที่ เมื่อ $y(0)=0.5$ ต้องได้ $\\frac{1}{y}=2-t$ ไม่ใช่ $1-t$" }
+    solution: "$-\\frac{1}{y}=t-2$ จึงได้ $y(t)=\\frac{1}{2-t}$ ซึ่งไปเป็นอนันต์เมื่อ $t=2$ ในความจริงจำนวนผู้เข้าชมมีขอบเขต แบบจำลองนี้จึงใช้ได้เฉพาะช่วงสั้น ๆ ก่อนถึงเวลานั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

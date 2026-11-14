@@ -1,0 +1,59 @@
+id: math.calculus.limit-definition
+subject: math
+title: { th: นิยามเชิงเอปไซลอน–เดลตาของลิมิตและความต่อเนื่อง, en: The epsilon–delta definition of a limit and continuity }
+summary: ใช้นิยามเอปไซลอน–เดลตาหาค่าเดลตาจากเอปไซลอน พิสูจน์ว่าลิมิตไม่มีค่า และใช้ความต่อเนื่องกับทฤษฎีบทค่าระหว่างกลาง
+difficulty: 8.5
+minutes: 40
+prerequisites: [math.calculus.limits, math.calculus.partial-derivatives]
+encompasses:
+  - { id: math.calculus.limits, weight: 0.5 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: epsilon-delta.svg
+    alt: "กราฟเส้นตรง y เท่ากับ 3x ลบ 1 ผ่านจุด (2, 5) มีแถบแนวนอนรอบค่า 5 ที่กว้าง 0.6 ทั้งขึ้นและลง และแถบแนวตั้งรอบ x เท่ากับ 2 ที่กว้าง 0.2 ทั้งซ้ายและขวา เส้นกราฟผ่านมุมของกรอบพอดี"
+    caption: "ทุก $x$ ที่อยู่ในแถบ $\\delta$ จะให้ $f(x)$ ที่อยู่ในแถบ $\\varepsilon$ ในภาพนี้ $\\delta=\\frac{\\varepsilon}{3}$"
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: หา δ จาก ε สำหรับฟังก์ชันเชิงเส้น
+    problem: "จงแสดงว่า $\\lim_{x\\to 1}(2x+3)=5$ โดยหา $\\delta$ เมื่อ $\\varepsilon=0.1$"
+    steps:
+      - text: "พิจารณา $|f(x)-5|=|2x+3-5|=|2x-2|=2|x-1|$"
+        why: "ต้องดูว่า $|f(x)-L|$ ขึ้นกับ $|x-a|$ อย่างไร"
+      - text: "ต้องการ $2|x-1|<0.1$ ซึ่งเทียบเท่า $|x-1|<0.05$"
+        why: "หารทั้งสองข้างด้วย 2 จะได้ระยะที่ยอมรับได้ของ $x$"
+      - text: "เลือก $\\delta=0.05$ จะได้ $0<|x-1|<0.05$ ทำให้ $|f(x)-5|<0.1$ ตามนิยาม"
+        why: "ค่า $\\delta$ ต้องใช้ได้กับทุก $x$ ในย่านนี้"
+    answer: "เลือก $\\delta=0.05$ เมื่อ $\\varepsilon=0.1$ นิยามจึงเป็นจริง"
+  - { type: check, problem: math.calculus.limit-definition.p002, prompt: "ลองนึกว่า ε กับ δ หมายถึงอะไรในภาพ" }
+  - type: worked-example
+    title: หา δ เมื่อฟังก์ชันไม่เป็นเชิงเส้น
+    problem: "จงหา $\\delta$ สำหรับ $\\lim_{x\\to -1}x^2=1$ เมื่อ $\\varepsilon=0.3$"
+    steps:
+      - text: "แยกตัวประกอบ $|x^2-1|=|x-1|\\,|x+1|$"
+        why: "ตัวประกอบ $|x+1|$ เป็นระยะที่ควบคุมได้ แต่ $|x-1|$ ยังไม่ทราบค่า"
+      - text: "จำกัด $|x+1|<1$ ทำให้ $x\\in(-2,0)$ จึงได้ $|x-1|<3$ และ $|x^2-1|<3|x+1|$"
+        why: "บนช่วง $(-2,0)$ ค่า $|x-1|$ มากที่สุดเท่ากับ 3 ตรงขอบซ้าย"
+      - text: "ต้องการ $3|x+1|<0.3$ จึงเลือก $\\delta=\\min\\left(1,\\frac{0.3}{3}\\right)=0.1$"
+        why: "ค่าต่ำสุดของ $1$ กับ $\\frac{\\varepsilon}{3}$ ทำให้ใช้ได้ทั้งสองเงื่อนไข"
+    answer: "$\\delta=0.1$"
+  - { type: check, problem: math.calculus.limit-definition.p007, prompt: "ดูว่า δ ต้องขึ้นกับอะไร" }
+glossary:
+  - { term: นิยามเอปไซลอน–เดลตา, definition: "นิยามของลิมิตที่ว่า สำหรับทุก $\\varepsilon>0$ มี $\\delta>0$ ทำให้ $0<|x-a|<\\delta$ ได้ $|f(x)-L|<\\varepsilon$" }
+  - { term: ความต่อเนื่อง, definition: "ฟังก์ชัน $f$ ต่อเนื่องที่ $a$ ถ้า $\\lim_{x\\to a}f(x)=f(a)$" }
+  - { term: ทฤษฎีบทค่าระหว่างกลาง, definition: "ถ้า $f$ ต่อเนื่องบน $[a,b]$ และ $f(a)$ กับ $f(b)$ มีเครื่องหมายต่างกัน จะมีจุด $c$ ระหว่าง $a$ กับ $b$ ที่ $f(c)=0$" }
+  - { term: การทดสอบสองเส้นทาง, definition: "วิธีแสดงว่าลิมิตของฟังก์ชันสองตัวแปรไม่มีค่า โดยหาเส้นทางสองเส้นที่เข้าใกล้จุดเดียวกันแล้วให้ค่าต่างกัน" }
+flashcards:
+  - { front: "ความหมายของ ε ในนิยามลิมิต", back: "ความคลาดเคลื่อนที่ยอมรับได้ของค่า $f(x)$ จากค่า $L$" }
+  - { front: "ความหมายของ δ ในนิยามลิมิต", back: "ระยะที่ $x$ ต้องอยู่ใกล้ $a$ เพื่อให้ $f(x)$ อยู่ในระยะ ε จาก $L$" }
+  - { front: "วิธีแสดงว่าลิมิตหลายตัวแปรไม่มีค่า", back: "หาสองเส้นทางที่เข้าหาจุดเดียวกันแล้วให้ค่าลิมิตต่างกัน" }
+  - { front: "เงื่อนไขการใช้ทฤษฎีบทค่าระหว่างกลาง", back: "ฟังก์ชันต่อเนื่องบนช่วงปิด และค่าที่ปลายช่วงมีเครื่องหมายต่างกัน" }
+references:
+  - { title: "ลิมิตของฟังก์ชัน", url: "https://th.wikipedia.org/wiki/ลิมิตของฟังก์ชัน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "(ε, δ)-definition of limit", url: "https://en.wikipedia.org/wiki/%28%CE%B5,_%CE%B4%29-definition_of_limit", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Continuous function", url: "https://en.wikipedia.org/wiki/Continuous_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.5 The Precise Definition of a Limit (Calculus Volume 1, OpenStax)", url: "https://openstax.org/books/calculus-volume-1/pages/2-5-the-precise-definition-of-a-limit", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

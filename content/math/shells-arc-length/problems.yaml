@@ -1,0 +1,297 @@
+problems:
+  - id: math.calculus.shells-arc-length.p001
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 1
+    type: numeric
+    stem: "จงหาความยาวของส่วนของเส้นตรง $y=2x+1$ ตั้งแต่ $x=0$ ถึง $x=3$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 6.7082, tolerance: 0.0001 }
+    hints:
+      - "ความชันของเส้นตรงนี้คงที่ตลอดช่วง"
+      - "ใช้สูตร $L=\\int_a^b\\sqrt{1+(f'(x))^2}\\,dx$ โดย $f'(x)=2$"
+      - "ค่า $\\sqrt{1+2^2}$ คงที่ตลอดช่วง จึงคูณด้วยความยาวช่วง $3$ ได้เลย"
+    misconceptions:
+      - { match: 15, feedback: "15 คือ $3\\cdot 5$ เกิดจากลืมถอดรากที่สองของ $1+2^2$" }
+    solution: "$L=\\int_0^3\\sqrt{1+2^2}\\,dx=3\\sqrt{5}\\approx 6.7082$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p002
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 1
+    type: mcq
+    stem: "สูตรความยาวส่วนโค้งของ $y=f(x)$ บนช่วง $[a,b]$ คือข้อใด"
+    choices:
+      - { id: a, text: "$\\int_a^b f(x)\\,dx$", feedback: "นี่คือพื้นที่ใต้กราฟ ไม่ใช่ความยาวส่วนโค้ง" }
+      - { id: b, text: "$\\int_a^b\\sqrt{1+(f'(x))^2}\\,dx$", correct: true }
+      - { id: c, text: "$\\int_a^b 2\\pi f(x)\\sqrt{1+(f'(x))^2}\\,dx$", feedback: "นี่คือสูตรพื้นที่ผิวจากการหมุน ซึ่งมี $2\\pi f(x)$ คูณอยู่ข้างหน้า" }
+      - { id: d, text: "$\\int_a^b (f'(x))^2\\,dx$", feedback: "ขาดรากที่สองและการบวกกับ 1 ภายในปริพันธ์" }
+    hints:
+      - "ความยาวส่วนโค้งมาจากการรวมความยาวของเส้นตรงเล็ก ๆ ที่มี $\\Delta x$ และ $\\Delta y$"
+      - "ใช้ทฤษฎีบทพีทาโกรัสในรูปของ $dx$ และ $dy$"
+    solution: "จาก $ds=\\sqrt{dx^2+dy^2}=\\sqrt{1+(f')^2}\\,dx$ รวมทุกช่วงได้สูตรความยาวส่วนโค้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p003
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 2
+    type: numeric
+    stem: "บริเวณใต้เส้นโค้ง $y=4-x^2$ บนช่วง $0\\le x\\le 1$ ถูกหมุนรอบแกน $y$ จงหาปริมาตรของทรงที่เกิดขึ้น (ทศนิยม 4 ตำแหน่ง หน่วยลูกบาศก์หน่วย)"
+    answer: { value: 10.9956, tolerance: 0.001 }
+    hints:
+      - "ใช้วิธีเปลือกทรงกระบอก โดยรัศมีคือ $x$ และความสูงคือ $f(x)=4-x^2$"
+      - "ปริมาตรคือ $\\int_0^1 2\\pi x(4-x^2)\\,dx$"
+      - "ดึง $2\\pi$ ออกมาหน้าปริพันธ์แล้วอินทิเกรตพหุนามที่เหลือ"
+    misconceptions:
+      - { match: 5.4978, feedback: "5.4978 คือ $\\pi\\cdot 1.75$ เกิดจากลืมตัวประกอบ 2 ใน $2\\pi$ ของสูตรเปลือกทรงกระบอก" }
+    solution: "$V=2\\pi\\int_0^1 (4x-x^3)\\,dx=2\\pi\\left(2-\\frac{1}{4}\\right)=\\frac{7\\pi}{2}\\approx 10.9956$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p004
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 2
+    type: numeric
+    stem: "จงหาความยาวของเส้นโค้ง $y=\\frac{1}{3}x^{3/2}$ เมื่อ $0\\le x\\le 4$ (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 4.8758, tolerance: 0.0005 }
+    hints:
+      - "หา $f'(x)$ ก่อน แล้วยกกำลังสองเพื่อดู $1+(f'(x))^2$"
+      - "ควรได้ $1+\\frac{x}{4}$ ซึ่งอยู่ในรากที่สองและอินทิเกรตได้โดยการแทนค่า $u=1+\\frac{x}{4}$"
+      - "ปริพันธ์ $4\\int_1^2\\sqrt{u}\\,du$ ให้ผลลัพธ์ในรูป $\\frac{8}{3}(2\\sqrt{2}-1)$"
+    misconceptions:
+      - { match: 6, feedback: "6 คือ $\\int_0^4(1+\\frac{x}{4})\\,dx$ เกิดจากลืมถอดรากที่สองของ $1+(f')^2$" }
+    solution: "$f'(x)=\\frac{1}{2}x^{1/2}$ จึงได้ $1+(f')^2=1+\\frac{x}{4}$ และ $L=\\int_0^4\\sqrt{1+\\frac{x}{4}}\\,dx=\\frac{8}{3}(2\\sqrt{2}-1)\\approx 4.8758$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p005
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดคือสูตรปริมาตรด้วยวิธีเปลือกทรงกระบอก เมื่อหมุนบริเวณใต้ $y=f(x)$ บนช่วง $[a,b]$ รอบแกน $y$"
+    choices:
+      - { id: a, text: "$\\int_a^b 2\\pi x\\,f(x)\\,dx$", correct: true }
+      - { id: b, text: "$\\int_a^b \\pi f(x)^2\\,dx$", feedback: "นี่คือสูตรวิธีจาน ซึ่งใช้รัศมี $f(x)$ ไม่ใช่รัศมี $x$" }
+      - { id: c, text: "$\\int_a^b 2\\pi f(x)\\,dx$", feedback: "ลืมคูณรัศมี $x$ ของเปลือก" }
+      - { id: d, text: "$\\int_a^b 2\\pi x\\,dx$", feedback: "ไม่มีความสูง $f(x)$ ของเปลือก" }
+    hints:
+      - "เปลือกมีรัศมี $x$ มีความสูง $f(x)$ และถูกคลี่ออกเป็นผืนผ้ายาว $2\\pi x$"
+      - "ปริมาตรของแผ่นบางคือ ผืนผ้ายาว คูณความสูง คูณความหนา"
+    solution: "เปลือกหนึ่งชิ้นมีปริมาตร $2\\pi x\\,f(x)\\,dx$ เมื่อรวมทุกชิ้นได้ $\\int_a^b 2\\pi x\\,f(x)\\,dx$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p006
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 3
+    type: numeric
+    stem: "บริเวณที่อยู่ระหว่างกราฟ $y=x$ กับ $y=x^2$ บนช่วง $0\\le x\\le 1$ ถูกหมุนรอบแกน $y$ จงหาปริมาตรของทรงที่เกิดขึ้น (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.5236, tolerance: 0.0005 }
+    hints:
+      - "ความสูงของเปลือกคือระยะระหว่างเส้นบนกับเส้นล่าง"
+      - "บนช่วง $0\\le x\\le 1$ เส้น $y=x$ อยู่เหนือเส้น $y=x^2$"
+      - "ใช้ $V=\\int_0^1 2\\pi x\\,(x-x^2)\\,dx$"
+    misconceptions:
+      - { match: 1.0472, feedback: "1.0472 คือ $\\frac{\\pi}{3}$ เกิดจากลืมคูณรัศมี $x$ ในอินทิกรัล ทำให้ได้ $2\\pi\\int_0^1(x-x^2)\\,dx$" }
+    solution: "$V=2\\pi\\int_0^1 x(x-x^2)\\,dx=2\\pi\\left(\\frac{1}{3}-\\frac{1}{4}\\right)=\\frac{\\pi}{6}\\approx 0.5236$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p007
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 3
+    type: expression
+    stem: "เปลือกทรงกระบอกบางมีรัศมี $r$ ความสูง $h$ และความหนา $t$ จงเขียนปริมาตรโดยประมาณของเปลือกนี้เป็นนิพจน์ (ใช้ตัวแปร $r$, $h$, $t$)"
+    prefix: "V ≈"
+    answer: { latex: "2\\pi r h t", variables: [r, h, t] }
+    misconceptions:
+      - { match: "\\pi r^2 h", feedback: "นี่คือปริมาตรทรงกระบอกตัน ไม่ใช่เปลือกที่มีความหนา $t$" }
+      - { match: "2\\pi r t", feedback: "ลืมความสูง $h$ ของเปลือก" }
+    hints:
+      - "คลี่เปลือกออกจะได้ผืนผ้าที่ยาวเท่ากับเส้นรอบวงของเปลือก"
+      - "เส้นรอบวงของวงกลมรัศมี $r$ คือ $2\\pi r$"
+    solution: "คลี่เปลือกเป็นผืนผ้ายาว $2\\pi r$ สูง $h$ หนา $t$ จึงได้ $V\\approx 2\\pi r h t$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p008
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 3
+    type: numeric
+    stem: "จงหาความยาวของเส้นโค้ง $y=\\frac{x^2}{2}$ บนช่วง $0\\le x\\le 1$ (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 1.1478, tolerance: 0.0005 }
+    hints:
+      - "หา $f'(x)$ แล้วยกกำลังสอง"
+      - "ปริพันธ์ที่ได้คือ $\\int_0^1\\sqrt{1+x^2}\\,dx$ ซึ่งมีสูตรมาตรฐาน"
+      - "ค่าที่ได้เป็น $\\frac{1}{2}(\\sqrt{2}+\\ln(1+\\sqrt{2}))$"
+    misconceptions:
+      - { match: 1, feedback: "1 คือความยาวของช่วงแนวนอนเท่านั้น ลืมส่วนที่เกิดจากความชันของเส้นโค้ง" }
+    solution: "$f'(x)=x$ จึงได้ $L=\\int_0^1\\sqrt{1+x^2}\\,dx=\\frac{1}{2}\\left(\\sqrt{2}+\\ln(1+\\sqrt{2})\\right)\\approx 1.1478$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p009
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 3
+    type: match
+    stem: "จับคู่วิธีหรือปริมาณกับสูตรหรือความหมายที่ถูกต้อง"
+    pairs:
+      - { left: "วิธีเปลือกทรงกระบอก", right: "รัศมีคือระยะจากแกนหมุนถึงตำแหน่ง $x$" }
+      - { left: "วิธีจาน", right: "หน้าตัดเป็นแผ่นวงกลมที่ตั้งฉากกับแกนหมุน" }
+      - { left: "ความยาวส่วนโค้ง", right: "$\\int\\sqrt{1+(f')^2}\\,dx$" }
+      - { left: "พื้นที่ผิวจากการหมุน", right: "$\\int 2\\pi f\\sqrt{1+(f')^2}\\,dx$" }
+    hints:
+      - "วิธีเปลือกใช้แถบแนวตั้ง จึงมีรัศมีวัดจากแกนหมุนถึงตำแหน่ง $x$"
+      - "สูตรที่มี $2\\pi f$ คูณอยู่ข้างหน้าเป็นของพื้นที่ผิว"
+    solution: "วิธีเปลือกใช้รัศมีถึงตำแหน่ง $x$ ส่วนวิธีจานใช้แผ่นวงกลม สูตรความยาวส่วนโค้งมีรากที่สองของ $1+(f')^2$ และพื้นที่ผิวมี $2\\pi f$ คูณเพิ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p010
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาพื้นที่ผิวที่เกิดจากการหมุนเส้นตรง $y=x$ บนช่วง $0\\le x\\le 1$ รอบแกน $x$ (ทศนิยม 4 ตำแหน่ง หน่วยตารางหน่วย)"
+    answer: { value: 4.4429, tolerance: 0.0005 }
+    hints:
+      - "ใช้สูตร $S=\\int_a^b 2\\pi f(x)\\sqrt{1+(f'(x))^2}\\,dx$"
+      - "ความชันของ $y=x$ เท่ากับ 1 จึงได้ $\\sqrt{1+1^2}$"
+      - "หาปริพันธ์ของ $2\\pi\\sqrt{2}\\,x$ บนช่วง $[0,1]$"
+    misconceptions:
+      - { match: 3.1416, feedback: "3.1416 คือ $\\pi$ เกิดจากลืมตัวคูณ $\\sqrt{1+(f')^2}=\\sqrt{2}$" }
+    solution: "$S=\\int_0^1 2\\pi x\\sqrt{2}\\,dx=\\sqrt{2}\\pi\\approx 4.4429$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p011
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 4
+    type: numeric
+    stem: "บริเวณใต้เส้นโค้ง $y=2x-x^2$ บนช่วง $0\\le x\\le 2$ ถูกหมุนรอบแกน $y$ จงหาปริมาตรของทรงที่เกิดขึ้น (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 8.3776, tolerance: 0.001 }
+    hints:
+      - "ใช้วิธีเปลือกทรงกระบอก รัศมีคือ $x$ และความสูงคือ $2x-x^2$"
+      - "ปริมาตรคือ $\\int_0^2 2\\pi x(2x-x^2)\\,dx$"
+      - "อินทิเกรต $2x^2-x^3$ บนช่วง $[0,2]$ ได้ $\\frac{4}{3}$"
+    misconceptions:
+      - { match: 4.1888, feedback: "4.1888 คือ $\\frac{4\\pi}{3}$ เกิดจากลืมตัวประกอบ 2 ใน $2\\pi$" }
+    solution: "$V=2\\pi\\int_0^2(2x^2-x^3)\\,dx=2\\pi\\cdot\\frac{4}{3}=\\frac{8\\pi}{3}\\approx 8.3776$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p012
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเก็บน้ำบนดาดฟ้ามีผนังด้านในเป็นผิวที่ได้จากการหมุนเส้นโค้ง $y=x^2$ บนช่วง $0\\le x\\le 2$ รอบแกน $y$ (หน่วยเมตร) ปากถังอยู่ที่ระดับ $y=4$ จงหาความจุของถังเมื่อเติมน้ำเต็มถึงปาก (ทศนิยม 2 ตำแหน่ง หน่วยลูกบาศก์เมตร)"
+    answer: { value: 25.13, tolerance: 0.005, unit: ลูกบาศก์เมตร }
+    hints:
+      - "น้ำอยู่เหนือผนังถัง คือบริเวณระหว่างเส้นโค้ง $y=x^2$ กับเส้น $y=4$ ไม่ใช่บริเวณใต้เส้นโค้ง"
+      - "ใช้วิธีเปลือกทรงกระบอก รัศมีคือ $x$ และความสูงของน้ำที่ตำแหน่ง $x$ คือ $4-x^2$"
+      - "ความจุคือ $\\int_0^2 2\\pi x\\,(4-x^2)\\,dx$"
+    misconceptions:
+      - { match: 12.57, feedback: "12.57 คือ $4\\pi$ เกิดจากลืมตัวประกอบ 2 ใน $2\\pi$ ของสูตรเปลือกทรงกระบอก" }
+      - { match: 50.27, feedback: "50.27 คือ $16\\pi$ ซึ่งเป็นปริมาตรทรงกระบอกรัศมี 2 สูง 4 ที่ครอบถังไว้ ต้องหักส่วนใต้ผนังถังออก" }
+    solution: "$V=\\int_0^2 2\\pi x(4-x^2)\\,dx=2\\pi\\left[2x^2-\\frac{x^4}{4}\\right]_0^2=2\\pi(8-4)=8\\pi\\approx 25.13$ ลูกบาศก์เมตร (ตรวจด้วยวิธีจานได้ $\\pi\\int_0^4 y\\,dy=8\\pi$ เท่ากัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p013
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 4
+    type: mcq
+    stem: "เมื่อต้องหาปริมาตรของการหมุนรอบแกน $y$ และการหา $x$ จาก $y$ ทำได้ยาก ควรเลือกวิธีใด"
+    choices:
+      - { id: a, text: "วิธีเปลือกทรงกระบอก", correct: true }
+      - { id: b, text: "วิธีจานหรือวิธีแหวน", feedback: "วิธีจานต้องแก้หา $x$ ในรูปของ $y$ ก่อน ซึ่งยุ่งยากในกรณีนี้" }
+      - { id: c, text: "ไม่ต้องใช้ปริพันธ์เลย", feedback: "ปริมาตรของทรงที่มีรูปร่างต่อเนื่องต้องใช้ปริพันธ์" }
+      - { id: d, text: "วิธีนับลูกบาศก์เล็ก ๆ", feedback: "วิธีนี้ใช้ได้เฉพาะรูปที่แบ่งเป็นกล่องเล็ก ๆ ไม่ใช่ทั่วไป" }
+    hints:
+      - "วิธีเปลือกใช้แถบแนวตั้งที่วัดความสูงจาก $y=f(x)$ โดยตรง"
+      - "ไม่จำเป็นต้องแก้หา $x$ จาก $y$"
+    solution: "วิธีเปลือกทรงกระบอกใช้แถบแนวตั้งกับฟังก์ชัน $y=f(x)$ โดยตรง จึงเหมาะเมื่อการแก้หา $x$ จาก $y$ ยุ่งยาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p014
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 4
+    type: numeric
+    stem: "จงหาความยาวของเส้นโค้ง $x=\\frac{y^3}{3}$ บนช่วง $0\\le y\\le 1$ (ทศนิยม 4 ตำแหน่ง ใช้การประมาณเชิงตัวเลขได้)"
+    answer: { value: 1.0894, tolerance: 0.0005 }
+    hints:
+      - "สำหรับเส้นโค้ง $x=g(y)$ ใช้สูตร $L=\\int\\sqrt{1+(g'(y))^2}\\,dy$"
+      - "หา $g'(y)$ แล้วยกกำลังสอง"
+      - "ปริพันธ์ $\\int_0^1\\sqrt{1+y^4}\\,dy$ ไม่มีรูปปิดในระดับนี้ ใช้เครื่องคิดเลขหรือการประมาณเชิงตัวเลขได้"
+    misconceptions:
+      - { match: 1.1478, feedback: "1.1478 เกิดจากคิดว่า $\\frac{dx}{dy}=y$ ซึ่งผิด เพราะ $x=\\frac{y^3}{3}$ จึงได้ $\\frac{dx}{dy}=y^2$" }
+    solution: "$g'(y)=y^2$ จึงได้ $L=\\int_0^1\\sqrt{1+y^4}\\,dy\\approx 1.0894$ ด้วยการประมาณเชิงตัวเลข เช่น กฎของซิมป์สัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p015
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 5
+    type: numeric
+    stem: "หมุนส่วนโค้ง $y=\\sqrt{4-x^2}$ บนช่วง $-1\\le x\\le 2$ รอบแกน $x$ จะได้ส่วนหนึ่งของผิวทรงกลมรัศมี 2 จงหาพื้นที่ผิวส่วนนี้ (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 37.6991, tolerance: 0.01 }
+    hints:
+      - "หา $f'(x)=\\frac{-x}{\\sqrt{4-x^2}}$ แล้วยกกำลังสอง"
+      - "จัด $1+(f')^2$ ให้เป็นเศษส่วนเดียว จะได้ $\\frac{4}{4-x^2}$"
+      - "ตัว $\\sqrt{4-x^2}$ จากสูตรจะตัดกันเหลือค่าคงที่ จึงอินทิเกรตได้ง่าย"
+    misconceptions:
+      - { match: 50.2655, feedback: "50.2655 คือ $16\\pi$ ซึ่งเป็นพื้นที่ผิวของทรงกลมทั้งลูก โจทย์หมุนเฉพาะส่วนโค้งบนช่วง $-1\\le x\\le 2$" }
+      - { match: 25.1327, feedback: "25.1327 คือ $8\\pi$ เกิดจากใช้ช่วง $[0,2]$ แทนช่วง $[-1,2]$ ที่โจทย์กำหนด" }
+    solution: "$\\sqrt{1+(f')^2}=\\frac{2}{\\sqrt{4-x^2}}$ จึงได้ $S=\\int_{-1}^{2}2\\pi\\sqrt{4-x^2}\\cdot\\frac{2}{\\sqrt{4-x^2}}\\,dx=\\int_{-1}^{2}4\\pi\\,dx=12\\pi\\approx 37.6991$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p016
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 5
+    type: numeric
+    stem: "สายเคเบิลหลักของสะพานแขวนจำลองมีรูปพาราโบลา $y=\\frac{x^2}{20}$ ตั้งแต่ $x=-10$ ถึง $x=10$ (หน่วยเมตร) จงหาความยาวของสายเคเบิลนี้ (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 22.9559, tolerance: 0.001, unit: เมตร }
+    hints:
+      - "สมมาตรรอบแกน $y$ จึงคำนวณครึ่งหนึ่งแล้วคูณ 2"
+      - "หา $f'(x)=\\frac{x}{10}$ แล้วยกกำลังสอง"
+      - "แทน $u=\\frac{x}{10}$ เพื่อให้ปริพันธ์อยู่ในรูป $\\int\\sqrt{1+u^2}\\,du$"
+    misconceptions:
+      - { match: 20, feedback: "20 คือช่วงแนวนอนทั้งหมดของสายเคเบิล ไม่ใช่ความยาวของสายที่โค้ง" }
+    solution: "$L=2\\int_0^{10}\\sqrt{1+\\left(\\frac{x}{10}\\right)^2}\\,dx=20\\int_0^1\\sqrt{1+u^2}\\,du\\approx 22.9559$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p017
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 5
+    type: mcq
+    stem: "หมุนบริเวณระหว่าง $y=x$ กับ $y=x^2$ บนช่วง $[0,1]$ รอบแกน $x$ ด้วยวิธีแหวน จงหาว่ารัศมีด้านนอกของแหวนที่ตำแหน่ง $x$ มีค่าเท่าใด"
+    choices:
+      - { id: a, text: "$x$", correct: true }
+      - { id: b, text: "$x^2$", feedback: "$x^2$ คือรัศมีด้านใน ซึ่งเป็นเส้นโค้งที่อยู่ด้านล่าง" }
+      - { id: c, text: "$x-x^2$", feedback: "$x-x^2$ คือระยะห่างระหว่างสองเส้นตามแนวตั้ง ไม่ใช่รัศมีจากแกนหมุน" }
+      - { id: d, text: "$1-x$", feedback: "$1-x$ ไม่เกี่ยวข้องกับกราฟที่โจทย์ให้มา" }
+    hints:
+      - "รัศมีด้านนอกคือระยะจากแกนหมุนถึงเส้นที่อยู่สูงกว่า"
+      - "บนช่วง $[0,1]$ เส้นใดอยู่สูงกว่ากัน"
+    solution: "บนช่วง $[0,1]$ เส้น $y=x$ อยู่เหนือ $y=x^2$ รัศมีด้านนอกจึงเป็น $x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.shells-arc-length.p018
+    topics: [math.calculus.shells-arc-length]
+    difficulty: 5
+    type: numeric
+    stem: "ถ้วยใส่น้ำจิ้มมีผิวด้านในที่ได้จากการหมุนเส้นโค้ง $y=\\frac{x^2}{4}$ บนช่วง $0\\le x\\le 4$ รอบแกน $y$ (หน่วยเซนติเมตร) ปากถ้วยอยู่ที่ระดับ $y=4$ จงหาความจุของถ้วยเมื่อเติมจนเต็มปาก (ทศนิยม 2 ตำแหน่ง หน่วยลูกบาศก์เซนติเมตร)"
+    answer: { value: 100.53, tolerance: 0.01, unit: ลูกบาศก์เซนติเมตร }
+    hints:
+      - "ของเหลวอยู่ระหว่างเส้นโค้ง $y=\\frac{x^2}{4}$ กับเส้น $y=4$"
+      - "ใช้วิธีเปลือกทรงกระบอก รัศมีคือ $x$ และความสูงคือ $4-\\frac{x^2}{4}$"
+      - "ความจุคือ $\\int_0^4 2\\pi x\\left(4-\\frac{x^2}{4}\\right)dx$"
+    misconceptions:
+      - { match: 50.27, feedback: "50.27 คือ $16\\pi$ เกิดจากลืมตัวประกอบ 2 ใน $2\\pi$ ของสูตรเปลือกทรงกระบอก" }
+      - { match: 201.06, feedback: "201.06 คือ $64\\pi$ ซึ่งเป็นปริมาตรทรงกระบอกรัศมี 4 สูง 4 ที่ครอบถ้วยไว้ ต้องหักส่วนใต้ผิวถ้วยออก" }
+    solution: "$V=\\int_0^4 2\\pi x\\left(4-\\frac{x^2}{4}\\right)dx=2\\pi\\left[2x^2-\\frac{x^4}{16}\\right]_0^4=2\\pi(32-16)=32\\pi\\approx 100.53$ ลูกบาศก์เซนติเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,291 @@
+problems:
+  - id: math.calculus.inverse-function-calculus.p001
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 1
+    type: numeric
+    stem: "กำหนด $f(x)=x^3+2x$ จงหา $(f^{-1})'(3)$ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 0.2, tolerance: 0.005 }
+    hints:
+      - "หา $x$ ที่ทำให้ $f(x)=3$ ก่อน"
+      - "หา $f'(x)$ แล้วแทนค่า $x$ ที่ได้จากข้อแรก"
+      - "ใช้ $(f^{-1})'(a)=\\frac{1}{f'(f^{-1}(a))}$"
+    misconceptions:
+      - { match: 5, feedback: "5 คือ $f'(1)$ เท่านั้น ต้องนำไปหาส่วนกลับเป็น $\\frac{1}{f'(1)}$" }
+    solution: "$f(1)=1+2=3$ จึงได้ $f^{-1}(3)=1$ และ $f'(x)=3x^2+2$ ทำให้ $f'(1)=5$ ดังนั้น $(f^{-1})'(3)=\\frac{1}{5}=0.2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p002
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 1
+    type: mcq
+    stem: "อนุพันธ์ของ $\\arcsin x$ เท่ากับข้อใด"
+    choices:
+      - { id: a, text: "$-\\frac{1}{\\sqrt{1-x^2}}$", feedback: "นี่คืออนุพันธ์ของ $\\arccos x$ เครื่องหมายลบเป็นของ $\\arccos$ ไม่ใช่ $\\arcsin$" }
+      - { id: b, text: "$\\frac{1}{\\sqrt{1-x^2}}$", correct: true }
+      - { id: c, text: "$\\frac{1}{1+x^2}$", feedback: "นี่คืออนุพันธ์ของ $\\arctan x$ ซึ่งมีตัวส่วนเป็น $1+x^2$" }
+      - { id: d, text: "$\\sqrt{1-x^2}$", feedback: "$\\sqrt{1-x^2}$ เป็นค่าของ $\\cos(\\arcsin x)$ ไม่ใช่อนุพันธ์" }
+    hints:
+      - "ให้ $y=\\arcsin x$ แล้วเขียนเป็น $\\sin y=x$"
+      - "หาอนุพันธ์ทั้งสองข้างของ $\\sin y=x$ เทียบกับ $x$"
+    solution: "จาก $\\sin y=x$ ได้ $\\cos y\\cdot y'=1$ และ $\\cos y=\\sqrt{1-x^2}$ จึงได้ $y'=\\frac{1}{\\sqrt{1-x^2}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p003
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\int_0^1 e^{2x}\\,dx$ (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 3.195, tolerance: 0.001 }
+    hints:
+      - "หาปริพันธ์ไม่จำกัดของ $e^{2x}$ โดยใช้การแทนค่า $u=2x$"
+      - "ปริพันธ์ของ $e^{u}$ คือ $e^{u}$ แต่ต้องคิด $du=2\\,dx$ ด้วย"
+      - "แทนขอบเขต $x=0$ และ $x=1$ แล้วลบกัน"
+    misconceptions:
+      - { match: 6.389, feedback: "6.389 คือ $e^2-1$ ซึ่งเป็นค่าเป็นสองเท่าของคำตอบ เพราะลืมหารด้วย 2 จากอนุพันธ์ชั้นในของ $e^{2x}$" }
+    solution: "$\\int_0^1 e^{2x}\\,dx=\\left[\\frac{1}{2}e^{2x}\\right]_0^1=\\frac{e^2-1}{2}\\approx 3.195$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p004
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 2
+    type: numeric
+    stem: "จงหา $\\int_0^1\\frac{dx}{1+x^2}$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.7854, tolerance: 0.0001 }
+    hints:
+      - "ตัวส่วนอยู่ในรูป $a^2+u^2$ โดย $a=1$"
+      - "ใช้สูตร $\\int\\frac{du}{a^2+u^2}=\\frac{1}{a}\\arctan\\frac{u}{a}+C$"
+      - "แทนค่า $\\arctan 1$ ซึ่งเป็นมุมที่รู้จักดี"
+    misconceptions:
+      - { match: 0.6931, feedback: "0.6931 คือ $\\ln 2$ ซึ่งเป็นปริพันธ์ของ $\\frac{1}{x}$ ไม่ใช่ของ $\\frac{1}{1+x^2}$" }
+    solution: "$\\int_0^1\\frac{dx}{1+x^2}=\\left[\\arctan x\\right]_0^1=\\frac{\\pi}{4}\\approx 0.7854$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p005
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดให้ปริพันธ์เท่ากับ $\\ln|u|+C$"
+    choices:
+      - { id: a, text: "$\\int\\frac{1}{u}\\,du$", correct: true }
+      - { id: b, text: "$\\int u\\,du$", feedback: "ปริพันธ์ของ $u$ คือ $\\frac{u^2}{2}+C$ ไม่ใช่ลอการิทึม" }
+      - { id: c, text: "$\\int e^u\\,du$", feedback: "ปริพันธ์ของ $e^u$ คือ $e^u+C$ ซึ่งเป็นตัวมันเอง" }
+      - { id: d, text: "$\\int\\frac{1}{u^2}\\,du$", feedback: "ปริพันธ์ของ $\\frac{1}{u^2}$ คือ $-\\frac{1}{u}+C$ ซึ่งเป็นกำลังลบ" }
+    hints:
+      - "นึกถึงฟังก์ชันที่มีอนุพันธ์เป็น $\\frac{1}{u}$"
+      - "ปริพันธ์ของ $u^{-1}$ เป็นกรณีพิเศษที่ไม่ใช่กฎกำลัง"
+    solution: "$\\frac{d}{du}\\ln|u|=\\frac{1}{u}$ จึงได้ $\\int\\frac{1}{u}\\,du=\\ln|u|+C$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p006
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 3
+    type: numeric
+    stem: "รถสองแถวถอยหลังออกจากซอยแล้ววิ่งไปข้างหน้าตามถนนเส้นตรง โดยมีความเร็ว $v(t)=3t^2-6t$ เมตรต่อวินาที เมื่อ $0\\le t\\le 3$ จงหาระยะทางรวมที่รถเคลื่อนที่ในสามวินาทีแรก (หน่วยเมตร ตอบจำนวนเต็ม)"
+    answer: { value: 8, tolerance: 0, unit: m }
+    hints:
+      - "ระยะทางรวมต้องนับทุกทิศทางเป็นบวก จึงใช้ค่าสัมบูรณ์ของความเร็ว"
+      - "หาว่า $v(t)$ เป็นลบในช่วงใด โดยแยกตัวประกอบ $3t(t-2)$"
+      - "แบ่งปริพันธ์ที่จุด $t=2$ แล้วกลับเครื่องหมายส่วนที่เป็นลบ"
+    misconceptions:
+      - { match: 0, feedback: "0 คือการกระจัดสุทธิ เพราะส่วนที่ไปทางบวกและลบหักล้างกัน โจทย์ถามระยะทางรวมต้องใช้ $\\int|v|\\,dt$" }
+    solution: "$v(t)=3t(t-2)$ เป็นลบเมื่อ $0<t<2$ จึงได้ระยะทาง $\\int_0^2 -(3t^2-6t)\\,dt+\\int_2^3(3t^2-6t)\\,dt=4+4=8$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p007
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\int_{-2}^{2}(x^2+4x^3+3)\\,dx$ (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 17.33, tolerance: 0.01 }
+    hints:
+      - "ตรวจว่าแต่ละพจน์เป็นฟังก์ชันคู่หรือคี่บนช่วงสมมาตร"
+      - "ถ้าเป็นฟังก์ชันคี่ ปริพันธ์บนช่วงสมมาตรจะเป็นศูนย์"
+      - "สำหรับฟังก์ชันคู่ ปริพันธ์บนช่วงสมมาตรเท่ากับสองเท่าของปริพันธ์ครึ่งช่วง"
+    misconceptions:
+      - { match: 12, feedback: "12 เกิดจากคิดว่า $x^2$ หักล้างกันเป็นศูนย์ เหลือเพียง $\\int_{-2}^{2}3\\,dx$ แต่ $x^2$ เป็นฟังก์ชันคู่จึงไม่หักล้าง" }
+    solution: "พจน์ $4x^3$ เป็นคี่จึงได้ศูนย์ ส่วน $x^2+3$ เป็นคู่ ดังนั้น $2\\int_0^2(x^2+3)\\,dx=2\\left(\\frac{8}{3}+6\\right)=\\frac{52}{3}\\approx 17.33$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p008
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 3
+    type: numeric
+    stem: "จงหา $\\int_0^{1/2}\\frac{dx}{\\sqrt{1-x^2}}$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.5236, tolerance: 0.0001 }
+    hints:
+      - "ตัวส่วนอยู่ในรูป $\\sqrt{a^2-u^2}$ โดย $a=1$ และ $u=x$"
+      - "ปริพันธ์ของ $\\frac{du}{\\sqrt{a^2-u^2}}$ คือ $\\arcsin\\frac{u}{a}$"
+      - "หาค่า $\\arcsin\\frac{1}{2}$ ซึ่งเป็นมุมที่มีไซน์เท่ากับ $\\frac{1}{2}$"
+    misconceptions:
+      - { match: 1.0472, feedback: "1.0472 คือ $\\frac{\\pi}{3}$ ซึ่งเป็นค่าของ $\\arccos\\frac{1}{2}$ ไม่ใช่ $\\arcsin\\frac{1}{2}$" }
+    solution: "$\\int_0^{1/2}\\frac{dx}{\\sqrt{1-x^2}}=\\left[\\arcsin x\\right]_0^{1/2}=\\frac{\\pi}{6}\\approx 0.5236$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p009
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ฟังก์ชันกับอนุพันธ์ของมัน"
+    pairs:
+      - { left: "$\\arcsin x$", right: "$\\frac{1}{\\sqrt{1-x^2}}$" }
+      - { left: "$\\arctan x$", right: "$\\frac{1}{1+x^2}$" }
+      - { left: "$\\ln|x|$", right: "$\\frac{1}{x}$" }
+      - { left: "$\\tan x$", right: "$\\sec^2 x$" }
+    hints:
+      - "ฟังก์ชันตรีโกณมิติผกผันที่มีตัวส่วนเป็น $\\sqrt{1-x^2}$ คือ $\\arcsin$"
+      - "ลองนึกว่าอนุพันธ์ของ $\\tan x$ คือฟังก์ชันตรีโกณมิติใด"
+    solution: "อนุพันธ์ของ $\\arcsin x$ คือ $\\frac{1}{\\sqrt{1-x^2}}$, $\\arctan x$ คือ $\\frac{1}{1+x^2}$, $\\ln|x|$ คือ $\\frac{1}{x}$ และ $\\tan x$ คือ $\\sec^2 x$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p010
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\int_0^1\\frac{x}{x^2+1}\\,dx$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.3466, tolerance: 0.0001 }
+    hints:
+      - "ให้ $u=x^2+1$ แล้วหาค่า $du$"
+      - "$du=2x\\,dx$ ดังนั้น $x\\,dx=\\frac{1}{2}du$"
+      - "ขอบเขตเมื่อ $x=0$ คือ $u=1$ และเมื่อ $x=1$ คือ $u=2$"
+    misconceptions:
+      - { match: 0.6931, feedback: "0.6931 คือ $\\ln 2$ ซึ่งลืมตัวคูณ $\\frac{1}{2}$ ที่มาจาก $du=2x\\,dx$" }
+    solution: "ให้ $u=x^2+1$ จะได้ $\\int_1^2\\frac{du}{2u}=\\frac{1}{2}\\left[\\ln u\\right]_1^2=\\frac{\\ln 2}{2}\\approx 0.3466$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p011
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\int_0^1\\frac{x}{\\sqrt{1-x^2}}\\,dx$ (ตอบจำนวนเต็ม)"
+    answer: { value: 1, tolerance: 0 }
+    hints:
+      - "ให้ $u=1-x^2$ จะได้ $du=-2x\\,dx$"
+      - "แทนค่าขอบเขต $x=0$ ได้ $u=1$ และ $x=1$ ได้ $u=0$"
+      - "ปริพันธ์ของ $\\frac{1}{2\\sqrt{u}}$ คือ $\\sqrt{u}$"
+    misconceptions:
+      - { match: 1.5708, feedback: "1.5708 คือ $\\frac{\\pi}{2}$ ซึ่งเป็นค่าของปริพันธ์ที่ไม่มี $x$ ในตัวเศษ $\\int_0^1\\frac{dx}{\\sqrt{1-x^2}}$" }
+    solution: "ให้ $u=1-x^2$ จะได้ $\\int_0^1\\frac{x}{\\sqrt{1-x^2}}\\,dx=-\\frac{1}{2}\\int_1^0 u^{-1/2}\\,du=\\left[\\sqrt{u}\\right]_0^1$ ซึ่งเท่ากับ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p012
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\int_0^{\\sqrt{3}}\\frac{dx}{1+x^2}$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 1.0472, tolerance: 0.0001 }
+    hints:
+      - "ปริพันธ์นี้ได้อาร์กแทนเจนต์"
+      - "แทนขอบบนด้วย $\\sqrt{3}$ ไม่ใช่ 1"
+      - "$\\arctan\\sqrt{3}$ คือมุมที่แทนเจนต์เท่ากับ $\\sqrt{3}$"
+    misconceptions:
+      - { match: 0.7854, feedback: "0.7854 คือ $\\frac{\\pi}{4}$ ซึ่งเป็นค่าเมื่อขอบบนคือ 1 ไม่ใช่ $\\sqrt{3}$ อย่าลืมแทนขอบบนจริง" }
+    solution: "$\\int_0^{\\sqrt{3}}\\frac{dx}{1+x^2}=\\arctan\\sqrt{3}-\\arctan 0=\\frac{\\pi}{3}\\approx 1.0472$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p013
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 4
+    type: text
+    stem: "ก่อนหาปริพันธ์ $\\int_0^1\\frac{dx}{x^2+2x+5}$ ต้องจัดตัวส่วนด้วยวิธีพีชคณิตแบบใด (ตอบเป็นชื่อวิธี)"
+    accepted: ["การเติมกำลังสอง", "เติมกำลังสอง", "completing the square"]
+    misconceptions:
+      - { match: "การแยกตัวประกอบ", feedback: "ตัวส่วน $x^2+2x+5$ แยกเป็นตัวประกอบจำนวนจริงไม่ได้ เพราะดิสคริมิแนนต์ติดลบ จึงต้องเติมกำลังสองเป็น $(x+1)^2+4$" }
+    hints:
+      - "ตัวส่วนแยกตัวประกอบเป็นจำนวนจริงไม่ได้ ลองหาวิธีเขียนให้อยู่ในรูป $u^2+a^2$"
+      - "เขียน $x^2+2x$ เป็นส่วนหนึ่งของ $(x+1)^2$ แล้วดูว่าเหลือค่าคงที่เท่าไร"
+    solution: "$x^2+2x+5=(x+1)^2+4$ จึงเป็นการเติมกำลังสอง ซึ่งทำให้ใช้สูตรอาร์กแทนเจนต์ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p014
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\int_0^1\\frac{dx}{x^2+4x+5}$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.1419, tolerance: 0.0001 }
+    hints:
+      - "เติมกำลังสองของตัวส่วนก่อน $x^2+4x+5=(x+2)^2+1$"
+      - "ให้ $u=x+2$ แล้วขอบเขตจะเป็น $u=2$ ถึง $u=3$"
+      - "ปริพันธ์คือ $\\arctan u$ ประเมินที่ $3$ และ $2$"
+    misconceptions:
+      - { match: 0.7854, feedback: "0.7854 คือ $\\arctan 1-\\arctan 0=\\frac{\\pi}{4}$ เกิดจากแทน $u=x+2$ แล้วลืมเปลี่ยนขอบเขตจาก $x=0,1$ เป็น $u=2,3$" }
+    solution: "$x^2+4x+5=(x+2)^2+1$ จึงได้ $\\int_2^3\\frac{du}{u^2+1}=\\arctan 3-\\arctan 2\\approx 0.1419$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p015
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 4
+    type: numeric
+    stem: "จงหา $\\int_1^2\\left(x+\\frac{1}{x}\\right)dx$ (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 2.1931, tolerance: 0.0001 }
+    hints:
+      - "แยกเป็นปริพันธ์ของ $x$ กับปริพันธ์ของ $\\frac{1}{x}$"
+      - "ปริพันธ์ของ $\\frac{1}{x}$ คือ $\\ln|x|$"
+      - "ปริพันธ์ของ $x$ คือ $\\frac{x^2}{2}$"
+    misconceptions:
+      - { match: 0.6931, feedback: "0.6931 คือ $\\ln 2$ เกิดจากลืมพจน์ $\\int_1^2 x\\,dx=\\frac{3}{2}$" }
+    solution: "$\\int_1^2\\left(x+\\frac{1}{x}\\right)dx=\\left[\\frac{x^2}{2}+\\ln x\\right]_1^2=\\frac{3}{2}+\\ln 2\\approx 2.1931$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p016
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 5
+    type: numeric
+    stem: "ถังเก็บน้ำประปาหมู่บ้านรับน้ำจากท่อด้วยอัตรา $r(t)=48-4t$ ลิตรต่อนาที เมื่อ $0\\le t\\le 12$ จงหาปริมาณน้ำที่เข้าถังตลอดสิบสองนาทีนั้น (หน่วยลิตร ตอบจำนวนเต็ม)"
+    answer: { value: 288, tolerance: 0, unit: ลิตร }
+    hints:
+      - "ปริมาณน้ำที่เข้าทั้งหมดคือปริพันธ์ของอัตราการไหลตามเวลา"
+      - "หาปริพันธ์ของ $48-4t$ จาก 0 ถึง 12"
+      - "ใช้ทฤษฎีบทการเปลี่ยนแปลงสุทธิ คือ $F(12)-F(0)$"
+    misconceptions:
+      - { match: 576, feedback: "576 คือ $48\\times 12$ ซึ่งสมมติว่าอัตราคงที่ 48 ลิตรต่อนาทีตลอดเวลา แต่อัตราลดลงตามเวลา จึงต้องใช้ปริพันธ์" }
+    solution: "$\\int_0^{12}(48-4t)\\,dt=\\left[48t-2t^2\\right]_0^{12}=576-288=288$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p017
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 5
+    type: mcq
+    stem: "ถ้า $f(x)=x^3+x$ จงหา $(f^{-1})'(10)$"
+    choices:
+      - { id: a, text: "$\\frac{1}{10}$", feedback: "$\\frac{1}{10}$ คือส่วนกลับของค่าผลลัพธ์ 10 แต่ต้องใช้อนุพันธ์ของ $f$ ที่จุด $f^{-1}(10)$" }
+      - { id: b, text: "$\\frac{1}{13}$", correct: true }
+      - { id: c, text: "$\\frac{1}{12}$", feedback: "$\\frac{1}{12}$ เกิดจากลืมพจน์ $+1$ ใน $f'(x)=3x^2+1$ ทำให้ได้ $f'(2)=12$" }
+      - { id: d, text: "$13$", feedback: "13 คือ $f'(2)$ แต่ลืมนำมาหาส่วนกลับ" }
+    hints:
+      - "หา $x$ ที่ทำให้ $f(x)=10$ ก่อน"
+      - "หา $f'(x)$ แล้วแทนค่า $x$ ที่ได้"
+    solution: "$f(2)=8+2=10$ จึงได้ $f^{-1}(10)=2$ และ $f'(x)=3x^2+1$ ทำให้ $f'(2)=13$ ดังนั้น $(f^{-1})'(10)=\\frac{1}{13}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.inverse-function-calculus.p018
+    topics: [math.calculus.inverse-function-calculus]
+    difficulty: 5
+    type: numeric
+    stem: "ปั๊มน้ำสูบน้ำจากคลองเข้าแปลงนาด้วยอัตรา $r(t)=\\frac{10}{1+t^2}$ ลิตรต่อนาที เมื่อ $t$ เป็นนาที จงหาปริมาณน้ำที่สูบเข้านาในหนึ่งนาทีแรก (หน่วยลิตร ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 7.854, tolerance: 0.001, unit: ลิตร }
+    hints:
+      - "ปริมาณน้ำคือปริพันธ์ของอัตราการไหลตั้งแต่ $t=0$ ถึง $t=1$"
+      - "ดึงค่าคงที่ 10 ออกจากปริพันธ์ก่อน"
+      - "ปริพันธ์ของ $\\frac{1}{1+t^2}$ คืออาร์กแทนเจนต์"
+    misconceptions:
+      - { match: 6.931, feedback: "6.931 คือ $10\\ln 2$ เกิดจากคิดว่า $\\int\\frac{dt}{1+t^2}=\\ln(1+t^2)$ แต่ตัวเศษไม่ใช่อนุพันธ์ของตัวส่วน ปริพันธ์นี้ได้อาร์กแทนเจนต์" }
+    solution: "$\\int_0^1\\frac{10}{1+t^2}\\,dt=10\\left[\\arctan t\\right]_0^1=10\\cdot\\frac{\\pi}{4}=\\frac{5\\pi}{2}\\approx 7.854$ ลิตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

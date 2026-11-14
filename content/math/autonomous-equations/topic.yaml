@@ -1,0 +1,75 @@
+id: math.de.autonomous-equations
+subject: math
+title: { th: สนามทิศทาง สมการอัตโนมัติ และเส้นเฟส, en: Direction fields, autonomous equations and phase lines }
+summary: อ่านพฤติกรรมของผลเฉลยจากสนามทิศทาง หาจุดสมดุลและความเสถียรจากเส้นเฟส และเปรียบเทียบสมการเชิงเส้นกับสมการไม่เชิงเส้น
+difficulty: 8.5
+minutes: 40
+prerequisites: [math.de.first-order, math.numerical.basic-methods]
+encompasses:
+  - { id: math.de.first-order, weight: 0.4 }
+  - { id: math.numerical.basic-methods, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: direction-field.svg
+    alt: "สนามทิศทางของสมการ y ไพรม์ เท่ากับ y คูณ 1 ลบ y แสดงขีดสีเขียวเมื่อ y อยู่ระหว่าง 0 กับ 1 ซึ่งลาดขึ้น และขีดสีส้มเมื่อ y อยู่นอกช่วงนั้นซึ่งลาดลง เส้นประแนวนอนที่ y เท่ากับ 0 และ 1 เป็นจุดสมดุล"
+    caption: "ขีดแต่ละขีดมีความชันเท่ากับ $y(1-y)$ ที่ระดับ $y$ นั้น ความชันไม่ขึ้นกับ $t$ จึงเหมือนกันทุกคอลัมน์"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: phase-line.svg
+    alt: "เส้นเฟสแนวตั้งของสมการ y ไพรม์ เท่ากับ y คูณ 1 ลบ y ลบ 0.21 มีวงกลมกลวงที่ y เท่ากับ 0.3 และวงกลมทึบที่ y เท่ากับ 0.7 ลูกศรระหว่างสองจุดชี้ขึ้น และลูกศรนอกช่วงนี้ชี้ลง"
+    caption: "จุดที่ลูกศรชี้เข้าจากสองข้างคือจุดเสถียร ส่วนจุดที่ลูกศรชี้ออกจากสองข้างคือจุดไม่เสถียร"
+  - type: interactive
+    title: ลากแถบเลื่อนเก็บเกี่ยวแล้วดูจุดสมดุลเคลื่อน
+    caption: "กราฟคือ f ของ y ที่มีค่า y คูณ 1 ลบ y ลบ h จุดที่กราฟตัดแกนนอนคือจุดสมดุล เมื่อ h เพิ่มจนถึง 0.25 จุดสองจุดจะรวมกัน และเกินจากนั้นกราฟไม่ตัดแกนเลย"
+    widget:
+      kind: function-plot
+      functions: ["x\\cdot(1-x) - h"]
+      sliders:
+        - { name: h, min: 0, max: 0.3, step: 0.01, value: 0.21, label: อัตราการเก็บเกี่ยว h }
+      x: [-0.2, 1.2]
+      y: [-0.2, 0.3]
+  - type: worked-example
+    title: หาจุดสมดุลและความเสถียรเมื่อ h เท่ากับ 0.24
+    problem: "สำหรับ $y'=y(1-y)-0.24$ จงหาจุดสมดุลและระบุว่าแต่ละจุดเสถียรหรือไม่"
+    steps:
+      - text: "จุดสมดุลคือ $y^2-y+0.24=0$ ซึ่งได้ $y=\\frac{1\\pm\\sqrt{1-0.96}}{2}=\\frac{1\\pm 0.2}{2}$ จึงได้ $y=0.4$ และ $y=0.6$"
+        why: "ตั้ง $f(y)=0$ แล้วใช้สูตรกำลังสอง"
+      - text: "ตรวจเครื่องหมายของ $f$ เมื่อ $y<0.4$ ได้ $f<0$ ส่วนเมื่อ $0.4<y<0.6$ ได้ $f>0$ และเมื่อ $y>0.6$ ได้ $f<0$"
+        why: "ทดแทนค่าเล็ก ๆ ที่ฝั่งซ้ายและขวาของแต่ละจุดเพื่อเห็นทิศทางของลูกศร"
+      - text: "ลูกศรชี้ออกจาก $0.4$ ทั้งสองข้าง จึงไม่เสถียร ส่วน $0.6$ ลูกศรชี้เข้าจากทั้งสองข้าง จึงเสถียร"
+        why: "ลูกศรชี้เข้าจากสองข้างคือเงื่อนไขของจุดเสถียร"
+    answer: "$y=0.4$ ไม่เสถียร และ $y=0.6$ เสถียร"
+  - { type: check, problem: math.de.autonomous-equations.p001, prompt: "จุดสมดุลคือค่า y ที่ทำให้ f(y) เป็นศูนย์ ลองหาให้ครบทุกจุดก่อน แล้วเลือกจุดที่โจทย์ถาม" }
+  - type: worked-example
+    title: หาเวลาที่ผลเฉลยระเบิด
+    problem: "จงหาเวลา $t$ ที่ผลเฉลยของ $y'=y^2$ ที่ $y(0)=2$ ไปเป็นอนันต์"
+    steps:
+      - text: "แยกตัวแปร $\\frac{dy}{y^2}=dt$ แล้วอินทิเกรตได้ $-\\frac{1}{y}=t+C$"
+        why: "สมการนี้แยกตัวแปรได้ เพราะ $f$ ขึ้นกับ $y$ เท่านั้น"
+      - text: "แทน $y(0)=2$ จะได้ $C=-\\frac{1}{2}$ จึงได้ $y(t)=\\frac{1}{\\frac{1}{2}-t}$"
+        why: "เงื่อนไขเริ่มต้นกำหนดค่าคงที่ $C$"
+      - text: "$y$ ไปเป็นอนันต์เมื่อ $\\frac{1}{2}-t=0$ นั่นคือ $t=\\frac{1}{2}$"
+        why: "ตัวส่วนเป็นศูนย์ทำให้ค่าของ $y$ ไม่จำกัด"
+    answer: "ผลเฉลยระเบิดที่ $t=\\frac{1}{2}$"
+  - { type: check, problem: math.de.autonomous-equations.p008, prompt: "ลองดูว่า h เกิน 0.25 แล้วกราฟยังตัดแกนนอนไหม" }
+glossary:
+  - { term: สนามทิศทาง, definition: "ภาพขีดความชันที่วาดไว้ตามจุดต่าง ๆ โดยความชันของแต่ละขีดเท่ากับ $f(t,y)$ ที่จุดนั้น" }
+  - { term: สมการอัตโนมัติ, definition: "สมการเชิงอนุพันธ์ที่ $f$ ไม่ขึ้นกับ $t$ เขียนเป็น $y'=f(y)$" }
+  - { term: จุดสมดุล, definition: "ค่า $y^*$ ที่ทำให้ $f(y^*)=0$ ซึ่งเป็นผลเฉลยคงที่" }
+  - { term: กรวยและแนวแบ่ง, definition: "กรวยคือบริเวณที่ผลเฉลยหลายเส้นถูกบีบเข้าหากัน แนวแบ่งคือเส้นโค้งปริพันธ์ที่แยกผลเฉลยซึ่งมีพฤติกรรมปลายทางต่างกัน" }
+  - { term: เส้นเฟส, definition: "เส้นแนวตั้งที่แสดงจุดสมดุลและลูกศรบอกทิศทางการเปลี่ยนแปลงของ $y$ ระหว่างจุดเหล่านั้น" }
+flashcards:
+  - { front: "จุดสมดุลของ $y'=y(1-y)-h$ เมื่อ $h<\\frac{1}{4}$", back: "$y=\\frac{1\\pm\\sqrt{1-4h}}{2}$" }
+  - { front: "จุดเสถียรกับจุดไม่เสถียรบนเส้นเฟส", back: "เสถียรเมื่อลูกศรชี้เข้าจากสองข้าง ไม่เสถียรเมื่อลูกศรชี้ออกจากสองข้าง" }
+  - { front: "ไอโซไคลน์ของ $y'=t+y$ ที่ความชัน $c$", back: "เส้น $t+y=c$" }
+  - { front: "สมการไม่เชิงเส้นอย่าง $y'=y^2$ ทำอะไรได้ที่เชิงเส้นทำไม่ได้", back: "ผลเฉลยอาจระเบิดในเวลาจำกัด และไม่มีคุณสมบัติซ้อนทับ" }
+references:
+  - { title: "Slope field", url: "https://en.wikipedia.org/wiki/Slope_field", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Logistic function", url: "https://en.wikipedia.org/wiki/Logistic_function", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Autonomous system (mathematics)", url: "https://en.wikipedia.org/wiki/Autonomous_system_(mathematics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "18.03 Differential Equations (MIT OpenCourseWare, Spring 2010)", url: "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

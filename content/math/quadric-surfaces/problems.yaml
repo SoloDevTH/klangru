@@ -1,0 +1,293 @@
+problems:
+  - id: math.calculus.quadric-surfaces.p001
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 1
+    type: numeric
+    stem: "พาราโบลอยด์ $z=x^2+y^2$ ถูกตัดด้วยระนาบ $z=4$ จะได้วงกลมที่มีรัศมีเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "แทน $z=4$ ลงในสมการ จะได้ความสัมพันธ์ของ $x$ และ $y$"
+      - "สมการที่ได้มีรูป $x^2+y^2=$ ค่าคงที่ที่อ่านจากด้านขวา"
+      - "รัศมีคือรากที่สองของค่าคงที่ทางขวา"
+    misconceptions:
+      - { match: 4, feedback: "4 คือค่าของ $z$ ไม่ใช่รัศมี รัศมีคือ $\\sqrt{4}$ เพราะ $x^2+y^2=4$" }
+    solution: "แทน $z=4$ ได้ $x^2+y^2=4$ เป็นวงกลมรัศมี $\\sqrt{4}=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p002
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 1
+    type: mcq
+    stem: "สมการ $x^2+y^2+z^2=9$ แทนพื้นผิวชนิดใด"
+    choices:
+      - { id: a, text: "ทรงรี (รวมถึงทรงกลม)", correct: true }
+      - { id: b, text: "พาราโบลอยด์รูปวงรี", feedback: "พาราโบลอยด์ต้องมีพจน์เชิงเส้นตัวหนึ่ง สมการนี้ไม่มีพจน์เชิงเส้น" }
+      - { id: c, text: "ไฮเพอร์โบลอยด์หนึ่งแผ่น", feedback: "ไฮเพอร์โบลอยด์หนึ่งแผ่นต้องมีเครื่องหมายลบหนึ่งตัว สมการนี้ทุกพจน์เป็นบวก" }
+      - { id: d, text: "กรวยวงรี", feedback: "กรวยต้องมีด้านขวาเป็น 0 แต่สมการนี้มีด้านขวาเป็น 9" }
+    hints:
+      - "นับจำนวนเครื่องหมายลบในพจน์กำลังสอง"
+      - "ดูด้านขวาของสมการว่าเป็น 0 หรือค่าคงที่บวก"
+    solution: "ทุกพจน์กำลังสองเป็นบวกและด้านขวาเป็นค่าคงที่บวก จึงเป็นทรงรี และเมื่อค่าทั้งสามเท่ากันก็เป็นทรงกลม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p003
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 2
+    type: numeric
+    stem: "กรวย $z^2=x^2+y^2$ ถูกตัดด้วยระนาบ $z=5$ จะได้วงกลมที่มีรัศมีเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 5, tolerance: 0 }
+    hints:
+      - "แทน $z=5$ ลงในสมการจะได้ $x^2+y^2=$ ค่าคงที่ที่อ่านจากด้านขวา"
+      - "ค่าคงที่คือ $z^2$ ไม่ใช่ $z$"
+      - "รัศมีคือรากที่สองของ $r^2$"
+    misconceptions:
+      - { match: 25, feedback: "25 คือ $z^2$ ซึ่งเป็นค่า $r^2$ ยังไม่ได้ถอดรากที่สอง รัศมีจึงเป็น $\\sqrt{25}=5$" }
+    solution: "แทน $z=5$ ได้ $x^2+y^2=25$ จึงเป็นวงกลมรัศมี 5"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p004
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 2
+    type: numeric
+    stem: "จุด $(x,y,z)=(3,4,7)$ มีค่า $r$ ในพิกัดทรงกระบอกเท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 5, tolerance: 0 }
+    hints:
+      - "ในพิกัดทรงกระบอก $r^2=x^2+y^2$"
+      - "พิจารณาเฉพาะ $x$ และ $y$ เพราะ $z$ ไม่มีผลกับ $r$"
+      - "แทนค่า $x=3$ และ $y=4$ แล้วถอดรากที่สอง"
+    misconceptions:
+      - { match: 7, feedback: "7 คือค่า $z$ ซึ่งไม่เปลี่ยนในพิกัดทรงกระบอก และไม่ใช่รัศมี รัศมีคือ $\\sqrt{x^2+y^2}$" }
+    solution: "$r=\\sqrt{x^2+y^2}=\\sqrt{9+16}=5$ และ $z=7$ ไม่เปลี่ยน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p005
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 2
+    type: mcq
+    stem: "สมการใดแทนไฮเพอร์โบลอยด์หนึ่งแผ่น"
+    choices:
+      - { id: a, text: "$x^2+y^2-z^2=1$", correct: true }
+      - { id: b, text: "$x^2+y^2+z^2=1$", feedback: "ไม่มีเครื่องหมายลบเลย จึงเป็นทรงรี ไม่ใช่ไฮเพอร์โบลอยด์" }
+      - { id: c, text: "$x^2-y^2-z^2=1$", feedback: "มีเครื่องหมายลบสองตัว จึงเป็นไฮเพอร์โบลอยด์สองแผ่น" }
+      - { id: d, text: "$z=x^2-y^2$", feedback: "มีพจน์เชิงเส้น $z$ จึงเป็นพาราโบลอยด์ไฮเพอร์โบลิก" }
+    hints:
+      - "ไฮเพอร์โบลอยด์หนึ่งแผ่นมีเครื่องหมายลบเพียงตัวเดียวในพจน์กำลังสอง"
+      - "ด้านขวาของสมการเป็น 1"
+    solution: "$x^2+y^2-z^2=1$ มีลบหนึ่งตัวและด้านขวาเป็น 1 จึงเป็นไฮเพอร์โบลอยด์หนึ่งแผ่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p006
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 3
+    type: numeric
+    stem: "จุดที่มีพิกัดทรงกลม $\\rho=2$, $\\varphi=\\frac{\\pi}{2}$ และ $\\theta=0$ มีค่า $x$ ในพิกัดฉากเท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "ใช้สูตร $x=\\rho\\sin\\varphi\\cos\\theta$"
+      - "ค่า $\\sin\\frac{\\pi}{2}$ และ $\\cos 0$ เป็นเท่าไร"
+      - "แทนค่า $\\rho=2$ ลงในสูตร"
+    misconceptions:
+      - { match: 0, feedback: "0 เกิดจากใช้ $\\cos\\varphi$ แทน $\\sin\\varphi$ ในสูตร $x=\\rho\\sin\\varphi\\cos\\theta$ ซึ่ง $\\cos\\frac{\\pi}{2}=0$" }
+    solution: "$x=\\rho\\sin\\varphi\\cos\\theta=2\\cdot 1\\cdot 1=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p007
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 3
+    type: expression
+    stem: "เมื่อเปลี่ยนเป็นพิกัดทรงกระบอก นิพจน์ $x^2+y^2$ เท่ากับข้อใด (ใช้ตัวแปร $r$)"
+    prefix: "x^2+y^2 ="
+    answer: { latex: "r^2", variables: [r] }
+    misconceptions:
+      - { match: "r", feedback: "$r$ คือรัศมี แต่ $x^2+y^2$ เท่ากับ $r$ ยกกำลังสอง" }
+      - { match: "2\\cdot r", feedback: "$2r$ ไม่ใช่กำลังสองของรัศมี ควรใช้ $r^2$" }
+    hints:
+      - "ในพิกัดทรงกระบอก $x=r\\cos\\theta$ และ $y=r\\sin\\theta$"
+      - "ยกกำลังสองทั้งสองสมการแล้วบวกกัน ใช้ $\\cos^2\\theta+\\sin^2\\theta=1$"
+    solution: "$x^2+y^2=r^2\\cos^2\\theta+r^2\\sin^2\\theta=r^2(\\cos^2\\theta+\\sin^2\\theta)=r^2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p008
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 3
+    type: numeric
+    stem: "จงหารัศมีของรอยตัดของพื้นผิว $\\frac{x^2+y^2}{9}-\\frac{z^2}{16}=1$ ที่ระนาบ $z=0$ (ตอบจำนวนเต็ม)"
+    answer: { value: 3, tolerance: 0 }
+    hints:
+      - "แทน $z=0$ ลงในสมการ"
+      - "จะได้ $\\frac{x^2+y^2}{9}=1$"
+      - "คูณ 9 ทั้งสองข้างแล้วถอดรากที่สอง"
+    misconceptions:
+      - { match: 4, feedback: "4 คือค่า $c$ จากตัวส่วนของ $z^2$ ไม่ใช่รัศมีที่ระนาบ $z=0$" }
+    solution: "แทน $z=0$ ได้ $x^2+y^2=9$ จึงเป็นวงกลมรัศมี 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p009
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ชนิดของพื้นผิวกับสมการมาตรฐานของมัน"
+    pairs:
+      - { left: "ทรงรี", right: "$\\frac{x^2}{a^2}+\\frac{y^2}{b^2}+\\frac{z^2}{c^2}=1$" }
+      - { left: "พาราโบลอยด์รูปวงรี", right: "$z=\\frac{x^2}{a^2}+\\frac{y^2}{b^2}$" }
+      - { left: "ไฮเพอร์โบลอยด์หนึ่งแผ่น", right: "$\\frac{x^2}{a^2}+\\frac{y^2}{b^2}-\\frac{z^2}{c^2}=1$" }
+      - { left: "กรวยวงรี", right: "$\\frac{z^2}{c^2}=\\frac{x^2}{a^2}+\\frac{y^2}{b^2}$" }
+    hints:
+      - "พื้นผิวที่มีพจน์เชิงเส้น $z$ คือพาราโบลอยด์"
+      - "ไฮเพอร์โบลอยด์หนึ่งแผ่นมีเครื่องหมายลบหนึ่งตัว"
+    solution: "ทรงรีไม่มีเครื่องหมายลบ พาราโบลอยด์มีพจน์เชิงเส้น ไฮเพอร์โบลอยด์หนึ่งแผ่นมีลบหนึ่งตัวและด้านขวาเป็น 1 และกรวยด้านขวาเป็น 0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p010
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 4
+    type: numeric
+    stem: "โดรนพ่นปุ๋ยในแปลงนาบินอยู่ที่ตำแหน่ง $(1,2,2)$ กิโลเมตร เทียบกับจุดกำเนิดซึ่งเป็นจุดตั้งสถานีควบคุม จงหาระยะห่างจากสถานีควบคุมถึงโดรน (หน่วยกิโลเมตร ตอบจำนวนเต็ม)"
+    answer: { value: 3, tolerance: 0, unit: กิโลเมตร }
+    hints:
+      - "ระยะจากจุดกำเนิดคือ $\\rho$ ในพิกัดทรงกลม"
+      - "$\\rho^2=x^2+y^2+z^2$"
+      - "แทนค่า $x=1$, $y=2$ และ $z=2$"
+    misconceptions:
+      - { match: 2, feedback: "2 คือค่า $|z|$ หรือ $|y|$ ไม่ใช่ระยะจากจุดกำเนิด ระยะคือ $\\sqrt{1+4+4}$" }
+    solution: "$\\rho=\\sqrt{x^2+y^2+z^2}=\\sqrt{1+4+4}=3$ กิโลเมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p011
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 4
+    type: numeric
+    stem: "พาราโบลอยด์รูปวงรี $z=\\frac{x^2}{4}+\\frac{y^2}{9}$ ถูกตัดด้วยระนาบ $z=1$ ได้วงรีที่มีแกนกึ่งเอกตามแกน $x$ ยาวเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - "แทน $z=1$ จะได้ $\\frac{x^2}{4}+\\frac{y^2}{9}=1$"
+      - "ตัวหาร 4 อยู่กับ $x^2$ ดังนั้นแกนกึ่งในทิศ $x$ ยาว $\\sqrt{4}$"
+    misconceptions:
+      - { match: 3, feedback: "3 คือแกนกึ่งในทิศ $y$ ที่มีตัวหาร 9 ไม่ใช่แกน $x$" }
+    solution: "$\\frac{x^2}{4}+\\frac{y^2}{9}=1$ มีแกนกึ่งในทิศ $x$ ยาว $\\sqrt{4}=2$ และในทิศ $y$ ยาว $\\sqrt{9}=3$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p012
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 4
+    type: numeric
+    stem: "ทรงรี $\\frac{x^2}{4}+\\frac{y^2}{9}+z^2=1$ มีปริมาตรเท่าไร (ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 25.1327, tolerance: 0.001 }
+    hints:
+      - "ทรงรีที่มีแกนกึ่งเป็น $a$, $b$, $c$ มีปริมาตร $\\frac{4}{3}\\pi abc$"
+      - "หาค่า $a$, $b$, $c$ จากตัวหารในแต่ละพจน์ โดยถอดรากที่สอง"
+      - "แทนค่าลงในสูตรแล้วคำนวณ"
+    misconceptions:
+      - { match: 12.5664, feedback: "12.5664 คือ $4\\pi$ ซึ่งลืมตัวประกอบ $a=2$ ในสูตรปริมาตร" }
+    solution: "$a=2$, $b=3$, $c=1$ จึงได้ $V=\\frac{4}{3}\\pi\\cdot 2\\cdot 3\\cdot 1=8\\pi\\approx 25.1327$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p013
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 4
+    type: mcq
+    stem: "สมการ $x^2+y^2+z^2=4$ เขียนในพิกัดใดได้ง่ายที่สุดเป็นค่าคงที่เพียงค่าเดียว"
+    choices:
+      - { id: a, text: "$\\rho=2$ ในพิกัดทรงกลม", correct: true }
+      - { id: b, text: "$r=2$ ในพิกัดทรงกระบอก", feedback: "$r=2$ เป็นทรงกระบอกที่มีรัศมี 2 ไม่ได้ครอบคลุมค่า $z$ ทั้งหมด" }
+      - { id: c, text: "$z=2$ ในพิกัดฉาก", feedback: "$z=2$ คือระนาบระดับ ไม่ใช่ทรงกลม" }
+      - { id: d, text: "$\\varphi=\\frac{\\pi}{2}$ ในพิกัดทรงกลม", feedback: "$\\varphi=\\frac{\\pi}{2}$ คือระนาบ $xy$ ทั้งระนาบ ไม่ใช่ทรงกลม" }
+    hints:
+      - "พื้นผิวนี้สมมาตรรอบจุดกำเนิด"
+      - "ในพิกัดทรงกลม $x^2+y^2+z^2=\\rho^2$"
+    solution: "เนื่องจาก $x^2+y^2+z^2=\\rho^2$ สมการจึงเป็น $\\rho^2=4$ นั่นคือ $\\rho=2$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p014
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 4
+    type: numeric
+    stem: "ไฮเพอร์โบลอยด์สองแผ่น $z^2-x^2-y^2=9$ มีจุดยอดบนแกน $z$ ที่มีค่า $z$ เป็นบวก เท่ากับเท่าไร (ตอบจำนวนเต็ม)"
+    answer: { value: 3, tolerance: 0 }
+    hints:
+      - "จุดยอดบนแกน $z$ มี $x=0$ และ $y=0$"
+      - "แทนค่าลงในสมการจะได้ $z^2=9$"
+      - "เลือกค่า $z$ ที่เป็นบวก"
+    misconceptions:
+      - { match: 9, feedback: "9 คือค่า $z^2$ ยังไม่ได้ถอดรากที่สอง จึงต้องได้ $z=\\pm 3$" }
+    solution: "เมื่อ $x=y=0$ ได้ $z^2=9$ จึงได้ $z=\\pm 3$ ค่าบวกคือ 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p015
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 5
+    type: numeric
+    stem: "จุดที่มีพิกัดทรงกลม $\\rho=4$, $\\varphi=\\frac{\\pi}{3}$ และ $\\theta=0$ มีค่า $x$ ในพิกัดฉากเท่ากับเท่าไร (ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 3.4641, tolerance: 0.0001 }
+    hints:
+      - "ใช้สูตร $x=\\rho\\sin\\varphi\\cos\\theta$"
+      - "หา $\\sin\\frac{\\pi}{3}$ และ $\\cos 0$"
+      - "คูณค่าที่ได้กับ $\\rho=4$"
+    misconceptions:
+      - { match: 2, feedback: "2 คือ $z=\\rho\\cos\\varphi$ ซึ่งเป็นพิกัด $z$ ไม่ใช่ $x$" }
+    solution: "$x=4\\cdot\\sin\\frac{\\pi}{3}\\cdot\\cos 0=4\\cdot\\frac{\\sqrt{3}}{2}=2\\sqrt{3}\\approx 3.4641$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p016
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 5
+    type: numeric
+    stem: "หอระบายความร้อนของโรงไฟฟ้าแห่งหนึ่งมีผิวตามสมการ $\\frac{x^2+y^2}{900}-\\frac{z^2}{1600}=1$ (หน่วยเมตร) เมื่ออยู่สูงจากคอหอ $z=80$ เมตร ผิวหอมีรัศมีเท่าไร (หน่วยเมตร ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 67.08, tolerance: 0.01, unit: เมตร }
+    hints:
+      - "แทน $z=80$ ลงในสมการ"
+      - "จะได้ $\\frac{x^2+y^2}{900}=1+\\frac{6400}{1600}$"
+      - "หาค่า $x^2+y^2$ แล้วถอดรากที่สอง"
+    misconceptions:
+      - { match: 30, feedback: "30 คือรัศมีที่คอหอ ($z=0$) ไม่ใช่รัศมีที่ความสูง 80 เมตร" }
+    solution: "$\\frac{x^2+y^2}{900}=1+\\frac{6400}{1600}=5$ จึงได้ $x^2+y^2=4500$ และรัศมี $\\sqrt{4500}=30\\sqrt{5}\\approx 67.08$ เมตร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p017
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 5
+    type: mcq
+    stem: "เมื่อตัดพาราโบลอยด์ไฮเพอร์โบลิก $z=x^2-y^2$ ด้วยระนาบ $y=0$ จะได้รอยตัดเป็นรูปใด"
+    choices:
+      - { id: a, text: "พาราโบลาเปิดขึ้น", correct: true }
+      - { id: b, text: "ไฮเพอร์โบลา", feedback: "ไฮเพอร์โบลาจะเกิดเมื่อมี $y^2$ ที่ไม่หายไป แต่เมื่อ $y=0$ พจน์นี้จะหายไป" }
+      - { id: c, text: "วงกลม", feedback: "วงกลมต้องมี $x^2$ และ $y^2$ ที่มีเครื่องหมายเดียวกัน" }
+      - { id: d, text: "เส้นตรงคู่", feedback: "เส้นตรงคู่เกิดที่ระนาบ $z=0$ ไม่ใช่ที่ระนาบ $y=0$" }
+    hints:
+      - "แทน $y=0$ ลงในสมการ"
+      - "ผลที่ได้เป็นสมการของ $z$ และ $x$ เท่านั้น"
+    solution: "แทน $y=0$ ได้ $z=x^2$ ซึ่งเป็นพาราโบลาที่เปิดขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: math.calculus.quadric-surfaces.p018
+    topics: [math.calculus.quadric-surfaces]
+    difficulty: 5
+    type: numeric
+    stem: "จานรับสัญญาณของสถานีภาคพื้นดินแห่งหนึ่งมีผิวตามสมการ $z=\\frac{x^2+y^2}{16}$ (หน่วยเมตร) โดยขอบจานอยู่ที่รัศมี 8 เมตร ความลึกของจานจากขอบถึงจุดต่ำสุดเท่ากับกี่เมตร (ตอบจำนวนเต็ม)"
+    answer: { value: 4, tolerance: 0, unit: เมตร }
+    hints:
+      - "จุดต่ำสุดของจานอยู่ที่จุดกำเนิด"
+      - "ที่ขอบ $x^2+y^2=8^2$"
+      - "แทนค่า $x^2+y^2=64$ ลงในสมการของผิว"
+    misconceptions:
+      - { match: 8, feedback: "8 คือรัศมีของจาน ไม่ใช่ความลึก ความลึกคือค่า $z$ ที่ขอบ คือ $\\frac{64}{16}$" }
+    solution: "ที่ขอบ $x^2+y^2=64$ จึงได้ $z=\\frac{64}{16}=4$ เมตร ซึ่งเป็นความลึกจากจุดต่ำสุดที่ $z=0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
