@@ -1,0 +1,375 @@
+problems:
+- type: match
+  difficulty: 1
+  stem: จับคู่คำบรรยายความรู้สึกและลักษณะกับความหมายในภาษาไทย
+  pairs:
+  - left: 高兴 (gāoxìng)
+    right: ดีใจ
+  - left: 难过 (nánguò)
+    right: เสียใจ เศร้า
+  - left: 紧张 (jǐnzhāng)
+    right: ประหม่า ตื่นเต้น
+  - left: 友好 (yǒuhǎo)
+    right: เป็นมิตร
+  - left: 干净 (gānjìng)
+    right: สะอาด
+  hints:
+  - 高 แปลว่าสูง แต่ 高兴 หมายถึงความรู้สึกดี
+  - 难 แปลว่ายาก และ 过 บอกการผ่านไป
+  - 友 แปลว่าเพื่อน
+  solution: 高兴 (gāoxìng) ดีใจ · 难过 (nánguò) เสียใจ เศร้า · 紧张 (jǐnzhāng) ประหม่า ตื่นเต้น · 友好 (yǒuhǎo) เป็นมิตร · 干净 (gānjìng) สะอาด
+  id: chinese.writing.narrative-compositions.p001
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: text
+  difficulty: 1
+  stem: 'เติมคำบอกลำดับเหตุการณ์แรกของเรื่อง (ตอบเป็นคำเดียว 2 ตัวอักษร)
+
+
+    ___，我们去了动物园 (wǒmen qù le dòngwùyuán)。'
+  accepted:
+  - 首先
+  misconceptions:
+  - match: 最后
+    feedback: 最后 (zuìhòu) บอกเหตุการณ์สุดท้ายของเรื่อง จึงไม่ใช้เปิดเรื่อง
+  - match: 后来
+    feedback: 后来 (hòulái) บอกว่าเกิดขึ้นทีหลัง จึงไม่เหมาะกับจุดเริ่มต้น
+  hints:
+  - ประโยคนี้เป็นจุดเริ่มต้นของเรื่อง
+  - ต้องใช้คำที่บอกว่า ‘ขั้นแรก’
+  - คำนี้ขึ้นต้นด้วย 首
+  solution: '**首先 (shǒuxiān)** เขียนว่า 首先 (shǒuxiān)，我们去了动物园 (wǒmen qù le dòngwùyuán)。 (ขั้นแรก เราไปสวนสัตว์)'
+  id: chinese.writing.narrative-compositions.p002
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: order
+  difficulty: 2
+  stem: 'เรียงคำต่อไปนี้ให้เป็นประโยคที่ถูกต้อง (ความหมาย: เมื่อวานฉันไปร้านหนังสือและซื้อหนังสือหนึ่งเล่ม)'
+  items:
+  - 昨天我 (zuótiān wǒ)
+  - 去 (qù)
+  - 书店 (shūdiàn)
+  - 买了 (mǎi le)
+  - 一本书 (yì běn shū)。
+  hints:
+  - ประโยคเริ่มด้วยคำบอกเวลาและประธาน (昨天我)
+  - หลังประธานเป็นกริยาเคลื่อนที่ 去 แล้วตามด้วยสถานที่
+  - กริยา 买了 และสิ่งที่ซื้อ 一本书 ตามหลังสถานที่
+  solution: 昨天我去书店买了一本书 (zuótiān wǒ qù shūdiàn mǎi le yì běn shū)。 (เวลา → ประธาน → 去 (qù) → สถานที่ → 买了 (mǎi le) → สิ่งที่ซื้อ)
+  id: chinese.writing.narrative-compositions.p003
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 2
+  stem: เรื่องเล่าเกี่ยวกับตลาดเช้าในเชียงใหม่ ข้อใดเรียงลำดับเหตุการณ์ได้ถูกต้อง
+  choices:
+  - id: a
+    text: 首先我们去了早市 (shǒuxiān wǒmen qù le zǎoshì)，然后吃了早饭 (ránhòu chī le zǎofàn)，最后回家了 (zuìhòu huíjiā le)。
+    correct: true
+    feedback: ถูก 首先 (shǒuxiān) อยู่หน้าเหตุการณ์แรก และ 最后 (zuìhòu) อยู่หน้าเหตุการณ์สุดท้าย
+  - id: b
+    text: 最后我们去了早市 (zuìhòu wǒmen qù le zǎoshì)，然后吃了早饭 (ránhòu chī le zǎofàn)，首先回家了 (shǒuxiān huíjiā le)。
+    feedback: ลำดับกลับด้าน 最后 (zuìhòu) และ 首先 (shǒuxiān) วางผิดตำแหน่ง
+  - id: c
+    text: 然后我们吃了早饭 (ránhòu wǒmen chī le zǎofàn)，首先去了早市 (shǒuxiān qù le zǎoshì)，最后回家了 (zuìhòu huíjiā le)。
+    feedback: 然后 (ránhòu) ไม่ควรเป็นเหตุการณ์แรก ประโยคนี้เริ่มด้วย 然后 (ránhòu) จึงผิด
+  - id: d
+    text: 首先我们回家了 (shǒuxiān wǒmen huíjiā le)，最后去了早市 (zuìhòu qù le zǎoshì)，然后吃了早饭 (ránhòu chī le zǎofàn)。
+    feedback: ลำดับไม่สมเหตุสมผล เพราะกลับบ้านก่อนไปตลาดไม่ได้
+  hints:
+  - ดูคำบอกลำดับแต่ละคำว่าควรอยู่ตำแหน่งใด
+  - 首先 ต้องอยู่หน้าเหตุการณ์แรกเสมอ
+  - เหตุการณ์ที่ควรเกิดก่อนคือไปตลาดก่อนกินข้าว
+  solution: '**a.** ไปตลาดเช้าก่อน จากนั้นกินข้าว แล้วจึงกลับบ้าน'
+  id: chinese.writing.narrative-compositions.p004
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 2
+  stem: เรื่องเล่าเริ่มด้วยประโยค ‘那天下午 (nàtiān xiàwǔ)，我和朋友去了公园 (wǒ hé péngyou qù le gōngyuán)。’ ประโยคต่อไปใดเหมาะที่สุด
+  choices:
+  - id: a
+    text: 公园里有很多花 (gōngyuán lǐ yǒu hěn duō huā)，我们拍了很多照片 (wǒmen pāi le hěn duō zhàopiàn)。
+    correct: true
+    feedback: ถูก ประโยคนี้ต่อเนื่องจากการไปสวนสาธารณะ
+  - id: b
+    text: 我的电脑坏了 (wǒ de diànnǎo huài le)，我很着急 (wǒ hěn zháojí)。
+    feedback: ไม่เกี่ยวกับการไปสวนสาธารณะ
+  - id: c
+    text: 这本书是我朋友送的 (zhè běn shū shì wǒ péngyou sòng de)。
+    feedback: ไม่เกี่ยวกับการไปสวนสาธารณะ
+  - id: d
+    text: 那家公司在曼谷 (nà jiā gōngsī zài Màngǔ)。
+    feedback: ไม่เกี่ยวกับเหตุการณ์ที่เพิ่งเล่าไป
+  hints:
+  - ประโยคแรกบอกว่าไปที่ไหน
+  - ประโยคต่อไปควรเล่าสิ่งที่เกิดขึ้นที่นั่น
+  - เลือกประโยคที่พูดถึงสถานที่หรือการกระทำในสวนสาธารณะ
+  solution: '**a.** ประโยคต่อไปควรเล่าสิ่งที่เกิดในสวนสาธารณะ เช่น ดอกไม้และการถ่ายรูป'
+  id: chinese.writing.narrative-compositions.p005
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 2
+  stem: เลือกเครื่องหมายคั่นรายการที่ถูกต้องในการเขียนภาษาจีน
+  choices:
+  - id: a
+    text: 苹果 (píngguǒ)、香蕉和橘子 (xiāngjiāo hé júzi)
+    correct: true
+    feedback: ถูก ใช้ 、 คั่นรายการ และใช้ 和 (hé) ก่อนรายการสุดท้าย
+  - id: b
+    text: 苹果 (píngguǒ)，香蕉 (xiāngjiāo)，和橘子 (hé júzi)
+    feedback: ใช้ ， คั่นรายการไม่ถูกต้อง และไม่ควรมี ， ก่อน 和 (hé)
+  - id: c
+    text: 苹果 (píngguǒ)。香蕉 (xiāngjiāo)。橘子 (júzi)
+    feedback: 。 ใช้จบประโยค ไม่ใช้คั่นรายการ
+  - id: d
+    text: 苹果 (píngguǒ)、香蕉 (xiāngjiāo)、和橘子 (hé júzi)
+    feedback: ไม่ควรมี 、 ก่อน 和 (hé) ในรายการสุดท้าย
+  hints:
+  - เครื่องหมายคั่นรายการในจีนไม่ใช่ ， ทั้งหมด
+  - เครื่องหมายที่ใช้คั่นคำนามหลายคำคือ 、
+  - คำว่า 和 ใช้ก่อนรายการสุดท้าย
+  solution: '**a. 苹果 (píngguǒ)、香蕉和橘子 (xiāngjiāo hé júzi)** (แอปเปิล กล้วย และส้ม)'
+  id: chinese.writing.narrative-compositions.p006
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: text
+  difficulty: 3
+  stem: 'เติมคำที่ขาดให้ประโยคบรรยายคนถูกต้อง (ตอบอักษรหนึ่งตัว)
+
+
+    那个穿红衣服 (nàge chuān hóng yīfu)___女孩是我的同学 (nǚhái shì wǒ de tóngxué)。'
+  accepted:
+  - 的
+  misconceptions:
+  - match: 了
+    feedback: 了 (le) บอกการเปลี่ยนแปลงหรือเหตุการณ์ที่เกิดแล้ว ไม่ได้ใช้เชื่อมคำขยายกับคำนาม
+  hints:
+  - คำขยาย 穿红衣服 ต้องมีตัวเชื่อมก่อนคำนาม
+  - คำเชื่อมนี้ใช้ทั่วไปเมื่อคำขยายยาวกว่าหนึ่งคำ
+  - เป็นอักษรที่ออกเสียง de ใช้ต่อท้ายคำขยาย
+  solution: '**的 (de)** เขียนว่า 那个穿红衣服的女孩是我的同学 (nàge chuān hóng yīfu de nǚhái shì wǒ de tóngxué)。 (เด็กผู้หญิงที่ใส่เสื้อแดงคนนั้นเป็นเพื่อนของฉัน)'
+  id: chinese.writing.narrative-compositions.p007
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: order
+  difficulty: 3
+  stem: เรียงประโยคให้ได้ย่อหน้าที่ขยายความจากประโยคแรกอย่างมีเหตุผล
+  items:
+  - 他很喜欢画画 (tā hěn xǐhuan huàhuà)，
+  - 因为画画让他很开心 (yīnwèi huàhuà ràng tā hěn kāixīn)，
+  - 所以每天放学后 (suǒyǐ měitiān fàngxué hòu)，他都去美术班 (tā dōu qù měishù bān)。
+  hints:
+  - ประโยคแรกบอกความชอบ
+  - 因为 ต้องตามด้วยเหตุผลของความชอบนั้น
+  - 所以 บอกผลที่ตามมาจากเหตุผล
+  solution: 他很喜欢画画 (tā hěn xǐhuan huàhuà)，因为画画让他很开心 (yīnwèi huàhuà ràng tā hěn kāixīn)，所以每天放学后 (suǒyǐ měitiān fàngxué hòu)，他都去美术班 (tā dōu qù měishù bān)。 (ชอบ → เหตุผล → ผลที่ตามมา)
+  id: chinese.writing.narrative-compositions.p008
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 3
+  stem: ประโยคใดบอกว่า ‘แม้อากาศหนาว เราก็ยังไปปีนเขา’
+  choices:
+  - id: a
+    text: 虽然天很冷 (suīrán tiān hěn lěng)，我们还是去爬山了 (wǒmen háishi qù páshān le)。
+    correct: true
+    feedback: ถูก 虽然 (suīrán)…还是 (háishi) บอกว่าเรื่องจริงคืออากาศหนาว แต่ยังทำต่อ
+  - id: b
+    text: 因为天很冷 (yīnwèi tiān hěn lěng)，我们不去爬山了 (wǒmen bú qù páshān le)。
+    feedback: ประโยคนี้บอกว่าไม่ไป ตรงข้ามกับโจทย์
+  - id: c
+    text: 只要天很冷 (zhǐyào tiān hěn lěng)，我们就去爬山 (wǒmen jiù qù páshān)。
+    feedback: 只要 (zhǐyào)…就 (jiù) บอกเงื่อนไขที่ทำให้เกิดผล ไม่ได้บอกว่ายังไปทั้งที่หนาว
+  - id: d
+    text: 即使天很冷 (jíshǐ tiān hěn lěng)，我们不去爬山 (wǒmen bú qù páshān)。
+    feedback: ประโยคนี้บอกว่าไม่ไป จึงตรงข้ามกับโจทย์
+  hints:
+  - โจทย์บอกว่าอากาศหนาว แต่ยังไปปีนเขา
+  - ต้องใช้คู่ที่ยอมรับเรื่องจริงและบอกว่ายังทำต่อ
+  - เลือกประโยคที่มี 还是 และแสดงว่าไปปีนเขาจริง
+  solution: '**a.** 虽然 (suīrán) ยอมรับว่าอากาศหนาว และ 还是 (háishi) บอกว่ายังไปปีนเขา'
+  id: chinese.writing.narrative-compositions.p009
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 4
+  stem: ประโยค ‘这一天虽然有点儿累 (zhè yì tiān suīrán yǒudiǎnr lèi)，但是我很开心 (dànshì wǒ hěn kāixīn)。’ ทำหน้าที่บอกองค์ประกอบใดของเรื่องเล่า
+  choices:
+  - id: a
+    text: เวลา (时间 (shíjiān))
+    feedback: ประโยคนี้มี 这一天 (zhè yì tiān) แต่ประโยคนี้เน้นความรู้สึก
+  - id: b
+    text: สถานที่ (地点 (dìdiǎn))
+    feedback: ไม่มีการบอกสถานที่ในประโยคนี้
+  - id: c
+    text: ความรู้สึก (感受 (gǎnshòu))
+    correct: true
+    feedback: ถูก 很开心 (hěn kāixīn) บอกความรู้สึกของผู้เล่า
+  - id: d
+    text: ตัวละคร (人物 (rénwù))
+    feedback: ประโยคนี้ไม่ได้แนะนำตัวละครใหม่
+  hints:
+  - ดูว่าประโยคนี้บอกอะไรเป็นหลัก
+  - มีคำที่บอกว่ารู้สึกอย่างไร
+  - ตัวเลือกที่ตรงกับคำว่า 开心 คือความรู้สึก
+  solution: '**c.** 很开心 (hěn kāixīn) เป็นส่วนความรู้สึก (感受 (gǎnshòu)) ของเรื่อง'
+  id: chinese.writing.narrative-compositions.p010
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: text
+  difficulty: 4
+  stem: 'เติมคำบอกลำดับที่หายไป (ตอบ 2 ตัวอักษร)
+
+
+    ___，天开始下雨 (tiān kāishǐ xiàyǔ)，我们就去一家咖啡店坐了一会儿 (wǒmen jiù qù yì jiā kāfēidiàn zuò le yíhuìr)。'
+  accepted:
+  - 后来
+  - 然后
+  misconceptions:
+  - match: 首先
+    feedback: 首先 (shǒuxiān) บอกจุดเริ่มต้น แต่ประโยคนี้เกิดหลังเหตุการณ์ที่ได้เล่าไปแล้ว
+  hints:
+  - เหตุการณ์นี้เกิดหลังเหตุการณ์ก่อนหน้า
+  - คำนี้บอกว่า ‘ต่อมา’
+  - ขึ้นต้นด้วย 后
+  solution: '**后来 (hòulái)** (ตอบ 然后 (ránhòu) ก็ได้ แต่ 后来 เหมาะกว่าเมื่อเล่าเหตุการณ์ในอดีตที่เปลี่ยนไป) เขียนว่า 后来 (hòulái)，天开始下雨 (tiān kāishǐ xiàyǔ) (ต่อมา ฝนเริ่มตก)'
+  id: chinese.writing.narrative-compositions.p011
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: order
+  difficulty: 4
+  stem: เรียงประโยคต่อไปนี้ให้เป็นเรื่องเล่าที่ถูกต้อง
+  items:
+  - 那个周末 (nàge zhōumò)，我和家人去了清迈的老街 (wǒ hé jiārén qù le Qīngmài de lǎojiē)。
+  - 我们先在一家小店买了一杯热茶 (wǒmen xiān zài yì jiā xiǎodiàn mǎi le yì bēi rèchá)。
+  - 然后 (ránhòu)，我们走到河边 (wǒmen zǒu dào hébiān)，看见很多人在拍照 (kànjiàn hěn duō rén zài pāizhào)。
+  - 后来 (hòulái)，天开始下雨 (tiān kāishǐ xiàyǔ)，我们就去一家咖啡店坐了一会儿 (wǒmen jiù qù yì jiā kāfēidiàn zuò le yíhuìr)。
+  - 这一天虽然有点儿累 (zhè yì tiān suīrán yǒudiǎnr lèi)，但是我很开心 (dànshì wǒ hěn kāixīn)。
+  hints:
+  - ประโยคแรกบอกเวลา สถานที่ และคนที่ไปด้วย
+  - ประโยคที่มี 先 บอกการเริ่มต้นกิจกรรม
+  - ประโยคสุดท้ายบอกความรู้สึกและสรุปวัน
+  solution: 'เรียงได้: เวลาและสถานที่ → เริ่มด้วยการซื้อชา → เดินไปริมแม่น้ำ → ฝนตก → สรุปความรู้สึก'
+  id: chinese.writing.narrative-compositions.p012
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 4
+  stem: ควรเติมประโยคใดขยายประโยค ‘她很喜欢画画 (tā hěn xǐhuan huàhuà)’ เพื่อบอกเหตุผล
+  choices:
+  - id: a
+    text: 因为画画让她很放松 (yīnwèi huàhuà ràng tā hěn fàngsōng)。
+    correct: true
+    feedback: ถูก 因为 (yīnwèi) บอกเหตุผลที่เธอชอบการวาดรูป
+  - id: b
+    text: 她的桌子很大 (tā de zhuōzi hěn dà)。
+    feedback: ไม่เกี่ยวกับความชอบการวาดรูป
+  - id: c
+    text: 今天天气很好 (jīntiān tiānqì hěn hǎo)。
+    feedback: ไม่บอกเหตุผลของความชอบการวาดรูป
+  - id: d
+    text: 因为她很喜欢吃苹果 (yīnwèi tā hěn xǐhuan chī píngguǒ)。
+    feedback: เหตุผลนี้เกี่ยวกับการกินแอปเปิล ไม่เกี่ยวกับการวาดรูป
+  hints:
+  - ประโยคที่ต้องการคือเหตุผลของการชอบวาดรูป
+  - 因为 บอกเหตุผล ต้องตามด้วยเรื่องที่เกี่ยวข้องกับการวาดรูป
+  - เลือกตัวเลือกที่พูดถึงการวาดรูปเท่านั้น
+  solution: '**a.** 因为画画让她很放松 (yīnwèi huàhuà ràng tā hěn fàngsōng) เป็นเหตุผลของความชอบ จึงขยายประโยคได้ตรงที่สุด'
+  id: chinese.writing.narrative-compositions.p013
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: order
+  difficulty: 5
+  stem: เรียงประโยคต่อไปนี้ให้เป็นเรื่องเล่าที่ถูกต้อง (เรื่องนี้เกิดที่เชียงใหม่)
+  items:
+  - 我小时候住在清迈 (wǒ xiǎoshíhou zhù zài Qīngmài)。
+  - 那时候 (nàshíhou)，我每天早上都去河边散步 (wǒ měitiān zǎoshang dōu qù hébiān sànbù)。
+  - 有一天 (yǒu yì tiān)，我遇到了一位老爷爷 (wǒ yùdào le yí wèi lǎoyéye)。
+  - 他教我画画 (tā jiāo wǒ huàhuà)，还送给我一本旧画册 (hái sònggěi wǒ yì běn jiù huàcè)。
+  - 后来 (hòulái)，我也成了一个喜欢画画的人 (wǒ yě chéng le yí gè xǐhuan huàhuà de rén)。
+  hints:
+  - ประโยคแรกบอกช่วงชีวิตที่เกิดเรื่อง
+  - 那时候 บอกเหตุการณ์ที่เป็นนิสัยประจำในช่วงนั้น
+  - 有一天 บอกเหตุการณ์สำคัญที่เปลี่ยนเรื่อง และ 后来 เป็นผลลัพธ์
+  solution: 'เรียง: ช่วงชีวิตในเชียงใหม่ → นิสัยตอนเช้า → วันหนึ่งได้พบคุณตา → คุณตาสอนวาดรูป → ต่อมากลายเป็นคนชอบวาดรูป'
+  id: chinese.writing.narrative-compositions.p014
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: mcq
+  difficulty: 5
+  stem: ประโยคใดใช้คำบอกเวลา ‘过了一会儿 (guò le yíhuìr)’ ได้ถูกต้อง
+  choices:
+  - id: a
+    text: 过了一会儿 (guò le yíhuìr)，雨停了 (yǔ tíng le)。
+    correct: true
+    feedback: ถูก 过了一会儿 (guò le yíhuìr) บอกว่าผ่านไปสักพักแล้วฝนหยุด
+  - id: b
+    text: 一会儿过了 (yíhuìr guò le)，雨停了 (yǔ tíng le)。
+    feedback: ลำดับคำผิด ต้องเป็น 过了一会儿 (guò le yíhuìr)
+  - id: c
+    text: 过一会儿了雨停了 (guò yíhuìr le yǔ tíng le)。
+    feedback: ขาดเครื่องหมายและลำดับไม่เป็นธรรมชาติ
+  - id: d
+    text: 过了一会儿的 (guò le yíhuìr de)，雨停了 (yǔ tíng le)。
+    feedback: คำว่า 的 (de) ไม่ใช้กับ 过了一会儿 (guò le yíhuìr) ในประโยคนี้
+  hints:
+  - คำบอกเวลาวางไว้ต้นประโยค
+  - ลำดับที่ถูกคือ 过 + 了 + 一会儿
+  - เลือกประโยคที่คำบอกเวลาอยู่ต้นประโยคและครบคำ
+  solution: '**a.** 过了一会儿 (guò le yíhuìr)，雨停了 (yǔ tíng le)。 (ผ่านไปสักพัก ฝนก็หยุด)'
+  id: chinese.writing.narrative-compositions.p015
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- type: text
+  difficulty: 5
+  stem: ขยายประโยคสั้น ‘我很累 (wǒ hěn lèi)’ ด้วย 虽然 (suīrán)…但是 (dànshì) ให้หมายความว่า ‘แม้ฉันเหนื่อย แต่ฉันก็มีความสุข’ พิมพ์ประโยคเต็ม
+  accepted:
+  - 虽然我很累，但是我很开心。
+  - 虽然我很累，但是我很开心
+  - 虽然我很累，可是我很开心。
+  - 虽然我很累，可是我很开心
+  misconceptions:
+  - match: 我很累，虽然我很开心。
+    feedback: 虽然 (suīrán) ต้องอยู่หน้าส่วนที่ยอมรับ แล้วตามด้วย 但是 (dànshì) หรือ 可是 (kěshì) ในประโยคหลัง
+  hints:
+  - ส่วนแรกยอมรับว่าเหนื่อย ใช้ 虽然 นำหน้า
+  - ส่วนหลังบอกความสุข ใช้ 但是 หรือ 可是
+  - ประโยคเต็มคือ 虽然 + ประโยคเหนื่อย แล้วตามด้วย 但是 + ประโยคมีความสุข
+  solution: 虽然我很累 (suīrán wǒ hěn lèi)，但是我很开心 (dànshì wǒ hěn kāixīn)。 (ยอมรับความเหนื่อยแล้วบอกความสุข)
+  id: chinese.writing.narrative-compositions.p016
+  topics:
+  - chinese.writing.narrative-compositions
+  license: CC-BY-SA-4.0
+  ai_assisted: true
