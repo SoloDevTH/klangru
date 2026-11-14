@@ -1,0 +1,289 @@
+problems:
+  - id: chemistry.states.real-gases-phase-diagrams.p001
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 1
+    type: mcq
+    stem: 'สำหรับแก๊สอุดมคติ ค่าตัวประกอบการอัดตัว $Z = \frac{PV}{nRT}$ มีค่าเท่าใด'
+    choices:
+      - { id: a, text: '0', feedback: 'Z = 0 หมายถึงแก๊สไม่มีความดัน ซึ่งไม่ใช่แก๊สอุดมคติ' }
+      - { id: b, text: '1', correct: true, feedback: 'ถูก แก๊สอุดมคติไม่มีแรงระหว่างโมเลกุลและไม่มีปริมาตรของโมเลกุล จึงทำให้ $PV = nRT$ พอดี' }
+      - { id: c, text: 'มากกว่า 1 เสมอ', feedback: 'แก๊สจริงมี Z มากกว่า 1 เฉพาะที่ความดันสูง แต่แก๊สอุดมคติเท่ากับ 1' }
+      - { id: d, text: 'น้อยกว่า 1 เสมอ', feedback: 'แก๊สจริงมี Z น้อยกว่า 1 เฉพาะที่ความดันปานกลาง แต่แก๊สอุดมคติเท่ากับ 1' }
+    hints:
+      - 'ดูว่าแก๊สอุดมคติเป็นไปตามกฎแก๊สอุดมคติ $PV = nRT$ หรือไม่'
+      - 'ถ้า $PV$ เท่ากับ $nRT$ พอดี ค่า $Z$ เป็นเท่าใด'
+    solution: 'แก๊สอุดมคติทำให้ $PV = nRT$ พอดี จึง $Z = 1$ ค่าที่เบี่ยงเบนไปจากหนึ่งบอกถึงความไม่เป็นอุดมคติของแก๊สจริง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p002
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 1
+    type: mcq
+    stem: 'เหตุใดน้ำมันพืชจึงข้นกว่าน้ำ (มีความหนืดสูงกว่า) มาก'
+    choices:
+      - { id: a, text: 'โมเลกุลมีแรงระหว่างโมเลกุลมากกว่าและยาวพันกันได้ จึงไหลยาก', correct: true, feedback: 'ถูก โมเลกุลไขมันขนาดใหญ่ดึงดูดและพันกันได้มาก ทำให้ของเหลวไหลช้า' }
+      - { id: b, text: 'น้ำมันมีอุณหภูมิสูงกว่าน้ำเสมอ', feedback: 'อุณหภูมิไม่ใช่สาเหตุหลักของความข้นในนิยามนี้' }
+      - { id: c, text: 'น้ำมันมีมวลโมเลกุลต่ำ', feedback: 'ตรงข้าม น้ำมันมีโมเลกุลใหญ่กว่าน้ำมาก' }
+      - { id: d, text: 'น้ำมันมีความดันไอสูงกว่าน้ำมาก', feedback: 'ความดันไอสูงทำให้ของเหลวระเหยเร็ว ไม่ได้ทำให้ไหลช้า' }
+    hints:
+      - 'นึกถึงขนาดของโมเลกุลและแรงที่ดึงโมเลกุลให้ติดกัน'
+      - 'ความหนืดเกี่ยวกับความต้านทานการไหลของของเหลว'
+    solution: 'ความหนืดสูงเกิดจากแรงระหว่างโมเลกุลและการพันกันของโมเลกุลยาว น้ำมันพืชประกอบด้วยไตรกลีเซอไรด์ที่โมเลกุลใหญ่กว่าน้ำมาก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p003
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 2
+    type: numeric
+    stem: 'แก๊ส $\mathrm{CO_2}$ 1.00 mol ถูกอัดในภาชนะปริมาตร 0.500 L ที่ 300 K ถ้าเป็นแก๊สอุดมคติ ความดันเป็นกี่บาร์ กำหนด $R = 0.08314$ L·bar/(mol·K) (ตอบเป็น bar)'
+    answer: { value: 49.88, tolerance: 0.02, unit: bar }
+    hints:
+      - 'ใช้กฎแก๊สอุดมคติ $PV = nRT$ ตัดหาความดัน $P$'
+      - 'อุณหภูมิต้องเป็นเคลวินก่อนแทนค่า'
+    misconceptions:
+      - { match: 4.49, feedback: 'ใช้อุณหภูมิ 27 แทนเคลวิน ต้องบวก 273 เพื่อแปลงเป็นเคลวินก่อน (300 K ไม่ใช่ 27 K)' }
+    solution: '$P = nRT / V = 1.00 \times 0.08314 \times 300 / 0.500 = 49.88$ bar'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p004
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 2
+    type: numeric
+    stem: 'ใช้สมการแวนเดอร์วาลส์คำนวณความดันของ $\mathrm{CO_2}$ 1.00 mol ในภาชนะ 0.500 L ที่ 300 K กำหนด $a = 3.640$ L²·bar/mol² และ $b = 0.04267$ L/mol และ $R = 0.08314$ L·bar/(mol·K) (ตอบเป็น bar) ใช้สมการ $P = \frac{nRT}{V - nb} - \frac{a n^2}{V^2}$'
+    answer: { value: 39.98, tolerance: 0.02, unit: bar }
+    hints:
+      - 'คำนวณพจน์แรก $nRT / (V - nb)$ โดยลบปริมาตรที่โมเลกุลกินที่ออกจาก $V$ ก่อน'
+      - 'พจน์ที่สองเป็นแรงดึงดูด ซึ่งลดความดันลง ต้องนำมาหักออกจากพจน์แรก'
+    misconceptions:
+      - { match: 54.54, feedback: 'ลืมพจน์แรงดึงดูด $an^2/V^2$ ที่ลดความดันลง ค่า 54.54 จึงสูงเกินจริง' }
+    solution: '$V - nb = 0.500 - 0.04267 = 0.45733$ L พจน์แรก $= 0.08314 \times 300 / 0.45733 = 54.54$ bar พจน์ดึงดูด $= 3.640 \times 1^2 / 0.500^2 = 14.56$ bar $P = 54.54 - 14.56 = 39.98$ bar'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p005
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 2
+    type: mcq
+    stem: 'ในสมการแวนเดอร์วาลส์ พจน์ $a$ สะท้อนปัจจัยใด'
+    choices:
+      - { id: a, text: 'แรงดึงดูดระหว่างโมเลกุล', correct: true, feedback: 'ถูก ค่า a ใหญ่ขึ้นเมื่อโมเลกุลดึงดูดกันแรงกว่า เช่น $\mathrm{H_2O}$ มีค่า a สูง' }
+      - { id: b, text: 'ปริมาตรที่โมเลกุลกินที่เอง', feedback: 'นั่นคือ $b$ ไม่ใช่ $a$' }
+      - { id: c, text: 'อุณหภูมิของแก๊ส', feedback: 'อุณหภูมิอยู่ในพจน์ $RT$ ไม่ใช่ $a$' }
+      - { id: d, text: 'จำนวนโมลของแก๊ส', feedback: 'จำนวนโมลอยู่ใน $n$ ไม่ใช่ค่าคงที่ $a$' }
+    hints:
+      - 'พจน์ $a$ อยู่ในส่วนที่หักออกจากความดัน'
+      - 'ความดันถูกลดลงเมื่อโมเลกุลดึงดูดกัน'
+    solution: 'พจน์ $an^2/V^2$ แก้ผลของแรงดึงดูดระหว่างโมเลกุลที่ทำให้ความดันที่วัดได้ต่ำกว่าค่าอุดมคติ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p006
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 2
+    type: mcq
+    stem: 'ในสมการแวนเดอร์วาลส์ พจน์ $b$ สะท้อนปัจจัยใด'
+    choices:
+      - { id: a, text: 'แรงดึงดูดระหว่างโมเลกุล', feedback: 'นั่นคือ $a$ ไม่ใช่ $b$' }
+      - { id: b, text: 'ปริมาตรที่โมเลกุลกินที่เอง ทำให้ปริมาตรที่แก๊สเคลื่อนที่ได้ลดลง', correct: true, feedback: 'ถูก $V - nb$ คือปริมาตรที่เหลือให้โมเลกุลเคลื่อนที่ได้' }
+      - { id: c, text: 'ความเร็วเฉลี่ยของโมเลกุล', feedback: 'ความเร็วเกี่ยวกับอุณหภูมิ ไม่ใช่ค่า $b$' }
+      - { id: d, text: 'ความดันไอของของเหลว', feedback: 'ความดันไอไม่ได้อยู่ในสมการแวนเดอร์วาลส์โดยตรง' }
+    hints:
+      - 'ดูว่า $V - nb$ มีความหมายทางกายภาพว่าอย่างไร'
+      - 'โมเลกุลแต่ละตัวมีขนาดจริง ไม่ใช่จุดศูนย์'
+    solution: 'พจน์ $b$ คือปริมาตรที่โมเลกุลใช้เองต่อโมล เมื่อหักออกจากปริมาตรภาชนะจะได้ปริมาตรที่แก๊สเคลื่อนที่ได้จริง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p007
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 2
+    type: match
+    stem: 'จับคู่สมบัติของของเหลวกับคำอธิบายที่เหมาะสม'
+    pairs:
+      - { left: 'ความหนืด', right: 'ความต้านทานการไหลที่เกิดจากแรงระหว่างโมเลกุล' }
+      - { left: 'ความตึงผิว', right: 'แรงดึงระหว่างโมเลกุลที่ผิวหน้าซึ่งโมเลกุลข้างในดึงลงมา' }
+      - { left: 'ความดันไอ', right: 'ความดันจากโมเลกุลที่หนีจากของเหลวไปเป็นไอ' }
+      - { left: 'จุดเดือดปกติ', right: 'อุณหภูมิที่ความดันไอเท่ากับ 1 atm' }
+    hints:
+      - 'สมบัติที่เกี่ยวกับการไหลคือความหนืด'
+      - 'จุดเดือดขึ้นกับการที่ความดันไอเท่ากับความดันรอบข้าง'
+    solution: 'ความหนืดเกี่ยวกับการไหล ความตึงผิวเกี่ยวกับโมเลกุลที่ผิว ความดันไอเกี่ยวกับการระเหย และจุดเดือดเกิดเมื่อความดันไอเท่ากับความดันภายนอก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p008
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 3
+    type: numeric
+    stem: 'ความดันไอของน้ำที่ 100 °C เท่ากับ 101.3 kPa และ $\Delta H_{vap} = 40.66$ kJ/mol ถ้าถือว่า $\Delta H_{vap}$ คงที่ จงคำนวณความดันไอของน้ำที่ 90 °C (ตอบเป็น kPa) กำหนด $R = 8.314$ J/(mol·K)'
+    answer: { value: 70.6, tolerance: 0.5, unit: kPa }
+    hints:
+      - 'ใช้สมการเคลาซิอุส–คลาเปรอง $\ln\frac{P_2}{P_1} = -\frac{\Delta H}{R}\left(\frac{1}{T_2} - \frac{1}{T_1}\right)$ โดยเปลี่ยนอุณหภูมิเป็นเคลวินก่อน'
+      - 'อุณหภูมิที่ต่ำกว่าจะให้ความดันไอต่ำกว่า จึงต้องได้ค่าที่น้อยกว่า 101.3 kPa'
+    misconceptions:
+      - { match: 145.3, feedback: 'สลับเครื่องหมายในสมการ ทำให้ความดันไอที่ 90 °C สูงกว่าที่ 100 °C ซึ่งไม่สมเหตุสมผล' }
+    solution: '$T_1 = 373.15$ K $T_2 = 363.15$ K $\ln(P_2/101.3) = -(40660/8.314)(1/363.15 - 1/373.15) = -0.3609$ จึง $P_2 = 101.3 \times e^{-0.3609} = 70.6$ kPa (ค่าที่วัดจริงประมาณ 70.2 kPa)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p009
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 3
+    type: mcq
+    stem: 'เหตุใดน้ำแข็งแห้ง ($\mathrm{CO_2}$ แข็ง) ที่ความดัน 1 atm จึงระเหิดเป็นแก๊สโดยไม่หลอมเหลว'
+    choices:
+      - { id: a, text: 'จุดสามเฟสของ $\mathrm{CO_2}$ อยู่ที่ความดันสูงกว่า 1 atm ที่ 1 atm จึงไม่มีของเหลวเสถียร', correct: true, feedback: 'ถูก จุดสามเฟสอยู่ที่ประมาณ 5.1 atm ความดันต่ำกว่าจึงข้ามจากของแข็งเป็นแก๊สตรง' }
+      - { id: b, text: 'น้ำแข็งแห้งมีจุดเดือดต่ำกว่าอุณหภูมิห้องเท่านั้น', feedback: 'จุดเดือดไม่ใช่เหตุผลหลัก เหตุผลคือความดันเมื่อเทียบกับจุดสามเฟส' }
+      - { id: c, text: 'น้ำแข็งแห้งไม่มีแรงระหว่างโมเลกุลเลย', feedback: 'CO₂ มีแรงระหว่างโมเลกุลอยู่ แต่เหตุผลการระเหิดต่างออกไป' }
+      - { id: d, text: 'น้ำแข็งแห้งมีความหนาแน่นสูงกว่าน้ำ', feedback: 'ความหนาแน่นไม่ได้ทำให้เกิดการระเหิด' }
+    hints:
+      - 'เทียบความดันที่ 1 atm กับความดันของจุดสามเฟสของ $\mathrm{CO_2}$'
+      - 'ถ้าความดันต่ำกว่าจุดสามเฟส ของแข็งจะเปลี่ยนเป็นแก๊สโดยตรง'
+    solution: 'จุดสามเฟสของ $\mathrm{CO_2}$ ประมาณ $5.1$ atm ที่ 1 atm ซึ่งต่ำกว่าจุดสามเฟส ของแข็งจึงระเหิดได้โดยไม่ผ่านเฟสของเหลว'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p010
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 3
+    type: mcq
+    stem: 'จุดวิกฤตของสารหมายถึงสภาวะใด'
+    choices:
+      - { id: a, text: 'อุณหภูมิและความดันที่ของเหลวกับแก๊สแยกไม่ออก และสารเป็นของไหลวิกฤตยิ่งยวด', correct: true, feedback: 'ถูก เหนืออุณหภูมิวิกฤต ไม่ว่าจะเพิ่มความดันเท่าใดก็ไม่เกิดการควบแน่นเป็นของเหลวแยกออกมา' }
+      - { id: b, text: 'จุดที่ของแข็ง ของเหลว และแก๊สอยู่ร่วมกัน', feedback: 'นั่นคือจุดสามเฟส ไม่ใช่จุดวิกฤต' }
+      - { id: c, text: 'อุณหภูมิที่สารเริ่มหลอมเหลวที่ความดัน 1 atm', feedback: 'เป็นจุดหลอมเหลวปกติ ไม่ใช่จุดวิกฤต' }
+      - { id: d, text: 'ความดันที่ของแข็งเริ่มระเหิดเป็นแก๊ส', feedback: 'เป็นความหมายของการระเหิด ไม่ใช่จุดวิกฤต' }
+    hints:
+      - 'จุดวิกฤตอยู่ที่ปลายสุดของเส้นระเหย'
+      - 'ที่จุดนี้ความหนาแน่นของของเหลวกับแก๊สเท่ากัน'
+    solution: 'จุดวิกฤตคือจุดสิ้นสุดของเส้นระเหย ที่นั่นความแตกต่างระหว่างของเหลวกับแก๊สหายไป เรียกว่าของไหลวิกฤตยิ่งยวด'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p011
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 3
+    type: numeric
+    stem: 'ต้องใช้ความร้อนเท่าใดเพื่อทำให้น้ำ 36.0 g ที่ 100 °C ระเหยเป็นไอทั้งหมดที่ความดัน 1 atm ถ้า $\Delta H_{vap} = 40.66$ kJ/mol กำหนด $M(\mathrm{H_2O}) = 18.02$ g/mol (ตอบเป็น kJ)'
+    answer: { value: 81.2, tolerance: 0.2, unit: kJ }
+    hints:
+      - 'แปลงมวลน้ำเป็นจำนวนโมลก่อนโดยหารด้วยมวลโมลาร์'
+      - 'คูณจำนวนโมลกับ $\Delta H_{vap}$ ต่อโมล'
+    misconceptions:
+      - { match: 1463.8, feedback: 'ใช้มวลน้ำ 36.0 g แทนจำนวนโมล ค่า $\Delta H_{vap}$ เป็นต่อโมล จึงต้องหาจำนวนโมลก่อน' }
+    solution: '$n = 36.0 \div 18.02 = 1.998$ mol $q = 1.998 \times 40.66 = 81.2$ kJ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p012
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 3
+    type: mcq
+    stem: 'เมื่อให้ความร้อนแก่น้ำแข็งที่อุณหภูมิ 0 °C ที่ความดัน 1 atm จนกลายเป็นน้ำ อุณหภูมิของระบบจะเป็นอย่างไรขณะที่กำลังหลอมเหลว'
+    choices:
+      - { id: a, text: 'คงที่ เพราะความร้อนที่ให้ไปถูกใช้ทำลายแรงยึดเหนี่ยวระหว่างโมเลกุล', correct: true, feedback: 'ถูก พลังงานที่รับเข้าไปใช้เปลี่ยนสถานะ ไม่ได้เพิ่มพลังงานจลน์เฉลี่ย' }
+      - { id: b, text: 'เพิ่มขึ้นอย่างต่อเนื่อง', feedback: 'อุณหภูมิจะเพิ่มขึ้นหลังจากหลอมเหลวหมดแล้วเท่านั้น' }
+      - { id: c, text: 'ลดลงเพราะน้ำแข็งเย็นกว่า', feedback: 'ระบบไม่เย็นลงเพียงเพราะเปลี่ยนสถานะ' }
+      - { id: d, text: 'เป็นศูนย์เสมอ', feedback: 'อุณหภูมิไม่ได้เป็นศูนย์ แต่คงที่ที่ 0 °C ขณะหลอมเหลว' }
+    hints:
+      - 'ดูว่าพลังงานที่ให้เข้าไปถูกนำไปทำอะไรในช่วงเปลี่ยนสถานะ'
+      - 'กราฟการให้ความร้อนจะมีช่วงราบขณะเปลี่ยนสถานะ'
+    solution: 'ขณะเปลี่ยนสถานะ พลังงานที่ให้ไปใช้เพื่อทำลายแรงยึดเหนี่ยวของโมเลกุล ทำให้อุณหภูมิคงที่จนกว่าจะเปลี่ยนสถานะเสร็จ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p013
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 4
+    type: numeric
+    stem: 'ที่ยอดดอยอินทนนท์สูง 2,565 m ความดันบรรยากาศโดยประมาณ 74.7 kPa ถ้าใช้ $\Delta H_{vap} = 40.66$ kJ/mol และ $R = 8.314$ J/(mol·K) และจุดเดือดปกติ 373.15 K ที่ 101.3 kPa น้ำจะเดือดที่อุณหภูมิกี่องศาเซลเซียส (ตอบเป็น °C)'
+    answer: { value: 91.5, tolerance: 0.5, unit: °C }
+    hints:
+      - 'ใช้สมการเคลาซิอุส–คลาเปรองโดยแทน $P_1 = 101.3$, $T_1 = 373.15$ K และ $P_2 = 74.7$ kPa'
+      - 'หาค่า $1/T_2$ ก่อนแล้วจึงกลับเป็น $T_2$ แล้วลบ 273.15'
+    misconceptions:
+      - { match: 100, feedback: 'คิดว่าจุดเดือดไม่เปลี่ยนตามความดัน แต่ความดันที่ลดลงทำให้น้ำเดือดที่อุณหภูมิต่ำลง' }
+    solution: '$\frac{1}{T_2} = \frac{1}{373.15} - \frac{8.314}{40660}\ln\frac{74.7}{101.3} = 0.0027422$ จึง $T_2 = 364.7$ K $= 91.5$ °C การต้มน้ำบนที่สูงจึงใช้เวลาและพลังงานมากกว่าที่ระดับน้ำทะเล'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p014
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 4
+    type: numeric
+    stem: 'จากความดัน 39.98 bar ของ $\mathrm{CO_2}$ 1.00 mol ใน 0.500 L ที่ 300 K (คำนวณด้วยแวนเดอร์วาลส์) จงหาค่า $Z = \frac{PV}{nRT}$ (ตอบทศนิยม 3 ตำแหน่ง)'
+    answer: { value: 0.801, tolerance: 0.002 }
+    hints:
+      - 'แทนค่า $P$, $V$, $n$, $R$ และ $T$ ลงในนิยามของ $Z$'
+      - 'ค่า $Z$ น้อยกว่า 1 แสดงว่าแรงดึงดูดระหว่างโมเลกุลมีผลมากกว่าปริมาตรที่โมเลกุลกินที่'
+    misconceptions:
+      - { match: 1.248, feedback: 'คำนวณกลับส่วนเป็น $nRT/PV$ แทน $PV/nRT$' }
+    solution: '$Z = PV/nRT = 39.98 \times 0.500 / (1.00 \times 0.08314 \times 300) = 19.99 / 24.94 = 0.801$ ค่าน้อยกว่า 1 มากกว่ากรณีภาชนะ 1.00 L (Z ≈ 0.90) แสดงว่าเมื่อแก๊สถูกอัดแน่นขึ้น แรงดึงดูดมีอิทธิพลมากขึ้น'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p015
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: 'ข้อใดเกี่ยวกับแผนภาพเฟสของน้ำเป็นจริง (เลือกทุกข้อที่ถูก)'
+    choices:
+      - { id: a, text: 'เส้นแบ่งของแข็งกับของเหลวมีความชันเป็นลบ ต่างจาก $\mathrm{CO_2}$', correct: true, feedback: 'ถูก น้ำแข็งหนาแน่นน้อยกว่าน้ำ การเพิ่มความดันจึงลดจุดหลอมเหลว' }
+      - { id: b, text: 'จุดสามเฟสคือภาวะที่ของแข็ง ของเหลว และแก๊สอยู่ร่วมกันในสมดุล', correct: true, feedback: 'ถูก ที่ 0.01 °C และ 0.61 kPa' }
+      - { id: c, text: 'เหนือจุดวิกฤต การบีบอัดอย่างเดียวไม่ทำให้เกิดของเหลวแยกออกมา', correct: true, feedback: 'ถูก เป็นของไหลวิกฤตยิ่งยวด' }
+      - { id: d, text: 'เส้นหลอมเหลวของ $\mathrm{CO_2}$ มีความชันเป็นลบเช่นเดียวกับน้ำ', feedback: 'ผิด $\mathrm{CO_2}$ มีความชันเป็นบวก จึงแข็งตัวที่ความดันสูงขึ้น' }
+    hints:
+      - 'ดูว่าน้ำแข็งลอยน้ำได้เพราะเหตุใด และมีผลต่อความชันของเส้นหลอมเหลวอย่างไร'
+      - 'เส้นระเหยสิ้นสุดที่จุดวิกฤต'
+    solution: 'น้ำมีเส้นหลอมเหลวความชันลบเพราะน้ำแข็งหนาแน่นน้อยกว่าน้ำ จุดสามเฟสคือจุดที่สามเฟสอยู่ร่วมกัน และเหนือจุดวิกฤตเป็นของไหลวิกฤตยิ่งยวด ส่วน $\mathrm{CO_2}$ มีความชันบวก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p016
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 5
+    type: numeric
+    stem: 'ความดันไอของน้ำที่ 25 °C เท่ากับ 3.17 kPa และที่ 50 °C เท่ากับ 12.3 kPa จงคำนวณ $\Delta H_{vap}$ ของน้ำโดยใช้สมการเคลาซิอุส–คลาเปรองสองจุด กำหนด $R = 8.314$ J/(mol·K) (ตอบเป็น kJ/mol)'
+    answer: { value: 43.4, tolerance: 0.3, unit: kJ/mol }
+    hints:
+      - 'จัดสมการเป็น $\Delta H = -R \ln(P_2/P_1) / (1/T_2 - 1/T_1)$ และเปลี่ยนอุณหภูมิเป็นเคลวินก่อน'
+      - 'ค่า $\ln(P_2/P_1)$ เป็นบวก และ $(1/T_2 - 1/T_1)$ เป็นลบ ผลลัพธ์ต้องเป็นบวก'
+    misconceptions:
+      - { match: -43.4, feedback: 'เครื่องหมายผิด ค่าเอนทัลปีการระเหยเป็นบวกเสมอเพราะการระเหยต้องดูดความร้อน' }
+    solution: '$\ln(12.3/3.17) = 1.356$ $1/323.15 - 1/298.15 = -2.595 \times 10^{-4}$ $\Delta H = -8.314 \times 1.356 / (-2.595 \times 10^{-4}) = 4.34 \times 10^{4}$ J/mol $= 43.4$ kJ/mol'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p017
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 5
+    type: numeric
+    stem: 'บรรจุภัณฑ์อาหารแช่แข็งใช้น้ำแข็งแห้ง ($\mathrm{CO_2}$ แข็ง) 100 g ระเหิดหมดที่ความดัน 1 atm และ 25 °C ถ้าถือเป็นแก๊สอุดมคติ จะได้แก๊สกี่ลิตร กำหนด $M(\mathrm{CO_2}) = 44.01$ g/mol และ $R = 0.082057$ L·atm/(mol·K) (ตอบเป็นลิตร)'
+    answer: { value: 55.6, tolerance: 0.2, unit: L }
+    hints:
+      - 'หาจำนวนโมลของ $\mathrm{CO_2}$ จากมวลและมวลโมลาร์'
+      - 'ใช้ $V = nRT/P$ โดยเปลี่ยน 25 °C เป็น 298.15 K'
+    misconceptions:
+      - { match: 50.9, feedback: 'ใช้ 0 °C (273.15 K) แทน 25 °C (298.15 K) ทำให้ปริมาตรต่ำกว่าจริง' }
+    solution: '$n = 100 / 44.01 = 2.272$ mol $V = 2.272 \times 0.082057 \times 298.15 / 1.00 = 55.6$ L'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.states.real-gases-phase-diagrams.p018
+    topics: [chemistry.states.real-gases-phase-diagrams]
+    difficulty: 5
+    type: numeric
+    stem: 'หม้อความดันทำให้น้ำเดือดที่อุณหภูมิสูงกว่าปกติ ถ้าน้ำเดือดที่ 120 °C ความดันภายในหม้อประมาณกี่ kPa ใช้ $\Delta H_{vap} = 40.66$ kJ/mol, $R = 8.314$ J/(mol·K) และจุดเดือดปกติ 373.15 K ที่ 101.3 kPa (ตอบเป็น kPa)'
+    answer: { value: 197.3, tolerance: 1.5, unit: kPa }
+    hints:
+      - 'ใช้สมการเคลาซิอุส–คลาเปรองโดยแทน $T_1 = 373.15$ K ที่ 101.3 kPa และ $T_2 = 393.15$ K'
+      - 'ความดันที่สูงขึ้นทำให้จุดเดือดสูงขึ้น ค่าที่ได้ต้องมากกว่า 101.3 kPa'
+    misconceptions:
+      - { match: 101.3, feedback: 'คิดว่าความดันไม่เปลี่ยนแม้อุณหภูมิจุดเดือดเปลี่ยน ในหม้อความดันความดันภายในสูงขึ้นจึงเดือดที่อุณหภูมิสูงขึ้น' }
+    solution: '$\ln(P_2/101.3) = -(40660/8.314)(1/393.15 - 1/373.15) = 0.6667$ จึง $P_2 = 101.3 \times e^{0.6667} = 197.3$ kPa ซึ่งประมาณ 2 เท่าของความดันบรรยากาศ (ค่าที่วัดจริงประมาณ 198.7 kPa)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

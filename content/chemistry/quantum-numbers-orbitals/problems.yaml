@@ -1,0 +1,302 @@
+problems:
+  - id: chemistry.matter.quantum-numbers-orbitals.p001
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 1
+    type: mcq
+    stem: 'ชั้นพลังงาน $n = 2$ บรรจุอิเล็กตรอนได้มากที่สุดกี่ตัว'
+    choices:
+      - { id: a, text: '2', feedback: '2 คือความจุของชั้น $n = 1$ เท่านั้น' }
+      - { id: b, text: '4', feedback: 'ยังนับไม่ครบ ชั้น $n = 2$ มีทั้งชั้นย่อย s และ p' }
+      - { id: c, text: '6', feedback: '6 คือความจุของชั้นย่อย p เพียงชั้นย่อยเดียว ยังไม่รวม s' }
+      - { id: d, text: '8', correct: true, feedback: 'ถูก ความจุสูงสุดของชั้น $n$ คือ $2n^2 = 8$' }
+    hints:
+      - 'นับชั้นย่อยทุกชนิดที่มีในชั้น $n = 2$ (s และ p)'
+      - 'ชั้นย่อย s มี 2 อิเล็กตรอน และชั้นย่อย p มี 6 อิเล็กตรอน'
+    solution: 'ชั้น $n = 2$ มีชั้นย่อย 2s (2 ตัว) และ 2p (6 ตัว) รวม 8 ตัว ตรงกับสูตร $2n^2$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p002
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 1
+    type: mcq
+    stem: 'เลขควอนตัมแบบโคจร $l = 1$ หมายถึงออร์บิทัลชนิดใด'
+    choices:
+      - { id: a, text: 's', feedback: 's ใช้ $l = 0$' }
+      - { id: b, text: 'p', correct: true, feedback: 'ถูก $l = 0, 1, 2, 3$ ตรงกับ s, p, d, f' }
+      - { id: c, text: 'd', feedback: 'd ใช้ $l = 2$' }
+      - { id: d, text: 'f', feedback: 'f ใช้ $l = 3$' }
+    hints:
+      - 'ตาราง $l = 0, 1, 2, 3$ ตรงกับชนิดออร์บิทัลตามลำดับ'
+      - 'เริ่มนับจาก s สำหรับ $l = 0$'
+    solution: 'ชนิดออร์บิทัลตาม $l$ คือ $l = 0$ เป็น s, $l = 1$ เป็น p, $l = 2$ เป็น d และ $l = 3$ เป็น f'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p003
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 2
+    type: numeric
+    stem: 'ชั้นพลังงาน $n = 3$ มีออร์บิทัลทั้งหมดกี่ออร์บิทัล เมื่อนับทุกค่า $l$ ที่เป็นไปได้ (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 9, tolerance: 0 }
+    hints:
+      - 'สำหรับ $l$ แต่ละค่า จำนวนออร์บิทัลในชั้นย่อยคือ $2l + 1$'
+      - 'ค่า $l$ ที่เป็นไปได้ในชั้น $n = 3$ คือ $0, 1, 2$'
+    misconceptions:
+      - { match: 6, feedback: 'นับเฉพาะชั้นย่อย s และ p ยังขาดชั้นย่อย d ที่มี $l = 2$' }
+    solution: 'ชั้นย่อย 3s มี 1 ออร์บิทัล 3p มี 3 ออร์บิทัล และ 3d มี 5 ออร์บิทัล รวมเป็น $1 + 3 + 5 = 9$ ตรงกับ $n^2$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p004
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 2
+    type: numeric
+    stem: 'ชั้นย่อย f ที่มี $l = 3$ บรรจุอิเล็กตรอนได้สูงสุดกี่ตัว (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 14, tolerance: 0 }
+    hints:
+      - 'จำนวนออร์บิทัลในชั้นย่อยคือ $2l + 1$ และแต่ละออร์บิทัลรับได้ 2 อิเล็กตรอน'
+      - 'คูณจำนวนออร์บิทัลกับ 2'
+    misconceptions:
+      - { match: 10, feedback: '10 คือความจุของชั้นย่อย d ไม่ใช่ f ชั้นย่อย f มี 7 ออร์บิทัล' }
+    solution: 'ชั้นย่อย f มี $2(3) + 1 = 7$ ออร์บิทัล แต่ละออร์บิทัลรับ 2 อิเล็กตรอน รวม $7 \times 2 = 14$ ตัว'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p005
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 2
+    type: match
+    stem: 'จับคู่เลขควอนตัมกับความหมาย'
+    pairs:
+      - { left: '$n$ (เลขควอนตัมหลัก)', right: 'ระดับพลังงานและขนาดโดยประมาณของออร์บิทัล' }
+      - { left: '$l$ (เลขควอนตัมโคจร)', right: 'รูปร่างหรือชนิดของออร์บิทัล (s, p, d, f)' }
+      - { left: '$m_l$ (เลขควอนตัมแม่เหล็ก)', right: 'ทิศของออร์บิทัลในอวกาศ' }
+      - { left: '$m_s$ (เลขควอนตัมสปิน)', right: 'ทิศการหมุนของอิเล็กตรอน มีค่า +½ หรือ −½' }
+    hints:
+      - 'เลขที่บอกระดับพลังงานหลักคือ $n$'
+      - 'ค่าที่มีแค่สองค่า (+½ และ −½) เกี่ยวกับการหมุนของอิเล็กตรอน'
+    solution: '$n$ บอกระดับพลังงานหลัก $l$ บอกรูปร่างของออร์บิทัล $m_l$ บอกทิศในอวกาศ และ $m_s$ บอกการหมุนของอิเล็กตรอน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p006
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 2
+    type: mcq
+    stem: 'ข้อใดเป็นชุดเลขควอนตัม $(n, l, m_l, m_s)$ ที่ใช้ไม่ได้ตามหลักการของอิเล็กตรอน'
+    choices:
+      - { id: a, text: '(3, 2, 2, +½)', feedback: 'ใช้ได้ เพราะ $l = 2 < n$ และ $m_l$ อยู่ในช่วง $-2$ ถึง $+2$' }
+      - { id: b, text: '(2, 2, 0, −½)', correct: true, feedback: 'ถูก ที่ $n = 2$ ค่า $l$ ต้องเป็น 0 หรือ 1 เท่านั้น จึงใช้ไม่ได้' }
+      - { id: c, text: '(4, 0, 0, −½)', feedback: 'ใช้ได้ เพราะ $l = 0$ และ $m_l = 0$ ยอมรับได้' }
+      - { id: d, text: '(1, 0, 0, +½)', feedback: 'ใช้ได้ นี่คือเลขควอนตัมของอิเล็กตรอนในชั้น 1s' }
+    hints:
+      - 'ค่า $l$ ต้องน้อยกว่า $n$'
+      - 'ค่า $m_l$ ต้องอยู่ระหว่าง $-l$ ถึง $+l$'
+    solution: '(2, 2, 0, −½) ใช้ไม่ได้เพราะ $l = 2$ มากกว่าหรือเท่ากับ $n = 2$ ซึ่งไม่อนุญาต ค่า $l$ ต้องอยู่ระหว่าง 0 ถึง $n - 1$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p007
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 2
+    type: mcq
+    stem: 'หลักกีดกันของเพาลีกล่าวว่าอย่างไร'
+    choices:
+      - { id: a, text: 'อิเล็กตรอนสองตัวในอะตอมเดียวกันจะมีเลขควอนตัมทั้งสี่ตัวเหมือนกันไม่ได้', correct: true, feedback: 'ถูก อิเล็กตรอนที่อยู่ในออร์บิทัลเดียวกันต้องมี $m_s$ ต่างกัน' }
+      - { id: b, text: 'อิเล็กตรอนทุกตัวต้องอยู่ในระดับพลังงานเดียวกัน', feedback: 'ผิด อิเล็กตรอนกระจายอยู่หลายระดับพลังงาน' }
+      - { id: c, text: 'อิเล็กตรอนต้องมีการหมุนในทิศเดียวกันทั้งหมด', feedback: 'ผิด การเติมชั้นย่อยต้องมีทั้งการหมุนขึ้นและลง' }
+      - { id: d, text: 'จำนวนอิเล็กตรอนในอะตอมต้องเท่ากับจำนวนโปรตอนเสมอ', feedback: 'ข้อนี้เป็นจริงสำหรับอะตอมที่เป็นกลาง แต่ไม่ใช่หลักของเพาลี' }
+    hints:
+      - 'ดูว่าอิเล็กตรอนสองตัวในออร์บิทัลเดียวกันต่างกันที่เลขควอนตัมใด'
+      - 'ค่าที่แตกต่างกันได้ในออร์บิทัลเดียวกันคือ $m_s$'
+    solution: 'หลักการกีดกันของเพาลี ทำให้แต่ละออร์บิทัลรับอิเล็กตรอนได้สูงสุด 2 ตัว และต้องมี $m_s$ ต่างกัน ซึ่งเป็นเหตุผลของความจุของชั้นย่อย'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p008
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 3
+    type: numeric
+    stem: 'อิเล็กตรอนในหลอดรังสีแคโทดของโทรทัศน์รุ่นเก่าเคลื่อนที่ด้วยอัตราเร็ว $1.00 \times 10^{6}$ m/s ความยาวคลื่นเดอบรอยของอิเล็กตรอนนี้เป็นกี่ pm กำหนด $h = 6.626 \times 10^{-34}$ J·s และ $m_e = 9.109 \times 10^{-31}$ kg (ตอบเป็น pm)'
+    answer: { value: 727, tolerance: 2, unit: pm }
+    hints:
+      - 'ใช้สมการเดอบรอย $\lambda = h / (m v)$'
+      - 'ผลลัพธ์จะได้เป็นเมตรก่อน แล้วแปลงเป็น pm โดย 1 pm = $10^{-12}$ m'
+    misconceptions:
+      - { match: 0.727, feedback: 'ตอบเป็น nm แทน pm ทั้งที่โจทย์ถามเป็น pm (1 nm = 1000 pm)' }
+    solution: '$\lambda = 6.626 \times 10^{-34} / (9.109 \times 10^{-31} \times 1.00 \times 10^{6}) = 7.27 \times 10^{-10}$ m $= 727$ pm'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p009
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 3
+    type: numeric
+    stem: 'อิเล็กตรอนถูกจำกัดให้อยู่ในช่วงกว้าง $\Delta x = 1.00 \times 10^{-10}$ m ความไม่แน่นอนต่ำสุดของความเร็ว $\Delta v$ เป็นกี่ $\times 10^{5}$ m/s กำหนด $\hbar = 1.0546 \times 10^{-34}$ J·s และ $m_e = 9.109 \times 10^{-31}$ kg (ตอบเป็น $\times 10^{5}$ m/s)'
+    answer: { value: 5.79, tolerance: 0.01, unit: '×10⁵ m/s' }
+    hints:
+      - 'ใช้หลักความไม่แน่นอนของไฮเซนเบิร์ก $\Delta x \cdot \Delta p \geq \hbar / 2$ และ $\Delta p = m \Delta v$'
+      - 'แทนค่า $\Delta v \geq \hbar / (2 m \Delta x)$'
+    misconceptions:
+      - { match: 72.7, feedback: 'ใช้ค่า $h$ แทน $\hbar / 2$ ทำให้ค่าความไม่แน่นอนสูงเกินจริงราว 12.6 เท่า' }
+    solution: '$\Delta v \geq \hbar / (2 m \Delta x) = 1.0546 \times 10^{-34} / (2 \times 9.109 \times 10^{-31} \times 1.00 \times 10^{-10}) = 5.79 \times 10^{5}$ m/s ความเร็วของอิเล็กตรอนในอะตอมจึงไม่สามารถวัดแน่นอนพร้อมตำแหน่งได้'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p010
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 3
+    type: numeric
+    stem: 'แสงสีฟ้าเขียวความยาวคลื่น 500 nm จากหลอดไฟบางชนิดมีพลังงานต่อโฟตอนเท่าใด กำหนด $h = 6.626 \times 10^{-34}$ J·s และ $c = 2.998 \times 10^{8}$ m/s (ตอบเป็น $\times 10^{-19}$ J)'
+    answer: { value: 3.97, tolerance: 0.01, unit: '×10⁻¹⁹ J' }
+    hints:
+      - 'ใช้สมการ $E = hc / \lambda$ โดยแปลง 500 nm เป็นเมตรก่อน'
+      - '1 nm $= 10^{-9}$ m'
+    misconceptions:
+      - { match: 2.48, feedback: 'ค่า 2.48 คือพลังงานในหน่วยอิเล็กตรอนโวลต์ (eV) แต่โจทย์ถามเป็นหน่วย $\times 10^{-19}$ J' }
+    solution: '$\lambda = 500 \times 10^{-9}$ m $E = 6.626 \times 10^{-34} \times 2.998 \times 10^{8} / (5.00 \times 10^{-7}) = 3.97 \times 10^{-19}$ J ต่อโฟตอน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p011
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 3
+    type: numeric
+    stem: 'ออร์บิทัล 3p มีจำนวนโหนด (ระนาบหรือทรงกลมที่ความน่าจะเป็นเป็นศูนย์) ทั้งหมดกี่โหนด (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 2, tolerance: 0 }
+    hints:
+      - 'จำนวนโหนดทั้งหมดของออร์บิทัลเท่ากับ $n - 1$'
+      - 'ออร์บิทัล 3p มีโหนดเชิงรัศมี $n - l - 1$ และโหนดเชิงมุมคือ $l$'
+    misconceptions:
+      - { match: 1, feedback: 'นับเฉพาะโหนดเชิงรัศมี แต่ยังไม่รวมโหนดเชิงมุมของออร์บิทัล p ที่มีระนาบตัดผ่านนิวเคลียส' }
+    solution: 'ออร์บิทัล 3p มีโหนดเชิงรัศมี $3 - 1 - 1 = 1$ และโหนดเชิงมุม $l = 1$ รวมทั้งหมด $2 = n - 1$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p012
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 3
+    type: mcq
+    stem: 'ออร์บิทัล p มีลักษณะอย่างไร'
+    choices:
+      - { id: a, text: 'เป็นทรงกลมที่มีศูนย์กลางอยู่ที่นิวเคลียส', feedback: 'นั่นคือรูปร่างของออร์บิทัล s' }
+      - { id: b, text: 'มีสองกลีบอยู่สองข้างของนิวเคลียส โดยมีระนาบโหนดผ่านนิวเคลียส', correct: true, feedback: 'ถูก ออร์บิทัล p มี 3 ทิศทางตั้งฉากกันในอวกาศ ($p_x$, $p_y$, $p_z$)' }
+      - { id: c, text: 'มีสี่กลีบจัดเรียงเป็นรูปกากบาท', feedback: 'นั่นคือลักษณะของออร์บิทัล d บางชนิด' }
+      - { id: d, text: 'เป็นวงโคจรวงกลมที่อิเล็กตรอนวิ่งรอบนิวเคลียส', feedback: 'แนวคิดวงโคจรวงกลมแบบโบรไม่ถูกต้องสำหรับออร์บิทัลเชิงควอนตัม' }
+    hints:
+      - 'ออร์บิทัลที่มี $l = 1$ มีรูปร่างอย่างไร'
+      - 'ออร์บิทัล p มีทิศทางตั้งฉากกันสามแบบ'
+    solution: 'ออร์บิทัล p เป็นสองกลีบที่มีเครื่องหมายตรงข้ามกัน และมีระนาบโหนดผ่านนิวเคลียส ในอะตอมมีสามทิศทางคือ $p_x$, $p_y$ และ $p_z$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p013
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 3
+    type: mcq
+    stem: 'เหตุใดแบบจำลองอะตอมของโบร (อิเล็กตรอนโคจรเป็นวงกลมที่รัศมีแน่นอน) จึงอธิบายอะตอมที่มีหลายอิเล็กตรอนไม่ได้'
+    choices:
+      - { id: a, text: 'เพราะอิเล็กตรอนมีลักษณะคลื่น ตำแหน่งและโมเมนตัมไม่อาจทราบพร้อมกันได้อย่างแม่นยำ', correct: true, feedback: 'ถูก จึงต้องใช้ฟังก์ชันคลื่นและความหนาแน่นความน่าจะเป็นแทนวงโคจรที่แน่นอน' }
+      - { id: b, text: 'เพราะอิเล็กตรอนไม่มีประจุไฟฟ้า', feedback: 'อิเล็กตรอนมีประจุลบ นี่ไม่ใช่เหตุผลที่แบบจำลองโบรใช้ไม่ได้' }
+      - { id: c, text: 'เพราะนิวเคลียสไม่มีโปรตอน', feedback: 'นิวเคลียสมีโปรตอนเสมอ นี่ไม่ใช่เหตุผลที่แบบจำลองโบรใช้ไม่ได้' }
+      - { id: d, text: 'เพราะแรงโน้มถ่วงระหว่างอิเล็กตรอนกับนิวเคลียสแรงกว่าแรงไฟฟ้า', feedback: 'แรงระหว่างอิเล็กตรอนกับนิวเคลียสเป็นแรงไฟฟ้าเป็นหลัก' }
+    hints:
+      - 'ดูว่าอิเล็กตรอนมีสมบัติเป็นคลื่นด้วยหรือไม่'
+      - 'หลักความไม่แน่นอนของไฮเซนเบิร์กเกี่ยวกับตำแหน่งและโมเมนตัม'
+    solution: 'ทวิภาวะของอิเล็กตรอนและหลักความไม่แน่นอนทำให้วงโคจรที่มีรัศมีแน่นอนใช้ไม่ได้ จึงต้องอธิบายด้วยออร์บิทัลและความน่าจะเป็นที่อิเล็กตรอนจะปรากฏ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p014
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 4
+    type: numeric
+    stem: 'ชั้นพลังงาน $n = 4$ บรรจุอิเล็กตรอนได้สูงสุดกี่ตัว (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 32, tolerance: 0 }
+    hints:
+      - 'ความจุของชั้น $n$ คือ $2n^2$'
+      - 'แยกนับตามชั้นย่อย s, p, d และ f ของชั้น $n = 4$'
+    misconceptions:
+      - { match: 16, feedback: 'ตอบจำนวนออร์บิทัลทั้งหมด (n²) แทนที่จะเป็นจำนวนอิเล็กตรอน ต้องคูณด้วย 2 ทุกออร์บิทัล' }
+    solution: 'ชั้น $n = 4$ มีออร์บิทัล $4^2 = 16$ ออร์บิทัล แต่ละออร์บิทัลรับได้ 2 อิเล็กตรอน รวม $32$ ตัว'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p015
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: 'ข้อความใดเกี่ยวกับออร์บิทัลถูกต้อง (เลือกทุกข้อที่ถูก)'
+    choices:
+      - { id: a, text: 'ออร์บิทัลเป็นบริเวณที่มีความน่าจะเป็นสูงที่จะพบอิเล็กตรอน ไม่ใช่เส้นทางการเคลื่อนที่', correct: true, feedback: 'ถูก ออร์บิทัลเป็นฟังก์ชันคลื่นที่อธิบายความน่าจะเป็น' }
+      - { id: b, text: 'ออร์บิทัล s เป็นทรงกลมสมมาตร', correct: true, feedback: 'ถูก เพราะ $l = 0$ จึงไม่มีทิศทางพิเศษ' }
+      - { id: c, text: 'ค่า $m_s$ ของอิเล็กตรอนในออร์บิทัลเดียวกันต่างกันได้เพียงสองค่า', correct: true, feedback: 'ถูก คือ +½ และ −½' }
+      - { id: d, text: 'เลข $l$ สามารถเท่ากับ $n$ ได้', feedback: 'ผิด $l$ มีค่าได้ตั้งแต่ 0 ถึง $n - 1$ เท่านั้น' }
+    hints:
+      - 'ดูค่าที่เป็นไปได้ของเลขควอนตัมแต่ละตัว'
+      - 'ออร์บิทัลไม่ใช่วงโคจร'
+    solution: 'ออร์บิทัลคือฟังก์ชันคลื่นที่บอกความน่าจะเป็น ออร์บิทัล s เป็นทรงกลม และ $m_s$ มีได้สองค่า ส่วน $l$ ต้องน้อยกว่า $n$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p016
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 4
+    type: numeric
+    stem: 'อะตอม Ne (Z = 10) ใช้เป็นแก๊สไฟป้ายโฆษณาที่พบบ่อยในไทย มีอิเล็กตรอนกี่ตัวที่มีเลขควอนตัม $n = 2$ และ $l = 1$ (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 6, tolerance: 0 }
+    hints:
+      - 'การกำหนดอิเล็กตรอนของ Ne คือ $1s^2 2s^2 2p^6$'
+      - '$l = 1$ คือชั้นย่อย p'
+    misconceptions:
+      - { match: 8, feedback: 'นับอิเล็กตรอนทั้งหมดที่มี $n = 2$ รวม 2s ด้วย แต่โจทย์ต้องการเฉพาะ $l = 1$ คือ 2p' }
+    solution: 'Ne มี $2p^6$ ซึ่งมี $n = 2$ และ $l = 1$ จึงมี 6 อิเล็กตรอน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p017
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 4
+    type: numeric
+    stem: 'ในชั้น $n = 3$ มีออร์บิทัลกี่ออร์บิทัลที่มีเลขควอนตัมแม่เหล็ก $m_l = 0$ โดยนับทุกค่า $l$ (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 3, tolerance: 0 }
+    hints:
+      - 'ในแต่ละชั้นย่อยมีออร์บิทัลที่มี $m_l = 0$ เพียงหนึ่งออร์บิทัล'
+      - 'นับจำนวนชั้นย่อยในชั้น $n = 3$'
+    misconceptions:
+      - { match: 5, feedback: 'นับจำนวนออร์บิทัลในชั้นย่อย d ทั้งหมด (5 ออร์บิทัล) แทนที่จะนับเฉพาะออร์บิทัลที่มี $m_l = 0$' }
+    solution: 'ชั้น $n = 3$ มีชั้นย่อย 3s, 3p และ 3d แต่ละชั้นมีออร์บิทัลที่มี $m_l = 0$ หนึ่งออร์บิทัล รวม 3 ออร์บิทัล'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p018
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 5
+    type: numeric
+    stem: 'ธาตุฟลูออรีน (Z = 9) พบในยาสีฟันในรูปไอออนฟลูออไรด์ พิจารณาอะตอม F ที่เป็นกลางในสถานะพื้น โดยถือว่าอิเล็กตรอนตัวแรกที่เข้าแต่ละออร์บิทัลมี $m_s = +\frac{1}{2}$ อะตอมนี้มีอิเล็กตรอนกี่ตัวที่มี $m_s = +\frac{1}{2}$ (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 5, tolerance: 0 }
+    hints:
+      - 'จัดการกระจายอิเล็กตรอน F เป็น $1s^2 2s^2 2p^5$'
+      - 'ตามกฎของฮุนด์ อิเล็กตรอนในชั้นย่อย 2p จะขึ้นในออร์บิทัลทั้งสามก่อนแล้วจึงจับคู่'
+    misconceptions:
+      - { match: 4, feedback: 'นับจำนวน $m_s = -\frac{1}{2}$ แทนที่จะนับ $m_s = +\frac{1}{2}$ ตามโจทย์' }
+    solution: '1s มี 1 ตัวที่ $m_s = +\frac{1}{2}$ และ 2s มี 1 ตัว ตามกฎของฮุนด์ $2p^5$ มี 3 ตัวแรกที่ $m_s = +\frac{1}{2}$ (ออร์บิทัลละ 1 ตัว) ส่วนอีก 2 ตัวที่จับคู่มี $m_s = -\frac{1}{2}$ รวมเป็น $1 + 1 + 3 = 5$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.matter.quantum-numbers-orbitals.p019
+    topics: [chemistry.matter.quantum-numbers-orbitals]
+    difficulty: 5
+    type: numeric
+    stem: 'อะตอม Fe (Z = 26) มีการจัดอิเล็กตรอนเป็น $[Ar]3d^{6}4s^{2}$ ในสถานะพื้น มีอิเล็กตรอนไม่จับคู่กี่ตัว (ตอบเป็นจำนวนเต็ม)'
+    answer: { value: 4, tolerance: 0 }
+    hints:
+      - 'ในชั้นย่อย 3d มี 5 ออร์บิทัล และมี 6 อิเล็กตรอน'
+      - 'ตามกฎของฮุนด์ ออร์บิทัลทั้งห้าจะมีอิเล็กตรอนหนึ่งตัวก่อนแล้วจึงจับคู่'
+    misconceptions:
+      - { match: 2, feedback: 'นับไม่ครบ ตามกฎของฮุนด์ 3d⁶ มีอิเล็กตรอนไม่จับคู่ 4 ตัว ไม่ใช่ 2' }
+    solution: '3d⁶ มี 5 ออร์บิทัล อิเล็กตรอน 5 ตัวแรกเข้าออร์บิทัลละ 1 ตัว ตัวที่ 6 จับคู่กับตัวหนึ่ง จึงเหลือไม่จับคู่ $4$ ตัว และ 4s² จับคู่หมด'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,286 @@
+problems:
+  - id: chemistry.thermochem.enthalpy-hess.p001
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 1
+    type: mcq
+    stem: 'ข้อใดอธิบายเอนทัลปี (H) ได้ถูกต้อง'
+    choices:
+      - { id: a, text: 'ปริมาณความร้อนที่ถ่ายเทที่ความดันคงที่ ใช้วัดการเปลี่ยนแปลงเอนทัลปี (ΔH) ได้', correct: true, feedback: 'ถูก ที่ความดันคงที่ $\Delta H = q_p$' }
+      - { id: b, text: 'พลังงานจลน์เฉลี่ยของอนุภาคในสาร', feedback: 'นั่นคืออุณหภูมิ ไม่ใช่เอนทัลปี' }
+      - { id: c, text: 'ปริมาณความร้อนที่ถ่ายเทที่ปริมาตรคงที่', feedback: 'ที่ปริมาตรคงที่ความร้อนที่วัดได้เป็นอีกปริมาณหนึ่ง ไม่ใช่ ΔH' }
+      - { id: d, text: 'จำนวนโมลของสารตั้งต้นในปฏิกิริยา', feedback: 'จำนวนโมลกำหนดขนาดของ ΔH แต่ไม่ใช่นิยามของเอนทัลปี' }
+    hints:
+      - 'เอนทัลปีเกี่ยวข้องกับความร้อนที่เข้าหรือออกจากระบบเมื่อความดันคงที่'
+      - 'ดูว่าตัวเลือกใดพูดถึงความร้อนที่ความดันคงที่'
+    solution: 'เอนทัลปี $H$ เป็นฟังก์ชันสถานะ การเปลี่ยนแปลง $\Delta H$ ของปฏิกิริยาที่ความดันคงที่เท่ากับความร้อนที่ถ่ายเท $q_p$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p002
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 1
+    type: mcq
+    stem: 'น้ำแข็งละลายเป็นน้ำที่ความดันคงที่ (H₂O(s) → H₂O(l)) ค่า ΔH มีเครื่องหมายใด'
+    choices:
+      - { id: a, text: 'เป็นบวก เพราะระบบดูดความร้อนจากสิ่งแวดล้อม', correct: true, feedback: 'ถูก การละลายเป็นกระบวนการดูดความร้อน' }
+      - { id: b, text: 'เป็นลบ เพราะระบบคายความร้อน', feedback: 'ลบคือคายความร้อน แต่น้ำแข็งต้องรับความร้อนจากสิ่งแวดล้อมเพื่อละลาย' }
+      - { id: c, text: 'เป็นศูนย์ เพราะอุณหภูมิไม่เปลี่ยน', feedback: 'ศูนย์หมายถึงไม่มีการถ่ายเทความร้อน ซึ่งไม่ตรงกับการละลาย' }
+      - { id: d, text: 'ขึ้นกับจำนวนโมลเท่านั้น จึงไม่มีเครื่องหมาย', feedback: 'จำนวนโมลกำหนดขนาด แต่เครื่องหมายบอกทิศการถ่ายเทความร้อน' }
+    hints:
+      - 'ตอนน้ำแข็งละลาย ต้องใช้พลังงานไปทำลายโครงสร้างผลึกหรือไม่'
+      - 'คำถามนี้ถามทิศทางการถ่ายเทความร้อน ไม่ได้ถามขนาด'
+    solution: 'การละลายของน้ำแข็งต้องดูดพลังงานเข้ามาเพื่อทำลายพันธะไฮโดรเจนในผลึก จึงมี $\Delta H > 0$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p003
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 2
+    type: numeric
+    stem: 'สำหรับปฏิกิริยา $\mathrm{N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)}$ มี $\Delta H = -92.2$ kJ ต่อปฏิกิริยาที่เขียนไว้ จงหา $\Delta H$ ของปฏิกิริยา $\mathrm{2NH_3(g) \rightarrow N_2(g) + 3H_2(g)}$ (ตอบเป็น kJ)'
+    answer: { value: 92.2, tolerance: 0.1, unit: kJ }
+    hints:
+      - 'ปฏิกิริยาย้อนกลับมีทิศทางตรงข้าม ต้องเปลี่ยนเครื่องหมายของ ΔH'
+      - 'สมการนี้มีสัมประสิทธิ์เท่ากับปฏิกิริยาเดิม จึงไม่ต้องคูณเพิ่ม'
+    misconceptions:
+      - { match: -92.2, feedback: 'ลืมเปลี่ยนเครื่องหมาย เมื่อกลับทิศปฏิกิริยา ΔH ต้องกลับเครื่องหมาย' }
+      - { match: 46.1, feedback: 'ค่า 46.1 คือ ΔH ต่อ NH₃ 1 โมล แต่สมการนี้มี NH₃ 2 โมล ต้องคงค่าเต็มของสมการ' }
+    solution: 'ปฏิกิริยาเดิมมี $\Delta H = -92.2$ kJ เมื่อกลับทิศ $\Delta H = +92.2$ kJ (ดูดความร้อน) สัมประสิทธิ์ของสมการไม่เปลี่ยนจึงไม่ต้องคูณ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p004
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 2
+    type: numeric
+    stem: 'ในการผลิตกรดซัลฟิวริก กำมะถันถูกเผาเป็น $\mathrm{SO_3}$ สองขั้นตอน ขั้นที่ 1: $\mathrm{S(s) + O_2(g) \rightarrow SO_2(g)}$ ΔH = −296.8 kJ ขั้นที่ 2: $\mathrm{SO_2(g) + \frac{1}{2}O_2(g) \rightarrow SO_3(g)}$ ΔH = −98.9 kJ จงหา ΔH ของปฏิกิริยา $\mathrm{S(s) + \frac{3}{2}O_2(g) \rightarrow SO_3(g)}$ (ตอบเป็น kJ)'
+    answer: { value: -395.7, tolerance: 0.1, unit: kJ }
+    hints:
+      - 'รวมสองขั้นตอนให้ได้สมการรวม โดยตัดสารที่อยู่ทั้งสองข้าง ($\mathrm{SO_2}$) ออก'
+      - 'ขั้นทั้งสองเดินไปทิศทางเดิม จึงรวม ΔH ได้โดยตรง'
+    misconceptions:
+      - { match: -197.9, feedback: 'กลับเครื่องหมายของขั้นที่สองทั้งที่ไม่ต้องกลับทิศ ขั้นที่ 2 เดินจาก SO₂ ไป SO₃ เหมือนเดิม' }
+    solution: 'รวมสมการได้ $\mathrm{S(s) + \frac{3}{2}O_2(g) \rightarrow SO_3(g)}$ จึง $\Delta H = -296.8 + (-98.9) = -395.7$ kJ ซึ่งเท่ากับเอนทัลปีการเกิดมาตรฐานของ $\mathrm{SO_3(g)}$ เพราะเป็นการเกิดจากธาตุโดยตรง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p005
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 2
+    type: mcq
+    stem: 'ค่าเอนทัลปีการเกิดมาตรฐาน $\Delta H^\circ_f$ ของธาตุในสถานะมาตรฐาน เช่น $\mathrm{O_2(g)}$ และ $\mathrm{C}$ (แกรไฟต์) มีค่าเท่าใด'
+    choices:
+      - { id: a, text: '0 kJ/mol', correct: true, feedback: 'ถูก ธาตุในสถานะมาตรฐานไม่มีการเปลี่ยนแปลงเมื่อเกิดจากตัวมันเอง จึงกำหนดให้เป็นศูนย์' }
+      - { id: b, text: '1 kJ/mol', feedback: 'ไม่มีการกำหนดค่าเป็น 1 สำหรับธาตุ' }
+      - { id: c, text: 'เท่ากับค่าความร้อนของการเผาไหม้', feedback: 'การเผาไหม้ไม่ใช่นิยามของ $\Delta H^\circ_f$' }
+      - { id: d, text: 'เท่ากับพลังงานพันธะของโมเลกุลนั้น', feedback: 'พลังงานพันธะไม่ใช่นิยามของ $\Delta H^\circ_f$' }
+    hints:
+      - 'นึกถึงนิยามของการเกิดว่าเป็นการสร้างสารจากธาตุ'
+      - 'ถ้าสารเป็นธาตุอยู่แล้วก็ไม่มีการสร้างจากอะไรเลย'
+    solution: 'เอนทัลปีการเกิดมาตรฐานของธาตุในสถานะที่เสถียรที่สุดที่ 298 K และ 1 bar กำหนดให้เป็นศูนย์ เช่น $\mathrm{O_2(g)}$, $\mathrm{H_2(g)}$, $\mathrm{C}$ (แกรไฟต์)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p006
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 3
+    type: numeric
+    stem: 'เมเทน (มีในแก๊สชีวภาพ) เผาไหม้ในเตาหุงต้ม ไอน้ำที่เกิดขึ้นออกไปกับแก๊สร้อนโดยไม่ควบแน่น จึงเขียนสมการเป็น $\mathrm{CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(g)}$ จงคำนวณ $\Delta H^\circ_{rxn}$ จากค่า $\Delta H^\circ_f$: $\mathrm{CO_2(g)}$ = −393.5, $\mathrm{H_2O(g)}$ = −241.8, $\mathrm{H_2O(l)}$ = −285.8, $\mathrm{CH_4(g)}$ = −74.8 kJ/mol (ตอบเป็น kJ/mol)'
+    answer: { value: -802.3, tolerance: 0.2, unit: kJ/mol }
+    hints:
+      - 'ใช้สูตร $\Delta H^\circ_{rxn} = \sum n\,\Delta H^\circ_f(\mathrm{products}) - \sum n\,\Delta H^\circ_f(\mathrm{reactants})$'
+      - 'ดูสถานะของน้ำในสมการให้ดี แล้วเลือกค่า $\Delta H^\circ_f$ ให้ตรงสถานะ และคูณด้วยสัมประสิทธิ์ 2'
+      - '$\mathrm{O_2}$ เป็นธาตุจึงมี $\Delta H^\circ_f = 0$'
+    misconceptions:
+      - { match: -890.3, feedback: 'ใช้ $\mathrm{H_2O(l)}$ (−285.8 ต่อโมล) ทั้งที่ในสมการนี้น้ำเป็นไอ $\mathrm{H_2O(g)}$' }
+      - { match: 802.3, feedback: 'สลับผลิตภัณฑ์กับสารตั้งต้นในสูตร ผลิตภัณฑ์ต้องถูกลบด้วยสารตั้งต้นเสมอ' }
+    solution: '$\Delta H^\circ_{rxn} = [(-393.5) + 2(-241.8)] - [(-74.8) + 2(0)] = -877.1 + 74.8 = -802.3$ kJ/mol คายความร้อน ค่านี้น้อยกว่ากรณีที่น้ำควบแน่นเป็นของเหลว (−890.3 kJ/mol) อยู่ 88.0 kJ เพราะไม่ได้ความร้อนจากการควบแน่นของไอน้ำ 2 โมล'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p007
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 3
+    type: numeric
+    stem: 'แก๊สหุงต้ม (LPG) ส่วนใหญ่เป็นโพรเพน $\mathrm{C_3H_8}$ เผาไหม้สมบูรณ์ตามสมการ $\mathrm{C_3H_8(g) + 5O_2(g) \rightarrow 3CO_2(g) + 4H_2O(l)}$ จาก $\Delta H^\circ_f$: $\mathrm{C_3H_8(g)}$ = −103.8, $\mathrm{CO_2(g)}$ = −393.5, $\mathrm{H_2O(l)}$ = −285.8 kJ/mol ความร้อนที่คายต่อกิโลกรัมของ $\mathrm{C_3H_8}$ เป็นกี่ MJ/kg กำหนด $M(\mathrm{C_3H_8}) = 44.10$ g/mol (ตอบเป็น MJ/kg)'
+    answer: { value: 50.34, tolerance: 0.05, unit: MJ/kg }
+    hints:
+      - 'คำนวณ $\Delta H^\circ_{rxn}$ ต่อโมลของ $\mathrm{C_3H_8}$ ก่อน (ค่าจะเป็นลบ)'
+      - 'ค่าที่ได้เป็น kJ ต่อโมล ถ้าหารด้วยมวลโมลาร์ที่เป็นกรัมต่อโมล จะได้ kJ ต่อกรัม ซึ่งเท่ากับ MJ ต่อกิโลกรัม'
+    misconceptions:
+      - { match: 50338, feedback: 'หน่วย kJ/kg ใหญ่กว่า MJ/kg 1,000 เท่า ต้องแปลงเป็น MJ/kg' }
+    solution: '$\Delta H^\circ_{rxn} = [3(-393.5) + 4(-285.8)] - [-103.8] = -2219.9$ kJ/mol ต่อกรัม $= 2219.9 \div 44.10 = 50.34$ kJ/g $= 50.34$ MJ/kg'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p008
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 3
+    type: numeric
+    stem: 'การเผาหินปูนเพื่อทำปูนขาว $\mathrm{CaCO_3(s) \rightarrow CaO(s) + CO_2(g)}$ จาก $\Delta H^\circ_f$: $\mathrm{CaCO_3}$ = −1207.6, $\mathrm{CaO}$ = −635.1, $\mathrm{CO_2}$ = −393.5 kJ/mol จงหา $\Delta H^\circ_{rxn}$ (ตอบเป็น kJ/mol)'
+    answer: { value: 179.0, tolerance: 0.2, unit: kJ/mol }
+    hints:
+      - 'ใช้สูตร ผลรวมของผลิตภัณฑ์ลบด้วยสารตั้งต้น'
+      - 'ค่าที่ได้เป็นบวกเพราะปฏิกิริยาต้องรับความร้อนเข้าไป'
+    misconceptions:
+      - { match: -179.0, feedback: 'สลับเครื่องหมาย เมื่อผลิตภัณฑ์มีค่ามากกว่าสารตั้งต้น ΔH จะเป็นบวก' }
+    solution: '$\Delta H^\circ_{rxn} = [(-635.1) + (-393.5)] - (-1207.6) = +179.0$ kJ/mol ปฏิกิริยาดูดความร้อน จึงต้องให้ความร้อนแก่เตาเผาอย่างต่อเนื่อง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p009
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 3
+    type: mcq
+    stem: 'ข้อความใดถูกต้องเกี่ยวกับกฎของเฮสส์'
+    choices:
+      - { id: a, text: 'ΔH ของปฏิกิริยารวมเท่ากับผลรวมของ ΔH ของขั้นย่อยที่ต่อกันเป็นปฏิกิริยานั้น', correct: true, feedback: 'ถูก เอนทัลปีเป็นฟังก์ชันสถานะ จึงไม่ขึ้นกับเส้นทาง' }
+      - { id: b, text: 'ΔH ขึ้นกับเส้นทางที่ใช้ในการเปลี่ยนสารตั้งต้นเป็นผลิตภัณฑ์', feedback: 'ผิด เพราะ ΔH เป็นฟังก์ชันสถานะ ไม่ขึ้นกับเส้นทาง' }
+      - { id: c, text: 'ต้องวัดการเปลี่ยนแปลงทุกขั้นด้วยเครื่องวัดเท่านั้นจึงใช้ได้', feedback: 'ผิด กฎนี้ให้คำนวณค่าของปฏิกิริยาที่วัดตรงไม่ได้จากค่าที่รู้แล้ว' }
+      - { id: d, text: 'ทุกขั้นย่อยต้องมีอุณหภูมิต่างกัน', feedback: 'ผิด ไม่มีเงื่อนไขเรื่องอุณหภูมิ แต่ต้องอ้างอิงที่สภาวะเดียวกัน' }
+    hints:
+      - 'ตัวเลือกที่ถูกพูดถึงการรวมค่าของขั้นย่อย'
+      - 'เอนทัลปีเป็นฟังก์ชันสถานะ คิดว่าขึ้นกับจุดเริ่มต้นและจุดสิ้นสุดอย่างเดียว'
+    solution: 'กฎของเฮสส์เป็นผลจากการที่เอนทัลปีเป็นฟังก์ชันสถานะ จึงรวม $\Delta H$ ของขั้นย่อยได้โดยตรงแม้ปฏิกิริยาจริงจะเกิดในหลายขั้น'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p010
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 3
+    type: order
+    stem: 'เรียงขั้นตอนการคำนวณ $\Delta H^\circ_{rxn}$ จากค่า $\Delta H^\circ_f$ จากขั้นแรกไปขั้นสุดท้าย'
+    items:
+      - 'เขียนสมการที่ดุลแล้ว'
+      - 'นำสัมประสิทธิ์คูณค่า $\Delta H^\circ_f$ ของแต่ละสารตั้งต้นแล้วรวมกัน'
+      - 'นำสัมประสิทธิ์คูณค่า $\Delta H^\circ_f$ ของแต่ละผลิตภัณฑ์แล้วรวมกัน'
+      - 'ลบผลรวมของสารตั้งต้นออกจากผลรวมของผลิตภัณฑ์'
+      - 'ตรวจเครื่องหมายและหน่วย แล้วตีความว่าเป็นปฏิกิริยาคายหรือดูดความร้อน'
+    hints:
+      - 'ต้องรู้สัมประสิทธิ์ของทุกสารก่อนจึงคูณได้'
+      - 'สูตรเขียนว่า ผลิตภัณฑ์ ลบ สารตั้งต้น ลำดับการลบสำคัญ'
+    solution: 'เริ่มจากดุลสมการ รวมค่าของสารตั้งต้นและผลิตภัณฑ์ตามสัมประสิทธิ์ แล้วลบผลิตภัณฑ์ลบด้วยสารตั้งต้น ตรวจเครื่องหมายว่าเป็นบวกหรือลบ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p011
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 4
+    type: numeric
+    stem: 'ในเตาถลุงเหล็ก เหล็กออกไซด์ถูกรีดิวซ์ด้วยแก๊สคาร์บอนมอนอกไซด์ $\mathrm{Fe_2O_3(s) + 3CO(g) \rightarrow 2Fe(s) + 3CO_2(g)}$ จาก $\Delta H^\circ_f$: $\mathrm{Fe_2O_3}$ = −824.2, $\mathrm{CO}$ = −110.5, $\mathrm{CO_2}$ = −393.5 kJ/mol จงหา $\Delta H^\circ_{rxn}$ (ตอบเป็น kJ ต่อ 1 mol $\mathrm{Fe_2O_3}$)'
+    answer: { value: -24.8, tolerance: 0.2, unit: kJ }
+    hints:
+      - 'เหล็กเป็นธาตุจึงมี $\Delta H^\circ_f = 0$ ไม่ต้องนำมาคิด'
+      - 'ผลิตภัณฑ์คือ $\mathrm{CO_2}$ 3 โมล ส่วนสารตั้งต้นคือ $\mathrm{Fe_2O_3}$ 1 โมลและ $\mathrm{CO}$ 3 โมล'
+    misconceptions:
+      - { match: 24.8, feedback: 'สลับเครื่องหมายของผลรวม ต้องลบผลรวมสารตั้งต้นออกจากผลรวมผลิตภัณฑ์' }
+    solution: '$\Delta H^\circ_{rxn} = [3(-393.5)] - [(-824.2) + 3(-110.5)] = -1180.5 + 1155.7 = -24.8$ kJ ปฏิกิริยาคายความร้อนเล็กน้อย'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p012
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 4
+    type: numeric
+    stem: 'ประมาณ $\Delta H$ ของปฏิกิริยา $\mathrm{C_2H_4(g) + H_2(g) \rightarrow C_2H_6(g)}$ จากพลังงานพันธะ (kJ/mol): C=C 614, H–H 436, C–C 348, C–H 413 (ตอบเป็น kJ/mol)'
+    answer: { value: -124, tolerance: 1, unit: kJ/mol }
+    hints:
+      - 'ปฏิกิริยานี้ต้องสลายพันธะ C=C และ H–H และสร้างพันธะ C–C และ C–H 2 พันธะ'
+      - 'พันธะ C–H ของเอทิลีน 4 พันธะยังคงอยู่ ไม่ต้องนำมานับ'
+    misconceptions:
+      - { match: 124, feedback: 'สลับผลรวมของพันธะที่สลายกับที่สร้าง ΔH ≈ พลังงานที่ใช้สลาย − พลังงานที่คายเมื่อสร้างพันธะ' }
+    solution: 'พลังงานที่ใช้สลาย $= 614 + 436 = 1050$ kJ พลังงานที่คายเมื่อสร้าง $= 348 + 2(413) = 1174$ kJ $\Delta H \approx 1050 - 1174 = -124$ kJ/mol'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p013
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 4
+    type: mcq
+    stem: 'เหตุใดค่า ΔH ที่ประมาณจากพลังงานพันธะจึงต่างจากค่าที่คำนวณจาก $\Delta H^\circ_f$ เล็กน้อย'
+    choices:
+      - { id: a, text: 'พลังงานพันธะเป็นค่าเฉลี่ยของพันธะชนิดเดียวกันจากหลายโมเลกุล จึงไม่ตรงกับโมเลกุลเฉพาะทุกครั้ง', correct: true, feedback: 'ถูก เช่น พันธะ C–H ในมีเทนกับในเอทานต่างกันเล็กน้อย' }
+      - { id: b, text: 'พลังงานพันธะวัดที่ความดันคงที่เสมอ จึงไม่ต้องแก้ไข', feedback: 'ไม่ใช่สาเหตุหลัก และค่าพลังงานพันธะก็เป็นค่าเฉลี่ยจากหลายสาร' }
+      - { id: c, text: 'ค่าการเกิดมาตรฐานไม่ขึ้นกับสถานะของสาร จึงมีค่าต่างกันมาก', feedback: 'ค่า ΔH°f ขึ้นกับสถานะของสารโดยตรง นี่ไม่ใช่สาเหตุของความต่างเล็กน้อย' }
+      - { id: d, text: 'การประมาณจากพลังงานพันธะคิดเฉพาะพันธะไอออนิก', feedback: 'พลังงานพันธะใช้กับพันธะโคเวเลนต์เป็นหลัก ไม่ใช่พันธะไอออนิก' }
+    hints:
+      - 'พลังงานพันธะเป็นค่าโดยประมาณของพันธะชนิดเดียวกัน'
+      - 'ค่าในตารางคือค่าเฉลี่ยจากหลายสาร'
+    solution: 'พลังงานพันธะเป็นค่าเฉลี่ย ไม่ได้วัดเฉพาะโมเลกุล จึงให้ค่าประมาณ เช่น ปฏิกิริยาไฮโดรจิเนชันเอทิลีนได้ค่าประมาณ $-124$ kJ/mol ขณะที่จากตาราง $\Delta H^\circ_f$ ได้ $-137.1$ kJ/mol'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p014
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 4
+    type: numeric
+    stem: 'กลูโคส $\mathrm{C_6H_{12}O_6}$ ถูกออกซิไดซ์ในร่างกายเป็น $\mathrm{CO_2}$ กับ $\mathrm{H_2O(l)}$ จาก $\Delta H^\circ_f$: กลูโคส(s) = −1273.3, $\mathrm{CO_2}$ = −393.5, $\mathrm{H_2O(l)}$ = −285.8 kJ/mol ถ้ากลูโคส 1 g ให้พลังงานได้กี่ kJ ต่อกรัม (ตอบเป็นค่าบวก เป็น kJ/g) กำหนด $M(\mathrm{C_6H_{12}O_6}) = 180.16$ g/mol'
+    answer: { value: 15.56, tolerance: 0.02, unit: kJ/g }
+    hints:
+      - 'สมการคือ $\mathrm{C_6H_{12}O_6 + 6O_2 \rightarrow 6CO_2 + 6H_2O}$ ใช้ $\mathrm{H_2O}$ เป็นของเหลว'
+      - 'หาค่า ΔH ต่อโมลก่อนแล้วหารด้วยมวลโมลาร์ เครื่องหมายเป็นบวกเพราะต้องการพลังงานที่ได้'
+    misconceptions:
+      - { match: 2802.5, feedback: 'นี่คือค่าต่อโมล ไม่ใช่ต่อกรัม ต้องหารด้วย 180.16 g/mol' }
+    solution: '$\Delta H^\circ_{rxn} = [6(-393.5) + 6(-285.8)] - (-1273.3) = -2802.5$ kJ/mol จึงได้พลังงาน $2802.5 \div 180.16 = 15.56$ kJ/g'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p015
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 5
+    type: numeric
+    stem: 'จากสมการที่ทราบค่า ΔH ดังนี้ (1) $\mathrm{C(s) + O_2(g) \rightarrow CO_2(g)}$ ΔH = −393.5 kJ (2) $\mathrm{H_2(g) + \frac{1}{2}O_2(g) \rightarrow H_2O(l)}$ ΔH = −285.8 kJ (3) $\mathrm{CH_4(g) + 2O_2(g) \rightarrow CO_2(g) + 2H_2O(l)}$ ΔH = −890.3 kJ จงหา ΔH ของการเกิด $\mathrm{C(s) + 2H_2(g) \rightarrow CH_4(g)}$ (ตอบเป็น kJ/mol)'
+    answer: { value: -74.8, tolerance: 0.1, unit: kJ/mol }
+    hints:
+      - 'กลับสมการ (3) ให้ได้ $\mathrm{CO_2 + 2H_2O \rightarrow CH_4 + 2O_2}$ แล้วเปลี่ยนเครื่องหมายของ ΔH'
+      - 'รวมสมการ (1) กับ (2) คูณ 2 และสมการ (3) ที่กลับทิศเข้าด้วยกัน'
+    misconceptions:
+      - { match: 74.8, feedback: 'ลืมเปลี่ยนเครื่องหมายเมื่อกลับทิศสมการ (3) หรือไม่กลับทิศจึงได้ค่าผิดเครื่องหมาย' }
+    solution: 'รวม (1) + 2×(2) แล้วลบ (3) จะได้ $\mathrm{C(s) + 2H_2(g) \rightarrow CH_4(g)}$ จึง $\Delta H = -393.5 + 2(-285.8) - (-890.3) = -74.8$ kJ/mol'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p016
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 5
+    type: numeric
+    stem: 'เอทานอล $\mathrm{C_2H_5OH(l)}$ ที่ผสมในน้ำมันแก๊สโซฮอล์เผาไหม้สมบูรณ์ตามสมการ $\mathrm{C_2H_5OH(l) + 3O_2(g) \rightarrow 2CO_2(g) + 3H_2O(l)}$ จาก $\Delta H^\circ_f$: $\mathrm{C_2H_5OH(l)}$ = −277.7, $\mathrm{CO_2}$ = −393.5, $\mathrm{H_2O(l)}$ = −285.8 kJ/mol เผาเอทานอลเหลว 10.0 g จะคายความร้อนกี่ kJ (ตอบเป็นค่าบวก) กำหนด $M(\mathrm{C_2H_5OH}) = 46.07$ g/mol'
+    answer: { value: 296.7, tolerance: 0.5, unit: kJ }
+    hints:
+      - 'คำนวณ $\Delta H^\circ_{rxn}$ ต่อโมลของเอทานอลก่อน'
+      - 'หาจำนวนโมลของเอทานอลจาก 10.0 g แล้วคูณกับค่า ΔH ต่อโมล และใช้ค่าสัมบูรณ์เพราะถามปริมาณที่คาย'
+    misconceptions:
+      - { match: 1366.7, feedback: 'ได้ค่าต่อโมล ยังไม่ได้คิดตามมวล 10.0 g ต้องคูณด้วยจำนวนโมลของเอทานอล' }
+    solution: '$\Delta H^\circ_{rxn} = [2(-393.5) + 3(-285.8)] - (-277.7) = -1366.7$ kJ/mol จำนวนโมล $= 10.0 \div 46.07 = 0.2171$ พลังงานที่คาย $= 0.2171 \times 1366.7 = 296.7$ kJ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p017
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 4
+    type: numeric
+    stem: 'ประมาณ $\Delta H$ ของการสังเคราะห์แอมโมเนีย $\mathrm{N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)}$ จากพลังงานพันธะ (kJ/mol): N≡N 945, H–H 436, N–H 391 (ตอบเป็น kJ/mol ต่อปฏิกิริยาตามสมการ)'
+    answer: { value: -93, tolerance: 1, unit: kJ/mol }
+    hints:
+      - 'สลายพันธะ N≡N 1 พันธะและ H–H 3 พันธะ แล้วสร้าง N–H 6 พันธะ'
+      - 'ผลต่างของพลังงานที่ใช้สลายกับพลังงานที่คายเมื่อสร้างพันธะคือค่าประมาณ'
+    misconceptions:
+      - { match: 93, feedback: 'สลับเครื่องหมาย ต้องลบพลังงานที่สร้างพันธะออกจากพลังงานที่ใช้สลายพันธะ' }
+    solution: 'พลังงานที่ใช้สลาย $= 945 + 3(436) = 2253$ kJ พลังงานที่คายเมื่อสร้าง $= 6(391) = 2346$ kJ $\Delta H \approx 2253 - 2346 = -93$ kJ/mol ค่าจากตาราง $\Delta H^\circ_f$ คือ $-92.2$ kJ/mol'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.enthalpy-hess.p018
+    topics: [chemistry.thermochem.enthalpy-hess]
+    difficulty: 5
+    type: numeric
+    stem: 'การดับปูนขาว $\mathrm{CaO(s) + H_2O(l) \rightarrow Ca(OH)_2(s)}$ เป็นปฏิกิริยาคายความร้อนแรง จาก $\Delta H^\circ_f$: $\mathrm{CaO}$ = −635.1, $\mathrm{H_2O(l)}$ = −285.8, $\mathrm{Ca(OH)_2}$ = −986.1 kJ/mol จงหา $\Delta H^\circ_{rxn}$ (ตอบเป็น kJ/mol)'
+    answer: { value: -65.2, tolerance: 0.2, unit: kJ/mol }
+    hints:
+      - 'ใช้สูตร ผลิตภัณฑ์ลบด้วยสารตั้งต้น โดยสารทุกตัวมีสัมประสิทธิ์ 1'
+      - 'ค่าที่ได้เป็นลบ แสดงว่าปฏิกิริยาคายความร้อน'
+    misconceptions:
+      - { match: 65.2, feedback: 'สลับเครื่องหมาย ปฏิกิริยาที่ผลิตภัณฑ์มีพลังงานต่ำกว่าสารตั้งต้นคือคายความร้อน ΔH เป็นลบ' }
+    solution: '$\Delta H^\circ_{rxn} = (-986.1) - [(-635.1) + (-285.8)] = -986.1 + 920.9 = -65.2$ kJ/mol ระวังการกระเด็นของปูนขาวและความร้อนขณะดับ ควรสวมแว่นตาและถุงมือทุกครั้ง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

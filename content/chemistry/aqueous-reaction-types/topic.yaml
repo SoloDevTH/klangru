@@ -1,0 +1,60 @@
+id: chemistry.reactions.aqueous-reaction-types
+subject: chemistry
+title: { th: อิเล็กโทรไลต์และประเภทของปฏิกิริยาในสารละลาย, en: Electrolytes and types of reactions in solution }
+summary: แยกอิเล็กโทรไลต์แก่ อ่อน และนอนอิเล็กโทรไลต์ด้วยการนำไฟฟ้า เขียนสมการไอออนิกสุทธิ และทำนายผลิตภัณฑ์ของปฏิกิริยาตกตะกอน กรด-เบส รีดอกซ์ และการเผาไหม้
+difficulty: 5.5
+minutes: 40
+prerequisites: [chemistry.stoichiometry.reactions, chemistry.bonding.ionic]
+encompasses:
+  - { id: chemistry.stoichiometry.reactions, weight: 0.3 }
+  - { id: chemistry.bonding.ionic, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: electrolyte-particles.svg
+    alt: "ภาพจำลองอนุภาคในบีกเกอร์สามใบ บีกเกอร์ซ้ายเป็น NaCl(aq) มีไอออน Na⁺ และ Cl⁻ อย่างละ 4 ตัวกระจายทั่วบีกเกอร์ บีกเกอร์กลางเป็น CH₃COOH(aq) ส่วนใหญ่เป็นโมเลกุลสีเทา มีไอออน H⁺ และ A⁻ เพียงคู่เดียว บีกเกอร์ขวาเป็นน้ำตาลซูโครส มีแต่โมเลกุลสีเทาคงรูป ไม่มีไอออน"
+    caption: "ยิ่งมีไอออนมาก สารละลายยิ่งนำไฟฟ้าได้ดี น้ำตาลไม่แตกเป็นไอออนจึงไม่นำไฟฟ้า"
+  - type: worked-example
+    title: หามวลตะกอนจากการผสมสารละลายสองชนิด
+    problem: "ผสมสารละลาย $\\mathrm{AgNO_3}$ 0.100 mol/L ปริมาตร 50.0 mL กับ $\\mathrm{NaCl}$ ที่เติมเกินพอ จะได้ตะกอน $\\mathrm{AgCl}$ กี่กรัม กำหนด $M(\\mathrm{Ag}) = 107.87$ และ $M(\\mathrm{Cl}) = 35.45$ g/mol"
+    steps:
+      - text: "หาจำนวนโมลของ $\\mathrm{Ag^{+}}$: $n = 0.0500\\ \\mathrm{L} \\times 0.100\\ \\mathrm{mol/L} = 5.00 \\times 10^{-3}\\ \\mathrm{mol}$"
+        why: "ต้องแปลง mL เป็น L ก่อนคูณความเข้มข้นที่มีหน่วย mol/L"
+      - text: "$\\mathrm{Cl^{-}}$ เกินพอ จึง $\\mathrm{Ag^{+}}$ ทั้งหมดตกเป็นตะกอน และ $\\mathrm{AgCl}$ 1 โมล มี $\\mathrm{Ag^{+}}$ 1 โมล"
+        why: "สารที่เกินพอไม่จำกัดปริมาณตะกอน สารที่หมดก่อนเป็นตัวกำหนด"
+      - text: "$M(\\mathrm{AgCl}) = 107.87 + 35.45 = 143.32\\ \\mathrm{g/mol}$"
+      - text: "มวลตะกอน $= 5.00 \\times 10^{-3} \\times 143.32 = 0.7166\\ \\mathrm{g}$"
+    answer: "ได้ตะกอน $\\mathrm{AgCl}$ ประมาณ $0.717\\ \\mathrm{g}$"
+  - { type: check, problem: chemistry.reactions.aqueous-reaction-types.p002, prompt: "ลองคิดก่อนอ่านต่อว่าทำไมน้ำเกลือจึงนำไฟฟ้า" }
+  - type: worked-example
+    title: ทำนายผลิตภัณฑ์ของ Na₂SO₄ กับ Ba(NO₃)₂
+    problem: "ผสมสารละลาย $\\mathrm{Na_2SO_4}$ กับ $\\mathrm{Ba(NO_3)_2}$ จะเกิดอะไรขึ้น เขียนสมการไอออนิกสุทธิ"
+    steps:
+      - text: "สลับคู่ไอออน: $\\mathrm{Na^{+}}$ คู่กับ $\\mathrm{NO_3^{-}}$ และ $\\mathrm{Ba^{2+}}$ คู่กับ $\\mathrm{SO_4^{2-}}$ ได้ $\\mathrm{NaNO_3}$ กับ $\\mathrm{BaSO_4}$"
+        why: "การแลกไอออนระหว่างสองสารจะได้ผลิตภัณฑ์คู่ใหม่ แต่ต้องตรวจกฎการละลายว่าเกิดตะกอนหรือไม่"
+      - text: "ตรวจกฎการละลาย: $\\mathrm{NaNO_3}$ ละลายได้ทั้งหมดเพราะมีโซเดียมและไนเทรต ส่วน $\\mathrm{BaSO_4}$ ไม่ละลายน้ำ จึงเป็นตะกอน"
+      - text: "สมการโมเลกุล: $\\mathrm{Na_2SO_4(aq) + Ba(NO_3)_2(aq) \\rightarrow BaSO_4(s) + 2NaNO_3(aq)}$"
+      - text: "เขียนไอออนที่ละลายได้แล้วตัดไอออนผู้ชม $\\mathrm{Na^{+}}$ และ $\\mathrm{NO_3^{-}}$ ที่อยู่ทั้งสองข้างออก เหลือ $\\mathrm{Ba^{2+}(aq) + SO_4^{2-}(aq) \\rightarrow BaSO_4(s)}$"
+        why: "สมการไอออนิกสุทธิบอกเฉพาะไอออนที่เปลี่ยนแปลงจริง"
+    answer: "เกิดตะกอน $\\mathrm{BaSO_4}$ สีขาว สมการไอออนิกสุทธิคือ $\\mathrm{Ba^{2+}(aq) + SO_4^{2-}(aq) \\rightarrow BaSO_4(s)}$"
+  - { type: check, problem: chemistry.reactions.aqueous-reaction-types.p008, prompt: "ใช้กฎการละลายตัดสินว่าจะเกิดตะกอนหรือไม่" }
+glossary:
+  - { term: อิเล็กโทรไลต์, definition: "สารที่เมื่อละลายน้ำแล้วแตกเป็นไอออนที่เคลื่อนที่ได้ ทำให้สารละลายนำไฟฟ้า" }
+  - { term: อิเล็กโทรไลต์แก่, definition: "สารที่แตกเป็นไอออนเกือบหมดเมื่อละลายน้ำ เช่น NaCl และ HCl" }
+  - { term: นอนอิเล็กโทรไลต์, definition: "สารที่ละลายน้ำแล้วไม่แตกเป็นไอออน เช่น น้ำตาลซูโครสและเอทานอล" }
+  - { term: ไอออนผู้ชม, definition: "ไอออนที่อยู่ทั้งสองข้างของสมการไอออนิกโดยไม่เปลี่ยนแปลง จึงตัดออกเมื่อเขียนสมการไอออนิกสุทธิ" }
+  - { term: ปฏิกิริยาตกตะกอน, definition: "ปฏิกิริยาในสารละลายที่ได้ผลิตภัณฑ์เป็นของแข็งไม่ละลายน้ำ เรียกว่าตะกอน" }
+  - { term: ปฏิกิริยาสะเทิน, definition: "ปฏิกิริยาระหว่างกรดกับเบสได้เกลือและน้ำ โดยสาระสำคัญคือ H⁺ รวมกับ OH⁻ เกิดน้ำ" }
+flashcards:
+  - { front: "อิเล็กโทรไลต์แก่ อ่อน และนอนอิเล็กโทรไลต์ต่างกันอย่างไร", back: "แก่: แตกเป็นไอออนเกือบหมด (NaCl) อ่อน: แตกได้บางส่วน (CH₃COOH) นอน: ไม่แตก (น้ำตาล)" }
+  - { front: "สมการไอออนิกสุทธิต่างจากสมการโมเลกุลอย่างไร", back: "สมการสุทธิตัดไอออนผู้ชมออก เหลือเฉพาะไอออนที่เปลี่ยนแปลงและผลิตภัณฑ์ที่เกิดใหม่" }
+  - { front: "ปฏิกิริยาสะเทินของกรดกับเบสเขียนสมการสุทธิอย่างไร", back: "$\\mathrm{H^{+}(aq) + OH^{-}(aq) \\rightarrow H_2O(l)}$" }
+  - { front: "เมื่อสารละลายกรดทำปฏิกิริยากับคาร์บอเนตจะได้อะไรเพิ่ม", back: "แก๊ส $\\mathrm{CO_2}$ เกิดเป็นฟอง ตัวอย่าง $\\mathrm{CaCO_3} + 2\\mathrm{HCl}$" }
+references:
+  - { title: "Electrolyte", url: "https://en.wikipedia.org/wiki/Electrolyte", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Precipitation (chemistry)", url: "https://en.wikipedia.org/wiki/Precipitation_(chemistry)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

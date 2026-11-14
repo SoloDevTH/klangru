@@ -1,0 +1,61 @@
+id: chemistry.thermochem.enthalpy-hess
+subject: chemistry
+title: { th: เอนทัลปี กฎของเฮสส์ และเอนทัลปีของการเกิดมาตรฐาน, en: Enthalpy, Hess's law and standard enthalpy of formation }
+summary: เอนทัลปีเป็นฟังก์ชันสถานะ คำนวณ ΔH ของปฏิกิริยาจากเอนทัลปีการเกิดมาตรฐานและจากกฎของเฮสส์ แล้วเทียบค่ากับการประมาณจากพลังงานพันธะ
+difficulty: 6
+minutes: 40
+prerequisites: [chemistry.stoichiometry.reactions, chemistry.bonding.covalent-naming-energy, physics.thermal.temperature-heat]
+encompasses:
+  - { id: chemistry.bonding.covalent-naming-energy, weight: 0.3 }
+  - { id: chemistry.stoichiometry.reactions, weight: 0.2 }
+  - { id: physics.thermal.temperature-heat, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: hess-cycle.svg
+    alt: "แผนภาพระดับเอนทัลปีแกนตั้งคือ ΔH ระดับแรกคือ C(s) + O₂(g) ที่ 0 kJ ระดับกลางคือ CO(g) + ½O₂(g) ที่ −110.5 kJ ระดับสุดท้ายคือ CO₂(g) ที่ −393.5 kJ มีลูกศรสองขั้นจากระดับแรกลงไประดับกลางและจากระดับกลางลงไประดับสุดท้าย และเส้นประทางตรงจากระดับแรกไประดับสุดท้ายที่ระดับเดียวกับผลรวมของสองขั้น"
+    caption: "ค่า ΔH ของการเผา C เป็น CO₂ เท่ากันไม่ว่าจะเผาทางตรงหรือผ่าน CO เป็นตัวกลาง"
+  - type: worked-example
+    title: คำนวณ ΔH ของการเผาเมเทนจากเอนทัลปีการเกิดมาตรฐาน
+    problem: "เมเทน $\\mathrm{CH_4(g)}$ เผาไหม้สมบูรณ์ได้ $\\mathrm{CO_2(g)}$ และ $\\mathrm{H_2O(l)}$ จาก $\\Delta H^\\circ_f$: $\\mathrm{CH_4}$ = −74.8, $\\mathrm{CO_2}$ = −393.5, $\\mathrm{H_2O(l)}$ = −285.8 kJ/mol หา $\\Delta H^\\circ_{rxn}$ ของปฏิกิริยาเผาไหม้"
+    steps:
+      - text: "เขียนสมการที่ดุลแล้ว: $\\mathrm{CH_4(g) + 2O_2(g) \\rightarrow CO_2(g) + 2H_2O(l)}$"
+        why: "สัมประสิทธิ์ของ H₂O คือ 2 จึงต้องคูณค่า ΔH°f ของ H₂O ด้วย 2"
+      - text: "รวมผลิตภัณฑ์: $(-393.5) + 2(-285.8) = -965.1$ kJ/mol"
+      - text: "รวมสารตั้งต้น: $(-74.8) + 2(0) = -74.8$ kJ/mol โดย $\\mathrm{O_2}$ เป็นธาตุจึงเป็นศูนย์"
+        why: "ธาตุในสถานะมาตรฐานมี ΔH°f เป็นศูนย์ เพราะไม่มีการสร้างจากสารอื่น"
+      - text: "$\\Delta H^\\circ_{rxn} = -965.1 - (-74.8) = -890.3$ kJ/mol"
+        why: "ผลิตภัณฑ์ลบด้วยสารตั้งต้นเสมอ"
+    answer: "$\\Delta H^\\circ_{rxn} = -890.3$ kJ/mol ปฏิกิริยาคายความร้อน จึงเป็นเหตุผลที่แก๊สชีวภาพให้พลังงานได้"
+  - { type: check, problem: chemistry.thermochem.enthalpy-hess.p002, prompt: "ลองคิดก่อนว่าการละลายน้ำแข็งดูดหรือคายความร้อน" }
+  - type: worked-example
+    title: หา ΔH ของการเผาคาร์บอนเป็น CO₂ โดยใช้กฎของเฮสส์
+    problem: "จาก (1) $\\mathrm{C(s) + \\frac{1}{2}O_2(g) \\rightarrow CO(g)}$ ΔH = −110.5 kJ และ (2) $\\mathrm{CO(g) + \\frac{1}{2}O_2(g) \\rightarrow CO_2(g)}$ ΔH = −283.0 kJ หา ΔH ของ $\\mathrm{C(s) + O_2(g) \\rightarrow CO_2(g)}$"
+    steps:
+      - text: "ตรวจว่าสมการทั้งสองเดินไปทิศเดียวกับสมการเป้าหมาย: (1) เริ่มจาก C และ (2) จบที่ CO₂"
+        why: "ถ้าขั้นใดกลับทิศจึงต้องเปลี่ยนเครื่องหมาย ΔH ของขั้นนั้น"
+      - text: "รวมสมการ (1) + (2) ตัด $\\mathrm{CO(g)}$ ที่อยู่คนละข้างออก และรวม $\\tfrac{1}{2}\\mathrm{O_2}$ สองก้อนเป็น $\\mathrm{O_2}$ ได้ $\\mathrm{C(s) + O_2(g) \\rightarrow CO_2(g)}$"
+        why: "ตัวกลางที่เกิดแล้วหายไปในขั้นถัดไป จึงไม่อยู่ในสมการรวม"
+      - text: "$\\Delta H = -110.5 + (-283.0) = -393.5$ kJ"
+    answer: "$\\Delta H = -393.5$ kJ ตรงกับ $\\Delta H^\\circ_f$ ของ $\\mathrm{CO_2}$ เพราะเป็นการเกิดจากธาตุโดยตรง"
+  - { type: check, problem: chemistry.thermochem.enthalpy-hess.p005, prompt: "นึกถึงนิยามของเอนทัลปีการเกิดมาตรฐาน" }
+glossary:
+  - { term: เอนทัลปี, definition: "ฟังก์ชันสถานะ H ซึ่งการเปลี่ยนแปลง ΔH ที่ความดันคงที่เท่ากับความร้อนที่ถ่ายเท" }
+  - { term: ฟังก์ชันสถานะ, definition: "ปริมาณที่ขึ้นกับสถานะเริ่มต้นและสถานะสุดท้ายเท่านั้น ไม่ขึ้นกับเส้นทาง" }
+  - { term: เอนทัลปีการเกิดมาตรฐาน, definition: "ΔH ของการสร้างสาร 1 โมลจากธาตุในสถานะมาตรฐานที่ 298 K และ 1 bar เขียนแทนด้วย ΔH°f" }
+  - { term: กฎของเฮสส์, definition: "ΔH ของปฏิกิริยาที่เกิดจากหลายขั้นเท่ากับผลรวมของ ΔH ของแต่ละขั้น" }
+  - { term: ปฏิกิริยาดูดความร้อน, definition: "ปฏิกิริยาที่รับความร้อนเข้าระบบ ΔH เป็นบวก" }
+flashcards:
+  - { front: "ΔH ของปฏิกิริยาเมื่อกลับทิศ", back: "เปลี่ยนเครื่องหมายเป็นตรงข้าม เช่น −92.2 เป็น +92.2 kJ" }
+  - { front: "สูตรคำนวณ ΔH°rxn จากค่า ΔH°f", back: "$\\Delta H^\\circ_{rxn} = \\sum n\\,\\Delta H^\\circ_f(\\mathrm{products}) - \\sum n\\,\\Delta H^\\circ_f(\\mathrm{reactants})$" }
+  - { front: "ΔH°f ของธาตุในสถานะมาตรฐาน", back: "เป็นศูนย์ เช่น $\\mathrm{O_2(g)}$, $\\mathrm{H_2(g)}$, C แกรไฟต์" }
+  - { front: "พลังงานพันธะช่วยประมาณ ΔH ได้อย่างไร", back: "ΔH ≈ พลังงานที่ใช้สลายพันธะ − พลังงานที่คายเมื่อสร้างพันธะ (ค่าเฉลี่ย จึงได้ค่าประมาณ)" }
+references:
+  - { title: "Enthalpy", url: "https://en.wikipedia.org/wiki/Enthalpy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Hess's law", url: "https://en.wikipedia.org/wiki/Hess%27s_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Enthalpy of formation", url: "https://en.wikipedia.org/wiki/Enthalpy_of_formation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,56 @@
+id: chemistry.descriptive.oxygen-sulfur-halogens-noble-gases
+subject: chemistry
+title: { th: ออกซิเจน กำมะถัน แฮโลเจน และแก๊สมีตระกูล, en: Oxygen, sulfur, halogens and noble gases }
+summary: ออกไซด์ของออกซิเจนและโอโซน กระบวนการคอนแทกต์ผลิตกรดซัลฟิวริก แนวโน้มความว่องไวของแฮโลเจน และการใช้งานของแก๊สมีตระกูล
+difficulty: 6.5
+minutes: 40
+prerequisites: [chemistry.matter.periodic-trends, chemistry.acids-bases.acid-base-ph]
+encompasses:
+  - { id: chemistry.matter.periodic-trends, weight: 0.2 }
+  - { id: chemistry.acids-bases.acid-base-ph, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: halogen-trends.svg
+    alt: "กราฟแท่งสองชุดด้านซ้ายแสดงจุดเดือดของ F₂ เท่ากับ −188.1 องศาเซลเซียส Cl₂ เท่ากับ −34.0 Br₂ เท่ากับ 58.8 และ I₂ เท่ากับ 184.3 แท่งจากซ้ายไปขวาเพิ่มขึ้น ด้านขวาแสดงอิเล็กโทรเนกาติวิตี F เท่ากับ 3.98 Cl เท่ากับ 3.16 Br เท่ากับ 2.96 และ I เท่ากับ 2.66 แท่งลดลงจากซ้ายไปขวา"
+    caption: "จุดเดือดของแฮโลเจนเพิ่มจาก F₂ ไป I₂ ตามมวลโมเลกุล ส่วนอิเล็กโทรเนกาติวิตีลดลงจาก F ไป I"
+  - type: worked-example
+    title: หามวลโบรมีนที่ได้จากการแทนที่ด้วยคลอรีน
+    problem: "คลอรีน $\\mathrm{Cl_2}$ 1.00 g ทำปฏิกิริยากับ $\\mathrm{KBr}$ เกินพอตามสมการ $\\mathrm{Cl_2 + 2KBr \\rightarrow 2KCl + Br_2}$ จะได้ $\\mathrm{Br_2}$ กี่กรัม กำหนด $M(\\mathrm{Cl_2}) = 70.90$ และ $M(\\mathrm{Br_2}) = 159.81$ g/mol"
+    steps:
+      - text: "หาจำนวนโมลของ $\\mathrm{Cl_2}$: $1.00 \\div 70.90 = 0.01411$ mol"
+      - text: "ตามสมการ $\\mathrm{Cl_2}$ 1 โมลให้ $\\mathrm{Br_2}$ 1 โมล จึงได้ $\\mathrm{Br_2} = 0.01411$ mol"
+        why: "สัมประสิทธิ์ของ KBr คือ 2 แต่ KBr 2 โมลให้ Br₂ เพียง 1 โมล"
+      - text: "มวล $\\mathrm{Br_2} = 0.01411 \\times 159.81 = 2.254$ g"
+    answer: "ได้โบรมีนประมาณ $2.25$ กรัม เกิดจากคลอรีนที่แทนที่โบรไมด์ได้"
+  - { type: check, problem: chemistry.descriptive.oxygen-sulfur-halogens-noble-gases.p002, prompt: "นึกถึงรูปของออกซิเจนที่กรองรังสีอัลตราไวโอเลต" }
+  - type: worked-example
+    title: หาปริมาณกรดซัลฟิวริกทางทฤษฎีจากกำมะถัน
+    problem: "กำมะถัน 100 kg ผลิตกรดซัลฟิวริกได้ทางทฤษฎีกี่ kg กำหนด $M(\\mathrm{S}) = 32.06$ และ $M(\\mathrm{H_2SO_4}) = 98.07$ g/mol"
+    steps:
+      - text: "หาจำนวนโมลของ S: $100000 \\div 32.06 = 3119$ mol"
+      - text: "S 1 อะตอมไปอยู่ใน $\\mathrm{H_2SO_4}$ 1 โมเลกุล จึงได้ $\\mathrm{H_2SO_4} = 3119$ mol"
+        why: "ในกระบวนการคอนแทกต์ S กลายเป็น SO₂ แล้วเป็น SO₃ และละลายเป็นกรดโดยอัตราส่วนเป็น 1 : 1"
+      - text: "มวล $\\mathrm{H_2SO_4} = 3119 \\times 98.07 = 305\\,900$ g $= 305.9$ kg"
+    answer: "ได้กรดซัลฟิวริกทางทฤษฎีประมาณ $305.9$ กิโลกรัม"
+  - { type: check, problem: chemistry.descriptive.oxygen-sulfur-halogens-noble-gases.p005, prompt: "ออกไซด์ของโลหะส่วนใหญ่เป็นเบสหรือกรด" }
+glossary:
+  - { term: แฮโลเจน, definition: "ธาตุหมู่ 17 ได้แก่ F, Cl, Br, I มีอิเล็กตรอนวงนอกสุด 7 ตัว และว่องไวในการรับอิเล็กตรอน" }
+  - { term: แก๊สมีตระกูล, definition: "ธาตุหมู่ 18 ซึ่งมีวงนอกสุดเต็ม ทำให้เฉื่อยมาก" }
+  - { term: ออกไซด์แอมโฟเทอริก, definition: "ออกไซด์ที่ทำปฏิกิริยาได้ทั้งกับกรดและเบส เช่น Al₂O₃" }
+  - { term: กระบวนการคอนแทกต์, definition: "กระบวนการผลิตกรดซัลฟิวริกโดยเปลี่ยน SO₂ เป็น SO₃ ด้วยตัวเร่ง V₂O₅" }
+  - { term: เปอร์ออกไซด์, definition: "สารประกอบที่มีพันธะ O–O และออกซิเจนเลขออกซิเดชัน −1 เช่น H₂O₂" }
+flashcards:
+  - { front: "แก๊สที่ใช้ในลูกโป่งลอยฟ้าโดยไม่ติดไฟ", back: "ฮีเลียม (He) เบาและเฉื่อย" }
+  - { front: "แนวโน้มความว่องไวของแฮโลเจน", back: "F₂ > Cl₂ > Br₂ > I₂ ลดลงจากบนลงล่างในหมู่ 17" }
+  - { front: "ตัวเร่งในขั้นที่ SO₂ เปลี่ยนเป็น SO₃", back: "วาเนเดียม(V) ออกไซด์ V₂O₅" }
+  - { front: "ทำไมต้องเติมกรดลงในน้ำเมื่อเจือจาง", back: "การละลายคายความร้อนมาก เติมกรดลงน้ำทีละน้อยให้ความร้อนกระจายได้" }
+references:
+  - { title: "Halogen", url: "https://en.wikipedia.org/wiki/Halogen", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Noble gas", url: "https://en.wikipedia.org/wiki/Noble_gas", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Contact process", url: "https://en.wikipedia.org/wiki/Contact_process", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

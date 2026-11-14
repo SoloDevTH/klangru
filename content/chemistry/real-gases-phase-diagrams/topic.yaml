@@ -1,0 +1,64 @@
+id: chemistry.states.real-gases-phase-diagrams
+subject: chemistry
+title: { th: แก๊สจริง สมบัติของของเหลว ความดันไอ และแผนภาพเฟส, en: Real gases, liquid properties, vapour pressure and phase diagrams }
+summary: ตัวประกอบการอัดตัวและสมการแวนเดอร์วาลส์ สมบัติของของเหลวจากแรงระหว่างโมเลกุล ความดันไอกับการระเหย และแผนภาพเฟสของน้ำกับ CO₂
+difficulty: 6.5
+minutes: 40
+prerequisites: [chemistry.gases.gas-laws, physics.thermal.phase-change, chemistry.bonding.polarity-intermolecular, math.functions.logarithms]
+encompasses:
+  - { id: chemistry.gases.gas-laws, weight: 0.4 }
+  - { id: physics.thermal.phase-change, weight: 0.3 }
+  - { id: chemistry.bonding.polarity-intermolecular, weight: 0.2 }
+  - { id: math.functions.logarithms, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: water-phase-diagram.svg
+    alt: "แผนภาพเฟสของน้ำแกนนอนเป็นอุณหภูมิจาก 0 ถึง 400 องศาเซลเซียส แกนตั้งเป็นความดันสเกลลอการิทึม มีเส้นสีน้ำเงินเป็นเส้นระเหยจากจุดสามเฟสที่ 0.01 องศาเซลเซียสไปถึงจุดวิกฤตที่ 374 องศาเซลเซียส มีเส้นสีเขียวเป็นเส้นระเหิดทางซ้ายของจุดสามเฟส และเส้นประสีน้ำตาลเกือบตั้งฉากที่เป็นเส้นหลอมเหลวซึ่งเอียงไปทางซ้ายเมื่อความดันสูง บริเวณซ้ายบนเป็นของแข็ง บริเวณกลางเป็นของเหลว บริเวณล่างขวาเป็นแก๊ส และบริเวณเหนือจุดวิกฤตเป็นของไหลวิกฤตยิ่งยวด"
+    caption: "จุดสามเฟสคือจุดที่สามเฟสอยู่ร่วมกัน เส้นระเหยสิ้นสุดที่จุดวิกฤต เหนือจุดนี้ไม่มีการแยกเป็นของเหลวกับแก๊ส"
+  - type: worked-example
+    title: คำนวณความดันของ CO₂ ด้วยแก๊สอุดมคติและสมการแวนเดอร์วาลส์
+    problem: "$\\mathrm{CO_2}$ 1.00 mol บรรจุในภาชนะ 1.00 L ที่ 300 K ให้คำนวณความดันทั้งแบบแก๊สอุดมคติและสมการแวนเดอร์วาลส์ กำหนด $R = 0.08314$ L·bar/(mol·K), $a = 3.640$ L²·bar/mol², $b = 0.04267$ L/mol"
+    steps:
+      - text: "แก๊สอุดมคติ: $P = nRT / V = 1.00 \\times 0.08314 \\times 300 / 1.00 = 24.94$ bar"
+        why: "กฎแก๊สอุดมคติไม่คิดถึงปริมาตรของโมเลกุลและแรงระหว่างโมเลกุล"
+      - text: "พจน์ปริมาตร: $V - nb = 1.00 - 0.04267 = 0.95733$ L พจน์แรงผลักของแก๊ส $= 0.08314 \\times 300 / 0.95733 = 26.05$ bar"
+        why: "โมเลกุลกินที่ประมาณ $0.043$ L ต่อโมล ทำให้ปริมาตรที่เคลื่อนที่ได้น้อยลง ความดันจึงสูงขึ้น"
+      - text: "พจน์แรงดึงดูด: $a n^2 / V^2 = 3.640$ bar จึงหักออก $P = 26.05 - 3.64 = 22.41$ bar"
+        why: "แรงดึงดูดระหว่างโมเลกุลทำให้โมเลกุลชนผนังด้วยแรงน้อยลง ความดันที่วัดได้จึงต่ำกว่า"
+      - text: "ตัวประกอบการอัดตัว $Z = PV / nRT = 22.41 / 24.94 = 0.899$ น้อยกว่า 1 แสดงว่าแรงดึงดูดมีผลมากกว่าปริมาตรที่โมเลกุลกินที่"
+    answer: "แก๊สอุดมคติให้ $24.94$ bar แต่แก๊สจริงให้ $22.41$ bar และ $Z = 0.899$"
+  - { type: check, problem: chemistry.states.real-gases-phase-diagrams.p001, prompt: "แก๊สอุดมคติควรมี Z เป็นเท่าใด" }
+  - type: worked-example
+    title: คำนวณความดันไอของน้ำที่ 80 °C จากค่าที่ 100 °C
+    problem: "ความดันไอของน้ำที่ 100 °C เท่ากับ 101.3 kPa และ $\\Delta H_{vap} = 40.66$ kJ/mol ถ้าถือว่าค่านี้คงที่ จงคำนวณความดันไอที่ 80 °C กำหนด $R = 8.314$ J/(mol·K)"
+    steps:
+      - text: "เปลี่ยนอุณหภูมิเป็นเคลวิน: $T_1 = 373.15$ K และ $T_2 = 353.15$ K"
+        why: "สมการเคลาซิอุส–คลาเปรองต้องใช้อุณหภูมิสัมบูรณ์เท่านั้น"
+      - text: "แทนค่าลงในสมการ $\\ln\\frac{P_2}{P_1} = -\\frac{\\Delta H}{R}\\left(\\frac{1}{T_2} - \\frac{1}{T_1}\\right)$"
+      - text: "$\\frac{1}{T_2} - \\frac{1}{T_1} = 0.0028317 - 0.0026799 = 0.0001518$ และ $\\frac{\\Delta H}{R} = \\frac{40660}{8.314} = 4890$ จึง $\\ln\\frac{P_2}{P_1} = -0.742$"
+      - text: "$P_2 = 101.3 \\times e^{-0.742} = 48.2$ kPa"
+        why: "ที่อุณหภูมิต่ำกว่าความดันไอต้องต่ำกว่า ค่าที่ได้จึงน้อยกว่า 101.3 kPa ซึ่งสมเหตุสมผล"
+    answer: "ความดันไอของน้ำที่ 80 °C ประมาณ $48.2$ kPa (ค่าที่วัดจริงประมาณ 47.4 kPa เพราะ $\\Delta H$ เปลี่ยนเล็กน้อยตามอุณหภูมิ)"
+  - { type: check, problem: chemistry.states.real-gases-phase-diagrams.p008, prompt: "ลองคำนวณที่ 90 °C ด้วยวิธีเดียวกัน แล้วคิดก่อนว่าควรได้สูงหรือต่ำกว่า 101.3 kPa" }
+glossary:
+  - { term: แก๊สอุดมคติ, definition: "แก๊สสมมติที่ไม่มีปริมาตรของโมเลกุลและไม่มีแรงระหว่างโมเลกุล ทำให้ PV = nRT พอดี" }
+  - { term: ตัวประกอบการอัดตัว, definition: "อัตราส่วน Z = PV/nRT ของแก๊สจริง เท่ากับ 1 สำหรับแก๊สอุดมคติ" }
+  - { term: ความดันไอ, definition: "ความดันของไอที่สมดุลกับของเหลวหรือของแข็งที่อุณหภูมิหนึ่ง" }
+  - { term: จุดสามเฟส, definition: "สภาวะเฉพาะของสารที่ของแข็ง ของเหลว และแก๊สอยู่ร่วมกันในสมดุล" }
+  - { term: จุดวิกฤต, definition: "อุณหภูมิและความดันสูงสุดที่ของเหลวกับแก๊สแยกกันได้ ที่สภาวะนี้สารเป็นของไหลวิกฤตยิ่งยวด" }
+  - { term: ความหนืด, definition: "ความต้านทานการไหลของของเหลว ขึ้นกับแรงระหว่างโมเลกุลและขนาดโมเลกุล" }
+flashcards:
+  - { front: "Z ของแก๊สอุดมคติและแก๊สจริงที่ความดันสูงมีค่าเท่าใด", back: "อุดมคติ Z = 1 แก๊สจริงที่ความดันสูงมักมี Z มากกว่า 1 (ผลของปริมาตรโมเลกุล)" }
+  - { front: "พจน์ a และ b ในสมการแวนเดอร์วาลส์", back: "a แรงดึงดูดระหว่างโมเลกุล b ปริมาตรที่โมเลกุลกินที่ต่อโมล" }
+  - { front: "น้ำแข็งแห้งระเหิดที่ 1 atm เพราะอะไร", back: "จุดสามเฟสของ CO₂ อยู่ที่ประมาณ 5.1 atm ความดันต่ำกว่าจึงระเหิดได้" }
+  - { front: "ความร้อนที่ใช้ระเหยน้ำ 1 โมลที่จุดเดือด", back: "$\\Delta H_{vap} \\approx 40.7$ kJ/mol ความร้อนนี้ไม่ทำให้อุณหภูมิสูงขึ้น" }
+references:
+  - { title: "Van der Waals equation", url: "https://en.wikipedia.org/wiki/Van_der_Waals_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Phase diagram", url: "https://en.wikipedia.org/wiki/Phase_diagram", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Clausius–Clapeyron relation", url: "https://en.wikipedia.org/wiki/Clausius%E2%80%93Clapeyron_relation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

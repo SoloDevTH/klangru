@@ -1,0 +1,59 @@
+id: chemistry.descriptive.metals-metalloids
+subject: chemistry
+title: { th: โลหะเรพรีเซนเททีฟ กึ่งโลหะ และการถลุงโลหะแทรนซิชัน, en: Representative metals, metalloids and smelting transition metals }
+summary: การผลิตโลหะแอลคาไล อะลูมิเนียม และดีบุกด้วยอิเล็กโทรไลซิสหรือการรีดิวซ์ สมบัติและการใช้ซิลิคอนเป็นกึ่งโลหะ และการถลุงเหล็กกับการทำทองแดงให้บริสุทธิ์
+difficulty: 6
+minutes: 40
+prerequisites: [chemistry.matter.periodic-trends, chemistry.redox.redox-reactions]
+encompasses:
+  - { id: chemistry.redox.redox-reactions, weight: 0.3 }
+  - { id: chemistry.matter.periodic-trends, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: copper-refining.svg
+    alt: "ภาพอิเล็กโทรไลซิสทองแดงในบีกเกอร์สารละลาย CuSO₄ มีแท่งทองแดงไม่บริสุทธิ์ที่ขั้วบวกทางซ้าย และแท่งทองแดงบริสุทธิ์ที่ขั้วลบทางขวา ลวดไฟฟ้าต่อจากขั้วทั้งสองผ่านแหล่งไฟฟ้า ทางขวาไอออน Cu²⁺ ในสารละลายจะไปเกาะเป็นทองแดงที่ขั้วลบ มีตะกอนสิ่งเจือปนที่ก้นภาชนะ"
+    caption: "ทองแดงที่ขั้วบวกละลายเป็นไอออน แล้วไปเกาะเป็นทองแดงบริสุทธิ์ที่ขั้วลบ สิ่งเจือปนที่ไม่ละลายตกลงเป็นตะกอน"
+  - type: worked-example
+    title: หามวลโซเดียมจากอิเล็กโทรไลซิสเกลือหลอมเหลว
+    problem: "ผ่านไฟฟ้าประจุรวม $2.00 \\times 10^{4}$ C ผ่านเกลือ $\\mathrm{NaCl}$ หลอมเหลว จะได้โซเดียมกี่กรัม กำหนด $F = 96485$ C/mol และ $M(\\mathrm{Na}) = 22.99$ g/mol"
+    steps:
+      - text: "หาจำนวนโมลของอิเล็กตรอน: $n_e = Q / F = 2.00 \\times 10^{4} \\div 96485 = 0.2073$ mol"
+        why: "ค่าคงที่ฟาราเดย์บอกว่า 1 โมลของอิเล็กตรอนมีประจุ 96485 C"
+      - text: "ปฏิกิริยาที่แคโทดคือ $\\mathrm{Na^{+} + e^{-} \\rightarrow Na}$ ใช้อิเล็กตรอน 1 โมลต่อ Na 1 โมล"
+        why: "ไอออน Na⁺ มีประจุ +1 จึงรับอิเล็กตรอนเพียงหนึ่งตัว"
+      - text: "$n(\\mathrm{Na}) = 0.2073$ mol มวล $= 0.2073 \\times 22.99 = 4.766$ g"
+    answer: "ได้โซเดียมประมาณ $4.77$ กรัม"
+  - type: worked-example
+    title: หามวลเหล็กจากการรีดิวซ์เฮมาไทต์ด้วย CO
+    problem: "ถลุงเฮมาไทต์ $\\mathrm{Fe_2O_3}$ 500 g ด้วยแก๊ส CO ตามสมการ $\\mathrm{Fe_2O_3 + 3CO \\rightarrow 2Fe + 3CO_2}$ ถ้าได้ผลผลิตเต็มร้อย จะได้เหล็กกี่กรัม กำหนด $M(\\mathrm{Fe_2O_3}) = 159.69$ และ $M(\\mathrm{Fe}) = 55.85$ g/mol"
+    steps:
+      - text: "หาจำนวนโมลของ $\\mathrm{Fe_2O_3}$: $500 \\div 159.69 = 3.131$ mol"
+      - text: "ใน $\\mathrm{Fe_2O_3}$ 1 โมลมีเหล็ก 2 อะตอม จึงได้ $\\mathrm{Fe}$ $= 2 \\times 3.131 = 6.262$ mol"
+        why: "อัตราส่วนต้องนับจำนวนอะตอมเหล็กในสูตร ไม่ใช่จำนวนโมเลกุล"
+      - text: "มวลเหล็ก $= 6.262 \\times 55.85 = 349.7$ g"
+        why: "ผลผลิตจริงในเตาถลุงมักน้อยกว่าค่านี้ เพราะมีการสูญเสียและเหล็กปนกับสิ่งเจือปน"
+    answer: "ได้เหล็กสูงสุดประมาณ $349.7$ กรัม"
+  - { type: check, problem: chemistry.descriptive.metals-metalloids.p002, prompt: "ลองคิดก่อนว่าวิธีใดประหยัดพลังงานที่สุด" }
+  - { type: check, problem: chemistry.descriptive.metals-metalloids.p005, prompt: "นึกถึงสมบัติของซิลิคอนที่ใช้ทำชิป" }
+glossary:
+  - { term: โลหะแอลคาไล, definition: "โลหะหมู่ 1 เช่น Li, Na, K มีอิเล็กตรอนวงนอกสุด 1 ตัว ว่องไวต่อน้ำมาก" }
+  - { term: โลหะแอลคาไลน์เอิร์ท, definition: "โลหะหมู่ 2 เช่น Mg และ Ca มีอิเล็กตรอนวงนอกสุด 2 ตัว" }
+  - { term: กึ่งโลหะ, definition: "ธาตุที่มีสมบัติอยู่ระหว่างโลหะกับอโลหะ เช่น B, Si, Ge มักเป็นสารกึ่งตัวนำ" }
+  - { term: อิเล็กโทรไลซิส, definition: "การใช้ไฟฟ้ากระตุ้นให้เกิดปฏิกิริยารีดอกซ์ที่ไม่เกิดเองตามธรรมชาติ" }
+  - { term: คริโอไลต์, definition: "สารประกอบ Na₃AlF₆ ที่ช่วยลดอุณหภูมิหลอมเหลวของ Al₂O₃ ในการผลิตอะลูมิเนียม" }
+  - { term: การถลุง, definition: "การสกัดโลหะจากแร่โดยการเปลี่ยนแร่ให้เป็นออกไซด์แล้วรีดิวซ์ด้วยคาร์บอนหรือ CO" }
+flashcards:
+  - { front: "โลหะใดทำปฏิกิริยากับน้ำรุนแรงที่สุดในหมู่ 1", back: "โลหะที่อยู่ล่างสุดในหมู่ เช่น K มากกว่า Na และ Li" }
+  - { front: "ผลิตอะลูมิเนียมจากแร่อย่างไร", back: "ละลาย Al₂O₃ ในคริโอไลต์ แล้วอิเล็กโทรไลซิส Al³⁺ + 3e⁻ → Al ที่แคโทด" }
+  - { front: "ซิลิคอนเป็นกึ่งโลหะเพราะอะไร", back: "มีการนำไฟฟ้าอยู่ระหว่างโลหะกับฉนวน และเพิ่มได้มากเมื่อเติมสารเจือปน" }
+  - { front: "ถลุงเหล็กในเตาสูงทำอย่างไร", back: "ใช้ CO รีดิวซ์ Fe₂O₃ $\\mathrm{Fe_2O_3 + 3CO \\rightarrow 2Fe + 3CO_2}$" }
+references:
+  - { title: "Metalloid", url: "https://en.wikipedia.org/wiki/Metalloid", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Blast furnace", url: "https://en.wikipedia.org/wiki/Blast_furnace", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Alkali metal", url: "https://en.wikipedia.org/wiki/Alkali_metal", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

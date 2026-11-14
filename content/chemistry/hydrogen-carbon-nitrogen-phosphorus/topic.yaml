@@ -1,0 +1,57 @@
+id: chemistry.descriptive.hydrogen-carbon-nitrogen-phosphorus
+subject: chemistry
+title: { th: อโลหะ ไฮโดรเจน คาร์บอเนต ไนโตรเจน และฟอสฟอรัส, en: Nonmetals, hydrogen, carbonates, nitrogen and phosphorus }
+summary: อัญรูปของคาร์บอน การผลิตไฮโดรเจน หินปูนและผงฟู กระบวนการฮาเบอร์ การผลิตกรดไนตริกและปุ๋ย ฟอสฟอรัสกับปัญหายูโทรฟิเคชัน
+difficulty: 6.5
+minutes: 40
+prerequisites: [chemistry.matter.periodic-trends, chemistry.acids-bases.acid-base-ph]
+encompasses:
+  - { id: chemistry.matter.periodic-trends, weight: 0.2 }
+  - { id: chemistry.acids-bases.acid-base-ph, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: nitrogen-chain.svg
+    alt: "แผนผังห้ากล่องเรียงจากซ้ายไปขวา ได้แก่ N₂ ไปยัง NH₃ ด้วยลูกศรที่เขียนว่า ฮาเบอร์ และ + H₂ ความดันสูง ต่อด้วย NH₃ ไปยัง NO ด้วยลูกศรออสต์วัลด์ และ + O₂ / Pt ประมาณ 800 องศาเซลเซียส ต่อด้วย NO ไปยัง NO₂ ด้วย + O₂ และ NO₂ ไปยัง HNO₃ ด้วย + H₂O"
+    caption: "ไนโตรเจนในอากาศถูกเปลี่ยนเป็นแอมโมเนียก่อน แล้วออกซิไดซ์เป็นกรดไนตริกสำหรับผลิตปุ๋ย"
+  - type: worked-example
+    title: หาปริมาณแอมโมเนียจากไนโตรเจนด้วยกระบวนการฮาเบอร์
+    problem: "ไนโตรเจน 1.00 kg ทำปฏิกิริยากับไฮโดรเจนเกินพอตามสมการ $\\mathrm{N_2 + 3H_2 \\rightarrow 2NH_3}$ ถ้าได้ผลผลิตสูงสุด จะได้แอมโมเนียกี่กรัม กำหนด $M(\\mathrm{N_2}) = 28.01$ และ $M(\\mathrm{NH_3}) = 17.03$ g/mol"
+    steps:
+      - text: "หาจำนวนโมลของ $\\mathrm{N_2}$: $1000 \\div 28.01 = 35.70$ mol"
+        why: "ใช้มวลหน่วยกรัม จึงแปลง kg เป็น g ก่อน"
+      - text: "ตามสมการ $\\mathrm{N_2}$ 1 โมลให้ $\\mathrm{NH_3}$ 2 โมล จึงได้ $\\mathrm{NH_3} = 2 \\times 35.70 = 71.39$ mol"
+        why: "ตัวเลขหน้าสูตรในสมการที่ดุลแล้วคืออัตราส่วนโมล"
+      - text: "มวล $\\mathrm{NH_3} = 71.39 \\times 17.03 = 1216$ g"
+    answer: "ได้แอมโมเนียสูงสุดประมาณ $1216$ กรัม ในทางปฏิบัติได้น้อยกว่าเพราะปฏิกิริยาเข้าสู่สมดุลไม่สมบูรณ์"
+  - { type: check, problem: chemistry.descriptive.hydrogen-carbon-nitrogen-phosphorus.p002, prompt: "ลองคิดว่าแก๊สที่ได้จากสังกะสีกับกรดเกลือคืออะไร" }
+  - type: worked-example
+    title: หาปริมาตร CO₂ จากการสลายตัวของเบกกิ้งโซดา
+    problem: "ให้ความร้อนแก่ $\\mathrm{NaHCO_3}$ 10.0 g จนสลายหมดตาม $\\mathrm{2NaHCO_3 \\rightarrow Na_2CO_3 + H_2O + CO_2}$ ที่ 25 °C และ 1 atm ได้ $\\mathrm{CO_2}$ กี่ลิตร กำหนด $M(\\mathrm{NaHCO_3}) = 84.01$ g/mol และ $R = 0.08206$ L·atm/(mol·K)"
+    steps:
+      - text: "หาจำนวนโมลของ $\\mathrm{NaHCO_3}$: $10.0 \\div 84.01 = 0.1190$ mol"
+      - text: "ตามสมการ $\\mathrm{NaHCO_3}$ 2 โมลให้ $\\mathrm{CO_2}$ 1 โมล จึงได้ $\\mathrm{CO_2} = 0.1190 \\div 2 = 0.05952$ mol"
+        why: "ผลิตภัณฑ์ได้น้อยกว่าสารตั้งต้นครึ่งหนึ่งเพราะอัตราส่วนเป็น 2 : 1"
+      - text: "$V = nRT/P = 0.05952 \\times 0.08206 \\times 298.15 / 1.00 = 1.46$ L"
+        why: "เปลี่ยน 25 °C เป็น 298.15 K ก่อนใช้กฎแก๊สอุดมคติ"
+    answer: "ได้ $\\mathrm{CO_2}$ ประมาณ $1.46$ ลิตร ที่ 25 °C และ 1 atm"
+  - { type: check, problem: chemistry.descriptive.hydrogen-carbon-nitrogen-phosphorus.p005, prompt: "จับคู่ฟอสฟอรัสขาวกับการเก็บรักษา" }
+glossary:
+  - { term: อัญรูป, definition: "รูปแบบต่างกันของธาตุเดียวกันที่โครงสร้างต่างกัน เช่น เพชรกับแกรไฟต์ของคาร์บอน" }
+  - { term: กระบวนการฮาเบอร์, definition: "การสังเคราะห์แอมโมเนียจาก N₂ กับ H₂ ที่ความดันสูงและอุณหภูมิปานกลางโดยมีตัวเร่งเหล็ก" }
+  - { term: การรีฟอร์มมิงด้วยไอน้ำ, definition: "การเปลี่ยนมีเทนกับไอน้ำเป็น CO และ H₂ ที่อุณหภูมิสูงโดยมีตัวเร่ง เป็นวิธีผลิตไฮโดรเจนอุตสาหกรรมที่นิยม" }
+  - { term: ยูโทรฟิเคชัน, definition: "การที่สารอาหารเช่นฟอสเฟตทำให้สาหร่ายโตมากเกินไป จนทำให้น้ำขาดออกซิเจน" }
+  - { term: ผงฟู, definition: "ส่วนผสมของเบกกิ้งโซดา (NaHCO₃) กับกรดอ่อน ปล่อยแก๊ส CO₂ เมื่อโดนน้ำหรือความร้อน ทำให้ขนมฟู" }
+flashcards:
+  - { front: "อัญรูปของคาร์บอนที่นำไฟฟ้าได้", back: "แกรไฟต์ เพราะมีอิเล็กตรอนที่เคลื่อนที่ได้ในแต่ละชั้น" }
+  - { front: "สภาวะของกระบวนการฮาเบอร์", back: "ความดันสูง อุณหภูมิปานกลาง (ไม่สูงเกินไป) และตัวเร่งเหล็ก" }
+  - { front: "ทำไมฟอสฟอรัสขาวต้องเก็บในน้ำ", back: "ว่องไวต่อออกซิเจนและติดไฟได้เองในอากาศ" }
+  - { front: "ปุ๋ยยูเรียมีไนโตรเจนกี่เปอร์เซ็นต์โดยมวล", back: "ประมาณ 46.7% ของมวลยูเรีย (NH₂)₂CO" }
+references:
+  - { title: "Haber process", url: "https://en.wikipedia.org/wiki/Haber_process", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Eutrophication", url: "https://en.wikipedia.org/wiki/Eutrophication", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
