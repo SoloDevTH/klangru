@@ -1,0 +1,318 @@
+problems:
+  - id: physics.momentum.collisions-2d-rockets.p001
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 1
+    type: mcq
+    stem: 'ในการชนสองมิติที่ไม่มีแรงภายนอกที่สำคัญ ปริมาณใดของระบบคงที่ก่อนและหลังการชน'
+    choices:
+      - { id: a, text: พลังงานจลน์รวมของระบบเสมอ, feedback: 'พลังงานจลน์คงที่เฉพาะการชนยืดหยุ่น ไม่ใช่ทุกการชน' }
+      - { id: b, text: ผลรวมโมเมนตัมในแกน x และผลรวมโมเมนตัมในแกน y แยกกันทุกแกน, correct: true }
+      - { id: c, text: ขนาดของความเร็วของแต่ละวัตถุ, feedback: 'ความเร็วของแต่ละวัตถุเปลี่ยนไปเมื่อชนกัน' }
+      - { id: d, text: อัตราเร็วเฉลี่ยของระบบ, feedback: 'อัตราเร็วเฉลี่ยไม่ใช่ปริมาณที่อนุรักษ์ในการชน' }
+    hints:
+      - โมเมนตัมเป็นปริมาณเวกเตอร์ จึงแยกเป็นองค์ประกอบได้
+      - ลองนึกถึงการชนของลูกบิลเลียดที่เบนออกไปทำมุม
+    solution: 'เมื่อไม่มีแรงภายนอกที่สำคัญ โมเมนตัมรวมของระบบอนุรักษ์ในแต่ละแกนแยกกัน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p002
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 1
+    type: numeric
+    stem: 'ลูกบอลมวล $0.50\,\mathrm{kg}$ เคลื่อนที่ไปทางขวาด้วยอัตราเร็ว $4.0\,\mathrm{m/s}$ โมเมนตัมของลูกบอลมีขนาดกี่ $\mathrm{kg \cdot m/s}$'
+    answer: { value: 2.0, tolerance: 0.01, unit: kg·m/s }
+    hints:
+      - โมเมนตัมเท่ากับมวลคูณความเร็ว
+      - ใช้หน่วย SI ตลอดการคำนวณ
+    misconceptions:
+      - { match: 4, feedback: 'คำนวณพลังงานจลน์ $\frac{1}{2}mv^2$ แทนโมเมนตัม $mv$' }
+      - { match: 0.125, feedback: 'หารมวลด้วยความเร็วแทนการคูณ' }
+    solution: '$p = mv = 0.50 \times 4.0 = 2.0\,\mathrm{kg \cdot m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p003
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 1
+    type: text
+    stem: 'การชนที่พลังงานจลน์รวมของระบบก่อนและหลังการชนเท่ากัน เรียกว่าการชนอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)'
+    accepted: [การชนยืดหยุ่น, ยืดหยุ่น, elastic collision, elastic]
+    hints:
+      - คำนี้มีคำว่าเด้งกลับได้ดี
+      - ตอบเป็นภาษาไทยหรืออังกฤษก็ได้
+    misconceptions:
+      - { match: การชนไม่ยืดหยุ่น, feedback: 'การชนไม่ยืดหยุ่นทำให้พลังงานจลน์รวมลดลงบางส่วน ไม่ได้คงเดิม' }
+    solution: 'เรียกว่า การชนยืดหยุ่น (elastic collision) ซึ่งพลังงานจลน์รวมคงเดิมก่อนและหลังชน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p004
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 2
+    type: numeric
+    stem: 'ลูกบิลเลียดในร้านในกรุงเทพมีมวลเท่ากันสองลูก ลูกแรกเคลื่อนที่ด้วย $6.0\,\mathrm{m/s}$ ชนลูกที่อยู่นิ่งแบบยืดหยุ่น ลูกแรกหลังชนเคลื่อนที่ทำมุม $40^\circ$ กับแนวเดิม อัตราเร็วของลูกแรกหลังชนเป็นกี่ $\mathrm{m/s}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 4.60, tolerance: 0.02, unit: m/s }
+    hints:
+      - ความเร็วหลังชนของลูกแรกคือองค์ประกอบของความเร็วเดิมในทิศที่ลูกแรกเคลื่อนที่ไป
+      - ใช้ $\cos 40^\circ$
+    misconceptions:
+      - { match: 6.0, feedback: 'ไม่ได้คิดการเบนของลูกแรก ความเร็วหลังชนลดลง' }
+      - { match: 3.86, feedback: 'ใช้ $\sin 40^\circ$ แทน $\cos 40^\circ$ ซึ่งเป็นความเร็วของลูกที่สอง' }
+    solution: '$v_A = u\cos\theta = 6.0 \times \cos 40^\circ \approx 4.60\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p005
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 2
+    type: numeric
+    stem: 'ในสถานการณ์ของโจทย์ก่อนหน้า ลูกที่สองซึ่งอยู่นิ่งมีอัตราเร็วหลังชนเป็นกี่ $\mathrm{m/s}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 3.86, tolerance: 0.02, unit: m/s }
+    hints:
+      - เมื่อมวลเท่ากัน ความเร็วของลูกที่สองคือองค์ประกอบ $u\sin\theta$
+      - ความเร็วทั้งสองตั้งฉากกันหลังการชน
+    misconceptions:
+      - { match: 4.60, feedback: 'ได้ความเร็วของลูกแรก ไม่ใช่ลูกที่สอง' }
+      - { match: 6.0, feedback: 'ใช้ความเร็วเดิมโดยไม่ได้แยกองค์ประกอบ' }
+    solution: '$v_B = u\sin\theta = 6.0 \times \sin 40^\circ \approx 3.86\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p006
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 2
+    type: mcq
+    stem: 'เมื่อลูกที่มีมวลเท่ากันชนแบบยืดหยุ่นกับลูกที่อยู่นิ่ง มุมระหว่างความเร็วของทั้งสองลูกหลังชนเป็นเท่าใด'
+    choices:
+      - { id: a, text: 45°, feedback: 'มุม 45 องศาไม่ได้มาจากการตั้งฉากของเวกเตอร์ความเร็วทั้งสอง' }
+      - { id: b, text: 60°, feedback: 'มุม 60 องศาไม่ใช่ผลของการอนุรักษ์โมเมนตัมและพลังงานในกรณีนี้' }
+      - { id: c, text: 90°, correct: true }
+      - { id: d, text: 180°, feedback: 'มุม 180 องศาหมายถึงการชนแบบตรงศูนย์กลางที่ลูกแรกกลับทิศ' }
+    hints:
+      - ลองใช้การอนุรักษ์พลังงานจลน์ร่วมกับการอนุรักษ์โมเมนตัม
+      - ถ้าลูกทั้งสองแยกไปตั้งฉากกัน พลังงานจลน์จะรวมกันได้เท่ากับเดิม
+    solution: 'สำหรับการชนยืดหยุ่นของมวลเท่ากันโดยมีลูกหนึ่งอยู่นิ่ง ความเร็วหลังชนของทั้งสองลูกตั้งฉากกันเสมอ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p007
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 2
+    type: numeric
+    stem: 'ลูกบิลเลียดมวลเท่ากันชนแบบยืดหยุ่นกับลูกที่อยู่นิ่ง หลังชนลูกแรกเคลื่อนที่ทำมุม $25^\circ$ กับแนวเดิม ลูกที่สองเคลื่อนที่ทำมุมกี่องศากับแนวเดิม (วัดขนาดของมุม ตอบจำนวนเต็ม)'
+    answer: { value: 65, tolerance: 0.1, unit: '°' }
+    hints:
+      - ความเร็วทั้งสองตั้งฉากกันเสมอ
+      - ดูว่ามุมของสองลูกรวมกันได้เท่าใด
+    misconceptions:
+      - { match: 25, feedback: 'คิดว่าลูกที่สองเคลื่อนที่ในมุมเดียวกับลูกแรก' }
+      - { match: 115, feedback: 'บวก 90 องศาเข้ากับมุมที่ให้ ทั้งที่ลูกที่สองอยู่ด้านตรงข้าม' }
+    solution: '$\theta_B = 90^\circ - 25^\circ = 65^\circ$ ใต้แนวเดิม'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p008
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 2
+    type: numeric
+    stem: 'วัตถุ $A$ มวล $3.0\,\mathrm{kg}$ เคลื่อนที่ไปทางตะวันออกด้วย $4.0\,\mathrm{m/s}$ วัตถุ $B$ มวล $4.0\,\mathrm{kg}$ เคลื่อนที่ไปทางเหนือด้วย $3.0\,\mathrm{m/s}$ ขนาดของโมเมนตัมรวมของระบบเป็นกี่ $\mathrm{kg \cdot m/s}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 16.97, tolerance: 0.02, unit: kg·m/s }
+    hints:
+      - หาองค์ประกอบของโมเมนตัมแต่ละตัวในแกน x และแกน y ก่อน
+      - ขนาดของผลรวมเวกเตอร์หาได้จากทฤษฎีบทพีทาโกรัส
+    misconceptions:
+      - { match: 24, feedback: 'บวกขนาดของโมเมนตัมตรง ๆ ทั้งที่ทิศตั้งฉากกัน' }
+      - { match: 12, feedback: 'นับเฉพาะองค์ประกอบในแกน x' }
+    solution: '$p_x = 3.0 \times 4.0 = 12$, $p_y = 4.0 \times 3.0 = 12$ จึงได้ $|p| = \sqrt{12^2 + 12^2} \approx 16.97\,\mathrm{kg \cdot m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p009
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 3
+    type: numeric
+    stem: 'จรวดมีมวลเริ่มต้น $5000\,\mathrm{kg}$ เผาเชื้อเพลิงจนเหลือมวล $500\,\mathrm{kg}$ อัตราเร็วไอเสียสัมพัทธ์ $u = 2500\,\mathrm{m/s}$ การเปลี่ยนแปลงความเร็วของจรวดเป็นกี่ $\mathrm{m/s}$ (ละเลยแรงโน้มถ่วงและแรงต้านอากาศ ตอบจำนวนเต็ม)'
+    answer: { value: 5756, tolerance: 5, unit: m/s }
+    hints:
+      - ใช้สมการจรวด $\Delta v = u\ln(m_0/m_f)$
+      - อัตราส่วนมวลต้องคำนวณก่อนแทนค่า
+    misconceptions:
+      - { match: 25000, feedback: 'ใช้อัตราส่วนมวลโดยตรงแทนลอการิทึมธรรมชาติ' }
+      - { match: 2500, feedback: 'ใช้ลอการิทึมฐาน 10 แทนลอการิทึมธรรมชาติ' }
+    solution: '$\Delta v = 2500 \ln\left(\frac{5000}{500}\right) = 2500 \ln 10 \approx 5756\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p010
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 3
+    type: numeric
+    stem: 'จรวดขับไอเสียด้วยอัตราเร็วไอเสียสัมพัทธ์ $u = 2500\,\mathrm{m/s}$ และอัตราการเปลี่ยนมวล $|dm/dt| = 100\,\mathrm{kg/s}$ แรงขับของจรวดมีค่ากี่กิโลนิวตัน (ตอบจำนวนเต็ม)'
+    answer: { value: 250, tolerance: 0.5, unit: kN }
+    hints:
+      - ใช้สูตรแรงขับ $F = u|dm/dt|$
+      - แปลงนิวตันเป็นกิโลนิวตันโดยหารด้วย 1000
+    misconceptions:
+      - { match: 0.025, feedback: 'หาร $u$ ด้วยอัตราการเปลี่ยนมวลแทนการคูณ' }
+    solution: '$F = u|dm/dt| = 2500 \times 100 = 2.5 \times 10^5\,\mathrm{N} = 250\,\mathrm{kN}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p011
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 3
+    type: numeric
+    stem: 'จรวดที่มีอัตราเร็วไอเสียสัมพัทธ์ $u = 3000\,\mathrm{m/s}$ ต้องการเปลี่ยนความเร็ว $\Delta v = 6000\,\mathrm{m/s}$ อัตราส่วนมวลเริ่มต้นต่อมวลสุดท้าย $m_0/m_f$ ต้องเป็นเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 7.39, tolerance: 0.01, unit: '' }
+    hints:
+      - จากสมการจรวด $\ln(m_0/m_f) = \Delta v / u$
+      - ยกกำลังของ $e$ ทั้งสองข้างเพื่อหาอัตราส่วน
+    misconceptions:
+      - { match: 2.0, feedback: 'ใช้ $\Delta v / u$ เป็นอัตราส่วนโดยตรง ไม่ได้ยกกำลังของ $e$' }
+    solution: '$\frac{m_0}{m_f} = e^{\Delta v/u} = e^{2} \approx 7.39$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p012
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 3
+    type: numeric
+    stem: 'ที่สี่แยกแห่งหนึ่งในกรุงเทพฯ รถเก๋งมวล $1.2\,\mathrm{t}$ วิ่งไปทางตะวันออกด้วย $10\,\mathrm{m/s}$ ชนกับรถกระบะมวล $1.8\,\mathrm{t}$ ที่วิ่งไปทางเหนือด้วย $8.0\,\mathrm{m/s}$ แล้วติดกันไป อัตราเร็วของซากรถทั้งสองทันทีหลังชนเป็นกี่ $\mathrm{m/s}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 6.25, tolerance: 0.02, unit: m/s }
+    hints:
+      - 'หาโมเมนตัมในแกนตะวันออก ($x$) และแกนเหนือ ($y$) แยกกัน แต่ละแกนอนุรักษ์ด้วยตัวเอง'
+      - 'หลังชนรถติดกัน มวลรวม $3.0\,\mathrm{t}$ มีโมเมนตัม $\sqrt{p_x^2 + p_y^2}$'
+    misconceptions:
+      - { match: 8.8, feedback: 'บวกขนาดของโมเมนตัมสองค่าตรง ๆ ทั้งที่มีทิศตั้งฉากกัน ต้องรวมแบบเวกเตอร์' }
+      - { match: 4.0, feedback: 'คิดเฉพาะโมเมนตัมในแกนตะวันออก ลืมโมเมนตัมของรถกระบะในแกนเหนือ' }
+    solution: '$p_x = 1200 \times 10 = 12\,000\,\mathrm{kg \cdot m/s}$ และ $p_y = 1800 \times 8.0 = 14\,400\,\mathrm{kg \cdot m/s}$ จึงได้ $|p| = \sqrt{12\,000^2 + 14\,400^2} \approx 18\,745\,\mathrm{kg \cdot m/s}$ และ $v = \frac{18\,745}{3000} \approx 6.25\,\mathrm{m/s}$ ในทิศทำมุม $\tan^{-1}(14\,400/12\,000) \approx 50.2^\circ$ เหนือทิศตะวันออก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p013
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 3
+    type: numeric
+    stem: 'จรวดลำหนึ่งยิงขึ้นในแนวดิ่ง มีอัตราเร็วไอเสียสัมพัทธ์ $u = 2000\,\mathrm{m/s}$ มวลเริ่มต้น $4000\,\mathrm{kg}$ เผาเชื้อเพลิงจนเหลือ $1000\,\mathrm{kg}$ ระหว่างเผาไหม้ $60\,\mathrm{s}$ ถ้าใช้ $g = 9.8\,\mathrm{m/s^2}$ ความเร็วจริงที่เพิ่มขึ้นคือกี่ $\mathrm{m/s}$ (ตอบจำนวนเต็ม)'
+    answer: { value: 2185, tolerance: 2, unit: m/s }
+    hints:
+      - หาค่า $u\ln(m_0/m_f)$ ก่อน
+      - หักผลของแรงโน้มถ่วงที่ทำให้ความเร็วลดลงระหว่างเผาไหม้
+    misconceptions:
+      - { match: 2773, feedback: 'ไม่ได้หักผลของแรงโน้มถ่วงระหว่างการเผาไหม้' }
+    solution: '$\Delta v \approx 2000\ln 4 - 9.8 \times 60 = 2772.6 - 588 \approx 2185\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p014
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 4
+    type: expression
+    stem: 'จากสมการจรวด $v = u\ln\left(\frac{m_0}{m_f}\right)$ เมื่อ $v$ คือการเปลี่ยนความเร็ว จงเขียนอัตราส่วน $\frac{m_0}{m_f}$ ในรูปของ $v$ และ $u$'
+    prefix: 'm_0/m_f ='
+    answer: { latex: '\exp\left(\frac{v}{u}\right)', variables: [v, u] }
+    hints:
+      - ยกกำลังของฐานธรรมชาติทั้งสองข้างเพื่อยกลอการิทึมออก
+      - ฟังก์ชันผกผันของลอการิทึมธรรมชาติคือเอกซ์โพเนนเชียล
+    misconceptions:
+      - { match: 'v/u', feedback: 'ลืมยกกำลังของฐานธรรมชาติ ค่าลอการิทึมต้องถูกยกออก' }
+    solution: '$v = u\ln\left(\frac{m_0}{m_f}\right)$ จึงได้ $\frac{m_0}{m_f} = \exp\left(\frac{v}{u}\right)$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p015
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 4
+    type: numeric
+    stem: 'จรวดสองท่อนมีท่อนแรกอัตราส่วนมวล $5$ และท่อนที่สองอัตราส่วนมวล $4$ โดยแต่ละท่อนมีอัตราเร็วไอเสีย $u = 2500\,\mathrm{m/s}$ การเปลี่ยนความเร็วรวมของจรวดเป็นกี่ $\mathrm{m/s}$ (ละเลยแรงโน้มถ่วงและแรงต้านอากาศ ตอบจำนวนเต็ม)'
+    answer: { value: 7489, tolerance: 10, unit: m/s }
+    hints:
+      - ความเปลี่ยนแปลงความเร็วรวมเป็นผลบวกของแต่ละท่อน
+      - ผลบวกของลอการิทึมเท่ากับลอการิทึมของผลคูณ
+    misconceptions:
+      - { match: 4024, feedback: 'คิดเฉพาะท่อนแรก ($u\ln 5$) ลืมความเร็วที่ท่อนที่สองเพิ่มให้' }
+      - { match: 5493, feedback: 'บวกอัตราส่วนแทนการคูณ ได้ลอการิทึมของ 9 แทนของ 20' }
+    solution: '$\Delta v = u\ln 5 + u\ln 4 = u\ln 20 = 2500 \times 2.996 \approx 7489\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p016
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 4
+    type: numeric
+    stem: 'ลูกบิลเลียดมวลเท่ากันชนแบบยืดหยุ่นกับลูกที่อยู่นิ่ง ลูกแรกหลังชนออกไปทำมุม $60^\circ$ กับแนวเดิม อัตราเร็วของลูกแรกหลังชนเป็นกี่เท่าของอัตราเร็วก่อนชน (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 0.50, tolerance: 0.01, unit: '' }
+    hints:
+      - ความเร็วของลูกแรกหลังชนคือองค์ประกอบของความเร็วเดิมที่ $\cos\theta$
+      - ค่าของ $\cos 60^\circ$ คือเท่าใด
+    misconceptions:
+      - { match: 0.87, feedback: 'ใช้ $\sin 60^\circ$ แทน $\cos 60^\circ$' }
+    solution: '$\frac{v_A}{u} = \cos 60^\circ = 0.50$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p017
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 4
+    type: mcq
+    stem: 'เหตุใดจรวดจึงมักแยกเป็นหลายท่อน'
+    choices:
+      - { id: a, text: 'ลดมวลโครงสร้างที่ไม่จำเป็นออกเมื่อเชื้อเพลิงหมด ทำให้อัตราส่วนมวลของท่อนถัดไปดีขึ้น', correct: true }
+      - { id: b, text: 'เพื่อให้อัตราเร็วไอเสียสัมพัทธ์เพิ่มขึ้นทุกท่อน', feedback: 'อัตราเร็วไอเสียขึ้นกับเชื้อเพลิงและเครื่องยนต์ การแยกท่อนไม่ได้เพิ่มมันโดยตรง' }
+      - { id: c, text: 'เพื่อให้แรงโน้มถ่วงลดลงเมื่อจรวดสูงขึ้น', feedback: 'แรงโน้มถ่วงลดลงเล็กน้อยเมื่อสูงขึ้น แต่ไม่ใช่เหตุผลหลักของการแยกท่อน' }
+      - { id: d, text: 'เพื่อให้ไม่ต้องใช้เชื้อเพลิง', feedback: 'จรวดยังต้องใช้เชื้อเพลิงในทุกท่อน' }
+    hints:
+      - ลองนึกถึงสมการจรวดที่ขึ้นกับอัตราส่วนมวลเท่านั้น
+      - ท่อนที่หมดเชื้อเพลิงแล้วยังเป็นน้ำหนักที่ต้องเร่งหรือไม่
+    solution: 'เมื่อทิ้งท่อนที่เชื้อเพลิงหมดแล้ว มวลที่ต้องเร่งลดลงและอัตราส่วนมวลของท่อนถัดไปดีขึ้น'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p018
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 4
+    type: numeric
+    stem: 'สมมติบั้งไฟลูกหนึ่งในงานประเพณีบุญบั้งไฟมีมวลรวม $50\,\mathrm{kg}$ และแรงขับ $2.0 \times 10^3\,\mathrm{N}$ ในแนวดิ่ง ขณะเพิ่งออกจากฐานยิง ความเร่งสุทธิมีค่ากี่ $\mathrm{m/s^2}$ (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 30.2, tolerance: 0.1, unit: m/s² }
+    hints:
+      - ความเร่งสุทธิคือแรงขับหารมวลลบด้วย $g$
+      - ตรวจว่าหน่วยของแรงและมวลสอดคล้องกันก่อนหาร
+    misconceptions:
+      - { match: 40, feedback: 'ไม่ได้หักแรงโน้มถ่วงออกจากแรงขับ' }
+    solution: '$a = \frac{F}{m} - g = \frac{2.0 \times 10^3}{50} - 9.8 = 40 - 9.8 = 30.2\,\mathrm{m/s^2}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p019
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 5
+    type: numeric
+    stem: 'จรวดต้องเปลี่ยนความเร็ว $\Delta v = 4000\,\mathrm{m/s}$ ด้วยอัตราเร็วไอเสียสัมพัทธ์ $u = 2000\,\mathrm{m/s}$ มวลสุดท้ายที่เหลือคิดเป็นกี่เปอร์เซ็นต์ของมวลเริ่มต้น (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 13.5, tolerance: 0.1, unit: '%' }
+    hints:
+      - จาก $\frac{m_f}{m_0} = e^{-\Delta v/u}$ คำนวณค่า $\Delta v/u$ ก่อน
+      - คูณผลลัพธ์ด้วย 100 เพื่อได้เปอร์เซ็นต์
+    misconceptions:
+      - { match: 86.5, feedback: 'ตอบเป็นเปอร์เซ็นต์ของมวลที่ถูกเผาไป ไม่ใช่มวลที่เหลือ' }
+      - { match: 738.9, feedback: 'กลับทิศอัตราส่วน ได้ $m_0/m_f$ แทน $m_f/m_0$' }
+    solution: '$\frac{m_f}{m_0} = e^{-4000/2000} = e^{-2} \approx 0.135$ คือประมาณ $13.5\%$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.momentum.collisions-2d-rockets.p020
+    topics: [physics.momentum.collisions-2d-rockets]
+    difficulty: 4
+    type: mcq
+    stem: 'สมการจรวด $\Delta v = u\ln(m_0/m_f)$ ใช้ได้โดยประมาณภายใต้เงื่อนไขใด'
+    choices:
+      - { id: a, text: 'แรงภายนอกเป็นศูนย์หรือเล็กน้อย และอัตราเร็วไอเสียสัมพัทธ์กับจรวดคงที่', correct: true }
+      - { id: b, text: 'มวลของจรวดเพิ่มขึ้นขณะเผาไหม้', feedback: 'มวลของจรวดลดลงขณะพ่นไอเสียออกไป' }
+      - { id: c, text: 'จรวดเคลื่อนที่ด้วยความเร็วคงที่ตลอดเวลา', feedback: 'สมการนี้อธิบายการเปลี่ยนความเร็วของจรวด จึงไม่ได้ต้องคงที่' }
+      - { id: d, text: 'ไอเสียเคลื่อนที่ไปข้างหน้าเทียบกับจรวด', feedback: 'ไอเสียพ่นไปข้างหลังเทียบกับจรวด จึงทำให้จรวดเร่งไปข้างหน้า' }
+    hints:
+      - นึกถึงสิ่งที่ต้องรักษาไว้ในการอนุรักษ์โมเมนตัมของระบบ
+      - อัตราเร็วไอเสียเป็นค่าที่วัดเทียบกับจรวด
+    solution: 'สมการนี้ต้องการให้แรงภายนอกไม่ทำให้โมเมนตัมของระบบเปลี่ยนมาก และอัตราเร็วไอเสียสัมพัทธ์คงที่ตลอดการเผาไหม้'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,72 @@
+id: physics.waves.pipes-musical-sound
+subject: physics
+title: { th: โหมดปกติของท่อลมและเสียงของเครื่องดนตรี, en: Normal modes of air columns and the sound of musical instruments }
+summary: หาความถี่โหมดปกติของท่อปลายเปิดและท่อปลายปิด ใช้กับเสียงของขลุ่ยและเครื่องสาย และอธิบายว่าเครื่องดนตรีต่างชนิดเล่นโน้ตเดียวกันแต่เสียงต่างกันได้อย่างไร
+difficulty: 6
+minutes: 35
+prerequisites: [physics.waves.resonance-standing-waves, physics.waves.sound-properties]
+encompasses:
+  - { id: physics.waves.resonance-standing-waves, weight: 0.3 }
+  - { id: physics.waves.sound-properties, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: pipe-modes.svg
+    alt: 'แผนภาพท่อสี่ท่อ สองท่อบนเป็นท่อปลายเปิดสองด้าน ลำดับที่หนึ่งมีปฏิบัพอยู่กลางท่อ ลำดับที่สองมีบัพสองจุด ส่วนสองท่อล่างเป็นท่อปลายปิดหนึ่งด้าน ลำดับที่หนึ่งและสามมีบัพที่ปลายปิด'
+    caption: โหมดปกติของท่อขึ้นกับว่าปลายท่อเปิดหรือปิด ท่อปลายปิดหนึ่งด้านมีได้เฉพาะโหมดที่เป็นเลขคี่
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ความถี่มูลฐานของขลุ่ยที่ยาว 0.39 เมตร
+    problem: 'ขลุ่ยไม้ไผ่ทำเป็นท่อปลายเปิดสองด้านยาว $0.39\,\mathrm{m}$ เสียงในอากาศมีอัตราเร็ว $343\,\mathrm{m/s}$ ความถี่มูลฐานและความถี่ฮาร์มอนิกลำดับที่สองเป็นเท่าไร (ละเลยการแก้ปลายท่อ)'
+    steps:
+      - text: 'ท่อปลายเปิดสองด้านมีโหมดปกติ $f_n = \frac{nv}{2L}$ ดังนั้นมูลฐาน ($n = 1$) คือ $f_1 = \frac{343}{2 \times 0.39}$'
+        why: ปลายเปิดทั้งสองด้านเป็นปฏิบัพของการกระจัด ความยาวท่อเท่ากับครึ่งความยาวคลื่นของโหมดมูลฐาน
+      - text: '$f_1 \approx 439.7\,\mathrm{Hz} \approx 440\,\mathrm{Hz}$ ซึ่งตรงกับโน้ต A4 ในดนตรีสากล'
+        why: ความถี่ที่ใกล้ 440 Hz เป็นมาตรฐานของการปรับเสียงทั่วไป
+      - text: 'ลำดับที่สอง $f_2 = 2f_1 \approx 879.5\,\mathrm{Hz}$'
+        why: ฮาร์มอนิกลำดับที่สองของท่อปลายเปิดมีความถี่เป็นสองเท่าของมูลฐาน
+    answer: 'ความถี่มูลฐานประมาณ $440\,\mathrm{Hz}$ และลำดับที่สองประมาณ $880\,\mathrm{Hz}$'
+  - { type: check, problem: physics.waves.pipes-musical-sound.p001, prompt: ลองคิดก่อนอ่านต่อ ท่อปลายเปิดสองด้านมีโหมดปกติแบบใด }
+  - type: worked-example
+    title: ท่อปลายปิดหนึ่งด้านที่ยาว 0.40 เมตร
+    problem: 'ท่อปลายปิดหนึ่งด้านยาว $0.40\,\mathrm{m}$ เสียงมีอัตราเร็ว $343\,\mathrm{m/s}$ จงหาความถี่มูลฐานและความถี่ฮาร์มอนิกที่สามของท่อนี้'
+    steps:
+      - text: 'ท่อปลายปิดหนึ่งด้านมี $f_n = \frac{nv}{4L}$ โดย $n$ เป็นเลขคี่เท่านั้น มูลฐานคือ $f_1 = \frac{343}{4 \times 0.40} = 214.4\,\mathrm{Hz}$'
+        why: ปลายปิดเป็นบัพของการกระจัด ความยาวท่อเท่ากับหนึ่งในสี่ของความยาวคลื่นมูลฐาน
+      - text: 'ลำดับที่สามคือ $n = 3$ ซึ่งเป็นเลขคี่ จึงมีอยู่จริง: $f_3 = 3f_1 = 643.1\,\mathrm{Hz}$'
+        why: ไม่มีลำดับที่สองในท่อนี้ เพราะจะทำให้ปลายปิดไม่เป็นบัพ
+    answer: 'ความถี่มูลฐานประมาณ $214\,\mathrm{Hz}$ และลำดับที่สามประมาณ $643\,\mathrm{Hz}$'
+  - type: figure
+    src: harmonic-presence.svg
+    alt: 'แผนภาพแท่งสองชุด ชุดบนมีแท่งครบทั้งเจ็ดลำดับของฮาร์มอนิก ชุดล่างมีแท่งเฉพาะลำดับที่หนึ่ง สาม ห้า และเจ็ด ส่วนลำดับคู่เป็นกรอบประ'
+    caption: ความสูงของแท่งไม่ได้บอกแอมพลิจูด แสดงเพียงว่าโหมดนั้นมีหรือไม่มี ท่อปลายปิดจึงให้เสียงที่ต่างจากท่อปลายเปิดแม้จะมีมูลฐานเท่ากัน
+  - type: interactive
+    title: ความถี่โหมดปกติแปรตามความยาวท่อและอัตราเร็วเสียง
+    caption: แถบเลื่อน a คืออัตราเร็วเสียง ลองเพิ่มความยาวท่อจาก 0.2 เป็น 1.5 เมตร แล้วดูว่าความถี่มูลฐานของท่อทั้งสองแบบลดลงเท่าใด กราฟบนคือท่อปลายเปิดสองด้าน และกราฟล่างคือท่อปลายปิดหนึ่งด้าน
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a}{2x}", "\\frac{a}{4x}"]
+      sliders:
+        - { name: a, min: 300, max: 400, step: 1, value: 343, label: อัตราเร็วเสียง v (m/s) }
+      x: [0.2, 1.5]
+      y: [0, 1000]
+  - { type: check, problem: physics.waves.pipes-musical-sound.p016, prompt: เหตุใดขลุ่ยกับแคลริเน็ตที่เล่นโน้ตเดียวกันจึงฟังต่างกัน }
+glossary:
+  - { term: โหมดปกติ, definition: รูปแบบการสั่นของอากาศในท่อที่เกิดคลื่นนิ่งได้ โดยมีความถี่เฉพาะที่ขึ้นกับความยาวท่อและอัตราเร็วเสียง }
+  - { term: ฮาร์มอนิก, definition: ความถี่ที่เป็นจำนวนเท่าของความถี่มูลฐาน เช่น 2f₁ 3f₁ และ 4f₁ }
+  - { term: ปฏิบัพ, definition: ตำแหน่งในคลื่นนิ่งที่แอมพลิจูดมีค่าสูงสุด }
+  - { term: บัพ, definition: ตำแหน่งในคลื่นนิ่งที่แอมพลิจูดเป็นศูนย์ }
+flashcards:
+  - { front: "ท่อปลายเปิดสองด้าน", back: "$f_n = \\frac{nv}{2L}$ โดย $n = 1, 2, 3, \\ldots$" }
+  - { front: "ท่อปลายปิดหนึ่งด้าน", back: "$f_n = \\frac{nv}{4L}$ โดย $n = 1, 3, 5, \\ldots$ (เลขคี่เท่านั้น)" }
+  - { front: "ความเร็วเสียงในอากาศโดยประมาณ", back: "$v \\approx 331 + 0.6\\,T$ เมื่อ $T$ เป็นองศาเซลเซียส" }
+  - { front: "ความถี่มูลฐานของเส้นเชือกที่ตึง", back: "$f_1 = \\frac{1}{2L}\\sqrt{\\frac{T}{\\mu}}$ โดย $\\mu$ คือมวลต่อหนึ่งหน่วยความยาว" }
+references:
+  - { title: "Organ pipe", url: "https://en.wikipedia.org/wiki/Organ_pipe", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Standing wave", url: "https://en.wikipedia.org/wiki/Standing_wave", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Speed of sound (ค่า 343 m/s ที่ 20 °C)", url: "https://en.wikipedia.org/wiki/Speed_of_sound", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "คลื่นนิ่ง", url: "https://th.wikipedia.org/wiki/คลื่นนิ่ง", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

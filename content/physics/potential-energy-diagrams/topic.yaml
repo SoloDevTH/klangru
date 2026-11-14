@@ -1,0 +1,72 @@
+id: physics.energy.potential-energy-diagrams
+subject: physics
+title: { th: แรงอนุรักษ์ แรงไม่อนุรักษ์ และกราฟพลังงานศักย์, en: Conservative and non-conservative forces, and potential energy diagrams }
+summary: แยกแรงอนุรักษ์จากแรงไม่อนุรักษ์ หาแรงจากความชันของกราฟพลังงานศักย์ และใช้กราฟเพื่อหาจุดวกกลับ จุดสมดุลที่เสถียรหรือไม่เสถียร และคาบของการแกว่งเล็ก ๆ
+difficulty: 7
+minutes: 35
+prerequisites: [physics.energy.conservation, physics.energy.variable-force-work, math.calculus.derivative]
+encompasses:
+  - { id: physics.energy.conservation, weight: 0.3 }
+  - { id: physics.energy.variable-force-work, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: potential-curve.svg
+    alt: 'กราฟพลังงานศักย์ U ของ x ยกกำลังสี่ ลบ 2x กำลังสอง มีรูปร่างเหมือนตัว W เส้นประสีเขียวแนวนอนแทนพลังงานรวม ตัดกราฟที่สองจุดซ้ายและขวาซึ่งเป็นจุดวกกลับ จุดต่ำสุดสองจุดข้างเป็นจุดสมดุลเสถียร และจุดสูงสุดตรงกลางเป็นจุดสมดุลไม่เสถียร'
+    caption: จากกราฟ เราอ่านได้ทั้งจุดที่วัตถุวกกลับ บริเวณที่วัตถุเคลื่อนที่ได้ และจุดสมดุลที่เสถียรหรือไม่เสถียร
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: หาแรงและจุดสมดุลจากพลังงานศักย์
+    problem: 'พลังงานศักย์ของวัตถุคือ $U(x) = x^4 - 2x^2$ (หน่วย J โดย $x$ เป็น m) จงหาแรงที่ตำแหน่ง $x = 0.5\,\mathrm{m}$ และหาจุดสมดุลทั้งหมด'
+    steps:
+      - text: 'แรงคือ $F = -\frac{dU}{dx} = -(4x^3 - 4x)$'
+        why: แรงจากพลังงานศักย์เท่ากับลบอนุพันธ์ของ U เทียบกับตำแหน่ง ความชันเป็นบวกทำให้แรงชี้ไปทางลบ
+      - text: 'ที่ $x = 0.5$: $F = -(4 \times 0.125 - 4 \times 0.5) = -(0.5 - 2) = 1.5\,\mathrm{N}$'
+        why: ค่าเป็นบวกหมายความว่าแรงชี้ไปทางบวกของ x
+      - text: 'จุดสมดุลคือที่ $F = 0$: $4x(x^2 - 1) = 0$ ได้ $x = 0, \pm 1$ จากนั้นดูความโค้ง $\frac{d^2U}{dx^2} = 12x^2 - 4$'
+        why: ที่ $x = \pm 1$ ได้ $\frac{d^2U}{dx^2} = 8 > 0$ จึงเป็นจุดต่ำสุดและเสถียร ส่วนที่ $x = 0$ ได้ $\frac{d^2U}{dx^2} = -4 < 0$ จึงไม่เสถียร
+    answer: 'แรงที่ $x = 0.5\,\mathrm{m}$ มีค่า $1.5\,\mathrm{N}$ ชี้ไปทางบวก และจุดสมดุลคือ $x = 0$ (ไม่เสถียร) กับ $x = \pm 1$ (เสถียร)'
+  - { type: check, problem: physics.energy.potential-energy-diagrams.p015, prompt: ลองคิดก่อนอ่านต่อ ถ้าความชันของกราฟ U เป็นบวก แรงมีทิศไปทางใด }
+  - type: worked-example
+    title: แรงเสียดทานหยุดกล่องได้ระยะเท่าใด
+    problem: 'กล่องมวล $3\,\mathrm{kg}$ เลื่อนบนพื้นด้วยอัตราเร็ว $5\,\mathrm{m/s}$ แรงเสียดทานจลน์มีสัมประสิทธิ์ $\mu = 0.25$ กล่องจะเลื่อนไปได้ไกลเท่าใดก่อนหยุด (ใช้ $g = 9.8\,\mathrm{m/s^2}$)'
+    steps:
+      - text: 'งานของแรงเสียดทานเท่ากับการเปลี่ยนพลังงานจลน์: $-\mu m g d = 0 - \frac{1}{2}mv^2$'
+        why: แรงเสียดทานเป็นแรงไม่อนุรักษ์ งานของมันทำให้พลังงานกลลดลงเป็นความร้อน
+      - text: 'แก้หา $d$: $d = \frac{v^2}{2\mu g} = \frac{25}{2 \times 0.25 \times 9.8} \approx 5.10\,\mathrm{m}$'
+        why: มวลตัดออกได้ เพราะทั้งสองข้างมี m และค่าที่เหลือขึ้นกับความเร็วและสัมประสิทธิ์แรงเสียดทานเท่านั้น
+    answer: 'กล่องจะเลื่อนได้ประมาณ $5.1\,\mathrm{m}$ ก่อนหยุด'
+  - type: figure
+    src: equilibrium-types.svg
+    alt: 'ลูกบอลสามภาพ ภาพซ้ายอยู่ในร่องโค้งต่ำ ภาพกลางอยู่บนยอดโค้งคว่ำ และภาพขวาอยู่บนพื้นราบ'
+    caption: จุดสมดุลแบ่งได้สามแบบ ความโค้งของ U เป็นตัวบอกว่าอยู่แบบใด
+  - type: interactive
+    title: ระดับพลังงานรวมกำหนดบริเวณที่วัตถุเคลื่อนที่ได้
+    caption: แถบเลื่อน h คือพลังงานรวม เส้นตรงคือ h และเส้นโค้งคือ U(x) = x⁴ − 2x² บริเวณที่เส้นตรงอยู่เหนือโค้งคือบริเวณที่วัตถุเคลื่อนที่ได้ ลองลด h ให้ต่ำกว่าศูนย์แล้วดูว่าบริเวณนี้แยกเป็นสองหลุม
+    widget:
+      kind: function-plot
+      functions: ["x^4-2x^2", "h"]
+      sliders:
+        - { name: h, min: -1, max: 2, step: 0.05, value: 0.5, label: พลังงานรวม E (J) }
+      x: [-2, 2]
+      y: [-1.5, 3]
+  - { type: check, problem: physics.energy.potential-energy-diagrams.p001, prompt: แรงอนุรักษ์ต่างจากแรงเสียดทานอย่างไร }
+glossary:
+  - { term: แรงอนุรักษ์, definition: แรงที่งานที่ทำขึ้นกับตำแหน่งเริ่มและสิ้นสุดเท่านั้น และงานรอบวงปิดเป็นศูนย์ เช่น แรงโน้มถ่วงและแรงสปริง }
+  - { term: แรงไม่อนุรักษ์, definition: แรงที่งานขึ้นกับเส้นทาง เช่น แรงเสียดทาน ซึ่งทำให้พลังงานกลลดลงเป็นพลังงานความร้อน }
+  - { term: จุดวกกลับ, definition: ตำแหน่งที่พลังงานรวมเท่ากับพลังงานศักย์ ความเร็วของวัตถุเป็นศูนย์ที่ตำแหน่งนั้นและกลับทิศ }
+  - { term: จุดสมดุลเสถียร, definition: 'จุดที่แรงเป็นศูนย์และ $\frac{d^2U}{dx^2} > 0$ เมื่อถูกรบกวนเล็กน้อยวัตถุจะกลับมาที่เดิม' }
+flashcards:
+  - { front: "ความสัมพันธ์ระหว่างแรงและพลังงานศักย์", back: "$F = -\\frac{dU}{dx}$ แรงชี้จากค่า U สูงไปหาค่า U ต่ำ" }
+  - { front: "งานของแรงอนุรักษ์รอบวงปิด", back: "เป็นศูนย์เสมอ" }
+  - { front: "คาบการแกว่งเล็ก ๆ รอบจุดสมดุลเสถียร", back: "$T = 2\\pi\\sqrt{\\frac{m}{U''(x_0)}}$" }
+  - { front: "งานของแรงไม่อนุรักษ์", back: "$W_{nc} = \\Delta K + \\Delta U$" }
+references:
+  - { title: "Conservative force", url: "https://en.wikipedia.org/wiki/Conservative_force", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Potential energy", url: "https://en.wikipedia.org/wiki/Potential_energy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "พลังงานศักย์", url: "https://th.wikipedia.org/wiki/พลังงานศักย์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "8.4 Potential Energy Diagrams and Stability (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/8-4-potential-energy-diagrams-and-stability", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

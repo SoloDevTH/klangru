@@ -1,0 +1,70 @@
+id: physics.momentum.collisions-2d-rockets
+subject: physics
+title: { th: การชนในสองมิติและการขับเคลื่อนของจรวด, en: Two-dimensional collisions and rocket propulsion }
+summary: ใช้การอนุรักษ์โมเมนตัมแยกองค์ประกอบในการชนสองมิติ และหาการเปลี่ยนความเร็วของจรวดจากอัตราเร็วไอเสียและอัตราส่วนมวลโดยการอินทิเกรต
+difficulty: 7.5
+minutes: 35
+prerequisites: [physics.momentum.collisions, physics.units.vectors, math.calculus.definite-integral]
+encompasses:
+  - { id: physics.momentum.collisions, weight: 0.3 }
+  - { id: physics.units.vectors, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: collision-2d.svg
+    alt: 'ภาพซ้ายแสดงลูกบิลเลียดสีฟ้าเคลื่อนที่ไปทางขวาเข้าชนลูกสีแดงที่อยู่นิ่ง ภาพขวาแสดงลูก A ที่ทำมุม 30 องศาเหนือแนวเดิม และลูก B ที่ทำมุม 60 องศาใต้แนวเดิม'
+    caption: หลังการชนยืดหยุ่นของมวลเท่ากัน ความเร็วของลูกทั้งสองตั้งฉากกันเสมอเมื่อลูกที่สองอยู่นิ่งก่อนชน
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: การชนแบบยืดหยุ่นของลูกบิลเลียดมวลเท่ากัน
+    problem: 'ลูกบิลเลียดมวลเท่ากันลูกหนึ่งเคลื่อนที่ด้วยอัตราเร็ว $4.0\,\mathrm{m/s}$ เข้าชนลูกที่อยู่นิ่งแบบยืดหยุ่น หลังชนลูกแรกเคลื่อนที่ทำมุม $30^\circ$ กับแนวเดิม จงหาอัตราเร็วของลูกแรกและลูกที่สอง'
+    steps:
+      - text: 'พลังงานจลน์อนุรักษ์และมวลเท่ากัน ทำให้ความเร็วหลังชนทั้งสองตั้งฉากกัน จึงได้ $v_A = u \cos\theta$ และ $v_B = u \sin\theta$'
+        why: เมื่อมวลเท่ากันและลูกที่สองอยู่นิ่ง เวกเตอร์ความเร็วของลูกแรกกับลูกที่สองรวมกันเป็นความเร็วก่อนชนและตั้งฉากกันตามสมบัติของการชนยืดหยุ่นของมวลเท่ากัน
+      - text: '$v_A = 4.0 \cos 30^\circ \approx 3.46\,\mathrm{m/s}$ และ $v_B = 4.0 \sin 30^\circ = 2.0\,\mathrm{m/s}$'
+        why: องค์ประกอบของความเร็วก่อนชนแยกเป็นส่วนที่ตกลงบนแต่ละทิศ
+      - text: 'ลูกที่สองออกไปทำมุม $90^\circ - 30^\circ = 60^\circ$ ใต้แนวเดิม ตรวจด้วยการรวมโมเมนตัมในแกน x: $3.46\cos 30^\circ + 2.0\cos 60^\circ = 3.0 + 1.0 = 4.0$'
+        why: ตรวจผลลัพธ์ด้วยการอนุรักษ์โมเมนตัมทุกครั้ง เพื่อให้มั่นใจว่ามุมและความเร็วสอดคล้องกัน
+    answer: 'ลูกแรกมีอัตราเร็วประมาณ $3.46\,\mathrm{m/s}$ ที่มุม $30^\circ$ ลูกที่สองมีอัตราเร็ว $2.0\,\mathrm{m/s}$ ที่มุม $60^\circ$ ใต้แนวเดิม'
+  - { type: check, problem: physics.momentum.collisions-2d-rockets.p001, prompt: ลองคิดก่อนอ่านต่อ ในการชนสองมิติ ปริมาณใดอนุรักษ์ในทุกแกน }
+  - type: worked-example
+    title: จรวดที่เผาเชื้อเพลิงจนมวลเหลือหนึ่งในสี่
+    problem: 'จรวดมีมวลเริ่มต้น $1000\,\mathrm{kg}$ เผาเชื้อเพลิงจนเหลือมวล $250\,\mathrm{kg}$ อัตราเร็วไอเสียสัมพัทธ์กับจรวด $u = 2500\,\mathrm{m/s}$ จงหาการเปลี่ยนแปลงความเร็วของจรวด (ละเลยแรงโน้มถ่วงและแรงต้านอากาศ)'
+    steps:
+      - text: 'จากการอนุรักษ์โมเมนตัม $m\,dv = -u\,dm$ จึงได้ $\int_{v_0}^{v} dv = -u \int_{m_0}^{m} \frac{dm}{m}$'
+        why: มวลของจรวดลดลงขณะขับไอเสียออก ไอเสียที่พ่นไปมีอัตราเร็วสัมพัทธ์ $u$ เมื่อเทียบกับจรวด
+      - text: 'อินทิเกรตได้ $\Delta v = u \ln\left(\frac{m_0}{m}\right) = 2500 \ln 4$'
+        why: อินทิกรัลของ $1/m$ คือลอการิทึม ทำให้ผลขึ้นกับอัตราส่วนมวล ไม่ใช่ผลต่างของมวล
+      - text: '$\Delta v \approx 2500 \times 1.386 \approx 3466\,\mathrm{m/s}$'
+        why: ค่าที่ได้สูงกว่าอัตราเร็วไอเสียเพราะอัตราส่วนมวลมากกว่าหนึ่ง
+    answer: 'จรวดเปลี่ยนความเร็วประมาณ $3.47 \times 10^{3}\,\mathrm{m/s}$'
+  - type: interactive
+    title: อัตราส่วนมวลกับการเปลี่ยนความเร็วของจรวด
+    caption: แถบเลื่อน a คืออัตราเร็วไอเสีย u และกราฟแสดง Δv เมื่อแกน x เป็นอัตราส่วนมวล m₀/m ลองเพิ่มอัตราส่วนเป็นสองเท่าแล้วสังเกตว่า Δv เพิ่มขึ้นน้อยกว่าสองเท่า
+    widget:
+      kind: function-plot
+      functions: ["a\\cdot\\ln(x)"]
+      sliders:
+        - { name: a, min: 1000, max: 4000, step: 50, value: 2500, label: อัตราเร็วไอเสีย u (m/s) }
+      x: [1, 20]
+      y: [0, 8000]
+  - { type: check, problem: physics.momentum.collisions-2d-rockets.p020, prompt: สมการจรวดใช้ได้ภายใต้เงื่อนไขใด }
+glossary:
+  - { term: อัตราเร็วไอเสีย, definition: อัตราเร็วของไอเสียที่จรวดพ่นออกมาเทียบกับตัวจรวด มีหน่วยเป็นเมตรต่อวินาที }
+  - { term: แรงขับจรวด, definition: แรงที่เกิดจากการพ่นมวลออกไปด้วยอัตรา $|dm/dt|$ โดยมีขนาด $u|dm/dt|$ }
+  - { term: สมการจรวดของซีออลคอฟสกี, definition: 'ความสัมพันธ์ $\Delta v = u \ln(m_0/m_f)$ ที่บอกการเปลี่ยนความเร็วของจรวดจากอัตราเร็วไอเสียและอัตราส่วนมวล' }
+  - { term: การอนุรักษ์โมเมนตัมในสองมิติ, definition: การที่ผลรวมของโมเมนตัมในแกน x และในแกน y ของระบบไม่เปลี่ยนก่อนและหลังการชน }
+flashcards:
+  - { front: "การอนุรักษ์โมเมนตัมในสองมิติ", back: "ผลรวม $p_x$ และผลรวม $p_y$ ของระบบคงที่ก่อนและหลังการชน" }
+  - { front: "มวลเท่ากันชนยืดหยุ่น ลูกที่อยู่นิ่ง", back: "ความเร็วหลังชนของสองลูกตั้งฉากกันเสมอ" }
+  - { front: "สมการจรวดของซีออลคอฟสกี", back: "$\\Delta v = u \\ln\\left(\\frac{m_0}{m_f}\\right)$" }
+  - { front: "แรงขับของจรวด", back: "$F = u\\left|\\frac{dm}{dt}\\right|$" }
+references:
+  - { title: "Rocket", url: "https://en.wikipedia.org/wiki/Rocket", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Tsiolkovsky rocket equation", url: "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Momentum", url: "https://en.wikipedia.org/wiki/Momentum", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "9.7 Rocket Propulsion (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/9-7-rocket-propulsion", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,75 @@
+id: physics.dynamics.drag-force
+subject: physics
+title: { th: แรงต้านของของไหลและความเร็วปลาย, en: Fluid drag and terminal speed }
+summary: คำนวณแรงต้านอากาศและแรงต้านในของเหลวหนืด หาความเร็วปลายของนักดิ่งพสุธาและรถยนต์ และดูว่าความเร็วเข้าใกล้ความเร็วปลายอย่างไรตามเวลา
+difficulty: 6
+minutes: 35
+prerequisites: [physics.kinematics.free-fall, physics.dynamics.newton-second, math.functions.exponential]
+encompasses:
+  - { id: physics.kinematics.free-fall, weight: 0.3 }
+  - { id: physics.dynamics.newton-second, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: free-body-drag.svg
+    alt: วัตถุรูปวงรีกลางภาพที่กำลังตกลง มีลูกศรสีแดงชี้ขึ้นแทนแรงต้านอากาศ ลูกศรสีดำชี้ลงแทนน้ำหนัก และลูกศรสีน้ำเงินชี้ลงแทนความเร็ว
+    caption: แรงต้านอากาศชี้ขึ้นตรงข้ามกับความเร็ว ยิ่งเร็วแรงต้านยิ่งมาก
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ความเร็วปลายของนักดิ่งพสุธาท่าคว่ำ
+    problem: 'นักดิ่งพสุธาท่าคว่ำแขนขากางออกมีมวลรวม $85\,\mathrm{kg}$ ค่าสัมประสิทธิ์แรงต้าน $C = 1.0$ พื้นที่หน้าตัด $0.70\,\mathrm{m^2}$ (ค่าตามตัวอย่างใน OpenStax) และความหนาแน่นอากาศ $\rho = 1.2\,\mathrm{kg/m^3}$ จงหาความเร็วปลาย (ใช้ $g = 9.8\,\mathrm{m/s^2}$)'
+    steps:
+      - text: 'ที่ความเร็วปลาย แรงต้านเท่ากับน้ำหนัก: $\frac{1}{2}C\rho A v_t^2 = mg$'
+        why: เมื่อความเร็วเพิ่มจนแรงต้านเท่ากับน้ำหนัก แรงลัพธ์เป็นศูนย์ และความเร่งเป็นศูนย์
+      - text: 'แก้หา $v_t$: $v_t = \sqrt{\frac{2mg}{C\rho A}} = \sqrt{\frac{2 \times 85 \times 9.8}{1.0 \times 1.2 \times 0.70}}$'
+        why: ยกกำลังสองของความเร็วอยู่ในสูตรแรงต้าน จึงต้องถอดรากที่สองตอนท้าย
+      - text: '$v_t = \sqrt{1983.3} \approx 44.5\,\mathrm{m/s}$'
+        why: ค่าที่ได้อยู่ในช่วงความเร็วปลายของนักดิ่งท่าคว่ำที่วัดได้จริง ราว 45–55 เมตรต่อวินาที
+    answer: 'ความเร็วปลายประมาณ $44.5\,\mathrm{m/s}$ (ราว $160\,\mathrm{km/h}$)'
+  - { type: check, problem: physics.dynamics.drag-force.p020, prompt: ลองคิดก่อนอ่านต่อ ท่าทางของนักดิ่งมีผลต่อความเร็วปลายอย่างไร }
+  - type: worked-example
+    title: กำลังที่รถยนต์ใช้ฝ่าแรงต้านอากาศเพิ่มขึ้นเท่าใด
+    problem: 'รถยนต์มี $C = 0.35$ พื้นที่หน้าตัด $2.0\,\mathrm{m^2}$ อยู่ในอากาศ $\rho = 1.2\,\mathrm{kg/m^3}$ เมื่อวิ่ง $20\,\mathrm{m/s}$ และ $30\,\mathrm{m/s}$ กำลังที่ใช้ฝ่าแรงต้านอากาศต่างกันเท่าใด'
+    steps:
+      - text: 'แรงต้านที่ความเร็ว $v$: $F_D = \frac{1}{2}C\rho A v^2$ และกำลังที่ใช้คือ $P = F_D \cdot v = \frac{1}{2}C\rho A v^3$'
+        why: กำลังเท่ากับแรงคูณความเร็ว ดังนั้นแรงต้านที่แปรตาม $v^2$ ทำให้กำลังแปรตาม $v^3$
+      - text: 'ที่ $20\,\mathrm{m/s}$: $P_1 = 0.5 \times 0.35 \times 1.2 \times 2.0 \times 20^3 = 3360\,\mathrm{W}$'
+        why: แทนค่าความเร็วลงในสูตรกำลังโดยตรง ได้กำลังประมาณ 3.4 กิโลวัตต์
+      - text: 'ที่ $30\,\mathrm{m/s}$: $P_2 = 0.5 \times 0.35 \times 1.2 \times 2.0 \times 30^3 = 11340\,\mathrm{W}$ และ $P_2/P_1 = (30/20)^3 = 3.375$'
+        why: การเพิ่มความเร็ว 1.5 เท่า ทำให้กำลังเพิ่มเป็น 3.375 เท่า ไม่ใช่ 1.5 เท่า
+    answer: 'กำลังเพิ่มขึ้นประมาณ $3.4$ เท่า จาก $3.4\,\mathrm{kW}$ เป็น $11.3\,\mathrm{kW}$'
+  - type: figure
+    src: vt-approach.svg
+    alt: กราฟความเร็วตามเวลาของวัตถุที่มีแรงต้านเชิงเส้น เส้นโค้งเริ่มจากศูนย์และเข้าใกล้เส้นประแนวนอนที่ความเร็วปลายอย่างช้า ๆ มีจุดหนึ่งบนเส้นโค้งที่เวลาเท่ากับค่าคงที่เวลา
+    caption: เมื่อผ่านไปหนึ่งค่าคงที่เวลา ความเร็วได้ประมาณ 63% ของความเร็วปลาย และหลังประมาณสามค่าคงที่เวลาจะเกือบถึงความเร็วปลาย
+  - type: interactive
+    title: ลองเปลี่ยนความเร็วปลายและค่าคงที่เวลา
+    caption: แถบเลื่อน a คือความเร็วปลาย และ b คือค่าคงที่เวลา τ เมื่อ b มากขึ้น ความเร็วจะเพิ่มช้าลง ลองสังเกตว่ากราฟแตะเส้นความเร็วปลายที่ตำแหน่งใดโดยประมาณ
+    widget:
+      kind: function-plot
+      functions: ["a\\cdot(1-e^{-x/b})"]
+      sliders:
+        - { name: a, min: 1, max: 60, step: 0.5, value: 12, label: ความเร็วปลาย v_t }
+        - { name: b, min: 0.5, max: 10, step: 0.1, value: 3, label: ค่าคงที่เวลา τ }
+      x: [0, 20]
+      y: [0, 60]
+  - { type: check, problem: physics.dynamics.drag-force.p016, prompt: ความเร็วเริ่มต้นมีผลต่อความเร็วปลายหรือไม่ }
+glossary:
+  - { term: แรงต้านอากาศ, definition: แรงที่ของไหลกระทำต่อวัตถุที่เคลื่อนที่ผ่าน มีทิศตรงข้ามกับความเร็วสัมพัทธ์ }
+  - { term: ความเร็วปลาย, definition: ความเร็วคงตัวสูงสุดที่วัตถุตกได้เมื่อแรงต้านเท่ากับน้ำหนัก ทำให้แรงลัพธ์เป็นศูนย์ }
+  - { term: สัมประสิทธิ์แรงต้าน, definition: 'ค่า $C$ ที่ไม่มีหน่วย ขึ้นกับรูปร่างและความขรุขระของวัตถุ' }
+  - { term: ค่าคงที่เวลา, definition: 'ค่า $\tau = m/b$ ที่บอกว่าความเร็วเข้าใกล้ความเร็วปลายเร็วหรือช้าเพียงใด มีหน่วยเป็นวินาที' }
+flashcards:
+  - { front: "แรงต้านกำลังสอง", back: "$F_D = \\frac{1}{2}C\\rho A v^2$ ชี้ตรงข้ามกับความเร็ว" }
+  - { front: "ความเร็วปลายของแรงต้านกำลังสอง", back: "$v_t = \\sqrt{\\frac{2mg}{C\\rho A}}$" }
+  - { front: "แรงต้านเชิงเส้น และความเร็วตามเวลา", back: "$F = bv$ และ $v(t) = v_t(1 - e^{-t/\\tau})$ โดย $\\tau = m/b$" }
+  - { front: "กำลังที่ใช้ฝ่าแรงต้านอากาศ", back: "$P = \\frac{1}{2}C\\rho A v^3$ จึงแปรตามความเร็วยกกำลังสาม" }
+references:
+  - { title: "Drag (physics)", url: "https://en.wikipedia.org/wiki/Drag_(physics)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Terminal velocity", url: "https://en.wikipedia.org/wiki/Terminal_velocity", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.4 Drag Force and Terminal Speed (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Density of air (ค่าความหนาแน่นอากาศที่ใช้โดยประมาณ 1.2 kg/m³)", url: "https://en.wikipedia.org/wiki/Density_of_air", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

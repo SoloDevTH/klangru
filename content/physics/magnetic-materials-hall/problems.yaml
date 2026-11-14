@@ -1,0 +1,316 @@
+problems:
+  - id: physics.magnetism.magnetic-materials-hall.p001
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 1
+    type: mcq
+    stem: 'ปรากฏการณ์ฮอลล์คืออะไร'
+    choices:
+      - { id: a, text: 'แรงดันที่เกิดตั้งฉากกับกระแสในตัวนำเมื่ออยู่ในสนามแม่เหล็กตั้งฉาก', correct: true }
+      - { id: b, text: 'กระแสที่ไหลได้โดยไม่มีความต้านทานที่อุณหภูมิต่ำ', feedback: 'นั่นคือสมบัติของตัวนำยวดยิ่ง ไม่ใช่ปรากฏการณ์ฮอลล์' }
+      - { id: c, text: 'การหมุนของแม่เหล็กเมื่ออยู่ใกล้เหล็ก', feedback: 'นั่นไม่ใช่ความหมายของปรากฏการณ์ฮอลล์' }
+      - { id: d, text: 'การเปลี่ยนสถานะของวัสดุเมื่อถูกทำให้ร้อน', feedback: 'นั่นคือการเปลี่ยนเฟส ไม่ใช่ปรากฏการณ์ฮอลล์' }
+    hints:
+      - ปรากฏการณ์นี้เกิดจากแรงแม่เหล็กที่กระทำต่อประจุที่เคลื่อนที่
+      - ดูว่าแรงดันเกิดในทิศใดเทียบกับกระแส
+    solution: 'แรงแม่เหล็กเบนพาหะประจุไปสะสมที่ขอบของตัวนำ จนเกิดแรงดันตั้งฉากกับทิศกระแส'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p002
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 1
+    type: text
+    stem: 'ปรากฏการณ์ที่เกิดแรงดันตั้งฉากกับกระแสในตัวนำเมื่ออยู่ในสนามแม่เหล็ก มีชื่อเรียกว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)'
+    accepted: [ปรากฏการณ์ฮอลล์, ฮอลล์, Hall effect, hall effect]
+    hints:
+      - ชื่อของปรากฏการณ์มาจากนักฟิสิกส์ที่ค้นพบ
+      - ตอบเป็นภาษาไทยหรืออังกฤษก็ได้
+    misconceptions:
+      - { match: ไดอะแมกเนติก, feedback: 'ไดอะแมกเนติกเป็นประเภทของสารที่ถูกผลักเล็กน้อยจากสนาม ไม่ใช่ปรากฏการณ์แรงดันตั้งฉากกับกระแส' }
+    solution: 'เรียกว่า ปรากฏการณ์ฮอลล์ (Hall effect) แรงดันที่เกิดขึ้นคือแรงดันฮอลล์'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p003
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 2
+    type: match
+    stem: 'จับคู่วัสดุกับประเภทสมบัติแม่เหล็กของสารนั้น'
+    pairs:
+      - { left: ทองแดง, right: ไดอะแมกเนติก }
+      - { left: อะลูมิเนียม, right: พาราแมกเนติก }
+      - { left: เหล็ก, right: เฟร์โรแมกเนติก }
+    hints:
+      - ดูว่าวัสดุถูกสนามผลักเล็กน้อยหรือถูกดึงอย่างแรง
+      - เหล็กเป็นวัสดุที่ใช้ทำแม่เหล็กถาวรได้
+    solution: 'ทองแดงถูกผลักเล็กน้อย (ไดอะแมกเนติก) อะลูมิเนียมถูกดึงเล็กน้อย (พาราแมกเนติก) และเหล็กถูกดึงอย่างแรงและคงสมบัติได้ (เฟร์โรแมกเนติก)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p004
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 2
+    type: numeric
+    stem: 'แถบทองแดงหนา $0.10\,\mathrm{mm}$ มีกระแส $10\,\mathrm{A}$ ไหลผ่านในสนามแม่เหล็ก $0.50\,\mathrm{T}$ ที่ตั้งฉากกับแถบ ถ้าความหนาแน่นอิเล็กตรอนอิสระ $n = 8.5 \times 10^{28}\,\mathrm{m^{-3}}$ แรงดันฮอลล์มีขนาดกี่ไมโครโวลต์ (ใช้ $e = 1.602 \times 10^{-19}\,\mathrm{C}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 3.67, tolerance: 0.02, unit: μV }
+    hints:
+      - ใช้สูตร $V_H = \frac{IB}{net}$ โดย $t$ คือความหนาของแถบ
+      - แปลงความหนาเป็นเมตรก่อนแทนค่า
+    misconceptions:
+      - { match: 0.367, feedback: 'ใช้ความหนา 1 mm แทน 0.10 mm ทำให้ค่าเล็กลงสิบเท่า' }
+      - { match: 36.7, feedback: 'ใช้ความหนา 0.01 mm แทน 0.10 mm ทำให้ค่าสูงขึ้นสิบเท่า' }
+    solution: '$V_H = \frac{10 \times 0.50}{8.5 \times 10^{28} \times 1.602 \times 10^{-19} \times 1.0 \times 10^{-4}} \approx 3.67 \times 10^{-6}\,\mathrm{V} = 3.67\,\mu\mathrm{V}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p005
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: numeric
+    stem: 'นักศึกษาในห้องปฏิบัติการของมหาวิทยาลัยแห่งหนึ่งในเชียงใหม่ทดลองกับแผ่นโลหะตัวอย่างหนา $0.50\,\mathrm{mm}$ มีกระแส $2.0\,\mathrm{A}$ ผ่านในสนาม $0.50\,\mathrm{T}$ วัดแรงดันฮอลล์ได้ $5.0\,\mu\mathrm{V}$ ถ้าพาหะมีประจุ $e$ ความหนาแน่นพาหะ $n$ เป็นกี่หน่วย $10^{27}\,\mathrm{m^{-3}}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 2.50, tolerance: 0.01, unit: 10^27 m^-3 }
+    hints:
+      - จัดรูปสมการ $V_H = \frac{IB}{net}$ เพื่อหา $n$
+      - แปลงทุกปริมาณเป็นหน่วย SI ก่อนแทนค่า
+    misconceptions:
+      - { match: 0.0025, feedback: 'ใช้ความหนา 0.5 m แทน 0.5 mm' }
+    solution: '$n = \frac{IB}{eV_Ht} = \frac{2.0 \times 0.50}{1.602 \times 10^{-19} \times 5.0 \times 10^{-6} \times 5.0 \times 10^{-4}} \approx 2.50 \times 10^{27}\,\mathrm{m^{-3}}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p006
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 2
+    type: mcq
+    stem: 'ถ้าพาหะประจุในตัวนำเป็นประจุบวก ขั้วของแรงดันฮอลล์จะเป็นอย่างไรเมื่อเทียบกับกรณีพาหะเป็นอิเล็กตรอน'
+    choices:
+      - { id: a, text: 'ขั้วเดิมเสมอ เพราะขึ้นกับทิศกระแสเท่านั้น', feedback: 'ทิศแรงดันฮอลล์ขึ้นกับเครื่องหมายของประจุพาหะด้วย' }
+      - { id: b, text: 'ขั้วตรงข้ามกับกรณีอิเล็กตรอน', correct: true }
+      - { id: c, text: 'เป็นศูนย์เสมอ', feedback: 'แรงดันฮอลล์ไม่เป็นศูนย์เมื่อมีกระแสและสนามตั้งฉากกัน' }
+      - { id: d, text: 'ขึ้นกับความแรงของสนามเท่านั้น', feedback: 'ความแรงของสนามกำหนดขนาด แต่ทิศขึ้นกับเครื่องหมายของประจุ' }
+    hints:
+      - ประจุบวกและประจุลบจะถูกเบนไปในทิศทางใดเมื่อเคลื่อนที่ในทิศเดียวกัน
+      - ความเร็วของประจุบวกในกระแสมีทิศเดียวกับกระแส
+    solution: 'ประจุบวกที่ไหลตามกระแสจะถูกแรงแม่เหล็กเบนไปด้านตรงข้ามกับอิเล็กตรอน จึงทำให้ขั้วของแรงดันฮอลล์กลับด้าน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p007
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 2
+    type: numeric
+    stem: 'ในวัสดุชนิดหนึ่งมีความซึมผ่านสัมพัทธ์ $\mu_r = 5000$ เมื่ออยู่ในสนาม $H = 100\,\mathrm{A/m}$ ความหนาแน่นฟลักซ์ $B = \mu_r \mu_0 H$ มีค่ากี่เทสลา (ใช้ $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T \cdot m/A}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 0.63, tolerance: 0.01, unit: T }
+    hints:
+      - ใช้ $\mu = \mu_r \mu_0$ แล้วคูณด้วย $H$
+      - อย่าลืมคูณค่า $\mu_r$ เข้าไปด้วย
+    misconceptions:
+      - { match: 0.00013, feedback: 'ลืมคูณความซึมผ่านสัมพัทธ์ ได้เพียง $\mu_0 H$' }
+      - { match: 62.8, feedback: 'ใช้ $H$ ผิดหน่วยหรือแปลงผิดจนได้ค่าใหญ่เกินจริงร้อยเท่า' }
+    solution: '$B = 5000 \times 4\pi \times 10^{-7} \times 100 \approx 0.63\,\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p008
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 2
+    type: mcq
+    stem: 'ข้อใดเป็นวัสดุเฟร์โรแมกเนติก'
+    choices:
+      - { id: a, text: ทองแดง, feedback: 'ทองแดงเป็นไดอะแมกเนติก ถูกผลักเล็กน้อยจากสนาม' }
+      - { id: b, text: อะลูมิเนียม, feedback: 'อะลูมิเนียมเป็นพาราแมกเนติก ถูกดึงเล็กน้อย' }
+      - { id: c, text: เหล็ก, correct: true }
+      - { id: d, text: น้ำ, feedback: 'น้ำเป็นไดอะแมกเนติก ถูกผลักเล็กน้อยจากสนาม' }
+    hints:
+      - เฟร์โรแมกเนติกเป็นกลุ่มที่ถูกดึงอย่างแรงและเป็นแม่เหล็กถาวรได้
+      - วัสดุที่ใช้ทำแม่เหล็กเกาะตู้เย็นมักเป็นวัสดุนี้
+    solution: 'เหล็กเป็นวัสดุเฟร์โรแมกเนติกที่โดเมนแม่เหล็กจัดเรียงตัวได้ดี'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p009
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 2
+    type: text
+    stem: 'อุณหภูมิที่วัสดุเฟร์โรแมกเนติกสูญเสียสมบัติแม่เหล็กถาวร เรียกว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)'
+    accepted: [อุณหภูมิกูรี, จุดกูรี, Curie temperature, Curie point]
+    hints:
+      - ชื่อของอุณหภูมินี้มาจากนักฟิสิกส์ชาวฝรั่งเศส
+      - เหล็กมีค่านี้ราว 770 องศาเซลเซียส
+    misconceptions:
+      - { match: อุณหภูมิวิกฤต, feedback: 'อุณหภูมิวิกฤตเป็นคำของตัวนำยวดยิ่ง ไม่ใช่จุดที่วัสดุเฟร์โรแมกเนติกสูญเสียสมบัติ' }
+    solution: 'เรียกว่า อุณหภูมิกูรี (Curie temperature) เหนือค่านี้วัสดุกลายเป็นพาราแมกเนติก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p010
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: numeric
+    stem: 'ตัวนำยวดยิ่งเซรามิก YBCO มีอุณหภูมิวิกฤตประมาณ $92\,\mathrm{K}$ เทียบเท่ากับกี่องศาเซลเซียส (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: -181.2, tolerance: 0.1, unit: °C }
+    hints:
+      - ความสัมพันธ์ระหว่างเคลวินกับองศาเซลเซียสคือ $T(\mathrm{K}) = t(^\circ\mathrm{C}) + 273.15$
+      - ย้ายข้างสมการเพื่อหา $t$
+    misconceptions:
+      - { match: 92, feedback: 'ยังไม่ได้แปลงหน่วยจากเคลวินเป็นองศาเซลเซียส' }
+      - { match: 365.15, feedback: 'บวก 273.15 แทนการลบ ทั้งที่ต้องลบเพราะเคลวินมีค่ามากกว่า' }
+    solution: '$t = 92 - 273.15 = -181.15 \approx -181.2\,^\circ\mathrm{C}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p011
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: numeric
+    stem: 'ค่าคงที่ฮอลล์ของตัวอย่างหนึ่งมีค่า $R_H = -5.0 \times 10^{-10}\,\mathrm{m^3/C}$ ถ้าพาหะมีประจุ $e = 1.602 \times 10^{-19}\,\mathrm{C}$ ความหนาแน่นพาหะ $n = \frac{1}{|R_H| e}$ มีค่ากี่หน่วย $10^{28}\,\mathrm{m^{-3}}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.25, tolerance: 0.01, unit: 10^28 m^-3 }
+    hints:
+      - ค่าคงที่ฮอลล์เป็นส่วนกลับของ $nq$
+      - ให้หาค่าของ $|R_H| e$ ก่อนแล้วจึงกลับค่า
+    misconceptions:
+      - { match: 0.80, feedback: 'คูณ $|R_H|$ กับ $e$ แทนการหาร จึงได้ส่วนกลับผิด' }
+    solution: '$n = \frac{1}{5.0 \times 10^{-10} \times 1.602 \times 10^{-19}} \approx 1.25 \times 10^{28}\,\mathrm{m^{-3}}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p012
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: numeric
+    stem: 'แผ่นตัวนำยวดยิ่งเป็นวงกลมรัศมี $5.0\,\mathrm{cm}$ วางในสนาม $0.20\,\mathrm{T}$ ที่ตั้งฉากกับระนาบวงกลม เมื่อเย็นต่ำกว่าอุณหภูมิวิกฤต ฟลักซ์แม่เหล็กที่ผ่านวงกลมถูกผลักออกหมด ฟลักซ์ที่ถูกผลักออกมีค่ากี่มิลลิเวเบอร์ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.57, tolerance: 0.01, unit: mWb }
+    hints:
+      - ฟลักซ์เท่ากับความหนาแน่นฟลักซ์คูณพื้นที่ที่ตั้งฉาก
+      - แปลงรัศมีเป็นเมตรก่อนคำนวณพื้นที่
+    misconceptions:
+      - { match: 15708, feedback: 'ใช้รัศมี 5 เป็นเมตรโดยไม่แปลงจากเซนติเมตร ทำให้ได้ค่าใหญ่เกินจริง' }
+    solution: '$\Phi = B \pi r^2 = 0.20 \times \pi \times (0.050)^2 \approx 1.57 \times 10^{-3}\,\mathrm{Wb} = 1.57\,\mathrm{mWb}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p013
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: numeric
+    stem: 'แกนเหล็กอ่อนของหม้อแปลงไฟฟ้าในหมู่บ้านมีความซึมผ่านสัมพัทธ์ $4000$ เมื่อความหนาแน่นฟลักซ์ $B = 0.80\,\mathrm{T}$ ความเข้มสนามแม่เหล็ก $H$ ในแกนเป็นกี่ $\mathrm{A/m}$ (ใช้ $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T \cdot m/A}$ ตอบจำนวนเต็ม)'
+    answer: { value: 159, tolerance: 1, unit: A/m }
+    hints:
+      - จาก $B = \mu_r \mu_0 H$ ให้จัดรูปหา $H$
+      - ค่า $\mu_r \mu_0$ ต้องคูณกันก่อนหาร
+    misconceptions:
+      - { match: 636620, feedback: 'ไม่ได้คิดความซึมผ่านสัมพัทธ์ ทำให้ค่าสูงเกินจริงมาก' }
+    solution: '$H = \frac{B}{\mu_r \mu_0} = \frac{0.80}{4000 \times 4\pi \times 10^{-7}} \approx 159\,\mathrm{A/m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p014
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: expression
+    stem: 'จากสมการ $V_H = \frac{IB}{nqt}$ ให้ $I$ เป็นกระแส $B$ เป็นสนาม $q$ เป็นประจุพาหะ $V$ เป็นแรงดันฮอลล์ และ $t$ เป็นความหนา จงเขียนความหนาแน่นพาหะ $n$ ในรูปของตัวแปรเหล่านี้'
+    prefix: 'n ='
+    answer: { latex: '\frac{IB}{qVt}', variables: [I, B, q, V, t] }
+    hints:
+      - ย้ายตัวแปรที่อยู่ในตัวส่วนไปอยู่ในตัวเศษ และย้ายค่าที่อยู่ในตัวเศษไปอยู่ในตัวส่วน
+      - ตัวแปร $n$ ต้องอยู่ข้างเดียวของสมการ
+    misconceptions:
+      - { match: '\frac{IB}{Vt}', feedback: 'ลืมประจุพาหะ $q$ ในตัวส่วน' }
+    solution: '$V = \frac{IB}{nqt}$ จึงได้ $n = \frac{IB}{qVt}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p015
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 4
+    type: numeric
+    stem: 'แผ่นฮอลล์หนา $0.10\,\mathrm{mm}$ มีความหนาแน่นพาหะ $1.0 \times 10^{28}\,\mathrm{m^{-3}}$ เมื่อกระแส $2.0\,\mathrm{A}$ และสนาม $0.40\,\mathrm{T}$ แรงดันฮอลล์มีค่ากี่ไมโครโวลต์ (ใช้ $e = 1.602 \times 10^{-19}\,\mathrm{C}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 4.99, tolerance: 0.01, unit: μV }
+    hints:
+      - ใช้สูตร $V_H = \frac{IB}{net}$
+      - ตรวจว่าความหนาเป็นเมตรก่อนแทนค่า
+    misconceptions:
+      - { match: 49.93, feedback: 'ใช้ความหนา 0.01 mm แทน 0.10 mm' }
+    solution: '$V_H = \frac{2.0 \times 0.40}{1.0 \times 10^{28} \times 1.602 \times 10^{-19} \times 1.0 \times 10^{-4}} \approx 4.99 \times 10^{-6}\,\mathrm{V}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p016
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 4
+    type: mcq
+    stem: 'เหตุใดวัสดุเฟร์โรแมกเนติกจึงคงสมบัติแม่เหล็กถาวรไว้ได้'
+    choices:
+      - { id: a, text: 'โมเมนต์แม่เหล็กของอะตอมจัดเรียงเป็นโดเมนที่ชี้ทิศเดียวกันบางส่วนได้เอง', correct: true }
+      - { id: b, text: 'อิเล็กตรอนในวัสดุไม่มีการเคลื่อนที่เลย', feedback: 'อิเล็กตรอนเคลื่อนที่อยู่เสมอ สมบัติแม่เหล็กมาจากการจัดเรียงของโมเมนต์' }
+      - { id: c, text: 'วัสดุมีความต้านทานเป็นศูนย์ที่อุณหภูมิห้อง', feedback: 'ความต้านทานเป็นศูนย์เป็นสมบัติของตัวนำยวดยิ่ง ซึ่งไม่เกี่ยวกับเฟร์โรแมกเนติก' }
+      - { id: d, text: 'สนามภายนอกถูกกักไว้ในวัสดุเสมอ', feedback: 'วัสดุไม่ได้กักสนามไว้ แต่การจัดเรียงของโดเมนทำให้คงสมบัติไว้บางส่วน' }
+    hints:
+      - นึกถึงโดเมนแม่เหล็กในเหล็ก
+      - สมบัตินี้ยังคงอยู่เมื่อไม่มีสนามภายนอกแล้ว
+    solution: 'โดเมนที่ชี้ทิศเดียวกันบางส่วนอาจคงอยู่ได้แม้ไม่มีสนามภายนอก จึงทำให้เกิดแม่เหล็กถาวร'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p017
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 4
+    type: numeric
+    stem: 'วัสดุไดอะแมกเนติกมีความซึมผ่านสัมพัทธ์ $\mu_r = 0.99999$ เมื่ออยู่ในสนาม $H = 1000\,\mathrm{A/m}$ ความหนาแน่นฟลักซ์ $B$ มีค่ากี่มิลลิเทสลา (ใช้ $\mu_0 = 4\pi \times 10^{-7}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.26, tolerance: 0.01, unit: mT }
+    hints:
+      - ใช้ $B = \mu_r \mu_0 H$ ได้ค่าเป็นเทสลาก่อน
+      - แปลงเทสลาเป็นมิลลิเทสลาโดยคูณ 1000
+    misconceptions:
+      - { match: 0.00126, feedback: 'ได้ค่าเป็นเทสลา ต้องคูณ 1000 เพื่อให้เป็นมิลลิเทสลา' }
+    solution: '$B = 0.99999 \times 4\pi \times 10^{-7} \times 1000 \approx 1.257 \times 10^{-3}\,\mathrm{T} = 1.26\,\mathrm{mT}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p018
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 4
+    type: numeric
+    stem: 'เซนเซอร์ฮอลล์วัดความเร็วล้อในรถยนต์ที่วิ่งบนถนนในกรุงเทพฯ ใช้แผ่นสารกึ่งตัวนำบางหนา $0.10\,\mathrm{mm}$ สมมติว่าความหนาแน่นพาหะเป็น $1.0 \times 10^{22}\,\mathrm{m^{-3}}$ ความไวของเซนเซอร์ $S = \frac{V_H}{IB}$ มีค่ากี่ $\mathrm{V/(A \cdot T)}$ (ใช้ $e = 1.602 \times 10^{-19}\,\mathrm{C}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 6.24, tolerance: 0.01, unit: V/(A·T) }
+    hints:
+      - จาก $V_H = \frac{IB}{net}$ ค่า $\frac{V_H}{IB}$ คือ $\frac{1}{net}$
+      - แทนค่า $t$ เป็นเมตรก่อน
+    misconceptions:
+      - { match: 0.624, feedback: 'ใช้ความหนา 1 mm แทน 0.10 mm ทำให้ค่าเล็กลงสิบเท่า' }
+    solution: '$S = \frac{1}{net} = \frac{1}{1.0 \times 10^{22} \times 1.602 \times 10^{-19} \times 1.0 \times 10^{-4}} \approx 6.24\,\mathrm{V/(A \cdot T)}$ มากกว่าแผ่นโลหะที่มี $n \approx 10^{28}\,\mathrm{m^{-3}}$ ราวล้านเท่า จึงเหมาะทำเซนเซอร์'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p019
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 5
+    type: numeric
+    stem: 'สนามแม่เหล็กสม่ำเสมอ $B = 1.0\,\mathrm{T}$ ในอากาศ มีความดันแม่เหล็ก $P = \frac{B^2}{2\mu_0}$ ค่าความดันนี้มีค่ากี่ $10^5\,\mathrm{Pa}$ (ใช้ $\mu_0 = 4\pi \times 10^{-7}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 3.98, tolerance: 0.01, unit: 10^5 Pa }
+    hints:
+      - ยกกำลังสองของ $B$ ก่อน แล้วหารด้วย $2\mu_0$
+      - ผลลัพธ์มีหน่วยปาสคาล
+    misconceptions:
+      - { match: 7.96, feedback: 'ลืมตัวหารสองในสูตร $B^2/(2\mu_0)$' }
+      - { match: 1.99, feedback: 'หารด้วย $4\mu_0$ แทน $2\mu_0$' }
+    solution: '$P = \frac{1.0^2}{2 \times 4\pi \times 10^{-7}} \approx 3.98 \times 10^{5}\,\mathrm{Pa}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.magnetic-materials-hall.p020
+    topics: [physics.magnetism.magnetic-materials-hall]
+    difficulty: 3
+    type: mcq
+    stem: 'ตัวนำยวดยิ่งที่เย็นต่ำกว่าอุณหภูมิวิกฤตมีสมบัติใดที่ทำให้แม่เหล็กลอยเหนือได้'
+    choices:
+      - { id: a, text: 'ผลักสนามแม่เหล็กภายในออกไป (ปรากฏการณ์ไมส์เนอร์)', correct: true }
+      - { id: b, text: 'ดึงสนามแม่เหล็กทุกทิศเข้ามาภายใน', feedback: 'ตัวนำยวดยิ่งผลักสนามภายในออกไป ไม่ได้ดึงเข้ามา' }
+      - { id: c, text: 'เปลี่ยนเป็นเหล็กถาวรทันที', feedback: 'ตัวนำยวดยิ่งไม่ได้เปลี่ยนเป็นเหล็กถาวร' }
+      - { id: d, text: 'เพิ่มความต้านทานเพื่อกักพลังงานแม่เหล็ก', feedback: 'ตัวนำยวดยิ่งมีความต้านทานเป็นศูนย์ ไม่ได้เพิ่มความต้านทาน' }
+    hints:
+      - ปรากฏการณ์ที่ผลักสนามออกเรียกว่าอะไร
+      - ลองนึกถึงการสาธิตที่แม่เหล็กเล็ก ๆ ลอยนิ่งเหนือเม็ดตัวนำยวดยิ่งที่แช่ไนโตรเจนเหลว
+    solution: 'เมื่อสนามภายในถูกผลักออก แม่เหล็กที่อยู่ใกล้จะถูกแรงผลักยกขึ้น จึงทำให้ลอยได้'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

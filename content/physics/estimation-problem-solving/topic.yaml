@@ -1,0 +1,64 @@
+id: physics.units.estimation-problem-solving
+subject: physics
+title: { th: ขนาดของสิ่งต่าง ๆ การประมาณแบบแฟร์มี และกลยุทธ์แก้โจทย์ฟิสิกส์, en: Scales of things, Fermi estimation, and strategies for physics problems }
+summary: ใช้อันดับขนาดและการแบ่งปัญหาเป็นส่วนย่อยเพื่อประมาณค่าที่ไม่รู้ ตรวจคำตอบด้วยหน่วย ขนาด และกรณีสุดขั้ว แล้วแก้โจทย์ฟิสิกส์ตามลำดับขั้น
+difficulty: 3.5
+minutes: 35
+prerequisites: [physics.units.si, physics.units.measurement, physics.units.experiments-graphs]
+encompasses:
+  - { id: physics.units.si, weight: 0.4 }
+  - { id: physics.units.measurement, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: scale-sizes.svg
+    alt: 'แกนลอการิทึมแนวนอนตั้งแต่ 10 ยกกำลังลบ 15 ถึง 10 ยกกำลัง 27 เมตร มีจุดบอกขนาดนิวเคลียส อะตอม เซลล์ คน เส้นผ่านศูนย์กลางโลก ระยะจากโลกถึงดวงอาทิตย์ และเอกภพที่สังเกตได้'
+    caption: ขนาดของสิ่งต่าง ๆ มีช่วงกว้างมาก จึงต้องใช้สเกลลอการิทึมช่วยมองเห็นทุกอย่างบนเส้นเดียว
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ประมาณจำนวนที่นั่งในอัฒจันทร์
+    problem: 'อัฒจันทร์ของสนามกีฬาแห่งหนึ่งยาวประมาณ $300\,\mathrm{m}$ มี $20$ แถว ที่นั่งแต่ละที่กว้าง $0.5\,\mathrm{m}$ จำนวนที่นั่งทั้งหมดอยู่ในอันดับขนาดใด'
+    steps:
+      - text: 'ที่นั่งต่อแถว: $300 \div 0.5 = 600$ ที่'
+        why: แบ่งความยาวทั้งแถวด้วยความกว้างของที่นั่งหนึ่งที่ จะได้จำนวนที่นั่งในแถวเดียว
+      - text: 'ทั้งอัฒจันทร์: $600 \times 20 = 12\,000$ ที่'
+        why: ทุกแถวมีจำนวนที่นั่งเท่ากัน จึงคูณด้วยจำนวนแถว
+      - text: '$12\,000 = 1.2 \times 10^{4}$ จึงอยู่ในอันดับขนาด $10^{4}$'
+        why: เลข $1.2$ น้อยกว่า $\sqrt{10} \approx 3.16$ จึงไม่ต้องปัดเลขยกกำลังขึ้น
+    answer: 'ประมาณ $1.2 \times 10^{4}$ ที่นั่ง อยู่ในอันดับขนาด $10^{4}$ (หมื่นที่นั่ง)'
+  - { type: check, problem: physics.units.estimation-problem-solving.p008, prompt: ลองคิดก่อนอ่านต่อ ขั้นแรกของการแก้โจทย์แบบแฟร์มีคืออะไร }
+  - type: worked-example
+    title: ประมาณจำนวนครั้งที่หัวใจเต้นตลอดชีวิต
+    problem: 'คนหนึ่งมีอายุขัย $75$ ปี หัวใจเต้นเฉลี่ย $70$ ครั้งต่อนาที หัวใจเต้นตลอดชีวิตประมาณกี่ครั้ง (ใช้ 1 ปี = 365 วัน)'
+    steps:
+      - text: 'แปลงอายุขัยเป็นนาที: $75 \times 365 \times 24 \times 60 = 3.942 \times 10^{7}$ นาที'
+        why: ทุกปีมี 365 วัน หนึ่งวันมี 24 ชั่วโมง และหนึ่งชั่วโมงมี 60 นาที จึงแปลงหน่วยทีละขั้น
+      - text: 'คูณจำนวนนาทีด้วยอัตราการเต้น: $3.942 \times 10^{7} \times 70 = 2.759 \times 10^{9}$ ครั้ง'
+        why: อัตราการเต้นเป็นครั้งต่อนาที จึงคูณกับจำนวนนาทีเพื่อได้จำนวนครั้งรวม
+      - text: 'ตรวจอันดับขนาด: $2.759 \times 10^{9}$ มีอันดับขนาด $10^{9}$'
+        why: ถ้าได้ $10^{7}$ หรือ $10^{11}$ ต้องย้อนกลับไปดูว่าแปลงหน่วยครบหรือไม่
+    answer: 'ประมาณ $2.8 \times 10^{9}$ ครั้ง (ราว 2,800 ล้านครั้ง)'
+  - type: figure
+    src: strategy-steps.svg
+    alt: 'ลำดับสี่ขั้นของการแก้โจทย์ฟิสิกส์ ได้แก่ วางกลยุทธ์ วาดรูปและระบุตัวแปร แก้สมการก่อนแทนค่า และตรวจคำตอบ ลูกศรชี้จากขั้นหนึ่งไปขั้นถัดไป'
+    caption: ขั้นที่สี่อาจพาให้กลับไปขั้นแรกหรือขั้นที่สอง เมื่อคำตอบไม่สมเหตุสมผล
+  - { type: check, problem: physics.units.estimation-problem-solving.p018, prompt: เมื่อได้คำตอบที่ดูแปลก ควรตรวจอย่างไร }
+glossary:
+  - { term: อันดับขนาด, definition: "เลขยกกำลังของ 10 ที่ใกล้ค่านั้นที่สุดเมื่อมองบนสเกลลอการิทึม เขียนแทนด้วย $10^{n}$" }
+  - { term: การประมาณแบบแฟร์มี, definition: "การประมาณคำตอบโดยแบ่งคำถามใหญ่เป็นปริมาณย่อยที่ประมาณได้ แล้วรวมผลด้วยการคูณและการหาร" }
+  - { term: สัญกรณ์วิทยาศาสตร์, definition: 'การเขียนจำนวนในรูป $a \times 10^{n}$ โดย $1 \le a < 10$' }
+  - { term: สเกลลอการิทึม, definition: "สเกลที่ระยะห่างแต่ละช่องแทนการคูณด้วยค่าคงที่ เช่น ทุกช่องแทนการคูณด้วย 1000 จึงแสดงช่วงกว้างได้" }
+flashcards:
+  - { front: "อันดับขนาดของ $3\\,\\mathrm{km}$ เมื่อเขียนเป็นเมตร", back: "$3000\\,\\mathrm{m} = 3 \\times 10^{3}\\,\\mathrm{m}$ จึงอยู่ในอันดับ $10^{3}$" }
+  - { front: "ทำไมควรแทนค่าตัวเลขครั้งสุดท้าย", back: "เพราะการปัดเศษระหว่างทางทำให้คำตอบเพี้ยน และเห็นได้ชัดว่าคำตอบขึ้นกับตัวแปรใด" }
+  - { front: "ตรวจคำตอบด้วยกรณีสุดขั้วคืออะไร", back: "ให้ตัวแปรเป็นค่ามากสุดหรือน้อยสุด แล้วดูว่าคำตอบเป็นไปตามที่คาดหรือไม่" }
+  - { front: "ตัวอย่างการประมาณแบบแฟร์มี", back: "จำนวนเม็ดข้าวทั้งประเทศในหนึ่งปี = จำนวนคน × มวลข้าวต่อคนต่อปี × จำนวนเม็ดต่อกิโลกรัม" }
+references:
+  - { title: "Fermi problem", url: "https://en.wikipedia.org/wiki/Fermi_problem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Order of magnitude", url: "https://en.wikipedia.org/wiki/Order_of_magnitude", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "1.1 The Scope and Scale of Physics (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/1-1-the-scope-and-scale-of-physics", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "1.5 Estimates and Fermi Calculations (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/1-5-estimates-and-fermi-calculations", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

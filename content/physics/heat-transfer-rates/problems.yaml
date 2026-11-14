@@ -1,0 +1,326 @@
+problems:
+  - id: physics.thermal.heat-transfer-rates.p001
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 1
+    type: mcq
+    stem: 'การถ่ายโอนความร้อนชนิดใดไม่ต้องอาศัยตัวกลางเลย'
+    choices:
+      - { id: a, text: การนำความร้อน, feedback: 'การนำต้องมีวัสดุให้อนุภาคส่งพลังงานต่อกัน จึงต้องมีตัวกลาง' }
+      - { id: b, text: การพาความร้อน, feedback: 'การพาต้องมีของไหลเคลื่อนที่เป็นตัวพาความร้อน' }
+      - { id: c, text: การแผ่รังสีความร้อน, correct: true }
+      - { id: d, text: 'การนำและการพาพร้อมกัน', feedback: 'ทั้งสองชนิดต้องอาศัยตัวกลาง' }
+    hints:
+      - ดวงอาทิตย์ส่งความร้อนมายังโลกผ่านสุญญากาศได้
+      - เลือกการถ่ายโอนความร้อนที่ไม่ต้องมีวัสดุเป็นตัวกลาง
+    solution: 'การแผ่รังสีความร้อนเป็นคลื่นแม่เหล็กไฟฟ้า จึงเดินทางผ่านสุญญากาศได้'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p002
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 1
+    type: numeric
+    stem: 'รางรถไฟไทยที่ทำจากเหล็กยาว $25\,\mathrm{m}$ อุณหภูมิเพิ่มขึ้น $30\,\mathrm{K}$ รางจะยืดตัวเพิ่มขึ้นกี่มิลลิเมตร (สัมประสิทธิ์การขยายตัวเชิงเส้นของเหล็ก $\alpha = 12 \times 10^{-6}\,\mathrm{K^{-1}}$)'
+    answer: { value: 9, tolerance: 0.05, unit: mm }
+    hints:
+      - ใช้สูตร $\Delta L = \alpha L_0 \Delta T$
+      - ผลลัพธ์จากสูตรเป็นเมตร ต้องแปลงเป็นมิลลิเมตรก่อนตอบ
+    misconceptions:
+      - { match: 0.009, feedback: 'ได้ค่าเป็นเมตร แต่โจทย์ขอเป็นมิลลิเมตร ($0.009\,\mathrm{m} = 9\,\mathrm{mm}$)' }
+      - { match: 900, feedback: 'ใช้ $\alpha = 12 \times 10^{-3}$ ผิดหนึ่งพันเท่า' }
+    solution: '$\Delta L = 12 \times 10^{-6} \times 25 \times 30 = 9 \times 10^{-3}\,\mathrm{m} = 9\,\mathrm{mm}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p003
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 1
+    type: text
+    stem: 'การถ่ายโอนความร้อนที่เกิดจากการเคลื่อนที่ของของไหล เรียกว่าอะไร (ตอบเป็นภาษาไทยหรือภาษาอังกฤษ)'
+    accepted: [การพา, การพาความร้อน, convection]
+    hints:
+      - ลองนึกถึงอากาศร้อนที่ลอยขึ้นจากเตาไฟ
+      - เลือกคำที่มีความหมายว่า "พา" หรือการนำพาไป
+    misconceptions:
+      - { match: การนำ, feedback: การนำคือการถ่ายโอนความร้อนผ่านวัสดุที่อยู่นิ่ง ไม่ได้เกิดจากการเคลื่อนที่ของของไหล }
+    solution: 'เรียกว่า การพาความร้อน (convection) เกิดจากการหมุนเวียนของของไหลที่มีอุณหภูมิต่างกัน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p004
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 2
+    type: numeric
+    stem: 'ถังเหล็กบรรจุปริมาตร $200\,\mathrm{L}$ ที่อุณหภูมิเพิ่มขึ้น $60\,\mathrm{K}$ ปริมาตรของถังจะเพิ่มขึ้นกี่ลิตร (สำหรับของแข็งให้ใช้ $\beta \approx 3\alpha$ โดย $\alpha = 12 \times 10^{-6}\,\mathrm{K^{-1}}$ ตอบทศนิยม 3 ตำแหน่ง)'
+    answer: { value: 0.432, tolerance: 0.005, unit: L }
+    hints:
+      - สำหรับการขยายตัวเชิงปริมาตรใช้ $\Delta V = \beta V_0 \Delta T$
+      - ค่า $\beta$ ของของแข็งประมาณสามเท่าของ $\alpha$
+    misconceptions:
+      - { match: 0.144, feedback: 'ใช้ $\alpha$ แทน $\beta$ ทำให้ค่าน้อยเกินจริงสามเท่า' }
+      - { match: 1.296, feedback: 'คิดว่า $\beta = 9\alpha$ ซึ่งผิด ความสัมพันธ์ที่ใช้คือ $\beta \approx 3\alpha$' }
+    solution: '$\Delta V = 3 \times 12 \times 10^{-6} \times 200 \times 60 = 0.432\,\mathrm{L}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p005
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 2
+    type: numeric
+    stem: 'ผนังไม้ยางพาราพื้นที่ $10\,\mathrm{m^2}$ หนา $2\,\mathrm{cm}$ มีสภาพนำความร้อน $k = 0.15\,\mathrm{W/(m \cdot K)}$ ผลต่างอุณหภูมิสองด้านคือ $10\,\mathrm{K}$ ความร้อนไหลผ่านผนังนี้กี่วัตต์'
+    answer: { value: 750, tolerance: 1, unit: W }
+    hints:
+      - ใช้สูตร $P = \frac{kA\Delta T}{d}$ โดยความหนาต้องเป็นเมตร
+      - ตรวจว่าพื้นที่ถูกนำมาคูณแล้ว
+    misconceptions:
+      - { match: 7.5, feedback: 'ใช้ความหนา 2 เป็นเมตร แทนที่จะเป็น $0.02\,\mathrm{m}$' }
+      - { match: 75, feedback: 'ลืมคูณพื้นที่ $A = 10\,\mathrm{m^2}$' }
+    solution: '$P = \frac{0.15 \times 10 \times 10}{0.02} = 750\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p006
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 2
+    type: mcq
+    stem: 'วัสดุใดนำความร้อนได้ดีที่สุด'
+    choices:
+      - { id: a, text: ทองแดง, correct: true }
+      - { id: b, text: ไม้, feedback: 'ไม้มีสภาพนำความร้อนราว 0.15 W/(m·K) ซึ่งต่ำกว่าทองแดงมาก' }
+      - { id: c, text: แก้ว, feedback: 'แก้วนำความร้อนได้ราว 1 W/(m·K) ซึ่งยังต่ำกว่าทองแดงมาก' }
+      - { id: d, text: อากาศนิ่ง, feedback: 'อากาศนิ่งนำความร้อนได้ราว 0.026 W/(m·K) จึงเป็นฉนวนที่ดี' }
+    hints:
+      - ดูค่าสภาพนำความร้อน $k$ ของแต่ละวัสดุ
+      - โลหะโดยทั่วไปนำความร้อนได้ดีกว่าวัสดุอินทรีย์และอากาศ
+    solution: 'ทองแดงมีค่า $k$ ราว 400 $\mathrm{W/(m \cdot K)}$ ซึ่งมากที่สุดในตัวเลือก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p007
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 2
+    type: numeric
+    stem: 'แผ่นโฟมโพลีสไตรีนพื้นที่ $1\,\mathrm{m^2}$ หนา $5\,\mathrm{cm}$ มีสภาพนำความร้อน $0.033\,\mathrm{W/(m \cdot K)}$ ผลต่างอุณหภูมิสองด้านคือ $50\,\mathrm{K}$ ความร้อนไหลผ่านแผ่นโฟมกี่วัตต์'
+    answer: { value: 33, tolerance: 0.1, unit: W }
+    hints:
+      - แปลงความหนาจากเซนติเมตรเป็นเมตรก่อน
+      - ใช้ $P = \frac{kA\Delta T}{d}$
+    misconceptions:
+      - { match: 0.33, feedback: 'ใช้ความหนา 5 เป็นเมตรแทนที่จะเป็น $0.05\,\mathrm{m}$' }
+      - { match: 330, feedback: 'ใช้ความหนา $0.5\,\mathrm{cm}$ คือแปลงผิดสิบเท่า' }
+    solution: '$P = \frac{0.033 \times 1 \times 50}{0.05} = 33\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p008
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 2
+    type: mcq
+    stem: 'เหตุใดกระติกเก็บความร้อนจึงมีผนังสองชั้นที่คั่นด้วยช่องสุญญากาศ'
+    choices:
+      - { id: a, text: 'ช่องสุญญากาศไม่มีตัวกลางให้การนำและการพาความร้อนผ่านได้', correct: true }
+      - { id: b, text: 'ช่องสุญญากาศทำให้การแผ่รังสีความร้อนเพิ่มขึ้น', feedback: 'สุญญากาศไม่ได้เพิ่มการแผ่รังสี การลดการแผ่ทำได้ด้วยผิวสะท้อนรังสี' }
+      - { id: c, text: 'ทำให้ผนังแข็งแรงขึ้นจึงไม่ต้องใช้ฉนวน', feedback: 'ความแข็งแรงไม่เกี่ยวกับการถ่ายโอนความร้อน' }
+      - { id: d, text: 'สุญญากาศดูดกลืนความร้อนไว้ทั้งหมด', feedback: 'สุญญากาศไม่ได้ดูดกลืนความร้อน แต่ทำให้ความร้อนผ่านได้ยากขึ้น' }
+    hints:
+      - นึกถึงสิ่งที่จำเป็นต่อการนำและการพาความร้อน
+      - ช่องสุญญากาศมีอะไรอยู่ข้างใน
+    solution: 'การนำและการพาต้องอาศัยอนุภาคหรือของไหล ช่องสุญญากาศจึงลดการถ่ายโอนความร้อนสองทางนี้ได้'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p009
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: numeric
+    stem: 'แท่งเหล็กถูกยึดปลายทั้งสองข้างไว้ไม่ให้ขยายตัว เมื่ออุณหภูมิเพิ่มขึ้น $30\,\mathrm{K}$ ความเค้นจากความร้อนในแท่งเหล็กมีค่ากี่ $\mathrm{MPa}$ (ใช้มอดุลัสของยัง $E = 200\,\mathrm{GPa}$ และ $\alpha = 12 \times 10^{-6}\,\mathrm{K^{-1}}$)'
+    answer: { value: 72, tolerance: 0.5, unit: MPa }
+    hints:
+      - ความเค้นจากความร้อนเท่ากับมอดุลัสของยังคูณความเครียดจากความร้อน
+      - ความเครียดจากความร้อนคือ $\alpha \Delta T$ ซึ่งไม่มีหน่วย
+    misconceptions:
+      - { match: 0.072, feedback: 'ได้ค่าเป็นกิกะปาสคาล (GPa) แต่โจทย์ขอเป็นเมกะปาสคาล (MPa)' }
+      - { match: 0.00036, feedback: 'ได้ค่าความเครียด $\alpha \Delta T$ ยังไม่ได้คูณด้วยมอดุลัสของยัง' }
+    solution: '$\sigma = E\alpha\Delta T = 200 \times 10^{9} \times 12 \times 10^{-6} \times 30 = 7.2 \times 10^{7}\,\mathrm{Pa} = 72\,\mathrm{MPa}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p010
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: numeric
+    stem: 'รางรถไฟเหล็กยาว $20\,\mathrm{m}$ ในฤดูร้อนอุณหภูมิเพิ่มขึ้น $30\,\mathrm{K}$ ต้องเว้นระยะรอยต่อให้รางยืดได้อย่างน้อยกี่มิลลิเมตร (ใช้ $\alpha = 12 \times 10^{-6}\,\mathrm{K^{-1}}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 7.2, tolerance: 0.1, unit: mm }
+    hints:
+      - ใช้ $\Delta L = \alpha L_0 \Delta T$ เหมือนตัวอย่าง
+      - ตอบเป็นมิลลิเมตรตามที่โจทย์กำหนด
+    misconceptions:
+      - { match: 0.0072, feedback: 'ได้ค่าเป็นเมตร ต้องแปลงเป็นมิลลิเมตรก่อนตอบ' }
+      - { match: 72, feedback: 'ใช้ค่า $\alpha$ ผิดหนึ่งอันดับขนาด' }
+    solution: '$\Delta L = 12 \times 10^{-6} \times 20 \times 30 = 7.2 \times 10^{-3}\,\mathrm{m} = 7.2\,\mathrm{mm}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p011
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: numeric
+    stem: 'พื้นผิวดำขนาด $1\,\mathrm{m^2}$ มีอุณหภูมิสัมบูรณ์ $300\,\mathrm{K}$ แผ่รังสีความร้อนออกมาได้กี่วัตต์ (ใช้ $\varepsilon = 1$ และ $\sigma = 5.670374419 \times 10^{-8}\,\mathrm{W/(m^2 \cdot K^4)}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 459.3, tolerance: 0.5, unit: W }
+    hints:
+      - ใช้สูตร $P = \varepsilon \sigma A T^{4}$ โดย $T$ เป็นเคลวิน
+      - ยกกำลังสี่ของ 300 ก่อนแล้วจึงคูณค่าคงที่
+    misconceptions:
+      - { match: 0.03, feedback: 'แปลง 300 K เป็น 27 แล้วแทนค่า ทั้งที่ $T$ ในสูตรคืออุณหภูมิสัมบูรณ์ที่ 300 K อยู่แล้ว' }
+    solution: '$P = 1 \times 5.670374419 \times 10^{-8} \times 300^{4} \approx 459.3\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p012
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: numeric
+    stem: 'แผ่นโลหะผิวดำขนาด $1.5\,\mathrm{m^2}$ มีอุณหภูมิ $60\,^\circ\mathrm{C}$ วางอยู่ในห้องที่อุณหภูมิ $27\,^\circ\mathrm{C}$ ความร้อนสุทธิที่แผ่จากแผ่นโลหะนี้เป็นกี่วัตต์ (ใช้ $\varepsilon = 1$ ตอบจำนวนเต็ม)'
+    answer: { value: 357, tolerance: 1, unit: W }
+    hints:
+      - ต้องแปลงทั้งสองอุณหภูมิเป็นเคลวินก่อน โดย $K = {}^\circ\mathrm{C} + 273.15$
+      - การแผ่สุทธิคือผลต่างของการแผ่ออกกับการรับกลับจากสิ่งแวดล้อม
+    misconceptions:
+      - { match: 1.06, feedback: 'ใช้อุณหภูมิเป็นองศาเซลเซียสแทนเคลวินในสูตรยกกำลังสี่' }
+      - { match: 1048, feedback: 'ไม่ได้หักการรับรังสีจากสิ่งแวดล้อม ทำให้ได้การแผ่ออกทั้งหมด' }
+    solution: '$P_{net} = \sigma A (T^{4} - T_s^{4}) = 5.670 \times 10^{-8} \times 1.5 \times (333.15^{4} - 300.15^{4}) \approx 357\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p013
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: numeric
+    stem: 'ผนังในภาพประกอบด้วยไม้อัดหนา $2\,\mathrm{cm}$ ($k = 0.15\,\mathrm{W/(m \cdot K)}$) และโฟมหนา $5\,\mathrm{cm}$ ($k = 0.033\,\mathrm{W/(m \cdot K)}$) ถ้าผลต่างอุณหภูมิสองด้านของผนังคือ $20\,\mathrm{K}$ อัตราการถ่ายโอนความร้อนต่อพื้นที่หนึ่งตารางเมตรเป็นกี่วัตต์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    figure:
+      src: wall-composite.svg
+      alt: ผนังสองชั้นตัดในแนวตั้ง ชั้นซ้ายเป็นไม้อัดหนา 2 เซนติเมตร และชั้นขวาเป็นโฟมโพลีสไตรีนหนา 5 เซนติเมตร มีลูกศรแสดงทิศการไหลของความร้อนจากด้านในไปด้านนอก
+    answer: { value: 12.1, tolerance: 0.1, unit: W/m² }
+    hints:
+      - ความต้านทานความร้อนของแต่ละชั้นต่อพื้นที่ 1 m² คือ $d/k$
+      - ความต้านทานรวมเป็นผลรวมของทั้งสองชั้น
+    misconceptions:
+      - { match: 26.1, feedback: 'หาค่า $k$ เฉลี่ยของสองชั้นแล้วใช้เป็นค่าเดียว ทำให้ประเมินการไหลสูงเกินจริง' }
+      - { match: 13.2, feedback: 'พิจารณาเฉพาะชั้นโฟม ลืมความต้านทานของไม้อัด' }
+    solution: '$R = \frac{0.02}{0.15} + \frac{0.05}{0.033} \approx 1.648\,\mathrm{m^2 K/W}$ จึงได้ $q = \frac{20}{1.648} \approx 12.1\,\mathrm{W/m^2}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p014
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: expression
+    stem: 'จากสูตร $P = \frac{kA\Delta T}{d}$ จงจัดรูปให้ $\Delta T$ อยู่ข้างเดียวของสมการ'
+    prefix: 'ΔT ='
+    answer: { latex: '\frac{P d}{k A}', variables: [P, d, k, A] }
+    hints:
+      - คูณสองข้างด้วย $d$ แล้วหารด้วย $kA$
+      - $\Delta T$ อยู่ในตัวเศษของสูตรเดิม จึงต้องย้ายตัวอื่นไปไว้ที่ตัวส่วน
+    misconceptions:
+      - { match: '\frac{P k}{d A}', feedback: 'สลับตำแหน่ง $k$ กับ $d$ ทำให้หน่วยไม่ตรงกัน' }
+    solution: '$\Delta T = \frac{P d}{k A}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p015
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 2
+    type: mcq
+    stem: 'เหตุใดเสื้อกันหนาวที่ทอหนาและมีอากาศติดอยู่ในเส้นใยจึงให้ความอุ่น'
+    choices:
+      - { id: a, text: 'อากาศนิ่งในช่องเล็ก ๆ นำความร้อนได้น้อยและไม่เกิดการพาความร้อนมาก', correct: true }
+      - { id: b, text: 'เส้นใยที่ทอแน่นนำความร้อนได้ดีที่สุด', feedback: 'เส้นใยนำความร้อนได้ไม่ดี จึงช่วยกักอากาศไว้' }
+      - { id: c, text: 'เสื้อหนาช่วยสร้างความร้อนเองจากการเสียดสี', feedback: 'เสื้อไม่ได้สร้างความร้อนเองจากการเสียดสีอย่างมีนัยสำคัญ' }
+      - { id: d, text: 'ผ้าสะท้อนรังสีความร้อนทั้งหมดกลับเข้าตัว', feedback: 'ผ้าไม่ได้สะท้อนรังสีทั้งหมด ประสิทธิภาพหลักมาจากอากาศที่ติดอยู่' }
+    hints:
+      - นึกถึงสมบัติของอากาศนิ่งที่ทำให้เป็นฉนวน
+      - ตรวจว่าตัวเลือกใดอธิบายการนำและการพาความร้อน
+    solution: 'อากาศนิ่งมีสภาพนำความร้อนต่ำมาก และช่องเล็ก ๆ จำกัดการหมุนเวียนของอากาศ ทำให้ความร้อนผ่านออกไปช้า'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p016
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 4
+    type: numeric
+    stem: 'แผ่นฮีตเตอร์พื้นที่ $0.5\,\mathrm{m^2}$ มีค่าการแผ่รังสีเชิงความร้อน $\varepsilon = 0.8$ และอุณหภูมิผิว $400\,\mathrm{K}$ แผ่รังสีออกมาได้กี่วัตต์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 580.6, tolerance: 0.5, unit: W }
+    hints:
+      - ใช้สูตร $P = \varepsilon \sigma A T^{4}$
+      - อย่าลืมคูณด้วย $\varepsilon$ เพราะวัตถุนี้ไม่ใช่วัตถุดำในอุดมคติ
+    misconceptions:
+      - { match: 725.8, feedback: 'ลืมคูณค่า $\varepsilon = 0.8$ ทำให้ได้ค่าของวัตถุดำในอุดมคติ' }
+      - { match: 5.9, feedback: 'ลบ 273 จาก 400 K ทั้งที่ค่า 400 เป็นเคลวินอยู่แล้ว ไม่ต้องแปลงหน่วย' }
+    solution: '$P = 0.8 \times 5.670374419 \times 10^{-8} \times 0.5 \times 400^{4} \approx 580.6\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p017
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 4
+    type: numeric
+    stem: 'วัตถุดำแผ่รังสีที่อุณหภูมิสัมบูรณ์ $T$ ถ้าเพิ่มอุณหภูมิสัมบูรณ์เป็นสองเท่า กำลังที่แผ่ต่อพื้นที่หนึ่งตารางเมตรจะเพิ่มขึ้นกี่เท่า'
+    answer: { value: 16, tolerance: 0.01, unit: เท่า }
+    hints:
+      - กำลังแผ่แปรตาม $T$ ยกกำลังเท่าไร
+      - ถ้า $T' = 2T$ ให้แทนค่าใน $T'^{4}$
+    misconceptions:
+      - { match: 2, feedback: 'คิดว่ากำลังแปรตามอุณหภูมิเชิงเส้น ทั้งที่แปรตามยกกำลังสี่' }
+      - { match: 4, feedback: 'ยกกำลังสองแทนยกกำลังสี่' }
+    solution: '$\frac{P_2}{P_1} = \frac{(2T)^{4}}{T^{4}} = 2^{4} = 16$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p018
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 4
+    type: numeric
+    stem: 'หน้าต่างกระจกของห้องปรับอากาศในกรุงเทพฯ หนา $6\,\mathrm{mm}$ มีพื้นที่ $2\,\mathrm{m^2}$ และสภาพนำความร้อน $k = 1.0\,\mathrm{W/(m \cdot K)}$ อุณหภูมิด้านในกับด้านนอกต่างกัน $15\,\mathrm{K}$ อัตราการถ่ายโอนความร้อนผ่านกระจกนี้กี่วัตต์'
+    answer: { value: 5000, tolerance: 5, unit: W }
+    hints:
+      - แปลงความหนาเป็นเมตรก่อนแทนค่าในสูตรการนำความร้อน
+      - ใช้ $P = \frac{kA\Delta T}{d}$
+    misconceptions:
+      - { match: 500, feedback: 'ใช้ความหนา $6\,\mathrm{cm}$ แทน $6\,\mathrm{mm}$ ทำให้ได้ค่าน้อยลงสิบเท่า' }
+      - { match: 5, feedback: 'ใช้ความหนาเป็น 6 เมตร ทำให้ได้ค่าน้อยลงพันเท่า' }
+    solution: '$P = \frac{1.0 \times 2 \times 15}{0.006} = 5000\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p019
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 5
+    type: numeric
+    stem: 'ผนังสามชั้นมีพื้นที่ $12\,\mathrm{m^2}$ ชั้นในเป็นคอนกรีตหนา $0.20\,\mathrm{m}$ ($k = 1.0$) ชั้นกลางเป็นโฟมหนา $0.10\,\mathrm{m}$ ($k = 0.04$) และชั้นนอกเป็นปูนฉาบหนา $0.015\,\mathrm{m}$ ($k = 0.5$) ทุกค่า $k$ มีหน่วย $\mathrm{W/(m \cdot K)}$ ผลต่างอุณหภูมิสองด้านคือ $25\,\mathrm{K}$ ความร้อนไหลผ่านผนังทั้งหมดกี่วัตต์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 109.9, tolerance: 0.5, unit: W }
+    hints:
+      - คำนวณ $R = d/k$ ของแต่ละชั้นต่อพื้นที่ 1 m² แล้วรวมกัน
+      - ความร้อนรวมคือผลต่างอุณหภูมิคูณพื้นที่หารด้วยความต้านทานรวม
+    misconceptions:
+      - { match: 1304.3, feedback: 'ลืมชั้นฉนวนในการคำนวณความต้านทานรวม' }
+      - { match: 120, feedback: 'คิดเฉพาะชั้นโฟมชั้นเดียว ไม่ได้รวมความต้านทานของทุกชั้น' }
+    solution: '$R_{tot} = \frac{0.20}{1.0} + \frac{0.10}{0.04} + \frac{0.015}{0.5} = 2.73\,\mathrm{m^2 K/W}$ และ $P = \frac{25 \times 12}{2.73} \approx 109.9\,\mathrm{W}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.thermal.heat-transfer-rates.p020
+    topics: [physics.thermal.heat-transfer-rates]
+    difficulty: 3
+    type: mcq
+    stem: 'เหตุใดน้ำแข็งจึงลอยอยู่บนผิวน้ำ'
+    choices:
+      - { id: a, text: 'น้ำขยายตัวเมื่อแข็งตัว น้ำแข็งจึงมีความหนาแน่นน้อยกว่าน้ำเหลว', correct: true }
+      - { id: b, text: 'น้ำแข็งหนักน้อยกว่าน้ำที่มีมวลเท่ากันเพราะเย็นกว่า', feedback: 'ความเย็นไม่ทำให้มวลลดลง ความหนาแน่นต่างหากที่กำหนดการลอยตัว' }
+      - { id: c, text: 'น้ำแข็งมีแรงลอยตัวสูงกว่าน้ำหนักของตัวมันเองเสมอ', feedback: 'แรงลอยตัวเกิดจากน้ำที่ถูกแทนที่ ไม่ใช่ค่าคงที่ของน้ำแข็ง' }
+      - { id: d, text: 'น้ำแข็งเกิดจากน้ำที่มีมวลเท่าเดิมแต่ปริมาตรลดลงเมื่อแข็งตัว', feedback: 'ปริมาตรของน้ำแข็งเพิ่มขึ้นเมื่อแข็งตัว จึงมีความหนาแน่นน้อยลง' }
+    hints:
+      - เทียบปริมาตรของน้ำมวลเท่ากันก่อนและหลังแข็งตัวเป็นน้ำแข็ง
+      - วัตถุลอยได้เมื่อความหนาแน่นน้อยกว่าของเหลวที่อยู่รอบ
+    solution: 'เมื่อน้ำแข็งตัว ปริมาตรเพิ่มขึ้นราว 9% (น้ำแข็งมีความหนาแน่นราว $0.92\,\mathrm{g/cm^3}$ ส่วนน้ำเหลวราว $1.00\,\mathrm{g/cm^3}$) น้ำแข็งจึงมีความหนาแน่นน้อยกว่าน้ำเหลวและลอยขึ้นมา ส่วนการที่น้ำมีความหนาแน่นสูงสุดที่ราว 4 °C ทำให้ทะเลสาบแข็งจากผิวลงไป'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

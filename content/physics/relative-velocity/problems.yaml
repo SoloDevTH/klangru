@@ -1,0 +1,326 @@
+problems:
+  - id: physics.kinematics.relative-velocity.p001
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 1
+    type: mcq
+    stem: 'รถ $A$ วิ่งไปทางตะวันออก $20\,\mathrm{m/s}$ รถ $B$ วิ่งไปทางตะวันออกเช่นกันด้วย $15\,\mathrm{m/s}$ เมื่อมองจากรถ $A$ รถ $B$ เคลื่อนที่อย่างไร'
+    choices:
+      - { id: a, text: 'ไปข้างหน้าด้วย $35\,\mathrm{m/s}$', feedback: 'บวกความเร็วทั้งที่ทั้งสองวิ่งไปทางเดียวกัน ต้องลบกัน' }
+      - { id: b, text: 'ไปข้างหน้าด้วย $5\,\mathrm{m/s}$', feedback: 'ขนาดถูกแต่ทิศผิด รถ $B$ ช้ากว่าจึงถอยหลังเทียบกับ $A$' }
+      - { id: c, text: 'ถอยหลังด้วย $5\,\mathrm{m/s}$', correct: true }
+      - { id: d, text: 'อยู่กับที่', feedback: 'รถทั้งสองวิ่งด้วยความเร็วต่างกัน จึงไม่นิ่งเทียบกัน' }
+    hints:
+      - เลือกกรอบอ้างอิงที่รถ $A$ แล้วถามว่ารถ $B$ เคลื่อนไปทางไหน
+      - ความเร็วของ $B$ เทียบกับ $A$ คือความเร็วของ $B$ ลบความเร็วของ $A$
+    solution: '$v_{BA} = v_B - v_A = 15 - 20 = -5\,\mathrm{m/s}$ คือ $B$ ถอยหลังเทียบกับ $A$ ด้วยอัตราเร็ว $5\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p002
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 1
+    type: numeric
+    stem: 'รถ $A$ วิ่งไปทางตะวันออก $20\,\mathrm{m/s}$ และรถ $B$ วิ่งไปทางตะวันออก $15\,\mathrm{m/s}$ ความเร็วของ $B$ เทียบกับ $A$ มีค่ากี่ $\mathrm{m/s}$ (ให้ทิศตะวันออกเป็นบวก)'
+    answer: { value: -5, tolerance: 0.05, unit: m/s }
+    hints:
+      - ความเร็วสัมพัทธ์คือผลต่างของความเร็วสองค่า
+      - ให้ตัวเลขที่เป็นบวกคือทิศตะวันออก ค่าที่ได้จะมีเครื่องหมายบอกทิศ
+    misconceptions:
+      - { match: 35, feedback: 'บวกความเร็วสองค่า ทั้งที่ทั้งสองวิ่งไปทางเดียวกัน' }
+      - { match: 5, feedback: 'ได้ขนาดถูกแต่ยังไม่ได้ใส่เครื่องหมาย ทิศของ $B$ เทียบกับ $A$ คือทิศตะวันตก' }
+    solution: '$v_{BA} = v_B - v_A = 15 - 20 = -5\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p003
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 1
+    type: text
+    stem: 'ความเร็วของวัตถุหนึ่งที่วัดเทียบกับอีกวัตถุหนึ่ง เรียกว่าอะไร (ตอบเป็นภาษาไทยหรือภาษาอังกฤษ)'
+    accepted: [ความเร็วสัมพัทธ์, relative velocity]
+    hints:
+      - คิดถึงความเร็วที่เปลี่ยนไปเมื่อเราเปลี่ยนว่าจะอ้างอิงกับวัตถุใด
+      - ตอบเป็นภาษาไทยหรืออังกฤษก็ได้
+    misconceptions:
+      - { match: ความเร็วเฉลี่ย, feedback: ความเร็วเฉลี่ยคือระยะกระจัดหารด้วยเวลาของวัตถุชิ้นเดียว ไม่ได้เทียบกับวัตถุอื่น }
+    solution: 'เรียกว่า ความเร็วสัมพัทธ์ (relative velocity) เขียนแทนด้วย $v_{PA}$ คือความเร็วของ $P$ เทียบกับ $A$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p004
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 2
+    type: numeric
+    stem: 'บนถนนมิตรภาพ รถ $A$ วิ่งด้วย $20\,\mathrm{m/s}$ ตามรถ $B$ ที่วิ่งไปทางเดียวกันด้วย $15\,\mathrm{m/s}$ และอยู่ข้างหน้าห่างออกไป $100\,\mathrm{m}$ รถ $A$ จะตามทันรถ $B$ ในกี่วินาที'
+    answer: { value: 20, tolerance: 0.1, unit: s }
+    hints:
+      - ในกรอบของรถ $A$ รถ $B$ เข้าใกล้ด้วยความเร็วเท่าไร
+      - ระยะที่ต้องไล่ทันคือ 100 m
+    misconceptions:
+      - { match: 2.86, feedback: 'บวกความเร็วทั้งสองค่า ทั้งที่รถทั้งสองไปทางเดียวกัน' }
+      - { match: 6.67, feedback: 'ใช้ความเร็วของรถ $B$ อย่างเดียวแทนความเร็วสัมพัทธ์' }
+    solution: '$t = \frac{100}{20 - 15} = 20\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p005
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 2
+    type: numeric
+    stem: 'รถไฟไทยขบวนหนึ่งวิ่งไปทางเหนือด้วย $30\,\mathrm{m/s}$ อีกขบวนวิ่งสวนทางมาทางใต้ด้วย $20\,\mathrm{m/s}$ เมื่อสองขบวนห่างกัน $1000\,\mathrm{m}$ อีกกี่วินาทีทั้งสองขบวนจะสวนกันสนิท'
+    answer: { value: 20, tolerance: 0.1, unit: s }
+    hints:
+      - ระยะห่างจะลดลงด้วยอัตราเท่ากับความเร็วสัมพัทธ์ของทั้งสองขบวน
+      - เมื่อวิ่งสวนทางกัน ความเร็วสัมพัทธ์เป็นผลบวกของขนาดทั้งสอง
+    misconceptions:
+      - { match: 100, feedback: 'ลบความเร็วทั้งที่ทิศตรงข้ามกัน ต้องบวกขนาดของความเร็ว' }
+      - { match: 33.3, feedback: 'ใช้ความเร็วของขบวนเดียวแทนความเร็วสัมพัทธ์' }
+    solution: '$t = \frac{1000}{30 + 20} = 20\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p006
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 2
+    type: mcq
+    stem: 'เรือแล่นข้ามแม่น้ำที่มีกระแสน้ำไหลไปทางขวาของเรือ ผู้ขับต้องการให้เรือไปถึงจุดตรงข้ามพอดี โดยไม่ถูกพัดไปตามกระแสน้ำ ควรทำอย่างไร'
+    choices:
+      - { id: a, text: 'ชี้หัวเรือตั้งฉากกับฝั่งตรง ๆ', feedback: 'เรือจะถูกกระแสน้ำพัดไป จึงไปถึงจุดท้ายน้ำ ไม่ใช่จุดตรงข้าม' }
+      - { id: b, text: 'ชี้หัวเรือทวนกระแสน้ำให้องค์ประกอบทวนน้ำหักล้างการไหลพอดี', correct: true }
+      - { id: c, text: 'เร่งเครื่องให้เร็วที่สุดโดยไม่สนทิศทาง', feedback: 'ความเร็วที่มากขึ้นไม่ได้แก้การพัดไปตามน้ำ เรือยังถูกพัดไปเท่าเดิม' }
+      - { id: d, text: 'ลดความเร็วเรือให้ช้าที่สุด', feedback: 'ความเร็วช้าลงทำให้เรือถูกพัดไปไกลกว่าเดิมเพราะใช้เวลาข้ามนานขึ้น' }
+    hints:
+      - ถามตัวเองว่าเรือต้องชดเชยการพัดของกระแสน้ำด้วยทิศไหน
+      - ตัวเลือกที่ถูกต้องต้องมีความเร็วบางส่วนที่หักล้างกระแสน้ำ
+    solution: 'เพื่อให้ไปถึงจุดตรงข้าม องค์ประกอบของความเร็วเรือเทียบกับน้ำที่ทวนกระแสต้องเท่ากับความเร็วของกระแสน้ำ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p007
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 3
+    type: numeric
+    stem: 'เรือในแม่น้ำเจ้าพระยาแล่นด้วยอัตราเร็ว $4\,\mathrm{m/s}$ เทียบกับน้ำ โดยหัวเรือตั้งฉากกับฝั่งตลอดเวลา แม่น้ำกว้าง $200\,\mathrm{m}$ และกระแสน้ำไหลขนานกับฝั่งด้วย $2\,\mathrm{m/s}$ เรือจะถูกพัดไปตามฝั่งเป็นระยะกี่เมตร'
+    answer: { value: 100, tolerance: 0.5, unit: m }
+    hints:
+      - เวลาข้ามฝั่งขึ้นกับความเร็วที่ตั้งฉากกับฝั่งเท่านั้น
+      - ระยะที่ถูกพัดไปเท่ากับความเร็วของกระแสคูณเวลาที่ใช้ข้าม
+    misconceptions:
+      - { match: 200, feedback: 'ใช้ความเร็วของเรือแทนความเร็วของกระแสน้ำ คือ $4 \times 50 = 200$' }
+      - { match: 50, feedback: 'ตอบเวลาที่ใช้ข้ามแทนระยะที่ถูกพัดไป' }
+    solution: '$t = \frac{200}{4} = 50\,\mathrm{s}$ และระยะที่ถูกพัดไป $= 2 \times 50 = 100\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p008
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 3
+    type: numeric
+    stem: 'เรือในโจทย์ข้อก่อนหน้าแล่นด้วย $4\,\mathrm{m/s}$ เทียบกับน้ำ แม่น้ำกว้าง $200\,\mathrm{m}$ กระแสน้ำ $2\,\mathrm{m/s}$ หากหัวเรือตั้งฉากกับฝั่ง เรือจะใช้เวลาข้ามกี่วินาที'
+    answer: { value: 50, tolerance: 0.5, unit: s }
+    hints:
+      - ความเร็วข้ามฝั่งคือความเร็วของเรือเทียบกับน้ำในทิศตั้งฉาก
+      - กระแสน้ำไม่มีผลต่อเวลาข้ามในกรณีนี้
+    misconceptions:
+      - { match: 44.7, feedback: 'ใช้ขนาดของเวกเตอร์ผลรวมของเรือกับกระแสน้ำแทนความเร็วข้ามฝั่ง' }
+      - { match: 33.3, feedback: 'บวกความเร็วของกระแสน้ำเข้ากับความเร็วเรือตรง ๆ ทั้งที่สองทิศตั้งฉากกัน' }
+    solution: '$t = \frac{W}{v_b} = \frac{200}{4} = 50\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p009
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 3
+    type: numeric
+    stem: 'เรือแล่นด้วย $4\,\mathrm{m/s}$ เทียบกับน้ำ กระแสน้ำไหลด้วย $2\,\mathrm{m/s}$ ขนานกับฝั่ง เพื่อให้ไปถึงจุดตรงข้ามพอดี หัวเรือต้องทำมุมกับแนวตั้งฉากฝั่งกี่องศา (ทวนกระแสน้ำ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 30, tolerance: 0.1, unit: '°' }
+    hints:
+      - องค์ประกอบทวนน้ำของความเร็วเรือต้องหักล้างกระแสน้ำพอดี
+      - มุมที่ต้องการอยู่ระหว่างด้านตรงข้ามกับด้านตรงข้ามมุมฉากของสามเหลี่ยมความเร็ว
+    misconceptions:
+      - { match: 60, feedback: 'วัดมุมจากแนวฝั่งแทนแนวตั้งฉากกับฝั่ง ซึ่งได้ 90 − 30 = 60 องศา' }
+      - { match: 26.6, feedback: 'ใช้แทนเจนต์แทนไซน์ ทั้งที่ด้านตรงข้ามคือกระแสน้ำและด้านตรงข้ามมุมฉากคือความเร็วของเรือ' }
+    solution: '$\sin\theta = \frac{v_c}{v_b} = \frac{2}{4} = 0.5$ จึงได้ $\theta = 30^\circ$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p010
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 3
+    type: numeric
+    stem: 'เรือแล่นด้วย $4\,\mathrm{m/s}$ เทียบกับน้ำ กระแสน้ำ $2\,\mathrm{m/s}$ แม่น้ำกว้าง $200\,\mathrm{m}$ หัวเรือทวนน้ำทำมุม $30^\circ$ กับแนวตั้งฉากฝั่ง เรือจะใช้เวลาข้ามกี่วินาที (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 57.7, tolerance: 0.1, unit: s }
+    hints:
+      - ความเร็วข้ามฝั่งเท่ากับความเร็วเรือเทียบกับน้ำคูณ $\cos\theta$
+      - เวลาข้ามเท่ากับความกว้างหารด้วยความเร็วข้ามฝั่ง
+    misconceptions:
+      - { match: 100, feedback: 'ใช้ $\sin\theta$ แทน $\cos\theta$ ทำให้ความเร็วข้ามฝั่งน้อยเกินจริง' }
+      - { match: 50, feedback: 'คิดว่าหัวเรือตั้งฉากกับฝั่ง ทั้งที่ทิศหัวเรือเปลี่ยนไปแล้ว' }
+    solution: '$v_{\perp} = 4\cos 30^\circ \approx 3.46\,\mathrm{m/s}$ และ $t = \frac{200}{3.46} \approx 57.7\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p011
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 3
+    type: numeric
+    stem: 'เครื่องบินมีอัตราเร็วเทียบกับอากาศ $200\,\mathrm{m/s}$ ลมพัดจากตะวันตกไปตะวันออกด้วย $30\,\mathrm{m/s}$ นักบินต้องการให้เส้นทางการบินเป็นทิศเหนือพอดี หัวเครื่องต้องเบี่ยงไปทวนลมกี่องศาจากทิศเหนือ (ตอบทศนิยม 1 ตำแหน่ง)'
+    figure:
+      src: crab-angle.svg
+      alt: เส้นทางที่ต้องการเป็นทิศเหนือ มีลมพัดจากตะวันตกไปตะวันออก และหัวเครื่องบินชี้ทวนลมทำมุม θ กับทิศเหนือ
+    answer: { value: 8.6, tolerance: 0.1, unit: '°' }
+    hints:
+      - ลมตั้งฉากกับเส้นทาง ดังนั้นองค์ประกอบของความเร็วอากาศในทิศตะวันตกต้องหักล้างลม
+      - ใช้ $\sin\theta = \frac{v_w}{V}$ โดย $v_w$ คือความเร็วลม และ $V$ คือความเร็วอากาศ
+    misconceptions:
+      - { match: 81.4, feedback: 'ใช้โคไซน์แทนไซน์ ความเร็วลมเป็นด้านตรงข้ามมุมเบี่ยง ไม่ใช่ด้านประชิด' }
+      - { match: 30, feedback: 'ตอบค่าความเร็วลมแทนมุม' }
+    solution: '$\sin\theta = \frac{30}{200} = 0.15$ จึงได้ $\theta \approx 8.6^\circ$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p012
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 3
+    type: numeric
+    stem: 'เครื่องบินในโจทย์ก่อนหน้า มีอัตราเร็วเทียบกับอากาศ $200\,\mathrm{m/s}$ ลมด้านข้าง $30\,\mathrm{m/s}$ และบินตามเส้นทางทิศเหนือพอดี ความเร็วของเครื่องบินเทียบกับพื้นดินเป็นกี่ $\mathrm{m/s}$ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 197.7, tolerance: 0.2, unit: m/s }
+    hints:
+      - ความเร็วภาคพื้นในทิศเส้นทางคือองค์ประกอบของความเร็วอากาศในทิศนั้น
+      - ใช้ $V\cos\theta$ โดย $\theta$ คือมุมที่หาได้จากโจทย์ก่อนหน้า
+    misconceptions:
+      - { match: 230, feedback: 'บวกความเร็วลมเข้ากับความเร็วอากาศ ทั้งที่ลมตั้งฉากกับเส้นทาง' }
+      - { match: 200, feedback: 'ไม่คิดผลของลมเลย ทั้งที่หัวเครื่องต้องเบี่ยงเพื่อชดเชย' }
+    solution: 'ความเร็วภาคพื้นในทิศเหนือ $= \sqrt{200^2 - 30^2} = \sqrt{39100} \approx 197.7\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p013
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 4
+    type: numeric
+    stem: 'ฝนตกลงมาแนวดิ่งด้วยอัตราเร็ว $10\,\mathrm{m/s}$ เมื่อมองจากพื้นถนน รถยนต์วิ่งไปทางตะวันออกด้วย $20\,\mathrm{m/s}$ ผู้โดยสารในรถจะเห็นเม็ดฝนเคลื่อนที่สัมพัทธ์กับรถด้วยอัตราเร็วกี่ $\mathrm{m/s}$ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 22.4, tolerance: 0.1, unit: m/s }
+    hints:
+      - ความเร็วของฝนเทียบกับรถ คือความเร็วของฝนเทียบกับพื้น ลบความเร็วของรถเทียบกับพื้น
+      - องค์ประกอบสองทิศตั้งฉากกันจึงใช้ทฤษฎีบทพีทาโกรัส
+    misconceptions:
+      - { match: 30, feedback: 'บวกความเร็วฝนกับความเร็วรถตรง ๆ ทั้งที่ทั้งสองทิศตั้งฉากกัน' }
+      - { match: 10, feedback: 'ไม่คิดผลของการเคลื่อนที่ของรถเลย' }
+    solution: '$v_{RC} = \sqrt{20^2 + 10^2} = \sqrt{500} \approx 22.4\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p014
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 4
+    type: numeric
+    stem: 'ฝนตกแนวดิ่งด้วย $10\,\mathrm{m/s}$ และรถวิ่งไปทางตะวันออกด้วย $20\,\mathrm{m/s}$ เมื่อผู้โดยสารมองเห็นฝนเคลื่อนที่สัมพัทธ์กับรถ ทิศของฝนทำมุมกับแนวดิ่งกี่องศา (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 63.4, tolerance: 0.1, unit: '°' }
+    hints:
+      - วาดความเร็วสัมพัทธ์เป็นสามเหลี่ยมมุมฉากที่มีด้านแนวนอน 20 และด้านแนวดิ่ง 10
+      - มุมที่ถามวัดจากแนวดิ่ง ไม่ใช่แนวนอน
+    misconceptions:
+      - { match: 26.6, feedback: 'นี่คือมุมจากแนวนอน ตามโจทย์ต้องวัดจากแนวดิ่ง' }
+    solution: '$\tan\alpha = \frac{20}{10}$ จึงได้ $\alpha \approx 63.4^\circ$ จากแนวดิ่ง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p015
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 4
+    type: expression
+    stem: 'ให้ $v$ เป็นความเร็วของวัตถุ $P$ เทียบกับ $A$ ให้ $w$ เป็นความเร็วของ $B$ เทียบกับ $A$ และให้ $u$ เป็นความเร็วของ $P$ เทียบกับ $B$ จงเขียน $u$ ในรูปของ $v$ และ $w$'
+    prefix: 'u ='
+    answer: { latex: 'v - w', variables: [v, w] }
+    hints:
+      - ใช้สูตร $v_{PA} = v_{PB} + v_{BA}$ โดยแทน $v = v_{PA}$, $u = v_{PB}$ และ $w = v_{BA}$
+      - ย้ายข้างสมการเพื่อแยก $u$
+    misconceptions:
+      - { match: 'v+w', feedback: 'บวกผิดทิศ ต้องย้ายข้างโดยลบ $w$ ออกจาก $v$' }
+      - { match: 'w-v', feedback: 'สลับลำดับลบ ความเร็วของ $P$ เทียบกับ $B$ ต้องเป็น $v$ ลบ $w$' }
+    solution: '$v = u + w$ จึงได้ $u = v - w$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p016
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 4
+    type: numeric
+    stem: 'เรือแล่นทวนน้ำตามแนวแม่น้ำด้วยอัตราเร็ว $4\,\mathrm{m/s}$ เทียบกับน้ำ โดยกระแสน้ำไหลสวนทางกับเรือด้วย $2\,\mathrm{m/s}$ ความเร็วของเรือเทียบกับฝั่งมีขนาดกี่ $\mathrm{m/s}$'
+    answer: { value: 2, tolerance: 0.05, unit: m/s }
+    hints:
+      - ความเร็วของเรือเทียบกับฝั่งเท่ากับความเร็วของเรือเทียบกับน้ำบวกความเร็วของน้ำเทียบกับฝั่ง โดยกำหนดทิศให้สอดคล้องกัน
+      - ตรวจว่าทั้งสองทิศอยู่ในแนวเดียวกันก่อนบวกหรือลบ
+    misconceptions:
+      - { match: 6, feedback: 'บวกความเร็วทั้งสองค่า ทั้งที่กระแสน้ำทำให้เรือช้าลง' }
+      - { match: 4, feedback: 'ลืมผลของกระแสน้ำ' }
+    solution: 'กำหนดทิศตามแม่น้ำให้ไปข้างหน้าเป็นบวก ได้ $v = -4 + 2 = -2\,\mathrm{m/s}$ ขนาด $2\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p017
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 4
+    type: mcq
+    stem: 'เมื่อกรอบอ้างอิงสองกรอบเคลื่อนที่ด้วยความเร็วคงตัวเทียบกัน ความเร่งของวัตถุที่วัดในแต่ละกรอบเป็นอย่างไร'
+    choices:
+      - { id: a, text: 'เท่ากันในทุกกรอบ', correct: true }
+      - { id: b, text: 'ต่างกันเสมอ เพราะความเร็วของกรอบต่างกัน', feedback: 'ความเร็วคงตัวของกรอบไม่เปลี่ยนความเร่งของวัตถุ' }
+      - { id: c, text: 'เท่ากันเฉพาะเมื่อความเร็วสัมพัทธ์เป็นศูนย์', feedback: 'แม้ความเร็วสัมพัทธ์ไม่เป็นศูนย์ ความเร่งก็เท่ากันในทุกกรอบที่เคลื่อนที่ด้วยความเร็วคงตัวเทียบกัน' }
+      - { id: d, text: 'ขึ้นกับทิศการเคลื่อนที่ของกรอบ', feedback: 'ทิศไม่มีผลต่อความเร่งเมื่อกรอบเคลื่อนที่ด้วยความเร็วคงตัว' }
+    hints:
+      - ความเร่งคืออัตราการเปลี่ยนความเร็ว
+      - ถ้าความเร็วของกรอบคงตัว ความเร็วที่เพิ่มเข้ามาจะคงที่เท่ากันทุกกรอบ
+    solution: 'เมื่อความเร็วสัมพัทธ์ของสองกรอบคงที่ การเปลี่ยนแปลงความเร็วของวัตถุจะเท่ากันในทั้งสองกรอบ จึงได้ความเร่งเท่ากัน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p018
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 5
+    type: numeric
+    stem: 'แม่น้ำกว้าง $300\,\mathrm{m}$ เรือแล่นด้วยอัตราเร็ว $5\,\mathrm{m/s}$ เทียบกับน้ำ กระแสน้ำไหลขนานกับฝั่งด้วย $3\,\mathrm{m/s}$ หากต้องการให้เรือไปถึงจุดตรงข้ามพอดี ใช้เวลาข้ามกี่วินาที'
+    answer: { value: 75, tolerance: 0.5, unit: s }
+    hints:
+      - ต้องหาก่อนว่าหัวเรือต้องทำมุมเท่าไร โดยองค์ประกอบทวนน้ำเท่ากับกระแสน้ำ
+      - ความเร็วข้ามฝั่งคือ $5\cos\theta$ แล้วจึงหาเวลา
+    misconceptions:
+      - { match: 60, feedback: 'หันหัวเรือตั้งฉากทำให้เวลาน้อยที่สุดแต่เรือจะถูกพัดไปไม่ถึงจุดตรงข้าม' }
+      - { match: 100, feedback: 'ใช้องค์ประกอบทวนน้ำแทนองค์ประกอบข้ามฝั่งในการหาเวลา' }
+    solution: '$\sin\theta = \frac{3}{5}$ จึงได้ $\cos\theta = 0.8$ ความเร็วข้ามฝั่ง $= 5 \times 0.8 = 4\,\mathrm{m/s}$ และ $t = \frac{300}{4} = 75\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p019
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 5
+    type: numeric
+    stem: 'เรือแล่นด้วยอัตราเร็ว $5\,\mathrm{m/s}$ เทียบกับน้ำ ทิศของเรือตั้งฉากกับทิศของกระแสน้ำที่มีขนาด $3\,\mathrm{m/s}$ ความเร็วของเรือเทียบกับฝั่งมีขนาดกี่ $\mathrm{m/s}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 5.83, tolerance: 0.02, unit: m/s }
+    hints:
+      - เมื่อสองความเร็วตั้งฉากกัน ขนาดของผลรวมหาได้จากทฤษฎีบทพีทาโกรัส
+      - ขนาดของผลรวมไม่เท่ากับผลบวกของขนาดทั้งสอง
+    misconceptions:
+      - { match: 8, feedback: 'บวกขนาดของความเร็วทั้งสองตรง ๆ ทั้งที่ทิศตั้งฉากกัน' }
+      - { match: 2, feedback: 'ลบขนาดของความเร็วทั้งสองทั้งที่ทิศตั้งฉากกัน' }
+    solution: '$|v| = \sqrt{5^2 + 3^2} = \sqrt{34} \approx 5.83\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.kinematics.relative-velocity.p020
+    topics: [physics.kinematics.relative-velocity]
+    difficulty: 2
+    type: mcq
+    stem: 'ผู้โดยสารในรถไฟที่วิ่งด้วยความเร็วคงที่ $60\,\mathrm{km/h}$ โยนลูกบอลขึ้นตรง ๆ ในรถ เมื่อมองจากผู้โดยสาร ลูกบอลจะตกลงที่ใด'
+    choices:
+      - { id: a, text: 'ตกลงที่มือเดิมของผู้โยน', correct: true }
+      - { id: b, text: 'ตกลงทางด้านหลังของรถ', feedback: 'ลูกบอลมีความเร็วแนวนอนเท่ากับรถตั้งแต่ก่อนโยน จึงไม่ถูกทิ้งไว้ข้างหลัง' }
+      - { id: c, text: 'ตกลงทางด้านหน้าของรถ', feedback: 'ลูกบอลไม่ได้รับแรงแนวนอนเพิ่มหลังโยน จึงไม่ถูกผลักไปข้างหน้า' }
+      - { id: d, text: 'ลอยค้างอยู่กลางอากาศ', feedback: 'แรงโน้มถ่วงดึงลูกบอลลงเสมอ' }
+    hints:
+      - ก่อนโยน ลูกบอลมีความเร็วเท่ากับรถไฟอยู่แล้ว
+      - ไม่มีแรงแนวนอนที่ทำให้ความเร็วแนวนอนของลูกบอลเปลี่ยน
+    solution: 'ลูกบอลมีความเร็วแนวนอนเท่ากับรถ เมื่อโยนขึ้นความเร็วแนวนอนนี้ยังคงเดิม การเคลื่อนที่ในแนวดิ่งทำให้ลูกบอลตกกลับมือเดิม'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

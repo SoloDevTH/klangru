@@ -1,0 +1,334 @@
+problems:
+  - id: physics.dynamics.drag-force.p001
+    topics: [physics.dynamics.drag-force]
+    difficulty: 1
+    type: mcq
+    stem: 'แรงต้านของของไหลที่กระทำต่อวัตถุที่กำลังเคลื่อนที่ มีทิศทางอย่างไรเมื่อเทียบกับความเร็วของวัตถุ'
+    choices:
+      - { id: a, text: ทิศเดียวกับความเร็ว, feedback: 'แรงต้านต้องคอยขัดขวางการเคลื่อนที่ จึงไม่ได้ช่วยเร่ง' }
+      - { id: b, text: ทิศตรงข้ามกับความเร็ว, correct: true }
+      - { id: c, text: ตั้งฉากกับความเร็วเสมอ, feedback: 'แรงต้านไม่ได้ตั้งฉากกับความเร็ว แต่ขนานและสวนทางกับความเร็ว' }
+      - { id: d, text: ทิศเดียวกับน้ำหนักเสมอ, feedback: 'ทิศของแรงต้านขึ้นกับทิศของความเร็ว ไม่ได้ขึ้นกับน้ำหนักเสมอไป' }
+    hints:
+      - ลองนึกถึงการปั่นจักรยานทวนลม ลมดึงเราไปทางใด
+      - แรงต้านทำหน้าที่ลดการเคลื่อนที่ ไม่ใช่เพิ่ม
+    solution: 'แรงต้านมีทิศตรงข้ามกับความเร็วสัมพัทธ์ระหว่างวัตถุกับของไหลเสมอ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p002
+    topics: [physics.dynamics.drag-force]
+    difficulty: 1
+    type: numeric
+    stem: 'วัตถุหนึ่งเคลื่อนที่ด้วยความเร็ว $10\,\mathrm{m/s}$ ในอากาศ มี $C = 0.8$ ความหนาแน่นอากาศ $\rho = 1.2\,\mathrm{kg/m^3}$ และพื้นที่หน้าตัด $0.7\,\mathrm{m^2}$ แรงต้านอากาศมีขนาดกี่นิวตัน'
+    answer: { value: 33.6, tolerance: 0.05, unit: N }
+    hints:
+      - ใช้สูตร $F_D = \frac{1}{2} C \rho A v^2$
+      - อย่าลืมยกกำลังสองของความเร็ว
+    misconceptions:
+      - { match: 3.36, feedback: 'ใช้ $v$ แทน $v^2$ ทำให้ได้ค่าน้อยเกินไปสิบเท่า' }
+      - { match: 67.2, feedback: 'ลืมครึ่งหนึ่งในสูตร ทำให้ค่าสูงเกินจริงเป็นสองเท่า' }
+    solution: '$F_D = \frac{1}{2} \times 0.8 \times 1.2 \times 0.7 \times 10^2 = 33.6\,\mathrm{N}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p003
+    topics: [physics.dynamics.drag-force]
+    difficulty: 1
+    type: text
+    stem: 'ความเร็วคงตัวที่วัตถุที่ตกในของไหลจะถึงได้ เมื่อแรงต้านเท่ากับน้ำหนัก เรียกว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)'
+    accepted: [ความเร็วปลาย, terminal speed, terminal velocity]
+    hints:
+      - คำนี้มีคำว่า "ปลาย" ซึ่งหมายถึงจุดสิ้นสุดของการเร่ง
+      - ตอบเป็นภาษาไทยหรืออังกฤษก็ได้
+    misconceptions:
+      - { match: ความเร่ง, feedback: 'ความเร่งเป็นศูนย์เมื่อถึงความเร็วปลาย จึงไม่ใช่ชื่อของปริมาณนี้' }
+    solution: 'เรียกว่า ความเร็วปลาย (terminal speed) ซึ่งเกิดเมื่อแรงลัพธ์เป็นศูนย์'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p004
+    topics: [physics.dynamics.drag-force]
+    difficulty: 2
+    type: numeric
+    stem: 'นักดิ่งพสุธาที่กางร่มมีมวลรวม $80\,\mathrm{kg}$ ร่มมีพื้นที่ $35\,\mathrm{m^2}$ และ $C = 1.3$ ความหนาแน่นอากาศ $\rho = 1.2\,\mathrm{kg/m^3}$ ความเร็วปลายขณะกางร่มเป็นกี่ $\mathrm{m/s}$ (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 5.4, tolerance: 0.1, unit: m/s }
+    hints:
+      - ที่ความเร็วปลาย แรงต้านเท่ากับน้ำหนัก $mg$
+      - แก้สมการหา $v_t$ โดยถอดรากที่สองตอนท้าย
+    misconceptions:
+      - { match: 3.8, feedback: 'ลืมตัวประกอบ $\frac{1}{2}$ ในสูตรแรงต้าน ทำให้ได้ค่าน้อยเกินจริง' }
+    solution: '$v_t = \sqrt{\frac{2mg}{C\rho A}} = \sqrt{\frac{2 \times 80 \times 9.8}{1.3 \times 1.2 \times 35}} \approx 5.4\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p005
+    topics: [physics.dynamics.drag-force]
+    difficulty: 2
+    type: numeric
+    stem: 'นักดิ่งพสุธาท่าคว่ำก่อนกางร่มมีมวลรวม $80\,\mathrm{kg}$ มี $C = 0.8$ พื้นที่หน้าตัด $0.7\,\mathrm{m^2}$ และ $\rho = 1.2\,\mathrm{kg/m^3}$ ความเร็วปลายมีค่ากี่ $\mathrm{m/s}$ (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 48.3, tolerance: 0.2, unit: m/s }
+    hints:
+      - เขียนสมการสมดุลระหว่างแรงต้านกับน้ำหนัก
+      - ค่าที่ได้จากการแก้สมการเป็น $v_t^2$ ก่อนถอดราก
+    misconceptions:
+      - { match: 2333.3, feedback: 'ลืมถอดรากที่สองของ $v_t^2$ ทำให้ได้ค่าเป็นกำลังสองของความเร็ว' }
+    solution: '$v_t = \sqrt{\frac{2 \times 80 \times 9.8}{0.8 \times 1.2 \times 0.7}} \approx 48.3\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p006
+    topics: [physics.dynamics.drag-force]
+    difficulty: 2
+    type: mcq
+    stem: 'เมื่อนักดิ่งกางร่ม ความเร็วปลายลดลงอย่างมาก เพราะเหตุใด'
+    choices:
+      - { id: a, text: แรงโน้มถ่วงลดลงมาก, feedback: 'ค่า $g$ เปลี่ยนไปน้อยมากในระยะที่นักดิ่งตก' }
+      - { id: b, text: 'พื้นที่หน้าตัดและค่า $C$ เพิ่มขึ้น ทำให้แรงต้านมากขึ้นที่ความเร็วเดิม', correct: true }
+      - { id: c, text: มวลของนักดิ่งลดลงเมื่อกางร่ม, feedback: 'มวลรวมของนักดิ่งกับร่มไม่ได้ลดลงเมื่อกางร่ม' }
+      - { id: d, text: อากาศหนาแน่นขึ้นมากใต้ร่ม, feedback: 'ความหนาแน่นอากาศแทบไม่เปลี่ยนในระยะนี้ ปัจจัยหลักคือพื้นที่และ $C$' }
+    hints:
+      - ดูสูตรความเร็วปลายแล้วถามว่าปัจจัยใดอยู่ในตัวส่วน
+      - ร่มทำให้ตัวนักดิ่งกางออกเป็นวงกว้าง
+    solution: 'จากสูตร $v_t \propto \sqrt{1/(CA)}$ เมื่อ $C$ และ $A$ เพิ่มขึ้น ความเร็วปลายจึงลดลง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p007
+    topics: [physics.dynamics.drag-force]
+    difficulty: 2
+    type: numeric
+    stem: 'รถยนต์มี $C = 0.3$ พื้นที่หน้าตัด $2.2\,\mathrm{m^2}$ วิ่งด้วยอัตราเร็ว $25\,\mathrm{m/s}$ ในอากาศที่ $\rho = 1.2\,\mathrm{kg/m^3}$ กำลังที่ใช้ฝ่าแรงต้านอากาศเป็นกี่กิโลวัตต์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 6.2, tolerance: 0.05, unit: kW }
+    hints:
+      - กำลังเท่ากับแรงต้านคูณความเร็ว
+      - แรงต้านเป็นกำลังสองของความเร็ว ดังนั้นกำลังเป็นกำลังสามของความเร็ว
+    misconceptions:
+      - { match: 0.2475, feedback: 'ค่านี้เป็นแรงต้านเป็นกิโลนิวตัน ยังไม่ได้คูณด้วยความเร็วเพื่อได้กำลังเป็นกิโลวัตต์' }
+    solution: '$P = \frac{1}{2} C \rho A v^3 = 0.5 \times 0.3 \times 1.2 \times 2.2 \times 25^3 = 6187.5\,\mathrm{W} \approx 6.2\,\mathrm{kW}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p008
+    topics: [physics.dynamics.drag-force]
+    difficulty: 2
+    type: numeric
+    stem: 'ถ้ารถในโจทย์ก่อนหน้าเพิ่มความเร็วเป็นสองเท่า กำลังที่ใช้ฝ่าแรงต้านอากาศจะเพิ่มขึ้นกี่เท่า'
+    answer: { value: 8, tolerance: 0.01, unit: เท่า }
+    hints:
+      - ใช้สูตร $P \propto v^3$
+      - ถ้า $v' = 2v$ ให้คำนวณ $(v'/v)^3$
+    misconceptions:
+      - { match: 2, feedback: 'คิดว่ากำลังแปรตามความเร็วเชิงเส้น ทั้งที่แปรตามกำลังสาม' }
+      - { match: 4, feedback: 'คิดว่ากำลังแปรตามความเร็วยกกำลังสอง ทั้งที่แปรตามกำลังสาม' }
+    solution: '$\frac{P_2}{P_1} = \left(\frac{2v}{v}\right)^3 = 2^3 = 8$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p009
+    topics: [physics.dynamics.drag-force]
+    difficulty: 3
+    type: numeric
+    stem: 'รถยนต์คันเดิมในโจทย์ก่อนหน้า เปลี่ยนความเร็วจาก $90\,\mathrm{km/h}$ เป็น $120\,\mathrm{km/h}$ กำลังที่ใช้ฝ่าแรงต้านอากาศเพิ่มขึ้นกี่เท่า (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 2.37, tolerance: 0.01, unit: เท่า }
+    hints:
+      - อัตราส่วนของความเร็วคือ $120/90$
+      - กำลังแปรตามความเร็วยกกำลังสาม
+    misconceptions:
+      - { match: 1.33, feedback: 'ใช้อัตราส่วนของความเร็วโดยตรง ไม่ได้ยกกำลังสาม' }
+      - { match: 1.78, feedback: 'ยกกำลังสองแทนยกกำลังสาม' }
+    solution: '$\frac{P_2}{P_1} = \left(\frac{120}{90}\right)^3 = 2.370$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p010
+    topics: [physics.dynamics.drag-force]
+    difficulty: 3
+    type: numeric
+    stem: 'ลูกบอลโลหะรัศมี $2\,\mathrm{mm}$ เคลื่อนที่ช้า ๆ ในของเหลวที่มีความหนืด $\eta = 0.8\,\mathrm{Pa \cdot s}$ ที่ความเร็ว $0.01\,\mathrm{m/s}$ แรงต้านเชิงเส้น $F = 6\pi\eta r v$ มีขนาดกี่มิลลินิวตัน (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 0.30, tolerance: 0.01, unit: mN }
+    hints:
+      - แปลงรัศมีเป็นเมตรก่อนแทนค่า
+      - คำนวณ $6\pi \eta r v$ ได้หน่วยนิวตัน แล้วจึงแปลงเป็นมิลลินิวตัน
+    misconceptions:
+      - { match: 0.05, feedback: 'ใช้ $\pi$ แทน $6\pi$ ทำให้ค่าน้อยเกินไปหกเท่า' }
+      - { match: 0.15, feedback: 'ใช้ $3\pi$ แทน $6\pi$ ทำให้ค่าน้อยเกินไปสองเท่า' }
+    solution: '$F = 6\pi \times 0.8 \times 2 \times 10^{-3} \times 0.01 \approx 3.02 \times 10^{-4}\,\mathrm{N} = 0.30\,\mathrm{mN}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p011
+    topics: [physics.dynamics.drag-force]
+    difficulty: 3
+    type: numeric
+    stem: 'วัตถุที่มีแรงต้านเชิงเส้น มีความเร็วปลาย $10\,\mathrm{m/s}$ และค่าคงที่เวลา $\tau = 2.0\,\mathrm{s}$ ถ้าปล่อยจากหยุดนิ่ง ความเร็วที่เวลา $4.0\,\mathrm{s}$ เป็นกี่ $\mathrm{m/s}$ (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 8.65, tolerance: 0.02, unit: m/s }
+    hints:
+      - ใช้สูตร $v(t) = v_t(1 - e^{-t/\tau})$
+      - คำนวณ $t/\tau$ ก่อนแล้วจึงหาค่า $e^{-t/\tau}$
+    misconceptions:
+      - { match: 6.32, feedback: 'ค่านี้คือความเร็วที่เวลา $\tau$ ไม่ใช่ที่เวลา $4.0\,\mathrm{s}$' }
+    solution: '$v(4) = 10(1 - e^{-4/2}) = 10(1 - e^{-2}) \approx 8.65\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p012
+    topics: [physics.dynamics.drag-force]
+    difficulty: 3
+    type: numeric
+    stem: 'วัตถุมวล $0.50\,\mathrm{kg}$ อยู่ในของเหลวที่มีแรงต้านเชิงเส้น $F = bv$ โดย $b = 0.25\,\mathrm{N \cdot s/m}$ ค่าคงที่เวลา $\tau = m/b$ มีค่ากี่วินาที'
+    answer: { value: 2.0, tolerance: 0.01, unit: s }
+    hints:
+      - ค่าคงที่เวลาคือมวลหารด้วยค่าสัมประสิทธิ์แรงต้านเชิงเส้น
+      - ตรวจว่ามวลกับ $b$ อยู่ตำแหน่งถูกในเศษและส่วน
+    misconceptions:
+      - { match: 0.5, feedback: 'สลับตำแหน่งมวลกับ $b$ ทำให้ได้ $b/m$ แทน $m/b$' }
+    solution: '$\tau = \frac{m}{b} = \frac{0.50}{0.25} = 2.0\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p013
+    topics: [physics.dynamics.drag-force]
+    difficulty: 3
+    type: numeric
+    stem: 'นักดิ่งพสุธาท่าคว่ำมีความเร็วปลาย $48.3\,\mathrm{m/s}$ (แรงต้านกำลังสอง) เมื่อความเร็วของนักดิ่งเท่ากับ $20\,\mathrm{m/s}$ ความเร่งของนักดิ่งมีขนาดกี่ $\mathrm{m/s^2}$ (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 8.12, tolerance: 0.02, unit: m/s² }
+    hints:
+      - แรงลัพธ์เท่ากับน้ำหนักลบแรงต้าน แล้วหารด้วยมวล
+      - ความเร่งเขียนได้เป็น $g(1 - (v/v_t)^2)$
+    misconceptions:
+      - { match: 9.8, feedback: 'ไม่ได้คิดแรงต้านเลย ความเร่งจึงเท่ากับ $g$' }
+      - { match: 1.68, feedback: 'ได้ $g(v/v_t)^2$ ลืมลบ 1 ออกจากวงเล็บ' }
+    solution: '$a = g\left(1 - \left(\frac{v}{v_t}\right)^2\right) = 9.8 \times \left(1 - \left(\frac{20}{48.3}\right)^2\right) \approx 8.12\,\mathrm{m/s^2}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p014
+    topics: [physics.dynamics.drag-force]
+    difficulty: 4
+    type: numeric
+    stem: 'วัตถุที่มีแรงต้านเชิงเส้นและค่าคงที่เวลา $\tau = 2.0\,\mathrm{s}$ ปล่อยจากหยุดนิ่ง ต้องใช้เวลากี่วินาทีจึงมีความเร็วถึง 95% ของความเร็วปลาย (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 6.0, tolerance: 0.05, unit: s }
+    hints:
+      - ตั้งสมการ $1 - e^{-t/\tau} = 0.95$
+      - จัดรูปจะได้ $t = \tau \ln 20$
+    misconceptions:
+      - { match: 2.0, feedback: 'ที่ $t = \tau$ ความเร็วได้เพียงประมาณ 63% ของความเร็วปลายเท่านั้น' }
+    solution: '$e^{-t/\tau} = 0.05$ จึงได้ $t = \tau \ln 20 = 2.0 \times 2.996 \approx 6.0\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p015
+    topics: [physics.dynamics.drag-force]
+    difficulty: 4
+    type: expression
+    stem: 'จากสมการ $m\frac{dv}{dt} = mg - bv$ เมื่อวัตถุถึงความเร็วปลาย ($\frac{dv}{dt} = 0$) จงเขียนนิพจน์ของความเร็วปลาย $v_t$ ในรูปของ $m$, $g$ และ $b$'
+    prefix: 'v_t ='
+    answer: { latex: '\frac{mg}{b}', variables: [m, g, b] }
+    hints:
+      - เมื่อ $\frac{dv}{dt} = 0$ ด้านขวาของสมการต้องเป็นศูนย์
+      - ย้ายข้างเพื่อหาค่า $v$ ที่ทำให้ $bv = mg$
+    misconceptions:
+      - { match: 'bg/m', feedback: 'สลับมวลกับค่าสัมประสิทธิ์แรงต้าน ทำให้หน่วยไม่สอดคล้องกัน' }
+    solution: '$bv_t = mg$ จึงได้ $v_t = \frac{mg}{b}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p016
+    topics: [physics.dynamics.drag-force]
+    difficulty: 4
+    type: mcq
+    stem: 'สำหรับแรงต้านเชิงเส้น ความเร็วปลายขึ้นกับปัจจัยใดบ้าง'
+    choices:
+      - { id: a, text: ความเร็วเริ่มต้นที่ปล่อยวัตถุ, feedback: 'ความเร็วเริ่มต้นมีผลต่อวิธีที่ความเร็วเข้าใกล้ความเร็วปลาย แต่ไม่มีผลต่อค่าความเร็วปลาย' }
+      - { id: b, text: 'มวล แรงโน้มถ่วง และค่าสัมประสิทธิ์แรงต้านเชิงเส้น', correct: true }
+      - { id: c, text: เวลาที่วัตถุตกไปแล้ว, feedback: 'เวลาเป็นตัวแปรของการเปลี่ยนแปลงความเร็ว ไม่ได้กำหนดค่าความเร็วปลาย' }
+      - { id: d, text: รูปร่างของวัตถุเพียงอย่างเดียว, feedback: 'รูปร่างมีผลผ่านค่า $b$ แต่ความเร็วปลายยังขึ้นกับมวลและ $g$ ด้วย' }
+    hints:
+      - ดูสูตร $v_t = mg/b$
+      - ค่าความเร็วเริ่มต้นหายไปจากสมการความเร็วปลาย
+    solution: 'จาก $v_t = \frac{mg}{b}$ ความเร็วปลายขึ้นกับมวล $g$ และ $b$ ไม่ขึ้นกับความเร็วเริ่มต้นหรือเวลา'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p017
+    topics: [physics.dynamics.drag-force]
+    difficulty: 4
+    type: numeric
+    stem: 'ลูกเหล็กรัศมี $1.0\,\mathrm{mm}$ ความหนาแน่น $7800\,\mathrm{kg/m^3}$ ตกในกลีเซอรีนที่ความหนาแน่น $1260\,\mathrm{kg/m^3}$ และความหนืด $1.41\,\mathrm{Pa \cdot s}$ ใช้สูตรของสโตกส์ $v_t = \frac{2r^2(\rho_s - \rho_f)g}{9\eta}$ ความเร็วปลายมีค่ากี่เซนติเมตรต่อวินาที (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.01, tolerance: 0.02, unit: cm/s }
+    hints:
+      - แปลงรัศมีเป็นเมตรก่อนแทนค่า
+      - ผลต่างของความหนาแน่นคือ $\rho_s - \rho_f$
+    misconceptions:
+      - { match: 4.55, feedback: 'ใช้ 2 แทน 9 ในตัวส่วนของสูตรสโตกส์' }
+      - { match: 0.0101, feedback: 'ได้ค่าเป็นเมตรต่อวินาที ต้องแปลงเป็นเซนติเมตรต่อวินาที' }
+    solution: '$v_t = \frac{2 \times (10^{-3})^2 \times (7800 - 1260) \times 9.8}{9 \times 1.41} \approx 0.0101\,\mathrm{m/s} = 1.01\,\mathrm{cm/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p018
+    topics: [physics.dynamics.drag-force]
+    difficulty: 5
+    type: numeric
+    stem: 'นักดิ่งพสุธามวลรวม $80\,\mathrm{kg}$ กางร่มพื้นที่ $35\,\mathrm{m^2}$ ในอากาศ $\rho = 1.2\,\mathrm{kg/m^3}$ ต้องการให้ความเร็วปลายเป็น $5.0\,\mathrm{m/s}$ ค่าสัมประสิทธิ์แรงต้าน $C$ ของร่มควรเป็นเท่าใด (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.49, tolerance: 0.01, unit: '' }
+    hints:
+      - จากสูตรความเร็วปลาย ให้แก้หา $C$ โดยจัดรูปใหม่
+      - ยกกำลังสองของความเร็วปลายอยู่ในตัวส่วน
+    misconceptions:
+      - { match: 0.75, feedback: 'ลืมตัวประกอบ 2 ในตัวเศษของ $C = 2mg/(\rho A v_t^2)$' }
+    solution: '$C = \frac{2mg}{\rho A v_t^2} = \frac{2 \times 80 \times 9.8}{1.2 \times 35 \times 5.0^2} \approx 1.49$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p019
+    topics: [physics.dynamics.drag-force]
+    difficulty: 4
+    type: code
+    stem: 'วัตถุมวล $m$ ตกจากหยุดนิ่งในของไหลที่มีแรงต้านเชิงเส้น $F = bv$ (ทิศลงเป็นบวก) เขียนฟังก์ชัน `fall_speed(t_end, m, b)` ที่คืนค่าความเร็วหลังตกไป `t_end` วินาที ให้ใช้ $g = 9.8$ และคำนวณโดยแบ่งเวลาเป็นช่วงสั้น ๆ ช่วงละ 0.001 วินาที'
+    starter: |
+      def fall_speed(t_end, m, b):
+          pass
+    tests: |
+      import math
+      v = fall_speed(1.0, 2.0, 4.0)
+      assert v is not None, "ฟังก์ชันต้องคืนค่าความเร็วด้วย return"
+      vt = 2.0 * 9.8 / 4.0
+      exact = vt * (1 - math.exp(-1.0 / (2.0 / 4.0)))
+      assert abs(v - exact) < 0.05, f"fall_speed(1.0, 2.0, 4.0) ควรได้ประมาณ {exact:.2f} m/s แต่ได้ {v:.2f} m/s"
+      w = fall_speed(0.0, 2.0, 4.0)
+      assert abs(w) < 1e-9, f"ที่ t = 0 วัตถุยังไม่มีความเร็ว แต่ได้ {w}"
+    reference: |
+      def fall_speed(t_end, m, b):
+          g = 9.8
+          dt = 0.001
+          v = 0.0
+          steps = round(t_end / dt)
+          for _ in range(steps):
+              a = g - (b / m) * v
+              v = v + a * dt
+          return v
+    hints:
+      - ความเร็วหลังช่วงเวลาหนึ่งเท่ากับความเร็วเดิมบวกความเร่งคูณขนาดช่วงเวลานั้น
+      - ความเร่งในทุกช่วงเวลาสั้น ๆ เท่ากับ $g - (b/m) v$
+    solution: 'ทำซ้ำการคำนวณทีละช่วงเวลา $\Delta t = 0.001\,\mathrm{s}$ โดยให้ $v \leftarrow v + (g - (b/m)v)\Delta t$ ผลลัพธ์ใกล้กับคำตอบเชิงวิเคราะห์ $v_t(1 - e^{-t/\tau})$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.dynamics.drag-force.p020
+    topics: [physics.dynamics.drag-force]
+    difficulty: 2
+    type: mcq
+    stem: 'เหตุใดนักดิ่งพสุธาจึงมักแผ่แขนขาออกในช่วงแรกของการตกก่อนกางร่ม'
+    choices:
+      - { id: a, text: 'พื้นที่หน้าตัดที่หันเข้าหาการเคลื่อนที่มากขึ้น ทำให้แรงต้านมากขึ้นและความเร็วปลายต่ำลง', correct: true }
+      - { id: b, text: 'แรงโน้มถ่วงที่กระทำต่อนักดิ่งมากขึ้น', feedback: 'ท่าทางไม่เปลี่ยนน้ำหนักของนักดิ่ง จึงไม่เพิ่มแรงโน้มถ่วง' }
+      - { id: c, text: 'ลดแรงต้านอากาศเพื่อให้ตกเร็วขึ้น', feedback: 'การแผ่แขนขาเพิ่มแรงต้าน ไม่ได้ลดแรงต้าน' }
+      - { id: d, text: 'เพิ่มมวลของนักดิ่งให้มากขึ้น', feedback: 'ท่าทางไม่ได้เปลี่ยนมวล' }
+    hints:
+      - ดูสูตรความเร็วปลาย $v_t \propto 1/\sqrt{CA}$
+      - ท่าทางที่แผ่ออกทำให้พื้นที่หน้าตัดที่อากาศกระทบมากขึ้น
+    solution: 'เมื่อพื้นที่หน้าตัด $A$ เพิ่มขึ้น แรงต้านที่ความเร็วเดิมจะมากขึ้น ความเร็วปลายจึงลดลง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

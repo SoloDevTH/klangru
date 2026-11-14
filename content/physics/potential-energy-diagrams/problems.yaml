@@ -1,0 +1,322 @@
+problems:
+  - id: physics.energy.potential-energy-diagrams.p001
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 1
+    type: mcq
+    stem: 'ข้อใดเป็นลักษณะของแรงอนุรักษ์'
+    choices:
+      - { id: a, text: งานที่แรงทำขึ้นกับเส้นทางที่วัตถุเคลื่อนที่, feedback: 'นั่นคือลักษณะของแรงไม่อนุรักษ์ เช่น แรงเสียดทาน' }
+      - { id: b, text: งานที่แรงทำในวงปิดเป็นศูนย์เสมอ, correct: true }
+      - { id: c, text: แรงนั้นทำให้เกิดความร้อนทุกครั้ง, feedback: 'ความร้อนเกิดจากแรงไม่อนุรักษ์ ไม่ใช่ลักษณะของแรงอนุรักษ์' }
+      - { id: d, text: แรงนั้นเปลี่ยนพลังงานกลเป็นพลังงานอื่นเสมอ, feedback: 'แรงอนุรักษ์ไม่ได้ทำให้พลังงานกลหายไป แต่เก็บไว้ในรูปพลังงานศักย์' }
+    hints:
+      - ถามว่าถ้าวัตถุเคลื่อนที่ไปแล้วกลับมาที่เดิม งานรวมจะเป็นอย่างไร
+      - ลองนึกถึงแรงโน้มถ่วงที่ยกวัตถุขึ้นแล้วปล่อยกลับลง
+    solution: 'แรงอนุรักษ์ทำงานรอบวงปิดเป็นศูนย์ เช่น แรงโน้มถ่วงและแรงสปริง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p002
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 1
+    type: text
+    stem: 'แรงที่งานไม่ขึ้นกับเส้นทางและงานรอบวงปิดเป็นศูนย์ เรียกว่าแรงอะไร (ตอบเป็นภาษาไทยหรือภาษาอังกฤษ)'
+    accepted: [แรงอนุรักษ์, conservative force]
+    hints:
+      - คำนี้มีคำว่า "อนุรักษ์" ซึ่งหมายถึงการคงไว้ของพลังงาน
+      - ตอบเป็นภาษาไทยหรืออังกฤษก็ได้
+    misconceptions:
+      - { match: แรงเสียดทาน, feedback: แรงเสียดทานเป็นแรงไม่อนุรักษ์ งานของมันขึ้นกับเส้นทาง }
+    solution: 'เรียกว่า แรงอนุรักษ์ (conservative force) เช่น แรงโน้มถ่วงและแรงสปริง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p003
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 1
+    type: numeric
+    stem: 'ยกมวล $2.0\,\mathrm{kg}$ ขึ้นในแนวดิ่งสูง $3.0\,\mathrm{m}$ การเปลี่ยนแปลงพลังงานศักย์โน้มถ่วงของมวลนี้เป็นกี่จูล (ใช้ $g = 9.8\,\mathrm{m/s^2}$)'
+    answer: { value: 58.8, tolerance: 0.1, unit: J }
+    hints:
+      - พลังงานศักย์โน้มถ่วงเท่ากับมวลคูณความเร่งโน้มถ่วงคูณความสูง
+      - ใช้ผลต่างของความสูง
+    misconceptions:
+      - { match: 6.0, feedback: 'ลืมความเร่งโน้มถ่วง $g$ ในสูตร' }
+      - { match: 117.6, feedback: 'คูณผิดเป็นสองเท่า ทั้งที่สูตรไม่มีตัวประกอบสอง' }
+    solution: '$\Delta U = mgh = 2.0 \times 9.8 \times 3.0 = 58.8\,\mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p004
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 2
+    type: expression
+    stem: 'ถ้าพลังงานศักย์ของสปริงเป็น $U(x) = \frac{1}{2}kx^2$ จงเขียนแรง $F$ ที่ตำแหน่ง $x$ ในรูปของ $k$ และ $x$'
+    prefix: 'F ='
+    answer: { latex: '-kx', variables: [k, x] }
+    hints:
+      - ใช้ $F = -\frac{dU}{dx}$ และหาอนุพันธ์ของ $\frac{1}{2}kx^2$
+      - อย่าลืมเครื่องหมายลบ แรงของสปริงชี้เข้าหาจุดสมดุล
+    misconceptions:
+      - { match: 'kx', feedback: 'ลืมเครื่องหมายลบ แรงของสปริงชี้เข้าหาจุดสมดุลเสมอ' }
+      - { match: 'k x^2 / 2', feedback: 'ค่านี้คือ $U$ ซึ่งเป็นพลังงาน ไม่ใช่แรง ต้องหาอนุพันธ์ก่อน' }
+    solution: '$F = -\frac{d}{dx}\left(\frac{1}{2}kx^2\right) = -kx$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p005
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 2
+    type: numeric
+    stem: 'วัตถุอยู่ในพลังงานศักย์ $U(x) = \frac{1}{2}(40)x^2$ (หน่วย J โดย $x$ เป็น m) มีพลังงานรวม $0.2\,\mathrm{J}$ ตำแหน่งที่วัตถุวกกลับอยู่ห่างจากจุดศูนย์กี่เมตร (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 0.10, tolerance: 0.005, unit: m }
+    hints:
+      - ที่จุดวกกลับ พลังงานรวมเท่ากับพลังงานศักย์
+      - แก้สมการ $E = \frac{1}{2}(40)x^2$ เพื่อหา $x$
+    misconceptions:
+      - { match: 0.0707, feedback: 'ลืมตัวประกอบ 2 เมื่อย้ายข้างสมการ ได้ $\sqrt{E/k}$ แทน $\sqrt{2E/k}$' }
+      - { match: 0.01, feedback: 'ลืมถอดรากที่สองของค่า $2E/k$' }
+    solution: '$E = \frac{1}{2}(40)x^2$ จึงได้ $x = \sqrt{\frac{2 \times 0.2}{40}} = 0.10\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p006
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 2
+    type: mcq
+    stem: 'จุดสมดุลในกราฟพลังงานศักย์แบบใดที่เป็นสมดุลเสถียร'
+    choices:
+      - { id: a, text: จุดสูงสุดของ $U(x)$, feedback: 'ที่จุดสูงสุด เมื่อถูกรบกวนเล็กน้อย แรงจะผลักวัตถุออกไป' }
+      - { id: b, text: จุดต่ำสุดของ $U(x)$, correct: true }
+      - { id: c, text: จุดที่กราฟราบเรียบและคงที่ทุกช่วง, feedback: 'นั่นคือสมดุลสะเทิน ซึ่งไม่กลับมาที่เดิมหรือออกไปเมื่อถูกรบกวน' }
+      - { id: d, text: จุดที่ $U(x)$ มีค่าเป็นศูนย์, feedback: 'ค่า $U$ เป็นศูนย์ไม่ได้บอกว่าเป็นจุดสมดุล สิ่งที่สำคัญคือความชัน' }
+    hints:
+      - ที่จุดสมดุลความชันเป็นศูนย์
+      - จุดที่แรงดึงกลับเมื่อถูกดันออกไปเล็กน้อย จะอยู่ที่ตำแหน่งใดของกราฟ
+    solution: 'จุดต่ำสุดของ $U$ มีความโค้งเป็นบวก เมื่อถูกรบกวนแรงจะดึงวัตถุกลับเข้าหาจุดนั้น จึงเป็นสมดุลเสถียร'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p007
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 2
+    type: numeric
+    stem: 'กล่องมวล $2.0\,\mathrm{kg}$ เลื่อนบนพื้นระยะทาง $5.0\,\mathrm{m}$ โดยมีแรงเสียดทานจลน์ที่สัมประสิทธิ์ $0.20$ งานของแรงเสียดทานมีขนาดกี่จูล (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 19.6, tolerance: 0.05, unit: J }
+    hints:
+      - แรงเสียดทานจลน์มีขนาด $\mu m g$
+      - งานคือแรงคูณระยะทางที่แรงกระทำในทิศเดียวกับการเคลื่อนที่
+    misconceptions:
+      - { match: 98, feedback: 'ลืมคูณสัมประสิทธิ์แรงเสียดทาน $\mu$' }
+      - { match: 3.92, feedback: 'ได้แรงเสียดทานเป็นนิวตัน ยังไม่ได้คูณด้วยระยะทาง' }
+    solution: '$|W_f| = \mu m g d = 0.20 \times 2.0 \times 9.8 \times 5.0 = 19.6\,\mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p008
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 2
+    type: numeric
+    stem: 'กล่องพัสดุมวล $3.0\,\mathrm{kg}$ ถูกผลักด้วยอัตราเร็ว $6.0\,\mathrm{m/s}$ บนพื้นโกดังในกรุงเทพฯ ที่มีสัมประสิทธิ์แรงเสียดทาน $0.30$ กล่องจะไถลไปได้ไกลกี่เมตรก่อนหยุด (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 6.12, tolerance: 0.02, unit: m }
+    hints:
+      - งานของแรงเสียดทานเท่ากับการเปลี่ยนแปลงพลังงานจลน์
+      - มวลตัดออกได้ เพราะมีทั้งในพลังงานจลน์และในแรงเสียดทาน
+    misconceptions:
+      - { match: 12.24, feedback: 'ลืมหารด้วยสอง ตอนหาค่า $\frac{1}{2}mv^2$' }
+      - { match: 2.04, feedback: 'ใช้ $v/(\mu g)$ แทน $v^2/(2\mu g)$' }
+    solution: '$\mu m g d = \frac{1}{2}mv^2$ จึงได้ $d = \frac{v^2}{2\mu g} = \frac{36}{2 \times 0.30 \times 9.8} \approx 6.12\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p009
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 3
+    type: numeric
+    stem: 'พลังงานศักย์ $U(x) = x^4 - 2x^2$ (หน่วย J โดย $x$ เป็น m) ตำแหน่ง $x > 0$ ที่แรงสุทธิเป็นศูนย์อยู่ที่กี่เมตร (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.00, tolerance: 0.01, unit: m }
+    hints:
+      - แรงเป็นศูนย์เมื่อ $\frac{dU}{dx} = 0$
+      - หาอนุพันธ์ของ $U$ แล้วแยกตัวประกอบ
+    misconceptions:
+      - { match: 0.71, feedback: 'แก้สมการผิดเป็น $4x^3 = 2x$ ทั้งที่อนุพันธ์คือ $4x^3 - 4x = 0$' }
+      - { match: 0, feedback: 'ตำแหน่ง $x = 0$ เป็นจุดสมดุล แต่โจทย์ถามคำตอบที่ $x > 0$' }
+    solution: '$\frac{dU}{dx} = 4x^3 - 4x = 4x(x^2 - 1) = 0$ ได้ $x = 0$ และ $x = \pm 1$ ดังนั้นคำตอบที่ $x > 0$ คือ $x = 1.00\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p010
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 3
+    type: numeric
+    stem: 'วัตถุมวล $0.50\,\mathrm{kg}$ อยู่ที่จุดต่ำสุดเสถียร $x = 1\,\mathrm{m}$ ของ $U(x) = x^4 - 2x^2$ โดยที่ $\frac{d^2U}{dx^2} = 8\,\mathrm{J/m^2}$ ถ้าถูกรบกวนเล็กน้อย คาบการแกว่งเป็นกี่วินาที (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.57, tolerance: 0.01, unit: s }
+    hints:
+      - ใกล้จุดต่ำสุด $U$ ทำตัวเหมือนสปริงที่มีค่าคงตัว $\frac{d^2U}{dx^2}$
+      - ใช้สูตร $T = 2\pi\sqrt{m/(d^2U/dx^2)}$
+    misconceptions:
+      - { match: 25.13, feedback: 'สลับตำแหน่ง $m$ กับ $d^2U/dx^2$ ในรากที่สอง' }
+      - { match: 0.39, feedback: 'ลืมถอดรากที่สองของ $m/(d^2U/dx^2)$' }
+    solution: '$T = 2\pi\sqrt{\frac{0.50}{8}} = 2\pi \times 0.25 \approx 1.57\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p011
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 3
+    type: numeric
+    stem: 'พลังงานศักย์ $U(x) = x^4 - 2x^2$ (หน่วย J โดย $x$ เป็น m) ที่จุดต่ำสุดเสถียร $x = 1\,\mathrm{m}$ มีค่ากี่จูล'
+    answer: { value: -1, tolerance: 0.01, unit: J }
+    hints:
+      - แทนค่า $x = 1$ ลงในสมการของ $U$
+      - ระวังเครื่องหมายของผลลัพธ์
+    misconceptions:
+      - { match: 1, feedback: 'ลืมเครื่องหมายลบ ค่าของ $U(1) = 1 - 2 = -1\,\mathrm{J}$' }
+      - { match: 0, feedback: 'นั่นคือค่า $U$ ที่ $x = 0$ ซึ่งเป็นจุดสูงสุด ไม่ใช่จุดต่ำสุด' }
+    solution: '$U(1) = 1^4 - 2 \times 1^2 = -1\,\mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p012
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 3
+    type: numeric
+    stem: 'ลูกบอลในสนามกีฬาในประเทศไทยมวล $1.0\,\mathrm{kg}$ ตกจากความสูง $5.0\,\mathrm{m}$ ถึงพื้นด้วยอัตราเร็ว $8.0\,\mathrm{m/s}$ เพราะมีแรงต้านอากาศ งานของแรงต้านอากาศมีค่ากี่จูล (ตอบเป็นจำนวนเต็มพร้อมเครื่องหมาย ใช้ $g = 9.8\,\mathrm{m/s^2}$)'
+    answer: { value: -17, tolerance: 0.1, unit: J }
+    hints:
+      - ใช้ $W_{nc} = \Delta K + \Delta U$
+      - เริ่มจากหยุดนิ่ง จึงมี $K_1 = 0$
+    misconceptions:
+      - { match: 17, feedback: 'ลืมเครื่องหมาย งานของแรงต้านอากาศเป็นลบเพราะพลังงานกลลดลง' }
+      - { match: -49, feedback: 'ไม่ได้คิดพลังงานจลน์ที่พื้น ใช้เพียงการเปลี่ยนแปลงพลังงานศักย์' }
+    solution: '$W_{nc} = (\frac{1}{2}(1)(8^2) - 0) + (0 - 1 \times 9.8 \times 5) = 32 - 49 = -17\,\mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p013
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 4
+    type: numeric
+    stem: 'รถไฟเหาะในสวนสนุกแห่งหนึ่งในประเทศไทยมวล $800\,\mathrm{kg}$ ไถลจากจุดสูง $20\,\mathrm{m}$ โดยเริ่มจากหยุดนิ่ง เมื่อถึงจุดต่ำสุดมีอัตราเร็ว $5.0\,\mathrm{m/s}$ พลังงานที่สูญเสียไปเพราะแรงไม่อนุรักษ์เป็นกี่กิโลจูล (ใช้ $g = 9.8\,\mathrm{m/s^2}$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 146.8, tolerance: 0.1, unit: kJ }
+    hints:
+      - พลังงานที่สูญเสียเท่ากับพลังงานศักย์เริ่มต้นลบพลังงานจลน์ที่จุดต่ำสุด
+      - แปลงหน่วยจูลเป็นกิโลจูลก่อนตอบ
+    misconceptions:
+      - { match: 156.8, feedback: 'ไม่ได้หักพลังงานจลน์ที่จุดต่ำสุดออก' }
+    solution: '$E_{loss} = mgh - \frac{1}{2}mv^2 = 156\,800 - 10\,000 = 146\,800\,\mathrm{J} = 146.8\,\mathrm{kJ}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p014
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 4
+    type: numeric
+    stem: 'วัตถุมวล $0.20\,\mathrm{kg}$ อยู่ใกล้จุดสมดุลเสถียรที่มี $\frac{d^2U}{dx^2} = 50\,\mathrm{N/m}$ ถ้าแกว่งด้วยแอมพลิจูดเล็ก คาบการแกว่งเป็นกี่วินาที (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 0.40, tolerance: 0.01, unit: s }
+    hints:
+      - ใช้สูตรคาบเหมือนการแกว่งของสปริง $T = 2\pi\sqrt{m/k}$ โดยให้ $k = \frac{d^2U}{dx^2}$
+      - ลองเทียบค่า $m/k$ ก่อนถอดราก
+    misconceptions:
+      - { match: 99.35, feedback: 'สลับ $m$ กับ $k$ ในรากที่สอง' }
+      - { match: 0.063, feedback: 'ลืมคูณด้วย $2\pi$' }
+    solution: '$T = 2\pi\sqrt{\frac{0.20}{50}} \approx 0.40\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p015
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 4
+    type: mcq
+    stem: 'ที่ตำแหน่งที่กราฟพลังงานศักย์ $U(x)$ มีความชันเป็นบวก แรงที่กระทำต่อวัตถุชี้ไปทางใด'
+    choices:
+      - { id: a, text: ไปทางค่า $x$ ที่ลดลง, correct: true }
+      - { id: b, text: ไปทางค่า $x$ ที่เพิ่มขึ้น, feedback: 'ถ้าชี้ไปทางนั้น $U$ จะต้องลดลงตามทิศของแรง ซึ่งขัดกับความชันบวก' }
+      - { id: c, text: แรงเป็นศูนย์เพราะความชันไม่เท่ากับศูนย์, feedback: 'ความชันที่ไม่เป็นศูนย์แปลว่าแรงไม่เป็นศูนย์' }
+      - { id: d, text: แรงมีค่าเท่ากับค่าของ $U$ ที่ตำแหน่งนั้น, feedback: 'แรงเท่ากับลบอนุพันธ์ของ $U$ ไม่ใช่ค่า $U$ เอง' }
+    hints:
+      - ใช้ $F = -\frac{dU}{dx}$ เมื่อความชันเป็นบวก อนุพันธ์เป็นบวก
+      - แรงจึงมีเครื่องหมายลบ
+    solution: 'เมื่อ $\frac{dU}{dx} > 0$ จะได้ $F < 0$ แรงจึงชี้ไปทางค่า $x$ ที่ลดลง คือจากค่า $U$ สูงไปยังค่า $U$ ต่ำ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p016
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 4
+    type: numeric
+    stem: 'สำหรับ $U(x) = x^4 - 2x^2$ (หน่วย J โดย $x$ เป็น m) ค่าของ $\frac{d^2U}{dx^2}$ ที่ $x = 0$ มีค่าเท่ากับเท่าใด (หน่วย J/m²)'
+    answer: { value: -4, tolerance: 0.01, unit: J/m² }
+    hints:
+      - หาอนุพันธ์อันดับหนึ่งก่อน แล้วหาอนุพันธ์อีกครั้ง
+      - แทนค่า $x = 0$ ลงในอนุพันธ์อันดับสอง
+    misconceptions:
+      - { match: 4, feedback: 'ลืมเครื่องหมายลบ ความโค้งที่จุดสูงสุดเป็นลบ' }
+      - { match: 0, feedback: 'ได้ค่าศูนย์ซึ่งจะเกิดขึ้นเมื่อความโค้งเป็นศูนย์เท่านั้น อนุพันธ์อันดับสองคือ $12x^2 - 4$' }
+    solution: '$\frac{dU}{dx} = 4x^3 - 4x$ และ $\frac{d^2U}{dx^2} = 12x^2 - 4$ จึงได้ $-4$ ที่ $x = 0$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p017
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 2
+    type: numeric
+    stem: 'ระหว่างที่วัตถุเคลื่อนที่ พลังงานกลของระบบลดลง $30\,\mathrm{J}$ งานของแรงไม่อนุรักษ์ในช่วงนั้นมีค่าเท่าใดในหน่วยจูล (ตอบพร้อมเครื่องหมาย)'
+    answer: { value: -30, tolerance: 0.1, unit: J }
+    hints:
+      - งานของแรงไม่อนุรักษ์เท่ากับการเปลี่ยนแปลงพลังงานกล
+      - พลังงานลดลงหมายความว่าการเปลี่ยนแปลงเป็นลบ
+    misconceptions:
+      - { match: 30, feedback: 'ลืมเครื่องหมาย การลดลงของพลังงานกลทำให้งานของแรงไม่อนุรักษ์เป็นลบ' }
+    solution: '$W_{nc} = \Delta E_{mech} = -30\,\mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p018
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 4
+    type: numeric
+    stem: 'วัตถุมวล $2.0\,\mathrm{kg}$ ติดกับสปริงที่มีค่าคงตัว $100\,\mathrm{N/m}$ ขณะผ่านตำแหน่ง $x = 0.20\,\mathrm{m}$ วัตถุมีอัตราเร็ว $3.0\,\mathrm{m/s}$ แอมพลิจูดของการแกว่งมีค่ากี่เมตร (ตอบทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 0.47, tolerance: 0.01, unit: m }
+    hints:
+      - พลังงานรวม $\frac{1}{2}kA^2$ เท่ากับผลรวมของพลังงานศักย์และพลังงานจลน์ ณ ตำแหน่งที่รู้
+      - จัดรูปเพื่อหา $A^2$ แล้วจึงถอดราก
+    misconceptions:
+      - { match: 0.20, feedback: 'ลืมพลังงานจลน์ จึงได้เพียงตำแหน่งที่วัตถุอยู่' }
+      - { match: 0.42, feedback: 'ลืมพลังงานศักย์ที่ตำแหน่ง $x$ จึงได้ $\sqrt{mv^2/k}$ เท่านั้น' }
+    solution: '$A^2 = x^2 + \frac{mv^2}{k} = 0.04 + \frac{2 \times 9}{100} = 0.22$ จึงได้ $A \approx 0.47\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p019
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 5
+    type: numeric
+    stem: 'พลังงานศักย์ของระบบคือ $U(x) = \frac{2}{x^2} - \frac{1}{x}$ (หน่วย J โดย $x$ เป็น m) ที่จุดสมดุลของระบบ ค่า $U$ มีค่ากี่จูล (ตอบทศนิยม 3 ตำแหน่ง)'
+    answer: { value: -0.125, tolerance: 0.001, unit: J }
+    hints:
+      - จุดสมดุลอยู่ที่ $\frac{dU}{dx} = 0$ ซึ่งจะได้ค่า $x$ ที่แน่นอน
+      - ตรวจว่าสมการที่ได้ตรงกับ $x = 2a/b$ เมื่อ $U = a/x^2 - b/x$
+    misconceptions:
+      - { match: 0, feedback: 'แทนค่า $x = a/b = 2$ ผิด ตำแหน่งสมดุลคือ $x = 2a/b = 4$' }
+      - { match: 0.125, feedback: 'ลืมเครื่องหมายลบของค่า $U$ ที่จุดต่ำสุด' }
+    solution: '$\frac{dU}{dx} = -\frac{4}{x^3} + \frac{1}{x^2} = 0$ จึงได้ $x = 4\,\mathrm{m}$ และ $U(4) = \frac{2}{16} - \frac{1}{4} = -0.125\,\mathrm{J}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.energy.potential-energy-diagrams.p020
+    topics: [physics.energy.potential-energy-diagrams]
+    difficulty: 3
+    type: mcq
+    stem: 'งานที่แรงไม่อนุรักษ์ทำในวงปิดซึ่งวัตถุกลับมาที่จุดเดิม มีค่าเป็นอย่างไร'
+    choices:
+      - { id: a, text: เป็นศูนย์เสมอ เหมือนแรงอนุรักษ์, feedback: 'แรงอนุรักษ์เท่านั้นที่ทำงานรอบวงปิดเป็นศูนย์' }
+      - { id: b, text: ไม่เป็นศูนย์ โดยพลังงานกลของระบบลดลงเมื่อครบวง, correct: true }
+      - { id: c, text: เป็นบวกเสมอ เพราะแรงไม่อนุรักษ์เพิ่มพลังงาน, feedback: 'แรงไม่อนุรักษ์โดยทั่วไปทำให้พลังงานกลลดลง' }
+      - { id: d, text: ขึ้นกับความเร็วเริ่มต้นเท่านั้น, feedback: 'งานรอบวงปิดของแรงไม่อนุรักษ์ขึ้นกับเส้นทางและทิศการเคลื่อนที่' }
+    hints:
+      - นึกถึงการที่แรงเสียดทานทำให้วัตถุช้าลงแม้เคลื่อนที่กลับมาที่เดิม
+      - ลองเทียบกับนิยามของแรงอนุรักษ์
+    solution: 'เมื่อแรงไม่อนุรักษ์ทำงานรอบวงปิด พลังงานกลจะลดลงและไม่กลับมาเท่าเดิม จึงทำให้งานรวมไม่เป็นศูนย์'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

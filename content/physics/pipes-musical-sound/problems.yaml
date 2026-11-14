@@ -1,0 +1,341 @@
+problems:
+  - id: physics.waves.pipes-musical-sound.p001
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 1
+    type: mcq
+    stem: 'ท่อปลายเปิดสองด้านมีโหมดปกติที่มีความถี่เป็นอย่างไร'
+    choices:
+      - { id: a, text: 'เฉพาะลำดับคี่เท่านั้น', feedback: 'นั่นคือท่อปลายปิดหนึ่งด้าน ท่อปลายเปิดสองด้านมีทุกลำดับ' }
+      - { id: b, text: 'ทุกจำนวนเต็ม $n = 1, 2, 3, \ldots$', correct: true }
+      - { id: c, text: 'เฉพาะลำดับคู่เท่านั้น', feedback: 'ลำดับที่หนึ่งซึ่งเป็นเลขคี่ก็มีอยู่ในท่อปลายเปิดสองด้าน' }
+      - { id: d, text: 'ไม่มีโหมดปกติ เพราะอากาศเคลื่อนที่ได้อิสระ', feedback: 'การที่อากาศเคลื่อนที่ได้อิสระที่ปลายเปิดทำให้เกิดโหมดปกติ' }
+    hints:
+      - ดูที่ปลายท่อ ปลายเปิดเป็นปฏิบัพของการกระจัด
+      - ปลายทั้งสองข้างเป็นปฏิบัพ ความยาวท่อจึงต้องเท่ากับจำนวนเต็มเท่าของครึ่งความยาวคลื่น
+    solution: 'เมื่อปลายทั้งสองข้างเป็นปฏิบัพ ความยาวท่อ $L = n\lambda/2$ จึงได้ $f_n = nv/2L$ สำหรับทุก $n$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p002
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 1
+    type: numeric
+    stem: 'ท่อปลายเปิดสองด้านยาว $0.50\,\mathrm{m}$ อัตราเร็วเสียง $343\,\mathrm{m/s}$ ความถี่มูลฐานของท่อเป็นกี่เฮิรตซ์'
+    answer: { value: 343, tolerance: 0.5, unit: Hz }
+    hints:
+      - ท่อปลายเปิดสองด้านมี $f_1 = v/(2L)$
+      - แทนค่าความยาวเป็นเมตรให้ตรงกับหน่วยของอัตราเร็ว
+    misconceptions:
+      - { match: 171.5, feedback: 'ใช้สูตรของท่อปลายปิดหนึ่งด้าน $v/(4L)$ ทั้งที่ท่อนี้ปลายเปิดสองด้าน' }
+      - { match: 686, feedback: 'ลืมหารสองในตัวส่วน ได้ $v/L$' }
+    solution: '$f_1 = \frac{v}{2L} = \frac{343}{2 \times 0.50} = 343\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p003
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 1
+    type: text
+    stem: 'โหมดปกติของท่อที่มีความถี่เป็นจำนวนเต็มเท่าของความถี่มูลฐาน เรียกว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)'
+    accepted: [ฮาร์มอนิก, ฮาร์โมนิก, harmonic, harmonics]
+    hints:
+      - คำนี้ใช้เรียกเสียงที่ผสมอยู่ในเสียงของเครื่องดนตรี
+      - ตอบเป็นภาษาไทยหรืออังกฤษก็ได้
+    misconceptions:
+      - { match: บีต, feedback: 'บีตคือเสียงดังสลับกันจากความถี่สองค่าที่ใกล้กัน ไม่ใช่โหมดปกติของท่อ' }
+    solution: 'เรียกว่า ฮาร์มอนิก (harmonic) ซึ่งคือ $nf_1$ สำหรับจำนวนเต็ม $n$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p004
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 2
+    type: numeric
+    stem: 'ขลุ่ยเป็นท่อปลายเปิดสองด้านยาว $0.66\,\mathrm{m}$ อัตราเร็วเสียง $343\,\mathrm{m/s}$ ความถี่มูลฐานของขลุ่ยเป็นกี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง และละเลยการแก้ปลายท่อ)'
+    answer: { value: 259.8, tolerance: 0.5, unit: Hz }
+    hints:
+      - ใช้สูตร $f_1 = \frac{v}{2L}$
+      - ความยาวท่อเป็นครึ่งหนึ่งของความยาวคลื่นมูลฐาน
+    misconceptions:
+      - { match: 129.9, feedback: 'ใช้ $v/(4L)$ ของท่อปลายปิด' }
+      - { match: 519.7, feedback: 'ลืมหารสองในตัวส่วน ได้ $v/L$' }
+    solution: '$f_1 = \frac{343}{2 \times 0.66} \approx 259.8\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p005
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 2
+    type: numeric
+    stem: 'ท่อปลายปิดหนึ่งด้านยาว $0.80\,\mathrm{m}$ อัตราเร็วเสียง $343\,\mathrm{m/s}$ ความถี่มูลฐานเป็นกี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 107.2, tolerance: 0.5, unit: Hz }
+    hints:
+      - ท่อปลายปิดหนึ่งด้านมี $f_1 = \frac{v}{4L}$
+      - ความยาวท่อเท่ากับหนึ่งในสี่ของความยาวคลื่นมูลฐาน
+    misconceptions:
+      - { match: 214.4, feedback: 'ใช้สูตรของท่อปลายเปิดสองด้าน $v/(2L)$ ทั้งที่ปลายหนึ่งปิด' }
+      - { match: 53.6, feedback: 'ใช้ $v/(8L)$ ทำให้ค่าน้อยเกินไปสองเท่า' }
+    solution: '$f_1 = \frac{343}{4 \times 0.80} \approx 107.2\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p006
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 2
+    type: mcq
+    stem: 'เหตุใดท่อปลายปิดหนึ่งด้านจึงมีโหมดปกติเฉพาะลำดับคี่'
+    choices:
+      - { id: a, text: 'ปลายปิดเป็นบัพของการกระจัด ความยาวท่อจึงเป็นจำนวนคี่เท่าของหนึ่งในสี่ของความยาวคลื่น', correct: true }
+      - { id: b, text: 'ปลายปิดดูดซับพลังงานเสียงทั้งหมด', feedback: 'ท่อปลายปิดยังมีโหมดปกติได้ ไม่ได้ดูดซับเสียงทั้งหมด' }
+      - { id: c, text: 'ปลายปิดทำให้อัตราเร็วเสียงในท่อเป็นศูนย์', feedback: 'อัตราเร็วเสียงในอากาศไม่เปลี่ยนเพราะปลายปิด' }
+      - { id: d, text: 'ปลายปิดทำให้ความถี่เพิ่มเป็นสองเท่าเสมอ', feedback: 'ปลายปิดไม่ได้เพิ่มความถี่เป็นสองเท่า แต่เปลี่ยนเงื่อนไขของความยาวคลื่นที่เป็นไปได้' }
+    hints:
+      - ที่ปลายปิดอากาศเคลื่อนที่ไม่ได้ จึงเป็นบัพของการกระจัด
+      - นับว่าความยาวท่อมีกี่ส่วนของหนึ่งในสี่ความยาวคลื่น
+    solution: 'เมื่อปลายหนึ่งเป็นบัพและอีกปลายเป็นปฏิบัพ ความยาวท่อ $L = (2n-1)\lambda/4$ จึงได้ $f_n = nv/4L$ โดย $n$ เป็นเลขคี่'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p007
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 2
+    type: numeric
+    stem: 'เส้นเชือกของจะเข้ยาว $0.50\,\mathrm{m}$ มีแรงตึง $60\,\mathrm{N}$ และมวลต่อหนึ่งหน่วยความยาว $1.0\,\mathrm{g/m}$ ความถี่มูลฐานของเส้นนี้เป็นกี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 244.9, tolerance: 0.5, unit: Hz }
+    hints:
+      - ใช้สูตร $f_1 = \frac{1}{2L}\sqrt{\frac{T}{\mu}}$
+      - แปลงมวลต่อความยาวเป็นกิโลกรัมต่อเมตรก่อนแทนค่า
+    misconceptions:
+      - { match: 489.9, feedback: 'ใช้ $L$ แทน $2L$ ทำให้ค่าสูงเกินจริงสองเท่า' }
+      - { match: 60000, feedback: 'ลืมถอดรากที่สองของ $T/\mu$' }
+    solution: '$f_1 = \frac{1}{2 \times 0.50}\sqrt{\frac{60}{1.0 \times 10^{-3}}} = \sqrt{60000} \approx 244.9\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p008
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 2
+    type: numeric
+    stem: 'ท่อปลายเปิดสองด้านมีความถี่มูลฐาน $220\,\mathrm{Hz}$ ความถี่ของโหมดปกติลำดับที่สามเป็นกี่เฮิรตซ์'
+    answer: { value: 660, tolerance: 0.5, unit: Hz }
+    hints:
+      - ลำดับที่สามหมายถึง $n = 3$ ของสูตร $f_n = nf_1$
+      - ท่อปลายเปิดสองด้านมีทุกลำดับ จึงใช้ $n = 3$ ได้
+    misconceptions:
+      - { match: 440, feedback: 'ได้ความถี่ของลำดับที่สอง ไม่ใช่ลำดับที่สาม' }
+      - { match: 880, feedback: 'ได้ความถี่ของลำดับที่สี่ ไม่ใช่ลำดับที่สาม' }
+    solution: '$f_3 = 3 \times 220 = 660\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p009
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 2
+    type: numeric
+    stem: 'ท่อปลายปิดหนึ่งด้านมีความถี่มูลฐาน $100\,\mathrm{Hz}$ ความถี่ของโหมดปกติลำดับที่ห้าเป็นกี่เฮิรตซ์'
+    answer: { value: 500, tolerance: 0.5, unit: Hz }
+    hints:
+      - ท่อปลายปิดหนึ่งด้านมีเฉพาะลำดับคี่
+      - ลำดับที่ห้าเป็นเลขคี่ จึงมีอยู่จริง
+    misconceptions:
+      - { match: 200, feedback: 'ใช้ลำดับที่สอง ซึ่งท่อปลายปิดหนึ่งด้านไม่มี' }
+      - { match: 400, feedback: 'ใช้ลำดับที่สี่ ซึ่งท่อปลายปิดหนึ่งด้านไม่มี' }
+    solution: '$f_5 = 5 \times 100 = 500\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p010
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 3
+    type: numeric
+    stem: 'ขลุ่ยท่อปลายเปิดสองด้านให้โน้ตความถี่มูลฐาน $440\,\mathrm{Hz}$ ที่ $20\,^\circ\mathrm{C}$ ถ้าอากาศอุ่นขึ้นเป็น $35\,^\circ\mathrm{C}$ โดยความยาวท่อไม่เปลี่ยน ความถี่มูลฐานจะเป็นกี่เฮิรตซ์ (ใช้ $v \approx 331 + 0.6T$ ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 451.5, tolerance: 0.5, unit: Hz }
+    hints:
+      - หาอัตราเร็วเสียงที่ $35\,^\circ\mathrm{C}$ ก่อน
+      - ความถี่แปรตามอัตราเร็วเสียงเมื่อความยาวท่อคงที่
+    misconceptions:
+      - { match: 440, feedback: 'ไม่ได้คิดผลของอุณหภูมิต่อการเปลี่ยนแปลงอัตราเร็วเสียง' }
+      - { match: 428.8, feedback: 'ให้ความถี่ลดลงเมื่ออากาศร้อนขึ้น ทั้งที่อัตราเร็วเสียงเพิ่มขึ้น' }
+    solution: '$v = 331 + 0.6 \times 35 = 352\,\mathrm{m/s}$ และ $f_1 = 440 \times \frac{352}{343} \approx 451.5\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p011
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 3
+    type: numeric
+    stem: 'ท่อปลายเปิดสองด้านมีความถี่มูลฐาน $512\,\mathrm{Hz}$ ที่อัตราเร็วเสียง $343\,\mathrm{m/s}$ ท่อนี้ยาวกี่เซนติเมตร (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 33.5, tolerance: 0.1, unit: cm }
+    hints:
+      - ย้ายข้างของสูตร $f_1 = \frac{v}{2L}$ เพื่อหา $L$
+      - ตอบเป็นเซนติเมตรตามที่โจทย์กำหนด
+    misconceptions:
+      - { match: 16.7, feedback: 'ใช้ $4L$ แทน $2L$ ซึ่งเป็นสูตรของท่อปลายปิด' }
+      - { match: 67.0, feedback: 'ลืมตัวหารสอง ได้ $L = v/f$ แทน $v/(2f)$' }
+    solution: '$L = \frac{v}{2f_1} = \frac{343}{2 \times 512} \approx 0.335\,\mathrm{m} = 33.5\,\mathrm{cm}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p012
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 3
+    type: numeric
+    stem: 'ท่อปลายปิดหนึ่งด้านตามภาพยาว $L = 0.60\,\mathrm{m}$ อัตราเร็วเสียง $343\,\mathrm{m/s}$ ความถี่ของโหมดปกติลำดับที่สามเป็นกี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    figure:
+      src: closed-pipe-dim.svg
+      alt: ท่อยาวหนึ่งด้าน ด้านซ้ายปิดด้วยผนังทึบและด้านขวาเปิด มีเครื่องหมายความยาว L กำกับไว้เหนือท่อ
+    answer: { value: 428.8, tolerance: 0.5, unit: Hz }
+    hints:
+      - ท่อปลายปิดหนึ่งด้านมี $f_n = \frac{nv}{4L}$ โดย $n$ เป็นเลขคี่
+      - ลำดับที่สามคือ $n = 3$
+    misconceptions:
+      - { match: 285.8, feedback: 'ใช้ลำดับที่สอง ซึ่งท่อปลายปิดหนึ่งด้านไม่มี' }
+      - { match: 142.9, feedback: 'ได้ความถี่มูลฐาน ไม่ใช่ลำดับที่สาม' }
+    solution: '$f_1 = \frac{343}{4 \times 0.60} \approx 142.9\,\mathrm{Hz}$ และ $f_3 = 3f_1 \approx 428.8\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p013
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 3
+    type: numeric
+    stem: 'ท่อปลายเปิดสองด้านและท่อปลายปิดหนึ่งด้าน ยาวเท่ากันคือ $0.50\,\mathrm{m}$ ที่อัตราเร็วเสียง $343\,\mathrm{m/s}$ ความถี่มูลฐานของท่อปลายปิดต่ำกว่าของท่อปลายเปิดกี่เฮิรตซ์'
+    answer: { value: 171.5, tolerance: 0.5, unit: Hz }
+    hints:
+      - หาความถี่มูลฐานของท่อทั้งสองแบบก่อน แล้วจึงลบกัน
+      - ท่อปลายปิดใช้ $4L$ ส่วนท่อปลายเปิดใช้ $2L$
+    misconceptions:
+      - { match: 343, feedback: 'ลืมว่าท่อปลายปิดมีความถี่ต่ำกว่า จึงได้เพียงค่าของท่อปลายเปิด' }
+      - { match: 85.8, feedback: 'ใช้ $8L$ สำหรับท่อปลายปิด ทำให้ผลต่างน้อยเกินจริง' }
+    solution: 'ท่อปลายเปิดได้ $\frac{343}{2 \times 0.5} = 343\,\mathrm{Hz}$ และท่อปลายปิดได้ $\frac{343}{4 \times 0.5} = 171.5\,\mathrm{Hz}$ ผลต่างคือ $171.5\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p014
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 3
+    type: expression
+    stem: 'ท่อปลายปิดหนึ่งด้านมีความถี่มูลฐาน $f$ เมื่ออัตราเร็วเสียงคือ $v$ จงเขียนความยาวท่อ $L$ ในรูปของ $v$ และ $f$'
+    prefix: 'L ='
+    answer: { latex: '\frac{v}{4f}', variables: [v, f] }
+    hints:
+      - ใช้สูตร $f = \frac{v}{4L}$ สำหรับความถี่มูลฐาน
+      - ย้ายตัวแปรให้ $L$ อยู่ข้างเดียว
+    misconceptions:
+      - { match: 'v/(2f)', feedback: 'ใช้สูตรของท่อปลายเปิดสองด้าน ซึ่งผิดสำหรับท่อปลายปิดหนึ่งด้าน' }
+    solution: '$f = \frac{v}{4L}$ จึงได้ $L = \frac{v}{4f}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p015
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 4
+    type: numeric
+    stem: 'ท่อปลายเปิดสองด้านยาว $L$ มีโหมดปกติลำดับที่สี่ที่ความถี่ $1000\,\mathrm{Hz}$ เมื่ออัตราเร็วเสียง $343\,\mathrm{m/s}$ ความยาว $L$ เป็นกี่เมตร (ตอบทศนิยม 3 ตำแหน่ง)'
+    answer: { value: 0.686, tolerance: 0.005, unit: m }
+    hints:
+      - ลำดับที่สี่คือ $f_4 = \frac{4v}{2L}$
+      - แก้สมการเพื่อหา $L$ จากค่า $f_4$
+    misconceptions:
+      - { match: 0.343, feedback: 'ใช้ $f = v/L$ โดยไม่ได้คูณลำดับที่สี่' }
+      - { match: 1.372, feedback: 'ลืมหารสองในตัวส่วนของ $f_4 = 4v/(2L)$' }
+    solution: '$L = \frac{2v}{f_4} = \frac{2 \times 343}{1000} = 0.686\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p016
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 4
+    type: mcq
+    stem: 'เหตุใดขลุ่ยกับแคลริเน็ตที่เล่นโน้ตเดียวกันจึงฟังต่างกัน'
+    choices:
+      - { id: a, text: 'สัดส่วนและความเข้มของฮาร์มอนิกที่มีอยู่ต่างกัน', correct: true }
+      - { id: b, text: 'ความถี่มูลฐานของเครื่องดนตรีทั้งสองต่างกัน', feedback: 'โน้ตเดียวกันมีความถี่มูลฐานเท่ากัน ความต่างอยู่ที่ฮาร์มอนิก' }
+      - { id: c, text: 'อัตราเร็วเสียงในเครื่องดนตรีทั้งสองต่างกัน', feedback: 'อัตราเร็วเสียงในอากาศเดียวกันมีค่าเท่ากัน' }
+      - { id: d, text: 'ระดับความดังต่างกันเท่านั้น', feedback: 'ความดังไม่ได้เป็นเหตุให้ฟังเป็นเสียงของเครื่องดนตรีต่างชนิด' }
+    hints:
+      - โน้ตเดียวกันหมายถึงความถี่มูลฐานเดียวกัน
+      - ลองนึกถึงคุณภาพเสียงหรือทิมเบอร์ที่แยกเสียงได้
+    solution: 'ความถี่มูลฐานเท่ากันทำให้ได้ยินเป็นโน้ตเดียวกัน แต่สัดส่วนของฮาร์มอนิกต่างกันทำให้คุณภาพเสียงต่างกัน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p017
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 4
+    type: numeric
+    stem: 'ท่อปลายเปิดสองด้านยาว $L$ ถ้าตัดท่อให้สั้นลงเหลือครึ่งหนึ่งของความยาวเดิม ความถี่มูลฐานจะเพิ่มขึ้นกี่เท่า'
+    answer: { value: 2, tolerance: 0.01, unit: เท่า }
+    hints:
+      - ความถี่มูลฐานแปรผกผันกับความยาวท่อ
+      - ถ้าความยาวเหลือครึ่งหนึ่ง ตัวหารในสูตรจะเปลี่ยนไปอย่างไร
+    misconceptions:
+      - { match: 0.5, feedback: 'คิดว่าความถี่ลดลงเมื่อท่อสั้นลง ทั้งที่แปรผกผันกับความยาว' }
+      - { match: 4, feedback: 'คิดว่าความถี่แปรผกผันกับความยาวกำลังสอง' }
+    solution: 'จาก $f_1 = \frac{v}{2L}$ เมื่อความยาวเหลือ $L/2$ จะได้ $\frac{v}{2(L/2)} = \frac{v}{L} = 2f_1$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p018
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 4
+    type: numeric
+    stem: 'เส้นเชือกที่ยาวคงที่ถูกขึงให้มีแรงตึงเพิ่มเป็นสี่เท่าของเดิม ความถี่มูลฐานจะเพิ่มขึ้นกี่เท่า'
+    answer: { value: 2, tolerance: 0.01, unit: เท่า }
+    hints:
+      - ความถี่แปรตามรากที่สองของแรงตึง
+      - คำนวณ $\sqrt{4}$
+    misconceptions:
+      - { match: 4, feedback: 'ลืมถอดรากที่สองของแรงตึง' }
+      - { match: 0.5, feedback: 'คิดว่าความถี่ลดลงเมื่อแรงตึงเพิ่ม ทั้งที่เพิ่มขึ้น' }
+    solution: 'เนื่องจาก $f_1 \propto \sqrt{T}$ เมื่อแรงตึงเป็น $4T$ จะได้อัตราส่วน $\sqrt{\frac{4T}{T}} = 2$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p019
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 5
+    type: numeric
+    stem: 'ท่อปลายปิดหนึ่งด้านยาว $0.45\,\mathrm{m}$ อยู่ในอากาศที่อุณหภูมิ $30\,^\circ\mathrm{C}$ ใช้ $v \approx 331 + 0.6T$ ความถี่ของโหมดปกติลำดับที่สามเป็นกี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 581.7, tolerance: 0.5, unit: Hz }
+    hints:
+      - คำนวณอัตราเร็วเสียงที่ $30\,^\circ\mathrm{C}$ ก่อน
+      - ท่อปลายปิดหนึ่งด้านให้ $f_3 = \frac{3v}{4L}$
+    misconceptions:
+      - { match: 571.7, feedback: 'ใช้อัตราเร็วเสียงที่ 20 °C คือ 343 m/s ทั้งที่อุณหภูมิเป็น 30 °C' }
+    solution: '$v = 331 + 0.6 \times 30 = 349\,\mathrm{m/s}$ และ $f_3 = \frac{3 \times 349}{4 \times 0.45} \approx 581.7\,\mathrm{Hz}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p020
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 3
+    type: mcq
+    stem: 'ในวันที่อากาศเย็นลงมาก เสียงขลุ่ยที่เป่าโน้ตเดิมด้วยท่อยาวเท่าเดิมจะมีความถี่มูลฐานเป็นอย่างไร'
+    choices:
+      - { id: a, text: เพิ่มขึ้น, feedback: 'อากาศเย็นลงทำให้อัตราเร็วเสียงลดลง จึงไม่ใช่การเพิ่มขึ้น' }
+      - { id: b, text: ลดลง, correct: true }
+      - { id: c, text: ไม่เปลี่ยนเพราะความถี่ขึ้นกับความยาวท่อเท่านั้น, feedback: 'ความถี่ของท่อยังขึ้นกับอัตราเร็วเสียงด้วย' }
+      - { id: d, text: ขึ้นกับความดังของการเป่าเท่านั้น, feedback: 'ความดังไม่ได้กำหนดความถี่ของโหมดปกติ' }
+    hints:
+      - อัตราเร็วเสียงขึ้นกับอุณหภูมิของอากาศ
+      - ความถี่มูลฐานแปรตามอัตราเร็วเสียงเมื่อความยาวท่อคงที่
+    solution: 'เมื่ออุณหภูมิลดลง $v$ ลดลง และ $f_1 = v/2L$ จึงลดลงด้วยที่ความยาวท่อเดิม'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.waves.pipes-musical-sound.p021
+    topics: [physics.waves.pipes-musical-sound]
+    difficulty: 4
+    type: numeric
+    stem: 'นักเรียนทำขลุ่ยของเล่นจากท่อพีวีซีปลายเปิดสองด้าน ยาว $0.30\,\mathrm{m}$ รัศมีภายใน $1.0\,\mathrm{cm}$ อัตราเร็วเสียง $343\,\mathrm{m/s}$ เมื่อคิดการแก้ปลายท่อ $0.6r$ ที่ปลายเปิดแต่ละด้าน ความถี่มูลฐานเป็นกี่เฮิรตซ์ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 549.7, tolerance: 0.5, unit: Hz }
+    hints:
+      - 'ท่อปลายเปิดสองด้านมีปลายเปิดสองปลาย จึงต้องเพิ่มความยาว $0.6r$ สองครั้ง'
+      - 'ความยาวยังผลคือ $L + 2(0.6r)$ แล้วใช้แทน $L$ ในสูตร $f_1 = \frac{v}{2L}$'
+    misconceptions:
+      - { match: 571.7, feedback: 'ยังไม่ได้คิดการแก้ปลายท่อ ใช้ความยาวจริง $0.30\,\mathrm{m}$' }
+      - { match: 560.5, feedback: 'เพิ่มการแก้ปลายท่อเพียงด้านเดียว ท่อนี้เปิดทั้งสองปลาย' }
+    solution: 'ความยาวยังผล $L_{\text{eff}} = 0.30 + 2 \times 0.6 \times 0.010 = 0.312\,\mathrm{m}$ จึงได้ $f_1 = \frac{343}{2 \times 0.312} \approx 549.7\,\mathrm{Hz}$ ต่ำกว่าค่าที่ไม่แก้ปลายท่อ ($571.7\,\mathrm{Hz}$) เล็กน้อย'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,69 @@
+id: physics.thermal.heat-transfer-rates
+subject: physics
+title: { th: การขยายตัวเชิงปริมาณ และอัตราการถ่ายโอนความร้อนโดยการนำ การพา และการแผ่รังสี, en: Quantitative expansion and heat transfer rates by conduction, convection, and radiation }
+summary: คำนวณการขยายตัวของความยาว พื้นที่ และปริมาตร อัตราการนำความร้อนผ่านผนังหลายชั้น และการแผ่รังสีจากวัตถุที่ร้อนเพื่อออกแบบฉนวนและผนัง
+difficulty: 5.5
+minutes: 35
+prerequisites: [physics.thermal.temperature-heat, physics.thermal.expansion-heat-transfer]
+encompasses:
+  - { id: physics.thermal.temperature-heat, weight: 0.4 }
+  - { id: physics.thermal.expansion-heat-transfer, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: heat-flow.svg
+    alt: 'ผนังสามชั้นวางในแนวตั้ง ด้านซ้ายเป็นด้านร้อนที่อุณหภูมิ T1 ด้านขวาเป็นด้านเย็นที่อุณหภูมิ T2 มีลูกศรสีแดงชี้จากซ้ายไปขวาแสดงว่าความร้อนไหลผ่านทั้งสามชั้น'
+    caption: ความร้อนไหลผ่านทุกชั้นพร้อมกัน ความต้านทานรวมคือผลรวมของความต้านทานของแต่ละชั้น
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ความยาวของสะพานเหล็กที่ขยายตัวเมื่อร้อนขึ้น
+    problem: 'สะพานเหล็กยาว $40\,\mathrm{m}$ อุณหภูมิเพิ่มขึ้น $25\,\mathrm{K}$ จงหาว่าความยาวเพิ่มขึ้นกี่มิลลิเมตร (สัมประสิทธิ์การขยายตัวเชิงเส้นของเหล็ก $\alpha = 12 \times 10^{-6}\,\mathrm{K^{-1}}$)'
+    steps:
+      - text: 'ใช้สูตร $\Delta L = \alpha L_0 \Delta T$ แทนค่า $\Delta L = 12 \times 10^{-6} \times 40 \times 25$'
+        why: การขยายตัวเชิงเส้นเป็นสัดส่วนกับความยาวเดิม และกับผลต่างของอุณหภูมิ
+      - text: '$\Delta L = 0.012\,\mathrm{m} = 12\,\mathrm{mm}$'
+        why: ทั้งอุณหภูมิที่เปลี่ยนหน่วยเคลวินและองศาเซลเซียสมีขนาดเท่ากันเมื่อเป็นผลต่าง
+    answer: 'ความยาวเพิ่มขึ้นประมาณ $12\,\mathrm{mm}$'
+  - { type: check, problem: physics.thermal.heat-transfer-rates.p015, prompt: ลองคิดก่อนอ่านต่อ เหตุใดเสื้อที่ทอหนามีอากาศอยู่ด้านในจึงอุ่น }
+  - type: worked-example
+    title: เพิ่มความหนาของฉนวนแล้วความร้อนผ่านลดลงเท่าใด
+    problem: 'ฉนวนโฟมมีพื้นที่ $2\,\mathrm{m^2}$ อุณหภูมิสองด้านต่างกัน $40\,\mathrm{K}$ สภาพนำความร้อน $k = 0.033\,\mathrm{W/(m\cdot K)}$ ถ้าความหนาเพิ่มจาก $5\,\mathrm{cm}$ เป็น $10\,\mathrm{cm}$ อัตราการถ่ายโอนความร้อนเปลี่ยนไปอย่างไร'
+    steps:
+      - text: 'ความหนา $5\,\mathrm{cm} = 0.05\,\mathrm{m}$: $P_1 = \frac{kA\Delta T}{d_1} = \frac{0.033 \times 2 \times 40}{0.05} = 52.8\,\mathrm{W}$'
+        why: แปลงความหนาเป็นเมตรก่อนแทนค่า เพราะสภาพนำความร้อนมีหน่วย W/(m·K)
+      - text: 'ความหนา $10\,\mathrm{cm} = 0.10\,\mathrm{m}$: $P_2 = \frac{0.033 \times 2 \times 40}{0.10} = 26.4\,\mathrm{W}$'
+        why: ความร้อนผ่านแปรผกผันกับความหนา เมื่อหนาเป็นสองเท่า อัตราผ่านจึงเหลือครึ่งหนึ่ง
+      - text: 'อัตราส่วน $P_2 / P_1 = 0.5$'
+        why: ผลนี้ใช้ได้เมื่อสภาพนำความร้อนและพื้นที่คงที่ เท่านั้น
+    answer: 'เมื่อความหนาเพิ่มเป็นสองเท่า อัตราการถ่ายโอนความร้อนลดลงเหลือครึ่งหนึ่ง (จาก 52.8 W เป็น 26.4 W)'
+  - type: interactive
+    title: การแผ่รังสีเพิ่มเร็วเพียงใดเมื่ออุณหภูมิเพิ่ม
+    caption: แกนนอนคืออุณหภูมิสัมบูรณ์ในหน่วย 100 K และแกนตั้งคือกำลังที่แผ่ต่อพื้นที่หนึ่งตารางเมตร (W/m²) ค่า a คือ εσ คูณ 100⁴ ซึ่งเท่ากับ 5.67 สำหรับวัตถุดำ (ε = 1) ลองลด a เพื่อดูผิวที่มี ε น้อยกว่า 1 และสังเกตว่าเส้นโค้งชันขึ้นเร็วเพียงใดเมื่อ x เพิ่มขึ้น
+    widget:
+      kind: function-plot
+      functions: ["a x^4"]
+      sliders:
+        - { name: a, min: 0.5, max: 5.67, step: 0.01, value: 5.67, label: ค่า εσ คูณ 100 ยกกำลัง 4 }
+      x: [0, 8]
+      y: [0, 25000]
+  - { type: simulation, title: เอฟเฟกต์เรือนกระจกและการแผ่รังสี, url: "https://phet.colorado.edu/en/simulations/greenhouse-effect", provider: phet, note: ซิมูเลชัน PhET ฝังภาษาไทยได้ ลองปรับความเข้มข้นของก๊าซเรือนกระจกแล้วสังเกตการดูดกลืนและแผ่รังสีอินฟราเรด, embed: true }
+  - { type: check, problem: physics.thermal.heat-transfer-rates.p020, prompt: ทำไมน้ำแข็งจึงลอยน้ำได้ ลองคิดจากความหนาแน่นของน้ำที่อุณหภูมิต่าง ๆ }
+glossary:
+  - { term: สัมประสิทธิ์การขยายตัวเชิงเส้น, definition: 'ค่า $\alpha$ บอกว่าความยาวของวัตถุเปลี่ยนไปกี่เท่าของความยาวเดิมเมื่ออุณหภูมิเปลี่ยน 1 เคลวิน มีหน่วย $\mathrm{K^{-1}}$' }
+  - { term: สภาพนำความร้อน, definition: 'ค่า $k$ ที่บอกว่าวัสดุนำความร้อนได้ดีเพียงใด มีหน่วย $\mathrm{W/(m \cdot K)}$' }
+  - { term: ความต้านทานความร้อน, definition: 'ค่า $R = \frac{d}{kA}$ ที่บอกว่าชั้นวัสดุขัดขวางการไหลของความร้อนมากเพียงใด มีหน่วย $\mathrm{K/W}$' }
+  - { term: การแผ่รังสีความร้อน, definition: การถ่ายโอนพลังงานด้วยคลื่นแม่เหล็กไฟฟ้า ซึ่งเกิดได้แม้ในสุญญากาศ อัตราขึ้นกับอุณหภูมิสัมบูรณ์ยกกำลังสี่ }
+flashcards:
+  - { front: "การขยายตัวเชิงเส้น", back: "$\\Delta L = \\alpha L_0 \\Delta T$ โดย $\\Delta T$ เป็นผลต่างอุณหภูมิ" }
+  - { front: "อัตราการนำความร้อนผ่านผนังแผ่นเดียว", back: "$P = \\frac{kA\\Delta T}{d}$" }
+  - { front: "ผนังหลายชั้นที่ต่ออนุกรม", back: "$R_{tot} = \\sum R_i$ แล้ว $P = \\frac{\\Delta T}{R_{tot}}$" }
+  - { front: "กฎของสเตฟาน–โบลต์ซมันน์", back: "$P = \\varepsilon \\sigma A T^{4}$ โดย $T$ เป็นเคลวินเสมอ" }
+references:
+  - { title: "List of thermal conductivities", url: "https://en.wikipedia.org/wiki/List_of_thermal_conductivities", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Stefan–Boltzmann constant (ค่า σ = 5.670374419 × 10⁻⁸ W·m⁻²·K⁻⁴)", url: "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "การนำความร้อน", url: "https://th.wikipedia.org/wiki/การนำความร้อน", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "1.3 Thermal Expansion (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/1-3-thermal-expansion", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

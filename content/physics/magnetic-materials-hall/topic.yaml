@@ -1,0 +1,63 @@
+id: physics.magnetism.magnetic-materials-hall
+subject: physics
+title: { th: ปรากฏการณ์ฮอลล์ สมบัติแม่เหล็กของสาร และตัวนำยวดยิ่ง, en: The Hall effect, magnetic properties of materials, and superconductors }
+summary: หาแรงดันฮอลล์และความหนาแน่นพาหะ จำแนกสารตามสมบัติแม่เหล็ก ใช้ความซึมผ่านสัมพัทธ์และวงฮิสเทอรีซิส และอธิบายตัวนำยวดยิ่งที่ความต้านทานเป็นศูนย์
+difficulty: 7
+minutes: 35
+prerequisites: [physics.magnetism.magnetic-flux-forces, physics.electricity.resistivity-drift]
+encompasses:
+  - { id: physics.magnetism.magnetic-flux-forces, weight: 0.3 }
+  - { id: physics.electricity.resistivity-drift, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: hall-effect.svg
+    alt: 'แถบตัวนำที่มีกระแสไหลไปทางขวา สนามแม่เหล็กพุ่งออกจากหน้ากระดาษ อิเล็กตรอนถูกเบนลงด้านล่าง ทำให้ด้านล่างมีประจุลบและด้านบนมีประจุบวก'
+    caption: แรงดันฮอลล์เกิดเพราะแรงแม่เหล็กเบนพาหะประจุไปสะสมที่ขอบ จนเกิดสนามไฟฟ้าที่หยุดการเบนนั้นพอดี
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: แรงดันฮอลล์ในแถบทองแดงบาง
+    problem: 'แถบทองแดงหนา $0.05\,\mathrm{mm}$ มีกระแส $20\,\mathrm{A}$ ไหลผ่าน อยู่ในสนามแม่เหล็ก $0.20\,\mathrm{T}$ ที่ตั้งฉากกับแถบ ถ้าความหนาแน่นอิเล็กตรอนอิสระ $n = 8.5 \times 10^{28}\,\mathrm{m^{-3}}$ จงหาแรงดันฮอลล์ (ใช้ $e = 1.602 \times 10^{-19}\,\mathrm{C}$)'
+    steps:
+      - text: 'ดุลแรงที่สภาวะคงตัว: $eE_H = ev_d B$ และ $V_H = E_H w$ โดย $v_d = \frac{I}{nAe}$ ได้ $V_H = \frac{IB}{net}$'
+        why: เมื่ออิเล็กตรอนสะสมจนสนามไฟฟ้าตามขวางหยุดการเบน แรงไฟฟ้าจะเท่ากับแรงแม่เหล็กพอดี
+      - text: 'แทนค่า $t = 5.0 \times 10^{-5}\,\mathrm{m}$: $V_H = \frac{20 \times 0.20}{8.5 \times 10^{28} \times 1.602 \times 10^{-19} \times 5.0 \times 10^{-5}} \approx 5.87 \times 10^{-6}\,\mathrm{V}$'
+        why: ความหนาต้องเป็นเมตรก่อนแทนค่า เพราะหน่วยของ $n$ เป็น $\mathrm{m^{-3}}$
+      - text: 'แรงดันฮอลล์มีค่าราว $5.9\,\mu\mathrm{V}$ ซึ่งเล็กมาก จึงต้องใช้เครื่องขยายสัญญาณในการวัด'
+        why: แรงดันฮอลล์ในโลหะมีค่าเล็กเพราะ $n$ ของโลหะสูงมาก
+    answer: 'แรงดันฮอลล์ประมาณ $5.9\,\mu\mathrm{V}$'
+  - { type: check, problem: physics.magnetism.magnetic-materials-hall.p006, prompt: ลองคิดก่อนอ่านต่อ ถ้าพาหะเป็นประจุบวก แรงดันฮอลล์มีขั้วเป็นอย่างไร }
+  - type: worked-example
+    title: ความซึมผ่านสัมพัทธ์ของเหล็กอ่อน
+    problem: 'เหล็กอ่อนชิ้นหนึ่งมี $\mu_r = 4000$ เมื่ออยู่ในสนามแม่เหล็ก $H = 60\,\mathrm{A/m}$ ความหนาแน่นฟลักซ์ $B$ ในเหล็กเป็นกี่เทสลา (ใช้ $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T \cdot m/A}$)'
+    steps:
+      - text: 'ความซึมผ่านของวัสดุคือ $\mu = \mu_r \mu_0$ และ $B = \mu H = \mu_r \mu_0 H$'
+        why: ค่า $\mu_r$ บอกว่าวัสดุทำให้สนามแม่เหล็กเข้มกว่าในสุญญากาศกี่เท่า
+      - text: '$B = 4000 \times 4\pi \times 10^{-7} \times 60 \approx 0.30\,\mathrm{T}$'
+        why: เป็นค่าที่มากกว่าในสุญญากาศถึงสี่พันเท่า จึงเห็นได้ว่าเหล็กอ่อนขยายสนามได้มาก
+    answer: 'ความหนาแน่นฟลักซ์ในเหล็กอ่อนประมาณ $0.30\,\mathrm{T}$'
+  - type: figure
+    src: hysteresis-loop.svg
+    alt: 'วงฮิสเทอรีซิสปิดรูปหนึ่งวงของวัสดุแม่เหล็ก เมื่อ H เป็นศูนย์ B มีค่าคงเหลือ ส่วนเมื่อ B เป็นศูนย์ H มีค่าบังคับ'
+    caption: วงกว้างบอกว่าวัสดุแม่เหล็กถาวรเก็บสมบัติแม่เหล็กไว้ได้มาก ส่วนแม่เหล็กอ่อนมีวงแคบ
+  - { type: simulation, title: แม่เหล็กและแม่เหล็กไฟฟ้า, url: "https://phet.colorado.edu/en/simulations/magnets-and-electromagnets", provider: phet, note: ซิมูเลชัน PhET ฝังภาษาไทยได้ ลองดูว่าขั้วแม่เหล็กและเส้นสนามเปลี่ยนไปอย่างไรเมื่อมีวัสดุต่างกัน, embed: true }
+  - { type: check, problem: physics.magnetism.magnetic-materials-hall.p016, prompt: ทำไมเหล็กจึงกลายเป็นแม่เหล็กถาวรได้ ลองคิดจากการจัดเรียงโมเมนต์ของอะตอม }
+glossary:
+  - { term: ปรากฏการณ์ฮอลล์, definition: แรงดันที่เกิดตั้งฉากกับกระแสในตัวนำเมื่อมีสนามแม่เหล็กตั้งฉาก เกิดจากแรงแม่เหล็กที่เบนพาหะประจุ }
+  - { term: ความซึมผ่านสัมพัทธ์, definition: 'อัตราส่วน $\mu_r = \mu / \mu_0$ ที่บอกว่าวัสดุทำให้สนามแม่เหล็กเข้มขึ้นกี่เท่า' }
+  - { term: อุณหภูมิกูรี, definition: อุณหภูมิที่วัสดุเฟร์โรแมกเนติกสูญเสียสมบัติแม่เหล็กถาวรและกลายเป็นพาราแมกเนติก }
+  - { term: ตัวนำยวดยิ่ง, definition: วัสดุที่มีความต้านทานเป็นศูนย์เมื่อเย็นกว่าอุณหภูมิวิกฤต และผลักสนามแม่เหล็กภายในออกไป }
+flashcards:
+  - { front: "แรงดันฮอลล์", back: "$V_H = \\frac{IB}{nqt}$ โดย $q$ คือประจุของพาหะ และ $t$ คือความหนา" }
+  - { front: "ความซึมผ่านของวัสดุ", back: "$\\mu = \\mu_r \\mu_0$ และ $B = \\mu H$" }
+  - { front: "ไดอะแมกเนติก พาราแมกเนติก และเฟร์โรแมกเนติก", back: "$\\mu_r$ น้อยกว่า 1 เล็กน้อย / มากกว่า 1 เล็กน้อย / มากกว่า 1 มาก" }
+  - { front: "ตัวนำยวดยิ่งผลักสนามแม่เหล็กออก", back: "ปรากฏการณ์ไมส์เนอร์ (Meissner effect)" }
+references:
+  - { title: "Hall effect", url: "https://en.wikipedia.org/wiki/Hall_effect", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Superconductivity", url: "https://en.wikipedia.org/wiki/Superconductivity", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Magnetic permeability (ค่า μ0 = 4π × 10⁻⁷ T·m/A ที่ใช้โดยประมาณ)", url: "https://en.wikipedia.org/wiki/Magnetic_permeability", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "เฟร์โรแมกเนติก", url: "https://th.wikipedia.org/wiki/เฟร์โรแมกเนติก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

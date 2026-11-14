@@ -1,0 +1,67 @@
+id: physics.kinematics.relative-velocity
+subject: physics
+title: { th: ความเร็วสัมพัทธ์ในหนึ่งและสองมิติ, en: Relative velocity in one and two dimensions }
+summary: ใช้กรอบอ้างอิงหาความเร็วของวัตถุหนึ่งเทียบกับอีกวัตถุหนึ่ง ทั้งการเคลื่อนที่ตามแนวเดียวกัน เรือข้ามแม่น้ำ เครื่องบินในลมขวาง และฝนที่ดูเฉียงเมื่อมองจากรถ
+difficulty: 5.5
+minutes: 30
+prerequisites: [physics.units.vectors, physics.kinematics.velocity]
+encompasses:
+  - { id: physics.units.vectors, weight: 0.4 }
+  - { id: physics.kinematics.velocity, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: river-crossing.svg
+    alt: 'เรือข้ามแม่น้ำจากฝั่งใต้ไปฝั่งเหนือ หัวเรือชี้ทวนกระแสน้ำทำมุม θ กับแนวตั้งฉาก กระแสน้ำไหลไปทางตะวันออก ทางขวาของภาพเป็นแผนภาพการบวกเวกเตอร์ที่ผลรวมชี้ขึ้นตรง'
+    caption: หัวเรือทวนน้ำเพื่อหักล้างการไหลของกระแสน้ำ เรือจึงไปถึงจุดตรงข้ามพอดี
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: รถกระบะตามรถตู้ที่วิ่งไปทางเดียวกัน
+    problem: 'รถกระบะวิ่งไปทางตะวันออกด้วย $25\,\mathrm{m/s}$ รถตู้อยู่ข้างหน้าห่างออกไป $140\,\mathrm{m}$ วิ่งไปทางตะวันออกด้วย $18\,\mathrm{m/s}$ รถกระบะจะตามทันรถตู้ในกี่วินาที'
+    steps:
+      - text: 'ความเร็วของรถกระบะ (A) เทียบกับรถตู้ (B): $v_{AB} = 25 - 18 = 7\,\mathrm{m/s}$'
+        why: เลือกกรอบอ้างอิงที่รถตู้ ทั้งสองไปทางเดียวกันจึงลบความเร็ว ไม่ใช่บวก
+      - text: 'เวลาที่ตามทัน: $t = \frac{140}{7} = 20\,\mathrm{s}$'
+        why: ในกรอบของรถตู้ รถกระบะเข้าหาด้วยความเร็ว 7 m/s ระยะที่ต้องไล่ทันคือ 140 m
+    answer: 'รถกระบะตามทันรถตู้ในเวลา $20\,\mathrm{s}$'
+  - { type: check, problem: physics.kinematics.relative-velocity.p001, prompt: ลองคิดก่อนอ่านต่อ รถคันเร็วเห็นรถคันช้าเคลื่อนไปทางไหน }
+  - type: worked-example
+    title: เรือข้ามแม่น้ำให้ถึงจุดตรงข้ามพอดี
+    problem: 'แม่น้ำกว้าง $160\,\mathrm{m}$ เรือแล่นด้วยอัตราเร็ว $5\,\mathrm{m/s}$ เทียบกับน้ำ กระแสน้ำไหลไปทางขวาด้วย $3\,\mathrm{m/s}$ ผู้ขับต้องหันหัวเรืออย่างไรเพื่อไปถึงจุดตรงข้ามพอดี และใช้เวลาเท่าใด'
+    steps:
+      - text: 'ถ้าหัวเรือตั้งฉากกับฝั่ง เวลาข้ามคือ $t_{\min} = \frac{160}{5} = 32\,\mathrm{s}$ แต่เรือจะถูกพัดไป $3 \times 32 = 96\,\mathrm{m}$'
+        why: องค์ประกอบของความเร็วที่ตั้งฉากกับฝั่งเท่านั้นที่กำหนดเวลาข้าม การหันตั้งฉากทำให้เวลาน้อยที่สุดแต่ไม่ถึงจุดตรงข้าม
+      - text: 'เพื่อชดเชยการไหล หัวเรือต้องทวนน้ำ โดยองค์ประกอบทวนน้ำเท่ากับ 3 m/s: $\sin\theta = \frac{3}{5}$ จึงได้ $\theta \approx 36.9^\circ$'
+        why: ความเร็วสัมพัทธ์ของเรือเทียบกับน้ำมีองค์ประกอบ 5 m/s และต้องหักล้างกระแสน้ำ 3 m/s พอดี
+      - text: 'ความเร็วข้ามฝั่งคือ $5\cos\theta = 4\,\mathrm{m/s}$ ดังนั้น $t = \frac{160}{4} = 40\,\mathrm{s}$'
+        why: ใช้องค์ประกอบของความเร็วที่ตั้งฉากกับฝั่งเพื่อหาเวลา
+    answer: 'หันหัวเรือทวนน้ำทำมุมประมาณ $37^\circ$ กับแนวตั้งฉากฝั่ง ใช้เวลาข้าม $40\,\mathrm{s}$'
+  - { type: figure, src: rain-relative.svg, alt: 'ซ้าย: ฝนตกแนวดิ่ง 10 เมตรต่อวินาที และรถวิ่งไปทางขวา 20 เมตรต่อวินาที ขวา: เมื่อมองจากในรถ ฝนดูเหมือนเคลื่อนที่เฉียงลงไปทางซ้ายของรถ', caption: ฝนดูเฉียงเมื่อมองจากรถ เพราะความเร็วของรถถูกหักออกจากความเร็วของฝน }
+  - type: interactive
+    title: ลากลูกศรเรือเพื่อดูความเร็วเทียบกับฝั่ง
+    caption: ลูกศรแรกคือความเร็วเรือเทียบกับน้ำ ลูกศรที่สองคือกระแสน้ำ ลูกศรรวมคือความเร็วเรือเทียบกับฝั่ง ลองเปลี่ยนทิศแล้วสังเกตว่าลูกศรรวมเปลี่ยนไปอย่างไร
+    widget:
+      kind: vector-add
+      a: [0, 4]
+      b: [2, 0]
+      draggable: true
+  - { type: check, problem: physics.kinematics.relative-velocity.p017, prompt: ถ้ากรอบอ้างอิงเคลื่อนที่ด้วยความเร็วคงตัว ความเร่งจะเปลี่ยนหรือไม่ }
+glossary:
+  - { term: ความเร็วสัมพัทธ์, definition: 'ความเร็วของวัตถุหนึ่งที่วัดจากกรอบอ้างอิงของอีกวัตถุหนึ่ง เขียนแทนด้วย $v_{PA}$ คือความเร็วของ $P$ เทียบกับ $A$' }
+  - { term: กรอบอ้างอิง, definition: ระบบที่ใช้เป็นจุดเทียบสำหรับวัดตำแหน่งและความเร็ว เช่น พื้นถนน ตัวรถ หรือฝั่งแม่น้ำ }
+  - { term: การบวกเวกเตอร์, definition: การรวมความเร็วหลายค่าที่มีทิศต่างกันเข้าด้วยกันโดยนำองค์ประกอบในแต่ละแกนมาบวกกัน }
+  - { term: ทวนกระแส, definition: การเคลื่อนที่สวนทางกับทิศที่น้ำไหลอยู่ ทำให้ความเร็วเทียบกับฝั่งลดลง }
+flashcards:
+  - { front: "สูตรการบวกความเร็วสัมพัทธ์", back: "$v_{PA} = v_{PB} + v_{BA}$ เมื่อ $P$ เทียบกับ $A$ เท่ากับ $P$ เทียบกับ $B$ บวก $B$ เทียบกับ $A$" }
+  - { front: "รถสองคันทิศเดียวกัน ความเร็วสัมพัทธ์ของ B เทียบ A", back: "$v_B - v_A$ (ลบ ไม่ใช่บวก)" }
+  - { front: "เวลาที่เรือข้ามแม่น้ำน้อยที่สุดเมื่อใด", back: "เมื่อหัวเรือตั้งฉากกับฝั่ง เพราะเวลาขึ้นกับองค์ประกอบตั้งฉากเท่านั้น" }
+  - { front: "เมื่อกรอบเคลื่อนที่ด้วยความเร็วคงตัวเทียบกัน ความเร่งเป็นอย่างไร", back: "เท่ากันในทุกกรอบ" }
+references:
+  - { title: "Relative velocity", url: "https://en.wikipedia.org/wiki/Relative_velocity", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Reference frame", url: "https://en.wikipedia.org/wiki/Reference_frame", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ความเร็ว", url: "https://th.wikipedia.org/wiki/ความเร็ว", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "4.5 Relative Motion in One and Two Dimensions (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/4-5-relative-motion-in-one-and-two-dimensions", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

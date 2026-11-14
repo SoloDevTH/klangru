@@ -1,0 +1,346 @@
+problems:
+  - id: physics.units.estimation-problem-solving.p001
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 1
+    type: mcq
+    stem: 'รถเมล์ยาวประมาณ $12\,\mathrm{m}$ เมื่อเขียนเป็นอันดับขนาด (เลขยกกำลังของ 10 ที่ใกล้ที่สุด) ความยาวนี้อยู่ในอันดับใด'
+    choices:
+      - { id: a, text: '$10^{0}$', feedback: 'ค่านี้คือ $1$ ซึ่งน้อยกว่า $12$ มากกว่าสิบเท่า' }
+      - { id: b, text: '$10^{1}$', correct: true }
+      - { id: c, text: '$10^{2}$', feedback: '$10^{2} = 100$ มากกว่า $12$ เกือบสิบเท่า อันดับขนาดควรตามค่าของ $\log_{10} 12 \approx 1.08$' }
+    hints:
+      - อันดับขนาดคือเลขยกกำลังของ 10 ที่ใกล้กับค่านั้นที่สุด
+      - หา $\log_{10} 12$ ก่อน แล้วปัดเป็นจำนวนเต็ม
+    solution: '$\log_{10} 12 \approx 1.08$ ปัดเป็น $1$ ดังนั้นอันดับขนาดคือ $10^{1}$ (รถเมล์ยาวราว 10 เมตร)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p002
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 1
+    type: numeric
+    stem: 'เส้นผมของคนหนาประมาณ $0.08\,\mathrm{mm}$ ตอบเป็นหน่วยไมโครเมตร ($\mu\mathrm{m}$)'
+    answer: { value: 80, tolerance: 0.5, unit: μm }
+    hints:
+      - '$1\,\mathrm{mm}$ เท่ากับกี่ $\mu\mathrm{m}$'
+      - คูณค่าเป็นมิลลิเมตรด้วย 1000 เพื่อได้ไมโครเมตร
+    misconceptions:
+      - { match: 0.08, feedback: 'ยังไม่ได้แปลงหน่วย $1\,\mathrm{mm} = 1000\,\mu\mathrm{m}$' }
+      - { match: 8, feedback: 'คิดว่า $1\,\mathrm{mm} = 10\,\mu\mathrm{m}$ ความจริงคือ $1000\,\mu\mathrm{m}$' }
+    solution: '$0.08\,\mathrm{mm} \times 1000\,\mu\mathrm{m/mm} = 80\,\mu\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p003
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 1
+    type: text
+    stem: 'หน่วยความยาวในระบบ SI คืออะไร (ตอบชื่อหน่วยหรือสัญลักษณ์)'
+    accepted: [เมตร, m, meter, metre]
+    hints:
+      - หน่วยนี้ใช้วัดระยะทางและความยาวของห้องเรียน
+      - ไม่ใช่ฟุต ฟุตเป็นหน่วยของระบบอังกฤษ
+    misconceptions:
+      - { match: ฟุต, feedback: ฟุตเป็นหน่วยในระบบอังกฤษ ไม่ใช่หน่วย SI }
+    solution: 'หน่วยความยาวใน SI คือเมตร สัญลักษณ์ $\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p004
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 2
+    type: numeric
+    stem: 'สระว่ายน้ำรูปสี่เหลี่ยมผืนผ้าในภาพยาว $50\,\mathrm{m}$ กว้าง $25\,\mathrm{m}$ และลึก $2\,\mathrm{m}$ ปริมาตรน้ำที่บรรจุได้เต็มสระกี่ลูกบาศก์เมตร (ตอบในหน่วย m³)'
+    figure:
+      src: pool-dims.svg
+      alt: สระว่ายน้ำรูปสี่เหลี่ยมผืนผ้า มองจากด้านบนยาว 50 เมตร กว้าง 25 เมตร และมองจากด้านข้างแสดงความลึก 2 เมตร
+    answer: { value: 2500, tolerance: 1, unit: m³ }
+    hints:
+      - ปริมาตรของกล่องสี่เหลี่ยมคือความยาวคูณความกว้างคูณความสูง
+      - ความสูงของน้ำในสระคือความลึกที่กำกับไว้
+    misconceptions:
+      - { match: 1250, feedback: 'ได้เพียงพื้นที่ผิวน้ำ $50 \times 25$ ลืมคูณความลึก' }
+      - { match: 250, feedback: 'ใช้ความลึกเป็น $0.2\,\mathrm{m}$ เพราะเลื่อนจุดทศนิยมผิด' }
+      - { match: 77, feedback: 'บวกความยาว ความกว้าง และความลึกแทนการคูณ ปริมาตรต้องคูณกัน' }
+    solution: '$V = 50 \times 25 \times 2 = 2500\,\mathrm{m^3}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p005
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 2
+    type: numeric
+    stem: 'สมมติว่าคนไทยคนหนึ่งมีอายุขัย $75$ ปี หัวใจเต้นเฉลี่ย $70$ ครั้งต่อนาที และใช้ 1 ปี = 365 วัน หัวใจเต้นตลอดชีวิตประมาณกี่ล้านครั้ง (ตอบเป็นล้านครั้ง ทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 2759.4, tolerance: 28, unit: ล้านครั้ง }
+    hints:
+      - คิดหาจำนวนนาทีทั้งชีวิตก่อน แล้วค่อยคูณด้วยอัตราการเต้นต่อนาที
+      - 1 วันมี 24 ชั่วโมง และ 1 ชั่วโมงมี 60 นาที
+    misconceptions:
+      - { match: 45.99, feedback: 'ลืมคูณจำนวนนาทีในหนึ่งชั่วโมง ทำให้ได้จำนวนครั้งเพียง 1 ใน 60' }
+      - { match: 7.56, feedback: 'ลืมคูณจำนวนวันในหนึ่งปี ใช้อายุขัยเป็นวันแทนปี' }
+    solution: '$75 \times 365 \times 24 \times 60 \times 70 = 2.7594 \times 10^{9} \approx 2759.4$ ล้านครั้ง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p006
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 2
+    type: numeric
+    stem: 'แอร์ในบ้านหลังหนึ่งในกรุงเทพฯ ขนาด $1000\,\mathrm{W}$ เปิดวันละ 8 ชั่วโมง ทุกวันเป็นเวลา 30 วัน ใช้พลังงานไฟฟ้ากี่ $\mathrm{kWh}$'
+    answer: { value: 240, tolerance: 0.5, unit: kWh }
+    hints:
+      - พลังงานเท่ากับกำลังคูณเวลา
+      - แปลงวัตต์เป็นกิโลวัตต์ก่อนคูณเวลารวมทั้งเดือน
+    misconceptions:
+      - { match: 240000, feedback: 'ได้หน่วยเป็นวัตต์-ชั่วโมง ต้องหาร 1000 เพื่อแปลงเป็นกิโลวัตต์-ชั่วโมง' }
+      - { match: 8, feedback: 'คำนวณได้เพียงหนึ่งวัน ลืมคูณ 30 วัน' }
+    solution: '$E = P \times t = 1\,\mathrm{kW} \times (8 \times 30)\,\mathrm{h} = 240\,\mathrm{kWh}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p007
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: 'ข้อใดเป็นการประมาณที่สมเหตุสมผล (เลือกทุกข้อที่สมเหตุสมผล)'
+    choices:
+      - { id: a, text: 'อาคารเรียน 3 ชั้นสูงประมาณ $10\,\mathrm{m}$', correct: true }
+      - { id: b, text: 'คนไทยทั่วไปสูง $170\,\mathrm{km}$', feedback: 'หน่วยไม่สมเหตุสมผล ความสูงคนราว $170\,\mathrm{cm}$ หรือ $1.7\,\mathrm{m}$' }
+      - { id: c, text: 'น้ำ $250\,\mathrm{mL}$ ในแก้วมีมวลประมาณ $250\,\mathrm{g}$', correct: true }
+      - { id: d, text: 'ไข่ไก่ฟองหนึ่งหนักประมาณ $50$ ตัน', feedback: 'ไข่ไก่หนักราว $50\,\mathrm{g}$ ไม่ใช่ $50$ ตัน ผิดหลายหมื่นเท่า' }
+    hints:
+      - เทียบกับสิ่งที่เห็นทุกวัน แล้วดูว่าหน่วยและจำนวนเข้ากับขนาดจริงหรือไม่
+      - น้ำหนึ่งมิลลิลิตรมีมวลประมาณหนึ่งกรัม
+    solution: 'อาคารเรียน 3 ชั้นสูงราว $3 \times 3.5\,\mathrm{m} \approx 10\,\mathrm{m}$ และน้ำ $1\,\mathrm{mL}$ มีมวล $1\,\mathrm{g}$ ส่วนข้อ b และ d ผิดด้วยหน่วยหรือจำนวนที่เกินจริงมาก'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p008
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 2
+    type: mcq
+    stem: 'ขั้นแรกของการแก้โจทย์แบบแฟร์มี (Fermi estimate) ควรทำอย่างไร'
+    choices:
+      - { id: a, text: 'แทนค่าตัวเลขลงในสูตรทันทีที่หาค่าได้', feedback: 'การแทนค่าก่อนวางกลยุทธ์มักทำให้ใช้ค่าผิด และไม่รู้ว่าตัวแปรใดต้องประมาณ' }
+      - { id: b, text: 'แบ่งปริมาณที่ถามออกเป็นปริมาณย่อยที่ประมาณได้ แล้วคูณกัน', correct: true }
+      - { id: c, text: 'เดาตัวเลขคำตอบแล้วค่อยตรวจด้วยเครื่องคิดเลข', feedback: 'การเดาไม่ใช่วิธีเชิงระบบ และเครื่องคิดเลขตรวจไม่ได้ว่าสมมติฐานสมเหตุสมผลหรือไม่' }
+      - { id: d, text: 'ค้นหาค่าที่ตรงกับคำถามจากตำราทุกเล่มก่อนคิด', feedback: 'การประมาณใช้เมื่อไม่มีค่าสำเร็จรูปให้ค้น จึงต้องคิดจากสิ่งที่รู้เอง' }
+    hints:
+      - ถามตัวเองว่าปริมาณที่ถามประกอบด้วยอะไรบ้าง
+      - ส่วนประกอบแต่ละส่วนประมาณได้ง่ายกว่าคำตอบรวม
+    solution: 'ขั้นแรกคือแบ่งคำถามเป็นปริมาณย่อยที่ประมาณได้ แล้วรวมผลด้วยการคูณและการหาร โดยเขียนสมมติฐานไว้ด้วย'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p009
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 3
+    type: numeric
+    stem: 'สมมติว่าคนไทยประมาณ $6.6 \times 10^{7}$ คน แต่ละคนกินข้าวสาร $0.1\,\mathrm{kg}$ ต่อวัน และข้าวสารหนึ่งเม็ดหนัก $0.025\,\mathrm{g}$ จำนวนเม็ดข้าวที่คนไทยทั้งประเทศกินในหนึ่งปี อยู่ประมาณกี่ล้านล้านเม็ด (ตอบเป็นล้านล้านเม็ด ทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 96.36, tolerance: 1.5, unit: ล้านล้านเม็ด }
+    hints:
+      - จำนวนเม็ด = จำนวนเม็ดต่อกิโลกรัม × มวลข้าวทั้งหมดเป็นกิโลกรัม
+      - มวลข้าวทั้งปีของคนหนึ่งคนคือ 0.1 kg คูณ 365 วัน
+    misconceptions:
+      - { match: 0.264, feedback: 'ลืมคูณจำนวนวันในหนึ่งปี ได้ผลเพียงหนึ่งวัน' }
+      - { match: 0.09636, feedback: 'ใช้กรัมแทนกิโลกรัมในการแปลงมวลข้าวจนได้ค่าเล็กลงหนึ่งพันเท่า' }
+    solution: '$N = (6.6 \times 10^{7}) \times (0.1 \times 365)\,\mathrm{kg} \times 40\,000 = 9.636 \times 10^{13}$ เม็ด (ใช้ 40 000 เม็ดต่อกิโลกรัม) $\approx 96.36$ ล้านล้านเม็ด'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p010
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 3
+    type: numeric
+    stem: 'คนเดินด้วยอัตราเร็วเฉลี่ย $1.4\,\mathrm{m/s}$ ต้องใช้เวลากี่วินาทีในการเดินถึงปลายสนามยาว $100\,\mathrm{m}$ (ตอบ 1 ตำแหน่ง)'
+    answer: { value: 71.4, tolerance: 0.5, unit: s }
+    hints:
+      - เวลา = ระยะทาง ÷ อัตราเร็ว
+      - ตรวจว่าระยะทางและอัตราเร็วใช้หน่วยเข้ากันก่อนหาร
+    misconceptions:
+      - { match: 140, feedback: 'คูณระยะทางกับอัตราเร็วแทนการหาร' }
+      - { match: 0.014, feedback: 'หารอัตราเร็วด้วยระยะทางกลับด้าน' }
+    solution: '$t = \frac{100\,\mathrm{m}}{1.4\,\mathrm{m/s}} \approx 71.4\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p011
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 3
+    type: order
+    stem: 'เรียงลำดับขนาดความยาวโดยประมาณของสิ่งต่อไปนี้จากเล็กที่สุดไปใหญ่ที่สุด โดยใช้ความรู้เรื่องอันดับขนาด'
+    items:
+      - นิวเคลียสของอะตอม
+      - อะตอมของไฮโดรเจน
+      - เซลล์เม็ดเลือดแดงของคน
+      - ความสูงของคนผู้ใหญ่
+      - เส้นผ่านศูนย์กลางของโลก
+    hints:
+      - นิวเคลียสเล็กกว่าอะตอมทั้งอะตอมหลายหมื่นเท่า
+      - เซลล์เม็ดเลือดแดงมีขนาดราวไม่กี่ไมโครเมตร
+    solution: 'นิวเคลียส $\approx 10^{-15}\,\mathrm{m}$, อะตอม $\approx 10^{-10}\,\mathrm{m}$, เซลล์เม็ดเลือดแดง $\approx 10^{-5}\,\mathrm{m}$, ความสูงคน $\approx 10^{0}\,\mathrm{m}$, โลก $\approx 10^{7}\,\mathrm{m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p012
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 3
+    type: match
+    stem: 'จับคู่ปริมาณแต่ละอย่างกับอันดับขนาดของค่านั้นในหน่วย SI'
+    pairs:
+      - { left: 'ปริมาตรน้ำในแก้ว $250\,\mathrm{mL}$', right: '$10^{-4}\,\mathrm{m^3}$' }
+      - { left: 'มวลของรถเก๋งหนึ่งคัน', right: '$10^{3}\,\mathrm{kg}$' }
+      - { left: 'ความสูงของตึกสูงแห่งหนึ่ง $300\,\mathrm{m}$', right: '$10^{2}\,\mathrm{m}$' }
+      - { left: 'อายุของโลกราว $4.5$ พันล้านปี (หน่วยวินาที)', right: '$10^{17}\,\mathrm{s}$' }
+    hints:
+      - เปลี่ยน $\mathrm{mL}$ เป็น $\mathrm{m^3}$ ก่อนหาอันดับ
+      - 1 ปีมีประมาณ $3.16 \times 10^{7}$ วินาที
+    solution: '$250\,\mathrm{mL} = 2.5 \times 10^{-4}\,\mathrm{m^3}$, รถเก๋ง $\approx 1.5 \times 10^{3}\,\mathrm{kg}$, ตึก $300\,\mathrm{m} = 3 \times 10^{2}\,\mathrm{m}$, โลก $\approx 4.5 \times 10^{9} \times 3.16 \times 10^{7} \approx 1.4 \times 10^{17}\,\mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p013
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 3
+    type: numeric
+    stem: 'หลังคาบ้านหลังหนึ่งในกรุงเทพฯ มีพื้นที่รับน้ำฝน $100\,\mathrm{m^2}$ ฝนตกหนักวันหนึ่งทำให้มีน้ำฝนสูง $150\,\mathrm{mm}$ สมมติไม่มีน้ำไหลออก น้ำฝนที่ตกลงบนหลังคาทั้งหมดมีปริมาตรกี่ลูกบาศก์เมตร'
+    answer: { value: 15, tolerance: 0.1, unit: m³ }
+    hints:
+      - น้ำฝนเหมือนแผ่นน้ำที่มีความสูงเท่ากับปริมาณฝน
+      - แปลง $150\,\mathrm{mm}$ เป็นเมตรก่อน แล้วคูณกับพื้นที่
+    misconceptions:
+      - { match: 150, feedback: 'ใช้ 150 เป็นเมตรโดยตรง ต้องแปลงมิลลิเมตรเป็นเมตรก่อน ($150\,\mathrm{mm} = 0.15\,\mathrm{m}$)' }
+      - { match: 0.0015, feedback: 'หารพื้นที่แทนการคูณ ปริมาตรคือความสูงของน้ำคูณพื้นที่' }
+    solution: '$V = A \times h = 100\,\mathrm{m^2} \times 0.15\,\mathrm{m} = 15\,\mathrm{m^3}$ หรือประมาณ 15,000 ลิตร'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p014
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 3
+    type: expression
+    stem: 'ให้ $n$ คือจำนวนเม็ดข้าวต่อกิโลกรัม และ $m$ คือมวลข้าวเป็นกิโลกรัม จงเขียนนิพจน์ของจำนวนเม็ดข้าวทั้งหมด $N$'
+    prefix: 'N ='
+    answer: { latex: 'n\cdot m', variables: [n, m] }
+    hints:
+      - จำนวนทั้งหมดได้จากจำนวนต่อหน่วยมวลคูณด้วยจำนวนหน่วยมวล
+      - หน่วยของ $n$ คือเม็ดต่อกิโลกรัม และหน่วยของ $m$ คือกิโลกรัม
+    misconceptions:
+      - { match: 'n+m', feedback: 'ใช้บวกแทนคูณ จำนวนเม็ดทั้งหมดเท่ากับจำนวนต่อกิโลกรัมคูณมวลทั้งหมด' }
+    solution: '$N = n \cdot m$ มีหน่วยเป็นเม็ด เพราะ (เม็ด/กิโลกรัม) × กิโลกรัม = เม็ด'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p015
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 4
+    type: numeric
+    stem: 'แสงจากดวงอาทิตย์เดินทางถึงโลกที่ระยะราว $1.5 \times 10^{11}\,\mathrm{m}$ ถ้าอัตราเร็วแสงเป็น $3.0 \times 10^{8}\,\mathrm{m/s}$ แสงใช้เวลากี่วินาทีจึงถึงโลก'
+    answer: { value: 500, tolerance: 5, unit: s }
+    hints:
+      - เวลา = ระยะทาง ÷ อัตราเร็ว
+      - ตอบเป็นวินาทีตามที่โจทย์กำหนด
+    misconceptions:
+      - { match: 4.5e19, feedback: 'คูณระยะทางกับอัตราเร็วแทนการหาร' }
+      - { match: 8.33, feedback: 'ได้ค่าเป็นนาที (ประมาณ 8.3 นาที) แต่โจทย์ขอเป็นวินาที' }
+    solution: '$t = \frac{1.5 \times 10^{11}}{3.0 \times 10^{8}} = 500\,\mathrm{s}$ (ประมาณ 8.3 นาที)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p016
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 4
+    type: numeric
+    stem: 'กระดาษ A4 หนึ่งแผ่นหนาประมาณ $0.1\,\mathrm{mm}$ ถ้าวางกระดาษ 500 แผ่นซ้อนกันเป็นกอง กองจะสูงกี่เซนติเมตร'
+    answer: { value: 5, tolerance: 0.05, unit: cm }
+    hints:
+      - ความสูงของกองคือจำนวนแผ่นคูณความหนาแต่ละแผ่น
+      - แปลงมิลลิเมตรเป็นเซนติเมตรก่อน โดย $1\,\mathrm{cm} = 10\,\mathrm{mm}$
+    misconceptions:
+      - { match: 50, feedback: 'ถือว่า $0.1\,\mathrm{mm}$ เท่ากับ $0.1\,\mathrm{cm}$ ทำให้คำตอบเกินจริง 10 เท่า' }
+      - { match: 0.05, feedback: 'ได้ค่าเป็นเมตร แต่โจทย์ขอเป็นเซนติเมตร' }
+    solution: '$500 \times 0.1\,\mathrm{mm} = 50\,\mathrm{mm} = 5\,\mathrm{cm}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p017
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 4
+    type: numeric
+    stem: 'น้ำ $250\,\mathrm{g}$ มีโมเลกุลประมาณกี่โมเลกุล ใช้มวลโมลาร์ของน้ำ $18\,\mathrm{g/mol}$ และเลขอาโวกาโดร $N_A = 6.022 \times 10^{23}\,\mathrm{mol^{-1}}$ (ตอบเป็นหน่วย $10^{24}$ โมเลกุล ทศนิยม 3 ตำแหน่ง)'
+    answer: { value: 8.364, tolerance: 0.05, unit: 10^24 โมเลกุล }
+    hints:
+      - จำนวนโมเลกุล = จำนวนโมล × เลขอาโวกาโดร
+      - จำนวนโมล = มวลหารด้วยมวลโมลาร์ โดยหน่วยต้องเป็นกรัมทั้งคู่
+    misconceptions:
+      - { match: 0.008364, feedback: 'ใช้มวลโมลาร์ 18 กิโลกรัมต่อโมลแทนกรัม' }
+      - { match: 8364, feedback: 'ใช้มวลน้ำเป็น $250\,\mathrm{kg}$ แทน $250\,\mathrm{g}$ ทำให้ได้ค่าใหญ่เกินจริงพันเท่า' }
+    solution: 'จำนวนโมล $= 250 / 18 \approx 13.89\,\mathrm{mol}$ และ $N = 13.89 \times 6.022 \times 10^{23} \approx 8.364 \times 10^{24}$ โมเลกุล'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p018
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 4
+    type: mcq
+    stem: 'การประมาณได้มวลของนักเรียนคนหนึ่งเท่ากับ $6000\,\mathrm{kg}$ ควรตรวจค่านี้อย่างไร'
+    choices:
+      - { id: a, text: 'ตรวจหน่วยว่าเป็นกิโลกรัม ถ้าถูกแล้วก็ยอมรับได้', feedback: 'หน่วยถูกต้องไม่ได้หมายความว่าขนาดของค่าถูก ต้องเทียบกับสิ่งที่รู้เอง' }
+      - { id: b, text: 'เทียบกับขนาดที่รู้จัก เช่น $6000\,\mathrm{kg}$ หนักกว่ารถกระบะหลายคัน จึงผิดปกติมาก', correct: true }
+      - { id: c, text: 'คิดซ้ำด้วยวิธีเดิมอีกครั้ง ถ้าได้ค่าเดิมก็ถูกต้อง', feedback: 'ถ้าสมมติฐานหรือขั้นตอนผิด การทำซ้ำก็ได้ค่าผิดเหมือนเดิม' }
+      - { id: d, text: 'ปัดเป็นเลขยกกำลังของ 10 แล้วไม่ต้องตรวจต่อ', feedback: 'การปัดไม่ได้ทำให้ค่าสมเหตุสมผลขึ้น ต้องตรวจก่อนปัด' }
+    hints:
+      - ลองนึกถึงมวลของรถกระบะหรือคนหนึ่งคน
+      - การตรวจขนาดคือการเทียบกับสิ่งที่รู้มาก่อน
+    solution: 'มวลของคนหนึ่งคนอยู่ราว $10^{2}\,\mathrm{kg}$ ค่า $6000\,\mathrm{kg}$ จึงผิดปกติมาก ควรย้อนไปตรวจสมมติฐานหรือการแปลงหน่วย'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p019
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 5
+    type: numeric
+    stem: 'สมมติว่าประเทศไทยมีประชากรประมาณ $6.6 \times 10^{7}$ คน และคนทั่วไปหายใจประมาณ 20 ครั้งต่อนาที ทั้งประเทศหายใจรวมกันประมาณกี่ครั้งในหนึ่งวัน (ตอบเป็นหน่วย $10^{12}$ ครั้ง ทศนิยม 2 ตำแหน่ง)'
+    answer: { value: 1.90, tolerance: 0.02, unit: 10^12 ครั้ง }
+    hints:
+      - จำนวนครั้ง = จำนวนคน × ครั้งต่อนาที × จำนวนนาทีต่อวัน
+      - 1 วันมี 24 ชั่วโมง และ 1 ชั่วโมงมี 60 นาที
+    misconceptions:
+      - { match: 0.03, feedback: 'ลืมคูณ 60 นาทีในหนึ่งชั่วโมง ใช้ 24 แทน 1440 นาที' }
+      - { match: 0.19, feedback: 'จำนวนประชากรผิดสิบเท่า $6.6 \times 10^{7}$ คือ 66 ล้านคน' }
+    solution: '$6.6 \times 10^{7} \times 20 \times 1440 = 1.9008 \times 10^{12}$ ครั้ง ≈ 1.90 (หน่วย $10^{12}$)'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p020
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 2
+    type: numeric
+    stem: 'รถยนต์วิ่งด้วยอัตราเร็ว $90\,\mathrm{km/h}$ แปลงเป็นกี่ $\mathrm{m/s}$ (ตอบ 1 ตำแหน่ง)'
+    answer: { value: 25, tolerance: 0.05, unit: m/s }
+    hints:
+      - $1\,\mathrm{km} = 1000\,\mathrm{m}$ และ $1\,\mathrm{h} = 3600\,\mathrm{s}$
+      - หารตัวเลขด้วย 3.6 เพราะ $1\,\mathrm{m/s} = 3.6\,\mathrm{km/h}$
+    misconceptions:
+      - { match: 324, feedback: 'คูณ 3.6 แทนการหาร $1\,\mathrm{m/s} = 3.6\,\mathrm{km/h}$' }
+      - { match: 90, feedback: 'ไม่ได้แปลงหน่วย ค่ายังเป็นกิโลเมตรต่อชั่วโมง' }
+    solution: '$90\,\mathrm{km/h} = 90 \times \frac{1000}{3600}\,\mathrm{m/s} = 25\,\mathrm{m/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.units.estimation-problem-solving.p021
+    topics: [physics.units.estimation-problem-solving]
+    difficulty: 4
+    type: numeric
+    stem: 'การประมาณได้พลังงาน $4.0 \times 10^{5}\,\mathrm{J}$ ค่าที่ยอมรับได้จากการวัดคือ $4.2 \times 10^{5}\,\mathrm{J}$ ความคลาดเคลื่อนคิดเป็นกี่เปอร์เซ็นต์ของค่าที่ยอมรับได้ (ตอบทศนิยม 1 ตำแหน่ง)'
+    answer: { value: 4.8, tolerance: 0.1, unit: '%' }
+    hints:
+      - หาผลต่างสัมบูรณ์ของค่าทั้งสองก่อน
+      - หารด้วยค่าที่ยอมรับได้ (ค่าอ้างอิง) แล้วคูณ 100
+    misconceptions:
+      - { match: 5.0, feedback: 'หารด้วยค่าที่ประมาณได้แทนค่าที่ยอมรับได้ ได้ $(4.2-4.0)/4.0$' }
+      - { match: 20000, feedback: 'ตอบเป็นผลต่างสัมบูรณ์ $0.2 \times 10^{5}\,\mathrm{J}$ ไม่ใช่เปอร์เซ็นต์' }
+    solution: '$\frac{4.2 - 4.0}{4.2} \times 100 \approx 4.8\%$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
