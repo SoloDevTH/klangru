@@ -1,0 +1,81 @@
+id: engineering.transport.traffic-highway
+subject: engineering
+title: { th: วิศวกรรมจราจรและการออกแบบทางหลวงเบื้องต้น, en: Traffic engineering and basic highway design }
+summary: ความสัมพันธ์ของปริมาณ ความเร็ว และความหนาแน่นจราจร ระยะมองเห็นเพื่อหยุดรถ โค้งราบกับการยกโค้ง และการจับเวลาสัญญาณไฟสองเฟสด้วยวิธีของ Webster
+difficulty: 6.5
+minutes: 40
+prerequisites: [physics.kinematics.constant-acceleration, physics.dynamics.friction, physics.kinematics.circular]
+encompasses:
+  - { id: physics.kinematics.constant-acceleration, weight: 0.3 }
+  - { id: physics.dynamics.friction, weight: 0.2 }
+  - { id: physics.kinematics.circular, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: engineering.transport.traffic-highway.p002, prompt: "ลองคิดก่อนอ่านต่อ: q = k × v หมายความว่าอย่างไร" }
+  - type: figure
+    title: ปริมาณกับความหนาแน่นตามแบบจำลอง Greenshields
+    src: greenshields.svg
+    alt: "กราฟพาราโบลาแสดงปริมาณจราจรในแกนตั้งกับความหนาแน่นในแกนนอน เริ่มจากศูนย์ ขึ้นถึงจุดสูงสุดที่ความหนาแน่น 60 คันต่อกิโลเมตร และลงกลับสู่ศูนย์ที่ความหนาแน่น 120 คันต่อกิโลเมตร จุดสูงสุดมีค่าประมาณ 2,400 คันต่อชั่วโมง"
+    caption: "ความจุอยู่ที่จุดสูงสุดของเส้นโค้ง ไม่ใช่ที่ความหนาแน่นสูงสุด"
+  - type: interactive
+    title: ลองเปลี่ยนความเร็วอิสระแล้วดูความจุ
+    caption: "เลื่อนความเร็วอิสระ (a) ดูว่าเส้นโค้งสูงขึ้นหรือต่ำลง ความจุคือค่าสูงสุดของเส้นโค้งที่ความหนาแน่นประมาณ 60 คันต่อกิโลเมตร"
+    widget:
+      kind: function-plot
+      functions: ["a\\cdot x\\cdot(1-x/120)"]
+      sliders:
+        - { name: a, min: 40, max: 100, step: 5, value: 80, label: ความเร็วอิสระ (กม./ชม.) }
+      x: [0, 120]
+      y: [0, 3000]
+  - type: figure
+    title: ระยะมองเห็นเพื่อหยุดรถ
+    src: stopping-sight.svg
+    alt: "ภาพแสดงรถวิ่งจากซ้ายไปขวาบนทาง มีสิ่งกีดขวางอยู่ทางขวา ช่วงแรกเป็นระยะตอบสนอง ช่วงหลังเป็นระยะเบรกจนหยุด รวมกันเป็นระยะมองเห็นเพื่อหยุดรถ"
+    caption: "ระยะเบรกเพิ่มตามกำลังสองของความเร็ว ส่วนระยะตอบสนองเพิ่มตามความเร็วโดยตรง"
+  - type: worked-example
+    title: ระยะมองเห็นเพื่อหยุดรถที่ 80 กิโลเมตรต่อชั่วโมง
+    problem: "ทางหลวงกำหนดความเร็วออกแบบ 80 กม./ชม. ใช้เวลาตอบสนอง 2.5 วินาที และความหน่วงในการเบรก 3.4 เมตร/วินาที² ระยะมองเห็นเพื่อหยุดรถเท่าไร"
+    steps:
+      - text: "แปลงความเร็ว $v = 80 \\div 3.6 = 22.22$ เมตร/วินาที"
+        why: "สูตร SSD ใช้หน่วยเมตรและวินาที การหาร 3.6 แปลงจาก กม./ชม. เป็น ม./วินาที"
+      - text: "ระยะตอบสนอง $v \\times t = 22.22 \\times 2.5 = 55.6$ เมตร"
+      - text: "ระยะเบรก $\\frac{v^2}{2a} = \\frac{22.22^2}{2 \\times 3.4} = \\frac{493.8}{6.8} \\approx 72.6$ เมตร"
+        why: "ระยะเบรกใช้กำลังสองของความเร็ว จึงเพิ่มเร็วกว่าระยะตอบสนอง"
+      - text: "รวม $\\mathrm{SSD} = 55.6 + 72.6 = 128.2$ เมตร"
+    answer: "ระยะมองเห็นเพื่อหยุดรถประมาณ 128.2 เมตร ต้องตรวจค่า t และ a กับมาตรฐานปัจจุบันก่อนใช้จริง"
+  - { type: check, problem: engineering.transport.traffic-highway.p010, prompt: "นึกถึงผลของฝนต่อแรงเสียดทานด้านข้าง" }
+  - type: worked-example
+    title: หาความจุของทางจากแบบจำลอง Greenshields
+    problem: "ทางหลวงมีความเร็วอิสระ $v_f = 100$ กม./ชม. และความหนาแน่นติดขัด $k_j = 150$ คัน/กม. ความหนาแน่นที่ความจุสูงสุดและความจุของทางเป็นเท่าไร และความเร็วที่จุดนั้นเป็นเท่าไร"
+    steps:
+      - text: "ความหนาแน่นที่ความจุสูงสุด $k = \\frac{k_j}{2} = \\frac{150}{2} = 75$ คัน/กม."
+        why: "จุดสูงสุดของพาราโบลาอยู่กึ่งกลางระหว่างศูนย์กับความหนาแน่นติดขัด"
+      - text: "ความจุ $q_{\\max} = \\frac{v_f \\times k_j}{4} = \\frac{100 \\times 150}{4} = 3{,}750$ คันต่อชั่วโมง"
+        why: "สูตรนี้มาจากการหาค่าสูงสุดของ $q = k v_f (1 - k/k_j)$ ที่ค่า k ครึ่งหนึ่งของ k_j"
+      - text: "ความเร็วที่จุดนั้น $v = v_f (1 - k/k_j) = 100 \\times (1 - 0.5) = 50$ กม./ชม. และตรวจว่า $75 \\times 50 = 3{,}750$"
+        why: "ที่ความจุสูงสุดความเร็วเป็นครึ่งหนึ่งของความเร็วอิสระเสมอในแบบจำลองนี้"
+    answer: "ความจุประมาณ 3,750 คันต่อชั่วโมงที่ความหนาแน่น 75 คันต่อกิโลเมตร และความเร็ว 50 กม./ชม."
+  - { type: check, problem: engineering.transport.traffic-highway.p014, prompt: "ดูว่าอะไรขัดจังหวะการไหลบ่อยที่สุด" }
+glossary:
+  - { term: ความหนาแน่นจราจร, definition: "จำนวนคันรถต่อหนึ่งกิโลเมตรของถนนในช่วงเวลาหนึ่ง (density, k)" }
+  - { term: ปริมาณจราจร, definition: "จำนวนคันรถที่ผ่านจุดหนึ่งต่อชั่วโมง (flow, q)" }
+  - { term: ความจุของทาง, definition: "ปริมาณสูงสุดที่ทางรับได้จริงต่อชั่วโมงภายใต้สภาพที่กำหนด (capacity)" }
+  - { term: ระยะมองเห็นเพื่อหยุดรถ (SSD), definition: "ระยะรวมของการตอบสนองและการเบรกจนหยุดก่อนถึงสิ่งกีดขวาง (stopping sight distance)" }
+  - { term: การยกโค้ง, definition: "การเอียงผิวทางเข้าหาศูนย์กลางโค้งเพื่อช่วยสร้างแรงเข้าหาศูนย์กลาง (superelevation)" }
+  - { term: เวลาสูญเสีย, definition: "เวลาในหนึ่งรอบสัญญาณที่ไม่ได้ใช้เคลื่อนรถจริง เช่น ช่วงเริ่มเคลื่อนตัวและช่วงเคลียร์ทาง (lost time)" }
+  - { term: อัตราส่วนปริมาณต่อความจุ (y), definition: "อัตราส่วนปริมาณจราจรวิกฤตของเฟสต่อความจุที่อนุญาตให้ใช้ได้ (flow ratio)" }
+flashcards:
+  - { front: "q = ? ในงานจราจร", back: "q = k × v โดย k คือความหนาแน่นและ v คือความเร็วเฉลี่ย" }
+  - { front: "SSD ประกอบด้วยอะไรบ้าง", back: "ระยะตอบสนอง v × t รวมกับระยะเบรก v² ÷ (2a)" }
+  - { front: "แบบจำลอง Greenshields ความจุสูงสุดคำนวณอย่างไร", back: "q_max = v_f × k_j ÷ 4 ที่ความหนาแน่น k_j ÷ 2" }
+  - { front: "สูตร Webster สำหรับรอบเวลาสัญญาณ", back: "C = (1.5L + 5) ÷ (1 − Y) โดย Y คือผลรวมของ y" }
+  - { front: "ทำไมต้องยกโค้ง", back: "ให้น้ำหนักรถช่วยสร้างแรงเข้าหาศูนย์กลางโค้ง ลดการพึ่งแรงเสียดทาน" }
+references:
+  - { title: "Traffic flow", url: "https://en.wikipedia.org/wiki/Traffic_flow", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Stopping sight distance", url: "https://en.wikipedia.org/wiki/Stopping_sight_distance", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Signal timing", url: "https://en.wikipedia.org/wiki/Signal_timing", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

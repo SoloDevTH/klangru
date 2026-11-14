@@ -1,0 +1,67 @@
+id: engineering.environmental.carbon-neutrality
+subject: engineering
+title: { th: บัญชีก๊าซเรือนกระจก ความเป็นกลางทางคาร์บอน และเป้าหมายสุทธิเป็นศูนย์, en: Greenhouse gas accounting, carbon neutrality, and net zero }
+summary: คำนวณการปล่อยก๊าซเรือนกระจกด้วย GWP และค่าการปล่อย แยกขอบเขต 1 2 3 วางลำดับการลดการปล่อย และแยกความเป็นกลางทางคาร์บอนออกจากสุทธิเป็นศูนย์
+difficulty: 6
+minutes: 40
+prerequisites: [earthscience.atmosphere.climate-change, chemistry.stoichiometry.reactions]
+encompasses:
+  - { id: earthscience.atmosphere.climate-change, weight: 0.2 }
+  - { id: chemistry.stoichiometry.reactions, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - { type: check, problem: engineering.environmental.carbon-neutrality.p001, prompt: "ลองคิดก่อนอ่านต่อ: GWP บอกอะไรเกี่ยวกับก๊าซ" }
+  - type: figure
+    title: ขอบเขต 1 2 และ 3
+    src: scopes.svg
+    alt: "แผนภาพแสดงกล่ององค์กรตรงกลางที่มีลูกศรจากสามกล่องด้านบน กล่องซ้ายคือ Scope 1 การเผาไหม้ในสถานที่และยานพาหนะ กล่องกลางคือ Scope 2 ไฟฟ้าหรือความร้อนที่ซื้อ และกล่องขวาคือ Scope 3 ห่วงโซ่คุณค่า"
+    caption: "Scope 1 และ 2 เป็นส่วนที่องค์กรควบคุมได้โดยตรง ส่วน Scope 3 มักเป็นส่วนที่ใหญ่ที่สุดในหลายองค์กร"
+  - type: worked-example
+    title: การเผาไหม้บิวเทนและปริมาณ CO₂
+    problem: "บิวเทน C₄H₁₀ เผาไหม้สมบูรณ์ตามสมการ C₄H₁₀ + 6.5O₂ → 4CO₂ + 5H₂O ปล่อย CO₂ กี่กิโลกรัมต่อบิวเทน 1 กิโลกรัม (ใช้ C = 12.011, H = 1.008, O = 15.999)"
+    steps:
+      - text: "มวลโมเลกุล $M(\\mathrm{C_4H_{10}}) = 4 \\times 12.011 + 10 \\times 1.008 = 58.124$ g/mol"
+        why: "มวลโมเลกุลต้องคำนวณจากจำนวนอะตอมของแต่ละธาตุในสูตรจริง"
+      - text: "มวลโมเลกุล $M(\\mathrm{CO_2}) = 12.011 + 2 \\times 15.999 = 44.009$ g/mol"
+      - text: "บิวเทน 1 โมลให้ CO₂ 4 โมล ดังนั้น CO₂ ต่อบิวเทน 1 กิโลกรัม $= \\frac{4 \\times 44.009}{58.124} \\approx 3.03$ kg"
+        why: "เราต้องเทียบมวลกับมวลไม่ใช่โมลกับโมล เพราะโจทย์ถามเป็นกิโลกรัม"
+    answer: "ประมาณ 3.03 กิโลกรัม CO₂ ต่อบิวเทน 1 กิโลกรัม ใช้เป็นค่าการปล่อยที่ได้จากสมการโดยตรงเมื่อรู้ปริมาณเชื้อเพลิง"
+  - type: worked-example
+    title: เส้นทางการลดการปล่อยสู่สุทธิเป็นศูนย์
+    problem: "(ข้อมูลสมมติ) องค์กรมีการปล่อยฐาน 500 tCO₂e ต่อปี ลดการปล่อยที่แหล่งกำเนิดได้ 80% ส่วนที่เหลือชดเชยด้วยคาร์บอนเครดิตราคา 150 บาทต่อตัน ต้องจ่ายเงินชดเชยเท่าไรต่อปี"
+    steps:
+      - text: "การปล่อยที่เหลือ $= 500 \\times (1 - 0.80) = 100$ tCO₂e"
+        why: "การลดที่แหล่งกำเนิดต้องหักออกก่อนคิดการชดเชย"
+      - text: "ค่าชดเชย $= 100 \\times 150 = 15{,}000$ บาทต่อปี"
+        why: "ราคาคิดต่อตันของการปล่อยที่เหลือ ไม่ใช่ต่อการปล่อยฐานทั้งหมด"
+    answer: "ต้องจ่ายประมาณ 15,000 บาทต่อปี หากลดการปล่อยได้มากขึ้น ค่าชดเชยจะลดลงตาม"
+  - { type: check, problem: engineering.environmental.carbon-neutrality.p010, prompt: "ลองคำนวณการปล่อยที่หลีกเลี่ยงได้จากสัดส่วนไฟฟ้า" }
+  - type: figure
+    title: เส้นทางการลดการปล่อย
+    src: reduction-path.svg
+    alt: "แผนภูมิแท่งแสดงการปล่อยฐาน 1,000 ตัน ปีที่ 3 เหลือ 800 ตัน ปีที่ 5 เหลือ 600 ตัน และส่วนที่ต้องชดเชยหลังลดได้มากพอ 100 ตัน แท่งสุดท้ายเป็นสีเขียวเพื่อแยกว่าเป็นส่วนที่ชดเชย"
+    caption: "เป้าหมายสุทธิเป็นศูนย์ลดส่วนใหญ่ที่แหล่งกำเนิดก่อน แล้วชดเชยเฉพาะส่วนที่เหลือ"
+glossary:
+  - { term: ศักยภาพการทำให้โลกร้อน (GWP), definition: "ความสามารถในการกักความร้อนของก๊าซหนึ่งหน่วยมวล เทียบกับ CO₂ ในช่วงเวลาที่กำหนด (global warming potential)" }
+  - { term: คาร์บอนไดออกไซด์เทียบเท่า (CO₂e), definition: "หน่วยรวมก๊าซเรือนกระจกทุกชนิดให้เป็นปริมาณ CO₂ ที่ให้ผลการกักความร้อนเท่ากัน" }
+  - { term: ค่าการปล่อย (emission factor), definition: "ปริมาณก๊าซเรือนกระจกที่ปล่อยต่อหน่วยของกิจกรรม เช่น ต่อกิโลวัตต์-ชั่วโมงของไฟฟ้า" }
+  - { term: ขอบเขต 1 2 และ 3, definition: "การแบ่งการปล่อยตามแหล่งที่มา ได้แก่โดยตรง ทางอ้อมจากพลังงาน และในห่วงโซ่คุณค่า" }
+  - { term: ความเป็นกลางทางคาร์บอน, definition: "การทำให้การปล่อยรวมสมดุลกับการลดหรือการชดเชยในช่วงเวลาหนึ่ง (carbon neutrality)" }
+  - { term: สุทธิเป็นศูนย์, definition: "การลดการปล่อยทั้งระบบให้ใกล้ศูนย์ตามเส้นทาง โดยชดเชยเฉพาะส่วนที่เหลือ (net zero)" }
+  - { term: คาร์บอนเครดิต, definition: "หน่วยการลดหรือกักเก็บการปล่อยที่ตรวจสอบได้ ใช้ชดเชยการปล่อยที่องค์กรลดเองไม่ได้" }
+flashcards:
+  - { front: "GWP ของมีเทนและไนตรัสออกไซด์ในรายงาน AR5", back: "มีเทน 28 และไนตรัสออกไซด์ 265 (GWP100 โดยไม่รวมผลป้อนกลับคาร์บอน)" }
+  - { front: "การปล่อย = ?", back: "ข้อมูลกิจกรรม × ค่าการปล่อย (emission factor)" }
+  - { front: "Scope 1 กับ Scope 2 ต่างกันอย่างไร", back: "Scope 1 ปล่อยโดยตรงจากแหล่งขององค์กร Scope 2 ปล่อยทางอ้อมจากพลังงานที่ซื้อ" }
+  - { front: "ความเป็นกลางทางคาร์บอนต่างจากสุทธิเป็นศูนย์อย่างไร", back: "ความเป็นกลางคือสมดุลด้วยการลดหรือชดเชย สุทธิเป็นศูนย์เน้นลดการปล่อยทั้งระบบให้ใกล้ศูนย์ก่อนชดเชยส่วนที่เหลือ" }
+  - { front: "คาร์บอนเครดิตคุณภาพดีต้องมีคุณสมบัติอะไร", back: "เพิ่มขึ้นจริงเทียบกับฐาน ตรวจสอบได้ ไม่ถูกนับซ้ำ และถาวรตามเกณฑ์" }
+references:
+  - { title: "Carbon neutrality", url: "https://en.wikipedia.org/wiki/Carbon_neutrality", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Net zero emissions", url: "https://en.wikipedia.org/wiki/Net_zero_emissions", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Energy in Thailand", url: "https://en.wikipedia.org/wiki/Energy_in_Thailand", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ก๊าซเรือนกระจก", url: "https://th.wikipedia.org/wiki/ก๊าซเรือนกระจก", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
