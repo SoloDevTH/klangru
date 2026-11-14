@@ -1,0 +1,59 @@
+id: computer.society.green-computing
+subject: computer
+title: { th: คอมพิวเตอร์กับสิ่งแวดล้อมและความยั่งยืน, en: "Computers, the environment and sustainability" }
+summary: ติดตามวงจรชีวิตของอุปกรณ์ คำนวณพลังงานจากกำลังไฟและเวลา วัดประสิทธิภาพศูนย์ข้อมูลด้วย PUE และพิจารณาว่าใครได้รับผลกระทบจากเทคโนโลยี
+difficulty: 4
+minutes: 40
+prerequisites: [computer.society.computing-impacts, computer.systems.computer-systems]
+encompasses: []
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: life-cycle.svg
+    alt: "วงจรชีวิตอุปกรณ์สี่ขั้นเรียงเป็นวง ขั้นที่ 1 ขุดแร่และแปรรูป ไปขั้นที่ 2 ผลิตและประกอบ ไปขั้นที่ 3 ใช้งาน ไปขั้นที่ 4 ซ่อม ใช้ซ้ำ รีไซเคิล แล้ววนกลับไปขั้นที่ 1"
+    caption: "ทุกขั้นของวงจรชีวิตใช้ทรัพยากรและพลังงาน การยืดอายุการใช้งานช่วยลดการวนรอบนี้"
+  - type: worked-example
+    title: คำนวณประสิทธิภาพศูนย์ข้อมูลด้วย PUE
+    problem: "ศูนย์ข้อมูลแห่งหนึ่งใช้กำลังไฟฟ้ารวม 1,200 กิโลวัตต์ และเครื่องคอมพิวเตอร์ใช้ไป 800 กิโลวัตต์ PUE เท่ากับเท่าใด และส่วนเกินที่ไม่ได้ใช้กับเครื่องคอมพิวเตอร์เท่ากับเท่าใด"
+    steps:
+      - text: "หา PUE จาก พลังงานรวม หารด้วยพลังงานของเครื่องคอมพิวเตอร์: 1,200 ÷ 800 = 1.5"
+      - text: "หาส่วนเกิน ซึ่งเป็นส่วนที่ไม่ได้ใช้กับเครื่องคอมพิวเตอร์โดยตรง: 1,200 − 800 = 400 กิโลวัตต์"
+        why: "พลังงานส่วนเกินคือส่วนระบายความร้อน ระบบไฟ และอุปกรณ์อื่นที่ช่วยให้เครื่องทำงาน"
+      - text: "ตีความ PUE 1.5 หมายความว่าทุกพลังงาน 1 หน่วยที่ใช้กับเครื่อง ศูนย์ข้อมูลต้องใช้เพิ่ม 0.5 หน่วยสำหรับส่วนอื่น"
+    answer: "PUE เท่ากับ 1.5 และส่วนเกินคือ 400 กิโลวัตต์"
+  - { type: check, problem: computer.society.green-computing.p010, prompt: "ถ้าค่า PUE ลดลงใกล้ 1 หมายถึงอะไร" }
+  - type: figure
+    src: device-power.svg
+    alt: "แผนภูมิแท่งกำลังไฟตัวอย่างของอุปกรณ์สี่ชนิด แท็บเล็ต 10 วัตต์ แล็ปท็อป 45 วัตต์ เดสก์ท็อป 200 วัตต์ และเซิร์ฟเวอร์ 400 วัตต์ แกนตั้งบอกวัตต์"
+    caption: "กำลังไฟต่างกันมาก ทำให้การเลือกเครื่องมีผลต่อพลังงานที่ใช้"
+  - type: worked-example
+    title: คำนวณพลังงานและคาร์บอนของเซิร์ฟเวอร์
+    problem: "เซิร์ฟเวอร์กำลังไฟ 400 วัตต์ทำงาน 24 ชั่วโมงต่อวัน 30 วัน จะใช้พลังงานกี่ kWh และถ้าค่าการปล่อยคาร์บอนสมมติเป็น 0.5 กิโลกรัมต่อ kWh จะปล่อยคาร์บอนกี่กิโลกรัม"
+    steps:
+      - text: "หาพลังงานเป็นวัตต์-ชั่วโมง: 400 × 24 × 30 = 288,000 วัตต์-ชั่วโมง"
+      - text: "เปลี่ยนเป็น kWh โดยหารด้วย 1000: 288,000 ÷ 1000 = 288 kWh"
+        why: "หน่วยต้องตรงกับค่าการปล่อยคาร์บอนที่ให้มาซึ่งคิดเป็น kWh"
+      - text: "คำนวณคาร์บอน 288 × 0.5 = 144 กิโลกรัม"
+    answer: "ใช้พลังงาน 288 kWh และปล่อยคาร์บอนประมาณ 144 กิโลกรัม (จากค่าสมมติ)"
+  - { type: check, problem: computer.society.green-computing.p016, prompt: "ลองคำนวณคาร์บอนจากพลังงาน 100 kWh ด้วยค่า 0.5 กิโลกรัมต่อ kWh" }
+glossary:
+  - { term: วงจรชีวิต (life cycle), definition: "ขั้นตอนทั้งหมดของอุปกรณ์ ตั้งแต่ขุดวัตถุดิบ ผลิต ใช้งาน จนถึงการทิ้งหรือรีไซเคิล" }
+  - { term: ขยะอิเล็กทรอนิกส์ (e-waste), definition: "เครื่องหรือชิ้นส่วนอิเล็กทรอนิกส์ที่เลิกใช้แล้ว ต้องจัดการให้ถูกวิธีเพราะมีโลหะและสารที่เป็นอันตราย" }
+  - { term: ศูนย์ข้อมูล (data center), definition: "อาคารที่มีเครื่องเซิร์ฟเวอร์จำนวนมากทำงานตลอดเวลาเพื่อให้บริการเว็บไซต์และแอปพลิเคชัน" }
+  - { term: PUE (power usage effectiveness), definition: "ค่าประสิทธิภาพพลังงานของศูนย์ข้อมูล คำนวณจากพลังงานรวมหารด้วยพลังงานของอุปกรณ์คอมพิวเตอร์ ยิ่งใกล้ 1 ยิ่งดี" }
+  - { term: กิโลวัตต์-ชั่วโมง (kWh), definition: "หน่วยพลังงานที่ได้จากการใช้กำลังไฟ 1 กิโลวัตต์เป็นเวลา 1 ชั่วโมง" }
+flashcards:
+  - { front: "วงจรชีวิตของอุปกรณ์มีขั้นอะไรบ้าง", back: "ขุดแร่และแปรรูป → ผลิตและประกอบ → ใช้งาน → ซ่อม ใช้ซ้ำ หรือรีไซเคิล" }
+  - { front: "PUE คำนวณอย่างไร", back: "พลังงานรวมของศูนย์ข้อมูลหารด้วยพลังงานของอุปกรณ์คอมพิวเตอร์" }
+  - { front: "จากวัตต์เป็น kWh ทำอย่างไร", back: "คูณด้วยชั่วโมงและจำนวนวันที่ใช้ แล้วหารด้วย 1000" }
+  - { front: "สิทธิในการซ่อมช่วยสิ่งแวดล้อมอย่างไร", back: "ยืดอายุการใช้งานเครื่อง ทำให้ไม่ต้องผลิตเครื่องใหม่บ่อย" }
+references:
+  - { title: "Electronic waste", url: "https://en.wikipedia.org/wiki/Electronic_waste", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Power usage effectiveness", url: "https://en.wikipedia.org/wiki/Power_usage_effectiveness", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Right to repair", url: "https://en.wikipedia.org/wiki/Right_to_repair", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Planned obsolescence", url: "https://en.wikipedia.org/wiki/Planned_obsolescence", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

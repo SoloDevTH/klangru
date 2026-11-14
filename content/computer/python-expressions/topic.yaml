@@ -1,0 +1,62 @@
+id: computer.programming.python-expressions
+subject: computer
+title: { th: นิพจน์ ชนิดข้อมูล และการแปลงชนิดใน Python, en: "Expressions, data types and type conversion in Python" }
+summary: ใช้ print และชนิดข้อมูลใน Python แปลงระหว่างข้อความ จำนวนเต็ม และทศนิยม เข้าใจลำดับการดำเนินการ ทศนิยมคลาดเคลื่อน และอ่านข้อความแจ้งข้อผิดพลาด
+difficulty: 3.5
+minutes: 40
+prerequisites: [computer.programming.basics]
+encompasses:
+  - { id: computer.programming.basics, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: operator-order.svg
+    alt: "ลำดับการดำเนินการใน Python เรียงแปดแถวจากบนลงล่าง ได้แก่ วงเล็บ ยกกำลัง คูณหารและหารปัดลงกับหารเอาเศษ บวกลบ เปรียบเทียบ not and และ or โดยแถวบนทำก่อนแถวล่าง"
+    caption: "ถ้าไม่แน่ใจว่าจะทำอะไรก่อน ให้ใส่วงเล็บเพื่อบังคับลำดับ"
+  - type: worked-example
+    title: คำนวณนิพจน์ทีละขั้นตามลำดับการดำเนินการ
+    problem: "คำนวณนิพจน์ 2 + 3 * 4 ** 2 / 8 ได้ค่าเท่าใด และชนิดของผลลัพธ์เป็นอะไร"
+    steps:
+      - text: "ยกกำลังทำก่อน 4 ** 2 = 16"
+      - text: "คูณ 3 * 16 = 48"
+        why: "คูณและหารทำก่อนบวก จึงต้องคำนวณส่วนนี้ก่อนบวก 2"
+      - text: "หาร 48 / 8 = 6.0"
+        why: "การหารด้วย / ให้ผลเป็นทศนิยมเสมอ แม้หารลงตัว"
+      - text: "บวก 2 + 6.0 = 8.0"
+    answer: "ผลลัพธ์คือ 8.0 เป็นชนิด float"
+  - { type: check, problem: computer.programming.python-expressions.p005, prompt: "ลองคำนวณ 2 + 3 * 4 ด้วยลำดับที่ถูกต้อง" }
+  - type: figure
+    src: type-convert.svg
+    alt: "ตารางห้าแถวแสดงการแปลงชนิดข้อมูล ได้แก่ ข้อความ 12 แปลงด้วย int ได้ 12 จำนวนเต็ม 12 แปลงด้วย str ได้ข้อความ 12 จำนวนเต็ม 12 แปลงด้วย float ได้ 12.0 ทศนิยม 12.9 แปลงด้วย int ได้ 12 โดยตัดทศนิยมทิ้ง และข้อความ 12.5 แปลงด้วย int เกิด ValueError"
+    caption: "ตารางนี้สรุปการแปลงชนิดที่ใช้บ่อยและผลที่เกิดขึ้น"
+  - type: worked-example
+    title: แปลงราคาจากข้อความก่อนคำนวณ
+    problem: "ตัวแปร price_text เก็บข้อความ \"25\" ซื้อ 2 ชิ้น ราคารวมเป็นเท่าไร ถ้าเขียน price_text * 2 กับ int(price_text) * 2 จะได้ผลต่างกันอย่างไร"
+    steps:
+      - text: "price_text * 2 ได้ \"2525\" เพราะเครื่องต่อข้อความสองครั้ง ไม่ใช่การคูณตัวเลข"
+        why: "ชนิดของค่าเป็นข้อความ การคูณด้วยจำนวนเต็มจึงทำซ้ำข้อความ"
+      - text: "แปลงข้อความเป็นจำนวนเต็มก่อน int(price_text) ได้ 25"
+      - text: "คูณด้วยจำนวนชิ้น int(price_text) * 2 = 25 * 2 = 50"
+    answer: "ราคารวมคือ 50 บาท การเขียน price_text * 2 โดยตรงให้ผลผิดเป็น \"2525\""
+  - { type: check, problem: computer.programming.python-expressions.p012, prompt: "ถ้า x = \"7\" และ y = 3 แล้ว x + y จะเกิดอะไร" }
+glossary:
+  - { term: ชนิดข้อมูล (data type), definition: "ประเภทของค่า เช่น int จำนวนเต็ม float ทศนิยม และ str ข้อความ ซึ่งกำหนดว่าทำอะไรกับค่านั้นได้บ้าง" }
+  - { term: นิพจน์ (expression), definition: "ส่วนของโค้ดที่คำนวณได้เป็นค่าหนึ่งค่า เช่น 2 + 3 * 4" }
+  - { term: ลำดับการดำเนินการ (operator precedence), definition: "กติกาที่กำหนดว่าตัวดำเนินการใดทำก่อนหลังในนิพจน์ที่มีหลายตัว" }
+  - { term: ทศนิยมคลาดเคลื่อน (floating-point error), definition: "ความต่างเล็กน้อยของทศนิยมที่เกิดจากการเก็บตัวเลขแบบประมาณในคอมพิวเตอร์" }
+  - { term: คอมเมนต์ (comment), definition: "ข้อความที่เริ่มด้วยเครื่องหมาย # ใช้อธิบายโค้ดให้คนอ่าน โปรแกรมจะไม่ทำงานกับข้อความนี้" }
+flashcards:
+  - { front: "int(\"25\") * 2 ได้ค่าเท่าใด", back: "50 เพราะแปลงข้อความเป็นจำนวนเต็มก่อนคูณ" }
+  - { front: "int(\"12.5\") ทำไมเกิด ValueError", back: "เพราะข้อความทศนิยมแปลงเป็นจำนวนเต็มโดยตรงไม่ได้ ต้องแปลงเป็น float ก่อน" }
+  - { front: "2 + 3 * 4 ได้เท่าใด เพราะเหตุใด", back: "14 เพราะคูณทำก่อนบวก" }
+  - { front: "0.1 + 0.2 == 0.3 เป็น True หรือ False", back: "False เพราะทศนิยมเก็บแบบประมาณ ควรใช้ math.isclose เทียบ" }
+references:
+  - { title: "Python (programming language)", url: "https://en.wikipedia.org/wiki/Python_(programming_language)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Operator precedence", url: "https://en.wikipedia.org/wiki/Operator_precedence", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Floating-point arithmetic", url: "https://en.wikipedia.org/wiki/Floating-point_arithmetic", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Type conversion", url: "https://en.wikipedia.org/wiki/Type_conversion", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,385 @@
+problems:
+  - id: computer.programming.python-expressions.p001
+    topics: [computer.programming.python-expressions]
+    difficulty: 1
+    type: mcq
+    stem: "ในไพธอน ข้อใดเป็นข้อความ (ชนิด str)"
+    choices:
+      - { id: a, text: "ข้อความ 42 ที่อยู่ในเครื่องหมายคำพูด", correct: true }
+      - { id: b, text: "เลข 42 ที่ไม่มีเครื่องหมายคำพูด", feedback: "เป็นจำนวนเต็ม (int) ไม่ใช่ข้อความ" }
+      - { id: c, text: "เลข 4.2 ที่ไม่มีเครื่องหมายคำพูด", feedback: "เป็นทศนิยม (float) ไม่ใช่ข้อความ" }
+      - { id: d, text: "ค่า True", feedback: "เป็นค่าความจริง (bool) ไม่ใช่ข้อความ" }
+    hints:
+      - "ข้อความในไพธอนต้องอยู่ในเครื่องหมายคำพูดเสมอ"
+      - "ดูว่าค่าใดมีเครื่องหมายคำพูดกำกับ"
+    solution: "ข้อความที่อยู่ในเครื่องหมายคำพูดเป็นชนิด str ส่วนข้ออื่นเป็นจำนวนเต็ม ทศนิยม หรือค่าความจริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p002
+    topics: [computer.programming.python-expressions]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สิ่งที่ใช้ในโค้ดกับชื่อหรือความหมาย"
+    pairs:
+      - { left: "ตัวคั่นระหว่างค่าใน print", right: "พารามิเตอร์ sep" }
+      - { left: "ตัวจบบรรทัดของ print", right: "พารามิเตอร์ end" }
+      - { left: "ข้อความอธิบายในโค้ด", right: "คอมเมนต์ที่ขึ้นต้นด้วยเครื่องหมาย #" }
+      - { left: "ข้อความบอกหน้าที่ของฟังก์ชันในบรรทัดแรกของฟังก์ชัน", right: "docstring ในเครื่องหมายคำพูดสามตัว" }
+    hints:
+      - "ลองดูว่าตัวคั่นกับตัวจบบรรทัดอยู่ตรงไหนของคำสั่ง print"
+      - "คอมเมนต์ไม่ทำงาน แต่ใช้อธิบายโค้ดให้คนอ่าน"
+    solution: "sep คือตัวคั่น end คือตัวจบบรรทัด คอมเมนต์คือข้อความที่ขึ้นต้นด้วย # และ docstring คือข้อความในเครื่องหมายคำพูดสามตัวที่บรรทัดแรกของฟังก์ชัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p003
+    topics: [computer.programming.python-expressions]
+    difficulty: 1
+    type: order
+    stem: "เรียงขั้นตอนการอ่านข้อความแจ้งข้อผิดพลาดให้ถูกต้อง"
+    items:
+      - "ดูชนิดของข้อผิดพลาด เช่น NameError"
+      - "ดูหมายเลขบรรทัดที่เกิดปัญหา"
+      - "อ่านข้อความอธิบายว่าเกิดอะไรขึ้น"
+      - "แก้โค้ดในบรรทัดนั้นแล้วรันใหม่"
+    hints:
+      - "เริ่มจากดูว่าเป็นข้อผิดพลาดชนิดใดก่อน"
+      - "ค้นหาตำแหน่งก่อนแก้ไข"
+    solution: "ดูชนิดของข้อผิดพลาด ดูบรรทัด อ่านข้อความอธิบาย แล้วแก้โค้ดในบรรทัดนั้นและรันใหม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p004
+    topics: [computer.programming.python-expressions]
+    difficulty: 1
+    type: mcq
+    stem: "ผลของ print('สวัสดี', 'ชาวโลก') คืออะไร"
+    choices:
+      - { id: a, text: "สวัสดี ชาวโลก", correct: true }
+      - { id: b, text: "'สวัสดี' 'ชาวโลก' (มีเครื่องหมายคำพูดติดมาด้วย)", feedback: "print แสดงเฉพาะค่า ไม่แสดงเครื่องหมายคำพูดที่ใช้เขียนข้อความในโค้ด" }
+      - { id: c, text: "สวัสดี, ชาวโลก", feedback: "ค่าเริ่มต้นไม่ได้ใส่ลูกน้ำให้เอง" }
+      - { id: d, text: "เกิดข้อผิดพลาด", feedback: "print รับหลายค่าได้โดยไม่เกิดข้อผิดพลาด" }
+    hints:
+      - "ดูว่าตัวคั่นเริ่มต้นของ print คืออะไร"
+      - "ลองนึกว่าค่าสองค่าจะถูกคั่นด้วยอะไรเมื่อไม่ได้กำหนด sep"
+    solution: "ค่าเริ่มต้นของ print คั่นด้วยช่องว่าง 1 ช่อง จึงได้ สวัสดี ชาวโลก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p005
+    topics: [computer.programming.python-expressions]
+    difficulty: 2
+    type: numeric
+    stem: "ค่าของ 2 + 3 * 4 เท่ากับเท่าใด"
+    answer: { value: 14, tolerance: 0 }
+    hints:
+      - "ลำดับการดำเนินการ การคูณทำก่อนการบวก"
+      - "คำนวณ 3 * 4 ก่อน แล้วค่อยเอาไปบวกกับ 2"
+    solution: "3 * 4 = 12 แล้ว 2 + 12 = 14"
+    misconceptions:
+      - { match: 20, feedback: "20 เกิดจากการทำบวกก่อนแล้วค่อยคูณ คือ (2 + 3) * 4 ซึ่งผิดลำดับ" }
+      - { match: 9, feedback: "9 เกิดจากทำตามลำดับซ้ายไปขวาโดยลืมว่าการคูณต้องทำก่อน คือ (2 + 3) + 4" }
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p006
+    topics: [computer.programming.python-expressions]
+    difficulty: 2
+    type: numeric
+    stem: "ค่าของ -2 ** 2 เท่ากับเท่าใด"
+    answer: { value: -4, tolerance: 0 }
+    hints:
+      - "การยกกำลัง ** ทำก่อนเครื่องหมายลบที่อยู่ข้างหน้า 2"
+      - "คำนวณ 2 ** 2 ก่อน แล้วค่อยใส่เครื่องหมายลบ"
+    solution: "2 ** 2 = 4 แล้วใส่เครื่องหมายลบได้ -4"
+    misconceptions:
+      - { match: 4, feedback: "4 เกิดจากการคิดว่าเครื่องหมายลบถูกยกกำลังด้วย คือ (-2) ** 2" }
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p007
+    topics: [computer.programming.python-expressions]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดทำให้เกิด ValueError เมื่อรันโค้ด"
+    choices:
+      - { id: a, text: 'int("12") แปลงข้อความจำนวนเต็ม', feedback: "ทำงานได้ ได้ค่า 12" }
+      - { id: b, text: 'float("3") แปลงข้อความเป็นทศนิยม', feedback: "ทำงานได้ ได้ค่า 3.0" }
+      - { id: c, text: 'int("12.5") แปลงข้อความทศนิยมเป็นจำนวนเต็ม', correct: true }
+      - { id: d, text: 'str(5) แปลงตัวเลขเป็นข้อความ', feedback: "ทำงานได้ ได้ข้อความ 5" }
+    hints:
+      - "ข้อความที่ไม่ใช่จำนวนเต็มแปลงเป็น int โดยตรงไม่ได้"
+      - "ดูว่าข้อความในข้อใดเป็นทศนิยม"
+    solution: "int(\"12.5\") เกิด ValueError เพราะข้อความทศนิยมแปลงเป็นจำนวนเต็มโดยตรงไม่ได้ ต้องแปลงเป็น float ก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p008
+    topics: [computer.programming.python-expressions]
+    difficulty: 2
+    type: numeric
+    stem: "ค่าของ round(3.14159, 2) เท่ากับเท่าใด (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.14, tolerance: 0.0001 }
+    hints:
+      - "ฟังก์ชัน round ตัวที่สองบอกจำนวนตำแหน่งทศนิยมที่ต้องการ"
+      - "ดูตัวเลขตำแหน่งที่สามเพื่อตัดสินใจปัดเศษ"
+    solution: "round(3.14159, 2) ได้ 3.14 เพราะตัวเลขตำแหน่งที่สามคือ 1 จึงปัดลง"
+    misconceptions:
+      - { match: 3, feedback: "3 เกิดจากปัดเป็นจำนวนเต็ม ทั้งที่โจทย์ระบุทศนิยม 2 ตำแหน่ง" }
+      - { match: 3.141, feedback: "3.141 เกิดจากเก็บทศนิยม 3 ตำแหน่ง ไม่ตรงกับที่โจทย์กำหนด 2 ตำแหน่ง" }
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p009
+    topics: [computer.programming.python-expressions]
+    difficulty: 3
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `c2f(c)` ที่รับอุณหภูมิเป็นองศาเซลเซียส `c` แล้ว **คืนค่า** (return) อุณหภูมิเป็นองศาฟาเรนไฮต์ ใช้สูตร F = C × 9 ÷ 5 + 32
+    starter: |
+      def c2f(c):
+          pass
+    tests: |
+      assert c2f(0) == 32, f"c2f(0) ควรได้ 32 แต่ได้ {c2f(0)}"
+      assert c2f(100) == 212, f"c2f(100) ควรได้ 212 แต่ได้ {c2f(100)}"
+      r = c2f(37)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+      assert abs(r - 98.6) < 1e-9, f"c2f(37) ควรได้ 98.6 แต่ได้ {r}"
+    reference: |
+      def c2f(c):
+          return c * 9 / 5 + 32
+    hints:
+      - "ใช้สูตรในโจทย์แทนค่า C ด้วยตัวแปร c"
+      - "ต้องใช้ return เพื่อคืนค่าออกมา ไม่ใช่แค่พิมพ์ออกหน้าจอ"
+    solution: "return c * 9 / 5 + 32 เช่น c = 37 ได้ 37 × 9 ÷ 5 + 32 = 98.6"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p010
+    topics: [computer.programming.python-expressions]
+    difficulty: 3
+    type: mcq
+    stem: "ผลของ 0.1 + 0.2 == 0.3 ใน Python คืออะไร"
+    choices:
+      - { id: a, text: "False", correct: true }
+      - { id: b, text: "True", feedback: "ทศนิยมเก็บแบบประมาณ ผลรวมจึงคลาดเคลื่อนเล็กน้อยทำให้ไม่เท่ากับ 0.3" }
+      - { id: c, text: "เกิดข้อผิดพลาด", feedback: "คำสั่งนี้ทำงานได้ปกติ เพียงแต่ผลไม่ตรงกับที่คิด" }
+      - { id: d, text: "0.3", feedback: "เครื่องหมาย == เป็นการเปรียบเทียบ ผลลัพธ์จึงเป็น True หรือ False" }
+    hints:
+      - "ลองคิดว่าทศนิยมในคอมพิวเตอร์เก็บตรงตามจริงทุกตำแหน่งหรือไม่"
+      - "เครื่องหมาย == ให้ผลเป็นค่าความจริง"
+    solution: "0.1 + 0.2 ได้ 0.30000000000000004 ซึ่งไม่เท่ากับ 0.3 จึงให้ False ควรใช้ math.isclose เมื่อเทียบทศนิยม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p011
+    topics: [computer.programming.python-expressions]
+    difficulty: 3
+    type: numeric
+    stem: "ค่าของ math.ceil(7.2) + math.floor(7.8) เท่ากับเท่าใด (เมื่อใส่ import math แล้ว)"
+    answer: { value: 15, tolerance: 0 }
+    hints:
+      - "math.ceil ปัดขึ้นเป็นจำนวนเต็มที่น้อยที่สุดที่ไม่น้อยกว่าค่านั้น"
+      - "math.floor ปัดลงเป็นจำนวนเต็มที่มากที่สุดที่ไม่มากกว่าค่านั้น"
+    solution: "math.ceil(7.2) = 8 และ math.floor(7.8) = 7 รวมได้ 15"
+    misconceptions:
+      - { match: 14, feedback: "14 เกิดจากคิดว่า math.ceil(7.2) ได้ 7 ทั้งที่ต้องปัดขึ้นเป็น 8" }
+      - { match: 16, feedback: "16 เกิดจากคิดว่า math.floor(7.8) ได้ 8 ทั้งที่ต้องปัดลงเป็น 7" }
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p012
+    topics: [computer.programming.python-expressions]
+    difficulty: 3
+    type: mcq
+    stem: 'ถ้า x = "7" และ y = 3 แล้วคำสั่ง x + y จะเกิดอะไรขึ้น'
+    choices:
+      - { id: a, text: "เกิด TypeError เพราะบวกข้อความกับจำนวนเต็มโดยตรงไม่ได้", correct: true }
+      - { id: b, text: "ได้ 10 เพราะ 7 + 3 เท่ากับ 10", feedback: "7 ในเครื่องหมายคำพูดเป็นข้อความ ไม่ใช่จำนวนเต็ม" }
+      - { id: c, text: "ได้ \"73\" เพราะต่อข้อความ", feedback: "การต่อข้อความจะเกิดได้เมื่อทั้งสองค่าเป็นข้อความเท่านั้น" }
+      - { id: d, text: "ได้ 7.3 เพราะ x เป็นทศนิยม", feedback: "x เป็นข้อความ ไม่ใช่ทศนิยม" }
+    hints:
+      - "ดูว่า x เก็บเป็นชนิดใด และ y เก็บเป็นชนิดใด"
+      - "ตัวดำเนินการ + ใช้กับสองค่าที่ชนิดตรงกันได้"
+    solution: "x เป็นข้อความ y เป็นจำนวนเต็ม การบวกทั้งสองโดยตรงไม่ได้ เครื่องจึงแจ้ง TypeError ต้องแปลง x ด้วย int(x) ก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p013
+    topics: [computer.programming.python-expressions]
+    difficulty: 4
+    type: code
+    stem: |
+      ฟังก์ชัน `total(price_text, qty)` รับราคาเป็นข้อความ เช่น "25" และจำนวนชิ้น แล้วคืนราคารวมเป็นตัวเลข เขียนฟังก์ชันให้คืนค่าที่ถูกต้อง
+    starter: |
+      def total(price_text, qty):
+          return price_text * qty
+    tests: |
+      assert total("25", 2) == 50, f"total('25', 2) ควรได้ 50 แต่ได้ {total('25', 2)}"
+      assert total("8", 3) == 24, f"total('8', 3) ควรได้ 24 แต่ได้ {total('8', 3)}"
+      assert total("100", 0) == 0, "จำนวน 0 ชิ้นควรได้ 0"
+    reference: |
+      def total(price_text, qty):
+          return int(price_text) * qty
+    hints:
+      - "ราคาเป็นข้อความ การคูณด้วย qty จะทำซ้ำข้อความแทนการคูณตัวเลข"
+      - "แปลงข้อความเป็นจำนวนเต็มก่อนแล้วจึงคูณด้วยจำนวนชิ้น"
+    solution: "return int(price_text) * qty เช่น int(\"25\") * 2 = 50"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p014
+    topics: [computer.programming.python-expressions]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `nearly_equal(a, b)` ที่คืน `True` ถ้า `a` กับ `b` ใกล้กันพอ และคืน `False` ถ้าไม่ใกล้กัน ให้ใช้ `math.isclose` (อย่าลืม import math)
+    starter: |
+      def nearly_equal(a, b):
+          return a == b
+    tests: |
+      assert nearly_equal(0.1 + 0.2, 0.3) is True, "0.1 + 0.2 ควรถือว่าใกล้ 0.3 พอ ให้ใช้ math.isclose"
+      assert nearly_equal(1, 2) is False, "1 กับ 2 ไม่ใกล้กัน ควรคืน False"
+      assert nearly_equal(5, 5) is True, "จำนวนเดียวกันควรคืน True"
+    reference: |
+      import math
+
+      def nearly_equal(a, b):
+          return math.isclose(a, b)
+    hints:
+      - "เครื่องหมาย == เปรียบเทียบทศนิยมตรง ๆ จึงอาจผิด"
+      - "ฟังก์ชัน math.isclose เทียบได้ว่าสองค่าใกล้กันพอหรือไม่ ต้อง import math ก่อนใช้"
+    solution: "return math.isclose(a, b) เพราะ math.isclose ยอมรับความคลาดเคลื่อนเล็กน้อยของทศนิยม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p015
+    topics: [computer.programming.python-expressions]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดเขียนตามแนวทาง PEP 8 ได้ดีที่สุด"
+    choices:
+      - { id: a, text: "x = 1 + 2", correct: true }
+      - { id: b, text: "Total=1+2", feedback: "ไม่ได้เว้นช่องรอบเครื่องหมาย = และ + และชื่อตัวแปรทั่วไปควรใช้ตัวพิมพ์เล็ก เช่น total" }
+      - { id: c, text: "x = 1 + 2;", feedback: "Python ไม่ต้องใช้เครื่องหมาย ; ท้ายบรรทัด และ PEP 8 ไม่แนะนำให้ใส่" }
+      - { id: d, text: "1 + 2 = x", feedback: "ตัวแปรต้องอยู่ทางซ้ายของเครื่องหมาย = ไม่ใช่ทางขวา" }
+    hints:
+      - "ดูว่ามีช่องว่างรอบเครื่องหมายหรือไม่"
+      - "ชื่อตัวแปรทั่วไปใช้ตัวพิมพ์เล็ก"
+    solution: "x = 1 + 2 เว้นช่องรอบเครื่องหมายทั้งหมดและใช้ชื่อตัวแปรตัวพิมพ์เล็ก ตามแนวทาง PEP 8"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p016
+    topics: [computer.programming.python-expressions]
+    difficulty: 4
+    type: numeric
+    stem: "แท็กซี่คิดค่าโดยสารเริ่มต้น 35 บาท และเพิ่มกิโลเมตรละ 5 บาท ถ้าเดินทาง 12.6 กิโลเมตร ค่าโดยสารเป็นกี่บาท (ปัดเป็นบาทเต็ม)"
+    answer: { value: 98, tolerance: 0, unit: "บาท" }
+    hints:
+      - "คำนวณค่าตามระยะทางก่อน คือ 5 คูณด้วย 12.6"
+      - "แล้วบวกค่าเริ่มต้น 35 บาท และปัดเป็นจำนวนเต็ม"
+    solution: "5 × 12.6 = 63 บาท บวกค่าเริ่มต้น 35 ได้ 98 บาท"
+    misconceptions:
+      - { match: 35, feedback: "35 คือค่าเริ่มต้นอย่างเดียว ลืมคิดค่าตามระยะทาง" }
+      - { match: 63, feedback: "63 คือค่าตามระยะทางอย่างเดียว ยังไม่ได้รวมค่าเริ่มต้น 35 บาท" }
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p017
+    topics: [computer.programming.python-expressions]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `format_money(amount)` ที่รับจำนวนเงิน แล้วคืนข้อความในรูปแบบ `1,234.50 บาท` คือมีลูกน้ำคั่นทุกหลักพัน และมีทศนิยม 2 ตำแหน่ง
+    starter: |
+      def format_money(amount):
+          return ""
+    tests: |
+      assert format_money(1234.5) == "1,234.50 บาท", f"format_money(1234.5) ควรได้ 1,234.50 บาท แต่ได้ {format_money(1234.5)!r}"
+      assert format_money(0) == "0.00 บาท", f"format_money(0) ควรได้ 0.00 บาท แต่ได้ {format_money(0)!r}"
+      assert format_money(1000000) == "1,000,000.00 บาท", "จำนวนล้านต้องมีลูกน้ำคั่นทุกหลักพัน"
+    reference: |
+      def format_money(amount):
+          return f"{amount:,.2f} บาท"
+    hints:
+      - "ใช้การจัดรูปแบบตัวเลขในสตริง f-string ที่มี , คั่นหลักพัน"
+      - "ทศนิยม 2 ตำแหน่งกำหนดด้วย .2f และต่อด้วยคำว่า บาท"
+    solution: "return f\"{amount:,.2f} บาท\" เช่น 1234.5 ได้ 1,234.50 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p018
+    topics: [computer.programming.python-expressions]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "ข้อใดทำให้เกิด NameError เมื่อรันโค้ด (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "เรียกใช้ตัวแปรที่ยังไม่เคยกำหนดค่า เช่น พิมพ์ชื่อตัวแปรผิด", correct: true }
+      - { id: b, text: "เรียก math.sqrt โดยลืมใส่ import math", correct: true }
+      - { id: c, text: "ใส่ทศนิยม 0.1 + 0.2 ในโค้ด", feedback: "การคำนวณนี้ไม่เกิดข้อผิดพลาด เพียงให้ค่าที่ประมาณ" }
+      - { id: d, text: "เขียนคอมเมนต์ด้วยเครื่องหมาย #", feedback: "คอมเมนต์ไม่ทำให้เกิดข้อผิดพลาด เพราะโปรแกรมข้ามไป" }
+    hints:
+      - "NameError เกิดเมื่อ Python หาชื่อที่ใช้อยู่ไม่พบ"
+      - "ตรวจว่าชื่อที่เรียกใช้ถูกกำหนดหรือถูก import ไว้แล้วหรือยัง"
+    solution: "NameError เกิดเมื่อชื่อที่ใช้ยังไม่ถูกกำหนด เช่น พิมพ์ชื่อตัวแปรผิด หรือเรียก math โดยไม่ import ก่อน ส่วนทศนิยมและคอมเมนต์ไม่ทำให้เกิด NameError"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p019
+    topics: [computer.programming.python-expressions]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `average_text(s)` ที่รับข้อความตัวเลขที่คั่นด้วยเครื่องหมายจุลภาค เช่น "70,85,90" แล้วคืนค่าเฉลี่ยเป็นทศนิยม 1 ตำแหน่งด้วยฟังก์ชัน round
+    starter: |
+      def average_text(s):
+          return 0
+    tests: |
+      assert average_text("70,85,90") == 81.7, f"average_text('70,85,90') ควรได้ 81.7 แต่ได้ {average_text('70,85,90')}"
+      assert average_text("10") == 10.0, "ข้อความที่มีตัวเลขเดียวควรได้ค่าของตัวเลขนั้น"
+      assert average_text("1,2") == 1.5, "ค่าเฉลี่ยของ 1 และ 2 ควรได้ 1.5"
+    reference: |
+      def average_text(s):
+          nums = [float(x) for x in s.split(",")]
+          return round(sum(nums) / len(nums), 1)
+    hints:
+      - "ใช้เมธอด split(\",\") แยกข้อความออกเป็นรายการของข้อความย่อย"
+      - "แปลงแต่ละส่วนเป็นทศนิยมด้วย float แล้วหาค่าเฉลี่ยและปัดด้วย round"
+    solution: "แยกด้วย split แปลงด้วย float รวมแล้วหารด้วยจำนวนค่า เช่น (70 + 85 + 90) ÷ 3 ≈ 81.67 ปัดเป็น 81.7"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.python-expressions.p020
+    topics: [computer.programming.python-expressions]
+    difficulty: 4
+    type: code
+    stem: |
+      รถสองแถวในเมืองคิดค่าโดยสารเริ่มต้น 35 บาท และเพิ่มกิโลเมตรละ 5 บาท ฟังก์ชัน `fare_message(km)` ต้องคืนข้อความ เช่น `fare_message(10)` ได้ `"ค่าโดยสาร 85 บาท"` แต่เมื่อรันโค้ดเริ่มต้นจะเกิดข้อผิดพลาดนี้
+
+      ```
+      TypeError: can only concatenate str (not "int") to str
+      ```
+
+      อ่านชนิดและข้อความของข้อผิดพลาด แล้วแก้โค้ดให้คืนข้อความที่ถูกต้อง
+    starter: |
+      def fare_message(km):
+          fare = 35 + 5 * km
+          return "ค่าโดยสาร " + fare + " บาท"
+    tests: |
+      r = fare_message(10)
+      assert r == "ค่าโดยสาร 85 บาท", f"fare_message(10) ควรได้ 'ค่าโดยสาร 85 บาท' แต่ได้ {r!r}"
+      assert fare_message(0) == "ค่าโดยสาร 35 บาท", f"fare_message(0) ควรได้ 'ค่าโดยสาร 35 บาท' แต่ได้ {fare_message(0)!r}"
+      assert fare_message(12) == "ค่าโดยสาร 95 บาท", f"fare_message(12) ควรได้ 'ค่าโดยสาร 95 บาท' แต่ได้ {fare_message(12)!r}"
+    reference: |
+      def fare_message(km):
+          fare = 35 + 5 * km
+          return "ค่าโดยสาร " + str(fare) + " บาท"
+    hints:
+      - "TypeError บอกว่าใช้ค่าผิดชนิด ข้อความบอกว่าเอาข้อความ (str) ไปต่อกับจำนวนเต็ม (int) ไม่ได้"
+      - "ตัวแปร fare เป็นจำนวนเต็ม ต้องแปลงเป็นข้อความด้วย str() ก่อนนำไปต่อกับข้อความอื่น"
+    solution: "แก้บรรทัด return เป็น \"ค่าโดยสาร \" + str(fare) + \" บาท\" เช่น km = 10 ได้ค่าโดยสาร 35 + 5 × 10 = 85 บาท (ใช้ f-string f\"ค่าโดยสาร {fare} บาท\" ก็ได้)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
