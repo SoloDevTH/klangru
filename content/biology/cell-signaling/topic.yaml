@@ -1,0 +1,58 @@
+id: biology.cells.cell-signaling
+subject: biology
+title: { th: การสื่อสารระหว่างเซลล์, en: "Cell signaling" }
+summary: การส่งสัญญาณแบบเอนโดไครน์ พาราไครน์ ออโตไครน์ และการสัมผัส ตัวรับและเส้นทาง GPCR ผู้ส่งสารที่สอง การขยายสัญญาณ และการสื่อสารของแบคทีเรียและยีสต์
+difficulty: 6
+minutes: 45
+prerequisites: [biology.cells.membrane-transport, biology.animals.hormones, biology.cells.enzymes]
+encompasses:
+  - { id: biology.cells.membrane-transport, weight: 0.2 }
+  - { id: biology.animals.hormones, weight: 0.2 }
+  - { id: biology.cells.enzymes, weight: 0.1 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ประเภทการส่งสัญญาณสี่แบบ
+    src: signaling-types.svg
+    alt: "ภาพสี่กรอบ กรอบแรกเอนโดไครน์: ต่อมปล่อยสารเข้าเส้นเลือดสีแดงที่ไปถึงเซลล์เป้าหมายที่อยู่ไกล กรอบที่สองพาราไครน์: เซลล์หนึ่งปล่อยจุดสารไปยังเซลล์ข้างเคียงสองเซลล์ กรอบที่สามออโตไครน์: เซลล์หนึ่งปล่อยสารและลูกศรกลับไปจับตัวรับของเซลล์เดียวกัน กรอบที่สี่การสัมผัส: โมเลกุลบนผิวสองเซลล์ที่แตะกันเชื่อมต่อกันโดยตรง"
+    caption: "ระยะการส่งสัญญาณแตกต่างกันตามวิธีที่สารไปถึงเซลล์เป้าหมาย (แผนภาพวาดโดยทีมคลังรู้)"
+  - type: figure
+    title: เส้นทางการส่งสัญญาณจากอะดรีนาลินผ่าน GPCR ไปสู่การสลายไกลโคเจน
+    src: gpcr-cascade.svg
+    alt: "แผนผังสองแถวเชื่อมด้วยลูกศร แถวบนจากซ้ายไปขวา: อะดรีนาลิน ตัวรับคู่โปรตีนจี โปรตีนจีที่เปลี่ยนสถานะเมื่อจับ GTP และอะดีไนลิลไซเคลสที่เปลี่ยน ATP เป็น cAMP ลูกศรลงไปแถวล่าง ซึ่งเรียงจากขวาไปซ้ายเป็น cAMP โปรตีนไคเนสเอ ฟอสโฟรีเลชันของเอนไซม์ที่กระตุ้นการสลายไกลโคเจน และกลูโคส-6-ฟอสเฟตที่พร้อมใช้เป็นพลังงานในเซลล์"
+    caption: "สัญญาณเล็ก ๆ ที่จับตัวรับผิวเซลล์ส่งต่อเป็นทอดจนทำให้เซลล์เปลี่ยนเมแทบอลิซึม (แผนภาพวาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: คำนวณการขยายสัญญาณแบบทวีคูณ
+    problem: "สัญญาณถูกขยายขึ้น 3 เท่าในแต่ละขั้น และมี 4 ขั้น โมเลกุลที่ถูกกระตุ้นในขั้นสุดท้ายจะมากกว่าสัญญาณเริ่มต้นกี่เท่า"
+    steps:
+      - text: "ระบุตัวเลขในแต่ละขั้น ขั้นละ 3 เท่า และมี 4 ขั้น"
+      - text: "ทุกขั้นคูณกับตัวเลขเดิมซ้ำ $3 \\times 3 \\times 3 \\times 3 = 3^4$"
+        why: "การขยายในแต่ละขั้นเกิดกับผลลัพธ์ของขั้นก่อนหน้า จึงเป็นการคูณ ไม่ใช่การบวก"
+      - text: "คำนวณ $3^4 = 81$ เท่า"
+      - text: "เปรียบเทียบกับการบวก ถ้าเพิ่มทีละ 3 เท่าของเดิมทั้งสี่ขั้น จะได้ $1 + 4 \\times 3 = 13$ เท่า ซึ่งน้อยกว่า 81 มาก"
+        why: "การเพิ่มแบบทวีคูณทำให้สัญญาณเล็กกลายเป็นการตอบสนองใหญ่ได้อย่างรวดเร็ว"
+    answer: "81 เท่า"
+  - { type: check, problem: biology.cells.cell-signaling.p003, prompt: "ลองคิดก่อนอ่านต่อ: ฮีสตามีนจากเซลล์มาสต์บริเวณที่ถูกยุงกัดส่งสัญญาณแบบใด" }
+glossary:
+  - { term: ลิแกนด์, definition: "โมเลกุลสัญญาณที่จับกับตัวรับอย่างจำเพาะ" }
+  - { term: ตัวรับคู่โปรตีนจี, definition: "ตัวรับบนเยื่อหุ้มเซลล์ที่มีเยื่อหุ้มเจ็ดรอบ เมื่อจับลิแกนด์จะกระตุ้นโปรตีนจี (GPCR)" }
+  - { term: ผู้ส่งสารที่สอง, definition: "โมเลกุลขนาดเล็กที่เกิดหรือถูกปล่อยภายในเซลล์หลังได้รับสัญญาณ เช่น cAMP และ Ca²⁺" }
+  - { term: ฟอสโฟรีเลชัน, definition: "การเติมหมู่ฟอสเฟตให้โปรตีน ซึ่งมักเปลี่ยนการทำงานของโปรตีนนั้น" }
+  - { term: อะพอพโทซิส, definition: "การตายของเซลล์แบบมีโปรแกรมที่เซลล์ควบคุมเอง" }
+  - { term: การรับรู้โควรัม, definition: "การที่แบคทีเรียตรวจจับความหนาแน่นของประชากรจากความเข้มข้นของโมเลกุลสัญญาณ" }
+flashcards:
+  - { front: "ส่งสัญญาณแบบเอนโดไครน์ ออโตไครน์ พาราไครน์ ต่างกันอย่างไร", back: "เอนโดไครน์ผ่านเลือดไปไกล / พาราไครน์ให้เซลล์ข้างเคียง / ออโตไครน์ให้เซลล์เดียวกัน" }
+  - { front: "ตัวรับช่องไอออนกับตัวรับคู่โปรตีนจี ต่างกันที่การตอบสนอง", back: "ช่องไอออนเปิดทันที / GPCR กระตุ้นโปรตีนจีแล้วส่งต่อไปยังเอนไซม์" }
+  - { front: "cAMP เกิดจากสารตั้งต้นใดและเอนไซม์ใด", back: "ATP ด้วยอะดีไนลิลไซเคลส" }
+  - { front: "เหตุใดสัญญาณเล็กจึงทำให้เกิดการตอบสนองใหญ่", back: "การขยายแบบทวีคูณในแต่ละขั้นของการส่งต่อสัญญาณ" }
+references:
+  - { title: "Cell signaling", url: "https://en.wikipedia.org/wiki/Cell_signaling", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "G protein-coupled receptor", url: "https://en.wikipedia.org/wiki/G_protein-coupled_receptor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Second messenger system", url: "https://en.wikipedia.org/wiki/Second_messenger_system", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Quorum sensing", url: "https://en.wikipedia.org/wiki/Quorum_sensing", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "9.1 Signaling Molecules and Cellular Receptors (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/9-1-signaling-molecules-and-cellular-receptors", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

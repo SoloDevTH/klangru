@@ -1,0 +1,56 @@
+id: biology.genetics.linkage-mapping
+subject: biology
+title: { th: ทฤษฎีโครโมโซม ยีนเชื่อมโยง และการทำแผนที่ยีน, en: "Chromosome theory, linked genes and gene mapping" }
+summary: ทฤษฎีโครโมโซมของบอเวรีและซัตตัน การทดลองของมอร์แกนกับแมลงหวี่ ยีนเชื่อมโยง ครอสซิงโอเวอร์ และการคำนวณระยะห่างของยีนเป็นเซนติมอร์แกนจากการผสมทดสอบ
+difficulty: 6
+minutes: 45
+prerequisites: [biology.genetics.mendelian]
+encompasses:
+  - { id: biology.genetics.mendelian, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: ครอสซิงโอเวอร์ระหว่างยีน B กับ C
+    src: crossing-over.svg
+    alt: "ภาพซ้ายแสดงโครโมโซมคู่เหมือนสองแท่งขนานกัน แท่งซ้ายสีน้ำเงินมียีน A B C ตามลำดับจากบนลงล่าง แท่งขวาสีแดงมียีน a b c ระหว่าง B กับ C มีเส้นประไขว้กันเป็นรูปกากบาทแสดงจุดครอสซิงโอเวอร์ ภาพขวาแสดงแกมีตสี่ชนิดที่ได้ ได้แก่ ABC และ abc จากพ่อแม่ และ ABc กับ abC ที่มีการรวมตัวใหม่เป็นรีคอมบิแนนท์"
+    caption: "ครอสซิงโอเวอร์ทำให้ได้แกมีตที่มีการรวมตัวของยีนแบบใหม่ สีบอกที่มาของยีนจากโครโมโซมแม่หรือพ่อ (แผนภาพวาดโดยทีมคลังรู้)"
+  - type: figure
+    title: ระยะห่างสามยีนจากการผสมทดสอบ
+    src: three-gene-map.svg
+    alt: "แผนภาพยีน A B C บนเส้นเดียวกัน มีวงกลมแทนแต่ละยีนเรียงจากซ้ายไปขวา ด้านบนมีวงเล็บแสดงระยะ A ถึง C เท่ากับ 11 cM ที่วัดตรง วงเล็บชั้นล่างแสดง A ถึง B เท่ากับ 6.2 cM และ B ถึง C เท่ากับ 5.2 cM มีข้อความว่าผลรวม 11.4 ไม่เท่ากับ 11 เพราะมีครอสซิงโอเวอร์สองชั้น"
+    caption: "ระยะที่วัดตรงระหว่างยีนที่อยู่ไกลกันจะน้อยกว่าผลรวมของระยะย่อย (แผนภาพวาดโดยทีมคลังรู้)"
+  - type: worked-example
+    title: หาลำดับยีนและระยะจากการผสมทดสอบสามยีน
+    problem: "ยีน A B C บนโครโมโซมเดียวกันผสมทดสอบได้ลูก 1,000 ตัว ดังนี้ ABC 444, abc 444, Abc 30, aBC 30, ABc 25, abC 25, AbC 1, aBc 1 จงหาลำดับยีนและระยะ A–B, B–C และ A–C"
+    steps:
+      - text: "หาคลาสพ่อแม่ ซึ่งคือ ABC และ abc เพราะมีจำนวนมากที่สุด"
+      - text: "หาคลาสครอสซิงโอเวอร์สองชั้น ซึ่งคือ AbC และ aBc (1 ตัวต่อคลาส) และเทียบกับ ABC พบว่ามีเพียง B ที่เปลี่ยนจาก B เป็น b หรือ b เป็น B"
+        why: "ยีนที่เปลี่ยนตำแหน่งในคลาสสองชั้นคือยีนที่อยู่ตรงกลาง จึงได้ลำดับ A–B–C"
+      - text: "คำนวณ A–B จากรีคอมบิแนนท์ที่แยก A กับ B คือ Abc, aBC, AbC, aBc ได้ $\\frac{30+30+1+1}{1000} = 6.2\\%$"
+      - text: "คำนวณ B–C จาก ABc, abC, AbC, aBc ได้ $\\frac{25+25+1+1}{1000} = 5.2\\%$ และ A–C จาก Abc, aBC, ABc, abC ได้ $\\frac{30+30+25+25}{1000} = 11\\%$"
+        why: "ระยะ A–C ไม่เท่ากับ 6.2 + 5.2 = 11.4 เพราะครอสซิงโอเวอร์สองชั้นทำให้บางรีคอมบิแนนท์ของช่วงย่อยกลับไปเป็นแบบเดิมระหว่าง A กับ C"
+    answer: "ลำดับ A–B–C ระยะ A–B 6.2 cM, B–C 5.2 cM, A–C 11 cM"
+  - { type: check, problem: biology.genetics.linkage-mapping.p010, prompt: "ลองคิดก่อนอ่านต่อ: ถ้าผสมทดสอบแล้วได้รีคอมบิแนนท์ 50% ยีนสองยีนนี้น่าจะอยู่ห่างกันเท่าใด" }
+glossary:
+  - { term: ยีนเชื่อมโยง, definition: "ยีนที่อยู่บนโครโมโซมเดียวกันและมักถ่ายทอดไปพร้อมกัน" }
+  - { term: ครอสซิงโอเวอร์, definition: "การแลกเปลี่ยนชิ้นส่วนระหว่างโฮโมโลกัสโครโมโซมในโพรเฟส I ของไมโอซิส" }
+  - { term: รีคอมบิแนนท์, definition: "แกมีตหรือลูกที่มีการรวมตัวของอัลลีลแบบใหม่ซึ่งไม่เหมือนพ่อแม่" }
+  - { term: เซนติมอร์แกน, definition: "หน่วยระยะบนแผนที่ยีน เท่ากับความถี่รีคอมบิแนนท์ 1%" }
+  - { term: การผสมทดสอบ, definition: "การผสมลูกผสมกับตัวที่เป็นลักษณะด้อยทั้งหมดเพื่อให้ลูกแสดงแกมีตของลูกผสมโดยตรง" }
+  - { term: ค่าการเกิดร่วม, definition: "อัตราส่วนระหว่างความถี่ครอสซิงโอเวอร์สองชั้นที่พบจริงกับที่คาดไว้จากความถี่ของแต่ละช่วง" }
+flashcards:
+  - { front: "ยีนเชื่อมโยงต่างจากยีนแยกอิสระอย่างไร", back: "เชื่อมโยงอยู่บนโครโมโซมเดียวกันจึงถ่ายทอดไปด้วยกันเป็นส่วนใหญ่ / แยกอิสระอยู่คนละโครโมโซม" }
+  - { front: "ความถี่รีคอมบิแนนท์ 8% เท่ากับกี่เซนติมอร์แกน", back: "8 cM" }
+  - { front: "ครอสซิงโอเวอร์เกิดขึ้นในระยะใดของไมโอซิส", back: "โพรเฟส I เมื่อโครโมโซมคู่เหมือนจับคู่กัน" }
+  - { front: "ทำไมความถี่รีคอมบิแนนท์สูงสุดคือ 50%", back: "ยีนที่ไกลกันมากหรืออยู่คนละโครโมโซมดูเหมือนแยกอิสระ ทำให้ได้อัตราประมาณครึ่งหนึ่ง" }
+references:
+  - { title: "Genetic linkage", url: "https://en.wikipedia.org/wiki/Genetic_linkage", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Crossing over", url: "https://en.wikipedia.org/wiki/Crossing_over", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Centimorgan", url: "https://en.wikipedia.org/wiki/Centimorgan", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Thomas Hunt Morgan", url: "https://en.wikipedia.org/wiki/Thomas_Hunt_Morgan", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.1 Chromosomal Theory and Genetic Linkage (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/13-1-chromosomal-theory-and-genetic-linkage", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

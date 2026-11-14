@@ -1,0 +1,55 @@
+id: biology.cells.bioenergetics
+subject: biology
+title: { th: พลังงานในสิ่งมีชีวิตและพลังงานอิสระ, en: "Bioenergetics: free energy and ATP" }
+summary: เมแทบอลิซึมแบบสร้างและสลาย กฎอุณหพลศาสตร์กับสิ่งมีชีวิต พลังงานอิสระและพลังงานก่อกัมมันต์ ตัวพาอิเล็กตรอน และ ATP กับการจับคู่พลังงานในเซลล์
+difficulty: 6
+minutes: 45
+prerequisites: [biology.cells.enzymes, chemistry.redox.redox-reactions]
+encompasses:
+  - { id: biology.cells.enzymes, weight: 0.2 }
+  - { id: chemistry.redox.redox-reactions, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    title: พลังงานก่อกัมมันต์ที่มีและไม่มีเอนไซม์
+    src: energy-profile.svg
+    alt: "กราฟพลังงานอิสระตามความคืบหน้าของปฏิกิริยา เริ่มจากระดับสารตั้งต้นทางซ้ายที่สูงกว่า ลงไปยังระดับผลิตภัณฑ์ทางขวาที่ต่ำกว่า เส้นประสีเทาเป็นเส้นโค้งที่มียอดสูงกว่าเมื่อไม่มีเอนไซม์ เส้นทึบสีเขียวเป็นเส้นโค้งที่มียอดต่ำกว่าเมื่อมีเอนไซม์ ทั้งสองเส้นเริ่มและจบที่ระดับเดียวกัน ลูกศรแนวตั้งชี้ว่าค่า ΔG เป็นลบ"
+    caption: "เอนไซม์ลดพลังงานก่อกัมมันต์ แต่ไม่เปลี่ยนระดับสารตั้งต้นและผลิตภัณฑ์ (แผนภาพวาดโดยทีมคลังรู้)"
+  - type: figure
+    title: การจับคู่ ΔG ของปฏิกิริยาที่ไม่เกิดเองกับการไฮโดรไลซิส ATP
+    src: coupling.svg
+    alt: "แท่งเปรียบเทียบค่า ΔG มาตรฐานสองแท่งบนแกนที่มีเส้นศูนย์อยู่ตรงกลาง แท่งซ้ายเป็นสีแดงอยู่เหนือเส้นศูนย์ ระบุ +13.8 kJ/mol ของปฏิกิริยากลูโคสเติมฟอสเฟตเป็น G6P แท่งขวาเป็นสีเขียวลงใต้เส้นศูนย์ ระบุ −30.5 kJ/mol ของการไฮโดรไลซิส ATP"
+    caption: "ปฏิกิริยาที่ ΔG เป็นบวกเกิดเองไม่ได้ แต่เมื่อจับคู่กับการไฮโดรไลซิส ATP ที่ ΔG ลบมาก ผลรวมจึงเกิดได้ (แผนภาพโดยทีมคลังรู้)"
+  - type: worked-example
+    title: ตรวจว่าปฏิกิริยาเกิดเองได้หรือไม่จากค่า ΔH และ ΔS
+    problem: "ปฏิกิริยาหนึ่งที่ 300 K มี ΔH = −40 kJ/mol และ ΔS = −0.05 kJ/(mol·K) จงหา ΔG และตอบว่าปฏิกิริยาเกิดเองได้หรือไม่"
+    steps:
+      - text: "คำนวณ $T\\Delta S = 300 \\times (-0.05) = -15\\ \\mathrm{kJ/mol}$"
+        why: "อุณหภูมิต้องเป็นเคลวิน และ ΔS ต้องอยู่ในหน่วย kJ/(mol·K) เพื่อให้หน่วยตรงกับ ΔH"
+      - text: "แทนค่าในสมการ $\\Delta G = \\Delta H - T\\Delta S = -40 - (-15) = -25\\ \\mathrm{kJ/mol}$"
+        why: "ผลคูณ TΔS มีเครื่องหมายลบ การลบจึงกลายเป็นการบวกค่า 15 ซึ่งหลายคนลืม"
+      - text: "ตีความ $\\Delta G < 0$ จึงเป็นปฏิกิริยาเอ็กเซอร์โกนิกที่เกิดเองได้ ไม่ได้บอกว่าจะเกิดเร็วหรือไม่"
+    answer: "ΔG = −25 kJ/mol ปฏิกิริยาเกิดเองได้ (เอ็กเซอร์โกนิก)"
+  - { type: check, problem: biology.cells.bioenergetics.p012, prompt: "ลองคิดก่อนอ่านต่อ: ทำไมเซลล์ไม่ใช้พลังงานจากกลูโคสทั้งหมดในครั้งเดียว" }
+glossary:
+  - { term: พลังงานอิสระ, definition: "พลังงานที่ระบบใช้ทำงานได้ที่อุณหภูมิและความดันคงที่ มีสัญลักษณ์ G และค่าการเปลี่ยนแปลง ΔG" }
+  - { term: เอ็กเซอร์โกนิก, definition: "ปฏิกิริยาที่ ΔG น้อยกว่าศูนย์ ปล่อยพลังงานอิสระและเกิดเองได้" }
+  - { term: เอนเดอร์โกนิก, definition: "ปฏิกิริยาที่ ΔG มากกว่าศูนย์ ต้องรับพลังงานจากภายนอกจึงจะเกิดได้" }
+  - { term: พลังงานก่อกัมมันต์, definition: "พลังงานที่โมเลกุลต้องได้รับเพื่อไปถึงสถานะที่พร้อมทำปฏิกิริยา ใช้สัญลักษณ์ Eₐ" }
+  - { term: ตัวพาอิเล็กตรอน, definition: "โมเลกุลที่รับและส่งอิเล็กตรอนในปฏิกิริยารีดอกซ์ของเซลล์ เช่น NAD⁺ และ FAD" }
+  - { term: การจับคู่พลังงาน, definition: "การนำปฏิกิริยาเอ็กเซอร์โกนิกมาขับเคลื่อนปฏิกิริยาเอนเดอร์โกนิกให้เกิดได้โดยผลรวม ΔG เป็นลบ" }
+flashcards:
+  - { front: "ปฏิกิริยาเอ็กเซอร์โกนิกกับเอนเดอร์โกนิกต่างกันที่ค่า ΔG อย่างไร", back: "เอ็กเซอร์โกนิก ΔG < 0 เกิดเองได้ / เอนเดอร์โกนิก ΔG > 0 ต้องรับพลังงาน" }
+  - { front: "เอนไซม์ลดอะไร และไม่เปลี่ยนอะไร", back: "ลดพลังงานก่อกัมมันต์ (Eₐ) ไม่เปลี่ยนค่า ΔG" }
+  - { front: "ΔG = ΔH − TΔS ใช้ T หน่วยใด", back: "เคลวิน (K) โดย T = อุณหภูมิในเซลเซียส + 273" }
+  - { front: "NAD⁺ เมื่อรับอิเล็กตรอนและโปรตอนแล้วกลายเป็นอะไร", back: "NADH (เกิดรีดักชัน)" }
+references:
+  - { title: "Bioenergetics", url: "https://en.wikipedia.org/wiki/Bioenergetics", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Gibbs free energy", url: "https://en.wikipedia.org/wiki/Gibbs_free_energy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Adenosine triphosphate", url: "https://en.wikipedia.org/wiki/Adenosine_triphosphate", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "6.4 ATP: Adenosine Triphosphate (Biology 2e, OpenStax)", url: "https://openstax.org/books/biology-2e/pages/6-4-atp-adenosine-triphosphate", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
