@@ -1,0 +1,72 @@
+id: computer.theory.discrete-structures
+subject: computer
+title: { th: "การพิสูจน์และโครงสร้างไม่ต่อเนื่องสำหรับวิทยาการคอมพิวเตอร์", en: "Proof and discrete structures for computing" }
+summary: วิธีพิสูจน์ อุปนัยทั้งเชิงคณิตศาสตร์และเชิงโครงสร้าง ความสัมพันธ์สมูลและการแบ่งคลาส ฟังก์ชันหนึ่งต่อหนึ่ง หลักรังนกพิราบ และ ห.ร.ม. แบบยุคลิดที่ใช้กับหลักตรวจสอบ
+difficulty: 6
+minutes: 50
+prerequisites: [math.logic.propositions, math.logic.sets, math.prob.counting, computer.programming.recursion]
+encompasses:
+  - { id: math.logic.propositions, weight: 0.3 }
+  - { id: computer.programming.recursion, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: พิสูจน์สูตรผลรวมของจำนวนธรรมชาติด้วยอุปนัย
+    problem: "จงพิสูจน์ว่า $1 + 2 + \\cdots + n = \\frac{n(n+1)}{2}$ สำหรับทุกจำนวนธรรมชาติ $n \\ge 1$"
+    steps:
+      - text: "ฐาน: เมื่อ $n = 1$ ด้านซ้ายคือ 1 และด้านขวาคือ $\\frac{1 \\cdot 2}{2} = 1$ จึงเท่ากัน"
+        why: "ต้องตรวจค่าเริ่มต้นก่อน ไม่เช่นนั้นขั้นเหนี่ยวนำจะไม่มีจุดเริ่ม"
+      - text: "สมมติฐานอุปนัย: สมมติว่า $1 + 2 + \\cdots + k = \\frac{k(k+1)}{2}$ สำหรับ $k$ ใดค่าหนึ่ง"
+        why: "สมมติฐานนี้ใช้ได้เฉพาะกับ $k$ ที่เลือกมาเท่านั้น ยังไม่ได้สมมติว่าใช้ได้กับทุกค่า"
+      - text: "ขั้นเหนี่ยวนำ: $1 + \\cdots + k + (k+1) = \\frac{k(k+1)}{2} + (k+1) = \\frac{(k+1)(k+2)}{2}$"
+        why: "แทนผลรวมถึง $k$ ด้วยสูตรจากสมมติฐาน แล้วดึงตัวประกอบ $(k+1)$ ออกมา"
+      - text: "ค่านี้คือสูตรเดิมเมื่อแทน $n = k+1$ เมื่อทั้งฐานและขั้นเหนี่ยวนำเป็นจริง ข้อความจึงจริงทุก $n \\ge 1$"
+    answer: "พิสูจน์ได้ด้วยอุปนัยเชิงคณิตศาสตร์ เพราะมีทั้งฐานและขั้นเหนี่ยวนำ"
+  - { type: check, problem: computer.theory.discrete-structures.p001, prompt: "ลองนึกว่าการพิสูจน์แบบข้อขัดแย้งเริ่มต้นอย่างไร" }
+  - type: worked-example
+    title: หา ห.ร.ม. ของ 252 และ 105 ด้วยอัลกอริทึมยุคลิด
+    problem: "จงหา $\\gcd(252, 105)$ โดยใช้สมบัติ $\\gcd(a, b) = \\gcd(b, a \\bmod b)$"
+    steps:
+      - text: "$252 = 2 \\cdot 105 + 42$ จึงได้ $\\gcd(252, 105) = \\gcd(105, 42)$"
+        why: "สมบัตินี้ทำให้ตัวเลขเล็กลงทุกขั้น จนกระทั่งถึงศูนย์"
+      - text: "$105 = 2 \\cdot 42 + 21$ จึงได้ $\\gcd(105, 42) = \\gcd(42, 21)$"
+      - text: "$42 = 2 \\cdot 21 + 0$ จึงได้ $\\gcd(42, 21) = \\gcd(21, 0)$"
+      - text: "เมื่อ $b = 0$ ค่า $\\gcd(a, 0) = a$ ดังนั้นคำตอบคือ 21"
+        why: "เมื่อเศษเป็นศูนย์ตัวหารก่อนหน้าคือตัวประกอบร่วมมากที่สุด"
+    answer: "$\\gcd(252, 105) = 21$"
+  - { type: check, problem: computer.theory.discrete-structures.p011, prompt: "สมบัติใดทำให้ตัวเลขเล็กลงในทุกขั้นของอัลกอริทึม" }
+  - type: figure
+    src: induction-dominoes.svg
+    alt: "ลำดับโดมิโนห้าตัว ตัวแรกที่มีป้าย P(1) ถูกเน้นสีแดงหมายถึงฐาน ตัวที่เหลือสีน้ำเงิน และมีลูกศรระหว่างแต่ละคู่เขียนว่า ถ้า P(k) แล้ว P(k+1)"
+    caption: "ฐานคือการทำให้ตัวแรกล้ม และขั้นเหนี่ยวนำคือการรับประกันว่าล้มต่อกันไปทั้งหมด"
+  - type: figure
+    src: equivalence-classes.svg
+    alt: "เซต 1 ถึง 6 แบ่งเป็นสามกล่อง กล่องแรกมีเลข 1 และ 4 ที่เศษเหลือ 1 กล่องที่สองมีเลข 2 และ 5 ที่เศษเหลือ 2 และกล่องที่สามมีเลข 3 และ 6 ที่เศษเหลือ 0"
+    caption: "สมาชิกที่มีเศษเท่ากันอยู่คลาสเดียวกัน"
+  - type: figure
+    src: pigeonhole.svg
+    alt: "สี่รังเรียงกันแต่ละรังมีนกอยู่บ้าง รังแรกมีนกสองตัว อีกสามรังมีรังละหนึ่งตัว"
+    caption: "จำนวนนกมากกว่าจำนวนรัง จึงมีรังที่มีนกเกินหนึ่งตัวเสมอ"
+glossary:
+  - { term: อุปนัยเชิงคณิตศาสตร์ (mathematical induction), definition: "วิธีพิสูจน์ข้อความสำหรับทุกจำนวนธรรมชาติ โดยพิสูจน์ฐานและขั้นเหนี่ยวนำ" }
+  - { term: ความสัมพันธ์สมมูล (equivalence relation), definition: "ความสัมพันธ์ที่สะท้อน สมมาตร และถ่ายทอด ซึ่งแบ่งเซตเป็นคลาสที่ไม่ทับกัน" }
+  - { term: หนึ่งต่อหนึ่ง (injective), definition: "ฟังก์ชันที่สมาชิกต่างกันได้ค่าต่างกันเสมอ" }
+  - { term: หลักรังนกพิราบ (pigeonhole principle), definition: "ถ้าใส่ของ n + 1 ชิ้นใน n กล่อง ต้องมีกล่องที่มีมากกว่าหนึ่งชิ้น" }
+  - { term: เลขคณิตมอดุลาร์ (modular arithmetic), definition: "การคำนวณที่สนใจเฉพาะเศษเมื่อหารด้วยจำนวนที่กำหนด" }
+  - { term: ห.ร.ม. (gcd), definition: "ตัวประกอบร่วมมากที่สุดของสองจำนวน หาได้ด้วยอัลกอริทึมของยุคลิด" }
+flashcards:
+  - { front: "ขั้นตอนของการพิสูจน์แบบอุปนัย", back: "ฐาน สมมติฐานอุปนัย และขั้นเหนี่ยวนำ" }
+  - { front: "แย้งสลับที่ของ ถ้า P แล้ว Q คืออะไร", back: "ถ้าไม่ Q แล้วไม่ P (เทียบเท่ากัน)" }
+  - { front: "ความสัมพันธ์สมมูลต้องมีสมบัติอะไรบ้าง", back: "สะท้อน สมมาตร และถ่ายทอด" }
+  - { front: "หลักรังนกพิราบพูดว่าอะไร", back: "ใส่ n + 1 ชิ้นใน n กล่อง ต้องมีกล่องที่มีมากกว่าหนึ่งชิ้น" }
+  - { front: "ต้นไม้ที่มี n โหนดมีเส้นเชื่อมกี่เส้น", back: "n − 1 เส้น" }
+references:
+  - { title: "การอุปนัยเชิงคณิตศาสตร์", url: "https://th.wikipedia.org/wiki/การอุปนัยเชิงคณิตศาสตร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Mathematical induction", url: "https://en.wikipedia.org/wiki/Mathematical_induction", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Pigeonhole principle", url: "https://en.wikipedia.org/wiki/Pigeonhole_principle", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Euclidean algorithm", url: "https://en.wikipedia.org/wiki/Euclidean_algorithm", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

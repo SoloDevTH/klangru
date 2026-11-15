@@ -1,0 +1,383 @@
+problems:
+  - id: computer.web.web-apps.p001
+    topics: [computer.web.web-apps]
+    difficulty: 1
+    type: mcq
+    stem: "ส่วนใดของเว็บแอปทำงานในเบราว์เซอร์ของผู้ใช้เป็นหลัก"
+    choices:
+      - { id: a, text: "ฐานข้อมูลที่เก็บรายการขนม", feedback: "ฐานข้อมูลอยู่ฝั่งเซิร์ฟเวอร์ ผู้ใช้เข้าถึงโดยตรงไม่ได้" }
+      - { id: b, text: "JavaScript ที่รันในเบราว์เซอร์ และอัปเดตหน้าที่ผู้ใช้เห็น", correct: true }
+      - { id: c, text: "โค้ดที่ประมวลผลการชำระเงินบนเครื่องแม่ข่าย", feedback: "การประมวลผลที่ต้องเชื่อถือได้และเก็บความลับควรทำฝั่งเซิร์ฟเวอร์ ไม่ควรพึ่งเบราว์เซอร์ของผู้ใช้" }
+    hints:
+      - "นึกถึงโค้ดที่ทำให้ตัวเลขบนหน้าเปลี่ยนทันทีเมื่อกดปุ่ม"
+      - "ภาษาที่รันบนเบราว์เซอร์ในงานเว็บคือ JavaScript"
+    solution: "JavaScript ทำงานในเบราว์เซอร์ อ่านและแก้ไข DOM ได้ทันทีโดยไม่ต้องส่งคำขอใหม่ทุกครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p002
+    topics: [computer.web.web-apps]
+    difficulty: 1
+    type: match
+    stem: "จับคู่เมธอด HTTP กับการกระทำที่เหมาะสมกับรายการขนมของร้าน"
+    pairs:
+      - { left: "GET /api/items", right: "อ่านรายการขนมทั้งหมด" }
+      - { left: "POST /api/items", right: "เพิ่มขนมใหม่ลงในรายการ" }
+      - { left: "PUT /api/items/4", right: "แทนที่ข้อมูลขนมรหัส 4 ทั้งชิ้น" }
+      - { left: "DELETE /api/items/4", right: "ลบขนมรหัส 4 ออกจากรายการ" }
+    hints:
+      - "เมธอดที่ชื่อสื่อการอ่านคือ GET"
+      - "ถามว่าการกระทำนั้นสร้างของใหม่ แทนที่ของเดิม หรือลบออก"
+    solution: "GET อ่าน POST สร้างรายการใหม่ PUT แทนที่ทรัพยากรทั้งชิ้น DELETE ลบทรัพยากร (RFC 9110)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p003
+    topics: [computer.web.web-apps]
+    difficulty: 1
+    type: mcq
+    stem: "รหัสสถานะ 404 Not Found หมายถึงอะไร"
+    choices:
+      - { id: a, text: "ไม่พบทรัพยากรที่ร้องขอ", correct: true }
+      - { id: b, text: "สร้างรายการใหม่สำเร็จ", feedback: "นั่นคือ 201 Created" }
+      - { id: c, text: "ไม่มีสิทธิ์เข้าถึงทรัพยากรนี้", feedback: "นั่นคือ 403 Forbidden ซึ่งเซิร์ฟเวอร์เข้าใจคำขอแต่ไม่อนุญาต" }
+      - { id: d, text: "เซิร์ฟเวอร์ผิดพลาดภายใน", feedback: "นั่นคือ 500 Internal Server Error ซึ่งเกิดจากเซิร์ฟเวอร์ ไม่ได้บอกว่าไม่พบทรัพยากร" }
+    hints:
+      - "เลข 4 ตัวหน้าบอกกลุ่มว่าเป็นความผิดพลาดฝั่งผู้ร้องขอ"
+      - "คำว่า Not Found ในชื่อสถานะบอกคำตอบโดยตรง"
+    solution: "404 คือไม่พบทรัพยากรที่ร้องขอ ต่างจาก 403 ที่หมายถึงมีทรัพยากรแต่ไม่อนุญาต และ 500 ที่เกิดจากฝั่งเซิร์ฟเวอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p004
+    topics: [computer.web.web-apps]
+    difficulty: 2
+    type: mcq
+    stem: "เมธอดใดเป็น safe method คือการเรียกไม่ควรเปลี่ยนแปลงข้อมูลบนเซิร์ฟเวอร์"
+    choices:
+      - { id: a, text: "POST", feedback: "POST ใช้ส่งข้อมูลเพื่อสร้างหรือประมวลผลสิ่งใหม่ จึงอาจเปลี่ยนข้อมูลบนเซิร์ฟเวอร์" }
+      - { id: b, text: "PUT", feedback: "PUT แทนที่ทรัพยากร ซึ่งเปลี่ยนข้อมูลบนเซิร์ฟเวอร์" }
+      - { id: c, text: "GET", correct: true }
+      - { id: d, text: "DELETE", feedback: "DELETE ลบทรัพยากร ซึ่งเปลี่ยนข้อมูลบนเซิร์ฟเวอร์" }
+    hints:
+      - "ถามว่าเมธอดนั้นทำให้ข้อมูลเปลี่ยนหรือไม่ ถ้าแค่ขออ่านจะเป็นอย่างไร"
+      - "ใช้เมธอดที่ใช้บ่อยที่สุดในการโหลดหน้า"
+    solution: "GET เป็น safe method ตาม RFC 9110 เพราะเป็นการอ่านอย่างเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p005
+    topics: [computer.web.web-apps]
+    difficulty: 2
+    type: numeric
+    stem: "ข้อมูล JSON นี้เก็บคะแนนนักเรียนห้องหนึ่ง {\"class\": \"ม.4/1\", \"students\": [{\"name\": \"ฝน\", \"score\": 7}, {\"name\": \"ปาน\", \"score\": 9}]} คะแนนของปานคือเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 9 }
+    hints:
+      - "students เป็นลิสต์ ลำดับในลิสต์เริ่มนับจาก 0"
+      - "ปานอยู่ตำแหน่งที่สอง จึงเป็นสมาชิกที่มีดัชนี 1"
+    misconceptions:
+      - { match: 7, feedback: "7 เป็นคะแนนของฝน ซึ่งอยู่ตำแหน่งแรก (ดัชนี 0) ไม่ใช่ของปาน" }
+      - { match: 16, feedback: "ดูเหมือนบวกคะแนนทั้งสองคน แต่โจทย์ถามเฉพาะคะแนนของปาน" }
+    solution: "students[1] คือ {\"name\": \"ปาน\", \"score\": 9} จึงได้ 9"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p006
+    topics: [computer.web.web-apps]
+    difficulty: 2
+    type: text
+    stem: "ในข้อความ JSON ค่าความจริงตัวพิมพ์เล็กทั้งหมดเขียนว่าอย่างไร (ตอบเป็นคำเดียว)"
+    accepted: ["true"]
+    misconceptions:
+      - { match: "1", feedback: "JSON ไม่ใช้เลข 1 แทนค่าความจริง ต้องเขียน true เป็นคำ" }
+      - { match: "\"true\"", feedback: "ถ้าใส่เครื่องหมายคำพูดจะเป็นสตริงข้อความ ไม่ใช่ค่าความจริง" }
+    hints:
+      - "นึกถึงค่าที่ใช้แทนเงื่อนไขที่เป็นจริงในภาษาโปรแกรม"
+      - "JSON ไม่ใส่เครื่องหมายคำพูดรอบค่าความจริง"
+    solution: "JSON ใช้ true ตัวพิมพ์เล็กทั้งหมดและไม่มีเครื่องหมายคำพูด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p007
+    topics: [computer.web.web-apps]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนเมื่อผู้ใช้กดปุ่มโหลดรายการขนมด้วย JavaScript ให้ตรงลำดับที่เกิดขึ้นจริง"
+    items:
+      - "ผู้ใช้กดปุ่มโหลดรายการ"
+      - "JavaScript ส่งคำขอ GET /api/items ไปยังเซิร์ฟเวอร์"
+      - "เซิร์ฟเวอร์ประมวลผลคำขอแล้วตอบเป็น JSON พร้อมรหัส 200"
+      - "JavaScript อ่าน JSON แล้วอัปเดต DOM ให้แสดงรายการ"
+    hints:
+      - "ขั้นแรกต้องเกิดจากการกระทำของผู้ใช้"
+      - "ก่อนได้ข้อมูลไปแสดง ต้องมีการส่งคำขอและรับคำตอบก่อน"
+    solution: "ผู้ใช้กดปุ่ม แล้ว JavaScript ส่ง GET เซิร์ฟเวอร์ตอบ JSON จากนั้น JavaScript อ่านและอัปเดต DOM"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p008
+    topics: [computer.web.web-apps]
+    difficulty: 3
+    type: numeric
+    stem: "ข้อความสีเทา #777777 บนพื้นขาว #FFFFFF มีอัตราส่วนความคมชัดเท่าไร คำนวณจากสูตรของ WCAG โดยตอบทศนิยม 2 ตำแหน่ง (ตอบเป็นตัวเลข ไม่ต้องใส่หน่วย)"
+    answer: { value: 4.48, tolerance: 0.01 }
+    hints:
+      - "หาความสว่างสัมพัทธ์ L ของแต่ละสี โดยแปลงค่าช่อง R G B จากช่วง 0 ถึง 255 เป็นเชิงเส้นก่อน"
+      - "อัตราส่วนคือ (L ที่สว่างกว่า + 0.05) หารด้วย (L ที่มืดกว่า + 0.05)"
+    misconceptions:
+      - { match: 2.03, feedback: "ค่านี้เกิดจากใช้ค่า 0 ถึง 255 ตรง ๆ โดยไม่แปลงเป็นเชิงเส้นก่อน สูตรต้องใช้ค่าความสว่างสัมพัทธ์" }
+      - { match: 5.42, feedback: "ค่านี้เกิดจากลืมบวก 0.05 ในตัวส่วนและตัวเศษ อัตราส่วนต้องบวก 0.05 ทั้งสองข้าง" }
+    solution: "สีเทา 0x77 ได้ L ประมาณ 0.1845 ขาวได้ L = 1 อัตราส่วน $= (1 + 0.05) / (0.1845 + 0.05) \\approx 4.48$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p009
+    topics: [computer.web.web-apps]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อใดเขียนกฎ CSS ที่ใช้เฉพาะเมื่อความกว้างของหน้าต่างไม่เกิน 600 px"
+    choices:
+      - { id: a, text: "@media (min-width: 600px) { ... }", feedback: "min-width 600px ใช้เมื่อกว้างตั้งแต่ 600 px ขึ้นไป ซึ่งตรงข้ามกับโจทย์" }
+      - { id: b, text: ".box { width: 600px; }", feedback: "นี่เป็นความกว้างตายตัว ไม่ได้เปลี่ยนตามจอ" }
+      - { id: c, text: "@media print { ... }", feedback: "print ใช้กับการพิมพ์ออกกระดาษ ไม่เกี่ยวกับความกว้างของหน้าต่าง" }
+      - { id: d, text: "@media (max-width: 600px) { ... }", correct: true }
+    hints:
+      - "คำว่า max หมายถึงค่าสูงสุดที่ยอมรับ"
+      - "ดูว่าเงื่อนไขใดระบุขอบบนของความกว้าง"
+    solution: "@media (max-width: 600px) ใช้กฎเมื่อความกว้างหน้าต่างเท่ากับหรือน้อยกว่า 600 px"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p010
+    topics: [computer.web.web-apps]
+    difficulty: 3
+    type: numeric
+    stem: "ปุ่มในร้านขนมออนไลน์ตั้งความกว้างเป็น 80% ของกล่องที่กว้าง 360 px ปุ่มจะกว้างกี่ px (ตอบเป็นตัวเลข หน่วย px)"
+    answer: { value: 288, unit: px }
+    hints:
+      - "เปอร์เซ็นต์ในที่นี้คือส่วนหนึ่งของความกว้างของกล่องแม่"
+      - "คูณ 360 ด้วย 0.8"
+    misconceptions:
+      - { match: 80, feedback: "80 คือค่าเปอร์เซ็นต์ ไม่ใช่ความกว้างเป็นพิกเซล ต้องนำไปคำนวณกับความกว้างของกล่องแม่" }
+      - { match: 360, feedback: "360 คือความกว้างของกล่องทั้งหมด ปุ่มกว้างเพียง 80% ของค่านี้" }
+    solution: "$360 \\times 0.8 = 288$ px"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p011
+    topics: [computer.web.web-apps]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน average_score(text) รับข้อความ JSON ที่เป็นลิสต์ของออบเจกต์ที่มีคีย์ score แล้วคืนค่าเฉลี่ยของคะแนนปัดเป็นทศนิยม 2 ตำแหน่ง ใช้โมดูล json ได้"
+    starter: |
+      import json
+
+      def average_score(text):
+          # อ่าน JSON แล้วคืนค่าเฉลี่ยของ score ปัดเป็นทศนิยม 2 ตำแหน่ง
+          return 0
+    tests: |
+      data = '[{"name": "ฝน", "score": 7}, {"name": "ปาน", "score": 9}, {"name": "ต้น", "score": 6}]'
+      assert average_score(data) == 7.33, f"ค่าเฉลี่ยของ 7, 9, 6 ปัดเป็น 2 ตำแหน่งควรได้ 7.33 แต่ได้ {average_score(data)}"
+      assert average_score('[{"name": "ก", "score": 10}]') == 10.0, "ลิสต์มีคนเดียว ค่าเฉลี่ยคือคะแนนของคนนั้น"
+    reference: |
+      import json
+
+      def average_score(text):
+          rows = json.loads(text)
+          return round(sum(r["score"] for r in rows) / len(rows), 2)
+    hints:
+      - "json.loads แปลงข้อความเป็นลิสต์ของดิกชันนารีใน Python"
+      - "รวมค่า score ทุกตัวแล้วหารด้วยจำนวนสมาชิกในลิสต์"
+    solution: "ใช้ json.loads แล้วคำนวณ round(sum(...) / len(...), 2)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p012
+    topics: [computer.web.web-apps]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน status_for(method, path, known) โดย known เป็นเซตของคู่ (เมธอด, path) ที่เซิร์ฟเวอร์รองรับ ให้คืนรหัสสถานะ 200 ถ้า GET และคู่นั้นมี 201 ถ้า POST และคู่นั้นมี 405 ถ้า path มีอยู่แต่เมธอดไม่รองรับ และ 404 ถ้าไม่มี path นั้นเลย"
+    starter: |
+      def status_for(method, path, known):
+          # ตอนนี้ตอบ 404 เสมอ ยังไม่ได้ตรวจเมธอดและ path
+          return 404
+    tests: |
+      known = {("GET", "/api/items"), ("POST", "/api/items")}
+      assert status_for("GET", "/api/items", known) == 200, "GET /api/items รองรับอยู่ ควรได้ 200"
+      assert status_for("POST", "/api/items", known) == 201, "POST /api/items รองรับอยู่ ควรได้ 201"
+      assert status_for("DELETE", "/api/items", known) == 405, "path มีอยู่แต่ไม่รองรับ DELETE ควรได้ 405"
+      assert status_for("GET", "/api/users", known) == 404, "ไม่มี path /api/users ควรได้ 404"
+    reference: |
+      def status_for(method, path, known):
+          if (method, path) in known:
+              return 201 if method == "POST" else 200
+          if any(p == path for _, p in known):
+              return 405
+          return 404
+    hints:
+      - "ตรวจก่อนว่าคู่ (เมธอด, path) อยู่ในเซตหรือไม่"
+      - "ถ้า path อยู่ในเซตแต่คู่นั้นไม่อยู่ ให้คืน 405 ถ้าไม่มี path เลยให้คืน 404"
+    solution: "ตรวจคู่ก่อนแล้วตรวจ path ด้วยการวนดูสมาชิกทุกตัว ตามความหมายของรหัส 405 และ 404"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p013
+    topics: [computer.web.web-apps]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน make_item(body) รับดิกชันนารีที่ควรมีคีย์ name ถ้า name เป็นสตริงที่หลังตัดช่องว่างแล้วยาว 1 ถึง 30 ตัวอักษร ให้คืน (201, {\"name\": ชื่อที่ตัดช่องว่างแล้ว}) มิฉะนั้นคืน (400, {\"error\": ...}) ข้อความ error ใช้อะไรก็ได้"
+    starter: |
+      def make_item(body):
+          # ตรวจ body แล้วคืน (รหัสสถานะ, ข้อมูลตอบกลับ)
+          return (200, {})
+    tests: |
+      assert make_item({"name": " ขนมปัง "}) == (201, {"name": "ขนมปัง"}), "ควรตัดช่องว่างหัวท้ายและคืน 201"
+      assert make_item({"name": ""})[0] == 400, "ชื่อว่างต้องได้ 400"
+      assert make_item({})[0] == 400, "ไม่มีคีย์ name ต้องได้ 400"
+      assert make_item({"name": "x" * 31})[0] == 400, "ชื่อยาว 31 ตัวอักษรเกินกำหนดต้องได้ 400"
+      assert make_item({"name": "x" * 30})[0] == 201, "ชื่อยาว 30 ตัวอักษรยังอยู่ในกำหนดต้องได้ 201"
+    reference: |
+      def make_item(body):
+          name = body.get("name", "") if isinstance(body, dict) else ""
+          if not isinstance(name, str) or not name.strip() or len(name.strip()) > 30:
+              return (400, {"error": "ต้องมีชื่อ 1 ถึง 30 ตัวอักษร"})
+          return (201, {"name": name.strip()})
+    hints:
+      - "ตรวจก่อนว่า body เป็นดิกชันนารีและมีคีย์ name ที่เป็นสตริงหรือไม่"
+      - "ตัดช่องว่างหัวท้ายด้วย strip() แล้วนับความยาวหลังตัดแล้ว"
+    solution: "แยกกรณีไม่ถูกต้องก่อน (ไม่ใช่สตริง ว่าง หรือยาวเกิน) คืน 400 ที่เหลือคืน 201 พร้อมชื่อที่ตัดแล้ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p014
+    topics: [computer.web.web-apps]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดเป็นวิธีสร้างปุ่มที่ผู้ใช้แป้นพิมพ์เข้าถึงได้โดยไม่ต้องเขียนโค้ดเพิ่ม"
+    choices:
+      - { id: a, text: "<button onclick=\"save()\">บันทึก</button>", correct: true }
+      - { id: b, text: "<div onclick=\"save()\">บันทึก</div>", feedback: "div ไม่รับโฟกัสด้วย Tab และไม่กด Enter เป็นการคลิก ต้องเขียนโค้ดเพิ่มเองจึงจะทำงานได้" }
+      - { id: c, text: "<span class=\"btn\" onclick=\"save()\">บันทึก</span>", feedback: "span ก็ไม่รับโฟกัสโดยอัตโนมัติ เหมือน div ต้องเพิ่ม tabindex และตัวจัดการแป้นพิมพ์เอง" }
+    hints:
+      - "เลือกแท็กที่มีความหมายว่าเป็นปุ่มอยู่แล้วในภาษา HTML"
+      - "ดูว่าแท็กใดรับโฟกัสด้วยแป้น Tab โดยไม่ต้องตั้งค่าเพิ่ม"
+    solution: "แท็ก button รับโฟกัสด้วย Tab และรับการกด Enter หรือ Space เป็นการคลิกโดยอัตโนมัติ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p015
+    topics: [computer.web.web-apps]
+    difficulty: 2
+    type: numeric
+    stem: "ในการตรวจหน้าร้านขนม มีรูปภาพ 10 รูป และ 7 รูปมีข้อความ alt อธิบายแล้ว ร้อยละของรูปที่ยังไม่มี alt เป็นเท่าไร (ตอบเป็นตัวเลขร้อยละ ไม่ต้องใส่เครื่องหมาย %)"
+    answer: { value: 30 }
+    hints:
+      - "หาจำนวนรูปที่ยังไม่มี alt ก่อน แล้วหารด้วยจำนวนรูปทั้งหมด"
+      - "คูณผลหารด้วย 100 เพื่อได้ร้อยละ"
+    misconceptions:
+      - { match: 70, feedback: "70 คือร้อยละของรูปที่มี alt แล้ว แต่โจทย์ถามรูปที่ยังไม่มี" }
+      - { match: 3, feedback: "3 คือจำนวนรูปที่ยังไม่มี alt ไม่ใช่ร้อยละ ต้องหารด้วย 10 แล้วคูณ 100" }
+    solution: "รูปที่ยังไม่มี alt มี $10 - 7 = 3$ รูป คิดเป็น $3 / 10 \\times 100 = 30\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p016
+    topics: [computer.web.web-apps]
+    difficulty: 2
+    type: numeric
+    stem: "คุกกี้เซสชันของร้านตั้ง Max-Age=86400 หมายความว่าคุกกี้อยู่ได้กี่ชั่วโมง (ตอบเป็นจำนวนชั่วโมง)"
+    answer: { value: 24 }
+    hints:
+      - "Max-Age มีหน่วยเป็นวินาที"
+      - "หนึ่งชั่วโมงมี 60 นาที และหนึ่งนาทีมี 60 วินาที"
+    misconceptions:
+      - { match: 1440, feedback: "1440 คือจำนวนนาที ไม่ใช่ชั่วโมง เพราะ 86400 หารด้วย 60 ได้จำนวนนาที แล้วต้องหารอีก 60 ครั้งจึงได้ชั่วโมง" }
+      - { match: 86400, feedback: "86400 คือจำนวนวินาที ต้องแปลงเป็นชั่วโมงก่อน" }
+    solution: "86400 ÷ 60 ÷ 60 = 24 ชั่วโมง (หนึ่งวัน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p017
+    topics: [computer.web.web-apps]
+    difficulty: 5
+    type: mcq
+    stem: "เหตุใดเว็บจึงต้องใช้คุกกี้หรือเซสชันเพิ่มเติมเพื่อจำผู้ใช้ข้ามหลายคำขอ"
+    choices:
+      - { id: a, text: "เพราะเบราว์เซอร์ไม่สามารถส่ง GET ได้", feedback: "เบราว์เซอร์ส่ง GET ได้ปกติ ปัญหาคือ HTTP ไม่ได้เก็บสถานะระหว่างคำขอ" }
+      - { id: b, text: "เพราะ JSON ไม่รองรับการเก็บชื่อผู้ใช้", feedback: "JSON เก็บชื่อได้ ปัญหาอยู่ที่การเชื่อมคำขอแต่ละครั้งเข้ากับผู้ใช้คนเดิม" }
+      - { id: c, text: "เพราะ HTTP ไม่จำคำขอก่อนหน้า ทุกคำขอเป็นอิสระจากกัน", correct: true }
+      - { id: d, text: "เพราะรหัสสถานะ 200 ไม่สามารถใช้กับผู้ใช้ที่ล็อกอินแล้ว", feedback: "รหัส 200 ใช้ได้กับทุกคำขอที่สำเร็จ ไม่เกี่ยวกับการล็อกอิน" }
+    hints:
+      - "คิดว่า HTTP จำได้หรือไม่ว่าคำขอก่อนหน้ามาจากใคร"
+      - "คุกกี้ถูกแนบมากับคำขอทุกครั้งเพื่อบอกว่าเป็นผู้ใช้คนเดิม"
+    solution: "HTTP เป็นโพรโทคอลแบบไร้สถานะ คำขอแต่ละครั้งเป็นอิสระ จึงต้องส่งรหัสเซสชันหรือข้อมูลอื่นมาทุกคำขอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p018
+    topics: [computer.web.web-apps]
+    difficulty: 5
+    type: code
+    stem: "เขียนชุดฟังก์ชันจำลองเซสชันฝั่งเซิร์ฟเวอร์ โดยเก็บข้อมูลใน dict ชื่อ store: create_session(store, user) สร้างโทเค็นใหม่ที่สุ่มและเดายาก (ยาวอย่างน้อย 16 ตัวอักษร ใช้โมดูล secrets ได้) เก็บ user ไว้ แล้วคืนโทเค็น current_user(store, token) คืนชื่อผู้ใช้หรือ None และ logout(store, token) ลบเซสชันนั้น"
+    starter: |
+      import secrets
+
+      def create_session(store, user):
+          # สร้างโทเค็นและเก็บ user ใน store แล้วคืนโทเค็น
+          return ""
+
+      def current_user(store, token):
+          return None
+
+      def logout(store, token):
+          pass
+    tests: |
+      store = {}
+      t = create_session(store, "ฝน")
+      assert isinstance(t, str) and len(t) >= 16, f"โทเค็นควรเป็นสตริงสุ่มยาวอย่างน้อย 16 ตัวอักษร แต่ได้ {t!r}"
+      assert current_user(store, t) == "ฝน", "หลังสร้างเซสชันต้องได้ชื่อผู้ใช้ที่เก็บไว้"
+      t2 = create_session(store, "ปาน")
+      assert t2 != t, "แต่ละเซสชันต้องได้โทเค็นไม่ซ้ำกัน"
+      logout(store, t)
+      assert current_user(store, t) is None, "หลัง logout โทเค็นนั้นต้องไม่ใช้ได้แล้ว"
+      assert current_user(store, t2) == "ปาน", "logout เซสชันหนึ่งต้องไม่กระทบเซสชันอื่น"
+      t3 = create_session(store, "ต้น")
+      assert t3 != t2 and current_user(store, t2) == "ปาน", "เซสชันใหม่ต้องไม่ทับเซสชันเดิมที่ยังใช้อยู่ (โทเค็นที่นับจากจำนวนรายการอาจซ้ำหลัง logout)"
+      assert current_user(store, "เดาเอาเอง") is None, "โทเค็นที่ไม่มีในระบบต้องได้ None"
+    reference: |
+      import secrets
+
+      def create_session(store, user):
+          token = secrets.token_urlsafe(16)
+          while token in store:
+              token = secrets.token_urlsafe(16)
+          store[token] = user
+          return token
+
+      def current_user(store, token):
+          return store.get(token)
+
+      def logout(store, token):
+          store.pop(token, None)
+    hints:
+      - "เก็บคู่ โทเค็น กับ ชื่อผู้ใช้ ใน store ด้วยการกำหนดค่าให้ดิกชันนารี"
+      - "โทเค็นเซสชันต้องเดาไม่ได้ ใช้ secrets.token_urlsafe(16) แทนเลขลำดับ เพราะเลขลำดับเดาง่ายและอาจซ้ำหลัง logout"
+    solution: "ใช้ dict เป็นตารางเซสชัน create สร้างโทเค็นสุ่มด้วย secrets.token_urlsafe แล้วใส่คู่ใหม่ current ใช้ get ที่คืน None ได้เอง logout ใช้ pop พร้อมค่าเริ่มต้น None โทเค็นที่เป็นเลขลำดับ เช่น t1 t2 ไม่ปลอดภัย เพราะผู้อื่นเดาโทเค็นของคนอื่นได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.web.web-apps.p019
+    topics: [computer.web.web-apps]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อมูลใดไม่ควรเก็บไว้ในคุกกี้แบบข้อความธรรมดาที่เบราว์เซอร์ของผู้ใช้จัดเก็บ"
+    choices:
+      - { id: a, text: "ภาษาที่ผู้ใช้เลือกแสดงผล", feedback: "ข้อมูลนี้ไม่ใช่ความลับและไม่กระทบความปลอดภัยมากนัก เก็บในคุกกี้ได้" }
+      - { id: b, text: "รหัสผ่านของผู้ใช้", correct: true }
+      - { id: c, text: "ธีมสีของหน้าเว็บ", feedback: "ธีมสีไม่ใช่ข้อมูลส่วนบุคคลที่ละเอียดอ่อน เก็บได้" }
+    hints:
+      - "ถามว่าถ้าคนอื่นอ่านคุกกี้ได้จะเกิดความเสียหายหรือไม่"
+      - "ข้อมูลที่ใช้พิสูจน์ตัวตนหรือเป็นความลับไม่ควรออกจากเซิร์ฟเวอร์"
+    solution: "รหัสผ่านต้องไม่เก็บหรือส่งเป็นข้อความธรรมดาในคุกกี้ ระบบควรเก็บเฉพาะแฮชที่เซิร์ฟเวอร์ และใช้เซสชันแทนการส่งรหัสผ่านซ้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

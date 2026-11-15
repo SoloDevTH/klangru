@@ -1,0 +1,365 @@
+problems:
+  - id: computer.data.sql-advanced.p001
+    topics: [computer.data.sql-advanced]
+    difficulty: 1
+    type: mcq
+    stem: "GROUP BY ในคำสั่ง SQL ใช้เพื่อจุดประสงค์ใด"
+    choices:
+      - { id: a, text: "เรียงแถวทั้งตารางจากน้อยไปมาก", feedback: "การเรียงลำดับทำด้วย ORDER BY ไม่ใช่ GROUP BY" }
+      - { id: b, text: "จัดแถวที่มีค่าเหมือนกันในคอลัมน์ที่ระบุให้เป็นกลุ่ม เพื่อใช้ฟังก์ชันรวมกับแต่ละกลุ่ม", correct: true }
+      - { id: c, text: "ลบแถวที่ซ้ำกันออกจากตารางถาวร", feedback: "GROUP BY ไม่ได้ลบแถวในตาราง มันจัดกลุ่มเฉพาะตอนสร้างผลลัพธ์" }
+      - { id: d, text: "เชื่อมสองตารางเข้าด้วยกัน", feedback: "การเชื่อมตารางทำด้วย JOIN ไม่ใช่ GROUP BY" }
+    hints:
+      - "ลองนึกว่า GROUP BY ทำงานกับกลุ่มของแถว ไม่ใช่กับแถวทีละแถว"
+      - "ดูว่าตัวเลือกใดพูดถึงฟังก์ชันรวมกับกลุ่ม"
+    solution: "GROUP BY จัดแถวที่มีค่าในคอลัมน์ที่ระบุเหมือนกันให้เป็นกลุ่มเดียวกัน เพื่อให้ฟังก์ชันรวมคำนวณแยกกลุ่มได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p002
+    topics: [computer.data.sql-advanced]
+    difficulty: 1
+    type: match
+    stem: "จับคู่คำสั่งหรือคำศัพท์ SQL กับความหมาย"
+    pairs:
+      - { left: "HAVING", right: "กรองกลุ่มหลังจัดกลุ่มและคำนวณฟังก์ชันรวม" }
+      - { left: "LEFT JOIN", right: "เก็บทุกแถวฝั่งซ้ายแม้ไม่มีคู่ในตารางขวา" }
+      - { left: "NULL", right: "ค่าที่แสดงว่าไม่มีค่าหรือยังไม่ทราบค่า" }
+      - { left: "PRIMARY KEY", right: "คอลัมน์ที่ค่าไม่ซ้ำกันและไม่เป็น NULL" }
+    hints:
+      - "HAVING อยู่หลัง GROUP BY เสมอ"
+      - "คำที่มีคำว่า LEFT บอกทิศทางของตารางที่เก็บไว้ทั้งหมด"
+    solution: "HAVING กรองกลุ่ม LEFT JOIN เก็บทุกแถวฝั่งซ้าย NULL คือไม่มีค่า และ PRIMARY KEY ระบุค่าที่ไม่ซ้ำและไม่เป็น NULL"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p003
+    topics: [computer.data.sql-advanced]
+    difficulty: 2
+    type: mcq
+    stem: "ตาราง sales มี 6 แถว: (1, ฝน, ขนมปัง, 3, 15), (2, ปาน, น้ำส้ม, 2, 20), (3, ฝน, น้ำส้ม, 1, 20), (4, ต้น, ขนมปัง, 5, 15), (5, ปาน, ข้าวเกรียบ, 4, 10), (6, ต้น, คุกกี้, 2, NULL) คอลัมน์คือ id, seller, item, qty, price ผลของ SELECT seller, COUNT(*) FROM sales GROUP BY seller คือข้อใด"
+    choices:
+      - { id: a, text: "ฝน 2, ปาน 2, ต้น 2", correct: true }
+      - { id: b, text: "ฝน 2, ปาน 3, ต้น 1", feedback: "ปานมี 2 แถว (แถว 2 และ 5) และต้นมี 2 แถว (แถว 4 และ 6) ไม่ใช่ 3 และ 1" }
+      - { id: c, text: "ฝน 4, ปาน 6, ต้น 7", feedback: "นั่นคือผลรวม qty ของแต่ละคน ไม่ใช่จำนวนแถวที่ COUNT(*) นับ" }
+      - { id: d, text: "ฝน 2, ปาน 2, ต้น 2, แนน 0", feedback: "ตาราง sales ไม่มีแถวของแนนเลย แนนจะปรากฏเมื่อใช้ LEFT JOIN จากตาราง sellers" }
+    hints:
+      - "COUNT(*) นับจำนวนแถวในแต่ละกลุ่ม"
+      - "นับจากลำดับของเซลเลอร์แต่ละคนในตารางด้านบน"
+    solution: "ฝนมี 2 แถว (แถว 1, 3) ปานมี 2 แถว (แถว 2, 5) ต้นมี 2 แถว (แถว 4, 6)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p004
+    topics: [computer.data.sql-advanced]
+    difficulty: 2
+    type: numeric
+    stem: "จากตาราง sales ในข้อก่อนหน้า (แถว (id, seller, item, qty, price) ดังนี้ (1, ฝน, ขนมปัง, 3, 15), (2, ปาน, น้ำส้ม, 2, 20), (3, ฝน, น้ำส้ม, 1, 20), (4, ต้น, ขนมปัง, 5, 15), (5, ปาน, ข้าวเกรียบ, 4, 10), (6, ต้น, คุกกี้, 2, NULL)) ผลของ SELECT SUM(qty) FROM sales WHERE item = 'น้ำส้ม' คือเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 3 }
+    hints:
+      - "กรองเฉพาะแถวที่ item เป็นน้ำส้มก่อน"
+      - "รวมค่า qty ของแถวที่เหลือ"
+    misconceptions:
+      - { match: 2, feedback: "2 คือ qty ของแถว 2 เพียงแถวเดียว ยังไม่ได้รวมแถว 3 ด้วย" }
+      - { match: 8, feedback: "8 คือผลบวก qty ของขนมปัง (3 + 5) ซึ่งไม่ใช่น้ำส้ม WHERE จึงไม่เลือกแถวเหล่านั้น" }
+    solution: "แถวที่ item เป็นน้ำส้มคือแถว 2 (qty 2) และแถว 3 (qty 1) รวมได้ 3"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p005
+    topics: [computer.data.sql-advanced]
+    difficulty: 2
+    type: numeric
+    stem: "จากตาราง sales ที่มี 6 แถว (id, seller, item, qty, price) ดังนี้ (1, ฝน, ขนมปัง, 3, 15), (2, ปาน, น้ำส้ม, 2, 20), (3, ฝน, น้ำส้ม, 1, 20), (4, ต้น, ขนมปัง, 5, 15), (5, ปาน, ข้าวเกรียบ, 4, 10), (6, ต้น, คุกกี้, 2, NULL) ผลของ SELECT COUNT(*) FROM sales WHERE price IS NULL คือเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1 }
+    hints:
+      - "IS NULL ใช้ตรวจว่าค่าเป็นว่างหรือไม่ โดยไม่ใช้เครื่องหมายเท่ากับ"
+      - "นับเฉพาะแถวที่ price เป็น NULL"
+    misconceptions:
+      - { match: 0, feedback: "ถ้าเขียน price = NULL จะได้ 0 เพราะการเปรียบเทียบกับ NULL ไม่ให้ค่าจริง ต้องใช้ IS NULL" }
+      - { match: 6, feedback: "6 คือจำนวนแถวทั้งหมดในตาราง ไม่ใช่จำนวนแถวที่ price เป็น NULL" }
+    solution: "มีเพียงแถว 6 ที่ price เป็น NULL จึงนับได้ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p006
+    topics: [computer.data.sql-advanced]
+    difficulty: 2
+    type: numeric
+    stem: "จากตาราง sales ที่มี 6 แถว (id, seller, item, qty, price) ดังนี้ (1, ฝน, ขนมปัง, 3, 15), (2, ปาน, น้ำส้ม, 2, 20), (3, ฝน, น้ำส้ม, 1, 20), (4, ต้น, ขนมปัง, 5, 15), (5, ปาน, ข้าวเกรียบ, 4, 10), (6, ต้น, คุกกี้, 2, NULL) ผลของ SELECT COUNT(price) FROM sales คือเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 5 }
+    hints:
+      - "COUNT(คอลัมน์) นับเฉพาะแถวที่ค่าในคอลัมน์นั้นไม่เป็น NULL"
+      - "มี 6 แถวและหนึ่งแถวมี price เป็น NULL"
+    misconceptions:
+      - { match: 6, feedback: "6 คือ COUNT(*) ซึ่งนับทุกแถว แต่ COUNT(price) ไม่นับแถวที่ price เป็น NULL" }
+      - { match: 0, feedback: "0 จะได้เมื่อ price ทุกแถวเป็น NULL ซึ่งไม่ใช่กรณีนี้" }
+    solution: "มี 6 แถว ตัด 1 แถวที่ price เป็น NULL เหลือ 5"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p007
+    topics: [computer.data.sql-advanced]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับการประมวลผลเชิงตรรกะของคำสั่ง SELECT ให้ถูกต้อง"
+    items:
+      - "FROM รวมตารางที่ใช้"
+      - "WHERE กรองแถวก่อนจัดกลุ่ม"
+      - "GROUP BY จัดกลุ่มแถวที่เหลือ"
+      - "HAVING กรองกลุ่มที่ไม่ตรงเงื่อนไข"
+      - "SELECT เลือกคอลัมน์และคำนวณค่าที่แสดง"
+      - "ORDER BY เรียงผลลัพธ์"
+    hints:
+      - "ขั้นแรกต้องรู้ก่อนว่าตารางใดคือแหล่งข้อมูล"
+      - "ORDER BY อยู่ท้ายสุดเพราะเรียงผลที่ได้แล้ว"
+    solution: "FROM แล้ว WHERE แล้ว GROUP BY แล้ว HAVING แล้ว SELECT แล้ว ORDER BY"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p008
+    topics: [computer.data.sql-advanced]
+    difficulty: 3
+    type: mcq
+    stem: "ต้องการแสดงเฉพาะผู้ขายที่มีรายการขายรวมมากกว่า 5 ชิ้น ควรเขียนเงื่อนไขนี้ในส่วนใด"
+    choices:
+      - { id: a, text: "WHERE SUM(qty) > 5", feedback: "WHERE กรองแถวก่อนจัดกลุ่มและใช้ฟังก์ชันรวมไม่ได้ จึงต้องใช้ HAVING" }
+      - { id: b, text: "ORDER BY SUM(qty) > 5", feedback: "ORDER BY ใช้เรียงผลลัพธ์ ไม่ใช้กรองแถวหรือกลุ่ม" }
+      - { id: c, text: "HAVING SUM(qty) > 5", correct: true }
+      - { id: d, text: "FROM sales WHERE qty > 5", feedback: "เงื่อนไขนี้กรองแถวทีละรายการ ไม่ได้ดูยอดรวมของผู้ขาย" }
+    hints:
+      - "เงื่อนไขนี้อ้างยอดรวมของกลุ่ม ซึ่งเกิดหลังจัดกลุ่ม"
+      - "ดูว่าส่วนไหนประมวลผลหลัง GROUP BY"
+    solution: "ยอดรวมของกลุ่มคำนวณหลัง GROUP BY จึงกรองด้วย HAVING"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p009
+    topics: [computer.data.sql-advanced]
+    difficulty: 3
+    type: text
+    stem: "คำสั่งเชื่อมตารางที่เก็บทุกแถวจากตารางซ้ายไว้แม้ไม่มีแถวคู่ในตารางขวา ตอบเป็นคำสั่งภาษาอังกฤษ 2 คำ"
+    accepted: ["LEFT JOIN", "LEFT OUTER JOIN"]
+    misconceptions:
+      - { match: "INNER JOIN", feedback: "INNER JOIN เก็บเฉพาะแถวที่มีคู่ทั้งสองฝั่ง จึงทิ้งแถวซ้ายที่ไม่มีคู่" }
+      - { match: "JOIN", feedback: "JOIN เฉย ๆ มักหมายถึง INNER JOIN ซึ่งไม่เก็บแถวซ้ายที่ไม่มีคู่" }
+    hints:
+      - "คำว่า LEFT บอกว่าตารางใดถูกเก็บไว้ทั้งหมด"
+      - "มีสองคำ คำแรกคือทิศทาง คำที่สองคือ JOIN"
+    solution: "LEFT JOIN (หรือ LEFT OUTER JOIN) เก็บทุกแถวของตารางซ้าย และเติม NULL ให้คอลัมน์ฝั่งขวาเมื่อไม่มีคู่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p010
+    topics: [computer.data.sql-advanced]
+    difficulty: 3
+    type: mcq
+    stem: "ตาราง sellers มีชื่อ ฝน, ปาน, ต้น และแนน และตาราง sales ตามตัวอย่างก่อนหน้า ผลของ SELECT s.name, COUNT(sa.id) FROM sellers s LEFT JOIN sales sa ON s.name = sa.seller GROUP BY s.name สำหรับแนนคืออะไร"
+    choices:
+      - { id: a, text: "ไม่แสดงแนนในผลลัพธ์เลย", feedback: "LEFT JOIN เก็บทุกแถวจาก sellers ไว้ จึงแสดงแนนแม้ไม่มีรายการขาย" }
+      - { id: b, text: "NULL", feedback: "COUNT จะคืนค่าเป็นจำนวนเสมอ เมื่อไม่มีแถวที่ไม่เป็น NULL ได้ 0" }
+      - { id: c, text: "1 เพราะมีแถวอยู่หนึ่งแถวของแนนเสมอ", feedback: "แนนไม่มีแถวในตาราง sales จึงไม่มีค่าที่นับได้" }
+      - { id: d, text: "0 เพราะ LEFT JOIN เก็บแถวของแนนไว้ และ COUNT(sa.id) นับเฉพาะค่าที่ไม่เป็น NULL", correct: true }
+    hints:
+      - "แนนไม่มีรายการขายในตาราง sales"
+      - "COUNT ไม่นับค่า NULL"
+    solution: "แนนไม่มีแถวคู่ใน sales จึงเป็น NULL ทั้งหมดฝั่งขวา และ COUNT(sa.id) นับได้ 0"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p011
+    topics: [computer.data.sql-advanced]
+    difficulty: 3
+    type: mcq
+    stem: "รันคำสั่ง UPDATE sales SET price = 0 โดยไม่มี WHERE มีผลอย่างไร"
+    choices:
+      - { id: a, text: "แก้ไขทุกแถวในตาราง sales ให้ price เป็น 0", correct: true }
+      - { id: b, text: "แก้ไขเฉพาะแถวแรกของตารางเท่านั้น", feedback: "UPDATE ที่ไม่มี WHERE ไม่ได้เลือกแถวแรกเป็นพิเศษ" }
+      - { id: c, text: "ไม่มีผล เพราะ SQL ต้องมี WHERE เสมอ", feedback: "SQL ไม่บังคับให้มี WHERE ในทุกคำสั่ง จึงแก้ทุกแถวได้จริง" }
+      - { id: d, text: "ลบตาราง sales ทั้งหมด", feedback: "UPDATE แก้ค่าในแถว ไม่ได้ลบตาราง การลบตารางต้องใช้ DROP" }
+    hints:
+      - "WHERE ใช้เลือกแถวที่จะถูกแก้ไข"
+      - "ไม่มี WHERE หมายถึงไม่มีการเลือก"
+    solution: "UPDATE ที่ไม่มี WHERE จะแก้ค่าในทุกแถวของตาราง ทำให้เกิดความเสียหายได้มาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p012
+    topics: [computer.data.sql-advanced]
+    difficulty: 4
+    type: order
+    stem: "เรียงขั้นตอนการแก้ราคาขนมของผู้ขายคนหนึ่งอย่างปลอดภัยในธุรกรรม"
+    items:
+      - "เริ่มธุรกรรมด้วย BEGIN"
+      - "สั่ง UPDATE พร้อม WHERE ที่ระบุแถวเป้าหมาย"
+      - "ตรวจผลด้วย SELECT ว่าแถวที่ถูกแก้ตรงตามที่ต้องการ"
+      - "ยืนยันการเปลี่ยนแปลงด้วย COMMIT เมื่อผลถูกต้อง"
+    hints:
+      - "ก่อนแก้ต้องเปิดธุรกรรมก่อน"
+      - "ยืนยันเป็นขั้นสุดท้ายหลังตรวจผลแล้ว"
+    solution: "BEGIN แล้ว UPDATE ที่มี WHERE แล้ว SELECT ตรวจ แล้ว COMMIT (ถ้าผลผิดให้ ROLLBACK แทน)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p013
+    topics: [computer.data.sql-advanced]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อจำกัดใดบังคับว่าคอลัมน์ seller ในตาราง sales ต้องมีชื่อที่มีอยู่จริงในตาราง sellers"
+    choices:
+      - { id: a, text: "PRIMARY KEY", feedback: "PRIMARY KEY ทำให้ค่าในคอลัมน์ของตารางนั้นไม่ซ้ำ ไม่ได้บังคับการอ้างอิงข้ามตาราง" }
+      - { id: b, text: "NOT NULL", feedback: "NOT NULL บังคับว่าต้องมีค่า แต่ไม่ได้บังคับให้ค่านั้นมีอยู่ในตารางอื่น" }
+      - { id: c, text: "FOREIGN KEY", correct: true }
+      - { id: d, text: "UNIQUE", feedback: "UNIQUE บังคับว่าค่าไม่ซ้ำกัน แต่ไม่ได้เชื่อมกับตารางอื่น" }
+    hints:
+      - "ข้อจำกัดนี้อ้างถึงตารางอื่น"
+      - "คำว่า KEY ชี้ว่าเป็นการเชื่อมโยงระหว่างตาราง"
+    solution: "FOREIGN KEY อ้างคอลัมน์ในตารางอื่นและบังคับให้ค่าที่ใส่ต้องมีอยู่ในตารางนั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p014
+    topics: [computer.data.sql-advanced]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน group_sum(rows, key, value) โดย rows เป็นลิสต์ของดิกชันนารี ให้คืนดิกชันนารีจากค่าของ key เป็นผลรวมของ value ในกลุ่มนั้น (จำลอง GROUP BY key ร่วมกับ SUM(value)) ห้ามใช้ sqlite3"
+    starter: |
+      def group_sum(rows, key, value):
+          # ตอนนี้คืนดิกชันนารีว่าง ยังไม่ได้รวมค่า
+          return {}
+    tests: |
+      data = [{"seller": "ฝน", "qty": 3}, {"seller": "ปาน", "qty": 2}, {"seller": "ฝน", "qty": 1}, {"seller": "ต้น", "qty": 5}, {"seller": "ปาน", "qty": 4}, {"seller": "ต้น", "qty": 2}]
+      assert group_sum(data, "seller", "qty") == {"ฝน": 4, "ปาน": 6, "ต้น": 7}, f"ควรได้ ฝน 4 ปาน 6 ต้น 7 แต่ได้ {group_sum(data, 'seller', 'qty')}"
+      assert group_sum([], "seller", "qty") == {}, "ไม่มีแถวต้องได้ดิกชันนารีว่าง"
+    reference: |
+      def group_sum(rows, key, value):
+          totals = {}
+          for row in rows:
+              totals[row[key]] = totals.get(row[key], 0) + row[value]
+          return totals
+    hints:
+      - "ใช้ดิกชันนารีเก็บยอดรวมระหว่างวนแถว"
+      - "ใช้ get(ค่าคีย์, 0) เพื่อเริ่มกลุ่มใหม่ด้วยศูนย์"
+    solution: "วนทุกแถวแล้วบวก row[value] เข้าไปในดิกชันนารีที่ใช้ row[key] เป็นคีย์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p015
+    topics: [computer.data.sql-advanced]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน group_having(rows, key, min_count) โดยนับจำนวนแถวของแต่ละค่า key แล้วคืนลิสต์ของค่า key ที่จำนวนแถวมีอย่างน้อย min_count เรียงตามตัวอักษรของค่า key (จำลอง GROUP BY key HAVING COUNT(*) >= min_count)"
+    starter: |
+      def group_having(rows, key, min_count):
+          # ตอนนี้คืนค่า key ทั้งหมดโดยไม่ได้ตรวจจำนวน
+          return sorted({row[key] for row in rows})
+    tests: |
+      data = [{"seller": "ฝน"}, {"seller": "ปาน"}, {"seller": "ฝน"}, {"seller": "ต้น"}, {"seller": "ปาน"}, {"seller": "ต้น"}]
+      assert group_having(data, "seller", 2) == ["ต้น", "ปาน", "ฝน"], "ทั้งสามคนมีอย่างน้อย 2 แถว"
+      assert group_having(data, "seller", 3) == [], "ไม่มีผู้ขายที่มี 3 แถวขึ้นไป"
+      data2 = data + [{"seller": "ฝน"}]
+      assert group_having(data2, "seller", 3) == ["ฝน"], "ฝนมี 3 แถวจึงควรเหลือเพียงฝน"
+    reference: |
+      def group_having(rows, key, min_count):
+          counts = {}
+          for row in rows:
+              counts[row[key]] = counts.get(row[key], 0) + 1
+          return sorted(k for k, n in counts.items() if n >= min_count)
+    hints:
+      - "นับจำนวนแถวของแต่ละค่า key ก่อนด้วยดิกชันนารี"
+      - "กรองเฉพาะค่าที่นับได้มากกว่าหรือเท่ากับ min_count แล้วเรียงผลลัพธ์"
+    solution: "นับแถวต่อค่า key ด้วยดิกชันนารี แล้วคืนค่าที่ n >= min_count เรียงแล้ว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p016
+    topics: [computer.data.sql-advanced]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน count_matches(left_keys, right_keys) โดย left_keys และ right_keys เป็นลิสต์ของค่าคีย์ ให้คืนดิกชันนารีจากคีย์ทุกตัวใน left_keys ไปเป็นจำนวนครั้งที่ปรากฏใน right_keys (จำลอง LEFT JOIN แล้ว COUNT ฝั่งขวา โดยคีย์ที่ไม่มีคู่ได้ 0)"
+    starter: |
+      def count_matches(left_keys, right_keys):
+          # ตอนนี้ให้ทุกคีย์ได้ 1 ยังไม่ได้นับจริง
+          return {k: 1 for k in left_keys}
+    tests: |
+      left = ["ฝน", "ปาน", "ต้น", "แนน"]
+      right = ["ฝน", "ปาน", "ฝน", "ต้น", "ต้น"]
+      assert count_matches(left, right) == {"ฝน": 2, "ปาน": 1, "ต้น": 2, "แนน": 0}, f"แนนไม่มีคู่ต้องได้ 0 แต่ได้ {count_matches(left, right)}"
+      assert count_matches([], right) == {}, "ไม่มีแถวซ้ายต้องได้ดิกชันนารีว่าง"
+    reference: |
+      def count_matches(left_keys, right_keys):
+          return {k: right_keys.count(k) for k in left_keys}
+    hints:
+      - "สำหรับแต่ละคีย์ฝั่งซ้าย ลองนับว่าปรากฏในฝั่งขวากี่ครั้ง"
+      - "เมธอด count ของลิสต์คืนค่า 0 เมื่อไม่พบ จึงเหมาะกับกรณีไม่มีคู่"
+    solution: "ใช้ right_keys.count(k) สำหรับแต่ละ k ในฝั่งซ้าย ซึ่งได้ 0 เมื่อไม่มีคู่ตรงกับ LEFT JOIN"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p017
+    topics: [computer.data.sql-advanced]
+    difficulty: 5
+    type: mcq
+    stem: "เมื่อคอลัมน์ id ของตารางขนาดหนึ่งล้านแถวมีดัชนี การค้นหา id = 42 เร็วกว่าการสแกนทั้งตารางเพราะเหตุใด"
+    choices:
+      - { id: a, text: "ดัชนีทำให้ข้อมูลในตารางถูกเก็บในหน่วยความจำทั้งหมด", feedback: "ดัชนีเป็นโครงสร้างแยกต่างหากที่ช่วยค้นหา ไม่ได้ย้ายข้อมูลทั้งตารางเข้าหน่วยความจำ" }
+      - { id: b, text: "ระบบไม่ต้องอ่านทุกแถว แต่เดินจากรากของดัชนีไปยังใบที่มีค่าที่ต้องการ", correct: true }
+      - { id: c, text: "ดัชนีลบแถวที่ไม่ใช้ออกจากตาราง", feedback: "ดัชนีไม่ได้ลบข้อมูลในตาราง" }
+      - { id: d, text: "ดัชนีทำให้คำสั่ง UPDATE ไม่จำเป็นต้องมี WHERE", feedback: "ดัชนีไม่เกี่ยวกับความจำเป็นของ WHERE ในคำสั่ง UPDATE" }
+    hints:
+      - "นึกถึงการค้นชื่อในสมุดโทรศัพท์ที่เรียงลำดับ"
+      - "ดูว่าตัวเลือกใดอธิบายการเดินจากรากลงสู่ใบ"
+    solution: "ดัชนีแบบต้นไม้ B ทำให้ค้นหาค่าต้องอ่านจำนวนโหนดเพียงระดับความสูงของต้นไม้ แทนการอ่านทุกแถว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p018
+    topics: [computer.data.sql-advanced]
+    difficulty: 5
+    type: mcq
+    stem: "การเชื่อมสองตารางขนาดใหญ่ด้วยค่าที่เท่ากัน ระบบอาจเลือกวิธี JOIN แบบแฮช เหตุผลหลักคืออะไร"
+    choices:
+      - { id: a, text: "ทำให้ได้ผลลัพธ์เป็นศูนย์เสมอ", feedback: "JOIN แบบแฮชให้ผลลัพธ์ที่ถูกต้อง ไม่ใช่ศูนย์" }
+      - { id: b, text: "ลบค่า NULL ทั้งหมดออกจากตาราง", feedback: "การ JOIN แบบแฮชไม่ได้ลบ NULL ออกจากตาราง" }
+      - { id: c, text: "บังคับให้ข้อมูลเรียงลำดับก่อนเสมอ", feedback: "การ JOIN แบบแฮชไม่จำเป็นต้องเรียงลำดับก่อน ต่างจากบางวิธี" }
+      - { id: d, text: "สร้างตารางแฮชจากตารางเล็กกว่าแล้วค้นหาค่าจากตารางอื่นได้เร็ว ไม่ต้องเทียบทุกคู่", correct: true }
+    hints:
+      - "วิธีวงวนซ้อนต้องเทียบทุกคู่แถว ซึ่งช้าเมื่อตารางใหญ่"
+      - "แฮชทำให้การค้นหาค่าเดียวกันทำได้เร็วขึ้น"
+    solution: "JOIN แบบแฮชสร้างแฮชจากตารางหนึ่งแล้วค้นหาจากอีกตาราง ลดจำนวนการเปรียบเทียบเมื่อตารางใหญ่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p019
+    topics: [computer.data.sql-advanced]
+    difficulty: 5
+    type: mcq
+    stem: "ในสมบัติ ACID ความหมายของ Isolation คืออะไร"
+    choices:
+      - { id: a, text: "ข้อมูลต้องเก็บแยกเป็นไฟล์คนละไฟล์", feedback: "Isolation เกี่ยวกับการแยกผลของธุรกรรมที่ทำพร้อมกัน ไม่ใช่การแยกไฟล์" }
+      - { id: b, text: "ธุรกรรมแต่ละอันไม่สามารถเกี่ยวข้องกับตารางใดได้", feedback: "ธุรกรรมเกี่ยวข้องกับตารางได้ แต่ต้องไม่ทำให้ผลกระทบข้ามกันโดยไม่ควบคุม" }
+      - { id: c, text: "ธุรกรรมที่ทำพร้อมกันไม่รบกวนกัน ผลออกมาเหมือนทำทีละธุรกรรม", correct: true }
+      - { id: d, text: "ผลของธุรกรรมต้องหายไปเมื่อระบบดับ", feedback: "นั่นคือสิ่งที่ตรงข้ามกับ Durability ซึ่งหมายถึงผลคงอยู่เมื่อยืนยันแล้ว" }
+    hints:
+      - "ลองนึกว่าถ้าสองคนแก้ข้อมูลพร้อมกัน ควรเห็นผลอย่างไร"
+      - "Isolation เกี่ยวกับการไม่ให้ธุรกรรมรบกวนกัน"
+    solution: "Isolation หมายถึงธุรกรรมที่ทำพร้อมกันไม่รบกวนกันจนเห็นผลผิดปกติ เหมือนทำทีละอัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.data.sql-advanced.p020
+    topics: [computer.data.sql-advanced]
+    difficulty: 5
+    type: mcq
+    stem: "ระบบฐานข้อมูลใช้บันทึกการเปลี่ยนแปลงล่วงหน้า (write-ahead log) เพื่ออะไร"
+    choices:
+      - { id: a, text: "เพื่อกู้คืนข้อมูลให้ถูกต้องหลังระบบล่มโดยเล่าซ้ำการเปลี่ยนแปลงที่ยืนยันแล้วและย้อนรายการที่ยังไม่ยืนยัน", correct: true }
+      - { id: b, text: "เพื่อเพิ่มความเร็วของ SELECT ทุกคำสั่ง", feedback: "บันทึกนี้หลักคือความทนทานต่อความล้มเหลว ไม่ได้เพิ่มความเร็วของการอ่านทุกประเภท" }
+      - { id: c, text: "เพื่อแทนที่ตารางด้วยไฟล์ข้อความ", feedback: "บันทึกการเปลี่ยนแปลงไม่ได้แทนตารางด้วยไฟล์ข้อความ" }
+      - { id: d, text: "เพื่อให้ผู้ใช้เห็นประวัติทั้งหมดในแอป", feedback: "จุดประสงค์หลักคือการกู้คืนข้อมูลของระบบ ไม่ใช่การแสดงประวัติให้ผู้ใช้" }
+    hints:
+      - "คิดถึงสิ่งที่ต้องเกิดขึ้นเมื่อระบบดับกลางคัน"
+      - "บันทึกล่วงหน้าช่วยให้รู้ว่าอะไรยืนยันแล้วและอะไรยังค้างอยู่"
+    solution: "write-ahead log บันทึกการเปลี่ยนแปลงก่อนเขียนลงข้อมูลจริง เพื่อให้กู้คืนได้ตามความสมบูรณ์ของธุรกรรมหลังระบบล่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

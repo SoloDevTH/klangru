@@ -172,3 +172,39 @@ mappings:
     indicators: [OS-Protection]
     coverage: full
     note: การแยกกระบวนการ รายการควบคุมการเข้าถึง ความสามารถ แซนด์บ็อกซ์ และสิทธิ์น้อยที่สุด (บทเรียนส่วนการแยกในระบบปฏิบัติการ; ตัวอย่างแสดงวิธีทำการกำหนดสิทธิ์; โจทย์ p007 p011 p012)
+  - topic: computer.ai.responsible-ai
+    indicators: [AI-SEP]
+    coverage: partial
+    note: สอนหลักจริยธรรม AI (ความเป็นธรรม ความโปร่งใส การอธิบายได้ ความรับผิดชอบ ความเป็นส่วนตัว ความปลอดภัย) ผลต่อสังคม มนุษย์ในวงจร และกรอบกฎหมายแบบภาพรวม แต่ยังไม่สอนการประเมินระบบ AI เชิงเทคนิคอย่างลึก
+  - topic: computer.data.sql-advanced
+    indicators: [DM-Querying, DM-Processing, DM-Internals]
+    coverage: partial
+    note: สอนการสร้างคำสั่งสืบค้นด้วย GROUP BY HAVING ฟังก์ชันรวม LEFT JOIN และการจัดการ NULL (บทเรียนและโจทย์ p001 ถึง p010) แต่ผู้เรียนเลือกคำสั่ง ไล่ผล และจำลองด้วย Python เท่านั้น ไม่ได้เขียนคำสั่ง SQL เองเพราะแอปไม่มีตัวรัน SQL
+  - topic: computer.networks.addressing-routing
+    indicators: [NC-Routing]
+    coverage: partial
+    note: สอน CIDR การคำนวณซับเน็ต การเลือกเส้นทางแบบ longest prefix match และแนวคิดเวกเตอร์ระยะทางกับสถานะลิงก์ ระดับแนะนำ ไม่รวมอัลกอริทึมเส้นทางเชิงลึกและการกำหนดค่าโพรโทคอลจริง
+  - topic: computer.security.hashing-authentication
+    indicators: [SEC-Crypto]
+    coverage: partial
+    note: สอนฟังก์ชันแฮช ซอลต์ PBKDF2 HMAC ทบทวนลายมือชื่อดิจิทัลและ TOTP ในระดับแนวคิด ไม่ครอบคลุมรหัสลับแบบดั้งเดิมทั้งหมด (สอนแล้วในหัวข้อการเข้ารหัส) และไม่ลงลึกการเข้ารหัสสมมาตรกับกุญแจสาธารณะเชิงคณิตศาสตร์
+  - topic: computer.security.risk-policy
+    indicators: [SEC-Governance, SEP-Security]
+    coverage: partial
+    note: สอนการประเมินความเสี่ยง ทางจัดการ นโยบาย และการเข้าถึงตามบทบาท แต่ยังไม่สอนโครงสร้างการกำกับดูแลขององค์กรและการตรวจสอบเชิงระบบ
+  - topic: computer.society.computing-ethics
+    indicators: [SEP-Ethical-Analysis]
+    coverage: full
+    note: สอนกรอบวิเคราะห์เชิงจริยธรรมสี่แบบ (ผลลัพธ์นิยม หน้าที่นิยม คุณธรรม สัญญาประชาคม) และขั้นตอนวิเคราะห์ผู้มีส่วนได้เสีย โจทย์ p001 p002 p006
+  - topic: computer.society.computing-ethics
+    indicators: [SEP-Professional-Ethics, SEP-Context, AL-SEP, HCI-Accountability]
+    coverage: partial
+    note: สอนหลักความรับผิดชอบของผู้ปฏิบัติงานและการรายงานปัญหาจากจรรยาบรรณทั่วไป (p005 p019) แต่ยังไม่ได้วิเคราะห์กรณีจรรยาบรรณฉบับเต็มทีละข้อ ข้อความเฉพาะต้องตรวจก่อนเผยแพร่
+  - topic: computer.theory.discrete-structures
+    indicators: [MSF-Discrete]
+    coverage: partial
+    note: สอนการพิสูจน์ (ตรง แย้งสลับที่ ข้อขัดแย้ง ตัวอย่างค้าน) อุปนัยทั้งเชิงคณิตศาสตร์และเชิงโครงสร้าง ความสัมพันธ์และสมบัติ สมมูล อันดับบางส่วน ฟังก์ชันหนึ่งต่อหนึ่งและทั่วถึง หลักรังนกพิราบ เลขคณิตมอดุลาร์ ห.ร.ม. แบบยุคลิด และต้นไม้ แต่ไม่ครอบคลุมตรรกะและทฤษฎีกราฟ/ผลรวมเชิงลึกทั้งหมดของหลักสูตร
+  - topic: computer.web.web-apps
+    indicators: [SPD-Web]
+    coverage: partial
+    note: สอนฝั่งลูกข่ายกับฝั่งแม่ข่ายด้วย JavaScript DOM ตัวจัดการเหตุการณ์ HTTP เมธอดและรหัสสถานะ JSON REST คุกกี้และเซสชัน แต่ไม่ได้สร้างเว็บแอปเต็มรูปแบบ และกรอบงานสอนเพียงระดับแนวคิด

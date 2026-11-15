@@ -1,0 +1,361 @@
+problems:
+  - id: computer.networks.addressing-routing.p001
+    topics: [computer.networks.addressing-routing]
+    difficulty: 1
+    type: numeric
+    stem: "ซับเน็ต 192.168.5.0/24 มีที่อยู่ทั้งหมดกี่ค่า นับตั้งแต่ .0 ถึง .255 รวมทุกค่า (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 256 }
+    hints:
+      - "prefix /24 หมายถึงส่วนเครือข่ายยาว 24 บิต เหลือส่วนโฮสต์กี่บิต"
+      - "จำนวนค่าที่เขียนได้จากบิต n บิตคือ 2 ยกกำลัง n"
+    misconceptions:
+      - { match: 254, feedback: "254 คือจำนวนโฮสต์ที่เครื่องใช้ได้ แต่โจทย์ถามจำนวนที่อยู่ทั้งหมดซึ่งรวมที่อยู่เครือข่ายและที่อยู่กระจายข่าวด้วย" }
+      - { match: 128, feedback: "ดูเหมือนคิดว่าส่วนโฮสต์มีเพียง 7 บิต แต่ /24 เหลือส่วนโฮสต์ 32 − 24 = 8 บิต" }
+    solution: "ส่วนโฮสต์ $32 - 24 = 8$ บิต จำนวนที่อยู่ทั้งหมด $2^8 = 256$ ค่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p002
+    topics: [computer.networks.addressing-routing]
+    difficulty: 1
+    type: mcq
+    stem: "อุปกรณ์ชนิดใดที่ดูที่อยู่ IP ของปลายทางแล้วเลือกเส้นทางส่งแพ็กเก็ตไปยังเครือข่ายอื่น"
+    choices:
+      - { id: a, text: "สวิตช์", feedback: "สวิตช์ส่งเฟรมโดยดูที่อยู่ MAC ภายในวงเดียวกัน ไม่ได้เลือกเส้นทางระหว่างเครือข่าย" }
+      - { id: b, text: "เราเตอร์", correct: true }
+      - { id: c, text: "จุดเข้าใช้งานไร้สาย", feedback: "จุดเข้าใช้งานเชื่อมอุปกรณ์ไร้สายเข้ากับวงเครือข่ายเดิม ไม่ได้ตัดสินเส้นทางระหว่างเครือข่าย" }
+    hints:
+      - "อุปกรณ์นี้ทำงานในชั้นเครือข่าย (ชั้นที่ 3) ของแบบจำลอง OSI"
+      - "มันมีตารางเส้นทางไว้เลือกว่าจะส่งต่อไปทางไหน"
+    solution: "เราเตอร์ทำงานในชั้นเครือข่าย ใช้ที่อยู่ IP ปลายทางเลือกเส้นทางจากตารางเส้นทาง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p003
+    topics: [computer.networks.addressing-routing]
+    difficulty: 1
+    type: match
+    stem: "จับคู่แต่ละชั้นหรือโพรโทคอลกับหน้าที่ที่เกี่ยวข้องมากที่สุด"
+    pairs:
+      - { left: "ชั้นเครือข่าย (IP)", right: "เลือกเส้นทางระหว่างเครือข่าย" }
+      - { left: "ชั้นขนส่ง (TCP, UDP)", right: "บอกว่าแอปใดในเครื่องปลายทางควรรับข้อมูล" }
+      - { left: "ชั้นลิงก์ข้อมูล (อีเทอร์เน็ต)", right: "ส่งเฟรมไปยังเครื่องในวงเดียวกัน" }
+      - { left: "ชั้นแอปพลิเคชัน (HTTP, DNS)", right: "กำหนดความหมายของคำขอเว็บหรือการแปลงชื่อโดเมน" }
+    hints:
+      - "ชั้นที่ตัวเลขน้อยอยู่ใกล้สาย ชั้นที่ตัวเลขมากอยู่ใกล้ผู้ใช้"
+      - "ถามตัวเองว่าเรื่องนี้เกี่ยวกับการส่งไปถึงวงไหน ถึงเครื่องไหน หรือถึงโปรแกรมไหน"
+    solution: "IP อยู่ชั้นเครือข่าย จึงเลือกเส้นทางระหว่างวง อีเทอร์เน็ตอยู่ชั้นลิงก์ข้อมูล จึงส่งเฟรมในวงเดียวกัน TCP และ UDP อยู่ชั้นขนส่ง จึงระบุพอร์ตของแอป HTTP และ DNS อยู่ชั้นแอปพลิเคชัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p004
+    topics: [computer.networks.addressing-routing]
+    difficulty: 2
+    type: numeric
+    stem: "ซับเน็ต /26 ใช้ตั้งให้เครื่องได้กี่เครื่อง หลังหักที่อยู่เครือข่ายและที่อยู่กระจายข่าวออกแล้ว (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 62 }
+    hints:
+      - "หาก่อนว่าบล็อก /26 มีที่อยู่ทั้งหมดกี่ค่า โดยใช้ส่วนโฮสต์ 32 − 26 บิต"
+      - "จากจำนวนทั้งหมด ต้องหักที่อยู่เครือข่ายและที่อยู่กระจายข่าวออกอย่างละหนึ่งค่า"
+    misconceptions:
+      - { match: 64, feedback: "64 คือจำนวนที่อยู่ทั้งหมดในบล็อก แต่ต้องหักที่อยู่เครือข่ายกับที่อยู่กระจายข่าวออกก่อนจึงได้จำนวนเครื่องที่ใช้ได้" }
+      - { match: 60, feedback: "ดูเหมือนหักออกสี่ค่า แต่มีเพียงสองค่าที่เครื่องใช้ไม่ได้ คือเครือข่ายกับกระจายข่าว" }
+    solution: "$2^{32-26} - 2 = 2^6 - 2 = 64 - 2 = 62$ เครื่อง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p005
+    topics: [computer.networks.addressing-routing]
+    difficulty: 2
+    type: mcq
+    stem: "เครื่องที่มีที่อยู่ 192.168.10.150 และ prefix /26 ที่อยู่เครือข่ายของซับเน็ตนี้คือข้อใด"
+    choices:
+      - { id: a, text: "192.168.10.128", correct: true }
+      - { id: b, text: "192.168.10.0", feedback: "192.168.10.0 เป็นที่อยู่เครือข่ายของ /24 ไม่ใช่ของ /26 ที่เครื่องนี้อยู่" }
+      - { id: c, text: "192.168.10.144", feedback: "144 เป็นผลคูณของ 16 ซึ่งเป็นขนาดบล็อกของ /28 แต่บล็อก /26 มีขนาด 64 และเริ่มที่ผลคูณของ 64" }
+      - { id: d, text: "192.168.10.150", feedback: "192.168.10.150 คือที่อยู่ของเครื่องนี้เอง ที่อยู่เครือข่ายต้องมีส่วนโฮสต์เป็นศูนย์ทั้งหมด" }
+    hints:
+      - "บล็อก /26 มีขนาด 64 ค่า ลองดูว่า 150 อยู่ระหว่างผลคูณของ 64 คู่ใด"
+      - "ที่อยู่เครือข่ายคือค่าแรกของบล็อกที่มี 150 อยู่ข้างใน"
+    solution: "บล็อกขนาด 64 เริ่มที่ 0, 64, 128, 192 และ 150 อยู่ในช่วง 128 ถึง 191 ที่อยู่เครือข่ายจึงเป็น 192.168.10.128"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p006
+    topics: [computer.networks.addressing-routing]
+    difficulty: 2
+    type: text
+    stem: "ซับเน็ตมาสก์ 255.255.255.240 เขียนเป็น prefix แบบ CIDR ได้ว่าอย่างไร (ตอบรูป /xx)"
+    accepted: ["/28", "28"]
+    misconceptions:
+      - { match: "/24", feedback: "ดูเหมือนอ่านเฉพาะ 255.255.255 แต่ค่าสุดท้าย 240 ยังมีบิตเป็นหนึ่งอีก 4 บิต (11110000) รวมกับ 24 บิตแรกได้ 28 บิต" }
+      - { match: "/26", feedback: "240 เป็นเลขฐานสิบ ต้องนับบิตที่เป็นหนึ่งในฐานสอง 11110000 ซึ่งมี 4 บิต ไม่ใช่ 2 บิต" }
+    hints:
+      - "ซับเน็ตมาสก์ 255 คือแปดบิตเป็นหนึ่ง ดังนั้น 255.255.255 มี 24 บิต"
+      - "เขียน 240 เป็นฐานสองแล้วนับจำนวนบิตที่เป็นหนึ่ง"
+    solution: "$240 = 11110000_2$ มีบิตเป็นหนึ่ง 4 บิต รวมกับ 24 บิตแรกได้ 28 ดังนั้นเป็น /28"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p007
+    topics: [computer.networks.addressing-routing]
+    difficulty: 2
+    type: order
+    stem: "เครื่องที่เพิ่งเชื่อมวงเครือข่ายขอที่อยู่จาก DHCP ให้เรียงขั้นตอนตามลำดับที่เกิดขึ้นจริง"
+    items:
+      - "เครื่องส่ง DHCPDISCOVER ถามหาเซิร์ฟเวอร์ DHCP"
+      - "เซิร์ฟเวอร์ DHCP ส่ง DHCPOFFER เสนอที่อยู่ให้เครื่อง"
+      - "เครื่องส่ง DHCPREQUEST ขอใช้ที่อยู่ที่เสนอมา"
+      - "เซิร์ฟเวอร์ DHCP ส่ง DHCPACK ยืนยันการให้ที่อยู่"
+    hints:
+      - "ขั้นแรกเครื่องยังไม่มีที่อยู่จึงต้องถามออกไปก่อน"
+      - "ขั้นสุดท้ายคือการยืนยันจากเซิร์ฟเวอร์หลังจากเครื่องตอบรับข้อเสนอแล้ว"
+    solution: "ลำดับคือ DHCPDISCOVER, DHCPOFFER, DHCPREQUEST, DHCPACK (รู้จักกันว่า DORA) ตาม RFC 2131"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p008
+    topics: [computer.networks.addressing-routing]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ที่อยู่ IPv4 ใดบ้างเป็นที่อยู่ส่วนตัวตาม RFC 1918 (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "10.5.5.5", correct: true }
+      - { id: b, text: "172.20.1.1", correct: true }
+      - { id: c, text: "172.32.0.1", feedback: "ช่วงส่วนตัวของ 172 คือ 172.16 ถึง 172.31 เท่านั้น 172.32.0.1 อยู่นอกช่วงนี้จึงเป็นที่อยู่สาธารณะ" }
+      - { id: d, text: "192.168.200.1", correct: true }
+      - { id: e, text: "8.8.8.8", feedback: "8.8.8.8 อยู่นอกช่วงส่วนตัวทั้งสามช่วง จึงเป็นที่อยู่สาธารณะ" }
+    hints:
+      - "มีสามช่วงที่กำหนดไว้: 10.0.0.0/8, 172.16.0.0/12 และ 192.168.0.0/16"
+      - "สำหรับ 172 ให้ดูว่าเลขที่สองอยู่ระหว่าง 16 ถึง 31 หรือไม่"
+    solution: "10.5.5.5 อยู่ใน 10/8, 172.20.1.1 อยู่ใน 172.16/12 และ 192.168.200.1 อยู่ใน 192.168/16 ส่วน 172.32.0.1 และ 8.8.8.8 อยู่นอกช่วงส่วนตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p009
+    topics: [computer.networks.addressing-routing]
+    difficulty: 3
+    type: numeric
+    stem: "โรงเรียนมีที่อยู่ 192.168.10.0/24 และต้องการแบ่งเป็นซับเน็ตขนาดเท่ากันทั้งหมดด้วย prefix /26 จะได้กี่ซับเน็ต (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 4 }
+    hints:
+      - "เทียบ prefix เดิม 24 กับ prefix ใหม่ 26 จะยืมบิตไปทำส่วนเครือข่ายกี่บิต"
+      - "จำนวนซับเน็ตคือ 2 ยกกำลังจำนวนบิตที่ยืมมา"
+    misconceptions:
+      - { match: 8, feedback: "8 เป็นผลของการยืมสามบิต ซึ่งได้ prefix /27 ไม่ใช่ /26 เพราะ 24 + 3 = 27" }
+      - { match: 2, feedback: "ดูเหมือนยืมเพียงหนึ่งบิต แต่ 26 − 24 = 2 บิต จึงได้ 2 ยกกำลัง 2 เท่ากับ 4" }
+    solution: "ยืมบิต $26 - 24 = 2$ บิต จำนวนซับเน็ต $2^2 = 4$ ซับเน็ต ขนาดละ 64 ที่อยู่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p010
+    topics: [computer.networks.addressing-routing]
+    difficulty: 3
+    type: mcq
+    stem: "เครื่อง 172.16.0.70 และ 172.16.0.90 ใช้ prefix /27 ทั้งคู่ อยู่ในซับเน็ตเดียวกันหรือไม่"
+    choices:
+      - { id: a, text: "ไม่ใช่ เพราะเลขชุดสุดท้ายต่างกัน", feedback: "เครื่องในวงเดียวกันมีเลขชุดสุดท้ายต่างกันได้ ต้องดูว่าทั้งสองค่าตกอยู่ในบล็อกเดียวกันหรือไม่" }
+      - { id: b, text: "ไม่ใช่ เพราะ .70 อยู่ในบล็อก .64 ถึง .79 ส่วน .90 อยู่ในบล็อก .80 ถึง .95", feedback: "บล็อกขนาด 16 เป็นของ /28 แต่ /27 แบ่งชุดที่สี่เป็นบล็อกขนาด 32" }
+      - { id: c, text: "ใช่ เพราะทั้ง .70 และ .90 อยู่ในบล็อก .64 ถึง .95", correct: true }
+    hints:
+      - "บล็อก /27 มีขนาด 32 ที่อยู่ ลองหาว่า 70 และ 90 อยู่ระหว่างผลคูณของ 32 คู่ใด"
+      - "ลองคำนวณที่อยู่เครือข่ายของแต่ละเครื่องแล้วเทียบกัน"
+    solution: "บล็อก /27 ของชุดที่สี่คือ 0, 32, 64, 96, ... ทั้ง 70 และ 90 อยู่ในช่วง 64 ถึง 95 จึงมีที่อยู่เครือข่ายเดียวกันคือ 172.16.0.64/27 และสื่อสารกันได้ตรงโดยไม่ต้องผ่านเราเตอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p011
+    topics: [computer.networks.addressing-routing]
+    difficulty: 3
+    type: numeric
+    stem: "โรงเรียนจองซับเน็ต /27 ให้ห้องคอมพิวเตอร์ ซับเน็ตนี้ให้ที่อยู่โฮสต์ที่ใช้ได้กี่ค่า (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 30 }
+    hints:
+      - "จำนวนที่อยู่ทั้งหมดของ /27 คือ 2 ยกกำลัง 5"
+      - "อย่าลืมหักที่อยู่เครือข่ายและที่อยู่กระจายข่าว"
+    misconceptions:
+      - { match: 32, feedback: "32 คือจำนวนที่อยู่ทั้งหมดในบล็อก แต่ยังไม่ได้หักสองค่าที่ใช้กับเครือข่ายและกระจายข่าว" }
+      - { match: 31, feedback: "ดูเหมือนหักออกเพียงหนึ่งค่า ซับเน็ตต้องหักทั้งที่อยู่เครือข่ายและที่อยู่กระจายข่าว" }
+    solution: "$2^{32-27} - 2 = 32 - 2 = 30$ ที่อยู่โฮสต์ที่ใช้ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p012
+    topics: [computer.networks.addressing-routing]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน same_subnet(a, b, prefix) ให้คืน True เมื่อที่อยู่ IPv4 สองค่า a และ b อยู่ในเครือข่ายเดียวกันเมื่อใช้ prefix ที่กำหนด มิฉะนั้นคืน False ใช้โมดูล ipaddress ได้"
+    starter: |
+      import ipaddress
+
+      def same_subnet(a, b, prefix):
+          # ตรวจว่า b อยู่ในเครือข่ายของ a เมื่อใช้ prefix ที่กำหนด
+          return False
+    tests: |
+      assert same_subnet("192.168.1.40", "192.168.1.50", 27) == True, "40 กับ 50 อยู่ในบล็อก .32 ถึง .63 ของ /27 เดียวกัน"
+      assert same_subnet("192.168.1.40", "192.168.1.70", 27) == False, "70 อยู่ในบล็อก .64 ถึง .95 ซึ่งคนละวงกับ 40"
+      assert same_subnet("10.0.0.1", "10.0.1.1", 24) == False, "/24 ต้องให้สามชุดแรกเหมือนกัน แต่ชุดที่สามต่างกัน"
+      assert same_subnet("10.0.0.1", "10.0.1.1", 16) == True, "/16 ครอบคลุม 10.0.0.0 ถึง 10.0.255.255 จึงอยู่วงเดียวกัน"
+    reference: |
+      import ipaddress
+
+      def same_subnet(a, b, prefix):
+          net = ipaddress.ip_network(f"{a}/{prefix}", strict=False)
+          return ipaddress.ip_address(b) in net
+    hints:
+      - "ใช้ ipaddress.ip_network(...) กับสตริง a กับ prefix แล้วดูว่า b อยู่ในวงนั้นหรือไม่"
+      - "ใช้ strict=False เพื่อให้ฟังก์ชันรับที่อยู่ที่ไม่ใช่ที่อยู่เครือข่ายโดยตรงได้"
+    solution: "สร้างวงเครือข่ายจาก a และ prefix แล้วตรวจด้วยตัวดำเนินการ in ว่า b อยู่ในวงนั้นหรือไม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p013
+    topics: [computer.networks.addressing-routing]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน best_route(table, dest) โดย table เป็นรายการคู่ (ซับเน็ต, ปลายทางทางออก) เช่น (\"10.0.0.0/8\", \"R1\") ให้คืนค่าทางออกของแถวที่ prefix ยาวที่สุดซึ่งครอบคลุม dest และคืน None ถ้าไม่มีแถวใดตรงเลย"
+    starter: |
+      import ipaddress
+
+      def best_route(table, dest):
+          # ตอนนี้คืนแถวแรกของตารางเสมอ ยังไม่ได้เลือก prefix ที่ยาวที่สุด
+          return table[0][1]
+    tests: |
+      table = [("0.0.0.0/0", "ISP"), ("10.0.0.0/8", "R1"), ("10.1.0.0/16", "R2"), ("10.1.2.0/24", "R3")]
+      assert best_route(table, "10.1.2.9") == "R3", "10.1.2.9 ตรงกับทั้งสี่แถว แถวที่ prefix ยาวที่สุดคือ /24 จึงควรได้ R3"
+      assert best_route(table, "10.200.0.1") == "R1", "10.200.0.1 ตรงกับ /8 และ /0 เท่านั้น ควรได้ R1"
+      assert best_route(table, "8.8.8.8") == "ISP", "8.8.8.8 ตรงกับ 0.0.0.0/0 เท่านั้น ควรได้ ISP"
+      assert best_route([("10.0.0.0/8", "R1")], "192.168.0.1") is None, "ไม่มีแถวตรงเลย ต้องคืน None"
+    reference: |
+      import ipaddress
+
+      def best_route(table, dest):
+          addr = ipaddress.ip_address(dest)
+          best = None
+          for cidr, hop in table:
+              net = ipaddress.ip_network(cidr)
+              if addr in net and (best is None or net.prefixlen > best[0]):
+                  best = (net.prefixlen, hop)
+          return best[1] if best else None
+    hints:
+      - "วนดูทุกแถว แล้วตรวจว่า dest อยู่ในซับเน็ตของแถวนั้นหรือไม่ โดยใช้ ipaddress.ip_network(...)"
+      - "เก็บ prefixlen ที่ยาวที่สุดที่เจอไว้ และอัปเดตเมื่อเจอแถวที่ยาวกว่า"
+    solution: "วนทุกแถวเก็บแถวที่ตรงกับ dest และมี prefixlen มากที่สุด ถ้าไม่มีแถวตรงให้คืน None"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p014
+    topics: [computer.networks.addressing-routing]
+    difficulty: 4
+    type: numeric
+    stem: "โรงเรียนมีที่อยู่ 10.20.0.0/16 และต้องการให้แต่ละซับเน็ตใช้ได้อย่างน้อย 500 เครื่อง ควรใช้ prefix ใหญ่ที่สุดที่ยังพอ แล้วแบ่งได้กี่ซับเน็ตจาก /16 (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 128 }
+    hints:
+      - "หา prefix ที่เล็กที่สุดซึ่งให้โฮสต์ที่ใช้ได้มากกว่าหรือเท่ากับ 500"
+      - "จากนั้นนับว่า /16 แบ่งเป็นบล็อกขนาดนั้นได้กี่บล็อก โดยใช้ 2 ยกกำลังจำนวนบิตที่ยืม"
+    misconceptions:
+      - { match: 256, feedback: "256 เกิดจากการใช้ /24 ซึ่งให้โฮสต์ใช้ได้เพียง 254 เครื่อง ไม่พอ 500 เครื่อง" }
+      - { match: 64, feedback: "64 เกิดจากใช้ prefix /22 ซึ่งให้โฮสต์ใช้ได้ 1022 เครื่อง ซึ่งเกินความต้องการและไม่ใช่ prefix ที่เล็กที่สุดที่พอ" }
+    solution: "/23 ให้โฮสต์ใช้ได้ $2^9 - 2 = 510$ เครื่อง พอกับ 500 แต่ /24 ให้ 254 เครื่องไม่พอ จึงใช้ /23 ยืม $23 - 16 = 7$ บิต ได้ $2^7 = 128$ ซับเน็ต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p015
+    topics: [computer.networks.addressing-routing]
+    difficulty: 4
+    type: text
+    stem: "ที่อยู่กระจายข่าวของ 172.16.5.200/22 คืออะไร (ตอบเป็นที่อยู่ IPv4 เต็ม)"
+    accepted: ["172.16.7.255"]
+    misconceptions:
+      - { match: "172.16.5.255", feedback: "ดูเหมือนใช้เลขชุดที่สามเดิมคือ 5 แต่ /22 ครอบคลุมชุดที่สามตั้งแต่ 4 ถึง 7 ที่อยู่กระจายข่าวของบล็อกนี้จึงอยู่ที่ 7" }
+      - { match: "172.16.4.255", feedback: "172.16.4.255 เป็นกระจายข่าวของ /24 เท่านั้น แต่ /22 รวมสี่บล็อกของชุดที่สามเข้าด้วยกัน" }
+    hints:
+      - "/22 ลบ 16 จาก 32 เหลือ 6 บิตที่ใช้กับส่วนที่สามและที่สี่ จำนวนที่อยู่คือ 1024"
+      - "1024 ที่อยู่เท่ากับสี่ค่าของชุดที่สามแต่ละค่ามี 256 ที่อยู่"
+    solution: "/22 ครอบคลุม 172.16.4.0 ถึง 172.16.7.255 ค่า 5 อยู่ในช่วงนี้ ที่อยู่กระจายข่าวคือค่าสุดท้ายของบล็อก 172.16.7.255"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p016
+    topics: [computer.networks.addressing-routing]
+    difficulty: 4
+    type: mcq
+    stem: "ในโพรโทคอล RIP ค่าเมตริก 16 มีความหมายอย่างไร"
+    choices:
+      - { id: a, text: "ปลายทางนั้นเข้าไม่ถึง ถือเป็นค่าอนันต์", correct: true }
+      - { id: b, text: "เป็นเส้นทางที่ดีที่สุดที่มีจำนวนฮอปน้อยที่สุด", feedback: "เส้นทางที่ดีที่สุดคือเมตริกที่น้อยที่สุด ค่า 16 เป็นค่ามากที่สุดที่ใช้ได้ ไม่ใช่ค่าที่ดี" }
+      - { id: c, text: "เวลารอคำตอบเท่ากับ 16 วินาที", feedback: "เมตริกของ RIP นับจำนวนฮอป ไม่ใช่เวลา" }
+    hints:
+      - "RIP นับจำนวนฮอปเป็นเมตริก ค่าที่มากจนเกินจะใช้งานได้จึงถูกกำหนดเป็นค่าพิเศษ"
+      - "ค่านี้ช่วยป้องกันการวนไม่รู้จบเมื่อเส้นทางหายไปจากเครือข่าย"
+    solution: "RIP ถือว่าเมตริก 16 หมายถึงอนันต์หรือเข้าไม่ถึง (RFC 2453) เพราะเส้นทางที่ยาวเกิน 15 ฮอปถือว่าใช้ไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p017
+    topics: [computer.networks.addressing-routing]
+    difficulty: 5
+    type: numeric
+    stem: "ตารางเส้นทางมีสามแถว คือ 10.0.0.0/8, 10.64.0.0/10 และ 10.64.128.0/17 ปลายทางคือ 10.100.5.1 ใช้แถวที่มี prefix ยาวกี่บิต (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 10 }
+    hints:
+      - "ลองตรวจว่า 10.100.5.1 อยู่ในบล็อก /10 ซึ่งครอบคลุม 10.64.0.0 ถึง 10.127.255.255 หรือไม่"
+      - "ตรวจต่อว่า 10.100.5.1 อยู่ในบล็อก /17 ที่ 10.64.128.0 ถึง 10.64.255.255 หรือไม่"
+    misconceptions:
+      - { match: 8, feedback: "เลือกแถว /8 เพราะคิดว่ากว้างที่สุด แต่เส้นทางที่ถูกต้องคือ prefix ยาวที่สุดที่ยังตรงกับปลายทาง" }
+      - { match: 17, feedback: "10.100.5.1 ไม่ได้อยู่ในช่วง 10.64.128.0 ถึง 10.64.255.255 เพราะเลขชุดที่สองคือ 100 ไม่ใช่ 64" }
+    solution: "10.100.5.1 อยู่ใน 10.64.0.0/10 เพราะ 64 ≤ 100 ≤ 127 แต่ไม่อยู่ใน /17 ดังนั้นได้แถว /10 ซึ่งยาว 10 บิต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p018
+    topics: [computer.networks.addressing-routing]
+    difficulty: 5
+    type: numeric
+    stem: "โรงเรียนมีคอมพิวเตอร์ 100 เครื่องที่ต้องต่อวงเดียวกัน ให้เลือก prefix ที่ใหญ่ที่สุดที่ยังให้โฮสต์ใช้ได้อย่างน้อย 100 เครื่อง (ตอบเป็นตัวเลขของ prefix)"
+    answer: { value: 25 }
+    hints:
+      - "หาจำนวนบิตของส่วนโฮสต์ที่ทำให้ 2 ยกกำลังบิต ลบ 2 มีค่าอย่างน้อย 100"
+      - "/25 ให้ 126 ค่าที่ใช้ได้ ส่วน /26 ให้ 62 ค่า"
+    misconceptions:
+      - { match: 24, feedback: "/24 ให้ 254 เครื่อง ใหญ่เกินจำเป็นและสิ้นเปลืองที่อยู่ โจทย์ต้องการ prefix ที่ใหญ่ที่สุดที่ยังพอ" }
+      - { match: 26, feedback: "/26 ให้โฮสต์ใช้ได้เพียง 62 เครื่อง ไม่พอสำหรับ 100 เครื่อง" }
+    solution: "ส่วนโฮสต์ 7 บิต ให้ $2^7 - 2 = 126 \\ge 100$ ส่วน 6 บิตให้ 62 ไม่พอ ดังนั้นใช้ /25"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.networks.addressing-routing.p019
+    topics: [computer.networks.addressing-routing]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน subnet_info(cidr) รับสตริงเช่น \"192.168.10.77/26\" แล้วคืน dict ที่มีคีย์ network (ที่อยู่เครือข่าย), broadcast (ที่อยู่กระจายข่าว) และ hosts (จำนวนโฮสต์ที่ใช้ได้) ค่าทั้งหมดเป็นสตริงหรือจำนวนเต็มตามที่ระบุ"
+    starter: |
+      import ipaddress
+
+      def subnet_info(cidr):
+          # คืน dict ที่มี network, broadcast และ hosts
+          return {}
+    tests: |
+      info = subnet_info("192.168.10.77/26")
+      assert info["network"] == "192.168.10.64", f"ที่อยู่เครือข่ายควรเป็น 192.168.10.64 แต่ได้ {info.get('network')}"
+      assert info["broadcast"] == "192.168.10.127", f"ที่อยู่กระจายข่าวควรเป็น 192.168.10.127 แต่ได้ {info.get('broadcast')}"
+      assert info["hosts"] == 62, f"จำนวนโฮสต์ควรเป็น 62 แต่ได้ {info.get('hosts')}"
+      info2 = subnet_info("10.1.2.3/16")
+      assert info2["network"] == "10.1.0.0" and info2["hosts"] == 65534, "/16 ควรได้เครือข่าย 10.1.0.0 และ 65534 โฮสต์"
+    reference: |
+      import ipaddress
+
+      def subnet_info(cidr):
+          net = ipaddress.ip_network(cidr, strict=False)
+          return {
+              "network": str(net.network_address),
+              "broadcast": str(net.broadcast_address),
+              "hosts": net.num_addresses - 2,
+          }
+    hints:
+      - "ใช้ ipaddress.ip_network(cidr, strict=False) เพื่อให้ได้วงเครือข่ายจากสตริง"
+      - "ที่อยู่เครือข่ายและกระจายข่าวหาได้จาก network_address และ broadcast_address ของวงนั้น"
+    solution: "จำนวนโฮสต์ที่ใช้ได้คือจำนวนที่อยู่ทั้งหมดลบสองค่าที่เครื่องใช้ไม่ได้ (เครือข่ายกับกระจายข่าว)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,54 @@
+id: computer.data.sql-advanced
+subject: computer
+title: { th: "SQL ขั้นต่อไป: จัดกลุ่ม ปรับปรุงข้อมูล และธุรกรรม", en: "Advanced SQL: grouping, changing data and transactions" }
+summary: จัดกลุ่มด้วย GROUP BY และ HAVING อ่านค่า NULL และ LEFT JOIN แก้ไขข้อมูลอย่างปลอดภัย และเข้าใจการประมวลผลคำสั่ง ดัชนี ธุรกรรม ACID และการกู้คืน
+difficulty: 6
+minutes: 50
+prerequisites: [computer.data.databases]
+encompasses:
+  - { id: computer.data.databases, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: สรุปยอดขายรายคนด้วย GROUP BY และ SUM
+    problem: "ตาราง sales มีแถว (id, seller, item, qty, price) ดังนี้ (1, ฝน, ขนมปัง, 3, 15), (2, ปาน, น้ำส้ม, 2, 20), (3, ฝน, น้ำส้ม, 1, 20), (4, ต้น, ขนมปัง, 5, 15), (5, ปาน, ข้าวเกรียบ, 4, 10), (6, ต้น, คุกกี้, 2, NULL) จงหาจำนวนรายการ จำนวนชิ้นรวม และยอดเงินรวมของแต่ละผู้ขาย โดยไม่นับแถวที่ราคาเป็น NULL ในยอดเงิน"
+    steps:
+      - text: "จัดกลุ่มตาม seller: ฝน มี 2 แถว (แถว 1 และ 3), ปาน มี 2 แถว (แถว 2 และ 5), ต้น มี 2 แถว (แถว 4 และ 6)"
+        why: "GROUP BY ทำให้แต่ละกลุ่มกลายเป็นหนึ่งแถวของผลลัพธ์"
+      - text: "จำนวนชิ้นรวมด้วย SUM(qty): ฝน $3 + 1 = 4$, ปาน $2 + 4 = 6$, ต้น $5 + 2 = 7$"
+      - text: "ยอดเงินของแต่ละแถวคือ qty คูณ price ฝน: $3 \\times 15 + 1 \\times 20 = 65$, ปาน: $2 \\times 20 + 4 \\times 10 = 80$, ต้น: $5 \\times 15 = 75$"
+        why: "แถวที่ price เป็น NULL ถูกข้ามในการคำนวณ SUM เพราะ NULL ไม่ใช่ศูนย์ จึงไม่ทำให้ยอดเงินของต้นกลายเป็นศูนย์"
+      - text: "ผลลัพธ์: ฝน (2 รายการ, 4 ชิ้น, 65 บาท), ปาน (2 รายการ, 6 ชิ้น, 80 บาท), ต้น (2 รายการ, 7 ชิ้น, 75 บาท)"
+    answer: "ฝน 2 รายการ 4 ชิ้น 65 บาท ปาน 2 รายการ 6 ชิ้น 80 บาท ต้น 2 รายการ 7 ชิ้น 75 บาท"
+  - { type: check, problem: computer.data.sql-advanced.p001, prompt: "ลองนึกว่า HAVING ต่างจาก WHERE อย่างไร" }
+  - type: figure
+    src: query-order.svg
+    alt: "หกกล่องเรียงจากซ้ายไปขวาตามลำดับการประมวลผลของ SELECT ได้แก่ FROM รวมตารางที่ใช้ WHERE กรองแถว GROUP BY จัดกลุ่มแถว HAVING กรองกลุ่ม SELECT เลือกคอลัมน์ผล และ ORDER BY เรียงผลลัพธ์ ลูกศรเชื่อมระหว่างกล่อง"
+    caption: "ลำดับที่เขียนในคำสั่งไม่ใช่ลำดับที่ระบบประมวลผล"
+  - { type: check, problem: computer.data.sql-advanced.p010, prompt: "นึกถึงผลของ LEFT JOIN เมื่อผู้ขายไม่มีรายการขาย" }
+  - type: figure
+    src: btree-index.svg
+    alt: "ต้นไม้ค้นหาระดับสามชั้น รากมีค่า 50 ลูกซ้ายคือ 25 และลูกขวาคือ 70 ใบสี่ใบคือ 10, 35, 60 และ 80 เส้นทางการค้นหา 60 ผ่าน 50 แล้วไป 70 แล้วไป 60 เน้นด้วยสีแดง"
+    caption: "ดัชนีช่วยให้หาค่าได้โดยไม่ต้องอ่านทุกแถว"
+glossary:
+  - { term: GROUP BY, definition: "คำสั่งที่จัดแถวที่มีค่าเหมือนกันในคอลัมน์ที่ระบุให้เป็นกลุ่มเดียวกันเพื่อใช้ฟังก์ชันรวม" }
+  - { term: HAVING, definition: "เงื่อนไขที่กรองกลุ่มหลังจากจัดกลุ่มและคำนวณฟังก์ชันรวมแล้ว" }
+  - { term: "NULL", definition: "ค่าที่แสดงว่าไม่มีค่าหรือยังไม่ทราบค่า ไม่เท่ากับศูนย์หรือสตริงว่าง" }
+  - { term: LEFT JOIN, definition: "การเชื่อมตารางที่เก็บทุกแถวฝั่งซ้ายไว้ แม้ไม่มีแถวคู่ในตารางขวา" }
+  - { term: ธุรกรรม (transaction), definition: "กลุ่มคำสั่งฐานข้อมูลที่ต้องสำเร็จทั้งหมดหรือไม่มีผลเลย" }
+  - { term: ดัชนี (index), definition: "โครงสร้างที่ช่วยให้ค้นหาค่าได้เร็วโดยไม่ต้องอ่านทุกแถว มักเป็นต้นไม้ B" }
+flashcards:
+  - { front: "WHERE กับ HAVING ต่างกันอย่างไร", back: "WHERE กรองแถวก่อนจัดกลุ่ม HAVING กรองกลุ่มหลังจัดกลุ่ม" }
+  - { front: "COUNT(*) กับ COUNT(price) ต่างกันอย่างไร", back: "COUNT(*) นับทุกแถว COUNT(price) นับเฉพาะแถวที่ price ไม่เป็น NULL" }
+  - { front: "ทำไม UPDATE ต้องมี WHERE", back: "ไม่มี WHERE คำสั่งจะแก้ทุกแถวในตาราง" }
+  - { front: "ACID ย่อมาจากอะไร", back: "Atomicity, Consistency, Isolation, Durability" }
+references:
+  - { title: "SQL", url: "https://en.wikipedia.org/wiki/SQL", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ACID", url: "https://en.wikipedia.org/wiki/ACID", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "B-tree", url: "https://en.wikipedia.org/wiki/B-tree", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ระบบจัดการฐานข้อมูลเชิงสัมพันธ์", url: "https://th.wikipedia.org/wiki/ระบบจัดการฐานข้อมูลเชิงสัมพันธ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

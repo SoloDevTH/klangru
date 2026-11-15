@@ -1,0 +1,63 @@
+id: computer.web.web-apps
+subject: computer
+title: { th: "เว็บแอปพลิเคชัน: JavaScript HTTP API และการออกแบบตอบสนอง", en: "Web apps: JavaScript, HTTP APIs and responsive design" }
+summary: เข้าใจการคุยกันระหว่างเบราว์เซอร์กับเซิร์ฟเวอร์ผ่าน HTTP และ JSON เมธอดและรหัสสถานะ คุกกี้กับเซสชัน และออกแบบหน้าให้ใช้ได้บนทุกจอและเข้าถึงได้
+difficulty: 5.5
+minutes: 45
+prerequisites: [computer.web.html-css, computer.projects.app-development]
+encompasses:
+  - { id: computer.web.html-css, weight: 0.3 }
+  - { id: computer.projects.app-development, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: request-cycle.svg
+    alt: "แผนภาพลำดับระหว่างเบราว์เซอร์ทางซ้ายกับเซิร์ฟเวอร์ทางขวา ลูกศรที่ 1 คือ GET ที่ /api/items ลูกศรที่ 2 คือ 200 OK พร้อม JSON รายการขนม ลูกศรที่ 3 คือ POST ที่ /api/items พร้อมข้อมูลชื่อขนมปัง และลูกศรที่ 4 คือ 201 Created พร้อม id 4"
+    caption: "เบราว์เซอร์ส่งคำขอ เซิร์ฟเวอร์ตอบเป็น JSON แล้ว JavaScript อัปเดตหน้า"
+  - type: worked-example
+    title: ออกแบบคำขอ REST สำหรับรายการขนมของร้าน
+    problem: "ร้านขนมของโรงเรียนต้องให้เว็บทำสี่อย่าง คือ ดูรายการขนม เพิ่มขนมใหม่ ลบขนมรหัส 4 และดูว่าขนมรหัส 4 มีจริงหรือไม่ จงเลือกเมธอด ทรัพยากร และรหัสสถานะที่เหมาะสม"
+    steps:
+      - text: "ทรัพยากรทั้งหมดคือรายการขนม จึงตั้ง path เป็น /api/items และทุกขนมที่เลือกแยกเป็น /api/items/4"
+        why: "REST ตั้งชื่อทรัพยากรเป็นคำนาม ไม่ตั้งชื่อตามการกระทำ"
+      - text: "ดูรายการขนม ใช้ GET /api/items ผลสำเร็จคือ 200 OK พร้อม JSON เป็นลิสต์"
+        why: "GET อ่านอย่างเดียวและไม่เปลี่ยนข้อมูลบนเซิร์ฟเวอร์"
+      - text: "เพิ่มขนมใหม่ ใช้ POST /api/items ผลสำเร็จคือ 201 Created"
+        why: "POST ใช้สร้างรายการใหม่ และ 201 บอกว่าเซิร์ฟเวอร์สร้างแล้ว"
+      - text: "ลบขนมรหัส 4 ใช้ DELETE /api/items/4 ผลสำเร็จคือ 200 หรือ 204 ตามที่ออกแบบไว้"
+        why: "DELETE เป็น idempotent จึงลบซ้ำได้โดยผลบนเซิร์ฟเวอร์เหมือนเดิม"
+      - text: "ถ้าขนมรหัส 4 ไม่มีอยู่ ให้ตอบ 404 Not Found และถ้าเรียก /api/items ด้วย PATCH ที่ไม่รองรับให้ตอบ 405"
+        why: "รหัสสถานะช่วยให้ฝั่งหน้าเว็บตัดสินใจได้โดยไม่ต้องอ่านข้อความ"
+    answer: "GET /api/items, POST /api/items, DELETE /api/items/4 และรหัส 200 201 404 405 ตามกรณี"
+  - { type: check, problem: computer.web.web-apps.p003, prompt: "ลองคิดก่อนว่า 404 กับ 500 ต่างกันอย่างไร" }
+  - type: figure
+    src: responsive-layout.svg
+    alt: "เลย์เอาต์บนจอแคบกว้าง 360 px เรียงการ์ดสามใบเป็นคอลัมน์เดียวจากบนลงล่าง ส่วนเลย์เอาต์บนจอกว้าง 960 px วางการ์ดสามใบเรียงกันเป็นสามคอลัมน์ทางซ้ายไปขวา"
+    caption: "media query เปลี่ยนจำนวนคอลัมน์ตามความกว้างของจอ"
+  - { type: check, problem: computer.web.web-apps.p009, prompt: "นึกถึง media query ที่ใช้กับจอแคบ" }
+  - type: figure
+    src: contrast-examples.svg
+    alt: "ตัวอย่างข้อความสองบรรทัดบนพื้นขาว บรรทัดบนเป็นสีเทาอ่อน #9ca3af มีอัตราส่วนความคมชัด 2.54 ต่อ 1 ไม่ผ่านเกณฑ์ AA บรรทัดล่างเป็นสีเทาเข้ม #595959 มีอัตราส่วนความคมชัด 7.00 ต่อ 1 ผ่านทั้ง AA และ AAA"
+    caption: "สีที่อ่านยากบนพื้นขาวไม่ผ่านเกณฑ์ แม้ตาคนปกติจะยังเห็นอยู่"
+glossary:
+  - { term: DOM, definition: "โครงสร้างต้นไม้ของแท็กในหน้าเว็บที่ JavaScript อ่านและแก้ไขได้" }
+  - { term: เมธอด HTTP (HTTP method), definition: "คำที่บอกการกระทำของคำขอ เช่น GET อ่าน POST สร้าง PUT แทนที่ DELETE ลบ" }
+  - { term: JSON, definition: "รูปแบบข้อความสำหรับแลกเปลี่ยนข้อมูลที่มีออบเจกต์ {} และลิสต์ []" }
+  - { term: REST, definition: "แนวทางออกแบบ API ที่ตั้งชื่อทรัพยากรและใช้เมธอด HTTP บอกการกระทำ" }
+  - { term: คุกกี้ (cookie), definition: "ข้อมูลเล็ก ๆ ที่เซิร์ฟเวอร์ส่งให้เบราว์เซอร์เก็บ และเบราว์เซอร์แนบกลับในทุกคำขอ" }
+  - { term: อัตราส่วนความคมชัด (contrast ratio), definition: "อัตราส่วนความสว่างสัมพัทธ์ระหว่างข้อความกับพื้นหลัง เกณฑ์ AA ของข้อความปกติคือ 4.5 ต่อ 1" }
+flashcards:
+  - { front: "GET กับ POST ต่างกันอย่างไร", back: "GET ขออ่านและไม่เปลี่ยนข้อมูลบนเซิร์ฟเวอร์ POST ส่งข้อมูลเพื่อสร้างรายการใหม่" }
+  - { front: "201 Created หมายถึงอะไร", back: "เซิร์ฟเวอร์สร้างรายการใหม่สำเร็จ" }
+  - { front: "แอตทริบิวต์ HttpOnly ของคุกกี้ทำอะไร", back: "ไม่ให้สคริปต์ฝั่งหน้าเว็บอ่านคุกกี้ได้" }
+  - { front: "เกณฑ์ความคมชัดขั้นต่ำของข้อความปกติตาม WCAG AA", back: "4.5 ต่อ 1" }
+references:
+  - { title: "HTTP", url: "https://en.wikipedia.org/wiki/HTTP", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Representational state transfer", url: "https://en.wikipedia.org/wiki/Representational_state_transfer", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "HTTP cookie", url: "https://en.wikipedia.org/wiki/HTTP_cookie", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Responsive web design", url: "https://en.wikipedia.org/wiki/Responsive_web_design", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

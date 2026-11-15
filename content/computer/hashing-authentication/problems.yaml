@@ -1,0 +1,364 @@
+problems:
+  - id: computer.security.hashing-authentication.p001
+    topics: [computer.security.hashing-authentication]
+    difficulty: 1
+    type: mcq
+    stem: "สมบัติใดของฟังก์ชันแฮชทำให้จากค่าแฮชย้อนกลับไปหาข้อความเดิมได้ยากในทางปฏิบัติ"
+    choices:
+      - { id: a, text: "ผลลัพธ์มีความยาวไม่คงที่", feedback: "ฟังก์ชันแฮชให้ผลลัพธ์ขนาดคงที่ ความยาวไม่ได้เปลี่ยนตามอินพุต ซึ่งไม่ใช่สาเหตุของการย้อนกลับได้ยาก" }
+      - { id: b, text: "ทางเดียว (one-way)", correct: true }
+      - { id: c, text: "ใช้กุญแจลับในการคำนวณ", feedback: "ฟังก์ชันแฮชทั่วไปไม่ใช้กุญแจ ส่วนการใช้กุญแจลับเป็นของ HMAC" }
+    hints:
+      - "ลองนึกถึงการคำนวณที่ไปได้ทางเดียว เหมือนการบดอาหารที่ไม่สามารถทำให้กลับเป็นวัตถุดิบเดิม"
+      - "ดูว่าสมบัตินี้เกี่ยวกับการย้อนกลับหรือการเทียบ"
+    solution: "ฟังก์ชันแฮชที่ดีเป็นแบบทางเดียว จากค่าแฮชย้อนหาอินพุตเดิมได้ยากมาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p002
+    topics: [computer.security.hashing-authentication]
+    difficulty: 1
+    type: numeric
+    stem: "ค่าแฮช SHA-256 ยาวกี่บิต (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 256, unit: บิต }
+    hints:
+      - "ชื่อ SHA-256 บอกขนาดของผลลัพธ์เป็นบิต"
+      - "เลขฐานสิบหกหนึ่งตัวแทนสี่บิต ลองนับจำนวนตัวอักษรของค่าแฮชแล้วคูณด้วยสี่"
+    misconceptions:
+      - { match: 64, feedback: "64 คือจำนวนตัวอักษรเลขฐานสิบหกที่ใช้เขียน ไม่ใช่จำนวนบิต ต้องคูณด้วย 4 บิตต่อหนึ่งตัวอักษร" }
+      - { match: 128, feedback: "128 บิตคือขนาดของ MD5 ไม่ใช่ SHA-256" }
+    solution: "SHA-256 ให้ผล 256 บิต เขียนเป็นเลขฐานสิบหกได้ 64 ตัวอักษร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p003
+    topics: [computer.security.hashing-authentication]
+    difficulty: 2
+    type: mcq
+    stem: "ร้านค้าออนไลน์ของโรงเรียนต้องเก็บรหัสผ่านของสมาชิก ข้อใดเป็นวิธีที่เหมาะสมที่สุด"
+    choices:
+      - { id: a, text: "แฮชด้วยฟังก์ชันที่ช้าโดยตั้งใจ เช่น PBKDF2 โดยมีซอลต์แยกต่อผู้ใช้", correct: true }
+      - { id: b, text: "เก็บรหัสผ่านเป็นข้อความธรรมดาในตาราง เพื่อให้แอดมินดูและช่วยรีเซ็ตได้ง่าย", feedback: "ถ้าฐานข้อมูลรั่ว รหัสผ่านทั้งหมดถูกเปิดเผยทันที และแอดมินไม่ควรเห็นรหัสผ่านจริงของใคร" }
+      - { id: c, text: "แฮชด้วย SHA-256 ตรง ๆ โดยไม่มีซอลต์ เพราะเร็วและเชื่อถือได้", feedback: "SHA-256 ที่เร็วเกินไปและไม่มีซอลต์ไม่เหมาะกับการเก็บรหัสผ่าน ผู้ได้ค่าแฮชไปทดสอบรหัสได้เร็ว" }
+      - { id: d, text: "เข้ารหัสด้วย AES แล้วเก็บกุญแจถอดรหัสไว้ในตารางเดียวกัน", feedback: "ข้อมูลที่ถอดกลับได้ด้วยกุญแจที่เก็บไว้ด้วยกันไม่ปลอดภัย และการเก็บรหัสผ่านไม่ควรให้ย้อนกลับเป็นข้อความได้" }
+    hints:
+      - "ถามว่าถ้าฐานข้อมูลรั่วจะเกิดอะไรขึ้นกับแต่ละวิธี"
+      - "การเก็บรหัสผ่านควรทำให้การทดสอบรหัสแต่ละครั้งทำได้ยาก"
+    solution: "ใช้ฟังก์ชันที่ช้าโดยตั้งใจพร้อมซอลต์แยกต่อผู้ใช้ เช่น PBKDF2 หรือ Argon2id และไม่เก็บรหัสที่ย้อนกลับได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p004
+    topics: [computer.security.hashing-authentication]
+    difficulty: 2
+    type: match
+    stem: "จับคู่คำศัพท์กับความหมายที่ถูกต้อง"
+    pairs:
+      - { left: "ซอลต์ (salt)", right: "ค่าสุ่มที่สร้างใหม่สำหรับแต่ละผู้ใช้ เก็บคู่กับค่าแฮช" }
+      - { left: "PBKDF2", right: "การแฮชซ้ำจำนวนรอบเพื่อให้การทดสอบรหัสแต่ละครั้งช้าลง" }
+      - { left: "HMAC", right: "รหัสยืนยันข้อความที่ใช้กุญแจลับร่วมกัน" }
+      - { left: "ผลถล่ม (avalanche effect)", right: "อินพุตต่างกันเล็กน้อยทำให้ค่าแฮชต่างกันมาก" }
+    hints:
+      - "ลองดูว่าคำใดเกี่ยวกับการสุ่มค่าต่อผู้ใช้ และคำใดเกี่ยวกับการทำซ้ำหลายรอบ"
+      - "คำที่มีคำว่า message authentication มักเกี่ยวกับกุญแจลับ"
+    solution: "ซอลต์เป็นค่าสุ่มต่อผู้ใช้ PBKDF2 ทำซ้ำหลายรอบ HMAC ใช้กุญแจลับยืนยันข้อความ และผลถล่มคือการเปลี่ยนแปลงใหญ่จากอินพุตเล็กน้อย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p005
+    topics: [computer.security.hashing-authentication]
+    difficulty: 2
+    type: numeric
+    stem: "ซอลต์ของระบบยาว 16 ไบต์ คิดเป็นกี่บิต (ตอบเป็นจำนวนเต็ม หน่วยบิต)"
+    answer: { value: 128, unit: บิต }
+    hints:
+      - "หนึ่งไบต์มีแปดบิต"
+      - "คูณจำนวนไบต์ด้วยแปด"
+    misconceptions:
+      - { match: 16, feedback: "16 คือจำนวนไบต์ ต้องคูณด้วย 8 เพื่อได้จำนวนบิต" }
+      - { match: 256, feedback: "256 บิตคือขนาดของ SHA-256 ไม่ใช่ขนาดของซอลต์นี้" }
+    solution: "16 ไบต์ × 8 บิตต่อไบต์ = 128 บิต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p006
+    topics: [computer.security.hashing-authentication]
+    difficulty: 2
+    type: text
+    stem: "ฟังก์ชันที่คำนวณไปทางเดียวได้ แต่ย้อนกลับจากผลลัพธ์ไปหาอินพุตได้ยากมาก เรียกเป็นภาษาอังกฤษว่าอย่างไร (ตอบ 2 คำ)"
+    accepted: ["one-way function", "one way function", "oneway function"]
+    misconceptions:
+      - { match: "encryption", feedback: "การเข้ารหัสที่ถอดรหัสได้ด้วยกุญแจไม่ใช่ฟังก์ชันทางเดียว ฟังก์ชันทางเดียวไม่มีการถอดกลับตามปกติ" }
+      - { match: "hash table", feedback: "hash table เป็นโครงสร้างข้อมูลสำหรับค้นหาเร็ว ไม่ได้หมายถึงสมบัติการย้อนกลับได้ยาก" }
+    hints:
+      - "ชื่อที่ต้องการมีคำว่า function และคำที่บอกทิศทางการคำนวณ"
+      - "เป็นสมบัติที่ฟังก์ชันแฮชต้องมี"
+    solution: "ฟังก์ชันทางเดียว (one-way function) คือฟังก์ชันที่คำนวณไปข้างหน้าได้ง่ายแต่ย้อนกลับได้ยาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p007
+    topics: [computer.security.hashing-authentication]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการตรวจรหัสผ่านตอนผู้ใช้ล็อกอินให้ถูกต้อง โดยระบบเก็บซอลต์และแฮชไว้แล้ว"
+    items:
+      - "ผู้ใช้กรอกรหัสผ่าน"
+      - "เซิร์ฟเวอร์ดึงซอลต์ของผู้ใช้คนนั้นจากฐานข้อมูล"
+      - "เซิร์ฟเวอร์คำนวณ PBKDF2 จากรหัสที่กรอกกับซอลต์นั้น"
+      - "เซิร์ฟเวอร์เทียบแฮชที่ได้กับแฮชที่เก็บด้วยการเทียบแบบเวลาคงที่"
+      - "เซิร์ฟเวอร์ตอบผลว่ารหัสถูกหรือไม่"
+    hints:
+      - "ขั้นแรกต้องมีการกรอกรหัสก่อนจะตรวจอะไรได้"
+      - "ก่อนคำนวณแฮช ต้องรู้ซอลต์ก่อน ส่วนผลตอบกลับเป็นขั้นสุดท้าย"
+    solution: "ผู้ใช้กรอกรหัส เซิร์ฟเวอร์ดึงซอลต์ คำนวณ PBKDF2 เทียบกับแฮชที่เก็บ แล้วตอบผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p008
+    topics: [computer.security.hashing-authentication]
+    difficulty: 3
+    type: numeric
+    stem: "รหัสผ่านยาว 8 ตัวอักษร โดยแต่ละตัวเลือกได้จาก 62 ตัว (ตัวพิมพ์เล็ก ตัวพิมพ์ใหญ่ และเลข 0 ถึง 9 รวม 26 + 26 + 10) มีรูปแบบที่เป็นไปได้ทั้งหมดกี่แบบ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 218340105584896 }
+    hints:
+      - "แต่ละตำแหน่งเลือกได้ 62 แบบ และตำแหน่งต่าง ๆ เลือกอิสระจากกัน"
+      - "จำนวนแบบคือ 62 ยกกำลังจำนวนตำแหน่ง"
+    misconceptions:
+      - { match: 496, feedback: "496 เป็นผลของ 62 คูณ 8 ซึ่งเป็นการบวกจำนวนตำแหน่ง ไม่ใช่การเลือกอิสระในแต่ละตำแหน่ง" }
+      - { match: 62, feedback: "62 คือจำนวนตัวอักษรที่เลือกได้ในหนึ่งตำแหน่ง ไม่ใช่จำนวนรูปแบบทั้งหมด" }
+    solution: "$62^8 = 218340105584896$ รูปแบบ จำนวนนี้เป็นพื้นที่ค้นหาที่ใช้ประเมินความยากของรหัส ไม่ใช่วิธีการทดสอบรหัส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p009
+    topics: [computer.security.hashing-authentication]
+    difficulty: 3
+    type: numeric
+    stem: "ระบบเพิ่มจำนวนรอบของ PBKDF2 จาก 1,000 รอบเป็น 1,000,000 รอบ การคำนวณแฮชหนึ่งครั้งจะช้าลงกี่เท่า โดยประมาณ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1000 }
+    hints:
+      - "ความช้าเป็นสัดส่วนกับจำนวนรอบที่ทำ"
+      - "หาอัตราส่วนของจำนวนรอบใหม่ต่อจำนวนรอบเดิม"
+    misconceptions:
+      - { match: 1000000, feedback: "1,000,000 คือจำนวนรอบใหม่ ไม่ใช่อัตราส่วนความช้า ต้องหารด้วยจำนวนรอบเดิม" }
+      - { match: 999, feedback: "อัตราส่วนคือ 1,000,000 หารด้วย 1,000 ได้ 1,000 เท่า การลบออกหนึ่งไม่ใช่อัตราส่วน" }
+    solution: "อัตราส่วนความช้า $1{,}000{,}000 / 1{,}000 = 1000$ เท่า เพราะแต่ละรอบทำงานเพิ่มเท่า ๆ กัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p010
+    topics: [computer.security.hashing-authentication]
+    difficulty: 3
+    type: mcq
+    stem: "ข้อใดอธิบายประโยชน์ของซอลต์ได้ถูกต้องที่สุด"
+    choices:
+      - { id: a, text: "ทำให้ค่าแฮชย้อนกลับเป็นข้อความเดิมได้ง่ายขึ้น", feedback: "ซอลต์ไม่ได้ทำให้แฮชย้อนกลับได้ง่ายขึ้น สมบัติทางเดียวของฟังก์ชันยังคงอยู่" }
+      - { id: b, text: "ทำให้ผู้ใช้ไม่ต้องจำรหัสผ่าน", feedback: "ซอลต์เป็นค่าสุ่มที่ระบบใช้เอง ไม่เกี่ยวกับการจำรหัสของผู้ใช้" }
+      - { id: c, text: "ทำให้รหัสเดียวกันของผู้ใช้แต่ละคนได้ค่าแฮชต่างกัน และทำให้ตารางคำนวณล่วงหน้าใช้กับทุกคนพร้อมกันไม่ได้", correct: true }
+      - { id: d, text: "ทำให้การคำนวณแฮชเร็วขึ้นสำหรับเซิร์ฟเวอร์", feedback: "ซอลต์ไม่เร่งการคำนวณ ความช้าโดยตั้งใจมาจากจำนวนรอบของฟังก์ชัน" }
+    hints:
+      - "นึกถึงผู้ใช้สองคนที่ตั้งรหัสเหมือนกัน"
+      - "ตารางคำนวณล่วงหน้าต้องคำนวณใหม่สำหรับแต่ละซอลต์"
+    solution: "ซอลต์ต่างกันทำให้ค่าแฮชต่างกัน และตารางที่คำนวณไว้ล่วงหน้าต้องสร้างใหม่สำหรับแต่ละซอลต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p011
+    topics: [computer.security.hashing-authentication]
+    difficulty: 3
+    type: numeric
+    stem: "TOTP ใช้ช่วงเวลา 30 วินาที และนับตัวนับ T = เวลายูนิกซ์หารด้วย 30 แล้วปัดลง เมื่อเวลายูนิกซ์เป็น 1700000000 วินาที T มีค่าเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 56666666 }
+    hints:
+      - "ใช้เครื่องหมายหารจำนวนเต็ม เช่น // ใน Python"
+      - "ปัดลงหมายถึงตัดทศนิยมทิ้ง ไม่ใช่ปัดขึ้น"
+    misconceptions:
+      - { match: 56666667, feedback: "นี่คือการปัดขึ้น แต่ TOTP ปัดลงตามนิยาม เพื่อให้ตัวนับเปลี่ยนเมื่อครบช่วงเวลาเต็ม" }
+      - { match: 1700000000, feedback: "นี่คือเวลาเป็นวินาที ยังไม่ได้หารด้วยช่วงเวลา 30 วินาที" }
+    solution: "1700000000 ÷ 30 = 56666666.67 ปัดลงได้ 56666666"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p012
+    topics: [computer.security.hashing-authentication]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน verify_download(data, expected) โดย data เป็นไบต์ของไฟล์ และ expected เป็นค่า SHA-256 ที่ประกาศไว้เป็นเลขฐานสิบหก ให้คืน True ถ้าค่าแฮชของ data ตรงกับ expected และ False ถ้าไม่ตรง ใช้โมดูล hashlib ได้"
+    starter: |
+      import hashlib
+
+      def verify_download(data, expected):
+          # คำนวณ SHA-256 ของ data แล้วเทียบกับ expected
+          return False
+    tests: |
+      expected = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+      assert verify_download(b"hello", expected) == True, "เนื้อหา hello ควรตรงกับค่าที่ประกาศ"
+      assert verify_download(b"hellO", expected) == False, "เปลี่ยนตัวอักษรเดียวต้องได้ค่าแฮชไม่ตรง"
+      assert verify_download(b"", expected) == False, "ไฟล์ว่างต้องไม่ตรงกับค่านี้"
+    reference: |
+      import hashlib
+
+      def verify_download(data, expected):
+          return hashlib.sha256(data).hexdigest() == expected
+    hints:
+      - "ใช้ hashlib.sha256(data) แล้วเรียก hexdigest() เพื่อได้สตริง"
+      - "เทียบผลกับ expected ด้วย == ได้ เพราะค่าที่เปิดเผยเป็นข้อมูลสาธารณะ"
+    solution: "คืน hashlib.sha256(data).hexdigest() == expected ค่าแฮชเปิดเผยได้จึงไม่ต้องใช้การเทียบแบบเวลาคงที่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p013
+    topics: [computer.security.hashing-authentication]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน make_hash(password, salt, iterations=1000) ให้คืนค่า PBKDF2-HMAC-SHA256 เป็นเลขฐานสิบหก และเขียน check_password(password, salt, stored) ให้คืน True ถ้าคำนวณแฮชแล้วตรงกับ stored โดยใช้ hmac.compare_digest"
+    starter: |
+      import hashlib
+      import hmac
+
+      def make_hash(password, salt, iterations=1000):
+          return ""
+
+      def check_password(password, salt, stored):
+          return False
+    tests: |
+      h1 = make_hash("รหัส123", b"salt1")
+      assert len(h1) == 64, f"ค่าแฮช SHA-256 เป็นเลขฐานสิบหก 64 ตัว แต่ได้ {len(h1)}"
+      assert h1 == make_hash("รหัส123", b"salt1"), "รหัสและซอลต์เดิมต้องได้ค่าแฮชเดิมเสมอ"
+      assert h1 != make_hash("รหัส123", b"salt2"), "ซอลต์ต่างกันต้องได้ค่าแฮชต่างกัน"
+      assert check_password("รหัส123", b"salt1", h1) == True, "รหัสถูกต้องต้องผ่านการตรวจ"
+      assert check_password("รหัสผิด", b"salt1", h1) == False, "รหัสผิดต้องไม่ผ่านการตรวจ"
+    reference: |
+      import hashlib
+      import hmac
+
+      def make_hash(password, salt, iterations=1000):
+          return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, iterations).hex()
+
+      def check_password(password, salt, stored):
+          return hmac.compare_digest(make_hash(password, salt), stored)
+    hints:
+      - "hashlib.pbkdf2_hmac รับชื่ออัลกอริทึม รหัสเป็นไบต์ ซอลต์ และจำนวนรอบ"
+      - "สร้างค่าเลขฐานสิบหกด้วยเมธอด hex() ของผลลัพธ์ และใช้ hmac.compare_digest ในการตรวจ"
+    solution: "make_hash เรียก pbkdf2_hmac แล้วแปลงเป็น hex check_password คำนวณแฮชใหม่แล้วเทียบด้วย compare_digest"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p014
+    topics: [computer.security.hashing-authentication]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน sign(key, message) ให้คืนค่า HMAC-SHA256 ของ message ด้วย key เป็นเลขฐานสิบหก และเขียน verify(key, message, tag) ให้คืน True ถ้า tag ตรงกับค่าที่คำนวณได้ โดย key และ message เป็นไบต์"
+    starter: |
+      import hashlib
+      import hmac
+
+      def sign(key, message):
+          return ""
+
+      def verify(key, message, tag):
+          return False
+    tests: |
+      tag = sign(b"kuncheep", "ข้อความ".encode("utf-8"))
+      assert verify(b"kuncheep", "ข้อความ".encode("utf-8"), tag) == True, "กุญแจและข้อความเดิมต้องผ่านการตรวจ"
+      assert verify(b"kuncheep", "ข้อความแก้ไข".encode("utf-8"), tag) == False, "ข้อความที่ถูกแก้ต้องไม่ผ่าน"
+      assert verify(b"other", "ข้อความ".encode("utf-8"), tag) == False, "กุญแจผิดต้องไม่ผ่าน"
+    reference: |
+      import hashlib
+      import hmac
+
+      def sign(key, message):
+          return hmac.new(key, message, hashlib.sha256).hexdigest()
+
+      def verify(key, message, tag):
+          return hmac.compare_digest(sign(key, message), tag)
+    hints:
+      - "ใช้ hmac.new(key, message, hashlib.sha256) แล้วเรียก hexdigest()"
+      - "ฟังก์ชัน verify คำนวณแท็กใหม่แล้วเทียบกับ tag ด้วย compare_digest"
+    solution: "sign คืน HMAC ของข้อความด้วยกุญแจ verify คำนวณแท็กใหม่ด้วยกุญแจที่ให้มาแล้วเทียบแบบเวลาคงที่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p015
+    topics: [computer.security.hashing-authentication]
+    difficulty: 4
+    type: mcq
+    stem: "รหัส TOTP ตามค่าเริ่มต้นใน RFC 6238 เปลี่ยนทุกกี่วินาที"
+    choices:
+      - { id: a, text: "15 วินาที", feedback: "ค่าเริ่มต้นของ TOTP คือ 30 วินาที ไม่ใช่ 15" }
+      - { id: b, text: "60 วินาที", feedback: "60 วินาทีไม่ใช่ค่าเริ่มต้นของ TOTP ค่าเริ่มต้นคือ 30 วินาที" }
+      - { id: c, text: "300 วินาที", feedback: "300 วินาทีนานเกินไป เพราะรหัสที่เปลี่ยนช้าจะให้เวลาผู้ไม่หวังดีนานกว่า ค่าเริ่มต้นคือ 30 วินาที" }
+      - { id: d, text: "30 วินาที", correct: true }
+    hints:
+      - "ลองนึกถึงรหัสที่แสดงในแอปยืนยันตัวตน เปลี่ยนเร็วแค่ไหน"
+      - "ค่าเริ่มต้นเป็นช่วงสั้น ๆ ที่แบ่งเวลาเป็นช่วง"
+    solution: "RFC 6238 กำหนดค่าเริ่มต้นของช่วงเวลา (time-step) เป็น 30 วินาที"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p016
+    topics: [computer.security.hashing-authentication]
+    difficulty: 4
+    type: mcq
+    stem: "ร้านค้าออนไลน์ของชมรมเก็บรหัสผ่านด้วย MD5 โดยไม่มีซอลต์ ควรปรับปรุงอย่างไรก่อนข้อใดเป็นอันดับแรก"
+    choices:
+      - { id: a, text: "เปลี่ยนไปใช้ฟังก์ชันที่ช้าโดยตั้งใจ มีซอลต์แยกต่อผู้ใช้ เช่น PBKDF2 หรือ Argon2id", correct: true }
+      - { id: b, text: "เข้ารหัสค่าแฮชด้วย AES แล้วเก็บกุญแจไว้ในไฟล์เดียวกัน", feedback: "ถ้ากุญแจอยู่ที่เดียวกับข้อมูล ผู้ได้ข้อมูลไปก็ถอดได้หมด การปรับปรุงนี้ไม่แก้ปัญหาหลัก" }
+      - { id: c, text: "บังคับให้รหัสยาวขึ้นแต่ยังใช้ MD5 เหมือนเดิม", feedback: "ความยาวช่วยได้บ้าง แต่ MD5 ยังเร็วเกินไปและไม่มีซอลต์ จึงยังไม่ใช่การแก้ที่ถูกจุด" }
+      - { id: d, text: "ส่งรหัสผ่านไปยังอีเมลของสมาชิกทุกครั้งที่ล็อกอิน", feedback: "วิธีนี้ทำให้รหัสผ่านถูกส่งผ่านช่องทางอื่นและไม่เกี่ยวกับการเก็บอย่างปลอดภัย" }
+    hints:
+      - "ปัญหาหลักคือการเก็บที่เร็วเกินไปและไม่มีซอลต์"
+      - "หาวิธีที่ทำให้การทดสอบรหัสแต่ละครั้งทำได้ยากขึ้นและรหัสเดียวกันให้แฮชต่างกัน"
+    solution: "แก้ที่การเลือกฟังก์ชันและซอลต์ก่อน เช่น PBKDF2 หรือ Argon2id ที่มีซอลต์ต่อผู้ใช้ แล้วปรับจำนวนรอบให้เหมาะกับฮาร์ดแวร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p017
+    topics: [computer.security.hashing-authentication]
+    difficulty: 5
+    type: mcq
+    stem: "เหตุใดเมื่อเปรียบเทียบค่าแฮชหรือแท็ก จึงควรใช้ hmac.compare_digest แทนการใช้ == ทั่วไป"
+    choices:
+      - { id: a, text: "เพราะ == คำนวณแฮชผิด", feedback: "การเทียบด้วย == ไม่ได้คำนวณแฮช ปัญหาอยู่ที่เวลาที่ใช้เทียบ" }
+      - { id: b, text: "เพราะ compare_digest เร็วกว่าเสมอ", feedback: "ประเด็นสำคัญคือเวลาเท่ากันไม่ว่าค่าจะต่างตรงไหน ไม่ใช่ความเร็ว" }
+      - { id: c, text: "เพราะการเทียบทั่วไปมักหยุดเมื่อเจอความต่างตัวแรก เวลาที่ใช้จึงอาจบอกตำแหน่งที่ต่างกัน", correct: true }
+      - { id: d, text: "เพราะ == ใช้ไม่ได้กับสตริงภาษาไทย", feedback: "== ใช้ได้กับสตริงทั่วไป เหตุผลของการใช้ compare_digest คือความปลอดภัยด้านเวลา" }
+    hints:
+      - "คิดว่าการเทียบที่หยุดเร็วหรือช้าต่างกันทำให้เกิดอะไรขึ้น"
+      - "เป้าหมายคือให้เวลาที่ใช้ไม่ขึ้นกับตำแหน่งของความต่าง"
+    solution: "การเทียบแบบเวลาคงที่ใช้เวลาเท่ากันไม่ว่าความต่างจะอยู่ตรงไหน ลดความเสี่ยงจากการวัดเวลาตอบกลับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p018
+    topics: [computer.security.hashing-authentication]
+    difficulty: 5
+    type: numeric
+    stem: "รหัสยาว 8 ตัวอักษรจาก 62 ตัวอักษรมีพื้นที่รูปแบบ 62 ยกกำลัง 8 แบบ เมื่อเทียบเป็นจำนวนบิต ค่า log2 ของพื้นที่นี้เท่ากับเท่าไร (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 47.63, tolerance: 0.01 }
+    hints:
+      - "log2 ของผลคูณเท่ากับผลรวมของ log2 ของแต่ละตัวประกอบ"
+      - "คูณ log2(62) ด้วย 8"
+    misconceptions:
+      - { match: 47, feedback: "47 เป็นการปัดลงของค่าจริง แต่โจทย์ขอทศนิยม 2 ตำแหน่ง" }
+      - { match: 62, feedback: "62 คือจำนวนตัวอักษร ไม่ใช่จำนวนบิต" }
+    solution: "$\\log_2(62^8) = 8 \\log_2 62 \\approx 8 \\times 5.954 = 47.63$ บิต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.hashing-authentication.p019
+    topics: [computer.security.hashing-authentication]
+    difficulty: 4
+    type: text
+    stem: "อัลกอริทึมที่สร้างรหัสใช้ครั้งเดียวที่เปลี่ยนตามเวลาตาม RFC 6238 มีชื่อย่อภาษาอังกฤษว่าอะไร (ตอบเป็นชื่อย่อ)"
+    accepted: ["TOTP"]
+    misconceptions:
+      - { match: "HOTP", feedback: "HOTP ใช้ตัวนับแทนเวลา ไม่ใช่ RFC 6238 ซึ่งเป็นเวอร์ชันที่ใช้เวลา" }
+      - { match: "HMAC", feedback: "HMAC เป็นการคำนวณแท็กจากกุญแจและข้อความ ไม่ได้เรียกว่า TOTP" }
+    hints:
+      - "ชื่อย่อขึ้นต้นด้วยคำว่า Time-based"
+      - "อักษรย่อมี 4 ตัว"
+    solution: "TOTP ย่อมาจาก Time-based One-Time Password ตาม RFC 6238"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,54 @@
+id: computer.ai.responsible-ai
+subject: computer
+title: { th: "AI ที่รับผิดชอบ: ความโปร่งใส ความปลอดภัย และกฎหมาย", en: "Responsible AI: transparency, safety and law" }
+summary: หลักความเป็นธรรม ความโปร่งใส และการอธิบายได้ของ AI มนุษย์ในวงจรการตัดสินใจ เอกสารกำกับและข้อมูลฝึกที่ได้มาโดยชอบ พร้อมกรอบกฎหมายและเมื่อไรไม่ควรใช้ AI
+difficulty: 6
+minutes: 50
+prerequisites: [computer.ai.intro, computer.society.privacy]
+encompasses:
+  - { id: computer.ai.intro, weight: 0.3 }
+  - { id: computer.society.privacy, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: human-in-loop.svg
+    alt: "แผนภาพจากซ้ายไปขวา ข้อมูลนำเข้าที่ได้รับความยินยอมไปยังระบบ AI ที่เสนอคำแนะนำพร้อมเหตุผลสั้น ๆ ไปยังผู้ตรวจที่เป็นมนุษย์ซึ่งตัดสินใจสุดท้ายและบันทึกเหตุผล ใต้ระบบ AI มีกล่องผู้ได้รับผลกระทบอุทธรณ์ได้ ลูกศรเส้นประจากผู้ตรวจกลับไปยังกล่องนี้"
+    caption: "ระบบเสนอ มนุษย์ตัดสิน และผู้ได้รับผลกระทบอุทธรณ์ได้"
+  - type: worked-example
+    title: วัดความต่างของความแม่นยำระหว่างกลุ่มผู้ใช้
+    problem: "ระบบจัดลำดับเอกสารแม่นยำ 90 จาก 100 กรณีสำหรับกลุ่ม A และ 75 จาก 100 กรณีสำหรับกลุ่ม B ความแม่นยำโดยรวมดูดีอยู่ระดับหนึ่ง แต่ควรรายงานผลอย่างไรให้เห็นความเป็นธรรม"
+    steps:
+      - text: "คำนวณความแม่นยำของกลุ่ม A: $90 / 100 = 90\\%$ และกลุ่ม B: $75 / 100 = 75\\%$"
+      - text: "ความต่างระหว่างสองกลุ่มคือ $90 - 75 = 15$ จุดเปอร์เซ็นต์"
+        why: "ค่าโดยรวมอาจอยู่กลาง ๆ จนซ่อนความต่างนี้ จึงต้องแยกรายงานทีละกลุ่ม"
+      - text: "รายงานทั้งค่าของแต่ละกลุ่มและความต่าง แล้วระบุว่ากลุ่ม B มีข้อผิดพลาดมากกว่า และต้องตรวจสอบต่อก่อนนำไปใช้จริง"
+        why: "การรายงานผลแยกกลุ่มทำให้ผู้ตัดสินใจรู้ว่าต้องแก้ตรงไหน"
+    answer: "กลุ่ม A 90 เปอร์เซ็นต์ กลุ่ม B 75 เปอร์เซ็นต์ ต่างกัน 15 จุดเปอร์เซ็นต์ จึงต้องแก้ไขก่อนใช้งาน"
+  - { type: check, problem: computer.ai.responsible-ai.p001, prompt: "ลองนึกว่าความโปร่งใสต่างจากการอธิบายได้อย่างไร" }
+  - type: figure
+    src: data-pipeline.svg
+    alt: "หกกล่องเรียงจากซ้ายไปขวาได้แก่ เก็บข้อมูลพร้อมความยินยอมและแหล่งที่มา ทำความสะอาดพร้อมบันทึกการเปลี่ยนแปลง ฝึกโมเดลพร้อมบันทึกเวอร์ชัน ประเมินแยกกลุ่มผู้ใช้ เอกสารกำกับเช่น model card และ datasheet และติดตามหลังใช้งานโดยรับเรื่องร้องเรียน"
+    caption: "ทุกขั้นของสายส่งข้อมูลควรบันทึกไว้เพื่อให้ตรวจย้อนหลังได้"
+  - { type: check, problem: computer.ai.responsible-ai.p008, prompt: "เอกสารกำกับโมเดลควรบอกอะไรบ้าง" }
+glossary:
+  - { term: ระบบกฎ (rule-based system), definition: "ระบบที่ตัดสินตามเงื่อนไขที่มนุษย์เขียนไว้ล่วงหน้า อ่านและตรวจได้ตรงไปตรงมา" }
+  - { term: ความเป็นธรรม (fairness), definition: "หลักที่ผลลัพธ์ของระบบต้องไม่เสียเปรียบกลุ่มใดอย่างไม่มีเหตุผล" }
+  - { term: การอธิบายได้ (explainability), definition: "ความสามารถในการบอกเหตุผลสำคัญของการตัดสินใจให้ผู้เกี่ยวข้องเข้าใจ" }
+  - { term: model card, definition: "เอกสารกำกับโมเดลที่บอกวัตถุประสงค์ การใช้งานที่เหมาะสม ผลการประเมินแยกกลุ่ม และข้อจำกัด" }
+  - { term: datasheet, definition: "เอกสารกำกับชุดข้อมูลที่บอกที่มา การยินยอม และอคติที่รู้ของข้อมูล" }
+  - { term: มนุษย์ในวงจร (human in the loop), definition: "การออกแบบที่ให้มนุษย์ตรวจทานหรือตัดสินใจสุดท้ายในการตัดสินใจที่กระทบคน" }
+flashcards:
+  - { front: "ระบบแบบกฎต่างจากระบบแบบเรียนจากข้อมูลอย่างไร", back: "กฎเขียนโดยมนุษย์และอ่านได้ ส่วนข้อมูลสร้างเงื่อนไขเองและอธิบายยากกว่า" }
+  - { front: "model card บอกอะไร", back: "วัตถุประสงค์ การใช้ที่เหมาะสม ผลประเมินแยกกลุ่ม และข้อจำกัด" }
+  - { front: "datasheet ของชุดข้อมูลบอกอะไร", back: "ที่มา การยินยอม และอคติที่รู้ของข้อมูล" }
+  - { front: "EU AI Act ใช้แนวทางอะไรเป็นหลัก", back: "แบ่งระดับตามความเสี่ยง (ต้องตรวจก่อนเผยแพร่รายละเอียด)" }
+references:
+  - { title: "ปัญญาประดิษฐ์", url: "https://th.wikipedia.org/wiki/ปัญญาประดิษฐ์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Artificial intelligence", url: "https://en.wikipedia.org/wiki/Artificial_intelligence", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Artificial Intelligence Act", url: "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Algorithmic bias", url: "https://en.wikipedia.org/wiki/Algorithmic_bias", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

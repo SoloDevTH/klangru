@@ -1,0 +1,350 @@
+problems:
+  - id: computer.theory.discrete-structures.p001
+    topics: [computer.theory.discrete-structures]
+    difficulty: 1
+    type: mcq
+    stem: "การพิสูจน์แบบข้อขัดแย้ง (contradiction) เริ่มจากการสมมติอะไร"
+    choices:
+      - { id: a, text: "สมมติว่าข้อความนั้นจริงในทุกกรณีโดยไม่ต้องตรวจ", feedback: "การสมมติว่าจริงทุกกรณีเป็นข้อสรุปที่ยังไม่ได้พิสูจน์ ไม่ใช่วิธีข้อขัดแย้ง" }
+      - { id: b, text: "สมมติว่าข้อความที่ต้องการพิสูจน์เป็นเท็จ แล้วหาข้อขัดแย้งให้ได้", correct: true }
+      - { id: c, text: "สมมติว่าข้อความนั้นจริงเฉพาะเมื่อ n เป็นจำนวนคู่", feedback: "การจำกัดกรณีเป็นวิธีอื่น ไม่ใช่รูปแบบของข้อขัดแย้ง" }
+    hints:
+      - "ลองนึกว่าถ้าหาข้อขัดแย้งได้ สิ่งที่สมมติไว้ต้องเป็นอย่างไร"
+      - "ดูว่าเริ่มจากการสมมติเรื่องใดก่อนหาเหตุผลต่อ"
+    solution: "ข้อขัดแย้งเริ่มจากสมมติว่าข้อความเป็นเท็จ แล้วพิสูจน์ว่านำไปสู่ข้อความที่ขัดแย้งกับสิ่งที่ทราบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p002
+    topics: [computer.theory.discrete-structures]
+    difficulty: 1
+    type: numeric
+    stem: "บนเซต {1, 2, 3, 4} ความสัมพันธ์ 'มีความเป็นคู่หรือคี่เหมือนกัน' ประกอบด้วยคู่อันดับ (a, b) ทั้งหมดกี่คู่ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 8 }
+    hints:
+      - "แบ่งสมาชิกเป็นกลุ่มคู่ {2, 4} และคี่ {1, 3} ก่อน"
+      - "ในแต่ละกลุ่มที่มี 2 สมาชิก ทุกคู่ (a, b) ที่ a และ b อยู่ในกลุ่มเดียวกันมีกี่คู่"
+    misconceptions:
+      - { match: 4, feedback: "4 คือจำนวนคู่สะท้อนแบบ (a, a) เท่านั้น ยังไม่ได้นับคู่ที่ต่างกันภายในกลุ่มเดียวกัน" }
+      - { match: 16, feedback: "16 คือจำนวนคู่อันดับทั้งหมดบนเซตนี้ ไม่ใช่เฉพาะที่มีความเป็นคู่หรือคี่เหมือนกัน" }
+    solution: "กลุ่มคี่และกลุ่มคู่มีกลุ่มละ 2 สมาชิก แต่ละกลุ่มให้ $2 \\times 2 = 4$ คู่ รวมเป็น 8 คู่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p003
+    topics: [computer.theory.discrete-structures]
+    difficulty: 1
+    type: match
+    stem: "จับคู่สมบัติของความสัมพันธ์กับนิยามที่ถูกต้อง"
+    pairs:
+      - { left: "สะท้อน (reflexive)", right: "ทุกสมาชิกเกี่ยวข้องกับตัวเอง" }
+      - { left: "สมมาตร (symmetric)", right: "ถ้า a เกี่ยวข้องกับ b แล้ว b เกี่ยวข้องกับ a" }
+      - { left: "ถ่ายทอด (transitive)", right: "ถ้า a เกี่ยวกับ b และ b เกี่ยวกับ c แล้ว a เกี่ยวกับ c" }
+      - { left: "ความสัมพันธ์สมมูล", right: "มีทั้งสะท้อน สมมาตร และถ่ายทอด" }
+    hints:
+      - "คำว่าสะท้อนหมายถึงกลับไปหาตัวเอง"
+      - "สมมาตรหมายถึงการเกี่ยวข้องย้อนทิศได้"
+    solution: "สะท้อนคือเกี่ยวข้องกับตัวเอง สมมาตรคือย้อนทิศได้ ถ่ายทอดคือต่อกันได้ และสมมูลคือมีครบทั้งสามสมบัติ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p004
+    topics: [computer.theory.discrete-structures]
+    difficulty: 2
+    type: mcq
+    stem: "ฟังก์ชัน f(n) = 2n จากจำนวนธรรมชาติไปจำนวนธรรมชาติมีสมบัติใด"
+    choices:
+      - { id: a, text: "หนึ่งต่อหนึ่งแต่ไม่ทั่วถึง", correct: true }
+      - { id: b, text: "ทั่วถึงแต่ไม่หนึ่งต่อหนึ่ง", feedback: "f(n) = 2n ให้ค่าต่างกันเสมอเมื่อ n ต่างกัน จึงเป็นหนึ่งต่อหนึ่ง" }
+      - { id: c, text: "ทั้งหนึ่งต่อหนึ่งและทั่วถึง", feedback: "จำนวนคี่ เช่น 1 ไม่มีจำนวนธรรมชาติ n ที่ทำให้ 2n เท่ากับ 1 จึงไม่ทั่วถึง" }
+      - { id: d, text: "ไม่เป็นหนึ่งต่อหนึ่งและไม่ทั่วถึง", feedback: "ฟังก์ชันนี้เป็นหนึ่งต่อหนึ่งเพราะ 2a = 2b ได้ก็ต่อเมื่อ a = b" }
+    hints:
+      - "ถามว่าสมาชิกต่างกันได้ค่าต่างกันหรือไม่"
+      - "ถามว่ามีจำนวนคี่ที่ถูกชี้ด้วยฟังก์ชันหรือไม่"
+    solution: "2a = 2b ก็ต่อเมื่อ a = b จึงหนึ่งต่อหนึ่ง แต่จำนวนคี่ไม่เคยเป็น 2n จึงไม่ทั่วถึง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p005
+    topics: [computer.theory.discrete-structures]
+    difficulty: 2
+    type: numeric
+    stem: "คนไทยมักรู้ว่าตนเกิดวันอะไรในสัปดาห์ (วันจันทร์ถึงวันอาทิตย์) ต้องมีนักเรียนอย่างน้อยกี่คน จึงรับประกันได้ว่ามีสองคนเกิดวันเดียวกันในสัปดาห์ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 8 }
+    hints:
+      - "ใช้หลักรังนกพิราบ โดยวันในสัปดาห์คือรัง"
+      - "ต้องมีนักเรียนมากกว่าจำนวนรังหนึ่งคน"
+    misconceptions:
+      - { match: 7, feedback: "ถ้ามี 7 คนก็อาจเกิดคนละวันทุกคนได้ จึงยังรับประกันไม่ได้" }
+      - { match: 14, feedback: "14 คนรับประกันได้ก็จริง แต่ไม่ใช่จำนวนที่น้อยที่สุด จำนวนที่น้อยที่สุดคือเกินจำนวนวันไปหนึ่ง" }
+    solution: "สัปดาห์มี 7 วันเป็น 7 รัง ถ้ามีนักเรียน $7 + 1 = 8$ คน ต้องมีวันที่มีคนเกิดเกินหนึ่งคนเสมอ ส่วน 7 คนยังอาจเกิดคนละวันได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p006
+    topics: [computer.theory.discrete-structures]
+    difficulty: 2
+    type: order
+    stem: "เรียงขั้นตอนการพิสูจน์ว่าข้อความจริงสำหรับทุกจำนวนธรรมชาติ n ด้วยอุปนัยเชิงคณิตศาสตร์"
+    items:
+      - "ตรวจว่าข้อความจริงสำหรับ n = 1"
+      - "สมมติว่าข้อความจริงสำหรับ n = k"
+      - "แสดงให้ได้ว่าข้อความจริงสำหรับ n = k + 1"
+      - "สรุปว่าข้อความจริงสำหรับทุก n ตามหลักอุปนัย"
+    hints:
+      - "เริ่มจากค่าเริ่มต้นก่อนเสมอ"
+      - "ขั้นสุดท้ายคือการสรุป ไม่ใช่การพิสูจน์เพิ่ม"
+    solution: "ตรวจฐาน n = 1 แล้วสมมติ n = k จากนั้นแสดง n = k + 1 และสรุปเป็นทุก n"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p007
+    topics: [computer.theory.discrete-structures]
+    difficulty: 2
+    type: mcq
+    stem: "ในการพิสูจน์แบบอุปนัย สมมติฐานอุปนัยคืออะไร"
+    choices:
+      - { id: a, text: "ข้อความจริงสำหรับทุก n ซึ่งเป็นสิ่งที่ต้องพิสูจน์", feedback: "นั่นคือข้อความที่ต้องพิสูจน์ ไม่ใช่สมมติฐานที่ใช้ในขั้นเหนี่ยวนำ" }
+      - { id: b, text: "ข้อความจริงสำหรับ n = 1 เท่านั้น", feedback: "นั่นคือการพิสูจน์ฐาน ไม่ใช่สมมติฐานอุปนัย" }
+      - { id: c, text: "ข้อความจริงสำหรับค่า k ใดค่าหนึ่งที่เลือกไว้ เพื่อใช้พิสูจน์ k + 1", correct: true }
+    hints:
+      - "สมมติฐานนี้ถูกใช้ในขั้นเหนี่ยวนำเพื่อไปยังค่าถัดไป"
+      - "ลองนึกว่าสมมติฐานจำเป็นต้องชี้ไปที่ค่าใดก่อนจะไปถึง k + 1"
+    solution: "สมมติฐานอุปนัยคือสมมติว่าข้อความจริงสำหรับ k บางค่า แล้วใช้เพื่อพิสูจน์ k + 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p008
+    topics: [computer.theory.discrete-structures]
+    difficulty: 3
+    type: numeric
+    stem: "ผลรวม 1 + 2 + 3 + ... + 10 เท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 55 }
+    hints:
+      - "ใช้สูตร n(n+1)/2 เมื่อ n = 10"
+      - "คิดหาค่าจากการจับคู่ปลายทั้งสองข้าง เช่น 1 กับ 10"
+    misconceptions:
+      - { match: 100, feedback: "100 คือ 10 กำลังสอง ไม่ใช่ผลรวมของจำนวนธรรมชาติ 1 ถึง 10" }
+      - { match: 45, feedback: "45 คือผลรวมถึง 9 ความผิดพลาดนี้เกิดจากการนับผิดช่วง" }
+    solution: "$\\frac{10 \\cdot 11}{2} = 55$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p009
+    topics: [computer.theory.discrete-structures]
+    difficulty: 3
+    type: numeric
+    stem: "ห.ร.ม. ของ 48 และ 18 เท่ากับเท่าไร โดยใช้อัลกอริทึมของยุคลิด (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 6 }
+    hints:
+      - "หาเศษของ 48 หารด้วย 18 แล้วแทนค่าเป็นคู่ใหม่"
+      - "ทำซ้ำจนเศษเป็นศูนย์ ตัวหารก่อนหน้าคือคำตอบ"
+    misconceptions:
+      - { match: 18, feedback: "18 คือค่า b ในขั้นแรกของอัลกอริทึม ไม่ใช่ ห.ร.ม. ต้องทำขั้นตอนต่อไปจนเศษเป็นศูนย์" }
+      - { match: 2, feedback: "2 เป็นตัวประกอบร่วมแต่ไม่ใช่ตัวที่มากที่สุด ต้องทำขั้นตอนจนเศษเป็นศูนย์" }
+    solution: "$48 = 2 \\cdot 18 + 12$, $18 = 1 \\cdot 12 + 6$, $12 = 2 \\cdot 6 + 0$ ดังนั้นได้ 6"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p010
+    topics: [computer.theory.discrete-structures]
+    difficulty: 3
+    type: numeric
+    stem: "ค่าของ 3 ยกกำลัง 4 หารด้วย 5 แล้วได้เศษเท่าไร (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 1 }
+    hints:
+      - "คำนวณ 3 ยกกำลัง 4 ก่อนแล้วหารด้วย 5 หรือคำนวณเป็นขั้นทีละคูณ"
+      - "เศษเมื่อหารด้วย 5 ต้องอยู่ระหว่าง 0 ถึง 4"
+    misconceptions:
+      - { match: 81, feedback: "81 คือค่าของ 3 ยกกำลัง 4 ยังไม่ได้หารด้วย 5 เอาเศษ" }
+      - { match: 3, feedback: "3 คือเศษเมื่อหาร 3 ด้วย 5 ไม่ใช่เศษของ 3 ยกกำลัง 4" }
+    solution: "$3^4 = 81 = 16 \\cdot 5 + 1$ เศษคือ 1"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p011
+    topics: [computer.theory.discrete-structures]
+    difficulty: 3
+    type: mcq
+    stem: "สมบัติใดของ ห.ร.ม. ที่ทำให้อัลกอริทึมของยุคลิดใช้ได้โดยตัวเลขเล็กลงในทุกขั้น"
+    choices:
+      - { id: a, text: "gcd(a, b) = a + b", feedback: "การบวกไม่ได้รักษาตัวประกอบร่วมและทำให้ตัวเลขใหญ่ขึ้น" }
+      - { id: b, text: "gcd(a, b) = a × b", feedback: "ผลคูณเป็นค่า ค.ร.น. ในบางกรณี ไม่ใช่ ห.ร.ม. และทำให้ตัวเลขใหญ่ขึ้น" }
+      - { id: c, text: "gcd(a, b) = gcd(a, b + a)", feedback: "สมการนี้เป็นจริงก็จริง แต่ไม่ทำให้ตัวเลขเล็กลงและไม่ใช่ขั้นของยุคลิด" }
+      - { id: d, text: "gcd(a, b) = gcd(b, a mod b)", correct: true }
+    hints:
+      - "ดูตัวเลือกที่มี a mod b อยู่ด้านขวา"
+      - "ตัวเลือกที่ทำให้ค่าเล็กลงต้องใช้เศษจากการหาร"
+    solution: "gcd(a, b) = gcd(b, a mod b) เพราะตัวประกอบร่วมของ a และ b เป็นตัวประกอบร่วมของ b และ a mod b ด้วย และค่า a mod b น้อยกว่า b"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p012
+    topics: [computer.theory.discrete-structures]
+    difficulty: 3
+    type: numeric
+    stem: "ระบบเครือข่ายห้องคอมพิวเตอร์โรงเรียนมี 9 เครื่องต่อกันเป็นต้นไม้ (ไม่มีวงวน) จะมีสายเชื่อมต่อทั้งหมดกี่เส้น (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 8 }
+    hints:
+      - "ต้นไม้ที่มี n โหนดมีเส้นเชื่อมจำนวนเท่าไร"
+      - "ลองนึกถึงต้นไม้ที่มี 2 โหนด แล้วเพิ่มโหนดทีละหนึ่ง"
+    misconceptions:
+      - { match: 9, feedback: "9 คือจำนวนโหนด ต้นไม้ที่เชื่อมแบบไม่มีวงวนมีเส้นน้อยกว่าโหนดอยู่หนึ่งเส้น" }
+      - { match: 10, feedback: "10 เกิดจากการบวกหนึ่งเข้ากับจำนวนโหนด ซึ่งไม่ใช่สูตรของต้นไม้" }
+    solution: "ต้นไม้ที่มี $n$ โหนดมี $n - 1 = 8$ เส้นเชื่อม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p013
+    topics: [computer.theory.discrete-structures]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน gcd(a, b) ที่หาห.ร.ม. ของจำนวนเต็มไม่ลบสองจำนวนด้วยอัลกอริทึมของยุคลิด โดยห้ามใช้ math.gcd"
+    starter: |
+      def gcd(a, b):
+          # ตอนนี้คืนค่า 1 เสมอ ยังไม่ได้ใช้อัลกอริทึม
+          return 1
+    tests: |
+      assert gcd(48, 18) == 6, "gcd(48, 18) ควรได้ 6"
+      assert gcd(17, 5) == 1, "จำนวนที่เป็นจำนวนเฉพาะต่อกันได้ 1"
+      assert gcd(12, 0) == 12, "gcd(12, 0) ควรได้ 12"
+      assert gcd(0, 5) == 5, "gcd(0, 5) ควรได้ 5"
+    reference: |
+      def gcd(a, b):
+          while b != 0:
+              a, b = b, a % b
+          return a
+    hints:
+      - "ใช้วงวนที่ทำซ้ำจนกว่า b จะเป็นศูนย์"
+      - "ในแต่ละรอบให้ a กลายเป็น b และ b กลายเป็น a mod b"
+    solution: "วนซ้ำ (a, b) ← (b, a mod b) จนกว่า b เป็นศูนย์ แล้วคืน a"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p014
+    topics: [computer.theory.discrete-structures]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน check_digit(s) โดย s เป็นสตริงเลข 12 หลัก ให้คืนหลักตรวจสอบ 0 ถึง 9 โดย x = ผลรวมของ (14 − i) คูณหลักที่ i เมื่อ i เริ่มจาก 1 แล้วหาเศษเมื่อหารด้วย 11 และหลักตรวจสอบคือ (11 − x) หารเศษด้วย 10 และเขียน is_valid(s) ให้คืน True เมื่อ s มี 13 หลัก และหลักที่ 13 ตรงกับ check_digit ของ 12 หลักแรก"
+    starter: |
+      def check_digit(s):
+          return 0
+
+      def is_valid(s):
+          return False
+    tests: |
+      assert check_digit("111111111111") == 9, "ของ 12 หลักนี้ควรได้หลักตรวจสอบ 9 (x = 90 mod 11 = 2)"
+      assert check_digit("123456789012") == 1, "ของ 12 หลักนี้ควรได้หลักตรวจสอบ 1"
+      assert check_digit("999999999999") == 4, "ของ 12 หลักนี้ควรได้หลักตรวจสอบ 4"
+      assert is_valid("1111111111119") == True, "13 หลักที่หลักสุดท้ายถูกต้องต้องผ่าน"
+      assert is_valid("1111111111110") == False, "หลักสุดท้ายผิดต้องไม่ผ่าน"
+      assert is_valid("1234567890121") == True, "ตัวอย่าง 13 หลักที่ถูกต้องต้องผ่าน"
+    reference: |
+      def check_digit(s):
+          x = sum((14 - i) * int(d) for i, d in enumerate(s[:12], start=1)) % 11
+          return (11 - x) % 10
+
+      def is_valid(s):
+          return len(s) == 13 and s.isdigit() and check_digit(s[:12]) == int(s[12])
+    hints:
+      - "ใช้ enumerate(s, start=1) เพื่อให้ i เริ่มจาก 1 และคูณด้วย (14 - i)"
+      - "is_valid ตรวจความยาวและความเป็นตัวเลขก่อน แล้วเทียบหลักสุดท้ายกับ check_digit"
+    solution: "คำนวณ x ด้วยผลรวมถ่วงน้ำหนักแล้วเอา mod 11 จากนั้นหลักตรวจสอบคือ (11 - x) mod 10 และ is_valid เทียบกับหลักที่ 13"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p015
+    topics: [computer.theory.discrete-structures]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน is_equivalence(universe, pairs) โดย universe เป็นเซตของสมาชิก และ pairs เป็นเซตของคู่อันดับ ให้คืน True เมื่อความสัมพันธ์นั้นสะท้อน สมมาตร และถ่ายทอดบน universe"
+    starter: |
+      def is_equivalence(universe, pairs):
+          # ตอนนี้ตอบ True เสมอ ยังไม่ได้ตรวจสมบัติ
+          return True
+    tests: |
+      U = {1, 2, 3}
+      good = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (1, 3), (3, 1), (2, 3), (3, 2)}
+      assert is_equivalence(U, good) == True, "ความสัมพันธ์ทั้งหมดบนเซตนี้เป็นความสัมพันธ์สมมูล"
+      no_reflexive = good - {(2, 2)}
+      assert is_equivalence(U, no_reflexive) == False, "ขาด (2, 2) จึงไม่สะท้อน"
+      not_transitive = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (2, 3), (3, 2)}
+      assert is_equivalence(U, not_transitive) == False, "มี (1, 2) และ (2, 3) แต่ไม่มี (1, 3) จึงไม่ถ่ายทอด"
+    reference: |
+      def is_equivalence(universe, pairs):
+          R = set(pairs)
+          refl = all((a, a) in R for a in universe)
+          symm = all((b, a) in R for (a, b) in R)
+          trans = all((a, d) in R for (a, b) in R for (c, d) in R if b == c)
+          return refl and symm and trans
+    hints:
+      - "ตรวจแยกทีละสมบัติ: สะท้อนดูว่า (a, a) อยู่ในเซตหรือไม่"
+      - "ถ่ายทอดต้องดูทุกคู่ที่ต่อกันได้ เช่น (a, b) กับ (b, c) แล้วตรวจว่า (a, c) อยู่ด้วยหรือไม่"
+    solution: "ตรวจสะท้อนกับทุกสมาชิก สมมาตรกับทุกคู่ และถ่ายทอดกับทุกคู่ที่ต่อกันได้ แล้วรวมด้วย and"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p016
+    topics: [computer.theory.discrete-structures]
+    difficulty: 4
+    type: mcq
+    stem: "ข้อใดเทียบเท่ากับ 'ถ้า P แล้ว Q' ตามหลักแย้งสลับที่"
+    choices:
+      - { id: a, text: "ถ้าไม่ Q แล้วไม่ P", correct: true }
+      - { id: b, text: "ถ้า Q แล้ว P", feedback: "นี่คือสิ่งที่เรียกว่าความกลับ (converse) ซึ่งไม่เทียบเท่ากับข้อเดิม" }
+      - { id: c, text: "ถ้าไม่ P แล้ว Q", feedback: "นี่คือสิ่งที่เรียกว่าการผกผัน (inverse) ซึ่งไม่เทียบเท่ากับข้อเดิม" }
+      - { id: d, text: "P และ Q", feedback: "การเชื่อม P และ Q ไม่ใช่รูปแบบของแย้งสลับที่" }
+    hints:
+      - "แย้งสลับที่สลับตำแหน่งและปฏิเสธทั้งสองข้าง"
+      - "ลองดูว่าการสลับโดยไม่ปฏิเสธจะให้ผลเทียบเท่าหรือไม่"
+    solution: "แย้งสลับที่ของ 'ถ้า P แล้ว Q' คือ 'ถ้าไม่ Q แล้วไม่ P' ซึ่งมีค่าความจริงเหมือนกันเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p017
+    topics: [computer.theory.discrete-structures]
+    difficulty: 5
+    type: numeric
+    stem: "บนเซตที่มี 3 สมาชิก มีความสัมพันธ์ที่เป็นไปได้ทั้งหมดกี่แบบ (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 512 }
+    hints:
+      - "ความสัมพันธ์คือเซตย่อยของ A คูณ A ซึ่งมี 9 คู่"
+      - "จำนวนเซตย่อยของเซตที่มี n สมาชิกคือ 2 ยกกำลัง n"
+    misconceptions:
+      - { match: 8, feedback: "8 คือจำนวนเซตย่อยของเซต 3 สมาชิก ไม่ใช่จำนวนความสัมพันธ์บนเซตที่มีคู่อันดับ 9 คู่" }
+      - { match: 9, feedback: "9 คือจำนวนคู่อันดับทั้งหมด ยังไม่ได้นับทุกการเลือกว่าจะมีคู่ใดบ้างในความสัมพันธ์" }
+    solution: "มี $3 \\times 3 = 9$ คู่อันดับ ความสัมพันธ์แต่ละแบบเลือกมีหรือไม่มีแต่ละคู่ได้ 2 ทาง จึงได้ $2^9 = 512$ แบบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p018
+    topics: [computer.theory.discrete-structures]
+    difficulty: 5
+    type: numeric
+    stem: "มีขนม 100 ชิ้นใส่ในกล่อง 7 กล่อง โดยที่ไม่ได้บอกว่าแต่ละกล่องใส่กี่ชิ้น จะรับประกันได้อย่างน้อยว่ามีกล่องหนึ่งที่มีขนมกี่ชิ้น (ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 15 }
+    hints:
+      - "หาค่าเฉลี่ยก่อนว่าถ้าแบ่งเท่า ๆ กันแต่ละกล่องได้เท่าไร"
+      - "ต้องปัดขึ้นเพราะต้องรับประกันทุกกรณี"
+    misconceptions:
+      - { match: 14, feedback: "14 เป็นการปัดลงของค่าเฉลี่ย แต่ถ้าปัดลงจะมีกรณีที่ทุกกล่องไม่เกิน 14 ได้ (14 × 7 = 98 น้อยกว่า 100)" }
+      - { match: 100, feedback: "100 คือจำนวนชิ้นทั้งหมด ไม่ใช่จำนวนที่รับประกันว่าอยู่ในกล่องเดียว" }
+    solution: "ถ้าทุกกล่องมีไม่เกิน 14 ชิ้น รวมได้ไม่เกิน $14 \\times 7 = 98$ จึงต้องมีกล่องที่มีอย่างน้อย 15 ชิ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.theory.discrete-structures.p019
+    topics: [computer.theory.discrete-structures]
+    difficulty: 5
+    type: text
+    stem: "หลักตรวจสอบของเลขประจำตัวประชาชนไทยคำนวณด้วยเลขมอดุโลเท่าไร (ตอบเป็นตัวเลขเพียงค่าเดียว)"
+    accepted: ["11", "mod 11", "มอดุโล 11"]
+    misconceptions:
+      - { match: "10", feedback: "10 คือค่าที่ใช้ตัดหลักหลังจาก (11 − x) เท่านั้น ไม่ใช่เลขมอดุโลของผลรวมถ่วงน้ำหนัก" }
+      - { match: "12", feedback: "12 ไม่เกี่ยวกับการคำนวณนี้ ผลรวมถ่วงน้ำหนักใช้น้ำหนักตั้งแต่ 13 ลงมาถึง 2" }
+    hints:
+      - "ลองนึกว่าผลรวมถ่วงน้ำหนักต้องนำไปหารด้วยเลขใด"
+      - "เลขที่ใช้เป็นเลขเฉพาะที่มีค่าน้อยกว่าน้ำหนักสูงสุดหนึ่ง"
+    solution: "ผลรวมถ่วงน้ำหนักเอาเศษจากการหารด้วย 11 แล้วนำไปคำนวณหลักตรวจสอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
