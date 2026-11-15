@@ -1,0 +1,494 @@
+problems:
+  - id: computer.programming.control-flow.p001
+    topics: [computer.programming.control-flow]
+    difficulty: 1
+    type: numeric
+    stem: "ห้องเรียนมี 5 แถว แต่ละแถวมี 6 ที่นั่ง ครูเขียนวงวนซ้อนให้วงนอกวนตามแถว และวงในวนตามที่นั่ง คำสั่งในวงในจะทำงานทั้งหมดกี่ครั้ง (ตอบเป็นจำนวนครั้ง)"
+    answer: { value: 30 }
+    hints:
+      - "ลองนึกว่าวงในจบหนึ่งรอบทุกครั้งที่วงนอกขยับหนึ่งรอบ"
+      - "วงนอกวน 5 รอบ และในแต่ละรอบวงในวน 6 ครั้ง"
+      - "จำนวนครั้งทั้งหมดคือจำนวนรอบของวงนอกคูณจำนวนรอบของวงใน"
+    misconceptions:
+      - { match: 11, feedback: "นั่นคือการบวก 5 + 6 แต่วงซ้อนทำให้วงในทำงานซ้ำทุกรอบของวงนอก จึงต้องคูณ" }
+      - { match: 6, feedback: "นับเฉพาะวงในรอบเดียว แต่วงนอกวนครบ 5 รอบ วงในจึงทำงานรอบละ 6 ครั้ง" }
+    solution: "วงนอกวน 5 รอบ ในแต่ละรอบวงในวน 6 ครั้ง รวมเป็น 5 × 6 = 30 ครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p002
+    topics: [computer.programming.control-flow]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ดูโค้ดนี้แล้วเลือกผลลัพธ์ที่ถูกต้อง
+
+      ```python
+      x = 7
+      if x > 5:
+          print("ใหญ่")
+      elif x > 2:
+          print("กลาง")
+      else:
+          print("เล็ก")
+      ```
+    choices:
+      - { id: a, text: "ใหญ่", correct: true }
+      - { id: b, text: "กลาง", feedback: "elif ทำงานก็ต่อเมื่อเงื่อนไข if ก่อนหน้าเป็นเท็จ ที่นี่ x > 5 เป็นจริงแล้ว จึงไม่เข้าทาง elif" }
+      - { id: c, text: "ใหญ่ แล้วตามด้วย กลาง", feedback: "เมื่อเข้าทางใดทางหนึ่งของ if, elif, else แล้ว ทางที่เหลือจะถูกข้ามทั้งหมด" }
+      - { id: d, text: "เล็ก", feedback: "else ทำงานเมื่อทุกเงื่อนไขก่อนหน้าเป็นเท็จ แต่ 7 มากกว่า 5 จึงไม่ถึง else" }
+    hints:
+      - "ตรวจเงื่อนไขตั้งแต่บรรทัดแรก ค่า x คือ 7"
+      - "ดูว่า 7 > 5 เป็นจริงหรือเท็จ และเมื่อเป็นจริงแล้วโปรแกรมทำอะไรต่อ"
+      - "เมื่อเงื่อนไขแรกเป็นจริง โปรแกรมพิมพ์ข้อความเดียวแล้วข้ามทางที่เหลือ"
+    solution: "x = 7 ทำให้ x > 5 เป็นจริง โปรแกรมพิมพ์ \"ใหญ่\" แล้วข้ามทาง elif และ else ทั้งหมด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p003
+    topics: [computer.programming.control-flow]
+    difficulty: 1
+    type: numeric
+    stem: "ที่จอดรถในห้างแห่งหนึ่งคิดค่าจอด 20 บาทสำหรับ 2 ชั่วโมงแรก และคิดเพิ่มชั่วโมงละ 10 บาทสำหรับทุกชั่วโมงที่เกิน 2 ชั่วโมง ลูกค้าจอด 5 ชั่วโมงต้องจ่ายกี่บาท (ตอบเป็นบาท)"
+    answer: { value: 50, unit: บาท }
+    hints:
+      - "แยกเป็นสองส่วน คือ 2 ชั่วโมงแรก และชั่วโมงที่เกิน"
+      - "ชั่วโมงที่เกินคือ 5 − 2 = 3 ชั่วโมง"
+      - "ค่าจอด = 20 + (ชั่วโมงที่เกิน × 10)"
+    misconceptions:
+      - { match: 70, feedback: "คิด 10 บาทกับทุกชั่วโมงรวม 2 ชั่วโมงแรกด้วย แต่ 2 ชั่วโมงแรกคิดแค่ 20 บาทเท่านั้น" }
+      - { match: 60, feedback: "นับชั่วโมงที่เกินเป็น 4 ชั่วโมง เพราะลบ 1 แทนการลบ 2 จากเวลาทั้งหมด" }
+    solution: "2 ชั่วโมงแรกคิด 20 บาท ชั่วโมงที่เกินคือ 5 − 2 = 3 ชั่วโมง คิด 3 × 10 = 30 บาท รวมเป็น 20 + 30 = 50 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p004
+    topics: [computer.programming.control-flow]
+    difficulty: 2
+    type: match
+    stem: |
+      จับคู่ค่าที่ `range` แต่ละแบบสร้างขึ้น (ค่าเริ่มต้น ค่าสิ้นสุดที่ไม่รวม และก้าว) กับผลลัพธ์ที่ได้เมื่อแปลงเป็นลิสต์
+    pairs:
+      - { left: "range(1, 4)", right: "1, 2, 3" }
+      - { left: "range(10, 0, -3)", right: "10, 7, 4, 1" }
+      - { left: "range(0, 10, 4)", right: "0, 4, 8" }
+      - { left: "range(2, 2)", right: "ไม่มีค่าเลย" }
+    hints:
+      - "ค่าสิ้นสุดของ range ไม่ถูกรวมอยู่ในผลลัพธ์"
+      - "ถ้าก้าวเป็นลบ ค่าจะลดลงเรื่อย ๆ จนกว่าจะถึงค่าสิ้นสุดที่ไม่รวม"
+      - "ถ้าค่าเริ่มต้นเท่ากับค่าสิ้นสุด จำนวนรอบที่วนได้คือศูนย์"
+    solution: "range(1, 4) ได้ 1, 2, 3 เพราะ 4 ไม่รวม range(10, 0, -3) ได้ 10, 7, 4, 1 เพราะลดทีละ 3 แต่ไม่ถึง 0 range(0, 10, 4) ได้ 0, 4, 8 และ range(2, 2) ไม่มีรอบเลย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p005
+    topics: [computer.programming.control-flow]
+    difficulty: 2
+    type: numeric
+    stem: "ร้านกาแฟให้ส่วนลด 100 บาท เมื่อยอดซื้อเกิน 1,000 บาท และถ้าลูกค้าเป็นสมาชิก ยอดเกิน 1,000 บาทจะได้ลดเพิ่มอีก 50 บาท สมาชิกคนหนึ่งซื้อของ 1,200 บาท ต้องจ่ายกี่บาท (ตอบเป็นบาท)"
+    answer: { value: 1050, unit: บาท }
+    hints:
+      - "ตรวจก่อนว่ายอด 1,200 บาท เกิน 1,000 บาทหรือไม่"
+      - "ส่วนลดสมาชิก 50 บาทอยู่ภายใต้เงื่อนไขของยอดเกินด้วย"
+      - "หักส่วนลดทั้งสองรายการออกจากยอด 1,200 บาท"
+    misconceptions:
+      - { match: 1100, feedback: "ลืมส่วนลดสมาชิก 50 บาท ซึ่งต้องคิดเมื่อลูกค้าเป็นสมาชิกและยอดเกิน 1,000 บาท" }
+      - { match: 1150, feedback: "ลืมส่วนลด 100 บาทที่ให้เมื่อยอดเกิน 1,000 บาท เหลือแค่ส่วนลดสมาชิก" }
+    solution: "ยอด 1,200 เกิน 1,000 บาท จึงได้ลด 100 บาท ลูกค้าเป็นสมาชิกและยอดเกิน 1,000 จึงลดเพิ่ม 50 บาท จ่าย 1,200 − 100 − 50 = 1,050 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p006
+    topics: [computer.programming.control-flow]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ดูโค้ดแล้วตอบค่าของ `total` หลังโปรแกรมทำงานจบ
+
+      ```python
+      total = 0
+      for n in [4, 7, 9, 10]:
+          if n % 2 == 1:
+              break
+          total += n
+      ```
+    answer: { value: 4 }
+    hints:
+      - "เลขคี่ตัวแรกในลิสต์คือ 7 ตรวจว่าโปรแกรมทำอะไรเมื่อเจอ 7"
+      - "ก่อนถึง 7 วงวนบวก 4 เข้าไปใน total แล้ว"
+      - "เมื่อเจอเลขคี่ `break` หยุดวงวนทันที จึงไม่บวกค่าที่เหลือ"
+    misconceptions:
+      - { match: 14, feedback: "ใช้ continue แทน break จึงข้าม 7 และ 9 แต่ยังบวก 10 เข้าไป ได้ 4 + 10 = 14 ซึ่งผิด เพราะ break หยุดวงวนทั้งหมดตั้งแต่เจอ 7" }
+      - { match: 30, feedback: "ลืมว่า break หยุดวงวน เลยคิดว่าทุกตัวถูกบวก ทั้งที่วงหยุดตั้งแต่เจอ 7" }
+    solution: "วงวนบวก 4 เข้าไป แล้วเจอ 7 ซึ่งเป็นเลขคี่ `break` หยุดวงวนทันที ค่า total คือ 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p007
+    topics: [computer.programming.control-flow]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ดูโค้ดแล้วตอบค่าของ `total` หลังโปรแกรมทำงานจบ
+
+      ```python
+      total = 0
+      for x in range(1, 11):
+          if x % 3 == 0:
+              continue
+          total += x
+      ```
+    answer: { value: 37 }
+    hints:
+      - "ตัวเลขที่หารด้วย 3 ลงตัวในช่วง 1 ถึง 10 คือ 3, 6, 9"
+      - "`continue` ข้ามเฉพาะรอบนั้น ไม่ได้หยุดวงวน"
+      - "รวม 1 ถึง 10 ทั้งหมดแล้วหักค่า 3, 6, 9 ออก"
+    misconceptions:
+      - { match: 3, feedback: "ใช้ break แทน continue ทำให้วงวนหยุดตั้งแต่ x = 3 จึงได้แค่ 1 + 2" }
+      - { match: 55, feedback: "ไม่ได้ข้ามเลย รวม 1 ถึง 10 ทั้งหมดซึ่งได้ 55 แต่ 3, 6, 9 ต้องถูกข้าม" }
+    solution: "ผลรวม 1 ถึง 10 คือ 55 ข้ามเลขที่หารด้วย 3 ลงตัว คือ 3 + 6 + 9 = 18 จึงได้ 55 − 18 = 37"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p008
+    topics: [computer.programming.control-flow]
+    difficulty: 2
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `grade(score)` ที่รับคะแนนเต็ม 100 แล้วคืนเกรดเป็นข้อความ ตามเกณฑ์นี้
+      80 ขึ้นไปได้ `'A'`, 70–79 ได้ `'B'`, 60–69 ได้ `'C'`, 50–59 ได้ `'D'` และต่ำกว่า 50 ได้ `'F'`
+
+      ใช้ `if`, `elif` และ `else` ให้ครบ ต้อง `return` ค่าไม่ใช่ `print`
+    starter: |
+      def grade(score):
+          return 'F'
+    tests: |
+      assert grade(95) == 'A', f"grade(95) ควรได้ 'A' แต่ได้ {grade(95)!r}"
+      assert grade(80) == 'A', f"grade(80) ควรได้ 'A' (ขอบล่างของ A) แต่ได้ {grade(80)!r}"
+      assert grade(79) == 'B', f"grade(79) ควรได้ 'B' แต่ได้ {grade(79)!r}"
+      assert grade(70) == 'B', f"grade(70) ควรได้ 'B' แต่ได้ {grade(70)!r}"
+      assert grade(69) == 'C', f"grade(69) ควรได้ 'C' แต่ได้ {grade(69)!r}"
+      assert grade(50) == 'D', f"grade(50) ควรได้ 'D' แต่ได้ {grade(50)!r}"
+      assert grade(49) == 'F', f"grade(49) ควรได้ 'F' แต่ได้ {grade(49)!r}"
+      assert grade(0) == 'F', f"grade(0) ควรได้ 'F' แต่ได้ {grade(0)!r}"
+    reference: |
+      def grade(score):
+          if score >= 80:
+              return 'A'
+          elif score >= 70:
+              return 'B'
+          elif score >= 60:
+              return 'C'
+          elif score >= 50:
+              return 'D'
+          else:
+              return 'F'
+    hints:
+      - "เรียงเงื่อนไขจากคะแนนสูงสุดลงมา เพื่อให้เงื่อนไขแรกที่จริงคือเกรดที่ถูกต้อง"
+      - "ใช้ elif ต่อกันโดยเปรียบเทียบด้วยขอบล่างของแต่ละช่วง เช่น score >= 70"
+      - "ทางสุดท้าย else ใช้กับคะแนนที่ต่ำกว่า 50 คืน 'F'"
+    solution: "เรียงเงื่อนไขจากมากไปน้อย if score >= 80 คืน 'A' แล้ว elif score >= 70 คืน 'B' และทำต่อจนถึง else ที่คืน 'F' ทำให้ค่า 80 ได้ A และ 79 ได้ B เพราะ 79 ไม่ถึง 80"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p009
+    topics: [computer.programming.control-flow]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ดูโค้ดรูปดาวนี้ แล้วนับว่า `print("*")` ทำงานทั้งหมดกี่ครั้ง
+
+      ```python
+      for i in range(1, 6):
+          for j in range(i):
+              print("*")
+      ```
+    answer: { value: 15 }
+    hints:
+      - "วงนอกมี i เป็น 1, 2, 3, 4, 5 ตามลำดับ"
+      - "วงในวนตาม j ใน range(i) ซึ่งทำงาน i ครั้งในแต่ละรอบของวงนอก"
+      - "รวมจำนวนครั้งของ i ทั้งห้ารอบ คือ 1 + 2 + 3 + 4 + 5"
+    misconceptions:
+      - { match: 5, feedback: "นับจำนวนแถวหรือจำนวนรอบของวงนอก แต่ในแต่ละแถวพิมพ์ดาวมากกว่า 1 ดวง" }
+      - { match: 25, feedback: "ให้วงในวน range(5) ทุกรอบ ทำให้ได้ 5 × 5 แต่โค้ดนี้วงในวนตาม i เท่านั้น" }
+    solution: "แถวที่ 1 มี 1 ดวง แถวที่ 2 มี 2 ดวง ... แถวที่ 5 มี 5 ดวง รวม 1 + 2 + 3 + 4 + 5 = 15 ครั้ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p010
+    topics: [computer.programming.control-flow]
+    difficulty: 3
+    type: mcq
+    stem: |
+      เลือกผลลัพธ์ที่โปรแกรมนี้พิมพ์ออกมา
+
+      ```python
+      for i in range(3):
+          for j in range(3):
+              if j == 1:
+                  break
+              print(i, j)
+      ```
+    choices:
+      - { id: a, text: "0 0 ตามด้วย 1 0 และ 2 0", correct: true }
+      - { id: b, text: "0 0 เท่านั้น", feedback: "break หยุดเฉพาะวงในของรอบ i นั้น วงนอกยังวนต่อไปจนครบ i = 2" }
+      - { id: c, text: "0 0, 0 1, 1 0, 1 1, 2 0, 2 1", feedback: "เมื่อ j เป็น 1 โปรแกรมเข้า break ทันที จึงไม่พิมพ์ค่า j = 1 และไม่พิมพ์ค่า j ที่มากกว่านั้น" }
+      - { id: d, text: "ไม่มีอะไรพิมพ์ออกมา", feedback: "ในรอบ j = 0 ของแต่ละ i โปรแกรมทำ print ได้ตามปกติ" }
+    hints:
+      - "ลองไล่ผลของ j = 0 ก่อนว่าเกิดอะไรขึ้น"
+      - "เมื่อ j เป็น 1 โปรแกรมเข้าเงื่อนไขและ break วงในทันที"
+      - "break หยุดวงในเท่านั้น วงนอกยังเดินต่อไปที่ i ถัดไป"
+    solution: "ในแต่ละ i วงในพิมพ์ค่า j = 0 แล้วพบ j = 1 จึง break ทำให้ได้ 0 0, 1 0 และ 2 0 ตามลำดับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p011
+    topics: [computer.programming.control-flow]
+    difficulty: 3
+    type: numeric
+    stem: "ทีมฟุตบอลมี 7 คน ต้องจับคู่ซ้อมแบบคนต่างคนกัน โดยคู่หนึ่งนับเป็นหนึ่งคู่โดยไม่สนลำดับ ถ้าเขียนลูปซ้อนแบบ `for i in range(7)` และ `for j in range(7)` พร้อมเงื่อนไข `i < j` จะได้กี่คู่ (ตอบเป็นจำนวนคู่)"
+    answer: { value: 21 }
+    hints:
+      - "เงื่อนไข i < j ทำให้แต่ละคู่ถูกนับเพียงครั้งเดียว และไม่นับคนคนเดียวจับคู่กับตัวเอง"
+      - "ลองแจกแจงคู่ของคนที่ 0 ก่อน จะได้ 6 คู่ แล้วคนที่ 1 ได้ 5 คู่ ทำต่อไป"
+      - "รวม 6 + 5 + 4 + 3 + 2 + 1"
+    misconceptions:
+      - { match: 42, feedback: "นับลำดับ (i, j) และ (j, i) เป็นคนละคู่ ทั้งที่โจทย์ไม่สนลำดับ จึงนับซ้ำเป็นสองเท่า" }
+      - { match: 49, feedback: "วนครบ 7 × 7 รวมกรณีที่ i เท่ากับ j ซึ่งเป็นการจับคู่คนเดียวกับตัวเอง" }
+    solution: "เงื่อนไข i < j ได้คู่ (0,1) ถึง (5,6) รวม 6 + 5 + 4 + 3 + 2 + 1 = 21 คู่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p012
+    topics: [computer.programming.control-flow]
+    difficulty: 3
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `count_pairs(nums, target)` ที่รับลิสต์ตัวเลขและค่า `target` แล้วคืนจำนวนคู่ `(i, j)` ที่ `i < j` และ `nums[i] + nums[j] == target`
+
+      ใช้วงวนซ้อนแล้ว `return` ผลรวมจำนวนคู่ โดยห้ามนับคู่เดียวกันสองครั้ง
+    starter: |
+      def count_pairs(nums, target):
+          return 0
+    tests: |
+      assert count_pairs([1, 2, 3], 4) == 1, f"[1, 2, 3] ที่ผลรวม 4 มีคู่เดียวคือ (1, 3) แต่ได้ {count_pairs([1, 2, 3], 4)}"
+      assert count_pairs([2, 2, 2], 4) == 3, f"[2, 2, 2] มี 3 คู่ที่ได้ 4 แต่ได้ {count_pairs([2, 2, 2], 4)}"
+      assert count_pairs([], 5) == 0, f"ลิสต์ว่างต้องได้ 0 แต่ได้ {count_pairs([], 5)}"
+      assert count_pairs([5, -1, 6, 0], 5) == 2, f"ควรได้ 2 คู่ (5 กับ 0 และ -1 กับ 6) แต่ได้ {count_pairs([5, -1, 6, 0], 5)}"
+      assert count_pairs([1, 3], 4) == 1, f"คู่ (1, 3) นับเพียงครั้งเดียว แต่ได้ {count_pairs([1, 3], 4)} อย่านับ (i, j) กับ (j, i) ซ้ำ"
+    reference: |
+      def count_pairs(nums, target):
+          total = 0
+          for i in range(len(nums)):
+              for j in range(i + 1, len(nums)):
+                  if nums[i] + nums[j] == target:
+                      total += 1
+          return total
+    hints:
+      - "ใช้วงนอกวนตาม i และวงในวนตาม j เริ่มที่ i + 1 เพื่อให้ได้เฉพาะ i < j"
+      - "ในวงใน ตรวจผลรวมของ nums[i] กับ nums[j] เทียบกับ target"
+      - "เมื่อพบคู่ที่ได้ค่าตรงกัน ให้บวกตัวนับขึ้นหนึ่ง แล้ว return ค่าตัวนับหลังวงวนจบ"
+    solution: "วงนอกเดินที่ i ทุกค่า วงในเริ่มที่ i + 1 ทำให้ตรวจแต่ละคู่เพียงครั้ง เมื่อ nums[i] + nums[j] เท่ากับ target จึงเพิ่มตัวนับ ตัวอย่าง [1, 2, 3] กับ 4 มีคู่ (1, 3) คือ 1 + 3 = 4 เท่านั้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p013
+    topics: [computer.programming.control-flow]
+    difficulty: 3
+    type: mcq
+    stem: |
+      เลือกผลลัพธ์ที่โปรแกรมนี้พิมพ์ออกมา
+
+      ```python
+      for n in [9, 11]:
+          if n % 3 == 0:
+              print("หารด้วย 3 ลงตัว")
+              break
+      else:
+          print("ไม่มีตัวไหนหารด้วย 3 ลงตัว")
+      ```
+    choices:
+      - { id: a, text: "หารด้วย 3 ลงตัว", correct: true }
+      - { id: b, text: "หารด้วย 3 ลงตัว แล้วตามด้วย ไม่มีตัวไหนหารด้วย 3 ลงตัว", feedback: "else ทำงานก็ต่อเมื่อวงวนจบเองโดยไม่มี break เมื่อ n = 9 เจอ break จึงข้าม else" }
+      - { id: c, text: "ไม่มีตัวไหนหารด้วย 3 ลงตัว", feedback: "ตัวแรก 9 หารด้วย 3 ลงตัว จึงเข้าเงื่อนไขและพิมพ์ข้อความแรก" }
+      - { id: d, text: "ไม่มีอะไรพิมพ์ออกมา", feedback: "ตัวเลข 9 ทำให้เงื่อนไข if เป็นจริง จึงมีข้อความพิมพ์ออกมา" }
+    hints:
+      - "เริ่มจากตรวจว่า 9 หารด้วย 3 ลงตัวหรือไม่"
+      - "เมื่อเงื่อนไขจริง โปรแกรมทำอะไรต่อที่บรรทัดถัดไป"
+      - "else ของวงวนจะทำงานก็ต่อเมื่อวงจบโดยไม่มี break"
+    solution: "n = 9 หารด้วย 3 ลงตัว จึงพิมพ์ข้อความแรกและ break วงวนทันที ทำให้ else ถูกข้ามไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p014
+    topics: [computer.programming.control-flow]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ดูโค้ดแล้วตอบค่าของ `n` เมื่อโปรแกรมหยุด
+
+      ```python
+      n = 0
+      while True:
+          n += 3
+          if n * n > 50:
+              break
+      ```
+    answer: { value: 9 }
+    hints:
+      - "ค่า n เพิ่มทีละ 3 ตั้งแต่ 3, 6, 9 และตรวจกำลังสองของแต่ละค่า"
+      - "ให้ตรวจว่า n * n มากกว่า 50 หรือยังในแต่ละรอบ"
+      - "ค่าแรกที่ n * n > 50 คือค่าที่ break ออกมา"
+    misconceptions:
+      - { match: 51, feedback: "เทียบ n กับ 50 โดยตรง ไม่ได้ยกกำลังสอง เลยต้องรอจนกว่า n เกิน 50 ซึ่งได้ 51" }
+      - { match: 81, feedback: "นั่นคือค่า n * n ไม่ใช่ n ที่โปรแกรมหยุด โจทย์ถามค่า n" }
+    solution: "รอบแรก n = 3 ได้ 9 ไม่เกิน 50 รอบที่สอง n = 6 ได้ 36 ไม่เกิน 50 รอบที่สาม n = 9 ได้ 81 มากกว่า 50 จึง break ค่า n คือ 9"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p015
+    topics: [computer.programming.control-flow]
+    difficulty: 4
+    type: mcq
+    stem: "ต้องการตรวจว่าค่า `age` อยู่ในช่วง 13 ถึง 19 รวมทั้งสองปลาย ควรเขียนเงื่อนไขใดจึงจะถูกต้อง"
+    choices:
+      - { id: a, text: "13 <= age <= 19", correct: true }
+      - { id: b, text: "age >= 13 or age <= 19", feedback: "or ทำให้เป็นจริงทุกค่า เพราะทุกค่าต้องเป็นอย่างน้อยหนึ่งในสองเงื่อนไขนี้ ตัวเลขจึงไม่ถูกคัดกรองเลย" }
+      - { id: c, text: "age > 13 and age < 19", feedback: "เงื่อนไขนี้ไม่รวม 13 และ 19 ซึ่งโจทย์ต้องการให้รวมด้วย" }
+      - { id: d, text: "13 <= age and age >= 19", feedback: "เงื่อนไขนี้เป็นจริงเฉพาะเมื่อ age มากกว่าหรือเท่ากับ 19 จึงไม่ครอบคลุมค่า 13 ถึง 18" }
+    hints:
+      - "ค่าต่ำสุดและค่าสูงสุดของช่วงต้องรวมอยู่ในช่วงด้วย"
+      - "ลองแทนค่า 13, 15 และ 20 ในแต่ละตัวเลือกว่าได้ผลจริงหรือเท็จ"
+      - "Python เขียนเปรียบเทียบเป็นช่วงซ้อนกันได้โดยตรง"
+    solution: "13 <= age <= 19 เป็นจริงเมื่อ age เท่ากับ 13 ถึง 19 รวมปลาย ตัวเลือก or เป็นจริงทุกค่า ตัวเลือกที่ใช้ and กับช่วงที่ไม่รวมปลาย หรือช่วงกลับด้าน จึงผิด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p016
+    topics: [computer.programming.control-flow]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `is_prime(n)` ที่คืน `True` เมื่อ `n` เป็นจำนวนเฉพาะ และคืน `False` เมื่อไม่ใช่
+
+      ให้ใช้วงวนตาม `d` ตั้งแต่ 2 ถึงรากที่สองของ `n` ถ้าพบตัวหารให้ `break` และใช้ `else` ของวงวนคืน `True` เมื่อไม่พบตัวหารเลย จำนวนที่น้อยกว่า 2 ไม่ใช่จำนวนเฉพาะ
+    starter: |
+      def is_prime(n):
+          return True
+    tests: |
+      assert is_prime(1) is False, f"1 ไม่ใช่จำนวนเฉพาะ แต่ได้ {is_prime(1)!r}"
+      assert is_prime(2) is True, f"2 เป็นจำนวนเฉพาะ แต่ได้ {is_prime(2)!r}"
+      assert is_prime(9) is False, f"9 = 3 × 3 ไม่ใช่จำนวนเฉพาะ แต่ได้ {is_prime(9)!r}"
+      assert is_prime(17) is True, f"17 เป็นจำนวนเฉพาะ แต่ได้ {is_prime(17)!r}"
+      assert is_prime(91) is False, f"91 = 7 × 13 ไม่ใช่จำนวนเฉพาะ แต่ได้ {is_prime(91)!r}"
+      assert is_prime(97) is True, f"97 เป็นจำนวนเฉพาะ แต่ได้ {is_prime(97)!r}"
+    reference: |
+      def is_prime(n):
+          if n < 2:
+              return False
+          for d in range(2, int(n ** 0.5) + 1):
+              if n % d == 0:
+                  break
+          else:
+              return True
+          return False
+    hints:
+      - "ตรวจก่อนว่า n น้อยกว่า 2 หรือไม่ ถ้าใช่ คืน False ทันที"
+      - "วนตาม d แล้วตรวจว่า n % d == 0 หรือไม่ ถ้าเจอให้ break"
+      - "ใช้ else ของ for คืน True เมื่อวงวนจบโดยไม่เจอตัวหาร แล้วคืน False หลังวงวน"
+    solution: "จำนวนที่น้อยกว่า 2 คืน False ตัวหาร d ตั้งแต่ 2 ถึงรากที่สองของ n ถ้าเจอ n % d == 0 จะ break และคืน False เมื่อวงจบโดยไม่ break ส่วน else คืน True ตัวอย่าง 91 เจอ 7 จึงคืน False"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p017
+    topics: [computer.programming.control-flow]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ดูโค้ดแล้วตอบค่าของ `count` หลังโปรแกรมทำงานจบ
+
+      ```python
+      count = 0
+      for i in range(4):
+          for j in range(4):
+              if i == j:
+                  continue
+              count += 1
+      ```
+    answer: { value: 12 }
+    hints:
+      - "คู่ (i, j) ที่ i เท่ากับ j ถูกข้ามไป มีทั้งหมด 4 คู่"
+      - "จำนวนคู่ทั้งหมดในตาราง 4 × 4 คือ 16"
+      - "`continue` ข้ามเฉพาะรอบของวงในที่ i เท่ากับ j ไม่ได้ข้ามทั้งวงนอก"
+    misconceptions:
+      - { match: 6, feedback: "ใช้ continue เหมือน break ทำให้วงในหยุดตั้งแต่ j เท่ากับ i จึงนับได้แค่ 0 + 1 + 2 + 3" }
+      - { match: 16, feedback: "ลืม continue ทำให้นับทุกคู่รวมที่ i เท่ากับ j ด้วย" }
+    solution: "วงซ้อน 4 × 4 มี 16 คู่ ข้ามคู่ที่ i เท่ากับ j จำนวน 4 คู่ จึงนับ count ได้ 16 − 4 = 12"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p018
+    topics: [computer.programming.control-flow]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `first_pair_product(nums, target)` ที่หาคู่แรกของตำแหน่ง `(i, j)` โดยที่ `i < j` และ `nums[i] * nums[j] == target` ให้สแกน `i` จากน้อยไปมาก และในแต่ละ `i` สแกน `j` จาก `i + 1` ไปมาก คืนค่าเป็น tuple `(i, j)` ของคู่แรกที่เจอ ถ้าไม่มีคู่ใดเลยให้คืน `None`
+    starter: |
+      def first_pair_product(nums, target):
+          return None
+    tests: |
+      assert first_pair_product([2, 3, 4, 6], 12) == (0, 3), f"ควรได้ (0, 3) แต่ได้ {first_pair_product([2, 3, 4, 6], 12)}"
+      assert first_pair_product([2, 3, 4, 6], 18) == (1, 3), f"ควรได้ (1, 3) แต่ได้ {first_pair_product([2, 3, 4, 6], 18)}"
+      assert first_pair_product([1, 2], 5) is None, "ไม่มีคู่ที่คูณได้ 5 ต้องคืน None"
+      assert first_pair_product([0, 7], 0) == (0, 1), f"0 × 7 = 0 ควรได้ (0, 1) แต่ได้ {first_pair_product([0, 7], 0)}"
+      assert first_pair_product([], 1) is None, "ลิสต์ว่างต้องคืน None"
+    reference: |
+      def first_pair_product(nums, target):
+          for i in range(len(nums)):
+              for j in range(i + 1, len(nums)):
+                  if nums[i] * nums[j] == target:
+                      return (i, j)
+          return None
+    hints:
+      - "วงนอกวนตาม i และวงในวนตาม j เริ่มที่ i + 1 เหมือนโจทย์นับคู่"
+      - "เมื่อพบคู่แรกที่ตรงกับเงื่อนไข ให้ return ทันที ไม่ต้องรอให้วงวนจบ"
+      - "ถ้าวงซ้อนจบทั้งหมดโดยไม่เคย return ให้ return None หลังวงวน"
+    solution: "สแกนคู่ตามลำดับ (0,1), (0,2), (0,3), ... คู่ (0,3) ให้ 2 × 6 = 12 เป็นคู่แรกที่ตรง ส่วน target 18 คู่แรกคือ (1,3) เพราะ 3 × 6 = 18 เมื่อไม่มีคู่ตรงให้คืน None"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.control-flow.p019
+    topics: [computer.programming.control-flow]
+    difficulty: 3
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `letter_triangle(n)` ที่สร้างรูปสามเหลี่ยมตัวอักษร `n` บรรทัด แล้วคืนเป็นลิสต์ของสตริง บรรทัดที่ 1 มีตัว `A` หนึ่งตัว บรรทัดที่ 2 มี `AB` บรรทัดที่ 3 มี `ABC` ไปเรื่อย ๆ เช่น `letter_triangle(3)` ได้ `["A", "AB", "ABC"]` ถ้า `n` เป็น 0 ให้คืนลิสต์ว่าง
+
+      ใช้วงวนซ้อน: วงนอกนับบรรทัด และวงในเติมตัวอักษรทีละตัว (ตัวอักษรถัดไปของ `"A"` หาได้จาก `chr(ord("A") + j)`)
+    starter: |
+      def letter_triangle(n):
+          lines = []
+          return lines
+    tests: |
+      assert letter_triangle(1) == ["A"], f"n = 1 ควรได้ ['A'] แต่ได้ {letter_triangle(1)}"
+      assert letter_triangle(3) == ["A", "AB", "ABC"], f"n = 3 ควรได้ ['A', 'AB', 'ABC'] แต่ได้ {letter_triangle(3)}"
+      assert letter_triangle(0) == [], f"n = 0 ต้องได้ลิสต์ว่าง แต่ได้ {letter_triangle(0)}"
+      assert len(letter_triangle(5)) == 5, "n = 5 ต้องมี 5 บรรทัด"
+      assert letter_triangle(5)[-1] == "ABCDE", f"บรรทัดสุดท้ายของ n = 5 ควรเป็น 'ABCDE' แต่ได้ {letter_triangle(5)[-1]!r}"
+      assert all(len(line) == i + 1 for i, line in enumerate(letter_triangle(6))), "บรรทัดที่ i ต้องมีตัวอักษร i ตัว"
+    reference: |
+      def letter_triangle(n):
+          lines = []
+          for i in range(1, n + 1):
+              line = ""
+              for j in range(i):
+                  line += chr(ord("A") + j)
+              lines.append(line)
+          return lines
+    hints:
+      - "วงนอกวนตาม i ตั้งแต่ 1 ถึง n แต่ละรอบสร้างหนึ่งบรรทัด"
+      - "วงในวน i รอบ เติมตัวอักษร chr(ord('A') + j) ต่อท้ายสตริงของบรรทัดนั้น"
+      - "เมื่อวงในจบ ให้ append สตริงของบรรทัดลงในลิสต์ แล้วเริ่มสตริงใหม่ในรอบถัดไป"
+    solution: "วงนอกนับบรรทัด i = 1 ถึง n วงในวน j = 0 ถึง i − 1 แล้วเติม chr(ord('A') + j) จึงได้บรรทัดที่ i ยาว i ตัว เช่น i = 3 ได้ A, B, C รวมเป็น 'ABC' เมื่อ n = 0 วงนอกไม่ทำงานเลยจึงคืนลิสต์ว่าง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

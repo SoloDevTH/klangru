@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 410" width="680" height="410" font-family="sans-serif" font-size="15">
+  <title>ผังงาน for-else ตรวจจำนวนเฉพาะ</title>
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15211e"/></marker></defs>
+  <rect x="0" y="0" width="680" height="410" fill="#ffffff"/>
+  <text x="330" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#15211e">ผังงาน for ... else ตรวจว่า n = 7 เป็นจำนวนเฉพาะหรือไม่</text>
+  <rect x="250" y="48" width="160" height="34" rx="17" fill="#e2f0ed" stroke="#15211e" stroke-width="2"/>
+  <text x="330" y="70" text-anchor="middle" font-size="14" font-weight="normal" fill="#15211e">เริ่ม: n = 7</text>
+  <line x1="330" y1="82" x2="330" y2="112" stroke="#15211e" stroke-width="2" marker-end="url(#arr)"/>
+  <polygon points="330,119.0 445.0,150 330,181.0 215.0,150" fill="#e2f0ed" stroke="#15211e" stroke-width="2"/>
+  <text x="330" y="155" text-anchor="middle" font-size="14" font-weight="normal" fill="#15211e">ยังมี d ใน range(2, n)?</text>
+  <line x1="445" y1="150" x2="515" y2="150" stroke="#15211e" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="448" y="140" text-anchor="start" font-size="13" font-weight="normal" fill="#4a5a55">ไม่มีแล้ว</text>
+  <rect x="515" y="128" width="155" height="44" rx="6" fill="#e2f0ed" stroke="#15211e" stroke-width="2"/>
+  <text x="592.5" y="155.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#15211e">else: เป็นจำนวนเฉพาะ</text>
+  <line x1="330" y1="181" x2="330" y2="212" stroke="#15211e" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="338" y="200" text-anchor="start" font-size="13" font-weight="normal" fill="#4a5a55">มี</text>
+  <polygon points="330,209.0 445.0,240 330,271.0 215.0,240" fill="#e2f0ed" stroke="#15211e" stroke-width="2"/>
+  <text x="330" y="245" text-anchor="middle" font-size="14" font-weight="normal" fill="#15211e">n % d == 0 ?</text>
+  <line x1="445" y1="240" x2="515" y2="240" stroke="#15211e" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="470" y="232" text-anchor="start" font-size="13" font-weight="normal" fill="#4a5a55">ใช่</text>
+  <rect x="515" y="218" width="155" height="44" rx="6" fill="#e2f0ed" stroke="#15211e" stroke-width="2"/>
+  <text x="592.5" y="245.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#15211e">พิมพ์ไม่ใช่ แล้ว break</text>
+  <line x1="330" y1="271" x2="330" y2="300" stroke="#15211e" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="338" y="292" text-anchor="start" font-size="13" font-weight="normal" fill="#4a5a55">ไม่ใช่</text>
+  <rect x="250" y="300" width="160" height="40" rx="6" fill="#e2f0ed" stroke="#15211e" stroke-width="2"/>
+  <text x="330.0" y="325.0" text-anchor="middle" font-size="14" font-weight="normal" fill="#15211e">d = d + 1</text>
+  <polyline points="250,320 180,320 180,150 215,150" fill="none" stroke="#15211e" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="170" y="236" text-anchor="end" font-size="13" font-weight="normal" fill="#4a5a55">วนต่อ</text>
+  <text x="330" y="370" text-anchor="middle" font-size="13" font-weight="normal" fill="#4a5a55">break ทำให้ else ถูกข้าม (ไม่มีการพิมพ์ 'เป็นจำนวนเฉพาะ')</text>
+  <text x="330" y="392" text-anchor="middle" font-size="13" font-weight="normal" fill="#4a5a55">ถ้า d หมดโดยไม่เคย break ผังจะไปทาง else ซึ่งพิมพ์ 'เป็นจำนวนเฉพาะ'</text>
+</svg>

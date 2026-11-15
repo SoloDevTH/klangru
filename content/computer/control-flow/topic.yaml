@@ -1,0 +1,89 @@
+id: computer.programming.control-flow
+subject: computer
+title: { th: เงื่อนไขซ้อน วงวนซ้อน และ break กับ continue, en: "Nested conditions, nested loops, break and continue" }
+summary: เขียนเงื่อนไขซ้อนและวงวนซ้อนให้อ่านง่าย ใช้ elif และนิพจน์เงื่อนไข ควบคุมวงวนด้วย break และ continue รู้จัก else ของวงวน และไล่โค้ดด้วยตารางค่า
+difficulty: 4
+minutes: 40
+prerequisites: [computer.programming.python-expressions, computer.programming.design-debug]
+encompasses:
+  - { id: computer.programming.python-expressions, weight: 0.3 }
+  - { id: computer.programming.design-debug, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: nested-loop-grid.svg
+    alt: "ตารางสามแถวสี่คอลัมน์ แถวแทนค่า i ของลูปนอก คอลัมน์แทนค่า j ของลูปใน ช่องมีตัวเลข 1 ถึง 12 เรียงตามลำดับการทำงาน ลูปในวนครบแถวหนึ่งก่อนจะขยับไปแถวถัดไป ช่องแรกเป็นสีส้ม"
+    caption: "ลูปในวนครบทุกคอลัมน์ของแถวหนึ่งก่อนที่ลูปนอกจะขยับไปแถวถัดไป"
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: ไล่โค้ดที่ทำให้เกิดรูปสามเหลี่ยมตัวเลข
+    problem: |
+      ดูโค้ดนี้แล้วบอกว่าผลลัพธ์มีกี่บรรทัด และแต่ละบรรทัดมีตัวเลขกี่ตัว
+
+      ```python
+      for i in range(1, 4):
+          for j in range(1, 4):
+              if j > i:
+                  break
+              print(i * j, end=" ")
+          print()
+      ```
+    steps:
+      - text: "รอบ i = 1 วงในเริ่มที่ j = 1 ตรวจ 1 > 1 เป็นเท็จ จึงพิมพ์ 1 แล้วได้ j = 2"
+        why: "เงื่อนไข j > i ใช้เทียบกับค่า i ของวงนอก ในรอบนี้ค่า i คือ 1"
+      - text: "รอบ i = 1, j = 2 ตรวจ 2 > 1 เป็นจริง จึง break ออกจากวงในทันที แล้วทำ print() ขึ้นบรรทัดใหม่"
+        why: "break หยุดเฉพาะวงในรอบนี้ วงนอกยังไม่จบ"
+      - text: "รอบ i = 2 วงในพิมพ์ 2 และ 4 (j = 1 และ 2) แล้วพบ j = 3 ที่มากกว่า i จึง break และขึ้นบรรทัดใหม่"
+      - text: "รอบ i = 3 วงในพิมพ์ 3, 6 และ 9 ไม่มี break เกิดขึ้นเพราะ j ไม่มากกว่า 3 วงในจึงจบเองแล้วขึ้นบรรทัดใหม่"
+        why: "วงในจบเองเมื่อ j หมดช่วง range(1, 4) ซึ่งไม่ใช่ break"
+      - text: "ผลลัพธ์จึงเป็นสามบรรทัด ได้ \"1 \" \"2 4 \" \"3 6 9 \" บรรทัดที่ i มีตัวเลข i ตัว"
+    answer: "มี 3 บรรทัด บรรทัดที่ i มีตัวเลข i ตัว คือ 1 ตัว 2 ตัว และ 3 ตัว"
+  - { type: check, problem: computer.programming.control-flow.p003, prompt: "ลองคิดก่อนอ่านต่อ" }
+  - type: figure
+    src: loop-else-flow.svg
+    alt: "ผังงานของ for ... else ตรวจว่า 7 เป็นจำนวนเฉพาะ เริ่มจากตรวจว่ายังมีค่า d ให้ตรวจไหม ถ้าไม่มีจะไปทาง else และพิมพ์เป็นจำนวนเฉพาะ ถ้ามี ตรวจว่า 7 หาร d ลงตัวหรือไม่ ถ้าใช่จะพิมพ์ว่าไม่ใช่และ break ซึ่งข้าม else ถ้าไม่ใช่จะเพิ่ม d แล้ววนกลับ"
+    caption: "else ของวงวนทำงานก็ต่อเมื่อวงจบเองโดยไม่มี break ผังนี้ใช้กับ n = 7"
+  - type: worked-example
+    title: ตรวจว่า 7 เป็นจำนวนเฉพาะด้วย for ... else
+    problem: |
+      โค้ดนี้พิมพ์อะไรออกมาเมื่อ n = 7
+
+      ```python
+      n = 7
+      for d in range(2, n):
+          if n % d == 0:
+              print("ไม่ใช่จำนวนเฉพาะ")
+              break
+      else:
+          print("เป็นจำนวนเฉพาะ")
+      ```
+    steps:
+      - text: "range(2, 7) ให้ค่า d เป็น 2, 3, 4, 5, 6 ตามลำดับ"
+        why: "ค่าสิ้นสุด 7 ไม่รวม จึงไม่มี d = 7 ซึ่งจะหาร 7 ลงตัวเองอยู่แล้ว"
+      - text: "d = 2 ได้ 7 % 2 = 1 ไม่เท่ากับ 0 จึงไม่เข้า if"
+      - text: "d = 3 ได้ 7 % 3 = 1 และ d = 4 ได้ 7 % 4 = 3 ไม่มีรอบใดเข้า if"
+      - text: "d = 5 ได้ 7 % 5 = 2 และ d = 6 ได้ 7 % 6 = 1 ยังไม่มีรอบใดเข้า if"
+      - text: "วงวนจบโดยไม่เคยเจอ break จึงเข้า else พิมพ์ \"เป็นจำนวนเฉพาะ\""
+        why: "ถ้าเจอ break แม้แค่รอบเดียว else จะถูกข้ามไป"
+    answer: "พิมพ์ว่า \"เป็นจำนวนเฉพาะ\" เพราะ 7 ไม่มีตัวหารระหว่าง 2 ถึง 6"
+  - { type: check, problem: computer.programming.control-flow.p013, prompt: "เมื่อไรที่ else ของวงวนจะทำงาน" }
+glossary:
+  - { term: เงื่อนไขซ้อน (nested condition), definition: "การวางคำสั่งตรวจเงื่อนไขไว้ภายในบล็อกของเงื่อนไขอื่น เพื่อตัดสินใจเป็นชั้น ๆ" }
+  - { term: วงวนซ้อน (nested loop), definition: "วงวนที่อยู่ภายในวงวนอีกวงหนึ่ง วงในจะทำงานครบทุกรอบเมื่อวงนอกขยับหนึ่งรอบ" }
+  - { term: break, definition: "คำสั่งที่หยุดวงวนที่ล้อมอยู่ทันที และไปทำคำสั่งถัดจากวงวนนั้น" }
+  - { term: continue, definition: "คำสั่งที่ข้ามส่วนที่เหลือของรอบปัจจุบันของวงวน แล้วเริ่มรอบถัดไป" }
+  - { term: ตารางค่าตัวแปร (trace table), definition: "ตารางที่จดค่าของตัวแปรทุกตัวในแต่ละขั้นของโปรแกรม ใช้ไล่ดูว่าโค้ดทำงานอย่างไร" }
+flashcards:
+  - { front: "วงวนซ้อนสองชั้น วงนอก 5 รอบ วงใน 6 รอบ คำสั่งในวงในทำงานกี่ครั้ง", back: "5 × 6 = 30 ครั้ง ไม่ใช่ 5 + 6" }
+  - { front: "break ทำอะไร", back: "หยุดวงวนที่ล้อมคำสั่งนั้นทันที (เฉพาะวงที่อยู่ใกล้ที่สุด)" }
+  - { front: "continue ทำอะไร", back: "ข้ามส่วนที่เหลือของรอบนี้ แล้วเริ่มรอบถัดไปของวงวน" }
+  - { front: "else ของวงวนทำงานเมื่อไร", back: "เมื่อวงวนจบเองโดยไม่ถูก break หยุด" }
+  - { front: "elif ต่างจาก if ซ้อนอย่างไร", back: "elif ตรวจเฉพาะเมื่อเงื่อนไขก่อนหน้าเป็นเท็จ และเมื่อทางหนึ่งทำงานแล้วทางที่เหลือจะถูกข้าม" }
+references:
+  - { title: "Control flow", url: "https://en.wikipedia.org/wiki/Control_flow", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Structured programming", url: "https://en.wikipedia.org/wiki/Structured_programming", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "More Control Flow Tools (Python 3 tutorial)", url: "https://docs.python.org/3/tutorial/controlflow.html", source: python-docs, lang: en, license: PSF }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
