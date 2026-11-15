@@ -1,0 +1,211 @@
+problems:
+  - id: "engineering.mining.mineral-processing.p001"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 1
+    type: "mcq"
+    stem: "เหตุผลหลักที่ต้องบดแร่ให้ละเอียดก่อนแต่งแร่คืออะไร"
+    hints: ["แร่ที่มีค่ามักฝังอยู่ในเนื้อหินที่ไม่มีค่า", "ถ้าแยกไม่ออก การแยกด้วยวิธีใดก็ไม่ได้ผลดี"]
+    solution: "การบดให้ละเอียดพอทำให้แร่ที่มีค่าแยกจากหินเนื้อ จึงแยกด้วยความถ่วงหรือการลอยได้"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "เพื่อให้แร่ที่มีค่าแยกตัวออกจากหินเนื้อ (liberation)", "correct": true}, {"id": "b", "text": "เพื่อเพิ่มน้ำหนักของแร่", "correct": false, "feedback": "การบดไม่ได้เพิ่มน้ำหนักแร่ แต่ทำให้แร่และหินแยกจากกันได้ดีขึ้น"}, {"id": "c", "text": "เพื่อเปลี่ยนชนิดของแร่", "correct": false, "feedback": "การบดทางกายภาพไม่เปลี่ยนชนิดแร่"}, {"id": "d", "text": "เพื่อให้แร่ไม่มีค่าโลหะ", "correct": false, "feedback": "จุดประสงค์ของการแต่งแร่คือแยกส่วนที่มีค่าออกมา"}]
+  - id: "engineering.mining.mineral-processing.p002"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 1
+    type: "text"
+    stem: "ในการแต่งแร่ อัตราส่วนของโลหะที่กู้กลับได้ต่อโลหะที่ป้อนเข้า เรียกว่าค่าอะไร (ตอบเป็นคำภาษาอังกฤษหรือไทย)"
+    hints: ["คำนี้เกี่ยวกับการกู้ส่วนที่มีค่ากลับมา", "ใช้คำว่า recovery ในตำราแต่งแร่"]
+    solution: "เรียกว่าค่าการเก็บกู้ (recovery) คำนวณเป็นร้อยละของโลหะในผลิตภัณฑ์เทียบกับอาหารเข้า"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    accepted: ["recovery", "Recovery", "การเก็บกู้", "ค่าการเก็บกู้", "ร้อยละการเก็บกู้"]
+    misconceptions: []
+  - id: "engineering.mining.mineral-processing.p003"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 1
+    type: "numeric"
+    stem: "โรงแต่งแร่สมมติแห่งหนึ่งป้อนแร่ 500 t ต่อวัน และทำงานจริง 20 ชั่วโมงต่อวัน อัตราป้อนเฉลี่ยเป็นกี่ t/h"
+    hints: ["อัตราป้อนต่อชั่วโมงคือปริมาณต่อวันหารด้วยชั่วโมงทำงานต่อวัน"]
+    solution: "$500/20 = 25\\ \\mathrm{t/h}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 25.0, "tolerance": 0.01, "unit": "t/h"}
+    misconceptions: [{"match": 500.0, "feedback": "ลืมหารด้วยชั่วโมงทำงานและยังใช้หน่วยต่อวัน"}, {"match": 20.0, "feedback": "ตอบชั่วโมงทำงานแทนอัตราป้อน"}]
+  - id: "engineering.mining.mineral-processing.p004"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 2
+    type: "numeric"
+    stem: "จากการร่อนแร่ พบว่า 60% ของมวลผ่านตะแกรง 2 mm และ 90% ผ่านตะแกรง 4 mm (ค่าสมมติ) ขนาด $F_{80}$ ซึ่งมี 80% ของมวลผ่านโดยประมาณด้วยการเชื่อมเส้นตรงเป็นกี่ mm (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["ช่วง 60% ถึง 90% ครอบคลุม 80% ที่ต้องการ", "แบ่งสัดส่วนตามความต่างของเปอร์เซ็นต์ผ่าน: $(80-60)/(90-60)$"]
+    solution: "$F_{80} = 2 + (80-60)/(90-60)\\times(4-2) = 2 + 1.333 \\approx 3.33\\ \\mathrm{mm}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 3.33, "tolerance": 0.03, "unit": "mm"}
+    misconceptions: [{"match": 3.0, "feedback": "ใช้ค่ากึ่งกลางของช่วงขนาดแทนการแบ่งตามเปอร์เซ็นต์"}, {"match": 4.0, "feedback": "ตอบขนาดตะแกรงใหญ่สุดแทนขนาด 80%"}]
+  - id: "engineering.mining.mineral-processing.p005"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 2
+    type: "numeric"
+    stem: "แร่ป้อนเข้าโรงลอยแร่ 100 t/h มีทองแดง 1.5% และได้แร่เข้มข้น 5 t/h ที่มีทองแดง 25% (ค่าสมมติ) ค่าการเก็บกู้ทองแดงเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ค่าการเก็บกู้ $= (C \\times c)/(F \\times a)\\times100$", "ใช้ปริมาณโลหะในผลิตภัณฑ์ต่อปริมาณโลหะในอาหาร"]
+    solution: "$R = (5\\times25)/(100\\times1.5)\\times100 = 125/150\\times100 \\approx 83.3\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 83.3, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 125.0, "feedback": "ได้เพียงโลหะในแร่เข้มข้น $C\\times c$ ยังไม่ได้หารด้วยโลหะในแร่ป้อน $F\\times a = 150$"}, {"match": 16.7, "feedback": "ตอบปริมาณที่สูญเสียแทนการเก็บกู้"}]
+  - id: "engineering.mining.mineral-processing.p006"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ใช้ข้อมูลเดียวกับโจทย์ก่อนหน้า อัตราส่วนความเข้มข้น $K = F/C$ เท่ากับเท่าใด (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["อัตราส่วนความเข้มข้นคืออัตราป้อนหารด้วยอัตราแร่เข้มข้น"]
+    solution: "$K = F/C = 100/5 = 20.0$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 20.0, "tolerance": 0.05, "unit": ""}
+    misconceptions: [{"match": 0.05, "feedback": "สลับตัวตั้งกับตัวหาร"}, {"match": 1.05, "feedback": "หารด้วยมวลหางแทนมวลแร่เข้มข้น"}]
+  - id: "engineering.mining.mineral-processing.p007"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 2
+    type: "mcq"
+    stem: "ในการลอยแร่ สารที่ทำให้ผิวอนุภาคแร่ที่ต้องการไม่ชอบน้ำ จึงเกาะกับฟองอากาศได้ เรียกว่าอะไร"
+    hints: ["เป้าหมายคือให้แร่ที่ต้องการเกาะฟองและลอยขึ้น", "ชื่อของสารคือ collector ตามที่ใช้ในตำรา"]
+    solution: "สารเก็บเป็นโมเลกุลที่เกาะผิวแร่เลือกเฉพาะ ทำให้ผิวไม่ชอบน้ำและเกาะกับฟองอากาศ"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "สารเก็บ (collector)", "correct": true}, {"id": "b", "text": "สารทำให้ฟองเสถียร (frother)", "correct": false, "feedback": "frother ช่วยให้ฟองคงตัวบนผิวเพื่อพาแร่ขึ้น แต่ไม่ทำให้ผิวแร่ไม่ชอบน้ำโดยตรง"}, {"id": "c", "text": "สารกด (depressant)", "correct": false, "feedback": "สารกดทำให้แร่บางชนิดไม่เกาะฟอง ซึ่งตรงข้ามกับเป้าหมาย"}, {"id": "d", "text": "สารปรับ pH ที่ไม่มีผลต่อผิว", "correct": false, "feedback": "pH มีผลต่อการทำงาน แต่สารที่ทำให้ผิวไม่ชอบน้ำคือ collector"}]
+  - id: "engineering.mining.mineral-processing.p008"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 3
+    type: "numeric"
+    stem: "จากแร่ป้อน $F = 100$ t/h มีทองแดง $a = 1.5\\%$ ได้แร่เข้มข้น $C = 5$ t/h มี $c = 25\\%$ ความเข้มข้นของทองแดงในหาง $t$ คำนวณได้กี่เปอร์เซ็นต์ (ทศนิยม 3 ตำแหน่ง)"
+    hints: ["ใช้สมดุลมวลสองสมการ: $F = C + T$ และ $Fa = Cc + Tt$", "มวลหาง $T = F - C = 95$ t/h"]
+    solution: "$Tt = Fa - Cc = 150 - 125 = 25$ จึง $t = 25/95 \\approx 0.263\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.263, "tolerance": 0.005, "unit": "%"}
+    misconceptions: [{"match": 1.579, "feedback": "ใช้โลหะทั้งหมดในแร่ป้อน $Fa = 150$ โดยไม่หักโลหะที่ไปอยู่ในแร่เข้มข้น"}, {"match": 0.25, "feedback": "หารด้วยอัตราป้อน $F = 100$ แทนอัตราหาง $T = F - C = 95$ t/h"}]
+  - id: "engineering.mining.mineral-processing.p009"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 3
+    type: "numeric"
+    stem: "งานบดด้วยเครื่องบดลูกมีดัชนีการทำงาน (work index) $W_i = 14$ kWh/t ขนาดป้อน $F_{80} = 10{,}000\\ \\mu\\mathrm{m}$ และขนาดผลิตภัณฑ์ $P_{80} = 100\\ \\mu\\mathrm{m}$ ใช้พลังงานกี่ kWh/t ตามกฎของบอนด์ (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["กฎของบอนด์คือ $W = 10W_i\\left(\\dfrac{1}{\\sqrt{P_{80}}}-\\dfrac{1}{\\sqrt{F_{80}}}\\right)$ ขนาดต้องใช้หน่วยเดียวกันเป็นไมครอน"]
+    solution: "$W = 10\\times14\\times(1/\\sqrt{100} - 1/\\sqrt{10000}) = 140\\times(0.1 - 0.01) = 12.60\\ \\mathrm{kWh/t}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 12.6, "tolerance": 0.02, "unit": "kWh/t"}
+    misconceptions: [{"match": 126.0, "feedback": "คูณ 10 ซ้ำสองครั้ง สูตรมี 10 อยู่ใน $10W_i$ เพียงครั้งเดียว"}, {"match": 1.26, "feedback": "ลืมคูณ 10 ใน $10W_i$"}]
+  - id: "engineering.mining.mineral-processing.p010"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 3
+    type: "numeric"
+    stem: "แร่ชนิดหนึ่งมี $W_i = 12$ kWh/t บดจาก $F_{80} = 25\\ \\mathrm{mm}$ ให้ $P_{80} = 106\\ \\mu\\mathrm{m}$ พลังงานที่ใช้ต่อตันโดยประมาณเป็นกี่ kWh/t (ทศนิยม 2 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["แปลง 25 mm เป็น 25000 µm ก่อนแทนในสูตรของบอนด์"]
+    solution: "$W = 10\\times12\\times(1/\\sqrt{106} - 1/\\sqrt{25000}) = 120\\times(0.09713 - 0.00632) \\approx 10.90\\ \\mathrm{kWh/t}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 10.90, "tolerance": 0.02, "unit": "kWh/t"}
+    misconceptions: [{"match": 344.6, "feedback": "ใช้ขนาดเป็น mm แทน µm ทั้งสองค่า ทำให้ผลลัพธ์ใหญ่เกินจริงมาก"}, {"match": 11.66, "feedback": "ลืมลบตัวที่สองซึ่งเกี่ยวกับขนาดป้อน"}]
+  - id: "engineering.mining.mineral-processing.p011"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 4
+    type: "numeric"
+    stem: "แร่ป้อนเข้า 200 t/h มีทองแดง $a = 2.0\\%$ ได้แร่เข้มข้นมี $c = 30\\%$ และหางมี $t = 0.3\\%$ (ค่าสมมติ) ค่าการเก็บกู้ของทองแดงเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["หาอัตราแร่เข้มข้นก่อนจากสมดุลมวลสารเฉพาะ $C = F(a-t)/(c-t)$", "แล้วหาการเก็บกู้จาก $Cc/(Fa)$"]
+    solution: "$C = 200(2.0-0.3)/(30-0.3) \\approx 11.45$ t/h จึง $R = 11.45\\times30/(200\\times2.0)\\times100 \\approx 85.9\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 85.9, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 100.0, "feedback": "คิดอัตราแร่เข้มข้นจาก $Fa/c$ โดยไม่หักโลหะที่ไปกับหาง จึงได้การเก็บกู้ 100% ซึ่งเป็นไปไม่ได้เมื่อหางมีเกรด 0.3%"}, {"match": 14.1, "feedback": "ตอบส่วนที่สูญเสียไปกับหาง"}]
+  - id: "engineering.mining.mineral-processing.p012"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 4
+    type: "expression"
+    stem: "ใช้ $a$ แทนเกรดป้อน $c$ แทนเกรดแร่เข้มข้น และ $t$ แทนเกรดหาง (ทั้งหมดเป็นเปอร์เซ็นต์) เขียนนิพจน์ของสัดส่วนมวลแร่เข้มข้นต่อมวลป้อน (ในรูปเศษส่วน)"
+    hints: ["ใช้สมดุลมวลของแร่ที่ทั้งหมดเป็นของโลหะที่ต้องการ", "ตัวเศษคือเกรดป้อนลบเกรดหาง"]
+    solution: "สัดส่วนมวลแร่เข้มข้นต่อมวลป้อนคือ $(a-t)/(c-t)$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "\\frac{a-t}{c-t}", "variables": ["a", "t", "c"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "\\frac{a}{c}", "feedback": "เป็นอัตราส่วนเกรดอย่างเดียว ไม่ได้หักเกรดหาง"}, {"match": "\\frac{a-t}{c}", "feedback": "ตัวส่วนต้องเป็นผลต่าง c − t ไม่ใช่ c เพียงอย่างเดียว"}]
+    prefix: "ผลได้ ="
+  - id: "engineering.mining.mineral-processing.p013"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 4
+    type: "numeric"
+    stem: "วงจรแต่งแร่มีสองขั้นที่ต่อเนื่อง แต่ละขั้นเก็บกู้โลหะได้ 90% (ค่าสมมติ) และไม่มีการหมุนเวียนกลับ ค่าการเก็บกู้รวมทั้งวงจรเป็นกี่เปอร์เซ็นต์"
+    hints: ["การเก็บกู้รวมของขั้นที่ต่อเนื่องคือผลคูณของการเก็บกู้แต่ละขั้น"]
+    solution: "$R = 0.90\\times0.90 = 0.81 = 81\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 81.0, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 90.0, "feedback": "คิดว่ารวมทั้งวงจรได้เท่ากับขั้นเดียว"}, {"match": 95.0, "feedback": "ใช้ค่าเฉลี่ยของการเก็บกู้แทนผลคูณ"}]
+  - id: "engineering.mining.mineral-processing.p014"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 4
+    type: "numeric"
+    stem: "แร่บดละเอียดหนึ่งตันถูกทำเป็นน้ำแร่ (slurry) ที่มีของแข็ง 35% โดยมวล ความหนาแน่นของเม็ดของแข็ง 2.7 t/m³ สัดส่วนปริมาตรของแข็งต่อปริมาตรรวมของน้ำแร่เป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["ปริมาตรของแข็ง $= 0.35/2.7$ และปริมาตรน้ำ $= 0.65$ (ที่ความหนาแน่นน้ำ 1 t/m³)", "$\\phi = V_s/(V_s + V_w)$"]
+    solution: "$V_s = 0.35/2.7 = 0.1296\\ \\mathrm{m^3}$ $V_w = 0.65\\ \\mathrm{m^3}$ จึง $\\phi \\approx 16.6\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 16.6, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 35.0, "feedback": "ใช้สัดส่วนโดยมวลแทนสัดส่วนโดยปริมาตร"}, {"match": 27.0, "feedback": "ใช้ปริมาตรของแข็งที่ถูกต้องแต่คิดปริมาตรน้ำผิดเป็น 0.35"}]
+  - id: "engineering.mining.mineral-processing.p015"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ชุดบดแร่ป้อน 150 t/h มีดัชนี $W_i = 14$ kWh/t (ค่าสมมติ) โดยมี $F_{80} = 20{,}000\\ \\mu\\mathrm{m}$ และ $P_{80} = 150\\ \\mu\\mathrm{m}$ กำลังไฟฟ้าที่ต้องใช้โดยประมาณเป็นกี่ kW (ทศนิยม 0 ตำแหน่ง)"
+    hints: ["ใช้สูตรของบอนด์หาพลังงานต่อตัน แล้วคูณด้วยอัตราป้อนต่อชั่วโมง"]
+    solution: "$W = 10\\times14\\times(1/\\sqrt{150} - 1/\\sqrt{20000}) \\approx 10.44$ kWh/t กำลังไฟ $= 150\\times10.44 \\approx 1566\\ \\mathrm{kW}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 1566.0, "tolerance": 1.0, "unit": "kW"}
+    misconceptions: [{"match": 157.0, "feedback": "หารด้วย 10 โดยไม่มีเหตุผล"}, {"match": 1890.0, "feedback": "ใช้ค่าพลังงานจากโจทย์ก่อนหน้าแทนการคำนวณใหม่"}]
+  - id: "engineering.mining.mineral-processing.p016"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 3
+    type: "mcq"
+    stem: "ในการแยกแร่ด้วยแม่เหล็ก แร่ที่ถูกดึงดูดมากที่สุดโดยทั่วไปคือแร่ชนิดใด"
+    hints: ["แมกนีไทต์เป็นแร่เหล็กออกไซด์ที่มีสมบัติแม่เหล็กแรง", "การแยกด้วยแม่เหล็กอาศัยสมบัติทางแม่เหล็กของแร่"]
+    solution: "แร่เฟอร์โรแมกเนติกเช่นแมกนีไทต์ถูกดึงดูดได้มาก จึงแยกได้ด้วยเครื่องแยกแม่เหล็ก"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "แร่ที่มีสมบัติเฟอร์โรแมกเนติก เช่นแมกนีไทต์", "correct": true}, {"id": "b", "text": "แร่ที่ไม่มีเหล็กเลย", "correct": false, "feedback": "แร่ที่ไม่มีเหล็กหรือธาตุแม่เหล็กจะไม่ถูกดึงดูดอย่างชัดเจน"}, {"id": "c", "text": "ทุกแร่ที่มีความหนาแน่นสูง", "correct": false, "feedback": "ความหนาแน่นไม่ใช่ตัวกำหนดการดึงดูดแม่เหล็ก"}, {"id": "d", "text": "น้ำที่ใช้ในการบด", "correct": false, "feedback": "น้ำไม่ใช่แร่และไม่ถูกดึงดูดด้วยแม่เหล็กในการแต่งแร่"}]
+  - id: "engineering.mining.mineral-processing.p017"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 2
+    type: "match"
+    stem: "จับคู่หน่วยในวงจรแต่งแร่กับหน้าที่"
+    pairs: [{"left": "เครื่องย่อยหยาบ (crusher)", "right": "ลดขนาดหินเป็นชิ้นเล็กลงในขั้นแรก"}, {"left": "ตะแกรงคัดขนาด (screen)", "right": "แยกอนุภาคตามขนาด"}, {"left": "เครื่องบดลูก (ball mill)", "right": "บดให้ละเอียดพอให้แร่หลุดจากหินเนื้อ"}, {"left": "เซลล์ลอยแร่ (flotation cell)", "right": "แยกแร่ที่ต้องการขึ้นไปกับฟองอากาศ"}]
+    hints: ["ลำดับคือย่อยหยาบ ก่อนคัดขนาดและบด", "เซลล์ลอยใช้ฟองอากาศ"]
+    solution: "เครื่องย่อยหยาบลดขนาดเริ่มต้น ตะแกรงคัดขนาดแยกตามขนาด เครื่องบดลูกบดให้ละเอียด และเซลล์ลอยแยกแร่ที่ต้องการด้วยฟองอากาศ"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.mining.mineral-processing.p018"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 5
+    type: "code"
+    stem: "เขียนฟังก์ชัน `bond_energy(Wi, F80, P80)` ที่คืนพลังงานต่อตัน (kWh/t) ตามกฎของบอนด์ $W = 10W_i(1/\\sqrt{P_{80}} - 1/\\sqrt{F_{80}})$ โดยขนาดทั้งสองเป็นไมครอน ใช้ไลบรารี `math` ได้"
+    hints: ["ใส่ `math.sqrt` ให้ครบทั้งสองพจน์", "อย่าลืม `return` ค่าที่คำนวณได้"]
+    solution: "ฟังก์ชันคือ `return 10 * Wi * (1 / math.sqrt(P80) - 1 / math.sqrt(F80))` ค่า (14, 10000, 100) ได้ 12.6 kWh/t"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "import math\n\ndef bond_energy(Wi, F80, P80):\n    pass\n"
+    tests: "assert abs(bond_energy(14, 10000, 100) - 12.6) < 0.001, f\"bond_energy(14, 10000, 100) ควรได้ 12.6 แต่ได้ {bond_energy(14, 10000, 100)}\"\nassert abs(bond_energy(14, 10000, 10000)) < 1e-9, f\"เมื่อ F80 = P80 ต้องได้ 0 แต่ได้ {bond_energy(14, 10000, 10000)}\"\nassert bond_energy(14, 10000, 50) > bond_energy(14, 10000, 100), \"ผลิตภัณฑ์ละเอียดกว่าต้องใช้พลังงานมากกว่า\"\n"
+    reference: "import math\n\ndef bond_energy(Wi, F80, P80):\n    return 10 * Wi * (1 / math.sqrt(P80) - 1 / math.sqrt(F80))\n"
+  - id: "engineering.mining.mineral-processing.p019"
+    topics: ["engineering.mining.mineral-processing"]
+    difficulty: 2
+    type: "mcq"
+    stem: "หางแร่ (tailings) ในโรงแต่งแร่ควรได้รับการจัดการอย่างไร"
+    hints: ["หางแร่ยังมีโลหะและสารเคมีที่อาจละลายออกมาได้", "การจัดการที่ดีต้องคิดตั้งแต่การออกแบบบ่อ"]
+    solution: "หางแร่ต้องจัดการในบ่อที่ออกแบบได้มาตรฐาน มีการควบคุมน้ำซึม และติดตามคุณภาพน้ำอย่างต่อเนื่อง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ปล่อยทิ้งลงแหล่งน้ำโดยไม่บำบัด", "correct": false, "feedback": "การปล่อยโดยไม่บำบัดอาจทำให้เกิดมลพิษต่อน้ำและดิน"}, {"id": "b", "text": "ออกแบบบ่อกักเก็บและควบคุมการรั่วซึม รวมถึงตรวจสอบน้ำที่ซึมออกอย่างสม่ำเสมอ", "correct": true}, {"id": "c", "text": "นำไปกองกลางแจ้งโดยไม่มีแผนการควบคุม", "correct": false, "feedback": "กองหางที่ไม่มีการควบคุมอาจทำให้เกิดการพังทลายหรือการปนเปื้อน"}, {"id": "d", "text": "เผาทิ้งเพื่อลดปริมาตร", "correct": false, "feedback": "หางแร่ส่วนใหญ่เป็นของแข็งที่ไม่ติดไฟและไม่ควรเผา"}]

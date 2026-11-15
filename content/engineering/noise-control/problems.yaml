@@ -1,0 +1,218 @@
+problems:
+  - id: "engineering.environmental.noise-control.p001"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 1
+    type: "numeric"
+    stem: "ระดับเสียงเพิ่มขึ้น $10\\ \\mathrm{dB}$ ความเข้มของเสียง (intensity) เพิ่มขึ้นกี่เท่า"
+    hints: ["เดซิเบลเป็นมาตราลอการิทึม $L = 10\\log_{10}(I/I_0)$", "ถ้า $L$ เพิ่ม 10 หน่วย ลอการิทึมของอัตราส่วนความเข้มเพิ่ม 1 หน่วย"]
+    solution: "$\\Delta L = 10\\log_{10}(I_2/I_1) = 10$ จึง $\\log_{10}(I_2/I_1) = 1$ และ $I_2/I_1 = 10$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 10.0, "tolerance": 0.01, "unit": "เท่า"}
+    misconceptions: [{"match": 2.0, "feedback": "คิดว่า dB เพิ่มเป็นเส้นตรงกับความเข้ม จึงเพิ่มเป็นสองเท่า ซึ่งผิด"}, {"match": 100.0, "feedback": "ใส่ 10 ลงในสมการโดยไม่หารด้วย 10 แบบลอการิทึม"}]
+  - id: "engineering.environmental.noise-control.p002"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 1
+    type: "mcq"
+    stem: "เมื่อเสียงระดับเท่ากันสองแหล่งดังพร้อมกัน ระดับเสียงรวมจะเพิ่มขึ้นประมาณกี่ dB"
+    hints: ["รวมความเข้มสองแหล่งเท่ากันได้ $2I$", "$10\\log_{10}2 \\approx 3.01$"]
+    solution: "ความเข้มรวม $= 2I$ จึง $L_{\\text{รวม}} = L + 10\\log_{10}2 \\approx L + 3$ dB"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "$1\\ \\mathrm{dB}$", "correct": false, "feedback": "การบวกเสียงเท่ากันสองแหล่งทำให้ระดับเพิ่มมากกว่านี้"}, {"id": "b", "text": "$3\\ \\mathrm{dB}$", "correct": true}, {"id": "c", "text": "$6\\ \\mathrm{dB}$", "correct": false, "feedback": "$6\\ \\mathrm{dB}$ เป็นผลของการเพิ่มความเข้มเป็นสี่เท่า ซึ่งไม่ใช่การรวมสองแหล่ง"}, {"id": "d", "text": "$10\\ \\mathrm{dB}$", "correct": false, "feedback": "$10\\ \\mathrm{dB}$ คือความเข้มเพิ่มขึ้นสิบเท่า ซึ่งมากเกินไปสำหรับการรวมสองแหล่งเท่ากัน"}]
+  - id: "engineering.environmental.noise-control.p003"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 2
+    type: "numeric"
+    stem: "โรงงานแห่งหนึ่งมีเครื่องปั่นไฟ 3 เครื่องเหมือนกัน ที่ตำแหน่งรับเสียงแต่ละเครื่องทำให้เกิด $80\\ \\mathrm{dB}$ ถ้าเดินพร้อมกันทั้งสามเครื่อง ระดับรวมที่จุดนั้นเท่ากับกี่ dB (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["รวมระดับเสียงต้องรวมความเข้ม ไม่ใช่รวมค่า dB ตรง ๆ", "ความเข้มของเครื่องเหมือนกันสามเครื่องคือ $3I$"]
+    solution: "$L_{\\text{รวม}} = 10\\log_{10}(3\\times10^{8}) \\approx 84.8\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 84.8, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 240.0, "feedback": "บวกค่า dB ตรง ๆ ซึ่งไม่ถูกต้อง เพราะ dB เป็นลอการิทึม"}, {"match": 83.0, "feedback": "ใช้เครื่องสองเครื่องแทนสามเครื่อง"}]
+  - id: "engineering.environmental.noise-control.p004"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ที่จุดรับเสียงหนึ่งมีเสียงจากการจราจรบนถนน $85\\ \\mathrm{dB}$ และเสียงจากเครื่องซักผ้าในอาคาร $79\\ \\mathrm{dB}$ ระดับเสียงรวมโดยประมาณกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["แปลงแต่ละแหล่งเป็นความเข้มก่อน $10^{L/10}$", "แหล่งที่ดังกว่าจะมีผลต่อผลรวมมากกว่า"]
+    solution: "$10^{8.5} + 10^{7.9} = 3.162\\times10^8 + 7.943\\times10^7 = 3.956\\times10^8$ จึง $L = 10\\log_{10}(3.956\\times10^8) \\approx 86.0\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 86.0, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 82.0, "feedback": "หาค่าเฉลี่ยของ dB แทนการรวมความเข้ม"}, {"match": 85.0, "feedback": "ถือว่าเสียงที่เบากว่าไม่มีผลต่อผลรวม"}]
+  - id: "engineering.environmental.noise-control.p005"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 2
+    type: "numeric"
+    stem: "เครื่องจักรที่ระยะ 1 m วัดได้ $90\\ \\mathrm{dB}$ เป็นแหล่งกำเนิดแบบจุดในพื้นที่โล่ง ที่ระยะ 8 m ระดับเสียงโดยประมาณเป็นกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["แหล่งจุดในพื้นที่โล่ง เสียงลดลงตามกฎกำลังสองผกผัน", "ใช้สูตร $\\Delta L = 20\\log_{10}(r_1/r_2)$"]
+    solution: "$L_2 = L_1 - 20\\log_{10}(r_2/r_1) = 90 - 20\\log_{10}8 \\approx 71.9\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 71.9, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 60.0, "feedback": "คิดว่าลด 10 dB ทุกครั้งที่ระยะเพิ่มเป็นสองเท่า (สามครั้ง) ที่ถูกคือแหล่งจุดลดประมาณ 6 dB ต่อครั้ง"}, {"match": 80.96910013008056, "feedback": "ใช้ $10\\log_{10}$ สำหรับแหล่งจุด ซึ่งผิด ต้องใช้ 20 สำหรับแหล่งจุด"}]
+  - id: "engineering.environmental.noise-control.p006"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 2
+    type: "mcq"
+    stem: "แหล่งกำเนิดเสียงแบบเส้นยาว (เช่น ทางด่วนที่มีการจราจรต่อเนื่อง) เมื่อระยะเพิ่มเป็นสองเท่า ระดับเสียงจะลดลงประมาณกี่ dB ในพื้นที่โล่ง"
+    hints: ["แหล่งเส้นแผ่พลังงานเป็นทรงกระบอก ไม่ใช่ทรงกลม", "ใช้สูตร $\\Delta L = 10\\log_{10}(r_1/r_2)$"]
+    solution: "สำหรับแหล่งเส้นในพื้นที่โล่ง $\\Delta L = 10\\log_{10}2 \\approx 3$ dB ต่อการเพิ่มระยะเป็นสองเท่า"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "$3\\ \\mathrm{dB}$", "correct": true}, {"id": "b", "text": "$6\\ \\mathrm{dB}$", "correct": false, "feedback": "$6\\ \\mathrm{dB}$ เป็นของแหล่งกำเนิดแบบจุด ไม่ใช่แหล่งเส้น"}, {"id": "c", "text": "$10\\ \\mathrm{dB}$", "correct": false, "feedback": "ค่านี้มากเกินไปสำหรับแหล่งเส้นที่ระยะเพิ่มเป็นสองเท่า"}, {"id": "d", "text": "ไม่ลดลงเลย", "correct": false, "feedback": "เสียงจากแหล่งเส้นลดลงตามระยะเสมอในพื้นที่โล่ง"}]
+  - id: "engineering.environmental.noise-control.p007"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 3
+    type: "numeric"
+    stem: "เสียงที่ระยะ 2 m จากเครื่องจักรแหล่งจุดในพื้นที่โล่งมีระดับ $95\\ \\mathrm{dB}$ ที่ระยะกี่เมตรระดับเสียงจะลดเหลือ $60\\ \\mathrm{dB}$ (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["ใช้ $L_2 = L_1 - 20\\log_{10}(r_2/r_1)$ และแก้หา $r_2$", "$\\log_{10}(r_2/r_1) = (L_1 - L_2)/20$ แล้วอย่าลืมคูณด้วย $r_1 = 2$ m"]
+    solution: "$95 - 60 = 20\\log_{10}(r_2/2)$ จึง $r_2 = 2\\times10^{35/20} = 2\\times10^{1.75} \\approx 112.5\\ \\mathrm{m}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 112.5, "tolerance": 0.5, "unit": "m"}
+    misconceptions: [{"match": 56.2, "feedback": "ได้อัตราส่วน $r_2/r_1$ แล้วแต่ลืมคูณด้วยระยะอ้างอิง $r_1 = 2$ m"}, {"match": 6324.6, "feedback": "ใช้ $\\log_{10}(r_2/r_1) = (L_1-L_2)/10$ ซึ่งเป็นสูตรแหล่งเส้น แหล่งจุดต้องหารด้วย 20"}, {"match": 1.75, "feedback": "ได้ค่า $\\log_{10}(r_2/r_1)$ แล้วแต่ยังไม่ได้ยกกำลังสิบ"}]
+  - id: "engineering.environmental.noise-control.p008"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ในวันหนึ่งที่จุดรับเสียงข้างโรงงาน ระดับเสียงสูง $90\\ \\mathrm{dB}$ เป็นเวลา 1 ชั่วโมง และ $70\\ \\mathrm{dB}$ เป็นเวลา 7 ชั่วโมง ค่าระดับเสียงเทียบเท่า $L_{eq}$ ตลอด 8 ชั่วโมง เป็นกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ค่าเทียบเท่าเป็นการเฉลี่ยพลังงานเสียงตามเวลา ไม่ใช่เฉลี่ย dB ตรง ๆ", "$L_{eq} = 10\\log_{10}\\left[\\frac{1}{T}\\sum t_i\\,10^{L_i/10}\\right]$"]
+    solution: "$L_{eq} = 10\\log_{10}[(1\\cdot10^{9} + 7\\cdot10^{7})/8] \\approx 81.3\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 81.3, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 72.5, "feedback": "เฉลี่ยค่า dB ตรง ๆ โดยน้ำหนักเวลา ซึ่งผิด"}, {"match": 84.3, "feedback": "บวก 3 dB โดยไม่มีเหตุผล"}]
+  - id: "engineering.environmental.noise-control.p009"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 3
+    type: "numeric"
+    stem: "สายพานลำเลียงยาวซึ่งถือเป็นแหล่งเส้นวัดได้ $85\\ \\mathrm{dB}$ ที่ระยะ 5 m ในพื้นที่โล่ง ถ้าระยะเป็น 50 m ระดับเสียงโดยประมาณกี่ dB"
+    hints: ["สำหรับแหล่งเส้นใช้ $\\Delta L = 10\\log_{10}(r_1/r_2)$", "ระยะเพิ่มเป็น 10 เท่า จึงลดเป็น 10 $\\log_{10}10$"]
+    solution: "$L_2 = 85 - 10\\log_{10}(50/5) = 85 - 10 = 75\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 75.0, "tolerance": 0.05, "unit": "dB"}
+    misconceptions: [{"match": 65.0, "feedback": "ใช้สูตรแหล่งจุด ซึ่งลดมากกว่าความจริง"}, {"match": 85.0, "feedback": "คิดว่าระยะไม่มีผลต่อเสียง"}]
+  - id: "engineering.environmental.noise-control.p010"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ที่จุดรับเสียงหนึ่งมีเสียง 80 dB และ 77 dB จากสองเครื่องที่ทำงานพร้อมกัน ระดับรวมโดยประมาณกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ความต่างของ 3 dB ทำให้ความเข้มของแหล่งที่ดังน้อยกว่ามีผลไม่มาก", "รวมความเข้ม $10^{8.0} + 10^{7.7}$ แล้วแปลงกลับ"]
+    solution: "$10^{8} + 10^{7.7} = 1.0\\times10^8 + 5.012\\times10^7 = 1.5012\\times10^8$ จึง $L \\approx 81.8\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 81.8, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 87.7, "feedback": "บวกค่า dB ตรง ๆ"}, {"match": 80.0, "feedback": "คิดว่าระดับรวมเท่ากับแหล่งที่ดังที่สุดเสมอ"}]
+  - id: "engineering.environmental.noise-control.p011"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ผนังกั้นเสียงลดระดับเสียงลง $20\\ \\mathrm{dB}$ ได้ พลังงานเสียง (ความเข้ม) ที่ผ่านผนังไปเหลือกี่เปอร์เซ็นต์ของเดิม (ทศนิยม 0 ตำแหน่ง)"
+    hints: ["ความเข้มที่ผ่านผนัง $= I_0 \\times 10^{-\\Delta L/10}$", "$\\Delta L = 20$ จึงได้ $10^{-2}$ หมายถึงเหลือ 1%"]
+    solution: "ความเข้มที่เหลือ $= 10^{-20/10} = 10^{-2} = 0.01$ จึงเหลือ 1% ของเดิม และลดไป 99%"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 1.0, "tolerance": 0.05, "unit": "%"}
+    misconceptions: [{"match": 10.0, "feedback": "คิดว่าลด 20 dB คือความเข้มลดเหลือ 10%"}, {"match": 99.0, "feedback": "ตอบเปอร์เซ็นต์ที่ลดแทนที่จะตอบส่วนที่เหลือ"}]
+  - id: "engineering.environmental.noise-control.p012"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ระดับเสียงที่ต้องลดจาก $95\\ \\mathrm{dB}$ เหลือ $85\\ \\mathrm{dB}$ ที่จุดหนึ่ง ความดันเสียงที่จุดนั้นต้องลดเป็นกี่เท่า (ทศนิยม 2 ตำแหน่ง ใช้ความดันเสียงกับ $L = 20\\log_{10}(p/p_0)$)"
+    hints: ["ความต่าง 10 dB ตามสูตรความดันเสียงใช้ 20 หน่วยต่อ 1 เท่าในลอการิทึม", "อัตราส่วนความดัน $p_1/p_2 = 10^{\\Delta L/20}$"]
+    solution: "$p_1/p_2 = 10^{10/20} = 10^{0.5} \\approx 3.16$ เท่า"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 3.16, "tolerance": 0.01, "unit": "เท่า"}
+    misconceptions: [{"match": 10.0, "feedback": "ใช้สูตรความเข้มกับความดัน"}, {"match": 1.78, "feedback": "ใช้ความต่าง 5 dB แทน 10 dB"}]
+  - id: "engineering.environmental.noise-control.p013"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ในช่วงเวลา 1 ชั่วโมง ที่ตลาดนัดแห่งหนึ่ง ระดับเสียงคงที่ 75 dB เป็นเวลา 15 นาที, 80 dB เป็นเวลา 30 นาที และ 90 dB เป็นเวลา 15 นาที จงหา $L_{eq}$ ของชั่วโมงนี้เป็นกี่ dB (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["แบ่งเวลาเป็นสัดส่วน $0.25$, $0.5$ และ $0.25$ ของชั่วโมง", "เฉลี่ยความเข้มตามสัดส่วนเวลา แล้วแปลงกลับเป็น dB"]
+    solution: "$L_{eq} = 10\\log_{10}(0.25\\cdot10^{7.5} + 0.5\\cdot10^{8} + 0.25\\cdot10^{9}) \\approx 84.9\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 84.9, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 81.2, "feedback": "เฉลี่ยค่า dB ตรง ๆ โดยไม่ถ่วงน้ำหนักด้วยความเข้ม"}, {"match": 81.9, "feedback": "ลบ 3 dB จากค่าที่ถูกต้องโดยไม่มีเหตุผล"}]
+  - id: "engineering.environmental.noise-control.p014"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 4
+    type: "numeric"
+    stem: "เครื่องจักรแหล่งจุดวัดได้ $60\\ \\mathrm{dB}$ ที่ระยะ 2 m บ้านเรือนที่ระยะ 16 m จะได้ระดับเสียงโดยประมาณกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ระยะเพิ่มเป็น 8 เท่า ($16/2 = 8$)", "ใช้ $20\\log_{10}8 \\approx 18.1$"]
+    solution: "$L = 60 - 20\\log_{10}8 = 60 - 18.1 = 41.9\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 41.9, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 51.0, "feedback": "ใช้ 10 หน่วยแทน 20 หน่วยสำหรับแหล่งจุด"}, {"match": 35.9, "feedback": "ใช้ระยะ 16 แทนอัตราส่วนระยะ 8"}]
+  - id: "engineering.environmental.noise-control.p015"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 2
+    type: "mcq"
+    stem: "ข้อใดเป็นการควบคุมเสียงที่แหล่งกำเนิด (source control) เป็นลำดับแรกที่ควรพิจารณา"
+    hints: ["ลองนึกถึงลำดับ: แหล่งกำเนิด ทางผ่าน ผู้รับ", "การแก้ที่ต้นทางมักมีประสิทธิภาพสูงที่สุดและดูแลได้ยั่งยืนที่สุด"]
+    solution: "ลำดับการควบคุมเสียงคือ ที่แหล่งกำเนิด ทางผ่าน และผู้รับ ตามลำดับที่ควรพิจารณา"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ให้ผู้ทำงานใส่ที่อุดหูตลอดเวลา", "correct": false, "feedback": "นี่เป็นการควบคุมที่ผู้รับเสียง ซึ่งอยู่ท้ายสุดในลำดับการควบคุม"}, {"id": "b", "text": "เปลี่ยนเครื่องจักรเป็นชนิดที่เงียบกว่า หรือหุ้มเครื่องด้วยกล่องกันเสียง", "correct": true}, {"id": "c", "text": "ติดกำแพงกั้นระหว่างเส้นทางของเสียงกับบ้านพัก", "correct": false, "feedback": "กำแพงเป็นการควบคุมที่ทางผ่านของเสียง ไม่ใช่ที่แหล่ง"}, {"id": "d", "text": "ย้ายผู้ทำงานไปไกลจากเครื่องโดยไม่แก้เครื่อง", "correct": false, "feedback": "การเพิ่มระยะเป็นการควบคุมทางผ่าน ไม่ได้ลดการกำเนิดเสียง"}]
+  - id: "engineering.environmental.noise-control.p016"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 3
+    type: "match"
+    stem: "จับคู่ความหมายของปริมาณหรือการควบคุมเสียงกับคำอธิบาย"
+    pairs: [{"left": "dB(A)", "right": "ระดับเสียงที่ถ่วงน้ำหนักตามการตอบสนองของหูคน"}, {"left": "Leq", "right": "ระดับเสียงเทียบเท่าที่เฉลี่ยพลังงานเสียงตามเวลา"}, {"left": "กำแพงกันเสียง", "right": "การควบคุมที่ทางผ่านของเสียง"}, {"left": "หุ้มเครื่องด้วยกล่อง", "right": "การควบคุมที่แหล่งกำเนิด"}]
+    hints: ["dB(A) ใช้น้ำหนักตามความไวของหูต่อความถี่", "Leq มาจาก Equivalent continuous sound level"]
+    solution: "dB(A) ถ่วงน้ำหนักความถี่ตามการได้ยิน Leq คือระดับเฉลี่ยเทียบเท่าตามเวลา กำแพงกันเสียงควบคุมที่ทางผ่าน ส่วนการหุ้มเครื่องควบคุมที่แหล่งกำเนิด"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.environmental.noise-control.p017"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 4
+    type: "code"
+    stem: "เขียนฟังก์ชัน `combine_levels(levels)` ที่รับลิสต์ของระดับเสียง (dB) จากหลายแหล่ง แล้วคืนระดับรวม โดยรวมความเข้มก่อนแล้วแปลงกลับเป็น dB ใช้ไลบรารี `math` ได้"
+    hints: ["ความเข้มของแต่ละแหล่งคือ $10^{L/10}$ ใช้ `10 ** (L / 10)`", "อย่าบวกค่า dB ตรง ๆ และอย่าลืม `return`"]
+    solution: "ฟังก์ชันคือ `return 10 * math.log10(sum(10 ** (L / 10) for L in levels))` ตัวอย่าง [80, 80] ได้ประมาณ 83.01 dB"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "import math\n\ndef combine_levels(levels):\n    pass\n"
+    tests: "assert abs(combine_levels([80, 80]) - 83.0103) < 0.001, f\"combine_levels([80, 80]) ควรได้ 83.01 แต่ได้ {combine_levels([80, 80])}\"\nassert abs(combine_levels([80, 70]) - 80.4139) < 0.001, f\"combine_levels([80, 70]) ควรได้ 80.41 แต่ได้ {combine_levels([80, 70])}\"\nassert abs(combine_levels([60]) - 60) < 1e-9, f\"แหล่งเดียวต้องได้ค่าเดิม 60 แต่ได้ {combine_levels([60])}\"\nassert combine_levels([80, 70]) < combine_levels([80, 80]), \"การเพิ่มแหล่งที่เท่ากันต้องทำให้ระดับรวมสูงกว่า\"\n"
+    reference: "import math\n\ndef combine_levels(levels):\n    return 10 * math.log10(sum(10 ** (L / 10) for L in levels))\n"
+  - id: "engineering.environmental.noise-control.p018"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ตลาดนัดข้างถนนมีเสียงจากรถ 70 dB และเสียงจากเครื่องขยายเสียง 70 dB ที่จุดเดียวกัน ระดับรวมโดยประมาณกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["แหล่งสองแหล่งที่ระดับเท่ากันทำให้ความเข้มเป็นสองเท่า", "$10\\log_{10}2 \\approx 3$"]
+    solution: "$L = 70 + 10\\log_{10}2 \\approx 73.0\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 73.0, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 140.0, "feedback": "บวกค่า dB ตรง ๆ"}, {"match": 70.0, "feedback": "คิดว่าเสียงรวมเท่ากับแหล่งเดียวเสมอ"}]
+  - id: "engineering.environmental.noise-control.p019"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 3
+    type: "mcq"
+    stem: "สมการใดให้ระดับเสียงเป็นเดซิเบลจากอัตราส่วนความเข้มเสียง $I/I_0$ ได้ถูกต้อง"
+    hints: ["ความเข้มเป็นกำลังต่อพื้นที่ ใช้ลอการิทึมกับอัตราส่วนความเข้ม", "สำหรับความดันเสียงจะใช้ 20 แทน 10"]
+    solution: "เดซิเบลของความเข้มใช้ $10\\log_{10}$ ของอัตราส่วนความเข้มกับค่าอ้างอิง $I_0$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "$L = 10\\log_{10}(I/I_0)$", "correct": true}, {"id": "b", "text": "$L = 10\\,I/I_0$", "correct": false, "feedback": "สูตรนี้ไม่ใช่ลอการิทึม ทำให้ค่า dB ผิดไปมากเมื่อความเข้มเปลี่ยน"}, {"id": "c", "text": "$L = I\\,I_0 / 10$", "correct": false, "feedback": "ไม่ใช่รูปของเดซิเบล และไม่ได้เป็นอัตราส่วนของความเข้มกับค่าอ้างอิง"}, {"id": "d", "text": "$L = 20\\log_{10}(I/I_0)$", "correct": false, "feedback": "$20\\log_{10}$ ใช้กับความดันเสียง ไม่ใช่ความเข้มโดยตรง"}]
+  - id: "engineering.environmental.noise-control.p020"
+    topics: ["engineering.environmental.noise-control"]
+    difficulty: 5
+    type: "numeric"
+    stem: "ที่จุดหนึ่งมีระดับเสียง 88 dB จากแหล่ง A และ 84 dB จากแหล่ง B ถ้าแหล่ง A ลดลง 6 dB โดยแหล่ง B ไม่เปลี่ยน ระดับรวมใหม่โดยประมาณกี่ dB (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["คำนวณระดับรวมเดิมก่อนแล้วเทียบ หรือคำนวณใหม่โดยใช้ค่า A ที่ลดแล้ว", "ระดับ A ใหม่คือ $88 - 6 = 82$ dB"]
+    solution: "$L = 10\\log_{10}(10^{8.2} + 10^{8.4}) = 10\\log_{10}(1.585\\times10^8 + 2.512\\times10^8) \\approx 86.1\\ \\mathrm{dB}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 86.1, "tolerance": 0.1, "unit": "dB"}
+    misconceptions: [{"match": 83.45540463109295, "feedback": "ลดระดับรวมเดิมลง 6 dB โดยตรง ซึ่งไม่ถูกต้องเพราะแหล่ง B ไม่ได้เปลี่ยน"}, {"match": 84.0, "feedback": "คิดว่าเมื่อ A ลดแล้วระดับรวมจะเป็น B เสมอ โดยไม่รวมความเข้มจาก A"}]

@@ -1,0 +1,56 @@
+id: engineering.mining.mineral-processing
+subject: engineering
+title: { th: การแต่งแร่, en: Mineral processing }
+summary: ประมาณพลังงานบดด้วยกฎของบอนด์ คำนวณการเก็บกู้และอัตราส่วนความเข้มข้นจากสมดุลมวล และอธิบายหลักการแยกแร่กับการจัดการหาง
+difficulty: 7
+minutes: 40
+prerequisites: [engineering.process.mass-energy-balance, earthscience.geology.minerals-rocks]
+encompasses:
+  - { id: engineering.process.mass-energy-balance, weight: 0.4 }
+  - { id: earthscience.geology.minerals-rocks, weight: 0.2 }
+curriculum_tags: []
+references:
+  - { title: "Mineral processing", url: "https://en.wikipedia.org/wiki/Mineral_processing", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Froth flotation", url: "https://en.wikipedia.org/wiki/Froth_flotation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: flowsheet.svg
+    alt: "ผังกระบวนการแต่งแร่เรียงจากซ้ายไปขวา ประกอบด้วยกล่องป้อนแร่ ย่อยหยาบ คัดขนาด บดละเอียด และลอยแร่ เมื่อถึงลอยแร่มีลูกศรลงไปยังกล่องแร่เข้มข้นและหาง"
+    caption: "ผังกระบวนการแต่งแร่อย่างง่าย ใช้ประกอบความเข้าใจลำดับขั้นตอน ไม่ใช่แผนผังของโรงงานจริง"
+  - type: worked-example
+    title: การเก็บกู้และอัตราส่วนความเข้มข้นของโรงลอยแร่
+    problem: "ป้อน $F = 200$ t/h เกรดทองแดง $a = 2.0\\%$ ได้แร่เข้มข้น $C = 10$ t/h เกรด $c = 30\\%$ (ค่าสมมติ) ค่าการเก็บกู้และอัตราส่วนความเข้มข้นเป็นเท่าไร"
+    steps:
+      - text: "คำนวณการเก็บกู้: $R = Cc/(Fa) = 10\\times30/(200\\times2.0)\\times100 = 75\\%$"
+        why: "การเก็บกู้คือสัดส่วนของโลหะในแร่เข้มข้นต่อโลหะที่ป้อนเข้า"
+      - text: "คำนวณอัตราส่วนความเข้มข้น: $K = F/C = 200/10 = 20$"
+        why: "$K$ บอกว่าต้องป้อนแร่ 20 ตันเพื่อได้แร่เข้มข้น 1 ตัน"
+    answer: "การเก็บกู้ 75% และอัตราส่วนความเข้มข้น 20"
+  - type: worked-example
+    title: พลังงานบดด้วยกฎของบอนด์
+    problem: "แร่มี $W_i = 12$ kWh/t บดจาก $F_{80} = 25{,}000\\ \\mu\\mathrm{m}$ ให้ $P_{80} = 75\\ \\mu\\mathrm{m}$ (ค่าสมมติ) ใช้พลังงานประมาณเท่าไรต่อตัน"
+    steps:
+      - text: "ตรวจหน่วยให้เป็นไมครอนทั้งสองค่า: $F_{80} = 25\\,000$ และ $P_{80} = 75$"
+        why: "สูตรของบอนด์ต้องใช้หน่วยเดียวกันสำหรับขนาดทั้งสอง ไม่เช่นนั้นผลลัพธ์ผิดมาก"
+      - text: "แทนค่า: $W = 10\\times12\\times(1/\\sqrt{75} - 1/\\sqrt{25000}) = 120\\times(0.11547 - 0.00632) \\approx 13.10$"
+        why: "พจน์แรกใหญ่กว่าพจน์ที่สองมาก เพราะ $P_{80}$ เล็กกว่า $F_{80}$ มาก"
+    answer: "ประมาณ 13.10 kWh/t"
+  - { type: check, problem: engineering.mining.mineral-processing.p001, prompt: "นึกถึงว่าแร่ที่มีค่าอยู่ในเนื้อหินอย่างไร" }
+  - { type: check, problem: engineering.mining.mineral-processing.p007, prompt: "สังเกตชื่อสารเคมีที่ทำให้ผิวแร่เกาะกับฟองอากาศ" }
+glossary:
+  - { term: "การปลดปล่อย (liberation)", definition: "การลดขนาดจนแร่ที่มีค่าหลุดออกจากหินเนื้อ" }
+  - { term: "กฎของบอนด์", definition: "สมการประมาณพลังงานบดต่อตัน W = 10W_i(1/√P80 − 1/√F80)" }
+  - { term: "การเก็บกู้ (recovery)", definition: "สัดส่วนร้อยละของโลหะในแร่เข้มข้นต่อโลหะในแร่ป้อน" }
+  - { term: "อัตราส่วนความเข้มข้น", definition: "อัตราป้อนหารด้วยอัตราแร่เข้มข้น บอกว่าต้องป้อนแร่กี่หน่วยเพื่อได้แร่เข้มข้นหนึ่งหน่วย" }
+  - { term: "หาง (tailings)", definition: "ส่วนที่เหลือจากการแยกแร่ ซึ่งมีโลหะตกค้างและต้องจัดการอย่างปลอดภัย" }
+flashcards:
+  - { front: "กฎของบอนด์ใช้คำนวณอะไร", back: "พลังงานบดต่อตันจากขนาดป้อนและขนาดผลิตภัณฑ์ 80%" }
+  - { front: "ค่าการเก็บกู้คำนวณอย่างไร", back: "R = Cc/(Fa) × 100%" }
+  - { front: "สารเก็บ (collector) ในการลอยแร่ทำหน้าที่อะไร", back: "ทำให้ผิวแร่ที่ต้องการไม่ชอบน้ำและเกาะกับฟองอากาศ" }
+  - { front: "ทำไมต้องใช้หน่วยเดียวกันในสูตรบอนด์", back: "เพราะขนาด F80 และ P80 อยู่ในรากที่สอง ถ้าหน่วยไม่ตรงผลจะผิดมาก" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

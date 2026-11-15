@@ -1,0 +1,244 @@
+problems:
+  - id: "engineering.environmental.water-quality.p001"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 1
+    type: "numeric"
+    stem: "เติมเกลือ $0.25\\ \\mathrm{g}$ ลงในน้ำ $1\\ \\mathrm{L}$ ความเข้มข้นของเกลือเป็นกี่ $\\mathrm{mg/L}$"
+    hints: ["ความเข้มข้นแบบ mg/L คือมวลเป็นมิลลิกรัมต่อปริมาตรเป็นลิตร", "แปลงกรัมเป็นมิลลิกรัมก่อน โดย $1\\ \\mathrm{g} = 1000\\ \\mathrm{mg}$"]
+    solution: "มวล $= 0.25\\ \\mathrm{g} = 250\\ \\mathrm{mg}$ ปริมาตร $= 1\\ \\mathrm{L}$ จึงได้ $250\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 250, "tolerance": 0.01, "unit": "mg/L"}
+    misconceptions: [{"match": 0.25, "feedback": "ยังเป็นกรัมอยู่ ต้องคูณ 1000 เป็นมิลลิกรัมก่อน"}, {"match": 2500, "feedback": "คูณ 1000 เกินไป 1 เท่า มิลลิกรัมต่อลิตรคือ $250$ ไม่ใช่ $2500$"}]
+  - id: "engineering.environmental.water-quality.p002"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 1
+    type: "mcq"
+    stem: "น้ำเจือจางมาก ค่า $1\\ \\mathrm{ppm}$ โดยประมาณเท่ากับกี่ $\\mathrm{mg/L}$"
+    hints: ["ppm ย่อมาจาก parts per million หมายถึงส่วนต่อล้านส่วน", "สำหรับน้ำเจือจาง 1 ลิตรมีมวลประมาณ 1 กิโลกรัม (ประมาณ 10⁶ มิลลิกรัม) จึงเทียบได้กับ mg/L"]
+    solution: "สำหรับน้ำเจือจาง ค่า $1\\ \\mathrm{ppm}$ เทียบเท่า $1\\ \\mathrm{mg/L}$ โดยประมาณ ส่วน ppb เท่ากับ $\\mu\\mathrm{g/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "$1\\ \\mathrm{mg/L}$", "correct": true}, {"id": "b", "text": "$1000\\ \\mathrm{mg/L}$", "correct": false, "feedback": "หน่วยนี้มากกว่า 1 ppm ถึง 1000 เท่า ใกล้เคียงกับ $1\\ \\mathrm{g/L}$ ซึ่งเข้มข้นกว่าน้ำเจือจางมาก"}, {"id": "c", "text": "$0.001\\ \\mathrm{mg/L}$", "correct": false, "feedback": "นี่คือค่าของ ppb หรือ $\\mu\\mathrm{g/L}$ ที่เล็กกว่า ppm ถึงพันเท่า"}, {"id": "d", "text": "$1\\ \\mathrm{\\mu g/L}$", "correct": false, "feedback": "$1\\ \\mu\\mathrm{g/L}$ เท่ากับ 1 ppb ซึ่งน้อยกว่า 1 ppm ถึงพันเท่า"}]
+  - id: "engineering.environmental.water-quality.p003"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "numeric"
+    stem: "น้ำบาดาลในหมู่บ้านแห่งหนึ่งมี $\\mathrm{Ca}^{2+} = 40.0\\ \\mathrm{mg/L}$ และ $\\mathrm{Mg}^{2+} = 12.2\\ \\mathrm{mg/L}$ ความกระด้างรวมคิดเป็น $\\mathrm{mg\\,CaCO_3/L}$ เท่าใด (ใช้ $\\mathrm{CaCO_3} = 100.09$, $\\mathrm{Ca} = 40.08$, $\\mathrm{Mg} = 24.31$)"
+    hints: ["แปลงแต่ละไอออนให้เป็นค่าเทียบเท่า $\\mathrm{CaCO_3}$ ก่อนรวมกัน", "ตัวคูณของ $\\mathrm{Ca}^{2+}$ คือ $100.09/40.08$ และของ $\\mathrm{Mg}^{2+}$ คือ $100.09/24.31$"]
+    solution: "ความกระด้างของ Ca $= 40.0 \\times 100.09/40.08 = 99.89$ ความกระด้างของ Mg $= 12.2 \\times 100.09/24.31 = 50.23$ รวม $\\approx 150.1\\ \\mathrm{mg\\,CaCO_3/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 150.1, "tolerance": 1.5012, "unit": "mg CaCO3/L"}
+    misconceptions: [{"match": 52.2, "feedback": "บวกค่า mg/L ของไอออนตรง ๆ โดยไม่แปลงเป็น $\\mathrm{CaCO_3}$ ต้องใช้ตัวคูณก่อนบวก"}, {"match": 99.9, "feedback": "ลืมนับ $\\mathrm{Mg}^{2+}$ ซึ่งมีส่วนทำให้น้ำกระด้างด้วย"}]
+  - id: "engineering.environmental.water-quality.p004"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "mcq"
+    stem: "ค่าใดบอกว่าน้ำมีสารอินทรีย์ที่จุลินทรีย์ย่อยสลายได้มากเพียงใด"
+    hints: ["BOD ย่อมาจาก Biochemical Oxygen Demand", "พิจารณาว่าค่าใดวัดปริมาณออกซิเจนที่จุลินทรีย์ใช้ไป"]
+    solution: "BOD คือปริมาณออกซิเจนที่จุลินทรีย์ใช้ย่อยสารอินทรีย์ในน้ำ ค่ายิ่งสูงแปลว่ามีอินทรีย์ที่ย่อยได้มาก"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "pH", "correct": false, "feedback": "pH บอกความเป็นกรด-ด่าง ไม่ได้บอกปริมาณอินทรีย์ที่ย่อยสลายได้โดยตรง"}, {"id": "b", "text": "BOD", "correct": true}, {"id": "c", "text": "ความกระด้างรวม", "correct": false, "feedback": "ความกระด้างบอกปริมาณแคลเซียมและแมกนีเซียม ไม่ได้บอกการย่อยสลายโดยจุลินทรีย์"}, {"id": "d", "text": "สี (ความเข้มสี)", "correct": false, "feedback": "สีบอกความเข้มของน้ำ แต่ไม่ได้วัดการใช้ออกซิเจนของจุลินทรีย์"}]
+  - id: "engineering.environmental.water-quality.p005"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "numeric"
+    stem: "โรงงานอาหารปล่อยน้ำทิ้ง $2{,}000\\ \\mathrm{m^3/d}$ ที่มี BOD $30\\ \\mathrm{mg/L}$ (ค่าสมมติเพื่อฝึกคิด) ภาระมลพิษ BOD เป็นกี่ $\\mathrm{kg/d}$"
+    hints: ["ภาระมลพิษ $=$ ความเข้มข้น $\\times$ ปริมาตรต่อวัน", "$\\mathrm{mg}\\times\\mathrm{m^3}$ ได้กรัม ต้องหารด้วย 1000 เพื่อให้ได้กิโลกรัม"]
+    solution: "ภาระ $= 30\\ \\mathrm{mg/L} \\times 2000\\ \\mathrm{m^3/d} \\times \\dfrac{1}{1000} = 60\\ \\mathrm{kg/d}$ (เพราะ $\\mathrm{mg/L} \\times \\mathrm{m^3}$ เท่ากับกรัม)"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 60.0, "tolerance": 0.1, "unit": "kg/d"}
+    misconceptions: [{"match": 60000.0, "feedback": "ลืมหารด้วย 1000 เมื่อเปลี่ยนมิลลิกรัมเป็นกิโลกรัม"}, {"match": 0.06, "feedback": "หารด้วย $10^6$ เกินไป เพราะ $\\mathrm{mg/L} \\times \\mathrm{m^3}$ ได้กรัม จึงหารด้วย 1000 ครั้งเดียวก็เป็นกิโลกรัม"}]
+  - id: "engineering.environmental.water-quality.p006"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "numeric"
+    stem: "แม่น้ำมีอัตราการไหล $5\\ \\mathrm{m^3/s}$ และ BOD $2\\ \\mathrm{mg/L}$ น้ำทิ้งที่ไหลลง $0.1\\ \\mathrm{m^3/s}$ มี BOD $50\\ \\mathrm{mg/L}$ เมื่อผสมกันทันที BOD ของน้ำผสมเป็นกี่ $\\mathrm{mg/L}$ (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    hints: ["คิดสมดุลมวล: ภาระรวมก่อนผสม $=$ ภาระรวมหลังผสม", "ใช้ค่าเฉลี่ยถ่วงน้ำหนักด้วยอัตราการไหล ไม่ใช่ค่าเฉลี่ยธรรมดา"]
+    solution: "ภาระรวม $= 5 \\times 2 + 0.1 \\times 50 = 15\\ \\mathrm{g/s}$ อัตราการไหลรวม $= 5.1\\ \\mathrm{m^3/s}$ จึงได้ $C = 15 / 5.1 \\approx 2.94\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 2.94, "tolerance": 0.03, "unit": "mg/L"}
+    misconceptions: [{"match": 26.0, "feedback": "หาค่าเฉลี่ยธรรมดาของความเข้มข้น โดยไม่ถ่วงด้วยอัตราการไหล จึงผิด"}]
+  - id: "engineering.environmental.water-quality.p007"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ทดสอบ BOD ของน้ำเสียชุมชนได้ $L_0 = 250\\ \\mathrm{mg/L}$ (ค่า BOD สุดท้ายตามทฤษฎี) และค่าคงที่อัตรา $k = 0.23\\ \\mathrm{/d}$ จงหาค่า $\\mathrm{BOD}_5$ ตามสมการ $L_t = L_0\\,(1-e^{-kt})$ เป็น $\\mathrm{mg/L}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["แทนค่า $t = 5\\ \\mathrm{d}$ ลงในสมการ โดยต้องคำนวณ $kt$ ก่อน", "$kt = 0.23 \\times 5 = 1.15$ แล้วหา $1 - e^{-1.15}$"]
+    solution: "$kt = 0.23 \\times 5 = 1.15$ ดังนั้น $L_5 = 250(1-e^{-1.15}) = 250 \\times 0.6834 \\approx 170.8\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 170.8, "tolerance": 0.2, "unit": "mg/L"}
+    misconceptions: [{"match": 250.0, "feedback": "คิดว่า BOD ที่ 5 วันเท่ากับ $L_0$ ทั้งหมด ซึ่งไม่ถูกต้อง เพราะยังย่อยไม่หมด"}, {"match": 51.4, "feedback": "ใช้เวลา 1 วันแทน 5 วัน ทำให้ค่าต่ำเกินไป"}]
+  - id: "engineering.environmental.water-quality.p008"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ค่า $\\mathrm{BOD}_5$ ของน้ำทิ้งวัดได้ $80\\ \\mathrm{mg/L}$ และ $k = 0.2\\ \\mathrm{/d}$ ค่า BOD สุดท้าย $L_0$ โดยประมาณเท่ากับกี่ $\\mathrm{mg/L}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ใช้สมการเดียวกับโจทย์ก่อนหน้าแต่ย้ายข้างเพื่อหา $L_0$", "$L_0 = L_5 / (1 - e^{-5k})$"]
+    solution: "$L_0 = 80 / (1 - e^{-1}) = 80 / 0.6321 \\approx 126.6\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 126.6, "tolerance": 0.2, "unit": "mg/L"}
+    misconceptions: [{"match": 80.0, "feedback": "ใช้ค่า $\\mathrm{BOD}_5$ เป็น $L_0$ โดยตรง ซึ่งต่ำกว่าความจริง"}, {"match": 441.3, "feedback": "ใช้ $k t = 0.2$ แทน $5k$ จึงได้ $L_0$ ผิด"}]
+  - id: "engineering.environmental.water-quality.p009"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "expression"
+    stem: "ภาระมลพิษ (กิโลกรัมต่อวัน) เมื่อ $Q$ คืออัตราการไหล $\\mathrm{m^3/d}$ และ $C$ คือความเข้มข้น $\\mathrm{mg/L}$ เขียนนิพจน์ของภาระในรูปเศษส่วนหนึ่งเศษส่วน"
+    hints: ["Q และ C คูณกันได้มิลลิกรัมต่อวัน", "หารด้วย 1000 เพื่อเปลี่ยนมิลลิกรัมเป็นกิโลกรัม"]
+    solution: "ภาระ $= QC/1000$ ซึ่งสอดคล้องกับการคำนวณ $2000 \\times 30 / 1000 = 60\\ \\mathrm{kg/d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "\\frac{QC}{1000}", "variables": ["Q", "C"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "QC", "feedback": "ลืมหารด้วย 1000 ค่าที่ได้จะเป็นมิลลิกรัมต่อวัน ไม่ใช่กิโลกรัมต่อวัน"}, {"match": "1000\\cdot Q\\cdot C", "feedback": "คูณ 1000 แทนที่จะหาร ทำให้หน่วยผิดไปเป็นพันเท่า"}]
+    prefix: "ภาระ ="
+  - id: "engineering.environmental.water-quality.p010"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "text"
+    stem: "ตัวชี้วัดคุณภาพน้ำที่บอกปริมาณออกซิเจนที่จุลินทรีย์ใช้ย่อยสารอินทรีย์ใน 5 วัน ใช้ตัวย่อภาษาอังกฤษว่าอะไร"
+    hints: ["ตัวย่อขึ้นต้นด้วย B และลงท้ายด้วยเลข 5 หมายถึงระยะเวลา 5 วัน", "ชื่อเต็มคือ Biochemical Oxygen Demand"]
+    solution: "ตอบว่า BOD หรือ BOD₅ ซึ่งหมายถึงการวัด BOD ที่ 5 วัน"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    accepted: ["BOD", "BOD5", "BOD₅", "bod", "บีโอดี", "บีโอดี 5"]
+    misconceptions: []
+  - id: "engineering.environmental.water-quality.p011"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ระบบบำบัดน้ำเสียชุมชนรับน้ำเข้าที่อัตรา $12\\ \\mathrm{L/s}$ และมี BOD $45\\ \\mathrm{mg/L}$ ภาระ BOD ที่เข้าระบบเป็นกี่ $\\mathrm{kg/d}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["แปลงวินาทีเป็นวันก่อน: $1\\ \\mathrm{d} = 86400\\ \\mathrm{s}$", "แปลงลิตรเป็นลูกบาศก์เมตรก่อนคูณ โดย $1\\ \\mathrm{m^3} = 1000\\ \\mathrm{L}$"]
+    solution: "อัตราการไหล $= 12\\ \\mathrm{L/s} \\times 86400 / 1000 = 1036.8\\ \\mathrm{m^3/d}$ ภาระ $= 1036.8 \\times 45 / 1000 \\approx 46.7\\ \\mathrm{kg/d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 46.7, "tolerance": 0.1, "unit": "kg/d"}
+    misconceptions: [{"match": 46656.0, "feedback": "ลืมหารด้วย 1000 เมื่อเปลี่ยนมิลลิกรัมเป็นกิโลกรัม"}, {"match": 540.0, "feedback": "ลืมแปลงหน่วยเวลาจากวินาทีเป็นวัน"}]
+  - id: "engineering.environmental.water-quality.p012"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ค่า BOD สุดท้ายตามทฤษฎีของน้ำที่ทดสอบ $L_0 = 200$ mg/L เวลาที่ใช้ทดสอบคือ $t = 5$ d ค่า $k$ มีหน่วย $\\mathrm{/d}$ ถ้า $\\mathrm{BOD}_5$ ที่วัดได้เป็น $100\\ \\mathrm{mg/L}$ ค่า $k$ มีค่าเท่ากับกี่ $\\mathrm{/d}$ (ทศนิยม 3 ตำแหน่ง)"
+    hints: ["แทน $L_5 = 100$ และ $L_0 = 200$ ลงในสมการ แล้วหา $e^{-5k}$", "ใช้ลอการิทึมธรรมชาติเพื่อดึง $k$ ออกมา: $k = -\\ln(1 - L_5/L_0)/5$"]
+    solution: "$1 - 100/200 = 0.5 = e^{-5k}$ จึงได้ $k = -\\ln(0.5)/5 = 0.139\\ \\mathrm{/d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.139, "tolerance": 0.002, "unit": "/d"}
+    misconceptions: [{"match": 0.1, "feedback": "ใช้ $L_5/L_0$ ตรงๆ แล้วหารด้วย 5 โดยไม่ใช้ลอการิทึม"}, {"match": 0.693, "feedback": "ลืมหารด้วยเวลา 5 วัน"}]
+  - id: "engineering.environmental.water-quality.p013"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ในการทดสอบ BOD ขวดตัวอย่างมีอัตราส่วนน้ำเสียต่อน้ำ $P = 0.02$ วัดปริมาณออกซิเจนละลาย (DO) ได้ $D_1 = 8.5\\ \\mathrm{mg/L}$ และหลัง 5 วัน $D_2 = 3.0\\ \\mathrm{mg/L}$ ค่า $\\mathrm{BOD}_5$ เป็นกี่ $\\mathrm{mg/L}$"
+    hints: ["ความต่างของ DO คือออกซิเจนที่ถูกใช้ไปในขวด $(D_1 - D_2)$", "หารด้วยอัตราส่วน $P$ เพื่อขยายกลับไปเป็นความเข้มข้นของตัวอย่างเดิม"]
+    solution: "$\\mathrm{BOD}_5 = (D_1 - D_2)/P = (8.5 - 3.0)/0.02 = 275\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 275.0, "tolerance": 0.5, "unit": "mg/L"}
+    misconceptions: [{"match": 0.11, "feedback": "คูณด้วย $P$ แทนที่จะหาร ทำให้ค่าเล็กเกินจริงมาก"}, {"match": 5.5, "feedback": "ลืมหารด้วยอัตราส่วน $P$ จึงได้แค่ความต่างของ DO"}]
+  - id: "engineering.environmental.water-quality.p014"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 4
+    type: "numeric"
+    stem: "น้ำชนิดหนึ่งมีค่า $\\mathrm{pH} = 4.5$ ความเข้มข้นของไฮโดรเจนไอออน $[\\mathrm{H^+}]$ เป็นกี่ $\\mu\\mathrm{mol/L}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["$\\mathrm{pH} = -\\log_{10}[\\mathrm{H^+}]$ จึง $[\\mathrm{H^+}] = 10^{-\\mathrm{pH}}$ mol/L", "คูณด้วย $10^6$ เพื่อเปลี่ยนจาก mol/L เป็น $\\mu\\mathrm{mol/L}$"]
+    solution: "$[\\mathrm{H^+}] = 10^{-4.5} = 3.162\\times10^{-5}\\ \\mathrm{mol/L} = 31.6\\ \\mu\\mathrm{mol/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 31.6, "tolerance": 0.1, "unit": "umol/L"}
+    misconceptions: [{"match": 4.5, "feedback": "ตอบค่า pH เอง ซึ่งไม่ใช่ความเข้มข้นของไฮโดรเจนไอออน"}, {"match": 3.1622776601683795e-05, "feedback": "ลืมคูณด้วย $10^6$ เปลี่ยนหน่วยจาก mol/L เป็น $\\mu\\mathrm{mol/L}$ ค่าที่ได้ยังเป็นหน่วย mol/L"}]
+  - id: "engineering.environmental.water-quality.p015"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 4
+    type: "match"
+    stem: "จับคู่ตัวย่อกับความหมายที่ถูกต้อง"
+    pairs: [{"left": "DO", "right": "ออกซิเจนที่ละลายอยู่ในน้ำ"}, {"left": "BOD₅", "right": "ออกซิเจนที่จุลินทรีย์ใช้ไปใน 5 วัน"}, {"left": "COD", "right": "ออกซิเจนที่ใช้ออกซิไดซ์สารทั้งหมดด้วยสารเคมี"}, {"left": "TSS", "right": "ของแข็งแขวนลอยที่กรองได้"}]
+    hints: ["DO ย่อจาก Dissolved Oxygen", "COD ใช้สารเคมีออกซิไดซ์ จึงวัดได้มากกว่า BOD โดยทั่วไป"]
+    solution: "DO คือออกซิเจนที่ละลายในน้ำ BOD₅ คือออกซิเจนที่จุลินทรีย์ใช้ใน 5 วัน COD คือออกซิเจนสมมูลจากการออกซิไดซ์ด้วยสารเคมี TSS คือของแข็งแขวนลอย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.environmental.water-quality.p016"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ค่า $\\mathrm{BOD}$ ที่เวลา $t$ เป็นร้อยละ 90 ของ $L_0$ เมื่อ $k = 0.23\\ \\mathrm{/d}$ ต้องใช้เวลากี่วัน (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ให้ $L_t / L_0 = 0.9$ แล้วแก้สมการหา $t$", "ใช้ $e^{-kt} = 0.1$ แล้วใช้ลอการิทึมธรรมชาติ"]
+    solution: "$1 - e^{-kt} = 0.9$ จึง $e^{-kt} = 0.1$ และ $t = \\ln(10)/k = 2.3026/0.23 \\approx 10.0\\ \\mathrm{d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 10.0, "tolerance": 0.1, "unit": "d"}
+    misconceptions: [{"match": 0.53, "feedback": "คูณด้วย $k$ แทนการหารด้วย $k$"}, {"match": 3.9, "feedback": "ใช้ $0.9/k$ ซึ่งไม่ได้มาจากการแก้สมการเอกซ์โพเนนเชียล"}]
+  - id: "engineering.environmental.water-quality.p017"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "numeric"
+    stem: "สารหนึ่งมีความเข้มข้น $0.5\\ \\mu\\mathrm{g/L}$ มีค่าเป็น $\\mathrm{mg/L}$ เท่ากับเท่าใด (ตอบในรูปทศนิยม)"
+    hints: ["$1\\ \\mathrm{mg} = 1000\\ \\mu\\mathrm{g}$", "หารค่าด้วย 1000"]
+    solution: "$0.5\\ \\mu\\mathrm{g/L} = 0.5/1000\\ \\mathrm{mg/L} = 0.0005\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.0005, "tolerance": 1e-05, "unit": "mg/L"}
+    misconceptions: [{"match": 0.5, "feedback": "ไม่ได้แปลงหน่วย ยังเป็นไมโครกรัมอยู่"}, {"match": 0.005, "feedback": "หารผิดจำนวนหลัก ต้องหารด้วย 1000 พอดี"}]
+  - id: "engineering.environmental.water-quality.p018"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 5
+    type: "code"
+    stem: "เขียนฟังก์ชัน `bod_curve(L0, k, t)` ที่คืนค่า BOD ที่เวลา $t$ วัน ตามสมการ $L_t = L_0(1-e^{-kt})$ ใช้ไลบรารีมาตรฐาน `math` ได้"
+    hints: ["ใช้ `math.exp(x)` ซึ่งคืนค่า $e^{x}$ ดังนั้น $e^{-kt}$ คือ `math.exp(-k * t)`", "อย่าลืม `return` ค่าที่คำนวณได้ ไม่เช่นนั้นจะได้ None"]
+    solution: "ฟังก์ชันคือ `return L0 * (1 - math.exp(-k * t))` ตัวอย่างที่ $L_0 = 200$, $k = 0.2$, $t = 5$ ได้ประมาณ $126.42\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "import math\n\ndef bod_curve(L0, k, t):\n    pass\n"
+    tests: "assert abs(bod_curve(200, 0.2, 5) - 126.4241) < 0.001, f\"bod_curve(200, 0.2, 5) ควรได้ 126.42 แต่ได้ {bod_curve(200, 0.2, 5)}\"\nassert abs(bod_curve(200, 0.2, 0)) < 1e-9, f\"ที่ t = 0 ควรได้ 0 แต่ได้ {bod_curve(200, 0.2, 0)}\"\nassert bod_curve(200, 0.2, 5) < 200, \"ค่า BOD ที่เวลาจำกัดต้องน้อยกว่า L0\"\n"
+    reference: "import math\n\ndef bod_curve(L0, k, t):\n    return L0 * (1 - math.exp(-k * t))\n"
+  - id: "engineering.environmental.water-quality.p019"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 1
+    type: "mcq"
+    stem: "pH ของน้ำเท่ากับ 7 หมายถึงอะไร"
+    hints: ["ค่า pH ต่ำกว่า 7 เป็นกรด สูงกว่า 7 เป็นด่าง", "7 อยู่ตรงกลางของมาตราส่วน"]
+    solution: "pH 7 แสดงว่า $[\\mathrm{H^+}] = [\\mathrm{OH^-}]$ ที่ 25 °C จึงเป็นกลาง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "น้ำเป็นกลาง", "correct": true}, {"id": "b", "text": "น้ำเป็นกรดแก่", "correct": false, "feedback": "กรดแก่มี pH ต่ำกว่า 7 มาก เช่น pH 1 หรือ 2"}, {"id": "c", "text": "น้ำเป็นด่างแก่", "correct": false, "feedback": "ด่างมี pH สูงกว่า 7 แต่ 7 ยังเป็นกลาง"}, {"id": "d", "text": "น้ำไม่มีไอออนใด ๆ", "correct": false, "feedback": "น้ำบริสุทธิ์ยังแตกตัวเป็น $\\mathrm{H^+}$ และ $\\mathrm{OH^-}$ เล็กน้อยที่ 25 °C"}]
+  - id: "engineering.environmental.water-quality.p020"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ตัวอย่างน้ำหนึ่งมีอัตราการไหล $30\\ \\mathrm{L/min}$ และ BOD $240\\ \\mathrm{mg/L}$ ภาระ BOD ที่ไหลเข้าเป็นกี่ $\\mathrm{kg/d}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["$1\\ \\mathrm{d} = 1440\\ \\mathrm{min}$", "มิลลิกรัมเป็นกิโลกรัมต้องหารด้วย $10^6$ และลิตรต่อวันที่คูณกับความเข้มข้นจะได้มิลลิกรัมต่อวัน"]
+    solution: "ปริมาตรต่อวัน $= 30 \\times 1440 = 43200\\ \\mathrm{L/d}$ ภาระ $= 43200 \\times 240 / 10^6 = 10.4\\ \\mathrm{kg/d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 10.4, "tolerance": 0.1, "unit": "kg/d"}
+    misconceptions: [{"match": 10368.0, "feedback": "ได้หน่วยเป็นกรัมต่อวัน ยังไม่ได้หารด้วย 1000 อีกครั้งเพื่อเปลี่ยนเป็นกิโลกรัม"}, {"match": 0.0072, "feedback": "ลืมแปลงนาทีเป็นวัน"}]
+  - id: "engineering.environmental.water-quality.p021"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 4
+    type: "mcq"
+    stem: "ข้อใดเป็นการแปลค่าหน่วยที่ถูกต้องสำหรับน้ำที่มีความกระด้าง $120\\ \\mathrm{mg\\,CaCO_3/L}$"
+    hints: ["ความกระด้างรายงานเทียบกับ $\\mathrm{CaCO_3}$ เพื่อให้เปรียบเทียบกันได้", "ค่าที่เป็นมิลลิกรัมต่อลิตรของ $\\mathrm{CaCO_3}$ ไม่เท่ากับค่าของ $\\mathrm{Ca^{2+}}$"]
+    solution: "การรายงานความกระด้างเป็น mg CaCO₃/L เป็นมาตรฐานการเปรียบเทียบ ไม่ใช่มวลของแคลเซียมโดยตรง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ความกระด้างนี้มีค่าเท่ากับ 120 mg/L ของ $\\mathrm{Ca^{2+}}$ พอดี", "correct": false, "feedback": "ค่าเป็น $\\mathrm{CaCO_3}$ ต้องแปลงกลับด้วยตัวคูณ ไม่ใช่ค่าเท่ากันพอดี"}, {"id": "b", "text": "ความกระด้างนี้เท่ากับ 120 mg/L ของ $\\mathrm{CaCO_3}$ ซึ่งเป็นหน่วยมาตรฐานของการรายงานความกระด้าง", "correct": true}, {"id": "c", "text": "ความกระด้างนี้มีค่าเท่ากับ 120 ppb เสมอ", "correct": false, "feedback": "ppb เป็นหน่วยเล็กมาก ค่า 120 ppb ไม่ได้ทำให้น้ำกระด้างมาก"}, {"id": "d", "text": "ความกระด้างนี้ไม่สามารถวัดในหน่วย mg/L ได้", "correct": false, "feedback": "ความกระด้างมักรายงานเป็น mg/L ของ $\\mathrm{CaCO_3}$"}]
+  - id: "engineering.environmental.water-quality.p022"
+    topics: ["engineering.environmental.water-quality"]
+    difficulty: 4
+    type: "numeric"
+    stem: "น้ำเสียจากโรงงานแปรรูปผักมี $L_0 = 300\\ \\mathrm{mg/L}$ (ค่าสมมติ) และ $k = 0.15\\ \\mathrm{/d}$ จงหาค่า BOD ที่ผ่านไป 3 วัน เป็น $\\mathrm{mg/L}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ใช้สมการ $L_t = L_0(1-e^{-kt})$ เดิม แทนค่า $t = 3$", "คำนวณ $kt$ ก่อน จากนั้นหา $e^{-kt}$"]
+    solution: "$kt = 0.15 \\times 3 = 0.45$ จึง $L_3 = 300(1-e^{-0.45}) = 300 \\times 0.3624 \\approx 108.7\\ \\mathrm{mg/L}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 108.7, "tolerance": 0.2, "unit": "mg/L"}
+    misconceptions: [{"match": 135.0, "feedback": "ใช้ $L_0 k t$ แทนสมการเอกซ์โพเนนเชียล ซึ่งไม่ถูกต้องเมื่อ $kt$ ไม่เล็กมาก"}, {"match": 41.8, "feedback": "ใช้ $t = 1$ วัน แทน 3 วัน"}]

@@ -1,0 +1,61 @@
+id: engineering.environmental.solid-hazardous-waste
+subject: engineering
+title: { th: การจัดการขยะมูลฝอย ของเสียอันตราย และการฟื้นฟูพื้นที่ปนเปื้อน, en: Solid waste, hazardous waste, and contaminated-site remediation }
+summary: คำนวณปริมาณและเที่ยวรถเก็บขน มวลปุ๋ยหมัก น้ำชะหลุมฝังกลบ และมวลของเสียอันตราย พร้อมหลักลำดับการจัดการขยะ
+difficulty: 7
+minutes: 40
+prerequisites: [chemistry.industry.life-cycle-assessment, engineering.process.mass-energy-balance]
+encompasses:
+  - { id: engineering.process.mass-energy-balance, weight: 0.4 }
+  - { id: chemistry.industry.life-cycle-assessment, weight: 0.2 }
+curriculum_tags: []
+references:
+  - { title: "Waste hierarchy", url: "https://en.wikipedia.org/wiki/Waste_hierarchy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Landfill", url: "https://en.wikipedia.org/wiki/Landfill", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Hazardous waste", url: "https://en.wikipedia.org/wiki/Hazardous_waste", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: landfill-section.svg
+    alt: "หน้าตัดแนวตั้งของหลุมฝังกลบแสดงชั้นขยะอยู่ด้านบน ใต้ลงมาเป็นชั้นทรายระบายน้ำ ชั้นกันซึมสีเข้ม และดินรองรับ มีท่อรวบรวมน้ำชะวางอยู่ในชั้นระบายน้ำ"
+    caption: "หน้าตัดหลุมฝังกลบอย่างง่ายเพื่อแสดงแนวคิด ชั้นกันซึมป้องกันน้ำชะไม่ให้ซึมลงดิน และท่อช่วยรวบรวมน้ำชะเพื่อนำไปบำบัด"
+  - type: worked-example
+    title: มวลปุ๋ยหมักที่เหลือหลังการหมัก
+    problem: "ขยะอินทรีย์ 200 kg มีความชื้น 60% หลังหมักสูญเสียของแข็งแห้ง 30% และปุ๋ยสุดท้ายมีความชื้น 35% (ค่าสมมติ) มวลปุ๋ยสุดท้ายเท่าไร"
+    steps:
+      - text: "หาของแข็งแห้งเริ่มต้น: $200\\times(1-0.60) = 80$ kg"
+        why: "ของแข็งแห้งคือส่วนที่ไม่ใช่น้ำ และเป็นส่วนที่ใช้ติดตามการเปลี่ยนแปลงของมวล"
+      - text: "หาของแข็งแห้งที่เหลือ: $80\\times(1-0.30) = 56$ kg"
+        why: "การสูญเสียเป็นร้อยละของของแข็งแห้ง ไม่ใช่ร้อยละของมวลรวม"
+      - text: "หามวลสุดท้าย: $56/(1-0.35) \\approx 86.2$ kg"
+        why: "ของแข็งแห้งคิดเป็น $1-\\text{ความชื้น}$ ของมวลสุดท้าย"
+    answer: "ประมาณ 86.2 kg"
+  - type: worked-example
+    title: ปริมาณน้ำชะจากสมดุลน้ำ
+    problem: "หลุมฝังกลบ 10 000 m² ฝน 1.5 m/ปี ระเหย 0.5 m/ปี ไหลบ่า 0.3 m/ปี ได้น้ำชะประมาณกี่ m³ ต่อวัน (ค่าสมมติ)"
+    steps:
+      - text: "น้ำซึม $I = 1.5 - 0.5 - 0.3 = 0.7$ m/ปี"
+        why: "สมดุลน้ำใช้น้ำที่ไม่ระเหยและไม่ไหลบ่าเป็นน้ำที่ซึม"
+      - text: "ปริมาตรต่อปี $= 0.7\\times10000 = 7000$ m³"
+        why: "คูณความสูงน้ำซึมด้วยพื้นที่หน้าตัดของหลุม"
+      - text: "ต่อวัน $= 7000/365 \\approx 19.2$ m³/d"
+        why: "หารด้วยจำนวนวันเพื่อให้ได้อัตราต่อวัน"
+    answer: "ประมาณ 19.2 m³/d"
+  - { type: check, problem: engineering.environmental.solid-hazardous-waste.p001, prompt: "นึกถึงลำดับชั้นที่ควรทำก่อนการฝังกลบ" }
+  - { type: check, problem: engineering.environmental.solid-hazardous-waste.p004, prompt: "อย่าลืมว่าเที่ยวรถที่ไม่เต็มยังต้องวิ่ง" }
+glossary:
+  - { term: "ลำดับชั้นการจัดการขยะ", definition: "ลำดับวิธีจัดการขยะจากที่ควรทำก่อนถึงหลัง ได้แก่ ลด ใช้ซ้ำ รีไซเคิล แปรรูปพลังงาน และฝังกลบ" }
+  - { term: "น้ำชะขยะ (leachate)", definition: "น้ำที่ซึมผ่านขยะแล้วพาสารปนเปื้อนออกมา" }
+  - { term: "ชั้นกันซึม (liner)", definition: "ชั้นวัสดุที่ป้องกันน้ำชะไม่ให้ซึมลงดินและน้ำใต้ดิน" }
+  - { term: "ใบกำกับการขนส่ง (manifest)", definition: "เอกสารที่ติดตามของเสียอันตรายตั้งแต่ต้นทางจนถึงปลายทาง" }
+  - { term: "การฟื้นฟูพื้นที่ปนเปื้อน", definition: "การลดสารปนเปื้อนในดินและน้ำใต้ดินด้วยการขุด สูบบำบัด หรือบำบัดทางชีวภาพ" }
+flashcards:
+  - { front: "ลำดับชั้นการจัดการขยะเริ่มจากอะไร", back: "การลดปริมาณขยะตั้งแต่ต้นทาง" }
+  - { front: "สมดุลน้ำสำหรับน้ำชะคือ", back: "I = P − E − R" }
+  - { front: "ทำไมต้องปัดจำนวนเที่ยวรถขึ้น", back: "เพราะเที่ยวที่ไม่เต็มยังต้องวิ่งเพื่อเก็บขยะที่เหลือ" }
+  - { front: "manifest ใช้ทำอะไร", back: "ติดตามของเสียอันตรายตั้งแต่ต้นทางถึงปลายทางที่ได้รับอนุญาต" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

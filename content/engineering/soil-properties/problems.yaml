@@ -1,0 +1,201 @@
+problems:
+  - id: "engineering.geotech.soil-properties.p001"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 1
+    type: "mcq"
+    stem: "ดินประกอบด้วยสามสถานะ คือ ของแข็ง น้ำ และอากาศ ข้อใดกล่าวถูกต้องเกี่ยวกับดินอิ่มตัวสมบูรณ์"
+    hints: ["ดินอิ่มตัวสมบูรณ์หมายถึงระดับความอิ่มตัว $S = 1$", "ช่องว่างทั้งหมดในดินมีทั้งน้ำและอากาศ ถ้า $S = 1$ อากาศในช่องว่างหมดไป"]
+    solution: "ดินอิ่มตัวสมบูรณ์คือช่องว่างทั้งหมดเต็มด้วยน้ำ ($S = 1$) จึงไม่มีอากาศในช่องว่าง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ช่องว่างทั้งหมดเต็มไปด้วยน้ำ ไม่มีอากาศ", "correct": true}, {"id": "b", "text": "ไม่มีช่องว่างเลย", "correct": false, "feedback": "ดินมีช่องว่างระหว่างเม็ดดินเสมอ เพียงแต่ดินอิ่มตัวสมบูรณ์ช่องว่างเหล่านั้นเต็มด้วยน้ำ"}, {"id": "c", "text": "มีแต่อากาศกับของแข็ง", "correct": false, "feedback": "นี่คือดินแห้ง ไม่ใช่ดินอิ่มตัว"}, {"id": "d", "text": "มีแต่น้ำกับของแข็ง ไม่มีช่องว่าง", "correct": false, "feedback": "ถ้าไม่มีช่องว่างจะไม่มีที่ให้น้ำอยู่ได้"}]
+  - id: "engineering.geotech.soil-properties.p002"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 1
+    type: "numeric"
+    stem: "ดินตัวอย่างมีอัตราส่วนช่องว่าง (void ratio) $e = 0.8$ ความพรุน $n$ เป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ความพรุนคือปริมาตรช่องว่างหารปริมาตรรวม", "ใช้ความสัมพันธ์ $n = e/(1+e)$"]
+    solution: "$n = e/(1+e) = 0.8/1.8 = 0.444$ จึงเท่ากับ $44.4\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 44.4, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 80.0, "feedback": "ใช้ค่า $e$ เป็นเปอร์เซ็นต์โดยตรง"}, {"match": 55.6, "feedback": "ใช้ $1 - n$ แทนค่า $n$ จึงสลับความหมาย"}]
+  - id: "engineering.geotech.soil-properties.p003"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ตัวอย่างดินชื้นจากหลุมเจาะที่กรุงเทพฯ มีน้ำหนักรวม 112 g เมื่ออบแห้งเหลือน้ำหนักเม็ดดิน (ของแข็ง) 80 g ปริมาณน้ำ $w$ เป็นกี่เปอร์เซ็นต์ (ค่าสมมติ)"
+    hints: ["น้ำหนักน้ำ $= 112 - 80 = 32\\ \\mathrm{g}$", "ปริมาณน้ำ $w = M_w / M_s$ โดย $M_s$ คือน้ำหนักของแข็ง"]
+    solution: "$M_w = 32\\ \\mathrm{g}$ และ $M_s = 80\\ \\mathrm{g}$ จึง $w = 32/80 = 0.40 = 40.0\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 40.0, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 140.0, "feedback": "หารน้ำหนักรวมด้วยน้ำหนักดินแห้ง ตัวตั้งต้องเป็นมวลน้ำ $112 - 80 = 32$ g"}, {"match": 28.6, "feedback": "หารด้วยน้ำหนักรวม 112 g แทน 80 g"}]
+  - id: "engineering.geotech.soil-properties.p004"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ดินทรายใต้ถนนในจังหวัดนครปฐมมี $G_s = 2.65$ อัตราส่วนช่องว่าง $e = 0.7$ และระดับความอิ่มตัว $S = 0.5$ หน่วยน้ำหนักเปียก $\\gamma$ ของดินนี้เป็นกี่ $\\mathrm{kN/m^3}$ (ทศนิยม 2 ตำแหน่ง, ค่าสมมติ, $\\gamma_w = 9.81\\ \\mathrm{kN/m^3}$)"
+    hints: ["ใช้สูตร $\\gamma = (G_s + Se)\\gamma_w/(1+e)$", "ดินบางส่วนอิ่มตัวมีทั้งน้ำและอากาศ เลือกใช้ $S$ เป็นสัดส่วนน้ำ"]
+    solution: "$\\gamma = (2.65 + 0.5\\times0.7)\\times9.81/(1.7) = 17.31\\ \\mathrm{kN/m^3}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 17.31, "tolerance": 0.05, "unit": "kN/m3"}
+    misconceptions: [{"match": 15.29, "feedback": "ไม่ได้ใส่ผลของน้ำในช่องว่าง ($Se$) จึงได้ค่าของดินแห้งที่ต่ำเกิน"}, {"match": 5.77, "feedback": "ใช้ $\\gamma_w/(1+e)$ โดยไม่มี $G_s$"}]
+  - id: "engineering.geotech.soil-properties.p005"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ดินชื้นมีหน่วยน้ำหนักรวม $\\gamma = 18\\ \\mathrm{kN/m^3}$ และปริมาณน้ำ $w = 20\\%$ หน่วยน้ำหนักแห้ง $\\gamma_d$ เป็นกี่ $\\mathrm{kN/m^3}$ (ค่าสมมติ)"
+    hints: ["หน่วยน้ำหนักแห้งหาจากมวลของแข็งต่อปริมาตรรวม", "$\\gamma_d = \\gamma/(1+w)$"]
+    solution: "$\\gamma_d = 18/(1 + 0.20) = 15.0\\ \\mathrm{kN/m^3}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 15.0, "tolerance": 0.05, "unit": "kN/m3"}
+    misconceptions: [{"match": 21.599999999999998, "feedback": "คูณ $(1+w)$ แทนการหาร"}, {"match": 14.4, "feedback": "ใช้ $(1-w)$ แทน $(1+w)$"}]
+  - id: "engineering.geotech.soil-properties.p006"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ดินเหนียวตัวอย่างมี $\\mathrm{LL} = 65$ และ $\\mathrm{PL} = 28$ ค่าดัชนีพลาสติก (PI) เท่ากับเท่าใด (ค่าสมมติ)"
+    hints: ["ดัชนีพลาสติกคือความต่างของขีดจำกัดเหลวกับขีดจำกัดพลาสติก", "$\\mathrm{PI} = \\mathrm{LL} - \\mathrm{PL}$"]
+    solution: "$\\mathrm{PI} = 65 - 28 = 37$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 37, "tolerance": 0.01, "unit": "%"}
+    misconceptions: [{"match": 65.0, "feedback": "ใช้ค่า LL อย่างเดียวเป็น PI"}, {"match": 93.0, "feedback": "บวก LL กับ PL แทนการลบ"}]
+  - id: "engineering.geotech.soil-properties.p007"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 3
+    type: "mcq"
+    stem: "ดินเหนียวตัวอย่างมี $\\mathrm{LL} = 65$ และ $\\mathrm{PI} = 37$ ตามระบบ USCS จัดอยู่ในกลุ่มใด (ใช้เส้น A: $\\mathrm{PI} = 0.73(\\mathrm{LL} - 20)$, ค่าสมมติ)"
+    hints: ["ตรวจว่า $\\mathrm{LL} \\ge 50$ หรือไม่ แล้วเทียบค่า PI กับ $0.73(\\mathrm{LL}-20)$", "เส้น A คือ $\\mathrm{PI} = 0.73(\\mathrm{LL}-20) = 32.85$ สำหรับ LL = 65"]
+    solution: "$\\mathrm{LL} = 65 \\ge 50$ และ $\\mathrm{PI} = 37 > 32.85$ อยู่เหนือเส้น A จึงเป็น CH"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "CL ดินเหนียวพลาสติกต่ำ", "correct": false, "feedback": "CL คือดินเหนียวพลาสติกต่ำซึ่งอยู่ใต้เส้น A หรือมี LL ต่ำกว่า 50"}, {"id": "b", "text": "CH ดินเหนียวพลาสติกสูง", "correct": true}, {"id": "c", "text": "ML ตะกอนพลาสติกต่ำ", "correct": false, "feedback": "ML อยู่ใต้เส้น A และมีพลาสติกต่ำกว่านี้มาก"}, {"id": "d", "text": "SP ทรายคละขนาดไม่ดี", "correct": false, "feedback": "ตัวอย่างนี้มีอนุภาคละเอียดมาก จึงไม่ใช่ดินทราย"}]
+  - id: "engineering.geotech.soil-properties.p008"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ชั้นดินทรายใต้บ่อพักน้ำในหมู่บ้านแห่งหนึ่งมีค่าซึมผ่าน $k = 2\\times10^{-6}\\ \\mathrm{m/s}$ ค่า gradient ไฮดรอลิก $i = 0.25$ พื้นที่หน้าตัดตั้งฉาก $A = 2\\ \\mathrm{m^2}$ อัตราการไหลตามกฎของดาร์ซีคือกี่ $\\mathrm{m^3/d}$ (ทศนิยม 4 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["กฎของดาร์ซี $Q = k\\,i\\,A$ ให้หน่วย $\\mathrm{m^3/s}$", "แปลงวินาทีเป็นวันโดยคูณ 86400"]
+    solution: "$Q = 2\\times10^{-6} \\times 0.25 \\times 2 = 1.0\\times10^{-6}\\ \\mathrm{m^3/s}$ $= 1.0\\times10^{-6}\\times86400 = 0.0864\\ \\mathrm{m^3/d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.0864, "tolerance": 0.0002, "unit": "m3/d"}
+    misconceptions: [{"match": 1e-06, "feedback": "ไม่ได้แปลงวินาทีเป็นวัน"}, {"match": 0.1728, "feedback": "คูณค่า $A$ ซ้ำสองครั้ง"}]
+  - id: "engineering.geotech.soil-properties.p009"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ใต้ฐานรากอาคารสำนักงานแห่งหนึ่ง ที่ความลึกหนึ่งในดินอิ่มตัว ความเค้นรวม $\\sigma = 100\\ \\mathrm{kPa}$ และความดันน้ำในโพรง $u = 40\\ \\mathrm{kPa}$ ความเค้นประสิทธิผล $\\sigma'$ เป็นกี่ kPa (ค่าสมมติ)"
+    hints: ["ความเค้นประสิทธิผลคือส่วนที่เม็ดดินรับกันเอง", "$\\sigma' = \\sigma - u$"]
+    solution: "$\\sigma' = 100 - 40 = 60\\ \\mathrm{kPa}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 60, "tolerance": 0.01, "unit": "kPa"}
+    misconceptions: [{"match": 140.0, "feedback": "บวกความดันน้ำเข้าไปในความเค้น"}, {"match": 100.0, "feedback": "ลืมหักความดันน้ำในโพรง"}]
+  - id: "engineering.geotech.soil-properties.p010"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ใต้ฐานตึกแถวริมคลองแห่งหนึ่ง ชั้นดินมีระดับน้ำใต้ดินที่ความลึก 3 m หน่วยน้ำหนักชั้นบน (เหนือระดับน้ำ) $17\\ \\mathrm{kN/m^3}$ และชั้นล่าง (อิ่มตัว) $19\\ \\mathrm{kN/m^3}$ ที่ความลึก 8 m ความเค้นประสิทธิผล $\\sigma'$ เป็นกี่ kPa (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ, $\\gamma_w = 9.81$)"
+    hints: ["ความเค้นรวมคือผลรวมของน้ำหนักทุกชั้นเหนือจุดนั้น", "ความดันน้ำที่ความลึก 8 m คือ $(8 - 3)\\gamma_w$ เพราะระดับน้ำอยู่ที่ 3 m"]
+    solution: "$\\sigma = 3\\times17 + 5\\times19 = 146\\ \\mathrm{kPa}$ $u = 5\\times9.81 = 49.05\\ \\mathrm{kPa}$ $\\sigma' = 146 - 49.05 \\approx 96.9\\ \\mathrm{kPa}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 96.9, "tolerance": 0.2, "unit": "kPa"}
+    misconceptions: [{"match": 146, "feedback": "ไม่หักความดันน้ำ"}, {"match": 67.5, "feedback": "คิดความดันน้ำที่ความลึก 8 m ทั้งหมดโดยไม่ลบส่วนเหนือระดับน้ำ"}]
+  - id: "engineering.geotech.soil-properties.p011"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ดินเหนียวอ่อนตัวอย่างมี $G_s = 2.70$ หน่วยน้ำหนักแห้ง $\\gamma_d = 15\\ \\mathrm{kN/m^3}$ อัตราส่วนช่องว่าง $e$ เป็นเท่าใด (ทศนิยม 3 ตำแหน่ง, $\\gamma_w = 9.81$, ค่าสมมติ)"
+    hints: ["$\\gamma_d = G_s\\gamma_w/(1+e)$ จึงแก้หา $e$ ได้", "$e = G_s\\gamma_w/\\gamma_d - 1$"]
+    solution: "$e = 2.70\\times9.81/15 - 1 = 0.766$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.766, "tolerance": 0.005, "unit": ""}
+    misconceptions: [{"match": 1.766, "feedback": "ลืมลบ 1 ออกจากผลหาร"}, {"match": 0.566, "feedback": "กลับเศษส่วน ใช้ $\\gamma_d/(G_s\\gamma_w)$ แทน $G_s\\gamma_w/\\gamma_d$ และลืมลบ 1"}]
+  - id: "engineering.geotech.soil-properties.p012"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "expression"
+    stem: "ใช้ $s$ แทนความเค้นรวม และ $u$ แทนความดันน้ำในโพรง เขียนนิพจน์ของความเค้นประสิทธิผลในรูปนิพจน์พีชคณิต"
+    hints: ["ความเค้นประสิทธิผลคือส่วนที่เหลือหลังหักความดันน้ำ", "ลบ $u$ ออกจาก $s$"]
+    solution: "ความเค้นประสิทธิผล $= s - u$ ตามหลักความเค้นประสิทธิผลของเทอร์ซากี"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "s - u", "variables": ["s", "u"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "s + u", "feedback": "บวกความดันน้ำแทนการลบ"}, {"match": "u - s", "feedback": "สลับลำดับทำให้เครื่องหมายกลับกัน"}]
+    prefix: "σ' ="
+  - id: "engineering.geotech.soil-properties.p013"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "match"
+    stem: "จับคู่ชื่อการทดสอบหรือระบบกับความหมาย"
+    pairs: [{"left": "ขีดจำกัดเหลว (LL)", "right": "ปริมาณน้ำที่ดินเปลี่ยนจากพฤติกรรมเหลวเป็นพลาสติก"}, {"left": "ดัชนีพลาสติก (PI)", "right": "ความต่างระหว่าง LL กับ PL"}, {"left": "การบดอัดแบบพรอกเตอร์", "right": "การหาความหนาแน่นสูงสุดของดินที่ปริมาณน้ำที่เหมาะสม"}, {"left": "SPT", "right": "การนับจำนวนครั้งการตอกเพื่อประเมินความแน่นของดินในหลุมเจาะ"}]
+    hints: ["PI คือผลต่างของ LL กับ PL", "SPT ใช้ค้อนตอกมาตรฐานและนับจำนวนครั้ง"]
+    solution: "LL คือปริมาณน้ำที่ดินเปลี่ยนเป็นพฤติกรรมเหลว PI = LL − PL พรอกเตอร์หาความหนาแน่นสูงสุดจากการบดอัด SPT นับจำนวนครั้งการตอกในหลุมเจาะเพื่อประเมินความแน่น"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.geotech.soil-properties.p014"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ดินเหนียวตัวอย่างอิ่มตัวสมบูรณ์มีปริมาณน้ำ $w = 50\\%$ และ $G_s = 2.65$ หน่วยน้ำหนักแห้ง $\\gamma_d$ เป็นกี่ $\\mathrm{kN/m^3}$ (ทศนิยม 2 ตำแหน่ง, $\\gamma_w = 9.81$, ค่าสมมติ)"
+    hints: ["ดินอิ่มตัวสมบูรณ์ $S = 1$ ดังนั้น $e = wG_s$", "แทนค่า $e$ ลงใน $\\gamma_d = G_s\\gamma_w/(1+e)$"]
+    solution: "$e = 0.50\\times2.65 = 1.325$ จึง $\\gamma_d = 2.65\\times9.81/2.325 = 11.18\\ \\mathrm{kN/m^3}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 11.18, "tolerance": 0.05, "unit": "kN/m3"}
+    misconceptions: [{"match": 17.33, "feedback": "ใช้ $w$ แทน $e$ ในสูตรหน่วยน้ำหนัก"}, {"match": 16.77, "feedback": "นี่คือหน่วยน้ำหนักอิ่มตัว $\\gamma_d(1+w)$ ซึ่งรวมน้ำด้วย ข้อนี้ถามหน่วยน้ำหนักแห้ง"}]
+  - id: "engineering.geotech.soil-properties.p015"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ดินที่บดอัดได้หน่วยน้ำหนักแห้ง $17.2\\ \\mathrm{kN/m^3}$ และหน่วยน้ำหนักแห้งสูงสุดจากการทดสอบพรอกเตอร์ $18.0\\ \\mathrm{kN/m^3}$ ร้อยละการบดอัด (relative compaction) เป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["ร้อยละการบดอัด $= \\gamma_d/\\gamma_{d,\\max}\\times100$"]
+    solution: "$RC = 17.2/18.0\\times100 = 95.6\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 95.6, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 104.7, "feedback": "สลับตัวตั้งกับตัวหาร"}, {"match": -0.8, "feedback": "ใช้ผลต่างแทนอัตราส่วน"}]
+  - id: "engineering.geotech.soil-properties.p016"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 5
+    type: "numeric"
+    stem: "ดินตัวอย่างหนึ่งมีอัตราส่วนช่องว่าง $e = 0.8$ และ $G_s = 2.70$ (ค่าสมมติ) ที่ความลึก 6 m โดยระดับน้ำอยู่ที่ผิวดิน หน่วยน้ำหนักรวมอิ่มตัว $\\gamma_{sat} = (G_s+e)\\gamma_w/(1+e)$ ความเค้นประสิทธิผลที่ความลึก 6 m โดยประมาณเป็นกี่ kPa (ทศนิยม 1 ตำแหน่ง, $\\gamma_w = 9.81$)"
+    hints: ["น้ำอยู่ที่ผิวดิน ความเค้นประสิทธิผลจึงเท่ากับ $(\\gamma_{sat}-\\gamma_w)z$", "คำนวณ $\\gamma' = \\gamma_{sat} - \\gamma_w$ ก่อน"]
+    solution: "$\\gamma_{sat} = (2.70+0.8)\\times9.81/1.8 = 19.07$ $\\gamma' = 9.26$ จึง $\\sigma' = 55.6\\ \\mathrm{kPa}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 55.6, "tolerance": 0.2, "unit": "kPa"}
+    misconceptions: [{"match": 114.5, "feedback": "ใช้ $\\gamma_{sat}$ แทน $\\gamma'$ จึงลืมหักแรงลอยตัว"}, {"match": 88.3, "feedback": "ใช้หน่วยน้ำหนักแห้ง $\\gamma_d = G_s\\gamma_w/(1+e)$ แทนหน่วยน้ำหนักลอยตัว $\\gamma_{sat} - \\gamma_w$"}]
+  - id: "engineering.geotech.soil-properties.p017"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 5
+    type: "code"
+    stem: "เขียนฟังก์ชัน `soil_class(LL, PL)` ที่รับ LL และ PL ของดินเม็ดละเอียด แล้วคืนสัญลักษณ์กลุ่มตามเกณฑ์ย่อของ USCS นี้: ให้ $\\mathrm{PI} = \\mathrm{LL} - \\mathrm{PL}$ ถ้า $\\mathrm{PI} \\ge 0.73(\\mathrm{LL}-20)$ (อยู่บนหรือเหนือเส้น A) เป็นดินเหนียว C มิฉะนั้นเป็นตะกอนทรายแป้ง M และถ้า $\\mathrm{LL} \\ge 50$ ต่อท้ายด้วย H มิฉะนั้นต่อท้ายด้วย L (เกณฑ์ย่อนี้ไม่รวมเขตแรเงา CL-ML ของแผนภูมิจริง)"
+    hints: ["คำนวณ PI และค่าเส้น A $0.73(\\mathrm{LL}-20)$ ก่อน แล้วเลือกตัวอักษรแรก C หรือ M", "ตัวอักษรที่สองดูจาก LL เทียบกับ 50 แล้ว `return` สตริงที่ต่อกัน"]
+    solution: "คำนวณ PI แล้วเทียบกับเส้น A เพื่อเลือก C หรือ M จากนั้นใช้ LL ≥ 50 เลือก H หรือ L เช่น LL = 65, PL = 28 ได้ PI = 37 ≥ 32.85 จึงเป็น CH ส่วน LL = 55, PL = 48 ได้ PI = 7 ต่ำกว่าเส้น A จึงเป็น MH"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "def soil_class(LL, PL):\n    pass\n"
+    tests: "assert soil_class(65, 28) == \"CH\", f\"soil_class(65, 28) ควรได้ CH แต่ได้ {soil_class(65, 28)}\"\nassert soil_class(35, 20) == \"CL\", f\"soil_class(35, 20) ควรได้ CL (LL ต่ำกว่า 50 และ PI = 15 เหนือเส้น A) แต่ได้ {soil_class(35, 20)}\"\nassert soil_class(55, 48) == \"MH\", f\"soil_class(55, 48) ควรได้ MH เพราะ PI = 7 ต่ำกว่าเส้น A แต่ได้ {soil_class(55, 48)}\"\nassert soil_class(40, 32) == \"ML\", f\"soil_class(40, 32) ควรได้ ML แต่ได้ {soil_class(40, 32)}\"\n"
+    reference: "def soil_class(LL, PL):\n    PI = LL - PL\n    first = \"C\" if PI >= 0.73 * (LL - 20) else \"M\"\n    second = \"H\" if LL >= 50 else \"L\"\n    return first + second\n"
+  - id: "engineering.geotech.soil-properties.p018"
+    topics: ["engineering.geotech.soil-properties"]
+    difficulty: 2
+    type: "mcq"
+    stem: "หากเพิ่มปริมาณน้ำในดินโดยไม่เปลี่ยนปริมาตรรวม ข้อใดเปลี่ยนแปลงแน่นอน"
+    hints: ["ดินมีสามส่วน ของแข็ง น้ำ อากาศ", "ถ้าปริมาตรรวมและของแข็งคงที่ น้ำเพิ่มจะแทนที่อะไร"]
+    solution: "น้ำที่เพิ่มเข้าไปแทนที่อากาศในช่องว่าง ปริมาณอากาศจึงลดลง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ปริมาณอากาศในช่องว่างลดลง", "correct": true}, {"id": "b", "text": "มวลของแข็งเพิ่มขึ้น", "correct": false, "feedback": "ปริมาณน้ำที่เพิ่มไม่ได้ทำให้มวลเม็ดดินเปลี่ยน"}, {"id": "c", "text": "ค่า $G_s$ เพิ่มขึ้น", "correct": false, "feedback": "$G_s$ เป็นสมบัติของวัสดุเม็ดดินที่ไม่เปลี่ยนเมื่อเติมน้ำ"}, {"id": "d", "text": "ปริมาตรรวมของดินเพิ่มขึ้น", "correct": false, "feedback": "กำหนดให้ปริมาตรรวมคงที่ในข้อนี้"}]

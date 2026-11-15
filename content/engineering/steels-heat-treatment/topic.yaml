@@ -1,0 +1,56 @@
+id: engineering.materials.steels-heat-treatment
+subject: engineering
+title: { th: แผนภาพเฟสเหล็ก–คาร์บอนและการอบชุบความร้อน, en: Iron–carbon phase diagram and heat treatment of steels }
+summary: อ่านแผนภาพเฟสเหล็ก–คาร์บอน คำนวณสัดส่วนเพิร์ลไลต์ด้วยกฎคานงัด และเลือกการอบชุบให้ได้สมบัติที่ต้องการ
+difficulty: 7
+minutes: 40
+prerequisites: [engineering.materials.materials-science]
+encompasses:
+  - { id: engineering.materials.materials-science, weight: 0.4 }
+curriculum_tags: []
+references:
+  - { title: "Pearlite", url: "https://en.wikipedia.org/wiki/Pearlite", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Lever rule", url: "https://en.wikipedia.org/wiki/Lever_rule", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Tempering (metallurgy)", url: "https://en.wikipedia.org/wiki/Tempering_(metallurgy)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: carbon-axis.svg
+    alt: "แถบแนวนอนแบ่งเป็นสามช่วงตามปริมาณคาร์บอนจาก 0 ถึง 0.8 wt% ช่วงซ้ายสุดสีฟ้าเป็นเฟอร์ไรต์ที่ละลายคาร์บอนได้น้อย ช่วงกลางสีเหลืองเป็นช่วงสองเฟส และช่วงขวาสุดสีชมพูเป็นช่วงที่เกินจุดยูเทกทอยด์ มีเส้นประชี้จุด 0.02 และ 0.76 wt%"
+    caption: "แกนปริมาณคาร์บอนที่ใช้กับกฎคานงัด จุด 0.02 wt% เป็นความสามารถละลายสูงสุดของคาร์บอนในเฟอร์ไรต์ และจุด 0.76 wt% เป็นจุดยูเทกทอยด์"
+  - type: worked-example
+    title: สัดส่วนเพิร์ลไลต์ของเหล็กคาร์บอน 0.50 wt%
+    problem: "เหล็กกล้าที่มีคาร์บอน 0.50 wt% (ค่าสมมติ) เย็นตัวแบบสมดุลถึงอุณหภูมิห้อง มีเพิร์ลไลต์กี่เปอร์เซ็นต์"
+    steps:
+      - text: "ตั้งสูตรกฎคานงัด: $\\%\\text{เพิร์ลไลต์} = (C_0 - 0.02)/(0.76 - 0.02)\\times100$"
+        why: "ระยะจากเฟอร์ไรต์ถึงเหล็กตัวอย่างเป็นตัวเศษ ระยะทั้งช่วงเป็นตัวส่วน"
+      - text: "แทนค่า: $(0.50 - 0.02)/0.74 \\times 100 = 0.48/0.74 \\times 100 \\approx 64.9\\%$"
+        why: "ตัวหารคือช่วงทั้งหมดจาก 0.02 ถึง 0.76 ไม่ใช่ 0.76"
+    answer: "ประมาณ 64.9% เป็นเพิร์ลไลต์ และ 35.1% เป็นเฟอร์ไรต์ก่อนยูเทกทอยด์"
+  - type: worked-example
+    title: คาร์บอนเทียบเท่าของเหล็กกล้าสำหรับงานเชื่อม
+    problem: "เหล็กกล้าตัวอย่าง (ค่าสมมติ) มี C 0.18, Mn 1.00, Cr 0.20, Mo 0.10, V 0.00, Ni 0.10 และ Cu 0.10 (wt%) ค่า CE ตามสูตร IIW เท่าไร"
+    steps:
+      - text: "คำนวณ Mn/6 = 1.00/6 ≈ 0.167 และ (Cr+Mo+V)/5 = (0.20+0.10+0)/5 = 0.060"
+        why: "แต่ละกลุ่มธาตุมีตัวหารของตัวเอง"
+      - text: "คำนวณ (Ni+Cu)/15 = 0.20/15 ≈ 0.013 แล้วรวมทั้งหมด: $0.18 + 0.167 + 0.060 + 0.013 \\approx 0.42$"
+        why: "CE ทั้งหมดเป็นผลรวมของทุกกลุ่ม"
+    answer: "CE ประมาณ 0.42"
+  - { type: check, problem: engineering.materials.steels-heat-treatment.p001, prompt: "นึกถึงจุดที่เหล็กยูเทกทอยด์เปลี่ยนเฟสก่อนตอบ" }
+  - { type: check, problem: engineering.materials.steels-heat-treatment.p006, prompt: "ลองนึกว่าการอบอ่อนกับการชุบแข็งต่างกันตรงอัตราการเย็นตัว" }
+glossary:
+  - { term: "เฟอร์ไรต์ (α)", definition: "เฟสเหล็กที่โครงผลึกเป็นลูกบาศก์กลางตัว ละลายคาร์บอนได้น้อยมาก" }
+  - { term: "ออสเทไนต์ (γ)", definition: "เฟสเหล็กที่โครงผลึกเป็นลูกบาศก์หน้าเรียบ ละลายคาร์บอนได้มาก" }
+  - { term: "ซีเมนไทต์", definition: "สารประกอบ Fe₃C ที่มีคาร์บอนประมาณ 6.67 wt% แข็งแต่เปราะ" }
+  - { term: "มาร์เทนไซต์", definition: "โครงสร้างแข็งจากการชุบแข็งเร็ว ซึ่งคาร์บอนไม่มีเวลาแพร่ออก" }
+  - { term: "การชุบแข็งด้วยการตกตะกอน", definition: "การเพิ่มความแข็งของโลหะผสมด้วยการให้ความร้อนให้ธาตุละลาย เย็นตัวเร็ว แล้วให้ความร้อนต่ำเพื่อให้อนุภาคตกตะกอน" }
+flashcards:
+  - { front: "จุดยูเทกทอยด์ของเหล็ก–คาร์บอนอยู่ที่กี่ wt%C", back: "ประมาณ 0.76 wt% ที่ 727 °C" }
+  - { front: "สูตรสัดส่วนเพิร์ลไลต์ของเหล็กต่ำกว่ายูเทกทอยด์", back: "(C0 − 0.02)/(0.76 − 0.02) × 100" }
+  - { front: "อบคืนตัวทำให้อะไร", back: "ลดความเปราะจากมาร์เทนไซต์ แลกกับความแข็งที่ลดลงบางส่วน" }
+  - { front: "อะลูมิเนียมบางชนิดแข็งขึ้นด้วยวิธีใด", back: "การชุบแข็งด้วยการตกตะกอน" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

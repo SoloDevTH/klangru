@@ -1,0 +1,59 @@
+id: engineering.geotech.soil-properties
+subject: engineering
+title: { th: สมบัติและการจำแนกดินทางวิศวกรรม, en: Engineering soil properties and classification }
+summary: แยกสามส่วนของดิน คำนวณปริมาณน้ำและหน่วยน้ำหนัก จำแนกดินเหนียวด้วยขีดจำกัดอัตเตอร์เบิร์ก และหาความเค้นประสิทธิผล
+difficulty: 7
+minutes: 40
+prerequisites: [earthscience.geology.minerals-rocks, engineering.mechanics.statics-particles]
+encompasses:
+  - { id: engineering.mechanics.statics-particles, weight: 0.3 }
+  - { id: earthscience.geology.minerals-rocks, weight: 0.2 }
+curriculum_tags: []
+references:
+  - { title: "Soil mechanics", url: "https://en.wikipedia.org/wiki/Soil_mechanics", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Atterberg limits", url: "https://en.wikipedia.org/wiki/Atterberg_limits", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Unified Soil Classification System", url: "https://en.wikipedia.org/wiki/Unified_Soil_Classification_System", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: three-phase.svg
+    alt: "แผนภาพแท่งซ้อนกันเป็นกล่องเดียว ส่วนบนเป็นอากาศสีขาว ส่วนกลางเป็นน้ำสีฟ้า ส่วนล่างเป็นของแข็งสีเทา ทั้งสามส่วนรวมกันเป็นปริมาตรรวมของดิน"
+    caption: "ดินประกอบด้วยของแข็ง น้ำ และอากาศ สัดส่วนในภาพเป็นภาพประกอบ ไม่ใช่ค่าที่วัดได้"
+  - type: worked-example
+    title: หาความพรุนและหน่วยน้ำหนักแห้งจากอัตราส่วนช่องว่าง
+    problem: "ดินทรายสมมติมี $G_s = 2.65$ และ $e = 0.7$ ความพรุน $n$ และหน่วยน้ำหนักแห้ง $\\gamma_d$ เท่าไร ($\\gamma_w = 9.81\\ \\mathrm{kN/m^3}$)"
+    steps:
+      - text: "คำนวณความพรุน: $n = e/(1+e) = 0.7/1.7 \\approx 0.412$ หรือ 41.2%"
+        why: "ความพรุนคือสัดส่วนของปริมาตรช่องว่างต่อปริมาตรรวม ซึ่งเชื่อมกับ $e$ ด้วยสูตรนี้"
+      - text: "คำนวณหน่วยน้ำหนักแห้ง: $\\gamma_d = 2.65 \\times 9.81 / 1.7 \\approx 15.29\\ \\mathrm{kN/m^3}$"
+        why: "ใช้ $G_s\\gamma_w$ เป็นน้ำหนักของเม็ดดินต่อปริมาตรเม็ดดิน แล้วหารด้วยปริมาตรรวมต่อปริมาตรเม็ดดิน $1+e$"
+    answer: "$n \\approx 41.2\\%$ และ $\\gamma_d \\approx 15.29\\ \\mathrm{kN/m^3}$"
+  - type: worked-example
+    title: ความเค้นประสิทธิผลที่มีระดับน้ำใต้ดิน
+    problem: "ที่ความลึก 6 m ระดับน้ำอยู่ที่ผิวดิน ดินมี $\\gamma_{sat} = 19.0\\ \\mathrm{kN/m^3}$ ความเค้นประสิทธิผลเท่าไร (ค่าสมมติ)"
+    steps:
+      - text: "ความเค้นรวม: $\\sigma = 6 \\times 19.0 = 114\\ \\mathrm{kPa}$"
+        why: "น้ำหนักรวมของดินอิ่มตัวทั้งชั้นเหนือจุดนั้น"
+      - text: "ความดันน้ำ: $u = 6 \\times 9.81 = 58.86\\ \\mathrm{kPa}$"
+        why: "ระดับน้ำอยู่ที่ผิวดิน จึงรับน้ำทั้งความลึก 6 m"
+      - text: "ความเค้นประสิทธิผล: $\\sigma' = 114 - 58.86 \\approx 55.1\\ \\mathrm{kPa}$"
+        why: "ส่วนที่เม็ดดินรับกันเองคือความเค้นรวมหักความดันน้ำ"
+    answer: "ประมาณ 55.1 kPa"
+  - { type: check, problem: engineering.geotech.soil-properties.p001, prompt: "ลองนึกถึงช่องว่างที่เหลือเมื่อดินอิ่มตัว แล้วตอบก่อนดูเฉลย" }
+  - { type: check, problem: engineering.geotech.soil-properties.p002, prompt: "ความพรุนกับอัตราส่วนช่องว่างต่างกันอย่างไร" }
+glossary:
+  - { term: "อัตราส่วนช่องว่าง (e)", definition: "อัตราส่วนปริมาตรช่องว่างต่อปริมาตรของแข็งในดิน" }
+  - { term: "ความพรุน (n)", definition: "อัตราส่วนปริมาตรช่องว่างต่อปริมาตรรวมของดิน" }
+  - { term: "ขีดจำกัดอัตเตอร์เบิร์ก", definition: "ปริมาณน้ำที่ดินเปลี่ยนสถานะ ได้แก่ LL และ PL ใช้จำแนกดินละเอียด" }
+  - { term: "ความเค้นประสิทธิผล", definition: "ความเค้นรวมหักความดันน้ำในโพรง เป็นตัวควบคุมการทรุดตัวและกำลังของดิน" }
+  - { term: "กฎของดาร์ซี", definition: "สมการ Q = k i A ที่ใช้คำนวณอัตราการไหลของน้ำผ่านดินที่อิ่มตัว" }
+flashcards:
+  - { front: "ความพรุนคำนวณจากอัตราส่วนช่องว่างอย่างไร", back: "n = e/(1+e)" }
+  - { front: "PI คืออะไร", back: "LL − PL ความต่างของขีดจำกัดเหลวกับขีดจำกัดพลาสติก" }
+  - { front: "ความเค้นประสิทธิผลคำนวณอย่างไร", back: "σ' = σ − u" }
+  - { front: "ดินที่ LL ≥ 50 และอยู่เหนือเส้น A เป็นกลุ่มใด", back: "CH (ดินเหนียวพลาสติกสูง)" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

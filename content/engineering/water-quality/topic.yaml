@@ -1,0 +1,61 @@
+id: engineering.environmental.water-quality
+subject: engineering
+title: { th: พารามิเตอร์คุณภาพน้ำและหน่วยในงานสิ่งแวดล้อม, en: Water-quality parameters and units in environmental engineering }
+summary: แปลงหน่วยความเข้มข้นและภาระมลพิษ ผสมน้ำสองสาย อ่านค่า BOD กับ COD และคำนวณความกระด้างของน้ำ
+difficulty: 6.5
+minutes: 40
+prerequisites: [chemistry.solutions.concentration, chemistry.acids-bases.acid-base-ph, chemistry.water.potable-water]
+encompasses:
+  - { id: chemistry.solutions.concentration, weight: 0.3 }
+  - { id: chemistry.acids-bases.acid-base-ph, weight: 0.2 }
+curriculum_tags: []
+references:
+  - { title: "Water quality", url: "https://en.wikipedia.org/wiki/Water_quality", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Biochemical oxygen demand", url: "https://en.wikipedia.org/wiki/Biochemical_oxygen_demand", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Hardness of water", url: "https://en.wikipedia.org/wiki/Hardness_of_water", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bod-curve.svg
+    alt: "กราฟเส้นโค้งเพิ่มขึ้นจากศูนย์ที่เวลา 0 วัน ค่อย ๆ โค้งราบลงเข้าหาเส้นประแนวนอนที่ค่าสุดท้าย 200 mg/L ที่จุดเวลา 5 วันมีจุดสีส้มกำกับ แกนนอนเป็นเวลาเป็นวัน แกนตั้งเป็น BOD ที่ถูกใช้ไปเป็น mg/L"
+    caption: "เส้นโค้ง BOD ตามสมการ $L_t = L_0(1-e^{-kt})$ โดยค่า $L_0 = 200$ mg/L และ $k = 0.2$/d เป็นค่าสมมติเพื่ออธิบายรูปร่างกราฟ"
+  - type: worked-example
+    title: หาความกระด้างของน้ำบาดาลจากแคลเซียมและแมกนีเซียม
+    problem: "น้ำบาดาลมี $\\mathrm{Ca^{2+}} = 20\\ \\mathrm{mg/L}$ และ $\\mathrm{Mg^{2+}} = 6.0\\ \\mathrm{mg/L}$ ความกระด้างรวมเป็น $\\mathrm{mg\\,CaCO_3/L}$ เท่าไร (ค่าสมมติ)"
+    steps:
+      - text: "แปลงแคลเซียมเป็นค่าเทียบเท่า $\\mathrm{CaCO_3}$: $20 \\times 100.09/40.08 \\approx 49.945\\ \\mathrm{mg\\,CaCO_3/L}$"
+        why: "ตัวคูณมาจากมวลโมลาร์ของ $\\mathrm{CaCO_3}$ หารด้วยมวลอะตอมของ Ca เพราะ Ca กับ CaCO₃ มีจำนวนโมลเท่ากันต่อหนึ่งหน่วยของความกระด้าง"
+      - text: "แปลงแมกนีเซียมด้วยตัวคูณของมันเอง: $6.0 \\times 100.09/24.31 \\approx 24.703\\ \\mathrm{mg\\,CaCO_3/L}$"
+        why: "Mg มีมวลอะตอมต่างจาก Ca จึงใช้ตัวคูณต่างกัน"
+      - text: "รวมสองค่า: $49.945 + 24.703 = 74.648 \\approx 74.6\\ \\mathrm{mg\\,CaCO_3/L}$"
+        why: "ความกระด้างรวมคือผลรวมของสองส่วนที่แปลงแล้ว ไม่ใช่ผลรวมของ mg/L ดิบ"
+    answer: "ความกระด้างรวมประมาณ 74.6 mg CaCO₃/L"
+  - type: worked-example
+    title: ความเข้มข้นหลังน้ำทิ้งไหลลงแม่น้ำ
+    problem: "แม่น้ำไหล $10\\ \\mathrm{m^3/s}$ มี BOD $1\\ \\mathrm{mg/L}$ น้ำทิ้งไหลลง $0.5\\ \\mathrm{m^3/s}$ มี BOD $40\\ \\mathrm{mg/L}$ ค่า BOD ของน้ำผสมหลังผสมกันดีแล้วเป็นเท่าไร (ค่าสมมติ)"
+    steps:
+      - text: "คำนวณมวลสารต่อวินาที (ภาระ) ของแต่ละสาย: แม่น้ำ $10 \\times 1 = 10\\ \\mathrm{g/s}$ น้ำทิ้ง $0.5 \\times 40 = 20\\ \\mathrm{g/s}$"
+        why: "$\\mathrm{mg/L} \\times \\mathrm{m^3/s}$ ได้ $\\mathrm{g/s}$ ซึ่งบวกกันได้โดยตรง"
+      - text: "รวมมวลสาร $10 + 20 = 30\\ \\mathrm{g/s}$ และรวมอัตราการไหล $10 + 0.5 = 10.5\\ \\mathrm{m^3/s}$"
+        why: "สมดุลมวลบอกว่ามวลที่เข้าเท่ากับมวลที่ออก"
+      - text: "หารมวลด้วยอัตราการไหลรวม: $30 / 10.5 \\approx 2.86\\ \\mathrm{mg/L}$"
+        why: "ความเข้มข้นคือมวลต่อปริมาตร เมื่อปริมาตรรวมแล้ว ค่าที่ได้คือความเข้มข้นหลังผสม"
+    answer: "BOD ของน้ำผสมประมาณ 2.86 mg/L"
+  - { type: check, problem: engineering.environmental.water-quality.p001, prompt: "ลองแปลงหน่วยก่อนดูเฉลย แล้วเทียบกับแนวคิดของบทเรียน" }
+  - { type: check, problem: engineering.environmental.water-quality.p010, prompt: "นึกถึงชื่อเต็มภาษาอังกฤษของตัวย่อก่อนตอบ" }
+glossary:
+  - { term: "ppm", definition: "ส่วนต่อล้านส่วน ใช้กับน้ำเจือจางมากได้ประมาณเท่ากับ mg/L" }
+  - { term: "ภาระมลพิษ", definition: "มวลของสารมลพิษที่ไหลผ่านต่อวัน คำนวณจากความเข้มข้นคูณอัตราการไหลแล้วปรับหน่วย" }
+  - { term: "BOD", definition: "ความต้องการออกซิเจนทางชีวเคมี ปริมาณออกซิเจนที่จุลินทรีย์ใช้ย่อยสารอินทรีย์ในน้ำ" }
+  - { term: "COD", definition: "ความต้องการออกซิเจนทางเคมี ปริมาณออกซิเจนสมมูลที่ใช้ออกซิไดซ์สารในน้ำด้วยสารเคมี" }
+  - { term: "ความกระด้าง", definition: "ความเข้มข้นของ Ca²⁺ และ Mg²⁺ ในน้ำ รายงานเป็น mg CaCO₃/L" }
+flashcards:
+  - { front: "1 ppm เท่ากับกี่ mg/L ในน้ำเจือจาง", back: "ประมาณ 1 mg/L" }
+  - { front: "สูตรภาระมลพิษ (kg/d)", back: "ความเข้มข้น (mg/L) × อัตราการไหล (m³/d) ÷ 1000" }
+  - { front: "BOD₅ วัดจากอะไร", back: "ผลต่างของ DO ตอนเริ่มกับหลัง 5 วัน หารด้วยอัตราส่วน P" }
+  - { front: "ทำไมค่าผสมของน้ำสองสายต้องถ่วงด้วยอัตราการไหล", back: "เพราะมวลสารรวมต้องคงที่ ค่าเฉลี่ยธรรมดาจึงไม่ถูกต้อง" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

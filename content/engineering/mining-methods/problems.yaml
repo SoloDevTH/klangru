@@ -1,0 +1,211 @@
+problems:
+  - id: "engineering.mining.mining-methods.p001"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 1
+    type: "mcq"
+    stem: "แหล่งแร่อยู่ใกล้ผิวดิน ขนาดใหญ่ และมีปริมาณดินหรือหินที่ต้องเอาออก (waste) น้อยเมื่อเทียบกับแร่ เหมาะกับการทำเหมืองแบบใด"
+    hints: ["ดูว่าแหล่งแร่อยู่ตื้นหรือลึก", "พิจารณาปริมาณวัสดุที่ต้องเอาออกเมื่อเทียบกับแร่"]
+    solution: "แหล่งที่อยู่ตื้นและมีปริมาณหินทิ้งน้อยกว่าเหมาะกับเหมืองผิวดินมากกว่า"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "เหมืองผิวดิน (open pit)", "correct": true}, {"id": "b", "text": "เหมืองใต้ดินลึกมาก", "correct": false, "feedback": "แหล่งที่อยู่ลึกจะคุ้มกว่าเมื่อหินที่ต้องเปิดหน้าดินมีปริมาณมากกว่า"}, {"id": "c", "text": "ไม่ต้องทำเหมืองเลย", "correct": false, "feedback": "คำถามนี้ถามถึงการเลือกวิธีทำเหมืองที่เหมาะสม"}, {"id": "d", "text": "เหมืองใต้ดิน เพราะต้นทุนต่อตันต่ำกว่าเหมืองผิวดินเสมอ", "correct": false, "feedback": "เหมืองใต้ดินมักมีต้นทุนต่อตันสูงกว่า จะคุ้มเมื่อแหล่งแร่ลึกจนการเปิดหน้าดินแพงเกินไป"}]
+  - id: "engineering.mining.mining-methods.p002"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 1
+    type: "numeric"
+    stem: "ก้อนแร่สมมติยาว 50 m กว้าง 40 m และหนา 10 m มีปริมาตรกี่ $\\mathrm{m^3}$"
+    hints: ["ปริมาตรของกล่องสี่เหลี่ยมคือความยาวคูณความกว้างคูณความหนา"]
+    solution: "$V = 50 \\times 40 \\times 10 = 20{,}000\\ \\mathrm{m^3}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 20000.0, "tolerance": 0.01, "unit": "m3"}
+    misconceptions: [{"match": 2000.0, "feedback": "หารด้วย 10 โดยไม่มีเหตุผล"}, {"match": 5000.0, "feedback": "คิดเพียงสองมิติแทนสามมิติ"}]
+  - id: "engineering.mining.mining-methods.p003"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 1
+    type: "text"
+    stem: "ค่าความสมบูรณ์ของแร่ที่แสดงเป็นเปอร์เซ็นต์โดยน้ำหนักของโลหะ เรียกเป็นภาษาอังกฤษว่าอะไร"
+    hints: ["คำนี้ใช้บอกปริมาณโลหะในแร่ต่อมวล", "ตรงกับคำว่าเกรดที่ใช้ในวงการเหมือง"]
+    solution: "เรียกว่าเกรด (grade) ของแร่"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    accepted: ["grade", "Grade", "เกรด", "ความสมบูรณ์", "ค่าความสมบูรณ์"]
+    misconceptions: []
+  - id: "engineering.mining.mining-methods.p004"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ก้อนแร่ปริมาตร 20000 m³ มีความหนาแน่นเฉลี่ย 2.7 t/m³ (ค่าสมมติ) มีแร่รวมกี่ตัน"
+    hints: ["มวล = ปริมาตร × ความหนาแน่น"]
+    solution: "$M = 20000 \\times 2.7 = 54{,}000\\ \\mathrm{t}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 54000.0, "tolerance": 1.0, "unit": "t"}
+    misconceptions: [{"match": 20000.0, "feedback": "ตอบปริมาตรแทนมวล"}, {"match": 5400.0, "feedback": "หารด้วย 10 โดยไม่มีเหตุผล"}]
+  - id: "engineering.mining.mining-methods.p005"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ในการประเมินด้วยหน้าตัดสองหน้า หน้าตัด A1 มีพื้นที่ 1200 m² เกรด 1.8% และ A2 มีพื้นที่ 800 m² เกรด 0.9% (ค่าสมมติ) เกรดเฉลี่ยถ่วงน้ำหนักด้วยพื้นที่เป็นกี่เปอร์เซ็นต์ (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["เกรดเฉลี่ยถ่วงน้ำหนักคือผลรวมของพื้นที่คูณเกรด หารด้วยพื้นที่รวม"]
+    solution: "$(1200\\times1.8 + 800\\times0.9)/(1200+800) = 1.44\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 1.44, "tolerance": 0.01, "unit": "%"}
+    misconceptions: [{"match": 1.35, "feedback": "หาค่าเฉลี่ยเลขคณิตของเกรดแทนการถ่วงน้ำหนัก"}, {"match": 1.8, "feedback": "ใช้เกรดของหน้าตัดที่ใหญ่กว่าเพียงหน้าเดียว"}]
+  - id: "engineering.mining.mining-methods.p006"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 2
+    type: "numeric"
+    stem: "เหมืองผิวดินแห่งหนึ่ง (ค่าสมมติ) ต้องเอาดินหินทิ้ง 1,200,000 t ออกเพื่อขุดแร่ 300,000 t อัตราส่วนหินทิ้งต่อแร่ (stripping ratio) เท่ากับเท่าใด"
+    hints: ["อัตราส่วนหินทิ้งต่อแร่คือมวลของหินทิ้งหารด้วยมวลของแร่"]
+    solution: "$1{,}200{,}000/300{,}000 = 4.0$ t/t"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 4.0, "tolerance": 0.05, "unit": "t/t"}
+    misconceptions: [{"match": 0.25, "feedback": "กลับด้านตัวตั้งกับตัวหาร"}, {"match": 1500000.0, "feedback": "บวกมวลทั้งสองแทนการหาร"}]
+  - id: "engineering.mining.mining-methods.p007"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ขั้นบันได (bench) สูง 10 m มีมุมลาดของหน้าดิน 70° ระยะแนวนอนของหน้าดินหนึ่งขั้นบันไดเป็นกี่เมตร (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["ระยะแนวนอน $= h/\\tan\\theta$ เมื่อ $h$ คือความสูงและ $\\theta$ คือมุมหน้าดิน"]
+    solution: "$10/\\tan 70° = 10/2.747 \\approx 3.64\\ \\mathrm{m}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 3.64, "tolerance": 0.02, "unit": "m"}
+    misconceptions: [{"match": 10.0, "feedback": "ใช้ความสูงเป็นระยะแนวนอน"}, {"match": 27.47, "feedback": "คูณ tan แทนการหาร"}]
+  - id: "engineering.mining.mining-methods.p008"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 2
+    type: "mcq"
+    stem: "เหตุผลหลักในการทำ berm (ขั้นพักหน้า) ระหว่างขั้นบันไดของเหมืองผิวดินคืออะไร"
+    hints: ["berm เป็นขั้นพักระหว่างขั้นบันไดสองชั้น", "ลองนึกถึงหินที่อาจกลิ้งจากหน้าดินชั้นบน"]
+    solution: "berm ดักหินที่กลิ้งลงมาและช่วยรักษาความเสถียรและความปลอดภัยของลาดเอียง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ช่วยดักหินที่กลิ้งลงมาและช่วยให้ทางเข้าออกปลอดภัยต่อการเฝ้าระวัง", "correct": true}, {"id": "b", "text": "เพิ่มปริมาณแร่ที่ขุดได้", "correct": false, "feedback": "berm ไม่ได้เพิ่มปริมาณแร่ ทำหน้าที่ด้านความปลอดภัยและความเสถียร"}, {"id": "c", "text": "ทำให้ลาดเอียงของเหมืองชันขึ้นเสมอ", "correct": false, "feedback": "berm ทำให้มุมรวมของเหมืองน้อยลง ไม่ใช่มากขึ้น"}, {"id": "d", "text": "ใช้เป็นที่วางวัสดุระเบิด", "correct": false, "feedback": "การจัดการวัสดุระเบิดเป็นงานของผู้เชี่ยวชาญภายใต้กฎหมาย ไม่ใช่หน้าที่ของ berm"}]
+  - id: "engineering.mining.mining-methods.p009"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 3
+    type: "numeric"
+    stem: "เหมืองผิวดินมี 10 ขั้นบันได แต่ละชั้นสูง 10 m มุมหน้าดิน 70° และมี berm กว้าง 6 m ระหว่างชั้นทั้ง 9 ช่วง มุมลาดรวมจากขอบล่างถึงขอบบนเป็นกี่องศา (ทศนิยม 1 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["ระยะแนวนอนรวม = จำนวนขั้นบันได × ระยะแนวนอนต่อชั้น + จำนวน berm × ความกว้าง berm", "มุมรวม $= \\arctan(\\text{ความสูงรวม}/\\text{ระยะแนวนอนรวม})$"]
+    solution: "ระยะแนวนอนรวม $= 10\\times3.64 + 9\\times6 = 90.4\\ \\mathrm{m}$ ความสูงรวม $= 100\\ \\mathrm{m}$ จึง $\\theta = \\arctan(100/90.4) \\approx 47.9°$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 47.9, "tolerance": 0.1, "unit": "°"}
+    misconceptions: [{"match": 70.0, "feedback": "ใช้มุมหน้าดินเป็นมุมรวม หรือลืมนับ berm ในระยะแนวนอน (ได้ $\\arctan(100/36.4) \\approx 70°$ เท่ากับมุมหน้าดิน)"}, {"match": 61.6, "feedback": "นับเฉพาะ berm $9\\times6 = 54$ m แต่ลืมระยะแนวนอนของหน้าดินทั้ง 10 ชั้น"}]
+  - id: "engineering.mining.mining-methods.p010"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 3
+    type: "numeric"
+    stem: "บล็อกแร่สมมติ 4 บล็อก (ตันและเกรดในหน่วย %): (10000 t, 0.8%), (8000 t, 0.4%), (12000 t, 1.2%), (5000 t, 0.6%) ถ้าค่าตัดเกรด (cutoff) เท่ากับ 0.5% จะได้เกรดเฉลี่ยถ่วงน้ำหนักด้วยตันของบล็อกที่ผ่านค่าตัดเท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["เลือกเฉพาะบล็อกที่เกรดไม่ต่ำกว่า 0.5%", "ถ่วงเกรดด้วยตันของแต่ละบล็อก"]
+    solution: "บล็อกที่ผ่าน: 10000, 12000, 5000 t รวม 27000 t เกรดเฉลี่ย $= (10000\\times0.8 + 12000\\times1.2 + 5000\\times0.6)/27000 \\approx 0.94\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.94, "tolerance": 0.01, "unit": "%"}
+    misconceptions: [{"match": 0.75, "feedback": "หาค่าเฉลี่ยเลขคณิตของทุกบล็อกโดยไม่เลือกตามค่าตัดเกรด"}, {"match": 0.82, "feedback": "รวมบล็อกที่ต่ำกว่าค่าตัดเกรดด้วย"}]
+  - id: "engineering.mining.mining-methods.p011"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 3
+    type: "numeric"
+    stem: "จากบล็อกที่ผ่านค่าตัดเกรด 0.5% ในโจทย์ก่อนหน้า ปริมาณโลหะรวมเป็นกี่ตัน (ทศนิยม 0 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["ปริมาณโลหะ = มวลแร่ × เกรด ÷ 100"]
+    solution: "$27{,}000\\times0.9407/100 \\approx 254\\ \\mathrm{t}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 254.0, "tolerance": 1.0, "unit": "t"}
+    misconceptions: [{"match": 216, "feedback": "ใช้เกรดของบล็อกเดียว"}, {"match": 286, "feedback": "รวมบล็อกที่ไม่ผ่านค่าตัดเกรด (8000 t ที่ 0.4%) เข้าไปด้วย"}]
+  - id: "engineering.mining.mining-methods.p012"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 3
+    type: "numeric"
+    stem: "เหมืองขุดแร่ 150,000 t และหินทิ้ง 450,000 t ในงวดหนึ่ง ค่าใช้จ่ายรวม 6,000,000 บาท (ค่าสมมติ) ถ้าปันค่าใช้จ่ายทั้งหมดให้แร่เพียงอย่างเดียว ค่าใช้จ่ายต่อตันแร่คือกี่บาท"
+    hints: ["หารค่าใช้จ่ายรวมด้วยตันแร่เท่านั้น"]
+    solution: "$6{,}000{,}000/150{,}000 = 40$ บาทต่อตันแร่"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 40.0, "tolerance": 0.01, "unit": "บาท/t"}
+    misconceptions: [{"match": 10.0, "feedback": "หารด้วยตันรวมของแร่และหินทิ้ง"}, {"match": 13.333333333333334, "feedback": "หารด้วยมวลหินทิ้งแทนมวลแร่"}]
+  - id: "engineering.mining.mining-methods.p013"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 4
+    type: "numeric"
+    stem: "หลุมขุดรูปปิรามิดตัดยอด มีพื้นที่ปากบน 40 000 m² พื้นที่ก้นล่าง 10 000 m² และลึก 100 m ปริมาตรโดยประมาณตามสูตร $V = \\dfrac{h}{3}(A_1 + A_2 + \\sqrt{A_1 A_2})$ เป็นกี่ $\\mathrm{m^3}$ (ทศนิยม 0 ตำแหน่ง)"
+    hints: ["แทนค่า $A_1 = 40000$, $A_2 = 10000$, $h = 100$", "$\\sqrt{A_1A_2} = \\sqrt{400\\,000\\,000} = 20\\,000$"]
+    solution: "$V = (100/3)(40000 + 10000 + 20000) = 2,333,333\\ \\mathrm{m^3}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 2333333.0, "tolerance": 1.0, "unit": "m3"}
+    misconceptions: [{"match": 2500000, "feedback": "ใช้ค่าเฉลี่ยของพื้นที่คูณความลึกโดยไม่มีพจน์รากที่สอง"}, {"match": 1333333, "feedback": "ใช้สูตรกรวย $hA_1/3$ ซึ่งใช้ได้เมื่อก้นหลุมเป็นจุดเท่านั้น"}]
+  - id: "engineering.mining.mining-methods.p014"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 4
+    type: "numeric"
+    stem: "เพื่อให้มุมลาดรวมของเหมืองเป็นประมาณ 45° เมื่อความสูงรวม 100 m และยังใช้ขั้นบันได 10 ชั้นสูงชั้นละ 10 m มุมหน้า 70° berm แต่ละช่วงต้องกว้างกี่เมตร (ทศนิยม 2 ตำแหน่ง, ค่าสมมติ)"
+    hints: ["มุม 45° หมายถึงระยะแนวนอนรวมเท่ากับความสูงรวม 100 m", "$9w = 100 - 10\\times3.64$"]
+    solution: "$9w = 100 - 36.40 = 63.60$ จึง $w \\approx 7.07\\ \\mathrm{m}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 7.07, "tolerance": 0.02, "unit": "m"}
+    misconceptions: [{"match": 6.0, "feedback": "ใช้ความกว้างเดิมโดยไม่คำนวณใหม่"}, {"match": 11.11, "feedback": "หารความสูงรวมด้วยจำนวน berm โดยไม่หักระยะหน้าดิน"}]
+  - id: "engineering.mining.mining-methods.p015"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 4
+    type: "expression"
+    stem: "ใช้ $W$ และ $w$ แทนมวลหินทิ้งสะสมที่สองช่วงเวลา และ $O$ กับ $o$ แทนมวลแร่สะสมที่สองช่วงเวลาเดียวกัน เขียนนิพจน์อัตราส่วนหินทิ้งต่อแร่ที่เพิ่มขึ้น (incremental stripping ratio) ในรูปเศษส่วน"
+    hints: ["ใช้ผลต่างของมวลหินทิ้งหารด้วยผลต่างของมวลแร่ระหว่างสองช่วง"]
+    solution: "อัตราส่วนที่เพิ่มขึ้นคือ $(W-w)/(O-o)$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "\\frac{W-w}{O-o}", "variables": ["W", "w", "O", "o"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "\\frac{W}{O}", "feedback": "เป็นอัตราส่วนสะสม ไม่ใช่ค่าที่เพิ่มขึ้นระหว่างสองช่วง"}, {"match": "\\frac{W-w}{O}", "feedback": "ใช้ผลต่างของแร่สะสมแทนผลต่างของช่วง"}]
+    prefix: "ค่าอัตราส่วนเพิ่ม ="
+  - id: "engineering.mining.mining-methods.p016"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 3
+    type: "mcq"
+    stem: "ก่อนการจุดวัตถุระเบิดในเหมือง ข้อใดเป็นหลักความปลอดภัยที่ถูกต้องในระดับหลักการ"
+    hints: ["หลักความปลอดภัยเน้นการควบคุมคนและการมีผู้เชี่ยวชาญ", "บทเรียนนี้ไม่มีขั้นตอนการออกแบบการระเบิด"]
+    solution: "ความปลอดภัยในการระเบิดเป็นเรื่องของผู้เชี่ยวชาญที่มีใบอนุญาต พื้นที่หวงห้าม และการเฝ้าระวัง บทเรียนนี้อธิบายเพียงหลักการ"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "มีการกำหนดพื้นที่หวงห้าม เฝ้าระวัง และดำเนินการโดยผู้มีใบอนุญาตตามกฎหมายและผู้เชี่ยวชาญ", "correct": true}, {"id": "b", "text": "ให้คนงานทั่วไปคำนวณปริมาณวัตถุระเบิดเองได้ตามความเคยชิน", "correct": false, "feedback": "การออกแบบและการใช้วัตถุระเบิดต้องทำโดยผู้เชี่ยวชาญที่มีใบอนุญาต ไม่ใช่การคำนวณตามความเคยชิน"}, {"id": "c", "text": "ไม่ต้องมีการตรวจสอบก่อนจุดระเบิดเพราะปลอดภัยอยู่แล้ว", "correct": false, "feedback": "การตรวจสอบก่อนจุดระเบิดเป็นหัวใจของความปลอดภัย"}, {"id": "d", "text": "ให้คนอยู่ใกล้จุดระเบิดเพื่อดูผลลัพธ์", "correct": false, "feedback": "ต้องอพยพคนออกจากพื้นที่เสี่ยงทั้งหมดก่อนดำเนินการ"}]
+  - id: "engineering.mining.mining-methods.p017"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 3
+    type: "match"
+    stem: "จับคู่คำศัพท์กับความหมายในการทำเหมือง"
+    pairs: [{"left": "ทรัพยากรแร่ (resource)", "right": "ปริมาณแร่ที่ประมาณได้จากข้อมูลทางธรณีวิทยา"}, {"left": "ค่าตัดเกรด (cutoff grade)", "right": "เกรดขั้นต่ำที่ยอมให้บล็อกถูกนับเป็นแร่ที่ขุด"}, {"left": "ขั้นบันได (bench)", "right": "ชั้นที่ขุดเป็นขั้นในเหมืองผิวดิน"}, {"left": "หินทิ้ง (waste)", "right": "วัสดุที่ต้องเอาออกเพื่อเข้าถึงแร่ แต่ไม่มีค่าเพียงพอ"}]
+    hints: ["cutoff ใช้เป็นเกณฑ์แยกแร่กับหิน", "ทรัพยากรไม่เท่ากับแร่ที่ขุดได้จริงเสมอไป"]
+    solution: "ทรัพยากรคือปริมาณที่ประมาณจากธรณีวิทยา ค่าตัดเกรดคือเกณฑ์ขั้นต่ำของแร่ bench คือขั้นบันไดของหน้าดิน และหินทิ้งคือวัสดุที่ไม่คุ้มค่าให้ขาย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.mining.mining-methods.p018"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 5
+    type: "code"
+    stem: "เขียนฟังก์ชัน `avg_grade(blocks, cutoff)` ที่รับลิสต์ของคู่ `(ตัน, เกรด%)` และค่าตัดเกรด คืนเกรดเฉลี่ยถ่วงด้วยตันของบล็อกที่มีเกรดไม่ต่ำกว่าค่าตัด ถ้าไม่มีบล็อกเลยให้คืน 0.0"
+    hints: ["กรองบล็อกที่เกรด `>= cutoff` ก่อน", "ถ่วงเกรดด้วยตัน แล้วหารด้วยตันรวม"]
+    solution: "ฟังก์ชันกรองบล็อกที่ผ่านค่าตัด รวมตันและผลคูณตัน×เกรด แล้วหารด้วยตันรวม และคืน 0.0 ถ้าไม่มีบล็อกผ่าน"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "def avg_grade(blocks, cutoff):\n    pass\n"
+    tests: "assert abs(avg_grade([(10000, 0.8), (8000, 0.4), (12000, 1.2), (5000, 0.6)], 0.5) - 0.9407) < 0.001, f\"ค่าที่ได้คือ {avg_grade([(10000, 0.8), (8000, 0.4), (12000, 1.2), (5000, 0.6)], 0.5)}\"\nassert avg_grade([(100, 0.2)], 0.5) == 0.0, \"ถ้าไม่มีบล็อกผ่านค่าตัดต้องคืน 0.0\"\nassert abs(avg_grade([(100, 1.0), (300, 2.0)], 0.5) - 1.75) < 1e-9, \"ต้องถ่วงด้วยตัน ไม่ใช่เฉลี่ยเลขคณิต\"\n"
+    reference: "def avg_grade(blocks, cutoff):\n    sel = [(t, g) for t, g in blocks if g >= cutoff]\n    total = sum(t for t, _ in sel)\n    if total == 0:\n        return 0.0\n    return sum(t * g for t, g in sel) / total\n"
+  - id: "engineering.mining.mining-methods.p019"
+    topics: ["engineering.mining.mining-methods"]
+    difficulty: 4
+    type: "mcq"
+    stem: "ข้อใดอธิบายความแตกต่างระหว่างทรัพยากรแร่กับแร่สำรองได้ถูกต้องที่สุด"
+    hints: ["แร่สำรองต้องคุ้มค่าทั้งทางเทคนิคและเศรษฐกิจ", "ทรัพยากรยังไม่ได้ผ่านเกณฑ์นี้ทั้งหมด"]
+    solution: "แร่สำรองเป็นส่วนของทรัพยากรที่ได้รับการพิจารณาทั้งทางเทคนิคและเศรษฐกิจแล้ว"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "แร่สำรองคือส่วนของทรัพยากรที่ผ่านการพิจารณาเชิงเทคนิคและเศรษฐศาสตร์แล้วว่าขุดได้อย่างคุ้มค่า", "correct": true}, {"id": "b", "text": "ทรัพยากรและแร่สำรองหมายถึงสิ่งเดียวกันทุกประการ", "correct": false, "feedback": "ทรัพยากรยังไม่ได้ผ่านการพิจารณาความคุ้มค่า จึงกว้างกว่าแร่สำรอง"}, {"id": "c", "text": "แร่สำรองคือแร่ที่ยังไม่เคยสำรวจ", "correct": false, "feedback": "แร่สำรองต้องผ่านการสำรวจและการประเมินแล้ว"}, {"id": "d", "text": "ทรัพยากรคือแร่ที่ขุดขึ้นมาแล้วเท่านั้น", "correct": false, "feedback": "ทรัพยากรคือปริมาณที่ยังอยู่ในดิน ไม่ใช่สิ่งที่ขุดแล้ว"}]

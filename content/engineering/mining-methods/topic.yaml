@@ -1,0 +1,60 @@
+id: engineering.mining.mining-methods
+subject: engineering
+title: { th: การประเมินปริมาณแร่และการทำเหมือง, en: Mineral resource estimation and mining methods }
+summary: ประเมินมวลและเกรดของแหล่งแร่ด้วยหน้าตัดและค่าตัดเกรด คำนวณอัตราส่วนหินทิ้งและมุมลาดเหมือง และอธิบายหลักความปลอดภัยในการระเบิด
+difficulty: 7
+minutes: 40
+prerequisites: [earthscience.geology.minerals-rocks, engineering.surveying.surveying-basics, engineering.management.engineering-economics]
+encompasses:
+  - { id: engineering.surveying.surveying-basics, weight: 0.3 }
+  - { id: earthscience.geology.minerals-rocks, weight: 0.2 }
+curriculum_tags: []
+references:
+  - { title: "Open-pit mining", url: "https://en.wikipedia.org/wiki/Open-pit_mining", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Stripping ratio", url: "https://en.wikipedia.org/wiki/Stripping_ratio", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bench-section.svg
+    alt: "หน้าตัดของเหมืองผิวดินเป็นขั้นบันได มีหน้าดินเอียงสามชั้นสลับกับขั้นพักแนวนอนที่เรียกว่า berm มีเส้นประเฉียงจากฐานล่างซ้ายถึงขอบบนขวาแสดงมุมลาดรวมของเหมือง"
+    caption: "ภาพแนวคิดของขั้นบันไดและ berm ที่ใช้เพิ่มความปลอดภัยและความเสถียรของลาดเหมือง ไม่ใช่แบบออกแบบ"
+  - type: worked-example
+    title: เกรดเฉลี่ยของแร่ที่ผ่านค่าตัดเกรด
+    problem: "บล็อกแร่สมมติสามบล็อก (ตัน, เกรด%): (6000, 1.1), (4000, 0.3), (9000, 0.7) ค่าตัดเกรดคือ 0.5% เกรดเฉลี่ยของบล็อกที่ผ่านค่าตัดเท่าไร"
+    steps:
+      - text: "เลือกบล็อกที่เกรดไม่ต่ำกว่า 0.5%: ได้ (6000, 1.1) และ (9000, 0.7) บล็อกที่ 0.3% ถูกตัดทิ้ง"
+        why: "ค่าตัดเกรดคือเกณฑ์ที่บอกว่าบล็อกนั้นคุ้มค่าจะนับเป็นแร่หรือไม่"
+      - text: "รวมตัน $6000 + 9000 = 15000$ t และผลคูณตัน×เกรด $6000\\times1.1 + 9000\\times0.7 = 6600 + 6300 = 12900$"
+        why: "เกรดเฉลี่ยต้องถ่วงด้วยปริมาณ ไม่ใช่เฉลี่ยเลขคณิต"
+      - text: "เกรดเฉลี่ย $= 12900/15000 = 0.86\\%$"
+        why: "หารผลรวมโลหะด้วยมวลรวมของบล็อกที่ผ่านค่าตัด"
+    answer: "เกรดเฉลี่ย 0.86%"
+  - type: worked-example
+    title: มุมลาดรวมของเหมืองที่มีขั้นพัก
+    problem: "เหมืองผิวดินมี 5 ชั้น แต่ละชั้นสูง 12 m มุมหน้าดิน 65° และมี berm กว้าง 5 m ระหว่างชั้นทั้ง 4 ช่วง มุมลาดรวมเท่าไร (ค่าสมมติ)"
+    steps:
+      - text: "ระยะแนวนอนของหน้าดินหนึ่งชั้น: $12/\\tan 65° = 12/2.1445 \\approx 5.60$ m"
+        why: "หน้าดินเอียงทำให้มีระยะแนวนอนด้วย ไม่ใช่แค่ความสูง"
+      - text: "ระยะแนวนอนรวม $= 5 \\times 5.60 + 4 \\times 5 = 28.0 + 20.0 = 48.0$ m และความสูงรวม $= 60$ m"
+        why: "berm ทั้ง 4 ช่วงต้องนับเข้าในระยะแนวนอนรวมด้วย"
+      - text: "มุมลาดรวม $= \\arctan(60/48) \\approx 51.3°$"
+        why: "มุมรวมคืออาร์กแทนเจนต์ของความสูงรวมต่อระยะแนวนอนรวม"
+    answer: "ประมาณ 51.3°"
+  - { type: check, problem: engineering.mining.mining-methods.p001, prompt: "นึกถึงความลึกของแหล่งแร่และปริมาณหินทิ้งก่อนตอบ" }
+  - { type: check, problem: engineering.mining.mining-methods.p008, prompt: "berm มีหน้าที่หลักด้านความปลอดภัยและความเสถียร ไม่ใช่การเพิ่มผลผลิต" }
+glossary:
+  - { term: "เกรด (grade)", definition: "ปริมาณโลหะในแร่ต่อมวลแร่ มักแสดงเป็นเปอร์เซ็นต์" }
+  - { term: "ค่าตัดเกรด (cutoff grade)", definition: "เกรดขั้นต่ำที่ทำให้บล็อกแร่คุ้มค่าจะนับเป็นแร่ที่ขุด" }
+  - { term: "อัตราส่วนหินทิ้งต่อแร่ (stripping ratio)", definition: "มวลหินทิ้งที่ต้องเอาออกต่อมวลแร่หนึ่งหน่วย" }
+  - { term: "berm", definition: "ขั้นพักแนวนอนระหว่างขั้นบันไดของเหมืองผิวดิน ช่วยดักหินที่กลิ้งลงมาและเพิ่มความเสถียร" }
+  - { term: "ทรัพยากรและแร่สำรอง", definition: "ทรัพยากรคือปริมาณที่ประมาณจากธรณีวิทยา ส่วนแร่สำรองคือส่วนที่คุ้มค่าทั้งทางเทคนิคและเศรษฐกิจ" }
+flashcards:
+  - { front: "อัตราส่วนหินทิ้งต่อแร่คำนวณอย่างไร", back: "มวลหินทิ้ง ÷ มวลแร่" }
+  - { front: "เกรดเฉลี่ยถ่วงน้ำหนักคืออะไร", back: "ผลรวม(มวล×เกรด) ÷ มวลรวม" }
+  - { front: "berm ทำหน้าที่อะไร", back: "ดักหินที่กลิ้งลงมาและเพิ่มความเสถียรของลาดเหมือง" }
+  - { front: "ทำไมการระเบิดในเหมืองต้องทำโดยผู้เชี่ยวชาญ", back: "เพราะเกี่ยวข้องกับความปลอดภัยของคนและสิ่งแวดล้อม และต้องมีใบอนุญาตตามกฎหมาย" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

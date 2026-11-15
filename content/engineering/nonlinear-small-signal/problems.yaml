@@ -1,0 +1,200 @@
+problems:
+  - id: "engineering.electronics.nonlinear-small-signal.p001"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 1
+    type: "mcq"
+    stem: "ตัวต้านทานที่ค่าความต้านทานคงที่ไม่ขึ้นกับแรงดันหรือกระแส เป็นอุปกรณ์แบบใด"
+    hints: ["ดูว่ากราฟ V–I เป็นเส้นตรงหรือไม่", "กฎของโอห์มใช้กับอุปกรณ์เชิงเส้น"]
+    solution: "อุปกรณ์เชิงเส้นมีกราฟ V–I เป็นเส้นตรงผ่านจุดกำเนิด ค่าความต้านทานจึงคงที่"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "เชิงเส้น เพราะกราฟ V–I เป็นเส้นตรงผ่านจุดกำเนิด", "correct": true}, {"id": "b", "text": "ไม่เชิงเส้น เพราะมีค่าความต้านทาน", "correct": false, "feedback": "การมีค่าความต้านทานไม่ได้ทำให้เป็นไม่เชิงเส้น ต้องดูว่าค่าขึ้นกับแรงดันหรือไม่"}, {"id": "c", "text": "ไม่เชิงเส้น เพราะทำจากคาร์บอน", "correct": false, "feedback": "วัสดุไม่ได้เป็นตัวกำหนดความเป็นเชิงเส้น"}, {"id": "d", "text": "เชิงเส้น เพราะกราฟเป็นวงกลม", "correct": false, "feedback": "กราฟ V–I ของตัวต้านทานเชิงเส้นเป็นเส้นตรง"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p002"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 1
+    type: "numeric"
+    stem: "ตัวต้านทานเชิงเส้น $1\\ \\mathrm{k\\Omega}$ มีกระแส $5\\ \\mathrm{mA}$ ไหลผ่าน แรงดันตกคร่อมกี่โวลต์"
+    hints: ["กฎของโอห์ม $V = IR$ ใช้หน่วย A และ Ω"]
+    solution: "$V = 5\\times10^{-3}\\times1000 = 5\\ \\mathrm{V}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 5.0, "tolerance": 0.01, "unit": "V"}
+    misconceptions: [{"match": 0.005, "feedback": "ไม่ได้คูณกับความต้านทาน"}, {"match": 5000.0, "feedback": "ลืมแปลง mA เป็น A"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p003"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 1
+    type: "mcq"
+    stem: "ข้อใดเป็นอุปกรณ์ที่ไม่เชิงเส้นตามแนวคิดของบทเรียน"
+    hints: ["ไดโอดมีกราฟกระแสเป็นเอกซ์โพเนนเชียลกับแรงดัน", "ตัวอื่นในตัวเลือกใช้แบบจำลองเชิงเส้นได้"]
+    solution: "ไดโอดมีความสัมพันธ์กระแส–แรงดันแบบเอกซ์โพเนนเชียล จึงไม่เชิงเส้น"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ไดโอดซิลิคอน", "correct": true}, {"id": "b", "text": "ตัวต้านทานค่าคงที่", "correct": false, "feedback": "ตัวต้านทานค่าคงที่เป็นอุปกรณ์เชิงเส้น"}, {"id": "c", "text": "แบตเตอรี่แรงดันคงที่ในอุดมคติ", "correct": false, "feedback": "แหล่งจ่ายแรงดันคงที่เป็นองค์ประกอบเชิงเส้นในแบบจำลองอุดมคติ"}, {"id": "d", "text": "ตัวเก็บประจุค่าคงที่ในโดเมนไฟตรง", "correct": false, "feedback": "ในสภาวะไฟตรงคงตัว ตัวเก็บประจุทำตัวเป็นวงจรเปิด จึงไม่ใช่อุปกรณ์ไม่เชิงเส้นในความหมายของบทนี้"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p004"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ไดโอดในแบบจำลองสมมติมี $I_s = 10^{-12}\\ \\mathrm{A}$, $n = 1$, $V_T = 0.02585\\ \\mathrm{V}$ เมื่อแรงดันไปข้างหน้า $V = 0.6\\ \\mathrm{V}$ กระแส $I$ เป็นกี่ mA (ทศนิยม 1 ตำแหน่ง, ใช้ $I = I_s(e^{V/(nV_T)}-1)$)"
+    hints: ["คำนวณ $V/(nV_T) = 0.6/0.02585 \\approx 23.21$ แล้วหา $e^{23.21}$"]
+    solution: "$I = 10^{-12}(e^{23.21}-1) \\approx 1.2032e-02\\ \\mathrm{A} = 12.0\\ \\mathrm{mA}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 12.0, "tolerance": 0.1, "unit": "mA"}
+    misconceptions: [{"match": 0.012, "feedback": "ตอบเป็นแอมแปร์แทน mA จึงผิดพันเท่า"}, {"match": 600.0, "feedback": "ตอบแรงดัน 600 mV แทนกระแส ต้องแทนค่าในสมการไดโอดก่อน"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p005"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 2
+    type: "numeric"
+    stem: "ที่จุดทำงานซึ่งกระแสไดโอด $I = 10\\ \\mathrm{mA}$ ความต้านทานเชิงอนุพันธ์สัญญาณเล็ก $r_d = nV_T/I$ มีค่าเท่าใดในหน่วยโอห์ม (ทศนิยม 3 ตำแหน่ง)"
+    hints: ["ความต้านทานเชิงอนุพันธ์คือส่วนกลับของความชันของกราฟ $I$–$V$", "แทน $I = 0.010$ A"]
+    solution: "$r_d = 0.02585/0.010 = 2.585\\ \\Omega$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 2.585, "tolerance": 0.01, "unit": "ohm"}
+    misconceptions: [{"match": 0.002585, "feedback": "ใช้ $I = 10$ ตามตัวเลข mA โดยไม่แปลงเป็น $0.010$ A"}, {"match": 0.02585, "feedback": "ตอบค่า $V_T$ โดยไม่หารด้วยกระแส"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p006"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 2
+    type: "mcq"
+    stem: "เมื่อกระแสไดโอดเพิ่มขึ้นในช่วงไบแอสตรง ความต้านทานเชิงอนุพันธ์ $r_d$ ของไดโอดจะเป็นอย่างไร"
+    hints: ["ดูความสัมพันธ์ $r_d = nV_T/I$", "กระแสอยู่ในตัวส่วน"]
+    solution: "จาก $r_d = nV_T/I$ เมื่อ $I$ เพิ่ม $r_d$ ลดลง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ลดลง", "correct": true}, {"id": "b", "text": "เพิ่มขึ้นตามกระแส", "correct": false, "feedback": "เมื่อกระแสมากขึ้น ความชันของกราฟ $I$–$V$ เพิ่ม ทำให้ความต้านทานลดลง"}, {"id": "c", "text": "คงที่เสมอ", "correct": false, "feedback": "ค่า $r_d$ ขึ้นกับจุดทำงาน จึงไม่คงที่ เว้นแต่ในแบบจำลองแบบเส้นตรงเฉพาะช่วง"}, {"id": "d", "text": "เป็นศูนย์ที่กระแสต่ำ", "correct": false, "feedback": "ที่กระแสต่ำ $r_d$ มีค่ามาก ไม่ใช่ศูนย์"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p007"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 2
+    type: "numeric"
+    stem: "วงจรมีแหล่งจ่าย $5\\ \\mathrm{V}$ ต่ออนุกรมกับตัวต้านทาน $1\\ \\mathrm{k\\Omega}$ และไดโอด ถ้าประมาณว่าแรงดันตกคร่อมไดโอดคือ $0.7\\ \\mathrm{V}$ กระแสในวงจรโดยประมาณเป็นกี่ mA (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ใช้กฎแรงดันของเคอร์ชอฟฟ์: $5 - 0.7$ ตกคร่อมตัวต้านทาน"]
+    solution: "$I = (5 - 0.7)/1000 = 4.3\\times10^{-3}\\ \\mathrm{A} = 4.3\\ \\mathrm{mA}$ (เป็นการประมาณแรงดันไดโอด)"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 4.3, "tolerance": 0.05, "unit": "mA"}
+    misconceptions: [{"match": 5.0, "feedback": "คิดว่าไดโอดไม่ตกแรงดันเลย"}, {"match": 0.43, "feedback": "หารด้วย 10 โดยไม่มีเหตุผล"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p008"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 2
+    type: "match"
+    stem: "จับคู่คำศัพท์กับความหมายในวงจรไม่เชิงเส้น"
+    pairs: [{"left": "จุดทำงาน (operating point)", "right": "จุดที่กระแสและแรงดันของวงจรไบแอสสอดคล้องกับสมการทั้งสอง"}, {"left": "เส้นโหลด (load line)", "right": "กราฟของสมการวงจรเชิงเส้นของส่วนที่เหลือบนระนาบ V–I"}, {"left": "ความต้านทานเชิงอนุพันธ์", "right": "ความชันผกผันของกราฟ I–V ที่จุดทำงาน"}, {"left": "แบบจำลองสัญญาณเล็ก", "right": "การประมาณเชิงเส้นรอบจุดทำงานเมื่อสัญญาณแกว่งน้อย"}]
+    hints: ["จุดทำงานคือจุดตัดของเส้นสองเส้น", "สัญญาณเล็กทำให้ใช้เส้นสัมผัสได้"]
+    solution: "จุดทำงานคือจุดที่สมการวงจรและสมการอุปกรณ์เป็นจริงพร้อมกัน เส้นโหลดคือความสัมพันธ์เชิงเส้นของวงจรภายนอก ความต้านทานเชิงอนุพันธ์คือส่วนกลับของความชัน และแบบจำลองสัญญาณเล็กคือการประมาณเชิงเส้นรอบจุดทำงาน"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.electronics.nonlinear-small-signal.p009"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 3
+    type: "numeric"
+    stem: "วงจรไฟตรงแหล่งจ่าย $5\\ \\mathrm{V}$ ต่ออนุกรมกับ $R = 1\\ \\mathrm{k\\Omega}$ และไดโอดตามแบบจำลองสมมติข้างต้น (ค่าสมมติ) หาแรงดันตกคร่อมไดโอดที่จุดทำงานได้เท่าใดในหน่วยโวลต์ (ทศนิยม 3 ตำแหน่ง) ใช้สมการ $(5 - V)/R = I_s(e^{V/V_T} - 1)$"
+    hints: ["ลองค่า $V$ ที่ทำให้ฝั่งซ้ายและขวาเท่ากัน โดยสังเกตว่าเมื่อ $V$ เพิ่ม ฝั่งขวาจะเพิ่มเร็วกว่า", "ใช้วิธีแบ่งครึ่งช่วง $[0, 5]$ ซ้ำจนแคบมาก"]
+    solution: "ด้วยวิธีแบ่งครึ่งหรือการลองซ้ำ จะได้ $V_D \\approx 0.574\\ \\mathrm{V}$ และกระแส $I_D \\approx 4.43\\ \\mathrm{mA}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.574, "tolerance": 0.002, "unit": "V"}
+    misconceptions: [{"match": 0.7, "feedback": "ใช้แรงดันไดโอดประมาณ 0.7 V โดยไม่แก้สมการ ซึ่งคลาดเคลื่อนมาก"}, {"match": 5.0, "feedback": "คิดว่าไดโอดไม่ได้ตกแรงดัน"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p010"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ในวงจรเดียวกับโจทย์ก่อนหน้า กระแสไดโอดที่จุดทำงานเป็นกี่ mA (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["เมื่อได้ $V_D$ แล้ว กระแสหาได้จาก $(5 - V_D)/R$"]
+    solution: "$I_D = (5 - 0.574)/1000 \\approx 4.43\\ \\mathrm{mA}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 4.43, "tolerance": 0.02, "unit": "mA"}
+    misconceptions: [{"match": 4.3, "feedback": "ใช้ค่าประมาณ 0.7 V แทนการแก้สมการ"}, {"match": 5.0, "feedback": "ลืมหักแรงดันตกคร่อมไดโอด"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p011"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ที่จุดทำงานของโจทย์ก่อนหน้า ความต้านทานเชิงอนุพันธ์ $r_d = nV_T/I_D$ เป็นกี่โอห์ม (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["ใช้ $I_D$ ที่ได้จากโจทย์ก่อนหน้า"]
+    solution: "$r_d = 0.02585/0.00443 \\approx 5.84\\ \\Omega$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 5.84, "tolerance": 0.02, "unit": "ohm"}
+    misconceptions: [{"match": 2.59, "feedback": "ใช้กระแส 10 mA แทนกระแสจริง"}, {"match": 6.01, "feedback": "ใช้กระแส 4.3 mA จากการประมาณแรงดันไดโอด 0.7 V แทนกระแสที่แก้สมการได้"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p012"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ที่จุดทำงานเดียวกัน ถ้าซ้อนสัญญาณเล็กที่แหล่งจ่าย $v_{in}$ ผ่านตัวต้านทาน $1\\ \\mathrm{k\\Omega}$ ก่อนไดโอดแบบอนุกรม อัตราส่วน $v_d/v_{in} = r_d/(R + r_d)$ โดยประมาณเป็นเท่าใด (ทศนิยม 5 ตำแหน่ง)"
+    hints: ["ใช้แบบจำลองสัญญาณเล็กที่ไดโอดเป็น $r_d$ ต่ออนุกรมกับ $R$"]
+    solution: "$v_d/v_{in} = 5.841/(1000+5.841) \\approx 0.00581$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.00581, "tolerance": 2e-05, "unit": ""}
+    misconceptions: [{"match": 0.99419, "feedback": "สลับตำแหน่งของ $r_d$ กับ $R$"}, {"match": 0.00584, "feedback": "ใช้ $r_d/R$ โดยไม่บวก $r_d$ ในตัวส่วน ซึ่งใกล้เคียงแต่ไม่ตรงตามที่ถามถึงทศนิยม 5 ตำแหน่ง"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p013"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ถ้าแหล่งจ่ายเพิ่มเป็น $9\\ \\mathrm{V}$ โดยความต้านทาน $1\\ \\mathrm{k\\Omega}$ และแบบจำลองไดโอดเดิม แรงดันตกคร่อมไดโอดที่จุดทำงานเป็นกี่โวลต์ (ทศนิยม 3 ตำแหน่ง)"
+    hints: ["แรงดันไดโอดเพิ่มขึ้นช้าเมื่อกระแสเพิ่มมาก เพราะเป็นเอกซ์โพเนนเชียล"]
+    solution: "วิธีแบ่งครึ่งได้ $V_D \\approx 0.591\\ \\mathrm{V}$ และกระแส $\\approx 8.41\\ \\mathrm{mA}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.591, "tolerance": 0.002, "unit": "V"}
+    misconceptions: [{"match": 0.7, "feedback": "ใช้ค่าประมาณ 0.7 V ซึ่งไม่ได้คำนึงถึงการเพิ่มของแหล่งจ่าย"}, {"match": 1.033, "feedback": "คิดว่าแรงดันไดโอดเพิ่มเป็นสัดส่วนกับแหล่งจ่าย ($0.574\\times9/5$) ที่จริงแรงดันไดโอดเพิ่มเพียงเล็กน้อยเพราะกระแสเป็นเอกซ์โพเนนเชียลของแรงดัน"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p014"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ที่จุดแรงดัน $V = 0.6\\ \\mathrm{V}$ ของแบบจำลองไดโอดเดิม (กระแสประมาณ 12 mA) ความต้านทานเชิงอนุพันธ์เป็นกี่โอห์ม (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["ความชันของกราฟที่จุดนี้คือ $dI/dV = I/(nV_T)$", "ความต้านทานคือส่วนกลับของความชัน"]
+    solution: "$r_d = nV_T/I \\approx 0.02585/0.0120 \\approx 2.15\\ \\Omega$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 2.15, "tolerance": 0.02, "unit": "ohm"}
+    misconceptions: [{"match": 2.58, "feedback": "ใช้ค่าที่ 10 mA แทนกระแสที่ 0.6 V"}, {"match": 49.87, "feedback": "ใช้แรงดันหารกระแสแทนค่า $nV_T$ หารกระแส"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p015"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 4
+    type: "expression"
+    stem: "ใช้ $n$ แทนค่าตัวประกอบอุดมคติ $V$ แทนค่าแรงดันความร้อน และ $I$ แทนกระแสที่จุดทำงาน เขียนนิพจน์ของความต้านทานเชิงอนุพันธ์ $r_d$ ในรูปเศษส่วน"
+    hints: ["ความชันของกราฟ $I$–$V$ ของไดโอดคือ $I/(nV_T)$", "ความต้านทานคือส่วนกลับ"]
+    solution: "$r_d = nV_T/I$ เมื่อ $V_T$ แทนด้วย $V$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "\\frac{nV}{I}", "variables": ["n", "V", "I"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "\\frac{I}{nV}", "feedback": "สลับตัวเศษกับตัวส่วนซึ่งได้ความนำไฟฟ้าแทนความต้านทาน"}, {"match": "nVI", "feedback": "คูณกระแสแทนหาร"}]
+    prefix: "r_d ="
+  - id: "engineering.electronics.nonlinear-small-signal.p016"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 4
+    type: "mcq"
+    stem: "เหตุใดแบบจำลองสัญญาณเล็กจึงใช้ได้เมื่อสัญญาณแกว่งเล็กรอบจุดทำงาน"
+    hints: ["เส้นสัมผัสกับเส้นโค้งจะใกล้เส้นโค้งเมื่อระยะจากจุดสัมผัสเล็ก", "เปรียบเทียบการแกว่งกับ $nV_T$"]
+    solution: "เมื่อการแกว่งเล็กเทียบกับ $nV_T$ เส้นสัมผัสที่จุดทำงานจึงประมาณเส้นโค้งได้ดี"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "เพราะรอบจุดทำงานกราฟ $I$–$V$ เกือบเป็นเส้นตรงเมื่อแกว่งน้อยเทียบกับ $nV_T$", "correct": true}, {"id": "b", "text": "เพราะไดโอดไม่มีความไม่เชิงเส้นเลยในทุกช่วง", "correct": false, "feedback": "ไดโอดไม่เชิงเส้นในช่วงกว้าง แบบจำลองนี้ใช้ได้เพราะสัญญาณเล็กรอบจุดทำงาน"}, {"id": "c", "text": "เพราะกระแสต้องเป็นศูนย์เสมอ", "correct": false, "feedback": "กระแสไม่จำเป็นต้องเป็นศูนย์ มีกระแสไบแอสที่จุดทำงาน"}, {"id": "d", "text": "เพราะแรงดันไม่เปลี่ยนเลยในวงจร", "correct": false, "feedback": "สัญญาณเล็กทำให้แรงดันเปลี่ยนเล็กน้อย ไม่ได้คงที่"}]
+  - id: "engineering.electronics.nonlinear-small-signal.p017"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 5
+    type: "code"
+    stem: "เขียนฟังก์ชัน `diode_voltage(Vs, R)` ที่หาแรงดันตกคร่อมไดโอดของวงจร $V_s$ ต่อ $R$ อนุกรมกับไดโอด จากสมการ $(V_s - V)/R = I_s(e^{V/V_T}-1)$ โดยใช้ $I_s = 10^{-12}$ และ $V_T = 0.02585$ ด้วยวิธีแบ่งครึ่งช่วง $[0, V_s]$ ให้คืนค่า $V$ ทศนิยมตามที่คำนวณได้ ใช้ไลบรารี `math` ได้"
+    hints: ["ถ้าค่า $f(V) = (V_s - V)/R - I_s(e^{V/V_T}-1)$ ยังเป็นบวก ให้ขยับ $V$ ขึ้น", "ทำซ้ำจนช่วงแคบมากแล้วคืนจุดกึ่งกลาง"]
+    solution: "ฟังก์ชันใช้วิธีแบ่งครึ่งบนฟังก์ชัน $f(V)$ ที่เป็นบวกเมื่อ $V$ ต่ำและเป็นลบเมื่อ $V$ สูง จนได้ค่า $V_D \\approx 0.574$ V เมื่อ $V_s = 5$, $R = 1$ k"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "import math\n\ndef diode_voltage(Vs, R):\n    pass\n"
+    tests: "assert abs(diode_voltage(5, 1000) - 0.57415) < 0.002, f\"diode_voltage(5, 1000) ควรได้ประมาณ 0.574 V แต่ได้ {diode_voltage(5, 1000)}\"\nassert abs(diode_voltage(9, 1000) - 0.59074) < 0.002, f\"diode_voltage(9, 1000) ควรได้ประมาณ 0.591 V แต่ได้ {diode_voltage(9, 1000)}\"\nassert diode_voltage(9, 1000) > diode_voltage(5, 1000), \"แหล่งจ่ายที่สูงขึ้นต้องทำให้แรงดันไดโอดสูงขึ้น\"\n"
+    reference: "import math\n\ndef diode_voltage(Vs, R):\n    Is, VT = 1e-12, 0.02585\n    lo, hi = 0.0, Vs\n    for _ in range(200):\n        mid = (lo + hi) / 2\n        f = (Vs - mid) / R - Is * (math.exp(mid / VT) - 1)\n        if f > 0:\n            lo = mid\n        else:\n            hi = mid\n    return (lo + hi) / 2\n"
+  - id: "engineering.electronics.nonlinear-small-signal.p018"
+    topics: ["engineering.electronics.nonlinear-small-signal"]
+    difficulty: 5
+    type: "numeric"
+    stem: "ในวงจรไฟตรงเดิมที่ $V_s = 9\\ \\mathrm{V}$ และ $R = 1\\ \\mathrm{k\\Omega}$ กระแสไดโอดที่จุดทำงานโดยประมาณเป็นกี่ mA (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["หาแรงดันไดโอดด้วยการแบ่งครึ่งก่อน แล้วคำนวณ $I = (V_s - V_D)/R$"]
+    solution: "$V_D \\approx 0.591$ V จึง $I_D = (9 - 0.591)/1000 \\approx 8.41$ mA"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 8.41, "tolerance": 0.02, "unit": "mA"}
+    misconceptions: [{"match": 4.43, "feedback": "ใช้กระแสของแหล่ง 5 V แทนกรณี 9 V"}, {"match": 9.0, "feedback": "คิดว่ากระแสเท่ากับแรงดันแหล่งจ่ายหน่วย mA"}]

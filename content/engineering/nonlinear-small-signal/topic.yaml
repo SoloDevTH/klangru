@@ -1,0 +1,59 @@
+id: engineering.electronics.nonlinear-small-signal
+subject: engineering
+title: { th: อุปกรณ์ไม่เชิงเส้น ไดโอด และการวิเคราะห์สัญญาณเล็ก, en: Nonlinear devices, diodes, and small-signal analysis }
+summary: หาจุดทำงานของวงจรที่มีไดโอดจากเส้นโหลด ใช้วิธีแบ่งครึ่งช่วงแก้สมการ และประมาณความต้านทานเชิงอนุพันธ์สำหรับสัญญาณเล็ก
+difficulty: 7.5
+minutes: 40
+prerequisites: [engineering.circuits.dc-analysis, math.calculus.derivative-applications]
+encompasses:
+  - { id: math.calculus.derivative-applications, weight: 0.4 }
+  - { id: engineering.circuits.dc-analysis, weight: 0.3 }
+curriculum_tags: []
+references:
+  - { title: "Shockley diode equation", url: "https://en.wikipedia.org/wiki/Shockley_diode_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Small-signal model", url: "https://en.wikipedia.org/wiki/Small-signal_model", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Bisection method", url: "https://en.wikipedia.org/wiki/Bisection_method", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: diode-load-line.svg
+    alt: "กราฟเส้นโค้งเพิ่มขึ้นอย่างรวดเร็วเมื่อแรงดันเพิ่มจากศูนย์ เส้นตรงสีส้มลดลงช้า ๆ จากประมาณ 6.4 มิลลิแอมแปร์ที่แรงดันศูนย์ จุดที่เส้นโค้งกับเส้นตรงตัดกันคือจุดทำงานใกล้แรงดัน 0.6 โวลต์"
+    caption: "เส้นโค้งของไดโอดตัดกับเส้นโหลดของวงจรที่จุดทำงาน เส้นโหลดเป็นของวงจรตัวอย่างในบทเรียน ($V_s = 3$ V, $R = 470\\ \\Omega$) ภาพแสดงแนวคิดของการตัดกราฟ ค่าตัวเลขต้องคำนวณจากสมการ"
+  - type: worked-example
+    title: จุดทำงานของวงจรไดโอดกับตัวต้านทาน 470 โอห์ม
+    problem: "แหล่งจ่าย $3\\ \\mathrm{V}$ ต่ออนุกรมกับ $470\\ \\Omega$ และไดโอดตามแบบจำลองสมมติในบทเรียน (ค่าสมมติ) จงหาแรงดันและกระแสที่จุดทำงาน"
+    steps:
+      - text: "เขียนสมการ: $(3 - V)/470 = 10^{-12}(e^{V/0.02585} - 1)$ ซึ่งแก้ตรง ๆ ได้ยาก"
+        why: "สมการไดโอดเป็นเอกซ์โพเนนเชียล จึงต้องใช้วิธีเชิงตัวเลข"
+      - text: "ทดสอบ $V = 1.5$ V ฝั่งซ้ายเป็นบวก ฝั่งขวาใหญ่มาก จึงลด $V$ ลง แล้วทำซ้ำด้วยวิธีแบ่งครึ่งจนได้ $V \\approx 0.578$ V"
+        why: "การแบ่งครึ่งต้องเลือกช่วงที่ฟังก์ชันเปลี่ยนเครื่องหมาย"
+      - text: "กระแส $I = (3 - 0.578)/470 \\approx 5.15$ mA"
+        why: "เมื่อรู้แรงดันไดโอด กระแสหาได้จากกฎแรงดันของวงจร"
+    answer: "$V_D \\approx 0.578$ V และ $I \\approx 5.15$ mA"
+  - type: worked-example
+    title: ความต้านทานเชิงอนุพันธ์และการแบ่งสัญญาณเล็ก
+    problem: "ที่จุดทำงานของตัวอย่างก่อนหน้า $I = 5.15$ mA ความต้านทานเชิงอนุพันธ์ $r_d$ และสัดส่วนสัญญาณเล็กที่ตกคร่อมไดโอดเมื่อต่อกับ $R = 470\\ \\Omega$ เท่าไร"
+    steps:
+      - text: "คำนวณ $r_d = nV_T/I = 0.02585/0.00515 \\approx 5.02\\ \\Omega$"
+        why: "$r_d$ เป็นส่วนกลับของความชันของกราฟ ณ จุดทำงานนี้"
+      - text: "คำนวณสัดส่วน $v_d/v_{in} = r_d/(R + r_d) = 5.02/475.02 \\approx 0.0106$"
+        why: "สัญญาณเล็กแบ่งระหว่าง $R$ กับ $r_d$ ตามอัตราส่วนความต้านทาน"
+    answer: "$r_d \\approx 5.02\\ \\Omega$ และ $v_d/v_{in} \\approx 0.0106$"
+  - { type: check, problem: engineering.electronics.nonlinear-small-signal.p001, prompt: "ดูว่าค่า R ของอุปกรณ์เปลี่ยนไปหรือไม่เมื่อเปลี่ยนจุด" }
+  - { type: check, problem: engineering.electronics.nonlinear-small-signal.p006, prompt: "ลองนึกว่ากระแสมากขึ้นทำให้ความชันของกราฟเป็นอย่างไร" }
+glossary:
+  - { term: "อุปกรณ์ไม่เชิงเส้น", definition: "อุปกรณ์ที่กราฟ V–I ไม่เป็นเส้นตรงผ่านจุดกำเนิด ค่าความต้านทานขึ้นกับจุดทำงาน" }
+  - { term: "เส้นโหลด (load line)", definition: "กราฟของสมการวงจรภายนอกบนระนาบ V–I ซึ่งตัดกับกราฟของอุปกรณ์ที่จุดทำงาน" }
+  - { term: "จุดทำงาน (operating point)", definition: "จุดที่กระแสและแรงดันของวงจรสอดคล้องกับสมการทั้งหมดพร้อมกัน" }
+  - { term: "ความต้านทานเชิงอนุพันธ์ (r_d)", definition: "ส่วนกลับของความชันของกราฟ I–V ที่จุดทำงาน ใช้กับสัญญาณเล็ก" }
+  - { term: "แรงดันความร้อน (V_T)", definition: "ค่าประมาณ kT/q ประมาณ 0.02585 V ที่อุณหภูมิห้อง" }
+flashcards:
+  - { front: "สมการ Shockley ของไดโอด", back: "I = I_s(e^{V/(nV_T)} − 1)" }
+  - { front: "จุดทำงานคืออะไร", back: "จุดตัดของเส้นโหลดกับกราฟของอุปกรณ์" }
+  - { front: "r_d คำนวณอย่างไร", back: "r_d = nV_T / I" }
+  - { front: "เมื่อกระแสไบแอสเพิ่ม r_d เป็นอย่างไร", back: "ลดลง" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

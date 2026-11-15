@@ -1,0 +1,61 @@
+id: engineering.environmental.noise-control
+subject: engineering
+title: { th: การควบคุมมลภาวะทางเสียง, en: Noise pollution control }
+summary: คำนวณเดซิเบลที่รวมจากหลายแหล่ง ลดระดับเสียงตามระยะ หา Leq ของเสียงที่แปรผัน และเลือกวิธีควบคุมเสียงตามลำดับ
+difficulty: 6.5
+minutes: 35
+prerequisites: [physics.waves.sound-properties, math.functions.logarithms]
+encompasses:
+  - { id: math.functions.logarithms, weight: 0.5 }
+  - { id: physics.waves.sound-properties, weight: 0.3 }
+curriculum_tags: []
+references:
+  - { title: "Sound pressure", url: "https://en.wikipedia.org/wiki/Sound_pressure", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "A-weighting", url: "https://en.wikipedia.org/wiki/A-weighting", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Noise regulation", url: "https://en.wikipedia.org/wiki/Noise_regulation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: point-source-attenuation.svg
+    alt: "เส้นตรงลาดลงจากซ้ายบนไปขวาล่าง แกนนอนเป็นระยะจากแหล่งเสียงแบบลอการิทึมตั้งแต่ 1 ถึง 100 เมตร แกนตั้งเป็นระดับเสียงจาก 40 ถึง 100 dB เส้นตรงแสดงว่าเสียงลดลงเท่ากันทุกครั้งที่ระยะเพิ่มเป็นสองเท่า"
+    caption: "ระดับเสียงจากแหล่งจุดในพื้นที่โล่งลดลงตาม $20\\log_{10}(r)$ เป็นเส้นสมมติที่เริ่มต้น 100 dB ที่ระยะ 1 เมตร"
+  - type: worked-example
+    title: รวมระดับเสียงจากเครื่องจักรสองเครื่องที่ดังไม่เท่ากัน
+    problem: "ที่จุดรับเสียงหนึ่งมีเสียงจากเครื่องอัดอากาศ $78\\ \\mathrm{dB}$ และเครื่องปั๊มน้ำ $72\\ \\mathrm{dB}$ ระดับรวมเป็นเท่าไร (ค่าสมมติ)"
+    steps:
+      - text: "แปลงแต่ละแหล่งเป็นความเข้มสัมพัทธ์: $10^{7.8}\\approx 6.31\\times10^{7}$ และ $10^{7.2}\\approx 1.58\\times10^{7}$"
+        why: "dB เป็นลอการิทึม ต้องแปลงกลับเป็นความเข้มก่อนรวม"
+      - text: "รวมความเข้ม: $6.31\\times10^{7} + 1.58\\times10^{7} = 7.89\\times10^{7}$"
+        why: "ความเข้มรวมเป็นผลบวกโดยตรง"
+      - text: "แปลงกลับเป็น dB: $10\\log_{10}(7.89\\times10^{7}) \\approx 78.97$"
+        why: "ผลรวมเกือบเท่ากับแหล่งที่ดังกว่า เพราะแหล่งเบากว่ามีความเข้มเพียงราวหนึ่งในสี่ของแหล่งที่ดัง"
+    answer: "ระดับรวมประมาณ 79.0 dB"
+  - type: worked-example
+    title: เสียงจากทางด่วนที่ระยะไกลขึ้น
+    problem: "แหล่งเส้นในพื้นที่โล่งวัดได้ $80\\ \\mathrm{dB}$ ที่ระยะ 10 m ถ้าระยะเพิ่มเป็น 40 m ระดับเสียงเป็นเท่าไร (ค่าสมมติ)"
+    steps:
+      - text: "ระยะเพิ่มขึ้น 4 เท่า: $r_2/r_1 = 40/10 = 4$"
+        why: "อัตราส่วนระยะเป็นตัวกำหนดปริมาณการลดลง"
+      - text: "ใช้สูตรแหล่งเส้น: $\\Delta L = 10\\log_{10}(4) \\approx 6.02\\ \\mathrm{dB}$"
+        why: "ทางด่วนเป็นแหล่งเส้น จึงใช้ 10 ไม่ใช่ 20"
+      - text: "ระดับที่ระยะ 40 m คือ $80 - 6.02 \\approx 74.0\\ \\mathrm{dB}$"
+        why: "เสียงลดลงตามระยะ จึงต้องลบค่าที่ลดออกจากระดับที่ระยะ 10 m"
+    answer: "ประมาณ 74.0 dB"
+  - { type: check, problem: engineering.environmental.noise-control.p001, prompt: "ลองคิดว่าความเข้มเพิ่มเท่าไรเมื่อ dB เพิ่ม 10 ก่อนเปิดเฉลย" }
+  - { type: check, problem: engineering.environmental.noise-control.p002, prompt: "นึกถึงจำนวนแหล่งเสียงที่เท่ากันก่อนตอบ" }
+glossary:
+  - { term: "เดซิเบล (dB)", definition: "หน่วยลอการิทึมของอัตราส่วนความเข้มหรือความดันเสียงเทียบกับค่าอ้างอิง" }
+  - { term: "dB(A)", definition: "ระดับเสียงที่ถ่วงน้ำหนักความถี่ตามการตอบสนองของหูมนุษย์" }
+  - { term: "Leq", definition: "ระดับเสียงเทียบเท่า ค่าคงที่ที่ให้พลังงานเสียงรวมเท่ากับเสียงแปรผันในช่วงเวลาเดียวกัน" }
+  - { term: "แหล่งจุดและแหล่งเส้น", definition: "แหล่งเสียงที่แผ่เป็นทรงกลมหรือทรงกระบอก ทำให้เสียงลดตามระยะต่างกัน" }
+  - { term: "การควบคุมที่แหล่งกำเนิด", definition: "การลดเสียงตั้งแต่ต้นทาง เช่น เปลี่ยนเครื่องหรือหุ้มเครื่อง ซึ่งเป็นลำดับแรกที่ควรพิจารณา" }
+flashcards:
+  - { front: "ระดับเสียงเพิ่ม 10 dB ความเข้มเพิ่มกี่เท่า", back: "10 เท่า" }
+  - { front: "เครื่องเหมือนกันสองเครื่องรวมกันเพิ่มกี่ dB", back: "ประมาณ 3 dB" }
+  - { front: "สูตรการลดระดับของแหล่งจุดตามระยะ", back: "ลด 20 log10(r2/r1) dB" }
+  - { front: "ทำไมห้ามบวกค่า dB ตรง ๆ", back: "เพราะ dB เป็นลอการิทึม ต้องรวมความเข้มก่อนแล้วแปลงกลับ" }
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors: [ทีมคลังรู้]
+ai_assisted: true

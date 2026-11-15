@@ -1,0 +1,199 @@
+problems:
+  - id: "engineering.materials.steels-heat-treatment.p001"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 1
+    type: "numeric"
+    stem: "จุดยูเทกทอยด์ของระบบเหล็ก–คาร์บอนอยู่ที่ปริมาณคาร์บอนประมาณกี่ wt% (ตอบเป็นทศนิยม 2 ตำแหน่ง)"
+    hints: ["เหล็กกล้าที่มีคาร์บอนประมาณนี้เมื่อเย็นตัวจะเกิดเพิร์ลไลต์ทั้งหมด", "ค่านี้อยู่ระหว่าง 0.02 wt% (ความสามารถละลายสูงสุดของคาร์บอนในเฟอร์ไรต์) กับ 6.67 wt% (ซีเมนไทต์)"]
+    solution: "จุดยูเทกทอยด์อยู่ที่ประมาณ 0.76 wt%C และ 727 °C"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.76, "tolerance": 0.01, "unit": "wt%"}
+    misconceptions: [{"match": 0.02, "feedback": "นี่คือความสามารถละลายสูงสุดของคาร์บอนในเฟอร์ไรต์ ไม่ใช่จุดยูเทกทอยด์"}, {"match": 6.67, "feedback": "นี่คือปริมาณคาร์บอนของซีเมนไทต์ Fe₃C ไม่ใช่จุดยูเทกทอยด์"}]
+  - id: "engineering.materials.steels-heat-treatment.p002"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 1
+    type: "mcq"
+    stem: "อุณหภูมิยูเทกทอยด์ของระบบเหล็ก–คาร์บอนโดยประมาณเป็นกี่องศาเซลเซียส"
+    hints: ["จุดยูเทกทอยด์อยู่ต่ำกว่าอุณหภูมิที่เหล็กบริสุทธิ์เปลี่ยนโครงสร้างที่ 912 °C", "ลองนึกถึงช่วงที่ออสเทไนต์สลายเป็นเพิร์ลไลต์"]
+    solution: "จุดยูเทกทอยด์ของเหล็ก–คาร์บอนประมาณ 727 °C ที่คาร์บอน 0.76 wt%"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "727 °C", "correct": true}, {"id": "b", "text": "1148 °C", "correct": false, "feedback": "1148 °C เป็นจุดยูเทคติกของระบบ ซึ่งเกี่ยวกับของเหลว ไม่ใช่การเปลี่ยนเฟสยูเทกทอยด์ของออสเทไนต์"}, {"id": "c", "text": "912 °C", "correct": false, "feedback": "912 °C เป็นจุดที่เหล็กบริสุทธิ์เปลี่ยนจากโครงสร้างแบบ BCC ไปเป็น FCC ไม่ใช่จุดยูเทกทอยด์"}, {"id": "d", "text": "1538 °C", "correct": false, "feedback": "1538 °C คือจุดหลอมเหลวของเหล็กบริสุทธิ์"}]
+  - id: "engineering.materials.steels-heat-treatment.p003"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 1
+    type: "text"
+    stem: "ธาตุที่เป็นองค์ประกอบหลักของเหล็กกล้า สัญลักษณ์ทางเคมีคืออะไร"
+    hints: ["สัญลักษณ์มาจากชื่อละติน Ferrum", "เป็นโลหะที่รู้จักกันทั่วไปในงานก่อสร้าง"]
+    solution: "ธาตุหลักคือเหล็ก สัญลักษณ์ Fe"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    accepted: ["Fe", "fe", "เหล็ก", "ธาตุเหล็ก", "iron"]
+    misconceptions: []
+  - id: "engineering.materials.steels-heat-treatment.p004"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 2
+    type: "numeric"
+    stem: "เหล็กกล้าตัวอย่าง (ค่าสมมติ) มี C 0.20, Mn 0.90, Cr 0.15, Mo 0.05, V 0.02, Ni 0.10 และ Cu 0.10 (หน่วย wt%) คำนวณค่าเทียบเท่าคาร์บอน CE ตามสูตร IIW ได้เท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    hints: ["สูตร IIW คือ $CE = C + Mn/6 + (Cr+Mo+V)/5 + (Ni+Cu)/15$", "แต่ละธาตุหารด้วยตัวหารของตัวเองก่อนรวมกัน"]
+    solution: "$CE = 0.20 + 0.90/6 + (0.15+0.05+0.02)/5 + (0.10+0.10)/15 = 0.407 \\approx 0.41$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 0.41, "tolerance": 0.005, "unit": ""}
+    misconceptions: [{"match": 1.52, "feedback": "รวมปริมาณธาตุทั้งหมดโดยไม่หารด้วยตัวหาร"}, {"match": 0.2, "feedback": "ใช้เฉพาะปริมาณคาร์บอน"}]
+  - id: "engineering.materials.steels-heat-treatment.p005"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 2
+    type: "numeric"
+    stem: "แท่งเหล็กจากโรงงานรีดเหล็กในประเทศไทยที่มีคาร์บอน 0.40 wt% (ค่าสมมติ) เมื่อเย็นตัวถึงอุณหภูมิห้องมีซีเมนไทต์รวมประมาณกี่ wt% (ทศนิยม 1 ตำแหน่ง, กฎคานงัด, ค่าสมมติ)"
+    hints: ["ใช้ความเข้มข้นของเฟอร์ไรต์ $0.02$ และซีเมนไทต์ $6.67$ เป็นขอบ", "สัดส่วนซีเมนไทต์ $= (C_0 - 0.02)/(6.67 - 0.02)$"]
+    solution: "$(0.40 - 0.02)/(6.67 - 0.02) = 0.057$ จึงประมาณ $5.7\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 5.7, "tolerance": 0.1, "unit": "wt%"}
+    misconceptions: [{"match": 6.0, "feedback": "ใช้ $C_0/6.67$ โดยไม่หักคาร์บอนที่ละลายในเฟอร์ไรต์"}, {"match": 40.0, "feedback": "ใช้ค่า $C_0$ เป็นเปอร์เซ็นต์โดยตรง"}]
+  - id: "engineering.materials.steels-heat-treatment.p006"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 2
+    type: "mcq"
+    stem: "การอบอ่อน (annealing) ของเหล็กกล้ามีจุดประสงค์หลักเรื่องใด"
+    hints: ["การอบอ่อนคือให้ความร้อนแล้วเย็นตัวช้า", "เมื่อเย็นตัวช้า ผลึกมีเวลาจัดเรียงตัวใหม่ ความแข็งจึงลดลง"]
+    solution: "การอบอ่อนทำให้โครงสร้างเป็นเนื้อเดียวกัน ลดความแข็งและความเค้นภายใน ทำให้ขึ้นรูปได้ง่าย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ทำให้โครงสร้างสม่ำเสมอ ลดความแข็ง และเพิ่มความสามารถขึ้นรูป", "correct": true}, {"id": "b", "text": "เพิ่มความแข็งสูงสุดด้วยการชุบแข็งเร็ว", "correct": false, "feedback": "นั่นคือการชุบแข็ง (quench) ซึ่งทำให้ได้มาร์เทนไซต์ ไม่ใช่การอบอ่อน"}, {"id": "c", "text": "ทำให้ผิวชิ้นงานเป็นสนิม", "correct": false, "feedback": "การอบอ่อนไม่ได้ทำให้เกิดสนิม"}, {"id": "d", "text": "เพิ่มปริมาณคาร์บอนในเหล็ก", "correct": false, "feedback": "การอบอ่อนไม่ได้เพิ่มคาร์บอนให้ชิ้นงาน"}]
+  - id: "engineering.materials.steels-heat-treatment.p007"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 2
+    type: "match"
+    stem: "จับคู่เฟสหรือโครงสร้างของเหล็กกับคำอธิบาย"
+    pairs: [{"left": "ซีเมนไทต์ (Fe₃C)", "right": "สารประกอบเหล็กกับคาร์บอนที่มีคาร์บอนประมาณ 6.67 wt%"}, {"left": "เพิร์ลไลต์", "right": "โครงสร้างแผ่นสลับระหว่างเฟอร์ไรต์กับซีเมนไทต์"}, {"left": "ออสเทไนต์", "right": "เฟสเหล็กแกมมาที่มีโครงสร้างผลึกลูกบาศก์กลางหน้า (FCC)"}, {"left": "มาร์เทนไซต์", "right": "เฟสที่แข็งมากจากการชุบแข็งเร็ว มีคาร์บอนติดอยู่ในโครงผลึก"}]
+    hints: ["ดูว่าแต่ละชื่อเกิดจากการเย็นตัวอย่างไร", "ซีเมนไทต์เป็นสารประกอบ ไม่ใช่เฟสผสมเฟอร์ไรต์"]
+    solution: "ซีเมนไทต์คือ Fe₃C ที่มีคาร์บอนประมาณ 6.67 wt% เพิร์ลไลต์เป็นแผ่นสลับเฟอร์ไรต์กับซีเมนไทต์ ออสเทไนต์คือเหล็กแกมมา มาร์เทนไซต์เกิดจากการชุบแข็งเร็วจนคาร์บอนไม่มีเวลาแพร่ออก"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.materials.steels-heat-treatment.p008"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 2
+    type: "mcq"
+    stem: "เหล็กที่มีคาร์บอน 0.76 wt% ถูกชุบแข็งจากออสเทไนต์ด้วยน้ำเย็นจัด โครงสร้างหลักที่ได้คืออะไร"
+    hints: ["การชุบแข็งทำให้เย็นตัวเร็วพอที่คาร์บอนไม่มีเวลาแพร่ออก", "โครงสร้างที่ได้แข็งและเปราะ"]
+    solution: "การชุบแข็งเร็วทำให้ออสเทไนต์เปลี่ยนเป็นมาร์เทนไซต์ ซึ่งแข็งแต่เปราะ จึงต้องอบคืนตัวต่อ"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "มาร์เทนไซต์", "correct": true}, {"id": "b", "text": "เพิร์ลไลต์หยาบ", "correct": false, "feedback": "เพิร์ลไลต์หยาบเกิดจากการเย็นตัวช้า ซึ่งตรงข้ามกับการชุบแข็งเร็ว"}, {"id": "c", "text": "เฟอร์ไรต์บริสุทธิ์", "correct": false, "feedback": "เฟอร์ไรต์บริสุทธิ์มีคาร์บอนน้อยมาก ไม่ใช่ผลของเหล็ก 0.76 wt% ที่ชุบแข็ง"}, {"id": "d", "text": "ออสเทไนต์ที่อุณหภูมิห้อง", "correct": false, "feedback": "ออสเทไนต์ไม่คงตัวที่อุณหภูมิห้องเมื่อชุบแข็งจากเหล็กคาร์บอนนี้"}]
+  - id: "engineering.materials.steels-heat-treatment.p009"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 3
+    type: "numeric"
+    stem: "เพลาเครื่องจักรโรงสีทำจากเหล็กคาร์บอน 0.30 wt% (ค่าสมมติ) เมื่อเย็นตัวถึงอุณหภูมิห้องแบบสมดุล สัดส่วนเพิร์ลไลต์โดยน้ำหนักเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ใช้กฎคานงัดกับจุดเฟอร์ไรต์ 0.02 และจุดยูเทกทอยด์ 0.76", "$\\%\\text{เพิร์ลไลต์} = (C_0-0.02)/(0.76-0.02)\\times100$"]
+    solution: "$(0.30-0.02)/(0.76-0.02)\\times100 = 37.84\\%$ จึงประมาณ $37.8\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 37.8, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 62.2, "feedback": "ตอบเปอร์เซ็นต์ของเฟอร์ไรต์ก่อนยูเทกทอยด์แทนเพิร์ลไลต์"}, {"match": 39.5, "feedback": "ใช้ $C_0/0.76$ โดยไม่หักคาร์บอนที่อยู่ในเฟอร์ไรต์"}]
+  - id: "engineering.materials.steels-heat-treatment.p010"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 3
+    type: "numeric"
+    stem: "จากเหล็กคาร์บอน 0.30 wt% เดิม สัดส่วนเฟอร์ไรต์ก่อนยูเทกทอยด์ (proeutectoid ferrite) เป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["เฟอร์ไรต์ก่อนยูเทกทอยด์คือส่วนที่เหลือนอกเหนือจากเพิร์ลไลต์", "$\\%\\text{เฟอร์ไรต์} = (0.76-C_0)/(0.76-0.02)\\times100$"]
+    solution: "$(0.76-0.30)/(0.74)\\times100 = 62.16\\%$ จึงประมาณ $62.2\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 62.2, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 37.8, "feedback": "ตอบค่าเพิร์ลไลต์แทนเฟอร์ไรต์"}, {"match": 60.5, "feedback": "ใช้ $1 - C_0/0.76$ ซึ่งเป็นการประมาณที่ไม่ได้จากกฎคานงัด"}]
+  - id: "engineering.materials.steels-heat-treatment.p011"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 3
+    type: "mcq"
+    stem: "อบคืนตัว (tempering) มาร์เทนไซต์ที่อุณหภูมิต่ำกว่าจุดวิกฤตมีผลหลักต่อเหล็กอย่างไร"
+    hints: ["มาร์เทนไซต์แข็งแต่เปราะ", "อุณหภูมิอบคืนตัวอยู่ต่ำกว่าจุดวิกฤตของการเปลี่ยนเฟส"]
+    solution: "อบคืนตัวลดความเปราะและความเค้นภายใน โดยแลกกับความแข็งที่ลดลงบางส่วน"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ลดความแข็งลงบ้างแต่เพิ่มความเหนียวและลดความเปราะ", "correct": true}, {"id": "b", "text": "เพิ่มความแข็งขึ้นอีกมาก", "correct": false, "feedback": "การอบคืนตัวมักลดความแข็งลงเล็กน้อยเพื่อแลกกับความเหนียว"}, {"id": "c", "text": "เปลี่ยนมาร์เทนไซต์กลับเป็นเหล็กหล่อ", "correct": false, "feedback": "เหล็กหล่อมีคาร์บอนสูงกว่ามาก การอบคืนตัวไม่เปลี่ยนเป็นเหล็กหล่อ"}, {"id": "d", "text": "ไม่มีผลต่อโครงสร้าง", "correct": false, "feedback": "การอบคืนตัวทำให้มาร์เทนไซต์คลายความเครียดและเปลี่ยนโครงสร้างบางส่วน"}]
+  - id: "engineering.materials.steels-heat-treatment.p012"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 3
+    type: "numeric"
+    stem: "เหล็กกล้าทำเฟืองในโรงงานน้ำตาลที่มีคาร์บอน 0.55 wt% (ค่าสมมติ) เมื่อเย็นตัวแบบสมดุลถึงอุณหภูมิห้องมีสัดส่วนเพิร์ลไลต์กี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["แทนค่า $C_0 = 0.55$ ในสูตรกฎคานงัดของเพิร์ลไลต์"]
+    solution: "$(0.55-0.02)/0.74 \\times 100 = 71.62\\%$ จึงประมาณ $71.6\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 71.6, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 72.4, "feedback": "ใช้ $C_0/0.76$ โดยไม่หักเฟอร์ไรต์"}, {"match": 55.0, "feedback": "ตอบ $C_0$ เป็นเปอร์เซ็นต์โดยตรง"}]
+  - id: "engineering.materials.steels-heat-treatment.p013"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 4
+    type: "expression"
+    stem: "ใช้ $C$ แทนปริมาณคาร์บอน (wt%) ของเหล็กที่ต่ำกว่ายูเทกทอยด์ เขียนนิพจน์สัดส่วนเพิร์ลไลต์ในรูปเศษส่วนที่มี $C$ ตัวเดียว (ไม่ต้องคูณ 100)"
+    hints: ["ตัวเศษคือปริมาณคาร์บอนที่เกินจากเฟอร์ไรต์", "ตัวส่วนคือช่วง $0.76 - 0.02 = 0.74$"]
+    solution: "สัดส่วนเพิร์ลไลต์ $= (C-0.02)/(0.76-0.02) = (C-0.02)/0.74$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "\\frac{C-0.02}{0.74}", "variables": ["C"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "\\frac{C}{0.76}", "feedback": "เป็นการประมาณอย่างหยาบ ไม่ได้หักคาร์บอนที่อยู่ในเฟอร์ไรต์"}, {"match": "\\frac{C-0.02}{0.76}", "feedback": "ตัวส่วนต้องเป็นช่วง 0.76 − 0.02 = 0.74 ไม่ใช่ 0.76"}]
+    prefix: "สัดส่วนเพิร์ลไลต์ ="
+  - id: "engineering.materials.steels-heat-treatment.p014"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 4
+    type: "code"
+    stem: "เขียนฟังก์ชัน `pearlite_percent(C)` ที่รับปริมาณคาร์บอน C (wt%) ของเหล็กที่ต่ำกว่ายูเทกทอยด์ แล้วคืนร้อยละของเพิร์ลไลต์ตามกฎคานงัด $100(C-0.02)/(0.76-0.02)$"
+    hints: ["ตัวตั้งคือ $C - 0.02$ และตัวหารคือ $0.76 - 0.02$", "อย่าลืม `return`"]
+    solution: "ฟังก์ชันคือ `return 100 * (C - 0.02) / (0.76 - 0.02)` ค่า 0.30 wt% ให้ประมาณ 37.84%"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "def pearlite_percent(C):\n    pass\n"
+    tests: "assert abs(pearlite_percent(0.30) - 37.84) < 0.05, f\"pearlite_percent(0.30) ควรได้ประมาณ 37.84 แต่ได้ {pearlite_percent(0.30)}\"\nassert abs(pearlite_percent(0.76) - 100) < 1e-9, f\"ที่ 0.76 ต้องได้ 100 แต่ได้ {pearlite_percent(0.76)}\"\nassert abs(pearlite_percent(0.02)) < 1e-9, f\"ที่ 0.02 ต้องได้ 0 แต่ได้ {pearlite_percent(0.02)}\"\n"
+    reference: "def pearlite_percent(C):\n    return 100 * (C - 0.02) / (0.76 - 0.02)\n"
+  - id: "engineering.materials.steels-heat-treatment.p015"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 4
+    type: "numeric"
+    stem: "เหล็กที่มีคาร์บอน 0.45 wt% (ค่าสมมติ) เมื่อเย็นตัวถึงอุณหภูมิห้องแบบสมดุล สัดส่วนเฟอร์ไรต์ทั้งหมดโดยน้ำหนักเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ซีเมนไทต์รวมคือส่วนที่เหลือจากเฟอร์ไรต์ทั้งหมด", "หาซีเมนไทต์รวมก่อนแล้วลบจาก 100"]
+    solution: "ซีเมนไทต์รวม $= (0.45-0.02)/(6.67-0.02) \\times 100 = 6.47\\%$ เฟอร์ไรต์รวม $= 100 - 6.47 \\approx 93.5\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 93.5, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 41.9, "feedback": "ตอบเฟอร์ไรต์ก่อนยูเทกทอยด์โดยไม่รวมเฟอร์ไรต์ในเพิร์ลไลต์"}, {"match": 6.5, "feedback": "ตอบปริมาณซีเมนไทต์แทนเฟอร์ไรต์"}]
+  - id: "engineering.materials.steels-heat-treatment.p016"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ชิ้นส่วนเหล็ก 500 kg มีคาร์บอน 0.25 wt% (ค่าสมมติ) เมื่อเย็นตัวถึงอุณหภูมิห้องแบบสมดุล มีเพิร์ลไลต์ประมาณกี่กิโลกรัม (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["คูณสัดส่วนเพิร์ลไลต์ (เป็นเปอร์เซ็นต์) กับมวลรวม 500 kg แล้วหารด้วย 100"]
+    solution: "เพิร์ลไลต์ $= 500 \\times 31.08/100 \\approx 155.4\\ \\mathrm{kg}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 155.4, "tolerance": 0.2, "unit": "kg"}
+    misconceptions: [{"match": 344.6, "feedback": "ใช้สัดส่วนเฟอร์ไรต์แทนเพิร์ลไลต์"}, {"match": 164.5, "feedback": "ใช้สูตรประมาณ $C_0/0.76$ แทนกฎคานงัดเต็มรูป"}]
+  - id: "engineering.materials.steels-heat-treatment.p017"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 5
+    type: "numeric"
+    stem: "เหล็กที่มีคาร์บอน 0.25 wt% (ค่าสมมติ) เมื่อเย็นตัวถึงอุณหภูมิห้องแบบสมดุล เฟอร์ไรต์รวมโดยน้ำหนักเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ซีเมนไทต์รวมมาจากการคำนวณกฎคานงัดกับ $6.67$", "เฟอร์ไรต์รวม $= 100 -$ ซีเมนไทต์รวม"]
+    solution: "ซีเมนไทต์รวม $= (0.25-0.02)/(6.67-0.02)\\times100 = 3.46\\%$ จึงเฟอร์ไรต์รวม $\\approx 96.5\\%$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 96.5, "tolerance": 0.1, "unit": "%"}
+    misconceptions: [{"match": 68.9, "feedback": "ลบเพิร์ลไลต์จาก 100 โดยไม่ได้แยกว่าในเพิร์ลไลต์ก็มีเฟอร์ไรต์"}, {"match": 3.5, "feedback": "ตอบปริมาณซีเมนไทต์แทนเฟอร์ไรต์"}]
+  - id: "engineering.materials.steels-heat-treatment.p018"
+    topics: ["engineering.materials.steels-heat-treatment"]
+    difficulty: 5
+    type: "mcq"
+    stem: "เหล็กกล้าไร้สนิมชนิดออสเทนิติก (austenitic) ปกติไม่แข็งขึ้นมากจากการชุบแข็งแบบมาร์เทนไซต์ เหตุผลหลักคืออะไร"
+    hints: ["ดูว่าธาตุผสมใดทำให้ออสเทไนต์คงตัวที่อุณหภูมิห้อง", "นิกเกิลเป็นธาตุที่ช่วยทำให้ออสเทไนต์คงตัว"]
+    solution: "นิกเกิลและโครเมียมช่วยให้ออสเทไนต์คงตัวที่อุณหภูมิห้อง จึงไม่เปลี่ยนเป็นมาร์เทนไซต์ได้ง่าย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "มีโครงสร้างออสเทไนต์เสถียรที่อุณหภูมิห้องจากธาตุผสมเช่นนิกเกิล จึงไม่เกิดมาร์เทนไซต์ได้ง่าย", "correct": true}, {"id": "b", "text": "มีคาร์บอนสูงมากจนแข็งอยู่แล้ว", "correct": false, "feedback": "เหล็กกล้าไร้สนิมออสเทนิติกมักมีคาร์บอนต่ำ เพื่อรักษาความต้านทานการกัดกร่อน"}, {"id": "c", "text": "ไม่มีเหล็กเป็นองค์ประกอบ", "correct": false, "feedback": "เหล็กกล้าไร้สนิมยังมีเหล็กเป็นองค์ประกอบหลัก"}, {"id": "d", "text": "มีจุดหลอมเหลวต่ำจนไม่เปลี่ยนเฟส", "correct": false, "feedback": "จุดหลอมเหลวไม่ใช่ปัจจัยหลักในการไม่เกิดมาร์เทนไซต์"}]

@@ -1,0 +1,199 @@
+problems:
+  - id: "engineering.environmental.solid-hazardous-waste.p001"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 1
+    type: "mcq"
+    stem: "ลำดับชั้นการจัดการขยะ (waste hierarchy) เรียงจากที่ควรทำก่อนไปหลังอย่างไร"
+    hints: ["ขั้นแรกคือการทำให้เกิดขยะน้อยที่สุด", "การฝังกลบมักอยู่ท้ายสุดของลำดับ"]
+    solution: "ลำดับชั้นเริ่มจากการลดที่ต้นทาง ตามด้วยการใช้ซ้ำ รีไซเคิล แปรรูปพลังงาน และฝังกลบอย่างถูกหลักเป็นทางเลือกสุดท้าย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ลด ใช้ซ้ำ รีไซเคิล แปรรูปพลังงาน แล้วฝังกลบเป็นทางเลือกสุดท้าย", "correct": true}, {"id": "b", "text": "ฝังกลบก่อน แล้วค่อยลดปริมาณขยะ", "correct": false, "feedback": "การฝังกลบควรเป็นทางเลือกสุดท้าย ไม่ใช่ขั้นแรก"}, {"id": "c", "text": "เผาทุกอย่างทันทีโดยไม่คัดแยก", "correct": false, "feedback": "การเผาโดยไม่คัดแยกอาจปล่อยมลพิษและเสียพลังงานของวัสดุที่นำกลับมาใช้ได้"}, {"id": "d", "text": "รีไซเคิลก่อนการลดปริมาณ", "correct": false, "feedback": "การลดปริมาณที่ต้นทางควรมาก่อนการรีไซเคิลเสมอ"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p002"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 1
+    type: "numeric"
+    stem: "เทศบาลสมมติมีประชากร 200,000 คน เฉลี่ยทิ้งขยะ 1.1 kg ต่อคนต่อวัน (ค่าสมมติ) ขยะรวมต่อวันเป็นกี่ตัน"
+    hints: ["ใช้ $\\text{ประชากร} \\times \\text{อัตราต่อคน}$ แล้วแปลงกิโลกรัมเป็นตัน"]
+    solution: "$200{,}000\\times1.1 = 220{,}000\\ \\mathrm{kg/d} = 220\\ \\mathrm{t/d}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 220.0, "tolerance": 0.01, "unit": "t/d"}
+    misconceptions: [{"match": 220000.0, "feedback": "ลืมแปลงกิโลกรัมเป็นตัน"}, {"match": 22.0, "feedback": "หารด้วย 10 โดยไม่มีเหตุผล"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p003"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 2
+    type: "mcq"
+    stem: "ข้อใดเป็นลักษณะของหลุมฝังกลบที่ถูกหลักสุขาภิบาลในระดับแนวคิด"
+    hints: ["ดูว่ามีอะไรป้องกันน้ำชะไม่ให้ซึมออกไป", "ก๊าซจากการย่อยสลายเป็นอีกเรื่องที่ต้องควบคุม"]
+    solution: "หลุมฝังกลบที่ดีมีชั้นกันซึม ระบบรวบรวมน้ำชะ และการระบายหรือควบคุมก๊าซจากการย่อยสลาย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "มีชั้นกันซึม ระบบรวบรวมน้ำชะขยะ และการควบคุมก๊าซจากการย่อยสลาย", "correct": true}, {"id": "b", "text": "วางขยะบนพื้นดินโดยไม่มีชั้นรองรับ", "correct": false, "feedback": "ขยะวางบนดินโดยไม่มีชั้นกันซึมทำให้น้ำชะซึมลงดินและน้ำใต้ดินได้ง่าย"}, {"id": "c", "text": "ปิดด้วยดินทันทีโดยไม่มีระบบรวบรวมน้ำ", "correct": false, "feedback": "การปิดดินเพียงอย่างเดียวไม่พอต่อการควบคุมน้ำชะและก๊าซ"}, {"id": "d", "text": "ทิ้งลงแม่น้ำใกล้ชุมชน", "correct": false, "feedback": "การทิ้งลงแหล่งน้ำเป็นการปนเปื้อนที่ไม่ควรเกิดขึ้น"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p004"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 2
+    type: "numeric"
+    stem: "เก็บขยะ 220 t/d ด้วยรถที่บรรทุกได้ 8 t ต่อเที่ยว (ค่าสมมติ) ต้องใช้รถกี่เที่ยวต่อวันอย่างน้อย (จำนวนเต็ม)"
+    hints: ["หารปริมาณต่อวันด้วยน้ำหนักบรรทุกต่อเที่ยว แล้วปัดขึ้นเป็นจำนวนเต็ม"]
+    solution: "$220/8 = 27.5$ จึงต้องใช้อย่างน้อย 28 เที่ยว"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 28.0, "tolerance": 0.0, "unit": "เที่ยว"}
+    misconceptions: [{"match": 27.0, "feedback": "ปัดลงแทนการปัดขึ้น ทำให้ขยะบางส่วนเก็บไม่หมด"}, {"match": 220.0, "feedback": "ตอบปริมาณขยะแทนจำนวนเที่ยว"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p005"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ปุ๋ยหมักเริ่มจากขยะอินทรีย์ 100 kg ที่มีความชื้น 70% ระหว่างหมักสูญเสียของแข็งแห้งไป 35% และปุ๋ยสุดท้ายมีความชื้น 40% (ค่าสมมติ) มวลปุ๋ยสุดท้ายเป็นกี่ kg (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ของแข็งแห้งเริ่มต้นคือ $100 \\times (1-0.70)$ kg", "มวลสุดท้าย $= \\text{ของแข็งแห้งสุดท้าย}/(1-\\text{ความชื้นสุดท้าย})$"]
+    solution: "ของแข็งแห้งเริ่มต้น $= 30$ kg สูญเสีย 35% เหลือ $19.5$ kg มวลสุดท้าย $= 19.5/(1-0.40) = 32.5$ kg"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 32.5, "tolerance": 0.1, "unit": "kg"}
+    misconceptions: [{"match": 19.5, "feedback": "ลืมคิดน้ำที่เหลือในปุ๋ยสุดท้าย"}, {"match": 50.0, "feedback": "ลืมหักของแข็งแห้งที่สูญเสียไประหว่างหมัก ($30/0.6 = 50$)"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p006"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 3
+    type: "numeric"
+    stem: "พื้นที่หลุมฝังกลบ 20,000 m² ได้รับฝนปีละ 1.8 m ระเหยกลับไป 0.6 m และไหลบ่าผิวดิน 0.2 m (ค่าสมมติ) น้ำซึมลงสู่หลุมเป็นน้ำชะขยะโดยเฉลี่ยประมาณกี่ $\\mathrm{m^3/d}$ (ทศนิยม 1 ตำแหน่ง, 1 ปี = 365 วัน)"
+    hints: ["สมดุลน้ำ: น้ำซึม $= P - E - R$ (เป็นความสูงต่อปี)", "คูณด้วยพื้นที่แล้วหารด้วย 365 วัน"]
+    solution: "$I = 1.8 - 0.6 - 0.2 = 1.0$ m/ปี ปริมาตรต่อปี $= 1.0\\times20000 = 20000$ m³ ต่อวัน $= 20000/365 \\approx 54.8$ m³/d"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 54.8, "tolerance": 0.1, "unit": "m3/d"}
+    misconceptions: [{"match": 98.6, "feedback": "ใช้ฝนทั้งหมดแทนน้ำซึม"}, {"match": 1666.7, "feedback": "หารด้วย 12 เดือนแทนวัน"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p007"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 3
+    type: "expression"
+    stem: "ใช้ $P$ แทนปริมาณฝนต่อปี $E$ แทนการระเหยกลับ และ $R$ แทนการไหลบ่าผิวดิน (ทั้งหมดเป็น m ต่อปี) เขียนนิพจน์ของน้ำซึมลงสู่หลุมฝังกลบจากสมดุลน้ำ"
+    hints: ["สมดุลน้ำคือน้ำที่เข้าเท่ากับน้ำที่ออก", "น้ำที่ไม่ระเหยและไม่ไหลบ่าจะซึมลงดิน"]
+    solution: "น้ำซึม $= P - E - R$ (เป็นความสูงของน้ำต่อปี)"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"latex": "P - E - R", "variables": ["P", "E", "R"]}
+    expanded: false
+    factored: false
+    simplified: false
+    misconceptions: [{"match": "P + E + R", "feedback": "บวกทุกพจน์ ซึ่งไม่ตรงกับสมดุลน้ำ"}, {"match": "P - E", "feedback": "ลืมหักการไหลบ่าผิวดินออก"}]
+    prefix: "น้ำซึม ="
+  - id: "engineering.environmental.solid-hazardous-waste.p008"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ขยะอันตรายบรรจุถัง 200 L จำนวน 25 ถัง ความหนาแน่นของของเสีย 1.2 t/m³ (ค่าสมมติ) มวลรวมประมาณกี่ตัน (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ปริมาตรรวม $= 25 \\times 0.2\\ \\mathrm{m^3}$", "มวล $=$ ปริมาตร $\\times$ ความหนาแน่น"]
+    solution: "ปริมาตร $= 5\\ \\mathrm{m^3}$ มวล $= 5\\times1.2 = 6.0\\ \\mathrm{t}$"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 6.0, "tolerance": 0.05, "unit": "t"}
+    misconceptions: [{"match": 30.0, "feedback": "ใช้จำนวนถังแทนปริมาตร"}, {"match": 6000.0, "feedback": "นี่คือมวลเป็นกิโลกรัม โจทย์ถามเป็นตัน"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p009"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 3
+    type: "numeric"
+    stem: "ดินปนเปื้อนน้ำมันบริเวณปั๊มเก่า พื้นที่ 500 m² ลึก 1.5 m ความหนาแน่นรวมของดิน 1.6 t/m³ (ค่าสมมติ) ปริมาณดินที่ต้องขุดเป็นกี่ตัน (ทศนิยม 0 ตำแหน่ง)"
+    hints: ["ปริมาตรดิน $=$ พื้นที่ $\\times$ ความลึก"]
+    solution: "ปริมาตร $= 500\\times1.5 = 750$ m³ มวล $= 750\\times1.6 = 1200$ t"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 1200.0, "tolerance": 1.0, "unit": "t"}
+    misconceptions: [{"match": 750.0, "feedback": "ตอบปริมาตรแทนมวล"}, {"match": 1200000, "feedback": "นี่คือมวลเป็นกิโลกรัม โจทย์ถามเป็นตัน"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p010"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 2
+    type: "mcq"
+    stem: "ใบกำกับการขนส่งของเสียอันตราย (manifest) ทำหน้าที่หลักอย่างไร"
+    hints: ["ใบกำกับเดินทางไปพร้อมกับของเสีย", "แนวคิด cradle to grave ติดตามทุกขั้นตอน"]
+    solution: "ใบกำกับติดตามของเสียจากต้นทางถึงปลายทางเพื่อตรวจสอบการจัดการอย่างถูกต้อง"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ติดตามของเสียตั้งแต่ต้นทางจนถึงปลายทางที่ได้รับอนุญาต (cradle to grave)", "correct": true}, {"id": "b", "text": "ทำให้ของเสียหายไปเองตามธรรมชาติ", "correct": false, "feedback": "ใบกำกับไม่ได้ทำให้ของเสียสลายไป แต่ใช้ติดตามการจัดการ"}, {"id": "c", "text": "เป็นใบลดหย่อนภาษีสำหรับโรงงาน", "correct": false, "feedback": "ใบกำกับมีไว้เพื่อควบคุมการจัดการของเสีย ไม่ใช่เอกสารภาษี"}, {"id": "d", "text": "ใช้แทนการติดฉลากบรรจุภัณฑ์", "correct": false, "feedback": "การติดฉลากกับใบกำกับมีหน้าที่ต่างกัน"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p011"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 2
+    type: "match"
+    stem: "จับคู่คำศัพท์กับความหมายในการจัดการของเสีย"
+    pairs: [{"left": "น้ำชะขยะ (leachate)", "right": "น้ำที่ซึมผ่านขยะแล้วละลายสารปนเปื้อนออกมา"}, {"left": "ชั้นกันซึม (liner)", "right": "ชั้นที่ป้องกันน้ำชะไม่ให้ซึมลงดินและน้ำใต้ดิน"}, {"left": "การฟื้นฟูพื้นที่ปนเปื้อน", "right": "การขุด สูบบำบัด หรือบำบัดทางชีวภาพเพื่อลดสารปนเปื้อนในดินและน้ำใต้ดิน"}, {"left": "การรีไซเคิล", "right": "การนำวัสดุกลับมาผลิตเป็นสินค้าใหม่"}]
+    hints: ["น้ำชะเกิดจากน้ำที่ผ่านขยะ", "ชั้นกันซึมอยู่ใต้ขยะเพื่อป้องกันการซึม"]
+    solution: "น้ำชะคือน้ำที่ซึมผ่านขยะและพาสารปนเปื้อนออกมา ชั้นกันซึมป้องกันการซึมลงดิน การฟื้นฟูคือการลดสารปนเปื้อนในดินและน้ำใต้ดิน และการรีไซเคิลคือการนำวัสดุกลับมาใช้ใหม่"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+  - id: "engineering.environmental.solid-hazardous-waste.p012"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 4
+    type: "code"
+    stem: "เขียนฟังก์ชัน `trips(tons_per_day, payload)` ที่คืนจำนวนเที่ยวรถขั้นต่ำต่อวันเป็นจำนวนเต็ม โดยปัดขึ้นเมื่อหารไม่ลงตัว ใช้ไลบรารี `math` ได้"
+    hints: ["ใช้ `math.ceil` เพื่อปัดขึ้น", "อย่าลืม `return` ค่าที่คำนวณได้"]
+    solution: "ฟังก์ชันคือ `return math.ceil(tons_per_day / payload)` เพราะเที่ยวที่ไม่เต็มยังต้องวิ่งหนึ่งเที่ยว"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    language: "python"
+    starter: "import math\n\ndef trips(tons_per_day, payload):\n    pass\n"
+    tests: "assert trips(220, 8) == 28, f\"trips(220, 8) ควรได้ 28 แต่ได้ {trips(220, 8)}\"\nassert trips(16, 8) == 2, f\"trips(16, 8) ควรได้ 2 (หารลงตัว) แต่ได้ {trips(16, 8)}\"\nassert trips(1, 8) == 1, f\"trips(1, 8) ควรได้ 1 (ต้องปัดขึ้น) แต่ได้ {trips(1, 8)}\"\n"
+    reference: "import math\n\ndef trips(tons_per_day, payload):\n    return math.ceil(tons_per_day / payload)\n"
+  - id: "engineering.environmental.solid-hazardous-waste.p013"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 3
+    type: "mcq"
+    stem: "ของเสียอันตรายตามแนวคิดทั่วไปมีลักษณะอันตรายอย่างน้อยหนึ่งข้อ ข้อใดไม่ใช่ลักษณะหลักที่ใช้จำแนก"
+    hints: ["ของเสียอันตรายถูกจำแนกจากสมบัติทางกายภาพและเคมี", "สีของถังไม่ได้บอกว่าสารนั้นอันตรายหรือไม่"]
+    solution: "ลักษณะหลักได้แก่ความเป็นพิษ ความไวไฟ ความกัดกร่อน และความเสถียรต่อปฏิกิริยา สีของบรรจุภัณฑ์ไม่ใช่เกณฑ์"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "สีของบรรจุภัณฑ์", "correct": true}, {"id": "b", "text": "ความเป็นพิษ", "correct": false, "feedback": "ความเป็นพิษเป็นลักษณะหลักที่ใช้จำแนกของเสียอันตราย"}, {"id": "c", "text": "ความไวไฟ", "correct": false, "feedback": "ความไวไฟเป็นลักษณะหลักที่ใช้จำแนกของเสียอันตราย"}, {"id": "d", "text": "ความกัดกร่อน", "correct": false, "feedback": "ความกัดกร่อนเป็นลักษณะหลักที่ใช้จำแนกของเสียอันตราย"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p014"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 4
+    type: "numeric"
+    stem: "หลุมฝังกลบของเทศบาลมีน้ำชะเฉลี่ย $54.8\\ \\mathrm{m^3/d}$ ซึ่งมี COD $2{,}000\\ \\mathrm{mg/L}$ ระบบบำบัดลด COD ได้ 90% (ค่าสมมติ) ภาระ COD ที่ยังเหลือในน้ำที่ผ่านการบำบัดเป็นกี่ $\\mathrm{kg/d}$ (ทศนิยม 1 ตำแหน่ง)"
+    hints: ["ภาระก่อนบำบัด $=$ ความเข้มข้น (mg/L) $\\times$ อัตราการไหล (m³/d) $\\div 1000$", "ระบบลดได้ 90% ส่วนที่ยังเหลือคือ 10% ของภาระเดิม ปริมาตรน้ำไม่ได้ลดลง"]
+    solution: "ภาระก่อนบำบัด $= 2000 \\times 54.8/1000 = 109.6\\ \\mathrm{kg/d}$ เหลือหลังบำบัด $= 109.6 \\times (1-0.90) \\approx 11.0\\ \\mathrm{kg/d}$ ระบบบำบัดลดสารปนเปื้อน ไม่ได้ลดปริมาตรน้ำ"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 11.0, "tolerance": 0.1, "unit": "kg/d"}
+    misconceptions: [{"match": 109.6, "feedback": "ยังไม่ได้นำประสิทธิภาพการบำบัด 90% มาคิด"}, {"match": 98.6, "feedback": "ตอบภาระที่ถูกกำจัดไป แทนภาระที่ยังเหลือ"}, {"match": 5.5, "feedback": "คิดว่าการบำบัดลดปริมาตรน้ำ จึงตอบเป็น m³/d ระบบบำบัดลดภาระสารปนเปื้อน ไม่ได้ลดปริมาตรน้ำ"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p015"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 4
+    type: "numeric"
+    stem: "ต้นทุนการขนส่งกากอุตสาหกรรมเป็น 1,200 บาทต่อเที่ยว และขนได้ 8 t ต่อเที่ยว (ค่าสมมติ) ต้นทุนการขนส่งต่อตันของเสียเป็นกี่บาท"
+    hints: ["หารต้นทุนต่อเที่ยวด้วยน้ำหนักต่อเที่ยว"]
+    solution: "$1200/8 = 150$ บาทต่อตัน"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 150.0, "tolerance": 0.01, "unit": "บาท/t"}
+    misconceptions: [{"match": 1200.0, "feedback": "ตอบต้นทุนต่อเที่ยวแทนต่อตัน"}, {"match": 9600.0, "feedback": "คูณน้ำหนักแทนการหาร"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p016"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 4
+    type: "numeric"
+    stem: "เชื้อเพลิงขยะมีค่าความร้อนต่ำ 10 MJ/kg (ค่าสมมติ) ถ้าเผาขยะ 1 t ให้พลังงานความร้อนทั้งหมดกี่ kWh (ทศนิยม 0 ตำแหน่ง, 1 kWh = 3.6 MJ)"
+    hints: ["1 t $= 1000$ kg และพลังงาน $= 1000\\times10$ MJ"]
+    solution: "พลังงาน $= 10{,}000\\ \\mathrm{MJ} / 3.6 \\approx 2778\\ \\mathrm{kWh}$ (ไม่ได้คิดประสิทธิภาพการแปลง)"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 2778.0, "tolerance": 1.0, "unit": "kWh"}
+    misconceptions: [{"match": 10000.0, "feedback": "ตอบเป็น MJ แทน kWh"}, {"match": 694, "feedback": "คิดประสิทธิภาพ 25% ทั้งที่โจทย์ถามพลังงานทั้งหมด"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p017"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 2
+    type: "mcq"
+    stem: "การฟื้นฟูดินที่ปนเปื้อนแบบ 'ขุดออก' มีข้อจำกัดหลักอย่างไร"
+    hints: ["ดินที่ขุดออกไปต้องไปอยู่ที่ไหนต่อ", "วิธีนี้เป็นการเปลี่ยนที่ของปัญหา"]
+    solution: "การขุดออกเป็นการย้ายสารปนเปื้อนไปยังที่รับ ซึ่งต้องพิจารณาความปลอดภัยและการจัดการปลายทางด้วย"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    choices: [{"id": "a", "text": "ย้ายปัญหาไปยังที่อื่นและต้องมีที่รับดินปนเปื้อนที่ได้มาตรฐาน", "correct": true}, {"id": "b", "text": "ไม่ได้ลดสารปนเปื้อนเลยเมื่อขุดออก", "correct": false, "feedback": "การขุดออกนำสารปนเปื้อนออกจากพื้นที่ต้นทาง แต่ต้องดูแลต่อที่ปลายทาง"}, {"id": "c", "text": "ทำให้น้ำใต้ดินปนเปื้อนมากขึ้นเสมอ", "correct": false, "feedback": "การขุดออกไม่ได้ทำให้น้ำใต้ดินปนเปื้อนมากขึ้นโดยตรง แต่มีความเสี่ยงระหว่างดำเนินการ"}, {"id": "d", "text": "ใช้ได้เฉพาะกับดินทรายเท่านั้น", "correct": false, "feedback": "วิธีนี้ใช้กับดินหลายชนิดได้ตามเงื่อนไข"}]
+  - id: "engineering.environmental.solid-hazardous-waste.p018"
+    topics: ["engineering.environmental.solid-hazardous-waste"]
+    difficulty: 5
+    type: "numeric"
+    stem: "เทศบาลสมมติ (ประชากร 200,000 คน ขยะ 220 t/d) ต้องการหลุมฝังกลบรองรับ 30 ปี ขยะที่บดอัดแล้วมีความหนาแน่น 0.8 t/m³ และแบ่งเซลล์ฝังกลบสูง 15 m (ค่าสมมติ) พื้นที่ฐานของเซลล์ที่ต้องใช้โดยประมาณกี่ m² (จำนวนเต็ม)"
+    hints: ["หามวลขยะรวม 30 ปี แล้วแปลงเป็นปริมาตรที่บดอัดด้วยความหนาแน่น", "พื้นที่ฐาน $=$ ปริมาตร $\\div$ ความสูงของเซลล์ (ไม่คิดดินกลบและชั้นอื่น)"]
+    solution: "มวล $= 220\\times365\\times30 = 2{,}409{,}000$ t ปริมาตร $= 2{,}409{,}000/0.8 = 3{,}011{,}250$ m³ พื้นที่ $= 3{,}011{,}250/15 \\approx 200,750$ m²"
+    license: "CC-BY-SA-4.0"
+    ai_assisted: true
+    answer: {"value": 200750.0, "tolerance": 1.0, "unit": "m2"}
+    misconceptions: [{"match": 160600, "feedback": "ลืมแปลงมวลเป็นปริมาตรด้วยความหนาแน่น"}, {"match": 3011250.0, "feedback": "ตอบปริมาตรแทนพื้นที่ฐาน"}]
