@@ -102,7 +102,7 @@ problems:
     topics: [physics.kinematics.projectile]
     difficulty: 3
     type: numeric
-    stem: "ลูกบอลจากข้อที่แล้ว (เตะจากพื้นด้วยความเร็ว $19.6\\ \\mathrm{m/s}$ ทำมุม $30^\\circ$ กับพื้น) ขึ้นไปได้สูงสุดกี่เมตร ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m)"
+    stem: "ลูกบอลที่ถูกเตะจากพื้นด้วยความเร็ว $19.6\\ \\mathrm{m/s}$ ทำมุม $30^\\circ$ กับพื้น ขึ้นไปได้สูงสุดกี่เมตร ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m)"
     answer: { value: 4.9, tolerance: 0.05, unit: m }
     hints:
       - "ที่จุดสูงสุด ความเร็วแนวดิ่งเป็นศูนย์"
@@ -118,16 +118,16 @@ problems:
     topics: [physics.kinematics.projectile]
     difficulty: 4
     type: numeric
-    stem: "นักกีฬาเปตองโยนลูกด้วยความเร็ว $14\\ \\mathrm{m/s}$ ทำมุม $30^\\circ$ กับแนวราบ สมมติว่าลูกออกจากมือที่ระดับพื้นและตกที่ระดับเดียวกัน ลูกเปตองตกห่างจากจุดโยนในแนวราบกี่เมตร ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m)"
-    answer: { value: 17.32, tolerance: 0.17, unit: m }
+    stem: "นักกีฬาเปตองโยนลูกด้วยความเร็ว $16\\ \\mathrm{m/s}$ ทำมุม $30^\\circ$ กับแนวราบ สมมติว่าลูกออกจากมือที่ระดับพื้นและตกที่ระดับเดียวกัน ลูกเปตองตกห่างจากจุดโยนในแนวราบกี่เมตร ใช้ $g = 9.8\\ \\mathrm{m/s^2}$ และไม่คิดแรงต้านอากาศ (ตอบเป็นตัวเลขในหน่วย m)"
+    answer: { value: 22.6, tolerance: 0.2, unit: m }
     hints:
       - "แยกความเร็วต้นเป็น $u_x = u\\cos\\theta$ และ $u_y = u\\sin\\theta$"
       - "หาเวลาลอย $T = \\dfrac{2u_y}{g}$ แล้วคูณด้วย $u_x$"
       - "หรือใช้ $R = \\dfrac{u^2\\sin 2\\theta}{g}$ ระวังว่าต้องใช้ $\\sin$ ของมุม $2\\theta$"
     misconceptions:
-      - { match: 10, feedback: "ดูเหมือนใช้ $\\sin 30^\\circ$ ในสูตรระยะทาง ซึ่งต้องเป็น $\\sin 2\\theta = \\sin 60^\\circ$" }
-      - { match: 8.66, feedback: "ดูเหมือนใช้เวลาขึ้นถึงจุดสูงสุดแทนเวลาลอยทั้งหมด ระยะนี้คือระยะแนวราบถึงจุดสูงสุด ต้องคูณ 2" }
-    solution: "$u_x = 14\\cos 30^\\circ \\approx 12.12\\ \\mathrm{m/s}$, $u_y = 14\\sin 30^\\circ = 7\\ \\mathrm{m/s}$ เวลาลอย $T = \\dfrac{2(7)}{9.8} \\approx 1.429\\ \\mathrm{s}$ ระยะทาง $R = u_x T \\approx 12.12 \\times 1.429 \\approx 17.32\\ \\mathrm{m}$ ตรวจ: $R = \\dfrac{14^2\\sin 60^\\circ}{9.8} = 20 \\times 0.866 \\approx 17.32\\ \\mathrm{m}$ ✓"
+      - { match: 13.1, feedback: "ดูเหมือนใช้ $\\sin 30^\\circ$ ในสูตรระยะทาง ซึ่งต้องเป็น $\\sin 2\\theta = \\sin 60^\\circ$" }
+      - { match: 11.3, feedback: "ดูเหมือนใช้เวลาขึ้นถึงจุดสูงสุดแทนเวลาลอยทั้งหมด ระยะนี้คือระยะแนวราบถึงจุดสูงสุด ต้องคูณ 2" }
+    solution: "$u_x = 16\\cos 30^\\circ \\approx 13.86\\ \\mathrm{m/s}$, $u_y = 16\\sin 30^\\circ = 8\\ \\mathrm{m/s}$ เวลาลอย $T = \\dfrac{2(8)}{9.8} \\approx 1.633\\ \\mathrm{s}$ ระยะทาง $R = u_x T \\approx 13.86 \\times 1.633 \\approx 22.6\\ \\mathrm{m}$ ตรวจ: $R = \\dfrac{16^2\\sin 60^\\circ}{9.8} \\approx 22.6\\ \\mathrm{m}$ ✓"
     license: CC-BY-SA-4.0
     ai_assisted: true
 

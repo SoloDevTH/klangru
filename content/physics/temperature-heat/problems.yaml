@@ -50,16 +50,16 @@ problems:
     topics: [physics.thermal.temperature-heat]
     difficulty: 2
     type: numeric
-    stem: "ต้องใช้ความร้อนเท่าใดจึงทำให้น้ำ $2\\ \\mathrm{kg}$ ร้อนขึ้นจาก $25\\ ^\\circ\\mathrm{C}$ เป็น $75\\ ^\\circ\\mathrm{C}$ ใช้ $c$ ของน้ำ $= 4{,}200\\ \\mathrm{J/(kg\\cdot K)}$ (ตอบเป็นตัวเลขในหน่วย kJ)"
-    answer: { value: 420, unit: kJ }
+    stem: "ต้องใช้ความร้อนเท่าใดจึงทำให้น้ำ $3\\ \\mathrm{kg}$ ร้อนขึ้นจาก $25\\ ^\\circ\\mathrm{C}$ เป็น $75\\ ^\\circ\\mathrm{C}$ ใช้ $c$ ของน้ำ $= 4{,}200\\ \\mathrm{J/(kg\\cdot K)}$ (ตอบเป็นตัวเลขในหน่วย kJ)"
+    answer: { value: 630, unit: kJ }
     hints:
       - "ใช้ $Q = mc\\,\\Delta T$"
       - "หา $\\Delta T$ จากผลต่างของอุณหภูมิ ไม่ใช่อุณหภูมิปลาย"
       - "คำนวณได้หน่วยจูลแล้วหารด้วย 1,000 เพื่อเปลี่ยนเป็นกิโลจูล"
     misconceptions:
-      - { match: 630, feedback: "ดูเหมือนใช้อุณหภูมิปลาย $75\\ ^\\circ\\mathrm{C}$ แทน $\\Delta T$ ต้องใช้อุณหภูมิที่ **เปลี่ยนไป** คือ $75 - 25$" }
-      - { match: 210, feedback: "ดูเหมือนลืมคูณมวล $2\\ \\mathrm{kg}$ ค่า $c$ เป็นความร้อนต่อ $1\\ \\mathrm{kg}$ จึงต้องคูณมวลด้วย" }
-    solution: "$Q = mc\\,\\Delta T = (2\\ \\mathrm{kg})(4{,}200\\ \\mathrm{J/(kg\\cdot K)})(75 - 25)\\ \\mathrm{K} = 420{,}000\\ \\mathrm{J} = 420\\ \\mathrm{kJ}$"
+      - { match: 945, feedback: "ดูเหมือนใช้อุณหภูมิปลาย $75\\ ^\\circ\\mathrm{C}$ แทน $\\Delta T$ ต้องใช้อุณหภูมิที่ **เปลี่ยนไป** คือ $75 - 25$" }
+      - { match: 210, feedback: "ดูเหมือนลืมคูณมวล $3\\ \\mathrm{kg}$ ค่า $c$ เป็นความร้อนต่อ $1\\ \\mathrm{kg}$ จึงต้องคูณมวลด้วย" }
+    solution: "$Q = mc\\,\\Delta T = (3\\ \\mathrm{kg})(4{,}200\\ \\mathrm{J/(kg\\cdot K)})(75 - 25)\\ \\mathrm{K} = 630{,}000\\ \\mathrm{J} = 630\\ \\mathrm{kJ}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -101,15 +101,15 @@ problems:
     topics: [physics.thermal.temperature-heat]
     difficulty: 3
     type: numeric
-    stem: "ก้อนโลหะมวล $0.5\\ \\mathrm{kg}$ ได้รับความร้อน $9{,}000\\ \\mathrm{J}$ แล้วอุณหภูมิสูงขึ้น $20\\ \\mathrm{K}$ โลหะนี้มีความจุความร้อนจำเพาะเท่าใด (ตอบเป็นตัวเลขในหน่วย J/(kg·K))"
-    answer: { value: 900, unit: J/(kg·K) }
+    stem: "ก้อนโลหะมวล $0.5\\ \\mathrm{kg}$ ได้รับความร้อน $9{,}000\\ \\mathrm{J}$ แล้วอุณหภูมิสูงขึ้น $50\\ \\mathrm{K}$ โลหะนี้มีความจุความร้อนจำเพาะเท่าใด (ตอบเป็นตัวเลขในหน่วย J/(kg·K))"
+    answer: { value: 360, unit: J/(kg·K) }
     hints:
       - "จัดสูตร $Q = mc\\,\\Delta T$ ให้ $c$ อยู่ข้างเดียว"
       - "$c = \\dfrac{Q}{m\\,\\Delta T}$ หารด้วยทั้งมวลและอุณหภูมิที่เปลี่ยน"
     misconceptions:
-      - { match: 450, feedback: "ดูเหมือนหารด้วย $\\Delta T$ อย่างเดียว ลืมหารด้วยมวล $0.5\\ \\mathrm{kg}$ ด้วย" }
-      - { match: 225, feedback: "ดูเหมือนคูณมวลแทนการหาร จาก $c = \\dfrac{Q}{m\\,\\Delta T}$ มวลต้องอยู่ที่ตัวส่วน" }
-    solution: "$c = \\dfrac{Q}{m\\,\\Delta T} = \\dfrac{9{,}000\\ \\mathrm{J}}{(0.5\\ \\mathrm{kg})(20\\ \\mathrm{K})} = 900\\ \\mathrm{J/(kg\\cdot K)}$ (ใกล้เคียงอะลูมิเนียม)"
+      - { match: 180, feedback: "ดูเหมือนหารด้วย $\\Delta T$ อย่างเดียว ลืมหารด้วยมวล $0.5\\ \\mathrm{kg}$ ด้วย" }
+      - { match: 90, feedback: "ดูเหมือนคูณมวลแทนการหาร จาก $c = \\dfrac{Q}{m\\,\\Delta T}$ มวลต้องอยู่ที่ตัวส่วน" }
+    solution: "$c = \\dfrac{Q}{m\\,\\Delta T} = \\dfrac{9{,}000\\ \\mathrm{J}}{(0.5\\ \\mathrm{kg})(50\\ \\mathrm{K})} = 360\\ \\mathrm{J/(kg\\cdot K)}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -252,18 +252,18 @@ problems:
     topics: [physics.thermal.temperature-heat]
     difficulty: 3
     type: numeric
-    stem: "กราฟในภาพแสดงอุณหภูมิของโลหะ X มวล $1\\ \\mathrm{kg}$ เมื่อได้รับความร้อน โลหะ X มีความจุความร้อนจำเพาะเท่าใด (ตอบเป็นตัวเลขในหน่วย J/(kg·K))"
+    stem: "กราฟในภาพแสดงอุณหภูมิของโลหะ X มวล $1.2\\ \\mathrm{kg}$ เมื่อได้รับความร้อน โลหะ X มีความจุความร้อนจำเพาะเท่าใด (ตอบเป็นตัวเลขในหน่วย J/(kg·K))"
     figure:
       src: heating-graph-metal.svg
-      alt: "กราฟอุณหภูมิ (องศาเซลเซียส) กับความร้อนที่ให้ (กิโลจูล) ของโลหะ X มวล 1 kg เป็นเส้นตรงเริ่มที่ 20 °C เมื่อความร้อนเป็นศูนย์ และสิ้นสุดที่ 70 °C เมื่อให้ความร้อน 45 kJ"
-    answer: { value: 900, tolerance: 5, unit: J/(kg·K) }
+      alt: "กราฟอุณหภูมิ (องศาเซลเซียส) กับความร้อนที่ให้ (กิโลจูล) ของโลหะ X มวล 1.2 kg เป็นเส้นตรงเริ่มที่ 20 °C เมื่อความร้อนเป็นศูนย์ และสิ้นสุดที่ 70 °C เมื่อให้ความร้อน 45 kJ"
+    answer: { value: 750, tolerance: 8, unit: J/(kg·K) }
     hints:
       - "อ่านความร้อนที่ให้และอุณหภูมิที่เปลี่ยนไปจากกราฟ ระวังว่าเริ่มที่ $20\\ ^\\circ\\mathrm{C}$"
       - "$c = \\dfrac{Q}{m\\,\\Delta T}$ อย่าลืมเปลี่ยน kJ เป็น J"
     misconceptions:
-      - { match: 643, feedback: "ดูเหมือนใช้อุณหภูมิสุดท้าย $70$ เป็น $\\Delta T$ ต้องใช้อุณหภูมิที่เปลี่ยนไป $70 - 20 = 50\\ \\mathrm{K}$" }
-      - { match: 0.9, feedback: "ดูเหมือนใช้ $Q = 45$ ในหน่วย kJ ตอบจึงเป็น $\\mathrm{kJ/(kg\\cdot K)}$ ต้องเปลี่ยนเป็นจูลก่อน" }
-    solution: "$Q = 45\\ \\mathrm{kJ} = 45{,}000\\ \\mathrm{J}$ และ $\\Delta T = 70 - 20 = 50\\ \\mathrm{K}$ จึงได้ $c = \\dfrac{45{,}000}{(1)(50)} = 900\\ \\mathrm{J/(kg\\cdot K)}$ ใกล้เคียงอะลูมิเนียม"
+      - { match: 535.7, feedback: "ดูเหมือนใช้อุณหภูมิสุดท้าย $70$ เป็น $\\Delta T$ ต้องใช้อุณหภูมิที่เปลี่ยนไป $70 - 20 = 50\\ \\mathrm{K}$" }
+      - { match: 0.75, feedback: "ดูเหมือนใช้ $Q = 45$ ในหน่วย kJ ตอบจึงเป็น $\\mathrm{kJ/(kg\\cdot K)}$ ต้องเปลี่ยนเป็นจูลก่อน" }
+    solution: "$Q = 45\\ \\mathrm{kJ} = 45{,}000\\ \\mathrm{J}$ และ $\\Delta T = 70 - 20 = 50\\ \\mathrm{K}$ จึงได้ $c = \\dfrac{45{,}000}{(1.2)(50)} = 750\\ \\mathrm{J/(kg\\cdot K)}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 

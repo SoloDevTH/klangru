@@ -167,18 +167,18 @@ problems:
   - engineering.materials.beam-bending
   difficulty: 3
   type: numeric
-  stem: ไม้ตงเดียวกัน ($50 \times 150\ \mathrm{mm}$) รับแรงเฉือนสูงสุด $V = 2.25\ \mathrm{kN}$ ความเค้นเฉือนสูงสุดเป็นกี่เมกะปาสกาล
+  stem: ไม้ตงเดียวกัน ($50 \times 150\ \mathrm{mm}$) รับแรงเฉือนสูงสุด $V = 3.6\ \mathrm{kN}$ ความเค้นเฉือนสูงสุดเป็นกี่เมกะปาสกาล
   answer:
-    value: 0.45
+    value: 0.72
     tolerance: 0.01
     unit: MPa
   misconceptions:
-  - match: 0.3
+  - match: 0.48
     feedback: ใช้ $V/A$ ซึ่งเป็นค่าเฉลี่ย ค่าสูงสุดมากกว่า 1.5 เท่า
   hints:
   - 'หน้าตัดสี่เหลี่ยม: $\tau_{\max} = \dfrac{3V}{2A}$ ที่แกนสะเทิน'
   - $A = 50 \times 150 = 7{,}500\ \mathrm{mm^2}$
-  solution: $\tau_{\max} = 1.5 \times \dfrac{2{,}250}{7{,}500} = 0.45\ \mathrm{MPa}$ (ได้จาก $VQ/(It)$ โดย $Q = b(h/2)(h/4)$) ไม้มีกำลังเฉือนตามเสี้ยนต่ำ ค่านี้จึงต้องตรวจในคานไม้สั้นที่รับน้ำหนักมาก
+  solution: $\tau_{\max} = 1.5 \times \dfrac{3{,}600}{7{,}500} = 0.72\ \mathrm{MPa}$ (ได้จาก $VQ/(It)$ โดย $Q = b(h/2)(h/4)$) ไม้มีกำลังเฉือนตามเสี้ยนต่ำ ค่านี้จึงต้องตรวจในคานไม้สั้นที่รับน้ำหนักมาก
   license: CC-BY-SA-4.0
   ai_assisted: true
 - id: engineering.materials.beam-bending.p009
@@ -199,6 +199,7 @@ problems:
   - $\rho = \dfrac{EI}{M}$
   - $E = 200{,}000\ \mathrm{MPa}$, $M = 40 \times 10^6\ \mathrm{N\cdot mm}$ ผลลัพธ์เป็น mm
   solution: $\rho = \dfrac{200{,}000 \times 50 \times 10^6}{40 \times 10^6} = 250{,}000\ \mathrm{mm} = 250\ \mathrm{m}$
+  lint_ignore: [answer-in-lesson]
   license: CC-BY-SA-4.0
   ai_assisted: true
 - id: engineering.materials.beam-bending.p010
@@ -230,20 +231,20 @@ problems:
   - engineering.materials.beam-bending
   difficulty: 3
   type: numeric
-  stem: ตงไม้ในบ้านไม้ (สมมติ) $50 \times 150\ \mathrm{mm}$ วางตั้ง ช่วง $3\ \mathrm{m}$ รับแรงกระจาย $1.5\ \mathrm{kN/m}$ ใช้ $E = 10\ \mathrm{GPa}$ (ค่าสมมติของไม้เนื้อแข็ง) การแอ่นตัวสูงสุดเป็นกี่มิลลิเมตร
+  stem: ตงไม้ในบ้านไม้ (สมมติ) $50 \times 150\ \mathrm{mm}$ วางตั้ง ช่วง $3\ \mathrm{m}$ รับแรงกระจาย $1.3\ \mathrm{kN/m}$ ใช้ $E = 10\ \mathrm{GPa}$ (ค่าสมมติของไม้เนื้อแข็ง) การแอ่นตัวสูงสุดเป็นกี่มิลลิเมตร
   answer:
-    value: 11.25
+    value: 9.75
     tolerance: 0.1
     unit: mm
   misconceptions:
-  - match: 1.125
+  - match: 0.975
     feedback: แปลงหน่วยผิด (ใช้ $E$ เป็น 100 GPa หรือเลื่อนทศนิยม)
-  - match: 18.0
+  - match: 15.6
     feedback: ใช้สูตรของแรงจุดกลางช่วง
   hints:
-  - $v_{\max} = \dfrac{5wL^4}{384EI}$ โดย $1.5\ \mathrm{kN/m} = 1.5\ \mathrm{N/mm}$
+  - $v_{\max} = \dfrac{5wL^4}{384EI}$ โดย $1.3\ \mathrm{kN/m} = 1.3\ \mathrm{N/mm}$
   - $I = 50(150)^3/12 = 14.0625 \times 10^6\ \mathrm{mm^4}$
-  solution: $v_{\max} = \dfrac{5(1.5)(3000)^4}{384(10{,}000)(14.0625 \times 10^6)} = 11.25\ \mathrm{mm}$ เกินเกณฑ์ที่นิยมใช้ $L/360 = 8.33\ \mathrm{mm}$ แม้ความเค้น ($9\ \mathrm{MPa}$) อาจยังรับได้ พื้นจึงจะยวบ
+  solution: $v_{\max} = \dfrac{5(1.3)(3000)^4}{384(10{,}000)(14.0625 \times 10^6)} = 9.75\ \mathrm{mm}$ เกินเกณฑ์ที่นิยมใช้ $L/360 = 8.33\ \mathrm{mm}$ แม้ความเค้น ($7.8\ \mathrm{MPa}$) อาจยังรับได้ พื้นจึงจะยวบ
   license: CC-BY-SA-4.0
   ai_assisted: true
 - id: engineering.materials.beam-bending.p012
@@ -355,23 +356,23 @@ problems:
   - engineering.materials.beam-bending
   difficulty: 5
   type: numeric
-  stem: คาน AB ในภาพ ปลาย A ยึดแน่น ปลาย B วางบนลูกกลิ้ง ยาว $5\ \mathrm{m}$ รับ $10\ \mathrm{kN/m}$ ตลอดช่วง ($EI$ คงที่) แรงปฏิกิริยาที่ B เป็นกี่กิโลนิวตัน
+  stem: คาน AB ในภาพ ปลาย A ยึดแน่น ปลาย B วางบนลูกกลิ้ง ยาว $5\ \mathrm{m}$ รับ $12\ \mathrm{kN/m}$ ตลอดช่วง ($EI$ คงที่) แรงปฏิกิริยาที่ B เป็นกี่กิโลนิวตัน
   answer:
-    value: 18.75
+    value: 22.5
     tolerance: 0.05
     unit: kN
   misconceptions:
-  - match: 25
+  - match: 30
     feedback: คิดเหมือนคานช่วงเดียว $wL/2$ แต่ปลาย A ยึดแน่นรับแรงมากกว่า
-  - match: 31.25
+  - match: 37.5
     feedback: นั่นคือแรงที่ A
   figure:
     src: p-propped.svg
-    alt: คาน AB ยาว 5 เมตร ปลาย A ยึดแน่นกับผนัง ปลาย B วางบนลูกกลิ้ง รับแรงกระจายสม่ำเสมอ 10 kN/m ตลอดช่วง
+    alt: คาน AB ยาว 5 เมตร ปลาย A ยึดแน่นกับผนัง ปลาย B วางบนลูกกลิ้ง รับแรงกระจายสม่ำเสมอ 12 kN/m ตลอดช่วง
   hints:
   - ถอดลูกกลิ้งออก คิดเป็นคานยื่นรับ $w$ (ปลายลง $wL^4/8EI$) บวกคานยื่นรับแรง $R_B$ ขึ้น (ปลายขึ้น $R_BL^3/3EI$)
   - 'ปลาย B ต้องไม่เคลื่อน: ผลรวมการแอ่นเป็นศูนย์'
-  solution: $\dfrac{wL^4}{8EI} = \dfrac{R_BL^3}{3EI} \Rightarrow R_B = \dfrac{3wL}{8} = \dfrac{3(10)(5)}{8} = 18.75\ \mathrm{kN}$ ดังนั้น $R_A = 31.25\ \mathrm{kN}$ และโมเมนต์ที่ A $= -wL^2/8 = -31.25\ \mathrm{kN\cdot m}$ (ตรวจด้วย sympy โดยแก้ $v(0) = v'(0) = v(L) = 0$)
+  solution: $\dfrac{wL^4}{8EI} = \dfrac{R_BL^3}{3EI} \Rightarrow R_B = \dfrac{3wL}{8} = \dfrac{3(12)(5)}{8} = 22.5\ \mathrm{kN}$ ดังนั้น $R_A = 37.5\ \mathrm{kN}$ และโมเมนต์ที่ A $= -wL^2/8 = -37.5\ \mathrm{kN\cdot m}$ (ตรวจด้วย sympy โดยแก้ $v(0) = v'(0) = v(L) = 0$)
   license: CC-BY-SA-4.0
   ai_assisted: true
 - id: engineering.materials.beam-bending.p018
