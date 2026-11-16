@@ -1,0 +1,128 @@
+id: engineering.electrical.instrumentation
+subject: engineering
+title:
+  th: การวัดและเครื่องมือวัดทางวิศวกรรม
+  en: Measurement and instrumentation in engineering
+summary: อธิบายระบบวัดตั้งแต่เซนเซอร์ถึงจอแสดงผล ความถูกต้องและความเที่ยง วงจรบริดจ์ สัญญาณ 4 ถึง 20 mA และความละเอียดของ ADC
+difficulty: 7.5
+minutes: 40
+prerequisites:
+- engineering.circuits.dc-analysis
+- physics.units.measurement
+- math.stats.dispersion
+encompasses:
+- id: engineering.circuits.dc-analysis
+  weight: 0.4
+- id: math.stats.dispersion
+  weight: 0.2
+curriculum_tags: []
+references:
+- title: Instrumentation
+  url: https://en.wikipedia.org/wiki/Instrumentation
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Resistance thermometer
+  url: https://en.wikipedia.org/wiki/Resistance_thermometer
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Wheatstone bridge
+  url: https://en.wikipedia.org/wiki/Wheatstone_bridge
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: เครื่องมือวัด
+  url: https://th.wikipedia.org/wiki/เครื่องมือวัด
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+lessons:
+- type: figure
+  src: measurement-chain.svg
+  alt: แผนผังบล็อกจากซ้ายไปขวา เริ่มจากเซนเซอร์ ตามด้วยปรับสภาพสัญญาณ แล้วเป็น ADC และจบที่จอแสดงผลหรือตัวควบคุม มีลูกศรระหว่างกล่องแต่ละกล่อง
+  caption: ระบบวัดทั่วไปประกอบด้วยหลายขั้น แต่ละขั้นรับสัญญาณจากขั้นก่อนหน้าและส่งต่อ
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: loop-4-20ma.svg
+  alt: กราฟเส้นตรงจากจุด 4 mA ที่ 0 bar ไปจุด 20 mA ที่ 10 bar แกนนอนคือกระแส 0 ถึง 24 mA แกนตั้งคือความดัน 0 ถึง 10 bar พื้นที่ทางซ้ายของ 4 mA ถูกทำเป็นสีแดงอ่อนแสดงว่าเป็นช่วงผิดปกติ
+  caption: สัญญาณ 4 ถึง 20 mA เป็นเส้นตรงที่แทนค่าต่ำสุดที่ 4 mA และค่าสูงสุดที่ 20 mA
+- type: worked-example
+  title: แปลงกระแสเป็นระดับน้ำในถังสูง 5.00 m
+  problem: เครื่องวัดระดับของถังน้ำดิบตั้งช่วงไว้ 0 ถึง $5.00\ \mathrm{m}$ และส่งสัญญาณ $9.6\ \mathrm{mA}$ ระดับน้ำสูงกี่เมตร
+  steps:
+  - text: ช่วงกระแสที่ใช้จริงคือ $20 - 4 = 16\ \mathrm{mA}$ และค่าที่วัดได้เลยจุดต่ำสุด $9.6 - 4 = 5.6\ \mathrm{mA}$
+    why: ต้องลบค่าต่ำสุดออกก่อนเสมอ เพราะ 4 mA ไม่ใช่ศูนย์
+  - text: สัดส่วนของช่วงคือ $5.6 / 16 = 0.35$
+    why: สัดส่วนนี้ไม่ขึ้นกับหน่วยของช่วงวัด
+  - text: คูณด้วยช่วงความสูง $0.35 \times 5.00\ \mathrm{m} = 1.75\ \mathrm{m}$
+    why: ช่วงความสูงทั้งหมดมี 5.00 m จึงได้ระดับจากสัดส่วนนี้
+  answer: ระดับน้ำสูง 1.75 m
+- type: check
+  problem: engineering.electrical.instrumentation.p006
+  prompt: ลองคิดว่าค่า 0 mA จะบอกอะไร ก่อนเปิดเฉลยในหัวข้อ
+- type: interactive
+  title: ลากแถบเลื่อนเปลี่ยนช่วงของเครื่องวัด
+  caption: เส้นตรงเริ่มที่ 4 mA เสมอ และขึ้นถึงค่าสูงสุดที่ 20 mA เมื่อช่วงเปลี่ยน ความชันของเส้นจะเปลี่ยนตามช่วงที่ตั้งไว้
+  widget:
+    kind: function-plot
+    functions:
+    - s\cdot\frac{x-4}{16}
+    sliders:
+    - name: s
+      min: 1
+      max: 20
+      step: 1
+      value: 10
+      label: ช่วงของเครื่องวัด
+    x:
+    - 0
+    - 24
+    y:
+    - 0
+    - 20
+- type: figure
+  src: wheatstone-bridge.svg
+  alt: วงจรบริดจ์วีตสโตนรูปข้าวหลามตัด มีตัวต้านทาน R1 และ R3 ที่ขาบน R2 และ Rx ที่ขาล่าง และมีเส้นประวัดแรงดันขาออกระหว่างจุดซ้ายกับจุดขวา
+  caption: เซนเซอร์ Rx เปลี่ยนค่าเมื่อปริมาณเปลี่ยน ทำให้แรงดันขาออกเปลี่ยนไปตามนั้น
+- type: worked-example
+  title: แปลงแรงดัน 2.345 V ให้เป็นรหัสของ ADC 10 บิต
+  problem: ADC 10 บิตรับช่วง 0 ถึง $5\ \mathrm{V}$ แรงดัน $2.345\ \mathrm{V}$ จะถูกแปลงเป็นรหัสจำนวนเต็มเท่าไร และรหัสนี้แทนแรงดันจริงเท่าไร
+  steps:
+  - text: คำนวณ LSB $= 5 \div 1024 = 4.8828\ \mathrm{mV}$
+    why: LSB คือขนาดขั้นที่เล็กที่สุดที่ ADC แยกได้
+  - text: 'หารแรงดันด้วย LSB: $2.345 \div 0.0048828 \approx 480.3$'
+    why: รหัสที่ได้จะเป็นจำนวนเต็มเสมอ
+  - text: ปัดลงเป็นจำนวนเต็ม ได้รหัส $480$ แล้วคูณกลับด้วย LSB จะได้ $480 \times 4.8828\ \mathrm{mV} = 2.3437\ \mathrm{V}$
+    why: ค่าที่ได้จะต่ำกว่าแรงดันจริงเล็กน้อย ความต่างนี้คือความคลาดเคลื่อนจากการปัดเศษ
+  answer: รหัส 480 แทนแรงดัน 2.3437 V
+- type: check
+  problem: engineering.electrical.instrumentation.p002
+  prompt: นึกถึงอุปกรณ์ที่แปลงความร้อนเป็นไฟฟ้า ก่อนดูตัวเลือก
+glossary:
+- term: ความถูกต้อง (accuracy)
+  definition: ระดับที่ค่าที่วัดได้ใกล้ค่าจริง
+- term: ความเที่ยง (precision)
+  definition: ระดับที่การวัดซ้ำภายใต้เงื่อนไขเดิมให้ค่าใกล้กัน ไม่จำเป็นต้องใกล้ค่าจริง
+- term: การสอบเทียบ (calibration)
+  definition: การเทียบค่าที่เครื่องวัดอ่านได้กับค่าอ้างอิงที่รู้แน่ แล้วหาค่าชดเชยหรือความชัน
+- term: ADC
+  definition: วงจรแปลงแรงดันแอนะล็อกเป็นรหัสดิจิทัล ความละเอียดขึ้นกับจำนวนบิต
+- term: สัญญาณ 4 ถึง 20 mA
+  definition: สัญญาณกระแสมาตรฐานในอุตสาหกรรม ใช้ 4 mA เป็นค่าต่ำสุดเพื่อแยกสายขาดออกจากค่าต่ำสุดจริง
+flashcards:
+- front: ค่า LSB ของ ADC n บิต รับช่วง $V_{FS}$
+  back: $V_{FS}/2^n$ (แรงดันเต็มช่วงหารด้วยจำนวนช่อง)
+- front: สูตรความต้านทานของ Pt100 ที่อุณหภูมิ T
+  back: $R_T = R_0(1+\alpha T)$ โดย $R_0 = 100\ \Omega$ และ $\alpha \approx 0.00385$ ต่อ °C
+- front: ความหมายของ 4 mA ในสัญญาณ 4 ถึง 20 mA
+  back: ค่าต่ำสุดของช่วงวัด (live zero) ไม่ใช่ศูนย์ 0 mA คือสายขาดหรือไฟหาย
+- front: ความต่างระหว่างความถูกต้องกับความเที่ยง
+  back: ความถูกต้องคือใกล้ค่าจริง ความเที่ยงคือการอ่านซ้ำได้ค่าใกล้กัน
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors:
+- ทีมคลังรู้
+ai_assisted: true

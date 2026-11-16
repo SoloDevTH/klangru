@@ -1,0 +1,120 @@
+id: engineering.materials.corrosion-protection
+subject: engineering
+title:
+  th: การกัดกร่อนและการป้องกันผิวโลหะ
+  en: Corrosion and protection of metal surfaces
+summary: อธิบายการกัดกร่อนเป็นเซลล์ไฟฟ้าเคมี คำนวณอัตราการสูญเสียด้วยกฎของฟาราเดย์ และเลือกวิธีป้องกันตั้งแต่การเคลือบผิวถึงแคโทดิก
+difficulty: 7.5
+minutes: 45
+prerequisites:
+- chemistry.redox.electrochemical-cells
+- engineering.materials.materials-science
+encompasses:
+- id: chemistry.redox.electrochemical-cells
+  weight: 0.4
+- id: engineering.materials.materials-science
+  weight: 0.2
+curriculum_tags: []
+references:
+- title: Corrosion
+  url: https://en.wikipedia.org/wiki/Corrosion
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Galvanic series
+  url: https://en.wikipedia.org/wiki/Galvanic_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Cathodic protection
+  url: https://en.wikipedia.org/wiki/Cathodic_protection
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: การกัดกร่อน
+  url: https://th.wikipedia.org/wiki/การกัดกร่อน
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+lessons:
+- type: figure
+  src: corrosion-cell.svg
+  alt: แผนภาพเซลล์การกัดกร่อนบนเหล็กชิ้นเดียว มีจุดแอโนดด้านซ้ายที่เหล็กละลายเป็นไอออน จุดแคโทดด้านขวาที่ออกซิเจนรับอิเล็กตรอน มีลูกศรอิเล็กตรอนผ่านโลหะด้านบน และแถบน้ำชื้นเชื่อมด้านล่าง
+  caption: การกัดกร่อนเป็นเซลล์ไฟฟ้าเคมีขนาดเล็กที่เกิดขึ้นบนผิวเดียวกัน
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: มวลเหล็กที่สูญเสียจากกระแสการกัดกร่อน
+  problem: กระแสการกัดกร่อนเหล็ก 2 A เป็นเวลา 1 ชั่วโมง เหล็กสูญเสียกี่กรัม ($n = 2$, $M = 55.85\ \mathrm{g/mol}$)
+  steps:
+  - text: ประจุทั้งหมด $Q_c = I\,t = 2 \times 3600 = 7200\ \mathrm{C}$
+    why: กระแสคูณเวลาต้องใช้วินาทีเสมอ
+  - text: จำนวนโมลของอิเล็กตรอน $= 7200 / 96485 \approx 0.07462\ \mathrm{mol}$
+    why: ฟาราเดย์หนึ่งค่าเท่ากับอิเล็กตรอนหนึ่งโมล
+  - text: โมลของเหล็ก $= 0.07462 / 2 = 0.03731\ \mathrm{mol}$ จึงได้มวล $0.03731 \times 55.85 \approx 2.08\ \mathrm{g}$
+    why: Fe²⁺ ต้องการอิเล็กตรอนสองตัวต่อหนึ่งอะตอม
+  answer: เหล็กสูญเสียประมาณ 2.08 g
+- type: check
+  problem: engineering.materials.corrosion-protection.p002
+  prompt: ลองคิดว่าโลหะใดถูกกัดก่อน ก่อนเปิดตัวเลือก
+- type: figure
+  src: cathodic-sacrificial.svg
+  alt: ท่อเหล็กนอนแนวนอนที่ฝังดิน มีแอโนดสังกะสีต่อด้วยสายไฟจากด้านล่างเข้าท่อ ลูกศรอิเล็กตรอนไหลจากสังกะสีไปยังท่อ และมีกล่องประจุไฟฟ้าอีกกล่องที่เป็นเส้นประไม่ได้ใช้
+  caption: แอโนดสังกะสีทำหน้าที่สละตัวเองเพื่อให้ท่อเหล็กเป็นแคโทด
+- type: worked-example
+  title: ระยะเวลาการป้องกันของแอโนดสังกะสี
+  problem: แอโนดสังกะสี 20 kg (ความจุ 780 Ah/kg ประสิทธิภาพ 90%) ป้องกันท่อด้วยกระแสเฉลี่ย 0.05 A ได้กี่ปี (ค่าตัวอย่าง)
+  steps:
+  - text: ประจุที่มีได้จริง $= 20 \times 780 \times 0.90 = 14040\ \mathrm{Ah}$
+    why: ต้องคิดประสิทธิภาพเพราะสังกะสีบางส่วนไม่ได้ถูกใช้ป้องกันจริง
+  - text: ประจุที่ใช้ต่อปี $= 0.05 \times 8760 = 438\ \mathrm{Ah}$
+    why: ชั่วโมงทั้งปีคือ 8760 ชั่วโมง
+  - text: เวลา $= 14040 / 438 \approx 32.1\ \mathrm{ปี}$
+    why: ใช้ประจุที่มีหารด้วยประจุที่ใช้ต่อปี
+  answer: ประมาณ 32.1 ปี (ค่าตัวอย่าง ไม่ใช่ค่าออกแบบจริง)
+- type: interactive
+  title: มวลที่สูญเสียเปลี่ยนตามกระแสและเวลา
+  caption: ลากแถบเลื่อนเพื่อเปลี่ยนกระแส เส้นตรงแสดงว่ามวลที่สูญเสียเพิ่มตามเวลาเป็นสัดส่วนตรงกับกระแส (กฎของฟาราเดย์ สำหรับ Fe²⁺)
+  widget:
+    kind: function-plot
+    functions:
+    - s\cdot x\cdot\frac{55.85}{2\cdot 96485}
+    sliders:
+    - name: s
+      min: 1
+      max: 10
+      step: 1
+      value: 2
+      label: กระแส (A)
+    x:
+    - 0
+    - 7200
+    y:
+    - 0
+    - 25
+glossary:
+- term: การกัดกร่อน (corrosion)
+  definition: การเสื่อมสภาพของโลหะโดยปฏิกิริยาเคมีไฟฟ้ากับสิ่งแวดล้อม มักทำให้โลหะกลับสู่สภาพสารประกอบ
+- term: แอโนดและแคโทด
+  definition: แอโนดคือขั้วที่โลหะละลายเป็นไอออนและสูญเสียอิเล็กตรอน ส่วนแคโทดคือขั้วที่รับอิเล็กตรอน
+- term: อนุกรมกัลวานิก
+  definition: การจัดอันดับโลหะตามศักย์ไฟฟ้าในสภาพแวดล้อมหนึ่ง ใช้ทำนายว่าโลหะคู่ใดจะถูกกัดก่อน
+- term: การป้องกันแบบแคโทดิก
+  definition: การทำให้โลหะเป็นแคโทดด้วยแอโนดเสียสละหรือกระแสจ่าย เพื่อหยุดการละลายของโลหะ
+- term: การพาสซีฟ (passivation)
+  definition: การเกิดชั้นออกไซด์บางแน่นที่ผิวโลหะซึ่งหยุดการกัดกร่อนต่อไป
+flashcards:
+- front: กฎของฟาราเดย์สำหรับมวลที่สูญเสียจากการกัดกร่อน
+  back: $m = ItM/(nF)$ โดย $t$ เป็นวินาที
+- front: สังกะสีกับเหล็กในน้ำเกลือ โลหะใดเป็นแอโนด
+  back: สังกะสี เพราะละลายได้ง่ายกว่า จึงป้องกันเหล็กแบบเสียสละ
+- front: ทำไมการชุบสังกะสียังป้องกันเมื่อมีรอย
+  back: สังกะสีที่อยู่รอบรอยถูกกัดแทนเหล็ก (แบบเสียสละ)
+- front: ปฏิกิริยาแอโนดของเหล็กในการกัดกร่อน
+  back: $\mathrm{Fe \rightarrow Fe^{2+} + 2e^-}$
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors:
+- ทีมคลังรู้
+ai_assisted: true

@@ -1,0 +1,121 @@
+id: engineering.environmental.air-pollution-control
+subject: engineering
+title:
+  th: การควบคุมมลพิษทางอากาศ
+  en: Air pollution control
+summary: แปลงหน่วยมลพิษอากาศ คำนวณอัตราปล่อยและประสิทธิภาพของอุปกรณ์ดัก และประมาณการกระจายควันจากปล่องด้วยแบบจำลองเชิงแนวคิด
+difficulty: 7.5
+minutes: 45
+prerequisites:
+- chemistry.gases.gas-laws
+- engineering.process.mass-energy-balance
+encompasses:
+- id: chemistry.gases.gas-laws
+  weight: 0.4
+- id: engineering.process.mass-energy-balance
+  weight: 0.3
+curriculum_tags: []
+references:
+- title: Air pollution
+  url: https://en.wikipedia.org/wiki/Air_pollution
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Electrostatic precipitator
+  url: https://en.wikipedia.org/wiki/Electrostatic_precipitator
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Atmospheric dispersion modeling
+  url: https://en.wikipedia.org/wiki/Atmospheric_dispersion_modeling
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: มลพิษทางอากาศ
+  url: https://th.wikipedia.org/wiki/มลพิษทางอากาศ
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+lessons:
+- type: figure
+  src: plume-stack.svg
+  alt: แผนภาพปล่องควันที่มีควันถูกลมพัดจากซ้ายไปขวา ควันยกตัวจากปลายปล่องแล้วกระจายทั้งแนวตั้งและแนวนอนตามระยะทาง มีเส้นประแสดงความสูง H ของปล่อง
+  caption: ควันจากปล่องถูกลมพัดไปและค่อย ๆ กระจายลงสู่พื้นตามระยะทาง
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: แปลงค่า ppm ของ SO₂ เป็น µg/m³
+  problem: ที่ 25 °C และ 1 atm ค่า SO₂ ที่วัดได้ 0.10 ppm เท่ากับกี่ µg/m³ ($M = 64\ \mathrm{g/mol}$)
+  steps:
+  - text: ใช้สูตร $C\,(\mathrm{mg/m^3}) = \mathrm{ppm} \times M / V_m = 0.10 \times 64 / 24.45 \approx 0.2618\ \mathrm{mg/m^3}$
+    why: ปริมาตรโมลาร์ที่ 25 °C และ 1 atm คือ 24.45 L/mol
+  - text: คูณ 1000 เพื่อเปลี่ยน mg เป็น µg จะได้ $\approx 262\ \mu\mathrm{g/m^3}$
+    why: หน่วย µg/m³ ใช้บอกความเข้มข้นในอากาศโดยตรง
+  answer: ประมาณ 262 µg/m³
+- type: check
+  problem: engineering.environmental.air-pollution-control.p002
+  prompt: ลองคิดว่าตัวเลข 2.5 ในชื่อบอกอะไรก่อนดูตัวเลือก
+- type: figure
+  src: control-train.svg
+  alt: แผนผังลำดับจากซ้ายไปขวา มีแหล่งกำเนิดเป็นหม้อไอน้ำหรือเตาเผา ตามด้วยกล่องดักอนุภาค กล่องดักแก๊ส และปล่องที่ปลายขวา มีลูกศรระหว่างกล่อง
+  caption: การควบคุมมลพิษมักเป็นลำดับอุปกรณ์ที่ดักอนุภาคก่อนและดักแก๊สตามมา
+- type: worked-example
+  title: ประสิทธิภาพรวมของการดักแบบสองขั้น
+  problem: ขั้นแรกดักได้ 70% ขั้นที่สองดักที่เหลือได้ 60% ประสิทธิภาพรวมเป็นเท่าไร
+  steps:
+  - text: เหลือหลังขั้นแรก $= 1 - 0.70 = 0.30$ ของเดิม
+    why: ต้องคิดจากปริมาณที่เหลือไม่ใช่จากปริมาณเดิม
+  - text: เหลือหลังขั้นที่สอง $= 0.30 \times (1 - 0.60) = 0.12$ ของเดิม
+    why: ขั้นที่สองทำงานกับของที่เหลือจากขั้นแรก
+  - text: ประสิทธิภาพรวม $= 1 - 0.12 = 0.88$ หรือ 88%
+    why: ประสิทธิภาพรวมคือส่วนที่ถูกดักทั้งหมด
+  answer: ประสิทธิภาพรวมประมาณ 88%
+- type: check
+  problem: engineering.environmental.air-pollution-control.p005
+  prompt: คิดก่อนว่าประสิทธิภาพควรเป็นสัดส่วนของอะไร
+- type: interactive
+  title: ประสิทธิภาพ ESP เปลี่ยนตาม wA/Q
+  caption: เส้นโค้งแสดงประสิทธิภาพ 1 − e^(−x) เมื่อ x = wA/Q เปลี่ยนไป ลากแถบเลื่อนเพื่อดูว่าพื้นที่เก็บประจุมีผลอย่างไรเมื่อ Q คงที่
+  widget:
+    kind: function-plot
+    functions:
+    - 1-e^{-s\cdot x/20}
+    sliders:
+    - name: s
+      min: 0.01
+      max: 0.2
+      step: 0.01
+      value: 0.05
+      label: ความเร็ว w (m/s) แบบจำลอง
+    x:
+    - 0
+    - 1500
+    y:
+    - 0
+    - 1
+glossary:
+- term: PM2.5 และ PM10
+  definition: อนุภาคแขวนลอยที่มีเส้นผ่านศูนย์กลางไม่เกิน 2.5 และ 10 ไมโครเมตรตามลำดับ
+- term: ppm
+  definition: ส่วนในล้านส่วนโดยปริมาตรของแก๊สในอากาศ ต้องแปลงเป็น µg/m³ โดยใช้มวลโมลาร์และปริมาตรโมลาร์
+- term: ประสิทธิภาพการดัก
+  definition: สัดส่วนของมลพิษที่ถูกดักออกจากกระแสก๊าซ คำนวณจากความเข้มข้นขาเข้าและขาออก
+- term: ESP (เครื่องดักจับฝุ่นด้วยไฟฟ้าสถิต)
+  definition: อุปกรณ์ที่ทำให้อนุภาคมีประจุแล้วดูดไปเก็บบนแผ่นรับประจุ
+- term: แบบจำลองเกาส์เซียน
+  definition: แบบจำลองการกระจายควันจากแหล่งจุดที่ใช้รูปร่างการกระจายแบบเกาส์เซียนตามแนวลม
+flashcards:
+- front: แปลง 1 ppm ของ SO₂ ที่ 25 °C เป็น µg/m³
+  back: ประมาณ 2618 µg/m³ (ใช้ 64/24.45 mg/m³)
+- front: ประสิทธิภาพ ESP ตามสูตร Deutsch
+  back: $\eta = 1 - e^{-wA/Q}$
+- front: ประสิทธิภาพรวมของอุปกรณ์สองตัวต่ออนุกรม
+  back: $\eta = 1 - (1-\eta_1)(1-\eta_2)$
+- front: ทำไมปล่องสูงไม่ลดปริมาณมลพิษที่ปล่อย
+  back: เพราะปล่องเพียงกระจายมลพิษ ไม่ได้ดักหรือทำลาย
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors:
+- ทีมคลังรู้
+ai_assisted: true

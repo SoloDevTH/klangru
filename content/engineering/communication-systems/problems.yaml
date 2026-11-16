@@ -1,0 +1,403 @@
+problems:
+- id: engineering.electrical.communication-systems.p001
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 1
+  type: numeric
+  stem: สัญญาณ AM มีความถี่ข่าวสาร $f_m = 5\ \mathrm{kHz}$ แบนด์วิดท์ของสัญญาณ AM เป็นกี่ kHz (ตอบหน่วย kHz)
+  answer:
+    value: 10
+    tolerance: 0.1
+    unit: kHz
+  misconceptions:
+  - match: 5
+    feedback: ลืมคูณ 2 จึงได้เพียงความถี่ข่าวสาร
+  hints:
+  - แถบข้างบนและล่างอยู่ห่างจากพาหะเท่ากับ $f_m$
+  - แบนด์วิดท์คือระยะห่างระหว่างแถบข้างสองด้าน
+  solution: $B = 2 f_m = 2 \times 5 = 10\ \mathrm{kHz}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p002
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 1
+  type: mcq
+  stem: ตามทฤษฎีบทชักตัวอย่างของไนควิสต์ ความถี่ชักตัวอย่าง $f_s$ ต้องเป็นอย่างไรเมื่อสัญญาณมีความถี่สูงสุด $f_{max}$
+  choices:
+  - id: a
+    text: $f_s \ge 2 f_{max}$
+    correct: true
+  - id: b
+    text: $f_s \le f_{max}/2$
+    feedback: เป็นเงื่อนไขที่ทำให้ตัวอย่างน้อยเกินไปและเกิดแอลิแอซิงทั้งหมด
+  - id: c
+    text: $f_s = f_{max}$ พอดี
+    feedback: เท่ากันพอดีเป็นกรณีขอบ ไม่ได้รับประกันการกู้คืนสัญญาณ
+  - id: d
+    text: $f_s \ge f_{max}/2$
+    feedback: ต้องใช้อย่างน้อยสองเท่าของความถี่สูงสุด ไม่ใช่ครึ่งหนึ่ง
+  hints:
+  - ไนควิสต์ต้องการตัวอย่างอย่างน้อยกี่เท่าของความถี่สูงสุด
+  - ลองนึกถึงคลื่นหนึ่งลูกที่ต้องมีจุดอย่างน้อยสองจุดต่อรอบ
+  solution: ทฤษฎีบทไนควิสต์ระบุ $f_s \ge 2f_{max}$ เพื่อให้กู้คืนสัญญาณเดิมจากตัวอย่างได้โดยไม่เกิดแอลิแอซิง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p003
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 1
+  type: text
+  stem: หน่วยลอการิทึมที่ใช้บอกอัตราส่วนกำลังหรือกำลังสัญญาณต่อสัญญาณรบกวนมีชื่อย่ออย่างไร (ตอบตัวอักษรภาษาอังกฤษ 2 ตัว)
+  accepted:
+  - dB
+  misconceptions:
+  - match: SNR
+    feedback: SNR เป็นชื่ออัตราส่วนสัญญาณต่อสัญญาณรบกวน ไม่ใช่หน่วยลอการิทึม
+  hints:
+  - ชื่อหน่วยมาจากนักประดิษฐ์โทรศัพท์ชาวสก็อต
+  - ตัวอักษรตัวแรกเป็นตัวพิมพ์เล็ก d
+  solution: หน่วยนี้คือเดซิเบล (dB) ซึ่งเป็น 10 log10 ของอัตราส่วนกำลัง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p004
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 2
+  type: numeric
+  stem: อัตราส่วนกำลังสัญญาณต่อสัญญาณรบกวน $S/N = 1000$ คิดเป็นกี่เดซิเบล (ตอบหน่วย dB)
+  answer:
+    value: 30.0
+    tolerance: 0.3
+    unit: dB
+  misconceptions:
+  - match: 3.0
+    feedback: ลืมคูณ 10 ของสูตรเดซิเบล
+  - match: 60.0
+    feedback: ใช้ 20 log แทน 10 log ซึ่งใช้กับอัตราส่วนแรงดันไม่ใช่กำลัง
+  hints:
+  - ใช้ $\mathrm{SNR_{dB}} = 10\log_{10}(S/N)$ เพราะเป็นอัตราส่วนกำลัง
+  - ลอการิทึมฐาน 10 ของ 1000 คือ 3
+  solution: $10 \log_{10}(1000) = 10 \times 3 = 30.0\ \mathrm{dB}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p005
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 2
+  type: numeric
+  stem: สัญญาณเสียงพูดมีความถี่สูงสุด 3.4 kHz ความถี่ชักตัวอย่างขั้นต่ำตามทฤษฎีบทไนควิสต์เป็นกี่ kHz
+  answer:
+    value: 6.8
+    tolerance: 0.01
+    unit: kHz
+  misconceptions:
+  - match: 1.7
+    feedback: ใช้ครึ่งหนึ่งของความถี่สูงสุดแทนสองเท่า
+  hints:
+  - ใช้ $f_s \ge 2 f_{max}$
+  - คูณ 3.4 ด้วย 2
+  solution: $f_s \ge 2 \times 3.4 = 6.8\ \mathrm{kHz}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p006
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 2
+  type: numeric
+  stem: สัญญาณโทน $7\ \mathrm{kHz}$ ถูกชักตัวอย่างที่ $f_s = 8\ \mathrm{kHz}$ จะเกิดแอลิแอซเป็นความถี่ใด (ตอบหน่วย kHz)
+  answer:
+    value: 1
+    tolerance: 0.01
+    unit: kHz
+  misconceptions:
+  - match: 7.0
+    feedback: คิดว่าไม่เกิดแอลิแอซ เพราะความถี่ยังต่ำกว่า $f_s$
+  - match: 15
+    feedback: ใช้ผลบวกแทนผลต่างของความถี่
+  hints:
+  - ความถี่แอลิแอซคือระยะห่างระหว่างความถี่สัญญาณกับความถี่ชักตัวอย่างที่ใกล้ที่สุด
+  - ค่าสัมบูรณ์ของผลต่างคือคำตอบ
+  solution: $|f_s - f| = |8 - 7| = 1\ \mathrm{kHz}$ เกิดเป็นโทนปลอม 1 kHz ในสัญญาณที่ชักตัวอย่างแล้ว
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p007
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 2
+  type: mcq
+  stem: สัญญาณ AM มีพาหะ $f_c = 100\ \mathrm{kHz}$ และความถี่ข่าวสาร $f_m = 2\ \mathrm{kHz}$ สเปกตรัมมีความถี่ใดบ้าง
+  choices:
+  - id: a
+    text: 98 kHz, 100 kHz และ 102 kHz
+    correct: true
+  - id: b
+    text: 2 kHz และ 100 kHz เท่านั้น
+    feedback: ความถี่ข่าวสารไม่ได้ปรากฏเป็นความถี่ของสเปกตรัมโดยตรง แต่เป็นระยะห่างจากพาหะ
+  - id: c
+    text: 100 kHz เท่านั้น
+    feedback: การมอดูเลตทำให้เกิดแถบข้างที่ห่างจากพาหะเท่ากับ $f_m$ เสมอ
+  - id: d
+    text: 98 kHz และ 104 kHz
+    feedback: แถบข้างต้องห่างจากพาหะเท่ากันทั้งสองด้าน
+  hints:
+  - แถบข้างอยู่ห่างจากพาหะเท่ากับความถี่ข่าวสาร
+  - ตรวจว่าทุกความถี่ที่ตอบห่างจาก 100 kHz เท่าไร
+  solution: สเปกตรัม AM มี $f_c - f_m = 98$, $f_c = 100$ และ $f_c + f_m = 102$ kHz
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p008
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 3
+  type: numeric
+  stem: สัญญาณ AM ที่มีดัชนีการมอดูเลต $m = 0.5$ กำลังส่วนที่อยู่ในแถบข้างรวมคิดเป็นกี่เปอร์เซ็นต์ของกำลังรวม (ทศนิยม 1 ตำแหน่ง) ใช้ $P_t = P_c(1 + m^2/2)$
+  answer:
+    value: 11.1
+    tolerance: 0.1
+    unit: '%'
+  misconceptions:
+  - match: 12.5
+    feedback: ไม่หารด้วยกำลังรวม
+  - match: 20.0
+    feedback: ใช้ $m$ แทน $m^2$ ในสูตร
+  hints:
+  - กำลังในแถบข้างรวมคือ $P_c m^2/2$
+  - หารด้วยกำลังรวม $P_c(1 + m^2/2)$
+  solution: $\dfrac{m^2/2}{1 + m^2/2} = \dfrac{0.125}{1.125} \approx 0.1111 = 11.1\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p009
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 3
+  type: numeric
+  stem: ช่องสัญญาณแบนด์วิดท์ 3 kHz และอัตราส่วน SNR 30 dB (ค่าตัวอย่าง) ความจุตามทฤษฎีของแชนนอนเป็นกี่ kbit/s (ทศนิยม 1 ตำแหน่ง) ใช้ $C = B\log_2(1 + S/N)$ โดยแปลง 30 dB เป็นอัตราส่วนเชิงเส้น 1000
+  answer:
+    value: 29.9
+    tolerance: 0.1
+    unit: kbit/s
+  misconceptions:
+  - match: 90.0
+    feedback: ใช้ค่า 30 dB เป็นอัตราส่วนเชิงเส้นโดยตรง
+  - match: 9.0
+    feedback: ใช้ $\log_{10}$ แทน $\log_2$
+  hints:
+  - แปลง 30 dB เป็น $S/N = 10^{3} = 1000$
+  - คำนวณ $\log_2(1001)$ แล้วคูณด้วย 3000
+  solution: $C = 3000 \times \log_2(1001) \approx 3000 \times 9.966 = 29902\ \mathrm{bit/s} \approx 29.9\ \mathrm{kbit/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p010
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 3
+  type: expression
+  stem: จากความสัมพันธ์ $\mathrm{SNR_{dB}} = 10\log_{10}(s/n)$ โดย $d$ คือค่าเดซิเบล จงจัดรูปหาอัตราส่วน $s/n$ ในรูปของ $d$
+  answer:
+    latex: 10^{d/10}
+    variables:
+    - d
+  prefix: s/n =
+  misconceptions:
+  - match: 10^{d}
+    feedback: ลืมหารด้วย 10 ในเลขชี้กำลัง
+  - match: d/10
+    feedback: ลืมยกกำลังฐาน 10
+  hints:
+  - หารทั้งสองข้างด้วย 10 แล้วยกกำลังฐาน 10
+  solution: จาก $d/10 = \log_{10}(s/n)$ จึงได้ $s/n = 10^{d/10}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p011
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 3
+  type: numeric
+  stem: ลิงก์ไร้สายยาว 10 km ที่ความถี่ 900 MHz สูญเสียจากระยะทางในอวกาศว่าง (FSPL) ประมาณกี่ dB ใช้ $\mathrm{FSPL} = 20\log_{10}d_{km} + 20\log_{10}f_{MHz} + 32.44$ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 111.5
+    tolerance: 0.2
+    unit: dB
+  misconceptions:
+  - match: 79.1
+    feedback: ลืมค่าคงที่ 32.44 ในสูตร
+  - match: 171.5
+    feedback: ใช้ระยะเป็นเมตรในสูตรที่ใช้กิโลเมตร
+  hints:
+  - แทนค่า $d = 10$ km และ $f = 900$ MHz
+  - คำนวณแต่ละพจน์แล้วรวมกัน
+  solution: $\mathrm{FSPL} = 20 + 59.1 + 32.4 \approx 111.5\ \mathrm{dB}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p012
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 4
+  type: numeric
+  stem: ลิงก์ไร้สายมีกำลังส่ง 30 dBm เสาส่งได้อัตราขยาย 12 dBi เสารับ 3 dBi ค่าสูญเสียอื่นรวม 2 dB และ FSPL ตามโจทย์ก่อนหน้า (ประมาณ 111.5 dB) กำลังที่ตัวรับเป็นกี่ dBm (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: -68.5
+    tolerance: 0.2
+    unit: dBm
+  misconceptions:
+  - match: 154.5
+    feedback: เครื่องหมายของ FSPL กลับด้าน
+  - match: -83.5
+    feedback: ลืมอัตราขยายของเสาทั้งสองด้าน
+  hints:
+  - ใช้ $P_{rx} = P_{tx} + G_{tx} + G_{rx} - \mathrm{FSPL} - L_{อื่น}$ ทุกค่าเป็น dB
+  - รวมค่า dB ได้โดยตรงเพราะเป็นลอการิทึม
+  solution: $P_{rx} = 30 + 12 + 3 - 111.5 - 2 \approx -68.5\ \mathrm{dBm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p013
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 4
+  type: numeric
+  stem: การมอดูเลต QPSK ส่งข้อมูล 9600 bit/s โดยแต่ละสัญลักษณ์มี 2 บิต อัตราสัญลักษณ์เป็นกี่ baud
+  answer:
+    value: 4800.0
+    tolerance: 48.0
+    unit: baud
+  misconceptions:
+  - match: 9600
+    feedback: ใช้อัตราบิตแทนอัตราสัญลักษณ์
+  - match: 2400.0
+    feedback: ใช้ 4 บิตต่อสัญลักษณ์ผิด
+  hints:
+  - จำนวนบิตต่อสัญลักษณ์คือ $\log_2 4 = 2$
+  - อัตราสัญลักษณ์ $= 9600 / 2$
+  solution: $R_s = R_b / \log_2 M = 9600 / 2 = 4800$ baud
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p014
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 4
+  type: mcq
+  stem: ข้อใดอธิบายการมอดูเลตดิจิทัลได้ถูกต้อง
+  choices:
+  - id: a
+    text: ASK เปลี่ยนแอมพลิจูดของพาหะตามข้อมูล
+    correct: true
+  - id: b
+    text: FSK เปลี่ยนแอมพลิจูดของพาหะตามข้อมูล
+    feedback: FSK เปลี่ยนความถี่ ไม่ได้เปลี่ยนแอมพลิจูด
+  - id: c
+    text: PSK เปลี่ยนความถี่ของพาหะตามข้อมูล
+    feedback: PSK เปลี่ยนเฟสของพาหะ
+  - id: d
+    text: ทั้งสามวิธีเปลี่ยนเฟสเพียงอย่างเดียว
+    feedback: ASK เปลี่ยนแอมพลิจูด และ FSK เปลี่ยนความถี่
+  hints:
+  - ลองนึกว่าพาหะมีสามคุณสมบัติที่ปรับได้คือแอมพลิจูด ความถี่ และเฟส
+  - ASK ย่อมาจาก Amplitude Shift Keying
+  solution: ASK เปลี่ยนแอมพลิจูด FSK เปลี่ยนความถี่ และ PSK เปลี่ยนเฟสของพาหะตามข้อมูลดิจิทัล
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p015
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 4
+  type: numeric
+  stem: ช่องสัญญาณแบนด์วิดท์ 3 kHz และ SNR 20 dB (ค่าตัวอย่าง) ความจุตามแชนนอนเป็นกี่ kbit/s (ทศนิยม 1 ตำแหน่ง แปลง 20 dB เป็น 100 เท่า)
+  answer:
+    value: 20.0
+    tolerance: 0.1
+    unit: kbit/s
+  misconceptions:
+  - match: 13.2
+    feedback: ใช้ SNR เชิงเส้นเป็น 20 แทน 100
+  - match: 60.0
+    feedback: คูณแบนด์วิดท์ด้วย SNR โดยไม่ใช้ลอการิทึม
+  hints:
+  - $S/N = 100$
+  - คำนวณ $3\log_2(101)$ โดยหน่วย kHz
+  solution: $C = 3000 \times \log_2(101) \approx 3000 \times 6.658 \approx 19975\ \mathrm{bit/s} = 20.0\ \mathrm{kbit/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p016
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 5
+  type: numeric
+  stem: ระบบซีดีชักตัวอย่างที่ 44.1 kHz มีโทนเสียง 24 kHz เข้ามาในระบบ ความถี่แอลิแอซที่ปรากฏหลังชักตัวอย่างเป็นกี่ kHz (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 20.1
+    tolerance: 0.1
+    unit: kHz
+  misconceptions:
+  - match: 68.1
+    feedback: ใช้ผลบวกแทนผลต่าง
+  hints:
+  - โทนนี้สูงกว่าครึ่งหนึ่งของ 44.1 kHz แล้วจึงเกิดแอลิแอซ
+  - ความถี่ปรากฏ $= |f_s - f|$
+  solution: $|44.1 - 24| = 20.1\ \mathrm{kHz}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p017
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 5
+  type: numeric
+  stem: ตัวแปลงอนาล็อกเป็นดิจิทัล 8 บิตที่ไม่มี noise อื่นให้ SNR เชิงควอนไทซ์ประมาณ $6.02N + 1.76$ dB เมื่อ $N$ คือจำนวนบิต ค่า SNR เป็นกี่ dB (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 49.9
+    tolerance: 0.1
+    unit: dB
+  misconceptions:
+  - match: 48.2
+    feedback: ลืมบวก 1.76 ในสูตร
+  hints:
+  - แทนค่า $N = 8$ ในสูตร
+  - คูณ 6.02 ก่อน แล้วบวก 1.76
+  solution: $6.02 \times 8 + 1.76 = 48.16 + 1.76 = 49.9\ \mathrm{dB}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p018
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 5
+  type: mcq
+  stem: ข้อใดเป็นจริงเกี่ยวกับการมอดูเลตและสัญญาณรบกวน (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: FM ทนต่อสัญญาณรบกวนแอมพลิจูดได้ดีกว่า AM โดยทั่วไป
+    correct: true
+  - id: b
+    text: AM มีแบนด์วิดท์เท่ากับ $2f_m$
+    correct: true
+  - id: c
+    text: ทุกวิธีมอดูเลตมีแบนด์วิดท์เท่ากันเสมอ
+    feedback: วิธีต่างกันมีแบนด์วิดท์ต่างกัน เช่น FM ต้องการแบนด์วิดท์กว้างกว่า
+  - id: d
+    text: การเพิ่มแบนด์วิดท์ของช่องสัญญาณทำให้ความจุลดลง
+    feedback: ความจุของแชนนอนเพิ่มขึ้นเมื่อแบนด์วิดท์เพิ่มขึ้น
+  multiple: true
+  hints:
+  - นึกถึงผลของสัญญาณรบกวนที่ไปเปลี่ยนแอมพลิจูดหรือความถี่
+  - ลองคำนวณแบนด์วิดท์ของ AM จากแถบข้าง
+  solution: ข้อ a และ b ถูก FM เข้ารหัสข้อมูลที่ความถี่ ทำให้ทนต่อสัญญาณรบกวนแอมพลิจูดดีกว่า แต่ใช้แบนด์วิดท์กว้างกว่า AM
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.communication-systems.p019
+  topics:
+  - engineering.electrical.communication-systems
+  difficulty: 5
+  type: text
+  stem: หน่วยของความจุช่องสัญญาณเมื่อคำนวณด้วย log₂ ได้เป็นบิตต่อวินาที มีตัวย่อภาษาอังกฤษว่าอะไร (ตอบตัวย่อ)
+  accepted:
+  - bps
+  - bit/s
+  - b/s
+  misconceptions:
+  - match: Hz
+    feedback: Hz เป็นหน่วยของแบนด์วิดท์ ไม่ใช่หน่วยของความจุ
+  hints:
+  - ตัวย่อมาจาก bits per second
+  - คำว่า bit ขึ้นต้นด้วย b
+  solution: ความจุมีหน่วยบิตต่อวินาที (bit/s หรือ bps) ส่วนแบนด์วิดท์มีหน่วย Hz
+  license: CC-BY-SA-4.0
+  ai_assisted: true

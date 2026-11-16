@@ -1,0 +1,397 @@
+problems:
+- id: engineering.materials.materials-selection.p001
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 1
+  type: numeric
+  stem: อะลูมิเนียมมีโมดูลัส $E = 70\ \mathrm{GPa}$ และความหนาแน่น $\rho = 2.70\ \mathrm{g/cm^3}$ (ค่าตัวอย่าง) ดัชนี $E/\rho$ ของอะลูมิเนียมเป็นเท่าไร (หน่วย $\mathrm{GPa \cdot cm^3/g}$ ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 25.9
+    tolerance: 0.259
+    unit: GPa·cm³/g
+  misconceptions:
+  - match: 0.04
+    feedback: กลับด้านเป็น $\rho/E$ ซึ่งยิ่งน้อยยิ่งดีสำหรับแท่งรับแรงดึงที่แข็ง
+  - match: 189.0
+    feedback: คูณ $E$ กับ $\rho$ แทนการหาร
+  hints:
+  - ดัชนี $E/\rho$ คือโมดูลัสหารด้วยความหนาแน่น
+  - หารตรง ๆ โดยไม่ต้องยกกำลัง
+  solution: $E/\rho = 70 / 2.70 \approx 25.93\ \mathrm{GPa\cdot cm^3/g}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p002
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 1
+  type: mcq
+  stem: ดัชนี $E/\rho$ เหมาะสำหรับโจทย์ใดที่สุด
+  choices:
+  - id: a
+    text: แท่งรับแรงดึงที่ต้องการความแข็งโดยมีมวลน้อยที่สุด
+    correct: true
+  - id: b
+    text: คานที่รับแรงดัด
+    feedback: คานใช้ $E^{1/2}/\rho$ ซึ่งต่างจากแท่งรับแรงดึง
+  - id: c
+    text: ต้องต้านทานการกัดกร่อนได้สูงที่สุด
+    feedback: การกัดกร่อนเป็นข้อจำกัดคัดกรอง ไม่ใช่ดัชนีสมรรถนะนี้
+  - id: d
+    text: ต้องทนอุณหภูมิสูงที่สุด
+    feedback: อุณหภูมิใช้งานเป็นข้อจำกัดอีกอย่างหนึ่ง ไม่ได้วัดด้วย $E/\rho$
+  hints:
+  - ลองถามตัวเองว่าโจทย์เป็นแรงดึงหรือแรงดัด
+  - ดัชนีคือการรวมสมบัติที่เกี่ยวข้องกับเป้าหมายมวลและความแข็ง
+  solution: ดัชนี $E/\rho$ ใช้กับแท่งรับแรงดึงที่ต้องการความแข็งและมวลน้อยที่สุด ส่วนคานใช้ $E^{1/2}/\rho$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p003
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 1
+  type: text
+  stem: คำถามแรกของกรอบการเลือกวัสดุตามแนวคิดของแอชบี ควรตอบว่าอะไร (ตอบเป็นคำภาษาไทยคำเดียว)
+  accepted:
+  - หน้าที่
+  misconceptions:
+  - match: ราคา
+    feedback: ราคาเป็นข้อจำกัดหรือเป้าหมายอย่างหนึ่ง แต่ไม่ใช่คำถามแรกของกรอบ
+  hints:
+  - กรอบเริ่มจากสิ่งที่ชิ้นส่วนต้องทำ
+  - เป็นคำที่แปลว่า function ในภาษาอังกฤษ
+  solution: ขั้นแรกคือระบุหน้าที่ของชิ้นส่วนก่อน จากนั้นจึงระบุข้อจำกัดและเป้าหมาย เช่น มวลและต้นทุน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p004
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 2
+  type: numeric
+  stem: สำหรับคาน ดัชนี $E^{1/2}/\rho$ ของอะลูมิเนียม ($E = 70\ \mathrm{GPa}$, $\rho = 2.70\ \mathrm{g/cm^3}$) เป็นเท่าไร (ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 3.1
+    tolerance: 0.031
+    unit: GPa^½·cm³/g
+  misconceptions:
+  - match: 25.93
+    feedback: ใช้ดัชนีของแท่งรับแรงดึงแทนดัชนีของคาน
+  hints:
+  - คำนวณ $\sqrt{70}$ ก่อน
+  - หารด้วย 2.70
+  solution: $\sqrt{70}/2.70 = 8.367/2.70 \approx 3.10$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p005
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 2
+  type: numeric
+  stem: แท่งรับแรงดึงที่มีความแข็งเท่ากันและยาวเท่ากัน ทำจาก CFRP ($E = 130\ \mathrm{GPa}$, $\rho = 1.55\ \mathrm{g/cm^3}$) จะมีมวลเป็นกี่เปอร์เซ็นต์ของแท่งเหล็ก ($E = 200\ \mathrm{GPa}$, $\rho = 7.85\ \mathrm{g/cm^3}$) (ค่าตัวอย่าง ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 30.4
+    tolerance: 0.304
+    unit: '%'
+  misconceptions:
+  - match: 65.0
+    feedback: คิดว่ามวลแปรผันตาม $E$ อย่างเดียว แต่จริงแปรผันตาม $\rho/E$
+  - match: 19.7
+    feedback: ใช้อัตราส่วนความหนาแน่นอย่างเดียว ไม่คิดโมดูลัส
+  hints:
+  - มวลของแท่งที่ความแข็งเท่ากันแปรผันตาม $\rho/E$
+  - คำนวณอัตราส่วน $(\rho_{CFRP}/E_{CFRP})/(\rho_{เหล็ก}/E_{เหล็ก})$
+  solution: $\dfrac{1.55/130}{7.85/200} = \dfrac{0.01192}{0.03925} \approx 0.3038 = 30.4\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p006
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 2
+  type: numeric
+  stem: สำหรับคานที่ความแข็งเท่ากัน อะลูมิเนียมจะมีมวลเป็นกี่เปอร์เซ็นต์ของเหล็ก ($E_{Al} = 70$, $\rho_{Al} = 2.70$, $E_{st} = 200$, $\rho_{st} = 7.85$ หน่วย GPa และ g/cm³ ค่าตัวอย่าง ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 58.1
+    tolerance: 0.581
+    unit: '%'
+  misconceptions:
+  - match: 98.3
+    feedback: ใช้ดัชนีของแท่งรับแรงดึงแทนดัชนีของคาน
+  hints:
+  - มวลของคานแปรผันตาม $\rho/E^{1/2}$
+  - คำนวณอัตราส่วนของสองวัสดุ แล้วคูณ 100
+  solution: $\dfrac{2.70/\sqrt{70}}{7.85/\sqrt{200}} \approx 0.5814 = 58.1\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p007
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 2
+  type: order
+  stem: เรียงวัสดุต่อไปนี้จากดัชนี $E/\rho$ สูงที่สุดไปต่ำที่สุด (ค่าตัวอย่าง)
+  items:
+  - CFRP
+  - อะลูมิเนียม
+  - เหล็ก
+  - ไม้ไผ่
+  - ไม้
+  hints:
+  - CFRP มีโมดูลัสสูงและความหนาแน่นต่ำ
+  - เหล็กและอะลูมิเนียมมีค่าใกล้กันมาก
+  solution: 'ค่า $E/\rho$ โดยประมาณ: CFRP 83.9, อะลูมิเนียม 25.9, เหล็ก 25.5, ไม้ไผ่ 21.4, ไม้ 15.4 (หน่วย GPa·cm³/g)'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p008
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 3
+  type: numeric
+  stem: เหล็กและอะลูมิเนียมมีความแข็งเท่ากันในแท่งรับแรงดึง ราคาเหล็ก 30 บาท/กก. และอะลูมิเนียม 90 บาท/กก. (ราคาสมมติ) ชิ้นอะลูมิเนียมมีต้นทุนเป็นกี่เท่าของชิ้นเหล็ก (ทศนิยม 2 ตำแหน่ง ใช้ค่าตัวอย่างของโมดูลัสและความหนาแน่นจากโจทย์ก่อนหน้า)
+  answer:
+    value: 2.95
+    tolerance: 0.01
+    unit: เท่า
+  misconceptions:
+  - match: 3.0
+    feedback: ลืมปรับมวลตามดัชนี ใช้เฉพาะอัตราส่วนราคา
+  - match: 0.98
+    feedback: คิดเฉพาะมวลโดยไม่คิดราคา
+  hints:
+  - ต้นทุนชิ้น $=$ ราคาต่อกิโลกรัม $\times$ มวล
+  - มวลอัตราส่วนจากดัชนี $\rho/E$ ในโจทย์ก่อนหน้า
+  solution: ต้นทุนอัตราส่วน $= (90/30) \times (2.70/70)/(7.85/200) \approx 3.00 \times 0.9827 \approx 2.95$ เท่า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p009
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 3
+  type: mcq
+  stem: การคัดกรองด้วยข้อจำกัดคืออะไร
+  choices:
+  - id: a
+    text: ตัดวัสดุที่ไม่ผ่านข้อจำกัดบังคับออกก่อน เช่น ต้องทนน้ำเกลือ
+    correct: true
+  - id: b
+    text: ให้คะแนนวัสดุทุกชนิดด้วยดัชนีสมรรถนะทันทีโดยไม่คัดก่อน
+    feedback: ถ้ายังไม่คัดกรอง วัสดุที่ใช้ไม่ได้อาจได้คะแนนสูงแต่ใช้งานไม่ได้จริง
+  - id: c
+    text: เลือกวัสดุที่ราคาถูกที่สุดเสมอ
+    feedback: ราคาเป็นเกณฑ์จัดอันดับ ไม่ใช่ขั้นคัดกรองข้อจำกัดบังคับ
+  - id: d
+    text: ทดสอบชิ้นงานจริงเท่านั้นโดยไม่มีการคัดกรอง
+    feedback: การคัดกรองทำให้ลดภาระการทดสอบ ไม่ได้ตัดขั้นนี้ทิ้ง
+  hints:
+  - ข้อจำกัดบังคับคือเงื่อนไขที่ต้องผ่านเท่านั้น
+  - จัดอันดับทำหลังจากคัดกรองแล้ว
+  solution: การคัดกรองตัดวัสดุที่ไม่ผ่านข้อจำกัดบังคับออกก่อน แล้วจึงจัดอันดับด้วยดัชนีสมรรถนะ ราคา และผลกระทบต่อสิ่งแวดล้อม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p010
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 3
+  type: expression
+  stem: จากดัชนีคาน $M = \dfrac{E^{1/2}}{p}$ เมื่อ $p$ คือความหนาแน่น จงจัดรูปหา $E$ ในรูปของ $M$ และ $p$
+  answer:
+    latex: M^2\cdot p^2
+    variables:
+    - M
+    - p
+  prefix: E =
+  misconceptions:
+  - match: M\cdot p
+    feedback: ลืมยกกำลังสองของ $M$ และ $p$
+  - match: M^2/p^2
+    feedback: เปลี่ยนเครื่องหมายกำลังของ $p$ ผิด
+  hints:
+  - ยกกำลังสองทั้งสองข้างก่อนเพื่อกำจัดรากที่สอง
+  - ตัวแปร $p$ ในสมการคูณขึ้นมาเป็น $p^2$
+  solution: จาก $M = E^{1/2}/p$ จะได้ $E^{1/2} = Mp$ ยกกำลังสองได้ $E = M^2 p^2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p011
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 3
+  type: numeric
+  stem: ไม้ไผ่ที่ใช้เป็นคานในงานบ้านมีค่าตัวอย่าง $E = 15\ \mathrm{GPa}$ และ $\rho = 0.70\ \mathrm{g/cm^3}$ ดัชนี $E^{1/2}/\rho$ ของไม้ไผ่เป็นเท่าไร (ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 5.53
+    tolerance: 0.0553
+    unit: GPa^½·cm³/g
+  misconceptions:
+  - match: 21.43
+    feedback: ใช้ $E/\rho$ ของแท่งรับแรงดึงแทนของคาน
+  hints:
+  - หาค่า $\sqrt{15}$ ก่อน
+  - หารด้วย 0.70
+  solution: $\sqrt{15}/0.70 \approx 5.53$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p012
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 4
+  type: numeric
+  stem: คานไม้ที่ทำหน้าที่เดียวกับคานเหล็กต้องมีมวล 1.6 kg ส่วนคานเหล็กต้องใช้ 2.2 kg ค่าการปล่อย CO₂ สมมติของเหล็กเท่ากับ 2.0 kg CO₂/kg และของไม้เท่ากับ 0.5 kg CO₂/kg คานไม้ปล่อย CO₂ น้อยกว่าคานเหล็กกี่เปอร์เซ็นต์ (ค่าสมมติ ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 81.8
+    tolerance: 0.818
+    unit: '%'
+  misconceptions:
+  - match: 18.2
+    feedback: ตอบส่วนที่เหลือแทนส่วนที่ลดลง
+  hints:
+  - คำนวณการปล่อยของคานแต่ละชิ้นก่อน $=$ มวล $\times$ ค่าการปล่อยต่อกิโลกรัม
+  - เปรียบเทียบส่วนที่ลดลงกับของคานเหล็ก
+  solution: เหล็ก $= 2.2 \times 2.0 = 4.4$ kg CO₂, ไม้ $= 1.6 \times 0.5 = 0.8$ kg CO₂ ลดลง $(4.4 - 0.8)/4.4 \approx 81.8\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p013
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 4
+  type: numeric
+  stem: แท่งรับแรงดึงต้องมีความแข็ง $k = 5\ \mathrm{MN/m}$ ยาว $L = 2.0\ \mathrm{m}$ ทำจากเหล็ก ($E = 200\ \mathrm{GPa}$, $\rho = 7850\ \mathrm{kg/m^3}$) พื้นที่หน้าตัดจาก $k = EA/L$ แล้วมวล $m = \rho A L$ ได้มวลเท่าไร (ตอบหน่วย kg ทศนิยม 3 ตำแหน่ง)
+  answer:
+    value: 0.785
+    tolerance: 0.001
+    unit: kg
+  misconceptions:
+  - match: 0.3925
+    feedback: ลืมคูณความยาว $L$ ในสูตรมวล
+  hints:
+  - หา $A = kL/E$ ก่อน
+  - มวล $= \rho A L$ ต้องคูณความยาวด้วย
+  solution: $A = 5\times10^6 \times 2 / 200\times10^9 = 5\times10^{-5}\ \mathrm{m^2}$ จึงได้ $m = 7850 \times 5\times10^{-5} \times 2 = 0.785\ \mathrm{kg}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p014
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 4
+  type: mcq
+  stem: ข้อใดเป็นข้อจำกัดของวัสดุธรรมชาติอย่างไม้ไผ่หรือไม้ (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: สมบัติเปลี่ยนไปตามความชื้นและชนิดของพันธุ์
+    correct: true
+  - id: b
+    text: สมบัติต่างกันตามทิศทางของเส้นใย (แอนไอโซทรอปิก)
+    correct: true
+  - id: c
+    text: มีสมบัติเท่ากันทุกทิศทางเหมือนเหล็ก
+    feedback: เหล็กโดยทั่วไปเป็นไอโซทรอปิกมากกว่า ส่วนวัสดุเส้นใยต่างกันตามทิศ
+  - id: d
+    text: ไม่ต้องป้องกันความชื้นเลย
+    feedback: วัสดุจากพืชต้องป้องกันความชื้นและแมลงตามสภาพการใช้งาน
+  multiple: true
+  hints:
+  - คิดถึงทิศทางของเส้นใยและการดูดความชื้น
+  - เหล็กกับไม้มีโครงสร้างต่างกันมาก
+  solution: ข้อ a และ b ถูก วัสดุธรรมชาติมักแปรผันตามชนิด สภาพแวดล้อม และทิศทางของเส้นใย จึงต้องออกแบบและป้องกันอย่างระมัดระวัง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p015
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 4
+  type: numeric
+  stem: ฝาครอบแผ่นบางรับดัดต้องการความแข็งเท่ากัน ดัชนีแผ่นคือ $E^{1/3}/\rho$ เมื่อเทียบอะลูมิเนียมกับเหล็ก (ค่าตัวอย่าง) อะลูมิเนียมมีมวลเป็นกี่เปอร์เซ็นต์ของเหล็ก (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 48.8
+    tolerance: 0.488
+    unit: '%'
+  misconceptions:
+  - match: 58.1
+    feedback: ใช้ดัชนีของคานแทนดัชนีของแผ่น
+  hints:
+  - มวลแผ่นแปรผันตาม $\rho/E^{1/3}$
+  - คำนวณอัตราส่วนสองวัสดุ แล้วคูณ 100
+  solution: $\dfrac{2.70/70^{1/3}}{7.85/200^{1/3}} \approx 0.4881 = 48.8\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p016
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 5
+  type: numeric
+  stem: วัสดุคอมโพสิตเส้นใยคาร์บอนมีเส้นใยสัดส่วนปริมาตร $V_f = 0.60$ โดยโมดูลัสเส้นใย $E_f = 230\ \mathrm{GPa}$ และโมดูลัสเมทริกซ์ $E_m = 3.5\ \mathrm{GPa}$ ตามกฎของผสมโดยประมาณ $E = V_f E_f + (1 - V_f) E_m$ ได้โมดูลัสรวมเป็นกี่ GPa (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 139.4
+    tolerance: 1.394
+    unit: GPa
+  misconceptions:
+  - match: 138.0
+    feedback: ลืมพจน์ของเมทริกซ์
+  - match: 94.1
+    feedback: สลับสัดส่วนปริมาตรของเส้นใยกับเมทริกซ์
+  hints:
+  - ใช้สูตรกฎของผสม $E = V_f E_f + (1 - V_f)E_m$
+  - คำนวณแต่ละพจน์แยกกันก่อน
+  solution: $E = 0.60 \times 230 + 0.40 \times 3.5 = 138 + 1.4 = 139.4\ \mathrm{GPa}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p017
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 5
+  type: numeric
+  stem: ตารางตัดสินใจถ่วงน้ำหนักให้น้ำหนักความแข็ง ความทนทาน และต้นทุนเป็น 0.5, 0.3, 0.2 วัสดุหนึ่งได้คะแนนดิบ 8, 6 และ 9 ตามลำดับ คะแนนถ่วงน้ำหนักรวมเป็นเท่าไร (จาก 10 ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 7.6
+    tolerance: 0.076
+    unit: คะแนน
+  misconceptions:
+  - match: 7.7
+    feedback: หาค่าเฉลี่ยโดยไม่ถ่วงน้ำหนัก
+  hints:
+  - คูณคะแนนแต่ละข้อด้วยน้ำหนักของข้อนั้น
+  - แล้วรวมผลทั้งสามข้อ
+  solution: $0.5 \times 8 + 0.3 \times 6 + 0.2 \times 9 = 4.0 + 1.8 + 1.8 = 7.6$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p018
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 5
+  type: mcq
+  stem: กรณีศึกษาโครงจักรยานต้องการโครงที่เบา แข็ง และราคาไม่สูงเกินไป ข้อใดเป็นการเลือกวัสดุที่สมเหตุสมผลที่สุด
+  choices:
+  - id: a
+    text: เลือกจากดัชนีที่สอดคล้องกับรูปแบบการรับแรง โดยคัดข้อจำกัดด้านราคาและการผลิตก่อน แล้วชั่งน้ำหนักด้วยการแลกเปลี่ยน
+    correct: true
+  - id: b
+    text: เลือกวัสดุที่มีโมดูลัสสูงที่สุดโดยไม่คิดมวลหรือราคา
+    feedback: โมดูลัสสูงอย่างเดียวอาจทำให้โครงหนักหรือแพงเกินไป
+  - id: c
+    text: เลือกตามความเคยชินของผู้ผลิตโดยไม่ตรวจข้อจำกัด
+    feedback: ควรตรวจข้อจำกัดและหลักฐานก่อนตัดสินใจ
+  - id: d
+    text: เลือกวัสดุที่ราคาถูกที่สุดเสมอ
+    feedback: วัสดุที่ถูกที่สุดอาจไม่แข็งพอหรือไม่เหมาะกับการผลิต
+  hints:
+  - ลองนึกว่าโครงจักรยานรับแรงแบบดัดหรือดึง
+  - ต้องชั่งน้ำหนักระหว่างเป้าหมายหลายข้อ
+  solution: การเลือกวัสดุที่ดีต้องเริ่มจากหน้าที่และข้อจำกัด คัดข้อที่ไม่ผ่านออก แล้วใช้ดัชนีที่ตรงกับการรับแรงเพื่อเปรียบเทียบการแลกเปลี่ยนระหว่างมวล ความแข็ง และต้นทุน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.materials-selection.p019
+  topics:
+  - engineering.materials.materials-selection
+  difficulty: 5
+  type: text
+  stem: แผนภูมิที่แสดงโมดูลัสกับความหนาแน่นของวัสดุหลายชนิดในกราฟ log-log และมีเส้นดัชนีกำกับ เรียกตามชื่อผู้เสนอว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)
+  accepted:
+  - แอชบี
+  - Ashby
+  - แผนภูมิแอชบี
+  - Ashby chart
+  misconceptions:
+  - match: ไดอะแกรมเฟส
+    feedback: ไดอะแกรมเฟสแสดงสถานะของวัสดุตามอุณหภูมิและองค์ประกอบ ไม่ใช่แผนภูมิเลือกวัสดุ
+  hints:
+  - ชื่อนี้มาจากนักวิทยาศาสตร์วัสดุชาวอังกฤษ
+  - ชื่อภาษาอังกฤษขึ้นต้นด้วย A
+  solution: เรียกว่า แผนภูมิแอชบี (Ashby chart) ใช้เปรียบเทียบวัสดุและหาตำแหน่งที่เส้นดัชนีตัดกันเพื่อเลือกวัสดุที่เหมาะที่สุด
+  license: CC-BY-SA-4.0
+  ai_assisted: true

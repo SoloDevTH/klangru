@@ -1,0 +1,401 @@
+problems:
+- id: engineering.environmental.air-pollution-control.p001
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 1
+  type: numeric
+  stem: ที่ 25 °C และ 1 atm ก๊าซ SO₂ ($M = 64\ \mathrm{g/mol}$) ที่ความเข้มข้น 1 ppm มีค่ากี่ $\mu\mathrm{g/m^3}$ (ใช้ปริมาตรโมลาร์ 24.45 L/mol, ตอบจำนวนเต็ม)
+  answer:
+    value: 2618
+    tolerance: 2
+    unit: µg/m3
+  misconceptions:
+  - match: 2857
+    feedback: ใช้ปริมาตรโมลาร์ที่ STP 22.4 L/mol ซึ่งไม่ตรงกับ 25 °C
+  - match: 2.62
+    feedback: ลืมคูณ 1000 จาก mg เป็น µg
+  hints:
+  - 1 ppm หมายถึงส่วนในล้านส่วนโดยปริมาตร
+  - ความเข้มข้น $= M/V_m$ ได้หน่วย mg/m³ ก่อน แล้วคูณ 1000 เป็น µg/m³
+  solution: $C = 64 / 24.45 \approx 2.618\ \mathrm{mg/m^3} = 2618\ \mu\mathrm{g/m^3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p002
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 1
+  type: mcq
+  stem: PM2.5 หมายถึงอะไร
+  choices:
+  - id: a
+    text: อนุภาคฝุ่นที่มีเส้นผ่านศูนย์กลางไม่เกิน 2.5 ไมโครเมตร
+    correct: true
+  - id: b
+    text: อนุภาคฝุ่นที่มีขนาดใหญ่กว่า 2.5 ไมโครเมตร
+    feedback: นั่นคืออนุภาคขนาดใหญ่ ซึ่งไม่ใช่ความหมายของ PM2.5
+  - id: c
+    text: ความเข้มข้นของฝุ่นที่วัดเป็นส่วนต่อล้านส่วน
+    feedback: ppm เป็นหน่วยของแก๊ส ไม่ได้บอกขนาดของอนุภาค
+  - id: d
+    text: ฝุ่นที่มาจากไอเสียรถยนต์เท่านั้น
+    feedback: PM2.5 มีหลายแหล่ง ทั้งการเผาไหม้ ฝุ่นถนน และการเผาในที่โล่ง
+  hints:
+  - ตัวเลข 2.5 หมายถึงขนาด ไม่ใช่ความเข้มข้น
+  - ลองคิดว่าอนุภาคที่ละเอียดกว่า PM10 หมายความว่าอย่างไร
+  solution: PM2.5 คืออนุภาคที่มีเส้นผ่านศูนย์กลางไม่เกิน 2.5 µm ละเอียดกว่า PM10 จึงเข้าถึงถุงลมได้ลึกกว่า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p003
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 1
+  type: text
+  stem: แก๊สที่เกิดจากการเผาไหม้ถ่านหินที่มีกำมะถัน และเป็นสาเหตุหลักของฝนกรด มีสูตรเคมีว่าอะไร (ตอบสูตรเคมี)
+  accepted:
+  - SO2
+  - SO₂
+  misconceptions:
+  - match: CO2
+    feedback: CO₂ คือคาร์บอนไดออกไซด์ ซึ่งไม่ใช่แก๊สที่ทำให้เกิดฝนกรดหลัก
+  hints:
+  - สูตรมีกำมะถัน S และออกซิเจน 2 อะตอม
+  - ชื่อเต็มขึ้นต้นด้วยซัลเฟอร์
+  solution: แก๊สนี้คือซัลเฟอร์ไดออกไซด์ (SO₂) เกิดจากกำมะถันในเชื้อเพลิงที่ถูกเผาไหม้
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p004
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 2
+  type: numeric
+  stem: หม้อไอน้ำใช้ถ่านหิน 500 kg/h ที่มีกำมะถันร้อยละ 0.8 โดยมวล ถ้ากำมะถันทั้งหมดกลายเป็น SO₂ อัตราการปล่อย SO₂ เป็นกี่ kg/h (ตอบจำนวนเต็มหรือทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 8.0
+    tolerance: 0.08
+    unit: kg/h
+  misconceptions:
+  - match: 4.0
+    feedback: ลืมคูณ 2 สำหรับมวลโมลาร์ของออกซิเจนที่เข้าไปในผลิตภัณฑ์
+  - match: 800.0
+    feedback: ใช้ 0.8 แทนร้อยละ 0.8 โดยไม่หาร 100
+  hints:
+  - มวลกำมะถัน $= 500 \times 0.008$ kg/h
+  - มวลโมลาร์ของ SO₂ ต่อ S เป็น $64/32 = 2$
+  solution: กำมะถัน $= 500 \times 0.008 = 4.0$ kg/h และ SO₂ $= 4.0 \times 2 = 8.0$ kg/h
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p005
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 2
+  type: numeric
+  stem: ไซโคลนดักฝุ่นที่หน้าเตาเผาชีวมวลในหมู่บ้าน มีความเข้มข้นฝุ่นขาเข้า 2000 mg/m³ และขาออก 400 mg/m³ ประสิทธิภาพการดักของไซโคลนเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 80.0
+    tolerance: 0.8
+    unit: '%'
+  misconceptions:
+  - match: 400.0
+    feedback: หารด้วยค่าขาออกแทนค่าขาเข้า
+  - match: 100.0
+    feedback: คูณด้วยค่าที่ไม่ควรมีในสูตร
+  hints:
+  - ประสิทธิภาพ $= (C_{in} - C_{out})/C_{in}$
+  - คูณผลลัพธ์ด้วย 100 เพื่อเป็นเปอร์เซ็นต์
+  solution: $\eta = (2000 - 400)/2000 = 0.80 = 80.0\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p006
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 2
+  type: numeric
+  stem: สถานีตรวจวัดในตัวอย่างสมมติวัด NO₂ ได้ 0.05 ppm ที่ 25 °C และ 1 atm ($M = 46\ \mathrm{g/mol}$) ค่านี้เป็นกี่ $\mu\mathrm{g/m^3}$ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 94.1
+    tolerance: 0.5
+    unit: µg/m3
+  misconceptions:
+  - match: 102.7
+    feedback: ใช้ปริมาตรโมลาร์ที่ STP 22.4 L/mol
+  hints:
+  - ใช้ $C\,(\mathrm{mg/m^3}) = \mathrm{ppm} \times M / 24.45$
+  - คูณ 1000 เพื่อเป็น µg/m³
+  solution: $C = 0.05 \times 46 / 24.45 \approx 0.0940\ \mathrm{mg/m^3} = 94.1\ \mu\mathrm{g/m^3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p007
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 2
+  type: order
+  stem: เรียงอุปกรณ์ดักฝุ่นต่อไปนี้ตามลำดับทั่วไปจากการดักอนุภาคใหญ่ไปถึงการดักอนุภาคละเอียด
+  items:
+  - ไซโคลน
+  - ถุงกรอง
+  - เครื่องดักจับฝุ่นด้วยไฟฟ้าสถิต
+  hints:
+  - ไซโคลนแยกอนุภาคใหญ่ด้วยแรงเหวี่ยง
+  - ถุงกรองและ ESP ดักฝุ่นละเอียดได้ดีกว่า
+  solution: ลำดับทั่วไปคือไซโคลนก่อน แล้วจึงถุงกรองหรือ ESP เพราะไซโคลนดักอนุภาคใหญ่ได้ดีและลดภาระของตัวดักละเอียด ลำดับนี้ขึ้นกับการออกแบบโรงงานจริง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p008
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 3
+  type: numeric
+  stem: เครื่อง ESP ใช้สมการ $\eta = 1 - e^{-wA/Q}$ โดย $w = 0.05\ \mathrm{m/s}$ $A = 1500\ \mathrm{m^2}$ และ $Q = 20\ \mathrm{m^3/s}$ ประสิทธิภาพการดักเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง ตัวอย่างเพื่อการเรียนรู้)
+  answer:
+    value: 97.6
+    tolerance: 0.2
+    unit: '%'
+  misconceptions:
+  - match: 375.0
+    feedback: ลืมฟังก์ชันเอ็กซ์โพเนนเชียล ได้ค่าเกิน 100% ซึ่งเป็นไปไม่ได้
+  - match: 95.0
+    feedback: ปัดค่า $wA/Q$ เป็น 3 ก่อนคำนวณ
+  hints:
+  - คำนวณ $wA/Q$ ก่อนโดยไม่มีหน่วย
+  - แล้วคิด $1 - e^{-x}$
+  solution: $wA/Q = 0.05 \times 1500 / 20 = 3.75$ จึงได้ $\eta = 1 - e^{-3.75} \approx 97.6\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p009
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 3
+  type: numeric
+  stem: ปล่อย SO₂ 10 kg/h ต้องดักด้วยปูนปริมาณ $\mathrm{CaCO_3}$ เชิงทฤษฎี (ดักได้ 100%, ปฏิกิริยา 1:1 โดยโมล) กี่ kg/h (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 15.6
+    tolerance: 0.1
+    unit: kg/h
+  misconceptions:
+  - match: 8.8
+    feedback: ใช้ CaO มวลโมลาร์ 56 แทน CaCO₃
+  - match: 10.0
+    feedback: ใช้มวลของ SO₂ โดยไม่คำนวณสารดูดซับ
+  hints:
+  - หาจำนวนโมลของ SO₂ ก่อน $= 10\,000/64$ mol/h
+  - ปฏิกิริยาต้องการ $\mathrm{CaCO_3}$ หนึ่งโมลต่อ SO₂ หนึ่งโมล มวลโมลาร์ 100 g/mol
+  solution: $n = 10\,000/64 = 156.25$ mol/h จึงได้ $156.25 \times 100 = 15\,625$ g/h $\approx 15.6$ kg/h
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p010
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 3
+  type: expression
+  stem: ประสิทธิภาพการดักคือ $\eta = 1 - C_{out}/C_{in}$ จงจัดรูปหา $C_{out}$ ในรูปของ $C_{in}$ (ใช้ $c$) และ $\eta$ (ใช้ $h$)
+  answer:
+    latex: c\cdot(1-h)
+    variables:
+    - c
+    - h
+  prefix: Cout =
+  misconceptions:
+  - match: c-h
+    feedback: ลบผิดตำแหน่ง ไม่ได้คูณกับ $C_{in}$
+  - match: c\cdot h
+    feedback: ใช้ $\eta$ แทน $1 - \eta$
+  hints:
+  - แยก $C_{out}/C_{in} = 1 - \eta$ ก่อน
+  - คูณ $C_{in}$ ทั้งสองข้าง
+  solution: จาก $C_{out}/C_{in} = 1-\eta$ จึงได้ $C_{out} = C_{in}(1 - \eta)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p011
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 3
+  type: numeric
+  stem: อากาศ 1.00 m³ ที่ความดัน 101.325 kPa และอุณหภูมิ 298.15 K มีจำนวนโมลประมาณเท่าไร ใช้ $R = 8.314\ \mathrm{J/(mol\cdot K)}$ (ทศนิยม 1 ตำแหน่ง ตอบหน่วย mol)
+  answer:
+    value: 40.9
+    tolerance: 0.409
+    unit: mol
+  misconceptions:
+  - match: 44.6
+    feedback: ใช้ 273.15 K แทน 298.15 K
+  hints:
+  - ใช้กฎแก๊สอุดมคติ $n = PV/(RT)$
+  - ความดันหน่วย Pa และปริมาตรหน่วย m³
+  solution: $n = 101325 \times 1.00 / (8.314 \times 298.15) \approx 40.9\ \mathrm{mol}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p012
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 4
+  type: numeric
+  stem: แหล่งจุดความสูงรวม $H = 40\ \mathrm{m}$ ปล่อย SO₂ อัตรา $Q = 100\ \mathrm{g/s}$ ลม $u = 5\ \mathrm{m/s}$ ที่ระยะทางหนึ่ง $\sigma_y = 50\ \mathrm{m}$ และ $\sigma_z = 30\ \mathrm{m}$ ตามสมการเกาส์เซียนระดับพื้นตามแนวศูนย์กลาง $C = \dfrac{Q}{\pi\sigma_y\sigma_z u}\exp\!\left(-\dfrac{H^2}{2\sigma_z^2}\right)$ ความเข้มข้นเป็นกี่ µg/m³ (ค่าสมมติเพื่อการเรียนรู้ ตอบจำนวนเต็ม)
+  answer:
+    value: 1745
+    tolerance: 5
+    unit: µg/m3
+  misconceptions:
+  - match: 4244
+    feedback: ลืมตัวเอ็กซ์โพเนนเชียล ทำให้ได้ค่าที่ระดับพื้นสูงเกินจริง
+  - match: 717
+    feedback: ใช้ $H^2/\sigma_z^2$ แทน $H^2/(2\sigma_z^2)$
+  hints:
+  - คำนวณตัวหน้าก่อน $Q/(\pi\sigma_y\sigma_z u)$ ได้หน่วย g/m³
+  - คูณ 10⁶ เป็น µg/m³ หลังคูณตัวเอ็กซ์โพเนนเชียล
+  solution: $Q/(\pi \sigma_y \sigma_z u) = 0.004244\ \mathrm{g/m^3}$, $\exp(-1600/1800) \approx 0.4111$ จึงได้ $C \approx 1745\ \mu\mathrm{g/m^3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p013
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 4
+  type: numeric
+  stem: เตาเผาชีวมวลปล่อยฝุ่นที่ปล่องก่อนติดตั้งเครื่องดักที่ 300 mg/m³ ที่อัตราการไหล 20 m³/s หลังติดตั้งเหลือ 12 mg/m³ ปริมาณฝุ่นที่ลดได้ต่อชั่วโมงเป็นกี่ kg/h (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 20.7
+    tolerance: 0.1
+    unit: kg/h
+  misconceptions:
+  - match: 5.76
+    feedback: ไม่คูณ 3600 แปลงเป็นชั่วโมง
+  - match: 20736
+    feedback: ตอบเป็น mg/h แทน kg/h
+  hints:
+  - ปริมาณที่ลด $= (C_{ก่อน} - C_{หลัง}) \times Q$
+  - แปลงวินาทีเป็นชั่วโมง และ mg เป็น kg
+  solution: $(300 - 12) \times 20 = 5760$ mg/s $\times 3600 = 20\,736\,000$ mg/h $= 20.7$ kg/h
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p014
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 4
+  type: mcq
+  stem: การเผาในที่โล่งช่วงอากาศนิ่งทำให้มลพิษสะสมมากขึ้นเพราะเหตุใด
+  choices:
+  - id: a
+    text: ชั้นอากาศกดแนวตั้งทำให้การผสมและการกระจายตัวในแนวดิ่งต่ำ
+    correct: true
+  - id: b
+    text: ลมแรงทำให้ฝุ่นสะสมที่พื้นมากขึ้น
+    feedback: ลมแรงมักกระจายมลพิษออกไป จึงไม่ใช่สาเหตุของการสะสม
+  - id: c
+    text: ฝนตกมากทำให้ฝุ่นลอยขึ้นสูงขึ้น
+    feedback: ฝนมักชะฝุ่นลงพื้น ไม่ได้ทำให้ฝุ่นลอยขึ้น
+  - id: d
+    text: อุณหภูมิต่ำทำให้ฝุ่นลอยขึ้นสูงกว่าปกติ
+    feedback: อากาศที่กดตัวทำให้ฝุ่นสะสมใกล้พื้นมากกว่า
+  hints:
+  - นึกถึงการผสมของอากาศในแนวดิ่ง
+  - ชั้นอากาศแบบใดที่กดไม่ให้อากาศลอยขึ้น
+  solution: เมื่ออากาศนิ่งและชั้นอากาศกด การผสมในแนวดิ่งต่ำ มลพิษจึงสะสมใกล้พื้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p015
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 4
+  type: numeric
+  stem: สครับเบอร์สองตัวต่ออนุกรมดักแก๊ส SO₂ ได้ 80% และ 90% ตามลำดับ ประสิทธิภาพรวมเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 98.0
+    tolerance: 0.1
+    unit: '%'
+  misconceptions:
+  - match: 170.0
+    feedback: บวกประสิทธิภาพเข้าด้วยกันโดยตรง
+  - match: 90.0
+    feedback: ใช้ประสิทธิภาพของตัวที่สองเพียงตัวเดียว
+  hints:
+  - ปริมาณที่หลุดออกหลังตัวแรกคือ $(1 - 0.8)$ ของเดิม
+  - หลังตัวที่สองเหลือ $(1 - 0.8)(1 - 0.9)$
+  solution: $\eta_{รวม} = 1 - (0.2)(0.1) = 0.98 = 98.0\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p016
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 5
+  type: numeric
+  stem: ปล่องแห่งหนึ่งวัดฝุ่นได้ 320 mg/m³ ค่าเกณฑ์ตัวอย่างสมมติให้ไม่เกิน 50 mg/m³ ต้องลดฝุ่นลงอย่างน้อยกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง ค่าสมมติ ไม่ใช่มาตรฐานจริง)
+  answer:
+    value: 84.4
+    tolerance: 0.1
+    unit: '%'
+  misconceptions:
+  - match: 15.6
+    feedback: คิดเฉพาะสัดส่วนของค่าเกณฑ์ ไม่ได้ลบจาก 1
+  - match: 270
+    feedback: ตอบเป็นส่วนต่างของความเข้มข้น แทนที่จะเป็นเปอร์เซ็นต์
+  hints:
+  - ประสิทธิภาพที่ต้องการ $= 1 - C_{เกณฑ์}/C_{ก่อน}$
+  - คูณ 100
+  solution: $\eta = 1 - 50/320 \approx 0.8438 = 84.4\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p017
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 5
+  type: numeric
+  stem: ESP ออกแบบให้ได้ประสิทธิภาพ 99% ที่อัตราการไหล $Q = 20\ \mathrm{m^3/s}$ และความเร็วเคลื่อนที่ของอนุภาค $w = 0.08\ \mathrm{m/s}$ จากสมการ $\eta = 1 - e^{-wA/Q}$ ต้องมีพื้นที่เก็บประจุ $A$ อย่างน้อยกี่ m² (ทศนิยม 1 ตำแหน่ง ค่าสมมติ)
+  answer:
+    value: 1151.3
+    tolerance: 0.5
+    unit: m2
+  misconceptions:
+  - match: 500.0
+    feedback: ใช้ลอการิทึมฐาน 10 แทน ln
+  - match: 2.5
+    feedback: ใช้ $\ln(0.99)$ แทน $\ln(0.01)$
+  hints:
+  - จัดรูปได้ $A = -Q\ln(1-\eta)/w$
+  - ใช้ลอการิทึมธรรมชาติ ln
+  solution: $A = -20 \times \ln(0.01) / 0.08 = 20 \times 4.6052 / 0.08 \approx 1151.3\ \mathrm{m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p018
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 5
+  type: mcq
+  stem: ข้อใดเป็นจริงเกี่ยวกับการควบคุมมลพิษทางอากาศ (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: การควบคุมที่แหล่งกำเนิดลดปริมาณมลพิษก่อนเข้าอุปกรณ์ดักได้
+    correct: true
+  - id: b
+    text: ปล่องสูงช่วยกระจายมลพิษให้ลดความเข้มข้นที่พื้นได้ แต่ไม่ได้ลดปริมาณรวมที่ปล่อย
+    correct: true
+  - id: c
+    text: เครื่องดักฝุ่นอย่างเดียวแก้ปัญหาแก๊สทุกชนิดได้
+    feedback: ฝุ่นและแก๊สต้องใช้อุปกรณ์ต่างกัน
+  - id: d
+    text: การเผาในที่โล่งไม่มีผลต่อคุณภาพอากาศ
+    feedback: การเผาในที่โล่งปล่อยมลพิษโดยตรงและยากควบคุม
+  multiple: true
+  hints:
+  - ปล่องสูงเปลี่ยนที่ที่มลพิษตกลงพื้น ไม่ได้ลดปริมาณที่ปล่อย
+  - ลองแยกระหว่างฝุ่นกับแก๊ส
+  solution: ข้อ a และ b ถูก การควบคุมต้นทางและการกระจายด้วยปล่องสูงมีบทบาทต่างกัน แต่ไม่ทดแทนอุปกรณ์ดักที่เหมาะกับชนิดมลพิษ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.environmental.air-pollution-control.p019
+  topics:
+  - engineering.environmental.air-pollution-control
+  difficulty: 5
+  type: text
+  stem: แบบจำลองการกระจายมลพิษจากแหล่งจุดที่ใช้รูปร่างการกระจายตามชื่อนักคณิตศาสตร์ชาวเยอรมันเรียกว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)
+  accepted:
+  - เกาส์เซียน
+  - Gaussian
+  - แบบเกาส์เซียน
+  misconceptions:
+  - match: ปัวซอง
+    feedback: การกระจายปัวซองใช้กับการนับเหตุการณ์ ไม่ใช่รูปร่างของควันในอากาศ
+  hints:
+  - ชื่อนี้คือกราฟรูประฆังที่ใช้ในการกระจายความน่าจะเป็น
+  - ภาษาอังกฤษขึ้นต้นด้วย G
+  solution: เรียกว่าแบบจำลองเกาส์เซียน (Gaussian plume) ใช้ประมาณการกระจายของควันตามทิศลม ค่าที่ได้เป็นค่าประมาณเชิงแนวคิดต่อสภาพอากาศนั้น ๆ
+  license: CC-BY-SA-4.0
+  ai_assisted: true

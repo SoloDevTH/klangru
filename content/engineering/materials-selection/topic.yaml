@@ -1,0 +1,100 @@
+id: engineering.materials.materials-selection
+subject: engineering
+title:
+  th: การเลือกวัสดุในการออกแบบ
+  en: Materials selection in design
+summary: เลือกวัสดุตามหน้าที่และข้อจำกัดด้วยดัชนีสมรรถนะ E/ρ, E^(1/2)/ρ และ E^(1/3)/ρ แผนภูมิแอชบี และการแลกเปลี่ยนระหว่างมวล ต้นทุน และสิ่งแวดล้อม
+difficulty: 7.5
+minutes: 40
+prerequisites:
+- engineering.materials.materials-science
+- engineering.materials.stress-strain
+- engineering.design.design-process
+encompasses:
+- id: engineering.materials.materials-science
+  weight: 0.4
+- id: engineering.materials.stress-strain
+  weight: 0.3
+- id: engineering.design.design-process
+  weight: 0.1
+curriculum_tags: []
+references:
+- title: Materials selection
+  url: https://en.wikipedia.org/wiki/Materials_selection
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Rule of mixtures
+  url: https://en.wikipedia.org/wiki/Rule_of_mixtures
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Bamboo
+  url: https://en.wikipedia.org/wiki/Bamboo
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: วัสดุศาสตร์
+  url: https://th.wikipedia.org/wiki/วัสดุศาสตร์
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+lessons:
+- type: figure
+  src: ashby-chart.svg
+  alt: กราฟ log-log แกนนอนเป็นความหนาแน่น แกนตั้งเป็นโมดูลัส มีเส้นประสามเส้นที่มีความชันเท่ากันแทนดัชนี E/ρ ค่า 10, 25 และ 80 และมีจุดวัสดุห้าชนิด CFRP อยู่ซ้ายบนสุด เหล็กอยู่ขวาบน อะลูมิเนียมอยู่กลาง ไม้และไม้ไผ่อยู่ซ้ายล่าง
+  caption: วัสดุที่อยู่สูงกว่าเส้นดัชนีที่กำหนดมีค่าดัชนีมากกว่า เหมาะกับเป้าหมายมวลและความแข็งนั้น
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: เลือกแท่งรับแรงดึงที่เบาที่สุดด้วยดัชนี E/ρ
+  problem: แท่งรับแรงดึงต้องมีความแข็งเท่ากันและยาวเท่ากัน ระหว่างอะลูมิเนียมและเหล็กวัสดุใดให้มวลน้อยกว่า (ค่าตัวอย่าง)
+  steps:
+  - text: ดัชนีอะลูมิเนียม $E/\rho = 70/2.70 \approx 25.9$ และเหล็ก $E/\rho = 200/7.85 \approx 25.5$
+    why: ดัชนีที่สูงกว่าหมายถึงได้ความแข็งต่อมวลมากกว่า
+  - text: อะลูมิเนียมมีดัชนีสูงกว่าเล็กน้อย จึงเบากว่าเมื่อความแข็งเท่ากัน
+    why: ความแตกต่างเล็กน้อยควรตรวจด้วยข้อจำกัดอื่นก่อนตัดสิน
+  - text: มวลอัตราส่วน $= \rho_{Al}/E_{Al} \div \rho_{st}/E_{st} \approx 0.983$ หมายความว่าอะลูมิเนียมเบากว่าประมาณร้อยละ 2
+    why: อัตราส่วนนี้ตรงกับส่วนกลับของอัตราส่วนดัชนี
+  answer: อะลูมิเนียมเบากว่าเหล็กเล็กน้อยเมื่อความแข็งเท่ากัน (ค่าตัวอย่าง)
+- type: check
+  problem: engineering.materials.materials-selection.p002
+  prompt: ลองคิดก่อนว่าโจทย์เป็นแรงดึงหรือแรงดัด
+- type: worked-example
+  title: เปรียบเทียบคานกับแผ่นที่ความแข็งเท่ากัน
+  problem: คานที่รับดัดต้องการความแข็งเท่ากัน ระหว่างอะลูมิเนียมและเหล็กวัสดุใดเบากว่า และเบาเท่าไร (ค่าตัวอย่าง)
+  steps:
+  - text: สำหรับคาน ดัชนีคือ $E^{1/2}/\rho$ ของอะลูมิเนียม $\approx 3.10$ และของเหล็ก $\approx 1.80$
+    why: ใช้ดัชนีให้ตรงกับรูปแบบการรับแรงของชิ้นส่วน
+  - text: อะลูมิเนียมมีดัชนีสูงกว่า จึงเบากว่าเมื่อความแข็งเท่ากัน มวลอัตราส่วน $\approx 1/(3.10/1.80)$ ไม่ใช่ค่าเดียวกับแท่งรับแรงดึง
+    why: ถ้าใช้ดัชนีผิดชนิด จะได้ข้อสรุปผิด
+  - text: ผลลัพธ์คือมวลของอะลูมิเนียมประมาณ 58% ของเหล็กที่ความแข็งเท่ากัน
+    why: คำนวณจากอัตราส่วนของ $\rho/E^{1/2}$ โดยตรง
+  answer: อะลูมิเนียมมีมวลประมาณ 58% ของเหล็ก (ค่าตัวอย่าง)
+- type: check
+  problem: engineering.materials.materials-selection.p007
+  prompt: ลองเรียงจากค่าที่คุณคิดว่าสูงสุดก่อนเปิดเฉลย
+glossary:
+- term: ดัชนีสมรรถนะ
+  definition: ปริมาณที่รวมสมบัติวัสดุหลายตัวเข้าด้วยกันตามรูปแบบการรับแรงและเป้าหมายของชิ้นส่วน
+- term: ข้อจำกัดบังคับ
+  definition: เงื่อนไขที่วัสดุต้องผ่านก่อนจะนำมาพิจารณาต่อ เช่น อุณหภูมิใช้งานหรือการทนสารเคมี
+- term: แผนภูมิแอชบี
+  definition: แผนภูมิ log-log ที่วางวัสดุตามสมบัติสองอย่างและมีเส้นดัชนีกำกับ เพื่อเลือกวัสดุจากตำแหน่งบนแผนภูมิ
+- term: กฎของผสม
+  definition: วิธีประมาณสมบัติของวัสดุผสมจากสัดส่วนปริมาตรและสมบัติของแต่ละส่วนประกอบ
+flashcards:
+- front: ดัชนีของแท่งรับแรงดึงที่ความแข็งกับมวลสำคัญ
+  back: $E/\rho$ (ยิ่งสูงยิ่งเบาเมื่อความแข็งเท่ากัน)
+- front: ดัชนีของคานที่รับดัด
+  back: $E^{1/2}/\rho$
+- front: ดัชนีของแผ่นบางรับดัด
+  back: $E^{1/3}/\rho$
+- front: ขั้นแรกของกรอบการเลือกวัสดุ
+  back: ระบุหน้าที่ แล้วข้อจำกัดบังคับ แล้วเป้าหมายและตัวแปรอิสระ
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors:
+- ทีมคลังรู้
+ai_assisted: true

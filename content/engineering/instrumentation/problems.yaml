@@ -1,0 +1,422 @@
+problems:
+- id: engineering.electrical.instrumentation.p001
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 1
+  type: numeric
+  stem: ตัวแปลงอนาล็อกเป็นดิจิทัล (ADC) 8 บิต รับแรงดันเต็มช่วง 0 ถึง $5\ \mathrm{V}$ ขนาดของ 1 ขั้น (LSB) เป็นกี่มิลลิโวลต์ (ตอบในหน่วย mV)
+  answer:
+    value: 19.53
+    tolerance: 0.01
+    unit: mV
+  misconceptions:
+  - match: 19.61
+    feedback: หารด้วย $2^8 - 1 = 255$ แทน $2^8 = 256$ ADC n บิตมี $2^n$ ช่องระดับ
+  - match: 39.06
+    feedback: ใช้ $2^7$ แทน $2^8$ เพราะคิดว่า 8 บิตเป็น 7 บิต
+  hints:
+  - ADC n บิตแบ่งช่วงแรงดันเป็น $2^n$ ช่อง
+  - ขนาด 1 ขั้นคือแรงดันเต็มช่วงหารด้วยจำนวนช่อง
+  - คำนวณ $5 \div 2^8$ แล้วคูณ 1000 เพื่อเปลี่ยนเป็น mV
+  solution: LSB $= 5\ \mathrm{V} \div 2^8 = 5 \div 256\ \mathrm{V} \approx 19.53\ \mathrm{mV}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p002
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 1
+  type: mcq
+  stem: อุปกรณ์ใดทำหน้าที่เปลี่ยนปริมาณทางกายภาพ เช่น อุณหภูมิ ให้เป็นสัญญาณไฟฟ้า
+  choices:
+  - id: a
+    text: เทอร์โมคัปเปิล
+    correct: true
+  - id: b
+    text: ตัวกรองความถี่ต่ำ
+    feedback: ตัวกรองปรับรูปสัญญาณที่มีอยู่แล้วให้เรียบขึ้น แต่ไม่ได้รับปริมาณทางกายภาพโดยตรง
+  - id: c
+    text: จอแสดงผลดิจิทัล
+    feedback: จอรับสัญญาณไฟฟ้าแล้วแสดงตัวเลข ไม่ได้เปลี่ยนอุณหภูมิเป็นไฟฟ้า
+  - id: d
+    text: รีเลย์
+    feedback: รีเลย์ตัดหรือต่อวงจรเมื่อได้รับสัญญาณ ไม่ได้วัดปริมาณ
+  hints:
+  - ลองนึกว่าอุปกรณ์นี้รับอะไรเข้ามาและให้อะไรออกไป
+  - อุปกรณ์ที่รับความร้อนแล้วให้แรงดันไฟฟ้าออกมาคืออะไร
+  solution: เทอร์โมคัปเปิลเป็นตัวแปลง (transducer) ใช้รอยต่อของโลหะต่างชนิดสร้างแรงดันไฟฟ้าที่ขึ้นกับอุณหภูมิ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p003
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 1
+  type: text
+  stem: ค่าที่อ่านซ้ำหลายครั้งภายใต้เงื่อนไขเดิมแล้วใกล้เคียงกันมาก เรียกสมบัตินี้ว่าอะไร (ตอบเป็นคำภาษาไทย)
+  accepted:
+  - ความเที่ยง
+  - ความเที่ยงตรง
+  misconceptions:
+  - match: ความถูกต้อง
+    feedback: ความถูกต้องหมายถึงใกล้ค่าจริง ซึ่งต่างจากการอ่านซ้ำแล้วได้ค่าใกล้กัน
+  hints:
+  - สมบัตินี้บอกว่าการอ่านซ้ำให้ผลสม่ำเสมอแค่ไหน ไม่ได้บอกว่าใกล้ค่าจริงหรือไม่
+  - คำตอบคือคำที่ใช้เรียกการวัดซ้ำที่ได้ผลใกล้กัน
+  solution: สมบัตินี้เรียกว่า ความเที่ยง (precision หรือ repeatability) ส่วนความถูกต้อง (accuracy) บอกว่าค่าใกล้ค่าจริงแค่ไหน ทั้งสองอย่างต่างกัน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p004
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 2
+  type: numeric
+  stem: ถังน้ำร้อนของโรงงานน้ำแข็งติดเซนเซอร์ Pt100 ซึ่งมี $R_0 = 100\ \Omega$ ที่ 0 °C และค่าสัมประสิทธิ์ $\alpha = 0.00385\ /\mathrm{°C}$ เมื่ออุณหภูมิ $50\ \mathrm{°C}$ ความต้านทานของเซนเซอร์เป็นกี่โอห์ม (ตอบในหน่วย Ω)
+  answer:
+    value: 119.25
+    tolerance: 1.1925
+    unit: Ω
+  misconceptions:
+  - match: 1.19
+    feedback: ลืมคูณด้วย $R_0$ จึงได้เพียงตัวคูณ 1.1925
+  - match: 292.5
+    feedback: ใช้ $\alpha = 0.0385$ (เลื่อนทศนิยมผิดหนึ่งตำแหน่ง)
+  hints:
+  - ใช้สูตร $R_T = R_0(1 + \alpha T)$ ในช่วงที่ใกล้เชิงเส้น
+  - แทน $T = 50$ ก่อนคูณด้วย $\alpha$
+  - คูณผลลัพธ์ด้วย $R_0 = 100\ \Omega$
+  solution: $R_T = 100\,(1 + 0.00385 \times 50) = 100 \times 1.1925 = 119.25\ \Omega$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p005
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 2
+  type: numeric
+  stem: วงจรบริดจ์วีตสโตนจ่ายไฟ $V_s = 5\ \mathrm{V}$ มีตัวต้านทานอ้างอิง $R_1 = R_2 = R_3 = 120\ \Omega$ และเซนเซอร์ $R_x = 122\ \Omega$ แรงดันขาออก $V_{out}$ เป็นกี่มิลลิโวลต์ (ตอบในหน่วย mV)
+  figure:
+    src: wheatstone-bridge.svg
+    alt: วงจรบริดจ์วีตสโตนรูปข้าวหลามตัด มีตัวต้านทาน R1 R2 R3 และ Rx ต่อจากจุดบนไปจุดล่าง และมีเส้นประวัดแรงดันขาออกระหว่างจุดซ้ายกับจุดขวา
+  answer:
+    value: 20.66
+    tolerance: 0.01
+    unit: mV
+  misconceptions:
+  - match: 20.83
+    feedback: ใช้การประมาณเชิงเส้น $V_s\,\Delta R/(4R_0)$ ซึ่งใกล้แต่ไม่เท่ากับค่าแม่นยำ
+  hints:
+  - ใช้สูตร $V_{out} = V_s\left(\dfrac{R_x}{R_3 + R_x} - \dfrac{R_2}{R_1 + R_2}\right)$
+  - เมื่อ $R_1 = R_2 = R_3$ ตัวหลังเท่ากับ $\tfrac12$
+  - คำนวณ $R_x/(R_3+R_x)$ ก่อนแล้วลบ $0.5$
+  solution: $V_{out} = 5\left(\dfrac{122}{242} - 0.5\right) = 5 \times 0.004132 \approx 0.02066\ \mathrm{V} = 20.66\ \mathrm{mV}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p006
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 2
+  type: mcq
+  stem: เซนเซอร์ระดับช่วง 0 ถึง $2.0\ \mathrm{m}$ ส่งสัญญาณ 4 ถึง 20 mA เมื่ออ่านได้ $12\ \mathrm{mA}$ ระดับที่วัดได้คือเท่าไร
+  choices:
+  - id: a
+    text: 1.0 m
+    correct: true
+  - id: b
+    text: 1.2 m
+    feedback: คิดว่า 0 mA คือค่าต่ำสุด แล้วหาร 20 mA ซึ่งลืมชดเชย 4 mA ของจุดเริ่มต้น
+  - id: c
+    text: 1.5 m
+    feedback: คิดว่า 12 หารด้วย 16 แล้วคูณ 2 แต่ยังไม่ได้ลบ 4 mA ออกจากค่าที่อ่านได้
+  - id: d
+    text: 0.8 m
+    feedback: หารด้วย 20 แทน 16 ทำให้ใช้ช่วง 0 ถึง 20 mA ซึ่งไม่ใช่ช่วงของเซนเซอร์นี้
+  hints:
+  - ค่า 4 mA คือค่าต่ำสุดของช่วง ไม่ใช่ 0
+  - ช่วงกระแสที่ใช้จริงคือ $20 - 4 = 16\ \mathrm{mA}$
+  - ใช้สัดส่วน $(I - 4)/16$ คูณด้วยช่วงของเครื่องวัด
+  solution: ระดับ $= \dfrac{12 - 4}{16} \times 2.0\ \mathrm{m} = 1.0\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p007
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 2
+  type: order
+  stem: เรียงขั้นตอนของระบบวัดแบบดิจิทัลตามลำดับที่สัญญาณเคลื่อนที่ผ่าน จากต้นทางไปปลายทาง
+  items:
+  - เซนเซอร์แปลงปริมาณเป็นสัญญาณไฟฟ้า
+  - ปรับสภาพสัญญาณ (ขยาย กรอง) ให้อยู่ในช่วงของ ADC
+  - แปลงแรงดันเป็นเลขฐานสองด้วย ADC
+  - ประมวลผลและแสดงค่าบนจอ
+  hints:
+  - ขั้นแรกต้องมีสัญญาณจากปริมาณจริงก่อน
+  - ADC รับสัญญาณที่ปรับให้พร้อมแล้ว
+  solution: ลำดับคือ เซนเซอร์ ปรับสภาพสัญญาณ ADC แล้วประมวลผลและแสดงผล ถ้าสลับ ADC ไปก่อนการปรับสภาพ แรงดันอาจสูงหรือต่ำเกินช่วงของ ADC
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p008
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 3
+  type: numeric
+  stem: สถานีสูบน้ำประปาหมู่บ้านใช้เครื่องส่งความดันช่วง 0 ถึง $10\ \mathrm{bar}$ สัญญาณ 4 ถึง 20 mA เมื่ออ่านค่าได้ $15.2\ \mathrm{mA}$ ความดันเป็นกี่ bar (ตอบในหน่วย bar)
+  answer:
+    value: 7.0
+    tolerance: 0.07
+    unit: bar
+  misconceptions:
+  - match: 7.6
+    feedback: ใช้ 0 mA เป็นศูนย์ แล้วหาร 20 mA ซึ่งผิดเพราะช่วงนี้เริ่มที่ 4 mA
+  - match: 9.5
+    feedback: ลืมลบ 4 mA ก่อนการคำนวณ
+  hints:
+  - ใช้สัดส่วน $(I - 4)/16$ แล้วคูณด้วยช่วงความดัน
+  - ลบ 4 mA ออกก่อนหาร
+  - คำนวณ $(15.2 - 4)/16 \times 10$
+  solution: $P = \dfrac{15.2 - 4}{16} \times 10\ \mathrm{bar} = 7.00\ \mathrm{bar}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p009
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 3
+  type: numeric
+  stem: ตัวแปลง ADC 12 บิตรับแรงดันเต็มช่วง 0 ถึง $10\ \mathrm{V}$ ขนาดของ 1 ขั้น (LSB) เป็นกี่มิลลิโวลต์ (ตอบในหน่วย mV และทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 2.44
+    tolerance: 0.0244
+    unit: mV
+  misconceptions:
+  - match: 9.77
+    feedback: ใช้ $2^{10}$ แทน $2^{12}$ เพราะจำผิดว่าเป็น 10 บิต
+  - match: 4.88
+    feedback: ใช้ $2^{11}$ แทน $2^{12}$
+  hints:
+  - $2^{12} = 4096$ ช่อง
+  - LSB $=$ แรงดันเต็มช่วง $\div 2^n$
+  - เปลี่ยนจากโวลต์เป็นมิลลิโวลต์โดยคูณ 1000
+  solution: LSB $= 10\ \mathrm{V} \div 4096 = 0.002441\ \mathrm{V} \approx 2.44\ \mathrm{mV}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p010
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 3
+  type: numeric
+  stem: ถังเก็บน้ำประปาหมู่บ้านสูง $3.00\ \mathrm{m}$ ติดสายวัดระดับแบบ 4 ถึง 20 mA ที่ตั้งช่วงไว้ 0 ถึง $3.00\ \mathrm{m}$ เมื่อสัญญาณเป็น $14.4\ \mathrm{mA}$ ระดับน้ำสูงกี่เมตร (ตอบในหน่วย m)
+  answer:
+    value: 1.95
+    tolerance: 0.0195
+    unit: m
+  misconceptions:
+  - match: 2.16
+    feedback: หารด้วย 20 mA แทน 16 mA ทำให้ได้ค่าต่ำไปและไม่ได้ชดเชยจุดเริ่ม
+  - match: 2.7
+    feedback: ลืมลบ 4 mA ก่อนหาร
+  hints:
+  - ใช้สัดส่วน $(I - 4)/16$ เหมือนโจทย์ความดัน
+  - คูณด้วยช่วงความสูง 3.00 m
+  - ค่าที่ได้ต้องไม่เกินความสูงถัง
+  solution: $h = \dfrac{14.4 - 4}{16} \times 3.00\ \mathrm{m} = 1.95\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p011
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 3
+  type: mcq
+  stem: ข้อใดถูกเกี่ยวกับระบบสัญญาณ 4 ถึง 20 mA (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: 4 mA หมายถึงค่าต่ำสุดของช่วงวัด
+    correct: true
+  - id: b
+    text: สัญญาณ 0 mA ช่วยบอกว่าสายขาดหรือไฟหาย
+    correct: true
+  - id: c
+    text: 20 mA หมายถึงค่าต่ำสุดของช่วงวัด
+    feedback: 20 mA คือค่าเต็มช่วง ค่าต่ำสุดคือ 4 mA
+  - id: d
+    text: เครื่องส่งแบบสองสายจ่ายไฟให้ตัวเองจากกระแสในวงจรได้
+    correct: true
+  multiple: true
+  hints:
+  - แยกว่าค่าที่ 4 mA กับค่าที่ 0 mA มีความหมายต่างกันอย่างไร
+  - เครื่องส่งแบบสองสายต้องจ่ายไฟจากวงจรเดียวกับสัญญาณ
+  solution: ข้อ a, b และ d ถูก ระบบ 4 ถึง 20 mA ใช้ 4 mA เป็น live zero เพื่อแยกระหว่างสัญญาณต่ำสุดกับสายขาด เครื่องส่งแบบ loop-powered ใช้สายคู่เดียวทั้งส่งสัญญาณและรับไฟ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p012
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 4
+  type: expression
+  stem: จากวงจรบริดจ์ของโจทย์ $V_{out}$ ให้สมการ $v = s\left(\dfrac{x}{x+r} - \dfrac{1}{2}\right)$ โดย $s$ คือแรงดันจ่าย $v$ คือแรงดันขาออก $r$ คือตัวต้านทานอ้างอิง และ $x$ คือเซนเซอร์ จงจัดรูปหา $x$ ในรูปของ $r$, $v$ และ $s$
+  figure:
+    src: wheatstone-bridge.svg
+    alt: วงจรบริดจ์วีตสโตนรูปข้าวหลามตัด มีตัวต้านทาน R1 R2 R3 และ Rx และมีเส้นประวัดแรงดันขาออกระหว่างจุดซ้ายกับจุดขวา
+  answer:
+    latex: \frac{r\cdot(2v+s)}{s-2v}
+    variables:
+    - r
+    - v
+    - s
+  prefix: x =
+  misconceptions:
+  - match: \frac{r\cdot(2v-s)}{s+2v}
+    feedback: สลับเครื่องหมายในวงเล็บ ทำให้ได้ส่วนกลับ
+  - match: \frac{r\cdot(v+s)}{s-v}
+    feedback: ลืมคูณ 2 ที่พจน์ $v$ ทั้งในตัวเศษและตัวส่วน
+  hints:
+  - ให้ $k = v/s + 1/2$ แล้วจะได้ $x/(x+r) = k$
+  - คูณไขว้แล้วรวมพจน์ที่มี $x$ ไว้ข้างเดียว
+  solution: จาก $\dfrac{x}{x+r} = \dfrac{v}{s} + \dfrac12$ คูณไขว้ได้ $x(\tfrac12 - \tfrac{v}{s}) = (\tfrac{v}{s}+\tfrac12) r$ จึงได้ $x = \dfrac{r(2v+s)}{s-2v}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p013
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 4
+  type: numeric
+  stem: เครื่องส่งความดันสองตัวในโรงกลั่นมีความคลาดเคลื่อนอิสระต่อกัน $\pm 0.05\ \mathrm{bar}$ และ $\pm 0.03\ \mathrm{bar}$ หากรวมความคลาดเคลื่อนด้วยวิธีรากของผลบวกกำลังสอง (root-sum-square) จะได้ค่ารวมกี่ bar (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.0583
+    tolerance: 0.01
+    unit: bar
+  misconceptions:
+  - match: 0.08
+    feedback: บวกค่าความคลาดเคลื่อนตรง ๆ ซึ่งเป็นกรณีแย่ที่สุด ไม่ใช่การรวมแบบอิสระ
+  - match: 0.2828
+    feedback: ถอดรากก่อนยกกำลังสอง
+  hints:
+  - ความคลาดเคลื่อนอิสระรวมกันแบบยกกำลังสอง ไม่ใช่บวกตรง ๆ
+  - ยกกำลังสองแต่ละค่า บวกกัน แล้วถอดรากที่สอง
+  solution: $\sqrt{0.05^2 + 0.03^2} = \sqrt{0.0034} \approx 0.0583\ \mathrm{bar}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p014
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 4
+  type: numeric
+  stem: สะพานวีตสโตนแบบหนึ่งตัวของสเตรนเกจ ใช้แรงดันจ่าย $10\ \mathrm{V}$ มีตัวต้านทาน $R_0 = 350\ \Omega$ และสเตรนเกจเปลี่ยนไป $\Delta R = 0.35\ \Omega$ แรงดันขาออกโดยประมาณเป็นกี่มิลลิโวลต์ (ตอบในหน่วย mV ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 2.5
+    tolerance: 0.025
+    unit: mV
+  misconceptions:
+  - match: 5.0
+    feedback: หารด้วย $2R_0$ แทน $4R_0$ ทำให้สัญญาณเป็นสองเท่าเกินจริง
+  hints:
+  - ใช้สูตรเดียวกับโจทย์ที่เคยทำ โดย $R_3 = R_1 = R_2 = R_0$
+  - ค่า $\Delta R$ เล็กมาก จึงประมาณได้ด้วย $V_s\,\Delta R/(4R_0)$
+  - คูณผลลัพธ์ด้วย 1000 เพื่อเป็น mV
+  solution: $V_{out} \approx \dfrac{10 \times 0.35}{4 \times 350}\ \mathrm{V} = 0.0025\ \mathrm{V} = 2.50\ \mathrm{mV}$ (แบบเต็มได้ 2.499 mV เกือบเท่ากัน)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p015
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 4
+  type: mcq
+  stem: ผลสอบเทียบพบว่าเครื่องวัดความดันอ่านสูงกว่าค่าอ้างอิงเสมอ 0.4 bar ในทุกช่วงการวัด ข้อใดอธิบายได้ถูกต้องที่สุด
+  choices:
+  - id: a
+    text: เป็นความคลาดเคลื่อนเชิงระบบ (bias) ซึ่งปรับแก้ได้ด้วยการสอบเทียบ
+    correct: true
+  - id: b
+    text: เป็นความคลาดเคลื่อนสุ่ม อ่านหลายครั้งแล้วเฉลี่ยจะหายไป
+    feedback: การเฉลี่ยขจัดเฉพาะความคลาดเคลื่อนสุ่ม ค่าที่สูงกว่าจริงทุกครั้งจะยังคงอยู่
+  - id: c
+    text: เกิดจากความละเอียดของจอแสดงผลเท่านั้น
+    feedback: ความละเอียดกำหนดขนาดขั้นที่เล็กที่สุดที่แยกได้ ไม่ได้ทำให้ค่าเลื่อนไปทั้งช่วง
+  - id: d
+    text: ต้องเปลี่ยนเซนเซอร์ทุกครั้งที่พบ
+    feedback: การเปลี่ยนเซนเซอร์ไม่จำเป็นเสมอไป เมื่อแก้ค่าชดเชยได้ก็ไม่ต้องเปลี่ยน
+  hints:
+  - ค่าที่เลื่อนไปทางเดียวกันทุกครั้งเป็นความคลาดเคลื่อนประเภทใด
+  - การสอบเทียบใช้หาและแก้ค่าที่เลื่อนนี้
+  solution: ค่าที่เลื่อนไปทางเดียวกันทุกครั้งคือความคลาดเคลื่อนเชิงระบบ การสอบเทียบเทียบกับค่าอ้างอิงแล้วใส่ค่าชดเชยได้ ส่วนการอ่านซ้ำช่วยลดได้เฉพาะความคลาดเคลื่อนสุ่ม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p016
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 4
+  type: numeric
+  stem: ช่วงวัดอุณหภูมิ 0 ถึง $100\ \mathrm{°C}$ ใช้ ADC 10 บิต ขนาดของ 1 ขั้นอุณหภูมิเป็นกี่องศาเซลเซียส (ตอบในหน่วย °C ทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.0977
+    tolerance: 0.01
+    unit: °C
+  misconceptions:
+  - match: 0.1953
+    feedback: ใช้ $2^9$ แทน $2^{10}$
+  - match: 0.0488
+    feedback: ใช้ $2^{11}$ แทน $2^{10}$
+  hints:
+  - ADC 10 บิตมี $2^{10} = 1024$ ช่อง
+  - ขนาดของ 1 ขั้น $= 100 \div 1024$
+  solution: $\Delta T = 100 \div 1024 \approx 0.0977\ \mathrm{°C}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p017
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 5
+  type: numeric
+  stem: จากผลวัดแรงดันขาออกของบริดจ์ในโจทย์แรก $V_{out} = 0.02066\ \mathrm{V}$ เมื่อจ่าย $S = 5\ \mathrm{V}$ และ $R_0 = 120\ \Omega$ ค่าของเซนเซอร์ $R_x$ เป็นกี่โอห์ม (ตอบในหน่วย Ω ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 122.0
+    tolerance: 0.1
+    unit: Ω
+  misconceptions:
+  - match: 121.0
+    feedback: ใช้ $v$ แทน $2v$ ในสูตร
+  - match: 118.0
+    feedback: สลับเครื่องหมายในวงเล็บ
+  hints:
+  - ใช้ผลของโจทย์เชิงพีชคณิต $x = \dfrac{r(2v+s)}{s-2v}$
+  - แทน $v = 0.02066$, $s = 5$, $r = 120$
+  - ค่าที่ได้ควรใกล้ $R_x = 122\ \Omega$ ที่ใช้สร้างผล
+  solution: $R_x = \dfrac{120(2 \times 0.02066 + 5)}{5 - 2 \times 0.02066} = \dfrac{604.96}{4.95868} \approx 122.0\ \Omega$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p018
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 5
+  type: numeric
+  stem: ADC 12 บิตรับช่วง 0 ถึง $10\ \mathrm{V}$ ค่าความคลาดเคลื่อนจากการปัดเศษ (quantization) มีค่าสูงสุด $\pm\mathrm{LSB}/2$ และค่ารากกำลังสองเฉลี่ย (RMS) คือ $\mathrm{LSB}/\sqrt{12}$ จงหาค่า RMS ของความคลาดเคลื่อนนี้เป็นกี่มิลลิโวลต์ (ตอบทศนิยม 3 ตำแหน่ง)
+  answer:
+    value: 0.705
+    tolerance: 0.01
+    unit: mV
+  misconceptions:
+  - match: 2.441
+    feedback: ใช้ LSB ทั้งขั้นเป็นค่า RMS
+  - match: 1.221
+    feedback: ใช้ LSB/2 ซึ่งเป็นค่าสูงสุด ไม่ใช่ค่า RMS
+  hints:
+  - คำนวณ LSB ของ ADC 12 บิตช่วง 10 V ก่อน
+  - ค่า RMS คือ LSB หารด้วยรากของ 12
+  - ค่า RMS ไม่ใช่ค่าสูงสุด
+  solution: LSB $= 2.4414\ \mathrm{mV}$ จึงได้ RMS $= 2.4414 \div \sqrt{12} \approx 0.705\ \mathrm{mV}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.electrical.instrumentation.p019
+  topics:
+  - engineering.electrical.instrumentation
+  difficulty: 5
+  type: text
+  stem: แผนภาพที่แสดงท่อ อุปกรณ์ และเครื่องมือวัดของกระบวนการพร้อมสัญลักษณ์มาตรฐาน มีชื่อย่อภาษาอังกฤษว่าอะไร (ตอบเป็นอักษรภาษาอังกฤษ)
+  accepted:
+  - P&ID
+  - P&amp;ID
+  misconceptions:
+  - match: PID
+    feedback: PID คือตัวควบคุม ไม่ใช่แผนภาพ ชื่อแผนภาพคือ P&ID
+  hints:
+  - ชื่อย่อมีสองตัวอักษรที่ขึ้นต้นด้วย P และ I
+  - เกี่ยวกับ Piping and Instrumentation
+  solution: เรียกว่า P&ID (Piping and Instrumentation Diagram) เป็นแผนภาพที่ใช้ในงานออกแบบและตรวจสอบโรงงาน PID เป็นอีกคำที่หมายถึงตัวควบคุมแบบสัดส่วนอินทิเกรตและอนุพันธ์
+  license: CC-BY-SA-4.0
+  ai_assisted: true

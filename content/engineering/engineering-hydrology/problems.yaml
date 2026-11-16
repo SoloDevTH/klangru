@@ -1,0 +1,400 @@
+problems:
+- id: engineering.water.engineering-hydrology.p001
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 1
+  type: numeric
+  stem: ลุ่มน้ำย่อยพื้นที่ $0.5\ \mathrm{km^2}$ มีค่าสัมประสิทธิ์น้ำท่า $C = 0.5$ และความเข้มฝน $i = 40\ \mathrm{mm/h}$ ใช้วิธีเหตุผล $Q = CiA/3.6$ ได้อัตราการไหลสูงสุดกี่ $\mathrm{m^3/s}$ (ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 2.78
+    tolerance: 0.0278
+    unit: m3/s
+  misconceptions:
+  - match: 10.0
+    feedback: ลืมหารด้วย 3.6 ตัวเลขจึงมีหน่วยไม่สอดคล้องกัน
+  - match: 2777778.0
+    feedback: ใช้พื้นที่เป็น $\mathrm{m^2}$ แทน $\mathrm{km^2}$ ทำให้ค่าเพี้ยนเป็นล้านเท่า
+  hints:
+  - ใน $Q = CiA/3.6$ ตัว $A$ ต้องเป็น $\mathrm{km^2}$ และ $i$ เป็น $\mathrm{mm/h}$
+  - แทนค่า $C = 0.5$, $i = 40$, $A = 0.5$ แล้วหารด้วย 3.6
+  solution: $Q = \dfrac{0.5 \times 40 \times 0.5}{3.6} = 2.78\ \mathrm{m^3/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p002
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 1
+  type: numeric
+  stem: เครื่องวัดน้ำฝนสี่จุดในหมู่บ้านวัดได้ $42$, $55$, $38$ และ $61\ \mathrm{mm}$ ค่าเฉลี่ยเลขคณิตของฝนในพื้นที่นี้เป็นกี่มิลลิเมตร (ตอบทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 49.0
+    tolerance: 0.01
+    unit: mm
+  misconceptions:
+  - match: 48.5
+    feedback: ใช้ค่ามัธยฐานของสองค่ากลางแทนค่าเฉลี่ย
+  - match: 196
+    feedback: ลืมหารด้วยจำนวนจุด จึงได้ผลรวม
+  hints:
+  - ค่าเฉลี่ยเลขคณิตคือผลรวมหารด้วยจำนวนจุด
+  - รวมค่าทั้งสี่ก่อนแล้วหารด้วย 4
+  solution: $\bar{P} = (42 + 55 + 38 + 61)/4 = 196/4 = 49.0\ \mathrm{mm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p003
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 1
+  type: mcq
+  stem: สูตร $Q = CiA/3.6$ ให้ค่า $Q$ เป็น $\mathrm{m^3/s}$ เมื่อใช้หน่วยใด (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: $i$ เป็น mm/h และ $A$ เป็น km²
+    correct: true
+  - id: b
+    text: $i$ เป็น mm/h และ $A$ เป็น m²
+    feedback: ถ้า $A$ เป็น m² ต้องหารด้วยค่าที่ใหญ่กว่ามาก ไม่ใช่ 3.6
+  - id: c
+    text: $i$ เป็น m/s และ $A$ เป็น km²
+    feedback: ความเข้มฝนปกติบอกเป็น mm/h หน่วยนี้จะไม่ตรงกับตัวเลข 3.6
+  - id: d
+    text: ผลลัพธ์เป็น m³/h เสมอ
+    feedback: ค่า 3.6 มาจากการแปลง mm/h กับ km² ให้เป็น m³/s
+  hints:
+  - ลองคิดว่า 1 mm/h บน 1 km² เท่ากับกี่ลูกบาศก์เมตรต่อวินาที
+  - ตัวเลข 3.6 มาจาก 3600 วินาทีต่อชั่วโมงหาร 1000
+  solution: ข้อ a ถูก เพราะ 1 mm/h บนพื้นที่ 1 km² = 1000 m³/h ≈ 0.2778 m³/s จึงใช้ตัวหาร 3.6 ได้
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p004
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 2
+  type: numeric
+  stem: สถานีวัดฝนสามแห่งในลุ่มน้ำ มีพื้นที่ที่ขอบโพลีกอนทีสเซนเป็น $30$, $50$ และ $20\ \mathrm{km^2}$ และปริมาณฝนของแต่ละสถานีเป็น $58$, $41$ และ $75\ \mathrm{mm}$ ตามลำดับ ฝนเฉลี่ยเชิงพื้นที่ตามวิธีทีสเซนเป็นกี่มิลลิเมตร (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 52.9
+    tolerance: 0.05
+    unit: mm
+  misconceptions:
+  - match: 58.0
+    feedback: ใช้ค่าเฉลี่ยเลขคณิตโดยไม่คิดน้ำหนักตามพื้นที่
+  hints:
+  - น้ำหนักของแต่ละสถานีคือพื้นที่ของตัวเองหารด้วยพื้นที่รวม
+  - คูณปริมาณฝนของแต่ละสถานีด้วยน้ำหนัก แล้วรวมกัน
+  solution: $\bar{P} = \dfrac{30(58) + 50(41) + 20(75)}{100} = \dfrac{5290}{100} = 52.9\ \mathrm{mm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p005
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 2
+  type: numeric
+  stem: ลุ่มน้ำพื้นที่ $120\ \mathrm{km^2}$ มีฝนเฉลี่ยรายปี $1400\ \mathrm{mm}$ การระเหยรายปี $900\ \mathrm{mm}$ และน้ำท่ารายปี $350\ \mathrm{mm}$ (ทั้งหมดเป็นค่าสมมติ) ถ้าไม่มีน้ำใต้ดินไหลออกนอกลุ่ม การเปลี่ยนแปลงน้ำที่กักเก็บในลุ่มน้ำเป็นกี่ล้านลูกบาศก์เมตร (ตอบในหน่วย ล้าน m³)
+  answer:
+    value: 18.0
+    tolerance: 0.05
+    unit: ล้าน m3
+  misconceptions:
+  - match: 60.0
+    feedback: ลืมหักน้ำท่าออก (ใช้ $P - ET$)
+  - match: 126.0
+    feedback: ลืมหักการระเหย (ใช้ $P - Q$)
+  hints:
+  - 'สมดุลน้ำ: $\Delta S = P - ET - Q$ ในหน่วยความลึก (mm)'
+  - แปลงความลึกเป็นเมตรแล้วคูณพื้นที่เป็น m² ได้ปริมาตร (m³)
+  solution: $\Delta S = 1400 - 900 - 350 = 150\ \mathrm{mm} = 0.150\ \mathrm{m}$ จึงได้ $0.150 \times 120\times10^6 = 18\times10^6\ \mathrm{m^3} = 18.0$ ล้าน m³
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p006
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 2
+  type: numeric
+  stem: ไฮโดรกราฟของลุ่มน้ำเล็กบันทึกทุก 1 ชั่วโมง ได้อัตราการไหล (m³/s) เป็น 2, 5, 12, 20, 15, 8, 4, 2 โดยน้ำฐานคงที่ 2 m³/s ปริมาตรน้ำท่าส่วนที่สูงกว่าน้ำฐานตลอดเหตุการณ์ คำนวณด้วยกฎสี่เหลี่ยมคางหมูได้เป็นกี่ m³ (ตอบเป็นจำนวนเต็ม)
+  answer:
+    value: 187200
+    tolerance: 1
+    unit: m3
+  misconceptions:
+  - match: 244800
+    feedback: ไม่หักน้ำฐาน ใช้ผลรวม 68 m³/s·h
+  - match: 52.0
+    feedback: ลืมแปลงชั่วโมงเป็นวินาที
+  hints:
+  - หักน้ำฐานออกจากทุกจุดก่อน ได้ 0, 3, 10, 18, 13, 6, 2, 0
+  - ค่าปลายเป็นศูนย์ ใช้สี่เหลี่ยมคางหมูบวกกันแต่ละช่วง 1 ชั่วโมง
+  - แปลงผลรวม (m³/s·h) เป็น m³ โดยคูณ 3600
+  solution: ผลรวมที่หักน้ำฐานแล้ว $= 52\ \mathrm{m^3/s\cdot h}$ จึงได้ $52 \times 3600 = 187,200\ \mathrm{m^3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p007
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 2
+  type: mcq
+  stem: คาบการเกิดซ้ำ 50 ปีของน้ำหลากหมายความว่าอย่างไร
+  choices:
+  - id: a
+    text: ในแต่ละปีมีโอกาส 1/50 หรือประมาณ 2% ที่จะเกิดน้ำหลากขนาดนี้หรือใหญ่กว่า
+    correct: true
+  - id: b
+    text: จะเกิดขึ้นทุก 50 ปีพอดีอย่างแน่นอน
+    feedback: คาบเป็นค่าเฉลี่ยทางสถิติ อาจเกิดสองครั้งติดกันหรือไม่เกิดเลยในช่วงหนึ่งก็ได้
+  - id: c
+    text: จะไม่เกิดขึ้นเลยในช่วง 50 ปี
+    feedback: การไม่เกิดในช่วงหนึ่งไม่ได้หมายความว่าความเสี่ยงในปีถัดไปเป็นศูนย์
+  - id: d
+    text: เป็นน้ำหลากที่ใหญ่ที่สุดที่เคยบันทึกไว้ในประวัติ
+    feedback: คาบบอกความน่าจะเป็น ไม่ได้บอกว่าเป็นค่าสูงสุดที่เคยมี
+  hints:
+  - คาบเป็นส่วนกลับของความน่าจะเป็นต่อปี
+  - คิดว่า 50 ปีเป็นค่าเฉลี่ยระยะยาว ไม่ใช่กำหนดการเกิดที่แน่นอน
+  solution: คาบการเกิดซ้ำ $T$ ให้ความน่าจะเป็นต่อปีเป็น $1/T$ จึงเป็น 2% ต่อปี และการเกิดในปีใดปีหนึ่งไม่ได้ขึ้นกับปีก่อน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p008
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 3
+  type: numeric
+  stem: สนามจอดรถของโรงเรียนขนาด $1.2$ เฮกตาร์ ($0.012\ \mathrm{km^2}$) มีค่า $C = 0.9$ เมื่อฝนหนัก $i = 65\ \mathrm{mm/h}$ อัตราการไหลของน้ำฝนเข้าท่อระบายเป็นกี่ $\mathrm{m^3/s}$ (ทศนิยม 3 ตำแหน่ง)
+  answer:
+    value: 0.195
+    tolerance: 0.002
+    unit: m3/s
+  misconceptions:
+  - match: 0.702
+    feedback: ลืมหารด้วย 3.6
+  - match: 0.0195
+    feedback: เลื่อนทศนิยมของพื้นที่ผิดไปหนึ่งตำแหน่ง
+  hints:
+  - ใช้ $Q = CiA/3.6$ โดย $A$ เป็น km²
+  - คำนวณ $0.9 \times 65 \times 0.012$ แล้วหารด้วย 3.6
+  solution: $Q = \dfrac{0.9 \times 65 \times 0.012}{3.6} = \dfrac{0.702}{3.6} = 0.195\ \mathrm{m^3/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p009
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 3
+  type: numeric
+  stem: โครงการทางระบายน้ำออกแบบด้วยน้ำหลากคาบ 50 ปี อายุโครงการ 20 ปี ความน่าจะเป็นที่น้ำหลากขนาดนี้จะเกิดอย่างน้อยหนึ่งครั้งในช่วง 20 ปีเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 33.2
+    tolerance: 0.332
+    unit: '%'
+  misconceptions:
+  - match: 40.0
+    feedback: บวกความน่าจะเป็นรายปีเชิงเส้น $20 \times 2\%$ ซึ่งเกินจริง
+  - match: 2.0
+    feedback: ตอบเฉพาะความน่าจะเป็นต่อปี ไม่ได้คิดตลอดอายุโครงการ
+  hints:
+  - ความน่าจะเป็นที่ไม่เกิดในหนึ่งปีคือ $1 - 1/50$
+  - ไม่เกิดตลอด 20 ปี คือยกกำลัง 20 ของค่านั้น แล้วหักจาก 1
+  solution: $P = 1 - (1 - \tfrac{1}{50})^{20} = 1 - 0.98^{20} \approx 0.3324 = 33.2\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p010
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 3
+  type: numeric
+  stem: จากสถิติน้ำหลาก 30 ปี แถวข้อมูลที่ 5 เรียงจากมากไปน้อย ใช้ตำแหน่งการเรียงแบบ Weibull $T = (n+1)/m$ คาบการเกิดซ้ำของค่านี้เป็นกี่ปี (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 6.2
+    tolerance: 0.05
+    unit: ปี
+  misconceptions:
+  - match: 6.0
+    feedback: ใช้ $n$ แทน $n+1$ ในสูตร Weibull
+  hints:
+  - ใช้ $n = 30$ และ $m = 5$
+  - ค่า Weibull ใช้ $n + 1$ ไม่ใช่ $n$
+  solution: $T = \dfrac{30 + 1}{5} = 6.2\ \mathrm{ปี}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p011
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 3
+  type: expression
+  stem: จากสมการ $Q = \dfrac{CiA}{3.6}$ จงจัดรูปหาค่าสัมประสิทธิ์ $C$ ในรูปของ $Q$, $i$ และ $A$ (ใช้ $i$ เป็น mm/h, $A$ เป็น km², $Q$ เป็น m³/s)
+  answer:
+    latex: \frac{3.6\cdot Q}{i\cdot A}
+    variables:
+    - Q
+    - i
+    - A
+  prefix: C =
+  misconceptions:
+  - match: \frac{Q}{3.6\cdot i\cdot A}
+    feedback: ย้าย 3.6 มาอยู่ในตัวส่วนผิดข้าง
+  - match: 3.6\cdot Q\cdot i\cdot A
+    feedback: คูณแทนหาร
+  hints:
+  - คูณ $3.6$ ทั้งสองข้างก่อน
+  - แล้วหารด้วย $i$ และ $A$
+  solution: คูณ $3.6$ ได้ $3.6Q = CiA$ จึงได้ $C = \dfrac{3.6Q}{iA}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p012
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 4
+  type: numeric
+  stem: หมู่บ้านลุ่มพื้นที่ $0.6\ \mathrm{km^2}$ มีพื้นผิวผสมคอนกรีตกับดิน จึงใช้ค่า $C = 0.55$ เมื่อฝนหนัก $i = 85\ \mathrm{mm/h}$ อัตราการไหลสูงสุดเป็นกี่ $\mathrm{m^3/s}$ (ทศนิยม 2 ตำแหน่ง) (วิธีเหตุผลเหมาะกับพื้นที่ไม่กี่ร้อยเฮกตาร์)
+  answer:
+    value: 7.79
+    tolerance: 0.0779
+    unit: m3/s
+  misconceptions:
+  - match: 12.75
+    feedback: ใช้ค่า $C$ ของคอนกรีตล้วน 0.9 แทนค่าของพื้นที่ผสม
+  - match: 28.05
+    feedback: ลืมหารด้วย 3.6
+  hints:
+  - ใช้ $Q = CiA/3.6$ ตามปกติ
+  - ค่า $C$ ของพื้นที่คือ 0.55 ไม่ใช่ค่าของคอนกรีตล้วน
+  solution: $Q = \dfrac{0.55 \times 85 \times 0.6}{3.6} = 7.79\ \mathrm{m^3/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p013
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 4
+  type: numeric
+  stem: พื้นที่รับน้ำฝนประกอบด้วยหลังคาและถนน $0.3\ \mathrm{km^2}$ ที่มี $C = 0.80$ และสวนกับดิน $0.5\ \mathrm{km^2}$ ที่มี $C = 0.35$ ค่าสัมประสิทธิ์น้ำท่าเฉลี่ยถ่วงน้ำหนักตามพื้นที่เป็นเท่าไร (ทศนิยม 2 ตำแหน่ง ไม่มีหน่วย)
+  answer:
+    value: 0.52
+    tolerance: 0.01
+    unit: ''
+  misconceptions:
+  - match: 0.575
+    feedback: หาค่าเฉลี่ยของ $C$ สองค่าตรง ๆ โดยไม่คิดพื้นที่
+  hints:
+  - น้ำหนักของแต่ละส่วนคือ $A_i / A_{รวม}$
+  - คูณ $C$ ของแต่ละส่วนด้วยพื้นที่ แล้วหารด้วยพื้นที่รวม
+  solution: $C = \dfrac{0.3(0.80) + 0.5(0.35)}{0.8} = \dfrac{0.415}{0.8} \approx 0.519$, ปัดได้ 0.52
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p014
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 4
+  type: numeric
+  stem: ค่าความน่าจะเป็นที่น้ำหลากขนาดหนึ่งจะถูกเกินในปีใดปีหนึ่ง เมื่อข้อมูล $n = 40$ ปี และค่านี้อยู่ลำดับที่ $m = 3$ ตามวิธี Weibull $p = m/(n+1)$ คิดเป็นกี่เปอร์เซ็นต์ (ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 7.32
+    tolerance: 0.05
+    unit: '%'
+  misconceptions:
+  - match: 7.5
+    feedback: ใช้ $n$ แทน $n+1$ ในตัวส่วน
+  hints:
+  - ใช้ $n + 1 = 41$ ในตัวส่วน
+  - คูณผลลัพธ์ด้วย 100 เพื่อเป็นเปอร์เซ็นต์
+  solution: $p = \dfrac{3}{41} \approx 0.0732 = 7.32\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p015
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 4
+  type: numeric
+  stem: จากโจทย์ก่อนหน้า ปริมาตรน้ำท่าเหนือน้ำฐานของเหตุการณ์หนึ่งคือ $187{,}200\ \mathrm{m^3}$ พื้นที่รับน้ำของลุ่มน้ำนี้คือ $0.9\ \mathrm{km^2}$ ความลึกของน้ำท่าเฉลี่ยทั่วพื้นที่เป็นกี่มิลลิเมตร (ตอบหน่วย mm)
+  answer:
+    value: 208.0
+    tolerance: 2.08
+    unit: mm
+  misconceptions:
+  - match: 0.208
+    feedback: ลืมแปลงเมตรเป็นมิลลิเมตร
+  hints:
+  - ความลึก $=$ ปริมาตร $\div$ พื้นที่ โดยใช้หน่วยเดียวกัน
+  - แปลง $0.9\ \mathrm{km^2}$ เป็น $900\,000\ \mathrm{m^2}$ ก่อน
+  solution: $d = 187{,}200 \div 900{,}000 = 0.208\ \mathrm{m} = 208\ \mathrm{mm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p016
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 5
+  type: numeric
+  stem: ไฮโดรกราฟบันทึกไม่สม่ำเสมอ ที่เวลา $0, 1, 2, 4$ ชั่วโมง อัตราการไหลเป็น $0, 4, 6, 2\ \mathrm{m^3/s}$ ปริมาตรน้ำท่าโดยกฎสี่เหลี่ยมคางหมูเป็นกี่ m³ (ตอบเป็นจำนวนเต็ม)
+  answer:
+    value: 54000
+    tolerance: 1
+    unit: m3
+  misconceptions:
+  - match: 39600
+    feedback: ใช้ความกว้างช่วงสุดท้ายเป็น 1 ชั่วโมง ทั้งที่จริงยาว 2 ชั่วโมง
+  hints:
+  - แบ่งเป็นสามช่วง คือ $0$–$1$, $1$–$2$ และ $2$–$4$ ชั่วโมง
+  - ช่วงสุดท้ายยาว 2 ชั่วโมง ต้องคูณด้วย 2 ไม่ใช่ 1
+  solution: $\tfrac12(0+4)(1) + \tfrac12(4+6)(1) + \tfrac12(6+2)(2) = 2 + 5 + 8 = 15\ \mathrm{m^3/s\cdot h}$ จึงได้ $15 \times 3600 = 54,000\ \mathrm{m^3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p017
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 5
+  type: numeric
+  stem: ท่อระบายออกแบบด้วยน้ำหลากคาบ 100 ปี ถ้าอายุโครงการ 30 ปี ความน่าจะเป็นที่น้ำหลากนี้จะถูกเกินอย่างน้อยหนึ่งครั้งในช่วง 30 ปีเป็นกี่เปอร์เซ็นต์ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 26.0
+    tolerance: 0.26
+    unit: '%'
+  misconceptions:
+  - match: 30.0
+    feedback: บวกความน่าจะเป็นรายปีเชิงเส้น $30 \times 1\%$
+  hints:
+  - ความน่าจะเป็นต่อปีคือ $1/100$
+  - ไม่เกินในทุกปีของช่วง 30 ปี คือยกกำลัง 30 ของ $0.99$
+  solution: $P = 1 - 0.99^{30} \approx 0.2603 = 26.0\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p018
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 5
+  type: mcq
+  stem: ข้อใดเป็นข้อสมมติหรือข้อจำกัดที่ถูกต้องของวิธีเหตุผล $Q = CiA/3.6$ (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: เหมาะกับลุ่มน้ำขนาดเล็ก เช่น ไม่กี่ร้อยเฮกตาร์ที่ระยะเวลาการไหลสั้น
+    correct: true
+  - id: b
+    text: ถือว่าความเข้มฝนสม่ำเสมอในช่วงเวลาที่ทั้งพื้นที่มีส่วนในการไหลออกพร้อมกัน
+    correct: true
+  - id: c
+    text: ใช้ได้กับลุ่มน้ำหลายร้อย km² โดยไม่ต้องปรับเปลี่ยนวิธี
+    feedback: ลุ่มน้ำขนาดใหญ่มีการหน่วงและการกระจายของน้ำท่า จึงต้องใช้วิธีอื่น
+  - id: d
+    text: คำนวณการเก็บน้ำในลำน้ำและการหน่วงของเขื่อนไว้ให้อัตโนมัติ
+    feedback: วิธีนี้ไม่ได้คิดการเก็บน้ำในลำน้ำ
+  multiple: true
+  hints:
+  - คิดว่าวิธีนี้เป็นสมการสมดุลแบบง่าย ใช้กับพื้นที่ไหนได้
+  - พิจารณาว่าความเข้มฝนกับเวลาการไหลถูกสมมติไว้อย่างไร
+  solution: ข้อ a และ b ถูก วิธีเหตุผลเป็นแบบจำลองที่เรียบง่ายสำหรับพื้นที่เล็ก เพราะไม่คิดการเก็บน้ำและการหน่วงในลำน้ำ จึงไม่เหมาะกับลุ่มน้ำขนาดใหญ่
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.water.engineering-hydrology.p019
+  topics:
+  - engineering.water.engineering-hydrology
+  difficulty: 5
+  type: text
+  stem: วิธีหาฝนเฉลี่ยของพื้นที่ที่ให้น้ำหนักแต่ละสถานีตามพื้นที่โพลีกอนรอบสถานี ตั้งชื่อตามนักอุตุนิยมวิทยาชาวอเมริกัน เรียกว่าอะไร (ตอบเป็นภาษาไทยหรืออังกฤษ)
+  accepted:
+  - ทีสเซน
+  - Thiessen
+  misconceptions:
+  - match: เลขคณิต
+    feedback: ค่าเฉลี่ยเลขคณิตไม่คิดพื้นที่ เป็นคนละวิธีกับโพลีกอนทีสเซน
+  hints:
+  - ชื่อนี้มาจากโพลีกอนที่แบ่งพื้นที่รอบสถานีวัดฝน
+  - ชื่อภาษาอังกฤษขึ้นต้นด้วย T
+  solution: วิธีนี้เรียกว่า ทีสเซน (Thiessen polygon) ทำให้ค่าฝนของแต่ละสถานีมีน้ำหนักตามพื้นที่ที่ตัวเองดูแล
+  license: CC-BY-SA-4.0
+  ai_assisted: true

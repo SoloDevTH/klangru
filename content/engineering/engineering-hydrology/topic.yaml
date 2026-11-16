@@ -1,0 +1,118 @@
+id: engineering.water.engineering-hydrology
+subject: engineering
+title:
+  th: อุทกวิทยาวิศวกรรม
+  en: Engineering hydrology
+summary: คำนวณสมดุลน้ำของลุ่มน้ำ ฝนเฉลี่ยของพื้นที่ ไฮโดรกราฟ น้ำท่าด้วยวิธีเหตุผล และคาบการเกิดซ้ำของน้ำหลาก
+difficulty: 7.5
+minutes: 45
+prerequisites:
+- earthscience.hydrosphere.water-resources
+- math.calculus.definite-integral
+encompasses:
+- id: earthscience.hydrosphere.water-resources
+  weight: 0.4
+- id: math.calculus.definite-integral
+  weight: 0.2
+curriculum_tags: []
+references:
+- title: Hydrology
+  url: https://en.wikipedia.org/wiki/Hydrology
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Rational formula
+  url: https://en.wikipedia.org/wiki/Rational_formula
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Thiessen polygon
+  url: https://en.wikipedia.org/wiki/Thiessen_polygon
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: อุทกวิทยา
+  url: https://th.wikipedia.org/wiki/อุทกวิทยา
+  source: wikipedia-th
+  lang: th
+  license: CC-BY-SA-4.0
+lessons:
+- type: figure
+  src: water-balance.svg
+  alt: แผนผังสมดุลน้ำของลุ่มน้ำ มีกล่องลุ่มน้ำอยู่ตรงกลาง ลูกศรฝนเข้าจากด้านบน ลูกศรน้ำท่าออกไปทางขวา ลูกศรน้ำใต้ดินออกไปทางซ้าย และการระเหยออกจากลุ่มน้ำขึ้นด้านบน
+  caption: ลุ่มน้ำเป็นหน่วยพื้นฐานของอุทกวิทยา น้ำที่เข้ามาต้องไปอยู่ในรูปอื่นหรือถูกกักไว้
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: ฝนเฉลี่ยของพื้นที่จากสถานีสามแห่ง
+  problem: สถานี A, B และ C มีพื้นที่โพลีกอนทีสเซน $25$, $45$ และ $30\ \mathrm{km^2}$ และฝนรายวันที่วัดได้ $60$, $35$ และ $80\ \mathrm{mm}$ ฝนเฉลี่ยของลุ่มน้ำนี้เป็นกี่มิลลิเมตร
+  steps:
+  - text: พื้นที่รวม $= 25 + 45 + 30 = 100\ \mathrm{km^2}$
+    why: ตัวหารต้องเป็นพื้นที่รวมของทั้งลุ่มน้ำ
+  - text: ผลรวมถ่วงน้ำหนัก $= 25(60) + 45(35) + 30(80) = 1500 + 1575 + 2400 = 5475$
+    why: แต่ละสถานีมีน้ำหนักเป็นพื้นที่ของตัวเอง
+  - text: หารด้วยพื้นที่รวม $5475 / 100 = 54.75\ \mathrm{mm}$
+    why: ผลลัพธ์เป็นความลึกฝนเฉลี่ยทั่วพื้นที่ จึงมีหน่วย mm
+  answer: ฝนเฉลี่ยของลุ่มน้ำประมาณ 54.75 mm
+- type: figure
+  src: hydrograph-direct-runoff.svg
+  alt: กราฟไฮโดรกราฟ แกนนอนเป็นเวลา 0 ถึง 8 ชั่วโมง แกนตั้งเป็นอัตราการไหลถึง 20 m³/s เส้นสีน้ำเงินขึ้นถึงยอดแล้วลดลง มีเส้นประสีแดงแสดงน้ำฐาน และพื้นที่ระหว่างเส้นทั้งสองทำเป็นสีฟ้าอ่อน
+  caption: พื้นที่สีฟ้าอ่อนคือปริมาตรน้ำท่าที่สูงกว่าน้ำฐาน ซึ่งหาได้จากการอินทิเกรตเชิงตัวเลข
+- type: check
+  problem: engineering.water.engineering-hydrology.p007
+  prompt: คิดก่อนว่าคาบ 50 ปีกับการเกิดซ้ำทุก 50 ปีต่างกันอย่างไร
+- type: worked-example
+  title: หาคาบการเกิดซ้ำของน้ำหลากจากค่า Weibull
+  problem: ข้อมูลน้ำหลากรายปี 25 ปี ค่าที่ลำดับ $m = 2$ เมื่อเรียงจากมากไปน้อย คาบการเกิดซ้ำของค่านี้เป็นกี่ปี
+  steps:
+  - text: ใช้สูตร $T = (n + 1)/m$ โดย $n = 25$ และ $m = 2$
+    why: ค่า Weibull เติม 1 ในตัวเศษเพื่อให้เรียงอันดับได้โดยไม่ต้องใช้ค่าสูงสุดที่เป็นขอบ
+  - text: $T = 26 / 2 = 13$
+    why: ค่าที่สองจากบนของข้อมูล 25 ปี มีคาบประมาณหนึ่งในสิบสามปี
+  answer: คาบการเกิดซ้ำประมาณ 13 ปี
+- type: interactive
+  title: ความเสี่ยงเกิดอย่างน้อยหนึ่งครั้งตามคาบและอายุโครงการ
+  caption: กราฟแสดงความน่าจะเป็นอย่างน้อยหนึ่งครั้งเมื่อคาบการเกิดซ้ำ $T$ (แกนนอน) และอายุโครงการ $n$ เปลี่ยนไป สังเกตว่าเมื่อ $n$ มากขึ้น ความเสี่ยงสูงขึ้นเสมอ
+  widget:
+    kind: function-plot
+    functions:
+    - 1-(1-\frac{1}{x})^{n}
+    sliders:
+    - name: n
+      min: 1
+      max: 100
+      step: 1
+      value: 20
+      label: อายุโครงการ (ปี)
+    x:
+    - 1
+    - 100
+    y:
+    - 0
+    - 1
+glossary:
+- term: ลุ่มน้ำ
+  definition: พื้นที่ที่น้ำฝนไหลลงสู่จุดเดียวกัน เช่น จุดปลายของลำน้ำหรืออ่างเก็บน้ำ
+- term: น้ำท่า
+  definition: น้ำที่ไหลบนผิวดินหรือในลำน้ำสู่จุดออกของลุ่มน้ำ
+- term: ไฮโดรกราฟ
+  definition: กราฟแสดงอัตราการไหลของลำน้ำเทียบกับเวลาหลังเกิดฝน
+- term: คาบการเกิดซ้ำ (return period)
+  definition: ค่าเฉลี่ยทางสถิติของระยะเวลาระหว่างเหตุการณ์ที่มีขนาดเท่ากันหรือใหญ่กว่า เท่ากับ 1 หารด้วยความน่าจะเป็นต่อปี
+- term: โพลีกอนทีสเซน
+  definition: การแบ่งพื้นที่ตามสถานีวัดฝนที่ใกล้ที่สุด แล้วใช้พื้นที่ของแต่ละส่วนเป็นน้ำหนักในการหาฝนเฉลี่ย
+flashcards:
+- front: สมการสมดุลน้ำของลุ่มน้ำในช่วงเวลาหนึ่ง
+  back: $P = Q + ET + \Delta S$ (รวมน้ำใต้ดินตามบริบท)
+- front: วิธีเหตุผล Q จากความเข้มฝนที่ใช้หน่วยทั่วไป
+  back: $Q = CiA/3.6$ โดย $i$ เป็น mm/h, $A$ เป็น km², $Q$ เป็น m³/s
+- front: คาบการเกิดซ้ำ 100 ปีหมายความว่าอย่างไร
+  back: ความน่าจะเป็นต่อปีคือ 1% แต่ไม่ได้หมายความว่าเกิดทุก 100 ปีพอดี
+- front: สูตรตำแหน่ง Weibull ของน้ำหลาก
+  back: $T = (n+1)/m$ โดย $m$ คือลำดับจากค่ามากไปน้อย
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors:
+- ทีมคลังรู้
+ai_assisted: true

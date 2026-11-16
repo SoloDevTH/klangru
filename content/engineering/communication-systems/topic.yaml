@@ -1,0 +1,120 @@
+id: engineering.electrical.communication-systems
+subject: engineering
+title:
+  th: 'หลักการระบบสื่อสาร: การมอดูเลต แบนด์วิดท์ และการชักตัวอย่าง'
+  en: 'Communication systems: modulation, bandwidth and sampling'
+summary: อธิบายองค์ประกอบระบบสื่อสาร การมอดูเลต AM และดิจิทัล แบนด์วิดท์ การชักตัวอย่างและแอลิแอซ เดซิเบล และความจุของแชนนอน
+difficulty: 8
+minutes: 45
+prerequisites:
+- physics.waves.electromagnetic-waves
+- physics.waves.digital-signals
+- math.functions.trig-functions
+- engineering.circuits.ac-phasors
+encompasses:
+- id: math.functions.trig-functions
+  weight: 0.3
+- id: physics.waves.electromagnetic-waves
+  weight: 0.3
+- id: engineering.circuits.ac-phasors
+  weight: 0.2
+curriculum_tags: []
+references:
+- title: Modulation
+  url: https://en.wikipedia.org/wiki/Modulation
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Amplitude modulation
+  url: https://en.wikipedia.org/wiki/Amplitude_modulation
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Sampling (signal processing)
+  url: https://en.wikipedia.org/wiki/Sampling_(signal_processing)
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Shannon–Hartley theorem
+  url: https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+lessons:
+- type: figure
+  src: comm-system.svg
+  alt: แผนผังระบบสื่อสารจากซ้ายไปขวา เริ่มด้วยแหล่งข่าวสาร ตามด้วยตัวส่งที่มอดูเลต ช่องสัญญาณที่มีสัญญาณรบกวน และตัวรับที่ดีมอดูเลต มีลูกศรระหว่างกล่อง
+  caption: สัญญาณรบกวนเข้ามาในช่องสัญญาณ ตัวรับจึงต้องแยกข่าวสารออกจากสิ่งที่ไม่ต้องการ
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: am-spectrum.svg
+  alt: กราฟสเปกตรัมแกนนอนเป็นความถี่ 90 ถึง 110 kHz มีเส้นสามเส้นที่ 95, 100 และ 105 kHz โดยเส้นตรงกลางสูงที่สุดแทนพาหะ เส้นข้างสองเส้นต่ำกว่าแทนแถบข้าง และมีเส้นแนวนอนแสดงแบนด์วิดท์ระหว่างเส้นนอกสุด
+  caption: การมอดูเลต AM ทำให้เกิดแถบข้างที่ห่างจากพาหะเท่ากับความถี่ข่าวสาร แบนด์วิดท์จึงเป็นสองเท่าของความถี่ข่าวสาร
+- type: worked-example
+  title: แอลิแอซของสัญญาณ 7 kHz ที่ชักตัวอย่าง 8 kHz
+  problem: สัญญาณโทน 7 kHz ถูกชักตัวอย่างที่ 8 kHz โทนที่ปรากฏหลังชักตัวอย่างอยู่ที่ความถี่เท่าไร
+  steps:
+  - text: ความถี่ชักตัวอย่าง $f_s = 8$ kHz น้อยกว่าสองเท่าของ 7 kHz คือ 14 kHz จึงเกิดแอลิแอซ
+    why: ไนควิสต์ต้องการ $f_s \ge 2 f_{max}$ แต่ที่นี่ไม่เป็นไปตามนั้น
+  - text: ความถี่ที่ปรากฏ $= |f_s - f| = |8 - 7| = 1$ kHz
+    why: สัญญาณที่ชักตัวอย่างแล้วไม่สามารถแยกได้ว่าเป็น 1 kHz หรือ 7 kHz
+  answer: ปรากฏเป็นโทนปลอม 1 kHz
+- type: check
+  problem: engineering.electrical.communication-systems.p002
+  prompt: คิดก่อนว่าต้องชักตัวอย่างกี่เท่าของความถี่สูงสุด
+- type: worked-example
+  title: งบประมาณกำลังของลิงก์ไร้สาย
+  problem: กำลังส่ง 20 dBm อัตราขยายส่ง 10 dBi อัตราขยายรับ 2 dBi สูญเสียเส้นทาง 100 dB และสูญเสียอื่น 3 dB กำลังที่ตัวรับเป็นกี่ dBm
+  steps:
+  - text: รวมอัตราขยาย $20 + 10 + 2 = 32$ dB
+    why: ค่าในหน่วย dB บวกกันได้โดยตรง
+  - text: หักสูญเสีย $32 - 100 - 3 = -71$
+    why: สูญเสียเป็นค่าที่ลดกำลังจึงต้องลบ
+  answer: กำลังที่ตัวรับประมาณ -71 dBm
+- type: interactive
+  title: ความจุของแชนนอนเปลี่ยนตาม SNR
+  caption: เส้นโค้งแสดงความจุ C = B log2(1 + S/N) เมื่อแบนด์วิดท์ B คงที่ เลื่อนแถบเพื่อเปลี่ยนแบนด์วิดท์ สังเกตว่าความจุเพิ่มตามลอการิทึมของ SNR ไม่ใช่เชิงเส้น
+  widget:
+    kind: function-plot
+    functions:
+    - s\cdot\log_2(1+x)
+    sliders:
+    - name: s
+      min: 1
+      max: 10
+      step: 1
+      value: 3
+      label: แบนด์วิดท์ (kHz)
+    x:
+    - 0
+    - 1000
+    y:
+    - 0
+    - 100
+glossary:
+- term: แบนด์วิดท์
+  definition: ช่วงความถี่ที่สัญญาณใช้งาน วัดเป็นความต่างระหว่างความถี่สูงสุดกับต่ำสุดที่มีพลังงานสำคัญ
+- term: มอดูเลต
+  definition: การเปลี่ยนแปลงสมบัติของพาหะ เช่น แอมพลิจูด ความถี่ หรือเฟส ตามข่าวสาร
+- term: แอลิแอซซิง
+  definition: ความผิดพลาดที่ความถี่สูงกว่าครึ่งหนึ่งของความถี่ชักตัวอย่างกลับปรากฏเป็นความถี่ต่ำปลอม
+- term: เดซิเบล (dB)
+  definition: หน่วยลอการิทึมของอัตราส่วนกำลังหรือแรงดันเทียบกับค่าอ้างอิง
+- term: ความจุของแชนนอน
+  definition: อัตราข้อมูลสูงสุดที่ส่งได้โดยไม่มีข้อผิดพลาดในช่องสัญญาณที่มีสัญญาณรบกวนแบบเกาส์เซียน
+flashcards:
+- front: แบนด์วิดท์ของ AM ที่มีความถี่ข่าวสาร $f_m$
+  back: $2 f_m$
+- front: ความถี่ชักตัวอย่างขั้นต่ำของสัญญาณสูงสุด $f_{max}$
+  back: $f_s \ge 2 f_{max}$ (ไนควิสต์)
+- front: สูตรความจุของแชนนอน
+  back: $C = B\log_2(1 + S/N)$ หน่วย bit/s
+- front: ASK, FSK, PSK เปลี่ยนสมบัติใดของพาหะ
+  back: แอมพลิจูด ความถี่ และเฟสตามลำดับ
+status: draft
+license: CC-BY-SA-4.0
+adapted_from: []
+authors:
+- ทีมคลังรู้
+ai_assisted: true

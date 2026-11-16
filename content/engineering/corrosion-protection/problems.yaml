@@ -1,0 +1,419 @@
+problems:
+- id: engineering.materials.corrosion-protection.p001
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 1
+  type: numeric
+  stem: กระแส $2\ \mathrm{A}$ ไหลในเซลล์ที่เหล็กละลายเป็น Fe²⁺ (n = 2, $M = 55.85\ \mathrm{g/mol}$) เป็นเวลา 1 ชั่วโมง มวลเหล็กที่สูญเสียไปเป็นกี่กรัม (ทศนิยม 2 ตำแหน่ง ตอบหน่วย g)
+  answer:
+    value: 2.08
+    tolerance: 0.0208
+    unit: g
+  misconceptions:
+  - match: 4.17
+    feedback: ใช้ $n = 1$ แทน $n = 2$ ของ Fe²⁺
+  - match: 0.0006
+    feedback: ใช้ 1 วินาทีแทน 1 ชั่วโมง
+  hints:
+  - ใช้กฎของฟาราเดย์ $m = \dfrac{ItM}{nF}$
+  - แปลงเวลาเป็นวินาทีก่อน 1 ชั่วโมง $= 3600$ s
+  - ค่า $F = 96485\ \mathrm{C/mol}$
+  solution: $m = \dfrac{2 \times 3600 \times 55.85}{2 \times 96485} \approx 2.08\ \mathrm{g}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p002
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 1
+  type: mcq
+  stem: เหล็กต่อกับสังกะสีในน้ำเกลือ โลหะใดจะถูกกัดกร่อนก่อนและทำหน้าที่เป็นแอโนด
+  choices:
+  - id: a
+    text: สังกะสี
+    correct: true
+  - id: b
+    text: เหล็ก
+    feedback: สังกะสีอยู่ทางขั้วที่ไวต่อการละลายมากกว่าในอนุกรมกัลวานิก จึงถูกกัดก่อน
+  - id: c
+    text: ทั้งสองไม่ถูกกัดกร่อน
+    feedback: ในวงจรที่มีน้ำเกลือเชื่อมกัน จะเกิดการกัดกร่อนที่โลหะที่ไวกว่าเสมอ
+  - id: d
+    text: ทั้งสองเป็นแคโทดพร้อมกัน
+    feedback: ในเซลล์ต้องมีแอโนดหนึ่งจุดที่ละลายและแคโทดหนึ่งจุดที่รับอิเล็กตรอนเสมอ
+  hints:
+  - โลหะชนิดใดละลายเป็นไอออนได้ง่ายกว่า
+  - คิดถึงการป้องกันแบบเสียสละ
+  solution: สังกะสีอยู่ทางขั้วที่ละลายได้ง่ายกว่าเหล็ก จึงทำหน้าที่เป็นแอโนดและถูกกัดก่อน ทำให้เหล็กได้รับการป้องกัน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p003
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 1
+  type: text
+  stem: ที่แอโนดของเหล็กในน้ำเกลือ เหล็กละลายเป็นไอออนชนิดใด (ตอบสัญลักษณ์ของไอออน)
+  accepted:
+  - Fe2+
+  - Fe²⁺
+  - Fe^2+
+  misconceptions:
+  - match: Fe3+
+    feedback: Fe³⁺ เกิดในขั้นต่อมาเมื่อ Fe²⁺ ถูกออกซิไดส์ ไม่ใช่ไอออนที่เกิดจากแอโนดโดยตรง
+  hints:
+  - ประจุบวกของไอออนเป็น 2
+  - เหล็กมีเลขออกซิเดชันของสารรีดิวซ์ที่ละลายครั้งแรกเป็น +2
+  solution: ที่แอโนดเหล็กสูญเสียอิเล็กตรอนเป็น Fe²⁺ ส่วน Fe³⁺ เกิดภายหลังในสนิมเมื่อออกซิเจนทำปฏิกิริยาต่อ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p004
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 2
+  type: numeric
+  stem: ท่อเหล็กใต้ดินของระบบประปาแห่งหนึ่งมีกระแสการกัดกร่อน $i = 1\ \mu\mathrm{A/cm^2}$ (ค่าตัวอย่างเพื่อการเรียนรู้) เหล็กถูกกัดกร่อนโดยสม่ำเสมอกี่ไมโครเมตรต่อปี (กำหนด $\rho = 7870\ \mathrm{kg/m^3}$ และ $n = 2$, ตอบทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 11.6
+    tolerance: 0.116
+    unit: µm/ปี
+  misconceptions:
+  - match: 23.2
+    feedback: ใช้ $n = 1$ ทำให้ได้อัตราเป็นสองเท่า
+  - match: 0.0116
+    feedback: ตอบเป็น mm/ปี แต่ค่าจริงเป็น µm/ปี ซึ่งเล็กกว่าพันเท่า
+  hints:
+  - แปลงกระแสเป็น A/m² แล้วหามวลที่หายต่อตารางเมตรต่อปี
+  - ใช้ $d = m/(\rho A)$ เพื่อเปลี่ยนมวลเป็นความลึก
+  - เปลี่ยนเมตรเป็นไมโครเมตรโดยคูณ $10^6$
+  solution: $i = 10^{-2}\ \mathrm{A/m^2}$, มวลต่อปี $= iMt/(nF)$, ความลึก $= 11.6\ \mu\mathrm{m/ปี}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p005
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 2
+  type: numeric
+  stem: แอโนดสังกะสี 20 kg (ความจุทางทฤษฎี 780 Ah/kg, ประสิทธิภาพ 90%) ป้องกันท่อที่มีกระแสป้องกันเฉลี่ย 0.05 A ได้นานกี่ปี (ค่าตัวอย่าง ตอบทศนิยม 1 ตำแหน่ง หน่วย ปี)
+  answer:
+    value: 32.1
+    tolerance: 0.321
+    unit: ปี
+  misconceptions:
+  - match: 35.6
+    feedback: ลืมประสิทธิภาพ 90% ทำให้เกินจริง
+  - match: 16.0
+    feedback: ใช้กระแส 0.1 A แทน 0.05 A
+  hints:
+  - ประจุที่มีได้ $= 20 \times 780 \times 0.90$ Ah
+  - ชั่วโมงต่อปี $= 8760$ ชั่วโมง
+  - เวลา $=$ ประจุ $\div$ (กระแส $\times$ ชั่วโมงต่อปี)
+  solution: $t = \dfrac{20 \times 780 \times 0.90}{0.05 \times 8760} = \dfrac{14040}{438} \approx 32.1\ \mathrm{ปี}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p006
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 2
+  type: mcq
+  stem: การชุบสังกะสีให้การป้องกันเหล็กแบบใด เมื่อผิวเคลือบมีรอยขีดข่วนลึกถึงเนื้อเหล็ก
+  choices:
+  - id: a
+    text: ป้องกันแบบเสียสละ คือสังกะสีบริเวณรอยถูกกัดแทนเหล็ก
+    correct: true
+  - id: b
+    text: ป้องกันแบบกั้นอย่างเดียว ไม่มีผลเมื่อผิวมีรอย
+    feedback: สังกะสีทำหน้าที่เป็นแอโนดให้ป้องกันได้แม้มีรอยขีดข่วนเล็กน้อย
+  - id: c
+    text: ไม่มีการป้องกันเลยเพราะมีรอย
+    feedback: สังกะสีทำให้เหล็กบริเวณรอยได้รับการป้องกันแบบแคโทดิก
+  - id: d
+    text: ทำให้เหล็กแข็งขึ้นและไม่เกิดสนิม
+    feedback: การชุบสังกะสีเป็นการเคลือบผิว ไม่ได้เปลี่ยนความแข็งของเนื้อเหล็ก
+  hints:
+  - คิดว่าสังกะสีต่างจากสีอย่างไร
+  - ลองนึกว่าสังกะสีบริเวณรอยจะถูกกัดก่อนหรือเหล็ก
+  solution: การชุบสังกะสีเป็นทั้งการกั้นและการป้องกันแบบเสียสละ เมื่อมีรอยสังกะสีที่อยู่รอบ ๆ จะถูกกัดแทนเหล็ก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p007
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 2
+  type: order
+  stem: เรียงโลหะต่อไปนี้จากที่ไวต่อการละลายมากที่สุดไปน้อยที่สุดในน้ำทะเลตามค่าประมาณทั่วไป
+  items:
+  - แมกนีเซียม
+  - สังกะสี
+  - เหล็ก
+  - ทองแดง
+  hints:
+  - แมกนีเซียมอยู่ทางขั้วที่ละลายง่ายที่สุด
+  - ทองแดงอยู่ทางขั้วที่สูงกว่าเหล็ก
+  solution: 'ค่าโดยประมาณ: แมกนีเซียม สังกะสี เหล็ก ทองแดง ค่าที่แท้จริงขึ้นกับโลหะผสมและสภาพแวดล้อม จึงควรตรวจตารางในสภาวะจริงก่อนใช้งาน'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p008
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 3
+  type: numeric
+  stem: ท่อเหล็กใต้ดินมีพื้นที่รอยรั่วของสารเคลือบรวม $50\ \mathrm{m^2}$ ต้องการกระแสป้องกัน $10\ \mathrm{mA/m^2}$ ต้องจ่ายกระแสรวมกี่แอมแปร์ (ตอบหน่วย A)
+  answer:
+    value: 0.5
+    tolerance: 0.01
+    unit: A
+  misconceptions:
+  - match: 500
+    feedback: ไม่แปลง mA เป็น A
+  - match: 0.005
+    feedback: หารแทนคูณด้วยพื้นที่
+  hints:
+  - คูณพื้นที่ด้วยความหนาแน่นกระแสได้หน่วย mA
+  - แปลง mA เป็น A โดยหาร 1000
+  solution: $I = 50 \times 10\ \mathrm{mA} = 500\ \mathrm{mA} = 0.50\ \mathrm{A}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p009
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 3
+  type: numeric
+  stem: ระบบแอโนดเสียสละต้องป้องกันท่อเป็นเวลา 20 ปี ด้วยกระแสเฉลี่ย $0.5\ \mathrm{A}$ แอโนดสังกะสีแต่ละชิ้นหนัก 25 kg (ความจุ 780 Ah/kg ประสิทธิภาพ 90%) ต้องใช้แอโนดอย่างน้อยกี่ชิ้น (ตอบเป็นจำนวนเต็ม)
+  answer:
+    value: 5
+    tolerance: 0
+    unit: ชิ้น
+  misconceptions:
+  - match: 4
+    feedback: ปัดลงแทนการปัดขึ้น ทำให้ไม่พอ 20 ปี
+  - match: 1
+    feedback: คิดเพียง 1 ปีแทน 20 ปี
+  hints:
+  - 'หามวลสังกะสีที่ต้องใช้ก่อน: $m = It/(C\eta)$ โดย $t$ เป็นชั่วโมง'
+  - แล้วหารด้วยมวลต่อชิ้นและปัดขึ้น
+  solution: $m = \dfrac{0.5 \times 20 \times 8760}{780 \times 0.90} \approx 124.8\ \mathrm{kg}$ แล้ว $\lceil 124.8/25 \rceil = 5$ ชิ้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p010
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 3
+  type: expression
+  stem: จากกฎของฟาราเดย์ $m = \dfrac{I\,t\,M}{n\,F}$ จงจัดรูปหาเวลา $t$ ในรูปของ $m$, $n$, $F$, $I$ และ $M$
+  answer:
+    latex: \frac{m\cdot n\cdot F}{I\cdot M}
+    variables:
+    - m
+    - n
+    - F
+    - I
+    - M
+  prefix: t =
+  misconceptions:
+  - match: \frac{m\cdot F}{I\cdot M\cdot n}
+    feedback: ย้าย $n$ ไปอยู่ในตัวส่วนผิดข้าง
+  - match: \frac{m\cdot n\cdot M}{I\cdot F}
+    feedback: สลับ $M$ กับ $F$
+  hints:
+  - คูณไขว้ด้วย $n F$ ก่อน
+  - แล้วหารด้วย $I M$
+  solution: จาก $m\,n\,F = I\,t\,M$ จึงได้ $t = \dfrac{m\,n\,F}{I\,M}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p011
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 3
+  type: mcq
+  stem: ข้อใดเป็นตัวอย่างของการป้องกันการกัดกร่อนแบบแคโทดิก (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: ต่อแอโนดสังกะสีเข้ากับท่อเหล็กที่ฝังดิน
+    correct: true
+  - id: b
+    text: ใช้เรคติไฟเออร์จ่ายกระแสตรงให้ท่อเป็นแคโทด
+    correct: true
+  - id: c
+    text: ทาสีอีพ็อกซีบนผิวเหล็กเพื่อกั้นความชื้น
+    feedback: สีเป็นการป้องกันแบบกั้น ไม่ได้ทำให้เหล็กกลายเป็นแคโทดด้วยกระแส
+  - id: d
+    text: ใช้สแตนเลสที่เกิดชั้นพาสซีฟ
+    feedback: ชั้นพาสซีฟเป็นกลไกของโลหะเอง ไม่ใช่การป้องกันแบบแคโทดิก
+  multiple: true
+  hints:
+  - แคโทดิกหมายถึงการทำให้โลหะเป็นขั้วที่รับอิเล็กตรอน
+  - ใช้ได้ทั้งแอโนดเสียสละและกระแสจ่าย
+  solution: ข้อ a และ b ถูก ทั้งแอโนดเสียสละและกระแสจ่ายทำให้โลหะเป็นแคโทดด้วยการรับอิเล็กตรอน ส่วนสีและสแตนเลสเป็นการป้องกันแบบกั้นหรือการพาสซีฟ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p012
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 4
+  type: numeric
+  stem: ท่อเหล็กหนา $8.0\ \mathrm{mm}$ ถูกกัดกร่อนสม่ำเสมอที่ $0.15\ \mathrm{mm/ปี}$ (ค่าตัวอย่าง) หลังใช้งาน 25 ปี ความหนาที่เหลือเป็นกี่มิลลิเมตร (ตอบหน่วย mm)
+  answer:
+    value: 4.25
+    tolerance: 0.0425
+    unit: mm
+  misconceptions:
+  - match: 7.85
+    feedback: ลืมคูณอายุ 25 ปี
+  - match: 0.5
+    feedback: คูณอัตราการกัดกร่อนด้วยอายุเป็นสองเท่า
+  hints:
+  - ความหนาที่หายไป $= 0.15 \times 25$
+  - ความหนาที่เหลือ $= 8.0 -$ ที่หายไป
+  solution: ที่หายไป $= 0.15 \times 25 = 3.75\ \mathrm{mm}$ จึงเหลือ $8.0 - 3.75 = 4.25\ \mathrm{mm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p013
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 4
+  type: numeric
+  stem: หลุมกัดกร่อนที่ลึกที่สุดบนราวสะพานเหล็กริมทะเลลึก $1.8\ \mathrm{mm}$ ขณะที่การกัดกร่อนเฉลี่ยทั่วพื้นผิวลึก $0.12\ \mathrm{mm}$ อัตราส่วนความลึกหลุมต่อความลึกเฉลี่ย (pitting factor) เป็นเท่าไร (ไม่มีหน่วย ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 15.0
+    tolerance: 0.15
+    unit: ''
+  misconceptions:
+  - match: 0.067
+    feedback: หารกลับด้าน ได้ค่าน้อยกว่า 1 ซึ่งไม่ใช่นิยามของ pitting factor
+  hints:
+  - pitting factor $=$ ความลึกสูงสุดของหลุม $\div$ ความลึกเฉลี่ยของการกัดกร่อน
+  solution: $PF = 1.8 / 0.12 = 15.0$ ค่าที่สูงแสดงว่าการกัดกร่อนเฉพาะจุดรุนแรงกว่าการกัดกร่อนสม่ำเสมอมาก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p014
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 4
+  type: numeric
+  stem: แผ่นเหล็กพื้นที่ $10\ \mathrm{cm^2}$ สูญเสียมวล $0.25\ \mathrm{g}$ ในเวลา 1000 ชั่วโมง โดยการละลาย Fe → Fe²⁺ (n = 2, $M = 55.85\ \mathrm{g/mol}$) กระแสการกัดกร่อนเฉลี่ยกี่ $\mu\mathrm{A/cm^2}$ (ทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 24.0
+    tolerance: 0.24
+    unit: µA/cm²
+  misconceptions:
+  - match: 48.0
+    feedback: ใช้ $n = 1$
+  - match: 86379.0
+    feedback: ใช้ 1000 วินาทีแทน 1000 ชั่วโมง
+  hints:
+  - กระแสต่อพื้นที่ $i = mnF/(MtA)$ โดยที่ $t$ เป็นวินาที
+  - เวลา 1000 ชั่วโมง $= 3.6 \times 10^6$ s
+  - คูณผลด้วย $10^6$ เพื่อเป็น µA
+  solution: $i = \dfrac{0.25 \times 2 \times 96485}{55.85 \times 3.6\times10^6 \times 10} \approx 2.399e-05\ \mathrm{A/cm^2} = 24.0\ \mu\mathrm{A/cm^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p015
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 4
+  type: mcq
+  stem: ราวสะพานเหล็กริมทะเลเกิดการกัดกร่อนเป็นหลุมเฉพาะจุดรุนแรง ข้อใดควรแก้เป็นอันดับแรก
+  choices:
+  - id: a
+    text: เลือกวัสดุที่ทนคลอไรด์มากขึ้นและมีระบบเคลือบผิวที่ต่อเนื่องและซ่อมได้
+    correct: true
+  - id: b
+    text: เพิ่มอุณหภูมิของเหล็กเพื่อให้แห้งเร็วขึ้น
+    feedback: อุณหภูมิสูงอาจเร่งการกัดกร่อน และไม่ได้แก้ที่สาเหตุของเกลือและความชื้น
+  - id: c
+    text: ต่อทองแดงเข้ากับเหล็กโดยตรงเพื่อเพิ่มความทนทาน
+    feedback: ทองแดงทำให้เกิดการกัดกร่อนแบบกัลวานิก ซึ่งทำให้เหล็กกัดกร่อนเร็วขึ้น
+  - id: d
+    text: ลดการเคลือบผิวเพื่อให้ผิวหายใจ
+    feedback: การลดการเคลือบทำให้เหล็กสัมผัสน้ำเกลือมากขึ้น
+  hints:
+  - สาเหตุหลักคือคลอไรด์และความชื้นจากทะเล
+  - พิจารณาว่าวัสดุหรือการเคลือบแบบใดช่วยลดการสัมผัสกับสภาพแวดล้อม
+  solution: ควรเลือกวัสดุที่เหมาะกับสภาพทะเลและเคลือบผิวอย่างต่อเนื่องก่อน เพราะคลอไรด์ทำให้การเกิดหลุมเร็วขึ้น และการบำรุงรักษาเป็นส่วนสำคัญ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p016
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 5
+  type: numeric
+  stem: ระบบกระแสจ่าย (impressed current) ใช้เรคติไฟเออร์ 12 V ต่อกับวงจรที่มีความต้านทานรวม 3.0 Ω กำลังไฟฟ้าที่เรคติไฟเออร์จ่ายเข้าวงจรเป็นกี่วัตต์ (ตอบหน่วย W)
+  answer:
+    value: 48.0
+    tolerance: 0.48
+    unit: W
+  misconceptions:
+  - match: 4.0
+    feedback: ตอบกระแส (A) แทนกำลัง (W)
+  - match: 144.0
+    feedback: ใช้ $V^2$ โดยไม่หารด้วย $R$
+  hints:
+  - หากระแสก่อน $I = V/R$
+  - กำลังไฟฟ้า $P = I^2 R$
+  solution: $I = 12 / 3.0 = 4.0\ \mathrm{A}$ และ $P = 4.0^2 \times 3.0 = 48.0\ \mathrm{W}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p017
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 5
+  type: numeric
+  stem: ชั้นสังกะสีของราวสะพานเหล็กที่ชุบหนา $85\ \mu\mathrm{m}$ ถูกกัดในบรรยากาศทะเลที่อัตรา $4\ \mu\mathrm{m/ปี}$ (ค่าตัวอย่าง) ชั้นนี้จะป้องกันได้ประมาณกี่ปีก่อนสังกะสีหมด (ทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 21.25
+    tolerance: 0.2125
+    unit: ปี
+  misconceptions:
+  - match: 340
+    feedback: คูณความหนาด้วยอัตราแทนการหาร
+  - match: 0.047
+    feedback: กลับด้านระหว่างความหนาและอัตรา
+  hints:
+  - เวลาที่ใช้ได้ $=$ ความหนา $\div$ อัตราการสึก
+  solution: $t = 85 / 4 = 21.25\ \mathrm{ปี}$ (เป็นค่าประมาณ เพราะอัตราจริงแปรตามสภาพอากาศ)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p018
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 5
+  type: expression
+  stem: จากสมการ $m = \dfrac{I\,t\,M}{n\,F}$ เมื่อ $I$ เป็นกระแส (A) และ $t$ เป็นวินาที ให้จัดรูปกระแสต่อพื้นที่ $i = I/A$ ในรูปของ $m$, $n$, $F$, $M$, $t$ และ $A$ (ตอบหาค่า $i$)
+  answer:
+    latex: \frac{m\cdot n\cdot F}{M\cdot t\cdot A}
+    variables:
+    - m
+    - n
+    - F
+    - M
+    - t
+    - A
+  prefix: i =
+  misconceptions:
+  - match: \frac{m\cdot M\cdot F}{n\cdot t\cdot A}
+    feedback: สลับตำแหน่ง $n$ กับ $M$
+  - match: \frac{m\cdot n\cdot F}{M\cdot t}
+    feedback: ลืมหารด้วยพื้นที่ $A$
+  hints:
+  - ย้ายพจน์ $t$ และ $M$ ไปอยู่ในตัวส่วนของ $I$ ก่อน
+  - แล้วหารด้วย $A$ จะได้กระแสต่อพื้นที่
+  solution: จาก $I = \dfrac{m\,n\,F}{M\,t}$ จึงได้ $i = \dfrac{I}{A} = \dfrac{m\,n\,F}{M\,t\,A}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.materials.corrosion-protection.p019
+  topics:
+  - engineering.materials.corrosion-protection
+  difficulty: 5
+  type: text
+  stem: เมื่อโลหะเช่นอลูมิเนียมหรือสแตนเลสสร้างชั้นออกไซด์บางแน่นที่หยุดการกัดกร่อนต่อ ปรากฏการณ์นี้เรียกเป็นภาษาอังกฤษว่าอะไร (ตอบคำเดียว)
+  accepted:
+  - passivation
+  - passivity
+  misconceptions:
+  - match: galvanization
+    feedback: galvanization คือการชุบสังกะสี ไม่ใช่การเกิดชั้นออกไซด์เอง
+  hints:
+  - เรียกการทำให้ผิวไม่ว่องไวด้วยคำว่า pass- ขึ้นต้น
+  - คิดถึงชั้นป้องกันบาง ๆ ที่เกิดเอง
+  solution: เรียกว่า passivation (การพาสซีฟ) ชั้นออกไซด์ที่เกิดเองช่วยป้องกันการกัดกร่อนต่อไปได้ แต่สภาพแวดล้อมคลอไรด์บางอย่างทำให้ชั้นนี้เสียได้
+  license: CC-BY-SA-4.0
+  ai_assisted: true
