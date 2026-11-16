@@ -1,0 +1,326 @@
+<title>คลังรู้: ฟีเจอร์และความคืบหน้า</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* layout: เอกสารคอลัมน์เดียวแบบรายงานราชการ ตารางหลักสูตรเป็นแกนกลาง แท่งความครอบคลุมใช้สเกลเดียวต่อแถว */
+:root {
+  --bg: #f4f7f6; --surface: #ffffff; --fg: #15211e; --muted: #5a6b66; --line: #d4dedb;
+  --accent: #0a6b60; --accent-soft: #e2f0ed;
+  --full: #0a6b60; --part: #79b8ad; --plan: #c98a2b; --none: #d9e1de;
+  --link-chip: #eef1f0; --sum-chip: #f6ecda; --sum-ink: #7a4f0f;
+  --display: "Bai Jamjuree", "IBM Plex Sans Thai", "Noto Sans Thai", sans-serif;
+  --body: "IBM Plex Sans Thai", "Noto Sans Thai", "Leelawadee UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1614; --surface: #16201d; --fg: #e3ebe8; --muted: #94a6a0; --line: #2a3833;
+    --accent: #5cc4b3; --accent-soft: #1c302c;
+    --full: #3fa898; --part: #2f6c63; --plan: #d9a24a; --none: #2f3c38;
+    --link-chip: #22302c; --sum-chip: #3a2f1c; --sum-ink: #e8c27f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1614; --surface: #16201d; --fg: #e3ebe8; --muted: #94a6a0; --line: #2a3833;
+  --accent: #5cc4b3; --accent-soft: #1c302c;
+  --full: #3fa898; --part: #2f6c63; --plan: #d9a24a; --none: #2f3c38;
+  --link-chip: #22302c; --sum-chip: #3a2f1c; --sum-ink: #e8c27f; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 15.5px/1.7 var(--body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 40px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 48px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.25; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 5vw, 42px); font-weight: 700; }
+h2 { font-size: 23px; font-weight: 600; }
+h3 { font-size: 17px; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+section { display: grid; gap: 16px; min-width: 0; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+.lead { font-size: 17px; color: var(--muted); }
+.mono { font-family: var(--mono); }
+.tabular, .num { font-variant-numeric: tabular-nums; }
+.sub { font-size: 12.5px; color: var(--muted); }
+header { display: grid; gap: 14px; }
+.figures { display: flex; flex-wrap: wrap; gap: 12px 36px; margin: 8px 0 0; padding: 18px 0 0; border-top: 1px solid var(--line); }
+.figures div { display: grid; }
+.figures dt { font-size: 13px; color: var(--muted); }
+.figures dd { margin: 0; font-family: var(--display); font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+thead th { white-space: nowrap; font-size: 12.5px; font-weight: 600; color: var(--muted); background: var(--bg); position: sticky; top: 0; }
+tr.group th { font-family: var(--display); font-size: 14px; font-weight: 600; background: var(--accent-soft); color: var(--fg); }
+td.num, th.num { text-align: right; }
+td.cov { min-width: 230px; }
+.bar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; background: var(--none); margin-top: 6px; }
+.seg { display: block; height: 100%; }
+.seg.full { background: var(--full); } .seg.part { background: var(--part); } .seg.plan { background: var(--plan); } .seg.none { background: var(--none); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+.chip { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+.chip.ok { background: var(--accent-soft); color: var(--accent); }
+.chip.sum { background: var(--sum-chip); color: var(--sum-ink); }
+.chip.link { background: var(--link-chip); color: var(--muted); }
+.callout { border-left: 3px solid var(--plan); padding: 4px 0 4px 14px; }
+.record { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: grid; gap: 6px; }
+.record .code { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.record .text { font-size: 17px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px 32px; }
+.cols > * { min-width: 0; }
+dl.facts { margin: 0; display: grid; gap: 14px; }
+dl.facts dt { font-weight: 600; }
+dl.facts dd { margin: 2px 0 0; color: var(--muted); }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.checks li b { font-family: var(--mono); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--accent); }
+.plan-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 24px; }
+.plan-list li { display: flex; justify-content: space-between; border-bottom: 1px dotted var(--line); padding: 4px 0; }
+ol.todo { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; max-width: 72ch; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 8px; }
+.gallery figure.g { margin: 0; display: grid; gap: 8px; align-content: start; }
+.gallery img { width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; box-sizing: border-box; }
+.gallery figcaption { font-size: 14px; color: var(--muted); }
+.gallery figcaption b { color: var(--ink, inherit); margin-right: 4px; }
+.shots { display: grid; grid-auto-flow: column; grid-auto-columns: 200px; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 14px; overscroll-behavior-x: contain; }
+.shots figure.shot { margin: 0; scroll-snap-align: start; display: grid; gap: 8px; align-content: start; }
+.shots img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 1px 2px rgb(0 0 0 / .06); background: #f4f7f6; }
+.shots figcaption { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.shots figcaption b { display: block; color: var(--fg); font-size: 14px; }
+.feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+.feat article { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.feat ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.feat li::marker { color: var(--accent); }
+.progress { height: 12px; border-radius: 6px; background: var(--none); overflow: hidden; }
+.progress span { display: block; height: 100%; background: var(--full); }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 520px) { .checks li { grid-template-columns: 1fr; gap: 2px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">คลังรู้ · รายงานสำหรับผู้สนใจ · 15 พ.ย. 2569</span>
+    <h1>คลังรู้: แอปเรียนทุกวิชา เรียงตามความรู้ ไม่ใช่ตามชั้นปี</h1>
+    <p class="lead">คลังเนื้อหาและโจทย์ภาษาไทย ฟรี ไม่หารายได้ ใช้ได้ทั้งเว็บและแอป Android แบบออฟไลน์ ทุกหัวข้อจับคู่กับตัวชี้วัดของหลักสูตรแกนกลางไทยและหลักสูตรต่างประเทศ ระบบเลือกโจทย์ตามระดับผู้เรียนและนัดทบทวนให้เอง หน้านี้สรุปฟีเจอร์ทั้งหมด เนื้อหาที่มีตอนนี้ และงานที่ยังต้องใช้คน</p>
+    <dl class="figures">
+      <div><dt>วิชา</dt><dd>{{N_SUBJ}}</dd></div>
+      <div><dt>หลักสูตรและกรอบมาตรฐาน</dt><dd>{{N_FW}} ฉบับ</dd></div>
+      <div><dt>ตัวชี้วัดและผลการเรียนรู้</dt><dd>{{N_IND}}</dd></div>
+      <div><dt>ลิงก์อ่านเพิ่มเติม</dt><dd>{{N_REFS}}</dd></div>
+            <div><dt>หัวข้อที่เขียนแล้ว</dt><dd>{{N_TOPICS}}</dd></div>
+      <div><dt>โจทย์</dt><dd>{{N_PROB}}</dd></div>
+      <div><dt>ภาพประกอบ</dt><dd>{{N_FIG}}</dd></div>
+    </dl>
+  </header>
+
+  <section aria-labelledby="h-feat">
+    <h2 id="h-feat">ฟีเจอร์ทั้งหมด</h2>
+    <p>ภาพหน้าจอจริงจากแอปบนจอมือถือ เลื่อนดูทางขวาได้</p>
+    <div class="shots" tabindex="0" aria-label="ภาพหน้าจอแอป">
+{{SHOTS}}
+    </div>
+    <div class="feat">
+      <article>
+        <h3>เรียน</h3>
+        <ul>
+          <li>แผนที่ความรู้: กราฟหัวข้อทุกวิชา บอกว่าเรื่องไหนต้องรู้ก่อน และปุ่ม "เรียนต่อ" ที่เลือกหัวข้อถัดไปให้</li>
+          <li>บทเรียนพร้อมสมการ ภาพประกอบ {{N_FIG}} ภาพ และอภิธานศัพท์ {{N_GLOSS}} คำ</li>
+          <li>ตัวอย่างแสดงวิธีทำทีละขั้น {{N_WORKED}} ตัวอย่าง และคำถามชวนคิดคั่นระหว่างอ่าน {{N_CHECK}} ข้อ</li>
+          <li>สื่อโต้ตอบ (กราฟฟังก์ชัน เส้นจำนวน เวกเตอร์) {{N_WIDGET}} ชิ้น ซิมูเลชัน PhET {{N_SIM}} ชิ้น และโมเลกุล 3 มิติ {{N_MOL}} จุด</li>
+          <li>รองรับวิดีโอที่หยุดถามโจทย์กลางคลิป (ยังรอคัดวิดีโอที่สัญญาอนุญาตเปิด)</li>
+          <li>"ตรงกับหลักสูตร" บอกตัวชี้วัดที่หัวข้อสอน และลิงก์อ่านเพิ่มเติมจากสารานุกรมและตำราเปิด</li>
+          <li>โน้ตส่วนตัวต่อหัวข้อ</li>
+        </ul>
+      </article>
+      <article>
+        <h3>ฝึกโจทย์</h3>
+        <ul>
+          <li>{{N_PROB}} ข้อ 8 ชนิด ทุกข้อมีคำใบ้ 2–3 ขั้น วิธีทำเต็ม และคำอธิบายเฉพาะคำตอบผิดที่พบบ่อย</li>
+          <li>เลือกข้อตามระดับผู้เรียนด้วย Bayesian Knowledge Tracing</li>
+          <li>ตรวจนิพจน์คณิตศาสตร์ด้วยการเทียบค่า ({{N_EXPR}} ข้อ) แยกได้ว่าค่าถูกแต่ยังไม่แยกตัวประกอบหรือยังไม่ทำรูปอย่างง่าย</li>
+          <li>ตอบตัวเลขพร้อมหน่วยและค่าคลาดเคลื่อนที่ยอมรับ</li>
+          <li>เขียนโค้ด Python แล้วรันได้จริงในแอป ({{N_CODE}} ข้อ) ตรวจด้วยชุดทดสอบ ผลตอบกลับภาษาไทย หยุดลูปไม่รู้จบเอง และใช้ออฟไลน์ได้</li>
+          <li>ผู้ช่วย AI แบบถามนำ ไม่บอกคำตอบตรง ๆ (ต้องใส่คีย์ API)</li>
+          <li>ปุ่มรายงานโจทย์ผิด ใช้ได้แม้ออฟไลน์</li>
+        </ul>
+        <ul class="plan-list">{{PTYPE_ROWS}}</ul>
+      </article>
+      <article>
+        <h3>ทบทวนและวัดระดับ</h3>
+        <ul>
+          <li>นัดทบทวนรายหัวข้อด้วย FSRS ฝึกหัวข้อยากแล้วนับเป็นการทบทวนหัวข้อพื้นฐานให้ด้วย</li>
+          <li>บัตรคำ {{N_FLASH}} ใบ ทบทวนรายใบ</li>
+          <li>แบบทดสอบวัดระดับ ข้ามเรื่องที่รู้แล้ว</li>
+          <li>เป้าหมายรายวัน วันต่อเนื่อง และแจ้งเตือนทบทวนบน Android</li>
+        </ul>
+      </article>
+      <article>
+        <h3>ใช้ได้ทุกที่</h3>
+        <ul>
+          <li>เว็บแบบ static และแอป Android จากไฟล์ชุดเดียวกัน</li>
+          <li>ออฟไลน์: แอปมีเนื้อหาครบในตัว เว็บดาวน์โหลดรายวิชาได้</li>
+          <li>ค้นหาภาษาไทยด้วยการตัดคำอัตโนมัติ ค้นได้ทั้งหัวข้อ คำสำคัญ โจทย์ และรหัสตัวชี้วัด</li>
+          <li>ใช้ได้โดยไม่ต้องสมัคร ความคืบหน้าเก็บในเครื่องก่อน สมัครบัญชีด้วยรหัสทางอีเมลเพื่อซิงก์ข้ามเครื่องได้ และลบบัญชีเองได้</li>
+          <li>ส่งออกความคืบหน้าเป็น JSON หรือ xAPI</li>
+        </ul>
+      </article>
+      <article>
+        <h3>สำหรับครูและผู้เขียน</h3>
+        <ul>
+          <li>หน้าคุณภาพ: ความครอบคลุมหลักสูตร และสถิติการตอบจริงรายข้อ</li>
+          <li>แก้เนื้อหาผ่านเว็บด้วย Decap CMS</li>
+          <li>ให้ AI ร่างโจทย์เข้าคิว ครูตรวจแล้วจึงย้ายเข้าคลัง</li>
+          <li>ปรับความยากจากข้อมูลการตอบจริง (Rasch) และทดลอง A/B ระหว่างโหมดปรับตามระดับกับโหมดคงที่</li>
+          <li>ตัวตรวจเนื้อหาอัตโนมัติ: คำตอบ ลิงก์ภายใน ภาพที่ปลอดภัย สัญญาอนุญาต และการจับคู่หลักสูตร</li>
+        </ul>
+      </article>
+      <article>
+        <h3>เนื้อหาเปิด</h3>
+        <ul>
+          <li>โค้ด MIT เนื้อหา CC BY-SA 4.0 ระบุสัญญาอนุญาตรายชิ้น</li>
+          <li>เนื้อหาเก็บเป็น YAML และ Markdown แยกจากโค้ด ใครก็ส่งแก้ได้</li>
+          <li>ทุกหัวข้อยังเป็นฉบับร่าง ร่างโดยใช้ AI ช่วย ตรวจคำตอบด้วยการคำนวณซ้ำแล้ว แต่ยังรอผู้เชี่ยวชาญที่เป็นคนตรวจ</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-p8">
+    <h2 id="h-p8">เฟส 8: เขียนหัวข้อใหม่ครบตามแผน</h2>
+    <p>หัวข้อที่แผนเฟส 6 เสนอไว้ {{N_P8}} หัวข้อเขียนครบแล้ว คลังจึงโตจาก 104 เป็น 625 หัวข้อ (เฟส 9 เพิ่มอีก 12 เป็น 637) และเฟส 10 เข้าคลังแล้ว {{N_P10_DONE}} หัวข้อจากแผน {{N_P10_PLAN}} หัวข้อ ทุกหัวข้อใหม่มีบทเรียน 500–1,000 คำ โจทย์อย่างน้อย 15 ข้อ ความยากครบ 1–5 ตัวอย่างแสดงวิธีทำ คำถามชวนคิด ภาพประกอบ บัตรคำ และไฟล์จับคู่ตัวชี้วัดที่ตัดสินจากสิ่งที่บทเรียนสอนจริง งานแบ่งเป็น 76 ชุด ผู้เขียนคำนวณทุกตัวเลขด้วย python3 และผู้ประสานงานสุ่มคำนวณคำตอบซ้ำทุกชุดก่อนรวมเข้าคลัง ไม่พบคำตอบผิดในข้อที่สุ่ม</p>
+    <div class="progress" role="img" aria-label="ตัวชี้วัดที่สอนครบ {{N_FULL}} บางส่วน {{N_PART}} ยังไม่มีหัวข้อ {{N_NONE}} จาก {{N_IND}}"><span style="width: {{FULL_PCT}}%"></span></div>
+    <p class="sub tabular">ตัวชี้วัดทั้ง {{N_IND}} ข้อ: หัวข้อในคลังสอนครบ {{N_FULL}} · สอนบางส่วน {{N_PART}} · ยังไม่มีหัวข้อ {{N_NONE}} (ส่วนใหญ่เป็นวิชาระดับมหาวิทยาลัยที่ใช้เทียบลำดับเนื้อหา และทักษะลงมือทำที่แอปวัดไม่ได้) ข้อสงสัยและค่าที่ต้องให้ผู้เชี่ยวชาญตรวจของแต่ละชุดอยู่ใน <a href="{{GH}}docs/phase8/">docs/phase8/</a></p>
+    <h3>เฟส 9: ตามคำตัดสินของเจ้าของโครงการ (3 พ.ย. 2569)</h3>
+    <ul class="checks">
+      <li><b>12 หัวข้อ</b><span>เขียนหัวข้อที่ยังขาดตามแผนเฟส 9 ครบ: ทฤษฎีบทค่าเฉลี่ย การแทนค่าด้วยตรีโกณมิติ ระนาบสัมผัส ตัวคูณลากรองจ์ จาโคเบียน เมทริกซ์ผกผัน วงกลมของมอร์ ชลศาสตร์ทางน้ำเปิด พลศาสตร์วัตถุแข็งเกร็งสามมิติ ต้นทุนฐานกิจกรรม การทดสอบ A/B และการตรวจติดตามคุณภาพภายใน</span></li>
+      <li><b>{{N_CODE}} ข้อ</b><span>โจทย์เขียนโค้ด Python ที่รันได้จริงในแอป (Pyodide) ตัวตรวจเนื้อหารันเฉลยกับชุดทดสอบทุกข้อ</span></li>
+      <li><b>230 V</b><span>ไฟบ้านใช้ 230 V 50 Hz ตาม มอก. 166-2549 ทุกหัวข้อ คำนวณโจทย์ที่เกี่ยวข้องใหม่ 16 ข้อ</span></li>
+      <li><b>CSTA 2026</b><span>เพิ่มมาตรฐานวิทยาการคอมพิวเตอร์ฉบับ 2026 ทั้ง 331 ข้อ และจับคู่กับหัวข้อคอมพิวเตอร์</span></li>
+      <li><b>Common Core</b><span>เปลี่ยนเป็นโครงกับสรุปภาษาไทย เพราะสัญญาอนุญาตยังไม่ชัดว่าเผยแพร่แบบ CC BY-SA ได้</span></li>
+      <li><b>ลิงก์</b><span>ตรวจลิงก์อ่านเพิ่มเติมทั้ง 2,017 ลิงก์ แก้หน้าที่เปลี่ยนชื่อ หน้าแก้ความกำกวม และหน้าที่หาไม่พบ 44 จุด</span></li>
+    </ul>
+    <h3>เฟส 10: ปิดช่องว่างของหลักสูตรที่เหลือ (หัวข้อลำดับ 1 ครบแล้ว)</h3>
+    <p>แผนมี {{N_P10_PLAN}} หัวข้อ แบ่งตามความสำคัญ ลำดับ 1 จำเป็นเป็นพื้นฐานของหลายเรื่อง เขียนครบแล้ว {{P1_DONE}} จาก {{P1_ALL}} หัวข้อ ลำดับ 2 เขียนแล้ว {{P2_DONE}} จาก {{P2_ALL}} และลำดับ 3 เสริม {{P3_DONE}} จาก {{P3_ALL}} รวมเข้าคลังแล้ว {{N_P10_DONE}} หัวข้อ เจ้าของโครงการตัดสินให้เขียนเฉพาะลำดับ 1 ส่วนลำดับ 2–3 ที่เหลือยังอยู่ในแผน ทุกหัวข้อผ่านผู้ตรวจ (Opus) ที่คำนวณเฉลยซ้ำ เปิดดูภาพ และตรวจการจับคู่หลักสูตรก่อนรวมเข้าคลัง แต่ยังเป็นฉบับร่างที่ผู้เชี่ยวชาญรายวิชาต้องตรวจก่อนเผยแพร่ โดยเฉพาะหัวข้อสุขภาพ กฎหมาย ภาษาจีน และค่าจากแหล่งที่ยืนยันไม่ได้ หัวข้ออ่อนไหว 25 หัวข้อถูกซ่อนจากแอปจนกว่าจะมีผู้ลงชื่อตรวจ</p>
+  </section>
+
+  <section aria-labelledby="h-fw">
+    <h2 id="h-fw">หลักสูตรที่เก็บ และคลังครอบคลุมแค่ไหน</h2>
+    <p>แท่งในแต่ละแถวคือตัวชี้วัดทั้งหมดของฉบับนั้น แบ่งตามสถานะในคลังตอนนี้ ข้อมูล ณ 15 พ.ย. 2569 เฟส 10 เขียนเฉพาะลำดับ 1</p>
+    <div class="legend">
+      <span style="--c: var(--full)">หัวข้อในคลังสอนครบ</span>
+      <span style="--c: var(--part)">สอนบางส่วน</span>
+      <span style="--c: var(--none)">ยังไม่มีหัวข้อ</span>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">ฉบับ</th><th scope="col">ระดับ</th><th scope="col" class="num">ตัวชี้วัด</th><th scope="col">เก็บแบบ</th><th scope="col">ความครอบคลุม</th><th scope="col">ต้นฉบับ</th></tr></thead>
+        <tbody>
+{{ROWS}}
+        </tbody>
+      </table>
+    </div>
+    <p class="callout">หลักสูตรแกนกลางและรายวิชาเพิ่มเติมของไทยรวม {{THAI_TOTAL}} ตัวชี้วัด ตอนนี้เหลือ {{THAI_AFTER}} ข้อที่ไม่มีหัวข้อรองรับ ทั้งหมดเป็นการลงมือทำจริงหรือเข้าร่วมกิจกรรมนอกแอป คือ ทักษะปฏิบัติของพลศึกษาที่ต้องออกกำลังหรือเล่นกีฬาจริง {{THAI_PE}} ข้อ การงานอาชีพ ง 1.1 ที่ต้องทำงานจริง {{THAI_CAREER}} ข้อ และเคมี 3 ม.6/4 ซึ่งให้ไปเข้าร่วมสัมมนาหรือนิทรรศการ {{THAI_CHEM}} ข้อ หลักสูตรต่างประเทศใช้บูรณาการเนื้อหาเข้ากับหัวข้อเดียวกัน ไม่ได้แยกเป็นหลักสูตรคู่ขนาน AC9 คณิต AC9 เทคโนโลยีดิจิทัล CSTA ISO 9001 Baldrige และ PMBOK ครอบคลุมครบแล้ว ส่วนระดับมหาวิทยาลัยใช้เทียบลำดับเนื้อหา</p>
+  </section>
+
+  <section aria-labelledby="h-rec">
+    <h2 id="h-rec">ข้อมูลหนึ่งรายการหน้าตาแบบนี้</h2>
+    <div class="cols">
+      <div class="record">
+        <span class="code">{{SAMPLE_ID}}</span>
+        <span class="text">{{SAMPLE_TEXT}}</span>
+        <span class="sub">หลักสูตรแกนกลาง 2560 คณิตศาสตร์ · รหัสและข้อความตรงต้นฉบับทุกตัวอักษร</span>
+      </div>
+      <div style="display:grid; gap:10px">
+        <p>ตัวชี้วัดเก็บเป็น YAML ใน <a href="{{GH}}curriculum/README.md">curriculum/</a> ตามลำดับ สาระ → มาตรฐาน → ตัวชี้วัด และมีไฟล์จับคู่ว่าหัวข้อใดสอนตัวชี้วัดใด ครบหรือบางส่วน</p>
+        <p>ในแอป หน้าบทเรียนแสดง "ตรงกับหลักสูตร" ครูค้นด้วยรหัสหรือข้อความตัวชี้วัดแล้วเจอหัวข้อที่สอน และหน้าคุณภาพมีตารางความครอบคลุมแบบเดียวกับข้างบน</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-check">
+    <h2 id="h-check">ตรวจความถูกต้องอย่างไร</h2>
+    <p>ข้อความทุกข้อคัดจากเอกสารที่ดาวน์โหลดได้จริง ไม่ได้เขียนจากความจำ นอกจากที่ผู้รวบรวมแต่ละส่วนตรวจเองแล้ว ผมดาวน์โหลดต้นฉบับมาเทียบซ้ำแยกต่างหาก</p>
+    <ul class="checks">
+      <li><b>189 / 189</b><span>คณิตศาสตร์แกนกลางและคณิตเพิ่มเติม ตรงตัวอักษรกับ PDF คู่มือหลักสูตรของ สสวท. (ไฟล์เก็บ "ำ" ผิดรูปเป็น "ำา" จึงปรับรูปก่อนเทียบ)</span></li>
+      <li><b>408 / 415</b><span>วิทยาศาสตร์แกนกลาง ตรงตัวอักษรกับหนังสือตัวชี้วัดฉบับปรับปรุง 2560 อีก 7 ข้อต่างเพราะแปลงเลขไทยเป็นเลขอารบิก หรือเขียนสมการใหม่เป็นบรรทัดเดียว มีหมายเหตุกำกับ</span></li>
+      <li><b>3 / 3</b><span>รายวิชาเพิ่มเติม ม.4–6 สุ่มเทียบกับหนังสือเล่มเดียวกัน (ผู้รวบรวมเทียบกับภาพหน้าไว้อีก 12 ข้อ)</span></li>
+      <li><b>ภาพหน้า</b><span>องค์ความรู้สภาวิศวกร PDF ปี 2567 ข้อความเสียจากการเข้ารหัสฟอนต์ จึงเทียบหน้าสาขาโยธาด้วยตา ตรงทุกคำ</span></li>
+      <li><b>ภาพหน้า</b><span>ภาษาไทย 2551 ใช้ฟอนต์ MacThai แบบเก่า เทียบหน้ามาตรฐาน ท 3.1 ม.1–ม.6 ด้วยตา ตรงทุกคำ</span></li>
+      <li><b>API</b><span>สัญญาอนุญาตของ OpenStax ยืนยันผ่าน API ของ OpenStax เอง</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-src">
+    <h2 id="h-src">สารานุกรมและตำราเปิด</h2>
+    <p>ตรวจสัญญาอนุญาตของ {{N_SRC}} แหล่งจากหน้าทางการของแต่ละแหล่ง {{N_ADAPT}} แหล่งดัดแปลงเนื้อหามาใส่คลังได้โดยคลังยังเป็น CC BY-SA ส่วนอีก {{N_LINK}} แหล่งใช้เป็นลิงก์อ่านเพิ่มเติมได้อย่างเดียว</p>
+    <p>ทุกหัวข้อทั้ง {{N_TOPICS}} หัวข้อได้ลิงก์ "อ่านเพิ่มเติม" รวม {{N_REFS}} ลิงก์ ได้แก่ วิกิพีเดียภาษาไทย {{REF_WTH}}, Wikipedia ภาษาอังกฤษ {{REF_WEN}}, OpenStax {{REF_OS}} และอื่น ๆ {{REF_OTHER}} ทุกลิงก์เปิดได้จริง ไม่ใช่หน้าแก้ความกำกวม และอ่านเทียบกับบทเรียนแล้ว ส่วนสารานุกรมไทยสำหรับเยาวชนฯ ไม่พบหน้าที่ตรงหัวข้อจริง จึงยังไม่ได้ใส่</p>
+    <div class="table-scroll">
+      <table style="min-width:560px">
+        <thead><tr><th scope="col">แหล่ง</th><th scope="col">สัญญาอนุญาต</th><th scope="col">นำมาใช้</th><th scope="col">ที่มา</th></tr></thead>
+        <tbody>{{SRC_ROWS}}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-p7">
+    <h2 id="h-p7">โจทย์ ตัวอย่างแสดงวิธีทำ และภาพประกอบ</h2>
+    <p>ทุกหัวข้อทั้ง {{N_TOPICS}} หัวข้อ ({{N_SUBJ}} วิชา) มีโจทย์ความยากครบ 1–5 หลายชนิด และโจทย์บริบทไทย (หัวข้อเดิม 104 หัวข้อมีอย่างน้อย 20 ข้อ หัวข้อใหม่อย่างน้อย 15 ข้อ) บทเรียนมีตัวอย่างแสดงวิธีทำที่เปิดดูทีละขั้นพร้อมเหตุผล ({{N_WORKED}} ตัวอย่าง) และคำถามชวนคิดคั่นระหว่างอ่าน ({{N_CHECK}} ข้อ) ภาพประกอบ {{N_FIG}} ภาพวาดเป็น SVG จากพิกัดที่คำนวณจริง เรนเดอร์และตรวจด้วยตาทุกภาพ โจทย์ {{N_PFIG}} ข้อมีภาพประกอบ ซึ่งต้องไม่เฉลยคำตอบ</p>
+    <div class="cols">
+      <div class="table-scroll">
+        <table style="min-width:0">
+          <thead><tr><th scope="col">วิชา</th><th scope="col" class="num">หัวข้อ</th><th scope="col" class="num">โจทย์</th></tr></thead>
+          <tbody>{{SUBJ_ROWS}}</tbody>
+        </table>
+      </div>
+      <div style="display:grid; gap:10px; align-content:start">
+        <p>บทเรียนเพิ่มเนื้อหาที่หลักสูตรต่างประเทศสอนในหัวข้อเดียวกัน ตัวชี้วัดที่หัวข้อในคลังสอนครบเพิ่มขึ้น เช่น</p>
+        <ul class="plan-list">{{LIFT_ROWS}}</ul>
+        <p class="sub">ตัวเลขทุกตัวในโจทย์คำนวณด้วย python3 และสุ่มคำนวณซ้ำอีกรอบโดยไม่พบข้อผิด บันทึกรายหัวข้ออยู่ใน <a href="{{GH}}docs/phase7/">docs/phase7/</a></p>
+      </div>
+    </div>
+    <div class="gallery">
+{{GALLERY}}
+    </div>
+  </section>
+
+  <section aria-labelledby="h-lic">
+    <h2 id="h-lic">สิ่งที่พบเรื่องลิขสิทธิ์</h2>
+    <div class="cols">
+      <dl class="facts">
+        <div><dt>หลักสูตรไทยคัดลอกได้ทั้งฉบับ</dt><dd>ตัวชี้วัดประกาศใช้โดยคำสั่งกระทรวงศึกษาธิการ เข้าข่ายงานที่ไม่มีลิขสิทธิ์ตาม พ.ร.บ.ลิขสิทธิ์ มาตรา 7 เป็นการตีความของเรา ยังไม่ได้ให้ผู้รู้กฎหมายตรวจ</dd></div>
+        <div><dt>OpenStax เปลี่ยนเป็น CC BY-NC-SA</dt><dd>ตั้งแต่ 22 เม.ย. 2569 เกือบทุกเล่ม เหลือ CC BY แค่บางเล่ม เช่น Physics ใช้เป็นลิงก์ได้ ถ้าดัดแปลง หัวข้อนั้นต้องเปลี่ยนเป็น CC BY-NC-SA</dd></div>
+        <div><dt>PhET รุ่นใหม่เป็น CC BY-NC</dt><dd>ซิมูเลชันที่เผยแพร่ตั้งแต่ 29 มี.ค. 2569 แอปที่ไม่หารายได้ยังฝังได้ แต่ต้องให้เครดิตตามรูปแบบใหม่</dd></div>
+        <div><dt>CK-12 ไม่ใช่ Creative Commons</dt><dd>ใช้ใบอนุญาตเฉพาะของตัวเองที่เพิกถอนได้ ห้ามดัดแปลงมาใช้</dd></div>
+        <div><dt>ออสเตรเลียและอังกฤษใช้ได้เต็มที่</dt><dd>Australian Curriculum V9.0 เป็น CC BY 4.0 และ National Curriculum in England เป็น Open Government Licence v3 จึงเก็บข้อความเต็มได้ CSTA เป็น CC BY-NC-SA ซึ่งคลังที่ไม่หารายได้ใช้ได้</dd></div>
+      </dl>
+      <dl class="facts">
+        <div><dt>CEFR, HSK 3.0, ABET, ISO, ASQ, PMBOK เก็บแค่โครงกับสรุป</dt><dd>CEFR อ้างได้ไม่เกิน 500 คำ HSK มีลายน้ำ "仅供查阅" (ให้อ่านเท่านั้น) ABET ISO ASQ และ PMI สงวนสิทธิ์ทั้งหมด จึงเก็บโครงและหัวข้อ แล้วสรุปด้วยคำของเราเอง</dd></div>
+        <div><dt>NGSS คัดลอกได้ ต้องแสดงข้อความปฏิเสธ</dt><dd>องค์กรการศึกษาไม่แสวงกำไรคัดลอกและดัดแปลงได้ ชื่อ NGSS เป็นเครื่องหมายการค้าของ WestEd</dd></div>
+        <div><dt>Common Core เก็บแค่โครงกับสรุปแล้ว</dt><dd>ใบอนุญาตให้คัดลอก "เพื่อสนับสนุนโครงการ CCSS" ซึ่งยังไม่มีผู้รู้กฎหมายยืนยันว่าเผยแพร่แบบ CC BY-SA ได้ จึงเก็บเฉพาะรหัส ระดับ และสรุปภาษาไทยที่เขียนเอง พร้อมลิงก์ไป PDF ทางการ (ประวัติ git เก่ายังมีข้อความต้นฉบับ)</dd></div>
+        <div><dt>CSTA ฉบับ 2026 ออกแล้ว</dt><dd>ชื่อใหม่ PK–12 Computer Science Standards เผยแพร่ ก.ค. 2026 ภายใต้ CC BY-NC-SA 4.0 เหมือนฉบับ 2017 จึงเก็บข้อความเต็มทั้ง 331 มาตรฐาน ตรวจกับ PDF ทางการทุกข้อ</dd></div>
+        <div><dt>สภาวิศวกรยังไม่แน่ชัด</dt><dd>ระเบียบลงราชกิจจานุเบกษา น่าจะเข้ามาตรา 7 แต่ยังยืนยันไม่ได้ว่าสภาวิศวกรนับเป็นหน่วยงานของรัฐตามมาตรานั้น</dd></div>
+      </dl>
+    </div>
+  </section>
+
+
+  <section aria-labelledby="h-todo">
+    <h2 id="h-todo">ยังต้องใช้คน</h2>
+    <ol class="todo">
+      <li>ครูแต่ละวิชาตรวจหัวข้อที่เขียนแล้ว (ทั้งหมดเป็นฉบับร่างที่ใช้ AI ช่วย) แล้วเปลี่ยนสถานะเป็น published โดยเฉพาะเรื่องสุขภาพ เพศศึกษา ยาเสพติด และการปฐมพยาบาล รวมทั้งการแบ่งหัวข้อและความยากในแผนที่เหลือ</li>
+      <li>ผู้รู้กฎหมายยืนยันการตีความมาตรา 7 สำหรับหลักสูตรไทยและระเบียบสภาวิศวกร</li>
+      <li>พิสูจน์อักษรช่องว่างตรงรอยต่อบรรทัดในตารางต้นฉบับ ภาษาไทยและภาษาต่างประเทศมี 173 จุดที่ต้นฉบับไม่บอกว่าเว้นวรรคหรือไม่ ผู้รวบรวมตัดสินตามหลักและบันทึกไว้ใน note</li>
+      <li>เก็บส่วนที่ยังขาด: ตัวชี้วัดระหว่างทาง/ปลายทางตามหนังสือ สพฐ. ปี 2566 และเป้าหมาย CEFR รายชั้นตามนโยบายไทย</li>
+      <li>ครูตรวจโจทย์และภาพชุดเฟส 7 โดยเฉพาะค่าประมาณจากโลกจริง (เช่น ความดันอากาศบนดอยอินทนนท์ ค่าโซเดียมตามฉลาก GDA ของไทย) ที่ผู้เขียนระบุว่าไม่แน่ใจในไฟล์บันทึก</li>
+      <li>ครูคอมพิวเตอร์ตรวจการจับคู่ CSTA ฉบับ 2026 โดยเฉพาะมาตรฐานเฉพาะทางระดับมัธยมปลาย ซึ่ง agent จับคู่เองจากบทเรียน</li>
+      <li>ติดตาม HSK 3.0 ซึ่งจะเริ่มสอบทั่วโลก 13 ธ.ค. 2569 และสัญญาอนุญาตของแหล่งที่เปลี่ยนบ่อย ทุก 6 เดือน</li>
+    </ol>
+  </section>
+
+  <footer>
+    ไฟล์ทั้งหมดอยู่ในรีโพ <a href="https://github.com/SoloDevTH/klangru">SoloDevTH/klangru</a>: หลักสูตรใน <span class="mono">curriculum/</span>, แหล่งอ้างอิงใน <span class="mono">curriculum/sources.yaml</span>, รายงานสารานุกรมใน <span class="mono">docs/research/encyclopedias.md</span> แผนใน <span class="mono">docs/phase6/</span> บันทึกการเติมเนื้อหาใน <span class="mono">docs/phase7/</span> และบันทึกการเขียนหัวข้อใหม่ใน <span class="mono">docs/phase8/</span> ตัวเลขในหน้านี้สร้างจากไฟล์เหล่านั้นโดยตรง
+  </footer>
+</div>
