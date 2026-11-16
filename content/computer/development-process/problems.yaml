@@ -182,15 +182,15 @@ problems:
           return total
 
       # ส่วนอื่นของแอปเรียกแบบเดิม สำหรับลูกค้าทั่วไป
-      print(total_price([40, 15]))
+      print(total_price([60, 25]))
       ```
-    answer: { value: 49.5, tolerance: 0.01, unit: "บาท" }
+    answer: { value: 76.5, tolerance: 0.01, unit: "บาท" }
     hints:
       - "การเรียกนี้ไม่ได้ส่ง member จึงใช้ค่าเริ่มต้นในบรรทัด def"
       - "ค่าเริ่มต้น member=True ทำให้เข้าเงื่อนไข if หรือไม่"
     misconceptions:
-      - { match: 55, feedback: "นี่คือราคาที่ควรได้ แต่ค่าเริ่มต้น member=True ทำให้ลูกค้าทั่วไปได้ส่วนลดไปด้วย" }
-    solution: "ไม่ได้ส่ง member จึงใช้ค่าเริ่มต้น True ยอด 55 ถูกลด 10% เหลือ 49.5 บาท ทั้งที่ลูกค้าทั่วไปควรจ่าย 55 บาท กรณีทดสอบเดิม assert total_price([40, 15]) == 55 จะจับบั๊กนี้ได้ทันที แก้เป็น member=False"
+      - { match: 85, feedback: "นี่คือราคาที่ควรได้ แต่ค่าเริ่มต้น member=True ทำให้ลูกค้าทั่วไปได้ส่วนลดไปด้วย" }
+    solution: "ไม่ได้ส่ง member จึงใช้ค่าเริ่มต้น True ยอด 85 ถูกลด 10% เหลือ 76.5 บาท ทั้งที่ลูกค้าทั่วไปควรจ่าย 85 บาท กรณีทดสอบ assert total_price([60, 25], member=False) == 85 จะจับบั๊กนี้ได้ทันที แก้เป็น member=False"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -295,5 +295,32 @@ problems:
       - "ระบบ หมายถึงมีวิธีเก็บความเห็นและวัดผลที่ทำซ้ำได้"
       - "ผู้ใช้กลุ่มกว้างหมายถึงคนที่ต่างจากทีมพัฒนา"
     solution: "ข้อ a, b และ c ถูก การออกแบบให้ผู้ใช้กลุ่มกว้างต้องทดสอบกับผู้ใช้หลากหลาย มีช่องทางรับความเห็นต่อเนื่อง และวัดผลเทียบแต่ละรอบ ข้อ d ได้มุมมองแคบ ข้อ e ไม่ได้จัดลำดับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.development-process.p017
+    topics: [computer.programming.development-process]
+    difficulty: 3
+    type: code
+    stem: |
+      ฟังก์ชัน `total_price(items, member=False)` ต้องคืนราคารวมของรายการ `items` (ลิสต์ของราคาเป็นบาท) ถ้า `member` เป็น True ให้ลดยอดรวม 10% ถ้าไม่ส่งมาหรือเป็น False ให้คืนยอดเต็ม โค้ดเริ่มต้นยังไม่ผ่านการทดสอบบางกรณี ให้เขียนใหม่จนผ่านทุกกรณี
+    starter: |
+      def total_price(items, member=False):
+          return sum(items)
+    tests: |
+      assert total_price([60, 25]) == 85, "ลูกค้าทั่วไปควรจ่าย 85 บาท"
+      assert abs(total_price([60, 25], member=True) - 76.5) < 0.01, "สมาชิกได้ลด 10% ควรได้ 76.5 บาท"
+      assert total_price([]) == 0, "ไม่มีรายการ ควรได้ 0 บาท"
+      assert abs(total_price([100], member=True) - 90) < 0.01, "ซื้อ 100 บาทแบบสมาชิก ควรได้ 90 บาท"
+    reference: |
+      def total_price(items, member=False):
+          total = sum(items)
+          if member:
+              total = total * 0.9
+          return total
+    hints:
+      - "ลองดูว่าโค้ดเริ่มต้นลดราคาให้สมาชิกหรือไม่"
+      - "ลดราคาเฉพาะเมื่อ member เป็น True โดยคูณยอดรวมด้วย 0.9"
+    solution: "คำนวณยอดรวมด้วย sum(items) แล้วคูณ 0.9 เมื่อ member เป็น True ค่าเริ่มต้น member=False ทำให้ลูกค้าทั่วไปไม่ได้ส่วนลด"
     license: CC-BY-SA-4.0
     ai_assisted: true
