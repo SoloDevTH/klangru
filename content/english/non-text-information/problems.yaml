@@ -144,15 +144,15 @@ problems:
     difficulty: 3
     type: numeric
     stem: "ดูตารางเวลารถจากหมอชิตไปเชียงใหม่ รถคันที่ 1 ใช้เวลาเดินทางกี่ชั่วโมง (ตอบเป็นทศนิยม)"
-    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 18:30 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
-    answer: { value: 10.5, tolerance: 0.01, unit: "ชั่วโมง" }
+    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 17:45 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
+    answer: { value: 9.75, tolerance: 0.01, unit: "ชั่วโมง" }
     misconceptions:
-      - { match: 10.3, feedback: "30 นาทีคือครึ่งชั่วโมง = 0.5 ชั่วโมง ไม่ใช่ 0.3" }
-      - { match: 26.5, feedback: "ต้องลบเวลาออกจากเวลาถึง ไม่ใช่บวก" }
+      - { match: 9.5, feedback: "45 นาทีคือ 0.75 ชั่วโมง ไม่ใช่ 0.5" }
+      - { match: 25.75, feedback: "ต้องลบเวลาออกจากเวลาถึง ไม่ใช่บวก" }
     hints:
-      - "Departs 08:00, Arrives 18:30"
-      - "หาผลต่างของเวลา แล้วเปลี่ยน 30 นาทีเป็นชั่วโมง"
-    solution: "18:30 − 08:00 = 10 ชั่วโมง 30 นาที = **10.5** ชั่วโมง (*ten and a half hours*)"
+      - "Departs 08:00, Arrives 17:45"
+      - "หาผลต่างของเวลา แล้วเปลี่ยน 45 นาทีเป็นชั่วโมง"
+    solution: "17:45 − 08:00 = 9 ชั่วโมง 45 นาที = **9.75** ชั่วโมง (*nine and three-quarter hours*)"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -161,7 +161,7 @@ problems:
     difficulty: 3
     type: mcq
     stem: "ดูตารางเวลารถ *I want to take a night bus and sleep on it. I have a meeting in Chiang Mai at 7 a.m. Which bus should I take?*"
-    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 18:30 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
+    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 17:45 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
     choices:
       - { id: a, text: "Bus 4", correct: true, feedback: "ถูก ออก 20:00 ถึง 06:30 วันรุ่งขึ้น ทันก่อน 7 โมง" }
       - { id: b, text: "Bus 5", feedback: "ถึง 08:00 สายเกินไป" }
@@ -214,16 +214,16 @@ problems:
     topics: [english.reading.non-text-information]
     difficulty: 4
     type: numeric
-    stem: "ดูกราฟเส้น *How much more rain fell in September than in July?* (ตอบเป็น mm)"
+    stem: "ดูกราฟเส้น *How much more rain fell in September than in June?* (ตอบเป็น mm)"
     figure: { src: rainfall-graph.svg, alt: "กราฟเส้นชื่อ Rainfall at Our School Weather Station แกนตั้ง Rainfall (mm) 0 ถึง 300 ค่ารายเดือน May 150, Jun 120, Jul 140, Aug 180, Sep 260, Oct 200 เป็นข้อมูลตัวอย่าง" }
-    answer: { value: 120, unit: "mm" }
+    answer: { value: 140, unit: "mm" }
     misconceptions:
-      - { match: 400, feedback: "more ... than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
-      - { match: 80, feedback: "80 คือผลต่างของ September กับ August ต้องเทียบกับ July" }
+      - { match: 380, feedback: "more ... than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
+      - { match: 80, feedback: "80 คือผลต่างของ September กับ August ต้องเทียบกับ June" }
     hints:
-      - "อ่านค่า September และ July"
+      - "อ่านค่า September และ June"
       - "ลบค่าที่น้อยออกจากค่าที่มาก"
-    solution: "September 260 mm, July 140 mm → 260 − 140 = **120** mm"
+    solution: "September 260 mm, June 120 mm → 260 − 120 = **140** mm"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -299,7 +299,7 @@ problems:
     difficulty: 4
     type: mcq
     stem: "ดูตารางเวลารถ ป้าของพลอยบอกว่า *I want to leave Bangkok after lunch and arrive in Chiang Mai before midnight.* ป้าควรขึ้นรถคันใด"
-    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 18:30 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
+    figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 17:45 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
     choices:
       - { id: a, text: "Bus 3", correct: true, feedback: "ถูก ออก 13:00 (หลังอาหารกลางวัน) ถึง 23:30 (ก่อนเที่ยงคืน)" }
       - { id: b, text: "Bus 2", feedback: "ออก 10:30 ก่อนอาหารกลางวัน" }
