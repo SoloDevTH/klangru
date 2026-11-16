@@ -101,15 +101,15 @@ problems:
     topics: [physics.electricity.electric-field]
     difficulty: 3
     type: numeric
-    stem: "สายไฟยาวมากมีประจุ $\\lambda = 5\\ \\mathrm{nC/m}$ สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากสายมีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
-    answer: { value: 900, tolerance: 5, unit: "N/C" }
+    stem: "สายไฟยาวมากมีประจุ $\\lambda = 4\\ \\mathrm{nC/m}$ สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากสายมีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 720, tolerance: 5, unit: "N/C" }
     misconceptions:
-      - { match: 4500, feedback: "ใช้ $k\\lambda/r^2$ เหมือนจุดประจุ สนามของเส้นประจุยาวแปรผกผันกับ $r$ ไม่ใช่ $r^2$" }
-      - { match: 450, feedback: "ลืมตัวคูณ 2 ใน $E = 2k\\lambda/r$" }
+      - { match: 3600, feedback: "ใช้ $k\\lambda/r^2$ เหมือนจุดประจุ สนามของเส้นประจุยาวแปรผกผันกับ $r$ ไม่ใช่ $r^2$" }
+      - { match: 360, feedback: "ลืมตัวคูณ 2 ใน $E = 2k\\lambda/r$" }
     hints:
       - "ใช้ผิวเกาส์ทรงกระบอก: $E(2\\pi r\\ell) = \\lambda\\ell/\\varepsilon_0$"
       - "$E = \\dfrac{\\lambda}{2\\pi\\varepsilon_0 r} = \\dfrac{2k\\lambda}{r}$"
-    solution: "$E = \\dfrac{2 \\times 9 \\times 10^9 \\times 5 \\times 10^{-9}}{0.1} = 900\\ \\mathrm{N/C}$"
+    solution: "$E = \\dfrac{2 \\times 9 \\times 10^9 \\times 4 \\times 10^{-9}}{0.1} = 720\\ \\mathrm{N/C}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -133,15 +133,15 @@ problems:
     topics: [physics.electricity.electric-field]
     difficulty: 4
     type: numeric
-    stem: "ทรงกลมฉนวนรัศมี $0.2\\ \\mathrm{m}$ มีประจุ $4\\ \\mathrm{nC}$ กระจายสม่ำเสมอทั่วปริมาตร สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากจุดศูนย์กลางมีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
-    answer: { value: 450, tolerance: 3, unit: "N/C" }
+    stem: "ทรงกลมฉนวนรัศมี $0.2\\ \\mathrm{m}$ มีประจุ $6\\ \\mathrm{nC}$ กระจายสม่ำเสมอทั่วปริมาตร สนามไฟฟ้าที่ระยะ $0.1\\ \\mathrm{m}$ จากจุดศูนย์กลางมีขนาดกี่นิวตันต่อคูลอมบ์ ($k = 9 \\times 10^9$)"
+    answer: { value: 675, tolerance: 3, unit: "N/C" }
     misconceptions:
-      - { match: 3600, feedback: "ใช้ประจุทั้งหมด $kQ/r^2$ แต่ผิวเกาส์รัศมี $0.1\\ \\mathrm{m}$ ล้อมประจุเพียง $(0.1/0.2)^3 = 1/8$ ของทั้งหมด" }
+      - { match: 5400, feedback: "ใช้ประจุทั้งหมด $kQ/r^2$ แต่ผิวเกาส์รัศมี $0.1\\ \\mathrm{m}$ ล้อมประจุเพียง $(0.1/0.2)^3 = 1/8$ ของทั้งหมด" }
       - { match: 0, feedback: "สนามเป็นศูนย์ภายในตัวนำ แต่นี่คือทรงกลมฉนวน ประจุกระจายอยู่ทั่วเนื้อ" }
     hints:
       - "ประจุภายในผิวเกาส์ $Q_{\\text{ภายใน}} = Q\\,r^3/R^3$"
       - "$E = kQ_{\\text{ภายใน}}/r^2 = kQr/R^3$"
-    solution: "$Q_{\\text{ภายใน}} = 4 \\times (1/8) = 0.5\\ \\mathrm{nC}$ $E = \\dfrac{9 \\times 10^9 \\times 0.5 \\times 10^{-9}}{0.01} = 450\\ \\mathrm{N/C}$ (ตรวจ: $kQr/R^3 = 9 \\times 10^9 \\times 4 \\times 10^{-9} \\times 0.1/0.008 = 450$)"
+    solution: "$Q_{\\text{ภายใน}} = 6 \\times (1/8) = 0.75\\ \\mathrm{nC}$ $E = \\dfrac{9 \\times 10^9 \\times 0.75 \\times 10^{-9}}{0.01} = 675\\ \\mathrm{N/C}$ (ตรวจ: $kQr/R^3 = 9 \\times 10^9 \\times 6 \\times 10^{-9} \\times 0.1/0.008 = 675$)"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
