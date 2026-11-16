@@ -1,0 +1,368 @@
+problems:
+  - id: computer.programming.testing-debugging.p001
+    topics: [computer.programming.testing-debugging]
+    difficulty: 1
+    type: numeric
+    stem: |
+      ฟังก์ชันรับคะแนนสอบที่ต้องอยู่ระหว่าง 0 ถึง 100 ถ้าแบ่งข้อมูลเข้าเป็นกลุ่มสมมูลเพื่อออกแบบการทดสอบ โดยให้แต่ละกลุ่มควรได้ผลแบบเดียวกัน ควรแบ่งได้อย่างน้อยกี่กลุ่ม (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 4, unit: กลุ่ม }
+    hints:
+      - "พิจารณาช่วงที่ถูกต้อง และข้อมูลที่ผิดในแต่ละลักษณะ"
+      - "ลองแยกตามว่าค่านั้นต่ำกว่า 0, สูงกว่า 100, อยู่ในช่วง หรือไม่ใช่ตัวเลขเลย"
+    misconceptions:
+      - { match: 3, feedback: "ลืมกลุ่มข้อมูลที่ไม่ใช่ตัวเลข ซึ่งควรถูกปฏิเสธด้วยวิธีเฉพาะ" }
+    solution: "กลุ่มคือ ช่วง 0 ถึง 100 ต่ำกว่า 0 สูงกว่า 100 และไม่ใช่ตัวเลข รวมเป็น 4 กลุ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p002
+    topics: [computer.programming.testing-debugging]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ข้อใดเป็นตัวอย่างของการทดสอบหน่วย (unit test)
+    choices:
+      - { id: a, text: 'ให้ทีมขายลองสั่งอาหารผ่านแอปทั้งระบบ', feedback: "นี่คือการทดสอบยอมรับหรือการทดสอบระบบ ไม่ได้แยกทดสอบฟังก์ชันเดียว" }
+      - { id: b, text: 'ทดสอบว่าโมดูลคิดเงินเชื่อมกับฐานข้อมูลออเดอร์ได้ถูกต้อง', feedback: "การทดสอบที่ดูการเชื่อมต่อหลายส่วนคือการทดสอบบูรณาการ" }
+      - { id: c, text: 'ทดสอบฟังก์ชัน `calc_tax` เพียงตัวเดียวด้วยค่าที่กำหนด', correct: true }
+      - { id: d, text: 'ให้ลูกค้าจริงทดลองใช้เมนูใหม่และยืนยันว่าใช้ได้', feedback: "นี่คือการทดสอบยอมรับ ไม่ใช่การทดสอบหน่วย" }
+    hints:
+      - "การทดสอบหน่วยแยกส่วนที่เล็กที่สุดออกมาทดสอบ"
+      - "ดูว่าการทดสอบนั้นทดสอบฟังก์ชันเดียวหรือหลายส่วนประกอบกัน"
+    solution: "การทดสอบหน่วยตรวจฟังก์ชันหรือคลาสเล็ก ๆ หนึ่งชิ้นแยกจากส่วนอื่น เช่น calc_tax กับค่าที่กำหนด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p003
+    topics: [computer.programming.testing-debugging]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ระบบตัดเกรดใช้เกณฑ์ที่ 50, 60, 70 และ 80 คะแนน ถ้าต้องการทดสอบค่าขอบของทุกเกณฑ์ โดยเลือกค่าที่เป็นเกณฑ์เองและค่าที่ต่ำกว่าเกณฑ์หนึ่งหน่วย ต้องมีค่าทดสอบอย่างน้อยกี่ค่า (ไม่นับค่าซ้ำ และตอบเป็นจำนวนเต็ม)
+    answer: { value: 8, unit: ค่า }
+    hints:
+      - "แต่ละเกณฑ์ให้ค่าทดสอบสองค่า คือค่าเกณฑ์กับค่าที่น้อยกว่าเกณฑ์หนึ่งหน่วย"
+      - "เกณฑ์ทั้งสี่ไม่ซ้อนกัน ดังนั้นค่าทดสอบที่ได้แต่ละคู่ไม่ซ้ำกัน"
+    misconceptions:
+      - { match: 4, feedback: "ทดสอบเฉพาะค่าที่เป็นเกณฑ์ แต่ไม่ได้ทดสอบค่าที่ต่ำกว่าเกณฑ์หนึ่งหน่วย ซึ่งเป็นจุดที่บั๊ก > กับ >= มักเผยออก" }
+    solution: "ค่าทดสอบคือ 49, 50, 59, 60, 69, 70, 79, 80 รวม 8 ค่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p004
+    topics: [computer.programming.testing-debugging]
+    difficulty: 2
+    type: mcq
+    stem: |
+      ข้อใดเป็นการเขียน `assert` ที่ดีที่สุดสำหรับฟังก์ชัน `grade(score)` ที่ควรได้ "A" เมื่อคะแนนเป็น 80
+    choices:
+      - { id: a, text: 'assert True', feedback: "เงื่อนไขนี้เป็นจริงเสมอ จึงไม่ทดสอบอะไรเลย" }
+      - { id: b, text: 'assert grade(80) == "A", "80 ควรได้ A"', correct: true }
+      - { id: c, text: 'print(grade(80))', feedback: "การพิมพ์ผลไม่ได้ตรวจว่าผลถูกหรือไม่ ต้องเทียบกับค่าที่คาดไว้" }
+      - { id: d, text: 'assert grade(80)', feedback: "ค่า \"A\" เป็นสตริงที่ไม่ว่าง จึงเป็นจริงเสมอ ไม่ได้เทียบว่าเป็นค่าที่ถูกต้อง" }
+    hints:
+      - "การทดสอบที่ดีต้องเทียบผลที่ได้กับผลที่คาดไว้"
+      - "ข้อความอธิบายช่วยให้รู้ว่าล้มเหลวเพราะอะไร"
+    solution: "`assert grade(80) == \"A\", \"80 ควรได้ A\"` เทียบค่าที่ได้กับค่าที่คาดไว้ และมีข้อความบอกกรณีที่ทดสอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p005
+    topics: [computer.programming.testing-debugging]
+    difficulty: 2
+    type: text
+    stem: |
+      แนวคิดของการทดสอบที่รันชุดทดสอบเดิมซ้ำหลังแก้โค้ด เพื่อตรวจว่าสิ่งที่เคยทำงานได้ไม่พังลง มีชื่อว่าอะไร (ตอบชื่อภาษาอังกฤษ)
+    accepted: ["regression testing", "regression test", "regression", "การทดสอบถดถอย"]
+    misconceptions:
+      - { match: "unit test", feedback: "การทดสอบหน่วยทดสอบส่วนเล็ก แต่ชื่อที่ต้องการคือการทดสอบที่ตรวจว่าของเดิมไม่พัง" }
+    hints:
+      - "คำนี้มาจากคำว่า regress ที่แปลว่าถอยกลับ"
+      - "คำตอบขึ้นต้นด้วย regression"
+    solution: "การทดสอบถดถอย (regression testing) รันชุดทดสอบเดิมหลังการเปลี่ยนแปลงเพื่อกันไม่ให้ฟังก์ชันที่เคยทำงานได้เสียไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p006
+    topics: [computer.programming.testing-debugging]
+    difficulty: 2
+    type: order
+    stem: |
+      โปรแกรมมีบั๊กที่เกิดเฉพาะบางครั้ง ต้องการหาสาเหตุและแก้ไขอย่างเป็นระบบ เรียงขั้นตอนจากขั้นแรกถึงขั้นสุดท้าย
+    items:
+      - "ทำให้บั๊กเกิดซ้ำได้ด้วยข้อมูลเข้าที่แน่นอน"
+      - "แบ่งครึ่งโค้ดด้วยการพิมพ์ค่าตรงกลางเพื่อหาช่วงที่เริ่มผิด"
+      - "ตั้งจุดพักในช่วงนั้นใน IDE แล้วดูค่าตัวแปรทีละขั้น"
+      - "แก้โค้ดแล้วเพิ่มกรณีทดสอบที่จับบั๊กนี้ไว้"
+    hints:
+      - "ถ้าทำให้เกิดซ้ำไม่ได้ ก็ตรวจสอบได้ยากว่าแก้สำเร็จหรือไม่"
+      - "การหาช่วงที่ผิดควรทำก่อนการตั้งจุดพักละเอียด และการแก้ควรตามด้วยการเพิ่มกรณีทดสอบ"
+    solution: "ต้องทำให้เกิดซ้ำได้ก่อน แล้วแบ่งครึ่งหาช่วงผิด จากนั้นใช้ตัวดีบักดูค่าในช่วงนั้น และสุดท้ายแก้พร้อมเพิ่มกรณีทดสอบกันบั๊กกลับมา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p007
+    topics: [computer.programming.testing-debugging]
+    difficulty: 3
+    type: match
+    stem: |
+      จับคู่แนวคิดการทดสอบกับคำอธิบายที่ถูกต้อง
+    pairs:
+      - { left: "ค่าขอบ (boundary value)", right: "ค่าที่อยู่ตรงรอยต่อของช่วงที่ควรได้ผลต่างกัน" }
+      - { left: "ข้อมูลผิดรูป", right: "ข้อมูลที่ไม่ตรงกับชนิดหรือรูปแบบที่คาดไว้ เช่น ข้อความแทนตัวเลข" }
+      - { left: "การทดสอบกล่องดำ", right: "ทดสอบจากข้อกำหนดและผลลัพธ์ โดยไม่ดูโครงสร้างภายใน" }
+      - { left: "การครอบคลุมโค้ด (coverage)", right: "สัดส่วนของคำสั่งที่ถูกรันจากชุดทดสอบ" }
+    hints:
+      - "ค่าขอบอยู่ตรงรอยต่อ ไม่ใช่กลางช่วง"
+      - "กล่องดำคือการมองโปรแกรมจากภายนอก ส่วนการครอบคลุมวัดว่ารันอะไรไปบ้าง"
+    solution: "ค่าขอบอยู่ตรงรอยต่อของกลุ่ม ข้อมูลผิดรูปคือชนิดหรือรูปแบบที่ไม่ตรงกัน กล่องดำดูจากข้อกำหนด และ coverage วัดสัดส่วนคำสั่งที่รัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p008
+    topics: [computer.programming.testing-debugging]
+    difficulty: 3
+    type: numeric
+    stem: |
+      โปรแกรมมีโค้ดทั้งหมด 128 บรรทัด และมีบั๊กอยู่ในบรรทัดเดียว ถ้าใช้การแบ่งครึ่งเพื่อหาบรรทัดนั้น โดยแต่ละครั้งตรวจว่าค่าที่จุดกึ่งกลางผิดหรือถูก ต้องตรวจอย่างน้อยกี่ครั้งเพื่อแน่ใจว่าได้บรรทัดที่ผิด (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 7, unit: ครั้ง }
+    hints:
+      - "ทุกครั้งที่ตรวจ ช่วงที่ต้องค้นจะเหลือครึ่งหนึ่ง"
+      - "ดูว่าต้องหารกี่ครั้งด้วย 2 จึงเหลือหนึ่งบรรทัด"
+    misconceptions:
+      - { match: 64, feedback: "ตรวจเพียงครั้งเดียวแล้วคิดว่าเหลือครึ่งหนึ่งของบรรทัดทั้งหมดเป็นคำตอบ การแบ่งครึ่งต้องทำซ้ำจนเหลือบรรทัดเดียว" }
+    solution: "128 → 64 → 32 → 16 → 8 → 4 → 2 → 1 ต้องแบ่งครึ่ง 7 ครั้ง (log₂ 128 = 7)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p009
+    topics: [computer.programming.testing-debugging]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ฟังก์ชัน `average(nums)` ควรคืนค่าเฉลี่ยของลิสต์ แต่ผู้เขียนพิมพ์โค้ดเป็น `sum(nums) / (len(nums) + 1)` ถ้าเรียก `average([2, 4, 6])` จะได้ค่าเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 3, unit: "" }
+    hints:
+      - "คำนวณผลรวมของลิสต์ก่อน"
+      - "ตัวหารของโค้ดที่ผิดคือจำนวนสมาชิกบวกหนึ่ง"
+    misconceptions:
+      - { match: 12, feedback: "ลืมหารด้วยตัวหาร ได้เพียงผลรวม" }
+    solution: "ผลรวม 2 + 4 + 6 = 12 หารด้วย (3 + 1) = 4 ได้ 3 แต่ค่าเฉลี่ยที่ถูกต้องคือ 12 ÷ 3 = 4 โค้ดจึงผิด และชุดทดสอบที่มีกรณีนี้ควรจับบั๊กได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p010
+    topics: [computer.programming.testing-debugging]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ฟังก์ชันตรวจอายุผู้สมัครสมาชิกต้องรับเฉพาะ 0 ถึง 120 ปี ชุดกรณีทดสอบใดจับค่าขอบของช่วงนี้ได้ดีที่สุด
+    choices:
+      - { id: a, text: 'ทดสอบเฉพาะ 25 เพราะเป็นอายุที่พบบ่อย', feedback: "ค่าที่อยู่กลางช่วงมักไม่เผยบั๊กที่รอยต่อ" }
+      - { id: b, text: 'ทดสอบเฉพาะ 0, 60 และ 120', feedback: "ทดสอบค่าขอบเพียงด้านเดียว เช่น 120 แต่ไม่ได้ทดสอบ 121 ที่ควรถูกปฏิเสธ" }
+      - { id: c, text: 'ทดสอบ -1, 0, 1, 119, 120, 121', correct: true }
+      - { id: d, text: 'ทดสอบค่าสุ่มพันค่าในช่วงที่ไม่รู้ขอบเขต', feedback: "การสุ่มไม่ได้เลือกค่าขอบโดยตรง อาจไม่ครอบคลุมรอยต่อเลย" }
+    hints:
+      - "ค่าขอบมีทั้งด้านที่ถูกต้องและด้านที่ผิด"
+      - "ค่าที่ควรทดสอบอยู่ทั้งสองข้างของแต่ละรอยต่อ"
+    solution: "ค่า -1 และ 121 ควรถูกปฏิเสธ ค่า 0, 1, 119 และ 120 ควรรับ จึงจับบั๊กทั้งสองด้านของรอยต่อ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p011
+    topics: [computer.programming.testing-debugging]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ทีมแก้บั๊กการคิดยอดในระบบแล้ว ข้อใดคือการทดสอบถดถอยที่ควรทำ
+    choices:
+      - { id: a, text: 'เขียนกรณีทดสอบใหม่สำหรับฟีเจอร์ใหม่ที่ยังไม่ได้เริ่มทำ', feedback: "นี่คือการเพิ่มการทดสอบฟีเจอร์ใหม่ ไม่ได้ตรวจว่าของเดิมยังทำงานได้" }
+      - { id: b, text: 'รันชุดทดสอบเดิมทั้งหมดอีกครั้งเพื่อดูว่ามีส่วนใดพังจากการแก้ไข', correct: true }
+      - { id: c, text: 'วัดเวลาตอบสนองเมื่อผู้ใช้จำนวนมากเข้าพร้อมกัน', feedback: "นี่คือการทดสอบประสิทธิภาพ" }
+      - { id: d, text: 'ให้ผู้จัดการอ่านโค้ดแล้วอนุมัติ', feedback: "การตรวจโค้ดด้วยสายตาไม่ใช่การทดสอบถดถอย" }
+    hints:
+      - "ประเด็นคือการยืนยันว่าสิ่งเดิมยังทำงานเหมือนเดิม"
+      - "ชุดทดสอบเดิมที่มีอยู่แล้วคือเครื่องมือที่ช่วยตรวจเรื่องนี้"
+    solution: "การรันชุดทดสอบเดิมซ้ำหลังการแก้ไขเป็นการทดสอบถดถอย เพื่อจับผลข้างเคียงที่ไม่ได้ตั้งใจ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p012
+    topics: [computer.programming.testing-debugging]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: |
+      ข้อใดเป็นประโยชน์ของตัวดีบักใน IDE (เลือกทุกข้อที่ถูก)
+    choices:
+      - { id: a, text: 'ตั้งจุดพักเพื่อหยุดโปรแกรมตรงบรรทัดที่สนใจ', correct: true }
+      - { id: b, text: 'ดูค่าของตัวแปรขณะที่โปรแกรมหยุดอยู่', correct: true }
+      - { id: c, text: 'ดูกองการเรียก (call stack) ว่าฟังก์ชันใดเรียกมาถึงจุดนี้', correct: true }
+      - { id: d, text: 'ลบ traceback ออกจากโปรแกรมโดยอัตโนมัติ', feedback: "traceback เป็นข้อมูลที่ Python สร้างเพื่อช่วยหาสาเหตุ ตัวดีบักไม่ได้ลบมันออก" }
+    hints:
+      - "ตัวดีบักเหมาะกับการหยุดดูและไล่ทีละขั้น"
+      - "ตัวเลือกที่พูดถึงการลบข้อมูลการวินิจฉัยไม่ใช่หน้าที่ของตัวดีบัก"
+    solution: "จุดพัก การดูค่าตัวแปร และการดูกองการเรียกเป็นหน้าที่ของตัวดีบัก ส่วน traceback เป็นข้อมูลที่ช่วยดีบักไม่ได้ถูกลบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p013
+    topics: [computer.programming.testing-debugging]
+    difficulty: 4
+    type: text
+    stem: |
+      เมื่อโปรแกรม Python ล้มเหลว ข้อความที่แสดงลำดับการเรียกฟังก์ชันจากจุดเริ่มต้นไปถึงบรรทัดที่เกิดข้อผิดพลาด มีชื่อว่าอะไร (ตอบเป็นคำภาษาอังกฤษหนึ่งคำ)
+    accepted: ["traceback", "Traceback"]
+    misconceptions:
+      - { match: "log", feedback: "log คือบันทึกเหตุการณ์ที่โปรแกรมเขียนเอง ไม่ใช่ข้อความที่ Python แสดงเมื่อล้มเหลว" }
+    hints:
+      - "ลองนึกถึงข้อความที่มักแสดงเป็นรายการไฟล์และบรรทัดตอนโปรแกรมพัง"
+      - "คำนี้มี 9 ตัวอักษร ขึ้นต้นด้วย t"
+    solution: "traceback คือรายการการเรียกที่ Python แสดงเมื่อเกิดข้อยกเว้น ให้อ่านจากล่างขึ้นบนเพื่อหาจุดที่เกิดข้อผิดพลาด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p014
+    topics: [computer.programming.testing-debugging]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ชุดทดสอบรันแล้วครอบคลุมคำสั่งได้ 15 คำสั่งจากทั้งหมด 20 คำสั่งของฟังก์ชัน การครอบคลุมโค้ด (coverage) คิดเป็นกี่เปอร์เซ็นต์ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 75, unit: เปอร์เซ็นต์ }
+    hints:
+      - "หาสัดส่วนของคำสั่งที่ถูกรันเทียบกับจำนวนทั้งหมด"
+      - "คูณสัดส่วนด้วย 100 เพื่อให้เป็นเปอร์เซ็นต์"
+    misconceptions:
+      - { match: 15, feedback: "ตอบจำนวนคำสั่งที่ครอบคลุม แต่โจทย์ถามเป็นเปอร์เซ็นต์ของคำสั่งทั้งหมด" }
+    solution: "15 / 20 × 100 = 75 เปอร์เซ็นต์ ยังขาด 5 คำสั่งที่ควรออกแบบกรณีทดสอบเพิ่ม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p015
+    topics: [computer.programming.testing-debugging]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ร้านต้องการให้ฟังก์ชันคำนวณราคาหลังลด `price * (1 - pct / 100)` แต่ผู้เขียนพิมพ์เป็น `price * (1 - pct)` ถ้าเรียก `discount(200, 10)` ด้วยโค้ดที่มีบั๊กนี้ จะได้ค่าเท่าไร (ตอบเป็นจำนวนเต็ม หน่วยบาท)
+    answer: { value: -1800, unit: บาท }
+    hints:
+      - "คำนวณในวงเล็บก่อนโดยใช้ pct เป็น 10 ตามที่เขียนในโค้ดที่ผิด"
+      - "ลองดูว่าค่าในวงเล็บเป็นบวกหรือลบ"
+    misconceptions:
+      - { match: 180, feedback: "นั่นคือค่าที่ถูกต้องตามสูตรที่มี pct / 100 ไม่ใช่ผลจากบั๊ก" }
+    solution: "200 × (1 − 10) = 200 × (−9) = −1800 ค่าที่เป็นลบผิดวิสัยของราคาหลังลด ชุดทดสอบที่ตรวจว่าราคาไม่ติดลบจะจับบั๊กนี้ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p016
+    topics: [computer.programming.testing-debugging]
+    difficulty: 4
+    type: code
+    stem: |
+      ฟังก์ชัน `median(nums)` ควรคืนค่ามัธยฐานของลิสต์ที่ไม่ว่าง (ค่ากลางหลังเรียงลำดับ ถ้ามีจำนวนสมาชิกเป็นคู่ให้เอาค่าเฉลี่ยของสองค่ากลาง) โค้ดเริ่มต้นมีบั๊กสองจุด คือไม่เรียงลำดับและไม่จัดการกรณีจำนวนคู่ ให้แก้โค้ดให้ผ่านชุดทดสอบ
+    starter: |
+      def median(nums):
+          mid = len(nums) // 2
+          return nums[mid]
+    tests: |
+      r = median([3, 1, 2])
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == 2, f"median([3, 1, 2]) ควรได้ 2 แต่ได้ {r}"
+      assert median([4, 1, 3, 2]) == 2.5, f"median([4, 1, 3, 2]) ควรได้ 2.5 (ค่าเฉลี่ยของ 2 กับ 3) แต่ได้ {median([4, 1, 3, 2])}"
+      assert median([7]) == 7, f"median([7]) ควรได้ 7 แต่ได้ {median([7])}"
+      assert median([5, 9]) == 7, f"median([5, 9]) ควรได้ 7 แต่ได้ {median([5, 9])}"
+    reference: |
+      def median(nums):
+          s = sorted(nums)
+          n = len(s)
+          mid = n // 2
+          if n % 2 == 1:
+              return s[mid]
+          return (s[mid - 1] + s[mid]) / 2
+    hints:
+      - "เรียงลำดับก่อนจึงจะหาค่ากลางได้"
+      - "ถ้าจำนวนสมาชิกเป็นคู่ ต้องหาค่าเฉลี่ยของสองค่าที่อยู่ตรงกลาง"
+    solution: "เรียงด้วย sorted แล้วถ้า n เป็นคี่คืน s[n // 2] ถ้าเป็นคู่คืน (s[mid - 1] + s[mid]) / 2"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p017
+    topics: [computer.programming.testing-debugging]
+    difficulty: 5
+    type: code
+    stem: |
+      โปรแกรมรวมคะแนนจากบรรทัดรูปแบบ `ชื่อ: คะแนน` มีบั๊กสามจุดในสองฟังก์ชัน จุดแรกคือ `parse_line` คืนคะแนนเป็นข้อความแทนจำนวนเต็มและไม่ตัดช่องว่าง จุดที่สองคือ `total_score` ข้ามบรรทัดแรกโดยไม่ตั้งใจ จุดที่สามคือ `total_score` รวมค่าที่เป็นข้อความ ให้แก้ทั้งสองฟังก์ชันให้ผ่านชุดทดสอบ โดย `parse_line` ต้องคืนทูเพิล `(ชื่อ, คะแนน)` และ `total_score` คืนผลรวมเป็นจำนวนเต็ม
+    starter: |
+      def parse_line(line):
+          name, score = line.split(":")
+          return name, score
+
+      def total_score(lines):
+          total = 0
+          for line in lines[1:]:
+              name, score = parse_line(line)
+              total += score
+          return total
+    tests: |
+      assert parse_line("ฟ้า: 18") == ("ฟ้า", 18), f"parse_line('ฟ้า: 18') ควรได้ ('ฟ้า', 18) แต่ได้ {parse_line('ฟ้า: 18')!r}"
+      r = total_score(["ฟ้า: 18", "ต้น: 12"])
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == 30, f"total_score ควรได้ 30 (ทั้งสองบรรทัด) แต่ได้ {r!r}"
+      assert total_score(["มด: 7"]) == 7, f"total_score(['มด: 7']) ควรได้ 7 แต่ได้ {total_score(['มด: 7'])!r}"
+      assert total_score([]) == 0, "รายการว่างควรได้ 0"
+    reference: |
+      def parse_line(line):
+          name, score = line.split(":")
+          return name.strip(), int(score.strip())
+
+      def total_score(lines):
+          total = 0
+          for line in lines:
+              name, score = parse_line(line)
+              total += score
+          return total
+    hints:
+      - "ดูว่า `lines[1:]` ข้ามสมาชิกใดไปบ้าง และ `for` ควรวนทั้งลิสต์หรือไม่"
+      - "ใน `parse_line` ใช้ `strip()` กับชื่อและคะแนน แล้วแปลงคะแนนด้วย `int()` ก่อนคืนค่า"
+    solution: "parse_line ใช้ name.strip() และ int(score.strip()) คืนทูเพิล และ total_score วนทั้ง lines แทนที่จะข้ามบรรทัดแรก ค่าที่ได้จึงเป็นจำนวนเต็มและรวมครบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.testing-debugging.p018
+    topics: [computer.programming.testing-debugging]
+    difficulty: 5
+    type: code
+    stem: |
+      กฎปีอธิกสุรทินคือ ปีที่หารด้วย 4 ลงตัวเป็นปีอธิกสุรทิน ยกเว้นปีที่หารด้วย 100 ลงตัว ซึ่งจะเป็นปีอธิกสุรทินก็ต่อเมื่อหารด้วย 400 ลงตัวด้วย ข้อนี้ให้ **เขียนชุดทดสอบ** ไม่ใช่เขียนฟังก์ชัน เขียน `test_is_leap(is_leap)` ที่รับฟังก์ชัน `is_leap(year)` เข้ามา แล้วใช้ `assert` ตรวจผลของปีต่าง ๆ ระบบจะส่งฟังก์ชันที่ถูกต้องหนึ่งตัว (ชุดทดสอบต้องผ่าน) และฟังก์ชันที่มีบั๊กต่างแบบกันอีกสี่ตัว (ชุดทดสอบต้องล้มเหลวด้วย AssertionError ทุกตัว) เลือกปีที่ทดสอบให้ครอบคลุมทุกกลุ่มสมมูลของกฎ
+    starter: |
+      def test_is_leap(is_leap):
+          pass
+    tests: |
+      def _ok(y): return y % 400 == 0 or (y % 4 == 0 and y % 100 != 0)
+      def _bug_only4(y): return y % 4 == 0
+      def _bug_no400(y): return y % 4 == 0 and y % 100 != 0
+      def _bug_flip(y): return y % 400 == 0 or (y % 4 == 0 and y % 100 == 0)
+      def _bug_always(y): return True
+      try:
+          test_is_leap(_ok)
+      except AssertionError as e:
+          raise AssertionError(f"ชุดทดสอบของคุณล้มเหลวกับฟังก์ชันที่ถูกต้อง ตรวจค่าที่คาดไว้อีกครั้ง ({e})")
+      for bug, desc in [(_bug_only4, "ตรวจแค่หารด้วย 4 ลงตัว"), (_bug_no400, "ลืมข้อยกเว้นของปีที่หารด้วย 400 ลงตัว"), (_bug_flip, "เขียนเงื่อนไขหารด้วย 100 กลับด้าน"), (_bug_always, "คืน True ทุกปี")]:
+          caught = False
+          try:
+              test_is_leap(bug)
+          except AssertionError:
+              caught = True
+          assert caught, f"ชุดทดสอบยังจับฟังก์ชันที่มีบั๊กแบบ {desc} ไม่ได้ ลองเพิ่มปีที่ทำให้บั๊กนี้ให้ผลผิด"
+    reference: |
+      def test_is_leap(is_leap):
+          assert is_leap(2024) is True, "2024 หารด้วย 4 ลงตัว ควรได้ True"
+          assert is_leap(2023) is False, "2023 หารด้วย 4 ไม่ลงตัว ควรได้ False"
+          assert is_leap(1900) is False, "1900 หารด้วย 100 ลงตัวแต่ไม่ลงตัวด้วย 400 ควรได้ False"
+          assert is_leap(2000) is True, "2000 หารด้วย 400 ลงตัว ควรได้ True"
+    hints:
+      - "กฎนี้แบ่งปีได้สี่กลุ่ม คือ หารด้วย 4 ไม่ลงตัว หารด้วย 4 ลงตัวแต่ไม่ลงตัวด้วย 100 หารด้วย 100 ลงตัวแต่ไม่ลงตัวด้วย 400 และหารด้วย 400 ลงตัว"
+      - "เลือกปีตัวแทนกลุ่มละหนึ่งปี เช่น 2023, 2024, 1900, 2000 แล้วเขียน `assert is_leap(ปี) is ค่าที่ถูก` ทีละบรรทัด"
+    solution: "ชุดทดสอบที่มีตัวแทนครบสี่กลุ่มสมมูล (2023 → False, 2024 → True, 1900 → False, 2000 → True) จับบั๊กได้ทุกแบบ เช่น บั๊กที่ตรวจแค่หารด้วย 4 จะให้ 1900 เป็น True จึงล้มเหลวที่บรรทัดของ 1900"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,363 @@
+problems:
+  - id: computer.programming.strings-formatting.p001
+    topics: [computer.programming.strings-formatting]
+    difficulty: 1
+    type: numeric
+    stem: |
+      ข้อความ `"Python 3"` มีอักขระทั้งหมดกี่ตัว (นับช่องว่างระหว่างคำและเลขด้วย) ตอบเป็นจำนวนเต็ม
+    answer: { value: 8, unit: ตัวอักษร }
+    hints:
+      - "ใช้ `len()` นับจำนวนอักขระในสตริง"
+      - "อย่าลืมนับช่องว่างที่อยู่ระหว่าง Python กับเลข 3"
+    misconceptions:
+      - { match: 7, feedback: "ลืมนับช่องว่างระหว่าง Python กับ 3 ช่องว่างก็เป็นอักขระหนึ่งตัว" }
+    solution: "`len(\"Python 3\")` นับ P y t h o n ช่องว่าง 3 รวมได้ 8 ตัวอักษร"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p002
+    topics: [computer.programming.strings-formatting]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ผลลัพธ์ของ `print(f"{1234567:,}")` คือข้อใด
+    choices:
+      - { id: a, text: '1234567', feedback: "ถ้าไม่ใส่ `,` ในรูปแบบ f-string จะแสดงตัวเลขติดกันโดยไม่มีการคั่น" }
+      - { id: b, text: '1,234,567', correct: true }
+      - { id: c, text: '1.234.567', feedback: "ตัว `,` ในรูปแบบคือจุลภาคที่คั่นหลักพัน ไม่ใช่จุด" }
+      - { id: d, text: '12,34,567', feedback: "รูปแบบ `:,` คั่นทุกสามหลักจากขวา ไม่ได้จัดกลุ่มสองหลักแบบอินเดีย" }
+    hints:
+      - "รูปแบบตัวเลขหลัง `:` ใช้คั่นหลักพันได้"
+      - "เครื่องหมายที่ใช้คั่นหลักพันคือเครื่องหมายใด"
+    solution: "`:,` ใส่จุลภาคคั่นทุกสามหลัก จึงได้ 1,234,567"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p003
+    topics: [computer.programming.strings-formatting]
+    difficulty: 2
+    type: numeric
+    stem: |
+      สตริง `"ab\ncd"` มีอักขระหลีก `\n` ซึ่งขึ้นบรรทัดใหม่อยู่ตรงกลาง ข้อความนี้มีอักขระกี่ตัว (นับ `\n` เป็นหนึ่งอักขระ) ตอบเป็นจำนวนเต็ม
+    answer: { value: 5, unit: ตัวอักษร }
+    hints:
+      - "ลำดับ `\\n` ในโค้ดถูกแปลงเป็นอักขระตัวเดียวตอนประมวลผลสตริง"
+      - "นับ a, b, การขึ้นบรรทัดใหม่, c และ d"
+    misconceptions:
+      - { match: 6, feedback: "นับเครื่องหมาย \\ กับตัว n แยกกันเป็นสองอักขระ แต่ `\\n` เป็นอักขระหลีกตัวเดียว" }
+    solution: "อักขระคือ a, b, ขึ้นบรรทัดใหม่ (ใช้รูป `\\n` หนึ่งตัว), c และ d รวมเป็น 5 ตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p004
+    topics: [computer.programming.strings-formatting]
+    difficulty: 2
+    type: mcq
+    stem: |
+      ข้อใดให้ผลเป็น `True` เมื่อรันใน Python
+    choices:
+      - { id: a, text: '"10" > "9"', feedback: "สตริงเทียบทีละอักขระจากซ้ายไปขวา `\"1\"` มีรหัสน้อยกว่า `\"9\"` จึงเป็น False" }
+      - { id: b, text: '"Zebra" < "apple"', correct: true }
+      - { id: c, text: '"abc" < "ab"', feedback: "`\"ab\"` เป็นส่วนต้นของ `\"abc\"` จึงน้อยกว่า ดังนั้น `\"abc\" < \"ab\"` เป็น False" }
+      - { id: d, text: '"Ab" == "ab"', feedback: "ตัวพิมพ์ใหญ่กับเล็กเป็นอักขระคนละตัว การเทียบด้วย `==` จึงได้ False" }
+    hints:
+      - "เปรียบเทียบสตริงทีละอักขระ โดยใช้รหัสยูนิโค้ดของอักขระแต่ละตัว"
+      - "ตัวพิมพ์ใหญ่มีรหัสน้อยกว่าตัวพิมพ์เล็ก ลองดูว่า Z กับ a อันไหนมีรหัสน้อยกว่า"
+    solution: "`\"Z\"` มีรหัส 90 และ `\"a\"` มีรหัส 97 จึง `\"Zebra\" < \"apple\"` เป็น True ข้ออื่นเป็น False"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p005
+    topics: [computer.programming.strings-formatting]
+    difficulty: 2
+    type: text
+    stem: |
+      คำใดคือชื่อเมธอดของสตริงที่ใช้ตัดช่องว่างที่หัวและท้ายข้อความออก (ตอบเป็นชื่อเมธอดภาษาอังกฤษ)
+    accepted: ["strip", "strip()", ".strip()"]
+    misconceptions:
+      - { match: "trim", feedback: "Python ไม่มีเมธอด trim ใช้ `strip()` แทน" }
+    hints:
+      - "ชื่อเมธอดเป็นคำภาษาอังกฤษที่หมายถึงการปอกหรือตัดส่วนเกินออก"
+      - "ชื่อเมธอดมีห้าตัวอักษร และขึ้นต้นด้วย s"
+    solution: "`strip()` ตัดช่องว่างและอักขระขึ้นบรรทัดใหม่ที่หัวและท้ายสตริงออก สตริงเดิมไม่เปลี่ยน ได้สตริงใหม่กลับมา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p006
+    topics: [computer.programming.strings-formatting]
+    difficulty: 2
+    type: order
+    stem: |
+      ต้องการตรวจว่าข้อความที่ผู้ใช้พิมพ์เป็นตัวเลขล้วน แล้วแปลงเป็นจำนวนเต็ม เรียงขั้นตอนจากขั้นแรกถึงขั้นสุดท้าย
+    items:
+      - "ตัดช่องว่างหัวท้ายด้วย strip()"
+      - "ตรวจว่าเป็นตัวเลขล้วนด้วย isdigit()"
+      - "แปลงเป็นจำนวนเต็มด้วย int()"
+    hints:
+      - "ช่องว่างที่ผู้ใช้พิมพ์เผลอทำให้ isdigit() เป็น False ได้ ควรจัดการก่อน"
+      - "ต้องรู้ก่อนว่าเป็นตัวเลขล้วนจึงแปลงด้วย int() ได้อย่างปลอดภัย"
+    solution: "ตัดช่องว่างก่อน (`\" 42 \".strip()` ได้ `\"42\"`) แล้วตรวจด้วย isdigit() และสุดท้ายแปลงด้วย int() ลำดับกลับกันจะผิด เพราะ `\" 42 \".isdigit()` ได้ False"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p007
+    topics: [computer.programming.strings-formatting]
+    difficulty: 2
+    type: match
+    stem: |
+      จับคู่แต่ละนิพจน์กับผลลัพธ์ที่ได้เมื่อรันใน Python
+    pairs:
+      - { left: '"  ok  ".strip()', right: '"ok"' }
+      - { left: '"a-b".replace("-", "+")', right: '"a+b"' }
+      - { left: '"abc1".isdigit()', right: 'False' }
+      - { left: '"x" * 3', right: '"xxx"' }
+    hints:
+      - "จำว่า `strip` ตัดส่วนหัวท้าย และ `replace` แทนที่ทุกจุดที่พบ"
+      - "`isdigit()` เป็นจริงเฉพาะเมื่อทุกตัวเป็นตัวเลข"
+    solution: "`strip()` ตัดช่องว่างหัวท้าย `replace` เปลี่ยน `-` เป็น `+` `isdigit()` ได้ False เพราะมีตัวอักษร `a` และ `b` และ `\"x\" * 3` ได้ `\"xxx\"`"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p008
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ร้านกาแฟตั้งราคาเมนูไว้ 125 บาท และลดราคา 12.5 เปอร์เซ็นต์ ถ้าโปรแกรมคำนวณราคาหลังลดแล้วแสดงด้วยรูปแบบ `:.2f` ผู้ซื้อจะเห็นราคาเป็นกี่บาท (ตอบเป็นตัวเลขทศนิยม 2 ตำแหน่ง หน่วยบาท)
+    answer: { value: 109.38, tolerance: 0.01, unit: บาท }
+    hints:
+      - "หาส่วนลดก่อนโดยคูณ 12.5 เปอร์เซ็นต์ หรือ 0.125 กับราคาเต็ม"
+      - "ราคาหลังลดคือราคาเต็มลบส่วนลด แล้วจัดรูปแบบด้วย `:.2f`"
+    misconceptions:
+      - { match: 125, feedback: "ยังไม่ได้หักส่วนลด ต้องคำนวณราคาหลังลดก่อนแสดงผล" }
+    solution: "ราคาหลังลด = 125 × (1 − 0.125) = 109.375 เมื่อจัดรูปแบบ `:.2f` ได้ 109.38 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p009
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ผลลัพธ์ของ `print(f"{'ab':*^6}")` คือข้อใด
+    choices:
+      - { id: a, text: '**ab**', correct: true }
+      - { id: b, text: 'ab****', feedback: "`<` ทำให้ชิดซ้าย แต่ `^` ทำให้อยู่กลาง จึงไม่ได้ดาวทั้งหมดอยู่ทางขวา" }
+      - { id: c, text: '****ab', feedback: "`>` ทำให้ชิดขวา แต่ `^` ทำให้อยู่กลาง" }
+      - { id: d, text: 'ab', feedback: "ความกว้าง 6 ทำให้ต้องเติมอักขระให้ครบ 6 ตัว ไม่ได้คงความยาวเดิมไว้" }
+    hints:
+      - "`^` หมายถึงการจัดกลางในความกว้างที่กำหนด"
+      - "เติมอักขระที่ระบุหลัง `*` ให้ครบความกว้าง 6 โดยแบ่งเท่า ๆ กันสองข้าง"
+    solution: "`ab` ยาว 2 อักขระ ต้องเติมอีก 4 ตัว แบ่งซ้ายขวาข้างละ 2 จึงได้ `**ab**`"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p010
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ชื่อแหล่งท่องเที่ยว `"เจ้าพระยา"` ประกอบด้วยอักขระกี่ตัวตามที่ `len()` นับ (รวมสระและวรรณยุกต์ทุกตัว) ตอบเป็นจำนวนเต็ม
+    answer: { value: 9, unit: ตัวอักษร }
+    hints:
+      - "สระและวรรณยุกต์ไทยเป็นอักขระแยกจากพยัญชนะ ต้องนับแยกออกมา"
+      - "ลองแยกคำทีละอักขระแล้วนับ: เ จ ้ า พ ร ะ ย า"
+    misconceptions:
+      - { match: 3, feedback: "นับเป็นพยางค์ (เจ้า พระ ยา) ไม่ใช่อักขระ `len()` นับทุกสระและวรรณยุกต์แยกกัน" }
+    solution: "อักขระคือ เ จ ้ า พ ร ะ ย า รวม 9 ตัว เพราะ ้ เป็นวรรณยุกต์ และ เ กับ า เป็นสระแยกต่างหาก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p011
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `normalize_name(s)` ที่รับชื่อคนที่อาจมีช่องว่างเกินหลายที่และตัวพิมพ์ปนกัน แล้ว **คืนค่า** ชื่อที่มีคำละหนึ่งช่องว่าง ตัวแรกของแต่ละคำเป็นตัวพิมพ์ใหญ่ และตัวที่เหลือเป็นตัวพิมพ์เล็ก
+    starter: |
+      def normalize_name(s):
+          pass
+    tests: |
+      assert normalize_name("  ada   LOVELACE ") == "Ada Lovelace", f"normalize_name('  ada   LOVELACE ') ควรได้ 'Ada Lovelace' แต่ได้ {normalize_name('  ada   LOVELACE ')!r}"
+      assert normalize_name("bob") == "Bob", f"normalize_name('bob') ควรได้ 'Bob' แต่ได้ {normalize_name('bob')!r}"
+      assert normalize_name("  cy  ") == "Cy", f"ต้องตัดช่องว่างหัวท้ายด้วย ได้ {normalize_name('  cy  ')!r}"
+      r = normalize_name("ANNA   smith  JONES")
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == "Anna Smith Jones", f"normalize_name('ANNA   smith  JONES') ควรได้ 'Anna Smith Jones' แต่ได้ {r!r}"
+    reference: |
+      def normalize_name(s):
+          return " ".join(s.split()).title()
+    hints:
+      - "`split()` โดยไม่มีอาร์กิวเมนต์ตัดช่องว่างทุกชนิดและแยกเป็นคำ โดยไม่สนว่าช่องว่างซ้อนกันกี่ที่"
+      - "`join` รวมคำด้วยช่องว่างหนึ่งช่อง แล้วใช้ `title()` จัดตัวพิมพ์ให้ทุกคำ"
+    solution: "return \" \".join(s.split()).title() ตัวอย่าง \"  ada   LOVELACE \" → \"ada LOVELACE\" → \"Ada Lovelace\""
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p012
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: code
+    stem: |
+      ร้านกาแฟต้องพิมพ์บรรทัดของใบเสร็จ เขียนฟังก์ชัน `format_line(name, qty, price)` ที่คืนสตริงหนึ่งบรรทัดประกอบด้วย ชื่อชิดซ้ายกว้าง 12 ช่อง จำนวนชิดขวากว้าง 4 ช่อง และราคาชิดขวากว้าง 10 ช่อง โดยราคาแสดงทศนิยม 2 ตำแหน่งและมีจุลภาคคั่นหลักพัน
+    starter: |
+      def format_line(name, qty, price):
+          pass
+    tests: |
+      r = format_line("Latte", 2, 65.0)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+      assert r == "Latte          2     65.00", f"format_line('Latte', 2, 65.0) ควรได้ 'Latte          2     65.00' แต่ได้ {r!r}"
+      r2 = format_line("Total", 3, 1234.5)
+      assert r2 == "Total          3  1,234.50", f"format_line('Total', 3, 1234.5) ควรได้ 'Total          3  1,234.50' แต่ได้ {r2!r}"
+      assert len(format_line("Croissant", 1, 45.5)) == 26, "ทุกบรรทัดต้องยาว 26 ช่อง (12 + 4 + 10)"
+    reference: |
+      def format_line(name, qty, price):
+          return f"{name:<12}{qty:>4}{price:>10,.2f}"
+    hints:
+      - "ใช้รูปแบบ `:<12` สำหรับชื่อ `:>4` สำหรับจำนวน และคั่นทั้งสามด้วยการต่อ f-string"
+      - "สำหรับราคาต้องใส่ `,` และ `.2f` ไว้ในรูปแบบหลังเครื่องหมาย `:`"
+    solution: "return f\"{name:<12}{qty:>4}{price:>10,.2f}\" เช่น format_line(\"Latte\", 2, 65.0) ได้ \"Latte          2     65.00\""
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p013
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: code
+    stem: |
+      ระบบสมาชิกของร้านกาแฟต้องการตรวจรหัสผ่าน เขียนฟังก์ชัน `is_strong_password(pw)` ที่คืนค่า `True` เมื่อรหัสผ่านมีความยาวอย่างน้อย 8 อักขระ มีตัวพิมพ์ใหญ่ มีตัวพิมพ์เล็ก มีตัวเลข และไม่มีช่องว่างเลย มิฉะนั้นคืนค่า `False`
+    starter: |
+      def is_strong_password(pw):
+          pass
+    tests: |
+      assert is_strong_password("Pass1234") is True, "Pass1234 ควรผ่าน (True) แต่ได้ False"
+      assert is_strong_password("password") is False, "password ไม่มีตัวพิมพ์ใหญ่และไม่มีตัวเลข ควรได้ False"
+      assert is_strong_password("PASS1234") is False, "PASS1234 ไม่มีตัวพิมพ์เล็ก ควรได้ False"
+      assert is_strong_password("Pass 1234") is False, "มีช่องว่างอยู่ในรหัสผ่าน ควรได้ False"
+      assert is_strong_password("Ab1") is False, "Ab1 สั้นเกิน 8 อักขระ ควรได้ False"
+      assert is_strong_password("Abcdefg1") is True, "Abcdefg1 มีครบ 8 อักขระและครบเงื่อนไข ควรได้ True"
+    reference: |
+      def is_strong_password(pw):
+          return (len(pw) >= 8 and any(c.isupper() for c in pw)
+                  and any(c.islower() for c in pw) and any(c.isdigit() for c in pw)
+                  and not any(c.isspace() for c in pw))
+    hints:
+      - "แยกเงื่อนไขเป็นห้าข้อ แล้วรวมด้วย `and`"
+      - "ใช้ `any(...)` กับ `isupper()`, `islower()`, `isdigit()` และ `isspace()` สำหรับการตรวจแต่ละตัวอักขระ"
+    solution: "ตรวจ len(pw) >= 8 และมี isupper, islower, isdigit อย่างน้อยหนึ่งตัว และไม่มี isspace เลย รวมด้วย and ทั้งหมด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p014
+    topics: [computer.programming.strings-formatting]
+    difficulty: 4
+    type: code
+    stem: |
+      รหัสสินค้าของร้านถูกเขียนรวมกันเช่น `"abc123def45"` เขียนฟังก์ชัน `split_codes(s)` ที่แยกอักขระตัวอักษรทั้งหมดไปไว้ในสตริงหนึ่ง และอักขระตัวเลขทั้งหมดไว้ในอีกสตริงหนึ่ง แล้ว **คืนค่า** เป็นทูเพิลสองค่า `(ตัวอักษร, ตัวเลข)` โดยรักษาลำดับเดิม
+    starter: |
+      def split_codes(s):
+          pass
+    tests: |
+      r = split_codes("abc123def45")
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == ("abcdef", "12345"), f"split_codes('abc123def45') ควรได้ ('abcdef', '12345') แต่ได้ {r!r}"
+      assert split_codes("") == ("", ""), f"สตริงว่างควรได้ ('', '') แต่ได้ {split_codes('')!r}"
+      assert split_codes("7") == ("", "7"), f"split_codes('7') ควรได้ ('', '7') แต่ได้ {split_codes('7')!r}"
+      assert split_codes("Q") == ("Q", ""), f"split_codes('Q') ควรได้ ('Q', '') แต่ได้ {split_codes('Q')!r}"
+    reference: |
+      def split_codes(s):
+          letters = "".join(c for c in s if c.isalpha())
+          digits = "".join(c for c in s if c.isdigit())
+          return (letters, digits)
+    hints:
+      - "วนผ่านทุกอักขระ แล้วเลือกเฉพาะตัวที่ `isalpha()` เป็นจริงหรือ `isdigit()` เป็นจริง"
+      - "รวมอักขระที่เลือกกลับเป็นสตริงด้วย `\"\".join(...)` ทำสองครั้งแล้วคืนเป็นทูเพิล"
+    solution: "สร้างสตริงตัวอักษรจาก c.isalpha() และสตริงตัวเลขจาก c.isdigit() แล้ว return (letters, digits) เช่น 'abc123def45' ได้ ('abcdef', '12345')"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p015
+    topics: [computer.programming.strings-formatting]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ร้านต้องการดูว่าคำค้นหาสามคำ `"ก"`, `"กา"` และ `"กาแฟ"` มีความยาวเฉลี่ยกี่อักขระ โดยใช้ `len()` วัดความยาวของแต่ละคำแล้วหาค่าเฉลี่ย (ตอบทศนิยม 2 ตำแหน่ง ไม่มีหน่วย)
+    answer: { value: 2.33, tolerance: 0.01 }
+    hints:
+      - "หาความยาวของแต่ละคำด้วย `len()` ก่อนแล้วรวมกัน"
+      - "ค่าเฉลี่ยคือผลรวมหารด้วยจำนวนคำ"
+    misconceptions:
+      - { match: 7, feedback: "ได้ผลรวมความยาวแต่ยังไม่ได้หารด้วยจำนวนคำ" }
+    solution: "len: 1 + 2 + 4 = 7 แล้วหารด้วย 3 ได้ 2.333... ปัดเป็น 2.33"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p016
+    topics: [computer.programming.strings-formatting]
+    difficulty: 3
+    type: text
+    stem: |
+      ผลลัพธ์ของ `f"{0.375:.1%}"` คืออะไร (ตอบรวมเครื่องหมาย % ด้วย)
+    accepted: ["37.5%", "37.5 %"]
+    misconceptions:
+      - { match: "0.4", feedback: "รูปแบบ `.1f` แค่ปัดทศนิยมไม่ได้คูณ 100 ต้องใช้ `.1%` เพื่อให้แสดงเป็นเปอร์เซ็นต์" }
+    hints:
+      - "เครื่องหมาย `%` ในรูปแบบจะคูณค่าด้วย 100 ให้อัตโนมัติ"
+      - "ตัวเลขหลังจุดเป็นจำนวนตำแหน่งทศนิยมของเปอร์เซ็นต์"
+    solution: "0.375 × 100 = 37.5 แสดงทศนิยมหนึ่งตำแหน่งพร้อมเครื่องหมาย % จึงได้ 37.5%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p017
+    topics: [computer.programming.strings-formatting]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: |
+      ข้อใดให้ผลลัพธ์เป็นสตริง `"042"` (เลือกทุกข้อที่ถูก)
+    choices:
+      - { id: a, text: 'f"{42:03}"', correct: true }
+      - { id: b, text: 'f"{42:>3}"', feedback: "`>3` ชิดขวาด้วยช่องว่าง ได้ `\" 42\"` ไม่ใช่เลขศูนย์นำหน้า" }
+      - { id: c, text: '"42".zfill(3)', correct: true }
+      - { id: d, text: '"{:03d}".format(42)', correct: true }
+    hints:
+      - "รูปแบบ `0` หน้าความกว้างจะเติมศูนย์ข้างหน้า แทนที่จะเป็นช่องว่าง"
+      - "สตริงมีเมธอดที่เติมศูนย์ข้างหน้าให้ครบความยาวที่ต้องการ"
+    solution: "`f\"{42:03}\"`, `\"42\".zfill(3)` และ `\"{:03d}\".format(42)` ให้ \"042\" ส่วน `f\"{42:>3}\"` ได้ \" 42\""
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.strings-formatting.p018
+    topics: [computer.programming.strings-formatting]
+    difficulty: 5
+    type: code
+    stem: |
+      ครูต้องการสรุปคะแนนสอบย่อยจากข้อความที่คัดลอกมา แต่ละบรรทัดมีรูป `ชื่อ: คะแนน` และบรรทัดว่างให้ข้ามไป เขียนฟังก์ชัน `score_report(text)` ที่คืนสตริงที่มีหนึ่งบรรทัดต่อคน แต่ละบรรทัดเป็น ชื่อชิดซ้ายกว้าง 8 ช่อง คะแนนชิดขวากว้าง 4 ช่อง ตามด้วยช่องว่างหนึ่งช่อง และสัดส่วนคะแนนต่อคะแนนรวมแสดงเป็นเปอร์เซ็นต์ทศนิยม 1 ตำแหน่งกว้าง 6 ช่องชิดขวา บรรทัดต่อกันด้วย `\n` โดยไม่มีบรรทัดว่างท้าย
+    starter: |
+      def score_report(text):
+          pass
+    tests: |
+      sample = "Fah: 18\nTon: 12\n\nMod: 15"
+      r = score_report(sample)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      expected = "Fah       18  40.0%\nTon       12  26.7%\nMod       15  33.3%"
+      assert r == expected, f"ผลลัพธ์ไม่ตรง\nควรได้:\n{expected!r}\nแต่ได้:\n{r!r}"
+      one = score_report("Kim: 5")
+      assert one == "Kim        5 100.0%", f"คนเดียวคะแนน 5 ควรได้ 'Kim        5 100.0%' แต่ได้ {one!r}"
+    reference: |
+      def score_report(text):
+          rows = []
+          for line in text.splitlines():
+              line = line.strip()
+              if not line:
+                  continue
+              name, score = line.split(":")
+              rows.append((name.strip(), int(score.strip())))
+          total = sum(s for _, s in rows)
+          return "\n".join(f"{n:<8}{s:>4} {s / total:>6.1%}" for n, s in rows)
+    hints:
+      - "แยกข้อความด้วย `splitlines()` ข้ามบรรทัดที่ว่างหลัง strip แล้วแยกชื่อกับคะแนนด้วย `:`"
+      - "คำนวณคะแนนรวมก่อน แล้วสร้างแต่ละบรรทัดด้วย f-string ที่มีความกว้างกำหนดไว้ และต่อด้วย `\"\\n\".join`"
+    solution: "รวมคะแนนได้ 45 แล้วแต่ละบรรทัดใช้ f\"{n:<8}{s:>4} {s / total:>6.1%}\" เช่น Fah ได้ 18/45 = 40.0%"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

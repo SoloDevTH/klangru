@@ -1,0 +1,58 @@
+id: computer.programming.collections
+subject: computer
+title: { th: ทูเพิล ลิสต์ซ้อน ดิกชันนารีซ้อน และ comprehension, en: "Tuples, nested lists and dictionaries, and comprehensions" }
+summary: จัดข้อมูลหลายค่าด้วยทูเพิล ลิสต์ซ้อน และดิกชันนารี เข้าใจว่าตัวแปรชี้ไปยังวัตถุเดิมอย่างไร เรียงลำดับตามเกณฑ์ที่กำหนด และสร้างลิสต์หรือดิกชันนารีด้วย comprehension
+difficulty: 5
+minutes: 45
+prerequisites: [computer.programming.lists-strings, computer.programming.control-flow]
+encompasses:
+  - { id: computer.programming.lists-strings, weight: 0.4 }
+  - { id: computer.programming.control-flow, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: grid-aliasing.svg
+    alt: "เปรียบเทียบสองกริด ด้านซ้ายคือ [[0] * 3] * 3 มีแถวสามแถวลูกศรชี้ไปยังลิสต์กล่องเดียวกัน ด้านขวาคือ [[0] * 3 for _ in range(3)] มีแถวสามแถวชี้ไปยังลิสต์สามกล่องที่แยกกัน"
+    caption: "กับดัก [[0] * 3] * 3 ทำให้ทุกแถวเป็นวัตถุเดียวกัน การสร้างด้วย comprehension จะได้แถวที่เป็นอิสระต่อกัน"
+  - type: worked-example
+    title: จัดกลุ่มคะแนนตามห้องเรียน
+    problem: "รายการคะแนนคือ `[(\"ม.4/1\", 15), (\"ม.4/2\", 12), (\"ม.4/1\", 18)]` ต้องการดิกชันนารีที่คีย์เป็นชื่อห้อง และค่าเป็นลิสต์ของคะแนนของห้องนั้นตามลำดับที่พบ"
+    steps:
+      - text: "สร้างดิกชันนารีว่าง `out = {}` เพื่อเก็บผลลัพธ์"
+        why: "ยังไม่รู้ว่าจะมีสาขาอะไรบ้าง จึงเริ่มจากผลว่างก่อน"
+      - text: "วน `for name, amount in records:` เพื่อรับห้องและคะแนนทีละคู่"
+      - text: "ทำ `out.setdefault(name, []).append(amount)` ซึ่งสร้างลิสต์ของห้องนั้นถ้ายังไม่มี แล้วต่อคะแนนเข้าไป"
+        why: "`setdefault` คืนลิสต์ของคีย์นั้นเสมอ ทำให้ไม่ต้องเขียนเงื่อนไขตรวจก่อนว่าคีย์มีหรือยัง"
+      - text: "เมื่อวนครบแล้วได้ `{\"ม.4/1\": [15, 18], \"ม.4/2\": [12]}`"
+    answer: "{\"ม.4/1\": [15, 18], \"ม.4/2\": [12]}"
+  - { type: check, problem: computer.programming.collections.p001, prompt: "ลองนึกถึงสิ่งที่ `b = a` ทำกับลิสต์ก่อนตอบ" }
+  - type: worked-example
+    title: หมุนตารางทวนเข็มนาฬิกา 90 องศา
+    problem: "กำหนดกริด `[[1, 2], [3, 4]]` ต้องการกริดใหม่ที่หมุนทวนเข็มนาฬิกา 90 องศา โดยไม่แก้กริดเดิม"
+    steps:
+      - text: "มองคอลัมน์ขวาสุดของกริดเดิมคือ 2 และ 4 อ่านจากบนลงล่างได้ 2, 4 ซึ่งกลายเป็นแถวแรกของผลลัพธ์"
+        why: "เมื่อหมุนทวนเข็มนาฬิกา คอลัมน์ขวาสุดจะขึ้นไปเป็นแถวบนสุด"
+      - text: "ใช้ `zip(*grid)` อ่านคอลัมน์ของกริดเดิมเป็นแถว ได้ `(1, 3)` และ `(2, 4)` แล้วแปลงแต่ละทูเพิลเป็นลิสต์"
+        why: "`zip(*grid)` ส่งแต่ละแถวเป็นอาร์กิวเมนต์แยกกัน zip จึงจับสมาชิกตำแหน่งเดียวกันของทุกแถวไว้ด้วยกัน ซึ่งก็คือคอลัมน์"
+      - text: "กลับลำดับแถวของผลด้วย `[::-1]` ให้คอลัมน์ขวาสุดขึ้นมาอยู่บนสุด: `[list(r) for r in zip(*grid)][::-1]`"
+    answer: "[[2, 4], [1, 3]]"
+  - { type: check, problem: computer.programming.collections.p011, prompt: "ดูว่าการคัดลอกชั้นนอกอย่างเดียวพอหรือไม่" }
+glossary:
+  - { term: ทูเพิล (tuple), definition: "กลุ่มค่าที่เขียนด้วยวงเล็บกลมและแก้ไขสมาชิกไม่ได้หลังสร้างแล้ว" }
+  - { term: ดิกชันนารี (dictionary), definition: "โครงสร้างที่เก็บคู่คีย์กับค่า ค้นค่าด้วยคีย์ที่ไม่ซ้ำกัน" }
+  - { term: list comprehension, definition: "การสร้างลิสต์ใหม่ในบรรทัดเดียวจากลำดับเดิม มีเงื่อนไขกรองได้" }
+  - { term: การอ้างอิงร่วม (aliasing), definition: "สถานการณ์ที่ตัวแปรสองตัวหรือมากกว่าชี้ไปยังวัตถุเดียวกัน การแก้ผ่านตัวหนึ่งเห็นผลในอีกตัว" }
+flashcards:
+  - { front: "ทูเพิลต่างจากลิสต์อย่างไร", back: "ทูเพิลใช้วงเล็บกลมและแก้ไขสมาชิกไม่ได้ ลิสต์ใช้วงเล็บเหลี่ยมและแก้ไขได้" }
+  - { front: "sorted() กับ sort() ต่างกันอย่างไร", back: "sorted() คืนลิสต์ใหม่และไม่แก้ของเดิม sort() เรียงลิสต์เดิมทันทีและคืน None" }
+  - { front: "ทำไม [[0] * 3] * 3 จึงเป็นกับดัก", back: "ทั้งสามแถวเป็นลิสต์เดียวกัน การแก้แถวหนึ่งเปลี่ยนทุกแถว ควรใช้ [[0] * 3 for _ in range(3)] แทน" }
+  - { front: "d.setdefault(k, []) ทำอะไร", back: "ถ้ายังไม่มีคีย์ k จะใส่ค่าเริ่มต้นเป็นลิสต์ว่างให้ แล้วคืนค่าที่อยู่ในดิกชันนารี" }
+references:
+  - { title: "Tuple", url: "https://en.wikipedia.org/wiki/Tuple", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Associative array", url: "https://en.wikipedia.org/wiki/Associative_array", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Pass by reference", url: "https://en.wikipedia.org/wiki/Pass_by_reference", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

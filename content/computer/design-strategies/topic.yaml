@@ -1,0 +1,58 @@
+id: computer.algorithms.design-strategies
+subject: computer
+title: { th: "กลยุทธ์ออกแบบอัลกอริทึม: แบ่งแยกและเอาชนะ ละโมบ และกำหนดการพลวัต", en: "Algorithm design strategies: divide and conquer, greedy and dynamic programming" }
+summary: เปรียบเทียบกลยุทธ์ลองทุกแบบ แบ่งแยกและเอาชนะ ละโมบ และกำหนดการพลวัต พร้อมดูว่าเลือกโครงสร้างข้อมูลอย่างไรให้อัลกอริทึมเร็วขึ้น
+difficulty: 6.5
+minutes: 45
+prerequisites: [computer.algorithms.efficiency, computer.programming.recursion, computer.algorithms.data-structures]
+encompasses:
+  - { id: computer.programming.recursion, weight: 0.3 }
+  - { id: computer.algorithms.efficiency, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: fib-call-tree.svg
+    alt: "ต้นไม้การเรียกของ fib(5) มีรากเป็น fib(5) แตกเป็นสองกิ่ง ค่า fib(3) และ fib(4) ซ้ำกันหลายที่ ทั้งหมดมี 15 โหนด กล่องสีเขียวคือกรณีฐาน fib(0) และ fib(1)"
+    caption: "การเรียกซ้ำแบบไม่จำค่าย่อยทำให้ fib(2) และ fib(3) ถูกคำนวณซ้ำหลายครั้ง"
+  - { type: check, problem: computer.algorithms.design-strategies.p004, prompt: "ลองนึกถึงการทอนเงินก่อนเลือกคำตอบ" }
+  - type: worked-example
+    title: เลือกกลยุทธ์สำหรับการทอนเงินด้วยเหรียญชุดหนึ่ง
+    problem: "ร้านมีเหรียญ 1, 3 และ 4 บาท ต้องทอนเงิน 6 บาทให้ได้จำนวนเหรียญน้อยที่สุด ควรใช้กลยุทธ์ใด"
+    steps:
+      - text: "ลองละโมบก่อน หยิบเหรียญ 4 บาทที่ใหญ่ที่สุดที่ไม่เกิน 6 บาท เหลือ 2 บาท แล้วต้องใช้เหรียญ 1 บาทอีกสองเหรียญ รวม 3 เหรียญ"
+        why: "ละโมบเลือกทางดีที่สุดในขั้นนั้นทันที จึงต้องตรวจว่าการเลือกนี้ดีที่สุดโดยรวมหรือไม่"
+      - text: "ลองทางอื่นที่ไม่ละโมบ คือหยิบ 3 บาทสองเหรียญ รวม 6 บาทพอดี ได้ 2 เหรียญ ซึ่งน้อยกว่า"
+      - text: "สรุปว่าละโมบใช้ไม่ได้กับระบบเหรียญนี้ ต้องใช้กำหนดการพลวัตที่คำนวณจำนวนเหรียญต่ำสุดของจำนวนเงินทุกค่าจากน้อยไปมาก"
+        why: "กำหนดการพลวัตตรวจทุกทางเลือกผ่านค่าย่อยที่เก็บไว้ จึงได้คำตอบที่ถูกต้องเสมอ"
+    answer: "ใช้กำหนดการพลวัต เพราะละโมบได้ 3 เหรียญ แต่คำตอบที่น้อยที่สุดคือ 2 เหรียญ"
+  - { type: check, problem: computer.algorithms.design-strategies.p008, prompt: "ดูต้นไม้การเรียกของ fib(5) แล้วลองต่อยอดเป็น fib(6)" }
+  - type: worked-example
+    title: ลดเวลาการตรวจหาคู่จากกำลังสองเหลือเชิงเส้น
+    problem: "ต้องการตรวจว่าในรายการมีสองตำแหน่งที่รวมกันได้ค่าเป้าหมายหรือไม่ วิธีเทียบทุกคู่ใช้เวลาเท่าใด และปรับให้เร็วขึ้นได้อย่างไร"
+    steps:
+      - text: "การเทียบทุกคู่มีการวนซ้อนสองชั้น จำนวนการเทียบจึงเป็นประมาณ n ยกกำลังสอง"
+        why: "เมื่อรายการยาวขึ้นเป็นสองเท่า งานจะเพิ่มประมาณสี่เท่า"
+      - text: "สำหรับแต่ละค่า x ดูว่า `target - x` เคยเห็นแล้วหรือไม่ โดยเก็บค่าที่เห็นแล้วในเซต"
+        why: "การค้นหาในเซตใช้เวลาเฉลี่ยคงที่ จึงไม่ต้องวนทุกคู่อีก"
+      - text: "ผลคือการวนครั้งเดียวด้วยงานคงที่ต่อหนึ่งค่า รวมประมาณ n ครั้ง"
+    answer: "จากประมาณ n กำลังสองเหลือประมาณ n โดยเปลี่ยนมาเก็บค่าที่เห็นแล้วในเซต"
+  - { type: check, problem: computer.algorithms.design-strategies.p013, prompt: "นึกถึงกลยุทธ์ที่ถอยกลับเมื่อติดตัน" }
+glossary:
+  - { term: ลองทุกแบบ (brute force), definition: "กลยุทธ์ตรวจทุกคำตอบที่เป็นไปได้แล้วเลือกที่ดีที่สุด ให้ผลถูกต้องแต่อาจช้ามาก" }
+  - { term: แบ่งแยกและเอาชนะ (divide and conquer), definition: "กลยุทธ์แบ่งปัญหาเป็นส่วนย่อย แก้แต่ละส่วน แล้วรวมผลเข้าด้วยกัน" }
+  - { term: ละโมบ (greedy), definition: "กลยุทธ์เลือกทางที่ดีที่สุดในแต่ละขั้นทันทีโดยไม่ย้อนกลับ ซึ่งไม่ได้ให้คำตอบที่ดีที่สุดเสมอไป" }
+  - { term: กำหนดการพลวัต (dynamic programming), definition: "กลยุทธ์แบ่งปัญหาเป็นปัญหาย่อยที่ซ้ำกัน และเก็บผลย่อยไว้เพื่อไม่ต้องคำนวณซ้ำ" }
+flashcards:
+  - { front: "ละโมบต่างจากกำหนดการพลวัตอย่างไร", back: "ละโมบเลือกทีละขั้นโดยไม่ย้อนกลับ ส่วนกำหนดการพลวัตตรวจทางเลือกผ่านค่าย่อยที่เก็บไว้" }
+  - { front: "จำนวนทางเลือกของ n รายการที่เปิดหรือปิดได้", back: "2 ยกกำลัง n ซึ่งเติบโตเร็วมาก" }
+  - { front: "การค้นหาแบบทวิภาคต้องมีเงื่อนไขอะไร", back: "รายการต้องเรียงลำดับแล้ว และแบ่งช่วงครึ่งหนึ่งทุกครั้ง" }
+  - { front: "ทำไมการเรียกซ้ำโดยไม่จำค่าย่อยจึงช้า", back: "เพราะคำนวณปัญหาย่อยเดิมซ้ำ เช่น fib(n) เรียก fib(n-2) สองครั้ง" }
+references:
+  - { title: "Dynamic programming", url: "https://en.wikipedia.org/wiki/Dynamic_programming", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Greedy algorithm", url: "https://en.wikipedia.org/wiki/Greedy_algorithm", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Divide-and-conquer algorithm", url: "https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

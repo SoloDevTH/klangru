@@ -1,0 +1,58 @@
+id: computer.programming.files-exceptions
+subject: computer
+title: { th: ไฟล์ CSV และการจัดการข้อผิดพลาด, en: "CSV files and error handling" }
+summary: อ่านและเขียนไฟล์ข้อความและ CSV อย่างปลอดภัย จับข้อยกเว้นเฉพาะชนิดที่คาดไว้ และโยนข้อยกเว้นของตนเองพร้อมข้อความที่ช่วยแก้ปัญหา
+difficulty: 5
+minutes: 45
+prerequisites: [computer.programming.strings-formatting, computer.programming.collections]
+encompasses:
+  - { id: computer.programming.strings-formatting, weight: 0.3 }
+  - { id: computer.programming.collections, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: try-flow.svg
+    alt: "แผนภาพลูกศรจากกล่อง try ไปสองทาง ทางบนไป else เมื่อไม่มีข้อผิดพลาด ทางล่างไป except เมื่อมีข้อผิดพลาด ทั้งสองทางไปรวมที่กล่อง finally ซึ่งทำงานทุกครั้ง"
+    caption: "else ทำงานเฉพาะเมื่อไม่เกิดข้อยกเว้น ส่วน finally ทำงานเสมอ"
+  - type: worked-example
+    title: อ่านคะแนนจากข้อความ CSV โดยข้ามบรรทัดที่เสีย
+    problem: "ข้อความ CSV คือ `ชื่อ,คะแนน` แล้วตามด้วยแถว `ฟ้า,18`, `ต้น,สิบสอง` และ `มด,15` ต้องการรวมคะแนนที่อ่านได้ และนับจำนวนแถวที่ข้าม โดยโปรแกรมต้องทำงานต่อจนจบ"
+    steps:
+      - text: "อ่านด้วย `csv.DictReader` แล้วดึงค่าของคอลัมน์ `คะแนน` ของแต่ละแถว"
+        why: "DictReader ใช้แถวแรกเป็นชื่อคอลัมน์ ทำให้เรียกค่าด้วยชื่อได้"
+      - text: "ห่อ `int(row[\"คะแนน\"])` ด้วย `try` และจับ `ValueError` เท่านั้น"
+        why: "`ValueError` คือชนิดที่ int() โยนเมื่อข้อความไม่ใช่ตัวเลข การจับชนิดนี้ไม่ซ่อนข้อผิดพลาดอื่น"
+      - text: "เมื่อแปลงไม่ได้ให้เพิ่มตัวนับแถวที่ข้าม และไม่บวกค่านั้น ส่วนแถวที่แปลงได้ให้บวกเข้าผลรวม"
+      - text: "แถว `ต้น,สิบสอง` ข้ามไป ได้ผลรวม 18 + 15 = 33 และข้าม 1 แถว"
+    answer: "รวมคะแนนได้ 33 และข้าม 1 แถว"
+  - { type: check, problem: computer.programming.files-exceptions.p004, prompt: "ดูว่าควรจับข้อผิดพลาดชนิดใดและควรทำอะไรกับแถวที่ผิด" }
+  - type: worked-example
+    title: โยนข้อยกเว้นพร้อมข้อความที่บอกค่า
+    problem: "ฟังก์ชัน `check_score(120)` ต้องยืนยันว่าคะแนนอยู่ในช่วง 0 ถึง 100 ถ้าไม่อยู่ให้ทำอย่างไร"
+    steps:
+      - text: "ตรวจเงื่อนไข `0 <= value <= 100` ก่อนคืนค่า"
+        why: "การตรวจก่อนคืนค่าทำให้ค่าที่ผิดไม่ถูกนำไปใช้ต่อ"
+      - text: "ค่า 120 ไม่อยู่ในช่วง จึงโยน `ScoreError` ด้วย `raise` พร้อมข้อความ `f\"คะแนนต้องอยู่ระหว่าง 0 ถึง 100 แต่ได้ {value}\"`"
+        why: "ข้อความมีค่าที่ผิดติดมาด้วย ผู้เรียกจึงรู้ได้ทันทีว่าผิดอย่างไร"
+      - text: "ผู้เรียกที่ต้องการรับมือจับด้วย `try` และ `except ScoreError` ได้ โดยโปรแกรมไม่หยุดโดยไม่ตั้งใจ"
+    answer: "โยน ScoreError: คะแนนต้องอยู่ระหว่าง 0 ถึง 100 แต่ได้ 120"
+  - { type: check, problem: computer.programming.files-exceptions.p001, prompt: "ลองนึกว่าโหมด w กับ a ต่างกันอย่างไรกับเนื้อหาเดิม" }
+glossary:
+  - { term: ข้อยกเว้น (exception), definition: "ข้อผิดพลาดที่เกิดขณะโปรแกรมทำงาน ถ้าไม่ถูกจับจะทำให้โปรแกรมหยุด" }
+  - { term: CSV, definition: "รูปแบบไฟล์ข้อความที่แต่ละบรรทัดเป็นแถวและคั่นช่องด้วยจุลภาค" }
+  - { term: โหมดการเปิดไฟล์, definition: "ตัวอักษรที่บอก open() ว่าจะอ่าน เขียนใหม่ หรือเขียนต่อท้าย เช่น r w a" }
+  - { term: encoding, definition: "วิธีแปลงอักขระเป็นไบต์และกลับกัน เช่น UTF-8 ที่รองรับอักษรไทย" }
+flashcards:
+  - { front: "โหมด \"a\" กับ \"w\" ต่างกันอย่างไร", back: "a เขียนต่อท้ายข้อความเดิม w ลบเนื้อหาเดิมแล้วเขียนใหม่" }
+  - { front: "ทำไมควรใช้ with open(...)", back: "เพราะไฟล์จะถูกปิดให้อัตโนมัติเมื่อจบบล็อก แม้เกิดข้อยกเว้นกลางคัน" }
+  - { front: "ทำไมไม่ควรเขียน except: pass", back: "เพราะจับข้อผิดพลาดทุกชนิดและซ่อนปัญหาที่ไม่ได้คาดไว้ จึงมองไม่เห็นข้อมูลเสีย" }
+  - { front: "raise ทำอะไร", back: "โยนข้อยกเว้นออกจากฟังก์ชันทันที ผู้เรียกจับได้ด้วย try และ except" }
+references:
+  - { title: "Exception handling", url: "https://en.wikipedia.org/wiki/Exception_handling", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Comma-separated values", url: "https://en.wikipedia.org/wiki/Comma-separated_values", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "ไฟล์คอมพิวเตอร์", url: "https://th.wikipedia.org/wiki/ไฟล์คอมพิวเตอร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

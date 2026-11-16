@@ -1,0 +1,61 @@
+id: computer.programming.strings-formatting
+subject: computer
+title: { th: ประมวลผลข้อความและจัดรูปแบบผลลัพธ์, en: "Text processing and formatted output" }
+summary: ใช้เมธอดของสตริงตัดแต่งและค้นหาข้อความ เข้าใจว่าอักษรไทยประกอบจากหลายอักขระ และจัดรูปแบบผลลัพธ์ด้วย f-string ให้ตรงแนว
+difficulty: 4.5
+minutes: 45
+prerequisites: [computer.programming.lists-strings, computer.programming.control-flow]
+encompasses:
+  - { id: computer.programming.lists-strings, weight: 0.3 }
+  - { id: computer.programming.control-flow, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: thai-codepoints.svg
+    alt: "คำว่า ก่า วาดเป็นสามกรอบ กรอบซ้ายคือพยัญชนะ ก มีดัชนี 0 กรอบกลางคือวรรณยุกต์ไม้เอก มีดัชนี 1 กรอบขวาคือสระอา มีดัชนี 2 ใต้กรอบมีรหัสยูนิโค้ดกำกับ และมีข้อความบอกว่า len ของสตริงนี้เท่ากับ 3"
+    caption: "สระและวรรณยุกต์ไทยเป็นอักขระแยกจากพยัญชนะ จึงนับเป็นคนละตัวในการ len และการตัดช่วง"
+  - type: worked-example
+    title: ตรวจรหัสผ่านที่ผู้ใช้พิมพ์มา
+    problem: "ระบบร้านกาแฟต้องการตรวจว่าข้อความ `\"  Pass1234  \"` มีทั้งตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก และตัวเลข โดยไม่นับช่องว่างหัวท้ายที่ผู้ใช้พิมพ์เผลอ"
+    steps:
+      - text: "ตัดช่องว่างหัวท้ายก่อน: `s = raw.strip()` ได้ `\"Pass1234\"`"
+        why: "ช่องว่างหัวท้ายไม่ใช่ส่วนของรหัสผ่าน ถ้าไม่ตัดจะตรวจผิดและเก็บค่าที่ผู้ใช้ไม่ได้ตั้งใจ"
+      - text: "ตรวจแต่ละเงื่อนไขด้วยเมธอดของสตริง: `any(c.isupper() for c in s)` `any(c.islower() for c in s)` `any(c.isdigit() for c in s)`"
+        why: "`any` คืน True เมื่อมีอย่างน้อยหนึ่งตัวที่ตรงเงื่อนไข จึงตรงกับคำว่า มีอย่างน้อยหนึ่งตัว"
+      - text: "รวมผลด้วย `and` ได้ `True and True and True` จึงผ่านการตรวจ"
+    answer: "ผ่าน เพราะมี P เป็นตัวพิมพ์ใหญ่ มี ass เป็นตัวพิมพ์เล็ก และมี 1234 เป็นตัวเลข"
+  - { type: check, problem: computer.programming.strings-formatting.p004, prompt: "ลองเปรียบเทียบสตริงทีละอักขระ" }
+  - type: figure
+    src: receipt-columns.svg
+    alt: "ใบเสร็จสามบรรทัดในกรอบข้อความแบบความกว้างคงที่ มีคอลัมน์ชื่อกว้าง 10 ช่อง จำนวนกว้าง 3 ช่อง และราคากว้าง 9 ช่อง บรรทัดแรกคือ Latte จำนวน 2 ราคา 65.00 บรรทัดที่สองคือ Croissant จำนวน 1 ราคา 45.50 บรรทัดสุดท้ายคือ Total จำนวน 3 ราคา 175.50 ทุกบรรทัดมีความยาวเท่ากัน"
+    caption: "ชื่อชิดซ้าย ตัวเลขชิดขวา และกำหนดความกว้างแต่ละคอลัมน์ไว้ล่วงหน้า"
+  - type: worked-example
+    title: จัดรายชื่อให้เป็นระเบียบก่อนแสดงผล
+    problem: "รายชื่อที่รับมาคือ `[\"  ada \", \"BOB\", \" cy  \"]` ต้องการแสดงชื่อที่ตัดช่องว่างแล้วและมีตัวพิมพ์แรกเป็นตัวใหญ่ทุกชื่อ"
+    steps:
+      - text: "ตัดช่องว่างทุกชื่อด้วย `[n.strip() for n in names]`"
+        why: "การเปรียบเทียบและการแสดงผลจะถูกต้องเมื่อไม่มีช่องว่างส่วนเกิน"
+      - text: "ทำตัวพิมพ์ด้วย `capitalize()` ซึ่งทำให้ตัวแรกเป็นตัวใหญ่และตัวที่เหลือเป็นตัวเล็ก"
+        why: "เมธอดนี้จัดการทั้งสองอย่างในคราวเดียว จึงไม่ต้องเรียก `lower()` แยก ส่วน `title()` จะทำตัวแรกของทุกคำเป็นตัวใหญ่"
+      - text: "ผลลัพธ์คือ `[\"Ada\", \"Bob\", \"Cy\"]`"
+    answer: "[\"Ada\", \"Bob\", \"Cy\"]"
+  - { type: check, problem: computer.programming.strings-formatting.p011, prompt: "ดูว่า split และ join ช่วยลดขั้นตอนได้อย่างไร" }
+glossary:
+  - { term: สตริง (string), definition: "ลำดับของอักขระที่แก้ไขไม่ได้ สร้างขึ้นเมื่อเขียนข้อความในเครื่องหมายคำพูด" }
+  - { term: ยูนิโค้ด, definition: "มาตรฐานกำหนดรหัสเลขให้อักขระทุกภาษา ภาษาไทยมีรหัสของพยัญชนะ สระ และวรรณยุกต์แยกกัน" }
+  - { term: อักขระหลีก (escape sequence), definition: "ชุดอักขระที่ขึ้นต้นด้วยเครื่องหมาย \\ เช่น \\n หมายถึงการขึ้นบรรทัดใหม่" }
+  - { term: f-string, definition: "สตริงที่มี f นำหน้า ใส่ตัวแปรในวงเล็บปีกกาได้ และกำหนดรูปแบบการแสดงผลหลัง : ได้" }
+flashcards:
+  - { front: "len(\"ก่า\") เท่ากับเท่าไร", back: "3 เพราะ ก วรรณยุกต์ และสระอาเป็นอักขระแยกกันสามตัว" }
+  - { front: "strip() ทำอะไร", back: "ตัดช่องว่างหัวท้ายของสตริงออก และคืนค่าสตริงใหม่ สตริงเดิมไม่เปลี่ยน" }
+  - { front: "f\"{0.256:.1%}\" ได้ผลอะไร", back: "25.6% คูณด้วย 100 แล้วแสดงทศนิยมหนึ่งตำแหน่งพร้อม %" }
+  - { front: "ทำไม \"10\" < \"9\" เป็นจริง", back: "เพราะเป็นสตริง จึงเทียบทีละอักขระ และ \"1\" มีรหัสน้อยกว่า \"9\"" }
+references:
+  - { title: "ยูนิโค้ด", url: "https://th.wikipedia.org/wiki/ยูนิโค้ด", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "String (computer science)", url: "https://en.wikipedia.org/wiki/String_(computer_science)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Unicode", url: "https://en.wikipedia.org/wiki/Unicode", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,354 @@
+problems:
+  - id: computer.security.secure-coding.p001
+    topics: [computer.security.secure-coding]
+    difficulty: 1
+    type: numeric
+    stem: |
+      รหัสผ่านที่ยาว 3 ตัวอักษร และใช้ตัวอักษรภาษาอังกฤษพิมพ์เล็กเพียงชุดเดียวทั้ง 26 ตัว มีรูปแบบที่เป็นไปได้ทั้งหมดกี่แบบ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 17576, unit: แบบ }
+    hints:
+      - "แต่ละตำแหน่งเลือกได้จาก 26 ตัวอักษร และแต่ละตำแหน่งเลือกอิสระจากกัน"
+      - "เมื่อมี 3 ตำแหน่ง ให้คูณ 26 ด้วยตัวเองสามครั้ง"
+    misconceptions:
+      - { match: 78, feedback: "คิดว่าเป็น 26 คูณ 3 แต่ตำแหน่งแต่ละตำแหน่งต้องคูณกัน ไม่ใช่บวกกัน" }
+    solution: "26 × 26 × 26 = 26^3 = 17576 แบบ เมื่อความยาวเพิ่มขึ้นจำนวนแบบจะเพิ่มอย่างรวดเร็ว นี่เป็นเหตุผลว่าทำไมความยาวจึงสำคัญ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p002
+    topics: [computer.security.secure-coding]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ข้อใดเป็นตัวอย่างของการตรวจข้อมูลเข้าแบบรายการที่อนุญาต (allowlist)
+    choices:
+      - { id: a, text: 'รับทุกอักขระยกเว้นเครื่องหมาย < และ >', feedback: "นี่คือรายการที่ห้าม (denylist) ซึ่งอาจตกหล่นรูปแบบที่ไม่เคยคิดถึง" }
+      - { id: b, text: 'รับเฉพาะตัวเลข 0 ถึง 9 สำหรับเบอร์โทร', correct: true }
+      - { id: c, text: 'ตัดข้อความให้เหลือ 10 ตัวอักษรแรกเท่านั้น', feedback: "การตัดความยาวช่วยได้บ้าง แต่ไม่ได้กำหนดว่าอักขระใดยอมรับได้" }
+      - { id: d, text: 'บันทึกข้อความที่รับมาลงไฟล์ log ทุกครั้ง', feedback: "การบันทึกช่วยติดตามเหตุการณ์ แต่ไม่ได้ตรวจว่าข้อมูลถูกต้อง" }
+    hints:
+      - "รายการที่อนุญาตบอกว่าอะไรยอมรับได้"
+      - "ตัวเลือกที่ระบุชุดอักขระที่ยอมรับตรง ๆ คือคำตอบ"
+    solution: "การรับเฉพาะตัวเลข 0 ถึง 9 คือการกำหนดรายการที่อนุญาตชัดเจน ข้อมูลอื่นทั้งหมดจะถูกปฏิเสธ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p003
+    topics: [computer.security.secure-coding]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ทีมพัฒนาพบรหัสผ่านของฐานข้อมูลถูกเขียนไว้ตรง ๆ ในโค้ด 3 ไฟล์ ถ้าต้องเปลี่ยนรหัสผ่านนี้และไม่มีการดึงค่าจากที่อื่น ต้องแก้ไขกี่จุดอย่างน้อย (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 3, unit: จุด }
+    hints:
+      - "นับจำนวนที่ค่าลับปรากฏอยู่ในโค้ดทั้งหมด"
+      - "ทุกไฟล์ที่มีค่านั้นต้องถูกแก้เพื่อให้ค่าใหม่ใช้ได้"
+    misconceptions:
+      - { match: 1, feedback: "คิดว่าแก้ที่เดียวพอ แต่ค่าถูกเขียนซ้ำในสามไฟล์ จึงต้องแก้ทั้งสาม หรือดึงค่าจากที่กลางเพียงที่เดียว" }
+    solution: "ค่าที่ฝังอยู่สามจุดต้องแก้สามจุด วิธีที่ดีกว่าคือเก็บความลับนอกโค้ดแล้วอ่านจากตัวแปรสภาพแวดล้อมหรือระบบจัดการความลับที่จุดเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p004
+    topics: [computer.security.secure-coding]
+    difficulty: 2
+    type: mcq
+    stem: |
+      ข้อใดเป็นวิธีเก็บรหัสผ่านของผู้ใช้ที่ถูกต้องที่สุด
+    choices:
+      - { id: a, text: 'เก็บเป็นข้อความธรรมดาเพื่อให้ตรวจสอบได้ง่าย', feedback: "ถ้าฐานข้อมูลรั่วไหล รหัสผ่านทุกคนจะถูกเปิดเผยทันที" }
+      - { id: b, text: 'เก็บแฮชโดยไม่ใส่ salt เพราะทำให้ค่าเดาได้ยากพอแล้ว', feedback: "การไม่ใส่ salt ทำให้รหัสผ่านที่เหมือนกันได้แฮชเหมือนกัน และเปิดช่องให้โจมตีด้วยตารางที่คำนวณไว้ล่วงหน้า" }
+      - { id: c, text: 'เข้ารหัสด้วย Base64 แล้วเก็บ', feedback: "Base64 เป็นการแปลงรูปแบบเพื่อการส่งข้อมูล ไม่ได้ซ่อนค่า และถอดกลับได้ทันที" }
+      - { id: d, text: 'เก็บค่าแฮชที่มี salt โดยใช้ฟังก์ชันที่ออกแบบสำหรับรหัสผ่าน', correct: true }
+    hints:
+      - "ควรเก็บค่าที่ย้อนกลับเป็นรหัสผ่านเดิมได้ยากที่สุด"
+      - "ตัวเลือกที่แค่แปลงรูปแบบไม่ได้ป้องกันอะไรมากนัก"
+    solution: "การเก็บแฮชที่มี salt ด้วยฟังก์ชันที่ออกแบบสำหรับรหัสผ่าน ทำให้การรั่วไหลของฐานข้อมูลไม่ได้เปิดเผยรหัสผ่านโดยตรง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p005
+    topics: [computer.security.secure-coding]
+    difficulty: 2
+    type: text
+    stem: |
+      ช่องโหว่ที่เกิดจากการนำข้อมูลที่ผู้ใช้กรอกไปต่อเข้าเป็นส่วนของคำสั่ง SQL โดยตรง เรียกว่าอะไร (ตอบชื่อภาษาอังกฤษสองคำ)
+    accepted: ["SQL injection", "SQLi"]
+    misconceptions:
+      - { match: "xss", feedback: "XSS เกิดจากการแสดงข้อความที่ไม่หลีกอักขระในหน้าเว็บ ไม่ใช่การแทรกในคำสั่ง SQL" }
+    hints:
+      - "คำแรกบอกภาษาของคำสั่งที่ถูกโจมตี"
+      - "คำที่สองหมายถึงการแทรกข้อมูลเข้าไปในคำสั่ง"
+    solution: "การแทรกคำสั่ง SQL (SQL injection) เกิดเมื่อข้อมูลถูกตีความเป็นส่วนของคำสั่ง ป้องกันด้วยคำสั่งแบบพารามิเตอร์และการตรวจข้อมูลเข้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p006
+    topics: [computer.security.secure-coding]
+    difficulty: 2
+    type: order
+    stem: |
+      ลำดับแนวปฏิบัติเมื่อข้อมูลจากผู้ใช้เดินทางผ่านระบบ เรียงจากจุดที่ข้อมูลเข้าสู่ระบบไปจนถึงจุดที่ข้อมูลออกไป
+    items:
+      - "ตรวจชนิด ความยาว และรูปแบบของข้อมูลเทียบกับรายการที่อนุญาต"
+      - "ส่งข้อมูลเข้าคำสั่งฐานข้อมูลด้วยพารามิเตอร์ ไม่ต่อเป็นสตริง"
+      - "หลีกอักขระตามบริบทก่อนแสดงผลในหน้าเว็บ"
+      - "บันทึกเหตุการณ์ที่ผิดปกติ โดยไม่เก็บรหัสผ่านหรือความลับลง log"
+    hints:
+      - "ข้อมูลต้องถูกตรวจก่อนจะถูกใช้ในที่ใด ๆ ภายในระบบ"
+      - "การหลีกอักขระทำเมื่อถึงจุดที่ข้อมูลจะถูกแสดงออกไป"
+    solution: "ตรวจข้อมูลที่ขอบระบบก่อน แล้วแยกคำสั่งกับข้อมูลเมื่อเข้าฐานข้อมูล หลีกอักขระที่จุดแสดงผล และบันทึกเหตุการณ์โดยไม่รวมความลับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p007
+    topics: [computer.security.secure-coding]
+    difficulty: 3
+    type: match
+    stem: |
+      จับคู่ชื่อช่องโหว่หรือหลักการกับคำอธิบายที่ตรงที่สุด
+    pairs:
+      - { left: "XSS", right: "ข้อความจากผู้ใช้ถูกแสดงในหน้าเว็บโดยไม่หลีกอักขระ" }
+      - { left: "การตรวจสิทธิ์ที่ขาดหาย", right: "ระบบไม่ตรวจว่าผู้ใช้มีสิทธิ์เข้าถึงข้อมูลนั้นหรือไม่" }
+      - { left: "ความลับฝังในโค้ด", right: "รหัสผ่านหรือกุญแจ API อยู่ในซอร์สโค้ดหรือประวัติของรีโพ" }
+      - { left: "สิทธิ์น้อยที่สุด", right: "ให้สิทธิ์แก่บัญชีเท่าที่หน้าที่ต้องใช้เท่านั้น" }
+    hints:
+      - "ดูว่าคำอธิบายพูดถึงการแสดงผล การตรวจสิทธิ์ ความลับ หรือการให้สิทธิ์"
+      - "สิทธิ์น้อยที่สุดเป็นหลักการออกแบบ ไม่ใช่ช่องโหว่"
+    solution: "XSS เกิดจากการแสดงผลที่ไม่หลีกอักขระ การตรวจสิทธิ์ที่ขาดทำให้เข้าถึงข้อมูลของผู้อื่นได้ ความลับฝังในโค้ดรั่วได้เมื่อโค้ดถูกแชร์ และสิทธิ์น้อยที่สุดคือหลักการจำกัดสิทธิ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p008
+    topics: [computer.security.secure-coding]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ระบบจำกัดการเข้าสู่ระบบไว้ไม่เกิน 5 ครั้งภายใน 10 นาที ถ้าผู้ใช้พิมพ์รหัสผ่านผิดไปแล้ว 3 ครั้งในช่วงเวลานั้น ระบบจะยอมให้ผิดได้อีกกี่ครั้งก่อนจะล็อก (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 2, unit: ครั้ง }
+    hints:
+      - "ขีดจำกัดคือจำนวนครั้งทั้งหมดที่อนุญาต ลบจำนวนที่ใช้ไปแล้ว"
+      - "ระบบล็อกเมื่อถึงขีดจำกัดพอดี"
+    misconceptions:
+      - { match: 3, feedback: "ตอบจำนวนที่ผิดไปแล้ว แต่โจทย์ถามจำนวนที่เหลือก่อนถึงขีดจำกัด" }
+    solution: "ขีดจำกัด 5 ลบ 3 ที่ใช้ไปแล้วได้ 2 ครั้ง การจำกัดจำนวนครั้งเป็นการป้องกันการเดารหัสผ่านซ้ำ ๆ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p009
+    topics: [computer.security.secure-coding]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ระบบร้านกาแฟมีบทบาทผู้ใช้ 3 แบบ คือ ลูกค้า พนักงาน และผู้จัดการ และมีการกระทำ 4 อย่าง คือ ดูเมนู สั่งซื้อ แก้ราคา และดูรายงาน ถ้าต้องกำหนดสิทธิ์ให้ทุกคู่ของบทบาทกับการกระทำแบบชัดเจนตามหลักสิทธิ์น้อยที่สุด จะต้องเขียนกฎทั้งหมดกี่ข้อ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 12, unit: ข้อ }
+    hints:
+      - "แต่ละบทบาทต้องมีการตัดสินใจสำหรับทุกการกระทำ"
+      - "นับคู่ทั้งหมดของบทบาทกับการกระทำ"
+    misconceptions:
+      - { match: 4, feedback: "นับเฉพาะการกระทำ ไม่ได้นับทุกคู่ของบทบาทกับการกระทำ" }
+    solution: "3 บทบาท × 4 การกระทำ = 12 คู่ และต้องกำหนดสิทธิ์ของแต่ละคู่ให้ชัดเจน โดยค่าเริ่มต้นคือไม่อนุญาต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p010
+    topics: [computer.security.secure-coding]
+    difficulty: 3
+    type: mcq
+    stem: |
+      เหตุใดการแสดงข้อความ error ที่มีรายละเอียดภายในให้ผู้ใช้ทั่วไปเห็นจึงเสี่ยงต่อความปลอดภัย
+    choices:
+      - { id: a, text: 'ทำให้ผู้ใช้อ่านข้อความนานขึ้น', feedback: "เรื่องความยาวของข้อความไม่ใช่ประเด็นด้านความปลอดภัย" }
+      - { id: b, text: 'ทำให้ภาษาไทยแสดงผลผิดพลาด', feedback: "ปัญหาการแสดงผลภาษาไม่เกี่ยวกับความปลอดภัยโดยตรง" }
+      - { id: c, text: 'เปิดเผยรายละเอียดภายในระบบ เช่น ชื่อตาราง หรือเวอร์ชันของซอฟต์แวร์ ซึ่งอาจถูกนำไปใช้วางแผนการโจมตี', correct: true }
+      - { id: d, text: 'ทำให้ระบบช้าลงอย่างมาก', feedback: "ข้อความ error ปกติไม่ได้ทำให้ช้าอย่างมีนัยสำคัญ" }
+    hints:
+      - "ข้อมูลที่ผู้ไม่หวังดีอยากรู้คือโครงสร้างและเวอร์ชันของระบบ"
+      - "ควรบอกผู้ใช้เพียงพอให้แก้ไขได้ และเก็บรายละเอียดเชิงลึกไว้ในบันทึกของทีม"
+    solution: "ข้อความที่เผยรายละเอียดภายในให้ข้อมูลกับผู้ไม่หวังดี ควรแสดงข้อความทั่วไปแก่ผู้ใช้ และบันทึกรายละเอียดไว้ฝั่งเซิร์ฟเวอร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p011
+    topics: [computer.security.secure-coding]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ข้อใดเป็นแนวทางการจัดการความลับ เช่น กุญแจ API ที่ถูกต้อง
+    choices:
+      - { id: a, text: 'commit ไฟล์ .env ที่มีค่าความลับลงในรีโพเพื่อให้ทีมใช้ร่วมกัน', feedback: "ค่าที่ถูก commit จะอยู่ในประวัติของรีโพ และอาจรั่วได้แม้ลบไฟล์ภายหลัง" }
+      - { id: b, text: 'ฝังค่า API key ในโค้ดเพื่อให้ไม่ต้องตั้งค่าเพิ่ม', feedback: "ค่าที่ฝังในโค้ดจะถูกแชร์และบันทึกไปพร้อมโค้ด" }
+      - { id: c, text: 'อ่านค่าจากตัวแปรสภาพแวดล้อมหรือระบบจัดการความลับ แล้วไม่พิมพ์ค่าออกมาในบันทึก', correct: true }
+      - { id: d, text: 'ส่งรหัสผ่านไปกับ URL ในรูปแบบ query string', feedback: "URL มักถูกบันทึกในประวัติและ log ของเซิร์ฟเวอร์ จึงไม่ควรส่งความลับทางนั้น" }
+    hints:
+      - "ความลับควรอยู่นอกโค้ดและไม่ถูกบันทึกในที่ที่คนอื่นเข้าถึงได้"
+      - "ตัวเลือกที่พูดถึงการอ่านค่าจากภายนอกโค้ดคือแนวทางที่ถูกต้อง"
+    solution: "ความลับควรอยู่นอกซอร์สโค้ด อ่านจากตัวแปรสภาพแวดล้อมหรือระบบจัดการความลับ และไม่บันทึกค่าลงในบันทึกของระบบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p012
+    topics: [computer.security.secure-coding]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: |
+      ข้อใดเป็นหลักการออกแบบที่ปลอดภัย (เลือกทุกข้อที่ถูก)
+    choices:
+      - { id: a, text: 'ค่าเริ่มต้นของระบบควรปฏิเสธการเข้าถึงจนกว่าจะได้รับอนุญาต', correct: true }
+      - { id: b, text: 'ให้สิทธิ์แก่แต่ละบัญชีเท่าที่หน้าที่ต้องใช้', correct: true }
+      - { id: c, text: 'เมื่อการตรวจสิทธิ์เกิดข้อผิดพลาด ให้เปิดทางให้ผ่านเพื่อไม่รบกวนผู้ใช้', feedback: "หลักการที่ถูกต้องคือล้มเหลวอย่างปลอดภัย คือปฏิเสธเมื่อไม่แน่ใจ" }
+      - { id: d, text: 'ใช้การป้องกันหลายชั้น ไม่พึ่งการป้องกันเพียงจุดเดียว', correct: true }
+    hints:
+      - "ค่าเริ่มต้นและการจัดการเมื่อผิดพลาดควรเลือกข้างความปลอดภัย"
+      - "หลักการที่เกี่ยวกับการไม่พึ่งจุดเดียวและการให้สิทธิ์น้อยเป็นหลักที่ถูกต้อง"
+    solution: "ค่าเริ่มต้นปฏิเสธ สิทธิ์น้อยที่สุด และป้องกันหลายชั้นเป็นหลักการที่ถูกต้อง ส่วนการเปิดให้ผ่านเมื่อผิดพลาดขัดกับการล้มเหลวอย่างปลอดภัย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p013
+    topics: [computer.security.secure-coding]
+    difficulty: 4
+    type: text
+    stem: |
+      หลักการที่ระบบต้องปฏิเสธการเข้าถึงทันทีเมื่อการตรวจสอบเกิดข้อผิดพลาด แทนการปล่อยให้ผ่าน เรียกว่าอะไร (ตอบเป็นภาษาอังกฤษ)
+    accepted: ["fail secure", "fail-secure", "fail closed", "fail-closed", "fail securely"]
+    misconceptions:
+      - { match: "fail open", feedback: "fail open คือการเปิดให้ผ่านเมื่อพัง ซึ่งตรงข้ามกับหลักการที่ปลอดภัย" }
+    hints:
+      - "คำแรกสื่อถึงการล้มเหลว และคำที่สองสื่อถึงความปลอดภัย"
+      - "ตรงข้ามกับ fail open"
+    solution: "ล้มเหลวอย่างปลอดภัย (fail secure หรือ fail closed) หมายถึงเมื่อส่วนตรวจสิทธิ์พัง ระบบจะปฏิเสธการเข้าถึงไว้ก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p014
+    topics: [computer.security.secure-coding]
+    difficulty: 4
+    type: mcq
+    stem: |
+      ข้อใดเป็นจุดประสงค์ที่สำคัญของการทำแบบจำลองภัยคุกคาม (threat model)
+    choices:
+      - { id: a, text: 'ระบุทรัพย์สิน ผู้ที่อาจโจมตี และจุดเข้าถึงของระบบ ก่อนเลือกการป้องกัน', correct: true }
+      - { id: b, text: 'เขียนเอกสารให้ยาวเพื่อส่งลูกค้า', feedback: "ความยาวของเอกสารไม่ใช่จุดประสงค์ของการทำแบบจำลอง" }
+      - { id: c, text: 'วัดเวลาตอบสนองของเซิร์ฟเวอร์', feedback: "นั่นคือการทดสอบประสิทธิภาพ" }
+      - { id: d, text: 'ลดจำนวนบรรทัดของโค้ด', feedback: "การลดโค้ดเป็นเรื่องความเรียบง่าย ไม่ใช่เป้าหมายของแบบจำลองภัยคุกคาม" }
+    hints:
+      - "แบบจำลองภัยคุกคามช่วยให้เห็นความเสี่ยงก่อนลงมือเขียนการป้องกัน"
+      - "คำถามหลักคือมีอะไรให้ปกป้อง ใครอาจมาทำร้าย และผ่านทางไหน"
+    solution: "แบบจำลองภัยคุกคามทำให้เห็นทรัพย์สิน ผู้โจมตีที่เป็นไปได้ และจุดเข้าถึง เพื่อให้เลือกการป้องกันที่ตรงกับความเสี่ยงสำคัญก่อน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p015
+    topics: [computer.security.secure-coding]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ระบบเก็บ salt ยาว 16 ไบต์ให้ผู้ใช้แต่ละคนเพื่อใช้กับแฮชรหัสผ่าน ถ้ามีผู้ใช้ 250 คน ต้องใช้พื้นที่เก็บ salt รวมกันกี่ไบต์ (ตอบเป็นจำนวนเต็ม หน่วยไบต์)
+    answer: { value: 4000, unit: ไบต์ }
+    hints:
+      - "แต่ละคนมี salt ของตัวเอง ขนาด 16 ไบต์"
+      - "คูณขนาด salt ต่อคนด้วยจำนวนผู้ใช้"
+    misconceptions:
+      - { match: 250, feedback: "นับเป็นหนึ่งไบต์ต่อคน แต่ละคนมี salt ขนาด 16 ไบต์" }
+    solution: "16 × 250 = 4000 ไบต์ salt ไม่จำเป็นต้องเป็นความลับ แต่ต้องไม่ซ้ำกันระหว่างผู้ใช้เพื่อกันการใช้ตารางคำนวณล่วงหน้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p016
+    topics: [computer.security.secure-coding]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `is_safe_username(name)` ที่ตรวจชื่อผู้ใช้ด้วยรายการที่อนุญาต และ **คืนค่า** `True` ถ้าชื่อ: ยาวตั้งแต่ 3 ถึง 16 ตัวอักษร ขึ้นต้นด้วยตัวอักษรภาษาอังกฤษ A ถึง Z หรือ a ถึง z และตามด้วยอักษรอังกฤษ ตัวเลข หรือขีดล่าง (_) เท่านั้น มิฉะนั้นคืน `False` ห้ามแก้ค่าที่รับมา
+    starter: |
+      def is_safe_username(name):
+          pass
+    tests: |
+      assert is_safe_username("ada_01") is True, "ada_01 ผ่านเกณฑ์ ควรได้ True"
+      assert is_safe_username("a" * 16) is True, "ความยาว 16 ตัวอักษรยังอยู่ในเกณฑ์ ควรได้ True"
+      assert is_safe_username("ab") is False, "ยาวไม่ถึง 3 ตัวอักษร ควรได้ False"
+      assert is_safe_username("a" * 17) is False, "ยาว 17 ตัวอักษรเกินเกณฑ์ ควรได้ False"
+      assert is_safe_username("1abc") is False, "ขึ้นต้นด้วยตัวเลข ควรได้ False"
+      assert is_safe_username("ada lovelace") is False, "มีช่องว่าง ควรได้ False"
+      assert is_safe_username("ada-lovelace") is False, "มีเครื่องหมายขีดกลาง ควรได้ False"
+      assert is_safe_username("ฟ้า_01") is False, "มีอักษรไทย ควรได้ False เพราะอนุญาตเฉพาะอักษรอังกฤษ"
+    reference: |
+      import re
+
+      def is_safe_username(name):
+          return re.fullmatch(r"[A-Za-z][A-Za-z0-9_]{2,15}", name) is not None
+    hints:
+      - "เขียนเกณฑ์เป็นรูปแบบเดียว คือตัวแรกเป็นอักษรแล้วตามด้วยอักขระที่อนุญาตตามจำนวนที่กำหนด"
+      - "โมดูล `re` ของ Python มี `fullmatch` ที่ต้องให้ทั้งสตริงตรงกับรูปแบบ ไม่ใช่แค่บางส่วน"
+    solution: "ใช้รูปแบบ [A-Za-z][A-Za-z0-9_]{2,15} กับ re.fullmatch เพื่อให้ตัวแรกเป็นอักษร และส่วนที่เหลือยาว 2 ถึง 15 ตัวจากชุดที่อนุญาต"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p017
+    topics: [computer.security.secure-coding]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `escape_html(text)` ที่หลีกอักขระพิเศษของ HTML เพื่อให้แสดงข้อความในหน้าเว็บได้อย่างปลอดภัย โดยเปลี่ยน `&` เป็น `&amp;`, `<` เป็น `&lt;`, `>` เป็น `&gt;`, `"` เป็น `&quot;` และ `'` เป็น `&#x27;` ต้องเปลี่ยน `&` ก่อนเสมอ และ **คืนค่า** สตริงใหม่
+    starter: |
+      def escape_html(text):
+          pass
+    tests: |
+      cases = [
+          ("<b>ฟ้า</b>", "&lt;b&gt;ฟ้า&lt;/b&gt;"),
+          ("A & B", "A &amp; B"),
+          ('"x"', "&quot;x&quot;"),
+          ("it's", "it&#x27;s"),
+          ("&lt;", "&amp;lt;"),
+          ("ปกติ", "ปกติ"),
+      ]
+      for raw, want in cases:
+          got = escape_html(raw)
+          assert got is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+          assert got == want, f"escape_html({raw!r}) ควรได้ {want!r} แต่ได้ {got!r}"
+    reference: |
+      def escape_html(text):
+          return (text.replace("&", "&amp;")
+                      .replace("<", "&lt;")
+                      .replace(">", "&gt;")
+                      .replace('"', "&quot;")
+                      .replace("'", "&#x27;"))
+    hints:
+      - "ใช้ `replace` ทีละอักขระ โดยเริ่มจาก `&` เพื่อไม่ให้ตัวหลีกที่เพิ่มเข้าไปถูกหลีกซ้ำ"
+      - "ทุกการเปลี่ยนเป็นการต่อกันของ `replace` ที่คืนสตริงใหม่ทุกครั้ง"
+    solution: "return text.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace('\"', \"&quot;\").replace(\"'\", \"&#x27;\") โดยเปลี่ยน & ก่อนเพื่อไม่หลีกซ้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.security.secure-coding.p018
+    topics: [computer.security.secure-coding]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `build_query(user_id)` ที่คืนค่าเป็นทูเพิล `(sql, params)` โดยที่ `sql` คือสตริงคงที่ `"SELECT name FROM students WHERE id = ?"` และ `params` เป็นทูเพิลที่มี `user_id` อยู่ข้างใน ห้ามนำค่า `user_id` ไปต่อเป็นส่วนของสตริง SQL ถ้า `user_id` ไม่ใช่จำนวนเต็มบวก (รวมถึงค่า `True`) ให้โยน `ValueError`
+    starter: |
+      def build_query(user_id):
+          pass
+    tests: |
+      r = build_query(7)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == ("SELECT name FROM students WHERE id = ?", (7,)), f"build_query(7) ควรได้ (คำสั่งคงที่, (7,)) แต่ได้ {r!r}"
+      for bad in ["7", 0, -1, True, 1.5]:
+          try:
+              build_query(bad)
+          except ValueError:
+              continue
+          raise AssertionError(f"build_query({bad!r}) ควรโยน ValueError แต่ไม่โยน")
+    reference: |
+      def build_query(user_id):
+          if not isinstance(user_id, int) or isinstance(user_id, bool) or user_id <= 0:
+              raise ValueError(f"user_id ต้องเป็นจำนวนเต็มบวก แต่ได้ {user_id!r}")
+          return ("SELECT name FROM students WHERE id = ?", (user_id,))
+    hints:
+      - "สตริง SQL เป็นค่าคงที่ ส่วนค่าข้อมูลถูกส่งแยกในทูเพิล `params`"
+      - "ตรวจชนิดด้วย `isinstance` และตรวจว่าไม่ใช่ `bool` เพราะ `True` เป็นจำนวนเต็มใน Python แล้วตรวจว่าค่ามากกว่า 0"
+    solution: "ตรวจชนิดและค่าก่อน ถ้าผ่านคืน (\"SELECT name FROM students WHERE id = ?\", (user_id,)) ซึ่งส่ง user_id เป็นพารามิเตอร์แยก ไม่ได้ต่อเข้าสตริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

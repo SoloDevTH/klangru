@@ -1,0 +1,336 @@
+problems:
+  - id: computer.programming.collections.p001
+    topics: [computer.programming.collections]
+    difficulty: 1
+    type: numeric
+    stem: |
+      ครูเก็บรายการ `a = [1, 2, 3]` แล้วกำหนด `b = a` และสั่ง `b.append(4)` เมื่อพิมพ์ `len(a)` จะได้ค่าเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 4, unit: รายการ }
+    hints:
+      - "`b = a` ทำให้ `a` และ `b` ชี้ไปยังลิสต์เดียวกัน ไม่ได้สร้างสำเนา"
+      - "การแก้ไขผ่าน `b` จึงเห็นผลเมื่ออ่านผ่าน `a` ด้วย"
+    misconceptions:
+      - { match: 3, feedback: "คิดว่า `b` เป็นสำเนาใหม่ จึงไม่กระทบ `a` แต่จริงแล้วทั้งสองชื่อชี้ไปยังลิสต์เดิม" }
+    solution: "`b` และ `a` เป็นชื่อของลิสต์เดียวกัน `b.append(4)` เพิ่มสมาชิกเข้าไปในลิสต์นั้น จึงทำให้ `len(a)` เป็น 4"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p002
+    topics: [computer.programming.collections]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ข้อใดคือการสร้างทูเพิลที่มีสมาชิกสองตัว
+    choices:
+      - { id: a, text: '[1, 2]', feedback: "ลิสต์ใช้วงเล็บเหลี่ยม ซึ่งแก้ไขสมาชิกได้ ไม่ใช่ทูเพิล" }
+      - { id: b, text: '{1, 2}', feedback: "วงเล็บปีกกาที่มีแค่ค่าคือเซต ไม่ใช่ทูเพิล" }
+      - { id: c, text: '(1, 2)', correct: true }
+      - { id: d, text: '{"a": 1}', feedback: "วงเล็บปีกกาที่มีคู่คีย์กับค่าคือดิกชันนารี" }
+    hints:
+      - "ทูเพิลใช้เครื่องหมายวงเล็บชนิดใด"
+      - "ทูเพิลเขียนด้วยวงเล็บกลมและคั่นสมาชิกด้วยคอมมา"
+    solution: "ทูเพิลเขียนด้วยวงเล็บกลม `(1, 2)` ส่วนวงเล็บเหลี่ยมคือลิสต์ วงเล็บปีกกาคือเซตหรือดิกชันนารี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p003
+    topics: [computer.programming.collections]
+    difficulty: 2
+    type: numeric
+    stem: |
+      กำหนดให้ `grid = [[0] * 3] * 3` แล้วรัน `grid[0][1] = 5` จากนั้นนำทุกค่าในกริดมาบวกกัน ผลรวมเท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 15, unit: ผลรวม }
+    hints:
+      - "ลองดูว่าแถวทั้งสามชี้ไปยังลิสต์เดียวกันหรือไม่"
+      - "ถ้าแถวทั้งสามชี้ไปยังลิสต์เดียวกัน การแก้แถวแรกจะกระทบทุกแถว"
+    misconceptions:
+      - { match: 5, feedback: "คิดว่าแก้ได้เฉพาะแถวแรก แต่แถวทั้งสามเป็นลิสต์เดียวกันจึงมีค่า 5 ทั้งหมดในตำแหน่งนั้น" }
+    solution: "`[[0] * 3] * 3` ทำให้แถวทั้งสามเป็นลิสต์เดียวกัน การแก้ตำแหน่ง [0][1] ทำให้ทั้งสามแถวมี 5 ในตำแหน่งกลาง รวมได้ 5 + 5 + 5 = 15"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p004
+    topics: [computer.programming.collections]
+    difficulty: 2
+    type: mcq
+    stem: |
+      ข้อใดเรียงคะแนนในลิสต์ `scores` จากมากไปน้อย โดยไม่เปลี่ยนลิสต์เดิม
+    choices:
+      - { id: a, text: 'sorted(scores, reverse=True)', correct: true }
+      - { id: b, text: 'sorted(scores)', feedback: "`sorted` คืนลิสต์ใหม่ที่เรียงจากน้อยไปมาก" }
+      - { id: c, text: 'scores.sort()', feedback: "`sort()` เรียงจากน้อยไปมากและเปลี่ยนลิสต์เดิมทันที" }
+      - { id: d, text: 'scores.reverse()', feedback: "`reverse()` กลับลำดับเดิมและแก้ลิสต์ ไม่ได้เรียงลำดับตามค่า" }
+    hints:
+      - "ต้องการผลเรียงตามค่า ไม่ใช่กลับลำดับเดิม และต้องไม่แก้ลิสต์เดิม"
+      - "อาร์กิวเมนต์ `reverse=True` ทำให้เรียงจากมากไปน้อย"
+    solution: "`sorted(scores, reverse=True)` คืนลิสต์ใหม่ที่เรียงจากมากไปน้อย และลิสต์ `scores` เดิมไม่เปลี่ยน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p005
+    topics: [computer.programming.collections]
+    difficulty: 2
+    type: text
+    stem: |
+      ชนิดของข้อมูลใน Python ที่แก้ไขสมาชิกไม่ได้ และเขียนด้วยวงเล็บกลม คืออะไร (ตอบชื่อภาษาอังกฤษหรือภาษาไทย)
+    accepted: ["tuple", "ทูเพิล"]
+    misconceptions:
+      - { match: "list", feedback: "ลิสต์แก้ไขสมาชิกได้ ชนิดที่แก้ไม่ได้คือทูเพิล" }
+    hints:
+      - "ชนิดนี้เป็นกลุ่มค่าที่เขียนด้วยวงเล็บกลม"
+      - "คำนี้ขึ้นต้นด้วย t และเป็นคำที่ใช้เรียกกลุ่มค่าแบบแก้ไม่ได้"
+    solution: "ทูเพิล (tuple) คือกลุ่มค่าที่สร้างแล้วแก้ไขไม่ได้ ใช้เมื่อข้อมูลไม่ควรเปลี่ยนระหว่างการทำงาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p006
+    topics: [computer.programming.collections]
+    difficulty: 2
+    type: order
+    stem: |
+      ต้องการเรียงรายชื่อนักเรียนตามคะแนนจากมากไปน้อย ถ้าคะแนนเท่ากันให้เรียงตามชื่อ เรียงขั้นตอนจากขั้นแรกถึงขั้นสุดท้าย
+    items:
+      - "เขียนฟังก์ชันคีย์ที่คืนทูเพิล (-คะแนน, ชื่อ) ของแต่ละคน"
+      - "เรียกใช้ sorted(รายชื่อ, key=ฟังก์ชันคีย์นั้น)"
+      - "วนพิมพ์ชื่อตามลำดับที่ได้จาก sorted"
+    hints:
+      - "ต้องมีเกณฑ์การเรียงก่อนจึงเรียกคำสั่งเรียงได้"
+      - "การเรียกใช้คำสั่ง sorted ต้องรู้คีย์แล้ว และคำสั่งพิมพ์ต้องทำหลังได้ผลเรียงแล้ว"
+    solution: "ต้องกำหนดคีย์ก่อน แล้วเรียก sorted ด้วยคีย์นั้น และสุดท้ายวนพิมพ์ผล การกลับลำดับจะทำให้เรียงผิดหรือพิมพ์ก่อนได้ผลเรียง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p007
+    topics: [computer.programming.collections]
+    difficulty: 2
+    type: match
+    stem: |
+      จับคู่แต่ละนิพจน์กับผลลัพธ์ที่ได้เมื่อรันใน Python
+    pairs:
+      - { left: '[x * x for x in range(4)]', right: '[0, 1, 4, 9]' }
+      - { left: "dict(zip(['a', 'b'], [1, 2]))", right: "{'a': 1, 'b': 2}" }
+      - { left: "{'a': 1}.get('z', 0)", right: '0' }
+      - { left: '[1, 2, 3][::-1]', right: '[3, 2, 1]' }
+    hints:
+      - "`range(4)` ให้ค่า 0 ถึง 3 แล้วยกกำลังสองแต่ละค่า"
+      - "`[::-1]` กลับลำดับของลิสต์ และ `get` คืนค่าที่กำหนดเมื่อไม่มีคีย์"
+    solution: "comprehension ได้ `[0, 1, 4, 9]` `zip` จับคู่เป็นดิกชันนารี `get` ที่คีย์ไม่มีคืนค่าเริ่มต้น 0 และ `[::-1]` กลับลำดับเป็น `[3, 2, 1]`"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p008
+    topics: [computer.programming.collections]
+    difficulty: 3
+    type: numeric
+    stem: |
+      คะแนนสอบสองครั้งของนักเรียนสามคนเก็บเป็นดิกชันนารี `{"ฟ้า": [18, 15], "ต้น": [12, 20], "มด": [9, 14]}` ผลรวมคะแนนทั้งหมดของนักเรียนทั้งสามคนทั้งสองครั้งเท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 88, unit: คะแนน }
+    hints:
+      - "ค่าของแต่ละคีย์เป็นลิสต์ ต้องรวมสมาชิกทุกตัวในลิสต์นั้นก่อน"
+      - "ใช้ `values()` วนผ่านลิสต์ทั้งสามแล้วรวมทั้งหมดเข้าด้วยกัน"
+    misconceptions:
+      - { match: 39, feedback: "รวมเฉพาะคะแนนครั้งแรกของแต่ละคน ต้องรวมทั้งสองครั้งของทุกคน" }
+    solution: "ฟ้า 18 + 15 = 33, ต้น 12 + 20 = 32, มด 9 + 14 = 23 รวมได้ 33 + 32 + 23 = 88"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p009
+    topics: [computer.programming.collections]
+    difficulty: 3
+    type: numeric
+    stem: |
+      กำหนด `nums = [4, 7, 1, 9]` แล้วนิพจน์ `sorted(nums, reverse=True)[1]` ได้ค่าเท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 7, unit: "" }
+    hints:
+      - "เรียงลิสต์จากมากไปน้อยก่อนแล้วดูตำแหน่งดัชนีที่ 1"
+      - "ดัชนีเริ่มจาก 0 ค่าที่ดัชนี 0 คือค่ามากที่สุด"
+    misconceptions:
+      - { match: 9, feedback: "ค่าที่ดัชนี 0 หลังเรียงคือ 9 แต่โจทย์ถามดัชนี 1 ซึ่งเป็นค่าถัดลงมา" }
+    solution: "เรียงจากมากไปน้อยได้ `[9, 7, 4, 1]` ดัชนี 1 คือ 7"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p010
+    topics: [computer.programming.collections]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ผลลัพธ์ของ `[x for x in range(6) if x % 2 == 1]` คือข้อใด
+    choices:
+      - { id: a, text: '[0, 2, 4]', feedback: "นี่คือเลขคู่ เงื่อนไข `x % 2 == 1` เลือกเฉพาะเลขคี่" }
+      - { id: b, text: '[1, 3, 5]', correct: true }
+      - { id: c, text: '[1, 2, 3, 4, 5]', feedback: "ลืมเงื่อนไข `if` ทำให้ไม่ได้กรองค่าออก" }
+      - { id: d, text: '[2, 4]', feedback: "`range(6)` ให้ค่า 0 ถึง 5 ไม่ใช่ 1 ถึง 4 และเงื่อนไขเลือกค่าคี่ ไม่ใช่คู่" }
+    hints:
+      - "`range(6)` ให้ค่าตั้งแต่ 0 ถึง 5"
+      - "`x % 2 == 1` เป็นจริงเมื่อ x เป็นจำนวนคี่"
+    solution: "จาก 0 ถึง 5 เลือกเฉพาะค่าที่หารด้วย 2 เหลือเศษ 1 ได้ [1, 3, 5]"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p011
+    topics: [computer.programming.collections]
+    difficulty: 4
+    type: mcq
+    stem: |
+      ต้องการสร้างสำเนาของกริด `grid = [[1, 2], [3, 4]]` เพื่อแก้ค่าในสำเนาโดยไม่กระทบ `grid` เดิม ข้อใดทำได้ถูกต้อง
+    choices:
+      - { id: a, text: 'new = grid[:]', feedback: "ได้สำเนาเฉพาะชั้นนอก แถวข้างในยังเป็นลิสต์เดิม การแก้ `new[0][0]` จึงกระทบ `grid`" }
+      - { id: b, text: 'new = [row[:] for row in grid]', correct: true }
+      - { id: c, text: 'new = grid', feedback: "เป็นการให้ชื่อใหม่แก่ลิสต์เดิม ไม่ได้สร้างสำเนาเลย" }
+    hints:
+      - "ต้องคัดลอกทั้งชั้นนอกและแถวข้างใน"
+      - "ใช้ comprehension สร้างแถวใหม่ทุกแถวด้วยการคัดลอกแถวนั้น"
+    solution: "`[row[:] for row in grid]` คัดลอกทุกแถวเป็นลิสต์ใหม่ จึงแก้ค่าในสำเนาได้โดย `grid` ไม่เปลี่ยน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p012
+    topics: [computer.programming.collections]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: |
+      ข้อใดเป็นจริงเกี่ยวกับดิกชันนารี `d = {"a": 1}` (เลือกทุกข้อที่ถูก)
+    choices:
+      - { id: a, text: 'd.get("zz") คืน None เมื่อไม่มีคีย์ "zz"', correct: true }
+      - { id: b, text: 'd["zz"] คืน None เมื่อไม่มีคีย์ "zz"', feedback: "การเข้าถึงด้วยวงเล็บเหลี่ยมกับคีย์ที่ไม่มีจะเกิด KeyError ไม่ได้คืน None" }
+      - { id: c, text: 'd.setdefault("k", []) จะเพิ่มคีย์ "k" ที่มีค่าเป็นลิสต์ว่าง ถ้ายังไม่มี', correct: true }
+      - { id: d, text: 'd.pop("zz") คืน None เมื่อไม่มีคีย์ โดยไม่เกิดข้อผิดพลาด', feedback: "`pop` ที่ไม่ใส่ค่าเริ่มต้นและคีย์ไม่มีจะเกิด KeyError" }
+    hints:
+      - "เมธอด `get` และ `setdefault` ออกแบบมาเพื่อจัดการกับคีย์ที่อาจไม่มี"
+      - "วงเล็บเหลี่ยมกับ `pop` จะแจ้งข้อผิดพลาดเมื่อคีย์ไม่มี ยกเว้นมีค่าเริ่มต้นกำกับ"
+    solution: "`get` คืน None เมื่อไม่มีคีย์ และ `setdefault` เพิ่มคีย์พร้อมค่าเริ่มต้นถ้ายังไม่มี ส่วน `d[\"zz\"]` และ `d.pop(\"zz\")` จะเกิด KeyError"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p013
+    topics: [computer.programming.collections]
+    difficulty: 4
+    type: text
+    stem: |
+      เมธอดของดิกชันนารีที่ลบคู่คีย์กับค่าออก และคืนค่าของคู่นั้นกลับมา มีชื่อว่าอะไร (ตอบชื่อเมธอดภาษาอังกฤษ)
+    accepted: ["pop", "pop()", ".pop()"]
+    misconceptions:
+      - { match: "remove", feedback: "ดิกชันนารีไม่มีเมธอด remove ที่คืนค่า ใช้ `pop` แทน" }
+    hints:
+      - "ชื่อเมธอดมีสามตัวอักษร และคล้ายคำว่า ดึงออก"
+      - "เมธอดนี้ใช้เรียกค่าของคีย์ที่ระบุออกจากดิกชันนารี"
+    solution: "`pop(คีย์)` ลบคู่นั้นออกจากดิกชันนารีและคืนค่า ถ้าไม่ระบุค่าเริ่มต้นและไม่มีคีย์จะเกิด KeyError"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p014
+    topics: [computer.programming.collections]
+    difficulty: 4
+    type: numeric
+    stem: |
+      กำหนด `data = {"ฟ้า": {"math": 16, "eng": 14}, "ต้น": {"math": 11, "eng": 19}}` ผลรวมของคะแนนภาษาอังกฤษ (`eng`) ของทุกคนเท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 33, unit: คะแนน }
+    hints:
+      - "แต่ละคนเป็นดิกชันนารีซ้อนอยู่ในดิกชันนารีใหญ่"
+      - "วนผ่านค่าของดิกชันนารีใหญ่ แล้วดึงเฉพาะคีย์ `eng` ของแต่ละคน"
+    misconceptions:
+      - { match: 16, feedback: "ดึงคะแนนคณิตศาสตร์ (math) ของคนแรกมาตอบ โจทย์ถามเฉพาะ eng ของทุกคน" }
+    solution: "`sum(v[\"eng\"] for v in data.values())` ได้ 14 + 19 = 33"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p015
+    topics: [computer.programming.collections]
+    difficulty: 4
+    type: numeric
+    stem: |
+      กำหนดตาราง `grid = [[2, 4, 6], [1, 3, 5]]` ผลรวมของสมาชิกทั้งแถวที่ 1 (นับจาก 0) บวกกับผลรวมของสมาชิกทั้งคอลัมน์ที่ 2 (นับจาก 0) เท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 20, unit: "" }
+    hints:
+      - "แถวที่ 1 คือ `grid[1]` ใช้ `sum` รวมได้โดยตรง"
+      - "คอลัมน์ที่ 2 คือสมาชิกตัวที่สามของแต่ละแถว ใช้ comprehension ดึงมารวม"
+    misconceptions:
+      - { match: 9, feedback: "รวมเฉพาะแถวที่ 1 ลืมบวกผลรวมของคอลัมน์ที่ 2" }
+    solution: "แถวที่ 1 รวมได้ 1 + 3 + 5 = 9 คอลัมน์ที่ 2 คือ 6 + 5 = 11 รวมทั้งหมดได้ 20"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p016
+    topics: [computer.programming.collections]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `rotate_clockwise(grid)` ที่รับกริดสี่เหลี่ยมเป็นลิสต์ซ้อน และ **คืนค่า** กริดใหม่ที่หมุนตามเข็มนาฬิกา 90 องศา โดยไม่แก้กริดเดิม เช่น แถวแรกของผลลัพธ์คือคอลัมน์ซ้ายสุดของกริดเดิมอ่านจากล่างขึ้นบน
+    starter: |
+      def rotate_clockwise(grid):
+          pass
+    tests: |
+      g = [[1, 2], [3, 4]]
+      r = rotate_clockwise(g)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == [[3, 1], [4, 2]], f"rotate_clockwise([[1, 2], [3, 4]]) ควรได้ [[3, 1], [4, 2]] แต่ได้ {r}"
+      assert g == [[1, 2], [3, 4]], "ห้ามแก้กริดเดิม กริด g ต้องไม่เปลี่ยน"
+      r2 = rotate_clockwise([[1, 2, 3], [4, 5, 6]])
+      assert r2 == [[4, 1], [5, 2], [6, 3]], f"กริดสองแถวสามคอลัมน์ควรหมุนได้ [[4, 1], [5, 2], [6, 3]] แต่ได้ {r2}"
+    reference: |
+      def rotate_clockwise(grid):
+          return [list(row) for row in zip(*grid[::-1])]
+    hints:
+      - "ลองเขียนกริดเดิมกับกริดที่หมุนแล้วบนกระดาษ แล้วดูว่าคอลัมน์ไหนกลายเป็นแถวไหน"
+      - "กลับลำดับแถวก่อนด้วย `grid[::-1]` แล้ว `zip(*...)` จะได้คอลัมน์ที่เรียงเป็นแถว"
+      - "แปลงทูเพิลที่ได้จาก `zip` กลับเป็นลิสต์ด้วย `list(row)` ทุกแถว"
+    solution: "return [list(row) for row in zip(*grid[::-1])] กลับลำดับแถวก่อน แล้ว zip อ่านคอลัมน์เป็นแถว เช่น [[1, 2], [3, 4]] ได้ [[3, 1], [4, 2]]"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p017
+    topics: [computer.programming.collections]
+    difficulty: 5
+    type: code
+    stem: |
+      ฝ่ายบัญชีของร้านมีรายการยอดขายเป็นคู่ `(สาขา, ยอด)` เขียนฟังก์ชัน `group_by_key(records)` ที่รับลิสต์ของคู่เหล่านี้ และ **คืนค่า** ดิกชันนารีที่คีย์คือชื่อสาขา ค่าคือลิสต์ของยอดขายของสาขานั้นตามลำดับที่พบ ถ้า records ว่างให้คืน `{}`
+    starter: |
+      def group_by_key(records):
+          pass
+    tests: |
+      r = group_by_key([("สีลม", 120), ("ท่าพระ", 80), ("สีลม", 45)])
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == {"สีลม": [120, 45], "ท่าพระ": [80]}, f"ผลการจัดกลุ่มไม่ถูก ได้ {r}"
+      assert group_by_key([]) == {}, f"รายการว่างควรคืน {{}} แต่ได้ {group_by_key([])}"
+      assert group_by_key([("ก", 1)]) == {"ก": [1]}, "สาขาเดียวที่มีรายการเดียวควรได้ลิสต์ที่มีหนึ่งค่า"
+    reference: |
+      def group_by_key(records):
+          out = {}
+          for key, value in records:
+              out.setdefault(key, []).append(value)
+          return out
+    hints:
+      - "สร้างดิกชันนารีว่างแล้ววนผ่านคู่ทีละคู่"
+      - "`setdefault(คีย์, [])` คืนลิสต์ของคีย์นั้นเสมอ ทำให้ต่อท้ายด้วย `append` ได้โดยไม่ต้องตรวจก่อน"
+    solution: "สร้าง out = {} แล้ววน for key, value in records และทำ out.setdefault(key, []).append(value) ก่อน return out"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.collections.p018
+    topics: [computer.programming.collections]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `top_students(data, n)` โดย `data` เป็นดิกชันนารีซ้อนที่คีย์คือชื่อ และค่าคือดิกชันนารีที่มี `"math"` กับ `"eng"` ให้คำนวณคะแนนเฉลี่ยของแต่ละคน แล้ว **คืนค่า** ลิสต์ชื่อของ `n` คนที่คะแนนเฉลี่ยสูงสุด เรียงจากมากไปน้อย ถ้าคะแนนเฉลี่ยเท่ากันให้เรียงตามชื่อจากน้อยไปมาก
+    starter: |
+      def top_students(data, n):
+          pass
+    tests: |
+      d = {"ฟ้า": {"math": 18, "eng": 15}, "ต้น": {"math": 12, "eng": 20}, "มด": {"math": 17, "eng": 16}}
+      r = top_students(d, 2)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == ["ฟ้า", "มด"], f"top_students(d, 2) ควรได้ ['ฟ้า', 'มด'] (ฟ้าและมดเฉลี่ย 16.5 เท่ากัน เรียงตามชื่อ) แต่ได้ {r}"
+      assert top_students(d, 1) == ["ฟ้า"], f"top_students(d, 1) ควรได้ ['ฟ้า'] แต่ได้ {top_students(d, 1)}"
+      assert top_students(d, 3) == ["ฟ้า", "มด", "ต้น"], f"top_students(d, 3) ควรได้ ['ฟ้า', 'มด', 'ต้น'] แต่ได้ {top_students(d, 3)}"
+    reference: |
+      def top_students(data, n):
+          ranked = sorted(data, key=lambda k: (-(data[k]["math"] + data[k]["eng"]) / 2, k))
+          return ranked[:n]
+    hints:
+      - "คำนวณค่าเฉลี่ยจาก `(math + eng) / 2` แล้วใช้เป็นส่วนหนึ่งของคีย์การเรียง"
+      - "ทำคีย์เป็นทูเพิลที่มีค่าเฉลี่ยติดเครื่องหมายลบ และตามด้วยชื่อ แล้วตัดเอา n ตัวแรกด้วยการตัดช่วง"
+    solution: "return sorted(data, key=lambda k: (-(data[k][\"math\"] + data[k][\"eng\"]) / 2, k))[:n] ค่าเฉลี่ยมากสุดอยู่ก่อนและเมื่อเท่ากันเรียงตามชื่อ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,56 @@
+id: computer.programming.testing-debugging
+subject: computer
+title: { th: ทดสอบหน่วยและดีบักอย่างเป็นระบบ, en: "Unit testing and systematic debugging" }
+summary: ออกแบบกรณีทดสอบจากข้อกำหนดด้วยค่าขอบและกลุ่มสมมูล เขียนชุดทดสอบด้วย assert และ unittest แล้วหาสาเหตุบั๊กด้วยการแบ่งครึ่งและตัวดีบักใน IDE
+difficulty: 5
+minutes: 45
+prerequisites: [computer.programming.design-debug, computer.programming.collections]
+encompasses:
+  - { id: computer.programming.design-debug, weight: 0.3 }
+  - { id: computer.programming.collections, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: bisect-halving.svg
+    alt: "แถบเจ็ดแถวแสดงช่วงของบรรทัดที่ยังสงสัยลดลงครึ่งหนึ่งทุกขั้น จาก 64 เหลือ 32 16 8 4 2 และ 1 บรรทัด"
+    caption: "การแบ่งครึ่งทำให้ตรวจเพียงหกครั้งแทนการไล่ทีละบรรทัด"
+  - type: worked-example
+    title: ออกแบบกรณีทดสอบค่าขอบของการตัดเกรด
+    problem: "ฟังก์ชัน `grade(score)` ให้ A เมื่อคะแนนตั้งแต่ 80 ขึ้นไป ให้ B เมื่อ 70 ถึง 79 และให้ F เมื่อต่ำกว่า 70 ต้องเลือกกรณีทดสอบอย่างไรให้จับบั๊กที่รอยต่อได้"
+    steps:
+      - text: "ระบุรอยต่อของกลุ่มผลลัพธ์ คือ 70 และ 80 แล้วเลือกค่าทั้งสองข้างของแต่ละรอยต่อ เช่น 69, 70, 79, 80"
+        why: "บั๊กที่พบบ่อยคือเขียน `>` แทน `>=` ซึ่งทำให้ผิดเฉพาะค่าที่อยู่บนรอยต่อ"
+      - text: "เพิ่มค่าสุดขอบของช่วงที่ยอมรับได้ เช่น 0 และ 100 เพื่อยืนยันว่าค่าที่รับได้ไม่ถูกปฏิเสธโดยไม่ตั้งใจ"
+      - text: "เขียน `assert grade(79) == \"B\", \"79 ควรได้ B\"` ให้แต่ละกรณีมีข้อความระบุค่าและผลที่คาดไว้"
+        why: "ข้อความทำให้เห็นทันทีว่ากรณีใดล้มเหลวและควรได้อะไร"
+    answer: "ค่าทดสอบคือ 0, 69, 70, 79, 80, 100 เป็นอย่างน้อย"
+  - { type: check, problem: computer.programming.testing-debugging.p003, prompt: "ลองคิดว่าค่าใดบ้างที่อยู่ตรงรอยต่อ" }
+  - type: worked-example
+    title: หาบั๊กด้วยการแบ่งครึ่ง
+    problem: "โปรแกรมคิดค่าเฉลี่ยผิดในบางกรณี ตัวโปรแกรมมี 8 ขั้นตอน ต้องหาขั้นที่ทำให้ค่าผิดโดยไม่ต้องตรวจทุกขั้น"
+    steps:
+      - text: "พิมพ์ค่าที่ขั้นที่ 4 ซึ่งอยู่กึ่งกลาง ถ้าค่าถูกแล้ว ให้ค้นหาในขั้นที่ 5 ถึง 8 ถ้าค่าผิดให้ค้นหาในขั้นที่ 1 ถึง 4"
+        why: "การตรวจกึ่งกลางทำให้ตัดช่วงที่ไม่เกี่ยวออกได้ครึ่งหนึ่งในหนึ่งครั้ง"
+      - text: "ทำซ้ำกับช่วงที่เหลือ 4 ขั้น แล้วเหลือ 2 ขั้น แล้วเหลือ 1 ขั้นที่ต้องตรวจ"
+      - text: "รวมแล้วตรวจประมาณสามครั้งแทนการตรวจทั้งแปดขั้น และสามารถตั้งจุดพักในขั้นที่พบได้ทันที"
+    answer: "พบขั้นที่ผิดด้วยการตรวจประมาณสามครั้ง"
+  - { type: check, problem: computer.programming.testing-debugging.p011, prompt: "นึกถึงสิ่งที่ต้องทำหลังแก้บั๊กเพื่อกันของเดิมพัง" }
+glossary:
+  - { term: การทดสอบหน่วย (unit test), definition: "การทดสอบฟังก์ชันหรือคลาสเล็ก ๆ หนึ่งชิ้นแยกจากส่วนอื่นของระบบ" }
+  - { term: ค่าขอบ (boundary value), definition: "ค่าที่อยู่ตรงรอยต่อระหว่างกลุ่มข้อมูลที่ควรให้ผลต่างกัน" }
+  - { term: การทดสอบถดถอย (regression testing), definition: "การรันชุดทดสอบเดิมซ้ำหลังการเปลี่ยนแปลงโค้ดเพื่อยืนยันว่าสิ่งเดิมยังทำงานได้" }
+  - { term: จุดพัก (breakpoint), definition: "จุดที่ตั้งไว้ในโค้ดเพื่อให้ตัวดีบักหยุดการทำงานชั่วคราวและตรวจค่าได้" }
+flashcards:
+  - { front: "การทดสอบหน่วยต่างจากการทดสอบระบบอย่างไร", back: "หน่วยทดสอบฟังก์ชันเดียวแยกจากส่วนอื่น ส่วนระบบทดสอบทั้งโปรแกรมตามข้อกำหนด" }
+  - { front: "ทำไมต้องทดสอบค่าขอบ", back: "เพราะบั๊กเช่น > กับ >= มักเกิดที่รอยต่อ ค่าที่อยู่กลางช่วงจึงมักไม่เผยออก" }
+  - { front: "การแบ่งครึ่งในการดีบักทำอย่างไร", back: "ตรวจค่าที่กึ่งกลางของขั้นตอนเพื่อตัดช่วงที่ไม่เกี่ยวออกครึ่งหนึ่ง แล้วทำซ้ำจนพบบรรทัดที่ผิด" }
+  - { front: "traceback ต้องอ่านอย่างไร", back: "อ่านจากล่างขึ้นบนเพื่อหาบรรทัดที่เกิดข้อยกเว้นจริง แล้วไล่กลับไปดูค่าที่ส่งเข้ามา" }
+references:
+  - { title: "Unit testing", url: "https://en.wikipedia.org/wiki/Unit_testing", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Regression testing", url: "https://en.wikipedia.org/wiki/Regression_testing", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "การทดสอบซอฟต์แวร์", url: "https://th.wikipedia.org/wiki/การทดสอบซอฟต์แวร์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

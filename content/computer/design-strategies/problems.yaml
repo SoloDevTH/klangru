@@ -1,0 +1,361 @@
+problems:
+  - id: computer.algorithms.design-strategies.p001
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 1
+    type: numeric
+    stem: |
+      ร้านอาหารมีรายการ 10 รายการ ลูกค้าเลือกได้ว่าจะเปิดหรือไม่เปิดแต่ละรายการในชุดโปรโมชัน ถ้าลองทุกการเลือกโดยไม่ตกหล่น จะมีทางเลือกทั้งหมดกี่แบบ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 1024, unit: แบบ }
+    hints:
+      - "แต่ละรายการมีสองทางเลือกคือเปิดหรือไม่เปิด และแต่ละรายการเลือกอิสระจากกัน"
+      - "เมื่อมี n รายการจะได้ 2 คูณตัวเองไป n ครั้ง"
+    misconceptions:
+      - { match: 20, feedback: "คิดว่าเป็น 2 คูณ 10 แต่ทางเลือกของแต่ละรายการต้องคูณกันทั้งหมด ไม่ใช่บวกกัน" }
+    solution: "มี 10 รายการ แต่ละรายการ 2 ทาง จึงได้ 2^10 = 1024 แบบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p002
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 1
+    type: mcq
+    stem: |
+      ข้อใดอธิบายกลยุทธ์แบ่งแยกและเอาชนะได้ถูกต้อง
+    choices:
+      - { id: a, text: 'ลองทุกคำตอบที่เป็นไปได้แล้วเลือกที่ดีที่สุด', feedback: "นี่คือการลองทุกแบบ (brute force)" }
+      - { id: b, text: 'แบ่งปัญหาเป็นส่วนย่อย แก้แต่ละส่วน แล้วรวมผลเข้าด้วยกัน', correct: true }
+      - { id: c, text: 'เลือกทางที่ดูดีที่สุดในแต่ละขั้นโดยไม่ย้อนกลับ', feedback: "นี่คือกลยุทธ์ละโมบ (greedy)" }
+      - { id: d, text: 'เก็บผลของปัญหาย่อยไว้ในตารางเพื่อไม่ต้องคำนวณซ้ำ', feedback: "นี่คือกำหนดการพลวัต (dynamic programming)" }
+    hints:
+      - "คำว่า \"แบ่ง\" บอกว่าปัญหาถูกทำให้เล็กลงก่อน"
+      - "คำว่า \"รวม\" บอกว่าผลของส่วนย่อยต้องถูกนำกลับมาต่อกัน"
+    solution: "แบ่งแยกและเอาชนะแบ่งปัญหาใหญ่เป็นปัญหาย่อยที่เล็กลง แก้แต่ละส่วนด้วยวิธีเดียวกัน แล้วรวมผลเป็นคำตอบของปัญหาใหญ่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p003
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ร้านค้าเก็บรายการราคาสินค้า 256 รายการเรียงตามรหัสไว้แล้ว ระบบค้นหาแบบทวิภาคแบ่งช่วงที่เหลือครึ่งหนึ่งทุกครั้งจนเหลือหนึ่งรายการ ต้องแบ่งช่วงกี่ครั้ง (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 8, unit: ครั้ง }
+    hints:
+      - "หารจำนวนรายการด้วย 2 ซ้ำ ๆ จนเหลือ 1 แล้วนับว่าทำกี่ครั้ง"
+      - "256 หารด้วย 2 ได้ 128 และทำต่อไปเรื่อย ๆ"
+    misconceptions:
+      - { match: 9, feedback: "นับการแบ่งเพิ่มอีกหนึ่งครั้งหลังจากเหลือหนึ่งรายการแล้ว ซึ่งไม่จำเป็น" }
+    solution: "256 → 128 → 64 → 32 → 16 → 8 → 4 → 2 → 1 แบ่งไป 8 ครั้ง (log₂ 256 = 8)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p004
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 2
+    type: mcq
+    stem: |
+      ข้อใดเป็นอัลกอริทึมแบบละโมบ (greedy) สำหรับการทอนเงิน
+    choices:
+      - { id: a, text: 'ลองทุกการจัดเหรียญแล้วเลือกจำนวนที่น้อยที่สุด', feedback: "นี่คือการลองทุกแบบ ไม่ได้เลือกทางที่ดีที่สุดในแต่ละขั้น" }
+      - { id: b, text: 'คำนวณฟิบอนัชชีด้วยการเรียกตัวเองซ้ำ', feedback: "นี่ไม่เกี่ยวกับการทอนเงิน และเป็นการเรียกซ้ำที่ไม่จำค่า" }
+      - { id: c, text: 'หยิบเหรียญที่ใหญ่ที่สุดที่ไม่เกินเงินที่เหลือทุกครั้ง', correct: true }
+      - { id: d, text: 'ค้นหาเส้นทางโดยไล่ทุกทางแล้วถอยกลับเมื่อติดตัน', feedback: "นี่คือการย้อนรอย (backtracking)" }
+    hints:
+      - "ละโมบเลือกทางที่ดูดีที่สุดในขั้นนั้นทันที"
+      - "ในการทอนเงิน ขั้นนั้นคือการเลือกเหรียญถัดไป"
+    solution: "อัลกอริทึมละโมบหยิบเหรียญที่ใหญ่ที่สุดที่ไม่เกินเงินที่เหลือทุกครั้ง โดยไม่ย้อนกลับมาเปลี่ยนการเลือกเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p005
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 2
+    type: text
+    stem: |
+      กลยุทธ์ที่แบ่งปัญหาเป็นปัญหาย่อยซ้ำ ๆ แล้วเก็บผลของปัญหาย่อยไว้เพื่อไม่ต้องคำนวณซ้ำ มีชื่อภาษาอังกฤษว่าอะไร (ตอบชื่อเต็มภาษาอังกฤษ)
+    accepted: ["dynamic programming", "dp"]
+    misconceptions:
+      - { match: "memoization", feedback: "memoization (การจำค่า) เป็นเทคนิคหนึ่งในกลยุทธ์นี้ แต่ชื่อของกลยุทธ์ทั้งหมดคือ dynamic programming" }
+      - { match: "greedy", feedback: "ละโมบเลือกทางที่ดูดีที่สุดในแต่ละขั้นและไม่ย้อนกลับ ไม่ได้เก็บผลย่อย" }
+    hints:
+      - "ชื่อกลยุทธ์มีคำว่า dynamic และ programming"
+      - "หัวใจของกลยุทธ์นี้คือการจำผลย่อยไว้ใช้ซ้ำ"
+    solution: "กำหนดการพลวัต (dynamic programming) คำนวณและเก็บผลย่อยไว้ในตารางหรือดิกชันนารี เพื่อไม่ต้องคำนวณปัญหาย่อยเดิมซ้ำ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p006
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 2
+    type: order
+    stem: |
+      ลำดับขั้นของการเรียงแบบผสาน (merge sort) สำหรับรายการหนึ่ง เรียงจากขั้นแรกถึงขั้นสุดท้าย
+    items:
+      - "แบ่งรายการออกเป็นสองครึ่ง"
+      - "เรียงแต่ละครึ่งด้วยการเรียกตัวเองซ้ำ จนเหลือรายการละหนึ่งตัว"
+      - "รวมสองครึ่งที่เรียงแล้วโดยเปรียบเทียบหัวของทั้งสอง"
+      - "คืนรายการที่เรียงแล้วให้ระดับการเรียกที่อยู่สูงกว่า"
+    hints:
+      - "ต้องแบ่งก่อนจึงเรียกตัวเองกับแต่ละครึ่งได้"
+      - "การรวมทำได้เมื่อทั้งสองครึ่งเรียงแล้ว และผลถูกส่งกลับขึ้นไปในขั้นสุดท้าย"
+    solution: "แบ่ง เรียกซ้ำจนเหลือหนึ่งตัว รวมสองครึ่งที่เรียงแล้ว และคืนผลขึ้นไป การรวมก่อนเรียงครึ่งจะทำไม่ได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p007
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 3
+    type: match
+    stem: |
+      จับคู่กลยุทธ์กับตัวอย่างการใช้งานที่เหมาะสม
+    pairs:
+      - { left: "ละโมบ", right: "ทอนเงินโดยหยิบเหรียญใหญ่สุดก่อน" }
+      - { left: "แบ่งแยกและเอาชนะ", right: "ค้นหาแบบทวิภาคในรายการที่เรียงแล้ว" }
+      - { left: "กำหนดการพลวัต", right: "คำนวณฟิบอนัชชีโดยเก็บค่าที่คำนวณแล้วในตาราง" }
+      - { left: "ลองทุกแบบ", right: "ตรวจทุกเส้นทางเพื่อหาเส้นทางที่สั้นที่สุดในกราฟเล็ก" }
+    hints:
+      - "ดูว่าตัวอย่างนั้นแบ่งปัญหา เก็บผลย่อย หรือเลือกทางทีละขั้น"
+      - "การค้นหาแบบทวิภาคแบ่งครึ่งทุกครั้ง"
+    solution: "ละโมบเลือกทีละขั้นด้วยเกณฑ์ท้องถิ่น แบ่งแยกและเอาชนะแบ่งปัญหาครึ่งหนึ่งทุกครั้ง กำหนดการพลวัตเก็บผลย่อยในตาราง และลองทุกแบบตรวจทุกทางเลือก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p008
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ฟังก์ชันคำนวณฟิบอนัชชีแบบเรียกซ้ำ `fib(n)` ที่ไม่จำค่าย่อย คืนค่า `n` ถ้า n น้อยกว่า 2 และคืน `fib(n-1) + fib(n-2)` ถ้าไม่เช่นนั้น เมื่อเรียก `fib(6)` ฟังก์ชันจะถูกเรียกทั้งหมดกี่ครั้ง รวมการเรียกเริ่มต้นด้วย (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 25, unit: ครั้ง }
+    hints:
+      - "วาดต้นไม้การเรียกของ fib(6) โดยแต่ละโหนดคือหนึ่งการเรียก หรือนับจากต้นไม้ของ fib(5) และ fib(4) ที่เป็นกิ่งย่อย"
+      - "จำนวนการเรียกของ fib(n) คือ 1 บวกกับจำนวนการเรียกของ fib(n-1) และ fib(n-2)"
+    misconceptions:
+      - { match: 15, feedback: "นั่นคือจำนวนการเรียกของ fib(5) ไม่ใช่ fib(6) ต้องรวมการเรียกทั้งสองกิ่งของ fib(6) และนับตัวมันเองด้วย" }
+    solution: "ให้ C(n) เป็นจำนวนการเรียก C(0) = C(1) = 1 และ C(n) = 1 + C(n-1) + C(n-2) ได้ C(2) = 3, C(3) = 5, C(4) = 9, C(5) = 15, C(6) = 1 + 15 + 9 = 25"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p009
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ร้านมีเหรียญ 1 บาท 5 บาท และ 10 บาท ต้องทอนเงิน 27 บาท โดยใช้จำนวนเหรียญน้อยที่สุด ต้องใช้กี่เหรียญ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 5, unit: เหรียญ }
+    hints:
+      - "ลองหยิบเหรียญที่ใหญ่ที่สุดที่ไม่เกินเงินที่เหลือทีละเหรียญ"
+      - "เหลือเงินเท่าใดหลังหยิบเหรียญ 10 บาทสองเหรียญ"
+    misconceptions:
+      - { match: 27, feedback: "ใช้เหรียญ 1 บาททั้งหมด ซึ่งไม่ใช่จำนวนเหรียญน้อยที่สุด" }
+    solution: "หยิบ 10, 10 เหลือ 7 แล้วหยิบ 5 เหลือ 2 แล้วหยิบ 1, 1 รวม 5 เหรียญ ระบบเหรียญนี้ให้ผลละโมบที่เหมาะสมที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p010
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: mcq
+    stem: |
+      ระบบมีเหรียญ 1, 4 และ 5 บาท ต้องทอนเงิน 8 บาทให้ลูกค้า เมื่อใช้อัลกอริทึมละโมบ และเมื่อใช้วิธีที่ให้จำนวนเหรียญน้อยที่สุด จะได้จำนวนเหรียญเท่าไรตามลำดับ
+    choices:
+      - { id: a, text: 'ละโมบ 4 เหรียญ และที่น้อยที่สุด 4 เหรียญ', feedback: "วิธีที่น้อยที่สุดหยิบเหรียญ 4 บาทสองเหรียญได้ 2 เหรียญ จึงไม่ใช่ 4" }
+      - { id: b, text: 'ละโมบ 4 เหรียญ และที่น้อยที่สุด 2 เหรียญ', correct: true }
+      - { id: c, text: 'ละโมบ 2 เหรียญ และที่น้อยที่สุด 2 เหรียญ', feedback: "ละโมบหยิบ 5 ก่อน เหลือ 3 ที่ต้องใช้เหรียญ 1 อีกสามเหรียญ รวม 4 เหรียญ ไม่ใช่ 2" }
+      - { id: d, text: 'ละโมบ 3 เหรียญ และที่น้อยที่สุด 2 เหรียญ', feedback: "ละโมบได้ 5 + 1 + 1 + 1 รวม 4 เหรียญ ลองนับใหม่" }
+    hints:
+      - "ลองทำตามกติกาละโมบทีละขั้น แล้วเทียบกับการใช้เหรียญ 4 บาทสองเหรียญ"
+      - "ตัวอย่างนี้แสดงว่าละโมบไม่ได้เหมาะกับระบบเหรียญทุกแบบ"
+    solution: "ละโมบหยิบ 5 เหลือ 3 แล้วหยิบ 1 สามครั้ง รวม 4 เหรียญ แต่การหยิบ 4 บาทสองเหรียญให้ 2 เหรียญซึ่งน้อยที่สุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p011
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: mcq
+    stem: |
+      ข้อใดคือความสัมพันธ์เวียนเกิดของฟิบอนัชชี เมื่อ F(n) คือค่าลำดับที่ n
+    choices:
+      - { id: a, text: 'F(n) = F(n-1) + F(n-2)', correct: true }
+      - { id: b, text: 'F(n) = 2 × F(n-1)', feedback: "ความสัมพันธ์นี้ให้ลำดับแบบเรขาคณิต ไม่ใช่ฟิบอนัชชี" }
+      - { id: c, text: 'F(n) = n × F(n-1)', feedback: "นี่คือแฟกทอเรียล ไม่ใช่ฟิบอนัชชี" }
+      - { id: d, text: 'F(n) = F(n/2) + 1', feedback: "นี่คือความสัมพันธ์ของการแบ่งครึ่งแบบทวิภาค ไม่ใช่ฟิบอนัชชี" }
+    hints:
+      - "ฟิบอนัชชีแต่ละค่าเป็นผลบวกของสองค่าก่อนหน้า"
+      - "ตัวเลือกที่ใช้การคูณหรือการหารครึ่งไม่ใช่ฟิบอนัชชี"
+    solution: "F(n) = F(n-1) + F(n-2) โดยมี F(0) = 0 และ F(1) = 1 เป็นค่าเริ่มต้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p012
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: |
+      ข้อใดเป็นจริงเกี่ยวกับการเรียกซ้ำ (เลือกทุกข้อที่ถูก)
+    choices:
+      - { id: a, text: 'การเรียกซ้ำต้องมีเงื่อนไขหยุดที่ชัดเจน มิฉะนั้นจะไม่สิ้นสุด', correct: true }
+      - { id: b, text: 'การเรียกซ้ำที่ไม่จำค่าย่อยมักใช้เวลาและหน่วยความจำมากกว่าการวนซ้ำ', correct: true }
+      - { id: c, text: 'การเรียกซ้ำเร็วกว่าการวนซ้ำเสมอ', feedback: "การเรียกซ้ำมีค่าใช้จ่ายต่อการเรียกแต่ละครั้ง จึงไม่เร็วกว่าเสมอไป" }
+      - { id: d, text: 'การจำค่าย่อย (memoization) ช่วยลดการคำนวณซ้ำในการเรียกซ้ำ', correct: true }
+    hints:
+      - "ลองนึกว่าการเรียกซ้ำจะหยุดได้อย่างไร"
+      - "การเรียกแต่ละครั้งมีค่าใช้จ่าย และการจำค่าช่วยลดงานที่ทำซ้ำ"
+    solution: "การเรียกซ้ำต้องมีเงื่อนไขหยุด การไม่จำค่าย่อยทำให้เสียเวลาและหน่วยความจำมาก และการจำค่าย่อยลดการคำนวณซ้ำได้ แต่การเรียกซ้ำไม่ได้เร็วกว่าเสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p013
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: text
+    stem: |
+      กลยุทธ์ที่ลองเลือกทางหนึ่ง เมื่อพบทางตันก็ถอยกลับไปยังจุดก่อนหน้าแล้วลองทางอื่น มีชื่อภาษาอังกฤษว่าอะไร (ตอบชื่อภาษาอังกฤษ)
+    accepted: ["backtracking", "back tracking", "backtrack"]
+    misconceptions:
+      - { match: "greedy", feedback: "ละโมบไม่ย้อนกลับมาแก้การเลือกก่อนหน้า กลยุทธ์ที่ถอยกลับเมื่อติดตันคือการย้อนรอย" }
+    hints:
+      - "ชื่อกลยุทธ์นี้สื่อว่าต้องถอยกลับ"
+      - "คำนี้มีสองส่วนคือคำว่า back และ tracking"
+    solution: "การย้อนรอย (backtracking) ลองเลือกทีละทาง ถ้าทางตันจึงถอยกลับ แล้วลองทางที่เหลือ มักใช้กับปัญหาที่มีเงื่อนไขหลายข้อ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p014
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: numeric
+    stem: |
+      เขียนตารางจากค่าเล็กไปใหญ่โดยเริ่มที่ F(0) = 0 และ F(1) = 1 แล้วคำนวณ F(n) = F(n-1) + F(n-2) จนถึง F(10) ค่าของ F(10) เท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 55, unit: "" }
+    hints:
+      - "เขียนลำดับ 0, 1 แล้วบวกสองค่าสุดท้ายไปเรื่อย ๆ"
+      - "ต้องได้สมาชิกทั้งหมด 11 ตัวจาก F(0) ถึง F(10)"
+    misconceptions:
+      - { match: 34, feedback: "นั่นคือค่าของ F(9) ซึ่งเป็นค่าก่อนหน้า F(10) ต้องนับลำดับให้ครบถึงตำแหน่งที่ 10" }
+    solution: "ลำดับคือ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ดังนั้น F(10) = 55"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p015
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: numeric
+    stem: |
+      ฟังก์ชันมีลูปซ้อนกันสองชั้นดังนี้ `for i in range(n):` แล้วภายในมี `for j in range(n):` ที่ทำงานหนึ่งครั้งต่อการวนหนึ่งรอบ ถ้า n เท่ากับ 12 งานนี้ทำงานกี่ครั้งทั้งหมด (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 144, unit: ครั้ง }
+    hints:
+      - "ลูปด้านนอกทำงาน n รอบ และแต่ละรอบมีลูปด้านในทำงาน n รอบ"
+      - "เมื่อลูปซ้อนกันจำนวนครั้งจะคูณกัน"
+    misconceptions:
+      - { match: 66, feedback: "นับเฉพาะคู่ที่ j มากกว่า i ซึ่งไม่ใช่สิ่งที่ลูป range(n) สองชั้นทำ" }
+    solution: "n × n = 12 × 12 = 144 ครั้ง ซึ่งเป็นการเติบโตแบบกำลังสองตาม n"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p016
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `merge_sort(nums)` ด้วยกลยุทธ์แบ่งแยกและเอาชนะ ที่แบ่งลิสต์เป็นสองครึ่ง เรียงแต่ละครึ่งด้วยการเรียกตัวเอง แล้วรวมสองครึ่งที่เรียงแล้ว และ **คืนค่า** ลิสต์ใหม่ที่เรียงจากน้อยไปมาก ห้ามใช้ `sorted` หรือ `sort`
+    starter: |
+      def merge_sort(nums):
+          pass
+    tests: |
+      r = merge_sort([5, 2, 9, 1])
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == [1, 2, 5, 9], f"merge_sort([5, 2, 9, 1]) ควรได้ [1, 2, 5, 9] แต่ได้ {r}"
+      assert merge_sort([]) == [], f"รายการว่างควรได้ [] แต่ได้ {merge_sort([])}"
+      assert merge_sort([3, 3, 1]) == [1, 3, 3], f"ค่าซ้ำต้องคงไว้ครบ merge_sort([3, 3, 1]) ควรได้ [1, 3, 3] แต่ได้ {merge_sort([3, 3, 1])}"
+      assert merge_sort([-2, 0, -5]) == [-5, -2, 0], f"ค่าลบต้องเรียงถูกต้อง ได้ {merge_sort([-2, 0, -5])}"
+    reference: |
+      def merge_sort(nums):
+          if len(nums) <= 1:
+              return list(nums)
+          mid = len(nums) // 2
+          left = merge_sort(nums[:mid])
+          right = merge_sort(nums[mid:])
+          out = []
+          i = j = 0
+          while i < len(left) and j < len(right):
+              if left[i] <= right[j]:
+                  out.append(left[i])
+                  i += 1
+              else:
+                  out.append(right[j])
+                  j += 1
+          out.extend(left[i:])
+          out.extend(right[j:])
+          return out
+    hints:
+      - "กรณีฐานคือรายการที่มีหนึ่งตัวหรือไม่มีเลย ซึ่งเรียงแล้วอยู่แล้ว"
+      - "ในการรวม ใช้ดัชนีสองตัวชี้หัวของสองครึ่ง แล้วเลือกตัวที่เล็กกว่าใส่ผลลัพธ์"
+    solution: "แบ่งที่ mid แล้วเรียก merge_sort กับทั้งสองครึ่ง จากนั้นรวมด้วยดัชนีสองตัวและต่อส่วนที่เหลือ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p017
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 5
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `min_coins(coins, amount)` ที่รับลิสต์ของชนิดเหรียญและจำนวนเงินเป็นจำนวนเต็ม แล้ว **คืนค่า** จำนวนเหรียญน้อยที่สุดที่รวมเป็นจำนวนเงินนั้นได้ ใช้กำหนดการพลวัตด้วยตารางจากค่าเล็กไปใหญ่ ถ้ารวมไม่ได้ให้คืน `-1` และถ้าจำนวนเงินเป็น 0 ให้คืน 0
+    starter: |
+      def min_coins(coins, amount):
+          pass
+    tests: |
+      r = min_coins([1, 3, 4], 6)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == 2, f"min_coins([1, 3, 4], 6) ควรได้ 2 (3 + 3) แต่ได้ {r}"
+      assert min_coins([1, 5, 10], 27) == 5, f"min_coins([1, 5, 10], 27) ควรได้ 5 แต่ได้ {min_coins([1, 5, 10], 27)}"
+      assert min_coins([2], 3) == -1, f"เหรียญ 2 รวมเป็น 3 ไม่ได้ ควรได้ -1 แต่ได้ {min_coins([2], 3)}"
+      assert min_coins([1], 0) == 0, f"จำนวนเงิน 0 ควรได้ 0 แต่ได้ {min_coins([1], 0)}"
+    reference: |
+      def min_coins(coins, amount):
+          INF = float("inf")
+          best = [0] + [INF] * amount
+          for a in range(1, amount + 1):
+              for c in coins:
+                  if c <= a and best[a - c] + 1 < best[a]:
+                      best[a] = best[a - c] + 1
+          return best[amount] if best[amount] != INF else -1
+    hints:
+      - "สร้างลิสต์ best ที่ best[a] คือจำนวนเหรียญน้อยที่สุดของจำนวนเงิน a เริ่มจาก best[0] = 0"
+      - "สำหรับจำนวนเงิน a ลองใช้เหรียญ c แต่ละชนิดแล้วดูค่า best[a - c] + 1"
+    solution: "สร้างตาราง best ขนาด amount + 1 ค่าเริ่มต้นเป็นอนันต์ยกเว้น best[0] = 0 แล้วในแต่ละจำนวนเงิน a ลองเหรียญทุกชนิดเพื่ออัปเดตค่าต่ำสุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.algorithms.design-strategies.p018
+    topics: [computer.algorithms.design-strategies]
+    difficulty: 5
+    type: code
+    stem: |
+      การเทียบทุกคู่ของรายการ `nums` เพื่อหาสองตำแหน่งที่รวมกันได้ค่า `target` ใช้เวลาประมาณ n ยกกำลังสอง เขียนฟังก์ชัน `has_pair_with_sum(nums, target)` ที่คืนค่า `True` ถ้ามีคู่ของสองตำแหน่งที่ต่างกันซึ่งรวมกันได้ `target` และคืนค่า `False` ถ้าไม่มี โดยใช้เซตที่เก็บค่าที่เห็นแล้วเพื่อให้เวลาประมาณ n ค่าเดียว
+    starter: |
+      def has_pair_with_sum(nums, target):
+          pass
+    tests: |
+      assert has_pair_with_sum([3], 6) is False, "ตำแหน่งเดียวจับคู่กับตัวเองไม่ได้ ควรได้ False"
+      assert has_pair_with_sum([3, 3], 6) is True, "สองตำแหน่งที่มีค่า 3 ทั้งคู่รวมได้ 6 ควรได้ True"
+      assert has_pair_with_sum([1, 4, 7], 11) is True, "4 กับ 7 รวมได้ 11 ควรได้ True"
+      assert has_pair_with_sum([1, 4, 7], 9) is False, "ไม่มีคู่ที่รวมได้ 9 ควรได้ False"
+      big = list(range(50000))
+      assert has_pair_with_sum(big, 99997) is True, "49998 กับ 49999 รวมได้ 99997 ควรได้ True และต้องเร็วพอ"
+    reference: |
+      def has_pair_with_sum(nums, target):
+          seen = set()
+          for x in nums:
+              if target - x in seen:
+                  return True
+              seen.add(x)
+          return False
+    hints:
+      - "สำหรับแต่ละค่า x ให้ตรวจว่า target - x เคยเห็นแล้วหรือไม่"
+      - "ตรวจก่อนเพิ่ม x เข้าเซต เพื่อไม่ให้ตำแหน่งเดียวจับคู่กับตัวเองได้"
+    solution: "วนค่า x ทีละค่า ถ้า target - x อยู่ในเซตที่เห็นแล้วคืน True มิฉะนั้นเพิ่ม x เข้าเซต ตรวจก่อนเพิ่มทำให้ [3] ได้ False และ [3, 3] ได้ True"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

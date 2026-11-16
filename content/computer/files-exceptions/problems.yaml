@@ -1,0 +1,375 @@
+problems:
+  - id: computer.programming.files-exceptions.p001
+    topics: [computer.programming.files-exceptions]
+    difficulty: 1
+    type: numeric
+    stem: |
+      ไฟล์ `notes.txt` มีข้อความเดิม 5 บรรทัด ถ้าเปิดไฟล์ด้วยโหมด `"w"` แล้วเขียนข้อความใหม่ 2 บรรทัด ไฟล์จะมีกี่บรรทัด (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 2, unit: บรรทัด }
+    hints:
+      - "โหมด `\"w\"` เขียนใหม่ทั้งไฟล์ ไม่ได้ต่อจากข้อความเดิม"
+      - "ดูว่าข้อความเดิมยังเหลืออยู่หรือไม่หลังเปิดด้วยโหมดนี้"
+    misconceptions:
+      - { match: 7, feedback: "คิดว่าโหมด \"w\" ต่อท้าย แต่โหมดนี้ลบเนื้อหาเดิมก่อนเขียนทุกครั้ง" }
+    solution: "โหมด \"w\" ลบเนื้อหาเดิมทั้งหมดเมื่อเปิดไฟล์ ไฟล์จึงมีเพียง 2 บรรทัดที่เขียนใหม่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p002
+    topics: [computer.programming.files-exceptions]
+    difficulty: 1
+    type: mcq
+    stem: |
+      โหมดใดของ `open()` ใช้เพื่อเขียนข้อความต่อท้ายจากเนื้อหาเดิมของไฟล์
+    choices:
+      - { id: a, text: '"r"', feedback: "โหมดนี้ใช้อ่านอย่างเดียว ไม่เขียนข้อมูล" }
+      - { id: b, text: '"w"', feedback: "โหมดนี้เขียนใหม่ทั้งหมดและลบเนื้อหาเดิม" }
+      - { id: c, text: '"a"', correct: true }
+      - { id: d, text: '"x"', feedback: "โหมดนี้สร้างไฟล์ใหม่ และจะล้มเหลวถ้ามีไฟล์นั้นอยู่แล้ว" }
+    hints:
+      - "ตัวอักษรของโหมดนี้มาจากคำว่า append"
+      - "ต้องเป็นโหมดที่ไม่ลบเนื้อหาเดิม"
+    solution: "โหมด \"a\" (append) เปิดไฟล์เพื่อเขียนต่อท้ายข้อความเดิม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p003
+    topics: [computer.programming.files-exceptions]
+    difficulty: 2
+    type: numeric
+    stem: |
+      ครูคัดลอกคะแนนจากกระดาษมาเป็นรายการ `["12", "7", "x", "30"]` ถ้าใช้ `try` กับ `int()` และข้ามรายการที่แปลงไม่ได้ แล้วนำค่าที่เหลือมาบวกกัน ผลรวมเท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 49, unit: คะแนน }
+    hints:
+      - "`int(\"x\")` จะเกิด `ValueError` ต้องจับและข้ามรายการนั้น"
+      - "บวกเฉพาะค่าที่แปลงเป็นจำนวนเต็มได้สำเร็จ"
+    misconceptions:
+      - { match: 19, feedback: "หยุดการรวมตั้งแต่เจอค่าที่ผิด จึงได้เพียง 12 + 7 ไม่ได้รวม 30 ที่อยู่ถัดไป" }
+    solution: "12 + 7 + 30 = 49 รายการ \"x\" ถูกข้ามไปเพราะ int() เกิด ValueError"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p004
+    topics: [computer.programming.files-exceptions]
+    difficulty: 2
+    type: mcq
+    stem: |
+      ข้อใดเป็นวิธีจับข้อผิดพลาดที่เหมาะสมที่สุดเมื่อแปลงข้อความในไฟล์เป็นตัวเลขไม่ได้
+    choices:
+      - { id: a, text: "try: x = int(s)\nexcept: pass", feedback: "จับทุกข้อผิดพลาดและไม่บันทึกอะไร ทำให้มองไม่เห็นว่ามีข้อมูลเสียอยู่" }
+      - { id: b, text: "try: x = int(s)\nexcept ValueError:\n    ข้ามรายการนี้และนับจำนวนที่ข้าม", correct: true }
+      - { id: c, text: "try: x = int(s)\nexcept KeyError: x = 0", feedback: "`KeyError` เกิดเมื่อเข้าถึงคีย์ที่ไม่มีในดิกชันนารี ไม่ได้เกิดจากการแปลงตัวเลข" }
+      - { id: d, text: "x = int(s)", feedback: "ไม่มี try เลย โปรแกรมจะหยุดทันทีเมื่อข้อมูลผิดรูป" }
+    hints:
+      - "ควรจับเฉพาะข้อผิดพลาดที่คาดว่าจะเกิด และไม่ควรซ่อนมันไว้"
+      - "ข้อผิดพลาดของการแปลงข้อความเป็นตัวเลขมีชนิดใด"
+    solution: "จับ `ValueError` ซึ่งเป็นชนิดที่ int() โยน แล้วข้ามรายการและนับไว้ จึงรู้ว่ามีข้อมูลเสียกี่รายการ โดยไม่หยุดโปรแกรม"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p005
+    topics: [computer.programming.files-exceptions]
+    difficulty: 2
+    type: text
+    stem: |
+      คำสั่งใดของ Python ที่เมื่อใช้เปิดไฟล์แล้วจะปิดไฟล์ให้อัตโนมัติเมื่อออกจากบล็อก (ตอบเป็นคำสั่งภาษาอังกฤษหนึ่งคำ)
+    accepted: ["with"]
+    misconceptions:
+      - { match: "close", feedback: "ไม่ต้องเรียก `close()` เอง ถ้าใช้คำสั่งที่ตอบได้ เพราะมันปิดให้เสร็จเมื่อออกจากบล็อก" }
+    hints:
+      - "คำสั่งนี้ใช้คู่กับ `as f` ในบรรทัดที่เปิดไฟล์"
+      - "คำนี้เป็นคำภาษาอังกฤษสี่ตัวอักษร"
+    solution: "`with open(...) as f:` จะเรียก close() ให้อัตโนมัติเมื่อจบบล็อก แม้เกิดข้อยกเว้นกลางคัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p006
+    topics: [computer.programming.files-exceptions]
+    difficulty: 2
+    type: order
+    stem: |
+      ต้องการเขียนตารางสองแถวลงในข้อความ CSV แล้วอ่านกลับเป็นแถว เรียงขั้นตอนจากขั้นแรกถึงขั้นสุดท้าย
+    items:
+      - "สร้างตัวเขียน `csv.writer(buf)` แล้วเขียนแถวหัวตาราง"
+      - "เขียนแถวข้อมูลต่อด้วย `writerow`"
+      - "ย้ายตัวชี้กลับไปต้นข้อความด้วย `buf.seek(0)`"
+      - "อ่านแถวทีละแถวด้วย `csv.reader(buf)`"
+    hints:
+      - "ต้องเขียนข้อมูลลงก่อนจึงอ่านได้"
+      - "หลังเขียนเสร็จตัวชี้อยู่ท้ายข้อความ ต้องย้ายกลับก่อนอ่าน"
+    solution: "เขียนก่อนแล้วย้ายตัวชี้กลับด้วย seek(0) จากนั้นจึงอ่าน ถ้าอ่านก่อนย้ายตัวชี้จะได้ข้อความว่าง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p007
+    topics: [computer.programming.files-exceptions]
+    difficulty: 3
+    type: match
+    stem: |
+      จับคู่ชื่อข้อยกเว้นกับสถานการณ์ที่มักทำให้เกิดข้อยกเว้นนั้น
+    pairs:
+      - { left: "FileNotFoundError", right: "เปิดไฟล์ที่ไม่มีอยู่ในตำแหน่งนั้น" }
+      - { left: "ValueError", right: "แปลงข้อความที่ไม่ใช่ตัวเลขด้วย int()" }
+      - { left: "KeyError", right: "เข้าถึงคีย์ที่ไม่มีในดิกชันนารี" }
+      - { left: "ZeroDivisionError", right: "หารตัวเลขด้วยศูนย์" }
+    hints:
+      - "ชื่อแต่ละข้อยกเว้นบอกลักษณะของปัญหาอยู่แล้ว"
+      - "`Key` หมายถึงคีย์ของดิกชันนารี และ `Zero` หมายถึงศูนย์"
+    solution: "FileNotFoundError เกิดเมื่อไม่พบไฟล์ ValueError เกิดเมื่อค่ามีชนิดถูกแต่รูปแบบผิด KeyError เกิดเมื่อคีย์ไม่มี และ ZeroDivisionError เกิดเมื่อหารด้วยศูนย์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p008
+    topics: [computer.programming.files-exceptions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ใบรายการของร้านกาแฟเก็บเป็น CSV ดังนี้ ลาเต้ จำนวน 2 ราคาแก้วละ 65 บาท ครัวซองต์ จำนวน 1 ราคา 45 บาท และน้ำส้ม จำนวน 3 ราคา 25 บาท ถ้าคำนวณยอดรวมจาก จำนวน × ราคา ของทุกรายการ จะได้กี่บาท (ตอบเป็นจำนวนเต็ม หน่วยบาท)
+    answer: { value: 250, unit: บาท }
+    hints:
+      - "ยอดของแต่ละรายการคือจำนวนคูณด้วยราคา"
+      - "รวมยอดของทั้งสามรายการเข้าด้วยกัน"
+    misconceptions:
+      - { match: 6, feedback: "รวมเฉพาะจำนวนชิ้น (2 + 1 + 3) โดยไม่ได้คูณราคา" }
+    solution: "ลาเต้ 2 × 65 = 130, ครัวซองต์ 1 × 45 = 45, น้ำส้ม 3 × 25 = 75 รวมได้ 250 บาท"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p009
+    topics: [computer.programming.files-exceptions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      กำหนด `text = "ร้าน\nกาแฟ\nฟ้า\n"` แล้ววนด้วย `for line in io.StringIO(text):` จะได้กี่รอบ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 3, unit: รอบ }
+    hints:
+      - "การวนบนไฟล์หรือ StringIO จะให้หนึ่งรอบต่อหนึ่งบรรทัด"
+      - "ตัวอักษร `\\n` ตัวสุดท้ายจบบรรทัดสุดท้าย ไม่ได้เริ่มบรรทัดใหม่"
+    misconceptions:
+      - { match: 4, feedback: "นับบรรทัดว่างหลัง \\n ตัวสุดท้ายเป็นรอบที่สี่ แต่จริง ๆ ไม่มีบรรทัดว่างเพิ่ม" }
+    solution: "มีสามบรรทัด คือ ร้าน กาแฟ และฟ้า จึงวนได้ 3 รอบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p010
+    topics: [computer.programming.files-exceptions]
+    difficulty: 3
+    type: mcq
+    stem: |
+      เหตุใดควรระบุ `encoding="utf-8"` เมื่อเปิดไฟล์ที่มีภาษาไทย
+    choices:
+      - { id: a, text: 'เพื่อให้ตัวอักษรไทยถูกแปลงเป็นไบต์ในรูปแบบที่ตกลงกันไว้ และอ่านกลับได้ตรงกันบนทุกระบบ', correct: true }
+      - { id: b, text: 'เพื่อให้ไฟล์เล็กลงเหมือนการบีบอัด', feedback: "การระบุ encoding ไม่ได้บีบอัดไฟล์ มันกำหนดวิธีแปลงตัวอักษรเป็นไบต์" }
+      - { id: c, text: 'เพื่อให้โปรแกรมเปิดไฟล์ได้โดยไม่ต้องมีนามสกุล', feedback: "นามสกุลไม่เกี่ยวกับ encoding" }
+      - { id: d, text: 'เพื่อให้เขียนไฟล์ได้เร็วขึ้นเท่านั้น', feedback: "encoding เป็นเรื่องความถูกต้องของตัวอักษรมากกว่าความเร็ว" }
+    hints:
+      - "ลองคิดถึงสิ่งที่เกิดขึ้นเมื่อไฟล์ถูกอ่านบนเครื่องอื่นที่ตั้งค่าไว้ต่างกัน"
+      - "encoding คือวิธีแปลงอักขระเป็นไบต์และกลับกัน"
+    solution: "encoding ทำให้การแปลงระหว่างอักขระกับไบต์ตรงกันทุกที่ ถ้าไม่ระบุ อาจอ่านตัวอักษรไทยผิดบนระบบที่ใช้ค่าเริ่มต้นต่างกัน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p011
+    topics: [computer.programming.files-exceptions]
+    difficulty: 3
+    type: mcq
+    stem: |
+      ข้อใดเป็นวิธีแจ้งข้อผิดพลาดที่ดีเมื่อคะแนนที่รับมาเกินช่วงที่ยอมรับได้
+    choices:
+      - { id: a, text: 'raise ValueError', feedback: "ไม่มีข้อความบอกค่าที่ผิด ผู้ที่เห็นข้อผิดพลาดจะไม่รู้ว่าเกิดกับข้อมูลใด" }
+      - { id: b, text: 'raise ValueError(f"คะแนนต้องอยู่ระหว่าง 0 ถึง 100 แต่ได้ {score}")', correct: true }
+      - { id: c, text: 'return -1 โดยไม่บอกอะไร', feedback: "ค่า -1 ที่ไม่มีคำอธิบายทำให้ผู้เรียกเข้าใจผิดได้ง่ายและกลายเป็นข้อผิดพลาดเงียบ" }
+      - { id: d, text: 'print("error") แล้วทำงานต่อด้วยค่าเดิม', feedback: "ข้อความที่พิมพ์ไม่ได้หยุดหรือจัดการค่าที่ผิด โปรแกรมยังใช้ข้อมูลเสียต่อไป" }
+    hints:
+      - "ข้อความที่ดีควรบอกว่าค่าที่ได้คืออะไรและควรเป็นช่วงใด"
+      - "ควรโยนข้อยกเว้นพร้อมข้อความ ไม่ใช่ซ่อนปัญหาไว้"
+    solution: "โยนข้อยกเว้นที่มีข้อความบอกช่วงที่ยอมรับได้และค่าที่ได้จริง ผู้เรียกจึงแก้ไขได้ตรงจุด"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p012
+    topics: [computer.programming.files-exceptions]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: |
+      ข้อใดเป็นจริงเกี่ยวกับการเปิดไฟล์และโครงสร้าง `try / except / else / finally` (เลือกทุกข้อที่ถูก)
+    choices:
+      - { id: a, text: 'บล็อก with จะปิดไฟล์แม้เกิดข้อยกเว้นในบล็อกนั้น', correct: true }
+      - { id: b, text: 'บล็อก else ทำงานเมื่อไม่มีข้อยกเว้นเกิดขึ้นในบล็อก try', correct: true }
+      - { id: c, text: 'บล็อก finally ทำงานเฉพาะเมื่อไม่มีข้อยกเว้นเกิดขึ้น', feedback: "finally ทำงานทุกครั้ง ทั้งที่มีและไม่มีข้อยกเว้น" }
+      - { id: d, text: 'การเปิดไฟล์ด้วยโหมด "w" จะล้มเหลวเมื่อไฟล์ยังไม่มี', feedback: "โหมด \"w\" สร้างไฟล์ใหม่ให้ได้ ความล้มเหลวจะเกิดกับโหมด \"r\" แทน" }
+    hints:
+      - "ลองนึกว่าบล็อกใดทำงานเสมอ และบล็อกใดทำงานเฉพาะเมื่อไม่มีข้อผิดพลาด"
+      - "โหมดที่เขียนไฟล์ใหม่ได้จะไม่เกิด FileNotFoundError เมื่อไฟล์ไม่มี"
+    solution: "with ปิดไฟล์แม้เกิดข้อยกเว้น else ทำเมื่อไม่มีข้อผิดพลาดใน try ส่วน finally ทำทุกครั้ง และโหมด \"w\" สร้างไฟล์ได้เมื่อยังไม่มี"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p013
+    topics: [computer.programming.files-exceptions]
+    difficulty: 4
+    type: text
+    stem: |
+      คำสั่งใดใช้โยนข้อยกเว้นขึ้นเองในโค้ด Python (ตอบเป็นคำสั่งภาษาอังกฤษหนึ่งคำ)
+    accepted: ["raise"]
+    misconceptions:
+      - { match: "throw", feedback: "Python ใช้คำสั่ง raise ไม่ใช่ throw ซึ่งเป็นคำของภาษาอื่น" }
+    hints:
+      - "คำสั่งนี้ตามด้วยชื่อคลาสข้อยกเว้น เช่น ValueError"
+      - "คำนี้แปลว่ายกขึ้น"
+    solution: "`raise ValueError(\"ข้อความ\")` โยนข้อยกเว้นออกจากฟังก์ชันทันที และผู้เรียกจับได้ด้วย try/except"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p014
+    topics: [computer.programming.files-exceptions]
+    difficulty: 3
+    type: numeric
+    stem: |
+      ไฟล์ CSV ของร้านมีแถวหัวตาราง 1 แถวและแถวข้อมูล 12 แถว เมื่ออ่านด้วย `csv.DictReader` จะได้จำนวนรายการ (dict) ทั้งหมดกี่รายการ (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 12, unit: รายการ }
+    hints:
+      - "`DictReader` ใช้แถวแรกเป็นชื่อคอลัมน์ จึงไม่คืนแถวนั้นเป็นข้อมูล"
+      - "นับเฉพาะแถวที่เป็นข้อมูลจริง"
+    misconceptions:
+      - { match: 13, feedback: "นับแถวหัวตารางเป็นข้อมูลด้วย แต่ DictReader ใช้แถวนั้นเป็นชื่อคอลัมน์" }
+    solution: "แถวหัวตารางกลายเป็นชื่อคีย์ จึงเหลือ 12 รายการจากแถวข้อมูล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p015
+    topics: [computer.programming.files-exceptions]
+    difficulty: 2
+    type: numeric
+    stem: |
+      รายการคะแนนในไฟล์มี 6 บรรทัดข้อมูล ในนั้นมี 2 บรรทัดที่คะแนนไม่ใช่ตัวเลข ถ้าโปรแกรมข้ามบรรทัดที่ผิดด้วยการจับ `ValueError` แล้วนับบรรทัดที่เหลือ จะได้จำนวนที่นับได้เท่ากับเท่าไร (ตอบเป็นจำนวนเต็ม)
+    answer: { value: 4, unit: บรรทัด }
+    hints:
+      - "บรรทัดที่ผิดถูกข้าม ไม่ถูกนับ"
+      - "ลบจำนวนบรรทัดที่ผิดออกจากจำนวนบรรทัดข้อมูลทั้งหมด"
+    misconceptions:
+      - { match: 6, feedback: "นับทุกบรรทัดแม้บรรทัดที่ผิด การข้ามทำให้บรรทัดเหล่านั้นไม่ถูกนับ" }
+    solution: "6 − 2 = 4 บรรทัดที่คะแนนเป็นตัวเลขและถูกนับ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p016
+    topics: [computer.programming.files-exceptions]
+    difficulty: 4
+    type: code
+    stem: |
+      เขียนฟังก์ชัน `save_and_load(rows)` ที่รับลิสต์ของลิสต์ (แต่ละลิสต์คือหนึ่งแถวของตาราง) เขียนลงข้อความ CSV ในหน่วยความจำด้วย `io.StringIO` แล้วอ่านกลับเป็นลิสต์ของแถวด้วย `csv.reader` และ **คืนค่า** ผลลัพธ์นั้น ถ้า rows ว่างให้คืน `[]`
+    starter: |
+      import csv
+      import io
+
+      def save_and_load(rows):
+          pass
+    tests: |
+      r = save_and_load([["ชื่อ", "คะแนน"], ["ฟ้า", "18"], ["ต้น", "12"]])
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == [["ชื่อ", "คะแนน"], ["ฟ้า", "18"], ["ต้น", "12"]], f"อ่านกลับไม่ตรงกับที่เขียน ได้ {r}"
+      assert save_and_load([]) == [], f"rows ว่างควรคืน [] แต่ได้ {save_and_load([])}"
+      assert save_and_load([["a,b", "c"]]) == [["a,b", "c"]], "ค่าที่มีจุลภาคต้องถูกเก็บในเครื่องหมายคำพูดและอ่านกลับได้ตรงเดิม"
+    reference: |
+      import csv
+      import io
+
+      def save_and_load(rows):
+          buf = io.StringIO()
+          writer = csv.writer(buf)
+          writer.writerows(rows)
+          buf.seek(0)
+          return list(csv.reader(buf))
+    hints:
+      - "สร้าง `io.StringIO()` แล้วส่งให้ `csv.writer` เขียน และ `writerows` เขียนทั้งลิสต์ได้ทีเดียว"
+      - "หลังเขียนต้องเรียก `seek(0)` ก่อนส่งให้ `csv.reader` อ่าน"
+    solution: "สร้างบัฟเฟอร์ เขียนด้วย csv.writer แล้ว seek(0) และคืน list(csv.reader(buf)) เครื่องหมายคำพูดของค่าที่มีจุลภาคจะถูกจัดการโดย csv โดยอัตโนมัติ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p017
+    topics: [computer.programming.files-exceptions]
+    difficulty: 5
+    type: code
+    stem: |
+      ฝ่ายบัญชีร้านกาแฟมีข้อความ CSV ของยอดขายที่มีหัวตารางเป็น `item,qty,price` บางแถวอาจเสียจนอ่านจำนวนหรือราคาไม่ได้ เขียนฟังก์ชัน `sum_sales(text)` ที่คำนวณยอดรวมจาก qty × price ของแถวที่ถูกต้อง และนับจำนวนแถวที่เสียโดยไม่หยุดโปรแกรม ให้ **คืนค่า** เป็นทูเพิล `(ยอดรวม, จำนวนแถวที่เสีย)` โดยจับเฉพาะ `ValueError` และ `TypeError` ที่เกิดจากการแปลงค่า
+    starter: |
+      import csv
+      import io
+
+      def sum_sales(text):
+          pass
+    tests: |
+      text = "item,qty,price\nลาเต้,2,65\nครัวซองต์,1,45\nน้ำส้ม,x,25\nชา,3,\nกาแฟดำ,2\n"
+      r = sum_sales(text)
+      assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert r == (175, 3), f"ควรได้ (175, 3) คือยอดรวมของแถวที่ถูกและจำนวนแถวเสีย 3 แถว แต่ได้ {r}"
+      assert sum_sales("item,qty,price\n") == (0, 0), f"ไม่มีแถวข้อมูลควรได้ (0, 0) แต่ได้ {sum_sales('item,qty,price' + chr(10))}"
+      assert sum_sales("item,qty,price\nชา,4,10\n") == (40, 0), "แถวเดียวที่ถูกต้องควรได้ (40, 0)"
+    reference: |
+      import csv
+      import io
+
+      def sum_sales(text):
+          total = 0
+          bad = 0
+          for row in csv.DictReader(io.StringIO(text)):
+              try:
+                  total += int(row["qty"]) * int(row["price"])
+              except (ValueError, TypeError):
+                  bad += 1
+          return (total, bad)
+    hints:
+      - "อ่านด้วย `csv.DictReader` แล้วดึง qty และ price ของแต่ละแถวด้วยชื่อคอลัมน์"
+      - "ห่อการแปลงด้วย `try` และจับ `ValueError` กับ `TypeError` เพราะช่องว่าง `\"\"` ทำให้ int() เกิด ValueError ส่วนแถวที่มีช่องไม่ครบจะได้ค่า None ซึ่งทำให้เกิด TypeError"
+      - "นับแถวที่เสียในตัวแปรแยกต่างหาก และคืนทูเพิลเมื่อวนครบทั้งหมด"
+    solution: "วนแถวด้วย DictReader ใน try แปลง qty กับ price ด้วย int() แล้วคูณรวม ถ้าเกิด ValueError หรือ TypeError นับเป็นแถวเสีย ผลได้ 2×65 + 1×45 = 175 และมีสามแถวเสีย (น้ำส้มจำนวนเป็น x ชาไม่มีราคา และกาแฟดำมีช่องไม่ครบ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.files-exceptions.p018
+    topics: [computer.programming.files-exceptions]
+    difficulty: 5
+    type: code
+    stem: |
+      ระบบบันทึกคะแนนต้องรับค่าเป็นข้อความ เขียนคลาสข้อยกเว้น `ScoreError` ที่สืบทอดจาก `ValueError` และฟังก์ชัน `parse_score(text)` ที่แปลงข้อความเป็นจำนวนเต็ม แล้ว **คืนค่า** ถ้าข้อความไม่ใช่จำนวนเต็มให้โยน `ScoreError` พร้อมข้อความที่มีข้อความนั้น และถ้าค่าอยู่นอกช่วง 0 ถึง 100 ให้โยน `ScoreError` พร้อมข้อความที่บอกค่าที่ได้
+    starter: |
+      class ScoreError(ValueError):
+          pass
+
+      def parse_score(text):
+          pass
+    tests: |
+      assert parse_score("18") == 18, f"parse_score('18') ควรได้ 18 แต่ได้ {parse_score('18')}"
+      assert parse_score("100") == 100, "ขอบบน 100 ต้องรับได้"
+      def expect_error(text):
+          try:
+              parse_score(text)
+          except ScoreError as e:
+              return str(e)
+          raise AssertionError(f"parse_score({text!r}) ควรโยน ScoreError แต่ไม่โยน")
+      msg = expect_error("abc")
+      assert "abc" in msg, f"ข้อความข้อยกเว้นควรบอกข้อความที่ผิด แต่ได้ {msg!r}"
+      msg2 = expect_error("120")
+      assert "120" in msg2, f"ข้อความข้อยกเว้นควรบอกค่าที่เกินช่วง แต่ได้ {msg2!r}"
+      assert isinstance(ScoreError("x"), ValueError), "ScoreError ต้องสืบทอดจาก ValueError"
+    reference: |
+      class ScoreError(ValueError):
+          pass
+
+      def parse_score(text):
+          try:
+              value = int(text)
+          except ValueError:
+              raise ScoreError(f"ไม่ใช่จำนวนเต็ม: {text!r}") from None
+          if not 0 <= value <= 100:
+              raise ScoreError(f"คะแนนต้องอยู่ระหว่าง 0 ถึง 100 แต่ได้ {value}")
+          return value
+    hints:
+      - "ใช้ `try` กับ `int(text)` และจับเฉพาะ `ValueError` ที่เกิดจากการแปลง"
+      - "ในบล็อก except ให้ `raise ScoreError(...)` พร้อมข้อความที่มีค่าที่ผิด ส่วนการตรวจช่วงทำหลังแปลงสำเร็จ"
+    solution: "class ScoreError(ValueError) แล้วใน parse_score ใช้ try int(text) except ValueError raise ScoreError(f\"...{text!r}\") จากนั้นตรวจ 0 <= value <= 100 แล้วคืน value"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
