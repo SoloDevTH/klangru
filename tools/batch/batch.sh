@@ -4,16 +4,35 @@
 #   next <วิชา> [จำนวน]         จองชุดถัดไป (บันทึกใน docs/batches/state.json)
 #   ids <ชุด>                   พิมพ์รหัสหัวข้อของชุด
 #   release <ชุด>               ปลดชุดโดยไม่รวมเข้าคลัง
+#   park <ชุด>                  ย้ายไฟล์ที่ยังไม่ผ่านตรวจของชุดไปไว้ branch batch/<ชุด> (commit WIP + push) แล้วลบออกจากโฟลเดอร์งานหลัก
+#   work <ชุด>                  สร้าง worktree ที่ ../klangru-work/<ชุด> บน branch ของชุด ให้ผู้เขียนทำงานที่นั่น (ใช้ node_modules ร่วม)
 #   integrate <ชุด> "<ข้อความ>"  รวมไฟล์จับคู่ ลบแถวจากแผน ตรวจใน worktree สะอาด commit push แล้วปลดชุด
 set -euo pipefail
 R="$(cd "$(dirname "$0")/../.." && pwd)"; D="$R/tools/batch"; cd "$R"
 cmd="${1:-status}"; shift || true
 case "$cmd" in
   status|next|ids|release) python3 "$D/sched.py" "$R" "$cmd" "$@" ;;
+  park)
+    B="$1"; IDS=$(python3 "$D/sched.py" "$R" ids "$B")
+    [ -n "$(git diff --cached --name-only)" ] && { echo "index ไม่ว่าง ยกเลิก"; exit 1; }
+    mapfile -t PATHS < <(python3 "$D/paths.py" "$R" "$IDS" "$B")
+    [ ${#PATHS[@]} -eq 0 ] && { echo "ไม่มีไฟล์ของชุด $B"; exit 0; }
+    CUR=$(git rev-parse --abbrev-ref HEAD)
+    git checkout -q -B "batch/$B" && git add -- "${PATHS[@]}" && git commit -q -m "WIP ชุด $B (ยังไม่ผ่านการตรวจ) [skip ci]" && git push -q -f origin "batch/$B"
+    git checkout -q "$CUR" && git rm -rq --cached --ignore-unmatch -- "${PATHS[@]}" 2>/dev/null || true
+    rm -rf -- "${PATHS[@]}"; echo "parked ${#PATHS[@]} paths → batch/$B" ;;
+  work)
+    B="$1"; W="$(dirname "$R")/klangru-work/$B"; mkdir -p "$(dirname "$W")"
+    git show-ref -q "refs/heads/batch/$B" || git branch "batch/$B" HEAD
+    [ -d "$W" ] || git worktree add -q "$W" "batch/$B"
+    [ -e "$W/node_modules" ] || ln -s "$R/node_modules" "$W/node_modules"
+    for d in packages/content-tools packages/schema apps/web; do [ -d "$R/$d/node_modules" ] && [ ! -e "$W/$d/node_modules" ] && ln -s "$R/$d/node_modules" "$W/$d/node_modules"; done
+    echo "$W" ;;
   integrate)
     B="$1"; MSG="${2:-ชุด $B: เขียนหัวข้อใหม่ตามแผน พร้อมจับคู่หลักสูตร}"
     IDS=$(python3 "$D/sched.py" "$R" ids "$B")
     [ -n "$(git diff --cached --name-only)" ] && { echo "index ไม่ว่าง ยกเลิก"; exit 1; }
+    if git show-ref -q "refs/heads/batch/$B"; then git checkout "batch/$B" -- . 2>/dev/null && git reset -q; fi
     node "$D/graduate.mjs" "$R" --ids="$IDS" --write
     # หาไฟล์ของชุดจากรหัสหัวข้อ (โฟลเดอร์อาจไม่ตรงกับส่วนท้ายของรหัส)
     mapfile -t PATHS < <(python3 - "$IDS" "$B" <<'PY'
