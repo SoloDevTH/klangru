@@ -404,7 +404,7 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
     const levels = new Set(problems.map((p) => p.difficulty)).size;
     if (problems.length && levels < MIN_DIFFICULTY_LEVELS) warn(`โจทย์มีความยากแค่ ${levels} ระดับ (ควรมี ${MIN_DIFFICULTY_LEVELS} ขึ้นไป)`, problemsFile);
 
-    if (opts.lint) for (const l of lintTopic(topic, problems, dir.markdown, problemsFile, topicFile)) warn(`[lint] ${l.message}`, l.file);
+    if (opts.lint) for (const l of lintTopic(topic, problems, dir.markdown, problemsFile, topicFile, dir.rel)) warn(`[lint] ${l.message}`, l.file);
     content.topics.push({ topic, problems, markdown: dir.markdown, rel: dir.rel });
   }
 

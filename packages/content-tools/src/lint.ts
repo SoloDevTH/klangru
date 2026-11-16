@@ -21,7 +21,7 @@ export function thaiWordCount(md: string): number {
 
 const numTokens = (s: string): Set<string> => new Set((s.match(/\d[\d,]*\.?\d*/g) ?? []).map((t) => t.replace(/,/g, "")).filter((t) => t.replace(".", "").length >= 3));
 
-export function lintTopic(topic: Topic, problems: Problem[], markdown: Record<string, string>, problemsFile: string, topicFile: string): LintFinding[] {
+export function lintTopic(topic: Topic, problems: Problem[], markdown: Record<string, string>, problemsFile: string, topicFile: string, rel: string): LintFinding[] {
   const out: LintFinding[] = [];
   const f = (file: string, message: string) => out.push({ file, message });
 
@@ -32,8 +32,8 @@ export function lintTopic(topic: Topic, problems: Problem[], markdown: Record<st
 
   for (const [name, md] of Object.entries(markdown)) {
     const n = thaiWordCount(md);
-    if (n > 1000) f(`${topic.id}/${name}`, `บทเรียนยาว ${n} คำ (เกณฑ์ 500–1,000)`);
-    if (n < 500) f(`${topic.id}/${name}`, `บทเรียนสั้น ${n} คำ (เกณฑ์ 500–1,000)`);
+    if (n > 1000) f(`${rel}/${name}`, `บทเรียนยาว ${n} คำ (เกณฑ์ 500–1,000)`);
+    if (n < 500) f(`${rel}/${name}`, `บทเรียนสั้น ${n} คำ (เกณฑ์ 500–1,000)`);
   }
 
   const mcqCorrect: number[] = [];

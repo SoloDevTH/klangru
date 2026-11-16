@@ -5,6 +5,7 @@
 #   ids <ชุด>                   พิมพ์รหัสหัวข้อของชุด
 #   release <ชุด>               ปลดชุดโดยไม่รวมเข้าคลัง
 #   park <ชุด>                  ย้ายไฟล์ที่ยังไม่ผ่านตรวจของชุดไปไว้ branch batch/<ชุด> (commit WIP + push) แล้วลบออกจากโฟลเดอร์งานหลัก
+#   merge <ชุด>                 รวม branch ของชุดแก้เนื้อหา (ที่ทำใน worktree) เข้า main ตรวจ strict แล้ว push
 #   work <ชุด>                  สร้าง worktree ที่ ../klangru-work/<ชุด> บน branch ของชุด ให้ผู้เขียนทำงานที่นั่น (ใช้ node_modules ร่วม)
 #   integrate <ชุด> "<ข้อความ>"  รวมไฟล์จับคู่ ลบแถวจากแผน ตรวจใน worktree สะอาด commit push แล้วปลดชุด
 set -euo pipefail
@@ -21,6 +22,16 @@ case "$cmd" in
     git checkout -q -B "batch/$B" && git add -- "${PATHS[@]}" && git commit -q -m "WIP ชุด $B (ยังไม่ผ่านการตรวจ) [skip ci]" && git push -q -f origin "batch/$B"
     git checkout -q "$CUR" && git rm -rq --cached --ignore-unmatch -- "${PATHS[@]}" 2>/dev/null || true
     rm -rf -- "${PATHS[@]}"; echo "parked ${#PATHS[@]} paths → batch/$B" ;;
+  merge)
+    # รวมงานแก้เนื้อหาของชุดที่ทำใน worktree (ไม่มีแผนหรือไฟล์จับคู่ให้ graduate): commit → merge → ตรวจ strict → push
+    B="$1"; W="$(dirname "$R")/klangru-work/$B"
+    [ -n "$(git diff --cached --name-only)" ] && { echo "index ไม่ว่าง ยกเลิก"; exit 1; }
+    [ -d "$W" ] && { git -C "$W" add -A && git -C "$W" commit -q -m "งานชุด $B" 2>/dev/null || true; }
+    git merge -q --no-ff "batch/$B" -m "รวมงานแก้ชุด $B [skip ci]" || { git merge --abort; echo "merge ชน ยกเลิก"; exit 1; }
+    OUT=$(npx tsx packages/content-tools/src/cli.ts validate --strict 2>&1) || true
+    if echo "$OUT" | grep -qE "^(✗ ERROR|! WARN) "; then echo "ตรวจไม่ผ่านหลัง merge:"; echo "$OUT" | grep -E "^(✗ ERROR|! WARN) " | head -5; git reset -q --hard HEAD~1; exit 1; fi
+    for i in 1 2 3 4; do git push -q origin HEAD && { echo pushed; break; }; sleep $((i*5)); done
+    echo "$OUT" | grep -E "พบ|วิชา" | head -2 ;;
   work)
     B="$1"; W="$(dirname "$R")/klangru-work/$B"; mkdir -p "$(dirname "$W")"
     git show-ref -q "refs/heads/batch/$B" || git branch "batch/$B" HEAD
