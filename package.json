@@ -12,7 +12,7 @@
     "build:content": "npm run build -w @klangru/content-tools -- --print-order",
     "test": "npm test -w @klangru/content-tools",
     "typecheck": "tsc -p packages/schema && tsc -p packages/content-tools",
-    "dev": "npm run build:content && npm run dev -w @klangru/web",
+    "dev": "npm run build:content -- --show-drafts && npm run dev -w @klangru/web",
     "build": "npm run build:content && npm run build -w @klangru/web",
     "fetch-assets": "npm run fetch-assets -w @klangru/content-tools",
     "test:db": "tsx --test supabase/tests/*.test.ts",

@@ -186,3 +186,15 @@ test("simplified radicals: flag needs a simplified answer, and simplify-stems sh
   const { isSimplifiedRadical } = await import("@klangru/schema");
   assert.deepEqual(["5\\sqrt{3}", "\\sqrt{75}", "\\frac{\\sqrt{2}}{2}", "\\frac{1}{\\sqrt{2}}", "3\\sqrt{2}+\\sqrt{3}", "\\sqrt{2}+\\sqrt{2}", "2\\sqrt{3x}", "\\sqrt{12x}"].map((l) => isSimplifiedRadical(l)), [true, false, true, false, true, false, true, false]);
 });
+
+import { hideUnreviewedSensitive } from "../src/build.ts";
+test("ซ่อนหัวข้ออ่อนไหวที่ยังไม่ published และตัดการอ้างถึงออก", () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const mk = (id: string, o: Record<string, unknown> = {}): any => ({ topic: { id, status: "draft", sensitive: false, prerequisites: [], encompasses: [], ...o }, problems: [{ topics: [id, "h"] }] });
+  const r = hideUnreviewedSensitive([mk("h", { sensitive: true }), mk("a", { prerequisites: ["h"], encompasses: [{ id: "h", weight: 0.5 }] }), mk("p", { sensitive: true, status: "published" })]);
+  assert.deepEqual(r.hidden, ["h"]);
+  assert.deepEqual(r.topics.map((t: { topic: { id: string } }) => t.topic.id), ["a", "p"]);
+  assert.deepEqual(r.topics[0].topic.prerequisites, []);
+  assert.deepEqual(r.topics[0].topic.encompasses, []);
+  assert.deepEqual(r.topics[0].problems[0].topics, ["a"]);
+});

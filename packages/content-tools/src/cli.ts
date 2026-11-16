@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { parse } from "yaml";
 import { fileURLToPath } from "node:url";
 import { fetchMolecules, moleculeCids } from "./assets.ts";
-import { buildPacks } from "./build.ts";
+import { buildPacks, hideUnreviewedSensitive } from "./build.ts";
 import { applySuggestions, MIN_LEARNERS, suggestions, type ProblemStat } from "./calibrate.ts";
 import { approveDrafts, buildDraftRequest, draftProblems, toProblems, writeDrafts } from "./draft.ts";
 import { coverage, loadCurriculum } from "./curriculum.ts";
@@ -144,7 +144,9 @@ if (command === "curriculum") {
   }
 }
 if (command === "build") {
-  const index = buildPacks(content, outDir, contentDir, curriculum.data);
+  const shown = flags.includes("--show-drafts") ? { topics: content.topics, hidden: [] as string[] } : hideUnreviewedSensitive(content.topics);
+  if (shown.hidden.length) console.log(`ซ่อนหัวข้ออ่อนไหวที่ยังไม่ผ่านผู้เชี่ยวชาญ ${shown.hidden.length} หัวข้อ (ใช้ --show-drafts เพื่อแสดงตอนพัฒนา)`);
+  const index = buildPacks({ ...content, topics: shown.topics }, outDir, contentDir, curriculum.data);
   console.log(`\nbuild เสร็จ → ${outDir}`);
   if (flags.includes("--print-order")) {
     console.log("ลำดับการเรียน:");

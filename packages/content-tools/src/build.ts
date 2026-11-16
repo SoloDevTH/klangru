@@ -53,6 +53,23 @@ export function withFigureUrls(topic: Topic, problems: Problem[]): { topic: Topi
   };
 }
 
+/**
+ * ซ่อนหัวข้ออ่อนไหว (sensitive: true) ที่ยังไม่ published ออกจากแอปที่เผยแพร่ และตัดการอ้างถึงหัวข้อเหล่านั้นออก
+ * เพื่อให้กราฟและโจทย์ในหัวข้ออื่นไม่ชี้ไปหาหัวข้อที่ไม่มี (ใช้ --show-drafts ตอนพัฒนา)
+ */
+export function hideUnreviewedSensitive<T extends { topic: Topic; problems: Problem[] }>(topics: T[]): { topics: T[]; hidden: string[] } {
+  const hidden = new Set(topics.filter(({ topic }) => topic.sensitive && topic.status !== "published").map(({ topic }) => topic.id));
+  if (!hidden.size) return { topics, hidden: [] };
+  const visible = topics
+    .filter(({ topic }) => !hidden.has(topic.id))
+    .map((e) => ({
+      ...e,
+      topic: { ...e.topic, prerequisites: e.topic.prerequisites.filter((p) => !hidden.has(p)), encompasses: e.topic.encompasses.filter((x) => !hidden.has(x.id)) },
+      problems: e.problems.map((p) => ({ ...p, topics: p.topics.filter((t) => !hidden.has(t)) })),
+    }));
+  return { topics: visible, hidden: [...hidden].sort() };
+}
+
 /** เขียน content pack: index.json, topics/<id>.json, search.json และไฟล์ประกอบ (โมเลกุล ข้อมูลอักษรจีน) */
 export function buildPacks(content: ValidContent, outDir: string, contentDir: string, curriculum: CurriculumData = { frameworks: [], mappings: [] }): ContentIndex {
   const links = topicCurriculum(curriculum);
