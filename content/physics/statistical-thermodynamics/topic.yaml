@@ -1,0 +1,75 @@
+id: physics.thermal.statistical-thermodynamics
+subject: physics
+title: { th: อุณหพลศาสตร์เชิงสถิติ, en: Statistical thermodynamics }
+summary: องศาอิสระและการแบ่งพลังงานเท่ากัน ความจุความร้อนของแก๊สและของแข็ง การแจกแจงอัตราเร็วของโมเลกุล และเอนโทรปีที่นับจากสถานะจุลภาค
+difficulty: 8.5
+minutes: 40
+prerequisites: [physics.thermal.kinetic-theory, physics.thermal.first-law, physics.thermal.second-law]
+encompasses:
+  - { id: physics.thermal.kinetic-theory, weight: 0.4 }
+  - { id: physics.thermal.first-law, weight: 0.3 }
+  - { id: physics.thermal.second-law, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: maxwell-speeds.svg
+    alt: "กราฟการแจกแจงอัตราเร็วของโมเลกุลไนโตรเจน มีแกนนอนเป็นอัตราเร็วและแกนตั้งเป็นความหนาแน่นของการแจกแจง เส้นสีน้ำเงินที่ 300 K มียอดสูงแหลมที่อัตราเร็วประมาณ 422 m/s เส้นสีแดงที่ 1000 K มียอดต่ำและกว้างกว่า เลื่อนไปทางอัตราเร็วที่มากกว่า มีเส้นประบอกตำแหน่งของ v_p, v̄ และ v_rms ของกราฟ 300 K"
+    caption: "การแจกแจงแมกซ์เวลล์–โบลซ์มันน์ของ N₂ ที่อุณหภูมิสูงขึ้น อัตราเร็วเฉลี่ยและอาร์เอ็มเอสเพิ่มขึ้นด้วย $\\sqrt{T}$"
+  - type: worked-example
+    title: อัตราเร็วอาร์เอ็มเอสของแก๊สออกซิเจน
+    problem: "โมเลกุลออกซิเจน $\\mathrm{O_2}$ ($M = 0.032\\,\\mathrm{kg/mol}$) อยู่ที่อุณหภูมิ $350\\,\\mathrm{K}$ จงหาอัตราเร็วอาร์เอ็มเอสของโมเลกุล ใช้ $R = 8.314\\,\\mathrm{J/(mol\\,K)}$"
+    steps:
+      - text: "ใช้สูตร $v_\\mathrm{rms} = \\sqrt{\\dfrac{3RT}{M}}$ โดย $T$ ต้องเป็นเคลวิน"
+        why: "ค่า $R$ มีหน่วย J/(mol K) และ $M$ มีหน่วย kg/mol จึงต้องใช้ $T$ เป็นเคลวินเท่านั้น"
+      - text: "แทนค่า $v_\\mathrm{rms} = \\sqrt{\\dfrac{3(8.314)(350)}{0.032}}$"
+      - text: "คำนวณภายในรากได้ $\\dfrac{3(8.314)(350)}{0.032} \\approx 2.73\\times10^{5}\\,\\mathrm{m^2/s^2}$"
+        why: "หน่วยภายในรากคือ $\\mathrm{J/kg}$ ซึ่งเทียบเท่ากับ $\\mathrm{m^2/s^2}$ จึงถอดรากได้เป็น m/s"
+      - text: "$v_\\mathrm{rms} \\approx 522\\,\\mathrm{m/s}$"
+    answer: "อัตราเร็วอาร์เอ็มเอสประมาณ $522\\,\\mathrm{m/s}$"
+  - { type: check, problem: physics.thermal.statistical-thermodynamics.p002, prompt: "ลองนับองศาอิสระของโมเลกุลไดอะตอมิกก่อนอ่านต่อ" }
+  - type: figure
+    src: microstates-coins.svg
+    alt: "แผนภูมิแท่งห้าแท่ง แท่งแรกมีค่า W เท่ากับ 1 แท่งที่สองมี W เท่ากับ 4 แท่งตรงกลางซึ่งสูงที่สุดมี W เท่ากับ 6 และถูกระบายสีส้ม แท่งที่สี่มี W เท่ากับ 4 และแท่งสุดท้ายมี W เท่ากับ 1 แต่ละแท่งแทนจำนวนหัวตั้งแต่ศูนย์ถึงสี่หัว"
+    caption: "จำนวนสถานะจุลภาคของการโยนเหรียญสี่เหรียญ สถานะที่มีหัวสองหัวครึ่งหนึ่งมีจำนวนมากที่สุด"
+  - type: worked-example
+    title: เอนโทรปีที่เพิ่มขึ้นเมื่อแก๊สขยายตัวในกล่อง
+    problem: "แก๊สอุดมคติ $2.00\\,\\mathrm{mol}$ ที่อุณหภูมิคงที่ขยายตัวจากปริมาตร $1.0\\,\\mathrm{L}$ เป็น $3.0\\,\\mathrm{L}$ จงหาการเปลี่ยนแปลงเอนโทรปี ใช้ $R = 8.314\\,\\mathrm{J/(mol\\,K)}$"
+    steps:
+      - text: "สำหรับแก๊สอุดมคติที่อุณหภูมิคงที่ $\\Delta S = nR\\ln\\dfrac{V_f}{V_i}$"
+        why: "ตำแหน่งที่เป็นไปได้ของโมเลกุลเพิ่มตามปริมาตร ทำให้จำนวนสถานะจุลภาคเพิ่มตาม"
+      - text: "อัตราส่วนปริมาตร $\\dfrac{V_f}{V_i} = \\dfrac{3.0}{1.0} = 3$ ค่าหน่วยลิตรตัดกันได้"
+        why: "เอนโทรปีขึ้นกับอัตราส่วนของปริมาตร จึงไม่ต้องแปลงเป็น m³"
+      - text: "แทนค่า $\\Delta S = (2.00)(8.314)\\ln 3 \\approx 18.3\\,\\mathrm{J/K}$"
+    answer: "เอนโทรปีเพิ่มขึ้นประมาณ $18.3\\,\\mathrm{J/K}$"
+  - { type: check, problem: physics.thermal.statistical-thermodynamics.p017, prompt: "ลองคิดก่อนอ่านต่อ: ทำไมที่อุณหภูมิต่ำ C_V จึงลดลง" }
+  - type: interactive
+    title: พลังงานต่อโมเลกุลกับจำนวนองศาอิสระ
+    caption: "เลื่อนแถบ a เพื่อเปลี่ยนจำนวนองศาอิสระ f แล้วดูความชันของเส้น แกนนอนคืออุณหภูมิในหน่วย 100 K และแกนตั้งคือพลังงานต่อโมเลกุลในหน่วย $k \\times 100\\,\\mathrm{K}$ เส้นตรงมีความชัน $f/2$ ตามทฤษฎีบทการแบ่งพลังงานเท่ากัน"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a}{2}x"]
+      sliders:
+        - { name: a, min: 3, max: 7, step: 1, value: 5, label: องศาอิสระ f }
+      x: [0, 10]
+      y: [0, 20]
+glossary:
+  - { term: องศาอิสระ, definition: "ทางอิสระที่โมเลกุลสามารถเก็บพลังงานได้ เช่น การเลื่อนที่ การหมุน และการสั่น" }
+  - { term: การแบ่งพลังงานเท่ากัน, definition: "หลักการที่ว่าแต่ละองศาอิสระมีพลังงานเฉลี่ย $\\tfrac12 kT$ เมื่ออยู่ในสมดุลทางความร้อน" }
+  - { term: สถานะจุลภาค, definition: "การระบุตำแหน่งและพลังงานของโมเลกุลแต่ละตัวอย่างละเอียด" }
+  - { term: สถานะมหภาค, definition: "สถานะที่วัดได้ของระบบทั้งหมด เช่น พลังงานรวม ความดัน หรือจำนวนโมเลกุลในแต่ละซีกของกล่อง" }
+  - { term: การแจกแจงแมกซ์เวลล์–โบลซ์มันน์, definition: "การกระจายอัตราเร็วของโมเลกุลแก๊สที่สมดุลทางความร้อน มียอดที่อัตราเร็วที่เป็นไปได้มากที่สุด" }
+flashcards:
+  - { front: "พลังงานเฉลี่ยต่อองศาอิสระหนึ่งองศา", back: "$\\tfrac12 kT$ ต่อโมเลกุล" }
+  - { front: "ความจุความร้อนโมลาร์ที่ปริมาตรคงที่ของแก๊สอะตอมเดี่ยว", back: "$C_V = \\tfrac32 R$" }
+  - { front: "อัตราเร็วอาร์เอ็มเอส", back: "$v_\\mathrm{rms} = \\sqrt{3RT/M}$ (ใช้ $T$ เป็นเคลวิน)" }
+  - { front: "เอนโทรปีเชิงสถิติ", back: "$S = k\\ln W$ โดย $W$ คือจำนวนสถานะจุลภาคที่ให้สถานะมหภาคเดียวกัน" }
+references:
+  - { title: "เอนโทรปี", url: "https://th.wikipedia.org/wiki/%E0%B9%80%E0%B8%AD%E0%B8%99%E0%B9%82%E0%B8%97%E0%B8%A3%E0%B8%9B%E0%B8%B5", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Maxwell–Boltzmann distribution", url: "https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Equipartition theorem", url: "https://en.wikipedia.org/wiki/Equipartition_theorem", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "2.4 Distribution of Molecular Speeds (University Physics Volume 2, OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/2-4-distribution-of-molecular-speeds", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

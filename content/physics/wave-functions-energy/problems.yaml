@@ -1,0 +1,415 @@
+problems:
+- id: physics.waves.wave-functions-energy.p001
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 1
+  type: numeric
+  stem: คลื่นบนเชือกราวตากผ้ามีสมการ $y(x,t) = 0.02\sin(4\pi x - 100\pi t)$ โดย $x$ และ $y$ เป็นเมตร และ $t$ เป็นวินาที ความถี่ของคลื่นนี้เท่าใด ตอบเป็นเฮิรตซ์ (Hz)
+  hints:
+  - เทียบสมการกับรูปทั่วไป $A\sin(kx - \omega t)$ เพื่อหาค่า $\omega$ ก่อน
+  - ความสัมพันธ์ $f = \dfrac{\omega}{2\pi}$
+  - แทนค่า $\omega = 100\pi\,\mathrm{rad/s}$ แล้วหารด้วย $2\pi$
+  answer:
+    value: 50.0
+    tolerance: 0.5
+    unit: Hz
+  misconceptions:
+  - match: 100.0
+    feedback: ได้ค่า $\omega$ ที่มีหน่วย rad/s ไม่ใช่ความถี่ ต้องหารด้วย $2\pi$
+  - match: 314.16
+    feedback: คูณด้วย $\pi$ มากเกินไป เพราะ $\omega = 100\pi$ อยู่แล้ว การหารด้วย $2\pi$ จึงได้ 50
+  solution: จากสมการ $\omega = 100\pi\,\mathrm{rad/s}$ จึงได้ $f = \dfrac{\omega}{2\pi} = \dfrac{100\pi}{2\pi} = 50\,\mathrm{Hz}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p002
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 1
+  type: numeric
+  stem: จากคลื่นในข้อก่อนหน้า $y(x,t) = 0.02\sin(4\pi x - 100\pi t)$ ความยาวคลื่น $\lambda$ มีค่ากี่เมตร
+  hints:
+  - เลขคลื่น $k$ คือสัมประสิทธิ์ของ $x$ ในอาร์กิวเมนต์ของไซน์
+  - ความสัมพันธ์ $k = \dfrac{2\pi}{\lambda}$
+  - แก้หา $\lambda$ จากค่า $k = 4\pi\,\mathrm{rad/m}$
+  answer:
+    value: 0.5
+    tolerance: 0.01
+    unit: m
+  misconceptions:
+  - match: 12.57
+    feedback: ใช้ $k$ เป็นความยาวคลื่นโดยตรง แต่ $k = 2\pi/\lambda$ มีหน่วย rad/m
+  solution: $k = 4\pi\,\mathrm{rad/m}$ และ $\lambda = \dfrac{2\pi}{k} = \dfrac{2\pi}{4\pi} = 0.5\,\mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p003
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 1
+  type: mcq
+  stem: คลื่น $y(x,t) = A\sin(kx + \omega t)$ เคลื่อนที่ไปในทิศใด
+  hints:
+  - ดูเครื่องหมายหน้า $\omega t$ ในอาร์กิวเมนต์ของไซน์
+  - ถ้าเป็น $kx - \omega t$ คลื่นเคลื่อนไปทางบวกของ $x$
+  - เมื่อเครื่องหมายกลับเป็นบวก ทิศทางจะกลับด้าน
+  multiple: false
+  choices:
+  - id: a
+    text: ไปทางบวกของแกน $x$
+    correct: false
+    feedback: นั่นเป็นกรณี $kx - \omega t$ เมื่อเครื่องหมายหน้า $\omega t$ เป็นลบ
+  - id: b
+    text: ไปทางลบของแกน $x$
+    correct: true
+  - id: c
+    text: อยู่กับที่ เพราะมีแต่ค่าไซน์
+    correct: false
+    feedback: ค่าไซน์ไม่ได้ทำให้คลื่นอยู่กับที่ อาร์กิวเมนต์ที่เปลี่ยนตามเวลาทำให้รูปคลื่นเคลื่อนที่
+  - id: d
+    text: ไปทางบวกของแกน $y$
+    correct: false
+    feedback: คลื่นตามขวางที่สมการนี้อธิบายมีการกระจัดในแนว $y$ แต่ทิศการเคลื่อนที่ของคลื่นอยู่ตามแกน $x$ ซึ่งกำหนดโดยเครื่องหมายใน $kx \pm \omega t$
+  solution: อาร์กิวเมนต์ $kx + \omega t$ คงที่เมื่อ $x$ ลดลงเมื่อ $t$ เพิ่มขึ้น คลื่นจึงเคลื่อนที่ไปทางลบของ $x$ (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p004
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 1
+  type: order
+  stem: เรียงอัตราเร็วของคลื่นเสียงในตัวกลางจากต่ำที่สุดไปสูงที่สุดโดยประมาณ (อุณหภูมิห้องสำหรับอากาศ)
+  hints:
+  - อากาศมีความหนาแน่นต่ำและบีบอัดได้มาก เสียงจึงช้าที่สุด
+  - ของเหลวมีโมดูลัสของการอัดตัวสูงมากเทียบกับความหนาแน่น
+  - ของแข็งที่แข็งเกร็งมากจะนำเสียงได้เร็วที่สุด
+  items:
+  - อากาศ (20 °C)
+  - น้ำ
+  - เหล็ก
+  solution: อากาศประมาณ 343 m/s น้ำประมาณ 1,500 m/s และเหล็กประมาณ 5,000 m/s จึงเรียงจากต่ำไปสูงได้เป็น อากาศ น้ำ เหล็ก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p005
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 2
+  type: numeric
+  stem: จากสมการ $y(x,t) = 0.02\sin(4\pi x - 100\pi t)$ อัตราเร็วของคลื่น (อัตราเร็วที่รูปคลื่นเคลื่อนที่) มีค่ากี่ m/s
+  hints:
+  - อัตราเร็วคลื่น $v$ หาได้จากอัตราส่วนของ $\omega$ ต่อ $k$
+  - ใช้ $v = \omega/k$ โดยไม่ต้องรู้ค่า $A$
+  - แทนค่า $\omega = 100\pi$ และ $k = 4\pi$ แล้วหารกัน
+  answer:
+    value: 25.0
+    tolerance: 0.25
+    unit: m/s
+  misconceptions:
+  - match: 0.04
+    feedback: กลับอัตราส่วนเป็น $k/\omega$ ซึ่งไม่มีความหมายทางกายภาพ ต้องใช้ $\omega/k$
+  - match: 6.28
+    feedback: นั่นคืออัตราเร็วสูงสุดของอนุภาคที่ $A\omega$ ซึ่งเป็นคนละปริมาณกับอัตราเร็วคลื่น
+  solution: $v = \dfrac{\omega}{k} = \dfrac{100\pi}{4\pi} = 25\,\mathrm{m/s}$ ตรวจด้วยผลคูณ $v = \lambda f = (0.5)(50) = 25$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p006
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 2
+  type: expression
+  stem: สำหรับคลื่นไซน์ $y = A\sin(kx - \omega t)$ ที่มีอัตราเร็วคลื่น $v$ จงเขียนความถี่เชิงมุม $\omega$ ในรูปของ $v$ และ $k$
+  hints:
+  - ความสัมพันธ์ของอัตราเร็วคลื่นคือ $v = \omega/k$
+  - จัดรูปข้างต้นให้ $\omega$ อยู่ข้างเดียว
+  - ได้ $\omega = vk$ ตรวจด้วยหน่วย $\mathrm{(m/s)(rad/m)} = \mathrm{rad/s}$
+  answer:
+    latex: vk
+    variables:
+    - v
+    - k
+  prefix: ω =
+  misconceptions:
+  - match: \frac{v}{k}
+    feedback: หารแทนการคูณ ต้องคูณ $k$ เพราะ $\omega = v \cdot k$
+  - match: \frac{k}{v}
+    feedback: กลับอัตราส่วนทั้งหมด ซึ่งให้หน่วยไม่สอดคล้องกับ rad/s
+  solution: จาก $v = \dfrac{\omega}{k}$ คูณสองข้างด้วย $k$ จะได้ $\omega = vk$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p007
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 2
+  type: numeric
+  stem: เชือกที่มีมวลต่อความยาว $\mu = 5.0\,\mathrm{g/m}$ ถูกดึงด้วยแรงตึง $T = 80\,\mathrm{N}$ อัตราเร็วของคลื่นตามขวางบนเชือกมีค่ากี่ m/s
+  hints:
+  - อัตราเร็วคลื่นตามขวางบนเชือกขึ้นกับแรงตึงและมวลต่อความยาวเท่านั้น
+  - ใช้สูตร $v = \sqrt{T/\mu}$ โดยต้องแปลง $\mu$ เป็น kg/m ก่อน
+  - แทนค่า $\mu = 0.0050\,\mathrm{kg/m}$ แล้วถอดรากที่สอง
+  answer:
+    value: 126.5
+    tolerance: 1.5
+    unit: m/s
+  misconceptions:
+  - match: 16000.0
+    feedback: ลืมถอดรากที่สอง ได้ค่า $T/\mu$ ซึ่งไม่ใช่อัตราเร็ว
+  - match: 0.63
+    feedback: คูณ $T$ กับ $\mu$ แทนการหาร สูตรคือ $\sqrt{T/\mu}$
+  solution: $\mu = 5.0\times10^{-3}\,\mathrm{kg/m}$ จึงได้ $v = \sqrt{T/\mu} = \sqrt{80/0.0050} = \sqrt{16000} \approx 126.5\,\mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p008
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 2
+  type: match
+  stem: จับคู่ตัวกลางแต่ละชนิดกับสูตรอัตราเร็วคลื่นเสียงที่ใช้ได้กับตัวกลางนั้น
+  hints:
+  - ของไหลมีโมดูลัสการอัดตัวเป็นตัวเก็บแรงคืน
+  - แท่งของแข็งยาวบาง ๆ ใช้โมดูลัสของยังของ
+  - แก๊สอุดมคติขึ้นกับอุณหภูมิและมวลโมเลกุล
+  pairs:
+  - left: ของไหล (เช่น น้ำ)
+    right: $v = \sqrt{B/\rho}$
+  - left: แท่งของแข็งยาวบาง
+    right: $v = \sqrt{Y/\rho}$
+  - left: แก๊สอุดมคติ
+    right: $v = \sqrt{\gamma RT/M}$
+  solution: ของไหลใช้ $\sqrt{B/\rho}$ แท่งของแข็งใช้ $\sqrt{Y/\rho}$ และแก๊สใช้ $\sqrt{\gamma RT/M}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p009
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 3
+  type: numeric
+  stem: จากสมการ $y(x,t) = 0.02\sin(4\pi x - 100\pi t)$ อัตราเร็วสูงสุดของอนุภาคในเชือกซึ่งเคลื่อนที่ขึ้นลงมีค่ากี่ m/s
+  hints:
+  - อัตราเร็วของอนุภาคคือ $v_y = \dfrac{\partial y}{\partial t}$ ซึ่งไม่เท่ากับอัตราเร็วคลื่น
+  - หาอนุพันธ์ $\dfrac{\partial y}{\partial t} = -A\omega\cos(kx - \omega t)$
+  - ค่าสูงสุดของ $\cos$ คือ 1 ดังนั้นอัตราเร็วสูงสุดคือ $A\omega$
+  answer:
+    value: 6.28
+    tolerance: 0.02
+    unit: m/s
+  misconceptions:
+  - match: 25.0
+    feedback: นำอัตราเร็วคลื่น $v = 25$ m/s มาใช้เป็นอัตราเร็วของอนุภาค ทั้งที่สองปริมาณนี้ต่างกัน
+  - match: 0.25
+    feedback: ใช้ $Ak$ แทน $A\omega$ หน่วยของ $Ak$ คือ m/m ไม่ใช่ m/s
+  solution: $\dfrac{\partial y}{\partial t} = -A\omega\cos(kx - \omega t)$ จึงได้ $|v_y|_{\max} = A\omega = (0.02)(100\pi) \approx 6.28\,\mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p010
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 3
+  type: mcq
+  stem: คลื่น $y(x,t) = A\sin(kx - \omega t)$ ที่เวลา $t = 0$ จุดที่ $x = \dfrac{\pi}{2k}$ มีอัตราเร็วของอนุภาคในแนวดิ่งเท่าใด
+  hints:
+  - คำนวณ $\dfrac{\partial y}{\partial t} = -A\omega\cos(kx - \omega t)$ แล้วแทนค่า $t = 0$
+  - จากนั้นแทน $kx = \dfrac{\pi}{2}$ ดูว่า $\cos$ ของมุมนั้นเท่ากับเท่าใด
+  - ค่าอัตราเร็วที่ได้เป็นศูนย์
+  multiple: false
+  choices:
+  - id: a
+    text: เป็นศูนย์
+    correct: true
+  - id: b
+    text: เท่ากับ $A\omega$ เต็มที่
+    correct: false
+    feedback: ค่า $A\omega$ เกิดตรงจุดที่ $\cos = \pm 1$ คือ $kx = 0$ ไม่ใช่ $kx = \pi/2$
+  - id: c
+    text: เท่ากับอัตราเร็วคลื่น $v$
+    correct: false
+    feedback: อัตราเร็วของอนุภาคและอัตราเร็วคลื่นเป็นคนละปริมาณ
+  - id: d
+    text: เท่ากับ $A$
+    correct: false
+    feedback: $A$ เป็นระยะขจัดสูงสุด มีหน่วยเมตร ไม่ใช่หน่วยอัตราเร็ว
+  solution: $v_y = -A\omega\cos(kx)$ เมื่อ $t=0$ และ $kx = \pi/2$ ได้ $\cos(\pi/2) = 0$ จึงได้ $v_y = 0$ (ตัวเลือก a) อนุภาคที่ยอดคลื่นพอดีจึงหยุดนิ่งชั่วขณะ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p011
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 3
+  type: numeric
+  stem: นักเรียนไทยหาความเร็วเสียงในอากาศช่วงบ่ายที่อุณหภูมิ $35\,^\circ\mathrm{C}$ โดยใช้ $v = \sqrt{\gamma RT/M}$ กำหนด $\gamma = 1.40$, $R = 8.314\,\mathrm{J/(mol\,K)}$ และ $M = 0.02897\,\mathrm{kg/mol}$ ตอบเป็น m/s
+  hints:
+  - ต้องแปลงอุณหภูมิเป็นเคลวินก่อน $T = 35 + 273.15$
+  - แทนค่าทั้งหมดในสูตร $v = \sqrt{\gamma RT/M}$ ตามหน่วย SI
+  - ตรวจด้วยสูตรประมาณ $331 + 0.6\,T_\mathrm{°C}$ ซึ่งควรได้ค่าใกล้เคียงกัน
+  answer:
+    value: 351.9
+    tolerance: 1.0
+    unit: m/s
+  misconceptions:
+  - match: 118.6
+    feedback: แทนอุณหภูมิเป็นองศาเซลเซียสโดยตรง ต้องใช้เคลวิน $T = 35 + 273.15$
+  solution: $T = 308.15\,\mathrm{K}$ จึงได้ $v = \sqrt{\dfrac{(1.40)(8.314)(308.15)}{0.02897}} \approx 351.9\,\mathrm{m/s}$ ใกล้เคียงกับ $331 + 0.6(35) = 352$ m/s
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p012
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 3
+  type: numeric
+  stem: ลำโพงของงานวัดในหมู่บ้านให้กำลังเสียงเฉลี่ยออกไปทุกทิศทางเท่ากับ $0.50\,\mathrm{W}$ ความเข้มของเสียงที่ระยะ $10\,\mathrm{m}$ จากลำโพงมีค่ากี่ $\mathrm{mW/m^2}$ (ใช้ทรงกลมสมบูรณ์รอบลำโพง)
+  hints:
+  - ความเข้มคือกำลังต่อพื้นที่ $I = \dfrac{P}{A}$ โดยพื้นที่ของทรงกลมรัศมี $r$ คือ $4\pi r^2$
+  - แทนค่า $P = 0.50\,\mathrm{W}$ และ $r = 10\,\mathrm{m}$
+  - ผลลัพธ์เป็น W/m² ต้องคูณด้วย $1000$ เพื่อได้ mW/m²
+  answer:
+    value: 0.398
+    tolerance: 0.01
+    unit: mW/m^2
+  misconceptions:
+  - match: 1.592
+    feedback: ใช้พื้นที่วงกลม $\pi r^2$ แทนทรงกลม $4\pi r^2$ ทำให้ได้ค่าสูงเกินจริงสี่เท่า
+  solution: $I = \dfrac{P}{4\pi r^2} = \dfrac{0.50}{4\pi(10)^2} \approx 3.98\times10^{-4}\,\mathrm{W/m^2} = 0.398\,\mathrm{mW/m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p013
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 4
+  type: numeric
+  stem: เชือกมีมวลต่อความยาว $\mu = 5.0\,\mathrm{g/m}$ มีคลื่นที่อัตราเร็ว $v = 25\,\mathrm{m/s}$ แอมพลิจูด $A = 0.02\,\mathrm{m}$ และความถี่เชิงมุม $\omega = 100\pi\,\mathrm{rad/s}$ พลังงานที่คลื่นส่งผ่านโดยเฉลี่ยต่อหนึ่งหน่วยเวลาคือกี่ W ใช้ $P_\mathrm{avg} = \tfrac12\mu v\omega^2A^2$
+  hints:
+  - ตรวจหน่วยก่อน $\mu$ ต้องเป็น kg/m
+  - กำลังเป็นพลังงานต่อเวลา ตรวจว่า $\mu v\omega^2A^2$ มีหน่วย W
+  - แทนค่าทั้งหมดด้วย $\mu = 0.0050\,\mathrm{kg/m}$ ก่อนคำนวณ
+  answer:
+    value: 2.47
+    tolerance: 0.03
+    unit: W
+  misconceptions:
+  - match: 0.00785
+    feedback: ใช้ $\omega$ แทน $\omega^2$ ทำให้มีหน่วยไม่ใช่กำลัง ต้องยกกำลังสองของความถี่เชิงมุม
+  - match: 123.4
+    feedback: ใช้ $A$ แทน $A^2$ ทำให้ค่าสูงเกินจริงมาก เพราะกำลังขึ้นกับกำลังสองของแอมพลิจูด
+  solution: $P_\mathrm{avg} = \tfrac12(0.0050)(25)(100\pi)^2(0.02)^2 \approx 2.47\,\mathrm{W}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p014
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 4
+  type: numeric
+  stem: แท่งเหล็กยาวบางมีโมดูลัสของยัง $Y = 2.0\times10^{11}\,\mathrm{Pa}$ และความหนาแน่น $\rho = 7850\,\mathrm{kg/m^3}$ คลื่นเสียงความถี่ $440\,\mathrm{Hz}$ ผ่านแท่งนี้จะมีความยาวคลื่นกี่เมตร ตอบเป็นเมตร
+  hints:
+  - หาอัตราเร็วคลื่นในของแข็งก่อนด้วยสูตร $v = \sqrt{Y/\rho}$
+  - ความสัมพันธ์ของความยาวคลื่น $\lambda = v/f$
+  - ตรวจว่าคำตอบมีหน่วยเมตร และมีค่ายาวกว่าความยาวคลื่นในอากาศมาก
+  answer:
+    value: 11.47
+    tolerance: 0.12
+    unit: m
+  misconceptions:
+  - match: 0.087
+    feedback: กลับอัตราส่วนเป็น $f/v$ ความยาวคลื่นคือ $v/f$
+  solution: $v = \sqrt{Y/\rho} = \sqrt{2.0\times10^{11}/7850} \approx 5048\,\mathrm{m/s}$ จึงได้ $\lambda = v/f \approx 11.47\,\mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p015
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 3
+  type: numeric
+  stem: น้ำมีโมดูลัสการอัดตัว $B = 2.2\times10^{9}\,\mathrm{Pa}$ และความหนาแน่น $1000\,\mathrm{kg/m^3}$ อัตราเร็วเสียงในน้ำมีค่ากี่ m/s
+  hints:
+  - ของไหลใช้สูตร $v = \sqrt{B/\rho}$ โดยไม่มีโมดูลัสของยัง
+  - แทนค่า $B$ และ $\rho$ ตามหน่วย SI
+  - ค่าที่ได้ควรมากกว่าอัตราเร็วเสียงในอากาศประมาณสี่เท่า
+  answer:
+    value: 1483.0
+    tolerance: 15.0
+    unit: m/s
+  misconceptions:
+  - match: 1.483
+    feedback: ได้ค่าเป็นกิโลเมตรต่อวินาที ต้องคงหน่วย m/s โดยไม่หารด้วย 1000
+  solution: $v = \sqrt{B/\rho} = \sqrt{2.2\times10^{9}/1000} \approx 1483\,\mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p016
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 5
+  type: numeric
+  stem: แหล่งกำเนิดเสียงทรงกลมให้กำลังเสียง $P = 0.50\,\mathrm{W}$ ที่ตำแหน่งใดห่างจากแหล่งจึงได้ความเข้มเสียง $I = 1.0\times10^{-5}\,\mathrm{W/m^2}$ ตอบเป็นเมตร
+  hints:
+  - ความเข้มสำหรับแหล่งทรงกลมคือ $I = \dfrac{P}{4\pi r^2}$
+  - จัดรูปให้ $r$ อยู่ข้างเดียวในรูปรากที่สอง
+  - ตรวจว่าค่าที่ได้เป็นเมตรและอยู่ไกลกว่าลำโพงในข้อ 12 มาก
+  answer:
+    value: 63.1
+    tolerance: 0.7
+    unit: m
+  misconceptions:
+  - match: 3979.0
+    feedback: ลืมถอดรากที่สอง ได้ค่า $r^2$ แทน $r$ ซึ่งมีหน่วย m² ไม่ใช่เมตร
+  solution: $r = \sqrt{\dfrac{P}{4\pi I}} = \sqrt{\dfrac{0.50}{4\pi(1.0\times10^{-5})}} \approx 63.1\,\mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p017
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 2
+  type: code
+  stem: เขียนฟังก์ชัน `wave_y(A, k, w, x, t)` ที่คืนค่าการกระจัด $y = A\sin(kx - \omega t)$ ของคลื่นไซน์ ตามพารามิเตอร์ที่รับเข้ามา ใช้ไลบรารี `math` ได้
+  hints:
+  - ฟังก์ชัน `math.sin` รับอาร์กิวเมนต์เป็นเรเดียน
+  - อาร์กิวเมนต์ของไซน์คือ `k * x - w * t` ต้องมีเครื่องหมายลบหน้า `w * t`
+  - คืนค่าด้วย `return` ไม่ใช่ `print`
+  language: python
+  starter: |
+    import math
+
+    def wave_y(A, k, w, x, t):
+        pass
+  tests: |
+    import math
+    r = wave_y(0.02, 4 * math.pi, 100 * math.pi, 0.0, 0.0)
+    assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+    assert abs(r) < 1e-12, f"wave_y(0.02, 4pi, 100pi, 0, 0) ควรได้ 0 แต่ได้ {r}"
+    r2 = wave_y(0.02, 4 * math.pi, 100 * math.pi, 0.125, 0.0)
+    assert abs(r2 - 0.02) < 1e-9, f"wave_y ที่ x = 0.125 m และ t = 0 ควรได้ 0.02 แต่ได้ {r2} (ตรวจว่าใช้ sin ของ kx จริงหรือไม่)"
+    r3 = wave_y(0.02, 4 * math.pi, 100 * math.pi, 0.0, 0.005)
+    assert abs(r3 + 0.02) < 1e-9, f"wave_y ที่ x = 0 และ t = 0.005 s ควรได้ -0.02 แต่ได้ {r3} (ตรวจเครื่องหมายหน้า w * t)"
+  reference: |
+    import math
+
+    def wave_y(A, k, w, x, t):
+        return A * math.sin(k * x - w * t)
+  solution: ฟังก์ชันคืน `A * math.sin(k * x - w * t)` ตัวอย่าง wave_y(0.02, 4*math.pi, 100*math.pi, 0.0, 0.0) = 0
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.waves.wave-functions-energy.p018
+  topics:
+  - physics.waves.wave-functions-energy
+  difficulty: 5
+  type: mcq
+  stem: เหตุใดความเข้มของคลื่นทรงกลมจึงลดลงตามกฎกำลังสองผกผันของระยะ $1/r^2$ เมื่อพลังงานไม่ถูกดูดกลืน
+  hints:
+  - ลองคิดว่าพลังงานเดิมต้องกระจายบนพื้นผิวทรงกลมที่ใหญ่ขึ้นเมื่อรัศมีเพิ่ม
+  - พื้นที่ผิวทรงกลมขึ้นกับกำลังสองของรัศมี
+  - ดังนั้นความเข้มซึ่งเป็นกำลังต่อพื้นที่จะลดตามกำลังสองของรัศมี
+  multiple: false
+  choices:
+  - id: a
+    text: พลังงานรวมคงที่ แต่กระจายบนพื้นผิวทรงกลมที่มีพื้นที่ $4\pi r^2$
+    correct: true
+  - id: b
+    text: อากาศดูดกลืนพลังงานของคลื่นเป็นสัดส่วนกับ $1/r^2$
+    correct: false
+    feedback: การดูดกลืนของอากาศมีอยู่จริงแต่ไม่ใช่สาเหตุของกฎ $1/r^2$ ที่ใช้ได้เมื่อไม่มีการดูดกลืน
+  - id: c
+    text: คลื่นสูญเสียแอมพลิจูดไปตามเวลาเพราะแรงต้าน
+    correct: false
+    feedback: การลดของความเข้มตามระยะเป็นเรื่องของการกระจายพลังงานบนพื้นที่ที่ขยายออก ไม่ใช่การสูญเสียตามเวลา
+  - id: d
+    text: ความถี่ของคลื่นลดลงเมื่อไปไกลจากแหล่งกำเนิด
+    correct: false
+    feedback: ความถี่ของคลื่นที่เดินทางในตัวกลางเดียวกันจะคงที่ ไม่ได้ลดลงเมื่อไปไกลขึ้น
+  solution: กำลังรวมคงที่ $P$ กระจายบนพื้นที่ทรงกลม $4\pi r^2$ จึงได้ $I = P/4\pi r^2$ (ตัวเลือก a) ไม่ได้เกิดจากแรงเสียดทานหรือการดูดกลืน
+  license: CC-BY-SA-4.0
+  ai_assisted: true

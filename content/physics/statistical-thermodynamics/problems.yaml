@@ -1,0 +1,412 @@
+problems:
+- id: physics.thermal.statistical-thermodynamics.p001
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 1
+  type: numeric
+  stem: ที่อุณหภูมิ $T = 300\,\mathrm{K}$ (ประมาณ 27 °C ซึ่งใกล้อุณหภูมิห้องเรียนในไทย) พลังงานจลน์เฉลี่ยต่อองศาอิสระหนึ่งองศาของโมเลกุลแก๊สมีค่ากี่จูล ตอบเป็น $\times 10^{-21}\,\mathrm{J}$ ใช้ $k = 1.380649\times10^{-23}\,\mathrm{J/K}$
+  hints:
+  - ทฤษฎีบทการแบ่งพลังงานเท่ากันบอกว่าแต่ละองศาอิสระมีพลังงานเฉลี่ยเป็นสัดส่วนของ $kT$
+  - ปัจจัยที่เหลือคือ $\tfrac12$ ของ $kT$ สำหรับหนึ่งองศาอิสระ
+  - แทนค่า $T = 300\,\mathrm{K}$ แล้วคูณด้วย $\tfrac12$
+  answer:
+    value: 2.07
+    tolerance: 0.02
+    unit: x10^-21 J
+  misconceptions:
+  - match: 4.14
+    feedback: ลืมตัวคูณ $\tfrac12$ ซึ่งมาจากการแบ่งพลังงานเท่ากันให้หนึ่งองศาอิสระได้ $\tfrac12 kT$
+  solution: $\langle E\rangle_\text{ต่อองศา} = \tfrac12 kT = \tfrac12(1.380649\times10^{-23})(300) \approx 2.07\times10^{-21}\,\mathrm{J}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p002
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 1
+  type: mcq
+  stem: โมเลกุลไดอะตอมิกเช่น $\mathrm{N_2}$ ที่อุณหภูมิห้องมีจำนวนองศาอิสระที่ถูกกระตุ้นเท่าใด
+  hints:
+  - นับการเลื่อนที่ของจุดศูนย์กลางมวลก่อน แล้วนับการหมุนรอบแกนที่ตั้งฉากกับแกนโมเลกุล
+  - การสั่นของพันธะยังไม่ถูกกระตุ้นที่อุณหภูมิห้อง
+  - ได้ $3 + 2 = 5$
+  multiple: false
+  choices:
+  - id: a
+    text: '3'
+    correct: false
+    feedback: นับเฉพาะการเลื่อนที่ของจุดศูนย์กลางมวล ยังไม่ได้รวมการหมุนรอบแกนที่ตั้งฉากกับแกนโมเลกุล
+  - id: b
+    text: '6'
+    correct: false
+    feedback: ค่า 6 มาจากการนับการหมุนสามแกนเหมือนโมเลกุลอะตอมเดี่ยว ซึ่งไม่ถูกต้องสำหรับโมเลกุลที่เป็นเส้นตรง
+  - id: c
+    text: '5'
+    correct: true
+  - id: d
+    text: '7'
+    correct: false
+    feedback: ค่า 7 รวมการสั่นของพันธะ 2 องศาซึ่งยังถูกแช่แข็งที่อุณหภูมิห้อง
+  solution: ที่อุณหภูมิห้องโมเลกุลไดอะตอมิกมีการเลื่อนที่ 3 องศา และการหมุน 2 องศา รวม 5 (ตัวเลือก c) การสั่นถูกแช่แข็งที่อุณหภูมินี้
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p003
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 2
+  type: numeric
+  stem: ฮีเลียมเป็นแก๊สอะตอมเดี่ยวในอุดมคติ ความจุความร้อนที่ปริมาตรคงที่ $C_V$ ต่อหนึ่งโมลมีค่ากี่ J/(mol K) ใช้ $R = 8.314\,\mathrm{J/(mol\,K)}$
+  hints:
+  - แก๊สอะตอมเดี่ยวมีองศาอิสระเฉพาะการเลื่อนที่ 3 องศา
+  - ความจุความร้อนโมลาร์ที่ปริมาตรคงที่คือ $C_V = \dfrac{f}{2}R$
+  - แทนค่า $f = 3$
+  answer:
+    value: 12.47
+    tolerance: 0.05
+    unit: J/(mol K)
+  misconceptions:
+  - match: 20.79
+    feedback: ใช้ค่า $\tfrac52 R$ ของโมเลกุลไดอะตอมิก ทั้งที่ฮีเลียมเป็นอะตอมเดี่ยวที่มีเพียง 3 องศาอิสระ
+  solution: $C_V = \tfrac{3}{2}R = \tfrac32(8.314) \approx 12.47\,\mathrm{J/(mol\,K)}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p004
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 2
+  type: numeric
+  stem: ไนโตรเจน $\mathrm{N_2}$ เป็นแก๊สไดอะตอมิกในอุดมคติที่อุณหภูมิห้อง อัตราส่วนความจุความร้อน $\gamma = C_P/C_V$ มีค่าเท่าใด (ไม่มีหน่วย)
+  hints:
+  - ที่อุณหภูมิห้อง $f = 5$ จึงได้ $C_V = \tfrac52 R$
+  - สำหรับแก๊สอุดมคติ $C_P = C_V + R$
+  - คำนวณ $\gamma = \dfrac{C_P}{C_V}$ โดยแทนค่าทั้งสอง
+  answer:
+    value: 1.4
+    tolerance: 0.01
+  misconceptions:
+  - match: 1.67
+    feedback: ใช้ค่า $\gamma = 5/3$ ของแก๊สอะตอมเดี่ยว ทั้งที่ $\mathrm{N_2}$ มีองศาอิสระ 5
+  solution: $C_P = \tfrac72 R$ และ $C_V = \tfrac52 R$ จึงได้ $\gamma = \dfrac{7/2}{5/2} = 1.40$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p005
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 2
+  type: numeric
+  stem: ตามทฤษฎีคลาสสิก ความจุความร้อนโมลาร์ของของแข็งที่อุณหภูมิสูงพอจะมีค่าประมาณเท่าใด ตอบเป็น J/(mol K) โดยอะตอมแต่ละตัวสั่นได้ในสามทิศ และแต่ละการสั่นมีพลังงานเฉลี่ย $kT$ (ใช้ $R = 8.314\,\mathrm{J/(mol\,K)}$)
+  hints:
+  - อะตอมแต่ละตัวในของแข็งมีการสั่นสามทิศ แต่ละทิศมีพลังงานจลน์และศักย์รวม $kT$
+  - พลังงานรวมต่อโมลคือ $3RT$ ดังนั้นความจุความร้อนโมลาร์คือ $3R$
+  - ผลลัพธ์นี้เรียกว่ากฎของดูลองและปติต์
+  answer:
+    value: 24.94
+    tolerance: 0.05
+    unit: J/(mol K)
+  misconceptions:
+  - match: 12.47
+    feedback: ใช้สูตรแก๊สอะตอมเดี่ยว $\tfrac32 R$ ทั้งที่ของแข็งสั่นได้สามทิศต่ออะตอม
+  solution: $C_V = 3R = 3(8.314) \approx 24.94\,\mathrm{J/(mol\,K)}$ ซึ่งเป็นค่าประมาณที่ใช้ได้ดีที่อุณหภูมิสูง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p006
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 3
+  type: numeric
+  stem: ในอากาศของห้องเรียนที่อุณหภูมิ $27\,^\circ\mathrm{C}$ โมเลกุลไนโตรเจนมีอัตราเร็วอาร์เอ็มเอส (rms) เท่าใด ใช้ $M = 0.028\,\mathrm{kg/mol}$ และ $R = 8.314\,\mathrm{J/(mol\,K)}$ ตอบเป็น m/s
+  hints:
+  - ต้องใช้อุณหภูมิเป็นเคลวิน และ $T = 300\,\mathrm{K}$ โดยประมาณ
+  - อัตราเร็วอาร์เอ็มเอสคือ $v_\mathrm{rms} = \sqrt{\dfrac{3RT}{M}}$ โดย $M$ คือมวลโมลาร์
+  - แทนค่าหน่วย SI ทั้งหมดก่อนถอดราก
+  answer:
+    value: 517.0
+    tolerance: 0.6
+    unit: m/s
+  misconceptions:
+  - match: 476.3
+    feedback: ได้อัตราเร็วเฉลี่ย $\sqrt{8RT/\pi M}$ ซึ่งต่างจากอาร์เอ็มเอส โจทย์ถามค่าอาร์เอ็มเอส
+  solution: $v_\mathrm{rms} = \sqrt{\dfrac{3(8.314)(300)}{0.028}} \approx 517.0\,\mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p007
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 3
+  type: numeric
+  stem: โมเลกุลออกซิเจน $\mathrm{O_2}$ ที่ $T = 300\,\mathrm{K}$ มีอัตราเร็วที่เป็นไปได้มากที่สุดในการแจกแจงของแมกซ์เวลล์–โบลซ์มันน์เท่าใด ใช้ $M = 0.032\,\mathrm{kg/mol}$ ตอบเป็น m/s
+  hints:
+  - อัตราเร็วที่เป็นไปได้มากที่สุดคือจุดยอดของการแจกแจง
+  - สูตรคือ $v_p = \sqrt{\dfrac{2RT}{M}}$ โดย $R$ และ $M$ เป็นค่าต่อโมล
+  - ค่านี้น้อยกว่าอาร์เอ็มเอสของแก๊สเดียวกันเสมอ
+  answer:
+    value: 394.8
+    tolerance: 0.6
+    unit: m/s
+  misconceptions:
+  - match: 483.6
+    feedback: ใช้อาร์เอ็มเอส $\sqrt{3RT/M}$ แทนอัตราเร็วที่เป็นไปได้มากที่สุด ทั้งสองค่าต่างกัน
+  solution: $v_p = \sqrt{\dfrac{2(8.314)(300)}{0.032}} \approx 394.8\,\mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p008
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 3
+  type: numeric
+  stem: ฮีเลียม $\mathrm{He}$ ($M = 0.004\,\mathrm{kg/mol}$) ที่ $T = 300\,\mathrm{K}$ มีอัตราเร็วเฉลี่ยของโมเลกุลประมาณเท่าใด ตอบเป็น m/s
+  hints:
+  - อัตราเร็วเฉลี่ยจากการแจกแจงของแมกซ์เวลล์–โบลซ์มันน์คือ $\bar v = \sqrt{\dfrac{8RT}{\pi M}}$
+  - ใช้หน่วย SI ทั้งหมดและ $T$ เป็นเคลวิน
+  - ค่าที่ได้ควรอยู่ระหว่างอัตราเร็วที่เป็นไปได้มากที่สุดกับอาร์เอ็มเอส
+  answer:
+    value: 1260.0
+    tolerance: 13.0
+    unit: m/s
+  misconceptions:
+  - match: 1368.0
+    feedback: ได้อาร์เอ็มเอส $\sqrt{3RT/M}$ ซึ่งมากกว่าอัตราเร็วเฉลี่ย โจทย์ถามอัตราเร็วเฉลี่ย
+  solution: $\bar v = \sqrt{\dfrac{8(8.314)(300)}{\pi(0.004)}} \approx 1260\,\mathrm{m/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p009
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 3
+  type: order
+  stem: เรียงอัตราเร็วของโมเลกุลแก๊สชนิดเดียวกันที่อุณหภูมิเดียวกันจากน้อยที่สุดไปมากที่สุด ได้แก่ อัตราเร็วอาร์เอ็มเอส อัตราเร็วที่เป็นไปได้มากที่สุด และอัตราเร็วเฉลี่ย
+  hints:
+  - ค่าที่เป็นจุดยอดของการแจกแจงน้อยกว่าค่าเฉลี่ยเสมอ
+  - รากของค่าเฉลี่ยของกำลังสองเป็นค่าที่ใหญ่ที่สุดในสามค่านี้
+  - เทียบอัตราส่วนระหว่าง $\sqrt{2}$, $\sqrt{8/\pi}$ และ $\sqrt{3}$
+  items:
+  - อัตราเร็วที่เป็นไปได้มากที่สุด
+  - อัตราเร็วเฉลี่ย
+  - อัตราเร็วอาร์เอ็มเอส
+  solution: $\sqrt{2} \approx 1.41$, $\sqrt{8/\pi} \approx 1.60$ และ $\sqrt{3} \approx 1.73$ เมื่อคูณด้วย $\sqrt{RT/M}$ ลำดับจากน้อยไปมากคือ อัตราเร็วที่เป็นไปได้มากที่สุด อัตราเร็วเฉลี่ย และอาร์เอ็มเอส
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p010
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 4
+  type: numeric
+  stem: ที่อุณหภูมิเดียวกัน อัตราส่วนของอัตราเร็วอาร์เอ็มเอสของฮีเลียม $\mathrm{He}$ ต่อของอาร์กอน $\mathrm{Ar}$ มีค่าเท่าใด กำหนด $M_\mathrm{He} = 4.0\,\mathrm{g/mol}$ และ $M_\mathrm{Ar} = 40.0\,\mathrm{g/mol}$ (ไม่มีหน่วย)
+  hints:
+  - อัตราเร็วอาร์เอ็มเอสเป็นสัดส่วนกับ $1/\sqrt{M}$ ที่อุณหภูมิเดียวกัน
+  - ดังนั้น $\dfrac{v_\mathrm{He}}{v_\mathrm{Ar}} = \sqrt{\dfrac{M_\mathrm{Ar}}{M_\mathrm{He}}}$
+  - แทนค่ามวลโมลาร์ (หน่วยเดียวกันทั้งคู่) แล้วถอดรากที่สอง
+  answer:
+    value: 3.16
+    tolerance: 0.03
+  misconceptions:
+  - match: 10.0
+    feedback: ใส่อัตราส่วนมวลโดยตรงโดยไม่ถอดรากที่สอง ความเร็วขึ้นกับ $1/\sqrt{M}$
+  - match: 0.32
+    feedback: กลับอัตราส่วน ฮีเลียมเบากว่าจึงเร็วกว่า อัตราส่วนต้องมากกว่า 1
+  solution: $\dfrac{v_\mathrm{He}}{v_\mathrm{Ar}} = \sqrt{\dfrac{40.0}{4.0}} = \sqrt{10} \approx 3.16$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p011
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 4
+  type: numeric
+  stem: ในฤดูร้อนที่กรุงเทพ ช่วงบ่ายอากาศภายในห้องหนึ่งมีอุณหภูมิ $300\,\mathrm{K}$ และอัตราเร็วอาร์เอ็มเอสของโมเลกุลไนโตรเจนมีค่า $v_\mathrm{rms}$ ถ้าต้องการให้ $v_\mathrm{rms}$ เพิ่มเป็นสองเท่า อุณหภูมิต้องเป็นกี่เคลวิน
+  hints:
+  - อัตราเร็วอาร์เอ็มเอสเป็นสัดส่วนกับ $\sqrt{T}$
+  - ถ้า $v$ เพิ่มเป็นสองเท่า $T$ ต้องเพิ่มเป็นกี่เท่า
+  - ตอบเป็นเคลวิน
+  answer:
+    value: 1200.0
+    tolerance: 1.0
+    unit: K
+  misconceptions:
+  - match: 600.0
+    feedback: คิดว่า $v$ แปรตรงกับ $T$ แต่จริงเป็น $v \propto \sqrt{T}$ ต้องเพิ่ม $T$ เป็น 4 เท่า
+  solution: $v \propto \sqrt{T}$ ดังนั้น $v$ เพิ่มเป็น 2 เท่าเมื่อ $T$ เพิ่มเป็น $2^2 = 4$ เท่า จึงได้ $T = 4(300) = 1200\,\mathrm{K}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p012
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 4
+  type: expression
+  stem: จากอัตราเร็วอาร์เอ็มเอส $v^2 = \dfrac{3kT}{m}$ โดย $m$ คือมวลของโมเลกุลหนึ่งตัว จงจัดรูปหา $T$ ให้อยู่ข้างเดียว
+  hints:
+  - ย้ายตัวส่วนไปคูณอีกข้างของสมการ
+  - ต้องการ $T$ ดังนั้นต้องหารทั้งสองข้างด้วย $3k$
+  - ได้ $T = \dfrac{mv^2}{3k}$ ตรวจด้วยหน่วยว่าได้เคลวิน
+  answer:
+    latex: \frac{mv^2}{3k}
+    variables:
+    - m
+    - v
+    - k
+  prefix: T =
+  misconceptions:
+  - match: \frac{3k}{mv^2}
+    feedback: กลับเศษส่วนทั้งก้อน ต้องแยก $T$ ออกมาเป็นผลคูณของมวลกับกำลังสองของอัตราเร็ว หารด้วย $3k$
+  - match: \frac{mv}{3k}
+    feedback: ลืมยกกำลังสองของ $v$ ตั้งแต่ต้นของการจัดรูป
+  solution: คูณสองข้างด้วย $m$ ได้ $mv^2 = 3kT$ แล้วหารด้วย $3k$ จะได้ $T = \dfrac{mv^2}{3k}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p013
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 4
+  type: numeric
+  stem: ถ้าลูกเต๋าสี่ลูกที่เป็นอิสระต่อกันโยนได้จำนวนหัว (H) สองหัวพอดี จำนวนสถานะจุลภาคที่เป็นไปได้ $W$ คือ 6 จงหาเอนโทรปี $S = k\ln W$ ของสถานะมหภาคนี้ ตอบเป็นหน่วย $\times 10^{-23}\,\mathrm{J/K}$ ใช้ $k = 1.380649\times10^{-23}\,\mathrm{J/K}$
+  hints:
+  - เอนโทรปีเชิงสถิติเขียนได้เป็น $S = k\ln W$
+  - ค่า $W$ คือจำนวนสถานะจุลภาคที่ให้สถานะมหภาคเดียวกัน ซึ่งคำนวณเป็น $\binom{4}{2}$
+  - ต้องใช้ลอการิทึมธรรมชาติ ไม่ใช่การคูณ
+  answer:
+    value: 2.47
+    tolerance: 0.03
+    unit: x10^-23 J/K
+  misconceptions:
+  - match: 8.28
+    feedback: คูณ $k$ ด้วย $W$ โดยตรง แทนที่จะใช้ $\ln W$
+  solution: $W = \binom{4}{2} = 6$ จึงได้ $S = k\ln 6 = (1.380649\times10^{-23})(1.7918) \approx 2.47\times10^{-23}\,\mathrm{J/K}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p014
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 4
+  type: numeric
+  stem: แก๊สอุดมคติ 1.00 โมล ที่อุณหภูมิคงที่ขยายตัวจากปริมาตร $V$ เป็น $2V$ การเปลี่ยนแปลงเอนโทรปีของแก๊สคือกี่ J/K ใช้ $R = 8.314\,\mathrm{J/(mol\,K)}$
+  hints:
+  - ตามแนวคิดเชิงจุลภาค จำนวนตำแหน่งที่โมเลกุลอยู่ได้เพิ่มขึ้นตามปริมาตร
+  - สำหรับ $N$ โมเลกุล $\Delta S = Nk\ln(V_f/V_i)$ ซึ่งเทียบเท่า $nR\ln(V_f/V_i)$
+  - ใช้ $V_f/V_i = 2$ และ $n = 1.00$
+  answer:
+    value: 5.76
+    tolerance: 0.06
+    unit: J/K
+  misconceptions:
+  - match: -5.76
+    feedback: ใส่เครื่องหมายลบ การขยายตัวเพิ่มจำนวนสถานะที่เป็นไปได้ เอนโทรปีจึงเพิ่มขึ้น
+  - match: 16.63
+    feedback: ใช้ $2R$ แทน $R\ln 2$ ทำให้ค่าสูงเกินจริง
+  solution: $\Delta S = nR\ln\dfrac{V_f}{V_i} = (1.00)(8.314)\ln 2 \approx 5.76\,\mathrm{J/K}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p015
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 5
+  type: numeric
+  stem: แก๊สอุดมคติที่มีจำนวนโมเลกุล $N$ ขยายตัวเป็นสองเท่าที่อุณหภูมิคงที่ ถ้าการเพิ่มเอนโทรปีมีค่า $\Delta S = 1.00\,\mathrm{J/K}$ จงหาจำนวนโมเลกุล $N$ ตอบเป็นหน่วย $\times 10^{23}$ โมเลกุล ใช้ $k = 1.380649\times10^{-23}\,\mathrm{J/K}$
+  hints:
+  - ใช้ $\Delta S = Nk\ln 2$ สำหรับการขยายตัวเป็นสองเท่า
+  - จัดรูปให้ $N = \dfrac{\Delta S}{k\ln 2}$
+  - ผลลัพธ์จะอยู่ในระดับ $10^{23}$ ซึ่งสอดคล้องกับจำนวนอาโวกาโดร
+  answer:
+    value: 1.04
+    tolerance: 0.02
+    unit: x10^23
+  misconceptions:
+  - match: 0.72
+    feedback: ลืม $\ln 2$ ในสูตร $\Delta S = Nk\ln 2$ ทำให้จำนวนโมเลกุลน้อยเกินจริง
+  solution: $N = \dfrac{\Delta S}{k\ln 2} = \dfrac{1.00}{(1.380649\times10^{-23})(0.6931)} \approx 1.04\times10^{23}$ โมเลกุล
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p016
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 5
+  type: mcq
+  stem: เหตุใดเอนโทรปีของระบบแยกมักเพิ่มขึ้นตามเวลาในทางสถิติ
+  hints:
+  - ลองนึกถึงจำนวนสถานะจุลภาคที่ให้สถานะมหภาคแบบกระจายกับแบบรวมกันอยู่
+  - สถานะที่ดูสม่ำเสมอส่วนใหญ่มีจำนวนสถานะจุลภาคมากกว่า
+  - ดังนั้นระบบมักเคลื่อนไปสู่สถานะที่มี $W$ มากกว่า
+  multiple: false
+  choices:
+  - id: a
+    text: เพราะระบบแยกมีพลังงานจลน์เพิ่มขึ้นทุกครั้ง
+    correct: false
+    feedback: พลังงานรวมของระบบแยกคงที่ สิ่งที่เปลี่ยนคือการกระจายตัวของพลังงานและโมเลกุล
+  - id: b
+    text: เพราะสถานะที่กระจายสม่ำเสมอมีจำนวนสถานะจุลภาค $W$ มากกว่าสถานะที่รวมกันอยู่มาก
+    correct: true
+  - id: c
+    text: เพราะกฎข้อที่สองของเทอร์โมไดนามิกส์ห้ามไม่ให้เอนโทรปีลดลงในทุกกรณี
+    correct: false
+    feedback: กฎข้อที่สองพูดเรื่องแนวโน้มที่น่าจะเป็น ไม่ใช่ข้อห้ามที่เด็ดขาดทุกช่วงเวลาในระดับเล็กมาก
+  - id: d
+    text: เพราะอุณหภูมิของระบบต้องเพิ่มขึ้นเสมอ
+    correct: false
+    feedback: เอนโทรปีไม่ได้เพิ่มเพราะอุณหภูมิเพิ่ม แต่เพิ่มเพราะจำนวนสถานะที่เป็นไปได้เพิ่ม
+  solution: ระบบแยกมักเคลื่อนไปยังสถานะมหภาคที่มีจำนวนสถานะจุลภาค $W$ มาก เพราะมีโอกาสมากกว่า เอนโทรปี $S = k\ln W$ จึงมักเพิ่มขึ้น (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p017
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 3
+  type: mcq
+  stem: ที่อุณหภูมิต่ำมาก ความจุความร้อนโมลาร์ของแก๊สไดอะตอมิกลดลงเหลือค่าที่ใกล้ $\tfrac32 R$ เพราะเหตุใด
+  hints:
+  - ที่อุณหภูมิต่ำพลังงานความร้อนน้อยกว่าพลังงานที่ใช้กระตุ้นองศาอิสระบางชนิด
+  - องศาอิสระที่ถูกแช่แข็งไม่สามารถรับพลังงานความร้อนได้
+  - เหลือเพียงการเลื่อนที่ 3 องศา
+  multiple: false
+  choices:
+  - id: a
+    text: เพราะโมเลกุลหยุดเคลื่อนที่โดยสิ้นเชิง
+    correct: false
+    feedback: โมเลกุลยังเคลื่อนที่ได้ การเลื่อนที่ยังมีอยู่ ไม่ได้หยุดนิ่ง
+  - id: b
+    text: เพราะองศาอิสระบางชนิดถูกแช่แข็ง เพราะพลังงานความร้อน $kT$ น้อยกว่าช่องว่างพลังงานที่ต้องใช้กระตุ้น
+    correct: true
+  - id: c
+    text: เพราะแก๊สกลายเป็นของเหลวเมื่ออุณหภูมิต่ำ
+    correct: false
+    feedback: การกลายเป็นของเหลวเป็นการเปลี่ยนสถานะที่ต้องใช้แรงระหว่างโมเลกุลและไม่ได้อธิบายค่า $C_V$ ของแก๊สในอุดมคติ
+  - id: d
+    text: เพราะกฎการแบ่งพลังงานเท่ากันใช้ไม่ได้ที่อุณหภูมิใดเลย
+    correct: false
+    feedback: กฎการแบ่งพลังงานเท่ากันใช้ได้เมื่อองศาอิสระถูกกระตุ้นแล้ว ที่อุณหภูมิต่ำจึงต้องพิจารณาการแช่แข็งเพิ่ม
+  solution: เมื่ออุณหภูมิต่ำ พลังงาน $kT$ น้อยกว่าช่องว่างพลังงานของการหมุนและการสั่น องศาอิสระเหล่านั้นจึงถูกแช่แข็งและเหลือเพียงการเลื่อนที่ (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.thermal.statistical-thermodynamics.p018
+  topics:
+  - physics.thermal.statistical-thermodynamics
+  difficulty: 4
+  type: code
+  stem: เขียนฟังก์ชัน `entropy_two_halves(N, n)` ที่คืนค่าเอนโทรปี $S = k\ln W$ (หน่วย J/K) ของระบบโมเลกุลที่แยกแยะได้ $N$ ตัว โดยมี $n$ ตัวอยู่ซีกซ้ายของกล่องและจำนวนสถานะจุลภาค $W = \binom{N}{n}$ ใช้ `math.comb` และ `math.log` ได้ และให้ใช้ค่า $k = 1.380649\times10^{-23}$ J/K
+  hints:
+  - จำนวนวิธีเลือก $n$ โมเลกุลจาก $N$ ตัวคือ $\binom{N}{n}$ ซึ่งใช้ `math.comb(N, n)` ได้
+  - เอนโทรปีใช้ลอการิทึมธรรมชาติ `math.log` ของ $W$ แล้วคูณ $k$
+  - ตัวเลขใหญ่มากได้ ควรเก็บค่าเป็นทศนิยม (float) ตามปกติ
+  language: python
+  starter: |
+    import math
+
+    K_B = 1.380649e-23
+
+    def entropy_two_halves(N, n):
+        pass
+  tests: |
+    import math
+    r = entropy_two_halves(4, 2)
+    assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+    assert abs(r - 1.380649e-23 * math.log(6)) < 1e-30, f"entropy_two_halves(4, 2) ควรได้ k ln 6 แต่ได้ {r} (ตรวจว่าใช้ ln ไม่ใช่การคูณ)"
+    r2 = entropy_two_halves(10, 0)
+    assert abs(r2) < 1e-30, f"entropy_two_halves(10, 0) ควรได้ 0 เพราะมีเพียงหนึ่งสถานะ แต่ได้ {r2}"
+    r3 = entropy_two_halves(100, 50)
+    assert abs(r3 - 1.380649e-23 * math.log(math.comb(100, 50))) < 1e-30, f"entropy_two_halves(100, 50) ไม่ถูกต้อง ได้ {r3} (ตรวจการใช้ comb ของ N และ n)"
+  reference: |
+    import math
+
+    K_B = 1.380649e-23
+
+    def entropy_two_halves(N, n):
+        return K_B * math.log(math.comb(N, n))
+  solution: โค้ดคำนวณ $S = k\ln\binom{N}{n}$ เช่น entropy_two_halves(4, 2) ได้ $k\ln 6 \approx 2.47\times10^{-23}$ J/K
+  license: CC-BY-SA-4.0
+  ai_assisted: true

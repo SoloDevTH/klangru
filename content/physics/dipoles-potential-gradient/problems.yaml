@@ -1,0 +1,406 @@
+problems:
+- id: physics.electricity.dipoles-potential-gradient.p001
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 1
+  type: numeric
+  stem: ประจุ $+2.0\,\mathrm{nC}$ และ $-2.0\,\mathrm{nC}$ วางห่างกัน $3.0\,\mathrm{mm}$ เป็นไดโพลไฟฟ้า โมเมนต์ไดโพล $p = qd$ มีค่ากี่ $\times10^{-12}\,\mathrm{C\,m}$
+  hints:
+  - โมเมนต์ไดโพลใช้ขนาดของประจุหนึ่งตัว $q$ คูณกับระยะห่าง $d$ ระหว่างประจุทั้งสอง
+  - 'แปลงหน่วยให้เป็น SI ก่อน: $2.0\,\mathrm{nC} = 2.0\times10^{-9}\,\mathrm{C}$ และ $3.0\,\mathrm{mm} = 3.0\times10^{-3}\,\mathrm{m}$'
+  - คูณ $q$ กับ $d$ แล้วจัดเป็นหน่วย $10^{-12}$
+  answer:
+    value: 6.0
+    tolerance: 0.06
+    unit: x10^-12 C m
+  misconceptions:
+  - match: 12.0
+    feedback: คิดว่าโมเมนต์ไดโพลเป็น $2qd$ แต่นิยามคือ $p = qd$ โดย $d$ คือระยะระหว่างประจุบวกกับประจุลบ
+  solution: $p = qd = (2.0\times10^{-9})(3.0\times10^{-3}) = 6.0\times10^{-12}\,\mathrm{C\,m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p002
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 1
+  type: mcq
+  stem: ทิศของโมเมนต์ไดโพลไฟฟ้า $\vec p$ ตามนิยามชี้จากจุดใดไปยังจุดใด
+  hints:
+  - ทิศของ $\vec p$ เป็นทิศที่ประจุบวกอยู่เทียบกับประจุลบ
+  - ลูกศรของ $\vec p$ ชี้ไปทางประจุบวก
+  - เลือกตัวเลือกที่บอกว่าชี้จากลบไปบวก
+  multiple: false
+  choices:
+  - id: a
+    text: จากประจุบวกไปยังประจุลบ
+    correct: false
+    feedback: ทิศนี้กลับกับนิยามทั่วไป ทิศของ $\vec p$ คือจากลบไปบวก
+  - id: b
+    text: จากประจุลบไปยังประจุบวก
+    correct: true
+  - id: c
+    text: ตั้งฉากกับเส้นที่เชื่อมประจุทั้งสอง
+    correct: false
+    feedback: โมเมนต์ไดโพลขนานกับเส้นที่เชื่อมประจุทั้งสอง ไม่ได้ตั้งฉาก
+  - id: d
+    text: ชี้ออกจากจุดศูนย์กลางมวลของประจุทั้งหมด
+    correct: false
+    feedback: จุดศูนย์กลางไม่ได้กำหนดทิศของ $\vec p$ ทิศขึ้นกับตำแหน่งของประจุบวกและลบ
+  solution: โมเมนต์ไดโพลชี้จากประจุลบไปยังประจุบวก (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p003
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 2
+  type: numeric
+  stem: ไดโพลที่มีโมเมนต์ $p = 6.0\times10^{-12}\,\mathrm{C\,m}$ วางอยู่ที่จุดกำเนิด จงหาขนาดของสนามไฟฟ้าที่จุดบนแกนไดโพลห่างจากจุดกึ่งกลาง $0.10\,\mathrm{m}$ โดยใช้ $k = 8.988\times10^{9}\,\mathrm{N\,m^2/C^2}$ ตอบเป็น V/m
+  hints:
+  - สำหรับจุดที่อยู่บนแกนไดโพลและไกลมาก สนามมีค่า $E = \dfrac{2kp}{r^3}$
+  - ระยะ $r = 0.10\,\mathrm{m}$ และต้องยกกำลังสามที่ตัวส่วน
+  - ผลลัพธ์มีหน่วย V/m ซึ่งเทียบเท่ากับ N/C
+  answer:
+    value: 107.9
+    tolerance: 1.1
+    unit: V/m
+  misconceptions:
+  - match: 53.9
+    feedback: ใช้สูตรของจุดบนเส้นตั้งฉากกับแกนไดโพล $E = kp/r^3$ ซึ่งมีค่าเพียงครึ่งหนึ่งของบนแกน
+  solution: $E = \dfrac{2kp}{r^3} = \dfrac{2(8.988\times10^{9})(6.0\times10^{-12})}{(0.10)^3} \approx 107.9\,\mathrm{V/m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p004
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 2
+  type: numeric
+  stem: โมเลกุลน้ำที่มีโมเมนต์ไดโพล $p = 6.2\times10^{-30}\,\mathrm{C\,m}$ อยู่ในสนามไฟฟ้าสม่ำเสมอ $E = 3.0\times10^{5}\,\mathrm{V/m}$ ทำมุม $60^\circ$ กับสนาม ทอร์กที่สนามกระทำต่อโมเลกุลมีขนาดกี่ $\times10^{-24}\,\mathrm{N\,m}$
+  hints:
+  - ทอร์กต่อไดโพลในสนามสม่ำเสมอคือ $\vec\tau = \vec p\times\vec E$
+  - ขนาดของทอร์กคือ $\tau = pE\sin\theta$ โดย $\theta$ คือมุมระหว่าง $\vec p$ กับ $\vec E$
+  - แทนค่า $\sin 60^\circ \approx 0.866$
+  answer:
+    value: 1.61
+    tolerance: 0.03
+    unit: x10^-24 N m
+  misconceptions:
+  - match: 0.93
+    feedback: ใช้ $\cos\theta$ แทน $\sin\theta$ ทอร์กมีค่ามากที่สุดเมื่อ $\vec p$ ตั้งฉากกับ $\vec E$
+  solution: $\tau = pE\sin\theta = (6.2\times10^{-30})(3.0\times10^{5})\sin 60^\circ \approx 1.61\times10^{-24}\,\mathrm{N\,m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p005
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 2
+  type: numeric
+  stem: โมเลกุลน้ำในข้อก่อนหน้า ($p = 6.2\times10^{-30}\,\mathrm{C\,m}$ ในสนาม $3.0\times10^{5}\,\mathrm{V/m}$ ทำมุม $60^\circ$) มีพลังงานศักย์ไดโพลในสนาม $U = -\vec p\cdot\vec E$ เท่ากับกี่ $\times10^{-25}\,\mathrm{J}$
+  hints:
+  - ผลคูณสเกลาร์ $\vec p\cdot\vec E = pE\cos\theta$
+  - พลังงานศักย์มีเครื่องหมายลบหน้าผลคูณ
+  - ตรวจว่าการใช้ $\cos 60^\circ = 0.5$ ถูกต้อง
+  answer:
+    value: -9.3
+    tolerance: 0.1
+    unit: x10^-25 J
+  misconceptions:
+  - match: -16.11
+    feedback: ใช้ $\sin\theta$ แทน $\cos\theta$ ในผลคูณสเกลาร์ ซึ่งผิด
+  solution: $U = -pE\cos\theta = -(6.2\times10^{-30})(3.0\times10^{5})(0.5) \approx -9.30\times10^{-25}\,\mathrm{J}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p006
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 2
+  type: expression
+  stem: จากศักย์ไฟฟ้าของประจุจุดเดียว $V = \dfrac{kQ}{r}$ จงหาขนาดรัศมีของสนาม $E_r = -\dfrac{dV}{dr}$ โดยเขียนผลลัพธ์ให้อยู่ในรูปของ $k$, $Q$ และ $r$
+  hints:
+  - หาอนุพันธ์ของ $V$ เทียบ $r$ ได้ $\dfrac{dV}{dr} = -\dfrac{kQ}{r^2}$
+  - ตามนิยาม $E_r = -\dfrac{dV}{dr}$ จึงต้องเปลี่ยนเครื่องหมาย
+  - ตรวจว่าสนามจากประจุบวกชี้ออกจากจุดกำเนิด
+  answer:
+    latex: \frac{kQ}{r^2}
+    variables:
+    - k
+    - Q
+    - r
+  prefix: E_r =
+  misconceptions:
+  - match: -\frac{kQ}{r^2}
+    feedback: ลืมเครื่องหมายลบในนิยาม $E_r = -dV/dr$ สนามของประจุบวกต้องชี้ออกไป จึงเป็นบวก
+  - match: \frac{kQ}{r}
+    feedback: ยังไม่ได้หาอนุพันธ์เทียบ $r$ ค่า $kQ/r$ คือศักย์ไม่ใช่สนาม
+  solution: $E_r = -\dfrac{d}{dr}\left(\dfrac{kQ}{r}\right) = \dfrac{kQ}{r^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p007
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 2
+  type: numeric
+  stem: ประจุ $+4.0\,\mathrm{nC}$ วางที่จุดกำเนิด และประจุ $-2.0\,\mathrm{nC}$ วางที่ $x = 0.30\,\mathrm{m}$ บนแกน $x$ จงหาศักย์ไฟฟ้ารวมที่ $x = 0.10\,\mathrm{m}$ โดยใช้ $k = 8.988\times10^{9}\,\mathrm{N\,m^2/C^2}$ ตอบเป็นโวลต์
+  hints:
+  - ศักย์ไฟฟ้าเป็นปริมาณสเกลาร์ จึงบวกกันได้โดยตรงโดยไม่ต้องใช้เวกเตอร์
+  - ระยะจากแต่ละประจุคือ $0.10\,\mathrm{m}$ และ $0.20\,\mathrm{m}$ ตามลำดับ
+  - ใช้ $V = \sum k q_i/r_i$ โดยประจุลบให้เครื่องหมายลบติดมาด้วย
+  answer:
+    value: 270.0
+    tolerance: 3.0
+    unit: V
+  misconceptions:
+  - match: 360.0
+    feedback: ไม่ได้รวมศักย์ของประจุลบ ศักย์รวมต้องบวกทั้งสองประจุพร้อมเครื่องหมาย
+  solution: $V = k\left(\dfrac{4.0\times10^{-9}}{0.10} + \dfrac{-2.0\times10^{-9}}{0.20}\right) = (8.988\times10^{9})(3.0\times10^{-8}) \approx 269.6\,\mathrm{V}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p008
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 3
+  type: numeric
+  stem: วงแหวนประจุสม่ำเสมอมีประจุรวม $Q = 5.0\,\mathrm{nC}$ และรัศมี $a = 0.10\,\mathrm{m}$ จงหาศักย์ไฟฟ้าที่จุดบนแกนของวงแหวนซึ่งห่างจากศูนย์กลาง $z = 0.20\,\mathrm{m}$ ตอบเป็นโวลต์
+  hints:
+  - ทุกส่วนของวงแหวนอยู่ห่างจากจุดที่พิจารณาเท่ากัน คือ $\sqrt{z^2 + a^2}$
+  - ศักย์เป็นผลรวมสเกลาร์ $V = \dfrac{kQ}{\sqrt{z^2+a^2}}$
+  - แทนค่า $z = 0.20$ และ $a = 0.10$ ในหน่วยเมตร
+  answer:
+    value: 201.0
+    tolerance: 2.5
+    unit: V
+  misconceptions:
+  - match: 225.0
+    feedback: ใช้ระยะ $z$ เป็นระยะห่างจากวงแหวน ทั้งที่ทุกจุดของวงแหวนอยู่ไกลกว่า $z$ เพราะมีรัศมี $a$
+  solution: $V = \dfrac{kQ}{\sqrt{z^2+a^2}} = \dfrac{(8.988\times10^{9})(5.0\times10^{-9})}{\sqrt{0.20^2+0.10^2}} \approx 201\,\mathrm{V}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p009
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 3
+  type: numeric
+  stem: จากวงแหวนในข้อก่อนหน้า ($Q = 5.0\,\mathrm{nC}$, $a = 0.10\,\mathrm{m}$) จงหาขนาดของสนามไฟฟ้าบนแกนที่ $z = 0.20\,\mathrm{m}$ จากความสัมพันธ์ $E_z = -\dfrac{\partial V}{\partial z}$ ตอบเป็น V/m
+  hints:
+  - ศักย์บนแกนคือ $V(z) = \dfrac{kQ}{\sqrt{z^2+a^2}}$
+  - หาอนุพันธ์เทียบ $z$ โดยใช้กฎลูกโซ่ได้ $\dfrac{dV}{dz} = -\dfrac{kQz}{(z^2+a^2)^{3/2}}$
+  - ผลลัพธ์ต้องเป็นบวกเมื่อ $z > 0$ เพราะสนามชี้ออกจากวงแหวน
+  answer:
+    value: 804.0
+    tolerance: 8.0
+    unit: V/m
+  misconceptions:
+  - match: 1123.0
+    feedback: ใช้สูตรของประจุจุดเดียว $kQ/z^2$ ทั้งที่วงแหวนมีรัศมีและสนามมีตัวประกอบของ $z$ ต่างออกไป
+  solution: $E_z = \dfrac{kQz}{(z^2+a^2)^{3/2}} = \dfrac{(8.988\times10^{9})(5.0\times10^{-9})(0.20)}{(0.05)^{3/2}} \approx 804\,\mathrm{V/m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p010
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 3
+  type: mcq
+  stem: เมื่อวาดผิวสมศักย์และเส้นสนามไฟฟ้า ข้อความใดถูกต้อง
+  hints:
+  - ตามผิวสมศักย์ค่าศักย์ไม่เปลี่ยน จึงดูว่างานที่สนามทำระหว่างจุดบนผิวเป็นเท่าใด
+  - ความสัมพันธ์ $dV = -\vec E\cdot d\vec l$ ช่วยเชื่อมระหว่างสนามกับการเปลี่ยนศักย์
+  - ถ้า $dV = 0$ แล้ว $\vec E\cdot d\vec l = 0$ คือเส้นสนามต้องตั้งฉากกับทิศที่เคลื่อนที่บนผิว
+  multiple: false
+  choices:
+  - id: a
+    text: เส้นสนามขนานกับผิวสมศักย์เสมอ
+    correct: false
+    feedback: ถ้าเส้นสนามขนานกับผิว การเคลื่อนที่ไปตามผิวจะมีการเปลี่ยนศักย์ซึ่งขัดกับนิยามของผิวสมศักย์
+  - id: b
+    text: เส้นสนามตั้งฉากกับผิวสมศักย์เสมอ
+    correct: true
+  - id: c
+    text: ผิวสมศักย์ต้องเป็นระนาบเท่านั้น
+    correct: false
+    feedback: ผิวสมศักย์มีรูปร่างได้หลากหลาย เช่น ทรงกลมรอบประจุจุดเดียว หรือทรงกระบอกรอบเส้นประจุ
+  - id: d
+    text: เส้นสนามกับผิวสมศักย์ไม่มีความสัมพันธ์กัน
+    correct: false
+    feedback: ทั้งสองมีความสัมพันธ์โดยตรง เพราะ $\vec E = -\nabla V$ ทำให้เส้นสนามตั้งฉากกับผิวสมศักย์
+  solution: ผิวสมศักย์มีศักย์เท่ากันทุกจุด งานที่ทำโดยสนามบนผิวนี้เป็นศูนย์ เส้นสนามจึงตั้งฉากกับผิวสมศักย์เสมอ (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p011
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 4
+  type: numeric
+  stem: เส้นประจุยาวจำกัดยาว $1.0\,\mathrm{m}$ มีประจุเชิงเส้นสม่ำเสมอ $\lambda = 4.0\,\mathrm{nC/m}$ ที่กึ่งกลางเส้นมีจุดสังเกตอยู่ห่างจากเส้นตั้งฉาก $d = 0.30\,\mathrm{m}$ จงหาศักย์ไฟฟ้าที่จุดนี้ ใช้ $V = k\int\dfrac{dq}{r}$ และ $k = 8.988\times10^{9}\,\mathrm{N\,m^2/C^2}$ ตอบเป็นโวลต์
+  hints:
+  - ให้ $dq = \lambda\,dx$ และระยะจากจุดสังเกตถึงส่วน $dx$ คือ $r = \sqrt{x^2 + d^2}$
+  - อินทิเกรตสมมาตรจาก $x = -L$ ถึง $L$ จะได้ $V = 2k\lambda\int_0^{L}\dfrac{dx}{\sqrt{x^2+d^2}}$
+  - ใช้ $\int \dfrac{dx}{\sqrt{x^2+d^2}} = \sinh^{-1}(x/d)$
+  answer:
+    value: 92.3
+    tolerance: 0.9
+    unit: V
+  misconceptions:
+  - match: 46.2
+    feedback: ลืมตัวคูณ 2 จากการอินทิเกรตสองด้านที่สมมาตรของเส้นประจุ
+  solution: $V = 2k\lambda\sinh^{-1}\left(\dfrac{L}{d}\right) = 2(8.988\times10^{9})(4.0\times10^{-9})\sinh^{-1}(1.667) \approx 92.3\,\mathrm{V}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p012
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 4
+  type: numeric
+  stem: แผ่นกลมบางมีประจุผิวสม่ำเสมอ $\sigma = 1.0\times10^{-9}\,\mathrm{C/m^2}$ และรัศมี $R = 0.10\,\mathrm{m}$ จงหาศักย์ไฟฟ้าบนแกนที่ระยะ $z = 0.05\,\mathrm{m}$ จากศูนย์กลาง จากผลลัพธ์ $V = \dfrac{\sigma}{2\varepsilon_0}\left(\sqrt{z^2+R^2} - z\right)$ โดย $\varepsilon_0 = 8.854\times10^{-12}\,\mathrm{F/m}$ ตอบเป็นโวลต์
+  hints:
+  - แบ่งแผ่นเป็นวงแหวนรัศมี $r$ แต่ละวงมีประจุ $dq = \sigma\,2\pi r\,dr$
+  - ศักย์ของวงแหวนบนแกนคือ $k\,dq/\sqrt{z^2+r^2}$ แล้วอินทิเกรตจาก $0$ ถึง $R$
+  - ใช้ $k = 1/(4\pi\varepsilon_0)$ เพื่อให้ได้สูตรที่มี $2\varepsilon_0$ ในตัวส่วน
+  answer:
+    value: 3.49
+    tolerance: 0.04
+    unit: V
+  misconceptions:
+  - match: 5.65
+    feedback: ใช้ผลประมาณ $\sigma R/(2\varepsilon_0)$ ซึ่งใช้ได้เฉพาะที่ระยะ $z$ เล็กมากเทียบกับ $R$ ไม่ใช่จุดนี้
+  solution: $V = \dfrac{\sigma}{2\varepsilon_0}\left(\sqrt{z^2+R^2}-z\right) = \dfrac{1.0\times10^{-9}}{2(8.854\times10^{-12})}\left(\sqrt{0.05^2+0.10^2}-0.05\right) \approx 3.49\,\mathrm{V}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p013
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 4
+  type: numeric
+  stem: ศักย์ไฟฟ้าในบริเวณหนึ่งเป็น $V(x,y) = 4xy + 2x^2$ (หน่วย V เมื่อ $x,y$ เป็นเมตร) จงหาขนาดของสนามไฟฟ้าที่จุด $(1.0\,\mathrm{m},\,2.0\,\mathrm{m})$ จาก $\vec E = -\nabla V$ ตอบเป็น V/m
+  hints:
+  - หาอนุพันธ์ย่อย $E_x = -\dfrac{\partial V}{\partial x}$ และ $E_y = -\dfrac{\partial V}{\partial y}$ แยกกัน
+  - $\dfrac{\partial V}{\partial x} = 4y + 4x$ และ $\dfrac{\partial V}{\partial y} = 4x$
+  - ขนาดของสนามคือ $\sqrt{E_x^2 + E_y^2}$
+  answer:
+    value: 12.65
+    tolerance: 0.03
+    unit: V/m
+  misconceptions:
+  - match: 12.0
+    feedback: ได้เฉพาะองค์ประกอบ $E_x$ แล้วลืมองค์ประกอบ $E_y$ และการรวมเวกเตอร์
+  solution: $E_x = -(4y+4x) = -12$ V/m และ $E_y = -4x = -4$ V/m จึงได้ $|\vec E| = \sqrt{144+16} \approx 12.65\,\mathrm{V/m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p014
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 4
+  type: code
+  stem: เขียนฟังก์ชัน `potential(charges, x, y)` ที่คืนค่าศักย์ไฟฟ้ารวม (โวลต์) ที่จุด $(x, y)$ จากรายการประจุ `charges` ซึ่งเป็นลิสต์ของทูเพิล `(q, xi, yi)` โดยใช้ $V = \sum k\,q_i/r_i$ และ $k = 8.988\times10^{9}$ ให้ใช้ไลบรารี `math` ได้
+  hints:
+  - ศักย์เป็นปริมาณสเกลาร์ จึงวนลูปแล้วบวกค่าของแต่ละประจุได้เลย
+  - ระยะจากประจุถึงจุดคำนวณคือ `math.hypot(x - xi, y - yi)`
+  - คืนค่ารวมด้วย `return` และอย่าลืมประจุลบที่ให้ค่าศักย์ติดลบ
+  language: python
+  starter: |
+    import math
+
+    K = 8.988e9
+
+    def potential(charges, x, y):
+        pass
+  tests: |
+    import math
+    r = potential([(4e-9, 0.0, 0.0), (-2e-9, 0.30, 0.0)], 0.10, 0.0)
+    assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+    assert abs(r - 269.6) < 0.5, f"potential ที่ (0.10, 0) ควรได้ประมาณ 269.6 V แต่ได้ {r} (ตรวจว่าประจุลบให้ค่าติดลบและรวมทุกประจุ)"
+    r2 = potential([(1e-9, 0.0, 0.0)], 0.0, 1.0)
+    assert abs(r2 - 8.988) < 0.01, f"potential ของประจุ 1 nC ที่ระยะ 1 m ควรได้ 8.988 V แต่ได้ {r2}"
+    r3 = potential([], 1.0, 1.0)
+    assert r3 == 0, f"ไม่มีประจุจึงควรได้ 0 แต่ได้ {r3}"
+  reference: |
+    import math
+
+    K = 8.988e9
+
+    def potential(charges, x, y):
+        total = 0.0
+        for q, xi, yi in charges:
+            total += K * q / math.hypot(x - xi, y - yi)
+        return total
+  solution: วนลูปบวก $k\,q/r$ ของทุกประจุ เช่น potential([(4e-9, 0.0, 0.0), (-2e-9, 0.3, 0.0)], 0.1, 0.0) ได้ประมาณ 269.6 V
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p015
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 5
+  type: numeric
+  stem: วงแหวนประจุสม่ำเสมอรัศมี $a = 0.10\,\mathrm{m}$ มีประจุรวม $5.0\,\mathrm{nC}$ บนแกนของวงแหวน ที่ระยะ $z$ จากศูนย์กลางสนาม $E_z(z) = \dfrac{kQz}{(z^2+a^2)^{3/2}}$ มีค่ามากที่สุดเมื่อ $z$ เท่ากับกี่เมตร
+  hints:
+  - หาอนุพันธ์ $\dfrac{dE_z}{dz} = 0$ โดยใช้กฎผลคูณและกฎลูกโซ่
+  - ตัดตัวประกอบที่เป็นบวกทิ้งแล้วเหลือสมการกำลังสองของ $z^2$
+  - ตรวจว่าค่าที่ได้เป็น $z > 0$ และหน่วยเป็นเมตร
+  answer:
+    value: 0.0707
+    tolerance: 0.0008
+    unit: m
+  misconceptions:
+  - match: 0.1
+    feedback: เดาว่าสนามมากที่สุดที่ขอบวงแหวน แต่ที่ $z = a$ สนามยังไม่ถึงค่าสูงสุดจริง ต้องหาอนุพันธ์
+  solution: $\dfrac{d}{dz}\left[\dfrac{z}{(z^2+a^2)^{3/2}}\right] = \dfrac{a^2 - 2z^2}{(z^2+a^2)^{5/2}} = 0$ จึงได้ $z = a/\sqrt{2} \approx 0.0707\,\mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p016
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 5
+  type: mcq
+  stem: เหตุใดปลายแหลมของสายล่อฟ้าบนอาคารในกรุงเทพจึงช่วยดึงดูดฟ้าผ่าได้ดีกว่าผิวเรียบ
+  hints:
+  - ที่ตัวนำที่เป็นผิวสมศักย์เดียวกัน บริเวณที่มีรัศมีความโค้งเล็กมีประจุผิวหนาแน่นกว่า
+  - สนามที่ผิวจึงแรงกว่าบริเวณปลาย ทำให้เกิดการแตกตัวของอากาศได้ง่ายกว่า
+  - ตรวจว่าตัวเลือกใดพูดถึงความหนาแน่นประจุผิวที่ปลายแหลม
+  multiple: false
+  choices:
+  - id: a
+    text: เพราะประจุผิวหนาแน่นที่ปลายแหลม ทำให้สนามใกล้ปลายแรงกว่าผิวเรียบ
+    correct: true
+  - id: b
+    text: เพราะศักย์ที่ปลายแหลมมีค่าต่ำกว่าผิวเรียบเสมอ
+    correct: false
+    feedback: ตัวนำที่ต่อถึงกันมีศักย์เท่ากันทั่วทั้งตัว ศักย์ที่ปลายไม่ได้ต่ำกว่า
+  - id: c
+    text: เพราะอากาศบริเวณปลายแหลมมีความหนาแน่นต่ำกว่า
+    correct: false
+    feedback: การดึงดูดฟ้าผ่าเกี่ยวกับความเข้มสนามไฟฟ้า ไม่ได้เกี่ยวกับความหนาแน่นของอากาศโดยตรง
+  - id: d
+    text: เพราะปลายแหลมไม่มีประจุเลยจึงไม่ไปรบกวนสนาม
+    correct: false
+    feedback: ตัวนำที่มีศักย์สูงมีประจุอยู่บนผิว ปลายแหลมมีประจุผิวหนาแน่นมากที่สุดในบรรดาจุดของตัวนำ
+  solution: ตัวนำเป็นผิวสมศักย์ ปลายแหลมที่มีรัศมีความโค้งเล็กมีประจุผิวหนาแน่นกว่า จึงมีสนามแรงกว่าใกล้ผิวและช่วยให้เกิดการปล่อยประจุได้ง่าย (ตัวเลือก a)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.electricity.dipoles-potential-gradient.p017
+  topics:
+  - physics.electricity.dipoles-potential-gradient
+  difficulty: 3
+  type: mcq
+  stem: ภายในตัวนำที่อยู่ในสภาวะสมดุลไฟฟ้าสถิต สนามไฟฟ้าและศักย์ไฟฟ้ามีค่าอย่างไร
+  hints:
+  - ประจุอิสระในตัวนำจะเคลื่อนที่จนสนามภายในหักล้างกันหมด
+  - เมื่อสนามภายในเป็นศูนย์ ศักย์ภายในต้องคงที่
+  - ดังนั้นตัวนำทั้งก้อนเป็นผิวสมศักย์เดียวกัน
+  multiple: false
+  choices:
+  - id: a
+    text: สนามเป็นศูนย์ แต่ศักย์เปลี่ยนแปลงตามตำแหน่ง
+    correct: false
+    feedback: ถ้าสนามเป็นศูนย์ทุกที่ภายใน ศักย์ย่อมไม่เปลี่ยนแปลงภายในตัวนำ เพราะ $\vec E = -\nabla V$
+  - id: b
+    text: สนามเป็นศูนย์และศักย์คงที่ทั่วตัวนำ
+    correct: true
+  - id: c
+    text: สนามมีค่าคงที่ไม่เป็นศูนย์ เพื่อบังคับประจุให้อยู่บนผิว
+    correct: false
+    feedback: ถ้ามีสนามคงที่ไม่เป็นศูนย์ภายใน ประจุอิสระจะยังคงเคลื่อนที่ต่อจนสมดุล
+  - id: d
+    text: ศักย์เป็นศูนย์ทุกจุด แต่สนามมีค่าสูงที่ผิว
+    correct: false
+    feedback: ศักย์ไม่จำเป็นต้องเป็นศูนย์ ค่าศักย์ของตัวนำขึ้นกับการจัดวางและประจุทั้งหมด
+  solution: ในสมดุลไฟฟ้าสถิต สนามภายในตัวนำเป็นศูนย์ จึงไม่มีความต่างศักย์ระหว่างจุดภายใน และตัวนำทั้งก้อนเป็นผิวสมศักย์เดียวกัน (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true

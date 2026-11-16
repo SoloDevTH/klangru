@@ -1,0 +1,76 @@
+id: physics.waves.wave-functions-energy
+subject: physics
+title: { th: ฟังก์ชันคลื่นและพลังงานของคลื่น, en: Wave functions and wave energy }
+summary: ฟังก์ชันคลื่นไซน์และทิศการเคลื่อนที่ อัตราเร็วของอนุภาคที่ต่างจากอัตราเร็วคลื่น อัตราเร็วคลื่นจากสมบัติของตัวกลาง และกำลังของคลื่น
+difficulty: 7.5
+minutes: 40
+prerequisites: [physics.waves.wave-basics, physics.waves.resonance-standing-waves, physics.waves.sound, math.calculus.differentiation-rules]
+encompasses:
+  - { id: physics.waves.wave-basics, weight: 0.3 }
+  - { id: physics.waves.resonance-standing-waves, weight: 0.2 }
+  - { id: math.calculus.differentiation-rules, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: wave-snapshots.svg
+    alt: "รูปคลื่นไซน์สองเส้นบนแกนนอนที่เป็นระยะ x เส้นทึบสีน้ำเงินคือรูปคลื่นที่เวลา t เท่ากับศูนย์ มียอดคลื่นที่ x เท่ากับ 1 และอีกยอดที่ x เท่ากับ 5 ระยะระหว่างสองยอดคือ λ เส้นประสีส้มคือรูปคลื่นที่เวลา T/4 ซึ่งเลื่อนไปทางขวาหนึ่งในสี่ของ λ ยอดคลื่นย้ายจากตำแหน่งเดิมไปทางขวา และมีแอมพลิจูด A แสดงด้วยเส้นแนวตั้งทางขวา"
+    caption: "ยอดคลื่นเลื่อนไปทางขวาหนึ่งในสี่ของความยาวคลื่นในเวลาหนึ่งในสี่ของคาบ"
+  - type: worked-example
+    title: หาความยาวคลื่น ความถี่ และอัตราเร็วจากสมการคลื่น
+    problem: "คลื่นหนึ่งมีสมการ $y(x,t) = 0.05\\sin(2\\pi x - 8\\pi t)$ โดย $x$ และ $y$ เป็นเมตร และ $t$ เป็นวินาที จงหาความยาวคลื่น ความถี่ อัตราเร็วคลื่น และทิศการเคลื่อนที่"
+    steps:
+      - text: "เทียบกับ $A\\sin(kx - \\omega t)$ ได้ $A = 0.05\\,\\mathrm{m}$, $k = 2\\pi\\,\\mathrm{rad/m}$ และ $\\omega = 8\\pi\\,\\mathrm{rad/s}$"
+        why: "สัมประสิทธิ์ของ $x$ คือ $k$ และสัมประสิทธิ์ของ $t$ คือ $-\\omega$ ต้องระวังเครื่องหมาย"
+      - text: "ความยาวคลื่น $\\lambda = \\dfrac{2\\pi}{k} = \\dfrac{2\\pi}{2\\pi} = 1\\,\\mathrm{m}$"
+      - text: "ความถี่ $f = \\dfrac{\\omega}{2\\pi} = \\dfrac{8\\pi}{2\\pi} = 4\\,\\mathrm{Hz}$"
+      - text: "อัตราเร็วคลื่น $v = \\dfrac{\\omega}{k} = \\dfrac{8\\pi}{2\\pi} = 4\\,\\mathrm{m/s}$"
+        why: "ตรวจด้วย $\\lambda f = (1)(4) = 4$ ได้ค่าเดียวกัน ถ้าไม่ตรงแสดงว่าคำนวณผิดขั้น"
+      - text: "อาร์กิวเมนต์เป็น $kx - \\omega t$ จึงคลื่นเคลื่อนที่ไปทางบวกของแกน $x$"
+    answer: "ความยาวคลื่น $1\\,\\mathrm{m}$ ความถี่ $4\\,\\mathrm{Hz}$ อัตราเร็วคลื่น $4\\,\\mathrm{m/s}$ และไปทางบวกของแกน $x$"
+  - { type: check, problem: physics.waves.wave-functions-energy.p003, prompt: "ลองคิดก่อนอ่านต่อ: ดูเครื่องหมายหน้า ωt" }
+  - type: worked-example
+    title: กำลังเฉลี่ยของคลื่นบนเชือก
+    problem: "เชือกมีมวลต่อความยาว $0.010\\,\\mathrm{kg/m}$ มีคลื่นวิ่งด้วยอัตราเร็ว $20\\,\\mathrm{m/s}$ แอมพลิจูด $0.010\\,\\mathrm{m}$ และความถี่ $10\\,\\mathrm{Hz}$ กำลังเฉลี่ยที่คลื่นส่งผ่านเชือกมีค่าเท่าใด"
+    steps:
+      - text: "หาความถี่เชิงมุม $\\omega = 2\\pi f = 2\\pi(10) = 20\\pi\\,\\mathrm{rad/s}$"
+        why: "สูตรกำลังใช้ $\\omega$ ไม่ใช่ $f$ จึงต้องแปลงก่อน"
+      - text: "แทนค่าใน $P_\\mathrm{avg} = \\tfrac12\\mu v\\omega^2A^2 = \\tfrac12(0.010)(20)(20\\pi)^2(0.010)^2$"
+        why: "ทุกค่าอยู่ในหน่วย SI แล้ว ผลที่ได้จึงมีหน่วยวัตต์"
+      - text: "คำนวณ $(20\\pi)^2 \\approx 3947.8$ และ $(0.010)^2 = 1.0\\times10^{-4}$ ได้ $P \\approx 0.1 \\times 3947.8 \\times 1.0\\times10^{-4}$"
+      - text: "$P_\\mathrm{avg} \\approx 0.0395\\,\\mathrm{W}$"
+        why: "ค่านี้เท่ากับประมาณ 39.5 มิลลิวัตต์ ซึ่งเป็นกำลังของคลื่นเล็กน้อยบนเชือกบาง"
+    answer: "ประมาณ $0.039\\,\\mathrm{W}$ หรือ 39.5 mW"
+  - { type: check, problem: physics.waves.wave-functions-energy.p005, prompt: "ลองแยกอัตราเร็วคลื่นออกจากอัตราเร็วอนุภาคก่อนอ่านต่อ" }
+  - type: interactive
+    title: ดูการเคลื่อนที่ของรูปคลื่น
+    caption: "เลื่อนแถบ t เพื่อดูรูปคลื่น y = a sin(x − t) เคลื่อนที่ไปทางขวา และลองปรับ a เพื่อดูว่าแอมพลิจูดมีผลต่อยอดคลื่นอย่างไร"
+    widget:
+      kind: function-plot
+      functions: ["a\\sin(x - t)"]
+      sliders:
+        - { name: a, min: 0.5, max: 2, step: 0.1, value: 1, label: แอมพลิจูด }
+        - { name: t, min: 0, max: 6.3, step: 0.1, value: 0, label: เวลา }
+      x: [0, 12.6]
+      y: [-3, 3]
+glossary:
+  - { term: แอมพลิจูด, definition: "การกระจัดสูงสุดของตัวกลางจากตำแหน่งสมดุล มีหน่วยเดียวกับการกระจัด" }
+  - { term: เลขคลื่น, definition: "ค่า $k = 2\\pi/\\lambda$ มีหน่วย rad/m ใช้บอกว่ารูปคลื่นซ้ำกันถี่แค่ไหนในระยะทาง" }
+  - { term: ความถี่เชิงมุม, definition: "ค่า $\\omega = 2\\pi f$ มีหน่วย rad/s เป็นค่าที่ปรากฏในอาร์กิวเมนต์ของไซน์เมื่อขึ้นกับเวลา" }
+  - { term: โมดูลัสของการอัดตัว, definition: "ค่าที่บอกว่าของไหลต้านการอัดตัวได้มากเพียงใด ใช้คำนวณอัตราเร็วเสียงในของไหลร่วมกับความหนาแน่น" }
+  - { term: โมดูลัสของยัง, definition: "ค่าที่บอกความแข็งของของแข็งเมื่อถูกยืดหรือบีบตามแนวยาว ใช้คำนวณอัตราเร็วเสียงในแท่งของแข็งยาวบาง" }
+flashcards:
+  - { front: "ฟังก์ชันคลื่นไซน์ที่เคลื่อนที่ไปทางบวกของ x", back: "$y = A\\sin(kx - \\omega t)$" }
+  - { front: "เลขคลื่นกับความยาวคลื่น", back: "$k = \\dfrac{2\\pi}{\\lambda}$ มีหน่วย rad/m" }
+  - { front: "อัตราเร็วสูงสุดของอนุภาคในตัวกลาง", back: "$A\\omega$ ซึ่งไม่เท่ากับอัตราเร็วคลื่น $v = \\omega/k$" }
+  - { front: "อัตราเร็วเสียงในแก๊สอุดมคติ", back: "$v = \\sqrt{\\gamma RT/M}$ โดย $T$ เป็นเคลวิน" }
+  - { front: "กำลังเฉลี่ยของคลื่นในเชือก", back: "$P_\\mathrm{avg} = \\tfrac12\\mu v\\omega^2A^2$ (มี $\\omega^2$ และ $A^2$)" }
+references:
+  - { title: "คลื่น", url: "https://th.wikipedia.org/wiki/%E0%B8%84%E0%B8%A5%E0%B8%B7%E0%B9%88%E0%B8%99", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Wave equation", url: "https://en.wikipedia.org/wiki/Wave_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Speed of sound", url: "https://en.wikipedia.org/wiki/Speed_of_sound", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "16.2 Mathematics of Waves (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/16-2-mathematics-of-waves", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

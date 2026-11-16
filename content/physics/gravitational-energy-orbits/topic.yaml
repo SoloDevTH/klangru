@@ -1,0 +1,76 @@
+id: physics.dynamics.gravitational-energy-orbits
+subject: physics
+title: { th: พลังงานโน้มถ่วงและวงโคจร, en: Gravitational energy and orbits }
+summary: พลังงานศักย์โน้มถ่วงจากการอินทิเกรต อัตราเร็วหลุดพ้น พลังงานของวงโคจรวงกลม กฎของเคปเลอร์ แรงไทดัล และแนวคิดเบื้องต้นของไอน์สไตน์
+difficulty: 7.5
+minutes: 40
+prerequisites: [physics.dynamics.satellite-motion, physics.energy.conservation, math.calculus.definite-integral]
+encompasses:
+  - { id: physics.dynamics.satellite-motion, weight: 0.3 }
+  - { id: physics.energy.conservation, weight: 0.3 }
+  - { id: math.calculus.definite-integral, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: energy-well.svg
+    alt: "กราฟแกนนอนคือระยะ r หารด้วยรัศมีโลก แกนตั้งคือพลังงาน เส้นสีน้ำเงินคือพลังงานศักย์ U ซึ่งเป็นลบและเข้าใกล้ศูนย์เมื่อระยะไกลขึ้น เส้นสีแดงคือพลังงานรวมของวงโคจรวงกลมซึ่งเป็นครึ่งหนึ่งของ U เส้นประสีเขียวคือ E เท่ากับศูนย์ของการหลุดพ้น จุดแดงแสดงวงโคจรต่ำ 400 km"
+    caption: "พลังงานศักย์ $U = -GMm/r$ (น้ำเงิน) และพลังงานรวมของวงโคจรวงกลม $E = U/2$ (แดง) วัตถุที่มี $E$ เท่ากับศูนย์หลุดพ้นได้"
+  - type: worked-example
+    title: พลังงานที่ต้องเพิ่มเมื่อยกดาวเทียมขึ้นสูงขึ้น
+    problem: "ดาวเทียมมวล $500\\,\\mathrm{kg}$ โคจรเป็นวงกลมสูง $400\\,\\mathrm{km}$ ถูกยกไปโคจรเป็นวงกลมสูง $800\\,\\mathrm{km}$ พลังงานรวมของดาวเทียมต้องเพิ่มขึ้นกี่จูล กำหนด $GM_\\mathrm{E} = 3.986\\times10^{14}\\,\\mathrm{m^3/s^2}$ และ $R_\\mathrm{E} = 6.371\\times10^{6}\\,\\mathrm{m}$"
+    steps:
+      - text: "พลังงานรวมของวงโคจรวงกลมรัศมี $r$ คือ $E = -\\dfrac{GMm}{2r}$"
+        why: "สูตรนี้มาจากการรวมพลังงานจลน์ $K = GMm/2r$ กับพลังงานศักย์ $U = -GMm/r$"
+      - text: "วงโคจรต่ำมี $r_1 = 6.371\\times10^{6} + 0.400\\times10^{6} = 6.771\\times10^{6}\\,\\mathrm{m}$ จึงได้ $E_1 = -\\dfrac{(3.986\\times10^{14})(500)}{2(6.771\\times10^{6})} \\approx -14.72\\times10^{9}\\,\\mathrm{J}$"
+        why: "ระยะ $r$ วัดจากจุดศูนย์กลางโลก จึงต้องบวกรัศมีโลกเข้าไปก่อนแทนค่า"
+      - text: "วงโคจรสูงมี $r_2 = 7.171\\times10^{6}\\,\\mathrm{m}$ จึงได้ $E_2 = -\\dfrac{(3.986\\times10^{14})(500)}{2(7.171\\times10^{6})} \\approx -13.90\\times10^{9}\\,\\mathrm{J}$"
+      - text: "ผลต่าง $\\Delta E = E_2 - E_1 \\approx +0.82\\times10^{9}\\,\\mathrm{J}$"
+        why: "ค่าเป็นบวกหมายความว่าต้องเพิ่มพลังงาน เพราะวงโคจรที่สูงกว่ามีพลังงานรวมสูงกว่า"
+    answer: "ต้องเพิ่มพลังงานรวมประมาณ $0.82\\,\\mathrm{GJ}$ (ประมาณ 820 MJ)"
+  - { type: check, problem: physics.dynamics.gravitational-energy-orbits.p002, prompt: "ลองคิดก่อนอ่านต่อ: ดาวเทียมที่เฉียดผิวโลกจะเร็วประมาณเท่าใด" }
+  - type: figure
+    src: orbit-ellipse.svg
+    alt: "วงรีใหญ่ตรงกลาง มีดวงอาทิตย์เป็นวงกลมสีเหลืองอยู่ที่โฟกัสด้านขวา ของวงรีมีจุดใกล้ที่สุดทางขวาและจุดไกลที่สุดทางซ้าย ส่วนของวงรีทางขวาที่ระบายสีฟ้า และส่วนทางซ้ายที่ระบายสีส้ม มีพื้นที่เท่ากันและถูกกวาดในเวลาเท่ากัน"
+    caption: "ภาพเกินจริง (e = 0.5) เพื่อให้เห็นความต่าง โลกจริงมี e ประมาณ 0.017 วงโคจรเกือบเป็นวงกลม"
+  - type: worked-example
+    title: หากึ่งแกนเอกจากคาบด้วยกฎข้อที่สาม
+    problem: "ดาวเคราะห์สมมุติโคจรรอบดวงอาทิตย์ด้วยคาบ $27$ ปี จงหากึ่งแกนเอกเป็นหน่วยดาราศาสตร์ (AU) โดยโลกมีคาบ 1 ปีและกึ่งแกนเอก 1 AU"
+    steps:
+      - text: "เมื่อวัดคาบเป็นปีและกึ่งแกนเอกเป็น AU กฎข้อที่สามเขียนได้เป็น $T^2 = a^3$"
+        why: "โลกทำให้ค่าคงที่สัดส่วนเท่ากับ 1 เพราะ $1^2 = 1^3$ และดาวทุกดวงรอบดวงอาทิตย์ใช้ค่าคงที่เดียวกัน"
+      - text: "แทนค่า $T = 27$ จะได้ $a^3 = 27^2 = 729$"
+      - text: "ถอดรากที่สาม $a = 729^{1/3} = 9\\,\\mathrm{AU}$"
+        why: "ตรวจคำตอบได้โดยคำนวณ $9^3 = 729$"
+    answer: "กึ่งแกนเอกประมาณ $9\\,\\mathrm{AU}$"
+  - { type: check, problem: physics.dynamics.gravitational-energy-orbits.p007, prompt: "ลองจับคู่กฎกับข้อความก่อนอ่านต่อ" }
+  - type: interactive
+    title: เปรียบเทียบ U กับพลังงานรวมของวงโคจรวงกลม
+    caption: "ลองเลื่อนแถบ a ซึ่งแทนค่า GMm/R แล้วสังเกตว่าเส้นแดง (E) อยู่เหนือเส้นน้ำเงิน (U) เสมอ และมีค่าเป็นครึ่งหนึ่งของ U ที่ทุกระยะ"
+    widget:
+      kind: function-plot
+      functions: ["-\\frac{a}{x}", "-\\frac{a}{2x}"]
+      sliders:
+        - { name: a, min: 1, max: 10, step: 0.5, value: 4, label: GMm/R }
+      x: [1, 8]
+      y: [-10, 1]
+glossary:
+  - { term: พลังงานศักย์โน้มถ่วง, definition: "พลังงานที่ระบบวัตถุสองชิ้นที่ดึงดูดกันมีเนื่องจากระยะห่าง มีค่า $-GMm/r$ เมื่อตั้งศูนย์ที่ระยะอนันต์" }
+  - { term: อัตราเร็วหลุดพ้น, definition: "อัตราเร็วต่ำสุดที่วัตถุต้องมีที่ผิวดาวเพื่อให้พลังงานรวมไม่ต่ำกว่าศูนย์และหลุดไปได้ โดยไม่มีแรงขับเพิ่ม เช่น $\\sqrt{2GM/R}$" }
+  - { term: วงโคจรวงกลม, definition: "วงโคจรที่วัตถุมีระยะห่างจากศูนย์กลางมวลคงที่ แรงโน้มถ่วงทำหน้าที่เป็นแรงสู่ศูนย์กลาง" }
+  - { term: กฎของเคปเลอร์, definition: "กฎสามข้อที่อธิบายวงโคจรของดาวเคราะห์ ได้แก่ วงรี พื้นที่เท่ากันในเวลาเท่ากัน และ $T^2 \\propto a^3$" }
+  - { term: แรงไทดัล, definition: "ผลต่างของแรงโน้มถ่วงข้ามขนาดของวัตถุที่ถูกดึง ทำให้วัตถุยืดออกไปทางแหล่งโน้มถ่วง เป็นสาเหตุของน้ำขึ้นน้ำลง" }
+flashcards:
+  - { front: "พลังงานศักย์โน้มถ่วงที่ระยะ $r$ จากจุดศูนย์กลางมวล $M$", back: "$U = -\\dfrac{GMm}{r}$ โดยตั้งศูนย์ที่ระยะอนันต์" }
+  - { front: "พลังงานรวมของวงโคจรวงกลมรัศมี $r$", back: "$E = -\\dfrac{GMm}{2r}$ ซึ่งเป็นครึ่งหนึ่งของ $U$" }
+  - { front: "อัตราเร็วหลุดพ้นจากผิวโลก", back: "$v = \\sqrt{2GM/R} \\approx 11.2\\,\\mathrm{km/s}$" }
+  - { front: "กฎข้อที่สามของเคปเลอร์", back: "$T^2 = \\dfrac{4\\pi^2}{GM}a^3$ สำหรับวงโคจรรอบมวล $M$ เดียวกัน" }
+references:
+  - { title: "กฎการเคลื่อนที่ของดาวเคราะห์ของเค็พเพลอร์", url: "https://th.wikipedia.org/wiki/%E0%B8%81%E0%B8%8E%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%84%E0%B9%87%E0%B8%9E%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%AD%E0%B8%A3%E0%B9%8C", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Kepler's laws of planetary motion", url: "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Gravitational constant", url: "https://en.wikipedia.org/wiki/Gravitational_constant", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "13.5 Kepler's Laws of Planetary Motion (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

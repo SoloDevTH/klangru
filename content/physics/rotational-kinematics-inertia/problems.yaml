@@ -1,0 +1,407 @@
+problems:
+- id: physics.rotation.rotational-kinematics-inertia.p001
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 1
+  type: numeric
+  stem: ใบพัดลมเพดานเริ่มหมุนจากหยุดนิ่งด้วยความเร่งเชิงมุมคงที่ $\alpha = 4.0\,\mathrm{rad/s^2}$ หลังผ่านไป $5.0\,\mathrm{s}$ ความเร็วเชิงมุมมีค่ากี่ rad/s
+  hints:
+  - ความเร็วเชิงมุมเริ่มต้นเป็นศูนย์ และความเร่งเชิงมุมคงที่
+  - สมการความเร็วเชิงมุม $\omega = \omega_0 + \alpha t$
+  - แทนค่า $\omega_0 = 0$, $\alpha = 4.0$ และ $t = 5.0$
+  answer:
+    value: 20.0
+    tolerance: 0.1
+    unit: rad/s
+  misconceptions:
+  - match: 50.0
+    feedback: ใช้สูตรระยะเชิงมุม $\tfrac12\alpha t^2$ แทนความเร็วเชิงมุม ได้หน่วย rad ไม่ใช่ rad/s
+  - match: 0.8
+    feedback: หารแทนการคูณ ได้ $\alpha / t$ ซึ่งไม่ใช่ความเร็วเชิงมุม
+  solution: $\omega = \omega_0 + \alpha t = 0 + (4.0)(5.0) = 20\,\mathrm{rad/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p002
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 1
+  type: mcq
+  stem: วงแหวนและจานกลมที่มีมวลเท่ากันและรัศมีเท่ากัน หมุนรอบแกนผ่านศูนย์กลางของแต่ละชิ้น ข้อใดมีโมเมนต์ความเฉื่อยมากกว่า
+  hints:
+  - มวลส่วนใหญ่ของวงแหวนอยู่ไกลแกนหมุนทั้งหมดที่ระยะ $R$
+  - ในจานกลม มวลบางส่วนอยู่ใกล้แกนหมุนมากกว่า
+  - เปรียบเทียบ $MR^2$ กับ $\tfrac12 MR^2$
+  multiple: false
+  choices:
+  - id: a
+    text: วงแหวน
+    correct: true
+  - id: b
+    text: จานกลม
+    correct: false
+    feedback: จานมี $I = \tfrac12 MR^2$ เพราะมวลของจานกระจายอยู่ใกล้แกนมากกว่า จึงมีโมเมนต์ความเฉื่อยน้อยกว่า
+  - id: c
+    text: เท่ากันเพราะมวลและรัศมีเท่ากัน
+    correct: false
+    feedback: มวลและรัศมีเท่ากันไม่พอ การกระจายมวลตามระยะจากแกนต้องนำมาคิดด้วย
+  - id: d
+    text: ขึ้นกับความเร็วเชิงมุมของการหมุน
+    correct: false
+    feedback: โมเมนต์ความเฉื่อยขึ้นกับมวลและการกระจายของมวลรอบแกนเท่านั้น ไม่ขึ้นกับความเร็วเชิงมุม
+  solution: วงแหวนมี $I = MR^2$ ส่วนจานมี $I = \tfrac12 MR^2$ ซึ่งน้อยกว่า วงแหวนจึงมีโมเมนต์ความเฉื่อยมากกว่า (ตัวเลือก a)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p003
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 2
+  type: numeric
+  stem: จากโจทย์ความเร่งเชิงมุมคงที่ $\alpha = 4.0\,\mathrm{rad/s^2}$ เริ่มจากหยุดนิ่ง ภายใน $5.0\,\mathrm{s}$ ใบพัดหมุนไปได้กี่รอบ
+  hints:
+  - ระยะเชิงมุมที่หมุนไปในเวลา $t$ คือ $\theta = \omega_0 t + \tfrac12\alpha t^2$
+  - ได้ $\theta$ เป็นเรเดียนก่อน จากนั้นแปลงเป็นรอบโดยหาร $2\pi$
+  - หนึ่งรอบเท่ากับ $2\pi$ rad
+  answer:
+    value: 7.96
+    tolerance: 0.05
+    unit: rev
+  misconceptions:
+  - match: 50.0
+    feedback: ได้ค่าเป็นเรเดียน ต้องหารด้วย $2\pi$ เพื่อแปลงเป็นรอบ
+  solution: $\theta = \tfrac12(4.0)(5.0)^2 = 50\,\mathrm{rad}$ จึงได้ $50/(2\pi) \approx 7.96$ รอบ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p004
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 2
+  type: numeric
+  stem: แท่งยาวบางเป็นเนื้อเดียวกัน มวล $2.0\,\mathrm{kg}$ ยาว $1.2\,\mathrm{m}$ หมุนรอบแกนที่ผ่านกึ่งกลางแท่งและตั้งฉากกับแท่ง จงหาโมเมนต์ความเฉื่อยรอบแกนนี้ ตอบเป็น $\mathrm{kg\,m^2}$
+  hints:
+  - ใช้อินทิเกรต $I = \int r^2\,dm$ โดยให้ $dm = \dfrac{M}{L}\,dx$ ตลอดความยาว
+  - อินทิเกรตจาก $x = -L/2$ ถึง $x = L/2$ จะได้ค่าที่สมมาตรรอบกึ่งกลาง
+  - ได้ $I = \dfrac{ML^2}{12}$ ตรวจด้วยการแทนค่า
+  answer:
+    value: 0.24
+    tolerance: 0.01
+    unit: kg m^2
+  misconceptions:
+  - match: 0.96
+    feedback: ใช้สูตรของแกนที่ปลายแท่ง $ML^2/3$ ทั้งที่แกนนี้ผ่านกึ่งกลาง
+  solution: $I = \int_{-L/2}^{L/2} x^2\,\frac{M}{L}\,dx = \frac{ML^2}{12} = \frac{(2.0)(1.2)^2}{12} = 0.24\,\mathrm{kg\,m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p005
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 2
+  type: numeric
+  stem: จานกลมตันมวล $3.0\,\mathrm{kg}$ รัศมี $0.20\,\mathrm{m}$ หมุนรอบแกนที่ผ่านขอบจานและขนานกับแกนผ่านศูนย์กลาง จงหาโมเมนต์ความเฉื่อยรอบแกนนี้ ตอบเป็น $\mathrm{kg\,m^2}$
+  hints:
+  - หาโมเมนต์ความเฉื่อยรอบแกนที่ผ่านศูนย์กลางก่อน ได้ $\tfrac12 MR^2$
+  - ใช้ทฤษฎีบทแกนขนาน $I = I_\mathrm{cm} + Md^2$ โดย $d$ คือระยะระหว่างแกนทั้งสอง
+  - ที่ขอบจาน $d = R$
+  answer:
+    value: 0.18
+    tolerance: 0.01
+    unit: kg m^2
+  misconceptions:
+  - match: 0.06
+    feedback: ลืมบวก $Md^2$ จากทฤษฎีบทแกนขนาน ค่าที่ได้จึงเป็นของแกนผ่านศูนย์กลาง
+  solution: $I_\mathrm{cm} = \tfrac12 MR^2 = 0.06$ และ $I = I_\mathrm{cm} + MR^2 = \tfrac32 MR^2 = 0.18\,\mathrm{kg\,m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p006
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 2
+  type: order
+  stem: เรียงโมเมนต์ความเฉื่อยรอบแกนผ่านศูนย์กลางของวัตถุสามชนิดที่มีมวล $M$ และรัศมี $R$ เท่ากันจากน้อยที่สุดไปมากที่สุด ได้แก่ ทรงกลมตัน จานกลมตัน และวงแหวนบาง
+  hints:
+  - ทรงกลมตันมี $I = \tfrac25 MR^2$
+  - จานกลมตันมี $I = \tfrac12 MR^2$
+  - วงแหวนบางมี $I = MR^2$ มวลทั้งหมดอยู่ที่ระยะ $R$
+  items:
+  - ทรงกลมตัน
+  - จานกลมตัน
+  - วงแหวนบาง
+  solution: ทรงกลมตัน $\tfrac25 MR^2 = 0.4MR^2$ จานกลมตัน $0.5MR^2$ วงแหวนบาง $1.0MR^2$ ลำดับจากน้อยไปมากคือ ทรงกลม จาน วงแหวน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p007
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 2
+  type: match
+  stem: จับคู่วัตถุแต่ละชนิดกับสูตรโมเมนต์ความเฉื่อยรอบแกนผ่านศูนย์กลางมวลหรือแกนที่กำหนด
+  hints:
+  - ห่วงบางที่หมุนรอบแกนผ่านศูนย์กลางวงกลม
+  - จานกลมตันที่หมุนรอบแกนผ่านศูนย์กลาง
+  - แท่งยาวบางที่หมุนรอบแกนผ่านปลายแท่ง
+  - ทรงกลมตันที่หมุนรอบแกนผ่านศูนย์กลาง
+  pairs:
+  - left: ห่วงบางที่หมุนรอบแกนผ่านศูนย์กลาง
+    right: $I = MR^2$
+  - left: จานกลมตันที่หมุนรอบแกนผ่านศูนย์กลาง
+    right: $I = \tfrac12 MR^2$
+  - left: แท่งยาวบางที่หมุนรอบแกนผ่านปลาย
+    right: $I = \tfrac13 ML^2$
+  - left: ทรงกลมตันที่หมุนรอบแกนผ่านศูนย์กลาง
+    right: $I = \tfrac25 MR^2$
+  solution: ห่วงบาง $MR^2$ จานตัน $\tfrac12 MR^2$ แท่งบางที่แกนผ่านปลาย $\tfrac13 ML^2$ และทรงกลมตัน $\tfrac25 MR^2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p008
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 2
+  type: expression
+  stem: ทฤษฎีบทแกนขนานเขียนได้เป็น $I = I_\mathrm{cm} + Md^2$ จงจัดรูปหา $I_\mathrm{cm}$ ให้อยู่ข้างเดียว
+  hints:
+  - ต้องการแยก $I_\mathrm{cm}$ ออกจากพจน์ที่เหลือ
+  - ย้ายพจน์ $Md^2$ ไปอีกข้างของสมการ
+  - ได้ $I_\mathrm{cm} = I - Md^2$
+  answer:
+    latex: I - Md^2
+    variables:
+    - I
+    - M
+    - d
+  prefix: I_cm =
+  misconceptions:
+  - match: I + Md^2
+    feedback: การย้ายพจน์ต้องเปลี่ยนเครื่องหมาย $Md^2$ เป็นลบ
+  - match: \frac{I}{Md^2}
+    feedback: ใช้การหารแทนการลบ ทฤษฎีบทแกนขนานเป็นการบวกและลบเท่านั้น
+  solution: จากทฤษฎีบทแกนขนาน $I_\mathrm{cm} = I - Md^2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p009
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 3
+  type: numeric
+  stem: รอกดึงน้ำที่บ่อในไร่ถูกออกแรงบิดคงที่ $\tau = 12\,\mathrm{N\,m}$ ทำให้หมุนไปได้ $3$ รอบ งานที่ทอร์กทำต่อรอกนี้มีค่ากี่จูล
+  hints:
+  - งานของทอร์กคงที่คือ $W = \tau\theta$ โดย $\theta$ เป็นเรเดียน
+  - แปลงจำนวนรอบเป็นเรเดียนก่อนโดยคูณด้วย $2\pi$
+  - ผลลัพธ์มีหน่วยจูล
+  answer:
+    value: 226.2
+    tolerance: 2.0
+    unit: J
+  misconceptions:
+  - match: 36.0
+    feedback: ใช้จำนวนรอบแทนเรเดียนในสูตร $W = \tau\theta$ ต้องแปลงเป็นเรเดียนก่อน
+  solution: $\theta = 3(2\pi) = 6\pi\,\mathrm{rad}$ จึงได้ $W = \tau\theta = (12)(6\pi) \approx 226.2\,\mathrm{J}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p010
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 3
+  type: numeric
+  stem: แท่งยาวบางเป็นเนื้อเดียวกันมวล $1.0\,\mathrm{kg}$ ยาว $1.0\,\mathrm{m}$ แขวนที่ปลายด้านหนึ่งให้แกวงเป็นลูกตุ้มฟิสิคัลด้วยมุมเล็ก ๆ ใช้ $g = 9.8\,\mathrm{m/s^2}$ คาบของการแกว่งมีค่ากี่วินาที
+  hints:
+  - ลูกตุ้มฟิสิคัลมีคาบ $T = 2\pi\sqrt{\dfrac{I}{mgd}}$ โดย $d$ คือระยะจากจุดแขวนถึงจุดศูนย์กลางมวล
+  - แกนที่ปลายแท่งมี $I = \tfrac13 ML^2$ และ $d = L/2$
+  - แทนค่าแล้วจัดรูปจะได้ $T = 2\pi\sqrt{\dfrac{2L}{3g}}$
+  answer:
+    value: 1.64
+    tolerance: 0.02
+    unit: s
+  misconceptions:
+  - match: 2.01
+    feedback: ใช้สูตรลูกตุ้มอย่างง่าย $2\pi\sqrt{L/g}$ ซึ่งต้องให้มวลอยู่ที่ปลายเส้นเชือกเท่านั้น แท่งที่มีการกระจายมวลต้องใช้ $I$ จริง
+  solution: $T = 2\pi\sqrt{\dfrac{2(1.0)}{3(9.8)}} \approx 1.64\,\mathrm{s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p011
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 3
+  type: numeric
+  stem: ลูกตุ้มบิดตัวหนึ่งมีโมเมนต์ความเฉื่อย $I = 0.020\,\mathrm{kg\,m^2}$ และค่าคงที่บิด $\kappa = 0.50\,\mathrm{N\,m/rad}$ คาบการแกว่งบิดไปมาคือกี่วินาที
+  hints:
+  - ลูกตุ้มบิดมีสมการคาบ $T = 2\pi\sqrt{I/\kappa}$
+  - ตรวจหน่วยว่า $I/\kappa$ มีหน่วยเป็นวินาทียกกำลังสอง
+  - แทนค่า $I = 0.020$ และ $\kappa = 0.50$
+  answer:
+    value: 1.26
+    tolerance: 0.02
+    unit: s
+  misconceptions:
+  - match: 0.2
+    feedback: ลืมคูณด้วย $2\pi$ ค่านี้เป็นเพียงรากของ $I/\kappa$
+  solution: $T = 2\pi\sqrt{I/\kappa} = 2\pi\sqrt{0.020/0.50} = 2\pi\sqrt{0.040} \approx 1.26\,\mathrm{s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p012
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 3
+  type: expression
+  stem: ลูกตุ้มฟิสิคัลมีคาบ $T = 2\pi\sqrt{\dfrac{I}{mgd}}$ จงจัดรูปหา $I$ ให้อยู่ข้างเดียว
+  hints:
+  - ยกกำลังสองทั้งสองข้างก่อนเพื่อกำจัดรากที่สอง
+  - ย้าย $mgd$ ไปคูณข้างหนึ่ง และ $4\pi^2$ ไปหารอีกข้าง
+  - ได้ $I = \dfrac{T^2 mgd}{4\pi^2}$
+  answer:
+    latex: \frac{T^2 m g d}{4\pi^2}
+    variables:
+    - T
+    - m
+    - g
+    - d
+  prefix: I =
+  misconceptions:
+  - match: \frac{4\pi^2 m g d}{T^2}
+    feedback: กลับเศษส่วนทั้งก้อน $I$ ต้องแปรตรงกับ $T^2$ ไม่ใช่แปรผกผัน
+  - match: \frac{2\pi mgd}{T^2}
+    feedback: ตัวคูณของ $\pi$ ผิดเพราะยกกำลังสองแล้วได้ $4\pi^2$ ไม่ใช่ $2\pi$
+  solution: ยกกำลังสอง $T^2 = 4\pi^2 I/(mgd)$ จึงได้ $I = \dfrac{T^2 mgd}{4\pi^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p013
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 3
+  type: mcq
+  stem: เมื่อเทียบลูกตุ้มฟิสิคัลกับลูกตุ้มอย่างง่ายที่มีความยาวเท่ากัน เหตุใดคาบของลูกตุ้มฟิสิคัลจึงไม่จำเป็นต้องเท่ากับ $2\pi\sqrt{L/g}$
+  hints:
+  - ลูกตุ้มอย่างง่ายมีมวลทั้งหมดที่ปลาย แต่ลูกตุ้มฟิสิคัลกระจายมวลออกไป
+  - การกระจายมวลทำให้โมเมนต์ความเฉื่อยและระยะจากจุดแขวนถึงจุดศูนย์กลางมวลเปลี่ยนไป
+  - สูตรทั้งสองไม่ได้ผ่านการคิดเรื่องโมเมนต์ความเฉื่อยเท่ากัน
+  multiple: false
+  choices:
+  - id: a
+    text: เพราะแรงโน้มถ่วงที่กระทำกับลูกตุ้มฟิสิคัลมีค่าน้อยกว่า
+    correct: false
+    feedback: แรงโน้มถ่วงที่กระทำต่อมวลรวมเป็น $mg$ เท่ากัน ความต่างมาจากการกระจายมวลรอบแกน
+  - id: b
+    text: เพราะการกระจายมวลเปลี่ยน $I$ และระยะ $d$ จึงไม่ได้เท่ากับลูกตุ้มอย่างง่าย
+    correct: true
+  - id: c
+    text: เพราะลูกตุ้มฟิสิคัลไม่แกว่งด้วยมุมเล็ก
+    correct: false
+    feedback: ทั้งสองแบบใช้สูตรประมาณสำหรับมุมเล็ก การไม่เท่ากันมาจากลักษณะมวล ไม่ใช่มุมแกว่ง
+  - id: d
+    text: เพราะความเร่งโน้มถ่วงเปลี่ยนไปตามความยาวของลูกตุ้ม
+    correct: false
+    feedback: ในบริเวณผิวโลกค่า $g$ เปลี่ยนน้อยมากตามความยาวลูกตุ้ม ความต่างไม่ได้มาจากเรื่องนี้
+  solution: ลูกตุ้มอย่างง่ายมีมวลทั้งหมดที่ปลาย $I = mL^2$ และ $d = L$ แต่ลูกตุ้มฟิสิคัลมี $I$ และ $d$ ตามการกระจายมวลจริง (ตัวเลือก b)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p014
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 4
+  type: numeric
+  stem: แท่งยาว $1.0\,\mathrm{m}$ มวลรวม $2.0\,\mathrm{kg}$ ที่มีความหนาแน่นเชิงเส้น $\lambda(x) = \lambda_0\left(1 + \dfrac{x}{L}\right)$ โดย $x$ วัดจากปลายด้านหนึ่ง (ค่า $\lambda_0$ คงที่) จงหาโมเมนต์ความเฉื่อยรอบแกนที่ผ่านปลาย $x = 0$ ตั้งฉากกับแท่ง ตอบเป็น $\mathrm{kg\,m^2}$
+  hints:
+  - หามวลรวมก่อนเพื่อหา $\lambda_0$ จาก $M = \int_0^L \lambda(x)\,dx$
+  - โมเมนต์ความเฉื่อยเป็น $I = \int_0^L x^2\lambda(x)\,dx$ ไม่ใช่สูตรแท่งสม่ำเสมอ
+  - จัดรูปผลลัพธ์ในรูป $I = cML^2$ แล้วแทนค่า $c$ ที่ได้
+  answer:
+    value: 0.778
+    tolerance: 0.01
+    unit: kg m^2
+  misconceptions:
+  - match: 0.667
+    feedback: ใช้สูตรแท่งสม่ำเสมอ $ML^2/3$ ทั้งที่ความหนาแน่นไม่คงที่ ต้องอินทิเกรตด้วย $\lambda(x)$
+  solution: $M = \lambda_0\left(L + \dfrac{L}{2}\right) = \tfrac32\lambda_0 L$ จึงได้ $\lambda_0 = \dfrac{2M}{3L}$ และ $I = \int_0^L x^2\lambda(x)\,dx = \lambda_0 L^3\left(\tfrac13 + \tfrac14\right) = \tfrac{7}{12}\lambda_0 L^3 = \tfrac{7}{18}ML^2 \approx 0.778\,\mathrm{kg\,m^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p015
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 4
+  type: numeric
+  stem: วัตถุทรงกระบอกมีโมเมนต์ความเฉื่อย $I = 0.50\,\mathrm{kg\,m^2}$ เริ่มจากหยุดนิ่ง มีทอร์กคงที่ $\tau = 4.0\,\mathrm{N\,m}$ กระทำจนหมุนไปได้ $\theta = 10\,\mathrm{rad}$ จงหาความเร็วเชิงมุมหลังจากนั้น ตอบเป็น rad/s
+  hints:
+  - 'ทฤษฎีบทงาน–พลังงานของการหมุน: งานสุทธิเท่ากับการเปลี่ยนพลังงานจลน์การหมุน'
+  - งานของทอร์กคงที่คือ $W = \tau\theta$ ซึ่งจะได้เป็นพลังงานจลน์ทั้งหมด
+  - พลังงานจลน์การหมุน $K = \tfrac12 I\omega^2$ ใช้แก้หา $\omega$
+  answer:
+    value: 12.65
+    tolerance: 0.13
+    unit: rad/s
+  misconceptions:
+  - match: 8.94
+    feedback: ลืมตัว 2 ในสูตร $K = \tfrac12 I\omega^2$ เมื่อแก้หา $\omega$ ทำให้ค่าเล็กลง
+  solution: $W = \tau\theta = (4.0)(10) = 40\,\mathrm{J}$ เท่ากับ $K = \tfrac12 I\omega^2$ จึงได้ $\omega = \sqrt{2K/I} = \sqrt{2(40)/0.50} \approx 12.65\,\mathrm{rad/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p016
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 4
+  type: code
+  stem: เขียนฟังก์ชัน `disk_inertia(M, R, n)` ที่ประมาณโมเมนต์ความเฉื่อยของจานกลมตันมวล `M` รัศมี `R` รอบแกนผ่านศูนย์กลาง โดยแบ่งจานเป็น `n` วงแหวนบางรัศมีเท่า ๆ กัน แล้วรวม $r_i^2\,dm_i$ โดยใช้ค่า $r_i$ ที่กึ่งกลางของแต่ละวงแหวน และ $dm_i = \dfrac{M}{\pi R^2}\,2\pi r_i\,\Delta r$ ให้คืนค่าโมเมนต์ความเฉื่อยเป็น kg·m²
+  hints:
+  - วงแหวนที่ $i$ มีรัศมี $r_i = (i - \tfrac12)\Delta r$ โดย $\Delta r = R/n$
+  - มวลของแต่ละวงแหวนคือ $\dfrac{2M\,r_i\,\Delta r}{R^2}$ และรวม $r_i^2\,dm_i$ ทุกวง
+  - ใช้ไลบรารี `math` หรือลูปธรรมดาได้ และคืนค่าด้วย `return`
+  language: python
+  starter: |
+    def disk_inertia(M, R, n):
+        pass
+  tests: |
+    r = disk_inertia(2.0, 0.5, 2000)
+    assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+    exact = 0.5 * 2.0 * 0.5 ** 2
+    assert abs(r - exact) / exact < 0.01, f"disk_inertia(2.0, 0.5, 2000) ควรใกล้ {exact} ภายใน 1% แต่ได้ {r} (ตรวจว่าใช้ r^2 และมวลของวงแหวนถูกต้องหรือไม่)"
+    r2 = disk_inertia(1.0, 1.0, 2000)
+    assert abs(r2 - 0.5) / 0.5 < 0.01, f"disk_inertia(1.0, 1.0, 2000) ควรได้ใกล้ 0.5 แต่ได้ {r2} (ตรวจการใช้ R ในสัดส่วนของมวลและรัศมี)"
+  reference: |
+    def disk_inertia(M, R, n):
+        dr = R / n
+        total = 0.0
+        for i in range(1, n + 1):
+            r = (i - 0.5) * dr
+            dm = 2 * M * r * dr / (R * R)
+            total += r * r * dm
+        return total
+  solution: รวม $\sum_i r_i^2\,\dfrac{2M r_i \Delta r}{R^2}$ เมื่อ $n$ มากค่าจะเข้าใกล้ $\tfrac12 MR^2$ เช่น disk_inertia(2.0, 0.5, 1000) ได้ประมาณ 0.25 kg m^2
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p017
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 5
+  type: numeric
+  stem: จานกลมตันมวล $2.0\,\mathrm{kg}$ รัศมี $R = 0.25\,\mathrm{m}$ ถูกแขวนให้แกว่งเป็นลูกตุ้มฟิสิคัลรอบจุดหมุนที่ระยะ $d$ จากศูนย์กลาง (จุดหมุนอยู่บนระนาบจานและขนานกับแกนผ่านศูนย์กลาง) ระยะ $d$ ที่ทำให้คาบต่ำที่สุดมีค่ากี่เมตร ตอบเป็น m
+  hints:
+  - โมเมนต์ความเฉื่อยรอบจุดหมุนคือ $I = \tfrac12 MR^2 + Md^2$ ตามทฤษฎีบทแกนขนาน
+  - คาบ $T = 2\pi\sqrt{I/(Mgd)}$ ดังนั้น $T$ ขึ้นกับ $d$ ผ่านฟังก์ชัน $\dfrac{R^2/(2d) + d}{g}$
+  - หาค่า $d$ ที่ทำให้ $\dfrac{R^2}{2d} + d$ มีค่าต่ำที่สุดด้วยอนุพันธ์
+  answer:
+    value: 0.177
+    tolerance: 0.003
+    unit: m
+  misconceptions:
+  - match: 0.25
+    feedback: ตั้งจุดหมุนที่ขอบจาน ($d = R$) ไม่ได้ให้คาบต่ำที่สุด ต้องหาค่า $d$ จากการหาอนุพันธ์
+  solution: ให้ $f(d) = \dfrac{R^2}{2d} + d$ จะได้ $f'(d) = -\dfrac{R^2}{2d^2} + 1 = 0$ จึงได้ $d = R/\sqrt{2} \approx 0.177\,\mathrm{m}$ (ค่าต่ำสุดของ $T$ ค่านี้ไม่ขึ้นกับมวล)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.rotation.rotational-kinematics-inertia.p018
+  topics:
+  - physics.rotation.rotational-kinematics-inertia
+  difficulty: 3
+  type: numeric
+  stem: มอเตอร์ปั๊มน้ำบาดาลให้กำลัง $2.0\,\mathrm{kW}$ ที่ความเร็วรอบ $1500$ รอบต่อนาที (rpm) ทอร์กเฉลี่ยที่เพลามอเตอร์มีค่ากี่ N·m ใช้ $P = \tau\omega$ และ $1\,\mathrm{rpm} = 2\pi/60\,\mathrm{rad/s}$
+  hints:
+  - แปลงความเร็วรอบจาก rpm เป็น rad/s ก่อน
+  - ความสัมพันธ์ $P = \tau\omega$ ใช้ได้เมื่อ $\omega$ เป็น rad/s
+  - แทนค่าแล้วหาร $P$ ด้วย $\omega$
+  answer:
+    value: 12.73
+    tolerance: 0.13
+    unit: N m
+  misconceptions:
+  - match: 1.33
+    feedback: ใช้ rpm โดยตรงในสูตร $P = \tau\omega$ ต้องแปลงเป็น rad/s ก่อน
+  solution: $\omega = 1500 \times \dfrac{2\pi}{60} \approx 157.1\,\mathrm{rad/s}$ จึงได้ $\tau = P/\omega = 2000/157.1 \approx 12.73\,\mathrm{N\,m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

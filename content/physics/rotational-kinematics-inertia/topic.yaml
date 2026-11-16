@@ -1,0 +1,74 @@
+id: physics.rotation.rotational-kinematics-inertia
+subject: physics
+title: { th: จลนศาสตร์การหมุนและโมเมนต์ความเฉื่อย, en: Rotational kinematics and moment of inertia }
+summary: สมการการหมุนเมื่อความเร่งเชิงมุมคงที่ โมเมนต์ความเฉื่อยจากการอินทิเกรต ทฤษฎีบทแกนขนาน งานและกำลังของการหมุน และลูกตุ้มฟิสิคัลกับลูกตุ้มบิด
+difficulty: 8
+minutes: 40
+prerequisites: [physics.rotation.rotational-dynamics, math.calculus.integral-applications, physics.waves.shm]
+encompasses:
+  - { id: physics.rotation.rotational-dynamics, weight: 0.4 }
+  - { id: math.calculus.integral-applications, weight: 0.3 }
+  - { id: physics.waves.shm, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: integral-rod.svg
+    alt: "แท่งสีฟ้ายาวในแนวนอน มีจุดสีแดงที่กึ่งกลางเป็นจุดที่แกนหมุนตั้งฉากกับหน้ากระดาษ มีแถบสีส้มเล็ก ๆ อยู่ทางขวาของกึ่งกลางที่ระยะ x แทนชิ้นส่วนมวล dm ปลายซ้ายและขวาของแท่งอยู่ที่ x เท่ากับลบ L ส่วนสองและบวก L ส่วนสอง"
+    caption: "แท่งสม่ำเสมอ แบ่งเป็นชิ้น $dm = (M/L)\\,dx$ แล้วอินทิเกรต $\\int x^2\\,dm$ จึงได้โมเมนต์ความเฉื่อยรอบกึ่งกลาง"
+  - type: worked-example
+    title: โมเมนต์ความเฉื่อยของแท่งรอบปลาย
+    problem: "แท่งยาวสม่ำเสมอ มวล $3.0\\,\\mathrm{kg}$ ยาว $0.80\\,\\mathrm{m}$ หมุนรอบแกนที่ปลายด้านหนึ่งและตั้งฉากกับแท่ง จงหาโมเมนต์ความเฉื่อยรอบแกนนี้"
+    steps:
+      - text: "ระยะ $x$ วัดจากปลายที่เป็นแกน ได้ $dm = \\dfrac{M}{L}\\,dx$ และช่วงของการอินทิเกรตคือ $x = 0$ ถึง $x = L$"
+        why: "ตอนนี้แกนอยู่ที่ปลาย ระยะจากแกนของทุกชิ้นส่วนจึงเป็น $x$ ไม่มีค่าติดลบ"
+      - text: "$I = \\int_0^L x^2\\,\\dfrac{M}{L}\\,dx = \\dfrac{M}{L}\\cdot\\dfrac{L^3}{3} = \\dfrac{ML^2}{3}$"
+      - text: "แทนค่า $I = \\dfrac{(3.0)(0.80)^2}{3} = 0.64\\,\\mathrm{kg\\,m^2}$"
+        why: "ตรวจได้ว่าค่านี้เป็นสี่เท่าของค่าที่ได้จากแกนกึ่งกลาง $ML^2/12 = 0.16$"
+    answer: "$I = 0.64\\,\\mathrm{kg\\,m^2}$"
+  - { type: check, problem: physics.rotation.rotational-kinematics-inertia.p002, prompt: "ลองคิดก่อนอ่านต่อ: ใครมีมวลไกลแกนมากกว่ากัน" }
+  - type: worked-example
+    title: คาบของลูกตุ้มฟิสิคัลจากแท่งที่แขวนปลาย
+    problem: "แท่งยาวสม่ำเสมอ มวล $1.5\\,\\mathrm{kg}$ ยาว $0.50\\,\\mathrm{m}$ แขวนที่ปลายด้านหนึ่งแล้วแกว่งด้วยมุมเล็ก จงหาคาบ ใช้ $g = 9.8\\,\\mathrm{m/s^2}$"
+    steps:
+      - text: "โมเมนต์ความเฉื่อยรอบจุดแขวนที่ปลายคือ $I = \\tfrac13 ML^2$"
+        why: "จุดแขวนไม่ได้อยู่ที่จุดศูนย์กลางมวล จึงต้องใช้ค่าของแกนที่ปลาย"
+      - text: "ระยะจากจุดแขวนถึงจุดศูนย์กลางมวลคือ $d = L/2 = 0.25\\,\\mathrm{m}$"
+      - text: "คาบ $T = 2\\pi\\sqrt{\\dfrac{I}{mgd}} = 2\\pi\\sqrt{\\dfrac{ML^2/3}{Mg(L/2)}} = 2\\pi\\sqrt{\\dfrac{2L}{3g}}$"
+        why: "มวล $M$ ตัดออกไปได้ จึงไม่ขึ้นกับมวลของแท่ง"
+      - text: "แทนค่า $T = 2\\pi\\sqrt{\\dfrac{2(0.50)}{3(9.8)}} \\approx 1.16\\,\\mathrm{s}$"
+    answer: "คาบประมาณ $1.16\\,\\mathrm{s}$"
+  - type: figure
+    src: physical-pendulum.svg
+    alt: "แท่งเอียงจากจุดแขวน O ที่ปลายบนของแท่ง มีจุดสีน้ำเงิน C อยู่ตรงกลางแท่งเป็นจุดศูนย์กลางมวล ระยะ d คือระยะจาก O ถึง C มีลูกศรแรงโน้มถ่วง mg ชี้ลงที่จุด C และมีมุม θ เล็กระหว่างแท่งกับเส้นดิ่ง"
+    caption: "ลูกตุ้มฟิสิคัล: แรงโน้มถ่วงที่จุด C ให้ทอร์กรอบจุดแขวน O ขนาด $mgd\\sin\\theta$"
+  - { type: check, problem: physics.rotation.rotational-kinematics-inertia.p013, prompt: "ลองตอบก่อนอ่านต่อ: ทำไมลูกตุ้มฟิสิคัลไม่เท่ากับลูกตุ้มอย่างง่าย" }
+  - type: interactive
+    title: โมเมนต์ความเฉื่อยเปลี่ยนไปเมื่อเลื่อนแกนขนาน
+    caption: "กราฟแสดง I หารด้วย $ML^2$ เมื่อแกนขนานกับแท่งและห่างจากกึ่งกลาง $x$ (หน่วยความยาว L) จากทฤษฎีบทแกนขนาน $I = \\tfrac1{12}ML^2 + Md^2$ ที่ $x = 0$ ได้ค่าต่ำสุด และเพิ่มขึ้นเร็วเมื่อแกนเลื่อนออกไป"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{12} + x^2"]
+      x: [-1, 1]
+      y: [0, 1.2]
+glossary:
+  - { term: โมเมนต์ความเฉื่อย, definition: "ค่าที่บอกความต้านทานการเปลี่ยนความเร็วเชิงมุมของวัตถุรอบแกนหนึ่ง คำนวณได้จาก $I = \\int r^2\\,dm$" }
+  - { term: ทฤษฎีบทแกนขนาน, definition: "ความสัมพันธ์ $I = I_\\mathrm{cm} + Md^2$ ที่ใช้หาโมเมนต์ความเฉื่อยรอบแกนที่ขนานกับแกนผ่านจุดศูนย์กลางมวล" }
+  - { term: ลูกตุ้มฟิสิคัล, definition: "วัตถุแข็งที่แกว่งรอบจุดแขวนซึ่งไม่ตรงกับจุดศูนย์กลางมวล คาบขึ้นกับ $I$ รอบจุดแขวนและระยะ $d$" }
+  - { term: ค่าคงที่บิด, definition: "สัดส่วนระหว่างทอร์กกู้คืนกับมุมบิดของลวดหรือเส้นใย หน่วย N m/rad" }
+  - { term: ความเร่งเชิงมุม, definition: "อัตราการเปลี่ยนแปลงความเร็วเชิงมุมต่อเวลา หน่วย rad/s²" }
+flashcards:
+  - { front: "ความเร็วเชิงมุมเมื่อความเร่งเชิงมุมคงที่", back: "$\\omega = \\omega_0 + \\alpha t$" }
+  - { front: "โมเมนต์ความเฉื่อยของแท่งสม่ำเสมอรอบกึ่งกลางและรอบปลาย", back: "$ML^2/12$ และ $ML^2/3$" }
+  - { front: "ทฤษฎีบทแกนขนาน", back: "$I = I_\\mathrm{cm} + Md^2$" }
+  - { front: "คาบของลูกตุ้มฟิสิคัล", back: "$T = 2\\pi\\sqrt{I/(mgd)}$ โดย $I$ วัดรอบจุดแขวน" }
+  - { front: "งานของทอร์กคงที่", back: "$W = \\tau\\theta$ โดย $\\theta$ เป็นเรเดียน" }
+references:
+  - { title: "โมเมนต์ความเฉื่อย", url: "https://th.wikipedia.org/wiki/%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%89%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A2", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Moment of inertia", url: "https://en.wikipedia.org/wiki/Moment_of_inertia", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Physical pendulum", url: "https://en.wikipedia.org/wiki/Physical_pendulum", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "10.5 Calculating Moments of Inertia (University Physics Volume 1, OpenStax)", url: "https://openstax.org/books/university-physics-volume-1/pages/10-5-calculating-moments-of-inertia", source: openstax, lang: en, license: CC-BY-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

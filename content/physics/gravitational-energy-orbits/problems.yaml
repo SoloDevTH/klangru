@@ -1,0 +1,387 @@
+problems:
+- id: physics.dynamics.gravitational-energy-orbits.p001
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 2
+  type: numeric
+  stem: จรวดขึ้นจากผิวโลกต้องมีอัตราเร็วต่ำสุดเท่าใดจึงหลุดจากแรงโน้มถ่วงของโลกได้ โดยไม่คิดแรงต้านอากาศและไม่มีแรงขับเพิ่มหลังปล่อย กำหนด $G = 6.674\times10^{-11}\,\mathrm{N\,m^2/kg^2}$, $M_\mathrm{E} = 5.972\times10^{24}\,\mathrm{kg}$ และ $R_\mathrm{E} = 6.371\times10^{6}\,\mathrm{m}$ ตอบเป็น $\mathrm{km/s}$
+  hints:
+  - พลังงานรวมที่หลุดพ้นได้ต้องไม่ต่ำกว่าศูนย์ เพราะพลังงานศักย์ที่ระยะอนันต์เป็นศูนย์
+  - ที่ผิวโลก $U = -\dfrac{GMm}{R}$ และพลังงานจลน์ต้องมีค่าเท่ากับ $\dfrac{GMm}{R}$ พอดี
+  - จัดรูป $v = \sqrt{\dfrac{2GM}{R}}$ แล้วแทนค่าเป็นหน่วย m/s ก่อนแปลงเป็น km/s
+  answer:
+    value: 11.186
+    tolerance: 0.02
+    unit: km/s
+  misconceptions:
+  - match: 7.91
+    feedback: ได้ค่าอัตราเร็ววงโคจรวงกลมที่ผิวโลก $\sqrt{GM/R}$ ซึ่งขาดตัว 2 ในราก อัตราเร็วหลุดพ้นต้องมีตัวนี้
+  - match: 15.82
+    feedback: ใส่ 2 นอกรากแทนที่จะอยู่ใน $\sqrt{2GM/R}$ ทำให้ค่าสูงเกินจริงเป็นสองเท่า
+  solution: $v_\mathrm{esc} = \sqrt{\dfrac{2GM_\mathrm{E}}{R_\mathrm{E}}} = \sqrt{\dfrac{2(6.674\times10^{-11})(5.972\times10^{24})}{6.371\times10^{6}}} \approx 1.119e+04\,\mathrm{m/s} = 11.19\,\mathrm{km/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p002
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 1
+  type: numeric
+  stem: ดาวเทียมที่โคจรเป็นวงกลมเฉียดผิวโลกมาก ๆ มีอัตราเร็วประมาณเท่าใด กำหนด $g = 9.8\,\mathrm{m/s^2}$ และ $R_\mathrm{E} = 6.371\times10^{6}\,\mathrm{m}$ ตอบเป็น $\mathrm{km/s}$
+  hints:
+  - แรงโน้มถ่วงทำหน้าที่เป็นแรงสู่ศูนย์กลาง คือ $mg = \dfrac{mv^2}{R}$
+  - ตัดมวล $m$ ออกแล้วจัดรูปหา $v^2$
+  - ได้ $v = \sqrt{gR}$ จากนั้นแทนค่าและแปลงเป็น km/s
+  answer:
+    value: 7.902
+    tolerance: 0.02
+    unit: km/s
+  misconceptions:
+  - match: 7901.6
+    feedback: ค่าที่ได้เป็นเมตรต่อวินาที (ประมาณ 7901 m/s) ต้องหารด้วย 1000 เพื่อตอบเป็นกิโลเมตรต่อวินาที
+  solution: แรงสู่ศูนย์กลางคือแรงโน้มถ่วง $mg = mv^2/R$ จึงได้ $v = \sqrt{gR} = \sqrt{9.8 \times 6.371\times10^{6}} \approx 7902\,\mathrm{m/s} = 7.90\,\mathrm{km/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p003
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 2
+  type: numeric
+  stem: ดาวเทียมมวล $1000\,\mathrm{kg}$ โคจรอยู่สูง $400\,\mathrm{km}$ เหนือผิวโลก พลังงานศักย์โน้มถ่วงของดาวเทียมมีค่าเท่าใด (กำหนดให้ $U = 0$ ที่ระยะอนันต์) ตอบเป็น $\mathrm{GJ}$ (กิกะจูล) ใช้ค่า $GM_\mathrm{E} = 3.986\times10^{14}\,\mathrm{m^3/s^2}$
+  hints:
+  - ระยะจากจุดศูนย์กลางโลกถึงดาวเทียมไม่ใช่ $400\,\mathrm{km}$ แต่ต้องบวกด้วยรัศมีโลก
+  - ใช้สูตร $U = -\dfrac{GMm}{r}$ โดย $r = R_\mathrm{E} + h$
+  - แทนค่า $GM$, $m$ และ $r$ เป็นหน่วย SI แล้วหารด้วย $10^9$ เพื่อให้ได้ GJ
+  answer:
+    value: -58.87
+    tolerance: 0.6
+    unit: GJ
+  misconceptions:
+  - match: -3.92
+    feedback: ใช้ $mgh$ ซึ่งวัดจากผิวโลกและเป็นการประมาณใกล้ผิวโลก ไม่ได้ตั้งศูนย์ที่ระยะอนันต์ ค่า $U$ ที่ 400 km จึงต่างจากนี้มาก
+  - match: -62.56
+    feedback: ลืมเพิ่มความสูงของวงโคจร แล้วใช้ $r = R_\mathrm{E}$ ทำให้ค่าลึกเกินจริง
+  solution: $r = R_\mathrm{E} + h = 6.771\times10^{6}\,\mathrm{m}$ และ $U = -\dfrac{(3.986\times10^{14})(1000)}{6.771\times10^{6}} \approx -5.887e+10\,\mathrm{J} = -58.87\,\mathrm{GJ}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p004
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 2
+  type: numeric
+  stem: จากดาวเทียมมวล $1000\,\mathrm{kg}$ ในข้อก่อนหน้า (สูง $400\,\mathrm{km}$ โคจรเป็นวงกลม) พลังงานรวม $E = K + U$ ของดาวเทียมมีค่าเท่าใด ตอบเป็น $\mathrm{GJ}$
+  hints:
+  - ในวงโคจรวงกลม แรงโน้มถ่วงเป็นแรงสู่ศูนย์กลางทำให้ $K = \dfrac{GMm}{2r}$
+  - รวมกับ $U = -\dfrac{GMm}{r}$ แล้วได้พลังงานรวมในรูปเดียวกับสูตร $E = -\dfrac{GMm}{2r}$
+  - แทนค่า $r = 6.771\times10^{6}\,\mathrm{m}$ แล้วคำนวณเป็น GJ โดยเก็บเครื่องหมายลบไว้
+  answer:
+    value: -29.43
+    tolerance: 0.3
+    unit: GJ
+  misconceptions:
+  - match: -58.87
+    feedback: นั่นคือ $U$ ไม่ใช่ $E$ ลืมว่าพลังงานจลน์มีค่าเป็นครึ่งหนึ่งของค่าสัมบูรณ์ของ $U$
+  - match: 29.43
+    feedback: ลืมเครื่องหมายลบ พลังงานรวมของวงโคจรที่ผูกไว้กับโลกเป็นลบ
+  solution: $K = -\tfrac12 U$ จึงได้ $E = U + K = \tfrac12 U = -\dfrac{GMm}{2r} = -\dfrac{(3.986\times10^{14})(1000)}{2(6.771\times10^{6})} \approx -29.43\,\mathrm{GJ}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p005
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 2
+  type: expression
+  stem: จากวงโคจรวงกลม $v^2 = \dfrac{GM}{r}$ จงจัดรูปหา $r$ ให้อยู่ข้างเดียว
+  hints:
+  - ต้องการให้ $r$ อยู่ในตัวเศษหรือตัวส่วน ดูว่า $r$ อยู่ที่ใดในสมการเดิม
+  - คูณทั้งสองข้างด้วย $r$ แล้วหารทั้งสองข้างด้วย $v^2$
+  - ได้ $r = \dfrac{GM}{v^2}$ ตรวจว่าหน่วยของทั้งสองข้างเป็น m เมื่อ $GM$ มีหน่วย $\mathrm{m^3/s^2}$
+  answer:
+    latex: \frac{GM}{v^2}
+    variables:
+    - G
+    - M
+    - v
+  prefix: r =
+  misconceptions:
+  - match: \frac{v^2}{GM}
+    feedback: กลับเศษส่วนทั้งก้อน $r$ ควรอยู่ในตัวเศษ เพราะ $r$ เป็นผลหารของ $GM$ ด้วย $v^2$
+  - match: \frac{GM}{v}
+    feedback: ลืมยกกำลังสองของ $v$ เมื่อย้ายข้าม ต้องหารด้วย $v^2$ ไม่ใช่ $v$
+  solution: คูณสองข้างด้วย $r$ ได้ $rv^2 = GM$ แล้วหารด้วย $v^2$ จะได้ $r = \dfrac{GM}{v^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p006
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 2
+  type: order
+  stem: เรียงพลังงานรวม $E$ ของวัตถุในสามกรณีต่อไปนี้จากต่ำที่สุดไปสูงที่สุด (ก) วงโคจรวงกลมรัศมีเล็ก (ข) วงโคจรวงกลมรัศมีใหญ่กว่า (ค) วัตถุที่หลุดพ้นไปได้ ซึ่งมี $E = 0$
+  hints:
+  - ในวงโคจรวงกลม $E = -\dfrac{GMm}{2r}$ ดังนั้นรัศมียิ่งเล็ก $E$ ยิ่งลบมาก
+  - วัตถุหลุดพ้นมี $E$ เท่ากับศูนย์ เป็นค่าสูงกว่าการโคจรที่ถูกผูกไว้ทั้งหมด
+  - เรียงจากรัศมีเล็กไปใหญ่แล้วจบที่กรณีหลุดพ้น
+  items:
+  - วงโคจรวงกลมรัศมีเล็ก
+  - วงโคจรวงกลมรัศมีใหญ่กว่า
+  - วัตถุที่หลุดพ้นไปได้ (E = 0)
+  solution: วงโคจรวงกลม $E = -\dfrac{GMm}{2r}$ เมื่อ $r$ เล็ก $E$ ลบมาก จึงต่ำกว่า วงโคจรรัศมีใหญ่มี $E$ ลบน้อยกว่า และหลุดพ้นมี $E = 0$ ลำดับจากต่ำไปสูงคือ (ก), (ข), (ค)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p007
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 1
+  type: match
+  stem: จับคู่กฎของเคปเลอร์แต่ละข้อกับข้อความที่ตรงกับกฎนั้น
+  hints:
+  - กฎข้อที่หนึ่งพูดถึงรูปร่างของวงโคจร
+  - กฎข้อที่สองพูดถึงอัตราการกวาดพื้นที่
+  - กฎข้อที่สามพูดถึงความสัมพันธ์ระหว่างคาบกับระยะทาง
+  pairs:
+  - left: กฎข้อที่หนึ่ง
+    right: วงโคจรเป็นวงรี และดวงอาทิตย์อยู่ที่จุดโฟกัสจุดหนึ่ง
+  - left: กฎข้อที่สอง
+    right: เส้นที่ลากจากดาวไปดวงอาทิตย์กวาดพื้นที่เท่ากันในเวลาเท่ากัน
+  - left: กฎข้อที่สาม
+    right: กำลังสองของคาบแปรผันตรงกับกำลังสามของกึ่งแกนเอก
+  solution: กฎข้อที่หนึ่ง (วงรี) กฎข้อที่สอง (พื้นที่เท่ากันในเวลาเท่ากัน) และกฎข้อที่สาม ($T^2 \propto a^3$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p008
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 3
+  type: numeric
+  stem: ดาวเคราะห์น้อยดวงหนึ่งโคจรรอบดวงอาทิตย์ด้วยคาบ $4$ ปี กึ่งแกนเอกของวงโคจรมีค่ากี่หน่วยดาราศาสตร์ (AU) โดย $1\,\mathrm{AU}$ คือกึ่งแกนเอกของโลก ตอบเป็น $\mathrm{AU}$
+  hints:
+  - กฎข้อที่สามเขียนได้ $T^2 \propto a^3$ โดยมีค่าคงที่สัดส่วนเดียวกันสำหรับวัตถุทุกดวงรอบดวงอาทิตย์
+  - เมื่อวัด $T$ เป็นปี และ $a$ เป็น AU ค่าคงที่สัดส่วนคือ $1$ พอดี ไม่ต้องใช้ค่า $G$
+  - ดังนั้น $a^3 = T^2$ จึงได้ $a = T^{2/3}$
+  answer:
+    value: 2.52
+    tolerance: 0.03
+    unit: AU
+  misconceptions:
+  - match: 1.587
+    feedback: ถอดรากที่สามของ $T$ โดยตรง ได้ $a = T^{1/3}$ แต่สมการคือ $a^3 = T^2$ ต้องยกกำลัง $2/3$
+  - match: 16
+    feedback: ยกกำลังสองให้ $a$ แทนที่จะเป็น $a^3 = T^2$ ทำให้ได้ค่าสูงเกินจริงมาก
+  solution: $a^3 = T^2 = 4^2 = 16$ จึงได้ $a = 16^{1/3} = 4^{2/3} \approx 2.520\,\mathrm{AU}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p009
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 4
+  type: numeric
+  stem: โลกโคจรรอบดวงอาทิตย์เป็นวงรีมีกึ่งแกนเอก $a = 1.496\times10^{11}\,\mathrm{m}$ และความเยื้องศูนย์กลาง $e = 0.0167$ จงหาอัตราเร็วของโลกที่จุดใกล้ดวงอาทิตย์ที่สุด (perihelion) ตอบเป็น $\mathrm{km/s}$ กำหนด $GM_\mathrm{S} = 1.327\times10^{20}\,\mathrm{m^3/s^2}$
+  hints:
+  - ระยะที่ใกล้ดวงอาทิตย์ที่สุดคือ $r_p = a(1-e)$
+  - พลังงานรวมต่อหน่วยมวลของวงรีเท่ากับ $\tfrac12 v^2 - \dfrac{GM}{r} = -\dfrac{GM}{2a}$ ซึ่งคงที่ตลอดวงโคจร
+  - แก้สมการพลังงานหา $v_p$ จากนั้นแปลงเป็น km/s
+  answer:
+    value: 30.28
+    tolerance: 0.3
+    unit: km/s
+  misconceptions:
+  - match: 29.78
+    feedback: ใช้อัตราเร็ววงโคจรวงกลมที่รัศมี $a$ แทนค่าที่จุดใกล้ที่สุด ซึ่งโลกเร็วกว่านั้นเพราะอยู่ใกล้ดวงอาทิตย์มากขึ้น
+  solution: $r_p = a(1-e) \approx 1.4710e+11\,\mathrm{m}$ แล้วจาก $\tfrac12 v_p^2 = GM(\tfrac{1}{r_p} - \tfrac{1}{2a})$ ได้ $v_p \approx 30.28\,\mathrm{km/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p010
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 4
+  type: numeric
+  stem: โลกมีอัตราเร็ว $30.29\,\mathrm{km/s}$ ที่จุดใกล้ดวงอาทิตย์ที่สุด ซึ่งห่าง $r_p = 1.471\times10^{11}\,\mathrm{m}$ และห่าง $r_a = 1.521\times10^{11}\,\mathrm{m}$ ที่จุดไกลที่สุด จงหาอัตราเร็วที่จุดไกลที่สุด ตอบเป็น $\mathrm{km/s}$
+  hints:
+  - การอนุรักษ์โมเมนตัมเชิงมุม $L = mvr$ ให้ $v_p r_p = v_a r_a$ โดยตรง
+  - กฎพื้นที่เท่ากันของเคปเลอร์เป็นผลจากข้อนี้
+  - จัดสมการหา $v_a$ จากนั้นแทนค่าและแปลงหน่วย
+  answer:
+    value: 29.29
+    tolerance: 0.03
+    unit: km/s
+  misconceptions:
+  - match: 30.29
+    feedback: ถือว่าอัตราเร็วคงที่ตลอดวงโคจร ซึ่งขัดกับการอนุรักษ์โมเมนตัมเชิงมุม
+  - match: 31.32
+    feedback: ใส่อัตราส่วน $r$ กลับด้าน ต้องได้ $v_a = v_p r_p / r_a$ ซึ่งจะน้อยกว่า $v_p$ เพราะ $r_a$ ใหญ่กว่า
+  solution: จาก $v_p r_p = v_a r_a$ ได้ $v_a = v_p \dfrac{r_p}{r_a} = 30.29 \times \dfrac{1.471}{1.521} \approx 29.29\,\mathrm{km/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p011
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 4
+  type: numeric
+  stem: นักเรียนศึกษาน้ำขึ้นน้ำลงที่ชายฝั่งอ่าวไทย ดวงจันทร์มีมวล $7.342\times10^{22}\,\mathrm{kg}$ อยู่ห่างจากโลก $3.844\times10^{8}\,\mathrm{m}$ จงประมาณความเร่งไทดัลที่ผิวโลกด้านที่หันเข้าหาดวงจันทร์เทียบกับจุดศูนย์กลางโลก ตอบเป็น $\mu\mathrm{m/s^2}$ (ไมโครเมตรต่อวินาทียกกำลังสอง) โดยใช้ $R_\mathrm{E} = 6.371\times10^{6}\,\mathrm{m}$ และ $G = 6.674\times10^{-11}\,\mathrm{N\,m^2/kg^2}$
+  hints:
+  - ความเร่งจากดวงจันทร์ที่ระยะ $r$ คือ $a(r) = \dfrac{GM_\mathrm{m}}{r^2}$
+  - ผลต่างความเร่งระหว่างผิวด้านใกล้กับจุดศูนย์กลางโดยประมาณ $\approx \left|\dfrac{da}{dr}\right|\Delta r$ โดย $\Delta r = R_\mathrm{E}$
+  - ทำอนุพันธ์ $\dfrac{da}{dr} = -\dfrac{2GM_\mathrm{m}}{r^3}$ แล้วแทนค่า $r = d$ และหน่วย $\mu\mathrm{m/s^2} = 10^{6}\,\mathrm{m/s^2}$
+  answer:
+    value: 1.1
+    tolerance: 0.02
+    unit: μm/s^2
+  misconceptions:
+  - match: 0.55
+    feedback: ลืมตัวคูณ 2 ในสูตร $\left|\dfrac{da}{dr}\right| = \dfrac{2GM}{r^3}$ ทำให้ค่าเล็กลงครึ่งหนึ่ง
+  - match: 2.2
+    feedback: ใช้ระยะต่างเป็น $2R_\mathrm{E}$ แทน $R_\mathrm{E}$ ทำให้ค่าเป็นสองเท่า ความเร่งที่ผิวโลกใช้ $\Delta r = R_\mathrm{E}$ จากจุดศูนย์กลาง
+  solution: $\Delta a \approx \dfrac{2GM_\mathrm{m}R_\mathrm{E}}{d^3} = \dfrac{2(6.674\times10^{-11})(7.342\times10^{22})(6.371\times10^{6})}{(3.844\times10^{8})^3} \approx 1.099e-06\,\mathrm{m/s^2} = 1.10\,\mu\mathrm{m/s^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p012
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 3
+  type: mcq
+  stem: เหตุใดน้ำขึ้นน้ำลงจึงเกิดขึ้นสองครั้งต่อวันโดยประมาณทั้งที่มีดวงจันทร์ด้านเดียว
+  hints:
+  - ลองนึกถึงผลต่างของแรงดึงดูดที่กระทำกับโลกทั้งสามตำแหน่ง ได้แก่ ด้านใกล้ จุดกลาง และด้านไกล
+  - แรงดึงดูดด้านไกลอ่อนกว่าจุดกลาง ทำให้น้ำด้านไกลยังคงนูนออกไปด้วย
+  - น้ำนูนทั้งสองด้านของโลก แต่โลกหมุนผ่านทั้งสองยอดในหนึ่งวันโดยประมาณ
+  multiple: false
+  choices:
+  - id: a
+    text: เพราะแรงไทดัลจากผลต่างของแรงดึงดูดทำให้มีการนูนสองยอดตรงข้ามกันของโลก
+    correct: true
+  - id: b
+    text: เพราะดวงจันทร์ดึงน้ำทั้งสองด้านด้วยแรงเท่ากัน จึงไม่มีผลต่างและไม่เกิดการนูน
+    correct: false
+    feedback: ถ้าแรงเท่ากันทุกจุด โลกจะเคลื่อนที่ไปทั้งก้อนโดยไม่มีน้ำขึ้นน้ำลง สิ่งที่สำคัญคือผลต่างของแรง
+  - id: c
+    text: เพราะโลกหมุนรอบดวงจันทร์ทุก 12 ชั่วโมงโดยตรง
+    correct: false
+    feedback: โลกและดวงจันทร์โคจรรอบจุดศูนย์กลางมวลร่วมกัน ไม่ได้หมุนรอบดวงจันทร์โดยตรง
+  - id: d
+    text: เพราะด้านที่หันเข้าหาดวงจันทร์ใกล้กว่าเท่านั้น จึงมีน้ำนูนขึ้นด้านเดียว
+    correct: false
+    feedback: ด้านไกลก็นูนด้วย เพราะจุดกลางโลกถูกดึงเข้าหาดวงจันทร์มากกว่าน้ำด้านไกล ทำให้น้ำด้านไกลเหลืออยู่ข้างหลัง
+  solution: ผลต่างของแรงไทดัลทำให้เกิดการนูนสองยอดตรงข้ามกัน โลกหมุนผ่านทั้งสองยอดภายในราว 24 ชั่วโมง จึงเกิดน้ำขึ้นสองครั้งต่อวันโดยประมาณ (ตัวเลือก a)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p013
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 5
+  type: numeric
+  stem: ถ้าบีบมวลโลกทั้งหมดให้เป็นหลุมดำ รัศมีขอบฟ้าเหตุการณ์ (รัศมีชวาร์ซชิลด์ $r_s = \dfrac{2GM}{c^2}$) จะมีค่ากี่มิลลิเมตร กำหนด $G = 6.674\times10^{-11}\,\mathrm{N\,m^2/kg^2}$, $M = 5.972\times10^{24}\,\mathrm{kg}$ และ $c = 2.998\times10^{8}\,\mathrm{m/s}$ ตอบเป็น $\mathrm{mm}$
+  hints:
+  - ใช้สูตร $r_s = \dfrac{2GM}{c^2}$ ซึ่งมีตัวเลข 2 อยู่ในตัวเศษ
+  - แปลงค่าที่ได้จากเมตรเป็นมิลลิเมตรโดยคูณด้วย $1000$
+  - ผลลัพธ์เป็นระยะไม่กี่มิลลิเมตร ซึ่งเล็กมากเทียบกับรัศมีโลกประมาณ $6371\,\mathrm{km}$
+  answer:
+    value: 8.87
+    tolerance: 0.02
+    unit: mm
+  misconceptions:
+  - match: 4.43
+    feedback: ลืมตัวเลข 2 ในสูตร $r_s = 2GM/c^2$ ผลที่ได้จึงมีค่าเพียงครึ่งเดียว
+  solution: $r_s = \dfrac{2(6.674\times10^{-11})(5.972\times10^{24})}{(2.998\times10^{8})^2} \approx 8.869e-03\,\mathrm{m} = 8.87\,\mathrm{mm}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p014
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 5
+  type: numeric
+  stem: ดาวเทียมสื่อสารมวล $1000\,\mathrm{kg}$ โคจรเป็นวงกลมสูง $400\,\mathrm{km}$ ต้องถูกยกขึ้นไปอยู่ในวงโคจรวงกลมค้างฟ้าที่รัศมี $r = 4.2164\times10^{7}\,\mathrm{m}$ (วัดจากจุดศูนย์กลางโลก) พลังงานรวมของดาวเทียมเพิ่มขึ้นกี่ GJ ใช้ $GM_\mathrm{E} = 3.986\times10^{14}\,\mathrm{m^3/s^2}$ และ $R_\mathrm{E} = 6.371\times10^{6}\,\mathrm{m}$
+  hints:
+  - พลังงานรวมของวงโคจรวงกลมคือ $E = -\dfrac{GMm}{2r}$ ดังนั้นต้องหาผลต่าง $E_\mathrm{geo} - E_\mathrm{low}$
+  - ระยะของวงโคจรต่ำคือ $r = R_\mathrm{E} + 400\,\mathrm{km}$ อย่าลืมบวกรัศมีโลก
+  - ได้ $\Delta E = \dfrac{GMm}{2}\left(\dfrac{1}{r_\mathrm{low}} - \dfrac{1}{r_\mathrm{geo}}\right)$ แล้วแปลงเป็น GJ
+  answer:
+    value: 24.71
+    tolerance: 0.25
+    unit: GJ
+  misconceptions:
+  - match: 49.41
+    feedback: ใช้ผลต่างของ $U$ แทนผลต่างของ $E$ ลืมว่า $E = \tfrac12 U$ สำหรับวงโคจรวงกลม
+  - match: 26.55
+    feedback: ใช้รัศมีวงโคจรต่ำเป็น $R_\mathrm{E}$ โดยไม่บวกความสูง 400 km
+  solution: $r_\mathrm{low} = 6.771\times10^{6}\,\mathrm{m}$ จึงได้ $\Delta E = \dfrac{GMm}{2}\left(\dfrac{1}{r_\mathrm{low}} - \dfrac{1}{r_\mathrm{geo}}\right) \approx 2.47\times10^{10}\,\mathrm{J} = 24.71\,\mathrm{GJ}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p015
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 3
+  type: numeric
+  stem: ดาวเทียมสื่อสารค้างฟ้าเหนือประเทศไทยโคจรเป็นวงกลมที่รัศมี $r = 4.2164\times10^{7}\,\mathrm{m}$ วัดจากจุดศูนย์กลางโลก จงหาคาบการโคจร ตอบเป็นชั่วโมง ใช้ $GM_\mathrm{E} = 3.986\times10^{14}\,\mathrm{m^3/s^2}$
+  hints:
+  - สูตรของคาบวงโคจรวงกลมคือ $T = 2\pi\sqrt{\dfrac{r^3}{GM}}$
+  - ระยะ $r$ ในสูตรวัดจากจุดศูนย์กลางโลก ไม่ใช่จากผิวโลก
+  - คำนวณเป็นวินาทีแล้วหารด้วย $3600$ เพื่อแปลงเป็นชั่วโมง
+  answer:
+    value: 23.93
+    tolerance: 0.05
+    unit: h
+  misconceptions:
+  - match: 18.71
+    feedback: ใส่ความสูงเหนือผิวโลก $35786\,\mathrm{km}$ แทนรัศมีจากศูนย์กลาง ต้องบวกรัศมีโลกเข้าไปด้วย
+  solution: $T = 2\pi\sqrt{\dfrac{(4.2164\times10^{7})^3}{3.986\times10^{14}}} \approx 86165\,\mathrm{s} = 23.93\,\mathrm{h}$ ซึ่งใกล้เคียงกับคาบการหมุนของโลก (23 ชั่วโมง 56 นาที)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p016
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 2
+  type: code
+  stem: เขียนฟังก์ชัน `period(a, GM)` ที่คืนค่าคาบ $T$ (หน่วยวินาที) ของวงโคจรวงกลมรัศมี `a` เมตร เมื่อกำหนดค่า $GM$ ของวัตถุกลาง ตามสูตร $T = 2\pi\sqrt{a^3/GM}$ ใช้ไลบรารี `math` ได้
+  hints:
+  - ต้องใช้ `math.sqrt` และ `math.pi` จากไลบรารี `math` และคืนค่าด้วย `return`
+  - คาบมีหน่วยวินาที ตรวจว่าค่า $a^3$ ถูกยกกำลังสาม ไม่ใช่กำลังสอง
+  - เขียนสูตรเป็น `2 * math.pi * math.sqrt(a ** 3 / GM)`
+  language: python
+  starter: |
+    import math
+
+    def period(a, GM):
+        pass
+  tests: |
+    r = period(7.0e6, 3.986e14)
+    assert r is not None, "ยังไม่ได้คืนค่า (ได้ None) ต้องใช้ return ไม่ใช่ print"
+    assert abs(r - 5828.5) < 1.0, f"period(7.0e6, 3.986e14) ควรได้ประมาณ 5828.5 วินาที แต่ได้ {r}"
+    r2 = period(4.0e8, 1.327e20)
+    assert abs(r2 - 4363) / 4363 < 1e-3, f"period(4.0e8, 1.327e20) ควรได้ประมาณ 4363 วินาที แต่ได้ {r2} (ตรวจว่ายกกำลังสามของ a และลืมคูณ 2π หรือไม่)"
+  reference: |
+    import math
+
+    def period(a, GM):
+        return 2 * math.pi * math.sqrt(a ** 3 / GM)
+  solution: โค้ดคำนวณ $T = 2\pi\sqrt{a^3/GM}$ ตัวอย่าง period(7.0e6, 3.986e14) ได้ประมาณ 5828.5 วินาที
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: physics.dynamics.gravitational-energy-orbits.p017
+  topics:
+  - physics.dynamics.gravitational-energy-orbits
+  difficulty: 5
+  type: mcq
+  stem: ตามทฤษฎีสัมพัทธภาพทั่วไป เหตุใดลำแสงจากดาวไกลจึงเบนเมื่อผ่านใกล้ดวงอาทิตย์
+  hints:
+  - ทฤษฎีนี้ให้ภาพว่ามวลทำให้กาลอวกาศโค้ง เส้นทางที่แสงเดินตรงที่สุดในกาลอวกาศจึงโค้งตามไปด้วย
+  - ลองเปรียบเทียบกับการคำนวณแบบนิวตันที่มองแสงเป็นอนุภาคมีมวล
+  - ตรวจว่าตัวเลือกใดพูดถึงความโค้งของกาลอวกาศ
+  multiple: false
+  choices:
+  - id: a
+    text: เพราะกาลอวกาศบริเวณมวลมากโค้ง ทำให้เส้นทางที่แสงเดินตรงที่สุดโค้งตามไปด้วย
+    correct: true
+  - id: b
+    text: เพราะแสงมีมวลจึงถูกแรงโน้มถ่วงดึงเหมือนวัตถุทั่วไป
+    correct: false
+    feedback: การคำนวณแบบนิวตันที่ปฏิบัติกับแสงเหมือนอนุภาคมวลได้ค่าการเบนเพียงครึ่งหนึ่งของที่ทฤษฎีสัมพัทธภาพทำนาย
+  - id: c
+    text: เพราะแรงโน้มถ่วงทำให้ความเร็วแสงในสุญญากาศลดลงตรงที่มีมวล
+    correct: false
+    feedback: ความเร็วแสงในสุญญากาศในพื้นที่เฉพาะที่มีค่าคงที่ $c$ ความโค้งเกิดจากโครงสร้างของกาลอวกาศ
+  - id: d
+    text: เพราะดวงอาทิตย์ทำหน้าที่เป็นเลนส์หักเหแสงเหมือนแก้วในอากาศ
+    correct: false
+    feedback: อวกาศระหว่างดาวเกือบว่างเปล่า ไม่มีตัวกลางที่ทำให้หักเหแบบแก้ว การเบนมาจากความโค้งของกาลอวกาศ
+  solution: ตามทฤษฎีสัมพัทธภาพทั่วไป มวลทำให้กาลอวกาศโค้ง แสงเดินไปตามเส้นทางที่ตรงที่สุดในกาลอวกาศซึ่งโค้งตามมวลนั้น (ตัวเลือก a) ส่วนการคำนวณแบบนิวตันให้การเบนครึ่งหนึ่งของที่วัดได้
+  license: CC-BY-SA-4.0
+  ai_assisted: true
