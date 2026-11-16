@@ -3,14 +3,14 @@ problems:
     topics: [physics.energy.power]
     difficulty: 1
     type: numeric
-    stem: 'เครื่องจักรทำงานได้ $1200\ \mathrm{J}$ ในเวลา $4\ \mathrm{s}$ เครื่องจักรนี้มีกำลังเท่าใด (ตอบเป็นตัวเลขในหน่วย W)'
-    answer: { value: 300, unit: W }
+    stem: 'เครื่องจักรทำงานได้ $1400\ \mathrm{J}$ ในเวลา $4\ \mathrm{s}$ เครื่องจักรนี้มีกำลังเท่าใด (ตอบเป็นตัวเลขในหน่วย W)'
+    answer: { value: 350, unit: W }
     hints:
       - 'กำลังคืองานที่ทำได้ในหนึ่งหน่วยเวลา'
       - 'ใช้ $P = \tfrac{W}{t}$ นำงานหารด้วยเวลา'
     misconceptions:
-      - { match: 4800, feedback: 'ดูเหมือนนำงานคูณกับเวลา กำลังคืองาน **หาร** ด้วยเวลา $P = \tfrac{W}{t}$' }
-    solution: '$P = \dfrac{W}{t} = \dfrac{1200\ \mathrm{J}}{4\ \mathrm{s}} = 300\ \mathrm{J/s} = 300\ \mathrm{W}$'
+      - { match: 5600, feedback: 'ดูเหมือนนำงานคูณกับเวลา กำลังคืองาน **หาร** ด้วยเวลา $P = \tfrac{W}{t}$' }
+    solution: '$P = \dfrac{W}{t} = \dfrac{1400\ \mathrm{J}}{4\ \mathrm{s}} = 350\ \mathrm{J/s} = 350\ \mathrm{W}$'
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -235,16 +235,16 @@ problems:
     topics: [physics.energy.power]
     difficulty: 3
     type: numeric
-    stem: 'กราฟในภาพแสดงงานที่เครื่องจักร A และ B ทำได้เมื่อเวลาผ่านไป เครื่อง A มีกำลังเท่าใด (ตอบเป็นตัวเลขในหน่วย W)'
+    stem: 'กราฟในภาพแสดงงานที่เครื่องจักร A และ B ทำได้เมื่อเวลาผ่านไป เครื่อง B มีกำลังเท่าใด (ตอบเป็นตัวเลขในหน่วย W)'
     figure: { src: work-time-two-machines.svg, alt: 'กราฟงานที่ทำได้ (J) แกนตั้ง 0 ถึง 4000 กับเวลา (s) แกนนอน 0 ถึง 12 เส้นตรงสองเส้นเริ่มจากจุดกำเนิด เครื่อง A ถึง 3600 J ที่ 12 s เครื่อง B ถึง 1800 J ที่ 12 s' }
-    answer: { value: 300, tolerance: 3, unit: W }
+    answer: { value: 150, tolerance: 2, unit: W }
     hints:
       - 'กำลังคืองานต่อเวลา ซึ่งคือความชันของกราฟงานกับเวลา'
-      - 'อ่านจุดบนเส้น A เช่น ที่ $12\ \mathrm{s}$ งานเป็นเท่าใด'
+      - 'อ่านจุดบนเส้น B เช่น ที่ $12\ \mathrm{s}$ งานเป็นเท่าใด'
     misconceptions:
-      - { match: 150, feedback: 'นั่นคือกำลังของเครื่อง B (เส้นที่ลาดกว่า) เครื่อง A คือเส้นที่ชันกว่า' }
-      - { match: 3600, feedback: 'นั่นคืองานทั้งหมดใน $12\ \mathrm{s}$ ต้องหารด้วยเวลาจึงได้กำลัง' }
-    solution: 'ความชันของเส้น A $= \dfrac{3600\ \mathrm{J}}{12\ \mathrm{s}} = 300\ \mathrm{W}$ (เครื่อง B ได้ $150\ \mathrm{W}$ เส้นที่ชันกว่ามีกำลังมากกว่า)'
+      - { match: 300, feedback: 'นั่นคือกำลังของเครื่อง A (เส้นที่ชันกว่า) เครื่อง B คือเส้นที่ลาดกว่า' }
+      - { match: 1800, feedback: 'นั่นคืองานทั้งหมดของเครื่อง B ใน $12\ \mathrm{s}$ ต้องหารด้วยเวลาจึงได้กำลัง' }
+    solution: 'ความชันของเส้น B $= \dfrac{1800\ \mathrm{J}}{12\ \mathrm{s}} = 150\ \mathrm{W}$ (เครื่อง A ได้ $300\ \mathrm{W}$ เส้นที่ชันกว่ามีกำลังมากกว่า)'
     license: CC-BY-SA-4.0
     ai_assisted: true
 
