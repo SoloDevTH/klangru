@@ -1,0 +1,296 @@
+problems:
+  - id: engineering.environmental.wastewater-treatment.p001
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 1
+    type: numeric
+    stem: "ชุมชนแห่งหนึ่งมีประชากร 5,000 คน แต่ละคนสร้างน้ำเสีย $150\\ \\mathrm{L/d}$ ปริมาณน้ำเสียรวมกี่ $\\mathrm{m^3/d}$ (ตอบหน่วย m³/d) (ค่าสมมติ)"
+    answer: { value: 750, tolerance: 0.5, unit: m³/d }
+    hints:
+      - "คูณจำนวนคนด้วยปริมาณน้ำเสียต่อคนก่อน ได้หน่วยลิตรต่อวัน"
+      - "แปลงจากลิตรเป็นลูกบาศก์เมตรโดยหาร 1000"
+    misconceptions:
+      - { match: 150, feedback: "ค่านี้คือปริมาณน้ำเสียต่อคนเท่านั้น ต้องคูณด้วยจำนวนประชากรด้วย" }
+    solution: "$Q = 5000 \\times 150\\ \\mathrm{L/d} = 750{,}000\\ \\mathrm{L/d} = 750\\ \\mathrm{m^3/d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p002
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 1
+    type: mcq
+    stem: "BOD5 ในการวิเคราะห์น้ำเสียหมายถึงสิ่งใด"
+    choices:
+      - { id: a, text: "น้ำหนักของแข็งที่ตกตะกอนในถัง 5 ชั่วโมง", feedback: "นั่นคือปริมาณตะกอน ไม่ใช่ BOD" }
+      - { id: b, text: "ค่า pH ของน้ำหลังการเติมอากาศ 5 นาที", feedback: "pH วัดความเป็นกรดด่าง ไม่ใช่ความต้องการออกซิเจนทางชีวเคมี" }
+      - { id: c, text: "ปริมาณออกซิเจนที่จุลินทรีย์ใช้ย่อยสลายสารอินทรีย์ในน้ำภายใน 5 วันที่ 20°C", correct: true }
+      - { id: d, text: "ปริมาณคลอรีนที่ต้องเติมเพื่อฆ่าเชื้อให้หมด", feedback: "นั่นคือความต้องการคลอรีน ไม่ใช่ BOD" }
+    hints:
+      - "BOD ย่อมาจากความต้องการออกซิเจนทางชีวเคมี"
+      - "ตัวเลข 5 ในชื่อบอกระยะเวลาการวัด"
+    solution: "BOD5 คือปริมาณออกซิเจนที่จุลินทรีย์ใช้ในการย่อยสลายสารอินทรีย์ในช่วง 5 วันที่ 20°C"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p003
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 2
+    type: numeric
+    stem: "น้ำเสียชุมชนอัตรา $750\\ \\mathrm{m^3/d}$ มี BOD $250\\ \\mathrm{mg/L}$ ภาระ BOD ที่ต้องบำบัดต่อวันกี่ $\\mathrm{kg/d}$ (ตอบหน่วย kg/d) (ค่าสมมติ)"
+    answer: { value: 187.5, tolerance: 0.1, unit: kg/d }
+    hints:
+      - "ภาระ = ความเข้มข้น × อัตราการไหล"
+      - "หน่วย mg/L คูณ m³/d จะได้ g/d"
+    misconceptions:
+      - { match: 187500, feedback: "ค่านี้เป็นหน่วยกรัมต่อวัน ต้องหารด้วย 1000 เพื่อได้กิโลกรัมต่อวัน" }
+    solution: "$250\\ \\mathrm{g/m^3} \\times 750\\ \\mathrm{m^3/d} = 187{,}500\\ \\mathrm{g/d} = 187.5\\ \\mathrm{kg/d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p004
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 2
+    type: numeric
+    stem: "จุลินทรีย์ชนิดหนึ่งมี $\\mu_{max} = 0.6\\ \\mathrm{d^{-1}}$ $K_s = 10\\ \\mathrm{mg/L}$ และสารอาหารเหลือ $S = 30\\ \\mathrm{mg/L}$ อัตราการเติบโตจำเพาะ $\\mu$ เท่าใด (ตอบหน่วย d⁻¹) (ค่าสมมติ)"
+    answer: { value: 0.45, tolerance: 0.005, unit: d⁻¹ }
+    hints:
+      - "ใช้สมการโมนอด $\\mu = \\mu_{max}S/(K_s + S)$"
+      - "อย่าลืมบวก $K_s$ เข้าไปในตัวส่วน"
+    misconceptions:
+      - { match: 0.6, feedback: "ค่านี้คือ $\\mu_{max}$ ซึ่งเกิดเมื่อสารอาหารมากจนอิ่มตัว ที่ $S = 30$ ยังต่ำกว่าค่านั้น" }
+    solution: "$\\mu = 0.6 \\times 30/(10 + 30) = 0.45\\ \\mathrm{d^{-1}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p005
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 2
+    type: mcq
+    stem: "ถ้าค่า F/M ในถังเติมอากาศสูงเกินไป ผลที่มักเกิดขึ้นคืออะไร"
+    choices:
+      - { id: a, text: "จุลินทรีย์ได้อาหารมากจนออกซิเจนไม่พอ และน้ำทิ้งสกปรกขึ้น", correct: true }
+      - { id: b, text: "น้ำทิ้งใสขึ้นมากจนไม่ต้องบำบัดขั้นสุดท้าย", feedback: "F/M สูงมักทำให้คุณภาพน้ำทิ้งแย่ลง ไม่ใช่ดีขึ้น" }
+      - { id: c, text: "สลัดจ์ไม่เกิดเลยเพราะจุลินทรีย์หยุดทำงาน", feedback: "ถ้า F/M สูงจุลินทรีย์มักทำงานมากขึ้น ไม่ได้หยุด" }
+      - { id: d, text: "ระบบใช้พลังงานลดลงเพราะไม่ต้องเติมอากาศ", feedback: "F/M สูงต้องการอากาศมากขึ้นเพื่อย่อยสลาย ไม่ใช่น้อยลง" }
+    hints:
+      - "ลองคิดว่าจุลินทรีย์ต้องการออกซิเจนมากแค่ไหนเมื่อมีอาหารมาก"
+      - "ความสกปรกที่ไม่ได้ถูกย่อยจะเหลือในน้ำทิ้ง"
+    solution: "ภาระอาหารต่อจุลินทรีย์สูงเกินทำให้ออกซิเจนไม่พอและย่อยไม่ทัน น้ำทิ้งจึงสกปรกขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p006
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "ถังเติมอากาศปริมาตร $500\\ \\mathrm{m^3}$ มี MLSS $3000\\ \\mathrm{mg/L}$ รับน้ำเสียอัตรา $2000\\ \\mathrm{m^3/d}$ ที่มี BOD $250\\ \\mathrm{mg/L}$ ค่า $F/M$ มีค่ากี่ $\\mathrm{d^{-1}}$ (ทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 0.33, tolerance: 0.01, unit: d⁻¹ }
+    hints:
+      - "คำนวณภาระอาหาร $F = QS$ ก่อน หน่วยเป็น kg/d"
+      - "คำนวณมวลจุลินทรีย์ $M = VX$ หน่วยเป็น kg"
+      - "$F/M$ คืออัตราส่วนของสองค่านี้"
+    misconceptions:
+      - { match: 3.0, feedback: "ค่านี้คือส่วนกลับของ F/M ตัวเศษต้องเป็นภาระอาหาร (QS) และตัวส่วนต้องเป็นมวลจุลินทรีย์ (VX)" }
+    solution: "$F = 2000 \\times 250 / 1000 = 500\\ \\mathrm{kg/d}$, $M = 500 \\times 3000 / 1000 = 1500\\ \\mathrm{kg}$ จึงได้ $F/M = 500/1500 \\approx 0.33\\ \\mathrm{d^{-1}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p007
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "BOD5 ของน้ำเสียเท่ากับ $200\\ \\mathrm{mg/L}$ ถ้าค่าคงตัวอัตราการย่อยสลาย $k = 0.23\\ \\mathrm{d^{-1}}$ (ค่าสมมติ) BOD สุดท้าย $L_0$ เท่ากับกี่ $\\mathrm{mg/L}$ (ทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 292.7, tolerance: 0.5, unit: mg/L }
+    hints:
+      - "ความสัมพันธ์คือ $BOD_5 = L_0(1 - e^{-5k})$"
+      - "หา $e^{-5k}$ ก่อน แล้วจึงแก้หา $L_0$"
+    misconceptions:
+      - { match: 200, feedback: "ค่านี้ถือว่า BOD5 เท่ากับ BOD สุดท้าย ซึ่งไม่จริงเพราะยังย่อยไม่ครบใน 5 วัน" }
+    solution: "$1 - e^{-1.15} \\approx 0.6834$ จึงได้ $L_0 = 200/0.6834 \\approx 292.7\\ \\mathrm{mg/L}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p008
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "บ่อผึ่งปริมาตร $12{,}000\\ \\mathrm{m^3}$ รับน้ำเสียอัตรา $1500\\ \\mathrm{m^3/d}$ เวลากักเก็บของบ่อกี่วัน (ตอบหน่วย d) (ค่าสมมติ)"
+    answer: { value: 8, tolerance: 0.01, unit: d }
+    hints:
+      - "เวลากักเก็บ = ปริมาตร / อัตราการไหล"
+      - "หน่วยที่ได้จะเป็นวัน"
+    misconceptions:
+      - { match: 0.125, feedback: "ค่านี้คือ $Q/V$ ซึ่งกลับตำแหน่ง เวลากักเก็บต้องเป็น $V/Q$" }
+    solution: "$\\tau = V/Q = 12000/1500 = 8\\ \\mathrm{d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p009
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "น้ำเสียชุมชน $750\\ \\mathrm{m^3/d}$ มี BOD ขาเข้า $250\\ \\mathrm{mg/L}$ และเหลือ $50\\ \\mathrm{mg/L}$ หลังบำบัด ค่า $Y = 0.5$ $k_d = 0.05\\ \\mathrm{d^{-1}}$ และ $\\theta_c = 10\\ \\mathrm{d}$ (ค่าสมมติ) ปริมาณสลัดจ์ที่เกิดขึ้นต่อวันกี่ $\\mathrm{kg/d}$ (ตอบหน่วย kg/d)"
+    answer: { value: 50, tolerance: 0.5, unit: kg/d }
+    hints:
+      - "คำนวณ $Q(S_0 - S)$ ก่อนเป็นภาระ kg/d"
+      - "หารด้วย $1 + k_d\\theta_c$ หลังคูณ $Y$"
+    misconceptions:
+      - { match: 75, feedback: "ค่านี้ไม่ได้หารด้วย $1 + k_d\\theta_c$ ซึ่งทำให้ได้สลัดจ์มากกว่าจริง" }
+    solution: "$Q(S_0 - S) = 750 \\times 200/1000 = 150\\ \\mathrm{kg/d}$ $P_x = 0.5 \\times 150/(1 + 0.05 \\times 10) = 50\\ \\mathrm{kg/d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p010
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 4
+    type: numeric
+    stem: "ถังเติมอากาศปริมาตร $500\\ \\mathrm{m^3}$ มี MLSS $3000\\ \\mathrm{mg/L}$ ถูกทิ้งสลัดจ์ส่วนเกิน $15\\ \\mathrm{m^3/d}$ ที่มีความเข้มข้น $8000\\ \\mathrm{mg/L}$ อายุสลัดจ์กี่วัน (ตอบหน่วย d)"
+    answer: { value: 12.5, tolerance: 0.05, unit: d }
+    hints:
+      - "อายุสลัดจ์ $\\theta_c = VX / (Q_w X_r)$"
+      - "ใช้หน่วยเดียวกันทั้งตัวเศษและตัวส่วน (mg/L กับ m³ หรือ g/m³)"
+    misconceptions:
+      - { match: 0.08, feedback: "ค่านี้คือส่วนกลับของอายุสลัดจ์ ตัวเศษต้องเป็นมวลจุลินทรีย์ในถัง" }
+    solution: "$VX = 500 \\times 3000 = 1.5\\times10^6\\ \\mathrm{g}$ และ $Q_w X_r = 15 \\times 8000 = 1.2\\times10^5\\ \\mathrm{g/d}$ จึงได้ $\\theta_c = 12.5\\ \\mathrm{d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p011
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำเสียชุมชน $750\\ \\mathrm{m^3/d}$ มี $NH_4\\text{-}N$ $40\\ \\mathrm{mg/L}$ (ค่าสมมติ) ถ้าเปลี่ยนแอมโมเนียทั้งหมดเป็นไนเตรต ซึ่งตามปริมาณสัมพันธ์ใช้ออกซิเจน 4.57 กรัม O₂ ต่อกรัม $NH_4\\text{-}N$ ต้องใช้ออกซิเจนกี่ $\\mathrm{kg/d}$ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 137.1, tolerance: 0.5, unit: kg/d }
+    hints:
+      - "ภาระไนโตรเจนต่อวัน $= 40 \\times 750 / 1000$ kg/d"
+      - "คูณภาระด้วย 4.57"
+    misconceptions:
+      - { match: 30, feedback: "ค่านี้คือภาระไนโตรเจนเท่านั้น ยังไม่ได้คูณด้วยค่าออกซิเจนที่ต้องใช้ต่อหนึ่งหน่วยไนโตรเจน" }
+    solution: "ค่า 4.57 มาจาก $NH_4^+ + 2O_2 \\to NO_3^- + 2H^+ + H_2O$ คือ $2 \\times 32/14 \\approx 4.57$ ภาระ $N = 40 \\times 750/1000 = 30\\ \\mathrm{kg/d}$ ออกซิเจนที่ต้องใช้ $= 4.57 \\times 30 \\approx 137.1\\ \\mathrm{kg/d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p012
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 4
+    type: numeric
+    stem: "โรงงานอาหารแห่งหนึ่งบำบัดแบบไร้อากาศ กำจัด COD ได้ $400\\ \\mathrm{kg/d}$ ตามปริมาณสัมพันธ์ COD ที่ถูกเปลี่ยนเป็นมีเทน 1 kg ให้มีเทน 0.35 m³ ที่ 0°C และ 1 atm (สมมติว่า COD ที่ถูกกำจัดกลายเป็นมีเทนทั้งหมด) ได้มีเทนกี่ $\\mathrm{m^3/d}$ (ตอบหน่วย m³/d) (ค่าสมมติ)"
+    answer: { value: 140, tolerance: 0.5, unit: m³/d }
+    hints:
+      - "คูณปริมาณ COD ที่ถูกกำจัดต่อวันด้วยตัวคูณมีเทน"
+      - "ตรวจหน่วยให้เหลือ m³/d"
+    misconceptions:
+      - { match: 400, feedback: "ค่านี้คือปริมาณ COD ที่ถูกกำจัด ไม่ใช่ปริมาณมีเทน ต้องคูณด้วยตัวคูณ 0.35" }
+    solution: "มีเทน 1 mol (22.4 L ที่ 0°C 1 atm) ใช้ O₂ 2 mol หรือ 64 g COD จึงได้ $22.4/64 = 0.35\\ \\mathrm{L/g} = 0.35\\ \\mathrm{m^3/kg}$ ดังนั้น $CH_4 = 0.35 \\times 400 = 140\\ \\mathrm{m^3/d}$ (ที่อุณหภูมิใช้งานจริงปริมาตรจะมากกว่านี้เล็กน้อย)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p013
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 4
+    type: expression
+    stem: "จงเขียนอัตราส่วน $F/M$ ของถังเติมอากาศในรูปของ $Q$ อัตราการไหล $S$ BOD ขาเข้า $V$ ปริมาตรถัง และ $X$ ความเข้มข้นจุลินทรีย์"
+    prefix: "F/M ="
+    answer: { latex: "\\frac{QS}{VX}", variables: [Q, S, V, X] }
+    hints:
+      - "ตัวเศษคือภาระอาหารที่เข้าถัง ซึ่งเป็นอัตราการไหลคูณ BOD ขาเข้า"
+      - "ตัวส่วนคือมวลจุลินทรีย์ในถังซึ่งเป็นปริมาตรคูณความเข้มข้น"
+    misconceptions:
+      - { match: "\\frac{VX}{QS}", feedback: "กลับตำแหน่งตัวเศษกับตัวส่วนแล้ว F/M ต้องเป็นภาระอาหารหารด้วยมวลจุลินทรีย์" }
+    solution: "$F/M = QS/(VX)$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p014
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับขั้นตอนการออกแบบถังเติมอากาศในระบบแอกทิเวเต็ดสลัดจ์"
+    items:
+      - "กำหนดอัตราการไหลและความเข้มข้น BOD ขาเข้าจากข้อมูลน้ำเสียจริง"
+      - "เลือกค่าอายุสลัดจ์และ F/M ที่ยอมรับได้สำหรับระบบ"
+      - "คำนวณปริมาตรถังเติมอากาศจากค่า F/M และ MLSS ที่เลือก"
+      - "ประเมินปริมาณสลัดจ์และความต้องการออกซิเจน แล้วเลือกเครื่องเติมอากาศ"
+    hints:
+      - "ต้องรู้ภาระที่เข้าระบบก่อนเลือกค่าออกแบบ"
+      - "ปริมาตรถังขึ้นกับค่าออกแบบที่เลือกไว้แล้ว"
+    solution: "กำหนดข้อมูลน้ำเสีย เลือกค่าออกแบบ คำนวณปริมาตร แล้วประเมินสลัดจ์และออกซิเจน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p015
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 2
+    type: match
+    stem: "จับคู่หน่วยในการบำบัดน้ำเสียกับหน้าที่หลักของหน่วยนั้น"
+    pairs:
+      - { left: "ตะแกรง", right: "ดักเศษวัสดุขนาดใหญ่ที่อาจอุดตันเครื่องจักร" }
+      - { left: "ถังดักกรวด", right: "แยกทรายและกรวดที่หนักออกจากน้ำ" }
+      - { left: "ถังตกตะกอนขั้นต้น", right: "ทำให้ของแข็งที่หนักกว่าน้ำตกลงก้นถัง" }
+      - { left: "ถังเติมอากาศ", right: "ให้จุลินทรีย์ย่อยสารอินทรีย์โดยมีออกซิเจน" }
+    hints:
+      - "ดูว่าขั้นนั้นทำงานกับวัสดุขนาดใด หรือใช้จุลินทรีย์หรือไม่"
+      - "ถังตกตะกอนขั้นต้นไม่ใช้จุลินทรีย์"
+    solution: "ตะแกรงดักวัสดุใหญ่ ถังดักกรวดแยกทราย ถังตกตะกอนขั้นต้นตกตะกอนโดยแรงโน้มถ่วง และถังเติมอากาศให้จุลินทรีย์ย่อย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p016
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 2
+    type: text
+    stem: "ระบบที่ใช้จุลินทรีย์แขวนลอยในถังเติมอากาศ และส่งสลัดจ์จากถังตกตะกอนกลับมาเติมในถัง เรียกเป็นภาษาอังกฤษว่าอะไร"
+    accepted: ["activated sludge", "Activated sludge", "activated-sludge", "แอกทิเวเต็ดสลัดจ์", "แอคทิเวเต็ดสลัดจ์", "แอกทิเวเต็ดสลัดจ์ระบบ"]
+    hints:
+      - "ชื่อมีคำว่า sludge ซึ่งหมายถึงตะกอนหรือสลัดจ์"
+      - "คำที่ต้องการขึ้นต้นด้วย activated"
+    solution: "แอกทิเวเต็ดสลัดจ์ (activated sludge) คือระบบที่จุลินทรีย์แขวนลอยและหมุนเวียนสลัดจ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p017
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "เลือกทุกข้อที่ถูกเมื่อเปรียบเทียบการบำบัดแบบไร้อากาศกับแบบมีอากาศ"
+    choices:
+      - { id: a, text: "ระบบไร้อากาศผลิตก๊าซชีวภาพที่มีมีเทนเป็นองค์ประกอบหลัก", correct: true }
+      - { id: b, text: "ระบบมีอากาศต้องใช้พลังงานสำหรับการเติมอากาศ", correct: true }
+      - { id: c, text: "ระบบไร้อากาศไม่ผลิตสลัดจ์เลย", feedback: "ระบบไร้อากาศก็ผลิตสลัดจ์ได้เช่นกัน แต่ปริมาณและการจัดการต่างจากระบบมีอากาศ" }
+      - { id: d, text: "ระบบมีอากาศไม่ต้องใช้จุลินทรีย์", feedback: "ทั้งสองระบบอาศัยจุลินทรีย์ในการย่อยสลาย ต่างกันที่มีหรือไม่มีออกซิเจน" }
+    hints:
+      - "ดูว่าระบบแต่ละแบบต้องใช้ออกซิเจนหรือไม่"
+      - "ก๊าซชีวภาพมาจากการย่อยโดยไม่มีอากาศ"
+    solution: "ระบบไร้อากาศให้ก๊าซชีวภาพ ระบบมีอากาศต้องใช้พลังงานเติมอากาศ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p018
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 5
+    type: numeric
+    stem: "ระบบแอกทิเวเต็ดสลัดจ์มี $Y = 0.5$ $\\mu_{max} = 2.0\\ \\mathrm{d^{-1}}$ $K_s = 20\\ \\mathrm{mg/L}$ $k_d = 0.05\\ \\mathrm{d^{-1}}$ และ $\\theta_c = 10\\ \\mathrm{d}$ ที่สภาวะคงที่ สารอาหารที่เหลือ $S$ ในน้ำทิ้งเท่ากับกี่ $\\mathrm{mg/L}$ (ใช้ $1/\\theta_c = Y\\mu_{max}S/(K_s+S) - k_d$ ทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 3.53, tolerance: 0.02, unit: mg/L }
+    hints:
+      - "แทนค่าลงในสมการสภาวะคงที่แล้วจัดรูปให้ $S$ อยู่ข้างเดียว"
+      - "$1/\\theta_c + k_d$ เท่ากับ $Y\\mu_{max}S/(K_s+S)$"
+    misconceptions:
+      - { match: 2.22, feedback: "ค่านี้ลืมพจน์ $k_d$ ในสมการสภาวะคงที่" }
+    solution: "$0.1 + 0.05 = 0.5 \\times 2 \\times S/(20+S)$ จึงได้ $0.15(20+S) = S$ และ $S = 3/0.85 \\approx 3.53\\ \\mathrm{mg/L}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.wastewater-treatment.p019
+    topics: [engineering.environmental.wastewater-treatment]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำเสียจากโรงงานอาหารอัตรา $Q = 100\\ \\mathrm{m^3/d}$ มี BOD ขาเข้า 1500 mg/L และขาออก 150 mg/L ค่าผลได้ $Y = 0.5$ (ค่าสมมติ) ถ้าไม่คิดการสลายตัวภายใน ($k_d = 0$) จุลินทรีย์ใหม่ที่เกิดขึ้นต่อวัน $P_x$ เท่ากับกี่ $\\mathrm{kg/d}$ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 67.5, tolerance: 0.1, unit: kg/d }
+    hints:
+      - "คำนวณผลต่าง BOD ก่อนเป็น mg/L"
+      - "ใช้ $P_x = Y\\,Q\\,(S_0 - S)$ แล้วแปลง g/d เป็น kg/d"
+    misconceptions:
+      - { match: 135, feedback: "ค่านี้ไม่ได้คูณด้วยค่า Y ที่กำหนด (0.5)" }
+    solution: "$S_0 - S = 1350\\ \\mathrm{mg/L}$ จึงได้ $P_x = 0.5 \\times 100 \\times 1350 / 1000 = 67.5\\ \\mathrm{kg/d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

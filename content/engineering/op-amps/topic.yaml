@@ -1,0 +1,70 @@
+id: engineering.electronics.op-amps
+subject: engineering
+title: { th: ออปแอมป์และการป้อนกลับ, en: Operational amplifiers and feedback }
+summary: วิเคราะห์วงขยายออปแอมป์ที่มีการป้อนกลับเชิงลบ ทั้งวงกลับเฟส ไม่กลับเฟส รวมสัญญาณ ผลต่าง ปริพันธ์ และอนุพันธ์ พร้อมข้อจำกัดเมื่อใช้งานจริง
+difficulty: 8.5
+minutes: 40
+prerequisites: [engineering.circuits.dc-analysis, engineering.circuits.transients]
+encompasses:
+  - { id: engineering.circuits.dc-analysis, weight: 0.3 }
+  - { id: engineering.circuits.transients, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: inverting.svg
+    alt: "วงขยายกลับเฟสด้วยออปแอมป์ สัญญาณ V_in ผ่านตัวต้านทาน R_in ไปที่ขาลบ ขาบวกต่อลงกราวด์ และตัวต้านทาน R_f ป้อนกลับจากขาออกมาขาลบ ขาออกคือ V_out"
+    caption: "วงกลับเฟสที่ตัวต้านทานป้อนกลับนำสัญญาณขาออกกลับมายังขาลบ"
+  - type: explanation
+    file: lesson.md
+  - type: figure
+    src: transfer.svg
+    alt: "กราฟ V_out เทียบกับ V_in ของวงกลับเฟสอัตราขยายลบสิบ เป็นเส้นตรงลาดลงผ่านจุดศูนย์ และแบนราบที่ +10.5 V เมื่อ V_in ต่ำกว่าประมาณลบ 1 และที่ -10.5 V เมื่อ V_in สูงกว่าประมาณบวก 1"
+    caption: "เมื่อเกินช่วงอิ่มตัว แรงดันขาออกไม่เพิ่มต่อ แม้ V_in จะเพิ่มขึ้น"
+  - type: worked-example
+    title: หาอัตราขยายของวงไม่กลับเฟส
+    problem: "วงไม่กลับเฟสมี $R_f = 30\\ \\mathrm{k\\Omega}$ $R_g = 6\\ \\mathrm{k\\Omega}$ และ $V_{in} = 0.25\\ \\mathrm{V}$ แรงดันขาออกเท่าใด (ค่าสมมติ)"
+    steps:
+      - text: "อัตราขยาย $= 1 + R_f/R_g = 1 + 30/6 = 6$"
+        why: "สูตรของวงไม่กลับเฟสมี 1 บวกอยู่ด้วยเสมอ"
+      - text: "$V_{out} = 6 \\times 0.25 = 1.5\\ \\mathrm{V}$ สัญญาณยังเป็นบวก"
+        why: "วงไม่กลับเฟสไม่เปลี่ยนเครื่องหมายของสัญญาณ"
+    answer: "แรงดันขาออกคือ $1.5\\ \\mathrm{V}$"
+  - type: worked-example
+    title: หาแรงดันขาออกของอินทิเกรเตอร์
+    problem: "วงอินทิเกรเตอร์มี $R = 50\\ \\mathrm{k\\Omega}$ $C = 20\\ \\mathrm{\\mu F}$ รับแรงดันคงที่ $0.5\\ \\mathrm{V}$ เป็นเวลา 3 วินาที แรงดันขาออกเท่าใด (ค่าสมมติ)"
+    steps:
+      - text: "คำนวณ $RC = 50\\,000 \\times 20\\times10^{-6} = 1\\ \\mathrm{s}$"
+        why: "ค่าคงตัวเวลาต้องมีหน่วยวินาทีเพื่อให้ผลลัพธ์ถูกต้องตามหน่วย"
+      - text: "$V_{out} = -\\frac{1}{RC}\\,V_{in}\\,t = -\\frac{1}{1}(0.5)(3) = -1.5\\ \\mathrm{V}$"
+        why: "อินทิกรัลของค่าคงที่เท่ากับค่าคงที่คูณเวลา และวงกลับเฟสมีเครื่องหมายลบ"
+    answer: "แรงดันขาออกคือ $-1.5\\ \\mathrm{V}$"
+  - { type: check, problem: engineering.electronics.op-amps.p002, prompt: "ลองคิดก่อนอ่านต่อ: กระแสเข้าขาออปแอมป์อุดมคติเป็นเท่าใด" }
+  - { type: check, problem: engineering.electronics.op-amps.p005, prompt: "ลองคิดว่าวงตามแรงดันใช้เพื่ออะไร" }
+  - type: interactive
+    title: ลองเปลี่ยนอัตราขยายของวงกลับเฟส
+    caption: "แถบเลื่อน a คืออัตราขยายขนาดของวงกลับเฟส ตรวจว่าเส้นตรงทุกเส้นผ่านจุดศูนย์ และความชันติดลบเสมอ"
+    widget:
+      kind: function-plot
+      functions: ["-a x"]
+      sliders:
+        - { name: a, min: 1, max: 20, step: 1, value: 10, label: ขนาดอัตราขยาย }
+      x: [-2, 2]
+      y: [-12, 12]
+glossary:
+  - { term: ออปแอมป์, definition: "วงจรรวมที่มีอัตราขยายวงเปิดสูงมาก ใช้ร่วมกับการป้อนกลับเพื่อสร้างวงขยายที่ควบคุมได้" }
+  - { term: การป้อนกลับเชิงลบ, definition: "การส่งส่วนหนึ่งของสัญญาณขาออกกลับไปยังขาลบ เพื่อให้อัตราขยายวงปิดคงที่และเสถียร" }
+  - { term: กฎสองข้อของออปแอมป์, definition: "แรงดันขาบวกกับขาลบเท่ากัน และกระแสที่ไหลเข้าขาทั้งสองเป็นศูนย์ สำหรับออปแอมป์อุดมคติที่มีการป้อนกลับเชิงลบ" }
+  - { term: แรงดันอิ่มตัว, definition: "แรงดันขาออกสูงสุดหรือต่ำสุดที่วงจรทำได้ ขึ้นกับแรงดันจ่ายไฟของออปแอมป์" }
+flashcards:
+  - { front: "อัตราขยายของวงกลับเฟส", back: "$V_{out} = -(R_f/R_{in})V_{in}$" }
+  - { front: "อัตราขยายของวงไม่กลับเฟส", back: "$V_{out} = (1 + R_f/R_g)V_{in}$" }
+  - { front: "กฎสองข้อของออปแอมป์อุดมคติ", back: "$V_+ = V_-$ และ $I_+ = I_- = 0$" }
+references:
+  - { title: "Operational amplifier", url: "https://en.wikipedia.org/wiki/Operational_amplifier", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Negative feedback", url: "https://en.wikipedia.org/wiki/Negative_feedback", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "MIT OpenCourseWare 6.002 Circuits and Electronics", url: "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+review_flags: []
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

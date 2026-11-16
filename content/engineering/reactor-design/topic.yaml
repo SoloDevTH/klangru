@@ -1,0 +1,70 @@
+id: engineering.process.reactor-design
+subject: engineering
+title: { th: จลนศาสตร์เคมีและการออกแบบเครื่องปฏิกรณ์, en: Chemical kinetics and reactor design }
+summary: ใช้กฎอัตราอันดับหนึ่งและสมดุลมวลหาเวลาเก็บกักและปริมาตรของเครื่องปฏิกรณ์แบบกะ ถังกวนต่อเนื่อง และแบบไหลในท่อ
+difficulty: 8.5
+minutes: 40
+prerequisites: [engineering.process.mass-energy-balance, chemistry.kinetics.rate-laws, math.de.first-order]
+encompasses:
+  - { id: math.de.first-order, weight: 0.4 }
+  - { id: engineering.process.mass-energy-balance, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: explanation
+    file: lesson.md
+  - type: figure
+    src: reactor-types.svg
+    alt: "ภาพซ้ายเป็นถังกวนที่มีใบกวนอยู่กลางถัง มีลูกศรไหลเข้าและออก ของเหลวในถังมีองค์ประกอบเท่ากันทั้งถัง ภาพขวาเป็นท่อยาวที่มีลูกศรไหลเข้าและออก ระบุว่าความเข้มข้นลดลงตามความยาวท่อ"
+    caption: "CSTR ผสมสมบูรณ์ ส่วน PFR มีความเข้มข้นเปลี่ยนไปตามตำแหน่ง"
+  - type: figure
+    src: conversion-kt.svg
+    alt: "กราฟค่าการเปลี่ยน X เทียบกับ kτ ตั้งแต่ 0 ถึง 4 เส้น PFR อยู่เหนือเส้น CSTR ตลอดช่วงและทั้งสองเส้นเข้าใกล้ 1 เมื่อ kτ มาก"
+    caption: "ที่ค่า $k\\tau$ เท่ากัน PFR ให้ค่า $X$ สูงกว่า CSTR เสมอ"
+  - type: worked-example
+    title: หาเวลาที่ใช้ในเครื่องปฏิกรณ์แบบกะ
+    problem: "ปฏิกิริยาอันดับหนึ่งในเครื่องปฏิกรณ์แบบกะมี $k = 0.4\\ \\mathrm{min^{-1}}$ ต้องการค่าการเปลี่ยน $X = 0.5$ ใช้เวลากี่นาที"
+    steps:
+      - text: "เขียนสูตร $t = \\frac{1}{k}\\ln\\frac{1}{1-X}$ แล้วแทนค่า $1 - X = 0.5$"
+        why: "แบบกะไม่มีการไหลเข้าออก จึงใช้การอินทิเกรตกฎอัตราโดยตรง"
+      - text: "$t = \\frac{1}{0.4}\\ln 2 \\approx 2.5 \\times 0.693 \\approx 1.73\\ \\mathrm{min}$"
+        why: "ลอการิทึมธรรมชาติของ 2 คือ 0.693 ไม่ใช่ 2"
+    answer: "ใช้เวลาประมาณ $1.73\\ \\mathrm{min}$"
+  - type: worked-example
+    title: หาปริมาตรถังกวนต่อเนื่องจากค่าการเปลี่ยน
+    problem: "CSTR รับของเหลวอัตรา $Q = 3\\ \\mathrm{m^3/h}$ ปฏิกิริยาอันดับหนึ่งมี $k = 0.4\\ \\mathrm{h^{-1}}$ ต้องการ $X = 0.6$ ปริมาตรถังเท่าใด"
+    steps:
+      - text: "หาเวลาเก็บกัก $\\tau = \\frac{X}{k(1-X)} = \\frac{0.6}{0.4 \\times 0.4} = 3.75\\ \\mathrm{h}$"
+        why: "สูตรของ CSTR มี $1-X$ ในตัวส่วนเพราะองค์ประกอบในถังเท่ากับทางออก"
+      - text: "หาปริมาตร $V = Q\\,\\tau = 3 \\times 3.75$"
+        why: "เวลาเก็บกักคือปริมาตรหารด้วยอัตราการไหล จึงต้องคูณกลับ"
+    answer: "ปริมาตรถังต้องประมาณ $11.25\\ \\mathrm{m^3}$"
+  - { type: check, problem: engineering.process.reactor-design.p002, prompt: "ลองคิดก่อนอ่านต่อ: ถังชนิดใดมีองค์ประกอบเท่ากันทั้งถัง" }
+  - { type: check, problem: engineering.process.reactor-design.p010, prompt: "ใช้สูตร CSTR อันดับหนึ่งกับผลคูณ $k\\tau$ ที่ให้มา" }
+  - type: interactive
+    title: ลองเปลี่ยนค่า k τ ของ CSTR แล้วดูค่าการเปลี่ยน
+    caption: "ลากแถบเลื่อน a คือค่า k เมื่อ τ คงที่ที่ 1 สังเกตว่าค่า X เพิ่มขึ้นช้าลงเมื่อ k τ มาก"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a x}{1 + a x}"]
+      sliders:
+        - { name: a, min: 0.1, max: 4, step: 0.1, value: 1, label: ค่า k เมื่อ τ เท่ากับ 1 }
+      x: [0, 4]
+      y: [0, 1]
+glossary:
+  - { term: ค่าการเปลี่ยน, definition: "สัดส่วนของสารตั้งต้นที่เปลี่ยนไปเป็นผลิตภัณฑ์ เป็นเศษส่วนไม่มีหน่วย อยู่ระหว่าง 0 ถึง 1" }
+  - { term: เวลาเก็บกัก, definition: "เวลาเฉลี่ยที่ของไหลอยู่ในเครื่องปฏิกรณ์ คำนวณเป็นปริมาตรหารด้วยอัตราการไหลเชิงปริมาตร" }
+  - { term: ถังกวนต่อเนื่อง, definition: "เครื่องปฏิกรณ์ที่มีการไหลเข้าออกต่อเนื่องและมีการผสมสมบูรณ์ องค์ประกอบในถังเท่ากับทางออก" }
+  - { term: สมการอาร์เรเนียส, definition: "สมการที่ให้ค่าคงตัวอัตราเป็นฟังก์ชันของอุณหภูมิ $k = Ae^{-E_a/RT}$" }
+flashcards:
+  - { front: "เวลาในเครื่องปฏิกรณ์แบบกะสำหรับปฏิกิริยาอันดับหนึ่ง", back: "$t = \\frac{1}{k}\\ln\\frac{1}{1-X}$" }
+  - { front: "เวลาเก็บกักของ CSTR อันดับหนึ่ง", back: "$\\tau = \\frac{X}{k(1-X)}$" }
+  - { front: "องค์ประกอบในถังกวนต่อเนื่องเป็นอย่างไร", back: "เท่ากันทั้งถังและเท่ากับทางออก" }
+references:
+  - { title: "Chemical reactor", url: "https://en.wikipedia.org/wiki/Chemical_reactor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Arrhenius equation", url: "https://en.wikipedia.org/wiki/Arrhenius_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Continuous stirred-tank reactor", url: "https://en.wikipedia.org/wiki/Continuous_stirred-tank_reactor", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+review_flags: []
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

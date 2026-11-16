@@ -1,0 +1,287 @@
+problems:
+  - id: engineering.mechanics.vibration-sdof.p001
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 1
+    type: numeric
+    stem: "มวล $m = 4\\ \\mathrm{kg}$ ติดกับสปริงที่มีค่าคงตัว $k = 400\\ \\mathrm{N/m}$ ไม่มีตัวหน่วง ความถี่ธรรมชาติเชิงมุมกี่ $\\mathrm{rad/s}$ (ตอบหน่วย rad/s)"
+    answer: { value: 10, tolerance: 0.01, unit: rad/s }
+    hints:
+      - "ความถี่ธรรมชาติเชิงมุมขึ้นกับ $k$ และ $m$ เท่านั้น"
+      - "ใช้สูตร $\\omega_n = \\sqrt{k/m}$"
+      - "หาค่า $k/m$ ก่อน แล้วถอดรากที่สอง"
+    misconceptions:
+      - { match: 100, feedback: "นั่นคือ $k/m$ ยังไม่ได้ถอดรากที่สอง ความถี่เชิงมุมคือ $\\sqrt{k/m}$" }
+      - { match: 1.59, feedback: "ค่านี้คือความถี่ในหน่วยเฮิรตซ์ ($\\omega_n / 2\\pi$) ข้อนี้ถามความถี่เชิงมุมในหน่วย rad/s" }
+    solution: "$\\omega_n = \\sqrt{k/m} = \\sqrt{400/4} = \\sqrt{100} = 10\\ \\mathrm{rad/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p002
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 1
+    type: mcq
+    stem: "ระบบมวล-สปริงมีค่า $k$ คงเดิม เมื่อเพิ่มมวล $m$ เป็นสองเท่า ความถี่ธรรมชาติเชิงมุมจะเปลี่ยนไปอย่างไร"
+    choices:
+      - { id: a, text: "เพิ่มขึ้นเป็นสองเท่า", feedback: "ความถี่ขึ้นกับ $\\sqrt{k/m}$ เมื่อ $m$ เพิ่ม ค่า $k/m$ จะลดลง ไม่ใช่เพิ่ม" }
+      - { id: b, text: "ลดลงเหลือประมาณ 0.707 เท่าของเดิม", correct: true }
+      - { id: c, text: "ไม่เปลี่ยนแปลงเพราะ $k$ ไม่เปลี่ยน", feedback: "ความถี่ขึ้นกับทั้ง $k$ และ $m$ การเปลี่ยน $m$ จึงมีผล" }
+      - { id: d, text: "ลดลงเหลือครึ่งหนึ่งของเดิม", feedback: "การลดลงเป็นรากที่สองของ 1/2 ไม่ใช่ 1/2 ดังนั้นได้ประมาณ 0.707 เท่า" }
+    hints:
+      - "เขียน $\\omega_n$ ในรูป $\\sqrt{k/m}$ แล้วแทนค่า $m$ ใหม่เป็น $2m$"
+      - "ดูว่า $k/(2m)$ เป็นกี่เท่าของ $k/m$ แล้วค่อยถอดราก"
+    solution: "$\\omega_n' = \\sqrt{k/(2m)} = \\frac{1}{\\sqrt{2}}\\sqrt{k/m} \\approx 0.707\\,\\omega_n$ ความถี่ลดลง ไม่ใช่ลดลงครึ่งหนึ่ง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p003
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 2
+    type: numeric
+    stem: "มวล $m = 2\\ \\mathrm{kg}$ ติดกับสปริง $k = 800\\ \\mathrm{N/m}$ ไม่มีตัวหน่วง ความถี่ธรรมชาติในหน่วยเฮิรตซ์ (Hz) เท่าใด (ตอบหน่วย Hz)"
+    answer: { value: 3.18, tolerance: 0.01, unit: Hz }
+    hints:
+      - "หาความถี่เชิงมุมก่อนได้ $\\omega_n = \\sqrt{k/m}$"
+      - "เฮิรตซ์คือจำนวนรอบต่อวินาที ต้องแปลงจาก rad/s โดยหารด้วย $2\\pi$"
+    misconceptions:
+      - { match: 20, feedback: "นั่นคือความถี่เชิงมุม ยังไม่ได้หารด้วย $2\\pi$ ไปเป็นรอบต่อวินาที" }
+    solution: "$\\omega_n = \\sqrt{800/2} = 20\\ \\mathrm{rad/s}$ จึงได้ $f_n = \\omega_n / 2\\pi = 20 / 2\\pi \\approx 3.18\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p004
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 2
+    type: numeric
+    stem: "สปริง $k_1 = 300\\ \\mathrm{N/m}$ และ $k_2 = 600\\ \\mathrm{N/m}$ ต่อกันเป็นอนุกรมแล้วรับมวลหนึ่ง ความแข็งสมมูลกี่ $\\mathrm{N/m}$ (ตอบหน่วย N/m)"
+    answer: { value: 200, tolerance: 0.5, unit: N/m }
+    hints:
+      - "สปริงต่ออนุกรมรวมกันโดยใช้ส่วนกลับของค่าคงตัว"
+      - "$1/k_{eq} = 1/k_1 + 1/k_2$"
+      - "ผลลัพธ์ต้องน้อยกว่าค่าของสปริงตัวที่อ่อนที่สุด"
+    misconceptions:
+      - { match: 900, feedback: "นั่นคือการบวกแบบขนาน ($k_1 + k_2$) สปริงที่ต่ออนุกรมต้องใช้ส่วนกลับ" }
+    solution: "$1/k_{eq} = 1/300 + 1/600 = 3/600 \\Rightarrow k_{eq} = 200\\ \\mathrm{N/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p005
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 2
+    type: numeric
+    stem: "ปั๊มน้ำมวล $150\\ \\mathrm{kg}$ วางบนแท่นที่รองรับด้วยสปริงสองตัววางขนานกัน ตัวละ $15{,}000\\ \\mathrm{N/m}$ ความถี่ธรรมชาติในหน่วย Hz ประมาณเท่าใด (ตอบหน่วย Hz) (ค่าสมมติ)"
+    answer: { value: 2.25, tolerance: 0.01, unit: Hz }
+    hints:
+      - "สปริงที่วางขนานกันรวมค่าคงตัวโดยการบวก"
+      - "คำนวณ $\\omega_n = \\sqrt{k/m}$ ก่อน แล้วหารด้วย $2\\pi$"
+    misconceptions:
+      - { match: 14.14, feedback: "นั่นคือความถี่เชิงมุม ($\\mathrm{rad/s}$) ข้อนี้ถามเป็นเฮิรตซ์" }
+    solution: "$k = 2 \\times 15{,}000 = 30{,}000\\ \\mathrm{N/m}$ $\\omega_n = \\sqrt{30000/150} = \\sqrt{200} \\approx 14.14\\ \\mathrm{rad/s}$ $f_n = 14.14/2\\pi \\approx 2.25\\ \\mathrm{Hz}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p006
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 3
+    type: numeric
+    stem: "จากการสั่นอิสระ แอมพลิจูดยอดแรก $x_1 = 12\\ \\mathrm{mm}$ และยอดถัดไป $x_2 = 3\\ \\mathrm{mm}$ อัตราส่วนความหน่วง $\\zeta$ มีค่าเท่าใด (ตอบค่าไม่มีหน่วย ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.215, tolerance: 0.002 }
+    hints:
+      - "คำนวณค่าลดลงแบบลอการิทึม $\\delta = \\ln(x_1/x_2)$ ก่อน"
+      - "แปลงต่อด้วย $\\zeta = \\delta / \\sqrt{4\\pi^2 + \\delta^2}$"
+      - "$\\delta$ ไม่ใช่ $\\zeta$ ต้องแทนลงในสูตรที่สองก่อนตอบ"
+    misconceptions:
+      - { match: 1.386, feedback: "นั่นคือค่า $\\delta$ ยังไม่ได้แปลงเป็น $\\zeta$ ต้องหารด้วย $\\sqrt{4\\pi^2 + \\delta^2}$" }
+    solution: "$\\delta = \\ln(12/3) = \\ln 4 \\approx 1.386$ $\\zeta = 1.386 / \\sqrt{4\\pi^2 + 1.386^2} \\approx 1.386 / 6.455 \\approx 0.215$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p007
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 3
+    type: mcq
+    stem: "ระบบหนึ่งองศาอิสระมีอัตราส่วนความหน่วง $\\zeta = 1.2$ เมื่อปล่อยให้เคลื่อนที่จากการรบกวนเริ่มต้น ข้อใดอธิบายการเคลื่อนที่ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "สั่นต่อเนื่องด้วยแอมพลิจูดที่ลดลงทุกรอบ", feedback: "แอมพลิจูดลดลงทุกรอบเป็นลักษณะของ $\\zeta < 1$ ไม่ใช่ $\\zeta = 1.2$" }
+      - { id: b, text: "สั่นด้วยความถี่ $\\omega_n\\sqrt{1-\\zeta^2}$ แล้วหยุดในที่สุด", feedback: "สูตร $\\omega_d$ ใช้ได้เฉพาะ $\\zeta < 1$ เท่านั้น เมื่อ $\\zeta > 1$ ไม่มีการสั่นเกิดขึ้น" }
+      - { id: c, text: "หมุนเป็นวงกลมด้วยความถี่เท่ากับ $\\zeta$", feedback: "อัตราส่วนความหน่วงไม่มีหน่วยและไม่ใช่ความถี่ ระบบนี้ไม่ได้หมุนเป็นวงกลม" }
+      - { id: d, text: "กลับสู่ตำแหน่งสมดุลโดยไม่สั่นเกิน (หน่วงเกิน)", correct: true }
+    hints:
+      - "ดูค่า $\\zeta$ เทียบกับ 1 ว่าเป็นกรณีใด"
+      - "กรณี $\\zeta > 1$ เรียกว่าหน่วงเกิน ระบบไม่สั่น"
+    solution: "$\\zeta > 1$ เป็นการหน่วงเกิน ระบบค่อย ๆ กลับสู่สมดุลโดยไม่ข้ามตำแหน่งสมดุลเลย จึงไม่มีการสั่น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p008
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 3
+    type: numeric
+    stem: "ระบบมีความถี่ธรรมชาติเชิงมุม $\\omega_n = 10\\ \\mathrm{rad/s}$ และ $\\zeta = 0.2$ ความถี่ของการสั่นจริง $\\omega_d$ เท่าใด (ตอบหน่วย rad/s ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 9.80, tolerance: 0.01, unit: rad/s }
+    hints:
+      - "การหน่วงทำให้ความถี่การสั่นจริงต่ำกว่า $\\omega_n$"
+      - "ใช้สูตร $\\omega_d = \\omega_n\\sqrt{1 - \\zeta^2}$"
+    misconceptions:
+      - { match: 10, feedback: "ค่านี้คือ $\\omega_n$ ซึ่งไม่ได้คำนึงถึงการหน่วง การสั่นจริงช้ากว่าเล็กน้อย" }
+    solution: "$\\omega_d = 10\\sqrt{1 - 0.2^2} = 10\\sqrt{0.96} \\approx 9.80\\ \\mathrm{rad/s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p009
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 3
+    type: numeric
+    stem: "ระบบถูกแรงฮาร์มอนิกที่อัตราส่วนความถี่ $r = 0.5$ และ $\\zeta = 0.1$ ตัวประกอบขยาย $M$ เท่าใด (ไม่มีหน่วย ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 1.3216, tolerance: 0.005 }
+    hints:
+      - "ใช้สูตร $M = 1/\\sqrt{(1-r^2)^2 + (2\\zeta r)^2}$"
+      - "อย่าลืมพจน์ $(2\\zeta r)^2$ ซึ่งคือผลของตัวหน่วง"
+    misconceptions:
+      - { match: 1.3333, feedback: "ค่านี้ละพจน์ตัวหน่วงออกไป ($1/(1-r^2)$) ซึ่งใช้ได้เฉพาะเมื่อไม่มีการหน่วง" }
+    solution: "$M = 1/\\sqrt{(1 - 0.25)^2 + (2 \\times 0.1 \\times 0.5)^2} = 1/\\sqrt{0.5625 + 0.01} \\approx 1.3216$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p010
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องซักผ้าถังปั่นแห้งมีมวลไม่สมดุลรวม $m_e e = 0.005\\ \\mathrm{kg\\cdot m}$ หมุนที่ 3000 รอบต่อนาที แรงที่เกิดจากความไม่สมดุล (แรงกระทำแนวรัศมีที่แอมพลิจูด) มีขนาดกี่นิวตัน (ตอบหน่วย N) (ค่าสมมติ)"
+    answer: { value: 493.5, tolerance: 0.5, unit: N }
+    hints:
+      - "แปลง 3000 rpm เป็น rad/s ด้วย $\\omega = 2\\pi N / 60$"
+      - "แรงไม่สมดุลมีขนาด $F_0 = m_e e\\,\\omega^2$"
+      - "ความเร็วเชิงมุมถูกยกกำลังสองในสูตร"
+    misconceptions:
+      - { match: 1.57, feedback: "ค่านี้ได้จาก $m_e e\\,\\omega$ โดยไม่ยกกำลังสองความเร็วเชิงมุม แรงไม่สมดุลขึ้นกับ $\\omega^2$" }
+    solution: "$\\omega = 2\\pi(3000)/60 \\approx 314.16\\ \\mathrm{rad/s}$ $F_0 = 0.005 \\times 314.16^2 \\approx 493.5\\ \\mathrm{N}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p011
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องจักรทำงานที่อัตราส่วนความถี่ $r = 3$ บนฐานยางที่มี $\\zeta = 0.2$ อัตราส่วนแรงที่ส่งผ่าน $TR$ เท่าใด (ไม่มีหน่วย ทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.1931, tolerance: 0.002 }
+    hints:
+      - "ใช้สูตร $TR = \\sqrt{\\frac{1 + (2\\zeta r)^2}{(1-r^2)^2 + (2\\zeta r)^2}}$"
+      - "คำนวณ $2\\zeta r$ ก่อนแล้วยกกำลังสอง"
+    misconceptions:
+      - { match: 0.125, feedback: "ค่านี้ละตัวหน่วงออกไป ($1/(r^2-1)$) ที่ $r$ สูง ตัวหน่วงมีผลต่อ TR" }
+    solution: "$2\\zeta r = 1.2$, $(1.2)^2 = 1.44$, $(1-9)^2 = 64$ $TR = \\sqrt{(1+1.44)/(64+1.44)} = \\sqrt{2.44/65.44} \\approx 0.1931$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p012
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 4
+    type: expression
+    stem: "จงเขียนความถี่ธรรมชาติเชิงมุม $\\omega_n$ ในรูปของ $k$ และ $m$ โดยไม่มีตัวหน่วง"
+    prefix: "ω_n ="
+    answer: { latex: "\\sqrt{\\frac{k}{m}}", variables: [k, m] }
+    hints:
+      - "ความถี่ธรรมชาติขึ้นกับความแข็งของสปริงและมวลเท่านั้น"
+      - "ค่า $\\omega_n^2$ คือ $k/m$ ดังนั้นต้องถอดรากที่สอง"
+    misconceptions:
+      - { match: "\\frac{k}{m}", feedback: "นั่นคือ $\\omega_n^2$ ยังต้องถอดรากที่สองอีกครั้ง" }
+    solution: "$\\omega_n^2 = k/m$ จึงได้ $\\omega_n = \\sqrt{k/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p013
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับขั้นตอนการหาอัตราส่วนความหน่วง $\\zeta$ จากกราฟการสั่นอิสระ"
+    items:
+      - "วัดแอมพลิจูดยอดที่อยู่ติดกันสองยอด $x_1$ และ $x_2$ จากกราฟการสั่นอิสระ"
+      - "คำนวณค่าลดลงแบบลอการิทึม $\\delta = \\ln(x_1/x_2)$"
+      - "แปลงเป็น $\\zeta = \\delta/\\sqrt{4\\pi^2 + \\delta^2}$"
+      - "ตรวจว่า $\\zeta < 1$ จึงเป็นระบบแบบมีหน่วงที่สั่นได้"
+    hints:
+      - "เริ่มจากการอ่านค่าจากกราฟก่อนเสมอ"
+      - "ต้องได้ $\\delta$ ก่อนจึงแปลงเป็น $\\zeta$ ได้"
+    solution: "อ่านแอมพลิจูดจากกราฟ คำนวณ $\\delta$ แปลงเป็น $\\zeta$ แล้วตรวจว่า $\\zeta < 1$ ขั้นสุดท้ายยืนยันชนิดการหน่วง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p014
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 5
+    type: numeric
+    stem: "เครื่องอัดอากาศมวล $500\\ \\mathrm{kg}$ ทำงานที่ 1800 รอบต่อนาที (ไม่มีตัวหน่วง) ต้องการให้ $TR = 0.1$ ตามแบบจำลองไม่มีหน่วย ค่าคงตัวสปริงของฐานรองรับควรเป็นกี่ $\\mathrm{kN/m}$ (ตอบหน่วย kN/m) (ค่าสมมติ)"
+    answer: { value: 1615, tolerance: 1, unit: kN/m }
+    hints:
+      - "ไม่มีตัวหน่วง $TR = 1/(r^2 - 1)$ ตั้งสมการให้เท่ากับ 0.1 หาค่า $r$"
+      - "แปลง 1800 rpm เป็น rad/s แล้วหา $\\omega_n = \\omega/r$"
+      - "ใช้ $k = m\\,\\omega_n^2$ แล้วแปลงเป็น kN/m"
+    misconceptions:
+      - { match: 17765, feedback: "ค่านี้คือ $k = m\\,\\omega^2$ ซึ่งใช้ความถี่การทำงานแทนความถี่ธรรมชาติ ต้องหาร $\\omega$ ด้วย $\\sqrt{11}$ ก่อน" }
+    solution: "$1/(r^2-1) = 0.1 \\Rightarrow r = \\sqrt{11} \\approx 3.317$ $\\omega = 2\\pi(1800)/60 \\approx 188.5\\ \\mathrm{rad/s}$ $\\omega_n = 188.5/3.317 \\approx 56.83\\ \\mathrm{rad/s}$ $k = 500 \\times 56.83^2 \\approx 1.615\\times10^6\\ \\mathrm{N/m} \\approx 1615\\ \\mathrm{kN/m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p015
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 5
+    type: numeric
+    stem: "ระบบมวล-สปริง-ตัวหน่วงมี $k = 8000\\ \\mathrm{N/m}$ และ $\\zeta = 0.04$ ถูกแรงฮาร์มอนิกแอมพลิจูด $F_0 = 40\\ \\mathrm{N}$ ที่ความถี่เท่ากับความถี่ธรรมชาติ แอมพลิจูดการสั่นสูงสุดกี่ $\\mathrm{mm}$ (ตอบหน่วย mm)"
+    answer: { value: 62.5, tolerance: 0.1, unit: mm }
+    hints:
+      - "ที่การสั่นพ้อง ตัวประกอบขยายมีค่า $1/(2\\zeta)$"
+      - "แอมพลิจูดสูงสุดคือ $F_0 / (2k\\zeta)$"
+      - "อย่าลืมแปลงหน่วยจากเมตรเป็นมิลลิเมตร"
+    misconceptions:
+      - { match: 5, feedback: "ค่า $F_0/k = 5$ mm คือการขยับแบบสถิต ไม่ได้คูณด้วย $1/(2\\zeta)$ ที่การสั่นพ้อง" }
+    solution: "$X_{max} = F_0/(2k\\zeta) = 40/(2 \\times 8000 \\times 0.04) = 0.0625\\ \\mathrm{m} = 62.5\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p016
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 3
+    type: match
+    stem: "จับคู่ค่าอัตราส่วนความหน่วงกับลักษณะการตอบสนอง"
+    pairs:
+      - { left: "$\\zeta = 0$", right: "ไม่มีการหน่วง สั่นต่อเนื่องด้วยแอมพลิจูดเท่าเดิม" }
+      - { left: "$0 < \\zeta < 1$", right: "สั่นแบบมีหน่วง แอมพลิจูดลดลงเป็นเลขยกกำลัง" }
+      - { left: "$\\zeta = 1$", right: "หน่วงวิกฤต กลับสู่สมดุลเร็วที่สุดโดยไม่สั่นเกิน" }
+      - { left: "$\\zeta > 1$", right: "หน่วงเกิน กลับสู่สมดุลช้า ไม่สั่น" }
+    hints:
+      - "ดูค่า $\\zeta$ เทียบกับ 0, ระหว่าง 0 กับ 1, เท่ากับ 1 และมากกว่า 1"
+      - "ค่า $\\zeta = 1$ เป็นจุดแบ่งระหว่างการสั่นกับการไม่สั่น"
+    solution: "$\\zeta = 0$ ไม่มีการหน่วง $0 < \\zeta < 1$ สั่นแบบมีหน่วง $\\zeta = 1$ หน่วงวิกฤต และ $\\zeta > 1$ หน่วงเกิน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p017
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 2
+    type: text
+    stem: "เมื่อความถี่ของแรงบังคับเท่ากับความถี่ธรรมชาติ แอมพลิจูดการสั่นจะขยายใหญ่ขึ้นมาก เรียกปรากฏการณ์นี้เป็นภาษาไทยว่าอะไร"
+    accepted: ["การสั่นพ้อง", "สั่นพ้อง", "resonance", "Resonance", "การเกิดสั่นพ้อง"]
+    hints:
+      - "เป็นปรากฏการณ์ที่เกิดจากความถี่ตรงกัน"
+      - "คำตอบคือคำที่มีความหมายว่า การสั่นที่ตรงกับความถี่ธรรมชาติ"
+    solution: "การสั่นพ้อง (resonance) เกิดเมื่อ $r \\approx 1$ แอมพลิจูดสูงสุดขึ้นกับตัวหน่วง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.mechanics.vibration-sdof.p018
+    topics: [engineering.mechanics.vibration-sdof]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "เลือกทุกข้อที่เป็นวิธีที่ช่วยลดการส่งผ่านแรงจากเครื่องจักรที่สั่นไปยังโครงสร้างรองรับได้จริง"
+    choices:
+      - { id: a, text: "เพิ่มความแข็งของฐานรองรับจนความถี่ธรรมชาติเข้าใกล้ความถี่การทำงาน", feedback: "การทำให้ $r \\approx 1$ เกิดการสั่นพ้อง ทำให้แรงส่งผ่านสูงขึ้น" }
+      - { id: b, text: "ใช้ฐานรองรับแบบยืดหยุ่นให้ความถี่ธรรมชาติต่ำกว่าความถี่การทำงานมาก", correct: true }
+      - { id: c, text: "ปรับสมดุลมวลของเครื่องหมุนให้ดีขึ้น เพื่อลดแรงกระทำที่ต้นทาง", correct: true }
+      - { id: d, text: "ใส่ตัวหน่วงให้มากที่สุดเสมอ", feedback: "ที่ $r$ สูง ตัวหน่วงมากทำให้การส่งผ่านแรงเพิ่มขึ้น ไม่ได้ลดเสมอไป" }
+    hints:
+      - "พิจารณาว่า $r$ ควรมากกว่าหรือน้อยกว่าค่าที่ทำให้เกิดการสั่นพ้อง"
+      - "การลดแรงที่ต้นทางคือการแก้ที่เครื่องจักรเอง"
+    solution: "ข้อ b ทำให้ $r > \\sqrt{2}$ และแยกการสั่นได้ดี ข้อ c ลดแรงบังคับที่ต้นทาง ข้อ a และ d ทำให้การส่งผ่านแรงเพิ่มขึ้นในบางช่วงความถี่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

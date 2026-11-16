@@ -1,0 +1,297 @@
+problems:
+  - id: engineering.electronics.op-amps.p001
+    topics: [engineering.electronics.op-amps]
+    difficulty: 1
+    type: numeric
+    stem: "วงขยายกลับเฟสมี $R_f = 10\\ \\mathrm{k\\Omega}$ $R_{in} = 2\\ \\mathrm{k\\Omega}$ และ $V_{in} = 0.5\\ \\mathrm{V}$ แรงดันขาออก $V_{out}$ เท่ากับกี่โวลต์ (ตอบหน่วย V พร้อมเครื่องหมาย)"
+    answer: { value: -2.5, tolerance: 0.01, unit: V }
+    hints:
+      - "ใช้สูตร $V_{out} = -(R_f/R_{in}) V_{in}$"
+      - "หา $R_f/R_{in}$ ก่อน ซึ่งเป็นค่าไม่มีหน่วย"
+    misconceptions:
+      - { match: 2.5, feedback: "ขนาดถูกต้องแต่เครื่องหมายผิด วงกลับเฟสทำให้ได้แรงดันขาออกที่กลับเฟสกับขาเข้า" }
+    solution: "$V_{out} = -(10/2)\\times 0.5 = -2.5\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p002
+    topics: [engineering.electronics.op-amps]
+    difficulty: 1
+    type: mcq
+    stem: "ตามแบบจำลองออปแอมป์อุดมคติ กระแสที่ไหลเข้าขาบวกและขาลบมีค่าเท่าใด"
+    choices:
+      - { id: a, text: "เท่ากับแรงดันขาออก", feedback: "กระแสและแรงดันเป็นปริมาณต่างชนิด ไม่เท่ากันโดยทั่วไป" }
+      - { id: b, text: "ไม่จำกัด เพราะอัตราขยายวงเปิดไม่จำกัด", feedback: "อัตราขยายวงเปิดไม่จำกัดไม่ได้หมายความว่ากระแสเข้าไม่จำกัด" }
+      - { id: c, text: "เป็นศูนย์", correct: true }
+      - { id: d, text: "เท่ากับ $V_{in}/R_{in}$ เสมอ", feedback: "กระแสนี้ไหลผ่าน $R_{in}$ ไม่ได้ไหลเข้าขาของออปแอมป์" }
+    hints:
+      - "นึกถึงกฎข้อที่สองของออปแอมป์อุดมคติ"
+      - "ความต้านทานขาเข้าของออปแอมป์อุดมคติไม่จำกัด"
+    solution: "ออปแอมป์อุดมคติมีความต้านทานขาเข้าไม่จำกัด จึงไม่มีกระแสไหลเข้าขาทั้งสอง $I_+ = I_- = 0$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p003
+    topics: [engineering.electronics.op-amps]
+    difficulty: 2
+    type: numeric
+    stem: "วงขยายไม่กลับเฟสมี $R_f = 47\\ \\mathrm{k\\Omega}$ $R_g = 10\\ \\mathrm{k\\Omega}$ และ $V_{in} = 0.3\\ \\mathrm{V}$ แรงดันขาออกกี่โวลต์ (ตอบหน่วย V) (ค่าสมมติ)"
+    answer: { value: 1.71, tolerance: 0.01, unit: V }
+    hints:
+      - "อัตราขยายไม่กลับเฟสคือ $1 + R_f/R_g$"
+      - "แรงดันขาออกเป็นบวกเพราะสัญญาณไม่กลับเฟส"
+    misconceptions:
+      - { match: -1.41, feedback: "ค่านี้ได้จากสูตรของวงกลับเฟส วงไม่กลับเฟสมีเครื่องหมายบวกและมี 1 บวกอยู่ด้วย" }
+    solution: "$V_{out} = (1 + 47/10)\\times 0.3 = 5.7 \\times 0.3 = 1.71\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p004
+    topics: [engineering.electronics.op-amps]
+    difficulty: 2
+    type: numeric
+    stem: "เซ็นเซอร์ให้สัญญาณ 20 mV ต้องขยายเป็น 2 V โดยใช้วงไม่กลับเฟสที่ $R_g = 1\\ \\mathrm{k\\Omega}$ ค่า $R_f$ ที่ต้องใช้กี่กิโลโอห์ม (ตอบหน่วย kΩ) (ค่าสมมติ)"
+    answer: { value: 99, tolerance: 0.1, unit: kΩ }
+    hints:
+      - "อัตราขยายที่ต้องการคือ $2\\ \\mathrm{V} / 20\\ \\mathrm{mV} = 100$"
+      - "ต้องให้ $1 + R_f/R_g = 100$"
+    misconceptions:
+      - { match: 100, feedback: "ค่านี้ใช้ $R_f/R_g$ โดยลืมบวก 1 ในสูตรของวงไม่กลับเฟส" }
+    solution: "$1 + R_f/1 = 100$ จึงได้ $R_f = 99\\ \\mathrm{k\\Omega}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p005
+    topics: [engineering.electronics.op-amps]
+    difficulty: 2
+    type: mcq
+    stem: "วงตามแรงดัน (voltage follower) มีประโยชน์หลักในการใช้งานใด"
+    choices:
+      - { id: a, text: "ขยายสัญญาณให้มากกว่าสิบเท่า", feedback: "วงตามแรงดันมีอัตราขยายเท่ากับหนึ่ง ไม่ได้ขยายสัญญาณ" }
+      - { id: b, text: "กลับเฟสของสัญญาณเข้าเพื่อใช้กับวงอื่น", feedback: "วงตามแรงดันไม่กลับเฟส สัญญาณขาออกมีเฟสเดียวกับขาเข้า" }
+      - { id: c, text: "แยกวงจรต้นทางออกจากโหลด โดยไม่ให้โหลดดึงกระแสจากแหล่งสัญญาณ", correct: true }
+      - { id: d, text: "เปลี่ยนแรงดันเป็นกระแสเพื่อวัดค่ากระแส", feedback: "การแปลงแรงดันเป็นกระแสเป็นหน้าที่ของวงอื่น ไม่ใช่วงตามแรงดัน" }
+    hints:
+      - "ลองนึกถึงสิ่งที่เกิดเมื่อโหลดต่อโดยตรงกับแหล่งสัญญาณที่อ่อน"
+      - "อัตราขยายของวงตามแรงดันเท่ากับหนึ่ง"
+    solution: "วงตามแรงดันมีอัตราขยายหนึ่งและความต้านทานขาเข้าสูงมาก จึงป้องกันไม่ให้โหลดดึงกระแสจากแหล่งสัญญาณ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p006
+    topics: [engineering.electronics.op-amps]
+    difficulty: 3
+    type: numeric
+    stem: "วงรวมสัญญาณมี $R_1 = 10\\ \\mathrm{k\\Omega}$ $R_2 = 20\\ \\mathrm{k\\Omega}$ และ $R_f = 30\\ \\mathrm{k\\Omega}$ แรงดันเข้า $V_1 = 1\\ \\mathrm{V}$ และ $V_2 = 0.5\\ \\mathrm{V}$ แรงดันขาออกกี่โวลต์ (ตอบหน่วย V พร้อมเครื่องหมาย) (ค่าสมมติ)"
+    answer: { value: -3.75, tolerance: 0.01, unit: V }
+    hints:
+      - "แต่ละสัญญาณมีวงของตัวเองที่มี $-R_f/R_i$"
+      - "รวมผลของสัญญาณทั้งสองเข้าด้วยกันโดยใช้การซ้อนทับ"
+    misconceptions:
+      - { match: -3.0, feedback: "ค่านี้คิดเฉพาะสัญญาณแรก ลืมนำสัญญาณที่สองมารวมด้วย" }
+    solution: "$V_{out} = -(30/10)(1) - (30/20)(0.5) = -3 - 0.75 = -3.75\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p007
+    topics: [engineering.electronics.op-amps]
+    difficulty: 3
+    type: numeric
+    stem: "วงผลต่างที่ตัวต้านทานจับคู่กันอย่างดี มี $R_f/R_1 = 5$ รับ $V_1 = 1.2\\ \\mathrm{V}$ และ $V_2 = 1.7\\ \\mathrm{V}$ แรงดันขาออกกี่โวลต์ (ตอบหน่วย V พร้อมเครื่องหมาย) (ค่าสมมติ)"
+    answer: { value: 2.5, tolerance: 0.01, unit: V }
+    hints:
+      - "สำหรับวงผลต่างที่จับคู่ดี $V_{out} = (R_f/R_1)(V_2 - V_1)$"
+      - "ต้องลบแรงดันขาลบจากขาบวก"
+    misconceptions:
+      - { match: -2.5, feedback: "ค่านี้เกิดจากการสลับลำดับ $V_1$ กับ $V_2$ ในสูตรผลต่าง" }
+    solution: "$V_{out} = 5(1.7 - 1.2) = 5 \\times 0.5 = 2.5\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p008
+    topics: [engineering.electronics.op-amps]
+    difficulty: 3
+    type: numeric
+    stem: "วงอินทิเกรเตอร์มี $R = 100\\ \\mathrm{k\\Omega}$ $C = 10\\ \\mathrm{\\mu F}$ และรับแรงดันคงที่ $V_{in} = 1\\ \\mathrm{V}$ ตั้งแต่ $t = 0$ แรงดันขาออกที่ $t = 2\\ \\mathrm{s}$ เท่ากับกี่โวลต์ (ตอบหน่วย V พร้อมเครื่องหมาย) (ค่าสมมติ)"
+    answer: { value: -2, tolerance: 0.01, unit: V }
+    hints:
+      - "ค่า $RC$ มีหน่วยวินาที ให้คำนวณก่อน"
+      - "อินทิกรัลของแรงดันคงที่ $V_{in}$ ตั้งแต่ $0$ ถึง $t$ เท่ากับ $V_{in}\\,t$"
+    misconceptions:
+      - { match: 2, feedback: "ขนาดถูกแต่เครื่องหมายผิด อินทิเกรเตอร์มีเครื่องหมายลบเมื่อเทียบกับแรงดันขาเข้า" }
+    solution: "$RC = 100000 \\times 10\\times10^{-6} = 1\\ \\mathrm{s}$ จึงได้ $V_{out} = -\\frac{1}{1}\\times 1 \\times 2 = -2\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p009
+    topics: [engineering.electronics.op-amps]
+    difficulty: 4
+    type: numeric
+    stem: "วงอินทิเกรเตอร์มีค่า $RC = 1\\ \\mathrm{s}$ และแรงดันขาเข้าคงที่ $1\\ \\mathrm{V}$ ตั้งแต่ $t = 0$ ใช้เวลากี่วินาทีแรงดันขาออกจึงมีขนาด $5\\ \\mathrm{V}$ (ตอบหน่วย s) (ค่าสมมติ)"
+    answer: { value: 5, tolerance: 0.01, unit: s }
+    hints:
+      - "ขนาดของแรงดันขาออกเท่ากับ $V_{in}\\,t/(RC)$"
+      - "จัดสมการให้ได้ $t$ จากค่า $5\\ \\mathrm{V}$"
+    misconceptions:
+      - { match: 0.2, feedback: "ค่านี้คือ $RC/V_{in}$ ที่กลับตำแหน่งตัวเศษกับตัวส่วน" }
+    solution: "$|V_{out}| = V_{in}\\,t/(RC)$ จึงได้ $t = 5 \\times 1/1 = 5\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p010
+    topics: [engineering.electronics.op-amps]
+    difficulty: 4
+    type: numeric
+    stem: "วงดิฟเฟอเรนชิเอเตอร์มี $R = 10\\ \\mathrm{k\\Omega}$ $C = 1\\ \\mathrm{\\mu F}$ และแรงดันขาเข้าเพิ่มขึ้นเป็นเส้นตรงด้วยอัตรา $0.5\\ \\mathrm{V/s}$ แรงดันขาออกเท่ากับกี่มิลลิโวลต์ (ตอบหน่วย mV พร้อมเครื่องหมาย) (ค่าสมมติ)"
+    answer: { value: -5, tolerance: 0.01, unit: mV }
+    hints:
+      - "ใช้สูตร $V_{out} = -RC\\,dV_{in}/dt$"
+      - "คำนวณ $RC$ เป็นวินาทีก่อน"
+    misconceptions:
+      - { match: -50, feedback: "ค่านี้ใช้ $RC = 0.1\\ \\mathrm{s}$ ซึ่งผิดจาก $10\\ \\mathrm{k\\Omega}\\times 1\\ \\mathrm{\\mu F}$" }
+    solution: "$RC = 10^4 \\times 10^{-6} = 0.01\\ \\mathrm{s}$ จึงได้ $V_{out} = -0.01 \\times 0.5 = -0.005\\ \\mathrm{V} = -5\\ \\mathrm{mV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p011
+    topics: [engineering.electronics.op-amps]
+    difficulty: 4
+    type: numeric
+    stem: "ตัวตรวจแสงในสายพานโรงงานให้กระแส $2\\ \\mathrm{\\mu A}$ ต่อวงแปลงกระแสเป็นแรงดันที่มี $R_f = 100\\ \\mathrm{k\\Omega}$ แรงดันขาออกกี่มิลลิโวลต์ (ตอบหน่วย mV พร้อมเครื่องหมาย) (ค่าสมมติ)"
+    answer: { value: -200, tolerance: 1, unit: mV }
+    hints:
+      - "วงแปลงกระแสเป็นแรงดันมี $V_{out} = -R_f I_{in}$"
+      - "ระวังหน่วยไมโครแอมป์และกิโลโอห์ม"
+    misconceptions:
+      - { match: -20, feedback: "ค่านี้ใช้ $R_f = 10\\ \\mathrm{k\\Omega}$ แทนที่จะเป็น 100 kΩ" }
+    solution: "$V_{out} = -100\\times10^3 \\times 2\\times10^{-6} = -0.2\\ \\mathrm{V} = -200\\ \\mathrm{mV}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p012
+    topics: [engineering.electronics.op-amps]
+    difficulty: 4
+    type: numeric
+    stem: "วงไม่กลับเฟสมีอัตราขยาย 11 รับแรงดันขาเข้า $1.2\\ \\mathrm{V}$ ออปแอมป์จ่ายไฟ $\\pm 12\\ \\mathrm{V}$ และแรงดันขาออกอิ่มตัวที่ $\\pm 10.5\\ \\mathrm{V}$ (ค่าสมมติ) แรงดันขาออกจริงมีค่ากี่โวลต์ (ตอบหน่วย V)"
+    answer: { value: 10.5, tolerance: 0.01, unit: V }
+    hints:
+      - "คำนวณแรงดันขาออกตามทฤษฎีก่อนว่าเท่าใด"
+      - "เปรียบเทียบกับค่าสูงสุดที่ขาออกทำได้"
+    misconceptions:
+      - { match: 13.2, feedback: "ค่านี้เป็นค่าตามทฤษฎีที่ไม่คำนึงถึงการอิ่มตัว แรงดันขาออกจริงถูกจำกัดที่ค่าสูงสุดของวงจร" }
+    solution: "ตามทฤษฎี $V_{out} = 11 \\times 1.2 = 13.2\\ \\mathrm{V}$ ซึ่งเกินค่าอิ่มตัว จึงอิ่มตัวที่ $10.5\\ \\mathrm{V}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p013
+    topics: [engineering.electronics.op-amps]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับขั้นตอนการวิเคราะห์วงขยายที่มีการป้อนกลับเชิงลบ"
+    items:
+      - "ระบุว่าวงเป็นแบบกลับเฟส ไม่กลับเฟส หรือวงอื่น จากตำแหน่งขาเข้าและการป้อนกลับ"
+      - "ใช้กฎที่ว่า $V_+ = V_-$ และกระแสขาเข้าเป็นศูนย์"
+      - "เขียนกระแสที่ไหลผ่านตัวต้านทานขาเข้าและขาป้อนกลับ"
+      - "แก้สมการหาแรงดันขาออก แล้วตรวจว่าค่าไม่เกินแรงดันอิ่มตัว"
+    hints:
+      - "ก่อนใช้กฎสองข้อ ต้องรู้ก่อนว่าวงมีการป้อนกลับเชิงลบ"
+      - "การตรวจอิ่มตัวทำเป็นขั้นสุดท้าย"
+    solution: "ระบุชนิดวง ใช้กฎสองข้อ เขียนกระแส แก้สมการ แล้วตรวจการอิ่มตัว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p014
+    topics: [engineering.electronics.op-amps]
+    difficulty: 2
+    type: match
+    stem: "จับคู่วงจรออปแอมป์กับหน้าที่หลักของวงนั้น"
+    pairs:
+      - { left: "วงกลับเฟส", right: "ขยายสัญญาณและกลับเฟสด้วย $-R_f/R_{in}$" }
+      - { left: "วงไม่กลับเฟส", right: "ขยายสัญญาณโดยไม่กลับเฟสด้วย $1 + R_f/R_g$" }
+      - { left: "วงตามแรงดัน", right: "อัตราขยายหนึ่งและแยกวงจรต้นทางจากโหลด" }
+      - { left: "วงอินทิเกรเตอร์", right: "ให้แรงดันขาออกเป็นปริพันธ์ของแรงดันขาเข้า" }
+    hints:
+      - "ดูอัตราขยายและตำแหน่งที่สัญญาณเข้า"
+      - "วงที่ใช้ตัวเก็บประจุป้อนกลับมักทำงานกับอินทิกรัล"
+    solution: "วงกลับเฟสใช้ $-R_f/R_{in}$ วงไม่กลับเฟสใช้ $1+R_f/R_g$ วงตามแรงดันมีอัตราขยายหนึ่ง และวงอินทิเกรเตอร์ให้ปริพันธ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p015
+    topics: [engineering.electronics.op-amps]
+    difficulty: 2
+    type: text
+    stem: "การป้อนกลับที่ส่งส่วนหนึ่งของแรงดันขาออกกลับไปยังขาลบ ทำให้วงจรปรับตัวจนความต่างแรงดันเล็กมาก เรียกเป็นภาษาไทยว่าอะไร"
+    accepted: ["การป้อนกลับเชิงลบ", "ป้อนกลับเชิงลบ", "negative feedback", "Negative feedback"]
+    hints:
+      - "คำตอบมีคำว่า ป้อนกลับ และมีคำที่บอกทิศทาง"
+      - "ตรงข้ามกับการป้อนกลับเชิงบวก"
+    solution: "การป้อนกลับเชิงลบ (negative feedback) ทำให้อัตราขยายวงปิดควบคุมได้ด้วยตัวต้านทานภายนอก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p016
+    topics: [engineering.electronics.op-amps]
+    difficulty: 4
+    type: expression
+    stem: "วงไม่กลับเฟสมีตัวต้านทาน $a$ ต่อจากขาลบลงกราวด์ และตัวต้านทาน $b$ ป้อนกลับจากขาออกมาขาลบ จงเขียนอัตราขยายแรงดัน $V_{out}/V_{in}$ ในรูปของ $a$ และ $b$"
+    prefix: "อัตราขยาย ="
+    answer: { latex: "1 + \\frac{b}{a}", variables: [a, b] }
+    hints:
+      - "อัตราขยายไม่กลับเฟสคือ $1 + R_f/R_g$"
+      - "$R_f$ ในสูตรคือตัวต้านทานป้อนกลับ ส่วน $R_g$ คือตัวต้านทานลงกราวด์"
+    misconceptions:
+      - { match: "\\frac{b}{a}", feedback: "ค่านี้ขาดพจน์ 1 ของวงไม่กลับเฟส" }
+    solution: "$A_v = 1 + b/a$ โดย $b$ คือ $R_f$ และ $a$ คือ $R_g$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p017
+    topics: [engineering.electronics.op-amps]
+    difficulty: 5
+    type: numeric
+    stem: "วงกลับเฟสที่ออกแบบให้อัตราขยายในอุดมคติเป็น $G = -50$ ใช้ออปแอมป์ที่มีอัตราขยายวงเปิด $A = 1000$ (ค่าสมมติ) อัตราขยายวงปิดจริงเท่ากับกี่ ใช้สูตร $G_{cl} = G/(1 + (1 - G)/A)$ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: -47.57, tolerance: 0.05 }
+    hints:
+      - "แทนค่า $G = -50$ และ $A = 1000$ ลงในสูตรอัตราขยายวงปิด"
+      - "ตัวส่วนคือ $1 + (1-G)/A$ โดย $1 - G = 51$ ระวังเครื่องหมายของ $G$"
+    misconceptions:
+      - { match: -50, feedback: "ค่านี้คืออัตราขยายที่ออกแบบไว้ ยังไม่ได้คำนึงถึงอัตราขยายวงเปิดที่จำกัด" }
+    solution: "$1 - G = 51$ จึงได้ $G_{cl} = -50/(1 + 51/1000) = -50/1.051 \\approx -47.57$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p018
+    topics: [engineering.electronics.op-amps]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกทุกข้อที่เป็นข้อจำกัดของออปแอมป์จริงเมื่อเทียบกับแบบจำลองอุดมคติ"
+    choices:
+      - { id: a, text: "แรงดันขาออกถูกจำกัดให้อยู่ในช่วงแรงดันจ่ายไฟ", correct: true }
+      - { id: b, text: "อัตราขยายวงเปิดมีค่าจำกัด", correct: true }
+      - { id: c, text: "ความต้านทานขาเข้าไม่จำกัด", feedback: "ข้อนี้เป็นสมมติฐานของแบบจำลองอุดมคติ ไม่ใช่ข้อจำกัดของอุปกรณ์จริง" }
+      - { id: d, text: "กระแสขาเข้าเป็นศูนย์เสมอ", feedback: "ออปแอมป์จริงมีกระแสขาเข้าเล็กน้อยที่ไม่เป็นศูนย์ ข้อนี้เป็นสมมติฐานของอุดมคติ" }
+    hints:
+      - "ลองนึกว่าสมมติฐานใดของอุดมคติไม่เป็นจริงในทางปฏิบัติ"
+      - "สมมติฐานที่ทำให้ใช้งานง่ายไม่ได้ทำให้เป็นข้อจำกัด"
+    solution: "แรงดันอิ่มตัวและอัตราขยายวงเปิดจำกัดเป็นข้อจำกัดจริง ส่วนความต้านทานขาเข้าไม่จำกัดกับกระแสขาเข้าเป็นศูนย์เป็นสมมติฐานอุดมคติ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.electronics.op-amps.p019
+    topics: [engineering.electronics.op-amps]
+    difficulty: 4
+    type: mcq
+    stem: "วงเปรียบเทียบแรงดัน (comparator) ทำงานอย่างไร เมื่อ $V_+ > V_-$"
+    choices:
+      - { id: a, text: "แรงดันขาออกจะค่อย ๆ ลดลงเป็นศูนย์", feedback: "วงเปรียบเทียบไม่ได้ทำให้ค่อย ๆ ลดลง แต่อิ่มตัวไปที่ระดับหนึ่ง" }
+      - { id: b, text: "แรงดันขาออกอิ่มตัวไปที่ระดับสูง", correct: true }
+      - { id: c, text: "แรงดันขาออกอิ่มตัวไปที่ระดับต่ำ", feedback: "ระดับต่ำเกิดเมื่อ $V_+ < V_-$" }
+      - { id: d, text: "แรงดันขาออกไม่เปลี่ยนแปลง", feedback: "วงเปรียบเทียบเปลี่ยนสถานะเมื่อความต่างเปลี่ยนเครื่องหมาย" }
+    hints:
+      - "ไม่มีการป้อนกลับเชิงลบ วงจรจึงอิ่มตัวเมื่อความต่างแรงดันมีเครื่องหมายที่กำหนด"
+      - "ทิศทางขึ้นอยู่กับว่าขาบวกหรือขาลบสูงกว่ากัน"
+    solution: "ไม่มีการป้อนกลับเชิงลบ วงจรเข้าสู่สถานะอิ่มตัวที่ระดับสูงเมื่อขาบวกสูงกว่าขาลบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

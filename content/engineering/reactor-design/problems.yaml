@@ -1,0 +1,292 @@
+problems:
+  - id: engineering.process.reactor-design.p001
+    topics: [engineering.process.reactor-design]
+    difficulty: 1
+    type: numeric
+    stem: "ปฏิกิริยาอันดับหนึ่งมีค่าคงตัวอัตรา $k = 0.2\\ \\mathrm{min^{-1}}$ ที่ความเข้มข้น $C_A = 0.5\\ \\mathrm{mol/L}$ อัตราการหายไปของ A มีขนาดกี่ $\\mathrm{mol/(L\\cdot min)}$ (ตอบหน่วย mol/(L·min))"
+    answer: { value: 0.1, tolerance: 0.001, unit: "mol/(L·min)" }
+    hints:
+      - "กฎอัตราอันดับหนึ่งคือ $-r_A = k\\,C_A$"
+      - "แทนค่า $k$ และ $C_A$ ลงในกฎอัตรา"
+    misconceptions:
+      - { match: 2.5, feedback: "ค่านี้ได้จาก $C_A / k$ ซึ่งเป็นการหาร ไม่ใช่การคูณ อัตราคือ $k\\,C_A$" }
+    solution: "$-r_A = k\\,C_A = 0.2 \\times 0.5 = 0.1\\ \\mathrm{mol/(L\\cdot min)}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p002
+    topics: [engineering.process.reactor-design]
+    difficulty: 1
+    type: mcq
+    stem: "ในเครื่องปฏิกรณ์ชนิดใดที่องค์ประกอบของของไหลภายในถังเท่ากันทุกตำแหน่ง และเท่ากับองค์ประกอบที่ทางออกเสมอ"
+    choices:
+      - { id: a, text: "เครื่องปฏิกรณ์แบบไหลในท่อ (PFR)", feedback: "ใน PFR องค์ประกอบเปลี่ยนไปตามความยาวท่อ จากทางเข้าไปทางออก" }
+      - { id: b, text: "เครื่องปฏิกรณ์แบบกะ (batch) เมื่อเริ่มปฏิกิริยา", feedback: "แบบกะเป็นของผสมที่เปลี่ยนตามเวลา แต่ไม่มีทางออกระหว่างทำงาน ข้อนี้ถามเรื่องทางออกโดยเฉพาะ" }
+      - { id: c, text: "ถังกวนต่อเนื่องแบบผสมสมบูรณ์ (CSTR)", correct: true }
+      - { id: d, text: "ท่อเรียบที่ไม่มีการผสมในแนวรัศมี", feedback: "ท่อเรียบมีการไหลแบบ PFR ซึ่งองค์ประกอบเปลี่ยนไปตามความยาว" }
+    hints:
+      - "ลองนึกถึงถังที่กวนตลอดเวลาจนของเหลวเหมือนกันทั้งถัง"
+      - "คำตอบคือชนิดที่ทางออกมีองค์ประกอบเท่ากับในถังทั้งหมด"
+    solution: "ใน CSTR การกวนทำให้ผสมสมบูรณ์ องค์ประกอบในถังเท่ากันทุกจุดและเท่ากับทางออก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p003
+    topics: [engineering.process.reactor-design]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยาอันดับหนึ่งในเครื่องปฏิกรณ์แบบกะ มี $k = 0.2\\ \\mathrm{min^{-1}}$ ต้องการค่าการเปลี่ยน $X = 0.75$ ใช้เวลากี่นาที (ตอบหน่วย min)"
+    answer: { value: 6.93, tolerance: 0.01, unit: min }
+    hints:
+      - "สำหรับแบบกะอันดับหนึ่ง $t = \\frac{1}{k}\\ln\\frac{1}{1-X}$"
+      - "คำนวณ $1 - X$ ก่อนแล้วหาลอการิทึมธรรมชาติ"
+    misconceptions:
+      - { match: 1.44, feedback: "ค่านี้ได้จาก $\\ln(1/X)/k$ ตัวส่วนต้องเป็น $1-X$ ไม่ใช่ $X$" }
+    solution: "$t = \\frac{1}{0.2}\\ln\\frac{1}{1-0.75} = 5 \\ln 4 \\approx 6.93\\ \\mathrm{min}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p004
+    topics: [engineering.process.reactor-design]
+    difficulty: 2
+    type: numeric
+    stem: "น้ำเสียจากโรงงานอาหารแห่งหนึ่งมีสารอินทรีย์ที่ย่อยสลายได้ตามปฏิกิริยาอันดับหนึ่งด้วยค่าคงตัว $k = 0.3\\ \\mathrm{d^{-1}}$ (ค่าสมมติ) ต้องการลดความเข้มข้นลง 90% ในถังแบบกะ ต้องใช้เวลากี่วัน (ตอบหน่วย d)"
+    answer: { value: 7.68, tolerance: 0.01, unit: d }
+    hints:
+      - "การลดลง 90% หมายถึง $C/C_0 = 0.1$ หรือ $X = 0.9$"
+      - "ใช้ $t = \\frac{1}{k}\\ln\\frac{1}{1-X}$ กับ $X = 0.9$"
+    misconceptions:
+      - { match: 3.33, feedback: "ค่านี้คือ $1/k$ ยังไม่ได้คูณด้วยลอการิทึมของการลดลง" }
+    solution: "$t = \\frac{1}{0.3}\\ln\\frac{1}{0.1} = \\frac{\\ln 10}{0.3} \\approx 7.68\\ \\mathrm{d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p005
+    topics: [engineering.process.reactor-design]
+    difficulty: 2
+    type: mcq
+    stem: "ปฏิกิริยาอันดับหนึ่งเกิดในเครื่องปฏิกรณ์สองแบบที่มีปริมาตรเท่ากัน และอัตราการไหลป้อนเท่ากัน แบบใดให้ค่าการเปลี่ยนสูงกว่า"
+    choices:
+      - { id: a, text: "CSTR เพราะความเข้มข้นในถังต่ำกว่าทางเข้า", feedback: "ความเข้มข้นต่ำในถังทำให้อัตราช้าลง จึงได้การเปลี่ยนน้อยกว่า" }
+      - { id: b, text: "ทั้งสองแบบให้ค่าการเปลี่ยนเท่ากันเสมอ", feedback: "ค่าการเปลี่ยนขึ้นกับรูปแบบการไหล ไม่ได้เท่ากันเสมอไป" }
+      - { id: c, text: "CSTR เพราะการกวนทำให้ปฏิกิริยาเร็วขึ้น", feedback: "การกวนทำให้องค์ประกอบสม่ำเสมอ แต่ไม่ได้เพิ่มค่าคงตัวอัตรา" }
+      - { id: d, text: "PFR เพราะความเข้มข้นสูงที่ทางเข้าทำให้อัตราเริ่มต้นสูง", correct: true }
+    hints:
+      - "ใน CSTR องค์ประกอบในถังเท่ากับทางออก ซึ่งต่ำกว่าทางเข้าเสมอ"
+      - "ใน PFR อัตราจะสูงที่ทางเข้าและลดลงเมื่อเข้าใกล้ทางออก"
+    solution: "ใน CSTR ปฏิกิริยาทั้งถังเกิดที่ความเข้มข้นทางออกซึ่งต่ำ อัตราจึงต่ำตลอดถัง ส่วนใน PFR ความเข้มข้นสูงที่ทางเข้าแล้วค่อยลดลง อัตราเฉลี่ยจึงสูงกว่า ที่ปริมาตรและอัตราการไหลเท่ากัน PFR จึงให้ค่าการเปลี่ยนสูงกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p006
+    topics: [engineering.process.reactor-design]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมีพลังงานกระตุ้น $E_a = 50\\ \\mathrm{kJ/mol}$ ค่าคงตัวอัตราที่ 310 K เป็นกี่เท่าของค่าที่ 300 K (ใช้ $R = 8.314\\ \\mathrm{J/(mol\\cdot K)}$ ตอบเป็นอัตราส่วน ทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 1.91, tolerance: 0.01 }
+    hints:
+      - "ใช้สมการอาร์เรเนียสในรูปอัตราส่วน $\\ln(k_2/k_1) = \\frac{E_a}{R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)$"
+      - "อย่าลืมแปลง $E_a$ เป็น J/mol ก่อนแทนค่า"
+    solution: "$\\ln(k_2/k_1) = \\frac{50000}{8.314}(1/300 - 1/310) \\approx 0.647$ จึงได้ $k_2/k_1 = e^{0.647} \\approx 1.91$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p007
+    topics: [engineering.process.reactor-design]
+    difficulty: 3
+    type: numeric
+    stem: "ถังหมักน้ำเสียโรงงานแป้งมันเป็นถังกวนต่อเนื่อง (CSTR) รับน้ำเสียอัตรา $Q = 2\\ \\mathrm{m^3/h}$ สารอินทรีย์ลดลงตามปฏิกิริยาอันดับหนึ่ง $k = 0.5\\ \\mathrm{h^{-1}}$ (ค่าสมมติ) ต้องการ $X = 0.8$ ปริมาตรถังที่ต้องใช้กี่ $\\mathrm{m^3}$ (ตอบหน่วย m³)"
+    answer: { value: 16, tolerance: 0.1, unit: m³ }
+    hints:
+      - "สำหรับ CSTR อันดับหนึ่ง $\\tau = \\frac{X}{k(1-X)}$"
+      - "ปริมาตรคือ $V = Q\\,\\tau$ โดย $\\tau$ มีหน่วยชั่วโมง"
+    misconceptions:
+      - { match: 6.44, feedback: "ค่านี้ได้จากสูตรของเครื่องแบบไหลในท่อ (PFR) ซึ่งไม่ใช่ถังกวนต่อเนื่อง" }
+    solution: "$\\tau = \\frac{0.8}{0.5(1-0.8)} = 8\\ \\mathrm{h}$ $V = Q\\tau = 2 \\times 8 = 16\\ \\mathrm{m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p008
+    topics: [engineering.process.reactor-design]
+    difficulty: 3
+    type: numeric
+    stem: "น้ำเสียอัตรา $Q = 2\\ \\mathrm{m^3/h}$ ถูกบำบัดด้วยปฏิกิริยาอันดับหนึ่ง $k = 0.5\\ \\mathrm{h^{-1}}$ ต้องการค่าการเปลี่ยน $X = 0.8$ ในเครื่องปฏิกรณ์แบบไหลในท่อ (PFR) ปริมาตรที่ต้องใช้กี่ $\\mathrm{m^3}$ (ตอบหน่วย m³ ทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 6.44, tolerance: 0.02, unit: m³ }
+    hints:
+      - "สำหรับ PFR อันดับหนึ่ง $\\tau = \\frac{1}{k}\\ln\\frac{1}{1-X}$"
+      - "คูณเวลาเก็บกักด้วยอัตราการไหล $Q$"
+    misconceptions:
+      - { match: 16, feedback: "ค่านี้ใช้สูตรของ CSTR ซึ่งต้องการปริมาตรมากกว่า PFR สำหรับค่าการเปลี่ยนเดียวกัน" }
+    solution: "$\\tau = \\frac{1}{0.5}\\ln\\frac{1}{0.2} = 2\\ln 5 \\approx 3.22\\ \\mathrm{h}$ $V = 2 \\times 3.22 \\approx 6.44\\ \\mathrm{m^3}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p009
+    topics: [engineering.process.reactor-design]
+    difficulty: 3
+    type: numeric
+    stem: "CSTR อันดับหนึ่งมีปริมาตร $10\\ \\mathrm{m^3}$ อัตราการไหล $2\\ \\mathrm{m^3/h}$ และ $k = 0.5\\ \\mathrm{h^{-1}}$ ค่าการเปลี่ยน $X$ เท่าใด (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.714, tolerance: 0.002 }
+    hints:
+      - "หาเวลาเก็บกัก $\\tau = V/Q$ ก่อน"
+      - "สำหรับ CSTR อันดับหนึ่ง $X = \\frac{k\\tau}{1 + k\\tau}$"
+    misconceptions:
+      - { match: 2.5, feedback: "ค่านี้คือ $k\\tau$ ซึ่งยังไม่ได้แปลงเป็นค่าการเปลี่ยน ต้องหารด้วย $1 + k\\tau$" }
+    solution: "$\\tau = 10/2 = 5\\ \\mathrm{h}$ $k\\tau = 2.5$ $X = 2.5/3.5 \\approx 0.714$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p010
+    topics: [engineering.process.reactor-design]
+    difficulty: 3
+    type: mcq
+    stem: "CSTR อันดับหนึ่งมีผลคูณ $k\\tau = 3$ ค่าการเปลี่ยน $X$ คือเท่าใด"
+    choices:
+      - { id: a, text: "0.25", feedback: "ค่านี้คือ $1 - X$ ของคำตอบที่ถูก สูตรคือ $X = k\\tau/(1+k\\tau)$" }
+      - { id: b, text: "0.75", correct: true }
+      - { id: c, text: "0.33", feedback: "ค่านี้ได้จาก $1/(k\\tau)$ ซึ่งไม่ใช่สูตรของ CSTR" }
+      - { id: d, text: "3.00", feedback: "ค่านี้คือ $k\\tau$ เอง ค่าการเปลี่ยนต้องไม่เกิน 1 เสมอ" }
+    hints:
+      - "ใช้สูตร $X = k\\tau/(1+k\\tau)$ โดยตรง"
+      - "ค่า $X$ ต้องอยู่ระหว่าง 0 ถึง 1"
+    solution: "$X = 3/(1+3) = 0.75$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p011
+    topics: [engineering.process.reactor-design]
+    difficulty: 4
+    type: numeric
+    stem: "CSTR สองถังปริมาตรเท่ากันต่ออนุกรมกัน ถังละ $5\\ \\mathrm{m^3}$ อัตราการไหล $1\\ \\mathrm{m^3/h}$ และ $k = 0.4\\ \\mathrm{h^{-1}}$ ค่าการเปลี่ยนรวมจากสองถังเท่าใด (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.889, tolerance: 0.002 }
+    hints:
+      - "คำนวณ $k\\tau$ ของแต่ละถัง โดย $\\tau = V/Q = 5$ h"
+      - "ค่าการเปลี่ยนรวมคือ $1 - C_{ออก}/C_{เข้า}$ และถังที่สองรับของที่ออกจากถังแรก"
+    misconceptions:
+      - { match: 0.667, feedback: "ค่านี้ได้จากถังเดียวเท่านั้น ถังที่สองยังเพิ่มการเปลี่ยนต่อ" }
+    solution: "ถังละ $k\\tau = 2$ ดังนั้น $C_{ออก}/C_{เข้า} = 1/(1+2)^2 = 1/9$ จึงได้ $X = 1 - 1/9 \\approx 0.889$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p012
+    topics: [engineering.process.reactor-design]
+    difficulty: 4
+    type: numeric
+    stem: "การฆ่าเชื้อแบคทีเรียในน้ำทิ้งเป็นปฏิกิริยาอันดับหนึ่ง มีค่าคงตัว $k = 0.8\\ \\mathrm{min^{-1}}$ (ค่าสมมติ) ต้องการลดจำนวนเชื้อให้เหลือ 0.1% ของเดิม ใช้เวลาอย่างน้อยกี่นาที (ตอบหน่วย min)"
+    answer: { value: 8.63, tolerance: 0.02, unit: min }
+    hints:
+      - "เหลือ 0.1% หมายถึง $N/N_0 = 0.001$ จึงได้ $X = 0.999$"
+      - "ใช้ $t = \\frac{1}{k}\\ln\\frac{1}{1-X}$"
+    misconceptions:
+      - { match: 2.88, feedback: "ค่านี้คือเวลาที่ลดเหลือ 10% ไม่ใช่ 0.1%" }
+    solution: "$t = \\frac{1}{0.8}\\ln\\frac{1}{0.001} = \\frac{\\ln 1000}{0.8} \\approx 8.63\\ \\mathrm{min}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p013
+    topics: [engineering.process.reactor-design]
+    difficulty: 4
+    type: numeric
+    stem: "วัดค่าคงตัวอัตรา ได้ $k = 0.2$ ที่ 300 K และ $k = 0.8$ ที่ 320 K (ค่าสมมติ) พลังงานกระตุ้นของปฏิกิริยานี้กี่ $\\mathrm{kJ/mol}$ (ใช้ $R = 8.314$ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 55.3, tolerance: 0.2, unit: kJ/mol }
+    hints:
+      - "จัดสมการอาร์เรเนียสเป็น $E_a = R\\ln(k_2/k_1)/(1/T_1 - 1/T_2)$"
+      - "อุณหภูมิต้องเป็นเคลวินเสมอ และผลลัพธ์เป็นจูลต่อโมล"
+    solution: "$E_a = 8.314 \\ln 4 / (1/300 - 1/320) \\approx 55{,}323\\ \\mathrm{J/mol} \\approx 55.3\\ \\mathrm{kJ/mol}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p014
+    topics: [engineering.process.reactor-design]
+    difficulty: 4
+    type: expression
+    stem: "เครื่องปฏิกรณ์แบบกะที่มีปฏิกิริยาอันดับหนึ่ง จงเขียนเวลา $t$ ที่ใช้ให้ได้ค่าการเปลี่ยน $X$ ในรูปของ $k$ และ $X$"
+    prefix: "t ="
+    answer: { latex: "\\frac{1}{k}\\ln\\frac{1}{1-X}", variables: [k, X] }
+    hints:
+      - "เริ่มจากการอินทิเกรตกฎอัตราอันดับหนึ่ง $\\ln(C_A/C_{A0}) = -kt$"
+      - "ค่าการเปลี่ยน $X$ ทำให้ $C_A/C_{A0} = 1 - X$"
+    misconceptions:
+      - { match: "\\frac{1}{k}\\ln X", feedback: "ลอการิทึมต้องอยู่บน $1/(1-X)$ ไม่ใช่ $X$" }
+    solution: "$\\ln(1-X) = -kt$ จึงได้ $t = \\frac{1}{k}\\ln\\frac{1}{1-X}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p015
+    topics: [engineering.process.reactor-design]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับขั้นตอนการออกแบบปริมาตรของ CSTR ให้ได้ค่าการเปลี่ยนที่กำหนด"
+    items:
+      - "เขียนสมดุลมวลรอบถังโดยมีอัตราการไหลเข้า อัตราการไหลออก และอัตราการเกิดปฏิกิริยา"
+      - "แทนกฎอัตราของปฏิกิริยาลงในสมดุลมวลแล้วแก้หาเวลาเก็บกัก $\\tau$ ที่ให้ค่าการเปลี่ยนที่ต้องการ"
+      - "คูณเวลาเก็บกักด้วยอัตราการไหลเชิงปริมาตรเพื่อได้ปริมาตรถัง $V = Q\\tau$"
+      - "ตรวจว่าปริมาตรที่ได้สมเหตุสมผลกับการผสมและพื้นที่ติดตั้ง"
+    hints:
+      - "สมดุลมวลต้องเขียนก่อนกฎอัตราจะถูกนำไปใช้"
+      - "ต้องได้ $\\tau$ ก่อนจึงคำนวณ $V$ ได้"
+    solution: "เขียนสมดุลมวล แทนกฎอัตรา หา $\\tau$ คูณด้วย $Q$ ได้ $V$ แล้วตรวจความสมเหตุสมผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p016
+    topics: [engineering.process.reactor-design]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ชนิดเครื่องปฏิกรณ์กับลักษณะที่เป็นเอกลักษณ์ของมัน"
+    pairs:
+      - { left: "แบบกะ (batch)", right: "ไม่มีการไหลเข้าและออกระหว่างทำงาน ความเข้มข้นเปลี่ยนตามเวลา" }
+      - { left: "ถังกวนต่อเนื่อง (CSTR)", right: "องค์ประกอบในถังเท่ากันทุกจุดและเท่ากับทางออก" }
+      - { left: "ท่อแบบไหลในท่อ (PFR)", right: "องค์ประกอบเปลี่ยนไปตามความยาวท่อจากทางเข้าไปทางออก" }
+    hints:
+      - "พิจารณาว่ามีการไหลเข้าออกหรือไม่ก่อน"
+      - "ถังกวนมีการผสมสม่ำเสมอ ส่วนท่อมีการเปลี่ยนตามตำแหน่ง"
+    solution: "แบบกะไม่มีการไหลระหว่างทำงาน CSTR ผสมสมบูรณ์ PFR องค์ประกอบเปลี่ยนตามความยาว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p017
+    topics: [engineering.process.reactor-design]
+    difficulty: 2
+    type: text
+    stem: "เครื่องปฏิกรณ์ที่มีการกวนจนของไหลผสมสม่ำเสมอทั้งถังตลอดเวลาการไหล เรียกเป็นภาษาไทยว่าอะไร (ตอบชื่อย่อหรือชื่อเต็มก็ได้)"
+    accepted: ["ถังกวนต่อเนื่อง", "CSTR", "cstr", "ถังกวนต่อเนื่องแบบผสมสมบูรณ์", "ถังกวนแบบผสมสมบูรณ์"]
+    hints:
+      - "เป็นถังที่มีการไหลเข้าและออกอย่างต่อเนื่อง"
+      - "คำที่ต้องการขึ้นต้นด้วยคำว่า ถังกวน"
+    solution: "ถังกวนต่อเนื่อง หรือ CSTR (Continuous Stirred Tank Reactor) ซึ่งมีการผสมสมบูรณ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p018
+    topics: [engineering.process.reactor-design]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกทุกข้อที่ถูกเกี่ยวกับการต่อถัง CSTR หลายใบเป็นอนุกรมที่ปริมาตรรวมเท่ากัน"
+    choices:
+      - { id: a, text: "เมื่อจำนวนถังเพิ่มขึ้น พฤติกรรมของชุดถังจะเข้าใกล้ PFR", correct: true }
+      - { id: b, text: "ในแต่ละถังองค์ประกอบภายในถังเท่ากันทุกจุด", correct: true }
+      - { id: c, text: "สำหรับปฏิกิริยาอันดับหนึ่ง ชุดถังให้ค่าการเปลี่ยนต่ำกว่า CSTR ใบเดียวที่มีปริมาตรเท่ากับปริมาตรรวม", feedback: "กลับกัน การแบ่งเป็นหลายถังทำให้ถังแรก ๆ ทำงานที่ความเข้มข้นสูงกว่า ค่าการเปลี่ยนรวมจึงสูงกว่า CSTR ใบเดียว" }
+      - { id: d, text: "การแบ่งเป็นหลายถังไม่เปลี่ยนค่าการเปลี่ยนเลย", feedback: "การแบ่งเป็นหลายถังเปลี่ยนค่าการเปลี่ยนเพราะความเข้มข้นที่ทางเข้าของถังถัดไปต่ำลงเรื่อย ๆ" }
+    hints:
+      - "นึกถึงกรณีแบ่งถังเป็นจำนวนมากมากจนเกือบเป็นท่อ"
+      - "ทบทวนว่าภายใน CSTR แต่ละใบองค์ประกอบเป็นอย่างไร"
+    solution: "ยิ่งแบ่งเป็นถังมากจะเข้าใกล้การไหลแบบ PFR ส่วน CSTR แต่ละใบมีองค์ประกอบเท่ากันภายในถัง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.process.reactor-design.p019
+    topics: [engineering.process.reactor-design]
+    difficulty: 5
+    type: numeric
+    stem: "ปฏิกิริยาอันดับสองแบบ $A \\to$ ผลิตภัณฑ์ มี $k = 0.05\\ \\mathrm{L/(mol\\cdot min)}$ และ $C_{A0} = 2\\ \\mathrm{mol/L}$ เครื่องปฏิกรณ์แบบไหลในท่อ (PFR) ต้องการ $X = 0.8$ เวลาเก็บกักกี่นาที (ตอบหน่วย min)"
+    answer: { value: 40, tolerance: 0.1, unit: min }
+    hints:
+      - "สำหรับ PFR อันดับสอง $\\tau = \\frac{1}{kC_{A0}}\\cdot\\frac{X}{1-X}$"
+      - "อย่าลืมคูณความเข้มข้นตั้งต้นในตัวส่วน"
+    misconceptions:
+      - { match: 80, feedback: "ค่านี้ลืมความเข้มข้นตั้งต้น $C_{A0}$ ในตัวส่วน สูตรอันดับสองต้องมี $kC_{A0}$" }
+    solution: "$\\tau = \\frac{1}{0.05 \\times 2}\\cdot\\frac{0.8}{0.2} = 10 \\times 4 = 40\\ \\mathrm{min}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

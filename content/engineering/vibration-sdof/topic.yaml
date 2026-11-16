@@ -1,0 +1,71 @@
+id: engineering.mechanics.vibration-sdof
+subject: engineering
+title: { th: การสั่นสะเทือนทางกลระบบหนึ่งองศาอิสระ, en: Single-degree-of-freedom mechanical vibration }
+summary: ใช้สมการมวล-สปริง-ตัวหน่วงหาความถี่ธรรมชาติ อัตราส่วนความหน่วง การสั่นบังคับ และการแยกการสั่นของฐานรองรับเครื่องจักร
+difficulty: 9
+minutes: 40
+prerequisites: [math.de.second-order-linear, engineering.mechanics.rigid-body-dynamics]
+encompasses:
+  - { id: math.de.second-order-linear, weight: 0.4 }
+  - { id: engineering.mechanics.rigid-body-dynamics, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: msd.svg
+    alt: "มวล m แขวนจากเพดานด้วยสปริง k และตัวหน่วงแบบลูกสูบ c ที่ต่อขนานกัน ทั้งสองต่อเข้ากับมวลโดยตรง ลูกศรแสดงการกระจัด x(t) วัดขึ้นจากตำแหน่งสมดุล"
+    caption: "แบบจำลองระบบหนึ่งองศาอิสระ ตำแหน่งของมวลอธิบายด้วย $x(t)$ ตัวเดียว"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: magnification.svg
+    alt: "กราฟตัวประกอบขยายกับอัตราส่วนความถี่ r จาก 0 ถึง 3 มีเส้นโค้งสามเส้นตามค่า ζ 0.05, 0.2 และ 0.5 เส้นของ ζ 0.05 มียอดสูงที่ r ใกล้ 1 และตัวหน่วงมากทำให้ยอดต่ำลง"
+    caption: "ยอดของ $\\zeta = 0.05$ ถูกตัดที่ระดับ 3.5 เพื่อให้เห็นรูปร่างของเส้นอื่น"
+  - type: worked-example
+    title: หาความถี่ธรรมชาติของเครื่องจักรจากมวลและสปริง
+    problem: "มวลเครื่องจักร $m = 2\\ \\mathrm{kg}$ ติดกับสปริง $k = 72\\ \\mathrm{N/m}$ หาความถี่ธรรมชาติเป็นเฮิรตซ์"
+    steps:
+      - text: "หาความถี่เชิงมุม $\\omega_n = \\sqrt{k/m} = \\sqrt{72/2} = 6\\ \\mathrm{rad/s}$"
+        why: "ความถี่ธรรมชาติขึ้นกับอัตราส่วนของ $k$ ต่อ $m$ เท่านั้น"
+      - text: "แปลงเป็นเฮิรตซ์ $f_n = \\omega_n / 2\\pi = 6/2\\pi \\approx 0.95\\ \\mathrm{Hz}$"
+        why: "เฮิรตซ์นับรอบต่อวินาที ต่างจากเรเดียนต่อวินาทีที่หารด้วย $2\\pi$"
+    answer: "ความถี่ธรรมชาติประมาณ $0.95\\ \\mathrm{Hz}$"
+  - type: worked-example
+    title: หาอัตราส่วนความหน่วงจากบันทึกการสั่นอิสระ
+    problem: "บันทึกการสั่นอิสระได้แอมพลิจูดยอดแรก $8\\ \\mathrm{mm}$ และยอดถัดไป $2\\ \\mathrm{mm}$ หาอัตราส่วนความหน่วง $\\zeta$"
+    steps:
+      - text: "คำนวณค่าลดลงแบบลอการิทึม $\\delta = \\ln(8/2) = \\ln 4 \\approx 1.39$"
+        why: "อัตราส่วนแอมพลิจูดที่ลดลงทุกรอบเป็นค่าคงที่ จึงใช้ลอการิทึมธรรมชาติ"
+      - text: "แปลงเป็น $\\zeta = \\delta/\\sqrt{4\\pi^2 + \\delta^2} \\approx 1.39/6.42 \\approx 0.22$"
+        why: "ต้องแปลงผ่านสูตรนี้ก่อน ค่า $\\delta$ เองไม่ใช่ $\\zeta$"
+    answer: "$\\zeta$ ประมาณ $0.22$ ซึ่งน้อยกว่า 1 เป็นระบบแบบมีหน่วง"
+  - { type: check, problem: engineering.mechanics.vibration-sdof.p002, prompt: "ลองคิดก่อนอ่านต่อ: เพิ่มมวลแล้วความถี่เปลี่ยนไปอย่างไร" }
+  - { type: check, problem: engineering.mechanics.vibration-sdof.p005, prompt: "ลองใช้สูตรกับค่าของปั๊มที่ให้ไว้" }
+  - type: interactive
+    title: ลองเปลี่ยนอัตราส่วนความหน่วงแล้วดูยอดการสั่นพ้อง
+    caption: "ลากแถบเลื่อน a คืออัตราส่วนความหน่วง ζ สังเกตว่าเมื่อ ζ น้อย ยอดที่ r ใกล้ 1 สูงมาก และเมื่อ ζ เพิ่มขึ้น ยอดจะลดลงและเลื่อนไปทางซ้าย"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{1}{\\sqrt{(1-x^2)^2 + (2 a x)^2}}"]
+      sliders:
+        - { name: a, min: 0.05, max: 1, step: 0.05, value: 0.2, label: อัตราส่วนความหน่วง ζ }
+      x: [0, 3]
+      y: [0, 4]
+glossary:
+  - { term: ความถี่ธรรมชาติเชิงมุม, definition: "ความถี่ที่ระบบสั่นเมื่อไม่มีตัวหน่วงและไม่มีแรงบังคับ มีค่า $\\sqrt{k/m}$ หน่วยเป็น rad/s" }
+  - { term: อัตราส่วนความหน่วง, definition: "ปริมาณไม่มีหน่วย $\\zeta$ ที่บอกว่าระบบหน่วงมากเพียงใดเมื่อเทียบกับการหน่วงวิกฤต" }
+  - { term: การสั่นพ้อง, definition: "ปรากฏการณ์ที่แอมพลิจูดการสั่นขยายใหญ่มากเมื่อความถี่ของแรงบังคับใกล้ความถี่ธรรมชาติ" }
+  - { term: อัตราส่วนแรงที่ส่งผ่าน, definition: "อัตราส่วนระหว่างแรงที่ส่งจากมวลไปยังฐานรองรับกับแรงกระทำ ค่าน้อยกว่า 1 หมายถึงฐานรองรับแยกการสั่นได้" }
+flashcards:
+  - { front: "ความถี่ธรรมชาติเชิงมุมของระบบมวล-สปริง", back: "$\\omega_n = \\sqrt{k/m}$ หน่วย rad/s" }
+  - { front: "ค่าลดลงแบบลอการิทึมคืออะไร", back: "$\\delta = \\ln(x_1/x_2)$ จากแอมพลิจูดยอดสองยอดที่อยู่ติดกัน" }
+  - { front: "ระบบหน่วงเกินมีลักษณะอย่างไร", back: "$\\zeta > 1$ กลับสู่สมดุลโดยไม่สั่น" }
+  - { front: "จะแยกการสั่นของฐานรองรับได้เมื่อใด", back: "เมื่อ $r > \\sqrt{2}$ หรือ $TR < 1$" }
+references:
+  - { title: "Harmonic oscillator", url: "https://en.wikipedia.org/wiki/Harmonic_oscillator", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Damping", url: "https://en.wikipedia.org/wiki/Damping", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Vibration isolation", url: "https://en.wikipedia.org/wiki/Vibration_isolation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "MIT OpenCourseWare 2.003SC Engineering Dynamics (Fall 2011)", url: "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/", source: mit-ocw, lang: en, license: CC-BY-NC-SA-4.0 }
+review_flags: []
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

@@ -1,0 +1,67 @@
+id: engineering.environmental.wastewater-treatment
+subject: engineering
+title: { th: การบำบัดน้ำเสียและกระบวนการทางชีวภาพ, en: Wastewater treatment and biological processes }
+summary: คำนวณภาระ BOD ปริมาณสลัดจ์ อัตราส่วน F/M อายุสลัดจ์ และความต้องการออกซิเจนของระบบแอกทิเวเต็ดสลัดจ์และบ่อผึ่ง
+difficulty: 8.5
+minutes: 40
+prerequisites: [engineering.environmental.water-quality, engineering.process.reactor-design]
+encompasses:
+  - { id: engineering.environmental.water-quality, weight: 0.3 }
+  - { id: engineering.process.reactor-design, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: activated-sludge.svg
+    alt: "แผนผังระบบแอกทิเวเต็ดสลัดจ์ น้ำเสียเข้าสู่ถังตกตะกอนขั้นต้น แล้วถังเติมอากาศ ถังตกตะกอนขั้นที่สอง และน้ำทิ้ง มีเส้นประลูกศรจากถังตกตะกอนขั้นที่สองกลับไปยังถังเติมอากาศแสดงสลัดจ์หมุนเวียนกลับ มีลูกศรลงจากถังตกตะกอนขั้นต้นแสดงตะกอนขั้นต้น และลูกศรลงจากถังตกตะกอนขั้นที่สองแสดงสลัดจ์ส่วนเกิน"
+    caption: "ระบบแอกทิเวเต็ดสลัดจ์แบบง่าย ตะกอนจากถังตกตะกอนขั้นที่สองถูกหมุนเวียนกลับมาที่ถังเติมอากาศ"
+  - type: explanation
+    file: lesson.md
+  - type: worked-example
+    title: หาภาระ BOD ของน้ำเสียโรงงานอาหาร
+    problem: "น้ำเสียจากโรงงานอาหารไหล $1200\\ \\mathrm{m^3/d}$ มี BOD $300\\ \\mathrm{mg/L}$ ภาระ BOD ต่อวันเท่าใด"
+    steps:
+      - text: "หาค่าภาระ $= Q \\times S = 1200 \\times 300$ ซึ่งได้หน่วย $\\mathrm{g/d}$"
+        why: "เมื่อคูณ m³/d กับ mg/L จะได้ mg/d หรือ g/d ต่อ 1000 ของหน่วยที่ต้องการ"
+      - text: "แปลง $360{,}000\\ \\mathrm{g/d} = 360\\ \\mathrm{kg/d}$"
+        why: "หาร 1000 เพื่อเปลี่ยนจากกรัมเป็นกิโลกรัม"
+    answer: "ภาระ BOD ประมาณ $360\\ \\mathrm{kg/d}$"
+  - type: worked-example
+    title: หาเวลาที่จุลินทรีย์อยู่ในระบบของถังเติมอากาศ
+    problem: "ถังเติมอากาศปริมาตร $400\\ \\mathrm{m^3}$ รับน้ำเสียอัตรา $1000\\ \\mathrm{m^3/d}$ เวลาเก็บกักทางชลศาสตร์คือกี่วัน"
+    steps:
+      - text: "คำนวณ $\\tau = V/Q = 400/1000$"
+        why: "เวลาเก็บกักทางชลศาสตร์คือปริมาตรหารด้วยอัตราการไหล"
+      - text: "ได้ $\\tau = 0.4\\ \\mathrm{d}$ หรือประมาณ 9.6 ชั่วโมง"
+        why: "ต้องคูณ 0.4 วันด้วย 24 เพื่อแปลงเป็นชั่วโมง"
+    answer: "เวลาเก็บกักประมาณ $0.4\\ \\mathrm{d}$"
+  - { type: check, problem: engineering.environmental.wastewater-treatment.p002, prompt: "ลองคิดก่อนอ่านต่อ: BOD5 วัดอะไร" }
+  - { type: check, problem: engineering.environmental.wastewater-treatment.p005, prompt: "ลองคิดว่าถ้าอาหารมากเกินไปจะเกิดอะไรขึ้นกับออกซิเจน" }
+  - type: interactive
+    title: ลองเปลี่ยนค่า S แล้วดูอัตราการเติบโตของจุลินทรีย์
+    caption: "แถบเลื่อน a คือ $\\mu_{max}$ ที่ $K_s = 10$ แกน x คือ S สังเกตว่าเส้นโค้งอิ่มตัวใกล้ $\\mu_{max}$ เมื่อ S มากขึ้น"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a x}{10 + x}"]
+      sliders:
+        - { name: a, min: 0.2, max: 2, step: 0.1, value: 0.6, label: μmax วันละ }
+      x: [0, 100]
+      y: [0, 2]
+glossary:
+  - { term: BOD, definition: "ความต้องการออกซิเจนทางชีวเคมี คือปริมาณออกซิเจนที่จุลินทรีย์ใช้ย่อยสลายสารอินทรีย์ในน้ำ หน่วย mg/L" }
+  - { term: F/M, definition: "อัตราส่วนภาระอาหารต่อมวลจุลินทรีย์ในถังเติมอากาศ หน่วย d⁻¹ ใช้ควบคุมระบบแอกทิเวเต็ดสลัดจ์" }
+  - { term: อายุสลัดจ์, definition: "เวลาเฉลี่ยที่จุลินทรีย์อยู่ในระบบ คำนวณจากมวลในถังหารด้วยมวลที่นำออกต่อวัน หน่วยเป็นวัน" }
+  - { term: สมการโมนอด, definition: "สมการที่อธิบายอัตราการเติบโตจำเพาะของจุลินทรีย์เป็นฟังก์ชันของความเข้มข้นสารอาหาร" }
+flashcards:
+  - { front: "ภาระ BOD จากอัตราการไหลและความเข้มข้น", back: "$Q \\times S$ ได้หน่วย g/d แปลงเป็น kg/d โดยหาร 1000" }
+  - { front: "สมการโมนอด", back: "$\\mu = \\mu_{max} S/(K_s + S)$" }
+  - { front: "ปริมาณสลัดจ์เกิดใหม่", back: "$P_x = YQ(S_0 - S)/(1 + k_d\\theta_c)$" }
+references:
+  - { title: "Activated sludge", url: "https://en.wikipedia.org/wiki/Activated_sludge", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Biochemical oxygen demand", url: "https://en.wikipedia.org/wiki/Biochemical_oxygen_demand", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Monod equation", url: "https://en.wikipedia.org/wiki/Monod_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+review_flags:
+  - { claim: "ค่ามาตรฐานการระบายน้ำทิ้งจากอาคารหรือโรงงาน (BOD, TSS, pH) ของประเทศไทย", reason: "ยังไม่ได้ยืนยันกับประกาศทางการที่มีผลบังคับใช้ บทเรียนจึงไม่ระบุตัวเลขเกณฑ์", severity: high }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

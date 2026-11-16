@@ -1,0 +1,280 @@
+problems:
+  - id: engineering.environmental.water-treatment.p001
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 1
+    type: numeric
+    stem: "โรงผลิตน้ำประปาแห่งหนึ่งผลิตน้ำได้ $1{,}200\\ \\mathrm{m^3}$ ต่อวัน ให้บริการประชาชน 4,000 คน อัตราการใช้น้ำเฉลี่ยต่อคนต่อวันกี่ลิตร (ตอบหน่วย L/(คน·วัน)) (ค่าสมมติ)"
+    answer: { value: 300, tolerance: 0.5, unit: "L/(คน·วัน)" }
+    hints:
+      - "แปลง $1{,}200\\ \\mathrm{m^3}$ เป็นลิตรก่อน โดย $1\\ \\mathrm{m^3} = 1000\\ \\mathrm{L}$"
+      - "หารปริมาณทั้งหมดด้วยจำนวนประชากร"
+    misconceptions:
+      - { match: 0.3, feedback: "ค่านี้เป็นหน่วยลูกบาศก์เมตรต่อคนต่อวัน ไม่ใช่ลิตร ให้คูณด้วย 1000 เพื่อแปลงเป็นลิตร" }
+    solution: "$1200\\ \\mathrm{m^3} = 1{,}200{,}000\\ \\mathrm{L}$ หารด้วย 4,000 คน ได้ $300\\ \\mathrm{L/(คน\\cdot วัน)}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p002
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 1
+    type: mcq
+    stem: "วัตถุประสงค์หลักของการเติมสารส้มและกวนเร็วในโรงผลิตน้ำประปาคืออะไร"
+    choices:
+      - { id: a, text: "ฆ่าเชื้อแบคทีเรียให้หมดก่อนการกรอง", feedback: "การฆ่าเชื้อทำในขั้นคลอรีน สารส้มไม่ได้ทำหน้าที่นี้" }
+      - { id: b, text: "ทำให้อนุภาคที่ผลักกันจับตัวเป็นตะกอนที่ตกลงได้", correct: true }
+      - { id: c, text: "เพิ่มความเป็นกรดของน้ำให้สูงขึ้นเพื่อรสชาติ", feedback: "การเติมสารส้มมีผลต่อค่า pH แต่ไม่ใช่วัตถุประสงค์หลัก" }
+      - { id: d, text: "ทำให้น้ำมีแร่ธาตุเพิ่มขึ้น", feedback: "การเติมสารส้มไม่ได้เพิ่มแร่ธาตุให้น้ำ วัตถุประสงค์คือทำให้อนุภาคจับกัน" }
+    hints:
+      - "ลองนึกถึงสาเหตุที่อนุภาคดินเหนียวตกตะกอนช้า"
+      - "คำตอบคือการทำให้ประจุของอนุภาคเป็นกลางเพื่อรวมตัวกัน"
+    solution: "สารส้มทำให้ประจุลบของอนุภาคเป็นกลาง อนุภาคจึงรวมตัวเป็นฟลอคที่ตกตะกอนได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p003
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: numeric
+    stem: "โรงผลิตมีปริมาณเฉลี่ย $1{,}200\\ \\mathrm{m^3/d}$ ใช้ตัวประกอบชั่วโมงสูงสุด $f = 1.5$ อัตราการไหลสูงสุดรายชั่วโมงกี่ $\\mathrm{m^3/h}$ (ตอบหน่วย m³/h) (ค่าสมมติ)"
+    answer: { value: 75, tolerance: 0.1, unit: m³/h }
+    hints:
+      - "สูตรคือ $Q_{peak} = f\\,Q_{avg}/24$"
+      - "ตัวประกอบ $f$ ต้องคูณก่อนหารด้วย 24 ชั่วโมง"
+    misconceptions:
+      - { match: 50, feedback: "ค่านี้ไม่ได้คูณด้วยตัวประกอบชั่วโมงสูงสุด $f = 1.5$" }
+    solution: "$Q_{peak} = 1.5 \\times 1200 / 24 = 75\\ \\mathrm{m^3/h}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p004
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: numeric
+    stem: "โรงผลิตน้ำแห่งนี้ผลิตน้ำ $1{,}200\\ \\mathrm{m^3/d}$ ต้องเติมสารส้มให้มีความเข้มข้น 30 mg/L ในน้ำดิบ ต้องใช้สารส้มกี่ $\\mathrm{kg/d}$ (ตอบหน่วย kg/d) (ค่าสมมติ)"
+    answer: { value: 36, tolerance: 0.01, unit: kg/d }
+    hints:
+      - "ปริมาณสาร = ความเข้มข้น × ปริมาตรน้ำต่อวัน"
+      - "หน่วย mg/L คูณ m³/d จะได้ g/d ต้องแปลงเป็น kg/d"
+    misconceptions:
+      - { match: 36000, feedback: "ค่านี้เป็นกรัมต่อวัน (mg/L เท่ากับ g/m³) ต้องหารด้วย 1000 อีกครั้งเพื่อให้ได้กิโลกรัมต่อวัน" }
+    solution: "$30\\ \\mathrm{g/m^3} \\times 1200\\ \\mathrm{m^3/d} = 36{,}000\\ \\mathrm{g/d} = 36\\ \\mathrm{kg/d}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p005
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: numeric
+    stem: "ถังกวนเร็วมีปริมาตร $10\\ \\mathrm{m^3}$ รับกำลังกวน $P = 50\\ \\mathrm{W}$ ที่ 20°C ใช้ความหนืด $\\mu = 1.002\\times10^{-3}\\ \\mathrm{Pa\\cdot s}$ ค่า $G$ มีค่ากี่ $\\mathrm{s^{-1}}$ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 70.6, tolerance: 0.1, unit: "s⁻¹" }
+    hints:
+      - "ใช้สูตร $G = \\sqrt{P/(\\mu V)}$"
+      - "ความหนืด $\\mu$ ต้องอยู่ในหน่วย Pa·s เพื่อให้ผลเป็น s⁻¹"
+    misconceptions:
+      - { match: 2.24, feedback: "ค่านี้ลืมความหนืดของน้ำ $\\mu$ ในตัวส่วน" }
+    solution: "$G = \\sqrt{50 / (1.002\\times10^{-3} \\times 10)} \\approx \\sqrt{4991} \\approx 70.6\\ \\mathrm{s^{-1}}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p006
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: mcq
+    stem: "ในการทดสอบจาร์ (jar test) ถ้าจาร์ที่เติมสารส้มปริมาณมากกว่าทุกจาร์ น้ำที่ได้กลับขุ่นขึ้นอีก ข้อใดอธิบายได้ดีที่สุด"
+    choices:
+      - { id: a, text: "สารส้มที่มากเกินไปทำให้ประจุกลับมาและทำให้อนุภาคกระจายตัวอีกครั้ง", correct: true }
+      - { id: b, text: "น้ำมีออกซิเจนมากเกินไปทำให้ตะกอนลอย", feedback: "ออกซิเจนไม่ใช่สาเหตุหลักของการกลับขุ่นจากการใส่สารส้มเกินไป" }
+      - { id: c, text: "ถังกรองอุดตันก่อนกระบวนการตกตะกอน", feedback: "จาร์ทดสอบไม่มีถังกรอง ข้อนี้จึงไม่ถูกต้องตั้งแต่เริ่ม" }
+      - { id: d, text: "สารส้มทำให้เกิดแบคทีเรียเพิ่มขึ้นทันที", feedback: "สารส้มไม่ได้ทำให้จุลินทรีย์เพิ่มขึ้นทันที การกลับขุ่นเป็นเรื่องของประจุและอนุภาค" }
+    hints:
+      - "นึกถึงสิ่งที่ทำให้อนุภาครวมกันตั้งแต่แรก คือการทำให้ประจุเป็นกลาง"
+      - "เมื่อเติมมากเกินไป ประจุอาจกลับเป็นประจุบวก"
+    solution: "ปริมาณสารส้มที่มากเกินไปทำให้ประจุของอนุภาคกลับทิศ ทำให้อนุภาคผลักกันอีกครั้งและตกช้า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p007
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "ถังตกตะกอนมีพื้นที่ผิว $60\\ \\mathrm{m^2}$ รับอัตราการไหลสูงสุด $75\\ \\mathrm{m^3/h}$ อัตราน้ำล้นผิวกี่ $\\mathrm{m^3/(m^2\\cdot h)}$ (ตอบทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 1.25, tolerance: 0.01, unit: "m³/(m²·h)" }
+    hints:
+      - "อัตราน้ำล้นผิวคืออัตราการไหลหารด้วยพื้นที่ผิว"
+      - "ตรวจว่าหน่วยเหลือ $\\mathrm{m^3/(m^2\\cdot h)}$"
+    misconceptions:
+      - { match: 0.8, feedback: "ค่านี้ได้จาก $A/Q$ ซึ่งกลับตำแหน่งของพื้นที่กับอัตราการไหล" }
+    solution: "$SOR = 75 / 60 = 1.25\\ \\mathrm{m^3/(m^2\\cdot h)}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p008
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "ถังกรองทรายแห่งหนึ่งมีพื้นที่หน้ากรอง $12\\ \\mathrm{m^2}$ รับอัตราการไหล $75\\ \\mathrm{m^3/h}$ อัตราการกรองกี่ $\\mathrm{m/h}$ (ตอบทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 6.25, tolerance: 0.01, unit: m/h }
+    hints:
+      - "อัตราการกรองคืออัตราการไหลต่อพื้นที่หน้ากรอง"
+      - "หน่วยสุดท้ายคือ m/h (เมตรต่อชั่วโมง)"
+    misconceptions:
+      - { match: 0.16, feedback: "ค่านี้ได้จาก $A/Q$ ซึ่งกลับตำแหน่งของพื้นที่กับอัตราการไหล" }
+    solution: "$v = Q/A = 75/12 = 6.25\\ \\mathrm{m/h}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p009
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "คลอรีนคงเหลือในถังฆ่าเชื้อมีความเข้มข้น $1.2\\ \\mathrm{mg/L}$ และน้ำอยู่ในถังนาน 25 นาที ค่า $CT$ มีค่ากี่ $\\mathrm{mg\\cdot min/L}$ (ตอบหน่วย mg·min/L) (ค่าสมมติ)"
+    answer: { value: 30, tolerance: 0.1, unit: "mg·min/L" }
+    hints:
+      - "ค่า $CT$ คือความเข้มข้นคูณเวลาสัมผัส"
+      - "อย่าลืมระบุหน่วยเป็น mg·min/L"
+    misconceptions:
+      - { match: 0.048, feedback: "ค่านี้ได้จาก $C/T$ แต่ $CT$ ต้องใช้การคูณ" }
+    solution: "$CT = 1.2 \\times 25 = 30\\ \\mathrm{mg\\cdot min/L}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p010
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 3
+    type: numeric
+    stem: "จากแบบจำลอง Chick การฆ่าเชื้อให้สัดส่วนที่รอดชีวิต $N/N_0 = e^{-kCT}$ ถ้า $k = 0.05\\ \\mathrm{L/(mg\\cdot min)}$ (ค่าสมมติ) และ $CT = 30\\ \\mathrm{mg\\cdot min/L}$ สัดส่วนที่รอดชีวิตเท่ากับเท่าใด (ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.223, tolerance: 0.002 }
+    hints:
+      - "คำนวณ $kCT$ ก่อน ได้ค่าเป็นจำนวนไม่มีหน่วย"
+      - "หาค่า $e^{-kCT}$ ด้วยเครื่องคิดเลขหรือ python"
+    misconceptions:
+      - { match: 1.5, feedback: "ค่านี้คือ $kCT$ ยังไม่ได้คำนวณ $e^{-kCT}$ สัดส่วนที่รอดชีวิตต้องอยู่ระหว่าง 0 ถึง 1" }
+    solution: "$kCT = 0.05 \\times 30 = 1.5$ จึงได้ $N/N_0 = e^{-1.5} \\approx 0.223$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p011
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 4
+    type: numeric
+    stem: "ท่อเหล็กยาว $500\\ \\mathrm{m}$ เส้นผ่านศูนย์กลาง $0.2\\ \\mathrm{m}$ ส่งน้ำ $0.02\\ \\mathrm{m^3/s}$ ใช้สูตร Hazen–Williams ค่า $C = 120$ การสูญเสียความดันจากแรงเสียดทานมีค่ากี่เมตรของน้ำ (ตอบทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 1.36, tolerance: 0.02, unit: m }
+    hints:
+      - "สูตร SI ของ Hazen–Williams คือ $h_f = 10.67\\,L\\,Q^{1.852}/(C^{1.852} D^{4.8704})$"
+      - "คำนวณ $Q^{1.852}$ และ $C^{1.852}$ แยกกันก่อนแทนค่า"
+    misconceptions:
+      - { match: 0.13, feedback: "ค่านี้ลืมตัวคูณ 10.67 ในสูตรทำให้ได้ค่าน้อยกว่าจริงประมาณ 10 เท่า" }
+    solution: "$h_f = 10.67 \\times 500 \\times 0.02^{1.852} / (120^{1.852} \\times 0.2^{4.8704}) \\approx 1.36\\ \\mathrm{m}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p012
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: numeric
+    stem: "โรงผลิตน้ำผลิตได้ $1{,}200\\ \\mathrm{m^3/d}$ แต่มีปริมาณน้ำที่เรียกเก็บเงินได้เพียง $960\\ \\mathrm{m^3/d}$ น้ำสูญเสียรวมคิดเป็นกี่เปอร์เซ็นต์ของน้ำที่ผลิต (ตอบหน่วย %) (ค่าสมมติ)"
+    answer: { value: 20, tolerance: 0.1, unit: "%" }
+    hints:
+      - "น้ำสูญเสียคือน้ำที่ผลิตแต่ไม่ได้เรียกเก็บเงิน"
+      - "หารด้วยน้ำที่ผลิต ไม่ใช่น้ำที่เรียกเก็บเงิน"
+    misconceptions:
+      - { match: 25, feedback: "ค่านี้หารด้วยน้ำที่เรียกเก็บเงินได้ ต้องหารด้วยน้ำที่ผลิตทั้งหมด" }
+    solution: "น้ำสูญเสีย $= 1200 - 960 = 240\\ \\mathrm{m^3/d}$ คิดเป็น $240/1200 \\times 100 = 20\\%$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p013
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "เลือกทุกข้อที่เป็นหน้าที่ที่ถูกต้องของขั้นตอนในโรงผลิตน้ำประปา"
+    choices:
+      - { id: a, text: "กวนช้าช่วยให้อนุภาคชนกันจนเป็นตะกอนฟลอคขนาดใหญ่", correct: true }
+      - { id: b, text: "ถังกรองทรายดักอนุภาคขนาดเล็กที่ตกช้าไม่ตกตะกอนในถังตกตะกอน", correct: true }
+      - { id: c, text: "การกวนเร็วทำให้ฟลอคโตขึ้นและเป็นขั้นที่ดักอนุภาค", feedback: "การกวนเร็วใช้กระจายสารเคมี ฟลอคโตขึ้นในการกวนช้า ไม่ได้ดักอนุภาค" }
+      - { id: d, text: "การล้างย้อนทำให้น้ำดิบเข้าถังกรองโดยตรง", feedback: "การล้างย้อนใช้น้ำสะอาดไหลย้อนขึ้นเพื่อล้างสิ่งสกปรกออกจากทราย ไม่ได้ส่งน้ำดิบเข้า" }
+    hints:
+      - "พิจารณาว่าแต่ละขั้นทำงานกับอนุภาคขนาดใดและด้วยวิธีใด"
+      - "การกวนเร็วกับการกวนช้าทำหน้าที่ต่างกัน"
+    solution: "การกวนช้าสร้างฟลอค และการกรองทรายดักอนุภาคเล็กที่หลุดจากการตกตะกอน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p014
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับขั้นตอนการทดสอบจาร์เพื่อหาปริมาณสารส้มที่เหมาะสม"
+    items:
+      - "ตักน้ำดิบใส่จาร์หลายใบในปริมาณเท่ากัน"
+      - "เติมสารส้มในปริมาณที่ต่างกันเล็กน้อยลงในแต่ละจาร์"
+      - "กวนเร็วระยะสั้นเพื่อกระจายสารส้ม แล้วกวนช้าเพื่อให้ตะกอนโต"
+      - "ปล่อยให้ตกตะกอนแล้วเปรียบเทียบความใสของน้ำในแต่ละจาร์"
+    hints:
+      - "น้ำดิบต้องอยู่ในจาร์ก่อนจะเติมสารเคมี"
+      - "การเปรียบเทียบต้องทำหลังจากตะกอนได้เวลาตก"
+    solution: "ใส่น้ำดิบ เติมสารส้มที่ต่างกัน กวนเร็วแล้วกวนช้า ปล่อยตกตะกอน แล้วเปรียบเทียบความใส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p015
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ขั้นตอนของโรงผลิตน้ำกับหน้าที่หลักของขั้นนั้น"
+    pairs:
+      - { left: "การกวนเร็ว", right: "กระจายสารส้มให้ทั่วน้ำอย่างรวดเร็ว" }
+      - { left: "การกวนช้า", right: "ให้อนุภาครวมกันเป็นฟลอคขนาดใหญ่" }
+      - { left: "การตกตะกอน", right: "แยกฟลอคที่หนักออกจากน้ำด้วยแรงโน้มถ่วง" }
+      - { left: "การฆ่าเชื้อด้วยคลอรีน", right: "ทำลายจุลินทรีย์ที่เหลือก่อนจ่ายน้ำ" }
+    hints:
+      - "ดูว่าขั้นนั้นทำงานกับสารเคมี อนุภาค หรือจุลินทรีย์"
+      - "การกวนเร็วกับการกวนช้ามีจุดประสงค์ต่างกัน"
+    solution: "การกวนเร็วกระจายสารเคมี การกวนช้าทำให้ฟลอคโต การตกตะกอนแยกฟลอค และคลอรีนฆ่าจุลินทรีย์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p016
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 2
+    type: text
+    stem: "กระบวนการที่น้ำไหลผ่านชั้นทรายเพื่อดักอนุภาคที่ยังเหลือหลังการตกตะกอน เรียกเป็นภาษาไทยว่าอะไร"
+    accepted: ["การกรอง", "กรอง", "การกรองทราย", "filtration", "Filtration"]
+    hints:
+      - "เป็นขั้นที่ใช้ทรายเป็นตัวกลาง"
+      - "คำตอบเป็นการกระทำที่ทำกับน้ำโดยให้ผ่านทรายหรือตัวกลางพรุน"
+    solution: "การกรอง (filtration) ทำโดยให้น้ำผ่านชั้นทรายเพื่อดักอนุภาคเล็ก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p017
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 4
+    type: expression
+    stem: "จงเขียนค่าการฆ่าเชื้อ $CT$ ในรูปของความเข้มข้นคลอรีน $C$ และเวลาสัมผัส $T$"
+    prefix: "CT ="
+    answer: { latex: "C\\cdot T", variables: [C, T] }
+    hints:
+      - "ค่า $CT$ คือผลคูณของสองปริมาณ"
+      - "ไม่ต้องใส่ค่าตัวเลข เขียนเป็นตัวแปร"
+    misconceptions:
+      - { match: "C/T", feedback: "ผลหารคือ $C/T$ ซึ่งไม่ใช่ค่า $CT$ ต้องคูณ" }
+    solution: "$CT = C \\cdot T$ เป็นผลคูณของความเข้มข้นกับเวลาสัมผัส"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.environmental.water-treatment.p018
+    topics: [engineering.environmental.water-treatment]
+    difficulty: 5
+    type: numeric
+    stem: "เครื่องสูบน้ำดิบส่งน้ำ $0.02\\ \\mathrm{m^3/s}$ ที่ความสูงรวม (head) 30 m ประสิทธิภาพของปั๊ม 70% ใช้ $\\rho = 1000\\ \\mathrm{kg/m^3}$ และ $g = 9.81\\ \\mathrm{m/s^2}$ กำลังไฟฟ้าที่ป้อนให้ปั๊มกี่กิโลวัตต์ (ตอบทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 8.41, tolerance: 0.02, unit: kW }
+    hints:
+      - "กำลังน้ำ $P = \\rho g Q H$ มีหน่วยวัตต์"
+      - "กำลังไฟฟ้าที่ป้อนมากกว่ากำลังน้ำเพราะมีประสิทธิภาพ $\\eta$"
+    misconceptions:
+      - { match: 5.89, feedback: "ค่านี้ลืมประสิทธิภาพของปั๊ม กำลังที่ป้อนต้องหารด้วย $\\eta$" }
+    solution: "$P = \\rho g Q H / \\eta = 1000 \\times 9.81 \\times 0.02 \\times 30 / 0.7 \\approx 8410\\ \\mathrm{W} \\approx 8.41\\ \\mathrm{kW}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

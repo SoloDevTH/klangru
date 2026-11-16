@@ -1,0 +1,67 @@
+id: engineering.thermo.heat-transfer
+subject: engineering
+title: { th: การถ่ายเทความร้อน, en: Heat transfer }
+summary: คำนวณการนำ การพาความร้อน และการแผ่รังสีผ่านผนังหลายชั้นและท่อหุ้มฉนวน รวมถึงการเย็นตัวแบบก้อนและเครื่องแลกเปลี่ยนความร้อน
+difficulty: 8.5
+minutes: 40
+prerequisites: [engineering.thermo.engineering-thermodynamics, math.de.first-order, physics.thermal.heat-transfer-rates]
+encompasses:
+  - { id: physics.thermal.heat-transfer-rates, weight: 0.3 }
+  - { id: engineering.thermo.engineering-thermodynamics, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: composite-wall.svg
+    alt: "ผนังสองชั้นประกอบด้วยคอนกรีตด้านซ้ายและฉนวนด้านขวา ความร้อน q ไหลจากซ้ายไปขวา เส้นอุณหภูมิแนวคิดลดลงเล็กน้อยในคอนกรีต และลดลงชันกว่าในฉนวน"
+    caption: "ในผนังหลายชั้น ความร้อนไหลผ่านทุกชั้นด้วยอัตราเดียวกัน อุณหภูมิลดมากที่สุดในชั้นที่มีความต้านทานสูง"
+  - type: explanation
+    file: lesson.md
+  - type: worked-example
+    title: หาความร้อนที่ไหลผ่านผนังสองชั้น
+    problem: "ผนังมีพื้นที่ $A = 5\\ \\mathrm{m^2}$ ประกอบด้วยคอนกรีตหนา $0.12\\ \\mathrm{m}$ ค่า $k = 1.2$ และฉนวนหนา $0.05\\ \\mathrm{m}$ ค่า $k = 0.04$ ความต่างอุณหภูมิสองด้านคือ $40\\ \\mathrm{K}$ ความร้อนที่ไหลผ่านกี่วัตต์ (ค่าสมมติ)"
+    steps:
+      - text: "คำนวณความต้านทานของคอนกรีต $R_1 = 0.12/(1.2 \\times 5) = 0.02\\ \\mathrm{K/W}$ และของฉนวน $R_2 = 0.05/(0.04 \\times 5) = 0.25\\ \\mathrm{K/W}$"
+        why: "ความต้านทานของแต่ละชั้นคำนวณแยกกันด้วย $L/(kA)$ โดยใช้พื้นที่เดียวกัน"
+      - text: "ความต้านทานรวม $R = R_1 + R_2 = 0.27\\ \\mathrm{K/W}$ แล้วได้ $q = 40/0.27 \\approx 148\\ \\mathrm{W}$"
+        why: "ชั้นต่อกันรวมความต้านทานด้วยการบวก และ $q = \\Delta T/R$"
+    answer: "ความร้อนที่ไหลผ่านประมาณ $148\\ \\mathrm{W}$"
+  - type: worked-example
+    title: หาความต่างอุณหภูมิเฉลี่ยลอการิทึมของเครื่องแลกเปลี่ยน
+    problem: "ความต่างอุณหภูมิที่ปลายทั้งสองด้านของเครื่องแลกเปลี่ยนคือ $\\Delta T_1 = 50\\ \\mathrm{K}$ และ $\\Delta T_2 = 10\\ \\mathrm{K}$ หา LMTD"
+    steps:
+      - text: "แทนค่าในสูตร $\\Delta T_{lm} = (50 - 10)/\\ln(50/10) = 40/\\ln 5$"
+        why: "LMTD ใช้ลอการิทึมของอัตราส่วนความต่างสองปลาย ไม่ใช่ค่าเฉลี่ยเลขคณิต"
+      - text: "คำนวณ $\\ln 5 \\approx 1.609$ แล้วได้ $\\Delta T_{lm} \\approx 24.85\\ \\mathrm{K}$"
+        why: "ค่านี้ต่ำกว่าค่าเฉลี่ยเลขคณิต 30 K เพราะความต่างลดลงไม่เป็นเส้นตรง"
+    answer: "LMTD ประมาณ $24.85\\ \\mathrm{K}$"
+  - { type: check, problem: engineering.thermo.heat-transfer.p002, prompt: "ลองคิดก่อนอ่านต่อ: กฎที่ใช้อธิบายการนำความร้อนชื่อว่าอะไร" }
+  - { type: check, problem: engineering.thermo.heat-transfer.p005, prompt: "ลองคิดว่าความหนาของฉนวนมีผลต่อ R อย่างไร" }
+  - type: interactive
+    title: ลองเปลี่ยนความหนาของผนังแล้วดูความร้อนที่ไหลผ่าน
+    caption: "แถบเลื่อน a คือค่า kAΔT (หน่วย W·m) แกน x คือความหนา L (หน่วย m) สังเกตว่าความร้อนลดลงแบบส่วนกลับของ L"
+    widget:
+      kind: function-plot
+      functions: ["\\frac{a}{x}"]
+      sliders:
+        - { name: a, min: 10, max: 200, step: 10, value: 80, label: kAΔT }
+      x: [0.05, 1]
+      y: [0, 400]
+glossary:
+  - { term: กฎของฟูเรียร์, definition: "กฎที่ระบุว่าอัตราการนำความร้อนผ่านวัสดุเป็นสัดส่วนกับพื้นที่ ความต่างอุณหภูมิ และแปรผกผันกับความหนา" }
+  - { term: ความต้านทานความร้อน, definition: "ค่าที่บอกความยากในการไหลของความร้อน มีหน่วย K/W คำนวณได้จาก $L/(kA)$ สำหรับการนำความร้อน" }
+  - { term: รัศมีวิกฤต, definition: "รัศมีของท่อหุ้มฉนวนที่ทำให้การสูญเสียความร้อนสูงสุด คำนวณได้จาก $k/h$" }
+  - { term: LMTD, definition: "ค่าความต่างอุณหภูมิเฉลี่ยลอการิทึมที่ใช้คำนวณความร้อนที่ถ่ายเทในเครื่องแลกเปลี่ยนความร้อน" }
+flashcards:
+  - { front: "สูตรการนำความร้อนผ่านผนัง", back: "$q = kA\\Delta T/L$" }
+  - { front: "สูตรการพาความร้อน", back: "$q = hA(T_s - T_\\infty)$" }
+  - { front: "รัศมีวิกฤตของฉนวนท่อ", back: "$r_c = k/h$" }
+references:
+  - { title: "Heat transfer", url: "https://en.wikipedia.org/wiki/Heat_transfer", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Fourier's law", url: "https://en.wikipedia.org/wiki/Fourier%27s_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Log mean temperature difference", url: "https://en.wikipedia.org/wiki/Logarithmic_mean_temperature_difference", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Nusselt number (Dittus–Boelter equation)", url: "https://en.wikipedia.org/wiki/Nusselt_number", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+review_flags: []
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

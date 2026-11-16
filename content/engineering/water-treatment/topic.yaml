@@ -1,0 +1,69 @@
+id: engineering.environmental.water-treatment
+subject: engineering
+title: { th: การควบคุมและออกแบบระบบผลิตและจ่ายน้ำประปา, en: Control and design of drinking water treatment and distribution }
+summary: คำนวณความต้องการน้ำ การผสมสารส้ม ค่า G ของการกวน อัตราน้ำล้นผิว อัตราการกรอง ค่า CT ของการฆ่าเชื้อ และการสูญเสียความดันในท่อของโรงผลิตน้ำประปา
+difficulty: 7.5
+minutes: 40
+prerequisites: [engineering.environmental.water-quality, engineering.process.mass-energy-balance]
+encompasses:
+  - { id: engineering.environmental.water-quality, weight: 0.4 }
+  - { id: engineering.process.mass-energy-balance, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: water-train.svg
+    alt: "ลำดับการบำบัดแบบทั่วไป เริ่มจากน้ำดิบ ไปยังถังกวนเร็วที่ผสมสารส้ม ถังกวนช้าที่สร้างตะกอน ถังตกตะกอน ถังกรองทราย ถังฆ่าเชื้อด้วยคลอรีน ถังน้ำใส และจ่ายน้ำสู่ระบบท่อ"
+    caption: "ลำดับขั้นตอนของโรงผลิตน้ำประปาทั่วไป ไม่ใช่แบบของโรงงานใดโรงงานหนึ่ง"
+  - type: explanation
+    file: lesson.md
+  - type: worked-example
+    title: หาค่า G ของถังกวนเร็ว
+    problem: "ถังกวนเร็วมีปริมาตร $5\\ \\mathrm{m^3}$ รับกำลัง $P = 20\\ \\mathrm{W}$ ที่ 20°C ใช้ $\\mu = 1.002\\times10^{-3}\\ \\mathrm{Pa\\cdot s}$ หาค่า $G$"
+    steps:
+      - text: "แทนค่าในสูตร $G = \\sqrt{P/(\\mu V)} = \\sqrt{20/(1.002\\times10^{-3} \\times 5)}$"
+        why: "ทุกหน่วยต้องเป็น SI ก่อนแทนค่า คือ W, Pa·s และ m³"
+      - text: "คำนวณตัวส่วน $1.002\\times10^{-3} \\times 5 = 5.01\\times10^{-3}$ แล้วได้ $G = \\sqrt{3992} \\approx 63.2\\ \\mathrm{s^{-1}}$"
+        why: "ถ้าลืมความหนืด ค่าที่ได้จะใหญ่ผิดไปมาก"
+    answer: "ค่า $G$ ประมาณ $63.2\\ \\mathrm{s^{-1}}$"
+  - type: worked-example
+    title: หาอัตราน้ำล้นผิวของถังตกตะกอน
+    problem: "ถังตกตะกอนรับอัตราการไหล $400\\ \\mathrm{m^3/h}$ มีพื้นที่ผิว $80\\ \\mathrm{m^2}$ อัตราน้ำล้นผิวเท่าใด"
+    steps:
+      - text: "$SOR = Q/A = 400/80$"
+        why: "อัตราน้ำล้นผิวคืออัตราการไหลต่อพื้นที่ผิว ไม่ใช่กลับกัน"
+      - text: "ได้ $SOR = 5.00\\ \\mathrm{m^3/(m^2\\cdot h)}$"
+        why: "หน่วยของผลลัพธ์บอกว่าน้ำไหลผ่านพื้นที่ผิวต่อชั่วโมงเป็นเท่าไร"
+    answer: "อัตราน้ำล้นผิวประมาณ $5.00\\ \\mathrm{m^3/(m^2\\cdot h)}$ (ตรวจกับข้อกำหนดของแบบจริงก่อนใช้)"
+  - { type: check, problem: engineering.environmental.water-treatment.p002, prompt: "ลองคิดก่อนอ่านต่อ: สารส้มช่วยให้อนุภาครวมตัวได้อย่างไร" }
+  - { type: check, problem: engineering.environmental.water-treatment.p005, prompt: "ใช้สูตร G กับค่าที่ให้มาในโจทย์" }
+  - type: interactive
+    title: ลองเปลี่ยนกำลังกวนแล้วดูค่า G
+    caption: "ลากแถบเลื่อน a คือปริมาตรถังในหน่วย m³ แกน x คือกำลังกวนในหน่วย W และ y คือค่า G สังเกตว่า G เพิ่มเมื่อกำลังกวนมาก และลดเมื่อถังใหญ่ขึ้น"
+    widget:
+      kind: function-plot
+      functions: ["\\sqrt{x/(0.001002 a)}"]
+      sliders:
+        - { name: a, min: 1, max: 20, step: 1, value: 5, label: ปริมาตรถัง m³ }
+      x: [0, 100]
+      y: [0, 300]
+glossary:
+  - { term: อัตราน้ำล้นผิว, definition: "อัตราการไหลของน้ำต่อพื้นที่ผิวของถังตกตะกอน หน่วย m³/(m²·h) ใช้กำหนดขนาดถัง" }
+  - { term: ค่า G, definition: "ค่าความรุนแรงของการกวนที่คำนวณจากกำลัง ความหนืด และปริมาตร หน่วย s⁻¹" }
+  - { term: ค่า CT, definition: "ผลคูณของความเข้มข้นคลอรีนคงเหลือกับเวลาสัมผัส ใช้ควบคุมการฆ่าเชื้อ หน่วย mg·min/L" }
+  - { term: การทดสอบจาร์, definition: "การทดลองกวนน้ำดิบในจาร์หลายใบที่เติมสารส้มปริมาณต่างกัน เพื่อหาปริมาณที่เหมาะสม" }
+flashcards:
+  - { front: "สูตรค่า G ของการกวน", back: "$G = \\sqrt{P/(\\mu V)}$ หน่วย s⁻¹" }
+  - { front: "อัตราน้ำล้นผิวของถังตกตะกอน", back: "$SOR = Q/A$ หน่วย m³/(m²·h)" }
+  - { front: "ค่า CT คืออะไร", back: "ความเข้มข้นคลอรีนคงเหลือคูณเวลาสัมผัส หน่วย mg·min/L" }
+references:
+  - { title: "Water treatment", url: "https://en.wikipedia.org/wiki/Water_treatment", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Coagulation (water treatment)", url: "https://en.wikipedia.org/wiki/Coagulation_(water_treatment)", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Hazen-Williams equation", url: "https://en.wikipedia.org/wiki/Hazen%E2%80%93Williams_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+review_flags:
+  - { claim: "เกณฑ์คุณภาพน้ำประปาของประเทศไทย (ค่าความขุ่น คลอรีนคงเหลือ จุลินทรีย์)", reason: "ยังไม่ได้ยืนยันกับประกาศทางการฉบับล่าสุด บทเรียนจึงไม่ระบุตัวเลข ต้องตรวจก่อนเผยแพร่", severity: high }
+  - { claim: "ช่วงค่าอัตราการกรองและอัตราน้ำล้นผิวที่ตำราทั่วไประบุไว้", reason: "เป็นค่าจากตำราต่างประเทศและยังไม่ได้ยืนยันกับข้อกำหนดของหน่วยงานไทย ต้องตรวจก่อนเผยแพร่", severity: medium }
+  - { claim: "ค่า CT ที่ต้องใช้เพื่อฆ่าเชื้อในระดับที่กำหนด", reason: "ขึ้นกับชนิดจุลินทรีย์ อุณหภูมิ และ pH ต้องตรวจจากตารางที่หน่วยงานกำกับกำหนดก่อนนำไปใช้", severity: medium }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

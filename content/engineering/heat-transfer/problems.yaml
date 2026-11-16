@@ -1,0 +1,295 @@
+problems:
+  - id: engineering.thermo.heat-transfer.p001
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 1
+    type: numeric
+    stem: "ผนังคอนกรีตมีพื้นที่ $A = 10\\ \\mathrm{m^2}$ หนา $L = 0.2\\ \\mathrm{m}$ ค่าการนำความร้อน $k = 0.8\\ \\mathrm{W/(m\\cdot K)}$ ความต่างอุณหภูมิสองด้านของผนัง $\\Delta T = 20\\ \\mathrm{K}$ ความร้อนที่ไหลผ่านผนังกี่วัตต์ (ตอบหน่วย W) (ค่าสมมติ)"
+    answer: { value: 800, tolerance: 0.5, unit: W }
+    hints:
+      - "ใช้สูตร $q = kA\\Delta T/L$"
+      - "ความหนา $L$ อยู่ในตัวส่วน"
+    misconceptions:
+      - { match: 32, feedback: "ค่านี้คูณด้วยความหนา $L$ แทนที่จะหาร ความหนาอยู่ในตัวส่วนของสูตร" }
+    solution: "$q = 0.8 \\times 10 \\times 20 / 0.2 = 800\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p002
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 1
+    type: mcq
+    stem: "กฎที่ใช้อธิบายอัตราการนำความร้อนผ่านวัสดุที่อุณหภูมิต่างกันเรียกว่าอะไร"
+    choices:
+      - { id: a, text: "กฎของนิวตันว่าด้วยการเคลื่อนที่", feedback: "กฎของนิวตันว่าด้วยการเคลื่อนที่อธิบายแรง ไม่ได้อธิบายการนำความร้อน" }
+      - { id: b, text: "กฎของโอห์มสำหรับกระแสไฟฟ้า", feedback: "กฎของโอห์มอธิบายกระแสไฟฟ้า แม้โครงสร้างสมการจะคล้ายกันเมื่อเขียนเป็นความต้านทานความร้อน" }
+      - { id: c, text: "กฎของฟูเรียร์", correct: true }
+      - { id: d, text: "กฎของบอยล์", feedback: "กฎของบอยล์เกี่ยวกับความดันและปริมาตรของแก๊ส" }
+    hints:
+      - "กฎนี้ตั้งชื่อตามนักคณิตศาสตร์ชาวฝรั่งเศส"
+      - "เกี่ยวข้องกับการไหลของความร้อนตามความต่างอุณหภูมิ"
+    solution: "กฎของฟูเรียร์ระบุว่าอัตราการนำความร้อนเป็นสัดส่วนกับพื้นที่และความชันของอุณหภูมิ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p003
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 2
+    type: numeric
+    stem: "พื้นผิวโลหะพื้นที่ $2\\ \\mathrm{m^2}$ อุณหภูมิ $60^\\circ\\mathrm{C}$ อยู่ในอากาศที่ $30^\\circ\\mathrm{C}$ ค่า $h = 10\\ \\mathrm{W/(m^2\\cdot K)}$ อัตราการถ่ายเทความร้อนด้วยการพาความร้อนกี่วัตต์ (ตอบหน่วย W) (ค่าสมมติ)"
+    answer: { value: 600, tolerance: 0.5, unit: W }
+    hints:
+      - "ใช้สูตร $q = hA(T_s - T_\\infty)$"
+      - "ความต่างอุณหภูมิ 60 − 30 เท่ากับ 30 K"
+    misconceptions:
+      - { match: 300, feedback: "ค่านี้ลืมคูณพื้นที่ผิว $A$ ในสูตรการพาความร้อน" }
+    solution: "$q = 10 \\times 2 \\times (60 - 30) = 600\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p004
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 2
+    type: numeric
+    stem: "ผนังห้องเย็นประกอบด้วยคอนกรีตหนา $0.15\\ \\mathrm{m}$ ค่า $k = 1.4$ และฉนวนหนา $0.1\\ \\mathrm{m}$ ค่า $k = 0.03$ พื้นที่ $A = 1\\ \\mathrm{m^2}$ ความต้านทานความร้อนรวมของผนังเท่ากับกี่ K/W (ตอบหน่วย K/W ทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 3.44, tolerance: 0.01, unit: K/W }
+    hints:
+      - "คำนวณความต้านทานของแต่ละชั้นด้วย $R = L/(kA)$"
+      - "ความต้านทานชั้นต่อกันรวมด้วยการบวก"
+    misconceptions:
+      - { match: 0.107, feedback: "ค่านี้เป็นความต้านทานของคอนกรีตเพียงชั้นเดียว ลืมชั้นฉนวนซึ่งมีความต้านทานสูงกว่ามาก" }
+    solution: "$R = 0.15/1.4 + 0.1/0.03 \\approx 0.107 + 3.333 = 3.44\\ \\mathrm{K/W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p005
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 2
+    type: mcq
+    stem: "เมื่อเพิ่มความหนาของฉนวนที่มีค่า $k$ ต่ำบนผนังเรียบ ผลต่อความต้านทานความร้อนและการสูญเสียความร้อนเป็นอย่างไร (เมื่ออุณหภูมิสองด้านคงที่)"
+    choices:
+      - { id: a, text: "ความต้านทานลดลง และการสูญเสียความร้อนเพิ่มขึ้น", feedback: "ฉนวนที่หนาขึ้นเพิ่มความต้านทานความร้อน ไม่ได้ลดลง" }
+      - { id: b, text: "ความต้านทานเพิ่มขึ้น และการสูญเสียความร้อนลดลง", correct: true }
+      - { id: c, text: "ทั้งความต้านทานและการสูญเสียความร้อนไม่เปลี่ยน", feedback: "ความหนาของฉนวนอยู่ในตัวเศษของ $R$ จึงมีผล" }
+      - { id: d, text: "การสูญเสียความร้อนเพิ่มขึ้นเพราะพื้นที่ผิวเพิ่ม", feedback: "บนผนังเรียบพื้นที่ผิวไม่เพิ่ม การเพิ่มพื้นที่ผิวเกิดกับท่อทรงกระบอกเท่านั้น" }
+    hints:
+      - "ความหนาของชั้นอยู่ในตัวเศษของ $R = L/(kA)$"
+      - "ความร้อนที่ไหลลดลงเมื่อความต้านทานเพิ่ม"
+    solution: "$R = L/(kA)$ เพิ่มขึ้นเมื่อ $L$ เพิ่ม จึงทำให้ $q = \\Delta T/R$ ลดลง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p006
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 3
+    type: numeric
+    stem: "พื้นผิววัสดุมีค่าการแผ่รังสี $\\varepsilon = 0.8$ พื้นที่ $1\\ \\mathrm{m^2}$ อุณหภูมิ $400\\ \\mathrm{K}$ ฉากรอบข้างอยู่ที่ $300\\ \\mathrm{K}$ ใช้ $\\sigma = 5.67\\times10^{-8}\\ \\mathrm{W/(m^2\\cdot K^4)}$ การแผ่รังสีสุทธิกี่วัตต์ (ตอบหน่วย W ทศนิยม 1 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 793.8, tolerance: 0.5, unit: W }
+    hints:
+      - "ใช้สูตร $q = \\varepsilon\\sigma A (T^4 - T_\\infty^4)$"
+      - "อุณหภูมิต้องเป็นเคลวินทั้งสองค่า"
+    misconceptions:
+      - { match: 992.3, feedback: "ค่านี้ลืมค่าการแผ่รังสี $\\varepsilon$ ต้องคูณด้วย 0.8" }
+    solution: "$q = 0.8 \\times 5.67\\times10^{-8} \\times (400^4 - 300^4) \\approx 793.8\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p007
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 3
+    type: numeric
+    stem: "ฉนวนที่หุ้มท่อมีค่า $k = 0.04\\ \\mathrm{W/(m\\cdot K)}$ และอากาศรอบท่อมีค่า $h = 10\\ \\mathrm{W/(m^2\\cdot K)}$ รัศมีวิกฤตของฉนวนกี่มิลลิเมตร (ตอบหน่วย mm) (ค่าสมมติ)"
+    answer: { value: 4, tolerance: 0.01, unit: mm }
+    hints:
+      - "รัศมีวิกฤตคือ $r_c = k/h$"
+      - "ผลลัพธ์ได้หน่วยเมตร ต้องแปลงเป็นมิลลิเมตร"
+    misconceptions:
+      - { match: 0.004, feedback: "ค่านี้ถูกต้องเป็นเมตร แต่ข้อนี้ถามเป็นมิลลิเมตร ต้องคูณด้วย 1000" }
+    solution: "$r_c = 0.04/10 = 0.004\\ \\mathrm{m} = 4\\ \\mathrm{mm}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p008
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 3
+    type: numeric
+    stem: "ชิ้นอลูมิเนียมมีความหนาแน่น $2700\\ \\mathrm{kg/m^3}$ ความจุความร้อน $900\\ \\mathrm{J/(kg\\cdot K)}$ อัตราส่วน $V/A = 0.01\\ \\mathrm{m}$ และ $h = 25\\ \\mathrm{W/(m^2\\cdot K)}$ ค่าคงตัวเวลาการเย็นตัวแบบก้อนกี่วินาที (ตอบหน่วย s) (ค่าสมมติ)"
+    answer: { value: 972, tolerance: 1, unit: s }
+    hints:
+      - "ใช้สูตร $\\tau = \\rho c V/(hA)$"
+      - "อัตราส่วน $V/A$ ที่ให้มาช่วยตัดตัวแปรพื้นที่ออก"
+    misconceptions:
+      - { match: 24300, feedback: "ค่านี้ไม่ได้หารด้วย $h$ ซึ่งเป็นตัวการที่ทำให้วัตถุเย็นลง" }
+    solution: "$\\tau = 2700 \\times 900 \\times 0.01 / 25 = 972\\ \\mathrm{s}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p009
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 3
+    type: numeric
+    stem: "ชิ้นอลูมิเนียมมีอัตราส่วน $V/A = 0.01\\ \\mathrm{m}$ ค่า $h = 25\\ \\mathrm{W/(m^2\\cdot K)}$ และค่าการนำความร้อน $k = 200\\ \\mathrm{W/(m\\cdot K)}$ เลขบิออต $Bi = hL_c/k$ โดย $L_c = V/A$ มีค่าเท่าใด (ไม่มีหน่วย ทศนิยม 5 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 0.00125, tolerance: 0.00001 }
+    hints:
+      - "หาความยาวลักษณะเฉพาะ $L_c = V/A$ ก่อน"
+      - "$Bi < 0.1$ หมายความว่าใช้วิธีก้อนได้"
+    misconceptions:
+      - { match: 0.0125, feedback: "ค่านี้ใช้ค่า $k$ ผิดไป 10 เท่า ค่า $k$ ของอลูมิเนียมในโจทย์คือ 200" }
+    solution: "$Bi = 25 \\times 0.01 / 200 = 0.00125$ ซึ่งน้อยกว่า 0.1 จึงใช้วิธีก้อนได้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p010
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 3
+    type: numeric
+    stem: "เครื่องแลกเปลี่ยนความร้อนแบบไหลสวนทาง ที่ปลายด้านหนึ่งความต่างอุณหภูมิ $\\Delta T_1 = 60\\ \\mathrm{K}$ และอีกด้านหนึ่ง $\\Delta T_2 = 20\\ \\mathrm{K}$ ค่าความต่างอุณหภูมิเฉลี่ยลอการิทึม (LMTD) มีค่าเท่าใด (ตอบหน่วย K ทศนิยม 2 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 36.41, tolerance: 0.02, unit: K }
+    hints:
+      - "ใช้สูตร $\\Delta T_{lm} = (\\Delta T_1 - \\Delta T_2)/\\ln(\\Delta T_1/\\Delta T_2)$"
+      - "ลอการิทึมธรรมชาติของอัตราส่วน $60/20 = 3$"
+    misconceptions:
+      - { match: 40, feedback: "ค่านี้คือค่าเฉลี่ยเลขคณิต ไม่ใช่ค่า LMTD ซึ่งใช้ลอการิทึม" }
+    solution: "$\\Delta T_{lm} = (60 - 20)/\\ln 3 = 40/1.0986 \\approx 36.41\\ \\mathrm{K}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p011
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 4
+    type: numeric
+    stem: "เครื่องแลกเปลี่ยนความร้อนมี $U = 500\\ \\mathrm{W/(m^2\\cdot K)}$ พื้นที่ $A = 4\\ \\mathrm{m^2}$ และ LMTD เท่ากับ $28\\ \\mathrm{K}$ อัตราการถ่ายเทความร้อนกี่กิโลวัตต์ (ตอบหน่วย kW ทศนิยม 1 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 56, tolerance: 0.1, unit: kW }
+    hints:
+      - "ใช้สูตร $Q = UA\\,\\Delta T_{lm}$"
+      - "แปลงวัตต์เป็นกิโลวัตต์โดยหาร 1000"
+    misconceptions:
+      - { match: 56000, feedback: "ค่านี้เป็นวัตต์ ข้อนี้ถามเป็นกิโลวัตต์ ต้องหารด้วย 1000" }
+    solution: "$Q = 500 \\times 4 \\times 28 = 56{,}000\\ \\mathrm{W} = 56\\ \\mathrm{kW}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p012
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 4
+    type: numeric
+    stem: "น้ำไหลแบบปั่นป่วนในท่อเรียบและกำลังถูกทำให้ร้อน มีเลขเรย์โนลด์ $Re = 20{,}000$ และเลขพรันด์ล $Pr = 5$ ใช้สหสัมพันธ์ Dittus–Boelter สำหรับของไหลที่ถูกทำให้ร้อน $Nu = 0.023\\,Re^{0.8}Pr^{0.4}$ เลขนัสเซลต์มีค่าเท่าใด (ทศนิยม 1 ตำแหน่ง) (ค่าสมมติ)"
+    answer: { value: 120.8, tolerance: 0.1 }
+    hints:
+      - "คำนวณ $Re^{0.8}$ และ $Pr^{0.4}$ แยกกันก่อน"
+      - "อย่าลืมคูณด้วยค่าคงที่ 0.023"
+    misconceptions:
+      - { match: 5253, feedback: "ค่านี้ลืมค่าคงที่ 0.023 ในสหสัมพันธ์" }
+    solution: "$Re^{0.8} \\approx 2759$ และ $Pr^{0.4} \\approx 1.904$ จึงได้ $Nu = 0.023 \\times 2759 \\times 1.904 \\approx 120.8$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p013
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 4
+    type: numeric
+    stem: "ท่อเส้นผ่านศูนย์กลาง $D = 0.025\\ \\mathrm{m}$ มีค่าการนำความร้อนของของไหล $k = 0.6\\ \\mathrm{W/(m\\cdot K)}$ และเลขนัสเซลต์ $Nu = 150$ สัมประสิทธิ์การพาความร้อน $h$ เท่ากับกี่ $\\mathrm{W/(m^2\\cdot K)}$ (ตอบหน่วย W/(m²·K)) (ค่าสมมติ)"
+    answer: { value: 3600, tolerance: 1, unit: "W/(m²·K)" }
+    hints:
+      - "ใช้ความสัมพันธ์ $h = Nu\\,k/D$"
+      - "ตรวจว่าหน่วยของผลลัพธ์คือ W/(m²·K)"
+    misconceptions:
+      - { match: 6.25, feedback: "ค่านี้คือ $Nu\\,D/k$ ซึ่งกลับตำแหน่งของ $k$ และ $D$" }
+    solution: "$h = 150 \\times 0.6 / 0.025 = 3600\\ \\mathrm{W/(m^2\\cdot K)}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p014
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 4
+    type: expression
+    stem: "วัตถุก้อนเย็นตัวตามแบบจำลองก้อน ให้ $a$ เป็นค่าคงตัวเวลาการเย็นตัว $\\tau$ จงเขียนอัตราส่วน $(T - T_\\infty)/(T_i - T_\\infty)$ ในรูปของ $t$ และ $a$"
+    prefix: "อัตราส่วน ="
+    answer: { latex: "e^{-t/a}", variables: [t, a] }
+    hints:
+      - "อุณหภูมิที่เหลือจากค่าเริ่มต้นลดลงแบบเอ็กซ์โพเนนเชียลตามเวลา"
+      - "เครื่องหมายในเลขชี้กำลังเป็นลบ"
+    misconceptions:
+      - { match: "e^{a/t}", feedback: "กลับตำแหน่งตัวเศษกับตัวส่วนในเลขชี้กำลัง ค่าต้องลดลงเมื่อเวลาเพิ่ม" }
+    solution: "$\\theta/\\theta_i = e^{-t/\\tau}$ โดย $\\tau = a$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p015
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 3
+    type: order
+    stem: "เรียงลำดับขั้นตอนการออกแบบเครื่องแลกเปลี่ยนความร้อนเมื่อทราบอุณหภูมิเข้าและออกของของไหลทั้งสองสาย"
+    items:
+      - "คำนวณความต่างอุณหภูมิที่ปลายทั้งสองด้านของเครื่องแลกเปลี่ยน"
+      - "คำนวณ LMTD จากความต่างอุณหภูมิที่ปลายทั้งสองด้าน"
+      - "คำนวณพื้นที่ที่ต้องใช้จาก $A = Q/(U\\,\\Delta T_{lm})$"
+      - "ตรวจว่าพื้นที่ที่ได้สมเหตุสมผลกับการติดตั้งและความดันตก"
+    hints:
+      - "ต้องรู้ความต่างอุณหภูมิที่ปลายทั้งสองด้านก่อนคำนวณ LMTD"
+      - "พื้นที่คำนวณได้หลังจากมี $Q$, $U$ และ LMTD แล้ว"
+    solution: "คำนวณความต่างที่ปลายทั้งสอง คำนวณ LMTD คำนวณพื้นที่ แล้วตรวจความสมเหตุสมผล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p016
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 2
+    type: match
+    stem: "จับคู่กลไกหรืออุปกรณ์การถ่ายเทความร้อนกับตัวอย่างที่เห็นได้ชัดที่สุด"
+    pairs:
+      - { left: "การนำความร้อน", right: "ความร้อนไหลผ่านผนังเหล็กของกระทะ" }
+      - { left: "การพาความร้อน", right: "ลมจากพัดลมพัดความร้อนออกจากผิวร้อน" }
+      - { left: "การแผ่รังสี", right: "ความอบอุ่นจากดวงอาทิตย์ที่มาถึงผิวโลกผ่านสุญญากาศ" }
+      - { left: "เครื่องแลกเปลี่ยนความร้อน", right: "ถ่ายเทความร้อนจากน้ำร้อนไปยังน้ำเย็นผ่านผนังท่อ" }
+    hints:
+      - "การนำต้องมีตัวกลางที่แข็งหรือหยุดนิ่ง"
+      - "การแผ่รังสีไม่ต้องการตัวกลาง"
+    solution: "การนำผ่านผนังแข็ง การพาโดยของไหลเคลื่อนที่ การแผ่รังสีผ่านสุญญากาศ และเครื่องแลกเปลี่ยนที่ใช้ผนังแยกของไหลสองสาย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p017
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 2
+    type: text
+    stem: "ปริมาณไร้มิติที่ใช้บอกอัตราส่วนของการพาความร้อนต่อการนำความร้อนในของไหล มีชื่อเป็นภาษาไทยว่าอะไร"
+    accepted: ["เลขนัสเซลต์", "เลขนัสเซลท์", "นัสเซลต์", "นัสเซลท์", "Nusselt", "nusselt", "Nusselt number"]
+    hints:
+      - "เป็นชื่อของนักวิทยาศาสตร์ชาวเยอรมัน"
+      - "ตัวย่อคือ Nu"
+    solution: "เลขนัสเซลต์ (Nusselt number) คืออัตราส่วนของการพาความร้อนต่อการนำความร้อนข้ามชั้นของไหล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p018
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 5
+    type: mcq
+    multiple: true
+    stem: "เลือกทุกข้อที่ถูกเกี่ยวกับการหุ้มฉนวนท่อทรงกระบอก"
+    choices:
+      - { id: a, text: "ถ้ารัศมีภายนอกของท่อน้อยกว่ารัศมีวิกฤต การเพิ่มฉนวนอาจเพิ่มการสูญเสียความร้อนได้", correct: true }
+      - { id: b, text: "ฉนวนที่มีค่า $k$ ต่ำช่วยเพิ่มความต้านทานความร้อนของชั้นที่หุ้ม", correct: true }
+      - { id: c, text: "การหุ้มฉนวนจะลดการสูญเสียความร้อนเสมอโดยไม่ขึ้นกับรัศมีท่อ", feedback: "ข้อนี้ไม่จริงสำหรับท่อที่มีรัศมีเล็ก เพราะพื้นที่ผิวเพิ่มขึ้นตามความหนา" }
+      - { id: d, text: "รัศมีวิกฤตขึ้นกับความยาวท่อเท่านั้น", feedback: "รัศมีวิกฤตคือ $k/h$ ไม่ขึ้นกับความยาวท่อ" }
+    hints:
+      - "พิจารณาว่าพื้นที่ผิวด้านนอกเปลี่ยนไปอย่างไรเมื่อเพิ่มฉนวน"
+      - "รัศมีวิกฤตขึ้นกับค่า $k$ ของฉนวนและ $h$ ของอากาศ"
+    solution: "ถ้ารัศมีท่อเล็กกว่ารัศมีวิกฤต การเพิ่มฉนวนเพิ่มพื้นที่ผิวการพามากกว่าความต้านทานที่เพิ่ม และฉนวนที่มี $k$ ต่ำช่วยเพิ่มความต้านทานความร้อนได้จริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: engineering.thermo.heat-transfer.p019
+    topics: [engineering.thermo.heat-transfer]
+    difficulty: 5
+    type: numeric
+    stem: "ครีบตรงยาวไม่สิ้นสุดมี $h = 50\\ \\mathrm{W/(m^2\\cdot K)}$ เส้นรอบรูป $P = 0.04\\ \\mathrm{m}$ $k = 200\\ \\mathrm{W/(m\\cdot K)}$ พื้นที่หน้าตัด $A_c = 10^{-4}\\ \\mathrm{m^2}$ และอุณหภูมิฐานต่างจากอากาศ 40 K ใช้สูตร $Q = \\sqrt{hPkA_c}\\,\\theta_b$ ความร้อนที่ไหลออกจากครีบกี่วัตต์ (ตอบหน่วย W) (ค่าสมมติ)"
+    answer: { value: 8, tolerance: 0.05, unit: W }
+    hints:
+      - "คำนวณ $hPkA_c$ ก่อนแล้วถอดรากที่สอง"
+      - "คูณผลลัพธ์ด้วย $\\theta_b = 40$ K"
+    misconceptions:
+      - { match: 0.2, feedback: "ค่านี้คือ $\\sqrt{hPkA_c}$ ยังไม่ได้คูณด้วยความต่างอุณหภูมิ $\\theta_b$" }
+    solution: "$\\sqrt{50 \\times 0.04 \\times 200 \\times 10^{-4}} = \\sqrt{0.04} = 0.2$ จึงได้ $Q = 0.2 \\times 40 = 8\\ \\mathrm{W}$"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
