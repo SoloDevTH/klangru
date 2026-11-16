@@ -61,6 +61,7 @@ problems:
       - { match: 90, feedback: "$90^\\circ$ คือหนึ่งในสี่รอบ ครึ่งรอบคือมุมฉาก 2 มุม" }
       - { match: 360, feedback: "$360^\\circ$ คือหนึ่งรอบเต็ม ข้อนี้หมุนแค่ครึ่งรอบ" }
     solution: "ครึ่งรอบ $= 360^\\circ \\div 2 = 180^\\circ$ (มุมฉาก 2 มุม)"
+    lint_ignore: [answer-in-lesson]
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -204,15 +205,15 @@ problems:
     topics: [math.geometry.angle-measure]
     difficulty: 4
     type: numeric
-    stem: "ฝ้ายวัดมุมด้านในที่จุด $O$ ได้ $125^\\circ$ มุมกลับที่จุด $O$ ซึ่งมีแขนคู่เดียวกันมีขนาดกี่องศา (ตอบในหน่วยองศา)"
-    answer: { value: 235, unit: องศา }
+    stem: "ฝ้ายวัดมุมด้านในที่จุด $O$ ได้ $140^\\circ$ มุมกลับที่จุด $O$ ซึ่งมีแขนคู่เดียวกันมีขนาดกี่องศา (ตอบในหน่วยองศา)"
+    answer: { value: 220, unit: องศา }
     hints:
       - "มุมด้านในกับมุมกลับรวมกันได้หนึ่งรอบ"
       - "มุมกลับ $= 360^\\circ -$ มุมด้านใน"
     misconceptions:
-      - { match: 55, feedback: "ลบออกจาก $180^\\circ$ มุมด้านในกับมุมกลับรวมกันเป็นหนึ่งรอบ $360^\\circ$" }
-      - { match: 485, feedback: "มุมกลับต้องน้อยกว่า $360^\\circ$ ต้องลบ ไม่ใช่บวก" }
-    solution: "มุมกลับ $= 360^\\circ - 125^\\circ = 235^\\circ$ (อยู่ระหว่าง $180^\\circ$ กับ $360^\\circ$ ตามที่ควรเป็น)"
+      - { match: 40, feedback: "ลบออกจาก $180^\\circ$ มุมด้านในกับมุมกลับรวมกันเป็นหนึ่งรอบ $360^\\circ$" }
+      - { match: 500, feedback: "มุมกลับต้องน้อยกว่า $360^\\circ$ ต้องลบ ไม่ใช่บวก" }
+    solution: "มุมกลับ $= 360^\\circ - 140^\\circ = 220^\\circ$ (อยู่ระหว่าง $180^\\circ$ กับ $360^\\circ$ ตามที่ควรเป็น)"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
