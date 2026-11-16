@@ -1,0 +1,340 @@
+problems:
+- id: math.calculus.parametric-curves.p001
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 1
+  type: mcq
+  stem: เส้นโค้งที่กำหนดด้วย $x = 2t$ และ $y = t^2$ เขียนเป็นสมการคาร์ทีเซียนได้ตามข้อใด
+  choices:
+  - id: a
+    text: $y = 2x^2$
+    correct: false
+    feedback: แทน $t = 2x$ ผิด เพราะจาก $x = 2t$ จะได้ $t = \dfrac{x}{2}$
+  - id: b
+    text: $y = \dfrac{x^2}{4}$
+    correct: true
+  - id: c
+    text: $y = x^2$
+    correct: false
+    feedback: ลืมว่า $t = \dfrac{x}{2}$ จึงต้องยกกำลังสองด้วย $\left(\dfrac{x}{2}\right)^2$
+  - id: d
+    text: $y = \dfrac{x}{2}$
+    correct: false
+    feedback: สมการนี้เป็นเส้นตรง แต่ $y = t^2$ เป็นพาราโบลา จึงต้องยกกำลังสอง
+  hints:
+  - หา $t$ ในรูป $x$ จากสมการแรกก่อน
+  - แทนค่า $t = \dfrac{x}{2}$ ลงในสมการ $y = t^2$
+  solution: จาก $x = 2t$ จะได้ $t = \dfrac{x}{2}$ แทนลงใน $y = t^2$ จะได้ $y = \dfrac{x^2}{4}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p002
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 2
+  type: numeric
+  stem: เส้นโค้ง $x = t^2$, $y = t^3$ มีความชัน $\dfrac{dy}{dx}$ เท่าใดที่ $t = 3$ (ตอบเป็นตัวเลข)
+  answer:
+    value: 4.5
+    tolerance: 0.01
+  hints:
+  - คำนวณ $\dfrac{dx}{dt}$ และ $\dfrac{dy}{dt}$ ก่อน
+  - ความชันคือ $\dfrac{dy/dt}{dx/dt}$
+  misconceptions:
+  - match: 162.0
+    feedback: คูณ $\dfrac{dy}{dt}$ กับ $\dfrac{dx}{dt}$ แทนการหาร
+  - match: 0.2222
+    feedback: สลับเศษกับส่วน ได้ $\dfrac{dx}{dy}$ ซึ่งไม่ใช่ความชันของ $y$ เทียบ $x$
+  solution: $\dfrac{dx}{dt} = 2t = 6$ และ $\dfrac{dy}{dt} = 3t^2 = 27$ จึง $\dfrac{dy}{dx} = \dfrac{27}{6} = 4.5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p003
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 2
+  type: expression
+  stem: เส้นโค้ง $x = t^2$ และ $y = t^3 - 3t$ มี $\dfrac{dy}{dx}$ เป็นนิพจน์ของ $t$ เท่าใด (ตอบเป็นนิพจน์ของ $t$)
+  answer:
+    latex: \frac{3t^2-3}{2t}
+    variables:
+    - t
+  hints:
+  - ใช้สูตร $\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}$
+  - $\dfrac{dy}{dt} = 3t^2 - 3$ และ $\dfrac{dx}{dt} = 2t$
+  misconceptions:
+  - match: \frac{2t}{3t^2-3}
+    feedback: กลับเศษกับส่วน ความชันคือ $dy/dt$ หารด้วย $dx/dt$ ไม่ใช่กลับกัน
+  - match: 3t^2-3
+    feedback: ลืมหารด้วย $dx/dt = 2t$
+  solution: $\dfrac{dy}{dx} = \dfrac{3t^2 - 3}{2t}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p004
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 2
+  type: numeric
+  stem: เส้นโค้ง $x = t^2 + 1$, $y = t^3 - 12t$ มีเส้นสัมผัสแนวนอนที่จุดซึ่ง $t > 0$ จงหาค่า $y$ ของจุดนั้น (ตอบเป็นตัวเลข)
+  answer:
+    value: -16.0
+    tolerance: 0.01
+  hints:
+  - เส้นสัมผัสแนวนอนเมื่อ $\dfrac{dy}{dt} = 0$ และ $\dfrac{dx}{dt} \ne 0$
+  - แก้ $3t^2 - 12 = 0$ แล้วเลือกคำตอบที่ $t > 0$
+  misconceptions:
+  - match: 0.0
+    feedback: คิดว่าจุดที่ $dx/dt = 0$ เป็นจุดสัมผัสแนวนอน แต่ที่ $t=0$ $dx/dt = 0$ จึงไม่ใช่เส้นสัมผัสแนวนอน
+  solution: $\dfrac{dy}{dt} = 3t^2 - 12 = 0$ ได้ $t = \pm 2$ เลือก $t = 2$ ($t > 0$) ตรวจว่า $\dfrac{dx}{dt} = 2t = 4 \ne 0$ แล้ว $y = 8 - 24 = -16$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p005
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 3
+  type: numeric
+  stem: ลูกบอลถูกเตะจากสนามโรงเรียนด้วยความเร็วต้น $25\ \mathrm{m/s}$ ทำมุม $60^\circ$ กับแนวราบ ตำแหน่งของลูกบอลคือ $x = 25\cos 60^\circ\, t$ และ $y = 25\sin 60^\circ\, t - \tfrac{1}{2}(9.8)t^2$ (ค่าสมมติ) จงหาความสูงสูงสุดของลูกบอลในหน่วยเมตร (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 23.9158
+    tolerance: 0.05
+    unit: m
+  hints:
+  - ความสูงสูงสุดเกิดเมื่อ $\dfrac{dy}{dt} = 0$
+  - แก้ $\dfrac{dy}{dt} = 25\sin 60^\circ - 9.8t = 0$ แล้วแทนค่า $t$ กลับใน $y$
+  misconceptions:
+  - match: 7.9719
+    feedback: ใช้ $\cos 60^\circ$ แทน $\sin 60^\circ$ ในองค์ประกอบแนวตั้ง
+  - match: 2.2092
+    feedback: ตอบเวลาถึงจุดสูงสุดแทนความสูง
+  solution: $t^* = \dfrac{25\sin 60^\circ}{9.8} \approx 2.209\ \mathrm{s}$ และ $y_{\max} = \dfrac{(25\sin 60^\circ)^2}{2(9.8)} \approx 23.92\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p006
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 3
+  type: numeric
+  stem: ลูกบอลอีกลูกถูกเตะด้วยความเร็วต้น $25\ \mathrm{m/s}$ ทำมุม $30^\circ$ กับแนวราบ (ค่าสมมติ ไม่คิดแรงต้านอากาศ ใช้ $x = (v_0\cos\theta)\,t$, $y = (v_0\sin\theta)\,t - \tfrac{1}{2}(9.8)t^2$) จงหาระยะทางแนวนอนเมื่อลูกบอลกลับมาถึงระดับพื้นเดิม ในหน่วยเมตร (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 55.2312
+    tolerance: 0.05
+    unit: m
+  hints:
+  - ลูกบอลถึงพื้นเมื่อ $y = 0$ ซึ่งได้ $t = \dfrac{2v_0\sin\theta}{g}$
+  - แทนค่า $t$ ลงใน $x = v_0\cos\theta \cdot t$ แล้วใช้ $2\sin\theta\cos\theta = \sin 2\theta$
+  misconceptions:
+  - match: 31.8878
+    feedback: ใช้ $\sin\theta$ แทน $\sin 2\theta$ ในสูตรระยะทาง
+  - match: 27.6156
+    feedback: ใช้เวลาถึงจุดสูงสุดเป็นเวลาที่ลูกบอลลงพื้น ซึ่งครึ่งหนึ่งของเวลาจริง
+  solution: $t = \dfrac{2\cdot 25\sin 30^\circ}{9.8}$ จึง $x = 25\cos 30^\circ \cdot t = \dfrac{25^2 \sin 60^\circ}{9.8} \approx 55.23\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p007
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 3
+  type: numeric
+  stem: โดรนเกษตรในสวนทุเรียนจันทบุรีบินตามเส้นทาง $x = 2t$, $y = t^2$ เมื่อ $0 \le t \le 2$ (หน่วยกิโลเมตร ข้อมูลสมมติ) จงหาระยะทางที่โดรนบินทั้งหมด (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 5.9158
+    tolerance: 0.01
+    unit: km
+  hints:
+  - ความยาวส่วนโค้งคือ $\displaystyle\int_a^b\sqrt{(dx/dt)^2 + (dy/dt)^2}\,dt$
+  - $\dfrac{dx}{dt} = 2$ และ $\dfrac{dy}{dt} = 2t$ ดังนั้นภายในรากคือ $4 + 4t^2$
+  misconceptions:
+  - match: 8.0
+    feedback: ใช้ผลบวก $|dx/dt| + |dy/dt|$ แทนรากของผลบวกกำลังสอง
+  solution: $\displaystyle L = \int_0^2 \sqrt{4 + 4t^2}\,dt = 2\int_0^2\sqrt{1+t^2}\,dt = 2\sqrt{5} + \sinh^{-1}2 \approx 5.9158\ \mathrm{km}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p008
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 3
+  type: mcq
+  stem: ข้อใดเป็นสมการอิงตัวแปรเสริมของวงกลมรัศมี $2$ จุดศูนย์กลาง $(1, -3)$ ที่เคลื่อนที่ทวนเข็มนาฬิกาเมื่อ $t$ เพิ่มขึ้น
+  choices:
+  - id: a
+    text: $x = 1 + 2\sin t,\ y = -3 + 2\cos t$
+    correct: false
+    feedback: จุดอยู่บนวงกลมเดียวกันจริง แต่เคลื่อนที่ตามเข็มนาฬิกา เพราะที่ $t = 0$ จุดนี้กำลังเคลื่อนไปทางขวาที่ด้านบนของวงกลม
+  - id: b
+    text: $x = 1 + 2\cos t,\ y = -3 + 4\sin t$
+    correct: false
+    feedback: ได้วงรี ไม่ใช่วงกลม เพราะรัศมีในแนวตั้งเป็น 4
+  - id: c
+    text: $x = 1 + 2t,\ y = -3 + 2t$
+    correct: false
+    feedback: ได้เส้นตรง ไม่ใช่วงกลม
+  - id: d
+    text: $x = 1 + 2\cos t,\ y = -3 + 2\sin t$
+    correct: true
+  hints:
+  - วงกลมรัศมี $r$ อิงตัวแปรเสริมในรูป $x = h + r\cos t$ และ $y = k + r\sin t$
+  - ทิศทางทวนเข็มนาฬิกาเมื่อ $t$ เพิ่มขึ้นให้ดู $\frac{dx}{dt}$ และ $\frac{dy}{dt}$ ที่ $t = 0$
+  solution: ศูนย์กลาง $(h,k) = (1,-3)$ และรัศมี $r = 2$ ที่ $t = 0$ จุดอยู่ที่ $(3,-3)$ และ $\frac{dy}{dt} = 2\cos 0 = 2 > 0$ จึงเคลื่อนขึ้นไปทางด้านขวาของจุดศูนย์กลาง ทิศทางทวนเข็มนาฬิกา
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p009
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 4
+  type: order
+  stem: เรียงขั้นตอนการหา $\dfrac{d^2y}{dx^2}$ ของเส้นโค้งอิงตัวแปรเสริม $x(t)$, $y(t)$ ให้ถูกลำดับ
+  items:
+  - หา $\dfrac{dx}{dt}$ และ $\dfrac{dy}{dt}$
+  - หา $\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}$
+  - หา $\dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)$
+  - หารผลนั้นด้วย $\dfrac{dx}{dt}$
+  hints:
+  - ต้องมี $\dfrac{dy}{dx}$ ก่อนจึงจะดิฟอีกครั้งได้
+  - ขั้นสุดท้ายคือการหารด้วย $\dfrac{dx}{dt}$ เพราะการดิฟเทียบกับ $t$ ต้องถูกแปลงกลับไปเป็น $x$
+  solution: ลำดับที่ถูกคือ (1) หา $dx/dt$ และ $dy/dt$ (2) หา $dy/dx$ (3) ดิฟ $dy/dx$ เทียบกับ $t$ (4) หารด้วย $dx/dt$ จึงได้ $d^2y/dx^2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p010
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 4
+  type: numeric
+  stem: เส้นโค้ง $x = t^2$, $y = t^3 - 3t$ มี $\dfrac{d^2y}{dx^2}$ เท่าใดที่ $t = 2$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.4688
+    tolerance: 0.005
+  hints:
+  - ใช้สูตร $\dfrac{d^2y}{dx^2} = \dfrac{\frac{d}{dt}(dy/dx)}{dx/dt}$
+  - จาก $\dfrac{dy}{dx} = \dfrac{3t^2-3}{2t}$ ดิฟเทียบกับ $t$ ก่อน
+  misconceptions:
+  - match: 3.0
+    feedback: หาร $\dfrac{d^2y}{dt^2}$ ด้วย $\dfrac{dx}{dt}$ ครั้งเดียว ซึ่งไม่ใช่สูตรที่ถูก
+  - match: 1.875
+    feedback: ลืมหารด้วย $\dfrac{dx}{dt}$ ในขั้นสุดท้าย
+  solution: $\dfrac{d}{dt}\dfrac{3t^2-3}{2t} = \dfrac{6t^2 + 6}{4t^2}$ เมื่อ $t=2$ ได้ $\dfrac{30}{16} = 1.875$ แล้วหารด้วย $dx/dt = 4$ ได้ $\dfrac{d^2y}{dx^2} = \dfrac{15}{32} = 0.4688$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p011
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 4
+  type: match
+  stem: จับคู่สมการอิงตัวแปรเสริมกับสมการคาร์ทีเซียนที่ตรงกัน
+  pairs:
+  - left: $x = 2\cos t,\ y = 2\sin t$
+    right: $x^2 + y^2 = 4$
+  - left: $x = t,\ y = t^2$
+    right: $y = x^2$
+  - left: $x = 2\cos t,\ y = 3\sin t$
+    right: $\dfrac{x^2}{4} + \dfrac{y^2}{9} = 1$
+  - left: $x = t + 1,\ y = t - 2$
+    right: $x - y = 3$
+  hints:
+  - ใช้ $\cos^2 t + \sin^2 t = 1$ กับคู่ที่เป็นวงกลมและวงรี
+  - สำหรับเส้นตรง แทน $t = x - 1$ ลงในสมการของ $y$
+  solution: วงกลมรัศมี 2 ตรงกับ $x^2+y^2=4$ วงรีที่มีครึ่งแกน 2 และ 3 ตรงกับ $\dfrac{x^2}{4}+\dfrac{y^2}{9}=1$ คู่ $x=t, y=t^2$ ได้ $y=x^2$ และคู่ $x=t+1, y=t-2$ ได้ $y = x-3$ หรือ $x - y = 3$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p012
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 4
+  type: numeric
+  stem: จุดบนขอบล้อรถจักรยานรัศมี $0.5$ เมตรกลิ้งไปตามพื้นได้เส้นโค้งไซคลอยด์ $x = r(t - \sin t)$ และ $y = r(1 - \cos t)$ โดย $r = 0.5$ จงหาความชัน $\dfrac{dy}{dx}$ เมื่อ $t = \dfrac{\pi}{3}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.7321
+    tolerance: 0.01
+  hints:
+  - คำนวณ $\dfrac{dx}{dt} = r(1 - \cos t)$ และ $\dfrac{dy}{dt} = r\sin t$
+  - $\dfrac{\sin t}{1-\cos t} = \cot\dfrac{t}{2}$ และ $r$ หักออกไปได้
+  misconceptions:
+  - match: 0.5774
+    feedback: กลับเศษกับส่วน ได้ $\dfrac{dx}{dy}$ ซึ่งไม่ใช่ความชันที่ต้องการ
+  solution: $\dfrac{dy}{dx} = \dfrac{r\sin t}{r(1-\cos t)} = \cot\dfrac{t}{2}$ เมื่อ $t = \dfrac{\pi}{3}$ ได้ $\cot\dfrac{\pi}{6} = \sqrt{3} \approx 1.7321$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p013
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 4
+  type: numeric
+  stem: พื้นที่ใต้เส้นโค้ง $x = t+1$, $y = t^2$ เมื่อ $0 \le t \le 1$ (เทียบกับแกน $x$) เท่ากับเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.3333
+    tolerance: 0.005
+    unit: ตารางหน่วย
+  hints:
+  - พื้นที่ใต้เส้นโค้งคือ $\displaystyle\int y\,dx = \int y(t)\,\frac{dx}{dt}\,dt$
+  - $\dfrac{dx}{dt} = 1$ ดังนั้นปริพันธ์เหลือเพียง $\int_0^1 t^2\,dt$
+  misconceptions:
+  - match: 1.6667
+    feedback: ใช้ $\int x\,dy$ แทน $\int y\,dx$ ซึ่งเป็นพื้นที่คนละบริเวณ
+  solution: $\displaystyle A = \int_0^1 t^2 \cdot 1\,dt = \frac{1}{3} \approx 0.3333$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p014
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 5
+  type: numeric
+  stem: เส้นโค้ง $x = t^2$, $y = 2t$ เมื่อ $0 \le t \le 1$ ถูกนำมาหมุนรอบแกน $x$ จงหาพื้นที่ผิวที่เกิดขึ้น (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 15.3178
+    tolerance: 0.01
+    unit: ตารางหน่วย
+  hints:
+  - พื้นที่ผิว $S = \displaystyle\int 2\pi y\,ds$ โดย $ds = \sqrt{(dx/dt)^2 + (dy/dt)^2}\,dt$
+  - $\dfrac{dx}{dt} = 2t$ และ $\dfrac{dy}{dt} = 2$ ดังนั้น $ds = 2\sqrt{t^2+1}\,dt$
+  misconceptions:
+  - match: 6.2832
+    feedback: ลืมคูณด้วย $ds$ จึงได้เพียง $\int 2\pi y\,dt$
+  solution: $S = \displaystyle\int_0^1 2\pi(2t)\cdot 2\sqrt{t^2+1}\,dt = 8\pi\int_0^1 t\sqrt{t^2+1}\,dt = \frac{8\pi}{3}\big(2\sqrt{2}-1\big) \approx 15.3178$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p015
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 5
+  type: mcq
+  stem: เส้นโค้ง $x = 2 + 3\sec t$ และ $y = 1 + 4\tan t$ มีสมการคาร์ทีเซียนตามข้อใด
+  choices:
+  - id: a
+    text: $\dfrac{(x-2)^2}{9} - \dfrac{(y-1)^2}{16} = 1$
+    correct: true
+  - id: b
+    text: $\dfrac{(x-2)^2}{9} + \dfrac{(y-1)^2}{16} = 1$
+    correct: false
+    feedback: ใช้ $\sec^2 t + \tan^2 t = 1$ ผิด เอกลักษณ์ที่ถูกคือ $\sec^2 t - \tan^2 t = 1$ จึงต้องมีเครื่องหมายลบ
+  - id: c
+    text: $\dfrac{(x-2)^2}{3} - \dfrac{(y-1)^2}{4} = 1$
+    correct: false
+    feedback: ลืมยกกำลังสองของสัมประสิทธิ์ 3 และ 4
+  - id: d
+    text: $\dfrac{(x+2)^2}{9} - \dfrac{(y+1)^2}{16} = 1$
+    correct: false
+    feedback: เครื่องหมายของจุดศูนย์กลางกลับ เพราะ $x - 2 = 3\sec t$ ไม่ใช่ $x + 2$
+  hints:
+  - แยก $\dfrac{x-2}{3} = \sec t$ และ $\dfrac{y-1}{4} = \tan t$
+  - ใช้เอกลักษณ์ $\sec^2 t - \tan^2 t = 1$
+  solution: จาก $\sec^2 t - \tan^2 t = 1$ จะได้ $\left(\dfrac{x-2}{3}\right)^2 - \left(\dfrac{y-1}{4}\right)^2 = 1$ ซึ่งคือ $\dfrac{(x-2)^2}{9} - \dfrac{(y-1)^2}{16} = 1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.parametric-curves.p016
+  topics:
+  - math.calculus.parametric-curves
+  difficulty: 5
+  type: numeric
+  stem: ไซคลอยด์หนึ่งวิถี $x = r(t - \sin t)$, $y = r(1-\cos t)$ เมื่อ $0 \le t \le 2\pi$ และ $r = 0.4$ เมตร มีความยาวเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 3.2
+    tolerance: 0.01
+    unit: m
+  hints:
+  - ใช้ $\dfrac{dx}{dt} = r(1-\cos t)$ และ $\dfrac{dy}{dt} = r\sin t$ แล้วหาค่าภายในราก
+  - ใช้เอกลักษณ์ $1-\cos t = 2\sin^2\dfrac{t}{2}$ เพื่อถอดราก
+  misconceptions:
+  - match: 2.5133
+    feedback: ใช้เส้นรอบวงของล้อ $2\pi r$ แทนความยาวของวิถีโค้งหนึ่งลูก
+  - match: 1.6
+    feedback: ปริพันธ์เพียงครึ่งช่วง $0 \le t \le \pi$ ซึ่งได้ $4r$
+  solution: ภายในรากได้ $r^2(2 - 2\cos t) = 4r^2\sin^2(t/2)$ จึง $L = \int_0^{2\pi} 2r\sin(t/2)\,dt = 8r = 3.2\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

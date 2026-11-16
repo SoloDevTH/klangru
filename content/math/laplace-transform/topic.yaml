@@ -1,0 +1,89 @@
+id: math.de.laplace-transform
+subject: math
+title:
+  th: การแปลงลาปลาซและการแก้ปัญหาค่าเริ่มต้น
+  en: The Laplace transform and initial value problems
+summary: นิยามการแปลงลาปลาซและตาราง ทฤษฎีบทการเลื่อนแกน การแปลงของอนุพันธ์ และการแก้สมการเชิงอนุพันธ์ที่มีค่าเริ่มต้นด้วยเศษส่วนย่อย
+difficulty: 9
+minutes: 40
+prerequisites:
+- math.de.second-order-linear
+- math.calculus.integration-techniques
+encompasses:
+- id: math.calculus.integration-techniques
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: poles-s-plane.svg
+  alt: ระนาบ s แกนนอนคือส่วนจริง แกนตั้งคือส่วนจินตภาพ มีขั้วสี่ขั้วทำเครื่องหมายกากบาท ได้แก่ขั้วจริงที่ −1 และ −2 บนแกนจริง และขั้วเชิงซ้อนคู่หนึ่งที่ −1 + 2i และ −1 − 2i ทุกขั้วอยู่ทางซ้ายของแกนจินตภาพ
+  caption: ตำแหน่งของรากตัวส่วนบนระนาบ $s$ บอกว่าผลตอบสนองลดลง แกว่ง หรือเพิ่มขึ้น
+- type: worked-example
+  title: แก้ปัญหาค่าเริ่มต้นอันดับหนึ่ง
+  problem: จงแก้ $y' + 4y = 8$ โดย $y(0) = 3$ ด้วยการแปลงลาปลาซ
+  steps:
+  - text: แปลงสมการ $sY - 3 + 4Y = \dfrac{8}{s}$
+    why: ใช้ $\mathcal{L}\{y'\} = sY - y(0)$ และ $\mathcal{L}\{8\} = 8/s$
+  - text: แก้หา $Y = \dfrac{3s+8}{s(s+4)}$
+    why: จัดสมการให้เป็นพีชคณิตเชิงเส้นในตัวแปร $Y$
+  - text: แยกเศษส่วนย่อย $Y = \dfrac{2}{s} + \dfrac{1}{s+4}$ โดยแทน $s=0$ และ $s=-4$
+    why: เศษส่วนย่อยแปลงกลับได้ทีละตัวจากตาราง
+  - text: แปลงกลับได้ $y(t) = 2 + e^{-4t}$
+  answer: $y(t) = 2 + e^{-4t}$
+- type: check
+  problem: math.de.laplace-transform.p002
+  prompt: ลองหาการแปลงลาปลาซของ $f(t) = 1$ ก่อนอ่านต่อ
+- type: worked-example
+  title: แปลงกลับของรากเชิงซ้อนด้วยการเติมกำลังสอง
+  problem: จงหา $\mathcal{L}^{-1}\!\left\{\dfrac{1}{s^2+2s+5}\right\}$
+  steps:
+  - text: เติมกำลังสอง $s^2 + 2s + 5 = (s+1)^2 + 4$
+    why: รูปนี้ทำให้เห็นการเลื่อนแกนได้ชัดเจน
+  - text: ใช้ $\mathcal{L}\{\sin 2t\} = \dfrac{2}{s^2+4}$ และทฤษฎีบทการเลื่อนแกน จะได้ $\mathcal{L}\{e^{-t}\sin 2t\} = \dfrac{2}{(s+1)^2+4}$
+    why: การเลื่อนแกนคูณด้วย $e^{-t}$ ในโดเมนเวลา
+  - text: ปรับค่าคงที่ จะได้ $\mathcal{L}^{-1} = \dfrac{1}{2}e^{-t}\sin 2t$
+  answer: $\dfrac{1}{2}e^{-t}\sin 2t$
+- type: check
+  problem: math.de.laplace-transform.p010
+  prompt: เรียงขั้นตอนการแก้ปัญหาค่าเริ่มต้นก่อนอ่านต่อ
+glossary:
+- term: การแปลงลาปลาซ
+  definition: การแปลงฟังก์ชัน $f(t)$ เป็น $F(s) = \displaystyle\int_0^\infty e^{-st} f(t)\,dt$ สำหรับ $s$ ที่อินทิกรัลลู่เข้า
+- term: การแปลงลาปลาซผกผัน
+  definition: การหาฟังก์ชัน $f(t)$ จาก $F(s)$ มักทำด้วยตารางร่วมกับการแยกเศษส่วนย่อยและการเติมกำลังสอง
+- term: ทฤษฎีบทการเลื่อนแกน
+  definition: $\mathcal{L}\{e^{at}f(t)\} = F(s-a)$ ใช้แปลงสัญญาณที่มีตัวคูณเอกซ์โพเนนเชียล
+- term: ฟังก์ชันถ่ายโอน
+  definition: อัตราส่วนของการแปลงลาปลาซของผลตอบสนองต่ออินพุตเมื่อค่าเริ่มต้นเป็นศูนย์
+flashcards:
+- front: $\mathcal{L}\{e^{at}\}$
+  back: $\dfrac{1}{s-a}$
+- front: $\mathcal{L}\{f'\}$
+  back: $sF(s) - f(0)$
+- front: $\mathcal{L}\{f''\}$
+  back: $s^2F(s) - sf(0) - f'(0)$
+- front: $\mathcal{L}\{e^{at}f(t)\}$
+  back: $F(s-a)$
+references:
+- title: Laplace transform
+  url: https://en.wikipedia.org/wiki/Laplace_transform
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Partial fraction decomposition
+  url: https://en.wikipedia.org/wiki/Partial_fraction_decomposition
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Heaviside step function
+  url: https://en.wikipedia.org/wiki/Heaviside_step_function
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

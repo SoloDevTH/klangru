@@ -1,0 +1,113 @@
+id: math.calculus.parametric-curves
+subject: math
+title:
+  th: สมการอิงตัวแปรเสริมและแคลคูลัสของเส้นโค้งอิงตัวแปรเสริม
+  en: Parametric equations and calculus of parametric curves
+summary: เขียนเส้นโค้งด้วยตัวแปรเสริม ตัดตัวแปรเสริมเพื่อหาสมการคาร์ทีเซียน หาความชันและเส้นสัมผัส คำนวณความยาวส่วนโค้ง และใช้กับวิถีโปรเจกไทล์
+difficulty: 8
+minutes: 40
+prerequisites:
+- math.calculus.shells-arc-length
+- math.functions.trig-functions
+encompasses:
+- id: math.functions.trig-functions
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: figure
+  src: parametric-path.svg
+  alt: เส้นโค้งพาราโบลาแนวนอนเปิดไปทางขวา มีจุดห้าจุดเรียงตามเส้นโค้งจากล่างขึ้นบน ป้ายกำกับ t เท่ากับ -2, -1, 0, 1, 2 และมีลูกศรบอกทิศทางการเคลื่อนที่เมื่อ t เพิ่มขึ้น
+  caption: เมื่อ $t$ เพิ่มขึ้น จุดเคลื่อนที่ไปตามเส้นโค้งทิศทางหนึ่ง ทิศทางนี้เป็นส่วนหนึ่งของข้อมูลของเส้นโค้ง
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: ตัดตัวแปรเสริมจากวงกลม
+  problem: จงหาสมการคาร์ทีเซียนของเส้นโค้ง $x = 1 + 5\cos t$ และ $y = 4 + 5\sin t$
+  steps:
+  - text: แยก $\cos t = \dfrac{x-1}{5}$ และ $\sin t = \dfrac{y-4}{5}$
+    why: ต้องจัดให้ฟังก์ชันตรีโกณมิติอยู่ข้างเดียวก่อนจะตัดตัวแปรได้
+  - text: ใช้ $\cos^2 t + \sin^2 t = 1$ จะได้ $\left(\dfrac{x-1}{5}\right)^2 + \left(\dfrac{y-4}{5}\right)^2 = 1$
+    why: เอกลักษณ์นี้เป็นสิ่งที่ทำให้ตัว $t$ หายไป
+  - text: คูณ 25 ตลอดได้ $(x-1)^2 + (y-4)^2 = 25$
+  answer: วงกลมรัศมี 5 จุดศูนย์กลางที่ $(1, 4)$
+- type: check
+  problem: math.calculus.parametric-curves.p001
+  prompt: ลองตัดตัวแปรเสริมจาก $x = 2t$, $y = t^2$ ก่อนอ่านต่อ
+- type: worked-example
+  title: หาจุดที่เส้นสัมผัสแนวนอน
+  problem: เส้นโค้ง $x = 2t + 1$ และ $y = t^2 - 4t$ มีเส้นสัมผัสแนวนอนที่จุดใด
+  steps:
+  - text: คำนวณ $\dfrac{dx}{dt} = 2$ และ $\dfrac{dy}{dt} = 2t - 4$
+    why: ต้องรู้ทั้งสองอนุพันธ์ก่อนจะแยกกรณี
+  - text: เส้นสัมผัสแนวนอนเมื่อ $\dfrac{dy}{dt} = 0$ และ $\dfrac{dx}{dt} \ne 0$ จึงได้ $2t - 4 = 0$ นั่นคือ $t = 2$
+    why: ถ้า $dx/dt = 0$ ด้วยก็ไม่ได้เป็นเส้นสัมผัสแนวนอนที่ชัดเจน
+  - text: แทน $t = 2$ จะได้ $x = 5$ และ $y = 4 - 8 = -4$
+  answer: จุด $(5, -4)$
+- type: check
+  problem: math.calculus.parametric-curves.p003
+  prompt: ใช้สูตร $dy/dx = (dy/dt)/(dx/dt)$ เขียนนิพจน์ความชัน
+- type: figure
+  src: projectile-path.svg
+  alt: วิถีโค้งของวัตถุที่ถูกโยนขึ้นจากพื้นด้วยมุมเฉียง โค้งขึ้นแล้วลงเป็นรูปพาราโบลาเอียง มีลูกศรแสดงความเร็วต้นที่จุดเริ่ม
+  caption: 'วิถีโปรเจกไทล์: $x = (v_0\cos\theta)t$ และ $y = (v_0\sin\theta)t - \tfrac{1}{2}gt^2$'
+- type: worked-example
+  title: หาความยาวส่วนโค้งของเส้นโค้งอิงตัวแปรเสริม
+  problem: จงหาความยาวของเส้นโค้ง $x = t$ และ $y = t^{3/2}$ เมื่อ $0 \le t \le 4$
+  steps:
+  - text: คำนวณ $\dfrac{dx}{dt} = 1$ และ $\dfrac{dy}{dt} = \dfrac{3}{2}t^{1/2}$
+    why: สูตรความยาวต้องใช้อนุพันธ์ของ $x$ และ $y$ เทียบกับ $t$
+  - text: $ds = \sqrt{1 + \tfrac{9}{4}t}\,dt$ เพราะ $1 + \tfrac{9}{4}t$ คือ $1^2 + (\tfrac32 t^{1/2})^2$
+    why: รากของผลบวกกำลังสองเป็นหัวใจของสูตร
+  - text: ใช้การแทนค่า $u = 1 + \tfrac94 t$ จะได้ $L = \dfrac{8}{27}\big(10^{3/2} - 1\big) \approx 9.07$
+    why: ขอบเขตเปลี่ยนจาก $t \in [0,4]$ เป็น $u \in [1, 10]$
+  answer: $L = \dfrac{8}{27}\big(10\sqrt{10} - 1\big) \approx 9.07$
+- type: figure
+  src: cycloid-wheel.svg
+  alt: วงล้อกลมวางบนพื้นราบ มีเส้นโค้งไซคลอยด์หนึ่งลูกที่จุดบนขอบล้อวาดตามการกลิ้งของล้อ จุดต่ำสุดของโค้งอยู่ที่พื้น
+  caption: จุดบนขอบล้อที่กลิ้งไปบนพื้นจะขีดเส้นไซคลอยด์
+glossary:
+- term: สมการอิงตัวแปรเสริม
+  definition: การเขียนพิกัด $x$ และ $y$ ของจุดบนเส้นโค้งเป็นฟังก์ชันของตัวแปรเสริม เช่น $t$
+- term: ตัวแปรเสริม
+  definition: ตัวแปร $t$ ที่ไม่ได้อยู่ในคำตอบโดยตรง มักแทนเวลาหรือมุมที่ใช้กำกับการเคลื่อนที่ของจุด
+- term: ไซคลอยด์
+  definition: เส้นโค้งที่จุดบนขอบของวงล้อขีดเมื่อวงล้อกลิ้งไปบนเส้นตรงโดยไม่ไถล
+- term: วิถีโปรเจกไทล์
+  definition: เส้นทางของวัตถุที่ถูกโยนหรือเตะโดยมีเพียงแรงโน้มถ่วงกระทำหลังจากปล่อย
+flashcards:
+- front: ความชันของเส้นโค้ง $x = f(t)$, $y = g(t)$
+  back: $\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}$
+- front: ความยาวส่วนโค้งเมื่อ $t$ จาก $a$ ถึง $b$
+  back: $\displaystyle\int_a^b \sqrt{(dx/dt)^2 + (dy/dt)^2}\,dt$
+- front: พื้นที่ใต้เส้นโค้งอิงตัวแปรเสริม
+  back: $\displaystyle\int y\,dx = \int y(t)\,\frac{dx}{dt}\,dt$
+- front: เส้นสัมผัสแนวนอนเมื่อ
+  back: $dy/dt = 0$ และ $dx/dt \ne 0$
+- front: สูตร $\dfrac{d^2y}{dx^2}$
+  back: $\dfrac{\frac{d}{dt}(dy/dx)}{dx/dt}$
+references:
+- title: Parametric equation
+  url: https://en.wikipedia.org/wiki/Parametric_equation
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Cycloid
+  url: https://en.wikipedia.org/wiki/Cycloid
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 7.1 Parametric Equations (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/7-1-parametric-equations
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 7.2 Calculus of Parametric Curves (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/7-2-calculus-of-parametric-curves
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

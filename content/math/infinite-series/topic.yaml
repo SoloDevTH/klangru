@@ -1,0 +1,97 @@
+id: math.calculus.infinite-series
+subject: math
+title:
+  th: ลำดับ อนุกรมอนันต์ และการทดสอบด้วยปริพันธ์
+  en: Sequences, infinite series, and the integral test
+summary: นิยามการลู่เข้าของลำดับและอนุกรม ผลบวกย่อย อนุกรมเรขาคณิตและเทเลสโคป การทดสอบพจน์ที่ n การทดสอบด้วยปริพันธ์ และการประมาณเศษเหลือ
+difficulty: 8.5
+minutes: 40
+prerequisites:
+- math.algebra.sequences-series
+- math.calculus.integration-techniques
+- math.calculus.lhopital-asymptotes
+encompasses:
+- id: math.algebra.sequences-series
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: figure
+  src: sequence-limit.svg
+  alt: กราฟจุดของลำดับ a_n เท่ากับ 2 ลบ 1 ส่วน n สำหรับ n ตั้งแต่ 1 ถึง 10 จุดเรียงขึ้นเข้าหาเส้นประแนวนอนที่ระดับ 2 ซึ่งเป็นลิมิต
+  caption: พจน์ของลำดับเข้าใกล้ค่าจำกัดเมื่อ $n$ มากขึ้น
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: ผลบวกเรขาคณิตของพจน์ที่ลดลงครึ่งหนึ่ง
+  problem: จงหาผลบวก $1 + \dfrac{1}{2} + \dfrac{1}{4} + \cdots$
+  steps:
+  - text: อนุกรมนี้มีพจน์แรก $a = 1$ และอัตราส่วนร่วม $r = \dfrac{1}{2}$
+    why: ทุกพจน์เป็นพจน์ก่อนหน้าคูณด้วยค่าคงที่ จึงเป็นอนุกรมเรขาคณิต
+  - text: เนื่องจาก $|r| < 1$ ผลบวกหาได้ด้วย $\dfrac{a}{1-r} = \dfrac{1}{1 - 1/2}$
+    why: ถ้า $|r|\ge 1$ อนุกรมจะลู่ออก ไม่มีผลบวกจำกัด
+  - text: $\dfrac{1}{1/2} = 2$
+  answer: ผลบวกเท่ากับ $2$
+- type: check
+  problem: math.calculus.infinite-series.p002
+  prompt: ลองหาลิมิตของลำดับก่อนอ่านต่อ
+- type: worked-example
+  title: ตัดสินอนุกรมเทเลสโคปที่มีตัวส่วนสองตัว
+  problem: จงหาผลบวก $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)}$
+  steps:
+  - text: แยกเศษส่วนย่อย $\dfrac{1}{n(n+1)} = \dfrac{1}{n} - \dfrac{1}{n+1}$
+    why: การแยกทำให้ปริพันธ์และผลบวกย่อยหักล้างกันได้ง่าย
+  - text: ผลบวกย่อย $S_N = \left(1 - \tfrac12\right) + \left(\tfrac12 - \tfrac13\right) + \cdots + \left(\tfrac1N - \tfrac1{N+1}\right) = 1 - \dfrac{1}{N+1}$
+    why: เห็นว่าพจน์กลางหักล้างกันจนเหลือเพียงพจน์แรกกับพจน์สุดท้าย
+  - text: เมื่อ $N \to \infty$ จะได้ $S_N \to 1$
+  answer: ผลบวกเท่ากับ $1$
+- type: check
+  problem: math.calculus.infinite-series.p009
+  prompt: ตรวจด้วยการทดสอบพจน์ที่ n ก่อนดูเหตุผลต่อไป
+- type: figure
+  src: integral-test.svg
+  alt: กราฟ y เท่ากับ 1 หารด้วย x ยกกำลังสอง ตั้งแต่ x เท่ากับ 1 ไปทางขวา มีแถบสี่เหลี่ยมบนช่วงจำนวนนับ วางอยู่ใต้กราฟ แถบแต่ละแถบมีความสูงเท่ากับค่าของฟังก์ชันที่ขอบซ้าย
+  caption: ผลบวกของแถบเทียบกับพื้นที่ใต้กราฟ ใช้ตัดสินว่าอนุกรมลู่เข้าหรือลู่ออก
+glossary:
+- term: ลำดับ
+  definition: ฟังก์ชันที่มีโดเมนเป็นจำนวนนับ เขียนแทนด้วย $a_1, a_2, a_3, \ldots$
+- term: ผลบวกย่อย
+  definition: ผลบวกของพจน์แรก $N$ พจน์ของอนุกรม $S_N = a_1 + \cdots + a_N$
+- term: อนุกรมลู่เข้า
+  definition: อนุกรมที่ลำดับของผลบวกย่อยมีลิมิตจำกัด
+- term: p-series
+  definition: อนุกรมในรูป $\sum 1/n^p$ ลู่เข้าเมื่อ $p > 1$ และลู่ออกเมื่อ $p \le 1$
+flashcards:
+- front: ผลบวกของอนุกรมเรขาคณิต $\sum_{n\ge0} a r^n$ เมื่อ $|r|<1$
+  back: $\dfrac{a}{1-r}$
+- front: การทดสอบพจน์ที่ n
+  back: ถ้า $\lim a_n \ne 0$ (หรือไม่มีลิมิต) อนุกรมลู่ออก
+- front: การทดสอบด้วยปริพันธ์
+  back: ถ้า $f$ ต่อเนื่อง ไม่เพิ่ม และ $f(n) = a_n \ge 0$ อนุกรมกับปริพันธ์ลู่เข้าหรือลู่ออกพร้อมกัน
+- front: อนุกรมฮาร์มอนิก
+  back: $\sum 1/n$ ลู่ออกแม้ว่า $1/n \to 0$
+references:
+- title: Series (mathematics)
+  url: https://en.wikipedia.org/wiki/Series_(mathematics)
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Integral test for convergence
+  url: https://en.wikipedia.org/wiki/Integral_test_for_convergence
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 5.2 Infinite Series (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/5-2-infinite-series
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 5.3 The Divergence and Integral Tests (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/5-3-the-divergence-and-integral-tests
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

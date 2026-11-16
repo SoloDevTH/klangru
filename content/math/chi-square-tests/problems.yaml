@@ -1,0 +1,371 @@
+problems:
+- id: math.stats.chi-square-tests.p001
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 1
+  type: mcq
+  stem: ทดสอบว่าลูกเต๋าหกหน้าเที่ยงหรือไม่โดยทอย 60 ครั้ง โดยไม่มีพารามิเตอร์ใดถูกประมาณจากข้อมูล องศาอิสระของการทดสอบ $\chi^2$ เท่ากับเท่าใด
+  choices:
+  - id: a
+    text: $6$
+    correct: false
+    feedback: ลืมว่าผลรวมของความถี่ที่คาดหวังถูกกำหนดให้เท่ากับ $60$ ทำให้เหลืออิสระเพียง $k - 1$
+  - id: b
+    text: $5$
+    correct: true
+  - id: c
+    text: $4$
+    correct: false
+    feedback: ลบ $2$ ออกโดยไม่มีเหตุผล เพราะไม่มีพารามิเตอร์ที่ประมาณจากข้อมูล
+  - id: d
+    text: $59$
+    correct: false
+    feedback: ใช้จำนวนการทอยลบหนึ่ง แต่องศาอิสระขึ้นกับจำนวนช่อง ไม่ใช่จำนวนครั้ง
+  hints:
+  - องศาอิสระของ GOF คือจำนวนช่อง ลบ $1$ ลบจำนวนพารามิเตอร์ที่ประมาณ
+  - จำนวนช่องคือจำนวนหน้าของลูกเต๋า
+  solution: $k = 6$ ช่อง จึง $\nu = k - 1 = 5$ เพราะไม่มีพารามิเตอร์ถูกประมาณ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p002
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 1
+  type: numeric
+  stem: ตารางการณ์จรมีผลรวมแถว $40$ ผลรวมคอลัมน์ $25$ และจำนวนทั้งหมด $N = 100$ จงหาความถี่คาดหวัง $E$ ของช่องที่อยู่ในแถวและคอลัมน์นี้
+  answer:
+    value: 10.0
+    tolerance: 0.01
+  hints:
+  - สูตร $E = \dfrac{(\text{ผลรวมแถว})(\text{ผลรวมคอลัมน์})}{N}$
+  - คูณผลรวมแถวกับผลรวมคอลัมน์ แล้วหารด้วย $N$
+  misconceptions:
+  - match: 65.0
+    feedback: รวมผลรวมแถวกับคอลัมน์แทนการคูณ
+  - match: 1.6
+    feedback: หารผลรวมแถวด้วยผลรวมคอลัมน์ แทนการคูณและหารด้วย $N$
+  solution: $E = \dfrac{40 \cdot 25}{100} = 10$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p003
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 2
+  type: numeric
+  stem: โรงงานน้ำดื่มมีเครื่องบรรจุ 5 เครื่อง ตรวจสอบว่าแต่ละเครื่องรับงานเท่ากันหรือไม่ จากขวดที่ตรวจทั้งหมด 100 ขวด พบว่าเครื่องละ $14, 18, 22, 16, 30$ ขวด (ข้อมูลสมมติ) จงหาค่า $\chi^2$ ของการทดสอบความเหมาะสม (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 8.0
+    tolerance: 0.01
+  hints:
+  - ความถี่คาดหวังคือ $100/5 = 20$ ต่อเครื่อง
+  - คำนวณ $\dfrac{(O-E)^2}{E}$ ของแต่ละเครื่องแล้วรวมกัน
+  misconceptions:
+  - match: 160.0
+    feedback: ลืมหารด้วย $E$ ในแต่ละช่อง
+  - match: 0.0
+    feedback: รวม $(O-E)/E$ โดยไม่ยกกำลังสอง จึงได้ค่าหักล้างเป็นศูนย์
+  solution: $\dfrac{36}{20} + \dfrac{4}{20} + \dfrac{4}{20} + \dfrac{16}{20} + \dfrac{100}{20} = 8.00$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p004
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 2
+  type: mcq
+  stem: ตารางการณ์จรขนาด $3 \times 4$ ใช้ทดสอบความเป็นอิสระ องศาอิสระของการทดสอบ $\chi^2$ เท่ากับเท่าใด
+  choices:
+  - id: a
+    text: $12$
+    correct: false
+    feedback: นี่คือจำนวนช่องทั้งหมด แต่ต้องลบผลรวมแถวและคอลัมน์ที่บังคับไว้
+  - id: b
+    text: $7$
+    correct: false
+    feedback: นี่คือผลบวก $3+4$ ไม่ใช่ผลคูณของ $(r-1)(c-1)$
+  - id: c
+    text: $5$
+    correct: false
+    feedback: นับผิดว่า $(4-1)+(3-1)-1$ ซึ่งไม่ใช่สูตรของตารางการณ์จร
+  - id: d
+    text: $6$
+    correct: true
+  hints:
+  - สูตรคือ $(r - 1)(c - 1)$ โดย $r$ คือจำนวนแถว และ $c$ คือจำนวนคอลัมน์
+  - แทนค่า $r = 3$ และ $c = 4$
+  solution: $\nu = (3-1)(4-1) = 2 \cdot 3 = 6$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p005
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 2
+  type: mcq
+  stem: ในการทดสอบ $\chi^2$ ช่องหนึ่งมีความถี่คาดหวังเพียง $2.5$ ข้อใดเป็นแนวทางที่เหมาะสม
+  choices:
+  - id: a
+    text: รวมช่องที่เกี่ยวข้องให้ความถี่คาดหวังถึงเกณฑ์ หรือใช้วิธีที่เหมาะกับตัวอย่างเล็กกว่า
+    correct: true
+  - id: b
+    text: ไม่มีปัญหาเพราะ $N$ ใหญ่พอ
+    correct: false
+    feedback: จำนวนรวมใหญ่ไม่ได้แก้ปัญหาช่องที่ความถี่คาดหวังต่ำ
+  - id: c
+    text: เติมค่าให้ทุกช่องเป็น $5$ เพื่อให้เข้าเกณฑ์
+    correct: false
+    feedback: การแต่งค่าลักษณะนี้บิดเบือนข้อมูลจริง
+  - id: d
+    text: ตัดสินว่าผลเป็น $p = 0$ เสมอ
+    correct: false
+    feedback: การประมาณ $\chi^2$ ไม่ได้ให้ค่า $p$ เท่ากับศูนย์ในกรณีนี้
+  hints:
+  - แนวทางทั่วไปคือความถี่คาดหวังแต่ละช่องควรอย่างน้อย $5$
+  - ทางเลือกที่ดีคือปรับโครงสร้างตารางหรือเปลี่ยนวิธีทดสอบ
+  solution: แนวทางทั่วไปต้องการความถี่คาดหวังอย่างน้อย 5 ในแต่ละช่อง เมื่อไม่ถึงเกณฑ์ควรรวมช่องหรือใช้วิธีที่เหมาะกับตัวอย่างเล็ก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p006
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 2
+  type: expression
+  stem: ในตารางการณ์จร ความถี่คาดหวังของช่องที่มีผลรวมแถว $R$ และผลรวมคอลัมน์ $C$ เมื่อจำนวนทั้งหมด $N$ คือ $E$ จงเขียน $E$ เป็นนิพจน์ของ $R$, $C$, $N$
+  answer:
+    latex: \frac{R\cdot C}{N}
+    variables:
+    - R
+    - C
+    - N
+  hints:
+  - ความถี่คาดหวังคือสัดส่วนของผลรวมแถวคูณผลรวมคอลัมน์
+  - ตัวหารคือจำนวนทั้งหมด $N$
+  misconceptions:
+  - match: \frac{R+C}{N}
+    feedback: ใช้ผลบวกแทนผลคูณ
+  - match: R\cdot C
+    feedback: ลืมหารด้วย $N$
+  solution: $E = \dfrac{RC}{N}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p007
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 3
+  type: numeric
+  stem: ผู้วิจัยสำรวจนักเรียน 100 คนจากโรงเรียนในเชียงใหม่ จำแนกตามวิธีเดินทางมาโรงเรียนและการอ่านหนังสือก่อนนอน (ข้อมูลสมมติ) รถโรงเรียนและอ่านหนังสือ $35$ คน รถโรงเรียนและไม่อ่าน $15$ คน เดินมาและอ่าน $25$ คน เดินมาและไม่อ่าน $25$ คน จงหาค่า $\chi^2$ สำหรับทดสอบความเป็นอิสระ (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 4.1667
+    tolerance: 0.01
+  hints:
+  - คำนวณความถี่คาดหวังของแต่ละช่องด้วย $\dfrac{\text{แถว}\times\text{คอลัมน์}}{N}$
+  - รวม $\dfrac{(O-E)^2}{E}$ ทั้งสี่ช่อง
+  misconceptions:
+  - match: 4.381
+    feedback: หารด้วยความถี่สังเกตแทนความถี่คาดหวัง
+  solution: ความถี่คาดหวังคือ $30, 20, 30, 20$ จึง $\chi^2 = \dfrac{25}{30} + \dfrac{25}{20} + \dfrac{25}{30} + \dfrac{25}{20} = 4.17$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p008
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 3
+  type: numeric
+  stem: ร้านกาแฟแห่งหนึ่งในหาดใหญ่คาดว่าลูกค้า 200 คนต่อวันจะแบ่งเป็นสามกลุ่มด้วยสัดส่วน $50\%$, $30\%$, $20\%$ จากการนับจริงได้ $110, 50, 40$ คน (ข้อมูลสมมติ) จงหาค่า $\chi^2$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 2.6667
+    tolerance: 0.001
+  hints:
+  - ความถี่คาดหวังของแต่ละกลุ่มคือ $200$ คูณสัดส่วน
+  - ใช้ $\dfrac{(O-E)^2}{E}$ สำหรับทุกกลุ่มแล้วรวมกัน
+  misconceptions:
+  - match: -0.0667
+    feedback: ใช้ $(O-E)/E$ โดยไม่ยกกำลังสองก่อนหาร จึงได้ค่าติดลบ
+  solution: $E = 100, 60, 40$ จึง $\chi^2 = \dfrac{10^2}{100} + \dfrac{(-10)^2}{60} + \dfrac{0^2}{40} = 1 + 1.6667 = 2.6667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p009
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 3
+  type: match
+  stem: จับคู่สถานการณ์กับการทดสอบที่เหมาะสม
+  pairs:
+  - left: ตรวจว่าการแจกแจงของตัวแปรเดียวตรงกับสัดส่วนที่คาดไว้หรือไม่
+    right: การทดสอบความเหมาะสม (GOF)
+  - left: ตัวแปรสองตัวจากตัวอย่างเดียวกันสัมพันธ์กันหรือไม่
+    right: การทดสอบความเป็นอิสระ
+  - left: กลุ่มประชากรแยกกันสามกลุ่มมีการกระจายของคำตอบเหมือนกันหรือไม่
+    right: การทดสอบความเป็นเอกพันธ์
+  - left: ความแปรปรวนของประชากรเดียวเท่ากับค่าที่กำหนดหรือไม่
+    right: การทดสอบความแปรปรวนประชากรเดียว
+  hints:
+  - ดูว่ามีตัวอย่างกี่ชุดและมีตัวแปรกี่ตัว
+  - ถ้าถามเรื่องความแปรปรวนจะใช้สถิติ $(n-1)s^2/\sigma_0^2$
+  solution: GOF ตรวจการแจกแจงของตัวแปรเดียว ความเป็นอิสระตรวจตัวแปรสองตัวในตัวอย่างเดียว ความเป็นเอกพันธ์เทียบหลายกลุ่มแยกกัน และการทดสอบความแปรปรวนใช้สถิติ $(n-1)s^2/\sigma_0^2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p010
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 3
+  type: numeric
+  stem: เครื่องบรรจุกาแฟกำหนดให้ความแปรปรวนของน้ำหนักไม่เกิน $0.004\ \mathrm{g^2}$ (ค่าสมมติ) สุ่มตรวจ $20$ ซอง ได้ $s^2 = 0.0049\ \mathrm{g^2}$ จงหาค่าสถิติ $\chi^2 = (n-1)s^2/\sigma_0^2$ (ตอบทศนิยม 3 ตำแหน่ง)
+  answer:
+    value: 23.275
+    tolerance: 0.01
+  hints:
+  - ใช้ $n - 1 = 19$ ไม่ใช่ $n$
+  - แทนค่า $s^2$ และ $\sigma_0^2$ ตามที่โจทย์ให้
+  misconceptions:
+  - match: 24.5
+    feedback: ใช้ $n$ แทน $n-1$ ในตัวเศษ
+  solution: $\chi^2 = \dfrac{(20-1)(0.0049)}{0.004} = \dfrac{0.0931}{0.004} = 23.275$ ที่ $\nu = 19$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p011
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 4
+  type: numeric
+  stem: เครื่องจักรสามเครื่องผลิตชิ้นส่วนเครื่องละ 100 ชิ้นในโรงงานข้าวโพดกระป๋องปทุมธานี (ข้อมูลสมมติ) พบชิ้นชำรุด $12, 20, 8$ ชิ้นตามลำดับ ทดสอบว่าสัดส่วนชำรุดของเครื่องทั้งสามเท่ากันหรือไม่ จงหาค่า $\chi^2$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 6.4615
+    tolerance: 0.005
+  hints:
+  - เป็นการทดสอบความเป็นเอกพันธ์ ความถี่คาดหวังคำนวณจากผลรวมแถวและคอลัมน์
+  - ตารางมี $3$ แถวและ $2$ คอลัมน์ ดังนั้น $\nu = 2$
+  misconceptions:
+  - match: 149.3333
+    feedback: ลืมหารด้วยความถี่คาดหวังของแต่ละช่อง
+  solution: ผลรวมชำรุด $40$ และไม่ชำรุด $260$ ความถี่คาดหวังชำรุดแต่ละเครื่องคือ $13.33$ รวม $\chi^2 \approx 6.4615$ ที่ $\nu = 2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p012
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 4
+  type: numeric
+  stem: จากตารางค่าวิกฤตของการแจกแจง $\chi^2$ ค่าวิกฤตด้านขวาที่ระดับนัยสำคัญ $0.05$ เมื่อองศาอิสระ $\nu = 4$ คือเท่าใด (ตอบทศนิยม 3 ตำแหน่ง)
+  answer:
+    value: 9.488
+    tolerance: 0.001
+  hints:
+  - อ่านแถวที่ $\nu = 4$ ในตารางค่าวิกฤตแบบหางขวา (upper-tail)
+  - ระดับนัยสำคัญ $0.05$ คือคอลัมน์ที่พื้นที่หางขวาเท่ากับ $0.05$
+  misconceptions:
+  - match: 7.815
+    feedback: อ่านแถว $\nu = 3$ ผิดแถว
+  - match: 7.779
+    feedback: อ่านคอลัมน์พื้นที่หางขวา $0.10$ ไม่ใช่ $0.05$
+  solution: จากตารางค่าวิกฤตหางขวาของ $\chi^2$ (NIST/SEMATECH e-Handbook ที่อ้างอิงในบทเรียน) แถว $\nu = 4$ คอลัมน์พื้นที่หางขวา $0.05$ ได้ $9.488$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p013
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 4
+  type: mcq
+  stem: ผู้วิจัยสุ่มผู้บริโภค 200 คนจากจังหวัด A และอีก 200 คนจากจังหวัด B แยกกัน แล้วถามความชอบแบรนด์เดียวกัน (ข้อมูลสมมติ) ควรใช้การทดสอบแบบใด
+  choices:
+  - id: a
+    text: การทดสอบความเป็นอิสระ
+    correct: false
+    feedback: ความเป็นอิสระใช้เมื่อสุ่มตัวอย่างเดียวแล้วจำแนกตามตัวแปรสองตัว แต่ที่นี่กลุ่มถูกกำหนดขนาดไว้ก่อนแล้ว
+  - id: b
+    text: การทดสอบความเหมาะสม
+    correct: false
+    feedback: GOF เปรียบเทียบกับสัดส่วนที่คาดไว้ ไม่ได้เปรียบเทียบสองกลุ่มประชากร
+  - id: c
+    text: การทดสอบความเป็นเอกพันธ์
+    correct: true
+  - id: d
+    text: การทดสอบความแปรปรวนประชากรเดียว
+    correct: false
+    feedback: การทดสอบนี้ใช้กับความแปรปรวนของตัวแปรเชิงปริมาณ ไม่ใช่สัดส่วนของการเลือกแบรนด์
+  hints:
+  - ดูว่ากลุ่มถูกกำหนดขนาดไว้ก่อนหรือไม่
+  - เมื่อเทียบการกระจายของการตอบระหว่างหลายกลุ่มประชากร เลือกตามการออกแบบการสุ่ม
+  solution: กลุ่มถูกสุ่มแยกกันและกำหนดขนาดไว้ก่อน จึงทดสอบว่าการกระจายของคำตอบเหมือนกันทุกกลุ่มหรือไม่ นั่นคือความเป็นเอกพันธ์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p014
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 4
+  type: numeric
+  stem: ทอยลูกเต๋าหกหน้า 60 ครั้ง (ข้อมูลสมมติ) ได้หน้า $1$ ถึง $6$ จำนวน $5, 8, 9, 8, 10, 20$ ครั้งตามลำดับ จงหาค่า $\chi^2$ ของการทดสอบว่าลูกเต๋าเที่ยง (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 13.4
+    tolerance: 0.01
+  hints:
+  - ลูกเต๋าเที่ยงคาดว่าแต่ละหน้าได้ $60/6 = 10$ ครั้ง
+  - รวม $\dfrac{(O-E)^2}{E}$ ทั้งหกหน้า
+  misconceptions:
+  - match: 11.1111
+    feedback: หารด้วยความถี่สังเกตแทนความถี่คาดหวัง
+  solution: $\chi^2 = \dfrac{25 + 4 + 1 + 4 + 0 + 100}{10} = 13.4$ ที่ $\nu = 5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p015
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 5
+  type: numeric
+  stem: ตารางการณ์จร $2 \times 3$ ของคะแนนสอบแยกตามหลักสูตร (ข้อมูลสมมติ) ได้ค่า $\chi^2 = 9.21$ จงหาค่า $p$ ของการทดสอบความเป็นอิสระ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.01
+    tolerance: 0.0005
+  hints:
+  - องศาอิสระ $\nu = (2-1)(3-1) = 2$
+  - ค่า $p = P(\chi^2_\nu \ge 9.21)$ ซึ่งสำหรับ $\nu = 2$ คำนวณได้ด้วย $e^{-x/2}$
+  misconceptions:
+  - match: 0.0266
+    feedback: ใช้องศาอิสระ $3$ แทน $2$ จึงได้ค่า $p$ ที่ไม่ถูกต้อง
+  solution: $\nu = 2$ และ $p = P(\chi^2_2 \ge 9.21) = e^{-9.21/2} = e^{-4.605} \approx 0.0100$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p016
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 5
+  type: mcq
+  stem: ข้อใดเป็นการเปรียบเทียบที่ถูกต้องเกี่ยวกับการทดสอบไคกำลังสองแบบต่าง ๆ
+  choices:
+  - id: a
+    text: การทดสอบความเป็นอิสระใช้สถิติ $t$ ส่วนความเป็นเอกพันธ์ใช้สถิติ $z$
+    correct: false
+    feedback: ทั้งสองใช้ $\chi^2$ เหมือนกัน
+  - id: b
+    text: การทดสอบ GOF, ความเป็นอิสระ และความเป็นเอกพันธ์ใช้สถิติ $\sum (O-E)^2/E$ เหมือนกัน แต่ตั้งคำถามและการออกแบบการสุ่มต่างกัน
+    correct: true
+  - id: c
+    text: การทดสอบ GOF ไม่ต้องคำนวณองศาอิสระ เพราะคงที่เสมอ
+    correct: false
+    feedback: องศาอิสระของ GOF คือ $k-1$ และลบพารามิเตอร์ที่ประมาณ
+  - id: d
+    text: เมื่อ $\nu$ สูงขึ้น ค่าวิกฤตจะลดลงเสมอ
+    correct: false
+    feedback: ค่าวิกฤตของ $\chi^2$ เพิ่มขึ้นเมื่อองศาอิสระเพิ่มขึ้น
+  hints:
+  - ดูว่าสถิติและวิธีคำนวณเหมือนหรือต่างกันในแต่ละกรณี
+  - ค่าวิกฤตของ $\chi^2$ เพิ่มเมื่อ $\nu$ เพิ่ม
+  solution: สถิติคำนวณเหมือนกันทั้งสามแบบ แต่คำถามและการออกแบบการสุ่มต่างกัน ค่าวิกฤตจะเพิ่มขึ้นเมื่อ $\nu$ เพิ่มขึ้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.chi-square-tests.p017
+  topics:
+  - math.stats.chi-square-tests
+  difficulty: 5
+  type: numeric
+  stem: การทดสอบ $\chi^2$ ที่มี $\nu = 5$ ได้ค่าสถิติ $\chi^2 = 11.6$ จงหาค่า $p$ แบบหางขวา (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.0407
+    tolerance: 0.0005
+  hints:
+  - ค่า $p$ แบบหางขวาคือ $P(\chi^2_5 \ge 11.6)$
+  - ใช้ฟังก์ชัน gamma แบบ regularized หรือเปิดตารางค่าวิกฤตแล้วประมาณ
+  misconceptions:
+  - match: 0.0206
+    feedback: ใช้องศาอิสระ $4$ แทน $5$
+  solution: $p = P(\chi^2_5 \ge 11.6) \approx 0.0407$ (ตรวจกับตาราง NIST/SEMATECH ค่าวิกฤตที่ $\nu = 5$ ระดับ $0.05$ คือ $11.070$ และระดับ $0.025$ คือ $12.833$ จึงได้ $0.025 < p < 0.05$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true

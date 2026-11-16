@@ -1,0 +1,373 @@
+problems:
+- id: math.de.sinusoidal-response.p001
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 1
+  type: numeric
+  stem: จงเขียน $6\cos t - 8\sin t$ ในรูป $A\cos(t - \varphi)$ แล้วหาแอมพลิจูด $A$ (ตอบเป็นตัวเลข)
+  answer:
+    value: 10.0
+    tolerance: 0.01
+  hints:
+  - ใช้สูตร $a\cos t + b\sin t = R\cos(t - \varphi)$ โดย $R = \sqrt{a^2 + b^2}$
+  - สัมประสิทธิ์ของ $\sin t$ เป็นลบ ไม่มีผลกับขนาด $R$
+  misconceptions:
+  - match: 14.0
+    feedback: รวมค่าสัมประสิทธิ์โดยไม่ยกกำลังสอง
+  - match: 2.0
+    feedback: ลบค่าสัมประสิทธิ์ทั้งสองโดยไม่สนเครื่องหมาย
+  solution: $R = \sqrt{6^2 + (-8)^2} = \sqrt{100} = 10$ จึง $6\cos t - 8\sin t = 10\cos(t - \varphi)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p002
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 1
+  type: mcq
+  stem: ส่วนจริงของ $e^{i\theta}$ เท่ากับข้อใด
+  choices:
+  - id: a
+    text: $\sin\theta$
+    correct: false
+    feedback: นี่คือส่วนจินตภาพของ $e^{i\theta}$
+  - id: b
+    text: $\cos\theta$
+    correct: true
+  - id: c
+    text: $-\cos\theta$
+    correct: false
+    feedback: เครื่องหมายผิด $e^{i\theta} = \cos\theta + i\sin\theta$
+  - id: d
+    text: $e^{\theta}$
+    correct: false
+    feedback: นี่คือเอกซ์โพเนนเชียลจริง ไม่ใช่ส่วนจริงของเลขชี้กำลังเชิงซ้อน
+  hints:
+  - ใช้สูตรของออยเลอร์ $e^{i\theta} = \cos\theta + i\sin\theta$
+  - ส่วนจริงคือส่วนที่ไม่มี $i$
+  solution: $e^{i\theta} = \cos\theta + i\sin\theta$ จึง $\operatorname{Re}(e^{i\theta}) = \cos\theta$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p003
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 2
+  type: numeric
+  stem: ผลตอบสนองที่คงตัวของสมการ $x'' + 4x = \cos 3t$ มีแอมพลิจูดเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 0.2
+    tolerance: 0.01
+  hints:
+  - แทน $x = e^{i\omega t}$ แล้วได้ $p(i\omega) = (i\omega)^2 + 4$
+  - แอมพลิจูดคือ $\dfrac{1}{|p(i\omega)|}$ โดย $\omega = 3$
+  misconceptions:
+  - match: 0.25
+    feedback: ลืมพจน์ $\omega^2$ แล้วใช้ $1/k$ แทน
+  - match: 0.0769
+    feedback: คิดว่า $p(3i) = -9 - 4$ ทำให้เครื่องหมายของ $4$ ผิด
+  solution: $p(3i) = -9 + 4 = -5$ จึงแอมพลิจูด $= \dfrac{1}{|-5|} = 0.20$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p004
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 2
+  type: mcq
+  stem: ระบบเชิงเส้นไม่แปรตามเวลาที่มีอินพุต $\cos\omega t$ ผลตอบสนองที่คงตัวมีความถี่เท่าใด
+  choices:
+  - id: a
+    text: เท่ากับความถี่ธรรมชาติของระบบเสมอ
+    correct: false
+    feedback: ผลตอบสนองที่คงตัวมีความถี่ของอินพุต ไม่ใช่ความถี่ธรรมชาติ
+  - id: b
+    text: เท่ากับ $2\omega$
+    correct: false
+    feedback: ไม่มีการเพิ่มความถี่ในระบบเชิงเส้น
+  - id: c
+    text: เท่ากับ $\omega/2$
+    correct: false
+    feedback: ไม่มีการลดความถี่ในระบบเชิงเส้นเช่นนี้
+  - id: d
+    text: เท่ากับ $\omega$ ของอินพุต
+    correct: true
+  hints:
+  - ลองแทนผลตอบสนองเป็น $e^{i\omega t}$ แล้วดูว่าเลขชี้กำลังเปลี่ยนหรือไม่
+  - ระบบเชิงเส้นไม่สร้างความถี่ใหม่
+  solution: $y_p = \dfrac{e^{i\omega t}}{p(i\omega)}$ มีเลขชี้กำลัง $i\omega t$ เดิม จึงความถี่เท่ากับอินพุต
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p005
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 2
+  type: expression
+  stem: จงหาผลตอบสนองที่คงตัว $y_p$ ของสมการ $y'' + 4y = e^{2t}$ (ตอบเป็นนิพจน์ของ $t$)
+  answer:
+    latex: \frac{e^{2t}}{8}
+    variables:
+    - t
+  hints:
+  - ลองคำตอบ $y_p = Ae^{2t}$ แล้วแทนลงสมการ
+  - $p(r) = r^2 + 4$ และ $p(2) = 8$
+  misconceptions:
+  - match: \frac{e^{2t}}{4}
+    feedback: แทนค่า $r^2$ เป็น $4$ โดยลืมพจน์ $r^2$
+  - match: \frac{t\,e^{2t}}{4}
+    feedback: ใช้สูตรกรณีเรโซแนนซ์ทั้งที่ $p(2) \ne 0$
+  solution: $y_p = \dfrac{e^{2t}}{p(2)} = \dfrac{e^{2t}}{4 + 4} = \dfrac{e^{2t}}{8}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p006
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 2
+  type: numeric
+  stem: ผลตอบสนองที่คงตัวของ $y' + 2y = 3\cos t$ มีแอมพลิจูดเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.3416
+    tolerance: 0.001
+  hints:
+  - ใช้ $p(s) = s + 2$ และคำนวณ $p(i)$
+  - แอมพลิจูดคือ $\dfrac{3}{|p(i)|}$
+  misconceptions:
+  - match: 1.5
+    feedback: ละเลยส่วนจินตภาพ ใช้ $|p(i)| = 2$
+  - match: 1.0
+    feedback: ใช้ผลบวก $2 + 1 = 3$ แทนรากของผลบวกกำลังสอง
+  solution: $p(i) = 2 + i$ จึง $|p(i)| = \sqrt5$ และแอมพลิจูด $= \dfrac{3}{\sqrt5} \approx 1.3416$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p007
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 3
+  type: numeric
+  stem: จากสมการ $y' + 2y = 3\cos t$ มุมเฟสล้า (phase lag) $\varphi$ ของผลตอบสนองที่คงตัวเป็นกี่เรเดียน (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.4636
+    tolerance: 0.005
+    unit: rad
+  hints:
+  - เฟสล้าคืออาร์กิวเมนต์ของ $p(i) = 2 + i$
+  - $\arg(2+i) = \arctan\dfrac{1}{2}$
+  misconceptions:
+  - match: 1.1071
+    feedback: ใช้ $\arctan 2$ ซึ่งเป็นส่วนกลับของอัตราส่วนที่ถูกต้อง
+  - match: 26.5651
+    feedback: ตอบเป็นองศาแทนเรเดียน (ได้ประมาณ 26.57 องศา)
+  solution: $\varphi = \arg p(i) = \arctan\dfrac{1}{2} \approx 0.4636$ rad จึงผลตอบสนองคือ $\dfrac{3}{\sqrt5}\cos(t - 0.4636)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p008
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 3
+  type: expression
+  stem: จงหาผลตอบสนองที่คงตัว $y_p$ ของสมการ $y'' + 2y' + 5y = e^{-t}$ (ตอบเป็นนิพจน์ของ $t$)
+  answer:
+    latex: \frac{e^{-t}}{4}
+    variables:
+    - t
+  hints:
+  - ลองคำตอบ $y_p = Ae^{-t}$ โดย $p(r) = r^2 + 2r + 5$
+  - คำนวณ $p(-1)$
+  misconceptions:
+  - match: \frac{e^{-t}}{6}
+    feedback: ละพจน์ $2y'$ จึงได้ $p(-1) = 1 + 5 = 6$
+  - match: -\frac{e^{-t}}{4}
+    feedback: เครื่องหมายผิด $p(-1)$ เป็นบวก 4
+  solution: $p(-1) = 1 - 2 + 5 = 4$ จึง $y_p = \dfrac{e^{-t}}{4}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p009
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 3
+  type: mcq
+  stem: สำหรับระบบ $y' + 2y = \cos\omega t$ เมื่อ $\omega$ เพิ่มขึ้น แอมพลิจูดของผลตอบสนองที่คงตัวเปลี่ยนไปอย่างไร
+  choices:
+  - id: a
+    text: ลดลงและเข้าใกล้ $0$
+    correct: true
+  - id: b
+    text: เพิ่มขึ้นเป็นอนันต์
+    correct: false
+    feedback: ระบบนี้มีตัวหน่วง เกนจึงลดลงเมื่อความถี่สูง
+  - id: c
+    text: คงที่เท่ากับ $1$ เสมอ
+    correct: false
+    feedback: เกน $1/\sqrt{4+\omega^2}$ ขึ้นกับ $\omega$
+  - id: d
+    text: เพิ่มขึ้นจนถึง $\omega = 2$ แล้วลดลง
+    correct: false
+    feedback: ระบบอันดับหนึ่งไม่มีจุดสั่นพ้องแบบนี้
+  hints:
+  - เกนคือ $1/|p(i\omega)|$ โดย $|p(i\omega)| = \sqrt{4 + \omega^2}$
+  - เมื่อ $\omega$ ใหญ่ $|p(i\omega)|$ ก็ใหญ่ขึ้น
+  solution: เกน $= \dfrac{1}{\sqrt{4+\omega^2}}$ ซึ่งลดลงเมื่อ $\omega$ เพิ่มและเข้าใกล้ $0$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p010
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 3
+  type: order
+  stem: เรียงขั้นตอนการหาผลตอบสนองที่คงตัวของ $x'' + 4x = \cos\omega t$ ด้วยวิธีเชิงซ้อนให้ถูกลำดับ
+  items:
+  - เขียน $\cos\omega t = \operatorname{Re}(e^{i\omega t})$ และแก้สมการสำหรับอินพุต $e^{i\omega t}$
+  - ใช้คำตอบ $z = Ae^{i\omega t}$ แทนลงสมการเพื่อหา $A = 1/p(i\omega)$
+  - หาค่า $p(i\omega)$ และแปลง $A$ เป็นรูปขั้วได้เกนและเฟส
+  - นำส่วนจริงของ $z$ เป็นผลตอบสนองของโจทย์เดิม
+  hints:
+  - ต้องหาคำตอบของอินพุตเชิงซ้อนก่อนจึงแยกส่วนจริงได้
+  - ขั้นสุดท้ายเป็นการเอาส่วนจริง ซึ่งเป็นขั้นที่สุดท้ายเสมอ
+  solution: ลำดับที่ถูกคือ (1) เปลี่ยน $\cos$ เป็น $\operatorname{Re}(e^{i\omega t})$ (2) แทน $Ae^{i\omega t}$ หา $A = 1/p(i\omega)$ (3) แปลง $A$ เป็นรูปขั้วได้เกนและเฟส (4) ส่วนจริงของ $z$ คือคำตอบ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p011
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 4
+  type: numeric
+  stem: วงจร RLC อนุกรมในเครื่องรับวิทยุของชุมชนที่จังหวัดน่าน (ค่าสมมติ) มี $L = 0.5\ \mathrm{H}$ และ $C = 0.02\ \mathrm{F}$ เมื่อแหล่งจ่ายไซน์ที่ความถี่เชิงมุม $\omega$ กระแสจะมีค่ามากที่สุดที่ $\omega$ เท่าใดในหน่วย $\mathrm{rad/s}$
+  answer:
+    value: 10.0
+    tolerance: 0.01
+    unit: rad/s
+  hints:
+  - กระแสสูงสุดเกิดเมื่ออิมพีแดนซ์เชิงซ้อนมีส่วนจินตภาพเป็นศูนย์
+  - ความถี่นี้คือ $\omega_0 = \dfrac{1}{\sqrt{LC}}$
+  misconceptions:
+  - match: 100.0
+    feedback: ลืมถอดรากที่สองในสูตร $1/\sqrt{LC}$ และได้ $1/(LC)$
+  solution: $\omega_0 = \dfrac{1}{\sqrt{LC}} = \dfrac{1}{\sqrt{0.5 \cdot 0.02}} = \dfrac{1}{0.1} = 10\ \mathrm{rad/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p012
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 4
+  type: numeric
+  stem: ระบบกันสะเทือนของรถตู้โดยสารสายกรุงเทพฯ–ชลบุรี (ค่าสมมติ) มีมวลต่อล้อ $m = 400\ \mathrm{kg}$ สปริง $k = 160000\ \mathrm{N/m}$ และหน่วงด้วย $c = 8000\ \mathrm{N\cdot s/m}$ ความถี่เชิงมุมที่แอมพลิจูดสูงสุดคือ $\omega_r = \sqrt{k/m - c^2/(2m^2)}$ จงหาค่า $\omega_r$ ในหน่วย rad/s (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 14.1421
+    tolerance: 0.02
+    unit: rad/s
+  hints:
+  - คำนวณ $k/m$ และ $c^2/(2m^2)$ แยกกันก่อน
+  - ค่าภายในรากคือ $k/m - c^2/(2m^2)$
+  misconceptions:
+  - match: 20.0
+    feedback: ใช้ความถี่ธรรมชาติแบบไม่มีหน่วง $\sqrt{k/m}$ โดยไม่คิดการหน่วง
+  solution: $\dfrac{k}{m} = 400$ และ $\dfrac{c^2}{2m^2} = \dfrac{6.4\times10^7}{3.2\times10^5} = 200$ จึง $\omega_r = \sqrt{200} \approx 14.14\ \mathrm{rad/s}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+  figure:
+    src: mass-spring-damper.svg
+    alt: มวล m ห้อยอยู่ใต้สปริง k และตัวหน่วง c ที่ต่อขนานกันจากคานด้านบน ลูกศรใต้มวลแทนแรงภายนอก F0 cos ωt และเส้นประด้านข้างกำกับตำแหน่ง x(t) ของมวล
+    caption: แผนภาพระบบมวล-สปริง-ตัวหน่วงของระบบกันสะเทือน (ไม่แสดงค่าตัวเลข)
+- id: math.de.sinusoidal-response.p013
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 4
+  type: numeric
+  stem: ระบบ $y'' + 2y' + 4y = \cos\omega t$ ที่ $\omega = 1$ มีเกนของผลตอบสนองที่คงตัวเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.2774
+    tolerance: 0.0005
+  hints:
+  - ใช้ $p(i\omega) = (i\omega)^2 + 2(i\omega) + 4$
+  - เกน $= 1/|p(i\omega)|$
+  misconceptions:
+  - match: 0.3333
+    feedback: ละพจน์หน่วง $2y'$ จึงได้ $p(i) = 3$
+  solution: $p(i) = -1 + 2i + 4 = 3 + 2i$ จึง $|p(i)| = \sqrt{13}$ และเกน $= \dfrac{1}{\sqrt{13}} \approx 0.2774$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p014
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 4
+  type: numeric
+  stem: ระบบ $y'' + 2y' + 4y = \cos 2t$ มีเฟสล้า $\varphi$ ของผลตอบสนองที่คงตัวเป็นกี่เรเดียน (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.5708
+    tolerance: 0.005
+    unit: rad
+  hints:
+  - คำนวณ $p(2i) = (2i)^2 + 2(2i) + 4$
+  - เฟสล้าคืออาร์กิวเมนต์ของ $p(2i)$
+  misconceptions:
+  - match: 0.0
+    feedback: ลืมส่วนจินตภาพ จึงคิดว่าไม่มีเฟสล้า
+  - match: 3.1416
+    feedback: คิดว่าเครื่องหมายกลับทิศ จึงได้ $\pi$ แทน $\pi/2$
+  solution: $p(2i) = -4 + 4i + 4 = 4i$ จึง $\arg(4i) = \dfrac{\pi}{2} \approx 1.5708$ rad (ล้า 90 องศา)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p015
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 5
+  type: numeric
+  stem: ระบบเชิงเส้น $y'' + 9y = \cos t + \cos 2t$ ผลตอบสนองที่คงตัวเป็นผลรวมของสองส่วนประกอบ จงหาผลรวมของแอมพลิจูดของทั้งสองส่วน (ตอบทศนิยม 3 ตำแหน่ง)
+  answer:
+    value: 0.325
+    tolerance: 0.001
+  hints:
+  - แยกอินพุตเป็นสองส่วนแล้วใช้หลักการซ้อนทับ
+  - แอมพลิจูดของแต่ละส่วนคือ $1/|p(i\omega)|$ สำหรับ $\omega = 1$ และ $\omega = 2$
+  misconceptions:
+  - match: 0.125
+    feedback: ลืมส่วนประกอบที่สอง ($\omega = 2$)
+  - match: 0.2
+    feedback: ลืมส่วนประกอบแรก ($\omega = 1$)
+  solution: $p(i) = 8$ และ $p(2i) = 5$ จึงได้ $\dfrac18 + \dfrac15 = 0.325$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p016
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 5
+  type: mcq
+  stem: ระบบเชิงเส้นไม่แปรตามเวลามีผลตอบสนองที่คงตัวเป็น $y_p$ ต่ออินพุต $u(t)$ ถ้าเพิ่มอินพุตเป็น $2u(t)$ ผลตอบสนองที่คงตัวจะเป็นอย่างไร
+  choices:
+  - id: a
+    text: ไม่เปลี่ยนแปลง
+    correct: false
+    feedback: ระบบเชิงเส้นตอบสนองตามสัดส่วนของอินพุต
+  - id: b
+    text: เป็นสี่เท่าของ $y_p$
+    correct: false
+    feedback: การเป็นสี่เท่าเกิดจากการยกกำลังสอง ซึ่งไม่ใช่ระบบเชิงเส้น
+  - id: c
+    text: เป็นสองเท่าของ $y_p$
+    correct: true
+  - id: d
+    text: ความถี่เปลี่ยนเป็นสองเท่า
+    correct: false
+    feedback: ระบบเชิงเส้นไม่สร้างความถี่ใหม่
+  hints:
+  - ใช้หลักการซ้อนทับและความเป็นเชิงเส้น
+  - ถ้า $y_p$ ตอบ $u$ แล้ว $2y_p$ ตอบ $2u$
+  solution: ระบบเชิงเส้นมีสมบัติ $L(2u) = 2L(u)$ ดังนั้นผลตอบสนองเป็นสองเท่า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.sinusoidal-response.p017
+  topics:
+  - math.de.sinusoidal-response
+  difficulty: 5
+  type: numeric
+  stem: วงจร RC อนุกรมในห้องปฏิบัติการของโรงเรียนในไทยต่อกับแหล่งจ่ายไซน์แอมพลิจูด $10\ \mathrm{V}$ ความถี่เชิงมุม $100\ \mathrm{rad/s}$ โดยมี $R = 1000\ \Omega$ และ $C = 10\ \mu\mathrm{F}$ (ค่าสมมติ) แอมพลิจูดของแรงดันข้ามตัวเก็บประจุคือเท่าใดในหน่วยโวลต์ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 7.0711
+    tolerance: 0.005
+    unit: V
+  hints:
+  - ใช้ $\dfrac{1}{1 + j\omega RC}$ เป็นอัตราส่วนแรงดันข้ามตัวเก็บประจุ
+  - คำนวณ $\omega RC$ ก่อน
+  misconceptions:
+  - match: 5.0
+    feedback: ใช้ $1 + \omega RC$ แทนรากของผลบวกกำลังสอง
+  solution: $\omega RC = 100 \cdot 1000 \cdot 10^{-5} = 1$ จึงแอมพลิจูด $= \dfrac{10}{\sqrt{1 + 1^2}} = \dfrac{10}{\sqrt2} \approx 7.0711\ \mathrm{V}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

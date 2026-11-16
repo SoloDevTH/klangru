@@ -1,0 +1,92 @@
+id: math.linalg.orthogonality
+subject: math
+title:
+  th: ความตั้งฉาก ภาพฉาย และการแยก QR ด้วยแกรม–ชมิดต์
+  en: Orthogonality, projections, and the QR factorization by Gram–Schmidt
+summary: ความตั้งฉากของเวกเตอร์และปริภูมิย่อย ภาพฉายบนเส้นตรงและปริภูมิย่อย กระบวนการแกรม–ชมิดต์ การแยก QR และการใช้กับกำลังสองน้อยที่สุด
+difficulty: 9
+minutes: 40
+prerequisites:
+- math.linalg.vector-spaces
+encompasses:
+- id: math.linalg.vector-spaces
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: projection-line.svg
+  alt: เวกเตอร์ b ชี้จากจุดกำเนิดขึ้นไปทางขวา เส้นตรงที่มีทิศทาง a ลากผ่านจุดกำเนิด ภาพฉายของ b ลงบนเส้นตรงเป็นเวกเตอร์ p ที่อยู่บนเส้น และเส้นตั้งฉาก e ต่อจากปลาย p ไปปลาย b
+  caption: ภาพฉาย $p$ คือจุดบนเส้นที่ใกล้ $b$ ที่สุด และส่วนเหลือ $e = b - p$ ตั้งฉากกับเส้นเสมอ
+- type: worked-example
+  title: ภาพฉายของเวกเตอร์บนเส้นตรง
+  problem: จงหาภาพฉายของ $\vec b = (4, 1)$ บนเส้นตรงที่มีทิศทาง $\vec a = (3, 4)$
+  steps:
+  - text: คำนวณ $\vec a\cdot\vec b = 12 + 4 = 16$ และ $\vec a\cdot\vec a = 25$
+    why: ผลคูณจุดให้ตัวเลขที่ต้องใช้ในสูตรภาพฉาย
+  - text: สัมประสิทธิ์ $\dfrac{16}{25}$ จึงได้ $\mathrm{proj} = \dfrac{16}{25}(3,4) = (1.92,\ 2.56)$
+    why: ภาพฉายต้องอยู่บนเส้นตรง จึงเป็นผลคูณของสัมประสิทธิ์กับ $\vec a$
+  - text: ตรวจว่าส่วนเหลือ $\vec b - \mathrm{proj} = (2.08, -1.56)$ ตั้งฉากกับ $\vec a$ โดยผลคูณจุดเป็นศูนย์
+  answer: $\mathrm{proj}_{\vec a}\vec b = (1.92,\ 2.56)$
+- type: check
+  problem: math.linalg.orthogonality.p002
+  prompt: ลองตรวจคู่เวกเตอร์ตั้งฉากด้วยผลคูณจุดก่อนอ่านต่อ
+- type: worked-example
+  title: กระบวนการแกรม–ชมิดต์บนสองเวกเตอร์
+  problem: ทำแกรม–ชมิดต์กับ $\vec a_1 = (1,1,0)$ และ $\vec a_2 = (0,1,2)$
+  steps:
+  - text: ตั้ง $\vec q_1 = \dfrac{\vec a_1}{\|\vec a_1\|} = \left(\tfrac{1}{\sqrt2}, \tfrac{1}{\sqrt2}, 0\right)$
+    why: เวกเตอร์แรกเพียงทำให้มีความยาวหนึ่งหน่วย
+  - text: คำนวณ $\vec w_2 = \vec a_2 - (\vec a_1\cdot\vec a_2)/(\vec a_1\cdot\vec a_1)\,\vec a_1 = (0,1,2) - \tfrac{1}{2}(1,1,0) = (-\tfrac12, \tfrac12, 2)$
+    why: การลบภาพฉายทำให้ $\vec w_2$ ตั้งฉากกับ $\vec a_1$
+  - text: ทำให้เป็นหนึ่งหน่วย $\|\vec w_2\| = \sqrt{4.5} \approx 2.1213$ จึง $\vec q_2 \approx (-0.2357, 0.2357, 0.9428)$
+    why: ผลลัพธ์ $Q$ มีคอลัมน์ที่ตั้งฉากปรกติ
+  answer: $\vec q_1 = \left(\tfrac{1}{\sqrt2}, \tfrac{1}{\sqrt2}, 0\right)$ และ $\vec q_2 \approx (-0.2357, 0.2357, 0.9428)$
+- type: check
+  problem: math.linalg.orthogonality.p010
+  prompt: เรียงลำดับขั้นตอนแกรม–ชมิดต์ก่อนอ่านต่อ
+glossary:
+- term: ตั้งฉาก
+  definition: เวกเตอร์สองตัวตั้งฉากกันเมื่อผลคูณจุดของทั้งสองเป็นศูนย์
+- term: ภาพฉายตั้งฉาก
+  definition: จุดบนปริภูมิย่อยที่อยู่ใกล้เวกเตอร์เดิมที่สุด ส่วนที่เหลือตั้งฉากกับปริภูมิย่อยนั้น
+- term: เมทริกซ์ตั้งฉาก
+  definition: เมทริกซ์จัตุรัส $Q$ ที่ $Q^TQ = I$ คอลัมน์ของมันตั้งฉากปรกติ
+- term: การแยก QR
+  definition: การเขียน $A = QR$ โดย $Q$ มีคอลัมน์ตั้งฉากปรกติและ $R$ เป็นสามเหลี่ยมบน
+flashcards:
+- front: ภาพฉายบนเส้นตรงที่มี $\vec a$
+  back: $\dfrac{\vec a\cdot\vec b}{\vec a\cdot\vec a}\vec a$
+- front: เมทริกซ์ภาพฉายบนปริภูมิย่อยที่สร้างจาก $A$
+  back: $P = A(A^TA)^{-1}A^T$ มี $P^2 = P$ และ $P^T = P$
+- front: ขั้นแรกของแกรม–ชมิดต์
+  back: $\vec q_1 = \vec a_1/\|\vec a_1\|$
+- front: กำลังสองน้อยที่สุดด้วย QR
+  back: $\hat x = R^{-1}Q^Tb$
+references:
+- title: Orthogonality (mathematics)
+  url: https://en.wikipedia.org/wiki/Orthogonality_(mathematics)
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Gram–Schmidt process
+  url: https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: QR decomposition
+  url: https://en.wikipedia.org/wiki/QR_decomposition
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Projection (linear algebra)
+  url: https://en.wikipedia.org/wiki/Projection_(linear_algebra)
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

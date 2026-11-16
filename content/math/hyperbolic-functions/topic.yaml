@@ -1,0 +1,115 @@
+id: math.calculus.hyperbolic-functions
+subject: math
+title:
+  th: ฟังก์ชันไฮเพอร์โบลิกและลอการิทึมธรรมชาติที่นิยามด้วยปริพันธ์
+  en: Hyperbolic functions and the natural logarithm defined by an integral
+summary: นิยาม sinh cosh tanh จากเอกซ์โพเนนเชียล เอกลักษณ์พื้นฐาน อนุพันธ์และปริพันธ์ และการใช้โค้งโซ่ห้อยหาความยาวสายไฟที่แขวนระหว่างเสา
+difficulty: 8
+minutes: 35
+prerequisites:
+- math.calculus.inverse-function-calculus
+- math.functions.logarithms
+encompasses:
+- id: math.functions.logarithms
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: figure
+  src: catenary-vs-parabola.svg
+  alt: กราฟ y เท่ากับ cosh x เป็นเส้นทึบสีน้ำเงิน คู่กับพาราโบลา y เท่ากับ 1 บวก x กำลังสองครึ่งหนึ่ง เป็นเส้นประสีส้ม ทั้งสองเส้นเกือบทับกันใกล้จุดกำเนิด และแยกห่างกันเมื่อ x มีค่ามากขึ้น
+  caption: ใกล้จุดต่ำสุด $\cosh x$ คล้ายพาราโบลา แต่เมื่อ $|x|$ มากขึ้นกราฟ $\cosh x$ ชันกว่า
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: หาค่า cosh ของลอการิทึม
+  problem: จงหาค่าของ $\cosh(\ln 4)$
+  steps:
+  - text: ใช้นิยาม $\cosh x = \dfrac{e^x + e^{-x}}{2}$ แทน $x = \ln 4$
+    why: นิยามนี้ทำให้คำนวณได้จากเอกซ์โพเนนเชียลโดยตรง ไม่ต้องรู้ค่าของ cos
+  - text: จากนิยามของ $\ln$ ได้ $e^{\ln 4} = 4$ และ $e^{-\ln 4} = \dfrac{1}{4}$
+  - text: $\cosh(\ln 4) = \dfrac{4 + \frac{1}{4}}{2} = \dfrac{17/4}{2} = \dfrac{17}{8} = 2.125$
+    why: ตัวหารสองต้องอยู่ในนิยาม ถ้าลืมจะได้ค่าผิดเป็นสองเท่า
+  answer: $\cosh(\ln 4) = \dfrac{17}{8} = 2.125$
+- type: check
+  problem: math.calculus.hyperbolic-functions.p002
+  prompt: ลองคิดก่อนอ่านต่อ ข้อใดคือเอกลักษณ์ที่ถูกต้องของฟังก์ชันไฮเพอร์โบลิก
+- type: worked-example
+  title: ใช้เอกลักษณ์หาค่า cosh และ tanh จาก sinh
+  problem: ถ้า $\sinh x = \dfrac{3}{4}$ และ $x > 0$ จงหา $\cosh x$ และ $\tanh x$
+  steps:
+  - text: ใช้เอกลักษณ์ $\cosh^2 x - \sinh^2 x = 1$ จะได้ $\cosh^2 x = 1 + \left(\tfrac{3}{4}\right)^2 = \dfrac{25}{16}$
+    why: เอกลักษณ์นี้เป็นเครื่องมือหลักในการเปลี่ยนค่าหนึ่งไปเป็นอีกค่าหนึ่ง
+  - text: $\cosh x \ge 1$ จึงเลือกรากบวก $\cosh x = \dfrac{5}{4}$
+    why: รากที่เป็นลบใช้ไม่ได้ เพราะ $\cosh$ มีค่าอย่างน้อย 1 เสมอ
+  - text: $\tanh x = \dfrac{\sinh x}{\cosh x} = \dfrac{3/4}{5/4} = \dfrac{3}{5}$
+  answer: $\cosh x = \dfrac{5}{4}$ และ $\tanh x = \dfrac{3}{5}$
+- type: check
+  problem: math.calculus.hyperbolic-functions.p004
+  prompt: ใช้กฎผลหารกับ tanh ก่อนเลือกคำตอบ
+- type: figure
+  src: hanging-cable.svg
+  alt: เสาไฟฟ้าสองต้นสูงเท่ากันอยู่ห่างกัน 30 เมตร สายไฟโค้งลงตรงกลางเป็นรูปโซ่ห้อย จุดต่ำสุดอยู่สูงจากพื้น 10 เมตร
+  caption: สายไฟที่ห้อยด้วยน้ำหนักของตัวเองมีรูปร่างตามโค้ง $y = a\cosh(x/a)$
+- type: interactive
+  title: ลองปรับความกว้างของโซ่ห้อย
+  caption: เมื่อเลื่อนแถบ a ให้ค่ามากขึ้น โค้งจะกว้างและแบนลง สังเกตจุดต่ำสุดที่สูงเท่ากับ a เสมอ
+  widget:
+    kind: function-plot
+    functions:
+    - a\cdot\cosh(x/a)
+    sliders:
+    - name: a
+      min: 0.5
+      max: 3
+      step: 0.5
+      value: 1
+      label: ค่า a
+    x:
+    - -3
+    - 3
+    y:
+    - 0
+    - 10
+glossary:
+- term: ฟังก์ชันไฮเพอร์โบลิก
+  definition: กลุ่มฟังก์ชัน $\sinh$, $\cosh$, $\tanh$ ที่นิยามจาก $e^x$ และ $e^{-x}$ มีสมบัติคล้ายฟังก์ชันตรีโกณมิติ แต่เอกลักษณ์ใช้เครื่องหมายลบ
+- term: ไซน์ไฮเพอร์โบลิก
+  definition: $\sinh x = \dfrac{e^x - e^{-x}}{2}$ เป็นฟังก์ชันคี่และผ่านจุดกำเนิด
+- term: โคไซน์ไฮเพอร์โบลิก
+  definition: $\cosh x = \dfrac{e^x + e^{-x}}{2}$ เป็นฟังก์ชันคู่ที่มีค่าต่ำสุดเท่ากับ 1 ที่ $x = 0$
+- term: โซ่ห้อย (catenary)
+  definition: รูปร่างของสายที่ห้อยอยู่ใต้น้ำหนักของตัวเองระหว่างจุดยึดสองจุด มีสมการ $y = a\cosh(x/a)$
+- term: ลอการิทึมธรรมชาติ
+  definition: $\ln x = \displaystyle\int_1^x \frac{dt}{t}$ เมื่อ $x > 0$ เป็นฟังก์ชันผกผันของ $e^x$
+flashcards:
+- front: นิยามของ $\cosh x$
+  back: $\cosh x = \dfrac{e^x + e^{-x}}{2}$
+- front: เอกลักษณ์พื้นฐานของไฮเพอร์โบลิก
+  back: $\cosh^2 x - \sinh^2 x = 1$ (ต่างจาก $\sin^2 + \cos^2 = 1$ ที่เป็นเครื่องหมายบวก)
+- front: อนุพันธ์ของ $\tanh x$
+  back: $\dfrac{1}{\cosh^2 x}$
+- front: ปฏิยานุพันธ์ของ $\tanh x$
+  back: $\ln(\cosh x) + C$
+- front: ความยาวส่วนโค้งของ $y = \cosh x$ จาก $x = -a$ ถึง $x = a$
+  back: $2\sinh a$
+references:
+- title: Hyperbolic functions
+  url: https://en.wikipedia.org/wiki/Hyperbolic_functions
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Catenary
+  url: https://en.wikipedia.org/wiki/Catenary
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Calculus Volume 1 (OpenStax) สารบัญและบทที่เกี่ยวกับลอการิทึมและเอกซ์โพเนนเชียล
+  url: https://openstax.org/details/books/calculus-volume-1
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true
