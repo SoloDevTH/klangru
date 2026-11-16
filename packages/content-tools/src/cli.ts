@@ -32,7 +32,7 @@ function report(issues: Issue[]) {
 
 const commands = ["validate", "build", "fetch-assets", "calibrate", "draft", "approve", "curriculum", "plan"];
 if (!commands.includes(command)) {
-  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b] | curriculum [--framework=<id>] [--missing] | plan [--order]");
+  console.error("ใช้: cli.ts validate [--strict] [--quiet] [--lint] [--allow-planned] [--only=a,b] | build | fetch-assets | calibrate --stats=<ไฟล์ JSON> [--min=30] [--write] | draft <วิชา/โฟลเดอร์> [--count=5] | approve <วิชา/โฟลเดอร์> [--ids=a,b] | curriculum [--framework=<id>] [--missing] | plan [--order]");
   process.exit(2);
 }
 
@@ -96,7 +96,7 @@ if (command === "build" && flags.some((f) => f === "--allow-planned" || f.starts
   process.exit(2);
 }
 
-let { issues, content } = validate(loadContent(contentDir));
+let { issues, content } = validate(loadContent(contentDir), { lint: flags.includes("--lint") });
 const curriculum = loadCurriculum(curriculumDir, new Set(content.topics.map((t) => t.topic.id)));
 issues.push(...curriculum.issues);
 const graph = content.topics.map(({ topic }) => ({ id: topic.id, difficulty: topic.difficulty, prerequisites: topic.prerequisites }));

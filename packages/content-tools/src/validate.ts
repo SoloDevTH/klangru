@@ -1,3 +1,4 @@
+import { lintTopic } from "./lint.js";
 import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
@@ -36,6 +37,8 @@ export interface ValidateOptions {
   hanziAvailable?: (char: string) => boolean;
   /** รันโค้ดของโจทย์ชนิด code (ค่าเริ่มต้น: python3 ในเครื่อง) คืน null ถ้าไม่มี python3 */
   runPython?: PythonRunner;
+  /** เพิ่มการตรวจคุณภาพเชิงประสบการณ์ (lint.ts) เป็นคำเตือน */
+  lint?: boolean;
 }
 
 export type PythonRunner = (code: string, tests: string, expected?: string) => CodeRunResult | null;
@@ -296,7 +299,7 @@ function checkProblem(file: string, p: Problem, topicId: string, issues: Issue[]
 
 /** ตรวจเนื้อหาทั้งคลัง คืนรายการปัญหาและเนื้อหาที่ผ่าน schema แล้ว */
 export function validate(raw: RawContent, options: ValidateOptions = {}): { issues: Issue[]; content: ValidContent } {
-  const opts: Required<ValidateOptions> = { hanziAvailable: options.hanziAvailable ?? defaultHanzi, runPython: options.runPython ?? localPython };
+  const opts: Required<ValidateOptions> = { hanziAvailable: options.hanziAvailable ?? defaultHanzi, runPython: options.runPython ?? localPython, lint: options.lint ?? false };
   const issues: Issue[] = raw.parseErrors.map((e) => ({ level: "error", file: e.file, message: `YAML ผิดรูปแบบ: ${e.message}` }));
   const content: ValidContent = { subjects: [], topics: [] };
 
@@ -400,6 +403,7 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
     const levels = new Set(problems.map((p) => p.difficulty)).size;
     if (problems.length && levels < MIN_DIFFICULTY_LEVELS) warn(`โจทย์มีความยากแค่ ${levels} ระดับ (ควรมี ${MIN_DIFFICULTY_LEVELS} ขึ้นไป)`, problemsFile);
 
+    if (opts.lint) for (const l of lintTopic(topic, problems, dir.markdown, problemsFile, topicFile)) warn(`[lint] ${l.message}`, l.file);
     content.topics.push({ topic, problems, markdown: dir.markdown, rel: dir.rel });
   }
 
