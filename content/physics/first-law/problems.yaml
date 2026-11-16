@@ -37,15 +37,15 @@ problems:
     topics: [physics.thermal.first-law]
     difficulty: 2
     type: numeric
-    stem: "แก๊สในกระบอกสูบขยายตัวที่ความดันคงตัว $2.0 \\times 10^{5}\\ \\mathrm{Pa}$ จากปริมาตร $0.010\\ \\mathrm{m^3}$ เป็น $0.025\\ \\mathrm{m^3}$ แก๊สทำงานกี่จูล"
-    answer: { value: 3000, tolerance: 10, unit: J }
+    stem: "แก๊สในกระบอกสูบขยายตัวที่ความดันคงตัว $1.5 \\times 10^{5}\\ \\mathrm{Pa}$ จากปริมาตร $0.012\\ \\mathrm{m^3}$ เป็น $0.030\\ \\mathrm{m^3}$ แก๊สทำงานกี่จูล"
+    answer: { value: 2700, tolerance: 10, unit: J }
     misconceptions:
-      - { match: 5000, feedback: "ใช้ปริมาตรสุดท้ายคูณความดัน งานใช้การเปลี่ยนแปลงของปริมาตร $\\Delta V$" }
-      - { match: -3000, feedback: "แก๊สขยายตัว งานที่แก๊สทำเป็นบวก" }
+      - { match: 4500, feedback: "ใช้ปริมาตรสุดท้ายคูณความดัน งานใช้การเปลี่ยนแปลงของปริมาตร $\\Delta V$" }
+      - { match: -2700, feedback: "แก๊สขยายตัว งานที่แก๊สทำเป็นบวก" }
     hints:
       - "ความดันคงตัว $W = P\\,\\Delta V$"
-      - "$\\Delta V = 0.025 - 0.010$"
-    solution: "$W = (2.0 \\times 10^{5})(0.015) = 3000\\ \\mathrm{J}$"
+      - "$\\Delta V = 0.030 - 0.012$"
+    solution: "$W = (1.5 \\times 10^{5})(0.018) = 2700\\ \\mathrm{J}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -54,6 +54,8 @@ problems:
     difficulty: 2
     type: numeric
     stem: "แก๊สได้รับความร้อน $500\\ \\mathrm{J}$ และขยายตัวทำงาน $200\\ \\mathrm{J}$ พลังงานภายในของแก๊สเปลี่ยนไปกี่จูล (ตอบเป็นบวกถ้าเพิ่ม)"
+    # lint_ignore: 300 ในบทเรียนคือ 300 K ของตัวอย่างอัดอากาศ ไม่ใช่การหาพลังงานภายในจาก Q และ W ของโจทย์นี้ เป็นค่าที่บังเอิญตรงกัน
+    lint_ignore: [answer-in-lesson]
     answer: { value: 300, tolerance: 0.5, unit: J }
     misconceptions:
       - { match: 700, feedback: "บวกงานเข้าไป แต่แก๊สทำงาน พลังงานส่วนนั้นออกจากระบบ ต้องลบ" }
