@@ -36,15 +36,15 @@ problems:
     topics: [math.calculus.limit-definition]
     difficulty: 2
     type: numeric
-    stem: "ถังพักน้ำของระบบประปาหมู่บ้านมีระดับน้ำ $f(x)=5-4x$ เซนติเมตร เมื่อปรับวาล์วไปที่ตำแหน่ง $x$ ต้องการให้ระดับน้ำใกล้ 1 เซนติเมตร โดยคลาดเคลื่อนไม่เกิน $\\varepsilon=0.2$ เซนติเมตร จงหาระยะ $\\delta$ ที่มากที่สุดที่ $x$ อยู่ห่างจาก 1 ได้ (ทศนิยม 2 ตำแหน่ง)"
-    answer: { value: 0.05, tolerance: 0.0001 }
+    stem: "ถังพักน้ำของระบบประปาหมู่บ้านมีระดับน้ำ $f(x)=5-4x$ เซนติเมตร เมื่อปรับวาล์วไปที่ตำแหน่ง $x$ ต้องการให้ระดับน้ำใกล้ 1 เซนติเมตร โดยคลาดเคลื่อนไม่เกิน $\\varepsilon=0.6$ เซนติเมตร จงหาระยะ $\\delta$ ที่มากที่สุดที่ $x$ อยู่ห่างจาก 1 ได้ (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.15, tolerance: 0.0001 }
     hints:
       - "$|f(x)-1|=|4-4x|=4|x-1|$"
-      - "ต้องการให้ $4|x-1|<0.2$"
+      - "ต้องการให้ $4|x-1|<0.6$"
       - "หารทั้งสองข้างด้วย 4 เพื่อหาระยะ $|x-1|$"
     misconceptions:
-      - { match: 0.2, feedback: "0.2 คือค่า $\\varepsilon$ ตรง ๆ แต่ตัวคูณ 4 ของ $|x-1|$ ทำให้ $\\delta$ ต้องเล็กกว่า" }
-    solution: "$|f(x)-1|=4|x-1|<0.2$ เทียบเท่ากับ $|x-1|<0.05$ จึงเลือก $\\delta=0.05$"
+      - { match: 0.6, feedback: "0.6 คือค่า $\\varepsilon$ ตรง ๆ แต่ตัวคูณ 4 ของ $|x-1|$ ทำให้ $\\delta$ ต้องเล็กกว่า" }
+    solution: "$|f(x)-1|=4|x-1|<0.6$ เทียบเท่ากับ $|x-1|<0.15$ จึงเลือก $\\delta=0.15$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -231,15 +231,15 @@ problems:
     topics: [math.calculus.limit-definition]
     difficulty: 5
     type: numeric
-    stem: "พิสูจน์ $\\lim_{x\\to 1}\\frac{1}{x}=1$ โดยจำกัด $|x-1|<0.5$ ก่อน หาขอบบน $M$ ของ $\\frac{1}{|x|}$ บนช่วงนั้น แล้วเลือก $\\delta=\\min\\left(0.5,\\frac{\\varepsilon}{M}\\right)$ เมื่อ $\\varepsilon=0.1$ จะได้ $\\delta$ เท่าไร (ทศนิยม 2 ตำแหน่ง)"
-    answer: { value: 0.05, tolerance: 0.0001 }
+    stem: "พิสูจน์ $\\lim_{x\\to 1}\\frac{1}{x}=1$ โดยจำกัด $|x-1|<0.5$ ก่อน หาขอบบน $M$ ของ $\\frac{1}{|x|}$ บนช่วงนั้น แล้วเลือก $\\delta=\\min\\left(0.5,\\frac{\\varepsilon}{M}\\right)$ เมื่อ $\\varepsilon=0.7$ จะได้ $\\delta$ เท่าไร (ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.35, tolerance: 0.0001 }
     hints:
       - "$\\left|\\frac{1}{x}-1\\right|=\\frac{|x-1|}{|x|}$"
       - "เมื่อ $|x-1|<0.5$ จะได้ $|x|>0.5$"
       - "ดังนั้น $\\left|\\frac{1}{x}-1\\right|<2|x-1|$"
     misconceptions:
-      - { match: 0.1, feedback: "0.1 คือ $\\varepsilon$ เอง แต่ $\\frac{|x-1|}{|x|}$ มีตัวหาร $|x|$ ที่เล็กลงเมื่อ $x$ เข้าใกล้ 0.5 จึงต้องเลือก $\\delta$ เล็กกว่า" }
-    solution: "เมื่อ $|x-1|<\\delta\\le 0.5$ จะได้ $|x|>0.5$ และ $\\left|\\frac{1}{x}-1\\right|<2|x-1|$ จึงเลือก $\\delta=\\min\\left(0.5,\\frac{0.1}{2}\\right)=0.05$"
+      - { match: 0.7, feedback: "0.7 คือ $\\varepsilon$ เอง แต่ $\\frac{|x-1|}{|x|}$ มีตัวหาร $|x|$ ที่เล็กลงเมื่อ $x$ เข้าใกล้ 0.5 จึงต้องเลือก $\\delta$ เล็กกว่า" }
+    solution: "เมื่อ $|x-1|<\\delta\\le 0.5$ จะได้ $|x|>0.5$ และ $\\left|\\frac{1}{x}-1\\right|<2|x-1|$ จึงเลือก $\\delta=\\min\\left(0.5,\\frac{0.7}{2}\\right)=0.35$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
