@@ -24,7 +24,8 @@
     "plan": "npm run plan -w @klangru/content-tools --",
     "check": "npm run validate -- --strict && npm run typecheck && npm run typecheck -w @klangru/web && npm test && npm test -w @klangru/web && npm run test:db && npm run build",
     "check:full": "npm run check && npm run check:functions && npm run e2e -w @klangru/web",
-    "batch": "bash tools/batch/batch.sh"
+    "batch": "bash tools/batch/batch.sh",
+    "flags": "node tools/content/flags.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -152,6 +152,14 @@ export const Topic = z.object({
   authors: z.array(z.string()).min(1),
   reviewed_by: z.array(z.string()).default([]),
   ai_assisted: z.boolean().default(false),
+  /** ค่าหรือข้อความที่ยืนยันกับแหล่งไม่ได้ ต้องให้ผู้เชี่ยวชาญตรวจก่อนเผยแพร่ (ดู npm run flags) */
+  review_flags: z.array(z.object({
+    claim: z.string().min(1),
+    reason: z.string().optional(),
+    severity: z.enum(["high", "medium", "low"]).default("medium"),
+    /** วันที่ควรตรวจซ้ำสำหรับค่าที่เปลี่ยนตามเวลา (YYYY-MM-DD) */
+    recheck: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  })).default([]),
 });
 
 const ProblemBase = {

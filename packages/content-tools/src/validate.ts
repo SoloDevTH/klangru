@@ -332,6 +332,7 @@ export function validate(raw: RawContent, options: ValidateOptions = {}): { issu
     if (!subjectIds.has(topic.subject)) err(`ไม่มีวิชา "${topic.subject}" ใน subjects.yaml`);
     if (!topic.id.startsWith(`${topic.subject}.`)) err(`รหัสหัวข้อต้องขึ้นต้นด้วย "${topic.subject}."`);
     if (topic.status === "published" && !topic.reviewed_by.length) err("สถานะ published ต้องมีผู้ตรวจใน reviewed_by");
+    if (topic.status === "published" && topic.review_flags.length) err(`สถานะ published แต่ยังมีรายการ review_flags ค้าง ${topic.review_flags.length} รายการ`);
     checkLicense(topicFile, topic.id, topic.license, topic.adapted_from, issues);
 
     const usedMd = new Set<string>();
