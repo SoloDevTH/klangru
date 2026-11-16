@@ -1,0 +1,99 @@
+id: math.calculus.power-series
+subject: math
+title:
+  th: อนุกรมกำลังและรัศมีการลู่เข้า
+  en: Power series and radius of convergence
+summary: อนุกรมกำลังรอบจุดศูนย์กลาง การหารัศมีและช่วงการลู่เข้าพร้อมตรวจจุดปลาย การแทนฟังก์ชันด้วยอนุกรมเรขาคณิต และการหาอนุพันธ์กับปริพันธ์ทีละพจน์
+difficulty: 9
+minutes: 40
+prerequisites:
+- math.calculus.convergence-tests
+encompasses:
+- id: math.calculus.convergence-tests
+  weight: 0.4
+- id: math.calculus.infinite-series
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: interval-of-convergence.svg
+  alt: เส้นจำนวนจาก -4 ถึง 4 มีแถบสีน้ำเงินตั้งแต่ -2 ถึง 2 จุดปลายซ้ายที่ -2 เป็นจุดทึบแสดงว่ารวมอยู่ในช่วง จุดปลายขวาที่ 2 เป็นวงกลมว่างแสดงว่าไม่รวม จุดศูนย์กลางอยู่ที่ 0
+  caption: ช่วงการลู่เข้าของอนุกรมกำลังที่มีศูนย์กลาง 0 และรัศมี 2
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: partial-sums-geometric.svg
+  alt: กราฟของ 1 หารด้วย 1 ลบ x เป็นเส้นโค้งสีดำ มีผลบวกย่อยสามเส้นที่มีพจน์มากขึ้นและเข้าใกล้เส้นโค้งเมื่อ x อยู่ทางขวาของ 0 และห่างออกเมื่อ x ติดลบมาก
+  caption: ผลบวกย่อยที่มีพจน์มากขึ้นเข้าใกล้ฟังก์ชันภายในช่วงการลู่เข้า
+- type: worked-example
+  title: หาช่วงการลู่เข้าของอนุกรมที่มีตัวหารเป็น n
+  problem: จงหาช่วงการลู่เข้าของ $\displaystyle\sum_{n=1}^{\infty}\frac{x^n}{n\,2^n}$
+  steps:
+  - text: หาอัตราส่วน $\displaystyle\left|\frac{c_{n+1}x^{n+1}}{c_n x^n}\right| = \frac{|x|\,n}{2(n+1)}$ เมื่อ $c_n = \frac{1}{n\,2^n}$
+    why: ตัวเลข $2^n$ ทำให้ได้ตัวหาร $2$ ในอัตราส่วน ส่วน $n$ กับ $n+1$ ให้ตัวประกอบที่เข้าใกล้ $1$
+  - text: หาลิมิต $\displaystyle\lim_{n\to\infty}\frac{|x|\,n}{2(n+1)} = \frac{|x|}{2}$ แล้วตั้ง $\frac{|x|}{2} < 1$ จะได้ $|x|<2$
+    why: การทดสอบอัตราส่วนลู่เข้าเมื่อลิมิตน้อยกว่า $1$ จึงได้รัศมี $R=2$
+  - text: ตรวจจุดปลาย ที่ $x=2$ ได้ $\sum \frac{1}{n}$ ซึ่งลู่ออก ที่ $x=-2$ ได้ $\sum \frac{(-1)^n}{n}$ ซึ่งลู่เข้า
+    why: จุดปลายต้องตรวจแยกเพราะการทดสอบอัตราส่วนสรุปไม่ได้ที่ $|x|=2$
+  answer: ช่วงการลู่เข้าคือ $[-2, 2)$
+- type: check
+  problem: math.calculus.power-series.p001
+  prompt: ลองหาลิมิตของอัตราส่วนสัมประสิทธิ์ก่อนอ่านต่อ
+- type: worked-example
+  title: อนุพันธ์ทีละพจน์ของอนุกรมเรขาคณิต
+  problem: จงแทน $\displaystyle\frac{1}{(1-x)^2}$ ด้วยอนุกรมกำลังรอบ $0$
+  steps:
+  - text: เริ่มจาก $\displaystyle\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n$ เมื่อ $|x|<1$
+    why: นี่คืออนุกรมเรขาคณิตที่รู้ผลรวมแล้ว
+  - text: หาอนุพันธ์ทีละพจน์ได้ $\displaystyle\frac{1}{(1-x)^2} = \sum_{n=1}^{\infty} n x^{n-1}$
+    why: ความชันของ $\frac{1}{1-x}$ ทำให้ได้ $\frac{1}{(1-x)^2}$ และอนุพันธ์ของ $x^n$ คือ $n x^{n-1}$
+  - text: ปรับดัชนี $m = n-1$ จะได้ $\displaystyle\sum_{m=0}^{\infty}(m+1)x^m$ โดยรัศมียังเป็น $1$
+    why: การเลื่อนดัชนีทำให้รูปเขียนง่ายขึ้นโดยไม่เปลี่ยนค่า
+  answer: $\displaystyle\frac{1}{(1-x)^2} = \sum_{m=0}^{\infty}(m+1)x^m$ เมื่อ $|x|<1$
+- type: check
+  problem: math.calculus.power-series.p008
+  prompt: ลองหาสัมประสิทธิ์จากการแทนค่า $x^2$ ลงในอนุกรมเรขาคณิต
+glossary:
+- term: อนุกรมกำลัง
+  definition: อนุกรมที่พจน์แต่ละตัวเป็นสัมประสิทธิ์คูณด้วย $(x-a)^n$ เขียนได้เป็น $\sum c_n (x-a)^n$
+- term: รัศมีการลู่เข้า
+  definition: ค่า $R$ ที่อนุกรมกำลังลู่เข้าเมื่อ $|x-a|<R$ และลู่ออกเมื่อ $|x-a|>R$
+- term: ช่วงการลู่เข้า
+  definition: เซตของค่า $x$ ทั้งหมดที่อนุกรมกำลังลู่เข้า ซึ่งได้จากรัศมีและการตรวจจุดปลายทั้งสอง
+- term: การหาอนุพันธ์ทีละพจน์
+  definition: การหาอนุพันธ์ของอนุกรมกำลังโดยหาอนุพันธ์ของแต่ละพจน์ ใช้ได้ภายในรัศมีการลู่เข้า
+flashcards:
+- front: วิธีหารัศมีการลู่เข้าของอนุกรมกำลัง $\sum c_n (x-a)^n$
+  back: หาลิมิต $L = \lim \left|\frac{c_{n+1}}{c_n}\right|$ แล้วได้ $R = \frac{1}{L}$
+- front: ต้องทำอะไรเพิ่มเติมจากรัศมีเพื่อหาช่วงการลู่เข้า
+  back: แทนจุดปลาย $x = a \pm R$ ลงในอนุกรมแล้วตรวจการลู่เข้าทีละจุด
+- front: อนุกรมกำลังของ $\frac{1}{1-x}$ รอบ $0$
+  back: $\sum_{n=0}^{\infty} x^n$ เมื่อ $|x|<1$
+- front: รัศมีการลู่เข้าเปลี่ยนไปหรือไม่เมื่อหาอนุพันธ์หรือปริพันธ์ทีละพจน์
+  back: ไม่เปลี่ยน ภายในรัศมีการลู่เข้าเดิม
+references:
+- title: Power series
+  url: https://en.wikipedia.org/wiki/Power_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Radius of convergence
+  url: https://en.wikipedia.org/wiki/Radius_of_convergence
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 6.1 Power Series and Functions (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/6-1-power-series-and-functions
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+- title: 6.2 Properties of Power Series (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/6-2-properties-of-power-series
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

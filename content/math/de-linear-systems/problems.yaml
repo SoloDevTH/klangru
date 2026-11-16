@@ -1,0 +1,402 @@
+problems:
+- id: math.de.linear-systems.p001
+  topics:
+  - math.de.linear-systems
+  difficulty: 1
+  type: numeric
+  stem: 'จงหาค่าเฉพาะที่มากที่สุดของเมทริกซ์ $A=\begin{pmatrix}4&1\\2&3\end{pmatrix}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 5
+    tolerance: 0
+  hints:
+  - แก้สมการ $\det(A-\lambda I)=0$ ซึ่งเป็นสมการกำลังสอง
+  - ผลรวมของค่าเฉพาะคือ $\operatorname{tr}A = 7$ และผลคูณคือ $\det A = 10$
+  misconceptions:
+  - match: 2
+    feedback: นี่คือค่าเฉพาะอีกตัวซึ่งน้อยกว่า โจทย์ถามค่าที่มากที่สุด
+  - match: 4
+    feedback: ใช้สมาชิกในแนวทแยงมุมเป็นค่าเฉพาะ ซึ่งใช้ได้เฉพาะเมทริกซ์สามเหลี่ยม
+  solution: $\det(A-\lambda I) = (4-\lambda)(3-\lambda) - 2 = \lambda^2 - 7\lambda + 10 = (\lambda-2)(\lambda-5) = 0$ ได้ $\lambda = 2$ หรือ $5$ ค่าที่มากที่สุดคือ $5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p002
+  topics:
+  - math.de.linear-systems
+  difficulty: 1
+  type: mcq
+  stem: 'ผลเฉลยทั่วไปของระบบ $\mathbf{x}^{\prime}=A\mathbf{x}$ เมื่อ $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$ คือข้อใด'
+  choices:
+  - id: a
+    text: $C_1 e^{t}\begin{pmatrix}1\\1\end{pmatrix} + C_2 e^{3t}\begin{pmatrix}1\\-1\end{pmatrix}$
+    correct: false
+    feedback: จับคู่ค่าเฉพาะกับเวกเตอร์ผิด เวกเตอร์ $(1,1)$ คู่กับค่าเฉพาะ $3$ และ $(1,-1)$ คู่กับ $1$
+  - id: b
+    text: $C_1 e^{3t}\begin{pmatrix}1\\1\end{pmatrix} + C_2 e^{t}\begin{pmatrix}1\\-1\end{pmatrix}$
+    correct: true
+  - id: c
+    text: $C_1 e^{3t}\begin{pmatrix}1\\1\end{pmatrix} + C_2 e^{3t}\begin{pmatrix}1\\-1\end{pmatrix}$
+    correct: false
+    feedback: เวกเตอร์ที่สองมีค่าเฉพาะ $1$ ไม่ใช่ $3$ จึงต้องใช้ $e^{t}$
+  - id: d
+    text: $C_1 e^{2t}\begin{pmatrix}1\\1\end{pmatrix} + C_2 e^{t}\begin{pmatrix}1\\-1\end{pmatrix}$
+    correct: false
+    feedback: ค่าเฉพาะที่คู่กับ $(1,1)$ คือ $3$ ไม่ใช่ $2$ และ $2$ ไม่ใช่ค่าเฉพาะของเมทริกซ์นี้
+  hints:
+  - หาเวกเตอร์เฉพาะของ $A$ สำหรับค่า $\lambda=3$ และ $\lambda=1$
+  - ผลเฉลยทั่วไปคือผลรวมเชิงเส้นของ $e^{\lambda t}\mathbf{v}$
+  solution: ค่าเฉพาะ $3$ คู่กับ $\mathbf{v}=(1,1)$ และค่าเฉพาะ $1$ คู่กับ $(1,-1)$ จึงได้ผลเฉลยทั่วไปตามตัวเลือก b
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p003
+  topics:
+  - math.de.linear-systems
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาค่าเฉพาะที่มากที่สุดของเมทริกซ์ $A=\begin{pmatrix}0&1\\-6&-5\end{pmatrix}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: -2
+    tolerance: 0
+  hints:
+  - สมการลักษณะเฉพาะคือ $\lambda^2 + 5\lambda + 6 = 0$
+  - แยกตัวประกอบเป็น $(\lambda+2)(\lambda+3)=0$
+  misconceptions:
+  - match: -3
+    feedback: ได้ค่าเฉพาะที่น้อยกว่า ซึ่งไม่ใช่ค่าที่มากที่สุด
+  solution: $(\lambda+2)(\lambda+3)=0$ จึงได้ $\lambda=-2$ และ $-3$ ค่าที่มากที่สุดคือ $-2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p004
+  topics:
+  - math.de.linear-systems
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาผลรวมของค่าเฉพาะทั้งหมดของเมทริกซ์ $A=\begin{pmatrix}-5&2\\2&-2\end{pmatrix}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: -7
+    tolerance: 0
+  hints:
+  - ผลรวมของค่าเฉพาะเท่ากับผลรวมของสมาชิกในแนวทแยงมุมของ $A$
+  - รวมสมาชิก $-5$ กับ $-2$
+  misconceptions:
+  - match: 7
+    feedback: ลืมเครื่องหมายลบของสมาชิกในแนวทแยงมุม
+  - match: 6
+    feedback: ได้ผลคูณของค่าเฉพาะ $\det A = 10 - 4 = 6$ แต่โจทย์ถามผลรวม ซึ่งคือ $\operatorname{tr}A$
+  solution: ผลรวมของค่าเฉพาะคือ $\operatorname{tr}A = -5 + (-2) = -7$ (ตรวจได้จาก $\lambda^2 + 7\lambda + 6 = (\lambda+1)(\lambda+6)$ ค่าเฉพาะคือ $-1$ และ $-6$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p005
+  topics:
+  - math.de.linear-systems
+  difficulty: 2
+  type: mcq
+  stem: 'ระบบ $\mathbf{x}^{\prime}=A\mathbf{x}$ เมื่อ $A=\begin{pmatrix}-1&3\\2&-2\end{pmatrix}$ เสถียรหรือไม่'
+  choices:
+  - id: a
+    text: ไม่เสถียร เพราะมีค่าเฉพาะที่เป็นบวกหนึ่งตัว
+    correct: true
+  - id: b
+    text: เสถียร เพราะผลรวมของสมาชิกในแนวทแยงมุมเป็นลบ
+    correct: false
+    feedback: $\operatorname{tr}A < 0$ อย่างเดียวไม่พอ ที่นี่ $\det A = 2 - 6 = -4 < 0$ ค่าเฉพาะจึงมีเครื่องหมายต่างกัน คือ $1$ และ $-4$
+  - id: c
+    text: ไม่เสถียร เพราะเมทริกซ์มีสมาชิกติดลบ
+    correct: false
+    feedback: เครื่องหมายของสมาชิกไม่ใช่เกณฑ์ ต้องดูส่วนจริงของค่าเฉพาะ
+  - id: d
+    text: ตัดสินไม่ได้ เพราะไม่รู้เงื่อนไขเริ่มต้น
+    correct: false
+    feedback: ความเสถียรขึ้นกับค่าเฉพาะของ $A$ ไม่ขึ้นกับเงื่อนไขเริ่มต้น
+  hints:
+  - หาค่าเฉพาะของ $A$ โดยใช้ผลรวมและผลคูณของค่าเฉพาะ
+  - ระบบเสถียรเมื่อส่วนจริงของค่าเฉพาะทุกตัวเป็นลบ
+  solution: $\det(A-\lambda I) = \lambda^2 + 3\lambda - 4 = (\lambda-1)(\lambda+4)$ ค่าเฉพาะคือ $1$ และ $-4$ มีค่าเฉพาะบวกหนึ่งตัว จุดสมดุลจึงเป็นอานม้าและระบบไม่เสถียร
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p006
+  topics:
+  - math.de.linear-systems
+  difficulty: 2
+  type: expression
+  stem: 'สมการ $x^{\prime\prime}+5x^{\prime}+4x=0$ เขียนเป็นระบบอันดับหนึ่งโดยให้ $u=x$ และ $v=x^{\prime}$ จงหาอนุพันธ์ $\dfrac{dv}{dt}$ ในรูปของ $u$ และ $v$'
+  prefix: 'dv/dt ='
+  answer:
+    latex: '-4u-5v'
+    variables:
+    - u
+    - v
+  misconceptions:
+  - match: '-4u+5v'
+    feedback: เครื่องหมายของพจน์ $5x^{\prime}$ ต้องติดลบเมื่อย้ายข้าง
+  hints:
+  - จาก $x^{\prime\prime} = \frac{dv}{dt}$ ย้ายพจน์อื่นไปอีกข้างของสมการ
+  - ได้ $x^{\prime\prime} = -5x^{\prime} - 4x$
+  solution: $\dfrac{dv}{dt} = x^{\prime\prime} = -4x - 5x^{\prime} = -4u - 5v$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p007
+  topics:
+  - math.de.linear-systems
+  difficulty: 2
+  type: numeric
+  stem: 'ระบบ $\mathbf{x}^{\prime}=A\mathbf{x}$ เมื่อ $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$ และ $\mathbf{x}(0)=\begin{pmatrix}2\\0\end{pmatrix}$ จงหา $x_1(1)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 22.8038
+    tolerance: 0.01
+  hints:
+  - เขียน $(2,0)$ เป็นผลรวมเชิงเส้นของเวกเตอร์เฉพาะ $(1,1)$ และ $(1,-1)$
+  - ผลเฉลยคือ $C_1 e^{3t}(1,1) + C_2 e^{t}(1,-1)$ แล้วแทน $C_1$ และ $C_2$ จากเงื่อนไขเริ่มต้น
+  misconceptions:
+  - match: 20.0855
+    feedback: ลืมพจน์ของค่าเฉพาะ $1$ ได้เฉพาะ $e^{3}$ ซึ่งเป็นส่วนประกอบเดียว
+  solution: จาก $(2,0) = (1,1) + (1,-1)$ ได้ $\mathbf{x}(t)=e^{3t}(1,1)+e^{t}(1,-1)$ จึง $x_1(1) = e^3 + e \approx 22.8038$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p008
+  topics:
+  - math.de.linear-systems
+  difficulty: 3
+  type: numeric
+  stem: 'ระบบ $\mathbf{x}^{\prime}=A\mathbf{x}$ เมื่อ $A=\begin{pmatrix}-2&-3\\3&-2\end{pmatrix}$ มีคาบของการแกว่งของผลตอบสนองเท่ากับกี่หน่วยเวลา (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 2.0944
+    tolerance: 0.0001
+  hints:
+  - ค่าเฉพาะเป็นคู่เชิงซ้อน $a \pm bi$ โดยหาจากส่วนจินตภาพ $b$
+  - คาบของการแกว่งคือ $\frac{2\pi}{b}$
+  misconceptions:
+  - match: 3.1416
+    feedback: ใช้ส่วนจริง $2$ แทนส่วนจินตภาพ $3$ คาบขึ้นกับส่วนจินตภาพเท่านั้น
+  - match: 0.4775
+    feedback: ได้ความถี่ $\frac{b}{2\pi}$ ซึ่งเป็นส่วนกลับของคาบ
+  solution: $\det(A-\lambda I)=(\lambda+2)^2+9=0$ ได้ $\lambda = -2\pm 3i$ จึงคาบ $\frac{2\pi}{3} \approx 2.0944$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p009
+  topics:
+  - math.de.linear-systems
+  difficulty: 3
+  type: numeric
+  stem: 'ถังผสมสารละลายสองใบในโรงงานเคมีสมุทรปราการจำลองเป็น $\mathbf{x}^{\prime}=\begin{pmatrix}-4&1\\2&-3\end{pmatrix}\mathbf{x}$ (ข้อมูลสมมติ) ค่าที่บอกอัตราการลดช้าที่สุดของผลตอบสนองซึ่งเท่ากับค่าสัมบูรณ์ของค่าเฉพาะที่มีส่วนจริงใกล้ศูนย์ที่สุด มีค่าเท่าใด (ตอบจำนวนเต็ม)'
+  answer:
+    value: 2
+    tolerance: 0
+  hints:
+  - หาค่าเฉพาะก่อน แล้วเลือกตัวที่มีค่าใกล้ศูนย์ที่สุด
+  - ค่าสัมบูรณ์ของค่าเฉพาะนั้นคืออัตราการลด
+  misconceptions:
+  - match: 5
+    feedback: เลือกค่าเฉพาะที่ลดเร็วที่สุดแทนค่าที่ลดช้าที่สุด
+  solution: $\det(A-\lambda I) = \lambda^2 + 7\lambda + 10 = (\lambda+2)(\lambda+5)$ ค่าเฉพาะคือ $-2$ และ $-5$ ตัวที่ใกล้ศูนย์ที่สุดคือ $-2$ ดังนั้นอัตราการลดช้าที่สุดคือ $2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p010
+  topics:
+  - math.de.linear-systems
+  difficulty: 3
+  type: numeric
+  stem: 'จงหาค่าเฉพาะที่น้อยที่สุดของเมทริกซ์ $A=\begin{pmatrix}4&-2\\1&1\end{pmatrix}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 2
+    tolerance: 0
+  hints:
+  - ผลรวมของค่าเฉพาะคือ $\operatorname{tr}A = 5$ และผลคูณคือ $\det A = 6$
+  - หาสองจำนวนที่บวกกันได้ $5$ และคูณกันได้ $6$
+  misconceptions:
+  - match: 3
+    feedback: ได้ค่าเฉพาะที่มากที่สุดแทนค่าที่น้อยที่สุด
+  solution: $\lambda^2 - 5\lambda + 6 = (\lambda-2)(\lambda-3)=0$ ค่าเฉพาะที่น้อยที่สุดคือ $2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p011
+  topics:
+  - math.de.linear-systems
+  difficulty: 3
+  type: match
+  stem: 'จับคู่ชนิดของค่าเฉพาะกับพฤติกรรมของผลเฉลยของระบบ $\mathbf{x}^{\prime}=A\mathbf{x}$'
+  pairs:
+  - left: 'ค่าเฉพาะจริงบวกทั้งคู่'
+    right: 'ผลเฉลยโตขึ้นทั้งหมด'
+  - left: 'ค่าเฉพาะจริงลบทั้งคู่'
+    right: 'ผลเฉลยลดลงเข้าหาศูนย์'
+  - left: 'ค่าเฉพาะคู่เชิงซ้อน $a \pm bi$ เมื่อ $a<0$'
+    right: 'ผลเฉลยแกว่งและลดลงแบบเอกซ์โพเนนเชียล'
+  - left: 'ค่าเฉพาะจริงหนึ่งบวกและหนึ่งลบ'
+    right: 'จุดสมดุลเป็นอานม้า'
+  hints:
+  - เครื่องหมายของส่วนจริงของค่าเฉพาะกำหนดว่าโตหรือลด
+  - ค่าเฉพาะที่มีเครื่องหมายต่างกันทำให้เกิดทิศทางทั้งโตและลดพร้อมกัน
+  solution: ค่าเฉพาะจริงบวกให้การโต ค่าเฉพาะจริงลบให้การลด ส่วนจริงลบของคู่เชิงซ้อนให้การแกว่งที่ลด และค่าเฉพาะที่มีเครื่องหมายต่างกันให้จุดสมดุลแบบอานม้า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p012
+  topics:
+  - math.de.linear-systems
+  difficulty: 3
+  type: order
+  stem: 'เรียงขั้นตอนการหาผลเฉลยทั่วไปของระบบ $\mathbf{x}^{\prime}=A\mathbf{x}$ ตามลำดับที่ถูกต้อง'
+  items:
+  - หาค่าเฉพาะ $\lambda$ จากสมการ $\det(A-\lambda I)=0$
+  - หาเวกเตอร์เฉพาะ $\mathbf{v}$ จาก $(A-\lambda I)\mathbf{v}=\mathbf{0}$ สำหรับแต่ละค่าเฉพาะ
+  - เขียนผลเฉลย $e^{\lambda t}\mathbf{v}$ สำหรับแต่ละคู่ค่าเฉพาะและเวกเตอร์เฉพาะ
+  - รวมผลเฉลยเชิงเส้นด้วยค่าคงที่ที่หาได้จากเงื่อนไขเริ่มต้น
+  hints:
+  - ขั้นแรกต้องได้ค่าเฉพาะก่อนจึงหาเวกเตอร์เฉพาะได้
+  - ขั้นสุดท้ายเป็นการใส่เงื่อนไขเริ่มต้นเพื่อหาค่าคงที่
+  solution: หาค่าเฉพาะ หาเวกเตอร์เฉพาะ เขียนผลเฉลย $e^{\lambda t}\mathbf{v}$ แล้วรวมเชิงเส้นตามเงื่อนไขเริ่มต้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p013
+  topics:
+  - math.de.linear-systems
+  difficulty: 3
+  type: text
+  stem: 'สมการ $\det(A-\lambda I)=0$ ที่ใช้หาค่าเฉพาะของเมทริกซ์ $A$ เรียกว่าอะไร (ตอบชื่อ)'
+  accepted:
+  - สมการลักษณะเฉพาะ
+  - สมการค่าเฉพาะ
+  - สมการลักษณะเฉพาะของเมทริกซ์
+  - characteristic equation
+  - Characteristic equation
+  hints:
+  - ชื่อนี้มาจากคำว่า characteristic ซึ่งหมายถึงลักษณะเฉพาะของเมทริกซ์
+  - สมการนี้คือตัวกำหนดค่าเฉพาะทั้งหมดของ $A$
+  solution: เรียกว่าสมการลักษณะเฉพาะ ซึ่งมีรากเป็นค่าเฉพาะของ $A$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p014
+  topics:
+  - math.de.linear-systems
+  difficulty: 4
+  type: numeric
+  stem: 'ระบบ $\mathbf{x}^{\prime}=\begin{pmatrix}1&1\\0&1\end{pmatrix}\mathbf{x}$ มี $\mathbf{x}(0)=\begin{pmatrix}0\\1\end{pmatrix}$ จงหา $x_1(1)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 2.7183
+    tolerance: 0.01
+  hints:
+  - ค่าเฉพาะของเมทริกซ์นี้ซ้ำกันและมีเวกเตอร์เฉพาะเพียงทิศเดียว ต้องใช้เวกเตอร์เฉพาะทั่วไป
+  - ผลเฉลยที่ได้จะมีพจน์ $t e^{t}$ เพิ่มจากเวกเตอร์เฉพาะทั่วไป
+  misconceptions:
+  - match: 0
+    feedback: ใช้เวกเตอร์เฉพาะเพียงอย่างเดียวโดยไม่รวมพจน์ $t e^{t}$ จึงได้ $x_1 = 0$
+  solution: $\mathbf{x}(t) = e^{t}\begin{pmatrix} t\\ 1\end{pmatrix}$ จึง $x_1(1) = e \approx 2.7183$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p015
+  topics:
+  - math.de.linear-systems
+  difficulty: 4
+  type: mcq
+  stem: 'ข้อใดเป็นเวกเตอร์เฉพาะของ $A=\begin{pmatrix}1&1\\0&1\end{pmatrix}$'
+  choices:
+  - id: a
+    text: $\begin{pmatrix}0\\1\end{pmatrix}$
+    correct: false
+    feedback: $A\begin{pmatrix}0\\1\end{pmatrix} = \begin{pmatrix}1\\1\end{pmatrix}$ ไม่เป็นผลคูณของ $(0,1)$
+  - id: b
+    text: $\begin{pmatrix}1\\1\end{pmatrix}$
+    correct: false
+    feedback: $A\begin{pmatrix}1\\1\end{pmatrix} = \begin{pmatrix}2\\1\end{pmatrix}$ ไม่เป็นผลคูณของ $(1,1)$
+  - id: c
+    text: $\begin{pmatrix}2\\1\end{pmatrix}$
+    correct: false
+    feedback: $A\begin{pmatrix}2\\1\end{pmatrix} = \begin{pmatrix}3\\1\end{pmatrix}$ ไม่เป็นผลคูณของ $(2,1)$
+  - id: d
+    text: $\begin{pmatrix}1\\0\end{pmatrix}$
+    correct: true
+  hints:
+  - คูณเมทริกซ์กับตัวเลือกแต่ละข้อแล้วดูว่าได้ผลลัพธ์เป็นผลคูณของตัวเลือกนั้นหรือไม่
+  - ค่าเฉพาะซ้ำมีเวกเตอร์เฉพาะเพียงทิศเดียว
+  solution: $A\begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\\0\end{pmatrix}$ จึงเป็นเวกเตอร์เฉพาะที่คู่กับค่าเฉพาะ $1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p016
+  topics:
+  - math.de.linear-systems
+  difficulty: 4
+  type: numeric
+  stem: 'ระบบ $x_1^{\prime}=x_2$ และ $x_2^{\prime}=-4x_1$ มี $x_1(0)=1$ และ $x_2(0)=0$ จงหา $x_1(0.5)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.5403
+    tolerance: 0.0001
+  hints:
+  - ระบบนี้สมมูลกับ $x_1^{\prime\prime}+4x_1=0$ ซึ่งมีผลเฉลยเป็นไซน์และโคไซน์
+  - ผลเฉลยที่เข้ากับเงื่อนไขเริ่มต้นคือ $\cos 2t$ ที่มีความถี่ $2$
+  misconceptions:
+  - match: 0.8776
+    feedback: ใช้ $\cos t$ แทน $\cos 2t$ ทำให้ได้ค่าของ $\cos(0.5)$
+  solution: $x_1(t)=\cos 2t$ จึง $x_1(0.5) = \cos 1 \approx 0.5403$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p017
+  topics:
+  - math.de.linear-systems
+  difficulty: 4
+  type: numeric
+  stem: 'ถังผสมสารละลายสองใบจำลองเป็น $\mathbf{x}^{\prime}=\begin{pmatrix}-3&1\\2&-2\end{pmatrix}\mathbf{x}$ (ข้อมูลสมมติ) โดยเริ่มต้นที่ $\mathbf{x}(0)=\begin{pmatrix}1\\0\end{pmatrix}$ จงหา $x_1(1)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.1348
+    tolerance: 0.0001
+  hints:
+  - ค่าเฉพาะคือ $-1$ และ $-4$ ผลเฉลยเป็นผลรวมของ $e^{-t}$ และ $e^{-4t}$
+  - หาเวกเตอร์เฉพาะสำหรับแต่ละค่า แล้วใช้เงื่อนไขเริ่มต้นหาค่าคงที่
+  misconceptions:
+  - match: 0.3679
+    feedback: ใช้ $e^{-t}$ เพียงพจน์เดียวโดยไม่รวมพจน์ $e^{-4t}$ และไม่ได้หาค่าคงที่
+  solution: ผลเฉลยคือ $x_1(t) = \frac{1}{3}\left(e^{-t}+2e^{-4t}\right)$ จึง $x_1(1) = \frac{1}{3}(e^{-1}+2e^{-4}) \approx 0.1348$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p018
+  topics:
+  - math.de.linear-systems
+  difficulty: 5
+  type: numeric
+  stem: 'จงหาค่า $k$ ที่มากกว่าซึ่งทำให้ระบบ $\mathbf{x}^{\prime}=\begin{pmatrix}k&1\\-2&-3\end{pmatrix}\mathbf{x}$ มีค่าเฉพาะซ้ำ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: -0.1716
+    tolerance: 0.0001
+  hints:
+  - ค่าเฉพาะซ้ำเกิดเมื่อตัวแยกแยะ $(\operatorname{tr}A)^2 - 4\det A$ เป็นศูนย์
+  - หาค่า $\operatorname{tr}A$ และ $\det A$ ในรูปของ $k$ แล้วแก้สมการกำลังสองของ $k$
+  misconceptions:
+  - match: -5.8284
+    feedback: เป็นค่า $k$ ที่น้อยกว่า ซึ่งก็ทำให้ค่าเฉพาะซ้ำเช่นกัน แต่โจทย์ถามค่าที่มากกว่า
+  solution: $(k-3)^2 - 4(2-3k) = k^2+6k+1 = 0$ ได้ $k = -3\pm 2\sqrt2$ ค่าที่มากกว่าคือ $-3+2\sqrt2 \approx -0.1716$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p019
+  topics:
+  - math.de.linear-systems
+  difficulty: 5
+  type: numeric
+  stem: 'สำหรับระบบ $\mathbf{x}^{\prime}=\begin{pmatrix}k&1\\-2&-3\end{pmatrix}\mathbf{x}$ เมื่อ $k=-3+2\sqrt2$ ค่าเฉพาะซ้ำมีค่าเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: -1.5858
+    tolerance: 0.0001
+  hints:
+  - เมื่อค่าเฉพาะซ้ำ ค่านี้เท่ากับครึ่งหนึ่งของ $\operatorname{tr}A$
+  - แทน $k=-3+2\sqrt2$ ลงใน $\operatorname{tr}A = k-3$
+  misconceptions:
+  - match: -0.1716
+    feedback: ได้ค่า $k$ แทนที่จะเป็นค่าเฉพาะซ้ำ ต้องหารค่าผลรวมของเส้นทแยงมุมด้วยสอง
+  solution: $\operatorname{tr}A = k-3 = -6+2\sqrt2$ ค่าเฉพาะซ้ำคือครึ่งหนึ่ง $-3+\sqrt2 \approx -1.5858$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.linear-systems.p020
+  topics:
+  - math.de.linear-systems
+  difficulty: 5
+  type: numeric
+  stem: 'ถังผสมสารละลายสองใบจำลองเป็น $\mathbf{x}^{\prime}=\begin{pmatrix}-3&1\\2&-2\end{pmatrix}\mathbf{x}$ (ข้อมูลสมมติ) โดยเริ่มต้นที่ $\mathbf{x}(0)=\begin{pmatrix}0\\1\end{pmatrix}$ จงหา $x_2(0.5)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.4495
+    tolerance: 0.0001
+  hints:
+  - ผลเฉลยมีรูป $c_1 e^{-t}\mathbf{v}_1 + c_2 e^{-4t}\mathbf{v}_2$ หาเวกเตอร์เฉพาะก่อน
+  - ใช้เงื่อนไขเริ่มต้น $\mathbf{x}(0)=(0,1)$ เพื่อหาค่าคงที่แล้วแทน $t=0.5$
+  misconceptions:
+  - match: 0.6065
+    feedback: ใช้ $e^{-t/2}$ โดยไม่หาเวกเตอร์เฉพาะและค่าคงที่จากเงื่อนไขเริ่มต้น
+  solution: ผลเฉลยที่ตรงกับ $\mathbf{x}(0)=(0,1)$ ให้ $x_2(t) = \frac{1}{3}(2e^{-t}+e^{-4t})$ จึง $x_2(0.5)\approx 0.4495$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

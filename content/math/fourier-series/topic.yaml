@@ -1,0 +1,95 @@
+id: math.de.fourier-series
+subject: math
+title:
+  th: อนุกรมฟูเรียร์และผลตอบสนองต่อสัญญาณเข้าเป็นคาบ
+  en: Fourier series and response to periodic input
+summary: การแยกฟังก์ชันคาบเป็นคลื่นไซน์และโคไซน์ สูตรสัมประสิทธิ์ ฟังก์ชันคู่และคี่ ปรากฏการณ์กิบส์ และผลตอบสนองของระบบเชิงกลต่อแรงเป็นคาบ รวมการสั่นพ้อง
+difficulty: 9
+minutes: 40
+prerequisites:
+- math.de.sinusoidal-response
+- math.calculus.integration-techniques
+encompasses:
+- id: math.de.sinusoidal-response
+  weight: 0.4
+- id: math.calculus.integration-techniques
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: square-wave-partial-sums.svg
+  alt: คลื่นสี่เหลี่ยมมีค่า 1 บนครึ่งคาบแรกและ −1 บนอีกครึ่งคาบ มีผลบวกย่อยสามเส้นที่มีจำนวนพจน์ต่างกัน เส้นที่มีพจน์มากที่สุดแนบชิดกับคลื่นมากขึ้น และมียอดแหลมเกินใกล้จุดที่คลื่นกระโดด
+  caption: ผลบวกย่อยที่มีพจน์มากขึ้นเข้าใกล้คลื่นสี่เหลี่ยม โดยมียอดแหลมเกินใกล้จุดกระโดด
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: harmonic-spectrum.svg
+  alt: แผนภูมิแท่งของฮาร์มอนิกลำดับที่ 1 ถึง 9 ของคลื่นสี่เหลี่ยม แท่งเฉพาะลำดับคี่มีความสูง ลำดับคู่มีค่าเป็นศูนย์ และแท่งสูงลดลงเมื่อลำดับเพิ่มขึ้น
+  caption: ขนาดของแต่ละฮาร์มอนิกของคลื่นสี่เหลี่ยม
+- type: worked-example
+  title: สัมประสิทธิ์ของคลื่นฟันเลื่อย
+  problem: จงหาสูตร $b_n$ ของอนุกรมฟูเรียร์ของ $f(t)=t$ บนช่วง $(-\pi,\pi)$
+  steps:
+  - text: ฟังก์ชันนี้เป็นคี่ จึงมีเฉพาะพจน์ $\sin nt$ และ $a_n = 0$ ทั้งหมด
+    why: เมื่อ $f(-t)=-f(t)$ ผลคูณ $f(t)\cos nt$ เป็นฟังก์ชันคี่ ปริพันธ์บนช่วงสมมาตรจึงเป็นศูนย์
+  - text: เขียน $b_n = \dfrac{1}{\pi}\int_{-\pi}^{\pi} t\sin nt\,dt = \dfrac{2}{\pi}\int_0^{\pi} t\sin nt\,dt$
+    why: ผลคูณ $t\sin nt$ เป็นฟังก์ชันคู่ จึงรวมครึ่งช่วงเป็นสองเท่าได้
+  - text: ปริพันธ์โดยส่วนได้ $\int_0^{\pi} t\sin nt\,dt = \dfrac{\pi(-1)^{n+1}}{n}$ จึงได้ $b_n = \dfrac{2(-1)^{n+1}}{n}$
+    why: การเลือก $u=t$ ทำให้พจน์ที่เหลือเป็นปริพันธ์ของ $\cos nt$ ซึ่งหาได้ง่าย
+  answer: $b_n = \dfrac{2(-1)^{n+1}}{n}$
+- type: check
+  problem: math.de.fourier-series.p009
+  prompt: ลองหา b_3 ของคลื่นสี่เหลี่ยมก่อนอ่านต่อ
+- type: worked-example
+  title: ผลตอบสนองสภาวะคงตัวของแรงคลื่นไซน์เดี่ยว
+  problem: จงหาผลตอบสนองสภาวะคงตัวของ $x'' + 4x = 2\sin 3t$
+  steps:
+  - text: ฮาร์มอนิกของแรงคือ $\sin 3t$ จึงลองคำตอบ $x_p = A\sin 3t$
+    why: แรงกระทำเป็นไซน์ความถี่ $3$ ผลตอบสนองสภาวะคงตัวมีความถี่เดียวกัน
+  - text: แทนลงในสมการได้ $-9A\sin 3t + 4A\sin 3t = 2\sin 3t$ จึง $A(4-9) = 2$
+    why: อนุพันธ์อันดับสองของ $\sin 3t$ คือ $-9\sin 3t$ จึงรวมกับ $4\sin 3t$ ได้
+  - text: ได้ $A = -\dfrac{2}{5}$ ดังนั้น $x_p = -\dfrac{2}{5}\sin 3t$ เพราะความถี่ $3$ ไม่ตรงกับความถี่ธรรมชาติ $2$
+    why: ตัวหาร $4-9 \ne 0$ จึงไม่เกิดการสั่นพ้อง
+  answer: $x_p = -\dfrac{2}{5}\sin 3t$
+- type: check
+  problem: math.de.fourier-series.p010
+  prompt: ลองนึกว่าจุดกระโดดของคลื่นสี่เหลี่ยมผลบวกย่อยลู่เข้าไปยังค่าใด
+glossary:
+- term: อนุกรมฟูเรียร์
+  definition: การเขียนฟังก์ชันคาบเป็นผลรวมของพจน์ $\cos nt$ และ $\sin nt$ ด้วยสัมประสิทธิ์ที่คำนวณจากปริพันธ์บนหนึ่งคาบ
+- term: ฮาร์มอนิก
+  definition: พจน์ของอนุกรมฟูเรียร์ที่มีความถี่เป็นจำนวนเต็มเท่าของความถี่พื้นฐาน
+- term: ปรากฏการณ์กิบส์
+  definition: ยอดแหลมเกินของผลบวกย่อยใกล้จุดกระโดด ซึ่งไม่หายไปแม้เพิ่มจำนวนพจน์
+- term: การสั่นพ้อง
+  definition: สถานการณ์ที่ความถี่ของแรงกระทำตรงกับความถี่ธรรมชาติของระบบ ทำให้ตัวหารในผลตอบสนองเป็นศูนย์
+flashcards:
+- front: สูตรสัมประสิทธิ์ $b_n$ ของอนุกรมฟูเรียร์บนช่วง $(-\pi,\pi)$
+  back: $b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sin nt\,dt$
+- front: ฟังก์ชันคู่มีสัมประสิทธิ์ตัวใดเป็นศูนย์
+  back: $b_n = 0$ ทั้งหมด
+- front: ผลตอบสนองสภาวะคงตัวของฮาร์มอนิกลำดับ n ใน $x''+\omega_0^2 x=f(t)$
+  back: $\frac{b_n}{\omega_0^2-(n\omega)^2}\sin n\omega t$
+- front: ที่จุดกระโดดของฟังก์ชันคาบ ผลบวกย่อยลู่เข้าไปยังค่าใด
+  back: ค่าเฉลี่ยของค่าทางซ้ายและทางขวาของจุดกระโดด
+references:
+- title: Fourier series
+  url: https://en.wikipedia.org/wiki/Fourier_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Gibbs phenomenon
+  url: https://en.wikipedia.org/wiki/Gibbs_phenomenon
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Parseval's identity
+  url: https://en.wikipedia.org/wiki/Parseval%27s_identity
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

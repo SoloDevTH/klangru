@@ -1,0 +1,401 @@
+problems:
+- id: math.de.fourier-series.p001
+  topics:
+  - math.de.fourier-series
+  difficulty: 1
+  type: numeric
+  stem: 'จงหาสัมประสิทธิ์ $b_1$ ของอนุกรมฟูเรียร์ของ $f(t)=t$ บนช่วง $(-\pi,\pi)$ ที่ขยายเป็นฟังก์ชันคาบ $2\pi$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 2
+    tolerance: 0
+  hints:
+  - เนื่องจาก $f$ เป็นฟังก์ชันคี่ มีเฉพาะพจน์ $\sin nt$ ใช้สูตร $b_n = \frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sin nt\,dt$
+  - ใช้การปริพันธ์โดยส่วนกับ $\int_{-\pi}^{\pi} t\sin t\,dt$
+  misconceptions:
+  - match: -2
+    feedback: เครื่องหมายผิด $b_n$ ของฟังก์ชันนี้คือ $\frac{2(-1)^{n+1}}{n}$ ซึ่งเป็นบวกเมื่อ $n=1$
+  solution: $b_n = \frac{2(-1)^{n+1}}{n}$ จึงได้ $b_1 = 2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p002
+  topics:
+  - math.de.fourier-series
+  difficulty: 1
+  type: mcq
+  stem: 'ค่าของ $\displaystyle\int_{-\pi}^{\pi}\sin 2t\,\cos 3t\,dt$ คือข้อใด'
+  choices:
+  - id: a
+    text: $\pi$
+    correct: false
+    feedback: ฟังก์ชันสองตัวมีความถี่ต่างกันจึงตั้งฉากกันบนช่วงหนึ่งคาบ ค่าปริพันธ์ไม่ใช่ $\pi$
+  - id: b
+    text: $-\pi$
+    correct: false
+    feedback: ค่าปริพันธ์ของผลคูณ sin และ cos ที่ความถี่ต่างกันเป็นศูนย์ ไม่ใช่ $-\pi$
+  - id: c
+    text: $0$
+    correct: true
+  - id: d
+    text: $2\pi$
+    correct: false
+    feedback: $2\pi$ เป็นความยาวของช่วงหนึ่งคาบ แต่ผลคูณของ sin และ cos ที่ความถี่ต่างกันหักล้างกันเป็นศูนย์
+  hints:
+  - ใช้สูตรผลคูณ $\sin A \cos B = \frac12[\sin(A+B) + \sin(A-B)]$
+  - ปริพันธ์ของ $\sin$ ที่ความถี่จำนวนเต็มบนช่วง $[-\pi,\pi]$ เป็นศูนย์
+  solution: $\sin 2t\cos 3t = \frac12(\sin 5t - \sin t)$ และปริพันธ์ของแต่ละพจน์บนช่วง $[-\pi,\pi]$ เป็นศูนย์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p003
+  topics:
+  - math.de.fourier-series
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาค่าเฉลี่ยของ $f(t)=|t|$ บนช่วง $(-\pi,\pi)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.5708
+    tolerance: 0.0001
+  hints:
+  - ค่าเฉลี่ยคือปริพันธ์ของ $f$ หารด้วยความยาวของช่วง $2\pi$
+  - ปริพันธ์ของ $|t|$ บนช่วง $(-\pi,\pi)$ มีค่าเท่ากับ $2\cdot\frac{\pi^2}{2}$
+  misconceptions:
+  - match: 3.1416
+    feedback: หารด้วย $\pi$ แทนที่จะหารด้วยความยาวช่วง $2\pi$ ค่าที่ได้จึงเป็นสองเท่า
+  solution: $\frac{1}{2\pi}\int_{-\pi}^{\pi}|t|\,dt = \frac{1}{2\pi}\cdot\pi^2 = \frac{\pi}{2} \approx 1.5708$ ซึ่งเป็น $\frac{a_0}{2}$ ของอนุกรมฟูเรียร์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p004
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: numeric
+  stem: 'ให้ $f(t)=t$ บนช่วง $(-1,1)$ ขยายเป็นฟังก์ชันคาบ $2$ (นั่นคือ $L=1$) จงหาสัมประสิทธิ์ $b_2$ ของพจน์ $\sin(2\pi t)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: -0.3183
+    tolerance: 0.0001
+  hints:
+  - เมื่อคาบเป็น $2L$ ใช้ $b_n = \frac{1}{L}\int_{-L}^{L} f(t)\sin\frac{n\pi t}{L}\,dt$
+  - ฟังก์ชันเป็นคี่ จึงได้ $b_n = 2\int_0^{1} t\sin(n\pi t)\,dt$ แล้วปริพันธ์โดยส่วน
+  - ผลที่ได้คือ $b_n = \frac{2(-1)^{n+1}}{n\pi}$
+  misconceptions:
+  - match: -1
+    feedback: ใช้สูตรของคาบ $2\pi$ คือ $\frac{2(-1)^{n+1}}{n}$ ตรง ๆ เมื่อคาบเป็น $2$ ต้องแทน $nt$ ด้วย $n\pi t$ ทำให้มีตัวหาร $\pi$ เพิ่ม
+  - match: 0.3183
+    feedback: เครื่องหมายผิด เมื่อ $n=2$ จะได้ $(-1)^{3} = -1$
+  solution: $b_n = 2\int_0^1 t\sin(n\pi t)\,dt = \frac{2(-1)^{n+1}}{n\pi}$ จึงได้ $b_2 = -\frac{1}{\pi} \approx -0.3183$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p005
+  topics:
+  - math.de.fourier-series
+  difficulty: 2
+  type: mcq
+  multiple: true
+  stem: 'ข้อความใดเกี่ยวกับอนุกรมฟูเรียร์ของฟังก์ชันคาบเป็นจริง (เลือกทุกข้อที่ถูก)'
+  choices:
+  - id: a
+    text: ถ้า $f$ เป็นฟังก์ชันคู่ อนุกรมฟูเรียร์มีเฉพาะพจน์ $\cos nt$ และค่าคงที่
+    correct: true
+  - id: b
+    text: ถ้า $f$ เป็นฟังก์ชันคี่ อนุกรมฟูเรียร์มีเฉพาะพจน์ $\sin nt$
+    correct: true
+  - id: c
+    text: ผลคูณของฟังก์ชันคู่กับฟังก์ชันคี่เป็นฟังก์ชันคู่
+    correct: false
+    feedback: คู่คูณคี่ได้คี่ ไม่ใช่คู่
+  - id: d
+    text: ถ้า $f(t) = \cos t + \sin t$ สัมประสิทธิ์ $b_1$ เท่ากับ $1$
+    correct: true
+  hints:
+  - นึกถึงสมมาตรของ $\cos nt$ และ $\sin nt$ ภายใต้การแทน $t$ ด้วย $-t$
+  - ตรวจว่า $\sin t$ และ $\cos t$ เองเป็นคู่หรือคี่
+  solution: ฟังก์ชันคู่ทำให้พจน์ $\sin$ หายไป ฟังก์ชันคี่ทำให้พจน์ $\cos$ และค่าคงที่หายไป ผลคูณคู่กับคี่เป็นคี่ และ $\cos t + \sin t$ มี $b_1=1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p006
+  topics:
+  - math.de.fourier-series
+  difficulty: 2
+  type: expression
+  stem: 'ให้ $f(t)=1$ เมื่อ $0<t<\pi$ และ $f(t)=-1$ เมื่อ $-\pi<t<0$ ขยายเป็นคาบ $2\pi$ จงหา $b_1$'
+  prefix: 'b_1 ='
+  answer:
+    latex: '\frac{4}{\pi}'
+    variables: []
+  misconceptions:
+  - match: '\frac{2}{\pi}'
+    feedback: ค่าปริพันธ์ $\int_0^\pi \sin t\,dt$ เท่ากับ $2$ ไม่ใช่ $1$ ถ้าได้ $1$ จะได้ $\frac{2}{\pi}$ ซึ่งผิด
+  hints:
+  - ฟังก์ชันนี้เป็นฟังก์ชันคี่ มีเฉพาะพจน์ $\sin nt$
+  - คำนวณ $b_1 = \frac{2}{\pi}\int_0^{\pi} \sin t\,dt$ โดยใช้สมมาตรของฟังก์ชัน
+  solution: $b_1 = \frac{2}{\pi}\int_0^\pi 1\cdot\sin t\,dt = \frac{2}{\pi}\cdot 2 = \frac{4}{\pi}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p007
+  topics:
+  - math.de.fourier-series
+  difficulty: 2
+  type: numeric
+  stem: 'ฟังก์ชันคาบมีคาบ $6$ หน่วยเวลา ความถี่เชิงมุมพื้นฐานของฟังก์ชันนี้มีค่าเท่าใดในหน่วยเรเดียนต่อหน่วยเวลา (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.0472
+    tolerance: 0.0001
+  hints:
+  - ความถี่เชิงมุมพื้นฐานคือ $\omega = \frac{2\pi}{T}$ เมื่อ $T$ คือคาบ
+  - แทนค่า $T = 6$ แล้วคำนวณ
+  misconceptions:
+  - match: 0.1667
+    feedback: ได้ความถี่ในหน่วยรอบต่อหน่วยเวลา ($\frac{1}{T}$) ซึ่งไม่ใช่ความถี่เชิงมุมในหน่วยเรเดียน
+  solution: $\omega = \frac{2\pi}{6} = \frac{\pi}{3} \approx 1.0472$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p008
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: numeric
+  stem: 'ไซเรนเตือนภัยในเมืองสร้างสัญญาณเป็นคาบ มีรูปคลื่นตามฟังก์ชัน $f(t)=t$ บนช่วง $(-\pi,\pi)$ (ข้อมูลสมมติ) ขนาดของฮาร์มอนิกลำดับที่ $4$ คือ $|b_4|$ เท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.5
+    tolerance: 0.0001
+  hints:
+  - ใช้สูตร $b_n = \frac{2(-1)^{n+1}}{n}$ ของฟังก์ชันนี้
+  - ขนาดคือค่าสัมบูรณ์ของ $b_4$
+  misconceptions:
+  - match: 2
+    feedback: ลืมหารด้วย $n$ จึงได้ค่า $\frac{2}{1}$ ซึ่งไม่ใช่สัมประสิทธิ์ที่ลำดับ $4$
+  solution: $b_4 = \frac{2(-1)^{5}}{4} = -\frac{1}{2}$ จึงมีขนาด $0.5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p009
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: numeric
+  stem: 'สำหรับคลื่นสี่เหลี่ยม $f(t)=1$ เมื่อ $0<t<\pi$ และ $f(t)=-1$ เมื่อ $-\pi<t<0$ คาบ $2\pi$ จงหาสัมประสิทธิ์ $b_3$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.4244
+    tolerance: 0.0001
+  hints:
+  - ฟังก์ชันคี่ ใช้ $b_n = \frac{2}{\pi}\int_0^\pi \sin nt\,dt$
+  - ปริพันธ์ของ $\sin nt$ บน $(0,\pi)$ คือ $\frac{1-\cos n\pi}{n}$ ซึ่งเป็นศูนย์เมื่อ $n$ เป็นเลขคู่
+  misconceptions:
+  - match: 1.2732
+    feedback: ลืมหารด้วย $n$ ค่าที่ได้คือ $\frac{4}{\pi}$ ซึ่งเป็น $b_1$ ไม่ใช่ $b_3$
+  solution: $b_3 = \frac{4}{3\pi} \approx 0.4244$ เพราะ $n=3$ เป็นเลขคี่
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p010
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: mcq
+  stem: 'ที่จุดกระโดดของคลื่นสี่เหลี่ยม ผลบวกย่อยของอนุกรมฟูเรียร์เมื่อมีพจน์มากขึ้นลู่เข้าไปยังค่าใด'
+  choices:
+  - id: a
+    text: ค่าทางด้านซ้ายของจุดกระโดดเท่านั้น
+    correct: false
+    feedback: ผลบวกย่อยไม่เข้าหาค่าด้านซ้ายเพียงด้านเดียว มันเข้าหาค่ากลางของสองด้าน
+  - id: b
+    text: ค่าเฉลี่ยของค่าทางซ้ายและทางขวาของจุดกระโดด
+    correct: true
+  - id: c
+    text: ไม่มีลิมิต เพราะผลบวกย่อยลู่ออก
+    correct: false
+    feedback: ที่จุดกระโดดผลบวกย่อยยังมีลิมิตจำกัด แม้ฟังก์ชันจะไม่ต่อเนื่อง
+  - id: d
+    text: ค่าทางขวาของจุดกระโดดเท่านั้น
+    correct: false
+    feedback: ผลบวกย่อยไม่เข้าหาค่าด้านขวาเพียงด้านเดียวเช่นกัน
+  hints:
+  - ที่จุดกระโดด ค่าฟังก์ชันสองด้านไม่เท่ากัน
+  - ทฤษฎีบทของดีรีคลเลต์ให้ค่าลิมิตเป็นค่าเฉลี่ยของสองด้าน
+  solution: ที่จุดกระโดด ผลบวกย่อยลู่เข้าไปยังค่าเฉลี่ยของค่าทางซ้ายและทางขวาของฟังก์ชัน ซึ่งเป็นผลจากทฤษฎีบทของดีรีคลเลต์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p011
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: match
+  stem: 'จับคู่สมบัติของฟังก์ชันคาบหรือการแปลงกับผลที่เกิดกับอนุกรมฟูเรียร์'
+  pairs:
+  - left: 'ฟังก์ชันคู่ $f(-t)=f(t)$'
+    right: 'มีเฉพาะพจน์ $\cos nt$ และค่าคงที่'
+  - left: 'ฟังก์ชันคี่ $f(-t)=-f(t)$'
+    right: 'มีเฉพาะพจน์ $\sin nt$'
+  - left: 'คาบ $2L$'
+    right: 'ความถี่พื้นฐาน $\dfrac{\pi}{L}$'
+  - left: 'เลื่อนเวลาเป็น $f(t-c)$'
+    right: 'ขนาดของแต่ละฮาร์มอนิกไม่เปลี่ยน มีเพียงเฟสที่เปลี่ยน'
+  hints:
+  - ดูสมมาตรของฟังก์ชันก่อนว่าเป็นคู่หรือคี่
+  - ความถี่พื้นฐานเท่ากับ $\frac{2\pi}{\text{คาบ}}$
+  solution: ฟังก์ชันคู่ไม่มีพจน์ sin และฟังก์ชันคี่ไม่มีพจน์ cos คาบ $2L$ ให้ความถี่พื้นฐาน $\frac{\pi}{L}$ และการเลื่อนเวลาเปลี่ยนเฟสโดยไม่เปลี่ยนขนาดของฮาร์มอนิก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p012
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: order
+  stem: 'เรียงขั้นตอนการหาอนุกรมฟูเรียร์ของฟังก์ชันคาบที่กำหนดบนหนึ่งคาบ ตามลำดับที่ถูกต้อง'
+  items:
+  - ระบุคาบ $2L$ และเขียนช่วงหนึ่งคาบให้สมมาตรรอบศูนย์เป็น $(-L, L)$
+  - ตรวจว่าฟังก์ชันเป็นคู่หรือคี่บนช่วง $(-L, L)$ เพื่อลดรูปอนุกรม
+  - หาสัมประสิทธิ์ $a_0$, $a_n$ และ $b_n$ ด้วยปริพันธ์บนหนึ่งคาบ
+  - เขียนอนุกรมโดยรวมพจน์ของฮาร์มอนิกทุกลำดับที่ได้
+  hints:
+  - ก่อนหาสัมประสิทธิ์ต้องรู้คาบและช่วงของการอินทิเกรตก่อน
+  - ขั้นสุดท้ายเป็นการรวมผลของทุกขั้นเป็นอนุกรม
+  solution: หาคาบและ $L$ ก่อน ตรวจความเป็นคู่หรือคี่ หาสัมประสิทธิ์ด้วยปริพันธ์ แล้วเขียนเป็นอนุกรม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p013
+  topics:
+  - math.de.fourier-series
+  difficulty: 3
+  type: text
+  stem: 'ปรากฏการณ์ที่กราฟของผลบวกย่อยเกินค่าของฟังก์ชันเล็กน้อยใกล้จุดกระโดด แม้เพิ่มจำนวนพจน์แล้วก็ยังคงอยู่ เรียกว่าอะไร (ตอบชื่อ)'
+  accepted:
+  - ปรากฏการณ์กิบส์
+  - กิบส์
+  - Gibbs phenomenon
+  - gibbs phenomenon
+  - Gibbs
+  hints:
+  - ชื่อนี้ตั้งตามนักคณิตศาสตร์ชาวอเมริกันที่อธิบายปรากฏการณ์นี้
+  - ยอดแหลมเกินมีขนาดประมาณเก้าเปอร์เซ็นต์ของการกระโดดและไม่หายไปเมื่อเพิ่มพจน์
+  solution: เรียกว่าปรากฏการณ์กิบส์ ที่ยอดแหลมเกินไม่หายไปแม้จำนวนพจน์เพิ่มขึ้น แต่จะขยับเข้าใกล้จุดกระโดด
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p014
+  topics:
+  - math.de.fourier-series
+  difficulty: 4
+  type: numeric
+  stem: 'ระบบกันสะเทือนของรถรางในนครราชสีมาจำลองเป็น $x^{\prime\prime}+4x=f(t)$ โดย $f(t)=1$ เมื่อ $0<t<\pi$ และ $f(t)=-1$ เมื่อ $-\pi<t<0$ ขยายเป็นคาบ $2\pi$ (ข้อมูลสมมติ) ขนาดของผลตอบสนองสภาวะคงตัวจากฮาร์มอนิกลำดับที่ $3$ คือเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.0849
+    tolerance: 0.0001
+  hints:
+  - ฮาร์มอนิกลำดับ $n$ ของแรงกระทำ $b_n\sin nt$ ทำให้เกิดผลตอบสนอง $\frac{b_n}{4-n^2}\sin nt$
+  - คำนวณ $b_3$ ของคลื่นสี่เหลี่ยมก่อน แล้วหารด้วย $|4-9|$
+  misconceptions:
+  - match: 0.4244
+    feedback: ลืมหารด้วย $\omega_0^2 - (n\omega)^2$ ผลตอบสนองจึงเท่ากับแรงกระทำเดิม
+  solution: $b_3 = \frac{4}{3\pi}$ และตัวหารคือ $4-9=-5$ ขนาดของผลตอบสนองคือ $\frac{4}{15\pi} \approx 0.0849$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p015
+  topics:
+  - math.de.fourier-series
+  difficulty: 4
+  type: numeric
+  stem: 'สำหรับ $x^{\prime\prime}+9x=f(t)$ โดย $f(t)=t$ บนช่วง $(-\pi,\pi)$ ขยายเป็นคาบ $2\pi$ ฮาร์มอนิกลำดับใดทำให้เกิดการสั่นพ้องในผลตอบสนอง (ตอบจำนวนเต็ม)'
+  answer:
+    value: 3
+    tolerance: 0
+  hints:
+  - การสั่นพ้องเกิดเมื่อความถี่ของฮาร์มอนิกตรงกับความถี่ธรรมชาติ $\omega_0 = 3$
+  - ความถี่ของฮาร์มอนิกลำดับ $n$ คือ $n\omega$ โดยที่ $\omega = 1$
+  misconceptions:
+  - match: 9
+    feedback: ใช้ $\omega_0^2$ แทนความถี่ธรรมชาติ ทำให้ตัวหาร $9 - n^2$ ผิดเป็น $9 - 81$
+  solution: ความถี่ธรรมชาติคือ $\omega_0 = 3$ และฮาร์มอนิกลำดับ $n=3$ มีความถี่ $3$ จึงเกิดการสั่นพ้อง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p016
+  topics:
+  - math.de.fourier-series
+  difficulty: 4
+  type: numeric
+  stem: 'จงหาขนาดแอมพลิจูดของผลตอบสนองสภาวะคงตัวของ $x^{\prime\prime}+4x=5\sin t$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.6667
+    tolerance: 0.0001
+  hints:
+  - ถ้า $x_p = A\sin t$ แทนลงในสมการแล้วเทียบสัมประสิทธิ์ของ $\sin t$
+  - จะได้ $A(-1+4) = 5$
+  misconceptions:
+  - match: 1
+    feedback: ใช้ $\omega_0^2 + \omega^2$ หรือหารด้วย $4+1 = 5$ แทนที่จะเป็น $4-1$
+  solution: แทน $x_p = A\sin t$ ได้ $A(4-1)=5$ จึง $A=\frac{5}{3} \approx 1.6667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p017
+  topics:
+  - math.de.fourier-series
+  difficulty: 4
+  type: numeric
+  stem: 'มอเตอร์ในโรงงานทอผ้าที่นครราชสีมาสร้างแรงสั่นเป็นคาบรูปคลื่นสามเหลี่ยม $f(t)=|t|$ บนช่วง $(-\pi,\pi)$ ขยายเป็นคาบ $2\pi$ (ข้อมูลสมมติ) จงหาสัมประสิทธิ์ $a_1$ ของพจน์ $\cos t$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: -1.2732
+    tolerance: 0.0001
+  hints:
+  - $|t|$ เป็นฟังก์ชันคู่ จึงได้ $a_n = \frac{2}{\pi}\int_0^\pi t\cos nt\,dt$
+  - ปริพันธ์โดยส่วนได้ $\int_0^\pi t\cos nt\,dt = \frac{(-1)^n - 1}{n^2}$
+  misconceptions:
+  - match: 1.2732
+    feedback: เครื่องหมายผิด เมื่อ $n=1$ จะได้ $(-1)^1 - 1 = -2$ จึงเป็นลบ
+  - match: -0.6366
+    feedback: ใช้ $\frac{1}{\pi}\int_0^\pi$ ลืมคูณสองจากความสมมาตรของฟังก์ชันคู่
+  solution: $a_1 = \frac{2}{\pi}\int_0^\pi t\cos t\,dt = \frac{2}{\pi}\cdot(-2) = -\frac{4}{\pi} \approx -1.2732$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p018
+  topics:
+  - math.de.fourier-series
+  difficulty: 5
+  type: numeric
+  stem: 'ผลบวกย่อยของคลื่นสี่เหลี่ยมที่รวมฮาร์มอนิกลำดับที่ $1$ และ $3$ คือ $S(t)=\frac{4}{\pi}\left(\sin t + \frac{\sin 3t}{3}\right)$ จงหาค่า $S\left(\frac{\pi}{2}\right)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.8488
+    tolerance: 0.0001
+  hints:
+  - แทน $t = \frac{\pi}{2}$ ได้ $\sin\frac{\pi}{2} = 1$ และ $\sin\frac{3\pi}{2} = -1$
+  - ผลรวมในวงเล็บคือ $1 - \frac{1}{3}$
+  misconceptions:
+  - match: 1.2732
+    feedback: ใช้เพียงฮาร์มอนิกลำดับที่หนึ่ง จึงไม่ได้รวมพจน์ $\frac{\sin 3t}{3}$
+  solution: $S\left(\frac{\pi}{2}\right) = \frac{4}{\pi}\left(1 - \frac{1}{3}\right) = \frac{8}{3\pi} \approx 0.8488$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p019
+  topics:
+  - math.de.fourier-series
+  difficulty: 5
+  type: numeric
+  stem: 'ระบบ $x^{\prime\prime}+4x=f(t)$ โดย $f(t)=1$ เมื่อ $0<t<\pi$ และ $f(t)=-1$ เมื่อ $-\pi<t<0$ ขยายเป็นคาบ $2\pi$ จงหาขนาดของผลตอบสนองสภาวะคงตัวจากฮาร์มอนิกลำดับที่ $5$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.0121
+    tolerance: 0.0001
+  hints:
+  - ใช้ $b_5 = \frac{4}{5\pi}$ และผลตอบสนอง $\frac{b_5}{4-25}\sin 5t$
+  - ขนาดคือค่าสัมบูรณ์ของผลหาร
+  misconceptions:
+  - match: 0.2546
+    feedback: ลืมหารด้วย $|4-25| = 21$ ค่าที่ได้จึงเป็นแรงกระทำโดยตรง ไม่ใช่ผลตอบสนอง
+  solution: $\frac{4}{5\pi}\cdot\frac{1}{21} = \frac{4}{105\pi} \approx 0.0121$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.fourier-series.p020
+  topics:
+  - math.de.fourier-series
+  difficulty: 5
+  type: numeric
+  stem: 'คลื่นสี่เหลี่ยม $f(t)=1$ เมื่อ $0<t<\pi$ และ $f(t)=-1$ เมื่อ $-\pi<t<0$ คาบ $2\pi$ มีอนุกรม $\frac{4}{\pi}\sum_{n\text{ คี่}}\frac{\sin nt}{n}$ เมื่อปริพันธ์ทั้งสองข้างทีละพจน์จาก $0$ ถึง $t$ จะได้อนุกรมฟูเรียร์ของ $|t|$ บน $(-\pi,\pi)$ จงเทียบพจน์ค่าคงที่ของอนุกรมนั้นกับค่าเฉลี่ยของ $|t|$ บนหนึ่งคาบ เพื่อหาค่า $\displaystyle\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.2337
+    tolerance: 0.0001
+  hints:
+  - $\int_0^t f(s)\,ds = |t|$ และ $\int_0^t \sin ns\,ds = \frac{1-\cos nt}{n}$
+  - หลังปริพันธ์ได้ $|t| = \frac{4}{\pi}\sum_{n\text{ คี่}}\frac{1}{n^2} - \frac{4}{\pi}\sum_{n\text{ คี่}}\frac{\cos nt}{n^2}$ พจน์คงที่คือส่วนแรก
+  - พจน์คงที่ของอนุกรมฟูเรียร์เท่ากับค่าเฉลี่ยของฟังก์ชันบนหนึ่งคาบ คือ $\frac{1}{2\pi}\int_{-\pi}^{\pi}|t|\,dt$
+  misconceptions:
+  - match: 1.6449
+    feedback: รวมทุกจำนวนนับ $n$ แทนที่จะรวมเฉพาะเลขคี่ ผลรวมทั้งหมดคือ $\frac{\pi^2}{6}$
+  - match: 2.4674
+    feedback: ใช้ $\pi$ เป็นค่าเฉลี่ยของ $|t|$ ซึ่งเป็นค่ามากสุด ค่าเฉลี่ยจริงคือ $\frac{\pi}{2}$
+  solution: ปริพันธ์ทีละพจน์ได้ $|t| = \frac{4}{\pi}\sum_{n\text{ คี่}}\frac{1-\cos nt}{n^2}$ พจน์คงที่ $\frac{4}{\pi}\sum_{n\text{ คี่}}\frac{1}{n^2}$ ต้องเท่ากับค่าเฉลี่ย $\frac{\pi}{2}$ จึงได้ $\sum\frac{1}{(2n-1)^2} = \frac{\pi^2}{8} \approx 1.2337$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

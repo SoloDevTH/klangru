@@ -1,0 +1,414 @@
+problems:
+- id: math.calculus.power-series.p001
+  topics:
+  - math.calculus.power-series
+  difficulty: 1
+  type: numeric
+  stem: 'จงหารัศมีการลู่เข้า $R$ ของอนุกรมกำลัง $\displaystyle\sum_{n=0}^{\infty}\frac{(x-1)^n}{4^n}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 4
+    tolerance: 0
+  hints:
+  - ค่าสัมประสิทธิ์ของ $(x-1)^n$ คือ $\frac{1}{4^n}$ ดูอัตราส่วนของสัมประสิทธิ์ที่ติดกัน
+  - เขียน $\left|\frac{c_{n+1}}{c_n}\right|$ แล้วหาลิมิต จากนั้นรัศมีคือส่วนกลับของลิมิตนั้น
+  misconceptions:
+  - match: 0.25
+    feedback: ได้ลิมิตของอัตราส่วนสัมประสิทธิ์ซึ่งเท่ากับ $\frac14$ แต่รัศมีคือส่วนกลับของค่านี้
+  solution: $\left|\frac{c_{n+1}}{c_n}\right| = \frac{1}{4}$ เมื่อ $|x-1|\cdot\frac14<1$ ดังนั้น $|x-1|<4$ จึงได้ $R=4$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p002
+  topics:
+  - math.calculus.power-series
+  difficulty: 1
+  type: mcq
+  stem: 'รัศมีการลู่เข้าของอนุกรมกำลัง $\displaystyle\sum_{n=1}^{\infty} n^2 x^n$ คือข้อใด'
+  choices:
+  - id: a
+    text: $R = 0$
+    correct: false
+    feedback: $R=0$ หมายถึงลู่เข้าเฉพาะที่ $x=0$ ซึ่งไม่ใช่กรณีของอนุกรมนี้
+  - id: b
+    text: $R = 1$
+    correct: true
+  - id: c
+    text: $R = 2$
+    correct: false
+    feedback: ใช้ $2$ จากการคิดว่าลู่เข้าเมื่อ $|x|<2$ แต่อัตราส่วนของ $n^2$ เข้าใกล้ $1$
+  - id: d
+    text: $R = \infty$
+    correct: false
+    feedback: $R=\infty$ เกิดกับพจน์อย่าง $\frac{x^n}{n!}$ ไม่ใช่ $n^2 x^n$
+  hints:
+  - หาลิมิตของ $\left|\frac{(n+1)^2}{n^2}\right|$ เมื่อ $n\to\infty$
+  - รัศมีการลู่เข้าเท่ากับ $1$ เมื่อลิมิตของอัตราส่วนสัมประสิทธิ์เท่ากับ $1$
+  solution: $\left|\frac{(n+1)^2}{n^2}\right|\to 1$ ดังนั้น $|x|<1$ จึงได้ $R=1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p003
+  topics:
+  - math.calculus.power-series
+  difficulty: 2
+  type: numeric
+  stem: 'จงหารัศมีการลู่เข้าของ $\displaystyle\sum_{n=1}^{\infty}\frac{(x+3)^n}{n\,5^n}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 5
+    tolerance: 0
+  hints:
+  - สัมประสิทธิ์คือ $c_n = \frac{1}{n\,5^n}$
+  - ลิมิตของ $\left|\frac{c_n}{c_{n+1}}\right|$ คือรัศมี และพจน์ $n$ ในตัวส่วนหายไปในลิมิต
+  misconceptions:
+  - match: 0.2
+    feedback: ได้ค่าลิมิตของ $\left|\frac{c_{n+1}}{c_n}\right|$ แล้วหยุด แต่รัศมีคือ $\lim \left|\frac{c_n}{c_{n+1}}\right|$
+  solution: $\left|\frac{c_n}{c_{n+1}}\right| = \frac{5(n+1)}{n}\to 5$ จึงได้ $R=5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p004
+  topics:
+  - math.calculus.power-series
+  difficulty: 2
+  type: numeric
+  stem: 'อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(x-2)^n}{n\,3^n}$ มีรัศมี $R=3$ จงหาปลายซ้ายของช่วงการลู่เข้า โดยตรวจว่าจุดปลายลู่เข้าหรือไม่ (ตอบจำนวนเต็ม)'
+  answer:
+    value: -1
+    tolerance: 0
+  hints:
+  - ปลายของช่วงอยู่ที่ $x = 2 \pm R$ ให้แทน $x=2-3$ ลงในอนุกรม
+  - เมื่อ $x=-1$ จะได้ $\sum \frac{(-3)^n}{n\,3^n} = \sum\frac{(-1)^n}{n}$ ซึ่งมีวิธีตรวจที่รู้แล้ว
+  misconceptions:
+  - match: 5
+    feedback: นี่คือปลายขวา $2+R$ ซึ่งที่จุดนั้นได้ $\sum\frac{1}{n}$ ที่ลู่ออก ปลายซ้ายคือ $2-R$
+  solution: ที่ $x=-1$ ได้ $\sum\frac{(-1)^n}{n}$ ซึ่งลู่เข้าตามการทดสอบของไลบ์นิซ จึงรวมปลายซ้ายไว้ ปลายซ้ายคือ $-1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p005
+  topics:
+  - math.calculus.power-series
+  difficulty: 2
+  type: mcq
+  stem: 'ช่วงการลู่เข้าของ $\displaystyle\sum_{n=1}^{\infty}\frac{(x+1)^n}{\sqrt{n}\,4^n}$ คือข้อใด'
+  choices:
+  - id: a
+    text: $(-5, 3)$
+    correct: false
+    feedback: ที่ $x=-5$ อนุกรมเป็น $\sum\frac{(-1)^n}{\sqrt{n}}$ ซึ่งลู่เข้าตามการทดสอบของไลบ์นิซ จึงต้องรวมจุดนี้
+  - id: b
+    text: $(-5, 3]$
+    correct: false
+    feedback: ที่ $x=3$ อนุกรมเป็น $\sum\frac{1}{\sqrt{n}}$ ซึ่งเป็น $p$-series ที่ $p=\tfrac12$ จึงลู่ออก และไม่รวมจุดนี้
+  - id: c
+    text: $[-5, 3)$
+    correct: true
+  - id: d
+    text: $[-5, 3]$
+    correct: false
+    feedback: ที่ $x=3$ อนุกรมเป็น $\sum\frac{1}{\sqrt{n}}$ ซึ่งลู่ออก จึงไม่รวมจุดนี้
+  hints:
+  - อัตราส่วนของพจน์ที่ติดกันมีลิมิต $\frac{|x+1|}{4}$ จึงได้รัศมี $R=4$ และช่วงเปิด $(-1-4, -1+4)$
+  - ตรวจจุดปลายทั้งสองแยกกัน
+  solution: อัตราส่วนให้ $\frac{|x+1|}{4}\cdot\sqrt{\frac{n}{n+1}} \to \frac{|x+1|}{4}$ จึงลู่เข้าเมื่อ $|x+1|<4$ ที่ $x=-5$ ได้ $\sum\frac{(-1)^n}{\sqrt{n}}$ ลู่เข้าตามการทดสอบของไลบ์นิซ ที่ $x=3$ ได้ $\sum\frac{1}{\sqrt{n}}$ ลู่ออก ดังนั้นช่วงคือ $[-5,3)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p006
+  topics:
+  - math.calculus.power-series
+  difficulty: 2
+  type: expression
+  stem: 'จงหาฟังก์ชัน $f(x)$ ที่ทำให้ $\displaystyle\sum_{n=0}^{\infty} x^{2n} = f(x)$ เมื่อ $|x|<1$'
+  prefix: 'f(x) ='
+  answer:
+    latex: '\frac{1}{1-x^2}'
+    variables:
+    - x
+  misconceptions:
+  - match: '\frac{1}{1+x^2}'
+    feedback: เครื่องหมายผิด $x^{2n}$ ไม่มี $(-1)^n$ จึงได้ $1-x^2$ ไม่ใช่ $1+x^2$
+  hints:
+  - นี่คืออนุกรมเรขาคณิตโดยมีอัตราส่วนร่วม $r = x^2$
+  - ใช้สูตร $\frac{a}{1-r}$ เมื่อ $|r|<1$ โดย $a=1$
+  solution: $\sum_{n=0}^\infty (x^2)^n = \frac{1}{1-x^2}$ เมื่อ $|x^2|<1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p007
+  topics:
+  - math.calculus.power-series
+  difficulty: 2
+  type: numeric
+  stem: 'ให้ $f(x)=\displaystyle\sum_{n=0}^{\infty}x^n$ เมื่อ $|x|<1$ จงหาค่า $f(0.6)$ (ตอบทศนิยม 2 ตำแหน่ง)'
+  answer:
+    value: 2.5
+    tolerance: 0.01
+  hints:
+  - ฟังก์ชันนี้คืออนุกรมเรขาคณิตที่มี $a=1$ และ $r = x$
+  - ใช้สูตร $\frac{1}{1-x}$ แทนค่า $x = 0.6$
+  misconceptions:
+  - match: 1.6
+    feedback: รวมเพียงสองพจน์แรก $1 + x$ แล้วหยุด ต้องรวมทุกพจน์ไปถึงอนันต์
+  solution: $f(x)=\frac{1}{1-x}$ จึงได้ $f(0.6) = \frac{1}{0.4} = 2.5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p008
+  topics:
+  - math.calculus.power-series
+  difficulty: 3
+  type: numeric
+  stem: 'จงหาสัมประสิทธิ์ของ $x^6$ ในการแทนฟังก์ชัน $\dfrac{1}{1+x^2}$ ด้วยอนุกรมกำลังรอบ $0$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: -1
+    tolerance: 0
+  hints:
+  - แทน $x^2$ ลงในอนุกรมเรขาคณิตของ $\frac{1}{1+u}$ โดย $u = x^2$
+  - ดูว่าเครื่องหมายของพจน์สลับกันอย่างไรเมื่อ $n$ เพิ่มขึ้น
+  misconceptions:
+  - match: 1
+    feedback: ลืมเครื่องหมายสลับ $(-1)^n$ จึงได้สัมประสิทธิ์เป็นบวก
+  solution: $\frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n x^{2n}$ พจน์ $x^6$ เกิดเมื่อ $n=3$ ได้ $(-1)^3 = -1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p009
+  topics:
+  - math.calculus.power-series
+  difficulty: 3
+  type: numeric
+  stem: 'จงหาสัมประสิทธิ์ของ $x^3$ ในอนุกรมกำลังรอบ $0$ ของ $\ln(1+x)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.3333
+    tolerance: 0.0001
+  hints:
+  - ใช้อนุกรมของ $\ln(1+x)$ ที่ได้จากการปริพันธ์ $\int_0^x \frac{dt}{1+t}$ ทีละพจน์
+  - สัมประสิทธิ์ของ $x^n$ คือ $\frac{(-1)^{n+1}}{n}$
+  misconceptions:
+  - match: -0.3333
+    feedback: เครื่องหมายผิด สัมประสิทธิ์ของ $x^n$ คือ $\frac{(-1)^{n+1}}{n}$ ซึ่งเป็นบวกเมื่อ $n$ เป็นเลขคี่
+  solution: $\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ จึงได้สัมประสิทธิ์ของ $x^3$ เป็น $\frac13 \approx 0.3333$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p010
+  topics:
+  - math.calculus.power-series
+  difficulty: 3
+  type: numeric
+  stem: 'ทีมวิศวกรในนครสวรรค์ใช้ $\dfrac{1}{1-x}\approx 1+x+x^2$ ประมาณสัดส่วนการขยายตัวของแผ่นเหล็ก เมื่อ $x=0.1$ (ข้อมูลสมมติ) ค่าคลาดเคลื่อนของการประมาณนี้เท่ากับเท่าใด (ตอบทศนิยม 6 ตำแหน่ง)'
+  answer:
+    value: 0.001111
+    tolerance: 0.000002
+  hints:
+  - ค่าคลาดเคลื่อนคือผลรวมของพจน์ที่ตัดทิ้ง คือ $x^3 + x^4 + \cdots$
+  - ผลรวมนั้นเป็นอนุกรมเรขาคณิตที่เริ่มจาก $x^3$
+  misconceptions:
+  - match: 0.001
+    feedback: ตัดเฉพาะพจน์ $x^3$ ทิ้ง แต่ค่าคลาดเคลื่อนคือผลรวมของพจน์ที่เหลือทั้งหมด
+  solution: $\frac{1}{1-x} = \sum_{n=0}^\infty x^n$ ดังนั้นค่าคลาดเคลื่อนคือ $\frac{x^3}{1-x}$ เมื่อ $x=0.1$ ได้ $\frac{0.001}{0.9} \approx 0.001111$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p011
+  topics:
+  - math.calculus.power-series
+  difficulty: 3
+  type: match
+  stem: 'จับคู่อนุกรมกำลังกับฟังก์ชันที่อนุกรมนั้นแทนค่า เมื่ออยู่ในช่วงการลู่เข้า'
+  pairs:
+  - left: '$\displaystyle\sum_{n=0}^{\infty} x^n$'
+    right: '$\dfrac{1}{1-x}$'
+  - left: '$\displaystyle\sum_{n=0}^{\infty} (-1)^n x^{2n}$'
+    right: '$\dfrac{1}{1+x^2}$'
+  - left: '$\displaystyle\sum_{n=1}^{\infty} \dfrac{(-1)^{n+1}x^n}{n}$'
+    right: '$\ln(1+x)$'
+  - left: '$\displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n x^{2n+1}}{2n+1}$'
+    right: '$\arctan x$'
+  hints:
+  - ดูเครื่องหมายสลับและเลขชี้กำลังของ $x$ ในแต่ละอนุกรม
+  - เลขตัวส่วนที่เพิ่มทีละ $2$ บ่งบอกถึงอนุกรมของอาร์กแทนเจนต์
+  solution: อนุกรมแรกเป็นอนุกรมเรขาคณิต อนุกรมที่สองแทนค่า $u=-x^2$ ในอนุกรมเรขาคณิต อนุกรมที่สามเป็นอนุกรมของ $\ln(1+x)$ และอนุกรมสุดท้ายเป็นของ $\arctan x$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p012
+  topics:
+  - math.calculus.power-series
+  difficulty: 3
+  type: order
+  stem: 'เรียงขั้นตอนการหารัศมีและช่วงการลู่เข้าของอนุกรมกำลัง $\sum c_n (x-a)^n$ ตามลำดับที่ถูกต้อง'
+  items:
+  - หาอัตราส่วน $\left|\dfrac{c_{n+1}(x-a)^{n+1}}{c_n(x-a)^n}\right|$ และหาลิมิตของค่าสัมบูรณ์เมื่อ $n\to\infty$
+  - ตั้งอสมการ $L|x-a|<1$ เพื่อหา $|x-a|<R$ ซึ่งให้ช่วงเปิดรอบจุด $a$
+  - แทนจุดปลายของช่วงลงในอนุกรมแล้วตรวจการลู่เข้าของแต่ละจุดแยกกัน
+  - เขียนช่วงการลู่เข้าโดยรวมจุดปลายที่ลู่เข้าและไม่รวมจุดปลายที่ลู่ออก
+  hints:
+  - ขั้นแรกต้องหาค่าลิมิตก่อนตั้งอสมการ
+  - ขั้นสุดท้ายรวมผลของการตรวจจุดปลายเข้ากับช่วงเปิด
+  solution: หาอัตราส่วนและลิมิตแล้วตั้งอสมการ $L|x-a|<1$ ได้รัศมี จากนั้นตรวจจุดปลายทีละจุดแล้วเขียนช่วงรวมผลนั้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p013
+  topics:
+  - math.calculus.power-series
+  difficulty: 3
+  type: text
+  stem: 'จุดศูนย์กลาง $a$ ของอนุกรมกำลัง $\displaystyle\sum_{n=1}^{\infty}\frac{(x+3)^n}{n\,5^n}$ มีค่าเท่าใด (ตอบจำนวนเต็ม)'
+  accepted:
+  - '-3'
+  - '−3'
+  hints:
+  - เขียนรูปทั่วไปของอนุกรมกำลังเป็น $(x-a)^n$ แล้วเทียบกับ $(x+3)^n$
+  - ค่าของ $a$ คือค่าที่ทำให้ $x-a$ เท่ากับ $x+3$
+  solution: เทียบ $x-a$ กับ $x+3$ ได้ $a=-3$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p014
+  topics:
+  - math.calculus.power-series
+  difficulty: 4
+  type: numeric
+  stem: 'จงหารัศมีการลู่เข้า $R$ ของ $\displaystyle\sum_{n=1}^{\infty}\frac{2^n}{n^2}x^n$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.5
+    tolerance: 0.0001
+  hints:
+  - ลิมิตของ $\left|\frac{c_{n+1}}{c_n}\right|$ ที่ $c_n = \frac{2^n}{n^2}$ มีค่าเท่าไร
+  - รัศมีคือส่วนกลับของค่านั้น
+  misconceptions:
+  - match: 2
+    feedback: ลืมกลับส่วน ค่าลิมิตของ $\left|\frac{c_{n+1}}{c_n}\right|$ คือ $2$ แต่รัศมีคือ $\frac{1}{2}$
+  solution: $\left|\frac{c_{n+1}}{c_n}\right| = \frac{2(n)^2}{(n+1)^2}\to 2$ ดังนั้น $|x|<\frac12$ จึงได้ $R=\frac12$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p015
+  topics:
+  - math.calculus.power-series
+  difficulty: 4
+  type: numeric
+  stem: 'แบบจำลองอุณหภูมิที่จุดหนึ่งของแท่งโลหะในโรงงานประมาณด้วย $f(x)=\displaystyle\sum_{n=0}^{\infty}x^n$ เมื่อ $x$ เป็นสัดส่วนของระยะทาง (ข้อมูลสมมติ) จงหาอัตราการเปลี่ยนแปลง $f^{\prime}(0.2)$ โดยหาอนุพันธ์ทีละพจน์ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.5625
+    tolerance: 0.0001
+  hints:
+  - หาอนุพันธ์ของแต่ละพจน์ $x^n$ ก่อนรวมกัน
+  - ได้อนุกรม $\sum n x^{n-1}$ แล้วแทนค่า $x=0.2$ ผลรวมของอนุกรมนี้คือ $\frac{1}{(1-x)^2}$
+  misconceptions:
+  - match: 1.25
+    feedback: ได้ค่าของ $f(0.2)$ แทนที่จะเป็นอนุพันธ์ ต้องหาอนุพันธ์ก่อนแทนค่า
+  solution: $f'(x) = \sum_{n\ge1} n x^{n-1} = \frac{1}{(1-x)^2}$ จึงได้ $f'(0.2) = \frac{1}{0.64} = 1.5625$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p016
+  topics:
+  - math.calculus.power-series
+  difficulty: 4
+  type: mcq
+  stem: 'จากการปริพันธ์ $\displaystyle\int_0^x \frac{dt}{1+t^2}$ ทีละพจน์ ข้อใดคืออนุกรมกำลังของ $\arctan x$'
+  choices:
+  - id: a
+    text: $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n}}{2n}$
+    correct: false
+    feedback: ยังไม่ได้ปริพันธ์ทีละพจน์ ยกกำลังของ $x$ ต้องเพิ่มขึ้นหนึ่งและตัวหารต้องเป็น $2n+1$
+  - id: b
+    text: $\displaystyle\sum_{n=0}^{\infty}\frac{x^{2n+1}}{2n+1}$
+    correct: false
+    feedback: ลืมเครื่องหมายสลับ $(-1)^n$ ซึ่งมาจาก $\frac{1}{1+t^2}$
+  - id: c
+    text: $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1}$
+    correct: true
+  - id: d
+    text: $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+2}}{2n+2}$
+    correct: false
+    feedback: ยกกำลังเพิ่มขึ้นสองแทนที่จะเพิ่มหนึ่ง ทำให้ตัวส่วนไม่ตรงกับการปริพันธ์ $x^{2n+1}$
+  hints:
+  - เริ่มจากอนุกรมของ $\frac{1}{1+t^2}$ แทนค่า $t^2$ ลงในอนุกรมเรขาคณิต
+  - ปริพันธ์ของ $t^{2n}$ คือ $\frac{t^{2n+1}}{2n+1}$
+  solution: $\frac{1}{1+t^2} = \sum (-1)^n t^{2n}$ ปริพันธ์ทีละพจน์จาก $0$ ถึง $x$ ได้ $\sum \frac{(-1)^n x^{2n+1}}{2n+1}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p017
+  topics:
+  - math.calculus.power-series
+  difficulty: 4
+  type: mcq
+  stem: 'อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^n x^n}{n}$ ลู่เข้าที่จุดปลายใดของช่วงการลู่เข้า'
+  choices:
+  - id: a
+    text: ที่ $x=-1$ เท่านั้น
+    correct: false
+    feedback: ที่ $x=-1$ ได้ $\sum\frac{1}{n}$ ซึ่งลู่ออก
+  - id: b
+    text: ทั้ง $x=1$ และ $x=-1$
+    correct: false
+    feedback: ที่ $x=-1$ ได้ $\sum \frac{1}{n}$ ซึ่งลู่ออก จึงไม่รวมจุดนี้
+  - id: c
+    text: ไม่ลู่เข้าที่จุดปลายใดเลย
+    correct: false
+    feedback: ที่ $x=1$ ได้ $\sum\frac{(-1)^n}{n}$ ซึ่งลู่เข้าตามการทดสอบของไลบ์นิซ
+  - id: d
+    text: ที่ $x=1$ เท่านั้น
+    correct: true
+  hints:
+  - หารัศมีก่อน แล้วแทนจุดปลายแต่ละจุดลงในอนุกรม
+  - ที่ $x=-1$ ตัวประกอบ $(-1)^n$ จะหักล้างกับเครื่องหมายสลับ
+  solution: รัศมีคือ $1$ ที่ $x=1$ ได้ $\sum\frac{(-1)^n}{n}$ ลู่เข้า ที่ $x=-1$ ได้ $\sum\frac{1}{n}$ ลู่ออก ดังนั้นลู่เข้าที่ $x=1$ เท่านั้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p018
+  topics:
+  - math.calculus.power-series
+  difficulty: 5
+  type: numeric
+  stem: 'ให้ $c_n = \dfrac{(2n)!}{(n!)^2}$ จงหารัศมีการลู่เข้า $R$ ของ $\displaystyle\sum_{n=0}^{\infty} c_n x^n$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.25
+    tolerance: 0.0001
+  hints:
+  - ลดรูป $\frac{c_{n+1}}{c_n}$ โดยตัดแฟกทอเรียลที่ซ้ำกัน
+  - ลิมิตของอัตราส่วนสัมประสิทธิ์คือ $4$ รัศมีคือส่วนกลับของค่านี้
+  misconceptions:
+  - match: 4
+    feedback: ลืมกลับส่วนของลิมิตอัตราส่วนสัมประสิทธิ์ ค่าที่ได้คือ $4$ แต่รัศมีคือ $\frac14$
+  solution: $\frac{c_{n+1}}{c_n} = \frac{2(2n+1)}{n+1}\to 4$ ดังนั้น $|x|<\frac14$ จึงได้ $R=\frac14$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p019
+  topics:
+  - math.calculus.power-series
+  difficulty: 5
+  type: numeric
+  stem: 'จงหาผลบวก $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}$ โดยใช้อนุกรมของ $\ln(1+x)$ ที่ $x=1$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.6931
+    tolerance: 0.0001
+  hints:
+  - อนุกรมของ $\ln(1+x)$ ลู่เข้าที่ $x=1$ แม้ $x=1$ จะอยู่บนขอบของช่วงการลู่เข้า
+  - แทน $x=1$ ลงในอนุกรมของ $\ln(1+x)$ และหาค่า $\ln 2$
+  misconceptions:
+  - match: 0.5
+    feedback: รวมเพียงสองพจน์แรกแล้วหยุด ผลบวกจริงต้องรวมทุกพจน์
+  - match: 1
+    feedback: เอาเพียงพจน์แรกเป็นผลบวก ทั้งที่อนุกรมต้องรวมทุกพจน์
+  solution: $\ln(1+x)=\sum_{n\ge1}\frac{(-1)^{n+1}x^n}{n}$ ที่ $x=1$ ได้ $\ln 2 \approx 0.6931$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.power-series.p020
+  topics:
+  - math.calculus.power-series
+  difficulty: 4
+  type: mcq
+  stem: 'นักวิทยาศาสตร์ในนครปฐมจำลองความเข้มสัญญาณด้วยอนุกรมกำลัง $\sum c_n x^n$ ซึ่งลู่เข้าเมื่อ $|x|<3$ (ข้อมูลสมมติ) ถ้าต้องการหาอนุพันธ์ของแบบจำลองนี้ทีละพจน์ รัศมีการลู่เข้าของอนุกรมอนุพันธ์จะเป็นเท่าใด'
+  choices:
+  - id: a
+    text: $3$
+    correct: true
+  - id: b
+    text: $\frac{1}{3}$
+    correct: false
+    feedback: การหาอนุพันธ์ทีละพจน์ไม่ทำให้รัศมีเปลี่ยน ไม่ได้หารด้วย $3$
+  - id: c
+    text: $9$
+    correct: false
+    feedback: $9$ เกิดจากการยกกำลังสองรัศมี ซึ่งไม่ใช่สิ่งที่การหาอนุพันธ์ทำ
+  - id: d
+    text: ไม่สามารถตอบได้เพราะรัศมีเปลี่ยนเมื่อหาอนุพันธ์
+    correct: false
+    feedback: ภายในรัศมีการลู่เข้า การหาอนุพันธ์และปริพันธ์ทีละพจน์ไม่เปลี่ยนรัศมี
+  hints:
+  - ดูว่าอนุกรมอนุพันธ์คือ $\sum n c_n x^{n-1}$ และอัตราส่วนของพจน์ใกล้กับของอนุกรมเดิม
+  - ลองนึกถึงผลของการคูณด้วยพหุนาม $n$ ต่อลิมิตของอัตราส่วน
+  solution: อัตราส่วนของ $n c_n$ ต่อ $(n-1)c_{n-1}$ เข้าใกล้อัตราส่วนของ $c_n$ เมื่อ $n\to\infty$ ดังนั้นรัศมีไม่เปลี่ยนและยังคงเป็น $3$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

@@ -1,0 +1,435 @@
+problems:
+- id: math.calculus.convergence-tests.p001
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 1
+  type: mcq
+  stem: 'อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{n}{n+1}$ ลู่เข้าหรือลู่ออก และเพราะเหตุใด'
+  choices:
+  - id: a
+    text: ลู่เข้า เพราะพจน์ของอนุกรมมีค่าน้อยลงเรื่อย ๆ
+    correct: false
+    feedback: พจน์ $\frac{n}{n+1}$ ไม่ได้ลดลงเข้าหาศูนย์ แต่เพิ่มขึ้นและเข้าใกล้ $1$
+  - id: b
+    text: ลู่เข้า เพราะเป็นอนุกรมเรขาคณิต
+    correct: false
+    feedback: ไม่ใช่อนุกรมเรขาคณิต เพราะอัตราส่วนระหว่างพจน์ที่ต่อกันไม่คงที่
+  - id: c
+    text: ลู่ออก เพราะ $\lim a_n = 1 \ne 0$
+    correct: true
+  - id: d
+    text: ตัดสินไม่ได้ เพราะเป็นพจน์ที่ซับซ้อนเกินไป
+    correct: false
+    feedback: การทดสอบพจน์ที่ n ให้ข้อสรุปได้ทันทีเมื่อ $\lim a_n \ne 0$
+  hints:
+  - หาลิมิตของ $a_n = \frac{n}{n+1}$ เมื่อ $n \to \infty$
+  - ถ้า $\lim a_n$ ไม่เป็นศูนย์ อนุกรมลู่ออกโดยไม่ต้องตรวจวิธีอื่น
+  - หารเศษและส่วนด้วย $n$ จะได้ $\frac{1}{1 + 1/n}$
+  solution: $\lim_{n\to\infty}\frac{n}{n+1}=\lim_{n\to\infty}\frac{1}{1+1/n}=1\ne 0$ จึงลู่ออกตามการทดสอบพจน์ที่ n
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p002
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 1
+  type: numeric
+  stem: 'จงหาผลบวกย่อย $S_3$ ของอนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.8333
+    tolerance: 0.0001
+  hints:
+  - เขียนพจน์ $n = 1, 2, 3$ ออกมาทีละพจน์พร้อมเครื่องหมาย
+  - เครื่องหมายสลับกันโดย $(-1)^{n+1}$ โดยพจน์แรกเป็นบวก
+  misconceptions:
+  - match: 1.8333
+    feedback: ไม่ได้สลับเครื่องหมาย ทำให้ทุกพจน์เป็นบวก ต้องมี $-\frac{1}{2}$ ในพจน์ที่สอง
+  - match: 0.5
+    feedback: รวมเพียงสองพจน์แรกแล้วหยุด ผลบวกย่อย $S_3$ ต้องรวมสามพจน์
+  solution: $S_3 = 1 - \frac{1}{2} + \frac{1}{3} = \frac{5}{6} \approx 0.8333$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p003
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 2
+  type: numeric
+  stem: 'ให้ $a_n = \dfrac{3n^2+n}{n^4+2}$ จงหาค่าของ $\displaystyle\lim_{n\to\infty} n^2 a_n$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 3
+    tolerance: 0.01
+  hints:
+  - ตัวแปรที่ควรเปรียบเทียบด้วยคือ $\frac{1}{n^2}$ จึงคูณ $a_n$ ด้วย $n^2$
+  - หารเศษและส่วนด้วยกำลังสูงสุดของ $n$ ในส่วนของตัวส่วน
+  misconceptions:
+  - match: 0
+    feedback: ได้ $\lim a_n = 0$ ซึ่งไม่ได้บอกว่าอนุกรมลู่เข้าหรือไม่ ต้องคูณด้วย $n^2$ ก่อนหาลิมิต
+  solution: $n^2 a_n = \dfrac{3n^4+n^3}{n^4+2} \to 3$ เมื่อ $n\to\infty$ เทียบกับ $\sum \frac{1}{n^2}$ ที่ลู่เข้าจึงได้ว่า $\sum a_n$ ลู่เข้าด้วยการเปรียบเทียบลิมิต
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p004
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 2
+  type: order
+  stem: 'เรียงขั้นตอนการใช้การทดสอบของไลบ์นิซกับอนุกรม $\sum (-1)^{n} b_n$ เมื่อ $b_n > 0$ ตามลำดับที่ถูกต้อง'
+  items:
+  - ระบุว่าพจน์สลับเครื่องหมายและหาค่าสัมบูรณ์ $b_n$
+  - ตรวจเงื่อนไขทั้งสองข้อ คือ $\lim_{n\to\infty} b_n = 0$ และ $b_n$ ลดลงเมื่อ $n$ เพิ่มขึ้น (ตั้งแต่จุดหนึ่งเป็นต้นไป)
+  - สรุปว่าอนุกรมลู่เข้า โดยยังไม่ต้องหาผลบวก
+  - ถ้าต้องการค่าประมาณ ใช้ผลบวกย่อย $S_N$ และขอบเขตความคลาดเคลื่อน $b_{N+1}$
+  hints:
+  - ขั้นแรกต้องรู้ก่อนว่า $b_n$ คืออะไร
+  - ข้อสรุปว่าลู่เข้าทำได้หลังจากตรวจเงื่อนไขครบแล้ว และขอบเขตความคลาดเคลื่อนใช้ได้ก็ต่อเมื่อรู้แล้วว่าอนุกรมลู่เข้า
+  solution: ขั้นแรกระบุ $b_n$ จากนั้นตรวจเงื่อนไขสองข้อคือ $b_n \to 0$ และ $b_n$ ลดลง แล้วจึงสรุปว่าอนุกรมลู่เข้า ไม่จำเป็นต้องหาผลบวก สุดท้ายถ้าต้องการค่าประมาณ ค่าคลาดเคลื่อนของ $S_N$ ไม่เกิน $b_{N+1}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p005
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 2
+  type: mcq
+  multiple: true
+  stem: 'อนุกรมใดลู่เข้า (เลือกทุกข้อที่ถูก)'
+  choices:
+  - id: a
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}$
+    correct: true
+  - id: b
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n}}{\sqrt{n}}$
+    correct: true
+  - id: c
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}$
+    correct: false
+    feedback: เป็น $p$-series ที่ $p = \tfrac12 \le 1$ จึงลู่ออก
+  - id: d
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n}\, n}{n^2+1}$
+    correct: true
+  hints:
+  - ข้อที่มีเครื่องหมาย $(-1)^n$ ลองใช้การทดสอบของไลบ์นิซ
+  - ข้อที่ไม่มีเครื่องหมายสลับให้ใช้ $p$-series หรือการเปรียบเทียบ
+  solution: ข้อ ก. และ ข. ลู่เข้าตามการทดสอบของไลบ์นิซ เพราะค่าสัมบูรณ์ของพจน์ลดลงเข้าหาศูนย์ ข้อ ง. ลู่เข้าด้วยเหตุผลเดียวกันเพราะ $\frac{n}{n^2+1}$ ลดลงเข้าหาศูนย์ ส่วนข้อ ค. เป็น $p$-series ที่ $p=\tfrac12$ จึงลู่ออก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p006
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาผลบวกย่อย $S_4$ ของอนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.7986
+    tolerance: 0.0001
+  hints:
+  - เขียนพจน์ $n = 1, 2, 3, 4$ ออกมาทีละพจน์พร้อมเครื่องหมาย
+  - ตัวส่วนของพจน์คือ $n^2$ ไม่ใช่ $n$
+  misconceptions:
+  - match: 0.8611
+    feedback: รวมเพียงสามพจน์แรกแล้วหยุด ซึ่งได้ $S_3$ ไม่ใช่ $S_4$
+  - match: 1.4236
+    feedback: ลืมสลับเครื่องหมาย จึงรวมทุกพจน์เป็นบวก
+  solution: $S_4 = 1 - \frac{1}{4} + \frac{1}{9} - \frac{1}{16} = \frac{115}{144} \approx 0.7986$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p007
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 3
+  type: numeric
+  stem: 'อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^3}$ ถ้าใช้ผลบวกย่อยของพจน์แรก $N$ พจน์เป็นค่าประมาณ ต้องรวมอย่างน้อยกี่พจน์ เพื่อให้ค่าคลาดเคลื่อนไม่เกิน $0.001$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 9
+    tolerance: 0
+  hints:
+  - ค่าคลาดเคลื่อนของอนุกรมสลับไม่เกินค่าสัมบูรณ์ของพจน์แรกที่ตัดทิ้ง
+  - พจน์แรกที่ตัดทิ้งเมื่อรวม $N$ พจน์คือพจน์ที่ $N+1$
+  - แก้อสมการ $\frac{1}{(N+1)^3} \le 0.001$
+  misconceptions:
+  - match: 10
+    feedback: ใช้ $a_N$ แทน $a_{N+1}$ จึงได้ $N = 10$ ซึ่งรวมเกินจำเป็น เกณฑ์คือ $a_{N+1} \le 0.001$
+  solution: ต้องได้ $\frac{1}{(N+1)^3} \le 0.001$ นั่นคือ $(N+1)^3 \ge 1000$ จึง $N+1 \ge 10$ และ $N \ge 9$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p008
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 3
+  type: numeric
+  stem: 'กลุ่มอาสาสมัครปลูกต้นไม้ในสวนสาธารณะ ปีที่ $n$ ปลูกต้นไม้จำนวน $n\left(\tfrac{2}{5}\right)^n$ ร้อยต้น (ข้อมูลสมมติ) จงหาค่า $L=\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|$ สำหรับการทดสอบอัตราส่วน (ตอบทศนิยม 2 ตำแหน่ง)'
+  answer:
+    value: 0.4
+    tolerance: 0.01
+  hints:
+  - เขียน $a_{n+1}$ โดยแทน $n+1$ แทนที่ $n$ ในสูตรของ $a_n$
+  - หารด้วย $a_n$ แล้วดูว่า $\frac{n+1}{n}$ เข้าใกล้ค่าใดเมื่อ $n$ มากขึ้น
+  misconceptions:
+  - match: 2.5
+    feedback: กลับส่วนของอัตราส่วนแล้วได้ $a_n/a_{n+1}$ ต้องหา $a_{n+1}/a_n$
+  solution: $\frac{a_{n+1}}{a_n} = \frac{n+1}{n}\cdot\frac{2}{5} \to \frac{2}{5} = 0.4$ ซึ่งน้อยกว่า $1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p009
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 3
+  type: text
+  stem: 'อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{n!}{3^n}$ ควรใช้การทดสอบใดเป็นวิธีแรก (ตอบชื่อการทดสอบ)'
+  accepted:
+  - การทดสอบอัตราส่วน
+  - อัตราส่วน
+  - ratio test
+  - ratio
+  misconceptions:
+  - match: การทดสอบเปรียบเทียบ
+    feedback: พจน์มี $n!$ การเปรียบเทียบโดยตรงทำได้ยาก การทดสอบอัตราส่วนตัด $n!$ ออกได้ทันที
+  hints:
+  - พจน์มีทั้งแฟกทอเรียล $n!$ และกำลัง $3^n$
+  - เมื่อหาอัตราส่วน $a_{n+1}/a_n$ แฟกทอเรียลจะตัดกันเหลือเพียงพจน์ของ $n$ ที่เป็นพหุนามเชิงเส้น
+  - การทดสอบที่ใช้กับแฟกทอเรียลโดยเฉพาะคือการทดสอบอัตราส่วน
+  solution: $\frac{a_{n+1}}{a_n} = \frac{n+1}{3} \to \infty > 1$ จึงใช้การทดสอบอัตราส่วนและสรุปว่าอนุกรมลู่ออก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p010
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 3
+  type: mcq
+  stem: 'ข้อใดให้ค่า $L=1$ จากการทดสอบอัตราส่วน จึงสรุปผลไม่ได้'
+  choices:
+  - id: a
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{3^n}{n+1}$
+    correct: false
+    feedback: อัตราส่วนเข้าใกล้ $3$ ซึ่งมากกว่า $1$ จึงลู่ออก
+  - id: b
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$
+    correct: true
+  - id: c
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$
+    correct: false
+    feedback: อัตราส่วนเข้าใกล้ $\frac12$ ซึ่งน้อยกว่า $1$ จึงลู่เข้า
+  - id: d
+    text: $\displaystyle\sum_{n=1}^{\infty}\frac{n!}{n^n}$
+    correct: false
+    feedback: อัตราส่วนเข้าใกล้ $\frac{1}{e}$ ซึ่งน้อยกว่า $1$ จึงลู่เข้า
+  hints:
+  - คำนวณ $\left|\frac{a_{n+1}}{a_n}\right|$ ของแต่ละตัวเลือกแล้วหาลิมิต
+  - เลือกตัวเลือกที่อัตราส่วนเข้าใกล้ $1$ พอดี
+  solution: สำหรับ $\sum \frac{1}{n}$ อัตราส่วนคือ $\frac{n}{n+1}\to 1$ จึงสรุปด้วยการทดสอบอัตราส่วนไม่ได้ ตัวเลือกอื่นให้ค่า $L$ เป็น $3$, $\frac12$ และ $\frac1e$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p011
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 3
+  type: numeric
+  stem: 'ให้ $a_n = \left(\dfrac{3n+1}{5n-2}\right)^n$ จงหา $L=\displaystyle\lim_{n\to\infty}\sqrt[n]{a_n}$ สำหรับการทดสอบราก (ตอบทศนิยม 2 ตำแหน่ง)'
+  answer:
+    value: 0.6
+    tolerance: 0.01
+  hints:
+  - ถอดรากที่ $n$ ออกจาก $a_n$ จะได้นิพจน์ที่ง่ายขึ้นมาก
+  - ลิมิตของ $\frac{3n+1}{5n-2}$ เมื่อ $n\to\infty$ คือลิมิตของอัตราส่วนของสัมประสิทธิ์
+  misconceptions:
+  - match: 0
+    feedback: ลิมิตของ $a_n$ เองเป็นศูนย์ แต่การทดสอบรากต้องถอดรากที่ $n$ ก่อนหาลิมิต
+  solution: $\sqrt[n]{a_n} = \frac{3n+1}{5n-2} \to \frac{3}{5} = 0.6$ ซึ่งน้อยกว่า $1$ จึงลู่เข้า
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p012
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 3
+  type: numeric
+  stem: 'ให้ $a_n = \dfrac{2n+1}{n^3-5}$ และ $b_n = \dfrac{1}{n^2}$ จงหาค่าของ $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 2
+    tolerance: 0.01
+  hints:
+  - หาอัตราส่วน $\frac{a_n}{b_n}$ แล้วจัดรูปให้เห็นพจน์กำลังสูงสุด
+  - ลิมิตนี้เป็นจำนวนจริงบวกจำกัดจึงทำให้สรุปได้
+  misconceptions:
+  - match: 0.5
+    feedback: กลับอัตราส่วนแล้วได้ $b_n/a_n$ ต้องหา $a_n/b_n$
+  solution: $\frac{a_n}{b_n} = \frac{n^2(2n+1)}{n^3-5} \to 2$ ซึ่งเป็นจำนวนบวกจำกัด จึงลู่เข้าพร้อมกับ $\sum \frac{1}{n^2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p013
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 4
+  type: numeric
+  stem: 'ระดับน้ำในอ่างเก็บน้ำชุมชนแห่งหนึ่งเปลี่ยนแปลงสลับขึ้นลงทุกวัน (ข้อมูลสมมติ) โดยวันที่ $n$ มีการเปลี่ยนแปลงเป็น $\frac{(-1)^{n+1}}{n^2}$ เมตร ถ้าประมาณผลรวมทั้งหมดด้วยผลบวกของสามวันแรก ค่าคลาดเคลื่อนจะไม่เกินกี่เมตร (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.0625
+    tolerance: 0.0001
+    unit: m
+  hints:
+  - ค่าคลาดเคลื่อนของอนุกรมสลับไม่เกินค่าสัมบูรณ์ของพจน์แรกที่ตัดทิ้ง
+  - พจน์ที่ตัดทิ้งหลังสามวันแรกคือวันที่ $4$
+  misconceptions:
+  - match: 0.1111
+    feedback: ใช้ค่าของพจน์ที่สามซึ่งอยู่ในผลบวกแล้ว แต่ค่าคลาดเคลื่อนคือพจน์ถัดไป
+  solution: ค่าคลาดเคลื่อนไม่เกิน $|a_4| = \frac{1}{16} = 0.0625$ เมตร
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p014
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 4
+  type: mcq
+  stem: 'อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}$ ลู่เข้าในลักษณะใด'
+  choices:
+  - id: a
+    text: ลู่ออก
+    correct: false
+    feedback: ผลบวกของค่าสัมบูรณ์คือ $\sum \frac{1}{n^2}$ ซึ่งลู่เข้า และพจน์ที่สลับเครื่องหมายก็ลู่เข้าด้วย
+  - id: b
+    text: ลู่เข้าแบบมีเงื่อนไข
+    correct: false
+    feedback: ผลบวกของค่าสัมบูรณ์ลู่เข้า จึงไม่ใช่การลู่เข้าแบบมีเงื่อนไข
+  - id: c
+    text: ตัดสินไม่ได้ด้วยการทดสอบใดเลย
+    correct: false
+    feedback: ทั้งการเปรียบเทียบและการทดสอบของไลบ์นิซให้ข้อสรุปได้
+  - id: d
+    text: ลู่เข้าสัมบูรณ์
+    correct: true
+  hints:
+  - ตรวจก่อนว่าอนุกรมของค่าสัมบูรณ์ $\sum \frac{1}{n^2}$ ลู่เข้าหรือไม่
+  - ถ้าค่าสัมบูรณ์ลู่เข้า การลู่เข้าเป็นแบบสัมบูรณ์
+  solution: ค่าสัมบูรณ์ของพจน์คือ $\frac{1}{n^2}$ และ $\sum \frac{1}{n^2}$ เป็น $p$-series ที่ $p=2>1$ จึงลู่เข้า ดังนั้นอนุกรมลู่เข้าสัมบูรณ์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p015
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 4
+  type: numeric
+  stem: 'จงหาผลบวกย่อย $S_4$ ของอนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2n-1}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.7238
+    tolerance: 0.0001
+  hints:
+  - ตัวส่วนของพจน์ที่ $n$ คือ $2n-1$ จึงเป็นเลขคี่ 1, 3, 5, 7
+  - เขียนพจน์สี่พจน์แรกพร้อมเครื่องหมายแล้วรวม
+  misconceptions:
+  - match: 0.8667
+    feedback: รวมเพียงสามพจน์แรกแล้วหยุด ซึ่งได้ $S_3$ ไม่ใช่ $S_4$
+  - match: 1.6762
+    feedback: ลืมสลับเครื่องหมาย รวมทุกพจน์เป็นบวก
+  solution: $S_4 = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} = \frac{76}{105} \approx 0.7238$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p016
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 4
+  type: match
+  stem: 'จับคู่อนุกรมกับการทดสอบที่เหมาะที่สุดเป็นวิธีแรก'
+  pairs:
+  - left: '$\displaystyle\sum_{n=1}^{\infty}\frac{2n^2+1}{n^3+4}$'
+    right: เปรียบเทียบลิมิตกับ $\sum \frac{1}{n}$
+  - left: '$\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^n}{n+5}$'
+    right: การทดสอบของไลบ์นิซ
+  - left: '$\displaystyle\sum_{n=1}^{\infty}\left(\frac{n}{2n+3}\right)^n$'
+    right: การทดสอบราก
+  - left: '$\displaystyle\sum_{n=1}^{\infty}\frac{5^n}{n!}$'
+    right: การทดสอบอัตราส่วน
+  hints:
+  - ดูว่าพจน์มีเครื่องหมายสลับหรือไม่ มีกำลัง $n$ หรือแฟกทอเรียลหรือไม่
+  - พจน์ที่ยกกำลัง $n$ ทั้งก้อนเหมาะกับการทดสอบราก
+  solution: อนุกรมแรกเปรียบเทียบลิมิตกับ $\sum\frac{1}{n}$ ได้ค่าจำกัดบวก อนุกรมที่สองสลับเครื่องหมายจึงใช้ไลบ์นิซ อนุกรมที่สามเป็นกำลัง $n$ ทั้งก้อนจึงใช้การทดสอบราก อนุกรมสุดท้ายมีแฟกทอเรียลจึงใช้การทดสอบอัตราส่วน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p017
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 4
+  type: order
+  stem: 'เรียงขั้นตอนการใช้การทดสอบอัตราส่วนกับ $\sum a_n$ ตามลำดับที่ถูกต้อง'
+  items:
+  - คำนวณ $\left|\dfrac{a_{n+1}}{a_n}\right|$ แล้วตัดตัวประกอบร่วมให้เหลือพจน์ของ $n$
+  - หาลิมิต $L = \lim_{n\to\infty}\left|\dfrac{a_{n+1}}{a_n}\right|$
+  - ตัดสินตามค่า $L$ คือ $L<1$ ลู่เข้าสัมบูรณ์ $L>1$ ลู่ออก และ $L=1$ สรุปไม่ได้
+  hints:
+  - ก่อนหาลิมิตต้องได้นิพจน์ของอัตราส่วนก่อน
+  - ขั้นสุดท้ายเป็นการตัดสินจากค่าลิมิตที่ได้
+  solution: ขั้นแรกหาอัตราส่วนและจัดรูป ขั้นที่สองหาลิมิต $L$ ขั้นสุดท้ายตัดสินตามค่าของ $L$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p018
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 5
+  type: numeric
+  stem: 'ให้ $a_n = \left(1+\dfrac{1}{n}\right)^{n^2}\cdot\dfrac{1}{3^n}$ จงหา $\displaystyle\lim_{n\to\infty}\sqrt[n]{a_n}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.9061
+    tolerance: 0.0001
+  hints:
+  - ถอดรากที่ $n$ ออกจากผลคูณ ตัวประกอบแต่ละตัวจะถูกยกกำลัง $\frac{1}{n}$
+  - เมื่อยกกำลัง $\frac{1}{n}$ แล้ว $\left(1+\frac1n\right)^{n^2}$ จะเหลือ $\left(1+\frac1n\right)^n$
+  - ลิมิตของ $\left(1+\frac1n\right)^n$ เมื่อ $n\to\infty$ เป็นค่าคงที่ที่รู้จักกันดี
+  misconceptions:
+  - match: 0.3333
+    feedback: ลืมส่วน $\left(1+\frac1n\right)^n$ ซึ่งลิมิตไม่ใช่ $1$ จึงได้เพียง $\frac13$
+  - match: 2.7183
+    feedback: ลืมตัวหาร $3^n$ จึงได้ค่าลิมิตของ $\left(1+\frac1n\right)^n$ เท่านั้น
+  solution: $\sqrt[n]{a_n} = \left(1+\frac1n\right)^n\cdot\frac13 \to \frac{e}{3} \approx 0.9061$ ซึ่งน้อยกว่า $1$ จึงลู่เข้าสัมบูรณ์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p019
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 5
+  type: mcq
+  stem: 'อนุกรม $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n \ln n}{n}$ ลู่เข้าในลักษณะใด'
+  choices:
+  - id: a
+    text: ลู่เข้าแบบมีเงื่อนไข
+    correct: true
+  - id: b
+    text: ลู่เข้าสัมบูรณ์
+    correct: false
+    feedback: เมื่อ $n \ge 3$ จะได้ $\frac{\ln n}{n} \ge \frac{1}{n}$ ผลบวกของค่าสัมบูรณ์จึงลู่ออกเหมือน $\sum \frac{1}{n}$
+  - id: c
+    text: ลู่ออก เพราะพจน์ไม่เข้าหาศูนย์
+    correct: false
+    feedback: $\frac{\ln n}{n}\to 0$ จึงการทดสอบพจน์ที่ n ไม่ให้ข้อสรุปว่าลู่ออก
+  - id: d
+    text: ตัดสินไม่ได้ด้วยวิธีใดเลย
+    correct: false
+    feedback: การทดสอบของไลบ์นิซใช้ได้ เพราะ $\frac{\ln n}{n}$ ลดลงเมื่อ $n \ge 3$ และเข้าหาศูนย์
+  hints:
+  - ตรวจค่าสัมบูรณ์ของพจน์ก่อนว่าลู่เข้าหรือไม่ โดยเปรียบเทียบกับ $\sum \frac{1}{n}$
+  - ตรวจว่าพจน์ $\frac{\ln n}{n}$ เข้าหาศูนย์และลดลงเมื่อ $n$ มากพอ
+  solution: เมื่อ $n\ge 3$ จะได้ $\ln n \ge 1$ จึง $\frac{\ln n}{n}\ge\frac1n$ ผลบวกค่าสัมบูรณ์จึงลู่ออก แต่ $\frac{\ln n}{n}$ เข้าหาศูนย์และลดลงเมื่อ $n\ge 3$ ตามการทดสอบของไลบ์นิซ อนุกรมจึงลู่เข้าแบบมีเงื่อนไข
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.convergence-tests.p020
+  topics:
+  - math.calculus.convergence-tests
+  difficulty: 4
+  type: mcq
+  stem: 'ร้านกาแฟแห่งหนึ่งประมาณยอดขายวันที่ $n$ เป็น $\frac{n}{4^n}$ พันบาท (ข้อมูลสมมติ) ถ้ารวมยอดขายทุกวันไปเรื่อย ๆ ยอดรวมเป็นจำนวนจำกัดหรือไม่ และควรใช้การทดสอบใด'
+  choices:
+  - id: a
+    text: ไม่จำกัด ด้วยการทดสอบพจน์ที่ n
+    correct: false
+    feedback: $\frac{n}{4^n}\to 0$ การทดสอบพจน์ที่ n จึงไม่ให้ข้อสรุป
+  - id: b
+    text: ไม่จำกัด ด้วยอนุกรมฮาร์มอนิก
+    correct: false
+    feedback: พจน์นี้เป็นกำลัง $n$ ในตัวส่วน ไม่ใช่อนุกรมฮาร์มอนิก
+  - id: c
+    text: จำกัด ด้วยการทดสอบอัตราส่วน เพราะอัตราส่วนเข้าใกล้ $\frac14$
+    correct: true
+  - id: d
+    text: ไม่สรุปได้ ต้องคำนวณทุกวัน
+    correct: false
+    feedback: การทดสอบอัตราส่วนให้ข้อสรุปได้เพราะอัตราส่วนเข้าใกล้ค่าที่น้อยกว่า $1$
+  hints:
+  - หาอัตราส่วนของพจน์ที่ต่อกัน $\frac{a_{n+1}}{a_n}$
+  - ถ้าลิมิตของอัตราส่วนน้อยกว่า $1$ อนุกรมลู่เข้า
+  solution: $\frac{a_{n+1}}{a_n} = \frac{n+1}{4n} \to \frac{1}{4} < 1$ จึงยอดรวมเป็นจำนวนจำกัดตามการทดสอบอัตราส่วน
+  license: CC-BY-SA-4.0
+  ai_assisted: true

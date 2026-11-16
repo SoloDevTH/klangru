@@ -1,0 +1,100 @@
+id: math.calculus.taylor-series
+subject: math
+title:
+  th: อนุกรมเทย์เลอร์และแมคลอริน
+  en: Taylor and Maclaurin series
+summary: พหุนามเทย์เลอร์และแมคลอริน ทฤษฎีบทเทย์เลอร์กับเศษเหลือ การประมาณพร้อมขอบเขตความคลาดเคลื่อน และการใช้อนุกรมหาลิมิต ปริพันธ์ และผลเฉลยของสมการเชิงอนุพันธ์
+difficulty: 9
+minutes: 40
+prerequisites:
+- math.calculus.power-series
+- math.de.second-order-linear
+encompasses:
+- id: math.calculus.power-series
+  weight: 0.4
+- id: math.de.second-order-linear
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: sin-taylor-polynomials.svg
+  alt: กราฟ sin x สีดำบนช่วง −π ถึง π พร้อมพหุนามเทย์เลอร์รอบ 0 สามเส้น เส้นดีกรี 1 เป็นเส้นตรงที่ห่างจากกราฟมากเมื่อ x ห่างจาก 0 เส้นดีกรี 3 และ 5 แนบชิดกับกราฟในช่วงที่กว้างขึ้น
+  caption: พหุนามเทย์เลอร์ที่ดีกรีสูงขึ้นเข้าใกล้ sin x ในช่วงที่กว้างขึ้นรอบจุด 0
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: pendulum-restoring.svg
+  alt: ลูกตุ้มห้อยจากจุดแขวนด้านบน เส้นแนวดิ่งประจุดแสดงมุม θ ระหว่างเส้นแขวนกับแนวดิ่ง มีแรง mg ลงแนวดิ่งและแรงองค์ประกอบ mg sin θ ชี้กลับไปทางตำแหน่งสมดุล
+  caption: แรงดึงกลับของลูกตุ้มเป็น mg sin θ ซึ่งประมาณเป็นสัดส่วนกับ θ เมื่อมุมเล็ก
+- type: worked-example
+  title: พหุนามแมคลอรินดีกรี 2 ของ e^(2x)
+  problem: จงหาพหุนามแมคลอรินดีกรี $2$ ของ $e^{2x}$
+  steps:
+  - text: ใช้อนุกรมของ $e^u$ เป็น $\sum \frac{u^n}{n!}$ และแทน $u = 2x$
+    why: อนุกรมของ $e^u$ เป็นที่รู้จัก ไม่ต้องหาอนุพันธ์ใหม่ทุกครั้ง
+  - text: ได้ $1 + 2x + \frac{(2x)^2}{2!} + \cdots$ ตัดให้เหลือดีกรี $2$
+    why: พจน์ $(2x)^n/n!$ มีกำลังของ $x$ เท่ากับ $n$ จึงตัดได้ตรงตามดีกรี
+  - text: ลดรูป $\frac{(2x)^2}{2} = 2x^2$ จะได้ $P_2(x) = 1 + 2x + 2x^2$
+    why: ตัวเลข $2$ ในตัวคูณถูกยกกำลังสองและหารด้วย $2!$ ได้ผลลัพธ์เป็นจำนวนเต็ม
+  answer: $P_2(x) = 1 + 2x + 2x^2$
+- type: check
+  problem: math.calculus.taylor-series.p002
+  prompt: ลองเขียนพหุนามแมคลอรินของ sin x ดีกรี 3 ก่อนอ่านต่อ
+- type: worked-example
+  title: สามพจน์แรกของ (1+x)^(-1/2) ด้วยอนุกรมทวินาม
+  problem: จงหาสามพจน์แรกของ $\dfrac{1}{\sqrt{1+x}}$ รอบ $0$
+  steps:
+  - text: เขียน $\dfrac{1}{\sqrt{1+x}} = (1+x)^{k}$ โดย $k = -\dfrac{1}{2}$
+    why: กรณฑ์ในตัวส่วนแปลงเป็นเลขยกกำลังติดลบ
+  - text: ใช้อนุกรมทวินามได้ $1 + kx + \dfrac{k(k-1)}{2}x^2 + \cdots$
+    why: สัมประสิทธิ์พจน์ที่ $n$ คือ $\binom{k}{n}$ และพจน์ $n=0,1,2$ ใช้สูตรนี้ตรง ๆ
+  - text: แทน $k = -\dfrac12$ จะได้ $1 - \dfrac{x}{2} + \dfrac{3x^2}{8}$
+    why: $k(k-1)/2 = (-1/2)(-3/2)/2 = 3/8$ ซึ่งเป็นบวกเพราะคูณลบสองตัว
+  answer: $1 - \dfrac{x}{2} + \dfrac{3x^2}{8}$
+- type: check
+  problem: math.calculus.taylor-series.p007
+  prompt: ลองหาสัมประสิทธิ์ของ x^2 เมื่อ k เท่ากับ 1/2 ก่อนดูวิธีทำ
+glossary:
+- term: พหุนามเทย์เลอร์
+  definition: พหุนามที่สร้างจากอนุพันธ์ของฟังก์ชันที่จุด a เพื่อประมาณฟังก์ชันรอบจุดนั้น
+- term: พหุนามแมคลอริน
+  definition: พหุนามเทย์เลอร์เมื่อจุด a เป็น 0
+- term: เศษเหลือลากรองจ์
+  definition: ค่าคลาดเคลื่อนของการประมาณด้วยพหุนามเทย์เลอร์ ในรูป $\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$ เมื่อ $c$ อยู่ระหว่าง $a$ และ $x$
+- term: อนุกรมทวินาม
+  definition: อนุกรม $(1+x)^k = \sum \binom{k}{n}x^n$ ซึ่งลู่เข้าเมื่อ $|x|<1$
+flashcards:
+- front: อนุกรมแมคลอรินของ $e^x$
+  back: $\sum_{n=0}^{\infty} \frac{x^n}{n!}$ ลู่เข้าทุก $x$
+- front: พจน์ที่ n ของอนุกรมแมคลอรินของ $f$
+  back: $\frac{f^{(n)}(0)}{n!}x^n$
+- front: เศษเหลือลากรองจ์ของพหุนามดีกรี $n$
+  back: $\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$ เมื่อ $c$ อยู่ระหว่าง $a$ และ $x$
+- front: ประมาณ $\sin\theta$ เมื่อ $\theta$ เล็ก
+  back: $\sin\theta \approx \theta$ ค่าคลาดเคลื่อนเป็นพจน์ $\frac{\theta^3}{6}$ โดยประมาณ
+references:
+- title: Taylor series
+  url: https://en.wikipedia.org/wiki/Taylor_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Maclaurin series
+  url: https://en.wikipedia.org/wiki/Maclaurin_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Binomial series
+  url: https://en.wikipedia.org/wiki/Binomial_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 6.3 Taylor and Maclaurin Series (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/6-3-taylor-and-maclaurin-series
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

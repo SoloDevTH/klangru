@@ -1,0 +1,95 @@
+id: math.de.linear-systems
+subject: math
+title:
+  th: ระบบสมการเชิงอนุพันธ์เชิงเส้นและวิธีค่าเฉพาะ
+  en: Linear systems of differential equations and eigenvalue methods
+summary: การเขียนระบบสองปริมาณจากแบบจำลองถังผสมให้อยู่ในรูปเมทริกซ์ ผลเฉลยจากค่าเฉพาะและเวกเตอร์เฉพาะ กรณีค่าเฉพาะเชิงซ้อนและซ้ำ และการตัดสินเสถียรภาพ
+difficulty: 9.5
+minutes: 40
+prerequisites:
+- math.linalg.eigenvalues
+- math.de.second-order-linear
+encompasses:
+- id: math.linalg.eigenvalues
+  weight: 0.4
+- id: math.de.second-order-linear
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: tank-phase-portrait.svg
+  alt: เส้นเฟสของระบบถังผสมสองใบบนระนาบ มีเส้นประสองเส้นเป็นทิศของเวกเตอร์เฉพาะ เส้นคำตอบทุกเส้นเริ่มจากจุดต่าง ๆ และไหลเข้าหาจุดกำเนิดตรงกลาง
+  caption: เส้นเฟสของระบบถังผสม ผลเฉลยทุกเส้นเข้าหาจุดสมดุลที่จุดกำเนิด
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: ผลเฉลยที่เงื่อนไขเริ่มต้นกำหนด
+  problem: จงหาผลเฉลยของ $\mathbf{x}^{\prime}=\begin{pmatrix}0&1\\-2&-3\end{pmatrix}\mathbf{x}$ เมื่อ $\mathbf{x}(0)=\begin{pmatrix}1\\0\end{pmatrix}$
+  steps:
+  - text: หาค่าเฉพาะจาก $\lambda^2+3\lambda+2=(\lambda+1)(\lambda+2)=0$ ได้ $\lambda=-1$ และ $-2$
+    why: สมการลักษณะเฉพาะคือ $\det(A-\lambda I)=\lambda^2+3\lambda+2$
+  - text: หาเวกเตอร์เฉพาะ $(1,-1)$ สำหรับ $\lambda=-1$ และ $(1,-2)$ สำหรับ $\lambda=-2$
+    why: แทนค่าเฉพาะแต่ละตัวลงใน $(A-\lambda I)\mathbf{v}=\mathbf{0}$ แล้วเลือกเวกเตอร์ที่ไม่เป็นศูนย์
+  - text: จาก $C_1(1,-1)+C_2(1,-2)=(1,0)$ ได้ $C_1=2$ และ $C_2=-1$ จึงได้ $\mathbf{x}(t)=2e^{-t}\begin{pmatrix}1\\-1\end{pmatrix}-e^{-2t}\begin{pmatrix}1\\-2\end{pmatrix}$
+    why: ค่าคงที่หาได้จากการแก้ระบบสมการเชิงเส้นของเงื่อนไขเริ่มต้น
+  answer: $x_1(t)=2e^{-t}-e^{-2t}$ และ $x_2(t)=-2e^{-t}+2e^{-2t}$
+- type: check
+  problem: math.de.linear-systems.p002
+  prompt: ลองเขียนผลเฉลยทั่วไปของระบบที่มีค่าเฉพาะ 3 และ 1 ก่อนอ่านต่อ
+- type: figure
+  src: spiral-sink.svg
+  alt: เส้นเฟสของระบบที่มีค่าเฉพาะเชิงซ้อน เส้นคำตอบทุกเส้นวนเป็นเกลียวเข้าหาจุดกำเนิดตรงกลาง
+  caption: ค่าเฉพาะเชิงซ้อนที่มีส่วนจริงลบทำให้ผลเฉลยเป็นเกลียวเข้าหาจุดสมดุล
+- type: worked-example
+  title: ค่าเฉพาะเชิงซ้อนและคาบของการแกว่ง
+  problem: จงหาค่าเฉพาะและคาบของการแกว่งของ $\mathbf{x}^{\prime}=\begin{pmatrix}-1&-2\\2&-1\end{pmatrix}\mathbf{x}$
+  steps:
+  - text: หาสมการลักษณะเฉพาะ $\det(A-\lambda I)=(\lambda+1)^2+4=0$
+    why: ตัวกำหนดของ $\begin{pmatrix}-1-\lambda&-2\\2&-1-\lambda\end{pmatrix}$ คือ $(\lambda+1)^2+4$
+  - text: แก้ได้ $\lambda+1=\pm 2i$ จึงได้ค่าเฉพาะ $\lambda=-1\pm 2i$
+    why: รากของจำนวนลบคือจำนวนจินตภาพ จึงได้ค่าเฉพาะเชิงซ้อนคู่
+  - text: ส่วนจินตภาพ $b=2$ จึงได้คาบ $\dfrac{2\pi}{2}=\pi$ และส่วนจริง $-1$ ทำให้ผลเฉลยลดลงแบบเอกซ์โพเนนเชียล
+    why: ผลเฉลยมีรูป $e^{-t}\cos 2t$ และ $e^{-t}\sin 2t$
+  answer: ค่าเฉพาะคือ $-1\pm 2i$ คาบของการแกว่งคือ $\pi$
+- type: check
+  problem: math.de.linear-systems.p008
+  prompt: ลองหาคาบของการแกว่งจากส่วนจินตภาพของค่าเฉพาะก่อนอ่านต่อ
+glossary:
+- term: ค่าเฉพาะ
+  definition: ค่า $\lambda$ ที่ทำให้ $A\mathbf{v}=\lambda\mathbf{v}$ มีคำตอบที่ $\mathbf{v}\ne\mathbf{0}$
+- term: เวกเตอร์เฉพาะ
+  definition: เวกเตอร์ $\mathbf{v}\ne\mathbf{0}$ ที่เมื่อคูณด้วย $A$ แล้วได้ผลเป็นผลคูณของตัวมันเองกับค่าเฉพาะ
+- term: สมการลักษณะเฉพาะ
+  definition: สมการ $\det(A-\lambda I)=0$ ซึ่งรากคือค่าเฉพาะทั้งหมดของ $A$
+- term: เวกเตอร์เฉพาะทั่วไป
+  definition: เวกเตอร์ $\mathbf{w}$ ที่ทำให้ $(A-\lambda I)\mathbf{w}$ เป็นเวกเตอร์เฉพาะเมื่อค่าเฉพาะซ้ำและมีเวกเตอร์เฉพาะไม่พอ
+flashcards:
+- front: ผลเฉลยของ $\mathbf{x}^{\prime}=A\mathbf{x}$ ที่เป็นค่าเฉพาะจริง $\lambda$ กับเวกเตอร์เฉพาะ $\mathbf{v}$
+  back: $e^{\lambda t}\mathbf{v}$
+- front: ระบบเสถียรเมื่อใด
+  back: เมื่อส่วนจริงของค่าเฉพาะทุกตัวของ $A$ เป็นลบ
+- front: ค่าเฉพาะคู่เชิงซ้อน $a \pm bi$ ให้ผลเฉลยแบบใด
+  back: $e^{at}\cos bt$ และ $e^{at}\sin bt$ ลดลงถ้า $a<0$
+- front: อนุพันธ์ของสมการอันดับสองเขียนเป็นระบบอันดับหนึ่งอย่างไร
+  back: ให้ $u=x$ และ $v=x^{\prime}$ จะได้ $u^{\prime}=v$ และ $v^{\prime}=x^{\prime\prime}$
+references:
+- title: Eigenvalues and eigenvectors
+  url: https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Matrix exponential
+  url: https://en.wikipedia.org/wiki/Matrix_exponential
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Phase portrait
+  url: https://en.wikipedia.org/wiki/Phase_portrait
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

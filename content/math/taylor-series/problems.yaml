@@ -1,0 +1,418 @@
+problems:
+- id: math.calculus.taylor-series.p001
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 1
+  type: numeric
+  stem: 'จงหาสัมประสิทธิ์ของ $x^3$ ในอนุกรมแมคลอรินของ $e^x$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.1667
+    tolerance: 0.0001
+  hints:
+  - อนุกรมแมคลอรินของ $e^x$ มีสัมประสิทธิ์ของ $x^n$ เป็น $\frac{1}{n!}$
+  - ดูว่า $3!$ เท่ากับเท่าใดแล้วหารหนึ่งด้วยค่านั้น
+  misconceptions:
+  - match: 0.3333
+    feedback: ใช้ $\frac{1}{3}$ แทน $\frac{1}{3!}$ ลืมคูณแฟกทอเรียลของ $3$
+  solution: $e^x = \sum \frac{x^n}{n!}$ สัมประสิทธิ์ของ $x^3$ คือ $\frac{1}{3!} = \frac{1}{6} \approx 0.1667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p002
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 1
+  type: mcq
+  stem: 'พหุนามแมคลอรินดีกรี $3$ ของ $\sin x$ คือข้อใด'
+  choices:
+  - id: a
+    text: $x - \dfrac{x^3}{6}$
+    correct: true
+  - id: b
+    text: $x + \dfrac{x^3}{3}$
+    correct: false
+    feedback: สัมประสิทธิ์ผิด และเครื่องหมายผิด ต้องหารด้วย $3! = 6$ และเป็นลบ
+  - id: c
+    text: $1 - \dfrac{x^2}{2}$
+    correct: false
+    feedback: นี่คือพหุนามของ $\cos x$ ไม่ใช่ $\sin x$
+  - id: d
+    text: $x - \dfrac{x^2}{6}$
+    correct: false
+    feedback: $\sin x$ มีเฉพาะกำลังคี่ของ $x$ จึงไม่มี $x^2$
+  hints:
+  - หาอนุพันธ์ของ $\sin x$ ทีละอันดับแล้วแทนค่า $0$
+  - $\sin x$ มีเฉพาะพจน์ที่ $x$ มีกำลังเป็นเลขคี่
+  solution: $\sin x = x - \frac{x^3}{3!} + \cdots$ พหุนามดีกรี $3$ คือ $x - \frac{x^3}{6}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p003
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 2
+  type: numeric
+  stem: 'จงใช้พหุนามเทย์เลอร์ดีกรี $2$ ของ $\ln x$ รอบ $a=1$ ประมาณค่า $\ln(1.1)$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.095
+    tolerance: 0.0001
+  hints:
+  - อนุพันธ์ของ $\ln x$ คือ $\frac{1}{x}$ ซึ่งที่ $x=1$ มีค่า $1$
+  - พหุนามคือ $f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2$
+  misconceptions:
+  - match: 0.1
+    feedback: ใช้เพียงดีกรี $1$ ทำให้ตกพจน์ $-\frac{(x-1)^2}{2}$ ซึ่งต้องรวมด้วยเพื่อให้ได้ดีกรี $2$
+  solution: $f(1)=0$, $f'(1)=1$, $f''(1)=-1$ จึงได้ $P_2(x) = (x-1) - \frac{(x-1)^2}{2}$ เมื่อ $x=1.1$ ได้ $0.1 - 0.005 = 0.095$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p004
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาสัมประสิทธิ์ของ $x^4$ ในอนุกรมแมคลอรินของ $\cos x$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.0417
+    tolerance: 0.0001
+  hints:
+  - อนุกรมของ $\cos x$ มีเฉพาะกำลังคู่ของ $x$
+  - สัมประสิทธิ์ของ $x^{2k}$ คือ $\frac{(-1)^k}{(2k)!}$
+  misconceptions:
+  - match: -0.0417
+    feedback: เครื่องหมายผิด $x^4$ อยู่ที่ $k=2$ ซึ่ง $(-1)^2 = +1$ จึงเป็นบวก
+  solution: $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$ สัมประสิทธิ์ของ $x^4$ คือ $\frac{1}{24} \approx 0.0417$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p005
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 2
+  type: mcq
+  stem: 'ใช้พหุนาม $1 + x + \frac{x^2}{2}$ ประมาณ $e^x$ บนช่วง $0 \le x \le 1$ ขอบเขตบนของค่าคลาดเคลื่อนคือข้อใด'
+  choices:
+  - id: a
+    text: $\dfrac{1}{6}$
+    correct: false
+    feedback: ลืม $e^c$ ในเศษเหลือลากรองจ์ เมื่อ $c$ อยู่ในช่วง $(0,x)$ ค่า $e^c$ อาจมากกว่า $1$
+  - id: b
+    text: $\dfrac{e}{2}$
+    correct: false
+    feedback: ใช้ $2!$ หารแทน $3!$ เศษเหลือของดีกรี $2$ มีตัวหาร $3!$
+  - id: c
+    text: $\dfrac{e^2}{6}$
+    correct: false
+    feedback: ค่า $c$ อยู่ในช่วง $(0,1)$ ดังนั้น $e^c$ มากที่สุดเมื่อ $c=1$ ได้ $e$ ไม่ใช่ $e^2$
+  - id: d
+    text: $\dfrac{e}{6}$
+    correct: true
+  hints:
+  - เศษเหลือลากรองจ์ดีกรี $2$ คือ $\frac{e^c}{3!}x^3$ สำหรับ $c$ บางค่า
+  - ค่าสูงสุดของ $e^c$ บนช่วง $[0,1]$ คือ $e$ เมื่อ $c=1$
+  solution: เศษเหลือ $R_2 = \frac{e^c}{3!}x^3$ เมื่อ $0 < c < x \le 1$ จึงมีขอบเขตบน $\frac{e}{6}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p006
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 2
+  type: expression
+  stem: 'จงเขียนพหุนามแมคลอรินดีกรี $4$ ของ $\cos(2x)$'
+  prefix: 'P_4(x) ='
+  answer:
+    latex: '1 - 2x^2 + \frac{2x^4}{3}'
+    variables:
+    - x
+  misconceptions:
+  - match: '1 - \frac{x^2}{2} + \frac{x^4}{24}'
+    feedback: นี่คือพหุนามของ $\cos x$ ต้องแทน $u = 2x$ แล้วยกกำลังทั้ง $2x$ เช่น $(2x)^2 = 4x^2$
+  - match: '1 - 2x^2 + \frac{x^4}{6}'
+    feedback: ยกกำลังสี่ของ $2x$ ผิด $(2x)^4 = 16x^4$ หารด้วย $4! = 24$ ได้ $\frac{2}{3}x^4$
+  hints:
+  - เริ่มจาก $\cos u = 1 - \frac{u^2}{2!} + \frac{u^4}{4!} - \cdots$ แล้วแทน $u = 2x$
+  - คำนวณ $\frac{(2x)^2}{2}$ และ $\frac{(2x)^4}{24}$ แยกกันทีละพจน์
+  solution: $\cos(2x) = 1 - \frac{(2x)^2}{2!} + \frac{(2x)^4}{4!} - \cdots = 1 - 2x^2 + \frac{16x^4}{24} - \cdots$ จึงได้ $P_4(x) = 1 - 2x^2 + \frac{2x^4}{3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p007
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาสัมประสิทธิ์ของ $x^2$ ในการขยาย $(1+x)^{1/2}$ เป็นอนุกรมกำลังรอบ $0$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: -0.125
+    tolerance: 0.0001
+  hints:
+  - ใช้อนุกรมทวินาม $(1+x)^k = \sum \binom{k}{n} x^n$ โดย $k = \frac12$
+  - ตัวประกอบของ $\binom{k}{2}$ คือ $\frac{k(k-1)}{2}$
+  misconceptions:
+  - match: 0.125
+    feedback: เครื่องหมายผิด ค่าของ $k(k-1)$ เมื่อ $k=\frac12$ เป็นลบ
+  solution: $\binom{1/2}{2} = \frac{(1/2)(-1/2)}{2} = -\frac18 = -0.125$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p008
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 3
+  type: numeric
+  stem: 'ลูกตุ้มนาฬิกาแกว่งทำมุม $\theta = 0.2$ เรเดียนกับแนวดิ่ง (ข้อมูลสมมติ) ถ้าประมาณ $\sin\theta \approx \theta$ ความคลาดเคลื่อนสัมพัทธ์ $\dfrac{|\theta-\sin\theta|}{\sin\theta}$ คิดเป็นกี่เปอร์เซ็นต์ (ตอบทศนิยม 2 ตำแหน่ง)'
+  answer:
+    value: 0.67
+    tolerance: 0.01
+    unit: '%'
+  hints:
+  - ค่าคลาดเคลื่อนสัมบูรณ์ประมาณได้จาก $\frac{\theta^3}{6}$ ซึ่งยังต้องหารด้วย $\sin\theta$
+  - คำนวณ $\sin 0.2$ ด้วยเครื่องคิดเลขหรือ Python แล้วคูณด้วย $100$
+  misconceptions:
+  - match: 0.13
+    feedback: ลืมหารด้วย $\sin\theta$ ผลที่ได้คือค่าคลาดเคลื่อนสัมบูรณ์คูณ $100$ ไม่ใช่สัมพัทธ์
+  solution: $\sin 0.2 \approx 0.198669$ จึง $|\theta - \sin\theta| \approx 0.001331$ และ $\frac{0.001331}{0.198669}\times 100 \approx 0.67\%$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p009
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 3
+  type: numeric
+  stem: 'โรงงานผลิตหลอดไฟในนครปฐมจำลองความน่าจะเป็นด้วยฟังก์ชัน $e^{-x^2}$ (ข้อมูลสมมติ) จงประมาณ $\displaystyle\int_0^1 e^{-x^2}\,dx$ ด้วยสามพจน์แรกของอนุกรมแมคลอริน (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.7667
+    tolerance: 0.0001
+  hints:
+  - แทน $x^2$ ลงในอนุกรมของ $e^t$ เพื่อหาอนุกรมของ $e^{-x^2}$
+  - ปริพันธ์ $x^{2n}$ จาก $0$ ถึง $1$ คือ $\frac{1}{2n+1}$
+  misconceptions:
+  - match: 0.7917
+    feedback: ปริพันธ์ $\frac{x^4}{2}$ ต้องหารด้วย $5$ จึงได้ $\frac{1}{10}$ ไม่ใช่หารด้วย $4$ ซึ่งได้ $\frac{1}{8}$
+  solution: $e^{-x^2} = 1 - x^2 + \frac{x^4}{2} - \cdots$ ปริพันธ์ทีละพจน์ได้ $1 - \frac13 + \frac{1}{10} = \frac{23}{30} \approx 0.7667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p010
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 3
+  type: mcq
+  stem: 'รัศมีการลู่เข้าของอนุกรมแมคลอรินของ $\dfrac{1}{1+x^2}$ คือข้อใด'
+  choices:
+  - id: a
+    text: $\infty$
+    correct: false
+    feedback: ฟังก์ชันไม่นิยามที่ $x = \pm i$ ซึ่งมีระยะห่างจาก $0$ เท่ากับ $1$ จึงจำกัดรัศมี
+  - id: b
+    text: $2$
+    correct: false
+    feedback: ระยะจาก $0$ ถึงจุดที่ฟังก์ชันไม่นิยามบนระนาบเชิงซ้อนคือ $1$ ไม่ใช่ $2$
+  - id: c
+    text: $1$
+    correct: true
+  - id: d
+    text: $0$
+    correct: false
+    feedback: อนุกรมลู่เข้าที่ $|x|<1$ จึงไม่ได้ลู่เข้าเฉพาะที่ $0$
+  hints:
+  - ดูค่าของ $x$ ที่ทำให้ตัวส่วน $1+x^2$ เป็นศูนย์
+  - ระยะจาก $0$ ถึงจุดเหล่านั้นคือรัศมี
+  solution: $\frac{1}{1+x^2} = \sum (-1)^n x^{2n}$ ลู่เข้าเมื่อ $|x^2|<1$ จึงได้ $R=1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p011
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 3
+  type: match
+  stem: 'จับคู่ฟังก์ชันกับอนุกรมแมคลอรินที่แทนฟังก์ชันนั้น'
+  pairs:
+  - left: '$e^x$'
+    right: '$\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$'
+  - left: '$\sin x$'
+    right: '$\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{(2n+1)!}$'
+  - left: '$\cos x$'
+    right: '$\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n}}{(2n)!}$'
+  - left: '$(1+x)^k$'
+    right: '$\displaystyle\sum_{n=0}^{\infty}\binom{k}{n}x^n$'
+  hints:
+  - ดูเลขชี้กำลังของ $x$ ว่าเป็นเลขคู่ เลขคี่ หรือเลขทุกจำนวน
+  - ฟังก์ชันที่เป็นฟังก์ชันคู่มีเฉพาะกำลังคู่ของ $x$
+  solution: $e^x$ มีทุกกำลังของ $x$ ส่วน $\sin x$ มีเฉพาะกำลังคี่ และ $\cos x$ มีเฉพาะกำลังคู่ ส่วน $(1+x)^k$ ใช้สัมประสิทธิ์ทวินาม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p012
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 3
+  type: order
+  stem: 'เรียงขั้นตอนการสร้างอนุกรมแมคลอรินของฟังก์ชัน $f$ ตามลำดับที่ถูกต้อง'
+  items:
+  - หาอนุพันธ์ $f^{(n)}(x)$ ของ $f$ ทีละอันดับ
+  - แทนค่า $x = 0$ ลงในอนุพันธ์แต่ละอันดับ
+  - หารค่า $f^{(n)}(0)$ ด้วย $n!$ เป็นสัมประสิทธิ์ของ $x^n$
+  - เขียนผลรวม $\sum \frac{f^{(n)}(0)}{n!}x^n$ เป็นอนุกรม
+  - ตรวจว่าเศษเหลือของการประมาณเข้าใกล้ $0$ ภายในช่วงที่สนใจ
+  hints:
+  - ขั้นแรกต้องได้อนุพันธ์ก่อนจึงแทนค่าได้
+  - ขั้นสุดท้ายเป็นการตรวจว่าอนุกรมแทนฟังก์ชันจริงหรือไม่
+  solution: หาอนุพันธ์ แทนค่า $0$ หารด้วยแฟกทอเรียล รวมเป็นอนุกรม แล้วตรวจเศษเหลือ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p013
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 3
+  type: text
+  stem: 'พหุนามที่สร้างจากอนุพันธ์ของฟังก์ชัน ณ จุด $a$ เพื่อประมาณฟังก์ชันรอบจุดนั้น เรียกว่าอะไร (ตอบชื่อ)'
+  accepted:
+  - พหุนามเทย์เลอร์
+  - เทย์เลอร์
+  - Taylor polynomial
+  - taylor polynomial
+  hints:
+  - ชื่อของนักคณิตศาสตร์ที่ให้ทฤษฎีบทนี้คือเทย์เลอร์
+  - ถ้า $a=0$ เรียกชื่อพิเศษ เป็นส่วนหนึ่งของคำตอบ
+  solution: เรียกว่าพหุนามเทย์เลอร์ของฟังก์ชันรอบจุด $a$ และถ้า $a=0$ เรียกว่าพหุนามแมคลอริน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p014
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 4
+  type: numeric
+  stem: 'ใช้สามพจน์แรกของอนุกรมแมคลอรินของ $\ln(1+x)$ ประมาณค่าที่ $x=0.5$ ค่าคลาดเคลื่อนไม่เกินเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.0156
+    tolerance: 0.0001
+  hints:
+  - อนุกรมของ $\ln(1+x)$ เป็นอนุกรมสลับที่พจน์ค่อย ๆ ลดลงเมื่อ $0<x<1$
+  - ค่าคลาดเคลื่อนไม่เกินพจน์ถัดไปที่ตัดทิ้ง คือพจน์ที่มี $x^4$
+  misconceptions:
+  - match: 0.0625
+    feedback: ใช้ $x^4$ แต่ลืมหารด้วย $4$ ซึ่งเป็นสัมประสิทธิ์ของพจน์นั้น
+  solution: พจน์ที่ตัดทิ้งคือ $\frac{x^4}{4}$ เมื่อ $x=0.5$ จึงได้ $\frac{0.0625}{4} = 0.015625 \approx 0.0156$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p015
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 4
+  type: mcq
+  stem: 'ค่าของ $\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x^2}$ คือข้อใด'
+  choices:
+  - id: a
+    text: $0$
+    correct: false
+    feedback: เศษและส่วนมีกำลังเท่ากันที่ระดับต่ำสุด จึงไม่เป็นศูนย์ในลิมิตนี้
+  - id: b
+    text: $\dfrac{1}{2}$
+    correct: true
+  - id: c
+    text: $1$
+    correct: false
+    feedback: ลืมสัมประสิทธิ์ $\frac{1}{2!}$ ของ $\cos x$ เมื่อแทนด้วยอนุกรม
+  - id: d
+    text: $\infty$
+    correct: false
+    feedback: ลิมิตนี้จำกัด เพราะเศษมีพจน์ $\frac{x^2}{2}$ ซึ่งหารด้วย $x^2$ ได้ค่าคงที่
+  hints:
+  - แทน $\cos x = 1 - \frac{x^2}{2} + \cdots$ ลงในเศษ
+  - หารเศษที่เหลือด้วย $x^2$ แล้วแทน $x = 0$
+  solution: $1-\cos x = \frac{x^2}{2} - \cdots$ จึง $\frac{1-\cos x}{x^2} \to \frac{1}{2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p016
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 4
+  type: numeric
+  stem: 'จงหาค่าของ $\displaystyle\lim_{x\to 0}\frac{\sin x - x}{x^3}$ โดยใช้อนุกรมแมคลอริน (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: -0.1667
+    tolerance: 0.0001
+  hints:
+  - แทน $\sin x = x - \frac{x^3}{6} + \cdots$ ลงในเศษ
+  - หลังหักพจน์ $x$ ออกแล้ว ตัวส่วน $x^3$ จะตัดกับกำลังสามในเศษ
+  misconceptions:
+  - match: 0.1667
+    feedback: เครื่องหมายผิด เศษคือ $\sin x - x$ ซึ่งมีพจน์ $-\frac{x^3}{6}$ จึงติดลบ
+  solution: $\sin x - x = -\frac{x^3}{6} + \cdots$ ดังนั้นลิมิตคือ $-\frac{1}{6} \approx -0.1667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p017
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 4
+  type: numeric
+  stem: 'ช่างในเชียงใหม่ต้องการประมาณ $\sqrt{1.2}$ เพื่อคำนวณความยาวด้านของแผ่นกระเบื้องที่ปรับใหม่ (ข้อมูลสมมติ) ให้ใช้สามพจน์แรกของอนุกรมทวินามรอบ $0$ ของ $(1+x)^{1/2}$ ที่ $x=0.2$ (ตอบทศนิยม 3 ตำแหน่ง)'
+  answer:
+    value: 1.095
+    tolerance: 0.0005
+  hints:
+  - ใช้สัมประสิทธิ์ทวินามของ $(1+x)^{1/2}$ สำหรับ $n=0,1,2$
+  - ผลรวมคือ $1 + \frac{x}{2} - \frac{x^2}{8}$
+  misconceptions:
+  - match: 1.1
+    feedback: ใช้เพียงสองพจน์แรกแล้วตกพจน์ $-\frac{x^2}{8}$ ซึ่งต้องรวมด้วยตามที่โจทย์กำหนด
+  solution: $1 + \frac{0.2}{2} - \frac{0.2^2}{8} = 1 + 0.1 - 0.005 = 1.095$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p018
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 4
+  type: mcq
+  stem: 'ถ้า $y = \sum a_n x^n$ เป็นผลเฉลยของ $y^{\prime} = y$ โดยที่ $y(0)=1$ ค่าสัมประสิทธิ์ $a_n$ คือข้อใด'
+  choices:
+  - id: a
+    text: $\dfrac{1}{n}$
+    correct: false
+    feedback: ค่านี้ไม่เป็นไปตามความสัมพันธ์เวียนเกิด $(n+1)a_{n+1} = a_n$
+  - id: b
+    text: $\dfrac{1}{n!}$
+    correct: true
+  - id: c
+    text: $n!$
+    correct: false
+    feedback: ความสัมพันธ์เวียนเกิดให้ $a_{n+1} = \frac{a_n}{n+1}$ ซึ่งหมายถึงตัวหารเพิ่มขึ้น ไม่ใช่ตัวคูณ
+  - id: d
+    text: $1$
+    correct: false
+    feedback: ถ้า $a_n = 1$ ทุกตัว ผลรวมจะเป็น $\frac{1}{1-x}$ ซึ่งไม่ตรงกับ $y^{\prime}=y$
+  hints:
+  - หาอนุพันธ์ของ $y = \sum a_n x^n$ ทีละพจน์แล้วเทียบสัมประสิทธิ์
+  - เทียบสัมประสิทธิ์ของ $x^n$ ทั้งสองข้างของ $y^{\prime}=y$
+  solution: $(n+1)a_{n+1} = a_n$ และ $a_0 = 1$ จึงได้ $a_n = \frac{1}{n!}$ ซึ่งคือ $e^x$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p019
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 5
+  type: numeric
+  stem: 'ผลเฉลยของ $y^{\prime\prime} + y = 0$ โดยที่ $y(0)=1$ และ $y^{\prime}(0)=0$ เขียนเป็นอนุกรมกำลัง จงประมาณ $y(1)$ ด้วยพจน์ถึง $x^4$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.5417
+    tolerance: 0.0001
+  hints:
+  - แทน $y = \sum a_n x^n$ ลงในสมการ แล้วเทียบสัมประสิทธิ์ของ $x^n$
+  - เมื่อเทียบแล้วได้ $a_{n+2} = -\frac{a_n}{(n+1)(n+2)}$ และ $a_0 = 1$, $a_1 = 0$
+  misconceptions:
+  - match: 0.5
+    feedback: ตัดพจน์ $\frac{x^4}{24}$ ทิ้ง ต้องรวมพจน์ถึง $x^4$ ตามโจทย์
+  solution: $a_0=1$, $a_2=-\frac12$, $a_4=\frac{1}{24}$ และพจน์คี่เป็นศูนย์ จึงได้ $y(1)\approx 1-\frac12+\frac{1}{24} = \frac{13}{24} \approx 0.5417$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.taylor-series.p020
+  topics:
+  - math.calculus.taylor-series
+  difficulty: 5
+  type: numeric
+  stem: 'ผลเฉลยของสมการแอรี $y^{\prime\prime} = x\,y$ โดยที่ $y(0)=1$ และ $y^{\prime}(0)=0$ เขียนเป็นอนุกรมกำลัง จงประมาณ $y(1)$ ด้วยพจน์ถึง $x^6$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.1722
+    tolerance: 0.0001
+  hints:
+  - ความสัมพันธ์เวียนเกิดคือ $a_{n+2} = \dfrac{a_{n-1}}{(n+1)(n+2)}$ เมื่อ $n\ge1$
+  - จากเงื่อนไขเริ่มต้นได้ $a_0 = 1$, $a_1 = 0$, $a_2 = 0$ แล้วหา $a_3$ และ $a_6$
+  misconceptions:
+  - match: 1.1667
+    feedback: ตกพจน์ $x^6$ ซึ่งมีสัมประสิทธิ์ $\frac{1}{180}$ ต้องรวมด้วย
+  solution: $a_3 = \frac16$, $a_6 = \frac{a_3}{30} = \frac{1}{180}$ จึงได้ $y(1) \approx 1 + \frac16 + \frac{1}{180} = \frac{211}{180} \approx 1.1722$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

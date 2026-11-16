@@ -1,0 +1,97 @@
+id: math.de.transfer-functions
+subject: math
+title:
+  th: ฟังก์ชันถ่ายโอนและแผนภาพขั้ว
+  en: Transfer functions and pole diagrams
+summary: ฟังก์ชันถ่ายโอนเป็นอัตราส่วนเอาต์พุตต่ออินพุต ขั้วและแผนภาพขั้วบอกพฤติกรรมและความเสถียร และผลตอบสนองเชิงความถี่ที่ให้เกนกับเฟส พร้อมระบบอันดับสองมาตรฐาน
+difficulty: 9.5
+minutes: 40
+prerequisites:
+- math.de.laplace-transform
+- math.de.sinusoidal-response
+encompasses:
+- id: math.de.laplace-transform
+  weight: 0.4
+- id: math.de.sinusoidal-response
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: pole-diagram.svg
+  alt: ระนาบเชิงซ้อนมีแกนนอนเป็นส่วนจริงและแกนตั้งเป็นส่วนจินตภาพ ครึ่งระนาบด้านซ้ายมีสีเขียวแสดงการลดลง มีขั้วจริงที่ -3 และขั้วคู่ที่ -1 บวกลบ 2i อยู่ทางซ้าย ครึ่งระนาบด้านขวามีสีแดงอ่อนแสดงการโตขึ้น
+  caption: แผนภาพขั้วของระบบตัวอย่าง ขั้วทางซ้ายทำให้ผลตอบสนองลดลง
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: หาขั้วจากตัวส่วนกำลังสอง
+  problem: จงหาขั้วของ $W(s)=\dfrac{1}{s^2+4s+13}$ และอธิบายพฤติกรรมของผลตอบสนอง
+  steps:
+  - text: เขียนตัวส่วนในรูปกำลังสองสมบูรณ์ $s^2+4s+13 = (s+2)^2+9$
+    why: การทำกำลังสองสมบูรณ์เผยส่วนจริงและส่วนจินตภาพของราก
+  - text: ตั้ง $(s+2)^2 = -9$ จะได้ $s+2 = \pm 3i$ จึงได้ขั้ว $s = -2 \pm 3i$
+    why: รากของจำนวนลบคือจำนวนจินตภาพ จึงได้ขั้วคู่เชิงซ้อน
+  - text: ส่วนจริงเป็น $-2$ จึงลดลงแบบเอกซ์โพเนนเชียล และส่วนจินตภาพเป็น $3$ จึงแกว่งด้วยความถี่ $3$
+    why: ผลตอบสนองมีรูป $e^{-2t}\cos 3t$ และ $e^{-2t}\sin 3t$ จึงลดลงพร้อมแกว่ง
+  answer: ขั้วคือ $-2 \pm 3i$ ผลตอบสนองลดลงแบบเอกซ์โพเนนเชียลพร้อมแกว่ง
+- type: check
+  problem: math.de.transfer-functions.p001
+  prompt: ลองหาขั้วที่อยู่ทางขวาสุดจากตัวส่วนก่อนอ่านต่อ
+- type: worked-example
+  title: เกนและเฟสที่ความถี่หนึ่ง
+  problem: จงหาเกน $|W(2i)|$ และเฟส $\arg W(2i)$ ของ $W(s)=\dfrac{1}{s^2+4s+13}$
+  steps:
+  - text: แทน $s=2i$ ลงในตัวส่วนได้ $(2i)^2+4(2i)+13 = 9+8i$
+    why: $(2i)^2 = -4$ จึงรวมกับ $13$ ได้ $9$ และ $4\cdot 2i = 8i$
+  - text: เกน $|W(2i)| = \dfrac{1}{|9+8i|} = \dfrac{1}{\sqrt{145}}$
+    why: ขนาดของจำนวนเชิงซ้อนคือรากของผลบวกกำลังสองของส่วนจริงและส่วนจินตภาพ
+  - text: เฟส $\arg W(2i) = -\arg(9+8i) = -\arctan\dfrac{8}{9}$
+    why: เฟสของ $\frac{1}{z}$ เท่ากับลบเฟสของ $z$ จึงติดลบ
+  answer: เกน $\dfrac{1}{\sqrt{145}}$ และเฟส $-\arctan\dfrac{8}{9}$
+- type: check
+  problem: math.de.transfer-functions.p004
+  prompt: ลองคำนวณขนาดของ W(i) เมื่อตัวส่วนมีส่วนจริงและส่วนจินตภาพ
+- type: figure
+  src: gain-curves.svg
+  alt: กราฟเกนของระบบอันดับสองกับความถี่โดยมีความถี่ธรรมชาติที่ 1 เส้นสีส้มมียอดแหลมสูงมากใกล้ความถี่ 1 เส้นประสีน้ำเงินมียอดเตี้ยกว่า เส้นสีดำเรียบและไม่มียอดชัด
+  caption: เกนของระบบอันดับสองที่มีอัตราส่วนการหน่วงต่างกัน
+glossary:
+- term: ฟังก์ชันถ่ายโอน
+  definition: อัตราส่วนของการแปลงลาปลาซของเอาต์พุตต่ออินพุตเมื่อค่าเริ่มต้นเป็นศูนย์
+- term: ขั้ว
+  definition: รากของตัวส่วนของฟังก์ชันถ่ายโอน ซึ่งกำหนดพฤติกรรมของผลตอบสนองชั่วคราว
+- term: ศูนย์
+  definition: รากของตัวเศษของฟังก์ชันถ่ายโอน
+- term: เกน
+  definition: ขนาดของผลตอบสนองเชิงความถี่ $|W(i\omega)|$ ซึ่งเป็นอัตราส่วนแอมพลิจูดของเอาต์พุตต่ออินพุต
+- term: อัตราส่วนการหน่วง
+  definition: ค่า $\zeta$ ในระบบอันดับสองมาตรฐาน ซึ่งควบคุมการลดของการแกว่งและรูปของยอดเกน
+flashcards:
+- front: ฟังก์ชันถ่ายโอนของระบบ $p(D)x=f$ เมื่อค่าเริ่มต้นเป็นศูนย์
+  back: $W(s) = \frac{1}{p(s)}$
+- front: ระบบเสถียรเมื่อใด
+  back: เมื่อขั้วทุกตัวของ $W(s)$ มีส่วนจริงเป็นลบ
+- front: ขั้วคู่ $a \pm bi$ ให้ผลตอบสนองแบบใด
+  back: $e^{at}$ คูณการแกว่งด้วยความถี่ $b$ ลดลงถ้า $a<0$
+- front: เกนของ $W(s)$ ที่ความถี่ $\omega$
+  back: $|W(i\omega)|$
+references:
+- title: Transfer function
+  url: https://en.wikipedia.org/wiki/Transfer_function
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Pole–zero plot
+  url: https://en.wikipedia.org/wiki/Pole%E2%80%93zero_plot
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Stability theory
+  url: https://en.wikipedia.org/wiki/Stability_theory
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

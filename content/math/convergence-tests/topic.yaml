@@ -1,0 +1,102 @@
+id: math.calculus.convergence-tests
+subject: math
+title:
+  th: การทดสอบการลู่เข้าของอนุกรม
+  en: Convergence tests for series
+summary: การทดสอบเปรียบเทียบ การเปรียบเทียบลิมิต อนุกรมสลับเครื่องหมายและการทดสอบของไลบ์นิซ การลู่เข้าสัมบูรณ์ การทดสอบอัตราส่วนและการทดสอบราก พร้อมผังเลือกวิธีให้เหมาะกับรูปพจน์
+difficulty: 8.5
+minutes: 40
+prerequisites:
+- math.calculus.infinite-series
+encompasses:
+- id: math.calculus.infinite-series
+  weight: 0.4
+- id: math.calculus.limits
+  weight: 0.2
+curriculum_tags: []
+lessons:
+- type: figure
+  src: alternating-partial-sums.svg
+  alt: กราฟจุดของผลบวกย่อยสิบค่าแรกของอนุกรมสลับเครื่องหมาย จุดสลับขึ้นลงรอบเส้นประแนวนอนซึ่งเป็นค่าลิมิต และการแกว่งแคบลงเมื่อ n มากขึ้น
+  caption: ผลบวกย่อยของอนุกรมสลับเครื่องหมายแกว่งรอบค่าลิมิต
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: test-selection.svg
+  alt: ผังการตัดสินใจเลือกการทดสอบ เริ่มจากถามว่าพจน์ไม่เข้าหาศูนย์หรือไม่ แล้วถามต่อเรื่องกำลังของ n หรือแฟกทอเรียล เครื่องหมายสลับ และสุดท้ายใช้การเปรียบเทียบ
+  caption: ผังเลือกการทดสอบตามรูปพจน์
+- type: worked-example
+  title: การเปรียบเทียบลิมิตกับ p-series
+  problem: จงพิจารณาว่า $\displaystyle\sum_{n=1}^{\infty}\frac{n+5}{n^3+1}$ ลู่เข้าหรือลู่ออก
+  steps:
+  - text: เมื่อ $n$ ใหญ่ พจน์ $\frac{n+5}{n^3+1}$ มีพฤติกรรมคล้าย $\frac{n}{n^3} = \frac{1}{n^2}$ จึงเลือกเทียบกับ $\sum \frac{1}{n^2}$
+    why: เลือกมาตรฐานจากกำลังสูงสุดในเศษและส่วนของพจน์
+  - text: คำนวณ $\displaystyle\lim_{n\to\infty}\frac{(n+5)/(n^3+1)}{1/n^2} = \lim_{n\to\infty}\frac{n^3+5n^2}{n^3+1} = 1$
+    why: ลิมิตนี้เป็นจำนวนบวกจำกัด ซึ่งจำเป็นต่อการทดสอบเปรียบเทียบลิมิต
+  - text: เนื่องจาก $\sum \frac{1}{n^2}$ เป็น $p$-series ที่ $p = 2 > 1$ จึงลู่เข้า และ $\sum \frac{n+5}{n^3+1}$ ก็ลู่เข้าด้วย
+  answer: ลู่เข้า
+- type: check
+  problem: math.calculus.convergence-tests.p001
+  prompt: ลองตัดสินพจน์ที่ n ของอนุกรมนี้ก่อนอ่านต่อ
+- type: worked-example
+  title: การทดสอบอัตราส่วนกับพจน์ที่มีกำลังของ n
+  problem: จงพิจารณาว่า $\displaystyle\sum_{n=1}^{\infty}\frac{n^2}{3^n}$ ลู่เข้าหรือลู่ออก
+  steps:
+  - text: หาอัตราส่วน $\displaystyle\left|\frac{a_{n+1}}{a_n}\right| = \frac{(n+1)^2}{3^{n+1}}\cdot\frac{3^n}{n^2} = \frac{(n+1)^2}{3n^2}$
+    why: กำลังของ $3$ ตัดกันเหลือ $\frac13$ เพียงตัวเดียว
+  - text: หาลิมิต $\displaystyle\lim_{n\to\infty}\frac{(n+1)^2}{3n^2} = \frac13$
+    why: พจน์กำลังสองในเศษและส่วนมีสัมประสิทธิ์เท่ากัน ทำให้ลิมิตเป็นตัวคูณ $\frac13$
+  - text: เนื่องจาก $\frac13 < 1$ การทดสอบอัตราส่วนสรุปว่าอนุกรมลู่เข้าสัมบูรณ์
+  answer: ลู่เข้าสัมบูรณ์
+- type: check
+  problem: math.calculus.convergence-tests.p004
+  prompt: ลองเรียงขั้นตอนการทดสอบของไลบ์นิซก่อนดูข้อสรุป
+glossary:
+- term: การทดสอบเปรียบเทียบ
+  definition: วิธีตัดสินการลู่เข้าของอนุกรมที่มีพจน์ไม่เป็นลบ โดยเทียบพจน์กับอนุกรมมาตรฐานที่รู้ผลแล้ว
+- term: ลู่เข้าสัมบูรณ์
+  definition: อนุกรม $\sum a_n$ ที่ $\sum |a_n|$ ลู่เข้า ซึ่งจะทำให้ $\sum a_n$ ลู่เข้าด้วย
+- term: ลู่เข้าแบบมีเงื่อนไข
+  definition: อนุกรมที่ $\sum a_n$ ลู่เข้า แต่ $\sum |a_n|$ ลู่ออก
+- term: ขอบเขตความคลาดเคลื่อน
+  definition: ขอบเขตบนของค่าสัมบูรณ์ของเศษเหลือ เมื่อรวมพจน์แรกเป็นค่าประมาณ ของอนุกรมสลับเครื่องหมาย
+flashcards:
+- front: การทดสอบเปรียบเทียบโดยตรง
+  back: ถ้า $0 \le a_n \le b_n$ และ $\sum b_n$ ลู่เข้า แล้ว $\sum a_n$ ลู่เข้าด้วย
+- front: การทดสอบของไลบ์นิซ
+  back: $\sum (-1)^n b_n$ ลู่เข้า ถ้า $b_n$ ลดลงและ $\lim b_n = 0$ ค่าคลาดเคลื่อนไม่เกินพจน์ถัดไป
+- front: การทดสอบอัตราส่วน
+  back: เมื่อ $L = \lim \left|\frac{a_{n+1}}{a_n}\right|$ ถ้า $L<1$ ลู่เข้าสัมบูรณ์ $L>1$ ลู่ออก และ $L=1$ สรุปไม่ได้
+- front: การทดสอบราก
+  back: เมื่อ $L = \lim \sqrt[n]{|a_n|}$ ใช้เกณฑ์เดียวกับการทดสอบอัตราส่วน เหมาะกับพจน์ที่ยกกำลัง $n$ ทั้งก้อน
+references:
+- title: Comparison test
+  url: https://en.wikipedia.org/wiki/Comparison_test
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Alternating series
+  url: https://en.wikipedia.org/wiki/Alternating_series
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Ratio test
+  url: https://en.wikipedia.org/wiki/Ratio_test
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Root test
+  url: https://en.wikipedia.org/wiki/Root_test
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 5.4 Comparison Tests (Calculus Volume 2, OpenStax)
+  url: https://openstax.org/books/calculus-volume-2/pages/5-4-comparison-tests
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

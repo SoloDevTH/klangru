@@ -1,0 +1,404 @@
+problems:
+- id: math.de.transfer-functions.p001
+  topics:
+  - math.de.transfer-functions
+  difficulty: 1
+  type: numeric
+  stem: 'ฟังก์ชันถ่ายโอน $W(s)=\dfrac{1}{s^2+5s+6}$ มีขั้วที่ $-2$ และ $-3$ จงหาขั้วที่อยู่ทางขวาสุดบนแกนจำนวนจริง (ตอบจำนวนเต็ม)'
+  answer:
+    value: -2
+    tolerance: 0
+  hints:
+  - ขั้วคือรากของตัวส่วน $s^2+5s+6$
+  - ขั้วที่อยู่ทางขวาสุดคือค่าที่มากที่สุดในบรรดาขั้วทั้งสอง
+  misconceptions:
+  - match: -3
+    feedback: เลือกขั้วซ้ายสุดแทนขั้วขวาสุด ค่าที่ $-3$ น้อยกว่า $-2$
+  solution: ตัวส่วนแยกตัวประกอบได้ $(s+2)(s+3)$ ขั้วคือ $-2$ และ $-3$ ขั้วขวาสุดคือ $-2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p002
+  topics:
+  - math.de.transfer-functions
+  difficulty: 1
+  type: mcq
+  stem: 'ระบบ $x^{\prime\prime}+4x^{\prime}+3x=f(t)$ ที่มีค่าเริ่มต้นเป็นศูนย์ เสถียรหรือไม่'
+  choices:
+  - id: a
+    text: เสถียร เพราะขั้วทั้งสองอยู่ทางซ้ายของแกนจินตภาพ
+    correct: true
+  - id: b
+    text: ไม่เสถียร เพราะมีขั้วที่เป็นจำนวนลบ
+    correct: false
+    feedback: ขั้วที่เป็นจำนวนลบอยู่ทางซ้ายของระนาบ จึงทำให้ระบบเสถียร
+  - id: c
+    text: ตัดสินไม่ได้ เพราะไม่รู้ค่าของ $f(t)$
+    correct: false
+    feedback: ความเสถียรขึ้นกับขั้วของฟังก์ชันถ่ายโอน ไม่ขึ้นกับอินพุต
+  - id: d
+    text: เสถียรเฉพาะเมื่อ $f(t)$ เป็นฟังก์ชันคาบ
+    correct: false
+    feedback: ความเสถียรไม่ได้ขึ้นกับรูปของ $f(t)$
+  hints:
+  - แยกตัวประกอบตัวส่วน $s^2+4s+3$ เพื่อหาขั้ว
+  - ระบบเสถียรเมื่อส่วนจริงของขั้วทุกตัวเป็นลบ
+  solution: $s^2+4s+3 = (s+1)(s+3)$ ขั้วคือ $-1$ และ $-3$ ซึ่งอยู่ทางซ้ายทั้งคู่ จึงเสถียร
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p003
+  topics:
+  - math.de.transfer-functions
+  difficulty: 2
+  type: numeric
+  stem: 'จงหาค่า $W(0)$ ของฟังก์ชันถ่ายโอน $W(s)=\dfrac{1}{s^2+5s+6}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.1667
+    tolerance: 0.0001
+  hints:
+  - แทน $s=0$ ลงในตัวส่วน
+  - ค่า $W(0)$ บอกอัตราส่วนของเอาต์พุตต่ออินพุตในสภาวะคงตัวเมื่ออินพุตคงที่
+  misconceptions:
+  - match: 0.2
+    feedback: ใช้ค่าสัมประสิทธิ์ของ $s$ คือ $5$ แทนค่าคงที่ $6$ ในตัวส่วน
+  solution: $W(0) = \dfrac{1}{0+0+6} = \dfrac16 \approx 0.1667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p004
+  topics:
+  - math.de.transfer-functions
+  difficulty: 2
+  type: numeric
+  stem: 'สำหรับ $W(s)=\dfrac{1}{s^2+5s+6}$ จงหาขนาดเกน $|W(i\omega)|$ เมื่อ $\omega=1$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.1414
+    tolerance: 0.0001
+  hints:
+  - แทน $s = i$ ลงในตัวส่วนได้ $-1 + 5i + 6$
+  - ขนาดของจำนวนเชิงซ้อนคือรากของผลบวกกำลังสองของส่วนจริงและส่วนจินตภาพ
+  misconceptions:
+  - match: 0.2
+    feedback: ลืมส่วนจริงของตัวส่วน ทำให้ได้ $|5i| = 5$ และค่า $\frac15$
+  solution: $W(i) = \dfrac{1}{5+5i}$ จึงได้ $|W(i)| = \dfrac{1}{5\sqrt2} \approx 0.1414$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p005
+  topics:
+  - math.de.transfer-functions
+  difficulty: 2
+  type: mcq
+  stem: 'ขั้วคู่ $-3 \pm 4i$ บนระนาบเชิงซ้อน บ่งบอกพฤติกรรมของผลตอบสนองในโดเมนเวลาอย่างไร'
+  choices:
+  - id: a
+    text: โตขึ้นแบบเอกซ์โพเนนเชียลพร้อมแกว่ง
+    correct: false
+    feedback: ส่วนจริงของขั้วเป็นลบ $-3$ ซึ่งทำให้ขนาดลดลงไม่ใช่โตขึ้น
+  - id: b
+    text: ลดลงแบบเอกซ์โพเนนเชียลพร้อมแกว่ง
+    correct: true
+  - id: c
+    text: แกว่งคงที่ ไม่มีการลดลงเลย
+    correct: false
+    feedback: การแกว่งคงที่เกิดเมื่อส่วนจริงของขั้วเป็นศูนย์ ซึ่งไม่ใช่กรณีนี้
+  - id: d
+    text: เพิ่มขึ้นเป็นเส้นตรง
+    correct: false
+    feedback: ขั้วเชิงซ้อนให้ผลเป็นการแกว่งและเอกซ์โพเนนเชียล ไม่ใช่เส้นตรง
+  hints:
+  - ส่วนจริงของขั้วกำหนดอัตราการลดหรือโตแบบเอกซ์โพเนนเชียล
+  - ส่วนจินตภาพกำหนดความถี่ของการแกว่ง
+  solution: ผลตอบสนองมีรูป $e^{-3t}\cos 4t$ และ $e^{-3t}\sin 4t$ จึงลดลงพร้อมแกว่ง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p006
+  topics:
+  - math.de.transfer-functions
+  difficulty: 2
+  type: expression
+  stem: 'ระบบ $x^{\prime\prime}+2x^{\prime}+5x=f(t)$ มีค่าเริ่มต้นเป็นศูนย์ จงเขียนฟังก์ชันถ่ายโอน $W(s)$'
+  prefix: 'W(s) ='
+  answer:
+    latex: '\frac{1}{s^2+2s+5}'
+    variables:
+    - s
+  misconceptions:
+  - match: '\frac{1}{s^2+2s-5}'
+    feedback: เครื่องหมายผิด สัมประสิทธิ์ของ $x$ คือ $+5$ จึงเป็นบวกในตัวส่วน
+  hints:
+  - ใช้การแปลงลาปลาซกับค่าเริ่มต้นเป็นศูนย์ โดย $x''\to s^2X$ และ $x'\to sX$
+  - แยก $X(s)$ ออกมาเมื่อได้ $p(s)X(s)=F(s)$
+  solution: $(s^2+2s+5)X(s) = F(s)$ จึงได้ $W(s) = \dfrac{1}{s^2+2s+5}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p007
+  topics:
+  - math.de.transfer-functions
+  difficulty: 2
+  type: numeric
+  stem: 'ระบบ $x^{\prime\prime}+2x^{\prime}+5x=0$ มีความถี่ธรรมชาติ $\omega_n$ เท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 2.2361
+    tolerance: 0.0001
+  hints:
+  - ในรูปมาตรฐาน $x''+2\zeta\omega_n x'+\omega_n^2 x=0$ สัมประสิทธิ์ของ $x$ คือ $\omega_n^2$
+  - หารากที่สองของค่าสัมประสิทธิ์ของ $x$
+  misconceptions:
+  - match: 5
+    feedback: ได้ค่า $\omega_n^2$ แต่ลืมถอดรากที่สอง
+  solution: $\omega_n^2 = 5$ จึง $\omega_n = \sqrt5 \approx 2.2361$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p008
+  topics:
+  - math.de.transfer-functions
+  difficulty: 3
+  type: numeric
+  stem: 'ระบบ $x^{\prime\prime}+2x^{\prime}+5x=0$ มีอัตราส่วนการหน่วง $\zeta$ เท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.4472
+    tolerance: 0.0001
+  hints:
+  - เทียบ $2\zeta\omega_n$ กับสัมประสิทธิ์ของ $x'$ และ $\omega_n^2$ กับสัมประสิทธิ์ของ $x$
+  - ได้ $\zeta = \dfrac{2}{2\omega_n}$
+  misconceptions:
+  - match: 0.8944
+    feedback: ลืมหารด้วย $2$ ในสูตร $\zeta = \frac{c}{2\omega_n}$
+  solution: $\zeta = \dfrac{2}{2\sqrt5} = \dfrac{1}{\sqrt5} \approx 0.4472$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p009
+  topics:
+  - math.de.transfer-functions
+  difficulty: 3
+  type: numeric
+  stem: 'ระบบกันสะเทือนของรถบรรทุกในลำปางจำลองเป็น $x^{\prime\prime}+4x^{\prime}+8x=f(t)$ (ข้อมูลสมมติ) ผลตอบสนองชั่วคราวลดลงเป็น $e^{-\sigma t}$ จงหาค่า $\sigma$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 2
+    tolerance: 0
+  hints:
+  - ขั้วของระบบมีส่วนจริงเป็น $-\sigma$ โดยหาจากการแยกตัวประกอบของ $s^2+4s+8$ ในรูป $(s+\sigma)^2+\omega^2$
+  - ทำกำลังสองสมบูรณ์ได้ $(s+2)^2+4$ ดังนั้น $\sigma$ คือค่าที่ทำให้ $2\sigma$ เท่ากับสัมประสิทธิ์ของ $s$
+  misconceptions:
+  - match: 4
+    feedback: ใช้ค่าสัมประสิทธิ์ของ $x'$ โดยตรง ลืมว่าค่า $\sigma$ เป็นครึ่งหนึ่งของสัมประสิทธิ์นั้น
+  solution: $s^2+4s+8 = (s+2)^2+4$ ขั้วคือ $-2 \pm 2i$ จึง $\sigma = 2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p010
+  topics:
+  - math.de.transfer-functions
+  difficulty: 3
+  type: numeric
+  stem: 'สำหรับ $W(s)=\dfrac{1}{s^2+5s+6}$ จงหาเฟส $\arg W(i\omega)$ ในหน่วยองศาเมื่อ $\omega=1$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: -45
+    tolerance: 0.5
+  hints:
+  - เฟสของ $\frac{1}{z}$ เท่ากับลบเฟสของ $z$
+  - เฟสของ $5+5i$ คือ $45$ องศา
+  misconceptions:
+  - match: 45
+    feedback: ลืมเครื่องหมายลบ เฟสของ $W$ คือลบเฟสของตัวส่วน
+  solution: $W(i) = \dfrac{1}{5+5i}$ จึงมีเฟส $-\arg(5+5i) = -45^\circ$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p011
+  topics:
+  - math.de.transfer-functions
+  difficulty: 3
+  type: match
+  stem: 'จับคู่ตำแหน่งของขั้วกับพฤติกรรมของผลตอบสนองในโดเมนเวลา'
+  pairs:
+  - left: 'ขั้วจริงลบ เช่น $-2$'
+    right: 'ลดลงแบบเอกซ์โพเนนเชียลโดยไม่แกว่ง'
+  - left: 'ขั้วจริงบวก เช่น $1$'
+    right: 'โตขึ้นแบบเอกซ์โพเนนเชียล'
+  - left: 'ขั้วอยู่บนแกนจินตภาพ เช่น $\pm 3i$'
+    right: 'แกว่งต่อเนื่องโดยไม่ลดลงหรือโต'
+  - left: 'ขั้วเชิงซ้อน $-2 \pm i$'
+    right: 'แกว่งและลดลงแบบเอกซ์โพเนนเชียล'
+  hints:
+  - ดูเครื่องหมายของส่วนจริงของขั้วก่อน
+  - ส่วนจินตภาพที่ไม่เป็นศูนย์ทำให้เกิดการแกว่ง
+  solution: เครื่องหมายของส่วนจริงกำหนดว่าโตหรือลด และส่วนจินตภาพที่ไม่เป็นศูนย์ทำให้เกิดการแกว่ง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p012
+  topics:
+  - math.de.transfer-functions
+  difficulty: 3
+  type: order
+  stem: 'เรียงขั้นตอนการหาฟังก์ชันถ่ายโอนและผลตอบสนองเชิงความถี่ของระบบเชิงเส้นตามลำดับที่ถูกต้อง'
+  items:
+  - เขียนสมการเชิงอนุพันธ์เชิงเส้นของระบบจากกฎทางฟิสิกส์
+  - แปลงลาปลาซทั้งสองข้างโดยใช้ค่าเริ่มต้นเป็นศูนย์ได้ $p(s)X(s)=F(s)$
+  - หา $W(s)=\dfrac{X(s)}{F(s)}=\dfrac{1}{p(s)}$
+  - แทน $s=i\omega$ เพื่อได้ผลตอบสนองเชิงความถี่ $W(i\omega)$
+  hints:
+  - ก่อนแปลงลาปลาซต้องมีสมการเชิงอนุพันธ์ก่อน
+  - ขั้นสุดท้ายคือการแทนค่าที่ให้ผลตอบสนองเชิงความถี่
+  solution: เริ่มจากสมการเชิงอนุพันธ์ แปลงลาปลาซ หาอัตราส่วน $W(s)$ แล้วแทน $s=i\omega$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p013
+  topics:
+  - math.de.transfer-functions
+  difficulty: 3
+  type: text
+  stem: 'ขนาดของผลตอบสนองเชิงความถี่ $|W(i\omega)|$ มีชื่อเรียกว่าอะไร (ตอบชื่อ)'
+  accepted:
+  - เกน
+  - อัตราขยาย
+  - gain
+  - Gain
+  hints:
+  - ค่านี้บอกว่าอินพุตที่ความถี่หนึ่งถูกขยายหรือลดลงเท่าใด
+  - ส่วนของเฟสคือ $\arg W(i\omega)$ ซึ่งเป็นอีกค่าหนึ่ง
+  solution: เรียกว่าเกนหรืออัตราขยาย ซึ่งเป็นอัตราส่วนของแอมพลิจูดเอาต์พุตต่ออินพุตที่ความถี่นั้น
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p014
+  topics:
+  - math.de.transfer-functions
+  difficulty: 4
+  type: numeric
+  stem: 'ฟังก์ชันถ่ายโอน $W(s)=\dfrac{1}{s^2+0.2s+1}$ ที่ความถี่ $\omega=1$ มีขนาดเกน $|W(i)|$ เท่าใด (ตอบจำนวนเต็ม)'
+  answer:
+    value: 5
+    tolerance: 0
+  hints:
+  - แทน $s = i$ ได้ $-1 + 0.2i + 1$ ซึ่งส่วนจริงหักล้างกัน
+  - ขนาดของตัวส่วนจึงเหลือเฉพาะส่วนจินตภาพ
+  misconceptions:
+  - match: 0.2
+    feedback: ค่า $0.2$ คือขนาดของตัวส่วน $|p(i)|$ แต่เกนคือส่วนกลับ $\frac{1}{|p(i)|}$
+  solution: $W(i) = \dfrac{1}{0.2i}$ จึง $|W(i)| = \dfrac{1}{0.2} = 5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p015
+  topics:
+  - math.de.transfer-functions
+  difficulty: 4
+  type: numeric
+  stem: 'ฟังก์ชันถ่ายโอน $W(s)=\dfrac{1}{s^2+0.6s+1}$ มีค่าเกน $|W(i\omega)|$ สูงสุดที่ความถี่ $\omega$ เท่าใด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.9055
+    tolerance: 0.0001
+  hints:
+  - ในรูปมาตรฐาน $\omega_n = 1$ และ $2\zeta = 0.6$ จึงได้ $\zeta = 0.3$
+  - ความถี่ที่เกนสูงสุดคือ $\omega_n\sqrt{1-2\zeta^2}$
+  misconceptions:
+  - match: 1
+    feedback: ใช้ความถี่ธรรมชาติ $\omega_n$ แทนความถี่ที่เกนสูงสุด ซึ่งต่างกันเมื่อมีการหน่วง
+  solution: $\zeta = 0.3$ จึงได้ $\omega_r = \sqrt{1 - 2(0.3)^2} = \sqrt{0.82} \approx 0.9055$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p016
+  topics:
+  - math.de.transfer-functions
+  difficulty: 4
+  type: mcq
+  stem: 'ฟังก์ชันถ่ายโอน $W(s)=\dfrac{1}{s^2-s+2}$ ระบบนี้เสถียรหรือไม่'
+  choices:
+  - id: a
+    text: เสถียร เพราะค่าคงที่ในตัวส่วนเป็นบวก
+    correct: false
+    feedback: ค่าคงที่บวกไม่เพียงพอ ต้องดูส่วนจริงของรากทั้งสองของตัวส่วน
+  - id: b
+    text: ไม่เสถียร เพราะขั้วมีส่วนจริงเป็นบวก
+    correct: true
+  - id: c
+    text: เสถียร เพราะสัมประสิทธิ์ของ $s^2$ เป็นบวก
+    correct: false
+    feedback: เครื่องหมายของสัมประสิทธิ์ของ $s^2$ ไม่ได้บอกเสถียรภาพ ต้องดูขั้ว
+  - id: d
+    text: ตัดสินไม่ได้ เพราะขั้วเป็นจำนวนเชิงซ้อน
+    correct: false
+    feedback: ขั้วเชิงซ้อนก็ตัดสินเสถียรภาพได้จากส่วนจริงของขั้ว
+  hints:
+  - หารากของ $s^2-s+2=0$ ด้วยสูตรกำลังสอง
+  - ดูส่วนจริงของราก
+  solution: ราก $s = \frac{1 \pm i\sqrt7}{2}$ มีส่วนจริง $\frac12 > 0$ จึงไม่เสถียร
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p017
+  topics:
+  - math.de.transfer-functions
+  difficulty: 4
+  type: numeric
+  stem: 'โช้กอัพของรถยนต์ที่ขับในภูเก็ตจำลองเป็น $x^{\prime\prime}+2x^{\prime}+5x=3\cos t$ (ข้อมูลสมมติ) จงหาขนาดแอมพลิจูดของผลตอบสนองสภาวะคงตัว (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.6708
+    tolerance: 0.0001
+  hints:
+  - ใช้ $W(i)$ โดยที่ $|W(i)|$ คือ $\frac{1}{|p(i)|}$
+  - ตัวส่วน $p(i) = -1 + 2i + 5$
+  misconceptions:
+  - match: 0.75
+    feedback: ลืมส่วนจินตภาพ $2i$ ของ $p(i)$ จึงได้ $\frac{3}{4}$ ซึ่งไม่ถูก
+  solution: $|p(i)| = |4+2i| = \sqrt{20}$ จึงได้แอมพลิจูด $\dfrac{3}{\sqrt{20}} \approx 0.6708$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p018
+  topics:
+  - math.de.transfer-functions
+  difficulty: 5
+  type: numeric
+  stem: 'สำหรับ $W(s)=\dfrac{1}{s^2+0.6s+1}$ จงหาค่าสูงสุดของ $|W(i\omega)|$ เมื่อ $\omega$ เปลี่ยนไป (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 1.7471
+    tolerance: 0.0001
+  hints:
+  - ค่าสูงสุดเกิดที่ $\omega_r=\omega_n\sqrt{1-2\zeta^2}$ ซึ่งได้จากการหาอนุพันธ์ของ $|W|^2$
+  - ใช้ค่า $\zeta = 0.3$ และ $\omega_n = 1$ แทนลงในสูตรค่าสูงสุด $\frac{1}{2\zeta\sqrt{1-\zeta^2}}$
+  misconceptions:
+  - match: 1.6667
+    feedback: ใช้ค่า $\frac{1}{2\zeta}$ ซึ่งเป็นเกนที่ความถี่ธรรมชาติ แต่ค่าสูงสุดอยู่ที่ความถี่ $\omega_r$ ซึ่งต่ำกว่า $\omega_n$ เล็กน้อย และให้เกนมากกว่า
+  solution: $\max|W| = \dfrac{1}{2\zeta\sqrt{1-\zeta^2}} = \dfrac{1}{0.6\sqrt{0.91}} \approx 1.7471$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p019
+  topics:
+  - math.de.transfer-functions
+  difficulty: 5
+  type: numeric
+  stem: 'ระบบที่มีขั้วที่ $-1 \pm 3i$ มีผลตอบสนองชั่วคราวที่มีขนาดลดลงตามฟังก์ชัน $e^{-t}$ จงหาอัตราส่วนขนาดของผลตอบสนองชั่วคราวที่เวลา $t=2$ เทียบกับ $t=0$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.1353
+    tolerance: 0.0001
+  hints:
+  - ส่วนจริงของขั้วกำหนดรูปการลดลงแบบเอกซ์โพเนนเชียล
+  - แทน $t=2$ ลงใน $e^{-t}$ แล้วเทียบกับค่าที่ $t=0$ ซึ่งเป็น $1$
+  misconceptions:
+  - match: 0.3679
+    feedback: แทน $t=1$ แทนที่จะเป็น $t=2$ ทำให้ได้ $e^{-1}$
+  solution: อัตราส่วนคือ $\dfrac{e^{-2}}{e^{0}} = e^{-2} \approx 0.1353$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.transfer-functions.p020
+  topics:
+  - math.de.transfer-functions
+  difficulty: 4
+  type: mcq
+  stem: 'ระบบควบคุมอุณหภูมิเตาอบในเชียงใหม่มี $W(s)=\dfrac{1}{s^2+3s+2}$ (ข้อมูลสมมติ) ความถี่ $\omega$ ใดที่ทำให้ขนาดเกน $|W(i\omega)|$ มากที่สุด'
+  choices:
+  - id: a
+    text: $\omega = 1$
+    correct: false
+    feedback: ที่ $\omega=1$ เกนยังลดลงจากค่าที่ $\omega=0$ ไม่ใช่ค่าสูงสุด
+  - id: b
+    text: $\omega = \sqrt{2}$
+    correct: false
+    feedback: เกนที่ $\sqrt2$ ยังต่ำกว่าที่ $\omega=0$ เพราะตัวส่วนเพิ่มขึ้นเมื่อ $\omega$ โต
+  - id: c
+    text: $\omega = 0$
+    correct: true
+  - id: d
+    text: $\omega \to \infty$
+    correct: false
+    feedback: เมื่อ $\omega$ โตขึ้น ตัวส่วนโตตามกำลังสอง ทำให้เกนลดลงเป็นศูนย์
+  hints:
+  - เขียน $|W(i\omega)|^2 = \dfrac{1}{(2-\omega^2)^2+9\omega^2}$
+  - ตรวจว่าตัวส่วนมีค่าต่ำสุดที่ค่า $\omega$ ใด
+  solution: กระจายได้ $(2-\omega^2)^2+9\omega^2 = \omega^4+5\omega^2+4$ ซึ่งเพิ่มขึ้นเมื่อ $\omega$ เพิ่มจาก $0$ จึงมีค่าต่ำสุด $4$ ที่ $\omega=0$ เกนจึงสูงสุดที่ $\omega=0$ มีค่า $\frac12$ (ระบบนี้มี $\zeta = \frac{3}{2\sqrt2} > \frac{1}{\sqrt2}$ จึงไม่มียอดแหลม)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
