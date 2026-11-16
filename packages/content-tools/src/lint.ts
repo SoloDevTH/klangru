@@ -43,7 +43,7 @@ export function lintTopic(topic: Topic, problems: Problem[], markdown: Record<st
       const m = STALE_REF.exec(t);
       if (m) f(problemsFile, `${p.id}: อ้างถึง "${m[1]}" แต่โจทย์ต้องอ่านจบในข้อเดียว (แอปสลับลำดับข้อ ไม่แสดงตัวอักษรนำหน้าตัวเลือก)`);
     }
-    if (p.type === "numeric") {
+    if (p.type === "numeric" && !p.lint_ignore.includes("answer-in-lesson")) {
       const v = String(p.answer.value);
       if (numTokens(v).has(v) && lessonNums.has(v) && !numTokens(p.stem).has(v)) f(problemsFile, `${p.id}: คำตอบ ${v} ปรากฏในบทเรียนหรือตัวอย่างแสดงวิธีทำแล้ว ผู้เรียนอาจหาคำตอบได้จากการค้นหาตัวเลข`);
     }

@@ -177,6 +177,8 @@ const ProblemBase = {
   adapted_from: z.array(AdaptedFrom).default([]),
   ai_assisted: z.boolean().default(false),
   figure: Figure.optional(),
+  /** ข้อที่ผู้ตรวจตัดสินแล้วว่าคำเตือนของ validate --lint เป็นผลบวกลวง เช่น answer-in-lesson เมื่อโจทย์ให้อ่านค่าจากตารางที่บทเรียนแจก */
+  lint_ignore: z.array(z.enum(["answer-in-lesson"])).default([]),
 };
 
 const Misconception = z.object({
