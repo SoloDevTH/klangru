@@ -1,0 +1,94 @@
+id: math.stats.two-sample-tests
+subject: math
+title:
+  th: การทดสอบผลต่างค่าเฉลี่ยของสองกลุ่มและข้อมูลจับคู่
+  en: Two-sample tests for means and paired data
+summary: เลือกการทดสอบให้เหมาะกับการเก็บข้อมูลอิสระหรือจับคู่ คำนวณสถิติ z และ t แบบเวลช์ ช่วงความเชื่อมั่นของผลต่าง และตีความผลในบริบทจริง
+difficulty: 8.5
+minutes: 40
+prerequisites:
+- math.stats.inference
+encompasses:
+- id: math.stats.inference
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: worked-example
+  title: เปรียบเทียบค่าเฉลี่ยสองกลุ่มอิสระด้วย t แบบเวลช์ (ข้อมูลสมมติ)
+  problem: กลุ่ม A มี $n_A = 12$, $\bar x_A = 72.5$, $s_A = 6.1$ และกลุ่ม B มี $n_B = 15$, $\bar x_B = 66.8$, $s_B = 5.4$ (ข้อมูลสมมติ) ทดสอบที่ระดับนัยสำคัญ $0.05$ สองด้าน ว่าค่าเฉลี่ยต่างกันหรือไม่
+  steps:
+  - text: 'ตั้งสมมติฐาน $H_0: \mu_A = \mu_B$ และ $H_1: \mu_A \ne \mu_B$ กลุ่มเป็นอิสระ และไม่ทราบ $\sigma$'
+    why: ไม่มีการจับคู่รายคน จึงใช้ $t$ ของสองกลุ่มอิสระ
+  - text: คำนวณ $\dfrac{s_A^2}{n_A} = \dfrac{37.21}{12} = 3.1008$ และ $\dfrac{s_B^2}{n_B} = \dfrac{29.16}{15} = 1.944$ จึง $SE = \sqrt{5.0448} = 2.2459$
+    why: ความแปรปรวนของแต่ละกลุ่มต้องถูกหารด้วยขนาดตัวอย่างของกลุ่มนั้นก่อนบวก
+  - text: $t = \dfrac{72.5 - 66.8}{2.2459} \approx 2.54$ และ $\nu \approx 22.2$ จึงใช้ $\nu = 22$
+    why: องศาอิสระแบบเวลช์มักไม่เป็นจำนวนเต็ม ให้ปัดลงเพื่อความระมัดระวัง
+  - text: ค่าวิกฤตสองด้านที่ระดับ $0.05$ และ $\nu = 22$ คือ $t^* \approx 2.074$ ตามตาราง $t$ ของ Wikipedia (Student's t-distribution) ค่า $|t| > t^*$ จึงปฏิเสธ $H_0$
+  answer: ปฏิเสธ $H_0$ ที่ระดับ $0.05$ สรุปว่าค่าเฉลี่ยของกลุ่ม A สูงกว่ากลุ่ม B (ข้อมูลสมมติ)
+- type: check
+  problem: math.stats.two-sample-tests.p001
+  prompt: ลองคิดก่อนอ่านต่อ ข้อมูลชุดนี้ควรเลือกการทดสอบแบบใด
+- type: figure
+  src: paired-data.svg
+  alt: จุดคู่ก่อนและหลังของนักเรียนห้าคน ทุกคนมีคะแนนหลังสูงกว่าก่อน เส้นตรงเชื่อมจุดของคนเดียวกันทุกเส้นเอียงขึ้นไปทางขวา
+  caption: 'ข้อมูลจับคู่: แต่ละเส้นคือคนหนึ่งคน ความชันของเส้นเป็นผลต่างรายคู่ (ข้อมูลสมมติ)'
+- type: worked-example
+  title: ผลต่างรายคู่เมื่อวัดคนเดิมสองครั้ง (ข้อมูลสมมติ)
+  problem: 'นักเรียน 5 คนทดสอบก่อนและหลังการสอน (ข้อมูลสมมติ) ก่อน: $48, 52, 45, 60, 55$ หลัง: $51, 55, 47, 62, 59$ ทดสอบว่าคะแนนหลังสูงกว่าก่อนหรือไม่'
+  steps:
+  - text: หาผลต่าง $d = \text{หลัง} - \text{ก่อน}$ ได้ $3, 3, 2, 2, 4$ จึง $\bar d = 2.8$
+    why: ข้อมูลจับคู่จึงวิเคราะห์เป็นชุดเดียวของผลต่าง
+  - text: $s_d = \sqrt{\dfrac{2.8}{4}} \approx 0.8367$ และ $t = \dfrac{2.8}{0.8367/\sqrt5} \approx 7.48$ ที่ $\nu = 4$
+    why: องศาอิสระเท่ากับจำนวนคู่ลบหนึ่ง
+  - text: ค่าวิกฤตหางเดียวที่ระดับ $0.05$ และ $\nu = 4$ คือ $2.132$ ตามตาราง $t$ ค่าสถิติมากกว่ามาก จึงปฏิเสธ $H_0$ (ข้อมูลสมมติ)
+    why: ผลต่างรายคู่ทำให้ความแปรปรวนจากความแตกต่างระหว่างคนหายไป
+  answer: คะแนนหลังการสอนสูงกว่าก่อนการสอนอย่างมีนัยสำคัญ (ข้อมูลสมมติ)
+- type: check
+  problem: math.stats.two-sample-tests.p009
+  prompt: ลองคำนวณผลต่างรายคู่ของข้อมูลชุดใหม่ก่อนอ่านต่อ
+glossary:
+- term: การทดสอบ t แบบเวลช์
+  definition: การเปรียบเทียบค่าเฉลี่ยของสองกลุ่มอิสระโดยไม่ต้องสมมติว่าความแปรปรวนเท่ากัน ใช้องศาอิสระโดยประมาณ
+- term: ข้อมูลจับคู่
+  definition: ข้อมูลที่วัดหน่วยเดิมซ้ำหรือจับคู่หน่วยที่คล้ายกัน เมื่อวิเคราะห์ต้องใช้ผลต่างรายคู่
+- term: ผลต่างรายคู่
+  definition: ค่า $d_i = x_{i} - y_{i}$ ของแต่ละคู่ เป็นตัวแปรเดียวที่ใช้ทดสอบค่าเฉลี่ย $\mu_d$
+- term: ช่วงความเชื่อมั่นของผลต่าง
+  definition: ช่วง $(\bar x - \bar y) \pm t^* \cdot SE$ ที่ครอบคลุมค่าผลต่างจริงด้วยความเชื่อมั่นที่กำหนด
+flashcards:
+- front: เมื่อไรควรใช้ $z$ แทน $t$ ในผลต่างสองค่าเฉลี่ย
+  back: เมื่อทราบ $\sigma$ ของทั้งสองประชากร
+- front: สูตร SE ของผลต่างแบบเวลช์
+  back: $\sqrt{s_1^2/n_1 + s_2^2/n_2}$
+- front: ข้อมูลจับคู่ทดสอบอย่างไร
+  back: หาผลต่างรายคู่ $d_i$ แล้วทำ $t$ ของค่าเฉลี่ย $\bar d$ ด้วย $n-1$ องศาอิสระ
+- front: ถ้าช่วงความเชื่อมั่นของผลต่างมีศูนย์อยู่ข้างใน
+  back: 'ไม่ปฏิเสธ $H_0: \mu_1 = \mu_2$ ที่ระดับเดียวกัน'
+references:
+- title: Student's t-test
+  url: https://en.wikipedia.org/wiki/Student%27s_t-test
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Welch's t-test
+  url: https://en.wikipedia.org/wiki/Welch%27s_t-test
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Student's t-distribution (มีตารางค่าวิกฤตที่ใช้ในบทเรียน)
+  url: https://en.wikipedia.org/wiki/Student%27s_t-distribution
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: 10.1 Two Population Means with Unknown Standard Deviations (OpenStax Introductory Statistics 2e)
+  url: https://openstax.org/books/introductory-statistics-2e/pages/10-1-two-population-means-with-unknown-standard-deviations
+  source: openstax
+  lang: en
+  license: CC-BY-NC-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

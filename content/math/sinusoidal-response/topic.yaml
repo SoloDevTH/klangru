@@ -1,0 +1,99 @@
+id: math.de.sinusoidal-response
+subject: math
+title:
+  th: 'ผลตอบสนองต่อสัญญาณเข้าเอกซ์โพเนนเชียลและไซน์: เกน เฟสล้า และผลตอบสนองเชิงความถี่'
+  en: 'Response to exponential and sinusoidal inputs: gain, phase lag, and frequency response'
+summary: ใช้เลขชี้กำลังเชิงซ้อนหาผลตอบสนองที่คงตัวต่ออินพุตไซน์ หาเกนและเฟสล้า เรโซแนนซ์ของระบบหน่วง และการประยุกต์กับวงจรและระบบกันสะเทือน
+difficulty: 9
+minutes: 40
+prerequisites:
+- math.de.second-order-linear
+- math.number.complex-numbers
+encompasses:
+- id: math.number.complex-numbers
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: explanation
+  file: lesson.md
+- type: figure
+  src: phasor.svg
+  alt: ระนาบเชิงซ้อนมีเวกเตอร์จากจุดกำเนิดไปยังจุด 2 บวก 3i ทำมุมกับแกนจริงเป็นค่าอาร์กิวเมนต์ ส่วนโค้งแสดงมุมนั้นและมีป้ายว่า arg p
+  caption: ค่า $p(i\omega)$ เป็นเวกเตอร์ในระนาบเชิงซ้อน ความยาวของมันให้ตัวหารของเกน มุมของมันให้เฟส
+- type: worked-example
+  title: เกนและเฟสล้าจากสมการลำดับสอง
+  problem: จงหาผลตอบสนองที่คงตัวของ $y'' + 3y' + 2y = 7\cos 2t$ ในรูป $G\cos(2t - \varphi)$
+  steps:
+  - text: แทน $y = e^{2it}$ จะได้ $p(2i) = (2i)^2 + 3(2i) + 2 = -2 + 6i$
+    why: ตัวหารของผลตอบสนองคือค่าพหุนามลักษณะเฉพาะที่ $r = i\omega$
+  - text: $|p(2i)| = \sqrt{(-2)^2 + 6^2} = \sqrt{40} \approx 6.3246$ ดังนั้นเกน $G = 7/\sqrt{40} \approx 1.1068$
+    why: แอมพลิจูดของส่วนจริงเท่ากับแอมพลิจูดของเลขชี้กำลังเชิงซ้อนหารด้วยขนาดของ $p$
+  - text: อาร์กิวเมนต์ $\varphi = \arg(-2 + 6i) \approx 1.8925$ rad เป็นเฟสล้า จึงได้ $y_p \approx 1.1068\cos(2t - 1.8925)$
+    why: ตำแหน่งมุมของ $p(i\omega)$ ในระนาบเชิงซ้อนบอกว่าผลตอบสนองล้าหลังอินพุตเท่าใด
+  answer: $y_p \approx 1.1068\cos(2t - 1.8925)$
+- type: check
+  problem: math.de.sinusoidal-response.p002
+  prompt: ลองนึกถึงส่วนจริงของ $e^{i\theta}$ ก่อนอ่านต่อ
+- type: figure
+  src: mass-spring-damper.svg
+  alt: มวลหนึ่งก้อนวางบนสปริงและตัวหน่วงที่ขนานกัน มีแรงภายนอกแบบไซน์กระทำที่มวล ลูกศรแสดงทิศทางการเคลื่อนที่ขึ้นลง
+  caption: ระบบมวล สปริง และตัวหน่วง เป็นตัวแบบของระบบกันสะเทือนและวงจร RLC
+- type: interactive
+  title: เกนของระบบอันดับหนึ่งเมื่อเปลี่ยนความถี่
+  caption: กราฟแสดงเกน $1/\sqrt{a^2 + \omega^2}$ ของระบบ $y' + a\,y = \cos\omega t$ เมื่อเลื่อนแถบ $a$ จะเห็นว่าค่าสัมประสิทธิ์ของการหน่วงมีผลต่อเกนที่ความถี่ต่ำอย่างไร
+  widget:
+    kind: function-plot
+    functions:
+    - 1/\sqrt{a^2 + x^2}
+    sliders:
+    - name: a
+      min: 1
+      max: 4
+      step: 0.5
+      value: 2
+      label: ค่า a
+    x:
+    - 0
+    - 6
+    y:
+    - 0
+    - 1.2
+glossary:
+- term: ผลตอบสนองที่คงตัว
+  definition: คำตอบของสมการเชิงอนุพันธ์ที่เหลืออยู่หลังผลชั่วคราวหมดไป มักมีความถี่เดียวกับอินพุตไซน์
+- term: เกน
+  definition: อัตราส่วนแอมพลิจูดของผลตอบสนองต่อแอมพลิจูดของอินพุต ที่ความถี่หนึ่ง ๆ คือ $1/|p(i\omega)|$
+- term: เฟสล้า
+  definition: มุมที่ผลตอบสนองตามหลังอินพุต คืออาร์กิวเมนต์ของ $p(i\omega)$
+- term: เรโซแนนซ์
+  definition: สภาวะที่แอมพลิจูดของผลตอบสนองถึงค่าสูงสุดที่ความถี่หนึ่ง เกิดจากการสั่นพ้องของระบบ
+flashcards:
+- front: อินพุต $\cos\omega t$ ผลตอบสนองที่คงตัวเขียนได้อย่างไร
+  back: $\operatorname{Re}\!\left(\dfrac{e^{i\omega t}}{p(i\omega)}\right)$
+- front: เกนที่ความถี่ $\omega$
+  back: $\dfrac{1}{|p(i\omega)|}$
+- front: เฟสล้า
+  back: $\varphi = \arg p(i\omega)$
+- front: ความถี่ที่แอมพลิจูดสูงสุดของระบบหน่วง (มวล-สปริง-ตัวหน่วง)
+  back: $\omega_r = \sqrt{k/m - c^2/(2m^2)}$
+references:
+- title: Resonance
+  url: https://en.wikipedia.org/wiki/Resonance
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Linear time-invariant system
+  url: https://en.wikipedia.org/wiki/Linear_time-invariant_system
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Frequency response
+  url: https://en.wikipedia.org/wiki/Frequency_response
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true

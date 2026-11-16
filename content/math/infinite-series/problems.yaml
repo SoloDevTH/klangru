@@ -1,0 +1,373 @@
+problems:
+- id: math.calculus.infinite-series.p001
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 1
+  type: numeric
+  stem: จงหาผลบวก $1 + \dfrac{1}{3} + \dfrac{1}{9} + \dfrac{1}{27} + \cdots$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.5
+    tolerance: 0.01
+  hints:
+  - พจน์ที่ต่อกันคูณด้วยค่าคงที่ $\dfrac{1}{3}$ นี่คืออนุกรมเรขาคณิต
+  - ใช้สูตร $\dfrac{a}{1-r}$ เมื่อ $|r|<1$
+  misconceptions:
+  - match: 1.4444
+    feedback: รวมเพียงสามพจน์แรกแล้วหยุด ไม่ใช่ผลบวกอนันต์
+  - match: 0.75
+    feedback: ใช้ $\dfrac{a}{1+r}$ ซึ่งเป็นสูตรที่ผิดเครื่องหมาย
+  solution: $a = 1$, $r = \dfrac{1}{3}$ จึงได้ $\dfrac{1}{1-1/3} = \dfrac{3}{2} = 1.5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p002
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 1
+  type: mcq
+  stem: ลำดับใดลู่เข้า (มีลิมิตจำกัด) เมื่อ $n \to \infty$
+  choices:
+  - id: a
+    text: $a_n = \dfrac{n}{n+1}$
+    correct: true
+  - id: b
+    text: $a_n = (-1)^n$
+    correct: false
+    feedback: ค่าสลับระหว่าง $1$ และ $-1$ ไม่เข้าใกล้ค่าเดียว
+  - id: c
+    text: $a_n = n^2$
+    correct: false
+    feedback: ค่าเพิ่มขึ้นไม่มีขอบเขต จึงลู่ออก
+  - id: d
+    text: $a_n = \sin n$
+    correct: false
+    feedback: ค่าแกว่งอยู่ในช่วง $[-1, 1]$ ไม่เข้าใกล้ค่าเดียว
+  hints:
+  - หาลิมิตของ $\dfrac{n}{n+1}$ โดยหารด้วย $n$ ทั้งเศษและส่วน
+  - ตัวเลือกที่แกว่งหรือโตไม่มีขอบเขตไม่ลู่เข้า
+  solution: $\dfrac{n}{n+1} = \dfrac{1}{1 + 1/n} \to 1$ เมื่อ $n\to\infty$ ส่วนตัวเลือกอื่นไม่เข้าใกล้ค่าจำกัดค่าเดียว
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p003
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 2
+  type: numeric
+  stem: ร้านกาแฟคั่วบดในเชียงรายขายได้ $5$ กิโลกรัมในวันแรก และยอดขายของแต่ละวันหลังจากนั้นเป็น $60\%$ ของวันก่อนหน้า (ข้อมูลสมมติ) ถ้าคิดรวมทุกวันไม่จำกัด จะขายได้รวมทั้งหมดกี่กิโลกรัม (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 12.5
+    tolerance: 0.01
+    unit: กิโลกรัม
+  hints:
+  - ยอดขายวันที่ $n$ (เริ่มนับจาก $n=0$) คือ $5(0.6)^n$
+  - รวมทุกวันได้อนุกรมเรขาคณิต $\dfrac{a}{1-r}$ โดย $a = 5$
+  misconceptions:
+  - match: 7.5
+    feedback: นับเฉพาะวันที่สองเป็นต้นไป (เริ่ม $n=1$) จึงลืมยอดขายวันแรก
+  - match: 3.125
+    feedback: ใช้ตัวส่วน $1+r$ แทน $1-r$
+  solution: $\displaystyle\sum_{n=0}^{\infty}5(0.6)^n = \frac{5}{1-0.6} = 12.5$ กิโลกรัม
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p004
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 2
+  type: numeric
+  stem: จงหาผลบวก $\displaystyle\sum_{n=1}^{\infty}\frac{2}{n(n+2)}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.5
+    tolerance: 0.01
+  hints:
+  - แยก $\dfrac{2}{n(n+2)}$ เป็นเศษส่วนย่อยในรูป $\dfrac{A}{n} + \dfrac{B}{n+2}$
+  - เขียนผลบวกย่อยออกมาแล้วดูว่าพจน์ส่วนใหญ่หักล้างกัน
+  misconceptions:
+  - match: 0.75
+    feedback: ลืมตัวคูณ $2$ ในเศษส่วนย่อย
+  - match: 1.0
+    feedback: ทำให้ตัวส่วนเป็น $n(n+1)$ โดยไม่ตั้งใจ
+  solution: $\dfrac{2}{n(n+2)} = \dfrac{1}{n} - \dfrac{1}{n+2}$ เป็นอนุกรมเทเลสโคป ได้ $S_N = 1 + \dfrac{1}{2} - \dfrac{1}{N+1} - \dfrac{1}{N+2} \to \dfrac{3}{2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p005
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 2
+  type: mcq
+  multiple: true
+  stem: อนุกรมใดลู่เข้า (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: $\displaystyle\sum_{n=1}^\infty \frac{1}{n^{3/2}}$
+    correct: true
+  - id: b
+    text: $\displaystyle\sum_{n=1}^\infty \frac{1}{n^{2}}$
+    correct: true
+  - id: c
+    text: $\displaystyle\sum_{n=1}^\infty \frac{1}{\sqrt{n}}$
+    correct: false
+    feedback: เป็น $p$-series ที่ $p = \tfrac12 \le 1$ จึงลู่ออก
+  - id: d
+    text: $\displaystyle\sum_{n=1}^\infty \frac{1}{n}$
+    correct: false
+    feedback: เป็นอนุกรมฮาร์มอนิกที่ลู่ออก แม้พจน์จะเข้าใกล้ $0$
+  hints:
+  - ใช้ $p$-series $\displaystyle\sum \frac{1}{n^p}$ ลู่เข้าเมื่อ $p > 1$
+  - เขียนแต่ละข้อให้อยู่ในรูป $n^{-p}$ แล้วดูค่า $p$
+  solution: $\dfrac{1}{n^{3/2}}$ ($p=\tfrac32$) และ $\dfrac{1}{n^2}$ ($p=2$) ลู่เข้า ส่วน $\dfrac{1}{\sqrt n}$ ($p=\tfrac12$) และ $\dfrac{1}{n}$ ($p=1$) ลู่ออก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p006
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 2
+  type: expression
+  stem: จงหาผลบวกย่อย $S_n = \displaystyle\sum_{k=0}^{n-1} 3\cdot 2^{k}$ (ตอบเป็นนิพจน์ของ $n$)
+  answer:
+    latex: 3\cdot(2^n-1)
+    variables:
+    - n
+  hints:
+  - ผลบวกย่อยของอนุกรมเรขาคณิต $\sum_{k=0}^{n-1} a r^k = \dfrac{a(1-r^n)}{1-r}$
+  - ที่นี่ $a = 3$ และ $r = 2$
+  misconceptions:
+  - match: 3\cdot 2^{n}
+    feedback: ลืมลบ $1$ จากผลบวก $\sum_{k=0}^{n-1} 2^k = 2^n - 1$
+  - match: 3\cdot(2^n+1)
+    feedback: เครื่องหมายผิด ควรเป็นลบ
+  solution: $S_n = \dfrac{3(1 - 2^n)}{1-2} = 3(2^n - 1)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p007
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 3
+  type: numeric
+  stem: ลูกบอลตกจากความสูง $2$ เมตรลงสู่พื้นลานกิจกรรมของโรงเรียน แล้วกระดอนขึ้นไปได้สูง $60\%$ ของความสูงก่อนหน้าทุกครั้ง (ค่าสมมติ) จนกระทั่งหยุด จงหาระยะทางรวมทั้งขาขึ้นและขาลงในหน่วยเมตร (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 8.0
+    tolerance: 0.05
+    unit: m
+  hints:
+  - การตกลงแต่ละครั้งมีระยะทางเท่ากับการกระดอนขึ้นตามด้วยการตกลงของครั้งก่อน
+  - ระยะทางรวม $= h_0 + 2(h_0 r + h_0 r^2 + \cdots)$ เมื่อ $r = 0.6$
+  misconceptions:
+  - match: 5.0
+    feedback: นับเฉพาะระยะตกลงของแต่ละครั้ง ลืมการกระดอนขึ้น
+  solution: $D = 2 + 2\sum_{k\ge1} 2(0.6)^k = 2 + 4\cdot\dfrac{0.6}{1-0.6} = 2 + 6 = 8\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p008
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 3
+  type: numeric
+  stem: จงหาค่า $\displaystyle\lim_{n\to\infty}\frac{n^2 + 3n}{2n^2 + 1}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.5
+    tolerance: 0.005
+  hints:
+  - หารทั้งเศษและส่วนด้วย $n^2$
+  - พจน์ที่มี $\dfrac{1}{n}$ และ $\dfrac{1}{n^2}$ เข้าใกล้ $0$
+  misconceptions:
+  - match: 1.5
+    feedback: สลับตำแหน่งสัมประสิทธิ์ของ $n^2$ ในเศษกับส่วน
+  - match: 3.0
+    feedback: ตัดเฉพาะพจน์ที่ $3n$ มาเป็นผลลัพธ์
+  solution: $\dfrac{n^2+3n}{2n^2+1} = \dfrac{1 + 3/n}{2 + 1/n^2} \to \dfrac{1}{2} = 0.5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p009
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 3
+  type: mcq
+  stem: อนุกรม $\displaystyle\sum_{n=1}^{\infty}\frac{n}{2n+1}$ ลู่เข้าหรือลู่ออก เพราะเหตุใด
+  choices:
+  - id: a
+    text: ลู่ออก เพราะ $\dfrac{n}{2n+1} \to \dfrac{1}{2} \ne 0$
+    correct: true
+  - id: b
+    text: ลู่เข้า เพราะพจน์ลดลง
+    correct: false
+    feedback: พจน์ลดลงไม่พอ พจน์ต้องเข้าใกล้ $0$ จึงจะเป็นไปได้ และที่นี่เข้าใกล้ $\tfrac12$
+  - id: c
+    text: ลู่เข้า เพราะเป็น $p$-series ที่ $p > 1$
+    correct: false
+    feedback: รูปนี้ไม่ใช่ $p$-series เพราะตัวเศษและส่วนไม่ได้อยู่ในรูป $n^{-p}$
+  - id: d
+    text: ไม่สามารถตัดสินได้เลย
+    correct: false
+    feedback: การทดสอบพจน์ที่ $n$ ตัดสินได้ทันทีว่าลู่ออก
+  hints:
+  - ลองหาลิมิตของพจน์ $a_n$ เมื่อ $n \to \infty$
+  - ถ้า $a_n$ ไม่เข้าใกล้ $0$ อนุกรมต้องลู่ออก
+  solution: $\lim_{n\to\infty}\dfrac{n}{2n+1} = \dfrac12 \ne 0$ จึงลู่ออกโดยการทดสอบพจน์ที่ $n$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p010
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 3
+  type: match
+  stem: จับคู่หัวข้อกับข้อความที่ถูกต้อง
+  pairs:
+  - left: อนุกรมเรขาคณิต $\sum ar^{n}$ เมื่อ $|r|<1$
+    right: ผลบวกเท่ากับ $\dfrac{a}{1-r}$
+  - left: อนุกรมฮาร์มอนิก $\sum \dfrac{1}{n}$
+    right: ลู่ออก
+  - left: $p$-series $\sum \dfrac{1}{n^{p}}$
+    right: ลู่เข้าเมื่อ $p > 1$
+  - left: ถ้า $\lim a_n \ne 0$
+    right: อนุกรม $\sum a_n$ ลู่ออก
+  hints:
+  - ลองนึกถึงสูตรผลบวกของอนุกรมเรขาคณิต
+  - การทดสอบพจน์ที่ $n$ เป็นข้อความเชิงลบที่บอกว่าอนุกรมลู่ออกได้เมื่อพจน์ไม่เข้าใกล้ $0$
+  solution: ผลบวกเรขาคณิต $a/(1-r)$ เมื่อ $|r|<1$ ส่วนฮาร์มอนิกลู่ออก ส่วน $p$-series ลู่เข้าเมื่อ $p>1$ และการทดสอบพจน์ที่ $n$ บอกว่าถ้า $a_n \not\to 0$ อนุกรมต้องลู่ออก
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p011
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 4
+  type: numeric
+  stem: ให้ $S = \displaystyle\sum_{n=1}^{\infty}\frac{1}{n^3}$ และ $S_5 = \displaystyle\sum_{n=1}^{5}\frac{1}{n^3}$ ใช้การทดสอบด้วยปริพันธ์ จงหาขอบเขตบนของเศษเหลือ $R_5 = S - S_5$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.02
+    tolerance: 0.001
+  hints:
+  - เศษเหลือ $R_5 = \sum_{n=6}^\infty \dfrac{1}{n^3}$ ถูกกั้นด้วย $\displaystyle\int_5^\infty f(x)\,dx$
+  - $\displaystyle\int_5^\infty x^{-3}\,dx = \left[-\tfrac{1}{2}x^{-2}\right]_5^\infty$
+  misconceptions:
+  - match: 0.0139
+    feedback: ใช้ขอบล่างที่ $6$ แทน $5$ ซึ่งกั้นเศษเหลือไม่ได้จริง
+  - match: 0.008
+    feedback: ใช้พจน์ที่ $5$ ($1/5^3$) เป็นขอบเขตแทนปริพันธ์
+  solution: $R_5 \le \displaystyle\int_5^\infty\frac{dx}{x^3} = \frac{1}{2\cdot 5^2} = \frac{1}{50} = 0.02$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p012
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 4
+  type: numeric
+  stem: จงหาค่าประมาณบนของ $\displaystyle\sum_{n=1}^\infty \frac{1}{n^2}$ จากผลบวกย่อย $S_4$ บวกขอบเขตบนของเศษเหลือที่ได้จากการทดสอบด้วยปริพันธ์ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.6736
+    tolerance: 0.001
+  hints:
+  - เศษเหลือ $\sum_{n\ge5} \frac{1}{n^2}\le \int_4^\infty \frac{dx}{x^2}$
+  - $\displaystyle\int_4^\infty x^{-2}\,dx = \frac{1}{4}$
+  misconceptions:
+  - match: 1.4236
+    feedback: ใช้ $S_4$ เพียงอย่างเดียว ลืมเศษเหลือ
+  - match: 1.6236
+    feedback: ใช้ขอบล่าง $5$ ในการปริพันธ์ ซึ่งได้ $\tfrac15$ แทน $\tfrac14$
+  solution: $S_4 = 1 + \tfrac14 + \tfrac19 + \tfrac1{16} \approx 1.4236$ และ $\int_4^\infty x^{-2}\,dx = \tfrac14$ จึงได้ขอบบน $\approx 1.6736$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p013
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 3
+  type: numeric
+  stem: ร้านข้าวเหนียวมะม่วงหน้าโรงเรียนขายได้ $500$ บาทในวันแรก ยอดขายของวันถัดไปเป็น $80\%$ ของวันก่อนหน้าทุกวัน (ข้อมูลสมมติ) ถ้าคิดยอดขายรวมทุกวันไม่จำกัด จะได้เท่าใดในหน่วยบาท
+  answer:
+    value: 2500.0
+    tolerance: 1
+    unit: บาท
+  hints:
+  - ยอดขายวันที่ $n$ ที่เริ่มนับจาก $n=0$ คือ $500(0.8)^n$
+  - ใช้สูตร $\dfrac{a}{1-r}$ โดย $a = 500$ และ $r = 0.8$
+  misconceptions:
+  - match: 2000.0
+    feedback: เริ่มนับจากวันที่สอง จึงได้ $500\cdot 0.8/(1-0.8)$ ซึ่งละวันแรกไป
+  solution: $\displaystyle\sum_{n=0}^\infty 500(0.8)^n = \frac{500}{1-0.8} = 2500$ บาท
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p014
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 4
+  type: expression
+  stem: จงหา $S_n = \displaystyle\sum_{k=1}^{n}\frac{1}{(k+1)(k+2)}$ ในรูปนิพจน์ของ $n$ (ตอบเป็นนิพจน์ของ $n$)
+  answer:
+    latex: \frac{n}{2(n+2)}
+    variables:
+    - n
+  hints:
+  - แยก $\dfrac{1}{(k+1)(k+2)} = \dfrac{1}{k+1} - \dfrac{1}{k+2}$
+  - พจน์กลางหักล้างกัน เหลือพจน์ต้นและพจน์ท้ายเท่านั้น
+  misconceptions:
+  - match: \frac{n}{n+2}
+    feedback: ลืมตัวหาร $2$ ที่มาจากพจน์ต้นอนุกรม $\tfrac12$
+  - match: -\frac{n}{2(n+2)}
+    feedback: เครื่องหมายผิด ผลต่างเป็นบวกเสมอเพราะพจน์แรกมากกว่าพจน์สุดท้าย
+  solution: $S_n = \sum_{k=1}^{n}\left(\frac{1}{k+1} - \frac{1}{k+2}\right) = \dfrac12 - \dfrac{1}{n+2} = \dfrac{n}{2(n+2)}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p015
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 4
+  type: mcq
+  stem: ข้อความใดถูกต้องเกี่ยวกับอนุกรม
+  choices:
+  - id: a
+    text: ถ้า $a_n \to 0$ แล้ว $\sum a_n$ ลู่เข้าเสมอ
+    correct: false
+    feedback: อนุกรมฮาร์มอนิก $\sum 1/n$ มี $1/n \to 0$ แต่ลู่ออก
+  - id: b
+    text: ถ้า $\sum a_n$ ลู่เข้า แล้ว $a_n \to 0$
+    correct: true
+  - id: c
+    text: ถ้า $a_n$ ลู่เข้า แล้ว $\sum a_n$ ลู่เข้า
+    correct: false
+    feedback: ลำดับลู่เข้าไม่ได้บอกว่าผลรวมของพจน์ลู่เข้า เช่น $a_n = 1$
+  - id: d
+    text: อนุกรม $\sum (-1)^n$ ลู่เข้า เพราะค่าสลับกันระหว่าง $1$ และ $-1$
+    correct: false
+    feedback: ผลบวกย่อยสลับระหว่างสองค่า จึงไม่ลู่เข้า
+  hints:
+  - ถ้า $\sum a_n$ ลู่เข้า ผลบวกย่อย $S_n$ เข้าใกล้ค่าจำกัด
+  - ลองนึกถึงอนุกรมฮาร์มอนิกเป็นตัวอย่างค้าน
+  solution: ถ้า $\sum a_n$ ลู่เข้า แล้ว $a_n = S_n - S_{n-1} \to 0$ ส่วนข้ออื่นมีตัวอย่างค้านได้ (ฮาร์มอนิก และ $a_n = 1$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p016
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 5
+  type: numeric
+  stem: ต้องรวมพจน์ของอนุกรม $\displaystyle\sum_{n=1}^\infty \frac{1}{n^2}$ อย่างน้อยกี่พจน์ $N$ เพื่อให้เศษเหลือ $\displaystyle\sum_{n>N}\frac{1}{n^2}$ มีขอบเขตบนไม่เกิน $0.001$ (ตอบเป็นจำนวนเต็ม)
+  answer:
+    value: 1000.0
+    tolerance: 0.5
+  hints:
+  - เศษเหลือถูกกั้นด้วย $\displaystyle\int_N^\infty \frac{dx}{x^2} = \frac{1}{N}$
+  - แก้ $\dfrac{1}{N} \le 0.001$
+  misconceptions:
+  - match: 32.0
+    feedback: ใช้พจน์ที่ $N$ เองแทนปริพันธ์ จึงได้ $1/N^2 \le 0.001$
+  solution: $\displaystyle\sum_{n>N}\frac{1}{n^2}\le \int_N^\infty\frac{dx}{x^2} = \frac{1}{N}$ ต้องการ $\frac{1}{N}\le 0.001$ จึง $N\ge 1000$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.infinite-series.p017
+  topics:
+  - math.calculus.infinite-series
+  difficulty: 5
+  type: numeric
+  stem: จงหาค่าของ $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n^2 - 1}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.75
+    tolerance: 0.001
+  hints:
+  - แยก $\dfrac{1}{n^2-1} = \dfrac{1}{2}\left(\dfrac{1}{n-1} - \dfrac{1}{n+1}\right)$
+  - ผลบวกเป็นอนุกรมเทเลสโคปที่เหลือพจน์ $1$ และ $\tfrac12$ ที่ต้นอนุกรม
+  misconceptions:
+  - match: 1.5
+    feedback: ลืมตัวคูณ $\tfrac12$ จากการแยกเศษส่วน
+  - match: 0.5
+    feedback: ใช้เฉพาะพจน์ $\tfrac12$ ที่ต้นอนุกรม
+  solution: $S_N = \dfrac12\left(1 + \dfrac12 - \dfrac{1}{N} - \dfrac{1}{N+1}\right) \to \dfrac34 = 0.75$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

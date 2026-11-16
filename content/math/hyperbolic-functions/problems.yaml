@@ -1,0 +1,390 @@
+problems:
+- id: math.calculus.hyperbolic-functions.p001
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 1
+  type: numeric
+  stem: จงหาค่าของ $\sinh 0 + \cosh 0$ (ตอบเป็นตัวเลข)
+  answer:
+    value: 1.0
+    tolerance: 0.01
+  hints:
+  - นิยาม $\sinh x = \dfrac{e^x - e^{-x}}{2}$ และ $\cosh x = \dfrac{e^x + e^{-x}}{2}$
+  - แทน $x = 0$ แล้วใช้ $e^0 = 1$
+  misconceptions:
+  - match: 0.0
+    feedback: คิดว่า $\cosh 0 = 0$ แต่จริง ๆ $\cosh 0 = 1$ เพราะ $\cosh$ มีค่าต่ำสุดที่ 1 ที่จุด $0$
+  - match: 2.0
+    feedback: คิดว่า $\sinh 0 = 1$ แต่กราฟ $\sinh$ ผ่านจุดกำเนิด จึง $\sinh 0 = 0$
+  solution: $\sinh 0 = \dfrac{1 - 1}{2} = 0$ และ $\cosh 0 = \dfrac{1 + 1}{2} = 1$ ดังนั้น $\sinh 0 + \cosh 0 = 1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p002
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 1
+  type: mcq
+  stem: ข้อใดเป็นเอกลักษณ์ที่ถูกต้องของฟังก์ชันไฮเพอร์โบลิก
+  choices:
+  - id: a
+    text: $\cosh^2 x - \sinh^2 x = 1$
+    correct: true
+  - id: b
+    text: $\cosh^2 x + \sinh^2 x = 1$
+    correct: false
+    feedback: นี่คือรูปแบบของเอกลักษณ์ตรีโกณมิติ $\sin^2 + \cos^2 = 1$ แต่ไฮเพอร์โบลิกต้องใช้เครื่องหมายลบ
+  - id: c
+    text: $\cosh^2 x - \sinh^2 x = -1$
+    correct: false
+    feedback: ค่าเป็นบวก เมื่อ $x = 0$ จะได้ $1 - 0 = 1$
+  - id: d
+    text: $\cosh x - \sinh x = 1$
+    correct: false
+    feedback: $\cosh x - \sinh x = e^{-x}$ ซึ่งไม่คงที่ เช่น $x = 1$ ได้ $e^{-1}$ ไม่ใช่ $1$
+  hints:
+  - ลองแทน $x = 0$ เพื่อตัดตัวเลือกที่ผิดได้บางข้อ
+  - ใช้นิยามผ่าน $e^x$ แล้วดู $(a+b)^2 - (a-b)^2$
+  solution: $\cosh^2 x - \sinh^2 x = \dfrac{(e^x+e^{-x})^2 - (e^x-e^{-x})^2}{4} = \dfrac{4 e^x e^{-x}}{4} = 1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p003
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 2
+  type: numeric
+  stem: จงหาค่าของ $\cosh(\ln 3)$ (ตอบเป็นทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.6667
+    tolerance: 0.01
+  hints:
+  - เขียน $\cosh x = \dfrac{e^x + e^{-x}}{2}$ แล้วแทน $x = \ln 3$
+  - $e^{\ln 3} = 3$ และ $e^{-\ln 3} = \dfrac{1}{3}$
+  misconceptions:
+  - match: 0.4548
+    feedback: สับสนกับ $\cos$ ซึ่งเป็นฟังก์ชันตรีโกณมิติ $\cosh$ เป็นไฮเพอร์โบลิกและนิยามจาก $e^x$
+  - match: 3.3333
+    feedback: ลืมหารด้วย $2$ ในนิยาม $\cosh x = \dfrac{e^x+e^{-x}}{2}$
+  solution: $\cosh(\ln 3) = \dfrac{3 + \frac{1}{3}}{2} = \dfrac{10/3}{2} = \dfrac{5}{3} \approx 1.6667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p004
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 2
+  type: mcq
+  stem: ข้อใดคืออนุพันธ์ของ $\tanh x$
+  choices:
+  - id: a
+    text: $\dfrac{1}{\cosh^2 x}$
+    correct: true
+  - id: b
+    text: $\dfrac{1}{\cosh x}$
+    correct: false
+    feedback: ลืมยกกำลังสองของ $\cosh x$ ในตัวส่วน กฎผลหารให้ตัวส่วนเป็น $\cosh^2 x$
+  - id: c
+    text: $\cosh^2 x$
+    correct: false
+    feedback: นี่คือกำลังสองของ $\cosh x$ ไม่ใช่ส่วนกลับ
+  - id: d
+    text: $\dfrac{\sinh x}{\cosh x}$
+    correct: false
+    feedback: นี่คือนิยามของ $\tanh x$ เองไม่ใช่อนุพันธ์
+  hints:
+  - เขียน $\tanh x = \dfrac{\sinh x}{\cosh x}$ แล้วใช้กฎผลหาร
+  - ตัวเศษที่ได้คือ $\cosh^2 x - \sinh^2 x$
+  solution: $\dfrac{d}{dx}\tanh x = \dfrac{\cosh x\cdot\cosh x - \sinh x\cdot\sinh x}{\cosh^2 x} = \dfrac{\cosh^2 x - \sinh^2 x}{\cosh^2 x} = \dfrac{1}{\cosh^2 x}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p005
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 2
+  type: expression
+  stem: จงหา $\dfrac{d}{dx}\cosh(3x)$ (ตอบเป็นนิพจน์ของ $x$)
+  answer:
+    latex: 3\sinh(3x)
+    variables:
+    - x
+  hints:
+  - ใช้กฎลูกโซ่ และอย่าลืมอนุพันธ์ของ $3x$
+  - อนุพันธ์ของ $\cosh u$ คือ $\sinh u$
+  misconceptions:
+  - match: \sinh(3x)
+    feedback: ลืมคูณด้วยอนุพันธ์ของชั้นใน $3$ ตามกฎลูกโซ่
+  - match: 3\cosh(3x)
+    feedback: อนุพันธ์ของ $\cosh$ คือ $\sinh$ ไม่ใช่ $\cosh$
+  solution: $\dfrac{d}{dx}\cosh(3x) = \sinh(3x)\cdot 3 = 3\sinh(3x)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p006
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 2
+  type: expression
+  stem: จงหาปริพันธ์ไม่จำกัดเขต $\int \sinh(2x)\,dx$ (ไม่ต้องเขียนค่าคงที่ $C$)
+  answer:
+    latex: \frac{1}{2}\cosh(2x)
+    variables:
+    - x
+  hints:
+  - $\sinh$ เป็นอนุพันธ์ของ $\cosh$ ถ้าดิฟ $\cosh(2x)$ จะได้ $2\sinh(2x)$
+  - ปริพันธ์ต้องหารด้วยอนุพันธ์ของตัวแปรในวงเล็บ คือ $2$
+  misconceptions:
+  - match: \cosh(2x)
+    feedback: ลืมหารด้วย $2$ เมื่อดิฟแล้วจะได้ $2\sinh(2x)$ ไม่ใช่ $\sinh(2x)$
+  - match: 2\cosh(2x)
+    feedback: ตัวคูณผิด ต้องใช้ $\frac{1}{2}$ ไม่ใช่ $2$
+  solution: $\int \sinh(2x)\,dx = \dfrac{1}{2}\cosh(2x) + C$ เพราะ $\dfrac{d}{dx}\cosh(2x) = 2\sinh(2x)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p007
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 3
+  type: numeric
+  stem: วิศวกรในกรุงเทพฯ ออกแบบกันสาดให้หน้าตัดเป็นกราฟ $y = \cosh x$ เมื่อ $0 \le x \le 1$ (หน่วยเมตร ข้อมูลสมมติ) จงหาพื้นที่ใต้เส้นโค้งหน้าตัดนี้ในหน่วยตารางเมตร (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.1752
+    tolerance: 0.01
+    unit: m^2
+  hints:
+  - พื้นที่ใต้เส้นโค้งคือ $\displaystyle\int_0^1 \cosh x\,dx$
+  - ปฏิยานุพันธ์ของ $\cosh x$ คือ $\sinh x$ ที่คุ้นเคยจากหัวข้อนี้
+  misconceptions:
+  - match: 0.8415
+    feedback: ใช้ $\cos$ แทน $\cosh$ จึงได้ $\int_0^1 \cos x\,dx = \sin 1$
+  - match: 1.7183
+    feedback: ใช้ $\int_0^1 e^x\,dx = e - 1$ ซึ่งเป็นปริพันธ์ของ $e^x$ ไม่ใช่ของ $\cosh x$
+  solution: $\displaystyle\int_0^1 \cosh x\,dx = \big[\sinh x\big]_0^1 = \sinh 1 - \sinh 0 = \sinh 1 \approx 1.1752\ \mathrm{m}^2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p008
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 2
+  type: numeric
+  stem: ถ้า $\sinh x = 2$ และ $x > 0$ จงหาค่าของ $\cosh x$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 2.2361
+    tolerance: 0.01
+  hints:
+  - ใช้เอกลักษณ์ $\cosh^2 x - \sinh^2 x = 1$
+  - $\cosh x > 0$ จึงเลือกรากที่เป็นบวก
+  misconceptions:
+  - match: 3.0
+    feedback: คิดว่า $\cosh^2 x = 1 + 2$ แล้วไม่ถอดราก ความจริงต้องถอดรากที่สองของ $\cosh^2 x$ ด้วย
+  - match: 2.0
+    feedback: คิดว่า $\cosh x = \sinh x$ แต่ทั้งสองฟังก์ชันต่างกันเสมอ
+  solution: $\cosh^2 x = 1 + \sinh^2 x = 1 + 4 = 5$ จึง $\cosh x = \sqrt{5} \approx 2.2361$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p009
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 2
+  type: order
+  stem: เรียงค่าต่อไปนี้จากน้อยไปมาก
+  items:
+  - $\tanh 1 \approx 0.7616$
+  - $\sinh 1 \approx 1.1752$
+  - $\cosh 1 \approx 1.5431$
+  - $e \approx 2.7183$
+  hints:
+  - $\tanh x$ มีค่าอยู่ระหว่าง $-1$ ถึง $1$
+  - $\cosh x \ge \sinh x$ เสมอ และ $\cosh 1 = \frac{e + e^{-1}}{2}$ ไม่ถึง $e$
+  solution: $\tanh 1 \approx 0.7616 < \sinh 1 \approx 1.1752 < \cosh 1 \approx 1.5431 < e \approx 2.7183$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p010
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 4
+  type: numeric
+  stem: จงหาค่าของ $\sinh^{-1}(2)$ หรือ $\operatorname{arsinh}(2)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.4436
+    tolerance: 0.01
+  hints:
+  - ให้ $y = \sinh^{-1} 2$ แล้วแทนนิยาม $\sinh y = 2$ ด้วย $e^y$
+  - จะได้สมการกำลังสองใน $e^y$ เลือกรากที่เป็นบวก
+  misconceptions:
+  - match: 0.6931
+    feedback: ตอบ $\ln 2$ โดยลืมส่วนรากในสูตร $\sinh^{-1}x = \ln(x + \sqrt{x^2+1})$
+  - match: 1.1071
+    feedback: สับสนกับ $\arctan 2 \approx 1.1071$ ซึ่งเป็นฟังก์ชันตรีโกณมิติผกผัน
+  solution: ให้ $u = e^y$ จะได้ $u - \dfrac{1}{u} = 4$ จึง $u^2 - 4u - 1 = 0$ และ $u = 2 + \sqrt{5}$ ดังนั้น $y = \ln(2+\sqrt{5}) \approx 1.4436$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p011
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 4
+  type: expression
+  stem: ถ้า $f(x) = \ln\!\big(x + \sqrt{x^2+1}\big)$ จงหา $f'(x)$ (ตอบเป็นนิพจน์ของ $x$)
+  answer:
+    latex: \frac{1}{\sqrt{x^2+1}}
+    variables:
+    - x
+  hints:
+  - ใช้กฎลูกโซ่ โดยดิฟตัวในลอการิทึมก่อน
+  - อนุพันธ์ของ $\sqrt{x^2+1}$ คือ $\dfrac{x}{\sqrt{x^2+1}}$
+  misconceptions:
+  - match: \frac{1}{x^2+1}
+    feedback: สับสนกับอนุพันธ์ของ $\arctan x$ ซึ่งมีตัวส่วนเป็น $x^2+1$ โดยไม่มีราก
+  - match: \frac{x}{\sqrt{x^2+1}}
+    feedback: ดิฟเฉพาะรากแล้วลืมตัวแปรตัวที่หนึ่งในวงเล็บลอการิทึม
+  solution: $f'(x) = \dfrac{1 + \frac{x}{\sqrt{x^2+1}}}{x + \sqrt{x^2+1}} = \dfrac{\frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}}}{x+\sqrt{x^2+1}} = \dfrac{1}{\sqrt{x^2+1}}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p012
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 4
+  type: numeric
+  stem: จงหาค่าของ $\displaystyle\int_0^1 \frac{dx}{\sqrt{x^2+1}}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.8814
+    tolerance: 0.01
+  hints:
+  - ใช้ปฏิยานุพันธ์ที่ได้จากข้อก่อนหน้า คือ $\sinh^{-1}x$
+  - แทนค่าขอบเขต $1$ และ $0$ แล้วลบกัน
+  misconceptions:
+  - match: 0.7854
+    feedback: ใช้ $\int \dfrac{dx}{1+x^2} = \arctan x$ โดยลืมราก ได้ $\dfrac{\pi}{4}$
+  solution: $\displaystyle\int_0^1 \frac{dx}{\sqrt{x^2+1}} = \big[\sinh^{-1}x\big]_0^1 = \ln(1+\sqrt{2}) \approx 0.8814$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p013
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 4
+  type: numeric
+  stem: ลวดราวตากผ้าในสวนหลังบ้านที่นนทบุรีแขวนเป็นรูปโค้ง $y = \cosh x$ ระหว่างเสาสองต้นที่ $x = -1$ และ $x = 1$ (หน่วยเมตร ข้อมูลสมมติ) จงหาความยาวลวดระหว่างเสา (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 2.3504
+    tolerance: 0.01
+    unit: m
+  hints:
+  - ความยาวส่วนโค้งคือ $\displaystyle\int \sqrt{1 + (y')^2}\,dx$ และ $y' = \sinh x$
+  - ใช้เอกลักษณ์ $1 + \sinh^2 x = \cosh^2 x$ แล้วถอดรากจะได้ปริพันธ์ง่าย ๆ
+  misconceptions:
+  - match: 2.0
+    feedback: ใช้ระยะตรงระหว่างเสา $2$ เมตร แต่ลวดโค้งยาวกว่าระยะตรงเสมอ
+  - match: 3.0862
+    feedback: ใช้ $2\cosh 1$ ซึ่งเป็นความยาวที่สูงของลวดที่ปลายทั้งสองข้างแทนความยาวส่วนโค้ง
+  solution: ความยาว $= \displaystyle\int_{-1}^{1}\sqrt{1+\sinh^2 x}\,dx = \int_{-1}^{1}\cosh x\,dx = 2\sinh 1 \approx 2.3504\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p014
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 5
+  type: numeric
+  stem: สายไฟฟ้าระหว่างเสาสองต้นในหมู่บ้านที่จังหวัดสระบุรีมีรูปร่างตาม $y = 10\cosh(x/10)$ (หน่วยเมตร ข้อมูลสมมติ) โดยเสาอยู่ที่ $x = -15$ และ $x = 15$ จงหาความยาวสายไฟระหว่างเสา (ตอบทศนิยม 2 ตำแหน่ง ในหน่วยเมตร)
+  answer:
+    value: 42.5856
+    tolerance: 0.05
+    unit: m
+  hints:
+  - ความยาวส่วนโค้ง $= \displaystyle\int_{-15}^{15}\sqrt{1+(y')^2}\,dx$ โดย $y' = \sinh(x/10)$
+  - ใช้ $1+\sinh^2 u = \cosh^2 u$ แล้วปริพันธ์ $\cosh(x/10)$ ได้ $10\sinh(x/10)$
+  misconceptions:
+  - match: 30.0
+    feedback: ใช้ระยะห่างระหว่างเสา $30$ เมตร แต่สายที่ห้อยโค้งยาวกว่าระยะตรง
+  - match: 47.0482
+    feedback: ใช้ $\cosh$ แทน $\sinh$ ในการปริพันธ์ ได้ $2 \cdot 10\cosh(1.5)$
+  solution: ความยาว $= \displaystyle\int_{-15}^{15}\cosh(x/10)\,dx = \big[10\sinh(x/10)\big]_{-15}^{15} = 20\sinh(1.5) \approx 42.59\ \mathrm{m}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+  figure:
+    src: hanging-cable.svg
+    alt: เสาไฟฟ้าสองต้นอยู่ห่างกัน 30 เมตร สายไฟโค้งลงตรงกลางเป็นรูปโค้งคล้ายโซ่ จุดต่ำสุดอยู่สูงจากพื้น 10 เมตร
+    caption: ตำแหน่งเสาและสายไฟตามโจทย์ (ไม่แสดงความยาวสาย)
+- id: math.calculus.hyperbolic-functions.p015
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 5
+  type: numeric
+  stem: 'จงหาค่าของ $\displaystyle\int_0^1 \sinh^2 x\,dx$ (ตอบทศนิยม 4 ตำแหน่ง) \quad (คำใบ้: ใช้ $\sinh^2 x = \frac{\cosh 2x - 1}{2}$)'
+  answer:
+    value: 0.4067
+    tolerance: 0.005
+  hints:
+  - ใช้ $\sinh^2 x = \dfrac{\cosh 2x - 1}{2}$ แล้วจึงปริพันธ์
+  - ปริพันธ์ของ $\cosh 2x$ คือ $\dfrac{\sinh 2x}{2}$
+  misconceptions:
+  - match: 0.5431
+    feedback: ปริพันธ์ $\sinh x$ แทน $\sinh^2 x$ จะได้ $\cosh 1 - 1$ ซึ่งลืมยกกำลังสอง
+  solution: $\displaystyle\int_0^1\frac{\cosh 2x - 1}{2}\,dx = \frac{1}{2}\Big[\frac{\sinh 2x}{2} - x\Big]_0^1 = \frac{\sinh 2}{4} - \frac{1}{2} \approx 0.4067$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p016
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 5
+  type: mcq
+  multiple: true
+  stem: ข้อใดถูกต้อง (เลือกทุกข้อที่ถูก) สำหรับฟังก์ชันไฮเพอร์โบลิกบนจำนวนจริง
+  choices:
+  - id: a
+    text: $\cosh$ เป็นฟังก์ชันคู่ คือ $\cosh(-x) = \cosh x$
+    correct: true
+  - id: b
+    text: $\sinh$ เป็นฟังก์ชันคู่
+    correct: false
+    feedback: $\sinh(-x) = -\sinh x$ จึงเป็นฟังก์ชันคี่
+  - id: c
+    text: $\tanh$ เป็นฟังก์ชันคี่
+    correct: true
+  - id: d
+    text: $\cosh x \ge 1$ สำหรับทุก $x$
+    correct: true
+  - id: e
+    text: $\sinh x \ge 0$ สำหรับทุก $x$
+    correct: false
+    feedback: $\sinh(-1) < 0$ จึงไม่จริงทุก $x$
+  hints:
+  - ตรวจ $f(-x)$ เทียบกับ $f(x)$ และ $-f(x)$
+  - $\cosh x = \frac{e^x+e^{-x}}{2}$ มีค่าต่ำสุดเมื่อ $x=0$
+  solution: $\cosh$ และ $\tanh$ เป็นฟังก์ชันคี่/คู่ตามสมมาตรที่ตรวจได้ $\cosh x \ge 1$ เพราะ $e^x + e^{-x} \ge 2$ (อสมการ AM–GM) ส่วน $\sinh$ เป็นฟังก์ชันคี่และมีค่าลบเมื่อ $x<0$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p017
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 5
+  type: expression
+  stem: จงหาปฏิยานุพันธ์ของ $\tanh x$ (ตอบเป็นนิพจน์ของ $x$ โดยไม่ต้องใส่ค่าคงที่)
+  answer:
+    latex: \ln(\cosh x)
+    variables:
+    - x
+  hints:
+  - เขียน $\tanh x = \dfrac{\sinh x}{\cosh x}$ แล้วสังเกตว่าตัวเศษคืออนุพันธ์ของตัวส่วน
+  - ใช้การแทนค่า $u = \cosh x$
+  misconceptions:
+  - match: \frac{1}{\cosh^2 x}
+    feedback: นี่คืออนุพันธ์ของ $\tanh x$ ไม่ใช่ปฏิยานุพันธ์ของมัน
+  - match: \ln(\sinh x)
+    feedback: การแทน $u = \sinh x$ ไม่ตรงกับตัวส่วน ต้องใช้ $u = \cosh x$
+  solution: ให้ $u = \cosh x$ จะได้ $du = \sinh x\,dx$ จึง $\displaystyle\int\frac{\sinh x}{\cosh x}\,dx = \int\frac{du}{u} = \ln(\cosh x) + C$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.calculus.hyperbolic-functions.p018
+  topics:
+  - math.calculus.hyperbolic-functions
+  difficulty: 3
+  type: numeric
+  stem: ถ้า $\cosh x = \frac{13}{12}$ และ $x>0$ จงหา $e^{x}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.5
+    tolerance: 0.01
+  hints:
+  - ใช้นิยาม $\cosh x = \frac{e^x + e^{-x}}{2}$ แล้วให้ $u = e^x$
+  - จะได้สมการ $6u^2 - 13u + 6 = 0$ ซึ่งแยกตัวประกอบได้
+  misconceptions:
+  - match: 0.6667
+    feedback: เลือกราก $u = \frac{2}{3}$ ซึ่งให้ $x<0$ ขัดกับเงื่อนไข $x>0$
+  solution: จาก $u + 1/u = 13/6$ จะได้ $6u^2 - 13u + 6 = 0$ จึง $(3u-2)(2u-3) = 0$ มีรากเป็น $u = \frac{2}{3}$ หรือ $\frac{3}{2}$ เลือก $u = \frac{3}{2}$ เพราะ $x>0$ จึง $e^x > 1$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

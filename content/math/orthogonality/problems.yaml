@@ -1,0 +1,369 @@
+problems:
+- id: math.linalg.orthogonality.p001
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 1
+  type: numeric
+  stem: จงหาค่า $x$ ที่ทำให้เวกเตอร์ $(1, 3, x)$ ตั้งฉากกับเวกเตอร์ $(2, -1, 4)$ (ตอบเป็นตัวเลข)
+  answer:
+    value: 0.25
+    tolerance: 0.001
+  hints:
+  - สองเวกเตอร์ตั้งฉากกันก็ต่อเมื่อผลคูณจุดเป็นศูนย์
+  - คำนวณ $1\cdot 2 + 3\cdot(-1) + 4x = 0$
+  misconceptions:
+  - match: -1.25
+    feedback: เปลี่ยนเครื่องหมายของ $-1$ ทำให้ได้ $2+3+4x = 0$
+  - match: -0.5
+    feedback: ตัดพจน์ $3\cdot(-1)$ ออกจากผลคูณจุด
+  solution: $2 - 3 + 4x = 0$ จึง $x = \dfrac{1}{4} = 0.25$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p002
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 1
+  type: mcq
+  stem: คู่เวกเตอร์ใดตั้งฉากกัน
+  choices:
+  - id: a
+    text: $(1, 2, -1)$ และ $(2, 1, 4)$
+    correct: true
+  - id: b
+    text: $(1, 2, 3)$ และ $(1, 1, 1)$
+    correct: false
+    feedback: ผลคูณจุดเท่ากับ $6 \ne 0$
+  - id: c
+    text: $(2, 0, 1)$ และ $(0, 3, 1)$
+    correct: false
+    feedback: ผลคูณจุดเท่ากับ $1 \ne 0$
+  - id: d
+    text: $(1, -1, 2)$ และ $(1, 1, 1)$
+    correct: false
+    feedback: ผลคูณจุดเท่ากับ $2 \ne 0$
+  hints:
+  - คำนวณผลคูณจุดของแต่ละคู่แล้วดูว่าเป็นศูนย์หรือไม่
+  - ผลคูณจุดคือผลรวมของผลคูณของสมาชิกที่ตำแหน่งเดียวกัน
+  solution: $(1)(2) + (2)(1) + (-1)(4) = 0$ จึงตั้งฉากกัน ตัวเลือกอื่นให้ผลคูณจุดไม่เป็นศูนย์
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p003
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 2
+  type: numeric
+  stem: เรือแพขนาดเล็กในแม่น้ำแม่กลองถูกแรง $\vec b = (2, 5)$ นิวตัน (ค่าสมมติ) ลำน้ำมีทิศทาง $\vec a = (5, 12)$ จงหาขนาดของส่วนประกอบของแรง $\vec b$ ที่ขนานกับลำน้ำ (ตอบทศนิยม 4 ตำแหน่ง หน่วยนิวตัน)
+  answer:
+    value: 5.3846
+    tolerance: 0.001
+    unit: นิวตัน
+  hints:
+  - ความยาวของภาพฉายของ $\vec b$ บนเส้นตรงที่มี $\vec a$ คือ $\dfrac{|\vec a\cdot\vec b|}{\|\vec a\|}$
+  - คำนวณ $\vec a\cdot\vec b$ และ $\|\vec a\| = \sqrt{5^2 + 12^2}$
+  misconceptions:
+  - match: 0.4142
+    feedback: ใช้สัมประสิทธิ์ $\dfrac{\vec a\cdot\vec b}{\vec a\cdot\vec a}$ เป็นความยาว ลืมคูณด้วย $\|\vec a\|$
+  - match: 70.0
+    feedback: ตอบผลคูณจุดโดยไม่หารด้วยขนาดของ $\vec a$
+  solution: $\vec a\cdot\vec b = 10 + 60 = 70$ และ $\|\vec a\| = 13$ จึงความยาวภาพฉาย $= \dfrac{70}{13} \approx 5.3846$ นิวตัน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p004
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 2
+  type: numeric
+  stem: เมทริกซ์ภาพฉายบนเส้นตรงที่มีเวกเตอร์ $\vec a = (1, 2)$ คือ $P = \dfrac{\vec a\vec a^{\,T}}{\vec a^{\,T}\vec a}$ จงหาค่าของสมาชิก $P_{11}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.2
+    tolerance: 0.0005
+  hints:
+  - คำนวณ $\vec a^{\,T}\vec a = 1^2 + 2^2$
+  - สมาชิก $P_{11}$ คือ $1^2$ หารด้วยผลนั้น
+  misconceptions:
+  - match: 1.0
+    feedback: ลืมหารด้วย $\vec a^{\,T}\vec a$ ทำให้ได้ $\vec a\vec a^{\,T}$ โดยตรง
+  - match: 0.3333
+    feedback: ใช้ $1 + 2 = 3$ ในตัวส่วนแทนผลบวกกำลังสอง
+  solution: $\vec a^{\,T}\vec a = 5$ และ $P_{11} = \dfrac{1\cdot 1}{5} = 0.2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p005
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 2
+  type: mcq
+  multiple: true
+  stem: กำหนดให้ $P$ เป็นเมทริกซ์ภาพฉายบนเส้นตรงในระนาบ ข้อใดเป็นจริง (เลือกทุกข้อที่ถูก)
+  choices:
+  - id: a
+    text: $P^2 = P$
+    correct: true
+  - id: b
+    text: $P$ มีอินเวอร์ส
+    correct: false
+    feedback: ภาพฉายบนเส้นตรงมีอันดับ $1$ จึงเป็นเมทริกซ์ที่ไม่มีอินเวอร์ส
+  - id: c
+    text: $P^T = P$
+    correct: true
+  - id: d
+    text: $P$ มีค่าเฉพาะ $2$
+    correct: false
+    feedback: ค่าเฉพาะของภาพฉายคือ $0$ และ $1$ เท่านั้น
+  hints:
+  - ภาพฉายที่ทำซ้ำแล้วไม่เปลี่ยนค่า
+  - ค่าเฉพาะของภาพฉายเป็นได้เพียง $0$ หรือ $1$
+  solution: ภาพฉายเป็นสมมาตรและทำซ้ำแล้วได้ค่าเดิม จึง $P^2 = P$ และ $P^T = P$ ส่วนการมีอินเวอร์สหรือค่าเฉพาะ $2$ ไม่เป็นจริงสำหรับภาพฉาย
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p006
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 3
+  type: numeric
+  stem: ใช้กระบวนการแกรม–ชมิดต์กับ $\vec a_1 = (1,1,0)$ และ $\vec a_2 = (1,0,1)$ จงหาความยาวของเวกเตอร์ $\vec w_2 = \vec a_2 - \mathrm{proj}_{\vec a_1}\vec a_2$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.2247
+    tolerance: 0.001
+  hints:
+  - คำนวณ $\mathrm{proj}_{\vec a_1}\vec a_2 = \dfrac{\vec a_1\cdot\vec a_2}{\vec a_1\cdot\vec a_1}\vec a_1$
+  - $\vec w_2 = (0.5, -0.5, 1)$ แล้วหาความยาว
+  misconceptions:
+  - match: 1.5
+    feedback: ลืมถอดรากที่สองของ $\|\vec w_2\|^2$
+  - match: 0.5
+    feedback: ตอบค่าสัมประสิทธิ์ของภาพฉายแทนความยาว
+  solution: $\vec w_2 = (1,0,1) - \tfrac12(1,1,0) = (\tfrac12, -\tfrac12, 1)$ จึง $\|\vec w_2\| = \sqrt{\tfrac14 + \tfrac14 + 1} = \sqrt{1.5} \approx 1.2247$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p007
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 3
+  type: expression
+  stem: ภาพฉายตั้งฉากของเวกเตอร์ $(x,\,3)$ บนเส้นตรงที่กำหนดด้วยเวกเตอร์ $(1,1)$ มีพิกัดแรกเป็นนิพจน์ใด (ตอบเป็นนิพจน์ของ $x$)
+  answer:
+    latex: \frac{x+3}{2}
+    variables:
+    - x
+  hints:
+  - สัมประสิทธิ์ของภาพฉายคือ $\dfrac{\vec a\cdot\vec b}{\vec a\cdot\vec a}$
+  - $\vec a\cdot\vec a = 2$ และ $\vec a\cdot\vec b = x + 3$
+  misconceptions:
+  - match: x+3
+    feedback: ลืมหารด้วย $\vec a\cdot\vec a = 2$
+  - match: \frac{x-3}{2}
+    feedback: เครื่องหมายผิดในผลคูณจุด
+  solution: $\dfrac{x+3}{2}(1,1)$ จึงพิกัดแรกคือ $\dfrac{x+3}{2}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p008
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 3
+  type: numeric
+  stem: บ้านหลังหนึ่งในอำเภอสามพรานอยู่ที่พิกัด $(1, 4)$ และถนนสายตรงผ่านจุดกำเนิดในทิศ $(1, 2)$ (ค่าสมมติ หน่วยกิโลเมตร) จงหาระยะตั้งฉากจากบ้านถึงถนนสายนี้ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.8944
+    tolerance: 0.001
+    unit: km
+  hints:
+  - ระยะตั้งฉากคือขนาดของ $\vec b - \mathrm{proj}_{\vec a}\vec b$
+  - คำนวณ $\mathrm{proj}_{\vec a}\vec b = \dfrac{9}{5}(1,2)$
+  misconceptions:
+  - match: 4.1231
+    feedback: วัดระยะจากจุดกำเนิดแทนระยะตั้งฉากกับถนน
+  - match: 4.0249
+    feedback: ใช้ขนาดของภาพฉายแทนระยะตั้งฉาก
+  solution: $\mathrm{proj} = \tfrac{9}{5}(1,2) = (1.8, 3.6)$ จึง $\vec b - \mathrm{proj} = (-0.8, 0.4)$ และระยะ $= \sqrt{0.8} \approx 0.8944$ กม.
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p009
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 3
+  type: match
+  stem: จับคู่แนวคิดกับข้อความที่ถูกต้อง
+  pairs:
+  - left: เมทริกซ์ภาพฉายบนปริภูมิย่อยที่กำหนดด้วย $A$
+    right: $A(A^TA)^{-1}A^T$
+  - left: ปริภูมิแถวและปริภูมิศูนย์ของเมทริกซ์เดียวกัน
+    right: ตั้งฉากกันทุกคู่
+  - left: เมทริกซ์ $Q$ ที่มี $Q^TQ = I$
+    right: คอลัมน์เป็นเวกเตอร์ตั้งฉากปรกติ
+  - left: การแยก $A = QR$
+    right: ได้จากกระบวนการแกรม–ชมิดต์
+  hints:
+  - ดูว่าแนวคิดนั้นอยู่ในสูตรหรือคำนิยามใด
+  - การแยก QR เป็นผลของแกรม–ชมิดต์ที่ให้คอลัมน์ตั้งฉาก
+  solution: $A(A^TA)^{-1}A^T$ คือภาพฉาย คอลัมน์ของ $Q$ ที่ตั้งฉากปรกติมี $Q^TQ = I$ และการแยก QR เกิดจากแกรม–ชมิดต์ ส่วนปริภูมิแถวกับปริภูมิศูนย์ตั้งฉากกัน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p010
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 3
+  type: order
+  stem: เรียงขั้นตอนกระบวนการแกรม–ชมิดต์สำหรับเวกเตอร์ $\vec a_1, \vec a_2$ ให้ถูกลำดับ
+  items:
+  - ตั้ง $\vec q_1 = \vec a_1/\|\vec a_1\|$
+  - คำนวณ $\vec w_2 = \vec a_2 - (\vec q_1^{\,T}\vec a_2)\vec q_1$
+  - ทำให้ $\vec w_2$ เป็นเวกเตอร์หนึ่งหน่วย $\vec q_2 = \vec w_2/\|\vec w_2\|$
+  hints:
+  - ต้องมี $\vec q_1$ ก่อนจึงจะลบภาพฉายได้
+  - การทำให้เป็นหนึ่งหน่วยเป็นขั้นสุดท้ายเสมอ
+  solution: ลำดับที่ถูกคือ (1) ทำ $\vec q_1$ ให้เป็นหนึ่งหน่วย (2) ลบภาพฉายของ $\vec a_2$ บน $\vec q_1$ ได้ $\vec w_2$ (3) ทำ $\vec w_2$ ให้เป็นหนึ่งหน่วย
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p011
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 4
+  type: numeric
+  stem: ร้านข้าวเกรียบในนครปฐมบันทึกยอดขายในเดือนที่ $t = 0, 1, 2, 3$ เป็น $1, 2, 2, 4$ พันบาท (ค่าสมมติ) ใช้เส้นตรง $y = c + dt$ ที่มีกำลังสองน้อยที่สุด จงหาค่า $d$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.9
+    tolerance: 0.001
+  hints:
+  - ตั้งระบบ $A^TA\,\hat x = A^Tb$ โดย $A$ มีคอลัมน์ $1$ และ $t$
+  - แก้ระบบสองสมการสองตัวแปร
+  misconceptions:
+  - match: 1.2857
+    feedback: ลืมพจน์ค่าคงที่ $c$ และใช้เส้นตรงที่ผ่านจุดกำเนิด
+  solution: $A^TA = \begin{pmatrix}4&6\\6&14\end{pmatrix}$ และ $A^Tb = \begin{pmatrix}9\\18\end{pmatrix}$ จึง $\hat x = (0.9, 0.9)$ นั่นคือ $d = 0.9$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p012
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 4
+  type: numeric
+  stem: ในข้อมูลยอดขายข้าวเกรียบเดิม (ค่าสมมติ) เส้นกำลังสองน้อยที่สุดคือ $y = 0.9 + 0.9t$ จงหาผลรวมกำลังสองของส่วนเหลือ $\|b - A\hat x\|^2$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.7
+    tolerance: 0.001
+  hints:
+  - คำนวณค่าทำนาย $\hat y$ ที่แต่ละเดือนแล้วหาความต่างกับข้อมูลจริง
+  - รวมกำลังสองของความต่างทั้งสี่เดือน
+  misconceptions:
+  - match: 0.8367
+    feedback: ตอบรากของผลรวม ไม่ใช่ผลรวมกำลังสอง
+  - match: 1.4
+    feedback: รวมค่าสัมบูรณ์ของส่วนเหลือแทนกำลังสอง
+  solution: ส่วนเหลือคือ $0.1, 0.2, -0.7, 0.4$ จึงผลรวมกำลังสอง $= 0.01 + 0.04 + 0.49 + 0.16 = 0.70$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p013
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 4
+  type: mcq
+  stem: ถ้าเมทริกซ์ $A$ มีคอลัมน์อิสระเชิงเส้น ข้อใดเกี่ยวกับการแยก $A = QR$ ถูกต้อง
+  choices:
+  - id: a
+    text: $Q$ มีคอลัมน์ตั้งฉากปรกติ และ $R$ เป็นสามเหลี่ยมบนที่มีสมาชิกแนวทแยงเป็นบวก
+    correct: true
+  - id: b
+    text: $Q$ เป็นสามเหลี่ยมล่างเสมอ
+    correct: false
+    feedback: แกรม–ชมิดต์ให้ $Q$ ที่คอลัมน์ตั้งฉาก ไม่ได้เป็นสามเหลี่ยม
+  - id: c
+    text: $R$ เป็นเมทริกซ์ตั้งฉาก
+    correct: false
+    feedback: $R$ เป็นสามเหลี่ยมบน ไม่ใช่เมทริกซ์ตั้งฉากทั่วไป
+  - id: d
+    text: คอลัมน์ของ $Q$ ไม่ตั้งฉากกันแต่ปรกติ
+    correct: false
+    feedback: คอลัมน์ของ $Q$ ต้องตั้งฉากกันด้วย
+  hints:
+  - นึกถึงที่มาของ $Q$ จากแกรม–ชมิดต์
+  - $R_{ij} = \vec q_i^{\,T}\vec a_j$ และเป็นศูนย์เมื่อ $i > j$
+  solution: แกรม–ชมิดต์ให้ $Q$ ที่มีคอลัมน์ตั้งฉากปรกติ และ $R$ เป็นสามเหลี่ยมบนที่สมาชิกแนวทแยงเป็น $\|\vec w_i\|>0$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p014
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 4
+  type: numeric
+  stem: จากเวกเตอร์ $\vec a_1 = (3,0,4)$ และ $\vec a_2 = (1,1,0)$ ในการแยก $A = QR$ สมาชิก $R_{22}$ เท่ากับเท่าใด (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.2806
+    tolerance: 0.001
+  hints:
+  - $R_{22} = \|\vec w_2\|$ โดย $\vec w_2 = \vec a_2 - (\vec q_1^{\,T}\vec a_2)\vec q_1$
+  - $\vec q_1 = (0.6, 0, 0.8)$ เพราะ $\|\vec a_1\| = 5$
+  misconceptions:
+  - match: 1.64
+    feedback: ลืมถอดรากที่สองและได้ $\|\vec w_2\|^2$
+  - match: 0.6
+    feedback: ตอบ $R_{12}$ แทน $R_{22}$
+  solution: $\vec q_1^{\,T}\vec a_2 = 0.6$ จึง $\vec w_2 = (0.64, 1, -0.48)$ และ $R_{22} = \sqrt{1.64} \approx 1.2806$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p015
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 5
+  type: numeric
+  stem: ให้ $A = \begin{pmatrix}1&0\\1&1\\0&1\end{pmatrix}$ และ $P = A(A^TA)^{-1}A^T$ จงหาค่า $P_{11}$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.6667
+    tolerance: 0.001
+  hints:
+  - คำนวณ $A^TA$ และอินเวอร์สของมัน แล้วแทนลงในสูตร
+  - $A^TA = \begin{pmatrix}2&1\\1&2\end{pmatrix}$ มีอินเวอร์ส $\dfrac{1}{3}\begin{pmatrix}2&-1\\-1&2\end{pmatrix}$
+  misconceptions:
+  - match: 0.5
+    feedback: ใช้ภาพฉายบนเวกเตอร์คอลัมน์แรกเพียงอย่างเดียว
+  - match: 1.0
+    feedback: ละการหาอินเวอร์สของ $A^TA$ ทำให้ได้ $AA^T$ แทน
+  solution: แถวแรกของ $A$ คือ $(1,0)$ และ $P_{11} = (1,0)\,(A^TA)^{-1}(1,0)^T = \dfrac{2}{3} \approx 0.6667$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p016
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 5
+  type: numeric
+  stem: จงหาคำตอบกำลังสองน้อยที่สุดของ $Ax = b$ เมื่อ $A = \begin{pmatrix}1&0\\0&1\\1&1\end{pmatrix}$ และ $b = (1,2,4)$ ตอบค่า $x_1$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.3333
+    tolerance: 0.001
+  hints:
+  - ระบบปกติ $A^TA\,x = A^Tb$ โดย $A^TA = \begin{pmatrix}2&1\\1&2\end{pmatrix}$
+  - $A^Tb = (5, 6)$
+  misconceptions:
+  - match: 2.5
+    feedback: หารค่าแรกของ $A^Tb$ ด้วย $2$ โดยไม่แก้ระบบ
+  solution: $2x_1 + x_2 = 5$ และ $x_1 + 2x_2 = 6$ จึง $x_1 = \dfrac{4}{3} \approx 1.3333$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.linalg.orthogonality.p017
+  topics:
+  - math.linalg.orthogonality
+  difficulty: 5
+  type: mcq
+  stem: ถ้า $Q$ เป็นเมทริกซ์สี่เหลี่ยมจัตุรัสที่คอลัมน์ตั้งฉากปรกติ ข้อใดถูกต้อง
+  choices:
+  - id: a
+    text: $Q^TQ = I$
+    correct: true
+  - id: b
+    text: $QQ^T = 0$
+    correct: false
+    feedback: ถ้า $Q$ ตั้งฉากจริง $QQ^T = I$ ไม่ใช่ศูนย์
+  - id: c
+    text: $\det Q = 0$
+    correct: false
+    feedback: เมทริกซ์ตั้งฉากปรกติมีดีเทอร์มิแนนต์ $\pm 1$ จึงไม่เป็นศูนย์
+  - id: d
+    text: $Q$ ต้องเป็นเมทริกซ์สมมาตร
+    correct: false
+    feedback: เมทริกซ์ตั้งฉากทั่วไปไม่จำเป็นต้องสมมาตร
+  hints:
+  - ดูผลคูณภายในของคอลัมน์
+  - ผลคูณ $Q^TQ$ เก็บผลคูณจุดของคอลัมน์ทุกคู่
+  solution: คอลัมน์ตั้งฉากปรกติทำให้ $(Q^TQ)_{ij} = \delta_{ij}$ จึง $Q^TQ = I$
+  license: CC-BY-SA-4.0
+  ai_assisted: true

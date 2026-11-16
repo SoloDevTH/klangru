@@ -1,0 +1,335 @@
+problems:
+- id: math.stats.two-sample-tests.p001
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 1
+  type: mcq
+  stem: ครูวัดคะแนนนักเรียนกลุ่มเดียวกัน 15 คนก่อนและหลังเรียนบทหนึ่ง (ข้อมูลสมมติ) ควรเลือกการทดสอบแบบใดจึงเหมาะที่สุด
+  choices:
+  - id: a
+    text: การทดสอบ $t$ แบบจับคู่ โดยดูผลต่างคะแนนรายคน
+    correct: true
+  - id: b
+    text: การทดสอบ $t$ สองกลุ่มอิสระ เพราะมีสองช่วงเวลา
+    correct: false
+    feedback: ข้อมูลทั้งสองชุดมาจากนักเรียนคนเดิม จึงไม่เป็นอิสระต่อกัน ควรจับคู่
+  - id: c
+    text: การทดสอบ $z$ เพราะจำนวนนักเรียนมากกว่า 10 คน
+    correct: false
+    feedback: จำนวนไม่ได้เป็นเหตุผลในการเลือกทดสอบ $z$ และยังต้องรู้ $\sigma$ ของประชากร
+  - id: d
+    text: ทดสอบเฉพาะคะแนนหลังเรียนด้วยการทดสอบ $t$ หนึ่งกลุ่ม
+    correct: false
+    feedback: วิธีนี้ทิ้งข้อมูลก่อนเรียนไป จึงไม่สามารถวัดการเปลี่ยนแปลงได้
+  hints:
+  - ถามตัวเองว่าข้อมูลสองชุดมาจากคนเดิมหรือไม่
+  - ถ้ามาจากคนเดิม ผลต่างรายคนคือข้อมูลที่ควรวิเคราะห์
+  solution: คะแนนก่อนและหลังมาจากนักเรียนคนเดียวกัน ข้อมูลจึงจับคู่กัน ควรวิเคราะห์ผลต่างรายคนด้วยการทดสอบ $t$ แบบจับคู่
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p002
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 1
+  type: numeric
+  stem: กลุ่ม A มีค่าเฉลี่ย $52.4$ และกลุ่ม B มีค่าเฉลี่ย $48.1$ (ข้อมูลสมมติ) จงหาค่าของ $\bar x_A - \bar x_B$
+  answer:
+    value: 4.3
+    tolerance: 0.01
+  hints:
+  - ผลต่างค่าเฉลี่ยคือค่าเฉลี่ยกลุ่มแรกลบกลุ่มที่สอง
+  - ระวังเครื่องหมาย ต้องลบตามลำดับที่โจทย์กำหนด
+  misconceptions:
+  - match: -4.3
+    feedback: สลับลำดับการลบ ได้ค่าลบของผลต่างที่ถูก
+  - match: 100.5
+    feedback: บวกค่าเฉลี่ยทั้งสองกลุ่มแทนการลบ
+  solution: $\bar x_A - \bar x_B = 52.4 - 48.1 = 4.3$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p003
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 2
+  type: numeric
+  stem: ศูนย์วิจัยทราบว่าส่วนเบี่ยงเบนมาตรฐานของประชากรสองกลุ่มคือ $\sigma_1 = 6$ และ $\sigma_2 = 5$ เก็บตัวอย่างอิสระ $n_1 = 36$ ได้ $\bar x_1 = 74.0$ และ $n_2 = 49$ ได้ $\bar x_2 = 70.5$ (ข้อมูลสมมติ) จงหาค่าสถิติ $z$ (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 2.8481
+    tolerance: 0.01
+  hints:
+  - เมื่อทราบ $\sigma$ ใช้สถิติ $z = \dfrac{(\bar x_1-\bar x_2)}{\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}}$
+  - อย่าลืมยกกำลังสองของ $\sigma$ ก่อนหารด้วย $n$
+  misconceptions:
+  - match: 6.7519
+    feedback: ใส่ $\sigma$ แทน $\sigma^2$ ในตัวส่วนของ $\sqrt{\cdot}$
+  - match: 1.96
+    feedback: ใช้ค่าวิกฤต $1.96$ แทนค่าสถิติที่คำนวณได้ สับสนระหว่างค่าสถิติกับค่าวิกฤต
+  solution: $\sqrt{\dfrac{36}{36} + \dfrac{25}{49}} = \sqrt{1.5102} = 1.2288$ จึง $z = \dfrac{3.5}{1.2288} \approx 2.85$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p004
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 2
+  type: mcq
+  stem: ข้อใด ไม่จำเป็น สำหรับการทดสอบ $t$ แบบเวลช์ (Welch) เมื่อเปรียบเทียบค่าเฉลี่ยของสองประชากรอิสระ
+  choices:
+  - id: a
+    text: ตัวอย่างสองชุดต้องเป็นอิสระต่อกันและสุ่มมา
+    correct: false
+    feedback: เป็นเงื่อนไขสำคัญ ถ้าไม่เป็นอิสระต้องใช้การจับคู่
+  - id: b
+    text: ประชากรทั้งสองต้องมีความแปรปรวนเท่ากันที่ทราบค่าแน่นอน
+    correct: true
+  - id: c
+    text: ประชากรควรเป็นปกติ หรือขนาดตัวอย่างใหญ่พอให้ทฤษฎีบทขีดจำกัดใช้ได้
+    correct: false
+    feedback: เป็นเงื่อนไขเพื่อให้การแจกแจงของสถิติใกล้เคียง $t$
+  - id: d
+    text: ไม่จำเป็นต้องรู้ค่า $\sigma$ ของทั้งสองประชากร
+    correct: false
+    feedback: ไม่ต้องรู้ค่า $\sigma$ จึงใช้การประมาณด้วย $s$ ได้ นี่คือจุดเด่นของ Welch
+  hints:
+  - Welch ไม่ต้องสมมติว่าความแปรปรวนเท่ากัน
+  - ตัวเลือกที่เป็นเงื่อนไขจริงของการสุ่มและการแจกแจงควรถูกเก็บไว้
+  solution: วิธี Welch ไม่ต้องการให้ความแปรปรวนของประชากรเท่ากัน ต่างจากวิธีที่ใช้ความแปรปรวนรวมกัน
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p005
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 2
+  type: numeric
+  stem: นักเรียน 5 คนทำแบบทดสอบก่อนและหลังการอบรม (ข้อมูลสมมติ) คะแนนก่อนอบรม $62, 58, 71, 66, 60$ และหลังอบรม $65, 61, 70, 69, 64$ จงหาค่าเฉลี่ยของผลต่างรายคู่ $\bar d$ โดยนับผลต่าง $= \text{หลัง} - \text{ก่อน}$
+  answer:
+    value: 2.4
+    tolerance: 0.01
+  hints:
+  - คำนวณผลต่าง $d_i$ ของแต่ละคนก่อน แล้วหาค่าเฉลี่ย
+  - รวมผลต่างทั้งหมดแล้วหารด้วยจำนวนคู่
+  misconceptions:
+  - match: 12.0
+    feedback: ลืมหารด้วยจำนวนคู่ ได้ผลรวมของผลต่างแทนค่าเฉลี่ย
+  - match: -2.4
+    feedback: กลับลำดับการลบ (ก่อน − หลัง) จึงได้เครื่องหมายผิด
+  solution: $d = 3, 3, -1, 3, 4$ รวมได้ $12$ ค่าเฉลี่ย $\bar d = 12/5 = 2.4$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p006
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 3
+  type: numeric
+  stem: โรงสีในสุพรรณบุรีมีเครื่องชั่งข้าวสาร 2 เครื่อง (ข้อมูลสมมติ) เครื่อง A ชั่ง $10$ ครั้ง ได้ $\bar x_A = 5.02$ กก. และ $s_A = 0.04$ เครื่อง B ชั่ง $12$ ครั้ง ได้ $\bar x_B = 4.97$ กก. และ $s_B = 0.06$ จงหาค่าสถิติ $t$ แบบเวลช์ (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 2.3313
+    tolerance: 0.01
+  hints:
+  - ตัวส่วนคือ $\sqrt{s_A^2/n_A + s_B^2/n_B}$ ไม่ต้องรวมความแปรปรวน
+  - คำนวณ $s_A^2/n_A$ และ $s_B^2/n_B$ แยกกันก่อนบวก
+  misconceptions:
+  - match: 2.2473
+    feedback: ใช้ความแปรปรวนรวม (pooled) ซึ่งต้องสมมติว่าความแปรปรวนของประชากรเท่ากัน
+  solution: $\dfrac{s_A^2}{n_A} = 0.00016$ และ $\dfrac{s_B^2}{n_B} = 0.0003$ รวมได้ $0.00046$ รากเท่ากับ $0.02145$ จึง $t = \dfrac{0.05}{0.02145} \approx 2.33$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p007
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 3
+  type: numeric
+  stem: จากข้อมูลในข้อก่อนหน้า (เครื่องชั่ง A กับ B) จงหาองศาอิสระ $\nu$ ของการทดสอบ $t$ แบบเวลช์โดยสูตร Welch–Satterthwaite (ตอบทศนิยม 1 ตำแหน่ง)
+  answer:
+    value: 19.1905
+    tolerance: 0.5
+  hints:
+  - สูตร $\nu = \dfrac{(v_A + v_B)^2}{v_A^2/(n_A-1) + v_B^2/(n_B-1)}$ เมื่อ $v = s^2/n$
+  - ยกกำลังสองของ $v$ ที่ตัวส่วนของสูตร ไม่ใช่กำลังสองของผลรวม
+  misconceptions:
+  - match: 20.0
+    feedback: ใช้ $n_A + n_B - 2$ ซึ่งเป็นองศาอิสระของกรณีความแปรปรวนรวม ไม่ใช่ของ Welch
+  solution: $v_A = 0.00016$ และ $v_B = 0.0003$ จึง $\nu = \dfrac{(0.00046)^2}{(0.00016)^2/9 + (0.0003)^2/11} \approx 19.2$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p008
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 3
+  type: order
+  stem: เรียงขั้นตอนการทดสอบสมมติฐานเปรียบเทียบค่าเฉลี่ยของสองกลุ่มอิสระโดยไม่ทราบ $\sigma$ ให้ถูกลำดับ
+  items:
+  - 'ระบุสมมติฐาน $H_0: \mu_1 = \mu_2$ และ $H_1$ ตามคำถาม'
+  - คำนวณค่าเฉลี่ยและ $s$ ของแต่ละกลุ่ม
+  - คำนวณสถิติ $t$ แบบเวลช์และองศาอิสระ
+  - เทียบกับค่าวิกฤตหรือหาค่า $p$ แล้วสรุปผลในบริบท
+  hints:
+  - ก่อนคำนวณอะไรต้องรู้ว่ากำลังทดสอบอะไร
+  - การสรุปผลต้องรอให้คำนวณสถิติและค่าวิกฤตเสร็จก่อน
+  solution: ลำดับที่ถูกคือ ระบุสมมติฐาน แล้วสรุปค่าเฉลี่ยและ $s$ จึงคำนวณสถิติ $t$ และองศาอิสระ สุดท้ายเทียบค่าวิกฤตหรือ $p$ แล้วสรุปผล
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p009
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 4
+  type: numeric
+  stem: โปรแกรมฝึกความจำให้นักเรียนในขอนแก่น 10 คน (ข้อมูลสมมติ) คะแนนก่อนฝึก $12, 15, 11, 18, 14, 16, 13, 17, 12, 15$ และหลังฝึก $14, 17, 13, 17, 18, 19, 13, 20, 14, 18$ จงหาค่าสถิติ $t$ แบบจับคู่ โดยใช้ผลต่าง $d = \text{หลัง} - \text{ก่อน}$ (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 4.2426
+    tolerance: 0.01
+  hints:
+  - หาผลต่าง $d_i$ ทั้ง 10 คู่ แล้วคำนวณ $\bar d$ และ $s_d$
+  - $t = \dfrac{\bar d}{s_d/\sqrt{n}}$ ที่ $n = 10$ และองศาอิสระคือ $9$
+  misconceptions:
+  - match: -1.8241
+    feedback: ใช้วิธีสองกลุ่มอิสระกับข้อมูลที่จับคู่กันอยู่ ซึ่งทิ้งความสัมพันธ์รายคนไป
+  solution: $\bar d = 2.00$ และ $s_d = 1.4907$ จึง $t = \dfrac{\bar d}{s_d/\sqrt{10}} \approx 4.24$ ที่ $\nu = 9$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p010
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 4
+  type: numeric
+  stem: จากการสุ่มสองกลุ่มอิสระ (ข้อมูลสมมติ) กลุ่ม X มี $n = 9$, $\bar x = 3.75$, $s = 1.10$ และกลุ่ม Y มี $n = 11$, $\bar y = 2.90$, $s = 0.95$ จงหาขอบบนของช่วงความเชื่อมั่น $95\%$ ของ $\mu_X - \mu_Y$ โดยใช้ $t$ แบบเวลช์ (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 1.8365
+    tolerance: 0.01
+  hints:
+  - ช่วงความเชื่อมั่นคือ $\bar x - \bar y \pm t^*\sqrt{s_X^2/n_X + s_Y^2/n_Y}$
+  - หาองศาอิสระแบบเวลช์ก่อน แล้วเปิดค่า $t^*$ ที่ระดับ $0.025$ ต่อด้านด้วยองศาอิสระนั้น
+  misconceptions:
+  - match: 1.762
+    feedback: ใช้ค่า $z = 1.96$ แทน $t^*$ ทั้งที่ไม่ทราบ $\sigma$
+  solution: $\bar x - \bar y = 0.85$ และ $\nu \approx 16.0$ จึง $t^* \approx 2.120$ ขอบบน $= 0.85 + 2.120 \times SE \approx 1.84$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p011
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 4
+  type: mcq
+  stem: ช่วงความเชื่อมั่น $95\%$ ของ $\mu_1 - \mu_2$ คือ $(-0.42, 1.31)$ ข้อใดสรุปได้ถูกต้อง (ข้อมูลสมมติ)
+  choices:
+  - id: a
+    text: ไม่พบหลักฐานเพียงพอว่าค่าเฉลี่ยของสองประชากรต่างกันที่ระดับนัยสำคัญ $5\%$
+    correct: true
+  - id: b
+    text: ค่าเฉลี่ยของประชากร $1$ มากกว่าประชากร $2$ อย่างแน่นอน
+    correct: false
+    feedback: ช่วงที่มีศูนย์อยู่ข้างใน จึงสรุปว่ามากกว่าไม่ได้
+  - id: c
+    text: ความน่าจะเป็นที่ $\mu_1 - \mu_2 = 0$ คือ $95\%$
+    correct: false
+    feedback: ช่วงความเชื่อมั่นไม่ได้บอกความน่าจะเป็นของค่าพารามิเตอร์ที่ค่าใดค่าหนึ่ง
+  - id: d
+    text: ค่าความแปรปรวนของทั้งสองประชากรเท่ากัน
+    correct: false
+    feedback: ช่วงความเชื่อมั่นนี้ไม่ได้ยืนยันเรื่องความแปรปรวน
+  hints:
+  - ตรวจว่าค่า $0$ อยู่ในช่วงนี้หรือไม่
+  - ถ้า $0$ อยู่ในช่วง การทดสอบสองด้านที่ระดับเดียวกันมักไม่ปฏิเสธ $H_0$
+  solution: 'ช่วง $(-0.42, 1.31)$ มี $0$ อยู่ข้างใน จึงไม่สามารถปฏิเสธ $H_0: \mu_1 = \mu_2$ ที่ระดับ $5\%$ ได้'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p012
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 4
+  type: match
+  stem: จับคู่สถานการณ์กับการทดสอบที่เหมาะสม
+  pairs:
+  - left: ตัวอย่างอิสระ และทราบ $\sigma$ ของทั้งสองประชากร
+    right: การทดสอบ $z$ ของผลต่างค่าเฉลี่ย
+  - left: ตัวอย่างอิสระ และไม่ทราบ $\sigma$
+    right: การทดสอบ $t$ แบบเวลช์
+  - left: วัดคนเดียวกันก่อนและหลังโปรแกรม
+    right: การทดสอบ $t$ ของผลต่างรายคู่
+  hints:
+  - สังเกตว่าข้อมูลสองชุดเป็นอิสระหรือมาจากคนเดิม
+  - ดูว่ามีการรู้ค่า $\sigma$ ของประชากรหรือไม่
+  solution: ทราบ $\sigma$ จึงใช้ $z$ ไม่ทราบ $\sigma$ และเป็นอิสระจึงใช้ $t$ แบบเวลช์ และข้อมูลจับคู่ใช้ $t$ ของผลต่างรายคู่
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p013
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 5
+  type: numeric
+  stem: 'สถิติ $t$ ของการทดสอบ $H_0: \mu_1 = \mu_2$ แบบสองด้านได้ $t = 2.31$ จากองศาอิสระ $\nu = 18$ (ข้อมูลสมมติ) จงหาค่า $p$ แบบสองด้าน (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.033
+    tolerance: 0.001
+  hints:
+  - ค่า $p$ สองด้านคือ $2P(T > |t|)$
+  - ใช้ฟังก์ชันการแจกแจง $t$ ที่องศาอิสระ $18$ แล้วคูณ $2$ จากส่วนหาง
+  misconceptions:
+  - match: 0.0165
+    feedback: ลืมคูณสองให้ค่า $p$ แบบหางเดียว ซึ่งใช้ได้เฉพาะเมื่อมีสมมติฐานทางเดียว
+  solution: $p = 2P(T_{18} > 2.31) \approx 0.0330$ (จากฟังก์ชันการแจกแจง $t$ ที่องศาอิสระ $18$)
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p014
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 5
+  type: numeric
+  stem: 'ร้านอาหารสองสาขาในกรุงเทพฯ วัดเวลารอคิวของลูกค้า (นาที ข้อมูลสมมติ) สาขา A: $18, 22, 20, 25, 19, 21$ และสาขา B: $24, 27, 23, 29, 26, 25, 28$ จงคำนวณค่าสถิติ $t$ แบบเวลช์ (ตอบทศนิยม 2 ตำแหน่ง) ให้ $t = \bar x_A - \bar x_B$ หาร $\sqrt{s_A^2/n_A + s_B^2/n_B}$'
+  answer:
+    value: -3.9691
+    tolerance: 0.01
+  hints:
+  - คำนวณ $\bar x$ และ $s$ ของแต่ละสาขาจากข้อมูลดิบ
+  - ค่า $s$ ใช้ตัวหาร $n-1$ ไม่ใช่ $n$
+  misconceptions:
+  - match: -4.0156
+    feedback: ใช้ความแปรปรวนรวม (pooled) ทั้งที่ความแปรปรวนของสองสาขาต่างกันชัดเจน
+  solution: $\bar x_A \approx 20.833$, $s_A \approx 2.483$, $\bar x_B \approx 26.000$, $s_B \approx 2.160$ จึง $t \approx -3.97$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p015
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 5
+  type: numeric
+  stem: วัดความเร็วในการพิมพ์ดีด (คำต่อนาที ข้อมูลสมมติ) ของพนักงาน 8 คนก่อนและหลังการอบรม คู่ $(\text{ก่อน}, \text{หลัง})$ คือ $(120,126), (115,113), (130,137), (142,141), (126,133), (118,124), (135,136), (122,129)$ จงหาขอบบนของช่วงความเชื่อมั่น $95\%$ ของผลต่างเฉลี่ย $\mu_d$ โดย $d = \text{หลัง} - \text{ก่อน}$ (ตอบทศนิยม 2 ตำแหน่ง)
+  answer:
+    value: 7.111
+    tolerance: 0.02
+  hints:
+  - ทำงานกับผลต่างรายคู่ $d_i$ แล้วใช้ช่วง $\bar d \pm t^*\,s_d/\sqrt{n}$
+  - องศาอิสระของ $t^*$ คือ $n - 1 = 7$
+  misconceptions:
+  - match: 6.5572
+    feedback: ใช้ $z = 1.96$ แทน $t^*$ ทั้งที่มีตัวอย่างน้อยและไม่ทราบ $\sigma$
+  solution: $\bar d = 3.875$, $s_d = 3.871$, $t^*_{0.025,7} \approx 2.365$ ขอบบน $= \bar d + t^* s_d/\sqrt 8 \approx 7.11$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.stats.two-sample-tests.p016
+  topics:
+  - math.stats.two-sample-tests
+  difficulty: 5
+  type: mcq
+  stem: ข้อความใดเกี่ยวกับการวิเคราะห์ข้อมูลจับคู่ด้วยการทดสอบ $t$ แบบอิสระ (ไม่จับคู่) เมื่อคู่ข้อมูลมีสหสัมพันธ์บวกสูง
+  choices:
+  - id: a
+    text: ค่า $s$ ของผลต่างรายคู่จะเล็กกว่าที่ควร การวิเคราะห์แบบอิสระจึงประเมินความคลาดเคลื่อนมาตรฐานต่ำเกินจริง
+    correct: false
+    feedback: ผลกลับกัน เมื่อสหสัมพันธ์บวก ความแปรปรวนของผลต่างจะเล็ก แต่วิธีอิสระไม่ใช้ข้อมูลนี้ จึงประเมินความคลาดเคลื่อนสูงเกินจริง
+  - id: b
+    text: วิธีอิสระให้ค่า $t$ ที่ถูกต้องกว่าเสมอ เพราะไม่ต้องสมมติความสัมพันธ์
+    correct: false
+    feedback: วิธีนี้ไม่ได้ใช้ความสัมพันธ์รายคู่ จึงพลาดข้อมูลที่สำคัญ
+  - id: c
+    text: วิธีอิสระประเมินความคลาดเคลื่อนมาตรฐานสูงเกินจริง ทำให้อำนาจการทดสอบต่ำกว่าวิธีจับคู่
+    correct: true
+  - id: d
+    text: วิธีอิสระและวิธีจับคู่ให้ผลเหมือนกันเสมอ ไม่ว่าสหสัมพันธ์จะเป็นเท่าใด
+    correct: false
+    feedback: สหสัมพันธ์มีผลต่อความคลาดเคลื่อนมาตรฐาน จึงให้ผลต่างกันได้
+  hints:
+  - คิดถึงความแปรปรวนของผลต่างเมื่อข้อมูลเกี่ยวข้องกัน
+  - สหสัมพันธ์บวกทำให้ $\operatorname{Var}(X-Y)$ เล็กลง
+  solution: $\operatorname{Var}(X-Y) = \sigma_X^2 + \sigma_Y^2 - 2\rho\sigma_X\sigma_Y$ เมื่อ $\rho$ สูง ค่านี้เล็กลง วิธีอิสระจึงใช้ความคลาดเคลื่อนสูงเกินจริงและอำนาจต่ำ
+  license: CC-BY-SA-4.0
+  ai_assisted: true

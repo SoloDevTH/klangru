@@ -1,0 +1,359 @@
+problems:
+- id: math.de.laplace-transform.p001
+  topics:
+  - math.de.laplace-transform
+  difficulty: 1
+  type: numeric
+  stem: จงหาค่าของการแปลงลาปลาซ $\mathcal{L}\{e^{3t}\}$ ที่ $s = 5$ (ตอบเป็นตัวเลข)
+  answer:
+    value: 0.5
+    tolerance: 0.001
+  hints:
+  - นิยาม $\mathcal{L}\{f\}(s) = \displaystyle\int_0^\infty e^{-st}f(t)\,dt$ ทำให้ $\mathcal{L}\{e^{at}\} = \dfrac{1}{s-a}$
+  - แทน $a = 3$ และ $s = 5$
+  misconceptions:
+  - match: 0.125
+    feedback: ใช้ $\dfrac{1}{s+a}$ ทำให้เครื่องหมายของ $a$ ผิด ได้ $\dfrac{1}{5+3}$
+  solution: $\mathcal{L}\{e^{3t}\}(s) = \dfrac{1}{s-3}$ จึงได้ $\dfrac{1}{5-3} = 0.5$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p002
+  topics:
+  - math.de.laplace-transform
+  difficulty: 1
+  type: mcq
+  stem: การแปลงลาปลาซของฟังก์ชันคงที่ $f(t) = 1$ คือข้อใด
+  choices:
+  - id: a
+    text: $\dfrac{1}{s}$
+    correct: true
+  - id: b
+    text: $s$
+    correct: false
+    feedback: นี่คือเกือบเป็นการหาอนุพันธ์ ไม่ใช่การแปลงของค่าคงที่
+  - id: c
+    text: $\dfrac{1}{s^2}$
+    correct: false
+    feedback: นี่คือการแปลงของ $t$ ไม่ใช่ของ $1$
+  - id: d
+    text: $\dfrac{s}{s^2+1}$
+    correct: false
+    feedback: นี่คือการแปลงของ $\cos t$
+  hints:
+  - แทน $f(t) = 1$ ลงในนิยามแล้วอินทิเกรต
+  - $\int_0^\infty e^{-st}\,dt = \dfrac{1}{s}$ เมื่อ $s>0$
+  solution: $\displaystyle\mathcal{L}\{1\} = \int_0^\infty e^{-st}\,dt = \frac{1}{s}$ สำหรับ $s>0$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p003
+  topics:
+  - math.de.laplace-transform
+  difficulty: 2
+  type: expression
+  stem: จงหา $\mathcal{L}\{t^2\}$ ในรูปนิพจน์ของ $s$
+  answer:
+    latex: \frac{2}{s^3}
+    variables:
+    - s
+  hints:
+  - ใช้ตาราง $\mathcal{L}\{t^n\} = \dfrac{n!}{s^{n+1}}$
+  - $2! = 2$
+  misconceptions:
+  - match: \frac{1}{s^3}
+    feedback: ลืมแฟกทอเรียล $2! = 2$
+  - match: \frac{2}{s^2}
+    feedback: ตัวกำลังของ $s$ ควรเป็น $n+1 = 3$
+  solution: $\mathcal{L}\{t^2\} = \dfrac{2!}{s^{3}} = \dfrac{2}{s^3}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p004
+  topics:
+  - math.de.laplace-transform
+  difficulty: 2
+  type: numeric
+  stem: จงหาค่าของ $\mathcal{L}\{\sin 2t\}$ ที่ $s = 3$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.1538
+    tolerance: 0.0005
+  hints:
+  - ตาราง $\mathcal{L}\{\sin \omega t\} = \dfrac{\omega}{s^2 + \omega^2}$
+  - แทน $\omega = 2$ และ $s = 3$
+  misconceptions:
+  - match: 0.2308
+    feedback: สลับเป็นตาราง $\cos$ ได้ $\dfrac{s}{s^2+\omega^2}$
+  - match: 0.4
+    feedback: เครื่องหมายผิดในตัวส่วนได้ $s^2 - \omega^2$
+  solution: $\mathcal{L}\{\sin 2t\} = \dfrac{2}{s^2+4}$ จึงได้ $\dfrac{2}{9+4} = \dfrac{2}{13} \approx 0.1538$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p005
+  topics:
+  - math.de.laplace-transform
+  difficulty: 2
+  type: mcq
+  stem: ข้อใดคือการแปลงลาปลาซของ $e^{-t}\cos 3t$
+  choices:
+  - id: a
+    text: $\dfrac{s+1}{(s+1)^2+9}$
+    correct: true
+  - id: b
+    text: $\dfrac{s}{s^2+9}$
+    correct: false
+    feedback: นี่คือการแปลงของ $\cos 3t$ ยังไม่ได้เลื่อนแกน $s$ ด้วย $a = -1$
+  - id: c
+    text: $\dfrac{3}{(s+1)^2+9}$
+    correct: false
+    feedback: ตัวเศษผิด เพราะการแปลงของ $\cos$ มีตัวเศษเป็น $s$ ไม่ใช่ $\omega$
+  - id: d
+    text: $\dfrac{s+1}{s^2+9}$
+    correct: false
+    feedback: ลืมเลื่อนแกน $s$ ในตัวส่วน
+  hints:
+  - ใช้ทฤษฎีบทการเลื่อนแกน $\mathcal{L}\{e^{at}f(t)\} = F(s-a)$
+  - ในกรณีนี้ $a = -1$ ดังนั้นแทน $s$ ด้วย $s+1$
+  solution: $\mathcal{L}\{\cos 3t\} = \dfrac{s}{s^2+9}$ แล้วแทน $s \to s+1$ ได้ $\dfrac{s+1}{(s+1)^2+9}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p006
+  topics:
+  - math.de.laplace-transform
+  difficulty: 2
+  type: numeric
+  stem: อุณหภูมิส่วนเกินของห้องเก็บลำไยในโรงคัดบรรจุที่จันทบุรี (ค่าสมมติ) $T(t)$ เป็นไปตาม $T' + 2T = 4$ โดยเริ่มที่ $T(0) = 1$ จงหา $T(1)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 1.8647
+    tolerance: 0.001
+  hints:
+  - แปลงลาปลาซทั้งสองข้างโดยใช้ $\mathcal{L}\{T'\} = sY - T(0)$
+  - แยกแล้วจะได้ $Y = \dfrac{s+4}{s(s+2)}$ ซึ่งแยกเศษส่วนย่อยได้
+  misconceptions:
+  - match: 2.0
+    feedback: ละเลยค่าเริ่มต้น $T(0) = 1$ จึงได้คำตอบคงที่ $2$
+  - match: 2.1353
+    feedback: เครื่องหมายของเทอม $e^{-2t}$ ผิด
+  solution: $(s+2)Y = \dfrac{4}{s} + 1$ จึง $Y = \dfrac{2}{s} - \dfrac{1}{s+2}$ ดังนั้น $T(t) = 2 - e^{-2t}$ และ $T(1) = 2 - e^{-2} \approx 1.8647$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p007
+  topics:
+  - math.de.laplace-transform
+  difficulty: 3
+  type: expression
+  stem: จงหาการแปลงลาปลาซผกผัน $\mathcal{L}^{-1}\!\left\{\dfrac{3s+5}{(s-1)(s+2)}\right\}$ (ตอบเป็นนิพจน์ของ $t$)
+  answer:
+    latex: \frac{8}{3}e^{t}+\frac{1}{3}e^{-2t}
+    variables:
+    - t
+  hints:
+  - แยกเศษส่วนย่อยในรูป $\dfrac{A}{s-1} + \dfrac{B}{s+2}$
+  - หา $A$ โดยแทน $s = 1$ และหา $B$ โดยแทน $s = -2$
+  misconceptions:
+  - match: \frac{8}{3}e^{t}+\frac{1}{3}e^{2t}
+    feedback: เลขชี้กำลังของ $e^{-2t}$ สลับเครื่องหมาย เพราะรากคือ $s = -2$
+  - match: 3e^{t}+5e^{-2t}
+    feedback: นำตัวเศษไปใช้โดยตรงโดยไม่แยกเศษส่วนย่อย
+  solution: $A = \dfrac{3+5}{1+2} = \dfrac{8}{3}$ และ $B = \dfrac{-6+5}{-3} = \dfrac{1}{3}$ จึง $f(t) = \dfrac{8}{3}e^{t} + \dfrac{1}{3}e^{-2t}$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p008
+  topics:
+  - math.de.laplace-transform
+  difficulty: 3
+  type: numeric
+  stem: กระแสไฟ $i(t)$ ในวงจร RL สมมติในห้องปฏิบัติการของวิทยาลัยเทคนิคไทย ที่ต่อกับแรงดัน $e^{-t}$ เป็นไปตาม $i' + 2i = e^{-t}$ โดย $i(0) = 0$ จงหา $i(1)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.2325
+    tolerance: 0.001
+    unit: A
+  hints:
+  - แปลงลาปลาซแล้วได้ $(s+2)I = \dfrac{1}{s+1}$
+  - แยกเศษส่วนย่อยของ $\dfrac{1}{(s+1)(s+2)}$
+  misconceptions:
+  - match: -0.2325
+    feedback: สลับเครื่องหมายของผลต่างเอกซ์โพเนนเชียล
+  - match: 0.3679
+    feedback: ละเทอม $-e^{-2t}$ ที่มาจากเศษส่วนย่อยตัวที่สอง
+  solution: $I = \dfrac{1}{(s+1)(s+2)} = \dfrac{1}{s+1} - \dfrac{1}{s+2}$ จึง $i(t) = e^{-t} - e^{-2t}$ และ $i(1) \approx 0.2325$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p009
+  topics:
+  - math.de.laplace-transform
+  difficulty: 3
+  type: match
+  stem: จับคู่รูปฟังก์ชันกับการแปลงลาปลาซที่ถูกต้อง
+  pairs:
+  - left: $f(t) = 1$
+    right: $\dfrac{1}{s}$
+  - left: $f(t) = t$
+    right: $\dfrac{1}{s^2}$
+  - left: $f(t) = e^{at}$
+    right: $\dfrac{1}{s-a}$
+  - left: $f'(t)$
+    right: $sF(s) - f(0)$
+  hints:
+  - ใช้ตารางการแปลงพื้นฐาน
+  - การแปลงของอนุพันธ์มีเทอมค่าเริ่มต้นเสมอ
+  solution: $\mathcal{L}\{1\} = 1/s$, $\mathcal{L}\{t\} = 1/s^2$, $\mathcal{L}\{e^{at}\} = 1/(s-a)$ และ $\mathcal{L}\{f'\} = sF(s) - f(0)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p010
+  topics:
+  - math.de.laplace-transform
+  difficulty: 3
+  type: order
+  stem: เรียงขั้นตอนการแก้ปัญหาค่าเริ่มต้นด้วยการแปลงลาปลาซให้ถูกลำดับ
+  items:
+  - แปลงลาปลาซทั้งสองข้างของสมการเชิงอนุพันธ์โดยใช้กฎของอนุพันธ์
+  - แทนค่าเริ่มต้นและจัดสมการพีชคณิตเชิงเส้นเพื่อหา $Y(s)$
+  - แยก $Y(s)$ เป็นเศษส่วนย่อยที่แปลงกลับได้ง่าย
+  - แปลงลาปลาซผกผันเพื่อได้คำตอบ $y(t)$
+  hints:
+  - ค่าเริ่มต้นใช้ได้เฉพาะหลังจากที่มีการแปลงของอนุพันธ์แล้ว
+  - การแปลงกลับทำเป็นขั้นสุดท้าย
+  solution: ลำดับที่ถูกคือ (1) แปลงสมการทั้งสองข้าง (2) แทนค่าเริ่มต้นและแก้ $Y(s)$ (3) แยกเศษส่วนย่อย (4) แปลงกลับเป็น $y(t)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p011
+  topics:
+  - math.de.laplace-transform
+  difficulty: 4
+  type: numeric
+  stem: ระบบมวล-สปริง-ตัวหน่วงสมมติ $y'' + 5y' + 6y = 0$ โดย $y(0) = 1$ และ $y'(0) = 0$ จงหาค่า $y(1)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.3064
+    tolerance: 0.0005
+  hints:
+  - แปลงลาปลาซโดยใช้ $\mathcal{L}\{y''\} = s^2Y - sy(0) - y'(0)$
+  - แยกตัวประกอบ $s^2 + 5s + 6 = (s+2)(s+3)$ แล้วแยกเศษส่วนย่อย
+  misconceptions:
+  - match: 0.0855
+    feedback: ละเลยตัวเศษ $s+5$ และใช้ $Y = 1/((s+2)(s+3))$
+  solution: $Y = \dfrac{s+5}{(s+2)(s+3)} = \dfrac{3}{s+2} - \dfrac{2}{s+3}$ จึง $y(t) = 3e^{-2t} - 2e^{-3t}$ และ $y(1) \approx 0.3064$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p012
+  topics:
+  - math.de.laplace-transform
+  difficulty: 4
+  type: numeric
+  stem: ตัวหน่วงประตูบ้านสมมติ $y'' + 2y' + y = 0$ โดย $y(0) = 0$ และ $y'(0) = 2$ จงหาค่า $y(2)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.5413
+    tolerance: 0.0005
+  hints:
+  - ตัวส่วน $(s+1)^2$ เป็นรากซ้ำ จึงใช้ตาราง $\mathcal{L}\{te^{at}\} = \dfrac{1}{(s-a)^2}$
+  - $Y = \dfrac{2}{(s+1)^2}$
+  misconceptions:
+  - match: 0.2707
+    feedback: ลืมตัวคูณ $t$ จากรากซ้ำ จึงได้ $2e^{-t}$
+  solution: $Y = \dfrac{2}{(s+1)^2}$ จึง $y(t) = 2te^{-t}$ และ $y(2) = 4e^{-2} \approx 0.5413$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p013
+  topics:
+  - math.de.laplace-transform
+  difficulty: 4
+  type: numeric
+  stem: ระบบสั่นสมมติ $y'' + 2y' + 5y = 0$ โดย $y(0) = 1$ และ $y'(0) = 0$ จงหาค่า $y(\pi/4)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.228
+    tolerance: 0.0005
+  hints:
+  - เติมกำลังสอง $s^2 + 2s + 5 = (s+1)^2 + 4$
+  - ใช้ $\mathcal{L}\{e^{-t}\cos 2t\}$ และ $\mathcal{L}\{e^{-t}\sin 2t\}$
+  misconceptions:
+  - match: 0.0
+    feedback: ลืมพจน์ไซน์ จึงได้เพียง $e^{-t}\cos 2t$ ซึ่งเป็นศูนย์ที่ $t=\pi/4$
+  - match: -0.228
+    feedback: เครื่องหมายของพจน์ไซน์ผิด
+  solution: $Y = \dfrac{s+2}{(s+1)^2+4} = \dfrac{s+1}{(s+1)^2+4} + \dfrac{1}{(s+1)^2+4}$ จึง $y(t) = e^{-t}\big(\cos 2t + \tfrac12\sin 2t\big)$ และ $y(\pi/4) = \tfrac12 e^{-\pi/4} \approx 0.2280$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p014
+  topics:
+  - math.de.laplace-transform
+  difficulty: 4
+  type: mcq
+  stem: ทฤษฎีบทการเลื่อนแกน $s$ ของการแปลงลาปลาซกล่าวว่าอย่างไร
+  choices:
+  - id: a
+    text: $\mathcal{L}\{e^{at}f(t)\} = F(s-a)$
+    correct: true
+  - id: b
+    text: $\mathcal{L}\{e^{at}f(t)\} = F(s)\,e^{a}$
+    correct: false
+    feedback: ตัวคูณ $e^{a}$ ไม่ปรากฏในทฤษฎีบท การเลื่อนเกิดที่ตัวแปร $s$
+  - id: c
+    text: $\mathcal{L}\{e^{at}f(t)\} = F(s/a)$
+    correct: false
+    feedback: การหารด้วย $a$ ทำให้เป็นการปรับขนาด ไม่ใช่การเลื่อน
+  - id: d
+    text: $\mathcal{L}\{e^{at}f(t)\} = F(s+a)$
+    correct: false
+    feedback: เครื่องหมายของ $a$ กลับ ต้องเป็น $s - a$
+  hints:
+  - พิจารณาการแปลงของ $e^{at}f(t)$ จากนิยามโดยตรง
+  - ตัวเอกซ์โพเนนเชียลรวมเข้ากับ $e^{-st}$ ได้ $e^{-(s-a)t}$
+  solution: $\displaystyle\int_0^\infty e^{-st}e^{at}f(t)\,dt = \int_0^\infty e^{-(s-a)t}f(t)\,dt = F(s-a)$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p015
+  topics:
+  - math.de.laplace-transform
+  difficulty: 4
+  type: expression
+  stem: จงหา $\mathcal{L}^{-1}\!\left\{\dfrac{1}{s^2+4s+13}\right\}$ (ตอบเป็นนิพจน์ของ $t$)
+  answer:
+    latex: \frac{1}{3}e^{-2t}\sin(3t)
+    variables:
+    - t
+  hints:
+  - เติมกำลังสอง $s^2 + 4s + 13 = (s+2)^2 + 9$
+  - ใช้ $\mathcal{L}\{e^{-2t}\sin 3t\} = \dfrac{3}{(s+2)^2+9}$
+  misconceptions:
+  - match: e^{-2t}\sin(3t)
+    feedback: ลืมตัวคูณ $\dfrac{1}{3}$ จากการดึงค่าคงที่
+  - match: \frac{1}{3}e^{2t}\sin(3t)
+    feedback: เครื่องหมายของเอกซ์โพเนนเชียลกลับ เพราะรากคือ $s = -2$
+  solution: $\dfrac{1}{(s+2)^2+9} = \dfrac{1}{3}\cdot\dfrac{3}{(s+2)^2+9}$ จึง $f(t) = \dfrac{1}{3}e^{-2t}\sin 3t$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p016
+  topics:
+  - math.de.laplace-transform
+  difficulty: 5
+  type: numeric
+  stem: ระบบสั่นสมมติถูกแรงไซน์กระทำ $y'' + 4y = \sin t$ โดย $y(0) = 0$ และ $y'(0) = 0$ จงหาค่า $y(1)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.1289
+    tolerance: 0.0005
+  hints:
+  - ใช้ $\mathcal{L}\{\sin t\} = \dfrac{1}{s^2+1}$ และแยก $\dfrac{1}{(s^2+4)(s^2+1)}$
+  - $\dfrac{1}{(s^2+4)(s^2+1)} = \dfrac{1}{3}\left(\dfrac{1}{s^2+1} - \dfrac{1}{s^2+4}\right)$
+  misconceptions:
+  - match: -0.0226
+    feedback: ลืมตัวคูณ $\tfrac12$ หน้า $\sin 2t$
+  - match: 0.3868
+    feedback: ลืมตัวหาร $3$ จากเศษส่วนย่อย
+  solution: $Y = \dfrac{1}{3}\left(\dfrac{1}{s^2+1} - \dfrac{1}{s^2+4}\right)$ จึง $y(t) = \dfrac13\big(\sin t - \tfrac12\sin 2t\big)$ และ $y(1) \approx 0.1289$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: math.de.laplace-transform.p017
+  topics:
+  - math.de.laplace-transform
+  difficulty: 5
+  type: numeric
+  stem: มวลติดปลายสปริงในโรงงานเครื่องใช้ไม้ไผ่ที่จังหวัดชัยภูมิถูกแรงคงที่ 1 นิวตันกระทำ (ค่าสมมติ) โดยสมการ $x'' + 3x' + 2x = 1$ และ $x(0) = x'(0) = 0$ จงหาค่า $x(1)$ (ตอบทศนิยม 4 ตำแหน่ง)
+  answer:
+    value: 0.1998
+    tolerance: 0.0005
+  hints:
+  - แปลงลาปลาซของ $1$ คือ $1/s$ จึงได้ $X = \dfrac{1}{s(s+1)(s+2)}$
+  - แยกเศษส่วนย่อยสามตัว โดยแทน $s = 0, -1, -2$ ทีละค่า
+  misconceptions:
+  - match: 0.2325
+    feedback: ละตัวคูณ $1/s$ จึงได้คำตอบผิดที่ไม่มีค่าคงที่ $\tfrac12$
+  solution: $X = \dfrac{1}{2s} - \dfrac{1}{s+1} + \dfrac{1}{2(s+2)}$ จึง $x(t) = \tfrac12 - e^{-t} + \tfrac12 e^{-2t}$ และ $x(1) \approx 0.1998$
+  license: CC-BY-SA-4.0
+  ai_assisted: true
