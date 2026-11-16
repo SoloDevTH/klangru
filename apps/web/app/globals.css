@@ -378,3 +378,7 @@ textarea.input { width: 100%; font-size: 16px; line-height: 1.6; resize: vertica
 .code-error { color: var(--bad); white-space: pre-wrap; }
 .feedback .eyebrow { display: block; margin-top: 8px; }
 .feedback .code-output { margin-top: 4px; }
+
+/* สตริงยาวไม่มีช่องว่าง (ค่าแฮช URL โค้ดในบรรทัด) ต้องตัดบรรทัดได้ ไม่ดันหน้าเกินจอมือถือ */
+.prose, .worked, .problem, .lesson-check { overflow-wrap: anywhere; }
+.prose pre, .worked pre, .problem pre { overflow-wrap: normal; }

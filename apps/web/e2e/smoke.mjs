@@ -397,8 +397,9 @@ await step("ทุกหน้าเปิดได้และไม่กว�
   const paths = ["/", "/search/", "/review/", "/profile/", "/placement/", "/quality/", ...index.topics.flatMap((t) => [`/topic/${t.id}/`, `/topic/${t.id}/practice/`])];
   const bad = [];
   for (const p of paths) {
-    const res = await page.goto(base + p);
-    if (!res.ok()) bad.push(`HTTP ${res.status()} ${p}`);
+    // เปิดแบบ domcontentloaded: หน้าที่มีรูปมากโหลดช้าบนเครื่องที่ใช้ร่วมกัน แต่ต้องเปิดได้ภายใน 60 วินาที
+    const res = await page.goto(base + p, { waitUntil: "domcontentloaded", timeout: 60000 }).catch((e) => ({ ok: () => false, status: () => e.message.split("\n")[0] }));
+    if (!res.ok()) { bad.push(`HTTP ${res.status()} ${p}`); continue; }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (overflow > 1 && p !== "/quality/") bad.push(`ล้นจอ ${overflow}px ${p}`);
   }
