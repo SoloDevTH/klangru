@@ -155,15 +155,15 @@ problems:
     topics: [earthscience.atmosphere.global-circulation]
     difficulty: 4
     type: numeric
-    stem: "ที่ละติจูด 45° เหนือ ($f = 1.03 \\times 10^{-4}\\ \\mathrm{s^{-1}}$) ความกดอากาศในชั้นบนลดลง 4 hPa ในระยะ 300 km ความหนาแน่นของอากาศ $1.2\\ \\mathrm{kg/m^3}$ ลมจีออสโทรฟิกมีอัตราเร็วกี่เมตรต่อวินาที"
-    answer: { value: 10.8, tolerance: 0.2, unit: m/s }
+    stem: "ที่ละติจูด 45° เหนือ ($f = 1.03 \\times 10^{-4}\\ \\mathrm{s^{-1}}$) ความกดอากาศในชั้นบนลดลง 6 hPa ในระยะ 250 km ความหนาแน่นของอากาศ $1.2\\ \\mathrm{kg/m^3}$ ลมจีออสโทรฟิกมีอัตราเร็วกี่เมตรต่อวินาที"
+    answer: { value: 19.42, tolerance: 0.2, unit: m/s }
     misconceptions:
-      - { match: 0.108, feedback: "ใช้ 4 hPa เป็น 4 Pa ต้องแปลงเป็น 400 Pa" }
-      - { match: 12.9, feedback: "ลืมหารด้วยความหนาแน่น 1.2" }
+      - { match: 0.194, feedback: "ใช้ 6 hPa เป็น 6 Pa ต้องแปลงเป็น 600 Pa" }
+      - { match: 23.3, feedback: "ลืมหารด้วยความหนาแน่น 1.2" }
     hints:
-      - "$a_p = \\dfrac{400}{1.2 \\times 3 \\times 10^5}$"
+      - "$a_p = \\dfrac{600}{1.2 \\times 2.5 \\times 10^5}$"
       - "$v_g = a_p / f$"
-    solution: "$a_p = \\dfrac{400}{1.2 \\times 3 \\times 10^5} = 1.11 \\times 10^{-3}\\ \\mathrm{m/s^2}$ $v_g = \\dfrac{1.11 \\times 10^{-3}}{1.03 \\times 10^{-4}} \\approx 10.8\\ \\mathrm{m/s}$"
+    solution: "$a_p = \\dfrac{600}{1.2 \\times 2.5 \\times 10^5} = 2.0 \\times 10^{-3}\\ \\mathrm{m/s^2}$ $v_g = \\dfrac{2.0 \\times 10^{-3}}{1.03 \\times 10^{-4}} \\approx 19.4\\ \\mathrm{m/s}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -256,14 +256,14 @@ problems:
     topics: [earthscience.atmosphere.global-circulation]
     difficulty: 5
     type: numeric
-    stem: "อากาศก้อนหนึ่งที่ละติจูด 30° เหนือเคลื่อนที่ด้วยอัตราเร็ว 10 m/s ความเร่งคอริออลิส $a_c = 2\\Omega v\\sin\\varphi$ (เมื่อ $\\Omega = 7.292 \\times 10^{-5}\\ \\mathrm{rad/s}$) มีค่ากี่ $\\times 10^{-4}\\ \\mathrm{m/s^2}$"
-    answer: { value: 7.29, tolerance: 0.05, unit: "×10⁻⁴ m/s²" }
+    stem: "อากาศก้อนหนึ่งที่ละติจูด 20° เหนือเคลื่อนที่ด้วยอัตราเร็ว 15 m/s ความเร่งคอริออลิส $a_c = 2\\Omega v\\sin\\varphi$ (เมื่อ $\\Omega = 7.292 \\times 10^{-5}\\ \\mathrm{rad/s}$) มีค่ากี่ $\\times 10^{-4}\\ \\mathrm{m/s^2}$"
+    answer: { value: 7.48, tolerance: 0.05, unit: "×10⁻⁴ m/s²" }
     misconceptions:
-      - { match: 12.63, feedback: "ใช้ $\\cos 30^\\circ$ แทน $\\sin 30^\\circ$" }
-      - { match: 3.65, feedback: "ลืมคูณ 2 ในสูตร" }
+      - { match: 20.56, feedback: "ใช้ $\\cos 20^\\circ$ แทน $\\sin 20^\\circ$" }
+      - { match: 3.74, feedback: "ลืมคูณ 2 ในสูตร" }
     hints:
-      - "$\\sin 30^\\circ = 0.5$"
-      - "$a_c = 2 \\times 7.292 \\times 10^{-5} \\times 10 \\times 0.5$"
-    solution: "$a_c = 2(7.292 \\times 10^{-5})(10)(0.5) = 7.29 \\times 10^{-4}\\ \\mathrm{m/s^2}$ เล็กกว่าแรงโน้มถ่วงหลายหมื่นเท่า แต่กระทำต่อเนื่องหลายชั่วโมงจึงเปลี่ยนทิศลมได้มาก"
+      - "$\\sin 20^\\circ \\approx 0.342$"
+      - "$a_c = 2 \\times 7.292 \\times 10^{-5} \\times 15 \\times 0.342$"
+    solution: "$a_c = 2(7.292 \\times 10^{-5})(15)(0.342) \\approx 7.48 \\times 10^{-4}\\ \\mathrm{m/s^2}$ เล็กกว่าแรงโน้มถ่วงหลายหมื่นเท่า แต่กระทำต่อเนื่องหลายชั่วโมงจึงเปลี่ยนทิศลมได้มาก"
     license: CC-BY-SA-4.0
     ai_assisted: true
