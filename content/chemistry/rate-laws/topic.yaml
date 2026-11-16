@@ -1,0 +1,53 @@
+id: chemistry.kinetics.rate-laws
+subject: chemistry
+title: { th: กฎอัตรา อันดับปฏิกิริยา และกฎอัตราแบบอินทิเกรต, en: Rate laws, reaction orders and integrated rate laws }
+summary: หาอันดับและค่าคงที่อัตราจากข้อมูลการทดลอง แล้วใช้กฎอินทิเกรตหาความเข้มข้นและครึ่งชีวิตของปฏิกิริยาอันดับศูนย์ หนึ่ง และสอง
+difficulty: 7
+minutes: 40
+prerequisites: [chemistry.kinetics.reaction-rates, math.functions.logarithms]
+encompasses:
+  - { id: math.functions.logarithms, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: order-plots.svg
+    alt: "กราฟสามรูปเรียงกันเป็นแถว รูปซ้ายเป็นเส้นตรงลดลงของ [A] กับเวลา รูปกลางเป็นเส้นตรงลดลงของ ln[A] กับเวลา รูปขวาเป็นเส้นตรงเพิ่มขึ้นของ 1/[A] กับเวลา"
+    caption: "กราฟเส้นตรงของแต่ละอันดับ ความชันบอกค่าคงที่อัตรา $k$ ให้สังเกตเครื่องหมายของความชันในแต่ละรูป"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: half-life.svg
+    alt: "กราฟการสลายแบบเอ็กซ์โพเนนเชียลของความเข้มข้นต่อเวลา จุดที่เวลา 0, 10, 20 และ 30 นาที มีค่า 1, 0.5, 0.25 และ 0.125 ตามลำดับ แสดงว่าทุกช่วงครึ่งชีวิตเท่ากัน"
+    caption: "ปฏิกิริยาอันดับหนึ่ง ความเข้มข้นเหลือครึ่งหนึ่งทุก 10 นาทีไม่ว่าจะเริ่มจากค่าใด"
+  - { type: check, problem: chemistry.kinetics.rate-laws.p012, prompt: "ลองตอบก่อนอ่านเรื่องครึ่งชีวิต" }
+  - type: interactive
+    title: เปรียบเทียบรูปร่างกราฟของอันดับศูนย์กับอันดับสอง
+    caption: "แถบเลื่อน a แทนค่าคงที่อัตรา เส้นตรงคืออันดับศูนย์ที่ความเข้มข้นลดลงเชิงเส้น เส้นโค้งคืออันดับสองที่ลดลงช้าลงเรื่อย ๆ ลากค่า a แล้วสังเกตว่าเมื่อเวลาผ่านไปนาน สองเส้นนี้ต่างกันมากขึ้นอย่างไร"
+    widget:
+      kind: function-plot
+      functions: ["1 - a x", "1 / (1 + a x)"]
+      sliders:
+        - { name: a, min: 0.05, max: 0.5, step: 0.05, value: 0.1, label: ค่าคงที่อัตรา k }
+      x: [0, 10]
+      y: [0, 1.2]
+  - { type: check, problem: chemistry.kinetics.rate-laws.p016, prompt: "จับคู่อันดับกับกราฟที่ให้เส้นตรง" }
+glossary:
+  - { term: อันดับปฏิกิริยา, definition: "เลขยกกำลังของความเข้มข้นแต่ละสารในกฎอัตรา หาได้จากข้อมูลการทดลอง ไม่จำเป็นต้องเท่ากับสัมประสิทธิ์ในสมการ" }
+  - { term: กฎอัตรา, definition: "สมการที่แสดงอัตราของปฏิกิริยาเป็นฟังก์ชันของความเข้มข้นของสารตั้งต้น ในรูป $\\text{rate} = k[\\mathrm{A}]^m[\\mathrm{B}]^n$" }
+  - { term: ค่าคงที่อัตรา, definition: "ค่าคงที่ $k$ ในกฎอัตรา ขึ้นกับอุณหภูมิและตัวเร่งปฏิกิริยา แต่ไม่ขึ้นกับความเข้มข้น หน่วยขึ้นกับอันดับรวม" }
+  - { term: ครึ่งชีวิต, definition: "เวลาที่ความเข้มข้นของสารตั้งต้นเหลือครึ่งหนึ่งของค่าเริ่มต้น สำหรับอันดับหนึ่งมีค่าคงที่ไม่ขึ้นกับความเข้มข้นเริ่มต้น" }
+  - { term: วิธีอัตราเริ่มต้น, definition: "วิธีหาอันดับโดยทดลองหลายครั้งที่เปลี่ยนความเข้มข้นของสารทีละตัว แล้ววัดอัตราเริ่มต้นและเปรียบเทียบอัตราส่วน" }
+flashcards:
+  - { front: "อันดับศูนย์: กราฟเส้นตรงของ [A] กับ t", back: "ความชันเท่ากับ $-k$ และ $[\\mathrm{A}] = [\\mathrm{A}]_0 - kt$" }
+  - { front: "ครึ่งชีวิตของปฏิกิริยาอันดับหนึ่ง", back: "$t_{1/2} = \\dfrac{\\ln 2}{k}$ ไม่ขึ้นกับความเข้มข้นเริ่มต้น" }
+  - { front: "ครึ่งชีวิตของปฏิกิริยาอันดับสอง", back: "$t_{1/2} = \\dfrac{1}{k[\\mathrm{A}]_0}$ ขึ้นกับความเข้มข้นเริ่มต้น" }
+  - { front: "หน่วยของ $k$ เมื่ออัตราเป็น M/s และอันดับรวมเป็น $n$", back: "$\\mathrm{M}^{\\,1-n}\\,\\mathrm{s}^{-1}$" }
+references:
+  - { title: "Rate equation", url: "https://en.wikipedia.org/wiki/Rate_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.3 Rate Laws (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-3-rate-laws", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "12.4 Integrated Rate Laws (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-4-integrated-rate-laws", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
+sensitive: false
+review_flags: []

@@ -1,0 +1,301 @@
+problems:
+  - id: chemistry.kinetics.rate-laws.p001
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 1
+    type: numeric
+    stem: 'สารตัวอย่างสลายตัวแบบอันดับหนึ่ง มีค่าคงที่อัตรา $k = 0.0231\ \mathrm{min^{-1}}$ หาครึ่งชีวิตของสารนี้ (ตอบในหน่วยนาที)'
+    answer: { value: 30.0, tolerance: 0.1, unit: min }
+    hints:
+      - 'สำหรับปฏิกิริยาอันดับหนึ่ง ครึ่งชีวิตคือ $t_{1/2} = \dfrac{\ln 2}{k}$'
+      - 'ใช้ $\ln 2 \approx 0.693$ แล้วหารด้วย $k$'
+    misconceptions:
+      - { match: 43.3, feedback: 'ใช้ $1/k$ แทน $\ln 2/k$ ค่านี้คือเวลาเฉลี่ยของการสลาย ไม่ใช่ครึ่งชีวิต' }
+    solution: '$t_{1/2} = \dfrac{\ln 2}{0.0231\ \mathrm{min^{-1}}} = 30.0\ \mathrm{min}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p002
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 1
+    type: mcq
+    stem: 'ปฏิกิริยาหนึ่งมีกฎอัตราเป็น $\text{rate} = k[\mathrm{A}]^2$ และอัตราวัดเป็น $\mathrm{M/s}$ หน่วยของ $k$ คืออะไร'
+    choices:
+      - { id: a, text: 's^-1', feedback: 'หน่วยนี้เป็นของปฏิกิริยาอันดับหนึ่ง ซึ่งกฎอัตราไม่มี $[\mathrm{A}]^2$' }
+      - { id: b, text: 'M^-1 s^-1', correct: true }
+      - { id: c, text: 'M s^-1', feedback: 'หน่วยนี้เป็นของปฏิกิริยาอันดับศูนย์ คำนวณจาก $\mathrm{M/s}$ หารด้วย $\mathrm{M^0}$' }
+      - { id: d, text: 'M^2 s^-1', feedback: 'ตรวจอีกครั้ง $\mathrm{M/s} = k \cdot \mathrm{M}^2$ จึงได้ $k$ มีหน่วย $\mathrm{M^{-1}\,s^{-1}}$ ไม่ใช่ $\mathrm{M^2\,s^{-1}}$' }
+    hints:
+      - 'หน่วยของอัตราคือ $\mathrm{M/s}$ และ $[\mathrm{A}]^2$ มีหน่วย $\mathrm{M^2}$'
+      - 'แก้สมการ $\mathrm{M/s} = [k] \cdot \mathrm{M^2}$ เพื่อหาหน่วยของ $k$'
+    solution: '$[k] = \dfrac{\mathrm{M/s}}{\mathrm{M^2}} = \mathrm{M^{-1}\,s^{-1}}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p003
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 1
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งมีกฎอัตรา $\text{rate} = k[\mathrm{A}]^2$ โดย $k = 0.15\ \mathrm{M^{-1}\,s^{-1}}$ เมื่อ $[\mathrm{A}] = 0.20\ \mathrm{M}$ อัตราของปฏิกิริยามีค่าเท่าใดในหน่วย $\mathrm{M/s}$'
+    answer: { value: 0.0060, tolerance: 0.0001, unit: M/s }
+    hints:
+      - 'แทนค่า $[\mathrm{A}]$ ลงในกฎอัตราโดยตรง'
+      - 'ยกกำลังสองของความเข้มข้นก่อนคูณกับ $k$'
+    misconceptions:
+      - { match: 0.030, feedback: 'ใช้ $[\mathrm{A}]$ ยกกำลังหนึ่งทั้งที่กฎอัตรามีกำลังสอง' }
+    solution: '$\text{rate} = (0.15)(0.20)^2 = (0.15)(0.040) = 0.0060\ \mathrm{M/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p004
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: numeric
+    stem: 'ปฏิกิริยา $\mathrm{A} + \mathrm{B} \rightarrow \text{ผลิตภัณฑ์}$ ได้ข้อมูลอัตราเริ่มต้นดังนี้ การทดลองที่ 1 $[\mathrm{A}] = 0.10$, $[\mathrm{B}] = 0.10$, อัตรา $= 2.0\times10^{-3}\ \mathrm{M/s}$ การทดลองที่ 2 $[\mathrm{A}] = 0.20$, $[\mathrm{B}] = 0.10$, อัตรา $= 8.0\times10^{-3}\ \mathrm{M/s}$ การทดลองที่ 3 $[\mathrm{A}] = 0.10$, $[\mathrm{B}] = 0.20$, อัตรา $= 4.0\times10^{-3}\ \mathrm{M/s}$ ค่าคงที่อัตรา $k$ มีค่าเท่าใดในหน่วย $\mathrm{M^{-2}\,s^{-1}}$'
+    answer: { value: 2.0, tolerance: 0.05, unit: M^-2 s^-1 }
+    hints:
+      - 'เทียบการทดลองที่ 1 กับ 2 เพื่อหาอันดับของ A และเทียบ 1 กับ 3 เพื่อหาอันดับของ B'
+      - 'เมื่อได้อันดับ $m = 2$ และ $n = 1$ แล้ว แทนค่าการทดลองที่ 1 ลงใน $k = \text{rate}/([\mathrm{A}]^2[\mathrm{B}])$'
+    misconceptions:
+      - { match: 0.20, feedback: 'ใช้อันดับของ A เป็นหนึ่ง ทั้งที่การเพิ่ม $[\mathrm{A}]$ เป็นสองเท่าทำให้อัตราเพิ่มเป็นสี่เท่า' }
+    solution: 'เทียบการทดลอง 1 กับ 2 จะได้ $4 = 2^m$ จึง $m = 2$ เทียบ 1 กับ 3 จะได้ $2 = 2^n$ จึง $n = 1$ แทนการทดลอง 1 จะได้ $k = \dfrac{2.0\times10^{-3}}{(0.10)^2(0.10)} = 2.0\ \mathrm{M^{-2}\,s^{-1}}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p005
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: mcq
+    stem: 'ปฏิกิริยา $\mathrm{X} + \mathrm{Y} \rightarrow \text{ผลิตภัณฑ์}$ ได้ข้อมูลอัตราเริ่มต้นดังนี้ การทดลองที่ 1 $[\mathrm{X}] = 0.10$, $[\mathrm{Y}] = 0.10$, อัตรา $= 1.0\times10^{-2}$ การทดลองที่ 2 $[\mathrm{X}] = 0.20$, $[\mathrm{Y}] = 0.10$, อัตรา $= 1.0\times10^{-2}$ การทดลองที่ 3 $[\mathrm{X}] = 0.10$, $[\mathrm{Y}] = 0.20$, อัตรา $= 4.0\times10^{-2}$ กฎอัตราใดสอดคล้องกับข้อมูล'
+    choices:
+      - { id: a, text: '$\text{rate} = k[\mathrm{X}][\mathrm{Y}]$', feedback: 'การเพิ่ม $[\mathrm{X}]$ เป็นสองเท่าไม่ทำให้อัตราเปลี่ยนเลย จึงอันดับของ X ไม่ใช่หนึ่ง' }
+      - { id: b, text: '$\text{rate} = k[\mathrm{Y}]$', feedback: 'การเพิ่ม $[\mathrm{Y}]$ เป็นสองเท่าทำให้อัตราเพิ่มเป็นสี่เท่า ไม่ใช่สองเท่า' }
+      - { id: c, text: '$\text{rate} = k[\mathrm{Y}]^2$', correct: true }
+      - { id: d, text: '$\text{rate} = k[\mathrm{X}]^2[\mathrm{Y}]$', feedback: 'ถ้า X มีอันดับสอง การเพิ่ม X เป็นสองเท่าจะทำให้อัตราเพิ่มเป็นสี่เท่า แต่ข้อมูลไม่เปลี่ยนเลย' }
+    hints:
+      - 'ดูการทดลองที่ 1 กับ 2 ซึ่งเปลี่ยนเฉพาะ X แล้วดูว่าอัตราเปลี่ยนหรือไม่'
+      - 'ดูการทดลองที่ 1 กับ 3 ซึ่งเปลี่ยนเฉพาะ Y แล้วดูว่าอัตราเพิ่มเป็นกี่เท่า'
+    solution: 'X ไม่มีผลต่ออัตราเพราะการทดลอง 1 กับ 2 ได้อัตราเท่ากัน จึงมีอันดับ 0 ส่วน Y เพิ่มเป็นสองเท่าแล้วอัตราเพิ่มเป็นสี่เท่า จึงมีอันดับ 2 กฎอัตราคือ $\text{rate} = k[\mathrm{Y}]^2$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p006
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: order
+    stem: 'เรียงลำดับขั้นตอนการหาอันดับของปฏิกิริยาด้วยวิธีอัตราเริ่มต้น จากขั้นแรกไปขั้นสุดท้าย'
+    items:
+      - 'เลือกการทดลองสองครั้งที่เปลี่ยนความเข้มข้นของสารตัวหนึ่งโดยคงสารตัวอื่นไว้เท่าเดิม'
+      - 'หาอัตราส่วนของอัตราเริ่มต้นของการทดลองสองครั้งนั้น'
+      - 'หาอัตราส่วนของความเข้มข้นของสารตัวนั้นในการทดลองสองครั้งเดียวกัน'
+      - 'หาอันดับ $m$ จากสมการ (อัตราส่วนของอัตรา) = (อัตราส่วนของความเข้มข้น)$^m$'
+      - 'ทำซ้ำกับสารตัวอื่น แล้วรวมเป็นกฎอัตราเต็ม'
+    hints:
+      - 'ขั้นแรกต้องแยกผลของสารแต่ละตัวออกจากกัน'
+      - 'ขั้นสุดท้ายคือการรวมอันดับทั้งหมดเข้าเป็นกฎอัตรา'
+    solution: 'ลำดับคือ เลือกการทดลองที่เปลี่ยนสารเพียงตัวเดียว, หาอัตราส่วนของอัตรา, หาอัตราส่วนของความเข้มข้น, หาอันดับจากสมการ และทำซ้ำกับสารอื่นก่อนรวมเป็นกฎอัตรา'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p007
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาอันดับหนึ่งเทียบกับสาร A เริ่มที่ $[\mathrm{A}]_0 = 1.00\ \mathrm{M}$ เมื่อเวลาผ่านไป $40\ \mathrm{s}$ ความเข้มข้นเหลือ $0.80\ \mathrm{M}$ หาค่าคงที่อัตรา $k$ ในหน่วย $\mathrm{s^{-1}}$'
+    answer: { value: 0.00558, tolerance: 0.00002, unit: s^-1 }
+    hints:
+      - 'ใช้สมการอันดับหนึ่งในรูป $\ln\dfrac{[\mathrm{A}]_0}{[\mathrm{A}]} = kt$'
+      - 'คำนวณ $\ln(1.00/0.80)$ ด้วยเครื่องคิดเลขหรือ python แล้วหารด้วยเวลา'
+    misconceptions:
+      - { match: 0.0050, feedback: 'คำนวณเป็นการลดลงเชิงเส้น $(1.00-0.80)/40$ แต่อันดับหนึ่งต้องใช้ลอการิทึม' }
+    solution: '$k = \dfrac{\ln(1.00/0.80)}{40\ \mathrm{s}} = \dfrac{0.2231}{40} = 5.58\times10^{-3}\ \mathrm{s^{-1}}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p008
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาอันดับศูนย์มีค่าคงที่อัตรา $k = 0.020\ \mathrm{M/s}$ เริ่มจาก $[\mathrm{A}]_0 = 0.50\ \mathrm{M}$ ต้องใช้เวลากี่วินาทีความเข้มข้นจึงเหลือ $0.10\ \mathrm{M}$'
+    answer: { value: 20.0, tolerance: 0.5, unit: s }
+    hints:
+      - 'สมการอันดับศูนย์คือ $[\mathrm{A}] = [\mathrm{A}]_0 - kt$'
+      - 'แก้หา $t$ จากผลต่างของความเข้มข้นหารด้วย $k$'
+    misconceptions:
+      - { match: 25.0, feedback: 'ใช้ $[\mathrm{A}]_0/k$ ซึ่งเป็นเวลาที่สารหมดพอดี ไม่ใช่เวลาที่เหลือ 0.10 M' }
+    solution: '$t = \dfrac{[\mathrm{A}]_0 - [\mathrm{A}]}{k} = \dfrac{0.50 - 0.10}{0.020} = 20.0\ \mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p009
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาอันดับสองเทียบกับ A มี $k = 0.50\ \mathrm{M^{-1}\,s^{-1}}$ เริ่มจาก $[\mathrm{A}]_0 = 0.40\ \mathrm{M}$ หลังผ่านไป $10\ \mathrm{s}$ ความเข้มข้นของ A มีค่าเท่าใดในหน่วย M'
+    answer: { value: 0.133, tolerance: 0.001, unit: M }
+    hints:
+      - 'สมการอันดับสองในรูป $1/[\mathrm{A}] = 1/[\mathrm{A}]_0 + kt$'
+      - 'คำนวณ $1/[\mathrm{A}]$ ก่อน แล้วกลับเป็นความเข้มข้น'
+    misconceptions:
+      - { match: 0.0027, feedback: 'ใช้สมการอันดับหนึ่ง $[\mathrm{A}]_0 e^{-kt}$ ทั้งที่ปฏิกิริยานี้เป็นอันดับสอง' }
+    solution: '$\dfrac{1}{[\mathrm{A}]} = \dfrac{1}{0.40} + (0.50)(10) = 2.5 + 5.0 = 7.5\ \mathrm{M^{-1}}$ จึงได้ $[\mathrm{A}] = 0.133\ \mathrm{M}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p010
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาอันดับสองมี $k = 0.25\ \mathrm{M^{-1}\,s^{-1}}$ และ $[\mathrm{A}]_0 = 0.20\ \mathrm{M}$ หาครึ่งชีวิตของปฏิกิริยานี้ (ตอบในหน่วยวินาที)'
+    answer: { value: 20.0, tolerance: 0.2, unit: s }
+    hints:
+      - 'ครึ่งชีวิตของอันดับสองขึ้นกับความเข้มข้นเริ่มต้น ไม่ได้เป็น $\ln 2/k$ เหมือนอันดับหนึ่ง'
+      - 'ใช้ $t_{1/2} = 1/(k[\mathrm{A}]_0)$'
+    misconceptions:
+      - { match: 13.9, feedback: 'ใช้สูตรครึ่งชีวิตของอันดับหนึ่ง $\ln 2/(k[\mathrm{A}]_0)$ ซึ่งไม่ถูกต้องสำหรับอันดับสอง' }
+    solution: '$t_{1/2} = \dfrac{1}{(0.25)(0.20)} = 20.0\ \mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p011
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: 'สมมติว่าคลอรีนอิสระในสระว่ายน้ำสลายตัวแบบอันดับหนึ่งโดยมี $k = 0.0500\ \mathrm{h^{-1}}$ ถ้าเริ่มที่ $2.0\ \mathrm{mg/L}$ และไม่มีการเติมเพิ่ม หลังผ่านไป $6\ \mathrm{h}$ จะเหลือคลอรีนกี่ $\mathrm{mg/L}$ (ตอบทศนิยมสองตำแหน่ง)'
+    answer: { value: 1.48, tolerance: 0.01, unit: mg/L }
+    hints:
+      - 'สมการอันดับหนึ่งคือ $[\mathrm{A}] = [\mathrm{A}]_0 e^{-kt}$'
+      - 'คำนวณ $kt$ ก่อน แล้วค่อยหา $e^{-kt}$'
+    misconceptions:
+      - { match: 1.70, feedback: 'ลดลงเป็นเส้นตรงเท่ากับ $kt$ ซึ่งเป็นวิธีของอันดับศูนย์ ปฏิกิริยานี้เป็นอันดับหนึ่งจึงลดแบบเอ็กซ์โพเนนเชียล' }
+    solution: '$[\mathrm{A}] = 2.0\, e^{-(0.0500)(6)} = 2.0\, e^{-0.300} = 1.48\ \mathrm{mg/L}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p012
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: mcq
+    stem: 'ข้อความใดเกี่ยวกับอันดับของปฏิกิริยาถูกต้อง'
+    choices:
+      - { id: a, text: 'อันดับรวมเท่ากับผลรวมของสัมประสิทธิ์ของตัวทำปฏิกิริยาทุกตัวเสมอ', feedback: 'สัมประสิทธิ์ในสมการดุลไม่จำเป็นต้องตรงกับอันดับ อันดับต้องหาจากการทดลอง' }
+      - { id: b, text: 'อันดับต้องเป็นจำนวนเต็มบวกเท่านั้น', feedback: 'อันดับอาจเป็นศูนย์ หรือเป็นเศษส่วนได้ ไม่จำกัดเฉพาะจำนวนเต็มบวก' }
+      - { id: c, text: 'อันดับของ A ต้องเท่ากับสัมประสิทธิ์ของ A ในสมการที่ดุลแล้ว', feedback: 'สมการที่ดุลแล้วไม่ได้บอกอันดับ ต้องวัดจากการทดลองเสมอ' }
+      - { id: d, text: 'อันดับหาได้จากการทดลอง และอาจเป็นศูนย์หรือเศษส่วนได้', correct: true }
+    hints:
+      - 'สมการที่ดุลแล้วบอกปริมาณสารที่ทำปฏิกิริยา แต่ไม่ได้บอกว่าอัตราตอบสนองต่อความเข้มข้นอย่างไร'
+      - 'ตรวจว่าแต่ละตัวเลือกพูดถึงที่มาของอันดับหรือไม่'
+    solution: 'อันดับเป็นปริมาณที่วัดได้จากข้อมูลอัตราเริ่มต้น จึงอาจเป็นศูนย์ หนึ่ง สอง หรือเศษส่วนก็ได้ ไม่ได้เท่ากับสัมประสิทธิ์โดยทั่วไป'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p013
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 4
+    type: text
+    stem: 'ปฏิกิริยาหนึ่งมีกฎอัตรา $\text{rate} = k[\mathrm{A}]^3$ เมื่ออัตราวัดเป็น $\mathrm{M/s}$ หน่วยของ $k$ คืออะไร (ตอบในรูปเลขยกกำลัง)'
+    accepted:
+      - 'M^-2 s^-1'
+      - 'M⁻² s⁻¹'
+      - 'M^-2s^-1'
+      - 'M⁻²s⁻¹'
+      - 'M^-2 · s^-1'
+      - 'M-2 s-1'
+      - 'M^(-2) s^(-1)'
+      - 'L^2 mol^-2 s^-1'
+    hints:
+      - 'เขียน $\mathrm{M/s} = [k] \cdot \mathrm{M^3}$'
+      - 'หาร $\mathrm{M/s}$ ด้วย $\mathrm{M^3}$ จะได้หน่วยของ $k$'
+    solution: '$[k] = \dfrac{\mathrm{M/s}}{\mathrm{M^3}} = \mathrm{M^{-2}\,s^{-1}}$ อันดับรวมคือ 3 จึงได้เลขชี้กำลังของ M เป็น $1 - 3 = -2$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p014
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: 'น้ำเสียจากโรงงานอาหารแห่งหนึ่งในประเทศไทยมีสารอินทรีย์ที่สลายทางชีวภาพแบบอันดับหนึ่ง สมมติว่า $k = 0.0500\ \mathrm{h^{-1}}$ ต้องใช้เวลากี่ชั่วโมง ความเข้มข้นของสารนี้จึงเหลือ 25% ของค่าเริ่มต้น'
+    answer: { value: 27.7, tolerance: 0.1, unit: h }
+    hints:
+      - 'ความเหลือ 25% หมายถึง $[\mathrm{A}]/[\mathrm{A}]_0 = 0.25$'
+      - 'ใช้ $\ln([\mathrm{A}]_0/[\mathrm{A}]) = kt$ แล้วแก้หา $t$'
+    misconceptions:
+      - { match: 13.9, feedback: 'ค่านี้คือครึ่งชีวิต (เหลือ 50%) ไม่ใช่เวลาที่เหลือ 25%' }
+    solution: '$t = \dfrac{\ln(1/0.25)}{0.0500} = \dfrac{\ln 4}{0.0500} = 27.7\ \mathrm{h}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p015
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 4
+    type: numeric
+    stem: 'จากการพล็อตกราฟ $\ln[\mathrm{A}]$ กับเวลาของปฏิกิริยาอันดับหนึ่ง ได้เส้นตรงที่มีความชัน $-0.0200\ \mathrm{s^{-1}}$ หาครึ่งชีวิตของปฏิกิริยานี้ (ตอบในหน่วยวินาที)'
+    answer: { value: 34.7, tolerance: 0.1, unit: s }
+    hints:
+      - 'ความชันของกราฟ $\ln[\mathrm{A}]$ กับ $t$ ของอันดับหนึ่งคือ $-k$'
+      - 'ใช้ $t_{1/2} = \ln 2 / k$'
+    misconceptions:
+      - { match: 50.0, feedback: 'ใช้ $1/k$ ซึ่งเป็นเวลาเฉลี่ยของการสลาย ไม่ใช่ครึ่งชีวิต' }
+    solution: 'ความชันคือ $-k$ จึงได้ $k = 0.0200\ \mathrm{s^{-1}}$ แล้ว $t_{1/2} = \dfrac{0.693}{0.0200} = 34.7\ \mathrm{s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p016
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: match
+    stem: 'จับคู่อันดับของปฏิกิริยากับกราฟที่ให้เส้นตรง'
+    pairs:
+      - { left: 'อันดับศูนย์', right: '$[\mathrm{A}]$ กับ $t$' }
+      - { left: 'อันดับหนึ่ง', right: '$\ln[\mathrm{A}]$ กับ $t$' }
+      - { left: 'อันดับสอง', right: '$1/[\mathrm{A}]$ กับ $t$' }
+    hints:
+      - 'ลองนึกถึงสมการอินทิเกรตของแต่ละอันดับก่อน'
+      - 'สมการของอันดับสองเป็น $1/[\mathrm{A}] = 1/[\mathrm{A}]_0 + kt$'
+    solution: 'อันดับศูนย์ให้เส้นตรงจาก $[\mathrm{A}]$ กับ $t$ อันดับหนึ่งให้เส้นตรงจาก $\ln[\mathrm{A}]$ กับ $t$ และอันดับสองให้เส้นตรงจาก $1/[\mathrm{A}]$ กับ $t$ อันดับหนึ่งจึงใช้กราฟ $\ln[\mathrm{A}]$ กับ $t$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p017
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 5
+    type: numeric
+    stem: 'ปฏิกิริยาอันดับสองเทียบกับ A (rate $= k[\mathrm{A}]^2$) เริ่มจาก $[\mathrm{A}]_0 = 0.20\ \mathrm{M}$ เมื่อเวลาผ่านไป $50\ \mathrm{s}$ ความเข้มข้นเหลือ $0.10\ \mathrm{M}$ หาอัตราของปฏิกิริยาเมื่อ $[\mathrm{A}] = 0.050\ \mathrm{M}$ ในหน่วย $\mathrm{M/s}$'
+    answer: { value: 0.00025, tolerance: 0.000002, unit: M/s }
+    hints:
+      - 'ขั้นแรกหา $k$ จากสมการอันดับสอง $1/[\mathrm{A}] - 1/[\mathrm{A}]_0 = kt$'
+      - 'จากนั้นแทน $k$ และ $[\mathrm{A}] = 0.050\ \mathrm{M}$ ลงในกฎอัตรา'
+    misconceptions:
+      - { match: 0.0050, feedback: 'ใช้ $k[\mathrm{A}]$ แทน $k[\mathrm{A}]^2$ ทั้งที่อันดับของปฏิกิริยาคือสอง' }
+    solution: 'ขั้นแรก $k = \dfrac{1/0.10 - 1/0.20}{50} = \dfrac{5.0}{50} = 0.10\ \mathrm{M^{-1}\,s^{-1}}$ แล้ว $\text{rate} = (0.10)(0.050)^2 = 2.5\times10^{-4}\ \mathrm{M/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p018
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 4
+    type: numeric
+    stem: 'ปฏิกิริยามีกฎอัตรา $\text{rate} = k[\mathrm{A}][\mathrm{B}]^2$ ตอนนี้อัตรามีค่า $0.012\ \mathrm{M/s}$ ถ้าเพิ่ม $[\mathrm{A}]$ เป็นสองเท่า และเพิ่ม $[\mathrm{B}]$ เป็นสามเท่า โดยอุณหภูมิคงที่ อัตราใหม่มีค่าเท่าใดในหน่วย $\mathrm{M/s}$'
+    answer: { value: 0.216, tolerance: 0.001, unit: M/s }
+    hints:
+      - 'อัตราส่วนของอัตราใหม่ต่อเก่าคือ $(2)^1 \cdot (3)^2$'
+      - 'คูณอัตราเดิมด้วยอัตราส่วนนี้'
+    misconceptions:
+      - { match: 0.072, feedback: 'คูณ 2 กับ 3 โดยไม่ยกกำลังตามอันดับของ $[\mathrm{B}]$ ซึ่งเป็นสอง' }
+    solution: 'อัตราส่วน $= 2^1 \times 3^2 = 18$ จึงได้อัตราใหม่ $= 18 \times 0.012 = 0.216\ \mathrm{M/s}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p019
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: numeric
+    stem: 'น้ำยาฟอกขาวที่ร้านซักรีดเก็บไว้ในที่อุณหภูมิห้องสลายตัวแบบอันดับหนึ่ง สมมติว่ามี $k = 0.0120\ \mathrm{h^{-1}}$ หาครึ่งชีวิตของน้ำยาฟอกขาวนี้ (ตอบในหน่วยชั่วโมง)'
+    answer: { value: 57.8, tolerance: 0.1, unit: h }
+    hints:
+      - 'สำหรับอันดับหนึ่ง ครึ่งชีวิตคือ $\ln 2/k$'
+      - 'แทนค่า $k = 0.0120\ \mathrm{h^{-1}}$ แล้วหาร'
+    misconceptions:
+      - { match: 83.3, feedback: 'ใช้ $1/k$ แทน $\ln 2/k$ ค่านี้คือเวลาเฉลี่ย ไม่ใช่ครึ่งชีวิต' }
+    solution: '$t_{1/2} = \dfrac{\ln 2}{0.0120\ \mathrm{h^{-1}}} = 57.8\ \mathrm{h}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

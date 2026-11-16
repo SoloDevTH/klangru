@@ -1,0 +1,298 @@
+problems:
+  - id: chemistry.thermochem.entropy-gibbs.p001
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งมี $\Delta H = +40.0\ \mathrm{kJ/mol}$ และ $\Delta S = +120\ \mathrm{J/(mol\,K)}$ ที่อุณหภูมิ $298.15\ \mathrm{K}$ หาค่า $\Delta G$ ในหน่วย $\mathrm{kJ/mol}$'
+    answer: { value: 4.22, tolerance: 0.01, unit: kJ/mol }
+    hints:
+      - 'ใช้สมการ $\Delta G = \Delta H - T\Delta S$'
+      - 'เปลี่ยน $\Delta S$ เป็น $\mathrm{kJ/(mol\,K)}$ ก่อน หรือคูณ $T\Delta S$ แล้วหาร 1000 ให้เป็น kJ'
+    misconceptions:
+      - { match: 75.78, feedback: 'ใช้เครื่องหมายบวกหน้า $T\Delta S$ ทั้งที่สมการคือลบ' }
+    solution: '$\Delta G = 40.0\ \mathrm{kJ/mol} - (298.15\ \mathrm{K})(0.120\ \mathrm{kJ/(mol\,K)}) = 40.0 - 35.78 = 4.22\ \mathrm{kJ/mol}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p002
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 1
+    type: mcq
+    stem: 'ปฏิกิริยาหนึ่งมี $\Delta H < 0$ และ $\Delta S > 0$ ข้อใดถูกต้อง'
+    choices:
+      - { id: a, text: 'เกิดขึ้นเองได้ที่ทุกอุณหภูมิ', correct: true }
+      - { id: b, text: 'ไม่เกิดขึ้นเองที่ทุกอุณหภูมิ', feedback: 'เมื่อ $\Delta H < 0$ และ $\Delta S > 0$ พจน์ $-T\Delta S$ ก็เป็นลบด้วย ทำให้ $\Delta G < 0$ เสมอ' }
+      - { id: c, text: 'เกิดขึ้นเองได้เฉพาะที่อุณหภูมิต่ำ', feedback: 'อุณหภูมิต่ำเหมาะกับกรณี $\Delta H < 0$ และ $\Delta S < 0$ ไม่ใช่กรณีนี้' }
+      - { id: d, text: 'เกิดขึ้นเองได้เฉพาะที่อุณหภูมิสูง', feedback: 'อุณหภูมิสูงเหมาะกับกรณี $\Delta H > 0$ และ $\Delta S > 0$ ไม่ใช่กรณีนี้' }
+    hints:
+      - 'ดูเครื่องหมายของพจน์ $\Delta H$ และ $-T\Delta S$ เมื่อ $T > 0$'
+      - 'ถ้าทั้งสองพจน์เป็นลบ $\Delta G$ จะเป็นลบไม่ว่า $T$ เท่าใด'
+    solution: 'เมื่อ $\Delta H < 0$ และ $\Delta S > 0$ จะได้ $\Delta G = \Delta H - T\Delta S$ ซึ่งทั้งสองพจน์เป็นลบเมื่อ $T > 0$ จึงเกิดเองได้ที่ทุกอุณหภูมิ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p003
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งมี $\Delta H = +60.0\ \mathrm{kJ/mol}$ และ $\Delta S = +150\ \mathrm{J/(mol\,K)}$ ที่อุณหภูมิใดในหน่วยเคลวิน ที่ $\Delta G = 0$'
+    answer: { value: 400, tolerance: 1, unit: K }
+    hints:
+      - 'ที่สมดุล $\Delta G = 0$ ดังนั้น $\Delta H = T\Delta S$'
+      - 'แปลงหน่วยของ $\Delta H$ หรือ $\Delta S$ ให้ตรงกันก่อนหารกัน'
+    misconceptions:
+      - { match: 127, feedback: 'ค่านี้เป็นองศาเซลเซียส (400 K ลบ 273) แต่โจทย์ถามเป็นเคลวิน และ $T$ ในสมการต้องเป็นเคลวินอยู่แล้ว' }
+    solution: '$T = \dfrac{\Delta H}{\Delta S} = \dfrac{60\,000\ \mathrm{J/mol}}{150\ \mathrm{J/(mol\,K)}} = 400\ \mathrm{K}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p004
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: numeric
+    stem: 'ปฏิกิริยา $\mathrm{N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)}$ ที่ $298\ \mathrm{K}$ กำหนดค่าเอนโทรปีมาตรฐาน $S^\circ$ ดังนี้ $\mathrm{N_2}$ $191.6$, $\mathrm{H_2}$ $130.7$, $\mathrm{NH_3}$ $192.8$ หน่วย $\mathrm{J/(mol\,K)}$ หา $\Delta S^\circ_{\text{rxn}}$ ในหน่วย $\mathrm{J/K}$'
+    answer: { value: -198.1, tolerance: 0.5, unit: J/K }
+    hints:
+      - 'ผลรวม $n S^\circ$ ของผลิตภัณฑ์ลบด้วยผลรวม $n S^\circ$ ของสารตั้งต้น'
+      - 'อย่าลืมคูณค่า $S^\circ$ ของแต่ละสารด้วยสัมประสิทธิ์ก่อนรวม'
+    misconceptions:
+      - { match: 198.1, feedback: 'ได้เครื่องหมายสลับกัน ปฏิกิริยานี้มีจำนวนโมลแก๊สลดลง ดังนั้น $\Delta S^\circ$ ต้องเป็นลบ' }
+    solution: '$\Delta S^\circ = [2(192.8)] - [191.6 + 3(130.7)] = 385.6 - 583.7 = -198.1\ \mathrm{J/K}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p005
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาการสังเคราะห์แอมโมเนีย $\mathrm{N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)}$ ที่ $298.15\ \mathrm{K}$ มี $\Delta H^\circ = -91.9\ \mathrm{kJ}$ และ $\Delta S^\circ = -198.1\ \mathrm{J/K}$ หา $\Delta G^\circ$ ในหน่วย $\mathrm{kJ}$'
+    answer: { value: -32.8, tolerance: 0.1, unit: kJ }
+    hints:
+      - 'ใช้สมการ $\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ$ ที่ $T = 298.15\ \mathrm{K}$'
+      - 'ตรวจว่าเครื่องหมายของ $\Delta S^\circ$ ที่ลบอยู่ทำให้ $-T\Delta S^\circ$ เป็นบวก'
+    misconceptions:
+      - { match: -87.0, feedback: 'แทน $T$ เป็น $25$ ที่เป็นองศาเซลเซียส ต้องใช้ 298.15 K' }
+    solution: '$\Delta G^\circ = -91.9\ \mathrm{kJ} - (298.15\ \mathrm{K})(-0.1981\ \mathrm{kJ/K}) = -91.9 + 59.1 = -32.8\ \mathrm{kJ}$ ค่าเป็นลบจึงเกิดเองได้ที่ 298 K'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p006
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: mcq
+    stem: 'ที่สภาวะสมดุลของปฏิกิริยาที่อุณหภูมิและความดันคงที่ ข้อใดถูกต้อง'
+    choices:
+      - { id: a, text: '$\Delta G^\circ = 0$ เสมอ', feedback: 'ค่า $\Delta G^\circ$ เป็นค่าที่สภาวะมาตรฐาน ไม่จำเป็นต้องเป็นศูนย์ ที่สมดุลค่าที่เป็นศูนย์คือ $\Delta G$' }
+      - { id: b, text: '$\Delta S_{\text{univ}} < 0$', feedback: 'ค่านี้ขัดกับกฎข้อที่สองของอุณหพลศาสตร์ ระบบที่เกิดเองได้มี $\Delta S_{\text{univ}} \geq 0$' }
+      - { id: c, text: '$Q = 0$', feedback: '$Q$ คืออัตราส่วนความเข้มข้นหรือความดันย่อย ไม่ได้มีค่าเป็นศูนย์ที่สมดุล' }
+      - { id: d, text: '$\Delta G = 0$', correct: true }
+    hints:
+      - 'ระบบที่สมดุลไม่มีแรงขับเคลื่อนไปข้างหน้าหรือข้างหลัง'
+      - 'ลองนึกถึงค่าของ $\Delta G$ เมื่อระบบอยู่ที่จุดสมดุล'
+    solution: 'ที่สมดุล ไม่มีแนวโน้มเกิดขึ้นเองไปทางไหน จึงได้ $\Delta G = 0$ ส่วน $\Delta G^\circ$ เชื่อมกับ $K$ โดย $\Delta G^\circ = -RT\ln K$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p007
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งมี $\Delta G^\circ = -5.70\ \mathrm{kJ/mol}$ ที่ $298.15\ \mathrm{K}$ หาค่าคงที่สมดุล $K$ (ตอบทศนิยมสองตำแหน่ง ใช้ $R = 8.314\ \mathrm{J/(mol\,K)}$)'
+    answer: { value: 9.97, tolerance: 0.02 }
+    hints:
+      - 'จาก $\Delta G^\circ = -RT\ln K$ จะได้ $\ln K = -\Delta G^\circ/RT$'
+      - 'แปลง $\Delta G^\circ$ เป็นหน่วย J/mol ก่อนแทนค่า'
+    misconceptions:
+      - { match: 0.10, feedback: 'ใส่เครื่องหมายของ $\Delta G^\circ$ กลับกัน ทำให้ได้ $K$ เป็นส่วนกลับ' }
+    solution: '$\ln K = \dfrac{5700}{(8.314)(298.15)} = 2.2999$ จึงได้ $K = e^{2.2999} = 9.97$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p008
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งมีค่าคงที่สมดุล $K = 0.0200$ ที่ $350\ \mathrm{K}$ หาค่า $\Delta G^\circ$ ในหน่วย kJ/mol (ใช้ $R = 8.314\ \mathrm{J/(mol\,K)}$ ตอบทศนิยมหนึ่งตำแหน่ง)'
+    answer: { value: 11.4, tolerance: 0.05, unit: kJ/mol }
+    hints:
+      - 'ใช้ $\Delta G^\circ = -RT\ln K$'
+      - 'ค่า $\ln 0.0200$ เป็นลบ ตรวจว่าเครื่องหมายสุดท้ายเป็นอย่างไร'
+    misconceptions:
+      - { match: -11.4, feedback: 'ลืมเครื่องหมายลบหน้า $RT\ln K$ ค่า $\ln K$ เป็นลบ ดังนั้นผลคูณนี้ทำให้ $\Delta G^\circ$ เป็นบวก' }
+    solution: '$\Delta G^\circ = -(8.314)(350)\ln(0.0200) = -(2910)(-3.912) = 11\,384\ \mathrm{J/mol} = 11.4\ \mathrm{kJ/mol}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p009
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาแก๊ส $\mathrm{N_2O_4(g) \rightleftharpoons 2NO_2(g)}$ ที่ $400\ \mathrm{K}$ มี $K_c = 0.0500\ \mathrm{mol/L}$ หาค่า $K_p$ ในหน่วย atm (ใช้ $R = 0.08206\ \mathrm{L\,atm/(mol\,K)}$ ตอบทศนิยมสองตำแหน่ง)'
+    answer: { value: 1.64, tolerance: 0.01, unit: atm }
+    hints:
+      - 'ใช้ความสัมพันธ์ $K_p = K_c(RT)^{\Delta n}$'
+      - 'หา $\Delta n$ จากจำนวนโมลแก๊สผลิตภัณฑ์ลบด้วยสารตั้งต้น'
+    misconceptions:
+      - { match: 0.05, feedback: 'ลืมคูณด้วย $(RT)^{\Delta n}$ จึงได้ค่า $K_c$ แทน $K_p$' }
+    solution: '$\Delta n = 2 - 1 = 1$ จึงได้ $K_p = (0.0500)(0.08206)(400) = 1.64\ \mathrm{atm}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p010
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งมี $\Delta H = +91.2\ \mathrm{kJ/mol}$ และ $\Delta S = +190\ \mathrm{J/(mol\,K)}$ ปฏิกิริยาจะเกิดขึ้นเองได้เมื่ออุณหภูมิสูงกว่ากี่เคลวิน'
+    answer: { value: 480, tolerance: 1, unit: K }
+    hints:
+      - 'ปฏิกิริยาเกิดเองได้เมื่อ $\Delta G < 0$ คือ $T > \Delta H/\Delta S$'
+      - 'ทำให้หน่วยของ $\Delta H$ และ $\Delta S$ เหมือนกันก่อนหาร'
+    misconceptions:
+      - { match: 0.48, feedback: 'หารโดยไม่ปรับหน่วย kJ กับ J/K ให้ตรงกัน ค่าที่ได้จึงผิดพันเท่า' }
+    solution: '$T^* = \dfrac{91\,200\ \mathrm{J/mol}}{190\ \mathrm{J/(mol\,K)}} = 480\ \mathrm{K}$ เกิดเองได้เมื่อ $T > 480\ \mathrm{K}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p011
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: numeric
+    stem: 'การเผาถ่านไม้ในเตาของชุมชนแห่งหนึ่งในประเทศไทยเป็นปฏิกิริยาคายความร้อน ปล่อยความร้อนออกสู่สิ่งแวดล้อม $45.0\ \mathrm{kJ}$ ที่อุณหภูมิ $298\ \mathrm{K}$ ความร้อนนี้ทำให้เอนโทรปีของสิ่งแวดล้อม $\Delta S_{\text{surr}}$ เปลี่ยนไปเท่าใดในหน่วย J/K'
+    answer: { value: 151.0, tolerance: 0.5, unit: J/K }
+    hints:
+      - 'สิ่งแวดล้อมได้รับความร้อน $q = +45.0\ \mathrm{kJ}$ ที่อุณหภูมิคงที่'
+      - 'ใช้ $\Delta S = q/T$ โดยแปลง kJ เป็น J'
+    misconceptions:
+      - { match: -151.0, feedback: 'ใส่เครื่องหมายลบให้สิ่งแวดล้อม แต่สิ่งแวดล้อมได้รับความร้อนจึงเอนโทรปีเพิ่ม' }
+    solution: '$\Delta S_{\text{surr}} = \dfrac{+45\,000\ \mathrm{J}}{298\ \mathrm{K}} = 151.0\ \mathrm{J/K}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p012
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งที่ $298.15\ \mathrm{K}$ มี $\Delta G^\circ = -10.0\ \mathrm{kJ/mol}$ และอัตราส่วนความเข้มข้นขณะนั้น $Q = 10$ หาค่า $\Delta G$ ในหน่วย $\mathrm{kJ/mol}$ (ใช้ $R = 8.314\ \mathrm{J/(mol\,K)}$ ตอบทศนิยมสองตำแหน่ง)'
+    answer: { value: -4.29, tolerance: 0.01, unit: kJ/mol }
+    hints:
+      - 'ใช้ $\Delta G = \Delta G^\circ + RT\ln Q$'
+      - 'คำนวณ $RT\ln Q$ เป็นหน่วย J/mol แล้วแปลงเป็น kJ'
+    misconceptions:
+      - { match: -10.0, feedback: 'ลืมพจน์ $RT\ln Q$ ซึ่งทำให้ค่า $\Delta G$ ต่างจาก $\Delta G^\circ$' }
+    solution: '$\Delta G = -10\,000 + (8.314)(298.15)\ln 10 = -10\,000 + 5709 = -4291\ \mathrm{J/mol} = -4.29\ \mathrm{kJ/mol}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p013
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: text
+    stem: 'ตามกฎข้อที่สามของอุณหพลศาสตร์ เอนโทรปีของผลึกสมบูรณ์แบบที่อุณหภูมิ $0\ \mathrm{K}$ มีค่าเท่าใด (ตอบเป็นตัวเลขหรือคำ)'
+    accepted:
+      - '0'
+      - 'ศูนย์'
+      - 'zero'
+      - '0 J/K'
+      - '0 J/(mol K)'
+    hints:
+      - 'กฎข้อที่สามเกี่ยวข้องกับการเคลื่อนไหวของอนุภาคที่ลดลงใกล้ศูนย์สัมบูรณ์'
+      - 'ตอบเป็นค่าเอนโทรปีที่มีเพียงสถานะจุลภาคเดียว'
+    solution: 'กฎข้อที่สามกำหนดว่าเอนโทรปีของผลึกสมบูรณ์แบบเป็นศูนย์ที่ $0\ \mathrm{K}$ เพราะมีสถานะจุลภาคเพียงหนึ่งเดียว จึงได้ $S = k_B\ln 1 = 0$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p014
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: 'ปฏิกิริยาใดต่อไปนี้มี $\Delta S > 0$ (เลือกทุกข้อที่ถูก)'
+    choices:
+      - { id: a, text: '$\mathrm{N_2O_4(g) \rightarrow 2NO_2(g)}$', correct: true }
+      - { id: b, text: '$\mathrm{2SO_2(g) + O_2(g) \rightarrow 2SO_3(g)}$', feedback: 'จำนวนโมลแก๊สลดลงจาก 3 เป็น 2 โมเลกุลแก๊สน้อยลง เอนโทรปีจึงลดลง ($\Delta S < 0$)' }
+      - { id: c, text: '$\mathrm{H_2O(g) \rightarrow H_2O(l)}$', feedback: 'ไอน้ำควบแน่นเป็นของเหลว โมเลกุลเคลื่อนที่ได้น้อยลง เอนโทรปีจึงลดลง ($\Delta S < 0$)' }
+      - { id: d, text: '$\mathrm{2H_2O_2(aq) \rightarrow 2H_2O(l) + O_2(g)}$', correct: true }
+    hints:
+      - 'ดูว่าจำนวนโมลแก๊สรวมของผลิตภัณฑ์มากกว่าหรือน้อยกว่าสารตั้งต้น'
+      - 'ปฏิกิริยาที่ได้แก๊สเพิ่มขึ้นมักมี $\Delta S > 0$'
+    solution: 'ปฏิกิริยา a เพิ่มโมลแก๊สจาก 1 เป็น 2 และปฏิกิริยา d สร้างแก๊สออกซิเจนจากสารละลาย จึงมี $\Delta S > 0$ ส่วน b มีโมลแก๊สลดลงจาก 3 เป็น 2 และ c เป็นการควบแน่นของแก๊สเป็นของเหลว ทั้งสองข้อจึงมี $\Delta S < 0$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p015
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: order
+    stem: 'เรียงลำดับเอนโทรปีของน้ำในสถานะต่าง ๆ จากน้อยไปมาก'
+    items:
+      - 'น้ำแข็ง $\mathrm{H_2O(s)}$'
+      - 'น้ำเหลว $\mathrm{H_2O(l)}$'
+      - 'ไอน้ำ $\mathrm{H_2O(g)}$'
+    hints:
+      - 'ลองนึกถึงความอิสระในการเคลื่อนที่ของโมเลกุลในแต่ละสถานะ'
+      - 'สถานะที่โมเลกุลเคลื่อนที่อิสระที่สุดมีเอนโทรปีสูงสุด'
+    solution: 'ลำดับที่ถูกคือ น้ำแข็ง (ของแข็ง) น้อยที่สุด น้ำเหลวอยู่ตรงกลาง และไอน้ำ (แก๊ส) มากที่สุด'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p016
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: match
+    stem: 'จับคู่เครื่องหมายของ $\Delta H$ และ $\Delta S$ กับช่วงอุณหภูมิที่ปฏิกิริยาเกิดขึ้นเอง'
+    pairs:
+      - { left: '$\Delta H < 0$ และ $\Delta S > 0$', right: 'เกิดเองได้ที่ทุกอุณหภูมิ' }
+      - { left: '$\Delta H > 0$ และ $\Delta S < 0$', right: 'ไม่เกิดเองที่ทุกอุณหภูมิ' }
+      - { left: '$\Delta H > 0$ และ $\Delta S > 0$', right: 'เกิดเองได้เมื่ออุณหภูมิสูง' }
+      - { left: '$\Delta H < 0$ และ $\Delta S < 0$', right: 'เกิดเองได้เมื่ออุณหภูมิต่ำ' }
+    hints:
+      - 'ลองแทนค่าลงใน $\Delta G = \Delta H - T\Delta S$ ด้วยเครื่องหมายแต่ละแบบ'
+      - 'ถ้า $\Delta H$ และ $-T\Delta S$ มีเครื่องหมายเดียวกัน ก็จะได้ $\Delta G$ เครื่องหมายนั้นเสมอ'
+    solution: 'กรณี $\Delta H$ และ $\Delta S$ มีเครื่องหมายเดียวกันทั้งคู่ อุณหภูมิจึงเป็นตัวตัดสิน ส่วนกรณีที่เครื่องหมายต่างกัน ผลจะไม่ขึ้นกับอุณหภูมิ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p017
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 5
+    type: numeric
+    stem: 'ปฏิกิริยาหนึ่งที่ $298.15\ \mathrm{K}$ มี $\Delta H = -44.0\ \mathrm{kJ/mol}$ และ $\Delta S = -0.100\ \mathrm{kJ/(mol\,K)}$ หาค่าคงที่สมดุล $K$ ที่อุณหภูมินี้ (ตอบจำนวนเต็ม ใช้ $R = 8.314\ \mathrm{J/(mol\,K)}$)'
+    answer: { value: 306, tolerance: 2 }
+    hints:
+      - 'คำนวณ $\Delta G^\circ = \Delta H - T\Delta S$ ก่อน โดยใช้ค่า $\Delta H$ และ $\Delta S$ ที่กำหนด'
+      - 'จาก $\Delta G^\circ = -RT\ln K$ แล้วหาค่า $K = e^{-\Delta G^\circ/RT}$'
+    misconceptions:
+      - { match: 0.00327, feedback: 'ได้ค่าส่วนกลับของ $K$ เพราะสลับเครื่องหมายของ $\Delta G^\circ$ ในเลขชี้กำลัง' }
+    solution: '$\Delta G^\circ = -44.0 - (298.15)(-0.100) = -14.2\ \mathrm{kJ/mol}$ จึง $\ln K = \dfrac{14\,185}{(8.314)(298.15)} = 5.724$ และ $K = e^{5.724} = 306$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p018
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: numeric
+    stem: 'ในโรงงานน้ำตาลแห่งหนึ่งของไทย กระบวนการหนึ่งที่ $300\ \mathrm{K}$ มี $\Delta S_{\text{sys}} = +20\ \mathrm{J/K}$ และ $\Delta H_{\text{sys}} = -30\ \mathrm{kJ}$ หาค่า $\Delta S_{\text{univ}}$ รวมในหน่วย $\mathrm{J/K}$'
+    answer: { value: 120, tolerance: 0.5, unit: J/K }
+    hints:
+      - 'ใช้ $\Delta S_{\text{surr}} = -\Delta H_{\text{sys}}/T$ สำหรับกระบวนการที่ความดันคงที่'
+      - 'หลังจากนั้นรวม $\Delta S_{\text{sys}}$ กับ $\Delta S_{\text{surr}}$'
+    misconceptions:
+      - { match: -80, feedback: 'ใส่เครื่องหมายผิดให้ $\Delta S_{\text{surr}}$ กระบวนการคายความร้อนทำให้สิ่งแวดล้อมได้รับความร้อนจึงเอนโทรปีเพิ่ม' }
+    solution: '$\Delta S_{\text{surr}} = \dfrac{+30\,000}{300} = +100\ \mathrm{J/K}$ จึงได้ $\Delta S_{\text{univ}} = 20 + 100 = 120\ \mathrm{J/K}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p019
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: 'ในโรงงานปูนซีเมนต์แห่งหนึ่งของประเทศไทย หินปูนแคลเซียมคาร์บอเนตถูกเผาตามปฏิกิริยา $\mathrm{CaCO_3(s) \rightarrow CaO(s) + CO_2(g)}$ จากค่า $\Delta_f G^\circ$ ที่ $298\ \mathrm{K}$ ของ $\mathrm{CaCO_3}$ (แคลไซต์) เท่ากับ $-1129.1$, $\mathrm{CaO}$ เท่ากับ $-603.3$ และ $\mathrm{CO_2}$ เท่ากับ $-394.4$ หน่วย kJ/mol หาค่า $\Delta G^\circ$ ของปฏิกิริยานี้ในหน่วย kJ/mol'
+    answer: { value: 131.4, tolerance: 0.1, unit: kJ/mol }
+    hints:
+      - 'ใช้ $\Delta G^\circ = \sum \Delta_f G^\circ(\text{ผลิตภัณฑ์}) - \sum \Delta_f G^\circ(\text{สารตั้งต้น})$'
+      - 'ตรวจว่าสารตั้งต้นมีเพียงหนึ่งตัวและมีสัมประสิทธิ์เป็นหนึ่ง'
+    misconceptions:
+      - { match: -131.4, feedback: 'สลับผลรวมของผลิตภัณฑ์กับสารตั้งต้น ทำให้เครื่องหมายกลับกัน' }
+    solution: '$\Delta G^\circ = [(-603.3) + (-394.4)] - [(-1129.1)] = +131.4\ \mathrm{kJ/mol}$ ค่าเป็นบวกหมายความว่าที่ $298\ \mathrm{K}$ ปฏิกิริยานี้ไม่เกิดเองและต้องให้ความร้อนสูง'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

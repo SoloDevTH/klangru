@@ -1,0 +1,295 @@
+problems:
+  - id: physics.magnetism.biot-savart-ampere.p001
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 1
+    type: numeric
+    stem: 'ลวดตรงยาวมากมีกระแส $2.0\ \mathrm{A}$ หาขนาดของสนามแม่เหล็กที่ระยะ $0.10\ \mathrm{m}$ จากลวด (ตอบในหน่วย $\mu\mathrm{T}$)'
+    answer: { value: 4.0, tolerance: 0.05, unit: μT }
+    hints:
+      - 'ลวดตรงยาวอนันต์ใช้สูตร $B = \dfrac{\mu_0 I}{2\pi r}$'
+      - 'แทนค่า $\mu_0 = 1.2566 \times 10^{-6}\ \mathrm{T\cdot m/A}$ แล้วอย่าลืมว่า $\mu\mathrm{T} = 10^{-6}\ \mathrm{T}$'
+    misconceptions:
+      - { match: 25.1, feedback: 'ลืมหาร $2\pi$ ในตัวส่วน ค่า $\mu_0 I / r$ จะสูงกว่าจริงประมาณ $2\pi$ เท่า' }
+    solution: '$B = \dfrac{\mu_0 I}{2\pi r} = \dfrac{(1.2566\times10^{-6})(2.0)}{2\pi(0.10)} = 4.0\times10^{-6}\ \mathrm{T} = 4.0\ \mu\mathrm{T}$ ค่า $\mu_0/2\pi$ เท่ากับ $2\times10^{-7}$ จึงคำนวณได้เร็วขึ้น'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p002
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 1
+    type: mcq
+    stem: 'ลวดตรงมีกระแสไหลขึ้นในแนวดิ่ง ผู้สังเกตมองลงมาจากด้านบนของลวด จึงเห็นกระแสพุ่งเข้าหาตา ที่จุดรอบลวด สนามแม่เหล็กมีทิศอย่างไร'
+    choices:
+      - { id: a, text: 'พุ่งเข้าหาลวดตามแนวรัศมี', feedback: 'สนามจากลวดตรงไม่มีองค์ประกอบตามแนวรัศมี สนามเป็นวงกลมรอบลวดเสมอ' }
+      - { id: b, text: 'เป็นวงกลมรอบลวด ตามเข็มนาฬิกา', feedback: 'ทิศนี้กลับกัน ตามกฎมือขวานิ้วที่งอจะวนทวนเข็มนาฬิกาเมื่อมองจากปลายหัวแม่มือ' }
+      - { id: c, text: 'เป็นวงกลมรอบลวด ทวนเข็มนาฬิกา', correct: true }
+      - { id: d, text: 'ขนานกับกระแส ชี้ไปทางเดียวกับกระแส', feedback: 'สนามรอบลวดตรงตั้งฉากกับทิศกระแสเสมอ ไม่ขนานกับกระแส' }
+    hints:
+      - 'ใช้กฎมือขวา: นิ้วหัวแม่มือชี้ไปตามทิศกระแส'
+      - 'นิ้วที่งอจะวนไปรอบลวดในทิศไหน เมื่อมองจากปลายหัวแม่มือที่ชี้เข้าหาตา'
+    solution: 'เมื่อนิ้วหัวแม่มือชี้เข้าหาผู้สังเกต นิ้วที่งอรอบลวดจะวนทวนเข็มนาฬิกาเมื่อมองจากจุดนั้น สนามจึงเป็นวงกลมทวนเข็มนาฬิกาเมื่อมองจากด้านบน'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p003
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 2
+    type: numeric
+    stem: 'สายไฟเข้าตู้ไฟของบ้านมีกระแส $50\ \mathrm{A}$ ที่จุดซึ่งห่างจากสายตั้งฉาก $0.50\ \mathrm{m}$ สนามแม่เหล็กจากกระแสนี้มีขนาดกี่ $\mu\mathrm{T}$ (สมมติว่าสายยาวเพียงพอให้ใช้สูตรลวดยาวอนันต์)'
+    answer: { value: 20.0, tolerance: 0.1, unit: μT }
+    hints:
+      - 'ใช้สูตร $B = \dfrac{\mu_0 I}{2\pi r}$ โดย $r$ คือระยะตั้งฉากจากสาย'
+      - 'ทั้ง $I$ และ $r$ อยู่ในหน่วย SI แล้ว ผลลัพธ์จึงเป็นเทสลา แล้วแปลงเป็นไมโครเทสลา'
+    misconceptions:
+      - { match: 125.7, feedback: 'ลืมหาร $2\pi$ ค่าที่ได้สูงกว่าจริงราว $2\pi$ เท่า' }
+      - { match: 2.0, feedback: 'ดูเหมือนแปลง $0.50\ \mathrm{m}$ เป็น $5.0\ \mathrm{m}$ ผิด ระยะยังคงเป็น $0.50\ \mathrm{m}$' }
+    solution: '$B = \dfrac{(1.2566\times10^{-6})(50)}{2\pi(0.50)} = 2.0\times10^{-5}\ \mathrm{T} = 20.0\ \mu\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p004
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 2
+    type: numeric
+    stem: 'ลวดตรงยาวอนันต์สองเส้นขนานกันห่างกัน $0.40\ \mathrm{m}$ มีกระแส $5.0\ \mathrm{A}$ ไหลไปทางเดียวกันทั้งสองเส้น จุด $P$ อยู่บนเส้นตรงที่ลากผ่านลวดทั้งสอง นอกช่วงระหว่างลวด ห่างจากลวดที่ 1 เป็น $0.10\ \mathrm{m}$ และห่างจากลวดที่ 2 เป็น $0.30\ \mathrm{m}$ สนามรวมที่ $P$ มีขนาดกี่ $\mu\mathrm{T}$'
+    answer: { value: 13.3, tolerance: 0.1, unit: μT }
+    hints:
+      - 'คำนวณสนามจากลวดแต่ละเส้นแยกกันด้วย $B = \mu_0 I / 2\pi r$ โดย $r$ คือระยะจากลวดนั้นถึง $P$'
+      - 'ที่จุด $P$ สนามของลวดทั้งสองมีทิศเดียวกัน (เพราะลวดทั้งสองอยู่ด้านเดียวกันของ $P$) จึงบวกกันได้'
+    misconceptions:
+      - { match: 6.67, feedback: 'ลบสนามสองค่าออกจากกัน แต่ที่จุด $P$ สนามจากทั้งสองลวดมีทิศเดียวกัน ต้องบวกกัน' }
+    solution: '$B_1 = \dfrac{\mu_0 (5.0)}{2\pi(0.10)} = 10.0\ \mu\mathrm{T}$ และ $B_2 = \dfrac{\mu_0 (5.0)}{2\pi(0.30)} = 3.33\ \mu\mathrm{T}$ รวมได้ $B = 13.3\ \mu\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p005
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 2
+    type: order
+    stem: 'เรียงลำดับขั้นตอนการหาสนามรอบลวดตรงยาวอนันต์ด้วยกฎของแอมแปร์ จากขั้นแรกไปขั้นสุดท้าย'
+    items:
+      - 'เลือกเส้นทางแอมแปร์เป็นวงกลมรัศมี $r$ ที่มีลวดอยู่ตรงกลาง'
+      - 'ตรวจว่า $\vec{B}$ ขนานกับ $d\vec{l}$ ตลอดวงกลม และขนาดของ $B$ คงที่บนวงกลม'
+      - 'เขียน $\oint \vec{B}\cdot d\vec{l} = B(2\pi r)$ เพราะสนามคงที่และขนานกับเส้นทาง'
+      - 'ใช้กฎของแอมแปร์ $\oint \vec{B}\cdot d\vec{l} = \mu_0 I_{\text{enc}}$ โดย $I_{\text{enc}} = I$'
+      - 'แก้สมการหา $B = \dfrac{\mu_0 I}{2\pi r}$'
+    hints:
+      - 'ขั้นแรกคือเลือกเส้นทางที่ทำให้สนามมีค่าคงที่ก่อนคำนวณปริพันธ์'
+      - 'ขั้นสุดท้ายคือการแก้สมการ หลังจากที่ได้ $\oint B\,dl$ แล้ว'
+    solution: 'ลำดับที่ถูกคือ เลือกเส้นทางสมมาตร, ตรวจความขนานและความคงที่ของ $B$, เขียนปริพันธ์เป็น $B(2\pi r)$, ใช้กฎของแอมแปร์ และแก้หา $B$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p006
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 2
+    type: text
+    stem: 'ค่าคงที่ $\mu_0$ ที่ปรากฏในกฎของบีโอ–ซาวาร์ต์และกฎของแอมแปร์ มีชื่อเรียกว่าอะไร (ตอบชื่อภาษาไทยหรืออังกฤษก็ได้)'
+    accepted:
+      - 'การซึมผ่านของสุญญากาศ'
+      - 'ค่าการซึมผ่านของสุญญากาศ'
+      - 'permeability of free space'
+      - 'vacuum permeability'
+      - 'μ0'
+      - 'μ₀'
+    hints:
+      - 'ค่านี้บอกว่าสุญญากาศตอบสนองต่อสนามแม่เหล็กมากน้อยเพียงใด'
+      - 'ชื่อภาษาอังกฤษคือ permeability ของ free space หรือ vacuum'
+    solution: '$\mu_0$ เรียกว่าการซึมผ่านของสุญญากาศ (permeability of free space) มีค่า $4\pi \times 10^{-7}\ \mathrm{T\cdot m/A}$ ตามนิยามเก่า และประมาณ $1.2566\times10^{-6}\ \mathrm{T\cdot m/A}$ ตามค่าที่วัดได้'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p007
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 3
+    type: numeric
+    stem: 'ขดลวดโซเลนอยด์ในรีเลย์ของตู้ควบคุมโรงงานยาว $0.40\ \mathrm{m}$ พันรอบทั้งหมด $320$ รอบ มีกระแส $2.5\ \mathrm{A}$ สนามแม่เหล็กภายในขดลวดมีขนาดกี่ $\mathrm{mT}$'
+    answer: { value: 2.51, tolerance: 0.01, unit: mT }
+    hints:
+      - 'สูตรโซเลนอยด์ยาวมากคือ $B = \mu_0 n I$ โดย $n$ คือจำนวนรอบต่อหนึ่งหน่วยความยาว'
+      - 'หา $n = N/L$ ก่อน แล้วแทนค่า $\mu_0 n I$'
+    misconceptions:
+      - { match: 1.01, feedback: 'ใช้จำนวนรอบทั้งหมด $N$ แทน $n$ ต้องหารด้วยความยาวก่อน' }
+    solution: '$n = \dfrac{320}{0.40} = 800\ \mathrm{/m}$ จึงได้ $B = \mu_0 n I = (1.2566\times10^{-6})(800)(2.5) = 2.51\times10^{-3}\ \mathrm{T} = 2.51\ \mathrm{mT}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p008
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 3
+    type: numeric
+    stem: 'ทอรอยด์มีขดลวด $200$ รอบทั้งหมด มีกระแส $1.0\ \mathrm{A}$ วัดสนามที่ระยะ $0.10\ \mathrm{m}$ จากแกนกลางของวงแหวน สนามมีขนาดกี่ $\mathrm{mT}$'
+    answer: { value: 0.40, tolerance: 0.005, unit: mT }
+    hints:
+      - 'สูตรทอรอยด์คือ $B = \dfrac{\mu_0 N I}{2\pi r}$ โดย $r$ คือระยะจากแกนกลาง'
+      - 'ตรวจว่ามีทั้ง $\pi$ ในตัวส่วนและ $N$ ในตัวเศษ'
+    misconceptions:
+      - { match: 1.26, feedback: 'ใช้ $2r$ แทน $2\pi r$ ในตัวส่วน ค่าที่ได้จะสูงกว่าจริง' }
+    solution: '$B = \dfrac{(1.2566\times10^{-6})(200)(1.0)}{2\pi(0.10)} = 4.0\times10^{-4}\ \mathrm{T} = 0.40\ \mathrm{mT}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p009
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 3
+    type: mcq
+    stem: 'วงแหวนลวดรัศมี $0.050\ \mathrm{m}$ พันเพียง 1 รอบ มีกระแส $3.0\ \mathrm{A}$ สนามแม่เหล็กที่จุดศูนย์กลางของวงแหวนมีขนาดเท่าใด'
+    choices:
+      - { id: a, text: '75.4 μT', feedback: 'ลืมว่าตัวส่วนเป็น $2R$ การใช้ $R$ เพียงอย่างเดียวจะได้ค่าสูงเป็นสองเท่าของจริง' }
+      - { id: b, text: '12.0 μT', feedback: 'ใช้ $2\pi R$ ในตัวส่วน ซึ่งเป็นสูตรของลวดตรง ไม่ใช่สูตรวงแหวนที่จุดศูนย์กลาง' }
+      - { id: c, text: '0 μT', feedback: 'สนามที่จุดศูนย์กลางของวงแหวนไม่เป็นศูนย์ เพราะทุกชิ้นลวดให้สนามทิศเดียวกันที่จุดนั้น' }
+      - { id: d, text: '37.7 μT', correct: true }
+    hints:
+      - 'จุดศูนย์กลางของวงแหวนอยู่ที่ระยะ $z = 0$ จากระนาบของวงแหวน'
+      - 'ใช้สูตร $B = \dfrac{\mu_0 N I}{2R}$ โดย $N = 1$'
+    solution: '$B = \dfrac{\mu_0 I}{2R} = \dfrac{(1.2566\times10^{-6})(3.0)}{2(0.050)} = 3.77\times10^{-5}\ \mathrm{T} = 37.7\ \mu\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p010
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 4
+    type: numeric
+    stem: 'วงแหวนลวดรัศมี $0.10\ \mathrm{m}$ พันเพียง 1 รอบ มีกระแส $2.0\ \mathrm{A}$ หาขนาดสนามบนแกนของวงแหวน ที่จุด $P$ ซึ่งห่างจากศูนย์กลาง $0.10\ \mathrm{m}$ ตามแกน (ตอบในหน่วย $\mu\mathrm{T}$)'
+    answer: { value: 4.44, tolerance: 0.02, unit: μT }
+    hints:
+      - 'ใช้สูตร $B_z = \dfrac{\mu_0 N I R^2}{2(R^2 + z^2)^{3/2}}$ สำหรับจุดบนแกน'
+      - 'ที่นี่ $R = z = 0.10\ \mathrm{m}$ จึงมี $R^2 + z^2 = 0.020\ \mathrm{m^2}$ คำนวณกำลัง $3/2$ ด้วยเครื่องคิดเลข'
+    misconceptions:
+      - { match: 12.6, feedback: 'ใช้สูตรที่จุดศูนย์กลาง $\mu_0 I / 2R$ ทั้งที่จุด $P$ อยู่ห่างจากศูนย์กลางแล้ว สนามจึงอ่อนลง' }
+    solution: '$B_z = \dfrac{(1.2566\times10^{-6})(1)(2.0)(0.10)^2}{2\,(0.020)^{3/2}} = 4.44\times10^{-6}\ \mathrm{T} = 4.44\ \mu\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p011
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 4
+    type: expression
+    stem: 'สนามของลวดตรงยาวอนันต์เขียนได้เป็น $B = \dfrac{kI}{r}$ เมื่อ $k$ เป็นค่าคงที่ จงเขียน $I$ ในรูปของ $B$, $r$ และ $k$'
+    prefix: 'I ='
+    answer:
+      latex: '\frac{B r}{k}'
+      variables: [B, r, k]
+    misconceptions:
+      - { match: '\frac{k}{B r}', feedback: 'กลับเศษกับส่วนทั้งหมด ลองแทนกลับ: ถ้า $I = k/(Br)$ แล้ว $kI/r$ จะไม่เท่ากับ $B$ ให้คูณทั้งสองข้างด้วย $r$ แล้วหารด้วย $k$' }
+      - { match: '\frac{B}{r k}', feedback: 'ลืมย้าย $r$ ไปคูณ $B$ ให้ย้ายข้ามทุกตัวทีละขั้นให้ครบ' }
+    hints:
+      - 'คูณทั้งสองข้างด้วย $r$ ก่อน เพื่อกำจัดตัวส่วน $r$'
+      - 'จากนั้นหารทั้งสองข้างด้วย $k$'
+    solution: 'คูณสมการด้วย $r$ จะได้ $Br = kI$ แล้วหารด้วย $k$ จะได้ $I = \dfrac{Br}{k}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p012
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 3
+    type: match
+    stem: 'จับคู่รูปร่างของตัวนำกับสูตรสนามแม่เหล็กที่จุดซึ่งเหมาะสม'
+    pairs:
+      - { left: 'ลวดตรงยาวอนันต์ที่ระยะ $r$', right: '$B = \dfrac{\mu_0 I}{2\pi r}$' }
+      - { left: 'โซเลนอยด์ยาวมาก ที่จุดภายใน', right: '$B = \mu_0 n I$' }
+      - { left: 'วงแหวนรัศมี $R$ ที่จุดศูนย์กลาง', right: '$B = \dfrac{\mu_0 N I}{2R}$' }
+      - { left: 'ทอรอยด์ ที่ระยะ $r$ จากแกนกลาง', right: '$B = \dfrac{\mu_0 N I}{2\pi r}$' }
+    hints:
+      - 'ลวดตรงกับทอรอยด์มีตัวหาร $2\pi r$ ทั้งคู่ ต่างกันที่จำนวนรอบ'
+      - 'สูตรที่มี $n$ คือของโซเลนอยด์ ส่วนสูตรที่มี $2R$ คือของวงแหวนที่จุดศูนย์กลาง'
+    solution: 'ลวดตรงให้ $B = \dfrac{\mu_0 I}{2\pi r}$ โซเลนอยด์ภายในให้ $B = \mu_0 n I$ วงแหวนที่จุดศูนย์กลางให้ $B = \dfrac{\mu_0 N I}{2R}$ และทอรอยด์ให้ $B = \dfrac{\mu_0 N I}{2\pi r}$ สูตรที่มี $2\pi r$ และ $2R$ ต่างกันตรงที่รูปร่างของตัวนำ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p013
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 4
+    type: text
+    stem: 'กฎที่ให้สนาม $d\vec{B} = \dfrac{\mu_0}{4\pi}\dfrac{I\,d\vec{l}\times\hat{r}}{r^2}$ จากชิ้นกระแสเล็ก ๆ หนึ่งชิ้น มีชื่อเรียกว่าอะไร'
+    accepted:
+      - 'กฎของบีโอ–ซาวาร์ต์'
+      - 'กฎของบีโอ-ซาวาร์ต์'
+      - 'กฎบีโอ-ซาวาร์ต์'
+      - 'กฎของบีโอต์–ซาวาร์ต์'
+      - 'กฎของบีโอต์-ซาวาร์ต์'
+      - 'กฎของบีโอ-ซาวาร์'
+      - 'กฎของบิโอ-ซาวาร์ต์'
+      - 'Biot-Savart law'
+      - 'Biot–Savart law'
+    hints:
+      - 'ชื่อกฎตั้งตามนักฟิสิกส์สองคนชาวฝรั่งเศส'
+      - 'ชื่อคือ Biot กับ Savart'
+    solution: 'กฎนี้เรียกว่ากฎของบีโอ–ซาวาร์ต์ (Biot–Savart law) ใช้หาสนามจากตัวนำที่มีกระแสทุกรูปร่างโดยการรวมชิ้นเล็ก ๆ'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p014
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 4
+    type: numeric
+    stem: 'ในการทดลอง ลวดทองแดงตรงยาวรัศมี $1.0\ \mathrm{mm}$ นำกระแส $10\ \mathrm{A}$ กระจายสม่ำเสมอทั่วหน้าตัด หาสนามที่ระยะ $0.5\ \mathrm{mm}$ จากแกนกลาง สนามมีขนาดกี่ $\mathrm{mT}$ (จุดนี้อยู่ภายในเนื้อลวด)'
+    answer: { value: 1.00, tolerance: 0.01, unit: mT }
+    hints:
+      - 'ใช้กฎของแอมแปร์กับวงกลมรัศมี $r$ ที่อยู่ภายในตัวนำ โดย $I_{\text{enc}} = I \dfrac{r^2}{a^2}$ เพราะกระแสกระจายสม่ำเสมอ'
+      - 'สนามภายในคือ $B = \dfrac{\mu_0 I r}{2\pi a^2}$ เมื่อ $a$ คือรัศมีตัวนำ'
+    misconceptions:
+      - { match: 4.00, feedback: 'ใช้สูตรภายนอกลวด $\mu_0 I/2\pi r$ ซึ่งใช้ได้เฉพาะเมื่ออยู่นอกตัวนำกระแส' }
+    solution: '$B = \dfrac{\mu_0 I r}{2\pi a^2} = \dfrac{(1.2566\times10^{-6})(10)(0.5\times10^{-3})}{2\pi(1.0\times10^{-3})^2} = 1.00\times10^{-3}\ \mathrm{T} = 1.00\ \mathrm{mT}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p015
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 4
+    type: numeric
+    stem: 'ลวดตรงยาวอนันต์มีกระแส $8.0\ \mathrm{A}$ จุดใดห่างจากลวดเป็นระยะกี่เซนติเมตร จึงมีสนามแม่เหล็ก $40\ \mu\mathrm{T}$ (ตอบในหน่วย $\mathrm{cm}$)'
+    answer: { value: 4.0, tolerance: 0.05, unit: cm }
+    hints:
+      - 'จัดสูตร $B = \dfrac{\mu_0 I}{2\pi r}$ ให้ $r$ อยู่ข้างเดียว'
+      - 'แปลง $r$ จากเมตรเป็นเซนติเมตรก่อนตอบ'
+    misconceptions:
+      - { match: 25.1, feedback: 'ลืมหาร $2\pi$ จึงได้ระยะยาวเกินจริงราว $2\pi$ เท่า' }
+    solution: '$r = \dfrac{\mu_0 I}{2\pi B} = \dfrac{(1.2566\times10^{-6})(8.0)}{2\pi(40\times10^{-6})} = 0.040\ \mathrm{m} = 4.0\ \mathrm{cm}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p016
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 5
+    type: numeric
+    stem: 'ลวดตรงยาว $0.60\ \mathrm{m}$ มีกระแส $4.0\ \mathrm{A}$ วัดสนามที่จุดกึ่งกลางของลวด ซึ่งอยู่ห่างจากลวดในแนวตั้งฉาก $0.40\ \mathrm{m}$ สนามมีขนาดกี่ $\mu\mathrm{T}$'
+    answer: { value: 1.20, tolerance: 0.02, unit: μT }
+    hints:
+      - 'ลวดยาวจำกัดใช้สูตร $B = \dfrac{\mu_0 I}{4\pi d}(\sin\theta_1 + \sin\theta_2)$ โดย $d$ คือระยะตั้งฉาก'
+      - 'ที่จุดกึ่งกลาง $\sin\theta = \dfrac{L/2}{\sqrt{(L/2)^2 + d^2}}$ ทั้งสองฝั่ง'
+    misconceptions:
+      - { match: 2.0, feedback: 'ใช้สูตรลวดยาวอนันต์ $\mu_0 I/2\pi d$ ทั้งที่ลวดยาวจำกัด ค่าที่ได้จึงสูงเกินไป' }
+    solution: 'ที่จุดกึ่งกลาง $\sin\theta = \dfrac{0.30}{\sqrt{0.30^2+0.40^2}} = 0.60$ สองฝั่งรวมเป็น $1.20$ จึงได้ $B = \dfrac{(1.2566\times10^{-6})(4.0)}{4\pi(0.40)}(1.20) = 1.2\times10^{-6}\ \mathrm{T} = 1.2\ \mu\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p017
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 5
+    type: numeric
+    stem: 'สายส่งไฟฟ้าแรงสูงเหนือศีรษะมีกระแส $400\ \mathrm{A}$ ผู้ตรวจวัดยืนอยู่ใต้สายโดยระยะตั้งฉากจากสายถึงจุดวัดคือ $5.0\ \mathrm{m}$ สมมติว่าสายยาวอนันต์ สนามแม่เหล็กที่จุดนี้มีขนาดกี่ $\mu\mathrm{T}$'
+    answer: { value: 16.0, tolerance: 0.1, unit: μT }
+    hints:
+      - 'สายยาวมากเมื่อเทียบกับระยะ จึงใช้สูตรลวดตรงยาวอนันต์ได้'
+      - 'ระยะที่แทนในสูตรคือระยะตั้งฉากจากสาย ไม่ใช่ระยะตามแนวเฉียง'
+    misconceptions:
+      - { match: 8.0, feedback: 'ใช้ระยะเป็นสองเท่าของจริง (ระยะเส้นผ่านศูนย์กลางแทนรัศมี) ค่าที่ได้จึงน้อยเกินไป' }
+    solution: '$B = \dfrac{\mu_0 I}{2\pi r} = \dfrac{(1.2566\times10^{-6})(400)}{2\pi(5.0)} = 1.6\times10^{-5}\ \mathrm{T} = 16.0\ \mu\mathrm{T}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: physics.magnetism.biot-savart-ampere.p018
+    topics: [physics.magnetism.biot-savart-ampere]
+    difficulty: 5
+    type: numeric
+    stem: 'ลวดตรงยาวอนันต์สองเส้นวางขนานกัน เส้นหนึ่งมีกระแส $3.0\ \mathrm{A}$ พุ่งออกจากระนาบของหน้ากระดาษ อีกเส้นมีกระแส $1.0\ \mathrm{A}$ พุ่งเข้าหน้ากระดาษ วงแอมแปร์ปิดหนึ่งวงล้อมลวดทั้งสองเส้นไว้ ค่า $\oint \vec{B}\cdot d\vec{l}$ รอบวงนี้มีค่าเท่าใดในหน่วย $\mathrm{T\cdot m}$'
+    answer: { value: 2.513e-6, tolerance: 1e-8, unit: 'T·m' }
+    hints:
+      - 'กฎของแอมแปร์ใช้กระแสสุทธิที่ทะลุพื้นที่ที่วงล้อมไว้ $I_{\text{enc}}$'
+      - 'กระแสที่พุ่งออกกับพุ่งเข้ามีเครื่องหมายตรงข้ามกัน'
+    misconceptions:
+      - { match: 5.027e-6, feedback: 'รวมกระแสทั้งสองเส้นโดยไม่คำนึงถึงทิศ กระแสที่พุ่งเข้ากับพุ่งออกมีเครื่องหมายต่างกัน' }
+    solution: '$I_{\text{enc}} = +3.0 - 1.0 = 2.0\ \mathrm{A}$ จึงได้ $\oint \vec{B}\cdot d\vec{l} = \mu_0 I_{\text{enc}} = (1.2566\times10^{-6})(2.0) = 2.51\times10^{-6}\ \mathrm{T\cdot m}$'
+    license: CC-BY-SA-4.0
+    ai_assisted: true

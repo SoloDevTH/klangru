@@ -1,0 +1,57 @@
+id: physics.magnetism.biot-savart-ampere
+subject: physics
+title: { th: แหล่งกำเนิดสนามแม่เหล็ก กฎของบีโอ–ซาวาร์ต์ และกฎของแอมแปร์, en: Sources of magnetic fields - Biot-Savart and Ampère's law }
+summary: หาสนามแม่เหล็กจากกระแสไฟฟ้าด้วยกฎของบีโอ–ซาวาร์ต์และกฎของแอมแปร์ สำหรับลวดตรง วงแหวน โซเลนอยด์ และทอรอยด์
+difficulty: 8.5
+minutes: 45
+prerequisites: [physics.magnetism.magnetic-flux-forces, math.calculus.vectors-3d, math.calculus.integral-applications, physics.electricity.electric-field]
+encompasses:
+  - { id: math.calculus.vectors-3d, weight: 0.2 }
+  - { id: math.calculus.integral-applications, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - type: figure
+    src: wire-field.svg
+    alt: "ภาพตัดขวางลวดตรงที่มีจุดสีแดงตรงกลางแทนกระแสที่พุ่งออกจากหน้ากระดาษ มีวงกลมสีน้ำเงินซ้อนกันสามวงรอบลวด ทุกวงมีลูกศรวนทวนเข็มนาฬิกา วงที่อยู่ไกลลวดมากกว่ามีขนาดใหญ่กว่า"
+    caption: "สนามแม่เหล็กรอบลวดตรงเป็นวงกลมที่มีศูนย์กลางอยู่ที่ลวด ทิศตามกฎมือขวา และอ่อนลงเมื่อระยะเพิ่มขึ้น"
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: loop-axis.svg
+    alt: "ขดลวดวงกลมรัศมี R มองจากด้านข้างเป็นเส้นแนวตั้งสีแดง มีแกนเส้นประแนวนอนผ่านศูนย์กลาง จุด P อยู่บนแกนห่างจากศูนย์กลางเป็นระยะ z"
+    caption: "สนามที่จุดบนแกนของวงแหวนขึ้นกับระยะ $z$ จากศูนย์กลาง ไม่ใช่ระยะจากตัวลวดโดยตรง"
+  - type: figure
+    src: solenoid-ampere.svg
+    alt: "โซเลนอยด์ยาวเป็นเส้นตรงที่มีวงขดลวดสีแดงเรียงกันหลายวง มีเส้นทางแอมแปร์รูปสี่เหลี่ยมประสีน้ำเงิน ด้านหนึ่งอยู่ในโซเลนอยด์ขนานแกน อีกด้านอยู่นอกโซเลนอยด์"
+    caption: "เส้นทางแอมแปร์ที่ใช้หาสนามภายในโซเลนอยด์ ด้านนอกมีค่าสนามเกือบเป็นศูนย์"
+  - { type: check, problem: physics.magnetism.biot-savart-ampere.p002, prompt: "ลองคิดทิศของสนามก่อนอ่านต่อ" }
+  - { type: check, problem: physics.magnetism.biot-savart-ampere.p012, prompt: "ลองจับคู่รูปร่างกับสูตรโดยไม่ดูบทเรียน" }
+  - type: interactive
+    title: สนามของลวดตรงลดลงเมื่อระยะเพิ่มขึ้นแบบ 1/r
+    caption: "แถบเลื่อน a แทนค่าคงที่ μ₀I/2π ลากให้มากขึ้นแล้วสังเกตว่าเส้นโค้งสูงขึ้นทุกจุด ส่วนที่ระยะ x มากขึ้นกราฟจะแบนลงอย่างรวดเร็ว"
+    widget:
+      kind: function-plot
+      functions: ["a / x"]
+      sliders:
+        - { name: a, min: 0.5, max: 10, step: 0.5, value: 2, label: ค่าคงที่ μ₀I/2π }
+      x: [0.2, 5]
+      y: [0, 10]
+glossary:
+  - { term: กฎของบีโอ–ซาวาร์ต์, definition: "กฎที่ให้สนามแม่เหล็ก $d\\vec{B}$ จากชิ้นกระแสเล็ก ๆ $I\\,d\\vec{l}$ เป็นสัดส่วนกับ $\\sin\\theta$ และแปรผกผันกับกำลังสองของระยะ" }
+  - { term: กฎของแอมแปร์, definition: "กฎที่กล่าวว่าปริพันธ์ $\\oint \\vec{B}\\cdot d\\vec{l}$ รอบเส้นทางปิดเท่ากับ $\\mu_0 I_{\\text{enc}}$ ใช้ได้สะดวกเมื่อการกระจายกระแสสมมาตร" }
+  - { term: โซเลนอยด์, definition: "ขดลวดที่พันเป็นเกลียวสม่ำเสมอเป็นทรงกระบอก เมื่อยาวมาก สนามภายในจะสม่ำเสมอและขนานแกน" }
+  - { term: ทอรอยด์, definition: "ขดลวดที่พันเป็นวงแหวน สนามอยู่ภายในวงแหวนและมีทิศเป็นวงกลมรอบแกนกลาง" }
+flashcards:
+  - { front: "สนามของลวดตรงยาวอนันต์ที่ระยะ $r$", back: "$B = \\dfrac{\\mu_0 I}{2\\pi r}$ ทิศเป็นวงกลมรอบลวดตามกฎมือขวา" }
+  - { front: "สนามที่จุดศูนย์กลางของวงแหวนรัศมี $R$ มี $N$ รอบ", back: "$B = \\dfrac{\\mu_0 N I}{2R}$" }
+  - { front: "สนามภายในโซเลนอยด์ยาวมาก", back: "$B = \\mu_0 n I$ โดย $n = N/L$ คือจำนวนรอบต่อหนึ่งหน่วยความยาว" }
+  - { front: "กฎของแอมแปร์", back: "$\\oint \\vec{B}\\cdot d\\vec{l} = \\mu_0 I_{\\text{enc}}$ เลือกเส้นทางที่สมมาตรให้ $B$ คงที่และขนานกับ $d\\vec{l}$" }
+references:
+  - { title: "University Physics Volume 2 (OpenStax)", url: "https://openstax.org/books/university-physics-volume-2/pages/1-introduction", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Biot–Savart law", url: "https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Ampère's circuital law", url: "https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
+sensitive: false
+review_flags: []

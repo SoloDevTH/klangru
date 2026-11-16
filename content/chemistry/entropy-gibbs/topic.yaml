@@ -1,0 +1,50 @@
+id: chemistry.thermochem.entropy-gibbs
+subject: chemistry
+title: { th: ความเกิดขึ้นเอง เอนโทรปี กฎข้อที่สามของอุณหพลศาสตร์ และพลังงานอิสระของกิบส์, en: Spontaneity, entropy, the third law and Gibbs free energy }
+summary: ทำนายว่าปฏิกิริยาเกิดขึ้นเองหรือไม่จากเอนโทรปีและพลังงานอิสระของกิบส์ และเชื่อมค่า ΔG° กับค่าคงที่สมดุล
+difficulty: 7
+minutes: 45
+prerequisites: [chemistry.thermochem.enthalpy-hess, chemistry.equilibrium.chemical-equilibrium, math.functions.logarithms]
+encompasses:
+  - { id: math.functions.logarithms, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: gibbs-vs-t.svg
+    alt: "กราฟเส้นตรงสี่เส้นของ ΔG เทียบกับอุณหภูมิ เส้นสีแดงลดลงตัดศูนย์ที่ประมาณ 405 K เส้นสีน้ำเงินเพิ่มขึ้นตัดศูนย์ที่ประมาณ 440 K เส้นสีเขียวอยู่ต่ำกว่าศูนย์ทุกอุณหภูมิ และเส้นสีม่วงอยู่สูงกว่าศูนย์ทุกอุณหภูมิ"
+    caption: "สี่กรณีของเครื่องหมาย $\\Delta H$ และ $\\Delta S$ (ค่าสมมติ) จุดที่เส้นตัดศูนย์คืออุณหภูมิที่ความเกิดขึ้นเองเปลี่ยนไป"
+  - { type: check, problem: chemistry.thermochem.entropy-gibbs.p002, prompt: "ลองทำนายจากเครื่องหมายก่อนอ่านต่อ" }
+  - type: interactive
+    title: ปรับ ΔH และ ΔS แล้วดูว่าจุดที่ ΔG เป็นศูนย์เลื่อนไปไหน
+    caption: "แถบเลื่อน h คือ ΔH และแถบเลื่อน s คือ ΔS กราฟคือ ΔG = h − sT เมื่อ T เป็นเคลวิน จุดที่เส้นตัดแกนนอนคือ T = h/s"
+    widget:
+      kind: function-plot
+      functions: ["h - s x"]
+      sliders:
+        - { name: h, min: -100, max: 100, step: 5, value: 40, label: ΔH (kJ/mol) }
+        - { name: s, min: -0.3, max: 0.3, step: 0.01, value: 0.12, label: ΔS (kJ/(mol K)) }
+      x: [0, 1000]
+      y: [-100, 100]
+  - { type: check, problem: chemistry.thermochem.entropy-gibbs.p016, prompt: "จับคู่เครื่องหมายกับช่วงอุณหภูมิ" }
+glossary:
+  - { term: เอนโทรปี, definition: "ปริมาณที่วัดระดับความไม่เป็นระเบียบ หรือจำนวนสถานะจุลภาคที่เป็นไปได้ของระบบ เขียนเป็น $S = k_B \\ln W$" }
+  - { term: พลังงานอิสระของกิบส์, definition: "ปริมาณ $G = H - TS$ ที่ใช้ทำนายความเกิดขึ้นเองของกระบวนการที่ความดันและอุณหภูมิคงที่ เมื่อ $\\Delta G < 0$ เกิดเองได้" }
+  - { term: กฎข้อที่สามของอุณหพลศาสตร์, definition: "กฎที่กล่าวว่าเอนโทรปีของผลึกสมบูรณ์แบบที่ $0\\ \\mathrm{K}$ เป็นศูนย์ ทำให้กำหนดค่าเอนโทรปีมาตรฐานจากการวัดได้" }
+  - { term: เอนโทรปีมาตรฐาน, definition: "เอนโทรปีของสารที่สภาวะมาตรฐานซึ่งมักอ้างอิงที่ 298 K มีหน่วย $\\mathrm{J/(mol\\,K)}$ และใช้คำนวณ $\\Delta S^\\circ$ ของปฏิกิริยา" }
+flashcards:
+  - { front: "สูตรพลังงานอิสระของกิบส์", back: "$\\Delta G = \\Delta H - T\\Delta S$ เกิดเองได้เมื่อ $\\Delta G < 0$" }
+  - { front: "ปฏิกิริยาที่มี $\\Delta H > 0$ และ $\\Delta S > 0$ เกิดเองเมื่อไร", back: "เมื่ออุณหภูมิสูงพอ คือ $T > \\Delta H / \\Delta S$" }
+  - { front: "ความสัมพันธ์ของ $\\Delta G^\\circ$ กับ $K$", back: "$\\Delta G^\\circ = -RT\\ln K$" }
+  - { front: "ความสัมพันธ์ของ $K_p$ กับ $K_c$ สำหรับแก๊ส", back: "$K_p = K_c\\,(RT)^{\\Delta n}$" }
+references:
+  - { title: "Entropy", url: "https://en.wikipedia.org/wiki/Entropy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Gibbs free energy", url: "https://en.wikipedia.org/wiki/Gibbs_free_energy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "16.2 Entropy (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/16-2-entropy", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "16.4 Free Energy (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/16-4-free-energy", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
+sensitive: false
+review_flags: []
