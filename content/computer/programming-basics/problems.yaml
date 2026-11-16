@@ -496,22 +496,22 @@ problems:
     difficulty: 2
     type: numeric
     stem: |
-      น้องเก็บค่าขนมวันละ 40 บาท ตั้งแต่วันจันทร์ถึงวันศุกร์ โปรแกรมนี้แสดงค่าใด (บาท)
+      น้องเก็บค่าขนมวันละ 50 บาท ตั้งแต่วันจันทร์ถึงวันศุกร์ โปรแกรมนี้แสดงค่าใด (บาท)
 
       ```python
       money = 0
       for day in range(5):
-          money = money + 40
+          money = money + 50
       print(money)
       ```
-    answer: { value: 200, unit: บาท }
+    answer: { value: 250, unit: บาท }
     hints:
       - "`range(5)` วนกี่รอบ"
-      - "money เพิ่มรอบละ 40"
+      - "money เพิ่มรอบละ 50"
     misconceptions:
-      - { match: 160, feedback: "`range(5)` ให้ 0, 1, 2, 3, 4 รวม 5 รอบ ไม่ใช่ 4 รอบ" }
-      - { match: 240, feedback: "`range(5)` วน 5 รอบพอดี ไม่ได้รวมรอบที่ day = 5" }
-    solution: "วน 5 รอบ รอบละ 40 บาท money = 5 × 40 = 200 บาท"
+      - { match: 200, feedback: "`range(5)` ให้ 0, 1, 2, 3, 4 รวม 5 รอบ ไม่ใช่ 4 รอบ" }
+      - { match: 300, feedback: "`range(5)` วน 5 รอบพอดี ไม่ได้รวมรอบที่ day = 5" }
+    solution: "วน 5 รอบ รอบละ 50 บาท money = 5 × 50 = 250 บาท"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
