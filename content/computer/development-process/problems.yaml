@@ -303,24 +303,27 @@ problems:
     difficulty: 3
     type: code
     stem: |
-      ฟังก์ชัน `total_price(items, member=False)` ต้องคืนราคารวมของรายการ `items` (ลิสต์ของราคาเป็นบาท) ถ้า `member` เป็น True ให้ลดยอดรวม 10% ถ้าไม่ส่งมาหรือเป็น False ให้คืนยอดเต็ม โค้ดเริ่มต้นยังไม่ผ่านการทดสอบบางกรณี ให้เขียนใหม่จนผ่านทุกกรณี
+      แอปสั่งข้าวคิดค่าส่งตามข้อกำหนดเดิม: ระยะไม่เกิน 3 กิโลเมตรคิด 15 บาท เกิน 3 กิโลเมตรคิดเพิ่มกิโลเมตรละ 5 บาท (ระยะเป็นจำนวนเต็ม) ทีมต้องการเพิ่มข้อกำหนดใหม่ว่าถ้าฝนตก (`rainy` เป็น True) ให้บวกเพิ่ม 10 บาท โดยการเรียกแบบเดิมที่ไม่ส่ง `rainy` ต้องได้ค่าส่งเท่าเดิม จงเขียนฟังก์ชัน `delivery_fee(distance_km, rainy=False)` ให้ผ่านกรณีทดสอบทั้งเดิมและใหม่
     starter: |
-      def total_price(items, member=False):
-          return sum(items)
+      def delivery_fee(distance_km, rainy=False):
+          return 15 + 5 * (distance_km - 3)
     tests: |
-      assert total_price([60, 25]) == 85, "ลูกค้าทั่วไปควรจ่าย 85 บาท"
-      assert abs(total_price([60, 25], member=True) - 76.5) < 0.01, "สมาชิกได้ลด 10% ควรได้ 76.5 บาท"
-      assert total_price([]) == 0, "ไม่มีรายการ ควรได้ 0 บาท"
-      assert abs(total_price([100], member=True) - 90) < 0.01, "ซื้อ 100 บาทแบบสมาชิก ควรได้ 90 บาท"
+      assert delivery_fee(2) == 15, "ระยะ 2 กม. ตามข้อกำหนดเดิมควรได้ 15 บาท"
+      assert delivery_fee(3) == 15, "ระยะ 3 กม. ยังไม่เกิน 3 กม. ควรได้ 15 บาท"
+      assert delivery_fee(5) == 25, "ระยะ 5 กม. เกินมา 2 กม. ควรได้ 15 + 10 = 25 บาท"
+      assert delivery_fee(5, rainy=True) == 35, "ฝนตก ระยะ 5 กม. ควรได้ 25 + 10 = 35 บาท"
+      assert delivery_fee(1, rainy=True) == 25, "ฝนตก ระยะ 1 กม. ควรได้ 15 + 10 = 25 บาท"
     reference: |
-      def total_price(items, member=False):
-          total = sum(items)
-          if member:
-              total = total * 0.9
-          return total
+      def delivery_fee(distance_km, rainy=False):
+          fee = 15
+          if distance_km > 3:
+              fee = fee + 5 * (distance_km - 3)
+          if rainy:
+              fee = fee + 10
+          return fee
     hints:
-      - "ลองดูว่าโค้ดเริ่มต้นลดราคาให้สมาชิกหรือไม่"
-      - "ลดราคาเฉพาะเมื่อ member เป็น True โดยคูณยอดรวมด้วย 0.9"
-    solution: "คำนวณยอดรวมด้วย sum(items) แล้วคูณ 0.9 เมื่อ member เป็น True ค่าเริ่มต้น member=False ทำให้ลูกค้าทั่วไปไม่ได้ส่วนลด"
+      - "รันกรณีทดสอบเดิมก่อน ระยะ 2 กม. โค้ดเริ่มต้นให้ค่าเท่าใด"
+      - "แยกกรณีระยะไม่เกิน 3 กม. ออกมาก่อน แล้วค่อยบวกค่าฝนตกเมื่อ rainy เป็น True"
+    solution: "เริ่มจาก 15 บาท บวก 5 × (ระยะ − 3) เฉพาะเมื่อระยะเกิน 3 กม. แล้วบวก 10 บาทเมื่อ rainy เป็น True ค่าเริ่มต้น rainy=False ทำให้การเรียกแบบเดิมได้ค่าส่งเท่าเดิม กรณีทดสอบเดิม (2, 3 และ 5 กม.) จึงยังผ่าน ซึ่งเป็นหลักของการทดสอบถดถอย"
     license: CC-BY-SA-4.0
     ai_assisted: true
