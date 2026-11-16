@@ -1,0 +1,69 @@
+id: chemistry.thermochem.entropy-gibbs
+subject: chemistry
+title: { th: ความเกิดขึ้นเอง เอนโทรปี และพลังงานอิสระของกิบส์, en: Spontaneity, entropy and Gibbs free energy }
+summary: ทำนายว่าปฏิกิริยาเกิดเองได้หรือไม่จากเอนโทรปีและพลังงานอิสระ คำนวณ ΔS° และ ΔG° จากค่าตาราง หาอุณหภูมิที่เปลี่ยนความเกิดขึ้นเอง และเชื่อมกับค่าคงที่สมดุล
+difficulty: 7
+minutes: 45
+prerequisites: [chemistry.thermochem.enthalpy-hess, chemistry.equilibrium.chemical-equilibrium, math.functions.logarithms]
+encompasses:
+  - { id: chemistry.thermochem.enthalpy-hess, weight: 0.3 }
+  - { id: chemistry.equilibrium.chemical-equilibrium, weight: 0.3 }
+  - { id: math.functions.logarithms, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: entropy-standard-values.svg
+    alt: "แท่งกราฟแนวนอนแปดแท่งเรียงจากสั้นไปยาว แท่งแรกคือ H₂O(l) ยาวประมาณ 70 J/(mol·K) แท่งถัดไปคือ H₂(g) ประมาณ 131 และแท่งที่เหลือยาวขึ้นเรื่อย ๆ จนถึง CO₂(g) ประมาณ 214 J/(mol·K) แท่งของแก๊สเป็นสีฟ้า แท่งของของเหลวเป็นสีเขียว"
+    caption: "ค่าเอนโทรปีมาตรฐานของแก๊สสูงกว่าของเหลวมาก เพราะแก๊สมีการกระจายตัวของพลังงานในสถานะจุลภาคได้มากกว่า"
+  - type: worked-example
+    title: ทำนายความเกิดขึ้นเองของการเผาไหม้ CO ที่ 298 K
+    problem: "จงคำนวณ ΔH°, ΔS° และ ΔG° ที่ 298.15 K ของปฏิกิริยา 2CO(g) + O₂(g) → 2CO₂(g) กำหนด ΔfH°: CO(g) = −110.53 kJ/mol, CO₂(g) = −393.51 kJ/mol และ S°: CO(g) = 197.66, O₂(g) = 205.15, CO₂(g) = 213.79 J/(mol·K)"
+    steps:
+      - text: "ΔH° = Σ n ΔfH°(ผลิตภัณฑ์) − Σ n ΔfH°(สารตั้งต้น) = 2(−393.51) − 2(−110.53) = −565.96 kJ"
+        why: "ธาตุอิสระที่ O₂ มีค่า ΔfH° เป็นศูนย์ จึงไม่ต้องใส่ในการคำนวณ"
+      - text: "ΔS° = 2(213.79) − [2(197.66) + 205.15] = 427.58 − 600.47 = −172.9 J/K"
+        why: "ปฏิกิริยานี้ลดจำนวนโมลแก๊สจาก 3 เหลือ 2 จึงคาดว่า ΔS น่าจะลบ และผลที่คำนวณได้ก็เป็นลบจริง"
+      - text: "ΔG° = ΔH° − TΔS° = −565.96 − 298.15 × (−0.1729) = −565.96 + 51.55 = −514.4 kJ"
+        why: "ต้องแปลง ΔS จาก J/K เป็น kJ/K ก่อนคูณกับ T"
+      - text: "ΔG° ติดลบมาก จึงเกิดเองได้ที่ 298 K และถ้ามีค่า ΔG° ติดลบมาก การที่ ΔS น่าจะลบก็ไม่ใช่อุปสรรค"
+    answer: "ΔH° = −566.0 kJ, ΔS° = −172.9 J/K, ΔG° = −514.4 kJ เกิดเองได้ที่ 298 K"
+  - { type: check, problem: chemistry.thermochem.entropy-gibbs.p001, prompt: "ดูว่าการละลายน้ำแข็งเพิ่มหรือลดความไม่เป็นระเบียบ" }
+  - type: figure
+    src: gibbs-vs-temperature.svg
+    alt: "กราฟเส้นตรงลาดลงจากค่าบวกที่ 300 K ไปค่าลบที่ 400 K ตัดแกนศูนย์ที่ประมาณ 370 K มีจุดแดงที่จุดตัด ส่วนบนซ้ายระบุว่าไม่เกิดเอง ส่วนล่างขวาระบุว่าเกิดเองได้"
+    caption: "สำหรับการระเหยของน้ำ ΔH และ ΔS เป็นบวกทั้งคู่ ทำให้เกิดเองที่อุณหภูมิสูงกว่าจุดที่ ΔG = 0"
+  - type: interactive
+    title: อุณหภูมิที่เปลี่ยนความเกิดขึ้นเอง
+    caption: "ปรับ ΔH และ ΔS แล้วดูว่าเส้น ΔG เป็นศูนย์ที่อุณหภูมิใด จุดตัดคือ ΔH/ΔS เมื่อหน่วยสอดคล้องกัน"
+    widget:
+      kind: function-plot
+      functions: ["h - s\\cdot x"]
+      sliders:
+        - { name: h, min: 0, max: 100, step: 1, value: 44, label: "ΔH (kJ/mol)" }
+        - { name: s, min: 0.05, max: 0.3, step: 0.005, value: 0.119, label: "ΔS (kJ/(mol·K))" }
+      x: [0, 500]
+      y: [-50, 50]
+  - { type: check, problem: chemistry.thermochem.entropy-gibbs.p007, prompt: "นับจำนวนโมลแก๊สทั้งสองข้างของสมการ" }
+glossary:
+  - { term: เอนโทรปี (S), definition: "การวัดจำนวนสถานะจุลภาคที่ระบบเป็นไปได้ ค่ายิ่งมากยิ่งกระจายตัวหรือไม่เป็นระเบียบมาก มีหน่วย J/(mol·K)" }
+  - { term: กฎข้อที่สองของอุณหพลศาสตร์, definition: "สำหรับกระบวนการที่เกิดเอง เอนโทรปีรวมของระบบกับสิ่งแวดล้อมเพิ่มขึ้นเสมอ ΔS_univ > 0" }
+  - { term: กฎข้อที่สามของอุณหพลศาสตร์, definition: "ผลึกที่สมบูรณ์แบบที่ 0 K มีเอนโทรปีเป็นศูนย์ เป็นจุดอ้างอิงในการคำนวณเอนโทรปีมาตรฐาน" }
+  - { term: พลังงานอิสระของกิบส์ (G), definition: "ปริมาณที่ใช้ตัดสินความเกิดขึ้นเองที่ความดันและอุณหภูมิคงที่ คำนวณได้จาก ΔG = ΔH − TΔS" }
+  - { term: ค่าคงที่สมดุล K, definition: "อัตราส่วนของความเข้มข้นหรือความดันย่อยของผลิตภัณฑ์ต่อสารตั้งต้นที่ยกกำลังด้วยเลขสัมประสิทธิ์ที่สมดุลแล้ว" }
+flashcards:
+  - { front: "ΔG = ΔH − TΔS ปฏิกิริยาเกิดเองเมื่อใด", back: "เมื่อ ΔG < 0 ที่ความดันและอุณหภูมิคงที่" }
+  - { front: "ΔH < 0 และ ΔS > 0 จะเกิดเองที่อุณหภูมิใด", back: "ทุกอุณหภูมิ เพราะ ΔG < 0 เสมอ" }
+  - { front: "ΔG° = −RT ln K เมื่อ K มาก ΔG° เป็นอย่างไร", back: "ติดลบ" }
+  - { front: "K_p กับ K_c เชื่อมกันอย่างไร", back: "K_p = K_c(RT)^Δn โดย Δn = ผลรวมโมลแก๊สของผลิตภัณฑ์ลบสารตั้งต้น" }
+  - { front: "ΔS ของการระเหยน้ำเป็นบวกหรือลบ", back: "บวก เพราะแก๊สมีเอนโทรปีมากกว่าของเหลว" }
+references:
+  - { title: "พลังงานอิสระกิบส์", url: "https://th.wikipedia.org/wiki/พลังงานอิสระกิบส์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Entropy", url: "https://en.wikipedia.org/wiki/Entropy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Gibbs free energy", url: "https://en.wikipedia.org/wiki/Gibbs_free_energy", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "16.4 Free Energy (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/16-4-free-energy", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "Carbon monoxide: gas phase thermochemistry data (NIST Chemistry WebBook)", url: "https://webbook.nist.gov/cgi/cbook.cgi?ID=C630080&Mask=1", source: nist, lang: en, license: "public domain (US government)" }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

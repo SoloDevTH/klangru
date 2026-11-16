@@ -1,0 +1,292 @@
+problems:
+  - id: chemistry.kinetics.arrhenius-mechanisms.p001
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 1
+    type: mcq
+    stem: "ทำไมน้ำมันพืชในกระทะที่ร้อนจัดเกิดกลิ่นหืนได้เร็วกว่าน้ำมันที่เก็บไว้ในที่เย็น"
+    choices:
+      - { id: a, text: "เพราะน้ำมันร้อนมีความหนาแน่นมากขึ้น", feedback: "ความหนาแน่นไม่ใช่สาเหตุหลักของอัตราการเกิดปฏิกิริยา" }
+      - { id: b, text: "เพราะสัดส่วนของโมเลกุลที่มีพลังงานพอจะทำปฏิกิริยาได้เพิ่มขึ้น", correct: true, feedback: "ถูก เมื่ออุณหภูมิสูงขึ้น โมเลกุลที่มีพลังงานถึง Eₐ มีสัดส่วนมากขึ้นอย่างรวดเร็ว" }
+      - { id: c, text: "เพราะตัวเร่งปฏิกิริยาเพิ่มขึ้นเมื่อร้อน", feedback: "อุณหภูมิไม่ได้เพิ่มตัวเร่งปฏิกิริยาโดยตรง" }
+      - { id: d, text: "เพราะค่า ΔH ของปฏิกิริยาเปลี่ยนไปเมื่อร้อน", feedback: "ΔH ไม่ขึ้นกับอุณหภูมิในระดับที่ทำให้อัตราเปลี่ยนมากขนาดนี้" }
+    hints:
+      - "นึกถึงการกระจายพลังงานของอนุภาคเมื่ออุณหภูมิสูงขึ้น"
+      - "ปฏิกิริยาต้องการพลังงานก่อกัมมันต์ขั้นต่ำ"
+    solution: "การเพิ่มอุณหภูมิทำให้สัดส่วนของการชนที่มีพลังงานถึง Eₐ เพิ่มขึ้นมาก จึงเร่งอัตรา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p002
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 1
+    type: mcq
+    stem: "ตัวเร่งปฏิกิริยามีผลต่อปฏิกิริยาอย่างไร"
+    choices:
+      - { id: a, text: "เปลี่ยนค่า ΔH ของปฏิกิริยา", feedback: "ตัวเร่งไม่เปลี่ยน ΔH" }
+      - { id: b, text: "ลดพลังงานก่อกัมมันต์ จึงทำให้ปฏิกิริยาเร็วขึ้น", correct: true, feedback: "ถูก ตัวเร่งเปิดทางกลไกที่มี Eₐ ต่ำกว่า" }
+      - { id: c, text: "เปลี่ยนค่าคงที่สมดุล K", feedback: "ตัวเร่งทำให้ถึงสมดุลเร็วขึ้นแต่ไม่เปลี่ยนค่า K" }
+      - { id: d, text: "เพิ่มปริมาณผลิตภัณฑ์ที่ได้", feedback: "ตัวเร่งไม่เพิ่มปริมาณผลิตภัณฑ์เมื่อถึงสมดุล" }
+    hints:
+      - "นึกถึงแผนภาพพลังงานที่มีและไม่มีตัวเร่ง"
+      - "ตัวเร่งทำให้ยอดพลังงานต่ำลงหรือไม่"
+    solution: "ตัวเร่งลด Eₐ ทำให้มีการชนที่สำเร็จมากขึ้นต่อหน่วยเวลา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p003
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมี k = 2.0 × 10⁻³ s⁻¹ ที่ 300 K และ k = 8.0 × 10⁻³ s⁻¹ ที่ 310 K พลังงานก่อกัมมันต์เท่ากับกี่ kJ/mol (R = 8.314 J/(mol·K) ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 107.2, tolerance: 0.5, unit: "kJ/mol" }
+    misconceptions:
+      - { match: 1.15, feedback: "ใช้องศาเซลเซียส 27 และ 37 แทนเคลวิน ซึ่งทำให้ค่าผิดมาก" }
+    hints:
+      - "ln(k₂/k₁) = −(Eₐ/R)(1/T₂ − 1/T₁)"
+      - "แปลงอุณหภูมิเป็นเคลวินก่อนแทนค่า"
+    solution: "Eₐ = R ln(k₂/k₁) / (1/T₁ − 1/T₂) = 8.314 × ln 4 / (1/300 − 1/310) = 1.07 × 10⁵ J/mol = **107.2 kJ/mol**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p004
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมี k = 2.0 × 10⁻⁴ s⁻¹ ที่ 300 K และมี Eₐ = 60 kJ/mol จงหา k ที่ 350 K (หน่วย s⁻¹ ตอบทศนิยม 5 ตำแหน่ง หรือเป็นเลขยกกำลัง)"
+    answer: { value: 0.00622, tolerance: 0.00002, unit: "s⁻¹" }
+    misconceptions:
+      - { match: 0.0002, feedback: "ลืมคิดผลของอุณหภูมิ ค่า k จึงไม่เปลี่ยน" }
+    hints:
+      - "ln(k₂/k₁) = −(Eₐ/R)(1/T₂ − 1/T₁)"
+      - "ที่อุณหภูมิสูงขึ้น k ต้องเพิ่มขึ้น"
+    solution: "ln(k₃₅₀/k₃₀₀) = −(60 000 / 8.314)(1/350 − 1/300) = 7216 × 0.000476 = 3.436 ดังนั้น k₃₅₀ = 2.0 × 10⁻⁴ × e^3.436 = **6.22 × 10⁻³ s⁻¹**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p005
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: numeric
+    stem: "สมมติว่าปฏิกิริยาการเสื่อมของอาหารมี Eₐ = 50 kJ/mol อัตราที่ 25 °C เร็วกว่าที่ 4 °C กี่เท่า (R = 8.314 J/(mol·K) ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 4.6, tolerance: 0.05, unit: "เท่า" }
+    misconceptions:
+      - { match: 0.22, feedback: "สลับลำดับของอุณหภูมิ ทำให้ได้ส่วนกลับของอัตราส่วนที่ถูก" }
+    hints:
+      - "แปลงเป็นเคลวิน: 4 °C = 277.15 K และ 25 °C = 298.15 K"
+      - "ln(k₂₅/k₄) = (Eₐ/R)(1/T₄ − 1/T₂₅)"
+    solution: "ln(k₂₅/k₄) = (50 000 / 8.314)(1/277.15 − 1/298.15) = 1.526 จึงได้ k₂₅/k₄ = e^1.526 ≈ **4.6 เท่า**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p006
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 3
+    type: numeric
+    stem: "กราฟ ln k เทียบกับ 1/T ของปฏิกิริยาหนึ่งมีความชัน −6.0 × 10³ K พลังงานก่อกัมมันต์มีค่าเท่ากับกี่ kJ/mol (R = 8.314 J/(mol·K) ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 49.9, tolerance: 0.1, unit: "kJ/mol" }
+    misconceptions:
+      - { match: 6.0, feedback: "ลืมคูณด้วย R ความชันเท่ากับ −Eₐ/R จึงต้องคูณกลับ" }
+    hints:
+      - "ความชัน = −Eₐ/R"
+      - "Eₐ = −ความชัน × R"
+    solution: "Eₐ = 6.0 × 10³ × 8.314 = 4.99 × 10⁴ J/mol = **49.9 kJ/mol**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p007
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 3
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมี k = 1.0 × 10⁻² s⁻¹ ที่ 300 K และ Eₐ = 50 kJ/mol จงหาแฟกเตอร์ความถี่ A (หน่วย s⁻¹ ตอบทศนิยม 2 ตำแหน่งในรูปเลขยกกำลัง เช่น 5.08 × 10⁶ ตอบเป็นตัวเลขเต็ม 5080000 หรือ 5.08e6 ก็ได้)"
+    answer: { value: 5.08e6, tolerance: 0.02e6, unit: "s⁻¹" }
+    misconceptions:
+      - { match: 0.01, feedback: "ตอบค่า k แทนแฟกเตอร์ความถี่ A" }
+    hints:
+      - "จาก k = A e^(−Eₐ/RT) จึงได้ A = k e^(Eₐ/RT)"
+      - "คำนวณ Eₐ/RT ก่อนโดยใช้ T = 300 K"
+    solution: "A = 1.0 × 10⁻² × e^(50 000 / (8.314 × 300)) = 1.0 × 10⁻² × e^20.04 = **5.08 × 10⁶ s⁻¹**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p008
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: mcq
+    stem: "ขั้นมูลฐานที่มีโมเลกุลสองตัวชนกันเพื่อเกิดปฏิกิริยาเรียกว่าอะไร"
+    choices:
+      - { id: a, text: "ยูนิโมเลกุลาร์", feedback: "ยูนิโมเลกุลาร์มีโมเลกุลเข้าร่วมหนึ่งตัว" }
+      - { id: b, text: "ไบโมเลกุลาร์", correct: true, feedback: "ถูก ไบโมเลกุลาร์คือขั้นที่มีโมเลกุลสองตัวเข้าร่วม" }
+      - { id: c, text: "เทอร์โมเลกุลาร์", feedback: "เทอร์โมเลกุลาร์มีสามโมเลกุล และพบน้อยมาก" }
+      - { id: d, text: "ซีโร่โมเลกุลาร์", feedback: "ไม่มีคำนี้ในทฤษฎีกลไกมาตรฐาน" }
+    hints:
+      - "คำนำหน้า uni, bi, ter หมายถึงจำนวน"
+      - "สองคือ bi"
+    solution: "ขั้นมูลฐานที่มีโมเลกุลสองตัวเข้าร่วมเรียกว่า **ไบโมเลกุลาร์** (bimolecular)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p009
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 3
+    type: numeric
+    stem: "ปฏิกิริยา NO₂ + CO → NO + CO₂ ที่ช่วงอุณหภูมิต่ำมีขั้นกำหนดอัตราคือ 2NO₂ → NO₃ + NO มีกฎอัตราเป็น rate = k[NO₂]² ถ้าเพิ่ม [NO₂] เป็นสองเท่า อัตราเพิ่มขึ้นกี่เท่า"
+    answer: { value: 4, tolerance: 0, unit: "เท่า" }
+    misconceptions:
+      - { match: 2, feedback: "ใช้สัมประสิทธิ์ของสมการรวม ซึ่งให้อันดับหนึ่งต่อ NO₂ แต่กฎอัตราจริงมาจากขั้นกำหนดอัตรา" }
+    hints:
+      - "rate = k[NO₂]² ดังนั้นเพิ่มความเข้มข้นเป็นสองเท่าเพิ่มอัตราเป็นยกกำลังสองของ 2"
+      - "2² คือเท่าไร"
+    solution: "rate₂/rate₁ = (2)² = **4 เท่า**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p010
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 3
+    type: mcq
+    stem: "จากกลไกสองขั้นของ NO₂ + CO (ขั้นแรก 2NO₂ → NO₃ + NO และขั้นที่สอง NO₃ + CO → NO₂ + CO₂) สารใดเป็นสารมัธยันตร์"
+    choices:
+      - { id: a, text: "NO", feedback: "NO เป็นผลิตภัณฑ์ของขั้นแรกและไม่ถูกใช้ต่อในขั้นที่สอง" }
+      - { id: b, text: "CO₂", feedback: "CO₂ เป็นผลิตภัณฑ์สุดท้ายของปฏิกิริยา" }
+      - { id: c, text: "NO₃", correct: true, feedback: "ถูก NO₃ เกิดในขั้นแรกและถูกใช้หมดในขั้นที่สอง" }
+      - { id: d, text: "NO₂", feedback: "NO₂ เป็นสารตั้งต้นที่ถูกใช้ในขั้นแรก" }
+    hints:
+      - "สารมัธยันตร์ถูกสร้างในขั้นหนึ่งและถูกใช้ในอีกขั้นหนึ่ง"
+      - "ดูสารที่ปรากฏทั้งในผลิตภัณฑ์และสารตั้งต้นของขั้นต่าง ๆ"
+    solution: "NO₃ ปรากฏเป็นผลิตภัณฑ์ของขั้นแรกและเป็นสารตั้งต้นของขั้นที่สอง จึงเป็นสารมัธยันตร์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p011
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวเร่งปฏิกิริยาลดพลังงานก่อกัมมันต์จาก 80 kJ/mol เป็น 60 kJ/mol ที่ 298.15 K ปฏิกิริยาเร็วขึ้นกี่เท่า โดยสมมติว่าแฟกเตอร์ความถี่ A ไม่เปลี่ยน (R = 8.314 J/(mol·K) ตอบเป็นจำนวนเต็มโดยประมาณ)"
+    answer: { value: 3190, tolerance: 20, unit: "เท่า" }
+    misconceptions:
+      - { match: 1.01, feedback: "ไม่แปลง kJ เป็น J ทำให้ได้อัตราส่วนที่ใกล้ 1 มาก" }
+    hints:
+      - "อัตราส่วน k_ตัวเร่ง / k_ไม่มี = e^[(80 000 − 60 000)/(RT)]"
+      - "ใช้พลังงานหน่วย J ทั้งหมด"
+    solution: "ΔEₐ = 20 000 J/mol อัตราส่วน = e^(20 000 / (8.314 × 298.15)) = e^8.068 ≈ **3190 เท่า**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p012
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: text
+    stem: "ตัวเร่งปฏิกิริยาที่อยู่ในเฟสเดียวกับสารตั้งต้น (เช่น กรดในของเหลวเดียวกัน) เรียกว่าอะไร"
+    accepted: ["ตัวเร่งเอกพันธุ์", "เอกพันธุ์", "homogeneous", "homogeneous catalyst"]
+    misconceptions:
+      - { match: "วิวิธพันธุ์", feedback: "วิวิธพันธุ์หมายถึงตัวเร่งที่อยู่คนละเฟสกับสารตั้งต้น" }
+    hints:
+      - "เอกพันธุ์หมายถึงเฟสเดียวกัน"
+      - "ตรงข้ามกับวิวิธพันธุ์ซึ่งอยู่คนละเฟส"
+    solution: "ตัวเร่งที่อยู่เฟสเดียวกับสารตั้งต้นเรียกว่า **ตัวเร่งเอกพันธุ์** (homogeneous catalyst)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p013
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ชนิดของตัวเร่งปฏิกิริยากับตัวอย่าง"
+    pairs:
+      - { left: "ตัวเร่งวิวิธพันธุ์", right: "แพลทินัมและแพลลาเดียมในตัวแปลงไอเสียรถยนต์" }
+      - { left: "ตัวเร่งเอกพันธุ์", right: "กรดที่ละลายในของเหลวเดียวกันเร่งการเกิดเอสเทอร์" }
+      - { left: "เอนไซม์", right: "อะไมเลสในน้ำลายที่ย่อยแป้ง" }
+    hints:
+      - "ดูว่าตัวเร่งอยู่เฟสเดียวกับสารตั้งต้นหรือไม่"
+      - "เอนไซม์เป็นตัวเร่งทางชีวภาพ"
+    solution: "วิวิธพันธุ์ตรงกับแพลทินัมในตัวแปลงไอเสีย เอกพันธุ์ตรงกับกรดในเอสเทอร์ และเอนไซม์ตรงกับอะไมเลสในน้ำลาย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p014
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 2
+    type: order
+    stem: "เรียงลำดับเหตุการณ์ของการเกิดปฏิกิริยาตามทฤษฎีการชน"
+    items: ["อนุภาคชนกันด้วยพลังงานอย่างน้อย Eₐ และทิศทางเหมาะสม", "เกิดสารเชิงซ้อนกัมมันต์", "เกิดผลิตภัณฑ์"]
+    hints:
+      - "ต้องมีการชนก่อนจึงเกิดสารเชิงซ้อน"
+      - "สารเชิงซ้อนกัมมันต์เป็นสถานะพลังงานสูงสุด ก่อนจะเป็นผลิตภัณฑ์"
+    solution: "ต้องชนกันที่พลังงานและทิศทางพอก่อน จึงเกิดสารเชิงซ้อนกัมมันต์ แล้วเป็นผลิตภัณฑ์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p015
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 4
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมี k = 1.5 × 10⁻⁴ s⁻¹ ที่ 300 K และ Eₐ = 75 kJ/mol จงหา k ที่ 330 K (หน่วย s⁻¹ ตอบเป็นเลขยกกำลังทศนิยม 2 ตำแหน่ง เช่น 2.31 × 10⁻³ ตอบเป็น 0.00231 ก็ได้)"
+    answer: { value: 0.00231, tolerance: 0.00002, unit: "s⁻¹" }
+    misconceptions:
+      - { match: 0.00015, feedback: "ลืมผลของอุณหภูมิ จึงใช้ค่า k เดิม" }
+    hints:
+      - "ln(k₂/k₁) = −(Eₐ/R)(1/T₂ − 1/T₁)"
+      - "อุณหภูมิที่สูงขึ้นต้องทำให้ k เพิ่มขึ้น"
+    solution: "k₃₃₀ = 1.5 × 10⁻⁴ × exp[−(75 000 / 8.314)(1/330 − 1/300)] = **2.31 × 10⁻³ s⁻¹**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p016
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน `arrhenius_k(A, ea_kj, T)` ที่คืนค่าคงที่อัตราจาก k = A · e^(−Eₐ/RT) โดยรับ Eₐ เป็น kJ/mol และใช้ R = 8.314 J/(mol·K)"
+    starter: |
+      def arrhenius_k(A, ea_kj, T):
+          pass
+    tests: |
+      r = arrhenius_k(1.0e8, 50, 298.15)
+      assert r is not None, "ไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert abs(r - 0.17374) < 1e-4, f"arrhenius_k(1e8, 50, 298.15) ควรได้ 0.17374 แต่ได้ {r} (ตรวจการแปลง kJ เป็น J)"
+      s = arrhenius_k(1.0e8, 0, 300)
+      assert abs(s - 1.0e8) < 1e-3, f"เมื่อ Eₐ = 0 ค่า k ต้องเท่ากับ A แต่ได้ {s}"
+      t = arrhenius_k(1.0e8, 60, 298.15)
+      assert t < r, "เมื่อ Eₐ เพิ่มขึ้น ค่า k ต้องลดลง"
+    reference: |
+      import math
+      def arrhenius_k(A, ea_kj, T):
+          return A * math.exp(-ea_kj * 1000 / (8.314 * T))
+    hints:
+      - "แปลง Eₐ จาก kJ เป็น J ก่อนหารด้วย RT"
+      - "ใช้ math.exp สำหรับ e^x"
+    solution: "ฟังก์ชันคืน `A * math.exp(-ea_kj * 1000 / (8.314 * T))` เช่น arrhenius_k(1e8, 50, 298.15) ≈ 0.1737"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p017
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 4
+    type: mcq
+    multiple: true
+    stem: "ข้อใดถูกต้องเกี่ยวกับตัวเร่งปฏิกิริยา (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "ไม่เปลี่ยนค่า ΔH ของปฏิกิริยา", correct: true, feedback: "ถูก ΔH ขึ้นกับสถานะเริ่มต้นและสุดท้ายเท่านั้น" }
+      - { id: b, text: "ไม่ถูกใช้หมดเมื่อปฏิกิริยาสิ้นสุด", correct: true, feedback: "ถูก ตัวเร่งถูกคืนรูปเดิมหลังปฏิกิริยา" }
+      - { id: c, text: "เปลี่ยนค่าคงที่สมดุล K", feedback: "ตัวเร่งไม่เปลี่ยน K เพียงทำให้ถึงสมดุลเร็วขึ้น" }
+      - { id: d, text: "ลดพลังงานก่อกัมมันต์", correct: true, feedback: "ถูก นี่คือกลไกหลักของตัวเร่ง" }
+    hints:
+      - "ตัวเร่งทำให้ปฏิกิริยาเร็วขึ้นโดยไม่เปลี่ยนสมดุลและพลังงานรวม"
+      - "ถามตัวเองว่าตัวเร่งเปลี่ยนอะไรและไม่เปลี่ยนอะไร"
+    solution: "ข้อ a, b และ d ถูกต้อง ส่วนข้อ c ผิดเพราะตัวเร่งไม่เปลี่ยนค่าคงที่สมดุล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.arrhenius-mechanisms.p018
+    topics: [chemistry.kinetics.arrhenius-mechanisms]
+    difficulty: 5
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมีค่า k ที่ 320 K มากกว่าที่ 300 K เป็น 3.0 เท่า พลังงานก่อกัมมันต์มีค่าเท่ากับกี่ kJ/mol (R = 8.314 J/(mol·K) ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 43.8, tolerance: 0.1, unit: "kJ/mol" }
+    misconceptions:
+      - { match: 0.58, feedback: "ใช้องศาเซลเซียส 27 และ 47 แทนเคลวิน" }
+    hints:
+      - "ln(k₃₂₀/k₃₀₀) = ln 3.0"
+      - "Eₐ = R ln(k₂/k₁) / (1/T₁ − 1/T₂)"
+    solution: "Eₐ = 8.314 × ln 3.0 / (1/300 − 1/320) = 8.314 × 1.0986 / 2.0833 × 10⁻⁴ = 4.38 × 10⁴ J/mol = **43.8 kJ/mol**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

@@ -1,0 +1,271 @@
+problems:
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p001
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 1
+    type: mcq
+    stem: "H₃PO₄ (กรดฟอสฟอริก) จัดเป็นกรดชนิดใด"
+    choices:
+      - { id: a, text: "กรดโมโนโปรตอน", feedback: "กรดโมโนโปรตอนให้โปรตอนได้เพียงหนึ่งตัว H₃PO₄ มีสามตัว" }
+      - { id: b, text: "กรดไดโปรตอน", feedback: "กรดไดโปรตอนให้โปรตอนได้สองตัว H₃PO₄ มีสาม H ที่แตกตัวได้" }
+      - { id: c, text: "กรดไตรโปรตอน", correct: true, feedback: "ถูก H₃PO₄ ให้โปรตอนได้สามตัว แต่ละขั้นมี Ka ของตัวเอง" }
+      - { id: d, text: "เบสลิวอิส", feedback: "H₃PO₄ ให้โปรตอน จึงเป็นกรด ไม่ใช่เบส" }
+    hints:
+      - "นับจำนวนโปรตอนที่แตกตัวได้ในสูตร"
+      - "ตัวเลขนำหน้าคำว่าโปรตอนบอกจำนวน"
+    solution: "H₃PO₄ มีโปรตอนที่แตกตัวได้สามตัว จึงเป็น **กรดไตรโปรตอน**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p002
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 1
+    type: mcq
+    stem: "สำหรับกรดไดโปรตอนทั่วไป ข้อใดถูกต้อง"
+    choices:
+      - { id: a, text: "Ka₁ น้อยกว่า Ka₂", feedback: "การแตกตัวขั้นแรกมักแรงที่สุด จึงมี Ka₁ มากกว่า Ka₂" }
+      - { id: b, text: "Ka₁ มากกว่า Ka₂ มาก", correct: true, feedback: "ถูก ขั้นแรกให้โปรตอนได้ง่ายกว่าขั้นที่สองมาก" }
+      - { id: c, text: "มีจุดสมมูลเพียงจุดเดียว", feedback: "กรดไดโปรตอนมีจุดสมมูลสองจุด" }
+      - { id: d, text: "Ka₁ และ Ka₂ เท่ากัน", feedback: "ค่า Ka ขั้นถัดไปมักต่ำลงมาก" }
+    hints:
+      - "นึกถึงว่าโปรตอนตัวที่สองถูกดึงออกจากประจุลบที่มากขึ้น"
+      - "ขั้นหลังยากกว่าขั้นแรก"
+    solution: "Ka₁ มากกว่า Ka₂ มากโดยทั่วไป เพราะการดึงโปรตอนที่สองออกจากอนุภาคที่มีประจุลบอยู่แล้วทำได้ยากกว่า"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p003
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 3
+    type: numeric
+    stem: "สารละลาย H₂CO₃ 0.100 M มี Ka₁ = 4.3 × 10⁻⁷ โดยพิจารณาเฉพาะขั้นแรก pH เท่ากับเท่าไร (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.68, tolerance: 0.02, unit: "" }
+    misconceptions:
+      - { match: 6.37, feedback: "ใช้ pKa₁ เป็น pH แทนการหาความเข้มข้นของ H⁺ จากสมดุล" }
+    hints:
+      - "ตั้งสมการ x²/(0.100 − x) = Ka₁"
+      - "x คือ [H⁺] ที่เกิดจากขั้นแรก"
+    solution: "x = [−4.3 × 10⁻⁷ + √((4.3 × 10⁻⁷)² + 4 × 4.3 × 10⁻⁷ × 0.100)] / 2 = 2.07 × 10⁻⁴ M จึงได้ pH = **3.68**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p004
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 3
+    type: numeric
+    stem: "สารละลาย H₃PO₄ 0.100 M มี Ka₁ = 7.5 × 10⁻³ โดยพิจารณาเฉพาะขั้นแรก pH เท่ากับเท่าไร (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 1.62, tolerance: 0.02, unit: "" }
+    misconceptions:
+      - { match: 4.10, feedback: "ใช้ Ka₂ แทน Ka₁ เมื่อคำนวณขั้นแรก" }
+    hints:
+      - "x²/(0.100 − x) = Ka₁"
+      - "Ka₁ ของ H₃PO₄ มากกว่า Ka₂ มาก จึงใช้ขั้นแรกได้"
+    solution: "x = (−0.0075 + √(0.0075² + 4 × 0.0075 × 0.100)) / 2 = 0.0239 M จึงได้ pH = −log(0.0239) = **1.62**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p005
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 3
+    type: numeric
+    stem: "ที่ pH 8.00 สารละลาย H₂CO₃ มี HCO₃⁻ อยู่กี่เปอร์เซ็นต์ของคาร์บอนิกทั้งหมด (Ka₁ = 4.3 × 10⁻⁷, Ka₂ = 4.7 × 10⁻¹¹ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 97.3, tolerance: 0.1, unit: "%" }
+    misconceptions:
+      - { match: 2.3, feedback: "ตอบเปอร์เซ็นต์ของ H₂CO₃ แทน HCO₃⁻" }
+    hints:
+      - "α₁ = Ka₁[H⁺] / ([H⁺]² + Ka₁[H⁺] + Ka₁Ka₂)"
+      - "[H⁺] ที่ pH 8.00 เท่ากับ 1.00 × 10⁻⁸ M"
+    solution: "α₁ = (4.3 × 10⁻⁷ × 10⁻⁸) / (10⁻¹⁶ + 4.3 × 10⁻¹⁵ + 2.02 × 10⁻¹⁷) = 0.9728 จึงได้ **97.3%**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p006
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: numeric
+    stem: "กรดออกซาลิก H₂C₂O₄ ปริมาตร 20.00 mL ความเข้มข้น 0.0500 M ถูกไทเทรตด้วย NaOH 0.100 M จุดสมมูลที่สองต้องใช้ NaOH กี่ mL (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 20.0, tolerance: 0.1, unit: "mL" }
+    misconceptions:
+      - { match: 10.0, feedback: "ใช้ NaOH เพียง 1 mol ต่อกรด 1 mol เหมือนจุดสมมูลแรก แต่ต้องใช้ 2 mol สำหรับจุดที่สอง" }
+    hints:
+      - "จำนวนโมลของ H₂C₂O₄ = 0.0500 × 0.02000"
+      - "จุดสมมูลที่สองใช้ NaOH 2 mol ต่อกรด 1 mol"
+    solution: "n(H₂C₂O₄) = 1.00 × 10⁻³ mol ต้องใช้ NaOH = 2.00 × 10⁻³ mol V = 2.00 × 10⁻³ / 0.100 = **20.0 mL**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p007
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 3
+    type: numeric
+    stem: "กรดซัลฟิวริก H₂SO₄ 0.0500 M ขั้นแรกแตกตัวสมบูรณ์และขั้นที่สองมี Ka₂ = 1.2 × 10⁻² pH ของสารละลายเป็นเท่าไร (ตอบทศนิยม 2 ตำแหน่ง ตัวเลขนี้ใช้ตาม OpenStax Chemistry 2e)"
+    answer: { value: 1.23, tolerance: 0.02, unit: "" }
+    misconceptions:
+      - { match: 1.30, feedback: "ไม่นับ H⁺ จากขั้นที่สองเลย ทำให้ได้ pH = −log(0.0500)" }
+    hints:
+      - "[H⁺] รวม = 0.0500 + x โดย x มาจากขั้นที่สอง"
+      - "x(0.0500 + x) / (0.0500 − x) = 1.2 × 10⁻²"
+    solution: "x = 8.51 × 10⁻³ M [H⁺] = 0.0500 + 0.00851 = 0.0585 M จึงได้ pH = **1.23**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p008
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 4
+    type: numeric
+    stem: "ในสารละลายที่มี Ag⁺ 0.010 M และ NH₃ รวม 0.50 M (K_f ของ [Ag(NH₃)₂]⁺ = 1.7 × 10⁷) ความเข้มข้นของ Ag⁺ อิสระเท่ากับเท่าไร (หน่วย M เป็นเลขยกกำลัง ตอบทศนิยม 1 ตำแหน่ง เช่น 2.6 × 10⁻⁹)"
+    answer: { value: 2.6e-9, tolerance: 0.1e-9, unit: "M" }
+    misconceptions:
+      - { match: 2.35e-9, feedback: "ใช้ NH₃ อิสระ 0.50 M ทั้งที่ NH₃ บางส่วนถูกใช้ไปในเชิงซ้อนแล้ว 0.020 M" }
+    hints:
+      - "Ag⁺ ส่วนใหญ่เปลี่ยนเป็น [Ag(NH₃)₂]⁺ ดังนั้น [Ag(NH₃)₂]⁺ ≈ 0.010 M"
+      - "NH₃ อิสระ = 0.50 − 2 × 0.010"
+    solution: "[NH₃] อิสระ ≈ 0.48 M และ [Ag⁺] = 0.010 / (1.7 × 10⁷ × 0.48²) = 2.55 × 10⁻⁹ M ≈ **2.6 × 10⁻⁹ M**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p009
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดเป็นกรดลิวอิส"
+    choices:
+      - { id: a, text: "NH₃", feedback: "NH₃ มีคู่โดดเดี่ยวและให้คู่อิเล็กตรอน จึงเป็นเบสลิวอิส" }
+      - { id: b, text: "BF₃", correct: true, feedback: "ถูก BF₃ มีออร์บิทัล p ว่างรับคู่อิเล็กตรอนได้" }
+      - { id: c, text: "OH⁻", feedback: "OH⁻ ให้คู่อิเล็กตรอน จึงเป็นเบสลิวอิส" }
+      - { id: d, text: "Cl⁻", feedback: "Cl⁻ ให้คู่อิเล็กตรอนได้ เป็นเบสลิวอิส" }
+    hints:
+      - "กรดลิวอิสรับคู่อิเล็กตรอน"
+      - "ดูว่าอะตอมกลางมีออร์บิทัลว่างหรือไม่"
+    solution: "BF₃ มีออร์บิทัล p ว่างบนโบรอน จึงรับคู่อิเล็กตรอนจากเบสได้ เป็น **กรดลิวอิส**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p010
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: text
+    stem: "สารที่รับคู่อิเล็กตรอนเพื่อสร้างพันธะตามนิยามของลิวอิส เรียกว่าอะไร (ตอบเป็นคำ)"
+    accepted: ["กรดลิวอิส", "Lewis acid", "กรดลิวอิส (Lewis acid)"]
+    misconceptions:
+      - { match: "เบสลิวอิส", feedback: "เบสลิวอิสคือสารที่ให้คู่อิเล็กตรอน" }
+    hints:
+      - "คู่อิเล็กตรอนถูกรับโดยสารชนิดใด"
+      - "ชื่อขึ้นต้นด้วยกรด"
+    solution: "สารที่รับคู่อิเล็กตรอนเรียกว่า **กรดลิวอิส**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p011
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ลิแกนด์กับจำนวนฟันที่ให้คู่อิเล็กตรอนได้"
+    pairs:
+      - { left: "NH₃", right: "หนึ่งฟัน" }
+      - { left: "H₂N–CH₂–CH₂–NH₂ (en)", right: "สองฟัน" }
+      - { left: "EDTA⁴⁻", right: "หกฟัน" }
+    hints:
+      - "นับจำนวนอะตอมที่ให้คู่อิเล็กตรอนได้ในลิแกนด์"
+      - "en มีอะตอม N สองอะตอมที่ให้คู่อิเล็กตรอน"
+    solution: "NH₃ ให้ได้หนึ่งคู่ en ให้ได้สองคู่ และ EDTA ให้ได้หกคู่จากอะตอม N สองและ O สี่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p012
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: text
+    stem: "ชื่อเรียกของไอออนเชิงซ้อน [Ag(NH₃)₂]⁺ ตามระบบ IUPAC ประมาณว่าอย่างไร (ตอบเป็นภาษาไทยหรืออังกฤษ)"
+    accepted: ["ไดแอมมีนซิลเวอร์(I)", "ไดแอมมีนซิลเวอร์ (I)", "diamminesilver(I)", "diamminesilver"]
+    misconceptions:
+      - { match: "ไดแอมมีนซิลเวอร์(II)", feedback: "เลขออกซิเดชันของ Ag ในไอออนนี้คือ +1 จึงเป็น (I)" }
+    hints:
+      - "NH₃ เรียกว่า ammine ในชื่อเชิงซ้อน"
+      - "จำนวน NH₃ สองตัวเรียกว่า di"
+    solution: "[Ag(NH₃)₂]⁺ เรียกว่า **ไดแอมมีนซิลเวอร์(I)** หรือ diamminesilver(I)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p013
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: order
+    stem: "เรียงกรดต่อไปนี้จากแรงที่สุดไปอ่อนที่สุด โดยเทียบค่า Ka₁"
+    items: ["H₃PO₄ (Ka₁ = 7.5 × 10⁻³)", "CH₃COOH (Ka = 1.8 × 10⁻⁵)", "H₂CO₃ (Ka₁ = 4.3 × 10⁻⁷)"]
+    hints:
+      - "Ka ที่มากหมายถึงกรดที่แรงกว่า"
+      - "ดูเลขยกกำลังของ Ka ก่อน"
+    solution: "Ka₁ = 7.5 × 10⁻³ > 1.8 × 10⁻⁵ > 4.3 × 10⁻⁷ จึงเรียงได้ H₃PO₄ > CH₃COOH > H₂CO₃"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p014
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 2
+    type: mcq
+    stem: "ที่ pH เท่าใด สัดส่วนของ H₂CO₃ และ HCO₃⁻ เท่ากัน (Ka₁ = 4.3 × 10⁻⁷)"
+    choices:
+      - { id: a, text: "4.70", feedback: "4.70 คือค่า pKa ของกรดแอซีติก ไม่ใช่ของ H₂CO₃" }
+      - { id: b, text: "6.37", correct: true, feedback: "ถูก pH = pKa₁ = −log(4.3 × 10⁻⁷) ≈ 6.37" }
+      - { id: c, text: "8.35", feedback: "8.35 คือ pH ประมาณของจุดสมมูลแรก" }
+      - { id: d, text: "10.33", feedback: "10.33 คือ pKa₂ ที่ทำให้ HCO₃⁻ และ CO₃²⁻ มีสัดส่วนเท่ากัน" }
+    hints:
+      - "สัดส่วนสองสปีชีส์เท่ากันที่ pH เท่ากับค่าใด"
+      - "คำนวณ −log(Ka₁)"
+    solution: "สัดส่วนเท่ากันที่ pH = pKa₁ = −log(4.3 × 10⁻⁷) = **6.37**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p015
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 3
+    type: numeric
+    stem: "ประมาณ pH ของสารละลาย NaHCO₃ 0.100 M โดยใช้ pH ≈ (pKa₁ + pKa₂) / 2 (Ka₁ = 4.3 × 10⁻⁷, Ka₂ = 4.7 × 10⁻¹¹ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.35, tolerance: 0.05, unit: "" }
+    misconceptions:
+      - { match: 10.33, feedback: "ใช้ pKa₂ แทนค่าเฉลี่ยของ pKa สองขั้น" }
+    hints:
+      - "หา pKa₁ และ pKa₂ จาก Ka แต่ละค่า"
+      - "สารที่เป็นทั้งกรดและเบส (HCO₃⁻) ให้ pH อยู่ระหว่าง pKa สองค่า"
+    solution: "pKa₁ = 6.37 และ pKa₂ = 10.33 จึงได้ pH ≈ (6.37 + 10.33) / 2 = **8.35**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p016
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน `diprotic_alpha0(h, ka1, ka2)` ที่คืนค่าสัดส่วนของ H₂A ที่ความเข้มข้นของ H⁺ เท่ากับ h จากสูตร h² / (h² + Ka₁h + Ka₁Ka₂)"
+    starter: |
+      def diprotic_alpha0(h, ka1, ka2):
+          pass
+    tests: |
+      r = diprotic_alpha0(1e-7, 4.3e-7, 4.7e-11)
+      assert r is not None, "ไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert abs(r - 0.18861) < 1e-4, f"diprotic_alpha0(1e-7, 4.3e-7, 4.7e-11) ควรได้ 0.18861 แต่ได้ {r}"
+      s = diprotic_alpha0(1e-4, 4.3e-7, 4.7e-11)
+      assert abs(s - 0.99572) < 1e-4, f"diprotic_alpha0(1e-4, ...) ควรได้ 0.99572 แต่ได้ {s} (ตรวจว่าใช้ h² ในตัวเศษ)"
+    reference: |
+      def diprotic_alpha0(h, ka1, ka2):
+          return h * h / (h * h + ka1 * h + ka1 * ka2)
+    hints:
+      - "ตัวเศษคือ h²"
+      - "ตัวส่วนรวมสามพจน์ h², Ka₁h และ Ka₁Ka₂"
+    solution: "ฟังก์ชันคืน `h * h / (h * h + ka1 * h + ka1 * ka2)` เช่น diprotic_alpha0(1e-7, 4.3e-7, 4.7e-11) ≈ 0.1886"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.acids-bases.polyprotic-lewis-complex.p017
+    topics: [chemistry.acids-bases.polyprotic-lewis-complex]
+    difficulty: 5
+    type: numeric
+    stem: "โซดาแอช (Na₂CO₃) 0.100 M ใช้ในการซักผ้าได้เพราะเป็นเบส ค่า pH ของสารละลายนี้ประมาณเท่ากับเท่าไร (Kb₁ = Kw / Ka₂ โดย Ka₂ = 4.7 × 10⁻¹¹ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 11.65, tolerance: 0.05, unit: "" }
+    misconceptions:
+      - { match: 9.68, feedback: "ใช้ Ka₁ แทน Ka₂ ในการหา Kb ของ CO₃²⁻" }
+    hints:
+      - "CO₃²⁻ + H₂O ⇌ HCO₃⁻ + OH⁻ มี Kb₁ = Kw / Ka₂"
+      - "[OH⁻] ≈ √(Kb₁ × 0.100) เมื่อประมาณสมดุล"
+    solution: "Kb₁ = 1.0 × 10⁻¹⁴ / (4.7 × 10⁻¹¹) = 2.13 × 10⁻⁴ [OH⁻] = 4.51 × 10⁻³ M pOH = 2.35 จึงได้ pH = **11.65**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

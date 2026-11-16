@@ -1,0 +1,303 @@
+problems:
+  - id: chemistry.thermochem.entropy-gibbs.p001
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 1
+    type: mcq
+    stem: "กระบวนการใดมีค่า ΔS เป็นบวก"
+    choices:
+      - { id: a, text: "ไอน้ำควบแน่นเป็นหยดน้ำบนกระจก", feedback: "แก๊สกลายเป็นของเหลว อนุภาคมีที่ให้เคลื่อนที่น้อยลง ΔS ติดลบ" }
+      - { id: b, text: "น้ำแข็งละลายเป็นน้ำที่อุณหภูมิห้อง", correct: true, feedback: "ถูก ของแข็งกลายเป็นของเหลว อนุภาคกระจายตัวได้มากขึ้น ΔS เป็นบวก" }
+      - { id: c, text: "น้ำแข็งเกาะตัวเป็นผลึกในช่องแช่แข็ง", feedback: "การแข็งตัวลดความไม่เป็นระเบียบ ΔS ติดลบ" }
+      - { id: d, text: "แก๊สถูกอัดให้มีปริมาตรเล็กลง", feedback: "การอัดแก๊สลดจำนวนสถานะที่เป็นไปได้ ΔS ติดลบ" }
+    hints:
+      - "ถามว่าอนุภาคมีสถานะที่กระจายตัวได้มากขึ้นหรือน้อยลง"
+      - "ของแข็งเปลี่ยนเป็นของเหลวเมื่อละลาย"
+    solution: "น้ำแข็งละลายทำให้อนุภาคเคลื่อนที่ได้มากขึ้น จึงมี ΔS เป็นบวก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p002
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 1
+    type: mcq
+    stem: "ที่ 298 K สารใดมีค่าเอนโทรปีมาตรฐาน S° สูงที่สุด (ค่า S°: H₂O(l) 69.95, N₂(g) 191.61, NH₃(g) 192.77, CO₂(g) 213.79 J/(mol·K))"
+    choices:
+      - { id: a, text: "H₂O(l)", feedback: "ของเหลวมีค่า S° ต่ำที่สุดในตัวเลือก" }
+      - { id: b, text: "N₂(g)", feedback: "N₂ มีค่าสูงกว่า H₂O(l) แต่ไม่สูงที่สุด" }
+      - { id: c, text: "NH₃(g)", feedback: "NH₃ มีค่าสูงกว่า N₂ แต่ยังน้อยกว่า CO₂" }
+      - { id: d, text: "CO₂(g)", correct: true, feedback: "ถูก CO₂(g) มีค่า S° สูงที่สุดที่ 213.79 J/(mol·K)" }
+    hints:
+      - "แก๊สมักมีค่า S° สูงกว่าของเหลว"
+      - "เปรียบเทียบตัวเลขโดยตรง"
+    solution: "ค่า S° ที่มากที่สุดในตัวเลือกคือ CO₂(g) ที่ 213.79 J/(mol·K)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p003
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยา 2H₂(g) + O₂(g) → 2H₂O(l) ที่ 298 K มี ΔS° เท่ากับกี่ J/K (S°: H₂(g) = 130.68, O₂(g) = 205.15, H₂O(l) = 69.95 J/(mol·K) ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: -326.6, tolerance: 0.5, unit: "J/K" }
+    misconceptions:
+      - { match: 326.6, feedback: "สลับเครื่องหมายของผลต่าง ผลิตภัณฑ์ลบสารตั้งต้น" }
+    hints:
+      - "ΔS° = Σ n S°(ผลิตภัณฑ์) − Σ n S°(สารตั้งต้น)"
+      - "ใช้จำนวนโมลในสมการดุลคูณค่า S° แต่ละตัว"
+    solution: "ΔS° = 2(69.95) − [2(130.68) + 205.15] = 139.90 − 466.51 = **−326.6 J/K**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p004
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยา 2H₂(g) + O₂(g) → 2H₂O(l) ที่ 298.15 K มี ΔH° = −571.66 kJ และ ΔS° = −326.6 J/K ค่า ΔG° เท่ากับกี่ kJ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: -474.3, tolerance: 0.5, unit: "kJ" }
+    misconceptions:
+      - { match: -571.7, feedback: "คิดว่า ΔG = ΔH โดยลืมพจน์ TΔS" }
+    hints:
+      - "ΔG° = ΔH° − TΔS° ต้องแปลง ΔS เป็น kJ/K ก่อน"
+      - "−326.6 J/K เท่ากับ −0.3266 kJ/K"
+    solution: "ΔG° = −571.66 − 298.15 × (−0.3266) = −571.66 + 97.38 = **−474.3 kJ**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p005
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: numeric
+    stem: "การระเหยของน้ำที่ 298 K มี ΔS = S°(H₂O(g)) − S°(H₂O(l)) โดย S°(H₂O(g)) = 188.84 และ S°(H₂O(l)) = 69.95 J/(mol·K) ΔS เท่ากับกี่ J/(mol·K) (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 118.9, tolerance: 0.1, unit: "J/(mol·K)" }
+    misconceptions:
+      - { match: -118.9, feedback: "กลับลำดับการลบ โดยไอน้ำควรอยู่ด้านผลิตภัณฑ์" }
+    hints:
+      - "ผลิตภัณฑ์คือไอน้ำ ตั้งลบสารตั้งต้นคือน้ำเหลว"
+      - "ค่าเอนโทรปีของแก๊สควรมากกว่าของเหลว"
+    solution: "ΔS = 188.84 − 69.95 = **118.9 J/(mol·K)** เป็นบวกตามที่คาดไว้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p006
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: "การระเหยของน้ำมี ΔH = 44.00 kJ/mol และ ΔS = 118.9 J/(mol·K) ที่อุณหภูมิใดที่ ΔG = 0 (ตอบเป็นเคลวิน ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 370.1, tolerance: 0.5, unit: "K" }
+    misconceptions:
+      - { match: 298.0, feedback: "ใช้ 298 K แทนการแก้ ΔG = 0 ซึ่ง ΔG ที่ 298 K ยังเป็นบวก" }
+    hints:
+      - "ที่ ΔG = 0: ΔH = TΔS จึงได้ T = ΔH / ΔS"
+      - "แปลง ΔS เป็น kJ/(mol·K) ก่อนหาร"
+    solution: "T = 44.00 / 0.1189 = **370.1 K** ซึ่งใกล้จุดเดือดของน้ำที่ความดัน 1 bar"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p007
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: mcq
+    stem: "สำหรับปฏิกิริยา N₂(g) + 3H₂(g) → 2NH₃(g) เครื่องหมายของ ΔS ควรเป็นอย่างไร และเพราะเหตุใด"
+    choices:
+      - { id: a, text: "ΔS เป็นบวกเพราะเกิดแอมโมเนียซึ่งเป็นสารใหม่", feedback: "การมีสารใหม่ไม่ได้ทำให้ ΔS บวกโดยตรง ต้องดูจำนวนโมลแก๊ส" }
+      - { id: b, text: "ΔS เป็นลบเพราะจำนวนโมลแก๊สลดจาก 4 เป็น 2", correct: true, feedback: "ถูก จำนวนโมลแก๊สลดลง อนุภาคกระจายตัวได้น้อยลง" }
+      - { id: c, text: "ΔS เป็นศูนย์เพราะเป็นปฏิกิริยาแก๊ส", feedback: "ปฏิกิริยาแก๊สมีค่า ΔS ไม่เป็นศูนย์โดยทั่วไป" }
+      - { id: d, text: "ΔS เป็นบวกเพราะปฏิกิริยาคายความร้อน", feedback: "ความร้อนเกี่ยวกับ ΔH ไม่ได้บอก ΔS โดยตรง" }
+    hints:
+      - "นับโมลของแก๊สทั้งสองข้างของสมการ"
+      - "ผลิตภัณฑ์มีโมลแก๊สกี่โมล เทียบกับสารตั้งต้น"
+    solution: "สารตั้งต้นมี 1 + 3 = 4 โมลแก๊ส ผลิตภัณฑ์มี 2 โมลแก๊ส จำนวนลดลง จึงทำให้ ΔS เป็นลบ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p008
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: "กระบวนการฮาเบอร์ผลิตแอมโมเนียสำหรับปุ๋ย N₂(g) + 3H₂(g) → 2NH₃(g) ที่ 298.15 K มี ΔH° = −91.88 kJ และ ΔS° = −198.1 J/K ค่า ΔG° เท่ากับกี่ kJ (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: -32.8, tolerance: 0.2, unit: "kJ" }
+    misconceptions:
+      - { match: -91.9, feedback: "คิดว่า ΔG = ΔH โดยไม่คิดพจน์ TΔS" }
+    hints:
+      - "ΔG° = ΔH° − TΔS°"
+      - "แปลง ΔS เป็น kJ/K ก่อนคูณ"
+    solution: "ΔG° = −91.88 − 298.15 × (−0.1981) = −91.88 + 59.06 = **−32.8 kJ**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p009
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: mcq
+    stem: "เมื่ออุณหภูมิของกระบวนการฮาเบอร์สูงขึ้น ความเกิดขึ้นเองของปฏิกิริยาลดลง เพราะเหตุใด"
+    choices:
+      - { id: a, text: "ΔH เปลี่ยนเป็นบวกเมื่ออุณหภูมิสูงขึ้น", feedback: "ΔH ไม่เปลี่ยนเครื่องหมายเพียงเพราะอุณหภูมิ" }
+      - { id: b, text: "ΔS เป็นลบ ดังนั้นพจน์ −TΔS เป็นบวกและมีค่ามากขึ้นเมื่อ T สูง", correct: true, feedback: "ถูก เมื่อ T เพิ่ม ค่า −TΔS เพิ่มขึ้น จึงดัน ΔG ให้เป็นบวกในที่สุด" }
+      - { id: c, text: "แก๊สไนโตรเจนหายไปที่อุณหภูมิสูง", feedback: "ไนโตรเจนไม่ได้หายไป ปฏิกิริยาเพียงเกิดเองได้น้อยลง" }
+      - { id: d, text: "ตัวเร่งปฏิกิริยาหมดฤทธิ์เมื่อร้อน", feedback: "ความเกิดขึ้นเองเป็นเรื่องของ ΔG ไม่ใช่ของตัวเร่ง" }
+    hints:
+      - "ดูพจน์ TΔS ในสมการ ΔG = ΔH − TΔS"
+      - "ถ้า ΔS ลบ พจน์ −TΔS จะเป็นอย่างไร"
+    solution: "เพราะ ΔS ของปฏิกิริยานี้เป็นลบ การเพิ่ม T ทำให้ −TΔS เป็นบวกมากขึ้น และ ΔG เพิ่มขึ้น"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p010
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: numeric
+    stem: "สำหรับกระบวนการฮาเบอร์ ΔH° = −91.88 kJ และ ΔS° = −198.1 J/K อุณหภูมิที่ ΔG = 0 เท่ากับกี่เคลวิน (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 463.8, tolerance: 0.5, unit: "K" }
+    misconceptions:
+      - { match: 0.46, feedback: "หาร kJ ด้วย J โดยตรง ทำให้ไม่ได้หน่วยเคลวิน ต้องแปลงหน่วยก่อน" }
+    hints:
+      - "ที่ ΔG = 0 จะได้ T = ΔH / ΔS"
+      - "แปลง ΔS เป็น kJ/K ก่อน"
+    solution: "T = (−91.88) / (−0.1981) = **463.8 K** เหนือค่านี้ ΔG เป็นบวกและปฏิกิริยาไม่เกิดเอง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p011
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: numeric
+    stem: "ค่า ΔG° ของกระบวนการฮาเบอร์ที่ 298.15 K คือ −32.81 kJ ค่าคงที่สมดุล K ของปฏิกิริยานี้ที่ 298.15 K มีค่าเท่าไร (ตอบเป็นเลขยกกำลัง 2 ตำแหน่ง เช่น 5.6 × 10⁵ ตอบเป็น 560000 ก็ได้)"
+    answer: { value: 5.6e5, tolerance: 0.1e5, unit: "" }
+    misconceptions:
+      - { match: 1.8e-6, feedback: "ตอบส่วนกลับของค่า K เพราะลืมเครื่องหมายของ ΔG°" }
+    hints:
+      - "ΔG° = −RT ln K ดังนั้น ln K = −ΔG° / RT"
+      - "ใช้ R = 8.314 J/(mol·K) และ ΔG° เป็น J/mol"
+    solution: "ln K = 32 810 / (8.314 × 298.15) = 13.24 จึงได้ K = e^13.24 = **5.6 × 10⁵**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p012
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: numeric
+    stem: "กระบวนการฮาเบอร์ที่ 298.15 K มี ΔG° = −32.81 kJ และ Q = 0.010 ค่า ΔG จริงเท่ากับกี่ kJ (ใช้ R = 8.314 J/(mol·K) ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: -44.2, tolerance: 0.1, unit: "kJ" }
+    misconceptions:
+      - { match: -32.8, feedback: "ลืมพจน์ RT ln Q และใช้ ΔG° แทน ΔG" }
+    hints:
+      - "ΔG = ΔG° + RT ln Q"
+      - "ln 0.010 ประมาณ −4.605"
+    solution: "ΔG = −32.81 + (8.314 × 10⁻³ × 298.15) × (−4.605) = −32.81 − 11.42 = **−44.2 kJ**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p013
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: numeric
+    stem: "ปฏิกิริยา N₂O₄(g) ⇌ 2NO₂(g) มี K_c = 0.0100 ที่ 298.15 K ค่า K_p เท่ากับเท่าไร (R = 0.08206 L·atm/(mol·K) ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.2447, tolerance: 0.0005, unit: "" }
+    misconceptions:
+      - { match: 0.0004, feedback: "ใช้ Δn = −1 แทน +1 จึงหารด้วย RT แทนการคูณ" }
+    hints:
+      - "K_p = K_c (RT)^Δn โดย Δn = 2 − 1"
+      - "RT = 0.08206 × 298.15"
+    solution: "Δn = 2 − 1 = +1 K_p = 0.0100 × (0.08206 × 298.15) = 0.0100 × 24.47 = **0.2447**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p014
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 4
+    type: numeric
+    stem: "ปฏิกิริยาหนึ่งมี ΔG° = −5.70 kJ ที่ 298.15 K ค่า K เท่ากับเท่าไร (R = 8.314 J/(mol·K) ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 9.97, tolerance: 0.02, unit: "" }
+    misconceptions:
+      - { match: 0.1, feedback: "ใช้เครื่องหมายผิด K = e^(ΔG°/RT) แทน e^(−ΔG°/RT)" }
+    hints:
+      - "ln K = −ΔG° / RT"
+      - "ΔG° เป็นลบ K จึงมากกว่า 1"
+    solution: "ln K = 5700 / (8.314 × 298.15) = 2.300 จึงได้ K = e^2.300 = **9.97**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p015
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: text
+    stem: "กระบวนการที่เกิดเองได้ตามกฎข้อที่สองของอุณหพลศาสตร์ ค่า ΔS_univ เป็นบวกหรือลบ (ตอบเป็นคำ)"
+    accepted: ["มากกว่าศูนย์", "มากกว่า 0", ">0", "บวก", "positive"]
+    misconceptions:
+      - { match: "น้อยกว่าศูนย์", feedback: "กระบวนการที่เกิดเองมี ΔS_univ มากกว่าศูนย์เสมอ" }
+    hints:
+      - "นึกถึงกฎข้อที่สองของอุณหพลศาสตร์"
+      - "เอนโทรปีรวมของระบบและสิ่งแวดล้อมเพิ่มขึ้นในกระบวนการที่เกิดเอง"
+    solution: "กระบวนการที่เกิดเองมี ΔS_univ **มากกว่าศูนย์** เสมอ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p016
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: order
+    stem: "เรียงสารต่อไปนี้ตามค่า S° ที่ 298 K จากน้อยไปมาก"
+    items: ["H₂O(l)", "H₂(g)", "N₂(g)", "CO₂(g)"]
+    hints:
+      - "ของเหลวมักมีค่า S° ต่ำที่สุด"
+      - "ค่า S° ของ H₂ 130.68 และ N₂ 191.61"
+    solution: "H₂O(l) = 69.95 < H₂(g) = 130.68 < N₂(g) = 191.61 < CO₂(g) = 213.79 J/(mol·K)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p017
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 5
+    type: numeric
+    stem: "สมมติปฏิกิริยาหนึ่งมี ΔH = +120 kJ และ ΔS = +0.30 kJ/K ปฏิกิริยาจะเกิดเองเมื่ออุณหภูมิสูงกว่ากี่เคลวิน (ค่าสมมติ ตอบเป็นจำนวนเต็ม)"
+    answer: { value: 400, tolerance: 0.5, unit: "K" }
+    misconceptions:
+      - { match: 126.9, feedback: "ลบ 273.15 ออกจากผลลัพธ์ แต่ค่าที่หาได้เป็นเคลวินอยู่แล้ว" }
+    hints:
+      - "ΔG < 0 เมื่อ TΔS > ΔH"
+      - "T > ΔH / ΔS"
+    solution: "T > 120 / 0.30 = **400 K** (เป็นตัวเลขสมมติเพื่อการคำนวณ)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p018
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน `delta_g_kj(dh_kj, ds_j_per_k, t)` ที่คืนค่า ΔG เป็น kJ/mol จาก ΔH (kJ/mol), ΔS (J/(mol·K)) และ T (K) โดยใช้ ΔG = ΔH − TΔS"
+    starter: |
+      def delta_g_kj(dh_kj, ds_j_per_k, t):
+          pass
+    tests: |
+      r = delta_g_kj(-91.88, -198.1, 298.15)
+      assert r is not None, "ไม่ได้คืนค่า ต้องใช้ return"
+      assert abs(r - (-32.82)) < 0.01, f"delta_g_kj(-91.88, -198.1, 298.15) ควรได้ -32.82 แต่ได้ {r} (ตรวจการแปลงหน่วย J เป็น kJ)"
+      s = delta_g_kj(44.0, 118.9, 370.1)
+      assert abs(s) < 0.01, f"ที่ T = 370.1 K ΔG ควรใกล้ศูนย์ แต่ได้ {s}"
+      assert delta_g_kj(0, 0, 500) == 0, "เมื่อ ΔH = 0 และ ΔS = 0 ΔG ต้องเป็น 0"
+    reference: |
+      def delta_g_kj(dh_kj, ds_j_per_k, t):
+          return dh_kj - t * ds_j_per_k / 1000
+    hints:
+      - "แปลง ΔS จาก J เป็น kJ โดยหารด้วย 1000 ก่อนคูณ T"
+      - "ΔG = ΔH − TΔS"
+    solution: "ฟังก์ชันคืน `dh_kj - t * ds_j_per_k / 1000` เช่น delta_g_kj(-91.88, -198.1, 298.15) ≈ −32.82 kJ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.thermochem.entropy-gibbs.p019
+    topics: [chemistry.thermochem.entropy-gibbs]
+    difficulty: 2
+    type: mcq
+    stem: "ข้อใดแสดงความสัมพันธ์ระหว่าง ΔG° และค่าคงที่สมดุล K ได้ถูกต้อง"
+    choices:
+      - { id: a, text: "ΔG° = +RT ln K", feedback: "เครื่องหมายผิด ต้องมี − หน้า RT ln K" }
+      - { id: b, text: "ΔG° = −RT ln K", correct: true, feedback: "ถูก เมื่อ K มาก ΔG° จะติดลบ" }
+      - { id: c, text: "ΔG° = −R ln K", feedback: "ขาดพจน์อุณหภูมิ T" }
+      - { id: d, text: "ΔG° = ΔH° − K ΔS°", feedback: "สูตรนี้ไม่ถูกต้อง K ไม่ได้คูณกับ ΔS°" }
+    hints:
+      - "ความสัมพันธ์มีพจน์ R และ T"
+      - "K มากหมายถึง ΔG° ติดลบ"
+    solution: "ความสัมพันธ์ที่ถูกต้องคือ **ΔG° = −RT ln K**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

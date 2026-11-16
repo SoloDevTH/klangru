@@ -1,0 +1,72 @@
+id: chemistry.kinetics.arrhenius-mechanisms
+subject: chemistry
+title: { th: สมการของอาร์เรเนียส กลไกปฏิกิริยา และตัวเร่งปฏิกิริยา, en: Arrhenius equation, reaction mechanisms and catalysis }
+summary: หาพลังงานก่อกัมมันต์จากค่าคงที่อัตราที่อุณหภูมิต่างกัน อธิบายกลไกปฏิกิริยาหลายขั้นด้วยขั้นกำหนดอัตรา และดูบทบาทของตัวเร่งปฏิกิริยาทั้งเอกพันธุ์ วิวิธพันธุ์ และเอนไซม์
+difficulty: 7.5
+minutes: 45
+prerequisites: [chemistry.kinetics.rate-laws]
+encompasses:
+  - { id: chemistry.kinetics.rate-laws, weight: 0.4 }
+  - { id: chemistry.kinetics.reaction-rates, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: arrhenius-plot.svg
+    alt: "กราฟเส้นตรงลาดลงจากซ้ายบนไปขวาล่าง แกนนอนคือ 1/T × 10³ ตั้งแต่ 2.6 ถึง 3.7 และแกนตั้งคือ ln k มีจุดข้อมูลห้าจุดวางอยู่บนเส้นตรง"
+    caption: "กราฟ ln k เทียบกับ 1/T เป็นเส้นตรง ความชันเท่ากับ −Ea/R จึงหา Ea ได้โดยไม่ต้องรู้ค่า A"
+  - type: worked-example
+    title: หา Ea จากค่าคงที่อัตราที่อุณหภูมิสองค่า
+    problem: "ปฏิกิริยาหนึ่งมี k = 2.0 × 10⁻³ s⁻¹ ที่ 300 K และ k = 8.0 × 10⁻³ s⁻¹ ที่ 310 K จงหาพลังงานก่อกัมมันต์ (R = 8.314 J/(mol·K))"
+    steps:
+      - text: "ใช้สมการสองอุณหภูมิ ln(k₂/k₁) = −(Ea/R)(1/T₂ − 1/T₁)"
+        why: "ลบสมการที่ใช้สองอุณหภูมิออกจากกัน ค่า A จะหายไป"
+      - text: "ln(8.0 × 10⁻³ / 2.0 × 10⁻³) = ln 4 = 1.3863"
+      - text: "1/T₁ − 1/T₂ = 1/300 − 1/310 = 1.0753 × 10⁻⁴ K⁻¹"
+        why: "ต้องใช้เคลวิน ไม่ใช่องศาเซลเซียส เพราะสมการมาจากกฎของอุณหภูมิสัมบูรณ์"
+      - text: "Ea = R · ln 4 / (1/T₁ − 1/T₂) = 8.314 × 1.3863 / (1.0753 × 10⁻⁴) = 1.07 × 10⁵ J/mol"
+    answer: "Ea ≈ 107 kJ/mol"
+  - { type: check, problem: chemistry.kinetics.arrhenius-mechanisms.p001, prompt: "ทำไมอุณหภูมิที่สูงขึ้นจึงเพิ่มอัตรา" }
+  - type: figure
+    src: two-step-energy-profile.svg
+    alt: "แผนภาพพลังงานสองขั้น เริ่มที่ระดับสารตั้งต้นต่ำ มียอดแรก TS1 ที่สูงที่สุด ลงมาที่หุบของสารมัธยันตร์ จากนั้นขึ้นไปยอด TS2 ที่ต่ำกว่า TS1 แล้วลงสู่ผลิตภัณฑ์ที่ต่ำกว่าสารตั้งต้น"
+    caption: "ในกลไกสองขั้น ขั้นที่มียอดสูงกว่าเป็นขั้นกำหนดอัตรา"
+  - type: worked-example
+    title: อัตราที่เปลี่ยนไปเมื่อลดอุณหภูมิ
+    problem: "อาหารแช่ตู้เย็นเสื่อมช้ากว่าที่อุณหภูมิห้อง สมมติปฏิกิริยาการเสื่อมมี Ea = 50 kJ/mol อัตราที่ 25 °C เร็วกว่าที่ 4 °C กี่เท่า (R = 8.314 J/(mol·K))"
+    steps:
+      - text: "แปลงอุณหภูมิเป็นเคลวิน: 4 °C = 277.15 K และ 25 °C = 298.15 K"
+        why: "ใช้ T ในหน่วยเคลวินเสมอในสมการอาร์เรเนียส"
+      - text: "ln(k₂₅/k₄) = (Ea/R)(1/T₄ − 1/T₂₅) = (50 000 / 8.314)(1/277.15 − 1/298.15) = 6013.5 × 2.538 × 10⁻⁴ = 1.526"
+        why: "Ea ของโจทย์เป็นค่าสมมติ ผลจริงของอาหารยังขึ้นกับปัจจัยอื่นด้วย"
+      - text: "k₂₅/k₄ = e^1.526 ≈ 4.6 ตามค่าสมมติ อัตราที่ 25 °C เร็วกว่าที่ 4 °C ประมาณ 4.6 เท่า"
+    answer: "อัตราที่ 25 °C เร็วกว่าที่ 4 °C ประมาณ 4.6 เท่า (ตัวเลขนี้เป็นการสมมติ Ea)"
+  - { type: check, problem: chemistry.kinetics.arrhenius-mechanisms.p009, prompt: "ดูว่าขั้นกำหนดอัตรามีสารตั้งต้นกี่โมเลกุลและเป็นสารใด" }
+  - type: simulation
+    title: ลองปรับอุณหภูมิและตัวเร่งปฏิกิริยาแล้วดูอัตราการเกิดปฏิกิริยา
+    url: https://phet.colorado.edu/en/simulations/reactions-and-rates
+    provider: phet
+    note: "ซิมูเลชัน PhET เกี่ยวกับอัตราการเกิดปฏิกิริยาและการชน สอดคล้องกับทฤษฎีการชนและสมการอาร์เรเนียสในบทนี้"
+glossary:
+  - { term: พลังงานก่อกัมมันต์ (Eₐ), definition: "พลังงานต่ำสุดที่โมเลกุลต้องมีเมื่อชนกันจึงเกิดปฏิกิริยาได้ มีหน่วยเป็น J/mol หรือ kJ/mol" }
+  - { term: สมการของอาร์เรเนียส, definition: "สมการ k = A·e^(−Eₐ/RT) ที่เชื่อมค่าคงที่อัตรากับอุณหภูมิ โดย A เป็นแฟกเตอร์ความถี่" }
+  - { term: ขั้นมูลฐาน, definition: "ขั้นหนึ่งของกลไกที่สมการอัตราเขียนได้จากสัมประสิทธิ์ของสารตั้งต้นในขั้นนั้นโดยตรง" }
+  - { term: สารมัธยันตร์, definition: "สารที่เกิดขึ้นในกลไกระหว่างทาง ถูกใช้หมดไปในขั้นถัดไป จึงไม่ปรากฏในสมการรวม" }
+  - { term: ขั้นกำหนดอัตรา, definition: "ขั้นที่ช้าที่สุดในกลไกซึ่งควบคุมอัตราการเกิดปฏิกิริยาโดยรวม" }
+  - { term: ตัวเร่งปฏิกิริยาวิวิธพันธุ์, definition: "ตัวเร่งปฏิกิริยาที่อยู่คนละเฟสกับสารตั้งต้น เช่น โลหะแข็งที่สารแก๊สทำปฏิกิริยาบนผิว" }
+flashcards:
+  - { front: "สมการของอาร์เรเนียสคืออะไร", back: "k = A·e^(−Eₐ/RT)" }
+  - { front: "ความชันของกราฟ ln k เทียบกับ 1/T", back: "−Eₐ/R" }
+  - { front: "ตัวเร่งปฏิกิริยาเปลี่ยนค่าใดและไม่เปลี่ยนค่าใด", back: "ลด Eₐ ทำให้เร็วขึ้น แต่ไม่เปลี่ยน ΔH หรือค่าคงที่สมดุล" }
+  - { front: "ขั้นกำหนดอัตราคือขั้นใด", back: "ขั้นที่ช้าที่สุดหรือมียอดพลังงานสูงที่สุดในกลไก" }
+  - { front: "เอนไซม์จัดเป็นตัวเร่งชนิดใด", back: "ตัวเร่งปฏิกิริยาทางชีวภาพ ลด Eₐ ของปฏิกิริยาในสิ่งมีชีวิต" }
+references:
+  - { title: "ตัวเร่งปฏิกิริยา", url: "https://th.wikipedia.org/wiki/ตัวเร่งปฏิกิริยา", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Arrhenius equation", url: "https://en.wikipedia.org/wiki/Arrhenius_equation", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "12.5 Collision Theory (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-5-collision-theory", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "12.6 Reaction Mechanisms (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-6-reaction-mechanisms", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "12.7 Catalysis (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/12-7-catalysis", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

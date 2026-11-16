@@ -1,0 +1,316 @@
+problems:
+  - id: chemistry.kinetics.rate-laws.p001
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 1
+    type: mcq
+    stem: "อันดับของปฏิกิริยาต่อสาร A หาได้จากวิธีใด"
+    choices:
+      - { id: a, text: "ดูสัมประสิทธิ์ของ A ในสมการดุล", feedback: "สัมประสิทธิ์บอกอัตราส่วนโมลในสมการ ไม่ได้บอกอันดับจลนศาสตร์" }
+      - { id: b, text: "วัดอัตราเมื่อเปลี่ยนความเข้มข้นของ A แล้วดูว่าอัตราเปลี่ยนอย่างไร", correct: true, feedback: "ถูก อันดับเป็นสิ่งที่ต้องหาจากการทดลอง" }
+      - { id: c, text: "คำนวณจากค่า ΔH ของปฏิกิริยา", feedback: "ΔH เกี่ยวกับพลังงาน ไม่ได้บอกอันดับ" }
+      - { id: d, text: "นับจำนวนขั้นในสมการรวม", feedback: "จำนวนขั้นไม่ได้เป็นตัวบอกอันดับโดยตรง" }
+    hints:
+      - "อันดับบอกว่าอัตราขึ้นกับความเข้มข้นอย่างไร"
+      - "ต้องรู้ว่าอัตราเปลี่ยนเท่าไรเมื่อความเข้มข้นเปลี่ยน"
+    solution: "อันดับหาได้จากการทดลองวัดอัตราที่ความเข้มข้นต่างกัน ไม่ใช่จากสัมประสิทธิ์ในสมการดุล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p002
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 1
+    type: numeric
+    stem: "ปฏิกิริยาอันดับหนึ่งต่อ A มี k = 2.0 s⁻¹ เมื่อ [A] = 0.50 M อัตราของปฏิกิริยาเป็นกี่ M/s"
+    answer: { value: 1.0, tolerance: 0.01, unit: "M/s" }
+    misconceptions:
+      - { match: 0.5, feedback: "ใช้ k[A]² แต่อันดับหนึ่งใช้ k[A] เพียงครั้งเดียว" }
+      - { match: 4.0, feedback: "หาร k ด้วย [A] แทนการคูณ" }
+    hints:
+      - "อันดับหนึ่งมี rate = k[A]"
+      - "คูณค่า k กับความเข้มข้น"
+    solution: "rate = k[A] = 2.0 × 0.50 = **1.0 M/s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p003
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 1
+    type: mcq
+    stem: "กราฟใดเป็นเส้นตรงสำหรับปฏิกิริยาอันดับหนึ่ง"
+    choices:
+      - { id: a, text: "[A] เทียบกับ t", feedback: "กราฟนี้เป็นเส้นตรงสำหรับอันดับศูนย์" }
+      - { id: b, text: "ln[A] เทียบกับ t", correct: true, feedback: "ถูก สำหรับอันดับหนึ่ง ln[A] = ln[A]₀ − kt" }
+      - { id: c, text: "1/[A] เทียบกับ t", feedback: "กราฟนี้เป็นเส้นตรงสำหรับอันดับสอง" }
+      - { id: d, text: "[A]² เทียบกับ t", feedback: "ไม่ใช่กราฟที่ใช้ระบุอันดับมาตรฐาน" }
+    hints:
+      - "จำกฎอินทิเกรตของอันดับหนึ่ง"
+      - "ฟังก์ชันของ [A] ที่ให้เส้นตรงกับเวลาต่างกันตามอันดับ"
+    solution: "อันดับหนึ่งให้ ln[A] = ln[A]₀ − kt ซึ่งเป็นเส้นตรงกับเวลา"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p004
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยาอันดับหนึ่งมีค่า k = 0.0231 s⁻¹ ครึ่งชีวิตของสารตั้งต้นเป็นกี่วินาที (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 30.0, tolerance: 0.1, unit: "s" }
+    misconceptions:
+      - { match: 43.3, feedback: "ใช้ 1/k แทน ln 2 / k" }
+    hints:
+      - "อันดับหนึ่ง t½ = ln 2 / k"
+      - "ln 2 ประมาณ 0.693"
+    solution: "t½ = 0.693 / 0.0231 = **30.0 s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p005
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: numeric
+    stem: "ไฮโดรเจนเปอร์ออกไซด์เป็นปฏิกิริยาอันดับหนึ่งที่มีครึ่งชีวิต 6.00 ชั่วโมง ต้องใช้เวลากี่ชั่วโมงให้เหลือร้อยละ 25 ของปริมาณเดิม (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 12.0, tolerance: 0.1, unit: "h" }
+    misconceptions:
+      - { match: 6.0, feedback: "ตอบครึ่งชีวิตหนึ่งครั้ง แต่เหลือร้อยละ 25 ต้องผ่านการลดครึ่งสองครั้ง" }
+    hints:
+      - "หา k จาก t½ = ln 2 / k ก่อน"
+      - "ใช้ ln([A]₀/[A]) = kt โดย [A]/[A]₀ = 0.25"
+    solution: "k = 0.693 / 6.00 = 0.1155 h⁻¹ t = ln 4 / 0.1155 = **12.0 h**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p006
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: numeric
+    stem: "ปฏิกิริยาอันดับศูนย์มี [A]₀ = 0.80 M และ k = 0.020 M/s สาร A จะหมดภายในเวลากี่วินาที"
+    answer: { value: 40.0, tolerance: 0.1, unit: "s" }
+    misconceptions:
+      - { match: 20.0, feedback: "ตอบเป็นครึ่งชีวิตของอันดับศูนย์แทนเวลาที่สารหมด" }
+    hints:
+      - "อันดับศูนย์: [A] = [A]₀ − kt"
+      - "[A] เป็นศูนย์เมื่อใด"
+    solution: "0 = 0.80 − 0.020 × t จึงได้ t = **40.0 s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p007
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: "ปฏิกิริยาอันดับสอง rate = k[A]² มี k = 2.5 M⁻¹·s⁻¹ และ [A]₀ = 0.050 M จะใช้เวลากี่วินาทีให้ [A] ลดเหลือ 0.010 M (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 32.0, tolerance: 0.1, unit: "s" }
+    misconceptions:
+      - { match: 0.64, feedback: "ใช้กฎอัตราแบบอันดับหนึ่ง ln([A]₀/[A]) = kt กับปฏิกิริยาอันดับสอง" }
+    hints:
+      - "อันดับสอง: 1/[A] = 1/[A]₀ + kt"
+      - "ตั้ง 1/0.010 − 1/0.050 แล้วหารด้วย k"
+    solution: "t = (1/0.010 − 1/0.050) / 2.5 = (100 − 20) / 2.5 = **32.0 s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p008
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: "การทดลองสามครั้งให้ข้อมูลดังนี้ การทดลอง 1: [A] = 0.10 M, [B] = 0.10 M, อัตรา = 2.0 × 10⁻³ M/s การทดลอง 2: [A] = 0.20 M, [B] = 0.10 M, อัตรา = 8.0 × 10⁻³ M/s การทดลอง 3: [A] = 0.10 M, [B] = 0.20 M, อัตรา = 4.0 × 10⁻³ M/s กฎอัตราคือ rate = k[A]^m[B]^n ค่า k มีค่าเท่าไร (หน่วย M⁻²·s⁻¹ ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 2.0, tolerance: 0.02, unit: "M⁻²·s⁻¹" }
+    misconceptions:
+      - { match: 0.2, feedback: "สมมติ m = 1 แต่จากการทดลอง 1 และ 2 อันดับต่อ A คือ 2" }
+    hints:
+      - "เทียบการทดลอง 1 กับ 2 เพื่อหา m และการทดลอง 1 กับ 3 เพื่อหา n"
+      - "แทนค่าลงในการทดลอง 1 หลังหาอันดับแล้ว"
+    solution: "m = 2 และ n = 1 จาก rate = k[A]²[B] จึงได้ k = 2.0 × 10⁻³ / (0.10² × 0.10) = **2.0 M⁻²·s⁻¹**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p009
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: mcq
+    stem: "จากข้อมูลในโจทย์ก่อนหน้า (rate = k[A]²[B]) อันดับรวมของปฏิกิริยาเท่ากับเท่าไร"
+    choices:
+      - { id: a, text: "1", feedback: "อันดับรวมไม่ได้นับเฉพาะสารตัวหนึ่ง" }
+      - { id: b, text: "2", feedback: "นับเฉพาะ A ต้องรวม B ด้วย" }
+      - { id: c, text: "3", correct: true, feedback: "ถูก 2 + 1 = 3" }
+      - { id: d, text: "4", feedback: "อย่าบวก 2 กับ 2 เมื่อ B มีอันดับ 1" }
+    hints:
+      - "อันดับรวมคือผลบวกของอันดับแต่ละสาร"
+      - "อันดับของ A คือ 2 และอันดับของ B คือ 1"
+    solution: "อันดับรวม = 2 + 1 = **3**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p010
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: numeric
+    stem: "สมมติว่ายาชนิดหนึ่งในเลือดสลายตัวตามอันดับหนึ่งและมีครึ่งชีวิต 4.0 ชั่วโมง หลังได้รับยาไป 12 ชั่วโมง ยาที่เหลือร้อยละเท่าไร (ตอบทศนิยม 1 ตำแหน่ง ค่านี้เป็นตัวเลขสมมติเพื่อการคำนวณเท่านั้น)"
+    answer: { value: 12.5, tolerance: 0.1, unit: "%" }
+    misconceptions:
+      - { match: 25.0, feedback: "ใช้ครึ่งชีวิต 6 ชั่วโมงแทน 4 ชั่วโมง จึงนับได้เพียงสองครึ่งชีวิต" }
+    hints:
+      - "นับจำนวนครึ่งชีวิตที่ผ่านไปใน 12 ชั่วโมง"
+      - "ทุกครึ่งชีวิตเหลือครึ่งหนึ่งของที่มีอยู่"
+    solution: "12 ÷ 4 = 3 ครึ่งชีวิต เหลือ (1/2)³ = 0.125 หรือ **12.5%**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p011
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: "ชิ้นไม้โบราณมีคาร์บอน-14 เหลือร้อยละ 25 ของปริมาณในสิ่งมีชีวิต ถ้าคาร์บอน-14 มีครึ่งชีวิต 5 730 ปีและการสลายเป็นอันดับหนึ่ง ชิ้นไม้นี้มีอายุประมาณกี่ปี"
+    answer: { value: 11460, tolerance: 10, unit: "ปี" }
+    misconceptions:
+      - { match: 5730, feedback: "ตอบเป็นครึ่งชีวิตหนึ่งครั้ง แต่เหลือร้อยละ 25 ต้องผ่านสองครึ่งชีวิต" }
+    hints:
+      - "ร้อยละ 25 คือลดลงกี่ครั้งของครึ่งชีวิต"
+      - "คูณจำนวนครั้งกับ 5 730 ปี"
+    solution: "ร้อยละ 25 = ลดครึ่งสองครั้ง อายุ = 2 × 5 730 = **11 460 ปี**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p012
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: text
+    stem: "กราฟ 1/[A] เทียบกับ t ให้เส้นตรงสำหรับปฏิกิริยาอันดับเท่าไร (ตอบเป็นตัวเลข)"
+    accepted: ["2", "สอง", "อันดับสอง", "อันดับ 2"]
+    misconceptions:
+      - { match: "1", feedback: "อันดับหนึ่งใช้ ln[A] เทียบกับ t ไม่ใช่ 1/[A]" }
+    hints:
+      - "นึกถึงสมการอินทิเกรตของอันดับสอง 1/[A] = 1/[A]₀ + kt"
+      - "ดูว่าเป็นอันดับใด"
+    solution: "กราฟ 1/[A] เทียบกับ t เป็นเส้นตรงสำหรับ **อันดับสอง**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p013
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: order
+    stem: "เรียงปฏิกิริยาอันดับหนึ่งต่อไปนี้ตามครึ่งชีวิตจากสั้นไปยาว"
+    items: ["k = 0.5 s⁻¹", "k = 0.05 s⁻¹", "k = 0.005 s⁻¹"]
+    hints:
+      - "ครึ่งชีวิตของอันดับหนึ่งเป็นส่วนกลับของ k"
+      - "k ที่มากทำให้ครึ่งชีวิตสั้น"
+    solution: "t½ = 0.693 / k ดังนั้น k = 0.5 ให้ t½ ≈ 1.39 s, k = 0.05 ให้ ≈ 13.9 s และ k = 0.005 ให้ ≈ 139 s จึงเรียงได้ตามที่ให้"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p014
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 2
+    type: match
+    stem: "จับคู่อันดับของปฏิกิริยากับกราฟที่ให้เส้นตรง"
+    pairs:
+      - { left: "อันดับศูนย์", right: "[A] เทียบกับ t" }
+      - { left: "อันดับหนึ่ง", right: "ln[A] เทียบกับ t" }
+      - { left: "อันดับสอง", right: "1/[A] เทียบกับ t" }
+    hints:
+      - "ดูกฎอินทิเกรตของแต่ละอันดับ"
+      - "อันดับศูนย์ใช้ [A] โดยตรง"
+    solution: "อันดับศูนย์ → [A], อันดับหนึ่ง → ln[A], อันดับสอง → 1/[A] เทียบกับ t"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p015
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: "ปฏิกิริยาอันดับหนึ่งลด [A] จาก 0.80 M เหลือ 0.20 M ในเวลา 20.0 นาที ค่า k มีค่าเท่าไร (หน่วย min⁻¹ ตอบทศนิยม 4 ตำแหน่ง)"
+    answer: { value: 0.0693, tolerance: 0.0005, unit: "min⁻¹" }
+    misconceptions:
+      - { match: 0.0301, feedback: "ใช้ log₁₀ แทน ln จากกฎอินทิเกรตของอันดับหนึ่ง" }
+    hints:
+      - "อันดับหนึ่ง: ln([A]₀/[A]) = kt"
+      - "[A]₀/[A] = 0.80/0.20"
+    solution: "k = ln(4) / 20.0 = 1.386 / 20.0 = **0.0693 min⁻¹**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p016
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 3
+    type: numeric
+    stem: "ปฏิกิริยาอันดับหนึ่งมี k = 0.0100 s⁻¹ ต้องใช้เวลากี่วินาทีให้ [A] เหลือ 1/8 ของค่าเริ่มต้น (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 207.9, tolerance: 0.2, unit: "s" }
+    misconceptions:
+      - { match: 69.3, feedback: "ตอบครึ่งชีวิตแทนเวลาที่เหลือ 1/8 ซึ่งต้องผ่านสามครึ่งชีวิต" }
+    hints:
+      - "หาว่า 1/8 เท่ากับลดครึ่งกี่ครั้ง"
+      - "ใช้ t = ln(8) / k"
+    solution: "t = ln 8 / 0.0100 = 2.079 / 0.0100 = **207.9 s** (เท่ากับสามครึ่งชีวิต)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p017
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 4
+    type: numeric
+    stem: "ปฏิกิริยาอันดับศูนย์เริ่มที่ [A]₀ = 1.00 M และเหลือ 0.60 M หลังผ่านไป 5.0 วินาที ค่า k มีหน่วย M/s และมีค่าเท่าไร (ตอบทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.080, tolerance: 0.001, unit: "M/s" }
+    misconceptions:
+      - { match: 0.6, feedback: "นำความเข้มข้นที่เหลือมาเป็น k แทนการหาผลต่างแล้วหารด้วยเวลา" }
+    hints:
+      - "อันดับศูนย์: [A] = [A]₀ − kt"
+      - "ผลต่าง [A]₀ − [A] หารด้วยเวลา"
+    solution: "k = (1.00 − 0.60) / 5.0 = **0.080 M/s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p018
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 4
+    type: numeric
+    stem: "ปฏิกิริยาอันดับสองมี k = 2.5 M⁻¹·s⁻¹ และ [A]₀ = 0.050 M ครึ่งชีวิตของสาร A เป็นกี่วินาที (ตอบทศนิยม 1 ตำแหน่ง)"
+    answer: { value: 8.0, tolerance: 0.05, unit: "s" }
+    misconceptions:
+      - { match: 5.5, feedback: "ใช้สูตรครึ่งชีวิตของอันดับหนึ่ง ln2 / (k[A]₀) กับปฏิกิริยาอันดับสอง" }
+    hints:
+      - "อันดับสอง: t½ = 1 / (k[A]₀)"
+      - "คูณ k กับความเข้มข้นเริ่มต้นก่อน"
+    solution: "t½ = 1 / (2.5 × 0.050) = 1 / 0.125 = **8.0 s**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p019
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน `first_order_conc(a0, k, t)` ที่คืนค่าความเข้มข้นของปฏิกิริยาอันดับหนึ่งหลังเวลา t จากสูตร [A] = [A]₀ · e^(−kt)"
+    starter: |
+      def first_order_conc(a0, k, t):
+          pass
+    tests: |
+      r = first_order_conc(1.0, 0.2, 5)
+      assert r is not None, "ไม่ได้คืนค่า (ได้ None) ต้องใช้ return"
+      assert abs(r - 0.367879) < 1e-5, f"first_order_conc(1.0, 0.2, 5) ควรได้ 0.367879 แต่ได้ {r}"
+      s = first_order_conc(0.80, 0.02, 0)
+      assert abs(s - 0.80) < 1e-9, f"ที่ t = 0 ต้องได้ [A]₀ = 0.80 แต่ได้ {s}"
+    reference: |
+      import math
+      def first_order_conc(a0, k, t):
+          return a0 * math.exp(-k * t)
+    hints:
+      - "ใช้ e^(−kt) และฟังก์ชัน exp ของโมดูล math"
+      - "เมื่อ t = 0 ค่าต้องเท่ากับ [A]₀"
+    solution: "ฟังก์ชันคืน `a0 * math.exp(-k * t)` เช่น first_order_conc(1.0, 0.2, 5) = e⁻¹ ≈ 0.3679"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: chemistry.kinetics.rate-laws.p020
+    topics: [chemistry.kinetics.rate-laws]
+    difficulty: 5
+    type: numeric
+    stem: "สาร A สลายตามกฎอัตรา rate = k[A]² โดย k = 0.15 M⁻¹·s⁻¹ เริ่มที่ [A]₀ = 0.40 M ผ่านไป 10.0 วินาที [A] เหลือกี่ M (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.25, tolerance: 0.005, unit: "M" }
+    misconceptions:
+      - { match: 1.0, feedback: "ใช้ 1/[A] = 1/[A]₀ − kt แทน + kt ทำให้เครื่องหมายผิด" }
+    hints:
+      - "อันดับสอง: 1/[A] = 1/[A]₀ + kt"
+      - "คำนวณ 1/[A] ก่อนแล้วจึงหาส่วนกลับ"
+    solution: "1/[A] = 1/0.40 + 0.15 × 10.0 = 2.5 + 1.5 = 4.0 จึงได้ [A] = **0.25 M**"
+    license: CC-BY-SA-4.0
+    ai_assisted: true

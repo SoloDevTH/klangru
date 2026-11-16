@@ -1,0 +1,66 @@
+id: chemistry.solutions.solution-process-colligative
+subject: chemistry
+title: { th: กระบวนการละลาย สมบัติคอลลิเกทีฟ และคอลลอยด์, en: Dissolution, colligative properties and colloids }
+summary: อธิบายการละลายด้วยพลังงานสามขั้น กฎของเฮนรีสำหรับแก๊ส กฎของราอูลต์ การเปลี่ยนจุดเดือดและจุดเยือกแข็ง ความดันออสโมติก และคอลลอยด์ชนิดต่าง ๆ
+difficulty: 6.5
+minutes: 45
+prerequisites: [chemistry.solutions.concentration, chemistry.bonding.polarity-intermolecular, chemistry.states.real-gases-phase-diagrams]
+encompasses:
+  - { id: chemistry.solutions.concentration, weight: 0.3 }
+  - { id: chemistry.bonding.polarity-intermolecular, weight: 0.2 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: particle-scale.svg
+    alt: "สามแผงเปรียบเทียบอนุภาค แผงซ้ายสารละลายมีจุดเล็กมากกระจายทั่วพื้นที่ แผงกลางคอลลอยด์มีจุดใหญ่กว่าและจำนวนน้อยลง แผงขวาสารแขวนลอยมีจุดใหญ่มากและห่างกันมาก"
+    caption: "อนุภาคในสารละลายเล็กที่สุด คอลลอยด์ใหญ่ขึ้นจนกระจายแสงได้ และสารแขวนลอยใหญ่พอให้ตกตะกอน"
+  - type: worked-example
+    title: หาการลดลงของจุดเยือกแข็งของน้ำหล่อเย็นรถยนต์
+    problem: "เอทิลีนไกลคอล C₂H₆O₂ (มวลโมเลกุล 62.07 g/mol) หนัก 300 g ละลายในน้ำ 1.00 kg ที่ 1 atm จงหาจุดเยือกแข็งของสารละลาย กำหนด K_f ของน้ำ = 1.86 °C·kg/mol และเอทิลีนไกลคอลไม่แตกตัว"
+    steps:
+      - text: "จำนวนโมล n = 300 g / 62.07 g/mol = 4.833 mol"
+        why: "มวลโมเลกุลใช้ค่า C 12.011, H 1.008, O 15.999 รวมเป็น 62.07 g/mol"
+      - text: "ความเข้มข้นโมแลลิตี m = 4.833 mol / 1.00 kg = 4.833 mol/kg"
+      - text: "ไม่แตกตัว จึงได้ i = 1 และ ΔT_f = K_f · m · i = 1.86 × 4.833 × 1 = 8.99 °C"
+        why: "สารที่ไม่แตกตัวนับเป็นหนึ่งอนุภาคต่อโมเลกุล จึง i = 1"
+      - text: "จุดเยือกแข็งของน้ำที่ 1 atm คือ 0.0 °C ดังนั้นจุดเยือกแข็งสารละลายประมาณ 0.0 − 8.99 = −8.99 °C"
+    answer: "จุดเยือกแข็งของสารละลายประมาณ −9.0 °C"
+  - { type: check, problem: chemistry.solutions.solution-process-colligative.p013, prompt: "ลองหาตัวประกอบ i ของ CaCl₂ ก่อนคำนวณ" }
+  - type: interactive
+    title: ความดันออสโมติกเพิ่มตามความเข้มข้นและจำนวนอนุภาค
+    caption: "แกน x คือความเข้มข้นโมลาร์ (mol/L) แกน y คือความดันออสโมติก (atm) ที่ 298 K ปรับแถบเลื่อน n เป็นตัวประกอบแวนต์ฮอฟฟ์ เมื่อ n เพิ่ม เส้นจะชันขึ้นเพราะมีอนุภาคมากขึ้นต่อหน่วยโมล"
+    widget:
+      kind: function-plot
+      functions: ["n\\cdot 24.47\\cdot x"]
+      sliders:
+        - { name: n, min: 1, max: 3, step: 1, value: 2, label: ตัวประกอบแวนต์ฮอฟฟ์ }
+      x: [0, 0.5]
+      y: [0, 40]
+  - type: figure
+    src: raoult-vapor-pressure.svg
+    alt: "กราฟเส้นตรงจาก (0, 0) ถึง (1, 23.7) โดยแกนนอนคือเศษส่วนโมลของตัวทำละลาย X และแกนตั้งคือความดันไอ P หน่วย torr มีจุดแดงที่ X = 0.98 ความดันไอประมาณ 23.2 torr"
+    caption: "ความดันไอของสารละลายอุดมคติเป็นสัดส่วนกับเศษส่วนโมลของตัวทำละลาย"
+  - { type: check, problem: chemistry.solutions.solution-process-colligative.p007, prompt: "ตัวทำละลายคือสารชนิดใด" }
+glossary:
+  - { term: กระบวนการละลาย, definition: "การที่ตัวถูกละลายแยกออกจากกันและกระจายในตัวทำละลาย โดยมีพลังงานสามขั้นคือการแยกตัวถูกละลาย การแยกตัวทำละลาย และการเกิดแรงดึงดูดใหม่" }
+  - { term: กฎของเฮนรี, definition: "ความสามารถละลายของแก๊สในของเหลวเป็นสัดส่วนกับความดันย่อยของแก๊สนั้นเหนือของเหลว C = kP" }
+  - { term: สมบัติคอลลิเกทีฟ, definition: "สมบัติของสารละลายที่ขึ้นกับจำนวนอนุภาคของตัวถูกละลาย ไม่ขึ้นกับชนิดของอนุภาค ได้แก่ ความดันไอลด จุดเดือดสูงขึ้น จุดเยือกแข็งต่ำลง และความดันออสโมติก" }
+  - { term: ความดันออสโมติก, definition: "ความดันที่ต้องใช้เพื่อหยุดการไหลของตัวทำละลายผ่านเยื่อกึ่งผ่านได้ เขียนได้เป็น π = iMRT" }
+  - { term: คอลลอยด์, definition: "ระบบที่มีอนุภาคกระจายตัวขนาดระหว่าง 1 ถึง 1000 nm ไม่ตกตะกอนเมื่อตั้งทิ้งไว้ และกระจายแสงได้" }
+  - { term: อิมัลซิไฟเออร์, definition: "สารที่ช่วยให้ของเหลวสองชนิดที่ไม่เข้ากัน เช่น น้ำกับน้ำมัน กระจายตัวเป็นอิมัลชันได้ มักเป็นโมเลกุลที่มีทั้งส่วนชอบน้ำและส่วนชอบน้ำมัน" }
+flashcards:
+  - { front: "ทำไมน้ำอัดลมฟองมากขึ้นเมื่ออุ่น", back: "การละลายของ CO₂ ในน้ำลดลงเมื่ออุณหภูมิสูงขึ้น ตามกฎของเฮนรี" }
+  - { front: "ΔT_b และ ΔT_f ของสารละลายคำนวณอย่างไร", back: "ΔT_b = K_b · m · i และ ΔT_f = K_f · m · i (น้ำ K_b = 0.512, K_f = 1.86 °C·kg/mol)" }
+  - { front: "ความดันออสโมติก π = ?", back: "π = iMRT โดย R = 0.08206 L·atm/(mol·K)" }
+  - { front: "คอลลอยด์กับสารละลายต่างกันอย่างไรเมื่อฉายลำแสง", back: "คอลลอยด์กระจายแสงให้เห็นเป็นลำ (ปรากฏการณ์ทินดอลล์) สารละลายไม่กระจาย" }
+  - { front: "น้ำเกลือ 0.9% NaCl คำนวณได้ประมาณเท่าไรเป็นโมลาร์", back: "ประมาณ 0.154 mol/L (9 g/L หาร 58.44 g/mol)" }
+references:
+  - { title: "สารละลาย", url: "https://th.wikipedia.org/wiki/สารละลาย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Colligative properties", url: "https://en.wikipedia.org/wiki/Colligative_properties", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "คอลลอยด์", url: "https://th.wikipedia.org/wiki/คอลลอยด์", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "11.4 Colligative Properties (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/11-4-colligative-properties", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

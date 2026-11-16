@@ -1,0 +1,77 @@
+id: chemistry.equilibrium.solubility-product
+subject: chemistry
+title: { th: ผลคูณการละลายและสมดุลควบคู่, en: Solubility product and coupled equilibria }
+summary: เขียนนิพจน์ K_sp ของสารที่ละลายน้อย คำนวณความสามารถละลายเชิงโมล ทำนายการตกตะกอนด้วย Q เทียบ K_sp อธิบายผลของไอออนร่วม และดูการละลายเมื่อมีกรดหรือการเกิดไอออนเชิงซ้อน
+difficulty: 7.5
+minutes: 45
+prerequisites: [chemistry.equilibrium.chemical-equilibrium, chemistry.acids-bases.polyprotic-lewis-complex]
+encompasses:
+  - { id: chemistry.equilibrium.chemical-equilibrium, weight: 0.4 }
+  - { id: chemistry.acids-bases.polyprotic-lewis-complex, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: dissolution-equilibrium.svg
+    alt: "แผนภาพสองส่วน ด้านซ้ายคือผลึก AgCl ที่จัดเรียงเป็นตาราง Ag และ Cl สลับกัน ด้านขวาคือสารละลายน้ำที่มี Ag⁺ และ Cl⁻ กระจาย มีลูกศรสองทิศทางระหว่างสองส่วน ทิศบนชื่อละลาย ทิศล่างชื่อตกผลึก"
+    caption: "สมดุลการละลายคือการที่อัตราการละลายและอัตราการตกผลึกเท่ากัน ไม่ใช่การหยุดการเปลี่ยนแปลง"
+  - type: worked-example
+    title: จากค่า K_sp ไปสู่ความสามารถละลายเชิงโมล
+    problem: "ค่า K_sp ของ AgCl ที่ 25 °C เท่ากับ 1.6 × 10⁻¹⁰ จงหาความสามารถละลายเชิงโมล s ของ AgCl ในน้ำบริสุทธิ์"
+    steps:
+      - text: "สมการการละลาย AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq) มีไอออนชนิดละ 1 ตัวต่อหนึ่งหน่วยสูตร"
+        why: "ดูจำนวนไอออนแต่ละชนิดในสมการเพื่อกำหนดความสัมพันธ์ระหว่าง s กับไอออน"
+      - text: "ถ้าละลายได้ s mol/L จะได้ [Ag⁺] = s และ [Cl⁻] = s"
+      - text: "K_sp = [Ag⁺][Cl⁻] = s² จึงได้ s = √(1.6 × 10⁻¹⁰) = 1.26 × 10⁻⁵ M"
+        why: "ของแข็งไม่ปรากฏในนิพจน์ K_sp"
+    answer: "s ≈ 1.3 × 10⁻⁵ mol/L"
+  - { type: check, problem: chemistry.equilibrium.solubility-product.p003, prompt: "ดูจำนวนไอออนแต่ละชนิดในสมการการละลาย" }
+  - type: figure
+    src: ksp-precipitation-region.svg
+    alt: "กราฟเส้นโค้งลดลงจากซ้ายบนไปขวาล่าง แกนนอนคือ [Cl⁻] ตั้งแต่ 0 ถึง 0.20 M และแกนตั้งคือ [Ag⁺] หน่วยสิบยกกำลังลบเก้า M ตั้งแต่ 0 ถึง 20 บริเวณเหนือเส้นโค้งระบายสีชมพูระบุว่าตกตะกอน บริเวณใต้เส้นโค้งสีขาวระบุว่ายังไม่อิ่มตัว มีจุดน้ำเงินที่ [Cl⁻] = 0.10 M"
+    caption: "เหนือเส้นโค้ง Q มากกว่า K_sp จึงเกิดตะกอน ใต้เส้นโค้ง Q น้อยกว่า K_sp จึงยังละลายได้ต่อ"
+  - type: worked-example
+    title: ตรวจว่าจะเกิดตะกอนเมื่อผสมสารละลายหรือไม่
+    problem: "ผสมสารละลาย AgNO₃ 0.0010 M ปริมาตร 50.0 mL กับ NaCl 0.0020 M ปริมาตร 50.0 mL จะเกิดตะกอน AgCl หรือไม่ (K_sp = 1.6 × 10⁻¹⁰)"
+    steps:
+      - text: "หลังผสม ปริมาตรรวม 100.0 mL ความเข้มข้นแต่ละไอออนเจือจางลงครึ่งหนึ่ง: [Ag⁺] = 0.0005 M และ [Cl⁻] = 0.0010 M"
+        why: "การเจือจางต้องคิดหลังผสม ไม่ใช่ใช้ความเข้มข้นเริ่มต้นโดยตรง"
+      - text: "Q = [Ag⁺][Cl⁻] = (5.0 × 10⁻⁴)(1.0 × 10⁻³) = 5.0 × 10⁻⁷"
+      - text: "Q = 5.0 × 10⁻⁷ มากกว่า K_sp = 1.6 × 10⁻¹⁰ มาก จึงเกิดตะกอน AgCl"
+    answer: "เกิดตะกอน AgCl เพราะ Q มากกว่า K_sp"
+  - type: simulation
+    title: ลองเติมเกลือลงในน้ำและดูว่าละลายได้มากเพียงใด
+    url: https://phet.colorado.edu/en/simulations/soluble-salts
+    provider: phet
+    note: "ซิมูเลชัน PhET เกี่ยวกับการละลายของเกลือ ใช้เทียบกับแนวคิดความสามารถละลายและสมดุลการละลาย"
+  - type: interactive
+    title: ค่า K_sp คงที่ แต่ [Ag⁺] ลดลงเมื่อเพิ่ม [Cl⁻]
+    caption: "ปรับค่า K_sp (หน่วย 10⁻⁹ M·M ในแกน y) แล้วดูว่าเส้นโค้งเลื่อนอย่างไร เส้นโค้งที่สูงขึ้นหมายถึงสารละลายละลายได้มากขึ้น"
+    widget:
+      kind: function-plot
+      functions: ["k/x"]
+      sliders:
+        - { name: k, min: 0.05, max: 0.5, step: 0.01, value: 0.16, label: "K_sp (× 10⁻⁹)" }
+      x: [0.02, 0.2]
+      y: [0, 20]
+glossary:
+  - { term: ผลคูณการละลาย (K_sp), definition: "ค่าคงที่สมดุลของการละลายของสารที่ละลายน้อย ซึ่งเป็นผลคูณความเข้มข้นของไอออนแต่ละชนิดยกกำลังด้วยเลขสัมประสิทธิ์ โดยไม่รวมของแข็ง" }
+  - { term: ความสามารถละลายเชิงโมล (s), definition: "จำนวนโมลของสารที่ละลายได้ต่อลิตรของสารละลายอิ่มตัว" }
+  - { term: Q (ค่าผลคูณไอออน), definition: "ผลคูณความเข้มข้นของไอออนในสารละลายที่สภาวะหนึ่ง ใช้เทียบกับ K_sp เพื่อทำนายการตกตะกอน" }
+  - { term: ผลของไอออนร่วม, definition: "การลดลงของการละลายของเกลือเมื่อมีไอออนชนิดเดียวกันอยู่แล้วในสารละลาย" }
+  - { term: สมดุลควบคู่, definition: "ระบบที่มีสมดุลหลายอย่างเกิดขึ้นพร้อมกันและเชื่อมกันผ่านสปีชีส์ร่วม เช่น การละลายของตะกอนเมื่อมีลิแกนด์หรือกรด" }
+flashcards:
+  - { front: "K_sp ของ AgCl เขียนอย่างไร", back: "K_sp = [Ag⁺][Cl⁻] ไม่มี AgCl(s) ในนิพจน์" }
+  - { front: "สูตรความสามารถละลายของ AB₂ ที่ K_sp", back: "K_sp = 4s³ เมื่อ s คือความสามารถละลายเชิงโมล" }
+  - { front: "เมื่อ Q มากกว่า K_sp จะเกิดอะไร", back: "เกิดตะกอนจนกว่า Q ลดลงถึง K_sp" }
+  - { front: "ผลของไอออนร่วมต่อความสามารถละลาย", back: "ลดลง" }
+  - { front: "K ของการแทนที่ AgCl ด้วย AgBr", back: "K = K_sp(AgCl) / K_sp(AgBr) เมื่อ Br⁻ ทำปฏิกิริยากับ AgCl(s)" }
+references:
+  - { title: "ผลคูณการละลาย", url: "https://th.wikipedia.org/wiki/ผลคูณการละลาย", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Solubility product constant", url: "https://en.wikipedia.org/wiki/Solubility_product_constant", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "15.1 Precipitation and Dissolution (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/15-1-precipitation-and-dissolution", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "J Solubility Products (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/j-solubility-products", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

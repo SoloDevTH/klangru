@@ -1,0 +1,70 @@
+id: chemistry.acids-bases.polyprotic-lewis-complex
+subject: chemistry
+title: { th: กรดหลายโปรตอน กรด-เบสลิวอิส และการเกิดไอออนเชิงซ้อน, en: Polyprotic acids, Lewis acids and bases, and complex ions }
+summary: คำนวณ pH และสัดส่วนสปีชีส์ของกรดหลายโปรตอนทีละขั้น อ่านกราฟการไทเทรตที่มีจุดสมมูลหลายจุด และอธิบายกรด-เบสลิวอิสกับการเกิดไอออนเชิงซ้อนพร้อมค่าคงที่การเกิด
+difficulty: 7.5
+minutes: 45
+prerequisites: [chemistry.acids-bases.titration-buffers]
+encompasses:
+  - { id: chemistry.acids-bases.acid-base-ph, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: worked-example
+    title: pH ของกรดฟอสฟอริกที่ความเข้มข้นต่ำ
+    problem: "สารละลาย H₃PO₄ 0.0200 M มี Ka₁ = 7.5 × 10⁻³ จงหา pH โดยพิจารณาเฉพาะขั้นแรก (เลขนัยสำคัญสองตำแหน่ง มวลอะตอมไม่ได้ใช้ในข้อนี้)"
+    steps:
+      - text: "ตั้งสมการขั้นแรก H₃PO₄ ⇌ H⁺ + H₂PO₄⁻ โดยให้ x คือ [H⁺] ที่เกิดขึ้น: Ka₁ = x² / (0.0200 − x)"
+        why: "ขั้นที่สองและสามให้ H⁺ น้อยมากเมื่อเทียบ จึงละเลยได้ในขั้นแรกของการคำนวณ"
+      - text: "จัดรูปเป็นสมการกำลังสอง x² + 7.5 × 10⁻³ x − 1.5 × 10⁻⁴ = 0"
+      - text: "แก้ได้ x = [−7.5 × 10⁻³ + √(5.625 × 10⁻⁵ + 6.0 × 10⁻⁴)] / 2 = 9.06 × 10⁻³ M"
+        why: "ใช้สูตรกำลังสองแบบเต็ม เพราะ x มีค่าใกล้ 0.0200 M มากจนไม่สามารถละเลยได้"
+      - text: "pH = −log(9.06 × 10⁻³) = 2.04"
+    answer: "pH ประมาณ 2.04"
+  - { type: check, problem: chemistry.acids-bases.polyprotic-lewis-complex.p003, prompt: "ลองคิดว่าขั้นแรกให้ H⁺ มากเพียงใดเมื่อเทียบขั้นที่สอง" }
+  - type: figure
+    src: carbonic-distribution.svg
+    alt: "กราฟสามเส้นเทียบ pH จาก 2 ถึง 12 โดยเส้นสีน้ำตาลของ H₂CO₃ เป็นเส้นโค้งลดลงจากเกือบหนึ่งที่ pH ต่ำ เส้นสีน้ำเงินของ HCO₃⁻ เป็นยอดโค้งที่ pH กลาง และเส้นสีม่วงของ CO₃²⁻ เพิ่มขึ้นที่ pH สูง เส้นประแนวตั้งที่ pH 6.37 และ 10.33 ระบุค่า pKa"
+    caption: "สัดส่วนของสปีชีส์ขึ้นกับ pH และค่า pKa แต่ละขั้น ที่ pH เท่ากับ pKa สองสปีชีส์มีสัดส่วนเท่ากัน"
+  - type: figure
+    src: diprotic-titration.svg
+    alt: "กราฟ pH เทียบกับปริมาตร NaOH จาก 0 ถึง 60 mL ที่ 0 mL pH อยู่ที่ประมาณ 3.7 กราฟเพิ่มขึ้นช้าช่วงแรกที่ผ่านระดับ pKa แรกแล้วเพิ่มเร็วขึ้นถึงจุดสมมูลแรกที่ 25 mL pH ประมาณ 8.3 หลังจากนั้นเพิ่มอีกครั้งจนถึงจุดสมมูลที่สองที่ 50 mL pH ประมาณ 11.4"
+    caption: "กรดไดโปรตอนมีจุดสมมูลสองจุด pH ของจุดสมมูลแรกอยู่ประมาณกลางระหว่าง pKa สองค่า"
+  - type: worked-example
+    title: จุดสมมูลที่สองของการไทเทรตกรดไดโปรตอน
+    problem: "ไทเทรตกรด H₂CO₃ 25.00 mL ที่ 0.100 M ด้วย NaOH 0.100 M ต้องใช้ NaOH กี่ mL จึงถึงจุดสมมูลที่สอง"
+    steps:
+      - text: "จำนวนโมลของ H₂CO₃ = 0.100 × 0.02500 = 2.50 × 10⁻³ mol"
+      - text: "H₂CO₃ มีโปรตอนที่ไทเทรตได้สองตัว ดังนั้นต้องใช้ OH⁻ รวม 2 × 2.50 × 10⁻³ = 5.00 × 10⁻³ mol"
+        why: "กรดไดโปรตอนทำปฏิกิริยากับเบส 2 mol ต่อ 1 mol กรด"
+      - text: "ปริมาตร NaOH = 5.00 × 10⁻³ / 0.100 = 0.0500 L = 50.0 mL"
+    answer: "ต้องใช้ NaOH 50.0 mL จึงถึงจุดสมมูลที่สอง"
+  - { type: check, problem: chemistry.acids-bases.polyprotic-lewis-complex.p006, prompt: "กรดไดโปรตอนต้องใช้เบสกี่เท่าของจำนวนโมลกรด" }
+  - type: simulation
+    title: ลองปรับกรดและเบสแล้วดู pH
+    url: https://phet.colorado.edu/en/simulations/acid-base-solutions
+    provider: phet
+    note: "ซิมูเลชันเกี่ยวกับความแรงของกรดและเบสและการเปลี่ยนแปลง pH ใช้เพื่อเทียบกับแนวคิด Ka ที่ลดลงในแต่ละขั้น"
+glossary:
+  - { term: กรดหลายโปรตอน, definition: "กรดที่ให้โปรตอนได้มากกว่าหนึ่งตัว ซึ่งแตกตัวทีละขั้นและแต่ละขั้นมีค่า Ka ของตัวเอง" }
+  - { term: ค่าคงที่การแตกตัวของกรดขั้นที่หนึ่ง (Ka₁), definition: "ค่าคงที่สมดุลของการให้โปรตอนตัวแรก มักมากกว่า Ka ขั้นถัดไปหลายเท่า" }
+  - { term: กรดลิวอิส, definition: "สารที่รับคู่อิเล็กตรอนเพื่อสร้างพันธะโคออร์ดิเนต" }
+  - { term: เบสลิวอิส, definition: "สารที่ให้คู่อิเล็กตรอนเพื่อสร้างพันธะโคออร์ดิเนต" }
+  - { term: ไอออนเชิงซ้อน, definition: "ไอออนที่เกิดจากไอออนโลหะล้อมรอบด้วยลิแกนด์ที่ให้คู่อิเล็กตรอน" }
+  - { term: ค่าคงที่การเกิด (Kf), definition: "ค่าคงที่สมดุลของการเกิดไอออนเชิงซ้อนจากไอออนโลหะและลิแกนด์ ค่ามากหมายถึงไอออนเชิงซ้อนเสถียร" }
+flashcards:
+  - { front: "ทำไม H₂CO₃ จึงให้ pH ที่ขึ้นกับขั้นแรกเป็นหลัก", back: "เพราะ Ka₁ มากกว่า Ka₂ มาก ขั้นแรกให้ H⁺ มากกว่าขั้นที่สองอย่างมาก" }
+  - { front: "จุดสมมูลที่สองของกรดไดโปรตอนต้องใช้เบสเท่าไรต่อกรด 1 mol", back: "2 mol NaOH" }
+  - { front: "Lewis acid คืออะไร", back: "สารที่รับคู่อิเล็กตรอนเพื่อสร้างพันธะ เช่น BF₃" }
+  - { front: "Kf ของ [Ag(NH₃)₂]⁺ เท่ากับเท่าไร", back: "1.7 × 10⁷ (OpenStax Chemistry 2e บท 15.2)" }
+  - { front: "ไอออนโลหะที่ถูกน้ำล้อมมีสมบัติอย่างไร", back: "เป็นกรดได้ เพราะโมเลกุลน้ำที่ล้อมรอบให้โปรตอนออกได้" }
+references:
+  - { title: "กรด", url: "https://th.wikipedia.org/wiki/กรด", source: wikipedia-th, lang: th, license: CC-BY-SA-4.0 }
+  - { title: "Polyprotic acid", url: "https://en.wikipedia.org/wiki/Polyprotic_acid", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Lewis acids and bases", url: "https://en.wikipedia.org/wiki/Lewis_acids_and_bases", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "14.5 Polyprotic Acids (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/14-5-polyprotic-acids", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+  - { title: "15.2 Lewis Acids and Bases (Chemistry 2e, OpenStax)", url: "https://openstax.org/books/chemistry-2e/pages/15-2-lewis-acids-and-bases", source: openstax, lang: en, license: CC-BY-NC-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]
