@@ -281,6 +281,7 @@ problems:
       - { match: 70, feedback: "ลืมบวก 30 บาทของ express=True" }
       - { match: 89.5, feedback: "ไม่ได้ปัดน้ำหนักขึ้น เอกสารบอกให้ปัด 2.3 เป็น 3 กิโลกรัม" }
     solution: "ปัด 2.3 เป็น 3 กิโลกรัม → 40 + 15 × 2 = 70 บาท บวกส่งด่วน 30 = 100 บาท เราตอบได้จากเอกสาร API โดยไม่ต้องเห็นโค้ดข้างใน"
+    lint_ignore: [answer-in-lesson]
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -383,5 +384,40 @@ problems:
       - "นึกถึงหลักการห่อหุ้ม ข้อมูลของวัตถุควรเปลี่ยนผ่านทางใด"
       - "ถ้ามีหลายจุดในโปรแกรมแก้ balance เอง กฎจะถูกบังคับใช้ที่ไหน"
     solution: "การห่อหุ้มต้องการให้ข้อมูลเปลี่ยนผ่านเมทอดที่ตรวจเงื่อนไข การแก้ balance ตรง ๆ ข้ามกฎ จึงควรเพิ่มเมทอดหักค่าธรรมเนียมที่ตรวจยอดก่อน ทุกส่วนของโปรแกรมใช้เมทอดเดียวกันและกฎอยู่ที่เดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.programming.oop.p017
+    topics: [computer.programming.oop]
+    difficulty: 4
+    type: code
+    stem: "เขียนคลาส `Cart` ที่มีเมทอด `add(name, price)` สำหรับเพิ่มสินค้าเข้าตะกร้า และเมทอด `total()` ที่คืนยอดรวมราคาของสินค้าทุกชิ้นในตะกร้านั้น ตะกร้าที่ยังไม่มีสินค้าต้องคืน 0 และแต่ละวัตถุต้องเก็บรายการของตัวเอง"
+    starter: |
+      class Cart:
+          pass
+    tests: |
+      c = Cart()
+      c.add("ปากกา", 10)
+      c.add("สมุด", 25.5)
+      assert c.total() == 35.5, f"total() ควรได้ 35.5 แต่ได้ {c.total()}"
+      d = Cart()
+      assert d.total() == 0, f"ตะกร้าว่างต้องคืน 0 แต่ได้ {d.total()}"
+      d.add("ดินสอ", 5)
+      assert c.total() == 35.5, f"วัตถุแต่ละตัวต้องเก็บรายการของตัวเอง ตะกร้า c ควรได้ 35.5 แต่ได้ {c.total()}"
+      assert d.total() == 5, f"ตะกร้า d ควรได้ 5 แต่ได้ {d.total()}"
+    reference: |
+      class Cart:
+          def __init__(self):
+              self.items = []
+
+          def add(self, name, price):
+              self.items.append((name, price))
+
+          def total(self):
+              return sum(price for _, price in self.items)
+    hints:
+      - "ใน `__init__` สร้างลิสต์ว่างเก็บไว้ที่ self เพื่อให้แต่ละวัตถุมีลิสต์ของตัวเอง"
+      - "`total()` รวมราคาจากลิสต์ได้ด้วย sum และถ้าลิสต์ว่างจะได้ 0 โดยอัตโนมัติ"
+    solution: "สร้าง self.items = [] ใน __init__ แล้ว add เก็บคู่ (ชื่อ, ราคา) ลงลิสต์นั้น และ total รวมราคาด้วย sum ซึ่งได้ 0 เมื่อลิสต์ว่าง"
     license: CC-BY-SA-4.0
     ai_assisted: true
