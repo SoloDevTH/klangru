@@ -38,6 +38,11 @@ elif cmd == "next":
     print(key)
     for i in pick:
         t = topics[i]; print(f"- {i} | {t['title']} | ยาก {t['difficulty']} | prereq {', '.join(t.get('prereq', [])) or '-'}")
+elif cmd == "reserve":
+    # reserve <ชื่อชุด> <วิชา> <id,id,...>  จองชุดด้วยรหัสที่ระบุเอง (ใช้เมื่อเลือกหัวข้อตามความสำคัญ)
+    name, subj, ids = sys.argv[3], sys.argv[4], sys.argv[5].split(",")
+    state["batches"][name] = {"subject": subj, "ids": ids}
+    json.dump(state, open(ST, "w"), ensure_ascii=False, indent=1); print("reserved", name, len(ids))
 elif cmd == "ids":
     print(",".join(state["batches"][sys.argv[3]]["ids"]))
 elif cmd == "release":

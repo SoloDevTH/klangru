@@ -32,7 +32,13 @@ case "$cmd" in
     B="$1"; MSG="${2:-ชุด $B: เขียนหัวข้อใหม่ตามแผน พร้อมจับคู่หลักสูตร}"
     IDS=$(python3 "$D/sched.py" "$R" ids "$B")
     [ -n "$(git diff --cached --name-only)" ] && { echo "index ไม่ว่าง ยกเลิก"; exit 1; }
-    if git show-ref -q "refs/heads/batch/$B"; then git checkout "batch/$B" -- . 2>/dev/null && git reset -q; fi
+    W="$(dirname "$R")/klangru-work/$B"
+    # ผู้เขียนทำงานใน worktree: commit งานบน branch ของชุดก่อน แล้วดึงเฉพาะไฟล์ที่ branch เปลี่ยนมารวม (ไม่ทับไฟล์อื่นของ main)
+    [ -d "$W" ] && { git -C "$W" add -A && git -C "$W" commit -q -m "งานชุด $B" 2>/dev/null || true; }
+    if git show-ref -q "refs/heads/batch/$B"; then
+      mapfile -t BF < <(git diff --name-only --diff-filter=AM "$(git merge-base HEAD "batch/$B")" "batch/$B")
+      [ ${#BF[@]} -gt 0 ] && { git checkout "batch/$B" -- "${BF[@]}" && git reset -q; }
+    fi
     node "$D/graduate.mjs" "$R" --ids="$IDS" --write
     # หาไฟล์ของชุดจากรหัสหัวข้อ (โฟลเดอร์อาจไม่ตรงกับส่วนท้ายของรหัส)
     mapfile -t PATHS < <(python3 - "$IDS" "$B" <<'PY'
