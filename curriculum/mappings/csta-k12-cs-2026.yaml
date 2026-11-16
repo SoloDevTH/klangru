@@ -439,3 +439,39 @@ mappings:
     indicators: [HS-SYS-SE-33]
     coverage: full
     note: เสนอวิธีแก้ช่องโหว่ในระบบที่กำหนดด้วยการเลือกการป้องกันที่ตรงกับความเสี่ยง
+  - topic: computer.ai.model-evaluation
+    indicators: [S2-DSC-MI-08]
+    coverage: full
+    note: คำนวณความแม่น precision recall F1 และ MAE จากเมทริกซ์และค่าคลาดเคลื่อน (บทเรียนส่วนเมทริกซ์ โจทย์ p003 ถึง p011 p014 ถึง p016)
+  - topic: computer.ai.model-evaluation
+    indicators: [S1-DSC-MI-09, S2-DSC-MI-10, S2-AIN-DD-02, S2-AIN-HR-07, HS-ALG-ML-07, S1-AIN-DD-02]
+    coverage: partial
+    note: อธิบายว่าข้อมูลน้อยทำให้ผลแกว่งและข้อมูลมากขึ้นช่วยให้เสถียร แต่ยังไม่มีโจทย์ทดลองเปลี่ยนขนาดข้อมูลจริง
+  - topic: computer.ai.search-planning
+    indicators: [S1-AIN-DD-01, S2-AIN-PP-08]
+    coverage: partial
+    note: แยกชนิดปัญหาที่ระบบ AI แก้ (ค้นหา วางแผน จำแนก ทำนาย สร้าง) แต่โจทย์เน้นการค้นหาและวางแผน ยังไม่มีโจทย์วิเคราะห์ระบบ AI จริง
+  - topic: computer.ai.supervised-learning
+    indicators: [HS-ALG-ML-08, S1-AIN-DD-03, S2-DSC-AM-05]
+    coverage: partial
+    note: เขียนตัวช่วยฝึกแบบจำลองด้วยโค้ด (fit_line และ best_threshold) จากข้อมูลตัวอย่างขนาดเล็ก ยังไม่มีการเลือกข้อมูลและเครื่องมือของโครงงานจริง
+  - topic: computer.ai.supervised-learning
+    indicators: [S1-DSC-MI-08, S2-DSC-MI-09]
+    coverage: full
+    note: เลือกการถดถอยหรือการจำแนกให้ตรงกับชนิดคำตอบ และอธิบายว่าต้นไม้กับเส้นตรงเหมาะกับปัญหาต่างกันอย่างไร (บทเรียนส่วนเทียบแบบจำลอง โจทย์ p004 p007)
+  - topic: computer.data.data-preparation
+    indicators: [MS-DAT-DC-21, HS-DAT-DC-22, HS-DAT-DC-24, S2-DSC-CC-04, S1-AIN-DS-07]
+    coverage: partial
+    note: อธิบายว่าความละเอียดตอนเก็บกระทบพื้นที่เก็บและความอ่านง่าย (บทเรียนส่วนที่สอง) แต่ยังไม่มีโจทย์เปรียบเทียบผลต่อความแม่นของการวิเคราะห์
+  - topic: computer.data.data-preparation
+    indicators: [MS-DAT-DC-22, HS-DAT-DC-23, S1-DSC-CC-02, S1-DSC-CC-03, S2-DSC-CC-02, S2-DSC-CC-03, S1-DSC-AM-05, S2-DSC-AM-06]
+    coverage: full
+    note: อ่านเมทาดาทาและพจนานุกรมข้อมูลก่อนแตะข้อมูล และใช้กฎจากพจนานุกรมตรวจแถว (บทเรียนส่วนที่สอง โจทย์ p001 p002)
+  - topic: computer.data.exploratory-analysis
+    indicators: [MS-DAT-DI-25, S2-DSC-AM-07]
+    coverage: partial
+    note: หาความสัมพันธ์ของตัวแปรด้วยสหสัมพันธ์และจำแนกอย่างง่ายด้วยเกณฑ์ชั่วโมงอ่าน (บทเรียนส่วนสุดท้าย โจทย์ p018) แต่ยังไม่สร้างแบบจำลองทำนายจากหลายตัวแปร
+  - topic: computer.data.exploratory-analysis
+    indicators: [S1-DSC-CC-01, S2-DSC-CC-01, S1-DSC-AM-04, S1-DSC-AM-06, S1-DSC-MI-07]
+    coverage: full
+    note: "EDA กับข้อมูลเชิงปริมาณที่ไม่ซ้อนกัน: ค่ากลาง การกระจาย ควอร์ไทล์ IQR และค่าผิดปกติ (โจทย์ p003 p005 p009 p010 p015)"

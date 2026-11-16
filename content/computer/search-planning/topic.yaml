@@ -1,0 +1,65 @@
+id: computer.ai.search-planning
+subject: computer
+title: { th: "การค้นหาในปริภูมิสถานะและการวางแผนของเอเจนต์", en: "State-space search and agent planning" }
+summary: นิยามปัญหาเป็นสถานะ การกระทำ และต้นทุน แล้วค้นหาเส้นทางด้วย BFS DFS UCS และ A* พร้อมดูว่าเอเจนต์วางแผนและปรับแผนเมื่อโลกเปลี่ยนได้อย่างไร
+difficulty: 6.5
+minutes: 40
+prerequisites: [computer.ai.intro, computer.algorithms.data-structures]
+encompasses:
+  - { id: computer.ai.intro, weight: 0.3 }
+  - { id: computer.algorithms.data-structures, weight: 0.3 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: agent-loop.svg
+    alt: "วงจรสี่กล่องต่อเป็นวงลูกศร กล่องบนคือรับรู้ กล่องขวาคือปรับแบบจำลองโลก กล่องล่างคือวางแผน กล่องซ้ายคือกระทำ ลูกศรวนตามเข็มนาฬิกาจากรับรู้ไปปรับแบบจำลอง วางแผน กระทำ และกลับมารับรู้"
+    caption: "เอเจนต์ที่ดีวนผ่านขั้นตอนเหล่านี้ตลอดเวลา และวางแผนใหม่เมื่อโลกเปลี่ยน"
+  - { type: check, problem: computer.ai.search-planning.p004, prompt: "ลองจัดประเภทสภาพแวดล้อมของหมากรุกและไพ่" }
+  - type: worked-example
+    title: BFS หาเส้นทางสั้นที่สุดบนกราฟ (ข้อมูลสมมติ)
+    problem: "กราฟมีขอบ S–A, S–B, A–C, B–D, C–G และ D–G ใช้ BFS ค้นหาจาก S เพื่อไป G และบอกว่าเส้นทางที่สั้นที่สุดมีกี่ก้าว"
+    steps:
+      - text: "เริ่มด้วยคิว [S] ที่ระดับ 0"
+      - text: "ขยาย S ได้ A และ B เข้าคิว คิวเป็น [A, B] ที่ระดับ 1"
+      - text: "ขยาย A ได้ C และขยาย B ได้ D เข้าคิว คิวเป็น [C, D] ที่ระดับ 2 ยังไม่พบ G"
+        why: "BFS ยังไม่หยุดเพราะระดับก่อนหน้าไม่มี G"
+      - text: "ขยาย C พบ G ที่ระดับ 3 ได้เส้นทาง S–A–C–G จึงมี 3 ก้าว"
+        why: "เมื่อพบเป้าหมายในระดับแรก ก็ได้เส้นทางที่สั้นที่สุดเมื่อทุกก้าวมีต้นทุนเท่ากัน"
+    answer: "เส้นทางที่สั้นที่สุดคือ S–A–C–G มี 3 ก้าว และ S–B–D–G ก็มี 3 ก้าวเช่นกัน"
+  - { type: check, problem: computer.ai.search-planning.p012, prompt: "ลองอธิบายว่าทำไม BFS ได้เส้นทางสั้นที่สุด" }
+  - type: figure
+    src: maze-path.svg
+    alt: "กริดหกคอลัมน์ห้าแถว ช่องที่เป็นกำแพงเป็นสีเข้ม จุดเริ่ม S อยู่มุมบนซ้าย จุดเป้าหมาย G อยู่มุมล่างขวา เส้นสีฟ้าเดินจาก S ไปทางขวาแล้วลงและเลี้ยวตามทางว่างจนถึง G"
+    caption: "เขาวงกตตัวอย่าง เส้นสีฟ้าคือเส้นทางที่สั้นที่สุดที่ BFS หาได้"
+  - type: worked-example
+    title: A* บนกริด 3 คูณ 4 (ข้อมูลสมมติ)
+    problem: "กริดสามแถวสี่คอลัมน์มีกำแพงที่ (1, 1) จุดเริ่ม (0, 0) เป้าหมาย (2, 3) ใช้ฮิวริสติกระยะแมนฮัตตัน คำนวณ f = g + h ของช่อง (1, 0), (0, 2) และ (1, 2) และบอกว่าเส้นทางที่ดีที่สุดยาวเท่าใด"
+    steps:
+      - text: "ฮิวริสติกที่จุดเริ่มคือ h(0, 0) = |0 − 2| + |0 − 3| = 5"
+      - text: "ช่อง (1, 0) มี g = 1 และ h = 1 + 3 = 4 จึง f = 5"
+      - text: "ช่อง (0, 2) มี g = 2 และ h = 2 + 1 = 3 จึง f = 5"
+        why: "ช่องที่อยู่บนเส้นทางที่ดีที่สุดมี f เท่ากับต้นทุนจริงของเส้นทาง"
+      - text: "ช่อง (1, 2) มี g = 3 และ h = 1 + 1 = 2 จึง f = 5 ทุกช่องบนเส้นทางดีที่สุดมี f เท่ากับ 5 เส้นทางจึงยาว 5 ก้าว"
+    answer: "ทั้งสามช่องมี f = 5 และเส้นทางที่ดีที่สุดยาว 5 ก้าว"
+  - { type: check, problem: computer.ai.search-planning.p008, prompt: "ลองนึกถึงคุณสมบัติของฮิวริสติกที่ใช้กับ A* ได้อย่างถูกต้อง" }
+glossary:
+  - { term: เอเจนต์ (agent), definition: "ระบบที่รับรู้สภาพแวดล้อมผ่านเซนเซอร์และเลือกการกระทำผ่านตัวขับเคลื่อน" }
+  - { term: ปริภูมิสถานะ (state space), definition: "เซตของสถานะที่เป็นไปได้ทั้งหมดและการกระทำที่เปลี่ยนสถานะ" }
+  - { term: BFS (กว้างก่อน), definition: "การค้นหาที่ขยายสถานะทีละระดับด้วยคิว ได้เส้นทางสั้นที่สุดเมื่อทุกก้าวมีต้นทุนเท่ากัน" }
+  - { term: ฮิวริสติก (heuristic), definition: "ค่าประมาณต้นทุนที่เหลือจากสถานะหนึ่งไปยังเป้าหมาย" }
+  - { term: A* (A-star), definition: "การค้นหาที่เลือกสถานะที่มี f = g + h ต่ำสุด และได้เส้นทางต้นทุนต่ำสุดเมื่อฮิวริสติกยอมรับได้" }
+  - { term: อัลฟา–เบตา (alpha–beta pruning), definition: "เทคนิคตัดกิ่งในต้นไม้เกมสองฝ่ายที่ไม่กระทบผลของมินิแมกซ์" }
+flashcards:
+  - { front: "BFS กับ DFS ต่างกันอย่างไร", back: "BFS ขยายทีละระดับด้วยคิว DFS ลงลึกด้วยสแตก BFS ได้เส้นทางสั้นที่สุดเมื่อก้าวเท่ากัน" }
+  - { front: "ฮิวริสติกที่ยอมรับได้คืออะไร", back: "ฮิวริสติกที่ไม่ประมาณเกินต้นทุนจริงที่เหลือ" }
+  - { front: "A* คำนวณ f อย่างไร", back: "f = g + h โดย g คือต้นทุนที่จ่ายแล้ว และ h คือฮิวริสติกที่เหลือ" }
+  - { front: "ระยะแมนฮัตตันคืออะไร", back: "ผลรวมของค่าสัมบูรณ์ของผลต่างพิกัดในแต่ละแกน ใช้กับการเดินสี่ทิศทาง" }
+references:
+  - { title: "Breadth-first search", url: "https://en.wikipedia.org/wiki/Breadth-first_search", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "A* search algorithm", url: "https://en.wikipedia.org/wiki/A*_search_algorithm", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Alpha–beta pruning", url: "https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

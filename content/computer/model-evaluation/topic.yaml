@@ -1,0 +1,63 @@
+id: computer.ai.model-evaluation
+subject: computer
+title: { th: "ประเมินและปรับปรุงแบบจำลองการเรียนรู้ของเครื่อง", en: "Evaluating and improving machine learning models" }
+summary: แบ่งข้อมูลฝึก ตรวจสอบ และทดสอบ อ่านเมทริกซ์ความสับสน คำนวณความแม่น precision recall F1 และ MAE เลือกการตั้งค่าจากข้อมูลตรวจสอบ และตรวจความเป็นธรรมของข้อมูลฝึก
+difficulty: 7
+minutes: 40
+prerequisites: [computer.ai.supervised-learning]
+encompasses:
+  - { id: computer.ai.supervised-learning, weight: 0.4 }
+curriculum_tags: []
+lessons:
+  - { type: explanation, file: lesson.md }
+  - type: figure
+    src: spam-confusion.svg
+    alt: "ตารางสองแถวสองคอลัมน์ คอลัมน์คือผลจริงเป็นสแปมและไม่ใช่สแปม แถวคือตัวกรองทายสแปมและทายไม่ใช่ ช่องบนซ้ายเขียนว่า TP เท่ากับ 8 ช่องบนขวาเขียนว่า FP เท่ากับ 2 ช่องล่างซ้ายเขียนว่า FN เท่ากับ 4 และช่องล่างขวาเขียนว่า TN เท่ากับ 6"
+    caption: "เมทริกซ์ความสับสนของตัวกรองสแปม (ข้อมูลสมมติ)"
+  - type: worked-example
+    title: อ่านเมทริกซ์ความสับสนแล้วคำนวณตัวชี้วัด
+    problem: "ตัวกรองสแปมสมมติจากตัวอย่าง 20 ฉบับได้ TP = 8, FP = 2, FN = 4 และ TN = 6 คำนวณความแม่น precision recall และ F1 และบอกว่าควรให้ความสำคัญกับตัวใดถ้ากลัวการทำเมลปกติหาย"
+    steps:
+      - text: "ความแม่น = (TP + TN) ÷ ทั้งหมด = (8 + 6) ÷ 20 = 0.7 หรือ 70 เปอร์เซ็นต์"
+      - text: "precision = TP ÷ (TP + FP) = 8 ÷ 10 = 0.8 หรือ 80 เปอร์เซ็นต์ ตัวหารคือจำนวนที่ทายว่าสแปม ไม่ใช่สแปมจริงทั้งหมด"
+        why: "precision บอกว่าเมื่อตัวกรองบอกว่าสแปม น่าเชื่อถือแค่ไหน"
+      - text: "recall = TP ÷ (TP + FN) = 8 ÷ 12 ≈ 0.667 หรือประมาณ 66.7 เปอร์เซ็นต์ เพราะสแปมจริงมี 12 ฉบับ จับได้ 8 ฉบับ"
+      - text: "F1 = 2 × 0.8 × 0.667 ÷ (0.8 + 0.667) ≈ 0.73"
+        why: "F1 ต่ำมากถ้า precision หรือ recall ต่ำมาก จึงไม่ถูกบดบังด้วยอีกค่าที่สูง"
+    answer: "ความแม่น 70 เปอร์เซ็นต์ precision 80 เปอร์เซ็นต์ recall ประมาณ 66.7 เปอร์เซ็นต์ และ F1 ประมาณ 0.73 ถ้ากลัวเมลปกติหาย ควรให้ความสำคัญกับ precision"
+  - { type: check, problem: computer.ai.model-evaluation.p004, prompt: "ลองระบุว่า False Positive ในตัวกรองสแปมคืออะไร" }
+  - type: figure
+    src: depth-error.svg
+    alt: "กราฟเส้นสองเส้นบนแกนนอนความลึกของต้นไม้ 1 ถึง 8 และแกนตั้งอัตราความผิดพลาด 0 ถึง 0.5 เส้นสีน้ำเงินของข้อมูลฝึกลดลงต่อเนื่องจากประมาณ 0.36 เหลือใกล้ 0 เส้นสีแดงของข้อมูลตรวจสอบลดลงถึงจุดต่ำสุดที่ความลึก 4 ประมาณ 0.22 แล้วสูงขึ้นอีกเมื่อความลึกเพิ่ม"
+    caption: "ข้อมูลฝึกผิดน้อยลงเรื่อย ๆ แต่ข้อมูลตรวจสอบเริ่มผิดมากขึ้นเมื่อแบบจำลองซับซ้อนเกินไป (ข้อมูลสมมติ)"
+  - type: worked-example
+    title: เลือกค่า k จากข้อมูลตรวจสอบ
+    problem: "ปรับค่า k ของ k-NN แล้ววัดอัตราความผิดพลาดบนข้อมูลตรวจสอบ ได้ k = 1 ผิด 0.40, k = 2 ผิด 0.35, k = 4 ผิด 0.28 และ k = 6 ผิด 0.31 จะเลือก k ใด และควรทำอย่างไรกับข้อมูลทดสอบ"
+    steps:
+      - text: "ตรวจก่อนว่าค่าที่ใช้เลือกมาจากข้อมูลตรวจสอบ ไม่ใช่ข้อมูลทดสอบ"
+        why: "ถ้าเลือกจากข้อมูลทดสอบ ตัวเลขสุดท้ายจะดีเกินจริงเพราะถูกปรับให้เข้ากับชุดนั้น"
+      - text: "เปรียบค่าความผิดพลาดของแต่ละ k: 0.40, 0.35, 0.28 และ 0.31"
+      - text: "ค่าต่ำสุดคือ 0.28 ที่ k = 4 จึงเลือก k = 4"
+      - text: "เก็บข้อมูลทดสอบไว้ใช้วัดผลสุดท้ายเพียงครั้งเดียว"
+    answer: "เลือก k = 4 จากข้อมูลตรวจสอบ แล้วรายงานผลสุดท้ายโดยวัดบนข้อมูลทดสอบที่ยังไม่เคยใช้เลือก"
+  - { type: check, problem: computer.ai.model-evaluation.p012, prompt: "ลองอ่านกราฟว่าเกิดการเรียนมากเกินไปหรือไม่" }
+glossary:
+  - { term: ข้อมูลตรวจสอบ (validation set), definition: "ข้อมูลที่แยกไว้ใช้เลือกการตั้งค่าของแบบจำลอง เช่น ความลึกหรือค่า k" }
+  - { term: ข้อมูลทดสอบ (test set), definition: "ข้อมูลที่แยกไว้ใช้วัดผลสุดท้ายครั้งเดียว ไม่ใช้เลือกการตั้งค่า" }
+  - { term: เมทริกซ์ความสับสน (confusion matrix), definition: "ตารางนับจำนวนผลทำนายและผลจริงในแต่ละคู่ของคลาส ใช้คำนวณความแม่น precision และ recall" }
+  - { term: precision, definition: "สัดส่วนของที่ทายว่าเป็นบวกและเป็นบวกจริง คำนวณจาก TP หารด้วย TP + FP" }
+  - { term: recall, definition: "สัดส่วนของบวกจริงที่แบบจำลองจับได้ คำนวณจาก TP หารด้วย TP + FN" }
+  - { term: เรียนมากเกินไป (overfitting), definition: "แบบจำลองซับซ้อนจนจำข้อมูลฝึกรวมทั้งเสียงรบกวน ทำให้ทำนายข้อมูลใหม่ได้แย่" }
+flashcards:
+  - { front: "ทำไมต้องแยกข้อมูลทดสอบไว้", back: "เพื่อวัดผลกับข้อมูลที่แบบจำลองไม่เคยเห็นและไม่ได้ใช้เลือกการตั้งค่า" }
+  - { front: "precision กับ recall ต่างกันอย่างไร", back: "precision ดูจากที่ทายบวก ส่วน recall ดูจากบวกจริงทั้งหมด" }
+  - { front: "เมื่อไรควรให้ความสำคัญกับ precision", back: "เมื่อ False Positive มีต้นทุนสูง เช่น เมลสำคัญถูกกรองทิ้ง" }
+  - { front: "overfitting เห็นได้จากอะไรในกราฟ", back: "ความผิดพลาดของข้อมูลฝึกต่ำมาก แต่ของข้อมูลตรวจสอบสูงและเพิ่มขึ้น" }
+references:
+  - { title: "Confusion matrix", url: "https://en.wikipedia.org/wiki/Confusion_matrix", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Precision and recall", url: "https://en.wikipedia.org/wiki/Precision_and_recall", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+  - { title: "Overfitting", url: "https://en.wikipedia.org/wiki/Overfitting", source: wikipedia-en, lang: en, license: CC-BY-SA-4.0 }
+status: draft
+license: CC-BY-SA-4.0
+ai_assisted: true
+authors: [ทีมคลังรู้]

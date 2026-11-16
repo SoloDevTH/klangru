@@ -1,0 +1,347 @@
+problems:
+  - id: computer.ai.model-evaluation.p001
+    topics: [computer.ai.model-evaluation]
+    difficulty: 1
+    type: mcq
+    stem: "เหตุใดต้องแยกข้อมูลทดสอบไว้ และไม่ใช้ข้อมูลส่วนนี้ตอนฝึกหรือเลือกการตั้งค่า"
+    choices:
+      - { id: a, text: "เพื่อให้ข้อมูลฝึกมีขนาดเล็กลงและฝึกเร็วขึ้น", feedback: "การแยกข้อมูลไม่ได้ทำให้ฝึกเร็วขึ้นเป็นเป้าหมายหลัก" }
+      - { id: b, text: "เพื่อให้มีตัวอย่างที่แบบจำลองไม่เคยเห็น ใช้ประเมินว่าทำนายข้อมูลใหม่ได้จริงแค่ไหน", correct: true }
+      - { id: c, text: "เพื่อให้แบบจำลองจำข้อมูลทดสอบได้ดีขึ้น", feedback: "ถ้าแบบจำลองเคยเห็นข้อมูลทดสอบ ผลที่ได้จะไม่น่าเชื่อถือ" }
+      - { id: d, text: "เพื่อลดจำนวนคลาสในข้อมูลให้เหลือสองคลาส", feedback: "การแยกข้อมูลไม่เกี่ยวกับจำนวนคลาส" }
+    hints:
+      - "คิดว่าการวัดผลควรเกิดกับข้อมูลแบบไหน"
+      - "ถ้าแบบจำลองเคยเห็นข้อมูลนั้นมาก่อน ผลที่วัดได้จะดีเกินจริง"
+      - "เลือกข้อที่บอกว่าข้อมูลส่วนนี้ใช้วัดการทำนายข้อมูลใหม่"
+    solution: "ข้อมูลทดสอบที่แบบจำลองไม่เคยเห็นทำให้วัดได้ว่าแบบจำลองทำนายข้อมูลใหม่ได้จริงหรือไม่ ถ้าใช้ข้อมูลนี้ตอนฝึกหรือเลือกการตั้งค่าผลจะดีเกินจริง"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p002
+    topics: [computer.ai.model-evaluation]
+    difficulty: 1
+    type: order
+    stem: "เรียงขั้นตอนการเลือกการตั้งค่าของแบบจำลองให้ถูกต้อง จากขั้นแรกไปขั้นสุดท้าย"
+    items:
+      - "แบ่งข้อมูลเป็นส่วนฝึก ส่วนตรวจสอบ และส่วนทดสอบ"
+      - "ฝึกแบบจำลองด้วยข้อมูลฝึกโดยใช้การตั้งค่าหลายแบบ"
+      - "วัดผลการตั้งค่าแต่ละแบบด้วยข้อมูลตรวจสอบ"
+      - "เลือกการตั้งค่าที่ให้ผลดีที่สุดบนข้อมูลตรวจสอบ"
+      - "วัดผลสุดท้ายด้วยข้อมูลทดสอบเพียงครั้งเดียว"
+    hints:
+      - "ต้องแยกข้อมูลก่อนจะทำอะไรต่อไปได้"
+      - "การเลือกต้องทำบนข้อมูลตรวจสอบ ไม่ใช่บนข้อมูลทดสอบ"
+      - "ขั้นสุดท้ายคือรายงานผลบนข้อมูลที่ยังไม่เคยใช้เลือก"
+    solution: "แบ่งข้อมูลก่อน แล้วฝึกหลายการตั้งค่า วัดด้วยข้อมูลตรวจสอบ เลือกค่าที่ดีที่สุด และวัดผลสุดท้ายบนข้อมูลทดสอบเพียงครั้งเดียว"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p003
+    topics: [computer.ai.model-evaluation]
+    difficulty: 1
+    type: numeric
+    stem: "จากเมทริกซ์ความสับสนที่ TP = 30, TN = 45, FP = 15 และ FN = 10 ความแม่น (accuracy) เท่ากับกี่เปอร์เซ็นต์"
+    answer: { value: 75, tolerance: 0, unit: "%" }
+    misconceptions:
+      - { match: 30, feedback: "นับเฉพาะกรณีทายบวกที่ถูก แต่ไม่ได้รวมกรณีทายลบที่ถูก (TN) ตอนคิดความแม่น" }
+    hints:
+      - "ความแม่นคือจำนวนที่ทายถูกทั้งหมด หารด้วยจำนวนทั้งหมด"
+      - "กรณีที่ทายถูกคือ TP และ TN"
+      - "นำ 30 + 45 หารด้วย 100 แล้วคูณด้วย 100 เปอร์เซ็นต์"
+    solution: "ทายถูก TP + TN = 30 + 45 = 75 จากทั้งหมด 100 ฉบับ จึงได้ความแม่น 75 เปอร์เซ็นต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p004
+    topics: [computer.ai.model-evaluation]
+    difficulty: 2
+    type: mcq
+    stem: "ในตัวกรองสแปม False Positive หมายถึงข้อใด"
+    choices:
+      - { id: a, text: "ทายว่าเป็นสแปม แต่จริงเป็นเมลปกติ", correct: true }
+      - { id: b, text: "ทายว่าไม่ใช่สแปม แต่จริงเป็นสแปม", feedback: "นี่คือ False Negative" }
+      - { id: c, text: "ทายว่าเป็นสแปมและเป็นสแปมจริง", feedback: "นี่คือ True Positive" }
+      - { id: d, text: "ทายว่าเป็นเมลปกติและเป็นเมลปกติจริง", feedback: "นี่คือ True Negative" }
+    hints:
+      - "คำว่า Positive หมายถึงการทายว่าเป็นคลาสที่เรากำลังค้นหา คือสแปม"
+      - "Positive ที่ผิดคือทายว่าเป็นสแปมทั้งที่ไม่ใช่"
+      - "เลือกข้อที่ทายบวกแต่ผลจริงเป็นลบ"
+    solution: "False Positive คือทายว่าบวกแต่ผลจริงเป็นลบ ในตัวกรองสแปมคือทายว่าเป็นสแปมแต่จริงเป็นเมลปกติ เมลปกติที่ตกไปในสแปมเป็นความผิดพลาดที่ควรระวังเป็นพิเศษ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p005
+    topics: [computer.ai.model-evaluation]
+    difficulty: 2
+    type: numeric
+    stem: "ตัวกรองทายว่าเป็นสแปม 15 ฉบับ และถูก 9 ฉบับ (TP = 9, FP = 6) precision เท่ากับกี่เปอร์เซ็นต์"
+    answer: { value: 60, tolerance: 0, unit: "%" }
+    misconceptions:
+      - { match: 40, feedback: "40 คือสัดส่วนของ FP ต่อการทายบวก ไม่ใช่ precision" }
+    hints:
+      - "precision หารด้วยจำนวนที่ทายว่าเป็นบวก"
+      - "จำนวนที่ทายว่าเป็นบวกคือ TP + FP"
+      - "นำ TP หารด้วย TP + FP แล้วคูณด้วย 100"
+    solution: "precision = TP ÷ (TP + FP) = 9 ÷ 15 = 0.6 หรือ 60 เปอร์เซ็นต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p006
+    topics: [computer.ai.model-evaluation]
+    difficulty: 2
+    type: numeric
+    stem: "ในอีเมลชุดหนึ่ง มีสแปมจริง 20 ฉบับ และตัวกรองจับได้ 13 ฉบับ (TP = 13, FN = 7) recall เท่ากับกี่เปอร์เซ็นต์"
+    answer: { value: 65, tolerance: 0, unit: "%" }
+    misconceptions:
+      - { match: 35, feedback: "35 คืออัตราที่พลาด (FN ÷ บวกจริง) ไม่ใช่ recall" }
+    hints:
+      - "recall หารด้วยจำนวนบวกจริงทั้งหมด"
+      - "จำนวนบวกจริงคือ TP + FN"
+      - "นำ TP หารด้วย TP + FN แล้วคูณด้วย 100"
+    solution: "recall = TP ÷ (TP + FN) = 13 ÷ 20 = 0.65 หรือ 65 เปอร์เซ็นต์"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p007
+    topics: [computer.ai.model-evaluation]
+    difficulty: 2
+    type: match
+    stem: "จับคู่ตัวชี้วัดกับความหมาย"
+    pairs:
+      - { left: "ความแม่น (accuracy)", right: "สัดส่วนของการทายถูกทั้งหมดในทุกคลาส" }
+      - { left: "precision", right: "ในบรรดาที่ทายว่าเป็นบวก มีกี่ฉบับที่เป็นบวกจริง" }
+      - { left: "recall", right: "ในบรรดาบวกจริงทั้งหมด จับได้กี่ฉบับ" }
+      - { left: "MAE", right: "ค่าเฉลี่ยของขนาดความคลาดเคลื่อนในงานถดถอย" }
+    hints:
+      - "แยกว่าตัวชี้วัดนี้ดูจากผลทำนายบวก หรือจากผลจริงบวก"
+      - "MAE ใช้กับงานทำนายค่าตัวเลข ไม่ใช่งานจำแนก"
+      - "ความแม่นรวมทุกกรณีที่ทายถูก"
+    solution: "accuracy ดูสัดส่วนที่ทายถูกทั้งหมด precision ดูจากที่ทายบวก recall ดูจากบวกจริง และ MAE เป็นค่าเฉลี่ยของขนาดคลาดเคลื่อนของการถดถอย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p008
+    topics: [computer.ai.model-evaluation]
+    difficulty: 2
+    type: mcq
+    multiple: true
+    stem: "ข้อใดเป็นสาเหตุที่ทำให้เกิดการเรียนมากเกินไป (overfitting) (เลือกทุกข้อที่ถูก)"
+    choices:
+      - { id: a, text: "แบบจำลองซับซ้อนมากเมื่อเทียบกับจำนวนข้อมูลฝึก", correct: true }
+      - { id: b, text: "ข้อมูลฝึกมีเสียงรบกวนมาก และแบบจำลองจำรายละเอียดนั้นไว้", correct: true }
+      - { id: c, text: "ใช้ข้อมูลตรวจสอบเลือกการตั้งค่า", feedback: "นี่เป็นวิธีที่ควรทำเพื่อช่วยลดปัญหา ไม่ใช่สาเหตุ" }
+      - { id: d, text: "เพิ่มข้อมูลฝึกที่มีคุณภาพ", feedback: "การเพิ่มข้อมูลคุณภาพดีช่วยลดปัญหานี้ ไม่ใช่สาเหตุ" }
+    hints:
+      - "ลองนึกว่าอะไรทำให้แบบจำลองจำข้อมูลฝึกมากเกินไป"
+      - "ความซับซ้อนที่มากเกินข้อมูลเป็นปัจจัยหนึ่ง"
+      - "เลือกทุกข้อที่บอกว่าแบบจำลองเรียนรายละเอียดที่ไม่ใช่รูปแบบทั่วไป"
+    solution: "แบบจำลองที่ซับซ้อนเกินข้อมูลและข้อมูลที่มีเสียงรบกวนทำให้แบบจำลองจำรายละเอียดที่ไม่ใช่รูปแบบทั่วไป ตัวเลือกอื่นเป็นวิธีแก้ไขไม่ใช่สาเหตุ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p009
+    topics: [computer.ai.model-evaluation]
+    difficulty: 3
+    type: numeric
+    stem: "ค่าจริง y ของสี่ครั้งคือ 20, 25, 30, 35 และค่าทำนาย ŷ คือ 22, 21, 33, 30 ค่าคลาดเคลื่อนสัมบูรณ์เฉลี่ย (MAE) เท่ากับเท่าใด"
+    answer: { value: 3.5, tolerance: 0.01, unit: "หน่วย" }
+    misconceptions:
+      - { match: 1, feedback: "คิดค่าเฉลี่ยของ y − ŷ โดยไม่ใส่ค่าสัมบูรณ์ ค่าบวกกับลบจึงหักล้างกัน" }
+    hints:
+      - "หาผลต่างของแต่ละคู่ แล้วใส่ค่าสัมบูรณ์"
+      - "รวมค่าสัมบูรณ์ของทั้งสี่ครั้ง"
+      - "นำผลรวมหารด้วย 4"
+    solution: "ค่าคลาดเคลื่อนสัมบูรณ์คือ 2, 4, 3, 5 รวมได้ 14 หารด้วย 4 ได้ MAE = 3.5 หน่วย"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p010
+    topics: [computer.ai.model-evaluation]
+    difficulty: 3
+    type: numeric
+    stem: "ตัวกรองตัวหนึ่งมี precision เท่ากับ 0.75 และ recall เท่ากับ 0.6 ค่า F1 เท่ากับเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 0.67, tolerance: 0.005 }
+    misconceptions:
+      - { match: 0.9, feedback: "คำนวณ 2PR แต่ลืมหารด้วย P + R" }
+    hints:
+      - "F1 = 2PR ÷ (P + R)"
+      - "คำนวณ 2 × 0.75 × 0.6 ก่อน"
+      - "หารด้วยผลรวม 0.75 + 0.6"
+    solution: "F1 = 2 × 0.75 × 0.6 ÷ (0.75 + 0.6) = 0.9 ÷ 1.35 ≈ 0.67"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p011
+    topics: [computer.ai.model-evaluation]
+    difficulty: 3
+    type: numeric
+    stem: "ชุดอีเมล 100 ฉบับมีเมลปกติ 95 ฉบับและสแปม 5 ฉบับ ตัวทำนายที่ทายว่า \"ปกติ\" ทุกฉบับ จะมีความแม่นเท่ากับกี่เปอร์เซ็นต์"
+    answer: { value: 95, tolerance: 0, unit: "%" }
+    misconceptions:
+      - { match: 5, feedback: "คิดว่าความแม่นเท่ากับสัดส่วนของสแปม ทั้งที่ตัวทำนายทายถูกเฉพาะเมลปกติ" }
+    hints:
+      - "ความแม่นคือจำนวนที่ทายถูกหารด้วยจำนวนทั้งหมด"
+      - "ตัวทำนายทายถูกทุกฉบับที่เป็นเมลปกติ"
+      - "นำจำนวนเมลปกติหารด้วย 100 แล้วคูณด้วย 100"
+    solution: "ตัวทำนายทายถูก 95 ฉบับจาก 100 ฉบับ จึงแม่น 95 เปอร์เซ็นต์ แม้จะไม่จับสแปมได้เลย ตัวเลขนี้จึงหลอกได้เมื่อข้อมูลไม่สมดุล"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p012
+    topics: [computer.ai.model-evaluation]
+    difficulty: 3
+    type: mcq
+    stem: "กราฟแสดงว่าความผิดพลาดบนข้อมูลฝึกต่ำมาก แต่ความผิดพลาดบนข้อมูลตรวจสอบสูงและเพิ่มขึ้น บ่งบอกเรื่องใด"
+    choices:
+      - { id: a, text: "แบบจำลองเรียนน้อยเกินไป (underfitting)", feedback: "underfitting ทำให้ผิดสูงทั้งข้อมูลฝึกและข้อมูลตรวจสอบ" }
+      - { id: b, text: "ข้อมูลตรวจสอบสะอาดกว่าข้อมูลฝึก", feedback: "ข้อมูลตรวจสอบไม่จำเป็นต้องสะอาดกว่า และไม่ใช่สาเหตุของรูปแบบนี้" }
+      - { id: c, text: "แบบจำลองเรียนมากเกินไป (overfitting) จำข้อมูลฝึกมากกว่าการจับรูปแบบทั่วไป", correct: true }
+      - { id: d, text: "แบบจำลองดีที่สุดแล้วและไม่ต้องปรับอะไรอีก", feedback: "ความผิดพลาดบนข้อมูลตรวจสอบที่เพิ่มขึ้นบอกว่ายังไม่ดี" }
+    hints:
+      - "เปรียบเทียบความผิดพลาดของสองชุดข้อมูล"
+      - "ถ้าผิดน้อยบนข้อมูลที่เคยเห็นแต่ผิดมากบนข้อมูลใหม่ แบบจำลองกำลังทำอะไรอยู่"
+      - "เลือกข้อที่บอกว่าแบบจำลองจำข้อมูลฝึก"
+    solution: "ความผิดพลาดต่ำบนข้อมูลฝึกแต่สูงบนข้อมูลตรวจสอบ คือลักษณะของการเรียนมากเกินไป แบบจำลองจำรายละเอียดของข้อมูลฝึกมากกว่ารูปแบบทั่วไป"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p013
+    topics: [computer.ai.model-evaluation]
+    difficulty: 4
+    type: numeric
+    stem: "อัตราความผิดพลาดบนข้อมูลตรวจสอบของ k-NN เมื่อ k = 1, 3, 5 และ 7 คือ 0.30, 0.22, 0.25 และ 0.35 ควรเลือก k เท่าใด"
+    answer: { value: 3, tolerance: 0 }
+    misconceptions:
+      - { match: 1, feedback: "k ที่เล็กที่สุดไม่ได้ดีที่สุดเสมอไป ต้องดูว่าความผิดพลาดบนข้อมูลตรวจสอบต่ำที่สุดที่ค่าใด" }
+    hints:
+      - "เลือกค่า k ที่ความผิดพลาดบนข้อมูลตรวจสอบต่ำที่สุด"
+      - "เปรียบเทียบตัวเลขทั้งสี่ค่าโดยไม่ดูข้อมูลทดสอบ"
+      - "ค่าต่ำสุดคือ 0.22"
+    solution: "ความผิดพลาดต่ำที่สุดบนข้อมูลตรวจสอบคือ 0.22 ที่ k = 3 จึงเลือก k = 3 และไม่ใช้ข้อมูลทดสอบในการเลือก"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p014
+    topics: [computer.ai.model-evaluation]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน `confusion_matrix(y_true, y_pred)` รับลิสต์ของผลจริงและผลทำนาย (ค่า 1 คือบวก ค่า 0 คือลบ) แล้วคืนดิกชันนารี `{\"TP\": ..., \"FP\": ..., \"FN\": ..., \"TN\": ...}`"
+    starter: |
+      def confusion_matrix(y_true, y_pred):
+          pass
+    tests: |
+      r = confusion_matrix([1, 1, 0, 0, 1, 0], [1, 0, 0, 1, 1, 0])
+      assert r == {"TP": 2, "FP": 1, "FN": 1, "TN": 2}, f"ได้ {r} ควรได้ TP=2, FP=1, FN=1, TN=2"
+      r2 = confusion_matrix([0, 0], [0, 0])
+      assert r2 == {"TP": 0, "FP": 0, "FN": 0, "TN": 2}, f"ทุกค่าเป็นลบและทายถูกต้องได้ TN=2 แต่ได้ {r2}"
+    reference: |
+      def confusion_matrix(y_true, y_pred):
+          result = {"TP": 0, "FP": 0, "FN": 0, "TN": 0}
+          for t, p in zip(y_true, y_pred):
+              if t == 1 and p == 1:
+                  result["TP"] += 1
+              elif t == 0 and p == 1:
+                  result["FP"] += 1
+              elif t == 1 and p == 0:
+                  result["FN"] += 1
+              else:
+                  result["TN"] += 1
+          return result
+    hints:
+      - "วนลูปคู่ของผลจริงและผลทำนายพร้อมกันด้วย zip"
+      - "ตรวจคู่ของค่าทีละคู่ว่าเป็น (1,1) (0,1) (1,0) หรือ (0,0)"
+      - "เริ่มทุกตัวนับที่ 0 แล้วเพิ่มค่าตามคู่ที่พบ"
+    solution: "เริ่มตัวนับทั้งสี่เป็น 0 วนคู่ของผลจริงและผลทำนาย แล้วเพิ่มตัวนับตามคู่ (1,1) เป็น TP (0,1) เป็น FP (1,0) เป็น FN และที่เหลือเป็น TN"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p015
+    topics: [computer.ai.model-evaluation]
+    difficulty: 4
+    type: code
+    stem: "เขียนฟังก์ชัน `mae(y_true, y_pred)` รับลิสต์ของค่าจริงและค่าทำนายเป็นตัวเลข แล้วคืนค่าคลาดเคลื่อนสัมบูรณ์เฉลี่ย (MAE) เป็นจำนวนทศนิยม"
+    starter: |
+      def mae(y_true, y_pred):
+          pass
+    tests: |
+      r = mae([10, 12, 15], [11, 15, 13])
+      assert abs(r - 2.0) < 1e-9, f"ควรได้ 2.0 แต่ได้ {r}"
+      r2 = mae([1, 2], [1, 2])
+      assert abs(r2 - 0.0) < 1e-9, f"ค่าทำนายตรงทุกค่าควรได้ 0 แต่ได้ {r2}"
+    reference: |
+      def mae(y_true, y_pred):
+          diffs = [abs(t - p) for t, p in zip(y_true, y_pred)]
+          return sum(diffs) / len(diffs)
+    hints:
+      - "หาผลต่างของแต่ละคู่แล้วใช้ abs ให้เป็นค่าบวก"
+      - "รวมค่าสัมบูรณ์ทั้งหมดก่อน"
+      - "หารด้วยจำนวนคู่ทั้งหมด"
+    solution: "คำนวณ |y − ŷ| ของทุกคู่ แล้วหาค่าเฉลี่ยด้วยการรวมและหารด้วยจำนวนคู่"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p016
+    topics: [computer.ai.model-evaluation]
+    difficulty: 5
+    type: code
+    stem: "เขียนฟังก์ชัน `precision_recall_f1(y_true, y_pred)` รับลิสต์ของผลจริงและผลทำนาย (1 คือบวก 0 คือลบ) แล้วคืนทูเพิล (precision, recall, f1) ถ้าตัวหารเป็นศูนย์ให้ใช้ 0.0 แทนค่านั้น"
+    starter: |
+      def precision_recall_f1(y_true, y_pred):
+          pass
+    tests: |
+      p, r, f = precision_recall_f1([1, 1, 0, 0, 1, 0], [1, 0, 0, 1, 1, 0])
+      assert abs(p - 2 / 3) < 1e-9, f"precision ควรเป็น 2/3 แต่ได้ {p}"
+      assert abs(r - 2 / 3) < 1e-9, f"recall ควรเป็น 2/3 แต่ได้ {r}"
+      assert abs(f - 2 / 3) < 1e-9, f"F1 ควรเป็น 2/3 แต่ได้ {f}"
+      z = precision_recall_f1([1, 1], [0, 0])
+      assert z == (0.0, 0.0, 0.0), f"ไม่มีการทายบวกเลย ควรได้ (0.0, 0.0, 0.0) แต่ได้ {z}"
+    reference: |
+      def precision_recall_f1(y_true, y_pred):
+          tp = sum(1 for t, p in zip(y_true, y_pred) if t == 1 and p == 1)
+          fp = sum(1 for t, p in zip(y_true, y_pred) if t == 0 and p == 1)
+          fn = sum(1 for t, p in zip(y_true, y_pred) if t == 1 and p == 0)
+          precision = tp / (tp + fp) if (tp + fp) else 0.0
+          recall = tp / (tp + fn) if (tp + fn) else 0.0
+          f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+          return precision, recall, f1
+    hints:
+      - "นับ TP, FP และ FN ก่อน"
+      - "precision หารด้วย TP + FP และ recall หารด้วย TP + FN ต้องป้องกันตัวหารเป็นศูนย์"
+      - "F1 = 2PR ÷ (P + R) และต้องป้องกันกรณี P + R เป็นศูนย์ด้วย"
+    solution: "นับ TP, FP, FN จากคู่ของผลจริงและผลทำนาย คำนวณ precision และ recall โดยให้ 0.0 เมื่อตัวหารเป็นศูนย์ แล้ว F1 = 2PR ÷ (P + R)"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p017
+    topics: [computer.ai.model-evaluation]
+    difficulty: 4
+    type: mcq
+    stem: "แบบจำลองแม่นโดยรวม 90 เปอร์เซ็นต์ แต่เมื่อแยกผลตามกลุ่มผู้ใช้ พบว่าความแม่นในกลุ่มที่เล็กที่สุดเหลือ 60 เปอร์เซ็นต์ ควรทำอย่างไรเป็นลำดับแรก"
+    choices:
+      - { id: a, text: "รายงานเฉพาะค่าเฉลี่ยรวมเพราะสูงพอแล้ว", feedback: "ค่าเฉลี่ยรวมซ่อนความต่างระหว่างกลุ่มไว้" }
+      - { id: b, text: "ตรวจว่ากลุ่มนี้มีตัวอย่างในข้อมูลฝึกน้อยหรือไม่ และวัดผลแยกกลุ่มทุกครั้งที่ปรับแบบจำลอง", correct: true }
+      - { id: c, text: "ลบกลุ่มนั้นออกจากการประเมินเพื่อให้ตัวเลขสวย", feedback: "การลบกลุ่มทำให้ผลประเมินไม่เป็นธรรมและซ่อนปัญหา" }
+      - { id: d, text: "เพิ่มความลึกของต้นไม้ให้มากที่สุด", feedback: "การเพิ่มความซับซ้อนอาจทำให้เรียนมากเกินไปและไม่ได้แก้ที่ข้อมูล" }
+    hints:
+      - "ดูว่าปัญหาอยู่ที่แบบจำลองหรือที่ข้อมูลที่ใช้ฝึก"
+      - "ค่าเฉลี่ยรวมไม่เห็นความต่างของกลุ่มเล็ก"
+      - "เลือกข้อที่ตรวจข้อมูลและวัดผลแยกกลุ่ม"
+    solution: "ความต่างของกลุ่มเล็กมักเกิดจากข้อมูลฝึกที่เป็นตัวแทนไม่พอ การตรวจข้อมูลและวัดผลแยกกลุ่มทำให้เห็นและแก้ปัญหาได้จริง ตัวเลือกอื่นซ่อนปัญหาหรือไม่ได้แก้ที่ต้นเหตุ"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
+
+  - id: computer.ai.model-evaluation.p018
+    topics: [computer.ai.model-evaluation]
+    difficulty: 5
+    type: numeric
+    stem: "ค่าคลาดเคลื่อน (y − ŷ) ของการทำนายสามครั้งคือ 2, −4 และ 6 ค่า MSE (ค่าเฉลี่ยของกำลังสองของคลาดเคลื่อน) เท่ากับเท่าใด (ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 18.67, tolerance: 0.01 }
+    misconceptions:
+      - { match: 4, feedback: "ได้ค่า MAE คือค่าเฉลี่ยของขนาดคลาดเคลื่อน ไม่ใช่ MSE ซึ่งยกกำลังสองก่อนหาค่าเฉลี่ย" }
+    hints:
+      - "ยกกำลังสองแต่ละค่าคลาดเคลื่อนก่อน"
+      - "รวมกำลังสองทั้งสามค่า"
+      - "หารผลรวมด้วย 3"
+    solution: "กำลังสองคือ 4, 16 และ 36 รวมได้ 56 หารด้วย 3 ได้ MSE ≈ 18.67"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
