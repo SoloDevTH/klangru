@@ -1,0 +1,427 @@
+problems:
+- id: engineering.control.feedback-control.p001
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 1
+  type: numeric
+  stem: 'ระบบลูปเปิดมีกระบวนการ $G(s)=\dfrac{6}{s+3}$ (ค่าสมมติ) จงหาค่า $G(0)$ (ตอบจำนวนเต็ม)'
+  answer:
+    value: 2
+    tolerance: 0
+  hints:
+  - แทน $s=0$ ลงในตัวส่วน จะได้ $0+3$
+  - ค่า $G(0)$ คืออัตราขยายสถานะคงตัวของกระบวนการ
+  misconceptions:
+  - match: 6
+    feedback: ลืมหารด้วยค่าในตัวส่วน จึงได้ตัวเศษ $6$ แทนที่จะเป็น $\frac{6}{3}$
+  solution: '$G(0)=\dfrac{6}{0+3}=\dfrac{6}{3}=2$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p002
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 1
+  type: mcq
+  stem: 'ข้อใดเป็นความแตกต่างหลักระหว่างการควบคุมแบบวงเปิดกับวงปิด'
+  choices:
+  - id: a
+    text: วงเปิดต้องมีเซนเซอร์เสมอ ส่วนวงปิดไม่ต้องมี
+    correct: false
+    feedback: วงเปิดไม่นำสัญญาณเอาต์พุตกลับมาใช้ จึงไม่จำเป็นต้องมีเซนเซอร์วัดเอาต์พุต
+  - id: b
+    text: วงปิดทำงานได้เฉพาะกับกระบวนการเชิงเส้นเท่านั้น
+    correct: false
+    feedback: การป้อนกลับไม่ได้จำกัดว่าระบบต้องเป็นเชิงเส้น
+  - id: c
+    text: วงปิดวัดเอาต์พุตแล้วนำมาเทียบกับค่าที่ต้องการเพื่อหาค่าคลาดเคลื่อน
+    correct: true
+  - id: d
+    text: วงเปิดปรับตัวเองเมื่อมีการรบกวน โดยไม่ต้องอาศัยสัญญาณวัด
+    correct: false
+    feedback: วงเปิดไม่รู้ว่าเอาต์พุตเปลี่ยนไปเท่าใด จึงปรับตามการรบกวนเองไม่ได้
+  hints:
+  - นึกถึงเตาอบที่เปิดด้วยกำลังไฟคงที่ เทียบกับเตาที่มีเทอร์โมมิเตอร์วัดอุณหภูมิ
+  - ตัวเลือกที่ถูกต้องเกี่ยวข้องกับค่าคลาดเคลื่อน
+  solution: วงปิดใช้ค่าคลาดเคลื่อน $e = r - y$ ที่คำนวณจากเอาต์พุตที่วัดได้ ส่วนวงเปิดไม่มีการเปรียบเทียบนี้
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p003
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 1
+  type: numeric
+  stem: 'ระบบวงปิดหนึ่งหน่วย ($H(s)=1$) ใช้ตัวควบคุมค่าคงที่ $C=1$ และกระบวนการ $G(s)=\dfrac{3}{s+1}$ จงหาค่า $T(0)$ ของฟังก์ชันถ่ายโอนวงปิด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.75
+    tolerance: 0.0001
+  hints:
+  - หา $G(0)$ ก่อน แล้วแทนลงใน $T = \dfrac{CG}{1+CG}$
+  - เมื่อ $C=1$ จะได้ $CG = G$
+  misconceptions:
+  - match: 3
+    feedback: ได้ค่า $G(0)$ แต่ลืมบวก $1$ ในตัวส่วนของ $T$ จึงได้ค่า $CG$ แทนอัตราส่วนที่ถูกต้อง
+  solution: '$G(0)=3$ จึง $T(0)=\dfrac{3}{1+3}=\dfrac{3}{4}=0.75$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p004
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 2
+  type: numeric
+  stem: 'ระบบวงปิดหนึ่งหน่วยมี $G(s)=\dfrac{2}{s+4}$ (ค่าสมมติ) และใช้ตัวควบคุม P ที่ $K_p=8$ จงหาค่าผิดพลาดสถานะคงตัวต่ออินพุตขั้นหนึ่งหน่วย จากสูตร $e_{ss}=\dfrac{1}{1+K_pG(0)}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.2
+    tolerance: 0.0001
+  hints:
+  - หา $G(0)=\dfrac{2}{4}$ ก่อน
+  - คำนวณ $K_pG(0)$ แล้วแทนลงในตัวหาร $1+K_pG(0)$
+  misconceptions:
+  - match: 0.1111
+    feedback: ใช้ $K_p$ แทน $K_pG(0)$ จึงได้ $\frac{1}{1+8}$ ซึ่งไม่ถูกต้อง
+  solution: '$G(0)=\dfrac{2}{4}=0.5$ จึง $K_pG(0)=4$ และ $e_{ss}=\dfrac{1}{1+4}=0.2$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p005
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 2
+  type: mcq
+  stem: 'ตัวควบคุม P ของกระบวนการอันดับหนึ่งทำให้ค่าผิดพลาดสถานะคงตัวไม่เป็นศูนย์ เมื่อเพิ่มค่าเกน $K_p$ อะไรจะเกิดขึ้น'
+  choices:
+  - id: a
+    text: ค่าผิดพลาดสถานะคงตัวเพิ่มขึ้น และระบบตอบสนองช้าลง
+    correct: false
+    feedback: เกนที่มากขึ้นทำให้ตัวหาร $1+K_pG(0)$ มากขึ้น จึงทำให้ค่าผิดพลาดลดลง ไม่ได้เพิ่มขึ้น
+  - id: b
+    text: ค่าผิดพลาดสถานะคงตัวลดลง แต่ระบบอาจแกว่งมากขึ้น
+    correct: true
+  - id: c
+    text: ค่าผิดพลาดสถานะคงตัวเป็นศูนย์ทันทีโดยไม่มีผลข้างเคียง
+    correct: false
+    feedback: เกนสูงทำให้ค่าผิดพลาดน้อยลงได้ แต่ไม่จำเป็นต้องเป็นศูนย์ และยังมีผลข้างเคียงอยู่
+  - id: d
+    text: ไม่มีผลต่อค่าผิดพลาดสถานะคงตัวเลย
+    correct: false
+    feedback: ค่า $e_{ss}=\dfrac{1}{1+K_pG(0)}$ ขึ้นกับ $K_p$ โดยตรง
+  hints:
+  - ดูสูตรค่าผิดพลาดสถานะคงตัวที่มีตัวหารเป็น $1+K_pG(0)$
+  - เกนสูงขึ้นมักทำให้ระบบตอบสนองเร็วขึ้น แต่ก็เสี่ยงต่อการแกว่ง
+  solution: เมื่อ $K_p$ เพิ่ม ตัวหาร $1+K_pG(0)$ เพิ่มขึ้น ทำให้ $e_{ss}$ ลดลง แต่การแกว่งอาจเพิ่มขึ้นเมื่อเกนสูงเกินไป
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p006
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 2
+  type: expression
+  stem: 'ระบบวงปิดหนึ่งหน่วยที่มี $C=1$ และ $G(s)=\dfrac{4}{s+3}$ จงเขียนฟังก์ชันถ่ายโอน $T(s)$ ของวงปิดในรูปอย่างง่าย'
+  prefix: 'T(s) ='
+  answer:
+    latex: '\frac{4}{s+7}'
+    variables:
+    - s
+  misconceptions:
+  - match: '\frac{4}{s+3}'
+    feedback: นั่นคือ $G(s)$ ของกระบวนการ ไม่ใช่ฟังก์ชันถ่ายโอนของวงปิด ต้องเพิ่ม $1$ ในตัวส่วนด้วย
+  hints:
+  - ใช้ $T = \dfrac{CG}{1+CG}$ โดย $C=1$ และ $H=1$
+  - รวม $1+\dfrac{4}{s+3}$ เป็นเศษส่วนเดียวก่อน
+  solution: '$T=\dfrac{4/(s+3)}{1+4/(s+3)}=\dfrac{4}{s+3+4}=\dfrac{4}{s+7}$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p007
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 2
+  type: numeric
+  stem: 'ระบบวงปิดหนึ่งหน่วยที่มี $C=1$ และ $G(s)=\dfrac{6}{s+2}$ (ค่าสมมติ) มีขั้วอยู่ที่ตำแหน่งใดบนแกนจำนวนจริง (ตอบจำนวนเต็ม)'
+  answer:
+    value: -8
+    tolerance: 0
+  hints:
+  - ขั้วคือรากของตัวส่วนของ $T(s)$
+  - รวม $1+G(s)$ เป็นเศษส่วนเดียว แล้วหาค่า $s$ ที่ทำให้ตัวเศษของผลรวมเป็นศูนย์
+  misconceptions:
+  - match: -2
+    feedback: ได้ขั้วของ $G(s)$ เอง แต่ขั้วของวงปิดเปลี่ยนไปเมื่อมีการป้อนกลับ
+  solution: '$T(s)=\dfrac{6/(s+2)}{1+6/(s+2)}=\dfrac{6}{s+8}$ จึงมีขั้วที่ $s=-8$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p008
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 3
+  type: numeric
+  stem: 'ถังน้ำในโรงงานแห่งหนึ่ง (ค่าสมมติ) จำลองเป็น $G(s)=\dfrac{2}{5s+1}$ ควบคุมด้วยตัวควบคุม P ที่ $K_p=4$ ในวงปิดหนึ่งหน่วย จงหาขั้วของวงปิด (ตอบทศนิยม 1 ตำแหน่ง)'
+  answer:
+    value: -1.8
+    tolerance: 0.0001
+  hints:
+  - เขียนตัวส่วนของวงปิดในรูป $\tau s + 1 + K K_p$ เมื่อ $K=2$ และ $\tau=5$
+  - หารด้วยค่าคงที่ของ $s$ เพื่อหาขั้ว
+  misconceptions:
+  - match: -1
+    feedback: ลืมคูณอัตราขยาย $K=2$ ของกระบวนการในลูป จึงได้ $-\dfrac{1+4}{5}$
+  solution: 'ลูปเปิด $CG=\dfrac{8}{5s+1}$ จึง $T=\dfrac{8}{5s+9}$ ขั้วอยู่ที่ $s=-\dfrac{9}{5}=-1.8$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p009
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 3
+  type: numeric
+  stem: 'ระบบวงปิดมีขั้วอยู่ที่ $s=-2.5$ จงหาค่าคงที่เวลาของวงปิด $\tau_{cl}=\dfrac{1}{|s|}$ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.4
+    tolerance: 0.0001
+  hints:
+  - ค่าคงที่เวลาคือส่วนกลับของขนาดของขั้ว
+  - คำนวณ $\dfrac{1}{2.5}$
+  misconceptions:
+  - match: 2.5
+    feedback: ได้ค่าขนาดของขั้วเอง แต่ค่าคงที่เวลาคือส่วนกลับของขนาดนั้น
+  solution: '$\tau_{cl}=\dfrac{1}{2.5}=0.4$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p010
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 3
+  type: mcq
+  stem: 'เมื่อเพิ่มพจน์อนุพันธ์ $K_d$ ให้ตัวควบคุม PID ผลที่เกิดขึ้นตรงกับข้อใดมากที่สุด'
+  choices:
+  - id: a
+    text: ลดค่าผิดพลาดสถานะคงตัวให้เป็นศูนย์
+    correct: false
+    feedback: การลดค่าผิดพลาดสถานะคงตัวเป็นหน้าที่หลักของพจน์อินทิกรัล
+  - id: b
+    text: เพิ่มความเร็วในการตอบสนองต่อค่าคลาดเคลื่อนคงที่
+    correct: false
+    feedback: พจน์อนุพันธ์ไม่ตอบสนองต่อค่าคลาดเคลื่อนคงที่ เพราะอนุพันธ์ของค่าคงที่เป็นศูนย์
+  - id: c
+    text: ทำให้ระบบเสถียรเสมอโดยไม่มีผลต่อการพุ่งเกิน
+    correct: false
+    feedback: พจน์อนุพันธ์ช่วยลดการพุ่งเกินได้ แต่ไม่ได้รับประกันความเสถียรในทุกกรณี
+  - id: d
+    text: ตอบสนองต่ออัตราการเปลี่ยนแปลงของค่าคลาดเคลื่อน ช่วยลดการพุ่งเกิน แต่ขยายสัญญาณรบกวน
+    correct: true
+  hints:
+  - นึกถึงอนุพันธ์ $\dfrac{de}{dt}$ ว่าวัดอะไร
+  - ลองคิดว่าสัญญาณที่เปลี่ยนแปลงเร็ว ๆ จากเซนเซอร์จะถูกขยายหรือไม่
+  solution: พจน์ $K_d\,\dfrac{de}{dt}$ วัดความเร็วการเปลี่ยนของค่าคลาดเคลื่อน จึงช่วยลดการพุ่งเกิน ขณะเดียวกันสัญญาณรบกวนที่เปลี่ยนเร็วจะถูกขยายด้วย
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p011
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 3
+  type: order
+  stem: 'เรียงขั้นตอนการปรับตั้ง PID ด้วยวิธีจุดวิกฤตของซีเกลอร์–นิโคลส์ตามลำดับที่ถูกต้อง (ทำกับระบบจำลองเท่านั้น)'
+  items:
+  - ตั้งตัวควบคุมให้เป็นแบบ P อย่างเดียว แล้วเพิ่มเกน $K_p$ ทีละน้อย
+  - เมื่อระบบเริ่มแกว่งต่อเนื่องด้วยแอมพลิจูดคงที่ จดค่าเกนนั้นเป็นเกนวิกฤต $K_u$
+  - วัดคาบของการแกว่ง $P_u$ จากข้อมูลการตอบสนองที่บันทึกไว้
+  - คำนวณ $K_p=0.6K_u$, $T_i=\dfrac{P_u}{2}$ และ $T_d=\dfrac{P_u}{8}$ แล้วตั้งค่าลงในตัวควบคุม PID
+  hints:
+  - ต้องทำให้ระบบแกว่งก่อนจึงจะวัดคาบได้
+  - การคำนวณค่า PID ทำเป็นขั้นสุดท้าย
+  solution: ต้องหาเกนวิกฤตและคาบก่อน จึงคำนวณค่า PID ได้ ลำดับคือ P อย่างเดียว เกนวิกฤต คาบ แล้วจึงคำนวณ
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p012
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 3
+  type: numeric
+  stem: 'กระบวนการหนึ่งจากการทดสอบขั้นแบบวงเปิด (ค่าสมมติ) ได้ $K=2$, $\theta=3$ และ $\tau=6$ ใช้วิธีเส้นโค้งการตอบสนองของซีเกลอร์–นิโคลส์ จงหาค่า $K_p$ ของตัวควบคุม PID (ตอบทศนิยม 2 ตำแหน่ง)'
+  answer:
+    value: 1.2
+    tolerance: 0.005
+  hints:
+  - ใช้สูตร $K_p = \dfrac{1.2\,\tau}{K\theta}$
+  - แทนค่า $\tau$ ในตัวเศษ และ $K\theta$ ในตัวส่วน
+  misconceptions:
+  - match: 1
+    feedback: ลืมตัวคูณ $1.2$ ในสูตร จึงได้ $\dfrac{\tau}{K\theta}=1$
+  solution: '$K_p=\dfrac{1.2\times 6}{2\times 3}=\dfrac{7.2}{6}=1.2$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p013
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 3
+  type: numeric
+  stem: 'กระบวนการที่มีเวลาหน่วง $\theta=3$ วินาที (ค่าสมมติ) ปรับตั้งด้วยวิธีเส้นโค้งการตอบสนองของซีเกลอร์–นิโคลส์ จงหาค่าเวลาปรับอินทิกรัล $T_i$ เป็นวินาที (ตอบจำนวนเต็ม)'
+  answer:
+    value: 6
+    tolerance: 0
+  hints:
+  - ใช้สูตร $T_i = 2\theta$
+  - ค่า $\theta$ คือเวลาหน่วงของกระบวนการ
+  misconceptions:
+  - match: 3
+    feedback: ใช้ $\theta$ โดยตรงโดยไม่คูณ $2$
+  solution: '$T_i=2\theta=2\times 3=6$ วินาที'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p014
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 4
+  type: numeric
+  stem: 'ระบบวงปิดอันดับสองมีฟังก์ชันถ่ายโอน $T(s)=\dfrac{9}{s^2+4s+9}$ จงหาร้อยละการพุ่งเกินของการตอบสนองต่อขั้นหนึ่งหน่วย (ตอบทศนิยม 2 ตำแหน่ง)'
+  answer:
+    value: 6.02
+    tolerance: 0.01
+  hints:
+  - เทียบกับ $s^2+2\zeta\omega_n s+\omega_n^2$ จะได้ $\omega_n=3$ และ $\zeta=\dfrac{2}{3}$
+  - ใช้ $M_p=100\,e^{-\pi\zeta/\sqrt{1-\zeta^2}}$ เป็นเปอร์เซ็นต์
+  misconceptions:
+  - match: 12.3145
+    feedback: ละเลยตัวหาร $\sqrt{1-\zeta^2}$ ในเลขชี้กำลัง
+  solution: '$\zeta=\dfrac{2}{3}$ จึง $M_p=100\,e^{-\pi(2/3)/\sqrt{5/9}}\approx 6.02\%$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p015
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 4
+  type: mcq
+  stem: 'พหุนาม $s^2-s+4$ เป็นสมการลักษณะเฉพาะของระบบวงปิด ระบบนี้เสถียรหรือไม่ และเพราะเหตุใด'
+  choices:
+  - id: a
+    text: ไม่เสถียร เพราะขั้วมีส่วนจริงเป็นบวก $\frac{1}{2}$
+    correct: true
+  - id: b
+    text: เสถียร เพราะค่าคงที่ $4$ เป็นบวก
+    correct: false
+    feedback: เครื่องหมายของค่าคงที่ไม่เพียงพอ ต้องดูส่วนจริงของขั้วทั้งหมด
+  - id: c
+    text: เสถียร เพราะขั้วเป็นจำนวนเชิงซ้อน
+    correct: false
+    feedback: ขั้วเชิงซ้อนไม่ได้รับประกันความเสถียร ต้องดูว่าส่วนจริงเป็นลบหรือไม่
+  - id: d
+    text: ตัดสินไม่ได้ เพราะขั้วไม่เป็นจำนวนจริง
+    correct: false
+    feedback: ระบบที่มีขั้วเชิงซ้อนก็ตรวจความเสถียรได้จากส่วนจริงของขั้ว
+  hints:
+  - หาขั้วด้วยสูตรกำลังสอง $s = \dfrac{1 \pm \sqrt{1-16}}{2}$
+  - ดูเครื่องหมายของส่วนจริงของขั้วทั้งสองตัว
+  solution: ขั้วคือ $s=\dfrac{1\pm i\sqrt{15}}{2}$ มีส่วนจริง $\dfrac{1}{2}>0$ จึงไม่เสถียร
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p016
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 4
+  type: numeric
+  stem: 'เครื่องทำความร้อนขนาดเล็กในห้องทดลอง (ค่าสมมติ) ทดสอบด้วยวิธีจุดวิกฤตได้เกนวิกฤต $K_u=10$ และคาบ $P_u=4$ จงหาค่า $K_i$ ของตัวควบคุม PID ในรูป $K_p+\dfrac{K_i}{s}+K_d s$ (ตอบจำนวนเต็ม) ค่านี้ใช้สำหรับการคำนวณเท่านั้น ห้ามนำไปตั้งค่าอุปกรณ์จริง'
+  answer:
+    value: 3
+    tolerance: 0
+  hints:
+  - คำนวณ $K_p=0.6K_u$ ก่อน
+  - ใช้ $T_i = \dfrac{P_u}{2}$ แล้วคำนวณ $K_i = \dfrac{K_p}{T_i}$
+  misconceptions:
+  - match: 6
+    feedback: ได้ค่า $K_p$ แต่ $K_i$ ต้องหารด้วย $T_i$
+  solution: '$K_p=0.6\times 10=6$, $T_i=\dfrac{4}{2}=2$ และ $K_i=\dfrac{K_p}{T_i}=\dfrac{6}{2}=3$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p017
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 4
+  type: mcq
+  stem: 'เตาอบไฟฟ้าขนาดเล็กในโรงงานขนม (ค่าสมมติ) ควบคุมด้วยวิธีเปิด–ปิดโดยไม่มีช่วงห่าง ข้อใดอธิบายผลที่มักเกิดขึ้น'
+  choices:
+  - id: a
+    text: อุณหภูมิจะคงที่ตรงค่าที่ตั้งทุกครั้งโดยไม่มีการเปลี่ยนแปลง
+    correct: false
+    feedback: การเปิด–ปิดทำให้ค่าวัดแกว่งรอบจุดตั้งเป็นปกติ
+  - id: b
+    text: ระบบจะเข้าที่ทันทีโดยไม่มีการพุ่งเกินและไม่มีค่าคลาดเคลื่อน
+    correct: false
+    feedback: วิธีเปิด–ปิดไม่ได้ปรับกำลังเป็นสัดส่วน จึงไม่ได้ทำให้ระบบเข้าที่ราบเรียบ
+  - id: c
+    text: ค่าวัดแกว่งรอบจุดที่ตั้งไว้ และสวิตช์อาจเปิดปิดถี่เมื่อค่าวัดอยู่ใกล้จุดตั้ง
+    correct: true
+  - id: d
+    text: ตัวควบคุมจะปรับกำลังไฟให้เป็นค่าสัดส่วนเล็กน้อย จึงไม่มีการสวิตช์
+    correct: false
+    feedback: การเปิด–ปิดสวิตช์กำลังเต็มหรือปิดสนิท ไม่ได้ปรับกำลังเป็นสัดส่วน
+  hints:
+  - นึกถึงสัญญาณควบคุมที่มีเพียงสองสถานะคือเปิดกับปิด
+  - ดูว่าค่าวัดจะอยู่ใกล้จุดตั้งเมื่อใด
+  solution: การเปิด–ปิดไม่มีการปรับกำลังเป็นสัดส่วน ค่าวัดจึงแกว่งรอบจุดตั้ง และเมื่อไม่มีช่วงห่าง สวิตช์จะเปลี่ยนสถานะถี่เมื่อค่าวัดอยู่ใกล้จุดตั้ง
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p018
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 4
+  type: text
+  stem: 'ตัวควบคุมที่มีพจน์สัดส่วน อินทิกรัล และอนุพันธ์ครบทั้งสามพจน์ เรียกย่อว่าอะไร'
+  accepted:
+  - PID
+  - พีไอดี
+  hints:
+  - ชื่อย่อมาจากอักษรตัวแรกของคำภาษาอังกฤษสามคำ
+  - ชื่อเต็มขึ้นต้นด้วย Proportional
+  solution: PID มาจาก Proportional, Integral และ Derivative
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p019
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 5
+  type: numeric
+  stem: 'ระบบวงปิดหนึ่งหน่วยมี $G(s)=\dfrac{1}{s(s+1)(s+2)}$ ใช้ตัวควบคุม P เพียงอย่างเดียว จงหาค่าเกนวิกฤต $K_c$ ที่ทำให้ระบบเริ่มแกว่งต่อเนื่อง (ตอบจำนวนเต็ม)'
+  answer:
+    value: 6
+    tolerance: 0
+  hints:
+  - สมการลักษณะเฉพาะคือ $s(s+1)(s+2)+K_c=0$ ขยายแล้วได้พหุนามกำลังสาม
+  - ใช้เกณฑ์ราวธ์สำหรับพหุนามกำลังสาม ระบบเสถียรเมื่อ $a_2a_1>a_0$
+  misconceptions:
+  - match: 2
+    feedback: ใช้ค่าสัมประสิทธิ์ของ $s$ แทนค่า $K_c$ โดยไม่ได้เทียบด้วยเกณฑ์
+  solution: '$s^3+3s^2+2s+K_c=0$ เกณฑ์ราวธ์ให้ $3\cdot 2>K_c$ จึงได้ $K_c=6$ ที่จุดวิกฤต'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p020
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 5
+  type: numeric
+  stem: 'ระบบวงปิดหนึ่งหน่วยมี $G(s)=\dfrac{2}{s^2+s}$ ใช้ตัวควบคุม $C(s)=K_p+K_d s$ โดย $K_p=3$ และ $K_d=1$ (ค่าสมมติ) จงหาอัตราส่วนการหน่วง $\zeta$ ของวงปิด (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.6124
+    tolerance: 0.0001
+  hints:
+  - เขียน $1+CG=0$ แล้วคูณตัวส่วน $s(s+1)$ เข้าไป
+  - เทียบพหุนามที่ได้กับ $s^2+2\zeta\omega_n s+\omega_n^2$
+  misconceptions:
+  - match: 0.2041
+    feedback: ลืมนับพจน์ $2K_d s$ จึงได้สัมประสิทธิ์ของ $s$ เป็น $1$ แทน $3$
+  solution: '$s^2+s+2K_p+2K_d s=s^2+3s+6$ จึง $\omega_n=\sqrt6$ และ $2\zeta\omega_n=3$ ได้ $\zeta=\dfrac{3}{2\sqrt6}\approx 0.6124$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true
+- id: engineering.control.feedback-control.p021
+  topics:
+  - engineering.control.feedback-control
+  difficulty: 5
+  type: numeric
+  stem: 'ถังน้ำในโรงงานปทุมธานี (ค่าสมมติ) จำลองเป็น $G(s)=\dfrac{2}{4s+1}$ ใช้ตัวควบคุม PI ที่ $K_p=1$ และ $K_i=8$ ในวงปิดหนึ่งหน่วย จงหาอัตราส่วนการหน่วง $\zeta$ ของระบบ (ตอบทศนิยม 4 ตำแหน่ง)'
+  answer:
+    value: 0.1875
+    tolerance: 0.0001
+  hints:
+  - เขียน $C(s)=K_p+\dfrac{K_i}{s}$ แล้วแทนลงในสมการ $1+CG=0$ จะได้พหุนามกำลังสอง
+  - หารด้วยสัมประสิทธิ์ของ $s^2$ แล้วเทียบสัมประสิทธิ์ของ $s$ กับ $2\zeta\omega_n$
+  misconceptions:
+  - match: 0.75
+    feedback: ได้ $2\zeta\omega_n$ แต่ลืมหารด้วย $2\omega_n$ จึงได้ค่าของ $2\zeta\omega_n$ แทน $\zeta$
+  solution: '$4s^2+3s+16=0$ หารด้วย $4$ ได้ $s^2+0.75s+4=0$ จึง $\omega_n=2$ และ $2\zeta\omega_n=0.75$ ได้ $\zeta=0.1875$'
+  license: CC-BY-SA-4.0
+  ai_assisted: true

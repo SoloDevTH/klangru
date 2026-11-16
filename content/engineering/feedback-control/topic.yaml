@@ -1,0 +1,100 @@
+id: engineering.control.feedback-control
+subject: engineering
+title:
+  th: ระบบควบคุมป้อนกลับและตัวควบคุม PID
+  en: Feedback control systems and PID controllers
+summary: ระบบวงเปิดกับวงปิด แผนภาพบล็อกและฟังก์ชันถ่ายโอนวงปิด กระบวนการอันดับหนึ่งมีเวลาหน่วง ตัวควบคุม P PI PID ความเสถียรจากขั้ว และการปรับตั้งซีเกลอร์–นิโคลส์ (ค่าสมมติ)
+difficulty: 9.5
+minutes: 40
+prerequisites:
+- math.de.transfer-functions
+encompasses:
+- id: math.de.transfer-functions
+  weight: 0.3
+curriculum_tags: []
+lessons:
+- type: figure
+  src: block-diagram.svg
+  alt: แผนภาพบล็อกของวงปิด สัญญาณอ้างอิง r ลบด้วยสัญญาณจากเซนเซอร์ H(s) ได้ค่าคลาดเคลื่อน e ส่งเข้าตัวควบคุม C(s) เป็นสัญญาณ u แล้วเข้ากระบวนการ G(s) ได้เอาต์พุต y ซึ่งถูกวัดกลับมาเป็นวงป้อนกลับ
+  caption: โครงสร้างของวงปิด สัญญาณเอาต์พุตถูกนำกลับมาเปรียบเทียบกับค่าที่ต้องการทุกครั้ง
+- type: explanation
+  file: lesson.md
+- type: check
+  problem: engineering.control.feedback-control.p002
+  prompt: ลองนึกถึงเตาอบที่มีและไม่มีเทอร์โมมิเตอร์ก่อนอ่านต่อ
+- type: worked-example
+  title: ตัวควบคุม P กับกระบวนการอันดับหนึ่ง
+  problem: จงหาขั้วของวงปิดและค่าผิดพลาดสถานะคงตัวเมื่อ $G(s)=\dfrac{5}{4s+1}$ และ $K_p=4$ ในวงปิดหนึ่งหน่วย (ค่าสมมติ)
+  steps:
+  - text: เกนลูปคือ $CG=\dfrac{4\cdot 5}{4s+1}=\dfrac{20}{4s+1}$
+    why: ตัวควบคุม P คูณเข้ากับกระบวนการโดยตรง
+  - text: ฟังก์ชันถ่ายโอนวงปิด $T=\dfrac{20/(4s+1)}{1+20/(4s+1)}=\dfrac{20}{4s+21}$
+    why: คูณตัวเศษและตัวส่วนด้วย $4s+1$ ก่อนรวมกัน
+  - text: ขั้วอยู่ที่ $s=-\dfrac{21}{4}=-5.25$
+    why: เป็นรากของตัวส่วนที่ทำให้ $4s+21=0$
+  - text: ค่าผิดพลาดสถานะคงตัว $e_{ss}=\dfrac{1}{1+CG(0)}=\dfrac{1}{1+20}=\dfrac{1}{21}$
+    why: ค่า $CG$ ที่ $s=0$ เป็น $20$ จึงแทนลงในสูตรได้
+  answer: ขั้วอยู่ที่ $-5.25$ ระบบเสถียรและไม่แกว่งเพราะมีขั้วเดียวที่เป็นจำนวนจริงลบ ค่าผิดพลาดสถานะคงตัวคือ $\dfrac{1}{21}$
+- type: check
+  problem: engineering.control.feedback-control.p005
+  prompt: ลองดูว่า $K_p$ อยู่ในตัวหารของสูตรค่าผิดพลาดสถานะคงตัวหรือไม่
+- type: figure
+  src: step-response.svg
+  alt: กราฟผลตอบสนองต่อขั้นของระบบอันดับสองที่อัตราส่วนการหน่วง 0.3 และความถี่ธรรมชาติ 2 เส้นโค้งพุ่งขึ้นถึงยอดราว 1.37 ที่เวลาประมาณ 1.6 แล้วแกว่งลดลงจนอยู่ในช่วงร้อยละ 2 ของค่าที่ต้องการ 1 หลังเวลาประมาณ 6 หน่วย
+  caption: ผลตอบสนองต่อขั้นที่มีการพุ่งเกินและการแกว่งลดลงจนเข้าที่
+- type: worked-example
+  title: ปรับตั้ง PID ด้วยวิธีเส้นโค้งการตอบสนอง
+  problem: กระบวนการมี $K=5$, $\theta=2$ และ $\tau=8$ (ค่าสมมติ) จงหาค่า $K_p$, $T_i$ และ $T_d$ ของตัวควบคุม PID ตามวิธีซีเกลอร์–นิโคลส์
+  steps:
+  - text: $K_p=\dfrac{1.2\tau}{K\theta}=\dfrac{1.2\times 8}{5\times 2}=0.96$
+    why: แทนค่า $\tau$ ในตัวเศษ และ $K\theta$ ในตัวส่วนของสูตร
+  - text: $T_i=2\theta=4$
+    why: เวลาปรับอินทิกรัลเป็นสองเท่าของเวลาหน่วง
+  - text: $T_d=0.5\theta=1$
+    why: เวลาปรับอนุพันธ์เป็นครึ่งหนึ่งของเวลาหน่วง
+  - text: แปลงเป็นเกนแบบขนาน $K_i=\dfrac{K_p}{T_i}=0.24$ และ $K_d=K_pT_d=0.96$
+    why: พจน์อินทิกรัลและอนุพันธ์ในรูปขนานต้องคูณหรือหารด้วยเวลาปรับ
+  answer: ได้ $K_p=0.96$ $T_i=4$ และ $T_d=1$ ซึ่งเป็นจุดเริ่มต้นจากค่าสมมติเท่านั้น ต้องทดสอบและปรับต่อ
+glossary:
+- term: ป้อนกลับ
+  definition: การนำสัญญาณเอาต์พุตที่วัดได้กลับมาเปรียบเทียบกับค่าที่ต้องการเพื่อปรับอินพุตของระบบ
+- term: ค่าคลาดเคลื่อน
+  definition: ผลต่างระหว่างค่าที่ต้องการกับค่าที่วัดได้ มักเขียนเป็น $e = r - y$
+- term: ขั้วของวงปิด
+  definition: รากของสมการลักษณะเฉพาะ $1 + C(s)G(s)H(s) = 0$ ซึ่งกำหนดความเสถียรและลักษณะการตอบสนองของวงปิด
+- term: ค่าผิดพลาดสถานะคงตัว
+  definition: ค่าคลาดเคลื่อนเมื่อเวลาผ่านไปนานจนระบบเข้าที่แล้ว
+- term: PID
+  definition: ตัวควบคุมที่รวมพจน์สัดส่วน อินทิกรัล และอนุพันธ์ เขียนเป็น $K_p + K_i/s + K_d s$
+flashcards:
+- front: ค่าคลาดเคลื่อนของวงปิดคืออะไร
+  back: $e = r - y$ คือผลต่างระหว่างค่าที่ต้องการกับค่าที่วัดได้
+- front: ฟังก์ชันถ่ายโอนวงปิดเมื่อ $H=1$
+  back: $T = \frac{CG}{1+CG}$
+- front: พจน์ใดของ PID ทำให้ค่าผิดพลาดสถานะคงตัวเป็นศูนย์
+  back: พจน์อินทิกรัล $K_i/s$
+- front: วิธีเส้นโค้งการตอบสนองให้ $K_p$ เท่าใด
+  back: $K_p = \dfrac{1.2\tau}{K\theta}$
+- front: วิธีจุดวิกฤตให้ $T_i$ เท่าใด
+  back: $T_i = P_u/2$
+references:
+- title: Control theory
+  url: https://en.wikipedia.org/wiki/Control_theory
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: PID controller
+  url: https://en.wikipedia.org/wiki/PID_controller
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+- title: Ziegler–Nichols method
+  url: https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method
+  source: wikipedia-en
+  lang: en
+  license: CC-BY-SA-4.0
+status: draft
+license: CC-BY-SA-4.0
+authors:
+- ทีมคลังรู้
+ai_assisted: true
