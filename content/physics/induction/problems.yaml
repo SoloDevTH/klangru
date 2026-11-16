@@ -101,15 +101,15 @@ problems:
     topics: [physics.magnetism.induction]
     difficulty: 3
     type: numeric
-    stem: "โซเลนอยด์ยาว $25\\ \\mathrm{cm}$ มี $500$ รอบ พื้นที่หน้าตัด $4\\ \\mathrm{cm^2}$ มีความเหนี่ยวนำตนเองกี่มิลลิเฮนรี ($\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{T\\cdot m/A}$ ทศนิยม 3 ตำแหน่ง)"
-    answer: { value: 0.503, tolerance: 0.005, unit: mH }
+    stem: "โซเลนอยด์ยาว $25\\ \\mathrm{cm}$ มี $400$ รอบ พื้นที่หน้าตัด $5\\ \\mathrm{cm^2}$ มีความเหนี่ยวนำตนเองกี่มิลลิเฮนรี ($\\mu_0 = 4\\pi \\times 10^{-7}\\ \\mathrm{T\\cdot m/A}$ ทศนิยม 3 ตำแหน่ง)"
+    answer: { value: 0.402, tolerance: 0.005, unit: mH }
     misconceptions:
       - { match: 0.001, feedback: "ใช้ $N$ แทน $N^2$ ความเหนี่ยวนำแปรผันกับกำลังสองของจำนวนรอบ" }
-      - { match: 5026.5, feedback: "ใช้พื้นที่ $4$ เป็นตารางเมตร ต้องแปลง $4\\ \\mathrm{cm^2} = 4 \\times 10^{-4}\\ \\mathrm{m^2}$" }
+      - { match: 4021.2, feedback: "ใช้พื้นที่ $5$ เป็นตารางเมตร ต้องแปลง $5\\ \\mathrm{cm^2} = 5 \\times 10^{-4}\\ \\mathrm{m^2}$" }
     hints:
       - "$L = \\mu_0 N^2A/\\ell$"
-      - "$A = 4 \\times 10^{-4}\\ \\mathrm{m^2}$, $\\ell = 0.25\\ \\mathrm{m}$"
-    solution: "$L = \\dfrac{4\\pi \\times 10^{-7} \\times 500^2 \\times 4 \\times 10^{-4}}{0.25} = 5.03 \\times 10^{-4}\\ \\mathrm{H} = 0.503\\ \\mathrm{mH}$"
+      - "$A = 5 \\times 10^{-4}\\ \\mathrm{m^2}$, $\\ell = 0.25\\ \\mathrm{m}$"
+    solution: "$L = \\dfrac{4\\pi \\times 10^{-7} \\times 400^2 \\times 5 \\times 10^{-4}}{0.25} = 4.02 \\times 10^{-4}\\ \\mathrm{H} = 0.402\\ \\mathrm{mH}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -198,15 +198,15 @@ problems:
     topics: [physics.magnetism.induction]
     difficulty: 5
     type: numeric
-    stem: "โซเลนอยด์ยาวมีจำนวนรอบต่อความยาว $1000\\ \\mathrm{รอบ/m}$ ภายในมีขดลวดเล็ก $50$ รอบ พื้นที่ $2\\ \\mathrm{cm^2}$ วางแกนร่วมกัน ถ้ากระแสในโซเลนอยด์เพิ่มด้วยอัตรา $200\\ \\mathrm{A/s}$ อีเอ็มเอฟเหนี่ยวนำในขดลวดเล็กเป็นกี่มิลลิโวลต์ ($\\mu_0 = 4\\pi \\times 10^{-7}$ ทศนิยม 2 ตำแหน่ง)"
-    answer: { value: 2.51, tolerance: 0.03, unit: mV }
+    stem: "โซเลนอยด์ยาวมีจำนวนรอบต่อความยาว $1000\\ \\mathrm{รอบ/m}$ ภายในมีขดลวดเล็ก $50$ รอบ พื้นที่ $2\\ \\mathrm{cm^2}$ วางแกนร่วมกัน ถ้ากระแสในโซเลนอยด์เพิ่มด้วยอัตรา $300\\ \\mathrm{A/s}$ อีเอ็มเอฟเหนี่ยวนำในขดลวดเล็กเป็นกี่มิลลิโวลต์ ($\\mu_0 = 4\\pi \\times 10^{-7}$ ทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 3.77, tolerance: 0.03, unit: mV }
     misconceptions:
-      - { match: 0.05, feedback: "ลืมคูณจำนวนรอบของขดลวดเล็ก $N_2 = 50$" }
-      - { match: 25.13, feedback: "แปลงพื้นที่ผิด $2\\ \\mathrm{cm^2} = 2 \\times 10^{-4}\\ \\mathrm{m^2}$ ไม่ใช่ $2 \\times 10^{-3}$" }
+      - { match: 0.075, feedback: "ลืมคูณจำนวนรอบของขดลวดเล็ก $N_2 = 50$" }
+      - { match: 37.7, feedback: "แปลงพื้นที่ผิด $2\\ \\mathrm{cm^2} = 2 \\times 10^{-4}\\ \\mathrm{m^2}$ ไม่ใช่ $2 \\times 10^{-3}$" }
     hints:
       - "สนามในโซเลนอยด์ $B = \\mu_0 n I_1$ ฟลักซ์ผ่านขดเล็ก $N_2BA_2$"
       - "$M = \\mu_0 n N_2 A_2$ และ $\\varepsilon = M\\,dI_1/dt$"
-    solution: "$M = 4\\pi \\times 10^{-7} \\times 1000 \\times 50 \\times 2 \\times 10^{-4} = 1.257 \\times 10^{-5}\\ \\mathrm{H}$ $\\varepsilon = 1.257 \\times 10^{-5} \\times 200 = 2.51 \\times 10^{-3}\\ \\mathrm{V} = 2.51\\ \\mathrm{mV}$"
+    solution: "$M = 4\\pi \\times 10^{-7} \\times 1000 \\times 50 \\times 2 \\times 10^{-4} = 1.257 \\times 10^{-5}\\ \\mathrm{H}$ $\\varepsilon = 1.257 \\times 10^{-5} \\times 300 = 3.77 \\times 10^{-3}\\ \\mathrm{V} = 3.77\\ \\mathrm{mV}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 

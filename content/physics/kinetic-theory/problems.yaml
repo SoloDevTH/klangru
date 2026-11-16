@@ -37,14 +37,14 @@ problems:
     topics: [physics.thermal.kinetic-theory]
     difficulty: 2
     type: numeric
-    stem: "อุดปลายกระบอกฉีดยาที่มีอากาศ $60\\ \\mathrm{mL}$ ความดัน $100\\ \\mathrm{kPa}$ แล้วดันลูกสูบช้า ๆ จนอากาศเหลือ $20\\ \\mathrm{mL}$ โดยอุณหภูมิคงตัว ความดันของอากาศเป็นกี่กิโลพาสคัล"
-    answer: { value: 300, tolerance: 1, unit: kPa }
+    stem: "อุดปลายกระบอกฉีดยาที่มีอากาศ $50\\ \\mathrm{mL}$ ความดัน $100\\ \\mathrm{kPa}$ แล้วดันลูกสูบช้า ๆ จนอากาศเหลือ $20\\ \\mathrm{mL}$ โดยอุณหภูมิคงตัว ความดันของอากาศเป็นกี่กิโลพาสคัล"
+    answer: { value: 250, tolerance: 1, unit: kPa }
     misconceptions:
-      - { match: 33.3, feedback: "ปริมาตรลดลง ความดันต้องเพิ่มขึ้น ตามกฎของบอยล์ $P_1V_1 = P_2V_2$" }
+      - { match: 40, feedback: "ปริมาตรลดลง ความดันต้องเพิ่มขึ้น ตามกฎของบอยล์ $P_1V_1 = P_2V_2$" }
     hints:
       - "อุณหภูมิคงตัว ใช้กฎของบอยล์"
       - "$P_2 = P_1\\dfrac{V_1}{V_2}$"
-    solution: "$P_2 = 100 \\times \\dfrac{60}{20} = 300\\ \\mathrm{kPa}$ ปริมาตรเหลือ $\\tfrac13$ ความดันจึงเพิ่มเป็น 3 เท่า"
+    solution: "$P_2 = 100 \\times \\dfrac{50}{20} = 250\\ \\mathrm{kPa}$ ปริมาตรเหลือ $\\tfrac25$ ความดันจึงเพิ่มเป็น 2.5 เท่า"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -83,15 +83,15 @@ problems:
     topics: [physics.thermal.kinetic-theory]
     difficulty: 3
     type: numeric
-    stem: "จงหาอัตราเร็วอาร์เอ็มเอสของโมเลกุลไนโตรเจน ($M = 28\\ \\mathrm{g/mol}$) ที่ $300\\ \\mathrm{K}$ ในหน่วยเมตรต่อวินาที (ใช้ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
-    answer: { value: 517, tolerance: 5, unit: m/s }
+    stem: "จงหาอัตราเร็วอาร์เอ็มเอสของโมเลกุลออกซิเจน ($M = 32\\ \\mathrm{g/mol}$) ที่ $350\\ \\mathrm{K}$ ในหน่วยเมตรต่อวินาที (ใช้ $R = 8.31\\ \\mathrm{J/(mol\\,K)}$)"
+    answer: { value: 522, tolerance: 5, unit: m/s }
     misconceptions:
-      - { match: 16.3, feedback: "ใช้มวลโมเลกุลเป็นกรัมต่อโมล ต้องแปลงเป็น $0.028\\ \\mathrm{kg/mol}$" }
-      - { match: 298, feedback: "ลืมเลข 3 ในสูตร $v_{\\text{rms}} = \\sqrt{3RT/M}$" }
+      - { match: 16.5, feedback: "ใช้มวลโมเลกุลเป็นกรัมต่อโมล ต้องแปลงเป็น $0.032\\ \\mathrm{kg/mol}$" }
+      - { match: 301.5, feedback: "ลืมเลข 3 ในสูตร $v_{\\text{rms}} = \\sqrt{3RT/M}$" }
     hints:
       - "$v_{\\text{rms}} = \\sqrt{\\dfrac{3RT}{M}}$"
       - "$M$ ต้องเป็นกิโลกรัมต่อโมล"
-    solution: "$v_{\\text{rms}} = \\sqrt{\\dfrac{3(8.31)(300)}{0.028}} = \\sqrt{2.67 \\times 10^{5}} \\approx 517\\ \\mathrm{m/s}$"
+    solution: "$v_{\\text{rms}} = \\sqrt{\\dfrac{3(8.31)(350)}{0.032}} = \\sqrt{2.72 \\times 10^{5}} \\approx 522\\ \\mathrm{m/s}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
@@ -99,15 +99,15 @@ problems:
     topics: [physics.thermal.kinetic-theory]
     difficulty: 3
     type: numeric
-    stem: "พลังงานจลน์เฉลี่ยของโมเลกุลแก๊สที่ $27\\,^\\circ\\mathrm{C}$ เป็นกี่เท่าของ $10^{-21}\\ \\mathrm{J}$ ($k_B = 1.38 \\times 10^{-23}\\ \\mathrm{J/K}$ ตอบทศนิยม 2 ตำแหน่ง)"
-    answer: { value: 6.21, tolerance: 0.06 }
+    stem: "พลังงานจลน์เฉลี่ยของโมเลกุลแก๊สที่ $127\\,^\\circ\\mathrm{C}$ เป็นกี่เท่าของ $10^{-21}\\ \\mathrm{J}$ ($k_B = 1.38 \\times 10^{-23}\\ \\mathrm{J/K}$ ตอบทศนิยม 2 ตำแหน่ง)"
+    answer: { value: 8.28, tolerance: 0.06 }
     misconceptions:
-      - { match: 0.559, feedback: "ใช้อุณหภูมิ 27 ต้องแปลงเป็น 300 K" }
-      - { match: 4.14, feedback: "ลืม $\\tfrac32$ ในสูตร $\\overline{E_k} = \\tfrac32 k_BT$" }
+      - { match: 2.63, feedback: "ใช้อุณหภูมิ 127 โดยไม่แปลงเป็นเคลวิน ต้องใช้ $127 + 273 = 400\\ \\mathrm{K}$" }
+      - { match: 5.52, feedback: "ลืม $\\tfrac32$ ในสูตร $\\overline{E_k} = \\tfrac32 k_BT$" }
     hints:
       - "$\\overline{E_k} = \\tfrac32 k_BT$"
-      - "$T = 27 + 273$"
-    solution: "$\\overline{E_k} = \\tfrac32 (1.38 \\times 10^{-23})(300) = 6.21 \\times 10^{-21}\\ \\mathrm{J}$"
+      - "$T = 127 + 273$"
+    solution: "$\\overline{E_k} = \\tfrac32 (1.38 \\times 10^{-23})(400) = 8.28 \\times 10^{-21}\\ \\mathrm{J}$"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
