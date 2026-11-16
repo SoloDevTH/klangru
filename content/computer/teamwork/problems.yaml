@@ -285,3 +285,29 @@ problems:
     solution: "90 ÷ 15 = 6 ช่วง สลับที่นาทีที่ 15, 30, 45, 60 และ 75 รวม 5 ครั้ง แต่ละคนได้เป็นคนขับ 45 นาที"
     license: CC-BY-SA-4.0
     ai_assisted: true
+
+  - id: computer.programming.teamwork.p017
+    topics: [computer.programming.teamwork]
+    difficulty: 3
+    type: code
+    stem: "เขียนฟังก์ชัน `average(scores)` ที่รับลิสต์คะแนนแล้วคืนค่าเฉลี่ย ถ้าลิสต์ว่างต้องคืน 0 เพื่อไม่ให้เกิดการหารด้วยศูนย์ ตามกรณีขอบที่ผู้ตรวจโค้ดควรดูก่อนรวมโค้ด"
+    starter: |
+      def average(scores):
+          pass
+    tests: |
+      assert average([7, 8, 9]) == 8, f"average([7, 8, 9]) ควรได้ 8 แต่ได้ {average([7, 8, 9])}"
+      assert average([]) == 0, f"ลิสต์ว่างต้องคืน 0 แต่ได้ {average([])}"
+      assert average([10]) == 10, f"average([10]) ควรได้ 10 แต่ได้ {average([10])}"
+      assert abs(average([1, 2]) - 1.5) < 1e-9, f"average([1, 2]) ควรได้ 1.5 แต่ได้ {average([1, 2])}"
+    reference: |
+      def average(scores):
+          """คืนค่าเฉลี่ยของลิสต์คะแนน ถ้าลิสต์ว่างคืน 0"""
+          if len(scores) == 0:
+              return 0
+          return sum(scores) / len(scores)
+    hints:
+      - "ตรวจว่าลิสต์ว่างก่อนหารด้วยจำนวนสมาชิก"
+      - "sum และ len เป็นฟังก์ชันในตัวของ Python"
+    solution: "ถ้า len(scores) เป็น 0 ให้คืน 0 ไม่เช่นนั้นคืน sum(scores) / len(scores) ตรวจกรณีลิสต์ว่างก่อนเสมอ เพราะการหารด้วย 0 ทำให้โปรแกรมหยุดทำงาน"
+    license: CC-BY-SA-4.0
+    ai_assisted: true
