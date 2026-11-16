@@ -147,7 +147,7 @@ problems:
     figure: { src: bus-timetable.svg, alt: "ตารางเวลารถ Bus timetable: Bangkok (Mo Chit) → Chiang Mai คอลัมน์ Bus, Departs, Arrives รถ 1 ออก 08:00 ถึง 17:45 รถ 2 ออก 10:30 ถึง 21:00 รถ 3 ออก 13:00 ถึง 23:30 รถ 4 ออก 20:00 ถึง 06:30 (next day) รถ 5 ออก 21:30 ถึง 08:00 (next day)" }
     answer: { value: 9.75, tolerance: 0.01, unit: "ชั่วโมง" }
     misconceptions:
-      - { match: 9.5, feedback: "45 นาทีคือ 0.75 ชั่วโมง ไม่ใช่ 0.5" }
+      - { match: 9.45, feedback: "45 นาทีคือ 45 ÷ 60 = 0.75 ชั่วโมง ไม่ใช่ 0.45" }
       - { match: 25.75, feedback: "ต้องลบเวลาออกจากเวลาถึง ไม่ใช่บวก" }
     hints:
       - "Departs 08:00, Arrives 17:45"
@@ -214,16 +214,16 @@ problems:
     topics: [english.reading.non-text-information]
     difficulty: 4
     type: numeric
-    stem: "ดูกราฟเส้น *How much more rain fell in September than in June?* (ตอบเป็น mm)"
+    stem: "ดูกราฟเส้น *How much more rain fell in September than in May?* (ตอบเป็น mm)"
     figure: { src: rainfall-graph.svg, alt: "กราฟเส้นชื่อ Rainfall at Our School Weather Station แกนตั้ง Rainfall (mm) 0 ถึง 300 ค่ารายเดือน May 150, Jun 120, Jul 140, Aug 180, Sep 260, Oct 200 เป็นข้อมูลตัวอย่าง" }
-    answer: { value: 140, unit: "mm" }
+    answer: { value: 110, unit: "mm" }
     misconceptions:
-      - { match: 380, feedback: "more ... than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
-      - { match: 80, feedback: "80 คือผลต่างของ September กับ August ต้องเทียบกับ June" }
+      - { match: 410, feedback: "more ... than ถามผลต่าง ต้องลบ ไม่ใช่บวก" }
+      - { match: 80, feedback: "80 คือผลต่างของ September กับ August ต้องเทียบกับ May" }
     hints:
-      - "อ่านค่า September และ June"
+      - "อ่านค่า September และ May"
       - "ลบค่าที่น้อยออกจากค่าที่มาก"
-    solution: "September 260 mm, June 120 mm → 260 − 120 = **140** mm"
+    solution: "September 260 mm, May 150 mm → 260 − 150 = **110** mm"
     license: CC-BY-SA-4.0
     ai_assisted: true
 
