@@ -5,8 +5,8 @@ problems:
     type: mcq
     stem: "เกต NAND มีอินพุต $A = 1$ และ $B = 1$ เอาต์พุตเป็นเท่าใด"
     choices:
-      - { id: a, text: "0", correct: true }
       - { id: b, text: "1", feedback: "นี่คือเอาต์พุตของ AND ส่วน NAND คือ AND แล้วกลับค่า" }
+      - { id: a, text: "0", correct: true }
     hints:
       - "NAND = NOT AND"
       - "หาค่า $A \\cdot B$ ก่อน แล้วกลับค่า"
@@ -101,9 +101,9 @@ problems:
     type: mcq
     stem: "นิพจน์ใดเท่ากับ $\\overline{A \\cdot B}$"
     choices:
-      - { id: a, text: "$\\overline{A} + \\overline{B}$", correct: true }
       - { id: b, text: "$\\overline{A} \\cdot \\overline{B}$", feedback: "กลับค่าแต่ละตัวแล้วลืมเปลี่ยน AND เป็น OR ที่ $A = 1, B = 0$ นิพจน์นี้ได้ 0 แต่ $\\overline{AB} = 1$" }
       - { id: c, text: "$A + B$", feedback: "ลืมกลับค่าตัวแปร ที่ $A = B = 1$ นิพจน์นี้ได้ 1 แต่ $\\overline{AB} = 0$" }
+      - { id: a, text: "$\\overline{A} + \\overline{B}$", correct: true }
       - { id: d, text: "$\\overline{A + B}$", feedback: "นี่คือ NOR ให้ 1 เฉพาะเมื่อทั้งสองเป็น 0 ส่วน NAND ให้ 1 ในสามแถว" }
     hints:
       - "ใช้กฎเดอมอร์แกน: กลับค่าทุกตัว และสลับ AND กับ OR"
@@ -118,10 +118,10 @@ problems:
     type: mcq
     stem: "ลดรูป $AB + A\\overline{B}$"
     choices:
-      - { id: a, text: "$A$", correct: true }
       - { id: b, text: "$B$", feedback: "ตัวแปรที่ถูกตัดทิ้งคือตัวที่ปรากฏทั้งแบบปกติและกลับค่า ซึ่งคือ $B$ ไม่ใช่ $A$" }
       - { id: c, text: "$2A$", feedback: "พีชคณิตบูลีนไม่มีค่า 2 ค่ามีเพียง 0 กับ 1" }
       - { id: d, text: "$1$", feedback: "ถ้า $A = 0$ ทั้งสองพจน์เป็น 0 ผลจึงไม่ใช่ 1 เสมอ" }
+      - { id: a, text: "$A$", correct: true }
     hints:
       - "ดึง $A$ เป็นตัวร่วม"
       - "$B + \\overline{B} = 1$"
@@ -168,8 +168,8 @@ problems:
     type: mcq
     stem: "ฟังก์ชัน $F(A, B, C) = \\sum m(0, 2, 4, 6)$ ($A$ เป็นบิตซ้ายสุด) ลดรูปได้เป็นข้อใด"
     choices:
-      - { id: a, text: "$\\overline{C}$", correct: true }
       - { id: b, text: "$\\overline{A}$", feedback: "$\\overline{A}$ คือมินเทอม 0–3 แต่ฟังก์ชันนี้เป็น 1 ที่ 4 และ 6 ด้วย ซึ่ง $A = 1$" }
+      - { id: a, text: "$\\overline{C}$", correct: true }
       - { id: c, text: "$\\overline{A}\\,\\overline{C}$", feedback: "ครอบเพียงมินเทอม 0 และ 2 ยังขาด 4 และ 6 กลุ่มที่ใหญ่กว่าครอบได้ทั้งสี่ช่อง" }
       - { id: d, text: "$\\overline{B}$", feedback: "$\\overline{B}$ คือมินเทอม 0, 1, 4, 5 ไม่ตรงกับฟังก์ชัน" }
     hints:
@@ -202,9 +202,9 @@ problems:
     type: mcq
     stem: "ต้องการสร้างเกต NOT จากเกต NAND สองอินพุตเพียงตัวเดียว ต้องต่ออย่างไร"
     choices:
-      - { id: a, text: "ต่ออินพุตสองขาเข้าด้วยกันแล้วป้อนสัญญาณ $A$", correct: true }
       - { id: b, text: "ป้อน $A$ ที่ขาหนึ่ง และต่ออีกขากับ 0", feedback: "$\\overline{A \\cdot 0} = \\overline{0} = 1$ เสมอ ได้ค่าคงที่ ไม่ใช่ NOT" }
       - { id: c, text: "ป้อน $A$ ทั้งสองขาแล้วต่อเกต NAND อีกตัวตามหลัง", feedback: "NAND สองตัวต่อกันแบบนี้กลับค่าสองครั้ง ได้ $A$ เหมือนเดิม" }
+      - { id: a, text: "ต่ออินพุตสองขาเข้าด้วยกันแล้วป้อนสัญญาณ $A$", correct: true }
       - { id: d, text: "ทำไม่ได้ ต้องใช้เกต NOT เท่านั้น", feedback: "NAND เป็นเกตสากล สร้างทุกฟังก์ชันได้ รวมทั้ง NOT" }
     hints:
       - "$\\overline{A \\cdot A}$ เท่ากับอะไร"
@@ -235,10 +235,10 @@ problems:
     type: mcq
     stem: "ฟังก์ชัน $F(A, B, C) = \\sum m(1, 3, 5, 6, 7)$ ($A$ เป็นบิตซ้ายสุด) ลดรูปได้น้อยที่สุดเป็นข้อใด"
     choices:
-      - { id: a, text: "$C + AB$", correct: true }
       - { id: b, text: "$C + A$", feedback: "$C + A$ เป็น 1 ที่มินเทอม 4 ($100$) ด้วย แต่ฟังก์ชันนี้เป็น 0 ที่มินเทอม 4" }
       - { id: c, text: "$AB + BC$", feedback: "ขาดมินเทอม 1 และ 5 ซึ่งมี $B = 0$" }
       - { id: d, text: "$\\overline{A}C + AB$", feedback: "ขาดมินเทอม 5 ($101$) ถ้าวงกลุ่ม $C = 1$ ให้ครบทั้งสองแถวจะได้กลุ่มสี่ช่อง" }
+      - { id: a, text: "$C + AB$", correct: true }
     hints:
       - "มินเทอม 1, 3, 5, 7 มีอะไรเหมือนกัน"
       - "มินเทอม 6 ($110$) จับกลุ่มกับมินเทอม 7 ($111$)"
