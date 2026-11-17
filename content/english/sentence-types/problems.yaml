@@ -6,16 +6,16 @@ problems:
   type: mcq
   stem: ข้อใดเป็นประโยค **simple** (ความเดียว)
   choices:
-  - id: a
-    text: My sister plays badminton every evening.
-    correct: true
-    feedback: ถูก มีอนุประโยคเดียว (ประธาน My sister กริยา plays)
   - id: b
     text: My sister plays badminton, and I play football.
     feedback: มีสองอนุประโยคหลักเชื่อมด้วย and เป็น compound
   - id: c
     text: My sister plays badminton because she loves it.
     feedback: มีอนุประโยคย่อย because ... เป็น complex
+  - id: a
+    text: My sister plays badminton every evening.
+    correct: true
+    feedback: ถูก มีอนุประโยคเดียว (ประธาน My sister กริยา plays)
   - id: d
     text: My sister plays badminton when she finishes her homework.
     feedback: มีอนุประโยคย่อย when ... เป็น complex
@@ -32,16 +32,16 @@ problems:
   type: mcq
   stem: '*I was very tired, but I finished my homework.* เป็นประโยคชนิดใด'
   choices:
-  - id: a
-    text: compound (ความรวม)
-    correct: true
-    feedback: ถูก สองอนุประโยคหลักที่ยืนเดี่ยวได้ เชื่อมด้วย but
   - id: b
     text: simple (ความเดียว)
     feedback: มีประธานและกริยาสองชุด (I was ... / I finished ...) จึงไม่ใช่ simple
   - id: c
     text: complex (ความซ้อน)
     feedback: but เชื่อมความเท่ากัน ทั้งสองส่วนยืนเดี่ยวได้ ไม่มีอนุประโยคย่อย
+  - id: a
+    text: compound (ความรวม)
+    correct: true
+    feedback: ถูก สองอนุประโยคหลักที่ยืนเดี่ยวได้ เชื่อมด้วย but
   hints:
   - แยกเป็นสองส่วนที่ but แล้วดูว่าแต่ละส่วนยืนเป็นประโยคเดี่ยวได้ไหม
   - and, but, or, so เชื่อมอนุประโยคที่เท่ากัน
@@ -144,13 +144,13 @@ problems:
   type: mcq
   stem: 'คำเชื่อมใดทำให้ประโยคนี้เป็น **complex**: *I ate khanom krok ___ I was waiting for the bus.*'
   choices:
+  - id: b
+    text: and
+    feedback: and เชื่อมอนุประโยคที่เท่ากัน ได้ประโยค compound
   - id: a
     text: while
     correct: true
     feedback: ถูก while นำอนุประโยคย่อยบอกเวลา จึงเป็น complex
-  - id: b
-    text: and
-    feedback: and เชื่อมอนุประโยคที่เท่ากัน ได้ประโยค compound
   - id: c
     text: but
     feedback: but เชื่อมความเท่ากัน ได้ compound และความหมายก็ไม่ขัดกัน
@@ -194,16 +194,16 @@ problems:
   type: mcq
   stem: 'ส่วนใดเป็น **dependent clause** (อนุประโยคย่อย): *Although the bus was late, we arrived on time.*'
   choices:
-  - id: a
-    text: Although the bus was late
-    correct: true
-    feedback: ถูก ขึ้นต้นด้วย Although ยืนเป็นประโยคเดี่ยวไม่ได้
   - id: b
     text: we arrived on time
     feedback: ส่วนนี้ยืนเดี่ยวได้ เป็นอนุประโยคหลัก
   - id: c
     text: the bus
     feedback: นี่เป็นแค่กลุ่มคำนาม ไม่มีกริยา จึงไม่ใช่ clause
+  - id: a
+    text: Although the bus was late
+    correct: true
+    feedback: ถูก ขึ้นต้นด้วย Although ยืนเป็นประโยคเดี่ยวไม่ได้
   - id: d
     text: on time
     feedback: นี่เป็นวลีบอกเวลา ไม่มีประธานและกริยา
@@ -237,10 +237,6 @@ problems:
   type: mcq
   stem: ข้อใดถูกต้อง
   choices:
-  - id: a
-    text: I like durian, but my brother hates it.
-    correct: true
-    feedback: ถูก เชื่อมสองอนุประโยคหลักด้วย , but
   - id: b
     text: I like durian, my brother hates it.
     feedback: เชื่อมสองอนุประโยคหลักด้วยจุลภาคอย่างเดียวไม่ได้ (comma splice) ต้องมี but หรือขึ้นประโยคใหม่
@@ -250,6 +246,10 @@ problems:
   - id: d
     text: Although I like durian, but my brother hates it.
     feedback: although กับ but ใช้คู่กันไม่ได้
+  - id: a
+    text: I like durian, but my brother hates it.
+    correct: true
+    feedback: ถูก เชื่อมสองอนุประโยคหลักด้วย , but
   hints:
   - สองอนุประโยคหลักต้องมีคำเชื่อมหรือแยกเป็นสองประโยค
   - ระวังการใช้ although คู่กับ but แบบภาษาไทย
@@ -362,13 +362,13 @@ problems:
 
     *Although many tourists visit Damnoen Saduak Floating Market, it is still an important place for local people. Farmers who grow fruit nearby sell their produce there every morning. Some families have sold food from their boats for many years.*'
   choices:
+  - id: b
+    text: Farmers who grow fruit nearby sell their produce there every morning.
+    feedback: เป็นรายละเอียดสนับสนุนว่าคนท้องถิ่นใช้ตลาดอย่างไร
   - id: a
     text: Although many tourists visit Damnoen Saduak Floating Market, it is still an important place for local people.
     correct: true
     feedback: ถูก อนุประโยคหลัก (it is still an important place for local people) คือใจความ ประโยคอื่นสนับสนุน
-  - id: b
-    text: Farmers who grow fruit nearby sell their produce there every morning.
-    feedback: เป็นรายละเอียดสนับสนุนว่าคนท้องถิ่นใช้ตลาดอย่างไร
   - id: c
     text: Some families have sold food from their boats for many years.
     feedback: เป็นรายละเอียดสนับสนุนอีกข้อ
@@ -388,16 +388,16 @@ problems:
   type: mcq
   stem: ข้อใดเป็นประโยค **simple** ทั้งที่มีประธานและกริยามากกว่าหนึ่งคำ
   choices:
-  - id: a
-    text: My mum and my aunt cook and sell khanom krok every morning.
-    correct: true
-    feedback: ถูก ประธานกลุ่มเดียว (my mum and my aunt) ทำกริยาชุดเดียว (cook and sell) ยังเป็นอนุประโยคเดียว
   - id: b
     text: My mum cooks khanom krok, and my aunt sells it.
     feedback: มีสองอนุประโยคหลัก (My mum cooks ... / my aunt sells ...) เป็น compound
   - id: c
     text: My mum cooks khanom krok which my aunt sells.
     feedback: มี relative clause (which my aunt sells) เป็น complex
+  - id: a
+    text: My mum and my aunt cook and sell khanom krok every morning.
+    correct: true
+    feedback: ถูก ประธานกลุ่มเดียว (my mum and my aunt) ทำกริยาชุดเดียว (cook and sell) ยังเป็นอนุประโยคเดียว
   - id: d
     text: My aunt sells khanom krok because my mum is busy.
     feedback: มีอนุประโยคย่อย because ... เป็น complex
